@@ -159,7 +159,7 @@ Jeder Schritt ist für sich lauffähig, mit Tests, `npm run pruefen` grün, eige
 | c       | T7         | fertig: `#bild:kennung` (dialog/Grossansicht.tsx)                                            |
 | d       | T5         | fertig: `momente` in begegnungen.json (regeln/partiemomente.ts)                              |
 | e       | T6, T9, T4 | fertig: `licht`, `licht_zustaende`, `#licht`, `#figur`, `#erscheint`/`#geist`, Fassungsnamen |
-| später  | T8, T10    | nur geplant (Abschnitt 3)                                                                    |
+| später  | T8, T10    | fertig (13.11. abends): `teilchen`, `#teilchen`, `#erinnerung`                               |
 
 Abweichungen vom Plan: Das Licht eines Dialogs (`#licht`) gilt bis zum Dialogende, nicht nur für
 eine Zeile. Eine ausgeblendete Figur (`#figur:<name>:aus`) sperrt den Weg nicht mehr; ansprechen

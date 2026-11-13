@@ -645,3 +645,9 @@ body.abenteuer-mit-kulisse {
   filter: sepia(0.85) contrast(0.95) brightness(1.05);
   transition: filter 1s ease;
 }
+
+/* Große Porträts (64 × 64 oder 96 × 96, dialog/Portraet.tsx): 96 Pixel, scharfe Pixel. */
+.abenteuer-dialog-portraet.abenteuer-portraet-gross {
+  width: 96px;
+  height: 96px;
+}

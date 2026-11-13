@@ -130,10 +130,12 @@ async function kopiereBilder() {
  * Bilder, die es nur mit der gekauften Grafik gibt (Figuren im Format von LimeZu): alle PNG aus
  * dem privaten Ordner; ohne ihn nichts, das Spiel nimmt dann die Platzhalter.
  */
-async function kopierePrivatordner(ordner, behalte = () => true) {
+async function kopierePrivatordner(ordner, behalte = () => true, endungen = [".png"]) {
   const quelle = join(PRIVAT, ordner);
   if (!existsSync(quelle)) return;
-  const namen = (await readdir(quelle)).filter((d) => d.endsWith(".png") && behalte(d));
+  const namen = (await readdir(quelle)).filter(
+    (d) => endungen.some((e) => d.endsWith(e)) && behalte(d),
+  );
   for (const name of namen.sort()) {
     await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), "grafik");
   }
@@ -376,6 +378,8 @@ async function main() {
   // Tierbögen der Belebung (pipeline/abenteuer/belebungsbilder.py, Runde 7).
   await kopierePrivatordner("tiere");
   await kopierePrivatordner("portraets");
+  // Große Porträts (64 × 64 oder 96 × 96 je Fassung, dialog/Portraet.tsx); fehlen sie, SVG.
+  await kopierePrivatordner("portraets/gross", () => true, [".png", ".webp"]);
   await kopierePrivatordner("grafik");
   await kopiereTon("musik");
   await kopiereTon("klang");

@@ -1,7 +1,7 @@
 // Porträts im Dialog (Q17-2): Dateinamen und für jeden Sprecher der Dialoge ein Bild.
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { portraetpfad } from "./portraetpfad";
+import { grossePortraets, portraetpfad } from "./portraetpfad";
 
 const INHALTE = new URL("../../../../inhalte/abenteuer/", import.meta.url);
 /**
@@ -26,6 +26,11 @@ describe("Porträts", () => {
     // Fassungen (T4): eigener Dateiname, kebab-case.
     expect(portraetpfad("mira", "lachtOhneSpott")).toBe("portraets/mira-lacht-ohne-spott.svg");
     expect(portraetpfad("ambrose", "muede")).toBe("portraets/ambrose-muede.svg");
+    // Große Porträts (64 oder 96 Pixel) gehen vor: WebP, dann PNG, Fassung im Namen.
+    expect(grossePortraets("portraets/mira-lacht-ohne-spott.svg")).toEqual([
+      "portraets/gross/mira-lacht-ohne-spott.webp",
+      "portraets/gross/mira-lacht-ohne-spott.png",
+    ]);
   });
 
   it("jeder Sprecher in den Dialogen hat ein Porträt", () => {

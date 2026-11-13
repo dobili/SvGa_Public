@@ -49,7 +49,9 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Sepia, bis `#erinnerung:aus` oder bis der Dialog endet.
 - Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
   `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
-  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung.
+  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung. Große Porträts (64 × 64 oder 96 × 96) liegen
+  im privaten Repository unter `portraets/gross/<name>[-<fassung>].webp` (oder `.png`) und gehen
+  vor; das SVG bleibt Rückfall.
 - Tondateien: Die Kennung wird zum Dateinamen (camelCase → kebab-case, ein Punkt bleibt:
   `ambrose.lassMich` → `musik/ambrose.lass-mich.m4a`). Im privaten Repository liegt der Ton von
   Akt 1 direkt in `musik/` und `klang/` (Grundpaket), der Ton der Akte 2 bis 4 in `musik/akt2/` …

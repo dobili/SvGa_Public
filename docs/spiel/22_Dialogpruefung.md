@@ -2751,3 +2751,462 @@ Hinweise auf Widersprüche innerhalb des Romans (D19 folgt jeweils der späteren
 - Die Spalten „Will“ und „Fürchtet“ in 5.1 bis 5.5 sind Deutungen; geprüft wurde nur, ob der Roman ihnen widerspricht (kein Widerspruch gefunden), nicht, ob ein Satz sie wörtlich belegt.
 - Nicht geprüft: Abschnitt 1 (Vorbilder), Abschnitt 8 Regeln 2 bis 4 und Abschnitt 10 (Vorgaben für das Spiel), die Spalte „Farbe“ im Bogen über die Stimmungszeilen der Kapitel hinaus, die Verweise auf die Dokumente 05, 20, 21, 22, 23 und deren Inhalt.
 - Nichts außer dieser Datei wurde geändert.
+
+## Teil G: Story-Bibel angleichen (Liste der Änderungen, noch nicht ausgeführt)
+
+Zählung: **52 Entscheidungen** (Akt 1: 14, Akt 2: 12, Akt 3: 11 aus Abschnitt 7 und 6 Festlegungen
+aus Abschnitt 2, Akt 4: 9 Festlegungen). Davon verlangen **27** eine Änderung oder einen Nachtrag
+in `docs/spiel/05_Story_Bibel.md`, **20** geben der Bibel recht oder berühren sie nicht (G3), **5**
+hängen nur an offenen oder nicht geprüften Punkten (E-A1-5, E-A1-13, E-A3-7, E-A3-F5 in G4;
+E-A3-F4 in G5). Zusammen sind es **54 Bibelstellen** (G2): 29 Änderungen (die Bibel sagt heute
+etwas anderes) und 25 Nachträge (die Bibel schweigt bisher). Dazu 15 offene Punkte (G4). Alle Zeilennummern und Zitate beziehen sich auf die Bibel im
+Stand dieses Zweigs (2662 Zeilen); Zitate über einen Zeilenumbruch hinweg sind mit einem
+Leerzeichen zusammengezogen. Nichts davon ist eingetragen.
+
+Abkürzungen: **Bef1 bis Bef4** = `docs/spiel/roman/akt1_befunde.md` bis `akt4_befunde.md`;
+**R1-1** = `roman/akt1_teil1.md` usw.; **DP** = `docs/spiel/22_Dialogpruefung.md`.
+
+### G1 Entscheidungen im Überblick
+
+| Nr.     | Entscheidung in einem Satz                                                                                                                                                                | Quelle     | Bibelstellen   |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------- |
+| E-A1-1  | Das Opfer von 1858 war richtig; Ambrose glaubt in Akt 1 das Gegenteil („Nein“), Auflösung in Kapitel 45.                                                                                  | Bef1:162   | 2              |
+| E-A1-2  | Weiß (Ambrose) steht besser, Hale hat Schwarz und ist am Zug; Mamas Satz in Szene 4 ändern.                                                                                               | Bef1:163   | 1              |
+| E-A1-3  | Die Stellung auf dem Brett ist die aus Abschnitt 35 (ein weißer Turm, zwei schwarze Springer).                                                                                            | Bef1:164   | 0              |
+| E-A1-4  | Abernathys Zettel zeigt den Anfang der Fernpartie (Fragment 0, Züge 1 bis 4).                                                                                                             | Bef1:165   | 0              |
+| E-A1-5  | Keine Zahl mehr für die Laufzeit eines Zugs („tagelang, manchmal Wochen“; Partie über ein Jahr).                                                                                          | Bef1:166   | 0 (G4)         |
+| E-A1-6  | Ambroses Kindheit: Port Delacroix, Vater Klavierbauer; „Schachmeister aus New Orleans“ bleibt.                                                                                            | Bef1:167   | 0              |
+| E-A1-7  | Weg nach Cedar Creek wie im Roman: Freitag nach der Schule zu Fuß, Nacht im Lesesaal, Team am Samstag mit dem Bus; zwei Wegkarten, Zedernpfad bis zur 2. Nadel gesperrt.                  | Bef1:168   | 6              |
+| E-A1-8  | „Später“ fällt in Akt 1 nur an drei Stellen (erster Tag, Archiv, Steg); sonst heißen die Wahlen „Nicht jetzt.“ oder „Gleich.“.                                                            | Bef1:169   | 2              |
+| E-A1-9  | Auf den (Umzugs-)Kartons stehen Namen, kein Inhalt.                                                                                                                                       | Bef1:170   | 0              |
+| E-A1-10 | Clubraum: Erdgeschoss, Raum 12, Blick auf den Fahnenmast.                                                                                                                                 | Bef1:171   | 1              |
+| E-A1-11 | Im Clubraum steht ein Bildschirm von Perfect Move, der stehen bleibt (kein Prospekt).                                                                                                     | Bef1:172   | 3              |
+| E-A1-12 | Fingerzeig vor der ersten Partie, wie in Bibel und Spiel.                                                                                                                                 | Bef1:173   | 0              |
+| E-A1-13 | Buchverweis in `weg-maple-cedar.ink` wird entfernt (Entscheidung vom 10.11.).                                                                                                             | Bef1:174   | 0 (G4)         |
+| E-A1-14 | Hales Brief: 39. Zug und Einladung am selben Tag; Zug kommt an, Einladung nicht; Ambrose bricht von sich aus auf, letzter Zug 40. Kxg3 aus der Siedlung; Rückseite Züge 29 bis 32.        | Bef1:175   | 6              |
+| E-A2-1  | Zugfolge der Unsterblichen wie in `klassiker.json`; Ambrose hält beim Bauernzug an.                                                                                                       | Bef2:92    | 1              |
+| E-A2-2  | Mamas Fehler von 2001 ist ein Spieß: Dame vorn, Turm dahinter auf derselben Schräge, Läufer am anderen Ende.                                                                              | Bef2:93    | 0              |
+| E-A2-3  | Oma Ruth: Der Held kennt sie und war seit dem Umzug nicht mehr dort; Mamas Zimmer war immer zu.                                                                                           | Bef2:94    | 0              |
+| E-A2-4  | „Wer eines kennt, erkennt es in jeder Menge“ sagt Ambrose (Akt 1), nicht Mae.                                                                                                             | Bef2:95    | 0              |
+| E-A2-5  | Das Match von 1858 war im Oktober; die Londoner Zeitung mit Bird gegen Morphy ist sechs Wochen alt.                                                                                       | Bef2:96    | 3              |
+| E-A2-6  | Über 1866 fallen in Akt 2 nur Splitter („elf Tage“, „nicht angekommen“); erzählt wird am Felsbogen.                                                                                       | Bef2:97    | 1              |
+| E-A2-7  | Riverton: sechs Bildschirmtische auf der Wiese, vier Steintische im Pavillon.                                                                                                             | Bef2:98    | 0              |
+| E-A2-8  | Die Graffiti-Künstlerin ist Noor Haddad; neu ist nur die Werkbank ihres Großvaters.                                                                                                       | Bef2:99    | 0              |
+| E-A2-9  | Lage wie in den Ortsdokumenten (Wohnwagen am Westende des Parks an der Steinbrücke; Elm Street 10, Eckhaus; „J. H.“ an der Stahlbrücke der Schnellstraße).                                | Bef2:100   | 0              |
+| E-A2-10 | Fragmente 2 bis 4 kommen im Spiel vor wie in Abschnitt 35.                                                                                                                                | Bef2:101   | 0              |
+| E-A2-11 | Die Postsäcke sind von 1866; „1870“ in Abschnitt 9.3 ist ein Versehen.                                                                                                                    | Bef2:102   | 1              |
+| E-A2-12 | Big Joes Satz nach dem Clubkampf bezieht sich auf die Grundreihe, nicht auf Mamas Fehler.                                                                                                 | Bef2:103   | 0              |
+| E-A3-1  | Ambroses letzter Zug wie in Szene 99: in der Siedlung im Fieber geschrieben, einem Postreiter gegeben.                                                                                    | Bef3:93    | 0              |
+| E-A3-2  | Ambrose brach 1866 aus Ungeduld auf, weil Hales 39. Zug wochenlang ausblieb; die Einladung erreichte ihn nie (Abschnitt 17 gilt, nicht Szene 73).                                         | Bef3:94    | 3              |
+| E-A3-3  | In Ironwood ist es das Siegel des Postmeisters am Postsack; Hales Brief trägt ein eigenes Siegel mit einer anderen Fesselung.                                                             | Bef3:95    | 4              |
+| E-A3-4  | Hale versiegelte den Brief und vergaß, ihn in den Umschlag zu legen; der Umschlag ging leer hinaus, der Brief blieb ungeöffnet bei ihm.                                                   | Bef3:96    | 3              |
+| E-A3-5  | Auf der Rückseite stehen vier Züge, 29 bis 32 (Fragment 7), zur Kontrolle; nicht „die letzten“.                                                                                           | Bef3:97    | 1              |
+| E-A3-6  | Das Brett wurde 1852 gebaut, „A. W. 1857“ erst fünf Jahre später eingebrannt.                                                                                                             | Bef3:98    | 2              |
+| E-A3-7  | Ambrose hörte im Geigenkasten nur, was in der Turnhalle geschah.                                                                                                                          | Bef3:99    | 0 (G4)         |
+| E-A3-8  | Die Whitlock-Duvals stammen von einem Bruder ab; das Brett ging über Claires Töchter; Mrs. Whitlock war die Letzte von Claires Linie, Céleste ist die Jüngste. In der Bibel nachzutragen. | Bef3:100   | 7              |
+| E-A3-9  | „Josiah“ und „Ur-ur-ur … Ein Hale eben“ fallen erst in Akt 4.                                                                                                                             | Bef3:101   | 0              |
+| E-A3-10 | Erinnerung 1858: Im Spiel bleibt das Stellungsduell am Moment des Opfers (Bibel).                                                                                                         | Bef3:102   | 0              |
+| E-A3-11 | Randnotiz: Ambroses Thema kehrt in Kapitel 38 zurück.                                                                                                                                     | Bef3:103   | 0              |
+| E-A3-F1 | Der „unmögliche“ Zug in Port Delacroix stammt von ZERO; der Held gibt die Partie auf und legt das Brett ab.                                                                               | Bef3:24–26 | 2              |
+| E-A3-F2 | Das Opfer von 1858 war richtig (wie E-A1-1).                                                                                                                                              | Bef3:27–30 | 0 (bei E-A1-1) |
+| E-A3-F3 | Hales Brief gilt im Wortlaut von Kapitel 44.                                                                                                                                              | Bef3:31–32 | 3              |
+| E-A3-F4 | Die Antwort auf die Maschine: Sie muss nie hoffen; Leitsatz 1 fällt als Satz nur am Felsbogen.                                                                                            | Bef3:33–35 | 0 (G5)         |
+| E-A3-F5 | Juno weiß von Ambrose seit Dezember (zwischen Akt 2 und 3).                                                                                                                               | Bef3:36    | 0 (G4)         |
+| E-A3-F6 | Dot in Desert Springs war die Fernschachgegnerin von Mrs. Whitlock.                                                                                                                       | Bef3:37    | 1              |
+| E-A4-1  | Victor erfährt in Kapitel 51 von Ambrose; damit wissen es zwei (Juno, Victor).                                                                                                            | Bef4:29–30 | 1              |
+| E-A4-2  | Der letzte Zug von 1866 ist 40. Kxg3, der König geht ins Freie.                                                                                                                           | Bef4:31–32 | 0              |
+| E-A4-3  | Die Fernpartie endet im Roman remis; das Spiel lässt Sieg oder Remis zu.                                                                                                                  | Bef4:33–34 | 0              |
+| E-A4-4  | Im Halbfinale findet der Held den Zug selbst und ruft Ambrose nur zum Prüfen; es ist ein gemeinsamer Zug.                                                                                 | Bef4:35–36 | 1              |
+| E-A4-5  | Das Finale gewinnt im Roman der Held; Victor läuft bei jedem Ausgang zu seinem Vater.                                                                                                     | Bef4:37–38 | 1              |
+| E-A4-6  | Graham Hale hat ZERO gebaut und wusste nichts vom Missbrauch; der Vertriebschef heißt Mr. Dorrance und tritt nicht auf.                                                                   | Bef4:39–40 | 4              |
+| E-A4-7  | Coach Delgado hatte den Vertrag unterschrieben und wieder gekündigt.                                                                                                                      | Bef4:41    | 2              |
+| E-A4-8  | Dr. Lin kündigt vor der Meisterschaft; ihr Kellerclub ist im Epilog zu sehen.                                                                                                             | Bef4:42    | 1              |
+| E-A4-9  | Epilog mit Lily auf dem Dachboden; letzter Satz des Spiels: „Was hängt?“                                                                                                                  | Bef4:43    | 1              |
+
+Die Summe der Spalte (64) ist größer als 54, weil acht Stellen zu zwei oder mehr Entscheidungen
+gehören (Zeilen 38, 315, 835, 1479, 1480, 1922–1924, 1925–1926, 1928).
+
+Am meisten Folgeänderungen: E-A3-8 Abstammung (7), E-A1-7 Weg nach Cedar Creek (6), E-A1-14 und
+die Entscheidungen zu Hales Brief zusammen (E-A1-14, E-A3-2 bis E-A3-5, E-A3-F3: 12 Stellen, vor
+allem Zeilen 38, 835, 1373, 1480, 1900 und Szene 76), E-A4-6 Graham Hale und Mr. Dorrance (4).
+
+### G2 Änderungen in der Reihenfolge der Bibel
+
+Art: **Änderung** = die Bibel sagt heute etwas anderes; **Nachtrag** = die Bibel schweigt, die
+Entscheidung soll dort stehen.
+
+**Zeile 34 (Abschnitt 1, Zeitlinie 1858)** · E-A2-5 · Nachtrag
+
+- alt: „Match in New Orleans gegen Josiah Hale, „den Ingenieur“, Brückenbauer aus dem Norden.“
+- neu: „Match in New Orleans (Oktober 1858) gegen Josiah Hale, „den Ingenieur“, Brückenbauer aus dem Norden.“
+- Beleg: Bef2:96; R1-3:288 („Ein Datum im Oktober 1858“).
+
+**Zeile 38 (Abschnitt 1, Zeitlinie 1866)** · E-A3-2, E-A1-14 · Änderung
+
+- alt: „Ambrose reist nach Norden, um Hale die letzten Züge selbst zu bringen, und stirbt unterwegs am Fieber in einer Bergbausiedlung (später Ghost Town, Akt 4).“
+- neu: „Hales 39. Zug bleibt im Winter wochenlang aus. Ambrose bricht aus Ungeduld von sich aus nach Norden auf, um Hale die letzten Züge selbst zu bringen; Hales Einladung erreicht ihn nie. Er stirbt unterwegs am Fieber in einer Bergbausiedlung (später Ghost Town, Akt 4); dort schreibt er seinen letzten Zug und schickt ihn ab.“
+- Beleg: Bef3:94, Bef1:175; R3-3:214–221 und 225–229. Widerspruch in der Bibel: Zeile 38 („die letzten Züge selbst zu bringen“) gegen Zeile 2108 („schreibt … seinen letzten Zug auf und schickt ihn ab“), schon in DP A1.25 gemeldet; der neue Wortlaut enthält beides.
+
+**Zeile 39 (Abschnitt 1, Zeitlinie „danach“)** · E-A3-8 · Nachtrag
+
+- alt: „Das Brett geht an Ambroses Schwester, die nach Maple Falls heiratet.“
+- neu: „Das Brett geht an Ambroses Schwester Claire, die nach Maple Falls heiratet, und von ihr über ihre Töchter weiter. Die Klavierwerkstatt in Port Delacroix führt ein Bruder weiter; von ihm stammen die Whitlock-Duvals ab.“
+- Beleg: Bef3:100; R3-2:462–465.
+
+**Zeile 40 (Abschnitt 1, Zeitlinie „bis 2025“)** · E-A3-8 · Änderung
+
+- alt: „Die letzte Nachfahrin, die alte Mrs. Whitlock, lebt im Haus an der Birch Lane.“
+- neu: „Die Letzte aus Claires Linie, die alte Mrs. Whitlock, lebt im Haus an der Birch Lane.“
+- Beleg: Bef3:100.
+
+**Zeilen 51–52 (Abschnitt 1, Hinweise)** · E-A1-8 · Nachtrag
+
+- alt: „Das Wort steht schon im Ink-Beispiel (Knoten `ambrose_wartet`) und wird zum Leitmotiv“
+- neu: „Das Wort steht schon im Ink-Beispiel (Knoten `ambrose_wartet`) und wird zum Leitmotiv; in Akt 1 fällt es nur an drei Stellen (erster Tag auf dem Dachboden, Archiv, Steg)“
+- Beleg: Bef1:169; R1-1:269–273, R1-3:348–353, R1-4:362.
+
+**Zeilen 86–87 (Abschnitt 2.2, Ambrose, Hintergrund)** · E-A1-1 (= E-A3-F2) · Änderung (Klarstellung)
+
+- alt: „Hat 1858 das Match gegen Josiah Hale verloren, weil er im letzten Spiel lieber schön als richtig spielen wollte, und das nie verwunden.“
+- neu: „Hat 1858 das Match gegen Josiah Hale im letzten Spiel nach einem tollkühnen Opfer verloren und das nie verwunden. Er hält das Opfer seither für falsch; es war richtig, er hat es nur falsch fortgesetzt (Auflösung in Szene 77).“
+- Beleg: Bef1:162, Bef3:27–30. Widerspruch in der Bibel: Zeilen 86–87 („lieber schön als richtig“) gegen Zeilen 1935–1937 („weil das Opfer korrekt war und Ambrose es nur falsch fortsetzte“).
+
+**Zeilen 141–142 (Abschnitt 2.4, Victor, Hintergrund)** · E-A4-6 · Nachtrag
+
+- alt: „Sohn von Graham Hale, leitendem Entwickler bei Perfect Move Inc. in Silicon Bay.“
+- neu: „Sohn von Graham Hale, leitendem Entwickler bei Perfect Move Inc. in Silicon Bay, der ZERO gebaut hat.“
+- Beleg: Bef4:39–40; R4-4:301–302.
+
+**Zeile 315 (Abschnitt 3.1, Tabelle, `mapleFalls.clubraum`)** · E-A1-10, E-A1-11 · Nachtrag
+
+- alt: „Klassenzimmer mit Pokalen von 1994, ein Brett mit fehlender schwarzer Dame.“
+- neu: „Klassenzimmer im Erdgeschoss (Raum 12, Blick auf den Fahnenmast) mit Pokalen von 1994, ein Brett mit fehlender schwarzer Dame; nach Szene 12 steht ein Bildschirm von Perfect Move auf dem Pult.“
+- Beleg: Bef1:171–172; R1-2:67, R1-2:479, R1-2:522. Die Bibel nennt bisher weder Stockwerk noch Prospekt; „erster Stock“ und „Prospekt“ stehen nur im Spieldialog (DP, Tabelle Zeile 71–72).
+
+**Zeilen 317–320 (Abschnitt 3.1, Entscheidung zum Park)** · E-A1-7 · Änderung
+
+- alt: „wird zugleich der Stadtrand mit dem Weg nach Cedar Creek (wie ein kurzer Weg zwischen zwei Städten). Damit hat Maple Falls zwei kleine Außenkarten und drei Innenräume; das bleibt im Rahmen, weil der Park die Route ersetzt.“
+- neu: „ist zugleich der Stadtrand mit dem Ausgang zum Weg nach Cedar Creek. Der Weg (`wegMapleCedar`) hat zwei Karten, Landstraße und Flussweg; der Zedernpfad bleibt bis zur zweiten Clubnadel gesperrt. Damit hat Maple Falls zwei kleine Außenkarten und drei Innenräume.“
+- Beleg: Bef1:168; R1-3:128. Widerspruch in der Bibel: Zeile 320 („weil der Park die Route ersetzt“) gegen Zeile 983 („`wegMapleCedar` (Route 1)“) und Zeile 1364 („aus Route 1, W5“).
+
+**Zeilen 336–337 (Abschnitt 3.3)** · E-A1-11 · Nachtrag
+
+- alt: „auf Victors Tablet, im Gespräch über das Pilotprojekt, auf einem Plakat in Cedar Creek.“
+- neu: „auf Victors Tablet, im Gespräch über das Pilotprojekt, auf dem Bildschirm, der nach Szene 12 im Clubraum stehen bleibt, auf einem Plakat in Cedar Creek.“
+- Beleg: Bef1:172; R1-2:479–488.
+
+**Zeilen 377–378 (Szene 4, Abend im neuen Haus)** · E-A1-2 · Änderung
+
+- alt: „Mama sieht die Stellung und sagt, ohne nachzudenken: „Schwarz steht besser.““
+- neu: „Mama sieht die Stellung und sagt, ohne nachzudenken: „Weiß steht besser.““
+- Beleg: Bef1:163; R1-1:303. Widerspruch in der Bibel: Zeilen 377–378 gegen Zeile 2596 („Ambrose führt Weiß, Hale Schwarz.“) und Zeile 2656 („Bewertung für Weiß +1,44“).
+
+**Zeilen 498–499 (Szene 12, Victor)** · E-A1-11 · Nachtrag
+
+- alt: „Graham Hale stellt dem Schulamt im Clubraum das Pilotprojekt vor;“
+- neu: „Graham Hale stellt dem Schulamt im Clubraum das Pilotprojekt vor, auf einem Bildschirm, den er auf das Pult stellt; der Bildschirm bleibt nach der Szene im Clubraum stehen (Zustandsfassung);“
+- Beleg: R1-2:415, R1-2:479, R1-2:522.
+
+**Zeile 525 (Szene 13, Aufbruch, Ort)** · E-A1-7 · Änderung
+
+- alt: „Ort `mapleFalls.wohnzimmer`, dann `mapleFalls.park` · Mama, Juno.“
+- neu: „Ort `mapleFalls.wohnzimmer`, dann `mapleFalls.park` und der Weg `wegMapleCedar` (Landstraße, Flussweg) · Mama, Juno.“
+- Beleg: R1-3:11 (Kopfzeile Kapitel 10).
+
+**Zeilen 525–526 (Szene 13, Mamas Erlaubnis)** · E-A1-7 · Änderung
+
+- alt: „Mama erlaubt das Auswärtsspiel („Mit dem Coach im Schulbus? Gut. Brett nicht verlieren.“).“
+- neu: „Mama erlaubt, dass {held} am Freitag nach der Schule mit Juno zu Fuß vorausgeht („Mit Juno. Am Fluss. Gut.“ – „Brett nicht verlieren.“); die beiden übernachten im Lesesaal der Bibliothek, der Coach kommt am Samstag mit dem Team im Bus.“
+- Beleg: Bef1:168; R1-3:14–36.
+
+**Zeilen 526–529 (Szene 13, Bushaltestelle)** · E-A1-7 · Änderung
+
+- alt: „An der Bushaltestelle im Park (Auslöser `bushaltestelle`, Ink `maple-falls-park.bushaltestelle`) wartet der Schulbus; „Einsteigen“ ruft `reise("cedarCreek.aussen", "bushaltestelle")` (Regelwerk R41). Vorher sagt die Haltestelle nur: „Heute fährt er ohne dich.““
+- neu: „Der erste Weg wird zu Fuß gegangen: vom Parkausgang über Landstraße und Flussweg. Der Bus an der Haltestelle im Park (Auslöser `bushaltestelle`, `reise("cedarCreek.aussen", "bushaltestelle")`, Regelwerk R41) bleibt für die Rückfahrt und für spätere Fahrten; vorher sagt die Haltestelle nur: „Heute fährt er ohne dich.““
+- Beleg: R1-3:438 („Bus bleibt für die Rückfahrt und zum Hin- und Herfahren“). Die Zeitangabe „Etwa 3 Minuten“ (Zeile 529) steht unter G4.
+
+**Zeile 534 (Szene 14, Ankunft in Cedar Creek, Ort und Figuren)** · E-A1-7 · Änderung
+
+- alt: „Ort `cedarCreek.aussen` (Ankunft am Auslöser `bushaltestelle`) · Coach Delgado, Juno, Sam.“
+- neu: „Ort `cedarCreek.aussen` (Ankunft zu Fuß vom Flussweg, Freitagnachmittag) · Juno; Coach Delgado, Sam und das Team kommen am Samstag mit dem Bus (Auslöser `bushaltestelle`).“
+- Beleg: R1-3:116–125, R1-3:16–18.
+
+**Zeilen 536–537 (Szene 14, Auswärtsspiel)** · E-A1-7 · Nachtrag
+
+- alt: „Das Auswärtsspiel der Kreisliga findet im Bibliotheksclub statt;“
+- neu: „Das Auswärtsspiel der Kreisliga findet am Samstag im Bibliotheksclub statt; {held} und Juno schlafen die Nacht davor auf Matten im Lesesaal (Mrs. Okafor: „Ihr seid die Vorhut.“);“
+- Beleg: R1-3:168–176. Der anschließende Satz des Coachs (Zeilen 537–538) steht unter G4.
+
+**Zeilen 572–573 (Szene 19, 1858)** · E-A2-5 · Nachtrag
+
+- alt: „In einer vergilbten Zeitung (erfundener Titel, etwa „Crescent City Herald“) steht:“
+- neu: „In einer vergilbten Zeitung vom Oktober 1858 (erfundener Titel, etwa „Crescent City Herald“) steht:“
+- Beleg: R1-3:288.
+
+**Zeilen 575–576 (Szene 19, 1858)** · E-A1-1 · Nachtrag
+
+- alt: „das Opfer, das er nicht lassen konnte, die Revanche und das Wort „Später“.“
+- neu: „das Opfer, das er nicht lassen konnte und für falsch hält („Hat es gestimmt?“ – „Nein.“; sein Irrtum bleibt bis Szene 77 stehen), die Revanche und das Wort „Später“.“
+- Beleg: Bef1:162 („Die Dialoge von Akt 1 lassen seinen Irrtum stehen“); R1-3:329–331.
+
+**Zeilen 766–767 (Abschnitt 5.5, Technik)** · E-A1-8 · Änderung
+
+- alt: „Wer „Später“ wählt, kommt mit einem Satz zurück an denselben Ort.“
+- neu: „Wer „Nicht jetzt.“ oder „Gleich.“ wählt, kommt mit einem Satz zurück an denselben Ort. Die Antwortwahl „Später“ gibt es in Akt 1 nur an den drei Stellen des Leitmotivs (erster Tag, Archiv, Steg).“
+- Beleg: Bef1:169.
+
+**Zeile 834 (Abschnitt 8, Zeitlinie 1858)** · E-A2-5 · Nachtrag
+
+- alt: „Nach der Niederlage gegen Hale liest Ambrose in der Zeitung, wie Morphy in London Bird schlägt, und spielt die Partie nachts nach (Erinnerung in Ironwood).“
+- neu: „Oktober 1858: In der Nacht nach der Niederlage gegen Hale liest Ambrose in einer sechs Wochen alten Londoner Zeitung, wie Morphy Bird schlägt, und spielt die Partie nach (Erinnerung in Ironwood).“
+- Beleg: Bef2:96; R2-4:102.
+
+**Zeile 835 (Abschnitt 8, Zeitlinie 1866)** · E-A3-4, E-A1-14 · Änderung
+
+- alt: „Ein Brief von Hale an Ambrose wird nie zugestellt: Er bleibt im Postamt der Bahnstation Ironwood liegen (übergreifender Fund, Auflösung in Akt 3).“
+- neu: „Hale schickt am selben Tag seinen 39. Zug und eine Einladung nach Norden. Der Zug kommt an. Den Brief mit der Einladung hat Hale versiegelt, aber nicht in den Umschlag gelegt: Der Umschlag geht leer hinaus und bleibt im Postamt der Bahnstation Ironwood liegen (übergreifender Fund, Auflösung in Akt 3).“
+- Beleg: Bef3:96, Bef1:175; R3-3:421, R3-3:494.
+
+**Zeile 962 (Abschnitt 9.3, Mr. Teague)** · E-A2-11 · Änderung
+
+- alt: „Hütet Postsäcke von 1870, die nie geöffnet wurden.“
+- neu: „Hütet Postsäcke von 1866, die nie geöffnet wurden.“
+- Beleg: Bef2:102; R2-4:27. Widerspruch in der Bibel: Zeile 962 gegen Zeile 1223 („einen ungeöffneten Postsack von 1866“) und Zeile 835.
+
+**Zeilen 1154–1155 (Szene 35, Flashback London)** · E-A2-1 · Änderung
+
+- alt: „Ambrose hält vor Zug 18 an: „Jetzt gibt er den zweiten Turm. Was hättest du getan?““
+- neu: „Zugfolge wie in `klassiker.json`: Läuferzug, Schwarz nimmt den ersten Turm, Bauernzug 19. e5. Dort hält Ambrose an: „Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan?“ Danach nimmt Schwarz den zweiten Turm mit Schach, König vor, Springerschach, Damenopfer, Läufermatt.“
+- Beleg: Bef2:92; R2-2:137–165; DP C2.1. Ob der Halt im Zugerraten vor oder nach 19. e5 liegt, steht unter G4.
+
+**Zeile 1373 (Abschnitt 12, übergreifende Quest 3)** · E-A3-3 · Änderung
+
+- alt: „den Brief, der zum Umschlag gehört (das Siegel passt).“
+- neu: „den Brief, der zum Umschlag gehört (er passt genau hinein; sein Siegel ist Hales eigenes, mit einer anderen Fesselung als das Siegel des Postmeisters am Postsack).“
+- Beleg: Bef3:95; R3-3:417–421, R3-3:497.
+
+**Zeilen 1373–1374 (Abschnitt 12, übergreifende Quest 3)** · E-A3-F3 · Änderung
+
+- alt: „Hale schreibt 1866: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.““
+- neu: „Hale schreibt 1866: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.““
+- Beleg: Bef3:31–32; R3-3:447–448 (Hale siezt; DP D2.8).
+
+**Zeilen 1467–1468 (Abschnitt 16, Kern von Akt 3, Satz 5)** · E-A3-8 · Änderung
+
+- alt: „Ambrose findet seine Nachfahren, die Klavierbauer Whitlock-Duval, die ohne Schach glücklich sind“
+- neu: „Ambrose findet seine Familie, die Klavierbauer Whitlock-Duval (Nachkommen eines Bruders, der die Werkstatt weiterführte), die ohne Schach glücklich sind“
+- Beleg: Bef3:100; R3-2:631 („Ein Bruder von irgendwem.“).
+
+**Zeile 1479 (Abschnitt 17, Zeitlinie 1852)** · E-A3-6, E-A3-8 · Nachtrag
+
+- alt: „Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor (Flashback, Szene 66).“
+- neu: „Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor, auf dem Brett, das er gerade gebaut hat; die Buchstaben „A. W. 1857“ brennt er erst fünf Jahre später ein (Flashback, Szene 66). Die Werkstatt führt später ein Bruder weiter.“
+- Beleg: Bef3:98, Bef3:100; R3-2:430–431, R3-2:445.
+
+**Zeile 1480 (Abschnitt 17, Zeitlinie 1866)** · E-A3-2, E-A3-4, E-A1-14, E-A3-F3 · Änderung
+
+- alt: „Hale schreibt aus dem Westen: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose bricht auf und stirbt unterwegs; der Brief erreicht ihn nie (Umschlag in Ironwood, Brief in Desert Springs).“
+- neu: „Hale schickt aus dem Westen seinen 39. Zug und am selben Tag die Einladung: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Der Zug ist im Winter wochenlang unterwegs; Ambrose bricht aus Ungeduld von sich aus auf und stirbt unterwegs. Die Einladung erreicht ihn nie: Der Umschlag ging leer hinaus (Ironwood), den versiegelten Brief fand Hale zu spät auf seinem Tisch und öffnete ihn nie (Nachlass in Desert Springs).“
+- Beleg: Bef1:175, Bef3:94, Bef3:96; R3-3:214–229, R3-3:438, R3-3:494.
+
+**Zeile 1496 (Abschnitt 18.1, Ambrose)** · E-A2-6 · Änderung
+
+- alt: „Erst jetzt spricht er über 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter).“
+- neu: „Erst jetzt, am Felsbogen (Szene 73), erzählt er von 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter); in Akt 2 fielen nur Splitter („elf Tage“, „nicht angekommen“).“
+- Beleg: Bef2:97; R2-1:63–64, R2-4:77–78, R3-3:204.
+
+**Zeilen 1606–1607 (Abschnitt 18.4, Dot)** · E-A3-F6 · Nachtrag
+
+- alt: „spielt seit fünfzig Jahren Fernschach per Post und hat Briefe aus aller Welt.“
+- neu: „spielt seit fünfzig Jahren Fernschach per Post und hat Briefe aus aller Welt; vierzig Jahre lang war die alte Mrs. Whitlock aus Maple Falls ihre Gegnerin.“
+- Beleg: Bef3:37; R3-3:314–317.
+
+**Zeilen 1804–1805 (Szene 63, Der Vorwurf)** · E-A3-F1 · Nachtrag
+
+- alt: „Beim Regionalturnier gewinnt {held} eine Partie mit einem Zug, den Remy für „unmöglich“ hält.“
+- neu: „Beim Regionalturnier gewinnt {held} gegen Remy mit einem Zug, den Remy für „unmöglich“ hält. Der Zug stammt von ZERO: Ambrose hat ihn auf dem Tablet gesehen und weitergegeben, ohne ihn zu verstehen.“
+- Beleg: Bef3:24–26; R3-2:150–163, R3-2:216–218.
+
+**Zeilen 1808–1809 (Szene 63, Der Vorwurf)** · E-A3-F1 · Änderung
+
+- alt: „{held} entscheidet: „Dann spiele ich ohne dich.““
+- neu: „{held} begreift, dass der Zug nicht der eigene war („Das war ihr Zug.“), entscheidet: „Dann spiele ich ohne dich.“, gibt die Partie gegen Remy auf und legt das Brett am Schiedsrichtertisch ab.“
+- Beleg: R3-2:216–236. Folge für „{held} kann nichts beweisen“ (Zeile 1807) und den Verbleib des Bretts: siehe G4.
+
+**Zeilen 1833–1834 (Szene 66, Flashback Werkstatt, Teil 2)** · E-A3-6 · Nachtrag
+
+- alt: „Ambrose, 21, zurück aus London, spielt Vater und der kleinen Schwester Claire den Anfang der „Unsterblichen Partie“ vor:“
+- neu: „Ambrose, 21, zurück aus London, spielt Vater und der kleinen Schwester Claire auf dem Brett, das er gerade gebaut hat (Rand noch leer, „A. W. 1857“ kommt fünf Jahre später), den Anfang der „Unsterblichen Partie“ vor:“
+- Beleg: R3-2:430–431, R3-2:445, R3-2:475.
+
+**Zeile 1837 (Szene 66, Schluss)** · E-A3-8 · Nachtrag
+
+- alt: „„Claire. Sie hat das Brett geerbt. Deshalb bist du hier.““
+- neu: „„Claire. Sie hat das Brett geerbt. Deshalb bist du hier.“ (Claire heiratete nach Norden; das Brett ging von ihr an ihre Tochter und deren Tochter, bis zur alten Mrs. Whitlock.)“
+- Beleg: R3-2:462–467.
+
+**Zeile 1851 (Szene 68, Titel)** · E-A3-8 · Änderung
+
+- alt: „**68. Die Nachfahren**“
+- neu: „**68. Die Familie**“
+- Beleg: Bef3:100. Die Kennungen `akt3.nachfahren` und `portDelacroix.nachfahren` (Zeilen 1851, 1981) stehen unter G4.
+
+**Zeilen 1853–1854 (Szene 68, das Foto)** · E-A3-8 · Nachtrag
+
+- alt: „„ein Vorfahr, keiner weiß mehr, wer““
+- neu: „„Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem.““
+- Beleg: R3-2:631.
+
+**Zeilen 1900–1901 (Szene 73, Die Versöhnung)** · E-A3-2 · Änderung
+
+- alt: „Hale hatte geschrieben, er solle kommen; er brach auf, wurde unterwegs krank und kam nie an.“
+- neu: „Hales 39. Zug blieb im Winter wochenlang aus; Ambrose hielt das Warten nicht aus, brach von sich aus nach Norden auf, wurde unterwegs krank und kam nie an. Hales Einladung hat ihn nie erreicht.“
+- Beleg: Bef3:94; R3-3:213–229. Widerspruch in der Bibel: Zeilen 1900–1901 gegen Zeile 1480 („der Brief erreicht ihn nie“).
+
+**Zeilen 1922–1924 (Szene 76, Der Brief)** · E-A3-3, E-A3-4 · Änderung
+
+- alt: „In einer Kiste liegt ein Bündel Briefe; einer ist mit einem Siegel verschlossen, auf dem dieselbe Stellung geprägt ist wie auf dem Umschlag aus Ironwood“
+- neu: „In einer Kiste liegen Ambroses Briefe, nach Jahren gebündelt; unter dem Bündel 1866 liegt ein einzelnes, nie geöffnetes Blatt mit Hales eigenem Siegel. Darin ist eine andere, schwerere Fesselung geprägt als im Siegel des Postmeisters am Postsack von Ironwood (Fernspieler drückten einander Aufgaben ins Wachs). Hale hatte den Brief versiegelt und vergessen, ihn in den Umschlag zu legen“
+- Beleg: Bef3:95–96; R3-3:403–421. Widerspruch in der Bibel: Zeilen 1923–1924 („wie auf dem Umschlag aus Ironwood“) gegen Zeile 1223 („auf dem Wachssiegel“ des Postsacks) und Zeile 1226 („Der Umschlag ist leer“); DP D2.5.
+
+**Zeilen 1924–1925 (Szene 76, Der Brief)** · E-A3-3 · Änderung
+
+- alt: „Wer den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Das Siegel passt.“
+- neu: „Wer den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Der Brief passt genau hinein.“
+- Beleg: R3-3:497.
+
+**Zeilen 1925–1926 (Szene 76, Wortlaut des Briefs)** · E-A3-F3, E-A1-14 · Änderung
+
+- alt: „Der Brief, 1866, von Josiah Hale: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett. Ich warte.““
+- neu: „Der Brief, 1866, von Josiah Hale (Wortlaut: Roman Kapitel 44): Sein 39. Zug sei unterwegs; für das Wort von 1859 schäme er sich; „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Schluss: „Ich warte.““
+- Beleg: Bef3:31–32; R3-3:436–453.
+
+**Zeile 1928 (Szene 76, Wirkung)** · E-A3-5, E-A1-14 · Änderung
+
+- alt: „Fragment 7 (die letzten Züge, die Hale vorschlug)“
+- neu: „Fragment 7 (vier Züge, 29 bis 32, auf der Rückseite des Briefs, zur Kontrolle der Stellung)“
+- Beleg: Bef3:97, Bef1:175; R3-3:493; DP D2.1. Widerspruch in der Bibel: Zeile 1928 gegen Zeile 2643 (Fragment 7 = Züge 29–32) und Zeile 2627 (letzter Zug 40. Kxg3).
+
+**Zeilen 2009–2010 (Abschnitt 21, übergreifende Quest 1)** · E-A3-3 · Änderung
+
+- alt: „Das Siegel passt, Hale hat auf Ambrose gewartet.“
+- neu: „Der Brief passt in den Umschlag, Hale hat auf Ambrose gewartet.“
+- Beleg: wie Zeilen 1924–1925.
+
+**Zeile 2108 (Abschnitt 26, Zeitlinie 1866)** · E-A1-14 (bestätigt durch E-A3-1) · Nachtrag
+
+- alt: „Ambrose schreibt in einer Bergbausiedlung (später Ghost Town) bei Kerzenlicht seinen letzten Zug auf und schickt ihn ab; er erreicht Hale nach seinem Tod.“
+- neu: „Hales 39. Zug erreicht Ambrose, nachgeschickt, in einer Bergbausiedlung (später Ghost Town). Dort schreibt er bei Kerzenlicht seinen letzten Zug (40. Kxg3) auf und schickt ihn ab; er erreicht Hale nach seinem Tod.“
+- Beleg: Bef1:175 („der Zug kommt an“); R3-3:227–229; R4-3:192. Szene 99 (Zeilen 2379–2383) bleibt, wie sie ist.
+
+**Zeilen 2133–2134 (Abschnitt 27.1, Graham Hale)** · E-A4-6 · Nachtrag
+
+- alt: „Er erfährt bei der Meisterschaft, dass im Konzern geschummelt wurde, und stellt sich danach öffentlich hinter seinen Sohn.“
+- neu: „Er hat ZERO gebaut, für das Training, und wusste nichts vom Missbrauch. Er erfährt bei der Meisterschaft, dass im Konzern geschummelt wurde, und stellt sich danach öffentlich hinter seinen Sohn.“
+- Beleg: Bef4:39–40; R4-4:301–302.
+
+**Zeilen 2141–2142 (Abschnitt 27.1, Dr. Lin)** · E-A4-8 · Änderung
+
+- alt: „und verliert ihre Stelle bei Perfect Move; sie gründet danach einen Club ohne Bildschirme (Ausblick im Abspann).“
+- neu: „Sie hat schon vor der Meisterschaft bei Perfect Move gekündigt und gründet einen Kellerclub ohne Bildschirme (im Epilog zu sehen).“
+- Beleg: Bef4:42; R4-2:174–175, R4-4:1106.
+
+**Zeile 2144 (Abschnitt 27.1, Mama, Juno, Coach Delgado)** · E-A4-7 · Nachtrag
+
+- alt: „**Mama, Juno, Coach Delgado, die Clubchefs.** Alle kommen zur Landesmeisterschaft (Capital Arena):“
+- neu: davor oder danach ein Satz: „Coach Delgado hatte den Vertrag mit Perfect Move im Oktober unterschrieben und im Frühjahr wieder gekündigt, als der Konzern den Clubraum wollte (sie erzählt es in Crossroads).“
+- Beleg: Bef4:41; R4-2:239–243.
+
+**Zeile 2306 (Szene 88, An der Bergstation)** · E-A4-1 · Nachtrag
+
+- alt: „Ambrose (`#pause`): „Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben.““
+- neu: danach ein Satz: „Victor fragt: „Was sagt er?“; {held} sagt es ihm. Von jetzt an weiß Victor von Ambrose (nach Juno der Zweite) und spricht ihn über {held} an.“
+- Beleg: Bef4:29–30; R4-1:591–606.
+
+**Zeilen 2340–2341 (Szene 93, Crossroads)** · E-A4-7 · Nachtrag
+
+- alt: „An der Kreuzung von vier Straßen treffen sich alle: Slick auf dem Weg zur Meisterschaft, Mira mit Tomás, Big Joe als Fahrer des Werksbusses, Rosie mit dem Food-Truck.“
+- neu: derselbe Satz, ergänzt um: „Coach Delgado sagt offen, dass sie den Vertrag mit Perfect Move unterschrieben und wieder gekündigt hat.“
+- Beleg: R4-2:239–243 (Kapitel 53).
+
+**Zeilen 2435–2436 (Szene 105, Die Aussage)** · E-A4-6 · Änderung
+
+- alt: „der verantwortliche Vertriebschef des Konzerns wird nur als Name genannt und geht.“
+- neu: „der verantwortliche Vertriebschef, Mr. Dorrance, wird nur als Name genannt und tritt nicht auf („nicht mehr im Haus“). Graham Hale: „Ich habe die Engine gebaut. Für das Training.““
+- Beleg: Bef4:39–40; R4-4:289, R4-4:301–302.
+
+**Zeilen 2446–2447 (Szene 106, Halbfinale)** · E-A4-4 · Änderung
+
+- alt: „Wer den Mentor-Zug spielt, sieht Ambroses Zug als goldenen Pfeil und hört: „Das ist meine unsterbliche Partie. Mit dir.““
+- neu: „{held} sieht den Zug (ein Turmopfer) selbst und ruft Ambrose mit dem Mentor-Zug nur, um ihn zu prüfen. Beide wissen es nicht („Ich weiß es nicht.“) und stellen den Turm gemeinsam hin (goldener Pfeil). Danach Ambrose: „Das ist meine unsterbliche Partie. Mit dir.““
+- Beleg: Bef4:35–36; R4-4:426–454, R4-4:553, R4-4:1175. Folge für die Spielmechanik: siehe G4.
+
+**Zeile 2461 (Szene 108, Finale gegen Victor)** · E-A4-5 · Nachtrag
+
+- alt: „Ambrose schweigt. Jeder Ausgang führt weiter:“
+- neu: „Ambrose schweigt. Jeder Ausgang führt weiter, und bei jedem Ausgang freut sich Victor über die Partie und läuft mit dem Formular zu seinem Vater:“
+- Beleg: Bef4:37–38; R4-4:871.
+
+**Zeile 2466 (Szene 109, Abschied)** · E-A4-9 · Nachtrag
+
+- alt: „**109. Abschied** · `akt4.abschied` · Abspann“
+- neu: „**109. Abschied** · `akt4.abschied` · Abspann und Epilog“, dazu am Ende der Szene ein Satz: „Epilog (Herbst, Dachboden in Maple Falls): Lily kommt herauf, {held} zeigt ihr die erste Lektion; letzter Satz des Spiels: „Was hängt?“ Dr. Lins Kellerclub ist im Epilog zu sehen.“
+- Beleg: Bef4:42–43; R4-4:1106–1150, R4-4:1185.
+
+**Zeile 2554 (Abschnitt 33, Frage 3)** · E-A4-6 · Nachtrag
+
+- alt: „ein namentlich genannter Vertriebschef, der geht;“
+- neu: „ein namentlich genannter Vertriebschef (Mr. Dorrance, tritt nicht auf), der geht;“
+- Beleg: Bef4:39–40.
+
+### G3 Keine Änderung nötig
+
+- **E-A1-3 (Stellung auf dem Brett):** Die Bibel legt sie in Abschnitt 35 fest (Zeilen 2653–2656); der Roman wurde angepasst.
+- **E-A1-4 (Abernathys Zettel):** Szene 7 (Zeile 404, „Partiefragment 0“) und Abschnitt 35 (Zeile 2636) stimmen; der Roman wurde angepasst.
+- **E-A1-6 (Kindheit):** Zeilen 31, 83, 1477 und 2058–2060 nennen Port Delacroix und den Klavierbauer; der Roman wurde angepasst.
+- **E-A1-9 (Kartons):** Betrifft die Umzugskartons im Roman (R1-1:20, R1-1:142). Die Bibel nennt nur die Kiste „Whitlock – nicht wegwerfen“ (Zeilen 353–354) und die Archivkartons nach Jahrzehnten (Zeilen 564–566); beides bleibt.
+- **E-A1-12 (Fingerzeig):** Szene 2 (Zeilen 359–360) vergibt die Karte vor der Partie; das gilt.
+- **E-A2-2 (Spieß):** Die Bibel spricht durchgehend vom Spieß und vom Läufer (Zeilen 836, 855, 859, 1241–1242); die genaue Aufstellung (Dame vorn, Turm dahinter) steht nur im Roman (R2-4:171–172) und widerspricht nichts.
+- **E-A2-3 (Oma Ruth):** Zeilen 956–957 („hat {held} seit dem Umzug nicht gesehen“) geben der Entscheidung recht; „Mamas Zimmer war immer zu“ (R2-3:258) verträgt sich mit Zeile 957 („Hält Mamas altes Zimmer unverändert“).
+- **E-A2-4 (Mattbilder-Satz):** Zeilen 552–553 geben den Satz Ambrose.
+- **E-A2-7 (Tische):** Die Bibel nennt keine Zahlen (Zeilen 1076, 1170); „das letzte Marmorbrett“ verträgt sich mit vier Steintischen.
+- **E-A2-8 (Noor Haddad):** Die Bibel kennt nur „Graffiti mit Schachfiguren“ (Zeile 1019); die Figur steht in `14_Akt2_Leben_teil1.md`.
+- **E-A2-9 (Lage):** Zeile 877 („Wohnwagen am Fluss“), Zeile 956 („Reihenhaus in der Elm Street“) und Zeilen 1306 und 1311 (Brücke an der Schnellstraße, Nieten „J. H.“) widersprechen den Ortsdokumenten nicht.
+- **E-A2-10 (Fragmente 2 bis 4):** Zeilen 1157, 1285, 1364–1368 und 2638–2640 bleiben.
+- **E-A2-12 (Big Joes Satz):** Die Bibel hat den Satz „das war ihr Fehler von damals“ nur in Szene 43 (Zeile 1249), nicht nach dem Clubkampf; in Szene 48 steht nur Mamas „Grundreihe. Immer die Grundreihe.“ (Zeile 1293). Zur Fassung von Szene 43 siehe G4 (RO6).
+- **E-A3-1 (letzter Zug):** Szene 99 (Zeilen 2380–2381) und Zeile 2108 gelten; der Roman wurde angepasst.
+- **E-A3-9 („Josiah“, „Ur-ur-ur“):** Zeilen 783–785, 2123 und 2306 setzen beides in Akt 4; der Roman wurde angepasst.
+- **E-A3-10 (Erinnerung 1858):** Szene 77 (Zeilen 1932–1938) bleibt; Miras Satz „Das gewinnt. Nicht gleich.“ (R3-3:597) steht im Roman neben ihrem Bibel-Satz „Das Opfer war richtig!“ (R3-3:589).
+- **E-A3-11 (Randnotiz):** Betrifft nur eine Randnotiz des Romans.
+- **E-A4-2 (letzter Zug 40. Kxg3):** Zeilen 2616 und 2627 stimmen.
+- **E-A4-3 (Fernpartie remis):** Szene 100 lässt Sieg oder Remis zu (Zeilen 2392–2393); Ambroses Schlusssatz (Zeile 2394) ist derselbe.
+- **E-A3-F2:** Deckungsgleich mit E-A1-1; die Stellen stehen dort (Zeilen 86–87, 575–576).
+
+### G4 Offen
+
+1. **Zeile 734 (Abschnitt 5.3), E-A1-5 und DP A1.17:** „Über 1866 spricht er in Akt 1 gar nicht.“ Der Roman lässt Ambrose am Steg von der Fernpartie sprechen („Per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen.“, R1-4:356), und E-A1-5 legt genau diesen Satz fest. Ob die Bibel angeglichen wird (etwa: „Über die Reise und seinen Tod 1866 spricht er in Akt 1 nicht; die Fernpartie nennt er am Steg, ohne Zahl“), ist in Bef1 Abschnitt 7 nicht ausdrücklich entschieden. Dann wäre auch Szene 25 (Zeilen 631–634) zu ergänzen.
+2. **Zeilen 537–538 (Szene 14), E-A1-7:** „der Coach sagt, die Clubchefin sei „eine Legende, die niemand kennt““. Der Coach kommt jetzt erst am Samstag; DP A3 meldet, dass der Satz entfällt. Es fehlt die Entscheidung, ob er gestrichen oder nach Maple Falls (vor den Aufbruch) verlegt wird.
+3. **Zeile 529 und Zeile 642 (Zeitrechnung Akt 1), E-A1-7:** „Etwa 3 Minuten“ für Szene 13 und „etwa 50“ für Dialoge und Laufen rechnen ohne Fußweg und Nacht im Lesesaal. Die neuen Minuten stehen in Bef1 Abschnitt 1, nicht in Abschnitt 7; welche Zahl in die Bibel kommt, ist nicht entschieden.
+4. **Zeilen 624–626 und 672 (Mentor-Zug in Akt 1):** Bef1:118–119 (Abschnitt 4, nicht Abschnitt 7): „Die Karte Mentor-Zug wird erst nach dem Clubkampf vergeben, weil Ambrose sich in der Partie zurückhält.“ Szene 24 vergibt sie „beim ersten Sieg“ mit dem Spruch „Lass mich. Nur dieses eine Mal.“; im Roman fällt „Lass mich“ in der Partie (R1-4:245). Die Bibel widerspricht sich hier zusätzlich selbst: Zeile 672 („erste Clubnadel Maple Falls und Cedar Creek“) gegen Zeilen 795–796 („als Belohnung für Club 2, aber erst dort“). Keine Entscheidung in Abschnitt 7.
+5. **Zeilen 108–111 und 698–699 (Buchverweise), E-A1-13:** Die Entscheidung vom 10.11.2026 (`docs/spiel/ENTSCHEIDUNGEN.md`:862–876: keine Verweise auf das Buch in Dialogen) trifft auch die Bibel: „Er verweist auf das Buch nur als „ein Buch, das ich gern geschrieben hätte“, mit Abschnitt“ und „Buchverweise nur als Kapitel und Abschnitt, höchstens einer je Gespräch“. E-A1-13 nennt nur die Ink-Datei; ob diese beiden Regeln jetzt mit angeglichen werden, ist nicht Teil der Roman-Entscheidungen.
+6. **Zeilen 1154–1155 (Szene 35), E-A2-1:** Die Entscheidung sagt „Bauernzug (hier hält Ambrose an)“; im Roman ist der Bauernzug schon gespielt, wenn Ambrose fragt (R2-2:141–144). Für das Zugerraten mit Weiß muss der Halt vor einem weißen Zug liegen. Offen: vor 19. e5 (dann errät man den Bauernzug) oder vor 20. Ke2.
+7. **Zeilen 1248–1251 (Szene 43, zwei Fassungen), Bef2:80–83 und RO6:** Der Roman wählt eine Fassung (Mama sieht den Läufer selbst, gleich wer gewinnt); die Bibel hat zwei je nach Ausgang, darunter „Du hast mich mit einem Spieß erwischt“ und Big Joes Satz. Die Frage steht als RO6 beim Autor (Empfehlung: Fassung des Romans); in Abschnitt 7 nicht entschieden. Wird sie angeglichen, fällt Big Joes Satz in Zeile 1249 weg (E-A2-12).
+8. **Zeile 849 (Abschnitt 9.1, Ambrose), E-A3-F5:** „{held} merkt es; Juno auch.“ Nach E-A3-F5 weiß Juno erst seit Dezember von Ambrose (R3-1:14); in Akt 2 kann sie also nicht merken, was Ambrose sagt, nur dass {held} still ist (so Zeilen 1156–1157). Vorschlag wäre „{held} merkt es; Juno merkt nur, dass {held} still wird.“ Dazu fehlt in der Bibel jede Stelle, die sagt, seit wann Juno es weiß (Szene 51a, Zeilen 1715–1716, setzt es voraus). Wo der Nachtrag hingehört (Abschnitt 18.1 oder Szene 51), ist nicht festgelegt.
+9. **Zeilen 1807–1811 und 1855 (Brett und Geigenkasten), E-A3-7 und E-A3-F1:** E-A3-7 setzt voraus, dass das Brett ab Szene 63 im Geigenkasten bei Miss Odile auf dem Schiedsrichtertisch liegt (R3-2:234–236, R3-3:162). Die Bibel kennt keinen Geigenkasten; Szene 68 hat „das alte Brett in {held}s Rucksack“. Die Verlegung ist in DP D5 als gemeldete Änderung bestätigt, in Abschnitt 7 aber nicht eigens entschieden. Ebenso offen: ob „{held} kann nichts beweisen“ (Zeile 1807) bleibt, wenn {held} die Partie aufgibt.
+10. **E-A3-8, der Bruder:** Weder die Entscheidung noch der Roman nennt den Bruder beim Namen oder zeigt ihn; im Flashback 1852 sind nur Vater und Claire da (Zeilen 1479, 1834; R3-2:426–455). Ob er älter oder jünger ist und ob er in Szene 66 vorkommen soll, fehlt. Die Vorschläge in G2 sagen deshalb nur „ein Bruder“.
+11. **E-A3-8, der Name Whitlock:** Wenn das Brett über Claires Töchter ging, erklärt nichts, warum die letzte Besitzerin „Mrs. Whitlock“ heißt (DP D1.6). Die Entscheidung löst das nicht; Zeilen 39–40 bleiben insoweit lückenhaft.
+12. **Kennungen `akt3.nachfahren`, `portDelacroix.nachfahren` (Zeilen 1851, 1861, 1981):** Wenn die Whitlock-Duvals keine Nachfahren sind, passt der Name der Kennung nicht mehr. Ob Kennungen umbenannt werden (Daten und Ink hängen daran), muss der Hauptchat sagen; in G2 ist nur der Szenentitel vorgeschlagen.
+13. **Zeilen 2443–2449 und 2539 (Halbfinale, Mechanik), E-A4-4:** Die Bibel beschreibt den Mentor-Zug als Karte, die Ambroses Zug zeigt. „Der Held findet den Zug selbst“ ist im Spiel nur wahr, wenn der Leser den Zug selbst findet. Offen ist, wie das Spiel das abbildet (Bef4, T26, nennt nur die Karte mit goldenem Rand); der Vorschlag in G2 beschreibt nur die Erzählung.
+14. **Zeilen 2466–2475 (Abschied, Extra-Abspann), E-A4-9:** Der Extra-Abspann spielt schon auf dem Dachboden (Zettel von A. W.). Wie Epilog mit Lily und Extra-Abspann zusammen laufen (Reihenfolge, ob der Zettel im Epilog liegt), ist nicht festgelegt. Ebenso bleibt Zeile 2481–2482 (Dr. Lins Club im Post-Game) neben dem Epilog stehen.
+15. **Zeile 2110 (Zeitlinie „um 1990“):** „Die Seite liegt in einem Schachbuch von Victors Großvater; Graham Hale hält sie für wertlos.“ Im Roman hat der Großvater das Buch Victor gegeben, und der Vater weiß nichts davon (R4-1:544–545). Keine Entscheidung dazu; nur als Abweichung vermerkt.
+
+### G5 Nicht geprüft
+
+- **Bibel:** vollständig gelesen (Zeilen 1 bis 2662), dazu Stichwortsuche zu jeder Entscheidung. Nicht noch einmal Zeile für Zeile gegen den Roman gelesen wurden die Stellen der Bibel, zu denen es keine Entscheidung gibt; Abweichungen des Romans, die in den Befund-Dateien nur als „Neu“ gemeldet sind (etwa Szene 35 „am Abend nach Szene 29“, Szene 39a „zweiter Besuch“, Lupe nach dem „dritten Sieg“, Victors „Das ist falsch.“, Halfpipe, Nachlass „an seine Söhne“), stehen deshalb nicht in G2.
+- **Roman:** nur die Stellen gelesen, aus denen ein neuer Wortlaut kommt (per Suche und Umfeld), nicht alle vier Akte. Besonders Akt 4 ist nur an den Stellen zu den neun Festlegungen gelesen; die Listen „Neu gegenüber der Story-Bibel“ am Ende von `akt4_teil1.md` bis `akt4_teil3.md` habe ich nicht durchgesehen, von `akt4_teil4.md` nur den Schluss (Zeilen 1160–1190).
+- **Akt 4 hat keinen Abschnitt mit Entscheidungen des Gutachters** (die Datei endet mit Abschnitt 6); eine Prüfung von Akt 4 gegen die Bibel wie in DP Teil A, C, D gibt es nicht. Weitere Widersprüche zwischen Akt 4 und der Bibel sind also möglich und hier nicht erfasst.
+- **E-A3-F4 (Leitsatz 1 nur am Felsbogen):** nicht geprüft, weil der Leitsatz in `19_Ton_und_Spannungsbogen.md` steht, das ich nicht gelesen habe. Aufgefallen ist nur, dass R4-4:1183 sagt, der Leitsatz falle im Abschied „zum zweiten und letzten Mal“, und dass die Bibel den Satz in Szene 73 (Zeilen 1897–1899) und Szene 109 (Zeilen 2469–2470) hat.
+- **`22_Dialogpruefung.md`:** gelesen sind Kurzfassung, die Tabelle „Vor dem Umschreiben zu entscheiden“, Teil A ganz, Teil C ganz, Teil D ganz. Teil B (Spieldialoge je Szene, Zeilen 553–1475) nicht; die Verweise „B1, Übergreifend 8“ und „B2, Übergreifend 1“ (Clubraum, Prospekt, Fingerzeig, Weg) habe ich nicht nachgeschlagen, sondern in der Bibel selbst gesucht („erster Stock“, „Prospekt“, „Raum 12“, „Zedernpfad“, „Lesesaal“: jeweils kein Treffer).
+- **Andere Dokumente**, die dieselben Angaben tragen und mit angeglichen werden müssten (`12_Akt1_Leben.md`, `13_Wegenetz.md`, `14_Akt2_Leben_*.md`, `19_Ton_und_Spannungsbogen.md`, `20_Ortsblaetter.md`, `orte/*.md`, Ink-Dateien, `quests.json`): nicht geprüft; der Auftrag galt nur der Bibel.
+- **Schach:** Die Zugfolge der Unsterblichen (E-A2-1) habe ich nicht in `klassiker.json` nachgeschlagen, sondern aus DP C2.1 übernommen; die Fernpartie in Abschnitt 35 nicht am Brett nachgespielt.
+- **Zählung:** Die Einteilung in „Änderung“ und „Nachtrag“ ist meine Einschätzung; bei Zeilen 86–87, 1804–1805 und 2461 kann man sie auch anders sehen.

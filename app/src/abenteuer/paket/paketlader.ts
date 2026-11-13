@@ -152,7 +152,9 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   const verzeichnis = await verzeichnisVomServer();
   const speicher = await caches.open(cachename(verzeichnis.version));
   let geladen = 0;
-  await jeGleichzeitig(verzeichnis.dateien, GLEICHZEITIG, (datei) =>
+  // Ton der Akte 2 bis 4 gehört nicht dazu (paket/aktton.ts lädt ihn beim Betreten des Akts).
+  const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined);
+  await jeGleichzeitig(grundpaket, GLEICHZEITIG, (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       geladen += bytes;
       fortschritt(Math.min(geladen, verzeichnis.bytes), verzeichnis.bytes);
@@ -168,6 +170,44 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   // Der Code-Baustein liegt beim Service Worker; ohne ihn (Entwicklung) ist nichts zu tun.
   await ladeSprachpaket(PAKET_ABENTEUER);
   melde();
+}
+
+/**
+ * Lädt Dateien eines geladenen Pakets in dessen Cache nach (Ton eines späteren Akts). Ohne
+ * geladenes Paket nichts. Ausgabe: true, wenn alle Dateien da sind. Wirft bei Netzfehlern.
+ */
+export async function ladeNach(
+  waehle: (datei: Paketverzeichnis["dateien"][number]) => boolean,
+  fortschritt: Ladefortschritt,
+): Promise<boolean> {
+  const geladen = await geladenesVerzeichnis();
+  if (!geladen) return false;
+  const auswahl = geladen.verzeichnis.dateien.filter(waehle);
+  const gesamt = auswahl.reduce((summe, d) => summe + d.bytes, 0);
+  const speicher = await caches.open(geladen.name);
+  let bisher = 0;
+  await jeGleichzeitig(auswahl, GLEICHZEITIG, (datei) =>
+    ladeDatei(speicher, datei, (bytes) => {
+      bisher += bytes;
+      fortschritt(Math.min(bisher, gesamt), gesamt);
+    }),
+  );
+  fortschritt(gesamt, gesamt);
+  return true;
+}
+
+/** Die Dateien des geladenen Pakets, die noch nicht im Cache liegen (nach Auswahl). */
+export async function fehlendeDateien(
+  waehle: (datei: Paketverzeichnis["dateien"][number]) => boolean,
+): Promise<Paketverzeichnis["dateien"]> {
+  const geladen = await geladenesVerzeichnis();
+  if (!geladen) return [];
+  const speicher = await caches.open(geladen.name);
+  const fehlend: Paketverzeichnis["dateien"][number][] = [];
+  for (const datei of geladen.verzeichnis.dateien.filter(waehle)) {
+    if (!(await speicher.match(adresse(datei.pfad)))) fehlend.push(datei);
+  }
+  return fehlend;
 }
 
 /** Löscht alle Versionen des Pakets; der Spielstand bleibt in den Nutzerdaten. */

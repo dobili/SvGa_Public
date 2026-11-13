@@ -11,6 +11,7 @@ import { useRef } from "react";
 import { buehnenanweisung } from "./buehne";
 import { blendeFigur } from "./figurblende";
 import { szeneAus, type Oberweltkern } from "./kern";
+import { zeigeKartenteilchen, zeigeTeilchen } from "./teilchen";
 
 /** Rückrufe für den Dialog. */
 export interface Buehne {
@@ -24,6 +25,7 @@ export interface Buehne {
 export function useBuehne(k: Oberweltkern): Buehne {
   // Hat der Dialog das Licht verändert? Nur dann wird es am Ende zurückgestellt.
   const lichtGeaendert = useRef(false);
+  const teilchenGeaendert = useRef(false);
   return {
     zeile: (tags) => {
       const szene = szeneAus(k.spiel);
@@ -33,12 +35,19 @@ export function useBuehne(k: Oberweltkern): Buehne {
         szene.setzeToenung(anweisung.licht);
         lichtGeaendert.current = true;
       }
+      if (anweisung.teilchen !== undefined) {
+        zeigeTeilchen(szene, anweisung.teilchen);
+        teilchenGeaendert.current = true;
+      }
       if (anweisung.figur) blendeFigur(szene, anweisung.figur.name, anweisung.figur.deckkraft);
     },
     ende: () => {
+      const szene = szeneAus(k.spiel);
+      if (teilchenGeaendert.current && szene) zeigeKartenteilchen(szene);
+      teilchenGeaendert.current = false;
       if (!lichtGeaendert.current) return;
       lichtGeaendert.current = false;
-      szeneAus(k.spiel)?.setzeToenung(k.toenung);
+      szene?.setzeToenung(k.toenung);
     },
   };
 }

@@ -42,9 +42,23 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `#figur:<objektname>:aus|halb|ein` blendet eine Figur der Karte in einer Sekunde (nur bis zum
   Verlassen der Karte; ausgeblendet sperrt sie den Weg nicht). `#erscheint` blendet das Porträt in
   zwei Sekunden ein, `#geist` zeigt es halb durchsichtig.
+- Teilchen (T8): `teilchen` je Karte in `orte.json` (`staub` im Lichtstreifen, `sternschnuppen`,
+  `nebel`; Winterkarten haben Schnee). `#teilchen:staub` wechselt sie bis zum Dialogende,
+  `#teilchen:aus` nimmt sie weg. Auf dem Handy höchstens 40 Teilchen.
+- Erinnerung (T10): `#erinnerung` an einer Zeile zeigt den Dialog im Sepia-Rahmen und die Karte in
+  Sepia, bis `#erinnerung:aus` oder bis der Dialog endet.
 - Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
   `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
-  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung.
+  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung. Große Porträts (64 × 64 oder 96 × 96) liegen
+  im privaten Repository unter `portraets/gross/<name>[-<fassung>].webp` (oder `.png`) und gehen
+  vor; das SVG bleibt Rückfall.
+- Tondateien: Die Kennung wird zum Dateinamen (camelCase → kebab-case, ein Punkt bleibt:
+  `ambrose.lassMich` → `musik/ambrose.lass-mich.m4a`). Im privaten Repository liegt der Ton von
+  Akt 1 direkt in `musik/` und `klang/` (Grundpaket), der Ton der Akte 2 bis 4 in `musik/akt2/` …
+  `klang/akt4/`; das Spiel lädt ihn beim Betreten des Akts nach, das Spielmenü bietet „Musik der
+  späteren Akte jetzt laden“. Kurze Motive erzeugt der Browser selbst, ohne Datei: `#klang:aha`,
+  `konzern`, `hale`, `aufgabe`, `fehler`, `atme`, `kerzenton` und `blindschach.<feld>` (ein Ton je
+  Feld: Linie = Stufe, Reihe = Lage). Eine Datei gleichen Namens wird dann nicht gebraucht.
 - Bild (T7): `#bild:kennung` zeigt `bilder/<kennung>.webp` (privater Ordner `bilder/`, höchstens
   1024 Pixel breit) groß über der Zeile; „Weiter“ schließt es mit der Zeile. Fehlt die Datei,
   erscheint die Zeile ohne Bild.
@@ -52,7 +66,8 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
   `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,
   `oeffneLaden(kennung)`, `reise(karte, ausloeser)`, `beginneGedaechtnis(kennung)`,
-  `beginneSimultan(kennung)`, `zeigeVorfuehrung(kennung)`, `setzeToenung(name)`, `zeigeAbspann()`
+  `beginneSimultan(kennung)`, `zeigeVorfuehrung(kennung)`, `setzeToenung(name)`, `zeigeAbspann()`, `zeigeFensterbank()` (alle Funde des Helden, T15), `schreibeTagebuch(name)` (eine Seite im Tagebuch mit Schreibanimation, Text
+  `tagebuch.eintrag.<name>`, Roman Kap. 9)
   und `zahle(muenzen)`. `zahle` zieht einen festen Preis ab (Lastkahn: 5 Münzen); reicht das Geld
   nicht, geschieht nichts. Deshalb fragt der Dialog vorher die Variable `muenzen` ab
   (`VAR muenzen = 0`, beim Öffnen aus dem Spielstand gesetzt) und sagt sonst „nicht genug“.
@@ -91,6 +106,11 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   Wahlen über dem Brett; die Uhr des Helden steht, solange er offen ist. Variablen gehen in den
   Spielstand, Oberwelt-Funktionen (Karten, Reisen, Läden) wirken hier nicht, und Quests hören die
   Knoten nicht. Der Dialog führt keinen Zug aus.
+- Rückfall für seltene Merkmale: `koeder` und `turmopfer` kommen nicht in jeder Partie vor. Soll
+  der Moment sicher kommen, folgt ein zweiter Eintrag mit demselben `dialog` und nur `abZug`
+  (etwa 20). Weil jeder Moment höchstens einmal kommt und der Dialog seine Variable setzt
+  (`clubkampfZaehlGesagt`), fragt der Knoten am Anfang die Variable ab und endet sofort, wenn er
+  schon lief; ein Knoten ohne Zeile schließt den Dialog ohne Anzeige.
 - Lösen mehrere Momente zugleich aus, spricht der erste der Liste; die anderen sind verbraucht.
 - `text` steht in `texte/<sprache>.json`, der Name kommt aus `figur.<sprecher>.name`; `klang` und
   `musik` wirken wie die Dialogtags.

@@ -7,7 +7,7 @@
  * (app/blattstapel.ts). Sprecher „erzaehler“ hat keinen Namen. Eine Zeile mit `#pause` sperrt
  * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3); `#bild:kennung` zeigt ein Bild groß über der
  * Zeile (dialog/Grossansicht.tsx, T7). `#erscheint` blendet das Porträt ein, `#geist` zeigt es halb
- * durchsichtig (T9); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
+ * durchsichtig (T9); `#erinnerung` bis `#erinnerung:aus` zeigt den Dialog und die Karte in Sepia (T10); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useEffect, useState } from "react";
@@ -21,6 +21,15 @@ import { Portraet } from "./Portraet";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
 
 const ERZAEHLER = "erzaehler";
+
+/**
+ * Erinnerung (T10): `#erinnerung` schaltet den Sepia-Rahmen ein, `#erinnerung:aus` aus; eine Zeile
+ * ohne die Marke ändert nichts. Beispiel: Ambrose erzählt von 1858.
+ */
+function erinnerungNach(vorher: boolean, s: Dialogschritt): boolean {
+  if (s.art !== "zeile" || s.zeile.tags.erinnerung === undefined) return vorher;
+  return s.zeile.tags.erinnerung !== "aus";
+}
 
 /** Erscheinung des Porträts (T9): einblenden (`#erscheint`) oder halb durchsichtig (`#geist`). */
 function erscheinung(tags: Readonly<Record<string, string>> | undefined): string | undefined {
@@ -64,6 +73,7 @@ export function Dialog({
   // weiter), aufgehoben von der Uhr; jede neue Zeile startet sie neu.
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
   const [wartet, setzeWartet] = useState(() => dauerVon(schritt) > 0);
+  const [erinnerung, setzeErinnerung] = useState(() => erinnerungNach(false, schritt));
   useEffect(() => {
     // Musik, Geräusche und Klänge der Zeile (#musik, #geraeusch, #klang; ton/tonregie.ts).
     if (letzteZeile?.art === "zeile") {
@@ -101,6 +111,7 @@ export function Dialog({
     setzeSchritt(naechster);
     if (naechster.art === "zeile") {
       setzeWartet(dauerVon(naechster) > 0);
+      setzeErinnerung((vorher) => erinnerungNach(vorher, naechster));
       setzeLetzteZeile(naechster);
     }
   };
@@ -121,7 +132,7 @@ export function Dialog({
   const bild = zeile ? bildpfad(zeile.tags) : null;
   return (
     <section
-      className="abenteuer-dialog"
+      className={erinnerung ? "abenteuer-dialog abenteuer-dialog-erinnerung" : "abenteuer-dialog"}
       role="dialog"
       aria-live="polite"
       data-testid="abenteuer-dialog"

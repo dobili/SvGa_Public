@@ -586,3 +586,68 @@ body.abenteuer-mit-kulisse {
     opacity: 1;
   }
 }
+
+/* Fensterbank mit den Funden (Atmosphäre T15, oberwelt/Fensterbank.tsx). */
+.abenteuer-fensterbank ul {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.abenteuer-fensterbank li + li {
+  margin-top: calc(var(--raster) * 0.75);
+}
+
+/* Tagebuchseite mit Schreibanimation (Roman Kap. 9, oberwelt/Tagebuchseite.tsx): Handschrift ohne
+   Webschrift, damit das Paket nicht wächst. */
+.abenteuer-handschrift {
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-style: italic;
+}
+
+.abenteuer-tagebuchseite .abenteuer-handschrift {
+  min-height: 3em;
+  font-size: 1.4rem;
+}
+
+.abenteuer-feder {
+  display: inline-block;
+  width: 0.15em;
+  height: 1em;
+  margin-left: 0.05em;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: abenteuer-feder 0.8s steps(2) infinite;
+}
+
+@keyframes abenteuer-feder {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Erinnerung im Dialog (Atmosphäre T10, `#erinnerung`): Sepia-Rahmen wie ein altes Foto, und die
+   Karte dahinter in Sepia, solange die Erinnerung dauert. */
+.abenteuer-dialog.abenteuer-dialog-erinnerung {
+  border: 3px double #8a6a3f;
+  background: rgba(74, 56, 34, 0.95);
+  color: #f3e6cc;
+}
+
+.abenteuer-dialog-erinnerung .abenteuer-dialog-portraet {
+  filter: sepia(0.85);
+}
+
+.abenteuer-welt:has(.abenteuer-dialog-erinnerung) canvas {
+  filter: sepia(0.85) contrast(0.95) brightness(1.05);
+  transition: filter 1s ease;
+}
+
+/* Große Porträts (64 × 64 oder 96 × 96, dialog/Portraet.tsx): 96 Pixel, scharfe Pixel. */
+.abenteuer-dialog-portraet.abenteuer-portraet-gross {
+  width: 96px;
+  height: 96px;
+}

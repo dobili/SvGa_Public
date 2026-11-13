@@ -25,6 +25,7 @@ import { leererAbenteuerstand } from "../regeln/spielstand";
 import type { Abenteuermodul } from "../schnittstelle/modul";
 import type { Paketzustand } from "../schnittstelle/paket";
 import { useAbenteuerton } from "../ton/useAbenteuerton";
+import { useAktton } from "../paket/aktton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
 import { Tonregler } from "./Tonregler";
 
@@ -217,6 +218,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const [neuerName, setzeNeuenNamen] = useState("");
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
   useAbenteuerton();
+  // Ton der Akte 2 bis 4 beim Betreten des Akts nachladen (Grundpaket: Akt 1).
+  useAktton(stand?.handlung.akt);
 
   /** Ein eingegebener Name, bereinigt; leer → „Du“. */
   const bereinigt = (name: string) =>

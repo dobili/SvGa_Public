@@ -162,6 +162,11 @@ export interface Abenteuerstand {
   readonly gegenstaende: readonly string[];
   /** Gefundene Dinge (docs/spiel/08, E1): Kennung aus funde.json und Zeitpunkt (ISO). */
   readonly funde: readonly { readonly kennung: string; readonly gefunden: string }[];
+  /**
+   * Eigene Seiten im Tagebuch (Roman Kap. 9, „Ich will besser werden.“): Name des Eintrags
+   * (Text tagebuch.eintrag.<name>) und Zeitpunkt (ISO). Fehlt bei älteren Spielständen.
+   */
+  readonly eintraege?: readonly { readonly name: string; readonly geschrieben: string }[];
   /** Orte, die der Held schon betreten hat (W2: Schnellreise erst nach dem ersten Fußweg). */
   readonly besuchteOrte: readonly string[];
   readonly fragmente: Fragmente;

@@ -2,404 +2,193 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (eine Öffnung mit Ablage, durch die man in die helle Küche sieht), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Davor die lange rote Bar: Die Gäste sitzen auf vier roten Hockern an ihrer Nordseite, mit dem Rücken zur Küchenwand; das Personal steht südlich hinter der Bar und geht am Ostende an der Durchreiche vorbei zur Küchentür. Auf der Bar steht die Kaffeemaschine, zum Personal gedreht. Am Westende der Bar die alte Kassentheke, daneben auf der Bar der Stapel ungelöster Tischsets mit Schachaufgaben (Roman Kap. 7). Hinter der Bar steht Hector, der Besitzer, mit Blick zu den Gästen. Im Eingang liegt ein rot gemusterter Teppich. Links unten zwei Sitznischen mit runden Tischen zwischen gepolsterten roten Bänken mit hoher Lehne, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und in der Mitte eine Reihe von vier Arbeitstischen aus Edelstahl, auf dem ersten Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür über den Teppich nach oben, rechts zu den Hockern an der Bar, links zu den Nischen und zu den Toiletten. Die Türen zu Küche und Toiletten sind wandhohe Innentüren (R005a). Das Diner ist innen 30 breit; der Autor hat den Raum schon gesehen, deshalb wird nach KARTENREGELN 10.75 das Gebäude außen verlängert (Roman: lang und schmal wie ein Wagen), nicht der Raum verkleinert.",
   "wand": "rot",
   "boden": "fliesenWeiss",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "industrie", "modern"],
+  "beschreibung": "Das Falls Diner an der Birch Lane, lang und schmal wie ein Wagen (Roman Kap. 7), 16 × 13. Das Gebäude außen ist eine Fassade von 8 Kacheln Breite und 6 Dachreihen; nach KARTENREGELN 10.75 darf der Raum höchstens doppelt so breit und zweieinhalbmal so tief sein. Rote Wände, weiße Fliesen. An der Nordwand links die Tür zur Toilette (nur angedeutet), die Pinnwand mit gelösten Tischsets, die Durchreiche zur kleinen Küche, das Foto von der Eröffnung der Schule und zwei Bilder. Davor die lange rote Theke: links die alte Kasse, daneben auf der Theke der Stapel ungelöster Tischsets und die Kaffeemaschine, zum Personal gedreht. Die Gäste sitzen auf drei roten Hockern an der Nordseite der Theke; dahinter, auf der Südseite, steht Hector, der Besitzer, und die Kellnerin geht dort hin und her (R004). Rechts zwei Sitznischen mit runden Tischen zwischen roten Polsterbänken, in der Ecke ein Spielautomat, links unten eine Palme. Unten rechts die Glastür mit Fußmatte. Laufwege: von der Tür nach oben zu den Nischen und um die Theke herum zu den Hockern.",
   "raster": [
-    "##############################",
-    "##############################",
-    "##############################",
-    "#..#..#.....#...........#....#",
-    "#..#..#.....#...........#....#",
-    "#..#..#.....#................#",
-    "#..#..#.....#...........#....#",
-    "##.#.##.....###############.##",
-    "##.#.##.....###############.##",
-    "##.#.##.....###############.##",
-    "#............................#",
-    "#............................#",
-    "#............................#",
-    "#............................#",
-    "#............................#",
-    "#######.######################"
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "###########.####"
   ],
   "objekte": [
     {
-      "moebel": "wzTeppich",
-      "feld": [6, 12]
-    },
-    {
-      "moebel": "mf8Spielautomat",
-      "feld": [7, 1]
-    },
-    {
-      "moebel": "mf8SpielautomatZwei",
-      "feld": [8, 1]
-    },
-    {
-      "moebel": "mf8BildTeller",
-      "feld": [10, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "mf8BildPflanze",
-      "feld": [11, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [9, 5],
-      "id": "nw"
-    },
-    {
-      "moebel": "mf12NischenbankRechts",
-      "feld": [8, 5],
-      "zu": "nw"
-    },
-    {
-      "moebel": "mf12NischenbankLinks",
-      "feld": [11, 5],
-      "zu": "nw"
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [11, 2]
+      "moebel": "mf12InnentuerHolz",
+      "feld": [1, 0],
+      "an_wand": true
     },
     {
       "moebel": "mf4Pinnwand",
-      "feld": [13, 8],
+      "feld": [2, 1],
       "an_wand": true,
-      "versatz": [0, 3]
-    },
-    {
-      "moebel": "wzBild",
-      "feld": [20, 8],
-      "an_wand": true,
-      "versatz": [0, 3]
+      "versatz": [0, 4]
     },
     {
       "moebel": "mf12Durchreiche",
-      "feld": [22, 8],
+      "feld": [4, 1],
       "an_wand": true
     },
     {
-      "moebel": "mf12InnentuerGlas",
-      "feld": [27, 7],
-      "an_wand": true
+      "moebel": "wzBild",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
     },
     {
-      "moebel": "mf12InnentuerHolz",
-      "feld": [2, 7],
-      "an_wand": true
+      "moebel": "mf8BildTeller",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
     },
     {
-      "moebel": "mf12InnentuerHolz",
-      "feld": [4, 7],
-      "an_wand": true
+      "moebel": "mf8BildPflanze",
+      "feld": [13, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [7, 5]
     },
     {
       "moebel": "mf5Kassentheke",
-      "feld": [12, 11],
-      "id": "kasse"
+      "feld": [1, 6]
     },
     {
       "moebel": "mf5ThekeLinks",
-      "feld": [14, 11],
+      "feld": [3, 6],
       "id": "t0",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [16, 11],
-      "id": "t16",
+      "feld": [5, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [17, 11],
-      "id": "t17",
+      "feld": [6, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [18, 11],
-      "id": "t18",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [19, 11],
-      "id": "t19",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [20, 11],
-      "id": "t20",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [21, 11],
-      "id": "t21",
+      "feld": [7, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeRechts",
-      "feld": [22, 11],
-      "id": "tr",
+      "feld": [8, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5Kaffeemaschine",
-      "feld": [0, 0],
-      "auf": "t0",
-      "versatz": [4, 0]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [15, 10]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [17, 10]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [19, 10]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [21, 10]
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [2, 10],
-      "id": "n1"
-    },
-    {
-      "moebel": "mf12NischenbankRechts",
-      "feld": [1, 10],
-      "zu": "n1"
-    },
-    {
-      "moebel": "mf12NischenbankLinks",
-      "feld": [4, 10],
-      "zu": "n1"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [2, 12],
-      "id": "n2"
-    },
-    {
-      "moebel": "mf12NischenbankRechts",
-      "feld": [1, 12],
-      "zu": "n2"
-    },
-    {
-      "moebel": "mf12NischenbankLinks",
-      "feld": [4, 12],
-      "zu": "n2"
-    },
-    {
-      "moebel": "mf4Palme",
-      "feld": [27, 12]
-    },
-    {
-      "moebel": "mf4Fussmatte",
-      "feld": [7, 14],
-      "versatz": [0, 2]
-    },
-    {
-      "moebel": "sb8GlastuerSued",
-      "feld": [7, 15],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf5Kuehlschrank",
-      "feld": [13, 1]
-    },
-    {
-      "moebel": "mf8KuehlschrankWeiss",
-      "feld": [14, 1]
-    },
-    {
-      "moebel": "mf5Gastroherd",
-      "feld": [15, 2]
-    },
-    {
-      "moebel": "mf8Herd",
-      "feld": [16, 2]
-    },
-    {
-      "moebel": "mf8HerdOffen",
-      "feld": [17, 2]
-    },
-    {
-      "moebel": "mf5Dunstabzug",
-      "feld": [15, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf5Dunstabzug",
-      "feld": [16, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf5Dunstabzug",
-      "feld": [17, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf5Grillplatte",
-      "feld": [18, 2]
-    },
-    {
-      "moebel": "mf5Fritteuse",
-      "feld": [20, 2]
-    },
-    {
-      "moebel": "mf5Stahltisch",
-      "feld": [22, 2],
-      "id": "spuel"
-    },
-    {
-      "moebel": "mf5Spuele",
-      "feld": [22, 2],
-      "vorn": true,
-      "versatz": [0, 2]
-    },
-    {
-      "moebel": "mf8Zerlegetisch2",
-      "feld": [15, 4],
-      "id": "ins1"
-    },
-    {
-      "moebel": "mf8Zerlegetisch2",
-      "feld": [17, 4],
-      "id": "ins2"
-    },
-    {
-      "moebel": "mf8Zerlegetisch2",
-      "feld": [19, 4],
-      "id": "ins3"
-    },
-    {
-      "moebel": "mf8Zerlegetisch2",
-      "feld": [21, 4],
-      "id": "ins4"
-    },
-    {
-      "moebel": "mf5Brotbrett",
-      "feld": [0, 0],
-      "auf": "ins1",
-      "versatz": [-7, 0]
-    },
-    {
-      "moebel": "mf5Mixer",
-      "feld": [0, 0],
-      "auf": "ins1",
-      "versatz": [7, 0]
-    },
-    {
-      "moebel": "mf9Vorrat99",
-      "feld": [25, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf9Vorrat100",
-      "feld": [26, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf9Vorrat102",
-      "feld": [27, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf9Vorrat105",
-      "feld": [28, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf4Karton",
-      "feld": [25, 5]
-    },
-    {
-      "moebel": "mf4KartonBreit",
-      "feld": [26, 5]
-    },
-    {
-      "moebel": "mf4KartonStapel",
-      "feld": [27, 5]
-    },
-    {
-      "moebel": "mf4KartonBreit",
-      "feld": [28, 5]
-    },
-    {
-      "moebel": "mf5Toilette",
-      "feld": [1, 1]
-    },
-    {
-      "moebel": "mf5Handwaschbecken",
-      "feld": [2, 5]
-    },
-    {
-      "moebel": "mf5Toilette",
-      "feld": [5, 1]
-    },
-    {
-      "moebel": "mf5Handwaschbecken",
-      "feld": [4, 5]
+      "auf": "t0"
     },
     {
       "moebel": "mf12Tischsets",
       "auf": "t0",
       "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf12NischenbankRechts",
+      "feld": [10, 4]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "mf12NischenbankLinks",
+      "feld": [13, 4]
+    },
+    {
+      "moebel": "mf12NischenbankRechts",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "mf12NischenbankLinks",
+      "feld": [13, 7]
+    },
+    {
+      "moebel": "mf8Spielautomat",
+      "feld": [14, 3]
+    },
+    {
+      "moebel": "mf4Palme",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [11, 11],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "sb8GlastuerSued",
+      "feld": [11, 12],
+      "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [7, 13],
+      "feld": [11, 11],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "dinerAusgang",
-      "feld": [7, 15]
+      "feld": [11, 12]
     }
   ],
   "figuren": [
     {
       "name": "hector",
-      "feld": [20, 14]
+      "feld": [5, 9]
     }
   ],
   "belebung": [
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [18, 14],
+      "feld": [3, 9],
       "eigenschaften": {
-        "tun": "geht hinter der Bar hin und her und schenkt Kaffee nach",
+        "tun": "geht hinter der Theke hin und her und schenkt Kaffee nach",
         "wann": "tag",
         "sagt": "statist.mapleFalls.diner.kellnerin",
-        "von": "15,14",
-        "bis": "23,14"
+        "von": "1,9",
+        "bis": "8,9"
       }
     },
     {
       "name": "lkwFahrer",
       "typ": "statist",
-      "feld": [17, 11],
+      "feld": [9, 5],
       "eigenschaften": {
-        "tun": "sitzt am Tresen und isst Pfannkuchen",
+        "tun": "isst Pfannkuchen am Ende der Theke",
         "wann": "tag",
         "sagt": "statist.mapleFalls.diner.lkwFahrer",
         "verhalten": "sitzen"
@@ -408,15 +197,13 @@
     {
       "name": "rentnerinnen",
       "typ": "statist",
-      "feld": [21, 11],
+      "feld": [12, 6],
       "eigenschaften": {
-        "tun": "teilen sich ein Stück Apfelkuchen",
+        "tun": "teilen sich ein Stück Apfelkuchen in der Nische",
         "wann": "tag",
         "sagt": "statist.mapleFalls.diner.rentnerinnen",
         "verhalten": "sitzen"
       }
     }
-  ],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "industrie", "modern"]
+  ]
 }

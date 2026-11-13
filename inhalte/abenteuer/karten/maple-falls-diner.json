@@ -6,19 +6,19 @@
  "type": "map",
  "version": "1.10",
  "infinite": false,
- "width": 30,
- "height": 16,
+ "width": 16,
+ "height": 13,
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 76,
+ "nextobjectid": 34,
  "layers": [
   {
    "id": 1,
    "name": "boden",
    "type": "tilelayer",
-   "width": 30,
-   "height": 16,
+   "width": 16,
+   "height": 13,
    "x": 0,
    "y": 0,
    "opacity": 1,
@@ -73,93 +73,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    1,
-    0,
-    1,
-    1,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    1,
-    1,
     1,
     1,
-    0,
-    0,
-    1,
-    1,
-    0,
-    1,
-    1,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -168,29 +83,12 @@
     1,
     1,
     1,
-    0,
-    1,
-    1,
-    1,
     1,
-    0,
-    0,
     1,
-    1,
-    0,
     1,
     1,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -203,71 +101,23 @@
     1,
     1,
     1,
-    0,
-    0,
-    1,
-    1,
-    0,
-    1,
-    1,
-    0,
     1,
     1,
-    1,
-    1,
-    1,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     1,
     1,
     1,
     1,
-    0,
-    0,
-    0,
     1,
-    0,
     1,
-    0,
-    0,
     1,
     1,
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
-    0,
-    0,
-    0,
-    0,
     1,
-    0,
     1,
     0,
     0,
@@ -276,53 +126,15 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
-    0,
-    0,
-    0,
-    0,
     1,
-    0,
     1,
-    0,
-    0,
     1,
     1,
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
-    0,
     0,
     0,
     1,
@@ -339,25 +151,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -372,25 +167,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -405,25 +183,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -438,25 +199,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -471,20 +215,7 @@
     1,
     1,
     1,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
-    1,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -496,10 +227,7 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
+    1,
     0,
     0,
     0,
@@ -510,8 +238,8 @@
    "id": 2,
    "name": "waende",
    "type": "tilelayer",
-   "width": 30,
-   "height": 16,
+   "width": 16,
+   "height": 13,
    "x": 0,
    "y": 0,
    "opacity": 1,
@@ -566,93 +294,8 @@
     2,
     2,
     2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    0,
-    0,
-    2,
-    0,
-    0,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    0,
-    0,
     0,
     0,
-    2,
-    2,
-    0,
-    0,
-    2,
-    0,
-    0,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -661,29 +304,12 @@
     0,
     0,
     0,
-    2,
-    0,
-    0,
-    0,
     0,
-    2,
-    2,
     0,
-    0,
-    2,
     0,
     0,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -696,71 +322,23 @@
     0,
     0,
     0,
-    2,
-    2,
-    0,
-    0,
-    2,
-    0,
-    0,
-    2,
     0,
     0,
-    0,
-    0,
-    0,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
     0,
-    2,
     0,
-    2,
-    2,
     0,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
-    2,
-    2,
-    2,
-    2,
     0,
-    2,
     0,
     2,
     2,
@@ -769,53 +347,15 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
-    2,
-    2,
-    2,
-    2,
     0,
-    2,
     0,
-    2,
-    2,
     0,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
-    2,
     2,
     2,
     0,
@@ -832,25 +372,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -865,25 +388,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -898,25 +404,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -931,25 +420,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -964,20 +436,7 @@
     0,
     0,
     0,
-    0,
-    0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     2,
-    0,
-    2,
-    2,
-    2,
     2,
     2,
     2,
@@ -989,10 +448,7 @@
     2,
     2,
     2,
-    2,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
@@ -1003,285 +459,13 @@
    "id": 3,
    "name": "objekte",
    "type": "tilelayer",
-   "width": 30,
-   "height": 16,
+   "width": 16,
+   "height": 13,
    "x": 0,
    "y": 0,
    "opacity": 1,
    "visible": true,
    "data": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -1506,8 +690,8 @@
      "id": 1,
      "name": "start",
      "type": "ausloeser",
-     "x": 112,
-     "y": 208,
+     "x": 176,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1524,8 +708,8 @@
      "id": 2,
      "name": "dinerAusgang",
      "type": "ausloeser",
-     "x": 112,
-     "y": 240,
+     "x": 176,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1535,8 +719,8 @@
      "id": 3,
      "name": "hector",
      "type": "figur",
-     "x": 320,
-     "y": 224,
+     "x": 80,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1546,8 +730,8 @@
      "id": 4,
      "name": "kellnerin",
      "type": "statist",
-     "x": 288,
-     "y": 224,
+     "x": 48,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1556,7 +740,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "geht hinter der Bar hin und her und schenkt Kaffee nach"
+       "value": "geht hinter der Theke hin und her und schenkt Kaffee nach"
       },
       {
        "name": "wann",
@@ -1571,12 +755,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "15,14"
+       "value": "1,9"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "23,14"
+       "value": "8,9"
       }
      ]
     },
@@ -1584,8 +768,8 @@
      "id": 5,
      "name": "lkwFahrer",
      "type": "statist",
-     "x": 272,
-     "y": 176,
+     "x": 144,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1594,7 +778,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "sitzt am Tresen und isst Pfannkuchen"
+       "value": "isst Pfannkuchen am Ende der Theke"
       },
       {
        "name": "wann",
@@ -1617,8 +801,8 @@
      "id": 6,
      "name": "rentnerinnen",
      "type": "statist",
-     "x": 336,
-     "y": 176,
+     "x": 192,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1627,7 +811,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "teilen sich ein Stück Apfelkuchen"
+       "value": "teilen sich ein Stück Apfelkuchen in der Nische"
       },
       {
        "name": "wann",
@@ -1648,11 +832,11 @@
     },
     {
      "id": 7,
-     "name": "wzTeppich",
+     "name": "mf12InnentuerHolz",
      "type": "moebel",
-     "x": 96,
-     "y": 192,
-     "width": 64,
+     "x": 16,
+     "y": 0,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -1660,7 +844,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 0
       },
       {
        "name": "kollision",
@@ -1671,56 +855,56 @@
     },
     {
      "id": 8,
-     "name": "mf8Spielautomat",
+     "name": "mf4Pinnwand",
      "type": "moebel",
-     "x": 112,
-     "y": 16,
-     "width": 16,
-     "height": 48,
+     "x": 32,
+     "y": 20,
+     "width": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 9,
-     "name": "mf8SpielautomatZwei",
+     "name": "mf12Durchreiche",
      "type": "moebel",
-     "x": 128,
+     "x": 64,
      "y": 16,
-     "width": 16,
-     "height": 48,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 10,
-     "name": "mf8BildTeller",
+     "name": "wzBild",
      "type": "moebel",
-     "x": 160,
-     "y": 22,
+     "x": 112,
+     "y": 20,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1740,10 +924,10 @@
     },
     {
      "id": 11,
-     "name": "mf8BildPflanze",
+     "name": "mf8BildTeller",
      "type": "moebel",
      "x": 176,
-     "y": 22,
+     "y": 20,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1763,32 +947,32 @@
     },
     {
      "id": 12,
-     "name": "mf9Rundtisch",
+     "name": "mf8BildPflanze",
      "type": "moebel",
-     "x": 144,
-     "y": 80,
-     "width": 32,
-     "height": 32,
+     "x": 208,
+     "y": 20,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 13,
-     "name": "mf12NischenbankRechts",
+     "name": "mf5Hocker",
      "type": "moebel",
-     "x": 128,
+     "x": 48,
      "y": 80,
      "width": 16,
      "height": 32,
@@ -1809,9 +993,9 @@
     },
     {
      "id": 14,
-     "name": "mf12NischenbankLinks",
+     "name": "mf5Hocker",
      "type": "moebel",
-     "x": 176,
+     "x": 80,
      "y": 80,
      "width": 16,
      "height": 32,
@@ -1832,10 +1016,10 @@
     },
     {
      "id": 15,
-     "name": "wzPflanze",
+     "name": "mf5Hocker",
      "type": "moebel",
-     "x": 176,
-     "y": 32,
+     "x": 112,
+     "y": 80,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1844,7 +1028,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 104
       },
       {
        "name": "kollision",
@@ -1855,57 +1039,149 @@
     },
     {
      "id": 16,
-     "name": "mf4Pinnwand",
+     "name": "mf5Kassentheke",
      "type": "moebel",
-     "x": 208,
-     "y": 131,
+     "x": 16,
+     "y": 96,
      "width": 32,
-     "height": 16,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 17,
-     "name": "wzBild",
+     "name": "mf5ThekeLinks",
      "type": "moebel",
-     "x": 320,
-     "y": 131,
-     "width": 16,
-     "height": 16,
+     "x": 48,
+     "y": 96,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 18,
-     "name": "mf12Durchreiche",
+     "name": "mf5ThekeMitte",
      "type": "moebel",
-     "x": 352,
-     "y": 128,
-     "width": 32,
+     "x": 80,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "mf5ThekeMitte",
+     "type": "moebel",
+     "x": 96,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "mf5ThekeMitte",
+     "type": "moebel",
+     "x": 112,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "mf5ThekeRechts",
+     "type": "moebel",
+     "x": 128,
+     "y": 96,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "mf5Kaffeemaschine",
+     "type": "moebel",
+     "x": 56,
+     "y": 92,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1913,145 +1189,53 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 137
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": false
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "mf12InnentuerGlas",
-     "type": "moebel",
-     "x": 432,
-     "y": 112,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "mf12InnentuerHolz",
-     "type": "moebel",
-     "x": 32,
-     "y": 112,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "mf12InnentuerHolz",
-     "type": "moebel",
-     "x": 64,
-     "y": 112,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 22,
-     "name": "mf5Kassentheke",
-     "type": "moebel",
-     "x": 192,
-     "y": 176,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
       }
      ]
     },
     {
      "id": 23,
-     "name": "mf5ThekeLinks",
+     "name": "mf12Tischsets",
      "type": "moebel",
-     "x": 224,
-     "y": 176,
-     "width": 32,
-     "height": 48,
+     "x": 51,
+     "y": 110,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 137
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 24,
-     "name": "mf5ThekeMitte",
+     "name": "mf12NischenbankRechts",
      "type": "moebel",
-     "x": 256,
-     "y": 176,
+     "x": 160,
+     "y": 64,
      "width": 16,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2062,19 +1246,19 @@
     },
     {
      "id": 25,
-     "name": "mf5ThekeMitte",
+     "name": "mf9Rundtisch",
      "type": "moebel",
-     "x": 272,
-     "y": 176,
-     "width": 16,
-     "height": 48,
+     "x": 176,
+     "y": 64,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2085,19 +1269,19 @@
     },
     {
      "id": 26,
-     "name": "mf5ThekeMitte",
+     "name": "mf12NischenbankLinks",
      "type": "moebel",
-     "x": 288,
-     "y": 176,
+     "x": 208,
+     "y": 64,
      "width": 16,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2108,19 +1292,19 @@
     },
     {
      "id": 27,
-     "name": "mf5ThekeMitte",
+     "name": "mf12NischenbankRechts",
      "type": "moebel",
-     "x": 304,
-     "y": 176,
+     "x": 160,
+     "y": 112,
      "width": 16,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2131,19 +1315,19 @@
     },
     {
      "id": 28,
-     "name": "mf5ThekeMitte",
+     "name": "mf9Rundtisch",
      "type": "moebel",
-     "x": 320,
-     "y": 176,
-     "width": 16,
-     "height": 48,
+     "x": 176,
+     "y": 112,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2154,19 +1338,19 @@
     },
     {
      "id": 29,
-     "name": "mf5ThekeMitte",
+     "name": "mf12NischenbankLinks",
      "type": "moebel",
-     "x": 336,
-     "y": 176,
+     "x": 208,
+     "y": 112,
      "width": 16,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2177,10 +1361,10 @@
     },
     {
      "id": 30,
-     "name": "mf5ThekeRechts",
+     "name": "mf8Spielautomat",
      "type": "moebel",
-     "x": 352,
-     "y": 176,
+     "x": 224,
+     "y": 48,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -2189,7 +1373,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2200,11 +1384,11 @@
     },
     {
      "id": 31,
-     "name": "mf5Kaffeemaschine",
+     "name": "mf4Palme",
      "type": "moebel",
-     "x": 236,
-     "y": 172,
-     "width": 16,
+     "x": 16,
+     "y": 160,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2212,274 +1396,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 217
+       "value": 184
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 32,
-     "name": "mf5Hocker",
-     "type": "moebel",
-     "x": 240,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 33,
-     "name": "mf5Hocker",
-     "type": "moebel",
-     "x": 272,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 34,
-     "name": "mf5Hocker",
-     "type": "moebel",
-     "x": 304,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "mf5Hocker",
-     "type": "moebel",
-     "x": 336,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "mf9Rundtisch",
-     "type": "moebel",
-     "x": 32,
-     "y": 160,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "mf12NischenbankRechts",
-     "type": "moebel",
-     "x": 16,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "mf12NischenbankLinks",
-     "type": "moebel",
-     "x": 64,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "mf9Rundtisch",
-     "type": "moebel",
-     "x": 32,
-     "y": 192,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "mf12NischenbankRechts",
-     "type": "moebel",
-     "x": 16,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "mf12NischenbankLinks",
-     "type": "moebel",
-     "x": 64,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "mf4Palme",
-     "type": "moebel",
-     "x": 432,
-     "y": 192,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
      "name": "mf4Fussmatte",
      "type": "moebel",
-     "x": 112,
-     "y": 226,
+     "x": 176,
+     "y": 179,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2498,11 +1429,11 @@
      ]
     },
     {
-     "id": 44,
+     "id": 33,
      "name": "sb8GlastuerSued",
      "type": "moebel",
-     "x": 112,
-     "y": 240,
+     "x": 176,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2512,719 +1443,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 45,
-     "name": "mf5Kuehlschrank",
-     "type": "moebel",
-     "x": 208,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 46,
-     "name": "mf8KuehlschrankWeiss",
-     "type": "moebel",
-     "x": 224,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 47,
-     "name": "mf5Gastroherd",
-     "type": "moebel",
-     "x": 240,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 48,
-     "name": "mf8Herd",
-     "type": "moebel",
-     "x": 256,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 49,
-     "name": "mf8HerdOffen",
-     "type": "moebel",
-     "x": 272,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 50,
-     "name": "mf5Dunstabzug",
-     "type": "moebel",
-     "x": 240,
-     "y": 16,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 51,
-     "name": "mf5Dunstabzug",
-     "type": "moebel",
-     "x": 256,
-     "y": 16,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 52,
-     "name": "mf5Dunstabzug",
-     "type": "moebel",
-     "x": 272,
-     "y": 16,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 53,
-     "name": "mf5Grillplatte",
-     "type": "moebel",
-     "x": 288,
-     "y": 32,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 54,
-     "name": "mf5Fritteuse",
-     "type": "moebel",
-     "x": 320,
-     "y": 32,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "mf5Stahltisch",
-     "type": "moebel",
-     "x": 352,
-     "y": 32,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 56,
-     "name": "mf5Spuele",
-     "type": "moebel",
-     "x": 352,
-     "y": 34,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 42
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 57,
-     "name": "mf8Zerlegetisch2",
-     "type": "moebel",
-     "x": 240,
-     "y": 64,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 58,
-     "name": "mf8Zerlegetisch2",
-     "type": "moebel",
-     "x": 272,
-     "y": 64,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 59,
-     "name": "mf8Zerlegetisch2",
-     "type": "moebel",
-     "x": 304,
-     "y": 64,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 60,
-     "name": "mf8Zerlegetisch2",
-     "type": "moebel",
-     "x": 336,
-     "y": 64,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 61,
-     "name": "mf5Brotbrett",
-     "type": "moebel",
-     "x": 241,
-     "y": 67,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 89
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 62,
-     "name": "mf5Mixer",
-     "type": "moebel",
-     "x": 255,
-     "y": 51,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 89
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 63,
-     "name": "mf9Vorrat99",
-     "type": "moebel",
-     "x": 400,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "mf9Vorrat100",
-     "type": "moebel",
-     "x": 416,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "mf9Vorrat102",
-     "type": "moebel",
-     "x": 432,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "mf9Vorrat105",
-     "type": "moebel",
-     "x": 448,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 67,
-     "name": "mf4Karton",
-     "type": "moebel",
-     "x": 400,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 68,
-     "name": "mf4KartonBreit",
-     "type": "moebel",
-     "x": 416,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 69,
-     "name": "mf4KartonStapel",
-     "type": "moebel",
-     "x": 432,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 70,
-     "name": "mf4KartonBreit",
-     "type": "moebel",
-     "x": 448,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 71,
-     "name": "mf5Toilette",
-     "type": "moebel",
-     "x": 16,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 72,
-     "name": "mf5Handwaschbecken",
-     "type": "moebel",
-     "x": 32,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 73,
-     "name": "mf5Toilette",
-     "type": "moebel",
-     "x": 80,
-     "y": 16,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 74,
-     "name": "mf5Handwaschbecken",
-     "type": "moebel",
-     "x": 64,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 75,
-     "name": "mf12Tischsets",
-     "type": "moebel",
-     "x": 227,
-     "y": 190,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 217
       },
       {
        "name": "kollision",

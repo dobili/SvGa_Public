@@ -2,14 +2,15 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus (als einziges grau und ungestrichen, Roman Kap. 1 und 5), Lilys Haus mit dem schiefen Kreidebrett auf dem Gehweg davor (Roman Kap. 6) und das Haus der Martínez, an dessen Zaun Carla steht, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway (vor ihrem Haus zwei Stühle, auf einem sitzt sie, der andere ist leer), Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Zwischen den Häusern der Südseite steht statt des flachen Schuppens (R002) ein kleines Haus mit grünem Dach. Stufen der kleinen Geschichten (Figuren mit Bedingung, orte.json): Carla steht bis zum Ende von Akt 1 am Zaun der Martínez, danach am Fenster des Clubraums vor der Schule und nach Akt 2 drinnen im Clubraum; Owen Fisk sitzt ab dem Ende von Akt 1 neben Mrs. Calloway. Bedingte Dinge (wenn): Nach Lilys Lektion (lilyGeholfen) liegt statt des einfachen Kreidebretts die Fassung mit dazugemalten Springerzügen; nach Akt 2 (nadelIronwood > 0) steht zwischen Mrs. Calloways Stühlen ein kleiner Tisch mit Schachbrett (Stufe D).",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus (als einziges grau und ungestrichen, Roman Kap. 1 und 5), Lilys Haus mit dem schiefen Kreidebrett auf dem Gehweg davor (Roman Kap. 6) und das Haus der Martínez, an dessen Zaun Carla steht, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway (vor ihrem Haus zwei Stühle, auf einem sitzt sie, der andere ist leer), Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Zwischen den Häusern der Südseite steht statt des flachen Schuppens (R002) ein kleines Haus mit grünem Dach. Stufen der kleinen Geschichten (Figuren mit Bedingung, orte.json): Carla steht bis zum Ende von Akt 1 am Zaun der Martínez, danach am Fenster des Clubraums vor der Schule und nach Akt 2 drinnen im Clubraum; Owen Fisk sitzt ab dem Ende von Akt 1 neben Mrs. Calloway. Bedingte Dinge (wenn): Nach Lilys Lektion (lilyGeholfen) liegt statt des einfachen Kreidebretts die Fassung mit dazugemalten Springerzügen; nach Akt 2 (nadelIronwood > 0) steht zwischen Mrs. Calloways Stühlen ein kleiner Tisch mit Schachbrett (Stufe D). Kartengutachten Akt 1: Mrs. Calloway sitzt auf einer kleinen Holzterrasse vor ihrem Haus mit zwei Stühlen (Laterne nicht mehr im Stuhl); die beiden flachen Rückansichten sind gegen Häuser mit Walmdach getauscht; die Gasse unten endet an beiden Seiten an einer Hecke; der Maler streicht Lilys Zaun, nicht den des Whitlock-Hauses.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
     "p": "pflaster",
     "s": "asphalt",
     "e": "erde",
-    "d": "sand"
+    "d": "sand",
+    "v": "holzDunkel"
   },
   "raster": [
     "###################################~~~##########################",
@@ -35,15 +36,15 @@
     "#.....................................p........................#",
     "#.....................................p........................#",
     "#.....................................p........................#",
-    "#..pp........pp........pp.......pp....p......pppppppppppp......#",
+    "#..pp........pp........pp......pp.....p......pppppppppppp......#",
     "#.psssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#.psssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
     "#.psssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
     "#.psssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
     "#.psssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#.ppppp...................pp..........................ee.......#",
-    "#.........................pp..........................ee.......#",
-    "#.........................pp..........................ee.......#",
+    "#...vvvv..................pp..........................ee.......#",
+    "#...vvvv..................pp..........................ee.......#",
     "#.........................pp......................dddddd.......#",
     "#.........................pp......................dddddd.......#",
     "#.........................pp......................dddddd.......#",
@@ -84,10 +85,6 @@
     {
       "moebel": "mf4Busch",
       "feld": [21, 8]
-    },
-    {
-      "moebel": "mf4BuschKlein",
-      "feld": [29, 9]
     },
     {
       "moebel": "mf4VillaWhitlock",
@@ -408,7 +405,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [6, 26],
+      "feld": [8, 26],
       "vorn": true
     },
     {
@@ -897,16 +894,16 @@
       "feld": [2, 29]
     },
     {
-      "moebel": "mf11HausHintenBlau",
-      "feld": [3, 32]
+      "moebel": "mf11HausHintenBBlau",
+      "feld": [3, 33]
     },
     {
       "moebel": "mf11HausHintenBRot",
       "feld": [18, 33]
     },
     {
-      "moebel": "mf11HausHintenBraun",
-      "feld": [30, 32]
+      "moebel": "mf11HausHintenBRot",
+      "feld": [30, 33]
     },
     {
       "moebel": "mf11HausHintenBBlau",
@@ -919,11 +916,11 @@
     },
     {
       "moebel": "mf3StuhlDunkelRechts",
-      "feld": [4, 29]
+      "feld": [4, 30]
     },
     {
       "moebel": "mf3StuhlDunkelLinks",
-      "feld": [6, 29]
+      "feld": [6, 30]
     },
     {
       "moebel": "mf12KreidebrettSpringer",
@@ -932,8 +929,16 @@
     },
     {
       "moebel": "mf12SchachtischVeranda",
-      "feld": [5, 29],
+      "feld": [5, 30],
       "wenn": "nadelIronwood > 0"
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 41]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [61, 41]
     }
   ],
   "ausloeser": [
@@ -992,7 +997,7 @@
     },
     {
       "name": "calloway",
-      "feld": [5, 30]
+      "feld": [5, 31]
     },
     {
       "name": "carla",
@@ -1004,7 +1009,7 @@
     },
     {
       "name": "owen",
-      "feld": [4, 31]
+      "feld": [7, 31]
     }
   ],
   "belebung": [
@@ -1132,18 +1137,18 @@
     {
       "name": "joggerin",
       "typ": "statist",
-      "feld": [2, 41],
+      "feld": [3, 41],
       "eigenschaften": {
         "tun": "joggt die Gasse hinter den Gärten entlang",
         "wann": "morgen",
-        "von": "2,41",
+        "von": "3,41",
         "bis": "60,41"
       }
     },
     {
       "name": "maler",
       "typ": "statist",
-      "feld": [9, 24],
+      "feld": [18, 24],
       "eigenschaften": {
         "tun": "streicht den Gartenzaun",
         "wann": "tag"

@@ -368,14 +368,24 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     Der Waldweg nach Riverton. Juno läuft schon ein Stück voraus. #sprecher:erzaehler
     -> END
 }
+// Runde 11 (Roman, Kapitel 17, Szene 26): Oktober; Juno zeigt jeden Tag dasselbe Foto (die Reihe
+// Bildschirmtische, wie im Bus am Ende von Akt 1); Coach Delgado hat eine Sitzung im Schulamt und
+// sieht dabei zum Bildschirm; Mama fragt weniger. Den Baumwitz sagt Ambrose nur hier (nicht mehr bei
+// der Ankunft in Akt 1). Musik: das Klavier von Cedar Creek mit gehendem Bass (Klangplan Akt 2).
 ~ aufbruchRivertonGesehen = true
-Juno hält dir ihr Handy hin. Darauf ein Foto: ein Pavillon im Regen, davor Tische mit Bildschirmen. #sprecher:erzaehler
-Der Parkclub von Riverton muss bis Sonntag raus. Wir müssen da hin, bevor es ihn nicht mehr gibt! #sprecher:juno
-Coach Delgado hat heute Elternabend. Aber deine Mama hat ja gesagt, ich hab sie gefragt. #sprecher:juno #stimmung:froh
-Auf dem Handy eine Nachricht von Mama: „Mit dem Zug zurück, vor dem Dunkelwerden. Hab euch lieb.“ #sprecher:erzaehler
-* [„Dann los. Zu Fuß durch den Wald?“]
-    Zu Fuß! Zurück nehmen wir den Zug. Abenteuer mit Rückfahrkarte. #sprecher:juno
-* [„Was machen wir, wenn wir zu spät sind?“]
+Es ist Oktober geworden. Ihr seid mit dem Bus bis Cedar Creek gefahren und steht am Steg, wo der Bach in den Wald läuft. #sprecher:erzaehler
+Juno hält dir ihr Handy hin. Dasselbe Foto wie im Bus: eine Wiese, eine Reihe Tische mit Bildschirmen. #sprecher:erzaehler
+Sie zeigt es dir jeden Tag. Als könnte es sich ändern, wenn man es oft genug ansieht. #sprecher:erzaehler
+Wir müssen hin. Bevor es weg ist. #sprecher:juno
+* [„Was weg ist?“]
+    Weiß ich nicht. Das, was vorher da war. #sprecher:juno
+* [Nicken]
+- Coach Delgado kann nicht mit. Sitzung im Schulamt. Als sie das sagte, sah sie zum Bildschirm auf ihrem Pult. #sprecher:erzaehler
+Auf dem Handy eine Nachricht von Mama: „Riverton. Mit dem Zug zurück, vor dem Dunkelwerden.“ #sprecher:erzaehler
+Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzaehler
+* [„Dann los. Zu Fuß durch den Wald.“]
+    Zu Fuß! Zurück nehmen wir den Zug. Abenteuer mit Rückfahrkarte. #sprecher:juno #stimmung:froh
+* [„Und wenn wir zu spät sind?“]
     Dann spielen wir wenigstens das letzte Spiel. Das ist auch was. #sprecher:juno
 - Bäume, die älter sind als ich. Endlich jemand in meinem Alter. #sprecher:ambrose #stimmung:lacht
 -> END

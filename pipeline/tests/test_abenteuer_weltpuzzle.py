@@ -64,8 +64,17 @@ def test_ring_der_sich_nicht_schliesst_wird_gemeldet():
     _, befunde = legen(aussen, alle_naehte, [])
     assert len(befunde) == 1 and befunde[0].startswith("Ring schließt nicht")
     # Mit Zwischenstück am kurzen Weg legt der lange Weg fest, der Sprung bleibt klein.
-    frei = [{"karte": "a.kurz", "ausloeser": "ost", "grund": "ungezeichnetes Wegstück"}]
+    frei = [{"karte": "a.kurz", "ausloeser": "ost", "hinweis": "ungezeichnetes Wegstück"}]
     assert legen(aussen, alle_naehte, frei)[1] == []
+
+
+def test_zwischenstueck_mit_festem_sprung_legt_die_karte_versetzt():
+    """Zedernpfad: Der ungezeichnete Aufstieg hebt die Karte um den Sprung an."""
+    aussen = {"a.west": WEST, "a.ost": OST}
+    frei = [{"karte": "a.west", "ausloeser": "ost", "sprung": [3, -5], "hinweis": "Aufstieg"}]
+    inseln, befunde = legen(aussen, naehte(aussen, PAAR), frei)
+    assert inseln == [{"a.west": (0, 0), "a.ost": (7, -6)}]
+    assert befunde == []
 
 
 def test_zu_grosser_sprung_am_zwischenstueck(monkeypatch):
@@ -82,7 +91,7 @@ def test_zu_grosser_sprung_am_zwischenstueck(monkeypatch):
         _uebergang("a.start", "nord", "a.kurz", "sued"),
         _uebergang("a.kurz", "ost", "a.ziel", "west2"),
     ]
-    frei = [{"karte": "a.kurz", "ausloeser": "ost", "grund": "Test"}]
+    frei = [{"karte": "a.kurz", "ausloeser": "ost", "hinweis": "Test"}]
     befunde = legen(aussen, naehte(aussen, liste), frei)[1]
     assert len(befunde) == 1 and befunde[0].startswith("Zwischenstück zu groß")
 

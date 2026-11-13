@@ -11,7 +11,7 @@ Grübelfalle, Großes Maul), Gegenstände Fahrrad und Laterne.
 - **G1 Nie die Zugregeln ändern.** Karten ändern Informationen, Züge, Zeit oder die Startstellung
   (Regelwerk R24). Was auf dem Brett erlaubt ist, bleibt Schach.
 - **G2 Jede Karte lehrt ein Werkzeug des Buches.** Die Hilfe zeigt, was ein guter Spieler sich
-  selbst fragt; wer sie oft spielt, lernt die Frage. Buchbezug steht auf der Karte.
+  selbst fragt; wer sie oft spielt, lernt die Frage. Der Buchbezug steht nur in den Daten, nicht auf der Karte (Entscheidungen vom 10.11. und 13.11.2026: Das Spiel steht für sich).
 - **G3 Gold gibt es nur ohne Karten.** Neue Karten bekommen eine Stufe (leicht, mittel, stark) und
   zählen für die Clubnadel wie die alten; Sprüche nur gegen Straßengegner (10, S2).
 - **G4 Kaufen ersetzt kein Lernen.** Starke Karten (Vorgaben, Mentor-Zug) bleiben unverkäuflich;
@@ -21,16 +21,16 @@ Grübelfalle, Großes Maul), Gegenstände Fahrrad und Laterne.
 
 ## 2. Neue Hilfskarten
 
-| Nr. | Karte               | Stufe  | Wirkung                                                                                                                            | Buch, Werkzeug der App                                      | Woher                     |
-| --- | ------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------- |
-| K1  | **Was droht?**      | leicht | Zeigt als roten Pfeil, was der Gegner spielen würde, wenn er jetzt am Zug wäre (Nullzug der Engine).                               | Kapitel 4 und 12, Frage „Was will der Gegner?“              | Laden, dauerhaft          |
-| K2  | **Abzählen**        | leicht | Ein Feld antippen: Zahl der Angreifer und Verteidiger, grün oder rot.                                                              | Kapitel 1, Zählen von Angreifern und Verteidigern           | Aufgabenrunde Kapitel 1   |
-| K3  | **Waage**           | leicht | Sagt grob, wer besser steht (deutlich Weiß, ausgeglichen, deutlich Schwarz), ohne Zahl und ohne Zug.                               | Kapitel 12, Stellungsbeurteilung                            | Laden                     |
-| K4  | **Schutzengel**     | mittel | Für die nächsten fünf eigenen Züge: Verliert ein Zug Material (zwei Bauern oder mehr), fragt die App einmal „Bist du sicher?“.     | Kapitel 4, Vorsichtsprüfung vor jedem Zug (W1–W7)           | Nebenquest, Verbrauch     |
-| K5  | **Remisangebot**    | mittel | Der Gegner nimmt Remis an, wenn die Stellung etwa ausgeglichen ist (Engine ±0,5); sonst lehnt er ab, die Karte ist trotzdem weg.   | Kapitel 12, Remis als Ergebnis, Stellung ehrlich beurteilen | Laden Riverton, Verbrauch |
-| K6  | **Plan des Buches** | mittel | Nennt ein Merkmal der Stellung aus den Werkzeugen der Kapitel 5 bis 7 (schwacher Bauer, offene Linie, schlechter Läufer) als Satz. | Kapitel 5–7, Werkzeuge der App                              | Clubchef-Sieg (Akt 3)     |
-| K7  | **Spickzettel**     | leicht | Vor der Partie: Der Gegner spielt die Eröffnung aus seinem Steckbrief sicher, und der Leser sieht ihren Namen.                     | Kapitel 11, Eröffnungen; Eröffnungsnamen der App            | Vorbereitungsquest (C7)   |
-| K8  | **Auszeit**         | leicht | Hält die eigene Uhr für einen Zug an (nur mit Uhr).                                                                                | Kapitel 12, Zeiteinteilung                                  | Laden, Verbrauch          |
+| Nr. | Karte               | Stufe  | Wirkung                                                                                                                                                           | Buch, Werkzeug der App                                      | Woher                     |
+| --- | ------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------- |
+| K1  | **Was droht?**      | leicht | Zeigt als roten Pfeil, was der Gegner spielen würde, wenn er jetzt am Zug wäre (Nullzug der Engine).                                                              | Kapitel 4 und 12, Frage „Was will der Gegner?“              | Laden, dauerhaft          |
+| K2  | **Abzählen**        | leicht | Ein Feld antippen: Zahl der Angreifer und Verteidiger, grün oder rot.                                                                                             | Kapitel 1, Zählen von Angreifern und Verteidigern           | Aufgabenrunde Kapitel 1   |
+| K3  | **Waage**           | leicht | Sagt grob, wer besser steht (deutlich Weiß, ausgeglichen, deutlich Schwarz), ohne Zahl und ohne Zug.                                                              | Kapitel 12, Stellungsbeurteilung                            | Laden                     |
+| K4  | **Schutzengel**     | mittel | Für die nächsten fünf eigenen Züge: Verliert ein Zug Material (zwei Bauern oder mehr), hält Ambrose ihn einmal mit einer Zeile auf (Entscheidung vom 13.11.2026). | Kapitel 4, Vorsichtsprüfung vor jedem Zug (W1–W7)           | Nebenquest, Verbrauch     |
+| K5  | **Remisangebot**    | mittel | Der Gegner nimmt Remis an, wenn die Stellung etwa ausgeglichen ist (Engine ±0,5); sonst lehnt er ab, die Karte ist trotzdem weg.                                  | Kapitel 12, Remis als Ergebnis, Stellung ehrlich beurteilen | Laden Riverton, Verbrauch |
+| K6  | **Plan des Buches** | mittel | Nennt ein Merkmal der Stellung aus den Werkzeugen der Kapitel 5 bis 7 (schwacher Bauer, offene Linie, schlechter Läufer) als Satz.                                | Kapitel 5–7, Werkzeuge der App                              | Clubchef-Sieg (Akt 3)     |
+| K7  | **Spickzettel**     | leicht | Vor der Partie: Der Gegner spielt die Eröffnung aus seinem Steckbrief sicher, und der Leser sieht ihren Namen.                                                    | Kapitel 11, Eröffnungen; Eröffnungsnamen der App            | Vorbereitungsquest (C7)   |
+| K8  | **Auszeit**         | leicht | Hält die eigene Uhr für einen Zug an (nur mit Uhr).                                                                                                               | Kapitel 12, Zeiteinteilung                                  | Laden, Verbrauch          |
 
 ## 3. Neue Sprüche (nur gegen Straßengegner)
 
@@ -55,8 +55,7 @@ Grübelfalle, Großes Maul), Gegenstände Fahrrad und Laterne.
 
 Wer in der App ein Kapitel des Buches abschließt (alle Übungen bestanden), bekommt im Abenteuer die
 Karte dieses Kapitels geschenkt: Kapitel 1 → Abzählen, Kapitel 4 → Gefahrenradar, Kapitel 12 →
-Was droht? Ambrose sagt dazu: „Das hast du nicht im Park gelernt, sondern im Buch.“ So lohnt sich das
-Buch im Spiel, ohne dass das Spiel das Buch ersetzt.
+Was droht? Ambrose nennt das Buch dabei nicht (der frühere Satz „… sondern im Buch“ entfällt). **Offen:** Nach der Entscheidung des Autors vom 13.11.2026 (das Spiel steht für sich, nichts schickt den Spieler zum Buch) ist zu klären, ob es die Lernkarten als Brücke zum Buch überhaupt noch gibt.
 
 ## 6. Empfehlung und Reihenfolge
 
@@ -206,7 +205,7 @@ zwei Kandidaten, Zeit, Vorgabe); es braucht keinen neuen Code.
 
 Stufe: L leicht, M mittel, S stark; Art: d dauerhaft, v Verbrauch. Die Werkzeugkarten brauchen nur
 die Stellung (keine Engine, kein Zug), wie es das Schema für Werkzeugkarten verlangt. Bilder folgen
-dem Muster `karten/<name>.webp`; Texte (Name, Spruch, Erklärung mit Buchstelle) in
+dem Muster `karten/<name>.webp`; Texte (Name, Spruch, Erklärung; die Buchstelle nur in den Daten) in
 `inhalte/abenteuer/texte/de.json`.
 
 Ergebnis der Auswertung (Startwerte 1 und 2): Der sparsame Spieler, der jede dauerhafte Karte

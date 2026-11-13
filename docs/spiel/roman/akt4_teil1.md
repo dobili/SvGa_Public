@@ -30,7 +30,7 @@ aussahen und am zweiten wie Berge.
 An einem Diner mit einem Neonschild in Form eines Königs hielten wir zum Tanken. Drinnen
 saßen Fernfahrer an der Theke und schoben Könige über Bretter. Nur Könige. Und Bauern.
 
-„Königsrennen“, sagte einer. Er hieß Earl und hatte Unterarme wie Mr. Kowalczyks Schwester.
+„Königsrennen“, sagte einer. Er hieß Earl und hatte Unterarme wie Big Joe.
 „Wer zuerst hinten ankommt, ohne dass ihm einer Schach gibt, zahlt nicht. Alle anderen zahlen
 dem seinen Kaffee.“
 
@@ -46,7 +46,7 @@ lag, dass die Luft dünner wurde, und dort standen Türme aus Fels. Rot und gera
 dem anderen, als hätte ein Riese sie aufgestellt und wäre dann gegangen. Über ihnen kreisten
 Vögel, viele, auf breiten Schwingen.
 
-An einem Steintisch vor einer kleinen Schule saß ein Mädchen in meinem Alter und baute
+An einem Steintisch vor einer kleinen Schule saß ein Mädchen, zwei Jahre jünger als ich, und baute
 Figuren auf. Es waren Schachfiguren. Aber es waren zwei zu viel.
 
 „Die kennst du nicht“, sagte sie, ohne dass ich gefragt hatte. Sie hielt eine hoch, aus hellem
@@ -194,7 +194,7 @@ Neben mir war Ambrose sehr still geworden.
 „Sie spielt“, sagte er leise, „wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden
 wäre.“
 
-Ich blieb fünf Tage. Jeden Morgen den Pfad hinauf, jeden Abend hinunter.
+Ich blieb sechs Tage. Jeden Morgen den Pfad hinauf, jeden Abend hinunter.
 
 Kit war fünfzehn und die Tochter eines Bergführers. Sie brachte mir bei, Felder zu zählen
 statt Figuren. „Der Bauer läuft, der König rennt. Wer ist schneller? Zähl. Wenn der König in
@@ -253,7 +253,7 @@ Lob verdirbt.“
 „Sie ist unten“, sagte ich. „In der Stadt.“
 
 „Ich weiß. Ich habe sie gestern von der Seilbahn aus gesehen. Sie steckt die Hände noch immer
-in die Ärmel.“ Ward lehnte sich zurück. „Ich werde es ihr sagen. Nach dem Clubkampf. Es ist
+in die Ärmel.“ Ward lehnte sich zurück. „Ich werde es ihr sagen. Bevor ihr fahrt. Es ist
 dreißig Jahre zu spät, aber ich habe gelernt, dass man manche Züge trotzdem noch macht.“
 
 Sie stand auf und holte etwas aus einem Regal. Ein Heft, dünn, abgegriffen, mit einem
@@ -459,7 +459,7 @@ dem Ding geglaubt. Ich hab die Brücke gesehen, und ich hab gedacht: Das kann ni
 das ist zu einfach, das hätte es doch gesagt.“ Er legte die Stirn auf die Knie. „Ich weiß
 nicht mehr, welche Züge meine sind.“
 
-Dasselbe hatte ein Mädchen in einem zu großen Pullover gesagt, in einem kalten Raum voller
+Fast dasselbe hatte ein Mädchen in einem zu großen Pullover gesagt, in einem kalten Raum voller
 grüner Lichter.
 
 „Ich will einmal verlieren dürfen“, sagte Victor in seine Knie. „Einfach so. Ohne dass jemand
@@ -728,7 +728,7 @@ Sie hörte zu. Als ich fertig war, nickte sie.
 
 „Ja.“
 
-„In einem Endspiel.“ Sie schüttelte den Kopf, langsam. Dann, zum zweiten Mal in fünf Tagen,
+„In einem Endspiel.“ Sie schüttelte den Kopf, langsam. Dann, zum zweiten Mal in sechs Tagen,
 lächelte sie. „Ich habe vierzig Jahre geglaubt, im Endspiel gebe es nichts zu hoffen. Nur zu
 wissen. Da siehst du, wie alt man werden kann, ohne fertig zu sein.“
 

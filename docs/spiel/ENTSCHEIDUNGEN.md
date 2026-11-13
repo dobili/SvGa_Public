@@ -928,3 +928,30 @@ dürfen deshalb größer sein. Es gilt die Tabelle in den Kartenregeln 10.75 (kl
 mittel bis 2-fach, groß bis 1,5-fach in der Breite); die 50-Prozent-Regel misst gegen den
 Grundriss mal Faktor. Zu jedem mehrgeschossigen Gebäudebild steht im Katalog, ob Treppe,
 Treppenhaus, Leiter oder Fahrstuhl passt und wo (Feld `aufgang`, Regel 10.76).
+
+## Das Spiel steht für sich; Buchinhalt nur als gesammelte Seiten (13.11.2026)
+
+Wunsch des Autors: Das Spiel soll ganz ohne das Buch funktionieren, weil es später vielleicht
+einzeln erscheint. Deshalb gibt es keinen Knopf „Im Buch nachlesen“ und keine Dialoge, die auf das
+Buch hinweisen oder zum Nachlesen dorthin schicken. Inhalt aus dem Buch darf vorkommen, etwa als
+Buchseiten, die man sammelt und im Spiel liest, solange es zusammen unter 10 % des Buches bleibt
+(bei rund 450 Seiten höchstens 45 Seiten). Das ergänzt die Entscheidung vom 10.11.2026. Folge für
+die Routen-Ereignisse (Dokument 15, Abschnitt 1.2): Der Knopf entfällt, die Erklärung steht
+vollständig im Ereignis; gesammelte Seiten zeigen ihren Inhalt selbst.
+
+## Ton je Akt als eigenes Paket (13.11.2026)
+
+Der Klangplan kommt auf etwa 120 MB. Der Autor ist einverstanden, dass der Ton von Akt 1 mit dem
+Grundpaket kommt und alle weiteren Pakete nachgeladen werden.
+
+## Karte „Schutzengel“: Ambrose hält den Zug auf (13.11.2026)
+
+Die Karte gibt es schon im Plan (K4 in Dokument 11: für die nächsten fünf eigenen Züge fragt die
+App einmal „Bist du sicher?“, wenn ein Zug zwei Bauern oder mehr verliert; Vergabe in Port
+Delacroix, danach im Laden von Desert Springs). Wunsch des Autors: Nicht die App fragt, sondern
+Ambrose springt mit einer Dialogzeile ein und hält den Zug auf („Das spielst du besser nicht.“),
+mit oder ohne kurze Begründung; der Zug wird nicht ausgeführt, der Held zieht neu. Empfehlung des
+Hauptchats, in Arbeit bei mittel-2: Maßstab ist der Verlust an Stellungsbewertung (etwa zwei
+Bauerneinheiten gegenüber dem besten Zug, oder ein übersehenes Matt); als Begründung höchstens die
+Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der bessere Zug; in Partien ohne Ambrose
+(Finale) ist die Karte gesperrt. Dauer und Häufigkeit bleiben wie in Dokument 11.

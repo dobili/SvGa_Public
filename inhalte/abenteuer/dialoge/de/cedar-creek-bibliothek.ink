@@ -27,6 +27,10 @@ VAR reiheMaeBestanden = false
 VAR ausgangCedarCreekClubkampf = ""
 VAR nadelCedarCreek = 0
 VAR clubkampfCedarCreekBesprochen = 0
+VAR teamAngekommen = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
+VAR ambroseNenntNamen = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -41,29 +45,47 @@ VAR clubkampfCedarCreekBesprochen = 0
 }
 
 === okafor_erstes_treffen ===
+// Runde 11 (VC33 bis VC39, Roman Kapitel 11): Mrs. Okafor auf der Leiter, ihre Kennfrage an Juno,
+// das lange Ansehen, „Whitlock.“ mit Stille (Klang: alles setzt aus bis auf die Uhr), die sechs
+// Wörter, „Aha.“ und kein Weiterfragen. Klang: Stille S13 bei „Whitlock“.
 ~ okaforGetroffen = true
-Hohe Regale, grüne Leselampen, vier Bretter an einem langen Tisch. Eine ältere Dame sieht von einem Buch auf. #sprecher:erzaehler
-Das Team aus Maple Falls. Willkommen. Ich bin Grace Okafor. #sprecher:okafor #stimmung:froh
-Ihr Blick bleibt an deinem Rucksack hängen. Am Rand des alten Bretts sieht man eingebrannte Buchstaben: A. W. 1857. #sprecher:erzaehler
-Whitlock. #sprecher:okafor #pause
-* [„Woher kennen Sie den Namen?“]
-    Aus einer Fußnote in einem alten Schachkalender. Unten im Archiv. #sprecher:okafor
-* [„Das Brett lag auf unserem Dachboden.“]
-    Im Whitlock-Haus in Maple Falls? Dann passt es. #sprecher:okafor
-- Was glaubst du denn, warum ein Brett so alt wird? Weil jemand es liebt. #sprecher:okafor
-Sie kennt meinen Namen. Nach hundertsechzig Jahren. #sprecher:ambrose #stimmung:traurig
-Ich weiß nicht, ob ich mich freuen soll. #sprecher:ambrose
-Im Keller hatten wir einen Wasserschaden. Hilfst du mir beim Umräumen, suchen wir den Kalender gemeinsam. #sprecher:okafor
-* [„Klar helfe ich.“]
-    Danke. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
+Hohe Regale, grüne Leselampen, vier Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
+Sie stellt ein Buch zurück und steigt herunter, ohne sich festzuhalten. #sprecher:erzaehler
+{teamAngekommen: Das Team aus Maple Falls. Grace Okafor. #sprecher:okafor|Ihr seid die Vorhut. Grace Okafor. Die Matten liegen im Lesesaal. #sprecher:okafor}
+Juno Martínez. Du hast im Frühjahr gegen Mae deine Dame auf ein Feld gestellt, auf dem ein Springer stand. #sprecher:okafor
+Ich dachte, der gehört mir. #sprecher:juno
+Was glaubst du denn, warum er dort stand? #sprecher:okafor
+* [Juno anstoßen]
+* [Nichts sagen]
+- Dann sieht sie dich an. Dann deinen Rucksack, aus dem eine Ecke des Bretts ragt. Sie sagt lange nichts. #sprecher:erzaehler #pause:2
+Darf ich? #sprecher:okafor
+* [Ihr das Brett geben]
+* [Nicken]
+- Sie hält es ins Licht der grünen Lampe und fährt mit dem Daumen über den Rand. #sprecher:erzaehler
+A. W. Achtzehnhundertsiebenundfünfzig. #sprecher:okafor
+Whitlock. #sprecher:okafor #musik:aus #pause:3
+* [„Sie kennen den Namen?“]
+* [Still bleiben]
+- Er steht in einer Fußnote. In einem alten Schachkalender, unten im Archiv. #sprecher:okafor
+Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor
+Woher hast du das? #sprecher:okafor
+* [„Vom Dachboden. Wir sind in das Haus gezogen.“]
+* [„Es lag in einer Kiste.“]
+- Aha. #sprecher:okafor #musik:karte
+Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab und putzt sie. Sie fragt nicht weiter. #sprecher:erzaehler
+Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor
+Sechs Wörter. #sprecher:ambrose #pause
+Eine Fußnote. #sprecher:ambrose #stimmung:bitter
+{teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach.|Nach dem Spiel morgen gehen wir hinunter und sehen nach.} Oder heute schon, wenn du mir tragen hilfst. #sprecher:okafor
+* [„Ich helfe tragen.“]
+    Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
 * [„Erst will ich spielen.“]
-    Gut so. Erst die Aufgaben von Dex und Mae, dann gegen mich. #sprecher:okafor
-    Der Keller wartet. #sprecher:okafor
+    Erst Dex, dann Mae. Eins nach dem anderen. Der Keller wartet. #sprecher:okafor
 - -> END
 
 === okafor_reihe_offen ===
 {
-- not reiheDexBestanden: Fang bei Dex an, dann kommt Mae. Geduld. Ein Matt ist ein Bild, und Bilder lernt man eins nach dem anderen. #sprecher:okafor
+- not reiheDexBestanden: Fang bei Dex an. Dann Mae. Eins nach dem anderen. #sprecher:okafor
 - else: Dex hast du geschafft. Jetzt Mae. Sie kennt mehr Mattbilder als ich. #sprecher:okafor
 }
 {not archivGeordnet:
@@ -72,13 +94,16 @@ Im Keller hatten wir einen Wasserschaden. Hilfst du mir beim Umräumen, suchen w
 -> END
 
 === okafor_clubkampf ===
-Die Aufgaben sind gelöst. Dann setz dich, {held}. Um die Clubnadel. #sprecher:okafor
-{sternennachtGesehen:
-    Sie gähnt hinter vorgehaltener Hand. Die Sternennacht war lang. #sprecher:erzaehler
-    Verzeih. Eine alte Frau sollte nicht bis Mitternacht Sternschnuppen zählen. #sprecher:okafor
-}
+// Runde 11 (VC86 bis VC88, Roman Kapitel 15): still gespannt, die Uhr zählt mit. Keine Ansage der
+// Falle vor der Partie. Mrs. Okafor nach der Sternennacht in der Fassung „müde“ (gibt es noch
+// nicht). Die Partie spielt cedarCreek.clubkampf; die Momente darin stehen in begegnungen.json.
+In der Bibliothek flüstert man auch beim Schach. Der lange Tisch ist geräumt bis auf ein Brett. #sprecher:erzaehler
+Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem Springer. #sprecher:erzaehler
+{teamAngekommen: Außerhalb des Lichtkreises sitzen sie alle. Der Coach hält die Pfeife in der Faust, damit sie nicht pfeift. #sprecher:erzaehler}
+{sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor}
+Setz dich. #sprecher:okafor
 * [„Ich bin bereit.“]
-    Sie stellt Fallen an der Grundreihe. Zähle, wer deinen König schützt, bevor du angreifst. #sprecher:ambrose
+    Sie wartet. Ich kenne das. Ich habe es nie ausgehalten. #sprecher:ambrose
     -> okafor_partie
 * [„Noch nicht.“]
     Geduld ist auch ein Zug. #sprecher:okafor
@@ -89,30 +114,37 @@ Die Aufgaben sind gelöst. Dann setz dich, {held}. Um die Clubnadel. #sprecher:o
 -> END
 
 === okafor_nach_sieg ===
+// Runde 11 (VC91, VC92, Roman Kapitel 15): Ambrose schweigt nach der Partie („Er sagt nichts.
+// Aber er ist da.“); die Karte Mentor-Zug vergibt die Quest ohne Kommentar; zum Steg schickt Juno.
+// Klang: Stille S24 (zwölf Uhrschläge), dann die Fanfare.
 ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
 {ausgangCedarCreekClubkampf == "remis":
-    Remis. Das war knapp. #sprecher:okafor
-    Die Bronzenadel gehört dir. Noch einmal, wenn du magst? #sprecher:okafor
-- else:
-    Gut gespielt. Du hast meine Falle gesehen, bevor sie zuschnappte. #sprecher:okafor #stimmung:froh
+    Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor
+    -> okafor_nadel
 }
-{sternennachtGesehen:
-    Revanche, wenn ich ausgeschlafen bin! #sprecher:okafor #stimmung:froh
-}
-Coach Delgado pfeift. Das Team aus Maple Falls hat das Auswärtsspiel gewonnen. #sprecher:erzaehler #klang:pfiff
-Eine zweite Nadel. Und eine Karte, die ich nicht leichtfertig gebe. #sprecher:ambrose
-Lass mich. Nur dieses eine Mal, wenn es sein muss. #sprecher:ambrose
-Am Abend fährt der Bus. Geh vorher noch einmal zum Steg, {held}. #sprecher:ambrose
-Ich möchte dir etwas sagen. #sprecher:ambrose
+Sie legt die Hände in den Schoß und sieht dich über die Brille an. #sprecher:erzaehler
+Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor
+* [„Nicht alle.“]
+* [Nicken]
+- Genug. #sprecher:okafor
+-> okafor_nadel
+
+=== okafor_nadel ===
+Über euch schlägt die Uhr. Zwölf Schläge, einer nach dem anderen. #sprecher:erzaehler #klang:turmuhr12 #musik:aus #pause:3
+Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #klang:fanfare
+{teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
+Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
+* [Nicken]
+* [Die Nadel ansehen]
+- Ambrose sagt nichts. Aber er ist da. #sprecher:erzaehler #pause:2
+Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno
 -> END
 
 === okafor_nach_niederlage ===
-Diesmal nicht. Aber du hast lange gehalten. #sprecher:okafor
-Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #sprecher:okafor
-Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprecher:okafor
+Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor
 * [„Noch einmal.“]
     -> okafor_partie
-* [„Später.“]
+* [„Nicht jetzt.“]
     Das Brett wartet. Ich auch. #sprecher:okafor
     -> END
 
@@ -121,7 +153,7 @@ Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprec
 - not erzaehlung1858Gesehen:
     Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor
 - else:
-    {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Die Bibliothek hat keine Bildschirme, aber Geduld.} #sprecher:okafor
+    {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor
 }
 + {nadelCedarCreek > 0 and nadelCedarCreek < 3} [„Noch eine Partie um die Nadel.“]
     -> okafor_partie
@@ -140,15 +172,14 @@ Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprec
 === dex_erstes_treffen ===
 ~ dexGetroffen = true
 Ein Junge sitzt zwischen Kabeln und einem halb gebauten Roboter. Daneben ein Brett. #sprecher:erzaehler
-Dex. Mrs. Okafor ist meine Oma. Ich baue Dinge, die fast funktionieren. #sprecher:dex
-Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. #sprecher:dex
-Alles ist tot. #sprecher:dex
-Ein Bastler. Zu meiner Zeit bauten solche Leute Dampfkessel. #sprecher:ambrose
-Manche explodierten. #sprecher:ambrose
+Dex. Halt mal. #sprecher:dex
+Er drückt dir eine Zange in die Hand. #sprecher:erzaehler
+Fast fertig. Es ist immer fast fertig. #sprecher:dex
+Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. Alles ist tot. #sprecher:dex
 -> dex_reihe
 
 === dex_reihe ===
-Meine Aufgaben sind Matt in eins. Ein Zug, und der König kann nirgends mehr hin. #sprecher:dex
+Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex
 * [„Her damit.“]
     ~ beginneAufgaben("cedarCreek.reiheDex")
     -> END
@@ -185,9 +216,10 @@ Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae
 -> END
 
 === mae_reihe ===
-Matt in zwei und Mattbilder: Grundreihe, Erstickung, Anastasia, das Arabische. #sprecher:mae
-Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose
-Präg sie dir ein, {held}. Sie kommen wieder. #sprecher:ambrose
+Das hier ist das Arabische. Und das … #sprecher:mae
+Sie senkt die Stimme. #sprecher:erzaehler
+Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine Luft kriegt. #sprecher:mae
+Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END
@@ -212,3 +244,36 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae
     {~Am Steg sieht man die Sterne am besten. Komm doch!|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae
 }
 -> END
+
+
+// ================================================================ Runde 11: Roman, Kapitel 11
+// Kleine Geschichte der Zwillinge Ivy und Jonah Pell (Dokument 20, Cedar Creek), drinnen ab
+// Stufe C: C nach Akt 1 (nadelRiverton > 0), D nach Akt 2 (nadelIronwood > 0). Stufe A und B
+// stehen in cedar-creek-aussen.ink (Treppe). Kennungen ivy und jonah.
+// Auslöser für die Karte (fehlt noch): zwillinge (Figur in der Bibliothek ab Stufe C).
+
+=== zwillinge ===
+{
+- nadelIronwood > 0: -> zwillinge_d
+- nadelRiverton > 0: -> zwillinge_c
+- else:
+    Die Zwillinge sitzen draußen auf der Treppe. Hier drinnen ist es still. #sprecher:erzaehler
+    -> END
+}
+
+=== zwillinge_c ===
+Am Tresen hängt eine Strichliste in Miss Ashbys Schrift: Ivy 14, Jonah 14. #sprecher:erzaehler
+Die Zwillinge spielen am langen Tisch. Leise. Keiner sagt, wer gewinnt. #sprecher:erzaehler
+Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== zwillinge_d ===
+Jonah sitzt im Club am Brett, gegen Dex. Ivy sitzt daneben und liest. #sprecher:erzaehler
+Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy
+-> END
+
+// ================================================================ Runde 11: Roman, Kapitel 15
+// Die Momente mitten im Clubkampf (der angebotene Bauer, „Lass mich“ bis „Vergib mir. Zähl.“,
+// Dialogprüfung VC89, VC90) stehen als Partiemomente in begegnungen.json bei cedarCreek.clubkampf
+// (Technik T5 von mittel-2), Texte unter moment.okafor.* und moment.ambrose.* in texte/de.json.
+// Die Karte Mentor-Zug vergibt die Quest erst nach dem Clubkampf.

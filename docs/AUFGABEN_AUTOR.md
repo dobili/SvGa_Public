@@ -1654,3 +1654,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       fehlte, und wieder gekündigt. (h) Das Spiel endet auf dem Dachboden: Der Held bringt dem
       Nachbarskind Lily die erste Frage bei, „Was hängt?“. Empfehlung: alles so übernehmen. Im Roman
       umgesetzt, im Spiel noch nicht; Widerspruch genügt.
+- [ ] RO10. **Schönere Figuren und Porträts:** Die gekauften LimeZu-Pakete enthalten Generatoren
+      für Figuren und Porträts; daraus stammen die jetzigen (Figuren 16×32 Pixel, Porträtköpfe
+      32×32). Ein fertiges Paket, das modern, plastischer und groß genug für rund 100 Figuren mit
+      Kindern und Alten ist, hat die Recherche nicht gefunden; zwei schöne Kandidaten scheiden
+      wegen der Lizenz aus (Mana Seed verbietet Projekte mit KI-erzeugtem Code, der Generator von
+      RPG Maker gilt nur für RPG-Maker-Spiele). Empfehlung: (a) Porträts zuerst, mit Gemini wie bei
+      den Tieren, je Figur ein Grundbild und für Hauptfiguren fünf bis sechs Ausdrücke, auf 64×64
+      heruntergerechnet; (b) Figuren als Probe mit fünf Stück (Kind, Jugendliche, Erwachsener,
+      Alte, Ambrose) auf zwei Wegen: Gemini und PixelLab (pixellab.ai, 40 Generierungen gratis,
+      danach 24 $ für einen Monat, Rechte bei uns); erst danach über alle Figuren entscheiden.
+      Der Autor probiert beides aus (13.11.2026): Probeprompt für Gemini und Link zu PixelLab
+      stehen im Chat; er schickt die Bilder, danach wird entschieden.

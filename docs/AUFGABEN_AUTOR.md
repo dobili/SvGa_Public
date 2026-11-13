@@ -1623,3 +1623,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Empfehlung für alle Akte: etwa ein Drittel Geschichte, nie mehr als 30 Minuten Schach am
       Stück, und in jeder Partie der Hauptgeschichte ein bis zwei Momente, in denen jemand spricht.
       Als Vorgabe festgehalten, Widerspruch genügt.
+
+- [ ] RO6. **Mamas Partie in Ironwood:** Im Roman zu Akt 2 entsteht in Mamas Partie noch einmal
+      das Bild ihres Fehlers von 2001 (Turm, Dame und Läufer auf einer Linie), und diesmal sieht
+      sie den Läufer selbst, gleich wer die Partie gewinnt. Bisher gab es zwei Fassungen je nach
+      Ausgang (gewinnt der Held, dann durch genau diesen Spieß). Empfehlung: die Fassung des
+      Romans als Hauptfassung, weil sie Mamas Geschichte abschließt, statt sie dem Zufall der
+      Partie zu überlassen. Im Roman schon umgesetzt, im Spiel noch nicht; Widerspruch genügt.
+- [ ] RO7. **Roman zu Akt 2 lesen:** 13 Kapitel (17 bis 29), rund 13 500 Wörter, in
+      `docs/spiel/roman/akt2_teil1.md` bis `akt2_teil4.md`. Neu sind unter anderem ein stiller
+      Junge namens Eli am Bildschirmtisch (der Konzern hat einen echten Vorzug), Slicks Lehrer
+      Mr. Odum und das blaue Heft der Mutter. Bitte lesen, wenn Zeit ist; es gilt als abgesegnet,
+      Widerspruch genügt.

@@ -24,6 +24,7 @@ import { ohneAbwesende } from "../regeln/abwesenheit";
 import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { figurenbildAdresse } from "./figurbogen";
+import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
 import { istWinter } from "./winter";
 import { ladeMoebel, type Moebel } from "./moebel";
@@ -57,6 +58,8 @@ export interface Weltdaten {
   readonly heldfigur: string | null;
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder: Readonly<Record<string, string>>;
+  /** Figuren dieser Karte, die als Geist erscheinen (regeln/geist.ts), nach Objektname. */
+  readonly geister: ReadonlySet<string>;
   /** Möbel und Schmuck der Karte. */
   readonly moebel: readonly Moebel[];
   /** Hintergrundbild aus dem Kartenbauer (grafik/karten/<kennung>.png), sonst null. */
@@ -203,6 +206,11 @@ export async function ladeWelt(
     figurbild,
     heldfigur,
     figurenbilder,
+    geister: geisterDerKarte(
+      figurennamen(karte),
+      (n) => figurZu(fund.ort, n)?.geist === true,
+      erinnerung,
+    ),
     moebel,
     hintergrund,
     belebungsbilder,

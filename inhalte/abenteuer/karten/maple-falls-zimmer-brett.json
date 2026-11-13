@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 32,
+ "nextobjectid": 33,
  "layers": [
   {
    "id": 1,
@@ -779,6 +779,24 @@
     },
     {
      "id": 13,
+     "name": "ambrose",
+     "type": "figur",
+     "x": 192,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
+    },
+    {
+     "id": 14,
      "name": "mf4Treppe",
      "type": "moebel",
      "x": 16,
@@ -801,7 +819,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "mf12Treppenschacht",
      "type": "moebel",
      "x": 16,
@@ -824,7 +842,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "mf7Buecherregal",
      "type": "moebel",
      "x": 112,
@@ -847,7 +865,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "wzFenster",
      "type": "moebel",
      "x": 144,
@@ -870,7 +888,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "mf12Fensterbank",
      "type": "moebel",
      "x": 144,
@@ -893,7 +911,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "mf2Weltkarte",
      "type": "moebel",
      "x": 176,
@@ -916,7 +934,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "cc3Schreibtisch",
      "type": "moebel",
      "x": 208,
@@ -939,7 +957,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "mf3StuhlHellRechts",
      "type": "moebel",
      "x": 192,
@@ -962,7 +980,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "rv5BettKopfRechts",
      "type": "moebel",
      "x": 192,
@@ -985,7 +1003,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "mf7TeppichQuadrat",
      "type": "moebel",
      "x": 144,
@@ -1008,7 +1026,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 112,
@@ -1031,7 +1049,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "mf4Karton",
      "type": "moebel",
      "x": 128,
@@ -1054,7 +1072,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "mf4KartonBreit",
      "type": "moebel",
      "x": 144,
@@ -1077,7 +1095,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 224,
@@ -1100,7 +1118,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "mf8Kommode",
      "type": "moebel",
      "x": 208,
@@ -1123,7 +1141,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "mf7Tischlampe",
      "type": "moebel",
      "x": 216,
@@ -1146,7 +1164,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "mf3BrettKlein",
      "type": "moebel",
      "x": 212,
@@ -1169,7 +1187,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 80,
@@ -1192,7 +1210,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 176,

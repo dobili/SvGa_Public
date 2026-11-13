@@ -10,6 +10,9 @@ industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sin
 
 from pipeline.abenteuer.maske import maskenfelder
 
+# Möbel, auf denen Figuren sitzen können (R020; Name enthält eines dieser Wörter).
+SITZMOEBEL = ("stuhl", "bank", "sessel", "sofa", "hocker", "couch")
+
 K = 16
 GESPERRT = {"#", "~", " "}
 WAND = "#"
@@ -55,6 +58,9 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
     }
     figurfelder = {tuple(f["feld"]) for f in szene.get("figuren", [])}
     figurfelder |= {(x, y - 1) for x, y in figurfelder}
+    # Eine sitzende Figur (R020) sitzt auf ihrem Stuhl; der darf sie (Beine) überdecken.
+    sitzend = {tuple(f["feld"]) for f in szene.get("figuren", []) if f.get("sitzt")}
+    sitzend |= {(x, y - 1) for x, y in sitzend}
     for s in gesetzt:
         angabe = moebel.get(s["name"], {})
         eintrag = eintraege.get(s["id"], {})
@@ -70,7 +76,12 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
         if s["tiefe"] > 1:
             x0, x1 = s["x"] // K, (s["x"] + s["breite"] - 1) // K
             y0, y1 = s["y"] // K, (s["y"] + s["hoehe"] - 1) // K
-            nah = [f for f in figurfelder if x0 <= f[0] <= x1 and y0 <= f[1] <= y1]
+            sitz = any(w in s["name"].lower() for w in SITZMOEBEL)
+            nah = [
+                f
+                for f in figurfelder
+                if x0 <= f[0] <= x1 and y0 <= f[1] <= y1 and not (sitz and f in sitzend)
+            ]
             if nah:
                 befunde.append(f"{name} überdeckt eine Figur bei {nah[0]}")
         blick = angabe.get("blick")

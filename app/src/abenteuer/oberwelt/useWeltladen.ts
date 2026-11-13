@@ -72,6 +72,7 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     figurbild: w.figurbild,
     heldfigur: w.heldfigur,
     figurenbilder: w.figurenbilder,
+    geister: w.geister,
     moebel: w.moebel,
     hintergrund: w.hintergrund,
     belebungsbilder: w.belebungsbilder,

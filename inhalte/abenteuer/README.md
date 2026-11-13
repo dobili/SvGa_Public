@@ -230,6 +230,13 @@ weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen.
   wird so verschoben, dass die Füße ihrer Standbilder auf Zeile 30 stehen (Kinder stehen im Export
   oft höher). Einen alten Bogen braucht es nicht: `sprite: figuren/ada.png` findet
   `figuren32/ada.png`, ebenso Statisten mit `eigenschaften.bild: "otis"`.
+- Geister (Wunsch des Autors, 13.11.2026): Eine Figur mit `"geist": true` in orte.json (bisher
+  Ambrose, `mapleFalls.ambrose`) steht auf jeder Karte leicht durchsichtig (Deckkraft 0,7), ganz
+  leicht kühl getönt und schwebt sanft um 1 Pixel auf und ab; die Kollision bleibt die Fußkachel.
+  Ihr Porträt im Dialog ist leicht durchsichtig (0,75). In Erinnerungen (Sepia, der junge Ambrose)
+  sieht sie normal aus, und die Marken `#geist` (halb durchsichtig) und `#erscheint` (einblenden)
+  gehen wie bisher vor. Die Eigenschaft gilt für jede Figur, nicht nur für Ambrose; der Sprecher im
+  Dialog ist der Kurzname der Kennung (`#sprecher:ambrose`). Regeln: `app/src/abenteuer/regeln/geist.ts`.
 - Beispiel: `karten/maple-falls-dachboden.json` (12 × 10, Auslöser `start`, `brett`, `treppe`),
   erzeugt mit einem kleinen Skript; die Kacheln 1–8 sind Boden, Wand, Kiste, Teppich, Brett,
   Treppe, Lampe, Fenster.

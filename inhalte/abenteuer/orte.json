@@ -86,6 +86,13 @@
       ],
       "figuren": [
         {
+          "kennung": "mapleFalls.ambrose",
+          "name": "figur.ambrose.name",
+          "sprite": "figuren/ambrose.png",
+          "dialog": "maple-falls-dachboden.ambrose",
+          "geist": true
+        },
+        {
           "kennung": "mapleFalls.mutter",
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",

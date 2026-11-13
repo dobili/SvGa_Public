@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
-from pipeline.abenteuer.kartenregeln import pruefe_regeln
+from pipeline.abenteuer.kartenregeln import SITZMOEBEL, pruefe_regeln
 from pipeline.abenteuer.kehren import kehrenbefunde
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -136,7 +136,6 @@ def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
 
 
 # Möbel, auf denen Figuren und Statisten sitzen dürfen (Name enthält eines dieser Wörter).
-SITZMOEBEL = ("stuhl", "bank", "sessel", "sofa", "hocker", "couch")
 RICHTUNGEN = ("oben", "unten", "links", "rechts")
 
 

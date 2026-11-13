@@ -19,6 +19,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
+VAR wardLaurieGesagt = false
+VAR clubkampfHeimwegGesehen = false
 VAR fernpartieEndspielGesagt = false
 VAR wardLektionGesehen = false
 VAR reiheKitBestanden = false
@@ -100,15 +102,40 @@ Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward
 -> END
 
 === ward_clubkampf ===
-Bauern, Türme, Opposition. Jetzt zeig mir, ob du sie auch in einer ganzen Partie findest. #sprecher:ward
-In der Ecke sitzt Victor, die Hände in den Taschen. Kein Gerät. Er wartet. #sprecher:erzaehler
-Sie tauscht gern und früh. Wer ins Endspiel will, kommt zu ihr nach Hause. Aber du entscheidest. #sprecher:ambrose
-+ [„Spielen wir.“]
+{not wardLaurieGesagt: -> ward_laurie}
+Ich vereinfache. Ich tausche, was sich tauschen lässt. Die meisten wollen im Mittelspiel gewinnen, weil sie das Ende fürchten. #sprecher:ward
+Was willst du? #sprecher:ward
++ [„Das Ende.“]
+    Sie nickt. Mehr nicht. #sprecher:erzaehler
     ~ beginnePartie("summitCity.clubkampf")
     -> END
 + [„Noch nicht.“]
     Das Feuer brennt noch eine Weile. #sprecher:ward
     -> END
+
+// Kapitel 52, vor der Partie: Mama kommt zum ersten Mal den Pfad herauf.
+=== ward_laurie ===
+~ wardLaurieGesagt = true
+Victor sitzt am Fenster, in einem Pullover von Mr. Haraldsen, der ihm zu groß ist. Die weiße Jacke hat er zurückgegeben. #sprecher:erzaehler
+Neben ihm sitzt Mama. Sie ist den Pfad heraufgekommen, zum ersten Mal. Sie und Ward sehen einander an, quer durch die Hütte. #sprecher:erzaehler
+Laurie. #sprecher:ward
+Mrs. Ward. #sprecher:mutter
+Du warst die Beste in dem Jahr. Ich hätte es dir sagen sollen. #sprecher:ward #pause:2
+Mama sagt nichts. Sie setzt sich und steckt die Hände in die Ärmel, und ihre Augen glänzen. #sprecher:erzaehler
+* [Zum Brett gehen]
+- Die Nadel liegt auf dem Kaminsims. Ein Berggipfel aus Silber, schlicht, ohne alles. #sprecher:erzaehler
+-> ward_clubkampf
+
+// Geführter Moment beim Damentausch (begegnungen.json, summitCity.clubkampf).
+=== clubkampf_heimweg ===
+{clubkampfHeimwegGesehen: -> END}
+~ clubkampfHeimwegGesehen = true
+Sie führt dich dorthin, wo sie zu Hause ist. Und du gehst mit. #sprecher:ambrose
+* [„Ja.“]
+- Weißt du, was du tust? #sprecher:ambrose
+* [„Ich hab es geprüft, so gut ich kann.“]
+- Er lacht leise. Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
+-> END
 
 === ward_nach_niederlage ===
 Verloren. Und? Hast du gesehen, wo? #sprecher:ward
@@ -123,14 +150,31 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward
 ~ clubkampfSummitCityNadel = nadelSummitCity
 {ausgangSummitCityClubkampf == "remis":
     Remis. Ich habe bis zum letzten Bauern gespielt, und du auch. Das ist mehr wert, als du denkst. #sprecher:ward
-- else:
-    Du hast mich besiegt. Gut. #sprecher:ward #pause
-    Jetzt zeig mir, wie. #sprecher:ward
+    -> ward_nadel
 }
-Victor klatscht. Leise, aber er klatscht. #sprecher:erzaehler
-Die achte Nadel. Juno wird ein neues Blatt brauchen. #sprecher:ambrose #stimmung:froh
-Ward nickt Ambroses Brett zu, als könne sie ihn sehen. Vielleicht kann sie es. #sprecher:erzaehler
-Für die Meisterschaft: Spiel jede Stellung zu Ende. Auch die, die du für verloren hältst. #sprecher:ward
+Sie spielt es zu Ende, jeden Zug, bis zum letzten Bauern. Dann lehnt sie sich zurück und sieht dich lange an. #sprecher:erzaehler
+Du hast mich besiegt. Gut. #sprecher:ward #pause
+Sie nimmt den Silbergipfel vom Kaminsims. Sie gibt ihn dir nicht. #sprecher:erzaehler
+Jetzt zeig mir, wie. #sprecher:ward
+* [„Was?“]
+- Wo habe ich verloren? Nicht der Zug. Der Gedanke. #sprecher:ward
+* [Den König aus der Ecke zeigen]
+- Du zeigst ihr, dass du ein Jahr gelernt hast, ihn zu verstecken. Dass ein Fernfahrer dir gezeigt hat, wie er läuft. #sprecher:erzaehler
+Dass du gezählt hast, so gut du konntest, und dann gegangen bist. #sprecher:erzaehler
+Du hast gehofft. #sprecher:ward
+* [„Ja.“]
+- In einem Endspiel. Ich habe vierzig Jahre geglaubt, im Endspiel gebe es nichts zu hoffen. Nur zu wissen. #sprecher:ward
+Sie lächelt, zum zweiten Mal in sechs Tagen. Da siehst du, wie alt man werden kann, ohne fertig zu sein. #sprecher:ward
+-> ward_nadel
+
+=== ward_nadel ===
+Sie steckt dir die Nadel an. Die achte. #sprecher:erzaehler #klang:fanfare
+Victor klatscht, allein, dreimal, ungeschickt. Dann Mama, Kit und Mr. Haraldsen. #sprecher:erzaehler
+In der Tür steht Juno, keuchend. Acht! Acht! Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh
+* [„Es war keine schöne Partie.“]
+- Sie war makellos. #sprecher:ambrose
+Fast. Ein, zwei Züge waren ungenau. Aber sie war schön. Ich wusste nicht, dass etwas so Stilles schön sein kann. #sprecher:ambrose #stimmung:froh
+Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === ward_alltag ===

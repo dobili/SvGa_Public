@@ -526,7 +526,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "merkmal": "damenTausch"
+          },
+          "sprecher": "ambrose",
+          "dialog": "summit-city-huette.clubkampf_heimweg"
+        },
+        {
+          "wenn": {
+            "abZug": 40
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.held.koenigLaeuft"
+        }
+      ]
     },
     {
       "kennung": "summitCity.victorFrei",

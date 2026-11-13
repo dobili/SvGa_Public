@@ -66,14 +66,14 @@ export function gehe(alle: readonly Ausloeser[], weg: readonly Kachelort[]): Mel
   const meldungen: Meldung[] = [];
   let zustand = MELDE_START;
   let richtung = "unten";
-  const bild = (ort: Kachelort) => {
-    const schritt = meldeschritt(zustand, alle, { ...ort, richtung });
+  const bild = (ort: Kachelort, geht = true) => {
+    const schritt = meldeschritt(zustand, alle, { ...ort, richtung, geht });
     zustand = schritt.zustand;
     if (schritt.meldung !== undefined) meldungen.push(schritt.meldung);
   };
   const start = weg[0];
   if (!start) return meldungen;
-  bild(start);
+  bild(start, false);
   for (let i = 1; i < weg.length; i++) {
     const von = weg[i - 1] as Kachelort;
     const nach = weg[i] as Kachelort;
@@ -83,12 +83,19 @@ export function gehe(alle: readonly Ausloeser[], weg: readonly Kachelort[]): Mel
     bild(von);
     bild(nach);
   }
+  // Am Ziel drückt der Held in den Durchgang (R060): jede Richtung, die das Zielfeld dafür kennt.
+  const ende = weg[weg.length - 1] as Kachelort;
+  const ziel = alle.find((a) => a.typ === "ausloeser" && a.x === ende.x && a.y === ende.y);
+  for (const r of ziel?.durchgang ?? []) {
+    richtung = r;
+    bild(ende);
+  }
   return meldungen;
 }
 
-/** Hat der Weg den Übergang ausgelöst (Meldung mit diesem Namen und darauf: true)? */
+/** Hat der Weg den Übergang ausgelöst (Meldung mit diesem Namen und durch: true)? */
 export function loestAus(meldungen: readonly Meldung[], name: string): boolean {
-  return meldungen.some((m) => m?.name === name && m.typ === "ausloeser" && m.darauf);
+  return meldungen.some((m) => m?.name === name && m.typ === "ausloeser" && m.durch);
 }
 
 /**

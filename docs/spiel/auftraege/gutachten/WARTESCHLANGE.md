@@ -120,6 +120,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] cedar-creek-archiv (+geordnet), cedar-creek-waschsalon, maple-falls-diner, cedar-creek-bibliothek (zweite Prüfung, niedrig-1) und maple-falls-dachboden (+ohne-brett), maple-falls-wohnzimmer (+ausgepackt), cedar-creek-drechslerei (nur Restpunkte); Bilder aus `niedrig1_runde11.py` erst rendern; Antworten in cedar-creek.md und maple-falls.md → `nachpruefung-147fa651.md`
 
 - [x] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md) → `restpunkte-76799517.md`
+- [ ] Runde 11 (Rückmeldung des Autors, niedrig-1): maple-falls-diner (R003, R004, R006, R007, R009, R010), maple-falls-clubraum (+pokal; R011 bis R017, R019, R020), maple-falls-aussen (R002), maple-falls-park (+steg-neu, +schulbus; R021 bis R026), maple-falls-wohnzimmer-ausgepackt (R001), kuerbishof-hof (R045 bis R048); Bilder aus `niedrig1_runde12.py` erst rendern; Antworten in maple-falls.md und kuerbishof.md
 
 ## Erledigt
 

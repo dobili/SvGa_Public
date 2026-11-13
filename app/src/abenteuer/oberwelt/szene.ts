@@ -15,6 +15,7 @@ import {
   liesAusloeser,
   MELDE_START,
   meldeschritt,
+  mitDurchgang,
   type Ausloeser,
   type Meldezustand,
 } from "./ausloeserebene";
@@ -65,6 +66,8 @@ export interface Ausloesertreffer {
   readonly typ: "ausloeser" | "figur" | "statist";
   /** Der Held steht selbst darauf (true) oder nur davor (false). */
   readonly darauf: boolean;
+  /** Er steht darauf und geht in den Durchgang: Erst dann wechselt ein Übergang die Karte. */
+  readonly durch: boolean;
 }
 
 /** Was die Szene nach oben meldet. */
@@ -98,6 +101,8 @@ export interface Szenendaten {
   /** Name des Kachelsatzes in der Tiled-Datei. */
   readonly kachelsatz: string;
   readonly start: Weltposition;
+  /** Namen der Auslöser, die Übergänge sind: Sie lösen erst beim Gehen in den Durchgang aus. */
+  readonly uebergaenge?: readonly string[];
   readonly melder: Melder;
   /** Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1). */
   readonly tempofaktor?: number;
@@ -128,6 +133,7 @@ export class Oberweltszene extends Phaser.Scene {
   private ausloeser: Ausloeser[] = [];
   /** Letzter Treffer und ob der Held noch auf seinem Startauslöser steht (ausloeserebene.ts). */
   private meldezustand: Meldezustand = MELDE_START;
+  private geht = false; // in diesem Bild ist eine Richtung gedrückt (Durchgang, R060)
   /** Rest der Eingabepause nach dem Kartenwechsel in Millisekunden (eingabepause.ts). */
   private pause = EINGABEPAUSE_MS;
   /** Zuletzt gemeldete Kachel des Helden („x,y“), damit beiKachel nur bei Änderung feuert. */
@@ -219,6 +225,7 @@ export class Oberweltszene extends Phaser.Scene {
     const moebel = stelleMoebelAuf(this, liste, KACHEL);
     this.physics.add.collider(held, moebel);
     this.frei = baueSperrkarte(karte, feste, moebel, KACHEL);
+    this.ausloeser = mitDurchgang(this.ausloeser, this.frei, this.daten.uebergaenge ?? []);
     const stunde = this.daten.stunde ?? new Date().getHours();
     const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur");
     this.physics.add.collider(held, schicht.sperren());
@@ -309,6 +316,7 @@ export class Oberweltszene extends Phaser.Scene {
     const zurueck = gewuenscht === gegenrichtung(this.daten.start.richtung);
     this.pause = pausenschritt(this.pause, delta, gewuenscht !== null, zurueck);
     const richtung = this.laufen && this.pause === 0 ? gewuenscht : null;
+    this.geht = richtung !== null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);
     this.zeigeHeld(richtung);
@@ -378,7 +386,8 @@ export class Oberweltszene extends Phaser.Scene {
     ];
     // Die Regel (nur bei Änderung, „davor“ und „darauf“ getrennt, Startauslöser erst nach dem
     // Verlassen) steht in ausloeserebene.ts, damit der Lauftest über alle Übergänge sie mitprüft.
-    const schritt = meldeschritt(this.meldezustand, alle, this.position());
+    const held = { ...this.position(), geht: this.geht };
+    const schritt = meldeschritt(this.meldezustand, alle, held);
     this.meldezustand = schritt.zustand;
     if (schritt.meldung !== undefined) this.daten.melder.beiAusloeser(schritt.meldung);
   }

@@ -772,3 +772,48 @@ Gutachten `maple-falls-innen.md`. Neue Bilder aus `bildwuensche/niedrig1_runde11
   - Glastür (`sb8GlastuerSued`) statt der Tür, von der nur die braune Matte zu sehen war.
   - Wartebank vor der Toilettenwand (5, 10). Die Nischen haben rote Polsterbänke mit hoher Lehne.
   - Die Pflanze steht nicht mehr im Durchgang zur Automatenecke.
+
+## Rückmeldung des Autors, Runde 11: Antworten (niedrig-1, 11.11.2026)
+
+Auftrag `runde11_rueckmeldung.md`, Sammlung `rueckmeldung/sammlung.md`.
+
+- **Diner (R003, R004, R006, R007, R009, R010):**
+  - Die Bar ist gedreht: Die Gäste sitzen auf Hockern an der Nordseite, das Personal steht
+    südlich hinter der Bar. Kasse und Kaffeemaschine zeigen damit zum Personal (R004).
+  - Die Kaffeemaschine steht auf der Bar (R003); das Radio ist weg.
+  - Im Lager stehen Kartons statt der zerbrochenen Kiste (R006). Die Geschichte braucht sie nicht.
+  - In der Küche steht eine Reihe von vier Arbeitstischen (R007).
+  - Der kleine Hocker neben der Nische ist weg (R009; es war die Wartebank).
+  - Im Eingang liegt ein rot gemusterter Teppich (R010).
+  - Die Kellnerin geht hinter der Bar hin und her; der Fahrer und die Rentnerinnen sitzen auf
+    Hockern (R008). Die Durchreiche liegt am Ostende der Bar, wo das Personal vorbeigeht.
+  - Offen: Innentüren (R005a). Das Bild baut mittel-4 (R005); danach tausche ich es ein.
+- **Clubraum (R011 bis R017, R019, R020), beide Zustände:**
+  - Vitrine und Spinde sind Paketbilder mit Oberseite: LimeZus Vitrinenschrank mit zwei Pokalen
+    obenauf und vier graue Spinde (R011).
+  - Die Seitenregale sind LimeZus Regale in Seitenansicht (R012).
+  - Die Garderobe mit den drei Jacken ist weg, dort hängt eine gerahmte Urkunde (R013).
+  - Das Plakat „Erst zählen“ ist 24 Pixel hoch und passt auf die Wand (Bildwunsch
+    `plakat_erst_zaehlen_klein.png`); es hängt in beiden Zuständen an derselben Stelle (R014, R016).
+  - Der Globus steht auf dem Bücherregal links (R015).
+  - Die Stühle stehen in beiden Zuständen gleich. Der Unterschied kam von zwei Stühlen, die im
+    Grundzustand hinter den Figuren lagen (R017, R019).
+  - Die Schülerin und das Clubmitglied sitzen auf ihren Stühlen, die Mutter auf der Bank (R020).
+    Sam und Coach Delgado stehen: Hauptfiguren können im Spiel noch nicht sitzen.
+- **Hauptstraße (R002):** Der rote Schuppen ist LimeZus Holzschuppen (`Red_Brown_Wood_Storage`).
+  Alle zwölf Möbel mit den selbst gezeichneten Gartenhäusern (rot, weiß, braun, blau) zeigen jetzt
+  auf die Paketbilder gleicher Größe; das gilt für alle Karten, die sie benutzen.
+- **Stadtpark (R021 bis R026), alle drei Zustände:**
+  - Der asphaltierte Basketballplatz aus der Git-Geschichte (LimeZu `Basketball_Court_5`, 14 × 11)
+    liegt wieder im Südwesten (R021).
+  - Die Halfpipe ist weg (R022). Sie sollte Jos Skaterrampe sein; im Katalog gibt es keine.
+    Jo steht am Spielfeldrand. Wunsch für Gemini siehe Meldung.
+  - Der Fluss ist unter der Brücke drei Kacheln breit, die Brücke deckt ihn ganz (R023).
+  - Der kaputte Steg liegt ganz im Wasser (R024).
+  - Der linke Steg ist die Sperre S5 mit Lohn: Er führt nicht hinüber, sondern hinaus zur
+    Aussicht auf den Wasserfall (R025). Der Fluss reicht dort jetzt bis an den Kartenrand; ein
+    Nordufer, über das man von Steg zu Steg laufen könnte, gibt es westlich des Fußstegs nicht
+    mehr (R026).
+- **Wohnzimmer, Zustand `ausgepackt` (R001):** Die Küche hat einen runden Teppich unter dem
+  Esstisch, einen Beistelltisch an der Innenwand, einen Anrichtetisch an der Ostwand und die Palme
+  in der Mitte unten.

@@ -1,8 +1,12 @@
 """Tests der Bodensäume (pipeline/abenteuer/saum.py): Randstein, Bankett, weicher Rand, Prüfung."""
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.saum import STEIN_DUNKEL, K, saeume, saumart, saumbefunde
+pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
+
+from PIL import Image  # noqa: E402
+
+from pipeline.abenteuer.saum import STEIN_DUNKEL, K, saeume, saumart, saumbefunde  # noqa: E402
 
 BOEDEN = {
     "gras": {},

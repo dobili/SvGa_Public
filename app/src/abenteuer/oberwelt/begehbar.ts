@@ -111,11 +111,13 @@ function sperreMoebel(
  * Fleck stehen (`von` gleich `bis`; belebungsschicht.ts sperrt sie im Stehen). Wandernde Statisten
  * und Tiere sperren hier nicht: Sie geben den Weg wieder frei.
  * Sonderfall: Möbel, die die Liste nicht kennt, sperren nicht (die App zeichnet sie auch nicht).
+ * Mit `mitFiguren` false zählen nur Wände und Möbel (für den Durchgang eines Übergangs, R060).
  */
 export function sperrkacheln(
   karte: Tiledkarte,
   moebel: Readonly<Record<string, Sperrangabe>>,
   kachel: number,
+  mitFiguren = true,
 ): Set<string> {
   const gesperrt = new Set<string>();
   const gids = sperrendeKacheln(karte);
@@ -125,7 +127,7 @@ export function sperrkacheln(
     });
     for (const o of ebene.objects ?? []) {
       const ort = { x: o.x ?? 0, y: o.y ?? 0 };
-      if (o.type === "figur" || stehtFest(o)) {
+      if (mitFiguren && (o.type === "figur" || stehtFest(o))) {
         sperreRechteck(gesperrt, { ...ort, b: kachel, h: kachel }, kachel);
       }
       const angabe = o.type === "moebel" && o.name ? moebel[o.name] : undefined;

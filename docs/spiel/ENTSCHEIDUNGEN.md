@@ -896,3 +896,35 @@ gezeichnete Bilder ohne Tiefe, die neben den gekauften Paketen herausfallen.
 - **Figuren stehen sinnvoll**, Schachspieler sitzen.
 
 Auftrag mit Verteilung: `docs/spiel/auftraege/runde11_rueckmeldung.md`.
+
+## 12.11.2026 – Innenraum gegen Gebäude: ab 50 % Abweichung der Fläche anpassen
+
+Der Autor zu R065 (`gutachten/INNEN_AUSSEN.md`): Weicht die Fläche des Innenraums um 50 % oder mehr
+von der Fläche ab, die das Gebäude außen hergibt, wird angepasst. Gemessen wird die Grundfläche (Breite
+mal Tiefe), nicht nur die Breite.
+
+- **Raum größer als das Gebäude** (der häufige Fall): **das Gebäude außen vergrößern.** Räume, die
+  der Autor schon im Einzelnen durchgesehen hat (alle Karten der Sammlung R001 bis R151: Maple Falls,
+  Cedar Creek, Riverton, Lockport, London und die Wege dazwischen), werden **nicht verkleinert**
+  (Autor, 12.11.2026). Bei noch nicht durchgesehenen Räumen ist Verkleinern oder Teilen erlaubt, das
+  Vergrößern des Gebäudes bleibt die erste Wahl.
+- **Gebäude größer als der Raum:** Türen (auch verschlossene) und Treppenhäuser zeigen weitere Räume
+  an; so hatte der Autor es in R065 beschrieben.
+- **Die Form geht vor die Größe** (Autor, 12.11.2026): Der Grundriss des Innenraums folgt dem
+  Grundriss, den das Gebäudebild nahelegt. Nicht jedes Gebäude ist ein Rechteck: Anbau, Flügel,
+  Vorbau, Turm, L- oder T-Form (Beispiel R151, Gasthaus zur Schleuse: außen ein liegendes T) zeigen
+  sich innen als dieselbe Form. Vorgehen je Gebäude: das Außenbild ansehen, den Grundriss daraus
+  ableiten (Lage der Flügel, Türen, Fenster), den Raum danach formen; erst dann die Fläche prüfen.
+  Lässt sich die Form innen nicht herstellen, ohne einen durchgesehenen Raum zu zerstören, wird das
+  Gebäudebild außen getauscht oder aus dem Baukasten passend gebaut.
+- **Lage des Eingangs** stimmt immer überein, unabhängig von der Fläche.
+- Der Gutachter hat bisher nur Breiten aus den Daten verglichen. Wenn es weitergeht, prüft er je
+  Gebäude am Bild zuerst die Form, dann die Fläche.
+
+## Innenraum größer als das Gebäude außen; Aufgänge im Katalog (13.11.2026)
+
+Der Autor hat bestätigt: Außenbilder sind gestaucht (typisch 5 Türen breit statt 10), Innenräume
+dürfen deshalb größer sein. Es gilt die Tabelle in den Kartenregeln 10.75 (klein bis 2,5-fach,
+mittel bis 2-fach, groß bis 1,5-fach in der Breite); die 50-Prozent-Regel misst gegen den
+Grundriss mal Faktor. Zu jedem mehrgeschossigen Gebäudebild steht im Katalog, ob Treppe,
+Treppenhaus, Leiter oder Fahrstuhl passt und wo (Feld `aufgang`, Regel 10.76).

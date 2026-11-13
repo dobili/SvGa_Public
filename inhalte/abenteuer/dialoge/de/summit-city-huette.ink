@@ -147,11 +147,15 @@ Für die Meisterschaft: Spiel jede Stellung zu Ende. Auch die, die du für verlo
 // ---------------------------------------------------------------- Erinnerung Hastings 1895 (Szene 85)
 
 === ward_erinnerung ===
-Ward nimmt ein zerlesenes Heft aus dem Regal. Die Seiten sind braun. #sprecher:erzaehler
-Mein Vater hat mir diese Partie gezeigt, da war ich neun. Hastings, 1895. Steinitz gegen von Bardeleben. #sprecher:ward
-Von Bardeleben stand am Ende auf und ging. Er hat nicht aufgegeben. Er ist einfach gegangen. #sprecher:ward
-Spiel du die weißen Züge ab dem siebzehnten. Rate, was Steinitz gezogen hat. #sprecher:ward
-Neunundzwanzig Jahre nach mir. #sprecher:ambrose #pause
+// Kapitel 49: Am vierten Abend lässt Ward den Helden nicht gehen. Erst Laurie, dann Hastings.
+Bleib. Unten ist heute das Drachenfest. Die halbe Stadt spielt mit einer Figur, die es nicht gibt. #sprecher:ward
+Big Joe hat mich angerufen. Da komme ein Kind, das zählt, bevor es schlägt, und trotzdem opfert. Das Kind sei von Laurie. #sprecher:ward
+Ich habe sie in neunzehn Zügen geschlagen. Sie war die Beste, die ich in dem Jahr gesehen hatte. Ich habe es ihr nicht gesagt. #sprecher:ward
+* [„Sie ist unten. In der Stadt.“]
+- Ich weiß. Sie steckt die Hände noch immer in die Ärmel. Ich werde es ihr sagen, bevor ihr fahrt. #sprecher:ward
+Es ist dreißig Jahre zu spät. Aber man macht manche Züge trotzdem noch. #sprecher:ward
+Sie holt ein dünnes Heft aus dem Regal, mit einem Umschlag aus Packpapier. #sprecher:erzaehler #musik:hastings
+Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und alle sagten, er sei fertig. Rate. Du hast Weiß. #sprecher:ward
 + [Die Partie spielen]
     ~ beginneAufgaben("summitCity.erinnerungHastings")
     -> END
@@ -161,11 +165,20 @@ Neunundzwanzig Jahre nach mir. #sprecher:ambrose #pause
 
 === ward_nach_erinnerung ===
 ~ erinnerungHastingsBesprochen = true
-Ward klappt das Heft zu. #sprecher:erzaehler
-Du hast es gesehen, oder? Wie alles plötzlich aufgeht. Deshalb spiele ich noch. #sprecher:ward
-Neunundzwanzig Jahre nach mir. Und sie spielen noch schöner. Das tröstet mich. #sprecher:ambrose #stimmung:friedlich
+Ein Turm, der hängt und hängt und nicht geschlagen werden darf, weil dahinter jedes Mal etwas Schlimmeres wartet. #sprecher:erzaehler
+* [„Das ist kein Endspiel.“]
+- Nein. Das ist ein Angriff, wie ihn sich ein Endspieler ausdenkt. Er war neunundfünfzig. #sprecher:ward
+Zum ersten Mal lächelt sie. Es macht sie zwanzig Jahre jünger. #sprecher:erzaehler
+Achtzehnhundertfünfundneunzig. Neunundzwanzig Jahre nach mir. #sprecher:ambrose
+Ich dachte, danach hätten sie nur noch gerechnet. Brückenbauer, überall. Und sie spielen noch schöner. Schöner als wir. #sprecher:ambrose
+* [„Macht dich das traurig?“]
+- Es tröstet mich. Ich habe geglaubt, ich hätte etwas verpasst. Dabei habe ich nur den Anfang gesehen. #sprecher:ambrose #stimmung:froh
+Die meisten Leute reden mit sich selbst, wenn sie Schach lernen. Du hörst dabei zu. Das ist ungewöhnlich. Ich frage nicht. #sprecher:ward
 Zwischen den Seiten steckt ein Zettel in fremder Schrift. Züge aus einer alten Fernpartie, vier Paare. Ward weiß nicht, woher er kommt. #sprecher:erzaehler
 Das ist meine Partie gegen Hale. #sprecher:ambrose #pause
+* [Hinaussehen]
+- Unten im Tal steigt ein Feuerwerk auf, grün, in der Form von etwas mit Flügeln. #sprecher:erzaehler
+Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Victor verliert (Szene 87)

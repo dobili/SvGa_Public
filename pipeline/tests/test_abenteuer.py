@@ -118,7 +118,9 @@ def test_querverweise_stimmen():
     dialogordner = HAUPTORDNER / "inhalte" / "abenteuer" / "dialoge" / "de"
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for moment in begegnung.get("momente", []):
-            schluessel = [f"figur.{moment['sprecher']}.name"]
+            # Der Erzähler hat keinen Namen (Momentzeile.tsx zeigt ihn ohne Porträt).
+            erzaehlt = moment["sprecher"] == "erzaehler"
+            schluessel = [] if erzaehlt else [f"figur.{moment['sprecher']}.name"]
             if "text" in moment:
                 schluessel.append(moment["text"])
             for s in schluessel:

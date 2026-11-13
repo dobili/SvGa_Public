@@ -50,6 +50,7 @@ VAR angesehenFaehrterminal = false
 }
 ~ abeGetroffen = true
 // Roman Kapitel 60: König der Hügel; Ambrose: „Wie wir alle.“ Es klingt nicht traurig.
+Die Farben kommen zurück, als ihr den See erreicht. #sprecher:erzaehler
 Der See ist so groß, dass man das andere Ufer nicht sieht. Vor dem Leuchtturm, weiß mit rotem Band, flickt ein Mann ein Netz. #sprecher:erzaehler #musik:leuchtturm
 König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe
@@ -94,7 +95,7 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 ~ capitalZugang = fernpartieGespielt and novaBitteGehoert
 {not capitalZugang:
     Der Wachmann schiebt einen Absperrbock vor den Uferweg. „Heute nur für Gemeldete. Morgen vielleicht.“ #sprecher:erzaehler
-    Wir haben in Ghost Town und bei Nova noch etwas zu erledigen. Dann kommen wir durch. #sprecher:ambrose
+    Du denkst an Ghost Town. Und an Nova. #sprecher:erzaehler
 }
 -> END
 
@@ -216,7 +217,7 @@ Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn 
 ~ gibFund("finchsBuchsbaum")
 Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette
 ~ zeigeVorfuehrung("finchFalle")
-Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen. #sprecher:ambrose #stimmung:friedlich
+Ein Problem will gelöst werden. Dieses hat lange gewartet. #sprecher:ambrose #stimmung:friedlich
 -> END
 
 === odette_danach ===

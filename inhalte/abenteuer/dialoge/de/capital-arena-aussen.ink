@@ -14,6 +14,9 @@ EXTERNAL gibFund(kennung)
 EXTERNAL zeigeAbspann()
 EXTERNAL reise(karte, ausloeser)
 
+VAR abeGetroffen = false
+VAR ausgangGhostTownFernpartie = ""
+VAR finaleBesprochen = false
 VAR held = "Du"
 VAR nadelMapleFalls = 0
 VAR nadelCedarCreek = 0
@@ -46,9 +49,16 @@ VAR wandererCapitalGetroffen = false
     Der Weg vom See endet am Vorplatz der Capital Arena. #sprecher:erzaehler
     -> END
 }
+{not abeGetroffen:
+    Der Mann am Turm hat ein Brett. Lass uns einen Augenblick bleiben. #sprecher:ambrose
+    -> END
+}
 ~ ankunftCapitalArenaGesehen = true
+Am Abend fahrt ihr in die Hauptstadt und schlaft in einem Hotel, von dessen Fenster aus man die Arena sieht. #sprecher:erzaehler #pause:2
+Am Morgen steht ihr davor. #sprecher:erzaehler
 // Roman Kapitel 60: die Arena als weiße Muschel, die Busse aller Städte, alle auf der Treppe.
-Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena
+* [Hinsehen]
+- Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena
 Deines hat noch immer Ketchup am Kinn. #sprecher:erzaehler
 Auf dem Platz stehen Busse. Der graue mit den Rostflecken. Ein Kleinbus mit „RIVETON“ aus Klebeband. #sprecher:erzaehler
 Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstocher am Rückspiegel. #sprecher:erzaehler
@@ -101,7 +111,7 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 === mama ===
 {
 - finaleGespielt():
-    Ich bin so stolz auf dich. Nicht wegen des Titels. Wegen allem. #sprecher:mutter #stimmung:froh
+    Ich bin so stolz auf dich. {ausgangCapitalArenaFinale == "sieg":Nicht wegen des Titels. }Wegen allem. #sprecher:mutter #stimmung:froh
 - arenaGesehen:
     Ich hab Kaffee für alle. Und Brötchen. Und ein Pflaster, falls du dich am Brett stößt. #sprecher:mutter
 - else:
@@ -125,6 +135,9 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 - not finaleGespielt():
     Die breite Treppe vor der Arena. Am Abend wird hier gefeiert, sagt man. #sprecher:erzaehler
     -> END
+- not finaleBesprochen:
+    Drinnen ruft jemand deinen Namen. Victor. #sprecher:erzaehler
+    -> END
 - abschiedGesehen:
     Auf der Treppe vor der Arena ist es still geworden. Die Fahnen werfen lange Schatten. #sprecher:erzaehler
     -> END
@@ -140,7 +153,7 @@ Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahn
 Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Zwei Könige. Ein Springer. Die Schlussstellung. #sprecher:erzaehler
 Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
 * [„Hast du es gesehen?“]
-- Jeden Zug. Einunddreißig. Der Turm. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. #sprecher:ambrose
+- Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. Die Großmeisterin hat mich angesehen, als wüsste sie es. #sprecher:ambrose
 Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich nicht zu wünschen gewagt. #sprecher:ambrose
 * [„War es richtig?“]
 - Ich weiß es nicht. Ich habe es nicht nachgerechnet. Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
@@ -150,12 +163,13 @@ Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine 
 === abschied_rede ===
 Ich muss dir etwas sagen. Hör zu, ich sage es nur einmal. #sprecher:ambrose
 Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambrose
-Die Fernpartie ist remis, und in deinem Finale steht ein Turm auf der falschen Linie. #sprecher:ambrose
+{ausgangGhostTownFernpartie == "remis":Die Fernpartie ist remis, mit einem Fehler darin.|Die Fernpartie hatte einen Fehler darin.} Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose
 * [„Tut mir leid.“]
 - Sei still. Ich bin noch nicht fertig. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh #musik:abschied
 * [Zuhören]
-- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. Einen Jungen, der vor Freude rennt, weil er verloren hat. #sprecher:ambrose
-Menschen, die kämpfen. Die Fehler machen. Und wachsen. Das ist es, was schön ist an diesem Spiel. Nicht die Züge. #sprecher:ambrose
+- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":Einen Jungen, der vor Freude rennt, weil er verloren hat.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.} #sprecher:ambrose
+Menschen, die kämpfen. Die Fehler machen. Und wachsen. #sprecher:ambrose #pause:2
+Das ist es, was schön ist an diesem Spiel. Nicht die Züge. Die waren nie das Schöne. #sprecher:ambrose
 Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
 - Wofür? #sprecher:ambrose
@@ -171,7 +185,8 @@ Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose
 Er steht auf und macht eine kleine, steife Verbeugung. Wie am ersten Tag. #sprecher:erzaehler
 Ambrose Whitlock, zu Diensten. Es war mir eine Ehre, {held}. #sprecher:ambrose
 * [„Später?“]
-- Er lacht, laut, von ganz unten. Das Lachen vom Steg und aus der Garage. #sprecher:erzaehler #musik:aus
+- Er sieht dich an. #sprecher:erzaehler #musik:aus #pause:2
+Dann lacht er, laut, von ganz unten. Das Lachen vom Steg und aus der Garage. #sprecher:erzaehler
 Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht #musik:ambrose.nichtSpaeter
 -> abschied_ende
 

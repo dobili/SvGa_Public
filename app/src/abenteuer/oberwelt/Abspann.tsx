@@ -15,7 +15,6 @@ import { tSpiel } from "../texte/texte";
 
 /** Die Bausteine, die das Spiel verwendet (vollständig in docs/spiel/LIZENZEN.md). */
 const MITWIRKENDE = [
-  "abspann.mitwirkende.buch",
   "abspann.mitwirkende.engine",
   "abspann.mitwirkende.phaser",
   "abspann.mitwirkende.ink",

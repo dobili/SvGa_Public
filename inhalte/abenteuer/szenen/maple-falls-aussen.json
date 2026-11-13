@@ -107,11 +107,6 @@
       "id": "diner"
     },
     {
-      "moebel": "mf4SchildDiner",
-      "auf": "diner",
-      "versatz": [0, 20]
-    },
-    {
       "moebel": "mf4Schule",
       "feld": [39, 0]
     },

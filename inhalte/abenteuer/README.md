@@ -155,6 +155,11 @@ weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen.
   dieselbe Person auf zwei Karten stehen, bekommt sie je Karte ein eigenes Objekt und eine eigene
   Kennung mit demselben Dialog, etwa `wegMapleCedar.tessa` (Landstraße, `nadelCedarCreek == 0`) und
   `wegMapleCedar.tessaFluss` (Flussweg, `nadelCedarCreek > 0 und nadelRiverton == 0`).
+- **Möbel mit Bedingung:** Ein Szenenobjekt kann `wenn` tragen (gleiche Sprache). Der Kartenbau
+  schreibt es als Eigenschaft `wenn` in die Tiled-Karte; die App lässt das Möbel samt Kollision weg,
+  solange die Bedingung beim Betreten nicht gilt. Was mit `auf` auf einem bedingten Möbel steht,
+  erbt dessen Bedingung. Möbel liegen nie im Hintergrundbild, deshalb braucht es dafür keine
+  Kartenkopie. Die Prüfungen des Kartenbaus (Durchgänge, Überdeckung) rechnen mit dem Möbel.
 - **Zustände:** `"zustaende": { "<bedingung>": "karten/<basis>-<zustand>.json", … }`. Der letzte
   Eintrag, dessen Bedingung gilt, wird geladen; ohne passenden die Grundkarte. Je Zustand eine
   Szene `szenen/<basis>-<zustand>.json` mit `zustand_der_karte` = derselben Bedingung und einer

@@ -52,6 +52,9 @@ def _bedingungen() -> list[tuple[str, str]]:
             (f"{ort['kennung']}.{a['name']}.wenn", a["wenn"]) for a in ort["ausloeser"] if a.get("wenn")
         ]
         ergebnis += [(f"{f['kennung']}.wenn", f["wenn"]) for f in ort["figuren"] if f.get("wenn")]
+    for datei in sorted((INHALTE / "szenen").rglob("*.json")):
+        objekte = json.loads(datei.read_text(encoding="utf-8")).get("objekte", [])
+        ergebnis += [(f"{datei.name}.{o['moebel']}.wenn", o["wenn"]) for o in objekte if o.get("wenn")]
     return ergebnis
 
 

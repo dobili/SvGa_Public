@@ -38,7 +38,7 @@ VAR coachCrossroadsGetroffen = false
 // Kapitel 53 (Roman): vier Straßen, die sich in der Mitte von nichts treffen. Musik: die
 // Ortsthemen nacheinander über einem fröhlichen Rhythmus (crossroads), Stimmengewirr.
 ~ ankunftCrossroadsGesehen = true
-Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #licht:abend
+Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #geraeusch:crossroads_stimmen #licht:abend
 An der Ecke eine Raststätte, niedrig und breit, mit Veranda rundherum: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
 Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus
 Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter

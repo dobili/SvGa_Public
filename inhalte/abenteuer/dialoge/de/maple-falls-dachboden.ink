@@ -203,14 +203,15 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
 
 // Szene akt1.ersteNacht (Roman, Kapitel 4; neu gegenüber der Story-Bibel), etwa drei Minuten.
 // Stimmung: warm, Nähe, leiser Humor; dann die offene Partie als Frage des ganzen Spiels.
-// Ort vorerst der Dachboden, bis es ein Zimmer für {held} gibt (Roman: Brett auf dem Schreibtisch).
+// Ort ist das Zimmer von {held} (mapleFalls.zimmer): Das Brett steht auf dem Schreibtisch unter dem
+// Fenster (Roman, Kapitel 4); die Laterne kommt vom Dachboden.
 // Klang (docs/spiel/21_Klangplan.md): keine Musik, nur Kühlschrank, Wasserfall, ein Auto; ganz am
 // Schluss vier Töne von Ambroses Thema (#musik:ambrose auf der letzten Zeile).
 === erste_nacht ===
 ~ ersteNachtGesehen = true
 ~ setzeSzene("akt1.ersteNacht")
 Nacht. Das Haus ist still, nur du nicht. Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
-Du steigst mit dem Brett noch einmal hinauf und legst es unter das runde Fenster. Die neunte Stufe knarrt. #sprecher:erzaehler #klang:knarren
+Du hast die Laterne vom Dachboden geholt. Das Brett steht auf dem Schreibtisch unter deinem Fenster. #sprecher:erzaehler #klang:knarren
 Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler
 * [„Bist du wach?“]
     Ich schlafe nicht. Das ist eine der Unannehmlichkeiten. #sprecher:ambrose

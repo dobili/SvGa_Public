@@ -1,3 +1,14 @@
+Stand: 14.11.2026 (Haupt-Chat, Schach-Abenteuer): **Musik fertig gesetzt.** Alle 150 Stücke der
+Gesamtübersicht des Klangplans sind als Satzpläne in `pipeline/abenteuer/ton/stuecke/` gesetzt und
+gerendert (privat `musik/`, Akt 2 bis 4 in `musik/aktN`), Bau mit
+`python -m pipeline.abenteuer.ton.musikbau ../schach-abenteuer-inhalte` (Proben und Klangfonts mit
+`--laden`, braucht fluidsynth und 7z). Hörseite für den Autor:
+https://claude.ai/artifact/PHtbCVXtbiuBgxQDSd9PuN (Generator nur im Scratchpad, bei Bedarf neu
+schreiben). Karten von Akt 2 bis 4 verweisen in `orte.json` auf ihre Ortsmusik.
+
+**Nächster Schritt:** Rückmeldungen des Autors zur Musik (RO13, Nummern M1.01 …) einarbeiten;
+Geräusche aus freien Sammlungen; offene Kennungen des Klangplans (siehe ENTSCHEIDUNGEN, 14.11.).
+
 Stand: 10.11.2026, 13:20 UTC (Haupt-Chat, Schach-Abenteuer): **Runde 8 läuft.**
 
 - Die Notizen des Autors zur Revision 2 (`docs/spiel/auftraege/revision2_notizen.md`) sind in die

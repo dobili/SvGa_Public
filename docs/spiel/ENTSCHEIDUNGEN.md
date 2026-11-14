@@ -993,3 +993,17 @@ weil sich erst dann zeigt, ob Menge und Stil passen. Die Musik bauen wir selbst 
 mit freien Instrumenten). Hintergrundmusik ist mehrstimmig wie in vergleichbaren Spielen (Melodie,
 Begleitung, Bass, je Ort leichtes Schlagwerk); ein Instrument allein nur an stillen Stellen.
 Gekaufte Pakete höchstens für Orte mit Bandklang, wenn die eigene Probe dort nicht trägt.
+
+## Musik vollständig selbst gesetzt (14.11.2026)
+
+Auf Wunsch des Autors („bau die Musik soweit du kannst überall ein“) sind alle 150 Stücke der
+Gesamtübersicht des Klangplans als Satzpläne gesetzt (`pipeline/abenteuer/ton/stuecke/`) und mit
+gemeinfreien Aufnahmen gerendert (VCSL, VSCO 2 CE, FreePats; alle CC0). Ein Arrangeur macht aus
+Akkordfolge, Melodie und Besetzung mehrstimmige Stücke mit Begleitmustern, Rhythmus, Pegel je Rolle
+und nahtlosen Schleifen. Die Tondateien liegen privat (`musik/`, Akt 2 bis 4 in `musik/aktN`); die
+Karten der Akte 2 bis 4 verweisen in `orte.json` auf ihre Ortsmusik nach dem Klangplan. Fehlende
+Instrumente (Synthesizer, Akkordeon, Banjo, Waschbrett, Slide-Gitarre, Pauke) sind je Datei mit
+ihrem Ersatz vermerkt. Offen im Klangplan: eigene Kennungen für die vollständigen Fassungen von
+`held` (Kap. 39) und `nova` (Remis), den kurzen Hornton von `hale.springer` und den `abschaltton`;
+Ereignisse innerhalb eines Stücks (Damenopfer in `ambrose.london`, Töne, die im Clubkampf von
+Summit City wegfallen, Zeitmarken der Fernpartie) muss später die App steuern.

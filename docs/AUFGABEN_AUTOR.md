@@ -1667,15 +1667,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
       Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
       Zustimmung oder Widerspruch genügt.
-- [ ] RO13. **Musik und Geräusche:** Der Autor hat die sechs Hörproben gehört (gut) und setzt eine
-      Obergrenze von 80 € für Musik, ausgegeben erst nach dem Durchspielen (14.11.2026). Wichtig: Die
-      Proben zeigten nur die Motive, jeweils auf einem Instrument. Die fertige Hintergrundmusik
-      wird mehrstimmig wie in Stardew Valley oder Pokémon: Melodie, Begleitung, Bass und je nach
-      Ort leichtes Schlagwerk, zwei bis vier Instrumente. Die Motive sind darin eingewoben; nur an
-      stillen Stellen (Dachboden, Erinnerungen) spielt ein Instrument allein. Empfehlung, schon
-      umgesetzt: Alle Musik von Akt 1 bauen wir selbst, ohne Kosten. Nächste Hörprobe: Maple Falls
-      voll gesetzt und Jazz für Riverton als Probe für Bandmusik. Klingt die Bandmusik zu steif,
-      kaufen wir nach dem Durchspielen von Akt 1 höchstens ein oder zwei Pakete (zusammen unter
-      80 €) für Orte mit Bandklang (Riverton, Desert Springs, Port Delacroix). Geräusche aus freien
-      Sammlungen (Freesound, GDC-Bundle), etwa 95 % abgedeckt; dafür braucht es ein kostenloses
-      Freesound-Konto des Autors. Widerspruch genügt.
+- [ ] RO13. **Musik anhören (alle 150 Stücke fertig, 14.11.2026):** Die ganze Musik der vier Akte
+      ist selbst gesetzt und mit gemeinfreien Instrumentenaufnahmen gespielt (keine Kosten, keine
+      Namensnennung nötig): mehrstimmig mit Melodie, Begleitung, Bass und Puls, je Ort ein Thema in
+      mehreren Fassungen, die Leitmotive tongenau. Anhören auf der Hörseite
+      https://claude.ai/artifact/PHtbCVXtbiuBgxQDSd9PuN (Schleifen laufen dort endlos wie im Spiel).
+      Rückmeldung mit der Nummer genügt, etwa „M1.04 zu laut“, „M2.07 gefällt“, „M3.12 klingt
+      künstlich“. Wo die Bandmusik (Riverton, Diner, Desert Springs) zu steif klingt, kaufen wir nach
+      dem Durchspielen höchstens ein oder zwei Pakete, zusammen unter 80 €. Geräusche folgen noch
+      (freie Sammlungen, dafür braucht es ein kostenloses Freesound-Konto des Autors).
+      Eine Deutung ist schon umgesetzt, Widerspruch genügt: Beim Stück „Ambrose und Mama“ (Akt 2)
+      verlangt der Klangplan „ohne Konzernton“; Ambroses Kopf behält trotzdem seinen fremden Ton,
+      nur Digitalpiano und Fläche fehlen, weil er erst in Akt 3 rein wird.

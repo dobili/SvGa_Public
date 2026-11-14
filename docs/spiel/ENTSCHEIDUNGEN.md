@@ -1007,3 +1007,20 @@ ihrem Ersatz vermerkt. Offen im Klangplan: eigene Kennungen für die vollständi
 `held` (Kap. 39) und `nova` (Remis), den kurzen Hornton von `hale.springer` und den `abschaltton`;
 Ereignisse innerhalb eines Stücks (Damenopfer in `ambrose.london`, Töne, die im Clubkampf von
 Summit City wegfallen, Zeitmarken der Fernpartie) muss später die App steuern.
+
+## Klang in der Hand des Hauptchats, Chaos-Prüfung, Brettstile (14.11.2026, abends)
+
+Der Autor hat alles, was mit Klang zu tun hat (Musik, Geräusche, Pegel, Einsatz), vorerst
+abgesegnet; Unstimmigkeiten meldet er beim Probedurchspielen. Die Hörseite der Musik (früher
+RO13) ist damit erledigt; das Budget von höchstens 80 € für gekaufte Bandmusik bleibt und wird
+erst nach dem Durchspielen ausgegeben.
+
+Die Chaos-Prüfung der Gesamtsimulation (373 Läufe) fand acht Sackgassen; alle sind behoben
+(Commit „Chaos-Spieler findet acht Sackgassen“). Die Nebenquest `riverton.zuschauen` bleibt
+nachholbar: Tamsin bietet die Runde im Pinewood Camp noch einmal an. Ambroses Geist steht nach dem
+Abschied (`abschiedGesehen`) nicht mehr im Zimmer; der Epilog startet über das Brett auf dem
+Schreibtisch.
+
+Brettstile: Der Autor hält alle zwölf Farbkombinationen für geeignet; Schiefer bekam auf seinen
+Hinweis hellere Felder und fast schwarze Figuren mit Bronzekante. Er wünscht für alle Bretter und
+Figurensätze eigene, schönere Fassungen aus Gemini (RO19); bis sie da sind, gilt der Pixelstil.

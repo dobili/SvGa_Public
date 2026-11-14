@@ -1673,18 +1673,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
       Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
       Zustimmung oder Widerspruch genügt.
-- [ ] RO13. **Musik anhören (alle 150 Stücke fertig, 14.11.2026):** Die ganze Musik der vier Akte
-      ist selbst gesetzt und mit gemeinfreien Instrumentenaufnahmen gespielt (keine Kosten, keine
-      Namensnennung nötig): mehrstimmig mit Melodie, Begleitung, Bass und Puls, je Ort ein Thema in
-      mehreren Fassungen, die Leitmotive tongenau. Anhören auf der Hörseite
-      https://claude.ai/artifact/PHtbCVXtbiuBgxQDSd9PuN (Schleifen laufen dort endlos wie im Spiel).
-      Rückmeldung mit der Nummer genügt, etwa „M1.04 zu laut“, „M2.07 gefällt“, „M3.12 klingt
-      künstlich“. Wo die Bandmusik (Riverton, Diner, Desert Springs) zu steif klingt, kaufen wir nach
-      dem Durchspielen höchstens ein oder zwei Pakete, zusammen unter 80 €. Geräusche folgen noch
-      (freie Sammlungen, dafür braucht es ein kostenloses Freesound-Konto des Autors).
-      Eine Deutung ist schon umgesetzt, Widerspruch genügt: Beim Stück „Ambrose und Mama“ (Akt 2)
-      verlangt der Klangplan „ohne Konzernton“; Ambroses Kopf behält trotzdem seinen fremden Ton,
-      nur Digitalpiano und Fläche fehlen, weil er erst in Akt 3 rein wird.
 - [ ] RO14. **Ein Textfenster für die Geschichte, Porträts an jeder Rede (Wunsch vom 14.11.2026):**
       Schon umgesetzt: Die Sätze der Passanten stehen jetzt unten im selben Fenster wie die Dialoge,
       nicht mehr oben; Ambroses Antwort darauf trägt sein Porträt. Oben erscheinen nur noch
@@ -1701,17 +1689,29 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
 - [ ] RO16. **Großbilder von Gemini (Datei „3_Gemini_Grossbilder_und_Funde.html“):** Akt 1 und 2
       (A1 bis A17) sind fertig und im Spiel (14.11.2026). Offen sind A18 bis A38 (Akt 3 und 4) und
       die Fundbilder.
-- [ ] RO17. **Geräusche (14.11.2026):** 159 von 163 Geräuschen aller vier Akte sind da, aus den
-      kostenlosen GDC-Paketen von Sonniss (Nutzung in Spielen ohne Namensnennung erlaubt),
-      OpenGameArt (gemeinfrei) und selbst erzeugt; keine Namensnennung im Abspann nötig. Anhören:
-      https://claude.ai/artifact/JAPtu6n6XZ6V74CwM6jAfA (unsichere zuerst, Rückmeldung mit Nummer,
-      etwa „G1.012 zu laut“). Freesound sperrt die Cloud-Umgebung; was fehlt, bitte am eigenen
-      Rechner von freesound.org laden (nur CC0 oder CC BY, kein NC) und nach ki-roh legen:
-      **Fehlen ganz:** Enten im Park (2–3 kurze Quaker; Suche „mallard duck quack“), Besen auf Stein
-      draußen, 2–4 s („broom sweeping concrete“), Besen auf Holzdielen innen, 2–4 s („broom sweeping
-      wooden floor“), altes Radio im Motel, leise und blechern, nur gemeinfreie Musik oder Rauschen
-      („old radio static tuning“). **Besser austauschen:** Falkenruf für die Hochebene („red-tailed
-      hawk call“), Bison-Schnauben für die Prärie („bison snort“), echter Linienbus mit
-      Druckluftbremse und Falttür („bus arrive air brake doors“), quietschende alte Zapfsäule („gas
-      pump squeak“), Farm-Windrad, das sich dreht und quietscht („windmill farm creaking“),
-      amerikanischer Schulflur mit Spindtüren („school hallway lockers students“).
+- [ ] RO17. **Geräusche von Freesound (14.11.2026):** Freesound sperrt die Cloud-Umgebung; bitte am
+      eigenen Rechner von freesound.org laden (nur Lizenz CC0 oder CC BY, kein „NonCommercial“),
+      Dateinamen so lassen, wie Freesound ihn vergibt (Nummer und Urheber stehen darin), und in
+      `ki-roh/ton/<kennung>/` des privaten Repositorys legen. **Fehlen ganz (etwa 15 Minuten):**
+      `enten` 2–3 kurze Rufe von Stockenten ohne Verkehr („mallard duck quack“); `besen_stein`
+      Besen fegt draußen über Stein, 2–4 s („broom sweeping concrete“); `besen` Besen auf
+      Holzdielen innen, 2–4 s („broom sweeping wooden floor“); `motel` Rauschen eines alten Radios
+      zwischen Sendern („old radio static tuning“). **Schön, nicht nötig:** `falken` („red-tailed
+      hawk call“), `bison` („bison snort“), `bus` mit Druckluftbremse und Falttür („bus arrive air
+      brake doors“), `zapfsaeule` („gas pump squeak“), `windrad` („windmill farm creaking“),
+      `schulflur` („school hallway lockers students“).
+- [ ] RO18. **Porträts Akt 1 in Gemini (Datei „5_Gemini_Akt1_Rest.html“):** 1 bis 26 sind
+      zugeschnitten und im Spiel (14.11.2026). Es fehlen: Hector neutral (Nr. 12, Schritt 1; bisher
+      steht sein Lächeln in allen Feldern), Kettering lächelt (Nr. 27, neutral ist schon da) und die
+      Nummern 28 bis 34 (Dunmore, Ivy, Jonah, Owen, Walt, Clover, Oma Miller).
+- [ ] RO19. **Bretter und Figuren in Gemini (Datei „6_Gemini_Bretter_und_Figuren.html“ mit
+      „Vorlagen_Bretter.zip“):** Je Ort ein Brett und ein Figurenblatt (oben Weiß, unten Schwarz:
+      König, Dame, Turm, Läufer, Springer, Bauer auf grünem Grund). Ablauf je Ort: neuer Chat,
+      Vorlage brett-NN.png anhängen, Brett-Prompt; im selben Chat Figuren-Prompt mit dem neuen Brett
+      als Bild. Ablage in ki-roh, Namen egal. Nicht alle zwölf nötig; was fehlt, behält den jetzigen
+      Pixelstil (den du für alle zwölf Orte als geeignet bestätigt hast).
+- [ ] RO20. **Nebenquest „Zuschauen“ in Riverton nicht mehr verpassbar:** Wer Tamsins Angebot hört,
+      die Runde aber nicht besteht, bevor Slick abreist, fand Tamsin nicht mehr (Befund der
+      Chaos-Prüfung). Schon umgesetzt: Im Pinewood Camp bietet Tamsin die mitgeschriebene
+      Blitzpartie noch einmal an. Außerdem steht Ambroses Geist nach dem Abschied nicht mehr im
+      Zimmer. Widerspruch genügt.

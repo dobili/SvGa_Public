@@ -14,6 +14,7 @@
 // Der Marshmallow-Stock kommt über gibFund; Ink merkt ihn sich selbst (stockGefunden).
 
 EXTERNAL beginnePartie(begegnung)
+EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(kennung)
@@ -31,6 +32,10 @@ VAR ausgangPinewoodCampHollis = ""
 VAR kioskGesehen = false
 // Gutachten M3.4: „Es ist still“ (Kapitel 54, Schluss) fällt beim Eintritt ins Camp, nicht am Rangerhaus.
 VAR esIstStillGesagt = false
+// Aus Riverton (riverton-pavillon.ink): Die Nebenquest „Zuschauen“ bleibt nachholbar, auch wenn Slick
+// und Ray den Pavillon verlassen haben (Befund der Chaos-Simulation, 14.11.2026).
+VAR zuschauenAngeboten = false
+VAR slickBeobachtenBestanden = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 95)
 
@@ -211,8 +216,19 @@ Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis #stim
 -> END
 
 === tamsin ===
+{zuschauenAngeboten and not slickBeobachtenBestanden: -> tamsin_zuschauen_nachholen}
 {~In Riverton regnet es jetzt bestimmt. Hier regnet es nie. Doch, gestern.|Slick hat gesagt, du bist jetzt berühmt. Bist du berühmt?|Ich hab Ezra im Tandem einen Turm gegeben. Er hat ihn sofort verloren.} #sprecher:tamsin #stimmung:lacht
 -> END
+
+=== tamsin_zuschauen_nachholen ===
+Ich hab Slick und Ray mitgeschrieben. Die ganze Blitzpartie, Zug für Zug. #sprecher:tamsin #stimmung:froh
+Willst du sie sehen? Achte darauf, was Slick nicht sieht. #sprecher:tamsin #stimmung:nachdenklich
+* [„Zeig her.“]
+    ~ beginneAufgaben("riverton.slickBeobachten")
+    -> END
+* [„Später.“]
+    Der Zettel bleibt in meiner Tasche. #sprecher:tamsin #stimmung:laechelt
+    -> END
 
 === lou ===
 {~Das Musikhaus ist fertig! Also fast. Das Dach ist neu. Miss Odile spielt jeden Abend.|Hier ist es so still. Zu Hause hört man immer irgendwo Musik.|Räuberschach ist wie Jazz. Man gibt alles her und gewinnt trotzdem.} #sprecher:lou #stimmung:laechelt

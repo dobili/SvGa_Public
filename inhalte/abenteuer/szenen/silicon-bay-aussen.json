@@ -2,7 +2,7 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse (Tiere gibt es keine, „die stören die Sensoren“; ein Roboterhund geht an der Leine), Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der einzige Farbfleck der Stadt: Rosies Food-Truck mit Verkaufsklappe nach Süden und davor die einzige Holzbank, auf der Dash sitzt; dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur in der Mitte führt ein gepflasterter Durchgang zur Treppe hinunter, die auf der Hafenkarte beginnt.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, der Gehweg daneben bleibt frei, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand geht der Gehweg in den Plattenplatz über, der auf der Karte der Glasbrücke zum Stadtrand-Platz vor der Rampe weiterführt. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse (Tiere gibt es keine, „die stören die Sensoren“; ein Roboterhund geht an der Leine), Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der einzige Farbfleck der Stadt: Rosies Food-Truck mit Verkaufsklappe nach Süden und davor die einzige Holzbank, auf der Dash sitzt; dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur in der Mitte führt ein gepflasterter Durchgang zur Treppe hinunter, die auf der Hafenkarte beginnt.",
   "boden": "platten",
   "wandart": "stein",
   "boeden": {
@@ -26,17 +26,17 @@
     "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
     "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
     "#..............wwwwwww......................................wwww.......#",
-    "#..............wwwwwww......................................wwww.......#",
-    "#..............wwwwwww......................................wwww.......#",
-    "#..............wwwwwww......................................wwww.......#",
-    "#..............wwwwwww......................................wwww.......#",
-    "#..............wwwwwww......................................wwww.......#",
-    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.....ww#",
+    "#..............wwwwwww......................................wwww.....ww#",
+    "#..............wwwwwww......................................wwww.....ww#",
+    "#..............wwwwwww......................................wwww.....ww#",
+    "#..............wwwwwww......................................wwww.....ww#",
+    "#..............wwwwwww......................................wwww.....ww#",
+    "#...........................................................wwww.....ww#",
+    "#...........................................................wwww.....ww#",
+    "#...........................................................wwww.....ww#",
+    "#...........................................................wwww.....ww#",
     "#...........................................................wwww.......#",
-    "#...........................................................wwww.......#",
-    "#...........................................................wwww.......#",
-    "#...........................................................wwww.......#",
-    "#...........................................................wwww.......#",
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
@@ -44,14 +44,14 @@
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
-    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
-    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg...",
+    "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg...",
     "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...#",
     "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...#",
     "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...#",
-    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss...#",
-    "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg#",
-    "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg#",
+    "#sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss.ww#",
+    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggww#",
+    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggww#",
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
@@ -792,21 +792,6 @@
       "feld": [66, 23]
     },
     {
-      "moebel": "wsgDeck4",
-      "feld": [68, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wsgGel3",
-      "feld": [68, 30],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wsgGel3",
-      "feld": [68, 33],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mf9BankLinks",
       "feld": [30, 57]
     },
@@ -864,8 +849,8 @@
       "feld": [66, 6]
     },
     {
-      "moebel": "sb9Tunnelportal",
-      "feld": [0, 32],
+      "moebel": "sb9TunnelportalFlach",
+      "feld": [0, 33],
       "vorn": true,
       "bauteil_ok": true
     },

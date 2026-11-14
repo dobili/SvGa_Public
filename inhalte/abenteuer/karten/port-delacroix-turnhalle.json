@@ -2605,7 +2605,7 @@
     },
     {
      "id": 59,
-     "name": "pd6Turnmatte",
+     "name": "pd6TurnmatteLinks",
      "type": "moebel",
      "x": 16,
      "y": 192,
@@ -2838,7 +2838,7 @@
      "name": "pd6Fussmatte",
      "type": "moebel",
      "x": 216,
-     "y": 232,
+     "y": 227,
      "width": 16,
      "height": 16,
      "rotation": 0,

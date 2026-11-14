@@ -1,11 +1,11 @@
 {
   "karte": "wegSiliconDelacroix.deich",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Ein Fischerboot und ein Ruderboot am Steg, viele Bojen und Pfähle mit Möwen im grauen Wintermeer vor dem Steinufer. Der Deich ist eine Höhe: Auf der Krone schwingt der Erdweg zwischen Treibgut, Fässern und Tauen, die Böschung fällt als grüner Grashang zur Marsch, zwei Treppen führen hinunter. In der Krone klafft ein Loch, durch das das Meer drückt; Mr. Guidry stopft es mit Sandsäcken. Unten eine winterliche Marsch mit Zypressen, Büschen und Schilf, am Ende der zweiten Treppe eine große Pumpenhalle. Am Ortsrand drei Hilfszelte hinter Bauzäunen und zwei Bretterhütten.",
+  "beschreibung": "Variante C, reich: Ein Fischerboot und ein Ruderboot am Steg, viele Bojen und Pfähle mit Möwen im Wintermeer vor dem Steinufer, das wie in Port Delacroix mit einer Steinkante gebaut ist. Der Deich ist eine Höhe: Auf der Krone schwingt der Erdweg zwischen Treibgut, Fässern und Tauen, die Böschung fällt als grüner Grashang zur Marsch, zwei Treppen führen hinunter. In der Krone klafft ein Loch, durch das das Meer drückt; Mr. Guidry stopft es mit Sandsäcken. Unten eine winterliche Marsch mit Zypressen, Büschen und Schilf, am Ende der zweiten Treppe eine große Pumpenhalle. Am Ortsrand drei Hilfszelte hinter Bauzäunen und zwei Bretterhütten.",
   "boden": "gras",
   "wandart": "gras",
   "wand": "damm",
-  "ufer": "see",
+  "ufer": "stein",
   "boeden": {
     "e": "erde",
     "p": "pflaster"

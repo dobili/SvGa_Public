@@ -2,7 +2,7 @@
   "karte": "wegIronwoodSilicon.glasbruecke",
   "datei": "karten/weg-ironwood-silicon-glasbruecke.json",
   "art": "aussen",
-  "beschreibung": "Die Glasbrücke vor Silicon Bay an einem hellen Wintertag (Runde 8, nach dem Gutachten), 140 × 26, Ansicht schräg von oben; Schnee liegt auf Rasen und Bäumen. Unter der Brücke läuft die Autobahn von Nord nach Süd: vier Spuren je Richtung in Autobreite, gestrichelte Fahrbahnmarkierung, durchgezogene Randlinien, Leitplanken an beiden Rändern und auf dem Mittelstreifen aus Beton; die Autos fahren rechts. Zu beiden Seiten ein Grünstreifen mit Bäumen und Heckensäulen als Lärm- und Sichtschutz. Der Pfad kommt am Ostrand in den Reihen 18–19 an, biegt nach Norden und steigt über eine Betonrampe mit Querrillen hinauf; deren Stirnwand wächst zur Brücke hin, an der Fuge zum Glas liegt ein Querträger. Das Deck aus Glas, vier Felder breit, ruht auf einem Stahlträger und Betonpfeilern, die nur auf den Grünstreifen, den Seitenstreifen und dem Mittelstreifen stehen; durch das halb durchsichtige Glas sieht man Straße und Schatten. Glasgeländer auf beiden Seiten, auf dem Deck eine Bank, unter der zwei weiße Ohrstöpsel liegen. Über der Mitte springt eine gläserne Aussichtsplattform nach Norden vor, getragen von zwei Pfeilern auf dem Mittelstreifen, mit Kikis Tisch und Ringlicht; daneben im Grünstreifen der Funkmast „Testfeld Signal“. Im Westen führt eine zweite Rampe hinunter auf den Stadtrand-Platz aus hellen Platten mit Bordstein: zwei Rastplätze mit moderner Laterne, Bank und Mülleimer, in der Mitte Bäume in Pflanzbeeten und zwei Bänke, am Südrand Pflanzkästen, am Nordrand die Werbetafel von ZERO („ZERO – Nie wieder Fehler“). Der Platz öffnet sich nach Westen in den Reihen 18–19.",
+  "beschreibung": "Die Glasbrücke vor Silicon Bay an einem hellen Wintertag (Runde 8, nach dem Gutachten), 140 × 26, Ansicht schräg von oben; Schnee liegt auf Rasen und Bäumen. Unter der Brücke läuft die Autobahn von Nord nach Süd: vier Spuren je Richtung in Autobreite, gestrichelte Fahrbahnmarkierung, durchgezogene Randlinien, Leitplanken an beiden Rändern und auf dem Mittelstreifen aus Beton; die Autos fahren rechts. Zu beiden Seiten ein Grünstreifen mit Bäumen und Heckensäulen als Lärm- und Sichtschutz. Im Nordosten mündet die Schnellstraße von der Raststätte her in die Autobahn: zwei Spuren mit Rechtsverkehr, Leitplanke und Hecke wie dort; die Einmündung liegt offen im rechten Fahrbahnrand. Der Pfad kommt am Ostrand in den Reihen 18–19 an, biegt nach Norden und steigt über eine Betonrampe mit Querrillen hinauf; deren Stirnwand wächst zur Brücke hin, an der Fuge zum Glas liegt ein Querträger. Das Deck aus Glas, vier Felder breit, ruht auf einem Stahlträger und Betonpfeilern, die nur auf den Grünstreifen, den Seitenstreifen und dem Mittelstreifen stehen; durch das halb durchsichtige Glas sieht man Straße und Schatten. Glasgeländer auf beiden Seiten, auf dem Deck eine Bank, unter der zwei weiße Ohrstöpsel liegen. Über der Mitte springt eine gläserne Aussichtsplattform nach Norden vor, getragen von zwei Pfeilern auf dem Mittelstreifen, mit Kikis Tisch und Ringlicht; daneben im westlichen Grünstreifen der Funkmast „Testfeld Signal“. Im Westen führt eine zweite Rampe hinunter auf den Stadtrand-Platz aus hellen Platten mit Bordstein: zwei Rastplätze mit moderner Laterne, Bank und Mülleimer, in der Mitte Bäume in Pflanzbeeten und zwei Bänke, am Südrand Pflanzkästen, am Nordrand die Werbetafel von ZERO („ZERO – Nie wieder Fehler“). Der Platz reicht nach Westen bis an den Kartenrand und geht dort in den Campus über (Übergang in den Reihen 18–19).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -15,28 +15,28 @@
   "stil": ["modern", "klassisch", "einfach", "natur", "industrie", "laendlich"],
   "raster": [
     "############################################################################################################################################",
+    "#.....................................................ssssssssssssskkssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.....................................................ssssssssssssskkssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.....................................................ssssssssssssskkssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.....................................................ssssssssssssskkssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
-    "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
-    "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
-    "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
-    "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp.............................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
     "pppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pppppppppppppppppppppppppeeeeeee",
     "pppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pppppppppppppppppppppppppeeeeeee",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
+    "#ppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
     "#.....................................................ssssssssssssskksssssssssssss.........................................................#",
     "############################################################################################################################################"
@@ -47,8 +47,8 @@
       "feld": [53, 1]
     },
     {
-      "moebel": "wsgMatschR",
-      "feld": [81, 1]
+      "moebel": "wsgMatschR20",
+      "feld": [81, 5]
     },
     {
       "moebel": "wsgPlanke8",
@@ -71,8 +71,8 @@
       "versatz": [8, 0]
     },
     {
-      "moebel": "wsgPlanke8",
-      "feld": [81, 0],
+      "moebel": "wsgPlanke3",
+      "feld": [81, 5],
       "versatz": [-8, 0]
     },
     {
@@ -141,8 +141,8 @@
       "versatz": [-1, 0]
     },
     {
-      "moebel": "wsgLinie16",
-      "feld": [81, 0],
+      "moebel": "wsgLinie11",
+      "feld": [81, 5],
       "versatz": [0, 0]
     },
     {
@@ -261,6 +261,145 @@
       "versatz": [0, 0]
     },
     {
+      "moebel": "wsgLinieQ16",
+      "feld": [81, 0],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "wsgStrichQ16",
+      "feld": [81, 2],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "wsgLinieQ16",
+      "feld": [81, 4],
+      "versatz": [0, 12]
+    },
+    {
+      "moebel": "wsgLinieQ16",
+      "feld": [97, 0],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "wsgStrichQ16",
+      "feld": [97, 2],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "wsgLinieQ16",
+      "feld": [97, 4],
+      "versatz": [0, 12]
+    },
+    {
+      "moebel": "wsgLinieQ16",
+      "feld": [113, 0],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "wsgStrichQ16",
+      "feld": [113, 2],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "wsgLinieQ16",
+      "feld": [113, 4],
+      "versatz": [0, 12]
+    },
+    {
+      "moebel": "wsgLinieQ11",
+      "feld": [129, 0],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "wsgStrichQ11",
+      "feld": [129, 2],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "wsgLinieQ11",
+      "feld": [129, 4],
+      "versatz": [0, 12]
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [84, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [92, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [100, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [108, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [116, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [124, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5Planke8",
+      "feld": [132, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wsgSaeule6",
+      "feld": [131, 6]
+    },
+    {
+      "moebel": "wsgSaeule7",
+      "feld": [132, 6]
+    },
+    {
+      "moebel": "wsgSaeule6",
+      "feld": [133, 6]
+    },
+    {
+      "moebel": "wsgSaeule7",
+      "feld": [134, 6]
+    },
+    {
+      "moebel": "wsgSaeule6",
+      "feld": [135, 6]
+    },
+    {
+      "moebel": "wsgSaeule7",
+      "feld": [136, 6]
+    },
+    {
+      "moebel": "wsgSaeule6",
+      "feld": [137, 6]
+    },
+    {
+      "moebel": "wsgSaeule7",
+      "feld": [138, 6]
+    },
+    {
+      "moebel": "wsrAutoLinks1",
+      "feld": [118, 0],
+      "versatz": [0, 0],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wsrAutoRechts10",
+      "feld": [98, 2],
+      "versatz": [0, 4],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "wsgRampeWest",
       "feld": [30, 10]
     },
@@ -301,6 +440,11 @@
       "feld": [63, 5]
     },
     {
+      "moebel": "wsgBordQ2",
+      "feld": [0, 10],
+      "versatz": [0, -1]
+    },
+    {
       "moebel": "wsgBordQ16",
       "feld": [2, 10],
       "versatz": [0, -1]
@@ -311,6 +455,11 @@
       "versatz": [0, -1]
     },
     {
+      "moebel": "wsgBordQ2",
+      "feld": [0, 23],
+      "versatz": [0, -2]
+    },
+    {
       "moebel": "wsgBordQ16",
       "feld": [2, 23],
       "versatz": [0, -2]
@@ -319,16 +468,6 @@
       "moebel": "wsgBordQ12",
       "feld": [18, 23],
       "versatz": [0, -2]
-    },
-    {
-      "moebel": "wsgBordL8",
-      "feld": [2, 10],
-      "versatz": [-1, 0]
-    },
-    {
-      "moebel": "wsgBordL3",
-      "feld": [2, 20],
-      "versatz": [-1, 0]
     },
     {
       "moebel": "wsgBordQ4",
@@ -452,18 +591,6 @@
       "feld": [63, 5]
     },
     {
-      "moebel": "wsgBaum11",
-      "feld": [46, 1]
-    },
-    {
-      "moebel": "wsgBaum12",
-      "feld": [49, 1]
-    },
-    {
-      "moebel": "wsgBaum1",
-      "feld": [46, 4]
-    },
-    {
       "moebel": "wsgBaum2",
       "feld": [50, 5]
     },
@@ -505,11 +632,11 @@
     },
     {
       "moebel": "wsgBaum1",
-      "feld": [90, 2]
+      "feld": [90, 6]
     },
     {
-      "moebel": "wsgBaum11",
-      "feld": [93, 4]
+      "moebel": "wsgBaum2",
+      "feld": [93, 6]
     },
     {
       "moebel": "wsgSaeule6",
@@ -542,14 +669,6 @@
     {
       "moebel": "wsgSaeule7",
       "feld": [52, 22]
-    },
-    {
-      "moebel": "wsgSaeule6",
-      "feld": [83, 1]
-    },
-    {
-      "moebel": "wsgSaeule7",
-      "feld": [83, 3]
     },
     {
       "moebel": "wsgSaeule6",
@@ -593,7 +712,7 @@
     },
     {
       "moebel": "sb8Funkmast",
-      "feld": [84, 1]
+      "feld": [47, 2]
     },
     {
       "moebel": "wsgBaum12",
@@ -621,15 +740,15 @@
     },
     {
       "moebel": "wsgBaum2",
-      "feld": [96, 2]
-    },
-    {
-      "moebel": "wsgBaum12",
-      "feld": [100, 4]
+      "feld": [97, 6]
     },
     {
       "moebel": "wsgBaum1",
-      "feld": [103, 1]
+      "feld": [100, 6]
+    },
+    {
+      "moebel": "wsgBaum1",
+      "feld": [103, 6]
     },
     {
       "moebel": "wsgBaum1",
@@ -661,19 +780,15 @@
     },
     {
       "moebel": "wsgBaum12",
-      "feld": [115, 3]
+      "feld": [114, 6]
     },
     {
       "moebel": "wsgBaum2",
-      "feld": [122, 1]
+      "feld": [121, 6]
     },
     {
       "moebel": "wsgBaum11",
-      "feld": [128, 3]
-    },
-    {
-      "moebel": "wsgBaum1",
-      "feld": [134, 1]
+      "feld": [126, 6]
     },
     {
       "moebel": "wsgBaum1",
@@ -1022,10 +1137,10 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [112, 6],
+      "feld": [120, 12],
       "eigenschaften": {
-        "von": "108,5",
-        "bis": "118,8",
+        "von": "110,10",
+        "bis": "130,15",
         "verhalten": "ausweichen"
       }
     }

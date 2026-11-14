@@ -1247,6 +1247,51 @@
       "zustand": "neu",
       "stil": "modern"
     },
+    "wsgMatschR20": {
+      "quelle": "spiel/eigene/matschsaum_rechts_20.png",
+      "breite": 16,
+      "hoehe": 320,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgPlanke3": {
+      "quelle": "spiel/eigene/leitplanke_quer_3.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgLinie11": {
+      "quelle": "spiel/eigene/fahrbahn_linie_11.png",
+      "breite": 16,
+      "hoehe": 176,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgLinieQ11": {
+      "quelle": "spiel/eigene/fahrbahn_linie_quer_11.png",
+      "breite": 176,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgStrichQ11": {
+      "quelle": "spiel/eigene/fahrbahn_strich_quer_11.png",
+      "breite": 176,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
     "wsgLieferroboter": {
       "quelle": "spiel/eigene/lieferroboter.png",
       "breite": 16,

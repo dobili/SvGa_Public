@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen.json",
   "art": "aussen",
-  "beschreibung": "Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon.",
+  "beschreibung": "Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon. Von Osten kommt die alte Strecke von 1879 aus dem Felseinschnitt des Felsbogens und endet hinter dem Gemischtwarenladen an einem Prellbock.",
   "wand": "felsRot",
   "wandart": "sandRot",
   "boden": "sandRot",
@@ -12,7 +12,8 @@
     "s": "asphalt",
     "q": "stein",
     "m": "asphaltMitte",
-    "n": "asphaltMitteSenkrecht"
+    "n": "asphaltMitteSenkrecht",
+    "f": "felsbodenRot"
   },
   "raster": [
     "############################################################",
@@ -31,8 +32,8 @@
     "#..............................pppppp......................#",
     "#..............................pppppp......................#",
     "#..............................pppppp......................#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp....#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp....#",
     "ssssssssssssssssssssssssssssssssssssssssssssppp............#",
     "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmsspp............#",
     "ssssssssssssssssssssssssssssssssssssssssssssssp............#",
@@ -43,10 +44,10 @@
     "#.........................................psns.............#",
     "#.........................................psns.............#",
     "#.........................................psns.............#",
-    "#.........................................psns.............#",
+    "#.........................................psns........fffff#",
+    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq........fffff#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
-    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
-    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppppppp#",
+    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppp....#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkk......",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkk......",
     "#..........................................................#",
@@ -699,7 +700,36 @@
     },
     {
       "moebel": "by9HuetteKrebs",
-      "feld": [54, 26]
+      "feld": [54, 18]
+    },
+    {
+      "moebel": "cc8PrellbockQuer",
+      "feld": [54, 27]
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [55, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [56, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [57, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [58, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [59, 28],
+      "bauteil_ok": true
     },
     {
       "moebel": "mf4Laterne",
@@ -800,7 +830,7 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [56, 22]
+      "feld": [57, 23]
     },
     {
       "moebel": "iw5GleisGrau",

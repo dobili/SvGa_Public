@@ -2,7 +2,7 @@
   "karte": "wegDelacroixDesert.felsbogen",
   "datei": "karten/weg-delacroix-desert-felsbogen.json",
   "art": "aussen",
-  "beschreibung": "Der Felsbogen von Weg 6, 140 × 30 Kacheln, roter Fels mit Felswänden und Kanten. Der Talboden kommt am Ostrand aus dem Canyon und fällt durch den roten Felsbogen nach Süden in ein tieferes Tal; dort am Rand eine Bank als Aussichtspunkt. Dann steigt der Weg unter der genieteten Eisenbahnbrücke von 1879 hindurch nach Norden, am linken Pfeiler das Gussschild „J. H. 1879“. Die alte Strecke läuft oben in einem Einschnitt über die Hochfläche: nach Westen bis an den Kartenrand, mit Übergang und Andreaskreuzen am Abstieg, nach Osten endet sie stillgelegt am Prellbock vor dem Bogen. Oben ein langer Absatz mit Säulenkakteen, zuletzt der Abstieg zum Westrand Richtung Desert Springs mit Wegweiser.",
+  "beschreibung": "Der Felsbogen von Weg 6, 140 × 30 Kacheln, roter Fels mit Felswänden und Kanten. Der Talboden kommt am Ostrand aus dem Canyon und fällt durch den roten Felsbogen nach Süden in ein tieferes Tal; dort am Rand eine Bank als Aussichtspunkt. Dann steigt der Weg unter der genieteten Eisenbahnbrücke von 1879 hindurch nach Norden, am linken Pfeiler das Gussschild „J. H. 1879“. Die alte Strecke läuft oben in einem Einschnitt über die Hochfläche: nach Westen bis an den Kartenrand (in Desert Springs endet sie am Prellbock hinter dem Laden), mit Übergang und Andreaskreuzen am Abstieg, nach Osten endet sie stillgelegt am Prellbock vor dem Bogen. Oben ein langer Absatz mit Säulenkakteen, zuletzt der Abstieg zum Westrand Richtung Desert Springs mit Wegweiser.",
   "wand": "felsRot",
   "boden": "sandRot",
   "raster": [

@@ -236,12 +236,14 @@
       "feld": [15, 3]
     },
     {
-      "moebel": "pd6Turnmatte",
-      "feld": [1, 12]
+      "moebel": "pd6TurnmatteLinks",
+      "feld": [1, 12],
+      "bauteil_ok": true
     },
     {
       "moebel": "pd6Turnmatte",
-      "feld": [2, 12]
+      "feld": [2, 12],
+      "bauteil_ok": true
     },
     {
       "moebel": "pd6Ball",
@@ -278,7 +280,7 @@
     {
       "moebel": "pd6Fussmatte",
       "feld": [13, 14],
-      "versatz": [8, 8]
+      "versatz": [8, 3]
     },
     {
       "moebel": "pd9Lehrertisch",

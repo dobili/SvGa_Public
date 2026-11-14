@@ -784,7 +784,7 @@
       "blick": "unten"
     },
     "sb5Empfang": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_2.png",
+      "quelle": "spiel/eigene/empfang_tresen.png",
       "breite": 96,
       "hoehe": 64,
       "kollision": true,
@@ -2365,6 +2365,16 @@
       "quelle": "spiel/eigene/tunnelportal_west.png",
       "breite": 80,
       "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "keine",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb9TunnelportalFlach": {
+      "quelle": "spiel/eigene/tunnelportal_west_4.png",
+      "breite": 80,
+      "hoehe": 64,
       "kollision": true,
       "art": "gebaeude",
       "blick": "keine",

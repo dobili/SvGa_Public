@@ -2,7 +2,7 @@
   "karte": "wegIronwoodSilicon.raststaette",
   "datei": "karten/weg-ironwood-silicon-raststaette.json",
   "art": "aussen",
-  "beschreibung": "Die Raststätte an der Küste auf dem Weg nach Silicon Bay an einem Wintertag (Runde 8, nach dem Gutachten), 160 × 28, Schnee auf Wiese, Hecke und Bäumen. Oben die Schnellstraße mit zwei Spuren und Rechtsverkehr, Leitplanke und Hecke mit Lücken als Lärmschutz, dahinter Gehölz in loser Folge. Der Küstenpfad beginnt im Westen an der runden Düne mit Strandgras, wo drei moderne Laternen am Ortsschild stehen, führt an einer Rastbank auf Pflaster vorbei, über den Priel mit der Holzbrücke und am Gartenhaus der Vogelzähler vorbei; am Wasser liegt ein zwei Kacheln breiter Sandstrand. Im Osten führt eine Abfahrt von der Schnellstraße auf den Rastplatz: große Tankstelle mit Fahrspur unter dem Dach und Waschstraße, Rasthaus mit Schild, Imbisswagen und Container auf Pflaster, Parkplatz mit Buchten für den Lastwagen und zwei Autos, die Haltestelle auf Pflaster offen zur Busbucht, und ein Picknickplatz mit vier Tischen, zwei Mülleimern und einer Laterne.",
+  "beschreibung": "Die Raststätte an der Küste auf dem Weg nach Silicon Bay an einem Wintertag (Runde 8, nach dem Gutachten), 160 × 28, Schnee auf Wiese, Hecke und Bäumen. Oben die Schnellstraße mit zwei Spuren und Rechtsverkehr, Leitplanke und Hecke mit Lücken als Lärmschutz, dahinter Gehölz in loser Folge. Der Küstenpfad beginnt im Westen an der runden Düne mit Strandgras, wo drei moderne Laternen am Ortsschild stehen, führt an einer Rastbank auf Pflaster vorbei, über den Priel mit der Holzbrücke und am Gartenhaus der Vogelzähler vorbei; am Wasser liegt ein zwei Kacheln breiter Sandstrand. Ganz im Westen läuft das Watt am Strand aus, die Küste biegt nach Süden ab. Im Osten führt eine Abfahrt von der Schnellstraße auf den Rastplatz: große Tankstelle mit Fahrspur unter dem Dach und Waschstraße, Rasthaus mit Schild, Imbisswagen und Container auf Pflaster, Parkplatz mit Buchten für den Lastwagen und zwei Autos, die Haltestelle auf Pflaster offen zur Busbucht, und ein Picknickplatz mit vier Tischen, zwei Mülleimern und einer Laterne.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -51,10 +51,10 @@
     "#........................ddddddddd..........dd~~~~dd.........dddddddd..........aa.........aaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzz...zzzzzzzzzzzzzzzppppppppppp.#",
     "#d........dddddddddddddddddddddddddddd.....ddd~~~~dd.....ddddddddddddddddddaaaaaaddd........ddddddddddddaaaaaazzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
     "#ddddddddddddddddddddddddwwwwwwwwwdddddddddddd~~~~dddddddddddwwwwwwwwddddddaaaaaaddddddddddddddddddddddd......zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "~wddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddwwwwwwwwddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwddddddddwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
-    "~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######################################################"
+    "#dddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddwwwwwwwwddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwddddddddwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
+    "#ddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
+    "#dwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######################################################"
   ],
   "objekte": [
     {

@@ -165,6 +165,15 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
+    "pd6TurnmatteLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_55.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
     "pd6Ball": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Basketball_Ball_1.png",
       "breite": 16,

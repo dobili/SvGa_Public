@@ -1695,3 +1695,9 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Prompts stehen fertig zum Kopieren in der Datei „4_Gemini_Kartenmotive.html“ aus dem Chat;
       die Stilvorlage wie bei den Bildwünschen anhängen. Bis die Motive da sind, zeigt der Fächer
       gezeichnete Karten ohne Bild. Widerspruch genügt.
+- [ ] RO16. **Großbilder von Gemini (Datei „3_Gemini_Grossbilder_und_Funde.html“):** Akt 1 und 2
+      sind bis auf eines da und im Spiel (14.11.2026). Es fehlt A17, Victors Einladung: eine weiße
+      Karte mit dünnem Silberrand, gehalten von einer Hand im weißen Ärmel, dunkler verschneiter
+      Hintergrund, die Karte leer und glänzend. Das Werkstor (A16) kam zweimal; das Bild mit dem
+      größeren Schild ist im Spiel, das andere liegt als Ersatz bereit. Offen sind danach A18 bis A38
+      (Akt 3 und 4) und die Fundbilder.

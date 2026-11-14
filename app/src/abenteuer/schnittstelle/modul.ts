@@ -61,7 +61,8 @@ export interface Appdienste {
   /** Ergebnis einer beendeten Partie des Abenteuers, solange die App sie hält; null sonst. */
   readonly liesErgebnis: (kennung: string) => Promise<Partieergebnis | null>;
   /** Öffnet eine noch laufende Partie des Abenteuers wieder (Kennung des Partieauftrags). */
-  readonly zeigePartie: (kennung: string) => void;
+  /** Zeigt die laufende Partie; false, wenn die App sie nicht mehr kennt (dann gilt sie als beendet). */
+  readonly zeigePartie: (kennung: string) => boolean;
   /** Öffnet eine beendete Partie zum Nachspielen in der Hülle (Id der Partie in der App). */
   readonly zeigeBeendetePartie: (id: string) => void;
   /**

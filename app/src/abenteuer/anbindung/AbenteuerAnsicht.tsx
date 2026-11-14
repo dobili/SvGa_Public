@@ -273,12 +273,27 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
     const paketDa = zustand.art === "vorhanden" || zustand.art === "veraltet";
     if (!paketDa || !stand || offen || automatisch.current) return;
     automatisch.current = true;
-    void ladeModul().then((modul) => {
-      modul.verbinde(dienste);
-      setzeOberwelt(() => modul.Oberwelt);
-      setzeOffen(true);
-    });
+    void ladeModul()
+      .then((modul) => {
+        modul.verbinde(dienste);
+        setzeOberwelt(() => modul.Oberwelt);
+        setzeOffen(true);
+      })
+      .catch((fehler: unknown) => {
+        // Fehlt ein Baustein (etwa nach einem Update), zeigt die Startkarte den Fehler.
+        console.warn("Schach-Abenteuer: Laden fehlgeschlagen", fehler);
+        automatisch.current = false;
+        setzeZustand({ art: "fehler", grund: "unbekannt" });
+      });
   }, [zustand, stand, offen, dienste]);
+
+  // Ein Fehler beim Laden des Spielbausteins oder beim Löschen des Pakets (etwa ein fehlender
+  // Baustein nach einem Update) zeigt die Fehlerkarte statt still nichts zu tun (Affentest).
+  const meldeLadefehler = (fehler: unknown) => {
+    console.warn("Schach-Abenteuer: Laden fehlgeschlagen", fehler);
+    automatisch.current = false;
+    setzeZustand({ art: "fehler", grund: "unbekannt" });
+  };
 
   const lade = () => {
     setzeZustand({ art: "laedt", geladen: 0, gesamt: 1 });
@@ -301,19 +316,23 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
         leererAbenteuerstand(new Date(), bereinigt(neuerName), dienste.wertung(), fest),
       );
     }
-    void ladeModul().then((modul) => {
-      modul.verbinde(dienste);
-      setzeOberwelt(() => modul.Oberwelt);
-      setzeOffen(true);
-    });
+    void ladeModul()
+      .then((modul) => {
+        modul.verbinde(dienste);
+        setzeOberwelt(() => modul.Oberwelt);
+        setzeOffen(true);
+      })
+      .catch(meldeLadefehler);
   };
 
   const loesche = () => {
-    void loeschePaket().then(() => {
-      setzeMenue(false);
-      setzeOffen(false);
-      setzeZustand({ art: "fehlt" });
-    });
+    void loeschePaket()
+      .then(() => {
+        setzeMenue(false);
+        setzeOffen(false);
+        setzeZustand({ art: "fehlt" });
+      })
+      .catch(meldeLadefehler);
   };
 
   return (

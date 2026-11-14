@@ -381,7 +381,11 @@ export function Oberwelt() {
           text="ergebnis.partieLaeuft"
           weiter="ergebnis.weiterspielen"
           abbrechen="ergebnis.aufgeben"
-          beiWeiter={() => dienste.zeigePartie(offenePartie)}
+          beiWeiter={() => {
+            // Kennt die App die Partie nicht mehr (Affentest, 14.11.2026), räumt die Karte auf,
+            // statt einen toten Knopf zu zeigen; die Begegnung lässt sich neu beginnen.
+            if (!dienste.zeigePartie(offenePartie)) partie.gibOffenePartieAuf();
+          }}
           beiAbbrechen={partie.gibOffenePartieAuf}
         />
       )}

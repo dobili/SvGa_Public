@@ -67,15 +67,35 @@ async function geladenesVerzeichnis(): Promise<{
  * Der Zustand des Pakets für die Startkarte: fehlt, vorhanden oder veraltet (nur mit Netz
  * erkennbar; ohne Netz gilt ein vorhandenes Paket als aktuell).
  */
+/** So lange wartet die Startkarte höchstens auf den Server; danach gilt das vorhandene Paket. */
+const SERVER_ZEITLIMIT_MS = 3000;
+
+/** Ein Versprechen mit Zeitlimit: Nach `ms` Millisekunden wird es mit einem Fehler abgelehnt. */
+function mitZeitlimit<T>(versprechen: Promise<T>, ms: number): Promise<T> {
+  return new Promise<T>((erfuellt, abgelehnt) => {
+    const uhr = setTimeout(() => abgelehnt(new Error(`Zeitlimit ${ms} ms`)), ms);
+    versprechen.then(
+      (wert) => {
+        clearTimeout(uhr);
+        erfuellt(wert);
+      },
+      (fehler: unknown) => {
+        clearTimeout(uhr);
+        abgelehnt(fehler instanceof Error ? fehler : new Error(String(fehler)));
+      },
+    );
+  });
+}
+
 export async function paketzustand(): Promise<Paketzustand> {
   const geladen = await geladenesVerzeichnis();
   if (!geladen) return { art: "fehlt" };
   const { version, bytes } = geladen.verzeichnis;
   try {
-    const neu = await verzeichnisVomServer();
+    const neu = await mitZeitlimit(verzeichnisVomServer(), SERVER_ZEITLIMIT_MS);
     if (neu.version !== version) return { art: "veraltet", version, neu: neu.version };
   } catch {
-    // Ohne Netz bleibt das vorhandene Paket gültig; das ist der Sinn des Caches.
+    // Ohne Netz oder bei hängendem Netz bleibt das vorhandene Paket gültig (Sinn des Caches).
   }
   return { art: "vorhanden", version, bytes };
 }

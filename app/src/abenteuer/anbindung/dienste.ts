@@ -156,6 +156,7 @@ export function useAppdienste(): Appdienste {
       zeigePartie: (kennung) => {
         const id = laufendePartieId(kennung);
         if (id) navigiere({ bildschirm: "zusatz", kennung: ANSICHT_PARTIE, wert: id });
+        return id !== null;
       },
       zeigeBeendetePartie: (id) => {
         navigiere({ bildschirm: "zusatz", kennung: ANSICHT_PARTIE, wert: id });

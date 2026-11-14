@@ -1667,15 +1667,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
       Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
       Zustimmung oder Widerspruch genügt.
-- [ ] RO13. **Woher Musik und Geräusche kommen:** Es gibt noch keine Tondatei. Empfehlung nach der
-      Recherche: Die Leitmotive (Held, Ambrose, Mama, Victor, Aha) und die Ortsthemen von Maple
-      Falls und Cedar Creek setzen wir selbst als Noten und lassen sie mit freien Instrumenten
-      (gemeinfreie Klavier-, Cembalo- und Orchesterproben) spielen; das kostet nichts, und die
-      Motive kehren überall gleich wieder. Die übrige Ortsmusik kommt aus fertigen Paketen je Ort
-      (Jazz für Riverton, Western-Gitarre für Desert Springs usw.), zusammen etwa 20 bis 150 $.
-      Geräusche aus freien Sammlungen (Freesound, GDC-Bundle), etwa 95 % abgedeckt; dafür braucht es
-      ein kostenloses Freesound-Konto des Autors. KI-Musik nicht, weil sich Motive damit nicht
-      genau wiederholen lassen und die Rechte unklar sind. Ein Komponist für alles läge bei 54 000
-      bis 84 000 $, für die zehn wichtigsten Stücke bei 4 000 bis 6 000 $ (später möglich). Schon
-      in Arbeit: eine Hörprobe mit fünf Motiven und dem Thema von Maple Falls; der Autor hört sie
-      an und entscheidet dann. Gekauft wird nichts ohne seine Zustimmung.
+- [ ] RO13. **Musik und Geräusche:** Der Autor hat die sechs Hörproben gehört (gut) und setzt eine
+      Obergrenze von 80 € für Musik, ausgegeben erst nach dem Durchspielen (14.11.2026). Wichtig: Die
+      Proben zeigten nur die Motive, jeweils auf einem Instrument. Die fertige Hintergrundmusik
+      wird mehrstimmig wie in Stardew Valley oder Pokémon: Melodie, Begleitung, Bass und je nach
+      Ort leichtes Schlagwerk, zwei bis vier Instrumente. Die Motive sind darin eingewoben; nur an
+      stillen Stellen (Dachboden, Erinnerungen) spielt ein Instrument allein. Empfehlung, schon
+      umgesetzt: Alle Musik von Akt 1 bauen wir selbst, ohne Kosten. Nächste Hörprobe: Maple Falls
+      voll gesetzt und Jazz für Riverton als Probe für Bandmusik. Klingt die Bandmusik zu steif,
+      kaufen wir nach dem Durchspielen von Akt 1 höchstens ein oder zwei Pakete (zusammen unter
+      80 €) für Orte mit Bandklang (Riverton, Desert Springs, Port Delacroix). Geräusche aus freien
+      Sammlungen (Freesound, GDC-Bundle), etwa 95 % abgedeckt; dafür braucht es ein kostenloses
+      Freesound-Konto des Autors. Widerspruch genügt.

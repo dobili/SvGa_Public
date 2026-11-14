@@ -984,3 +984,12 @@ liest und schreibt später genau diese Dateien und zeigt die Vorschau mit `karte
 des Kartenbaus (Durchgänge, Überdeckung, Grundriss) laufen im Editor mit. Neue Felder in den
 Szenendateien werden im Schema beschrieben, damit der Editor sie kennt. Bis dahin kann der Autor die
 erzeugten Karten mit dem freien Programm Tiled ansehen.
+
+## Musik: selbst gesetzt, mehrstimmig, höchstens 80 € (14.11.2026)
+
+Der Autor hat die sechs Hörproben (Ambrose, Victor mit Konzernton, Mama, Held, Aha, Maple Falls)
+gehört und für gut befunden. Er gibt höchstens 80 € für Musik aus, und erst nach dem Durchspielen,
+weil sich erst dann zeigt, ob Menge und Stil passen. Die Musik bauen wir selbst (Noten, gerendert
+mit freien Instrumenten). Hintergrundmusik ist mehrstimmig wie in vergleichbaren Spielen (Melodie,
+Begleitung, Bass, je Ort leichtes Schlagwerk); ein Instrument allein nur an stillen Stellen.
+Gekaufte Pakete höchstens für Orte mit Bandklang, wenn die eigene Probe dort nicht trägt.

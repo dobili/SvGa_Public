@@ -1679,3 +1679,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Eine Deutung ist schon umgesetzt, Widerspruch genügt: Beim Stück „Ambrose und Mama“ (Akt 2)
       verlangt der Klangplan „ohne Konzernton“; Ambroses Kopf behält trotzdem seinen fremden Ton,
       nur Digitalpiano und Fläche fehlen, weil er erst in Akt 3 rein wird.
+- [ ] RO14. **Ein Textfenster für die Geschichte, Porträts an jeder Rede (Wunsch vom 14.11.2026):**
+      Schon umgesetzt: Die Sätze der Passanten stehen jetzt unten im selben Fenster wie die Dialoge,
+      nicht mehr oben; Ambroses Antwort darauf trägt sein Porträt. Oben erscheinen nur noch
+      Meldungen zum Spiel (Fund, Ergebnis einer Partie oder Runde). Die Porträts im Dialog zeigen
+      schon die Stimmung der Zeile; bisher ist aber nur etwa jede achte Zeile mit einer Stimmung
+      versehen. In Arbeit: Alle Zeilen bekommen eine Stimmung passend zum Inhalt (neutral, lächelt,
+      nachdenklich, überrascht, bitter, lacht), damit die Gesichter mitspielen, sobald die neuen
+      Porträts da sind. Widerspruch genügt.

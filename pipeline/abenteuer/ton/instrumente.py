@@ -42,7 +42,7 @@ TONNAMEN = {
 }
 HALBTOENE_JE_OKTAVE = 12
 # Anschlagstufen in Worten, von leise nach laut (Glockenspiel, Harfe).
-SCHICHTEN = ("soft", "p", "mp", "medium", "mf", "f", "loud")
+SCHICHTEN = ("soft", "pp", "p", "mp", "med", "medium", "mf", "f", "ff", "loud", "fff")
 
 
 @dataclass(frozen=True)
@@ -170,7 +170,17 @@ def laden(wurzel: Path) -> None:
     for bibliothek, adresse in QUELLEN.items():
         ziel = wurzel / bibliothek
         ordner = sorted({i.ordner for i in INSTRUMENTE.values() if i.bibliothek == bibliothek})
+        if bibliothek == VCSL:
+            from pipeline.abenteuer.ton.schlagwerk import ordner as schlagwerk_ordner
+
+            ordner = sorted({*ordner, *schlagwerk_ordner()})
         if not ziel.exists():
             befehl = ["git", "clone", "--depth", "1", "--filter=blob:none", "--sparse", adresse, str(ziel)]
             subprocess.run(befehl, check=True)
         subprocess.run(["git", "-C", str(ziel), "sparse-checkout", "set", *ordner], check=True)
+
+
+# Die erweiterte Besetzung für die Musik des Spiels steht wegen der Dateilänge in orchester.py.
+from pipeline.abenteuer.ton.orchester import ORCHESTER  # noqa: E402
+
+INSTRUMENTE.update(ORCHESTER)

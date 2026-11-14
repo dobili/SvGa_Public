@@ -7,15 +7,17 @@ abgedämpft und mit Lage und Nachhall gemischt. numpy und scipy sind keine Paket
 ``pip install numpy scipy``.
 """
 
+import warnings
 from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
 from scipy.io import wavfile
-from scipy.signal import fftconvolve
+from scipy.signal import fftconvolve, resample_poly
 
 from pipeline.abenteuer.ton.instrumente import INSTRUMENTE, proben
 from pipeline.abenteuer.ton.satz import Note, Spur, Stueck
+from pipeline.abenteuer.ton.schlagwerk import SCHLAEGE, SCHLAGWERK
 
 ABTASTRATE = 44_100
 HALBTOENE_JE_OKTAVE = 12
@@ -36,11 +38,18 @@ ANSCHLAG_BEZUG = 100
 @lru_cache(maxsize=512)
 def lade_probe(pfad: Path) -> np.ndarray:
     """Liest eine WAV-Datei als Stereo-Gleitkomma im Bereich −1 bis 1 (zwischengespeichert)."""
-    rate, daten = wavfile.read(pfad)
-    if rate != ABTASTRATE:
-        raise ValueError(f"{pfad.name}: {rate} Hz statt {ABTASTRATE} Hz")
+    with warnings.catch_warnings():
+        # Manche Proben tragen Zusatzblöcke (Schleifenpunkte), die scipy überspringt.
+        warnings.simplefilter("ignore", wavfile.WavFileWarning)
+        rate, daten = wavfile.read(pfad)
     skala = float(np.iinfo(daten.dtype).max) if np.issubdtype(daten.dtype, np.integer) else 1.0
     ton = daten.astype(np.float32) / skala
+    if rate != ABTASTRATE:
+        # Einige Proben (Saxofon) sind mit 48 kHz aufgenommen; umrechnen statt abbrechen.
+        from math import gcd
+
+        teiler = gcd(rate, ABTASTRATE)
+        ton = resample_poly(ton, ABTASTRATE // teiler, rate // teiler, axis=0).astype(np.float32)
     return np.stack([ton, ton], axis=1) if ton.ndim == 1 else ton[:, :2]
 
 
@@ -100,31 +109,160 @@ def mit_hall(ton: np.ndarray, anteil: float, antwort: np.ndarray) -> np.ndarray:
     return (1 - anteil) * trocken + anteil * nass
 
 
+def schlag_klang(note: Note, index: int, wurzel: Path) -> np.ndarray:
+    """Ein Schlag ohne Tonhöhe: Aufnahmen reihum, Lautstärke nach der Anschlagstärke."""
+    from pipeline.abenteuer.ton.schlagwerk import dateien
+
+    aufnahmen = dateien(note.tonhoehe, wurzel)
+    ton = lade_probe(aufnahmen[index % len(aufnahmen)])
+    ton = ton[: int(SCHLAEGE[note.tonhoehe].ausklang * ABTASTRATE)].copy()
+    rest = min(len(ton), int(0.05 * ABTASTRATE))
+    ton[-rest:] *= np.linspace(1, 0, rest)[:, None]
+    return ton * (note.staerke / ANSCHLAG_BEZUG) ** ANSCHLAG_KURVE
+
+
 def rendere_spur(spur: Spur, stueck: Stueck, wurzel: Path, laenge: int) -> np.ndarray:
-    """Alle Noten einer Spur, mit Lautstärke und Lage (gleichbleibende Leistung) gemischt."""
-    je_ton = proben(INSTRUMENTE[spur.instrument], wurzel)
+    """Alle Noten einer Spur, geeicht, mit Lautstärke und Lage (gleichbleibende Leistung) gemischt.
+
+    Mit ``pegel_db`` wird die Spur so gesetzt, dass ihre klingenden Stellen diesen Pegel haben; so
+    liegt eine Melodie über der Begleitung, ganz gleich, wie laut die Aufnahme des Instruments ist.
+    """
+    roh = _roh(spur, stueck, wurzel, laenge)
+    if spur.pegel_db is None:
+        return _mit_lage(roh, spur, wurzel)
+    winkel = (spur.panorama + 1) * np.pi / 4
+    faktor = spur.lautstaerke * 10 ** (spur.pegel_db / 20) / aktiver_pegel(roh)
+    return roh * faktor * np.array([np.cos(winkel), np.sin(winkel)], dtype=np.float32)
+
+
+# Fenster für den Pegel der klingenden Stellen (0,1 s); leiser als −60 dB gilt als Stille.
+PEGEL_FENSTER = ABTASTRATE // 10
+STILLE_DB = -60
+
+
+def aktiver_pegel(ton: np.ndarray) -> float:
+    """Mittlerer Pegel (RMS) nur über die Fenster, in denen etwas klingt."""
+    mono = ton.mean(axis=1)
+    anzahl = len(mono) // PEGEL_FENSTER
+    if anzahl == 0:
+        return 1.0
+    fenster = np.sqrt(np.mean(mono[: anzahl * PEGEL_FENSTER].reshape(anzahl, -1) ** 2, axis=1))
+    klingend = fenster[fenster > 10 ** (STILLE_DB / 20) * float(fenster.max() or 1)]
+    return float(np.sqrt(np.mean(klingend**2))) if len(klingend) else 1.0
+
+
+def _roh(spur: Spur, stueck: Stueck, wurzel: Path, laenge: int) -> np.ndarray:
+    """Alle Noten einer Spur ungeeicht und in der Mitte (Sampler, Klangfont oder Schlagwerk)."""
+    from pipeline.abenteuer.ton.klangfonts import KLANGFONTS
+
+    if spur.instrument in KLANGFONTS:
+        return _klangfont_spur(spur, stueck, laenge)
+    je_ton = proben(INSTRUMENTE[spur.instrument], wurzel) if spur.instrument != SCHLAGWERK else {}
     summe = np.zeros((laenge, 2), dtype=np.float32)
     zufall = np.random.default_rng(seed=len(spur.noten))
-    for note in spur.noten:
-        klang = note_klang(note, stueck, spur.instrument, je_ton)
+    for index, note in enumerate(spur.noten):
+        if spur.instrument == SCHLAGWERK:
+            klang = schlag_klang(note, index, wurzel)
+        else:
+            klang = note_klang(note, stueck, spur.instrument, je_ton)
         versatz = zufall.uniform(0, spur.streuung) if spur.streuung else 0.0
         start = int((stueck.sekunden(note.beginn) + versatz) * ABTASTRATE)
         stueckchen = klang[: max(0, laenge - start)]
         summe[start : start + len(stueckchen)] += stueckchen
+    return summe
+
+
+def _mit_lage(summe: np.ndarray, spur: Spur, wurzel: Path) -> np.ndarray:
+    """Eichung, Lautstärke und Lage im Stereobild (gleichbleibende Leistung)."""
     winkel = (spur.panorama + 1) * np.pi / 4
-    return summe * spur.lautstaerke * np.array([np.cos(winkel), np.sin(winkel)], dtype=np.float32)
+    faktor = spur.lautstaerke * eichung(spur.instrument, wurzel)
+    return summe * faktor * np.array([np.cos(winkel), np.sin(winkel)], dtype=np.float32)
+
+
+# Eichung: Ein Bezugston (Anschlag 80, eine Sekunde) soll bei Lautstärke 1 diesen Pegel haben.
+EICH_PEGEL = 10 ** (-20 / 20)
+EICH_STAERKE = 80
+EICH_TON = {
+    "kontrabass": 40,
+    "kontrabass_pizz": 40,
+    "tuba": 40,
+    "ebass": 40,
+    "fagott": 48,
+    "posaune": 52,
+    "cello": 52,
+    "horn": 57,
+    "glockenspiel": 84,
+    "roehrenglocken": 67,
+}
+
+
+@lru_cache(maxsize=64)
+def eichung(instrument: str, wurzel: Path) -> float:
+    """Faktor, der die Instrumente gleich laut macht (die Aufnahmen sind verschieden ausgesteuert).
+
+    Warum: Ohne Eichung klingt etwa das Cello der VSCO-Bibliothek 15 dB leiser als das Klavier der
+    VCSL; die Lautstärken in den Satzplänen sollen aber Absicht sein, nicht Zufall der Aufnahme.
+    """
+    from pipeline.abenteuer.ton.schlagwerk import KLEINE_TROMMEL
+
+    ton = KLEINE_TROMMEL if instrument == SCHLAGWERK else EICH_TON.get(instrument, 60)
+    probe = Stueck("eichung", "Eichung", 60, [Spur(instrument, [Note(ton, 0, 1, EICH_STAERKE)], streuung=0)])
+    laenge = ABTASTRATE
+    roh = _roh(probe.spuren[0], probe, wurzel, laenge)
+    rms = float(np.sqrt(np.mean(roh**2))) or 1.0
+    return EICH_PEGEL / rms
+
+
+def _klangfont_spur(spur: Spur, stueck: Stueck, laenge: int) -> np.ndarray:
+    """Eine Spur über FluidSynth (Klangfont), mit derselben Streuung der Anschläge wie im Sampler."""
+    from pipeline.abenteuer.ton.klangfonts import spiele
+    from pipeline.abenteuer.ton.midi import midi_bytes
+
+    zufall = np.random.default_rng(seed=len(spur.noten))
+    schlaege_je_sekunde = stueck.tempo / 60
+    gestreut = [
+        Note(
+            n.tonhoehe,
+            max(0.0, n.beginn + zufall.uniform(0, spur.streuung) * schlaege_je_sekunde),
+            n.dauer,
+            n.staerke,
+        )
+        for n in spur.noten
+    ]
+    einzeln = Stueck(stueck.kennung, stueck.titel, stueck.tempo, [Spur("klavier", gestreut)])
+    wav = spiele(midi_bytes(einzeln), spur.instrument)
+    ton = lade_probe.__wrapped__(wav)
+    wav.unlink()
+    wav.parent.rmdir()
+    ergebnis = np.zeros((laenge, 2), dtype=np.float32)
+    stueckchen = ton[:laenge]
+    ergebnis[: len(stueckchen)] = stueckchen
+    return ergebnis
 
 
 def rendere(stueck: Stueck, wurzel: Path) -> np.ndarray:
-    """Das ganze Stück als Stereo-Ton mit Nachhall, Spitze auf −2 dBFS, sanft ausgeblendet."""
-    laenge = int((stueck.sekunden(stueck.ende()) + NACHKLANG) * ABTASTRATE)
+    """Das ganze Stück als Stereo-Ton mit Nachhall, Spitze auf −2 dBFS.
+
+    Ohne Schleife klingt das Ende aus und wird sanft ausgeblendet. Mit Schleife ist die Datei genau
+    so lang wie die Form; der Nachklang über das Ende hinaus wird auf den Anfang gelegt, so läuft
+    die Schleife ohne Naht (Klangplan A2: Ende und Anfang auf derselben Harmonie).
+    """
+    form = int(stueck.sekunden(stueck.ende()) * ABTASTRATE)
+    laenge = form + int(NACHKLANG * ABTASTRATE)
     antwort = raumantwort()
     summe = np.zeros((laenge + len(antwort) - 1, 2), dtype=np.float32)
     for spur in stueck.spuren:
         summe += mit_hall(rendere_spur(spur, stueck, wurzel, laenge), spur.hall, antwort)
-    summe = summe[:laenge]
-    ausblenden = int(NACHKLANG * ABTASTRATE)
-    summe[-ausblenden:] *= np.linspace(1, 0, ausblenden)[:, None]
+    if stueck.schleife:
+        ueberhang = summe[form:]
+        summe = summe[:form].copy()
+        for start in range(0, len(ueberhang), form):
+            teil = ueberhang[start : start + form]
+            summe[: len(teil)] += teil
+    else:
+        summe = summe[:laenge]
+        ausblenden = int(NACHKLANG * ABTASTRATE)
+        summe[-ausblenden:] *= np.linspace(1, 0, ausblenden)[:, None]
     spitze = float(np.max(np.abs(summe))) or 1.0
     return summe * (SPITZE / spitze)
 

@@ -44,6 +44,8 @@ class Spur:
     hall: float = 0.25
     panorama: float = 0.0
     streuung: float = 0.012
+    # Zielpegel der klingenden Stellen in dBFS (vor ``lautstaerke``); None: nur Eichung des Instruments.
+    pegel_db: float | None = None
 
 
 @dataclass
@@ -55,9 +57,15 @@ class Stueck:
     tempo: float
     spuren: list[Spur]
     beschreibung: str = ""
+    # Schleife: Der Nachklang am Ende wird an den Anfang gelegt, die Datei läuft ohne Naht.
+    schleife: bool = False
+    # Länge in Schlägen (Takte der Form); 0 heißt „bis zur letzten Note“.
+    laenge: float = 0.0
 
     def ende(self) -> float:
         """Letzter Schlag, an dem noch eine Note klingt. Beispiel: eine ganze Note ab 0 endet bei 4."""
+        if self.laenge:
+            return self.laenge
         return max((note.beginn + note.dauer for spur in self.spuren for note in spur.noten), default=0.0)
 
     def sekunden(self, schlaege: float) -> float:

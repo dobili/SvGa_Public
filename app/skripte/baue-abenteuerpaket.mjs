@@ -123,6 +123,11 @@ async function kopiereTon(ordner) {
     const unter = join(quelle, `akt${akt}`);
     if (existsSync(unter)) quellen.push({ pfad: unter, akt });
   }
+  // Kleine Tabellen zum Ton (musik/einmal.json: Stücke ohne Schleife; klang/pegel.json: Anhebung
+  // leiser Geräusche) gehören zum Grundpaket; der Tonspieler liest sie einmal (ton/tonangaben.ts).
+  for (const name of (await readdir(quelle)).filter((d) => d.endsWith(".json")).sort()) {
+    await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), ordner);
+  }
   for (const { pfad, akt } of quellen) {
     const namen = (await readdir(pfad)).filter((d) => /\.(m4a|ogg)$/.test(d));
     for (const name of namen.sort()) {

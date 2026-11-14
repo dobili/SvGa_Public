@@ -7,8 +7,14 @@ der Paketbau liest sie aus ``spiel/musik/`` (Akt 1) und ``spiel/musik/akt2`` …
 „maple-falls.club.m4a“. Ins öffentliche Repository kommen nur die Noten (Satzpläne) und dieses
 Werkzeug; die MIDI-Dateien landen zum Nachhören und Bearbeiten in ``buch/arbeit/ton/midi``.
 
+Neben die Musik schreibt der Befehl ``spiel/musik/einmal.json``: die Dateinamen ohne Endung aller
+Stücke, die nicht als Schleife laufen (Satzplan ``schleife=False``: Erinnerung, Walzer, Kurzmotive,
+Abspann …). Der Paketbau übernimmt die Liste als ``musik/einmal.json``; der Tonspieler spielt diese
+Stücke einmal und bleibt danach still (``app/src/abenteuer/ton/tonspieler.ts``).
+
 Aufruf (im Hauptordner; braucht ffmpeg, fluidsynth, numpy und scipy):
     python -m pipeline.abenteuer.ton.musikbau PRIVAT [--nur mapleFalls diner] [--laden]
+    python -m pipeline.abenteuer.ton.musikbau PRIVAT --nur-liste   # nur einmal.json, ohne Rendern
 """
 
 import argparse
@@ -32,6 +38,34 @@ SPITZE_DB = -1.0
 def dateiname(kennung: str) -> str:
     """Name im Paket wie in der App. Beispiel: „mapleFalls.club“ → „maple-falls.club.m4a“."""
     return re.sub(r"[A-Z]", lambda b: f"-{b.group().lower()}", kennung) + ".m4a"
+
+
+def stamm(kennung: str) -> str:
+    """Dateiname ohne Endung, wie ``einmal.json`` ihn führt.
+
+    Beispiel: „mapleFalls.club“ → „maple-falls.club“.
+    """
+    return dateiname(kennung).removesuffix(".m4a")
+
+
+EINMALLISTE = "einmal.json"
+
+
+def einmalliste(plaene: list[Satz]) -> list[str]:
+    """Die Stämme der Stücke ohne Schleife, sortiert. Beispiel: ``["abspann", "ambrose.walzer", …]``."""
+    return sorted({stamm(s.kennung) for s in plaene if not s.schleife})
+
+
+def schreibe_einmalliste(privat: Path, plaene: list[Satz]) -> Path:
+    """Schreibt ``spiel/musik/einmal.json`` (immer aus allen Plänen, auch bei ``--nur``).
+
+    Warum eine Datei für alle Akte: Der Paketbau legt die Musik aller Akte flach in ``musik/``;
+    die Namen sind eindeutig (``test_kennungen_sind_eindeutig``).
+    """
+    ziel = privat / "spiel" / "musik" / EINMALLISTE
+    ziel.parent.mkdir(parents=True, exist_ok=True)
+    ziel.write_text(json.dumps(einmalliste(plaene), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return ziel
 
 
 def zielordner(privat: Path, satz: Satz) -> Path:
@@ -124,7 +158,11 @@ def main() -> None:
     parser.add_argument("privat", type=Path, help="privates Repository (schach-abenteuer-inhalte)")
     parser.add_argument("--nur", nargs="*", help="nur diese Kennungen")
     parser.add_argument("--laden", action="store_true", help="Proben und Klangfonts vorher holen")
+    parser.add_argument("--nur-liste", action="store_true", help="nur einmal.json schreiben")
     argumente = parser.parse_args()
+    print(schreibe_einmalliste(argumente.privat, alle()))
+    if argumente.nur_liste:
+        return
     if argumente.laden:
         from pipeline.abenteuer.ton import instrumente, klangfonts
 

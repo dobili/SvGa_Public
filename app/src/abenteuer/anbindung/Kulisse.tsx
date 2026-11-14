@@ -3,7 +3,9 @@
  * Punkt 7). Bis zur Animation der Kinder steht die gewöhnliche Brettansicht vor dem Bild der
  * Lichtung (Hintergrund der Karte aus dem Kartenbauer).
  *
- * Rolle im Gesamtbild: Teil der Kartenleiste (KartenleisteAnzeige.tsx), App-Seite der Modulgrenze.
+ * Rolle im Gesamtbild: Teil der Kartenleiste (KartenleisteAnzeige.tsx) und der Aufgabenrunde
+ * (AufgabenAnsicht.tsx, `kulisse` in runden.json: Die Lebendschach-Stelle ist eine Runde), App-Seite
+ * der Modulgrenze.
  * Das Bild wird für die Dauer der Partie Hintergrund von body (Klasse abenteuer-mit-kulisse,
  * Variable --abenteuer-kulisse), mit einem hellen Schleier davor, damit Brett und Texte lesbar
  * bleiben; beim Verlassen räumt die Komponente auf. Ein Element mit negativem z-index reichte

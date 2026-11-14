@@ -507,7 +507,8 @@
       "reihe": false,
       "buchuebungen": [],
       "themen": ["matt2", "doppelangriff"],
-      "anzahl": 3
+      "anzahl": 3,
+      "kulisse": "wegCrossroadsPinewood.riesenbaeume"
     },
     {
       "kennung": "wegSiliconDelacroix.kapitaensproblem",

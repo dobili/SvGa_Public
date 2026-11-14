@@ -42,12 +42,19 @@ function ergebniswort(partie: Partie): string {
 /**
  * Zeigt die Blende, sobald die Partie während des Zusehens endet.
  *
- * Eingaben: die Partie. Ausgabe: Blende oder nichts.
+ * Eingaben: die Partie; `grund` ersetzt den Satz unter dem Ergebnis (das Schach-Abenteuer spricht
+ * in der Sprache der Geschichte: „Skater Jo gibt auf.“). Ausgabe: Blende oder nichts.
  * Beispiel: 2. g4?? Dh4# → „Verloren“ mit rotem Kreuz und darunter „Matt. Die Engine hat
  * gewonnen.“, nach gut 3 s weg. Sonderfall: Eine schon beendete Partie öffnen zeigt nichts (nach
  * dem Ende gibt es seit Q12-2 keine Rücknahme, also auch kein zweites Ende).
  */
-export function Ergebnisblende({ partie }: { partie: Partie }) {
+export function Ergebnisblende({
+  partie,
+  grund,
+}: {
+  readonly partie: Partie;
+  readonly grund?: string | null;
+}) {
   const beendet = partie.ende !== null;
   const [warBeendet, setzeWarBeendet] = useState(beendet);
   const [sichtbar, setzeSichtbar] = useState(false);
@@ -77,7 +84,7 @@ export function Ergebnisblende({ partie }: { partie: Partie }) {
       <div className="ergebnisblende-schild" data-testid="ergebnisblende">
         <Ergebnismarke partie={partie} gross />
         <span className="ergebnisblende-wort">{ergebniswort(partie)}</span>
-        <span className="ergebnisblende-grund">{kurzergebnis(partie)}</span>
+        <span className="ergebnisblende-grund">{grund ?? kurzergebnis(partie)}</span>
       </div>
     </div>
   );

@@ -41,6 +41,7 @@ import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { ErinnerungsRunde } from "./ErinnerungsRunde";
 import { Huelle } from "./Huelle";
+import { Kulisse } from "./Kulisse";
 import { Tischblase, TischblasenRahmen } from "./Tischblase";
 import { useRaetselgespraech } from "./useRaetselgespraech";
 import { sprecherAusSchluessel } from "./huellentexte";
@@ -222,6 +223,8 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
         testid="abenteuer-aufgaben"
         klasse="abenteuer-huelle-aufgaben"
       >
+        {/* Lebendschach (Weg 9): das Bild der Lichtung hinter dem Brett, wie in der Partie. */}
+        <Kulisse karte={auftrag?.kulisse ?? null} />
         {/* Sprechblasen (docs/spiel/29): oben wer die Aufgaben stellt, unten Ambrose. */}
         <Tischblase lage="oben" />
         <Tischblase lage="unten" />

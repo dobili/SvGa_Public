@@ -65,6 +65,11 @@
           "type": "string",
           "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
         },
+        "kulisse": {
+          "description": "Lebendschach (Weg 9): Kennung einer Karte (orte.json); ihr Hintergrundbild steht während der Runde hinter dem Brett, wie bei der Partie (begegnungen.json, kulisse)",
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+        },
         "erinnerung": {
           "description": "Erinnerung Ambroses (docs/spiel/08, F1; Entscheidung C3): statt Motivaufgaben eine Klassikerpartie Zug für Zug erraten, ab diesem Zug mit dieser Seite",
           "type": "object",

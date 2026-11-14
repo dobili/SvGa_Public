@@ -4,7 +4,13 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Partie } from "../../spiel/partie";
-import { gegnerName, sprecherAusPfad, sprecherAusSchluessel, statustext } from "./huellentexte";
+import {
+  endgrund,
+  gegnerName,
+  sprecherAusPfad,
+  sprecherAusSchluessel,
+  statustext,
+} from "./huellentexte";
 
 describe("Spielhülle: Texte", () => {
   it("nennt den Gegner beim Namen, wenn er am Zug ist", () => {
@@ -35,5 +41,16 @@ describe("Spielhülle: Texte", () => {
     const mitName = { einstellung: { botName: "Big Joe" } } as unknown as Partie;
     expect(gegnerName(mitName)).toBe("Big Joe");
     expect(gegnerName(null)).toBe("Gegner");
+  });
+
+  it("sagt das Ende in der Sprache der Geschichte, nicht „Die Engine hat aufgegeben.“", () => {
+    const ende = (e: object) =>
+      ({ einstellung: { eigeneFarbe: "white" }, ende: e }) as unknown as Partie;
+    expect(endgrund(ende({ art: "aufgabe", sieger: "white" }), "Skater Jo")).toBe(
+      "Skater Jo gibt auf.",
+    );
+    expect(endgrund(ende({ art: "aufgabe", sieger: "black" }), "Skater Jo")).toBe("Du gibst auf.");
+    expect(endgrund(ende({ art: "matt", sieger: "black" }), "Jo")).toBe("Matt. Jo hat gewonnen.");
+    expect(endgrund(ende({ art: "patt" }), "Jo")).toBeNull();
   });
 });

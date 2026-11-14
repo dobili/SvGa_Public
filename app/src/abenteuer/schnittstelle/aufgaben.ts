@@ -33,6 +33,12 @@ export interface Aufgabenauftrag {
   /** Zählt die Runde für Wiederholung und Tagesprotokoll der App (R32, Entscheidung A8)? */
   readonly zaehltFuerApp: boolean;
   /**
+   * Karte, deren Hintergrundbild hinter dem Brett steht (Lebendschach unter den Mammutbäumen,
+   * Weg 9), wie `kulisse` einer Partie (schnittstelle/partie.ts). Beispiel:
+   * „wegCrossroadsPinewood.riesenbaeume“.
+   */
+  readonly kulisse?: string;
+  /**
    * Erinnerung Ambroses (docs/spiel/08, F1; Entscheidung C3): statt Motivaufgaben eine
    * Klassikerpartie aus inhalte/zusatzpartien/klassiker.json Zug für Zug erraten, ab `abZug` mit
    * der Seite `seite`. Beispiel: Paulsen gegen Morphy, New York 1857, ab Zug 13 mit Schwarz.

@@ -32,7 +32,7 @@ import { usePartie, type Partiesteuerung } from "../../ui/komponenten/partie/use
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { Huelle } from "./Huelle";
-import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
+import { endgrund, gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
 import { Tischblase, TischblasenRahmen } from "./Tischblase";
@@ -232,7 +232,11 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
         }
         beschriftung={tSpiel("huelle.brett", { gegner })}
         anfangsGedreht={eigene === "black"}
-        ueberlagerung={gezeigt === anzahl ? <Ergebnisblende partie={partie} /> : undefined}
+        ueberlagerung={
+          gezeigt === anzahl ? (
+            <Ergebnisblende partie={partie} grund={endgrund(partie, gegner)} />
+          ) : undefined
+        }
       />
       {partie.uhr && (
         <Uhr uhr={partie.uhr} farbe={eigene} name={tSpiel("huelle.du")} jetztMs={s.jetztMs} />

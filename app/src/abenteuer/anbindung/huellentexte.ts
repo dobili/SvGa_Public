@@ -42,6 +42,19 @@ export function statustext(
 }
 
 /**
+ * Der Grund unter dem Ergebnis der Blende in der Sprache der Geschichte, für Enden mit Sieger.
+ * Warum: Die App sagt „Die Engine hat aufgegeben.“; im Abenteuer sitzt ein Mensch gegenüber.
+ * Beispiel: Skater Jo gibt auf → „Skater Jo gibt auf.“; Matt gegen den Leser → „Matt. Skater Jo
+ * hat gewonnen.“ Sonderfall: Remis und laufende Partien → null (der Satz der App passt dort).
+ */
+export function endgrund(partie: Partie, gegner: string): string | null {
+  const ende = partie.ende;
+  if (!ende || !("sieger" in ende)) return null;
+  const wer = ende.sieger === partie.einstellung.eigeneFarbe ? "du" : "gegner";
+  return tSpiel(`huelle.ende.${ende.art}.${wer}`, { gegner });
+}
+
+/**
  * Sprecherkennung aus dem Textschlüssel eines Figurennamens (Aufgabenrunde: wer die Aufgaben stellt).
  * Beispiel: „figur.coachDelgado.name“ → „coachDelgado“; ein anderer Schlüssel → null.
  */

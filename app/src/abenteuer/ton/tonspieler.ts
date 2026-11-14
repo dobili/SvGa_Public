@@ -7,10 +7,16 @@
  * ton/tonplan.ts. Die Dateien kommen über `lade` (im Spiel aus dem Paket, im Test erfunden).
  * Fehlt eine Datei, bleibt die Spur still: Es gibt noch keine Tondatei, und das Spiel muss ohne
  * sie fehlerfrei laufen (docs/spiel/23_Technik_Atmosphaere.md, Grundsätze).
- * Abhängigkeiten: Browser-Schnittstelle AudioContext, ton/tonplan.ts (Dateinamen).
+ * Einmalige Stücke (musik/einmal.json, Satzplan `schleife=False`: Erinnerung, Walzer, Abspann …)
+ * laufen nicht als Schleife. Danach bleibt die Spur still, bis ein anderer Wunsch kommt (Marke,
+ * Dialogende, Kartenwechsel); derselbe Wunsch startet das Stück nicht neu, denn die Regie wiederholt
+ * ihn bei jeder Dialogzeile (ton/tonregie.ts `spiele`). Leise Geräusche hebt klang/pegel.json an.
+ * Abhängigkeiten: Browser-Schnittstelle AudioContext, ton/tonplan.ts (Dateinamen),
+ * ton/tonangaben.ts (Tabellen einmalig und Anhebung).
  */
 import { motivFuer } from "./motive";
 import { spieleMotiv } from "./motivspieler";
+import { ladeTonangaben, stammVon, weicheAnhebung, type Tonangaben } from "./tonangaben";
 import { dateienFuer } from "./tonplan";
 
 /** Überblenden beim Wechsel der Musik (Sekunden je Richtung). */
@@ -31,11 +37,19 @@ interface Schleife {
 }
 
 type Spur = "musik" | "geraeusch" | "quelle";
+type Ordner = "musik" | "klang";
+
+/** Ein dekodierter Puffer und der Stamm seiner Datei (für die Tabellen, ton/tonangaben.ts). */
+interface Geladen {
+  readonly puffer: AudioBuffer;
+  readonly stamm: string;
+}
 /** Wie schnell die Nähe einer Klangquelle der Bewegung folgt (Zeitkonstante, Sekunden). */
 const NAEHE_S = 0.3;
 
 export class Tonspieler {
-  private readonly puffer = new Map<string, Promise<AudioBuffer | null>>();
+  private readonly puffer = new Map<string, Promise<Geladen | null>>();
+  private angaben: Promise<Tonangaben> | null = null;
   private readonly laufend: Record<Spur, Schleife | null> = {
     musik: null,
     geraeusch: null,
@@ -75,24 +89,29 @@ export class Tonspieler {
   }
 
   /**
-   * Lässt auf der Spur die Angabe als Schleife laufen (null: ausblenden). Läuft sie schon, ändert
-   * sich nichts; sonst blendet die alte aus und die neue ein.
+   * Lässt auf der Spur die Angabe laufen (null: ausblenden), als Schleife außer bei einmaligen
+   * Stücken. Ist sie schon die laufende (auch ein verklungenes einmaliges Stück), ändert sich
+   * nichts; sonst blendet die alte aus und die neue ein.
    */
   async spieleSchleife(spur: Spur, angabe: string | null): Promise<void> {
     if (this.laufend[spur]?.angabe === angabe) return;
     const nummer = ++this.wunsch[spur];
     this.blendeAus(spur, angabe === null ? AUSBLENDEN_S : UEBERBLENDEN_S);
     if (angabe === null) return;
-    const puffer = await this.holePuffer(spur === "geraeusch" ? "klang" : "musik", angabe);
-    if (!puffer || nummer !== this.wunsch[spur]) return;
+    const ordner: Ordner = spur === "geraeusch" ? "klang" : "musik";
+    const [geladen, angaben] = await Promise.all([
+      this.holePuffer(ordner, angabe),
+      this.tabellen(),
+    ]);
+    if (!geladen || nummer !== this.wunsch[spur]) return;
     const regler = this.ctx.createGain();
     regler.gain.setValueAtTime(STILLE, this.ctx.currentTime);
     regler.gain.exponentialRampToValueAtTime(1, this.ctx.currentTime + UEBERBLENDEN_S);
     regler.connect(this.ziel(spur));
     const quelle = this.ctx.createBufferSource();
-    quelle.buffer = puffer;
-    quelle.loop = true;
-    quelle.connect(regler);
+    quelle.buffer = geladen.puffer;
+    quelle.loop = !(ordner === "musik" && angaben.einmalig.has(geladen.stamm));
+    this.verbinde(quelle, regler, ordner, geladen.stamm, angaben);
     quelle.start();
     this.laufend[spur] = { angabe, quelle, regler };
   }
@@ -108,11 +127,14 @@ export class Tonspieler {
       spieleMotiv(this.ctx, this.gesamt.musik, motiv);
       return;
     }
-    const puffer = await this.holePuffer("klang", angabe);
-    if (!puffer) return;
+    const [geladen, angaben] = await Promise.all([
+      this.holePuffer("klang", angabe),
+      this.tabellen(),
+    ]);
+    if (!geladen) return;
     const quelle = this.ctx.createBufferSource();
-    quelle.buffer = puffer;
-    quelle.connect(this.gesamt.geraeusche);
+    quelle.buffer = geladen.puffer;
+    this.verbinde(quelle, this.gesamt.geraeusche, "klang", geladen.stamm, angaben);
     quelle.start();
   }
 
@@ -122,6 +144,30 @@ export class Tonspieler {
       this.wunsch[spur]++;
       this.blendeAus(spur, AUSBLENDEN_S);
     }
+  }
+
+  /** Die Tabellen des Pakets, einmal geladen (ton/tonangaben.ts). */
+  private tabellen(): Promise<Tonangaben> {
+    this.angaben ??= ladeTonangaben(this.lade);
+    return this.angaben;
+  }
+
+  /** Verbindet eine Quelle mit ihrem Ziel; leise Geräusche über die weiche Anhebung (pegel.json). */
+  private verbinde(
+    quelle: AudioBufferSourceNode,
+    ziel: AudioNode,
+    ordner: Ordner,
+    stamm: string,
+    angaben: Tonangaben,
+  ): void {
+    const db = ordner === "klang" ? angaben.anhebungDb.get(stamm) : undefined;
+    if (db === undefined || db <= 0) {
+      quelle.connect(ziel);
+      return;
+    }
+    const anhebung = weicheAnhebung(this.ctx, db);
+    quelle.connect(anhebung);
+    anhebung.connect(ziel);
   }
 
   /** Wohin eine Spur klingt: Musik und Quelle über ihren Anteil, Geräusche direkt. */
@@ -142,7 +188,7 @@ export class Tonspieler {
   }
 
   /** Der dekodierte Puffer zu einer Angabe: erste Datei, die es gibt (m4a vor ogg), sonst null. */
-  private holePuffer(ordner: "musik" | "klang", angabe: string): Promise<AudioBuffer | null> {
+  private holePuffer(ordner: Ordner, angabe: string): Promise<Geladen | null> {
     const schluessel = `${ordner}:${angabe}`;
     let versprechen = this.puffer.get(schluessel);
     if (!versprechen) {
@@ -152,12 +198,12 @@ export class Tonspieler {
     return versprechen;
   }
 
-  private async ladeErste(pfade: readonly string[]): Promise<AudioBuffer | null> {
+  private async ladeErste(pfade: readonly string[]): Promise<Geladen | null> {
     for (const pfad of pfade) {
       const bytes = await this.lade(pfad);
       if (!bytes) continue;
       try {
-        return await this.ctx.decodeAudioData(bytes);
+        return { puffer: await this.ctx.decodeAudioData(bytes), stamm: stammVon(pfad) };
       } catch (fehler: unknown) {
         // Eine kaputte Datei ist ein Fehler im Paket, kein Grund, das Spiel anzuhalten.
         console.warn(`Tondatei nicht lesbar: ${pfad}`, fehler);

@@ -249,5 +249,6 @@ export function auftragFuerRunde(
     versuch,
     zaehltFuerApp: true,
     ...(r.erinnerung ? { erinnerung: r.erinnerung } : {}),
+    ...(r.kulisse ? { kulisse: r.kulisse } : {}),
   };
 }

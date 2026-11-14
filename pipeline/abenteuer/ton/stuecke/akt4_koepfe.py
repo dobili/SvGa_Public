@@ -9,10 +9,9 @@ Crossroads-Zug und in zwei Takten nur mit I, IV und V für Ezras Gitarre.
 
 Maple Falls und Cedar Creek stammen aus ``maple.py`` und ``cedar.py`` (dieselben Töne). Miss Odiles
 Lied steht in A1 (5 – 6 – 1' – 6 – 5 – 3 – 2 – 1), das Endspielmotiv auch (1 – 5 – 2' – 6' – 3'').
-**Riverton, Ironwood, Silicon Bay und Desert Springs** waren beim Setzen von Akt 4 noch nicht
-gesetzt (Akt 2 und 3 entstanden gleichzeitig); ihre Köpfe hier sind nach den Tabellen 2A1 und 3A1
-entworfen (Riverton Swing in Moll, Ironwood schwer, Silicon Bay lydisch, Desert Springs sparsam).
-Sobald die Ortsthemen stehen, sollten diese vier Köpfe aus deren Teilen übernommen werden.
+Riverton, Ironwood, Silicon Bay und Desert Springs übernehmen die ersten vier Takte ihrer
+gesetzten Ortsthemen (``akt2_riverton.py``, ``akt2_ironwood.py``, ``akt3_silicon.py``,
+``akt3_desert.py``), in G-Dur umgeschrieben: Moll-Stufen als ♭3 und ♭6.
 """
 
 from dataclasses import dataclass
@@ -53,24 +52,24 @@ RIVERTON = Kopf(
     "trompete_gedaempft",
     1,
     Teil(
-        "i | iv | V7 | i",
-        "5:0.5 b3:0.5 1:1 b3:0.5 5:0.5 1':1 | 4:0.5 b6:0.5 1':1 b6:0.5 4:0.5 1:1 | "
-        "2:0.5 4:0.5 7,:1 2:0.5 4:0.5 5:1 | 1':0.5 b7:0.5 5:1 1:2",
+        "i | i | iv | iv",
+        "r:0.5 5,:0.5 1:0.5 b3:0.5 5:1 b3:0.5 1:0.5 | 2:0.5 b3:0.5 2:0.5 1:0.5 5,:2 | "
+        "r:0.5 b6,:0.5 1:0.5 4:0.5 b6:1 4:0.5 1:0.5 | b3:0.5 4:0.5 b3:0.5 2:0.5 1:2",
     ),
     Teil(
-        "I | IV | V7 | I",
-        "5:0.5 3:0.5 1:1 3:0.5 5:0.5 1':1 | 4:0.5 6:0.5 1':1 6:0.5 4:0.5 1:1 | "
-        "2:0.5 4:0.5 7,:1 2:0.5 4:0.5 5:1 | 1':0.5 6:0.5 5:1 1:2",
+        "I | I | IV | IV",
+        "r:0.5 5,:0.5 1:0.5 3:0.5 5:1 3:0.5 1:0.5 | 2:0.5 3:0.5 2:0.5 1:0.5 5,:2 | "
+        "r:0.5 6,:0.5 1:0.5 4:0.5 6:1 4:0.5 1:0.5 | 3:0.5 4:0.5 3:0.5 2:0.5 1:2",
     ),
-    Teil("I | V7", "5:0.5 3:0.5 1:1 3:0.5 5:0.5 1':1 | 2:0.5 4:0.5 7,:1 5:2"),
+    Teil("I | I", "r:0.5 5,:0.5 1:0.5 3:0.5 5:1 3:0.5 1:0.5 | 2:0.5 3:0.5 2:0.5 1:0.5 5,:2"),
 )
 IRONWOOD = Kopf(
     "ironwood",
     "klarinette",
     1,
-    Teil("i | i bVI | bVII | i", "1:2 b3:1 4:1 | 5:2 b6:1 5:1 | 4:2 2:1 b7,:1 | 1:4"),
-    Teil("I | I vi | V7 | I", "1:2 3:1 4:1 | 5:2 6:1 5:1 | 4:2 2:1 7,:1 | 1:4"),
-    Teil("I | V", "1:2 3:1 4:1 | 5:4"),
+    Teil("i | bVI | iv | V", "1:1 b3:1 5:2 | b6:3 5:1 | 4:1.5 b3:0.5 4:1 b6:1 | 5:3 r:1"),
+    Teil("I | vi | IV | V", "1:1 3:1 5:2 | 6:3 5:1 | 4:1.5 3:0.5 4:1 6:1 | 5:3 r:1"),
+    Teil("I | IV", "1:1 3:1 5:2 | 6:3 5:1"),
 )
 # Silicon Bay ist lydisch: die ♯4 liegt oben, über dem A-Dur-Akkord (II). Im Kinderlied am Feuer
 # wird sie zur reinen 4 (Kinder kennen den fremden Ton nicht, wie Mira, A1).
@@ -78,17 +77,9 @@ SILICON = Kopf(
     "silicon",
     "digitalpiano",
     1,
-    Teil(
-        "I II | II | I | II",
-        "1:0.5 5:0.5 3:0.5 5:0.5 #4:2 | 2:0.5 6,:0.5 2:0.5 3:0.5 #4:2 | "
-        "5:0.5 3:0.5 1:0.5 3:0.5 5:1 6:1 | #4:4",
-    ),
-    Teil(
-        "I II | II | I | II",
-        "1:0.5 5:0.5 3:0.5 5:0.5 #4:2 | 2:0.5 6,:0.5 2:0.5 3:0.5 #4:2 | "
-        "5:0.5 3:0.5 1:0.5 3:0.5 5:1 6:1 | #4:4",
-    ),
-    Teil("I V7 | V I", "1:0.5 5:0.5 3:0.5 5:0.5 4:2 | 2:0.5 6,:0.5 2:0.5 3:0.5 5:2"),
+    Teil("Imaj7 | II | Imaj7 | II", "3:2 1:2 | #4:3 3:1 | 1:2 7,:1 5,:1 | 6,:2 2:2"),
+    Teil("I | IV | I | ii", "3:2 1:2 | 4:3 3:1 | 1:2 7,:1 5,:1 | 6,:2 2:2"),
+    Teil("I | IV", "3:2 1:2 | 4:3 3:1"),
 )
 PORT = Kopf(
     "port",
@@ -102,9 +93,9 @@ DESERT = Kopf(
     "desert",
     "egitarre",
     1,
-    Teil("I | iii | IV | V", "3:2 r:1 5:1 | 5:3 r:1 | 6:2 1':1 6:1 | 5:3 r:1"),
-    Teil("I | iii | IV | V", "3:2 r:1 5:1 | 5:3 r:1 | 6:2 1':1 6:1 | 5:3 r:1"),
-    Teil("I | IV V", "3:2 r:1 5:1 | 6:1 5:1 2:2"),
+    Teil("I | IV | I | V", "5:3 r:1 | 6:2 1':2 | 3:4 | 2:3 r:1"),
+    Teil("I | IV | I | V", "5:3 r:1 | 6:2 1':2 | 3:4 | 2:3 r:1"),
+    Teil("I | IV", "5:3 r:1 | 6:2 1':2"),
 )
 # Summit City: der Quintenturm des Endspielmotivs, jeder Ton einzeln (A1, „Endspiel“).
 SUMMIT = Kopf(

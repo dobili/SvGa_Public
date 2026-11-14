@@ -9,10 +9,8 @@ der letzte Ton kommt vom Digitalpiano des Konzerns und ist einen Halbton zu tief
 In Port Delacroix gibt es keine Fanfare (dort ``held``); in Silicon Bay klingt sie gedämpft, in
 Desert Springs mit Slide-Gitarre.
 
-Ersatz: Slide-Gitarre ist die unverzerrte E-Gitarre. ``riverton.postkarte`` braucht das Thema von
-Riverton aus Akt 2, das noch nicht gesetzt ist; bis dahin steht hier eine eigene Phrase im Stil von
-Riverton (Swing in Moll) auf der Mundharmonika, die gegen den Kopf des Riverton-Themas getauscht
-werden soll.
+Ersatz: Slide-Gitarre ist die unverzerrte E-Gitarre. ``riverton.postkarte`` spielt die ersten zwei
+Takte des Riverton-Themas (``akt2_riverton.py``) auf der Mundharmonika, in c-Moll wie dort.
 """
 
 from pipeline.abenteuer.ton.satzplan import Satz, Stimme, Teil
@@ -21,6 +19,8 @@ from pipeline.abenteuer.ton.stuecke.kurz import kurz
 
 OBEN = 1
 AKT = 3
+# Die ersten zwei Takte des Riverton-Themas (akt2_riverton.A), für Slicks Postkarte.
+RIVERTON_KOPF = "r:0.5 5,:0.5 1:0.5 3:0.5 5:1 3:0.5 1:0.5 | 2:0.5 3:0.5 2:0.5 1:0.5 5,:2"
 # Mama (motive.MAMA): 1 – 2 – 3 – 5 (gehalten) – 6 – 5, drei Takte.
 MAMA = "1:1 2:1 3:1 5:3 6:1.5 5:4 r:0.5"
 # Das Aha (motive.AHA) eine Oktave über dem Dreiklang, wie in der Fanfare von Akt 1.
@@ -181,10 +181,10 @@ FANFARE_WUESTE = kurz(
 RIVERTON_POSTKARTE = Satz(
     "riverton.postkarte",
     "Slicks Postkarte",
-    "a",
+    "c",
     120,
     4,
-    {"k": Teil("i | iv i", "1:0.5 3:0.5 4:0.5 5:1 7:0.5 5:1 | 4:0.5 3:0.5 1:3")},
+    {"k": Teil("i | i", RIVERTON_KOPF)},
     ("k",),
     (Stimme("mundharmonika", "melodie", 0.85, 0.0, 0.35, OBEN, 58),),
     swing=1 / 6,

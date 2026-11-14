@@ -299,6 +299,7 @@
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
+      "richtung": "hoch",
       "art": "treppe",
       "zustand": "alt",
       "stil": "rustikal"
@@ -1002,6 +1003,7 @@
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
+      "richtung": "hoch",
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -1293,6 +1295,7 @@
       "breite": 96,
       "hoehe": 80,
       "kollision": true,
+      "richtung": "runter",
       "art": "treppe",
       "blick": "unten",
       "zustand": "alt",
@@ -1600,6 +1603,7 @@
       "breite": 32,
       "hoehe": 48,
       "kollision": false,
+      "richtung": "runter",
       "art": "treppe",
       "zustand": "alt",
       "stil": "rustikal"
@@ -3908,6 +3912,7 @@
       "breite": 48,
       "hoehe": 48,
       "kollision": true,
+      "richtung": "runter",
       "maske": ["###", "#.#", "#.#"],
       "art": "treppe",
       "zustand": "gebraucht",

@@ -1118,3 +1118,33 @@ das Feld `aufgang` im Grundriss ihn nennt. Die Vorgaben dahinter:
 - **Leiter** nur zu Heuböden, im Rohbau und im Stellwerk. **Wendeltreppe** nur in runden Bauten
   und Türmen.
 - Auf jeder Geschosskarte liegt der Aufgang an derselben Stelle.
+
+### 10.77 Bilder an Übergängen passen zu Art, Orten und Lage (Wunsch des Autors, 14.11.2026)
+
+„Bei den Assets von Übergängen (Türen, Treppen usw.) prüfen, dass die Assets wirklich das
+darstellen, was sie sollen, und zu den Orten passen, die sie verbinden.“ Prüfung:
+`python -m pipeline.abenteuer.uebergangsbilder` (auch in `pipeline.abenteuer.uebergaenge`, Befunde
+mit „Bild:“), Kontaktbögen mit `--boegen ORDNER [--privat PFAD] [--ort KENNUNG]`.
+
+- **Art:** Innen nach draußen steht am Auslöser ein Türbild (`art: tuer`), kein Fenster und kein
+  Schrank; draußen liegt er an einem Gebäudebild. Zwischen Geschossen eine Treppe, Luke, Leiter oder
+  ein Fahrstuhl. Am Kartenrand draußen ein sichtbarer Weg (auf Wiese ein eigener Belag; auf Sand und
+  Fels genügt der Boden). Reisen (Fähre, Bus, Seilbahn) haben Steg, Boot, Haltestelle oder Gebäude.
+  Stollen haben einen Stolleneingang. Bilder ohne `art` am Übergang werden als „unbekannt, bitte im
+  Katalog benennen“ gemeldet.
+- **Richtung:** Treppenbilder tragen `richtung` (`hoch`: Stufen führen nach oben, etwa
+  `generic_134`; `runter`: Öffnung mit Geländer, Schacht, Luke, U-Bahn-Abgang). Auf der unteren Karte
+  zeigt der Aufgang hoch, auf der oberen runter. Die Ebene einer Karte folgt aus ihrem Namen (Keller,
+  Archiv, U-Bahnhof, Stollen −1; Zimmer 1; Dachboden 2).
+- **Ort:** Eine Kellertreppe führt in einen Keller. Leiter, Fahrstuhl und Wendeltreppe nur nach 10.76.
+  Innen nicht mehr Geschosse über dem Erdgeschoss als das Gebäudebild außen (mit Dachgeschoss).
+  Die Tür innen hat den Stil des Hauses (modern gegen rustikal).
+- **Lage:** Die Tür liegt innen in der Wand, die außen zum Auslöser zeigt (Haustür vorn heißt
+  Südwand), im selben Drittel der Breite (10.75), außen an einer Türstelle des Grundrisses (10.74).
+  Südwand: flaches Türbild (`tuer_sued_*`), Nordwand: hohes. Die Tür ist innen so breit wie außen
+  (Doppeltür ↔ Doppeltür). Aufgänge liegen auf jeder Geschosskarte an derselben Stelle (10.76).
+- **Rand:** Ein Weg hat am Kartenrand auf beiden Karten denselben Belag (10.72); der Wechsel liegt
+  auf einer Karte.
+- **Sichtprüfung:** Die Kontaktbögen zeigen je Übergang beide Seiten (7 × 7 Kacheln, vierfach) mit
+  roten Rahmen um den Auslöser. Material und Aussehen (Glastür außen, Holztür innen; Rolltor außen,
+  Zimmertür innen; Tür aufgeklebt) sieht nur das Auge: jeden Bogen ansehen.

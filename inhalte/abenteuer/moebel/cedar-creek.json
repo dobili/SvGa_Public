@@ -447,6 +447,7 @@
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
+      "richtung": "hoch",
       "art": "treppe",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -1873,7 +1874,8 @@
       "breite": 96,
       "hoehe": 80,
       "kollision": true,
-      "art": "gelaender",
+      "richtung": "runter",
+      "art": "treppe",
       "zustand": "alt",
       "stil": "klassisch",
       "maske": [

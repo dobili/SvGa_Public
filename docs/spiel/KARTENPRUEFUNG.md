@@ -200,6 +200,15 @@ Diese Punkte haben Karten durchfallen lassen, die als reif galten. Sie gelten f�
   statt zu sitzen?
 - **Unerklärtes:** Gibt es ein Ding ohne erkennbaren Grund (zerstörte Kommode, Schatten am Boden)?
 
+### Übergänge (KARTENREGELN 10.77, Wunsch des Autors vom 14.11.2026)
+
+- `python -m pipeline.abenteuer.uebergangsbilder --boegen ORDNER --ort KENNUNG` laufen lassen: Befunde
+  zu Art, Richtung, Ort und Lage der Bilder an jedem Übergang, dazu Kontaktbögen.
+- Jeden Kontaktbogen ansehen: Ist die Tür eine Tür (kein Fenster, kein Schrank), passt sie innen zum
+  Haus außen (Glas zu Glas, Holz zu Holz, Doppeltür zu Doppeltür)? Führt die Treppe in die richtige
+  Richtung? Setzt sich der Weg am Rand im selben Belag fort? Steht nichts auf dem Auslöser (Tisch,
+  Laterne)?
+
 ## 4. Vorlage für den Gutachter
 
 > Du bist Gutachter für Karten eines Pixel-Art-Rollenspiels (Draufsicht schräg von oben, wie

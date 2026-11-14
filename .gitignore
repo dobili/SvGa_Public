@@ -34,3 +34,4 @@ app/training/
 app/.engine/
 *.tsbuildinfo
 inhalte/abenteuer/karten/varianten/
+.claude/worktrees/

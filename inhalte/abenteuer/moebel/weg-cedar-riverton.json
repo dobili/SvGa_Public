@@ -636,6 +636,7 @@
       "breite": 32,
       "hoehe": 16,
       "kollision": false,
+      "richtung": "hoch",
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "industrie"

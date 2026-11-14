@@ -442,6 +442,7 @@
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
+      "richtung": "hoch",
       "art": "treppe",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -617,6 +618,7 @@
       "breite": 64,
       "hoehe": 64,
       "kollision": true,
+      "art": "stollen",
       "stil": "rustikal",
       "zustand": "verwittert",
       "tuer": [
@@ -629,6 +631,7 @@
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
+      "art": "fahrzeug",
       "stil": "rustikal",
       "zustand": "verwittert"
     },

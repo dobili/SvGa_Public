@@ -278,11 +278,6 @@ export function sprechblaseFuer(
   const sagt = statist?.sagt;
   const s = sagt ? statistensatz(sagt, besuch, hatSpieltext) : null;
   if (!s) return null;
-  const ambrose = s.ambrose
-    ? tSpiel("oberwelt.ambroseSagt", {
-        name: tSpiel("figur.ambrose.name"),
-        satz: tSpiel(s.ambrose, { held }),
-      })
-    : null;
+  const ambrose = s.ambrose ? tSpiel(s.ambrose, { held }) : null;
   return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
 }

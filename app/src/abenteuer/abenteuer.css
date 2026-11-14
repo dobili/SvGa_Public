@@ -694,3 +694,11 @@ body.abenteuer-mit-kulisse {
   display: block;
   font-style: italic;
 }
+
+/* Sprechblase eines Statisten im Dialogfenster unten (Wunsch des Autors, 14.11.2026: ein
+   Textfenster für die Geschichte); Ambroses Antwort darunter mit Porträt, abgesetzt. */
+.abenteuer-sprechblase-ambrose {
+  margin-top: var(--raster);
+  padding-top: var(--raster);
+  border-top: 1px solid rgba(201, 162, 39, 0.35);
+}

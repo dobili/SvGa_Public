@@ -321,6 +321,7 @@ export function Oberwelt() {
             weiter: tSpiel("ergebnis.weiter"),
             frage: tSpiel("oberwelt.vorfuehrung.frage"),
             zeigen: tSpiel("oberwelt.vorfuehrung.zeigen"),
+            ambrose: tSpiel("figur.ambrose.name"),
           }}
           beiSchliessen={() => setzeSprechblase(null)}
           beiZeigen={(kennung) => {

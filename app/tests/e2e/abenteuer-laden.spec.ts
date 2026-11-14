@@ -115,6 +115,10 @@ test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der n
   ) as Record<string, string>;
   const satz = (schluessel: string) => (texte[schluessel] ?? schluessel).slice(0, SATZANFANG);
   await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe"));
+  // Die Sprechblase steht unten im Dialogfenster; „Weiter“ schließt sie, erneutes Ansprechen
+  // bringt den nächsten Satz (Wunsch des Autors, 14.11.2026: ein Textfenster für die Geschichte).
+  await blase.getByRole("button", { name: "Weiter" }).click();
+  await expect(blase).toHaveCount(0);
   await aktion.click();
   await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe.2"));
   await blase.getByRole("button", { name: "Weiter" }).click();

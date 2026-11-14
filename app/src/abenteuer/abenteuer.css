@@ -72,6 +72,9 @@
   left: calc(var(--raster) * 1.5);
   right: calc(var(--raster) * 1.5);
   bottom: calc(var(--raster) * 1.5);
+  /* Lange Sätze mit vielen Antworten passen quer gehalten nicht ganz hinein: dann rollen. */
+  max-height: calc(100dvh - var(--raster) * 3);
+  overflow-y: auto;
   padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
   border-radius: var(--radius);
   background: rgba(22, 37, 61, 0.94);
@@ -195,7 +198,8 @@
   position: absolute;
   top: calc(env(safe-area-inset-top) + var(--raster));
   right: var(--raster);
-  z-index: 3;
+  /* Über Meldungen und Ergebniskarten (z-index 3): das Menü ist der einzige Rückweg in die App. */
+  z-index: 4;
   min-width: 44px;
   min-height: 44px;
   border: none;
@@ -209,6 +213,10 @@
   position: absolute;
   inset: calc(var(--raster) * 8) calc(var(--raster) * 2) auto;
   z-index: 4;
+  /* Auf kleinen und quer gehaltenen Handys blieb der letzte Knopf (Weiterspielen, „Ohne Karten
+     spielen“) unter dem Rand der Welt verborgen (Affentest 14.11.2026): Das Fenster rollt. */
+  max-height: calc(100dvh - var(--raster) * 10);
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: var(--raster);
@@ -240,6 +248,11 @@
 .abenteuer-ergebnis {
   position: absolute;
   inset: calc(var(--raster) * 4) calc(var(--raster) * 2) auto;
+  /* Über der Kopfleiste (Affentest 14.11.2026: „Übungspartie“ lag über „Weitermachen“), unter
+     dem Menüknopf; rollt, wenn der Bildschirm zu klein ist. */
+  z-index: 3;
+  max-height: calc(100dvh - var(--raster) * 6);
+  overflow-y: auto;
   padding: calc(var(--raster) * 2);
   border-radius: var(--radius);
   background: rgba(245, 240, 230, 0.96);

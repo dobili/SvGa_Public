@@ -53,3 +53,10 @@ describe("Deckwahl ohne Ambrose", () => {
     expect(mentor).not.toContain("disabled");
   });
 });
+
+describe("Deckwahl: Rückweg", () => {
+  it("zeigt immer einen Knopf „Zurück“ (Affentest: sonst nur über die Zurück-Taste)", () => {
+    const html = zeichne(false);
+    expect(html).toMatch(/<button[^>]*data-testid="abenteuer-deck-zurueck"[^>]*>Zurück<\/button>/);
+  });
+});

@@ -185,6 +185,15 @@ export function useOberweltkern(): Oberweltkern {
     standRef.current = neu;
     setzeStand(neu);
   };
+  // Ein Stand, den ein anderer Tab (oder die App selbst) geschrieben hat, gilt auch hier. Ohne
+  // das überschrieb ein zweiter, älterer Tab beim nächsten Schreiben die Partie, die im ersten
+  // begonnen hatte (Affentest 14.11.2026: Reise im alten Tab, `laufendePartie` weg). Eigene
+  // Stände kommen als dasselbe Objekt zurück und ändern nichts. Die Hülle zeichnet die Oberwelt
+  // bei jeder Änderung des Spielstands neu; deshalb genügt das Lesen beim Zeichnen.
+  const aussen = dienste.liesStand();
+  useEffect(() => {
+    if (aussen && aussen !== standRef.current) merke(aussen);
+  }, [aussen]);
   const schreibe = (neu: Abenteuerstand) => {
     merke(neu);
     void dienste.schreibeStand(neu);

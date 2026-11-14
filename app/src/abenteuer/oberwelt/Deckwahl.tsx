@@ -227,6 +227,17 @@ export function Deckwahl({
       >
         {deck.length === 0 ? tSpiel("deck.ohne") : tSpiel("deck.los", { anzahl: deck.length })}
       </button>
+      {/* Ein sichtbarer Rückweg (Affentest 14.11.2026): Wer „Übungspartie“ aus Versehen tippte,
+          kam bisher nur über die Zurück-Taste heraus, die es in der installierten App auf dem
+          iPhone nicht gibt. */}
+      <button
+        type="button"
+        className="knopf-zweit"
+        data-testid="abenteuer-deck-zurueck"
+        onClick={beiAbbruch}
+      >
+        {tSpiel("faecher.zurueck")}
+      </button>
     </section>
   );
 }

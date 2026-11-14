@@ -131,3 +131,16 @@ export async function remisangebot(partie: Partie, fen: string): Promise<Partie 
   if (!wert || Math.abs(wertFuer(wert, "white")) > AUSGEGLICHEN_BIS) return null;
   return { ...pausiere(partie, Date.now()), ende: { art: "vereinbart" } };
 }
+
+/**
+ * Steht die Partie noch da, wo eine rechnende Karte begann? Remisangebot und Mentor-Zug fragen
+ * die Engine und schreiben erst danach; wer in der Zwischenzeit zog, dessen Zug (und die Antwort
+ * des Gegners) überschrieb das Remis, und der Mentor-Zug traf eine andere Stellung (Affentest
+ * 14.11.2026, „Karte ausspielen, während gerechnet wird“).
+ * Eingaben: Partie beim Ausspielen, neueste Partie aus dem Speicher (null, wenn sie fehlt).
+ * Ausgabe: true, wenn gleich viele Züge und die Partie läuft noch.
+ * Beispiel: Remis nach 1. e4 e5 ausgespielt, dann 2. Sf3 gezogen → false (die Karte bleibt in der Hand).
+ */
+export function stellungNochGleich(vorher: Partie, jetzt: Partie | null): boolean {
+  return jetzt !== null && jetzt.ende === null && jetzt.zuege.length === vorher.zuege.length;
+}

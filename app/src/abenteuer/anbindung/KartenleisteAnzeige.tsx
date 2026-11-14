@@ -35,7 +35,15 @@ import { gegnerName, sprecherAusPfad } from "./huellentexte";
 import { meldungstext, stimmenDerKarte } from "./kartenstimme";
 import { spieleZeitkarte, type Spruchzeilen } from "./spruchkarte";
 import { useTischblasen } from "./tischkontext";
-import { drohung, remisangebot, waage, werkzeugkarte, type Kartenanzeige } from "./kartenwirkungen";
+import {
+  drohung,
+  remisangebot,
+  stellungNochGleich,
+  waage,
+  werkzeugkarte,
+  type Kartenanzeige,
+} from "./kartenwirkungen";
+import { neueste } from "../../ui/komponenten/partie/botzug";
 import type { Kartensorte } from "../schnittstelle/karten";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import type { Leisteneigenschaften } from "../schnittstelle/modul";
@@ -248,6 +256,8 @@ export function KartenleisteAnzeige({
           return { ergebnis: [tSpiel("karte.mentorzug.erIstDa")], spruch: null };
         }
         const bewertung = await engine.bewerte(fen, MENTOR_MS, 1);
+        // Inzwischen gezogen: Die Karte bleibt unverbraucht in der Hand.
+        if (!stellungNochGleich(partie, neueste(partie.id))) throw new AuftragAbgebrochen();
         const san = bewertung.besterZug ? uciZuSan(fen, bewertung.besterZug) : null;
         if (san) steuerung.spieleLeser(san);
         break;
@@ -275,6 +285,7 @@ export function KartenleisteAnzeige({
       case "remis": {
         const name = tSpiel(gegner?.name ?? "");
         const remis = await remisangebot(partie, fen);
+        if (!stellungNochGleich(partie, neueste(partie.id))) throw new AuftragAbgebrochen();
         if (remis) await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, remis) }));
         const antwort = remis ? "karte.remis.angenommen" : "karte.remis.abgelehnt";
         return { ergebnis: [tSpiel(antwort, { gegner: name })], spruch: null };

@@ -1,7 +1,13 @@
 // Werkzeugkarten und Nullzug (docs/spiel/11, K1, K2, K6), ohne Engine.
 import { describe, expect, it } from "vitest";
 import { stellungAusFen } from "../../schach/stellung";
-import { mitGegnerAmZug, waehleZaehlfeld, werkzeugkarte } from "./kartenwirkungen";
+import type { Partie } from "../../spiel/partie";
+import {
+  mitGegnerAmZug,
+  stellungNochGleich,
+  waehleZaehlfeld,
+  werkzeugkarte,
+} from "./kartenwirkungen";
 
 /** Weiß: Springer e5, angegriffen vom Bauern d6 und der Dame e7, nicht gedeckt. */
 const HAENGT = "4k3/4q3/3p4/4N3/8/8/8/4K3 w - - 0 1";
@@ -37,5 +43,23 @@ describe("Was droht? (Nullzug)", () => {
 
   it("im Schach gibt es keinen Nullzug", () => {
     expect(mitGegnerAmZug("4k3/8/8/8/8/8/4r3/4K3 w - - 0 1")).toBeNull();
+  });
+});
+
+describe("Rechnende Karten: steht die Partie noch?", () => {
+  /** Nur die Felder, die die Prüfung liest. */
+  const partie = (zuege: number, ende: Partie["ende"] = null) =>
+    ({ zuege: Array.from({ length: zuege }, () => ({ san: "e4" })), ende }) as unknown as Partie;
+
+  it("gleich viele Züge, Partie läuft: gilt", () => {
+    expect(stellungNochGleich(partie(2), partie(2))).toBe(true);
+  });
+
+  it("inzwischen gezogen, beendet oder verschwunden: verfällt", () => {
+    expect(stellungNochGleich(partie(2), partie(3))).toBe(false);
+    expect(stellungNochGleich(partie(2), partie(2, { art: "aufgabe" } as Partie["ende"]))).toBe(
+      false,
+    );
+    expect(stellungNochGleich(partie(2), null)).toBe(false);
   });
 });

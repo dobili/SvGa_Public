@@ -17,6 +17,7 @@
   "abenteuer.einleitung": "A chess adventure: travel from town to town, learn with Ambrose and challenge the chess clubs. The game is an add-on package; your progress stays in your data.",
   "abenteuer.laden": "Download game",
   "abenteuer.laedt": "Loading … (about {mb} MB)",
+  "abenteuer.pruefe": "Looking for the game …",
   "abenteuer.unterEinemMb": "under 1",
   "abenteuer.spielen": "Play",
   "abenteuer.fehler": "The game could not be loaded. Please try again.",

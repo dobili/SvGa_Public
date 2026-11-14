@@ -75,12 +75,19 @@ function Namensfeld({
 /** Startkarte: Paket laden oder Spiel beginnen; vor dem ersten Start den Namen wählen. */
 function Startkarte({
   zustand,
+  geprueft,
   name,
   beiName,
   beiLaden,
   beiStart,
 }: {
   zustand: Paketzustand;
+  /**
+   * Ob der Paketzustand schon abgefragt ist. Vorher kein Knopf: Bis die Antwort kam, stand dort
+   * „Spiel herunterladen“, auch wenn das Paket längst da war, und ein schneller Tipp lud es neu
+   * (Affentest 14.11.2026).
+   */
+  geprueft: boolean;
   /** Null, wenn es schon einen Spielstand gibt (dann keine Namenswahl). */
   name: string | null;
   beiName: (name: string) => void;
@@ -105,7 +112,9 @@ function Startkarte({
       {(zustand.art === "vorhanden" || zustand.art === "veraltet") && name !== null && (
         <Namensfeld name={name} beiAenderung={beiName} />
       )}
-      {zustand.art === "vorhanden" || zustand.art === "veraltet" ? (
+      {!geprueft ? (
+        <p className="lade">{t("abenteuer.pruefe")}</p>
+      ) : zustand.art === "vorhanden" || zustand.art === "veraltet" ? (
         <button
           type="button"
           className="knopf-haupt"
@@ -208,6 +217,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const { zurueck } = useNavigation();
   const stand = useAbenteuerstand();
   const [zustand, setzeZustand] = useState<Paketzustand>({ art: "fehlt" });
+  const [geprueft, setzeGeprueft] = useState(false);
   const [Oberwelt, setzeOberwelt] = useState<ComponentType<{
     readonly wert: string | null;
   }> | null>(null);
@@ -242,9 +252,15 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
 
   useEffect(() => {
     let aktiv = true;
-    void aktualisierePaketzustand().then((z) => {
-      if (aktiv) setzeZustand(z);
-    });
+    // Ohne Cache-Speicher (gesperrte Website-Daten) gilt das Paket als fehlend; das Laden meldet
+    // dann seinen Fehler auf der Startkarte, statt dass die Prüfung ewig läuft.
+    void aktualisierePaketzustand()
+      .catch((): Paketzustand => ({ art: "fehlt" }))
+      .then((z) => {
+        if (!aktiv) return;
+        setzeZustand(z);
+        setzeGeprueft(true);
+      });
     return () => {
       aktiv = false;
     };
@@ -320,6 +336,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       ) : (
         <Startkarte
           zustand={zustand}
+          geprueft={geprueft}
           name={stand ? null : neuerName}
           beiName={setzeNeuenNamen}
           beiLaden={lade}

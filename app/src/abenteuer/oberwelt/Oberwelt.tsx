@@ -123,34 +123,24 @@ export function Oberwelt() {
     },
   });
 
-  // Solange ein Dialog, ein Ergebnis oder eine Meldung offen ist, steht der Held.
+  // Solange ein Fenster offen ist, steht der Held, und die Kopfleiste öffnet kein zweites
+  // (Affentest 14.11.2026: „Übungspartie“ und „Reisen“ lagen über „Weitermachen“ und öffneten
+  // die Deckwahl neben der Fortsetzungskarte; mit offenem Reisefenster lief der Held weiter).
+  const fensterOffen =
+    dialog !== null ||
+    partie.ergebnis !== null ||
+    partie.offenePartie !== null ||
+    rundenergebnis !== null ||
+    offeneRunde !== null ||
+    tagebuch ||
+    reisen ||
+    partie.deckwahl !== null ||
+    vorfuehrung !== null ||
+    gedaechtnis !== null ||
+    offenerLaden !== null;
   useEffect(() => {
-    szeneAus(spiel)?.laufenErlaubt(
-      dialog === null &&
-        partie.ergebnis === null &&
-        partie.offenePartie === null &&
-        rundenergebnis === null &&
-        offeneRunde === null &&
-        !tagebuch &&
-        !partie.deckwahl &&
-        vorfuehrung === null &&
-        gedaechtnis === null &&
-        offenerLaden === null,
-    );
-  }, [
-    spiel,
-    dialog,
-    partie.ergebnis,
-    partie.offenePartie,
-    rundenergebnis,
-    offeneRunde,
-    tagebuch,
-    partie.deckwahl,
-    vorfuehrung,
-    gedaechtnis,
-    offenerLaden,
-    welt,
-  ]);
+    szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
+  }, [spiel, fensterOffen, welt]);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     szeneAus(spiel)?.setzeRichtung(richtung, gedrueckt);
@@ -198,12 +188,12 @@ export function Oberwelt() {
           muenzen={stand.muenzen}
           beiTagebuch={() => setzeTagebuch(true)}
           beiReisebrett={
-            welt && stand.gegenstaende.includes(REISEBRETT) && !dialog && !deckwahl
+            welt && stand.gegenstaende.includes(REISEBRETT) && !fensterOffen
               ? partie.starteUebungspartie
               : null
           }
           beiReisen={
-            welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !dialog
+            welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !fensterOffen
               ? () => setzeReisen(true)
               : null
           }

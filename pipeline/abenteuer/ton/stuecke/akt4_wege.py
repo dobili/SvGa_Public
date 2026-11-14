@@ -100,7 +100,7 @@ PINEWOOD = Satz(
     ("vor", "a1", "a2", "b", "a3", "a4", "a5", "a6"),
     (
         Stimme("gitarre", "travis", 0.75, -0.3, 0.2, 0, 48),
-        Stimme("strumstick", "melodie", 0.75, 0.25, 0.25, OBEN, 62, nur("a1", "a2", "a5", "a6")),
+        Stimme("strumstick", "melodie", 0.75, 0.25, 0.25, OBEN, 56, nur("a1", "a2", "a5", "a6")),
         Stimme("glockenspiel", "melodie", 0.45, 0.3, 0.35, OBEN, 52, nur("b")),
         Stimme("gitarre", "melodie", 0.65, 0.1, 0.25, OBEN, 54, nur("b", "a3", "a4")),
         Stimme("kontrabass_pizz", "bass_zweier", 0.7, 0.0, 0.15, 1, 56),

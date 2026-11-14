@@ -15,7 +15,8 @@
  * Klassikerpartie (ErinnerungsRunde.tsx, docs/spiel/08, F1).
  * Seit der Spielhülle (docs/spiel/18_Spielhuelle.md) steht die Runde im Rahmen des Spiels: Kopf mit
  * der Figur, die die Aufgaben stellt, und der Rundenrahmen mit `imSpiel` (ohne Lernsammlung,
- * „Als Variante öffnen“, „Aufgabe wiederholen“, Kombo).
+ * „Als Variante öffnen“, „Aufgabe wiederholen“, Kombo). Wer die Aufgaben stellt, spricht oben in
+ * der Sprechblase, Ambrose unten (Tischgespräch, docs/spiel/29, anbindung/useRaetselgespraech.ts).
  * Sonderfall: Taktikaufgaben melden nur richtig oder falsch; „mit Hilfe“ (halber Punkt) bleibt
  * den Buchübungen der App vorbehalten und kommt hier noch nicht vor.
  */
@@ -27,6 +28,7 @@ import { t } from "../../i18n/sprache";
 import { aendere } from "../../speicher/speicher";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import { useDaten } from "../../ui/komponenten/bausteine/useDaten";
+import { HinweisKontext } from "../../ui/trainer/imSpiel";
 import { Rundenrahmen } from "../../ui/trainer/Rundenrahmen";
 import { Endspielaufgabe } from "../../ui/trainer/Endspielaufgabe";
 import { Fallenaufgabe } from "../../ui/trainer/Fallenaufgabe";
@@ -39,6 +41,8 @@ import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { ErinnerungsRunde } from "./ErinnerungsRunde";
 import { Huelle } from "./Huelle";
+import { Tischblase, TischblasenRahmen } from "./Tischblase";
+import { useRaetselgespraech } from "./useRaetselgespraech";
 import { sprecherAusSchluessel } from "./huellentexte";
 import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
 import { testantworten } from "./testende";
@@ -49,14 +53,27 @@ function Runde({
   aufgaben,
   massstab,
   beiEnde,
+  steller,
+  kennung,
 }: {
   aufgaben: readonly Rundenaufgabe[];
+  /** Wer die Aufgaben stellt (Textschlüssel) und Kennung des Auftrags, fürs Tischgespräch. */
+  steller: string;
+  kennung: string;
   /** Maßstab des Endspieltrainers (nur für Endspielaufgaben nötig). */
   massstab: Massstab | null;
   beiEnde: (ergebnisse: readonly Antwortergebnis[], sekunden: number) => void;
 }) {
   const runde = useRunde("taktik", aufgaben.length);
   const ergebnisse = useRef<Antwortergebnis[]>([]);
+  // Tischgespräch (docs/spiel/29): wer die Aufgaben stellt, kommentiert ab und zu.
+  const gespraech = useRaetselgespraech(steller, kennung);
+  const { index, anzahl } = runde;
+  useEffect(() => {
+    if (anzahl > 1 && index === anzahl - 1) gespraech.vorLetzter(index);
+    // Einmal, wenn die letzte Aufgabe beginnt.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, anzahl]);
   const gemeldet = useRef(false);
   // Testhilfe des Autors: die ganze Runde sofort bestehen (true) oder verfehlen (false).
   const [test, setzeTest] = useState<boolean | null>(null);
@@ -82,53 +99,58 @@ function Runde({
   const mitProtokoll: Runde = {
     ...runde,
     beantworte: (richtig) => {
-      if (runde.ergebnis === null) ergebnisse.current[runde.index] = richtig ? "richtig" : "falsch";
+      if (runde.ergebnis === null) {
+        ergebnisse.current[runde.index] = richtig ? "richtig" : "falsch";
+        gespraech.beiAntwort(runde.index, richtig);
+      }
       runde.beantworte(richtig);
     },
   };
   return (
     <>
-      <Rundenrahmen
-        kennung="taktik"
-        runde={mitProtokoll}
-        nochmal={() => {}}
-        zurAuswahl={null}
-        imSpiel
-      >
-        <div key={runde.index} className="trainer-aufgabe">
-          {aktuelle.art === "endspiel" ? (
-            massstab ? (
-              <Endspielaufgabe
-                aufgabe={aktuelle.aufgabe}
-                massstab={massstab}
+      <HinweisKontext value={() => gespraech.beiHinweis(runde.index)}>
+        <Rundenrahmen
+          kennung="taktik"
+          runde={mitProtokoll}
+          nochmal={() => {}}
+          zurAuswahl={null}
+          imSpiel
+        >
+          <div key={runde.index} className="trainer-aufgabe">
+            {aktuelle.art === "endspiel" ? (
+              massstab ? (
+                <Endspielaufgabe
+                  aufgabe={aktuelle.aufgabe}
+                  massstab={massstab}
+                  runde={mitProtokoll}
+                />
+              ) : (
+                <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+              )
+            ) : aktuelle.art === "falle" ? (
+              <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+            ) : aktuelle.art === "struktur" ? (
+              <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+            ) : aktuelle.art === "zusatz" ? (
+              <Taktikaufgabe
+                aufgabe={aktuelle.aufgabe.aufgabe}
                 runde={mitProtokoll}
+                motivAbfragen={false}
+                zusatz={{
+                  themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
+                  vorher: aktuelle.aufgabe.vorher,
+                }}
               />
             ) : (
-              <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
-            )
-          ) : aktuelle.art === "falle" ? (
-            <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-          ) : aktuelle.art === "struktur" ? (
-            <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-          ) : aktuelle.art === "zusatz" ? (
-            <Taktikaufgabe
-              aufgabe={aktuelle.aufgabe.aufgabe}
-              runde={mitProtokoll}
-              motivAbfragen={false}
-              zusatz={{
-                themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
-                vorher: aktuelle.aufgabe.vorher,
-              }}
-            />
-          ) : (
-            <Taktikaufgabe
-              aufgabe={aktuelle.aufgabe}
-              runde={mitProtokoll}
-              motivAbfragen={aktuelle.motivAbfragen}
-            />
-          )}
-        </div>
-      </Rundenrahmen>
+              <Taktikaufgabe
+                aufgabe={aktuelle.aufgabe}
+                runde={mitProtokoll}
+                motivAbfragen={aktuelle.motivAbfragen}
+              />
+            )}
+          </div>
+        </Rundenrahmen>
+      </HinweisKontext>
       <Raetseltest beiWahl={setzeTest} />
     </>
   );
@@ -193,41 +215,50 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
     }));
   };
   return (
-    <Huelle
-      figur={auftrag ? tSpiel(auftrag.steller) : ""}
-      sprecher={auftrag ? sprecherAusSchluessel(auftrag.steller) : null}
-      testid="abenteuer-aufgaben"
-      klasse="abenteuer-huelle-aufgaben"
-    >
-      {!auftrag && (
-        <section className="karte">
-          <p className="fehlertext">{t("abenteuer.aufgaben.keinAuftrag")}</p>
-          <ZurueckKnopf />
-        </section>
-      )}
-      {auftrag?.erinnerung && (
-        <ErinnerungsRunde
-          erinnerung={auftrag.erinnerung}
-          beiEnde={beiEnde}
-          zurueck={<ZurueckKnopf />}
-        />
-      )}
-      {auftrag && !auftrag.erinnerung && (taktik.art === "laedt" || zusaetze.art === "laedt") && (
-        <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
-      )}
-      {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length === 0 && (
-        <section className="karte">
-          <p className="hinweis">{t("trainer.keineAufgaben")}</p>
-          <ZurueckKnopf />
-        </section>
-      )}
-      {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
-        <Runde
-          aufgaben={aufgaben}
-          massstab={endspiele.art === "fertig" ? endspiele.wert.massstab : null}
-          beiEnde={beiEnde}
-        />
-      )}
-    </Huelle>
+    <TischblasenRahmen>
+      <Huelle
+        figur={auftrag ? tSpiel(auftrag.steller) : ""}
+        sprecher={auftrag ? sprecherAusSchluessel(auftrag.steller) : null}
+        testid="abenteuer-aufgaben"
+        klasse="abenteuer-huelle-aufgaben"
+      >
+        {/* Sprechblasen (docs/spiel/29): oben wer die Aufgaben stellt, unten Ambrose. */}
+        <Tischblase lage="oben" />
+        <Tischblase lage="unten" />
+        {!auftrag && (
+          <section className="karte">
+            <p className="fehlertext">{t("abenteuer.aufgaben.keinAuftrag")}</p>
+            <ZurueckKnopf />
+          </section>
+        )}
+        {auftrag?.erinnerung && (
+          <ErinnerungsRunde
+            erinnerung={auftrag.erinnerung}
+            steller={auftrag.steller}
+            kennung={auftrag.kennung}
+            beiEnde={beiEnde}
+            zurueck={<ZurueckKnopf />}
+          />
+        )}
+        {auftrag && !auftrag.erinnerung && (taktik.art === "laedt" || zusaetze.art === "laedt") && (
+          <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+        )}
+        {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length === 0 && (
+          <section className="karte">
+            <p className="hinweis">{t("trainer.keineAufgaben")}</p>
+            <ZurueckKnopf />
+          </section>
+        )}
+        {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
+          <Runde
+            aufgaben={aufgaben}
+            massstab={endspiele.art === "fertig" ? endspiele.wert.massstab : null}
+            beiEnde={beiEnde}
+            steller={auftrag.steller}
+            kennung={auftrag.kennung}
+          />
+        )}
+      </Huelle>
+    </TischblasenRahmen>
   );
 }

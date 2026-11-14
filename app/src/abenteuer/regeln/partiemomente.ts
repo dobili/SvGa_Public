@@ -59,7 +59,7 @@ const SEITENMERKMAL = /^(opposition|gabel)(Gegeben|Gegen)?$/;
 const GEZAEHLTE_ROLLEN: readonly Role[] = ["pawn", "knight", "bishop", "rook", "queen"];
 
 /** Material einer Seite in Bauerneinheiten (ohne König). */
-function material(s: Stellung, farbe: Color): number {
+export function material(s: Stellung, farbe: Color): number {
   return GEZAEHLTE_ROLLEN.reduce(
     (summe, rolle) => summe + FIGURENWERT[rolle] * s.brett.pieces(farbe, rolle).size(),
     0,
@@ -67,7 +67,7 @@ function material(s: Stellung, farbe: Color): number {
 }
 
 /** Materialbilanz aus Sicht des Helden (positiv: Held vorn). */
-function bilanz(s: Stellung, held: Color): number {
+export function materialbilanz(s: Stellung, held: Color): number {
   return material(s, held) - material(s, gegner(held));
 }
 
@@ -92,7 +92,10 @@ function stellungenVon(verlauf: Partieverlauf): readonly (Stellung | null)[] {
 }
 
 /** Die Stellungen vor und nach Halbzug `h` (1-basiert), sonst null. */
-function paar(verlauf: Partieverlauf, h: number): { vor: Stellung; nach: Stellung } | null {
+export function stellungspaar(
+  verlauf: Partieverlauf,
+  h: number,
+): { vor: Stellung; nach: Stellung } | null {
   const liste = stellungenVon(verlauf);
   const vor = liste[h - 1];
   const nach = liste[h];
@@ -106,7 +109,7 @@ function paar(verlauf: Partieverlauf, h: number): { vor: Stellung; nach: Stellun
  * `geschlagen:bauer` treffen zu. Sonderfall: unbekanntes Merkmal → nie.
  */
 export function merkmalTrifft(merkmal: string, verlauf: Partieverlauf, h: number): boolean {
-  const s = paar(verlauf, h);
+  const s = stellungspaar(verlauf, h);
   if (!s) return false;
   const heldZog = verlauf.vomHelden[h - 1] === true;
   const schach = s.nach.regeln?.isCheck() === true;
@@ -114,7 +117,10 @@ export function merkmalTrifft(merkmal: string, verlauf: Partieverlauf, h: number
   if (merkmal === "schachGegeben") return heldZog && schach;
   if (merkmal === "damenTausch") return damen(s.vor) > 0 && damen(s.nach) === 0;
   if (merkmal === "materialMinus3") {
-    return bilanz(s.vor, verlauf.held) > -RUECKSTAND && bilanz(s.nach, verlauf.held) <= -RUECKSTAND;
+    return (
+      materialbilanz(s.vor, verlauf.held) > -RUECKSTAND &&
+      materialbilanz(s.nach, verlauf.held) <= -RUECKSTAND
+    );
   }
   // Opposition und Gabel (regeln/stellungsmerkmale.ts) entstehen mit diesem Halbzug.
   // Ohne Zusatz für beide Seiten; „…Gegeben“ nur nach einem Zug des Helden, „…Gegen“ nur nach

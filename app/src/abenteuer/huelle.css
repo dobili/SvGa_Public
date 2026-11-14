@@ -197,3 +197,51 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.25);
 }
+
+/* Sprechblasen am Brett (docs/spiel/29_Tischgespraech.md, anbindung/Tischblase.tsx): oben der
+   Gegner oder wer die Aufgabe stellt, unten Ambrose oder der Held. Sie liegen über dem Kopf und
+   dem Fuß der Hülle, nie auf dem Brett, und verschieben nichts; Tipp blendet sie aus. */
+.abenteuer-tischblase {
+  position: fixed;
+  z-index: 20;
+  left: calc(var(--raster) * 1.5);
+  right: calc(var(--raster) * 1.5);
+  display: flex;
+  gap: var(--raster);
+  align-items: center;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 0;
+  border-radius: var(--radius);
+  background: rgba(22, 37, 61, 0.94);
+  color: var(--creme);
+  font: inherit;
+  text-align: left;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  animation: abenteuer-moment-ein 0.4s ease-out;
+}
+
+.abenteuer-tischblase strong {
+  color: var(--gold);
+}
+
+.abenteuer-tischblase[data-lage="oben"] {
+  top: calc(env(safe-area-inset-top) + var(--raster) * 1.5);
+}
+
+/* Unten mit dem Porträt rechts, damit man oben und unten auseinanderhält. */
+.abenteuer-tischblase[data-lage="unten"] {
+  bottom: calc(env(safe-area-inset-bottom) + var(--raster) * 1.5);
+  flex-direction: row-reverse;
+  border: 1px solid rgba(201, 162, 39, 0.5);
+}
+
+/* Ambrose halb durchsichtig wie in der Welt (regeln/geist.ts). */
+.abenteuer-tischblase[data-erscheinung="geist"] .abenteuer-dialog-portraet {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-tischblase {
+    animation: none;
+  }
+}

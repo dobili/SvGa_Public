@@ -4,11 +4,9 @@ import { leserzug, neuePartie, ziehe, type Partie } from "../../spiel/partie";
 import type { Kartensorte } from "../schnittstelle/karten";
 import {
   immunGegen,
-  konterschluessel,
   MINDESTREST_MS,
   mitZeitwirkung,
   passtZurPartie,
-  spruchschluessel,
   spruecheErlaubt,
 } from "./zeitkarten";
 
@@ -102,12 +100,6 @@ describe("Wann ein Spruch wirkt", () => {
   it("immune Gegner stehen im Profil", () => {
     expect(immunGegen(["grossesMaul"], "grossesMaul")).toBe(true);
     expect(immunGegen(undefined, "grossesMaul")).toBe(false);
-  });
-
-  it("Spruch und Antwort kommen aus den Textlisten", () => {
-    expect(spruchschluessel("grossesMaul", () => 0)).toBe("spruch.grossesMaul.1");
-    expect(spruchschluessel("grossesMaul", () => 0.999)).toBe("spruch.grossesMaul.8");
-    expect(konterschluessel("cedarCreek.rosa", () => 0.6)).toBe("spruch.konter.rosa.2");
   });
 });
 

@@ -160,3 +160,36 @@ trägt, hat jetzt eine `#stimmung`, damit das Porträt das passende Gesicht zeig
   weniger …“, „Noch nicht, {held}. …“). Sie bleiben vorerst ohne Marke; eine Stimmung würde das
   Gesicht des alten Ambrose zeigen. Gehört `jung` dazu, zeigt die Zeile das junge Gesicht, aber
   ohne Ausdruck, weil je Zeile nur eine `#stimmung` gilt.
+
+## 7. Stand der Umsetzung (14.11.2026)
+
+Gebaut, Widerspruch genügt:
+
+- **Gemeinsame Sprechblase** in zwei Lagen (`anbindung/Tischblase.tsx`, Warteschlange und Vorrang
+  in `anbindung/tischblasen.ts`, Kontext in `anbindung/tischkontext.ts`, Stil in `huelle.css`).
+  Oben fest über dem Kopf, unten fest über dem Fuß, nie auf dem Brett; Lesedauer oder Tipp. Der
+  Kopf der Hülle zeigt die Stimmung der oberen Zeile. Geschriebenes (Momente, Sprüche, Karten,
+  Schutzengel, Ende der Partie) verdrängt das Tischgespräch in beiden Lagen.
+- Momentzeile, Schutzengelzeile und die Sprüche der Kartenleiste sprechen jetzt in die Blase; die
+  Kartenleiste zeigt nur noch, was eine Karte herausfand (`anbindung/kartenstimme.ts`). Ohne Hülle
+  (Partie-Bildschirm der App) steht alles wie früher in der Leiste.
+- **Regeln** (`regeln/tischereignisse.ts`, `regeln/tischgespraech.ts`, Tests in
+  `regeln/tischgespraech.test.ts`): Ereignisse aus dem Verlauf, 35 Prozent, vier Halbzüge Pause,
+  höchstens sechs Zeilen, `hinten` und Ende immer, fester Zufall aus der Kennung der Partie, Zeilen
+  ohne Wiederholung. Rätsel: höchstens eine Zeile je Aufgabe, Serie immer, Ambrose beim Hinweis und
+  beim zweiten Fehler in Folge.
+- **Anbindung:** `anbindung/Tischgespraech.tsx` (Partie, Zeitnot, Ende, Schmeichelei vor der
+  Partie), `anbindung/useRaetselgespraech.ts` (Aufgabenrunde und Erinnerung), Hinweis über
+  `HinweisKontext` in `ui/trainer/imSpiel.ts` („Ambrose fragen“ in Taktik- und Endspielaufgaben).
+  Ambrose fehlt im Tiefpunkt und im Finale (`schutzengelGesperrt`) und unten, wenn er selbst stellt.
+- **Temperament** in `gegner.json` und Schema (optional), gesetzt für Ambrose, Jo, Victor (kühl,
+  im Finale ehrgeizig), Slick, Big Joe, Mira, Mama und einige weitere; sonst die Vorgabe der Rolle.
+- **Texte** in `inhalte/abenteuer/texte/de.json`: `tisch.<temperament>.<ereignis>.<n>` (drei bis
+  fünf je Fall, Stimmung unter `.stimmung`), eigene Zeilen für Jo, Slick, Big Joe, Mira, Victor
+  (`tisch.figur.<name>.…`, Victor im Finale `tisch.figur.capitalArena.victor.…`), Ambrose
+  (`tisch.ambrose.…`), Sprüche je 16, `spruch.konter.<temperament>` je 6, `spruch.immun.<temperament>`
+  je 3, Schutzengel je Grund 7, `karte.<kennung>.zeile.<n>` je 4 für alle 30 Karten in der Partie.
+
+Offen: Rätselzeilen für die fünf Figuren selbst (sie sprechen in Rätseln mit ihrem Temperament),
+Zeilen für die Vorgabekarten und die Farbwahl, und ob die untere Blase auf kleinen Handys die
+Kartenleiste zu lange verdeckt (Tipp blendet sie aus).

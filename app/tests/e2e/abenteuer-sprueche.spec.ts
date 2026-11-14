@@ -84,9 +84,14 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   const karte = page.getByTestId("abenteuer-karte-grossesMaul");
   await expect(karte).toBeEnabled({ timeout: 15000 });
   await karte.click();
-  const meldung = page.locator(".abenteuer-karte-meldung");
-  await expect(meldung).toContainText(/Limo|Reden kann jeder/);
-  await expect(meldung).toContainText("im Park redet man");
+  // Seit dem Tischgespräch (docs/spiel/29) spricht der Held unten, Jo antwortet oben, danach
+  // erklärt Ambrose unten, wo Sprüche hingehören; die Leiste nennt nur die Wirkung.
+  await expect(page.getByTestId("abenteuer-spruch-held")).toBeVisible();
+  await expect(page.getByTestId("abenteuer-spruch-antwort")).toBeVisible();
+  await expect(page.getByTestId("abenteuer-spruch-held")).toHaveAttribute("data-lage", "unten");
+  await page.getByTestId("abenteuer-spruch-held").click();
+  await expect(page.getByTestId("abenteuer-spruch-erklaerung")).toContainText("im Park redet man");
+  await expect(page.locator(".abenteuer-karte-meldung")).toContainText("Ein frecher Satz");
   await expect(karte).toBeDisabled();
 });
 

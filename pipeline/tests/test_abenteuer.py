@@ -157,10 +157,21 @@ def test_querverweise_stimmen():
         werkzeug = karte["wirkung"].get("werkzeug")
         if werkzeug and not (analyse / f"{werkzeug}.ts").exists():
             fehler.append(f"{karte['kennung']}: Werkzeug {werkzeug} fehlt in app/src/analyse")
+    # Karten sprechen (docs/spiel/29_Tischgespraech.md, Abschnitt 6): je Spruch mindestens
+    # fünfzehn Zeilen ohne Lücke.
     for kennung in sprueche:
-        for n in range(1, 9):
+        for n in range(1, 16):
             if f"spruch.{kennung}.{n}" not in texte:
                 fehler.append(f"Spruch spruch.{kennung}.{n} fehlt in texte/de.json")
+    # Tischgespräch (Abschnitt 4): Temperamente nur aus der Liste des Schemas.
+    temperamente = {"frech", "herzlich", "trocken", "ehrgeizig", "kuehl", "verschmitzt"}
+    for profil in _lade("gegner.json")["gegner"]:
+        if profil.get("temperament", "frech") not in temperamente:
+            fehler.append(f"{profil['kennung']}: unbekanntes Temperament")
+    for temperament in temperamente:
+        for ereignis in ("beginn", "hinten", "sieg", "remis", "niederlage", "richtig", "falsch"):
+            if f"tisch.{temperament}.{ereignis}.3" not in texte:
+                fehler.append(f"Tischgespräch: tisch.{temperament}.{ereignis} hat keine drei Zeilen")
     runden = _lade("runden.json")["runden"]
     # Läden (G2, G3): Waren existieren, Mentor-Zug, Sanduhr und Vorgaben sind nie zu kaufen.
     laeden = _lade("laeden.json")["laeden"]

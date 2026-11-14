@@ -22,3 +22,15 @@ export const ImSpielKontext = createContext(false);
 export function useImSpiel(): boolean {
   return useContext(ImSpielKontext);
 }
+
+/**
+ * Meldung „Ambrose gefragt“ (docs/spiel/29_Tischgespraech.md, Ereignis `hinweis`): Die Runde des
+ * Abenteuers reicht hier einen Rückruf herein; die Aufgaben rufen ihn, wenn der Leser die Hilfe
+ * holt. In der Buch-App ist nichts gesetzt (null).
+ */
+export const HinweisKontext = createContext<(() => void) | null>(null);
+
+/** Der Rückruf für „Ambrose fragen“ oder null außerhalb des Spiels. */
+export function useHinweismeldung(): (() => void) | null {
+  return useContext(HinweisKontext);
+}

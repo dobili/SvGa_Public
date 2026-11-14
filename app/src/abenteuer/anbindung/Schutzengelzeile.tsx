@@ -1,46 +1,45 @@
 /**
- * Ambroses Zeile, wenn der Schutzengel (K4) einen Zug aufhält: „Das spielst du besser nicht.“ und
- * höchstens die Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der bessere Zug.
+ * Ambroses Zeile, wenn der Schutzengel (K4) einen Zug aufhält: eine Variante von „Das spielst du
+ * besser nicht.“ und höchstens die Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der
+ * bessere Zug (docs/spiel/29_Tischgespraech.md, Abschnitt 6).
  *
- * Rolle im Gesamtbild: Teil der Spielhülle (anbindung/PartieHuelle.tsx); sieht aus wie ein
- * Partiemoment (Momentzeile.tsx) und verschwindet nach einer Lesedauer oder auf Tipp.
- * Abhängigkeiten: dialog/Portraet.tsx, texte/texte.ts, regeln/schutzengel.ts.
+ * Rolle im Gesamtbild: Teil der Spielhülle (anbindung/PartieHuelle.tsx). Die Zeile geht in die
+ * untere Sprechblase (anbindung/Tischblase.tsx), Ambrose halb durchsichtig; sie verschwindet nach
+ * einer Lesedauer oder auf Tipp. Gezogen wird mit festem Zufall je Partie.
+ * Abhängigkeiten: anbindung/Tischblase.tsx, anbindung/tischsprecher.ts, regeln/schutzengel.ts.
  */
 import { useEffect } from "react";
-import { Portraet } from "../dialog/Portraet";
 import type { Schutzgrund } from "../regeln/schutzengel";
-import { tSpiel } from "../texte/texte";
+import { useTischblasen } from "./tischkontext";
+import { ambrosezeile, schutzengeltext } from "./tischsprecher";
 
-/** So lange bleibt die Zeile stehen (ms). */
-const LESEDAUER_MS = 4500;
-const AMBROSE = "ambrose";
-
+/**
+ * Legt Ambroses Zeile in die Blase und meldet sich gleich wieder ab (beiEnde); zeichnet selbst
+ * nichts. Eingaben: Grund, Kennung der Partie, Halbzug (macht die Zeile eindeutig), beiEnde.
+ */
 export function Schutzengelzeile({
   grund,
+  partiekennung,
+  halbzug,
   beiEnde,
 }: {
   readonly grund: Schutzgrund;
+  readonly partiekennung: string;
+  readonly halbzug: number;
   readonly beiEnde: () => void;
 }) {
+  const blasen = useTischblasen();
   useEffect(() => {
-    const uhr = window.setTimeout(beiEnde, LESEDAUER_MS);
-    return () => window.clearTimeout(uhr);
-    // Einmal je Aufhalten; die Hülle reicht bei jedem Takt einen neuen Rückruf.
+    blasen?.zeige(
+      ambrosezeile(schutzengeltext(grund, partiekennung), {
+        schluessel: `${partiekennung}:engel:${halbzug}:${grund}`,
+        vorrang: "geschrieben",
+        testid: "abenteuer-schutzengel",
+      }),
+    );
+    beiEnde();
+    // Einmal je Aufhalten; Blasen und Rückruf sind bei jedem Zeichnen neu.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [grund]);
-  const text = `${tSpiel("schutzengel.halt")} ${tSpiel(`schutzengel.${grund}`)}`;
-  return (
-    <button
-      type="button"
-      className="abenteuer-moment"
-      data-testid="abenteuer-schutzengel"
-      aria-label={tSpiel("huelle.momentSchliessen")}
-      onClick={beiEnde}
-    >
-      <Portraet sprecher={AMBROSE} stimmung={null} zeile={text} />
-      <span role="status" aria-live="assertive">
-        <strong>{tSpiel(`figur.${AMBROSE}.name`)}</strong> {text}
-      </span>
-    </button>
-  );
+  }, [grund, halbzug]);
+  return null;
 }

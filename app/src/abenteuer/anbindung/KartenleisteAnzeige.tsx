@@ -10,6 +10,8 @@
  * Antwort zurück, Flüstern zeigt drei Kandidaten als Pfeile, Mentor-Zug spielt den besten Zug.
  * Sprüche (Schritt 13): Kühler Kopf und Grübelfalle verschieben Bedenkzeit, Großes Maul setzt
  * gefühlte Zeitnot (anbindung/spruchkarte.ts); nur gegen Straßengegner, Zeitkarten nur mit Uhr.
+ * Jede Karte spricht in den Sprechblasen am Brett (anbindung/kartenstimme.ts, docs/spiel/29);
+ * die Leiste zeigt nur, was die Karte herausfand.
  * Werkzeugkarten, Was droht?, Waage und Remisangebot (docs/spiel/11) in anbindung/kartenwirkungen.ts.
  * Abhängigkeiten: engine/engineDienst.ts, analyse/k4-warnsignale.ts, schach/stellung.ts,
  * spiel/zuege.ts, speicher (Spielstand), daten/laden.ts (Kartensorten), regeln/karten.ts, i18n.
@@ -27,7 +29,11 @@ import { uciZuSan } from "../../spiel/zuege";
 import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/laden";
 import { kartenSpielbar, mitGespielterKarte, nurAnwesenheit } from "../regeln/karten";
 import { passtZurPartie, remisMoeglich, spruecheErlaubt } from "../regeln/zeitkarten";
-import { spieleZeitkarte } from "./spruchkarte";
+import { ambroseFehlt } from "../regeln/abwesenheit";
+import { gegnerName, sprecherAusPfad } from "./huellentexte";
+import { meldungstext, stimmenDerKarte } from "./kartenstimme";
+import { spieleZeitkarte, type Spruchzeilen } from "./spruchkarte";
+import { useTischblasen } from "./tischkontext";
 import { drohung, remisangebot, waage, werkzeugkarte, type Kartenanzeige } from "./kartenwirkungen";
 import type { Kartensorte } from "../schnittstelle/karten";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -115,6 +121,7 @@ export function KartenleisteAnzeige({
   beiMarkierungen,
 }: Leisteneigenschaften) {
   const stand = useAbenteuerstand();
+  const blasen = useTischblasen();
   const pixelrahmen = usePixelrahmen();
   const leistenklasse = `abenteuer-kartenleiste ${pixelrahmen?.klasse ?? ""}`;
   const [sorten, setzeSorten] = useState<readonly Kartendaten[]>([]);
@@ -173,73 +180,22 @@ export function KartenleisteAnzeige({
     eigeneZuege: eigeneZuege(partie),
   };
   const gegner = gegnerliste.find((g) => g.kennung === karten.gegner);
+  // Wie viele Sprüche schon fielen: Die Antworten des Gegners wiederholen sich so nicht.
+  const spruecheBisher = karten.gespielt.filter(
+    (k) => sorten.find((s) => s.kennung === k.kennung)?.spruch_art === true,
+  ).length;
   const partielage = {
     uhr: partie.uhr !== null,
     sprueche: spruecheErlaubt(gegner?.rolle ?? null),
     remis: remisMoeglich(gegner?.rolle ?? null),
   };
 
-  /** Spielt eine Karte: Wirkung ausführen, dann im Spielstand verbuchen. */
+  /** Spielt eine Karte: Wirkung ausführen, im Spielstand verbuchen, die Karte sprechen lassen. */
   const spiele = async (sorte: Kartensorte) => {
     setzeLaeuft(sorte.kennung);
     setzeMeldung(null);
-    let zeilen: readonly string[] = [];
     try {
-      const fen = steuerung.fen;
-      switch (sorte.wirkung.art) {
-        case "fingerzeig":
-          beiMarkierungen(await fingerzeig(fen));
-          break;
-        case "gefahrenradar":
-          beiMarkierungen(gefahrenradar(fen, partie.einstellung.eigeneFarbe));
-          break;
-        case "fluestern":
-          beiMarkierungen(await fluestern(fen));
-          break;
-        case "mentorzug": {
-          // Frei in der Begegnung (Halbfinale, R29): kein Zug, nur Ambrose („Er ist da.“).
-          if (nurAnwesenheit(karten, sorte.kennung)) {
-            zeilen = [tSpiel("karte.mentorzug.erIstDa")];
-            break;
-          }
-          const bewertung = await engine.bewerte(fen, MENTOR_MS, 1);
-          const san = bewertung.besterZug ? uciZuSan(fen, bewertung.besterZug) : null;
-          if (san) steuerung.spieleLeser(san);
-          break;
-        }
-        case "zweiteChance":
-          await aendere((d) => ({
-            ...d,
-            spiel: mitLaufender(d.spiel, zurueckOhneErlaubnis(partie)),
-          }));
-          break;
-        case "zeit":
-        case "zeitnot": {
-          const folge = spieleZeitkarte(partie, sorte, gegner);
-          await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, folge.partie) }));
-          zeilen = folge.zeilen;
-          break;
-        }
-        case "werkzeug":
-        case "drohung":
-        case "waage": {
-          const anzeige = await zeigeKarte(sorte.wirkung, fen, partie.einstellung.eigeneFarbe);
-          beiMarkierungen([...anzeige.markierungen]);
-          if (anzeige.text) zeilen = [anzeige.text];
-          break;
-        }
-        case "remis": {
-          const name = tSpiel(gegner?.name ?? "");
-          const remis = await remisangebot(partie, fen);
-          if (remis) await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, remis) }));
-          zeilen = [
-            tSpiel(remis ? "karte.remis.angenommen" : "karte.remis.abgelehnt", { gegner: name }),
-          ];
-          break;
-        }
-        default:
-          break;
-      }
+      const { ergebnis, spruch } = await wirke(sorte);
       // Beim ersten Spruch erklärt Ambrose, wo Sprüche hingehören (docs/spiel/10, S2).
       const ersterSpruch =
         sorte.spruch_art === true && stand.dialogvariablen[SPRUCH_ERKLAERT] !== true;
@@ -249,13 +205,82 @@ export function KartenleisteAnzeige({
           ? mitErklaerung(mitGespielterKarte(d.abenteuer, sorte, lage.halbzug), ersterSpruch)
           : d.abenteuer,
       }));
-      const text = zeilen.length > 0 ? zeilen.join(" ") : tSpiel(sorte.spruch);
-      setzeMeldung(ersterSpruch ? `${text} ${tSpiel("spruch.ambrose.ersterSpruch")}` : text);
+      const stimmen = stimmenDerKarte({
+        sorte,
+        partie: partie.id,
+        spruch,
+        gegner: {
+          sprecher: sprecherAusPfad(partie.einstellung.abenteuer?.portraet),
+          name: gegnerName(partie),
+        },
+        ambroseDa: !ambroseFehlt(stand.dialogvariablen),
+        ersterSpruch,
+      });
+      stimmen.forEach((z) => blasen?.zeige(z));
+      setzeMeldung(meldungstext(stimmen, ergebnis, sorte, blasen !== null));
     } catch (fehler) {
       if (!(fehler instanceof AuftragAbgebrochen)) setzeMeldung(t("abenteuer.karteFehler"));
     } finally {
       setzeLaeuft(null);
     }
+  };
+
+  /** Die Wirkung der Karte am Brett; Ausgabe: was sie herausfand und, bei Sprüchen, die Zeilen. */
+  const wirke = async (
+    sorte: Kartensorte,
+  ): Promise<{ ergebnis: readonly string[]; spruch: Spruchzeilen | null }> => {
+    const fen = steuerung.fen;
+    switch (sorte.wirkung.art) {
+      case "fingerzeig":
+        beiMarkierungen(await fingerzeig(fen));
+        break;
+      case "gefahrenradar":
+        beiMarkierungen(gefahrenradar(fen, partie.einstellung.eigeneFarbe));
+        break;
+      case "fluestern":
+        beiMarkierungen(await fluestern(fen));
+        break;
+      case "mentorzug": {
+        // Frei in der Begegnung (Halbfinale, R29): kein Zug, nur Ambrose („Er ist da.“).
+        if (nurAnwesenheit(karten, sorte.kennung)) {
+          return { ergebnis: [tSpiel("karte.mentorzug.erIstDa")], spruch: null };
+        }
+        const bewertung = await engine.bewerte(fen, MENTOR_MS, 1);
+        const san = bewertung.besterZug ? uciZuSan(fen, bewertung.besterZug) : null;
+        if (san) steuerung.spieleLeser(san);
+        break;
+      }
+      case "zweiteChance":
+        await aendere((d) => ({
+          ...d,
+          spiel: mitLaufender(d.spiel, zurueckOhneErlaubnis(partie)),
+        }));
+        break;
+      case "zeit":
+      case "zeitnot": {
+        const folge = spieleZeitkarte(partie, sorte, gegner, spruecheBisher);
+        await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, folge.partie) }));
+        const immun = tSpiel("spruch.immun", { gegner: tSpiel(gegner?.name ?? "") });
+        return { ergebnis: folge.immun ? [immun] : [], spruch: sorte.spruch_art ? folge : null };
+      }
+      case "werkzeug":
+      case "drohung":
+      case "waage": {
+        const anzeige = await zeigeKarte(sorte.wirkung, fen, partie.einstellung.eigeneFarbe);
+        beiMarkierungen([...anzeige.markierungen]);
+        return { ergebnis: anzeige.text ? [anzeige.text] : [], spruch: null };
+      }
+      case "remis": {
+        const name = tSpiel(gegner?.name ?? "");
+        const remis = await remisangebot(partie, fen);
+        if (remis) await aendere((d) => ({ ...d, spiel: mitLaufender(d.spiel, remis) }));
+        const antwort = remis ? "karte.remis.angenommen" : "karte.remis.abgelehnt";
+        return { ergebnis: [tSpiel(antwort, { gegner: name })], spruch: null };
+      }
+      default:
+        break;
+    }
+    return { ergebnis: [], spruch: null };
   };
 
   return (

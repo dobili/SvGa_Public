@@ -5,6 +5,7 @@
       "kennung": "mapleFalls.ambrose",
       "name": "figur.ambrose.name",
       "rolle": "story",
+      "temperament": "verschmitzt",
       "portraet": "portraets/ambrose.svg",
       "staerke": {
         "art": "aktuell",
@@ -92,6 +93,7 @@
       "kennung": "mapleFalls.skaterJo",
       "name": "figur.skaterJo.name",
       "rolle": "strasse",
+      "temperament": "frech",
       "portraet": "portraets/skater-jo.svg",
       "staerke": {
         "art": "aktuell",
@@ -115,6 +117,7 @@
       "kennung": "mapleFalls.victor",
       "name": "figur.victor.name",
       "rolle": "story",
+      "temperament": "kuehl",
       "portraet": "portraets/victor.svg",
       "staerke": {
         "art": "eingang",
@@ -145,6 +148,7 @@
       "kennung": "mapleFalls.juno",
       "name": "figur.juno.name",
       "rolle": "clubmitglied",
+      "temperament": "herzlich",
       "portraet": "portraets/juno.svg",
       "staerke": {
         "art": "aktuell",
@@ -362,6 +366,7 @@
       "kennung": "riverton.slick",
       "name": "figur.slick.name",
       "rolle": "clubchef",
+      "temperament": "frech",
       "portraet": "portraets/slick.svg",
       "staerke": {
         "art": "eingang",
@@ -406,6 +411,7 @@
       "kennung": "riverton.tamsin",
       "name": "figur.tamsin.name",
       "rolle": "clubmitglied",
+      "temperament": "frech",
       "portraet": "portraets/tamsin.svg",
       "staerke": {
         "art": "aktuell",
@@ -486,6 +492,7 @@
       "kennung": "ironwood.bigJoe",
       "name": "figur.bigJoe.name",
       "rolle": "clubchef",
+      "temperament": "herzlich",
       "portraet": "portraets/big-joe.svg",
       "staerke": {
         "art": "eingang",
@@ -524,6 +531,7 @@
       "kennung": "ironwood.hank",
       "name": "figur.hank.name",
       "rolle": "clubmitglied",
+      "temperament": "trocken",
       "portraet": "portraets/hank.svg",
       "staerke": {
         "art": "aktuell",
@@ -605,6 +613,7 @@
       "kennung": "ironwood.mama",
       "name": "figur.mutter.name",
       "rolle": "story",
+      "temperament": "herzlich",
       "portraet": "portraets/mutter.svg",
       "staerke": {
         "art": "eingang",
@@ -699,6 +708,7 @@
       "kennung": "siliconBay.nova",
       "name": "figur.nova.name",
       "rolle": "clubmitglied",
+      "temperament": "kuehl",
       "portraet": "portraets/nova.svg",
       "staerke": {
         "art": "aktuell",
@@ -873,6 +883,7 @@
       "kennung": "portDelacroix.celeste",
       "name": "figur.celeste.name",
       "rolle": "story",
+      "temperament": "verschmitzt",
       "portraet": "portraets/celeste.svg",
       "staerke": {
         "art": "aktuell",
@@ -980,6 +991,7 @@
       "kennung": "siliconBay.lin",
       "name": "figur.lin.name",
       "rolle": "clubchef",
+      "temperament": "trocken",
       "portraet": "portraets/lin.svg",
       "staerke": {
         "art": "eingang",
@@ -1055,6 +1067,7 @@
       "kennung": "desertSprings.hale1858",
       "name": "figur.hale1858.name",
       "rolle": "story",
+      "temperament": "verschmitzt",
       "portraet": "portraets/hale1858.svg",
       "staerke": {
         "art": "eingang",
@@ -1078,6 +1091,7 @@
       "kennung": "desertSprings.mira",
       "name": "figur.mira.name",
       "rolle": "clubchef",
+      "temperament": "ehrgeizig",
       "portraet": "portraets/mira.svg",
       "staerke": {
         "art": "eingang",
@@ -1248,6 +1262,7 @@
       "kennung": "summitCity.victor",
       "name": "figur.victor.name",
       "rolle": "story",
+      "temperament": "kuehl",
       "portraet": "portraets/victor.svg",
       "staerke": {
         "art": "eingang",
@@ -1421,6 +1436,7 @@
       "kennung": "capitalArena.kade",
       "name": "figur.kade.name",
       "rolle": "turnier",
+      "temperament": "kuehl",
       "portraet": "portraets/kade.svg",
       "staerke": {
         "art": "eingang",
@@ -1451,6 +1467,7 @@
       "kennung": "capitalArena.victor",
       "name": "figur.victor.name",
       "rolle": "turnier",
+      "temperament": "ehrgeizig",
       "portraet": "portraets/victor.svg",
       "staerke": {
         "art": "eingang",
@@ -1596,6 +1613,7 @@
       "kennung": "wegPinewoodGhost.z1",
       "name": "figur.z1.name",
       "rolle": "strasse",
+      "temperament": "kuehl",
       "portraet": "portraets/greifarm.svg",
       "staerke": {
         "art": "aktuell",
@@ -1681,6 +1699,7 @@
       "kennung": "wegGhostCapital.odette",
       "name": "figur.odette.name",
       "rolle": "story",
+      "temperament": "verschmitzt",
       "portraet": "portraets/odette.svg",
       "staerke": {
         "art": "aktuell",

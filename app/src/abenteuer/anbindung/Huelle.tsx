@@ -14,6 +14,7 @@ import "../huelle.css";
 import { Portraet } from "../dialog/Portraet";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
+import { useKopfstimmung } from "./tischkontext";
 import { usePixelrahmen } from "./pixelrahmen";
 
 /** Name des Ortes, an dem der Held steht („Maple Falls, Hauptstraße“); leer ohne Spielstand. */
@@ -48,6 +49,8 @@ export function Huelle({
 }) {
   const pixelrahmen = usePixelrahmen();
   const ort = useOrtsname();
+  // Spricht die Figur oben in der Blase, zeigt der Kopf sie in derselben Stimmung (docs/spiel/29).
+  const stimmung = useKopfstimmung(sprecher);
   return (
     <div
       className={`bildschirm abenteuer-huelle ${pixelrahmen?.klasse ?? ""} ${klasse}`}
@@ -55,7 +58,7 @@ export function Huelle({
       data-testid={testid}
     >
       <header className="abenteuer-huelle-kopf" data-testid="abenteuer-huelle-kopf">
-        {sprecher && <Portraet sprecher={sprecher} stimmung={null} />}
+        {sprecher && <Portraet sprecher={sprecher} stimmung={stimmung} />}
         <div>
           <p className="abenteuer-huelle-figur">{figur}</p>
           {ort && <p className="abenteuer-huelle-ort">{ort}</p>}

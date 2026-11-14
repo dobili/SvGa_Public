@@ -1,56 +1,97 @@
 /**
  * Ein Spruch oder eine Zeitkarte in der laufenden Partie: Wirkung auf die Partie und die Zeilen,
- * die die Kartenleiste als Sprechblasen zeigt (Schritt 13, docs/spiel/10, S1, S4, S6).
+ * die die Sprechblasen am Brett zeigen (Schritt 13, docs/spiel/10, S1, S4, S6;
+ * docs/spiel/29_Tischgespraech.md, Abschnitt 6).
  *
- * Rolle im Gesamtbild: Hilfe der Kartenleiste (anbindung/KartenleisteAnzeige.tsx); die Regeln
- * selbst stehen in regeln/zeitkarten.ts. Der Held sagt einen zufälligen Spruch der Karte, der
- * Gegner antwortet mit einer eigenen Zeile, wenn er eine hat. Ein immuner Gegner lässt den
- * Spruch verpuffen; die Karte ist trotzdem gespielt (S4: Vorbereitung lohnt sich).
- * Abhängigkeiten: regeln/zeitkarten.ts, texte/texte.ts, daten/laden.ts, spiel/partie.ts.
+ * Rolle im Gesamtbild: Hilfe der Kartenleiste (anbindung/KartenleisteAnzeige.tsx) und des
+ * Tischgesprächs (Schmeichelei vor der Partie); die Regeln selbst stehen in regeln/zeitkarten.ts.
+ * Der Held sagt einen Spruch der Karte (unten), der Gegner antwortet oben passend zu seinem
+ * Temperament oder mit eigenen Zeilen. Ein immuner Gegner lässt den Spruch verpuffen und sagt das
+ * auf seine Art; die Karte ist trotzdem gespielt (S4: Vorbereitung lohnt sich). Die Zeilen kommen
+ * mit festem Zufall je Partie und ohne Wiederholung (anbindung/tischtexte.ts).
+ * Abhängigkeiten: regeln/zeitkarten.ts, regeln/tischgespraech.ts, anbindung/tischtexte.ts,
+ * texte/texte.ts, daten/laden.ts, spiel/partie.ts.
  */
 import type { Partie } from "../../spiel/partie";
 import type { Gegnerdaten } from "../daten/laden";
-import {
-  immunGegen,
-  konterschluessel,
-  mitZeitwirkung,
-  spruchschluessel,
-} from "../regeln/zeitkarten";
+import { temperamentVon } from "../regeln/tischgespraech";
+import { immunGegen, mitZeitwirkung } from "../regeln/zeitkarten";
 import type { Kartensorte } from "../schnittstelle/karten";
-import { hatSpieltext, tSpiel } from "../texte/texte";
+import { tSpiel } from "../texte/texte";
+import { kurzname, stimmungDerGruppe, zieheAus, type Tischtext } from "./tischtexte";
 
-/** Ergebnis eines Spruchs: die Partie danach und die Zeilen für die Sprechblasen. */
-export interface Spruchfolge {
+/** Die Zeilen eines Spruchs: Held unten, Antwort des Gegners oben (oder keine). */
+export interface Spruchzeilen {
+  readonly held: string | null;
+  readonly antwort: Tischtext | null;
+  readonly immun: boolean;
+}
+
+/** Ergebnis einer Zeitkarte: die Partie danach und die Zeilen für die Sprechblasen. */
+export interface Spruchfolge extends Spruchzeilen {
   readonly partie: Partie;
-  readonly zeilen: readonly string[];
+}
+
+/** Eine Zeile aus den Gruppen, mit der Stimmung der letzten Gruppe (der des Temperaments). */
+function antwortAus(gruppen: readonly string[], nutzung: number, partie: string): Tischtext | null {
+  const schluessel = zieheAus(gruppen, nutzung, partie);
+  const allgemein = gruppen.at(-1) ?? "";
+  return schluessel ? { text: tSpiel(schluessel), stimmung: stimmungDerGruppe(allgemein) } : null;
+}
+
+/**
+ * Spruch und Antwort, ohne Wirkung auf die Partie.
+ * Eingaben: Kennung der Karte, Gegner (oder keiner), Kennung der Partie, wie viele Sprüche in der
+ * Partie schon fielen (für Antworten ohne Wiederholung), ob der Spruch an den Gegner geht.
+ * Beispiel: „schmeichelei“ gegen Skater Jo → Held „Du bist bestimmt die Nummer eins …“, Jo
+ * antwortet mit einer eigenen oder einer frechen Zeile. Gegen Rosa (immun gegen Großes Maul) →
+ * eine ruhige Abwehrzeile, immun true.
+ */
+export function spruchzeilen(
+  kennung: string,
+  gegner: Gegnerdaten | undefined,
+  partie: string,
+  nutzung: number,
+  anGegner = true,
+): Spruchzeilen {
+  const spruch = zieheAus([`spruch.${kennung}`], 0, partie);
+  const held = spruch ? tSpiel(spruch) : null;
+  if (!gegner || !anGegner) return { held, antwort: null, immun: false };
+  const temperament = temperamentVon(gegner);
+  if (immunGegen(gegner.immunGegen, kennung)) {
+    const abwehr = antwortAus([`spruch.immun.${temperament}`], nutzung, partie);
+    const ersatz = {
+      text: tSpiel("spruch.immun", { gegner: tSpiel(gegner.name) }),
+      stimmung: null,
+    };
+    return { held, antwort: abwehr ?? ersatz, immun: true };
+  }
+  const gruppen = [`spruch.konter.${kurzname(gegner.kennung)}`, `spruch.konter.${temperament}`];
+  return { held, antwort: antwortAus(gruppen, nutzung, partie), immun: false };
 }
 
 /**
  * Spielt eine Zeitkarte: Wirkung (außer bei Immunität), dazu Spruch und Antwort.
- * Beispiel: „Großes Maul“ gegen Skater Jo → zeitnotBis gesetzt, Zeilen „Na, traust du dich
- * nicht? …“ und „Reden kann jeder. …“; gegen Rosa → Partie unverändert, „Rosa lässt sich nicht
- * beirren. …“.
+ * Beispiel: „Großes Maul“ gegen Skater Jo → zeitnotBis gesetzt, Held „Na, traust du dich
+ * nicht? …“, Jo „Reden kann jeder. …“; gegen Rosa → Partie unverändert, Rosa wehrt ab.
+ * Sonderfall: „Kühler Kopf“ sagt der Held zu sich selbst: keine Antwort, keine Immunität.
  */
 export function spieleZeitkarte(
   partie: Partie,
   sorte: Kartensorte,
   gegner: Gegnerdaten | undefined,
+  nutzung = 0,
   jetztMs: number = Date.now(),
-  zufall: () => number = Math.random,
 ): Spruchfolge {
-  const spruch = spruchschluessel(sorte.kennung, zufall);
-  const eigene = hatSpieltext(spruch) ? [tSpiel(spruch)] : [];
-  // „Kühler Kopf“ sagt der Held zu sich selbst: keine Antwort, keine Immunität.
-  const anGegner = gegner !== undefined && richtetSichAnGegner(sorte);
-  if (anGegner && immunGegen(gegner.immunGegen, sorte.kennung)) {
-    return { partie, zeilen: [...eigene, tSpiel("spruch.immun", { gegner: tSpiel(gegner.name) })] };
-  }
-  const konter = anGegner ? konterschluessel(gegner.kennung, zufall) : null;
-  const antwort = konter && hatSpieltext(konter) ? [tSpiel(konter)] : [];
-  return {
-    partie: mitZeitwirkung(partie, sorte.wirkung, jetztMs),
-    zeilen: [...eigene, ...antwort, tSpiel(sorte.spruch)],
-  };
+  const zeilen = spruchzeilen(
+    sorte.kennung,
+    gegner,
+    partie.id,
+    nutzung,
+    richtetSichAnGegner(sorte),
+  );
+  const danach = zeilen.immun ? partie : mitZeitwirkung(partie, sorte.wirkung, jetztMs);
+  return { ...zeilen, partie: danach };
 }
 
 /** Zielt die Karte auf den Gegner (Grübelfalle, Großes Maul) statt auf den Helden selbst? */

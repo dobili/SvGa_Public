@@ -13,8 +13,9 @@
  * Eine beendete Partie lässt sich Zug für Zug nachspielen (◀ ▶ unter dem Brett); so öffnet auch
  * „Meine Partien“ im Tagebuch eine alte Partie (docs/spiel/18, Abschnitt 8).
  * Sonderfälle: Partie ohne Uhr zeigt keine Uhren; Blindschach blendet die Figuren aus; eine
- * unbekannte Id zeigt einen Hinweis und den Weg zurück. Partiemomente der Begegnung (T5) zeigt
- * anbindung/Momentzeile.tsx über dem Brett.
+ * unbekannte Id zeigt einen Hinweis und den Weg zurück. Partiemomente der Begegnung (T5,
+ * anbindung/Momentzeile.tsx), Schutzengel, Karten und das Tischgespräch (Tischgespraech.tsx)
+ * sprechen in die Sprechblasen über und unter dem Brett (Tischblase.tsx, docs/spiel/29).
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -34,6 +35,9 @@ import { Huelle } from "./Huelle";
 import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
+import { Tischblase, TischblasenRahmen } from "./Tischblase";
+import { Tischgespraech } from "./Tischgespraech";
+import { useBegegnung } from "./useBegegnung";
 import { useSchutzengel } from "./useSchutzengel";
 import { useStaerkewechsel } from "./useStaerkewechsel";
 import { useZugerraten } from "./useZugerraten";
@@ -171,6 +175,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   });
   const eigene = partie.einstellung.eigeneFarbe;
   const gegner = gegnerName(partie);
+  const begegnung = useBegegnung(partie.einstellung.abenteuer?.kennung ?? "");
   // Schutzengel (K4): Solange er wacht, prüft die Engine jeden Zug, bevor er gespielt wird.
   const engel = useSchutzengel(s, partie);
   // Spielstärke durch Dialog (staerkeNach in begegnungen.json), etwa „Atme“ gegen Mira.
@@ -192,10 +197,23 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const amZug = leserAmZug(partie) && !partie.ende;
   return (
     <>
-      {/* Partiemomente der Begegnung (T5): Sprechzeile über dem Brett, blockiert nichts. */}
+      {/* Sprechblasen am Brett (docs/spiel/29): oben der Gegner, unten Ambrose oder der Held. */}
+      <Tischblase lage="oben" />
+      <Tischblase lage="unten" />
+      {/* Partiemomente der Begegnung (T5) und das Tischgespräch sprechen in die Blasen. */}
       <Momentzeile s={s} partie={partie} />
+      <Tischgespraech
+        partie={partie}
+        jetztMs={s.jetztMs}
+        gegnerkennung={begegnung?.gegner ?? null}
+      />
       {engel.halt && !partie.ende && (
-        <Schutzengelzeile grund={engel.halt} beiEnde={engel.schliesse} />
+        <Schutzengelzeile
+          grund={engel.halt}
+          partiekennung={partie.id}
+          halbzug={anzahl}
+          beiEnde={engel.schliesse}
+        />
       )}
       {raten.zeile && (
         <p className="abenteuer-moment" role="status" data-testid="abenteuer-zugerraten">
@@ -244,20 +262,22 @@ export function PartieHuelle({ wert }: { readonly wert: string | null }) {
   const partie = s.partie;
   const blind = partie?.einstellung.abenteuer?.variante === "blind";
   return (
-    <Huelle
-      figur={gegnerName(partie)}
-      sprecher={sprecherAusPfad(partie?.einstellung.abenteuer?.portraet)}
-      testid="partie"
-      klasse={`abenteuer-huelle-partie ${blind ? "abenteuer-huelle-blind" : ""}`}
-    >
-      {!s.geladen && <p className="lade">{tSpiel("huelle.laedt")}</p>}
-      {s.geladen && !partie && (
-        <>
-          <p className="fehlertext">{tSpiel("huelle.partieFehlt")}</p>
-          <Weiterknopf />
-        </>
-      )}
-      {partie && <Spielfeld s={s} partie={partie} />}
-    </Huelle>
+    <TischblasenRahmen>
+      <Huelle
+        figur={gegnerName(partie)}
+        sprecher={sprecherAusPfad(partie?.einstellung.abenteuer?.portraet)}
+        testid="partie"
+        klasse={`abenteuer-huelle-partie ${blind ? "abenteuer-huelle-blind" : ""}`}
+      >
+        {!s.geladen && <p className="lade">{tSpiel("huelle.laedt")}</p>}
+        {s.geladen && !partie && (
+          <>
+            <p className="fehlertext">{tSpiel("huelle.partieFehlt")}</p>
+            <Weiterknopf />
+          </>
+        )}
+        {partie && <Spielfeld s={s} partie={partie} />}
+      </Huelle>
+    </TischblasenRahmen>
   );
 }

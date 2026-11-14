@@ -26,7 +26,7 @@ import { useEndspielpartie } from "./useEndspielpartie";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
-import { useImSpiel } from "./imSpiel";
+import { useHinweismeldung, useImSpiel } from "./imSpiel";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -57,6 +57,8 @@ function Hilfen({
   const stichwort = aufgabe.stichwort ? ` ${t(`endspiel.stichwort.${aufgabe.stichwort}`)}` : "";
   // Im Schach-Abenteuer hilft Ambrose: „Ambrose fragen“ statt „Hinweis 1“ (imSpiel.ts).
   const imSpiel = useImSpiel();
+  // Im Spiel meldet „Ambrose fragen“ sich beim Tischgespräch (docs/spiel/29, Ereignis hinweis).
+  const meldeHinweis = useHinweismeldung();
   return (
     <div className="uebung-hilfe">
       {stufe >= 1 && (
@@ -69,7 +71,14 @@ function Hilfen({
       {stufe >= HILFEN && <p>{t(bester ? "endspiel.hilfeZug" : "endspiel.hilfeRechnet")}</p>}
       <div className="knopfzeile">
         {stufe < HILFEN && (
-          <button type="button" className="knopf-zweit" onClick={weiter}>
+          <button
+            type="button"
+            className="knopf-zweit"
+            onClick={() => {
+              weiter();
+              meldeHinweis?.();
+            }}
+          >
             <Knopfsymbol art="hinweis" />
             {imSpiel ? t("imSpiel.hinweis") : t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>

@@ -1,32 +1,31 @@
 /**
- * Partiemoment über dem Brett (Atmosphäre T5 und T11): eine Sprechzeile mit Porträt oder ein
- * geführter Ink-Dialog (anbindung/Momentdialog.tsx), mitten in der Partie.
+ * Partiemoment am Brett (Atmosphäre T5 und T11): eine Sprechzeile mit Porträt in der gemeinsamen
+ * Sprechblase (anbindung/Tischblase.tsx, oben der Gegner, unten Ambrose oder der Held) oder ein
+ * geführter Ink-Dialog (anbindung/Momentdialog.tsx), mitten in der Partie. Geschriebene Momente
+ * gehen dem Tischgespräch vor (docs/spiel/29_Tischgespraech.md).
  *
  * Rolle im Gesamtbild: Teil der Spielhülle (anbindung/PartieHuelle.tsx). Welcher Moment fällig ist,
  * sagt regeln/partiemomente.ts aus den Momenten der Begegnung (begegnungen.json) und dem Verlauf.
  * Die Zeile blockiert das Brett nicht: Die Engine rechnet weiter, der Leser darf weiterziehen.
  * Sie verschwindet nach einer Lesedauer oder auf Tipp. Klang und Musik wie im Dialog
  * (ton/tonregie.ts).
- * Abhängigkeiten: daten/laden.ts, regeln/partiemomente.ts, dialog/Portraet.tsx, spiel/partie.ts.
+ * Abhängigkeiten: daten/laden.ts, regeln/partiemomente.ts, anbindung/Tischblase.tsx, spiel/partie.ts.
  */
 import { useEffect, useMemo, useState } from "react";
 import { stellungen, type Partie } from "../../spiel/partie";
 import { restzeit } from "../../spiel/uhr";
 import type { Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
-import { Portraet } from "../dialog/Portraet";
 import { faelligerMoment, type Partiemoment } from "../regeln/partiemomente";
 import { tSpiel } from "../texte/texte";
 import { tonregie } from "../ton/tonregie";
-import { ambroseFehlt, anwesendeMomente } from "../regeln/abwesenheit";
+import { AMBROSE, ambroseFehlt, anwesendeMomente } from "../regeln/abwesenheit";
 import { useAbenteuerstand } from "./dienste";
 import { useBegegnung } from "./useBegegnung";
 import { Momentdialog } from "./Momentdialog";
+import { useTischblasen } from "./tischkontext";
+import type { Blasenzeile } from "./tischblasen";
+import { ambrosezeile, gegnerzeile, heldenzeile } from "./tischsprecher";
 import { Zugerratenmoment } from "./Zugerratenmoment";
-
-/** Lesedauer: Grundzeit plus je Zeichen, höchstens so lange (ms). */
-const LESEN_GRUND_MS = 3000;
-const LESEN_JE_ZEICHEN_MS = 50;
-const LESEN_HOECHSTENS_MS = 9000;
 
 /** Sprecher ohne Porträt und Namen, wie im Dialog (dialog/Dialog.tsx). */
 const ERZAEHLER = "erzaehler";
@@ -74,32 +73,20 @@ function useVerlauf(partie: Partie, momente: readonly Partiemoment[], jetztMs: n
   );
 }
 
-/** Die Sprechzeile eines Moments mit `text`; Tipp oder Lesedauer blendet sie aus. */
-function Sprechzeile({ moment, beiEnde }: { moment: Partiemoment; beiEnde: () => void }) {
-  const text = tSpiel(moment.text ?? "");
-  useEffect(() => {
-    const dauer = Math.min(LESEN_HOECHSTENS_MS, LESEN_GRUND_MS + text.length * LESEN_JE_ZEICHEN_MS);
-    const uhr = window.setTimeout(beiEnde, dauer);
-    return () => window.clearTimeout(uhr);
-    // Einmal je Moment; die Hülle reicht bei jedem Takt einen neuen Rückruf.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [moment]);
-  // Erzählzeilen (Sprecher „erzaehler“, etwa im Clubkampf gegen Miss Odile) ohne Porträt und Namen.
-  const erzaehlt = moment.sprecher === ERZAEHLER;
-  return (
-    <button
-      type="button"
-      className="abenteuer-moment"
-      data-testid="abenteuer-moment"
-      aria-label={tSpiel("huelle.momentSchliessen")}
-      onClick={beiEnde}
-    >
-      {erzaehlt ? null : <Portraet sprecher={moment.sprecher} stimmung={null} zeile={text} />}
-      <span role="status" aria-live="polite">
-        {erzaehlt ? null : <strong>{tSpiel(`figur.${moment.sprecher}.name`)}</strong>} {text}
-      </span>
-    </button>
-  );
+/** Der Held spricht unten ohne Porträt (Sprecher „held“ in begegnungen.json). */
+const HELD = "held";
+
+/**
+ * Die Blasenzeile eines Moments mit `text`: Ambrose und der Held unten, alle anderen oben; der
+ * Erzähler (etwa im Clubkampf gegen Miss Odile) ohne Porträt und Namen.
+ */
+function momentblase(moment: Partiemoment, schluessel: string): Blasenzeile {
+  const text = { text: tSpiel(moment.text ?? ""), stimmung: null };
+  const angaben = { schluessel, vorrang: "geschrieben" as const, testid: "abenteuer-moment" };
+  if (moment.sprecher === AMBROSE) return ambrosezeile(text, angaben);
+  if (moment.sprecher === HELD) return heldenzeile(text.text, angaben);
+  if (moment.sprecher === ERZAEHLER) return { ...gegnerzeile(text, null, "", angaben), name: null };
+  return gegnerzeile(text, moment.sprecher, tSpiel(`figur.${moment.sprecher}.name`), angaben);
 }
 
 /**
@@ -134,12 +121,17 @@ export function Momentzeile({
     setzeZuletzt(schluessel);
     setzeGezeigt({ schluessel, moment });
   }
+  const blasen = useTischblasen();
   useEffect(() => {
     if (!gezeigt) return;
     gezeigtInSitzung.add(gezeigt.schluessel);
     tonregie.dialogzeile(tagsVon(gezeigt.moment));
+    // Sprechzeilen gehen in die gemeinsame Blase (Tischblase.tsx); hier zeichnet sich nichts.
+    if (!gezeigt.moment.dialog) blasen?.zeige(momentblase(gezeigt.moment, gezeigt.schluessel));
+    // Einmal je Moment; die Blasen sind bei jedem Zeichnen neu.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gezeigt]);
-  if (!gezeigt || partie.ende) return null;
+  if (!gezeigt || partie.ende || !gezeigt.moment.dialog) return null;
   const schliesse = () => setzeGezeigt(null);
   // Zugerraten (Halbfinale): Der Dialog wartet auf die Antwort des Gegners und den gesuchten Zug.
   if (gezeigt.moment.dialog && gezeigt.moment.zugerraten) {
@@ -152,5 +144,5 @@ export function Momentzeile({
       <Momentdialog verweis={gezeigt.moment.dialog} halteUhr={s.halteUhr} beiEnde={schliesse} />
     );
   }
-  return <Sprechzeile moment={gezeigt.moment} beiEnde={schliesse} />;
+  return null;
 }

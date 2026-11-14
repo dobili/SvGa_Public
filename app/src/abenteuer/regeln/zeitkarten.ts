@@ -85,31 +85,6 @@ export function mitZeitwirkung(partie: Partie, wirkung: Kartenwirkung, jetztMs: 
   return { ...partie, uhr: { ...partie.uhr, restMs } };
 }
 
-/**
- * Textschlüssel eines zufälligen Spruchs der Karte (texte/de.json, „spruch.<kennung>.1“ bis „.8“).
- * Beispiel: grossesMaul, Zufall 0 → „spruch.grossesMaul.1“.
- */
-export function spruchschluessel(kennung: string, zufall: () => number): string {
-  return `spruch.${kennung}.${zufallszahl(SPRUECHE_JE_KARTE, zufall)}`;
-}
-
-/**
- * Textschlüssel der Antwort des Gegners („spruch.konter.<name>.1“ oder „.2“); der Name ist der
- * letzte Teil der Gegnerkennung („cedarCreek.rosa“ → „rosa“).
- */
-export function konterschluessel(gegner: string, zufall: () => number): string {
-  const name = gegner.split(".").at(-1) ?? gegner;
-  return `spruch.konter.${name}.${zufallszahl(KONTER_JE_GEGNER, zufall)}`;
-}
-
-const SPRUECHE_JE_KARTE = 8;
-const KONTER_JE_GEGNER = 2;
-
-/** Ganze Zahl von 1 bis anzahl. */
-function zufallszahl(anzahl: number, zufall: () => number): number {
-  return Math.min(anzahl, Math.floor(zufall() * anzahl) + 1);
-}
-
 /** Nimmt dieser Gegner ein Remisangebot überhaupt in Betracht? Straße und Clubmitglieder ja. */
 export function remisMoeglich(rolle: Gegnerrolle | null): boolean {
   return rolle === "strasse" || rolle === "clubmitglied";

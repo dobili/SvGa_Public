@@ -41,7 +41,7 @@ import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 import { useVorzug } from "./useVorzug";
 import { Warnhinweis } from "./Warnhinweis";
-import { useImSpiel } from "./imSpiel";
+import { useHinweismeldung, useImSpiel } from "./imSpiel";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -84,6 +84,8 @@ function Hilfen({
 }) {
   // Im Schach-Abenteuer hilft Ambrose: „Ambrose fragen“ statt „Hinweis 1“ (imSpiel.ts).
   const imSpiel = useImSpiel();
+  // Im Spiel meldet „Ambrose fragen“ sich beim Tischgespräch (docs/spiel/29, Ereignis hinweis).
+  const meldeHinweis = useHinweismeldung();
   const motiv = themenname
     ? themenname
     : aufgabe.motiv
@@ -99,7 +101,14 @@ function Hilfen({
       {stufe >= HILFEN && <p>{t("taktiktrainer.hilfeFigur")}</p>}
       <div className="knopfzeile">
         {stufe < HILFEN && (
-          <button type="button" className="knopf-zweit" onClick={weiter}>
+          <button
+            type="button"
+            className="knopf-zweit"
+            onClick={() => {
+              weiter();
+              meldeHinweis?.();
+            }}
+          >
             <Knopfsymbol art="hinweis" />
             {imSpiel ? t("imSpiel.hinweis") : t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>

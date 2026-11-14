@@ -51,9 +51,14 @@ Für Ambrose: Figur farbig erzeugen (natürliche, blasse Haut), das Geisterhafte
 3. Als ZIP herunterladen. Ablage im privaten Repository unter `spiel/figuren-neu/<kennung>/` in der
    Ordnerform von PixelLab (`rotations/`, `animations/Walk/<richtung>/frame_000.png` …,
    `metadata.json`).
-4. Porträt in Gemini: das Standbild „south“ anhängen, Prompt für ein Blatt mit sechs Ausdrücken
-   (neutral, lächelt, nachdenklich, überrascht, bitter, lacht), 3 Spalten × 2 Zeilen, einfarbig
-   hellgrüner Hintergrund. Der Hauptchat schneidet und rechnet auf 64×64 herunter.
+4. Porträt in Gemini, in zwei Schritten im selben Chat (Stand 14.11.2026, nach den Proben mit
+   Victor): Schritt 1 ein einzelnes neutrales Porträt mit zwei Vorlagen, der Stilvorlage
+   (`ki-roh/stilvorlage_portraet.png`, Victors gelungenes Blatt) für Pixelgröße und Feinheit und
+   dem Standbild „south“ nur für Farben, Frisur und Kleidung; Schritt 2 das Blatt (oder bei
+   Nebenfiguren das Lächeln) mit dem neutralen Porträt als Vorlage. Grund: Mit der 32-Pixel-Figur
+   allein malte Gemini grobe Blöcke, vor allem im Haar, und ein Nachsatz half nur halb. Ausdrücke
+   neutral, lächelt, nachdenklich, überrascht, bitter, lacht, grüner Grund. Der Hauptchat schneidet
+   und rechnet auf 64×64 herunter (`python -m pipeline.abenteuer.portraetblatt`).
 5. Nebenfiguren mit wenig Text brauchen nur das neutrale Porträt und eines mit Lächeln.
    Probe mit Victor (14.11.2026): Mit der kleinen Spielfigur als Vorlage übernimmt Gemini deren
    grobe Pixel (ein Gesicht aus etwa 16 Pixeln), Einzelporträts geraten dagegen fein und in anderem

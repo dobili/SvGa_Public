@@ -1689,17 +1689,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
 - [ ] RO16. **Großbilder von Gemini (Datei „3_Gemini_Grossbilder_und_Funde.html“):** Akt 1 und 2
       (A1 bis A17) sind fertig und im Spiel (14.11.2026). Offen sind A18 bis A38 (Akt 3 und 4) und
       die Fundbilder.
-- [ ] RO17. **Geräusche von Freesound (14.11.2026):** Freesound sperrt die Cloud-Umgebung; bitte am
-      eigenen Rechner von freesound.org laden (nur Lizenz CC0 oder CC BY, kein „NonCommercial“),
-      Dateinamen so lassen, wie Freesound ihn vergibt (Nummer und Urheber stehen darin), und in
-      `ki-roh/ton/<kennung>/` des privaten Repositorys legen. **Fehlen ganz (etwa 15 Minuten):**
-      `enten` 2–3 kurze Rufe von Stockenten ohne Verkehr („mallard duck quack“); `besen_stein`
-      Besen fegt draußen über Stein, 2–4 s („broom sweeping concrete“); `besen` Besen auf
-      Holzdielen innen, 2–4 s („broom sweeping wooden floor“); `motel` Rauschen eines alten Radios
-      zwischen Sendern („old radio static tuning“). **Schön, nicht nötig:** `falken` („red-tailed
-      hawk call“), `bison` („bison snort“), `bus` mit Druckluftbremse und Falttür („bus arrive air
-      brake doors“), `zapfsaeule` („gas pump squeak“), `windrad` („windmill farm creaking“),
-      `schulflur` („school hallway lockers students“).
 - [ ] RO18. **Porträts Akt 1 in Gemini (Datei „5_Gemini_Akt1_Rest.html“):** 1 bis 26 sind
       zugeschnitten und im Spiel (14.11.2026). Es fehlen: Hector neutral (Nr. 12, Schritt 1; bisher
       steht sein Lächeln in allen Feldern), Kettering lächelt (Nr. 27, neutral ist schon da) und die

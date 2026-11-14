@@ -1024,3 +1024,8 @@ Schreibtisch.
 Brettstile: Der Autor hält alle zwölf Farbkombinationen für geeignet; Schiefer bekam auf seinen
 Hinweis hellere Felder und fast schwarze Figuren mit Bronzekante. Er wünscht für alle Bretter und
 Figurensätze eigene, schönere Fassungen aus Gemini (RO19); bis sie da sind, gilt der Pixelstil.
+
+Geräusche von Freesound (RO17 erledigt): Der Autor hat Enten, zwei Besen, Radiorauschen, Falke,
+Bison, Ölpumpe und Schulflur geladen, alle CC0; eingebaut im privaten Paket, Herkunft in
+`spiel/klang/HERKUNFT.md`. Die Ölpumpe trägt das Windrad (näher als die alte Windmühle). Einen
+Linienbus mit Druckluft und Falttür gab es nicht; Bus und Zapfsäule bleiben beim Ersatz.

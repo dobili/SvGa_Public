@@ -27,16 +27,16 @@ VAR slickAbschiedGesehen = false
 ~ slickAbschiedGesehen = true
 Drinnen ist es eng und warm. An der Wand hängt ein Kurierrad. Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler #musik:riverton.wohnwagen
 Sie sind aus Limonadendosen, aufgeschnitten, gebogen, mit Draht. „Parkmeister 2019.“ „Bester Verlierer 2017.“ #sprecher:erzaehler
-Der Alte hat die gebaut. Jedes Jahr einen. Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick
+Der Alte hat die gebaut. Jedes Jahr einen. Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick #stimmung:nachdenklich
 Er setzt sich aufs Bett. Ohne das Reden sieht er jünger aus. #sprecher:erzaehler
-Ich hab seit März keinen neuen. #sprecher:slick #pause:2
+Ich hab seit März keinen neuen. #sprecher:slick #stimmung:bitter #pause:2
 * [Nichts sagen]
 * [Juno ansehen]
-- Ich bin ein Großmaul. Weiß ich. Ich dachte, wenn ich laut genug bin, hören die im Rathaus, dass da noch jemand ist. #sprecher:slick
+- Ich bin ein Großmaul. Weiß ich. Ich dachte, wenn ich laut genug bin, hören die im Rathaus, dass da noch jemand ist. #sprecher:slick #stimmung:bitter
 Er reibt sich das Gesicht. #sprecher:erzaehler
-Haben sie nicht. #sprecher:slick
+Haben sie nicht. #sprecher:slick #stimmung:bitter
 Er hält dir einen weißen Springer aus Stein hin. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
-Aus dem letzten Satz. Nimm ihn mit. Stell ihn irgendwo hin, wo gespielt wird. #sprecher:slick
+Aus dem letzten Satz. Nimm ihn mit. Stell ihn irgendwo hin, wo gespielt wird. #sprecher:slick #stimmung:nachdenklich
 * [Den Springer nehmen]
 - ~ gibFund("pavillonspringer")
 // Gutachten K2.3: kein Spruch-Tutorial an der stillsten Stelle. Die Grübelfalle gibt nach dem Roman
@@ -49,15 +49,15 @@ Er ist kalt und schwer. #sprecher:erzaehler #pause:2
 === slick_fluss ===
 // Gutachten K2.4 und K2.5: drei Schläge mit Stille; Ambrose antwortet in keinem Zweig.
 Draußen läuft der Fluss schwarz unter der Brücke. Oben im Park leuchtet es, jetzt an zehn Stellen. #sprecher:erzaehler #musik:aus #geraeusch:fluss
-Er hat recht. #sprecher:ambrose #pause:2
-Er hat recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose
-Und die Tische spielen trotzdem besser als er. #sprecher:ambrose
+Er hat recht. #sprecher:ambrose #stimmung:nachdenklich #pause:2
+Er hat recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose #stimmung:bitter
+Und die Tische spielen trotzdem besser als er. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ja.“]
 * [Schweigen]
 - Besser als ich. #sprecher:ambrose #stimmung:fern #musik:ambrose.zweifel #pause:2
 Du hast ihn noch nie so gehört. #sprecher:erzaehler
-Was heißt das, {held}? Wenn das Schöne und das Richtige dasselbe sind, und eine Maschine kann beides? #sprecher:ambrose
-Und ein Mann mit Dosenpokalen kann keines von beiden ganz. Was heißt das? #sprecher:ambrose
+Was heißt das, {held}? Wenn das Schöne und das Richtige dasselbe sind, und eine Maschine kann beides? #sprecher:ambrose #stimmung:nachdenklich
+Und ein Mann mit Dosenpokalen kann keines von beiden ganz. Was heißt das? #sprecher:ambrose #stimmung:nachdenklich
 * [„Ich weiß es nicht. Aber ich weiß, mit wem ich lieber spiele.“]
     Er antwortet nicht. #sprecher:erzaehler #pause:2
     Es ist nicht die Antwort, die er gesucht hat. #sprecher:erzaehler

@@ -16,7 +16,7 @@ VAR holzturmGefunden = false
 - not hatLaterne:
     Ein Schließfach ohne Namen, die Tür klemmt. Dahinter ist es stockdunkel. #sprecher:erzaehler
     Ohne Licht siehst du nichts. #sprecher:erzaehler
-    Edna verkauft Laternen, sagte man. Zu meiner Zeit hätte eine Kerze genügt. #sprecher:ambrose
+    Edna verkauft Laternen, sagte man. Zu meiner Zeit hätte eine Kerze genügt. #sprecher:ambrose #stimmung:laechelt
     -> END
 }
 ~ holzturmGefunden = true

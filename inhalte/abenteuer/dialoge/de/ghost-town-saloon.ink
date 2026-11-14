@@ -40,7 +40,7 @@ VAR held = "Du"
 === victor_wartet ===
 ~ victorSaloonGetroffen = true
 Victor stellt Figuren auf, nimmt sie wieder weg, stellt sie neu auf. #sprecher:erzaehler
-Mir fehlt noch etwas. Ambrose muss doch seinen letzten Zug irgendwo aufgeschrieben haben. #sprecher:victor
+Mir fehlt noch etwas. Ambrose muss doch seinen letzten Zug irgendwo aufgeschrieben haben. #sprecher:victor #stimmung:nachdenklich
 Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #stimmung:fern
 -> END
 
@@ -49,7 +49,7 @@ Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #st
 // Fragment vier Takte des Fundorts, immer leiser), dann Victors b5 (holz_zug, b5).
 ~ victorSaloonGetroffen = true
 Am Morgen fegt Mr. Pruitt den Saloon, bis in die Ecken, als käme Besuch. Er rückt einen Tisch unter das Loch im Dach, wo die Sonne in einer schrägen Säule fällt. #sprecher:erzaehler #klang:besen
-Ich hab hier dreißig Jahre nach Gold gesucht. Ich glaub, ich hab die ganze Zeit auf was anderes gewartet. #sprecher:pruitt
+Ich hab hier dreißig Jahre nach Gold gesucht. Ich glaub, ich hab die ganze Zeit auf was anderes gewartet. #sprecher:pruitt #stimmung:nachdenklich
 Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. A. W. 1857. Daneben Junos Tagebuch mit acht eingeklebten Zetteln aus sieben Städten. #sprecher:erzaehler #bild:tagebuch_zettel
 {briefGelesen:
     Und Hales Brief mit dem gebrochenen Siegel, auf der Rückseite vier Züge in senkrechter Schrift. #sprecher:erzaehler
@@ -68,28 +68,28 @@ Wer baut auf? #sprecher:victor #bild:aus
 Der Bauer, der sich im vierten Zug anbietet. Mein Gambit. Er hat es angenommen. Ich war so erleichtert. #sprecher:ambrose #stimmung:froh
 Der Springer im sechsundzwanzigsten. Hier habe ich drei Wochen nachgedacht. Über einen Springerzug. Ich. Drei Wochen. #sprecher:ambrose #stimmung:lachtOhneSpott
 Dann der fünfunddreißigste. Ein Läufer schlägt den Bauern vor dem König. Gleich darauf ein Springer. #sprecher:erzaehler
-Zwei. Er opfert zwei Figuren hintereinander. #sprecher:victor
+Zwei. Er opfert zwei Figuren hintereinander. #sprecher:victor #stimmung:ueberrascht
 * [„Stimmt es?“]
 - Er rechnet, mit schiefem Kopf, lange. #sprecher:erzaehler
-Ja. Knapp. Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor
-Dreimal nachgerechnet. Und dann habe ich gehofft. #sprecher:ambrose
+Ja. Knapp. Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor #stimmung:laechelt
+Dreimal nachgerechnet. Und dann habe ich gehofft. #sprecher:ambrose #stimmung:laechelt
 Die letzten Züge kennst du aus einem Zimmer mit Rosen. Der König schlägt die Dame, einen Schritt ins Freie. #sprecher:erzaehler
 Es ist die Stellung, die du an einem Abend im Spätsommer unter einer Decke gefunden hast. Schwarz am Zug. Seit hundertsechzig Jahren. #sprecher:erzaehler #musik:aus #pause:3
 Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an. #sprecher:erzaehler
-Darf ich? #sprecher:victor
+Darf ich? #sprecher:victor #stimmung:nachdenklich
 Er fragt nicht dich. #sprecher:erzaehler
 Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
 Victor schiebt den Bauern vor. Ein Feld. Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
 So. So. Da ist er. #sprecher:ambrose #stimmung:friedlich
-Diese Partie gehört euch. Keine Karten. Kein Wort von mir. Die nächsten Züge sind deine. #sprecher:ambrose
+Diese Partie gehört euch. Keine Karten. Kein Wort von mir. Die nächsten Züge sind deine. #sprecher:ambrose #stimmung:laechelt
 * [„Ich spiele für dich.“]
-- Nein. Du spielst für dich, mit meinen Figuren. Das ist ein Unterschied, und er ist mir wichtig. #sprecher:ambrose
+- Nein. Du spielst für dich, mit meinen Figuren. Das ist ein Unterschied, und er ist mir wichtig. #sprecher:ambrose #stimmung:nachdenklich
 Ein Turm gegen zwei Springer. Du stehst besser. Aber zwei Springer sind wie zwei Hunde, die ein Schaf nicht aus den Augen lassen. #sprecher:erzaehler #musik:aus
 * [Den König ziehen]
     ~ beginnePartie("ghostTown.fernpartie")
     -> END
 * [„Gleich.“]
-    Hundertsechzig Jahre. Ein paar Minuten mehr schaden nicht. #sprecher:victor
+    Hundertsechzig Jahre. Ein paar Minuten mehr schaden nicht. #sprecher:victor #stimmung:laechelt
     -> END
 
 // ---------------------------------------------------------------- Partiemomente (Kapitel 58)
@@ -114,21 +114,21 @@ Du weißt es nicht. #sprecher:erzaehler #pause:2
 {ausgangGhostTownFernpartie == "sieg":
     Victor sieht lange auf das Brett. Dann gibt er dir die Hand. #sprecher:erzaehler
 - else:
-    Mehr ist nicht mehr zu wollen. Remis? #sprecher:victor
+    Mehr ist nicht mehr zu wollen. Remis? #sprecher:victor #stimmung:laechelt
     -> verzaehlt ->
 }
 Ambrose steht neben dem Tisch und sieht auf das ganze Brett. Er weint. Es läuft ihm über das Gesicht, und er lächelt dabei. #sprecher:erzaehler #stimmung:weintUndLaechelt #musik:aus #pause:3
 Hundertsechzig Jahre. Und sie ist schön. #sprecher:ambrose #stimmung:weintUndLaechelt
-Sie ist zu Ende. Jemand hat sie zu Ende gespielt. #sprecher:ambrose
-Ein Kind, das zählt und hofft, und ein Hale. #sprecher:ambrose
-Ich wollte eine Partie ohne Makel. Mein ganzes Leben, und danach noch einmal so lang. #sprecher:ambrose
-Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose
+Sie ist zu Ende. Jemand hat sie zu Ende gespielt. #sprecher:ambrose #stimmung:nachdenklich
+Ein Kind, das zählt und hofft, und ein Hale. #sprecher:ambrose #stimmung:laechelt
+Ich wollte eine Partie ohne Makel. Mein ganzes Leben, und danach noch einmal so lang. #sprecher:ambrose #stimmung:nachdenklich
+Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose #stimmung:laechelt
 Er wischt sich über die Augen. #sprecher:erzaehler #pause:2
 Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.schluss
-{ausgangGhostTownFernpartie == "sieg": Du hast für mich gewonnen, was ich nie gebraucht hätte. #sprecher:ambrose}
-Das beste, das ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor
+{ausgangGhostTownFernpartie == "sieg": Du hast für mich gewonnen, was ich nie gebraucht hätte. #sprecher:ambrose #stimmung:laechelt}
+Das beste, das ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor #stimmung:laechelt
 Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch. #sprecher:erzaehler
-Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor
+Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor #stimmung:nachdenklich
 In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 ~ gibFund("schlussstellungFernpartie")
 -> END
@@ -136,11 +136,11 @@ In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 = verzaehlt
 * [„Es tut mir leid.“]
 * [„Sie ist remis.“]
-- {held}. #sprecher:ambrose
+- {held}. #sprecher:ambrose #stimmung:nachdenklich
 ->->
 
 === victor_alltag ===
-{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|Bei der Meisterschaft spiele ich gegen dich. Ich freu mich. Ehrlich.} #sprecher:victor
+{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|Bei der Meisterschaft spiele ich gegen dich. Ich freu mich. Ehrlich.} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Brett und Abzeichen
@@ -183,5 +183,5 @@ Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal. #sprecher:ambro
 
 === klavier ===
 Du drückst eine Taste. Nichts. Die nächste klingt schief und viel zu laut im leeren Saloon. #sprecher:erzaehler
-Ein Klavier verstimmt sich in der Hitze. Und in der Stille. #sprecher:ambrose
+Ein Klavier verstimmt sich in der Hitze. Und in der Stille. #sprecher:ambrose #stimmung:nachdenklich
 -> END

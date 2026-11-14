@@ -51,40 +51,40 @@ VAR angesehenLaptop = false
 }
 ~ henriGetroffen = true
 Ein Mann mit Sägemehl in den Augenbrauen kommt dir entgegen. Er lacht viel und arbeitet dabei weiter. #sprecher:erzaehler
-Henri Whitlock-Duval. {leimAuftrag:Leim für den Club? Natürlich für den Club. Umsonst.|Klavierbauer, seit sechs Generationen.} #sprecher:henri
-Meine Großmutter hat dort Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri
-Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri
+Henri Whitlock-Duval. {leimAuftrag:Leim für den Club? Natürlich für den Club. Umsonst.|Klavierbauer, seit sechs Generationen.} #sprecher:henri #stimmung:laechelt
+Meine Großmutter hat dort Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri #stimmung:laechelt
+Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri #stimmung:lacht
 -> END
 
 === henri_foto ===
 ~ fotoAmbroseGesehen = true
 ~ henriGetroffen = true
 Durch ein Loch im Dach, über das eine Plane gespannt ist, fällt blaues Licht. Die Werkbank steht an derselben Stelle. #sprecher:erzaehler
-Das hier wird Sie interessieren, wenn Sie Schach mögen. #sprecher:henri
+Das hier wird Sie interessieren, wenn Sie Schach mögen. #sprecher:henri #stimmung:laechelt
 Ein ovales Foto, sehr alt, braun. Ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. #sprecher:erzaehler
-Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem. #sprecher:henri
-Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen. #sprecher:henri
-Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. Ich fand, er sieht nett aus. #sprecher:henri
+Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem. #sprecher:henri #stimmung:nachdenklich
+Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen. #sprecher:henri #stimmung:nachdenklich
+Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. Ich fand, er sieht nett aus. #sprecher:henri #stimmung:laechelt
 * [Das Foto ansehen]
 - Der Deckel des Geigenkastens ist zu. Du hast ihn nicht angerührt. #sprecher:erzaehler #musik:aus #pause:2
 Das bin ich. #sprecher:ambrose #stimmung:still #musik:ambrose.verstimmt
 * [Hinsehen]
 - Du siehst ihn, zum ersten Mal seit sechs Tagen: schmal, hochgeschlossen, blasser als früher. #sprecher:erzaehler
-Ich erinnere mich an den Tag. Man musste eine Minute lang nicht atmen. Ich habe an einen Zug gedacht. #sprecher:ambrose
+Ich erinnere mich an den Tag. Man musste eine Minute lang nicht atmen. Ich habe an einen Zug gedacht. #sprecher:ambrose #stimmung:nachdenklich
 Henri hört ihn nicht. Er leimt. #sprecher:erzaehler
 Keiner weiß mehr, wer. Ein Spieler. Sie haben nicht gern von mir gesprochen. #sprecher:ambrose #stimmung:traurig
 * [„Ambrose …“]
-- Nein. Lass. Sechs Generationen. Sie haben weitergemacht. Jede Saite muss stimmen. #sprecher:ambrose
+- Nein. Lass. Sechs Generationen. Sie haben weitergemacht. Jede Saite muss stimmen. #sprecher:ambrose #stimmung:bitter
 Mein Vater hätte ihn sehr gemocht. #sprecher:ambrose #stimmung:still
 * [Nichts sagen]
 - Eine Tür schlägt. Ein Mädchen, fünfzehn vielleicht, ein Skateboard unter dem Arm, Kopfhörer um den Hals. #sprecher:erzaehler #musik:celeste
-Papa, hast du mein Ladekabel … Oh. Besuch. Schach? Das ist doch was für alte Leute. #sprecher:celeste
+Papa, hast du mein Ladekabel … Oh. Besuch. Schach? Das ist doch was für alte Leute. #sprecher:celeste #stimmung:ueberrascht
 Für sehr alte. #sprecher:ambrose #stimmung:lacht
 Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 -> END
 
 === henri_alltag ===
-{~Das Dach ist fast dicht. Die Klaviere danken es uns.|Für das Musikhaus stifte ich ein Klavier. Das alte da hinten, es klingt wie ein Gewitter.|Céleste macht Musik mit dem Laptop. Ich verstehe es nicht, aber es hat Takt.} #sprecher:henri
+{~Das Dach ist fast dicht. Die Klaviere danken es uns.|Für das Musikhaus stifte ich ein Klavier. Das alte da hinten, es klingt wie ein Gewitter.|Céleste macht Musik mit dem Laptop. Ich verstehe es nicht, aber es hat Takt.} #sprecher:henri #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Céleste
@@ -101,16 +101,16 @@ Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 
 === celeste_angebot ===
 Céleste sieht auf den Hocker. Du hast den Geigenkasten aufgemacht, ohne es zu merken. #sprecher:erzaehler
-Das sieht cool aus. Das ist ja richtig alt. Darf ich? #sprecher:celeste
+Das sieht cool aus. Das ist ja richtig alt. Darf ich? #sprecher:celeste #stimmung:ueberrascht
 Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. Und die Hände. #sprecher:erzaehler
 * [„Kannst du es?“]
-- Ich weiß, wie die Dinger ziehen. Ungefähr. Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste
+- Ich weiß, wie die Dinger ziehen. Ungefähr. Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste #stimmung:laechelt
 Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er hat genickt. #sprecher:erzaehler
 + [„Okay. Eine Partie.“]
     ~ beginnePartie("portDelacroix.celeste")
     -> END
 + [„Ein andermal.“]
-    Kein Stress. Ich bin eh am Mixen. #sprecher:celeste
+    Kein Stress. Ich bin eh am Mixen. #sprecher:celeste #stimmung:laechelt
     -> END
 
 === celeste_nach_partie ===
@@ -118,20 +118,20 @@ Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er
 Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er gehört. #sprecher:erzaehler
 Hast du das gesehen? Das hat sie von … #sprecher:ambrose #stimmung:froh
 Er bricht ab. Er lächelt über sich selbst. #sprecher:erzaehler
-Okay. Das war nicht so schlecht. Aber ich geh jetzt skaten. #sprecher:celeste
+Okay. Das war nicht so schlecht. Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
 Draußen rattert das Skateboard über das Pflaster, kleiner werdend. Ambrose sieht ihr nach. #sprecher:erzaehler
 * [Warten]
 - Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat. Auf diesem Brett. #sprecher:ambrose #stimmung:froh
-Ich wollte, dass alles, was ich war, Schach ist. Eine Fußnote, sechs Wörter, und ich war beleidigt. #sprecher:ambrose
-Und hier hängt mein Gesicht an der Wand, keiner weiß, wem es gehört, und sie bauen Klaviere und sind glücklich. #sprecher:ambrose
+Ich wollte, dass alles, was ich war, Schach ist. Eine Fußnote, sechs Wörter, und ich war beleidigt. #sprecher:ambrose #stimmung:nachdenklich
+Und hier hängt mein Gesicht an der Wand, keiner weiß, wem es gehört, und sie bauen Klaviere und sind glücklich. #sprecher:ambrose #stimmung:nachdenklich
 * [„Macht dir das nichts aus?“]
 - Doch. Ein wenig. Aber weniger, als ich dachte. #sprecher:ambrose #stimmung:lacht
 Er sieht dich an, richtig, zum ersten Mal seit einer weißen, flackernden Nacht. #sprecher:erzaehler
-Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren. #sprecher:ambrose #pause
+Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren. #sprecher:ambrose #stimmung:laechelt #pause
 Mit dir. #sprecher:ambrose #stimmung:froh #musik:ambrose.held
 * [Nichts sagen können]
-- Ich schulde dir eine Antwort. Auf eine Frage. Ich habe sie noch nicht. #sprecher:ambrose
-Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambrose
+- Ich schulde dir eine Antwort. Auf eine Frage. Ich habe sie noch nicht. #sprecher:ambrose #stimmung:nachdenklich
+Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 === celeste_alltag ===

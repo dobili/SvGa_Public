@@ -58,21 +58,21 @@ VAR spurenPM = 0
 === ruiz_erstes_treffen ===
 ~ ruizGetroffen = true
 In der Kombüse rührt ein Mann mit Kochmütze in einem Topf. Auf der Arbeitsplatte steht ein Brett zwischen Zwiebeln. #sprecher:erzaehler
-Ruiz, Schiffskoch. Zwei Tage bis Port Delacroix, und keiner an Bord spielt mit mir. #sprecher:schiffskoch
+Ruiz, Schiffskoch. Zwei Tage bis Port Delacroix, und keiner an Bord spielt mit mir. #sprecher:schiffskoch #stimmung:laechelt
 Mama lehnt in der Tür. „Spiel ruhig. Ich hol uns Kaffee.“ #sprecher:erzaehler
 -> ruiz_angebot
 
 === ruiz_angebot ===
-Zehn Minuten und fünf Sekunden je Zug, solange die Suppe zieht. Eine Stellung, du hast Weiß. #sprecher:schiffskoch
+Zehn Minuten und fünf Sekunden je Zug, solange die Suppe zieht. Eine Stellung, du hast Weiß. #sprecher:schiffskoch #stimmung:laechelt
 + [„Abgemacht.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
 + [„Nach dem Essen.“]
-    Gute Antwort. Die Suppe ist wichtiger. #sprecher:schiffskoch
+    Gute Antwort. Die Suppe ist wichtiger. #sprecher:schiffskoch #stimmung:laechelt
     -> END
 
 === ruiz_nach_sieg ===
-Du spielst, wie ich koche: nicht zu schnell, nicht zu langsam. Noch eine? #sprecher:schiffskoch
+Du spielst, wie ich koche: nicht zu schnell, nicht zu langsam. Noch eine? #sprecher:schiffskoch #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
@@ -80,7 +80,7 @@ Du spielst, wie ich koche: nicht zu schnell, nicht zu langsam. Noch eine? #sprec
     -> END
 
 === ruiz_nach_niederlage ===
-Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffskoch
+Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffskoch #stimmung:lacht
 + [„Revanche.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
@@ -91,12 +91,12 @@ Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffs
 
 === guidry ===
 {guidryGetroffen:
-    {~Jeder Sandsack zählt. Jeder Bauer auch.|Die Stadt steht wieder auf. Langsam. Aber sie steht.} #sprecher:guidry
+    {~Jeder Sandsack zählt. Jeder Bauer auch.|Die Stadt steht wieder auf. Langsam. Aber sie steht.} #sprecher:guidry #stimmung:nachdenklich
     -> END
 }
 ~ guidryGetroffen = true
 Am Deich stapeln Männer und Frauen in Gummistiefeln Sandsäcke. Einer richtet sich auf, die Hand im Kreuz. #sprecher:erzaehler
-Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. Hinterher ist man immer klüger. #sprecher:guidry
+Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. Hinterher ist man immer klüger. #sprecher:guidry #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
@@ -155,9 +155,9 @@ Im Sand am Deich liegt eine Muschel mit einem kleinen, runden Loch, wie für ein
 === kapitaen_erstes ===
 ~ kapitaenGetroffen = true
 Am Steuer steht ein Mann mit weißem Bart und blauer Mütze. Er nickt zur Wand der Kajüte. #sprecher:erzaehler
-Fall, Amadou Fall. Du willst das Brett sehen. Alle wollen das Brett sehen. #sprecher:kapitaen
-Mein Vorgänger hat es mir vererbt, mit drei Wörtern: Weiß zieht und gewinnt. Seit dreißig Jahren hat es keiner gelöst. #sprecher:kapitaen
-Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gesteckt. Alle drei falsch. Wer es löst, darf einmal das Horn blasen. #sprecher:kapitaen
+Fall, Amadou Fall. Du willst das Brett sehen. Alle wollen das Brett sehen. #sprecher:kapitaen #stimmung:laechelt
+Mein Vorgänger hat es mir vererbt, mit drei Wörtern: Weiß zieht und gewinnt. Seit dreißig Jahren hat es keiner gelöst. #sprecher:kapitaen #stimmung:nachdenklich
+Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gesteckt. Alle drei falsch. Wer es löst, darf einmal das Horn blasen. #sprecher:kapitaen #stimmung:lacht
 -> kapitaen_angebot
 
 === kapitaen_angebot ===
@@ -165,20 +165,20 @@ Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gest
     ~ beginneAufgaben("wegSiliconDelacroix.kapitaensproblem")
     -> END
 + [„Nicht jetzt.“]
-    Das Brett läuft nicht weg. Es hängt fest. #sprecher:kapitaen
+    Das Brett läuft nicht weg. Es hängt fest. #sprecher:kapitaen #stimmung:lacht
     -> END
 
 === kapitaen_horn ===
 ~ kapitaensproblemGeloest = true
 Der Kapitän nimmt die drei Zettel vom Rahmen, faltet sie und steckt sie in die Brusttasche. „Dreißig Jahre.“ #sprecher:erzaehler
-Er zeigt auf die Kordel über dem Steuer. Zieh. Kräftig. #sprecher:kapitaen
+Er zeigt auf die Kordel über dem Steuer. Zieh. Kräftig. #sprecher:kapitaen #stimmung:laechelt
 Ein tiefer Ton rollt über das Wasser. Auf dem Deich drehen sich Leute um und winken. #sprecher:erzaehler
 ~ gibFund("kapitaensmuetze")
-Die gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie diese. #sprecher:kapitaen
+Die gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie diese. #sprecher:kapitaen #stimmung:laechelt
 -> END
 
 === kapitaen_danach ===
-{~Das Horn hört man bis Port Delacroix. Jetzt wissen alle, dass jemand das Brett gelöst hat.|Mein Vorgänger hätte gelacht. Er hat immer gesagt, die Lösung sitzt irgendwann an Bord.|Neue Zettel? Nein. Ich hänge nur noch das Brett auf. Und deinen Namen daneben.} #sprecher:kapitaen
+{~Das Horn hört man bis Port Delacroix. Jetzt wissen alle, dass jemand das Brett gelöst hat.|Mein Vorgänger hätte gelacht. Er hat immer gesagt, die Lösung sitzt irgendwann an Bord.|Neue Zettel? Nein. Ich hänge nur noch das Brett auf. Und deinen Namen daneben.} #sprecher:kapitaen #stimmung:laechelt
 -> END
 
 === ereignis_kapitaen ===
@@ -217,9 +217,9 @@ Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mam
 ~ bugGesehen = true
 Mama steht viel an der Reling. Ihr spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. Sie gewinnt öfter. #sprecher:erzaehler
 Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. Jetzt sagt er die Zugnummer. #sprecher:erzaehler #musik:ambrose.verzerrt
-Zug vierzehn. #sprecher:ambrose
+Zug vierzehn. #sprecher:ambrose #stimmung:nachdenklich
 * [„Was war da?“]
-- Der Läufer. Es gab einen besseren. #sprecher:ambrose
+- Der Läufer. Es gab einen besseren. #sprecher:ambrose #stimmung:nachdenklich
 * [„Welchen?“]
 - Den, den sie gespielt hätte. #sprecher:ambrose #stimmung:fern
 Er sagt „sie“. Wie bei einem Menschen. #sprecher:erzaehler #pause

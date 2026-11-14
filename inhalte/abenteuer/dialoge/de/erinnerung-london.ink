@@ -35,13 +35,13 @@ VAR londonSchlussGesehen = false
 
 === zeitungsjunge ===
 {zeitungsjungeGesehen:
-    {~Extra! Die Weltausstellung im Glaspalast! Ein Penny, Sir!|Schachturnier in London, die besten Spieler der Welt! Lesen Sie alles darüber!} #sprecher:zeitungsjunge
+    {~Extra! Die Weltausstellung im Glaspalast! Ein Penny, Sir!|Schachturnier in London, die besten Spieler der Welt! Lesen Sie alles darüber!} #sprecher:zeitungsjunge #stimmung:laechelt
     -> END
 }
 ~ zeitungsjungeGesehen = true
 Ein Junge mit Schirmmütze schwenkt eine Zeitung über dem Kopf. Der Wind trägt den Geruch der Themse heran. #sprecher:erzaehler
-Extra! Extra! #sprecher:zeitungsjunge
-Die ganze Welt kommt nach London, zur großen Ausstellung! Und zum Schachturnier! #sprecher:zeitungsjunge
+Extra! Extra! #sprecher:zeitungsjunge #stimmung:laechelt
+Die ganze Welt kommt nach London, zur großen Ausstellung! Und zum Schachturnier! #sprecher:zeitungsjunge #stimmung:laechelt
 Ein Turnier. Die besten Spieler der Welt, in einer Stadt. #sprecher:ambrose #stimmung:jung
 Und ich bin hier, um Klavierholz zu kaufen. #sprecher:ambrose
 London, 1851. Bleib bei mir, {held}. Ich zeige dir, was ich sah. #sprecher:ambrose #stimmung:jung
@@ -73,12 +73,12 @@ Ich bin lange geblieben. #sprecher:ambrose #stimmung:jung
 
 === kellner ===
 Ein Kellner mit weißer Schürze balanciert ein Tablett mit Tassen zwischen den Tischen. #sprecher:erzaehler
-{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Herr Anderssen ist aus Breslau. Er spielt, als hätte er keine Angst vor nichts.} #sprecher:kellner
+{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Herr Anderssen ist aus Breslau. Er spielt, als hätte er keine Angst vor nichts.} #sprecher:kellner #stimmung:laechelt
 -> END
 
 === zeitungsleser ===
 Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht auf. #sprecher:erzaehler
-{~Das Turnier? Dummes Zeug. Ich lese den Börsenbericht.|Der Deutsche am Tisch in der Mitte verliert gleich alles. Sehen Sie nur, er gibt seine Figuren weg.|Junger Mann, Sie stehen in meinem Licht.} #sprecher:zeitungsleser
+{~Das Turnier? Dummes Zeug. Ich lese den Börsenbericht.|Der Deutsche am Tisch in der Mitte verliert gleich alles. Sehen Sie nur, er gibt seine Figuren weg.|Junger Mann, Sie stehen in meinem Licht.} #sprecher:zeitungsleser #stimmung:bitter
 -> END
 
 === schachtisch ===
@@ -123,9 +123,9 @@ Niemand sagt etwas. #sprecher:erzaehler
 Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht. #sprecher:erzaehler #klang:lachen_kieseritzky
 Er schüttelt dem anderen die Hand mit beiden Händen, ruft etwas auf Französisch und läuft zur Tür, ohne Hut. #sprecher:erzaehler #musik:london.lauf
 Seine Stimme ist wieder die alte. Sie zittert. #sprecher:erzaehler #pause
-Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose
-Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose
-Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #pause:2
+Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose #stimmung:laechelt
+Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose #stimmung:nachdenklich
+Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #stimmung:laechelt #pause:2
 -> rueckkehr_wahl
 
 === rueckkehr_wahl ===

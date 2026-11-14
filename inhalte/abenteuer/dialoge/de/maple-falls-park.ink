@@ -51,21 +51,21 @@ VAR initialenGefunden = false
 ~ abernathyGetroffen = true
 Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwischen den Bäumen. #sprecher:erzaehler
 Auf der Nachbarbank klopft ein sehr alter Mann seine Taschen ab. Neben ihm eine Thermoskanne. #sprecher:erzaehler
-Ich hatte doch … nein, das ist meine Brille. Das Brett, das Brett! #sprecher:abernathy
-Abernathy, sehr erfreut. Früher Bibliothekar, heute Sucher von Dingen. #sprecher:abernathy
-Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprecher:abernathy
+Ich hatte doch … nein, das ist meine Brille. Das Brett, das Brett! #sprecher:abernathy #stimmung:ueberrascht
+Abernathy, sehr erfreut. Früher Bibliothekar, heute Sucher von Dingen. #sprecher:abernathy #stimmung:laechelt
+Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprecher:abernathy #stimmung:nachdenklich
 * [„Ich suche es für Sie.“]
-    Wie freundlich. Es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy
+    Wie freundlich. Es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 * [„Wie sieht es aus?“]
-    Klein, grün, mit Magnetfiguren. Und mit einer Stellung, die ich nicht lösen kann. #sprecher:abernathy
-- Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose
+    Klein, grün, mit Magnetfiguren. Und mit einer Stellung, die ich nicht lösen kann. #sprecher:abernathy #stimmung:laechelt
+- Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === bibliothekar_wartet ===
 {parkbankBrettGefunden:
-    Ah, du hast es gesehen? Und die Stellung? Weiß am Zug, so heißt es, gewinnt eine Figur. #sprecher:abernathy
+    Ah, du hast es gesehen? Und die Stellung? Weiß am Zug, so heißt es, gewinnt eine Figur. #sprecher:abernathy #stimmung:ueberrascht
 - else:
-    Eine Bank, ein grünes Brett. Weiter weiß ich leider auch nicht. #sprecher:abernathy
+    Eine Bank, ein grünes Brett. Weiter weiß ich leider auch nicht. #sprecher:abernathy #stimmung:nachdenklich
 }
 -> END
 
@@ -73,20 +73,20 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
 ~ abernathyBrief = true
 Mein Brett! Und du hast die Stellung gelöst? Wunderbar. #sprecher:abernathy #stimmung:froh
 Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
-Die Stellung stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy
-Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy
-So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die Abschrift. #sprecher:abernathy
+Die Stellung stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
+Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy #stimmung:nachdenklich
+So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
 Auf dem Heimweg ist Ambrose lange still. #sprecher:erzaehler #pause
 Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #stimmung:still #pause
 * [„Kennst du die Stellung?“]
     Ob ich sie kenne. Es ist meine. Der Anfang. Vier Züge, und im vierten mein Gambit. #sprecher:ambrose #stimmung:still #pause
 * [„Was für eine Partie?“]
     Eine alte. Frag mich ein andermal, Kind. #sprecher:ambrose #stimmung:still
-- Ich bin gerührt. Und beleidigt. Es fehlt ein Bauer. #sprecher:ambrose
+- Ich bin gerührt. Und beleidigt. Es fehlt ein Bauer. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === bibliothekar_alltag ===
-{~Heute habe ich nur die Thermoskanne vergessen. Ein guter Tag.|Margaret spielte jeden Sonntag. Per Post. Ein Zug, eine Briefmarke.|Ein Bibliothekar hört nie auf zu sortieren. Jetzt sortiere ich Enten.} #sprecher:abernathy
+{~Heute habe ich nur die Thermoskanne vergessen. Ein guter Tag.|Margaret spielte jeden Sonntag. Per Post. Ein Zug, eine Briefmarke.|Ein Bibliothekar hört nie auf zu sortieren. Jetzt sortiere ich Enten.} #sprecher:abernathy #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Die Parkbank
@@ -107,7 +107,7 @@ Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #st
 ~ parkbankBrettGefunden = true
 Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zettel. #sprecher:erzaehler
 „Weiß am Zug gewinnt eine Figur.“ #sprecher:erzaehler
-Zähl, Kind. Wer greift an, wer verteidigt? #sprecher:ambrose
+Zähl, Kind. Wer greift an, wer verteidigt? #sprecher:ambrose #stimmung:nachdenklich
 -> parkbank_raetsel
 
 === parkbank_raetsel ===
@@ -133,16 +133,16 @@ Zähl, Kind. Wer greift an, wer verteidigt? #sprecher:ambrose
 // Szene 10 nach dem Roman, Kapitel 7, und der Dialogprüfung (VM52 bis VM56).
 ~ joGetroffen = true
 Auf der Kante der Halfpipe liegt ein Brett, so zerkratzt, dass man die dunklen Felder nur noch erraten kann. Die Figuren stehen schon, mitten in einer Stellung. #sprecher:erzaehler
-Jo. Ich spiele um Limo. #sprecher:skaterJo
+Jo. Ich spiele um Limo. #sprecher:skaterJo #stimmung:laechelt
 -> jo_angebot
 
 === jo_angebot ===
 Fünf Minuten. Eine Partie. Ich spiel nicht von vorn, dauert zu lang. #sprecher:skaterJo
-Du stehst besser. Wer verliert, holt Limo. #sprecher:skaterJo
+Du stehst besser. Wer verliert, holt Limo. #sprecher:skaterJo #stimmung:laechelt
 * [„Abgemacht.“]
     -> jo_duell
 * [„Ein andermal.“]
-    Ich bin hier. Immer. #sprecher:skaterJo
+    Ich bin hier. Immer. #sprecher:skaterJo #stimmung:laechelt
     -> END
 
 === jo_duell ===
@@ -152,7 +152,7 @@ Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:
 -> END
 
 === jo_nach_sieg ===
-Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo
+Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Noch eine.“]
     -> jo_duell
 + [„Gleich.“]
@@ -160,11 +160,11 @@ Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo
 
 === jo_nach_niederlage ===
 {limoGebracht:
-    Gewonnen! Die Limo war gut, aber die Revanche ist besser. #sprecher:skaterJo
+    Gewonnen! Die Limo war gut, aber die Revanche ist besser. #sprecher:skaterJo #stimmung:lacht
 - else:
-    Limo, bitte. Mit Eis. #sprecher:skaterJo
+    Limo, bitte. Mit Eis. #sprecher:skaterJo #stimmung:lacht
 }
-Du hast vergessen zu fragen, was hängt. #sprecher:ambrose
+Du hast vergessen zu fragen, was hängt. #sprecher:ambrose #stimmung:nachdenklich
 + [„Revanche.“]
     -> jo_duell
 + [„Gleich.“]
@@ -178,9 +178,9 @@ Du hast vergessen zu fragen, was hängt. #sprecher:ambrose
 === jo_limo ===
 ~ limoGefragt = true
 {ausgangMapleFallsSkaterJo == "niederlage":
-    Wer verliert, holt Limo. So ist das hier. #sprecher:skaterJo
+    Wer verliert, holt Limo. So ist das hier. #sprecher:skaterJo #stimmung:laechelt
 - else:
-    Limo geht eigentlich auf mich. Aber ich bin pleite. Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo
+    Limo geht eigentlich auf mich. Aber ich bin pleite. Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo #stimmung:laechelt
 }
 Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:skaterJo
 + [„Ich hol eine.“]
@@ -193,11 +193,11 @@ Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:sk
 ~ limoGebracht = true
 Du reichst Jo die kalte Zitronenlimo. Sie trinkt die halbe Flasche in einem Zug, setzt sich auf die Kante und lässt die Beine baumeln. #sprecher:erzaehler
 {ausgangMapleFallsSkaterJo == "niederlage":
-    Ich greif immer an. Rückwärts zieh ich nicht gern. Ist so. #sprecher:skaterJo #pause
-    Auf dem Board auch nicht. #sprecher:skaterJo
+    Ich greif immer an. Rückwärts zieh ich nicht gern. Ist so. #sprecher:skaterJo #stimmung:laechelt #pause
+    Auf dem Board auch nicht. #sprecher:skaterJo #stimmung:laechelt
 - else:
-    Danke. Du hast mich ja schon geschlagen, also verrat ich nicht mehr viel. #sprecher:skaterJo
-    Nur so viel: Rückwärts zieh ich nicht gern. Revanche, wenn ich satt bin. #sprecher:skaterJo
+    Danke. Du hast mich ja schon geschlagen, also verrat ich nicht mehr viel. #sprecher:skaterJo #stimmung:laechelt
+    Nur so viel: Rückwärts zieh ich nicht gern. Revanche, wenn ich satt bin. #sprecher:skaterJo #stimmung:laechelt
 }
 Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung:lacht
 Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
@@ -232,16 +232,16 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 
 === kiosk ===
 {patelGetroffen:
-    {~Na, {held}? Frische Karten sind da. Und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles. Nur keine Siege.} #sprecher:patel
+    {~Na, {held}? Frische Karten sind da. Und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles. Nur keine Siege.} #sprecher:patel #stimmung:laechelt
 - else:
     ~ patelGetroffen = true
     Ein kleiner Kiosk mit bunter Markise. Hinter der Theke sortiert ein Mann Zeitschriften. #sprecher:erzaehler
     Willkommen bei Patel! Zeitungen, Limo und Schachkarten für unterwegs. #sprecher:patel #stimmung:froh
-    Münzen gibt es hier fürs Gewinnen. Bei mir wirst du sie wieder los. #sprecher:patel
+    Münzen gibt es hier fürs Gewinnen. Bei mir wirst du sie wieder los. #sprecher:patel #stimmung:lacht
 }
 {limoGefragt and not limoGebracht and not hatLimo:
-    Für Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel
-    Er zählt das Wechselgeld zweimal. Du bist nicht der Erste. Aber die meisten kommen nicht wieder. #sprecher:patel
+    Für Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel #stimmung:laechelt
+    Er zählt das Wechselgeld zweimal. Du bist nicht der Erste. Aber die meisten kommen nicht wieder. #sprecher:patel #stimmung:laechelt
 }
 ~ oeffneLaden("mapleFalls.kiosk")
 -> END

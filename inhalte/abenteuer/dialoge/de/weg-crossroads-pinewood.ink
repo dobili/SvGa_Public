@@ -50,42 +50,42 @@ VAR baeumeGesehen = false
 ~ gretaGetroffen = true
 ~ varianteBlindschachGelernt = true
 An einer Hütte aus Stämmen sitzen Wanderer mit staubigen Stiefeln. Sie haben kein Brett. Aber sie spielen. #sprecher:erzaehler #musik:aus
-Springer f3. #sprecher:greta
+Springer f3. #sprecher:greta #stimmung:nachdenklich
 d5. #sprecher:erzaehler
 Ein Mann sagt es, ohne die Augen zu öffnen. #sprecher:erzaehler
-Wo ist das Brett? #sprecher:juno
-Wer drei Wochen läuft, trägt kein Holz, das er nicht braucht. Das Brett ist da drin. #sprecher:greta
+Wo ist das Brett? #sprecher:juno #stimmung:ueberrascht
+Wer drei Wochen läuft, trägt kein Holz, das er nicht braucht. Das Brett ist da drin. #sprecher:greta #stimmung:laechelt
 Sie tippt sich an die Stirn. #sprecher:erzaehler
-Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Greta. Ich mach hier den Kaffee. #sprecher:greta
+Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Greta. Ich mach hier den Kaffee. #sprecher:greta #stimmung:laechelt
 Sie lässt dich mitspielen. Nach sechs Zügen weißt du nicht mehr, wo dein Läufer steht. #sprecher:erzaehler #musik:blindschach
-c4. Er steht auf c4. Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose
+c4. Er steht auf c4. Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt
 Er hat die Augen geschlossen, die Hände auf dem Rücken. Sein Gesicht ist so ruhig, wie du es noch nie gesehen hast. #sprecher:erzaehler #musik:ambrose.still
 Zwölf Jahre habe ich Partien in Briefen gespielt. Ich bin mit der Stellung aufgestanden und mit ihr zu Bett gegangen. #sprecher:ambrose #stimmung:friedlich
-Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung. Im Dunkeln. #sprecher:ambrose
+Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung. Im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
 * [„Das klingt furchtbar.“]
-- Es war furchtbar. Aber es ist auch ein Zuhause. Dieses Sehen ohne Augen. #sprecher:ambrose
-Ich habe nicht gewusst, dass man es üben kann. Auf einem Wanderweg, zum Vergnügen. #sprecher:ambrose
-Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose
+- Es war furchtbar. Aber es ist auch ein Zuhause. Dieses Sehen ohne Augen. #sprecher:ambrose #stimmung:nachdenklich
+Ich habe nicht gewusst, dass man es üben kann. Auf einem Wanderweg, zum Vergnügen. #sprecher:ambrose #stimmung:laechelt
+Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose #stimmung:laechelt
 * [„Läufer schlägt f7, Schach.“]
-- Greta macht die Augen auf. Der steht doch gar nicht … #sprecher:greta
+- Greta macht die Augen auf. Der steht doch gar nicht … #sprecher:greta #stimmung:ueberrascht
 Ihre Lippen bewegen sich. #sprecher:erzaehler
-Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta
+Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta #stimmung:laechelt
 * [„Ich hab einen Freund. Der sieht für mich.“]
-- Dann halt ihn fest. Solche findet man nicht oft. #sprecher:greta
+- Dann halt ihn fest. Solche findet man nicht oft. #sprecher:greta #stimmung:laechelt
 -> greta_angebot
 
 === greta_angebot ===
-Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich schreib mit. #sprecher:greta
+Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
 + [Blindschach gegen Ambrose]
     Die Figuren verschwinden. Nur die Züge bleiben. #sprecher:erzaehler
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
 + [„Nicht jetzt.“]
-    Die Hütte steht seit hundert Jahren. Die läuft nicht weg. #sprecher:greta
+    Die Hütte steht seit hundert Jahren. Die läuft nicht weg. #sprecher:greta #stimmung:laechelt
     -> END
 
 === greta_nach_partie ===
-{~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta
+{~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta #stimmung:laechelt
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
     Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
 }
@@ -93,7 +93,7 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
 + [„Ich wandere weiter.“]
-    Gute Wanderung. Die Bären sind satt um diese Zeit. Meistens. #sprecher:greta
+    Gute Wanderung. Die Bären sind satt um diese Zeit. Meistens. #sprecher:greta #stimmung:lacht
     -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -104,7 +104,7 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
     -> END
 }
 An der Hüttenwand hängt eine Schiefertafel: „Drei Stellungen. Erst rechnen, dann ziehen. Wie beim Wandern.“ #sprecher:erzaehler
-Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {held}. #sprecher:ambrose
+Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {held}. #sprecher:ambrose #stimmung:nachdenklich
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCrossroadsPinewood.tafel")
     -> END
@@ -117,7 +117,7 @@ Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {
 {not baeumeGesehen:
     ~ baeumeGesehen = true
     Die Bäume sind so dick, dass zehn Leute sie nicht umfassen. Die Rinde ist rot, weich und tief gefurcht. #sprecher:erzaehler #geraeusch:wald_tief #musik:wald.orgelpunkt
-    Diese sind älter. Älter als die in Cedar Creek, älter als ich, als das Land, als das Spiel. #sprecher:ambrose
+    Diese sind älter. Älter als die in Cedar Creek, älter als ich, als das Land, als das Spiel. #sprecher:ambrose #stimmung:ueberrascht
     Ich nehme zurück, was ich damals gesagt habe. Das hier ist jemand in meinem Alter. #sprecher:ambrose #stimmung:lachtOhneSpott
     -> END
 }
@@ -140,17 +140,17 @@ Der Fernwanderweg führt zurück aus dem Wald, zur Kreuzung in der Prärie. #spr
 {lebendschachGesehen: -> lebendschach_angebot}
 ~ lebendschachGesehen = true
 Auf der Lichtung ist ein Brett aus Rasen und Kies ausgelegt. Dreißig Kinder in weißen und schwarzen Westen warten an den Rändern. #sprecher:erzaehler
-Der Feldherr der Weißen liegt mit Fieber im Zelt. Du kommst wie gerufen. Kannst du kommandieren? #sprecher:ezra
+Der Feldherr der Weißen liegt mit Fieber im Zelt. Du kommst wie gerufen. Kannst du kommandieren? #sprecher:ezra #stimmung:laechelt
 -> lebendschach_angebot
 
 === lebendschach_angebot ===
-Die Kinder ziehen erst, wenn sie den Zug laut hören. Und wer geschlagen werden soll, protestiert. #sprecher:ezra
-Opfere niemanden ohne Not, {held}. Diese Figuren haben eine Stimme. #sprecher:ambrose
+Die Kinder ziehen erst, wenn sie den Zug laut hören. Und wer geschlagen werden soll, protestiert. #sprecher:ezra #stimmung:laechelt
+Opfere niemanden ohne Not, {held}. Diese Figuren haben eine Stimme. #sprecher:ambrose #stimmung:nachdenklich
 + [„Ich kommandiere.“]
     ~ beginneAufgaben("wegCrossroadsPinewood.lebendschach")
     -> END
 + [„Später.“]
-    Wir üben bis zum Sommerfest. Du findest uns hier. #sprecher:ezra
+    Wir üben bis zum Sommerfest. Du findest uns hier. #sprecher:ezra #stimmung:laechelt
     -> END
 
 === lebendschach_ende ===
@@ -161,7 +161,7 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
 -> END
 
 === lebendschach_danach ===
-{~Die Kinder fragen, wann du wieder kommandierst.|Der Feldherr ist wieder gesund. Er sagt, du warst zu streng mit den Bauern.|Das Sommerfest wird groß. Komm, wenn du kannst.} #sprecher:ezra
+{~Die Kinder fragen, wann du wieder kommandierst.|Der Feldherr ist wieder gesund. Er sagt, du warst zu streng mit den Bauern.|Das Sommerfest wird groß. Komm, wenn du kannst.} #sprecher:ezra #stimmung:laechelt
 -> END
 
 === seite10 ===
@@ -171,7 +171,7 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
 }
 ~ seite10Gefunden = true
 Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeichneten Stellung. #sprecher:erzaehler
-Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose
+Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose #stimmung:nachdenklich
 ~ gibFund("seite10")
 ~ buchseiten = buchseiten + 1
 -> END
@@ -185,7 +185,7 @@ Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambro
 }
 ~ finchDameGefunden = true
 In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fink aus Blech. Darunter steckt eine weiße Dame aus Buchsbaum. Unter ihrem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
-Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose
+Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose #stimmung:laechelt
 ~ gibFund("finchDame")
 ~ finchFiguren = finchFiguren + 1
 -> END
@@ -199,7 +199,7 @@ Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas
 }
 ~ kreide4Gefunden = true
 An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, klein: „K4. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
-Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose
+Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose #stimmung:laechelt
 ~ gibFund("kreide4")
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 -> END

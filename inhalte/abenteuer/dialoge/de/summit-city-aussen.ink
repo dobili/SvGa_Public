@@ -46,18 +46,18 @@ VAR abschiedSummitGesehen = false
 Summit City liegt so hoch, dass man die Wolken von oben sieht. Holzhäuser, eine Seilbahn, die leise surrt. #sprecher:erzaehler
 Es ist Juli, und auf den Gipfeln liegt Schnee. #sprecher:erzaehler
 Zwischen den Häusern pfeift etwas, schrill und kurz. #sprecher:erzaehler #klang:murmeltier
-Murmeltiere. Die warnen sich. #sprecher:mutter
+Murmeltiere. Die warnen sich. #sprecher:mutter #stimmung:laechelt
 * [„Wovor?“]
-- Vor uns. #sprecher:mutter
+- Vor uns. #sprecher:mutter #stimmung:lacht
 An der Seilbahnstation glänzt ein Plakat: „Landesmeisterschaft der Jugend. Präsentiert von Perfect Move.“ Acht Gesichter. #sprecher:erzaehler
 Das zweite ist Nova. Das vierte Victor. Das achte bist du. #sprecher:erzaehler
 Das ist von meinem Foto! Da hast du Ketchup am Kinn! #sprecher:juno #stimmung:froh
 * [Zum Hotel sehen]
 - Vor dem Hotel steht Victor, in Weiß. Ein Mann im grauen Anzug beugt sich zu ihm und sagt ihm etwas ins Ohr. Victor nickt. #sprecher:erzaehler
 * [„Der Trainer, der kein Mensch ist.“]
-- Der dort ist ein Mensch. Aber ich glaube, er ist nur der Bote. #sprecher:ambrose
+- Der dort ist ein Mensch. Aber ich glaube, er ist nur der Bote. #sprecher:ambrose #stimmung:nachdenklich
 Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt unten. #sprecher:erzaehler
-Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten Tag begegnen. #sprecher:mutter
+Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten Tag begegnen. #sprecher:mutter #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Sol auf dem Gipfelfelsen (Szene 89)
@@ -73,33 +73,33 @@ Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten 
 === sol_erstes_treffen ===
 ~ solGetroffen = true
 Auf dem Gipfelfelsen sitzt eine Frau mit Kletterseil über der Schulter. Vor ihr ein Brett und eine Uhr. #sprecher:erzaehler
-Sol. Bergführerin. Wer hier oben ankommt, spielt eine Partie gegen mich. #sprecher:sol
-Mit Uhr. Das Wetter schlägt schneller um, als man denkt. #sprecher:sol
+Sol. Bergführerin. Wer hier oben ankommt, spielt eine Partie gegen mich. #sprecher:sol #stimmung:laechelt
+Mit Uhr. Das Wetter schlägt schneller um, als man denkt. #sprecher:sol #stimmung:nachdenklich
 -> sol_angebot
 
 === sol_angebot ===
-Drei Minuten, zwei Sekunden Zuschlag. Eine Stellung, du hast Weiß. Bevor die Wolken kommen? #sprecher:sol
+Drei Minuten, zwei Sekunden Zuschlag. Eine Stellung, du hast Weiß. Bevor die Wolken kommen? #sprecher:sol #stimmung:laechelt
 + [„Los.“]
-    Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose
+    Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose #stimmung:laechelt
     ~ beginnePartie("summitCity.sol")
     -> END
 + [„Nicht jetzt.“]
-    Der Felsen läuft nicht weg. Die Wolken schon. #sprecher:sol
+    Der Felsen läuft nicht weg. Die Wolken schon. #sprecher:sol #stimmung:laechelt
     -> END
 
 === sol_nach_sieg ===
 {not solKarteGegeben:
     ~ solKarteGegeben = true
     Gewonnen, und keine Sekunde Panik. So steigt man auf einen Berg. #sprecher:sol #stimmung:froh
-    Nimm die. Für die Partie, in der die Uhr dich jagt. #sprecher:sol
+    Nimm die. Für die Partie, in der die Uhr dich jagt. #sprecher:sol #stimmung:laechelt
     ~ gibKarte("kuehlerKopf")
 }
-Noch eine? Die Sonne hält noch eine Weile. #sprecher:sol
+Noch eine? Die Sonne hält noch eine Weile. #sprecher:sol #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("summitCity.sol")
     -> END
 + [„Ich steige ab.“]
-    Langsam abwärts. Abwärts passieren die Unfälle. #sprecher:sol
+    Langsam abwärts. Abwärts passieren die Unfälle. #sprecher:sol #stimmung:nachdenklich
     -> END
 
 === sol_nach_niederlage ===
@@ -149,7 +149,7 @@ Eine Figur, die alles darf. Und keiner hier findet das ungerecht. #sprecher:ambr
 === drachenfest_angebot ===
 // VARIANTE-FEHLT: Drache (L10). Bis sie gebaut ist, nur die Regel und eine Vertröstung.
 Alle Bretter sind belegt. Die Bergführer spielen bis Mitternacht, und die Kinder schauen zu. #sprecher:erzaehler
-Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt. #sprecher:ambrose
+Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === drachenfest_alltag ===
@@ -184,7 +184,7 @@ Ein Plakat am Platz: „Landesmeisterschaft – Finale in der Capital Arena“. 
 === fernrohr ===
 Vom Felsplateau sieht man über das ganze Tal. Die Gondel hängt wie eine Figur am Faden über dem Abgrund. #sprecher:erzaehler
 {ambroseSprichtWieder:
-    Von hier oben sieht das Tal aus wie ein Brett nach der Eröffnung. Alles steht noch, nichts ist entschieden. #sprecher:ambrose
+    Von hier oben sieht das Tal aus wie ein Brett nach der Eröffnung. Alles steht noch, nichts ist entschieden. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 // <<< Runde 6 (mittel-4)

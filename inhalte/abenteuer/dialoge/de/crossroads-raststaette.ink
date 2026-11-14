@@ -53,7 +53,7 @@ VAR kaffeehausGesehen = false
     Hinter der Theke Darlene. Sechzig, mit den Händen von einer, die vierzig Jahre Kaffee eingeschenkt hat. #sprecher:erzaehler #bild:aus
     Der Varianten-Tisch. Jeder, der hier durchkommt, bringt ein Spiel mit. Ich heb sie auf. Du hast auch welche mitgebracht, hör ich. #sprecher:darlene #stimmung:froh
 - else:
-    {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene
+    {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene #stimmung:laechelt
 }
 {slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
 ~ oeffneLaden("crossroads.raststaette")
@@ -65,9 +65,9 @@ VAR kaffeehausGesehen = false
 ~ lieferungFuerDolores = true
 ~ gatterschluessel = true
 Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen. #sprecher:erzaehler
-Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene
+Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene #stimmung:laechelt
 Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Nova sagt, du musst nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene
-Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose
+Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Nova (Szene 93)
@@ -75,7 +75,7 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 === nova ===
 {novaBitteGehoert and slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and not kaffeehausGesehen: -> kaffeehaus}
 {novaBitteGehoert:
-    {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut an.} #sprecher:nova
+    {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut an.} #sprecher:nova #stimmung:nachdenklich
     -> END
 }
 -> nova_bitte
@@ -85,16 +85,16 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 // Stimme. Der Ohrstöpsel von der Glasbrücke wird zum Beweis.
 ~ novaBitteGehoert = true
 In der hintersten Ecke, an einem Tisch für zwei, sitzt Nova allein. Pullover, zu groß, die Ärmel über den Händen. Ein Kakao, den sie nicht angerührt hat. #sprecher:erzaehler #musik:aus
-Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. Sie hat gekündigt. #sprecher:nova
+Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. Sie hat gekündigt. #sprecher:nova #stimmung:nachdenklich
 Sie hat nicht gefragt, ob es stimmt. Sie hat gefragt, wie es mir geht. Das hat mich seit zwei Jahren keiner gefragt. #sprecher:nova #stimmung:riss
-Ich sage aus. Bei der Meisterschaft. Sie kommt mit. Sie bringt die Berichte. #sprecher:nova
-Du hast noch den einen. Den von der Brücke. #sprecher:nova
+Ich sage aus. Bei der Meisterschaft. Sie kommt mit. Sie bringt die Berichte. #sprecher:nova #stimmung:nachdenklich
+Du hast noch den einen. Den von der Brücke. #sprecher:nova #stimmung:nachdenklich
 Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
-Hilfst du mir? #sprecher:nova
+Hilfst du mir? #sprecher:nova #stimmung:nachdenklich
 * [„Ja.“]
     ~ novaHilfeZugesagt = true
 - Sie nickt und zieht den Kakao zu sich. #sprecher:erzaehler
-Ich hab Angst. Nicht vor denen. Davor, was ich bin, wenn ich es nicht mehr im Ohr habe. Vielleicht bin ich schlecht. #sprecher:nova
+Ich hab Angst. Nicht vor denen. Davor, was ich bin, wenn ich es nicht mehr im Ohr habe. Vielleicht bin ich schlecht. #sprecher:nova #stimmung:bitter
 * [„Vierundsiebzig Prozent.“]
 - „Ich hab deine Trainingspartien gesehen. Du bist besser als ich.“ #sprecher:erzaehler
 „Im Training hattest du es nie. Das waren deine.“ #sprecher:erzaehler #pause
@@ -117,19 +117,19 @@ Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines
 
 === theo ===
 {theoTabletZurueck:
-    {~Ich messe noch, ob es sich lohnt. Ich glaub, ich geh hin.|Angst kann man nicht messen. Hm.} #sprecher:theo
+    {~Ich messe noch, ob es sich lohnt. Ich glaub, ich geh hin.|Angst kann man nicht messen. Hm.} #sprecher:theo #stimmung:nachdenklich
     -> END
 }
 ~ theoTabletZurueck = true
 Am Fenster sitzt Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler
-Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo
+Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo #stimmung:ueberrascht
 * [„Es ist das Beste, was ich je gesehen habe.“]
-- Aber? #sprecher:theo
+- Aber? #sprecher:theo #stimmung:nachdenklich
 * [„Es sagt nicht, warum man Angst hatte.“]
 - Er tippt etwas ein. Dann hört er auf zu tippen. #sprecher:erzaehler #klang:tippen_hoert_auf
-Das kann man nicht messen. #sprecher:theo
-Dr. Lin hat gekündigt. Sie macht einen Club auf. In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt. #sprecher:theo
-Ich glaub, ich geh hin. #sprecher:theo
+Das kann man nicht messen. #sprecher:theo #stimmung:nachdenklich
+Dr. Lin hat gekündigt. Sie macht einen Club auf. In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt. #sprecher:theo #stimmung:nachdenklich
+Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Varianten-Tisch

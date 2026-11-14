@@ -41,30 +41,30 @@ VAR coachCrossroadsGetroffen = false
 Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #geraeusch:crossroads_stimmen #licht:abend
 An der Ecke eine Raststätte, niedrig und breit, mit Veranda rundherum: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
 Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus
-Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter
+Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Slick
 
 === slick ===
 {slickGetroffen:
-    {~Wände sind was für Leute, die Angst vor Wetter haben.|Meine Pokale sind schief. Aber es sind welche.|Tamsin hat nur einmal verloren. Deshalb ja.} #sprecher:slick
+    {~Wände sind was für Leute, die Angst vor Wetter haben.|Meine Pokale sind schief. Aber es sind welche.|Tamsin hat nur einmal verloren. Deshalb ja.} #sprecher:slick #stimmung:lacht
     -> END
 }
 // Kapitel 53 (Roman): Slick redet langsamer und lässt Platz zwischen den Sätzen.
 ~ slickGetroffen = true
 Auf dem Geländer der Veranda sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
-… und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick
+… und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick #stimmung:lacht
 Er sieht dich und rutscht vom Geländer. #sprecher:erzaehler
 Maple Falls! #sprecher:slick #stimmung:froh
 Hast du den Springer? #sprecher:tamsin
 * [Den Springer aus Stein hervorholen]
 - Slick dreht ihn in den Fingern. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
-Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. In einer Garage in der Wüste. #sprecher:slick
-Ich hab es an die Brücke gehängt. Unter den Bogen, wo der Stein liegt. #sprecher:slick
-Ich hab seit März wieder angefangen. Mit den Dosen. Meine sind schief. Tamsin hat einen gekriegt. Bester Verlierer. #sprecher:slick
-Ich hab nur einmal verloren! #sprecher:tamsin
-Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. Der gehört auf den Stein. #sprecher:slick
+Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. In einer Garage in der Wüste. #sprecher:slick #stimmung:laechelt
+Ich hab es an die Brücke gehängt. Unter den Bogen, wo der Stein liegt. #sprecher:slick #stimmung:laechelt
+Ich hab seit März wieder angefangen. Mit den Dosen. Meine sind schief. Tamsin hat einen gekriegt. Bester Verlierer. #sprecher:slick #stimmung:laechelt
+Ich hab nur einmal verloren! #sprecher:tamsin #stimmung:bitter
+Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. Der gehört auf den Stein. #sprecher:slick #stimmung:lacht
 Es ist recht. #sprecher:erzaehler
 -> END
 
@@ -79,7 +79,7 @@ Es ist recht. #sprecher:erzaehler
 Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
 Du. Noch mal. Jetzt. #sprecher:mira
 * [„Nach dem Essen.“]
-- Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft. #sprecher:mira
+- Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft. #sprecher:mira #stimmung:laechelt
 Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler #musik:crossroads
 -> END
 
@@ -87,19 +87,19 @@ Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler 
 
 === big_joe ===
 {bigJoeCrossroadsGetroffen:
-    {~Geliehen ist ein großes Wort, Kumpel.|Zwölf Mann, ein Heizstrahler. Mehr braucht ein Club nicht.|Der Pokal steht jetzt auf der Werkbank. Laurie hat gesagt, er soll stehen, wo man ihn sieht.} #sprecher:bigJoe
+    {~Geliehen ist ein großes Wort, Kumpel.|Zwölf Mann, ein Heizstrahler. Mehr braucht ein Club nicht.|Der Pokal steht jetzt auf der Werkbank. Laurie hat gesagt, er soll stehen, wo man ihn sieht.} #sprecher:bigJoe #stimmung:lacht
     -> END
 }
 // Kapitel 53 (Roman): Big Joe hebt {held} hoch; der Club spielt jetzt in seiner Garage.
 ~ bigJoeCrossroadsGetroffen = true
 Kumpel! #sprecher:bigJoe #stimmung:froh
 Big Joe braucht eine Weile, bis er ausgestiegen ist. Dann hebt er dich hoch. Einfach so, mit dem Rucksack. #sprecher:erzaehler
-Acht! Hab ich gehört! Die Ward! Die hat mich neunzehnachtundachtzig in sechzig Zügen zerlegt. #sprecher:bigJoe
-Wir fahren zur Meisterschaft. Die ganze Schicht. Den Bus hab ich geliehen. Geliehen ist ein großes Wort. #sprecher:bigJoe
+Acht! Hab ich gehört! Die Ward! Die hat mich neunzehnachtundachtzig in sechzig Zügen zerlegt. #sprecher:bigJoe #stimmung:lacht
+Wir fahren zur Meisterschaft. Die ganze Schicht. Den Bus hab ich geliehen. Geliehen ist ein großes Wort. #sprecher:bigJoe #stimmung:lacht
 * [„Wo spielt ihr jetzt?“]
 - Sein Gesicht wird einen Moment lang ernst. #sprecher:erzaehler
-In meiner Garage. Zwölf Mann, ein Heizstrahler. Die Tische in der Kantine leuchten, hab ich gehört. Es geht keiner hin. #sprecher:bigJoe
-Das Stahlbrett steht auf der Werkbank. Und daneben der Pokal von zweitausendeins. Deine Mutter hat gesagt, er soll stehen, wo man ihn sieht. #sprecher:bigJoe
+In meiner Garage. Zwölf Mann, ein Heizstrahler. Die Tische in der Kantine leuchten, hab ich gehört. Es geht keiner hin. #sprecher:bigJoe #stimmung:nachdenklich
+Das Stahlbrett steht auf der Werkbank. Und daneben der Pokal von zweitausendeins. Deine Mutter hat gesagt, er soll stehen, wo man ihn sieht. #sprecher:bigJoe #stimmung:laechelt
 Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #sprecher:erzaehler
 -> END
 
@@ -112,7 +112,7 @@ Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #s
     Davor redet Dash auf Buck ein, Buck redet zurück. Keiner hört dem anderen zu, und beide sind glücklich. #sprecher:erzaehler
     Wo Schachspieler sind, ist Hunger. Das hab ich in Silicon Bay gelernt. #sprecher:rosie #stimmung:froh
 - else:
-    {~Heute im Angebot: alles. Wie immer.|Die Sauce ist neu. Scharf wie ein Doppelangriff.} #sprecher:rosie
+    {~Heute im Angebot: alles. Wie immer.|Die Sauce ist neu. Scharf wie ein Doppelangriff.} #sprecher:rosie #stimmung:lacht
 }
 ~ oeffneLaden("siliconBay.foodtruck")
 -> END
@@ -122,22 +122,22 @@ Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #s
 
 === coach ===
 {coachCrossroadsGetroffen:
-    {~Aufstellung! Wer zuletzt am Büfett ist, spielt gegen Mira!|Mr. Pratt verkauft den Kuchen. Er ist erschreckend gut darin.} #sprecher:coachDelgado
+    {~Aufstellung! Wer zuletzt am Büfett ist, spielt gegen Mira!|Mr. Pratt verkauft den Kuchen. Er ist erschreckend gut darin.} #sprecher:coachDelgado #stimmung:lacht
     -> END
 }
 ~ coachCrossroadsGetroffen = true
 Auf der Veranda pfeift jemand. Auf zwei Fingern. Du kennst den Pfiff. #sprecher:erzaehler #klang:pfiff
 Coach Delgado zählt neben einem Schulbus Köpfe. Sam, zwei Jüngere. Und eine Siebzehnjährige mit Fahrrad auf dem Dachträger, die so tut, als gehöre sie nicht dazu. #sprecher:erzaehler
 Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal. Sie hat es dreimal gesagt. #sprecher:juno #stimmung:froh
-Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado
+Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado #stimmung:lacht
 * [„Was ist mit dem Bildschirm im Clubraum?“]
 - Sie wird nicht verlegen. Sie sieht dich gerade an. #sprecher:erzaehler
-Ich hab unterschrieben. Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. #sprecher:coachDelgado
-Wir hatten kein Geld für den Bus nach Cedar Creek. Die haben den Bus bezahlt und die Bretter und das Startgeld für sieben Kinder. #sprecher:coachDelgado
-Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. #sprecher:coachDelgado
-Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado
+Ich hab unterschrieben. Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. #sprecher:coachDelgado #stimmung:nachdenklich
+Wir hatten kein Geld für den Bus nach Cedar Creek. Die haben den Bus bezahlt und die Bretter und das Startgeld für sieben Kinder. #sprecher:coachDelgado #stimmung:nachdenklich
+Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. #sprecher:coachDelgado #stimmung:bitter
+Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado #stimmung:laechelt
 Der Bildschirm steht im Flur und zeigt den Vertretungsplan. Das Beste, was er je gezeigt hat. #sprecher:coachDelgado #stimmung:lachtOhneSpott
-Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut darin. #sprecher:coachDelgado
+Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut darin. #sprecher:coachDelgado #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Wegweiser und Wege
@@ -166,7 +166,7 @@ Ein Wanderweg führt nach Norden in den Wald. Ein Schild: „Fernwanderweg – P
 === viehgatter ===
 {gatterschluessel: -> viehgatter_offen}
 Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf dem Asphalt. Am Gatter hängt ein Schild: „Privatweg. Schlüssel bei Darlene.“ #sprecher:erzaehler
-Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose
+Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 === viehgatter_offen ===

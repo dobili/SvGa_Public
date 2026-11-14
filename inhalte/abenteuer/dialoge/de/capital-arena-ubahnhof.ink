@@ -29,12 +29,12 @@ VAR kreidenachtErledigt = false
 === mo_erstes ===
 ~ moGetroffen = true
 Eine Frau mit Kreide an den Fingern steht auf einer Bank und klatscht in die Hände. #sprecher:erzaehler
-Mo. Willkommen in der Nacht der Kreidespringer. Drei Runden Blitz, drei Minuten, zwei Sekunden Zuschlag. Gewinnen ist schön, mitspielen ist Pflicht. #sprecher:mo
-Alle sind hier: die von der Brücke, von der Raststätte, aus dem Diner, aus den Wäldern. #sprecher:mo
+Mo. Willkommen in der Nacht der Kreidespringer. Drei Runden Blitz, drei Minuten, zwei Sekunden Zuschlag. Gewinnen ist schön, mitspielen ist Pflicht. #sprecher:mo #stimmung:laechelt
+Alle sind hier: die von der Brücke, von der Raststätte, aus dem Diner, aus den Wäldern. #sprecher:mo #stimmung:laechelt
 -> mo_runde1
 
 === mo_runde1 ===
-Runde eins. Dime wartet schon, und Dime wartet nicht gern. #sprecher:mo
+Runde eins. Dime wartet schon, und Dime wartet nicht gern. #sprecher:mo #stimmung:laechelt
 + [Runde eins spielen]
     ~ beginnePartie("capitalArena.kreidenacht1")
     -> END
@@ -42,7 +42,7 @@ Runde eins. Dime wartet schon, und Dime wartet nicht gern. #sprecher:mo
     -> END
 
 === mo_runde2 ===
-Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, warum. #sprecher:mo
+Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, warum. #sprecher:mo #stimmung:lacht
 + [Runde zwei spielen]
     ~ beginnePartie("capitalArena.kreidenacht2")
     -> END
@@ -50,7 +50,7 @@ Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, 
     -> END
 
 === mo_runde3 ===
-Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine Uhr läuft schon. #sprecher:mo
+Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine Uhr läuft schon. #sprecher:mo #stimmung:nachdenklich
 + [Runde drei spielen]
     ~ beginnePartie("capitalArena.kreidenacht3")
     -> END
@@ -60,16 +60,16 @@ Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine U
 === mo_victor ===
 ~ kreidenachtErledigt = true
 Nach dem letzten Zug zieht dein Gegner die Kapuze vom Kopf. Es ist Victor. #sprecher:erzaehler
-Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. Hier spiele ich nur. #sprecher:victor
-Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:victor
-Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo
+Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. Hier spiele ich nur. #sprecher:victor #stimmung:nachdenklich
+Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:victor #stimmung:laechelt
+Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo #stimmung:laechelt
 ~ gibKarte("sanduhr")
 ~ gibFund("fotoKreidenacht")
 Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. So war es im Kaffeehaus auch. #sprecher:ambrose #stimmung:friedlich
 -> END
 
 === mo_danach ===
-{~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor kommt jetzt jeden Donnerstag. Er sagt, wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo
+{~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor kommt jetzt jeden Donnerstag. Er sagt, wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 -> END
 
 === ereignis_kreidenacht ===

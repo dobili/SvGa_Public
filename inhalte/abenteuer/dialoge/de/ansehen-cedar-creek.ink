@@ -46,7 +46,7 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenSchildFluestern = true
     Ein Schild am Tresen: „Bitte flüstern“. #sprecher:erzaehler
-    Flüstern. Das kann ich. Mich hört ohnehin nur einer. #sprecher:ambrose
+    Flüstern. Das kann ich. Mich hört ohnehin nur einer. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -69,7 +69,7 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenBoxerfoto = true
     Ein vergilbtes Foto: ein Boxer mit erhobenen Fäusten, darunter „Cedar Creek, 1923“. #sprecher:erzaehler
-    Ein Mann mit zwei Talenten. Das zweite war das bessere. #sprecher:ambrose
+    Ein Mann mit zwei Talenten. Das zweite war das bessere. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -79,7 +79,7 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenWasserfleck = true
     An der Wand ein Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler
-    Ein Springer. Das Wasser hat sich Mühe gegeben. #sprecher:ambrose
+    Ein Springer. Das Wasser hat sich Mühe gegeben. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -109,6 +109,6 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenAutomat = true
     Ein Automat für Waschpulver und Kaugummi. Eine Kugel Kaugummi kostet eine Münze. #sprecher:erzaehler
-    Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose
+    Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END

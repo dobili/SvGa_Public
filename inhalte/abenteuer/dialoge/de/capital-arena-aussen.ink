@@ -50,7 +50,7 @@ VAR wandererCapitalGetroffen = false
     -> END
 }
 {not abeGetroffen:
-    Der Mann am Turm hat ein Brett. Lass uns einen Augenblick bleiben. #sprecher:ambrose
+    Der Mann am Turm hat ein Brett. Lass uns einen Augenblick bleiben. #sprecher:ambrose #stimmung:laechelt
     -> END
 }
 ~ ankunftCapitalArenaGesehen = true
@@ -62,7 +62,7 @@ Am Morgen steht ihr davor. #sprecher:erzaehler
 Deines hat noch immer Ketchup am Kinn. #sprecher:erzaehler
 Auf dem Platz stehen Busse. Der graue mit den Rostflecken. Ein Kleinbus mit „RIVETON“ aus Klebeband. #sprecher:erzaehler
 Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstocher am Rückspiegel. #sprecher:erzaehler
-Sie sind alle gekommen. #sprecher:mutter
+Sie sind alle gekommen. #sprecher:mutter #stimmung:ueberrascht
 * [Zur Treppe sehen]
 - Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
 Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. Miss Odile, Remy, Lou. Mira auf Tomás’ Schultern. Dot mit Lockenwicklern. #sprecher:erzaehler
@@ -102,7 +102,7 @@ Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. Einma
 * [Den Teilnehmerausweis anstecken]
 - Heute ist Ruhe am Brett. Und heute spielt man ehrlich. Es ist lange her, dass ich das von einem Turnier sagen konnte. #sprecher:ambrose #stimmung:froh
 * [„Warst du je auf so einem?“]
-- Dreihundert Leute in einem Saal in New York. Ich fand es gewaltig. #sprecher:ambrose
+- Dreihundert Leute in einem Saal in New York. Ich fand es gewaltig. #sprecher:ambrose #stimmung:laechelt
 Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -113,9 +113,9 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 - finaleGespielt():
     Ich bin so stolz auf dich. {ausgangCapitalArenaFinale == "sieg":Nicht wegen des Titels. }Wegen allem. #sprecher:mutter #stimmung:froh
 - arenaGesehen:
-    Ich hab Kaffee für alle. Und Brötchen. Und ein Pflaster, falls du dich am Brett stößt. #sprecher:mutter
+    Ich hab Kaffee für alle. Und Brötchen. Und ein Pflaster, falls du dich am Brett stößt. #sprecher:mutter #stimmung:laechelt
 - else:
-    Geh ruhig rein. Ich warte hier mit Juno auf die anderen. #sprecher:mutter
+    Geh ruhig rein. Ich warte hier mit Juno auf die anderen. #sprecher:mutter #stimmung:laechelt
 }
 -> END
 
@@ -153,26 +153,26 @@ Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahn
 Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Zwei Könige. Ein Springer. Die Schlussstellung. #sprecher:erzaehler
 Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
 * [„Hast du es gesehen?“]
-- Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. Die Großmeisterin hat mich angesehen, als wüsste sie es. #sprecher:ambrose
-Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich nicht zu wünschen gewagt. #sprecher:ambrose
+- Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. Die Großmeisterin hat mich angesehen, als wüsste sie es. #sprecher:ambrose #stimmung:laechelt
+Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich nicht zu wünschen gewagt. #sprecher:ambrose #stimmung:laechelt
 * [„War es richtig?“]
 - Ich weiß es nicht. Ich habe es nicht nachgerechnet. Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
 Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine Ecke. Graham Hale hat keinen Stift in der Hand. #sprecher:erzaehler
 -> abschied_rede
 
 === abschied_rede ===
-Ich muss dir etwas sagen. Hör zu, ich sage es nur einmal. #sprecher:ambrose
-Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambrose
-{ausgangGhostTownFernpartie == "remis":Die Fernpartie ist remis, mit einem Fehler darin.|Die Fernpartie hatte einen Fehler darin.} Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose
+Ich muss dir etwas sagen. Hör zu, ich sage es nur einmal. #sprecher:ambrose #stimmung:nachdenklich
+Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambrose #stimmung:nachdenklich
+{ausgangGhostTownFernpartie == "remis":Die Fernpartie ist remis, mit einem Fehler darin.|Die Fernpartie hatte einen Fehler darin.} Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose #stimmung:nachdenklich
 * [„Tut mir leid.“]
 - Sei still. Ich bin noch nicht fertig. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh #musik:abschied
 * [Zuhören]
-- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":Einen Jungen, der vor Freude rennt, weil er verloren hat.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.} #sprecher:ambrose
-Menschen, die kämpfen. Die Fehler machen. Und wachsen. #sprecher:ambrose #pause:2
-Das ist es, was schön ist an diesem Spiel. Nicht die Züge. Die waren nie das Schöne. #sprecher:ambrose
+- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":Einen Jungen, der vor Freude rennt, weil er verloren hat.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.} #sprecher:ambrose #stimmung:laechelt
+Menschen, die kämpfen. Die Fehler machen. Und wachsen. #sprecher:ambrose #stimmung:laechelt #pause:2
+Das ist es, was schön ist an diesem Spiel. Nicht die Züge. Die waren nie das Schöne. #sprecher:ambrose #stimmung:laechelt
 Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
-- Wofür? #sprecher:ambrose
+- Wofür? #sprecher:ambrose #stimmung:ueberrascht
 * [„Für Was hängt? Für den Turm heute.“]
 - Das war das Geringste. Das weiß jeder. #sprecher:ambrose #stimmung:lacht
 -> abschied_verbeugung
@@ -180,10 +180,10 @@ Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffe
 === abschied_verbeugung ===
 Die Sonne steht tief. Er ist jetzt so durchsichtig, dass du nicht mehr sicher bist, ob du ihn siehst. #sprecher:erzaehler
 * [„Ich werde dich vermissen.“]
-- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose
-Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose
+- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose #stimmung:laechelt
+Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose #stimmung:nachdenklich
 Er steht auf und macht eine kleine, steife Verbeugung. Wie am ersten Tag. #sprecher:erzaehler
-Ambrose Whitlock, zu Diensten. Es war mir eine Ehre, {held}. #sprecher:ambrose
+Ambrose Whitlock, zu Diensten. Es war mir eine Ehre, {held}. #sprecher:ambrose #stimmung:laechelt
 * [„Später?“]
 - Er sieht dich an. #sprecher:erzaehler #musik:aus #pause:2
 Dann lacht er, laut, von ganz unten. Das Lachen vom Steg und aus der Garage. #sprecher:erzaehler
@@ -218,21 +218,21 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
 === wanderer ===
 {
 - buchGeschenkt:
-    {~Ich sammle weiter. Der Wind hilft mir dabei, ob ich will oder nicht.|Wenn du nicht weiterweißt: Geh ein Stück. Unterwegs fällt einem das meiste ein.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer
+    {~Ich sammle weiter. Der Wind hilft mir dabei, ob ich will oder nicht.|Wenn du nicht weiterweißt: Geh ein Stück. Unterwegs fällt einem das meiste ein.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer #stimmung:laechelt
 - finaleGespielt() and wandererSeitenZurueck >= 13:
     -> wanderer_buch
 - wandererSeitenZurueck >= 13:
     Alle dreizehn Blätter sind beim Buchbinder. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer
 - else:
     ~ wandererCapitalGetroffen = true
-    Der Buchbinder ist gleich um die Ecke. Aber ohne die fehlenden Blätter will ich da nicht hinein. #sprecher:wanderer
+    Der Buchbinder ist gleich um die Ecke. Aber ohne die fehlenden Blätter will ich da nicht hinein. #sprecher:wanderer #stimmung:nachdenklich
 }
 -> END
 
 === wanderer_buch ===
 ~ buchGeschenkt = true
 Der Mann mit dem gelben Rucksack hält einen Packen alter Blätter in den Händen, frisch gebunden, in einem Leinendeckel. #sprecher:erzaehler
-Für dich. Dreizehn Blätter haben gefehlt, und jedes hast du einmal in der Hand gehabt. #sprecher:wanderer
+Für dich. Dreizehn Blätter haben gefehlt, und jedes hast du einmal in der Hand gehabt. #sprecher:wanderer #stimmung:laechelt
 ~ gibFund("buchVonGrundAuf")
 Stellungen, die jemand aufgehoben hat. Das kenne ich. #sprecher:ambrose #stimmung:froh
 -> END

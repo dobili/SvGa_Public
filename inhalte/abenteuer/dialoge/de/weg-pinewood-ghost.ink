@@ -17,13 +17,13 @@ VAR juniperGetroffen = false
 
 === juniper ===
 {juniperGetroffen:
-    {~Drei Schachs, drei Echos. Dann ist die Partie vorbei.|Das Seil hält. Das Brett auch.|Hinter der Staubstraße liegt Ghost Town. Niemand wohnt da. Fast niemand.} #sprecher:juniper
+    {~Drei Schachs, drei Echos. Dann ist die Partie vorbei.|Das Seil hält. Das Brett auch.|Hinter der Staubstraße liegt Ghost Town. Niemand wohnt da. Fast niemand.} #sprecher:juniper #stimmung:laechelt
     -> END
 }
 ~ juniperGetroffen = true
 Am Canyonrand hängt eine Frau im Seil und winkt. Unten auf einem Felsvorsprung steht ein Brett. #sprecher:erzaehler
-Juniper. Wir Kletterer spielen hier Drei-Schach. Wer dreimal Schach gibt, gewinnt. #sprecher:juniper
-Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schluss. #sprecher:juniper
+Juniper. Wir Kletterer spielen hier Drei-Schach. Wer dreimal Schach gibt, gewinnt. #sprecher:juniper #stimmung:laechelt
+Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schluss. #sprecher:juniper #stimmung:laechelt
 Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. Ein seltsames, schönes Spiel. #sprecher:erzaehler #geraeusch:canyonrand
 Aber Ambrose ist still geworden. Er sieht nach Norden. #sprecher:erzaehler
 -> END
@@ -77,7 +77,7 @@ Eine verlassene Tankstelle, die Zapfsäulen voller Staub. Auf dem Dach glänzt e
 Von drinnen kommt ein Geräusch: klack. Pause. Klack. #sprecher:erzaehler
 Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #sprecher:erzaehler
 {ambroseSprichtWieder:
-    Gespenster spielen nicht in Tankstellen. Ich muss es wissen. #sprecher:ambrose
+    Gespenster spielen nicht in Tankstellen. Ich muss es wissen. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 
@@ -113,7 +113,7 @@ Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauer
 „Danke für die Partie.“ #sprecher:greifarm
 ~ gibFund("bauerZ1")
 {ambroseSprichtWieder:
-    Eine Nähmaschine mit Ehrgeiz. Lasst ihn spielen, er hat sonst niemanden. #sprecher:ambrose
+    Eine Nähmaschine mit Ehrgeiz. Lasst ihn spielen, er hat sonst niemanden. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 

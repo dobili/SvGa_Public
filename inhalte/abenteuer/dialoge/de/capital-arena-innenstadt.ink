@@ -27,7 +27,7 @@ VAR kreideTreffpunkte = 0
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 Neben dem Rollgitter hat jemand einen Springer auf das Pflaster gemalt, mit Kreide, ganz frisch. Darunter eine kleine Stellung. #sprecher:erzaehler
 ~ gibFund("kreide5")
-Der Springer springt über die Mauer, nicht durch die Tür. Die Kreidespringer wohnen hier unten. #sprecher:ambrose
+Der Springer springt über die Mauer, nicht durch die Tür. Die Kreidespringer wohnen hier unten. #sprecher:ambrose #stimmung:laechelt
 -> kreide_raetsel
 
 === kreide_raetsel ===

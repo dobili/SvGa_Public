@@ -46,16 +46,16 @@ VAR gueterzugGesehen = false
 
 === fenwick ===
 {fenwickGetroffen:
-    {~Immer den Gleisen nach. Der Wald hat Zeit. Du auch.|Zähl zuerst, wer verteidigt. Dann greif an.|Grüß Riverton von mir. Und nehmt einen Schirm mit.} #sprecher:fenwick
+    {~Immer den Gleisen nach. Der Wald hat Zeit. Du auch.|Zähl zuerst, wer verteidigt. Dann greif an.|Grüß Riverton von mir. Und nehmt einen Schirm mit.} #sprecher:fenwick #stimmung:laechelt
     -> END
 }
 ~ fenwickGetroffen = true
 An einem Wegweiser steht eine Frau mit Rucksack und Stock und isst einen Apfel. #sprecher:erzaehler
-Riverton? Immer den Gleisen nach. Und merkt euch eins, wenn ihr dort spielen wollt. #sprecher:fenwick
+Riverton? Immer den Gleisen nach. Und merkt euch eins, wenn ihr dort spielen wollt. #sprecher:fenwick #stimmung:laechelt
 Sie zeigt mit dem Apfel auf euch. #sprecher:erzaehler
-Wer angreift, soll zuerst zählen, wer verteidigt. #sprecher:fenwick
-Das wissen wir. #sprecher:juno
-Das weiß jeder. Bis er angreift. #sprecher:fenwick
+Wer angreift, soll zuerst zählen, wer verteidigt. #sprecher:fenwick #stimmung:nachdenklich
+Das wissen wir. #sprecher:juno #stimmung:laechelt
+Das weiß jeder. Bis er angreift. #sprecher:fenwick #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -66,7 +66,7 @@ Das weiß jeder. Bis er angreift. #sprecher:fenwick
     -> END
 }
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
-Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose
+Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose #stimmung:nachdenklich
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCedarRiverton.tafel")
     -> END
@@ -87,7 +87,7 @@ Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose
 ~ quinnGetroffen = true
 {not gueterzugGesehen: -> gueterzug ->}
 An einer Bude neben den Gleisen sitzt ein Mann in Uniform. Auf einer Kiste ein Brett und eine Uhr mit zwei Zifferblättern. #sprecher:erzaehler
-Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben. Wer will? #sprecher:schaffner
+Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben. Wer will? #sprecher:schaffner #stimmung:laechelt
 Ich! #sprecher:juno #stimmung:froh
 Juno spielt, als würde das Haus brennen. Sie verliert einen Läufer, einen Turm, und wirft vor Lachen den König selbst um. #sprecher:erzaehler
 Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
@@ -97,7 +97,7 @@ Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
 === gueterzug ===
 ~ gueterzugGesehen = true
 Erst singt die Schiene. Dann zittert der Boden. Dann rattert ein Güterzug vorbei, vierzig Wagen. Du zählst sie. #sprecher:erzaehler #klang:gueterzug
-So schnell. #sprecher:ambrose #pause:2
+So schnell. #sprecher:ambrose #stimmung:ueberrascht #pause:2
 Er klingt nicht beeindruckt. Er klingt müde. #sprecher:erzaehler
 Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin nicht angekommen. #sprecher:ambrose #stimmung:traurig
 * [Warten, ob er weiterspricht]
@@ -105,44 +105,44 @@ Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin 
 - ->->
 
 === quinn_angebot ===
-Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffner
+Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffner #stimmung:laechelt
 * [„Abgemacht.“]
-    Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose
+    Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose #stimmung:nachdenklich
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
 * [„Nicht jetzt.“]
-    Der nächste Zug kommt in einer Stunde. Ich auch. #sprecher:schaffner
+    Der nächste Zug kommt in einer Stunde. Ich auch. #sprecher:schaffner #stimmung:laechelt
     -> END
 
 === quinn_nach_sieg ===
 {not quinnKarteGegeben: -> quinn_karte}
-Pünktlich gewonnen. Das sehe ich gern. Noch eine, bevor die Pause um ist? #sprecher:schaffner
+Pünktlich gewonnen. Das sehe ich gern. Noch eine, bevor die Pause um ist? #sprecher:schaffner #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
 + [„Wir müssen weiter.“]
-    Gute Fahrt nach Riverton. Zu Fuß ist auch eine Fahrt. #sprecher:schaffner
+    Gute Fahrt nach Riverton. Zu Fuß ist auch eine Fahrt. #sprecher:schaffner #stimmung:laechelt
     -> END
 
 // Kapitel 17: Die Karte hat eine Herkunft; danach der graue Himmel über den drei Brücken.
 === quinn_karte ===
 ~ quinnKarteGegeben = true
 Er gibt dir die Hand. #sprecher:erzaehler
-Quinn. Seit neunzehn Jahren auf der Strecke. #sprecher:schaffner
+Quinn. Seit neunzehn Jahren auf der Strecke. #sprecher:schaffner #stimmung:laechelt
 Aus der Brusttasche zieht er eine Karte: ein Kopf, über dem eine kleine Wolke hängt. #sprecher:erzaehler
 ~ gibKarte("kuehlerKopf")
-Die hat mir mal einer dagelassen. Alter Herr mit einer Thermoskanne. Ich hab nie verstanden, wofür sie gut ist. #sprecher:schaffner
+Die hat mir mal einer dagelassen. Alter Herr mit einer Thermoskanne. Ich hab nie verstanden, wofür sie gut ist. #sprecher:schaffner #stimmung:nachdenklich
 Die Schrift auf der Rückseite ist steil und altmodisch. #sprecher:erzaehler
 * [Die Karte umdrehen]
 * [Einstecken]
 - In der Ferne stehen drei Brücken über einem breiten Fluss. Der Himmel darüber hängt grau und schwer. #sprecher:erzaehler #klang:donner_fern
-Riverton. Nehmt einen Schirm. #sprecher:schaffner
+Riverton. Nehmt einen Schirm. #sprecher:schaffner #stimmung:laechelt
 Ihr habt keinen. #sprecher:erzaehler
 -> END
 
 === quinn_nach_niederlage ===
-Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner
-Lass dich nicht hetzen. #sprecher:ambrose
+Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner #stimmung:laechelt
+Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -159,7 +159,7 @@ Lass dich nicht hetzen. #sprecher:ambrose
 ~ pfeilspitzeGefunden = true
 Unter einem Farn am Bach glänzt etwas: eine Pfeilspitze aus Stein, scharf wie am ersten Tag. #sprecher:erzaehler
 ~ gibFund("pfeilspitze")
-Wer hier jagte, kannte den Wald besser als jede Karte. #sprecher:ambrose
+Wer hier jagte, kannte den Wald besser als jede Karte. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 === fund_holzspringer ===
@@ -184,7 +184,7 @@ Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:l
 ~ fahrkarte1958Gefunden = true
 Im Schotter steckt eine vergilbte Pappkarte: „Riverton, einfache Fahrt, 1958“. #sprecher:erzaehler
 ~ gibFund("fahrkarte1958")
-Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
+Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
@@ -217,7 +217,7 @@ Marian sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so et
 Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
 „Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
 ~ gibFund("signalkelle")
-Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
+Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === zugpartie_danach ===

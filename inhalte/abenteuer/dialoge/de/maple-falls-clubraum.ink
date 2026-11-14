@@ -53,19 +53,19 @@ VAR heimwegNadelGesehen = false
 // Szene 5, zweiter Teil, nach dem Roman, Kapitel 5, und der Dialogprüfung (VM30 bis VM33).
 ~ clubBeigetreten = true
 Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler #klang:schulglocke #musik:mapleFalls.club
-Aufstellung! Juno, wen bringst du mir da? #sprecher:coachDelgado #klang:klatschen
+Aufstellung! Juno, wen bringst du mir da? #sprecher:coachDelgado #stimmung:laechelt #klang:klatschen
 Ein viertes Brett, Coach. #sprecher:juno #stimmung:froh
-Na, das wollen wir sehen. Delgado. Mathe in der Sechsten und Achten, Schach immer. #sprecher:coachDelgado
+Na, das wollen wir sehen. Delgado. Mathe in der Sechsten und Achten, Schach immer. #sprecher:coachDelgado #stimmung:laechelt
 Willkommen im Team, das noch keins ist. Wir arbeiten dran. #sprecher:coachDelgado #stimmung:froh
-Kreisliga spielt man zu viert. Wer die Clubnadel holt, spielt mit. Die Nadel holt man gegen mich. #sprecher:coachDelgado
+Kreisliga spielt man zu viert. Wer die Clubnadel holt, spielt mit. Die Nadel holt man gegen mich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Gegen Sie?“]
-    Gegen mich. Aber vorher zeigst du mir, dass du zählen kannst. Sam und Juno haben Aufgaben für dich. #sprecher:coachDelgado
+    Gegen mich. Aber vorher zeigst du mir, dass du zählen kannst. Sam und Juno haben Aufgaben für dich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Was muss ich tun?“]
     Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
 Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. Das ist Sam. #sprecher:erzaehler
 Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler
-Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #sprecher:ambrose
+Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #sprecher:ambrose #stimmung:lacht
 ~ setzeSzene("akt1.ersterSchultag")
 -> END
 
@@ -84,17 +84,17 @@ Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #spreche
 // Szene 11 nach dem Roman, Kapitel 8, und der Dialogprüfung (VM57 bis VM60). Stimmung:
 // Herzklopfen, das erste echte. Klang: Clubkampf-Thema mit Schlagwerk; die Pfeife liegt auf dem Pult.
 Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. Die Pfeife liegt auf dem Pult. #sprecher:erzaehler #musik:mapleFalls.clubkampf
-Die Aufgaben sind erledigt. Dann ist es so weit: du gegen mich, um die Clubnadel. #sprecher:coachDelgado
-Eine Partie. Ich spiele, wie ich spiele, ich schenke dir nichts. Wenn du verlierst, kommst du wieder, so oft du willst. #sprecher:coachDelgado
+Die Aufgaben sind erledigt. Dann ist es so weit: du gegen mich, um die Clubnadel. #sprecher:coachDelgado #stimmung:nachdenklich
+Eine Partie. Ich spiele, wie ich spiele, ich schenke dir nichts. Wenn du verlierst, kommst du wieder, so oft du willst. #sprecher:coachDelgado #stimmung:nachdenklich
 Sie legt eine Anstecknadel auf den Tisch. Ein kleines Ahornblatt aus Metall, mit einem Schachbrettmuster darin. #sprecher:erzaehler
 * [„Ich bin bereit.“]
     Deine Hände sind kalt. #sprecher:erzaehler
-    Du wirst die Karten nicht brauchen. #sprecher:ambrose
+    Du wirst die Karten nicht brauchen. #sprecher:ambrose #stimmung:laechelt
     * * [„Woher weißt du das?“]
-        Ich weiß es nicht. Ich sage es, damit du aufhörst zu zittern. #sprecher:ambrose
+        Ich weiß es nicht. Ich sage es, damit du aufhörst zu zittern. #sprecher:ambrose #stimmung:laechelt
         -> coach_partie
 * [„Noch nicht.“]
-    Kein Problem. Das Brett läuft nicht weg. #sprecher:coachDelgado
+    Kein Problem. Das Brett läuft nicht weg. #sprecher:coachDelgado #stimmung:laechelt
     -> END
 
 === coach_partie ===
@@ -104,14 +104,14 @@ Sie legt eine Anstecknadel auf den Tisch. Ein kleines Ahornblatt aus Metall, mit
 === coach_nach_sieg ===
 ~ clubkampfBesprochen = nadelMapleFalls
 {ausgangMapleFallsClubkampf == "remis":
-    Remis! Das war knapp. #sprecher:coachDelgado
-    Die Bronzenadel hast du. Noch einmal, wenn du willst? #sprecher:coachDelgado
+    Remis! Das war knapp. #sprecher:coachDelgado #stimmung:ueberrascht
+    Die Bronzenadel hast du. Noch einmal, wenn du willst? #sprecher:coachDelgado #stimmung:laechelt
 - else:
     Sie legt ihren König um. Sanft, mit einem Finger. #sprecher:erzaehler #pause #musik:aus
     Abpfiff! Gute Partie! Du hast gezählt, als ich nicht gezählt habe. #sprecher:coachDelgado #stimmung:froh #klang:pfiff_finger
 }
 Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler #klang:fanfare
-Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado #musik:karte
+Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado #stimmung:laechelt #musik:karte
 {not heimwegNadelGesehen:
     Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler
     Ich hab's dir gesagt. #sprecher:sam #stimmung:froh
@@ -125,17 +125,17 @@ Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado #musik
 -> END
 
 === coach_nach_niederlage ===
-Das war nichts für heute. Aber du hast in der Eröffnung gut gekämpft. #sprecher:coachDelgado
-Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
+Das war nichts für heute. Aber du hast in der Eröffnung gut gekämpft. #sprecher:coachDelgado #stimmung:laechelt
+Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 * [„Noch einmal.“]
     -> coach_partie
 * [„Nicht jetzt.“]
-    Kein Problem. Das Brett wartet. #sprecher:coachDelgado
+    Kein Problem. Das Brett wartet. #sprecher:coachDelgado #stimmung:laechelt
     -> END
 
 === coach_alltag ===
 {nadelMapleFalls < 3:
-    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado
+    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado #stimmung:laechelt
 - else:
     {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado #stimmung:froh
 }
@@ -153,14 +153,14 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
 === pratt_und_heimweg ===
 ~ heimwegNadelGesehen = true
 An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
-Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt
+Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt #stimmung:nachdenklich
 Dann geht er wieder. #sprecher:erzaehler
 Auf dem Heimweg sagt Ambrose lange nichts. Ahornblätter auf dem Gehweg. Die Laternen gehen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus
-Es war keine schöne Partie. #sprecher:ambrose
+Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ich habe sie aber nicht verloren.“]
-    Nein. Du hast gezählt, bis nichts mehr übrig war. Buchhaltung, Zug um Zug. #sprecher:ambrose
+    Nein. Du hast gezählt, bis nichts mehr übrig war. Buchhaltung, Zug um Zug. #sprecher:ambrose #stimmung:nachdenklich
 * [„Was ist eine schöne Partie?“]
-    Eine, über die man noch in hundert Jahren spricht. Über diese spricht man morgen. #sprecher:ambrose
+    Eine, über die man noch in hundert Jahren spricht. Über diese spricht man morgen. #sprecher:ambrose #stimmung:nachdenklich
 - Zu meiner Zeit hätte man so etwas nicht aufgeschrieben. #sprecher:ambrose #stimmung:streng
 * [„Bist du enttäuscht?“]
 - Er bleibt unter einer Laterne stehen. Man sieht fast durch ihn hindurch. #sprecher:erzaehler #pause
@@ -184,21 +184,21 @@ Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
 
 === sam_erstes_treffen ===
 ~ samGetroffen = true
-Viertes Brett? Wir haben ein erstes Brett. Mich. Reicht doch. #sprecher:sam
-Ich spiel Dame raus in Zug zwei. Funktioniert immer. #sprecher:sam
-Fast immer. #sprecher:coachDelgado
-Fast immer. #sprecher:sam
+Viertes Brett? Wir haben ein erstes Brett. Mich. Reicht doch. #sprecher:sam #stimmung:laechelt
+Ich spiel Dame raus in Zug zwei. Funktioniert immer. #sprecher:sam #stimmung:laechelt
+Fast immer. #sprecher:coachDelgado #stimmung:laechelt
+Fast immer. #sprecher:sam #stimmung:nachdenklich
 Dann grinst er, weil er nicht anders kann. #sprecher:erzaehler
 * [„Zeig mir deine Aufgaben.“]
     -> sam_reihe
 * [„Gleich.“]
-    Klar. Wenn du dich traust. #sprecher:sam
+    Klar. Wenn du dich traust. #sprecher:sam #stimmung:laechelt
     -> END
 
 === sam_reihe ===
-Hier. Die Figur steht da wie geschenkt. Na los, nimm sie. #sprecher:sam
+Hier. Die Figur steht da wie geschenkt. Na los, nimm sie. #sprecher:sam #stimmung:laechelt
 * [„Erst zählen.“]
-    Langweilig. Aber gut. #sprecher:sam
+    Langweilig. Aber gut. #sprecher:sam #stimmung:laechelt
     ~ beginneAufgaben("mapleFalls.reiheSam")
     -> END
 * [„Gleich.“]
@@ -208,22 +208,22 @@ Hier. Die Figur steht da wie geschenkt. Na los, nimm sie. #sprecher:sam
 // Szene 9 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM48 bis VM51).
 ~ samKlagt = true
 Sam liegt mit dem Kopf auf dem Tisch. #sprecher:erzaehler
-Die Chefin wurde gefangen. Schon wieder. Das zählt nicht, das war Pech! #sprecher:sam
-Wie oft war es Pech? Ich hab elfmal. #sprecher:juno
-Du schreibst das auf? #sprecher:sam
+Die Chefin wurde gefangen. Schon wieder. Das zählt nicht, das war Pech! #sprecher:sam #stimmung:bitter
+Wie oft war es Pech? Ich hab elfmal. #sprecher:juno #stimmung:laechelt
+Du schreibst das auf? #sprecher:sam #stimmung:ueberrascht
 Ich schreibe alles auf. #sprecher:juno #stimmung:froh
 * [„Soll ich dir zeigen, warum?“]
-    Du? Mir? … Okay. Okay. Zeig mir das noch mal mit dem Zählen. #sprecher:sam
+    Du? Mir? … Okay. Okay. Zeig mir das noch mal mit dem Zählen. #sprecher:sam #stimmung:ueberrascht
     ~ beginneAufgaben("mapleFalls.todsuenden")
     -> END
 * [„Pech gibt es nicht im Schach.“]
-    Pff. Du klingst wie der Coach. #sprecher:sam
-    Na gut. Zeig mir, was du meinst. #sprecher:sam
+    Pff. Du klingst wie der Coach. #sprecher:sam #stimmung:bitter
+    Na gut. Zeig mir, was du meinst. #sprecher:sam #stimmung:nachdenklich
     ~ beginneAufgaben("mapleFalls.todsuenden")
     -> END
 
 === sam_klagt_wieder ===
-Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam
+Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #stimmung:nachdenklich
 * [„Ja, los.“]
     ~ beginneAufgaben("mapleFalls.todsuenden")
     -> END
@@ -232,9 +232,9 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam
 
 === sam_revanche_angebot ===
 {ausgangMapleFallsSamRevanche == "":
-    Okay. Die Dame bleibt erst mal zu Hause. Revanche? Jetzt? #sprecher:sam
+    Okay. Die Dame bleibt erst mal zu Hause. Revanche? Jetzt? #sprecher:sam #stimmung:laechelt
 - else:
-    Noch mal! Diesmal mache ich alles richtig. Fast alles. #sprecher:sam
+    Noch mal! Diesmal mache ich alles richtig. Fast alles. #sprecher:sam #stimmung:laechelt
 }
 * [„Revanche.“]
     ~ beginnePartie("mapleFalls.samRevanche")
@@ -245,16 +245,16 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam
 === sam_nach_revanche ===
 // Der Tipp zur Trainerin ist Sams Lohn nach der Revanche (Roman, Kapitel 6; Dialogprüfung VM49).
 ~ samVersoehnt = true
-Okay. Die Dame bleibt zu Hause. Fürs Erste. #sprecher:sam
+Okay. Die Dame bleibt zu Hause. Fürs Erste. #sprecher:sam #stimmung:laechelt
 Du bist gut, {held}. Nicht so gut wie ich. Noch nicht. #sprecher:sam #stimmung:froh
 Er erzählt weiter, ohne dass du fragst. #sprecher:erzaehler
-Der Coach guckt nur auf ihren eigenen Angriff. Immer. #sprecher:sam
-Hab ich nie ausnutzen können. Aber du vielleicht. #sprecher:sam
+Der Coach guckt nur auf ihren eigenen Angriff. Immer. #sprecher:sam #stimmung:nachdenklich
+Hab ich nie ausnutzen können. Aber du vielleicht. #sprecher:sam #stimmung:laechelt
 Juno schreibt es ins Tagebuch. Mit Glitzer. #sprecher:erzaehler
 -> END
 
 === sam_alltag ===
-{~Dame raus, Zug sechs. Ich arbeite dran.|Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?} #sprecher:sam
+{~Dame raus, Zug sechs. Ich arbeite dran.|Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?} #sprecher:sam #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Juno im Club
@@ -267,22 +267,22 @@ Juno schreibt es ins Tagebuch. Mit Glitzer. #sprecher:erzaehler
 }
 
 === juno_erst_sam ===
-Erst Sam, dann ich. Der Coach will das so. Und Sam wird sonst grummelig. #sprecher:juno
+Erst Sam, dann ich. Der Coach will das so. Und Sam wird sonst grummelig. #sprecher:juno #stimmung:laechelt
 -> END
 
 === juno_reihe ===
-Ich hab Aufgaben für dich! Ich hab sie aufgeschrieben, aber ich kann meine Schrift nicht lesen. #sprecher:juno
+Ich hab Aufgaben für dich! Ich hab sie aufgeschrieben, aber ich kann meine Schrift nicht lesen. #sprecher:juno #stimmung:lacht
 Kannst du? Es sind Züge in Notation. #sprecher:juno #stimmung:froh
-Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
+Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno #stimmung:laechelt
 * [„Her damit.“]
     ~ beginneAufgaben("mapleFalls.reiheJuno")
     -> END
 * [„Gleich.“]
-    Ich laufe nicht weg. Ich hab Kekse. #sprecher:juno
+    Ich laufe nicht weg. Ich hab Kekse. #sprecher:juno #stimmung:lacht
     -> END
 
 === juno_club_alltag ===
-{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Das kommt ins Tagebuch.|Ich hab gegen den Coach eine Figur gewonnen. Dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno
+{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Das kommt ins Tagebuch.|Ich hab gegen den Coach eine Figur gewonnen. Dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Victor
@@ -304,18 +304,18 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
 Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
 Coach Delgado hat die Trainingsjacke bis oben zugezogen. #sprecher:erzaehler
 Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler
-Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. Schach für die Zukunft. #sprecher:grahamHale
-Was kostet das? #sprecher:coachDelgado
-Für Pilotschulen zunächst nichts. #sprecher:grahamHale
+Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. Schach für die Zukunft. #sprecher:grahamHale #stimmung:laechelt
+Was kostet das? #sprecher:coachDelgado #stimmung:nachdenklich
+Für Pilotschulen zunächst nichts. #sprecher:grahamHale #stimmung:laechelt
 Am Fenster steht ein Junge, ein Tablet unter dem Arm. Er hat sich nicht gesetzt. Er sieht auf deine Nadel. #sprecher:erzaehler
 Victor Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt #musik:victor
 In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:hale #pause:3
 -> victor_wartet
 
 === victor_wartet ===
-Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen. #sprecher:victor
+Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen. #sprecher:victor #stimmung:bitter
 Spanisch, Zug zwölf. Du hast Schwarz und einen Springer weniger. #sprecher:victor #stimmung:kalt
-Das sage ich dir vorher, damit du dich nachher nicht beschwerst. #sprecher:victor
+Das sage ich dir vorher, damit du dich nachher nicht beschwerst. #sprecher:victor #stimmung:bitter
 Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
 * [„Ich spiele.“]
     -> victor_partie
@@ -323,7 +323,7 @@ Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele A
     Es ist genau. Fair ist etwas anderes. #sprecher:victor #stimmung:kalt
     -> victor_partie
 * [„Nicht jetzt.“]
-    Natürlich. #sprecher:victor
+    Natürlich. #sprecher:victor #stimmung:bitter
     -> END
 
 === victor_partie ===
@@ -344,16 +344,16 @@ Victor stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
 === victor_niederlage ===
 ~ setzeSzene("akt1.victorNiederlage")
 Irgendwann lehnt er sich einen Fingerbreit zurück. #sprecher:erzaehler
-Das genügt. #sprecher:victor
+Das genügt. #sprecher:victor #stimmung:bitter
 Du hast in Zug zwölf verloren. Den Rest hast du nur nicht gemerkt. #sprecher:victor #stimmung:kalt
 Er räumt die Figuren ein, jede in ihr Fach. Er gibt dir nicht die Hand. #sprecher:erzaehler
-Gut gespielt, Victor. Nächstes Mal schneller, ja? Wir haben um vier den Termin. #sprecher:grahamHale
+Gut gespielt, Victor. Nächstes Mal schneller, ja? Wir haben um vier den Termin. #sprecher:grahamHale #stimmung:nachdenklich
 Etwas geht über Victors Gesicht. Sehr kurz. #sprecher:erzaehler #pause
 Ja. #sprecher:victor #stimmung:riss
 Dann sind sie weg. #sprecher:erzaehler
-Der war nicht nett. #sprecher:juno #pause
+Der war nicht nett. #sprecher:juno #stimmung:nachdenklich #pause
 Niemand widerspricht. #sprecher:erzaehler
-Aber er war gut. #sprecher:juno
+Aber er war gut. #sprecher:juno #stimmung:nachdenklich
 -> victor_ambrose
 
 === victor_ueberrascht ===
@@ -361,7 +361,7 @@ Aber er war gut. #sprecher:juno
 ~ setzeSzene("akt1.victorUeberrascht")
 Victor sieht auf das Brett. Drei Sekunden lang rührt er sich nicht. #sprecher:erzaehler #pause:3
 Glück. Das passiert einmal. #sprecher:victor #stimmung:kalt
-Victor? Wir fahren. #sprecher:grahamHale
+Victor? Wir fahren. #sprecher:grahamHale #stimmung:nachdenklich
 Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #sprecher:erzaehler
 -> victor_ambrose
 
@@ -380,7 +380,7 @@ Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehl
     Du hast eine verlorene Stellung gehalten. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
 }
 * [„Du bist erschrocken. Vorhin.“]
-    Bin ich das. #sprecher:ambrose
+    Bin ich das. #sprecher:ambrose #stimmung:bitter
     * * [„Hale.“]
         Er steht mit dem Rücken zu dir. Die alte Stellung liegt zwischen euch. Schwarz ist am Zug, seit hundertsechzig Jahren. #sprecher:erzaehler #pause
         Ein Name. Es gibt viele Hales. #sprecher:ambrose #stimmung:traurig

@@ -57,21 +57,21 @@ Der Pfad führt zurück in den Canyon, zum Felsbogen. #sprecher:erzaehler
 === buck_erstes_treffen ===
 ~ buckGetroffen = true
 An der Tankstelle steht ein Brett auf der Motorhaube eines Pick-ups. Daneben lehnt ein Mann mit Zahnstocher. #sprecher:erzaehler #klang:zapfsaeule
-Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck
+Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck #stimmung:lacht
 Er spuckt den Zahnstocher aus. #sprecher:erzaehler
-Buck. Drei Minuten. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck
+Buck. Drei Minuten. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck #stimmung:laechelt
 -> buck_angebot
 
 === buck_angebot ===
-Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du dich? #sprecher:buck
+Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du dich? #sprecher:buck #stimmung:laechelt
 * [„Klar.“]
     {versoehnungGesehen:
-        Er redet so schnell, wie er zieht. Lass ihn reden. Du denkst. #sprecher:ambrose
+        Er redet so schnell, wie er zieht. Lass ihn reden. Du denkst. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
 * [„Nicht jetzt.“]
-    Die Tankstelle hat immer offen. Ich auch. #sprecher:buck
+    Die Tankstelle hat immer offen. Ich auch. #sprecher:buck #stimmung:lacht
     -> END
 
 === buck_nach_sieg ===
@@ -79,15 +79,15 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
     ~ buckKarteGegeben = true
     Mitten in der Partie hast du einen guten Zug gefunden und gesagt: „Na, das wird teuer.“ Buck hat sofort gezogen, zu schnell. #sprecher:erzaehler
     Na, jetzt willst du's aber wissen! Hier, die hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
-    {versoehnungGesehen: Das war beinahe fein. #sprecher:ambrose}
+    {versoehnungGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
-Schnell und gut. Das gibt's hier draußen selten. Noch eine Runde? #sprecher:buck
+Schnell und gut. Das gibt's hier draußen selten. Noch eine Runde? #sprecher:buck #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
 + [„Ich muss weiter.“]
-    Gute Fahrt! Und tank voll. #sprecher:buck
+    Gute Fahrt! Und tank voll. #sprecher:buck #stimmung:laechelt
     -> END
 
 === buck_nach_niederlage ===
@@ -115,16 +115,16 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 In der Nacht sitzt du am Rand des Schwimmbeckens, die Füße zwischen den Kakteen. Die Sterne gehen bis auf den Boden hinunter. #sprecher:erzaehler #licht:nacht #teilchen:sternschnuppen #musik:motel.nacht
 Das Telefon summt. Juno. #sprecher:erzaehler #klang:handy
 Sieben! Ich hab's nachgezählt. Blatt, Buch, Achteck, Zahnrad, Glas, Lyra, Kaktus. Der Kaktus kriegt Glitzer. #sprecher:juno #stimmung:froh
-Wie geht es ihm? #sprecher:juno
+Wie geht es ihm? #sprecher:juno #stimmung:nachdenklich
 Er steht am Beckenrand und sieht hinauf. #sprecher:erzaehler
 * [„Er hat gelacht. Eine Viertelstunde lang.“]
-- Worüber? #sprecher:juno
+- Worüber? #sprecher:juno #stimmung:ueberrascht
 * [„Über sich.“]
-- Oh. Oh, das ist gut. Das schreib ich auf. #sprecher:juno
+- Oh. Oh, das ist gut. Das schreib ich auf. #sprecher:juno #stimmung:laechelt
 Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. „Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
 Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch. Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler #musik:victor.maschine
 Der zweite Satz gefällt dir nicht. #sprecher:erzaehler #pause
-Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #musik:motel.nacht
+Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
 Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 * [„Sicher?“]
 - Nein. Aber ich hoffe es. Und ich habe es geprüft, so gut ich kann. #sprecher:ambrose #stimmung:lachtOhneSpott
@@ -146,10 +146,10 @@ Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 ~ endeAkt3Gesehen = true
 Mama ist da. Sonnenbrand auf der Nase, das blaue Heft unter dem Arm. Es ist dicker geworden. #sprecher:erzaehler #musik:mama.schnee
 Port Delacroix lässt grüßen. Das Dach vom Musikhaus ist drauf. Miss Odile sagt, das nächste Mal hängst du das Schild auf. #sprecher:mutter #stimmung:froh
-Und danach: Summit City. Großmeisterin Ward. Ich hab schon Urlaub eingereicht. #sprecher:mutter
+Und danach: Summit City. Großmeisterin Ward. Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:laechelt
 * [„Wer ist das?“]
-- Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter
-Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter
+- Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter #stimmung:lacht
+Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter #stimmung:nachdenklich
 Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit hundertsechzig Jahren auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
 Schwarz am Zug. #sprecher:erzaehler #pause:3
 -> bahnhof_fahrten
@@ -174,7 +174,7 @@ Der Zug fährt gleich. Wohin? #sprecher:erzaehler
 }
 ~ highwayAufbruchGesehen = true
 Am Ende der Hauptstraße beginnt der Highway. Mama klimpert mit einem Autoschlüssel. #sprecher:erzaehler
-Dot leiht uns ihr Auto. Es ist alt, aber es fährt, und wir sehen mehr als vom Zug aus. #sprecher:mutter
+Dot leiht uns ihr Auto. Es ist alt, aber es fährt, und wir sehen mehr als vom Zug aus. #sprecher:mutter #stimmung:laechelt
 Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #stimmung:froh
 Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
 Die Straße flimmert. Nach einer Stunde taucht ein Diner mit Neonschild auf. Mama hält an. #sprecher:erzaehler

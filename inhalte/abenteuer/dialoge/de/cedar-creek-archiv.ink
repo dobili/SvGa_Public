@@ -50,7 +50,7 @@ VAR newYorkBesprochen = false
 === karton_fremd ===
 Kartons, Kartons, Kartons. Manche sind nass. #sprecher:erzaehler
 Ohne Erlaubnis öffnest du hier lieber nichts. #sprecher:erzaehler
-Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose
+Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 === ordnen ===
@@ -59,11 +59,11 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose
 ~ ordnenAngeboten = true
 Eine Wendeltreppe hinunter. Es riecht nach Büchern, die nass geworden sind. #sprecher:erzaehler
 Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
-Da bist du ja. Links das neunzehnte Jahrhundert, rechts das zwanzigste. Wo der Boden trocken ist. #sprecher:okafor
+Da bist du ja. Links das neunzehnte Jahrhundert, rechts das zwanzigste. Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
 * [Anfangen]
     -> ordnen_wahl
 * [Nicht jetzt]
-    Kein Problem. Die Pfütze läuft nicht weg. Leider. #sprecher:okafor
+    Kein Problem. Die Pfütze läuft nicht weg. Leider. #sprecher:okafor #stimmung:lacht
     -> END
 
 === ordnen_wahl ===
@@ -75,7 +75,7 @@ Sie liest die Jahreszahlen vor. „1972.“ #sprecher:erzaehler
 - Ein Karton ist so durchweicht, dass der Boden nachgibt. Zeitungen rutschen heraus, braun und weich wie Herbstlaub. #sprecher:erzaehler
 * [Sie aufheben]
 * [Liegen lassen]
-- Lass. Die sind verloren. Man kann nicht alles retten. #sprecher:okafor
+- Lass. Die sind verloren. Man kann nicht alles retten. #sprecher:okafor #stimmung:bitter
 Sie sagt es ruhig. Aber sie hebt trotzdem jede einzelne auf. #sprecher:erzaehler #pause:2
 Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1859“. Er ist trocken geblieben. #sprecher:erzaehler
 * [Vorsichtig auf den Tisch stellen]
@@ -84,8 +84,8 @@ Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1
 
 === ordnen_fertig ===
 ~ archivGeordnet = true
-Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #sprecher:okafor
-Ich habe den Kalender gelesen und nie in den Karton daneben geschaut. #sprecher:okafor
+Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #sprecher:okafor #stimmung:nachdenklich
+Ich habe den Kalender gelesen und nie in den Karton daneben geschaut. #sprecher:okafor #stimmung:bitter
 Ich muss nach oben. Prudence schließt sonst die Kasse falsch ab. Du findest dich zurecht. #sprecher:okafor
 Ihre Schritte auf der Wendeltreppe. Dann nichts mehr. #sprecher:erzaehler #pause:2
 * [Den Karton öffnen]
@@ -110,41 +110,41 @@ Du liest es zweimal. #sprecher:erzaehler
 Leg es weg. #sprecher:ambrose #stimmung:bitter #pause:2
 Er steht neben dem Tisch, im Lichtkegel. Zum ersten Mal sieht er alt aus. #sprecher:erzaehler
 * [„Du hast gesagt, es gibt viele Hales.“]
-    Es gibt viele. #sprecher:ambrose
+    Es gibt viele. #sprecher:ambrose #stimmung:bitter
 * [„Ambrose.“]
 - Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
-Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose #musik:ambrose.erinnerung
-Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. Das war das Unglück. #sprecher:ambrose
+Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose #stimmung:nachdenklich #musik:ambrose.erinnerung
+Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. Das war das Unglück. #sprecher:ambrose #stimmung:bitter
 * [„Und der andere?“]
 * [Warten]
 - Er beginnt, auf und ab zu gehen. Drei Schritte, die Wand, drei Schritte zurück. #sprecher:erzaehler
-Ein Ingenieur, Brückenbauer aus dem Norden. Er spielte, wie man eine Brücke baut. #sprecher:ambrose
-Jeder Stein auf den anderen. Nichts Überflüssiges, nichts Schönes. Ich fand ihn unerträglich. #sprecher:ambrose
-In der siebten stand ich auf Gewinn. Ein Kind hätte sie gewonnen. Einen Bauern nehmen und nach Hause gehen. #sprecher:ambrose
-Aber ich sah ein Opfer. Einen Turm, mitten in seine Stellung. Ich wusste nicht einmal, ob es stimmte. #sprecher:ambrose
-Ich habe es gespielt, weil die Leute auf der Treppe standen. Sie sollten in hundert Jahren noch davon reden. #sprecher:ambrose
+Ein Ingenieur, Brückenbauer aus dem Norden. Er spielte, wie man eine Brücke baut. #sprecher:ambrose #stimmung:nachdenklich
+Jeder Stein auf den anderen. Nichts Überflüssiges, nichts Schönes. Ich fand ihn unerträglich. #sprecher:ambrose #stimmung:bitter
+In der siebten stand ich auf Gewinn. Ein Kind hätte sie gewonnen. Einen Bauern nehmen und nach Hause gehen. #sprecher:ambrose #stimmung:nachdenklich
+Aber ich sah ein Opfer. Einen Turm, mitten in seine Stellung. Ich wusste nicht einmal, ob es stimmte. #sprecher:ambrose #stimmung:nachdenklich
+Ich habe es gespielt, weil die Leute auf der Treppe standen. Sie sollten in hundert Jahren noch davon reden. #sprecher:ambrose #stimmung:bitter
 * [„Hat es gestimmt?“]
 * [Warten]
 - -> erzaehlung_1858_nein
 
 === erzaehlung_1858_nein ===
-Nein. #sprecher:ambrose #pause:3
+Nein. #sprecher:ambrose #stimmung:bitter #pause:3
 Das Wort bleibt im Raum. #sprecher:erzaehler
-Es gab eine Verteidigung. Einen einzigen stillen Zug. Er brauchte vierzig Minuten. #sprecher:ambrose
-Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose #bild:stellung1858
+Es gab eine Verteidigung. Einen einzigen stillen Zug. Er brauchte vierzig Minuten. #sprecher:ambrose #stimmung:nachdenklich
+Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose #stimmung:bitter #bild:stellung1858
 Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
 * [„Das ist wie bei mir gegen Victor.“]
-    Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose
-    Ich hatte eine gewonnene und habe sie verschenkt. #sprecher:ambrose
+    Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose #stimmung:nachdenklich
+    Ich hatte eine gewonnene und habe sie verschenkt. #sprecher:ambrose #stimmung:bitter
 * [Nichts sagen]
-- Ich habe Revanche verlangt. Im Jahr darauf, in einem langen Brief. Er schrieb zurück. Ein Wort. #sprecher:ambrose
+- Ich habe Revanche verlangt. Im Jahr darauf, in einem langen Brief. Er schrieb zurück. Ein Wort. #sprecher:ambrose #stimmung:bitter
 * [„Welches?“]
 * [Warten]
 - Später. #sprecher:ambrose #stimmung:bitter #klang:spaeter #musik:aus #geraeusch:aus #pause:2
 {ersterTagSpaeter: Du hast es am ersten Tag zu ihm gesagt, auf dem Dachboden, ohne nachzudenken. Er hat so seltsam geantwortet. #sprecher:erzaehler}
 * {kenntHale} [„Hale wie Victor?“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
-    Hale wie viele. #sprecher:ambrose
+    Hale wie viele. #sprecher:ambrose #stimmung:nachdenklich
     Aber er sieht dich an dabei. Er weiß es nicht. Und er hat Angst, es zu wissen. #sprecher:erzaehler
 * [Schweigen]
     ~ ambroseVertrauen = ambroseVertrauen + 1
@@ -153,7 +153,7 @@ Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #spreche
 
 
 === karton_alltag ===
-{~Der Karton mit den Jahren 1850 bis 1859 steht trocken im Regal. Die Zeitung liegt obenauf.|Bemerkenswert unnötig. Ich höre es noch.} #sprecher:ambrose
+{~Der Karton mit den Jahren 1850 bis 1859 steht trocken im Regal. Die Zeitung liegt obenauf.|Bemerkenswert unnötig. Ich höre es noch.} #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Programmheft
@@ -173,14 +173,14 @@ Ein dünnes, vergilbtes Heft. Es liegt in einem Karton, den du noch nicht öffne
 „Erster Amerikanischer Schachkongress. New York, 1857.“ Ein Programmheft mit einem Adler auf dem Umschlag. #sprecher:erzaehler #bild:erinnerungNewYork
 Ambrose macht ein Geräusch, das du von ihm nicht kennst. #sprecher:erzaehler
 Ich war dort. Ich stand in der dritten Reihe. #sprecher:ambrose #stimmung:stolz #musik:ambrose.walzer
-Ein Junge aus meiner Stadt spielte gegen einen Meister aus dem Westen, Paulsen. Der Junge hieß Morphy. #sprecher:ambrose
-Er saß da, als ginge ihn das alles nichts an, und sah aus dem Fenster. #sprecher:ambrose
-Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
+Ein Junge aus meiner Stadt spielte gegen einen Meister aus dem Westen, Paulsen. Der Junge hieß Morphy. #sprecher:ambrose #stimmung:laechelt
+Er saß da, als ginge ihn das alles nichts an, und sah aus dem Fenster. #sprecher:ambrose #stimmung:laechelt
+Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose #stimmung:laechelt
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.erinnerungNewYork")
     -> END
 * [„Gleich.“]
-    Nun gut. Der Junge sieht ohnehin aus dem Fenster. #sprecher:ambrose
+    Nun gut. Der Junge sieht ohnehin aus dem Fenster. #sprecher:ambrose #stimmung:laechelt
     -> END
 
 === programmheft_danach ===
@@ -194,13 +194,13 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
 }
 ~ newYorkBesprochen = true
 Er opferte seine Dame, und ich vergaß zu atmen. Dreihundert Leute, und man hätte eine Nadel fallen hören. #sprecher:ambrose #stimmung:stolz #musik:aus #pause:2
-Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #musik:ambrose.walzer
+Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.walzer
 * [„Gestern hast du gesagt, Zählen ist alles.“]
     Er fährt herum. Er sucht nach einer Antwort und hat keine. #sprecher:erzaehler #pause:2
     Das habe ich gesagt. #sprecher:ambrose #stimmung:still
     ** [„Was stimmt denn nun?“]
         Er sieht auf das Brett aus Licht. Dann auf die Zeitung. Vier zu drei. #sprecher:erzaehler
-        Wenn ich das wüsste, säße ich vielleicht nicht in einer Kiste. #sprecher:ambrose
+        Wenn ich das wüsste, säße ich vielleicht nicht in einer Kiste. #sprecher:ambrose #stimmung:bitter
     ** [Nichts sagen]
 * [Nichts sagen]
     Du denkst an gestern. #sprecher:erzaehler #pause
@@ -213,12 +213,12 @@ Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #musik:a
 ~ ambroseNenntNamen = true
 Über dir schlägt die Uhr. Sieben Mal. Du legst die Zeitung zurück, das Programm obenauf. #sprecher:erzaehler #klang:turmuhr7 #musik:aus
 Als du den Deckel schließen willst, sagt er: #sprecher:erzaehler
-{held}. #sprecher:ambrose #pause:2
+{held}. #sprecher:ambrose #stimmung:nachdenklich #pause:2
 Er hat dich noch nie beim Namen genannt. Immer nur „Kind“. Oder „Lehrling“. #sprecher:erzaehler
 * [„Ja?“]
 * [Den Deckel offen lassen]
-- Ich habe das noch niemandem erzählt. #sprecher:ambrose
+- Ich habe das noch niemandem erzählt. #sprecher:ambrose #stimmung:nachdenklich
 Er sieht zur Wendeltreppe. #sprecher:erzaehler
-Es gab allerdings auch niemanden. #sprecher:ambrose #musik:karte
+Es gab allerdings auch niemanden. #sprecher:ambrose #stimmung:nachdenklich #musik:karte
 -> END
 

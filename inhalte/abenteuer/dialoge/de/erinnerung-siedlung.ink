@@ -63,7 +63,7 @@ Der 38. Zug. Meine Dame muss zurück zum König. #sprecher:ambrose #stimmung:jun
 * [38. Dxc6]
     Zu gierig, dann jagt seine Dame meinen König. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
 - Sein Springer kommt herüber. 38… Sc4. #sprecher:erzaehler
-Und jetzt? #sprecher:gideon
+Und jetzt? #sprecher:gideon #stimmung:nachdenklich
 -> zug39
 
 === zug39 ===
@@ -75,14 +75,14 @@ Der 39. Zug. Jetzt gebe ich Schach. Mit der Dame. #sprecher:ambrose #stimmung:ju
     Ein Bauer, aber seine Dame bleibt. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
 * [39. Td8+]
     Der König geht nach g7, und nichts ist gewonnen. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
-- Dann nimmt er sie doch. #sprecher:gideon
+- Dann nimmt er sie doch. #sprecher:gideon #stimmung:nachdenklich
 Ja. Dann nimmt er sie. Er tauscht immer, wenn er kann. Ich habe es trotzdem gespielt, weil es richtig war. #sprecher:ambrose #stimmung:jung
 Zum ersten Mal in meinem Leben wollte ich nicht gewinnen, bevor es so weit war. #sprecher:ambrose #stimmung:jung
 Auf dem Brett steht seine Dame neben meinem König. 39… Dxg3+. #sprecher:erzaehler
 -> zug40
 
 === zug40 ===
-Und dann? #sprecher:gideon
+Und dann? #sprecher:gideon #stimmung:nachdenklich
 Der 40. Zug. Mein letzter. #sprecher:ambrose #stimmung:jung #pause
 * [40. Kxg3]
     ~ kerzeRichtig = kerzeRichtig + 1
@@ -91,7 +91,7 @@ Der 40. Zug. Mein letzter. #sprecher:ambrose #stimmung:jung #pause
     Der König in die Ecke? Nein. Der König schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
 * [40. Kg1]
     Dann bleibt die Dame stehen. Der König schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
-- Der König? Der schlägt doch nicht. Der versteckt sich. #sprecher:gideon
+- Der König? Der schlägt doch nicht. Der versteckt sich. #sprecher:gideon #stimmung:ueberrascht
 Das habe ich auch immer gedacht. #sprecher:ambrose #stimmung:jung
 Er ist schwer, unten mit Blei ausgegossen, das Kreuz auf der Krone ein bisschen schief. Ein Schritt nach vorn, aus der Ecke heraus, ins Freie. #sprecher:erzaehler #musik:ambrose.1866
 Ein kleiner Zug. Der einzige, den es gab. Jedes Kind hätte ihn gefunden. #sprecher:ambrose #stimmung:jung
@@ -123,8 +123,8 @@ Mondlicht. Die Farben kehren zurück, und deine Hände sind deine. Sie sind nass
 Ambrose steht am Fenster und sieht die Straße hinunter, nach Norden. #sprecher:erzaehler
 * [„Er ist angekommen. Hale hat es aufgeschrieben.“]
 - Ja. Gideon hat alles getan, worum ich ihn gebeten habe. #sprecher:ambrose #stimmung:still
-Er hat das Brett nach Maple Falls geschickt. Er hat einen Stein behauen. Er hat einem Fremden drei Tage die Stirn gekühlt. #sprecher:ambrose
-Hundertsechzig Jahre habe ich an Hale gedacht. Jeden Tag. Und nicht ein einziges Mal an den Schmied. #sprecher:ambrose
+Er hat das Brett nach Maple Falls geschickt. Er hat einen Stein behauen. Er hat einem Fremden drei Tage die Stirn gekühlt. #sprecher:ambrose #stimmung:laechelt
+Hundertsechzig Jahre habe ich an Hale gedacht. Jeden Tag. Und nicht ein einziges Mal an den Schmied. #sprecher:ambrose #stimmung:nachdenklich
 Nicht auf den Falschen gewartet. Das ist ungerecht. Aber nur auf den einen. #sprecher:ambrose #stimmung:friedlich
 Morgen spielt ihr sie zu Ende. Du und der junge Hale. Ich sehe zu. Das ist schöner, als ich dachte. #sprecher:ambrose #stimmung:friedlich
 -> END

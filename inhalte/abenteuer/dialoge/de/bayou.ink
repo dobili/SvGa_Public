@@ -26,7 +26,7 @@ VAR finchFiguren = 0
 
 === theron ===
 {theronGetroffen:
-    {~Im Nebel siehst du nur, wohin deine Figuren ziehen können. Der Rest ist Geduld.|Der Alligator dort heißt Bernard. Er spielt nicht mit.|Nächsten Sommer bringe ich dir das richtig bei. Mit Brett und Nebel.} #sprecher:theron
+    {~Im Nebel siehst du nur, wohin deine Figuren ziehen können. Der Rest ist Geduld.|Der Alligator dort heißt Bernard. Er spielt nicht mit.|Nächsten Sommer bringe ich dir das richtig bei. Mit Brett und Nebel.} #sprecher:theron #stimmung:laechelt
     -> END
 }
 ~ theronGetroffen = true
@@ -88,7 +88,7 @@ Die Partie bricht nach dem 20. Zug ab. Weiß ist am Zug. #sprecher:erzaehler
 
 === pepe_angebot ===
 + [Die Stellung mit Ambroses Seite weiterspielen]
-    Na los. Ich will sehen, ob der alte Kram noch was taugt. #sprecher:pepe
+    Na los. Ich will sehen, ob der alte Kram noch was taugt. #sprecher:pepe #stimmung:laechelt
     ~ beginnePartie("bayou.hausboot")
     -> END
 + [„Später.“]
@@ -99,16 +99,16 @@ Die Partie bricht nach dem 20. Zug ab. Weiß ist am Zug. #sprecher:erzaehler
 ~ hausbootErledigt = true
 {ausgangBayouHausboot:
 - "sieg": Diesmal nicht. Diesmal nicht! #sprecher:ambrose #stimmung:froh
-- "remis": Remis. Das hätte ich damals unterschrieben. #sprecher:ambrose
-- else: Wieder verloren. Und weißt du was? Es ist trotzdem schön, sie noch einmal gespielt zu haben. #sprecher:ambrose
+- "remis": Remis. Das hätte ich damals unterschrieben. #sprecher:ambrose #stimmung:laechelt
+- else: Wieder verloren. Und weißt du was? Es ist trotzdem schön, sie noch einmal gespielt zu haben. #sprecher:ambrose #stimmung:laechelt
 }
 Pépé steckt das Streichholz zurück in die Schachtel. #sprecher:erzaehler
-Gut. Dann brennt heute nichts. Die Kiste bringe ich ins Musikhaus, da gehört sie hin. Das eine Blatt behältst du. #sprecher:pepe
+Gut. Dann brennt heute nichts. Die Kiste bringe ich ins Musikhaus, da gehört sie hin. Das eine Blatt behältst du. #sprecher:pepe #stimmung:laechelt
 ~ gibFund("formularCafeDesExiles")
 -> END
 
 === pepe_danach ===
-{~Die Kiste steht jetzt im Musikhaus. Henri hat sie neben das Klavier gestellt.|Mein Urgroßvater hätte dir einen Kaffee ausgegeben. Ich hab nur Wasser. Viel Wasser.|Hörst du die Frösche? Die spielen auch, nur ohne Brett.} #sprecher:pepe
+{~Die Kiste steht jetzt im Musikhaus. Henri hat sie neben das Klavier gestellt.|Mein Urgroßvater hätte dir einen Kaffee ausgegeben. Ich hab nur Wasser. Viel Wasser.|Hörst du die Frösche? Die spielen auch, nur ohne Brett.} #sprecher:pepe #stimmung:laechelt
 -> END
 
 === ereignis_hausboot ===
@@ -159,5 +159,5 @@ Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme.
 ~ finchFiguren = finchFiguren + 1
 An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus hellem Holz. #sprecher:erzaehler
 ~ gibFund("finchBauerC")
-Unter dem Bauern ist ein Feld eingebrannt. Wer versteckt Schachfiguren in Fischreusen? #sprecher:ambrose
+Unter dem Bauern ist ein Feld eingebrannt. Wer versteckt Schachfiguren in Fischreusen? #sprecher:ambrose #stimmung:ueberrascht
 -> END

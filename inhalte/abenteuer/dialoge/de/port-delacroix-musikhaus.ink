@@ -39,7 +39,7 @@ Durch das Dach fällt Regen. An der Wand lehnt ein Schild, die Buchstaben halb a
 
 === schild_baustelle ===
 Handwerker decken das Dach. Das Schild lehnt noch an der Wand und wartet. #sprecher:erzaehler
-Das dauert noch, bis zum Frühjahr. Komm wieder, wenn du aus der Wüste zurück bist. #sprecher:odile
+Das dauert noch, bis zum Frühjahr. Komm wieder, wenn du aus der Wüste zurück bist. #sprecher:odile #stimmung:laechelt
 -> END
 
 === schild_aufhaengen ===
@@ -77,30 +77,30 @@ Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jema
 ~ varianteSchach960Gelernt = true
 Eine Bläserin putzt ihre Posaune und lacht dich an. #sprecher:erzaehler
 Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jeden Abend anders. #sprecher:blaeser #stimmung:froh
-Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser
+Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser #stimmung:laechelt
 Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:blaeser
 * [„Und die Rochade?“]
 - Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser
 Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser
-Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose
+Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose #stimmung:nachdenklich
 Als Kind fand ich das Unsinn. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
 Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
 -> blaeser_set1
 
 === blaeser_set1 ===
-Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. Locker, zum Warmspielen. #sprecher:blaeser
+Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. Locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
 + [„Spielen wir.“]
     ~ beginnePartie("portDelacroix.schach960Set1")
     -> END
 + [„Später.“]
-    Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser
+    Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser #stimmung:lacht
     -> END
 
 === blaeser_set2 ===
 {ausgangPortDelacroixSchach960Set1 == "sieg":
-    Nicht schlecht! Du hast nicht gesucht, was du kennst. Du hast gespielt, was da stand. #sprecher:blaeser
+    Nicht schlecht! Du hast nicht gesucht, was du kennst. Du hast gespielt, was da stand. #sprecher:blaeser #stimmung:laechelt
 }
-Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser
+Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #stimmung:laechelt
 + [„Gern.“]
     ~ beginnePartie("portDelacroix.schach960Set2")
     -> END
@@ -108,13 +108,13 @@ Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser
     -> END
 
 === blaeser_set3 ===
-Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser
-Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose
+Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser #stimmung:laechelt
+Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose #stimmung:nachdenklich
 + [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.schach960Set3")
     -> END
 + [„Später.“]
-    Jam-Sessions fangen sowieso immer zu spät an. #sprecher:blaeser
+    Jam-Sessions fangen sowieso immer zu spät an. #sprecher:blaeser #stimmung:lacht
     -> END
 
 === blaeser_setliste ===
@@ -127,9 +127,9 @@ In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedach
 -> END
 
 === blaeser_alltag ===
-{~Heute steht der König auf b1. Gestern auf g1. Morgen? Wer weiß.|Auswendig lernen ist wie Noten ablesen. Schön, aber noch keine Musik.|Remy will Schach960 mit der Trompete ansagen. Ich hab Nein gesagt.} #sprecher:blaeser
+{~Heute steht der König auf b1. Gestern auf g1. Morgen? Wer weiß.|Auswendig lernen ist wie Noten ablesen. Schön, aber noch keine Musik.|Remy will Schach960 mit der Trompete ansagen. Ich hab Nein gesagt.} #sprecher:blaeser #stimmung:laechelt
 + [„Noch ein Set?“]
-    Immer. #sprecher:blaeser
+    Immer. #sprecher:blaeser #stimmung:laechelt
     ~ beginnePartie("portDelacroix.schach960Set3")
     -> END
 + [„Bis bald, Mabel.“]

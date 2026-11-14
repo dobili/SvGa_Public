@@ -22,16 +22,16 @@ VAR hankGetroffen = false
 
 === teague ===
 {teagueGetroffen:
-    {~Die Standuhr stelle ich jeden Tag. Sie geht jeden Tag nach.|Joe spielt immer das Damengambit. Seit vierzig Jahren. Sag ihm nicht, dass ich das verraten habe.|Ein Siegel bricht man nicht. Man löst es.} #sprecher:teague
+    {~Die Standuhr stelle ich jeden Tag. Sie geht jeden Tag nach.|Joe spielt immer das Damengambit. Seit vierzig Jahren. Sag ihm nicht, dass ich das verraten habe.|Ein Siegel bricht man nicht. Man löst es.} #sprecher:teague #stimmung:laechelt
     -> END
 }
 ~ teagueGetroffen = true
 // Kapitel 26 (Roman): Mr. Teague führt durch den Schalterraum, als wäre es ein Schloss.
 Über der Tür ein handgemaltes Schild: „Heimatmuseum. Geöffnet, wenn Mr. Teague da ist.“ #sprecher:erzaehler #geraeusch:standuhr
 Mr. Teague ist da. Achtzig, so dünn, dass die Weste um ihn herum steht. #sprecher:erzaehler
-Fahrpläne von 1890. Die Lampe eines Streckenwärters. Und eine Standuhr, die ich jeden Tag stelle. #sprecher:teague
-Sie geht jeden Tag nach. #sprecher:teague
-Und das dort in der Ecke ist mein Kummer. #sprecher:teague
+Fahrpläne von 1890. Die Lampe eines Streckenwärters. Und eine Standuhr, die ich jeden Tag stelle. #sprecher:teague #stimmung:laechelt
+Sie geht jeden Tag nach. #sprecher:teague #stimmung:laechelt
+Und das dort in der Ecke ist mein Kummer. #sprecher:teague #stimmung:nachdenklich
 -> END
 
 === postsack ===
@@ -42,12 +42,12 @@ Und das dort in der Ecke ist mein Kummer. #sprecher:teague
 - siegelStellungBestanden: -> postsack_offen
 }
 Säcke aus grauem Segeltuch, steif vom Alter, jeder mit einem Klumpen Wachs versiegelt. #sprecher:erzaehler
-Post von achtzehnhundertsechsundsechzig. Die Strecke war drei Monate zu, und der Postmeister hatte das Fieber. #sprecher:teague
-Dann kam ein neuer Postmeister, dann eine neue Bahn, dann kam ich. Niemand hat sie je geöffnet. #sprecher:teague
+Post von achtzehnhundertsechsundsechzig. Die Strecke war drei Monate zu, und der Postmeister hatte das Fieber. #sprecher:teague #stimmung:nachdenklich
+Dann kam ein neuer Postmeister, dann eine neue Bahn, dann kam ich. Niemand hat sie je geöffnet. #sprecher:teague #stimmung:nachdenklich
 * [„Warum nicht?“]
-- Weil man ein Siegel nicht bricht, mein Kind. Man löst es. #sprecher:teague
+- Weil man ein Siegel nicht bricht, mein Kind. Man löst es. #sprecher:teague #stimmung:laechelt
 Ins Wachs sind kleine Figuren in einem Gitter gedrückt. #sprecher:erzaehler #bild:siegel_stellung
-Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack öffnen. Ich bin zu alt für Rätsel. #sprecher:teague
+Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack öffnen. Ich bin zu alt für Rätsel. #sprecher:teague #stimmung:laechelt
 {hankGetroffen:
     Eine Fesselung. Hank hat sie dir gezeigt: „Gefesselt. Nicht bewegen. Wie ich nach der Nachtschicht.“ #sprecher:erzaehler
 - else:
@@ -69,20 +69,20 @@ Zuunterst ein Umschlag aus dickem, gelblichem Papier. Die Schrift ist klein und 
 „An Mr. A. Whitlock, Esq., New Orleans, Louisiana.“ #sprecher:erzaehler
 In der Ecke, noch kleiner: „J. Hale.“ #sprecher:erzaehler #geraeusch:aus #musik:aus
 Die Klappe ist offen. Der Umschlag ist leer. #sprecher:erzaehler
-Sonderbar. Der Brief muss herausgefallen sein. Es gab damals eine Verordnung, bei Fieber … #sprecher:teague
+Sonderbar. Der Brief muss herausgefallen sein. Es gab damals eine Verordnung, bei Fieber … #sprecher:teague #stimmung:ueberrascht
 Ambrose steht so still, wie du ihn noch nie gesehen hast. #sprecher:erzaehler #pause:5
 Er hat mir geschrieben. #sprecher:ambrose #stimmung:still #musik:ambrose.cello
-Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs. #sprecher:ambrose #pause
-Er hat geschrieben, und ich war schon unterwegs. #sprecher:ambrose
+Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs. #sprecher:ambrose #stimmung:nachdenklich #pause
+Er hat geschrieben, und ich war schon unterwegs. #sprecher:ambrose #stimmung:bitter
 * [„Was stand drin?“]
-- Ich weiß es nicht. #sprecher:ambrose
+- Ich weiß es nicht. #sprecher:ambrose #stimmung:nachdenklich
 Er streckt die Hand nach dem Umschlag aus. Sie geht hindurch. #sprecher:erzaehler #bild:aus
 Ich weiß es nicht, {held}. Ich habe hundertsechzig Jahre lang geglaubt, er habe geschwiegen. #sprecher:ambrose #stimmung:traurig
 Mr. Teague sieht dich über die Brille an. #sprecher:erzaehler
-Du kennst den Namen. #sprecher:teague
+Du kennst den Namen. #sprecher:teague #stimmung:ueberrascht
 * [„Ein bisschen.“]
 - Er nickt langsam. #sprecher:erzaehler
-Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was hineingehört. #sprecher:teague
+Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was hineingehört. #sprecher:teague #stimmung:nachdenklich
 ~ gibFund("umschlag")
 -> END
 
@@ -95,8 +95,8 @@ Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was 
 }
 In der Vitrine liegt eine vergilbte Zeitung, aufgeschlagen bei einem kleinen gedruckten Schachbrett. #sprecher:erzaehler
 Die habe ich gelesen. In der Nacht nach dem Match. Vier zu drei. #sprecher:ambrose #stimmung:alt
-Ich wollte nie wieder eine Figur anrühren. Auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. #sprecher:ambrose
-Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzigmal. Bis es hell wurde. #sprecher:ambrose
+Ich wollte nie wieder eine Figur anrühren. Auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. #sprecher:ambrose #stimmung:bitter
+Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzigmal. Bis es hell wurde. #sprecher:ambrose #stimmung:nachdenklich
 * [„Zeig sie mir.“]
     ~ beginneAufgaben("ironwood.erinnerungBird")
     -> END
@@ -109,9 +109,9 @@ Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzi
 {birdNachgesprochen: -> END}
 ~ birdNachgesprochen = true
 Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, in eine Ecke. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
-Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose
+Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose #stimmung:nachdenklich
 {umschlagGeoeffnet: Er sieht auf den Umschlag in deiner Hand. #sprecher:erzaehler}
-Ich schon. Ich habe den Mut verloren. Einen Abend lang. #sprecher:ambrose
+Ich schon. Ich habe den Mut verloren. Einen Abend lang. #sprecher:ambrose #stimmung:bitter
 * [„Nur einen?“]
 - Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Wenn ich ehrlich bin. Länger. #sprecher:ambrose #stimmung:still
@@ -126,5 +126,5 @@ Nein. Wenn ich ehrlich bin. Länger. #sprecher:ambrose #stimmung:still
 In einem Schaukasten funkelt ein kleiner Glassplitter, geschliffen wie ein Edelstein. #sprecher:erzaehler
 Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 ~ gibFund("glasfunke")
-Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt. #sprecher:ambrose
+Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt. #sprecher:ambrose #stimmung:laechelt
 -> END

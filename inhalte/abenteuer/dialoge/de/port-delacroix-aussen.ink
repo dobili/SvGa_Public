@@ -54,11 +54,11 @@ VAR abschiedPortDelacroixGesehen = false
 ~ ankunftPortDelacroixGesehen = true
 Diese Luft. Salz und Holz. Und Teer. Und etwas Süßes, das fault: die Magnolien. Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
 * [„Du bist hier geboren.“]
-- Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose
+- Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose #stimmung:bitter
 Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler
 An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu Haus, schnurgerade. #sprecher:erzaehler
 * [„Was ist das?“]
-- Da stand das Wasser. #sprecher:mutter #pause
+- Da stand das Wasser. #sprecher:mutter #stimmung:nachdenklich #pause
 Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler
 Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d’Échecs, depuis 1889.“ #sprecher:erzaehler
 Das Musikhaus. Mein Vater hat die Orgel darin gestimmt. #sprecher:ambrose #stimmung:fern
@@ -78,7 +78,7 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 {nadelPortDelacroix > 0:
     Am Bahnhof wartet der Wüstenzug nach Westen. Hinter den Bergen liegt Desert Springs. #sprecher:erzaehler
     {ambroseSprichtWieder:
-        Wüste. Ich war nie in der Wüste. Es wird Zeit. #sprecher:ambrose
+        Wüste. Ich war nie in der Wüste. Es wird Zeit. #sprecher:ambrose #stimmung:laechelt
     }
 - else:
     Am Bahnhof steht ein Zug nach Westen. Erst willst du hier noch etwas zu Ende bringen. #sprecher:erzaehler
@@ -89,8 +89,8 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 === abschied_mama ===
 ~ abschiedPortDelacroixGesehen = true
 Am Bahnhof steht der Wüstenzug nach Westen. Mama bleibt hier; das Notzelt braucht sie noch zwei Wochen. #sprecher:erzaehler
-Fahr. Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter
-Ich hole dich ein. #sprecher:mutter
+Fahr. Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter #stimmung:laechelt
+Ich hole dich ein. #sprecher:mutter #stimmung:laechelt
 * [Mama umarmen]
 - Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
 Der Geigenkasten liegt neben dir auf dem Sitz. Der Deckel ist offen. #sprecher:erzaehler
@@ -187,11 +187,11 @@ Hier warst du schon. Jemand winkt dir aus dem Fenster zu. #sprecher:erzaehler
 === batiste_erstes_treffen ===
 ~ batisteGetroffen = true
 Am Kai liegt ein Boot kieloben auf zwei Böcken. Ein Mann streicht Pech in die Fugen. Auf einem Eimer steht ein Brett. #sprecher:erzaehler
-Du bist das Kind mit dem Rucksack. #sprecher:batiste
+Du bist das Kind mit dem Rucksack. #sprecher:batiste #stimmung:nachdenklich
 * [„Ja.“]
-- Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste
-Wer so was gemacht hat, wird empfindlich, wenn einer mit Glas an der Jacke kommt. #sprecher:batiste
-Setz dich. Ohne Uhr. Uhren sind was für Leute, die irgendwohin müssen. #sprecher:batiste
+- Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste #stimmung:nachdenklich
+Wer so was gemacht hat, wird empfindlich, wenn einer mit Glas an der Jacke kommt. #sprecher:batiste #stimmung:nachdenklich
+Setz dich. Ohne Uhr. Uhren sind was für Leute, die irgendwohin müssen. #sprecher:batiste #stimmung:laechelt
 -> batiste_angebot
 
 === batiste_angebot ===
@@ -200,23 +200,23 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     ~ beginnePartie("portDelacroix.batiste")
     -> END
 + [„Nicht jetzt.“]
-    Ich bin hier. Das Boot auch. #sprecher:batiste
+    Ich bin hier. Das Boot auch. #sprecher:batiste #stimmung:laechelt
     -> END
 
 === batiste_nach_sieg ===
 {not batisteKarteGegeben:
     ~ batisteKarteGegeben = true
     Du gewinnst nicht schön. Aber allein. #sprecher:erzaehler
-    Na also. Jetzt hat es auch keiner gehört. #sprecher:batiste
-    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste
+    Na also. Jetzt hat es auch keiner gehört. #sprecher:batiste #stimmung:laechelt
+    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste #stimmung:laechelt
     // „Kühler Kopf“ hat schon Mr. Quinn geschenkt; Batiste gibt den Bauernkompass (Bauer um Bauer,
     // ohne Uhr; Dokument 11 schlug ihn für Port Delacroix vor).
     Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine mit einem Bauern und einer Kompassnadel. #sprecher:erzaehler
-    Welchen Bauern man wohin stellt. Das ist das Ganze. #sprecher:batiste
+    Welchen Bauern man wohin stellt. Das ist das Ganze. #sprecher:batiste #stimmung:nachdenklich
     ~ gibKarte("zweiteChance")
     ~ gibKarte("bauernkompass")
 - else:
-    Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste
+    Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste #stimmung:laechelt
 }
 + [„Noch eine Partie.“]
     ~ beginnePartie("portDelacroix.batiste")
@@ -225,7 +225,7 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     -> END
 
 === batiste_nach_niederlage ===
-Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste
+Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
@@ -236,13 +236,13 @@ Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste
 
 === arceneaux ===
 {arceneauxGetroffen:
-    {~Beignets, frisch aus dem Fett! Für Helfer die Hälfte.|Remy ist mein Enkel. Er ist hitzig, aber ein guter Junge.|Das Musikhaus kommt wieder. Die Kuchen für die Eröffnung hab ich schon bei mir selbst bestellt.} #sprecher:arceneaux
+    {~Beignets, frisch aus dem Fett! Für Helfer die Hälfte.|Remy ist mein Enkel. Er ist hitzig, aber ein guter Junge.|Das Musikhaus kommt wieder. Die Kuchen für die Eröffnung hab ich schon bei mir selbst bestellt.} #sprecher:arceneaux #stimmung:laechelt
     -> arceneaux_laden
 }
 ~ arceneauxGetroffen = true
 Vor der Turnhalle steht ein Gebäckstand, Puderzucker überall. Eine alte Dame wischt sich die Hände an der Schürze ab. #sprecher:erzaehler
-Arceneaux. Wer hilft, bekommt Gebäck. Wer nicht hilft, bekommt auch Gebäck, aber mit schlechtem Gewissen. #sprecher:arceneaux
-Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux
+Arceneaux. Wer hilft, bekommt Gebäck. Wer nicht hilft, bekommt auch Gebäck, aber mit schlechtem Gewissen. #sprecher:arceneaux #stimmung:lacht
+Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux #stimmung:laechelt
 -> arceneaux_laden
 
 === arceneaux_laden ===

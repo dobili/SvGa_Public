@@ -19,41 +19,41 @@ VAR ambroseSternwarte = 0
 === ngata ===
 {
 - sterneBestanden:
-    Weiß hat gewonnen, sagt mein Funkpartner in Chile. Ich sage: der Himmel. #sprecher:ngata
+    Weiß hat gewonnen, sagt mein Funkpartner in Chile. Ich sage: der Himmel. #sprecher:ngata #stimmung:laechelt
     -> END
 - ngataGetroffen:
     -> ngata_angebot
 }
 ~ ngataGetroffen = true
 Am Schreibtisch sitzt eine Frau mit Kopfhörern. Aus dem Funkgerät kommen Zahlen und Buchstaben. #sprecher:erzaehler
-Dr. Ngata. Ich spiele jede Nacht per Funk, mit Leuten auf der anderen Seite der Erde. Ihre Sterne sind andere, die Züge sind dieselben. #sprecher:ngata
+Dr. Ngata. Ich spiele jede Nacht per Funk, mit Leuten auf der anderen Seite der Erde. Ihre Sterne sind andere, die Züge sind dieselben. #sprecher:ngata #stimmung:laechelt
 -> ngata_angebot
 
 === ngata_angebot ===
 {sterneBestanden: -> END}
-Ich habe ein paar Mattbilder gesammelt, für lange Nächte. Willst du sie lösen? #sprecher:ngata
+Ich habe ein paar Mattbilder gesammelt, für lange Nächte. Willst du sie lösen? #sprecher:ngata #stimmung:laechelt
 + [Ja, zeig her.]
     ~ beginneAufgaben("sternwarte.sterne")
     -> END
 + [Später.]
-    Der Himmel läuft nicht weg. Die Stellungen auch nicht. #sprecher:ngata
+    Der Himmel läuft nicht weg. Die Stellungen auch nicht. #sprecher:ngata #stimmung:laechelt
     -> END
 
 === lucia ===
 {luciaGetroffen:
-    Siehst du ihn? Zwei Sterne nach oben, einer zur Seite. Ein L. #sprecher:lucia
+    Siehst du ihn? Zwei Sterne nach oben, einer zur Seite. Ein L. #sprecher:lucia #stimmung:laechelt
     -> END
 }
 ~ luciaGetroffen = true
 Ein Mädchen mit Bleistift hinter dem Ohr zeichnet Linien auf eine Sternkarte. #sprecher:erzaehler
-Lucía. Ich habe ein Sternbild gefunden, das noch keiner kennt. Ich nenne es Springer. Es springt über den ganzen Himmel. #sprecher:lucia
+Lucía. Ich habe ein Sternbild gefunden, das noch keiner kennt. Ich nenne es Springer. Es springt über den ganzen Himmel. #sprecher:lucia #stimmung:laechelt
 -> END
 
 === teleskop ===
 ~ ambroseSternwarte = ambroseSternwarte + 1
 Durch das große Teleskop schimmert der Mond. Man sieht Krater, scharf wie Felder auf einem Brett. #sprecher:erzaehler
 {ambroseSprichtWieder and ambroseSternwarte == 1:
-    Vierundsechzig Felder, und trotzdem kommt man nie ans Ende. Wie da oben. #sprecher:ambrose
+    Vierundsechzig Felder, und trotzdem kommt man nie ans Ende. Wie da oben. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 

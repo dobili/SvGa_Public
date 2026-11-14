@@ -27,12 +27,12 @@ VAR esIstStillGesagt = false
 // den Laden und das Zimmer darüber.
 ~ ankunftGhostTownGesehen = true
 Mit jedem Kilometer wird alles blasser. Das Rot der Erde, das Grün der Büsche, das Blau am Himmel. #sprecher:erzaehler #musik:aus #geraeusch:ghosttown
-Guck mal. Es sieht aus wie ein altes Foto. #sprecher:juno
+Guck mal. Es sieht aus wie ein altes Foto. #sprecher:juno #stimmung:ueberrascht
 Die Stadt kommt ohne Schild. Häuser aus Brettern, die das Wetter silbern gemacht hat. Ein Saloon mit einem Balkon, der an einer Seite herunterhängt. #sprecher:erzaehler
 Es ist niemand da. Seit hundert Jahren. Der Wind schiebt einen Busch über die Straße. #sprecher:erzaehler
 Hier. #sprecher:ambrose #stimmung:fern
 Er steht mitten auf der Straße und dreht sich langsam um sich selbst. #sprecher:erzaehler
-Der Laden. Das war der Laden. Darüber war ein Zimmer. Es hatte eine Tapete mit Rosen. #sprecher:ambrose
+Der Laden. Das war der Laden. Darüber war ein Zimmer. Es hatte eine Tapete mit Rosen. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe die Rosen gezählt, als ich nicht schlafen konnte. #sprecher:ambrose #stimmung:still
 -> END
 
@@ -56,18 +56,18 @@ Die Staubstraße führt zurück zum Canyon und weiter zum Camp. #sprecher:erzaeh
 
 === pruitt ===
 {pruittGetroffen:
-    {~Hufnagel. Der dreiundvierzigste diese Woche.|Ich bin die Einwohnerzahl.|Die meisten fragen nach dem Gold.} #sprecher:pruitt
+    {~Hufnagel. Der dreiundvierzigste diese Woche.|Ich bin die Einwohnerzahl.|Die meisten fragen nach dem Gold.} #sprecher:pruitt #stimmung:laechelt
     -> END
 }
 ~ pruittGetroffen = true
 Etwas piept. Hinter dem Saloon kommt ein alter Mann mit Strohhut hervor und schwenkt ein Gerät an einer Stange über den Boden. #sprecher:erzaehler #klang:metalldetektor
 Hufnagel. Der dreiundvierzigste diese Woche. #sprecher:pruitt
 Besuch! Ich hab seit April keinen gehabt. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:froh
-Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei Jahren. Ein Opernhaus, das nie fertig wurde. #sprecher:pruitt
-Achtzehnhundertdreiundsiebzig ging der Letzte. Ein Schmied. Er ließ die Tür offen, weil es nichts mehr zu stehlen gab. #sprecher:pruitt
+Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei Jahren. Ein Opernhaus, das nie fertig wurde. #sprecher:pruitt #stimmung:nachdenklich
+Achtzehnhundertdreiundsiebzig ging der Letzte. Ein Schmied. Er ließ die Tür offen, weil es nichts mehr zu stehlen gab. #sprecher:pruitt #stimmung:nachdenklich
 * [„Und der Friedhof?“]
 - Er sieht dich an. Sehr helle Augen unter dem Hut. #sprecher:erzaehler
-Die meisten fragen nach dem Gold. #sprecher:pruitt
+Die meisten fragen nach dem Gold. #sprecher:pruitt #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Das Grab (Szene 98)
@@ -88,18 +88,18 @@ Die meisten fragen nach dem Gold. #sprecher:pruitt
     Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #klang:metalldetektor
 }
 Ganz hinten, wo der Zaun aufhört und die Wüste anfängt, liegt ein niedriger Stein ohne Namen. Eingeritzt: acht mal acht Vierecke. #sprecher:erzaehler #bild:stein_brett
-Mr. Pruitt nimmt den Hut ab. Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #bild:aus
-„Ein Reisender aus dem Süden, Februar 1866. Fieber. Führte ein Schachbrett mit sich und bat, es seiner Schwester zu senden. Name unleserlich.“ #sprecher:pruitt
-Der Schmied hat den Stein gemacht. Der Fremde hat ihm in drei Tagen das Spiel beigebracht, zwischen zwei Fieberanfällen. #sprecher:pruitt
+Mr. Pruitt nimmt den Hut ab. Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #stimmung:nachdenklich #bild:aus
+„Ein Reisender aus dem Süden, Februar 1866. Fieber. Führte ein Schachbrett mit sich und bat, es seiner Schwester zu senden. Name unleserlich.“ #sprecher:pruitt #stimmung:nachdenklich
+Der Schmied hat den Stein gemacht. Der Fremde hat ihm in drei Tagen das Spiel beigebracht, zwischen zwei Fieberanfällen. #sprecher:pruitt #stimmung:nachdenklich
 Ambrose steht lange vor dem Stein. #sprecher:erzaehler #pause:3
 Hier bin ich angekommen. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.angekommen
 Nur nicht dort, wo ich wollte. #sprecher:ambrose #stimmung:friedlich
 Er kniet nieder und legt die Hand auf den Stein. Sie geht nicht hindurch. #sprecher:erzaehler
 Ein Schmied. Er hieß Gideon. Er hat jeden Springerzug laut mitgezählt. Eins, zwei, und eins. Ich habe ihn ganz vergessen. #sprecher:ambrose #stimmung:lachtOhneSpott
-Ist er hier? Ist das seiner? #sprecher:juno
+Ist er hier? Ist das seiner? #sprecher:juno #stimmung:ueberrascht
 * [Nicken]
 - Juno pflückt eine kleine gelbe Blume, die einzige weit und breit, und legt sie auf den Stein. Auf e4. #sprecher:erzaehler #bild:blume_e4
-Guter Zug. #sprecher:ambrose
+Guter Zug. #sprecher:ambrose #stimmung:laechelt
 Du sagst es ihr. Sie wird rot. #sprecher:erzaehler #bild:aus
 Ein Überlandbus hält am Ende der Hauptstraße, wo seit hundert Jahren nichts gehalten hat. #sprecher:erzaehler #klang:bus
 Ein Junge steigt aus, im zu großen Pullover, mit Rucksack und einem kleinen alten Buch. Victor. #sprecher:erzaehler
@@ -127,38 +127,38 @@ Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine Remispa
 Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. Ich hab sie gemacht. #sprecher:juno #stimmung:froh
 Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. Sie kommt dir vor wie etwas, das fertig ist. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck
 Er wartet am Ende des Gehsteigs, wo die Bretter aufhören. #sprecher:erzaehler
-Setz dich. #sprecher:ambrose
+Setz dich. #sprecher:ambrose #stimmung:nachdenklich
 Du setzt dich auf die Kante. Der Staub ist noch warm vom Tag. #sprecher:erzaehler
 Ich muss dir etwas sagen. Ich glaube, du weißt es schon. #sprecher:ambrose #stimmung:still
 {esIstStillGesagt:
-    Im Wald habe ich dir erzählt, dass es still geworden ist. Seit heute Mittag ist es mehr als das. #sprecher:ambrose
+    Im Wald habe ich dir erzählt, dass es still geworden ist. Seit heute Mittag ist es mehr als das. #sprecher:ambrose #stimmung:nachdenklich
 - else:
-    Seit der Bergstation sehe ich die Stellung nicht mehr im Dunkeln. Seit heute Mittag ist es mehr als das. #sprecher:ambrose
+    Seit der Bergstation sehe ich die Stellung nicht mehr im Dunkeln. Seit heute Mittag ist es mehr als das. #sprecher:ambrose #stimmung:nachdenklich
 }
-Ich bin leichter. Das Brett hält mich nicht mehr so fest. #sprecher:ambrose
+Ich bin leichter. Das Brett hält mich nicht mehr so fest. #sprecher:ambrose #stimmung:nachdenklich
 Er betrachtet seine Hand. Sie ist durchsichtiger als sonst. #sprecher:erzaehler
-Ich könnte, glaube ich, ein paar Schritte weiter gehen, als das Brett liegt. Ich habe es nicht versucht. #sprecher:ambrose
+Ich könnte, glaube ich, ein paar Schritte weiter gehen, als das Brett liegt. Ich habe es nicht versucht. #sprecher:ambrose #stimmung:nachdenklich
 * [„Warum nicht?“]
-- Weil ich nicht weiß, ob ich dann zurückkäme. Und es gibt noch etwas, das ich sehen will. #sprecher:ambrose
+- Weil ich nicht weiß, ob ich dann zurückkäme. Und es gibt noch etwas, das ich sehen will. #sprecher:ambrose #stimmung:nachdenklich
 Er setzt sich neben dich, die Füße im Staub. Das vierte Mal. Du hast mitgezählt. #sprecher:erzaehler
 Noch eine Partie. Deine. Gegen ihn. In der großen Halle, vor allen Leuten. Dann ist es gut. #sprecher:ambrose #stimmung:friedlich
 * [„Und dann gehst du.“]
-- Ja. #sprecher:ambrose #pause
+- Ja. #sprecher:ambrose #stimmung:nachdenklich #pause
 * [„Bleib.“]
     Du sagst es wie jemand, der fünf ist. Er lacht nicht. #sprecher:erzaehler #musik:aus #pause:4
 * [„Ich weiß.“]
-    Natürlich weißt du es. Vielleicht seit dem Felsbogen. #sprecher:ambrose #musik:aus #pause:4
+    Natürlich weißt du es. Vielleicht seit dem Felsbogen. #sprecher:ambrose #stimmung:laechelt #musik:aus #pause:4
     Du weißt, dass er gehen muss. Bleib, sagst du trotzdem. Du wolltest es nur einmal sagen. #sprecher:erzaehler
-- Ich könnte bleiben. In deinem Zimmer auf der Fensterbank, in einem Geigenkasten. Ich könnte deine Partien kommentieren, bis du mich nicht mehr hören willst. #sprecher:ambrose #musik:nachtstueck
-Ein Geist, der bleibt, wird ein Möbelstück, {held}. Etwas, um das man herumgeht. Ich war lange genug ein Brett. #sprecher:ambrose
-In Maple Falls sitzt eine alte Frau auf einer Veranda mit zwei Stühlen. Ich möchte nicht der sein, wegen dem du einen leeren Stuhl hinstellst. #sprecher:ambrose
+- Ich könnte bleiben. In deinem Zimmer auf der Fensterbank, in einem Geigenkasten. Ich könnte deine Partien kommentieren, bis du mich nicht mehr hören willst. #sprecher:ambrose #stimmung:laechelt #musik:nachtstueck
+Ein Geist, der bleibt, wird ein Möbelstück, {held}. Etwas, um das man herumgeht. Ich war lange genug ein Brett. #sprecher:ambrose #stimmung:nachdenklich
+In Maple Falls sitzt eine alte Frau auf einer Veranda mit zwei Stühlen. Ich möchte nicht der sein, wegen dem du einen leeren Stuhl hinstellst. #sprecher:ambrose #stimmung:nachdenklich
 * [„Mrs. Calloway lernt jetzt Schach. Von Owen.“]
 - Juno hat geschrieben: Sie haben einen Tisch zwischen die Stühle gestellt. #sprecher:erzaehler
 Dann ist es noch besser, als ich dachte. #sprecher:ambrose #stimmung:lachtOhneSpott
-Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose
+Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose #stimmung:laechelt
 Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof. #sprecher:erzaehler #teilchen:sternschnuppen #klang:sternschnuppe
-Ich habe mir auch etwas gewünscht. Ich bin tot, mir kann nichts mehr misslingen. #sprecher:ambrose
-Dass du im Finale einen Fehler machst. Einen kleinen, den du merkst. Und dass du danach den besten Zug deines Lebens spielst. #sprecher:ambrose
+Ich habe mir auch etwas gewünscht. Ich bin tot, mir kann nichts mehr misslingen. #sprecher:ambrose #stimmung:lacht
+Dass du im Finale einen Fehler machst. Einen kleinen, den du merkst. Und dass du danach den besten Zug deines Lebens spielst. #sprecher:ambrose #stimmung:laechelt
 * [„Das ist ein gemeiner Wunsch.“]
 - Es ist der schönste, den ich habe. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.held.gespraech
 -> END

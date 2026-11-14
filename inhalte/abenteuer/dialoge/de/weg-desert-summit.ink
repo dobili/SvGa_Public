@@ -50,26 +50,26 @@ Königsrennen. Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprec
 
 === earl_regel ===
 ~ varianteKoenigsrennenGelernt = true
-Wer zuerst hinten ankommt, ohne dass ihm einer Schach gibt, zahlt nicht. Alle anderen zahlen dem seinen Kaffee. #sprecher:earl
+Wer zuerst hinten ankommt, ohne dass ihm einer Schach gibt, zahlt nicht. Alle anderen zahlen dem seinen Kaffee. #sprecher:earl #stimmung:laechelt
 Den ersten Kaffee verlierst du, weil du versuchst, etwas zu schlagen. #sprecher:erzaehler
-Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose
-Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose
+Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
+Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
 -> earl_angebot
 
 === earl_angebot ===
 // VARIANTE-FEHLT: Königsrennen (L8). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Heute sind alle Bretter belegt. Die Jungs spielen um die nächste Tankfüllung. #sprecher:earl
-Komm wieder, wenn du hier durchfährst. Dann rennen wir. #sprecher:earl
+Heute sind alle Bretter belegt. Die Jungs spielen um die nächste Tankfüllung. #sprecher:earl #stimmung:laechelt
+Komm wieder, wenn du hier durchfährst. Dann rennen wir. #sprecher:earl #stimmung:laechelt
 -> END
 
 === earl_alltag ===
-{~Der Kaffee hier ist schwarz wie ein Läufer auf c8.|Ich hab mal ein Rennen in elf Zügen gewonnen. Seitdem zahl ich nie.|Bis Summit City geht's nur noch bergauf. Für Lastwagen und für Schachspieler.} #sprecher:earl
+{~Der Kaffee hier ist schwarz wie ein Läufer auf c8.|Ich hab mal ein Rennen in elf Zügen gewonnen. Seitdem zahl ich nie.|Bis Summit City geht's nur noch bergauf. Für Lastwagen und für Schachspieler.} #sprecher:earl #stimmung:laechelt
 + {neonGefunden and not neonRepariert} [„Ich hab dein K gefunden.“]
     -> earl_k
 + [„Erklär mir das Königsrennen noch einmal.“]
     -> earl_regel
 + [„Bis bald, Earl.“]
-    Gute Fahrt. Und lass den König nicht im Schach stehen. #sprecher:earl
+    Gute Fahrt. Und lass den König nicht im Schach stehen. #sprecher:earl #stimmung:laechelt
     -> END
 
 === earl_k ===
@@ -77,8 +77,8 @@ Komm wieder, wenn du hier durchfährst. Dann rennen wir. #sprecher:earl
 Earl dreht das gebogene Glasrohr in der Hand. Dann holt er eine Leiter aus dem Lastwagen. #sprecher:erzaehler
 Seit neunundachtzig fehlt das Ding. Und du bringst es einfach zurück. #sprecher:earl #stimmung:froh
 Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #sprecher:erzaehler
-Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose
-Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl
+Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
+Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -89,7 +89,7 @@ Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl
     -> END
 }
 Neben der Kasse hängt eine Tafel: „Drei Endspiele. Wer alle löst, kriegt den Kaffee umsonst.“ #sprecher:erzaehler
-Nur Könige und Bauern. Wie seltsam. Und doch. #sprecher:ambrose
+Nur Könige und Bauern. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDesertSummit.tafel")
     -> END
@@ -105,7 +105,7 @@ Nur Könige und Bauern. Wie seltsam. Und doch. #sprecher:ambrose
 }
 ~ neonGefunden = true
 Hinter dem Diner, zwischen leeren Kisten, liegt ein gebogenes Glasrohr in Form eines „K“. #sprecher:erzaehler
-Das K von King's Diner. Ist seit neunundachtzig kaputt. Nimm's mit, wir haben uns dran gewöhnt. #sprecher:earl
+Das K von King's Diner. Ist seit neunundachtzig kaputt. Nimm's mit, wir haben uns dran gewöhnt. #sprecher:earl #stimmung:laechelt
 ~ gibFund("neonK")
 -> END
 
@@ -146,7 +146,7 @@ VAR ruthGetroffen = false
 
 === ereignis_funkschach ===
 {funkschachFertig:
-    Aus dem Funkgerät rauscht es. „{held} Junior, bist du da? Wir spielen Dienstag wieder.“ #sprecher:mamaBear
+    Aus dem Funkgerät rauscht es. „{held} Junior, bist du da? Wir spielen Dienstag wieder.“ #sprecher:mamaBear #stimmung:laechelt
     -> END
 }
 {ausgangWegDesertSummitFunkschach != "" and ausgangWegDesertSummitFunkschach != "abgebrochen": -> funkschach_ende}
@@ -160,7 +160,7 @@ Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen.
 -> funkschach_partie
 
 === funkschach_partie ===
-Hier Mama Bear. Bedenkzeit bis zur nächsten Ausfahrt. Ich sag dir meine Züge an, du hörst gut hin. #sprecher:mamaBear
+Hier Mama Bear. Bedenkzeit bis zur nächsten Ausfahrt. Ich sag dir meine Züge an, du hörst gut hin. #sprecher:mamaBear #stimmung:laechelt
 Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setzt er für Mama Bear aufs Brett. #sprecher:erzaehler
 ~ beginnePartie("wegDesertSummit.funkschach")
 -> END
@@ -168,9 +168,9 @@ Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setz
 === funkschach_ende ===
 {funkschachFertig: -> END}
 ~ funkschachFertig = true
-Gut gespielt, {held} Junior. Ab heute ist das dein Funkname. #sprecher:mamaBear
-Sag mal, du kommst doch rum. Ich fahre seit drei Wochen versiegelte Kisten von Perfect Move in die Berge. Sie summen. Kisten summen nicht. #sprecher:mamaBear
-Mein Laster steht in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn du willst. #sprecher:mamaBear
+Gut gespielt, {held} Junior. Ab heute ist das dein Funkname. #sprecher:mamaBear #stimmung:laechelt
+Sag mal, du kommst doch rum. Ich fahre seit drei Wochen versiegelte Kisten von Perfect Move in die Berge. Sie summen. Kisten summen nicht. #sprecher:mamaBear #stimmung:nachdenklich
+Mein Laster steht in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn du willst. #sprecher:mamaBear #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Funde am Diner
@@ -186,7 +186,7 @@ Darunter, ganz klein: „Dreimal klopfen.“ #sprecher:erzaehler
 ~ gibFund("kreide3")
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 {ambroseSprichtWieder:
-    Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose
+    Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -227,17 +227,17 @@ Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme. #s
 === mags ===
 {
 - ausgangWegDesertSummitKreideblitz == "sieg":
-    Du hast mich geschlagen. Komm wieder, dann revanchiere ich mich. #sprecher:mags
+    Du hast mich geschlagen. Komm wieder, dann revanchiere ich mich. #sprecher:mags #stimmung:laechelt
     -> END
 - ausgangWegDesertSummitKreideblitz != "" and ausgangWegDesertSummitKreideblitz != "abgebrochen":
-    Mitgespielt ist mitgespielt. Bei den Kreidespringern zählt das. #sprecher:mags
+    Mitgespielt ist mitgespielt. Bei den Kreidespringern zählt das. #sprecher:mags #stimmung:laechelt
     -> END
 - magsGetroffen:
     -> mags_angebot
 }
 ~ magsGetroffen = true
 Kein Bildschirm, keine Uhr an der Wand. Nur Bretter, Kreide und Kaffee. #sprecher:erzaehler
-Mags. Ich fahre Kühlwagen und spiele Blitz. Drei Minuten, zwei Sekunden dazu. Gewinnen musst du nicht. Mitspielen schon. #sprecher:mags
+Mags. Ich fahre Kühlwagen und spiele Blitz. Drei Minuten, zwei Sekunden dazu. Gewinnen musst du nicht. Mitspielen schon. #sprecher:mags #stimmung:laechelt
 -> mags_angebot
 
 === mags_angebot ===
@@ -245,16 +245,16 @@ Mags. Ich fahre Kühlwagen und spiele Blitz. Drei Minuten, zwei Sekunden dazu. G
     ~ beginnePartie("wegDesertSummit.kreideblitz")
     -> END
 + [Erst mal zuschauen.]
-    Zuschauen ist erlaubt. Reden nicht. #sprecher:mags
+    Zuschauen ist erlaubt. Reden nicht. #sprecher:mags #stimmung:nachdenklich
     -> END
 
 === ruth_keene ===
 {ruthGetroffen:
-    Mama Bear, Ende. Das sage ich auch hier drin. #sprecher:ruthKeene
+    Mama Bear, Ende. Das sage ich auch hier drin. #sprecher:ruthKeene #stimmung:lacht
     -> END
 }
 ~ ruthGetroffen = true
-Ruth Keene. Am Funk heiße ich Mama Bear. Hier hinten darf ich einfach Ruth sein. #sprecher:ruthKeene
+Ruth Keene. Am Funk heiße ich Mama Bear. Hier hinten darf ich einfach Ruth sein. #sprecher:ruthKeene #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Ansehen

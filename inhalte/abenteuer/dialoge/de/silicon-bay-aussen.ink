@@ -48,20 +48,20 @@ Es ist still. Still wie ein Raum, in dem ein Gerät läuft, das man erst bemerkt
 Auf den Bänken sitzt jeder für sich, auf vielen Bildschirmen kleine Schachbretter. Niemand spielt gegen jemanden. #sprecher:erzaehler
 * [Weitergehen]
 - Etwas Weißes, Kniehohes summt auf dich zu und fährt vorbei, ohne langsamer zu werden. #sprecher:erzaehler #klang:lieferroboter
-Ein Lieferroboter. Der bringt Essen. #sprecher:juno
+Ein Lieferroboter. Der bringt Essen. #sprecher:juno #stimmung:ueberrascht
 * [„Wem?“]
-- Jemandem, der nicht rausgehen will. #sprecher:juno
+- Jemandem, der nicht rausgehen will. #sprecher:juno #stimmung:nachdenklich
 Ambrose dreht sich einmal um sich selbst. In zwanzig Scheiben Glas ist er nicht zu sehen. #sprecher:erzaehler
-Kein Baum. Keine Taube. Nicht einmal eine Ratte. #sprecher:ambrose
-Ich habe in Hafenstädten gelebt. Ich weiß, wie eine Stadt ohne Ratten aussieht: gar nicht. Wo wohnen hier die Tiere? #sprecher:ambrose
-Die stören die Sensoren. #sprecher:victor
+Kein Baum. Keine Taube. Nicht einmal eine Ratte. #sprecher:ambrose #stimmung:ueberrascht
+Ich habe in Hafenstädten gelebt. Ich weiß, wie eine Stadt ohne Ratten aussieht: gar nicht. Wo wohnen hier die Tiere? #sprecher:ambrose #stimmung:laechelt
+Die stören die Sensoren. #sprecher:victor #stimmung:bitter
 * [Dich umdrehen]
 - Victor steht hinter euch, ganz in Weiß. Er sieht aus, als hätte er nicht geschlafen. #sprecher:erzaehler
-Ihr seid gekommen. #sprecher:victor
+Ihr seid gekommen. #sprecher:victor #stimmung:ueberrascht
 * [„Du hast eingeladen.“]
-- Ja. #sprecher:victor
+- Ja. #sprecher:victor #stimmung:nachdenklich
 Er sieht auf seine Schuhe. #sprecher:erzaehler #pause:2
-Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor
+Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor #stimmung:nachdenklich
 -> ankunft_rundgang
 
 // Victor zählt auf, weil Zahlen das Einzige sind, worüber er ohne Mühe redet (Kapitel 31).
@@ -71,10 +71,10 @@ Gekühlt mit Meerwasser. #sprecher:victor
 Er gibt nicht an. Zahlen sind das Einzige, worüber er ohne Mühe reden kann. #sprecher:erzaehler
 Wohnst du hier? #sprecher:juno
 Im achtunddreißigsten. #sprecher:victor
-Kann man da die Fenster aufmachen? #sprecher:juno
+Kann man da die Fenster aufmachen? #sprecher:juno #stimmung:nachdenklich
 * [Auf Victors Antwort warten]
 - Victor überlegt. Ernsthaft. #sprecher:erzaehler
-Ich habe es nie versucht. #sprecher:victor
+Ich habe es nie versucht. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === glasbruecke ===
@@ -94,27 +94,27 @@ Die Glasbrücke führt zurück zur Raststätte an der Schnellstraße. #sprecher:
 === dash_erstes_treffen ===
 ~ dashGetroffen = true
 Auf der Holzbank vor Rosies Wagen sitzt ein junger Mann neben einem Lieferrad, einen Burrito in der Hand. #sprecher:erzaehler #musik:rosie
-Tick, tack. Dein König hat Angst. Guck, wie der zittert. Denkst du noch oder verlierst du schon? #sprecher:dash
+Tick, tack. Dein König hat Angst. Guck, wie der zittert. Denkst du noch oder verlierst du schon? #sprecher:dash #stimmung:lacht
 Der Mann im Anzug gegenüber stellt einen Turm ein, steht auf und geht. #sprecher:erzaehler
-Nächster! Du da, mit den Blechdingern an der Jacke. Drei Minuten, um einen Burrito. #sprecher:dash
-Ich bin Dash. Ich rede dabei. Stört dich das? Mich nicht. #sprecher:dash
+Nächster! Du da, mit den Blechdingern an der Jacke. Drei Minuten, um einen Burrito. #sprecher:dash #stimmung:lacht
+Ich bin Dash. Ich rede dabei. Stört dich das? Mich nicht. #sprecher:dash #stimmung:lacht
 * [„Mich auch nicht.“]
 - Im Park redet man. Und das hier ist ein Park. Wenn auch einer aus Glas, mit einer einzigen Bank. #sprecher:ambrose #stimmung:froh
 -> dash_angebot
 
 === dash_angebot ===
-Tick, tack. Spielen wir? #sprecher:dash #musik:rosie
+Tick, tack. Spielen wir? #sprecher:dash #stimmung:laechelt #musik:rosie
 + [„Los, drei Minuten.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
 * [„Nach dem Essen.“]
-    Denkst du noch oder verlierst du schon? Ich bin hier. #sprecher:dash
+    Denkst du noch oder verlierst du schon? Ich bin hier. #sprecher:dash #stimmung:laechelt
     -> END
 
 === dash_nach_niederlage ===
-Burrito für mich! Denkst du noch oder verlierst du schon? #sprecher:dash #musik:rosie
+Burrito für mich! Denkst du noch oder verlierst du schon? #sprecher:dash #stimmung:lacht #musik:rosie
 Es ist, als spielte man neben einem Radio. Du hast zugehört. #sprecher:erzaehler
-Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
+Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose #stimmung:nachdenklich
 + [„Revanche.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
@@ -123,7 +123,7 @@ Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
 
 === dash_nach_sieg ===
 {not dashKarteGegeben: -> dash_hm}
-{~Du schon wieder. Mein Burrito wird kalt.|Okay, du bist gut. Aber ich bin lauter.|Morgen gewinn ich. Wahrscheinlich.} #sprecher:dash #musik:rosie
+{~Du schon wieder. Mein Burrito wird kalt.|Okay, du bist gut. Aber ich bin lauter.|Morgen gewinn ich. Wahrscheinlich.} #sprecher:dash #stimmung:laechelt #musik:rosie
 + [„Noch eine?“]
     ~ beginnePartie("siliconBay.dash")
     -> END
@@ -136,39 +136,39 @@ Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
 ~ dashKarteGegeben = true
 Mitten in der Partie hast du gezogen und dann lange aufs Brett gesehen, als hättest du etwas Furchtbares entdeckt. #sprecher:erzaehler #musik:rosie
 * [„Hm.“]
-- Was, hm? Was hast du gesehen? Da ist doch nichts. Oder? #sprecher:dash
+- Was, hm? Was hast du gesehen? Da ist doch nichts. Oder? #sprecher:dash #stimmung:ueberrascht
 Seine Uhr lief. Er hat vierzig Sekunden lang etwas gesucht, das es nicht gab. Nach der Partie lacht er, laut und ohne Groll. #sprecher:erzaehler
-Das war nicht fein. #sprecher:ambrose
+Das war nicht fein. #sprecher:ambrose #stimmung:nachdenklich
 * [„Du hast gesagt, im Park redet man.“]
-- Ich habe nicht gesagt, dass es fein ist. #sprecher:ambrose
+- Ich habe nicht gesagt, dass es fein ist. #sprecher:ambrose #stimmung:laechelt
 Dash kauft dir den Burrito selbst. Rosie reicht eine Karte durch die Klappe, ein Gesicht mit gerunzelter Stirn. #sprecher:erzaehler
-Die lag in der Kasse, seit ich den Wagen gekauft hab. Von einem alten Mann in Riverton. #sprecher:rosie
-Er hat gesagt, die gehört dem, der Dash zum Schweigen bringt. #sprecher:rosie
+Die lag in der Kasse, seit ich den Wagen gekauft hab. Von einem alten Mann in Riverton. #sprecher:rosie #stimmung:laechelt
+Er hat gesagt, die gehört dem, der Dash zum Schweigen bringt. #sprecher:rosie #stimmung:lacht
 * [Die Karte nehmen]
 - ~ gibKarte("gruebelfalle")
 -> dash_victor
 
 === dash_victor ===
 Victor hat die ganze Zeit dabeigestanden. Er hat nichts gegessen. #sprecher:erzaehler
-Er verliert jeden Tag. Seine Genauigkeit liegt bei sechzig Prozent. Warum kommt er wieder? #sprecher:victor
+Er verliert jeden Tag. Seine Genauigkeit liegt bei sechzig Prozent. Warum kommt er wieder? #sprecher:victor #stimmung:nachdenklich
 Es ist keine Verachtung in der Frage. Er will es wissen. #sprecher:erzaehler
 * [„Frag ihn.“]
 - Victor sieht zurück zur Bank. Dash hat schon den Nächsten. #sprecher:erzaehler
-Das kann man nicht messen. #sprecher:victor
+Das kann man nicht messen. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Rosie
 
 === rosie ===
 {rosieGetroffen:
-    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|Pass auf dich auf in der Akademie.} #sprecher:rosie #musik:rosie
+    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|Pass auf dich auf in der Akademie.} #sprecher:rosie #stimmung:laechelt #musik:rosie
     -> rosie_laden
 }
 ~ rosieGetroffen = true
 Ein alter Lastwagen, türkis, mit Beulen. Aus der Klappe kommen Dampf und der Geruch von gebratenen Zwiebeln. #sprecher:erzaehler #musik:rosie
 Auf dem Dach dreht sich ein Blechschild, von Hand gemalt: „Rosies“. Die Frau in der Klappe hat Mehl an den Armen. #sprecher:erzaehler
-Ich bin das Einzige in dieser Stadt, das nicht leuchtet. Was wollt ihr? Sagt nicht Salat. #sprecher:rosie
-Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie
+Ich bin das Einzige in dieser Stadt, das nicht leuchtet. Was wollt ihr? Sagt nicht Salat. #sprecher:rosie #stimmung:lacht
+Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie #stimmung:laechelt
 -> rosie_laden
 
 === rosie_laden ===
@@ -204,7 +204,7 @@ Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit f�
 
 // Die Frage ohne Antwort (Kapitel 34). Die Musik läuft weiter; es gibt keine Stille.
 === hotel_nacht_frage ===
-Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen. #sprecher:ambrose
+Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen. #sprecher:ambrose #stimmung:laechelt
 Das hier macht es in jeder. In jeder, {held}. Ohne zu zittern. Ohne dreimal zu zählen. #sprecher:ambrose #stimmung:gebannt
 Partie 1851. Partie 1852. #sprecher:erzaehler
 Sie zweifelt nie. Siehst du, wie schön das ist? #sprecher:ambrose #stimmung:gebannt
@@ -214,7 +214,7 @@ Ich habe geglaubt, sie sei ein einzelnes Ding. Eines, das man einmal schafft, we
 - Und hier liegt sie. Tausendmal. In einer Schachtel, die ein Kind verschenkt. #sprecher:ambrose #stimmung:gebannt
 * [„Und ich?“]
 - Er dreht sich um. #sprecher:erzaehler
-Was ist mit dir? #sprecher:ambrose
+Was ist mit dir? #sprecher:ambrose #stimmung:nachdenklich
 * [„Einundsiebzig Prozent. Was bin dann ich?“]
 - Ambrose sieht dich an. Er öffnet den Mund. #sprecher:erzaehler
 * [Warten]
@@ -228,12 +228,12 @@ Du machst die Augen zu und siehst es trotzdem. #sprecher:erzaehler
 // Kapitel 34, Schluss: Juno fährt zurück und merkt, dass der Held nichts mehr erzählt.
 === hotel_morgen ===
 Am Morgen fährt Juno zurück. Ihr steht an der Glasbrücke, sie hat die Mütze auf. #sprecher:erzaehler #musik:aus #geraeusch:stadtpuls
-Pass auf ihn auf. #sprecher:juno
+Pass auf ihn auf. #sprecher:juno #stimmung:nachdenklich
 * [„Du hörst ihn doch gar nicht.“]
-- Nein. Aber ich höre dich. Du erzählst mir immer, was er sagt. #sprecher:juno
-Seit gestern erzählst du nichts. #sprecher:juno
+- Nein. Aber ich höre dich. Du erzählst mir immer, was er sagt. #sprecher:juno #stimmung:nachdenklich
+Seit gestern erzählst du nichts. #sprecher:juno #stimmung:bitter
 Sie schlägt das Tagebuch auf, hält den Stift darüber und klappt es wieder zu. #sprecher:erzaehler
-Er klingt komisch, wenn du nichts erzählst. #sprecher:juno
+Er klingt komisch, wenn du nichts erzählst. #sprecher:juno #stimmung:bitter
 * [Ihr nachsehen]
 - Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
 Du stehst da mit einem Brett im Rucksack, einem Reisebrett in der Jackentasche und einem Tablet unter dem Arm. #sprecher:erzaehler
@@ -257,7 +257,7 @@ Der Fernbus nach Ironwood hält an der Haltestelle vor dem Campus. #sprecher:erz
     Port Delacroix. Ich kenne diesen Namen. Ich kenne ihn sehr gut. #sprecher:ambrose #stimmung:traurig
 - else:
     Am Kai liegt eine Fähre nach Süden. „Erst das Turnier“, steht auf deinem Zettel. #sprecher:erzaehler
-    Erst die Akademie, {held}. Dann die Reise. #sprecher:ambrose
+    Erst die Akademie, {held}. Dann die Reise. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
@@ -271,7 +271,7 @@ Der Fernbus nach Ironwood hält an der Haltestelle vor dem Campus. #sprecher:erz
     -> END
 }
 Am Fährhäuschen hängt ein Fahrplan: „Pelikaninsel. Sonntags.“ Der Fährmann flickt ein Tau und schaut nicht auf. #sprecher:erzaehler
-Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir erst die Nadel im Club. #sprecher:faehrmann
+Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir erst die Nadel im Club. #sprecher:faehrmann #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)
@@ -287,7 +287,7 @@ Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie 
 
 === netze ===
 An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
-Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etwas. #sprecher:ambrose
+Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etwas. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Altstadt: Eisenwarenladen (Batterie)
@@ -312,6 +312,6 @@ Der Eisenwarenladen riecht nach Öl und Holz. Hinter der Theke sortiert ein alte
 „Das Leuchtfeuer? Das hat seit Jahren keiner mehr gewartet. Die Leute auf dem Campus wissen nicht mal, dass es da draußen brennt.“ #sprecher:erzaehler
 ~ batterieErhalten = true
 Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für genau so einen Tag aufgehoben. Nimm sie.“ #sprecher:erzaehler
-Ein Licht für die Insel. Manche Züge macht man für andere. #sprecher:ambrose
+Ein Licht für die Insel. Manche Züge macht man für andere. #sprecher:ambrose #stimmung:laechelt
 -> END
 

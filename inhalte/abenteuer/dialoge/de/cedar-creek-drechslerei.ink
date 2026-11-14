@@ -27,29 +27,29 @@ VAR nadelIronwood = 0
 === dunmore_a ===
 Späne auf dem Boden, Harz in der Luft. Ein Mann mit Schürze dreht ein Stück Ahorn auf der Drechselbank. #sprecher:erzaehler
 Auf dem Regal steht ein Figurensatz aus hellem und dunklem Holz. Ein Springer fehlt. #sprecher:erzaehler
-Für den Club. Alles fertig bis auf das Pferd. Die Mähne will nicht. #sprecher:dunmore
+Für den Club. Alles fertig bis auf das Pferd. Die Mähne will nicht. #sprecher:dunmore #stimmung:nachdenklich
 * [„Darf ich zusehen?“]
-    Zusehen ist frei. Reden kostet einen Span. #sprecher:dunmore
+    Zusehen ist frei. Reden kostet einen Span. #sprecher:dunmore #stimmung:laechelt
 * [„Warum ist der Springer so schwer?“]
-    Alles andere ist rund. Das Pferd hat einen Kopf. Köpfe sind schwer. #sprecher:dunmore
+    Alles andere ist rund. Das Pferd hat einen Kopf. Köpfe sind schwer. #sprecher:dunmore #stimmung:laechelt
 - Ein Handwerker, der an einem Springer verzweifelt. Willkommen im Schach, Sir. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === dunmore_b ===
 Auf der Fensterbank liegen drei Springer. Einer hat zu kurze Ohren, einer schielt, einer sieht aus wie ein Hund. #sprecher:erzaehler
 Er legt einen vierten Holzklotz auf die Bank. #sprecher:erzaehler
-Das Pferd will nicht. Noch nicht. #sprecher:dunmore
+Das Pferd will nicht. Noch nicht. #sprecher:dunmore #stimmung:nachdenklich
 -> END
 
 === dunmore_c ===
 Der Springer ist fertig. Er ist ein wenig schief und sieht sehr stolz aus. #sprecher:erzaehler
-Steht drüben im Club, auf dem langen Tisch. Mrs. Okafor sagt, er schaut immer zur falschen Seite. #sprecher:dunmore
-Ich sage: Er schaut dahin, wo er hinwill. #sprecher:dunmore
-Ein Springer mit eigenem Kopf. Das sind die besten. #sprecher:ambrose
+Steht drüben im Club, auf dem langen Tisch. Mrs. Okafor sagt, er schaut immer zur falschen Seite. #sprecher:dunmore #stimmung:laechelt
+Ich sage: Er schaut dahin, wo er hinwill. #sprecher:dunmore #stimmung:laechelt
+Ein Springer mit eigenem Kopf. Das sind die besten. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === dunmore_d ===
 Auf der Werkbank steht ein zweiter Satz, halb fertig. Die Springer sind diesmal zuerst gemacht. #sprecher:erzaehler
-Für jemanden weiter flussab. Einer, dem sie den Pavillon genommen haben. Er spielt jetzt unter einer Brücke. #sprecher:dunmore
-Dach hat er, sagt er. Wände nicht. Figuren braucht er trotzdem. #sprecher:dunmore
+Für jemanden weiter flussab. Einer, dem sie den Pavillon genommen haben. Er spielt jetzt unter einer Brücke. #sprecher:dunmore #stimmung:nachdenklich
+Dach hat er, sagt er. Wände nicht. Figuren braucht er trotzdem. #sprecher:dunmore #stimmung:nachdenklich
 -> END

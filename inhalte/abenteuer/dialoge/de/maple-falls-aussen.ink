@@ -48,32 +48,32 @@ Morgen! Ich erklär dir morgen alles! #sprecher:juno #stimmung:froh
 ~ junoGetroffen = true
 An der Bushaltestelle steht ein Mädchen mit zwei Zöpfen und einem Heft, das ein Gummiband zusammenhält. Ihr ganzes Gesicht geht auf. #sprecher:erzaehler
 Du bist das Kind aus dem Whitlock-Haus! #sprecher:juno #stimmung:froh
-Juno Martínez. Zwei Häuser weiter, das gelbe. Alle reden über euch. #sprecher:juno
-Mrs. Whitlock hatte siebzehn Katzen, sagt man. Es waren drei. #sprecher:juno
+Juno Martínez. Zwei Häuser weiter, das gelbe. Alle reden über euch. #sprecher:juno #stimmung:laechelt
+Mrs. Whitlock hatte siebzehn Katzen, sagt man. Es waren drei. #sprecher:juno #stimmung:lacht
 Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
 * [„Ich hab es auf dem Dachboden gefunden.“]
-    Ein echtes altes Schachbrett? Das ist ja wie im Film! #sprecher:juno
+    Ein echtes altes Schachbrett? Das ist ja wie im Film! #sprecher:juno #stimmung:ueberrascht
 * [„Das ist nur ein altes Brett.“]
-    Nur? Das ist ein Zeichen! #sprecher:juno
-- Wir brauchen ein viertes Brett, und ich brauche jemanden zum Reden. Spielst du Schach? Sag ja. #sprecher:juno
+    Nur? Das ist ein Zeichen! #sprecher:juno #stimmung:laechelt
+- Wir brauchen ein viertes Brett, und ich brauche jemanden zum Reden. Spielst du Schach? Sag ja. #sprecher:juno #stimmung:laechelt
 * [„Ein bisschen.“]
     Ein bisschen reicht! Ich spiele auch nur ein bisschen. Ich verliere meistens. #sprecher:juno #stimmung:froh
 * [„Ich kann kaum Schach.“]
-    Ich auch nicht. Ich verliere meistens. Es stört mich nicht. #sprecher:juno
-- Sie klopft auf das Heft. Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno
-Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno
-Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose
+    Ich auch nicht. Ich verliere meistens. Es stört mich nicht. #sprecher:juno #stimmung:laechelt
+- Sie klopft auf das Heft. Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
+Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno #stimmung:laechelt
+Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === juno_zum_club ===
-Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno
+Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stimmung:lacht
 -> END
 
 === juno_alltag ===
 {nadelMapleFalls > 0:
     {~Die Clubnadel steht schon im Tagebuch. Mit Glitzer, wie versprochen.|Samstag Cedar Creek! Ich packe Kekse ein. Für die Nerven.}  #sprecher:juno #stimmung:froh
 - else:
-    {~Ich hab meinen Turm verloren. Schon wieder. Er war so jung.|Das Clubtagebuch hat jetzt eine Seite für dich. Noch leer. Noch!|Sam gibt an, aber er meint es nicht so. Meistens.} #sprecher:juno
+    {~Ich hab meinen Turm verloren. Schon wieder. Er war so jung.|Das Clubtagebuch hat jetzt eine Seite für dich. Noch leer. Noch!|Sam gibt an, aber er meint es nicht so. Meistens.} #sprecher:juno #stimmung:lacht
 }
 -> END
 
@@ -89,28 +89,28 @@ Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno
 // Szene 8 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM43 bis VM47).
 ~ lilyGetroffen = true
 Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe. Darauf ein Plastikpferd. #sprecher:erzaehler
-Du kannst Schach, oder? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily
-Der Pferd hüpft doch einfach irgendwohin, oder? #sprecher:lily
+Du kannst Schach, oder? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily #stimmung:nachdenklich
+Der Pferd hüpft doch einfach irgendwohin, oder? #sprecher:lily #stimmung:nachdenklich
 * [„Ich zeig es dir.“]
     -> lily_lektion
 * [„Gleich, ich hab noch was vor.“]
-    Okay. Aber nicht vergessen! #sprecher:lily
+    Okay. Aber nicht vergessen! #sprecher:lily #stimmung:laechelt
     -> END
 
 === lily_wartet ===
-Zeigst du mir jetzt das Pferd? Den Springer, meine ich. #sprecher:lily
+Zeigst du mir jetzt das Pferd? Den Springer, meine ich. #sprecher:lily #stimmung:laechelt
 * [„Los geht's.“]
     -> lily_lektion
 * [„Noch nicht.“]
-    Ich warte hier. Ich warte gut. #sprecher:lily
+    Ich warte hier. Ich warte gut. #sprecher:lily #stimmung:laechelt
     -> END
 
 === lily_lektion ===
-Erklär es ihr. #sprecher:ambrose
+Erklär es ihr. #sprecher:ambrose #stimmung:laechelt
 * [„Du kannst das besser.“]
-    Sie hört mich nicht. Und selbst wenn. #sprecher:ambrose
+    Sie hört mich nicht. Und selbst wenn. #sprecher:ambrose #stimmung:nachdenklich
 * [Neben sie auf den Bordstein setzen]
-- Lehre es ihr. Dann weißt du, ob du es kannst. #sprecher:ambrose
+- Lehre es ihr. Dann weißt du, ob du es kannst. #sprecher:ambrose #stimmung:laechelt
 Du setzt den Springer auf ihr Brett und fährst mit dem Finger: zwei Felder geradeaus, eins zur Seite. Wie ein L. #sprecher:erzaehler
 Dann lässt du ihn über einen Bauern hüpfen. Das darf nur er. #sprecher:erzaehler
 * [„Und er springt immer auf die andere Farbe.“]
@@ -152,14 +152,14 @@ Juno winkt dir von der Haltestelle aus zu. #sprecher:erzaehler
 ~ callowayGetroffen = true
 Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. Auf dem zweiten sitzt niemand. #sprecher:erzaehler #musik:aus
 Du bist {held}. Ich bin Eunice Calloway. Ich wohne hier seit vierundsechzig. #sprecher:calloway
-Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. Das ist schlecht für den Rücken. #sprecher:calloway
+Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. Das ist schlecht für den Rücken. #sprecher:calloway #stimmung:nachdenklich
 * [„Guten Morgen, Mrs. Calloway.“]
 * [„Es waren nur ein paar Kisten.“]
-    Einundzwanzig. Ich habe gezählt. #sprecher:calloway
-- Margaret trägt nie mehr als eine. Sie sagt, man hat Zeit. #sprecher:calloway
-Jeden Sonntag spielt sie Schach. Gegen Leute, die sie nie gesehen hat. Per Post. Ein Zug, eine Briefmarke. #sprecher:calloway
+    Einundzwanzig. Ich habe gezählt. #sprecher:calloway #stimmung:laechelt
+- Margaret trägt nie mehr als eine. Sie sagt, man hat Zeit. #sprecher:calloway #stimmung:laechelt
+Jeden Sonntag spielt sie Schach. Gegen Leute, die sie nie gesehen hat. Per Post. Ein Zug, eine Briefmarke. #sprecher:calloway #stimmung:laechelt
 Sie sagt „spielt“. Nicht „spielte“. #sprecher:erzaehler #pause
-Die Kisten auf dem Dachboden hat nie jemand aufgemacht. Nicht mal sie. #sprecher:calloway
+Die Kisten auf dem Dachboden hat nie jemand aufgemacht. Nicht mal sie. #sprecher:calloway #stimmung:nachdenklich
 Dann blinzelt sie, als käme sie von weit her zurück, und lächelt. #sprecher:erzaehler
 Du kommst zu spät zur Schule, Kind. #sprecher:calloway #stimmung:froh
 // Roman: Ambrose schweigt, bis sie außer Hörweite sind.
@@ -169,17 +169,17 @@ An meinem Tisch. #sprecher:ambrose #stimmung:still #musik:karte
 ->->
 
 === calloway_a_wieder ===
-{~Margaret sagt, man hat Zeit. Sie hat recht. Man hat immer mehr, als man denkt.|Zwei Kisten auf einmal, höchstens. Merk dir das.|Sonntags kommt die Post spät hier. Margaret wartet trotzdem am Fenster.} #sprecher:calloway
+{~Margaret sagt, man hat Zeit. Sie hat recht. Man hat immer mehr, als man denkt.|Zwei Kisten auf einmal, höchstens. Merk dir das.|Sonntags kommt die Post spät hier. Margaret wartet trotzdem am Fenster.} #sprecher:calloway #stimmung:laechelt
 -> END
 
 // Stufe B (nach der Clubnadel): Auf dem leeren Stuhl liegt ein Kartenspiel.
 === calloway_b ===
 Auf dem zweiten Stuhl liegt jetzt ein Kartenspiel. Mrs. Calloway mischt es, ohne hinzusehen. #sprecher:erzaehler
-Man hat mir erzählt, du hast der Lehrerin eine Nadel abgenommen. #sprecher:calloway
+Man hat mir erzählt, du hast der Lehrerin eine Nadel abgenommen. #sprecher:calloway #stimmung:laechelt
 * [„Es war knapp.“]
-    Knapp ist gut. Knapp heißt, beide haben sich Mühe gegeben. #sprecher:calloway
+    Knapp ist gut. Knapp heißt, beide haben sich Mühe gegeben. #sprecher:calloway #stimmung:laechelt
 * [„Ich habe gezählt.“]
-    Das hätte Margaret gefallen. Sie hat sogar die Briefmarken gezählt. #sprecher:calloway
+    Das hätte Margaret gefallen. Sie hat sogar die Briefmarken gezählt. #sprecher:calloway #stimmung:laechelt
 - Margaret hätte dich gemocht. Sie mochte Leute, die verlieren können. #sprecher:calloway #stimmung:froh
 Leute, die verlieren können. Dann hätte sie mich nicht gemocht. #sprecher:ambrose #stimmung:lacht
 -> END
@@ -189,10 +189,10 @@ Leute, die verlieren können. Dann hätte sie mich nicht gemocht. #sprecher:ambr
 === calloway_c ===
 Auf dem zweiten Stuhl sitzt ein Junge mit Fahrradhelm und hält fünf Karten wie einen Fächer. Owen Fisk von gegenüber. #sprecher:erzaehler
 Ich bringe ihm Rommé bei. Er bringt mir bei, wie man ein Telefon lauter stellt. #sprecher:calloway #stimmung:froh
-Margaret hat nie Karten gespielt. Sie fand, Karten sind Glück, und Glück war ihr zu laut. #sprecher:calloway
+Margaret hat nie Karten gespielt. Sie fand, Karten sind Glück, und Glück war ihr zu laut. #sprecher:calloway #stimmung:nachdenklich
 Sie sagt „hat“. Nicht mehr „spielt“. #sprecher:erzaehler #pause
 * [„Sie fehlt Ihnen.“]
-    Jeden Sonntag. Aber jetzt ist wenigstens der Stuhl nicht mehr leer. #sprecher:calloway
+    Jeden Sonntag. Aber jetzt ist wenigstens der Stuhl nicht mehr leer. #sprecher:calloway #stimmung:laechelt
 * [„Owen, du hältst die Karten falsch herum.“]
     Owen dreht die Karten um. Mrs. Calloway lacht so laut, dass eine Taube auffliegt. #sprecher:erzaehler
 - -> END
@@ -201,13 +201,13 @@ Sie sagt „hat“. Nicht mehr „spielt“. #sprecher:erzaehler #pause
 // es von Owen. Endet warm.
 === calloway_d ===
 Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen erklärt. Mrs. Calloway runzelt die Stirn. #sprecher:erzaehler
-Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway
+Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway #stimmung:nachdenklich
 * [„Das stimmt. Immer.“]
     Dann hat er es von Lily. Und Lily hat es von dir. So geht das hier. #sprecher:calloway #stimmung:froh
 * [„Wer hat ihm das beigebracht?“]
     Lily von nebenan. Und die sagt, sie hat es von dir. #sprecher:calloway #stimmung:froh
-- Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway
-Margaret hätte gelacht. Sie hat oft gelacht. Das weiß kaum einer. #sprecher:calloway
+- Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway #stimmung:laechelt
+Margaret hätte gelacht. Sie hat oft gelacht. Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
 Das wusste ich nicht. #sprecher:ambrose #stimmung:still
 -> END
 
@@ -226,25 +226,25 @@ Das wusste ich nicht. #sprecher:ambrose #stimmung:still
 // Stufe A (Ankunft): Sie repariert ein Fahrrad am Zaun und winkt ab, wenn es um Schach geht.
 === carla_a ===
 Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem Fahrrad. #sprecher:erzaehler
-Du bist Junos neues viertes Brett? Viel Glück. Sie redet, bis du umfällst. #sprecher:carla
+Du bist Junos neues viertes Brett? Viel Glück. Sie redet, bis du umfällst. #sprecher:carla #stimmung:laechelt
 * [„Spielst du auch Schach?“]
-    Hab ich mal. Jetzt hab ich fast ein Auto. #sprecher:carla
+    Hab ich mal. Jetzt hab ich fast ein Auto. #sprecher:carla #stimmung:laechelt
 * [„Juno sagt, du warst gut.“]
-    Juno sagt viel. #sprecher:carla
+    Juno sagt viel. #sprecher:carla #stimmung:nachdenklich
 - Sie winkt ab und dreht weiter an der Kette. #sprecher:erzaehler
 -> END
 
 // Stufe B (nach der Clubnadel): Das Fahrrad ist fertig. Sie kennt die Eröffnung.
 === carla_b ===
 Das Fahrrad steht fertig am Zaun. Carla schiebt es gerade auf die Straße. #sprecher:erzaehler
-Und? Wie war der Clubkampf? #sprecher:carla
+Und? Wie war der Clubkampf? #sprecher:carla #stimmung:laechelt
 * [„Gewonnen. Gegen den Coach.“]
-    Echt? Gegen Delgado? #sprecher:carla
+    Echt? Gegen Delgado? #sprecher:carla #stimmung:ueberrascht
 * [„Knapp.“]
-    Gegen Delgado ist es immer knapp. #sprecher:carla
-- Italienisch, oder? Läufer nach c4, und dann wartet sie nur auf ihren Angriff. #sprecher:carla
+    Gegen Delgado ist es immer knapp. #sprecher:carla #stimmung:laechelt
+- Italienisch, oder? Läufer nach c4, und dann wartet sie nur auf ihren Angriff. #sprecher:carla #stimmung:nachdenklich
 Sie merkt, was sie gesagt hat, und steigt auf das Rad. #sprecher:erzaehler
-Sie kennt die Eröffnung. Und die Trainerin. Man vergisst nicht, was man geliebt hat. #sprecher:ambrose
+Sie kennt die Eröffnung. Und die Trainerin. Man vergisst nicht, was man geliebt hat. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // Stufe C (nach Akt 1): Sie steht von außen am Fenster des Clubraums und schaut zu. Sie geht,
@@ -252,7 +252,7 @@ Sie kennt die Eröffnung. Und die Trainerin. Man vergisst nicht, was man geliebt
 === carla_c ===
 Vor dem Fenster des Clubraums steht Carla und sieht hinein. Drinnen spielen zwei Kinder aus der Sechsten. #sprecher:erzaehler
 * [„Willst du nicht reinkommen?“]
-    Nur geguckt. Ich muss los. #sprecher:carla
+    Nur geguckt. Ich muss los. #sprecher:carla #stimmung:nachdenklich
 * [Neben sie stellen und mitschauen]
     Ihr schaut zusammen zu. Dann sagt sie: „Der Kleine stellt seinen Läufer ein.“ Und geht. #sprecher:erzaehler
 - Am Fenster bleibt ein Abdruck ihrer Hand. #sprecher:erzaehler
@@ -262,11 +262,11 @@ Vor dem Fenster des Clubraums steht Carla und sieht hinein. Drinnen spielen zwei
 // das Zählen bei. Gehört dann in den Clubraum.
 === carla_d ===
 Carla sitzt am Brett mit dem Radiergummi. Vor ihr zwei Kinder aus der Sechsten. #sprecher:erzaehler
-Wer greift an? Wer verteidigt? Erst zählen, dann schlagen. #sprecher:carla
+Wer greift an? Wer verteidigt? Erst zählen, dann schlagen. #sprecher:carla #stimmung:laechelt
 Sie sieht dich und zuckt die Schultern. #sprecher:erzaehler
-Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla
+Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stimmung:laechelt
 * [„Schön, dass du da bist.“]
-    Sag Juno nichts. Sonst steht es morgen im Tagebuch. Mit Glitzer. #sprecher:carla
+    Sag Juno nichts. Sonst steht es morgen im Tagebuch. Mit Glitzer. #sprecher:carla #stimmung:laechelt
 * [„Der Radiergummi hat schon zwei Partien gewonnen.“]
     Drei. Heute Morgen noch eine. #sprecher:carla #stimmung:froh
 - Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still

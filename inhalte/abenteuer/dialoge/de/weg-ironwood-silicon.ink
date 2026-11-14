@@ -46,13 +46,13 @@ VAR seite04Gefunden = false
 
 === kowalczyk ===
 {kowalczykGetroffen:
-    {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk
+    {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk #stimmung:laechelt
     -> END
 }
 ~ kowalczykGetroffen = true
 Eine Fernfahrerin mit Armen wie Big Joe sieht dir zu, wie du in die erste Falle der Tafel hineintrittst. #sprecher:erzaehler
 Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk
-Ich fahr seit dreißig Jahren. Erst laden, dann fahren. Ist dasselbe. #sprecher:kowalczyk
+Ich fahr seit dreißig Jahren. Erst laden, dann fahren. Ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
 Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprecher:erzaehler
 -> END
 
@@ -83,23 +83,23 @@ Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang 
 === joggerin_erstes_treffen ===
 ~ joggerinGetroffen = true
 Auf der Glasbrücke läuft eine Frau auf der Stelle. Ihre Uhr am Handgelenk piept ohne Pause. #sprecher:erzaehler
-Schach? Klar. Drei Minuten, plus zwei Sekunden. Mein Puls bleibt oben. #sprecher:joggerin
-Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno
+Schach? Klar. Drei Minuten, plus zwei Sekunden. Mein Puls bleibt oben. #sprecher:joggerin #stimmung:laechelt
+Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #stimmung:lacht
 -> joggerin_angebot
 
 === joggerin_angebot ===
-Eine Stellung, zehn Züge, die Uhr läuft. Bereit? #sprecher:joggerin
-Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose
+Eine Stellung, zehn Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
+Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose #stimmung:nachdenklich
 + [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
 * [„Nicht jetzt.“]
-    Ich lauf noch zwei Runden. #sprecher:joggerin
+    Ich lauf noch zwei Runden. #sprecher:joggerin #stimmung:laechelt
     -> END
 
 === joggerin_nach_niederlage ===
-Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin
-Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose
+Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmung:lacht
+Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose #stimmung:nachdenklich
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
@@ -107,7 +107,7 @@ Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt
     -> END
 
 === joggerin_nach_sieg ===
-{~Du hast mich ausgebremst. Respekt.|Nächstes Mal lauf ich vorher weniger.|Meine Uhr sagt, ich soll mich ausruhen. Deine sagt, du hast gewonnen.} #sprecher:joggerin
+{~Du hast mich ausgebremst. Respekt.|Nächstes Mal lauf ich vorher weniger.|Meine Uhr sagt, ich soll mich ausruhen. Deine sagt, du hast gewonnen.} #sprecher:joggerin #stimmung:laechelt
 + [„Noch eine Runde?“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
@@ -130,7 +130,7 @@ An der Raststätte wartet der Bus zurück nach Ironwood. Der Fahrer winkt. #spre
 ~ ansteckerGefunden = true
 ~ gibFund("anstecker")
 Auf dem Boden glänzt ein Anstecker: „ZERO – Spiel wie die Zukunft.“ #sprecher:erzaehler
-Gratis. Natürlich. #sprecher:juno
+Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
 -> END
 
 === fund_ohrstoepsel ===
@@ -143,7 +143,7 @@ Gratis. Natürlich. #sprecher:juno
 ~ ohrstoepselGefunden = true
 In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. Ein Ohrstöpsel. #sprecher:erzaehler
 Er ist schwerer, als er sein sollte. An einer Seite ist ein winziges Loch, darin glänzt etwas Metallenes. #sprecher:erzaehler
-Hat jemand verloren. #sprecher:juno
+Hat jemand verloren. #sprecher:juno #stimmung:nachdenklich
 ~ gibFund("ohrstoepsel")
 ~ gibFund("spurPM2")
 ~ spurenPM = spurenPM + 1
@@ -159,7 +159,7 @@ Du steckst ihn ein. Du hast dir angewöhnt, Dinge einzustecken. #sprecher:erzaeh
 }
 ~ glasbrueckeGesehen = true
 Die Brücke ist aus Glas. Der Boden, das Geländer, alles. Zwölf Meter tiefer fließen die Lichter der Autobahn. #sprecher:erzaehler
-Juno geht auf Zehenspitzen und hält sich an dir fest. Woher weißt du, dass das trägt? #sprecher:juno
+Juno geht auf Zehenspitzen und hält sich an dir fest. Woher weißt du, dass das trägt? #sprecher:juno #stimmung:ueberrascht
 * [„Das trägt.“]
 * [„Ich weiß es nicht.“]
 - Du denkst an eine andere Brücke, aus schwarzem Eisen, mit Tausenden von Nieten, jede signiert. An der hast du nicht gezweifelt. #sprecher:erzaehler
@@ -181,29 +181,29 @@ Juno geht auf Zehenspitzen und hält sich an dir fest. Woher weißt du, dass das
 ~ streamGesehen = true
 Auf der Aussichtsplattform steht ein Ringlicht, daneben ein Klapptisch mit Laptop. Eine junge Frau mit grüner Mütze spricht in eine Kamera. #sprecher:erzaehler
 Achtzigtausend Leute schauen zu, und da kommt jemand über die Brücke! #sprecher:kiki #stimmung:froh
-Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschläge, einer davon ist Unsinn. #sprecher:kiki
+Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschläge, einer davon ist Unsinn. #sprecher:kiki #stimmung:laechelt
 -> stream_angebot
 
 === stream_angebot ===
-Der Chat liebt Fallen. Wenn er dir eine stellt, sieh sie. Wenn er sich selbst eine stellt, bestraf sie. Spielst du mit? #sprecher:kiki
-Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose
+Der Chat liebt Fallen. Wenn er dir eine stellt, sieh sie. Wenn er sich selbst eine stellt, bestraf sie. Spielst du mit? #sprecher:kiki #stimmung:laechelt
+Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
 + [„Ich spiele mit.“]
     ~ beginneAufgaben("wegIronwoodSilicon.stream")
     -> END
 + [„Nicht jetzt.“]
-    Der Stream läuft bis heute Abend. Komm wieder! #sprecher:kiki
+    Der Stream läuft bis heute Abend. Komm wieder! #sprecher:kiki #stimmung:laechelt
     -> END
 
 === stream_partie ===
 // Partie mit Kandidatenwahl (mittel-2): Nach 1.e4 e5 2.Lc4 Sc6 3.Dh5 wählt der Chat zwischen g6, De7
 // und Sf6. Sf6 ist der Fehler: Dxf7 ist matt (Kapitel 4, Fallenkabinett).
 Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
-Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose
+Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose #stimmung:nachdenklich
 + [„Los geht's.“]
     ~ beginnePartie("wegIronwoodSilicon.stream")
     -> END
 + [„Gleich.“]
-    Der Chat wartet nicht gern. Aber gut. #sprecher:kiki
+    Der Chat wartet nicht gern. Aber gut. #sprecher:kiki #stimmung:laechelt
     -> END
 
 === stream_ende ===
@@ -215,13 +215,13 @@ Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #s
 }
 Der Chat jubelt. Dann friert das Bild auf dem Laptop ein. Am Funkmast neben der Brücke blinkt eine rote Leuchte: „Testfeld Signal“. #sprecher:erzaehler
 Das ist jedes Mal so, wenn die da testen. Perfect Move sponsert mich. Ich frage lieber nicht, was sie testen. #sprecher:kiki #stimmung:still
-Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose
+Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose #stimmung:nachdenklich
 Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #stimmung:froh
 ~ gibFund("fotoLive")
 -> END
 
 === stream_danach ===
-{~Der Chat fragt nach dir. Ich sage, du bist auf Reisen.|Das Signal bricht immer noch ab. Ich hab mich fast daran gewöhnt.|Spielst du bei der Meisterschaft? Vielleicht sitze ich im Publikum.} #sprecher:kiki
+{~Der Chat fragt nach dir. Ich sage, du bist auf Reisen.|Das Signal bricht immer noch ab. Ich hab mich fast daran gewöhnt.|Spielst du bei der Meisterschaft? Vielleicht sitze ich im Publikum.} #sprecher:kiki #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Sammelstellen an der Raststätte
@@ -234,7 +234,7 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
 ~ kreide2Gefunden = true
 An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. #sprecher:erzaehler
 Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
-Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose
+Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose #stimmung:laechelt
 ~ gibFund("kreide2")
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 -> END
@@ -258,7 +258,7 @@ Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß i
 }
 ~ seite04Gefunden = true
 Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
-Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose
+Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
 ~ gibFund("seite04")
 ~ buchseiten = buchseiten + 1
 -> END
@@ -267,12 +267,12 @@ Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose
 
 === schild_smart_city ===
 Am Fuß der Rampe steht ein Schild: „Ab hier: Smart City. Bitte Sensoren nicht verdecken.“ #sprecher:erzaehler
-Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose
+Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 === werbetafel_zero ===
 Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint die Schrift: „ZERO. Nie wieder Fehler.“ #sprecher:erzaehler
-Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #pause
-Das ist ein großes Versprechen. #sprecher:ambrose
+Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #stimmung:nachdenklich #pause
+Das ist ein großes Versprechen. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 

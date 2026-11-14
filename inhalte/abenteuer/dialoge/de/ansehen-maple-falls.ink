@@ -48,7 +48,7 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenPizzakarton = true
     Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu. #sprecher:erzaehler
-    Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose
+    Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
@@ -91,7 +91,7 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenHutschachtel = true
     Eine runde Hutschachtel mit Samtband. Darin liegt ein Damenhut mit einer kleinen Feder. #sprecher:erzaehler
-    Ein Hut für den Sonntag. Meine Schwester trug so einen zur Kirche. #sprecher:ambrose
+    Ein Hut für den Sonntag. Meine Schwester trug so einen zur Kirche. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
@@ -161,7 +161,7 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenPlakatZaehlen = true
     Ein handgemaltes Plakat in großen Buchstaben: ERST ZÄHLEN. Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
-    Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose
+    Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 

@@ -34,7 +34,7 @@ VAR kisteGesehen = false
 ~ okoroGetroffen = true
 Bücher bis unter die Decke, in Stapeln auf dem Boden, zwischen denen schmale Wege führen. Hier wird nichts nass. Hier hält sich alles. #sprecher:erzaehler #geraeusch:antiquariat
 Hinter einem Schreibtisch, der einmal ein Fahrkartenschalter war, klebt ein Mann einen Buchrücken. #sprecher:erzaehler
-Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemandem gehört. #sprecher:okoro
+Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemandem gehört. #sprecher:okoro #stimmung:laechelt
 -> okoro_laden
 
 === okoro_kiste ===
@@ -46,7 +46,7 @@ Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemand
 // das Siegel mit einer Fesselung wie in Ironwood.
 ~ okoroGetroffen = true
 Der Kram von dem Brückenbauer. Im Keller. Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #geraeusch:antiquariat
-Pläne, Rechnungen, ein Sextant. Ich wollte es immer durchsehen. Dann kam immer ein Buch dazwischen. #sprecher:okoro
+Pläne, Rechnungen, ein Sextant. Ich wollte es immer durchsehen. Dann kam immer ein Buch dazwischen. #sprecher:okoro #stimmung:laechelt
 {gefundenUmschlag:
     Du legst den Umschlag aus Ironwood auf den Schalter. Mr. Okoro sieht ihn lange an. #sprecher:erzaehler
     Der Keller ist die Treppe hinunter und dann links. #sprecher:okoro
@@ -55,8 +55,8 @@ Sieben Kisten. In der vierten Briefe, gebündelt mit Schnur, jedes Bündel ein J
 Die Schrift darauf ist schräg und ungeduldig. Meine. Er hat sie aufgehoben. Jeden. #sprecher:ambrose #stimmung:still #bild:aus
 Unter dem Bündel 1866 liegt ein einzelnes Blatt, zweimal gefaltet, mit Wachs verschlossen. Ins Wachs ist eine Stellung gedrückt. #sprecher:erzaehler
 Wieder eine Fesselung. Eine andere, schwerer. #sprecher:erzaehler
-Wer mit der Post spielte, drückte dem anderen eine Stellung aufs Siegel. Wer sie nicht löste, hatte den Brief nicht verdient. #sprecher:ambrose
-Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer hinaus. Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose
+Wer mit der Post spielte, drückte dem anderen eine Stellung aufs Siegel. Wer sie nicht löste, hatte den Brief nicht verdient. #sprecher:ambrose #stimmung:nachdenklich
+Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer hinaus. Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose #stimmung:ueberrascht
 * [„Ein Fehler.“]
 - Sein einziger, soweit ich weiß. #sprecher:ambrose #stimmung:lachtOhneSpott
 ~ kisteGesehen = true
@@ -67,7 +67,7 @@ Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer h
     ~ beginneAufgaben("desertSprings.siegel")
     -> END
 * [Nicht jetzt]
-    Die Briefe warten schon lange. Ein paar Tage mehr schaden nicht. #sprecher:okoro
+    Die Briefe warten schon lange. Ein paar Tage mehr schaden nicht. #sprecher:okoro #stimmung:laechelt
     -> END
 
 === okoro_brief ===
@@ -85,17 +85,17 @@ Zwölf Zeilen. Senkrecht, gerade, jede gleich lang. Du liest laut, bei einer Gl�
 „Ich warte. J. Hale“ #sprecher:erzaehler #pause:5
 Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts. Das ist schlimmer. #sprecher:erzaehler #bild:aus #pause:3
 Er hat gewartet. #sprecher:ambrose #stimmung:riss #musik:ambrose.hale
-Er hat wirklich gewartet. Er hat ein Zimmer richten lassen. #sprecher:ambrose
-Mut. Er schreibt, es war Mut. Der Mann, der es „bemerkenswert unnötig“ genannt hat. #sprecher:ambrose
+Er hat wirklich gewartet. Er hat ein Zimmer richten lassen. #sprecher:ambrose #stimmung:ueberrascht
+Mut. Er schreibt, es war Mut. Der Mann, der es „bemerkenswert unnötig“ genannt hat. #sprecher:ambrose #stimmung:ueberrascht
 * [„Er hat sich geschämt.“]
-- Sieben Jahre lang. Und ich habe ihn sieben Jahre lang gehasst, für ein einziges Wort. #sprecher:ambrose
+- Sieben Jahre lang. Und ich habe ihn sieben Jahre lang gehasst, für ein einziges Wort. #sprecher:ambrose #stimmung:bitter
 Wir waren zwei Dickköpfe, {held}. Zwei Dickköpfe, und zwischen uns ein Land und ein Postmeister mit Fieber. #sprecher:ambrose #stimmung:lachtOhneSpott
-Er hat auf mich gewartet und ich auf ihn. Und jeder hat gedacht, der andere schweigt. #sprecher:ambrose
+Er hat auf mich gewartet und ich auf ihn. Und jeder hat gedacht, der andere schweigt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Wie Big Joe und Mama.“]
-- Wie die halbe Welt, fürchte ich. #sprecher:ambrose
+- Wie die halbe Welt, fürchte ich. #sprecher:ambrose #stimmung:laechelt
 Auf der Rückseite stehen vier Züge, sauber untereinander. #sprecher:erzaehler
-Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. Damit wir dieselbe Stellung aufbauen, wenn ich ankomme. #sprecher:ambrose
-Zwei Umschläge am selben Dienstag. Der mit dem Zug kam an. Der mit der Einladung blieb leer in einem Postsack liegen. #sprecher:ambrose
+Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. Damit wir dieselbe Stellung aufbauen, wenn ich ankomme. #sprecher:ambrose #stimmung:nachdenklich
+Zwei Umschläge am selben Dienstag. Der mit dem Zug kam an. Der mit der Einladung blieb leer in einem Postsack liegen. #sprecher:ambrose #stimmung:bitter
 Seine Antwort auf meinen letzten Zug hat er nie abgeschickt. An wen auch. Sie steht auf der Seite, die fehlt. #sprecher:ambrose #stimmung:still
 Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie geöffnet. #sprecher:ambrose #stimmung:still
 {gefundenUmschlag:
@@ -103,11 +103,11 @@ Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie geöffn
 }
 ~ gibFund("halesBrief")
 Oben sieht Mr. Okoro dein Gesicht und fragt nichts. #sprecher:erzaehler
-Manche Bücher stehen fünfzig Jahre im Regal, bis der Richtige kommt. Das ist kein Unglück. Das ist ein Antiquariat. #sprecher:okoro
+Manche Bücher stehen fünfzig Jahre im Regal, bis der Richtige kommt. Das ist kein Unglück. Das ist ein Antiquariat. #sprecher:okoro #stimmung:laechelt
 -> END
 
 === okoro_alltag ===
-{~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|Unten im Keller stehen noch sechs Kisten. Pläne, Rechnungen, ein Sextant.|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro
+{~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|Unten im Keller stehen noch sechs Kisten. Pläne, Rechnungen, ein Sextant.|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro #stimmung:laechelt
 -> okoro_laden
 
 === okoro_laden ===

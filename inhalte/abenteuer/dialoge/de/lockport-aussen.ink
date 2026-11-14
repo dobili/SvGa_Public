@@ -122,7 +122,7 @@ Du klatschst in die Hände. Die Kähne treiben los, Finns Kahn dreht sich einmal
 ~ lastkahnFrei = true
 Ruben liest, dann lacht er so laut, dass die Möwen auffliegen. #sprecher:erzaehler
 „Eine Fuhre Stahlträger. Solange Joe das Sagen hat, fährt die Belle wieder.“ #sprecher:erzaehler
-Ein Brief kann ein ganzes Schiff bewegen. #sprecher:ambrose
+Ein Brief kann ein ganzes Schiff bewegen. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Henriks Boot (L2)

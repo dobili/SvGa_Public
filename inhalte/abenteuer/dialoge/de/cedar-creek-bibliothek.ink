@@ -57,9 +57,9 @@ VAR clubkampfZaehlGesagt = false
 Hohe Regale, grüne Leselampen, vier Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
 Sie stellt ein Buch zurück und steigt herunter, ohne sich festzuhalten. #sprecher:erzaehler
 {teamAngekommen: Das Team aus Maple Falls. Grace Okafor. #sprecher:okafor|Ihr seid die Vorhut. Grace Okafor. Die Matten liegen im Lesesaal. #sprecher:okafor}
-Juno Martínez. Du hast im Frühjahr gegen Mae deine Dame auf ein Feld gestellt, auf dem ein Springer stand. #sprecher:okafor
-Ich dachte, der gehört mir. #sprecher:juno
-Was glaubst du denn, warum er dort stand? #sprecher:okafor
+Juno Martínez. Du hast im Frühjahr gegen Mae deine Dame auf ein Feld gestellt, auf dem ein Springer stand. #sprecher:okafor #stimmung:nachdenklich
+Ich dachte, der gehört mir. #sprecher:juno #stimmung:ueberrascht
+Was glaubst du denn, warum er dort stand? #sprecher:okafor #stimmung:nachdenklich
 * [Juno anstoßen]
 * [Nichts sagen]
 - Dann sieht sie dich an. Dann deinen Rucksack, aus dem eine Ecke des Bretts ragt. Sie sagt lange nichts. #sprecher:erzaehler #pause:2
@@ -67,34 +67,34 @@ Darf ich? #sprecher:okafor
 * [Ihr das Brett geben]
 * [Nicken]
 - Sie hält es ins Licht der grünen Lampe und fährt mit dem Daumen über den Rand. #sprecher:erzaehler
-A. W. Achtzehnhundertsiebenundfünfzig. #sprecher:okafor
-Whitlock. #sprecher:okafor #musik:aus #pause:3
+A. W. Achtzehnhundertsiebenundfünfzig. #sprecher:okafor #stimmung:nachdenklich
+Whitlock. #sprecher:okafor #stimmung:ueberrascht #musik:aus #pause:3
 * [„Sie kennen den Namen?“]
 * [Still bleiben]
-- Er steht in einer Fußnote. In einem alten Schachkalender, unten im Archiv. #sprecher:okafor
-Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor
-Woher hast du das? #sprecher:okafor
+- Er steht in einer Fußnote. In einem alten Schachkalender, unten im Archiv. #sprecher:okafor #stimmung:nachdenklich
+Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor #stimmung:nachdenklich
+Woher hast du das? #sprecher:okafor #stimmung:ueberrascht
 * [„Vom Dachboden. Wir sind in das Haus gezogen.“]
 * [„Es lag in einer Kiste.“]
-- Aha. #sprecher:okafor #musik:karte
+- Aha. #sprecher:okafor #stimmung:nachdenklich #musik:karte
 Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab und putzt sie. Sie fragt nicht weiter. #sprecher:erzaehler
-Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor
-Sechs Wörter. #sprecher:ambrose #pause
+Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor #stimmung:laechelt
+Sechs Wörter. #sprecher:ambrose #stimmung:bitter #pause
 Eine Fußnote. #sprecher:ambrose #stimmung:bitter
-{teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach.|Nach dem Spiel morgen gehen wir hinunter und sehen nach.} Oder heute schon, wenn du mir tragen hilfst. #sprecher:okafor
+{teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach.|Nach dem Spiel morgen gehen wir hinunter und sehen nach.} Oder heute schon, wenn du mir tragen hilfst. #sprecher:okafor #stimmung:laechelt
 * [„Ich helfe tragen.“]
     Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
 * [„Erst will ich spielen.“]
-    Erst Dex, dann Mae. Eins nach dem anderen. Der Keller wartet. #sprecher:okafor
+    Erst Dex, dann Mae. Eins nach dem anderen. Der Keller wartet. #sprecher:okafor #stimmung:laechelt
 - -> END
 
 === okafor_reihe_offen ===
 {
 - not reiheDexBestanden: Fang bei Dex an. Dann Mae. Eins nach dem anderen. #sprecher:okafor
-- else: Dex hast du geschafft. Jetzt Mae. Sie kennt mehr Mattbilder als ich. #sprecher:okafor
+- else: Dex hast du geschafft. Jetzt Mae. Sie kennt mehr Mattbilder als ich. #sprecher:okafor #stimmung:laechelt
 }
 {not archivGeordnet:
-    Und unten im Keller warten die nassen Kartons, wenn du magst. #sprecher:okafor
+    Und unten im Keller warten die nassen Kartons, wenn du magst. #sprecher:okafor #stimmung:laechelt
 }
 -> END
 
@@ -102,9 +102,9 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 // Lesesaal. Wer nicht zum Steg geht, kann hier gleich schlafen gehen, damit nichts hängen bleibt.
 === okafor_bis_morgen ===
 Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor
-{maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor}
+{maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor #stimmung:laechelt}
 * [„Ich geh noch zum Steg.“]
-    Geduld ist auch ein Zug. #sprecher:okafor
+    Geduld ist auch ein Zug. #sprecher:okafor #stimmung:laechelt
     -> END
 * [„Ich geh schlafen.“]
     ~ nachtImLesesaal = true
@@ -119,13 +119,13 @@ Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #spreche
 In der Bibliothek flüstert man auch beim Schach. Der lange Tisch ist geräumt bis auf ein Brett. #sprecher:erzaehler
 Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem Springer. #sprecher:erzaehler
 {teamAngekommen: Außerhalb des Lichtkreises sitzen sie alle. Der Coach hält die Pfeife in der Faust, damit sie nicht pfeift. #sprecher:erzaehler}
-{sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor}
+{sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor #stimmung:laechelt}
 Setz dich. #sprecher:okafor
 * [„Ich bin bereit.“]
     Die Uhr im Türmchen tickt. Man hört sie durch die Decke. #sprecher:erzaehler
     -> okafor_partie
 * [„Noch nicht.“]
-    Geduld ist auch ein Zug. #sprecher:okafor
+    Geduld ist auch ein Zug. #sprecher:okafor #stimmung:laechelt
     -> END
 
 === okafor_partie ===
@@ -138,33 +138,33 @@ Setz dich. #sprecher:okafor
 // Klang: Stille S24 (zwölf Uhrschläge), dann die Fanfare.
 ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
 {ausgangCedarCreekClubkampf == "remis":
-    Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor
+    Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor #stimmung:laechelt
     -> okafor_nadel
 }
 Sie legt die Hände in den Schoß und sieht dich über die Brille an. #sprecher:erzaehler
-Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor
+Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor #stimmung:laechelt
 * [„Nicht alle.“]
 * [Nicken]
-- Genug. #sprecher:okafor
+- Genug. #sprecher:okafor #stimmung:laechelt
 -> okafor_nadel
 
 === okafor_nadel ===
 Über euch schlägt die Uhr. Zwölf Schläge, einer nach dem anderen. #sprecher:erzaehler #klang:turmuhr12 #musik:aus #pause:3
-Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #klang:fanfare
+Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #stimmung:laechelt #klang:fanfare
 {teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
 Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
 * [Nicken]
 * [Die Nadel ansehen]
 - Ambrose sagt nichts. Aber er ist da. #sprecher:erzaehler #pause:2
-Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno
+Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt
 -> END
 
 === okafor_nach_niederlage ===
-Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor
+Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimmung:laechelt
 * [„Noch einmal.“]
     -> okafor_partie
 * [„Nicht jetzt.“]
-    Das Brett wartet. Ich auch. #sprecher:okafor
+    Das Brett wartet. Ich auch. #sprecher:okafor #stimmung:laechelt
     -> END
 
 === okafor_alltag ===
@@ -172,7 +172,7 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor
 - not erzaehlung1858Gesehen:
     Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor
 - else:
-    {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor
+    {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor #stimmung:laechelt
 }
 + {nadelCedarCreek > 0 and nadelCedarCreek < 3} [„Noch eine Partie um die Nadel.“]
     -> okafor_partie
@@ -193,12 +193,12 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor
 Ein Junge sitzt zwischen Kabeln und einem halb gebauten Roboter. Daneben ein Brett. #sprecher:erzaehler
 Dex. Halt mal. #sprecher:dex
 Er drückt dir eine Zange in die Hand. #sprecher:erzaehler
-Fast fertig. Es ist immer fast fertig. #sprecher:dex
-Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. Alles ist tot. #sprecher:dex
+Fast fertig. Es ist immer fast fertig. #sprecher:dex #stimmung:nachdenklich
+Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. Alles ist tot. #sprecher:dex #stimmung:nachdenklich
 -> dex_reihe
 
 === dex_reihe ===
-Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex
+Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex #stimmung:laechelt
 * [„Her damit.“]
     ~ beginneAufgaben("cedarCreek.reiheDex")
     -> END
@@ -207,7 +207,7 @@ Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex
     -> END
 
 === dex_alltag ===
-{~Der Roboter kann jetzt einen Bauern schieben. Einen. Dann fällt er um.|Matt in eins ist wie ein Schalter. An, aus, fertig.|Oma sagt, du hast Geduld. Das sagt sie fast nie.} #sprecher:dex
+{~Der Roboter kann jetzt einen Bauern schieben. Einen. Dann fällt er um.|Matt in eins ist wie ein Schalter. An, aus, fertig.|Oma sagt, du hast Geduld. Das sagt sie fast nie.} #sprecher:dex #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Mae
@@ -225,42 +225,42 @@ Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex
 ~ maeGetroffen = true
 Ein Mädchen mit Teleskop-Anstecker und einem Heft voller Zeichnungen winkt dir zu. #sprecher:erzaehler
 Ich bin Mae! Ich kenne alle Mattbilder. Alle mit Namen. #sprecher:mae #stimmung:froh
-Anastasia! Das ist ein Matt mit Namen. #sprecher:mae
-Das klingt wie eine Prinzessin, ist aber gemein. #sprecher:mae
+Anastasia! Das ist ein Matt mit Namen. #sprecher:mae #stimmung:laechelt
+Das klingt wie eine Prinzessin, ist aber gemein. #sprecher:mae #stimmung:lacht
 {reiheDexBestanden: -> mae_reihe}
 -> mae_erst_dex
 
 === mae_erst_dex ===
-Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae
+Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae #stimmung:laechelt
 -> END
 
 === mae_reihe ===
-Das hier ist das Arabische. Und das … #sprecher:mae
+Das hier ist das Arabische. Und das … #sprecher:mae #stimmung:laechelt
 Sie senkt die Stimme. #sprecher:erzaehler
-Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine Luft kriegt. #sprecher:mae
+Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine Luft kriegt. #sprecher:mae #stimmung:lacht
 Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END
 * [„Gleich.“]
-    Ich warte. Ich zähle so lange Sterne. Im Kopf. #sprecher:mae
+    Ich warte. Ich zähle so lange Sterne. Im Kopf. #sprecher:mae #stimmung:laechelt
     -> END
 
 === mae_einladung ===
 ~ maeEingeladen = true
 Heute Nacht kommen Sternschnuppen! Ganz viele. Wir schauen am Steg. #sprecher:mae #stimmung:froh
-Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae
+Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #stimmung:laechelt
 * [„Klingt toll.“]
-    Super! Wenn es dunkel wird, am Steg. #sprecher:mae
+    Super! Wenn es dunkel wird, am Steg. #sprecher:mae #stimmung:laechelt
 * [„Mal sehen.“]
-    Okay. Der Himmel wartet nicht, aber er kommt jede Nacht wieder. #sprecher:mae
+    Okay. Der Himmel wartet nicht, aber er kommt jede Nacht wieder. #sprecher:mae #stimmung:laechelt
 - -> END
 
 === mae_alltag ===
 {sternennachtGesehen:
-    {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor ist heute müde. Das ist meine Schuld. Und die der Sterne.} #sprecher:mae
+    {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor ist heute müde. Das ist meine Schuld. Und die der Sterne.} #sprecher:mae #stimmung:lacht
 - else:
-    {~Am Steg sieht man die Sterne am besten. Komm doch!|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae
+    {~Am Steg sieht man die Sterne am besten. Komm doch!|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae #stimmung:laechelt
 }
 -> END
 
@@ -288,7 +288,7 @@ Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. 
 
 === zwillinge_d ===
 Jonah sitzt im Club am Brett, gegen Dex. Ivy sitzt daneben und liest. #sprecher:erzaehler
-Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy
+Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy #stimmung:bitter
 -> END
 
 // ================================================================ Runde 11: Roman, Kapitel 15
@@ -305,26 +305,26 @@ Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy
 {clubkampfBauerGesehen: -> END}
 ~ clubkampfBauerGesehen = true
 Ein Bauer steht vor ihrem König. Niemand passt auf ihn auf. Du zählst zweimal: kein Verteidiger. #sprecher:erzaehler #musik:aus
-Was glaubst du denn, warum er dort steht? #sprecher:okafor #pause:2
+Was glaubst du denn, warum er dort steht? #sprecher:okafor #stimmung:nachdenklich #pause:2
 * [Die Hand zurückziehen]
     ~ clubkampfBauerAbgelehnt = true
     Du siehst noch einmal hin. Nicht auf den Bauern. Auf deinen König, hinter seinen drei Bauern. #sprecher:erzaehler
     Grundreihe. Der König, der keine Luft kriegt. #sprecher:erzaehler
     Geduld. Wo hast du die her? #sprecher:okafor #stimmung:froh #musik:karte
 * [Den Bauern trotzdem nehmen wollen]
-    Nun denn. #sprecher:okafor #musik:karte
+    Nun denn. #sprecher:okafor #stimmung:nachdenklich #musik:karte
 - -> END
 
 === clubkampf_lass_mich ===
 {clubkampfZaehlGesagt: -> END}
 ~ clubkampfZaehlGesagt = true
-Lass mich. #sprecher:ambrose #musik:ambrose.lassMich
-Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose
-Sie muss ihn nehmen, und dann … Es wäre schön. Es wäre so schön. #sprecher:ambrose
+Lass mich. #sprecher:ambrose #stimmung:nachdenklich #musik:ambrose.lassMich
+Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose #stimmung:ueberrascht
+Sie muss ihn nehmen, und dann … Es wäre schön. Es wäre so schön. #sprecher:ambrose #stimmung:ueberrascht
 {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
 // Gutachten K1.4: Die Frage des Helden ist der Wendepunkt; sie fällt immer.
 * [„Stimmt es?“]
 - Stille. Die Uhr tickt. #sprecher:erzaehler #pause:2
 Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
-Vergib mir. Zähl. #sprecher:ambrose #klang:aha
+Vergib mir. Zähl. #sprecher:ambrose #stimmung:bitter #klang:aha
 -> END

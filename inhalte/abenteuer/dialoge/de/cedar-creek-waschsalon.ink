@@ -34,16 +34,16 @@ VAR okaforGetroffen = false
 {okaforGetroffen: Mrs. Okafor hat dich mit einem Sack Tischdecken herübergeschickt. #sprecher:erzaehler}
 Maschinen brummen, warme Luft, es riecht nach Seife. Hinter dem Tresen ein alter Mann mit sehr großen, ruhigen Händen. #sprecher:erzaehler #klang:waschmaschine
 Die Stellung da steht seit Montag. #sprecher:boateng
-Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boateng
-Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng
+Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boateng #stimmung:laechelt
+Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng #stimmung:laechelt
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
 * [„Ich habe gar keine Wäsche dabei.“]
-    Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng
+    Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng #stimmung:laechelt
 - -> END
 
 === boateng_wartet ===
-Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
+Die Maschine ist gleich fertig. Du auch? #sprecher:boateng #stimmung:laechelt
 -> END
 
 === trockner ===
@@ -71,21 +71,21 @@ Die Figuren zittern leicht, weil die Maschine läuft. Weiß am Zug, Matt in zwei
 // Danach steht die Geschichte als Steckbriefzeile von Mrs. Okafor im Clubtagebuch.
 ~ boatengLagos = true
 Mr. Boateng nickt, zieht das Paketband ab und stellt eine neue Stellung auf. #sprecher:erzaehler
-Die alte hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng
-Die Männer mochten das nicht. #sprecher:boateng
+Die alte hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng #stimmung:nachdenklich
+Die Männer mochten das nicht. #sprecher:boateng #stimmung:bitter
 Er lächelt auf das Brett hinunter. #sprecher:erzaehler
 Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #stimmung:froh
 * [„Was ist aus ihr geworden?“]
     Er streicht das Paketband glatt. #sprecher:erzaehler #pause:2
 * [Nichts fragen]
     Er streicht das Paketband glatt und lässt sich Zeit. #sprecher:erzaehler #pause:2
-- Sie stellt Bücher ins Regal. Gegenüber. #sprecher:boateng
+- Sie stellt Bücher ins Regal. Gegenüber. #sprecher:boateng #stimmung:laechelt
 // Steckbrief von Mrs. Okafor, Zeile 3 (Freitext steckbrief.okafor.lagos, gegner.json).
 ~ schalteSteckbrief("cedarCreek.okafor", 3)
 -> END
 
 === boateng_alltag ===
-{~Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten.|Dein Gutschein gilt. Komm mit Wäsche wieder.|Nächste Woche ein Erstickungsmatt. Verrat es niemandem.} #sprecher:boateng
+{~Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten.|Dein Gutschein gilt. Komm mit Wäsche wieder.|Nächste Woche ein Erstickungsmatt. Verrat es niemandem.} #sprecher:boateng #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Das alte Partieformular (E4.1)
@@ -96,21 +96,21 @@ Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #sti
 
 === boateng_formular ===
 Du zeigst Mr. Boateng das vergilbte Partieformular aus der Blechdose. Er setzt eine zweite Brille auf. #sprecher:erzaehler
-Oh. Das ist alt. #sprecher:boateng
-Sehr alt. Gib mir einen Moment und eine Waschladung Zeit. #sprecher:boateng
+Oh. Das ist alt. #sprecher:boateng #stimmung:ueberrascht
+Sehr alt. Gib mir einen Moment und eine Waschladung Zeit. #sprecher:boateng #stimmung:nachdenklich
 -> boateng_formular_entziffert
 
 === boateng_formular_entziffert ===
 ~ formularEntziffert = true
-Das ist eine alte Schrift. Die Züge sind englisch notiert, K für König, Kt für Springer. #sprecher:boateng
+Das ist eine alte Schrift. Die Züge sind englisch notiert, K für König, Kt für Springer. #sprecher:boateng #stimmung:nachdenklich
 Er schreibt die Züge Zeile für Zeile in heutiger Notation auf einen Zettel und reicht ihn dir. #sprecher:erzaehler
 // Gutachten K1.6: Welche Partie es ist, bleibt offen bis zum Steg.
 Das sind Züge von mir. In meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig #pause:2
-Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose
+Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose #stimmung:nachdenklich
 * [„Danke, Mr. Boateng.“]
-    Gern. Bring mehr davon, wenn du welche findest. #sprecher:boateng
+    Gern. Bring mehr davon, wenn du welche findest. #sprecher:boateng #stimmung:laechelt
 * [„Woher können Sie das lesen?“]
-    Mein Großvater schrieb so. Er war Lehrer in Accra und hat mir die alte Schrift beigebracht. #sprecher:boateng
+    Mein Großvater schrieb so. Er war Lehrer in Accra und hat mir die alte Schrift beigebracht. #sprecher:boateng #stimmung:laechelt
 - -> END
 
 // Gutachten K1.15: nach der Trocknerrunde von selbst (runden.json „danach“). Mae hat dem Helden

@@ -43,7 +43,7 @@ Auf dem Tisch in der Kammer liegt ein Logbuch, die Seiten gewellt vom Wasser. Di
 Daneben steht eine alte Grubenlampe. #sprecher:erzaehler
 ~ gibFund("grubenlampe1866")
 {ambroseSprichtWieder:
-    Bei Kerzenlicht. Ich erinnere mich an den Geruch von Wachs. #sprecher:ambrose
+    Bei Kerzenlicht. Ich erinnere mich an den Geruch von Wachs. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 

@@ -45,13 +45,13 @@ VAR kreideTreffpunkte = 0
 
 === dale ===
 {daleGetroffen:
-    {~Ein Bauer zieht nie zurück.|Überleg vorher. Sag ich den Kühen auch.} #sprecher:dale
+    {~Ein Bauer zieht nie zurück.|Überleg vorher. Sag ich den Kühen auch.} #sprecher:dale #stimmung:nachdenklich
     -> END
 }
 ~ daleGetroffen = true
 Ein Mann lehnt am Zaun und kaut einen Halm. #sprecher:erzaehler
-Ein Bauer zieht nie zurück. #sprecher:dale
-Also überleg vorher. #sprecher:dale
+Ein Bauer zieht nie zurück. #sprecher:dale #stimmung:nachdenklich
+Also überleg vorher. #sprecher:dale #stimmung:nachdenklich
 Keiner hat ihn gefragt. Er meint vermutlich auch sich selbst. #sprecher:erzaehler
 -> END
 
@@ -65,23 +65,23 @@ Keiner hat ihn gefragt. Er meint vermutlich auch sich selbst. #sprecher:erzaehle
     -> noor_farbe
 }
 {noorGetroffen:
-    Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor
+    Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor #stimmung:nachdenklich
     -> END
 }
 ~ noorGetroffen = true
 An einer langen Mauer steht eine junge Frau auf einer Leiter. Auf ihrem Eimer steht „Noor“. #sprecher:erzaehler #geraeusch:spruehdose
 Auf der Mauer wachsen schwarze Umrisse. Ein Turm. Ein halber Springer. #sprecher:erzaehler
-Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor
+Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor #stimmung:nachdenklich
 * [„Was wird es?“]
-- Weiß ich, wenn es fertig ist. #sprecher:noor
+- Weiß ich, wenn es fertig ist. #sprecher:noor #stimmung:laechelt
 Sie schüttelt eine Dose. Es klackert. #sprecher:erzaehler
-Mein Opa hat da drin gearbeitet. #sprecher:noor
-Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank. Vielleicht. #sprecher:noor
+Mein Opa hat da drin gearbeitet. #sprecher:noor #stimmung:nachdenklich
+Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank. Vielleicht. #sprecher:noor #stimmung:nachdenklich
 -> END
 
 = noor_farbe
 Die Umrisse haben Farbe bekommen. Unter dem Turm steht jetzt eine Werkbank, zwei Männer in Blaumann beugen sich darüber. #sprecher:erzaehler
-Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor
+Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -92,7 +92,7 @@ Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor
     -> END
 }
 An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
-Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose
+Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose #stimmung:laechelt
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegRivertonIronwood.tafel")
     -> END
@@ -110,7 +110,7 @@ Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambro
 Eine Fabrik aus rotem Stein, und niemand ist darin. Fenster ohne Glas. Aus dem Schornstein wächst ein Baum. #sprecher:erzaehler
 Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 ~ gibFund("zahnrad")
-Ein Rad, das kein anderes mehr dreht. #sprecher:ambrose
+Ein Rad, das kein anderes mehr dreht. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 === fund_nietenkopf ===
@@ -125,11 +125,11 @@ Ein Rad, das kein anderes mehr dreht. #sprecher:ambrose
 // Tunnel, weil es nach dem Zeitnot-Trick oder am Geländer zuerst kommen kann.
 === jh ===
 ~ nietenkopfGefunden = true
-Hier ist was eingeschlagen! In die Dinger. Die runden. #sprecher:juno
+Hier ist was eingeschlagen! In die Dinger. Die runden. #sprecher:juno #stimmung:ueberrascht
 Auf einem Nietenkopf am Fuß eines Pfostens stehen zwei Buchstaben. Klein, sauber, ins heiße Eisen gestempelt. #sprecher:erzaehler #bild:nietenkopf_jh
 J. H. #sprecher:erzaehler #klang:hale
 Auf dem nächsten auch. Und auf dem übernächsten. #sprecher:erzaehler
-Der Erbauer. Der hat überall unterschrieben. Eitel! #sprecher:juno
+Der Erbauer. Der hat überall unterschrieben. Eitel! #sprecher:juno #stimmung:lacht
 ~ gibFund("nietenkopf")
 Ambrose sieht auf die Buchstaben. Sein Gesicht ist leer. Wie ein Zimmer, aus dem gerade jemand hinausgegangen ist. #sprecher:erzaehler #bild:aus
 * [„Ambrose?“]
@@ -150,19 +150,19 @@ Ambrose steht noch einen Augenblick am Geländer. Eine Hand ausgestreckt, dicht 
 ~ zeitnotTrickErhalten = true
 Über das Tal läuft eine Brücke aus schwarzem Eisen, sehr alt und sehr schön, auf eine strenge Art. Lauter Dreiecke, jedes genau so groß wie das nächste. #sprecher:erzaehler #musik:aus #geraeusch:wind_traeger
 Und Tausende Nieten, runde Köpfe in geraden Reihen. #sprecher:erzaehler
-Wer baut so etwas? #sprecher:juno
+Wer baut so etwas? #sprecher:juno #stimmung:ueberrascht
 * [„Jemand, der nichts dem Zufall überlässt.“]
 - Du weißt nicht, warum du das sagst. Ambrose ist sehr still. #sprecher:erzaehler #pause
-Im Kaffeehaus gab es einen Trick. Man tat, als brenne die Kerze des Gegners schon herunter. #sprecher:ambrose
-Man sah darauf. Man seufzte. Er glaubte es, und er eilte. #sprecher:ambrose
+Im Kaffeehaus gab es einen Trick. Man tat, als brenne die Kerze des Gegners schon herunter. #sprecher:ambrose #stimmung:laechelt
+Man sah darauf. Man seufzte. Er glaubte es, und er eilte. #sprecher:ambrose #stimmung:laechelt
 * [„Ist das nicht Schummeln?“]
-- Es ist Theater. Der Gegner sieht dieselbe Kerze wie du. #sprecher:ambrose
+- Es ist Theater. Der Gegner sieht dieselbe Kerze wie du. #sprecher:ambrose #stimmung:laechelt
 Er hält dir eine Karte hin. Eine Sanduhr darauf, fast leer. #sprecher:erzaehler
 ~ gibKarte("grossesMaul")
-Sie ist nicht ganz sauber. Wenn du sie spielst, glänzt deine Nadel weniger. #sprecher:ambrose
-Ich sage es dir, weil ich es früher niemandem gesagt habe. #sprecher:ambrose
+Sie ist nicht ganz sauber. Wenn du sie spielst, glänzt deine Nadel weniger. #sprecher:ambrose #stimmung:nachdenklich
+Ich sage es dir, weil ich es früher niemandem gesagt habe. #sprecher:ambrose #stimmung:nachdenklich
 * [„Und wenn der andere wirklich keine Zeit hat?“]
-- Dann spielt man nicht mit ihm um die Wette. Man nimmt sich die eigene Zeit und zieht in Ruhe. #sprecher:ambrose
+- Dann spielt man nicht mit ihm um die Wette. Man nimmt sich die eigene Zeit und zieht in Ruhe. #sprecher:ambrose #stimmung:nachdenklich
 Das hat mich dreißig Jahre gekostet. Dann war ich tot. #sprecher:ambrose #stimmung:alt
 {nietenkopfGefunden == false:
     -> jh ->
@@ -232,16 +232,16 @@ Das Wort ist „Td8“. #sprecher:erzaehler
 === brueckenbauern ===
 {gefundenKreide1 == false:
     Unter der Brücke stehen drei Klapptische. Ein Mann mit Schiebermütze redet, ohne Luft zu holen. #sprecher:erzaehler
-    Zehn Cent die Partie, drei Minuten, zwei Sekunden dazu. Aber erst das Wort. #sprecher:dime
-    Das Wort steht am Pfeiler, wenn man richtig hinschaut. Die meisten schauen nicht richtig. #sprecher:dime
+    Zehn Cent die Partie, drei Minuten, zwei Sekunden dazu. Aber erst das Wort. #sprecher:dime #stimmung:laechelt
+    Das Wort steht am Pfeiler, wenn man richtig hinschaut. Die meisten schauen nicht richtig. #sprecher:dime #stimmung:laechelt
     -> END
 }
 {ausgangWegRivertonIronwoodDime != "":
     -> nach_der_partie
 }
-„Td8“? Richtig. Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. Fast nie. #sprecher:dime
+„Td8“? Richtig. Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. Fast nie. #sprecher:dime #stimmung:lacht
 Über dem Kanal surrt etwas. Eine kleine Drohne steht in der Luft und dreht sich zum Tisch. #sprecher:erzaehler
-Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime
+Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime #stimmung:nachdenklich
 -> spielen
 
 = spielen
@@ -250,19 +250,19 @@ Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime
     ~ beginnePartie("wegRivertonIronwood.dime")
     -> END
 * [Nicht jetzt]
-    Ich bin hier. Die Brücke auch. #sprecher:dime
+    Ich bin hier. Die Brücke auch. #sprecher:dime #stimmung:laechelt
     -> END
 
 = nach_der_partie
 {ausgangWegRivertonIronwoodDime:
 - "sieg":
-    Gewonnen hast du. Zehn Cent? Sagen wir zwanzig. Ich übertreibe immer, das ist mein Stil. #sprecher:dime
+    Gewonnen hast du. Zehn Cent? Sagen wir zwanzig. Ich übertreibe immer, das ist mein Stil. #sprecher:dime #stimmung:lacht
 - "remis":
-    Remis. Fünf Cent für jeden. Ich schreib's an. #sprecher:dime
+    Remis. Fünf Cent für jeden. Ich schreib's an. #sprecher:dime #stimmung:laechelt
 - else:
-    Gewonnen hab ich. Aber du hast gespielt, und das zählt hier. Wer spielt, kennt den nächsten Springer. #sprecher:dime
+    Gewonnen hab ich. Aber du hast gespielt, und das zählt hier. Wer spielt, kennt den nächsten Springer. #sprecher:dime #stimmung:laechelt
 }
-Noch eine? #sprecher:dime
+Noch eine? #sprecher:dime #stimmung:laechelt
 -> spielen
 
 === spur_pm1 ===

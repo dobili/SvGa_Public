@@ -59,7 +59,7 @@ Riverton riecht nach Regen auf Stein. Backstein, rot und rußig, Feuerleitern, S
 Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. Aus zwei Fenstern kommen zwei Musiken und streiten sich. #sprecher:erzaehler
 Hier bin ich geboren. Also fast. Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
 An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler
-Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose
+Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Übergänge
@@ -71,10 +71,10 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 === kanalweg ===
 {nadelRiverton > 0:
     Der Treidelpfad am Kanal führt nach Ironwood. Zu Fuß ist es weit, mit dem Rad geht es schneller. #sprecher:erzaehler
-    Ironwood. Dort riecht die Luft nach Eisen, sagt man. Gehen wir. #sprecher:ambrose
+    Ironwood. Dort riecht die Luft nach Eisen, sagt man. Gehen wir. #sprecher:ambrose #stimmung:laechelt
 - else:
     Ein Treidelpfad führt am Kanal entlang Richtung Ironwood. #sprecher:erzaehler
-    Erst der Pavillon, {held}. Wer eine Stadt verlässt, bevor er dort gespielt hat, war nie richtig da. #sprecher:ambrose
+    Erst der Pavillon, {held}. Wer eine Stadt verlässt, bevor er dort gespielt hat, war nie richtig da. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -112,20 +112,20 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 Hinter dem Park eine Werkstatt mit heruntergelassenem Rollladen: „Albescu. Fahrräder. Reparatur am selben Tag.“ Die Buchstaben blättern ab. #sprecher:erzaehler
 Davor fegt eine Frau Laub, das der Wind sofort wieder hinlegt. #sprecher:erzaehler #klang:besen_stein
 Juno fragt nach dem Weg zu einem Laden, den sie gar nicht sucht. Die Frau stützt sich auf den Besen. #sprecher:erzaehler
-Im Frühjahr hab ich zugemacht. Die Leute bestellen ihre Räder jetzt im Handyladen. #sprecher:albescu
-Man tippt eine Zahl ein, und nach drei Tagen kommt ein Karton. #sprecher:albescu
-Im Schuppen hinten steht noch alles, wie mein Mann es gelassen hat. Ich komm nicht hinein. #sprecher:albescu
+Im Frühjahr hab ich zugemacht. Die Leute bestellen ihre Räder jetzt im Handyladen. #sprecher:albescu #stimmung:bitter
+Man tippt eine Zahl ein, und nach drei Tagen kommt ein Karton. #sprecher:albescu #stimmung:bitter
+Im Schuppen hinten steht noch alles, wie mein Mann es gelassen hat. Ich komm nicht hinein. #sprecher:albescu #stimmung:bitter
 * [„Warum nicht?“]
 * [Zuhören]
-- Der Schlüssel. Er hatte ihn immer an der Angelweste. Vor zwei Jahren kommt er vom Bach bei Cedar Creek, und der Schlüssel ist weg. #sprecher:albescu
-Er hat den ganzen Sommer gesucht. Dann hat er gesagt, wir lassen ein neues Schloss machen. #sprecher:albescu
+- Der Schlüssel. Er hatte ihn immer an der Angelweste. Vor zwei Jahren kommt er vom Bach bei Cedar Creek, und der Schlüssel ist weg. #sprecher:albescu #stimmung:nachdenklich
+Er hat den ganzen Sommer gesucht. Dann hat er gesagt, wir lassen ein neues Schloss machen. #sprecher:albescu #stimmung:nachdenklich
 Sie fegt ein Blatt beiseite. #sprecher:erzaehler
-Wir sind nicht mehr dazu gekommen. #sprecher:albescu #pause:2
+Wir sind nicht mehr dazu gekommen. #sprecher:albescu #stimmung:bitter #pause:2
 {gefundenSchluessel: -> albescu_schluessel}
 -> END
 
 === albescu_wartet ===
-{~Der Schlüssel ist groß und rostig, mit einem runden Griff. Wenn du ihn siehst, erkennst du ihn.|Mein Mann angelte überall, am liebsten bei Cedar Creek. Er sagte, dort beißen die Fische freundlicher.} #sprecher:albescu
+{~Der Schlüssel ist groß und rostig, mit einem runden Griff. Wenn du ihn siehst, erkennst du ihn.|Mein Mann angelte überall, am liebsten bei Cedar Creek. Er sagte, dort beißen die Fische freundlicher.} #sprecher:albescu #stimmung:nachdenklich
 -> END
 
 === albescu_schluessel ===
@@ -147,9 +147,9 @@ Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännc
     Die Kette springt? Komm her. #sprecher:albescu #stimmung:froh
 - nadelIronwood > 0:
     Vor der Werkstatt steht ein Rad auf dem Kopf. Mrs. Albescu sitzt auf einem Hocker davor und dreht an der Kette. #sprecher:erzaehler
-    Dafür brauche ich keine Knie. Nur Zeit. #sprecher:albescu
+    Dafür brauche ich keine Knie. Nur Zeit. #sprecher:albescu #stimmung:laechelt
 - else:
-    {~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht.} #sprecher:albescu
+    {~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht.} #sprecher:albescu #stimmung:laechelt
 }
 -> END
 
@@ -169,11 +169,11 @@ Auf dem Podium steht ein Mädchen in einer weißen Jacke mit dem Zeichen des Kon
 Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner. Keine schlechten Tage. #sprecher:nova #stimmung:froh
 Der Tisch ist immer bereit, immer geduldig, immer genau so stark, wie du ihn brauchst. #sprecher:nova #stimmung:froh
 Dann gehen die roten Lichter an den Kameras aus. Ihr Lächeln fällt herunter wie etwas, das man loslässt. #sprecher:erzaehler #pause:2
-Kann ich jetzt kurz sitzen? #sprecher:nova
+Kann ich jetzt kurz sitzen? #sprecher:nova #stimmung:nachdenklich
 * [Juno ansehen]
 * [Weiter zusehen]
 - Sie fragt niemanden. Sie setzt sich auf die Kante des Podiums, in den Regen. #sprecher:erzaehler
-Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #sprecher:juno
+Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #sprecher:juno #stimmung:ueberrascht
 -> END
 
 === victor ===
@@ -188,18 +188,18 @@ Ins Mikrofon sagt er drei Sätze. Es sind die Sätze seines Vaters. #sprecher:er
 Dann kommt er herüber, nicht schnell. #sprecher:erzaehler
 Du. #sprecher:victor #stimmung:kalt
 Er sieht auf deine Jacke. #sprecher:erzaehler
-Zwei. #sprecher:victor
+Zwei. #sprecher:victor #stimmung:bitter
 * [„Zwei.“]
 * [Nichts sagen]
 - Er nickt, als trüge er eine Zahl in eine Liste ein. Dann sieht er zu den Tischen. #sprecher:erzaehler
-Sie machen keine Fehler. Das ist der Punkt. #sprecher:victor
+Sie machen keine Fehler. Das ist der Punkt. #sprecher:victor #stimmung:bitter
 // Gutachten K2.14: Victors Satz fällt in beiden Zweigen.
 * [„Und das ist gut?“]
     Er antwortet nicht gleich. Wieder diese Sekunden. #sprecher:erzaehler #pause:2
-    Mein Vater sagt ja. #sprecher:victor
+    Mein Vater sagt ja. #sprecher:victor #stimmung:nachdenklich
 * [Zu den Tischen sehen]
     Du fragst nichts. Er sagt es trotzdem, leiser. #sprecher:erzaehler #pause:2
-    Mein Vater sagt, das ist gut. #sprecher:victor
+    Mein Vater sagt, das ist gut. #sprecher:victor #stimmung:nachdenklich
 - -> END
 
 === victor_alltag ===
@@ -222,7 +222,7 @@ Auf einem läuft eine Partie. Niemand sitzt davor. Die Figuren ziehen von selbst
     Er dreht sich nicht um. #sprecher:erzaehler
 * [Hinsehen]
 - Sie hat nicht gezögert. Kein einziges Mal. Achtundzwanzig Züge. Und in keinem … #sprecher:ambrose #stimmung:fern #pause:2
-Eine Rechenmaschine, die nie zweifelt, ist kein Spieler. Das ist ein Rechenschieber mit Beleuchtung. #sprecher:ambrose
+Eine Rechenmaschine, die nie zweifelt, ist kein Spieler. Das ist ein Rechenschieber mit Beleuchtung. #sprecher:ambrose #stimmung:bitter
 Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:erzaehler
 -> END
 
@@ -250,13 +250,13 @@ Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:er
 - else:
     An einem Tisch sitzt jetzt ein Junge, kleiner als Tamsin, allein. Der Bildschirm wirft Licht auf sein Gesicht. #sprecher:erzaehler
     Er sieht nicht auf. Der Tisch wartet geduldig, bis er zieht. #sprecher:erzaehler
-    Geduldig ist er, das muss man ihm lassen. Geduldiger als ich. #sprecher:ambrose
+    Geduldig ist er, das muss man ihm lassen. Geduldiger als ich. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
 === handyladen ===
 Ein Laden voller Tablets mit dem Logo von Perfect Move. Im Schaufenster: „Dein persönlicher Trainer, schon ab heute.“ #sprecher:erzaehler
-Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:ambrose
+Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === fund_laeufer ===
@@ -268,7 +268,7 @@ Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:am
 Unter der Brücke spielt ein Straßenmusiker Gitarre. Neben seinem Hut liegt ein Läufer aus hellem Holz. #sprecher:erzaehler
 „Den hab ich hier gefunden“, sagt er. „Behalt ihn, ich spiele nur Gitarre.“ #sprecher:erzaehler
 ~ gibFund("holzlaeufer")
-Noch ein Holzstück. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose
+Noch ein Holzstück. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Anleger am Kanalbecken (Runde 6)

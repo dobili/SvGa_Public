@@ -16,6 +16,8 @@ export const FASSUNGEN: readonly string[] = [
   "alt",
   "lachtOhneSpott",
   "muede",
+  // Ambrose starrt gebannt auf den Bildschirm des Konzerns (Gemini-Einzelporträt, 14.11.2026).
+  "gebannt",
 ];
 
 /** camelCase als kebab-case: „lachtOhneSpott“ → „lacht-ohne-spott“. */

@@ -1687,3 +1687,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       versehen. In Arbeit: Alle Zeilen bekommen eine Stimmung passend zum Inhalt (neutral, lächelt,
       nachdenklich, überrascht, bitter, lacht), damit die Gesichter mitspielen, sobald die neuen
       Porträts da sind. Widerspruch genügt.
+- [ ] RO15. **Karten als echte Karten mit Motiv (Wunsch vom 14.11.2026):** In der Partie liegen die
+      Karten künftig unten als Fächer zum Durchwischen; antippen zeigt die Karte groß mit Name,
+      Satz und „Ausspielen“, gespielte Karten liegen umgedreht. Rahmen, Name und Farbe der Stufe
+      (leicht, mittel, stark) zeichnet das Spiel; Gemini malt nur die Motive. Auftrag an Gemini:
+      sieben Blätter mit je sechs Motiven (alle 40 Karten, dazu Rückseite und Ersatzbild), die
+      Prompts stehen fertig zum Kopieren in der Datei „4_Gemini_Kartenmotive.html“ aus dem Chat;
+      die Stilvorlage wie bei den Bildwünschen anhängen. Bis die Motive da sind, zeigt der Fächer
+      gezeichnete Karten ohne Bild. Widerspruch genügt.

@@ -117,3 +117,19 @@ Jede Karte, die in der Partie gespielt wird, kommt mit einer Sprechblase, nie st
 - **Werkzeug- und Zeitkarten (Lupe, Drohung, Waage, Limo …):** eine kurze Zeile des Helden oder
   Ambroses zur Wirkung, mindestens vier Varianten je Karte.
 - Wie im Tischgespräch: kein Spott bei Niederlage, Zufall fest je Partie.
+
+## 7. Kartenfächer (Wunsch des Autors, 14.11.2026)
+
+Die Karten der Partie sind keine Textknöpfe mehr, sondern Karten:
+
+- Unten unter dem Brett ein Fächer der Karten des Decks, waagerecht zum Durchwischen, jede Karte
+  hochkant (3:4) mit Motiv, Name darunter, Rand in der Farbe der Stufe (leicht Grün, mittel Blau,
+  stark Gold), im Pixelrahmen des Spiels.
+- Antippen hebt die Karte groß heraus: Motiv, Name, Spruch der Karte, Ambroses Erklärung, Knopf
+  „Ausspielen“ (oder ausgegraut mit Grund, warum sie gerade nicht geht). Ausspielen löst die
+  Sprechblase der Karte aus (Abschnitt 6).
+- Gespielte Verbrauchskarten liegen umgedreht (Rückseite), dauerhafte Karten tragen einen Glanz,
+  solange sie wirken.
+- Dieselbe Darstellung in der Deckwahl vor der Partie.
+- Motive: `karten/<kennung>.webp` im Paket (Feld `bild` in `karten.json`), gemalt von Gemini
+  nach `auftraege/gemini_prompts_9_karten.md`; ohne Bild eine gezeichnete Karte mit Muster.

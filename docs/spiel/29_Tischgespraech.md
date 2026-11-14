@@ -133,3 +133,30 @@ Die Karten der Partie sind keine Textknöpfe mehr, sondern Karten:
 - Dieselbe Darstellung in der Deckwahl vor der Partie.
 - Motive: `karten/<kennung>.webp` im Paket (Feld `bild` in `karten.json`), gemalt von Gemini
   nach `auftraege/gemini_prompts_9_karten.md`; ohne Bild eine gezeichnete Karte mit Muster.
+
+## 8. Stimmungen der Dialoge (14.11.2026)
+
+Jede Sprechzeile der Ink-Dialoge (`inhalte/abenteuer/dialoge/de/`), deren Inhalt eine Färbung
+trägt, hat jetzt eine `#stimmung`, damit das Porträt das passende Gesicht zeigt. Ergänzt wurden
+1.620 Zeilen, nur mit den sechs Fassungen, ohne neue Wörter in `portraetblatt.json`:
+
+| Gesicht      | neu ergänzt | mit den 499 älteren Marken |
+| ------------ | ----------: | -------------------------: |
+| laechelt     |         798 |                        980 |
+| nachdenklich |         518 |                        638 |
+| bitter       |         115 |                        162 |
+| lacht        |          99 |                        191 |
+| ueberrascht  |          90 |                        107 |
+| neutral      |           – |      41 (`jung` und `alt`) |
+
+- Ohne Marke, also neutral, bleiben 119 Sprechzeilen: Auskünfte, Ansagen der Turnierleiterin,
+  Regelerklärungen, Grüße ohne Färbung. Der Erzähler hat kein Porträt und keine Marken.
+- Victor ist bis Akt 3 kühl (bitter, nachdenklich) und wird ab Summit City und der Capital Arena
+  heller; Ambrose ist meist verschmitzt (lächelt), in den Erinnerungen an 1858 und 1866 bitter
+  oder nachdenklich.
+- Bestehende Marken sind unverändert, Text und Ablauf ebenso.
+- Offen: In `erinnerung-london.ink` tragen vier Zeilen des jungen Ambrose kein `#stimmung:jung`
+  („Und ich bin hier, um Klavierholz zu kaufen.“, „Jetzt. Halt. Schau hin.“, „Er hat einen Turm
+  weniger …“, „Noch nicht, {held}. …“). Sie bleiben vorerst ohne Marke; eine Stimmung würde das
+  Gesicht des alten Ambrose zeigen. Gehört `jung` dazu, zeigt die Zeile das junge Gesicht, aber
+  ohne Ausdruck, weil je Zeile nur eine `#stimmung` gilt.

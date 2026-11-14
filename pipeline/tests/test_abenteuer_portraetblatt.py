@@ -5,9 +5,13 @@ dunklen Trennlinien und vergrößerten Pixeln. Der Schneider muss daraus das Spi
 machen (Format von inhalte/abenteuer/portraetblatt.json): Grund durchsichtig, Pixelraster sauber.
 """
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.portraetblatt import FELD, blockgroesse, schneide
+pytest.importorskip("PIL")  # in Actions ohne Pillow übersprungen, wie die übrigen Bildtests
+
+from PIL import Image  # noqa: E402
+
+from pipeline.abenteuer.portraetblatt import FELD, blockgroesse, schneide  # noqa: E402
 
 ZELLE, LINIE, BLOCK = 120, 4, 6
 BREIT, HOCH = 12, 16  # echtes Pixelbild je Fassung

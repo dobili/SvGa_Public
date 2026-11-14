@@ -27,6 +27,7 @@ def test_jeder_stamm_zeigt_auf_eine_art_mit_bild():
 
 
 def test_vorschau_findet_dieselben_arten():
+    pytest.importorskip("PIL.Image")  # die Vorschau braucht Pillow, das in Actions fehlt
     from pipeline.abenteuer.belebungsvorschau import tierart
 
     erwartet = {"moewen": "moewe", "specht": "kraehe", "wuestenfuchs": "fuchs", "praeriehunde": "hase"}

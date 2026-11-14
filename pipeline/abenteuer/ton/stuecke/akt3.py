@@ -6,5 +6,20 @@ landen im Nachladepaket des Akts (``musik/akt3``).
 """
 
 from pipeline.abenteuer.ton.satzplan import Satz
+from pipeline.abenteuer.ton.stuecke import (
+    akt3_ambrose,
+    akt3_canyon,
+    akt3_delacroix,
+    akt3_desert,
+    akt3_motive,
+    akt3_silicon,
+)
 
-STUECKE: tuple[Satz, ...] = ()
+STUECKE: tuple[Satz, ...] = (
+    *akt3_silicon.STUECKE,
+    *akt3_ambrose.STUECKE,
+    *akt3_delacroix.STUECKE,
+    *akt3_canyon.STUECKE,
+    *akt3_desert.STUECKE,
+    *akt3_motive.STUECKE,
+)

@@ -64,6 +64,7 @@ function neuerSpieler(art) {
     clubs: [],
     orte: [],
     kaeufe: [],
+    fahrtenOhneGeld: 0,
     hier: null,
   };
 }
@@ -175,7 +176,7 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
         bezahlbar: bezahlbar(welt, sp, e.ort),
       };
       if (!bekannt) sp.orte.push(aktuell);
-    } else if (e.art === "muenzen") sp.muenzen += e.anzahl;
+    } else if (e.art === "muenzen") zahleOderVerdiene(sp, e);
     else if (e.art === "karte") nimmKarte(sp, e.karte);
     else if (e.art === "laden") {
       sp.laedenBesucht.add(e.laden);
@@ -191,6 +192,17 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
   }
   if (aktuell && aktuell.abreise === undefined) abreise(welt, sp, aktuell);
   return sp;
+}
+
+/**
+ * Münzen aus der Zeitachse: Einnahmen immer; eine Ausgabe (Fahrt mit dem Lastkahn) nur, wenn sie
+ * reicht, wie `bezahle` in regeln/muenzen.ts (der Dialog bietet die Fahrt sonst nicht an). Der
+ * gründliche Spieler der Zeitachse hat mehr Münzen als der verschwenderische; ohne diese Prüfung
+ * rutschte der verschwenderische unter null. Nicht bezahlbare Fahrten zählt `fahrtenOhneGeld`.
+ */
+function zahleOderVerdiene(sp, e) {
+  if (e.anzahl < 0 && sp.muenzen + e.anzahl < 0) sp.fahrtenOhneGeld++;
+  else sp.muenzen += e.anzahl;
 }
 
 function bezahlbar(welt, sp, ort) {
@@ -356,6 +368,10 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       );
       ziele.push(
         `- Erste kaufbare mittlere Karte: ${frueheste(welt, erste, "mittel")}`,
+      );
+      const ohneGeld = erste.map((sp) => sp.fahrtenOhneGeld);
+      ziele.push(
+        `- Fahrten (Lastkahn), die der verschwenderische Spieler nicht bezahlen konnte: ${spanne(ohneGeld)} (freiwillig, kein Pflichtweg)`,
       );
       const ende = erste.map(
         (sp) => sp.orte.find((o) => akt(o.ort) === 2)?.ankunft ?? 0,

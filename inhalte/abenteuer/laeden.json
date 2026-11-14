@@ -151,6 +151,11 @@
           "art": "karte",
           "kennung": "warnsignale",
           "preis": 120
+        },
+        {
+          "art": "karte",
+          "kennung": "taktikspuernase",
+          "preis": 120
         }
       ]
     },
@@ -242,6 +247,11 @@
           "art": "gegenstand",
           "kennung": "teilnehmeranstecker",
           "preis": 10
+        },
+        {
+          "art": "karte",
+          "kennung": "phasenblick",
+          "preis": 90
         }
       ]
     },
@@ -279,6 +289,11 @@
           "art": "karte",
           "kennung": "schluesselfelder",
           "preis": 120
+        },
+        {
+          "art": "karte",
+          "kennung": "turmregel",
+          "preis": 80
         }
       ]
     },
@@ -351,6 +366,11 @@
           "art": "karte",
           "kennung": "laeufervorgabe",
           "preis": 200
+        },
+        {
+          "art": "karte",
+          "kennung": "planfinder",
+          "preis": 120
         }
       ]
     },

@@ -1038,3 +1038,14 @@ in voller Höhe, auch auf Tablet und Desktop. Rätsel ohne Trainerkarte: Pergame
 Sprechblase, Figurenreihe als Fortschritt. Zwölf Brettstile mit Pixelfiguren nach „Kiefer &
 Kirsche“ (RhosGFX, CC0), Wahl über `brett` in begegnungen.json, sonst orte.json, sonst
 „abgegriffen“; Erinnerungen in Sepia. In der Buch-App ändert sich nichts.
+
+## Wirtschaft: vier Lernkarten in späten Läden (14.11.2026, nachts)
+
+Die Wirtschaftsauswertung der Gesamtsimulation verfehlte „Rest am Ende höchstens 400“: Der sparsame
+Spieler endete mit 625 Münzen, weil es nach Crossroads nichts mehr zu kaufen gab. Empfehlung nach
+Regel 9, schon umgesetzt, Widerspruch genügt: Statt Belohnungen zu kürzen, verkaufen späte Läden
+vier vorhandene Lernkarten (Taktikspürnase 120 im Foodtruck Silicon Bay, Turmregel 80 im Bergladen
+Summit City, Planfinder 120 in der Raststätte Crossroads, Phasenblick 90 im Fanshop der Capital
+Arena). Der sparsame Spieler endet jetzt mit 185 bis 215 Münzen; alle übrigen Ziele bleiben erfüllt.
+Der Fanshop verkauft damit erstmals etwas mit Spielwirkung (Story-Bibel, Abschnitt 31 angepasst).
+Begründung und Zahlen: `11_Karten_und_Gegenstaende.md`, Abschnitt 9.

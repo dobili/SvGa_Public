@@ -211,3 +211,29 @@ Ergebnis der Auswertung (Startwerte 1 und 2): Der sparsame Spieler, der jede dau
 einmal kauft, hat am Ende 210 bis 260 Münzen übrig (vorher 1020 bis 1070); der verschwenderische
 kann in Akt 4 sieben Waren nicht kaufen. Gold, Silber und die Kaufmöglichkeit vor jedem Clubkampf
 bleiben unverändert erfüllt.
+
+## 9. Lernkarten im Laden für Akt 3 und 4 (wirtschaft, 14.11.2026)
+
+Warum: Mit den Münzen aus Akt 4 (Hochebene, Ghost Town, Goldmine, Weg zur Arena) hatte der
+sparsame Spieler der Wirtschaftsauswertung am Ende wieder etwa 600 Münzen übrig (Ziel 100 bis 300,
+höchstens 400); nach Crossroads gab es nichts mehr, wofür sich Sparen lohnt. Statt Belohnungen zu
+kürzen, bekommen späte Läden vier Lernkarten, die bisher nur über ein fertiges Buchkapitel kamen.
+Seit der Entscheidung vom 13.11.2026 (das Spiel steht für sich) braucht das Spiel ohnehin einen Weg
+zu diesen Karten, der nicht über das Buch führt. Es sind vorhandene Karten mit Texten und Bildern;
+wer eine schon als Lernkarte hat, sieht im Laden „hast du schon“ (dauerhafte Karten gibt es nur
+einmal). Wie Gefahrenradar, Was droht? und Endspielkompass vor ihnen.
+
+| Karte          | Werkzeug        | Stufe/Art | Laden                   | Preis | Warum                                                                        |
+| -------------- | --------------- | --------- | ----------------------- | ----- | ---------------------------------------------------------------------------- |
+| Taktikspürnase | k7-erzwingend   | M/d       | Silicon Bay (Foodtruck) | 120   | Stadt der Maschinen: erst Schachs, Schläge, Drohungen, wie die Warnsignale   |
+| Turmregel      | k9-turmbegriffe | L/d       | Summit City (Bergladen) | 80    | Großmeisterin Ward unterrichtet Endspiele, Turmendspiele sind die häufigsten |
+| Planfinder     | k6-wo           | M/d       | Crossroads (Raststätte) | 120   | der größte Laden vor der Meisterschaft: „Wo spiele ich?“                     |
+| Phasenblick    | k11-phase       | L/d       | Capital Arena (Fanshop) | 90    | letzte Ware vor dem Turnier; jede Runde fragt, was die Phase verlangt        |
+
+Ergebnis der Auswertung (Startwerte 1 und 2): Der sparsame Spieler hat am Ende 185 bis 215 Münzen
+(vorher 595 bis 625); er kauft weiter jede dauerhafte Karte. Silber für den sparsamen Spieler, eine
+leichte Karte vor jedem Clubkampf und starke Karten erst ab Akt 3 bleiben erfüllt; der
+verschwenderische kann in Akt 4 zehn Waren nicht kaufen. Keine Pflichtausgabe ist betroffen: Die
+einzige Ausgabe außerhalb der Läden ist der Lastkahn (5 Münzen, freiwillig). Die Auswertung bucht
+eine Fahrt jetzt nur, wenn das Geld reicht, wie `bezahle` in `regeln/muenzen.ts`; vorher rutschte der
+verschwenderische Spieler rechnerisch unter null.

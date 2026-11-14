@@ -2466,14 +2466,16 @@ schachspielendes Echo des Ingenieurs; wer es besiegt, bekommt das Sammelstück �
 
 ## 31. Läden in Akt 4
 
-| Laden                    | Figur     | Angebot                                                                                                                  | Preis          |
-| ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| `summitCity.bergladen`   | Haraldsen | Zweite Chance, Flüstern, Endspielkompass (Lernkarte, falls nicht vorhanden), Seilbahnkarte                               | 20, 40, 60, 15 |
-| `crossroads.raststaette` | Darlene   | größter Laden: alle leichten und mittleren Karten der Läden davor, Farbwahl (10), Bretthintergründe aller Städte (je 40) | wie zuvor      |
-| `pinewoodCamp.kiosk`     | Ezra      | Limo, Marshmallows (Album), Kühler Kopf nicht (Z4)                                                                       | 5, 5           |
-| `capitalArena.fanshop`   | –         | nur Extras: Schal „Landesmeisterschaft“, Teilnehmeranstecker (Album, ohne Spielwirkung)                                  | 20, 10         |
+| Laden                    | Figur     | Angebot                                                                                                                  | Preis              |
+| ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| `summitCity.bergladen`   | Haraldsen | Zweite Chance, Flüstern, Endspielkompass und Turmregel (Lernkarten, falls nicht vorhanden), Seilbahnkarte                | 20, 40, 60, 80, 15 |
+| `crossroads.raststaette` | Darlene   | größter Laden: alle leichten und mittleren Karten der Läden davor, Farbwahl (10), Bretthintergründe aller Städte (je 40) | wie zuvor          |
+| `pinewoodCamp.kiosk`     | Ezra      | Limo, Marshmallows (Album), Kühler Kopf nicht (Z4)                                                                       | 5, 5               |
+| `capitalArena.fanshop`   | –         | Schal „Landesmeisterschaft“, Teilnehmeranstecker (Album, ohne Spielwirkung); Phasenblick (Lernkarte) für das Turnier     | 20, 10, 90         |
 
-Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Crossroads.
+Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Crossroads (dort seit
+14.11.2026 auch der Planfinder, 120). Die übrigen Waren für Akt 3 und 4 stehen in
+`11_Karten_und_Gegenstaende.md`, Abschnitte 8 und 9.
 
 ## 32. Hilfskarten, Sprüche und Sperren in Akt 4
 

@@ -216,6 +216,12 @@ Um eins singt jemand. Um halb zwei schläft Juno auf zwei Stühlen. #sprecher:er
 
 === mama ===
 {
+// Hinweis, falls das Gespräch über das Foto zu Hause verloren ging (etwa durch Neuladen mitten im
+// Dialog): Oma Ruth bietet die Heimfahrt dann noch einmal an (Chaos-Prüfung, 14.11.2026).
+- fotoGefunden and not mamaFotoGesehen:
+    Am Tisch am Fenster ist ein Platz frei. Das Foto in deiner Tasche hat Mama noch nicht gesehen. #sprecher:erzaehler
+    Oma Ruth in der Elm Street weiß, wann der nächste Bus nach Hause fährt. #sprecher:erzaehler
+    -> END
 - not mamaFotoGesehen:
     Am Tisch am Fenster ist ein Platz frei. Big Joe stellt dort nie jemanden hin. #sprecher:erzaehler
     -> END
@@ -336,6 +342,12 @@ Du schreibst ja in mein Heft. #sprecher:mutter #stimmung:ueberrascht
 
 === hank ===
 {
+// Hanks Reihe erst nach Big Joe: Die Quest „Clubkampf in Ironwood“ wartet zuerst auf Big Joe und
+// dann auf Hanks Reihe; vorher bestanden, hing sie für immer (Chaos-Prüfung, 14.11.2026).
+- not bigJoeGetroffen:
+    Ein Mann im Blaumann sitzt allein am Ende des Tischs und sieht kaum hoch. #sprecher:erzaehler
+    Erst zu Big Joe. Der entscheidet, wer hier mitspielt. #sprecher:hank
+    -> END
 - not hankGetroffen:
     ~ hankGetroffen = true
     Ein Mann im Blaumann sitzt allein am Ende des Tischs und schiebt eine Figur hin und her. #sprecher:erzaehler

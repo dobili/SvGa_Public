@@ -17,6 +17,7 @@ const {
 const RUECKKEHR_SCHRITTE = 6000;
 const NACHHOLEN_SCHRITTE = 1500;
 const NEUER_VERSUCH_ALLE = 200;
+const DRAUSSEN_SCHRITTE = 40;
 
 /**
  * Orte (keine Erinnerungen), die an einen der Orte direkt angrenzen; mit `nurNeben` nur die
@@ -47,16 +48,33 @@ function nebenorte(welt, orte) {
 /** Bleibt bis zu `schritte` Schritte in den Zielorten; endet, wenn `fertig()` gilt. */
 function bleibe(welt, st, h, start, schritte, fertig) {
   for (let n = 0; n < schritte && !fertig(); n++) {
-    // Wer doch hinausgerät (etwa durch einen Dialog), reist zurück.
-    if (!h.imZiel(welt, st, st.karte)) betrete(welt, st, start);
+    // Wer doch hinausgerät (etwa durch einen Dialog), reist zurück; zu Fuß geht er weiter. Mit
+    // echten Preisen (Chaos-Prüfung) bleibt er erst eine Weile dort: Oma Ruths Heimfahrt führt zu
+    // Mama in Maple Falls, danach geht es mit der Monatskarte zurück nach Ironwood.
+    const draussen = !st.zuFuss && !h.imZiel(welt, st, st.karte);
+    st.draussen = draussen ? (st.draussen || 0) + 1 : 0;
+    if (draussen && (!st.echt || st.draussen > DRAUSSEN_SCHRITTE)) {
+      st.draussen = 0;
+      betrete(welt, st, start);
+    }
     const drinnen = h
       .besucheKarte(welt, st)
-      .filter((w) => h.imZiel(welt, st, w.ziel?.karte));
+      .filter((w) => st.zuFuss || h.imZiel(welt, st, w.ziel?.karte));
     h.waehleWeg(welt, st, drinnen, n + 1e6);
     if (n % NEUER_VERSUCH_ALLE === 0)
       for (const k of Object.keys(st.versuche))
         st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
   }
+}
+
+/**
+ * Hin zur Startkarte: mit der Monatskarte (oder ohne echte Preise, wie bisher) sofort; mit echten
+ * Preisen ohne Monatskarte (Chaos-Prüfung) zu Fuß, die Suche läuft dann durch alle Orte.
+ * Vereinfachung: Die Schnellreise der App führt nur in Städte, hier auf jede Karte.
+ */
+function hin(welt, st, karte) {
+  st.zuFuss = st.echt && !st.besitz.has("monatskarte");
+  if (!st.zuFuss) betrete(welt, st, karte);
 }
 
 /** Alle Voraussetzungen einer Quest sind erledigt (Beispiel: mapleFalls.epilog nach der Meisterschaft). */
@@ -66,11 +84,16 @@ function bereit(st, q) {
   );
 }
 
-/** Mit der Monatskarte zu jedem Ort mit offener Quest, bis sie fertig ist; gibt die Ziele zurück. */
-function rueckkehr(welt, st, frist, h) {
+/**
+ * Mit der Monatskarte zu jedem Ort mit offener Quest, bis sie fertig ist; gibt die Ziele zurück.
+ * Mit `nur` (Menge von Quest-Kennungen) nur zu diesen Quests.
+ */
+function rueckkehr(welt, st, frist, h, nur = null) {
   const ziele = [];
   for (let runde = 0; runde < 3; runde++)
     for (const q of welt.quests) {
+      // `nur`: nur diese Quests (schneller Chaos-Test, gesamtsimulation-chaos.cjs).
+      if (nur && !nur.has(q.kennung)) continue;
       const s = st.staende.find((x) => x.k === q.kennung);
       const ort = welt.orte.find((x) => x.kennung === q.ort);
       // Auch Wege: Odette (finchJagd) wartet auf dem Weg, bis alle Figuren gefunden sind. Eine
@@ -82,15 +105,23 @@ function rueckkehr(welt, st, frist, h) {
       st.zielOrte = new Set([q.ort, ...nachbarorte(welt, [q.ort])]);
       // Die Startkarte nur, wenn sie im Zielort liegt: Finch-Jagd und verlorene Seiten beginnen
       // auf der Landstraße bei Maple Falls, ihre Schritte liegen aber auf Weg 12 und in Capital.
-      const imOrt = q.start?.karte && welt.karteZuOrt[q.start.karte]?.kennung === q.ort;
+      const imOrt =
+        q.start?.karte && welt.karteZuOrt[q.start.karte]?.kennung === q.ort;
       const startkarte = imOrt ? q.start.karte : ort.karten[0].kennung;
-      betrete(welt, st, startkarte);
+      hin(welt, st, startkarte);
       // Quests mit mehreren Partien (drei Sets Schach960) brauchen je Partie mehrere Anläufe.
-      bleibe(welt, st, h, startkarte, RUECKKEHR_SCHRITTE, () =>
-        st.staende.some((x) => x.k === q.kennung && x.fertig),
+      // st.rueckkehrSchritte: kürzer in der Chaos-Prüfung, damit 200 Läufe in die Zeit passen.
+      bleibe(
+        welt,
+        st,
+        h,
+        startkarte,
+        st.rueckkehrSchritte || RUECKKEHR_SCHRITTE,
+        () => st.staende.some((x) => x.k === q.kennung && x.fertig),
       );
     }
   st.zielOrte = null;
+  st.zuFuss = false;
   return [...new Set(ziele)];
 }
 
@@ -118,7 +149,7 @@ function nachholen(welt, st, frist, h) {
     if (!quelle) continue;
     const start = quelle.a.karte || quelle.o.karten[0].kennung;
     st.zielOrte = new Set([ziel.kennung, quelle.o.kennung]);
-    betrete(welt, st, start);
+    hin(welt, st, start);
     bleibe(welt, st, h, start, NACHHOLEN_SCHRITTE, () =>
       st.besucht.has(ziel.kennung),
     );
@@ -135,6 +166,7 @@ function nachholen(welt, st, frist, h) {
     );
   }
   st.zielOrte = null;
+  st.zuFuss = false;
   return geholt;
 }
 

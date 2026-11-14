@@ -27,6 +27,10 @@ VAR eidechsenhautGefunden = false
 VAR nietenCanyonGefunden = false
 VAR gefundenNietenkopf = false
 VAR nietenAmbroseGesehen = false
+// Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
+// Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
+VAR seite06Gezaehlt = false
+VAR finchLaeuferBGezaehlt = false
 
 // ---------------------------------------------------------------- Mrs. Holloway
 
@@ -299,26 +303,26 @@ Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als
 // ---------------------------------------------------------------- Funde am Felsbogen
 
 === seite06 ===
-{gefundenSeite06:
+{seite06Gezaehlt:
     Unter dem Bogen ist nur noch Sand. #sprecher:erzaehler
     -> END
 }
-~ gefundenSeite06 = true
 Unter dem Felsbogen klemmt eine lose Seite zwischen zwei Steinen, voller Schachdiagramme. #sprecher:erzaehler
-~ gibFund("seite06")
+~ seite06Gezaehlt = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite06")
 -> END
 
 === finch_laeufer_b ===
-{gefundenFinchLaeuferB:
+{finchLaeuferBGezaehlt:
     Im Felsspalt ist nur noch das Finkenzeichen aus Kreide. #sprecher:erzaehler
     -> END
 }
-~ gefundenFinchLaeuferB = true
 Neben einem kleinen Fink aus Kreide steckt etwas im Felsspalt: ein weißer Läufer aus Buchsbaum. #sprecher:erzaehler
 Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
-~ gibFund("finchLaeuferB")
+~ finchLaeuferBGezaehlt = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchLaeuferB")
 -> END
 
 // ---------------------------------------------------------------- Sperre S9: Abzweig zur Sternwarte

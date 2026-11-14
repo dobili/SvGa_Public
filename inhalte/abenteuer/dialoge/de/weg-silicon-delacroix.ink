@@ -242,9 +242,9 @@ Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. 
     An der Reling flattert nichts mehr. #sprecher:erzaehler
     -> END
 }
+An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 ~ seite02Gefunden = true
 ~ buchseiten = buchseiten + 1
-An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 ~ gibFund("seite02")
 -> END
 
@@ -253,10 +253,10 @@ An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine 
     Im Kasten liegen nur noch die Rettungsringe. #sprecher:erzaehler
     -> END
 }
-~ finchTurmAGefunden = true
-~ finchFiguren = finchFiguren + 1
 Am Kasten der Rettungsringe klebt ein kleiner Fink aus Blech. Hinter dem Deckel liegt ein weißer Turm aus hellem Holz. #sprecher:erzaehler
 Unter dem Turm ist ein Feld eingebrannt. #sprecher:erzaehler
+~ finchTurmAGefunden = true
+~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchTurmA")
 -> END
 
@@ -265,8 +265,8 @@ Unter dem Turm ist ein Feld eingebrannt. #sprecher:erzaehler
     Der Messwagen steht verschlossen in der Marsch. #sprecher:erzaehler
     -> END
 }
+Neben dem weißen Messwagen liegt eine Mappe im Gras. Auf dem Deckel: „Hochwasserhilfe: 40 Bildschirmtische, Nutzerdaten Port Delacroix“. #sprecher:erzaehler
 ~ spurPM3Gefunden = true
 ~ spurenPM = spurenPM + 1
-Neben dem weißen Messwagen liegt eine Mappe im Gras. Auf dem Deckel: „Hochwasserhilfe: 40 Bildschirmtische, Nutzerdaten Port Delacroix“. #sprecher:erzaehler
 ~ gibFund("spurPM3")
 -> END

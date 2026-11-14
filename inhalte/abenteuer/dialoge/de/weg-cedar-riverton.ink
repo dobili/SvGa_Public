@@ -167,12 +167,12 @@ Wer hier jagte, kannte den Wald besser als jede Karte. #sprecher:ambrose #stimmu
     Der hohle Baumstamm ist leer. Nur ein Käfer wohnt noch darin. #sprecher:erzaehler
     -> END
 }
-~ holzspringerGefunden = true
 In einem hohlen Baumstamm liegt ein Springer aus hellem Holz, glatt gegriffen. #sprecher:erzaehler
 ~ gibFund("holzspringer")
 Unter dem Fuß ist ein Feld eingebrannt, daneben ein winziger Fink. #sprecher:erzaehler
-~ gibFund("finchSpringerA")
+~ holzspringerGefunden = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchSpringerA")
 Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -231,12 +231,12 @@ Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose #
     Im Schotter neben dem Bahnsteig liegen nur Steine. #sprecher:erzaehler
     -> END
 }
-~ seite01Gefunden = true
 Zwischen den Schottersteinen neben dem Bahnsteig flattert ein Blatt Papier. #sprecher:erzaehler
 // Kein Buchverweis (Entscheidung vom 10.11.2026): ein loses Blatt mit einer Stellung.
 Ein loses Blatt mit einer gezeichneten Stellung. Darunter steht mit Bleistift: „Schwarz zieht und gewinnt.“ #sprecher:erzaehler
-~ gibFund("seite01")
+~ seite01Gefunden = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite01")
 -> END
 
 // Durchlass unter dem Damm (13_Wegenetz.md, S14): stockdunkel, nur mit der Laterne aus Ironwood.

@@ -6,16 +6,19 @@ VAR held = "Du"
 VAR finchFiguren = 0
 EXTERNAL gibFund(kennung)
 VAR gefundenFinchBauerF = false
+// Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
+// Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
+VAR finchBauerFGezaehlt = false
 
 === finch_bauer_f ===
-{gefundenFinchBauerF:
+{finchBauerFGezaehlt:
     Am Fels ist nur noch der Fink aus Kreide. #sprecher:erzaehler
     -> END
 }
-~ gefundenFinchBauerF = true
 Am Fuß der Felswand ist ein Fink aus Kreide gemalt. In einer Ritze darunter steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
-~ gibFund("finchBauerF")
+~ finchBauerFGezaehlt = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerF")
 -> END
 
 === graffiti ===

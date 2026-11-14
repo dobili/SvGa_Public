@@ -16,6 +16,7 @@ const {
 
 const MUENZEN_STRASSENSIEG = 10;
 const MUENZEN_RUNDE = 10;
+const MUENZEN_WIEDERHOLT = 2;
 const AUSGAENGE = ["abgebrochen", "niederlage", "remis", "sieg"];
 const WAHLEN_JE_DIALOG = 60;
 
@@ -86,11 +87,15 @@ function dialog(welt, st, knoten) {
   const s = geschichte(welt, st, datei);
   s.ResetState();
   st.folgen = { huelle: {} };
+  // Nur Variablen, die es in dieser Datei gibt: Ink wirft sonst bei jeder fremden Variable einen
+  // Fehler, und das Fangen kostete die meiste Rechenzeit der Simulation (Profil, 14.11.2026).
+  const bekannt = s.variablesState._globalVariables;
   for (const [n, w] of Object.entries({ ...st.vars, ...besitzvariablen(st) })) {
+    if (!bekannt.has(n)) continue;
     try {
       s.variablesState.$(n, w);
     } catch {
-      /* Variable gibt es in dieser Datei nicht */
+      /* Wert passt nicht zum Typ der Variable in dieser Datei */
     }
   }
   try {
@@ -99,10 +104,16 @@ function dialog(welt, st, knoten) {
     st.meldungen.add(`Knoten fehlt: ${knoten}`);
     return {};
   }
-  spieleAb(welt, st, s, datei, knoten);
+  const abbruch = spieleAb(welt, st, s, datei, knoten);
   for (const kk of welt.knoten[datei])
     if (s.state.VisitCountAtPathString(kk) > 0)
       st.gesehen.add(datei + "." + kk);
+  // Neu geladen mitten im Dialog (Chaos-Spieler): Ink-Variablen und was nach dem Dialog geschehen
+  // sollte, sind weg; was sofort wirkt (Funde, Karten, Bezahlen, Quests), steht schon im Stand.
+  if (abbruch === "neuladen") {
+    Object.assign(st.vars, st.folgen.huelle);
+    return { huelle: {}, neugeladen: true };
+  }
   const ausInk = {};
   for (const n of s.variablesState._globalVariables.keys())
     ausInk[n] = s.variablesState.$(n);
@@ -126,18 +137,26 @@ function spieleAb(welt, st, s, datei, knoten) {
       besuche.set(k, n);
     }
   };
+  // Der Chaos-Spieler (gesamtsimulation-chaos.cjs) bricht nach einer Zeile ab: „zurueck“ (Taste
+  // Zurück, wie Dialog.tsx: Variablen bleiben, Folgen laufen) oder „neuladen“ (Seite neu geladen).
+  const abbruch = () => (st.chaos ? st.chaos.dialogabbruch() : null);
   try {
     for (let wahlen = 0; wahlen <= WAHLEN_JE_DIALOG; wahlen++) {
       while (s.canContinue) {
         s.Continue();
         meldeNeue();
+        // Nur, solange noch etwas folgt: Nach der letzten Zeile endet der Dialog in der App sofort,
+        // samt der Wirkungen dazwischen (Dialog.tsx, weiter).
+        const a = s.canContinue || s.currentChoices.length ? abbruch() : null;
+        if (a) return a;
       }
-      if (!s.currentChoices.length) return;
+      if (!s.currentChoices.length) return null;
       s.ChooseChoiceIndex(Math.floor(zufall(st) * s.currentChoices.length));
     }
   } catch (e) {
     st.meldungen.add(`Laufzeitfehler ${knoten}: ${e.message}`);
   }
+  return null;
 }
 
 // ---------------------------------------------------------------- Folgen eines Dialogs
@@ -145,12 +164,17 @@ function spieleAb(welt, st, s, datei, knoten) {
 function spielePartie(welt, st, b) {
   if (!welt.begegnungen.has(b)) st.meldungen.add(`Begegnung fehlt: ${b}`);
   const n = (st.partien[b] = (st.partien[b] || 0) + 1);
-  const a = AUSGAENGE[Math.min(n, AUSGAENGE.length) - 1];
+  const a = st.chaos
+    ? st.chaos.ausgang(b)
+    : AUSGAENGE[Math.min(n, AUSGAENGE.length) - 1];
   const name = variablenname(b);
   st.vars["ausgang" + name] = a;
   // Wirtschaft: erster Sieg gegen einen Straßengegner (MUENZEN.strassensieg), erster Clubkampf.
-  if (a === "sieg" && !st.vars["siege" + name] && welt.rolle[b] === "strasse") {
-    verdiene(st, MUENZEN_STRASSENSIEG, "strasse");
+  // Mit echten Preisen (st.echt, Chaos-Prüfung) bringt jeder weitere Sieg MUENZEN_WIEDERHOLT wie
+  // ein Sieg am selben Tag (regeln/muenzen.ts, strassensiegWiederholt).
+  if (a === "sieg" && welt.rolle[b] === "strasse") {
+    if (!st.vars["siege" + name]) verdiene(st, MUENZEN_STRASSENSIEG, "strasse");
+    else if (st.echt) verdiene(st, MUENZEN_WIEDERHOLT, "strasse");
   }
   if (welt.rolle[b] === "clubchef" && n === 1)
     st.zeitachse.push({ art: "clubkampf", begegnung: b });
@@ -166,10 +190,11 @@ function spielePartie(welt, st, b) {
 
 function spieleRunde(welt, st, r) {
   const n = (st.runden[r] = (st.runden[r] || 0) + 1);
-  if (n < 2) return;
+  if (st.chaos ? !st.chaos.bestanden(r) : n < 2) return;
   const teile = r.split("."),
     name = teile.pop();
-  if (n === 2) verdiene(st, MUENZEN_RUNDE, "runde");
+  if (!st.rundeBezahlt?.has(r)) verdiene(st, MUENZEN_RUNDE, "runde");
+  (st.rundeBezahlt = st.rundeBezahlt || new Set()).add(r);
   st.vars[name + "Bestanden"] = true;
   st.vars[teile.join("") + gross(name) + "Bestanden"] = true;
   melde(welt, st, { art: "aufgaben", runde: r });
@@ -182,7 +207,7 @@ function spieleRunde(welt, st, r) {
  */
 function spielePartieform(welt, st, k) {
   const n = (st.runden[k] = (st.runden[k] || 0) + 1);
-  if (n < 2) return;
+  if (st.chaos ? !st.chaos.bestanden(k) : n < 2) return;
   const teile = k.split("."),
     name = teile.pop();
   st.vars[name + "Bestanden"] = true;
@@ -191,13 +216,38 @@ function spielePartieform(welt, st, k) {
   melde(welt, st, { art: "aufgaben", runde: k });
 }
 
+/**
+ * Einkauf mit echten Preisen (regeln/muenzen.ts, kaufe): Der Chaos-Spieler wählt selbst
+ * (st.chaos.kaufe), der gründliche Spieler kauft jeden Gegenstand, den er bezahlen kann, keine Karten.
+ * Gegenstände gibt es nur einmal (kaufhindernis „schonDa“).
+ */
+function kaufeEin(st, laden) {
+  const waren = st.chaos
+    ? st.chaos.kaufe(laden.angebot)
+    : laden.angebot.filter((w) => w.art === "gegenstand");
+  for (const w of waren) {
+    if (w.art === "gegenstand" && st.besitz.has(w.kennung)) continue;
+    if (st.muenzen < w.preis) {
+      if (!st.chaos && w.art === "gegenstand") st.zuTeuer.add(w.kennung);
+      continue;
+    }
+    verdiene(st, -w.preis, "laden");
+    if (w.art === "gegenstand") st.besitz.add(w.kennung);
+    else st.karten[w.kennung] = (st.karten[w.kennung] || 0) + 1;
+  }
+}
+
 /** Folgen nach dem Dialog wie beiDialogende: Laden, Reise, Übergang, Runde, Partie, Abspann. */
 function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
+  // Nach dem Neuladen ist der Dialog weg: kein Übergang, keine Partie, kein Laden.
+  if (f.neugeladen) return;
   if (f.abspann) st.abspann = true;
   const laden = welt.laeden.find((l) => l.kennung === f.laden);
   if (laden) st.zeitachse.push({ art: "laden", laden: laden.kennung });
-  for (const w of laden ? laden.angebot : [])
-    if (w.art === "gegenstand") st.besitz.add(w.kennung);
+  if (laden && st.echt) kaufeEin(st, laden);
+  else
+    for (const w of laden ? laden.angebot : [])
+      if (w.art === "gegenstand") st.besitz.add(w.kennung);
   let ziel = f.reise && reiseErlaubt(f.reise.karte) ? f.reise : null;
   if (uebergang && gilt(st, uebergang.wenn)) ziel = uebergang.ziel;
   if (f.runde) spieleRunde(welt, st, f.runde);

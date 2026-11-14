@@ -83,6 +83,8 @@ function ladeWelt() {
     ink: {},
     knoten: {},
     objekte: {},
+    fassungen: {},
+    grundobjekte: {},
     karteZuOrt: {},
   };
   const ordner = path.join(DATEN, "dialoge", "de");
@@ -101,9 +103,10 @@ function ladeWelt() {
   for (const ort of orte)
     for (const k of ort.karten) {
       welt.karteZuOrt[k.kennung] = ort;
-      // Zustandskarten zählen mit (Runde 12): Manche Dinge gibt es nur in einer Fassung, etwa der
-      // Tisch mit dem Pizzakarton im Wohnzimmer. Vereinfachung: Die Simulation prüft nicht, in
-      // welcher Fassung ein Ding steht, sondern nimmt die Objekte aller Fassungen zusammen.
+      // Zustandskarten (Runde 12): welt.objekte nimmt die Objekte aller Fassungen zusammen (für die
+      // Wegsuche und „Figuren ohne Karte“); was der Spieler anfassen kann, gibt objekteJetzt je nach
+      // Fassung (wie oberwelt/kartenfassung.ts). Sonst sprach die Simulation Ambrose am
+      // Schreibtisch an, bevor es ihn dort gibt (Chaos-Prüfung, 14.11.2026).
       const objekteVon = (datei) =>
         JSON.parse(fs.readFileSync(path.join(DATEN, datei), "utf8"))
           .layers.filter((l) => l.type === "objectgroup")
@@ -117,8 +120,24 @@ function ladeWelt() {
         .flatMap(objekteVon)
         .filter((o) => !namen.has(o.name) && namen.add(o.name));
       welt.objekte[k.kennung] = [...grund, ...dazu];
+      welt.fassungen[k.kennung] = Object.entries(k.zustaende || {}).map(
+        ([wenn, datei]) => ({ wenn, objekte: objekteVon(datei) }),
+      );
+      welt.grundobjekte[k.kennung] = grund;
     }
   return welt;
+}
+
+/**
+ * Die Objekte der Fassung, die gerade gilt: die letzte Zustandskarte, deren Bedingung erfüllt ist,
+ * sonst die Grundkarte (oberwelt/kartenfassung.ts). Beispiel: mapleFalls.zimmer hat den Schreibtisch
+ * mit Brett und Ambrose erst mit ersterAbendGesehen.
+ */
+function objekteJetzt(welt, st, karte) {
+  const passend = (welt.fassungen[karte] || []).filter((f) => gilt(st, f.wenn));
+  return passend.length
+    ? passend[passend.length - 1].objekte
+    : welt.grundobjekte[karte];
 }
 
 /** Rolle des Gegners (strasse, clubchef …) je Begegnung, aus begegnungen.json und gegner.json. */
@@ -151,6 +170,7 @@ function figurenOhneKarte(welt, ersatz) {
       const datei = "karten/" + f.dialog.split(".")[0] + ".json";
       const k = ort.karten.find((x) => x.datei === datei) || ort.karten[0];
       welt.objekte[k.kennung].push({ name: kurz, typ: "figur" });
+      welt.grundobjekte[k.kennung].push({ name: kurz, typ: "figur" });
     }
   return ohne;
 }
@@ -175,6 +195,10 @@ function neuerStand(startwert) {
     saat: startwert,
     karteBesucht: {},
     uhr: 0,
+    // Chaos-Prüfung (gesamtsimulation-chaos.cjs): echte Preise, zu teure Gegenstände, Chaos-Spieler.
+    echt: false,
+    zuTeuer: new Set(),
+    chaos: null,
   };
 }
 
@@ -242,9 +266,20 @@ function verdiene(st, anzahl, quelle) {
   st.zeitachse.push({ art: "muenzen", anzahl, quelle });
 }
 
-/** Ob `wenn` (Bedingung, bedingung.cjs) gilt; Besitz zählt mit wie in der App. */
-function gilt(st, wenn) {
-  return !wenn || erfuellt(wenn, { ...st.vars, ...besitzvariablen(st) });
+/**
+ * Ob `wenn` (Bedingung, bedingung.cjs) gilt; Besitz zählt mit wie in der App.
+ * Mit `merker` (Map, nur solange sich der Stand nicht ändert, etwa in einer Wegsuche) werden die
+ * Variablen einmal zusammengesetzt und die Antworten gemerkt: Das sparte die meiste Rechenzeit.
+ */
+function gilt(st, wenn, merker = null) {
+  if (!wenn) return true;
+  if (!merker) return erfuellt(wenn, { ...st.vars, ...besitzvariablen(st) });
+  if (!merker.has(wenn)) {
+    if (!merker.variablen)
+      merker.variablen = { ...st.vars, ...besitzvariablen(st) };
+    merker.set(wenn, erfuellt(wenn, merker.variablen));
+  }
+  return merker.get(wenn);
 }
 
 /** Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu (regeln/dialogvariablen.ts). */
@@ -309,6 +344,7 @@ module.exports = {
   gilt,
   MUENZEN_ERSTE_NADEL,
   ladeWelt,
+  objekteJetzt,
   figurenOhneKarte,
   neuerStand,
   zustand,

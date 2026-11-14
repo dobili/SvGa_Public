@@ -198,12 +198,12 @@ Bell steckt dir ein Abzeichen aus Messing an die Jacke. #sprecher:erzaehler
     Am Infobrett hängt der Antrag noch. Jemand hat einen Bison daneben gemalt. #sprecher:erzaehler
     -> END
 }
-~ spurPM5Gefunden = true
 Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Move: „Kühlung für Rechenzentrum Summit. Entnahme von Geysirwasser.“ Quer darüber steht in Bells Schrift: „Abgelehnt.“ #sprecher:erzaehler
 Über meine Leiche. Und über die der Bisons. #sprecher:bell #stimmung:bitter
 Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose #stimmung:laechelt
-~ gibFund("spurPM5")
+~ spurPM5Gefunden = true
 ~ spurenPM = spurenPM + 1
+~ gibFund("spurPM5")
 -> END
 
 === finch_bauer_d ===
@@ -211,10 +211,10 @@ Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:amb
     Unter dem Steg ist nur noch warmer Sinter. #sprecher:erzaehler
     -> END
 }
-~ finchBauerDGefunden = true
 Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der Bohlen, liegt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
-~ gibFund("finchBauerD")
+~ finchBauerDGefunden = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerD")
 -> END
 
 // ---------------------------------------------------------------- Prärie: Sturmkeller und Windrad
@@ -224,11 +224,11 @@ Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der B
     Hier lag die Seite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
 }
-~ seite09Gefunden = true
 An der Klappe des Sturmkellers hat sich ein loses Blatt verfangen. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 Der Sturm trägt alles irgendwohin. Sogar Stellungen. #sprecher:ambrose #stimmung:nachdenklich
-~ gibFund("seite09")
+~ seite09Gefunden = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite09")
 -> END
 
 === windrad ===

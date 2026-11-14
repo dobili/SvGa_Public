@@ -142,7 +142,11 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
 // Ab hier ergänzt (Story-Bibel, Szene 3 Nachgespräch und Gespräche allein mit Ambrose).
 
 === ambrose ===
+// Nach dem Abschied startet auch das Brett auf dem Schreibtisch den Epilog: Auf dem Dachboden steht
+// seit dem ersten Abend kein Brett mehr (Zustandskarte ohne-brett), der Epilog war sonst nicht
+// erreichbar (Chaos-Prüfung der Gesamtsimulation, 14.11.2026).
 {
+- abschiedGesehen and not epilogGesehen: -> epilog
 - not ambroseErwachtGesehen: -> ambrose_erwacht
 - ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen": -> ambrose_wartet
 - not ersteLektionBesprochen: -> nach_erster_partie
@@ -309,7 +313,7 @@ Auf der Fensterbank steht, was du unterwegs gefunden hast. Das Zimmer erzählt d
 // Mentor-Zug im Halbfinale nicht gespielt und Ambrose nicht gerufen wurde (Extra-Abspann, R29).
 // Danach Post-Game (Szene 110). Klang: mapleFalls.herbst, schlussklang.
 === epilog ===
-~ epilogGesehen = true
+// epilogGesehen erst am Ende (epilog_lily): Wer den Epilog abbricht, kann ihn noch einmal beginnen.
 Im Herbst werden die Ahornbäume an der Birch Lane wieder rot. Erst an den Rändern. Du hörst den Wasserfall noch immer. #sprecher:erzaehler #musik:mapleFalls.herbst
 Auf Mrs. Calloways Veranda verliert sie jeden Nachmittag gegen einen Achtjährigen. In Raum zwölf bringt Carla den Neuen das Zählen bei. #sprecher:erzaehler
 In einem Keller in Silicon Bay unterrichtet eine Frau acht Kinder bei einem Heizlüfter. #sprecher:erzaehler
@@ -341,5 +345,6 @@ Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas
 - Welche? #sprecher:lily #stimmung:nachdenklich
 * [Lächeln]
 - Was hängt? #sprecher:held #stimmung:laechelt #musik:schlussklang #pause:4
+~ epilogGesehen = true
 ~ setzeSzene("akt5.postGame")
 -> END

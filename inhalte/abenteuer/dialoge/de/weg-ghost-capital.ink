@@ -261,9 +261,9 @@ Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wa
     Am Anleger schaukelt nur noch das Wasser. #sprecher:erzaehler
     -> END
 }
+Am Anleger klebt ein Blatt an einem Pfosten. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ seite12Gefunden = true
 ~ buchseiten = buchseiten + 1
-Am Anleger klebt ein Blatt an einem Pfosten. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite12")
 -> END
 

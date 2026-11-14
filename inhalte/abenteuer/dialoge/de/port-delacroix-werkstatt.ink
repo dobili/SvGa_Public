@@ -26,6 +26,7 @@ VAR leimAuftrag = false
 VAR odileHandGegeben = false
 VAR tiefpunktGesehen = false
 VAR ambroseSprichtWieder = false
+VAR celesteNachPartieGesehen = false
 VAR henriGetroffen = false
 VAR fotoAmbroseGesehen = false
 VAR ausgangPortDelacroixCeleste = ""
@@ -95,7 +96,9 @@ Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
     Ein Mädchen mit Kopfhörern tippt auf einem Laptop. Sie nickt dir zu und tippt weiter. #sprecher:erzaehler
     -> END
 - ausgangPortDelacroixCeleste == "" or ausgangPortDelacroixCeleste == "abgebrochen": -> celeste_angebot
-- not ambroseSprichtWieder: -> celeste_nach_partie
+// Eigener Merker statt ambroseSprichtWieder: Den setzt auch der Canyon (weg-delacroix-desert.ink);
+// wer vorher dorthin ging, sah das Gespräch nach der Partie nie, und die Quest hing (Chaos-Prüfung).
+- not celesteNachPartieGesehen: -> celeste_nach_partie
 - else: -> celeste_alltag
 }
 
@@ -114,6 +117,7 @@ Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er
     -> END
 
 === celeste_nach_partie ===
+~ celesteNachPartieGesehen = true
 ~ ambroseSprichtWieder = true
 Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er gehört. #sprecher:erzaehler
 Hast du das gesehen? Das hat sie von … #sprecher:ambrose #stimmung:froh

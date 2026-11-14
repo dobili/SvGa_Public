@@ -2073,7 +2073,7 @@
       "haupt": true,
       "start": {
         "art": "ort",
-        "karte": "mapleFalls.dachboden"
+        "karte": "mapleFalls.zimmer"
       },
       "voraussetzung": ["capitalArena.meisterschaft"],
       "schritte": [

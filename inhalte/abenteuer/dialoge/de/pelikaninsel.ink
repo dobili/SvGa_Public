@@ -17,6 +17,9 @@ VAR muschelGeschenkt = false
 VAR leuchtfeuerAuftrag = false
 VAR leuchtfeuerAn = false
 VAR gefundenFinchBauerH = false
+// Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
+// Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
+VAR finchBauerHGezaehlt = false
 
 === delphine ===
 {delphineGetroffen:
@@ -111,13 +114,13 @@ Seit dem Winter ist es aus. Die Batterie gibt es nur drüben in Silicon Bay. #sp
 -> END
 
 === finch_bauer_h ===
-{gefundenFinchBauerH:
+{finchBauerHGezaehlt:
     Unter dem Finkenzeichen ist nur noch Sand. #sprecher:erzaehler
     -> END
 }
-~ gefundenFinchBauerH = true
 An einem Pfahl hängt ein kleiner Fink aus Blech. Darunter im Sand steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
-~ gibFund("finchBauerH")
+~ finchBauerHGezaehlt = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerH")
 -> END
 // <<< Runde 6 (mittel-4)

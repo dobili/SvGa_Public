@@ -169,11 +169,11 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
     Hier lag die Seite. Zwischen den Wurzeln ist nichts mehr. #sprecher:erzaehler
     -> END
 }
-~ seite10Gefunden = true
 Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeichneten Stellung. #sprecher:erzaehler
 Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose #stimmung:nachdenklich
-~ gibFund("seite10")
+~ seite10Gefunden = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite10")
 -> END
 
 // ---------------------------------------------------------------- Mammutbaum: Finchs Dame
@@ -183,11 +183,11 @@ Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambro
     In der Astgabel sitzt nur noch Moos. #sprecher:erzaehler
     -> END
 }
-~ finchDameGefunden = true
 In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fink aus Blech. Darunter steckt eine weiße Dame aus Buchsbaum. Unter ihrem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose #stimmung:laechelt
-~ gibFund("finchDame")
+~ finchDameGefunden = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchDame")
 -> END
 
 // ---------------------------------------------------------------- Holzfällerhütte: Kreidespringer K4
@@ -197,10 +197,10 @@ Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas
     Der Kreidespringer an der Hütte ist noch da. Jemand hat ihn nachgezogen. #sprecher:erzaehler
     -> END
 }
-~ kreide4Gefunden = true
 An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, klein: „K4. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
 Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose #stimmung:laechelt
-~ gibFund("kreide4")
+~ kreide4Gefunden = true
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
+~ gibFund("kreide4")
 -> END
 

@@ -12,6 +12,11 @@ EXTERNAL beginneAufgaben(runde)
 
 VAR wegPinewoodGhostTafelBestanden = false
 VAR juniperGetroffen = false
+// Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
+// Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
+VAR spurPM6Gezaehlt = false
+VAR seite11Gezaehlt = false
+VAR finchBauerEGezaehlt = false
 
 // ---------------------------------------------------------------- Juniper am Canyonrand
 
@@ -120,36 +125,36 @@ Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauer
 // ---------------------------------------------------------------- Funde und Ansehen
 
 === spur_pm6 ===
-{gefundenSpurPM6:
+{spurPM6Gezaehlt:
     An der Tür klebt noch der Rest eines Etiketts. #sprecher:erzaehler
     -> END
 }
-~ gefundenSpurPM6 = true
 An der Tür klebt ein Typenschild: „Prototyp Z-1, Testlabor Perfect Move. Nicht entfernen.“ Es ist schon halb abgelöst. #sprecher:erzaehler
-~ gibFund("spurPM6")
+~ spurPM6Gezaehlt = true
 ~ spurenPM = spurenPM + 1
+~ gibFund("spurPM6")
 -> END
 
 === seite11 ===
-{gefundenSeite11:
+{seite11Gezaehlt:
     Im Ölwechsel-Graben liegt nur noch Staub. #sprecher:erzaehler
     -> END
 }
-~ gefundenSeite11 = true
 Im alten Ölwechsel-Graben liegt eine lose Seite, kaum ölig und voller Schachdiagramme. #sprecher:erzaehler
-~ gibFund("seite11")
+~ seite11Gezaehlt = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite11")
 -> END
 
 === finch_bauer_e ===
-{gefundenFinchBauerE:
+{finchBauerEGezaehlt:
     An der Aussicht ist nur noch das Finkenzeichen aus Blech. #sprecher:erzaehler
     -> END
 }
-~ gefundenFinchBauerE = true
 Neben der Bank an der Aussicht hängt ein kleiner Fink aus Blech. Darunter, zwischen zwei Steinen, liegt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
-~ gibFund("finchBauerE")
+~ finchBauerEGezaehlt = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerE")
 -> END
 
 === kletterwand ===

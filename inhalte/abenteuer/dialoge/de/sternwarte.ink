@@ -15,6 +15,9 @@ VAR sterneBestanden = false
 VAR luciaGetroffen = false
 VAR gefundenFinchBauerG = false
 VAR ambroseSternwarte = 0
+// Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
+// Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
+VAR finchBauerGGezaehlt = false
 
 === ngata ===
 {
@@ -70,13 +73,13 @@ Ein alter Antennenmast, festgebunden mit Draht. Er summt leise im Wind. Von hier
 -> END
 
 === finch_bauer_g ===
-{gefundenFinchBauerG:
+{finchBauerGGezaehlt:
     Unter dem Finkenzeichen liegt nur noch Staub. #sprecher:erzaehler
     -> END
 }
-~ gefundenFinchBauerG = true
 Auf dem Boden ist ein kleiner Fink aus Kreide gemalt. Darunter, hinter einer Kiste mit Fotoplatten, steht ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
-~ gibFund("finchBauerG")
+~ finchBauerGGezaehlt = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerG")
 -> END
 // <<< Runde 6 (mittel-4)

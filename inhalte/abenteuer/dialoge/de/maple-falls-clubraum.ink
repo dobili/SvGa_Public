@@ -172,6 +172,7 @@ Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
 
 === sam ===
 {
+- not clubBeigetreten: -> sam_vor_dem_coach
 - not samGetroffen: -> sam_erstes_treffen
 - not reiheSamBestanden: -> sam_reihe
 - not samKlagt: -> sam_klagt
@@ -181,6 +182,13 @@ Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
 - ausgangMapleFallsSamRevanche != "" and ausgangMapleFallsSamRevanche != "sieg": -> sam_revanche_angebot
 - else: -> sam_alltag
 }
+
+// Sams Aufgaben erst nach dem ersten Treffen mit dem Coach: Die Quest „Das vierte Brett“ beginnt dort
+// und wartet zuerst auf Sams Reihe; vorher bestanden, hing sie für immer (Chaos-Prüfung, 14.11.2026).
+=== sam_vor_dem_coach ===
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl, und sieht nicht hoch. #sprecher:erzaehler
+Erst zum Coach. Ohne Aufstellung keine Aufgaben. #sprecher:sam #stimmung:laechelt
+-> END
 
 === sam_erstes_treffen ===
 ~ samGetroffen = true
@@ -334,7 +342,8 @@ Victor stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
 -> END
 
 === victor_nachher ===
-~ kenntHale = true
+// kenntHale erst in victor_ambrose: Wer hier abbricht, sieht das Nachgespräch noch einmal; sonst
+// hing die Quest „Besser werden“ vor victor_ambrose (Chaos-Prüfung, 14.11.2026).
 {ausgangMapleFallsVictor == "niederlage":
     -> victor_niederlage
 - else:
@@ -366,6 +375,7 @@ Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #spr
 -> victor_ambrose
 
 === victor_ambrose ===
+~ kenntHale = true
 // Roman, Kapitel 9 (neu): Der Bildschirm bleibt im Clubraum stehen; Coach Delgado ist verlockt,
 // nicht böse (docs/spiel/19, Abschnitt 3). Ihre Entscheidung fällt in Akt 2. Klang: Konzernmotiv
 // (ein kalter Ton), dann Stille. Danach still wie auf dem Dachboden im Roman: nur Wind.

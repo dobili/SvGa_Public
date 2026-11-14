@@ -144,9 +144,9 @@ Das Wasser steht knöcheltief über den Planken. Mit Gummistiefeln geht es, lang
     Am Ufer liegt nur noch Moos. #sprecher:erzaehler
     -> END
 }
+Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ seite05Gefunden = true
 ~ buchseiten = buchseiten + 1
-Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite05")
 -> END
 
@@ -155,9 +155,9 @@ Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme.
     Die Reuse ist leer bis auf Schlamm. #sprecher:erzaehler
     -> END
 }
+An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus hellem Holz. #sprecher:erzaehler
 ~ finchBauerCGefunden = true
 ~ finchFiguren = finchFiguren + 1
-An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus hellem Holz. #sprecher:erzaehler
 ~ gibFund("finchBauerC")
 Unter dem Bauern ist ein Feld eingebrannt. Wer versteckt Schachfiguren in Fischreusen? #sprecher:ambrose #stimmung:ueberrascht
 -> END

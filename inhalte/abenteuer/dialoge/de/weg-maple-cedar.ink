@@ -277,13 +277,13 @@ Wir sehen uns wieder. Ich fahre weiter, als du denkst. #sprecher:odette #stimmun
     Im Graben liegt nur noch Laub. #sprecher:erzaehler
     -> END
 }
-~ seite00Gefunden = true
 Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
 // Runde 11: Kein Buchverweis (Entscheidung vom 10.11.2026, Befund in 22_Dialogpruefung.md); ein
 // loses Blatt mit einer Stellung. Die Sammlung „buchseiten“ bleibt als Zähler bestehen.
 Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Weiß zieht“ darunter geschrieben. #sprecher:erzaehler
-~ gibFund("seite00")
+~ seite00Gefunden = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite00")
 {faehrsteinGesehen: Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose #stimmung:nachdenklich|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
 -> END
 
@@ -292,11 +292,11 @@ Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Wei
     Unter der Bank ist nichts mehr, nur das Blechschild mit dem Finken am Pfosten. #sprecher:erzaehler
     -> END
 }
-~ finchBauerAGefunden = true
 Am Pfosten neben der Bank hängt ein Blechschild mit einem Finken. Unter der Bank klemmt etwas. #sprecher:erzaehler
 Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
-~ gibFund("finchBauerA")
+~ finchBauerAGefunden = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerA")
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Stamm auf dem Zedernpfad (S2)

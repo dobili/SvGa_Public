@@ -202,9 +202,10 @@ Tief unten liegt der Kanal wie ein Strich. Am Ende des Tals stehen Schornsteine 
 // ---------------------------------------------------------------- Ereignis „Die Brückenbauern“
 
 === kreide1 ===
+// Schon gelöst: über kreidespringer_geloest, damit die Quest „Brückenbauern“ ihren ersten Schritt
+// auch bekommt, wenn das Rätsel vor ihrem Beginn gelöst wurde (Chaos-Prüfung, 14.11.2026).
 {gefundenKreide1:
-    Der Springer aus Kreide am Brückenfuß. Das Wort kennst du schon: Td8. #sprecher:erzaehler
-    -> END
+    -> kreidespringer_geloest
 }
 Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #sprecher:erzaehler
 „Weiß: König g1, Turm d1. Schwarz: König g8, Bauern f7, g7 und h7. Weiß am Zug. Ein Zug, und es ist vorbei. Der Zug ist das Wort.“ #sprecher:erzaehler
@@ -223,6 +224,10 @@ Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #spre
     -> END
 
 === kreidespringer_geloest ===
+{gefundenKreide1:
+    Der Springer aus Kreide am Brückenfuß. Das Wort kennst du schon: Td8. #sprecher:erzaehler
+    -> END
+}
 Td8. Der König steckt hinter seinen eigenen Bauern fest: Matt auf der Grundreihe. #sprecher:erzaehler
 Das Wort ist „Td8“. #sprecher:erzaehler
 ~ gibFund("kreide1")

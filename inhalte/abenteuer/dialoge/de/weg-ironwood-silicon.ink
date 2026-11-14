@@ -140,13 +140,13 @@ Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
     Auf dem Glas ist nichts mehr. Unter dir fließen die Lichter der Autobahn. #sprecher:erzaehler
     -> END
 }
-~ ohrstoepselGefunden = true
 In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. Ein Ohrstöpsel. #sprecher:erzaehler
 Er ist schwerer, als er sein sollte. An einer Seite ist ein winziges Loch, darin glänzt etwas Metallenes. #sprecher:erzaehler
 Hat jemand verloren. #sprecher:juno #stimmung:nachdenklich
 ~ gibFund("ohrstoepsel")
-~ gibFund("spurPM2")
+~ ohrstoepselGefunden = true
 ~ spurenPM = spurenPM + 1
+~ gibFund("spurPM2")
 Du steckst ihn ein. Du hast dir angewöhnt, Dinge einzustecken. #sprecher:erzaehler
 -> END
 
@@ -231,12 +231,12 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
     Der Kreidespringer am Container ist ein wenig verwischt. Das Wort darunter auch. #sprecher:erzaehler
     -> END
 }
-~ kreide2Gefunden = true
 An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. #sprecher:erzaehler
 Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
 Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose #stimmung:laechelt
-~ gibFund("kreide2")
+~ kreide2Gefunden = true
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
+~ gibFund("kreide2")
 -> END
 
 === finch_bauer_b ===
@@ -244,11 +244,11 @@ Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und
     Im Blumenkübel wachsen nur noch Blumen. #sprecher:erzaehler
     -> END
 }
-~ finchBauerBGefunden = true
 Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. #sprecher:erzaehler
 Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
-~ gibFund("finchBauerB")
+~ finchBauerBGefunden = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchBauerB")
 -> END
 
 === seite04 ===
@@ -256,11 +256,11 @@ Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß i
     Hier lag die Seite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
 }
-~ seite04Gefunden = true
 Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
-~ gibFund("seite04")
+~ seite04Gefunden = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite04")
 -> END
 
 // ---------------------------------------------------------------- Ansehen auf der Glasbrücke (Runde 6)

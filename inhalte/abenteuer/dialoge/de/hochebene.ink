@@ -30,6 +30,10 @@ VAR annekSchachGelernt = false
 VAR jossGetroffen = false
 VAR falkeGeschenkt = false
 VAR varianteFalkeUndBisonGelernt = false
+// Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
+// Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
+VAR seite03Gezaehlt = false
+VAR finchTurmBGezaehlt = false
 
 // ---------------------------------------------------------------- Kira am Steintisch
 
@@ -221,25 +225,25 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira #stimmung:laechelt
 // ---------------------------------------------------------------- Funde und Ansehen
 
 === seite03 ===
-{gefundenSeite03:
+{seite03Gezaehlt:
     Am Fuß der Fahnenstange ist nichts mehr. #sprecher:erzaehler
     -> END
 }
-~ gefundenSeite03 = true
 Am Fuß der Fahnenstange flattert eine lose Seite im Wind, voller Schachdiagramme. #sprecher:erzaehler
-~ gibFund("seite03")
+~ seite03Gezaehlt = true
 ~ buchseiten = buchseiten + 1
+~ gibFund("seite03")
 -> END
 
 === finch_turm_b ===
-{gefundenFinchTurmB:
+{finchTurmBGezaehlt:
     In der Kiste liegen nur Bälle und Seilchen. #sprecher:erzaehler
     -> END
 }
-~ gefundenFinchTurmB = true
 Auf der Kiste mit den Sportgeräten ist ein Fink aus Kreide gemalt. Zwischen den Bällen liegt ein weißer Turm aus Buchsbaum. #sprecher:erzaehler
-~ gibFund("finchTurmB")
+~ finchTurmBGezaehlt = true
 ~ finchFiguren = finchFiguren + 1
+~ gibFund("finchTurmB")
 -> END
 
 === pferd ===

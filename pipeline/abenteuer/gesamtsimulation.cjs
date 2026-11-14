@@ -33,6 +33,7 @@
 const {
   MUENZEN_ERSTE_NADEL,
   ladeWelt,
+  objekteJetzt,
   figurenOhneKarte,
   neuerStand,
   zustand,
@@ -50,6 +51,7 @@ const {
 const { dialog, wendeFolgenAn } = require("./gesamtsimulation-dialoge.cjs");
 const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
 const { berichtSammlung } = require("./gesamtsimulation-sammlung.cjs");
+const { bericht, sackgasse } = require("./gesamtsimulation-bericht.cjs");
 const {
   nebenorte,
   rueckkehr,
@@ -58,7 +60,7 @@ const {
 
 // ---------------------------------------------------------------- Aufruf
 
-/** Liest --startwert, --sekunden, --ersatz, --wirtschaft, --startwerte aus der Befehlszeile. */
+/** Befehlszeile; mit --chaos liest gesamtsimulation-chaoslauf.cjs die übrigen Angaben selbst. */
 function argumente(liste) {
   const wert = (name, vorgabe) => {
     const i = liste.indexOf(name);
@@ -70,6 +72,8 @@ function argumente(liste) {
     ersatz: wert("--ersatz", "").split(",").filter(Boolean),
     wirtschaft: liste.includes("--wirtschaft"),
     startwerte: wert("--startwerte", "1,2,3,4").split(",").map(Number),
+    chaos: liste.includes("--chaos"),
+    liste,
   };
 }
 
@@ -80,7 +84,9 @@ function argumente(liste) {
  * Zug) nur ins aktuelle Gebiet und das davor, sonst irrt er zwischen alten Städten umher.
  */
 function erlaubt(welt, st, ort, reise = false) {
-  const o = welt.orte.find((x) => x.kennung === ort);
+  welt.ortMerker =
+    welt.ortMerker || new Map(welt.orte.map((x) => [x.kennung, x]));
+  const o = welt.ortMerker.get(ort);
   const hier = welt.karteZuOrt[st.karte];
   if (
     !o ||
@@ -136,7 +142,7 @@ function besucheKarte(welt, st) {
     hier = st.karte,
     wege = [];
   let jetzt = zustand(st);
-  for (const o of welt.objekte[hier]) {
+  for (const o of objekteJetzt(welt, st, hier)) {
     if (st.karte !== hier) return [];
     const a = ausloeserFuer(ort, hier, o.name);
     if (a && a.art === "uebergang") {
@@ -192,10 +198,13 @@ function fasseAn(welt, st, ort, hier, o, a) {
 
 /** Übergänge, die von einer Karte wegführen (Objekt auf der Karte und Eintrag in orte.json). */
 function wegeVon(welt, karte) {
+  // Gemerkt je Karte: Die Wegsuche läuft in jedem Schritt, die Übergänge ändern sich nie.
+  welt.wegeMerker = welt.wegeMerker || {};
+  if (welt.wegeMerker[karte]) return welt.wegeMerker[karte];
   const ort = welt.karteZuOrt[karte];
-  return welt.objekte[karte]
+  return (welt.wegeMerker[karte] = welt.objekte[karte]
     .map((o) => ausloeserFuer(ort, karte, o.name))
-    .filter((a) => a && a.art === "uebergang" && a.ziel);
+    .filter((a) => a && a.art === "uebergang" && a.ziel));
 }
 
 /** Bei Rückkehr und Nachholen bleibt die Suche in den Zielorten und ihren Erinnerungen. */
@@ -209,8 +218,10 @@ function ersteSchritte(welt, st) {
   // Ein Weg mit Dialog kann seine Bedingung selbst setzen (etwa das Abzeichen im Saloon): versuchen,
   // bis er im selben Zustand gesperrt war.
   const sig = zustand(st);
+  const merker = new Map();
   const offen = (a, k) =>
-    gilt(st, a.wenn) || (a.dialog && st.gesperrt[k + "." + a.name] !== sig);
+    gilt(st, a.wenn, merker) ||
+    (a.dialog && st.gesperrt[k + "." + a.name] !== sig);
   const erster = {},
     schlange = [st.karte],
     gesehen = new Set([st.karte]);
@@ -224,7 +235,8 @@ function ersteSchritte(welt, st) {
         !erlaubt(welt, st, welt.karteZuOrt[z]?.kennung)
       )
         continue;
-      if (st.zielOrte && !imZiel(welt, st, z)) continue;
+      // Zu Fuß (Chaos-Prüfung ohne Monatskarte) führt der Weg auch durch fremde Orte.
+      if (st.zielOrte && !st.zuFuss && !imZiel(welt, st, z)) continue;
       gesehen.add(z);
       erster[z] = k === st.karte ? a : erster[k];
       schlange.push(z);
@@ -304,9 +316,13 @@ function nachSchritt(st) {
   return st.ruhe <= RUHE_ENDE;
 }
 
-function erkunde(welt, st, frist) {
+/**
+ * Der gründliche Spieler. `ab`: Gebiet, in dem er beginnt (Übernahme nach dem Chaos-Spieler);
+ * `bis(st)`: hält vorher an (der Chaos-Spieler übernimmt in diesem Gebiet); dann Rückgabe true.
+ */
+function erkunde(welt, st, frist, ab = 0, bis = null) {
   Object.assign(st, {
-    phase: 0,
+    phase: ab,
     ruhe: 0,
     signatur: "",
     letzteSig: {},
@@ -320,70 +336,15 @@ function erkunde(welt, st, frist) {
     const vorher = st.karte;
     const wege = besucheKarte(welt, st);
     if (st.karte === vorher) waehleWeg(welt, st, wege, schritt);
-    if (!nachSchritt(st)) return;
+    if (!nachSchritt(st)) return false;
+    if (bis && bis(st)) return true;
   }
   st.meldungen.add("Zeitbudget erreicht (der Lauf ist nicht zu Ende gekommen)");
+  return false;
 }
 
 /** Die Schritte für Rückkehr und Nachholen (gesamtsimulation-rueckkehr.cjs). */
-const SCHRITTE = { besucheKarte, waehleWeg, imZiel };
-
-// ---------------------------------------------------------------- Bericht
-
-function bericht(welt, st, ohneKarte, rueck) {
-  const zeilen = [
-    `Abspann: ${st.abspann ? "ja" : "NEIN"}`,
-    `Besuchte Orte: ${st.besucht.size}/${welt.orte.length}`,
-  ];
-  const offen = [];
-  for (const q of welt.quests) {
-    const s = st.staende.find((x) => x.k === q.kennung);
-    if (s && s.fertig) continue;
-    const text = !s
-      ? "nie begonnen"
-      : `hängt bei Schritt ${s.i} (${JSON.stringify(q.schritte[s.i].ereignis)})`;
-    offen.push(
-      `  ${q.haupt ? "Hauptquest" : "Nebenquest"} ${q.kennung}: ${text}`,
-    );
-  }
-  zeilen.push("Offene Quests:", ...(offen.length ? offen : ["  keine"]));
-  zeilen.push("Nie erreichte Knoten:");
-  for (const [datei, ks] of Object.entries(welt.knoten)) {
-    const nie = ks.filter((k) => !st.gesehen.has(datei + "." + k));
-    if (nie.length) zeilen.push(`  ${datei}: ${nie.join(", ")}`);
-  }
-  zeilen.push(`Figuren ohne Karte: ${ohneKarte.join(", ") || "keine"}`);
-  zeilen.push(
-    `Rückkehr mit der Monatskarte nach: ${rueck.join(", ") || "keine"}`,
-  );
-  zeilen.push(
-    `Nie besuchte Orte: ${
-      welt.orte
-        .filter((o) => !st.besucht.has(o.kennung))
-        .map((o) => o.kennung)
-        .join(", ") || "keine"
-    }`,
-  );
-  zeilen.push(`Meldungen: ${[...st.meldungen].join("; ") || "keine"}`);
-  return zeilen.join("\n");
-}
-
-/**
- * Sackgasse: eine Hauptquest nicht fertig, eine begonnene Quest hängt, kein Abspann oder fehlende
- * Daten. Nie begonnene Nebenquests zählen nicht (manche sind freiwillig, etwa die Feier in Ironwood).
- */
-function sackgasse(welt, st) {
-  const haengt = st.staende.some((s) => !s.fertig);
-  const hauptOffen =
-    haengt ||
-    welt.quests.some(
-      (q) => q.haupt && !st.staende.some((s) => s.k === q.kennung && s.fertig),
-    );
-  const datenFehlen = [...st.meldungen].some(
-    (m) => !m.startsWith("Zeitbudget"),
-  );
-  return hauptOffen || !st.abspann || datenFehlen;
-}
+const SCHRITTE = { besucheKarte, waehleWeg, imZiel, fasseAn, wegeVon };
 
 /** --wirtschaft: je Startwert ein Durchlauf, dann die Auswertung der Wirtschaft beider Spieler. */
 function wirtschaft(welt, arg) {
@@ -403,6 +364,19 @@ function hauptprogramm(liste) {
   const arg = argumente(liste);
   const welt = ladeWelt();
   if (arg.wirtschaft) return wirtschaft(welt, arg);
+  if (arg.chaos)
+    return require("./gesamtsimulation-chaoslauf.cjs").hauptprogrammChaos(
+      welt,
+      arg,
+      {
+        erkunde,
+        nachholen,
+        rueckkehr,
+        sackgasse,
+        SCHRITTE,
+        ...SCHRITTE,
+      },
+    );
   const ohneKarte = figurenOhneKarte(welt, arg.ersatz);
   const st = neuerStand(arg.startwert);
   const frist = Date.now() + arg.sekunden * 1000;
@@ -416,3 +390,6 @@ function hauptprogramm(liste) {
 }
 
 if (require.main === module) hauptprogramm(process.argv.slice(2));
+
+// Für Fehlersuche und Tests: die Teile des gründlichen Spielers.
+module.exports = { erkunde, nachholen, rueckkehr, sackgasse, SCHRITTE };

@@ -1695,3 +1695,17 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
 - [ ] RO16. **Großbilder von Gemini (Datei „3_Gemini_Grossbilder_und_Funde.html“):** Akt 1 und 2
       (A1 bis A17) sind fertig und im Spiel (14.11.2026). Offen sind A18 bis A38 (Akt 3 und 4) und
       die Fundbilder.
+- [ ] RO17. **Geräusche (14.11.2026):** 159 von 163 Geräuschen aller vier Akte sind da, aus den
+      kostenlosen GDC-Paketen von Sonniss (Nutzung in Spielen ohne Namensnennung erlaubt),
+      OpenGameArt (gemeinfrei) und selbst erzeugt; keine Namensnennung im Abspann nötig. Anhören:
+      https://claude.ai/artifact/JAPtu6n6XZ6V74CwM6jAfA (unsichere zuerst, Rückmeldung mit Nummer,
+      etwa „G1.012 zu laut“). Freesound sperrt die Cloud-Umgebung; was fehlt, bitte am eigenen
+      Rechner von freesound.org laden (nur CC0 oder CC BY, kein NC) und nach ki-roh legen:
+      **Fehlen ganz:** Enten im Park (2–3 kurze Quaker; Suche „mallard duck quack“), Besen auf Stein
+      draußen, 2–4 s („broom sweeping concrete“), Besen auf Holzdielen innen, 2–4 s („broom sweeping
+      wooden floor“), altes Radio im Motel, leise und blechern, nur gemeinfreie Musik oder Rauschen
+      („old radio static tuning“). **Besser austauschen:** Falkenruf für die Hochebene („red-tailed
+      hawk call“), Bison-Schnauben für die Prärie („bison snort“), echter Linienbus mit
+      Druckluftbremse und Falttür („bus arrive air brake doors“), quietschende alte Zapfsäule („gas
+      pump squeak“), Farm-Windrad, das sich dreht und quietscht („windmill farm creaking“),
+      amerikanischer Schulflur mit Spindtüren („school hallway lockers students“).

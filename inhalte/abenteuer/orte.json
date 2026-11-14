@@ -1037,14 +1037,14 @@
           "datei": "karten/weg-cedar-riverton-zedernwald.json",
           "name": "ort.wegCedarRiverton.zedernwald",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.zedernwald.m4a"
         },
         {
           "kennung": "wegCedarRiverton.bahndamm",
           "datei": "karten/weg-cedar-riverton-bahndamm.json",
           "name": "ort.wegCedarRiverton.bahndamm",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.zedernwald.m4a"
         }
       ],
       "figuren": [
@@ -1152,7 +1152,7 @@
           "datei": "karten/riverton-aussen.json",
           "name": "ort.riverton.aussen",
           "innen": false,
-          "musik": "musik/riverton.ogg",
+          "musik": "musik/riverton.m4a",
           "zustaende": {
             "slickAbschiedGesehen": "karten/riverton-aussen-trainingszentrum.json",
             "slickAbschiedGesehen und nadelIronwood >= 1": "karten/riverton-aussen-tische-kaputt.json",
@@ -1165,6 +1165,7 @@
           "datei": "karten/riverton-pavillon.json",
           "name": "ort.riverton.pavillon",
           "innen": true,
+          "musik": "musik/riverton.pavillon.m4a",
           "zustaende": {
             "slickAbschiedGesehen": "karten/riverton-pavillon-perfect-move.json"
           }
@@ -1174,6 +1175,7 @@
           "datei": "karten/riverton-bahnhofshalle.json",
           "name": "ort.riverton.bahnhofshalle",
           "innen": true,
+          "musik": "musik/riverton.m4a",
           "zustaende": {
             "nadelIronwood >= 1": "karten/riverton-bahnhofshalle-slick-auf-der-bank.json",
             "nadelDesertSprings >= 1": "karten/riverton-bahnhofshalle-plakat.json"
@@ -1183,13 +1185,15 @@
           "kennung": "riverton.wohnwagen",
           "datei": "karten/riverton-wohnwagen.json",
           "name": "ort.riverton.wohnwagen",
-          "innen": true
+          "innen": true,
+          "musik": "musik/riverton.wohnwagen.m4a"
         },
         {
           "kennung": "riverton.schuppen",
           "datei": "karten/riverton-schuppen.json",
           "name": "ort.riverton.schuppen",
           "innen": true,
+          "musik": "musik/riverton.m4a",
           "zustaende": {
             "fahrradErhalten": "karten/riverton-schuppen-ohne-fahrrad.json"
           }
@@ -1436,7 +1440,7 @@
           "datei": "karten/weg-riverton-ironwood-1.json",
           "name": "ort.wegRivertonIronwood.kanalweg",
           "innen": false,
-          "musik": "musik/landstrasse.ogg",
+          "musik": "musik/weg.fahrrad.m4a",
           "zustaende": {
             "nadelIronwood >= 1": "karten/weg-riverton-ironwood-1-graffiti.json"
           }
@@ -1446,7 +1450,7 @@
           "datei": "karten/weg-riverton-ironwood-2.json",
           "name": "ort.wegRivertonIronwood.bruecke",
           "innen": false,
-          "musik": "musik/landstrasse.ogg",
+          "musik": "musik/weg.fahrrad.m4a",
           "zustaende": {
             "nadelIronwood >= 1": "karten/weg-riverton-ironwood-2-ohne-tische.json"
           }
@@ -1598,7 +1602,7 @@
           "datei": "karten/lockport-aussen.json",
           "name": "ort.lockport.aussen",
           "innen": false,
-          "musik": "musik/landstrasse.ogg",
+          "musik": "musik/weg.fahrrad.m4a",
           "zustaende": {
             "lockportSteg": "karten/lockport-aussen-steg-offen.json",
             "taueErledigt": "karten/lockport-aussen-boot-an-land.json"
@@ -1608,7 +1612,8 @@
           "kennung": "lockport.gasthaus",
           "datei": "karten/lockport-gasthaus.json",
           "name": "ort.lockport.gasthaus",
-          "innen": true
+          "innen": true,
+          "musik": "musik/weg.fahrrad.m4a"
         }
       ],
       "figuren": [],
@@ -1744,7 +1749,7 @@
           "datei": "karten/ironwood-aussen.json",
           "name": "ort.ironwood.aussen",
           "innen": false,
-          "musik": "musik/ironwood.ogg",
+          "musik": "musik/ironwood.m4a",
           "zustaende": {
             "kaufGesehen": "karten/ironwood-aussen-vermietet.json",
             "endeAkt3Gesehen": "karten/ironwood-aussen-meisterschaft.json"
@@ -1755,6 +1760,7 @@
           "datei": "karten/ironwood-kantine.json",
           "name": "ort.ironwood.kantine",
           "innen": true,
+          "musik": "musik/ironwood.kantine.m4a",
           "zustaende": {
             "kaufGesehen": "karten/ironwood-kantine-logo.json"
           }
@@ -1763,19 +1769,22 @@
           "kennung": "ironwood.mamasZimmer",
           "datei": "karten/ironwood-mamas-zimmer.json",
           "name": "ort.ironwood.mamasZimmer",
-          "innen": true
+          "innen": true,
+          "musik": "musik/ironwood.m4a"
         },
         {
           "kennung": "ironwood.umkleide",
           "datei": "karten/ironwood-umkleide.json",
           "name": "ort.ironwood.umkleide",
-          "innen": true
+          "innen": true,
+          "musik": "musik/ironwood.m4a"
         },
         {
           "kennung": "ironwood.museum",
           "datei": "karten/ironwood-museum.json",
           "name": "ort.ironwood.museum",
-          "innen": true
+          "innen": true,
+          "musik": "musik/ironwood.m4a"
         }
       ],
       "figuren": [
@@ -2335,13 +2344,15 @@
           "kennung": "wegIronwoodSilicon.raststaette",
           "datei": "karten/weg-ironwood-silicon-raststaette.json",
           "name": "ort.wegIronwoodSilicon.raststaette",
-          "innen": false
+          "innen": false,
+          "musik": "musik/silicon-bay.m4a"
         },
         {
           "kennung": "wegIronwoodSilicon.glasbruecke",
           "datei": "karten/weg-ironwood-silicon-glasbruecke.json",
           "name": "ort.wegIronwoodSilicon.glasbruecke",
-          "innen": false
+          "innen": false,
+          "musik": "musik/silicon-bay.m4a"
         }
       ],
       "figuren": [
@@ -2476,25 +2487,29 @@
           "kennung": "siliconBay.aussen",
           "datei": "karten/silicon-bay-aussen.json",
           "name": "ort.siliconBay.aussen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/silicon-bay.m4a"
         },
         {
           "kennung": "siliconBay.hafen",
           "datei": "karten/silicon-bay-hafen.json",
           "name": "ort.siliconBay.hafen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/silicon-bay.m4a"
         },
         {
           "kennung": "siliconBay.altstadt",
           "datei": "karten/silicon-bay-altstadt.json",
           "name": "ort.siliconBay.altstadt",
-          "innen": false
+          "innen": false,
+          "musik": "musik/silicon-bay.m4a"
         },
         {
           "kennung": "siliconBay.akademie",
           "datei": "karten/silicon-bay-akademie.json",
           "name": "ort.siliconBay.akademie",
-          "innen": true
+          "innen": true,
+          "musik": "musik/silicon-bay.akademie.m4a"
         },
         {
           "kennung": "siliconBay.serverraum",
@@ -2506,7 +2521,8 @@
           "kennung": "siliconBay.lobby",
           "datei": "karten/silicon-bay-lobby.json",
           "name": "ort.siliconBay.lobby",
-          "innen": true
+          "innen": true,
+          "musik": "musik/silicon-bay.akademie.m4a"
         }
       ],
       "figuren": [
@@ -2827,13 +2843,15 @@
           "kennung": "wegSiliconDelacroix.faehre",
           "datei": "karten/weg-silicon-delacroix-faehre.json",
           "name": "ort.wegSiliconDelacroix.faehre",
-          "innen": false
+          "innen": false,
+          "musik": "musik/faehre.m4a"
         },
         {
           "kennung": "wegSiliconDelacroix.deich",
           "datei": "karten/weg-silicon-delacroix-deich.json",
           "name": "ort.wegSiliconDelacroix.deich",
-          "innen": false
+          "innen": false,
+          "musik": "musik/faehre.m4a"
         }
       ],
       "figuren": [
@@ -2975,6 +2993,7 @@
           "datei": "karten/port-delacroix-aussen.json",
           "name": "ort.portDelacroix.aussen",
           "innen": false,
+          "musik": "musik/port-delacroix.m4a",
           "zustaende": {
             "musikhausOffen": "karten/port-delacroix-aussen-musikhaus-neu.json"
           }
@@ -2983,7 +3002,8 @@
           "kennung": "portDelacroix.turnhalle",
           "datei": "karten/port-delacroix-turnhalle.json",
           "name": "ort.portDelacroix.turnhalle",
-          "innen": true
+          "innen": true,
+          "musik": "musik/port-delacroix.m4a"
         },
         {
           "kennung": "portDelacroix.werkstatt",
@@ -2996,6 +3016,7 @@
           "datei": "karten/port-delacroix-musikhaus.json",
           "name": "ort.portDelacroix.musikhaus",
           "innen": true,
+          "musik": "musik/port-delacroix.m4a",
           "zustaende": {
             "musikhausOffen": "karten/port-delacroix-musikhaus-neu.json"
           }
@@ -3256,13 +3277,15 @@
           "kennung": "wegDelacroixDesert.canyonpfad",
           "datei": "karten/weg-delacroix-desert-canyonpfad.json",
           "name": "ort.wegDelacroixDesert.canyonpfad",
-          "innen": false
+          "innen": false,
+          "musik": "musik/weg.wueste.m4a"
         },
         {
           "kennung": "wegDelacroixDesert.felsbogen",
           "datei": "karten/weg-delacroix-desert-felsbogen.json",
           "name": "ort.wegDelacroixDesert.felsbogen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/weg.wueste.m4a"
         }
       ],
       "figuren": [
@@ -3391,13 +3414,15 @@
             "endeAkt3Gesehen": "karten/desert-springs-aussen-meisterschaft.json"
           },
           "name": "ort.desertSprings.aussen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/desert-springs.m4a"
         },
         {
           "kennung": "desertSprings.garage",
           "datei": "karten/desert-springs-garage.json",
           "name": "ort.desertSprings.garage",
-          "innen": true
+          "innen": true,
+          "musik": "musik/desert-springs.m4a"
         },
         {
           "kennung": "desertSprings.antiquariat",
@@ -3406,7 +3431,8 @@
             "abschiedGesehen und briefGelesen": "karten/desert-springs-antiquariat-leihgabe.json"
           },
           "name": "ort.desertSprings.antiquariat",
-          "innen": true
+          "innen": true,
+          "musik": "musik/desert-springs.m4a"
         }
       ],
       "figuren": [
@@ -3545,6 +3571,7 @@
           "datei": "karten/weg-desert-summit-diner.json",
           "name": "ort.wegDesertSummit.diner",
           "innen": false,
+          "musik": "musik/diner.m4a",
           "zustaende": {
             "neonRepariert": "karten/weg-desert-summit-diner-neon.json"
           }
@@ -3553,13 +3580,15 @@
           "kennung": "wegDesertSummit.bergstrasse",
           "datei": "karten/weg-desert-summit-bergstrasse.json",
           "name": "ort.wegDesertSummit.bergstrasse",
-          "innen": false
+          "innen": false,
+          "musik": "musik/weg.wueste.held.m4a"
         },
         {
           "kennung": "wegDesertSummit.hinterzimmer",
           "datei": "karten/weg-desert-summit-hinterzimmer.json",
           "name": "ort.wegDesertSummit.hinterzimmer",
-          "innen": true
+          "innen": true,
+          "musik": "musik/diner.m4a"
         }
       ],
       "figuren": [
@@ -3748,13 +3777,15 @@
           "kennung": "hochebene.felsentuerme",
           "datei": "karten/hochebene-felsentuerme.json",
           "name": "ort.hochebene.felsentuerme",
-          "innen": false
+          "innen": false,
+          "musik": "musik/hochebene.m4a"
         },
         {
           "kennung": "hochebene.schule",
           "datei": "karten/hochebene-schule.json",
           "name": "ort.hochebene.schule",
           "innen": false,
+          "musik": "musik/hochebene.m4a",
           "zustaende": {
             "nicht annekSchachGelernt": "karten/hochebene-schule-vor-diplom.json"
           }
@@ -3880,25 +3911,29 @@
           "kennung": "summitCity.aussen",
           "datei": "karten/summit-city-aussen.json",
           "name": "ort.summitCity.aussen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/summit-city.m4a"
         },
         {
           "kennung": "summitCity.huette",
           "datei": "karten/summit-city-huette.json",
           "name": "ort.summitCity.huette",
-          "innen": true
+          "innen": true,
+          "musik": "musik/summit-city.m4a"
         },
         {
           "kennung": "summitCity.bergstation",
           "datei": "karten/summit-city-bergstation.json",
           "name": "ort.summitCity.bergstation",
-          "innen": true
+          "innen": true,
+          "musik": "musik/summit-city.m4a"
         },
         {
           "kennung": "summitCity.bergladen",
           "datei": "karten/summit-city-bergladen.json",
           "name": "ort.summitCity.bergladen",
-          "innen": true
+          "innen": true,
+          "musik": "musik/summit-city.m4a"
         }
       ],
       "figuren": [
@@ -4252,6 +4287,7 @@
           "datei": "karten/crossroads-aussen.json",
           "name": "ort.crossroads.aussen",
           "innen": false,
+          "musik": "musik/crossroads.m4a",
           "zustaende": {
             "gatterschluessel": "karten/crossroads-aussen-gatter-offen.json"
           }
@@ -4260,7 +4296,8 @@
           "kennung": "crossroads.raststaette",
           "datei": "karten/crossroads-raststaette.json",
           "name": "ort.crossroads.raststaette",
-          "innen": true
+          "innen": true,
+          "musik": "musik/crossroads.m4a"
         }
       ],
       "figuren": [
@@ -4460,13 +4497,15 @@
           "kennung": "wegCrossroadsPinewood.huetten",
           "datei": "karten/weg-crossroads-pinewood-huetten.json",
           "name": "ort.wegCrossroadsPinewood.huetten",
-          "innen": false
+          "innen": false,
+          "musik": "musik/wald.orgelpunkt.m4a"
         },
         {
           "kennung": "wegCrossroadsPinewood.riesenbaeume",
           "datei": "karten/weg-crossroads-pinewood-riesenbaeume.json",
           "name": "ort.wegCrossroadsPinewood.riesenbaeume",
-          "innen": false
+          "innen": false,
+          "musik": "musik/wald.orgelpunkt.m4a"
         }
       ],
       "figuren": [
@@ -4569,7 +4608,8 @@
           "kennung": "pinewoodCamp.aussen",
           "datei": "karten/pinewood-camp-aussen.json",
           "name": "ort.pinewoodCamp.aussen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/pinewood.m4a"
         }
       ],
       "figuren": [
@@ -4669,19 +4709,22 @@
           "kennung": "wegPinewoodGhost.canyonrand",
           "datei": "karten/weg-pinewood-ghost-canyonrand.json",
           "name": "ort.wegPinewoodGhost.canyonrand",
-          "innen": false
+          "innen": false,
+          "musik": "musik/staubstrasse.m4a"
         },
         {
           "kennung": "wegPinewoodGhost.staubstrasse",
           "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
           "name": "ort.wegPinewoodGhost.staubstrasse",
-          "innen": false
+          "innen": false,
+          "musik": "musik/staubstrasse.m4a"
         },
         {
           "kennung": "wegPinewoodGhost.tankstelle",
           "datei": "karten/weg-pinewood-ghost-tankstelle.json",
           "name": "ort.wegPinewoodGhost.tankstelle",
-          "innen": true
+          "innen": true,
+          "musik": "musik/staubstrasse.m4a"
         }
       ],
       "figuren": [
@@ -5004,13 +5047,15 @@
           "kennung": "wegGhostCapital.seeufer",
           "datei": "karten/weg-ghost-capital-seeufer.json",
           "name": "ort.wegGhostCapital.seeufer",
-          "innen": false
+          "innen": false,
+          "musik": "musik/seeufer.m4a"
         },
         {
           "kennung": "wegGhostCapital.leuchtturm",
           "datei": "karten/weg-ghost-capital-leuchtturm.json",
           "name": "ort.wegGhostCapital.leuchtturm",
-          "innen": false
+          "innen": false,
+          "musik": "musik/seeufer.m4a"
         }
       ],
       "figuren": [
@@ -5128,25 +5173,29 @@
           "kennung": "capitalArena.aussen",
           "datei": "karten/capital-arena-aussen.json",
           "name": "ort.capitalArena.aussen",
-          "innen": false
+          "innen": false,
+          "musik": "musik/arena.m4a"
         },
         {
           "kennung": "capitalArena.innenstadt",
           "datei": "karten/capital-arena-innenstadt.json",
           "name": "ort.capitalArena.innenstadt",
-          "innen": false
+          "innen": false,
+          "musik": "musik/arena.m4a"
         },
         {
           "kennung": "capitalArena.ubahnhof",
           "datei": "karten/capital-arena-ubahnhof.json",
           "name": "ort.capitalArena.ubahnhof",
-          "innen": true
+          "innen": true,
+          "musik": "musik/arena.m4a"
         },
         {
           "kennung": "capitalArena.halle",
           "datei": "karten/capital-arena-halle.json",
           "name": "ort.capitalArena.halle",
-          "innen": true
+          "innen": true,
+          "musik": "musik/arena.halle.m4a"
         }
       ],
       "figuren": [

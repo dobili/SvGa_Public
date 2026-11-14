@@ -1190,6 +1190,12 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
 - [ ] N935. **„Spielen“ schneller:** Unten auf „Spielen“ tippen: Wechsel und Partiebeginn spürbar
       flott?
 
+- [ ] N2631. **Ton im Schach-Abenteuer am iPhone (14.11.2026):** Abenteuer starten, auf dem Dachboden
+      warten, bis Ambrose erscheint, dann in Maple Falls herumlaufen. Hören: Läuft die Musik ohne
+      Klicken weiter, wenn sie von vorn beginnt (nach etwa 1 bis 2 Minuten)? Rauscht der Wasserfall
+      ohne Bruch? Hört die Musik nach einer Erinnerung (Archiv in Cedar Creek) auf, statt sich zu
+      wiederholen? Rückmeldung etwa „N2631 ok“ oder „N2631: Klick beim Wasserfall“.
+
 ## Teil 2: Entscheiden
 
 Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir

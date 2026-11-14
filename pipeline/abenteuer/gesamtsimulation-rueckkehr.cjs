@@ -12,12 +12,15 @@ const {
   FOLGE,
   VERSUCHE_JE_ZUSTAND,
   betrete,
+  gross,
 } = require("./gesamtsimulation-regeln.cjs");
+const { straenge } = require("./gesamtsimulation-sammlung.cjs");
 
 const RUECKKEHR_SCHRITTE = 6000;
 const NACHHOLEN_SCHRITTE = 1500;
 const NEUER_VERSUCH_ALLE = 200;
 const DRAUSSEN_SCHRITTE = 40;
+const SAMMEL_SCHRITTE = 400;
 
 /**
  * Orte (keine Erinnerungen), die an einen der Orte direkt angrenzen; mit `nurNeben` nur die
@@ -85,12 +88,48 @@ function bereit(st, q) {
 }
 
 /**
+ * Ort des Auslösers, der den Dialogknoten „datei.knoten“ öffnet (Fundstelle eines Stücks); sonst der
+ * Ort mit einem Auslöser derselben Ink-Datei (kreidespringer_geloest folgt auf kreide1).
+ */
+function fundort(welt, knoten) {
+  const datei = knoten.split(".")[0] + ".";
+  const mit = (passt) =>
+    welt.orte.find((o) => (o.ausloeser || []).some((a) => passt(a.dialog)));
+  return (
+    mit((d) => d === knoten) || mit((d) => Boolean(d && d.startsWith(datei)))
+  );
+}
+
+/**
+ * Fehlende Stücke der Sammelstränge holen (Finch-Figuren, Buchseiten, Spuren): je Stück in seinen
+ * Ort und dort bleiben, bis der Fund im Stand steht.
+ * Warum: Odette und der Wanderer warten auf alle Stücke, die Rückkehr ging aber nur zu ihnen. Lief
+ * der Chaos-Spieler durch die Hochebene, ohne die Schule ganz abzusuchen, ging der gründliche
+ * Spieler danach weiter vorn weiter, und die Finch-Jagd hing mit 14 von 15 Figuren (Startwert 3,
+ * 14.11.2026). Ein Mensch geht zurück; Odettes Hinweis nennt ihm das Versteck. Hinein geht es über
+ * die erste Karte des Ortes, wie bei der Rückkehr, damit der Weg zur Fundstelle mitgeprüft wird.
+ */
+function sammeln(welt, st, frist, h) {
+  for (const stuecke of Object.values(straenge()))
+    for (const { knoten, fund } of stuecke) {
+      const gefunden = () => Boolean(st.vars["gefunden" + gross(fund)]);
+      const ort = fundort(welt, knoten);
+      if (gefunden() || !ort || Date.now() > frist) continue;
+      st.zielOrte = new Set([ort.kennung]);
+      const start = ort.karten[0].kennung;
+      hin(welt, st, start);
+      bleibe(welt, st, h, start, SAMMEL_SCHRITTE, gefunden);
+    }
+}
+
+/**
  * Mit der Monatskarte zu jedem Ort mit offener Quest, bis sie fertig ist; gibt die Ziele zurück.
  * Mit `nur` (Menge von Quest-Kennungen) nur zu diesen Quests.
  */
 function rueckkehr(welt, st, frist, h, nur = null) {
   const ziele = [];
-  for (let runde = 0; runde < 3; runde++)
+  for (let runde = 0; runde < 3; runde++) {
+    if (!nur) sammeln(welt, st, frist, h);
     for (const q of welt.quests) {
       // `nur`: nur diese Quests (schneller Chaos-Test, gesamtsimulation-chaos.cjs).
       if (nur && !nur.has(q.kennung)) continue;
@@ -120,6 +159,7 @@ function rueckkehr(welt, st, frist, h, nur = null) {
         () => st.staende.some((x) => x.k === q.kennung && x.fertig),
       );
     }
+  }
   st.zielOrte = null;
   st.zuFuss = false;
   return [...new Set(ziele)];
@@ -170,4 +210,4 @@ function nachholen(welt, st, frist, h) {
   return geholt;
 }
 
-module.exports = { nebenorte, rueckkehr, nachholen };
+module.exports = { nebenorte, rueckkehr, nachholen, fundort };

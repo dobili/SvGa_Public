@@ -255,7 +255,8 @@ ein Fanshop mit Schals und T-Shirts.
   `seite12` am Anleger (A (59, 8), B (99, 8), C (33, 8)), `faehrterminal` (A (48, 12), B (88, 12), C
   (22, 12)).
 - **Leuchtturm:** Figur Odette Finch (`wegGhostCapital.odette`, A (78, 14), B (114, 14), C (43, 13)):
-  Hinweise nach Zahl der Figuren, ab 15 der König (Fund `finchKoenig`) und das Meisterproblem (Falle
+  Hinweise nach Zahl der Figuren mit dem Versteck der ersten fehlenden (Funktion `finchVersteck`),
+  ab 15 der König (Fund `finchKoenig`) und das Meisterproblem (Falle
   von Légal, Begegnung `wegGhostCapital.meisterproblem` als Stellungsduell aus der Vorführung `finchFalle`), danach Fund
   `finchsBuchsbaum` (Extra). `plakatWeltschachtag` vor dem Aufsteller (A (58, 13), B (110, 14), C
   (20, 13)).
@@ -270,6 +271,9 @@ ein Fanshop mit Schals und T-Shirts.
   Lin), `capitalArena.kreidespringer` (Start bei `kreide1` ebenda; Ende in der Kreidenacht). Die Zahl
   der Funde prüft Ink über die gemeinsamen Zähler `finchFiguren`, `buchseiten`, `spurenPM`,
   `kreideTreffpunkte`; keine `voraussetzung`, damit eine verpasste Fundstelle den Strang nicht sperrt.
+  Odette zählt seit 14.11.2026 die Funde der Hülle (`gefundenFinch…`, Funktion `finchGefunden`) statt
+  `finchFiguren`: Ein Fund steht sofort im Spielstand, ein Zähler in Ink konnte durch Neuladen mitten
+  im Fund-Dialog zurückbleiben (Chaos-Prüfung, Startwert 3).
 
 ### 3.5 Runde 9 (mittel-1, 10.11.2026): Mängel aus der Variantenwahl
 

@@ -37,6 +37,22 @@ VAR novaBitteGehoert = false
 VAR capitalZugang = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
+// Funde der fünfzehn Figuren (setzt die Hülle bei gibFund, regeln/dialogvariablen.ts).
+VAR gefundenFinchBauerA = false
+VAR gefundenFinchSpringerA = false
+VAR gefundenFinchLaeuferA = false
+VAR gefundenFinchBauerF = false
+VAR gefundenFinchBauerG = false
+VAR gefundenFinchBauerB = false
+VAR gefundenFinchBauerH = false
+VAR gefundenFinchTurmA = false
+VAR gefundenFinchBauerC = false
+VAR gefundenFinchLaeuferB = false
+VAR gefundenFinchSpringerB = false
+VAR gefundenFinchTurmB = false
+VAR gefundenFinchBauerD = false
+VAR gefundenFinchDame = false
+VAR gefundenFinchBauerE = false
 VAR abeGetroffen = false
 VAR linseGefunden = false
 VAR angesehenFaehrterminal = false
@@ -161,8 +177,11 @@ Am Fuß des Leuchtturms steht ein Aufsteller: „20. Juli. Weltschachtag am Leuc
 -> END
 
 // ---------------------------------------------------------------- Odette Finch (Ende der Finch-Jagd, 15, 1.1)
-// Vierzehn Figuren liegen an den Wegen, eine im Steinbruch, eine in der Sternwarte, eine auf der
-// Pelikaninsel; den König gibt Odette selbst. Ab 15 Figuren stellt sie Schwarz auf: das Meisterproblem
+// Fünfzehn Figuren: zehn an den Wegen, je eine im Steinbruch, in der Sternwarte, auf der Pelikaninsel,
+// auf der Hochebene und im Bayou; den König gibt Odette selbst. Odette zählt die Funde der Hülle
+// (gefundenFinch…), nicht finchFiguren: Ein Fund steht sofort im Spielstand, so kann kein Neuladen
+// mitten in einem Fund-Dialog die Zählung verstellen (Chaos-Prüfung, 14.11.2026). Ihr Hinweis nennt
+// das Versteck der ersten fehlenden Figur, damit niemand die ganze Welt absuchen muss. Ab 15 Figuren stellt sie Schwarz auf: das Meisterproblem
 // ist die Falle von Légal mit allen 16 weißen Figuren (Vorführung finchFalle, Lösung 5.Sxe5!), hier als
 // Stellungsduell wegGhostCapital.meisterproblem, bis die Form „Weiß zieht und gewinnt“ fertig ist.
 
@@ -171,7 +190,7 @@ Am Fuß des Leuchtturms steht ein Aufsteller: „20. Juli. Weltschachtag am Leuc
 - finchErledigt: -> odette_danach
 - ausgangWegGhostCapitalMeisterproblem == "sieg": -> odette_geloest
 - finchKoenigErhalten: -> odette_nochmal
-- finchFiguren >= 15: -> odette_koenig
+- finchGefunden() >= 15: -> odette_koenig
 - not odetteGetroffen: -> odette_erstes
 - else: -> odette_hinweis
 }
@@ -183,12 +202,59 @@ Odette Finch. Mein Wohnmobil heißt Gambit, und ich warte hier auf jemanden, der
 -> odette_hinweis
 
 === odette_hinweis ===
-{finchFiguren == 0:
+{finchGefunden() == 0:
     Sechzehn weiße Figuren aus Buchsbaum, entlang der Wege. Wo ein kleiner Fink sitzt, lohnt sich ein Blick. #sprecher:odette #stimmung:laechelt
 - else:
-    {finchFiguren} von fünfzehn hast du. Die anderen warten noch an den Wegen, im Steinbruch, in der Sternwarte und auf der Pelikaninsel. #sprecher:odette #stimmung:laechelt
+    {finchGefunden()} von fünfzehn hast du. Ich verrate dir eine: Sie steckt {finchVersteck()}. #sprecher:odette #stimmung:laechelt
 }
 -> END
+
+// Wie viele der fünfzehn Figuren gefunden sind (Funde der Hülle).
+=== function finchGefunden() ===
+~ return eins(gefundenFinchBauerA) + eins(gefundenFinchSpringerA) + eins(gefundenFinchLaeuferA) + eins(gefundenFinchBauerF) + eins(gefundenFinchBauerG) + eins(gefundenFinchBauerB) + eins(gefundenFinchBauerH) + eins(gefundenFinchTurmA) + eins(gefundenFinchBauerC) + eins(gefundenFinchLaeuferB) + eins(gefundenFinchSpringerB) + eins(gefundenFinchTurmB) + eins(gefundenFinchBauerD) + eins(gefundenFinchDame) + eins(gefundenFinchBauerE)
+
+=== function eins(wahr) ===
+{wahr:
+    ~ return 1
+}
+~ return 0
+
+// Das Versteck der ersten fehlenden Figur in der Reihenfolge der Reise.
+=== function finchVersteck() ===
+{
+- not gefundenFinchBauerA:
+    ~ return "an der Bank am Flussweg, gleich hinter Maple Falls"
+- not gefundenFinchSpringerA:
+    ~ return "in einem hohlen Baumstamm am Weg nach Riverton"
+- not gefundenFinchLaeuferA:
+    ~ return "am Fuß der Brücke auf dem Weg nach Ironwood"
+- not gefundenFinchBauerF:
+    ~ return "im Alten Steinbruch"
+- not gefundenFinchBauerG:
+    ~ return "in der Sternwarte am Canyon"
+- not gefundenFinchBauerB:
+    ~ return "in einem Blumenkübel an der Raststätte der Schnellstraße nach Silicon Bay"
+- not gefundenFinchBauerH:
+    ~ return "auf der Pelikaninsel"
+- not gefundenFinchTurmA:
+    ~ return "im Kasten mit den Rettungsringen am Fähranleger, an der Küste nach Port Delacroix"
+- not gefundenFinchBauerC:
+    ~ return "an einer Reuse am Steg im Bayou"
+- not gefundenFinchLaeuferB:
+    ~ return "in einem Felsspalt am Felsbogen im Canyon"
+- not gefundenFinchSpringerB:
+    ~ return "im Blumenkasten am Motel auf dem Weg hinauf in die Berge"
+- not gefundenFinchTurmB:
+    ~ return "in der Kiste mit den Sportgeräten an der Schule auf der Hochebene"
+- not gefundenFinchBauerD:
+    ~ return "unter einem Steg am Geysirbecken"
+- not gefundenFinchDame:
+    ~ return "in einer Astgabel bei den Riesenbäumen am Fernwanderweg"
+- not gefundenFinchBauerE:
+    ~ return "an der Aussicht am Canyonrand auf dem Weg zum Echo Canyon"
+- else:
+    ~ return "schon bei dir"
+}
 
 === odette_koenig ===
 ~ finchKoenigErhalten = true

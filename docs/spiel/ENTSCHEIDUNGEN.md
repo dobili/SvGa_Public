@@ -1049,3 +1049,14 @@ Summit City, Planfinder 120 in der Raststätte Crossroads, Phasenblick 90 im Fan
 Arena). Der sparsame Spieler endet jetzt mit 185 bis 215 Münzen; alle übrigen Ziele bleiben erfüllt.
 Der Fanshop verkauft damit erstmals etwas mit Spielwirkung (Story-Bibel, Abschnitt 31 angepasst).
 Begründung und Zahlen: `11_Karten_und_Gegenstaende.md`, Abschnitt 9.
+
+## Finch-Jagd: Odette zählt Funde und nennt das nächste Versteck (14.11.2026, nachts)
+
+Die Chaos-Prüfung (Startwert 3, Hochebene, N 1000) ließ die Finch-Jagd mit 14 von 15 Figuren hängen:
+Die Figur in der Schule auf der Hochebene war nie gefunden, und Odettes Hinweis nannte nur „an den
+Wegen, im Steinbruch, in der Sternwarte und auf der Pelikaninsel“ (Hochebene und Bayou fehlten).
+Empfehlung nach Regel 9, schon umgesetzt, Widerspruch genügt: Odette nennt jetzt das Versteck der
+ersten fehlenden Figur in der Reihenfolge der Reise und zählt die Funde des Spielstands statt des
+Ink-Zählers `finchFiguren`, den ein Neuladen mitten im Fund-Dialog verlieren konnte. Die
+Gesamtsimulation holt fehlende Stücke aller Sammelstränge vor der Rückkehr zu den Quests, wie ein
+Mensch, der zurückgeht. Test: `pipeline/tests/test_abenteuer_finchjagd.py`.

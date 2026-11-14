@@ -22,8 +22,15 @@ const DIALOGE = path.resolve(
 const MINDESTENS = 3;
 const gross = (s) => s[0].toUpperCase() + s.slice(1);
 
-/** Zähler → [{ knoten: "datei.knoten", fund }] aus allen Ink-Quellen. */
+let gelesen = null;
+
+/** Zähler → [{ knoten: "datei.knoten", fund }] aus allen Ink-Quellen (einmal gelesen). */
 function straenge() {
+  if (!gelesen) gelesen = liesStraenge();
+  return gelesen;
+}
+
+function liesStraenge() {
   const ergebnis = {};
   for (const name of fs
     .readdirSync(DIALOGE)

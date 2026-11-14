@@ -1687,17 +1687,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       versehen. In Arbeit: Alle Zeilen bekommen eine Stimmung passend zum Inhalt (neutral, lächelt,
       nachdenklich, überrascht, bitter, lacht), damit die Gesichter mitspielen, sobald die neuen
       Porträts da sind. Widerspruch genügt.
-- [ ] RO15. **Karten als echte Karten mit Motiv (Wunsch vom 14.11.2026):** In der Partie liegen die
-      Karten künftig unten als Fächer zum Durchwischen; antippen zeigt die Karte groß mit Name,
-      Satz und „Ausspielen“, gespielte Karten liegen umgedreht. Rahmen, Name und Farbe der Stufe
-      (leicht, mittel, stark) zeichnet das Spiel; Gemini malt nur die Motive. Auftrag an Gemini:
-      sieben Blätter mit je sechs Motiven (alle 40 Karten, dazu Rückseite und Ersatzbild), die
-      Prompts stehen fertig zum Kopieren in der Datei „4_Gemini_Kartenmotive.html“ aus dem Chat;
-      die Stilvorlage wie bei den Bildwünschen anhängen. Bis die Motive da sind, zeigt der Fächer
-      gezeichnete Karten ohne Bild. Widerspruch genügt.
+- [ ] RO15. **Karten als echte Karten mit Motiv:** Der Kartenfächer ist gebaut, und alle 40
+      Motive, Rückseite und Ersatzbild von Gemini sind ausgeschnitten und im Spiel (14.11.2026).
+      Bitte auf dem Handy ansehen, ob die Motive in der kleinen Karte (etwa 2 cm breit) gut zu
+      erkennen sind; sonst werden die Karten größer. Kleinigkeit: Auf „Klares Flüstern“ hat Gemini
+      winzige Zugnamen gemalt; bei Bedarf neu malen lassen.
 - [ ] RO16. **Großbilder von Gemini (Datei „3_Gemini_Grossbilder_und_Funde.html“):** Akt 1 und 2
-      sind bis auf eines da und im Spiel (14.11.2026). Es fehlt A17, Victors Einladung: eine weiße
-      Karte mit dünnem Silberrand, gehalten von einer Hand im weißen Ärmel, dunkler verschneiter
-      Hintergrund, die Karte leer und glänzend. Das Werkstor (A16) kam zweimal; das Bild mit dem
-      größeren Schild ist im Spiel, das andere liegt als Ersatz bereit. Offen sind danach A18 bis A38
-      (Akt 3 und 4) und die Fundbilder.
+      (A1 bis A17) sind fertig und im Spiel (14.11.2026). Offen sind A18 bis A38 (Akt 3 und 4) und
+      die Fundbilder.

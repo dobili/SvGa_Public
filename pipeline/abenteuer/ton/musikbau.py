@@ -49,6 +49,39 @@ def angleichen(ton, pegel_db: float):  # noqa: ANN001, ANN201 (numpy nur zur Lau
     return np.tanh(ton / grenze) * grenze
 
 
+# Kleiner Lautsprecher: Tiefen unter 250 Hz und Höhen über 3,5 kHz fallen weg (Klangplan A2, Diner).
+LAUTSPRECHER_HZ = (250.0, 3500.0)
+FILTER_ORDNUNG = 4
+
+
+def klangbild(ton, art: str):  # noqa: ANN001, ANN201 (numpy nur zur Laufzeit)
+    """Färbt den Klang nach ``Satz.klangbild``; ohne Angabe bleibt er unverändert."""
+    if art != "lautsprecher":
+        return ton
+    from scipy.signal import butter, sosfilt
+
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE
+
+    filter_ = butter(FILTER_ORDNUNG, LAUTSPRECHER_HZ, btype="bandpass", fs=ABTASTRATE, output="sos")
+    return sosfilt(filter_, ton, axis=0)
+
+
+# Am Ende eines Kurzmotivs gilt als Stille, was leiser als −60 dB ist; 0,1 s bleiben als Rest.
+STILLE_DB = -60
+REST_SEKUNDEN = 0.1
+
+
+def ohne_stille_am_ende(ton):  # noqa: ANN001, ANN201 (numpy nur zur Laufzeit)
+    """Schneidet die Stille nach dem Ausklang ab (Kurzmotive sollen nicht nachhängen)."""
+    import numpy as np
+
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE
+
+    laut = np.where(np.abs(ton).max(axis=1) > 10 ** (STILLE_DB / 20))[0]
+    ende = int(laut[-1]) + int(REST_SEKUNDEN * ABTASTRATE) if len(laut) else len(ton)
+    return ton[:ende]
+
+
 def baue_satz(satz: Satz, privat: Path) -> dict[str, object]:
     """Rendert einen Plan, kodiert ihn als m4a und gibt die Angaben für die Übersicht zurück."""
     from pipeline.abenteuer.ton.midi import schreibe_midi
@@ -61,7 +94,8 @@ def baue_satz(satz: Satz, privat: Path) -> dict[str, object]:
     ordner.mkdir(parents=True, exist_ok=True)
     ziel = ordner / dateiname(satz.kennung)
     wav = MIDI / f"{satz.kennung}.wav"
-    schreibe_wav(angleichen(rendere(stueck, PROBEN), satz.pegel_db), wav)
+    ton = angleichen(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db)
+    schreibe_wav(ton if satz.schleife else ohne_stille_am_ende(ton), wav)
     befehl = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "aac", "-b:a", BITRATE]
     subprocess.run([*befehl, str(ziel)], check=True)
     wav.unlink()

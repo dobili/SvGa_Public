@@ -107,6 +107,8 @@ class Satz:
     akt: int = 1
     pegel_db: float = 0.0
     beschreibung: str = ""
+    # „lautsprecher“: klingt wie aus einem kleinen Lautsprecher (Jukebox, Radio), sonst leer.
+    klangbild: str = ""
 
 
 def dauer(text: str) -> float:

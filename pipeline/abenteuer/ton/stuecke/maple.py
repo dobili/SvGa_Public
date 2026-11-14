@@ -28,7 +28,7 @@ CELLO_A = "3,:4 | 3,:4 | 5,,:2 1,:2 | 7,,:4"
 CELLO_A2 = "3,:4 | 1,:4 | 1,:2 7,,:2 | 1,:4"
 
 
-def _teile() -> dict[str, Teil]:
+def teile() -> dict[str, Teil]:
     """Die Teile mit Cello-Linien; a1/a2 ohne, a3/a4 mit Cello (ab dem zweiten Durchgang)."""
     cello = {"cello": CELLO_A}
     return {
@@ -54,7 +54,7 @@ MAPLE_FALLS = Satz(
     TONART,
     76,
     4,
-    _teile(),
+    teile(),
     ("vor", "a1", "a2", "a3", "a4", "b", "a5", "a6"),
     (
         Stimme("gitarre", "zupfen", 0.9, -0.3, 0.25, staerke=48),
@@ -74,7 +74,7 @@ MAPLE_FALLS_CLUB = Satz(
     TONART,
     104,
     4,
-    _teile(),
+    teile(),
     ("vor", "a1", "a2", "b", "a5", "a6"),
     (
         Stimme("gitarre", "schlagen", 0.7, -0.35, 0.2, staerke=50),
@@ -92,7 +92,7 @@ MAPLE_FALLS_LERNEN = Satz(
     TONART,
     92,
     4,
-    _teile(),
+    teile(),
     ("vor", "a1", "a2", "b"),
     (
         Stimme("gitarre", "travis", 0.75, -0.3, 0.2, staerke=46),
@@ -134,7 +134,7 @@ BUSFAHRT = Satz(
     TONART,
     76,
     4,
-    _teile(),
+    teile(),
     ("vor", "a1", "a2", "b", "a5", "a6"),
     (
         Stimme("gitarre", "zupfen", 0.8, -0.1, 0.3, staerke=44),

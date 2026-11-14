@@ -1206,6 +1206,12 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       (Dachboden altes Holz, Schulclub grünes Vinyl, Riverton Steintisch …). Ein Rätsel lösen: Die
       Aufgabe steht auf Pergament, Ambrose antwortet in einer Sprechblase, der Fortschritt ist eine
       Reihe kleiner Figuren. Gefällt dir das, ist etwas schwer lesbar? Rückmeldung etwa „N2633 ok“.
+- [ ] N2634. **Karten aller Akte nach der Nacharbeit (15.11.2026):** Mit der Monatskarte durch
+      die Orte reisen und je Ort kurz umsehen: Passen Türen innen zu außen (gleiche Seite, gleiche
+      Breite)? Laufen Wege und Straßen am Kartenrand sauber in die Nachbarkarte weiter? Fällt etwas
+      Unlogisches auf? Besonders neu: Zedernpfad (echter Wald), Bahnhofshalle Riverton, Lockport,
+      Crossroads, Ghost Town, Glasbrücke bei Silicon Bay. Rückmeldung je Ort genügt, etwa
+      „N2634 Lockport: Boot schwebt“.
 
 ## Teil 2: Entscheiden
 
@@ -1715,3 +1721,23 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Chaos-Prüfung). Schon umgesetzt: Im Pinewood Camp bietet Tamsin die mitgeschriebene
       Blitzpartie noch einmal an. Außerdem steht Ambroses Geist nach dem Abschied nicht mehr im
       Zimmer. Widerspruch genügt.
+- [ ] RO21. **Schnee in Silicon Bay und Port Delacroix?** Die Story-Bibel sagt „Silicon Bay ohne
+      Jahreszeit, Port Delacroix nasser Winter“; auf den Karten liegt aber Schnee (Altstadt, Port
+      Delacroix, Glasbrücke, Deich), weil frühere Runden das so gesetzt haben. Empfehlung: Silicon
+      Bay schneefrei (Glas und Kälte statt Schnee), Port Delacroix Regen und nasse Straßen statt
+      Schnee; das Bayou passt dann dazu. Noch nicht umgesetzt, weil es viele Karten betrifft;
+      „ja“ genügt, dann baue ich es um.
+- [ ] RO22. **Bildwünsche der Nacht (Datei „7_Gemini_Bildwuensche_Nacht.html“):** 19 Bilder, die
+      im Katalog fehlen, je mit Prompt zum Kopieren (Drehbank, Staffelei, Doppeltür aus Holz,
+      achteckiger Pavillon in Riverton, leeres Schwimmbecken mit Kakteen, Motelzeile mit bunten
+      Türen, Rosies türkiser Truck, Seefähre, Fanshop …). Alles freiwillig; die Karten
+      funktionieren ohne. Dazu in PixelLab: Gideon, der Schmied von 1866 (Lederschürze, Schüssel).
+- [ ] RO23. **Entscheidungen der Nacht (schon umgesetzt, Widerspruch genügt):** Späte Läden
+      verkaufen vier Lernkarten (Taktikspürnase, Turmregel, Planfinder, Phasenblick), damit sich
+      Sparen lohnt und am Ende nicht 625 Münzen übrig sind (jetzt etwa 200). In Ghost Town stehen
+      am Ortseingang zwei Pfosten ohne Schild (wie der Dialog sie beschreibt). Das Zimmer von 1866
+      hat rosa Streifen statt Rosentapete (bis das Bild da ist). Das Gasthaus in Lockport ist
+      L-förmig wie sein Gebäudebild, nicht T-förmig. Port Delacroix hat eine Brücke über das
+      Hafenbecken; zum Hafen von Silicon Bay führt nur noch eine Treppe; vom Campus sind die Tiere
+      verschwunden (nur Roboter, wie das Ortsblatt sagt). Die alte Bahnstrecke von 1879 endet an
+      einem Prellbock hinter dem Laden in Desert Springs.

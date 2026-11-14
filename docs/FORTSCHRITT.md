@@ -1,3 +1,24 @@
+Stand: 15.11.2026 früh (Haupt-Chat, Schach-Abenteuer): **Nachtlauf mit Helfern abgeschlossen.**
+
+- Bedienung und Farben nach `docs/spiel/30_Bedienung_und_Brettstile.md`: Daumenzonen, Steuerkreuz
+  links/rechts, Querformat, Farbsystem des Spiels, Pixelknöpfe, Rätsel ohne Trainerkarte,
+  Meldungsleiste. Zwölf Brettstile mit Pixelfiguren (RhosGFX, CC0); Gemini-Bretter und -Figuren
+  mit `pipeline.abenteuer.brettbilder` einbaubar (Prompts: RO19).
+- Neue Prüfung Übergangsbilder (Regel 10.77, `pipeline.abenteuer.uebergangsbilder`), Teil von
+  `uebergaenge`: keine Befunde mehr.
+- Karten aller Akte nachgearbeitet (Gutachten der Nacht: `docs/spiel/pruefberichte/2026-11-14_karten_akt1_maple_cedar.md`,
+  `docs/spiel/auftraege/gutachten/nacht-k2-akt2.md`, `akt4-teil1-nacht.md`; Akt 3 und 4b in den
+  Commits), Brüche über Kartengrenzen in Akt 2 und 3 behoben, Markierung bis zum Kartenrand.
+- Chaos-Simulation (`--chaos`): acht Sackgassen behoben; Dialogmerker werden jetzt bei jedem Knoten
+  gesichert (Neuladen mitten im Dialog). Wirtschaft geeicht (späte Läden mit Lernkarten).
+- Porträts Akt 1 bis Nr. 26 (dazu Kettering neutral), Freesound-Geräusche eingebaut.
+- Offen beim Autor: RO18 (Porträts 27–34, Hector neutral), RO19 (Gemini-Bretter), RO21 (Schnee in
+  Silicon Bay/Port Delacroix), RO22 (19 Bildwünsche), RO23 (Entscheidungen der Nacht), N2632–N2634.
+
+**Nächster Schritt:** Rückmeldungen des Autors einarbeiten; Ironwood ↔ Steinbruch: Gleise enden
+am Ostrand an Felskante (Empfehlung Prellbock in Ironwood); Ghost Town: Erinnerung über die Treppe
+im Laden (Innenkarte fehlt); Capital außen, Innenstadt und U-Bahnhof noch ohne Gutachten.
+
 Stand: 14.11.2026 abends (Haupt-Chat, Schach-Abenteuer): **Ton, Karten, Porträts, Tischgespräch.**
 
 - Musik: 152 Stücke (dazu `held.vollstaendig`, `nova.vollstaendig`), Hörseite

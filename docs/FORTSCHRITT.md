@@ -1,3 +1,22 @@
+Stand: 14.11.2026 abends (Haupt-Chat, Schach-Abenteuer): **Ton, Karten, Porträts, Tischgespräch.**
+
+- Musik: 152 Stücke (dazu `held.vollstaendig`, `nova.vollstaendig`), Hörseite
+  https://claude.ai/artifact/PHtbCVXtbiuBgxQDSd9PuN. Geräusche: 159 von 163 aus Sonniss-GDC
+  (archive.org), OpenGameArt und selbst erzeugt, privat `spiel/klang/`, Hörseite
+  https://claude.ai/artifact/JAPtu6n6XZ6V74CwM6jAfA; Fehlliste RO17 (Freesound sperrt die Cloud).
+  Private Tondateien und Großbilder liegen unter `spiel/` (dort liest der Paketbau).
+- Tischgespräch (`docs/spiel/29_Tischgespraech.md`): Sprechblasen oben und unten am Brett,
+  Temperamente, Karten sprechen; Kartenfächer mit 42 Gemini-Motiven (`spiel/karten/`).
+- Porträts: Arbeitsweise in zwei Schritten mit Stilvorlage (`24_Figuren_und_Portraets.md`),
+  fertig sind Ambrose (mit jung, alt, gebannt, Lachen), Mama, Juno, Victor, Graham Hale, Delgado,
+  Sam, Jo, Lily, Abernathy, Calloway, Hector (neutral fehlt); weiter ab Carla.
+- Vorschau der Schachoberfläche: https://claude.ai/artifact/4ujZp8ypAAjS7HP2GGfEWt (Anmerkungen des
+  Autors abwarten, dann Rätsel und Partie im Stil des Spiels umbauen).
+- Regel: Helfer liefern, der Hauptchat führt zusammen und pusht (CLAUDE.md, Arbeitsablauf 6).
+
+**Nächster Schritt:** Lieferung des Helfers zu einmaligen Stücken, Schleifen und Pegeln einbauen;
+Porträts ab Carla zuordnen, sobald sie in ki-roh liegen; Anmerkungen zur Vorschau umsetzen.
+
 Stand: 14.11.2026 (Haupt-Chat, Schach-Abenteuer): **Musik fertig gesetzt.** Alle 150 Stücke der
 Gesamtübersicht des Klangplans sind als Satzpläne in `pipeline/abenteuer/ton/stuecke/` gesetzt und
 gerendert (privat `musik/`, Akt 2 bis 4 in `musik/aktN`), Bau mit

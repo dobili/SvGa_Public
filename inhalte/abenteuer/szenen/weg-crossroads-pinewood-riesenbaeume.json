@@ -103,8 +103,8 @@
     "#.........k.k.k.k....eee...............#",
     "#........k.k.k.k......ee...............#",
     "#.........k.k.k.k.....ee...............#",
-    "#........k.k.k.k......ee...............#",
-    "#.........k.k.k.k.....eee..............#",
+    "#........k.k.k.k..eeeeee...............#",
+    "#.........k.k.k.k.eeeeeee..............#",
     "#........k.k.k.k......eee..............#",
     "#.........k.k.k.k......ee..............#",
     "#........k.k.k.k.......ee..............#",
@@ -168,10 +168,6 @@
     {
       "moebel": "cr8FahneWeiss",
       "feld": [8, 93]
-    },
-    {
-      "moebel": "cr8FahneSchwarz",
-      "feld": [17, 87]
     },
     {
       "moebel": "cr8FahneSchwarz",
@@ -1097,6 +1093,10 @@
     {
       "moebel": "wg4Farn",
       "feld": [7, 97]
+    },
+    {
+      "moebel": "cr8FahneSchwarz",
+      "feld": [17, 87]
     }
   ],
   "ausloeser": [
@@ -1229,12 +1229,12 @@
     {
       "name": "betreuerin",
       "typ": "statist",
-      "feld": [19, 92],
+      "feld": [20, 90],
       "eigenschaften": {
         "tun": "zählt Westen in einem Wäschekorb",
         "wann": "tag",
-        "von": "19,92",
-        "bis": "21,95",
+        "von": "19,90",
+        "bis": "21,90",
         "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.betreuerin"
       }
     },

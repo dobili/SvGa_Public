@@ -101,6 +101,8 @@ python -m pipeline.praxisbuch.baender app/public/daten/eroeffnungsbaender.json b
 python -m pipeline.abenteuer.weltpuzzle --bild /tmp/welt.png   # Schach-Abenteuer: Außenkarten über ihre Zugänge aneinanderlegen (Überlappungen, offene Ringe, Randbrüche); --ort KENNUNG grenzt ein
 python -m pipeline.abenteuer.weltkarte PRIVAT ZIEL --orte mapleFalls,cedarCreek   # Weltkarte: Kartenbilder, daten.json und weltkarte.html mit Ausgängen und Reisen (nichts ins private Paket)
 python -m pipeline.abenteuer.portraetblatt EINGABE.png AUSGABE.png --raster 3x2   # Porträtblatt aus einem Gemini-Blatt (grüner Grund): Felder, Pixelraster, 3×2 à 64
+python -m pipeline.abenteuer.brettbilder BRETT.png FIGURENBLATT.png --stil schiefer PRIVAT   # Gemini-Brett und -Figurensatz zuschneiden, prüfen, nach spiel/brett/<stil>/ legen ("-" für einen fehlenden Teil)
+python -m pipeline.abenteuer.uebergangsbilder [--ort KENNUNG] [--boegen ORDNER --privat PRIVAT]   # Übergangsbilder prüfen (Regel 10.77), Kontaktbögen beider Seiten
 python -m pipeline.wiki --zeigen   # Seiten des Wikis im Dashboard (Paket D); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 ```
 

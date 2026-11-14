@@ -5,8 +5,10 @@
  * Rolle im Gesamtbild: Ein Aufruf in PartieHuelle.tsx und AufgabenAnsicht.tsx genügt; die Wahl
  * trifft stilwahl.ts, die Zeichnung kommt aus Zeichnung.tsx, das Brett der App liest sie über
  * ui/brett/brettstil.ts. In der App selbst bleibt die Wahl des Lesers (docs/spiel/30, Abschnitt 5).
- * Blindschach bekommt keinen Stil und bleibt, wie es ist.
- * Abhängigkeiten: daten/laden.ts, stilwahl.ts, Zeichnung.tsx, ui/brett/brettstil.ts.
+ * Blindschach bekommt keinen Stil und bleibt, wie es ist. Hat das Paket zum Stil gezeichnete
+ * Bilder (brettbilder.ts), ersetzen sie Feldfarben und Pixelfiguren (Bilderzeichnung.tsx).
+ * Abhängigkeiten: daten/laden.ts, stilwahl.ts, Zeichnung.tsx, Bilderzeichnung.tsx,
+ * brettbilder.ts, ui/brett/brettstil.ts.
  */
 import { useLayoutEffect } from "react";
 import type { Partie } from "../../spiel/partie";
@@ -15,6 +17,8 @@ import { ladeSpieldaten } from "../daten/laden";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import { begegnungVonPartie } from "../anbindung/useBegegnung";
 import { waehleBrettstil, type Brettquelle, type Stildaten } from "./stilwahl";
+import { bildvorgabe } from "./Bilderzeichnung";
+import { brettbilderFertig, brettbilderVon } from "./brettbilder";
 import { brettstilvorgabe } from "./Zeichnung";
 import "./brettstil.css";
 
@@ -50,7 +54,18 @@ export function useAbenteuerBrettstil(quelle: Brettquelle | null): void {
     let aufraeumen = () => {};
     const setze = (daten: Stildaten) => {
       const kennung = waehleBrettstil(q, daten);
-      if (kennung) aufraeumen = setzeBrettstil(brettstilvorgabe(kennung));
+      if (!kennung) return;
+      // Gezeichnete Bilder, wenn schon bekannt, sonst erst der gerechnete Stil und dann die Bilder.
+      const bekannt = brettbilderFertig(kennung);
+      aufraeumen = setzeBrettstil(
+        bekannt ? bildvorgabe(kennung, bekannt) : brettstilvorgabe(kennung),
+      );
+      if (bekannt !== undefined) return;
+      void brettbilderVon(kennung).then((bilder) => {
+        if (!aktiv || !bilder) return;
+        aufraeumen();
+        aufraeumen = setzeBrettstil(bildvorgabe(kennung, bilder));
+      });
     };
     if (geladen) setze(geladen);
     else

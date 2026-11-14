@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 29,
+ "nextobjectid": 31,
  "layers": [
   {
    "id": 1,
@@ -172,7 +172,7 @@
     0,
     0,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -353,7 +353,7 @@
     2,
     2,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -597,6 +597,17 @@
     },
     {
      "id": 3,
+     "name": "hinterzimmerAusgang",
+     "type": "ausloeser",
+     "x": 128,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 4,
      "name": "mags",
      "type": "figur",
      "x": 112,
@@ -607,7 +618,7 @@
      "visible": true
     },
     {
-     "id": 4,
+     "id": 5,
      "name": "ruthKeene",
      "type": "figur",
      "x": 192,
@@ -618,7 +629,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "gegnerMags",
      "type": "statist",
      "x": 96,
@@ -641,7 +652,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "gegnerRuth",
      "type": "statist",
      "x": 160,
@@ -664,7 +675,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "spielerA",
      "type": "statist",
      "x": 48,
@@ -687,7 +698,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "spielerB",
      "type": "statist",
      "x": 64,
@@ -706,29 +717,6 @@
        "name": "bild",
        "type": "string",
        "value": "statist-36"
-      }
-     ]
-    },
-    {
-     "id": 9,
-     "name": "cc6TuerSued",
-     "type": "moebel",
-     "x": 112,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
       }
      ]
     },
@@ -1161,6 +1149,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "rv8GlastuerSued",
+     "type": "moebel",
+     "x": 112,
+     "y": 176,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "cc5Fussmatte",
+     "type": "moebel",
+     "x": 128,
+     "y": 163,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

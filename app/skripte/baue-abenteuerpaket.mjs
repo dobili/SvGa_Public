@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { deflateSync } from "node:zlib";
 import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
 import { baueFigurenbogen } from "./figurenbogen.mjs";
+import { brettbilderDateien } from "./brettbilder-paket.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -412,6 +413,10 @@ async function main() {
   // Motive der Spielkarten (Gemini, Wunsch des Autors 14.11.2026): karten/<kennung>.webp, dazu
   // die Rückseite; ohne Ordner zeichnet der Kartenfächer ein Muster (anbindung/Spielkarte.tsx).
   await kopierePrivatordner("karten", () => true, [".webp"]);
+  // Gezeichnete Bretter und Figuren je Brettstil (skripte/brettbilder-paket.mjs).
+  for (const { pfad, quelle, gruppe } of await brettbilderDateien(PRIVAT)) {
+    await schreibe(pfad, await readFile(quelle), gruppe);
+  }
   await kopiereTon("musik");
   await kopiereTon("klang");
   await kopiereBilder();

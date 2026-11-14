@@ -22,18 +22,13 @@
     "#......................#",
     "#......................#",
     "#......................#",
-    "############.###########"
+    "############..##########"
   ],
   "objekte": [
     {
       "moebel": "mf4Fussmatte",
       "feld": [12, 16],
       "versatz": [0, 2]
-    },
-    {
-      "moebel": "sb8GlastuerSued",
-      "feld": [12, 17],
-      "an_wand": true
     },
     {
       "moebel": "mf5Kuehlschrank",
@@ -345,6 +340,16 @@
       "feld": [0, 0],
       "auf": "durchreiche",
       "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv8GlastuerSued",
+      "feld": [12, 17],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [13, 16],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [
@@ -366,6 +371,10 @@
     {
       "name": "postkarten",
       "feld": [16, 10]
+    },
+    {
+      "name": "raststaetteAusgang",
+      "feld": [13, 17]
     }
   ],
   "figuren": [

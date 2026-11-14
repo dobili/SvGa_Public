@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, ein Bücherregal, zwei gerahmte Endspieldiagramme und die Vitrine mit dem Pokal von 1985. Vor dem Kamin auf dem Teppich zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett, daneben Leselampe und Stehlampe. Im Süden zwei Clubtische, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand ein zweites Regal. Die Tür liegt in der Südwand.",
+  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett, daneben Leselampe und Stehlampe. Im Süden zwei Clubtische, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale, eine Kommode und eine Holztruhe. Die Tür liegt in der Südwand.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -20,7 +20,7 @@
     "#................#",
     "#................#",
     "#................#",
-    "########.#########"
+    "########..########"
   ],
   "objekte": [
     {
@@ -53,25 +53,6 @@
     {
       "moebel": "cc4RegalB",
       "feld": [15, 1]
-    },
-    {
-      "moebel": "iwVitrine",
-      "feld": [13, 1],
-      "id": "vitrine"
-    },
-    {
-      "moebel": "pokal",
-      "auf": "vitrine"
-    },
-    {
-      "moebel": "sc9EndspieldiagrammA",
-      "feld": [5, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "sc9EndspieldiagrammB",
-      "feld": [3, 1],
-      "an_wand": true
     },
     {
       "moebel": "wzTeppich",
@@ -131,6 +112,24 @@
     {
       "moebel": "cc4RegalC",
       "feld": [15, 4]
+    },
+    {
+      "moebel": "cc8TuerSuedHolz",
+      "feld": [9, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [9, 11],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "pd6Kommode",
+      "feld": [13, 2]
+    },
+    {
+      "moebel": "rv8Truhe",
+      "feld": [14, 7]
     }
   ],
   "ausloeser": [
@@ -160,6 +159,10 @@
     {
       "name": "teekanne",
       "feld": [10, 6]
+    },
+    {
+      "name": "huetteAusgang",
+      "feld": [9, 12]
     }
   ],
   "figuren": [

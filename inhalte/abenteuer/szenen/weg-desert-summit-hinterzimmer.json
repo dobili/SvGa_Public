@@ -16,15 +16,10 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######",
+    "#######..#####",
     "##############"
   ],
   "objekte": [
-    {
-      "moebel": "cc6TuerSued",
-      "feld": [7, 11],
-      "an_wand": true
-    },
     {
       "moebel": "cc5Fussmatte",
       "feld": [7, 9],
@@ -115,6 +110,16 @@
       "moebel": "cc4StuhlRuecken",
       "feld": [4, 8],
       "vorn": true
+    },
+    {
+      "moebel": "rv8GlastuerSued",
+      "feld": [7, 11],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [8, 9],
+      "versatz": [0, 19]
     }
   ],
   "ausloeser": [
@@ -128,6 +133,10 @@
     {
       "name": "hinterzimmerAusgang",
       "feld": [7, 10]
+    },
+    {
+      "name": "hinterzimmerAusgang",
+      "feld": [8, 10]
     }
   ],
   "figuren": [

@@ -404,6 +404,9 @@ async function main() {
   // Porträtblätter: je Figur sechs Fassungen à 64 × 64 (3 × 2), portraetblatt.json.
   await kopierePrivatordner("portraets/blatt");
   await kopierePrivatordner("grafik");
+  // Motive der Spielkarten (Gemini, Wunsch des Autors 14.11.2026): karten/<kennung>.webp, dazu
+  // die Rückseite; ohne Ordner zeichnet der Kartenfächer ein Muster (anbindung/Spielkarte.tsx).
+  await kopierePrivatordner("karten", () => true, [".webp"]);
   await kopiereTon("musik");
   await kopiereTon("klang");
   await kopiereBilder();

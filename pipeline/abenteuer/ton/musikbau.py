@@ -1,7 +1,7 @@
 """Befehl: baut die Musik des Spiels aus den Satzplänen in das private Repository.
 
 Warum: Die Tondateien bleiben privat wie die Grafik (``docs/spiel/28_Tonquellen.md``, Abschnitt 1);
-der Paketbau liest sie aus ``musik/`` (Akt 1) und ``musik/akt2`` … ``akt4``
+der Paketbau liest sie aus ``spiel/musik/`` (Akt 1) und ``spiel/musik/akt2`` … ``akt4``
 (``app/skripte/baue-abenteuerpaket.mjs``, ``kopiereTon``). Der Dateiname folgt der Regel der App
 (``app/src/abenteuer/ton/tonplan.ts``, ``dateienFuer``): „mapleFalls.club“ wird
 „maple-falls.club.m4a“. Ins öffentliche Repository kommen nur die Noten (Satzpläne) und dieses
@@ -35,8 +35,13 @@ def dateiname(kennung: str) -> str:
 
 
 def zielordner(privat: Path, satz: Satz) -> Path:
-    """Akt 1 direkt in musik/, spätere Akte in musik/aktN (werden nachgeladen)."""
-    return privat / "musik" if satz.akt == 1 else privat / "musik" / f"akt{satz.akt}"
+    """Akt 1 direkt in spiel/musik/, spätere Akte in spiel/musik/aktN (werden nachgeladen).
+
+    Der Paketbau liest private Dateien aus dem Unterordner ``spiel/`` des privaten Repositorys
+    (``app/skripte/baue-abenteuerpaket.mjs``, ``PRIVAT``).
+    """
+    musik = privat / "spiel" / "musik"
+    return musik if satz.akt == 1 else musik / f"akt{satz.akt}"
 
 
 def angleichen(ton, pegel_db: float):  # noqa: ANN001, ANN201 (numpy nur zur Laufzeit)

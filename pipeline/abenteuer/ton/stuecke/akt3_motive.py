@@ -96,6 +96,33 @@ HELD = kurz(
     akt=AKT,
 )
 
+# Zum Sieg über Miss Odile (Kap. 39) einmal vollständig, statt der Fanfare (Klangplan 3A2, „held“
+# 8 s / 25 s): erst die Gitarre allein, dann mit Klavier und Cello, Schlussakkord.
+HELD_THEMA = "2:1 3:1 5:2 | 2:1 3:1 5:1 6:1 | 5:1 3:1 2:1 1:1 | 1:4"
+HELD_AKKORDE = "V | ii V | I V | I"
+HELD_VOLLSTAENDIG = Satz(
+    "held.vollstaendig",
+    "Held, vollständig",
+    "G",
+    72,
+    4,
+    {
+        "leise": Teil(HELD_AKKORDE, HELD_THEMA),
+        "voll": Teil(HELD_AKKORDE, HELD_THEMA),
+        "schluss": Teil("I"),
+    },
+    ("leise", "voll", "schluss"),
+    (
+        Stimme("gitarre", "melodie", 0.8, -0.1, 0.35, OBEN, 50, frozenset({"leise"})),
+        Stimme("klavier", "melodie", 0.8, 0.15, 0.35, OBEN, 54, frozenset({"voll"})),
+        Stimme("gitarre", "zupfen", 0.55, -0.3, 0.3, 0, 40, frozenset({"voll", "schluss"})),
+        Stimme("cello", "bass_grund", 0.55, 0.0, 0.35, 1, 46, frozenset({"voll", "schluss"})),
+    ),
+    schleife=False,
+    akt=AKT,
+    beschreibung="Zum Sieg einmal vollständig: das Heldenthema, erst Gitarre, dann mit Klavier und Cello.",
+)
+
 MIRA_KURZ = kurz(
     "mira",
     "Mira",
@@ -217,6 +244,7 @@ VICTOR_MASCHINE = kurz(
 )
 
 STUECKE = (
+    HELD_VOLLSTAENDIG,
     MAMA_SCHNEE,
     ENDSPIEL,
     TIEFER_STREICHER,

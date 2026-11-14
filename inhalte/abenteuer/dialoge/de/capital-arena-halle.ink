@@ -448,7 +448,7 @@ Die Siegerehrung vergisst du. Es gibt einen Pokal, der zu groß ist, und Hände,
 ~ novaNachPartieGesehen = true
 Nova sieht auf die Stellung, dann auf die Uhr, dann auf den kleinen Gegenstand, der in zwei Stunden kein einziges Mal gesummt hat. #sprecher:erzaehler #musik:nova
 {
-- ausgangCapitalArenaRunde3 == "remis": Ich hab nicht gewonnen. Ich hab nicht verloren. #sprecher:nova #stimmung:nachdenklich
+- ausgangCapitalArenaRunde3 == "remis": Ich hab nicht gewonnen. Ich hab nicht verloren. #sprecher:nova #stimmung:nachdenklich #musik:nova.vollstaendig
 - ausgangCapitalArenaRunde3 == "sieg": Ich hab verloren. Und ich weiß genau, wo. #sprecher:nova #stimmung:nachdenklich
 - else: Ich hab gewonnen. Ohne. #sprecher:nova #stimmung:laechelt
 }

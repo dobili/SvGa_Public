@@ -188,7 +188,7 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 {
 - ausgangPortDelacroixClubkampf == "sieg" and not odileHandGegeben:
     Ein Plan. Dein erster. Er war hässlich und langsam, und er gehört dir. #sprecher:erzaehler
-    Miss Odile sieht es an. Sie nickt, im Takt von etwas, das nur sie hört. #sprecher:erzaehler #musik:held
+    Miss Odile sieht es an. Sie nickt, im Takt von etwas, das nur sie hört. #sprecher:erzaehler #musik:held.vollstaendig
     Der Königsflügel. Immer mein Königsflügel. Mein Mann hat mir das vierzig Jahre lang gesagt. #sprecher:odile #stimmung:lacht
 - ausgangPortDelacroixClubkampf == "sieg":
     Miss Odile legt ihren König um und lächelt. #sprecher:erzaehler

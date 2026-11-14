@@ -116,6 +116,26 @@ NOVA = Satz(
     beschreibung="Zart, dann fest: Novas Thema, zuerst nur ♯4 – 5, am Ende vollständig mit Cello.",
 )
 
+# Beim Remis gegen Nova (Kap. 61) erklingt ihr Thema einmal vollständig (Klangplan 4A2, „nova“
+# 60 s / 25 s): fest, dann voll mit Cello, ohne Schleife.
+NOVA_VOLLSTAENDIG = Satz(
+    "nova.vollstaendig",
+    "Nova, vollständig",
+    TONART,
+    72,
+    4,
+    {"fest": _NOVA["fest"], "voll": _NOVA["voll"]},
+    ("fest", "voll"),
+    (
+        Stimme("klavier", "melodie", 0.85, 0.1, 0.4, OBEN, 54),
+        Stimme("klavier", "wiegen", 0.5, -0.15, 0.4, -1, 36),
+        Stimme("cello", "melodie", 0.65, -0.25, 0.4, 0, 50, nur("voll")),
+    ),
+    schleife=False,
+    akt=AKT,
+    beschreibung="Beim Remis: Novas Thema einmal vollständig, fest, zum Schluss mit Cello.",
+)
+
 # ZERO: gleichmäßige Sechzehntel aus der lydischen Leiter, um die ♯4 kreisend, ohne anzukommen.
 ZERO_FIGUREN = (
     "1 2 3 #4 5 6 5 #4 3 #4 5 6 7 6 5 #4",
@@ -303,6 +323,7 @@ MAMA_RUHIG = Satz(
 )
 
 STUECKE = (
+    NOVA_VOLLSTAENDIG,
     ARENA,
     ARENA_VORRUNDE,
     NOVA,

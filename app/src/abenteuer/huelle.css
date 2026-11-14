@@ -247,3 +247,14 @@
     animation: none;
   }
 }
+
+/* Lebendschach (Runde 6): Die Hülle deckt den Hintergrund von body ab; deshalb trägt sie die
+   Kulisse selbst, unter einem Navy-Schleier, damit Brett und Schrift lesbar bleiben
+   (Befund beim Fotografieren der Hülle, 14.11.2026: die Kulisse war unsichtbar). */
+body.abenteuer-mit-kulisse .abenteuer-huelle {
+  background-image:
+    linear-gradient(rgb(22 33 62 / 72%), rgb(22 33 62 / 72%)), var(--abenteuer-kulisse);
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+}

@@ -6,5 +6,12 @@ landen im Nachladepaket des Akts (``musik/akt2``).
 """
 
 from pipeline.abenteuer.ton.satzplan import Satz
+from pipeline.abenteuer.ton.stuecke import akt2_ambrose, akt2_ironwood, akt2_motive, akt2_riverton, akt2_wege
 
-STUECKE: tuple[Satz, ...] = ()
+STUECKE: tuple[Satz, ...] = (
+    *akt2_riverton.STUECKE,
+    *akt2_ironwood.STUECKE,
+    *akt2_wege.STUECKE,
+    *akt2_ambrose.STUECKE,
+    *akt2_motive.STUECKE,
+)

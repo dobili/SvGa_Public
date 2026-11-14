@@ -13,6 +13,7 @@ import type { Color } from "chessops/types";
 import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import { STIL_MAX, STIL_MIN } from "../engine/stil";
+import { abenteuerteil } from "./abenteuerteilLesen";
 import { besiegtAus } from "./besiegt";
 import {
   blindeFleckenAus,
@@ -167,36 +168,6 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     ...probeteil(roh.probe),
     ...abenteuerteil(roh.abenteuer),
     ...gegnerprofilAus(roh),
-  };
-}
-
-/** Die Begegnung des Schach-Abenteuers (Format 11), nur wenn gespeichert. */
-function abenteuerteil(roh: unknown): Pick<Partieeinstellung, "abenteuer"> {
-  if (!istObjekt(roh) || typeof roh.kennung !== "string") return {};
-  const zeitnotBis =
-    typeof roh.zeitnotBis === "number" && Number.isInteger(roh.zeitnotBis) && roh.zeitnotBis > 0
-      ? { zeitnotBis: roh.zeitnotBis }
-      : {};
-  const wechsel = roh.abgelenktAb;
-  const abgelenktAb =
-    istObjekt(wechsel) && typeof wechsel.halbzug === "number" && typeof wechsel.faktor === "number"
-      ? { abgelenktAb: { halbzug: wechsel.halbzug, faktor: wechsel.faktor } }
-      : {};
-  const variante =
-    roh.variante === "blind" || roh.variante === "schach960"
-      ? { variante: roh.variante as "blind" | "schach960" }
-      : {};
-  const staerkeWechsel = Array.isArray(roh.staerkeWechsel)
-    ? { staerkeWechsel: roh.staerkeWechsel.filter((n): n is number => Number.isInteger(n)) }
-    : {};
-  return {
-    abenteuer: {
-      kennung: roh.kennung,
-      ...zeitnotBis,
-      ...abgelenktAb,
-      ...variante,
-      ...staerkeWechsel,
-    },
   };
 }
 

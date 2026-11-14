@@ -26,7 +26,8 @@ function zugNummer(k: Kipppunkt): number {
 export function Partieergebniskarte(props: {
   readonly ergebnis: Partieergebnis;
   readonly gegner: string;
-  readonly club: string;
+  /** Club des Ortes; null, wo der Ort keinen hat (Weg, Seeufer): dann ohne Clubnamen. */
+  readonly club: string | null;
   readonly neueNadel: Nadelstufe | null;
   readonly kipppunkt: Kipppunkt | "suche" | null;
   readonly beiWiedereinstieg: (k: Kipppunkt) => void;
@@ -41,7 +42,11 @@ export function Partieergebniskarte(props: {
       </p>
       {props.neueNadel && (
         <p>
-          <strong>{tSpiel(`ergebnis.nadel.${props.neueNadel}`, { club: props.club })}</strong>
+          <strong>
+            {props.club
+              ? tSpiel(`ergebnis.nadel.${props.neueNadel}`, { club: props.club })
+              : tSpiel(`ergebnis.nadelOhneClub.${props.neueNadel}`)}
+          </strong>
         </p>
       )}
       {kipppunkt === "suche" && <p className="lade">{tSpiel("ergebnis.kipppunktSuche")}</p>}

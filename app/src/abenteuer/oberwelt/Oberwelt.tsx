@@ -352,7 +352,7 @@ export function Oberwelt() {
         <Partieergebniskarte
           ergebnis={ergebnis}
           gegner={partie.gegnername(ergebnis)}
-          club={tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name")}
+          club={welt?.ort.club ? tSpiel(welt.ort.club.name) : null}
           neueNadel={partie.neueNadel}
           kipppunkt={partie.kipppunkt}
           beiWiedereinstieg={(p) => partie.starteWiedereinstieg(ergebnis, p)}

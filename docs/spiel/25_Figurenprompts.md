@@ -97,7 +97,7 @@ man about 35, thin, upright and proud, pale skin, dark brown hair combed back, s
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann um die 35, schmal und aufrecht, blasse Haut, dunkles zurückgekämmtes Haar, langer dunkler Gehrock mit hohem Kragen, weinrote Weste, weiße Halsbinde. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann um die 35, schmal und aufrecht, blasse Haut, dunkles zurückgekämmtes Haar, langer dunkler Gehrock mit hohem Kragen, weinrote Weste, weiße Halsbinde. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 _Erzeugen:_ Farbig erzeugen, mit natürlicher blasser Haut. Das Geisterhafte macht das Spiel (`#geist`, halb durchsichtig); nichts Durchsichtiges in den Prompt schreiben.
@@ -111,19 +111,19 @@ young man about 20, slim, eager, pale skin, dark brown hair a little longer and 
 Gemini, Fassung „alt“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Ambrose, gleiche Figur, aber müde und älter wirkend, Schatten unter den Augen, ein paar graue Strähnen, ernster Blick.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Ambrose, gleiche Figur, aber müde und älter wirkend, Schatten unter den Augen, ein paar graue Strähnen, ernster Blick.
 ```
 
 Gemini, Fassung „lacht ohne Spott“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Ambrose lacht offen und warm über sich selbst, Augen fast geschlossen, kein Spott im Gesicht.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Ambrose lacht offen und warm über sich selbst, Augen fast geschlossen, kein Spott im Gesicht.
 ```
 
 Gemini, Fassung „gebannt“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Ambrose starrt gebannt auf etwas Leuchtendes außerhalb des Bildes, Gesicht von kaltem bläulichem Licht beleuchtet, leicht geöffneter Mund.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Ambrose starrt gebannt auf etwas Leuchtendes außerhalb des Bildes, Gesicht von kaltem bläulichem Licht beleuchtet, leicht geöffneter Mund.
 ```
 
 ### `mutter` – Mama (Laura)
@@ -142,19 +142,19 @@ woman in her early forties, warm and tired, light brown skin, dark brown hair pi
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Frau Anfang vierzig, müde und warm, hellbraune Haut, dunkelbraunes Haar mit einem Bleistift locker hochgesteckt, beige Strickjacke mit langen Ärmeln über türkisfarbenem Pflegeoberteil. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Frau Anfang vierzig, müde und warm, hellbraune Haut, dunkelbraunes Haar mit einem Bleistift locker hochgesteckt, beige Strickjacke mit langen Ärmeln über türkisfarbenem Pflegeoberteil. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 Gemini, Fassung „ertappt“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Mama, ertappt: Blick kurz zur Seite, die Hände in die Ärmel der Strickjacke geschoben, angedeutetes schuldbewusstes Lächeln.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Mama, ertappt: Blick kurz zur Seite, die Hände in die Ärmel der Strickjacke geschoben, angedeutetes schuldbewusstes Lächeln.
 ```
 
 Gemini, Fassung „Foto 2001“ (Mama mit 16):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: dieselbe Frau als 16-jähriges Mädchen im Jahr 2001, langes dunkles Haar offen, ernster Blick, dunkelblaue Schuljacke mit einer Schachnadel, Foto mit leicht verblassten Farben.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: dieselbe Frau als 16-jähriges Mädchen im Jahr 2001, langes dunkles Haar offen, ernster Blick, dunkelblaue Schuljacke mit einer Schachnadel, Foto mit leicht verblassten Farben.
 ```
 
 ### `juno` – Juno Martínez
@@ -173,7 +173,7 @@ PixelLab: (schon erzeugt)
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 14 Jahren, dunkle Locken im lockeren Pferdeschwanz, Sommersprossen, zitronengelbe Regenjacke über blau-weiß gestreiftem Shirt. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 14 Jahren, dunkle Locken im lockeren Pferdeschwanz, Sommersprossen, zitronengelbe Regenjacke über blau-weiß gestreiftem Shirt. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 _Stand:_ Figur ist schon erzeugt. Nur das Porträtblatt fehlt, falls noch nicht gemacht.
@@ -194,7 +194,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 15 Jahren, beherrscht und kühl, helle Haut, ordentlich gescheiteltes aschblondes Haar, weiße Trainingsjacke mit aufgedrucktem Namen, Tablet in der Hand. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 15 Jahren, beherrscht und kühl, helle Haut, ordentlich gescheiteltes aschblondes Haar, weiße Trainingsjacke mit aufgedrucktem Namen, Tablet in der Hand. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 PixelLab, victorPullover (eigene Figur, Akt 4, ohne Tablet):
@@ -206,13 +206,13 @@ PixelLab, victorPullover (eigene Figur, Akt 4, ohne Tablet):
 Gemini, Fassung „Riss“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Victor, für einen Moment ungeschützt: Blick nach unten, Mund leicht geöffnet, als fehle ihm die Antwort.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Victor, für einen Moment ungeschützt: Blick nach unten, Mund leicht geöffnet, als fehle ihm die Antwort.
 ```
 
 Gemini, Fassung „lacht“ (Akt 4):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Victor lacht zum ersten Mal ehrlich, Haar fällt über die Ohren, oliv-grüner zu großer Pullover statt weißer Jacke.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Victor lacht zum ersten Mal ehrlich, Haar fällt über die Ohren, oliv-grüner zu großer Pullover statt weißer Jacke.
 ```
 
 ### `grahamHale` – Graham Hale
@@ -231,7 +231,7 @@ man about 50, busy and polite, light skin, short greying blond hair, rimless gla
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann um die 50, höflich und gehetzt, helle Haut, kurzes ergrautes blondes Haar, randlose Brille, Handy am Ohr, schmaler dunkelblauer Anzug. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann um die 50, höflich und gehetzt, helle Haut, kurzes ergrautes blondes Haar, randlose Brille, Handy am Ohr, schmaler dunkelblauer Anzug. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `coachDelgado` – Coach Delgado (Marisol Delgado)
@@ -250,7 +250,7 @@ Latina woman in her late thirties, sporty and loud-hearted, medium brown skin, b
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Latina Ende dreißig, sportlich und herzlich, mittelbraune Haut, schwarzer hoher Pferdeschwanz, rot-weiße Collegejacke, silberne Trillerpfeife am roten Band. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Latina Ende dreißig, sportlich und herzlich, mittelbraune Haut, schwarzer hoher Pferdeschwanz, rot-weiße Collegejacke, silberne Trillerpfeife am roten Band. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `sam` – Sam Brooks
@@ -269,7 +269,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 15 Jahren, laut und fröhlich, dunkelbraune Haut, kurze Twists, breites Grinsen, oranges Basketballtrikot, Schachuhr unter dem Arm. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 15 Jahren, laut und fröhlich, dunkelbraune Haut, kurze Twists, breites Grinsen, oranges Basketballtrikot, Schachuhr unter dem Arm. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `skaterJo` – Jo
@@ -288,7 +288,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 16 Jahren, lässig, kurzer türkis gefärbter Bob, Mütze, schwarzer Hoodie, Skateboard unter dem Arm. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 16 Jahren, lässig, kurzer türkis gefärbter Bob, Mütze, schwarzer Hoodie, Skateboard unter dem Arm. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `lily` – Lily
@@ -307,7 +307,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 8 Jahren, rote Zöpfe, Zahnlücke, gelbe Latzhose, grüne Gummistiefel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 8 Jahren, rote Zöpfe, Zahnlücke, gelbe Latzhose, grüne Gummistiefel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `abernathy` – Mr. Abernathy
@@ -326,7 +326,7 @@ old man about 80, kind and forgetful, light skin, wispy white hair, round glasse
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alter Mann um die 80, freundlich und vergesslich, weißes dünnes Haar, runde Brille auf der Stirn, braunes Tweedsakko, senfgelbe Strickjacke, Thermoskanne. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alter Mann um die 80, freundlich und vergesslich, weißes dünnes Haar, runde Brille auf der Stirn, braunes Tweedsakko, senfgelbe Strickjacke, Thermoskanne. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `calloway` – Mrs. Eunice Calloway
@@ -345,7 +345,7 @@ old woman about 79, gentle and lonely, dark brown skin, short silver curls, pear
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alte Frau um die 79, sanft, dunkelbraune Haut, kurze silberne Locken, Perlenohrringe, lavendelfarbene Strickjacke über geblümtem Kleid, Kartenspiel in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alte Frau um die 79, sanft, dunkelbraune Haut, kurze silberne Locken, Perlenohrringe, lavendelfarbene Strickjacke über geblümtem Kleid, Kartenspiel in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `hector` – Hector Sandoval
@@ -364,7 +364,7 @@ Mexican American man in his mid forties, friendly and chatty, medium brown skin,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: mexikanisch-amerikanischer Koch Mitte vierzig, dicker schwarzer Schnurrbart, weiße Schürze mit aufgesticktem Namen, hochgekrempelte blaue Hemdsärmel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: mexikanisch-amerikanischer Koch Mitte vierzig, dicker schwarzer Schnurrbart, weiße Schürze mit aufgesticktem Namen, hochgekrempelte blaue Hemdsärmel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `carla` – Carla Martínez
@@ -383,7 +383,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 17 Jahren, zurückhaltend, langes dunkles Haar im unordentlichen Knoten, Ölfleck auf der Wange, verwaschene Jeansjacke, Fahrradschlüssel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 17 Jahren, zurückhaltend, langes dunkles Haar im unordentlichen Knoten, Ölfleck auf der Wange, verwaschene Jeansjacke, Fahrradschlüssel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `pratt` – Mr. Gideon Pratt
@@ -402,7 +402,7 @@ man about 67, proud and tidy, dark skin, short grey hair, grey moustache, navy b
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Hausmeister um die 67, stolz und ordentlich, dunkle Haut, graues Haar und grauer Schnurrbart, dunkelblauer Arbeitsoverall, Schlüsselbund am Gürtel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Hausmeister um die 67, stolz und ordentlich, dunkle Haut, graues Haar und grauer Schnurrbart, dunkelblauer Arbeitsoverall, Schlüsselbund am Gürtel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `okafor` – Mrs. Grace Okafor
@@ -421,13 +421,13 @@ Nigerian American woman in her early seventies, small, upright and calm, dark sk
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Nigerianisch-amerikanische Frau Anfang siebzig, klein und sehr aufrecht, dunkle Haut, kurzes graues Haar, Brille an einer Kette, dunkelblaues Kleid. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Nigerianisch-amerikanische Frau Anfang siebzig, klein und sehr aufrecht, dunkle Haut, kurzes graues Haar, Brille an einer Kette, dunkelblaues Kleid. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 Gemini, Fassung „müde“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Mrs. Okafor, müde: Brille abgenommen in der Hand, Augen geschlossen, leichtes Lächeln.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Mrs. Okafor, müde: Brille abgenommen in der Hand, Augen geschlossen, leichtes Lächeln.
 ```
 
 ### `dex` – Dexter „Dex“ Okafor
@@ -446,7 +446,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 13 Jahren, Bastler, dunkle Haut, Schutzbrille auf der Stirn, olivgrüne Weste mit vielen Taschen, Schraubenzieher. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 13 Jahren, Bastler, dunkle Haut, Schutzbrille auf der Stirn, olivgrüne Weste mit vielen Taschen, Schraubenzieher. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `mae` – Mae Lindqvist
@@ -465,7 +465,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 11 Jahren, verträumt, sehr helles blondes Haar mit Sternspange, runde Brille, dunkelblauer Pullover mit weißen Sternen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 11 Jahren, verträumt, sehr helles blondes Haar mit Sternspange, runde Brille, dunkelblauer Pullover mit weißen Sternen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `boateng` – Mr. Boateng
@@ -484,7 +484,7 @@ Ghanaian American man in his mid sixties, calm and humorous, dark skin, short gr
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: ghanaisch-amerikanischer Mann Mitte sechzig, ruhig, kurzer grauer Bart, große Hände, Schiebermütze, weißes kurzärmeliges Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: ghanaisch-amerikanischer Mann Mitte sechzig, ruhig, kurzer grauer Bart, große Hände, Schiebermütze, weißes kurzärmeliges Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `rosa` – Rosa
@@ -503,7 +503,7 @@ woman in her late fifties, patient, tanned skin, grey braid, wide straw hat, kha
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Anglerin Ende fünfzig, grauer Zopf, breiter Strohhut, Anglerweste, karierte Bluse. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Anglerin Ende fünfzig, grauer Zopf, breiter Strohhut, Anglerweste, karierte Bluse. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `nia` – Nia
@@ -522,7 +522,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 12 Jahren, schnell und ehrgeizig, Zöpfe (Box Braids), pinkes Stirnband, lila Laufjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 12 Jahren, schnell und ehrgeizig, Zöpfe (Box Braids), pinkes Stirnband, lila Laufjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `patel` – Mr. Patel
@@ -541,7 +541,7 @@ Indian American man in his fifties, observant, brown skin, neat grey-streaked ha
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: indisch-amerikanischer Mann um die 55, Lesebrille auf der Nase, weinroter Pullunder über weißem Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: indisch-amerikanischer Mann um die 55, Lesebrille auf der Nase, weinroter Pullunder über weißem Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `fenwick` – Mrs. Fenwick
@@ -560,7 +560,7 @@ woman in her sixties, brisk, light skin, short white hair, red windbreaker, hiki
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Wanderin um die 65, kurzes weißes Haar, rote Windjacke, großer Rucksack und Wanderstock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Wanderin um die 65, kurzes weißes Haar, rote Windjacke, großer Rucksack und Wanderstock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ada` – Ada Brennan
@@ -579,7 +579,7 @@ farm woman about 56, practical and fair, sun-tanned skin, greying auburn hair in
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bäuerin um die 56, rotbraunes ergrauendes Haar im Knoten, grüne Steppweste über rotem Flanellhemd, Korb mit Äpfeln. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bäuerin um die 56, rotbraunes ergrauendes Haar im Knoten, grüne Steppweste über rotem Flanellhemd, Korb mit Äpfeln. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `otis` – Otis Brennan
@@ -598,7 +598,7 @@ farmer about 59, quiet and gentle, weathered tanned skin, grey stubble, faded gr
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bauer um die 59, wortkarg, grauer Bartschatten, verblichene grüne Kappe, blaue Latzhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bauer um die 59, wortkarg, grauer Bartschatten, verblichene grüne Kappe, blaue Latzhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `silas` – Silas Reed
@@ -617,7 +617,7 @@ old man about 74, dreamy, dark skin, white beard, battered fishing hat with lure
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alter Angler um die 74, weißer Bart, abgegriffener Anglerhut, brauner Wachsmantel, Angelrute. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alter Angler um die 74, weißer Bart, abgegriffener Anglerhut, brauner Wachsmantel, Angelrute. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `joggerin` – Tessa Vance (die Joggerin)
@@ -636,7 +636,7 @@ young woman about 24, determined, light brown skin, black hair in a tight high p
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: junge Läuferin um die 24, schwarzer hoher Pferdeschwanz, korallenrotes Laufshirt, schwarze Laufhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: junge Läuferin um die 24, schwarzer hoher Pferdeschwanz, korallenrotes Laufshirt, schwarze Laufhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kettering` – Mr. Lyle Kettering
@@ -655,7 +655,7 @@ bus driver about 58, steady and kind, light skin, grey crew cut, grey moustache,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Busfahrer um die 58, graue Bürstenfrisur, grauer Schnurrbart, blaues Uniformhemd mit Abzeichen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Busfahrer um die 58, graue Bürstenfrisur, grauer Schnurrbart, blaues Uniformhemd mit Abzeichen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `dunmore` – Mr. Ansel Dunmore
@@ -674,7 +674,7 @@ woodturner about 63, careful, light skin, curly grey hair full of wood shavings,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Drechsler um die 63, lockiges graues Haar mit Holzspänen, kurzer grauer Bart, Lederschürze über grünem Flanellhemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Drechsler um die 63, lockiges graues Haar mit Holzspänen, kurzer grauer Bart, Lederschürze über grünem Flanellhemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ivy` – Ivy Pell
@@ -693,7 +693,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 9 Jahren, dunkle Locken in zwei Puscheln, orange Regenjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 9 Jahren, dunkle Locken in zwei Puscheln, orange Regenjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `jonah` – Jonah Pell
@@ -712,7 +712,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 9 Jahren, kurze dunkle Locken, blaue Regenjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 9 Jahren, kurze dunkle Locken, blaue Regenjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `owen` – Owen Fisk
@@ -731,7 +731,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 7 Jahren, kurze Locken, Zahnlücke, rotes Shirt mit weißem Stern, roter Ball unter dem Arm. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 7 Jahren, kurze Locken, Zahnlücke, rotes Shirt mit weißem Stern, roter Ball unter dem Arm. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `walt` – Walt Miller
@@ -750,7 +750,7 @@ farmer about 55, grumpy but fair, sunburnt light skin, grey stubble, orange cap,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bauer um die 55, grauer Bartschatten, orange Kappe, braune Arbeitsjacke über kariertem Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bauer um die 55, grauer Bartschatten, orange Kappe, braune Arbeitsjacke über kariertem Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `clover` – Clover Miller
@@ -769,7 +769,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 12 Jahren, Sommersprossen, rote Zöpfe, Strohhut, grüne Latzhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 12 Jahren, Sommersprossen, rote Zöpfe, Strohhut, grüne Latzhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `omaMiller` – Oma Miller
@@ -788,7 +788,7 @@ grandmother about 78, cosy storyteller, light skin, white hair in a bun, round g
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Großmutter um die 78, weißer Knoten, runde Brille, kürbisorange Strickjacke, Schürze mit Mehl, Kuchenform. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Großmutter um die 78, weißer Knoten, runde Brille, kürbisorange Strickjacke, Schürze mit Mehl, Kuchenform. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ## Akt 2: Bahndamm, Riverton, Kanalweg, Ironwood, Schleuse, Erinnerung London
@@ -809,13 +809,13 @@ Black man in his mid twenties, fast and cheeky, dark skin, short twists under a 
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Schwarzer Mann Mitte zwanzig, schnell und frech, kurze Twists unter einer verkehrt herum getragenen roten Kappe, gelbe Kurierjacke, Kuriertasche. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Schwarzer Mann Mitte zwanzig, schnell und frech, kurze Twists unter einer verkehrt herum getragenen roten Kappe, gelbe Kurierjacke, Kuriertasche. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 Gemini, Fassung „leise“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Slick ohne Grinsen, Kappe abgenommen in der Hand, Blick nach unten, ruhig.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Slick ohne Grinsen, Kappe abgenommen in der Hand, Blick nach unten, ruhig.
 ```
 
 ### `tamsin` – Tamsin Ortega
@@ -834,7 +834,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 12 Jahren, quirlig, kurzes schwarzes Haar mit Spange, grüne Regenjacke, Stoppuhr um den Hals. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 12 Jahren, quirlig, kurzes schwarzes Haar mit Spange, grüne Regenjacke, Stoppuhr um den Hals. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ray` – Ray Jessup
@@ -853,7 +853,7 @@ old man in his early seventies, warm storyteller, dark skin, white moustache, hi
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alter Mann Anfang siebzig, weißer Schnurrbart, bester brauner Filzhut, beiger Regenmantel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alter Mann Anfang siebzig, weißer Schnurrbart, bester brauner Filzhut, beiger Regenmantel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `harlan` – Mr. Harlan
@@ -872,7 +872,7 @@ old watchmaker in his late sixties, precise and slow, light skin, bald with whit
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Uhrmacher Ende sechzig, Glatze mit weißem Haarkranz, Lupenbrille, dunkelgrüne Weste mit Taschenuhrkette. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Uhrmacher Ende sechzig, Glatze mit weißem Haarkranz, Lupenbrille, dunkelgrüne Weste mit Taschenuhrkette. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `pops` – Pops (Theodore Banks)
@@ -891,7 +891,7 @@ man in his early sixties, jovial, dark brown skin, grey goatee, flat newsboy cap
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann Anfang sechzig, gemütlich, grauer Kinnbart, Schiebermütze, braune Strickjacke, rote Fliege. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann Anfang sechzig, gemütlich, grauer Kinnbart, Schiebermütze, braune Strickjacke, rote Fliege. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `albescu` – Mrs. Ileana Albescu
@@ -910,7 +910,7 @@ Romanian American woman about 50, tough and kind, light skin, short dark hair wi
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: rumänisch-amerikanische Frau um die 50, dunkles kurzes Haar mit grauen Strähnen, ölverschmierte blaue Arbeitsjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: rumänisch-amerikanische Frau um die 50, dunkles kurzes Haar mit grauen Strähnen, ölverschmierte blaue Arbeitsjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `nova` – Nova Sinclair
@@ -929,7 +929,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 16 Jahren, einstudiertes Lächeln, müde Augen, langes glattes schwarzes Haar über den Ohren, weiße Jacke mit silbernem Logo. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 16 Jahren, einstudiertes Lächeln, müde Augen, langes glattes schwarzes Haar über den Ohren, weiße Jacke mit silbernem Logo. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 PixelLab, novaPullover (eigene Figur, Akt 3 und 4):
@@ -941,13 +941,13 @@ PixelLab, novaPullover (eigene Figur, Akt 3 und 4):
 Gemini, Fassung „Kamera aus“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Nova ohne Lächeln, erschöpft, Blick ins Leere, eine Hand am Ohr.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Nova ohne Lächeln, erschöpft, Blick ins Leere, eine Hand am Ohr.
 ```
 
 Gemini, Fassung „frei“ (Akt 4):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Nova mit zurückgebundenem Haar, beide Ohren frei, grauer zu großer Pullover, unsicheres echtes Lächeln.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Nova mit zurückgebundenem Haar, beide Ohren frei, grauer zu großer Pullover, unsicheres echtes Lächeln.
 ```
 
 ### `dale` – Mr. Dale
@@ -966,7 +966,7 @@ farmer in his sixties, slow-spoken, tanned skin, grey beard, straw hat, plaid sh
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bauer um die 65, grauer Bart, Strohhut, kariertes Hemd, Latzhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bauer um die 65, grauer Bart, Strohhut, kariertes Hemd, Latzhose. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `noor` – Noor Haddad
@@ -985,7 +985,7 @@ Arab American young woman about 19, focused artist, olive skin, dark hair under 
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: arabisch-amerikanische Kunststudentin um die 19, Haare unter einem farbbespritzten Tuch, farbverschmierter weißer Overall, Sprühdose. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: arabisch-amerikanische Kunststudentin um die 19, Haare unter einem farbbespritzten Tuch, farbverschmierter weißer Overall, Sprühdose. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `schaffner` – Mr. Quinn
@@ -1004,7 +1004,7 @@ train conductor about 55, dutiful and dry, light skin, red-grey sideburns, navy 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Zugschaffner um die 55, rotgraue Koteletten, dunkelblaue Bahnuniform mit Messingknöpfen, Mütze im Nacken. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Zugschaffner um die 55, rotgraue Koteletten, dunkelblaue Bahnuniform mit Messingknöpfen, Mütze im Nacken. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `bigJoe` – Big Joe (Joseph Kowalski)
@@ -1023,7 +1023,7 @@ huge broad man in his late fifties, loud and gentle, light skin, ruddy cheeks, b
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: riesiger Mann Ende fünfzig, laut und sanft, Glatze, dichter grauer Bart, sehr große Hände, orange Warnweste über braunem Arbeitshemd. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: riesiger Mann Ende fünfzig, laut und sanft, Glatze, dichter grauer Bart, sehr große Hände, orange Warnweste über braunem Arbeitshemd. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `hank` – Hank Morrow
@@ -1042,7 +1042,7 @@ steelworker in his mid forties, taciturn, light skin, stubble, grey beanie, navy
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Stahlarbeiter Mitte vierzig, wortkarg, Bartschatten, graue Mütze, dunkelblaue Arbeitsjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Stahlarbeiter Mitte vierzig, wortkarg, Bartschatten, graue Mütze, dunkelblaue Arbeitsjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `priya` – Priya Raman
@@ -1061,7 +1061,7 @@ Indian American young woman about 19, sharp and eager, brown skin, long black br
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: indisch-amerikanische Studentin um die 19, langer schwarzer Zopf, weißer Schutzhelm unter dem Arm, Bauplanrolle. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: indisch-amerikanische Studentin um die 19, langer schwarzer Zopf, weißer Schutzhelm unter dem Arm, Bauplanrolle. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `gus` – Gus Petrakis
@@ -1080,7 +1080,7 @@ Greek American railway shunter about 60, jolly, olive skin, big grey moustache, 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: griechisch-amerikanischer Rangierer um die 60, großer grauer Schnurrbart, orange Warnweste, Sandwich in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: griechisch-amerikanischer Rangierer um die 60, großer grauer Schnurrbart, orange Warnweste, Sandwich in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `edna` – Edna Price
@@ -1099,7 +1099,7 @@ shopkeeper woman about 70, no-nonsense, light skin, short permed grey hair, half
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Eisenwarenhändlerin um die 70, kurze graue Dauerwelle, Halbmondbrille, brauner Ladenkittel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Eisenwarenhändlerin um die 70, kurze graue Dauerwelle, Halbmondbrille, brauner Ladenkittel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `teague` – Mr. Walter Teague
@@ -1118,7 +1118,7 @@ very thin old man about 80, solemn and kind, light skin, sparse white hair combe
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: sehr dünner alter Mann um die 80, weißes Haar glatt gekämmt, Brille, zu weite graue Weste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: sehr dünner alter Mann um die 80, weißes Haar glatt gekämmt, Brille, zu weite graue Weste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `omaRuth` – Oma Ruth
@@ -1137,7 +1137,7 @@ grandmother in her mid seventies, warm and sharp, light brown skin, short white 
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Großmutter Mitte siebzig, kurze weiße Locken, Brille, hellblauer Hauskittel über geblümter Bluse. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Großmutter Mitte siebzig, kurze weiße Locken, Brille, hellblauer Hauskittel über geblümter Bluse. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `eli` – Eli
@@ -1156,7 +1156,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 10 Jahren, schüchtern, zerzaustes braunes Haar, Kopfhörer um den Hals, blauer Hoodie. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 10 Jahren, schüchtern, zerzaustes braunes Haar, Kopfhörer um den Hals, blauer Hoodie. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `zeitungsjunge` – Zeitungsjunge
@@ -1175,7 +1175,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 12 Jahren, Sommersprossen, rotes Haar unter grauer Schiebermütze, Tasche voller Zeitungen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 12 Jahren, Sommersprossen, rotes Haar unter grauer Schiebermütze, Tasche voller Zeitungen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `rosalind` – Marian Shaw
@@ -1194,7 +1194,7 @@ signal keeper woman about 68, sturdy and sharp-eyed, light skin, grey hair in a 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Stellwerkswärterin um die 68, grauer kurzer Zopf, dunkelgrüne Bahnjacke, Messinglaterne. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Stellwerkswärterin um die 68, grauer kurzer Zopf, dunkelgrüne Bahnjacke, Messinglaterne. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `imogen` – Imogen Rourke
@@ -1213,7 +1213,7 @@ lock keeper woman about 63, weathered and cheerful, light skin, wind-blown grey 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Schleusenwärterin um die 63, windzerzauste graue Locken, gelbe Ölhaut-Jacke, kleine Messingglocke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Schleusenwärterin um die 63, windzerzauste graue Locken, gelbe Ölhaut-Jacke, kleine Messingglocke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `henrik` – Henrik Dahl
@@ -1232,7 +1232,7 @@ innkeeper about 70, jovial, pink light skin, white beard, round belly, white shi
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Wirt um die 70, weißer Bart, runder Bauch, rote Hosenträger, lange blaue Schürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Wirt um die 70, weißer Bart, runder Bauch, rote Hosenträger, lange blaue Schürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ruben` – Kapitän Ruben Castellano
@@ -1251,7 +1251,7 @@ Puerto Rican barge captain about 47, proud, tan skin, short black beard with gre
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: puerto-ricanischer Kapitän um die 47, schwarzer Bart mit Grau, dunkelblaue Kapitänsmütze, Seemannsjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: puerto-ricanischer Kapitän um die 47, schwarzer Bart mit Grau, dunkelblaue Kapitänsmütze, Seemannsjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `odette` – Odette Finch
@@ -1270,7 +1270,7 @@ elegant old woman about 71, mischievous, light skin, silver bob, cat-eye glasses
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: elegante alte Frau um die 71, silberner Bob, Katzenaugenbrille, türkiser Seidenschal, senfgelber Mantel, Heft mit Schachproblemen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: elegante alte Frau um die 71, silberner Bob, Katzenaugenbrille, türkiser Seidenschal, senfgelber Mantel, Heft mit Schachproblemen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kieseritzky` – Lionel Kieseritzky (London 1851)
@@ -1289,13 +1289,13 @@ man about 45 in 1851 London, excitable and beaming, pale skin, dark curly hair a
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann um die 45 im London von 1851, strahlend und aufgeregt, dunkle Locken und Koteletten, brauner Gehrock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann um die 45 im London von 1851, strahlend und aufgeregt, dunkle Locken und Koteletten, brauner Gehrock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 Gemini, Fassung „strahlt“:
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein einzelnes quadratisches Porträt dieser Figur im Pixelstil wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Kieseritzky strahlt über das ganze Gesicht, obwohl er verloren hat.
+Vorlage: ein Feld aus dem fertigen Porträtblatt dieser Figur anhängen (am besten „neutral“), nicht die kleine Spielfigur. Zeichne ein einzelnes quadratisches Porträt dieser Figur im selben Stil, derselben Pixelgröße und mit demselben Gesicht wie die Vorlage, Kopf und Schultern von vorn, Hintergrund einfarbig hellgrün #00FF00, keine Schrift: Kieseritzky strahlt über das ganze Gesicht, obwohl er verloren hat.
 ```
 
 ### `anderssen` – Adolf Anderssen (London 1851)
@@ -1314,7 +1314,7 @@ man about 33 in 1851 London, calm and modest, pale skin, neat dark hair, short b
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann um die 33 im London von 1851, ruhig und bescheiden, kurzer Bart, schlichter schwarzer Gehrock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann um die 33 im London von 1851, ruhig und bescheiden, kurzer Bart, schlichter schwarzer Gehrock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `zeitungsleser` – Zeitungsleser (London 1851)
@@ -1333,7 +1333,7 @@ Victorian gentleman about 50, absorbed, pale skin, grey mutton chops, top hat, d
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: viktorianischer Herr um die 50, graue Koteletten, Zylinder, offene Zeitung. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: viktorianischer Herr um die 50, graue Koteletten, Zylinder, offene Zeitung. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `morphy` – Paul Morphy (New York 1857)
@@ -1352,7 +1352,7 @@ young man about 20 in 1857, quiet and brilliant, pale skin, dark hair parted in 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: junger Mann um die 20 im Jahr 1857, still und glänzend, dunkles gescheiteltes Haar, eleganter schwarzer Gehrock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: junger Mann um die 20 im Jahr 1857, still und glänzend, dunkles gescheiteltes Haar, eleganter schwarzer Gehrock. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ## Akt 3: Silicon Bay, Fähre, Port Delacroix, Pelikaninsel, Desert Springs, Sternwarte
@@ -1373,7 +1373,7 @@ Chinese American woman in her mid forties, direct and honest, light skin, short 
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: chinesisch-amerikanische Frau Mitte vierzig, kurzes graues Haar, Brille auf der Stirn, weißer Blazer über schwarzem Rollkragen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: chinesisch-amerikanische Frau Mitte vierzig, kurzes graues Haar, Brille auf der Stirn, weißer Blazer über schwarzem Rollkragen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `theo` – Theodore „Theo“ Park
@@ -1392,7 +1392,7 @@ Korean American boy, short, child height, 14, earnest, light skin, straight blac
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: koreanisch-amerikanischer Junge von 14, glattes schwarzes Haar mit Pony, dünne Brille, weißes Akademie-Polo. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: koreanisch-amerikanischer Junge von 14, glattes schwarzes Haar mit Pony, dünne Brille, weißes Akademie-Polo. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `dash` – Dashiell „Dash“ Moore
@@ -1411,7 +1411,7 @@ young man about 19, fast-talking, dark brown skin, short fade haircut, bike helm
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: junger Mann um die 19, schnell und redselig, Kurzhaarschnitt, Fahrradhelm, limettengrüne Lieferjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: junger Mann um die 19, schnell und redselig, Kurzhaarschnitt, Fahrradhelm, limettengrüne Lieferjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `rosie` – Rosie (Rosalind Ortiz)
@@ -1430,7 +1430,7 @@ Mexican American woman in her early thirties, warm and loud, brown skin, curly b
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: mexikanisch-amerikanische Frau Anfang dreißig, schwarze Locken unter rotem Tuch, rote Schürze, große Kreolen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: mexikanisch-amerikanische Frau Anfang dreißig, schwarze Locken unter rotem Tuch, rote Schürze, große Kreolen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `empfangsroboter` – Empfangsroboter
@@ -1464,7 +1464,7 @@ young woman about 19, bubbly streamer, light tan skin, pink and purple ombre hai
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Streamerin um die 19, rosa-lila Haar in zwei Dutts, weißes Headset, hellblaue zu große Jacke, Handy am Stab. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Streamerin um die 19, rosa-lila Haar in zwei Dutts, weißes Headset, hellblaue zu große Jacke, Handy am Stab. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kowalczyk` – Mrs. Kowalczyk
@@ -1483,7 +1483,7 @@ truck driver woman about 55, gruff and kind, light skin, short dyed red hair, tr
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Fernfahrerin um die 55, kurzes rot gefärbtes Haar, Truckerkappe, schwarze Lederweste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Fernfahrerin um die 55, kurzes rot gefärbtes Haar, Truckerkappe, schwarze Lederweste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `schiffskoch` – Mr. Ruiz
@@ -1502,7 +1502,7 @@ ship's cook about 50, cheerful, brown skin, black moustache, white cook's cap, w
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Schiffskoch um die 50, schwarzer Schnurrbart, weiße Kochmütze, Kelle. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Schiffskoch um die 50, schwarzer Schnurrbart, weiße Kochmütze, Kelle. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kapitaen` – Kapitän Fall
@@ -1521,7 +1521,7 @@ ferry captain about 60, calm, weathered light skin, white beard, white captain's
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Fährkapitän um die 60, weißer Bart, weiße Kapitänsmütze, dunkelblauer Mantel mit Goldknöpfen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Fährkapitän um die 60, weißer Bart, weiße Kapitänsmütze, dunkelblauer Mantel mit Goldknöpfen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `faehrmann` – Der Fährmann (Silas Pike)
@@ -1540,7 +1540,7 @@ old ferryman about 66, secretive, tanned skin, grey ponytail, faded blue knit ca
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alter Fährmann um die 66, grauer Pferdeschwanz, blaue Strickmütze, grauer Wollpullover. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alter Fährmann um die 66, grauer Pferdeschwanz, blaue Strickmütze, grauer Wollpullover. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `guidry` – Mr. Guidry
@@ -1559,7 +1559,7 @@ Cajun man about 45, steady, tanned skin, black stubble, mud-stained white t-shir
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann um die 45 aus dem Delta, Bartschatten, schlammverschmiertes weißes Shirt, grüne Wathose, Schaufel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann um die 45 aus dem Delta, Bartschatten, schlammverschmiertes weißes Shirt, grüne Wathose, Schaufel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `odile` – Miss Odile Fontaine
@@ -1578,7 +1578,7 @@ Creole woman in her early sixties, dignified and warm, dark brown skin, white ha
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: kreolische Frau Anfang sechzig, würdevoll, dunkelbraune Haut, weißes Haar im Knoten, dunkelblaues Kleid mit kleinen weißen Notenschlüsseln. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: kreolische Frau Anfang sechzig, würdevoll, dunkelbraune Haut, weißes Haar im Knoten, dunkelblaues Kleid mit kleinen weißen Notenschlüsseln. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `remy` – Rémy Arceneaux
@@ -1597,7 +1597,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 16 Jahren, stolz, dunkelbraune Haut, lila Schulbandjacke mit Goldrand, Trompetenkasten. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 16 Jahren, stolz, dunkelbraune Haut, lila Schulbandjacke mit Goldrand, Trompetenkasten. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `lou` – Lou (Louise Thibodeaux)
@@ -1616,7 +1616,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 12 Jahren, langes verwuscheltes braunes Haar mit eingeflochtenen Muscheln, türkises Shirt, Notizbuch. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 12 Jahren, langes verwuscheltes braunes Haar mit eingeflochtenen Muscheln, türkises Shirt, Notizbuch. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `batiste` – Mr. Lucien Batiste
@@ -1635,7 +1635,7 @@ Creole boat mender in his late fifties, unhurried, dark skin, grey stubble, stra
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: kreolischer Bootsflicker Ende fünfzig, grauer Bartschatten, Strohhut, verblichenes rotes Hemd, barfuß. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: kreolischer Bootsflicker Ende fünfzig, grauer Bartschatten, Strohhut, verblichenes rotes Hemd, barfuß. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `henri` – Henri Whitlock-Duval
@@ -1654,7 +1654,7 @@ Creole piano builder about 50, gentle, medium brown skin, short curly grey-black
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Klavierbauer um die 50, mittelbraune Haut, kurzes lockiges grauschwarzes Haar, dünner Schnurrbart, Lederschürze mit Sägemehl. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Klavierbauer um die 50, mittelbraune Haut, kurzes lockiges grauschwarzes Haar, dünner Schnurrbart, Lederschürze mit Sägemehl. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `celeste` – Céleste Whitlock-Duval
@@ -1673,7 +1673,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 15 Jahren, lockiges Haar im hohen Puschel, große weiße Kopfhörer, oranger Hoodie, Skateboard. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 15 Jahren, lockiges Haar im hohen Puschel, große weiße Kopfhörer, oranger Hoodie, Skateboard. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `arceneaux` – Mrs. Arceneaux
@@ -1692,7 +1692,7 @@ Creole grandmother in her seventies, proud, dark brown skin, grey hair under a c
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: kreolische Großmutter um die 75, buntes Kopftuch, geblümte Schürze, Blech mit Gebäck. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: kreolische Großmutter um die 75, buntes Kopftuch, geblümte Schürze, Blech mit Gebäck. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `pepe` – Pépé Thibodeaux
@@ -1711,7 +1711,7 @@ very old fisherman about 84, wry, tanned wrinkled skin, white stubble, faded cap
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: sehr alter Fischer um die 84, weißer Bartschatten, verblichene Kapitänsmütze, geflicktes blaues Hemd, Blechkiste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: sehr alter Fischer um die 84, weißer Bartschatten, verblichene Kapitänsmütze, geflicktes blaues Hemd, Blechkiste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `blaeser` – Mabel (Bläserin im Musikhaus)
@@ -1730,7 +1730,7 @@ Black woman about 40, joyful musician, dark skin, short natural hair, gold hoop 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Musikerin um die 40, kurzes Naturhaar, goldene Kreolen, lila Paillettenweste, Posaune. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Musikerin um die 40, kurzes Naturhaar, goldene Kreolen, lila Paillettenweste, Posaune. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `theron` – Theron
@@ -1749,7 +1749,7 @@ airboat driver about 35, laid-back, tanned skin, sun-bleached blond hair, aviato
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Luftbootführer um die 35, sonnengebleichtes Haar, Pilotenbrille, ärmelloses grünes Shirt. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Luftbootführer um die 35, sonnengebleichtes Haar, Pilotenbrille, ärmelloses grünes Shirt. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `delphine` – Delphine
@@ -1768,7 +1768,7 @@ fisherwoman about 50, tough and witty, dark brown skin, short grey locs, orange 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Fischerin um die 50, kurze graue Locs, orange Fischerlatzhose, Fischkorb. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Fischerin um die 50, kurze graue Locs, orange Fischerlatzhose, Fischkorb. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `oldPete` – Old Pete
@@ -1787,7 +1787,7 @@ old net maker about 75, patient, weathered light skin, long white beard, knitted
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alter Netzmacher um die 75, langer weißer Bart, graue Strickmütze, dicker Fischerpullover, Netz über dem Arm. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alter Netzmacher um die 75, langer weißer Bart, graue Strickmütze, dicker Fischerpullover, Netz über dem Arm. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `coral` – Coral
@@ -1806,7 +1806,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 8 Jahren, zwei lockige Zöpfe, gelbe Regenjacke, rote Gummistiefel, Eimer mit Muscheln. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 8 Jahren, zwei lockige Zöpfe, gelbe Regenjacke, rote Gummistiefel, Eimer mit Muscheln. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `mira` – Mira Castillo
@@ -1825,7 +1825,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 10 Jahren, ernst und schnell, dicker schwarzer Zopf, staubiges rotes Halstuch, ausgeblichenes grünes Shirt. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 10 Jahren, ernst und schnell, dicker schwarzer Zopf, staubiges rotes Halstuch, ausgeblichenes grünes Shirt. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `tomas` – Tomás Castillo
@@ -1844,7 +1844,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 17 Jahren, gelassen, schwarze Haare unter verkehrter Kappe, ölverschmierter grauer Mechanikeroverall, Ratschenschlüssel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 17 Jahren, gelassen, schwarze Haare unter verkehrter Kappe, ölverschmierter grauer Mechanikeroverall, Ratschenschlüssel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `dot` – Dot (Dorothy Marsh)
@@ -1863,7 +1863,7 @@ old woman about 70, eccentric and warm, light skin, grey hair in pink curlers, c
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alte Frau um die 70, graue Haare auf rosa Lockenwicklern, Katzenaugenbrille, türkiser Hausmantel, Briefbündel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alte Frau um die 70, graue Haare auf rosa Lockenwicklern, Katzenaugenbrille, türkiser Hausmantel, Briefbündel. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `buck` – Buck Harmon
@@ -1882,7 +1882,7 @@ gas station attendant about 60, loud joker, sunburnt light skin, grey stubble, t
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Tankwart um die 60, Zahnstocher im Mund, rote Kappe, blaues Arbeitshemd mit Namensschild. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Tankwart um die 60, Zahnstocher im Mund, rote Kappe, blaues Arbeitshemd mit Namensschild. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `okoro` – Mr. Samuel Okoro
@@ -1901,7 +1901,7 @@ Nigerian American bookseller about 70, quiet and courteous, dark skin, short whi
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: nigerianisch-amerikanischer Buchhändler um die 70, kurzes weißes Haar, weißer Kinnbart, Brille, braune Strickjacke, Fliege. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: nigerianisch-amerikanischer Buchhändler um die 70, kurzes weißes Haar, weißer Kinnbart, Brille, braune Strickjacke, Fliege. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `hafenarbeiter` – Der Hafenarbeiter von 1852
@@ -1920,7 +1920,7 @@ dock worker about 30 in 1852, strong and modest, dark skin, short beard, worn li
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Hafenarbeiter um die 30 im Jahr 1852, kräftig und bescheiden, kurzer Bart, abgetragenes Leinenhemd, Mütze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Hafenarbeiter um die 30 im Jahr 1852, kräftig und bescheiden, kurzer Bart, abgetragenes Leinenhemd, Mütze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `claire` – Claire Whitlock (1852)
@@ -1939,7 +1939,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 8 Jahren im Jahr 1852, frech, dunkle Zöpfe, schlichtes blaues Kleid mit Leimflecken, weiße Schürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 8 Jahren im Jahr 1852, frech, dunkle Zöpfe, schlichtes blaues Kleid mit Leimflecken, weiße Schürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `vaterWhitlock` – Ambroses Vater (1840 und 1852)
@@ -1958,7 +1958,7 @@ piano tuner about 45 in 1852, patient, pale skin, grey hair, short grey beard, b
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Klavierstimmer um die 45 im Jahr 1852, graues Haar, kurzer grauer Bart, Lederschürze, Stimmhammer. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Klavierstimmer um die 45 im Jahr 1852, graues Haar, kurzer grauer Bart, Lederschürze, Stimmhammer. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `holloway` – Mrs. Holloway
@@ -1977,7 +1977,7 @@ hiker woman about 60, energetic, dark brown skin, short grey natural hair, sun v
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Wanderin um die 60, kurzes graues Naturhaar, Sonnenschild, lila Wanderjacke, Karte in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Wanderin um die 60, kurzes graues Naturhaar, Sonnenschild, lila Wanderjacke, Karte in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ngata` – Dr. Ngata
@@ -1996,7 +1996,7 @@ Maori New Zealander astronomer about 55, warm and curious, brown skin, grey curl
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Astronom um die 55, graues lockiges Haar, kurzer Bart, dicke Brille, dunkelblaue Daunenjacke, Stirnlampe. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Astronom um die 55, graues lockiges Haar, kurzer Bart, dicke Brille, dunkelblaue Daunenjacke, Stirnlampe. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `lucia` – Lucía
@@ -2015,7 +2015,7 @@ astronomy student about 23, cheerful, light brown skin, long black hair in a mes
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Studentin um die 23, langer schwarzer Knoten mit Bleistift, roter Strickschal, grauer Parka. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Studentin um die 23, langer schwarzer Knoten mit Bleistift, roter Strickschal, grauer Parka. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ## Akt 4: Hochebene, Summit City, Crossroads, Pinewood, Ghost Town, See, Capital Arena
@@ -2036,7 +2036,7 @@ slim woman in her mid sixties, austere and kind, pale skin, white hair tied back
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: schmale Frau Mitte sechzig, streng und freundlich, weißes streng zurückgebundenes Haar, dunkelgrauer Wollmantel, cremefarbener Rollkragen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: schmale Frau Mitte sechzig, streng und freundlich, weißes streng zurückgebundenes Haar, dunkelgrauer Wollmantel, cremefarbener Rollkragen. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kit` – Kit Aldana
@@ -2055,7 +2055,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 15 Jahren, kurzes schwarzes Haar unter roter Strickmütze, orange Fleecejacke, Seil über der Schulter. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 15 Jahren, kurzes schwarzes Haar unter roter Strickmütze, orange Fleecejacke, Seil über der Schulter. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `haraldsen` – Mr. Nils Haraldsen
@@ -2074,7 +2074,7 @@ Norwegian American man about 70, calm, ruddy light skin, white beard, wool cap, 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: norwegisch-amerikanischer Mann um die 70, weißer Bart, Wollmütze, dicker gemusterter Norwegerpullover. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: norwegisch-amerikanischer Mann um die 70, weißer Bart, Wollmütze, dicker gemusterter Norwegerpullover. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `sol` – Bergführerin Sol (Soledad Reyna)
@@ -2093,7 +2093,7 @@ mountain guide woman in her mid thirties, confident, brown skin, long black brai
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bergführerin Mitte dreißig, langer schwarzer Zopf, Sonnenbrille auf dem Kopf, rote Jacke, Karabiner am Gurt. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bergführerin Mitte dreißig, langer schwarzer Zopf, Sonnenbrille auf dem Kopf, rote Jacke, Karabiner am Gurt. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `wren` – Wren Okoro
@@ -2112,7 +2112,7 @@ young climber woman about 25, steady, dark skin, short natural hair under a whit
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Kletterin um die 25, kurzes Naturhaar unter weißem Helm, lila Kletteroberteil, Gurt mit Seil. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Kletterin um die 25, kurzes Naturhaar unter weißem Helm, lila Kletteroberteil, Gurt mit Seil. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ferris` – Sol Ferris
@@ -2131,7 +2131,7 @@ young climber woman about 28, daring, freckled light skin, copper red hair in a 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Kletterin um die 28, Sommersprossen, kupferroter Zopf, oranger Helm, Kreidebeutel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Kletterin um die 28, Sommersprossen, kupferroter Zopf, oranger Helm, Kreidebeutel. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kira` – Kira Vell
@@ -2150,7 +2150,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 13 Jahren, selbstbewusst und witzig, langes glattes schwarzes Haar, Jeansjacke mit Aufnähern über rotem Hoodie, geschnitzte Falkenfigur. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 13 Jahren, selbstbewusst und witzig, langes glattes schwarzes Haar, Jeansjacke mit Aufnähern über rotem Hoodie, geschnitzte Falkenfigur. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 _Hinweis:_ Familie Vell: Menschen von heute mit heutiger Kleidung. Keine Kostüme, keine Federn, kein Schmuck, der eine Herkunft „ausstellt“. Für die Vell-Familien gilt die Sensibilitätslesung vor der Veröffentlichung.
@@ -2171,7 +2171,7 @@ woman about 40, brisk teacher, medium brown skin, black hair in a low ponytail, 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Lehrerin um die 40, schwarzer tiefer Pferdeschwanz, Pfeife um den Hals, dunkelblaue Schul-Fleecejacke, Klemmbrett. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Lehrerin um die 40, schwarzer tiefer Pferdeschwanz, Pfeife um den Hals, dunkelblaue Schul-Fleecejacke, Klemmbrett. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `joss` – Joss Vell
@@ -2190,7 +2190,7 @@ man about 45, laid-back mechanic, medium brown skin, short black hair, short bea
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mechaniker um die 45, kurzes schwarzes Haar, kurzer Bart, verblichenes blaues Arbeitshemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mechaniker um die 45, kurzes schwarzes Haar, kurzer Bart, verblichenes blaues Arbeitshemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `darlene` – Darlene Moss
@@ -2209,7 +2209,7 @@ diner owner woman about 60, big laugh, light skin, big teased blonde hair, pink 
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Raststättenwirtin um die 60, große toupierte blonde Haare, rosa Kellnerinnenkleid, Kaffeekanne. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Raststättenwirtin um die 60, große toupierte blonde Haare, rosa Kellnerinnenkleid, Kaffeekanne. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `bell` – Rangerin Bell
@@ -2228,7 +2228,7 @@ park ranger woman about 45, firm and friendly, dark brown skin, short grey-black
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Rangerin um die 45, kurzes grauschwarzes Haar, Rangerhut, khakifarbenes Hemd mit Abzeichen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Rangerin um die 45, kurzes grauschwarzes Haar, Rangerhut, khakifarbenes Hemd mit Abzeichen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `rayCastillo` – Ray Castillo
@@ -2247,7 +2247,7 @@ storm chaser man about 40, excited, tan skin, black stubble, red cap, windbreake
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Sturmjäger um die 40, Bartschatten, rote Kappe, Windjacke mit Aufnähern, Messgerät in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Sturmjäger um die 40, Bartschatten, rote Kappe, Windjacke mit Aufnähern, Messgerät in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `dolores` – Dolores
@@ -2266,7 +2266,7 @@ fairground woman about 50, theatrical, olive skin, big black curls, red lipstick
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Schaustellerin um die 50, große schwarze Locken, roter Lippenstift, lila Samtweste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Schaustellerin um die 50, große schwarze Locken, roter Lippenstift, lila Samtweste. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ike` – Ike
@@ -2285,7 +2285,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 11 Jahren, freundlich, schwarze Locken, große rote Fliege, rot-weiß gestreiftes Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 11 Jahren, freundlich, schwarze Locken, große rote Fliege, rot-weiß gestreiftes Hemd. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `hollis` – Rangerin Maya Hollis
@@ -2304,7 +2304,7 @@ park ranger woman in her late twenties, calm, light skin, auburn hair in a low b
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Rangerin Ende zwanzig, rotbraunes Haar im Knoten, grüne Rangermütze, olivgrüne Jacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Rangerin Ende zwanzig, rotbraunes Haar im Knoten, grüne Rangermütze, olivgrüne Jacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ezra` – Ezra Quint
@@ -2323,7 +2323,7 @@ camp counselor about 20, goofy and warm, light brown skin, curly dark hair, brig
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Campbetreuer um die 20, lockiges dunkles Haar, knallorange Camp-Shirt, Gitarre auf dem Rücken. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Campbetreuer um die 20, lockiges dunkles Haar, knallorange Camp-Shirt, Gitarre auf dem Rücken. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `greta` – Greta
@@ -2342,7 +2342,7 @@ hut keeper woman about 55, hearty, ruddy light skin, blonde braids pinned around
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Hüttenwirtin um die 55, blonde um den Kopf gesteckte Zöpfe, schlichtes grünes Wollkleid mit grauer Schürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Hüttenwirtin um die 55, blonde um den Kopf gesteckte Zöpfe, schlichtes grünes Wollkleid mit grauer Schürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `juniper` – Juniper
@@ -2361,7 +2361,7 @@ young woman about 22, wild and cheerful, tanned skin, messy blonde dreadlocks, y
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Kletterin um die 22, wilde blonde Dreadlocks, gelber Helm, rotes Top. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Kletterin um die 22, wilde blonde Dreadlocks, gelber Helm, rotes Top. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `pruitt` – Mr. Pruitt
@@ -2380,7 +2380,7 @@ old prospector-looking man about 78, quiet, weathered tanned skin, very pale blu
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: alter Mann um die 78, sehr helle blaue Augen unter breitem staubigem Hut, verblichenes Jeanshemd, Lederweste, Metalldetektor. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: alter Mann um die 78, sehr helle blaue Augen unter breitem staubigem Hut, verblichenes Jeanshemd, Lederweste, Metalldetektor. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `gideon` – Gideon (Schmied, 1866)
@@ -2399,7 +2399,7 @@ blacksmith about 40 in 1866, big and gentle, dark skin, shaved head, short beard
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Schmied um die 40 im Jahr 1866, groß und sanft, kahl rasiert, kurzer Bart, riesige Hände, Lederschürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Schmied um die 40 im Jahr 1866, groß und sanft, kahl rasiert, kurzer Bart, riesige Hände, Lederschürze. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `postreiter` – Postreiter (1866)
@@ -2418,7 +2418,7 @@ mail rider about 25 in 1866, hurried, light skin, dusty brown hair, wide hat, lo
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Postreiter um die 25 im Jahr 1866, staubiges Haar, breiter Hut, langer Staubmantel, Ledertasche. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Postreiter um die 25 im Jahr 1866, staubiges Haar, breiter Hut, langer Staubmantel, Ledertasche. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `abe` – Abe Lindgren
@@ -2437,7 +2437,7 @@ lighthouse keeper about 72, gentle storyteller, light skin, white beard, navy kn
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Leuchtturmwärter um die 72, weißer Bart, dunkelblaue Strickmütze und Pullover, Messingfernrohr. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Leuchtturmwärter um die 72, weißer Bart, dunkelblaue Strickmütze und Pullover, Messingfernrohr. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `earl` – Earl Dubois
@@ -2456,7 +2456,7 @@ Black trucker about 60, easygoing, dark skin, grey beard, red trucker cap, brown
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Schwarzer Fernfahrer um die 60, grauer Bart, rote Truckerkappe, braune Lederjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Schwarzer Fernfahrer um die 60, grauer Bart, rote Truckerkappe, braune Lederjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `mags` – Mags
@@ -2475,7 +2475,7 @@ woman about 35, sharp and quick, light skin, short platinum hair, black leather 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Frau um die 35, kurzes platinblondes Haar, schwarze Lederjacke voller Kreidestaub, Kreide hinter dem Ohr. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Frau um die 35, kurzes platinblondes Haar, schwarze Lederjacke voller Kreidestaub, Kreide hinter dem Ohr. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `ruthKeene` – Ruth Keene („Mama Bear“)
@@ -2494,7 +2494,7 @@ big-hearted trucker woman about 55, sturdy, light brown skin, grey curls, black 
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Fernfahrerin um die 55, graue Locken, schwarze Kappe mit Bärenaufnäher, rotes Flanellhemd, eigene Schachuhr. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Fernfahrerin um die 55, graue Locken, schwarze Kappe mit Bärenaufnäher, rotes Flanellhemd, eigene Schachuhr. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 _Hinweis:_ `mamaBear` und `ruthKeene` sind dieselbe Person: eine Figur, zwei Kennungen.
@@ -2515,7 +2515,7 @@ street event host about 30, energetic, dark brown skin, shaved sides with short 
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Gastgeberin um die 30, kurze Locs, neongelbe Bomberjacke, Kreide in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Gastgeberin um die 30, kurze Locs, neongelbe Bomberjacke, Kreide in der Hand. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `dime` – Dime
@@ -2534,7 +2534,7 @@ fast-talking man about 40, flashy, light skin, slicked back black hair, gold cha
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann um die 40, redet ununterbrochen, zurückgegelte schwarze Haare, Goldkette, glänzender grüner Trainingsanzug. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann um die 40, redet ununterbrochen, zurückgegelte schwarze Haare, Goldkette, glänzender grüner Trainingsanzug. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `turnierleiterin` – Turnierleiterin
@@ -2553,7 +2553,7 @@ tournament director woman about 55, fair and firm, dark skin, short grey afro, r
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Turnierleiterin um die 55, kurzes graues Afro-Haar, eckige Brille, dunkelblauer Blazer mit Abzeichen, Klemmbrett. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Turnierleiterin um die 55, kurzes graues Afro-Haar, eckige Brille, dunkelblauer Blazer mit Abzeichen, Klemmbrett. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `bea` – Bea Lindqvist
@@ -2572,7 +2572,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mädchen von 17 Jahren, blonder Seitenzopf, runde Brille, gelbe Strickjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mädchen von 17 Jahren, blonder Seitenzopf, runde Brille, gelbe Strickjacke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `marcus` – Marcus Oyelaran
@@ -2591,7 +2591,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 16 Jahren, höflich und konzentriert, dunkle Haut, dunkelblauer Schulblazer. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 16 Jahren, höflich und konzentriert, dunkle Haut, dunkelblauer Schulblazer. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `tobias` – Tobias Wren
@@ -2610,7 +2610,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 18 Jahren, nervös, zerzaustes braunes Haar, schwarzer Hoodie. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 18 Jahren, nervös, zerzaustes braunes Haar, schwarzer Hoodie. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kade` – Kade Sterling
@@ -2629,7 +2629,7 @@ PixelLab:
 Gemini, Porträtblatt (3×2):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 17 Jahren, arrogant, zurückgekämmtes blondes Haar, weiße Konzern-Teamjacke, weiße Hightech-Turnschuhe. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Junge von 17 Jahren, arrogant, zurückgekämmtes blondes Haar, weiße Konzern-Teamjacke, weiße Hightech-Turnschuhe. Blatt mit 3 Spalten × 2 Zeilen, sechs gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt, nachdenklich, überrascht, bitter, lacht. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `kellner` – Kellner
@@ -2648,7 +2648,7 @@ waiter about 30, polite, light brown skin, neat black hair, black vest over a wh
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Kellner um die 30, schwarze Weste über weißem Hemd, schwarze Fliege, Tablett. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Kellner um die 30, schwarze Weste über weißem Hemd, schwarze Fliege, Tablett. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `wanderer` – Wanderer
@@ -2667,7 +2667,7 @@ hiker man about 50, steady, light skin, grey beard, bucket hat, big yellow backp
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Wanderer um die 50, grauer Bart, Fischerhut, großer gelber Rucksack, Wanderstöcke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Wanderer um die 50, grauer Bart, Fischerhut, großer gelber Rucksack, Wanderstöcke. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `z1` – Z-1 (Greifarm)
@@ -2727,7 +2727,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Kind A (Grundschule, Mädchen), genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Kind A (Grundschule, Mädchen), genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.kindB` – Kind B (Grundschule, Junge)
@@ -2744,7 +2744,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Kind B (Grundschule, Junge), genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Kind B (Grundschule, Junge), genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.jugend` – Jugendliche Person
@@ -2761,7 +2761,7 @@ PixelLab:
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Jugendliche Person, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Jugendliche Person, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.studentin` – Studentin oder Student
@@ -2778,7 +2778,7 @@ university student about 21, busy, East Asian, black bob haircut, round glasses,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Studentin oder Student, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Studentin oder Student, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.konzern` – Mitarbeiterin von Perfect Move
@@ -2795,7 +2795,7 @@ corporate employee about 30, smooth smile, light skin, sleek ponytail, white jac
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mitarbeiterin von Perfect Move, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mitarbeiterin von Perfect Move, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.anzug` – Mann im grauen Anzug
@@ -2812,7 +2812,7 @@ man about 45, cold and polite, light skin, slicked grey hair, dark sunglasses, g
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mann im grauen Anzug, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mann im grauen Anzug, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.arbeiter` – Arbeiterin oder Arbeiter im Werk
@@ -2829,7 +2829,7 @@ factory worker about 40, sturdy, dark skin, yellow hard hat, orange high-visibil
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Arbeiterin oder Arbeiter im Werk, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Arbeiterin oder Arbeiter im Werk, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.bauer` – Bäuerin oder Bauer
@@ -2846,7 +2846,7 @@ farmer about 50, sunburnt light skin, straw hat, plaid shirt, denim overalls, ru
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bäuerin oder Bauer, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bäuerin oder Bauer, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.rentner` – Rentner
@@ -2863,7 +2863,7 @@ old man about 75, calm, brown skin, white beard, brown flat cap, beige cardigan,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Rentner, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Rentner, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.rentnerin` – Rentnerin
@@ -2880,7 +2880,7 @@ old woman about 75, kind, light skin, short white curls, glasses on a chain, lav
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Rentnerin, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Rentnerin, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.wanderer` – Wanderin oder Wanderer
@@ -2897,7 +2897,7 @@ hiker about 35, fit, tan skin, short brown hair, red cap, teal fleece jacket, hi
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Wanderin oder Wanderer, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Wanderin oder Wanderer, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.fischer` – Fischerin, Fischer, Hafenarbeit
@@ -2914,7 +2914,7 @@ fisherman about 55, weathered, dark skin, grey stubble, blue knit cap, yellow oi
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Fischerin, Fischer, Hafenarbeit, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Fischerin, Fischer, Hafenarbeit, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.musik` – Musikerin oder Musiker
@@ -2931,7 +2931,7 @@ street musician about 30, cheerful, dark brown skin, short locs, colourful patte
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Musikerin oder Musiker, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Musikerin oder Musiker, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.ranger` – Rangerin oder Ranger
@@ -2948,7 +2948,7 @@ park ranger about 35, friendly, light skin, flat-brimmed ranger hat, khaki shirt
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Rangerin oder Ranger, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Rangerin oder Ranger, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.service` – Bedienung
@@ -2965,7 +2965,7 @@ waitress about 25, friendly, light brown skin, curly hair in a ponytail, light b
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bedienung, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bedienung, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.fahrer` – Bus- und Fernfahrer
@@ -2982,7 +2982,7 @@ driver about 50, easygoing, light skin, grey stubble, blue cap, blue work jacket
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Bus- und Fernfahrer, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Bus- und Fernfahrer, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
 ### `statist.hist` – Mensch des 19. Jahrhunderts
@@ -2999,5 +2999,5 @@ townsperson about 40 in the 1850s, plain, light skin, side whiskers, bowler hat,
 Gemini, Porträtblatt (2×1):
 
 ```
-Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Mensch des 19. Jahrhunderts, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
+Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur. Die Vorlage ist eine kleine Spielfigur von nur 32 Pixeln Höhe: Übernimm von ihr nur Hautfarbe, Haarfarbe, Frisur und Kleidung, NICHT ihre grobe Pixelgröße. Jedes Porträt ist Pixelkunst mit etwa 64 × 64 Pixeln je Feld, also viel feiner als die Vorlage: klare Augen mit Lichtpunkt, Augenbrauen, Nase und ein ausdrucksvoller Mund, weiche Schattierung in 2 bis 3 Stufen, dunkler Umriss, harte Pixelkanten ohne Weichzeichnen. Die Figur: Mensch des 19. Jahrhunderts, genau wie die Vorlage. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```

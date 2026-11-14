@@ -55,6 +55,10 @@ Für Ambrose: Figur farbig erzeugen (natürliche, blasse Haut), das Geisterhafte
    (neutral, lächelt, nachdenklich, überrascht, bitter, lacht), 3 Spalten × 2 Zeilen, einfarbig
    hellgrüner Hintergrund. Der Hauptchat schneidet und rechnet auf 64×64 herunter.
 5. Nebenfiguren mit wenig Text brauchen nur das neutrale Porträt und eines mit Lächeln.
+   Probe mit Victor (14.11.2026): Mit der kleinen Spielfigur als Vorlage übernimmt Gemini deren
+   grobe Pixel (ein Gesicht aus etwa 16 Pixeln), Einzelporträts geraten dagegen fein und in anderem
+   Stil. Deshalb verlangt der Prompt ausdrücklich etwa 64 × 64 Pixel je Feld und nur Farben, Frisur
+   und Kleidung aus der Vorlage; Einzelporträts nehmen ein Feld des fertigen Blatts als Vorlage.
 6. Figuren, die irgendwo sitzen (Schachspieler, Leser, Gäste; Wunsch des Autors R020):
    zusätzlich „Template motion“ → Sitting für dieselben vier Richtungen. Im Export heißt der
    Ordner `animations/Sitting/<richtung>/` (`frame_000.png` …); der Paketbau nimmt je Richtung das
@@ -72,7 +76,7 @@ Animation). Für rund 100 Figuren reicht die Gratisprobe nicht; das Abo kostet 2
 
 - **Sitzen in den Szenen:** Figur `{ "name": …, "feld": …, "sitzt": "unten" }` (oder `true` für
   unten) auf einem Stuhl-, Bank-, Sessel- oder Sofafeld; Statist mit `"eigenschaften": { "sitzt":
-  "unten" }`, er läuft dann nicht. Kartenbau und Regel 10.55 akzeptieren das
+"unten" }`, er läuft dann nicht. Kartenbau und Regel 10.55 akzeptieren das
   (`pipeline/abenteuer/kartenbau.py`, `sitzrichtung`), die App liest es in
   `app/src/abenteuer/oberwelt/sitzrichtung.ts`.
 - **Kleinere Leinwand (jüngere Kinder 24×24):** Der Paketbau liest die Leinwand aus

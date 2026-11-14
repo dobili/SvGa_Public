@@ -126,11 +126,13 @@ def main() -> None:
         instrumente.laden(PROBEN)
         klangfonts.laden()
     plaene = [s for s in alle() if not argumente.nur or s.kennung in argumente.nur]
-    uebersicht = [baue_satz(satz, argumente.privat) for satz in plaene]
-    datei = MIDI / "uebersicht.json"
-    alt = json.loads(datei.read_text(encoding="utf-8")) if datei.exists() else []
-    neu = {e["kennung"]: e for e in [*alt, *uebersicht]}
-    datei.write_text(json.dumps(list(neu.values()), ensure_ascii=False, indent=1), encoding="utf-8")
+    # Je Stück eine Angabe in buch/arbeit/ton/midi/uebersicht/, damit parallele Läufe sich nicht stören.
+    ordner = MIDI / "uebersicht"
+    ordner.mkdir(parents=True, exist_ok=True)
+    for satz in plaene:
+        angaben = baue_satz(satz, argumente.privat)
+        datei = ordner / f"{satz.kennung}.json"
+        datei.write_text(json.dumps(angaben, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 if __name__ == "__main__":

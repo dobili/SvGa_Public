@@ -40,6 +40,19 @@ Das Skript dafür ist `pipeline/figuren/holz_maserung.py`; es liest die unverän
 Bearbeitung der Holzsätze: Dominik Bilitewski, 2026. Die Bearbeitungen stehen unter
 derselben Lizenz wie das jeweilige Original.
 
+## Pixelfiguren des Schach-Abenteuers (seit 14.11.2026)
+
+Die Bretter des Schach-Abenteuers (`app/src/abenteuer/brett/`, docs/spiel/30, Abschnitt 5)
+zeigen Pixelfiguren. Ihre Formen sind aus den weißen Figuren von **Kiefer & Kirsche** abgeleitet
+(Original: RhosGFX, „Vector Chess Pieces“, https://rhosgfx.itch.io/vector-chess-pieces, unverändert
+in `quelle/rhosgfx/`; laut Seite des Urhebers geprüft am 14.11.2026: „This project is offered for
+free under Creative Commons CC0“): jede Figur auf ein Raster von 18 × 18 Feldern gerechnet (Umriss,
+Körper, Schatten nach Mehrheit der Pixel) und von Hand nachgebessert (symmetrisch, Kreuz, Krone,
+Zinnen und Kerbe des Läufers freigestellt, Bauer runder). Die Raster stehen als Text in
+`app/src/abenteuer/brett/pixelfiguren.ts`; es gibt keine Bilddateien. Die Farben je Material
+(Holz, Plastik, Stein, Metall, glatt, Ton, poliert, Sepia) sind eine Tönung derselben Zeichnung
+(`materialien.ts`). Lizenz der Bearbeitung wie das Original: CC0 1.0 (gemeinfrei).
+
 ## Gold (freischaltbares Extra)
 
 Der Satz „Gold“ ist eine Bearbeitung von Cburnett (seit Gamifizierung P7, 31.10.2026; wählbar ab

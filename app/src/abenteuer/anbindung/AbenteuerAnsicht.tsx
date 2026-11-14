@@ -11,6 +11,8 @@
  * Dokument 02: Name wählbar, Dialoge geschlechtsneutral); er bleibt lokal.
  * Abhängigkeiten: anbindung/dienste.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
  * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü).
+ * Bedienung mit dem Daumen (docs/spiel/30): Die Ansicht trägt data-steuerkreuz (rechts oder links,
+ * Wahl im Spielmenü); bedienung.css legt danach Steuerkreuz, Aktionsknopf, Leiste und Menüknopf.
  */
 import { useEffect, useRef, useState, type ComponentType } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
@@ -19,6 +21,9 @@ import { t } from "../../i18n/sprache";
 import { speicherzustand } from "../../speicher/speicher";
 import { ANFANGSPARTIEN } from "../../spiel/wertung";
 import "../abenteuer.css";
+import "../spielfarben.css";
+import "../bedienung.css";
+import { useEinstellungen } from "../../app/einstellungen";
 import { usePixelrahmen } from "./pixelrahmen";
 import { loeschePaket } from "../paket/paketlader";
 import { leererAbenteuerstand } from "../regeln/spielstand";
@@ -27,6 +32,7 @@ import type { Paketzustand } from "../schnittstelle/paket";
 import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { useAktton } from "../paket/aktton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
+import { Steuerkreuzwahl } from "./Steuerkreuzwahl";
 import { Tonregler } from "./Tonregler";
 
 /** Der geladene Baustein, einmal je Seite. */
@@ -200,6 +206,7 @@ function Spielmenue({
           )}
         </>
       )}
+      <Steuerkreuzwahl />
       <Tonregler />
       <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
         {t("abenteuer.paketLoeschen")}
@@ -224,6 +231,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const [offen, setzeOffen] = useState(false);
   const [menue, setzeMenue] = useState(false);
   const pixelrahmen = usePixelrahmen();
+  // Steuerkreuz rechts oder links (docs/spiel/30): bedienung.css legt danach die Knöpfe.
+  const { abenteuersteuerkreuz } = useEinstellungen();
   // Name des Helden vor dem ersten Start; leer heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
@@ -339,6 +348,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
     <div
       className={`bildschirm bildschirm-abenteuer ${pixelrahmen?.klasse ?? ""}`}
       style={pixelrahmen?.stil}
+      data-steuerkreuz={abenteuersteuerkreuz}
       data-testid="abenteuer"
     >
       <button

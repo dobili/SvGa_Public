@@ -7,9 +7,12 @@
  * - neun Bildsätze nach Wahl des Autors, je drei klassisch, modern und aus Holz
  *   (speicher/format.ts, BILDSAETZE; Herkunft und Lizenz in pipeline/figuren/saetze/LIZENZEN.md).
  * Die SVG-Dateien liegen in public/figuren/<satz>/ und gehören zum Offline-Speicher (Muster *.svg).
- * Abhängigkeiten: figurenpfade.generiert.ts, masse.ts.
+ * Ein Brettstil von außen (brettstil.ts, etwa die Pixelfiguren des Schach-Abenteuers) zeichnet
+ * die Figur selbst; der Satz des Lesers gilt dann dort nicht.
+ * Abhängigkeiten: figurenpfade.generiert.ts, masse.ts, brettstil.ts.
  */
 import type { Figurensatz } from "../../app/einstellungen";
+import { useBrettstil } from "./brettstil";
 import { FIGURENPFADE } from "./figurenpfade.generiert";
 import { FARBEN, FELD } from "./masse";
 
@@ -47,7 +50,9 @@ export function Figur({
   farbe: string;
 }) {
   const pfade = FIGURENPFADE[zeichen];
+  const Stilfigur = useBrettstil()?.Figur;
   if (!pfade) return null;
+  if (Stilfigur) return <Stilfigur zeichen={zeichen} x={x} y={y} />;
   if (satz !== "buch") {
     return (
       <image

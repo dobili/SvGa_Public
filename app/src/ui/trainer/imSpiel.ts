@@ -10,7 +10,7 @@
  * Schalter immer aus; dort ändert sich nichts.
  * Abhängigkeiten: React.
  */
-import { createContext, useContext } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 
 /** Der Kontext; ohne Rundenrahmen des Spiels immer false. */
 export const ImSpielKontext = createContext(false);
@@ -33,4 +33,24 @@ export const HinweisKontext = createContext<(() => void) | null>(null);
 /** Der Rückruf für „Ambrose fragen“ oder null außerhalb des Spiels. */
 export function useHinweismeldung(): (() => void) | null {
   return useContext(HinweisKontext);
+}
+
+/**
+ * Darstellung der Runde im Spiel (docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 4: „Rätsel
+ * verlieren die weiße Trainerkarte“): Das Schach-Abenteuer reicht hier zwei Zeichenfunktionen
+ * herein. `fortschritt` ersetzt den Fortschrittsbalken (dort eine Reihe kleiner Figuren),
+ * `meldung` die grün-roten Rückmeldungen (dort Ambrose in einer Sprechblase). Fehlt eine, bleibt
+ * die Darstellung der App; in der Buch-App ist nichts gesetzt (null).
+ */
+export interface Spielanzeige {
+  readonly fortschritt?: (index: number, anzahl: number) => ReactNode;
+  readonly meldung?: (richtig: boolean, text: string) => ReactNode;
+}
+
+/** Der Kontext der Spielanzeige; außerhalb des Spiels null. */
+export const SpielanzeigeKontext = createContext<Spielanzeige | null>(null);
+
+/** Die Spielanzeige der Runde oder null in der Buch-App. */
+export function useSpielanzeige(): Spielanzeige | null {
+  return useContext(SpielanzeigeKontext);
 }

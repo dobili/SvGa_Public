@@ -24,42 +24,29 @@
   image-rendering: pixelated;
 }
 
-/* Steuerkreuz unten links, Aktionsknopf unten rechts; groß genug für Daumen (48 px). */
+/* Steuerkreuz und Aktionsknopf, groß genug für Daumen (48 px). Lage nach Daumenzonen (rechts oder
+   links, hoch oder quer) in bedienung.css, Farben und Pixelrahmen in spielfarben.css. */
 .abenteuer-steuerkreuz {
   position: absolute;
-  left: calc(var(--raster) * 2);
-  bottom: calc(var(--raster) * 2);
   display: grid;
   grid-template-columns: repeat(3, 48px);
   grid-template-rows: repeat(3, 48px);
-  gap: 2px;
+  /* Breit genug für die Pixelrahmen der Felder (spielfarben.css); bedienung.css rechnet damit. */
+  gap: var(--kreuz-fuge, 8px);
 }
 
 .abenteuer-steuerkreuz button,
 .abenteuer-aktion {
   min-width: 48px;
   min-height: 48px;
-  border: none;
-  border-radius: var(--radius);
-  background: rgba(245, 240, 230, 0.75);
-  color: var(--navy);
   font-size: var(--groesse-gross);
-  font-weight: 600;
   touch-action: none;
-}
-
-.abenteuer-steuerkreuz button:active,
-.abenteuer-aktion:active {
-  background: var(--gold);
 }
 
 .abenteuer-aktion {
   position: absolute;
-  right: calc(var(--raster) * 2);
-  bottom: calc(var(--raster) * 3);
   width: 72px;
   height: 72px;
-  border-radius: 50%;
 }
 
 .abenteuer-aktion[hidden] {
@@ -193,7 +180,8 @@
   font-size: var(--groesse-gross);
 }
 
-/* Menüknopf oben rechts über allem; Spielmenü als Karte über der Welt. */
+/* Menüknopf oben rechts über allem (in der Welt in der Leiste, bedienung.css); Spielmenü als
+   Karte über der Welt. */
 .abenteuer-menueknopf {
   position: absolute;
   top: calc(env(safe-area-inset-top) + var(--raster));
@@ -202,10 +190,6 @@
   z-index: 4;
   min-width: 44px;
   min-height: 44px;
-  border: none;
-  border-radius: var(--radius);
-  background: rgba(245, 240, 230, 0.85);
-  color: var(--navy);
   font-size: 22px;
 }
 
@@ -271,30 +255,8 @@
   font-size: var(--groesse-klein);
 }
 
-/* Tagebuchknopf oben links; das Tagebuch selbst nutzt die Menükarte. */
-/* Unter dem Tagebuch: Übungspartie mit dem Reisebrett, darunter die Schnellreise. */
-.abenteuer-reisebrettknopf.abenteuer-tagebuchknopf {
-  top: calc(var(--raster) * 3 + 88px);
-}
-
-/* Unter dem Tagebuch: Schnellreise mit der Monatskarte. */
-.abenteuer-reisenknopf.abenteuer-tagebuchknopf {
-  top: calc(var(--raster) * 2 + 44px);
-}
-
-.abenteuer-tagebuchknopf {
-  position: absolute;
-  top: var(--raster);
-  left: var(--raster);
-  z-index: 3;
-  min-height: 44px;
-  padding: 0 calc(var(--raster) * 1.5);
-  border: none;
-  border-radius: var(--radius);
-  background: rgba(245, 240, 230, 0.85);
-  color: var(--navy);
-  font-weight: 600;
-}
+/* Tagebuch, Übungspartie und Reisen stehen in der Leiste über dem Steuerkreuz (bedienung.css);
+   das Tagebuch selbst nutzt die Menükarte. */
 
 .abenteuer-tagebuch {
   max-height: calc(100% - var(--raster) * 12);
@@ -406,20 +368,14 @@
   text-align: center;
 }
 
-/* Münzen oben rechts neben dem Spielmenü (docs/spiel/08, G6). */
+/* Münzen oben rechts (docs/spiel/08, G6; nur zum Lesen, deshalb oben, docs/spiel/30). */
 .abenteuer-muenzen {
   position: absolute;
-  top: var(--raster);
+  top: calc(env(safe-area-inset-top) + var(--raster));
   right: calc(var(--raster) * 7);
   z-index: 3;
-  min-height: 44px;
   display: flex;
   align-items: center;
-  padding: 0 var(--raster);
-  border-radius: var(--radius);
-  background: rgba(245, 240, 230, 0.85);
-  color: var(--navy);
-  font-weight: 600;
 }
 
 /* Abspann (Ende von Akt 4): Figuren mit Porträt in einem Raster. */

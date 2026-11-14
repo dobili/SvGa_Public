@@ -91,6 +91,23 @@
         "format": { "$ref": "#/$defs/format" },
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
+        "brett": {
+          "description": "Eigener Brettstil dieser Begegnung statt des Stils ihres Ortes (orte.json, brett; docs/spiel/30, Abschnitt 5), etwa das alte Holzbrett vom Dachboden für Ambrose oder Sepia für eine Erinnerung. Blindschach zeigt nie einen Stil",
+          "enum": [
+            "dachboden",
+            "turniervinyl",
+            "abgegriffen",
+            "ahorn",
+            "steintisch",
+            "stahl",
+            "glas",
+            "treibholz",
+            "sandstein",
+            "schiefer",
+            "turnier",
+            "sepia"
+          ]
+        },
         "variante": {
           "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar; schach960 = Zufallsschach, Grundreihe gemischt (V1); gehoer = Partie nach Gehör (Runde 6, Funkschach): der Gegnerzug erscheint erst als Ansage, dann auf dem Brett. Varianten zählen nie für Nadeln, Wertung oder die App",
           "enum": ["blind", "schach960", "gehoer"]

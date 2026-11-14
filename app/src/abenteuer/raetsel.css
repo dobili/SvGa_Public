@@ -1,0 +1,126 @@
+/*
+ * Rätsel ohne weiße Trainerkarte (docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 4): Die
+ * Aufgabe steht auf Pergament, die Rückmeldung spricht Ambrose in einer Sprechblase mit Porträt
+ * (statt grün-roter Kästen), der Fortschritt ist eine kleine Reihe von Figuren (statt Balken).
+ * Gehört zu anbindung/AufgabenAnsicht.tsx, anbindung/Raetselanzeige.tsx und
+ * anbindung/ErinnerungsRunde.tsx; Farben aus spielfarben.css. Die Trainer der App bleiben, wie sie
+ * sind: Alles hier gilt nur unter .abenteuer-huelle-aufgaben.
+ */
+.abenteuer-huelle-aufgaben {
+  /* Die Trainerkomponenten der App schreiben in --text; auf Navy ist das Creme. */
+  --text: var(--spiel-creme);
+  --text-leise: #c3c9d3;
+  --rand-bedien: var(--spiel-gold-tief);
+}
+
+.abenteuer-huelle-aufgaben .hinweis {
+  margin: 0;
+  color: var(--text-leise);
+}
+
+/* Stand der Runde und Figurenreihe in einer Zeile. */
+.abenteuer-huelle-aufgaben .trainerrunde-kopf {
+  margin: 0;
+}
+
+.abenteuer-figurenreihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--groesse-titel-gross);
+  line-height: 1;
+}
+
+.abenteuer-figurenreihe li {
+  color: rgb(245 240 230 / 30%);
+}
+
+.abenteuer-figurenreihe li[data-zustand="richtig"] {
+  color: var(--spiel-gruen);
+}
+
+.abenteuer-figurenreihe li[data-zustand="falsch"] {
+  color: var(--spiel-rot-hell);
+}
+
+.abenteuer-figurenreihe li[data-zustand="jetzt"] {
+  color: var(--spiel-gold);
+  text-shadow: 0 0 6px rgb(201 162 39 / 60%);
+}
+
+/* Die Aufgabe auf Pergament mit Pixelrand. */
+.abenteuer-huelle-aufgaben .trainer-auftrag {
+  margin: var(--spiel-pixel);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  background: var(--spiel-pergament);
+  color: var(--spiel-navy);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-pergament-tief),
+    inset 0 calc(var(--spiel-pixel) * -1) 0 0 rgb(125 96 7 / 25%);
+  font-size: var(--groesse-grund);
+}
+
+/* Karten der App in der Runde (Warnsignal, Ende der Runde) ebenfalls auf Pergament. */
+.abenteuer-huelle-aufgaben .karte {
+  --text: var(--spiel-navy);
+  --text-leise: #4a5568;
+  border-radius: 0;
+  background: var(--spiel-pergament);
+  color: var(--spiel-navy);
+  box-shadow: 0 0 0 var(--spiel-pixel) var(--spiel-pergament-tief);
+}
+
+/* Grün-rote Meldungen, die nicht über die Spielanzeige laufen, wenigstens in den Spielfarben. */
+.abenteuer-huelle-aufgaben .meldung.gut {
+  color: var(--spiel-gruen);
+}
+
+.abenteuer-huelle-aufgaben .meldung.schlecht {
+  color: var(--spiel-rot-hell);
+}
+
+/* Die Rückmeldung als Sprechblase: Porträt links, Text rechts, Rand grün oder gedämpft rot. */
+.abenteuer-raetselmeldung {
+  display: flex;
+  gap: var(--raster);
+  align-items: center;
+  margin: var(--spiel-pixel);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  background: var(--spiel-creme);
+  color: var(--spiel-navy);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-gruen),
+    0 2px 12px rgb(0 0 0 / 35%);
+}
+
+.abenteuer-raetselmeldung[data-richtig="nein"] {
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-rot),
+    0 2px 12px rgb(0 0 0 / 35%);
+}
+
+.abenteuer-huelle-aufgaben .abenteuer-raetselmeldung .meldung {
+  margin: 0;
+  color: inherit;
+  font-weight: 400;
+}
+
+.abenteuer-raetselmeldung strong {
+  color: var(--spiel-gold-tief);
+}
+
+/* Ambrose halb durchsichtig wie in der Welt und in der Tischblase. */
+.abenteuer-raetselmeldung[data-erscheinung="geist"] .abenteuer-dialog-portraet,
+.abenteuer-raetselmeldung[data-erscheinung="geist"] .abenteuer-portraet-blatt {
+  opacity: 0.6;
+}
+
+/* Auswahl „Welches Motiv war es?“ auf Navy lesbar. */
+.abenteuer-huelle-aufgaben .auswahlfeld {
+  border-radius: 0;
+  background: var(--spiel-creme);
+  color: var(--spiel-navy);
+}

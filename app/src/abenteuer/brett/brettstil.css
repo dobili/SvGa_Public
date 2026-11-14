@@ -1,0 +1,12 @@
+/*
+ * Pixelrahmen um das Brett im Schach-Abenteuer (docs/spiel/30, Abschnitt 5 „Rand im
+ * Pixelrahmen“): drei harte Ringe ohne Weichzeichnung, Farben je Stil aus Zeichnung.tsx.
+ * Ein Schatten statt eines Randes, damit das Brett seine Größe in der Hülle behält.
+ */
+.brett.abenteuer-brettstil {
+  box-shadow:
+    0 0 0 2px var(--brettstil-rahmen-innen),
+    0 0 0 5px var(--brettstil-rahmen-mitte),
+    0 0 0 7px var(--brettstil-rahmen-aussen),
+    4px 4px 0 7px rgb(0 0 0 / 35%);
+}

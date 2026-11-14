@@ -9,12 +9,14 @@
  * mit großzügiger Trefferfläche um die Zielfelder (treffer.ts, R35). Ein neuer Zug gleitet über
  * das Brett (useZuganimation.ts, Zuganimation.tsx, R37).
  * Abhängigkeiten: masse.ts, geometrie.ts, treffer.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
- * useZugton.ts (Ton), useZiehen.ts, useZuganimation.ts, Zuganimation.tsx, i18n.
+ * useZugton.ts (Ton), useZiehen.ts, useZuganimation.ts, Zuganimation.tsx, i18n; brettstil.ts
+ * (Stil von außen, etwa je Ort im Schach-Abenteuer, statt der Wahl des Lesers).
  */
 import { Fragment, useId, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { t } from "../../i18n/sprache";
 import { Beschriftungen } from "./Beschriftung";
+import { useBrettstil } from "./brettstil";
 import { Figur } from "./Figur";
 import { useZugton } from "./useZugton";
 import { Brettbild, Holzfelder } from "./Holzfelder";
@@ -267,10 +269,11 @@ export function Brett({
   vollbild = false,
 }: BrettEigenschaften) {
   const { brettfarben, figurensatz, ton } = useEinstellungen();
-  const farben = BRETTFARBEN[brettfarben];
+  const stil = useBrettstil();
+  const farben = stil?.palette ?? BRETTFARBEN[brettfarben];
   // Holzbilder nur auf bedienbaren Brettern; kleine Bretter in Übersichten bleiben schlicht.
   const bedienbar = beiFeld !== undefined || vollbild;
-  const holz = brettfarben === "holz" && bedienbar;
+  const holz = !stil && brettfarben === "holz" && bedienbar;
   // Ebenso die Materialbretter (seit 0.2.84): ein ganzes Brettbild über den schlichten Feldern.
   const bild = bedienbar ? farben.bild : undefined;
   const kennung = useId().replace(/:/g, "");
@@ -319,15 +322,17 @@ export function Brett({
     gedreht,
   );
   const gezogenesZeichen = gezogen ? figuren.get(gezogen.von) : undefined;
+  const Zugmarke = stil?.Zugmarke ?? Schimmer;
   return (
-    <div className="brett">
+    <div className={stil?.klasse ? `brett ${stil.klasse}` : "brett"} style={stil?.stil}>
       <svg viewBox={`0 0 ${BRETT} ${BRETT}`} role="img" aria-label={beschriftung}>
         {holz && <Holzfelder kennung={kennung} />}
         <Felder gedreht={gedreht} farben={farben} holzkennung={holz ? kennung : null} />
         {bild && <Brettbild pfad={bild} />}
-        {letzterZug && <Schimmer feld={letzterZug.von} gedreht={gedreht} farbe={farben.schimmer} />}
+        {stil?.Unterlage && <stil.Unterlage />}
+        {letzterZug && <Zugmarke feld={letzterZug.von} gedreht={gedreht} farbe={farben.schimmer} />}
         {letzterZug && (
-          <Schimmer feld={letzterZug.nach} gedreht={gedreht} farbe={farben.schimmer} />
+          <Zugmarke feld={letzterZug.nach} gedreht={gedreht} farbe={farben.schimmer} />
         )}
         {ausgewaehlt && <Schimmer feld={ausgewaehlt} gedreht={gedreht} farbe={farben.schimmer} />}
         {gesperrt && <Schimmer feld={gesperrt} gedreht={gedreht} farbe={SPERRFARBE} />}

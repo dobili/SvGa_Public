@@ -19,15 +19,23 @@ import { Fortschrittsbalken } from "../komponenten/bausteine/Fortschrittsbalken"
 import { Kombo } from "../komponenten/bausteine/Kombo";
 import { SammelKnopf } from "../komponenten/lernsammlung/SammelFormular";
 import { AufgabenGabel } from "../komponenten/varianten/VariantenHinweis";
-import { ImSpielKontext } from "./imSpiel";
+import { ImSpielKontext, useSpielanzeige } from "./imSpiel";
 import { SammelstellungKontext, type Loesungslinie } from "./sammelstellung";
 import { NACH_DER_RUNDE } from "./nachDerRunde";
 import type { Runde } from "./useRunde";
 
 const SYMBOLGROESSE = 16;
 
-/** Rückmeldung zu einer Antwort, grün oder rot. */
+/**
+ * Rückmeldung zu einer Antwort, grün oder rot. Im Schach-Abenteuer zeichnet die Spielanzeige sie
+ * (Ambrose in der Sprechblase, imSpiel.ts); der Text bleibt derselbe.
+ */
 export function Antwortmeldung({ richtig, children }: { richtig: boolean; children?: string }) {
+  const anzeige = useSpielanzeige();
+  if (anzeige?.meldung) {
+    const text = `${richtig ? t("trainer.richtig") : t("trainer.falsch")}${children ? ` ${children}` : ""}`;
+    return anzeige.meldung(richtig, text);
+  }
   return (
     <p className={`meldung ${richtig ? "gut" : "schlecht"}`} role="status">
       {richtig ? t("trainer.richtig") : t("trainer.falsch")}
@@ -101,6 +109,7 @@ export function Rundenrahmen({
 }) {
   const [stellung, setzeStellung] = useState<string | null>(null);
   const [linie, setzeLinie] = useState<Loesungslinie | null>(null);
+  const anzeige = useSpielanzeige();
   const melde = useCallback((fen: string, loesung: Loesungslinie | null) => {
     setzeStellung(fen);
     setzeLinie(loesung);
@@ -121,10 +130,14 @@ export function Rundenrahmen({
         {!imSpiel && <Kombo folge={runde.folge} />}
       </div>
       {/* Wie weit die Runde ist, auf einen Blick (DS6); der Satz darüber bleibt für Vorleser. */}
-      <Fortschrittsbalken
-        anteil={{ erreicht: runde.index, gesamt: runde.anzahl }}
-        beschriftung={t("trainer.rundenfortschritt")}
-      />
+      {anzeige?.fortschritt ? (
+        anzeige.fortschritt(runde.index, runde.anzahl)
+      ) : (
+        <Fortschrittsbalken
+          anteil={{ erreicht: runde.index, gesamt: runde.anzahl }}
+          beschriftung={t("trainer.rundenfortschritt")}
+        />
+      )}
       {/* Der Schlüssel setzt die Aufgabe bei „Aufgabe wiederholen“ auf den Anfang zurück. */}
       <SammelstellungKontext value={melde}>
         <ImSpielKontext value={imSpiel}>

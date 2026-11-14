@@ -9,6 +9,8 @@
  * Zeile (dialog/Grossansicht.tsx, T7). `#erscheint` blendet das Porträt ein, `#geist` zeigt es halb
  * durchsichtig (T9); Figuren mit geist: true (Ambrose) sind sonst leicht durchsichtig, außer in
  * Erinnerungen (regeln/geist.ts); `#erinnerung` bis `#erinnerung:aus` zeigt den Dialog und die Karte in Sepia (T10); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
+ * Bedienung mit dem Daumen (docs/spiel/30): Antippen des Textes geht weiter wie „Weiter“; die
+ * Lage von Wahlen und „Weiter“ (hoch und quer) regelt bedienung.css.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useEffect, useState } from "react";
@@ -127,6 +129,7 @@ export function Dialog({
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;
   const sprecher = zeile?.tags.sprecher ?? ERZAEHLER;
   const bild = zeile ? bildpfad(zeile.tags) : null;
+  const textWeiter = schritt.art !== "wahl" && !wartet;
   return (
     <section
       className={erinnerung ? "abenteuer-dialog abenteuer-dialog-erinnerung" : "abenteuer-dialog"}
@@ -148,7 +151,15 @@ export function Dialog({
           <p className="abenteuer-dialog-sprecher">{tSpiel(`figur.${sprecher}.name`)}</p>
         </div>
       )}
-      <p className="abenteuer-dialog-text">{zeile?.text ?? ""}</p>
+      {/* Antippen des Textes geht auch weiter (docs/spiel/30, Abschnitt 2); der Knopf bleibt für
+          Tastatur und Vorleser, deshalb hier nur die Maus- und Fingergeste. */}
+      <p
+        className="abenteuer-dialog-text"
+        data-weiter={textWeiter ? "ja" : undefined}
+        onClick={textWeiter ? weiter : undefined}
+      >
+        {zeile?.text ?? ""}
+      </p>
       {schritt.art === "wahl" ? (
         <div className="abenteuer-dialog-wahlen">
           {schritt.wahlen.map((wahl, i) => (

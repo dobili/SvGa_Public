@@ -3,6 +3,7 @@
   "orte": [
     {
       "kennung": "mapleFalls",
+      "brett": "turniervinyl",
       "name": "ort.mapleFalls.name",
       "nummer": 1,
       "groesse": "klein",
@@ -96,7 +97,8 @@
           "name": "figur.ambrose.name",
           "sprite": "figuren/ambrose.png",
           "dialog": "maple-falls-dachboden.ambrose",
-          "geist": true
+          "geist": true,
+          "wenn": "nicht abschiedGesehen"
         },
         {
           "kennung": "mapleFalls.mutter",
@@ -458,6 +460,7 @@
     },
     {
       "kennung": "cedarCreek",
+      "brett": "ahorn",
       "name": "ort.cedarCreek.name",
       "nummer": 2,
       "groesse": "klein",
@@ -1142,6 +1145,7 @@
     },
     {
       "kennung": "riverton",
+      "brett": "steintisch",
       "name": "ort.riverton.name",
       "nummer": 3,
       "groesse": "mittel",
@@ -1739,6 +1743,7 @@
     },
     {
       "kennung": "ironwood",
+      "brett": "stahl",
       "name": "ort.ironwood.name",
       "nummer": 4,
       "groesse": "mittel",
@@ -2252,6 +2257,7 @@
     },
     {
       "kennung": "erinnerungLondon",
+      "brett": "sepia",
       "name": "ort.erinnerungLondon.name",
       "nummer": 0,
       "staffel": 1,
@@ -2478,6 +2484,7 @@
     },
     {
       "kennung": "siliconBay",
+      "brett": "glas",
       "name": "ort.siliconBay.name",
       "nummer": 5,
       "groesse": "gross",
@@ -2983,6 +2990,7 @@
     },
     {
       "kennung": "portDelacroix",
+      "brett": "treibholz",
       "name": "ort.portDelacroix.name",
       "nummer": 6,
       "groesse": "mittel",
@@ -3402,6 +3410,7 @@
     },
     {
       "kennung": "desertSprings",
+      "brett": "sandstein",
       "name": "ort.desertSprings.name",
       "nummer": 7,
       "groesse": "klein",
@@ -3902,6 +3911,7 @@
     },
     {
       "kennung": "summitCity",
+      "brett": "schiefer",
       "name": "ort.summitCity.name",
       "nummer": 8,
       "groesse": "mittel",
@@ -4993,6 +5003,7 @@
     },
     {
       "kennung": "erinnerungSiedlung",
+      "brett": "sepia",
       "name": "ort.erinnerungSiedlung.name",
       "nummer": 0,
       "staffel": 2,
@@ -5164,6 +5175,7 @@
     },
     {
       "kennung": "capitalArena",
+      "brett": "turnier",
       "name": "ort.capitalArena.name",
       "nummer": 12,
       "groesse": "gross",

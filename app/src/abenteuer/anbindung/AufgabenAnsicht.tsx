@@ -17,6 +17,9 @@
  * der Figur, die die Aufgaben stellt, und der Rundenrahmen mit `imSpiel` (ohne Lernsammlung,
  * „Als Variante öffnen“, „Aufgabe wiederholen“, Kombo). Wer die Aufgaben stellt, spricht oben in
  * der Sprechblase, Ambrose unten (Tischgespräch, docs/spiel/29, anbindung/useRaetselgespraech.ts).
+ * Seit docs/spiel/30 ohne weiße Trainerkarte: Aufgabe auf Pergament, Rückmeldung als Sprechblase,
+ * Fortschritt als Figurenreihe (anbindung/Raetselanzeige.tsx, raetsel.css); quer steht das Brett
+ * links in voller Höhe (huellenlage.css).
  * Sonderfall: Taktikaufgaben melden nur richtig oder falsch; „mit Hilfe“ (halber Punkt) bleibt
  * den Buchübungen der App vorbehalten und kommt hier noch nicht vor.
  */
@@ -28,7 +31,7 @@ import { t } from "../../i18n/sprache";
 import { aendere } from "../../speicher/speicher";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import { useDaten } from "../../ui/komponenten/bausteine/useDaten";
-import { HinweisKontext } from "../../ui/trainer/imSpiel";
+import { HinweisKontext, SpielanzeigeKontext } from "../../ui/trainer/imSpiel";
 import { Rundenrahmen } from "../../ui/trainer/Rundenrahmen";
 import { Endspielaufgabe } from "../../ui/trainer/Endspielaufgabe";
 import { Fallenaufgabe } from "../../ui/trainer/Fallenaufgabe";
@@ -36,6 +39,7 @@ import { Strukturaufgabe } from "../../ui/trainer/Strukturaufgabe";
 import { Taktikaufgabe } from "../../ui/trainer/Taktikaufgabe";
 import { useRunde, type Runde } from "../../ui/trainer/useRunde";
 import type { Massstab } from "../../training/endspieltrainer";
+import { rundenBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
@@ -44,6 +48,7 @@ import { Huelle } from "./Huelle";
 import { Kulisse } from "./Kulisse";
 import { Tischblase, TischblasenRahmen } from "./Tischblase";
 import { useRaetselgespraech } from "./useRaetselgespraech";
+import { useRaetselanzeige } from "./useRaetselanzeige";
 import { sprecherAusSchluessel } from "./huellentexte";
 import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
 import { testantworten } from "./testende";
@@ -67,8 +72,12 @@ function Runde({
 }) {
   const runde = useRunde("taktik", aufgaben.length);
   const ergebnisse = useRef<Antwortergebnis[]>([]);
+  // Dieselben Antworten als Zustand, damit die Figurenreihe sie beim Zeichnen lesen darf.
+  const [antworten, setzeAntworten] = useState<readonly Antwortergebnis[]>([]);
   // Tischgespräch (docs/spiel/29): wer die Aufgaben stellt, kommentiert ab und zu.
   const gespraech = useRaetselgespraech(steller, kennung);
+  // Ohne weiße Trainerkarte (docs/spiel/30): Figurenreihe und Ambrose in der Sprechblase.
+  const anzeige = useRaetselanzeige(steller, antworten);
   const { index, anzahl } = runde;
   useEffect(() => {
     if (anzahl > 1 && index === anzahl - 1) gespraech.vorLetzter(index);
@@ -102,6 +111,7 @@ function Runde({
     beantworte: (richtig) => {
       if (runde.ergebnis === null) {
         ergebnisse.current[runde.index] = richtig ? "richtig" : "falsch";
+        setzeAntworten([...ergebnisse.current]);
         gespraech.beiAntwort(runde.index, richtig);
       }
       runde.beantworte(richtig);
@@ -110,47 +120,49 @@ function Runde({
   return (
     <>
       <HinweisKontext value={() => gespraech.beiHinweis(runde.index)}>
-        <Rundenrahmen
-          kennung="taktik"
-          runde={mitProtokoll}
-          nochmal={() => {}}
-          zurAuswahl={null}
-          imSpiel
-        >
-          <div key={runde.index} className="trainer-aufgabe">
-            {aktuelle.art === "endspiel" ? (
-              massstab ? (
-                <Endspielaufgabe
-                  aufgabe={aktuelle.aufgabe}
-                  massstab={massstab}
+        <SpielanzeigeKontext value={anzeige}>
+          <Rundenrahmen
+            kennung="taktik"
+            runde={mitProtokoll}
+            nochmal={() => {}}
+            zurAuswahl={null}
+            imSpiel
+          >
+            <div key={runde.index} className="trainer-aufgabe">
+              {aktuelle.art === "endspiel" ? (
+                massstab ? (
+                  <Endspielaufgabe
+                    aufgabe={aktuelle.aufgabe}
+                    massstab={massstab}
+                    runde={mitProtokoll}
+                  />
+                ) : (
+                  <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+                )
+              ) : aktuelle.art === "falle" ? (
+                <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+              ) : aktuelle.art === "struktur" ? (
+                <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+              ) : aktuelle.art === "zusatz" ? (
+                <Taktikaufgabe
+                  aufgabe={aktuelle.aufgabe.aufgabe}
                   runde={mitProtokoll}
+                  motivAbfragen={false}
+                  zusatz={{
+                    themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
+                    vorher: aktuelle.aufgabe.vorher,
+                  }}
                 />
               ) : (
-                <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
-              )
-            ) : aktuelle.art === "falle" ? (
-              <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-            ) : aktuelle.art === "struktur" ? (
-              <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-            ) : aktuelle.art === "zusatz" ? (
-              <Taktikaufgabe
-                aufgabe={aktuelle.aufgabe.aufgabe}
-                runde={mitProtokoll}
-                motivAbfragen={false}
-                zusatz={{
-                  themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
-                  vorher: aktuelle.aufgabe.vorher,
-                }}
-              />
-            ) : (
-              <Taktikaufgabe
-                aufgabe={aktuelle.aufgabe}
-                runde={mitProtokoll}
-                motivAbfragen={aktuelle.motivAbfragen}
-              />
-            )}
-          </div>
-        </Rundenrahmen>
+                <Taktikaufgabe
+                  aufgabe={aktuelle.aufgabe}
+                  runde={mitProtokoll}
+                  motivAbfragen={aktuelle.motivAbfragen}
+                />
+              )}
+            </div>
+          </Rundenrahmen>
+        </SpielanzeigeKontext>
       </HinweisKontext>
       <Raetseltest beiWahl={setzeTest} />
     </>
@@ -182,6 +194,8 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
   const fallen = useDaten(ladeFallen, "trainer-falle");
   const strukturen = useDaten(ladeStrukturen, "trainer-struktur");
   const endspiele = useDaten(ladeEndspiele, "trainer-endspiel");
+  // Brett des Ortes der Runde, Erinnerungen in Sepia (docs/spiel/30, Abschnitt 5).
+  useAbenteuerBrettstil(rundenBrettquelle(auftrag));
   const aufgaben = useMemo(() => {
     if (!auftrag || taktik.art !== "fertig" || zusaetze.art !== "fertig") return null;
     if (fallen.art === "laedt" || strukturen.art === "laedt" || endspiele.art === "laedt")

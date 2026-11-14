@@ -7,10 +7,15 @@
  * Name, der Ort) und den Pixelrahmen; den Inhalt hängen PartieHuelle.tsx und AufgabenAnsicht.tsx
  * ein. Navigation, Kopfzeile und Leiste der App kommen hier nicht vor.
  * Abhängigkeiten: anbindung/pixelrahmen.ts, dialog/Portraet.tsx, texte/texte.ts, anbindung/dienste.ts.
+ * Aussehen: Farbsystem und Pixelknöpfe des Spiels (spielfarben.css), Lage nach Daumenzonen hoch
+ * und quer (huellenlage.css), Rätsel ohne Trainerkarte (raetsel.css), docs/spiel/30.
  */
 import type { ReactNode } from "react";
 import "../abenteuer.css";
 import "../huelle.css";
+import "../spielfarben.css";
+import "../huellenlage.css";
+import "../raetsel.css";
 import { Portraet } from "../dialog/Portraet";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";

@@ -133,7 +133,15 @@ export interface Einstellungen {
   readonly maia: Maiaschalter;
   /** Musik und Geräusche im Schach-Abenteuer (seit 13.11.2026). */
   readonly abenteuerton: Abenteuerton;
+  /** Seite des Steuerkreuzes im Schach-Abenteuer (seit 14.11.2026, docs/spiel/30). */
+  readonly abenteuersteuerkreuz: Steuerkreuzseite;
 }
+
+/**
+ * Steuerkreuz rechts (Vorgabe, Einhand mit rechts) oder links; der Aktionsknopf liegt auf der
+ * anderen Seite (Hochformat der Oberwelt, docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 2).
+ */
+export type Steuerkreuzseite = "rechts" | "links";
 
 /** Maia an oder aus (wirkt nur mit geladenem Paket). */
 export type Maiaschalter = "an" | "aus";
@@ -178,6 +186,7 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   vorWerkzeugen: "aus",
   maia: "an",
   abenteuerton: STANDARD_ABENTEUERTON,
+  abenteuersteuerkreuz: "rechts",
 };
 
 /** Je Kapitelnummer die Positionen der abgehakten Lernziele (0 = erster Punkt der Buchliste). */
@@ -310,6 +319,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     vorWerkzeugen: roh.vorWerkzeugen === "an" ? "an" : "aus",
     maia: roh.maia === "aus" ? "aus" : "an",
     abenteuerton: abenteuertonAus(roh.abenteuerton),
+    abenteuersteuerkreuz: roh.abenteuersteuerkreuz === "links" ? "links" : "rechts",
   };
 }
 

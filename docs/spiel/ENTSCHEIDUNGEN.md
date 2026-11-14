@@ -1029,3 +1029,12 @@ Geräusche von Freesound (RO17 erledigt): Der Autor hat Enten, zwei Besen, Radio
 Bison, Ölpumpe und Schulflur geladen, alle CC0; eingebaut im privaten Paket, Herkunft in
 `spiel/klang/HERKUNFT.md`. Die Ölpumpe trägt das Windrad (näher als die alte Windmühle). Einen
 Linienbus mit Druckluft und Falttür gab es nicht; Bus und Zapfsäule bleiben beim Ersatz.
+
+Bedienung und Farben nach Dokument 30 umgesetzt: Farbsystem des Spiels (Navy, Creme, Pergament,
+Gold, Grün, Blau, gedämpftes Rot) in allen Schachansichten des Abenteuers, Pixelknöpfe, Pixelify
+Sans (OFL) für Überschriften. Hochkant Steuerkreuz rechts (Vorgabe) oder links, Leiste über dem
+Steuerkreuz; quer feste Lage (Steuerkreuz links, Knöpfe rechts), Partie und Rätsel mit Brett links
+in voller Höhe, auch auf Tablet und Desktop. Rätsel ohne Trainerkarte: Pergament, Ambrose in der
+Sprechblase, Figurenreihe als Fortschritt. Zwölf Brettstile mit Pixelfiguren nach „Kiefer &
+Kirsche“ (RhosGFX, CC0), Wahl über `brett` in begegnungen.json, sonst orte.json, sonst
+„abgegriffen“; Erinnerungen in Sepia. In der Buch-App ändert sich nichts.

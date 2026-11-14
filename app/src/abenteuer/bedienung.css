@@ -1,0 +1,236 @@
+/*
+ * Bedienung mit dem Daumen in der Oberwelt und im Dialog (docs/spiel/30_Bedienung_und_Brettstile.md,
+ * Abschnitte 1 bis 3). Was man antippt, liegt dort, wo der Daumen ohnehin ist.
+ *
+ * Hochformat: Steuerkreuz unten auf der gewählten Seite (data-steuerkreuz an .bildschirm-abenteuer,
+ * Vorgabe rechts), Aktionsknopf auf der anderen Seite, darüber eine schmale Leiste mit Tagebuch,
+ * Übungspartie, Reisen und dem Menü. Im Dialog wandert die Leiste nach oben, „Weiter“ liegt auf
+ * der Seite des Aktionsknopfs.
+ * Querformat (niedrige Höhe): Steuerkreuz links unten, halb durchsichtig; rechts unten der
+ * Aktionsknopf, darüber Menü und Leiste als runde Knöpfe in einer Spalte. Der Dialog legt
+ * Porträt, Text und Wahlen nebeneinander, die Wahlen rechts im Daumenbereich.
+ * Gehört zu anbindung/AbenteuerAnsicht.tsx, oberwelt/Steuerkreuz.tsx, oberwelt/Kopfleiste.tsx
+ * und dialog/Dialog.tsx; Farben und Pixelrahmen in spielfarben.css.
+ */
+.bildschirm-abenteuer {
+  --daumen-rand: calc(var(--raster) * 2);
+  --daumen-unten: calc(env(safe-area-inset-bottom) + var(--daumen-rand));
+  /* Höhe des Steuerkreuzes: drei Felder à 48 px und zwei Fugen (abenteuer.css). */
+  --kreuz-fuge: 8px;
+  --kreuz-hoehe: calc(48px * 3 + var(--kreuz-fuge) * 2);
+  --aktion-groesse: 72px;
+  --leiste-unten: calc(var(--daumen-unten) + var(--kreuz-hoehe) + var(--raster));
+  --leistenknopf: 48px;
+}
+
+/* ---------- Hochformat (Vorgabe): Steuerkreuz rechts, Aktion links ---------- */
+.abenteuer-steuerkreuz {
+  right: var(--daumen-rand);
+  bottom: var(--daumen-unten);
+}
+
+.abenteuer-aktion {
+  left: var(--daumen-rand);
+  bottom: calc(var(--daumen-unten) + (var(--kreuz-hoehe) - var(--aktion-groesse)) / 2);
+}
+
+[data-steuerkreuz="links"] .abenteuer-steuerkreuz {
+  left: var(--daumen-rand);
+  right: auto;
+}
+
+[data-steuerkreuz="links"] .abenteuer-aktion {
+  left: auto;
+  right: var(--daumen-rand);
+}
+
+/* Die Leiste über dem Steuerkreuz; am äußeren Ende bleibt Platz für den Menüknopf. */
+.abenteuer-leiste {
+  position: absolute;
+  z-index: 3;
+  left: var(--daumen-rand);
+  right: calc(var(--daumen-rand) + var(--leistenknopf) + var(--raster) * 2);
+  bottom: var(--leiste-unten);
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+  gap: var(--raster);
+  pointer-events: none;
+}
+
+[data-steuerkreuz="links"] .abenteuer-leiste {
+  left: calc(var(--daumen-rand) + var(--leistenknopf) + var(--raster) * 2);
+  right: var(--daumen-rand);
+  justify-content: flex-start;
+}
+
+.abenteuer-leiste > * {
+  pointer-events: auto;
+}
+
+.abenteuer-tagebuchknopf {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) / 2);
+  padding: 0 calc(var(--raster) * 1.5);
+  font-size: var(--groesse-klein);
+}
+
+/* Das Zeichen braucht nur die runde Form im Querformat. */
+.abenteuer-leiste-zeichen {
+  display: none;
+}
+
+/* In der Welt (ohne offenen Dialog) liegt der Menüknopf am äußeren Ende der Leiste. */
+.bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog)) > .abenteuer-menueknopf {
+  top: auto;
+  right: var(--daumen-rand);
+  bottom: var(--leiste-unten);
+  min-width: var(--leistenknopf);
+}
+
+[data-steuerkreuz="links"]:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
+  > .abenteuer-menueknopf {
+  left: var(--daumen-rand);
+  right: auto;
+}
+
+/* Liegt der Menüknopf unten, rücken die Münzen ganz nach rechts oben. */
+.bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog)) .abenteuer-muenzen {
+  right: var(--raster);
+}
+
+/* Dialog: Wahlen groß, „Weiter“ ganz unten auf der Seite des Aktionsknopfs; der Text ist auch
+   ein Weiter (Dialog.tsx). */
+.abenteuer-dialog-wahlen button {
+  min-height: 48px;
+}
+
+.abenteuer-dialog-weiter {
+  display: block;
+  min-width: 40%;
+  min-height: 48px;
+  margin: var(--raster) auto 0 0;
+}
+
+[data-steuerkreuz="links"] .abenteuer-dialog-weiter {
+  margin: var(--raster) 0 0 auto;
+}
+
+.abenteuer-dialog-text[data-weiter="ja"] {
+  cursor: pointer;
+}
+
+/* ---------- Querformat: beide Hände an den Kanten, die Mitte ist Spielfläche ---------- */
+@media (orientation: landscape) and (max-height: 600px) {
+  .bildschirm-abenteuer {
+    --daumen-links: calc(env(safe-area-inset-left) + var(--daumen-rand));
+    --daumen-rechts: calc(env(safe-area-inset-right) + var(--daumen-rand));
+    --spalte-rechts: calc(var(--daumen-rechts) + (var(--aktion-groesse) - var(--leistenknopf)) / 2);
+    --menue-unten: calc(var(--daumen-unten) + var(--aktion-groesse) + var(--raster) * 1.5);
+  }
+
+  .bildschirm-abenteuer .abenteuer-steuerkreuz {
+    left: var(--daumen-links);
+    right: auto;
+    opacity: 0.6;
+  }
+
+  .bildschirm-abenteuer .abenteuer-aktion {
+    left: auto;
+    right: var(--daumen-rechts);
+    bottom: var(--daumen-unten);
+  }
+
+  .bildschirm-abenteuer .abenteuer-leiste {
+    left: auto;
+    right: var(--spalte-rechts);
+    bottom: calc(var(--menue-unten) + var(--leistenknopf) + var(--raster) * 1.5);
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    gap: calc(var(--raster) * 1.5);
+  }
+
+  .bildschirm-abenteuer .abenteuer-tagebuchknopf {
+    width: var(--leistenknopf);
+    height: var(--leistenknopf);
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: var(--groesse-titel);
+  }
+
+  .bildschirm-abenteuer .abenteuer-leiste-zeichen {
+    display: inline;
+  }
+
+  .bildschirm-abenteuer .abenteuer-leiste-text {
+    display: none;
+  }
+
+  .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
+    > .abenteuer-menueknopf {
+    left: auto;
+    right: var(--spalte-rechts);
+    bottom: var(--menue-unten);
+    width: var(--leistenknopf);
+    height: var(--leistenknopf);
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  /* Meldungen und Ergebniskarten quer nicht über die ganze Breite, sondern in der Mitte. */
+  .bildschirm-abenteuer .abenteuer-ergebnis {
+    left: 50%;
+    right: auto;
+    width: min(36rem, 70vw);
+    transform: translateX(-50%);
+  }
+
+  /* Dialog: Porträt links, Text in der Mitte, Wahlen und „Weiter“ rechts in einer Spalte. */
+  .abenteuer-dialog:not(.abenteuer-sprechblase) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) minmax(11rem, 34%);
+    align-items: end;
+    column-gap: calc(var(--raster) * 2);
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-grossansicht {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-dialog-kopf {
+    grid-column: 1;
+    grid-row: 2;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-dialog-text {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase)
+    > :is(.abenteuer-dialog-wahlen, .abenteuer-dialog-weiter) {
+    grid-column: 3;
+    grid-row: 2;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Im Dialog wandert die Leiste nach oben links: unten spricht der Dialog (beide Formate). */
+.bildschirm-abenteuer .abenteuer-welt:has(.abenteuer-dialog) .abenteuer-leiste {
+  /* Über Meldungen (z-index 3) wie der Menüknopf: Das Tagebuch bleibt auch im Dialog erreichbar. */
+  z-index: 4;
+  top: calc(env(safe-area-inset-top) + var(--raster));
+  bottom: auto;
+  left: var(--raster);
+  right: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+}

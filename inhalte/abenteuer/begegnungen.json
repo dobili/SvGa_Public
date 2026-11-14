@@ -3,6 +3,7 @@
   "begegnungen": [
     {
       "kennung": "reisebrett.ambrose",
+      "brett": "dachboden",
       "gegner": "mapleFalls.ambrose",
       "farbe": "zufall",
       "format": {
@@ -16,6 +17,7 @@
     },
     {
       "kennung": "mapleFalls.ersteLektion",
+      "brett": "dachboden",
       "gegner": "mapleFalls.ambrose",
       "farbe": "white",
       "format": {
@@ -54,6 +56,7 @@
     },
     {
       "kennung": "mapleFalls.skaterJo",
+      "brett": "abgegriffen",
       "gegner": "mapleFalls.skaterJo",
       "farbe": "white",
       "format": {
@@ -70,6 +73,7 @@
     },
     {
       "kennung": "mapleFalls.victor",
+      "brett": "abgegriffen",
       "gegner": "mapleFalls.victor",
       "farbe": "black",
       "format": {
@@ -539,6 +543,7 @@
     },
     {
       "kennung": "desertSprings.erinnerung1858",
+      "brett": "sepia",
       "gegner": "desertSprings.hale1858",
       "farbe": "white",
       "format": {
@@ -1015,6 +1020,7 @@
     },
     {
       "kennung": "capitalArena.kreidenacht1",
+      "brett": "abgegriffen",
       "gegner": "capitalArena.dime",
       "farbe": "zufall",
       "format": {
@@ -1032,6 +1038,7 @@
     },
     {
       "kennung": "capitalArena.kreidenacht2",
+      "brett": "abgegriffen",
       "gegner": "capitalArena.mamaBear",
       "farbe": "zufall",
       "format": {
@@ -1049,6 +1056,7 @@
     },
     {
       "kennung": "capitalArena.kreidenacht3",
+      "brett": "abgegriffen",
       "gegner": "capitalArena.victor",
       "farbe": "zufall",
       "format": {

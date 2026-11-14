@@ -17,6 +17,7 @@ export type {
   Einstellungen,
   Figurensatz,
   Maiaschalter,
+  Steuerkreuzseite,
   Ton,
 } from "../speicher/format";
 export { BILDSAETZE } from "../speicher/format";

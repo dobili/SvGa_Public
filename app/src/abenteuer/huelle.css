@@ -48,14 +48,16 @@
   display: none;
 }
 
-/* Uhr einer Seite: Name links, Zeit rechts; die laufende Uhr in Gold, knappe Zeit rot. */
+/* Uhr einer Seite: Name links, Zeit rechts; die laufende Uhr in Gold, knappe Zeit gedämpft rot
+   (Farbsystem, spielfarben.css). Pixelrahmen mit harten Ecken wie die Knöpfe. */
 .abenteuer-huelle-uhr {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: calc(var(--raster) / 2) var(--raster);
-  border: 1px solid rgba(201, 162, 39, 0.4);
-  border-radius: var(--radius);
+  border: 2px solid rgb(201 162 39 / 40%);
+  border-radius: 0;
+  background: var(--spiel-navy-tief);
   font-variant-numeric: tabular-nums;
 }
 
@@ -64,8 +66,12 @@
   color: var(--gold);
 }
 
+.abenteuer-huelle-uhr[data-knapp="true"] {
+  border-color: var(--spiel-rot);
+}
+
 .abenteuer-huelle-uhr[data-knapp="true"] .abenteuer-huelle-zeit {
-  color: #ff8a80;
+  color: var(--spiel-rot-hell);
 }
 
 .abenteuer-huelle-zeit {
@@ -73,17 +79,15 @@
   font-weight: 600;
 }
 
-/* Fuß: eine Zeile Status und der eine Weg hinaus. */
+/* Fuß: eine Zeile Status und der eine Weg hinaus, unten im Daumenbereich (docs/spiel/30). */
 .abenteuer-huelle-fuss {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--raster);
-  padding: var(--raster) calc(var(--raster) * 1.5);
-  border-radius: var(--radius);
-  background: rgba(245, 240, 230, 0.96);
-  color: var(--navy);
+  padding: calc(var(--raster) / 2) 0;
+  color: var(--spiel-creme);
 }
 
 .abenteuer-huelle-fuss p {
@@ -94,10 +98,11 @@
   margin: 0;
 }
 
-/* Die Kartenleiste liegt auf Navy: heller Grund, damit die Karten lesbar bleiben. */
+/* Die Kartenleiste liegt auf Navy: Pergament, damit die Karten lesbar bleiben. */
 .abenteuer-huelle .abenteuer-kartenleiste {
-  background: rgba(245, 240, 230, 0.96);
-  color: var(--navy);
+  border-radius: 0;
+  background: var(--spiel-pergament);
+  color: var(--spiel-navy);
 }
 
 /* Blindschach in der Hülle: Figuren unsichtbar (wie .rahmen-blindschach im Rahmen der App). */
@@ -105,13 +110,8 @@
   visibility: hidden;
 }
 
-/* Aufgabenrunde: Die Trainerkomponenten der App stehen auf einer hellen Karte im Navy der Hülle. */
-.abenteuer-huelle-aufgaben .abenteuer-huelle-inhalt > * {
-  padding: calc(var(--raster) * 1.5);
-  border-radius: var(--radius);
-  background: var(--flaeche);
-  color: var(--navy);
-}
+/* Aufgabenrunde ohne weiße Trainerkarte (docs/spiel/30): Aufgabe auf Pergament, Rückmeldung als
+   Sprechblase, Fortschritt als Figurenreihe, alles in raetsel.css. */
 
 /* „Brett drehen“ braucht die Aufgabe im Spiel nicht; wer am Zug ist, bleibt stehen. */
 .abenteuer-huelle .brettschalter-gruppe {
@@ -148,12 +148,6 @@
 
 /* Testknöpfe: dunkle Schrift auf hellem Knopf, auch auf dem dunklen Grund der Partie. */
 .abenteuer-huelle-test .knopf-zweit {
-  color: var(--navy);
-}
-
-/* „Weiter“ nach der Partie: Gold auf Navy, sonst verschwindet der Knopf im Grund der Hülle. */
-.abenteuer-huelle-partie .knopf-haupt {
-  background: var(--gold);
   color: var(--navy);
 }
 

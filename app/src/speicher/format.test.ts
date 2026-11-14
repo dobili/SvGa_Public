@@ -35,6 +35,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       vorWerkzeugen: "aus",
       maia: "an",
       abenteuerton: STANDARD_ABENTEUERTON,
+      abenteuersteuerkreuz: "rechts",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({
@@ -107,6 +108,7 @@ describe("Format 1", () => {
           vorWerkzeugen: "aus",
           maia: "an",
           abenteuerton: STANDARD_ABENTEUERTON,
+          abenteuersteuerkreuz: "rechts",
         },
         // Beantwortete Warum-Fragen fehlen in Format 1 und lesen sich leer.
         fortschritt: { ...format1.fortschritt, warum: {}, eingeschaetzt: {} },
@@ -380,5 +382,11 @@ describe("Format 8 (Varianten)", () => {
       einstellungenAus({ abenteuerton: { musik: 140, geraeusche: -5, stumm: true } }).abenteuerton,
     ).toEqual({ musik: 100, geraeusche: 0, stumm: true });
     expect(einstellungenAus({ abenteuerton: { musik: "laut" } }).abenteuerton.musik).toBe(60);
+  });
+
+  it("liest die Seite des Steuerkreuzes im Abenteuer; Unbekanntes heißt rechts", () => {
+    expect(einstellungenAus({}).abenteuersteuerkreuz).toBe("rechts");
+    expect(einstellungenAus({ abenteuersteuerkreuz: "links" }).abenteuersteuerkreuz).toBe("links");
+    expect(einstellungenAus({ abenteuersteuerkreuz: "oben" }).abenteuersteuerkreuz).toBe("rechts");
   });
 });

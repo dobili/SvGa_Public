@@ -4,10 +4,12 @@
  * Rolle im Gesamtbild: Bausteine für Brett.tsx, in einer eigenen Datei, damit das Brett unter 400
  * Zeilen bleibt. Benachbarte Feldmarkierungen gleicher Farbe teilen sich einen Umriss (umriss.ts,
  * R36). Der goldene Umriss hat zu den Ecken einen dünnen gepunkteten Rahmen (Goldpunktrahmen).
- * Abhängigkeiten: analyse/werkzeug.ts (Markierungen), geometrie.ts, masse.ts, umriss.ts.
+ * Farben der Pfeile und Rahmen kommen aus brettstil.ts: wie im Buch, im Schach-Abenteuer je Brett.
+ * Abhängigkeiten: analyse/werkzeug.ts (Markierungen), geometrie.ts, masse.ts, umriss.ts, brettstil.ts.
  */
 import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";
 import { feldEcke, pfeilform, type Punkt } from "./geometrie";
+import { useMarkenfarben } from "./brettstil";
 import { FARBEN, FELD, PFEIL, RAHMEN } from "./masse";
 import { umrisse } from "./umriss";
 
@@ -123,17 +125,18 @@ function eckenpfad(punkte: readonly Punkt[]): string {
  */
 function Goldpunktrahmen({ pfad }: { pfad: string }) {
   const muster = RAHMEN.goldpunkt.join(" ");
+  const { kontur, farben } = useMarkenfarben();
   return (
     <g fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path
         d={pfad}
-        stroke={FARBEN.navy}
+        stroke={kontur}
         strokeWidth={RAHMEN.goldpunktBreite + 2 * PFEIL.kontur}
         strokeDasharray={muster}
       />
       <path
         d={pfad}
-        stroke={FARBEN.gold}
+        stroke={farben.gold}
         strokeWidth={RAHMEN.goldpunktBreite}
         strokeDasharray={muster}
       />
@@ -159,18 +162,19 @@ function Umrissmarke({
   const zuege = umrisse(felder, gedreht, RAHMEN.breite / 2);
   const pfad = zuege.map(farbe === "gold" ? eckenpfad : rahmenpfad).join(" ");
   const kappe = farbe === "grau" ? "round" : "butt";
+  const { kontur, farben } = useMarkenfarben();
   return (
     <g fill="none" strokeLinecap={kappe} strokeLinejoin="miter">
       {farbe === "gold" && <Goldpunktrahmen pfad={zuege.map(rahmenpfad).join(" ")} />}
       <path
         d={pfad}
-        stroke={FARBEN.navy}
+        stroke={kontur}
         strokeWidth={RAHMEN.breite + 2 * PFEIL.kontur}
         strokeDasharray={strichmuster(farbe, "rahmen")}
       />
       <path
         d={pfad}
-        stroke={FARBEN[farbe]}
+        stroke={farben[farbe]}
         strokeWidth={RAHMEN.breite}
         strokeDasharray={strichmuster(farbe, "rahmen")}
       />
@@ -222,6 +226,7 @@ export function Pfeil({
   versatz: number;
 }) {
   const form = pfeilform(von, nach, gedreht, versatz);
+  const { kontur, farben } = useMarkenfarben();
   if (!form) return null;
   const spitze = form.spitze.map((p) => `${p.x},${p.y}`).join(" ");
   const kappe = farbe === "rot" ? "butt" : "round";
@@ -236,20 +241,15 @@ export function Pfeil({
     <g>
       <line
         {...linie}
-        stroke={FARBEN.navy}
+        stroke={kontur}
         strokeWidth={PFEIL.breite + 2 * PFEIL.kontur}
         strokeLinecap={kappe}
         strokeDasharray={muster}
       />
-      <polygon
-        points={spitze}
-        fill={FARBEN[farbe]}
-        stroke={FARBEN.navy}
-        strokeWidth={PFEIL.kontur}
-      />
+      <polygon points={spitze} fill={farben[farbe]} stroke={kontur} strokeWidth={PFEIL.kontur} />
       <line
         {...linie}
-        stroke={FARBEN[farbe]}
+        stroke={farben[farbe]}
         strokeWidth={PFEIL.breite}
         strokeLinecap={kappe}
         strokeDasharray={muster}

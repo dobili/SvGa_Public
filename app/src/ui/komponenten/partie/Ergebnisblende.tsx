@@ -12,7 +12,7 @@
  * Abhängigkeiten: spiel/partienfilter.ts, Ergebnismarke.tsx, Feuerwerk.tsx, partietexte.ts,
  * app/ton.ts, app/einstellungen.ts, i18n.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useEinstellungen } from "../../../app/einstellungen";
 import { spieleKlang } from "../../../app/ton";
 import { Feuerwerk } from "../bausteine/Feuerwerk";
@@ -47,13 +47,17 @@ function ergebniswort(partie: Partie): string {
  * Beispiel: 2. g4?? Dh4# → „Verloren“ mit rotem Kreuz und darunter „Matt. Die Engine hat
  * gewonnen.“, nach gut 3 s weg. Sonderfall: Eine schon beendete Partie öffnen zeigt nichts (nach
  * dem Ende gibt es seit Q12-2 keine Rücknahme, also auch kein zweites Ende).
+ * `bild` (Vorgabe: nichts) steht über dem Ergebniszeichen; das Schach-Abenteuer zeigt dort das
+ * Porträt des Gegners (docs/spiel/30, Abschnitt 4). In der App bleibt es leer.
  */
 export function Ergebnisblende({
   partie,
   grund,
+  bild = null,
 }: {
   readonly partie: Partie;
   readonly grund?: string | null;
+  readonly bild?: ReactNode;
 }) {
   const beendet = partie.ende !== null;
   const [warBeendet, setzeWarBeendet] = useState(beendet);
@@ -82,6 +86,7 @@ export function Ergebnisblende({
     <div className={`ergebnisblende ergebnisblende-${art}`} aria-hidden="true">
       {art === "gewonnen" && <Feuerwerk umfang="klein" />}
       <div className="ergebnisblende-schild" data-testid="ergebnisblende">
+        {bild}
         <Ergebnismarke partie={partie} gross />
         <span className="ergebnisblende-wort">{ergebniswort(partie)}</span>
         <span className="ergebnisblende-grund">{grund ?? kurzergebnis(partie)}</span>

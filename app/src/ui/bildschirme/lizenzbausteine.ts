@@ -72,6 +72,9 @@ export const BAUSTEINE: readonly Lizenzbaustein[] = [
     text: "/lizenzen/ofl-source-serif-4.txt",
     pakete: ["@fontsource/source-serif-4"],
   },
+  // Pixelschrift der Überschriften im Schach-Abenteuer (docs/spiel/30, Abschnitt 4), als Datei
+  // in src/abenteuer/schrift/ mitgeliefert, damit sie offline da ist.
+  { kennung: "schriftpixel", text: "/lizenzen/ofl-pixelify-sans.txt" },
   { kennung: "holzbilder" },
   { kennung: "materialbretter", text: "/lizenzen/agpl-3.0.txt" },
   {

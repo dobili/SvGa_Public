@@ -16,6 +16,9 @@
  * unbekannte Id zeigt einen Hinweis und den Weg zurück. Partiemomente der Begegnung (T5,
  * anbindung/Momentzeile.tsx), Schutzengel, Karten und das Tischgespräch (Tischgespraech.tsx)
  * sprechen in die Sprechblasen über und unter dem Brett (Tischblase.tsx, docs/spiel/29).
+ * Bedienung mit dem Daumen (docs/spiel/30): Brett und rechte Spalte sind eigene Blöcke; hoch
+ * stehen sie untereinander (kein Knopf über dem Brett), quer nebeneinander, das Brett links in
+ * voller Höhe (huellenlage.css). Drehen baut nur die Ansicht neu, der Zustand bleibt.
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -29,8 +32,10 @@ import { Ergebnisblende } from "../../ui/komponenten/partie/Ergebnisblende";
 import { passendeErweiterungen } from "../../ui/komponenten/partie/partieerweiterungen";
 import { useLeserzug } from "../../ui/komponenten/partie/useLeserzug";
 import { usePartie, type Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
+import { partieBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
+import { Gegnerbild } from "./Gegnerbild";
 import { Huelle } from "./Huelle";
 import { endgrund, gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
@@ -51,22 +56,27 @@ function gegenfarbe(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
 }
 
-/** Uhr einer Seite: Name und Restzeit; die laufende Uhr hervorgehoben, knappe Zeit rot. */
+/**
+ * Uhr einer Seite: Name und Restzeit; die laufende Uhr hervorgehoben, knappe Zeit rot. Die Uhr
+ * des Gegners trägt eine eigene Klasse: hoch steht sie über dem Brett (huellenlage.css).
+ */
 function Uhr({
   uhr,
   farbe,
   name,
   jetztMs,
+  gegnerseite = false,
 }: {
   uhr: Uhrstand;
   farbe: Farbe;
   name: string;
   jetztMs: number;
+  gegnerseite?: boolean;
 }) {
   const rest = restzeit(uhr, farbe, jetztMs);
   return (
     <div
-      className="abenteuer-huelle-uhr"
+      className={`abenteuer-huelle-uhr ${gegnerseite ? "abenteuer-huelle-uhr-gegner" : ""}`}
       data-laeuft={uhr.laeuft === farbe}
       data-knapp={rest < KNAPP_MS}
       data-testid={`uhr-${farbe}`}
@@ -220,42 +230,58 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
           {tSpiel(raten.zeile)}
         </p>
       )}
-      {partie.uhr && (
-        <Uhr uhr={partie.uhr} farbe={gegenfarbe(eigene)} name={gegner} jetztMs={s.jetztMs} />
-      )}
-      <Brettbereich
-        stellung={stellung.wert}
-        markierungen={hinweis.fen === s.fen ? hinweis.marken : []}
-        letzterZug={letzter}
-        bedienung={
-          amZug ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined, ziehen: null }
-        }
-        beschriftung={tSpiel("huelle.brett", { gegner })}
-        anfangsGedreht={eigene === "black"}
-        ueberlagerung={
-          gezeigt === anzahl ? (
-            <Ergebnisblende partie={partie} grund={endgrund(partie, gegner)} />
-          ) : undefined
-        }
-      />
-      {partie.uhr && (
-        <Uhr uhr={partie.uhr} farbe={eigene} name={tSpiel("huelle.du")} jetztMs={s.jetztMs} />
-      )}
-      {/* Kartenleiste des Spiels (Erweiterungspunkt A4), solange die Partie läuft. */}
-      {!partie.ende &&
-        passendeErweiterungen(partie.einstellung).map((e) => (
-          <e.Leiste
-            key={e.kennung}
-            partiekennung={partie.einstellung.abenteuer?.kennung ?? ""}
-            steuerung={s}
-            beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
+      <div className="abenteuer-partie-brett">
+        <Brettbereich
+          stellung={stellung.wert}
+          markierungen={hinweis.fen === s.fen ? hinweis.marken : []}
+          letzterZug={letzter}
+          bedienung={
+            amZug ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined, ziehen: null }
+          }
+          beschriftung={tSpiel("huelle.brett", { gegner })}
+          anfangsGedreht={eigene === "black"}
+          ueberlagerung={
+            gezeigt === anzahl ? (
+              <Ergebnisblende
+                partie={partie}
+                grund={endgrund(partie, gegner)}
+                bild={<Gegnerbild partie={partie} />}
+              />
+            ) : undefined
+          }
+        />
+      </div>
+      {/* Rechte Spalte im Querformat, im Hochformat unter dem Brett (huellenlage.css); die Uhr des
+          Gegners steht hoch über dem Brett, quer oben in der Spalte. */}
+      <div className="abenteuer-partie-seite">
+        {partie.uhr && (
+          <Uhr
+            uhr={partie.uhr}
+            farbe={gegenfarbe(eigene)}
+            name={gegner}
+            jetztMs={s.jetztMs}
+            gegnerseite
           />
-        ))}
-      {partie.ende && anzahl > 0 && (
-        <Blaettern stelle={gezeigt} anzahl={anzahl} setze={setzeStelle} />
-      )}
-      {partie.ende ? <Weiterknopf /> : <Spielfuss s={s} gegner={gegner} />}
-      {!partie.ende && <Testleiste id={partie.id} />}
+        )}
+        {partie.uhr && (
+          <Uhr uhr={partie.uhr} farbe={eigene} name={tSpiel("huelle.du")} jetztMs={s.jetztMs} />
+        )}
+        {/* Kartenleiste des Spiels (Erweiterungspunkt A4), solange die Partie läuft. */}
+        {!partie.ende &&
+          passendeErweiterungen(partie.einstellung).map((e) => (
+            <e.Leiste
+              key={e.kennung}
+              partiekennung={partie.einstellung.abenteuer?.kennung ?? ""}
+              steuerung={s}
+              beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
+            />
+          ))}
+        {partie.ende && anzahl > 0 && (
+          <Blaettern stelle={gezeigt} anzahl={anzahl} setze={setzeStelle} />
+        )}
+        {partie.ende ? <Weiterknopf /> : <Spielfuss s={s} gegner={gegner} />}
+        {!partie.ende && <Testleiste id={partie.id} />}
+      </div>
     </>
   );
 }
@@ -265,6 +291,8 @@ export function PartieHuelle({ wert }: { readonly wert: string | null }) {
   const s = usePartie(wert ?? "");
   const partie = s.partie;
   const blind = partie?.einstellung.abenteuer?.variante === "blind";
+  // Brett und Pixelfiguren je Ort und Gegner (docs/spiel/30, Abschnitt 5); Blindschach ohne Stil.
+  useAbenteuerBrettstil(partieBrettquelle(partie));
   return (
     <TischblasenRahmen>
       <Huelle

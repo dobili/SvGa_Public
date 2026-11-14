@@ -323,6 +323,12 @@ const AUSWEGE: readonly (RegExp | string)[] = [
   /^Weiter$/,
   /^Fertig$/,
   /^Schließen$/,
+  // Reisefenster (Monatskarte): Seit die Leiste unten im Daumenbereich liegt (docs/spiel/30),
+  // öffnet der Affe es öfter; „Doch nicht“ ist sein Ausgang.
+  /^Doch nicht$/,
+  // Startkarte mit Spielstand (etwa nach „Spiel herunterladen“ mitten im Lauf): „Spielen“ führt
+  // in dieselbe Welt zurück, wie ein Spieler es täte.
+  "abenteuer-spielen",
   /^Zurück$/,
   /^Weiterspielen$/,
   /^Ich komme nicht drauf$/,

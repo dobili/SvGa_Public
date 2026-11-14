@@ -1,0 +1,212 @@
+/*
+ * Ein Farbsystem für das ganze Spiel (docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 4):
+ * Navy als Grund, Creme und Pergament als Fläche, Gold als Akzent, Grün und Blau für die Stufen,
+ * gedämpftes Rot für Warnungen. Knöpfe im Pixelrahmen statt der runden Knöpfe der App, der
+ * Hauptknopf Gold auf Navy; Überschriften in der Pixelschrift Pixelify Sans (SIL OFL 1.1, im
+ * Paket mitgeliefert, damit es offline bleibt; Lizenz in docs/LIZENZEN.md).
+ *
+ * Rolle im Gesamtbild: Gilt nur unter den Wurzeln des Spiels (.bildschirm-abenteuer für Oberwelt
+ * und Startkarte, .abenteuer-huelle für Partie und Rätsel); die App außerhalb bleibt, wie sie ist.
+ * Eingebunden von anbindung/AbenteuerAnsicht.tsx und anbindung/Huelle.tsx. Lage und Größe der
+ * Bedienelemente stehen in bedienung.css (Oberwelt, Dialog) und huellenlage.css (Partie, Rätsel).
+ */
+@font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./schrift/pixelify-sans-latin-600.woff2") format("woff2");
+}
+
+.bildschirm-abenteuer,
+.abenteuer-huelle {
+  --spiel-navy: #16253d;
+  --spiel-navy-tief: #0b1424;
+  --spiel-creme: #f5f0e6;
+  --spiel-pergament: #eadcb8;
+  --spiel-pergament-tief: #b89a5e;
+  --spiel-gold: #c9a227;
+  --spiel-gold-tief: #7d6007;
+  --spiel-gruen: #5e9c6e;
+  --spiel-gruen-tief: #2f5e3b;
+  --spiel-blau: #5b86c4;
+  --spiel-blau-tief: #2b4a78;
+  --spiel-rot: #a8473d;
+  --spiel-rot-tief: #5e221c;
+  /* Rot für Schrift auf Navy (knappe Zeit): heller, aber ebenso gedämpft. */
+  --spiel-rot-hell: #e5958a;
+  --spiel-pixelschrift: "Pixelify Sans", var(--schrift-titel);
+  /* Breite eines Pixels im Rahmen der Knöpfe (wie knopf.svg: Ecken um einen Pixel gestuft). */
+  --spiel-pixel: 3px;
+}
+
+/* Überschriften in Pixelschrift; Fließtext bleibt in der Schrift der App. */
+:is(.bildschirm-abenteuer, .abenteuer-huelle)
+  :is(
+    .abenteuer-start-titel,
+    .abenteuer-menue h2,
+    .abenteuer-ergebnis h2,
+    .abenteuer-dialog-sprecher,
+    .abenteuer-huelle-figur,
+    .abenteuer-huelle-zeit,
+    .karte-titel,
+    .ergebnisblende-wort,
+    .abenteuer-raetselmeldung strong
+  ) {
+  font-family: var(--spiel-pixelschrift);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/*
+ * Pixelknöpfe: vier versetzte Schatten zeichnen den Rahmen, die Ecken bleiben frei (gestufte
+ * Pixelecke wie im Rahmenbild des Spiels), der innere Schatten unten ist die Kante. Jede Art setzt
+ * nur ihre Farben.
+ * Alle Teile der Liste haben höchstens zwei Klassen, damit die Arten unten sie überschreiben.
+ */
+:is(.bildschirm-abenteuer, .abenteuer-huelle)
+  :is(.knopf-haupt, .knopf-zweit, .knopf-gefahr, .knopf-link),
+.abenteuer-huelle-blaettern .chip,
+.abenteuer-steuerkreuz button,
+.abenteuer-aktion,
+.abenteuer-tagebuchknopf,
+.abenteuer-menueknopf,
+.abenteuer-muenzen {
+  --knopf-grund: var(--spiel-creme);
+  --knopf-schrift: var(--spiel-navy);
+  --knopf-rand: var(--spiel-gold-tief);
+  --knopf-kante: var(--spiel-pergament-tief);
+  min-height: var(--tippflaeche);
+  margin: var(--spiel-pixel);
+  padding: 0 calc(var(--raster) * 2);
+  border: 0;
+  border-radius: 0;
+  background: var(--knopf-grund);
+  color: var(--knopf-schrift);
+  box-shadow:
+    0 calc(var(--spiel-pixel) * -1) 0 0 var(--knopf-rand),
+    0 var(--spiel-pixel) 0 0 var(--knopf-rand),
+    calc(var(--spiel-pixel) * -1) 0 0 0 var(--knopf-rand),
+    var(--spiel-pixel) 0 0 0 var(--knopf-rand),
+    inset 0 calc(var(--spiel-pixel) * -1) 0 0 var(--knopf-kante);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  image-rendering: pixelated;
+}
+
+/* Hauptknopf: Gold auf Navy. */
+:is(.bildschirm-abenteuer, .abenteuer-huelle) .knopf-haupt {
+  --knopf-grund: var(--spiel-gold);
+  --knopf-schrift: var(--spiel-navy);
+  --knopf-rand: var(--spiel-navy-tief);
+  --knopf-kante: var(--spiel-gold-tief);
+}
+
+/* Warnung (Aufgeben-Nachfrage): gedämpftes Rot. */
+:is(.bildschirm-abenteuer, .abenteuer-huelle) .knopf-gefahr {
+  --knopf-grund: var(--spiel-rot);
+  --knopf-schrift: var(--spiel-creme);
+  --knopf-rand: var(--spiel-rot-tief);
+  --knopf-kante: var(--spiel-rot-tief);
+}
+
+:is(.bildschirm-abenteuer, .abenteuer-huelle)
+  :is(.knopf-haupt, .knopf-zweit, .knopf-gefahr, .knopf-link):active:not(:disabled),
+.abenteuer-steuerkreuz button:active,
+.abenteuer-aktion:active,
+.abenteuer-tagebuchknopf:active,
+.abenteuer-menueknopf:active {
+  --knopf-kante: transparent;
+  transform: translateY(2px);
+}
+
+:is(.bildschirm-abenteuer, .abenteuer-huelle) :is(.knopf-haupt, .knopf-zweit, .chip):disabled {
+  opacity: 0.45;
+}
+
+:is(.bildschirm-abenteuer, .abenteuer-huelle) .knopf-link {
+  align-self: flex-start;
+  font-weight: 600;
+}
+
+/* Münzen sind kein Knopf: gleicher Rahmen, ohne Kante. */
+.abenteuer-muenzen {
+  --knopf-kante: transparent;
+}
+
+/* Steuerkreuz und Aktion: Navy mit Gold, gedrückt Gold. */
+.abenteuer-steuerkreuz button,
+.abenteuer-aktion {
+  --knopf-grund: rgb(22 37 61 / 80%);
+  --knopf-schrift: var(--spiel-creme);
+  --knopf-rand: var(--spiel-gold);
+  --knopf-kante: var(--spiel-navy-tief);
+  padding: 0;
+}
+
+.abenteuer-steuerkreuz button:active,
+.abenteuer-aktion:active {
+  --knopf-grund: var(--spiel-gold);
+  --knopf-schrift: var(--spiel-navy);
+}
+
+/* Fenster des Spiels in der Oberwelt (Menü, Tagebuch, Meldungen) auf Pergament. */
+.bildschirm-abenteuer :is(.abenteuer-menue, .abenteuer-ergebnis) {
+  border-radius: 0;
+  background: var(--spiel-creme);
+  color: var(--spiel-navy);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
+    0 6px 24px rgb(0 0 0 / 35%);
+}
+
+/* Ergebnisblende in der Hülle (Abschnitt 4): eine Karte des Spiels mit dem Porträt des Gegners. */
+.abenteuer-huelle .ergebnisblende-schild {
+  border: 0;
+  border-radius: 0;
+  background: var(--spiel-pergament);
+  color: var(--spiel-navy);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-navy-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-gold),
+    0 8px 24px rgb(0 0 0 / 35%);
+}
+
+.abenteuer-huelle .ergebnisblende-gewonnen .ergebnisblende-schild {
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-navy-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-gold),
+    0 0 28px rgb(201 162 39 / 55%);
+}
+
+.abenteuer-huelle .ergebnisblende-verloren .ergebnisblende-schild {
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-navy-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-rot),
+    0 8px 24px rgb(0 0 0 / 35%);
+}
+
+.abenteuer-huelle .ergebnisblende-schild .abenteuer-portraet-blatt,
+.abenteuer-huelle .ergebnisblende-schild .abenteuer-dialog-portraet {
+  margin-bottom: calc(var(--raster) / 2);
+}
+
+/* Die App begrenzt ihren Rahmen quer auf eine Lesespalte neben der Schiene (ui/stil/breit.css);
+   das Spiel hat keine Schiene und braucht quer die ganze Breite (docs/spiel/30, Abschnitt 3). Nur
+   im Vollbild des Spiels. */
+@media (min-aspect-ratio: 5/4) and (min-width: 600px),
+  (orientation: landscape) and (max-height: 600px) {
+  .rahmen-vollbild:has(.bildschirm-abenteuer, .abenteuer-huelle) {
+    max-width: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .rahmen-vollbild .bildschirm:is(.bildschirm-abenteuer, .abenteuer-huelle) {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+}

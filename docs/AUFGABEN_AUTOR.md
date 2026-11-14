@@ -1195,6 +1195,17 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       Klicken weiter, wenn sie von vorn beginnt (nach etwa 1 bis 2 Minuten)? Rauscht der Wasserfall
       ohne Bruch? Hört die Musik nach einer Erinnerung (Archiv in Cedar Creek) auf, statt sich zu
       wiederholen? Rückmeldung etwa „N2631 ok“ oder „N2631: Klick beim Wasserfall“.
+- [ ] N2632. **Spiel mit dem Daumen, hoch und quer (14.11.2026):** Im Abenteuer herumlaufen, dann
+      das Handy quer drehen: Steuerkreuz links unten halb durchsichtig, rechts Aktionsknopf und
+      runde Knöpfe für Tagebuch, Übungspartie, Reisen und Menü. Wieder hoch drehen: nichts darf
+      verloren gehen. Im Menü „Steuerkreuz links“ wählen und prüfen, ob es sich mit einer Hand gut
+      spielt. Eine Partie quer: Brett links in voller Höhe, rechts Porträt, Uhren, Karten und Knöpfe.
+      Erreichst du alles mit dem Daumen? Rückmeldung etwa „N2632 ok“ oder „N2632: Menü zu weit oben“.
+- [ ] N2633. **Farben, Pixelknöpfe und Brettstile (14.11.2026):** Navy, Pergament und Gold überall,
+      Knöpfe im Pixelrahmen, Überschriften in Pixelschrift. Das Brett hat je Ort ein eigenes Aussehen
+      (Dachboden altes Holz, Schulclub grünes Vinyl, Riverton Steintisch …). Ein Rätsel lösen: Die
+      Aufgabe steht auf Pergament, Ambrose antwortet in einer Sprechblase, der Fortschritt ist eine
+      Reihe kleiner Figuren. Gefällt dir das, ist etwas schwer lesbar? Rückmeldung etwa „N2633 ok“.
 
 ## Teil 2: Entscheiden
 

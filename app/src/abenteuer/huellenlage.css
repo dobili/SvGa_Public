@@ -1,0 +1,172 @@
+/*
+ * Lage von Brett und Bedienung in Partie und Rätsel nach Daumenzonen
+ * (docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitte 2 und 3).
+ *
+ * Hochformat: Kopf mit Porträt oben, Uhr des Gegners, Brett, darunter eigene Uhr, Kartenfächer und
+ * die Knöpfe; kein Knopf über dem Brett. Querformat (niedrige Höhe): das Brett links in voller
+ * Höhe, rechts eine Spalte mit Kopf und Uhr des Gegners, Sprechblasen, eigener Uhr, senkrecht
+ * wischbarem Kartenfächer und den Knöpfen. Die linke Hand zieht am Brett, die rechte tippt.
+ * Drehen ändert nur diese Regeln; die Bausteine bleiben dieselben, nichts geht verloren.
+ * Gehört zu anbindung/Huelle.tsx, anbindung/PartieHuelle.tsx (Blöcke abenteuer-partie-brett und
+ * abenteuer-partie-seite) und anbindung/AufgabenAnsicht.tsx (Rundenrahmen der App).
+ */
+
+/* ---------- Hochformat ---------- */
+.abenteuer-partie-brett,
+.abenteuer-partie-seite {
+  display: contents;
+}
+
+/* Hoch steht die Uhr des Gegners über dem Brett, die Knöpfe bleiben darunter. */
+.abenteuer-partie-seite > .abenteuer-huelle-uhr-gegner {
+  order: -1;
+}
+
+/* ---------- Querformat ---------- */
+/* Quer: auf dem Handy (niedrige Höhe) und in jedem breiten Fenster, wie die zwei Spalten der App
+   (ui/stil/breit.css), deren allgemeine Regeln hier übertroffen werden. */
+@media (min-aspect-ratio: 5/4) and (min-width: 600px),
+  (orientation: landscape) and (max-height: 600px) {
+  .abenteuer-huelle {
+    /* Kantenlänge des Bretts: volle Höhe ohne Ränder, höchstens gut die halbe Breite. */
+    --brettmass: min(
+      calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - var(--raster) * 2),
+      58vw
+    );
+    --brett-links: calc(env(safe-area-inset-left) + var(--raster));
+
+    display: grid;
+    grid-template-columns: var(--brettmass) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    column-gap: calc(var(--raster) * 2);
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    padding: var(--raster) calc(env(safe-area-inset-right) + var(--raster)) var(--raster)
+      var(--brett-links);
+  }
+
+  .abenteuer-huelle > .abenteuer-huelle-kopf {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 0 var(--raster);
+  }
+
+  /* Der Kopf ist quer knapper: das Porträt kleiner (zoom verkleinert auch Bogen und Blatt). */
+  .abenteuer-huelle-kopf > .abenteuer-dialog-portraet {
+    zoom: 0.6;
+  }
+
+  .abenteuer-huelle .brettbereich {
+    margin: 0;
+  }
+
+  .abenteuer-huelle .brett {
+    max-width: var(--brettmass);
+  }
+
+  /* Partie: Brett links über beide Zeilen, rechts die rollbare Spalte. */
+  .abenteuer-huelle-partie .abenteuer-huelle-inhalt {
+    display: contents;
+  }
+
+  .abenteuer-huelle .abenteuer-partie-brett {
+    display: block;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+
+  .abenteuer-huelle .abenteuer-partie-seite {
+    display: flex;
+    flex-direction: column;
+    gap: var(--raster);
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    overflow-y: auto;
+    padding: var(--raster) var(--spiel-pixel) calc(var(--raster) * 9);
+  }
+
+  .abenteuer-partie-seite > .abenteuer-huelle-uhr-gegner {
+    order: 0;
+  }
+
+  /* Der Fächer läuft quer nicht nach rechts aus, sondern in Reihen, senkrecht wischbar. */
+  .abenteuer-partie-seite .abenteuer-faecher {
+    flex-wrap: wrap;
+    max-height: calc(100dvh / 2);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+  }
+
+  /* Rätsel: Die Bausteine der App fließen in das Raster der Hülle; das Brett nimmt links alle
+     Zeilen, alles andere stapelt sich rechts. Die letzte Zeile nimmt den Rest der Höhe. */
+  .abenteuer-huelle-aufgaben {
+    grid-template-rows: repeat(16, auto) minmax(0, 1fr);
+    height: auto;
+    overflow: visible;
+    min-height: 100dvh;
+  }
+
+  .abenteuer-huelle-aufgaben :is(.abenteuer-huelle-inhalt, .trainerrunde, .trainer-aufgabe) {
+    display: contents;
+  }
+
+  .abenteuer-huelle-aufgaben .abenteuer-huelle-inhalt > *,
+  .abenteuer-huelle-aufgaben .trainerrunde > *,
+  .abenteuer-huelle-aufgaben .trainer-aufgabe > * {
+    grid-column: 2;
+    margin-bottom: var(--raster);
+  }
+
+  .abenteuer-huelle-aufgaben .brettbereich {
+    position: sticky;
+    top: 0;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: start;
+  }
+
+  /* Die herausgehobene Karte quer: Motiv links, Text und Knöpfe rechts, damit sie in die Höhe
+     passt (sonst lag „Ausspielen“ unter dem Rand). */
+  .abenteuer-huelle .abenteuer-kartenblick-grund {
+    align-items: center;
+    padding-top: calc(env(safe-area-inset-top) + var(--raster));
+  }
+
+  .abenteuer-huelle .abenteuer-kartenblick {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    column-gap: calc(var(--raster) * 2);
+    row-gap: var(--raster);
+    width: min(36rem, 100%);
+    text-align: left;
+  }
+
+  .abenteuer-huelle .abenteuer-kartenblick > .abenteuer-spielkarte-motiv {
+    grid-row: 1 / span 6;
+  }
+
+  .abenteuer-huelle .abenteuer-kartenblick > :not(.abenteuer-spielkarte-motiv) {
+    grid-column: 2;
+  }
+
+  /* Sprechblasen quer in der rechten Spalte, nie auf dem Brett: oben über dem Kopf (wie hoch),
+     unten über dem Fuß; die Spalte rollt, damit nichts dauerhaft darunter verschwindet. */
+  .abenteuer-huelle .abenteuer-tischblase,
+  .abenteuer-huelle .abenteuer-moment {
+    left: calc(var(--brett-links) + var(--brettmass) + var(--raster) * 2);
+    right: calc(env(safe-area-inset-right) + var(--raster));
+    padding: calc(var(--raster) / 2) var(--raster);
+    font-size: var(--groesse-mittel);
+  }
+
+  /* Kleineres Porträt: Die obere Blase ist dann nicht höher als der Kopf, den sie überdeckt. */
+  .abenteuer-huelle .abenteuer-tischblase .abenteuer-dialog-portraet {
+    zoom: 0.6;
+  }
+}

@@ -58,7 +58,9 @@ Für Ambrose: Figur farbig erzeugen (natürliche, blasse Haut), das Geisterhafte
    Probe mit Victor (14.11.2026): Mit der kleinen Spielfigur als Vorlage übernimmt Gemini deren
    grobe Pixel (ein Gesicht aus etwa 16 Pixeln), Einzelporträts geraten dagegen fein und in anderem
    Stil. Deshalb verlangt der Prompt ausdrücklich etwa 64 × 64 Pixel je Feld und nur Farben, Frisur
-   und Kleidung aus der Vorlage; Einzelporträts nehmen ein Feld des fertigen Blatts als Vorlage.
+   und Kleidung aus der Vorlage; Einzelporträts nehmen ein Feld des fertigen Blatts als Vorlage. Zweite Probe (14.11.2026):
+   gelungen; im selben Chat hält Gemini den feinen Stil, wenn das erste Bild fein war. Je Figur ein
+   eigener Chat. Keine Schrift auf Kleidung verlangen (Gemini malt sonst Zeichensalat).
 6. Figuren, die irgendwo sitzen (Schachspieler, Leser, Gäste; Wunsch des Autors R020):
    zusätzlich „Template motion“ → Sitting für dieselben vier Richtungen. Im Export heißt der
    Ordner `animations/Sitting/<richtung>/` (`frame_000.png` …); der Paketbau nimmt je Richtung das

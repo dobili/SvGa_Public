@@ -10,8 +10,9 @@
 //
 // Der Chaos-Spieler: fasst zufällige Dinge an, geht zufällige Wege (auch zurück in frühere Akte),
 // reist mit der Monatskarte, bricht Dialoge nach einer zufälligen Zeile ab (Taste Zurück: Variablen
-// bleiben und die Folgen laufen, wie Dialog.tsx; oder Neuladen: Ink-Variablen und Folgen sind weg,
-// was sofort wirkt, bleibt, wie useDialogende.ts und dialogwirkungen.ts), verliert oder bricht
+// bleiben und die Folgen laufen, wie Dialog.tsx; oder Neuladen: die Folgen sind weg, was sofort
+// wirkt, bleibt, und die Ink-Variablen gelten so, wie sie beim zuletzt gemeldeten Knoten waren,
+// wie useDialogende.ts, sichereVariablen, und dialogwirkungen.ts), verliert oder bricht
 // Partien ab, fällt durch Runden und kauft je Art nichts, alles oder Zufälliges zu echten Preisen.
 // Der Spielstand der App (regeln/spielstand.ts, abenteuerstandAus) behält beim Laden alles außer dem
 // offenen Dialog, offenen Läden und den Merkern nach dem Dialog; mehr verwirft auch die Simulation

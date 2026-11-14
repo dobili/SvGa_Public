@@ -43,6 +43,11 @@ export interface Dialoge {
   readonly oeffneUebergang: (verweis: string, ziel: Ziel, wenn: string | null) => void;
   readonly wirkungen: Wirkungen;
   readonly beiDialogende: (variablen: Dialogvariablen) => void;
+  /**
+   * Ein neuer Knoten des offenen Dialogs: erst die Variablen aus Ink sichern (Zwischenstand), dann
+   * das Quest-Ereignis melden, damit beide zusammen im Stand stehen.
+   */
+  readonly beiKnoten: (knoten: string, variablen: Dialogvariablen) => void;
   readonly abspann: boolean;
   readonly schliesseAbspann: () => void;
   /** Fensterbank mit den Funden (T15), nach `zeigeFensterbank()` im Dialog. */
@@ -115,6 +120,8 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
   // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
   const variablenBeimOeffnen = useRef<Abenteuerstand["dialogvariablen"]>({});
+  // Zuletzt gesicherte Variablen aus Ink (Zwischenstand): keine Änderung der Hülle.
+  const zuletztAusInk = useRef<Abenteuerstand["dialogvariablen"]>({});
   // Ein Übergang mit Dialog (orte.json `dialog`, `wenn`): der Wechsel folgt nach dem Dialog.
   const uebergang = useRef<{ ziel: Ziel; wenn: string | null } | null>(null);
   const m = useMerker();
@@ -122,17 +129,36 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     const [datei, knoten] = verweis.split(".", 2);
     if (!datei || !knoten) return;
     variablenBeimOeffnen.current = k.standRef.current?.dialogvariablen ?? {};
+    zuletztAusInk.current = {};
     ladeDialog(datei)
       .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
       .catch(() => k.setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
   };
+  /** Stand mit den Variablen aus Ink (Hülle gewinnt, regeln/dialogvariablen.ts); null ohne Stand. */
+  const mitVariablen = (variablen: Dialogvariablen): Abenteuerstand | null => {
+    const aktuell = k.standRef.current;
+    if (!aktuell) return null;
+    const dialogvariablen = variablenNachDialog(
+      variablenBeimOeffnen.current,
+      aktuell.dialogvariablen,
+      variablen,
+      zuletztAusInk.current,
+    );
+    zuletztAusInk.current = variablen;
+    return { ...aktuell, dialogvariablen };
+  };
+  // Zwischenstand bei jedem neuen Knoten (Befund der Chaos-Simulation, 14.11.2026): Quest-Schritte
+  // schreibt melde sofort, die Variablen kamen erst am Ende. Wer mitten im Dialog neu lud, trennte
+  // beide (ironwood.mamasFinale: Schritt da, mamaFotoGesehen weg, Mama erschien nie). Nur die
+  // Variablen: Die Folgen nach dem Dialog (Reise, Laden, Partie) bleiben beim Ende.
+  const sichereVariablen = (variablen: Dialogvariablen) => {
+    const neu = mitVariablen(variablen);
+    if (neu) k.schreibe(neu);
+  };
   const beiDialogende = (variablen: Dialogvariablen) => {
     setzeDialog(null);
-    const aktuell = k.standRef.current;
-    if (!aktuell) return;
-    const vorher = variablenBeimOeffnen.current;
-    const dialogvariablen = variablenNachDialog(vorher, aktuell.dialogvariablen, variablen);
-    const neu = { ...aktuell, dialogvariablen };
+    const neu = mitVariablen(variablen);
+    if (!neu) return;
     k.schreibe(neu);
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);
@@ -167,6 +193,10 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
       merker: () => m,
     }),
     beiDialogende,
+    beiKnoten: (knoten, variablen) => {
+      sichereVariablen(variablen);
+      if (dialog) k.melde({ art: "dialog", knoten: `${dialog.datei}.${knoten}` });
+    },
     abspann,
     schliesseAbspann: () => setzeAbspann(false),
     fensterbank,

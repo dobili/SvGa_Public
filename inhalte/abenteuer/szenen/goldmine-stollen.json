@@ -331,6 +331,16 @@
     {
       "moebel": "es7Kiste",
       "feld": [28, 9]
+    },
+    {
+      "moebel": "st8Tuerstock",
+      "feld": [19, 21],
+      "vorn": true
+    },
+    {
+      "moebel": "st11Eingangslicht",
+      "feld": [19, 20],
+      "vorn": true
     }
   ],
   "ausloeser": [

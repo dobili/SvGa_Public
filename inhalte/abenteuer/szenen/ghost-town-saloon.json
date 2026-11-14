@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts daneben das Klavier, in der Nordostecke die Treppe, die durch die Decke zu den Zimmern oben führt; an ihrem Fuß im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, zwei weitere Tische mit Stühlen, zwei Bierfässer am Ende der Theke, vier Barhocker, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street.",
+  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts daneben das Klavier, in der Nordostecke die Treppe, die durch die Decke zu den Zimmern oben führt; an ihrem Fuß im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, drei weitere Tische mit Stühlen, zwei Bierfässer am Ende der Theke, vier Barhocker, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street; neben ihr steht Mr. Pruitt und sieht der Fernpartie zu (Szene 100).",
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -21,7 +21,7 @@
     "#..................#",
     "#..................#",
     "#..................#",
-    "##########.#########"
+    "##########..########"
   ],
   "objekte": [
     {
@@ -109,10 +109,10 @@
     {
       "moebel": "gt7Fussmatte",
       "feld": [10, 12],
-      "versatz": [0, 8]
+      "versatz": [8, 8]
     },
     {
-      "moebel": "gt10Schwingtuer",
+      "moebel": "gt13SchwingtuerDoppel",
       "feld": [10, 13]
     },
     {
@@ -172,12 +172,16 @@
     {
       "name": "klavier",
       "feld": [12, 4]
+    },
+    {
+      "name": "saloonAusgang",
+      "feld": [11, 13]
     }
   ],
   "figuren": [
     {
       "name": "pruitt",
-      "feld": [11, 8]
+      "feld": [9, 12]
     }
   ],
   "belebung": [

@@ -108,18 +108,29 @@ function dialog(welt, st, knoten) {
   for (const kk of welt.knoten[datei])
     if (s.state.VisitCountAtPathString(kk) > 0)
       st.gesehen.add(datei + "." + kk);
-  // Neu geladen mitten im Dialog (Chaos-Spieler): Ink-Variablen und was nach dem Dialog geschehen
-  // sollte, sind weg; was sofort wirkt (Funde, Karten, Bezahlen, Quests), steht schon im Stand.
+  // Neu geladen mitten im Dialog (Chaos-Spieler): Was nach dem Dialog geschehen sollte, ist weg;
+  // was sofort wirkt (Funde, Karten, Bezahlen, Quests), steht schon im Stand, und die Ink-Variablen
+  // so, wie sie beim zuletzt gemeldeten Knoten waren (useDialogende.ts, sichereVariablen).
   if (abbruch === "neuladen") {
-    Object.assign(st.vars, st.folgen.huelle);
+    uebernimmVariablen(st, st.folgen.zwischenstand || {});
     return { huelle: {}, neugeladen: true };
   }
+  uebernimmVariablen(st, inkVariablen(s));
+  return st.folgen;
+}
+
+/** Alle globalen Variablen der Geschichte (wie Geschichte.variablen in der App). */
+function inkVariablen(s) {
   const ausInk = {};
   for (const n of s.variablesState._globalVariables.keys())
     ausInk[n] = s.variablesState.$(n);
+  return ausInk;
+}
+
+/** Variablen aus Ink in den Stand; was die Hülle im Dialog gesetzt hat, gewinnt. */
+function uebernimmVariablen(st, ausInk) {
   Object.assign(st.vars, ausInk, st.folgen.huelle);
   for (const n of Object.keys(besitzvariablen(st))) delete st.vars[n];
-  return st.folgen;
 }
 
 /**
@@ -132,8 +143,11 @@ function spieleAb(welt, st, s, datei, knoten) {
   const meldeNeue = () => {
     for (const k of welt.knoten[datei]) {
       const n = s.state.VisitCountAtPathString(k);
-      if (n > (besuche.get(k) || 0))
+      if (n > (besuche.get(k) || 0)) {
+        // Wie Oberwelt.tsx: erst die Variablen sichern (Zwischenstand), dann der Quest-Schritt.
+        st.folgen.zwischenstand = inkVariablen(s);
         melde(welt, st, { art: "dialog", knoten: datei + "." + k });
+      }
       besuche.set(k, n);
     }
   };

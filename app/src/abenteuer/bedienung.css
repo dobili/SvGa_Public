@@ -234,3 +234,85 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+
+/* ---------- Menüknopf oben und Münzen nebeneinander, ohne Überlappung ----------
+   Oben (im Dialog, in der Partie) ist der Menüknopf ein Quadrat von --leistenknopf; die Münzen
+   stehen links daneben mit einer Fuge (Fotos 14.11.2026: „0 Münzen“ lag quer unter dem ☰). */
+.bildschirm-abenteuer > .abenteuer-menueknopf {
+  width: var(--leistenknopf);
+  padding: 0;
+}
+
+.bildschirm-abenteuer .abenteuer-muenzen {
+  right: calc(var(--raster) * 2 + var(--leistenknopf) + var(--spiel-pixel) * 2);
+}
+
+/* ---------- Meldungen als schmale Leiste oben (Fotos 14.11.2026) ----------
+   „Neu im Tagebuch …“ war quer eine halbe Bildschirmhöhe groß und lag zugleich mit dem Dialog
+   da. Jetzt: eine Zeile mit kleinem „Weiter“ rechts daneben; Antippen des Textes schließt auch
+   (Oberwelt.tsx). Hoch liegt die Leiste unter der Zeile mit Münzen, Menü und Tagebuch. */
+.bildschirm-abenteuer .abenteuer-ergebnis.abenteuer-meldung {
+  top: calc(env(safe-area-inset-top) + var(--raster) * 2.5 + var(--leistenknopf));
+  left: var(--raster);
+  right: var(--raster);
+  bottom: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  width: auto;
+  max-height: 30dvh;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  transform: none;
+}
+
+.mit-pixelrahmen .abenteuer-ergebnis.abenteuer-meldung {
+  border-width: calc(var(--rahmen-karte-breite) / 2);
+}
+
+.abenteuer-meldung > p {
+  flex: 1;
+  margin: 0;
+  cursor: pointer;
+}
+
+.abenteuer-meldung > .knopf-zweit {
+  flex: none;
+  min-height: 36px;
+  margin: 0;
+  padding: 0 calc(var(--raster) * 1.5);
+}
+
+.abenteuer-meldung > .abenteuer-fundbild {
+  flex: none;
+  max-height: calc(var(--raster) * 6);
+  margin: 0;
+}
+
+/* Quer und breit genug: oben in der Mitte, zwischen Tagebuch links und Münzen und Menü rechts. */
+@media (orientation: landscape) and (max-height: 600px) and (min-width: 760px) {
+  .bildschirm-abenteuer .abenteuer-ergebnis.abenteuer-meldung {
+    top: calc(env(safe-area-inset-top) + var(--raster));
+    left: 50%;
+    right: auto;
+    width: min(34rem, calc(100vw - 2 * 15rem));
+    transform: translateX(-50%);
+  }
+}
+
+/* Ein Fund mit Bild (funde.json `bild`) bleibt ohne Dialog eine Karte mit großem Bild; während
+   eines Dialogs ist auch er nur die Leiste. */
+.bildschirm-abenteuer:not(:has(.abenteuer-dialog)) .abenteuer-meldung:has(> .abenteuer-fundbild) {
+  flex-direction: column;
+}
+
+.bildschirm-abenteuer:not(:has(.abenteuer-dialog)) .abenteuer-meldung > .abenteuer-fundbild {
+  max-height: 40vh;
+}
+
+/* Quer in der Welt reicht die rechte Knopfspalte (Reisen, Übungspartie, Tagebuch, Menü) bis
+   nach oben: Die Münzen stehen links neben der Spalte statt über ihrem obersten Knopf. */
+@media (orientation: landscape) and (max-height: 600px) {
+  .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog)) .abenteuer-muenzen {
+    right: calc(var(--spalte-rechts) + var(--leistenknopf) + var(--raster) * 2);
+  }
+}

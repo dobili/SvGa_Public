@@ -112,4 +112,9 @@ describe("Pixelfiguren", () => {
       { x: 6, y: 0, laenge: 2, klasse: "koerper" },
     ]);
   });
+
+  it("nimmt für Vorführung und Gedächtnisstellung den Ort, an dem der Held steht", () => {
+    expect(waehleBrettstil({ art: "ort", ort: "ironwood" }, daten)).toBe("stahl");
+    expect(waehleBrettstil({ art: "ort", ort: "unbekannterWeg" }, daten)).toBe("abgegriffen");
+  });
 });

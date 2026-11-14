@@ -3,24 +3,17 @@
   "datei": "karten/ghost-town-aussen.json",
   "art": "aussen",
   "wand": "felsRot",
-  "beschreibung": "Variante C (reicher): Die Front Street weitet sich vor dem Saloon zu einem kleinen Platz mit Fässern und Kisten; vier Holzhäuser, Wasserturm und Windrad stehen an der Nordseite. Der Weg zur gesperrten Mine zweigt zwischen Saloon und Sheriff ab. Der Friedhof im Südosten ist groß, mit Kreuzen, Grabsteinen und einem offenen Grab, das Grab ohne Namen am Ostrand. Viele Kakteen, rote Felsen und Geröll. Vor dem Saloon weitet sich die Straße zu einem kleinen Platz. Südlich der Front Street stehen Hotel, Mietstall mit Heu und Tränken und der Bestatter, hinter ihnen eine Gasse.",
+  "beschreibung": "Ghost Town am Mittag, 56 × 40: Die Front Street aus hellem Staub läuft von West nach Ost, an ihrer Nordseite der Bretterweg vor Laden, Schmiede, Saloon, Sheriffbüro und Prüfamt mit falschen Fassaden; dahinter Stage & Mail, Barbier, zwei verfallene Hütten, Wasserturm und Windrad, darüber die rote Bruchkante mit dem vernagelten Stollen der Goldmine (Sperre S11) und einer Lore auf einem Gleisrest. Der Weg zur Mine zweigt zwischen Saloon und Sheriff ab. Südlich der Straße Hotel, Mietstall mit Anbindebalken und Tränke und der Bestatter, mit ihren Türen zur Gasse dahinter; ein Planwagen, Heu und eine alte Tränke im Westen. Im Südosten der Friedhof im Holzzaun mit offenem Tor, Kreuze, Grabsteine, ein offenes Grab; ganz am Ostrand, wo der Zaun steht, der niedrige Stein ohne Namen mit dem eingeritzten Brett (Szene 98). Hinter dem Prüfamt hört der Bretterweg auf: Auf seiner Kante sitzt man nachts und sieht über den Friedhof in die Sterne (Szene 101). Am Ortsausgang im Osten die Haltestelle. Am Ortseingang stehen zwei Pfosten, das Schild dazwischen fehlt: Die Stadt kommt ohne Schild.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
     "e": "sand",
     "d": "dielen",
-    "k": "felsbodenRot"
+    "k": "felsbodenRot",
+    "p": "pisteRot"
   },
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
-  "stil": [
-    "rustikal",
-    "laendlich",
-    "einfach",
-    "industrie",
-    "natur",
-    "klassisch",
-    "modern"
-  ],
+  "stil": ["rustikal", "laendlich", "einfach", "industrie", "natur", "klassisch", "modern"],
   "raster": [
     "########################################################",
     "############################kkkk########################",
@@ -42,9 +35,9 @@
     "#............................ee........................#",
     "#............................ee........................#",
     "#............................ee........................#",
-    "#dddddddddddddddddddddddddddddddddddddddddddddddddddddd#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.dddddddddddddddddddddddddddddddddddddddddddddd.......#",
+    "ppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "pppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
     "#.......ee........eeeeeeeeeeeeeeeee........kk..........#",
     "#.......ee........eeeeeeeeeeeeeeee.........kk..........#",
@@ -122,7 +115,7 @@
     },
     {
       "moebel": "gt7PlanwagenKaputt",
-      "feld": [44, 24]
+      "feld": [38, 24]
     },
     {
       "moebel": "gt7Stollen",
@@ -263,10 +256,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7GrabOhneName",
-      "feld": [51, 32]
-    },
-    {
       "moebel": "gt7Grabstein",
       "feld": [46, 34]
     },
@@ -295,10 +284,6 @@
       "feld": [45, 31]
     },
     {
-      "moebel": "gt7Kreuz",
-      "feld": [48, 31]
-    },
-    {
       "moebel": "gt7GrabsteinGrau",
       "feld": [49, 34]
     },
@@ -311,16 +296,8 @@
       "feld": [41, 31]
     },
     {
-      "moebel": "gt7Bank",
-      "feld": [7, 34]
-    },
-    {
       "moebel": "gt7Haltestelle",
       "feld": [52, 24]
-    },
-    {
-      "moebel": "gt7Kiste",
-      "feld": [32, 26]
     },
     {
       "moebel": "gt7Kaktus",
@@ -471,10 +448,6 @@
       "feld": [18, 8]
     },
     {
-      "moebel": "gt7Schild",
-      "feld": [8, 18]
-    },
-    {
       "moebel": "gt7ZaunOL",
       "feld": [40, 29],
       "bauteil_ok": true
@@ -585,6 +558,14 @@
     {
       "moebel": "gt12Anbindebalken",
       "feld": [24, 25]
+    },
+    {
+      "moebel": "gt13PfostenOhneSchild",
+      "feld": [2, 23]
+    },
+    {
+      "moebel": "gt13SteinOhneNamen",
+      "feld": [49, 32]
     }
   ],
   "ausloeser": [
@@ -621,11 +602,11 @@
     },
     {
       "name": "grab",
-      "feld": [50, 33]
+      "feld": [50, 34]
     },
     {
       "name": "sternenhimmel",
-      "feld": [8, 33]
+      "feld": [47, 20]
     },
     {
       "name": "goldmine",
@@ -637,7 +618,7 @@
     },
     {
       "name": "ortsschild",
-      "feld": [8, 20]
+      "feld": [3, 24]
     },
     {
       "name": "steckbrief",
@@ -675,11 +656,11 @@
     {
       "name": "echse",
       "typ": "tier",
-      "feld": [3, 24],
+      "feld": [3, 28],
       "eigenschaften": {
         "verhalten": "flitzen",
-        "von": "3,24",
-        "bis": "6,24",
+        "von": "3,28",
+        "bis": "6,28",
         "wann": "tag"
       }
     },

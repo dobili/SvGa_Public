@@ -51,8 +51,11 @@ export function Dialog({
   readonly wirkungen: Wirkungen;
   readonly variablen: Dialogvariablen;
   readonly heldname: string;
-  /** Ein Knoten der Geschichte wurde erreicht (für Quests), auch der Startknoten. */
-  readonly beiKnoten: (knoten: string) => void;
+  /**
+   * Ein Knoten der Geschichte wurde erreicht (für Quests), auch der Startknoten; dazu die Variablen
+   * aus Ink in diesem Augenblick, damit die Oberwelt sie mit dem Quest-Schritt sichert.
+   */
+  readonly beiKnoten: (knoten: string, variablen: Dialogvariablen) => void;
   readonly beiEnde: (variablen: Dialogvariablen) => void;
   /** Jede neue Zeile mit ihren Tags (Bühnenanweisungen der Oberwelt, T6 und T9). */
   readonly beiZeile?: (tags: Readonly<Record<string, string>>) => void;
@@ -95,7 +98,10 @@ export function Dialog({
   }, []);
   /** Meldet jeden Knoten, der neu besucht wurde (Besuchszahl, dialog/geschichte.ts). */
   const meldeKnoten = () => {
-    for (const knoten of geschichte.neueKnoten()) beiKnoten(knoten);
+    const neu = geschichte.neueKnoten();
+    if (neu.length === 0) return;
+    const variablen = geschichte.variablen();
+    for (const knoten of neu) beiKnoten(knoten, variablen);
   };
 
   const weiter = () => {

@@ -23,6 +23,7 @@ import { zugFelder } from "../../schach/weiterspielen";
 import { stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../../ui/komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../../ui/komponenten/brettbedienung/useBrettbedienung";
+import { ortBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { liesPaketJson } from "../paket/paketlader";
 import { tSpiel } from "../texte/texte";
 
@@ -111,9 +112,12 @@ function Vorfuehrbrett({ v }: { v: Vorfuehrungsdaten }) {
  */
 export function Vorfuehrung(props: {
   readonly kennung: string;
+  /** Ort, an dem der Held steht: Sein Brettstil gilt (docs/spiel/30, Abschnitt 5); null: keiner. */
+  readonly ort: string | null;
   readonly beiSchliessen: () => void;
 }) {
   const v = useVorfuehrung(props.kennung);
+  useAbenteuerBrettstil(ortBrettquelle(props.ort));
   return (
     <section
       className="abenteuer-ergebnis abenteuer-vorfuehrung"

@@ -374,3 +374,13 @@ Kollision.
 Möbel mit Vorsilbe `gc7` (Weg) in `moebel/weg-ghost-capital.json` und `ca7` (Arena) in
 `moebel/capital-arena.json`. Stil: natur und klassisch am See, klassisch und modern in der Arena.
 Die Szenen und Varianten stehen in `inhalte/abenteuer/szenen/`; Einzelheiten in deren Beschreibung.
+
+## Karten auf dem neuesten Stand (k4b, Nacht 14./15.11.2026)
+
+- **Halle:** drei Glastüren innen (Doppeltür `rv8GlastuerSued` und `ca7Tuer`) wie das Portal
+  außen (10.77); Juno steht daneben (18, 18).
+- **Seeufer:** Der Sandweg aus Ghost Town wird erst auf dieser Karte zum Erdweg (10.72).
+- **Leuchtturm:** Das Pflaster der Stadt beginnt schon auf dem Weg vor der Kante (10.72).
+- Offen: Fähre und Fährhaus am Seeufer und der Fanshop in der Halle sind noch Abziehbilder
+  (Gemini-Wunsch); der Übergang von Wüste zu Wiese zwischen Ghost Town und Seeufer liegt an der
+  Kante.

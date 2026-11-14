@@ -406,3 +406,22 @@ Gutachten `docs/spiel/auftraege/gutachten/ghost-town.md`.
   auf einem Auslöser, vor einer Tür oder in einem Durchgang von einer Kachel. Einziger Fund:
   In Lockport saß der Statist Ruben auf dem Ankunftspunkt `kai` (13, 20); er sitzt jetzt bei
   (11, 20).
+
+## Karten auf dem neuesten Stand (k4b, Nacht 14./15.11.2026)
+
+- **Außen (mit Zustand mine-offen, aus der Grundkarte neu abgeleitet):** Ortsschild weg; am
+  Ortseingang (2, 23) stehen zwei Pfosten ohne Schild (`gt13PfostenOhneSchild`, aus LimeZus
+  Camping-Schild), `ortsschild` liegt zwischen ihnen (3, 24). Bank auf dem Hügel weg; der
+  Bretterweg endet hinter dem Prüfamt (Spalte 47), `sternenhimmel` liegt auf seinem letzten Brett
+  (47, 20). Der Stein ohne Namen (`gt13SteinOhneNamen`, roter Flachstein mit eingeritztem Brett)
+  liegt am Ostrand des Friedhofs (49, 32), `grab` davor (50, 34). Planwagen vom Pfad zum
+  Friedhofstor genommen (38, 24), Kiste ohne Grund weg, Felswand bis an beide Kartenränder, die
+  Piste der Staubstraße läuft am Westrand herein (10.72). Im Zustand stand die Tränke noch an
+  alter Stelle; jetzt gleicht er der Grundkarte bis auf den offenen Stollen.
+- **Saloon:** Schwingtür innen zwei Felder breit wie außen (`gt13SchwingtuerDoppel`), Mr. Pruitt
+  steht neben der Tür (9, 12) und sieht zu (Szene 100).
+- **Zimmer über dem Laden (`erinnerungSiedlung.huette`):** blassrosa Tapete (`tapeteRosa`, bis
+  zur Rosentapete), Kisten und Fass weg, Kleiderschrank und Kommode; Bett, Stuhl, Tisch mit
+  Brett und Kerze bleiben. Offen: Zugang über die Treppe im Laden und eine Figur für Gideon (das
+  Bild ist noch der Postreiter).
+- **Goldmine:** Türstock und Tageslicht am Ausgang (10.77).

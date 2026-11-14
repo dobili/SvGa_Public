@@ -3,11 +3,11 @@
   "datei": "karten/erinnerung-siedlung-huette.json",
   "art": "innen",
   "toenung": "sepia",
-  "wand": "holz",
+  "wand": "tapeteRosa",
   "boden": "dielen",
-  "beschreibung": "Eine Bretterhütte der Bergbausiedlung, 1866 (Variante A, nach dem Ortsdokument), 12 × 10: grobe Bretterwände, Dielenboden, durch das Fenster der Nachthimmel. An der Westwand die Pritsche, in der Mitte ein dunkler Tisch mit dem Brett und einer heruntergebrannten Kerze, davor ein Stuhl; in der Nordostecke der Kanonenofen, Kisten an den Wänden, eine Petroleumlampe auf dem Kistenstapel. An der Tür in der Südwand wartet der Postreiter.",
+  "beschreibung": "Das Zimmer über dem Laden in Ghost Town, Februar 1866 (Szene 99), 12 × 10: Dielenboden, die Wände mit einer blassrosa Tapete, durch das Fenster der Nachthimmel. An der Westwand das Bett, in dem Ambrose im Fieber liegt (nur angedeutet), daneben ein Stuhl und der dunkle Tisch mit dem Brett der Fernpartie und einer heruntergebrannten Kerze; an der Nordwand der Kleiderschrank, in der Nordostecke ein kleiner Kanonenofen. In der Tür in der Südwand (zur Treppe hinunter in den Laden) steht Gideon, der Schmied; der Postreiter wartet unten vor dem Haus und ist nicht zu sehen. Die Rosentapete ist bis zum Bild aus dem Wunsch ein gestreiftes Muster aus dem Paket.",
   "zustand": ["alt", "verwittert", "gebraucht"],
-  "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
+  "stil": ["klassisch", "laendlich", "einfach", "rustikal"],
   "raster": [
     "############",
     "############",
@@ -57,34 +57,20 @@
     {
       "moebel": "es7Fussmatte",
       "feld": [6, 8],
-      "versatz": [0, 8]
+      "versatz": [0, 3]
     },
     {
       "moebel": "es7Tuer",
       "feld": [6, 9]
     },
     {
-      "moebel": "es7Kiste",
-      "feld": [1, 7],
-      "id": "kisten"
+      "moebel": "mf2Kleiderschrank",
+      "feld": [4, 1],
+      "versatz": [0, 6]
     },
     {
-      "moebel": "es7Kiste",
-      "feld": [2, 7]
-    },
-    {
-      "moebel": "es7Kiste",
-      "feld": [1, 8]
-    },
-    {
-      "moebel": "es7Petroleumlampe",
-      "feld": [1, 6],
-      "versatz": [0, 6],
-      "vorn": true
-    },
-    {
-      "moebel": "es7Fass",
-      "feld": [10, 8]
+      "moebel": "mf4Kommode",
+      "feld": [7, 3]
     }
   ],
   "ausloeser": [

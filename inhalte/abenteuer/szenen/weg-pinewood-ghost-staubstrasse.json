@@ -2,7 +2,7 @@
   "karte": "wegPinewoodGhost.staubstrasse",
   "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
   "art": "aussen",
-  "beschreibung": "Weg 10, die Staubstraße durch die rote Wüste: Eine Schotterpiste mit dunklerem Bankett schwingt in weichen Bögen von West nach Ost; ihre Ränder laufen schräg statt in Stufen. Nördlich der Piste stehen Telegrafenmasten in einer Reihe, alle 14 Kacheln, mit durchhängenden Drähten dazwischen. Ringsum Säulen- und blühende Kakteen, Felsen und Staubteufel; nördlich ein einzelnes Autowrack, südlich ein zerbrochener Planwagen. In der Mitte liegt die verlassene Tankstelle mit Vordach, Zapfsäulen und Schuppen mit Holztür (Eingang zum Verkaufsraum) direkt an der Piste.",
+  "beschreibung": "Weg 10, die Staubstraße durch die rote Wüste: Eine Schotterpiste mit dunklerem Bankett schwingt in weichen Bögen von West nach Ost; ihre Ränder laufen schräg statt in Stufen. Nördlich der Piste stehen Telegrafenmasten in einer Reihe, alle 14 Kacheln, mit durchhängenden Drähten dazwischen. Ringsum Säulen- und blühende Kakteen, Felsen und Staubteufel; nördlich ein einzelnes Autowrack, südlich ein zerbrochener Planwagen. In der Mitte liegt die verlassene Tankstelle mit verblichenem Vordach, Zapfsäulen und Wellblechschuppen mit seiner Tür (Eingang zum Verkaufsraum) direkt an der Piste.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
@@ -286,16 +286,12 @@
       "feld": [81, 16]
     },
     {
-      "moebel": "dd6KaktusKlein",
-      "feld": [91, 9]
-    },
-    {
       "moebel": "fels",
       "feld": [108, 6]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [103, 9]
+      "feld": [106, 9]
     },
     {
       "moebel": "dd6Saguaro",
@@ -524,22 +520,6 @@
       "id": "ereignis184"
     },
     {
-      "moebel": "cp8Zapfsaeule",
-      "feld": [90, 10],
-      "id": "ereignis185"
-    },
-    {
-      "moebel": "cp8Zapfsaeule",
-      "feld": [93, 10],
-      "id": "ereignis186"
-    },
-    {
-      "moebel": "cp8Vordach",
-      "feld": [89, 8],
-      "vorn": true,
-      "id": "ereignis187"
-    },
-    {
       "moebel": "cp8Schuppen",
       "feld": [97, 6],
       "id": "ereignisTankstelleHaus"
@@ -643,9 +623,9 @@
       "vorn": true
     },
     {
-      "moebel": "gt7TuerHolz",
-      "feld": [101, 11],
-      "vorn": true
+      "moebel": "pg13TankstelleVerlassen",
+      "feld": [88, 6],
+      "id": "ereignis187"
     }
   ],
   "ausloeser": [

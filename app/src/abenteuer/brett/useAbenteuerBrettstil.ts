@@ -1,8 +1,10 @@
 /**
  * Hook der Vollbildansichten des Schach-Abenteuers: setzt den Brettstil des Ortes oder Gegners,
- * solange die Ansicht offen ist (Partie in der Spielhülle, Rätsel- und Erinnerungsrunden).
+ * solange die Ansicht offen ist (Partie in der Spielhülle, Rätsel- und Erinnerungsrunden, Vorführung
+ * und Gedächtnisstellung der Oberwelt).
  *
- * Rolle im Gesamtbild: Ein Aufruf in PartieHuelle.tsx und AufgabenAnsicht.tsx genügt; die Wahl
+ * Rolle im Gesamtbild: Ein Aufruf in PartieHuelle.tsx, AufgabenAnsicht.tsx, oberwelt/Vorfuehrung.tsx
+ * und oberwelt/Gedaechtnisstellung.tsx genügt; die Wahl
  * trifft stilwahl.ts, die Zeichnung kommt aus Zeichnung.tsx, das Brett der App liest sie über
  * ui/brett/brettstil.ts. In der App selbst bleibt die Wahl des Lesers (docs/spiel/30, Abschnitt 5).
  * Blindschach bekommt keinen Stil und bleibt, wie es ist. Hat das Paket zum Stil gezeichnete
@@ -36,6 +38,11 @@ export function partieBrettquelle(partie: Partie | null | undefined): Brettquell
 export function rundenBrettquelle(auftrag: Aufgabenauftrag | null): Brettquelle | null {
   if (!auftrag) return null;
   return { art: "runde", runde: auftrag.runde, erinnerung: auftrag.erinnerung !== undefined };
+}
+
+/** Quelle der kleinen Bretter der Oberwelt: der Ort, an dem der Held steht; null ohne Ort. */
+export function ortBrettquelle(ort: string | null): Brettquelle | null {
+  return ort ? { art: "ort", ort } : null;
 }
 
 /**

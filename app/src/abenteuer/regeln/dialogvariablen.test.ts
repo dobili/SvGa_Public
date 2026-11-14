@@ -82,4 +82,15 @@ describe("Variablen nach einem Dialog", () => {
   it("was Ink selbst ändert, gewinnt sonst", () => {
     expect(variablenNachDialog({ a: 1 }, { a: 1 }, { a: 2 })).toEqual({ a: 2 });
   });
+
+  it("Zwischenstand: was Ink selbst gesichert hat, ist keine Änderung der Hülle", () => {
+    // Knoten 1: Ink setzt x = 1, die Oberwelt sichert (useDialogende.ts, sichereVariablen).
+    const vorher = { x: 0, gefundenSchluessel: false };
+    const erst = variablenNachDialog(vorher, vorher, { x: 1, gefundenSchluessel: false });
+    expect(erst).toEqual({ x: 1, gefundenSchluessel: false });
+    // Dazwischen setzt die Hülle einen Fund; am Ende hat Ink x = 2 und kennt den Fund nicht.
+    const jetzt = { ...erst, gefundenSchluessel: true };
+    const ende = variablenNachDialog(vorher, jetzt, { x: 2, gefundenSchluessel: false }, erst);
+    expect(ende).toEqual({ x: 2, gefundenSchluessel: true });
+  });
 });

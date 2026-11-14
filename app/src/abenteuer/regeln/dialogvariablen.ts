@@ -82,17 +82,29 @@ export function variablenNachNadel(ort: string, nadel: Nadelstufe | null): Varia
  * die Hülle während des Dialogs gesetzt hat (gibFund setzt `gefundenSchluessel`, Ink kennt noch den
  * Startwert false). Was die Hülle seit dem Öffnen geändert hat, gewinnt deshalb gegen Ink
  * (Befund mittel-2, 8.11.2026: Albescu bot den Schuppen nie an).
- * Eingaben: Variablen beim Öffnen, Variablen der Hülle jetzt, Variablen aus Ink.
+ * Zwischenstände: Die Oberwelt sichert die Variablen schon bei jedem gemeldeten Knoten
+ * (useDialogende.ts, sichereVariablen), damit ein Neuladen mitten im Dialog Quest-Schritt und
+ * Variable nicht trennt (Befund der Chaos-Simulation, 14.11.2026: ironwood.mamasFinale). Was Ink
+ * dabei selbst geschrieben hat, steht dann im Stand, ist aber keine Änderung der Hülle; deshalb
+ * zählt ein Wert nur als Änderung der Hülle, wenn er weder dem Stand beim Öffnen noch dem zuletzt
+ * gesicherten Wert aus Ink gleicht.
+ * Eingaben: Variablen beim Öffnen, Variablen der Hülle jetzt, Variablen aus Ink, optional die
+ * zuletzt gesicherten Variablen aus Ink (ohne Zwischenstand: keine).
  * Beispiel: vorher {gefundenSchluessel: false}, jetzt {gefundenSchluessel: true}, Ink
  * {gefundenSchluessel: false, albescuGetroffen: true} → {gefundenSchluessel: true, albescuGetroffen: true}.
+ * Sonderfall: Ink setzt x = 1 (gesichert), später x = 2; die gesicherte 1 ist kein Wert der Hülle,
+ * am Ende gilt 2.
  */
 export function variablenNachDialog(
   vorher: Variablen,
   jetzt: Variablen,
   ausInk: Variablen,
+  zuletztAusInk: Variablen = {},
 ): Variablen {
   const vonDerHuelle = Object.fromEntries(
-    Object.entries(jetzt).filter(([name, wert]) => vorher[name] !== wert),
+    Object.entries(jetzt).filter(
+      ([name, wert]) => vorher[name] !== wert && zuletztAusInk[name] !== wert,
+    ),
   );
   return { ...jetzt, ...ausInk, ...vonDerHuelle };
 }

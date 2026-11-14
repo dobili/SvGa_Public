@@ -149,6 +149,15 @@
       "art": "fahrzeug",
       "zustand": "verwittert",
       "stil": "industrie"
+    },
+    "pg13TankstelleVerlassen": {
+      "quelle": "spiel/eigene/tankstelle_verlassen.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true,
+      "maske": [".......", ".......", ".......", "#######", "#######"],
+      "zustand": "verwittert",
+      "stil": "industrie"
     }
   }
 }

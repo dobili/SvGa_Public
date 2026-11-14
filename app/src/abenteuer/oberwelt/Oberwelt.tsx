@@ -46,7 +46,7 @@ import { useDialogende } from "./useDialogende";
 import { LUPE, usePartiestart } from "./usePartiestart";
 import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
-import { Fundbild } from "./Fundbild";
+import { Meldungsleiste } from "./Meldungsleiste";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
 /** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
@@ -81,6 +81,7 @@ export function Oberwelt() {
   const dialoge = useDialogende(k, partie, runden);
   const { dialog, oeffneDialog, vorfuehrung, offenerLaden, abspann } = dialoge;
   const toenung = k.toenung;
+  const ortDesHelden = welt?.ort.kennung ?? null;
   const rahmen = useRef<HTMLDivElement>(null);
   const kachelanzeige = useRef<HTMLSpanElement>(null);
   const [treffer, setzeTreffer] = useState<Ausloesertreffer | null>(null);
@@ -218,7 +219,7 @@ export function Oberwelt() {
           wirkungen={dialoge.wirkungen}
           variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand) }}
           heldname={stand.held.name}
-          beiKnoten={(knoten) => melde({ art: "dialog", knoten: `${dialog.datei}.${knoten}` })}
+          beiKnoten={dialoge.beiKnoten}
           beiEnde={(variablen) => {
             buehne.ende();
             dialoge.beiDialogende(variablen);
@@ -323,20 +324,23 @@ export function Oberwelt() {
       {gedaechtnis && (
         <Gedaechtnisstellung
           kennung={gedaechtnis}
+          ort={ortDesHelden}
           beiEnde={(bestanden) => runden.beendeGedaechtnis(gedaechtnis, bestanden)}
         />
       )}
       {vorfuehrung && (
-        <Vorfuehrung kennung={vorfuehrung} beiSchliessen={() => dialoge.zeigeVorfuehrung(null)} />
+        <Vorfuehrung
+          kennung={vorfuehrung}
+          ort={ortDesHelden}
+          beiSchliessen={() => dialoge.zeigeVorfuehrung(null)}
+        />
       )}
       {meldung && (
-        <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-meldung">
-          <Fundbild bild={meldungsbild} />
-          <p>{meldung}</p>
-          <button type="button" className="knopf-zweit" onClick={() => setzeMeldung(null)}>
-            {tSpiel("ergebnis.weiter")}
-          </button>
-        </section>
+        <Meldungsleiste
+          text={meldung}
+          bild={meldungsbild}
+          beiSchliessen={() => setzeMeldung(null)}
+        />
       )}
       {ergebnis && (
         <Partieergebniskarte

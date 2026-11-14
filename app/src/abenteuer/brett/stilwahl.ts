@@ -1,6 +1,7 @@
 /**
  * Welcher Brettstil gilt: für eine Partie aus Begegnung und Ort, für eine Rätselrunde aus dem Ort
- * der Runde, für eine Erinnerung Sepia.
+ * der Runde, für eine Erinnerung Sepia, für Vorführung und Gedächtnisstellung der Oberwelt aus dem
+ * Ort, an dem der Held gerade steht.
  *
  * Rolle im Gesamtbild: docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 5: „Jeder Ort bekommt
  * einen Stil, einzelne Gegner dürfen ihn ändern (Feld `brett` in begegnungen.json, Vorgabe aus
@@ -13,7 +14,8 @@ import { istBrettstil, VORGABESTIL, type Brettstilkennung } from "./brettstile";
 /** Woher eine Ansicht ihren Stil nimmt; null für keinen Stil (Blindschach, nichts geladen). */
 export type Brettquelle =
   | { readonly art: "partie"; readonly begegnung: string }
-  | { readonly art: "runde"; readonly runde: string; readonly erinnerung: boolean };
+  | { readonly art: "runde"; readonly runde: string; readonly erinnerung: boolean }
+  | { readonly art: "ort"; readonly ort: string };
 
 /** Was die Wahl aus den Spieldaten braucht: nur Kennungen, Orte der Runden und „brett“. */
 export interface Stildaten {
@@ -39,7 +41,7 @@ function stilDesOrtes(daten: Stildaten, ort: string): Brettstilkennung {
  * Eingaben: Quelle der Ansicht, Spieldaten. Ausgabe: Stilkennung, oder null ohne Quelle.
  * Beispiele: Begegnung „ironwood.clubkampf“ → Ort Ironwood → „stahl“; Begegnung
  * „reisebrett.ambrose“ mit „brett: dachboden“ → „dachboden“; Runde „summitCity.reiheWard“ →
- * „schiefer“; eine Erinnerung Ambroses → „sepia“.
+ * „schiefer“; eine Erinnerung Ambroses → „sepia“; Ort „ironwood“ (Vorführung dort) → „stahl“.
  * Sonderfälle: Unbekannte Kennungen in den Daten zählen nicht (Schema und Tests prüfen sie);
  * eine Begegnung an einem Ort ohne Stil (Wege, Dörfer) bekommt „abgegriffen“.
  */
@@ -53,6 +55,7 @@ export function waehleBrettstil(
     if (istBrettstil(eigener)) return eigener;
     return stilDesOrtes(daten, ortAusKennung(quelle.begegnung));
   }
+  if (quelle.art === "ort") return stilDesOrtes(daten, quelle.ort);
   if (quelle.erinnerung) return "sepia";
   const ort = daten.runden.find((r) => r.kennung === quelle.runde)?.ort;
   return stilDesOrtes(daten, ort ?? ortAusKennung(quelle.runde));

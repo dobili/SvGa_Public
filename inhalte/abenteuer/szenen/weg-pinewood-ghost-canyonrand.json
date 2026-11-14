@@ -10,7 +10,8 @@
     "E": "erdeRot",
     "s": "sandRot",
     "g": "sandRotRand",
-    "f": "felsbodenRotDunkel"
+    "f": "felsbodenRotDunkel",
+    "p": "pisteRot"
   },
   "raster": [
     "######################################################################################################################################################",
@@ -26,9 +27,9 @@
     "#............eeeeeeeeeeeeeeeeeeeeeeeeeeeee.............................................ggsEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEssssssssssssssssssssssss#",
     "#...........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.............................................gEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEsssssssssssssssssssssss#",
     "#..........eee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEssssssssssssssssssssss#",
-    "#eeeeeeeeeeee.............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEEEEEEE#",
-    "eeeeeeeeeeee...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..ggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEEEEEEE",
-    "eeeeeeeeeee................................................................................ggssssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEEEEEE",
+    "#eeeeeeeeeeee.............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEpppppp#",
+    "eeeeeeeeeeee...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..ggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEpppppppp",
+    "eeeeeeeeeee................................................................................ggssssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEpppppp",
     "#.............................................................gggggggggggggggggggggggggggggggssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg###############################################ssssssssssssssssssssssssssssssssssssssss#",
     "######################################################################################################################################################",

@@ -1,6 +1,6 @@
 /**
  * Gezielte Randfälle des Schach-Abenteuers (Affentest, Wunsch des Autors 14.11.2026): Neuladen in
- * Partie und Dialog, Zurück-Taste in der Aufgabenrunde, Aufgeben im ersten Zug, Uhr auf null,
+ * Partie und Dialog (auch: Quest geht danach weiter), Zurück-Taste in der Aufgabenrunde, Aufgeben im ersten Zug, Uhr auf null,
  * Karte während der Rechnung, zwei Tabs, schnelle Kartenwechsel, voller oder fehlender Speicher,
  * Sprachwechsel. Jeder Fall endet in der begehbaren Welt und ohne Ausnahme.
  * Abhängigkeiten: tests/e2e/abenteuer-affe.ts, tests/e2e/abenteuer-karte.ts, tests/e2e/hilfen.ts.
@@ -174,6 +174,57 @@ test("Dialog: neu laden mitten im Gespräch, danach wieder ansprechbar", async (
   await page.getByTestId("abenteuer-aktion").click();
   await expect(page.getByTestId("abenteuer-dialog")).toBeVisible({ timeout: 15000 });
   await findeAusweg(page);
+  expect(funde).toEqual([]);
+});
+
+/** Dialogvariablen und Stand einer Quest aus dem gespeicherten Spielstand. */
+async function questUndVariable(
+  seite: Page,
+  quest: string,
+  variable: string,
+): Promise<{ erledigt: boolean | null; wert: unknown }> {
+  const { abenteuer } = await seite.evaluate(liesSpeicherImBrowser);
+  const quests = (abenteuer?.quests ?? []) as { kennung: string; erledigt: boolean }[];
+  const variablen = (abenteuer?.dialogvariablen ?? {}) as Record<string, unknown>;
+  return {
+    erledigt: quests.find((q) => q.kennung === quest)?.erledigt ?? null,
+    wert: variablen[variable],
+  };
+}
+
+test("Dialog: neu laden mitten im Gespräch, danach geht die Quest weiter", async ({ page }) => {
+  // Befund der Chaos-Simulation (14.11.2026): Der Quest-Schritt stand sofort im Stand, die
+  // Variable des Dialogs erst am Ende. Jo fragt nach Limo (Quest beginnt, limoGefragt), dann lädt
+  // der Leser neu; die Limo ist schon im Gepäck (sonst vom Kiosk), also muss Jo sie beim nächsten
+  // Ansprechen annehmen (Quest erledigt). Ohne gesicherte Variable fragte sie wieder nach Limo.
+  const funde = beobachte(page);
+  const stand = {
+    ...GRUNDSTAND,
+    position: {
+      karte: "mapleFalls.park",
+      ...feldDarunter("maple-falls-park", "skaterJo"),
+      richtung: "oben",
+    },
+    gegenstaende: [...GRUNDSTAND.gegenstaende, "limo"],
+    dialogvariablen: { joGetroffen: true, ausgangMapleFallsSkaterJo: "sieg" },
+  };
+  await starteMitStand(page, stand);
+  await page.getByTestId("abenteuer-aktion").click();
+  const dialog = page.getByTestId("abenteuer-dialog");
+  await expect(dialog).toContainText("Limo", { timeout: 15000 });
+  await dialog.getByRole("button", { name: "Weiter" }).click();
+  await expect
+    .poll(() => questUndVariable(page, "mapleFalls.limo", "limoGefragt"), { timeout: 10000 })
+    .toEqual({ erledigt: false, wert: true });
+  await page.reload();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await expect(dialog).toHaveCount(0);
+  await page.getByTestId("abenteuer-aktion").click();
+  await expect(dialog).toContainText("Zitronenlimo", { timeout: 15000 });
+  await findeAusweg(page);
+  await expect
+    .poll(() => questUndVariable(page, "mapleFalls.limo", "limoGebracht"), { timeout: 10000 })
+    .toEqual({ erledigt: true, wert: true });
   expect(funde).toEqual([]);
 });
 

@@ -16,6 +16,7 @@ import { Brettbereich } from "../../ui/komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../../ui/komponenten/brettbedienung/useBrettbedienung";
 import { Stellungseditor } from "../../ui/komponenten/spielstart/Stellungseditor";
 import { Raetseltest } from "../anbindung/Testleiste";
+import { ortBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { liesPaketJson } from "../paket/paketlader";
 import { vergleicheStellung, type Gedaechtnisergebnis } from "../regeln/gedaechtnis";
 import { tSpiel } from "../texte/texte";
@@ -62,8 +63,11 @@ function Zeigen({ fen, sekunden, fertig }: { fen: string; sekunden: number; fert
  */
 export function Gedaechtnisstellung(props: {
   readonly kennung: string;
+  /** Ort, an dem der Held steht: Sein Brettstil gilt (docs/spiel/30, Abschnitt 5); null: keiner. */
+  readonly ort: string | null;
   readonly beiEnde: (bestanden: boolean) => void;
 }) {
+  useAbenteuerBrettstil(ortBrettquelle(props.ort));
   const [eintrag, setzeEintrag] = useState<Eintrag | null>(null);
   const [phase, setzePhase] = useState<"zeigen" | "aufbauen">("zeigen");
   const [ergebnis, setzeErgebnis] = useState<Gedaechtnisergebnis | null>(null);

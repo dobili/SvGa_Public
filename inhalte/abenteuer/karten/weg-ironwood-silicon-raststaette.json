@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 284,
+ "nextobjectid": 281,
  "layers": [
   {
    "id": 1,
@@ -19821,75 +19821,6 @@
     },
     {
      "id": 277,
-     "name": "wsgLaterneModern",
-     "type": "moebel",
-     "x": 64,
-     "y": 272,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 328
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 278,
-     "name": "wsgLaterneModern",
-     "type": "moebel",
-     "x": 176,
-     "y": 272,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 328
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 279,
-     "name": "wsgLaterneModern",
-     "type": "moebel",
-     "x": 288,
-     "y": 272,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 328
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 280,
      "name": "ws5Erle",
      "type": "moebel",
      "x": 2416,
@@ -19912,7 +19843,7 @@
      ]
     },
     {
-     "id": 281,
+     "id": 278,
      "name": "wsgBaum1",
      "type": "moebel",
      "x": 2464,
@@ -19935,7 +19866,7 @@
      ]
     },
     {
-     "id": 282,
+     "id": 279,
      "name": "wsgBaum1",
      "type": "moebel",
      "x": 2512,
@@ -19958,7 +19889,7 @@
      ]
     },
     {
-     "id": 283,
+     "id": 280,
      "name": "fz11BusAuf",
      "type": "moebel",
      "x": 2008,

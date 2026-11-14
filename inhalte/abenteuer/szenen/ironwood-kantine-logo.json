@@ -25,7 +25,7 @@
     "#........................dddddddddd#",
     "#........................dddddddddd#",
     "#........................dddddddddd#",
-    "##################.#################",
+    "#################...################",
     "####################################"
   ],
   "objekte": [
@@ -764,11 +764,6 @@
       "feld": [34, 16]
     },
     {
-      "moebel": "cc6TuerSued",
-      "feld": [18, 19],
-      "an_wand": true
-    },
-    {
       "moebel": "cc5Fussmatte",
       "feld": [18, 17],
       "versatz": [0, 19]
@@ -787,6 +782,31 @@
       "moebel": "mf3Pokal",
       "feld": [0, 0],
       "auf": "pokalkarton"
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [19, 17],
+      "versatz": [0, 19]
+    },
+    {
+      "moebel": "rv5TuerSuedGlas",
+      "feld": [17, 19],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5TuerSuedGlas",
+      "feld": [18, 19],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5TuerSuedGlas",
+      "feld": [19, 19],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [17, 17],
+      "versatz": [0, 19]
     }
   ],
   "ausloeser": [
@@ -808,6 +828,14 @@
     {
       "name": "stahlbrett",
       "feld": [30, 8]
+    },
+    {
+      "name": "kantineAusgang",
+      "feld": [19, 18]
+    },
+    {
+      "name": "kantineAusgang",
+      "feld": [17, 18]
     }
   ],
   "figuren": [

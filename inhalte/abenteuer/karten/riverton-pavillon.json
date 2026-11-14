@@ -2305,52 +2305,6 @@
     },
     {
      "id": 45,
-     "name": "rv9Figurentruhe",
-     "type": "moebel",
-     "x": 96,
-     "y": 240,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 264
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 46,
-     "name": "rv9Figurentruhe",
-     "type": "moebel",
-     "x": 256,
-     "y": 240,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 264
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 47,
      "name": "rv5Limonade",
      "type": "moebel",
      "x": 176,
@@ -2373,7 +2327,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 46,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 288,
@@ -2387,6 +2341,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 47,
+     "name": "wzPflanze",
+     "type": "moebel",
+     "x": 80,
+     "y": 240,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "wzPflanze",
+     "type": "moebel",
+     "x": 80,
+     "y": 48,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
       },
       {
        "name": "kollision",
@@ -2399,52 +2399,6 @@
      "id": 49,
      "name": "wzPflanze",
      "type": "moebel",
-     "x": 80,
-     "y": 240,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 264
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 50,
-     "name": "wzPflanze",
-     "type": "moebel",
-     "x": 80,
-     "y": 48,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 51,
-     "name": "wzPflanze",
-     "type": "moebel",
      "x": 288,
      "y": 48,
      "width": 16,
@@ -2465,7 +2419,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 50,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 192,
@@ -2488,7 +2442,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 51,
      "name": "mf5TuerSuedHolz",
      "type": "moebel",
      "x": 192,
@@ -2511,20 +2465,66 @@
      ]
     },
     {
-     "id": 54,
-     "name": "rv9GrossWeissTurm",
+     "id": 52,
+     "name": "rv14FigurWeissTurm",
      "type": "moebel",
      "x": 128,
-     "y": 202,
+     "y": 188,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 218
+       "value": 212
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "rv14FigurWeissKoenig",
+     "type": "moebel",
+     "x": 160,
+     "y": 188,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 212
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "rv14FigurWeissBauer",
+     "type": "moebel",
+     "x": 144,
+     "y": 172,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 196
       },
       {
        "name": "kollision",
@@ -2535,19 +2535,19 @@
     },
     {
      "id": 55,
-     "name": "rv9GrossWeissKoenig",
+     "name": "rv14FigurWeissBauer",
      "type": "moebel",
-     "x": 160,
-     "y": 202,
+     "x": 176,
+     "y": 172,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 218
+       "value": 196
       },
       {
        "name": "kollision",
@@ -2558,19 +2558,19 @@
     },
     {
      "id": 56,
-     "name": "rv9GrossWeissBauer",
+     "name": "rv14FigurWeissSpringer",
      "type": "moebel",
-     "x": 144,
-     "y": 186,
+     "x": 192,
+     "y": 156,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 202
+       "value": 180
       },
       {
        "name": "kollision",
@@ -2581,19 +2581,19 @@
     },
     {
      "id": 57,
-     "name": "rv9GrossWeissBauer",
+     "name": "rv14FigurWeissBauer",
      "type": "moebel",
-     "x": 176,
-     "y": 186,
+     "x": 160,
+     "y": 140,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 202
+       "value": 164
       },
       {
        "name": "kollision",
@@ -2604,19 +2604,19 @@
     },
     {
      "id": 58,
-     "name": "rv9GrossWeissSpringer",
+     "name": "rv14FigurSchwarzTurm",
      "type": "moebel",
-     "x": 192,
-     "y": 170,
+     "x": 144,
+     "y": 76,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 186
+       "value": 100
       },
       {
        "name": "kollision",
@@ -2627,19 +2627,19 @@
     },
     {
      "id": 59,
-     "name": "rv9GrossWeissBauer",
+     "name": "rv14FigurSchwarzKoenig",
      "type": "moebel",
-     "x": 160,
-     "y": 154,
+     "x": 176,
+     "y": 76,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 170
+       "value": 100
       },
       {
        "name": "kollision",
@@ -2650,19 +2650,19 @@
     },
     {
      "id": 60,
-     "name": "rv9GrossSchwarzTurm",
+     "name": "rv14FigurSchwarzBauer",
      "type": "moebel",
-     "x": 144,
-     "y": 90,
+     "x": 160,
+     "y": 92,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 106
+       "value": 116
       },
       {
        "name": "kollision",
@@ -2673,19 +2673,19 @@
     },
     {
      "id": 61,
-     "name": "rv9GrossSchwarzKoenig",
+     "name": "rv14FigurSchwarzBauer",
      "type": "moebel",
-     "x": 176,
-     "y": 90,
+     "x": 192,
+     "y": 92,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 106
+       "value": 116
       },
       {
        "name": "kollision",
@@ -2696,19 +2696,19 @@
     },
     {
      "id": 62,
-     "name": "rv9GrossSchwarzBauer",
+     "name": "rv14FigurSchwarzBauer",
      "type": "moebel",
-     "x": 160,
-     "y": 106,
+     "x": 176,
+     "y": 124,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 122
+       "value": 148
       },
       {
        "name": "kollision",
@@ -2719,19 +2719,19 @@
     },
     {
      "id": 63,
-     "name": "rv9GrossSchwarzBauer",
+     "name": "rv14FigurSchwarzLaeufer",
      "type": "moebel",
-     "x": 192,
-     "y": 106,
+     "x": 208,
+     "y": 108,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 122
+       "value": 132
       },
       {
        "name": "kollision",
@@ -2742,52 +2742,6 @@
     },
     {
      "id": 64,
-     "name": "rv9GrossSchwarzBauer",
-     "type": "moebel",
-     "x": 176,
-     "y": 138,
-     "width": 16,
-     "height": 24,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 154
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "rv9GrossSchwarzLaeufer",
-     "type": "moebel",
-     "x": 208,
-     "y": 122,
-     "width": 16,
-     "height": 24,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 138
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
      "name": "rv5BankLang",
      "type": "moebel",
      "x": 16,
@@ -2810,7 +2764,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 65,
      "name": "rv5BankLang",
      "type": "moebel",
      "x": 320,
@@ -2833,20 +2787,66 @@
      ]
     },
     {
-     "id": 68,
-     "name": "rv9GrossWeissLaeufer",
+     "id": 66,
+     "name": "rv14FigurWeissLaeufer",
      "type": "moebel",
      "x": 208,
-     "y": 186,
+     "y": 172,
      "width": 16,
-     "height": 24,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 202
+       "value": 196
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "rv14FigurSchwarzSpringer",
+     "type": "moebel",
+     "x": 224,
+     "y": 92,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 116
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "rv14FigurentruheA",
+     "type": "moebel",
+     "x": 96,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
       },
       {
        "name": "kollision",
@@ -2857,19 +2857,19 @@
     },
     {
      "id": 69,
-     "name": "rv9GrossSchwarzSpringer",
+     "name": "rv14FigurentruheB",
      "type": "moebel",
-     "x": 224,
-     "y": 106,
-     "width": 16,
-     "height": 24,
+     "x": 256,
+     "y": 240,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 122
+       "value": 264
       },
       {
        "name": "kollision",

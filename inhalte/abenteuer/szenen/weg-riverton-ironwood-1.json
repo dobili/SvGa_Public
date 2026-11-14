@@ -109,8 +109,9 @@
     "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
-    "eeeeeeeeeeeeeeeeeppp~~~~~~~~.......#",
-    "eeeeeeeeeeeeeeeeeppp~~~~~~~~.......#",
+    "pppppppppppppppppppp~~~~~~~~.......#",
+    "pppppppppppppppppppp~~~~~~~~.......#",
+    "#ppppppppppppppppppp~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
@@ -118,7 +119,6 @@
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
@@ -273,47 +273,47 @@
       "feld": [1, 7]
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 17],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 17],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 18],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 18],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 19],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 19],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 20],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 20],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 21],
       "bauteil_ok": true
     },
@@ -323,17 +323,17 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 22],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 23],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 24],
       "bauteil_ok": true
     },
@@ -343,52 +343,52 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 25],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 25],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 26],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 26],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 27],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 27],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 28],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 28],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 29],
       "bauteil_ok": true
     },
@@ -516,11 +516,6 @@
     {
       "moebel": "mf4Laterne",
       "feld": [7, 36]
-    },
-    {
-      "moebel": "wr8Lastkahn",
-      "feld": [20, 46],
-      "vorn": true
     },
     {
       "moebel": "wg4ObstbaumKlein",
@@ -669,7 +664,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 68],
       "bauteil_ok": true
     },
@@ -679,7 +674,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 69],
       "bauteil_ok": true
     },
@@ -689,7 +684,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 70],
       "bauteil_ok": true
     },
@@ -699,7 +694,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 71],
       "bauteil_ok": true
     },
@@ -709,7 +704,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 72],
       "bauteil_ok": true
     },
@@ -719,7 +714,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 73],
       "bauteil_ok": true
     },
@@ -729,7 +724,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 74],
       "bauteil_ok": true
     },
@@ -804,7 +799,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 68],
       "bauteil_ok": true
     },
@@ -814,7 +809,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 69],
       "bauteil_ok": true
     },
@@ -824,7 +819,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 70],
       "bauteil_ok": true
     },
@@ -834,7 +829,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 71],
       "bauteil_ok": true
     },
@@ -844,7 +839,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 72],
       "bauteil_ok": true
     },
@@ -854,7 +849,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 73],
       "bauteil_ok": true
     },
@@ -864,7 +859,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 74],
       "bauteil_ok": true
     },
@@ -939,7 +934,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 79],
       "bauteil_ok": true
     },
@@ -949,7 +944,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 80],
       "bauteil_ok": true
     },
@@ -959,7 +954,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 81],
       "bauteil_ok": true
     },
@@ -969,7 +964,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 82],
       "bauteil_ok": true
     },
@@ -979,7 +974,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 83],
       "bauteil_ok": true
     },
@@ -989,7 +984,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [1, 84],
       "bauteil_ok": true
     },
@@ -1064,7 +1059,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 79],
       "bauteil_ok": true
     },
@@ -1074,7 +1069,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 80],
       "bauteil_ok": true
     },
@@ -1084,7 +1079,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 81],
       "bauteil_ok": true
     },
@@ -1094,7 +1089,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 82],
       "bauteil_ok": true
     },
@@ -1104,7 +1099,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 83],
       "bauteil_ok": true
     },
@@ -1114,7 +1109,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 84],
       "bauteil_ok": true
     },
@@ -1209,7 +1204,7 @@
     },
     {
       "moebel": "wr8BrueckeEisen7",
-      "feld": [16, 98]
+      "feld": [16, 99]
     },
     {
       "moebel": "mf9BankRechts",
@@ -1260,62 +1255,62 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [2, 111],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [9, 111],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [2, 112],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [9, 112],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [2, 113],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [9, 113],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [2, 114],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [9, 114],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [2, 115],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [9, 115],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [2, 116],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [9, 116],
       "bauteil_ok": true
     },
@@ -1808,72 +1803,72 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 147],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 148],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 149],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 150],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 151],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 152],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 153],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 154],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 155],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 156],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 157],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 158],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 159],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wr14ZaunSenkrecht",
       "feld": [15, 160],
       "bauteil_ok": true
     },
@@ -2237,6 +2232,11 @@
     {
       "moebel": "iw5Schornstein",
       "feld": [10, 0]
+    },
+    {
+      "moebel": "wr14Kutter",
+      "feld": [20, 50],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 31,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -169,7 +169,7 @@
     0,
     0,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -336,7 +336,7 @@
     2,
     2,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -555,6 +555,17 @@
     },
     {
      "id": 3,
+     "name": "waschsalonAusgang",
+     "type": "ausloeser",
+     "x": 80,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 4,
      "name": "zettelTurm",
      "type": "ausloeser",
      "x": 112,
@@ -565,7 +576,7 @@
      "visible": true
     },
     {
-     "id": 4,
+     "id": 5,
      "name": "trockner",
      "type": "ausloeser",
      "x": 96,
@@ -576,7 +587,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "comicheft",
      "type": "ausloeser",
      "x": 16,
@@ -587,7 +598,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "automat",
      "type": "ausloeser",
      "x": 176,
@@ -598,7 +609,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "boateng",
      "type": "figur",
      "x": 160,
@@ -609,7 +620,7 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "kundin",
      "type": "statist",
      "x": 112,
@@ -637,7 +648,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "mannMitZeitung",
      "type": "statist",
      "x": 48,
@@ -670,33 +681,10 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "cc4Pflanze",
      "type": "moebel",
      "x": 16,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 11,
-     "name": "cc4Waschmaschine",
-     "type": "moebel",
-     "x": 32,
      "y": 32,
      "width": 16,
      "height": 32,
@@ -719,7 +707,7 @@
      "id": 12,
      "name": "cc4Waschmaschine",
      "type": "moebel",
-     "x": 48,
+     "x": 32,
      "y": 32,
      "width": 16,
      "height": 32,
@@ -742,7 +730,7 @@
      "id": 13,
      "name": "cc4Waschmaschine",
      "type": "moebel",
-     "x": 64,
+     "x": 48,
      "y": 32,
      "width": 16,
      "height": 32,
@@ -765,7 +753,7 @@
      "id": 14,
      "name": "cc4Waschmaschine",
      "type": "moebel",
-     "x": 80,
+     "x": 64,
      "y": 32,
      "width": 16,
      "height": 32,
@@ -786,6 +774,29 @@
     },
     {
      "id": 15,
+     "name": "cc4Waschmaschine",
+     "type": "moebel",
+     "x": 80,
+     "y": 32,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 16,
      "name": "cc12TrocknerBrett",
      "type": "moebel",
      "x": 96,
@@ -808,7 +819,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "cc12Trockner",
      "type": "moebel",
      "x": 112,
@@ -831,7 +842,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "cc4Pinnwand",
      "type": "moebel",
      "x": 96,
@@ -854,7 +865,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "wzFenster",
      "type": "moebel",
      "x": 144,
@@ -877,7 +888,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "cc4Waschmittelregal",
      "type": "moebel",
      "x": 176,
@@ -900,7 +911,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "cc13Radio",
      "type": "moebel",
      "x": 184,
@@ -923,7 +934,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "cc7AutomatFront",
      "type": "moebel",
      "x": 176,
@@ -946,7 +957,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "cc4Falttisch",
      "type": "moebel",
      "x": 64,
@@ -969,7 +980,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "crTheke",
      "type": "moebel",
      "x": 144,
@@ -992,7 +1003,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "cc4Waeschekorb",
      "type": "moebel",
      "x": 48,
@@ -1015,7 +1026,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 16,
@@ -1038,7 +1049,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "cc12Comicheft",
      "type": "moebel",
      "x": 20,
@@ -1061,7 +1072,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "cc4WaeschekorbGruen",
      "type": "moebel",
      "x": 144,
@@ -1084,7 +1095,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "cc4Pflanze",
      "type": "moebel",
      "x": 192,
@@ -1107,12 +1118,12 @@
      ]
     },
     {
-     "id": 29,
-     "name": "sb8GlastuerSued",
+     "id": 30,
+     "name": "cc13GlastuerSuedDoppel",
      "type": "moebel",
      "x": 64,
      "y": 160,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -1130,7 +1141,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 64,

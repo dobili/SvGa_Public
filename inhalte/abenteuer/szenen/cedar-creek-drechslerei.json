@@ -16,7 +16,7 @@
     "#..............#",
     "#..............#",
     "#..............#",
-    "####.###########"
+    "####..##########"
   ],
   "objekte": [
     {
@@ -138,6 +138,14 @@
       "an_wand": true
     },
     {
+      "moebel": "cc8TuerSuedHolz",
+      "feld": [
+        5,
+        10
+      ],
+      "an_wand": true
+    },
+    {
       "moebel": "cc5Fussmatte",
       "feld": [
         4,
@@ -196,6 +204,13 @@
       "name": "drechslereiAusgang",
       "feld": [
         4,
+        10
+      ]
+    },
+    {
+      "name": "drechslereiAusgang",
+      "feld": [
+        5,
         10
       ]
     }

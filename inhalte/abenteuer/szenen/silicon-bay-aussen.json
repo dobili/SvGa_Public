@@ -2,13 +2,14 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse, Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse (Tiere gibt es keine, „die stören die Sensoren“; ein Roboterhund geht an der Leine), Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der einzige Farbfleck der Stadt: Rosies Food-Truck mit Verkaufsklappe nach Süden und davor die einzige Holzbank, auf der Dash sitzt; dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur in der Mitte führt ein gepflasterter Durchgang zur Treppe hinunter, die auf der Hafenkarte beginnt.",
   "boden": "platten",
   "wandart": "stein",
   "boeden": {
     "g": "stein",
     "s": "asphalt",
-    "w": "gras"
+    "w": "gras",
+    "p": "pflaster"
   },
   "zustand": ["neu", "gebraucht"],
   "raster": [
@@ -78,10 +79,10 @@
     "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
     "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
     "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
-    "#...............................gggg...................................#",
-    "#...............................gggg...................................#",
-    "#...............................gggg...................................#",
-    "################################gggg####################################"
+    "#...............................pppp...................................#",
+    "#...............................pppp...................................#",
+    "#...............................pppp...................................#",
+    "################################pppp####################################"
   ],
   "objekte": [
     {
@@ -814,16 +815,6 @@
       "feld": [37, 57]
     },
     {
-      "moebel": "ca9Treppe",
-      "feld": [32, 66],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ca9Treppe",
-      "feld": [34, 66],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wsgGel16",
       "feld": [1, 68],
       "bauteil_ok": true
@@ -984,6 +975,15 @@
       "moebel": "cc4Hecke",
       "feld": [62, 23],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "sbFoodtruck",
+      "feld": [7, 58],
+      "id": "truck"
+    },
+    {
+      "moebel": "cc4Stammbank",
+      "feld": [8, 65]
     }
   ],
   "ausloeser": [
@@ -1074,11 +1074,11 @@
   "figuren": [
     {
       "name": "rosie",
-      "feld": [11, 50]
+      "feld": [12, 64]
     },
     {
       "name": "dash",
-      "feld": [17, 54]
+      "feld": [11, 65]
     },
     {
       "name": "victor",
@@ -1132,8 +1132,8 @@
       "typ": "tier",
       "feld": [55, 52],
       "eigenschaften": {
-        "von": "53,50",
-        "bis": "60,52",
+        "von": "55,52",
+        "bis": "59,52",
         "verhalten": "folgen"
       }
     },
@@ -1277,44 +1277,14 @@
       }
     },
     {
-      "name": "tauben",
-      "typ": "tier",
-      "feld": [30, 59],
-      "eigenschaften": {
-        "von": "20,51",
-        "bis": "50,65",
-        "verhalten": "fliegen"
-      }
-    },
-    {
-      "name": "hund",
-      "typ": "tier",
-      "feld": [50, 48],
-      "eigenschaften": {
-        "von": "40,48",
-        "bis": "60,48",
-        "verhalten": "folgen"
-      }
-    },
-    {
-      "name": "katze",
-      "typ": "tier",
-      "feld": [64, 62],
-      "eigenschaften": {
-        "von": "62,61",
-        "bis": "66,63",
-        "verhalten": "schlafen"
-      }
-    },
-    {
       "name": "hundebesitzer",
       "typ": "statist",
-      "feld": [49, 48],
+      "feld": [54, 52],
       "eigenschaften": {
-        "tun": "führt den Hund an der Leine",
+        "tun": "führt den Roboterhund an der Leine aus",
         "wann": "tag",
-        "von": "40,48",
-        "bis": "60,48"
+        "von": "54,52",
+        "bis": "58,52"
       }
     }
   ]

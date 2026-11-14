@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 49,
+ "nextobjectid": 52,
  "layers": [
   {
    "id": 1,
@@ -580,7 +580,7 @@
     0,
     0,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -1205,7 +1205,7 @@
     2,
     2,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -1962,6 +1962,17 @@
     },
     {
      "id": 6,
+     "name": "museumAusgang",
+     "type": "ausloeser",
+     "x": 192,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 7,
      "name": "teague",
      "type": "figur",
      "x": 256,
@@ -1972,7 +1983,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "besucherin",
      "type": "statist",
      "x": 400,
@@ -2010,7 +2021,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "lehrer",
      "type": "statist",
      "x": 96,
@@ -2043,7 +2054,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "schulkindA",
      "type": "statist",
      "x": 64,
@@ -2081,7 +2092,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "schulkindB",
      "type": "statist",
      "x": 80,
@@ -2119,7 +2130,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "schulkindC",
      "type": "statist",
      "x": 128,
@@ -2157,7 +2168,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "iw8Schalter",
      "type": "moebel",
      "x": 16,
@@ -2180,7 +2191,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "cc4Fenster",
      "type": "moebel",
      "x": 128,
@@ -2203,7 +2214,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "cc4Fenster",
      "type": "moebel",
      "x": 208,
@@ -2226,7 +2237,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "cc4Fenster",
      "type": "moebel",
      "x": 272,
@@ -2249,7 +2260,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "cc4Fahrplan",
      "type": "moebel",
      "x": 304,
@@ -2272,7 +2283,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "pd9Lehrertisch",
      "type": "moebel",
      "x": 224,
@@ -2295,7 +2306,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 256,
@@ -2318,7 +2329,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "iw9VitrineLokmodell",
      "type": "moebel",
      "x": 48,
@@ -2341,7 +2352,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 256,
@@ -2364,7 +2375,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "iw9VitrineZeitung",
      "type": "moebel",
      "x": 32,
@@ -2387,7 +2398,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "iw9VitrineLaterne",
      "type": "moebel",
      "x": 80,
@@ -2410,7 +2421,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "iw9VitrineFahrkarten",
      "type": "moebel",
      "x": 224,
@@ -2433,7 +2444,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "iw9VitrineLeer",
      "type": "moebel",
      "x": 112,
@@ -2456,7 +2467,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "iw5Sackkarre",
      "type": "moebel",
      "x": 304,
@@ -2479,7 +2490,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "iw5Postsack",
      "type": "moebel",
      "x": 320,
@@ -2502,7 +2513,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "iw5Postsack",
      "type": "moebel",
      "x": 336,
@@ -2525,7 +2536,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "iw8Infotafel",
      "type": "moebel",
      "x": 96,
@@ -2548,7 +2559,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 112,
@@ -2571,7 +2582,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 16,
@@ -2594,7 +2605,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "iw9FotoBrueckeA",
      "type": "moebel",
      "x": 384,
@@ -2617,7 +2628,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "iw9FotoWerkA",
      "type": "moebel",
      "x": 432,
@@ -2640,7 +2651,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "iw9FotoBahnhofA",
      "type": "moebel",
      "x": 480,
@@ -2663,7 +2674,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "iw9FotoArbeiterA",
      "type": "moebel",
      "x": 512,
@@ -2686,7 +2697,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "iw9VitrineMuetze",
      "type": "moebel",
      "x": 432,
@@ -2709,7 +2720,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 384,
@@ -2732,7 +2743,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 320,
@@ -2755,7 +2766,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 112,
@@ -2778,7 +2789,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "iw9VitrineWerkzeug",
      "type": "moebel",
      "x": 384,
@@ -2801,7 +2812,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "iw9VitrineGlasfunke",
      "type": "moebel",
      "x": 432,
@@ -2824,7 +2835,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "iw8Schaukasten3",
      "type": "moebel",
      "x": 480,
@@ -2847,7 +2858,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "iw8Infotafel",
      "type": "moebel",
      "x": 368,
@@ -2870,7 +2881,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 496,
@@ -2893,7 +2904,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 176,
@@ -2916,7 +2927,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 46,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 176,
@@ -2939,7 +2950,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 464,
@@ -2962,7 +2973,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "iw9FotoBrueckeB",
      "type": "moebel",
      "x": 176,
@@ -2985,7 +2996,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 49,
      "name": "iw9FotoWerkB",
      "type": "moebel",
      "x": 240,
@@ -2999,6 +3010,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "cc6TuerSued",
+     "type": "moebel",
+     "x": 192,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "cc5Fussmatte",
+     "type": "moebel",
+     "x": 192,
+     "y": 259,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

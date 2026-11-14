@@ -34,9 +34,11 @@ from pipeline.abenteuer.uebergaenge import INHALTE, felder, rand, regel_fuer, sz
 
 Feld = tuple[int, int]
 # Böden, auf denen man gehen soll. Stege und Brücken (Szene „bruecken“) zählen immer dazu.
+# Die Landstraße (Regel 10.72) ist Weg: Ohne sie meldete die Prüfung auf Flussweg und Landstraße
+# „kein durchgehender Weg“, obwohl man der Straße folgt (Kartengutachten Akt 1, 14.11.2026).
 WEGBOEDEN = {
     "erde", "erdeRot", "asphalt", "asphaltMitte", "asphaltMitteSenkrecht", "pflaster", "schotter",
-    "pisteRot", "platten", "dielen", "stein", "sand", "sandplatz",
+    "pisteRot", "platten", "dielen", "stein", "sand", "sandplatz", "landstrasse",
 }  # fmt: skip
 # Querfeldein gilt als Abkürzung, wenn es höchstens diesen Anteil des Wegs lang ist …
 SCHWELLE = 0.85

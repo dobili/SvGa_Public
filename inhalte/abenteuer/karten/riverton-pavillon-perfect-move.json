@@ -1615,11 +1615,11 @@
     },
     {
      "id": 13,
-     "name": "rv9Figurentruhe",
+     "name": "wzPflanze",
      "type": "moebel",
-     "x": 96,
+     "x": 288,
      "y": 240,
-     "width": 32,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1638,11 +1638,11 @@
     },
     {
      "id": 14,
-     "name": "rv9Figurentruhe",
+     "name": "wzPflanze",
      "type": "moebel",
-     "x": 256,
+     "x": 80,
      "y": 240,
-     "width": 32,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1663,8 +1663,8 @@
      "id": 15,
      "name": "wzPflanze",
      "type": "moebel",
-     "x": 288,
-     "y": 240,
+     "x": 80,
+     "y": 48,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1673,7 +1673,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 264
+       "value": 72
       },
       {
        "name": "kollision",
@@ -1686,52 +1686,6 @@
      "id": 16,
      "name": "wzPflanze",
      "type": "moebel",
-     "x": 80,
-     "y": 240,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 264
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 17,
-     "name": "wzPflanze",
-     "type": "moebel",
-     "x": 80,
-     "y": 48,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 18,
-     "name": "wzPflanze",
-     "type": "moebel",
      "x": 288,
      "y": 48,
      "width": 16,
@@ -1752,7 +1706,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 17,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 192,
@@ -1775,7 +1729,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 18,
      "name": "mf5TuerSuedHolz",
      "type": "moebel",
      "x": 192,
@@ -1798,7 +1752,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 19,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
      "x": 144,
@@ -1821,7 +1775,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 20,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 16,
@@ -1844,7 +1798,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 21,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 16,
@@ -1867,7 +1821,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 22,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 16,
@@ -1881,6 +1835,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 320,
+     "y": 64,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 320,
+     "y": 128,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
       },
       {
        "name": "kollision",
@@ -1894,52 +1894,6 @@
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 320,
-     "y": 64,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "rv9Bildschirmtisch",
-     "type": "moebel",
-     "x": 320,
-     "y": 128,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "rv9Bildschirmtisch",
-     "type": "moebel",
-     "x": 320,
      "y": 192,
      "width": 48,
      "height": 48,
@@ -1959,7 +1913,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 26,
      "name": "caKisten",
      "type": "moebel",
      "x": 32,
@@ -1982,7 +1936,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 27,
      "name": "caKisten",
      "type": "moebel",
      "x": 320,
@@ -2005,7 +1959,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 28,
      "name": "caKisten",
      "type": "moebel",
      "x": 144,
@@ -2028,7 +1982,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 29,
      "name": "sbServerKlein",
      "type": "moebel",
      "x": 16,
@@ -2051,7 +2005,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 30,
      "name": "sbServerKlein",
      "type": "moebel",
      "x": 336,
@@ -2074,10 +2028,56 @@
      ]
     },
     {
-     "id": 33,
+     "id": 31,
      "name": "caKisten",
      "type": "moebel",
      "x": 224,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "rv14FigurentruheA",
+     "type": "moebel",
+     "x": 96,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "rv14FigurentruheB",
+     "type": "moebel",
+     "x": 256,
      "y": 240,
      "width": 32,
      "height": 32,

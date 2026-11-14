@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 56,
+ "nextobjectid": 53,
  "layers": [
   {
    "id": 1,
@@ -1376,8 +1376,8 @@
      "id": 6,
      "name": "zeitungsstand",
      "type": "ausloeser",
-     "x": 32,
-     "y": 160,
+     "x": 368,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1387,8 +1387,8 @@
      "id": 7,
      "name": "fundZeitungsausschnitt",
      "type": "ausloeser",
-     "x": 80,
-     "y": 64,
+     "x": 112,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1420,8 +1420,8 @@
      "id": 10,
      "name": "pops",
      "type": "figur",
-     "x": 64,
-     "y": 112,
+     "x": 368,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1525,8 +1525,8 @@
      "id": 14,
      "name": "el7Zeitungshalter",
      "type": "moebel",
-     "x": 16,
-     "y": 48,
+     "x": 352,
+     "y": 112,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -1535,7 +1535,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 152
       },
       {
        "name": "kollision",
@@ -1548,8 +1548,8 @@
      "id": 15,
      "name": "el7Zeitungshalter",
      "type": "moebel",
-     "x": 32,
-     "y": 48,
+     "x": 368,
+     "y": 112,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -1558,7 +1558,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 152
       },
       {
        "name": "kollision",
@@ -1571,8 +1571,8 @@
      "id": 16,
      "name": "el7Zeitungshalter",
      "type": "moebel",
-     "x": 48,
-     "y": 48,
+     "x": 384,
+     "y": 112,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -1581,7 +1581,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 152
       },
       {
        "name": "kollision",
@@ -1592,98 +1592,6 @@
     },
     {
      "id": 17,
-     "name": "rv8SchalterA",
-     "type": "moebel",
-     "x": 80,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 18,
-     "name": "rv8SchalterB",
-     "type": "moebel",
-     "x": 112,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "rv8SchalterA",
-     "type": "moebel",
-     "x": 144,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "rv8SchalterEnde",
-     "type": "moebel",
-     "x": 176,
-     "y": 16,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 21,
      "name": "rv5Bahnhofsuhr",
      "type": "moebel",
      "x": 192,
@@ -1706,7 +1614,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 18,
      "name": "rv9Abfahrtsmonitor",
      "type": "moebel",
      "x": 224,
@@ -1729,7 +1637,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 19,
      "name": "rv5Netzplan",
      "type": "moebel",
      "x": 256,
@@ -1752,7 +1660,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 20,
      "name": "rv8GlastuerNord",
      "type": "moebel",
      "x": 304,
@@ -1775,7 +1683,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 21,
      "name": "rv8GetraenkeVorn",
      "type": "moebel",
      "x": 336,
@@ -1798,11 +1706,11 @@
      ]
     },
     {
-     "id": 26,
+     "id": 22,
      "name": "rv8KaffeeVorn",
      "type": "moebel",
      "x": 368,
-     "y": 16,
+     "y": 10,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1811,7 +1719,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 50
       },
       {
        "name": "kollision",
@@ -1821,10 +1729,79 @@
      ]
     },
     {
-     "id": 27,
+     "id": 23,
      "name": "mf8GlasthekeLinks",
      "type": "moebel",
-     "x": 16,
+     "x": 352,
+     "y": 192,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "mf8GlasthekeMitte",
+     "type": "moebel",
+     "x": 368,
+     "y": 192,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "mf8GlasthekeRechts",
+     "type": "moebel",
+     "x": 384,
+     "y": 192,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "rv8Rollkoffer",
+     "type": "moebel",
+     "x": 144,
      "y": 96,
      "width": 16,
      "height": 32,
@@ -1844,13 +1821,36 @@
      ]
     },
     {
-     "id": 28,
-     "name": "mf8GlasthekeMitte",
+     "id": 27,
+     "name": "rv8Pflanze",
      "type": "moebel",
-     "x": 32,
-     "y": 96,
+     "x": 16,
+     "y": 208,
      "width": 16,
      "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "rv8Saeule",
+     "type": "moebel",
+     "x": 128,
+     "y": 64,
+     "width": 16,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1868,19 +1868,19 @@
     },
     {
      "id": 29,
-     "name": "mf8GlasthekeRechts",
+     "name": "rv8Saeule",
      "type": "moebel",
-     "x": 48,
-     "y": 96,
+     "x": 128,
+     "y": 144,
      "width": 16,
-     "height": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 200
       },
       {
        "name": "kollision",
@@ -1891,12 +1891,12 @@
     },
     {
      "id": 30,
-     "name": "rv8Schliessfach",
+     "name": "rv8Saeule",
      "type": "moebel",
-     "x": 368,
-     "y": 96,
-     "width": 32,
-     "height": 32,
+     "x": 272,
+     "y": 64,
+     "width": 16,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1914,19 +1914,19 @@
     },
     {
      "id": 31,
-     "name": "rv8Rollkoffer",
+     "name": "rv8Saeule",
      "type": "moebel",
-     "x": 304,
+     "x": 272,
      "y": 144,
      "width": 16,
-     "height": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 200
       },
       {
        "name": "kollision",
@@ -1939,7 +1939,7 @@
      "id": 32,
      "name": "rv8Pflanze",
      "type": "moebel",
-     "x": 16,
+     "x": 128,
      "y": 208,
      "width": 16,
      "height": 32,
@@ -1962,7 +1962,7 @@
      "id": 33,
      "name": "rv8Pflanze",
      "type": "moebel",
-     "x": 384,
+     "x": 272,
      "y": 208,
      "width": 16,
      "height": 32,
@@ -1983,144 +1983,6 @@
     },
     {
      "id": 34,
-     "name": "rv8Saeule",
-     "type": "moebel",
-     "x": 128,
-     "y": 64,
-     "width": 16,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "rv8Saeule",
-     "type": "moebel",
-     "x": 128,
-     "y": 144,
-     "width": 16,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "rv8Saeule",
-     "type": "moebel",
-     "x": 272,
-     "y": 64,
-     "width": 16,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "rv8Saeule",
-     "type": "moebel",
-     "x": 272,
-     "y": 144,
-     "width": 16,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "rv8Pflanze",
-     "type": "moebel",
-     "x": 128,
-     "y": 208,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "rv8Pflanze",
-     "type": "moebel",
-     "x": 272,
-     "y": 208,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
      "name": "rv8Pflanze",
      "type": "moebel",
      "x": 144,
@@ -2143,7 +2005,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 35,
      "name": "rv8Pflanze",
      "type": "moebel",
      "x": 256,
@@ -2166,7 +2028,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 36,
      "name": "rv8Wartebank",
      "type": "moebel",
      "x": 160,
@@ -2189,7 +2051,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 37,
      "name": "rv8Wartebank",
      "type": "moebel",
      "x": 208,
@@ -2212,7 +2074,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 38,
      "name": "rv8Wartebank",
      "type": "moebel",
      "x": 160,
@@ -2235,7 +2097,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 39,
      "name": "rv8Wartebank",
      "type": "moebel",
      "x": 208,
@@ -2258,7 +2120,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 40,
      "name": "rv8Koffer",
      "type": "moebel",
      "x": 256,
@@ -2281,7 +2143,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 41,
      "name": "rv8Zweierbank",
      "type": "moebel",
      "x": 160,
@@ -2304,7 +2166,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 42,
      "name": "rv8Zweierbank",
      "type": "moebel",
      "x": 224,
@@ -2327,7 +2189,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 43,
      "name": "rv8Zweierbank",
      "type": "moebel",
      "x": 32,
@@ -2350,7 +2212,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 44,
      "name": "rv8Zweierbank",
      "type": "moebel",
      "x": 64,
@@ -2373,11 +2235,11 @@
      ]
     },
     {
-     "id": 51,
+     "id": 45,
      "name": "rv8Sackkarre",
      "type": "moebel",
      "x": 336,
-     "y": 192,
+     "y": 80,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -2386,7 +2248,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 104
       },
       {
        "name": "kollision",
@@ -2396,7 +2258,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 46,
      "name": "rv8Rollkoffer",
      "type": "moebel",
      "x": 96,
@@ -2419,7 +2281,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 47,
      "name": "rv8GlastuerSued",
      "type": "moebel",
      "x": 192,
@@ -2442,10 +2304,33 @@
      ]
     },
     {
-     "id": 54,
+     "id": 48,
+     "name": "rv14Fahrkartenschalter",
+     "type": "moebel",
+     "x": 32,
+     "y": 8,
+     "width": 96,
+     "height": 71,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 71
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 49,
      "name": "rv9Bogenfenster",
      "type": "moebel",
-     "x": 16,
+     "x": 144,
      "y": 16,
      "width": 32,
      "height": 32,
@@ -2465,11 +2350,11 @@
      ]
     },
     {
-     "id": 55,
-     "name": "rv9Bogenfenster",
+     "id": 50,
+     "name": "rv8Zweierbank",
      "type": "moebel",
-     "x": 48,
-     "y": 16,
+     "x": 192,
+     "y": 176,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -2478,12 +2363,58 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 200
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "rv14SpindLinks",
+     "type": "moebel",
+     "x": 16,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 52,
+     "name": "rv14SpindRechts",
+     "type": "moebel",
+     "x": 48,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

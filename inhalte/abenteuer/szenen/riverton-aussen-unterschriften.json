@@ -13,14 +13,14 @@
     "g": "stein",
     "h": "wasser"
   },
-  "beschreibung": "Zustand: in Akt 4 (nach der Nadel von Desert Springs): Die Bildschirmtische sind abgeschaltet und stehen leer, die zwei kaputten noch mit Flatterband; vor dem Pavillon steht ein Picknicktisch für Slicks Unterschriftenliste gegen die Übernahme. Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
+  "beschreibung": "Zustand: in Akt 4 (nach der Nadel von Desert Springs): Die Bildschirmtische sind abgeschaltet und stehen leer, die zwei kaputten noch mit Flatterband; vor dem Pavillon steht ein Picknicktisch für Slicks Unterschriftenliste gegen die Übernahme. Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit dem Holzstapel daneben, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Brücke mit Gehwegen führt genau über das Wasser hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
-    "#.................eegggggggggggggggggggggggggggggggggpppppppppp........#",
-    "#.................eeggggggggggggggggggggggggggggggggg........pp........#",
-    "#.................eeggggggggggggggggggggggggggggggggg........pp........#",
+    "#.................eeggggggggggggggggggggggggggggggggg..................#",
+    "#.................eeggggggggggggggggggggggggggggggggg..................#",
+    "#.................eeggggggggggggggggggggggggggggggggg..................#",
     "#.................eeggggggggggggggggggggggggggggggggg..................#",
     "#................eeeggggggggggggggggggggggggggggggggg..................#",
     "eeeeeeeeeeeeeeeeeeee...................................................#",
@@ -28,8 +28,8 @@
     "#..............ee...............................................ee.....#",
     "#..............ee...............................................ee.....#",
     "#..............ee...............................................ee.....#",
-    "#..............ee...............................................ee.....#",
-    "#..............ee.....................................ppp.......ee.....#",
+    "#..............ee...............................................eeeee..#",
+    "#..............ee.....................................ppp.......eeeee..#",
     "#..............ee.....................................ppp.......ee.....#",
     "#.............ppppppppppp......................pppppppppppp.....ee.....#",
     "#.............ppppppppppp......................pppppppppppp.....ee.....#",
@@ -54,23 +54,23 @@
     "#gggggggggggggggggggggggggggggggggggggggggggggggggsssssssssssssssssssss#",
     "#gggggggggggggggggggggggggggggggggggggggggggggggggsssssssssssssssssssss#",
     "#gggggggggggggggggggggggggggggggggggggggggggggggggsssssssssssssssssssss#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
-    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~eeeeeeeeeeeeeepppppppeeee~~~~~~~~~..#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppppppeeee~~~~~~~~~..#",
-    "#...................eeeeeeeeeeeeeeee..........ee.........eee~~~~~~~~~..#",
-    "#...................ee........................ee.........eee~~~~~~~~~..#",
-    "#...................ee........................ee.........eee~~~~~~~....#",
-    "#...................ee........................ee.........eee~~~~~~~....#",
-    "#...................ee........................ee.........eee~~~~~~~....#",
-    "#...................ee............ppppppppppppee.........eee~~~~~~~....#",
-    "#...................ee............ppppppppppppee.........eee~~~~~~~....#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eee~~~~~~~....#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eee~~~~~~~....#",
-    "#########################################################ee#############"
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
+    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~eeeeeeeeeeeeeeppppppppppp~~~~~~~~~..#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppppppppppp~~~~~~~~~..#",
+    "#...................eeeeeeeeeeeeeeee..........ee.........ppp~~~~~~~~~..#",
+    "#...................ee........................ee.........ppp~~~~~~~~~..#",
+    "#...................ee........................ee.........ppp~~~~~~~~...#",
+    "#...................ee........................ee.........ppp~~~~~~~~...#",
+    "#...................ee........................ee.........ppp~~~~~~~~...#",
+    "#...................ee............ppppppppppppee.........ppp~~~~~~~~...#",
+    "#...................ee............ppppppppppppee.........ppp~~~~~~~~...#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppppppppee.........ppp~~~~~~~~...#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...................ppp~~~~~~~~...#",
+    "#########################################################pp#~~~~~~~~####"
   ],
   "objekte": [
     {
@@ -478,7 +478,7 @@
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [61, 4]
+      "feld": [61, 11]
     },
     {
       "moebel": "rv5Wasserturm",
@@ -521,7 +521,7 @@
     },
     {
       "moebel": "rvWegweiser",
-      "feld": [15, 19]
+      "feld": [17, 10]
     },
     {
       "moebel": "mfBushaltestelle",
@@ -580,7 +580,7 @@
     },
     {
       "moebel": "rvLaubbaumDunkel",
-      "feld": [66, 12]
+      "feld": [67, 16]
     },
     {
       "moebel": "rv5Reihenhaus",
@@ -685,7 +685,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [55, 34],
+      "feld": [49, 30],
       "vorn": true
     },
     {
@@ -754,10 +754,6 @@
       "moebel": "rv8Ruderboot",
       "feld": [59, 40],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "rv5Pegelhaus",
-      "feld": [68, 34]
     },
     {
       "moebel": "sb8Kaimauer",
@@ -1093,17 +1089,13 @@
       "feld": [9, 48]
     },
     {
-      "moebel": "rv5Schuppen",
-      "feld": [15, 49]
-    },
-    {
       "moebel": "rv8Pavillon",
       "feld": [34, 47],
       "id": "pavillon"
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [38, 51],
+      "feld": [41, 51],
       "id": "schachtisch"
     },
     {
@@ -1112,7 +1104,7 @@
     },
     {
       "moebel": "sb8Kreidespringer",
-      "feld": [40, 52]
+      "feld": [34, 52]
     },
     {
       "moebel": "rvLaubbaumDunkel",
@@ -1214,13 +1206,34 @@
       "feld": [12, 31]
     },
     {
-      "moebel": "sb5Faehrhaus",
-      "feld": [67, 9]
+      "moebel": "rv14Pumpenhaus",
+      "feld": [67, 8],
+      "versatz": [0, 8]
     },
     {
-      "moebel": "rv10Steinbruecke",
-      "feld": [50, 38],
+      "moebel": "rv14Pegelhaus",
+      "feld": [68, 33],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "rv14Bruecke",
+      "feld": [50, 39],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [0, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [71, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv14Fahrradschuppen",
+      "feld": [15, 48],
+      "versatz": [0, 8]
     }
   ],
   "ausloeser": [
@@ -1318,10 +1331,10 @@
     {
       "name": "parkschachspieler",
       "typ": "statist",
-      "feld": [38, 53],
+      "feld": [41, 53],
       "eigenschaften": {
-        "von": "38,53",
-        "bis": "38,53",
+        "von": "41,53",
+        "bis": "41,53",
         "tun": "klopft am Picknicktisch auf die Schachuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.parkschachspieler",
@@ -1391,10 +1404,10 @@
     {
       "name": "kreidekinder",
       "typ": "statist",
-      "feld": [41, 52],
+      "feld": [34, 51],
       "eigenschaften": {
-        "von": "41,52",
-        "bis": "41,52",
+        "von": "34,51",
+        "bis": "34,51",
         "tun": "malen ein Brett mit Kreide auf den Weg",
         "wann": "tag"
       }

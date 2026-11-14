@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 195,
+ "nextobjectid": 197,
  "layers": [
   {
    "id": 1,
@@ -402,7 +402,7 @@
     0,
     0,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -805,7 +805,7 @@
     2,
     2,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -1263,6 +1263,17 @@
     },
     {
      "id": 3,
+     "name": "schule",
+     "type": "ausloeser",
+     "x": 224,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 4,
      "name": "pokalvitrine",
      "type": "ausloeser",
      "x": 64,
@@ -1273,7 +1284,7 @@
      "visible": true
     },
     {
-     "id": 4,
+     "id": 5,
      "name": "brettOhneDame",
      "type": "ausloeser",
      "x": 288,
@@ -1284,7 +1295,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "plakatZaehlen",
      "type": "ausloeser",
      "x": 272,
@@ -1295,7 +1306,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "coachDelgado",
      "type": "figur",
      "x": 240,
@@ -1306,7 +1317,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "sam",
      "type": "figur",
      "x": 80,
@@ -1324,7 +1335,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "carlaClub",
      "type": "figur",
      "x": 272,
@@ -1342,7 +1353,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "junoClub",
      "type": "figur",
      "x": 352,
@@ -1353,7 +1364,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "schuelerin",
      "type": "statist",
      "x": 176,
@@ -1391,7 +1402,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "clubmitglied",
      "type": "statist",
      "x": 176,
@@ -1429,7 +1440,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "mutterWartet",
      "type": "statist",
      "x": 16,
@@ -1467,7 +1478,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "mf13Pokalvitrine",
      "type": "moebel",
      "x": 64,
@@ -1490,7 +1501,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "mfc8Pokal",
      "type": "moebel",
      "x": 65,
@@ -1513,7 +1524,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "mf13PokalSockel",
      "type": "moebel",
      "x": 78,
@@ -1536,7 +1547,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "mfc8RegalNiedrig",
      "type": "moebel",
      "x": 112,
@@ -1559,7 +1570,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "mfc8RegalNiedrig",
      "type": "moebel",
      "x": 272,
@@ -1582,7 +1593,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "mfc9TeppichLo",
      "type": "moebel",
      "x": 64,
@@ -1605,33 +1616,10 @@
      ]
     },
     {
-     "id": 19,
-     "name": "mfc9TeppichO",
-     "type": "moebel",
-     "x": 80,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 20,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1654,7 +1642,7 @@
      "id": 21,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1677,7 +1665,7 @@
      "id": 22,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1700,7 +1688,7 @@
      "id": 23,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1723,7 +1711,7 @@
      "id": 24,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1746,7 +1734,7 @@
      "id": 25,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1769,7 +1757,7 @@
      "id": 26,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1792,7 +1780,7 @@
      "id": 27,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1815,7 +1803,7 @@
      "id": 28,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1838,7 +1826,7 @@
      "id": 29,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1861,7 +1849,7 @@
      "id": 30,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1884,7 +1872,7 @@
      "id": 31,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1907,7 +1895,7 @@
      "id": 32,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1930,7 +1918,7 @@
      "id": 33,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1953,7 +1941,7 @@
      "id": 34,
      "name": "mfc9TeppichO",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1974,6 +1962,29 @@
     },
     {
      "id": 35,
+     "name": "mfc9TeppichO",
+     "type": "moebel",
+     "x": 320,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 36,
      "name": "mfc9TeppichRo",
      "type": "moebel",
      "x": 336,
@@ -1996,33 +2007,10 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "mfc9TeppichL",
      "type": "moebel",
      "x": 64,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "mfc9TeppichM",
-     "type": "moebel",
-     "x": 80,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2045,7 +2033,7 @@
      "id": 38,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2068,7 +2056,7 @@
      "id": 39,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2091,7 +2079,7 @@
      "id": 40,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2114,7 +2102,7 @@
      "id": 41,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2137,7 +2125,7 @@
      "id": 42,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2160,7 +2148,7 @@
      "id": 43,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2183,7 +2171,7 @@
      "id": 44,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2206,7 +2194,7 @@
      "id": 45,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2229,7 +2217,7 @@
      "id": 46,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2252,7 +2240,7 @@
      "id": 47,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2275,7 +2263,7 @@
      "id": 48,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2298,7 +2286,7 @@
      "id": 49,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2321,7 +2309,7 @@
      "id": 50,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2344,7 +2332,7 @@
      "id": 51,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2367,7 +2355,7 @@
      "id": 52,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -2388,6 +2376,29 @@
     },
     {
      "id": 53,
+     "name": "mfc9TeppichM",
+     "type": "moebel",
+     "x": 320,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 54,
      "name": "mfc9TeppichR",
      "type": "moebel",
      "x": 336,
@@ -2410,33 +2421,10 @@
      ]
     },
     {
-     "id": 54,
+     "id": 55,
      "name": "mfc9TeppichL",
      "type": "moebel",
      "x": 64,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "mfc9TeppichM",
-     "type": "moebel",
-     "x": 80,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2459,7 +2447,7 @@
      "id": 56,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2482,7 +2470,7 @@
      "id": 57,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2505,7 +2493,7 @@
      "id": 58,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2528,7 +2516,7 @@
      "id": 59,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2551,7 +2539,7 @@
      "id": 60,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2574,7 +2562,7 @@
      "id": 61,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2597,7 +2585,7 @@
      "id": 62,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2620,7 +2608,7 @@
      "id": 63,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2643,7 +2631,7 @@
      "id": 64,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2666,7 +2654,7 @@
      "id": 65,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2689,7 +2677,7 @@
      "id": 66,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2712,7 +2700,7 @@
      "id": 67,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2735,7 +2723,7 @@
      "id": 68,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2758,7 +2746,7 @@
      "id": 69,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2781,7 +2769,7 @@
      "id": 70,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -2802,6 +2790,29 @@
     },
     {
      "id": 71,
+     "name": "mfc9TeppichM",
+     "type": "moebel",
+     "x": 320,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 72,
      "name": "mfc9TeppichR",
      "type": "moebel",
      "x": 336,
@@ -2824,33 +2835,10 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "mfc9TeppichL",
      "type": "moebel",
      "x": 64,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 73,
-     "name": "mfc9TeppichM",
-     "type": "moebel",
-     "x": 80,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -2873,7 +2861,7 @@
      "id": 74,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -2896,7 +2884,7 @@
      "id": 75,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -2919,7 +2907,7 @@
      "id": 76,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -2942,7 +2930,7 @@
      "id": 77,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -2965,7 +2953,7 @@
      "id": 78,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -2988,7 +2976,7 @@
      "id": 79,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3011,7 +2999,7 @@
      "id": 80,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3034,7 +3022,7 @@
      "id": 81,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3057,7 +3045,7 @@
      "id": 82,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3080,7 +3068,7 @@
      "id": 83,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3103,7 +3091,7 @@
      "id": 84,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3126,7 +3114,7 @@
      "id": 85,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3149,7 +3137,7 @@
      "id": 86,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3172,7 +3160,7 @@
      "id": 87,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3195,7 +3183,7 @@
      "id": 88,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -3216,6 +3204,29 @@
     },
     {
      "id": 89,
+     "name": "mfc9TeppichM",
+     "type": "moebel",
+     "x": 320,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 90,
      "name": "mfc9TeppichR",
      "type": "moebel",
      "x": 336,
@@ -3238,33 +3249,10 @@
      ]
     },
     {
-     "id": 90,
+     "id": 91,
      "name": "mfc9TeppichL",
      "type": "moebel",
      "x": 64,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 91,
-     "name": "mfc9TeppichM",
-     "type": "moebel",
-     "x": 80,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3287,7 +3275,7 @@
      "id": 92,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3310,7 +3298,7 @@
      "id": 93,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3333,7 +3321,7 @@
      "id": 94,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3356,7 +3344,7 @@
      "id": 95,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3379,7 +3367,7 @@
      "id": 96,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3402,7 +3390,7 @@
      "id": 97,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3425,7 +3413,7 @@
      "id": 98,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3448,7 +3436,7 @@
      "id": 99,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3471,7 +3459,7 @@
      "id": 100,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3494,7 +3482,7 @@
      "id": 101,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3517,7 +3505,7 @@
      "id": 102,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3540,7 +3528,7 @@
      "id": 103,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3563,7 +3551,7 @@
      "id": 104,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3586,7 +3574,7 @@
      "id": 105,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3609,7 +3597,7 @@
      "id": 106,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -3630,6 +3618,29 @@
     },
     {
      "id": 107,
+     "name": "mfc9TeppichM",
+     "type": "moebel",
+     "x": 320,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 108,
      "name": "mfc9TeppichR",
      "type": "moebel",
      "x": 336,
@@ -3652,7 +3663,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 109,
      "name": "mfc9TeppichL",
      "type": "moebel",
      "x": 64,
@@ -3675,33 +3686,10 @@
      ]
     },
     {
-     "id": 109,
-     "name": "mfc9TeppichM",
-     "type": "moebel",
-     "x": 80,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 110,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3724,7 +3712,7 @@
      "id": 111,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3747,7 +3735,7 @@
      "id": 112,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3770,7 +3758,7 @@
      "id": 113,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3793,7 +3781,7 @@
      "id": 114,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3816,7 +3804,7 @@
      "id": 115,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3839,7 +3827,7 @@
      "id": 116,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3862,7 +3850,7 @@
      "id": 117,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3885,7 +3873,7 @@
      "id": 118,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3908,7 +3896,7 @@
      "id": 119,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3931,7 +3919,7 @@
      "id": 120,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3954,7 +3942,7 @@
      "id": 121,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -3977,7 +3965,7 @@
      "id": 122,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -4000,7 +3988,7 @@
      "id": 123,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -4023,7 +4011,7 @@
      "id": 124,
      "name": "mfc9TeppichM",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -4044,6 +4032,29 @@
     },
     {
      "id": 125,
+     "name": "mfc9TeppichM",
+     "type": "moebel",
+     "x": 320,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 126,
      "name": "mfc9TeppichR",
      "type": "moebel",
      "x": 336,
@@ -4066,7 +4077,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 127,
      "name": "mfc9TeppichLu",
      "type": "moebel",
      "x": 64,
@@ -4089,33 +4100,10 @@
      ]
     },
     {
-     "id": 127,
-     "name": "mfc9TeppichU",
-     "type": "moebel",
-     "x": 80,
-     "y": 192,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 128,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 96,
+     "x": 80,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4138,7 +4126,7 @@
      "id": 129,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4161,7 +4149,7 @@
      "id": 130,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4184,7 +4172,7 @@
      "id": 131,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 144,
+     "x": 128,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4207,7 +4195,7 @@
      "id": 132,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4230,7 +4218,7 @@
      "id": 133,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4253,7 +4241,7 @@
      "id": 134,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4276,7 +4264,7 @@
      "id": 135,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4299,7 +4287,7 @@
      "id": 136,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 224,
+     "x": 208,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4322,7 +4310,7 @@
      "id": 137,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 240,
+     "x": 224,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4345,7 +4333,7 @@
      "id": 138,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4368,7 +4356,7 @@
      "id": 139,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 272,
+     "x": 256,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4391,7 +4379,7 @@
      "id": 140,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 288,
+     "x": 272,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4414,7 +4402,7 @@
      "id": 141,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 304,
+     "x": 288,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4437,7 +4425,7 @@
      "id": 142,
      "name": "mfc9TeppichU",
      "type": "moebel",
-     "x": 320,
+     "x": 304,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -4458,6 +4446,29 @@
     },
     {
      "id": 143,
+     "name": "mfc9TeppichU",
+     "type": "moebel",
+     "x": 320,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 144,
      "name": "mfc9TeppichRu",
      "type": "moebel",
      "x": 336,
@@ -4480,7 +4491,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 145,
      "name": "mf2Fenster",
      "type": "moebel",
      "x": 32,
@@ -4503,7 +4514,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 146,
      "name": "mf2Weltkarte",
      "type": "moebel",
      "x": 80,
@@ -4526,7 +4537,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 147,
      "name": "mf2Fenster",
      "type": "moebel",
      "x": 128,
@@ -4549,7 +4560,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 148,
      "name": "mfc9Wanduhr",
      "type": "moebel",
      "x": 160,
@@ -4572,7 +4583,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 149,
      "name": "mfc8Kreidetafel",
      "type": "moebel",
      "x": 200,
@@ -4595,7 +4606,7 @@
      ]
     },
     {
-     "id": 149,
+     "id": 150,
      "name": "mf4Pinnwand",
      "type": "moebel",
      "x": 240,
@@ -4618,7 +4629,7 @@
      ]
     },
     {
-     "id": 150,
+     "id": 151,
      "name": "mf13PlakatZaehlen",
      "type": "moebel",
      "x": 272,
@@ -4641,7 +4652,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 152,
      "name": "mf13Urkunde",
      "type": "moebel",
      "x": 320,
@@ -4664,7 +4675,7 @@
      ]
     },
     {
-     "id": 152,
+     "id": 153,
      "name": "mf2Fenster",
      "type": "moebel",
      "x": 368,
@@ -4687,7 +4698,7 @@
      ]
     },
     {
-     "id": 153,
+     "id": 154,
      "name": "mfc9Lehrertisch",
      "type": "moebel",
      "x": 200,
@@ -4710,7 +4721,7 @@
      ]
     },
     {
-     "id": 154,
+     "id": 155,
      "name": "mf2Globus",
      "type": "moebel",
      "x": 120,
@@ -4733,7 +4744,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 156,
      "name": "cc4RegalA",
      "type": "moebel",
      "x": 160,
@@ -4756,7 +4767,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 157,
      "name": "mf7PflanzeHoch",
      "type": "moebel",
      "x": 16,
@@ -4779,7 +4790,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 158,
      "name": "mf7PflanzeHoch",
      "type": "moebel",
      "x": 384,
@@ -4802,7 +4813,7 @@
      ]
     },
     {
-     "id": 158,
+     "id": 159,
      "name": "mf4Palme",
      "type": "moebel",
      "x": 16,
@@ -4825,7 +4836,7 @@
      ]
     },
     {
-     "id": 159,
+     "id": 160,
      "name": "mf4Palme",
      "type": "moebel",
      "x": 368,
@@ -4848,7 +4859,7 @@
      ]
     },
     {
-     "id": 160,
+     "id": 161,
      "name": "mfc9BankWest",
      "type": "moebel",
      "x": 16,
@@ -4871,7 +4882,7 @@
      ]
     },
     {
-     "id": 161,
+     "id": 162,
      "name": "mfc9BankOst",
      "type": "moebel",
      "x": 384,
@@ -4894,7 +4905,7 @@
      ]
     },
     {
-     "id": 162,
+     "id": 163,
      "name": "mf8RundtischDunkel",
      "type": "moebel",
      "x": 96,
@@ -4917,7 +4928,7 @@
      ]
     },
     {
-     "id": 163,
+     "id": 164,
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 102,
@@ -4940,7 +4951,7 @@
      ]
     },
     {
-     "id": 164,
+     "id": 165,
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 117,
@@ -4963,7 +4974,7 @@
      ]
     },
     {
-     "id": 165,
+     "id": 166,
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 85,
@@ -4986,7 +4997,7 @@
      ]
     },
     {
-     "id": 166,
+     "id": 167,
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 123,
@@ -5009,7 +5020,7 @@
      ]
     },
     {
-     "id": 167,
+     "id": 168,
      "name": "mf8RundtischDunkel",
      "type": "moebel",
      "x": 192,
@@ -5032,7 +5043,7 @@
      ]
     },
     {
-     "id": 168,
+     "id": 169,
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 198,
@@ -5055,7 +5066,7 @@
      ]
     },
     {
-     "id": 169,
+     "id": 170,
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 213,
@@ -5078,7 +5089,7 @@
      ]
     },
     {
-     "id": 170,
+     "id": 171,
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 181,
@@ -5101,7 +5112,7 @@
      ]
     },
     {
-     "id": 171,
+     "id": 172,
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 219,
@@ -5124,7 +5135,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 173,
      "name": "mf8RundtischDunkel",
      "type": "moebel",
      "x": 288,
@@ -5147,7 +5158,7 @@
      ]
     },
     {
-     "id": 173,
+     "id": 174,
      "name": "mf12BrettRadiergummi",
      "type": "moebel",
      "x": 296,
@@ -5170,7 +5181,7 @@
      ]
     },
     {
-     "id": 174,
+     "id": 175,
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 277,
@@ -5193,7 +5204,7 @@
      ]
     },
     {
-     "id": 175,
+     "id": 176,
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 315,
@@ -5216,7 +5227,7 @@
      ]
     },
     {
-     "id": 176,
+     "id": 177,
      "name": "mf8RundtischDunkel",
      "type": "moebel",
      "x": 96,
@@ -5239,7 +5250,7 @@
      ]
     },
     {
-     "id": 177,
+     "id": 178,
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 102,
@@ -5262,7 +5273,7 @@
      ]
     },
     {
-     "id": 178,
+     "id": 179,
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 117,
@@ -5285,7 +5296,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 180,
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 85,
@@ -5308,7 +5319,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 181,
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 123,
@@ -5331,7 +5342,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 182,
      "name": "mf8RundtischDunkel",
      "type": "moebel",
      "x": 192,
@@ -5354,7 +5365,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 183,
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 198,
@@ -5377,7 +5388,7 @@
      ]
     },
     {
-     "id": 183,
+     "id": 184,
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 213,
@@ -5400,7 +5411,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 185,
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 181,
@@ -5423,7 +5434,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 186,
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 219,
@@ -5446,7 +5457,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 187,
      "name": "mf8RundtischDunkel",
      "type": "moebel",
      "x": 288,
@@ -5469,7 +5480,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 188,
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 294,
@@ -5492,7 +5503,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 189,
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 309,
@@ -5515,7 +5526,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 190,
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 277,
@@ -5538,7 +5549,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 191,
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 315,
@@ -5561,7 +5572,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 192,
      "name": "mf5TuerSuedHolz",
      "type": "moebel",
      "x": 208,
@@ -5584,7 +5595,30 @@
      ]
     },
     {
-     "id": 192,
+     "id": 193,
+     "name": "mf5TuerSuedHolz",
+     "type": "moebel",
+     "x": 224,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 194,
      "name": "mfc8Pokal",
      "type": "moebel",
      "x": 216,
@@ -5607,7 +5641,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 195,
      "name": "mf13SpindeGrau",
      "type": "moebel",
      "x": 320,
@@ -5630,7 +5664,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 196,
      "name": "mf13SpindeGrau",
      "type": "moebel",
      "x": 352,

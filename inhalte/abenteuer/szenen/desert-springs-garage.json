@@ -22,11 +22,6 @@
   ],
   "objekte": [
     {
-      "moebel": "cc6TuerSued",
-      "feld": [9, 12],
-      "an_wand": true
-    },
-    {
       "moebel": "cc5Fussmatte",
       "feld": [9, 10],
       "versatz": [0, 20]
@@ -142,6 +137,10 @@
     {
       "moebel": "rv5ReifenStehend",
       "feld": [4, 8]
+    },
+    {
+      "moebel": "rv5TuerSuedHell",
+      "feld": [9, 12]
     }
   ],
   "ausloeser": [

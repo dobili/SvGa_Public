@@ -27,7 +27,7 @@
     "#ffffffffffffffkkkkkkkkkk#",
     "#ffffffffffffffkkkkkkkkkk#",
     "#ffffffffffffffkkkkkkkkkk#",
-    "########f#################"
+    "########f.################"
   ],
   "objekte": [
     {
@@ -223,14 +223,6 @@
     },
     {
       "moebel": "sb8Pflanze",
-      "feld": [5, 14]
-    },
-    {
-      "moebel": "sb8Pflanze",
-      "feld": [6, 16]
-    },
-    {
-      "moebel": "sb8Pflanze",
       "feld": [9, 13]
     },
     {
@@ -250,11 +242,6 @@
     {
       "moebel": "sb8Pflanze",
       "feld": [14, 17]
-    },
-    {
-      "moebel": "sb8GlastuerSued",
-      "feld": [8, 19],
-      "an_wand": true
     },
     {
       "moebel": "sb8Schreibtisch",
@@ -368,7 +355,12 @@
     },
     {
       "moebel": "sb8Pflanze",
-      "feld": [16, 15]
+      "feld": [6, 13]
+    },
+    {
+      "moebel": "rv8GlastuerSued",
+      "feld": [8, 19],
+      "an_wand": true
     }
   ],
   "ausloeser": [
@@ -386,12 +378,20 @@
     {
       "name": "serverraumTuer",
       "feld": [12, 3]
+    },
+    {
+      "name": "akademieAusgang",
+      "feld": [9, 19]
+    },
+    {
+      "name": "serverraumTuer",
+      "feld": [13, 3]
     }
   ],
   "figuren": [
     {
       "name": "theo",
-      "feld": [7, 3]
+      "feld": [8, 3]
     },
     {
       "name": "lin",
@@ -399,7 +399,7 @@
     },
     {
       "name": "nova",
-      "feld": [1, 9]
+      "feld": [2, 7]
     }
   ],
   "belebung": [
@@ -416,10 +416,10 @@
     {
       "name": "schueler1",
       "typ": "statist",
-      "feld": [5, 6],
+      "feld": [5, 3],
       "eigenschaften": {
-        "von": "5,6",
-        "bis": "5,6",
+        "von": "5,3",
+        "bis": "5,3",
         "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
@@ -427,10 +427,10 @@
     {
       "name": "schueler2",
       "typ": "statist",
-      "feld": [11, 6],
+      "feld": [11, 3],
       "eigenschaften": {
-        "von": "11,6",
-        "bis": "11,6",
+        "von": "11,3",
+        "bis": "11,3",
         "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
@@ -438,10 +438,10 @@
     {
       "name": "schueler3",
       "typ": "statist",
-      "feld": [5, 10],
+      "feld": [5, 7],
       "eigenschaften": {
-        "von": "5,10",
-        "bis": "5,10",
+        "von": "5,7",
+        "bis": "5,7",
         "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
@@ -449,10 +449,10 @@
     {
       "name": "schueler4",
       "typ": "statist",
-      "feld": [11, 10],
+      "feld": [11, 7],
       "eigenschaften": {
-        "von": "11,10",
-        "bis": "11,10",
+        "von": "11,7",
+        "bis": "11,7",
         "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }

@@ -1139,7 +1139,7 @@
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 80,
-     "y": 112,
+     "y": 16,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1148,7 +1148,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 56
       },
       {
        "name": "kollision",

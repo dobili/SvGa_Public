@@ -24,13 +24,13 @@
     "#.............ppppppppppppppppppppppp......................#",
     "#.............ppppppppppppppppppppppp......................#",
     "#................pppppppppppppppppppp......................#",
-    "#..............................ppp.........................#",
-    "#..............................ppp.........................#",
-    "#..............................ppp.........................#",
-    "#..............................ppp.........................#",
-    "#..............................ppp.........................#",
-    "#..............................ppp.........................#",
-    "#..............................ppp.........................#",
+    "#..............................pppppp......................#",
+    "#..............................pppppp......................#",
+    "#..............................pppppp......................#",
+    "#..............................pppppp......................#",
+    "#..............................pppppp......................#",
+    "#..............................pppppp......................#",
+    "#..............................pppppp......................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "ssssssssssssssssssssssssssssssssssssssssssssppp............#",
@@ -47,8 +47,8 @@
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppppppp#",
-    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkkkkkkkk",
-    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkkkkkkkk",
+    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkk......",
+    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkk......",
     "#..........................................................#",
     "#..........................................................#",
     "#..........................................................#",
@@ -57,16 +57,6 @@
     "############################################################"
   ],
   "objekte": [
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [1, 2],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [1, 4],
-      "bauteil_ok": true
-    },
     {
       "moebel": "iw5GleisGrau",
       "feld": [2, 2],
@@ -653,7 +643,7 @@
     },
     {
       "moebel": "dd6Wasserturm",
-      "feld": [1, 8]
+      "feld": [1, 6]
     },
     {
       "moebel": "ds6TankstelleGross",
@@ -678,10 +668,6 @@
       "moebel": "ds6Garage",
       "feld": [18, 23],
       "id": "garage"
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [10, 34]
     },
     {
       "moebel": "dsReifen",
@@ -717,7 +703,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [12, 13],
+      "feld": [17, 14],
       "vorn": true
     },
     {
@@ -817,30 +803,57 @@
       "feld": [56, 22]
     },
     {
-      "moebel": "ws5AutoGruen",
-      "feld": [3, 29]
+      "moebel": "iw5GleisGrau",
+      "feld": [59, 2],
+      "bauteil_ok": true
     },
     {
-      "moebel": "ws5AutoGrau",
-      "feld": [10, 29]
+      "moebel": "iw5GleisGrau",
+      "feld": [59, 4],
+      "bauteil_ok": true
     },
     {
-      "moebel": "ws5AutoBlau",
-      "feld": [26, 29]
+      "moebel": "ds13Ortsschild",
+      "feld": [1, 13]
     },
     {
-      "moebel": "mf4Laterne",
+      "moebel": "gt7Haltestelle",
+      "feld": [5, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "cc8PrellbockQuer",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc8PrellbockQuer",
+      "feld": [1, 3]
+    },
+    {
+      "feld": [3, 29],
+      "moebel": "ws5AutoGruen"
+    },
+    {
+      "feld": [10, 29],
+      "moebel": "ws5AutoGrau"
+    },
+    {
+      "feld": [26, 29],
+      "moebel": "ws5AutoBlau"
+    },
+    {
       "feld": [29, 29],
-      "vorn": true
-    },
-    {
       "moebel": "mf4Laterne",
-      "feld": [36, 29],
       "vorn": true
     },
     {
-      "moebel": "ca7Banner",
+      "feld": [36, 29],
+      "moebel": "mf4Laterne",
+      "vorn": true
+    },
+    {
       "feld": [30, 29],
+      "moebel": "ca7Banner",
       "vorn": true
     }
   ],

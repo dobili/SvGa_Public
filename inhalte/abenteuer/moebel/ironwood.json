@@ -852,9 +852,9 @@
       "stil": "industrie"
     },
     "iw5Schornstein": {
-      "quelle": "spiel/eigene/werk_schornstein.png",
+      "quelle": "spiel/eigene/fabrikschornstein.png",
       "breite": 32,
-      "hoehe": 112,
+      "hoehe": 127,
       "kollision": true,
       "art": "gebaeude",
       "zustand": "gebraucht",

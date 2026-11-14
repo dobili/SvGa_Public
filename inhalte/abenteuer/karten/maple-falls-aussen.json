@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 251,
+ "nextobjectid": 283,
  "layers": [
   {
    "id": 1,
@@ -762,8 +762,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2076,10 +2076,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -13964,7 +13964,7 @@
      "id": 247,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 16,
+     "x": 0,
      "y": 656,
      "width": 32,
      "height": 16,
@@ -13987,7 +13987,7 @@
      "id": 248,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 976,
+     "x": 992,
      "y": 656,
      "width": 32,
      "height": 16,
@@ -14059,6 +14059,742 @@
        "name": "wenn",
        "type": "string",
        "value": "nadelMapleFalls >= 1 und nicht endeAkt1Gesehen"
+      }
+     ]
+    },
+    {
+     "id": 251,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 0,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 252,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 32,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 253,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 64,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 254,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 96,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 255,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 128,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 256,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 160,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 257,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 192,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 258,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 224,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 259,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 256,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 260,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 288,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 261,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 320,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 262,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 352,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 263,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 384,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 264,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 416,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 265,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 448,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 266,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 480,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 267,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 512,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 268,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 544,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 269,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 576,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 270,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 608,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 271,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 640,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 272,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 672,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 273,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 704,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 274,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 736,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 275,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 768,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 276,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 800,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 277,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 832,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 278,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 864,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 279,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 896,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 280,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 928,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 281,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 960,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 282,
+     "name": "cc4Hecke",
+     "type": "moebel",
+     "x": 992,
+     "y": 672,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

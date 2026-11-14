@@ -17,7 +17,7 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######"
+    "#######..#####"
   ],
   "objekte": [
     {
@@ -35,7 +35,7 @@
     {
       "moebel": "sb5Fussmatte",
       "feld": [7, 8],
-      "versatz": [0, 13]
+      "versatz": [8, 13]
     },
     {
       "moebel": "sb12Klimageraet",
@@ -57,7 +57,13 @@
     },
     {
       "moebel": "sb8GlastuerSued",
-      "feld": [7, 9]
+      "feld": [8, 9],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb8GlastuerSued",
+      "feld": [7, 9],
+      "an_wand": true
     }
   ],
   "ausloeser": [
@@ -76,6 +82,10 @@
       "name": "schummelgeraete",
       "feld": [11, 7],
       "auf_moebel": true
+    },
+    {
+      "name": "serverraumAusgang",
+      "feld": [8, 9]
     }
   ],
   "figuren": [],

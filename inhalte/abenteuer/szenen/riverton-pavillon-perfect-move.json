@@ -2,7 +2,7 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon-perfect-move.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Statt der langen Holztische stehen links und rechts je drei Bildschirmtische von Perfect Move: weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist, mit Bänken ringsum; an der Südwand stehen noch die Kartons der Lieferung, in den Nordecken zwei Rechnerschränke für die Tische, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move an der Stelle des abgenommenen Gründungsbilds; Slick und der Club sind nicht mehr hier, ein Techniker und eine Trainerin von Perfect Move richten den Raum ein. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Statt der langen Holztische stehen links und rechts je drei Bildschirmtische von Perfect Move: weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist, mit Bänken ringsum; an der Südwand stehen noch die Kartons der Lieferung, in den Nordecken zwei Rechnerschränke für die Tische, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move an der Stelle des abgenommenen Gründungsbilds; Slick und der Club sind nicht mehr hier, ein Techniker und eine Trainerin von Perfect Move richten den Raum ein. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte. Das große Bodenbrett in der Mitte ist mit Teppich abgedeckt: Perfect Move braucht es nicht mehr (Rückmeldung R130).",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -11,16 +11,16 @@
     "########################",
     "#......................#",
     "#......................#",
-    "#......rrrrrrrrrr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rrrrrrrrrr......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
+    "#......tttttttttt......#",
     "#......................#",
     "#......................#",
     "############.###########"
@@ -53,14 +53,6 @@
     {
       "moebel": "rv5BankLang",
       "feld": [13, 3]
-    },
-    {
-      "moebel": "rv9Figurentruhe",
-      "feld": [6, 15]
-    },
-    {
-      "moebel": "rv9Figurentruhe",
-      "feld": [16, 15]
     },
     {
       "moebel": "wzPflanze",
@@ -147,6 +139,14 @@
     {
       "moebel": "caKisten",
       "feld": [14, 15]
+    },
+    {
+      "moebel": "rv14FigurentruheA",
+      "feld": [6, 15]
+    },
+    {
+      "moebel": "rv14FigurentruheB",
+      "feld": [16, 15]
     }
   ],
   "ausloeser": [
@@ -201,7 +201,8 @@
   "boeden": {
     "w": "fliesenWeiss",
     "d": "holzDunkel",
-    "r": "stein"
+    "r": "stein",
+    "t": "teppichBlau"
   },
   "zustand_der_karte": "slickAbschiedGesehen"
 }

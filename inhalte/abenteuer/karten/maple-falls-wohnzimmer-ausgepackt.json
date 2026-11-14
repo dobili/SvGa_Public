@@ -1860,8 +1860,8 @@
      "id": 50,
      "name": "ca7Muelleimer",
      "type": "moebel",
-     "x": 208,
-     "y": 128,
+     "x": 288,
+     "y": 64,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1870,7 +1870,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 88
       },
       {
        "name": "kollision",

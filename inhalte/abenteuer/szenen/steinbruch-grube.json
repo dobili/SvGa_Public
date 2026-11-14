@@ -43,8 +43,8 @@
     "#######ppppffffffffffffffffffffffffffff#fffff#######fffffffffffffffff#",
     "#######pppp##ff##########fffff#########################fffff##########",
     "#########pppp#########################################################",
-    "###kkkkkkpppp##########################k#####kkkkkkk##################",
-    "###kkkkkkkkppppkkkkkkkkkk#####kkkkkkkkkkkkkkkkkkkkkkkkk#####kkkkkkk###",
+    "###kkkkkkpppp##########################k#####kkkkkkkkkkk##############",
+    "###kkkkkkkkppppkkkkkkkkkk#####kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "###kkkkkkkkppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
@@ -274,11 +274,6 @@
     {
       "moebel": "scFelsMittel",
       "feld": [63, 17]
-    },
-    {
-      "moebel": "st5Stollenmund",
-      "feld": [53, 25],
-      "bauteil_ok": true
     },
     {
       "moebel": "ds8Finkenzeichen",
@@ -673,6 +668,10 @@
     {
       "moebel": "st5Werkzeugkiste",
       "feld": [47, 42]
+    },
+    {
+      "moebel": "st14Stolleneingang",
+      "feld": [52, 24]
     }
   ],
   "ausloeser": [
@@ -706,6 +705,10 @@
     {
       "name": "bagger",
       "feld": [59, 42]
+    },
+    {
+      "name": "stollen",
+      "feld": [53, 28]
     }
   ],
   "figuren": [],

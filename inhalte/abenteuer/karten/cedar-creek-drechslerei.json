@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -189,7 +189,7 @@
     0,
     0,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -378,7 +378,7 @@
     2,
     2,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -621,6 +621,17 @@
     },
     {
      "id": 3,
+     "name": "drechslereiAusgang",
+     "type": "ausloeser",
+     "x": 80,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 4,
      "name": "dunmore",
      "type": "figur",
      "x": 32,
@@ -631,7 +642,7 @@
      "visible": true
     },
     {
-     "id": 4,
+     "id": 5,
      "name": "cc4Hobelbank",
      "type": "moebel",
      "x": 16,
@@ -654,7 +665,7 @@
      ]
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "cc4Buegelsaege",
      "type": "moebel",
      "x": 48,
@@ -677,7 +688,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "cc4Spaene",
      "type": "moebel",
      "x": 48,
@@ -700,7 +711,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "cc4FotoRahmen",
      "type": "moebel",
      "x": 48,
@@ -723,7 +734,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "cc12Werkstattfenster",
      "type": "moebel",
      "x": 96,
@@ -746,7 +757,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "mf12Fensterbank",
      "type": "moebel",
      "x": 96,
@@ -769,7 +780,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "cc13SpringerMissraten1",
      "type": "moebel",
      "x": 97,
@@ -797,7 +808,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "cc13SpringerMissraten2",
      "type": "moebel",
      "x": 107,
@@ -825,7 +836,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "cc13SpringerMissraten3",
      "type": "moebel",
      "x": 117,
@@ -853,7 +864,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "pd6Werkzeugschrank",
      "type": "moebel",
      "x": 128,
@@ -876,7 +887,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "cc4Werktisch",
      "type": "moebel",
      "x": 160,
@@ -899,7 +910,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "rv5Leiter",
      "type": "moebel",
      "x": 224,
@@ -922,7 +933,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "pd9Werkbank",
      "type": "moebel",
      "x": 160,
@@ -945,7 +956,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "cc4Spaene",
      "type": "moebel",
      "x": 160,
@@ -968,7 +979,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 48,
@@ -991,7 +1002,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "cc4Rundholz",
      "type": "moebel",
      "x": 16,
@@ -1014,7 +1025,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "cc4RundholzKlein",
      "type": "moebel",
      "x": 48,
@@ -1037,7 +1048,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 176,
@@ -1060,7 +1071,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "cc4KisteLeer",
      "type": "moebel",
      "x": 208,
@@ -1083,7 +1094,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "cc4RundholzMittel",
      "type": "moebel",
      "x": 208,
@@ -1106,7 +1117,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
      "x": 64,
@@ -1129,7 +1140,30 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
+     "name": "cc8TuerSuedHolz",
+     "type": "moebel",
+     "x": 80,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 27,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 64,
@@ -1152,7 +1186,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 28,
      "name": "cc7Werkbank",
      "type": "moebel",
      "x": 96,
@@ -1175,7 +1209,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 29,
      "name": "cc7Werkbank",
      "type": "moebel",
      "x": 128,
@@ -1198,7 +1232,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 30,
      "name": "cc5Leiste",
      "type": "moebel",
      "x": 104,
@@ -1221,7 +1255,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 31,
      "name": "cc5Werkstueck",
      "type": "moebel",
      "x": 136,

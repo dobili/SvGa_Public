@@ -441,6 +441,26 @@
       "stil": "klassisch",
       "begehbar": true,
       "begehbar_grund": "Hocker, auf dem eine Figur sitzt"
+    },
+    "wr14ZaunSenkrecht": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_1_Brown_4_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "wr14Kutter": {
+      "quelle": "spiel/eigene/kutter_laengs.png",
+      "breite": 68,
+      "hoehe": 144,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     }
   }
 }

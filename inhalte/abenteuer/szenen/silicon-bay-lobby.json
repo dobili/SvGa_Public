@@ -21,7 +21,7 @@
     "#..tttttt..............#",
     "#..tttttt..............#",
     "#......................#",
-    "############.###########"
+    "###########...##########"
   ],
   "objekte": [
     {
@@ -101,11 +101,17 @@
     {
       "moebel": "sb5Fussmatte",
       "feld": [12, 12],
-      "versatz": [0, 13]
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "rv8GlastuerSued",
+      "feld": [11, 13],
+      "an_wand": true
     },
     {
       "moebel": "sb8GlastuerSued",
-      "feld": [12, 13]
+      "feld": [13, 13],
+      "an_wand": true
     }
   ],
   "ausloeser": [
@@ -123,6 +129,14 @@
     {
       "name": "vitrineHale",
       "feld": [11, 9]
+    },
+    {
+      "name": "lobbyAusgang",
+      "feld": [11, 13]
+    },
+    {
+      "name": "lobbyAusgang",
+      "feld": [13, 13]
     }
   ],
   "figuren": [

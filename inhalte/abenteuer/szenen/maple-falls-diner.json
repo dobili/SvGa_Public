@@ -20,7 +20,7 @@
     "#..............#",
     "#..............#",
     "#..............#",
-    "####.###########"
+    "####..##########"
   ],
   "objekte": [
     {
@@ -174,7 +174,7 @@
       "versatz": [0, 3]
     },
     {
-      "moebel": "sb8GlastuerSued",
+      "moebel": "rv8GlastuerSued",
       "feld": [4, 12],
       "an_wand": true
     },
@@ -195,6 +195,10 @@
     {
       "name": "dinerAusgang",
       "feld": [4, 12]
+    },
+    {
+      "name": "dinerAusgang",
+      "feld": [5, 12]
     }
   ],
   "figuren": [

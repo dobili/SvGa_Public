@@ -42,11 +42,11 @@
     "#pp..........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
     "#p...........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
     "#p...........................pppppppppppppppppppee...~~~~~.#",
-    "#p..............................................ee...~~~~~.#",
-    "#p..............................................ee...~~~~~.#",
-    "#p..............................................ee...~~~~~.#",
-    "#p............................................eeee~~~~~~~~.#",
-    "#p............................................eeee~~~~~~~..#",
+    "#p.............................pppppppppppppppppee...~~~~~.#",
+    "#p.............................pppppppppppppppppee...~~~~~.#",
+    "#p.............................ppppppp..........ee...~~~~~.#",
+    "#p..............................................ee~~~~~~~~.#",
+    "#p..............................................ee~~~~~~~..#",
     "#p..............................................ee..~~~~~..#",
     "#p..............................................ee..~~~~~..#",
     "#p..............................................ee..~~~~~..#",
@@ -657,6 +657,166 @@
       "moebel": "fz11SchulbusRechts",
       "feld": [33, 23],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 26],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 42],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 44],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [0, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [0, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [2, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [4, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [6, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [8, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [10, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [12, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [14, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [16, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [18, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [20, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [22, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [24, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [26, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [28, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [30, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [32, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [34, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [36, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [38, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [40, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [42, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [44, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [46, 49]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [48, 49]
     }
   ],
   "ausloeser": [

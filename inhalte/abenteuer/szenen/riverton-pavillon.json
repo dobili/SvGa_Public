@@ -216,14 +216,6 @@
       "versatz": [8, 0]
     },
     {
-      "moebel": "rv9Figurentruhe",
-      "feld": [6, 15]
-    },
-    {
-      "moebel": "rv9Figurentruhe",
-      "feld": [16, 15]
-    },
-    {
       "moebel": "rv5Limonade",
       "feld": [11, 16]
     },
@@ -254,64 +246,64 @@
       "an_wand": true
     },
     {
-      "moebel": "rv9GrossWeissTurm",
-      "feld": [8, 13],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissTurm",
+      "feld": [8, 12],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossWeissKoenig",
-      "feld": [10, 13],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissKoenig",
+      "feld": [10, 12],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossWeissBauer",
-      "feld": [9, 12],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissBauer",
+      "feld": [9, 11],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossWeissBauer",
-      "feld": [11, 12],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissBauer",
+      "feld": [11, 11],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossWeissSpringer",
-      "feld": [12, 11],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissSpringer",
+      "feld": [12, 10],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossWeissBauer",
-      "feld": [10, 10],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissBauer",
+      "feld": [10, 9],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzTurm",
-      "feld": [9, 6],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzTurm",
+      "feld": [9, 5],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzKoenig",
-      "feld": [11, 6],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzKoenig",
+      "feld": [11, 5],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzBauer",
-      "feld": [10, 7],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzBauer",
+      "feld": [10, 6],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzBauer",
-      "feld": [12, 7],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzBauer",
+      "feld": [12, 6],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzBauer",
-      "feld": [11, 9],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzBauer",
+      "feld": [11, 8],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzLaeufer",
-      "feld": [13, 8],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzLaeufer",
+      "feld": [13, 7],
+      "versatz": [0, -4]
     },
     {
       "moebel": "rv5BankLang",
@@ -322,14 +314,22 @@
       "feld": [20, 9]
     },
     {
-      "moebel": "rv9GrossWeissLaeufer",
-      "feld": [13, 12],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurWeissLaeufer",
+      "feld": [13, 11],
+      "versatz": [0, -4]
     },
     {
-      "moebel": "rv9GrossSchwarzSpringer",
-      "feld": [14, 7],
-      "versatz": [0, -6]
+      "moebel": "rv14FigurSchwarzSpringer",
+      "feld": [14, 6],
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "rv14FigurentruheA",
+      "feld": [6, 15]
+    },
+    {
+      "moebel": "rv14FigurentruheB",
+      "feld": [16, 15]
     }
   ],
   "ausloeser": [

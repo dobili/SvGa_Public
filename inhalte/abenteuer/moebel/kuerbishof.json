@@ -309,6 +309,16 @@
       "zustand": "neu",
       "stil": "laendlich",
       "hinweis": "Kürbis auf dem Feld, sperrt (Kartengutachten Akt 1: man lief über die Ernte)"
+    },
+    "kh13Kuerbiswaage": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Scale_Market_Stand_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "waage",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "hinweis": "Kürbiswaage am Hofladen (Auslöser kuerbiswaage, Kartengutachten Akt 1: die Waage war nicht zu sehen)"
     }
   }
 }

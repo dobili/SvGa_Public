@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 23,
+ "nextobjectid": 22,
  "layers": [
   {
    "id": 1,
@@ -79,8 +79,8 @@
     1,
     1,
     0,
-    1,
-    1,
+    0,
+    0,
     0,
     1,
     1,
@@ -211,8 +211,8 @@
     0,
     0,
     2,
-    0,
-    0,
+    2,
+    2,
     2,
     0,
     0,
@@ -576,52 +576,6 @@
     },
     {
      "id": 9,
-     "name": "mf5Toilette",
-     "type": "moebel",
-     "x": 64,
-     "y": 32,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 10,
-     "name": "rv8Duschvorhang",
-     "type": "moebel",
-     "x": 80,
-     "y": 32,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 11,
      "name": "mf8KuehlschrankWeiss",
      "type": "moebel",
      "x": 112,
@@ -644,7 +598,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 10,
      "name": "rv8Arbeitsplatte",
      "type": "moebel",
      "x": 128,
@@ -667,7 +621,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 11,
      "name": "mf5Spuele",
      "type": "moebel",
      "x": 128,
@@ -690,7 +644,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 12,
      "name": "rv8Arbeitsplatte",
      "type": "moebel",
      "x": 160,
@@ -713,7 +667,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 13,
      "name": "rv8Kocher",
      "type": "moebel",
      "x": 162,
@@ -736,7 +690,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 14,
      "name": "rv8Kocher",
      "type": "moebel",
      "x": 174,
@@ -759,7 +713,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 15,
      "name": "wzFenster",
      "type": "moebel",
      "x": 192,
@@ -782,7 +736,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 16,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 128,
@@ -805,11 +759,11 @@
      ]
     },
     {
-     "id": 19,
+     "id": 17,
      "name": "rv5Kuriertasche",
      "type": "moebel",
-     "x": 96,
-     "y": 24,
+     "x": 240,
+     "y": 48,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -818,17 +772,17 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 72
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
-     "id": 20,
+     "id": 18,
      "name": "mf5NischenstuhlRechts",
      "type": "moebel",
      "x": 176,
@@ -851,7 +805,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 19,
      "name": "mf5Nischentisch",
      "type": "moebel",
      "x": 192,
@@ -874,7 +828,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 20,
      "name": "mf5NischenstuhlLinks",
      "type": "moebel",
      "x": 208,
@@ -893,6 +847,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "mf12InnentuerHolz",
+     "type": "moebel",
+     "x": 80,
+     "y": 16,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

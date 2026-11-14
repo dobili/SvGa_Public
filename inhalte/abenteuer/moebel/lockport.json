@@ -471,6 +471,117 @@
       "art": "ofen",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld14BlockhuetteGruen": {
+      "quelle": "spiel/eigene/blockhuette_gruen.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14BlockhuetteKamin": {
+      "quelle": "spiel/eigene/blockhuette_kamin.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14HausBlau": {
+      "quelle": "spiel/eigene/haus_farm1_blau.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14HausGruen": {
+      "quelle": "spiel/eigene/haus_farm2_gruen.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14Bootsschuppen": {
+      "quelle": "spiel/eigene/bootsschuppen_grau.png",
+      "breite": 48,
+      "hoehe": 71,
+      "zum_wasser": true,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14SchuppenBlau": {
+      "quelle": "spiel/eigene/schuppen_blau.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14SchuppenBraun": {
+      "quelle": "spiel/eigene/schuppen_braun.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14SchuppenRot": {
+      "quelle": "spiel/eigene/schuppen_rot.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14Lastkahn": {
+      "quelle": "spiel/eigene/lastkahn_lang_links.png",
+      "breite": 352,
+      "hoehe": 39,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+    },
+    "ld14Kugelfang": {
+      "quelle": "spiel/eigene/kegelbahn_kugelfang.png",
+      "breite": 32,
+      "hoehe": 33,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld14Kegelregal": {
+      "quelle": "spiel/eigene/kegelregal.png",
+      "breite": 32,
+      "hoehe": 33,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

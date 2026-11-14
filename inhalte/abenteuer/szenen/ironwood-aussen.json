@@ -165,11 +165,13 @@
     },
     {
       "moebel": "iw5Schornstein",
-      "feld": [48, 2]
+      "feld": [48, 2],
+      "versatz": [0, -15]
     },
     {
       "moebel": "iw5Schornstein",
-      "feld": [51, 5]
+      "feld": [51, 5],
+      "versatz": [0, -15]
     },
     {
       "moebel": "iwFassGross",

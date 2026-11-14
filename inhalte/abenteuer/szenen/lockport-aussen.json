@@ -36,8 +36,8 @@
     "#..........pp............pp...................................ppppppppppp#",
     "#..........pp............pp...................................ppppppppppp#",
     "#..........pp............pp...................................ppppppppppp#",
-    "#..........pp............pp..............................................#",
-    "#..........pp............pp..............................................#",
+    "#..........pp............pp...................................ppppppppppp#",
+    "#..........pp............pp...................................ppppppppppp#",
     "#..........pp............pp..............................................#",
     "#..........pp............pp..............................................#",
     "#..........pp............pp..............................................#",
@@ -169,10 +169,6 @@
       "id": "sperreObertor"
     },
     {
-      "moebel": "ld8Frachtkahn",
-      "feld": [3, 15]
-    },
-    {
       "moebel": "ld5Rettungsring",
       "feld": [63, 11]
     },
@@ -237,7 +233,7 @@
     },
     {
       "moebel": "mfAhorn",
-      "feld": [34, 40]
+      "feld": [19, 40]
     },
     {
       "moebel": "mfBank",
@@ -313,10 +309,6 @@
     },
     {
       "moebel": "wg4Erle",
-      "feld": [36, 24]
-    },
-    {
-      "moebel": "wg4Erle",
       "feld": [71, 37]
     },
     {
@@ -328,10 +320,6 @@
       "feld": [64, 18],
       "id": "henriksBoot",
       "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [1, 9]
     },
     {
       "moebel": "lp8Schuppen",
@@ -364,54 +352,6 @@
     {
       "moebel": "wg4Erle",
       "feld": [54, 37]
-    },
-    {
-      "moebel": "sc7Ferienhuette",
-      "feld": [12, 4]
-    },
-    {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [29, 5]
-    },
-    {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [68, 5]
-    },
-    {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [3, 27]
-    },
-    {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [58, 27]
-    },
-    {
-      "moebel": "mf7Gartenhaus",
-      "feld": [16, 41]
-    },
-    {
-      "moebel": "mf7Gartenhaus",
-      "feld": [66, 41]
-    },
-    {
-      "moebel": "sc7Huette",
-      "feld": [37, 2]
-    },
-    {
-      "moebel": "sc7Huette",
-      "feld": [38, 24]
-    },
-    {
-      "moebel": "mf7Gartenhaus",
-      "feld": [46, 27]
-    },
-    {
-      "moebel": "sc7Ferienhuette",
-      "feld": [51, 26]
-    },
-    {
-      "moebel": "wc5Gartenhaus",
-      "feld": [42, 40]
     },
     {
       "moebel": "ld9SchildAnkerTaue",
@@ -449,6 +389,74 @@
     {
       "moebel": "mf2Blumenbeet",
       "feld": [48, 42]
+    },
+    {
+      "moebel": "ld14Bootsschuppen",
+      "feld": [1, 9],
+      "versatz": [0, -7]
+    },
+    {
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [12, 4],
+      "versatz": [0, -13]
+    },
+    {
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [29, 5],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "ld14HausBlau",
+      "feld": [37, 0]
+    },
+    {
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [68, 5],
+      "versatz": [0, -13]
+    },
+    {
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [3, 27],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [58, 27],
+      "versatz": [0, -13]
+    },
+    {
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [51, 26],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "ld14SchuppenBlau",
+      "feld": [47, 27],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ld14HausGruen",
+      "feld": [37, 23]
+    },
+    {
+      "moebel": "ld14SchuppenRot",
+      "feld": [16, 40],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ld14SchuppenBraun",
+      "feld": [66, 40],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ld14SchuppenBlau",
+      "feld": [42, 40],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ld14Lastkahn",
+      "feld": [4, 16],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -721,15 +729,7 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "rustikal",
-    "klassisch",
-    "natur",
-    "einfach",
-    "laendlich",
-    "landhaus",
-    "modern"
-  ],
+  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
   "ufer": "stein",
   "datei": "karten/lockport-aussen.json"
 }

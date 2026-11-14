@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 219,
+ "nextobjectid": 221,
  "layers": [
   {
    "id": 1,
@@ -2160,14 +2160,14 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     4,
     4,
     1,
@@ -2240,14 +2240,14 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     4,
     4,
     1,
@@ -6813,63 +6813,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -6895,12 +6838,69 @@
     0,
     2,
     2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -17796,7 +17796,7 @@
      "id": 168,
      "name": "mf4Laterne",
      "type": "moebel",
-     "x": 528,
+     "x": 512,
      "y": 352,
      "width": 16,
      "height": 64,
@@ -18553,29 +18553,6 @@
     },
     {
      "id": 201,
-     "name": "pd6SchildMusikhaus",
-     "type": "moebel",
-     "x": 650,
-     "y": 576,
-     "width": 96,
-     "height": 24,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 649
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 202,
      "name": "pd10Wegweiser",
      "type": "moebel",
      "x": 64,
@@ -18598,7 +18575,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 202,
      "name": "pd6BauzaunEndeLinks",
      "type": "moebel",
      "x": 256,
@@ -18621,7 +18598,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 203,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 272,
@@ -18644,7 +18621,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 204,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 288,
@@ -18667,7 +18644,7 @@
      ]
     },
     {
-     "id": 206,
+     "id": 205,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 304,
@@ -18690,7 +18667,7 @@
      ]
     },
     {
-     "id": 207,
+     "id": 206,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 320,
@@ -18713,7 +18690,7 @@
      ]
     },
     {
-     "id": 208,
+     "id": 207,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 336,
@@ -18736,7 +18713,7 @@
      ]
     },
     {
-     "id": 209,
+     "id": 208,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 352,
@@ -18759,7 +18736,7 @@
      ]
     },
     {
-     "id": 210,
+     "id": 209,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 368,
@@ -18782,7 +18759,7 @@
      ]
     },
     {
-     "id": 211,
+     "id": 210,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 384,
@@ -18805,7 +18782,7 @@
      ]
     },
     {
-     "id": 212,
+     "id": 211,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 400,
@@ -18828,7 +18805,7 @@
      ]
     },
     {
-     "id": 213,
+     "id": 212,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 416,
@@ -18851,7 +18828,7 @@
      ]
     },
     {
-     "id": 214,
+     "id": 213,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 432,
@@ -18874,7 +18851,7 @@
      ]
     },
     {
-     "id": 215,
+     "id": 214,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 448,
@@ -18897,7 +18874,7 @@
      ]
     },
     {
-     "id": 216,
+     "id": 215,
      "name": "pd6BauzaunEndeRechts",
      "type": "moebel",
      "x": 464,
@@ -18920,7 +18897,7 @@
      ]
     },
     {
-     "id": 217,
+     "id": 216,
      "name": "pd12Bagger",
      "type": "moebel",
      "x": 464,
@@ -18943,7 +18920,7 @@
      ]
     },
     {
-     "id": 218,
+     "id": 217,
      "name": "pd12Lastwagen",
      "type": "moebel",
      "x": 544,
@@ -18962,6 +18939,75 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 218,
+     "name": "by6StegQuer10",
+     "type": "moebel",
+     "x": 880,
+     "y": 416,
+     "width": 160,
+     "height": 36,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 219,
+     "name": "cc5StegPfaehle",
+     "type": "moebel",
+     "x": 896,
+     "y": 400,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 220,
+     "name": "pd6SchildMusikhaus",
+     "type": "moebel",
+     "x": 650,
+     "y": 576,
+     "width": 96,
+     "height": 24,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 649
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

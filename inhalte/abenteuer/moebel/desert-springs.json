@@ -258,6 +258,17 @@
       "art": "haus",
       "zustand": "gebraucht",
       "stil": "industrie"
+    },
+    "ds13Ortsschild": {
+      "quelle": "spiel/eigene/ortsschild_desert_springs.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "maske": [".....", ".....", "#...#"]
     }
   }
 }

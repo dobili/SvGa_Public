@@ -16,7 +16,7 @@
     "#............#",
     "#............#",
     "#............#",
-    "####.#########"
+    "####..########"
   ],
   "objekte": [
     {
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "moebel": "sb8GlastuerSued",
+      "moebel": "cc13GlastuerSuedDoppel",
       "feld": [
         4,
         10
@@ -179,6 +179,13 @@
       "name": "waschsalonAusgang",
       "feld": [
         4,
+        10
+      ]
+    },
+    {
+      "name": "waschsalonAusgang",
+      "feld": [
+        5,
         10
       ]
     },

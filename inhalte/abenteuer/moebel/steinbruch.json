@@ -257,6 +257,19 @@
       "stil": "natur",
       "begehbar": true,
       "begehbar_grund": "Lichtschein auf dem Boden, kein Gegenstand"
+    },
+    "st14Stolleneingang": {
+      "quelle": "spiel/eigene/stollen_eingang.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stollen",
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "tuer": [
+        [1, 4],
+        [2, 4]
+      ]
     }
   }
 }

@@ -1993,6 +1993,17 @@
       "begehbar": true,
       "begehbar_grund": "steht auf der Fensterbank",
       "hinweis": "Missratener Holzspringer auf Dunmores Fensterbank, Stufe B (Gemini 7, Abschnitt 5)"
+    },
+    "cc13GlastuerSuedDoppel": {
+      "quelle": "spiel/eigene/glastuer_sued_doppel.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Doppelte Glastür in der Südwand des Waschsalons, so breit wie außen (Regel 10.77)"
     }
   }
 }

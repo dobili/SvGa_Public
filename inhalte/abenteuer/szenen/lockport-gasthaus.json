@@ -40,11 +40,6 @@
       "an_wand": true
     },
     {
-      "moebel": "ld8Garderobe",
-      "feld": [17, 1],
-      "an_wand": true
-    },
-    {
       "moebel": "ld11Kanonenofen",
       "feld": [20, 2]
     },
@@ -68,16 +63,8 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "ld9Kugelfang",
-      "feld": [16, 3]
-    },
-    {
       "moebel": "ld5Kegelkugel",
       "feld": [2, 4]
-    },
-    {
-      "moebel": "ld8Kugelregal",
-      "feld": [2, 6]
     },
     {
       "moebel": "ld8Kegelbande",
@@ -338,6 +325,14 @@
     {
       "moebel": "cc4Holzstapel",
       "feld": [18, 3]
+    },
+    {
+      "moebel": "ld14Kugelfang",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "ld14Kegelregal",
+      "feld": [1, 7]
     }
   ],
   "ausloeser": [

@@ -26,39 +26,15 @@
   "objekte": [
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [1, 3]
+      "feld": [22, 7]
     },
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [2, 3]
+      "feld": [23, 7]
     },
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [3, 3]
-    },
-    {
-      "moebel": "rv8SchalterA",
-      "feld": [5, 1],
-      "an_wand": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv8SchalterB",
-      "feld": [7, 1],
-      "an_wand": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv8SchalterA",
-      "feld": [9, 1],
-      "an_wand": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv8SchalterEnde",
-      "feld": [11, 1],
-      "an_wand": true,
-      "bauteil_ok": true
+      "feld": [24, 7]
     },
     {
       "moebel": "rv5Bahnhofsuhr",
@@ -86,35 +62,28 @@
     },
     {
       "moebel": "rv8KaffeeVorn",
-      "feld": [23, 1]
+      "feld": [23, 1],
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8GlasthekeLinks",
-      "feld": [1, 6]
+      "feld": [22, 12]
     },
     {
       "moebel": "mf8GlasthekeMitte",
-      "feld": [2, 6]
+      "feld": [23, 12]
     },
     {
       "moebel": "mf8GlasthekeRechts",
-      "feld": [3, 6]
-    },
-    {
-      "moebel": "rv8Schliessfach",
-      "feld": [23, 6]
+      "feld": [24, 12]
     },
     {
       "moebel": "rv8Rollkoffer",
-      "feld": [19, 9]
+      "feld": [9, 6]
     },
     {
       "moebel": "rv8Pflanze",
       "feld": [1, 13]
-    },
-    {
-      "moebel": "rv8Pflanze",
-      "feld": [24, 13]
     },
     {
       "moebel": "rv8Saeule",
@@ -187,7 +156,7 @@
     },
     {
       "moebel": "rv8Sackkarre",
-      "feld": [21, 12]
+      "feld": [21, 5]
     },
     {
       "moebel": "rv8Rollkoffer",
@@ -200,26 +169,40 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "slickbank"
+      "auf": "slickbank",
+      "versatz": [0, 8]
     },
     {
       "moebel": "rv5Kuriertasche",
-      "feld": [7, 12]
+      "feld": [1, 11]
     },
     {
       "moebel": "rv8Plakat",
-      "feld": [3, 1],
+      "feld": [11, 1],
       "an_wand": true
     },
     {
-      "moebel": "rv9Bogenfenster",
-      "feld": [1, 1],
-      "an_wand": true
+      "moebel": "rv14Fahrkartenschalter",
+      "feld": [2, 1],
+      "versatz": [0, -8],
+      "bauteil_ok": true
     },
     {
       "moebel": "rv9Bogenfenster",
-      "feld": [3, 1],
+      "feld": [9, 1],
       "an_wand": true
+    },
+    {
+      "moebel": "rv8Zweierbank",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "rv14SpindLinks",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "rv14SpindRechts",
+      "feld": [3, 6]
     }
   ],
   "ausloeser": [
@@ -248,11 +231,11 @@
     },
     {
       "name": "zeitungsstand",
-      "feld": [2, 10]
+      "feld": [23, 14]
     },
     {
       "name": "fundZeitungsausschnitt",
-      "feld": [5, 4]
+      "feld": [7, 5]
     },
     {
       "name": "fundTaubenfeder",
@@ -266,7 +249,7 @@
     },
     {
       "name": "pops",
-      "feld": [4, 7]
+      "feld": [23, 11]
     }
   ],
   "belebung": [

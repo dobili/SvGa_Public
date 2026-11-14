@@ -15910,9 +15910,9 @@
      "name": "iw5Schornstein",
      "type": "moebel",
      "x": 768,
-     "y": 32,
+     "y": 17,
      "width": 32,
-     "height": 112,
+     "height": 127,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -15933,9 +15933,9 @@
      "name": "iw5Schornstein",
      "type": "moebel",
      "x": 816,
-     "y": 80,
+     "y": 65,
      "width": 32,
-     "height": 112,
+     "height": 127,
      "rotation": 0,
      "visible": true,
      "properties": [

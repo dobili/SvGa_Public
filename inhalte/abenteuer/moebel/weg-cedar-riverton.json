@@ -749,6 +749,72 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "wc14GleisbogenAb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Right_Up_Corner.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "wc14GleisbogenAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Left_Bottom_Corner.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "wc14GleisSenkrecht": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "wc14BahnsteigTreppe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Stairs_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "wc14Stellwerk": {
+      "quelle": "spiel/eigene/stellwerk_ziegel.png",
+      "breite": 64,
+      "hoehe": 63,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "laendlich",
+      "zustand": "alt"
+    },
+    "wc14SchuppenRot": {
+      "quelle": "spiel/eigene/schuppen_rot.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "landhaus"
+    },
+    "wc14SchuppenBlau": {
+      "quelle": "spiel/eigene/schuppen_blau.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "landhaus"
     }
   }
 }

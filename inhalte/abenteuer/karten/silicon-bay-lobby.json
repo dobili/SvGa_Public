@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 28,
+ "nextobjectid": 31,
  "layers": [
   {
    "id": 1,
@@ -347,9 +347,9 @@
     0,
     0,
     0,
-    0,
     1,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -696,9 +696,9 @@
     2,
     2,
     2,
-    2,
     0,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1112,6 +1112,28 @@
     },
     {
      "id": 4,
+     "name": "lobbyAusgang",
+     "type": "ausloeser",
+     "x": 176,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 5,
+     "name": "lobbyAusgang",
+     "type": "ausloeser",
+     "x": 208,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 6,
      "name": "empfangsroboter",
      "type": "figur",
      "x": 288,
@@ -1122,7 +1144,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 7,
      "name": "besucherin",
      "type": "statist",
      "x": 288,
@@ -1155,7 +1177,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 8,
      "name": "besucher",
      "type": "statist",
      "x": 304,
@@ -1188,7 +1210,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 9,
      "name": "besucherMitTasche",
      "type": "statist",
      "x": 320,
@@ -1221,7 +1243,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 10,
      "name": "wartender",
      "type": "statist",
      "x": 80,
@@ -1259,7 +1281,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 11,
      "name": "sb5Aufzug",
      "type": "moebel",
      "x": 32,
@@ -1282,7 +1304,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 12,
      "name": "sb5Aufzug",
      "type": "moebel",
      "x": 80,
@@ -1305,7 +1327,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 13,
      "name": "sb5Aufzug",
      "type": "moebel",
      "x": 128,
@@ -1328,7 +1350,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "sb5BildschirmB",
      "type": "moebel",
      "x": 192,
@@ -1351,7 +1373,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "sb5BildschirmC",
      "type": "moebel",
      "x": 256,
@@ -1374,7 +1396,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "sb5Empfang",
      "type": "moebel",
      "x": 240,
@@ -1397,57 +1419,11 @@
      ]
     },
     {
-     "id": 15,
-     "name": "sb5Topfpflanze",
-     "type": "moebel",
-     "x": 16,
-     "y": 48,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 16,
-     "name": "sb5Topfpflanze",
-     "type": "moebel",
-     "x": 336,
-     "y": 48,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 17,
      "name": "sb5Topfpflanze",
      "type": "moebel",
      "x": 16,
-     "y": 160,
+     "y": 48,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1456,7 +1432,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 200
+       "value": 88
       },
       {
        "name": "kollision",
@@ -1470,6 +1446,29 @@
      "name": "sb5Topfpflanze",
      "type": "moebel",
      "x": 336,
+     "y": 48,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "sb5Topfpflanze",
+     "type": "moebel",
+     "x": 16,
      "y": 160,
      "width": 32,
      "height": 48,
@@ -1489,7 +1488,30 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
+     "name": "sb5Topfpflanze",
+     "type": "moebel",
+     "x": 336,
+     "y": 160,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
      "name": "sb5Sessel",
      "type": "moebel",
      "x": 48,
@@ -1512,7 +1534,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "sb8Sofa",
      "type": "moebel",
      "x": 80,
@@ -1535,7 +1557,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "sb5Sessel",
      "type": "moebel",
      "x": 112,
@@ -1558,7 +1580,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 24,
      "name": "pd6Couchtisch",
      "type": "moebel",
      "x": 80,
@@ -1581,7 +1603,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "sb5Sockel",
      "type": "moebel",
      "x": 144,
@@ -1604,7 +1626,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "sb5VitrineHale",
      "type": "moebel",
      "x": 176,
@@ -1627,7 +1649,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 27,
      "name": "sb5SockelB",
      "type": "moebel",
      "x": 208,
@@ -1650,11 +1672,11 @@
      ]
     },
     {
-     "id": 26,
+     "id": 28,
      "name": "sb5Fussmatte",
      "type": "moebel",
      "x": 192,
-     "y": 205,
+     "y": 194,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1673,10 +1695,33 @@
      ]
     },
     {
-     "id": 27,
+     "id": 29,
+     "name": "rv8GlastuerSued",
+     "type": "moebel",
+     "x": 176,
+     "y": 208,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
      "name": "sb8GlastuerSued",
      "type": "moebel",
-     "x": 192,
+     "x": 208,
      "y": 208,
      "width": 16,
      "height": 16,
@@ -1686,7 +1731,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 0
       },
       {
        "name": "kollision",

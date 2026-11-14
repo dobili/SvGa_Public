@@ -141,6 +141,11 @@ Netzzugang der Cloud-Umgebung: „Voll“. npm und PyPI sind erreichbar, es gilt
    ist, was offen ist und den genauen nächsten Schritt. Im claude.ai-Projekt hält
    `claude/App_Fortschritt.md` denselben Stand.
 
+6. **Helfer liefern, der Hauptchat baut zusammen** (Wunsch des Autors, 14.11.2026): Helfer (Unteragenten
+   und Nebenchats) committen und pushen nicht selbst. Sie lassen ihre fertigen, geprüften Änderungen
+   liegen oder übergeben sie und melden Dateien und Prüfergebnis. Der Hauptchat führt alles zusammen,
+   prüft das Ganze und pusht.
+
 ## Wann Fable sinnvoll ist
 
 Den Autor vor diesen Arbeitspaketen an den Wechsel erinnern:

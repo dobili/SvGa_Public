@@ -1,0 +1,311 @@
+/*
+ * Karten des Spiels als Karten (docs/spiel/29_Tischgespraech.md, Abschnitt Kartenfächer):
+ * Fächer unter dem Brett, herausgehobene Karte, Deckwahl. Gehört zu anbindung/Spielkarte.tsx,
+ * anbindung/Kartenfaecher.tsx und anbindung/Kartenblick.tsx.
+ * Farben zur Navy-Gold-Palette des Spiels: leicht ein gedecktes Grün, mittel ein Taubenblau,
+ * stark das Gold der Hülle. Der Rand ist pixelig (harte Ecken, zweifach abgesetzt) wie die
+ * Rahmen der Welt.
+ */
+.abenteuer-spielkarte,
+.abenteuer-kartenblick {
+  --stufe-farbe: #5e9c6e;
+  --stufe-tief: #2f5e3b;
+}
+
+.abenteuer-spielkarte[data-stufe="mittel"],
+.abenteuer-kartenblick[data-stufe="mittel"] {
+  --stufe-farbe: #5b86c4;
+  --stufe-tief: #2b4a78;
+}
+
+.abenteuer-spielkarte[data-stufe="stark"],
+.abenteuer-kartenblick[data-stufe="stark"] {
+  --stufe-farbe: var(--gold);
+  --stufe-tief: #7d6007;
+}
+
+/* Der Fächer: waagerecht, wischen mit Einrasten, nie breiter als die Spalte (Brett bleibt groß). */
+.abenteuer-faecher {
+  display: flex;
+  flex: 1 1 100%;
+  gap: var(--raster);
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: calc(var(--raster) / 2) 2px var(--raster);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  list-style: none;
+}
+
+.abenteuer-faecher > li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Eine Karte: hochkant 3:4, Motiv oben, Name unten, Rand in der Stufenfarbe. */
+.abenteuer-spielkarte {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 78px;
+  aspect-ratio: 3 / 4;
+  padding: 3px;
+  overflow: hidden;
+  border: 3px solid var(--stufe-farbe);
+  border-radius: 0;
+  background: var(--creme);
+  color: var(--navy);
+  box-shadow:
+    0 0 0 2px var(--navy),
+    3px 3px 0 2px var(--stufe-tief);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.abenteuer-spielkarte:active {
+  transform: translateY(1px);
+}
+
+.abenteuer-spielkarte:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.abenteuer-spielkarte-motiv {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+  /* Gezeichnetes Motiv: Rautenmuster auf der Stufenfarbe. */
+  background:
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 14%) 0 4px, transparent 4px 10px),
+    repeating-linear-gradient(-45deg, rgb(0 0 0 / 8%) 0 4px, transparent 4px 10px),
+    var(--stufe-farbe);
+}
+
+.abenteuer-spielkarte-motiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.abenteuer-spielkarte-symbol {
+  color: var(--creme);
+  font-size: 2.4rem;
+  line-height: 1;
+  text-shadow:
+    2px 2px 0 var(--stufe-tief),
+    -1px -1px 0 var(--navy);
+}
+
+/* Rückseite ohne Bild: Navy mit goldenem Gitter. */
+.abenteuer-spielkarte-motiv[data-rueckseite] {
+  background:
+    repeating-linear-gradient(45deg, rgb(201 162 39 / 55%) 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(-45deg, rgb(201 162 39 / 55%) 0 2px, transparent 2px 8px), var(--navy);
+}
+
+.abenteuer-spielkarte-name {
+  display: -webkit-box;
+  margin-top: 2px;
+  overflow: hidden;
+  font-size: var(--groesse-fein);
+  font-weight: 600;
+  line-height: 1.15;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.abenteuer-spielkarte .abenteuer-karte-grund,
+.abenteuer-spielkarte-anzahl {
+  font-size: var(--groesse-fein);
+  line-height: 1.1;
+}
+
+.abenteuer-spielkarte-anzahl {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 0 3px;
+  background: var(--navy);
+  color: var(--creme);
+}
+
+/* Nicht spielbar: gedämpft, aber antippbar (der Grund steht in der herausgehobenen Karte). */
+.abenteuer-spielkarte[data-ansicht="gedaempft"] {
+  opacity: 0.5;
+  filter: saturate(0.35);
+}
+
+.abenteuer-spielkarte[data-ansicht="rueckseite"] {
+  opacity: 0.8;
+}
+
+/* Im Deck (Deckwahl): goldener Grund unter dem Namen und ein Haken. */
+.abenteuer-spielkarte[aria-pressed="true"] {
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+.abenteuer-spielkarte[aria-pressed="true"]::before {
+  content: "✓";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 1;
+  padding: 0 3px;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: var(--groesse-fein);
+}
+
+/* Freie Karte der Begegnung (R29): goldener Schein. */
+.abenteuer-spielkarte[data-frei] {
+  box-shadow:
+    0 0 0 2px var(--navy),
+    0 0 0 5px var(--gold);
+}
+
+/* Dauerhafte Karte, die gerade wirkt: ein sanfter Glanz zieht über die Karte. */
+.abenteuer-spielkarte[data-ansicht="glanz"] {
+  box-shadow:
+    0 0 0 2px var(--navy),
+    0 0 10px 3px rgb(201 162 39 / 70%);
+}
+
+.abenteuer-spielkarte[data-ansicht="glanz"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgb(255 255 255 / 55%) 50%, transparent 70%);
+  background-size: 250% 100%;
+  pointer-events: none;
+  animation: abenteuer-glanz 2.8s ease-in-out infinite;
+}
+
+@keyframes abenteuer-glanz {
+  from {
+    background-position: 120% 0;
+  }
+
+  to {
+    background-position: -120% 0;
+  }
+}
+
+/* Die herausgehobene Karte: groß über dem Brett, abgedunkelter Grund, Tipp daneben schließt. */
+.abenteuer-kartenblick-grund {
+  position: fixed;
+  z-index: 25;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(env(safe-area-inset-top) + var(--raster) * 6) calc(var(--raster) * 2) var(--raster);
+  overflow-y: auto;
+  background: rgb(11 20 36 / 60%);
+  animation: abenteuer-moment-ein 0.25s ease-out;
+}
+
+.abenteuer-kartenblick {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--raster);
+  width: min(320px, 100%);
+  padding: calc(var(--raster) * 1.5);
+  border: 4px solid var(--stufe-farbe);
+  border-radius: 0;
+  background: var(--creme);
+  color: var(--navy);
+  box-shadow:
+    0 0 0 3px var(--navy),
+    6px 6px 0 3px var(--stufe-tief);
+  text-align: center;
+}
+
+.abenteuer-kartenblick .abenteuer-spielkarte-motiv {
+  flex: 0 0 auto;
+  width: 132px;
+  aspect-ratio: 3 / 4;
+  border: 3px solid var(--stufe-farbe);
+}
+
+.abenteuer-kartenblick .abenteuer-spielkarte-symbol {
+  font-size: 4.5rem;
+}
+
+.abenteuer-kartenblick h2 {
+  margin: 0;
+  font-size: var(--groesse-titel);
+}
+
+.abenteuer-kartenblick p {
+  margin: 0;
+}
+
+.abenteuer-kartenblick-spruch {
+  font-style: italic;
+}
+
+.abenteuer-kartenblick-erklaerung {
+  font-size: var(--groesse-mittel);
+  text-align: left;
+}
+
+.abenteuer-kartenblick-hinweis {
+  width: 100%;
+  padding: calc(var(--raster) / 2) var(--raster);
+  border-left: 3px solid var(--stufe-farbe);
+  background: rgb(22 37 61 / 8%);
+  font-weight: 600;
+  text-align: left;
+}
+
+.abenteuer-kartenblick .knopfreihe {
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+}
+
+/* Beide Knöpfe gleich breit nebeneinander, Daumenhöhe der App. */
+.abenteuer-kartenblick .knopfreihe button {
+  flex: 1 1 0;
+  min-height: var(--tippflaeche);
+  text-align: center;
+}
+
+.abenteuer-kartenblick .knopf-haupt {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.abenteuer-kartenblick .knopf-haupt:disabled {
+  opacity: 0.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-spielkarte,
+  .abenteuer-kartenblick-grund {
+    transition: none;
+    animation: none;
+  }
+
+  /* Ohne Bewegung bleibt der Glanz als ruhiger Schein. */
+  .abenteuer-spielkarte[data-ansicht="glanz"]::after {
+    animation: none;
+    background: linear-gradient(135deg, rgb(255 255 255 / 35%), transparent 60%);
+  }
+}

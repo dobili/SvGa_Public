@@ -11,7 +11,8 @@
  * Sprüche (Schritt 13): Kühler Kopf und Grübelfalle verschieben Bedenkzeit, Großes Maul setzt
  * gefühlte Zeitnot (anbindung/spruchkarte.ts); nur gegen Straßengegner, Zeitkarten nur mit Uhr.
  * Jede Karte spricht in den Sprechblasen am Brett (anbindung/kartenstimme.ts, docs/spiel/29);
- * die Leiste zeigt nur, was die Karte herausfand.
+ * die Leiste zeigt nur, was die Karte herausfand. Die Karten liegen als Fächer unter dem Brett;
+ * Antippen hebt eine Karte heraus, „Ausspielen“ spielt sie (anbindung/Partiefaecher.tsx).
  * Werkzeugkarten, Was droht?, Waage und Remisangebot (docs/spiel/11) in anbindung/kartenwirkungen.ts.
  * Abhängigkeiten: engine/engineDienst.ts, analyse/k4-warnsignale.ts, schach/stellung.ts,
  * spiel/zuege.ts, speicher (Spielstand), daten/laden.ts (Kartensorten), regeln/karten.ts, i18n.
@@ -27,8 +28,8 @@ import { aendere } from "../../speicher/speicher";
 import { leserAmZug, type Partie } from "../../spiel/partie";
 import { uciZuSan } from "../../spiel/zuege";
 import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/laden";
-import { kartenSpielbar, mitGespielterKarte, nurAnwesenheit } from "../regeln/karten";
-import { passtZurPartie, remisMoeglich, spruecheErlaubt } from "../regeln/zeitkarten";
+import { mitGespielterKarte, nurAnwesenheit } from "../regeln/karten";
+import { remisMoeglich, spruecheErlaubt } from "../regeln/zeitkarten";
 import { ambroseFehlt } from "../regeln/abwesenheit";
 import { gegnerName, sprecherAusPfad } from "./huellentexte";
 import { meldungstext, stimmenDerKarte } from "./kartenstimme";
@@ -42,6 +43,7 @@ import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { Funkansage } from "./Funkansage";
 import { Kulisse } from "./Kulisse";
+import { Partiefaecher } from "./Partiefaecher";
 import { usePixelrahmen } from "./pixelrahmen";
 
 /** Rechenzeiten der Karten in Millisekunden (R23: Fingerzeig Tiefe 12, Mentor-Zug Tiefe 14). */
@@ -288,30 +290,17 @@ export function KartenleisteAnzeige({
       {zustandszeile}
       <Funkansage partiekennung={partiekennung} />
       <Kulisse karte={steuerung.partie?.einstellung.abenteuer?.kulisse ?? null} />
-      {karten.deck.map((kennung) => {
-        const sorte = sorten.find((s) => s.kennung === kennung) as Kartensorte | undefined;
-        if (!sorte) return null;
-        const gespielt = karten.gespielt.some((k) => k.kennung === kennung);
-        const erlaubt =
-          laeuft === null &&
-          kartenSpielbar(karten, sorte, lage) &&
-          passtZurPartie(sorte, partielage);
-        return (
-          <button
-            key={kennung}
-            type="button"
-            className="abenteuer-karte"
-            data-frei={nurAnwesenheit(karten, kennung)}
-            disabled={!erlaubt}
-            aria-pressed={gespielt}
-            data-testid={`abenteuer-karte-${kennung}`}
-            onClick={() => void spiele(sorte)}
-          >
-            {tSpiel(sorte.name)}
-            {gespielt && " ✓"}
-          </button>
-        );
-      })}
+      <Partiefaecher
+        karten={karten}
+        sorten={karten.deck.flatMap((kennung) => {
+          const sorte = sorten.find((s) => s.kennung === kennung) as Kartensorte | undefined;
+          return sorte ? [sorte] : [];
+        })}
+        lage={lage}
+        partielage={partielage}
+        laeuft={laeuft}
+        beiSpielen={(sorte) => void spiele(sorte)}
+      />
       {meldung && <span className="abenteuer-karte-meldung">{meldung}</span>}
     </aside>
   );

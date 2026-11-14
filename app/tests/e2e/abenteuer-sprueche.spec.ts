@@ -82,8 +82,9 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   await expect(page.getByTestId("abenteuer-kartenleiste")).toBeVisible({ timeout: 30000 });
   await expect(page.getByTestId("uhr-white")).toContainText("3:00");
   const karte = page.getByTestId("abenteuer-karte-grossesMaul");
-  await expect(karte).toBeEnabled({ timeout: 15000 });
+  await expect(karte).toHaveAttribute("data-ansicht", "hell", { timeout: 15000 });
   await karte.click();
+  await page.getByTestId("abenteuer-karte-ausspielen").click();
   // Seit dem Tischgespräch (docs/spiel/29) spricht der Held unten, Jo antwortet oben, danach
   // erklärt Ambrose unten, wo Sprüche hingehören; die Leiste nennt nur die Wirkung.
   await expect(page.getByTestId("abenteuer-spruch-held")).toBeVisible();
@@ -92,7 +93,8 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   await page.getByTestId("abenteuer-spruch-held").click();
   await expect(page.getByTestId("abenteuer-spruch-erklaerung")).toContainText("im Park redet man");
   await expect(page.locator(".abenteuer-karte-meldung")).toContainText("Ein frecher Satz");
-  await expect(karte).toBeDisabled();
+  // Verbraucht: Die Karte liegt umgedreht im Fächer.
+  await expect(karte).toHaveAttribute("data-ansicht", "rueckseite");
 });
 
 test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
@@ -125,11 +127,13 @@ test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
   await deckwahl.getByRole("button", { name: "Waage" }).click();
   await page.getByTestId("abenteuer-deck-los").click();
   const abzaehlen = page.getByTestId("abenteuer-karte-abzaehlen");
-  await expect(abzaehlen).toBeEnabled({ timeout: 30000 });
+  await expect(abzaehlen).toHaveAttribute("data-ansicht", "hell", { timeout: 30000 });
   await abzaehlen.click();
+  await page.getByTestId("abenteuer-karte-ausspielen").click();
   const meldung = page.locator(".abenteuer-karte-meldung");
   await expect(meldung).toBeVisible();
-  await expect(abzaehlen).toBeDisabled();
+  // Dauerhaft: Sie glänzt, solange ihre Anzeige gilt, und ist in dieser Partie gespielt.
+  await expect(abzaehlen).toHaveAttribute("data-ansicht", "glanz");
 });
 
 test("Figuren sperren: der Held läuft nicht durch Skater Jo", async ({ page }) => {

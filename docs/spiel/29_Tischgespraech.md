@@ -134,6 +134,42 @@ Die Karten der Partie sind keine Textknöpfe mehr, sondern Karten:
 - Motive: `karten/<kennung>.webp` im Paket (Feld `bild` in `karten.json`), gemalt von Gemini
   nach `auftraege/gemini_prompts_9_karten.md`; ohne Bild eine gezeichnete Karte mit Muster.
 
+**Gebaut (14.11.2026), Widerspruch genügt:**
+
+- **Karte:** `anbindung/Spielkarte.tsx`, Stil in `spielkarte.css`. Hochkant 3:4, 78 Pixel breit,
+  Motiv oben, Name darunter; Rand in der Stufenfarbe (leicht `#5e9c6e`, mittel `#5b86c4`, stark
+  Gold), pixelig abgesetzt mit harten Ecken und Navy-Kante. Ohne Motiv im Paket ist die Karte
+  gezeichnet: Rautenmuster auf der Stufenfarbe und ein Schachsymbol je Wirkung (Springer für
+  Fingerzeig und Sprüche, Läufer für Werkzeuge und Waage, Turm für Gefahrenradar und Was droht?,
+  König für Schutzengel und Remis …). Die Rückseite (`karten/rueckseite.webp`) ist ohne Bild ein
+  goldenes Gitter auf Navy.
+- **Fächer:** `anbindung/Kartenfaecher.tsx` (Liste, waagerecht, Scroll-Snap, nie breiter als die
+  Spalte; das Brett behält auf 390 Pixeln seine volle Breite) und `anbindung/Partiefaecher.tsx`
+  (Fächer der Partie in der Kartenleiste, `KartenleisteAnzeige.tsx`).
+- **Zustand und Grund** je Karte in `regeln/kartenzustand.ts` (Tests in
+  `regeln/kartenzustand.test.ts`): spielbar (hell), gesperrt (gedämpft, aber antippbar), wirkt
+  (dauerhafte Karte, gespielt in dieser Stellung: Glanz, mit `prefers-reduced-motion` ein ruhiger
+  Schein), gespielt (dauerhaft, einmal je Partie: gedämpft), verbraucht (umgedreht). Die Gründe
+  folgen `kartenSpielbar` und `passtZurPartie`, je Fall ein Satz unter `faecher.grund.*` in
+  `texte/de.json` („Eine Karte je Zug. Zieh erst.“, „Erst nach deinem ersten Zug.“, „Zeitkarten
+  wirken nur in Partien mit Uhr.“ …).
+- **Herausgehobene Karte:** `anbindung/Kartenblick.tsx`, über dem Brett mit abgedunkeltem Grund:
+  Motiv, Name, Spruch, Ambroses Erklärung, Grund in einer Zeile, „Ausspielen“ (aus, wenn sie
+  nicht geht) und „Zurück“; Zurück-Taste, Escape und Tipp daneben schließen. „Ausspielen“ ist der
+  frühere Kartenknopf samt Sprechblasen.
+- **Deckwahl:** dieselbe Karte im selben Fächer (`oberwelt/Deckwahl.tsx`); Antippen nimmt die
+  Karte ins Deck (Haken, goldener Grund) oder heraus, volle oder gesperrte Karten sind gedämpft.
+- **Vorleser:** Jede Karte ist ein Knopf mit Name und Zustand („Fingerzeig, spielbar“, „Waage,
+  verbraucht“, in der Deckwahl „im Deck“).
+- **Sprechblase unten:** Auf 390 × 844 liegt sie über dem Fuß, nicht über dem Fächer; die Hülle
+  hat unten Platz für sie, damit man auf kleineren Handys den Fächer darüber schieben kann.
+- Testkennungen bleiben `abenteuer-karte-<kennung>` und `abenteuer-deckkarte-<kennung>`, neu
+  `abenteuer-karte-gross`, `-ausspielen`, `-zurueck`, `-grund`; der Zustand steht in
+  `data-ansicht` (hell, gedaempft, glanz, rueckseite).
+
+Offen: die gemalten Motive und die Rückseite (Gemini), danach ein Blick, ob 78 Pixel für die
+Motive reichen.
+
 ## 8. Stimmungen der Dialoge (14.11.2026)
 
 Jede Sprechzeile der Ink-Dialoge (`inhalte/abenteuer/dialoge/de/`), deren Inhalt eine Färbung

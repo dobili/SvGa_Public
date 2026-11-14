@@ -6,6 +6,8 @@
  * Begegnung Karten erlaubt und der Leser welche besitzt. „Ohne Karten spielen“ ist immer möglich
  * (Gold braucht keine). Welche Karte ins Deck darf, entscheidet regeln/karten.ts. Die Bedenkzeit
  * kostet keine Nadel (docs/spiel/08, Z2): Mit Uhr gerät der Gegner in Zeitnot und spielt schwächer.
+ * Die Karten liegen als Fächer wie in der Partie (anbindung/Kartenfaecher.tsx, Spielkarte.tsx,
+ * docs/spiel/29, Abschnitt Kartenfächer); Antippen nimmt eine Karte ins Deck oder heraus.
  * Abhängigkeiten: regeln/karten.ts, regeln/zeitkarten.ts, schnittstelle/karten.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useState } from "react";
@@ -16,6 +18,14 @@ import { ZEITKLASSEN, type Zeitklasse } from "../regeln/zeitkarten";
 import { DECKGROESSE, type Kartenbesitz, type Kartensorte } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
 import { istAmbrosesKarte } from "../regeln/abwesenheit";
+import { Kartenfaecher } from "../anbindung/Kartenfaecher";
+import { Spielkarte } from "../anbindung/Spielkarte";
+
+/** Name und Zustand der Karte für den Vorleser: „Fingerzeig, im Deck“. */
+function deckbeschriftung(sorte: Kartensorte, gewaehlt: boolean, fehlt: boolean): string {
+  const zustand = fehlt ? "gesperrt" : gewaehlt ? "imDeck" : "nichtImDeck";
+  return `${tSpiel(sorte.name)}, ${tSpiel(`faecher.deck.${zustand}`)}`;
+}
 
 /** Die Zeitklassen in der Reihenfolge der Knöpfe. */
 const KLASSEN: readonly Zeitklasse[] = ["ohne", "schnell", "blitz"];
@@ -137,33 +147,45 @@ export function Deckwahl({
       {!mitKarten ? null : waehlbar.length === 0 ? (
         <p>{tSpiel("deck.keine")}</p>
       ) : (
-        <div className="abenteuer-deck">
-          {waehlbar.map((k) => {
+        <Kartenfaecher
+          beschriftung={tSpiel("deck.titel")}
+          karten={waehlbar.flatMap((k) => {
             const sorte = alleSorten.find((s) => s.kennung === k.kennung);
+            if (!sorte) return [];
             const gewaehlt = deck.includes(k.kennung);
             const fehlt = gesperrt(k.kennung);
-            return (
-              <button
-                key={k.kennung}
-                type="button"
-                className="abenteuer-karte"
-                aria-pressed={gewaehlt}
-                data-gesperrt={fehlt ? "ja" : undefined}
-                data-testid={`abenteuer-deckkarte-${k.kennung}`}
-                disabled={
-                  fehlt || (!gewaehlt && !deckErlaubt(deck, k.kennung, alleSorten, groesse))
-                }
-                onClick={() => schalte(k.kennung)}
-              >
-                {tSpiel(sorte?.name ?? k.kennung)}
-                {k.anzahl > 1 && ` × ${k.anzahl}`}
-                {fehlt && (
-                  <small className="abenteuer-karte-grund">{tSpiel("deck.ambroseFehlt")}</small>
-                )}
-              </button>
-            );
+            const geht = gewaehlt || deckErlaubt(deck, k.kennung, alleSorten, groesse);
+            return [
+              {
+                kennung: k.kennung,
+                karte: (
+                  <Spielkarte
+                    sorte={sorte}
+                    ansicht={fehlt || !geht ? "gedaempft" : "hell"}
+                    beschriftung={deckbeschriftung(sorte, gewaehlt, fehlt)}
+                    testid={`abenteuer-deckkarte-${k.kennung}`}
+                    gewaehlt={gewaehlt}
+                    gesperrt={fehlt}
+                    deaktiviert={fehlt || !geht}
+                    beiTipp={() => schalte(k.kennung)}
+                    zusatz={
+                      <>
+                        {k.anzahl > 1 && (
+                          <small className="abenteuer-spielkarte-anzahl">× {k.anzahl}</small>
+                        )}
+                        {fehlt && (
+                          <small className="abenteuer-karte-grund">
+                            {tSpiel("deck.ambroseFehlt")}
+                          </small>
+                        )}
+                      </>
+                    }
+                  />
+                ),
+              },
+            ];
           })}
-        </div>
+        />
       )}
       {deck.map((kennung) => (
         <p key={kennung} className="abenteuer-karte-erklaerung">

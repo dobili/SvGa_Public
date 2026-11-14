@@ -110,12 +110,22 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.locator(".kopfzeile")).toHaveCount(0);
   await expect(page.locator(".zugliste-aufklappen")).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Brett drehen" })).toBeHidden();
-  // Die Karte spielen: Die Engine markiert das Startfeld, die Karte ist danach verbraucht.
+  // Die Karte spielen (Kartenfächer, docs/spiel/29): Antippen hebt sie heraus, „Ausspielen“
+  // spielt sie. Die Engine markiert das Startfeld; die dauerhafte Karte glänzt, solange das gilt.
   const karte = page.getByTestId("abenteuer-karte-fingerzeig");
-  await expect(karte).toBeEnabled({ timeout: 10000 });
+  await expect(karte).toHaveAttribute("data-ansicht", "hell", { timeout: 10000 });
+  await expect(karte).toHaveAccessibleName("Fingerzeig, spielbar");
   await karte.click();
-  await expect(karte).toHaveAttribute("aria-pressed", "true", { timeout: 20000 });
-  await expect(karte).toBeDisabled();
+  await expect(page.getByTestId("abenteuer-karte-gross")).toContainText("Fingerzeig");
+  await page.getByTestId("abenteuer-karte-ausspielen").click();
+  await expect(page.getByTestId("abenteuer-karte-gross")).toHaveCount(0);
+  await expect(karte).toHaveAttribute("data-ansicht", "glanz", { timeout: 20000 });
+  // Antippen zeigt den Grund, warum sie jetzt nicht mehr geht; „Zurück“ schließt.
+  await karte.click();
+  await expect(page.getByTestId("abenteuer-karte-ausspielen")).toBeDisabled();
+  await expect(page.getByTestId("abenteuer-karte-grund")).toBeVisible();
+  await page.getByTestId("abenteuer-karte-zurueck").click();
+  await expect(page.getByTestId("abenteuer-karte-gross")).toHaveCount(0);
 
   // Zurück in die Welt: Die Partie läuft noch, „Weiterspielen“ führt zur selben Partie.
   await page.goto("/app/#abenteuer");

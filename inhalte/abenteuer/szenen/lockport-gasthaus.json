@@ -1,7 +1,7 @@
 {
   "karte": "lockport.gasthaus",
   "art": "innen",
-  "beschreibung": "Hauptfassung, nach 10.56 30 × 14: petrolgrüne Wände, Dielen. Links an der Nordwand die Kegelbahn (Spalten 1–15) mit einem Kegelsatz am Ende, Prallbrettern als Kugelfang dahinter, einer Holzbande direkt an der Bahn und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Hinter dem Kugelfang Garderobe und Kaminofen, daneben das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor, Fässer in der Ecke. Fünf runde Tische mit dunklen Stühlen, drei mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand bei Spalte 21.",
+  "beschreibung": "Hauptfassung nach dem Gebäudebild (Bauernhaus breit: Giebelhaus links, niedriger, weniger tiefer Anbau rechts mit der Tür), also ein L-förmiger Gastraum, 30 × 14, petrolgrüne Wände, Dielen. Im tiefen Westteil (Giebelhaus, Spalten 1–18) an der Nordwand die Kegelbahn (Spalten 1–15) mit einem Kegelsatz am Ende, Prallbrettern als Kugelfang dahinter, einer niedrigen Holzbande mit Pfosten direkt an der Bahn und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Hinter dem Kugelfang in der Ecke der Kanonenofen, daneben am Anbau der Holzstapel. Der Anbau (Spalten 19–28) ist weniger tief: an seiner Nordwand das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche, Fässer in der Ecke. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor. Sechs runde Tische mit dunklen Stühlen im Westteil, fünf mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand des Anbaus bei Spalte 21, wie außen.",
   "wand": "gruen",
   "boden": "dielen",
   "boeden": {
@@ -11,9 +11,9 @@
     "##############################",
     "##############################",
     "##############################",
-    "#kkkkkkkkkkkkkkk.............#",
-    "#kkkkkkkkkkkkkkk.............#",
-    "#............................#",
+    "#kkkkkkkkkkkkkkk...###########",
+    "#kkkkkkkkkkkkkkk...###########",
+    "#..................###########",
     "#............................#",
     "#............................#",
     "#............................#",
@@ -41,20 +41,21 @@
     },
     {
       "moebel": "ld11Kanonenofen",
-      "feld": [20, 2]
+      "feld": [18, 2]
     },
     {
       "moebel": "ldBild",
-      "feld": [21, 1],
-      "an_wand": true
+      "feld": [21, 4],
+      "an_wand": true,
+      "versatz": [0, -10]
     },
     {
       "moebel": "ld5Flaschenregal",
-      "feld": [23, 1]
+      "feld": [23, 4]
     },
     {
       "moebel": "mf2Haustuer",
-      "feld": [26, 1],
+      "feld": [26, 4],
       "an_wand": true
     },
     {
@@ -120,7 +121,7 @@
     },
     {
       "moebel": "ld5Theke7",
-      "feld": [21, 5],
+      "feld": [21, 8],
       "id": "theke"
     },
     {
@@ -143,31 +144,31 @@
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [21, 7],
+      "feld": [21, 10],
       "vorn": true,
       "versatz": [0, -13]
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [23, 7],
+      "feld": [23, 10],
       "vorn": true,
       "versatz": [0, -13]
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [25, 7],
+      "feld": [25, 10],
       "vorn": true,
       "versatz": [0, -13]
     },
     {
       "moebel": "ld5Barhocker",
-      "feld": [27, 7],
+      "feld": [27, 10],
       "vorn": true,
       "versatz": [0, -13]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [27, 3]
+      "feld": [27, 6]
     },
     {
       "moebel": "mf9Rundtisch",
@@ -271,10 +272,6 @@
       "feld": [28, 11]
     },
     {
-      "moebel": "wzPflanze",
-      "feld": [19, 11]
-    },
-    {
       "moebel": "mf4Fussmatte",
       "feld": [21, 12],
       "versatz": [0, 8]
@@ -286,17 +283,17 @@
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [23, 9],
+      "feld": [16, 11],
       "id": "t6"
     },
     {
       "moebel": "ld5StuhlDunkelR",
-      "feld": [22, 9],
+      "feld": [15, 11],
       "zu": "t6"
     },
     {
       "moebel": "ld5StuhlDunkelL",
-      "feld": [25, 9],
+      "feld": [18, 11],
       "zu": "t6"
     },
     {
@@ -324,7 +321,7 @@
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [18, 3]
+      "feld": [19, 6]
     },
     {
       "moebel": "ld14Kugelfang",
@@ -349,7 +346,7 @@
     },
     {
       "name": "henrik",
-      "feld": [24, 7]
+      "feld": [24, 10]
     },
     {
       "name": "fundKegel",
@@ -361,7 +358,7 @@
     },
     {
       "name": "fotoHochwasser",
-      "feld": [21, 3]
+      "feld": [21, 6]
     },
     {
       "name": "kegelkoenig",
@@ -383,7 +380,7 @@
     {
       "name": "fischerAmTresen",
       "typ": "statist",
-      "feld": [23, 7],
+      "feld": [23, 10],
       "eigenschaften": {
         "tun": "sitzt am Tresen und trinkt ein Bier",
         "wann": "tag",
@@ -405,7 +402,7 @@
     {
       "name": "henrik",
       "typ": "statist",
-      "feld": [24, 4],
+      "feld": [24, 7],
       "eigenschaften": {
         "tun": "poliert Gläser hinter dem Tresen",
         "wann": "tag"

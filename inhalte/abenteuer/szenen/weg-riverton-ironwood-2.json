@@ -167,9 +167,9 @@
     "##~~~~~~~~##############pp##########",
     "##~~~~~~~~##############pp##########",
     "##~~~~~~~~##############pp##########",
-    "#.~~~~~~~~..............pp.........#",
-    "#.~~~~~~~~..............pp.........#",
-    "#.~~~~~~~~..............pp.........#",
+    "#.~~~~~~~~pp............pp.........#",
+    "#.~~~~~~~~pp............pp.........#",
+    "#.~~~~~~~~pp............pp.........#",
     "##~~~~~~~~##############pp##########"
   ],
   "objekte": [
@@ -1984,7 +1984,15 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "einfach", "natur", "laendlich", "klassisch", "modern", "landhaus"],
+  "stil": [
+    "rustikal",
+    "einfach",
+    "natur",
+    "laendlich",
+    "klassisch",
+    "modern",
+    "landhaus"
+  ],
   "datei": "karten/weg-riverton-ironwood-2.json",
   "ufer": "stein",
   "kante": "klippe",

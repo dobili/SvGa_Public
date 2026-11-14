@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.belebungsvorschau import figurbild, rgba
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
-from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randnachbar, randsichten
+from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randergaenzt, randnachbar, randsichten
 from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
 from pipeline.abenteuer.kartenbau import (
     GESPERRT,
@@ -368,7 +368,7 @@ def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
     grund = hintergrund(szene, privat, gezeichnet)
     mat = lade(INHALTE / "materialien.json")
     grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
-    markiere(grund, raster(szene), szene, gezeichnet, mat["boeden"])
+    markiere(grund, randergaenzt(raster(szene), "wandart" in szene), szene, gezeichnet, mat["boeden"])
     if ist_winter(szene):
         grund = winterlich(grund)
     return grund, schleier(vorschau(szene, privat, grund), szene.get("toenung")), gezeichnet

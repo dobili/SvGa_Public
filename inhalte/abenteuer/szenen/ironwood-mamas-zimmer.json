@@ -148,7 +148,7 @@
     },
     {
       "moebel": "iw8Garderobe",
-      "feld": [3, 9]
+      "feld": [6, 9]
     }
   ],
   "ausloeser": [
@@ -175,7 +175,7 @@
   "figuren": [
     {
       "name": "omaRuth",
-      "feld": [6, 9]
+      "feld": [6, 7]
     },
     {
       "name": "mama",

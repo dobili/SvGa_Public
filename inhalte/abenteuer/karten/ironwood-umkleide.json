@@ -1096,8 +1096,8 @@
      "id": 22,
      "name": "ca7Muelleimer",
      "type": "moebel",
-     "x": 16,
-     "y": 80,
+     "x": 80,
+     "y": 112,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1106,7 +1106,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 136
       },
       {
        "name": "kollision",
@@ -1211,7 +1211,7 @@
      "id": 27,
      "name": "iw8Trennwand",
      "type": "moebel",
-     "x": 230,
+     "x": 224,
      "y": 80,
      "width": 16,
      "height": 48,

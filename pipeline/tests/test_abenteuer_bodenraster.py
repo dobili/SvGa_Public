@@ -1,6 +1,6 @@
 """Tests der Kachelwahl für Böden (pipeline/abenteuer/bodenraster.py), ohne Pillow."""
 
-from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, ueberbrueckt
+from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randergaenzt, ueberbrueckt
 
 WASSER_ART = {"rand": [0, 0]}
 HOLZ = frozenset({"h"})
@@ -83,3 +83,13 @@ def test_randsichten_machen_genannte_boeden_zum_grund():
     # Ohne die Sicht gilt Sand als gleicher Boden (Mitte), mit ihr liegt oben der Rand.
     assert bodenfeld(weg, roh, 1, 1) == [1, 1]
     assert bodenfeld(weg, sichten["erdeRot"], 1, 1) == [1, 0]
+
+
+def test_strasse_reicht_fuer_die_linien_bis_in_die_randspalte():
+    # Kanalweg (R118): „#“ am Rand trägt den Boden des Nachbarn; Hecken am Rand und Innenräume bleiben.
+    zeilen = ["####", "#sss", "#sss", "#sss", "##.."]
+    neu = randergaenzt(zeilen)
+    assert [z[0] for z in neu[1:4]] == ["s", "s", "s"]
+    # Eine Hecke, die zwei Spalten breit an den Rand reicht, bleibt Wand.
+    assert randergaenzt(["##..", "##..", "##.."])[1][0] == "#"
+    assert randergaenzt(zeilen, aussen=False) == zeilen

@@ -18,7 +18,7 @@
   "bruecken": ["h"],
   "raster": [
     "##~~~~~~~~##############pp######################################################",
-    "##~~~~~~~~##############pp######################qqqqq###########################",
+    "##~~~~~~~~pp############pp######################qqqqq###########################",
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
@@ -50,14 +50,14 @@
     "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "##hhhhhhhhppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
-    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp................pp........ppppppppppppppppppppppp..................#",
     "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
     "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
     "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
@@ -268,23 +268,23 @@
       "feld": [18, 55]
     },
     {
-      "moebel": "wg4Wildblumen",
+      "moebel": "wg4BuschBluete",
       "feld": [23, 55]
     },
     {
-      "moebel": "wg4Wildblumen",
+      "moebel": "wg4BlumenWeiss",
+      "feld": [25, 55]
+    },
+    {
+      "moebel": "wg4BlumeRot",
       "feld": [25, 56]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [25, 55]
+      "feld": [26, 56]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [26, 55]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
+      "moebel": "wg4GrasB",
       "feld": [23, 57]
     },
     {
@@ -292,51 +292,51 @@
       "feld": [27, 55]
     },
     {
-      "moebel": "wg4Wildblumen",
+      "moebel": "wg4BlumeGelb",
       "feld": [32, 55]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [34, 56]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [34, 55]
-    },
-    {
       "moebel": "wg4BlumeGelb",
-      "feld": [35, 55]
+      "feld": [33, 56]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [34, 55]
     },
     {
       "moebel": "wg4BlumeBlau",
       "feld": [32, 57]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "wg4Gras",
+      "feld": [35, 57]
+    },
+    {
+      "moebel": "wg4Wildblumen",
       "feld": [36, 55]
     },
     {
-      "moebel": "wg4Wildblumen",
+      "moebel": "wg4Gras",
       "feld": [41, 55]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [43, 56]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [43, 55]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [44, 55]
+      "moebel": "wg4BlumenWeiss",
+      "feld": [42, 56]
     },
     {
       "moebel": "wg4BlumeBlau",
+      "feld": [43, 55]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [44, 56]
+    },
+    {
+      "moebel": "wg4BlumeRot",
       "feld": [41, 57]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "wg4BuschBluete",
       "feld": [45, 55]
     },
     {
@@ -1032,7 +1032,7 @@
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [25, 43],
+      "feld": [27, 43],
       "vorn": true
     },
     {

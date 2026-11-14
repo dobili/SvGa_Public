@@ -155,6 +155,27 @@ def randnachbar(zeilen: list[str], x: int, y: int) -> tuple[int, int] | None:
     return None
 
 
+def randergaenzt(zeilen: list[str], aussen: bool = True) -> list[str]:
+    """Das Raster, wie es draußen gezeichnet wird: Wandfelder am Kartenrand tragen den Boden ihres
+    Nachbarn nach innen (``randnachbar``).
+
+    Warum: Der Hintergrund zeichnet eine Straße bis in die Randspalte, die Linien (strasse.py) sahen
+    dort aber nur „#“ und endeten eine Spalte vor dem Rand (Rückmeldung des Autors R082, R118:
+    „Die Straßenmarkierung geht wieder nicht bis zum Rand“).
+    Eingaben: Raster (gleich lange Zeilen), ``aussen`` (nur Außenkarten mit ``wandart`` zeichnen den
+    Rand so; Innenräume bekommen das Raster unverändert zurück). Ausgabe: neues Raster.
+    Beispiel: Kanalweg, Reihe 40 „#sss…“ → „ssss…“; eine Hecke am Rand („##“) bleibt Wand.
+    """
+    if not aussen:
+        return zeilen
+    neu = [list(zeile) for zeile in zeilen]
+    for y, zeile in enumerate(zeilen):
+        for x, zeichen in enumerate(zeile):
+            if zeichen == WAND and (innen := randnachbar(zeilen, x, y)) is not None:
+                neu[y][x] = zeilen[innen[1]][innen[0]]
+    return ["".join(zeile) for zeile in neu]
+
+
 def randsichten(roh: list[str], sonder: dict[str, str], grund: str, boeden: dict) -> dict[str, list[str]]:
     """Je Boden mit ``rand_gegen`` das Raster, wie dieser Boden es für seinen Rand sieht.
 

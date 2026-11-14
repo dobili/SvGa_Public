@@ -22,8 +22,8 @@
       "stil": "laendlich"
     },
     "wr8GraffitiSpringer": {
-      "quelle": "spiel/eigene/graffiti_springer.png",
-      "breite": 48,
+      "quelle": "spiel/eigene/graffiti_springer_fein.png",
+      "breite": 32,
       "hoehe": 32,
       "kollision": false,
       "art": "deko",
@@ -33,8 +33,8 @@
       "begehbar_grund": "hängt an der Wand"
     },
     "wr8GraffitiTurm": {
-      "quelle": "spiel/eigene/graffiti_turm.png",
-      "breite": 48,
+      "quelle": "spiel/eigene/graffiti_turm_fein.png",
+      "breite": 32,
       "hoehe": 32,
       "kollision": false,
       "art": "deko",

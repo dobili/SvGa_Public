@@ -98,7 +98,7 @@
     },
     {
       "moebel": "ca7Muelleimer",
-      "feld": [1, 5]
+      "feld": [5, 7]
     },
     {
       "moebel": "iw9UmkleidebankWaagrecht",
@@ -121,8 +121,7 @@
     {
       "moebel": "iw8Trennwand",
       "feld": [14, 5],
-      "bauteil_ok": true,
-      "versatz": [6, 0]
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

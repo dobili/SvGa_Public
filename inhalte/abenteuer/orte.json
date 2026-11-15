@@ -3669,16 +3669,6 @@
           }
         },
         {
-          "name": "abzweigHochebene",
-          "karte": "wegDesertSummit.bergstrasse",
-          "art": "uebergang",
-          "dialog": "weg-desert-summit.abzweig_hochebene",
-          "ziel": {
-            "karte": "hochebene.felsentuerme",
-            "ausloeser": "zurueckBergstrasse"
-          }
-        },
-        {
           "name": "weiterSummit",
           "karte": "wegDesertSummit.bergstrasse",
           "art": "uebergang",
@@ -3827,13 +3817,13 @@
           "art": "start"
         },
         {
-          "name": "zurueckBergstrasse",
+          "name": "zurueckSummit",
           "karte": "hochebene.felsentuerme",
           "art": "uebergang",
           "dialog": "hochebene.zurueck",
           "ziel": {
-            "karte": "wegDesertSummit.bergstrasse",
-            "ausloeser": "abzweigHochebene"
+            "karte": "summitCity.aussen",
+            "ausloeser": "hochebene"
           }
         },
         {
@@ -3993,6 +3983,16 @@
           "ziel": {
             "karte": "wegDesertSummit.bergstrasse",
             "ausloeser": "weiterSummit"
+          }
+        },
+        {
+          "name": "hochebene",
+          "karte": "summitCity.aussen",
+          "art": "uebergang",
+          "dialog": "summit-city-aussen.weg_hochebene",
+          "ziel": {
+            "karte": "hochebene.felsentuerme",
+            "ausloeser": "zurueckSummit"
           }
         },
         {

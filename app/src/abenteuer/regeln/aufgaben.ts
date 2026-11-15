@@ -86,6 +86,26 @@ export function wertung(ergebnis: Aufgabenergebnis): {
   return { punkte, moeglich, bestanden: moeglich > 0 && punkte >= moeglich * BESTEHENSGRENZE };
 }
 
+/** Punkte gibt es in halben Schritten (mit Hilfe 0,5). */
+const HALBE_JE_PUNKT = 2;
+/** Rundungsspielraum gegen Gleitkommareste (10 × 0,7 ergibt 7,000000000000001). */
+const RUNDUNGSSPIEL = 1e-9;
+
+/**
+ * Wie viele Punkte zum Bestehen nötig sind (R31), aufgerundet auf halbe Punkte, damit die
+ * Ergebniskarte eine Zahl statt „70 Prozent“ nennen kann (Spieltest „einstieg“, 15.11.2026).
+ * Beispiel: 3 Aufgaben → 2,1 nötig → 2,5 (zwei richtig und eine mit Hilfe); 10 Aufgaben → 7.
+ */
+export function noetigePunkte(moeglich: number): number {
+  const halbe = Math.ceil(moeglich * BESTEHENSGRENZE * HALBE_JE_PUNKT - RUNDUNGSSPIEL);
+  return halbe / HALBE_JE_PUNKT;
+}
+
+/** Punkte für die Anzeige mit deutschem Komma. Beispiel: 2.5 → „2,5“, 3 → „3“. */
+export function punktetext(punkte: number): string {
+  return String(punkte).replace(".", ",");
+}
+
 /** Der Stand der Runde nach einem Versuch (ersetzt den alten Eintrag derselben Runde). */
 export function mitRundenergebnis(
   runden: readonly Rundenstand[],

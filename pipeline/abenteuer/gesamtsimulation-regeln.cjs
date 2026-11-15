@@ -14,7 +14,9 @@ const { CompilerOptions } = require(
 const { erfuellt } = require("./bedingung.cjs");
 const DATEN = path.join(HAUPT, "inhalte", "abenteuer");
 
-/** Gebiete in der Reihenfolge der Geschichte (Story-Bibel, Teil 1 bis 4). */
+/** Gebiete in der Reihenfolge der Geschichte (Story-Bibel, Teil 1 bis 4). Die Hochebene folgt
+ * seit dem 15.11.2026 auf Summit City: Ihr Weg beginnt am Westrand der Stadt, nicht mehr an der
+ * Bergstraße (Weltpuzzle, orte/summit-city.md 1.7). */
 const FOLGE = [
   "mapleFalls",
   "wegMapleCedar",
@@ -30,8 +32,8 @@ const FOLGE = [
   "wegDelacroixDesert",
   "desertSprings",
   "wegDesertSummit",
-  "hochebene",
   "summitCity",
+  "hochebene",
   "wegSummitCrossroads",
   "crossroads",
   "wegCrossroadsPinewood",

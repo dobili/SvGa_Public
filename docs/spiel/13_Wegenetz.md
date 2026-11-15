@@ -69,7 +69,7 @@ Abkürzung, `[S1]` Sperre, `(N1)` Nebenort, `⇄` Schnellreise (Bus, Zug, Fähre
      W5 Küstenfähre/Deich (nach Szene 70 Freifahrt in beide Richtungen)
      ▼
    [6 Port Delacroix]══W6 Wüstenzug/Canyonpfad══[7 Desert Springs]══W7 Diner/Bergstraße══[8 Summit City]
-     │ Bayou (L5) [S8 Gummistiefel]      ┆                     ┆ Abzweig Hochebene (L9)        │
+     │ Bayou (L5) [S8 Gummistiefel]      ┆                     Hochebene (L9) ab Summit City ┄┄┤
      │                                   ┆ (N5 Sternwarte am Canyon) [S9 Laterne]               W8 Geysire/Prärie [S10 Nadel]
      │                                                                                          ▼
      └┄┄┄┄┄┄┄ Q3 Fernbus ⇄ ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ [9 Crossroads] (N6 Sommerjahrmarkt)
@@ -90,6 +90,11 @@ Cedar Creek aus von Anfang an erreichbar), **Q2** Kanal-Seitenarm von W3 nach Lo
 der Schleuse S3), **Q3** Fernbus ab Crossroads in alle früheren Städte (Schnellreise in Akt 4; die
 Küstenfähre selbst fährt nur zwischen Silicon Bay und Port Delacroix), **Q4** Alte Minenstraße
 Crossroads → Ghost Town (eine Karte von etwa 150 Kacheln Länge, gut 40 Sekunden). Dazu die Abzweige zu den Nebenorten N1 bis N7.
+
+Nachtrag 15.11.2026 (Weltpuzzle, Ring im Süden): Die Hochebene (L9) zweigt nicht mehr von der
+Bergstraße (W7) ab, sondern vom Westrand von Summit City; W8 verlässt Summit City am Südwesten,
+W7 kommt östlich davon an. So kreuzen sich W7, W8 und der Weg zur Hochebene nicht mehr. Die
+Hochebene ist damit erst nach Summit City erreichbar, wie Abschnitt 5 („Wahl“) es vorsieht.
 
 ## 2. Akt 1 (Maple Falls, Cedar Creek; Kapitel 0, 1, 7, 8)
 

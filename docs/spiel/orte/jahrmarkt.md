@@ -9,11 +9,11 @@ Quellen: `13_Wegenetz.md` Abschnitt 5 (Nebenort N6, Sperre S13), `auftraege/rund
 Der Jahrmarkt liegt „auf dem Feld hinter der Raststätte“ in Crossroads. Von crossroads.aussen führt
 ein Erdweg (zwei Felder) vom Wanderweg westlich der Raststätte durch das Feld nach Norden zum
 Nordrand (`jahrmarkt`, Spalten 6–7). Dort beginnt die eigene Karte `jahrmarkt.festplatz` (48 × 36):
-Der Weg kommt am Südrand (23–24) auf einen großen Festplatz aus festgetretener Erde (3–44 / 4–28), ringsum Wiese und Bäume.
+Der Weg kommt am Südrand (39–40; bis 15.11.2026 23–24, Weltpuzzle: sonst lag der Festplatz auf der Prärie) unter dem Zaun entlang zum Torbogen und auf einen großen Festplatz aus festgetretener Erde (3–44 / 4–28), ringsum Wiese und Bäume.
 
 | Auslöser hier                             | Gegenstück                             |
 | ----------------------------------------- | -------------------------------------- |
-| festplatz `zurueckCrossroads` (23–24, 35) | crossroads.aussen `jahrmarkt` (6–7, 0) |
+| festplatz `zurueckCrossroads` (39–40, 35) | crossroads.aussen `jahrmarkt` (6–7, 0) |
 
 Neu in `orte.json`: Ort `jahrmarkt` (art `weg`, Staffel 2) mit Karte `jahrmarkt.festplatz`, Auslöser
 `start` und `zurueckCrossroads`; in Crossroads der Auslöser `jahrmarkt`. Texte `ort.jahrmarkt.*`.

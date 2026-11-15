@@ -2,8 +2,11 @@
 import { describe, expect, it } from "vitest";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import {
+  BESTEHENSGRENZE,
   mitRundenergebnis,
   motivanzahl,
+  noetigePunkte,
+  punktetext,
   reiheBestanden,
   schwierigkeitAus,
   schwierigkeitDesVersuchs,
@@ -63,6 +66,21 @@ describe("Aufgabenrunden", () => {
     ).toEqual({ punkte: 6.5, moeglich: 7, bestanden: true });
     expect(wertung(e("richtig", "falsch", "falsch")).bestanden).toBe(false);
     expect(wertung(e()).bestanden).toBe(false);
+  });
+
+  it("nennt die nötigen Punkte in halben Schritten, passend zur Wertung", () => {
+    expect(noetigePunkte(3)).toBe(2.5);
+    expect(noetigePunkte(4)).toBe(3);
+    expect(noetigePunkte(7)).toBe(5);
+    expect(noetigePunkte(10)).toBe(7);
+    expect(punktetext(2.5)).toBe("2,5");
+    expect(punktetext(3)).toBe("3");
+    // Wer genau die nötigen Punkte hat, besteht.
+    for (const moeglich of [1, 2, 3, 4, 5, 6, 7, 10, 13]) {
+      const noetig = noetigePunkte(moeglich);
+      expect(noetig >= moeglich * BESTEHENSGRENZE).toBe(true);
+      expect(noetig - 0.5 < moeglich * BESTEHENSGRENZE).toBe(true);
+    }
   });
 
   it("merkt sich bestandene Runden und zählt Versuche; die Reihe braucht alle Blöcke", () => {

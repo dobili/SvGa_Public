@@ -131,7 +131,16 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     if (!stand || !karte) return;
     let aktiv = true;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
-    const begonnen = Date.now();
+    let begonnen = Date.now();
+    // Geht die App in den Hintergrund (Handy weggelegt, App gewechselt), sichern wir die Position
+    // schon jetzt: Ein Handy beendet eine Seite im Hintergrund oft ohne Abbau, und der Held stand
+    // danach wieder am Eingang der Karte (Spieltest „einstieg“, 15.11.2026).
+    const beiSichtwechsel = () => {
+      if (document.visibilityState !== "hidden") return;
+      sichereSitzung(k, karte, begonnen);
+      begonnen = Date.now();
+    };
+    document.addEventListener("visibilitychange", beiSichtwechsel);
     // Zustände der Karte dürfen auch nach Besitz fragen (hatLaterne, Runde 8).
     const variablen = { ...stand.dialogvariablen, ...variablenAusBesitz(stand) };
     ladeWelt(karte, stand.held.variante, variablen)
@@ -147,6 +156,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       .catch((f: unknown) => setzeFehler(fehlertext(f)));
     return () => {
       aktiv = false;
+      document.removeEventListener("visibilitychange", beiSichtwechsel);
       sichereSitzung(k, karte, begonnen);
       if (k.spiel.current) beendeOberwelt(k.spiel.current);
       k.spiel.current = null;

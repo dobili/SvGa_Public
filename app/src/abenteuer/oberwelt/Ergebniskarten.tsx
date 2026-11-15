@@ -8,6 +8,7 @@
  * Oberwelt über die Rückrufe.
  * Abhängigkeiten: texte/texte.ts, schnittstelle/partie.ts, regeln/rueckweg.ts.
  */
+import { noetigePunkte, punktetext } from "../regeln/aufgaben";
 import type { Rundenrueckweg } from "../regeln/rueckweg";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kipppunkt, Nadelstufe, Partieergebnis } from "../schnittstelle/partie";
@@ -87,8 +88,9 @@ export function Rundenergebniskarte(props: {
       <p>
         <strong>
           {tSpiel(e.bestanden ? "aufgaben.bestanden" : "aufgaben.nichtBestanden", {
-            punkte: e.punkte,
+            punkte: punktetext(e.punkte),
             moeglich: e.moeglich,
+            noetig: punktetext(noetigePunkte(e.moeglich)),
           })}
         </strong>
       </p>

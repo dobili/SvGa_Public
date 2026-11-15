@@ -300,7 +300,7 @@ O5), Canyon „Echo Canyon“ vor Desert Springs, Nationalpark „Red Giants“ 
 
 - **Weg `wegDesertSummit`:** `diner` (Wüstenstraße mit Diner und Motel, Neonschilder, Fernfahrer,
   Roadrunner; L8 Königsrennen) und `bergstrasse` (Serpentinen hinauf, Pinien, erster kühler Wind).
-- **Abzweig `hochebene` (L9, O5):** `felsentuerme` (rote Felstürme, weiter Himmel, Falken als Kreise)
+- **Abzweig `hochebene` (L9, O5; seit 15.11.2026 vom Westrand von Summit City):** `felsentuerme` (rote Felstürme, weiter Himmel, Falken als Kreise)
   und `schule` (gewöhnliche Schule mit Turnhalle, Bushaltestelle, Basketballkorb, Werkstatt des
   Mechanikers daneben). Keine heiligen Zeichen, keine Kostüme, keine Deko aus fremden Kulturen;
   die Gestaltung vor der Veröffentlichung mit der Sensibilitätslesung abstimmen (10, O5).

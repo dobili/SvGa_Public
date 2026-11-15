@@ -3,8 +3,9 @@
 //
 // Stationen (W4): Fernfahrer Earl Dubois am Diner mit der Variante Königsrennen (Buchbezug
 // Kapitel 8, der König muss im Endspiel laufen), Rätseltafel (Runde wegDesertSummit.tafel, Quest
-// wegDesertSummit.tafelDiner), Fund Neonbuchstabe „K“, Abzweig zur Hochebene (L9).
-// Einstiege wie in orte.json: earl, zurueck_desert, tafel, fund_neon, abzweig_hochebene. Die
+// wegDesertSummit.tafelDiner), Fund Neonbuchstabe „K“. Die Hochebene (L9) erreicht man
+// seit dem 15.11.2026 vom Westrand von Summit City aus (Weltpuzzle, Ring im Süden).
+// Einstiege wie in orte.json: earl, zurueck_desert, tafel, fund_neon. Die
 // Ankunft in Summit City erzählt summit-city-aussen.ankunft_zu_fuss.
 //
 // Varianten: Königsrennen ist noch nicht gebaut (nur Blindschach). Earl erklärt die Regel und
@@ -119,11 +120,6 @@ Das K von King's Diner. Ist seit neunundachtzig kaputt. Nimm's mit, wir haben un
 
 === zurueck_desert ===
 Die Straße führt zurück nach Desert Springs, durch flimmernde Hitze. #sprecher:erzaehler
--> END
-
-=== abzweig_hochebene ===
-An einer Kurve zweigt eine Schotterstraße ab. Ein Schild: „Hochebene. Schule und Werkstatt, 3 Meilen.“ #sprecher:erzaehler
-Rote Felstürme, und darüber kreisen Falken. #sprecher:erzaehler
 -> END
 
 // >>> Runde 6 (mittel-4)
@@ -282,7 +278,7 @@ Unter der Bank fällt der Hang steil ab. Weit unten liegt die Wüste, flach wie 
 -> END
 
 === wegweiser_hochebene ===
-Ein Wegweiser: „Summit City ↑, Hochebene ←“. Die Schranke zur Hochebene steht offen. #sprecher:erzaehler
+Ein Wegweiser: „Summit City ↑ 2 Meilen. Hochebene: in Summit City links.“ #sprecher:erzaehler
 -> END
 
 === quelle ===

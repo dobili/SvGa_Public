@@ -5,8 +5,8 @@
 // Landesmeisterschaft, Victor mit einem Mann im Anzug), 89 Sol auf dem Gipfelfelsen (Begegnung
 // summitCity.sol, Uhr 3 + 2, Sprüche erlaubt, beim ersten Sieg Kühler Kopf), 90 Drachenfest (L10,
 // Variante Drache, noch nicht gebaut: VARIANTE-FEHLT).
-// Einstiege wie in orte.json: ankunft_zu_fuss, sol, weg_desert, seilbahn, drachenfest,
-// weg_crossroads.
+// Einstiege wie in orte.json: ankunft_zu_fuss, sol, weg_desert, weg_hochebene, seilbahn,
+// drachenfest, weg_crossroads.
 //
 // Runde 11 (13.11.2026): Ankunft nach dem Roman (roman/akt4_teil1.md, Kapitel 48): Wolken von oben,
 // Murmeltiere („Vor uns.“), acht Gesichter auf dem Plakat, das achte mit Ketchup am Kinn, Victor
@@ -160,6 +160,13 @@ Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt.
 
 === weg_desert ===
 Die Bergstraße windet sich hinunter, Richtung Wüste. #sprecher:erzaehler
+-> END
+
+=== weg_hochebene ===
+// Seit dem 15.11.2026 beginnt der Weg zur Hochebene am Westrand der Alm statt an der Bergstraße
+// (Weltpuzzle: der Abzweig kreuzte sonst den Weg zu den Geysiren).
+Am Westrand der Alm wird das Pflaster zu Schotter. Ein Schild: „Hochebene. Schule und Werkstatt, 3 Meilen.“ #sprecher:erzaehler
+Rote Felstürme, und darüber kreisen Falken. #sprecher:erzaehler
 -> END
 
 === weg_crossroads ===

@@ -86,8 +86,8 @@
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesssseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseee#",
-    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
@@ -167,10 +167,6 @@
     {
       "moebel": "wds6Wegweiser",
       "feld": [30, 68]
-    },
-    {
-      "moebel": "wds6Schranke",
-      "feld": [2, 69]
     },
     {
       "moebel": "wds6Bank",
@@ -717,14 +713,6 @@
     {
       "name": "zurueckDiner",
       "feld": [39, 122]
-    },
-    {
-      "name": "abzweigHochebene",
-      "feld": [0, 70]
-    },
-    {
-      "name": "abzweigHochebene",
-      "feld": [0, 71]
     },
     {
       "name": "weiterSummit",

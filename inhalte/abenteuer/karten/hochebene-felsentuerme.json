@@ -9082,7 +9082,7 @@
     },
     {
      "id": 2,
-     "name": "zurueckBergstrasse",
+     "name": "zurueckSummit",
      "type": "ausloeser",
      "x": 1584,
      "y": 224,
@@ -9093,7 +9093,7 @@
     },
     {
      "id": 3,
-     "name": "zurueckBergstrasse",
+     "name": "zurueckSummit",
      "type": "ausloeser",
      "x": 1584,
      "y": 240,

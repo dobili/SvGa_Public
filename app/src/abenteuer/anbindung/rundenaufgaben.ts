@@ -21,13 +21,14 @@ import { endspielrunde, type Massstab } from "../../training/endspieltrainer";
 import { fallenrunde } from "../../training/fallentrainer";
 import { strukturrunde } from "../../training/strukturtrainer";
 import { MOTIVE, taktikrunde, type Taktikthema } from "../../training/taktiktrainer";
-import { ZUFALL, type Zufall } from "../../training/zufall";
+import { festerZufall, ZUFALL, type Zufall } from "../../training/zufall";
 import {
   ZUSATZTHEMEN,
   zusatzrunde,
   type Zusatzaufgabe,
   type Zusatzthema,
 } from "../../training/zusatzaufgaben";
+import { streuwert } from "../oberwelt/belebung";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import { hatSpieltext, tSpiel } from "../texte/texte";
 
@@ -118,6 +119,17 @@ export function rundenaufgaben(
     return [];
   });
   return [...buch, ...abwechselnd(jeThema, auftrag.anzahl)];
+}
+
+/**
+ * Die Zufallsquelle einer Runde, fest nach der Kennung des Auftrags („mapleFalls.springerLily#…“,
+ * die Startzeit gehört dazu). Warum: Spieltest „einstieg“ (15.11.2026) – wer die App während einer
+ * Runde schloss und mit „Weitermachen“ zurückkam, bekam jedes Mal andere Aufgaben. Mit fester
+ * Saat sind es dieselben; ein neuer Versuch (neue Kennung) bringt neue.
+ * Beispiel: zufallDerRunde("r#1") liefert bei jedem Aufruf dieselbe Folge.
+ */
+export function zufallDerRunde(kennung: string): Zufall {
+  return festerZufall(streuwert(kennung));
 }
 
 /**

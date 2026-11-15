@@ -14,14 +14,15 @@ zusammen 280 Kacheln lang, Laufzeit etwa 105 Sekunden.
 Weg 7 verbindet Desert Springs (Ort 7, Akt 3) mit Summit City (Ort 8, Akt 4). Er beginnt am
 **Westrand von Desert Springs**, wo die Old Mother Road die Stadt verlässt (`highway`, nur nach dem Ende
 von Akt 3), läuft als Wüstenstraße nach Westen zum einsamen **King's Diner** mit Motel und Fernfahrern
-und steigt dann auf der **Bergstraße** in Serpentinen nach Norden in die Berge, bis Summit City. Auf
-halber Höhe zweigt nach Westen der Fahrweg zur **Hochebene** ab (L9, eigenes Ortsdokument später).
+und steigt dann auf der **Bergstraße** in Serpentinen nach Norden in die Berge, bis Summit City. Die
+**Hochebene** (L9) zweigte bis zum 15.11.2026 auf halber Höhe nach Westen ab; seitdem beginnt ihr
+Schotterweg am Westrand von Summit City (Weltpuzzle, `summit-city.md` 1.7).
 
 ```text
                          N
                          ↑        [Summit City]  (Nordrand der Bergstraße, 18–20)
                                        ║
-   [Hochebene] ◄═ Abzweig (Westrand) ═╣  Bergstraße 40 × 130, Serpentinen nach Norden
+   (Hochebene: ab Summit City)        ║  Bergstraße 40 × 130, Serpentinen nach Norden
                                        ║
                                        ╚══╗  (Ostrand unten, 120–122)
    Diner-Karte 150 × 30:  ◄══════════════╝══ Wüstenstraße ══ King's Diner ══ Motel ══◄══ [Desert Springs]
@@ -80,8 +81,8 @@ schon ab Spalte 120 über der Kurve; vom Diner aus nach Westen die Berge hinter 
 Die Straße kommt am **Ostrand in den Reihen 120–122** von der Diner-Karte (drei Felder Asphalt), läuft
 nach Westen und steigt in **drei Serpentinen** nach Norden: Kehren bei Reihe 96, 66 und 36, je über eine
 Rampe durch eine Felsstufe (`wand: fels`, Regel 10.49). Am **Nordrand bei den Spalten 18–20** geht es nach
-Summit City. Auf der mittleren Stufe zweigt bei den **Reihen 70–71** ein Fahrweg aus Schotter (zwei
-Felder) zum **Westrand** ab: zur Hochebene. Unten Wüste, in der Mitte Buschland, oben Pinienwald und
+Summit City. Der frühere Abzweig zur Hochebene (Reihen 70–71, Westrand) ist seit dem 15.11.2026
+zugewachsen; ein Wegweiser zeigt nach Summit City. Unten Wüste, in der Mitte Buschland, oben Pinienwald und
 kühler Wind.
 
 ```text
@@ -105,16 +106,16 @@ kühler Wind.
 | B8 (100–114) Buschland | Ziegen           | Wacholderbüsche, Steinmauer, Ziegen am Hang                                               | Ziegen (Belebung)                    |
 | B7 (85–99) Kehre 1     | Leitplanke       | erste Kehre mit Leitplanke, Felsstufe, Rampe hinauf                                       | Aussicht zurück auf das Diner (Neon) |
 | B6 (72–84) Pinien      | die ersten Bäume | einzelne Pinien, eine Quelle mit Steintrog                                                | Quelle                               |
-| B5 (66–71) Abzweig     | Wegweiser        | Wegweiser „Summit City ↑ / Hochebene ←“, Schranke offen, Fahrweg zum Westrand             | Wegweiser, Radfahrer (Statist)       |
+| B5 (66–71) Wegweiser   | Wegweiser        | Wegweiser „Summit City ↑ / Hochebene: in Summit City links“ (seit 15.11.2026 kein Abzweig) | Wegweiser, Radfahrer (Statist)       |
 | B4 (50–65) Felsstufe   | Steinschlag      | Felsbrocken am Rand, Steinschlagnetz, Rampe zur oberen Stufe                              | Adler als Kreise (Szene)             |
 | B3 (36–49) Kehre 3     | Wind             | letzte Kehre, Wind in den Pinien, Bank mit Blick nach Süden über die Wüste                | Aussichtsbank                        |
 | B2 (15–35) Pinienwald  | kühl             | dichter Pinienwald beidseits, Holzstapel der Forstarbeiter                                | Holzstapel, Eichhörnchen             |
 | B1 (0–14) Stadtrand    | Summit City      | Ortsschild „Summit City“, Seilbahnmast in der Ferne (Sichtachse nach Norden), Briefkasten | Ortsschild, Seilbahn (Hintergrund)   |
 
-**Wegeführung:** Hauptweg drei Felder Asphalt, drei Kehren; **ein Abzweig** (Hochebene, Westrand 70–71,
-zwei Felder Schotter) mit Ziel. **Sichtachsen:** Von Kehre 1 nach Süden zurück auf die Wüste; vom
+**Wegeführung:** Hauptweg drei Felder Asphalt, drei Kehren; kein Abzweig (die Hochebene
+erreicht man seit dem 15.11.2026 über Summit City). **Sichtachsen:** Von Kehre 1 nach Süden zurück auf die Wüste; vom
 Abzweig nach Norden auf den Pinienwald; von B2 auf das Ortsschild von Summit City. **Ränder:** Ost und
-West Fels und Wald, Süden Fels; offen nur Ost (120–122), West (70–71) und Nord (18–20).
+West Fels und Wald, Süden Fels; offen nur Ost (120–122) und Nord (18–20).
 **Laufzeit:** Hauptweg etwa 130 Reihen plus drei Kehren zu je etwa 26 Feldern, zusammen 210 Kacheln,
 60 Sekunden.
 
@@ -124,8 +125,7 @@ West Fels und Wald, Süden Fels; offen nur Ost (120–122), West (70–71) und N
 | -------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------ |
 | diner `zurueckDesert` Ostrand (149, 15–17)         | desertSprings.aussen `highway` Westrand (0, 18–20)    | Rückweg landet laut orte.json am `bahnhof` (desert-springs.md 1.8) |
 | diner `weiterBergstrasse` Westrand (0, 19–21)      | bergstrasse `zurueckDiner` Ostrand (39, 120–122)      | gleiche Breite (3)                                                 |
-| bergstrasse `abzweigHochebene` Westrand (0, 70–71) | hochebene.felsentuerme `zurueckBergstrasse` (Ostrand) | zwei Felder; Hochebene folgt mit eigenem Ortsdokument              |
-| bergstrasse `weiterSummit` Nordrand (18–20, 0)     | summitCity.aussen `wegDesert` (Südrand, 3 Felder)     | Summit City folgt; Breite drei Felder                              |
+| bergstrasse `weiterSummit` Nordrand (18–20, 0)     | summitCity.aussen `wegDesert` (Südrand 39–41, 3 Felder) | Summit City folgt; Breite drei Felder                              |
 
 Start je Karte: diner (147, 16) Blick nach links; bergstrasse (38, 121) Blick nach links.
 
@@ -175,7 +175,7 @@ und in der Ferne ein Seilbahnmast, der im Wind summt.
 - **Rätseltafel** `tafel` (vorhanden in orte.json) → an der Dinertür (D5).
 - **Statisten und Tiere** aus der Platzhalterkarte: Trucker, Kellnerin, Kojote, Eidechse (diner); Radler,
   Ziegen, Adler (bergstrasse). Dazu neu als Belebung: Roadrunner, Geier, Eichhörnchen.
-- **Übergänge:** `zurueckDesert`, `weiterBergstrasse`, `zurueckDiner`, `abzweigHochebene`, `weiterSummit`
+- **Übergänge:** `zurueckDesert`, `weiterBergstrasse`, `zurueckDiner`, `weiterSummit` (`abzweigHochebene` entfällt seit 15.11.2026)
   (alle vorhanden, Namen bleiben).
 
 ### 3.2 Was aus dem Ortsbild bleibt, was sich ändert, was entfällt
@@ -224,7 +224,7 @@ tief. **Ränder** offen nur Ost (149, 15–17) und West (0, 19–21).
 
 **Größe** 40 × 130. **Boden** unten Sand, in der Mitte Erde und Gras, oben Gras mit Nadeln; Straße
 Asphalt (drei Felder), Abzweig Schotter (zwei Felder). **Wand** Fels in Stufen (Regel 10.49) bei den
-Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18–20, 0).
+Kehren. **Ränder** offen nur Ost (39, 120–122), Nord (18–20, 0).
 
 | Abschnitt | Inventar                                                                            |
 | --------- | ----------------------------------------------------------------------------------- |

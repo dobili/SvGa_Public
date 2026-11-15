@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { Taktikaufgabe } from "../../daten/trainerdaten";
 import type { Zusatzaufgabe } from "../../training/zusatzaufgaben";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
-import { buchfrage, rundenaufgaben } from "./rundenaufgaben";
+import { buchfrage, rundenaufgaben, zufallDerRunde } from "./rundenaufgaben";
 
 const FEN = "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1";
 
@@ -117,5 +117,16 @@ describe("buchfrage", () => {
     // Übungen ohne eigenen Satz (Kapitel 7) und Aufgaben ohne Übung behalten nur das Ziel.
     expect(buchfrage(taktik("t2", "ueb:taktik-a02"))).toBeNull();
     expect(buchfrage(taktik("t3", null))).toBeNull();
+  });
+});
+
+describe("zufallDerRunde", () => {
+  it("liefert für dieselbe Kennung dieselbe Folge, für eine neue eine andere", () => {
+    const folge = (k: string) => {
+      const z = zufallDerRunde(k);
+      return [z(), z(), z()];
+    };
+    expect(folge("mapleFalls.springerLily#a1")).toEqual(folge("mapleFalls.springerLily#a1"));
+    expect(folge("mapleFalls.springerLily#a1")).not.toEqual(folge("mapleFalls.springerLily#a2"));
   });
 });

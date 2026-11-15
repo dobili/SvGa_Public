@@ -24,6 +24,7 @@ import { finchKarteSichtbar } from "../regeln/finchjagd";
 import { FinchKarte } from "./FinchKarte";
 import { EigeneSeiten } from "./Tagebuchseite";
 import { gegnerakten } from "./steckbrieftext";
+import { wasJetzt } from "./wasjetzt";
 
 export function Tagebuch({
   stand,
@@ -50,7 +51,7 @@ export function Tagebuch({
     >
       <h2>{tSpiel("tagebuch.titel")}</h2>
       <h3>{tSpiel("tagebuch.laufend")}</h3>
-      {laufend.length === 0 && <p>{tSpiel("tagebuch.nichtsOffen")}</p>}
+      {laufend.length === 0 && <Leerlauf variablen={stand.dialogvariablen} />}
       <ul>
         {laufend.map((q) => {
           const quest = questdaten(q.kennung);
@@ -135,6 +136,20 @@ export function Tagebuch({
         {tSpiel("tagebuch.schliessen")}
       </button>
     </section>
+  );
+}
+
+/**
+ * Keine Quest offen: „Was jetzt?“ mit dem nächsten Ziel (oberwelt/wasjetzt.ts), sonst „Gerade
+ * nichts“. Spieltest „einstieg“, 15.11.2026: Ohne Ziel wusste das Kind nicht weiter.
+ */
+function Leerlauf({ variablen }: { variablen: Abenteuerstand["dialogvariablen"] }) {
+  const hinweis = wasJetzt(variablen);
+  if (!hinweis) return <p>{tSpiel("tagebuch.nichtsOffen")}</p>;
+  return (
+    <p data-testid="abenteuer-was-jetzt">
+      <strong>{tSpiel("tagebuch.wasJetzt")}</strong> {tSpiel(hinweis)}
+    </p>
   );
 }
 

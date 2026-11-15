@@ -166,7 +166,7 @@ Am Schwarzen Brett der Schule hängen Zettel: „Basketball dienstags“, „Bus
 // ---------------------------------------------------------------- Rückweg
 
 === zurueck ===
-Die Schotterstraße führt zurück zur Bergstraße. Hinter dir kreist ein Falke über den Felstürmen. #sprecher:erzaehler
+Die Schotterstraße führt zurück nach Summit City. Hinter dir kreist ein Falke über den Felstürmen. #sprecher:erzaehler
 -> END
 
 // >>> Runde 6 (mittel-4)

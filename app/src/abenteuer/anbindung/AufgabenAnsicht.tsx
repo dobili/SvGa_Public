@@ -49,7 +49,7 @@ import { Tischblase, TischblasenRahmen } from "./Tischblase";
 import { useRaetselgespraech } from "./useRaetselgespraech";
 import { useRaetselanzeige } from "./useRaetselanzeige";
 import { sprecherAusSchluessel } from "./huellentexte";
-import { buchfrage, rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
+import { buchfrage, rundenaufgaben, zufallDerRunde, type Rundenaufgabe } from "./rundenaufgaben";
 import { testantworten } from "./testende";
 import { Raetseltest } from "./Testleiste";
 
@@ -208,7 +208,8 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
         ? { endspiele: endspiele.wert.aufgaben, massstab: endspiele.wert.massstab }
         : {}),
     };
-    return rundenaufgaben(auftrag, taktik.wert.aufgaben, zusaetze.wert, undefined, weitere);
+    const zufall = zufallDerRunde(auftrag.kennung);
+    return rundenaufgaben(auftrag, taktik.wert.aufgaben, zusaetze.wert, zufall, weitere);
   }, [auftrag, taktik, zusaetze, fallen, strukturen, endspiele]);
   const beiEnde = (ergebnisse: readonly Antwortergebnis[], sekunden: number) => {
     if (!auftrag) return;

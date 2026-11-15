@@ -2239,6 +2239,34 @@
       ]
     },
     {
+      "kennung": "summitCity.studie",
+      "titel": "quest.studie.titel",
+      "typ": "begegnung",
+      "ort": "summitCity",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "summit-city-huette.haraldsen_studie_mit"
+      },
+      "schritte": [
+        {
+          "text": "quest.studie.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "summit-city-huette.ward_studie"
+          },
+          "wirkungen": [
+            {
+              "art": "zustand",
+              "gegner": "summitCity.ward",
+              "faktor": 1.4,
+              "grund": "zustand.studieNacht"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "kennung": "wegDesertSummit.tafelDiner",
       "titel": "quest.tafelDiner.titel",
       "typ": "raetsel",

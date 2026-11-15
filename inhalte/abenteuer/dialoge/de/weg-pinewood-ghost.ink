@@ -100,6 +100,7 @@ Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #spr
 ~ z1Gesehen = true
 Vor einem Tisch mit Brett steht ein Greifarm mit dem Logo von Perfect Move. Ein Kabel führt hinauf zum Solarpaneel. #sprecher:erzaehler
 Auf seinem kleinen Bildschirm leuchtet: „Prototyp Z-1. Bereit. Weiß beginnt.“ #sprecher:greifarm #stimmung:neutral
+Darunter springt eine Uhr an: fünf Minuten für jede Seite, drei Sekunden je Zug. Eine Maschine wartet nicht gern. #sprecher:erzaehler
 -> greifarm_angebot
 
 === greifarm_angebot ===

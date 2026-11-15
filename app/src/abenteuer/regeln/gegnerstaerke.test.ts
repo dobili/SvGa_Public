@@ -10,6 +10,13 @@ describe("zielElo", () => {
     expect(zielElo({ art: "fest", elo: 1500 }, wertung)).toBe(1500);
   });
 
+  it("führt E nach, wenn A mehr als 200 darüber liegt (R3a)", () => {
+    const clubchef8 = { art: "eingang", versatz: 640 } as const;
+    expect(zielElo(clubchef8, { aktuell: 1250, eingang: 650 })).toBe(1690);
+    expect(zielElo(clubchef8, { aktuell: 850, eingang: 650 })).toBe(1290);
+    expect(zielElo(clubchef8, { aktuell: 500, eingang: 650 })).toBe(1290);
+  });
+
   it("nimmt ohne Wertung die Einsteigerannahme", () => {
     expect(zielElo({ art: "aktuell", versatz: 0 }, { aktuell: null, eingang: null })).toBe(600);
     expect(zielElo({ art: "eingang", versatz: 100 }, { aktuell: 700, eingang: null })).toBe(800);

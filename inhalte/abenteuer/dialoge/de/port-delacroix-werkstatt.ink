@@ -108,6 +108,7 @@ Das sieht cool aus. Das ist ja richtig alt. Darf ich? #sprecher:celeste #stimmun
 Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. Und die Hände. #sprecher:erzaehler
 * [„Kannst du es?“]
 - Ich weiß, wie die Dinger ziehen. Ungefähr. Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste #stimmung:laechelt
+Aber mit Uhr. Zehn Minuten für jeden. Mein Stück auf dem Laptop läuft noch zwanzig, dann muss ich los. #sprecher:celeste #stimmung:lacht
 Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er hat genickt. #sprecher:erzaehler
 + [„Okay. Eine Partie.“]
     ~ beginnePartie("portDelacroix.celeste")

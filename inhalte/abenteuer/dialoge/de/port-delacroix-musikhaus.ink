@@ -5,6 +5,8 @@
 // frühestens nach Desert Springs). Einstiege wie in orte.json: schild, blaeser (Akt 4, L1 Schach960:
 // die Bläserin Mabel spielt drei Sets mit steigender Stärke, Begegnungen
 // portDelacroix.schach960Set1 bis Set3, Nebenquest portDelacroix.schach960, Fund setliste960).
+// Ein Set dauert ein Stück der Band: Set 1 und 2 mit Uhr 10 + 5, die Jam-Session 5 + 3 (Balance,
+// 15.11.2026: ohne Uhr waren es drei Mal 25 Minuten Schach am Stück).
 // Beim Aufhängen gibt es den Fund „Erstes Brett im neuen Musikhaus“ (gibFund). Variablen: nadelDesertSprings setzt die Hülle (R42), simultanGedankt die Turnhalle,
 // musikhausOffen setzt diese Datei.
 
@@ -89,6 +91,7 @@ Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen 
 
 === blaeser_set1 ===
 Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. Locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
+Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden dazu für jeden Zug. Dann spielt die Band das nächste. #sprecher:blaeser #stimmung:lacht
 + [„Spielen wir.“]
     ~ beginnePartie("portDelacroix.schach960Set1")
     -> END
@@ -109,6 +112,7 @@ Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #
 
 === blaeser_set3 ===
 Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser #stimmung:laechelt
+Und schneller. Fünf Minuten, drei Sekunden je Zug. Eine Jam-Session wartet auf niemanden. #sprecher:blaeser #stimmung:lacht
 Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose #stimmung:nachdenklich
 + [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.schach960Set3")

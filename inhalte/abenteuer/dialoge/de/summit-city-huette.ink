@@ -6,7 +6,8 @@
 // Schlüsselfelder), 85 Wards Erinnerung Hastings 1895 (Runde summitCity.erinnerungHastings,
 // Quest gleichen Namens, Fragment 8), 86 Aufgabenreihen (Runden summitCity.reiheKit und
 // summitCity.reiheHaraldsen), 87 Victor verliert (Buch Kapitel 12, Abschnitt 12.6, Kopf und
-// Konzentration), 91 Clubkampf (Begegnung summitCity.clubkampf, Karten erlaubt).
+// Konzentration), 91 Clubkampf (Begegnung summitCity.clubkampf, Karten erlaubt). Nebenquest
+// summitCity.studie (Balance, 15.11.2026, Regelwerk R8): Haraldsens Studie hält Ward eine Nacht wach.
 // Einstiege wie in orte.json: ward, kit, haraldsen, pokal, kaminfeuer.
 //
 // Reihenfolge der Hauptquest summitCity.endspiel: Lektion, Kit, Haraldsen, Victors Niederlage,
@@ -18,6 +19,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
+EXTERNAL setzeZustand(gegner, faktor, grund)
 
 VAR held = "Du"
 VAR wardBleibGesehen = false
@@ -36,6 +38,10 @@ VAR nadelSummitCity = 0
 VAR clubkampfSummitCityNadel = 0
 VAR kitGetroffen = false
 VAR haraldsenGetroffen = false
+VAR studieAngeboten = false
+VAR studieDabei = false
+VAR wardStudieGesehen = false
+VAR wardMuede = false
 // Lernkarten aus den Lektionen (kit_karte, haraldsen_karte, ward_nach_erinnerung); die hatKarte…
 // setzt die Hülle aus dem Besitz, wer eine Karte schon hat, bekommt keine zweite.
 VAR lernkarteEndspielkompass = false
@@ -57,6 +63,7 @@ VAR hatKartePhasenblick = false
 - not wardBleibGesehen: -> ward_bleib
 - not victorKriseGesehen: -> victor_krise
 - not victorSeiteGegeben: -> ward_victor_fort
+- studieDabei and nadelSummitCity == 0: -> ward_studie
 - nadelSummitCity == 0 and ausgangSummitCityClubkampf == "niederlage": -> ward_nach_niederlage
 - nadelSummitCity == 0: -> ward_clubkampf
 - else: -> ward_alltag
@@ -120,9 +127,11 @@ Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward #stimmung:
 {not wardLaurieGesagt: -> ward_laurie}
 Du musst nicht gewinnen. Ein Remis genügt für die Nadel. #sprecher:ward #stimmung:nachdenklich
 Ich vereinfache. Ich tausche, was sich tauschen lässt. Die meisten wollen im Mittelspiel gewinnen, weil sie das Ende fürchten. #sprecher:ward #stimmung:nachdenklich
+{wardMuede: Ich habe heute Nacht nicht geschlafen. Das ist kein Grund, schlechter zu spielen. Aber vielleicht wird es einer. #sprecher:ward #stimmung:laechelt}
 Was willst du? #sprecher:ward #stimmung:nachdenklich
 + [„Das Ende.“]
     Sie nickt. Mehr nicht. #sprecher:erzaehler
+    ~ wardMuede = false
     ~ beginnePartie("summitCity.clubkampf")
     -> END
 + [„Noch nicht.“]
@@ -157,7 +166,9 @@ Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
 === ward_nach_niederlage ===
 Verloren. Und? Hast du gesehen, wo? #sprecher:ward #stimmung:nachdenklich
 Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenklich
+{wardMuede: Und spiel jetzt, solange ich müde bin. Haraldsens Studie hat mich die Nacht gekostet. #sprecher:ward #stimmung:laechelt}
 + [„Ich weiß es.“]
+    ~ wardMuede = false
     ~ beginnePartie("summitCity.clubkampf")
     -> END
 + [„Nicht jetzt.“]
@@ -347,6 +358,7 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
     -> END
 - not reiheHaraldsenBestanden: -> haraldsen_reihe
 - not lernkarteTurmregel: -> haraldsen_karte
+- not studieDabei and not wardStudieGesehen and nadelSummitCity == 0: -> haraldsen_studie
 - else: -> haraldsen_alltag
 }
 
@@ -360,6 +372,47 @@ Die Brücke hast du gebaut. Und bist hinübergekommen. #sprecher:haraldsen #stim
     Hinter den Freibauern, auf die offene Linie. Dann schiebt er, und er hält. #sprecher:haraldsen #stimmung:laechelt
     ~ gibKarte("turmregel")
 }
+{nadelSummitCity == 0: -> haraldsen_studie}
+-> END
+
+// Nebenquest summitCity.studie (Regelwerk R8, Ablenkung wie Sternennacht und Feier): Eine Studie, die
+// Ward nicht kennt, hält sie eine Nacht wach. Haraldsen bietet sie an; der Held entscheidet.
+=== haraldsen_studie ===
+{studieAngeboten:
+    Die Studie steckt noch in meinem Mantel. Sie wird nicht jünger. Ich auch nicht. #sprecher:haraldsen #stimmung:laechelt
+- else:
+    ~ studieAngeboten = true
+    Haraldsen klopft auf die Brusttasche seiner Uniform. Es knistert. #sprecher:erzaehler
+    Da drin steckt eine Studie. Ein Turmendspiel, Weiß zieht und hält. Seit dreißig Jahren trage ich sie mit mir herum. #sprecher:haraldsen #stimmung:nachdenklich
+    Eleanor kennt sie nicht. Wenn sie die am Abend sieht, schläft sie die ganze Nacht nicht. #sprecher:haraldsen #stimmung:lacht
+    Ich habe es nie übers Herz gebracht. Du vielleicht. #sprecher:haraldsen #stimmung:laechelt
+}
++ [„Ich bring sie ihr.“]
+    -> haraldsen_studie_mit
++ [„Lieber nicht.“]
+    Recht so. Man weckt keine Großmeisterin. Auch nicht mit Papier. #sprecher:haraldsen #stimmung:laechelt
+    -> END
+
+=== haraldsen_studie_mit ===
+~ studieDabei = true
+Er gibt dir einen Zettel, so oft gefaltet, dass die Falten weich sind wie Stoff. #sprecher:erzaehler
+Gib ihn ihr nach dem Abendessen. Und sag nicht, von wem. Sie weiß es sowieso. #sprecher:haraldsen #stimmung:lacht
+Du willst sie mit einem Endspiel wach halten? Das ist die freundlichste Gemeinheit, die ich kenne. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== ward_studie ===
+~ wardStudieGesehen = true
+~ studieDabei = false
+Nach dem Abendessen legst du Ward den Zettel neben die Teekanne. #sprecher:erzaehler
+Sie faltet ihn auseinander und liest. Ihr Gesicht wird ganz glatt. #sprecher:erzaehler
+Haraldsen. Dreißig Jahre trägt er das mit sich herum. Und jetzt schickt er ein Kind. #sprecher:ward #stimmung:laechelt
+Das hält nicht. Das kann gar nicht halten. #sprecher:ward #stimmung:nachdenklich
+* [„Gute Nacht.“]
+- Sie hört dich nicht mehr. Sie stellt die Figuren auf, ohne hinzusehen. #sprecher:erzaehler
+Am Morgen sitzt sie noch genauso da. Das Feuer ist heruntergebrannt. Auf dem Tisch stehen drei Tassen Tee, alle kalt. #sprecher:erzaehler
+Es hält. Mit einem stillen Königszug. Dieser alte Seilbahnschaffner. #sprecher:ward #stimmung:lacht
+~ setzeZustand("summitCity.ward", 1.4, "zustand.studieNacht")
+~ wardMuede = true
 -> END
 
 === haraldsen_reihe ===

@@ -35,18 +35,30 @@ const HAEUFIGKEIT_MAX = 2.5;
 const ZUSTAND_MAX = 2.0;
 /** Ohne Wertung (erste Story-Partie, Entscheidung A5) gilt diese Annahme für Einsteiger. */
 export const WERTUNG_OHNE = 600;
+/**
+ * Nachführen von E (R3a): Der Bezugswert der Gegner auf E ist mindestens A minus diesen Abstand.
+ * Grund: E friert nach zehn Partien ein; wer danach im Buch lernt und 600 bis 800 Elo zulegt,
+ * bekäme sonst immer leichtere Clubchefs (Balance-Analyse, 15.11.2026). Startwert.
+ */
+export const E_NACHFUEHRUNG_ABSTAND = 200;
 /** Aufschlag auf die Zielstärke im zweiten Durchlauf (Post-Game, R10). */
 export const POST_GAME_AUFSCHLAG = 300;
 
 const PHASEN: readonly Phase[] = ["eroeffnung", "mittelspiel", "endspiel"];
 
-/** Der Ziel-Elo eines Gegners aus seiner Zielstärke und den Wertungen des Lesers. */
+/**
+ * Der Ziel-Elo eines Gegners aus seiner Zielstärke und den Wertungen des Lesers.
+ *
+ * Regel: Regelwerk R4, R5 und R3a. Gegner auf E rechnen mit max(E, A − 200): Für Leser, die nicht
+ * schneller wachsen als 200 Elo über E, bleibt es bei E; wer viel lernt, zieht die Clubchefs mit.
+ * Beispiel: E = 650, A = 1250 → Bezug 1050, Clubchef 8 (+640) → 1690 statt 1290.
+ */
 export function zielElo(
   staerke: Zielstaerke,
   wertung: { readonly aktuell: number | null; readonly eingang: number | null },
 ): number {
   const aktuell = wertung.aktuell ?? wertung.eingang ?? WERTUNG_OHNE;
-  const eingang = wertung.eingang ?? aktuell;
+  const eingang = Math.max(wertung.eingang ?? aktuell, aktuell - E_NACHFUEHRUNG_ABSTAND);
   switch (staerke.art) {
     case "fest":
       return staerke.elo;

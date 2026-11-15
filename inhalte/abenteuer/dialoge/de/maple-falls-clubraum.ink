@@ -27,6 +27,7 @@ VAR reiheSamBestanden = false
 VAR reiheJunoBestanden = false
 VAR todsuendenBestanden = false
 VAR ausgangMapleFallsSamRevanche = ""
+VAR pauseVorClubkampfGesehen = false
 VAR ausgangMapleFallsClubkampf = ""
 VAR nadelMapleFalls = 0
 VAR clubkampfBesprochen = 0
@@ -87,6 +88,7 @@ Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #spreche
 -> END
 
 === coach_clubkampf ===
+{gespieltSamRevanche() and ausgangMapleFallsClubkampf == "" and not pauseVorClubkampfGesehen: -> pause_vor_clubkampf}
 // Szene 11 nach dem Roman, Kapitel 8, und der Dialogprüfung (VM57 bis VM60). Stimmung:
 // Herzklopfen, das erste echte. Klang: Clubkampf-Thema mit Schlagwerk; die Pfeife liegt auf dem Pult.
 Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. Die Pfeife liegt auf dem Pult. #sprecher:erzaehler #musik:mapleFalls.clubkampf
@@ -102,6 +104,23 @@ Sie legt eine Anstecknadel auf den Tisch. Ein kleines Ahornblatt aus Metall, mit
 * [„Noch nicht.“]
     Kein Problem. Das Brett läuft nicht weg. #sprecher:coachDelgado #stimmung:laechelt
     -> END
+
+// Kurze Pause nach Sams Revanche (Balance, 15.11.2026): Wer die Revanche direkt vor dem Clubkampf
+// spielt, hätte sonst etwa 50 Minuten Schach am Stück (RO5).
+=== pause_vor_clubkampf ===
+~ pauseVorClubkampfGesehen = true
+Coach Delgado sieht von Sams Brett zu dir und wieder zurück. #sprecher:erzaehler
+Zwei Partien hintereinander? Nicht in meinem Club. Fünf Minuten Pause, Fenster auf, Wasser trinken. #sprecher:coachDelgado #stimmung:laechelt #klang:pfiff
+Meine erste Kreismeisterschaft. Drei Partien an einem Nachmittag. Die dritte habe ich in Zug elf verloren. #sprecher:coachDelgado #stimmung:nachdenklich
+Nicht, weil der Junge besser war. Weil ich Hunger hatte. Das steht auf keinem Pokal. #sprecher:coachDelgado #stimmung:lacht
+Juno drückt dir einen halben Apfel in die Hand und beißt in die andere Hälfte. #sprecher:erzaehler
+Die Hälfte ist für den Kopf. Die andere für die Nerven. Steht in keinem Buch. Nur in meinem. #sprecher:juno #stimmung:lacht
+Draußen schlägt die Schnur gegen den Fahnenmast. Du zählst mit, bis du vergisst zu zählen. #sprecher:erzaehler
+Aufhören, wenn es gerade gut läuft. Das habe ich nie gekonnt. Mach es besser als ich. #sprecher:ambrose #stimmung:lacht
+-> coach_clubkampf
+
+=== function gespieltSamRevanche() ===
+~ return ausgangMapleFallsSamRevanche != "" and ausgangMapleFallsSamRevanche != "abgebrochen"
 
 === coach_partie ===
 ~ beginnePartie("mapleFalls.clubkampf")

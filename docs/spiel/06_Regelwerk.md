@@ -50,6 +50,12 @@ Ergebnis ist ein `Gerechnetestaerke` (zielElo = Z, stufenJePhase, haeufigkeit = 
 - Umsetzung (Schritt 8h): Nach jeder Story-Partie, die für A zählt, folgt E dem neuen A und `eingangPartien` steigt um 1 (`nachStoryPartie`). Bekannte Abweichung: Gewertete Partien der App zählen noch nicht für `eingangPartien`, und eine Änderung der App-Wertung verschiebt A, aber nicht das noch laufende E.
 - Clubchefs, die vor dem Einfrieren gespielt werden, rechnen mit dem vorläufigen E. Eine schon gewonnene Clubnadel bleibt, auch wenn E später steigt.
 
+### R3a Nachführen von E (Balance, 15.11.2026)
+
+- Alle Gegner, die auf E rechnen (Clubchefs, Story, Turnier), nehmen als Bezugswert max(E, A − 200) (`E_NACHFUEHRUNG_ABSTAND`, Startwert, `regeln/gegnerstaerke.ts`).
+- Grund: E friert nach zehn Partien ein. Ein Leser, der im Buch lernt und im Spiel 600 bis 800 Elo zulegt, bekäme sonst immer leichtere Clubchefs; die gewollte Steigerung (R5) fiele für ihn weg. Für Leser, deren A nicht mehr als 200 über E steigt, ändert sich nichts.
+- Beispiel: E = 650, A = 1250 → Bezug 1050, Clubchef 8 (+640) → 1690 statt 1290.
+
 ### R4 Zielstärke je Rolle
 
 | Rolle (`Gegnerrolle`) | Bezugswert  | Versatz im Profil                   | Beispiel E = A = 800       |
@@ -64,7 +70,7 @@ Die Versatzbereiche sind Prüfregeln: Der Test `test_abenteuer.py` meldet Profil
 
 ### R5 Bezugspunkt für Akt und Durchlauf
 
-- Clubchefs rechnen immer mit E, nie mit A: Die Lücke wächst von +220 (Club 1) auf +640 (Club 8) und wird durch Lernen, Vorbereitung und Karten geschlossen (`04_Architektur.md`, Abschnitt 4).
+- Clubchefs rechnen mit E (nachgeführt nach R3a), nie direkt mit A: Die Lücke wächst von +220 (Club 1) auf +640 (Club 8) und wird durch Lernen, Vorbereitung und Karten geschlossen (`04_Architektur.md`, Abschnitt 4).
 - Straße und Clubmitglieder rechnen immer mit A: Sie wachsen mit dem Leser und bleiben fair.
 
 ### R6 Umrechnung Z → Stufe und Grundhäufigkeit
@@ -99,6 +105,7 @@ Mit Zustand „abgelenkt“ 1,4: Clubchef 1 bei E = 800 → h = 0,76 · 1,4 = 1,
 ### R8 Zustand „abgelenkt“
 
 - Setzt eine Begegnungs-Quest über `setzeZustand(gegner, faktor, grund)`; erlaubte Faktoren 1,3, 1,4, 1,5 (Entsprechung grob 100 bis 200 Elo, `04_Architektur.md`).
+- Vorhanden: Sternennacht (Mrs. Okafor, Club 2, 1,3), Feier in der Kantine (Big Joe, Club 4, 1,4), Haraldsens Studie (Großmeisterin Ward, Club 8, 1,4; seit 15.11.2026, weil die Lücke zum Clubchef dort am größten ist).
 - Sichtbar: Der Dialog vor der Partie nennt den Grund, und die Kartenleiste unter dem Brett zeigt eine Zeile aus Name und Grund („Mrs. Okafor hat schlecht geschlafen.“, Textschlüssel `zustand.*`). Ist ein Gegner abgelenkt und überheblich zugleich, nennt die Zeile nur „abgelenkt“; beide Faktoren wirken trotzdem.
 - Gilt für die nächste Begegnung mit diesem Gegner einschließlich ihres Wiedereinstiegs; danach wird `Figurenstand.abgelenkt` auf null gesetzt („Revanche, wenn ich ausgeschlafen bin!“).
 - Nicht für Story-Partien mit festem Verlauf (R33).
@@ -453,17 +460,20 @@ Eine Story-Partie zählt für A (R2) und für `eingangPartien` (R3), wenn alle g
 
 ### R40 Staffeln
 
-| Abschnitt                                                      | Stunden  |
-| -------------------------------------------------------------- | -------- |
-| Akt 1: Intro, Fund des Bretts, erste Partie, Victor, Clubs 1–2 | 3–4      |
-| Akt 2 in Staffel 1: Clubs 3–4, Cliffhanger                     | 3–4      |
-| **Staffel 1**                                                  | **6–8**  |
-| Akt 2 Rest und Akt 3: Clubs 5–7, Pinewood, Crossroads          | 5–6      |
-| Akt 4: Club 8, Ghost Town, Landesmeisterschaft (6 Partien)     | 4–5      |
-| **Staffel 2**                                                  | **9–11** |
-| Post-Game (zweiter Durchlauf, Weltmeisterschaft)               | 5–10     |
+Gemessen mit dem Zeitmodell der Balance-Analyse (15.11.2026): Gesamtsimulation mit Mitschrift, 130 Wörter je Minute, ganze Partie ohne Uhr 25 Minuten, 10 + 5 18 Minuten, 5 + 3 11 Minuten, Laufen nach `oberwelt/szene.ts`. **Kernpfad** = Pflichtschach und Hauptgeschichte, ohne Wiederholungen; **alles** = jede Nebenquest, jede freiwillige Partie einmal; dazu kommen die Wiederholungen nach Niederlagen (Einsteiger ohne Buch etwa +1 h in Akt 1 und 2, +2 h in Akt 3 und 4).
 
-- Grundlage: Dokument 02, 2.1 (18 Stunden Hauptspiel) und `04_Architektur.md`, Abschnitt 5 (Clubbesuch 60 bis 90 Minuten ohne Wiederholungen).
+| Abschnitt                                                      | Kernpfad (h) | Alles (h) |
+| -------------------------------------------------------------- | ------------ | --------- |
+| Akt 1: Intro, Fund des Bretts, erste Partie, Victor, Clubs 1–2 | 2,5–3        | 5–5,5     |
+| Akt 2: Clubs 3–4, Cliffhanger                                  | 2,5          | 4,5–5     |
+| **Staffel 1**                                                  | **5–5,5**    | **10**    |
+| Akt 3: Clubs 5–7, Port Delacroix, Desert Springs               | 3            | 7–7,5     |
+| Akt 4: Club 8, Ghost Town, Landesmeisterschaft (6 Partien)     | 4,5          | 10        |
+| **Staffel 2**                                                  | **7,5**      | **17**    |
+| Post-Game (zweiter Durchlauf, Weltmeisterschaft)               | 5–10         | –         |
+
+- Grundlage: Dokument 02, 2.1 (18 Stunden Hauptspiel) und `04_Architektur.md`, Abschnitt 5 (Clubbesuch 60 bis 90 Minuten ohne Wiederholungen). Bis 15.11.2026 standen hier 3–4 / 3–4 / 5–6 / 4–5 Stunden; die Messung zeigt, dass der Kernpfad kürzer und das vollständige Spiel deutlich länger ist. Die Minuten liegen vor allem in freiwilligen ganzen Partien; diese tragen deshalb seit 15.11.2026 eine Uhr, wo es zur Figur passt (Schach960 im Musikhaus, Céleste, Prototyp Z-1).
+- Schachstrecken (RO5, „nie mehr als 30 Minuten Schach am Stück“): Zwischen zwei Pflichtpartien steht eine Szene ohne Brett (Pause nach Sams Revanche, Pause nach Runde 2 der Vorrunde). Zwei ganze Partien ohne Uhr hintereinander dauern trotzdem etwa 50 Minuten; das bleibt nur in der Vorrunde (Runde 1 und 2).
 - Nachmessen: `spielzeitSekunden` gibt die Summe, `spielzeitJeOrt` die Spielzeit je Ort (Vorschlag V7, umgesetzt; beim Verlassen der Welt fortgeschrieben). Liegt ein Testlauf des Autors um mehr als ein Drittel daneben, werden zuerst R30 (Aufgabenzahl) und R13 (Zugzahl der Duelle) angepasst, nicht die Stärke.
 
 ## 9. Welt

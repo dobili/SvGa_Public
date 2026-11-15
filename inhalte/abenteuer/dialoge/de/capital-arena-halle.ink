@@ -4,7 +4,8 @@
 //
 // Turniermodus ohne neue Technik (Entscheidung 8.11.2026): Die Vorrunde sind vier Begegnungen
 // (capitalArena.runde1 bis runde4); Ink zählt die Punkte aus den ausgang-Variablen (Sieg 1,
-// Remis ½). Weiter ab 2,5 von 4; wer weniger hat, spielt die nicht gewonnenen Runden noch einmal.
+// Remis ½). Weiter ab 2 von 4 (Balance, 15.11.2026: vorher 2,5); wer weniger hat, spielt die nicht
+// gewonnenen Runden noch einmal. Nach Runde 2 eine Pause ohne Brett (pause_nach_runde2, Befund Akt 4).
 // Danach 105 Die Aussage am Pressetisch, 106 Halbfinale gegen Kade (freier Mentor-Zug, Stärkewechsel
 // über abgelenktAb), 107 Vor dem Finale, 108 Finale gegen Victor (keine Karten, R28). Keine Sprüche
 // im ganzen Turnier (S2). Einstiege wie in orte.json: turnierleiterin, lin, graham_hale, bea,
@@ -41,6 +42,7 @@ VAR halbfinaleVorherGesehen = false
 VAR halbfinaleDanachGesehen = false
 VAR ambroseImHalbfinaleGerufen = false
 VAR novaNachPartieGesehen = false
+VAR pauseNachRunde2Gesehen = false
 
 === function punkt(ausgang) ===
 {
@@ -57,6 +59,10 @@ VAR novaNachPartieGesehen = false
 
 === function vorrundenpunkte() ===
 ~ return punkt(ausgangCapitalArenaRunde1) + punkt(ausgangCapitalArenaRunde2) + punkt(ausgangCapitalArenaRunde3) + punkt(ausgangCapitalArenaRunde4)
+
+// Weiter ins Halbfinale ab so vielen Punkten (Sieg 1, Remis ½).
+=== function vorrundenschwelle() ===
+~ return 2
 
 === function punktetext() ===
 ~ temp p = vorrundenpunkte()
@@ -76,7 +82,8 @@ VAR novaNachPartieGesehen = false
 - not arenaGesehen:
     Bitte erst am Eingang anmelden. #sprecher:turnierleiterin #stimmung:neutral
     -> END
-- not vorrundeGeschafft and alleGespielt() and vorrundenpunkte() >= 2.5: -> vorrunde_geschafft
+- not vorrundeGeschafft and alleGespielt() and vorrundenpunkte() >= vorrundenschwelle(): -> vorrunde_geschafft
+- gespielt(ausgangCapitalArenaRunde2) and not pauseNachRunde2Gesehen: -> pause_nach_runde2
 - gespielt(ausgangCapitalArenaRunde3) and not novaNachPartieGesehen: -> nova_nach_partie
 - not vorrundeGeschafft: -> vorrunde_naechste
 - not aussageGesehen:
@@ -90,7 +97,7 @@ VAR novaNachPartieGesehen = false
 
 === vorrunde_naechste ===
 {alleGespielt():
-    Du hast {punktetext()} von 4 Punkten. Für das Halbfinale brauchst du 2,5. #sprecher:turnierleiterin #stimmung:neutral
+    Du hast {punktetext()} von 4 Punkten. Für das Halbfinale brauchst du {vorrundenschwelle()}. #sprecher:turnierleiterin #stimmung:neutral
     Du darfst eine Runde, die du nicht gewonnen hast, noch einmal spielen. #sprecher:turnierleiterin #stimmung:neutral
 }
 {
@@ -152,6 +159,40 @@ Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, w
 + [„Noch einen Moment.“]
     Natürlich. Die Bretter warten. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
+
+// Pause nach Runde 2 (Befund Akt 4, Abschnitt 3: zwischen je zwei Partien der Meisterschaft eine
+// Szene; Roman Kapitel 61: „Zwei aus zwei“, Slick auf der Tribüne). Juno zählt, Victor bringt Wasser
+// und meint Nova, ohne es zu sagen (er weiß es seit Silicon Bay, Szene 105), Ambrose ruft die
+// Lektionen der Reise ab. Danach geht es gleich mit Runde 3 weiter.
+=== pause_nach_runde2 ===
+~ pauseNachRunde2Gesehen = true
+~ temp halbzeit = punkt(ausgangCapitalArenaRunde1) + punkt(ausgangCapitalArenaRunde2)
+Die Turnierleiterin ruft eine Pause aus. Sofort wird die Halle laut, wie eine Klasse, wenn die Lehrerin hinausgeht. #sprecher:erzaehler
+Juno sitzt auf der untersten Stufe der Tribüne, auf jedem Knie ein Tagebuch. #sprecher:erzaehler
+{
+- halbzeit >= 2:
+    Zwei aus zwei. Ich schreib es in beide. Falls eins verloren geht. #sprecher:juno #stimmung:froh
+- halbzeit > 1:
+    Anderthalb. Dir fehlt ein halber Punkt. Ein halber! Ich hab nachgerechnet. Zweimal. #sprecher:juno #stimmung:laechelt
+- halbzeit >= 1:
+    Halbzeit. Einer fehlt dir noch. Das ist alles noch drin. Ich hab nachgerechnet. Zweimal. #sprecher:juno #stimmung:nachdenklich
+- halbzeit > 0:
+    Ein halber Punkt. Anderthalb fehlen noch. Zwei Runden hast du dafür. #sprecher:juno #stimmung:nachdenklich
+- else:
+    Noch zwei Runden. Zwei Punkte brauchst du. Das geht genau auf. Ich schreib es trotzdem nur mit Bleistift. #sprecher:juno #stimmung:nachdenklich
+}
+Über ihr winkt Slick mit beiden Armen. Tamsin hält ihm von hinten den Mund zu. #sprecher:erzaehler
+Victor kommt von den Tischen am anderen Ende. Seine Runde ist längst vorbei. Er hält dir eine Wasserflasche hin. #sprecher:erzaehler
+Trink. Mein Vater sagt, Wasser zwischen zwei Runden bringt zwölf Elo. #sprecher:victor #stimmung:laechelt
+Er hat es nachgemessen. Leider stimmt es. #sprecher:victor #stimmung:lacht
+* [Trinken]
+- Victor sieht zu Tisch eins. Dort steht schon ein Schild: Sinclair. #sprecher:erzaehler
+Spiel gut gegen sie. Richtig gut. Sie hat es verdient, dass heute jemand gut gegen sie spielt. #sprecher:victor #stimmung:nachdenklich
+Er geht, bevor du fragen kannst, was er meint. #sprecher:erzaehler
+Ambrose steht an der Bande und sieht zu, wie die Schiedsrichter die Uhren stellen. #sprecher:erzaehler
+{halbzeit >= 2:Geduld gegen Bea, ein stiller Zug gegen Marcus. Du hast nichts Neues gespielt, {held}. Du hast dich erinnert.|Geduld gegen Bea, ein stiller Zug gegen Marcus. Das sind keine Ergebnisse, {held}. Das sind Gewohnheiten. Die hast du noch.} #sprecher:ambrose #stimmung:laechelt
+Das ist im Turnier am schwersten. Sich erinnern, wenn alle laut sind. #sprecher:ambrose #stimmung:nachdenklich
+-> vorrunde_naechste
 
 === vorrunde_geschafft ===
 ~ vorrundeGeschafft = true
@@ -522,7 +563,7 @@ Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambro
 - vorrundeGeschafft:
     An der Tafel steht dein Name im Halbfinale. Darunter, mit Kreide: „Ehrlich gespielt.“ #sprecher:erzaehler
 - else:
-    An der Turniertafel steht dein Stand: {punktetext()} von 4 Punkten. Weiter geht es ab 2,5. #sprecher:erzaehler
+    An der Turniertafel steht dein Stand: {punktetext()} von 4 Punkten. Weiter geht es ab {vorrundenschwelle()}. #sprecher:erzaehler
 }
 -> END
 

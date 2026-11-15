@@ -2377,12 +2377,17 @@ Etwa 5 Minuten.
 **104. Vorrunde** · Begegnungen `capitalArena.runde1` bis `capitalArena.runde4` · H `capitalArena.meisterschaft`
 Ort `capitalArena.halle` · Bea, Marcus, Nova, Tobias. Ereignis: vier Partien aus der Grundstellung
 (Turnier, Rolle `turnier`, Stärke nach Liga R22), Wahl der Zeitklasse außer Runde 4 (Tobias, fest
-5 + 3, R16), Karten erlaubt, **keine Sprüche** (S2). Weiter mit mindestens 2,5 von 4 Punkten
-(Regelwerk, Frage F4: Sieg 1, Remis ½); wer weniger hat, spielt die verlorenen Runden noch einmal
+5 + 3, R16), Karten erlaubt, **keine Sprüche** (S2). Weiter mit mindestens 2 von 4 Punkten
+(Regelwerk, Frage F4: Sieg 1, Remis ½; Balance 15.11.2026: vorher 2,5, siehe unten); wer weniger hat, spielt die verlorenen Runden noch einmal
 (Wiedereinstieg nach R14 möglich). Runde 3 gegen Nova: Sie spielt ohne Gerät, zittert zuerst und
 spielt dann gut; nach der Partie: „Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut
 an.“ Etwa 90 Minuten (vier Partien), mit Kürzung durch Stellungsduelle möglich (Abschnitt
-„Zeitrechnung“).
+„Zeitrechnung“). Nach Runde 2 eine Pause ohne Brett (`pause_nach_runde2`): Juno zählt die Punkte,
+Slick winkt von der Tribüne, Victor bringt Wasser und meint Nova, Ambrose ruft die Lektionen ab.
+Entscheidung Balance (15.11.2026): ganze Partien statt Stellungsduelle, aber Schwelle 2 statt 2,5.
+Grund: Die Meisterschaft ist der Höhepunkt; ein Duell aus einer Vorteilsstellung passt nicht zu Bea
+(spielt auf Remis) und Tobias (die Uhr ist das Thema). Die Zeit trieben vor allem die Nachspiele
+(Einsteiger ohne Buch im Mittel über vier zusätzliche Partien), und die senkt die Schwelle.
 
 **105. Die Aussage** · `akt4.aussage` · H `capitalArena.meisterschaft`
 Ort `capitalArena.halle` (Pressetisch) · Dr. Lin, Nova, Graham Hale, Victor, Turnierleiterin. Ereignis:
@@ -2517,7 +2522,7 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 ## 34. Technikliste für den Haupt-Chat (was Akt 4 neu braucht)
 
 1. **Turniermodus** für die Landesmeisterschaft: Runden mit Punkten (Sieg 1, Remis ½), Weiterkommen
-   ab 2,5 von 4, Wiederholen verlorener Runden, Tabelle in der Halle; Stärke nach Liga (R22, Feld
+   ab 2 von 4, Wiederholen verlorener Runden, Tabelle in der Halle; Stärke nach Liga (R22, Feld
    `handlung.liga` setzen beim Betreten der Arena).
 2. **Stärkewechsel mitten in der Partie** (Halbfinale, Szene 106): nach Halbzug 40 wechselt das
    Gegnerprofil von „mit Gerät“ auf „allein, abgelenkt 1,5“; braucht einen Auslöser in der

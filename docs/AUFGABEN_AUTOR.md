@@ -1675,4 +1675,19 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Bedingungen von Apple gelten als unvereinbar mit der GPL (Stockfish, chessops). (7) Vor 1.0
       einmal auf echten Geräten spielen: iPhone mit Safari, ein älteres Android-Handy, ein Tablet,
       langsames Netz.
+- [ ] RO25. **Zur Revision: Entscheidungen vom 15.11.2026 (alle umgesetzt, Widerspruch genügt):**
+      (1) Spielzeit gemessen: etwa 28 Stunden mit allem, Hauptweg 12 bis 13 Stunden; Akt 3 und 4
+      länger als geplant, Regelwerk R40 auf die gemessenen Zeiten umgestellt. (2) Vorrunde der
+      Meisterschaft: Schwelle 2 statt 2,5 Punkte (weniger Nachspiele), nach Runde 2 eine Pause ohne
+      Brett mit Juno, Slick, Victor und Ambrose; Bea, Marcus, Tobias und Miss Odile je in einer
+      Phase eine Stufe sanfter. (3) Elf neue Momente in Pflichtpartien, in denen jemand spricht.
+      (4) Die Gegnerstärke folgt einem Leser, der im Buch besser wird (nie mehr als 200 unter
+      seiner Abenteuerwertung). (5) Neue Nebenquest „Haraldsens Studie“: Ward sitzt die Nacht über
+      einer Studie und spielt danach müder (wie Okafor und Big Joe). (6) Schach960 im Musikhaus mit
+      Uhr; Céleste und der Prototyp mit Uhr; Ambrose, Dot, Victor auf der Bergstation bewusst
+      ohne. (7) Zwischen Sams Revanche und dem Clubkampf eine kurze Pause mit Delgado und Juno.
+      (8) Jede Redezeile hat eine Stimmung; Apostroph einheitlich ' statt ’. (9) Ghost Town: Laden
+      mit Treppe zur Erinnerung 1866, Abzeichen nur noch Fund. (10) Ironwood: Gleise enden an
+      Prellböcken (der Stein kam per Laster). (11) Offen: Der südliche Ring der Weltkarte über
+      Summit City passt geometrisch nicht; Vorschlag folgt.
 

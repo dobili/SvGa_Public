@@ -468,7 +468,11 @@
       "startstellung": {
         "art": "grundstellung"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 600,
+        "zuschlag": 5
+      }
     },
     {
       "kennung": "siliconBay.clubkampf",
@@ -980,6 +984,10 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
+      "zeit": {
+        "sekunden": 600,
+        "zuschlag": 5
+      },
       "zaehltFuerApp": false,
       "variante": "schach960"
     },
@@ -994,6 +1002,10 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
+      "zeit": {
+        "sekunden": 600,
+        "zuschlag": 5
+      },
       "zaehltFuerApp": false,
       "variante": "schach960"
     },
@@ -1008,6 +1020,10 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
+      "zeit": {
+        "sekunden": 300,
+        "zuschlag": 3
+      },
       "zaehltFuerApp": false,
       "variante": "schach960"
     },
@@ -1066,6 +1082,10 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 300,
+        "zuschlag": 3
+      },
       "buchbruch": {
         "linie": [
           "e4",
@@ -1090,8 +1110,7 @@
           "Re8"
         ],
         "stufe": 2
-      },
-      "zeit": "wahl"
+      }
     },
     {
       "kennung": "bayou.hausboot",

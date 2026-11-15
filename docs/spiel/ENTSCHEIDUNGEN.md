@@ -1127,3 +1127,15 @@ Wörterbuchlauf fand keine Tippfehler (nur Umgangssprache, Komposita, englische 
 Passantensätzen). Einziger Fund: Der Apostroph stand fünfmal als ’ und sonst (53-mal, auch in der
 App) als '. Vereinheitlicht auf ' (Tomás', Dex', Probier's, Pops', d'Échecs); Widerspruch genügt,
 dann wird die Regel auf ’ umgestellt und alle 58 Stellen getauscht.
+
+## Karteneditor für den Autor (16.11.2026)
+
+Der Autor möchte kleine Platzierungsfehler selbst beheben. Der Editor läuft offline per Doppelklick
+im Browser (Chrome oder Edge am PC). Sein Paket mit den Bildern liegt nur im privaten Repository,
+weil lizenzierte Bilder (LimeZu) nicht als offene Bibliothek ins Netz dürfen. Änderungen kommen als
+Datei zurück (`editor/rueck/`), `pipeline.abenteuer.editorrueck` schreibt sie in die Szenen, baut
+die Karten und berichtet je Karte, was sich geändert hat. Daraus entstehen neue Prüfregeln. Neue
+optionale Objektfelder: `drehung` (0/90/180/270), `spiegeln`, `massstab`, `ebene` (verschiebt die
+berechnete Tiefe, statt sie fest zu setzen, damit Figuren weiter davor oder dahinter stehen).
+Mehrfachauswahl mit Strg und Duplizieren als Gruppe auf Wunsch des Autors.
+

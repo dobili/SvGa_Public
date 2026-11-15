@@ -1,3 +1,19 @@
+Stand: 16.11.2026 nachts (Haupt-Chat, Schach-Abenteuer): **Notizen, Gemini-Bilder, Karteneditor.**
+
+- Lage am Tisch (Regel 10.79) und Anordnung (10.80 bis 10.87, `pipeline.abenteuer.anordnung`): alle
+  31 Kartennotizen zu Maple Falls und Cedar Creek eingearbeitet (RO28).
+- 24 Gemini-Bilder des Autors zugeschnitten (Skripte im privaten Repo unter `werkzeuge/gemini_*`) und
+  gesetzt; Saum „fransen“ für Bodenübergänge, Regen in Port Delacroix (N2636, RO27).
+- Karteneditor (`werkzeuge/karteneditor/`, Paket im privaten Repo unter `editor/`, Anleitung
+  `docs/spiel/KARTENEDITOR.md`); Kartenbau und App verstehen `drehung`, `spiegeln`, `massstab`,
+  `ebene` (N2635).
+
+**Nächster Schritt:** Helfer „Anordnung aller Orte“ abnehmen (84 Befunde außerhalb von Akt 1,
+Bergstation mit Plattform), danach Editor-Paket neu bauen. Wenn der Autor eine Datei in
+`editor/rueck/` hochlädt: `pipeline.abenteuer.editorrueck`, Bericht auswerten, Regeln ableiten.
+Offen: Formfelder in ausrichtung/tischlage/anordnung/fahrzeuge berücksichtigen; Motelzeile (RO27),
+Fundbilder B1/B2.
+
 Stand: 15.11.2026 nachmittags (Haupt-Chat, Schach-Abenteuer): **Runde „vorarbeiten“ abgeschlossen.**
 
 - Funktionstests vom Hauptchat (20 bestanden, 3 Fehler behoben), Prüfmappe für das Tablet (offline,

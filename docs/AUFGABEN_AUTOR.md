@@ -1151,6 +1151,33 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       erreichst du nach der Ankunft (zu Fuß wie mit der Monatskarte am Kanalweg) das Südufer mit Gasthaus,
       Kai, Booten und Pumpe erst über den Steg nach Imogens Tafel: So will es die Geschichte (Herbstwartung),
       Widerspruch genügt. Rückmeldung je Ort genügt, etwa „N2634 Lockport: Boot schwebt“.
+- [ ] N2635. **Karteneditor am PC (16.11.2026):** Im privaten Repository den Ordner `editor`
+      herunterladen (auf GitHub: Code, Download ZIP, dann entpacken) und `editor/index.html` mit
+      Doppelklick in Chrome oder Edge öffnen. Links eine Karte wählen, zum Beispiel „Maple Falls –
+      Diner“. Ausprobieren: Klick wählt ein Bild, Ziehen verschiebt es (rastet auf Kacheln ein, mit
+      gedrückter Alt-Taste pixelgenau), Pfeiltasten 1 Pixel, Umschalt+Pfeil eine Kachel; Strg+Klick
+      wählt mehrere; Strg+D dupliziert (auch eine Gruppe), Entf löscht, R dreht, Spiegeln,
+      Maßstab, Ebene nach vorn oder hinten; liegen mehrere Bilder übereinander, erscheint eine
+      Auswahlliste. Rechts die Bibliothek mit Kategorien, Vorschau und Suche, Bilder per Ziehen
+      in die Karte. Oben die Schalter „Nur Umgebung“ und „Umgebung sperren“, Raster, Kollision,
+      Vorher/Nachher, Strg+Z, „?“ zeigt alle Tastenkürzel. Am Ende „Änderungen herunterladen“
+      und die Datei im privaten Repository in `editor/rueck/` hochladen; Claude baut sie ein,
+      vergleicht mit dem alten Stand und leitet daraus neue Prüfregeln ab. Ein Notizfeld „warum“
+      je Änderung hilft dabei sehr. Noch nicht möglich: Figuren und Auslöser löschen (nur
+      verschieben), die Fassungen aus dem Ordner „varianten“. Rückmeldung: „N2635 ok“ oder was
+      fehlt oder hakt.
+- [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
+      und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
+      Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg
+      (Stein mit Brett an der Fährstelle), Landstraße (Ehrlichkeitskasse am Apfelstand),
+      Zedernpfad (Nadelstreu unter den Bäumen, ausgefranste Übergänge zum Gras), Schleusentreppe
+      bei Lockport (Schleusentore, das letzte offen mit Wasserfluss in der Mitte stärker und den
+      Planken des geschlossenen Tores, Lastkahn in der Kammer), Riverton (achteckiger Pavillon),
+      Steinbruch (Stolleneingang), Fähre nach Port Delacroix (Deckhaus, Kiosk), Starlight Motel
+      am Weg nach Summit City (leerer Pool), Wards Hütte (Thermometer), Seeufer vor der Capital
+      (Seefähre, Fährhaus), Halle der Capital Arena (Fanshop, dreiflügelige Glastür), Port
+      Delacroix (Regen, nasses Pflaster, Pfützen). Sand hat jetzt überall diesen ausgefransten
+      Rand. Rückmeldung je Ort, etwa „N2636 Pavillon: Dach zu groß“.
 
 ## Teil 2: Entscheiden
 
@@ -1706,4 +1733,33 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       nicht. (9) Startkarte mit kurzen Sätzen und Downloadgröße; Münzen und Spielstärke werden
       einmal erklärt. (10) Sams Klage wartet auf die erste Lektion, sonst wäre die Nebenquest
       „Sams Dame“ verpasst (Simulation).
+- [ ] RO27. **Zwei Gemini-Bilder neu und zwei Entscheidungen zum Einbau (16.11.2026, umgesetzt,
+      Widerspruch genügt):** (1) **Motelzeile:** Bei Geminis Bild sind die Türen nur ein Viertel so
+      hoch wie die Spielfigur; damit sie passen, müsste die Zeile 56 Kacheln breit sein. Bitte neu:
+      „Pixel-Art, Draufsicht wie ein 16-bit-Rollenspiel, die Front eines einstöckigen Motels in der
+      Wüste, 7 Zimmertüren nebeneinander, bunte Türen, flaches Dach, Gesamtbild 224 × 112 Pixel,
+      jede Tür etwa 24 Pixel hoch und 12 breit, gerade von vorn, transparenter Hintergrund.“
+      (2) **Bergstation:** Geländer, Wolkenmeer und Seilrad sind zugeschnitten. Die Karte ist aber
+      ein reiner Innenraum ohne offene Plattform; Claude baut sie um, sodass die Plattform mit
+      Geländer und Blick aufs Wolkenmeer begehbar wird (Szene 88). (3) **Pool** steht am Starlight
+      Motel am Weg nach Summit City („Pool ohne Wasser“ laut Ortsblatt), nicht in Desert Springs,
+      weil dort kein Platz ist. (4) **Schleuse:** Das letzte der fünf Tore ist offen, der Lastkahn
+      liegt in der Kammer darunter. (5) Der Pavillon in Riverton ist 8 statt 10 Felder breit;
+      sein Dach ragt etwas über Weg und Ufer. (6) Die Treppenlöcher ohne Geländer und die
+      Bodenluke mit Leiter liegen bereit, sind aber nicht gesetzt. (7) Fundbilder B1 und B2
+      fehlen noch (deine Prompts vom 15.11.).
+- [ ] RO28. **Zur Revision: deine 31 Kartennotizen zu Maple Falls und Cedar Creek (16.11.2026,
+      umgesetzt, Widerspruch genügt):** Alle eingearbeitet, das Treppenloch und der Wasserfall mit
+      deinen Gemini-Bildern. Entscheidungen dabei: (1) Sitzen die Spieler links und rechts, steht die
+      Schachuhr hinter dem Brett (wie in deiner Notiz), nicht daneben. (2) Bibliothek: Die Lesetische
+      sind für zwei Bretter zu klein, deshalb je Tisch ein Brett in der Mitte. (3) Das Brett ohne
+      schwarze Dame im Clubraum ist jetzt dasselbe Clubbrett wie überall, nur mit dem Radiergummi
+      auf d8. (4) Im Zimmer steht Ambrose neben dem Schreibtisch, sonst ist das Brett nicht
+      erreichbar. (5) Unter dem Tischbein steckt sichtbar der gefaltete Pizzakarton. (6) Der
+      „Trinkbrunnen“ war ein Straßenabfalleimer, jetzt ein kleiner Treteimer am Kühlschrank. Neu
+      sind acht Prüfregeln (10.80 bis 10.87: Tisch auf Höhe der Stühle, nichts übereinander auf
+      Tischplatten, Steg über Wasser, Theke nah an der Wand, Loch im Boden beim Abgang, Häuser in
+      Menschengröße, Fußmatte vor Außentüren, keine versetzte Straße). Sie finden jeden Fall
+      deiner Notizen. In den übrigen Orten melden sie 84 ähnliche Stellen; die behebt Claude als
+      Nächstes.
 

@@ -12,7 +12,7 @@
     "t": "stein",
     "l": "platten"
   },
-  "beschreibung": "Die Innenstadt von Capital an einem Sommertag: dicht an dicht Wohnhäuser, Kaufhäuser, Läden, Post, Stadthaus und Bürohaus in drei Reihen. Oben eine schmale Gasse vor der ersten Häuserreihe, in der Mitte eine Allee mit Asphalt und Gehwegen, im Süden eine Fußgängerstraße, die im Westen zur Arena führt. Zwei Quergassen verbinden alles. Unten in der Mitte liegt ein Platz aus grauem Stein mit Kaffeekiosk in Becherform, Bushaltestelle, Bänken und zwei Bäumen; in seiner Mitte führen der alte Abgang zum stillgelegten U-Bahnhof unter einem Schild „Subway“, verschlossen mit einem Rollgitter samt Kette und Schloss; daneben ein Springer aus Kreide auf dem Pflaster und ein Aufsteller „Bald“. Links des Platzes drei Hochhäuser und ein schmales Wohnhaus, rechts ein großes Bürohaus.",
+  "beschreibung": "Die Innenstadt von Capital an einem Sommertag: dicht an dicht Wohnhäuser, Kaufhäuser, Läden, Post, Stadthaus und Bürohaus in drei Reihen. Oben eine schmale Gasse vor der ersten Häuserreihe, in der Mitte eine Allee mit Asphalt und Gehwegen, im Süden eine Fußgängerstraße, die im Westen zur Arena führt. Zwei Quergassen verbinden alles. Unten in der Mitte liegt ein Platz aus grauem Stein mit Kaffeekiosk in Becherform, Bushaltestelle, Bänken und zwei Bäumen; in seiner Mitte führen der alte Abgang zum stillgelegten U-Bahnhof unter einem Schild „Subway“, verschlossen mit einem Rollgitter samt Kette und Schloss; daneben ein Springer aus Kreide auf dem Pflaster und ein Aufsteller „Bald“. Links des Platzes drei Hochhäuser und ein schmales Wohnhaus, rechts ein großes Bürohaus. Am Nordrand der Allee wartet ein gelbes Taxi, sein Fahrer lehnt am Heck.",
   "raster": [
     "################################################################################",
     "#llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll#",
@@ -662,6 +662,14 @@
         54,
         33
       ]
+    },
+    {
+      "moebel": "ci15Taxi",
+      "feld": [
+        68,
+        32
+      ],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -844,13 +852,13 @@
       "name": "taxifahrer",
       "typ": "statist",
       "feld": [
-        72,
-        34
+        73,
+        32
       ],
       "eigenschaften": {
-        "von": "72,34",
-        "bis": "72,34",
-        "tun": "wartet am Steuer",
+        "von": "73,32",
+        "bis": "73,32",
+        "tun": "lehnt am Heck seines Taxis und wartet auf Fahrgäste",
         "wann": "tag"
       }
     },

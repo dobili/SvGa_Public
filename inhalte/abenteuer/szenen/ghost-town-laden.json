@@ -1,0 +1,186 @@
+{
+  "karte": "ghostTown.laden",
+  "datei": "karten/ghost-town-laden.json",
+  "art": "innen",
+  "wand": "holz",
+  "boden": "dielen",
+  "beschreibung": "Der Laden von Ghost Town (Gemischtwarenladen gegenüber dem Saloon, Ortsdokument 1.0 und 1.3), 14 × 12, gebaut in der Nacht 15.11.2026: Hinter der Westernfassade mit dem Schild „Store“ liegt ein einziger Verkaufsraum aus grobem Holz, staubig und seit hundertfünfzig Jahren verlassen. Die Tür liegt wie außen in der Mitte der Südwand, davor eine abgetretene Matte. Links steht quer die Ladentheke mit der alten Kasse, einer Waage und einer Petroleumlampe; dahinter an der Nordwand ein Regal mit Kram und ein Flaschenregal, in der Ecke darüber ein Spinnennetz. In der Mitte der Nordwand ein Fenster zum Hof und daneben der Kanonenofen, an dem früher die Goldgräber saßen. Hinten an der Ostwand führt die Holztreppe hinauf in das Zimmer über dem Laden (nach dem Fund des Postreiterabzeichens nachts der Weg in die Erinnerung „Die letzte Kerze, 1866“; Regel 10.76: Laden mit Wohnung, Treppe hinten, nicht im Weg zwischen Tür und Theke). Vor der Theke liegen Jutesäcke mit Mehl und Bohnen, mitten im Raum ein leeres Warengestell, unter der Treppe Fässer und Kisten, die niemand mehr abgeholt hat.",
+  "zustand": ["alt", "verwittert", "gebraucht"],
+  "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "gt14Spinnennetz",
+      "feld": [1, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "gt7Regal",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "gt7Flaschenregal",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "es7Fenster",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "es7Ofen",
+      "feld": [8, 1],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Treppe",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "gt14Theke5",
+      "feld": [1, 5],
+      "id": "theke"
+    },
+    {
+      "moebel": "cc4Kasse",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [-24, 0]
+    },
+    {
+      "moebel": "gt14Waage",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "es7Petroleumlampe",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [26, 0]
+    },
+    {
+      "moebel": "gt14SaeckeA",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "gt14SaeckeB",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "gt14RegalLeer",
+      "feld": [4, 8]
+    },
+    {
+      "moebel": "gt7Fass",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "gt7FassKlein",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "gt14Kisten",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "gt7Fussmatte",
+      "feld": [7, 10]
+    },
+    {
+      "moebel": "gt7TuerHolz",
+      "feld": [7, 11]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "ladenAusgang",
+      "feld": [7, 11]
+    },
+    {
+      "name": "treppe",
+      "feld": [10, 3],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [11, 3],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [12, 3],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [10, 4],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [11, 4],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [12, 4],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [10, 5],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [11, 5],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppe",
+      "feld": [12, 5],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    }
+  ],
+  "figuren": []
+}

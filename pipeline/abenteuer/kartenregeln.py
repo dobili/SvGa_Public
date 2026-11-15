@@ -114,8 +114,14 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
                 befunde.append(f"{name} ({art}) steht allein mitten im Raum")
         if art == "treppe":
             x0, _, x1, y1 = _felder(s)
-            if all(_gesperrt(zeilen, x, y1 + 1) for x in range(x0, x1 + 1)):
-                befunde.append(f"{name}: Treppe ohne freien Antritt unten")
+            # Ein Abgang (richtung „runter“: Öffnung mit Geländer, KARTENREGELN 10.77), dessen oberste
+            # Reihe frei ist (Maske), wird von oben betreten; eine Treppe hinauf und ein Schacht mit
+            # Geländer oben (Treppenschacht im Dachboden) von unten.
+            maske = angabe.get("maske")
+            abgang = angabe.get("richtung") == "runter" and (not maske or "." in maske[0])
+            antritt = s["y"] // K if abgang else y1 + 1
+            if all(_gesperrt(zeilen, x, antritt) for x in range(x0, x1 + 1)):
+                befunde.append(f"{name}: Treppe ohne freien Antritt {'oben' if abgang else 'unten'}")
     return befunde + pruefe_raum(szene, zeilen, gesetzt, moebel)
 
 

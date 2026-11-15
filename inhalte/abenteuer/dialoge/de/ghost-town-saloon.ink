@@ -1,9 +1,9 @@
 // Ort: Saloon in Ghost Town (Akt 4): Schwingtür, staubiger Tisch mit dem Brett, das versteckte
 // Postreiterabzeichen hinter dem Tresen (Story-Bibel 28 und 30).
 //
-// Szenen der Bibel (Abschnitt 29): der Auslöser des Flashbacks „Die letzte Kerze“ (Szene 99, das
-// Abzeichen führt in erinnerung-siedlung.ink) und 100 Die Fernpartie (Hauptquest
-// ghostTown.fernpartie, Begegnung ghostTown.fernpartie aus der Duell-Stellung von Abschnitt 35,
+// Szenen der Bibel (Abschnitt 29): der Auslöser des Flashbacks „Die letzte Kerze“ (Szene 99: nach
+// dem Abzeichen führt die Treppe im Laden in erinnerung-siedlung.ink, ghost-town-laden.ink) und
+// 100 Die Fernpartie (Hauptquest ghostTown.fernpartie, Begegnung ghostTown.fernpartie aus der Duell-Stellung von Abschnitt 35,
 // Karten gesperrt). Einstiege wie in orte.json: victor, brett, fund_abzeichen.
 //
 // Variablen: ausgangGhostTownFernpartie und hatLaterne setzt die Hülle (R42); briefGelesen setzt
@@ -155,10 +155,11 @@ In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 
 === fund_abzeichen ===
 // Kapitel 57 (Roman): In der Nacht im Saloon; im Zimmer über dem Laden hängt noch ein Fetzen
-// Rosentapete. Danach führt der Übergang in die Erinnerung (erinnerung-siedlung.kerze).
+// Rosentapete. Danach führt die Treppe im Laden in die Erinnerung (ghost-town-laden.treppe,
+// erinnerung-siedlung.kerze); das Abzeichen selbst ist nur ein Fund fürs Album.
 {
 - abzeichenGefunden:
-    Das Abzeichen glänzt in deiner Hand. Die Farben werden wieder braun. #sprecher:erzaehler
+    Hinter dem Tresen liegt nur noch Staub. Das Abzeichen trägst du bei dir. #sprecher:erzaehler
     -> END
 - not grabGesehen:
     Hinter dem Tresen ist es dunkel und staubig. Hier liegt nur Gerümpel. #sprecher:erzaehler

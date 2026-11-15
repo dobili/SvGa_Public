@@ -4878,6 +4878,12 @@
           "datei": "karten/ghost-town-saloon.json",
           "name": "ort.ghostTown.saloon",
           "innen": true
+        },
+        {
+          "kennung": "ghostTown.laden",
+          "datei": "karten/ghost-town-laden.json",
+          "name": "ort.ghostTown.laden",
+          "innen": true
         }
       ],
       "figuren": [
@@ -4946,9 +4952,33 @@
         {
           "name": "abzeichen",
           "karte": "ghostTown.saloon",
+          "art": "gegenstand",
+          "dialog": "ghost-town-saloon.fund_abzeichen"
+        },
+        {
+          "name": "ladenTuer",
+          "karte": "ghostTown.aussen",
           "art": "uebergang",
-          "dialog": "ghost-town-saloon.fund_abzeichen",
-          "wenn": "abzeichenGefunden",
+          "ziel": {
+            "karte": "ghostTown.laden",
+            "ausloeser": "ladenAusgang"
+          }
+        },
+        {
+          "name": "ladenAusgang",
+          "karte": "ghostTown.laden",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "ausloeser": "ladenTuer"
+          }
+        },
+        {
+          "name": "treppe",
+          "karte": "ghostTown.laden",
+          "art": "uebergang",
+          "dialog": "ghost-town-laden.treppe",
+          "wenn": "abzeichenGefunden und nicht kerzeGesehen",
           "ziel": {
             "karte": "erinnerungSiedlung.huette",
             "ausloeser": "rueckkehr"
@@ -5042,8 +5072,8 @@
           "art": "uebergang",
           "dialog": "erinnerung-siedlung.rueckkehr",
           "ziel": {
-            "karte": "ghostTown.saloon",
-            "ausloeser": "abzeichen"
+            "karte": "ghostTown.laden",
+            "ausloeser": "treppe"
           }
         }
       ]

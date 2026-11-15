@@ -2,7 +2,7 @@
   "karte": "capitalArena.halle",
   "datei": "karten/capital-arena-halle.json",
   "art": "innen",
-  "beschreibung": "Variante C: Die Turnierhalle mit hellen Wänden und dunklem Holzboden, festlich. Oben das Banner und die Bühne mit dem Finaltisch, links und rechts davon je eine Holztribüne an der Nordwand; die Turniertafel hängt an der Nordwand über dem Saal. Neun Tische mit Brett in drei Reihen füllen die Mitte. Links der Pressetisch, rechts der Fanshop, Pflanzen in den Ecken und vor dem Ausgang, ein Mülleimer neben der Tür.",
+  "beschreibung": "Variante C: Die Turnierhalle mit hellen Wänden und dunklem Holzboden, festlich. Oben das Banner und die Bühne mit dem Finaltisch, links und rechts davon je eine Holztribüne an der Nordwand; die Turniertafel hängt an der Nordwand über dem Saal. Neun Tische mit Brett in drei Reihen füllen die Mitte. Links der Pressetisch, rechts der Fanshop, Pflanzen in den Ecken und vor dem Ausgang, ein Mülleimer neben der Tür. Am Fanshop steht ein Verkäufer.",
   "wand": "creme",
   "boden": "holzDunkel",
   "raster": [
@@ -415,6 +415,14 @@
       "an_wand": true
     },
     {
+      "moebel": "ca7Tuer",
+      "feld": [
+        17,
+        19
+      ],
+      "an_wand": true
+    },
+    {
       "moebel": "ca9Turniertafel",
       "feld": [
         19,
@@ -460,14 +468,6 @@
         27,
         7
       ]
-    },
-    {
-      "moebel": "ca7Tuer",
-      "feld": [
-        17,
-        19
-      ],
-      "an_wand": true
     }
   ],
   "ausloeser": [
@@ -672,6 +672,20 @@
         "tun": "steht mit Weste an der Wand und passt auf",
         "wann": "immer",
         "sagt": "statist.capitalArena.halle.ordner"
+      }
+    },
+    {
+      "name": "fanverkaeufer",
+      "typ": "statist",
+      "feld": [
+        28,
+        12
+      ],
+      "eigenschaften": {
+        "von": "28,12",
+        "bis": "28,12",
+        "tun": "verkauft Schals und Trikots am Fanshop",
+        "wann": "immer"
       }
     }
   ],

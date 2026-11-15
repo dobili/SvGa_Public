@@ -583,7 +583,8 @@
       "stil": "rustikal",
       "zustand": "verwittert",
       "art": "haus",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [[3, 7]]
     },
     "gt7FassadeSheriff": {
       "quelle": "spiel/eigene/fassade_sheriff.png",
@@ -899,6 +900,80 @@
       "kollision": true,
       "stil": "rustikal",
       "zustand": "alt"
+    },
+    "gt14Theke5": {
+      "quelle": "spiel/eigene/theke_holz_laengs_5.png",
+      "lauf": "waagrecht",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "beschreibung": "Ladentheke aus Holz im Laden von Ghost Town (Karten 15.11.2026): Platte oben für Kasse und Waage, Front nach Süden zu den Kunden."
+    },
+    "gt14Waage": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Scale_Market_Stand_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt14SaeckeA": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Sack_Jute_Load_1_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "beschreibung": "Jutesäcke (Mehl, Bohnen): Ware des Ladens, deshalb am Boden (Regel 10.18)."
+    },
+    "gt14SaeckeB": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Sack_Jute_Load_2_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "beschreibung": "Jutesäcke, zweite Fassung: Ware des Ladens."
+    },
+    "gt14Kisten": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Box_Load_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "beschreibung": "Gestapelte Holzkisten mit Ware im Laden (Lager unter der Treppe)."
+    },
+    "gt14Spinnennetz": {
+      "quelle": "spiel/eigene/spinnennetz_ecke.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt oben in der Ecke an der Wand"
+    },
+    "gt14RegalLeer": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Cheese_Shelf_Empty_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "beschreibung": "Leeres Holzgestell für Ware; in der verlassenen Stadt steht es leer."
     }
   }
 }

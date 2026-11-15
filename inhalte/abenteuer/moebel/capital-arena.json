@@ -2017,6 +2017,18 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "ci15Taxi": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_11.png",
+      "lauf": "waagrecht",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links",
+      "beschreibung": "Gelbes Taxi mit Dachschild, von der Seite (fährt nach links); wartet am Rand der Allee in der Innenstadt von Capital (Gutachten 15.11.2026)."
     }
   }
 }

@@ -36,10 +36,10 @@ Spalten 12–14 vorbereitet (Erdweg endet am Viehgatter S13).
 
 Die Erinnerung „Die letzte Kerze“ (`erinnerungSiedlung`) ist keine Karte in der Gegenwart: Man gelangt
 nachts über die Treppe im Laden gegenüber dem Saloon in das Zimmer darüber (Fetzen Rosentapete,
-Bettgestell aus Eisen) und von dort in dasselbe Zimmer im Februar 1866. Gebaut ist noch der Übergang
-über das versteckte Postreiterabzeichen im Saloon (`abzeichen`, erst nach `abzeichenGefunden`) in eine
-Bretterhütte mit Rückkehr über ihre Tür (`rueckkehr`); Treppe und Zimmer im Laden fehlen (noch
-umzubauen, Entscheidung 13.11.2026). Das
+Bettgestell aus Eisen) und von dort in dasselbe Zimmer im Februar 1866. Gebaut seit 15.11.2026
+(karten3): Der Laden hat eine Innenkarte `ghostTown.laden` (14 × 12); seine Treppe (`treppe`, erst nach
+`abzeichenGefunden` und bis `kerzeGesehen`, Dialog `ghost-town-laden.treppe` mit Rosentapete und
+Bettgestell) führt in die Erinnerung, deren Tür (`rueckkehr`) zurück an die Treppe. Das
 Postreiterabzeichen bleibt ein Fund fürs Album, löst die Erinnerung aber nicht mehr aus. Sepia gilt nur als
 Tönung der Szene (Bibel 28, Weltbeschreibung 5.13); die Karten selbst sind farbig gezeichnet.
 
@@ -103,8 +103,9 @@ zu sehen (nur zu hören: Pferd, Hufe; gebaut ist der Postreiter an der Tür, noc
 | staubstrasse `weiterGhost` (Ostrand, Reihen 14–15)         | aussen `wegPinewood` (Westrand, Spalte 0, Reihen 21–22; Ankunft (1, 22)) | zwei Felder auf beiden Seiten (Schotterpiste, mittel-4); die Front Street wird am Rand von drei auf zwei Felder schmaler                   |
 | aussen `wegCapital` (Ostrand, Spalte 55, Reihen 21–22)     | seeufer `zurueckGhost` (Westrand, Reihen 14–15)                          | `wenn: fernpartieGespielt`; zwei Felder Erdweg auf beiden Seiten (mittel-1)                                                                |
 | aussen `saloonTuer` (27, 20), Schwingtür in der Südfassade | saloon `saloonAusgang` (10, 13); Ankunft (10, 12)                        | Südfassade ↔ Südwand, Tür bei 50 %                                                                                                         |
-| saloon `abzeichen` (unter der Treppe)                      | huette `ankunft` (6, 8)                                                  | Erinnerung, `wenn: abzeichenGefunden` (gebaut; der Zugang führt künftig über die Treppe im Laden, noch umzubauen, Entscheidung 13.11.2026) |
-| huette `rueckkehr` (6, 9), Tür der Hütte                   | saloon `abzeichen`                                                       | zurück in die Gegenwart                                                                                                                    |
+| aussen `ladenTuer` (4, 20), Tür der Ladenfassade           | laden `ladenAusgang` (7, 11); Ankunft (7, 10)                            | Südfassade (Tür Spalte 4 von 7) ↔ Südwand Spalte 7 von 14, Holztür                                                                         |
+| laden `treppe` (10–12, 3–5), Treppe an der Ostwand hinten  | huette `rueckkehr` (6, 9); Ankunft (6, 8)                                | Erinnerung, `wenn: abzeichenGefunden und nicht kerzeGesehen`, Dialog `ghost-town-laden.treppe`; das Abzeichen (`abzeichen`) ist nur ein Fund |
+| huette `rueckkehr` (6, 9), Tür zur Treppe                  | laden `treppe`                                                           | zurück in die Gegenwart                                                                                                                    |
 | (später) Q4 Alte Minenstraße                               | aussen Südrand, vier Felder Schotter                                     | Runde 6: eigene Karte; das Viehgatter S13 steht am Ostrand von Crossroads (mittel-3)                                                       |
 
 ## 2. Ortsbild
@@ -194,7 +195,7 @@ für die Bruchkante (Reihen 0–4). **Grundtönung** Mittag im Hochsommer; Sepia
 | Gegenstand                                                                                                                                                                       | Feld (links oben) | Ausrichtung  | Material, Stil  | Zustand    | Zweck                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------ | --------------- | ---------- | ---------------------------------------------------------------------------------------------- |
 | Ortsschild „Gold Hill“ (entfällt, die Stadt hat kein Schild; noch umzubauen, Entscheidung 13.11.2026)                                                                            | (4, 18)           | zur Straße   | Holz, ländlich  | verwittert | G1                                                                                             |
-| Laden mit Veranda                                                                                                                                                                | (3, 10)           | Tür Süd      | Holz            | verwittert | Kulisse; für Szene 99 Tür, Treppe und Zimmer darüber (noch umzubauen, Entscheidung 13.11.2026) |
+| Laden mit Veranda                                                                                                                                                                | (3, 10)           | Tür Süd      | Holz            | verwittert | `ladenTuer` (4, 20); innen Laden mit Treppe (Szene 99) |
 | Schmiede                                                                                                                                                                         | (15, 10)          | Tür Süd      | Holz, Eisen     | verwittert | Kulisse, Amboss davor                                                                          |
 | Saloon                                                                                                                                                                           | (22, 8)           | Tür (27, 20) | Holz            | verwittert | `saloonTuer`                                                                                   |
 | Sheriffbüro                                                                                                                                                                      | (35, 11)          | Tür Süd      | Holz            | verwittert | Kulisse                                                                                        |
@@ -425,3 +426,18 @@ Gutachten `docs/spiel/auftraege/gutachten/ghost-town.md`.
   Brett und Kerze bleiben. Offen: Zugang über die Treppe im Laden und eine Figur für Gideon (das
   Bild ist noch der Postreiter).
 - **Goldmine:** Türstock und Tageslicht am Ausgang (10.77).
+
+## Laden (karten3, 15.11.2026)
+
+- **`ghostTown.laden`, 14 × 12** (Fassade 7 breit, mittel nach 10.75: bis doppelt so breit): eine
+  Verkaufsstube aus grobem Holz. Tür Mitte Südwand (7, 11) wie außen (Spalte 4 von 7), Matte davor.
+  Links die Ladentheke (1–5, 5–6) mit Kasse, Waage und Petroleumlampe, dahinter an der Nordwand Regal
+  und Flaschenregal, Spinnennetz in der Ecke; Fenster und Kanonenofen an der Nordwand; hinten an der
+  Ostwand die Treppe hinauf (10–12, 2–5; 10.76: Laden mit Wohnung, Treppe hinten, nicht zwischen
+  Tür und Theke). Jutesäcke vor der Theke, ein leeres Warengestell, Fässer und Kisten unter der
+  Treppe. Keine Figur (die Stadt ist leer).
+- Außen liegt `ladenTuer` auf dem Bretterweg vor der Tür der Fassade (`gt7FassadeLaden` mit
+  `tuer` [3, 7]), in Grundkarte und Zustand `goldmineOffen`.
+- Offen: Die Tür der Erinnerung liegt in der Südwand (Gideon in der Tür), die Treppe im Laden an der
+  Ostwand; eine Erinnerung ist eine Reise in der Zeit (10.77 prüft dort keine Lage), passender wäre
+  oben eine Tür in der Nordostecke.

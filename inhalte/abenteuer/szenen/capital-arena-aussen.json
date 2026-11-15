@@ -11,7 +11,7 @@
     "t": "stein",
     "l": "platten"
   },
-  "beschreibung": "Die Capital Arena an einem langen Sommerabend (Szenen 103 und 109), mitten in der Stadt. Der historische Prachtbau mit Kuppeln und Glasdach steht in der Mitte, eine breite Freitreppe führt zum Eingang; dort oben sitzt {held} nach dem Finale. Links und rechts der Treppe wehen Fahnen, auf dem gepflasterten Vorplatz plätschert ein Brunnen in der Achse der Treppe, links ein Hotdog-Wagen, rechts ein Limonadenwagen, Bänke und Laternen. Links der Arena zwei Häuserreihen an einer Querstraße: Post, Kaufhaus, Wohnhäuser, dahinter die Feuerwache und ein Hochhaus; rechts eine Wache, ein Kaufhaus, Wohnhaus und Laden, dahinter das große Polizeirevier. Südlich des Platzes eine Reihe Läden, Märkte, Eisenwarenhandlungen und Stadthäuser mit zwei Gassen hinunter zur Fußgängerstraße am Südrand. Am Westrand kommt der Weg vom Leuchtturm an.",
+  "beschreibung": "Die Capital Arena an einem langen Sommerabend (Szenen 103 und 109), mitten in der Stadt. Der historische Prachtbau mit Kuppeln und Glasdach steht in der Mitte, eine breite Freitreppe führt zum Eingang; dort oben sitzt {held} nach dem Finale. Links und rechts der Treppe wehen Fahnen, auf dem gepflasterten Vorplatz plätschert ein Brunnen in der Achse der Treppe, links ein Hotdog-Wagen, rechts ein Limonadenwagen, Bänke und Laternen. Links der Arena zwei Häuserreihen an einer Querstraße: Post, Kaufhaus, Wohnhäuser, dahinter die Feuerwache und ein Hochhaus; rechts eine Wache, ein Kaufhaus, Wohnhaus und Laden, dahinter das große Polizeirevier. Südlich des Platzes eine Reihe Läden, Märkte, Eisenwarenhandlungen und Stadthäuser mit zwei Gassen hinunter zur Fußgängerstraße am Südrand. Am Westrand kommt der Weg vom Leuchtturm an. Ein Zebrastreifen führt in der Achse von Brunnen und Freitreppe über die Straße, ein Polizist regelt dort den Verkehr; am Limonadenwagen steht die Verkäuferin (Gutachten 15.11.2026).",
   "raster": [
     "################################################################################",
     "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
@@ -541,6 +541,20 @@
         76,
         16
       ]
+    },
+    {
+      "moebel": "mf12Zebrastreifen",
+      "feld": [
+        38,
+        36
+      ]
+    },
+    {
+      "moebel": "mf12Zebrastreifen",
+      "feld": [
+        40,
+        36
+      ]
     }
   ],
   "ausloeser": [
@@ -660,13 +674,13 @@
       "name": "reporterin",
       "typ": "statist",
       "feld": [
-        44,
-        35
+        50,
+        43
       ],
       "eigenschaften": {
-        "von": "44,37",
-        "bis": "50,37",
-        "tun": "filmt die Freitreppe",
+        "von": "48,43",
+        "bis": "52,43",
+        "tun": "filmt vom Platz aus die Freitreppe",
         "wann": "tag"
       }
     },
@@ -674,13 +688,13 @@
       "name": "polizist",
       "typ": "statist",
       "feld": [
-        70,
-        57
+        36,
+        39
       ],
       "eigenschaften": {
-        "von": "70,57",
-        "bis": "70,57",
-        "tun": "regelt den Verkehr vor dem Platz",
+        "von": "36,39",
+        "bis": "36,39",
+        "tun": "regelt den Verkehr am Zebrastreifen vor der Freitreppe",
         "wann": "morgen"
       }
     },
@@ -688,13 +702,13 @@
       "name": "eisverkaeuferin",
       "typ": "statist",
       "feld": [
-        48,
-        45
+        65,
+        41
       ],
       "eigenschaften": {
-        "von": "48,45",
-        "bis": "48,45",
-        "tun": "verkauft Eis aus einer Kühlbox",
+        "von": "65,41",
+        "bis": "65,41",
+        "tun": "verkauft Eis und Limonade am Wagen",
         "wann": "tag",
         "sagt": "statist.capitalArena.aussen.eisverkaeuferin"
       }

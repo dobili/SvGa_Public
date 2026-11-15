@@ -855,3 +855,12 @@ Gutachten `ironwood-aussen-3.md`, gilt für alle drei Zustände (Grundfassung, v
 - **Nicht geändert:** Befunde 4 bis 7 (Schornsteine, Kantinengebäude als Werkshalle, Automaten im Hof, zwei
   Läden mit gleichem Schild) standen nicht im Auftrag. Das Gebäude ist die Werkskantine mit Tür, kein
   Hallenbild im Paket ist so groß.
+
+## Gleisende im Osten (karten3, 15.11.2026)
+
+Die beiden Gleise (Reihen 49–52) liefen bis an den Ostrand; dort liegt im Weltpuzzle die Grasfläche
+über der Bruchkante des Steinbruchs, eine Gleistrasse gibt es dort nicht. Entscheidung (Empfehlung
+aus FORTSCHRITT, Widerspruch genügt): Die Gleise sind Abstellgleise des Güterbahnhofs und enden auch
+im Osten an zwei Prellböcken (`cc8PrellbockQuerRechts` bei (76, 48) und (76, 50)), dahinter Busch und
+Hecke (77–78, 49–52). Zum Steinbruch führt nur der Steinbruchweg (Reihen 57–58); der Stein kam früher
+per Laster in die Stadt. Gilt für Grundkarte und beide Zustände (`-vermietet`, `-meisterschaft`).

@@ -627,6 +627,10 @@
     {
       "name": "amboss",
       "feld": [11, 20]
+    },
+    {
+      "name": "ladenTuer",
+      "feld": [4, 20]
     }
   ],
   "figuren": [

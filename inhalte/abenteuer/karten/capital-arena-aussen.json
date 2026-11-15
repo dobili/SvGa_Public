@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 91,
+ "nextobjectid": 93,
  "layers": [
   {
    "id": 1,
@@ -14649,8 +14649,8 @@
      "id": 15,
      "name": "reporterin",
      "type": "statist",
-     "x": 704,
-     "y": 560,
+     "x": 800,
+     "y": 688,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14659,17 +14659,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "44,37"
+       "value": "48,43"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "50,37"
+       "value": "52,43"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "filmt die Freitreppe"
+       "value": "filmt vom Platz aus die Freitreppe"
       },
       {
        "name": "wann",
@@ -14682,8 +14682,8 @@
      "id": 16,
      "name": "polizist",
      "type": "statist",
-     "x": 1120,
-     "y": 912,
+     "x": 576,
+     "y": 624,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14692,17 +14692,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "70,57"
+       "value": "36,39"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "70,57"
+       "value": "36,39"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "regelt den Verkehr vor dem Platz"
+       "value": "regelt den Verkehr am Zebrastreifen vor der Freitreppe"
       },
       {
        "name": "wann",
@@ -14715,8 +14715,8 @@
      "id": 17,
      "name": "eisverkaeuferin",
      "type": "statist",
-     "x": 768,
-     "y": 720,
+     "x": 1040,
+     "y": 656,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14725,17 +14725,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "48,45"
+       "value": "65,41"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "48,45"
+       "value": "65,41"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "verkauft Eis aus einer Kühlbox"
+       "value": "verkauft Eis und Limonade am Wagen"
       },
       {
        "name": "wann",
@@ -16610,6 +16610,52 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "mf12Zebrastreifen",
+     "type": "moebel",
+     "x": 608,
+     "y": 576,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 92,
+     "name": "mf12Zebrastreifen",
+     "type": "moebel",
+     "x": 640,
+     "y": 576,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

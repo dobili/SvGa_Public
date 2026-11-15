@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 97,
+ "nextobjectid": 98,
  "layers": [
   {
    "id": 1,
@@ -14854,8 +14854,8 @@
      "id": 16,
      "name": "taxifahrer",
      "type": "statist",
-     "x": 1152,
-     "y": 544,
+     "x": 1168,
+     "y": 512,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14864,17 +14864,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "72,34"
+       "value": "73,32"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "72,34"
+       "value": "73,32"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "wartet am Steuer"
+       "value": "lehnt am Heck seines Taxis und wartet auf Fahrgäste"
       },
       {
        "name": "wann",
@@ -16780,6 +16780,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 97,
+     "name": "ci15Taxi",
+     "type": "moebel",
+     "x": 1088,
+     "y": 512,
+     "width": 80,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 552
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

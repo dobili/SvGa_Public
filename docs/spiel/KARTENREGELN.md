@@ -1194,7 +1194,9 @@ Befund „Tischlage:“; jeder Befund nennt den passenden `versatz`.
 - **Brett:** Liegt ganz auf der Platte; n Bretter teilen sie längs in n gleiche Plätze, jedes liegt
   mittig auf seinem (höchstens 2 Pixel daneben). Die Regel „auf“ des Kartenbauers setzt den Fuß auf
   drei Fünftel der Bildhöhe; das ist auf den meisten Tischen zu hoch, der `versatz` gleicht es aus.
-- **Uhr:** Seitlich direkt neben einem Brett (gleiche Höhe, höchstens 3 Pixel Lücke), auf der Platte.
+- **Uhr:** Direkt neben einem Brett (höchstens 3 Pixel Lücke), auf der Platte: seitlich auf gleicher
+  Höhe oder davor bzw. dahinter in derselben Spalte. Welche Seite für die Spieler „neben“ ist, hängt
+  davon ab, wo sie sitzen; das regelt 10.80.
 - **Hocker:** Direkt an Tisch, Tresen oder Theke: vorn an der Vorderkante (bei Tischen mit Beinen
   höchstens 4 Pixel unter der Platte), hinten mit dem Fuß hinter der Platte, seitlich höchstens
   3 Pixel weg.
@@ -1204,3 +1206,48 @@ Befund „Tischlage:“; jeder Befund nennt den passenden `versatz`.
   Kartenbau prüft Hocker und Stühle deshalb nur, wenn das Paket neben dem Repository liegt.
 - Sitzt oder steht eine Figur auf dem Stuhlfeld (Figuren stehen auf Kachelmitten), wird der Tisch
   verschoben, nicht der Stuhl.
+
+### 10.80 bis 10.87 Anordnung (Kartennotizen des Autors zu Akt 1, 15.11.2026)
+
+Aus den 31 Kartennotizen zu Maple Falls und Cedar Creek. Prüfung:
+`python -m pipeline.abenteuer.anordnung [--ort KENNUNG]` (`pipeline/abenteuer/anordnung.py`), im
+Kartenbau als Hinweis „Anordnung:“, bis alle Orte nachgezogen sind; für Maple Falls und Cedar Creek
+wacht `pipeline/tests/test_abenteuer_anordnung.py`. Gemessen wird die deckende Fläche der Bilder.
+
+80. **Tisch und Spieler** (Notizen: „Tisch nicht mittig zwischen Stühlen“, Mrs. Calloways Veranda;
+    „Jetzt steht die Uhr genau vorm Brett aus der Perspektive eines der Stühle“, Clubraum). Stehen
+    links und rechts eines Tischs Stühle, die zu ihm schauen, beginnt die Tischplatte auf Höhe der
+    Lehnen (± 10 Pixel, üblich sind 7), und die Schachuhr liegt vor oder hinter dem Brett, nie
+    zwischen Brett und Spieler. Waagrechte Mitte von Tisch und Brett regelt 10.79.
+81. **Nichts übereinander auf einer Platte** (Notiz: „Auf dem Asset des Tischs liegt schon ein Buch,
+    jetzt das Brett auf dem Buch“). Was auf derselben Platte liegt, überdeckt sich nicht, und nichts
+    liegt auf dem, was im Tischbild schon gezeichnet ist (Liste `BELEGT`, etwa der grüne Schreibtisch
+    mit Buch und Flasche; leere Fassung `mf14SchreibtischLeer`).
+82. **Steg über Wasser** (Notiz: „Das Stegasset hat Wasser drunter, das Asset steht aber teilweise auf
+    dem Gras“). Ein Steg liegt über Wasser oder Brückenboden; ein Bild mit eingemaltem Wasser (mehr als
+    ein Zehntel wasserblaue Pixel) liegt ganz über Wasser. Eine Brücke darf auch über eine Schlucht
+    führen. Für Stege am Ufer gibt es Fassungen ohne eingemaltes Wasser (`mf14StegMorsch`).
+83. **Theke an der Wand** (Notizen Diner: „Tresen näher an die Wand“, „Zu weit weg vom Tresen“).
+    Hinter einer Theke, an der Hocker stehen, liegt höchstens ein Gang von zwei Reihen bis zur
+    Rückwand. Sperrt eine Theke im Bild mehr Reihen, als sie zeigt, bekommt sie eine `maske`, damit
+    die Hocker direkt an der Vorderkante stehen können (Hocker selbst: 10.79).
+84. **Loch im Boden** (Notiz: „Es fehlt das Loch im Boden für die Treppe“, Zimmer und Dachboden). Ein
+    Aufgang nach unten auf einer oberen Karte (Ebene nach 10.77) zeigt eine Öffnung im Boden mit
+    Kante oder Geländer; das Bild trägt `bodenoeffnung: true`. Stufen auf dem Boden mit Geländer
+    darum genügen nicht.
+85. **Häuser in Menschengröße** (Notiz: „Sofern das keine Hundehütte ist, ist das Haus zu klein“;
+    Regel 10.66). Ein Wohnhaus draußen ist mindestens 5 × 5 Kacheln groß (deckend gemessen, eine
+    halbe Kachel Spiel). Ausgenommen: Schuppen, Kiosk, Garage, Hütte, Gartenhaus, Zelt, Stand,
+    Wartehaus, Stall, Anbau und Häuser einer geschlossenen Häuserzeile. Warum 10.66 durchrutschte: Sie
+    war nur eine Regel für das Gutachten, ohne Prüfung im Werkzeug, und das kleine Haus mit grünem
+    Dach kam als Ersatz für einen flachen Schuppen (R002) in die Birch Lane.
+86. **Fußmatte vor jeder Tür** (Notiz: „Die zweite Fußmatte fehlt“, Diner). Innen liegt vor jedem Feld
+    einer Tür in der Südwand eine Fußmatte, bei Doppeltüren also zwei.
+87. **Gerade Straßen** (Notiz: „Die Straße ist teilweise nach unten versetzt, nicht gerade“, Cedar
+    Creek). Eine Kante eines Straßenzugs (Asphalt, Landstraße) springt nicht um eine Kachel zur Seite
+    und nach höchstens 20 Kacheln zurück. Kurven und Straßen, die breiter werden, sind kein Befund.
+
+Dazu aus denselben Notizen, ohne eigene Prüfung (Gutachten, KARTENPRUEFUNG): Regale und Schränke mit
+Blick nach Süden stehen mit dem Rücken an der Nordwand, nicht eine Kachel davor; ein Gegenstand auf
+einer Bank liegt auf der Sitzfläche, nicht über der Lehne; ein Weg endet an einem Ziel, nicht an
+Büschen; ein Teich hat ein rundes Ufer ohne Treppenkante; unter einer Durchreiche bleibt Platz.

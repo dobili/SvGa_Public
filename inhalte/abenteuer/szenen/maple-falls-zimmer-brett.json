@@ -2,11 +2,11 @@
   "karte": "mapleFalls.zimmer",
   "datei": "karten/maple-falls-zimmer-brett.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach dem ersten Abend (ersterAbendGesehen, Roman Kap. 4) liegt das alte Brett auf dem Schreibtisch, mit der Stellung, die niemand anrührt; dort spricht der Held nachts und an den Lernabenden mit Ambrose (Auslöser brettSchreibtisch, Ink maple-falls-dachboden.ambrose). Das Zimmer des Helden im Obergeschoss des Whitlock-Hauses (Roman Kap. 4: „Zimmer des Helden mit Schreibtisch für das Brett“; T15 Fensterbank), 16 × 12. Das Haus außen ist eine Villa aus Holz, 9 breit und 2 Geschosse hoch; der Aufgang liegt nach KARTENREGELN 10.76 hinten links hinter der Haustür, auf jeder Geschosskarte an derselben Stelle. Deshalb liegt links der Treppenabsatz: An der Nordwand führt die steile Holztreppe weiter zum Dachboden (neunte Stufe knarrt); direkt davor liegt die Öffnung mit Geländer, durch die die Treppe aus dem Erdgeschoss heraufkommt. Rechts das Zimmer mit Dielen und cremefarbenen Wänden: an der Nordwand ein Bücherregal, das Fenster zur Birch Lane und darunter das Fensterbrett, auf dem sich im Lauf der Reise die Funde sammeln (zuerst ein Springer mit abgestoßener Mähne). Daneben eine Landkarte und rechts in der Ecke der Schreibtisch, auf dem später das alte Brett liegt, mit einem Stuhl davor. An der Ostwand das Bett mit dem Kopfende zur Wand, davor ein runder Teppich, über dem Kopfende eine Kommode mit Tischlampe. An der Nordwand zwischen Treppenabsatz und Bücherregal der Kleiderschrank mit dem Rücken zur Wand, vorn stehen noch Umzugskartons, in der Ecke eine Pflanze. Laufwege: von der Treppe nach rechts zur Fensterbank, zum Schreibtisch und zum Bett; die Treppe zum Dachboden erreicht man vom Absatz aus. Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
+  "beschreibung": "Zustand: nach dem ersten Abend (ersterAbendGesehen, Roman Kap. 4) liegt das alte Brett auf dem Schreibtisch, mit der Stellung, die niemand anrührt; dort spricht der Held nachts und an den Lernabenden mit Ambrose (Auslöser brettSchreibtisch, Ink maple-falls-dachboden.ambrose). Das Zimmer des Helden im Obergeschoss des Whitlock-Hauses (Roman Kap. 4: „Zimmer des Helden mit Schreibtisch für das Brett“; T15 Fensterbank), 16 × 12. Das Haus außen ist eine Villa aus Holz, 9 breit und 2 Geschosse hoch; der Aufgang liegt nach KARTENREGELN 10.76 hinten links hinter der Haustür, auf jeder Geschosskarte an derselben Stelle. Deshalb liegt links der Treppenabsatz: An der Nordwand führt die steile Holztreppe weiter zum Dachboden (neunte Stufe knarrt); direkt davor liegt die Öffnung mit Geländer, durch die die Treppe aus dem Erdgeschoss heraufkommt. Rechts das Zimmer mit Dielen und cremefarbenen Wänden: an der Nordwand ein Bücherregal, das Fenster zur Birch Lane und darunter das Fensterbrett, auf dem sich im Lauf der Reise die Funde sammeln (zuerst ein Springer mit abgestoßener Mähne). Daneben eine Landkarte und rechts in der Ecke der leere grüne Schreibtisch, auf dem später das alte Brett allein liegt, mit dem Schulstuhl davor, der zum Tisch schaut. An der Ostwand das Bett mit dem Kopfende zur Wand, darüber in der Ecke die Kommode mit Tischlampe. In der Mitte die Leseecke: ein großer Teppich, ein alter Sessel und eine Stehlampe. An der Nordwand zwischen Treppenabsatz und Bücherregal der Kleiderschrank mit dem Rücken zur Wand, vorn stehen noch Umzugskartons, in der Ecke eine Pflanze. Laufwege: von der Treppe nach rechts zur Fensterbank, zum Schreibtisch und zum Bett; die Treppe zum Dachboden erreicht man vom Absatz aus. Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
   "wand": "creme",
   "boden": "holzHell",
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["modern", "klassisch", "rustikal", "kinder"],
+  "stil": ["modern", "klassisch", "rustikal", "kinder", "schule"],
   "raster": [
     "################",
     "################",
@@ -53,14 +53,15 @@
       "an_wand": true
     },
     {
-      "moebel": "cc3Schreibtisch",
+      "moebel": "mf14SchreibtischLeer",
       "feld": [13, 2],
       "id": "schreibtisch"
     },
     {
-      "moebel": "mf3StuhlHellRechts",
-      "feld": [12, 3],
-      "zu": "schreibtisch"
+      "moebel": "mf8SchulstuhlHinten",
+      "feld": [13, 3],
+      "zu": "schreibtisch",
+      "versatz": [8, 0]
     },
     {
       "moebel": "rv5BettKopfRechts",
@@ -68,8 +69,16 @@
       "id": "bett"
     },
     {
-      "moebel": "mf7TeppichQuadrat",
-      "feld": [9, 6]
+      "moebel": "wzTeppich",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "mf7SesselAlt",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "mf2Stehlampe",
+      "feld": [5, 4]
     },
     {
       "moebel": "mf4KartonStapel",
@@ -89,8 +98,9 @@
     },
     {
       "moebel": "mf8Kommode",
-      "feld": [13, 5],
-      "id": "kommode"
+      "feld": [13, 6],
+      "id": "kommode",
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf7Tischlampe",
@@ -98,8 +108,7 @@
     },
     {
       "moebel": "mf3BrettKlein",
-      "auf": "schreibtisch",
-      "versatz": [-6, 0]
+      "auf": "schreibtisch"
     },
     {
       "moebel": "mf2Kleiderschrank",
@@ -164,6 +173,11 @@
       "feld": [2, 7]
     }
   ],
-  "figuren": [{ "name": "ambrose", "feld": [12, 4], "sitzt": "rechts" }],
+  "figuren": [
+    {
+      "name": "ambrose",
+      "feld": [11, 3]
+    }
+  ],
   "zustand_der_karte": "ersterAbendGesehen"
 }

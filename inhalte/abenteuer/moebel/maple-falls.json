@@ -1636,7 +1636,9 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske": ["..", "##", ".."],
+      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83)."
     },
     "mf5ThekeMitte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_92.png",
@@ -1646,7 +1648,9 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske": [".", "#", "."],
+      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83)."
     },
     "mf5ThekeRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_93.png",
@@ -1656,7 +1660,9 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske": [".", "#", "."],
+      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83)."
     },
     "mf5Hocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_107.png",
@@ -3928,7 +3934,8 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "kleiner Tisch mit Schachbrett zwischen Mrs. Calloways Stühlen (Stufe D, Ink calloway_d)"
+      "hinweis": "kleiner Tisch mit Schachbrett zwischen Mrs. Calloways Stühlen (Stufe D, Ink calloway_d)",
+      "platte": [1, 1, 15, 11]
     },
     "mf12Treppenschacht": {
       "quelle": "spiel/eigene/treppenschacht.png",
@@ -3944,23 +3951,23 @@
     },
     "mf12BrettDecke": {
       "quelle": "spiel/eigene/brett_decke.png",
-      "breite": 24,
-      "hoehe": 16,
+      "breite": 22,
+      "hoehe": 14,
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
       "stil": "klassisch",
-      "hinweis": "das alte Brett unter der staubfreien Decke (Roman Kap. 2); Bild aus bildwuensche/brett_decke.py"
+      "hinweis": "das alte Brett unter der staubfreien Decke (Roman Kap. 2), mit Brettstirn, überhängendem Tuch und Schatten (Kartennotiz 15.11.2026: „flach wie Abziehbild“); Bild aus bildwuensche/brett_decke.py"
     },
     "mf12BrettRadiergummi": {
-      "quelle": "spiel/eigene/brett_radiergummi.png",
-      "breite": 16,
-      "hoehe": 12,
+      "quelle": "spiel/eigene/schachbrett_klein_radiergummi.png",
+      "breite": 12,
+      "hoehe": 9,
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule",
-      "hinweis": "Clubbrett ohne schwarze Dame, Radiergummi auf d8 (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py"
+      "hinweis": "dasselbe Clubbrett wie auf den anderen Tischen, auf d8 der Radiergummi statt der schwarzen Dame (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py"
     },
     "mf12SchaukelstuhlSchraeg": {
       "quelle": "spiel/eigene/schaukelstuhl_schraeg.png",
@@ -4015,6 +4022,106 @@
       "stil": "klassisch",
       "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
       "blick": "unten"
+    },
+    "mf14SchreibtischLeer": {
+      "quelle": "spiel/eigene/schreibtisch_leer.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "hinweis": "der grüne Schreibtisch des Pakets ohne Buch und Flasche, damit das Brett allein darauf liegt; Bild aus bildwuensche/akt1_karten.py",
+      "platte": [3, 10, 29, 23]
+    },
+    "mf14StegMorsch": {
+      "quelle": "spiel/eigene/steg_morsch_ohne_wasser.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "steg",
+      "lauf": "senkrecht",
+      "zustand": "alt",
+      "stil": "natur",
+      "hinweis": "der morsche Steg des Pakets ohne eingemaltes Wasser, damit er am Ufer ansetzen kann; Bild aus bildwuensche/akt1_karten.py"
+    },
+    "mf14TellerEssen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_389.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "sichtbar_breite": 13,
+      "hinweis": "Teller mit Essen (Diner)"
+    },
+    "mf14TellerPfannkuchen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_385.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "sichtbar_breite": 12,
+      "hinweis": "Teller mit Pfannkuchen (Diner)"
+    },
+    "mf14TellerKuchen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_401.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "sichtbar_breite": 12,
+      "hinweis": "Teller mit einem Stück Kuchen (Diner)"
+    },
+    "mf14Kaffeetasse": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_395.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "sichtbar_breite": 9,
+      "hinweis": "Kaffeebecher (Diner)"
+    },
+    "mf14Glas": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_396.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "sichtbar_breite": 5,
+      "hinweis": "Glas mit Wasser (Diner)"
+    },
+    "mf14Muelleimer": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_110.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "kleiner Treteimer für Küche oder Bad (ersetzt in der Küche den Straßenabfalleimer, Kartennotiz 15.11.2026: „Ist das ein Trinkbrunnen? Ein Pissoir?“)"
+    },
+    "mf14TischbeinPizzakarton": {
+      "quelle": "spiel/eigene/tischbein_pizzakarton.png",
+      "breite": 10,
+      "hoehe": 6,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "liegt unter dem Tischbein; das Feld sperrt der Tisch selbst",
+      "hinweis": "gefalteter Pizzakarton als Keil unter dem rechten vorderen Bein des runden Esstischs, mit dem Bein im Bild (Ink tisch_pizzakarton); Tisch an Feld (x, y): Bild an (x + 1, y + 1) mit Versatz [3, 11] und vorn; Bild aus bildwuensche/akt1_karten.py"
     }
   }
 }

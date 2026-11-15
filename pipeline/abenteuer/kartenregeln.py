@@ -56,8 +56,8 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
     eintraege = {
         f"{e['moebel']}@{i}" if "id" not in e else e["id"]: e for i, e in enumerate(szene.get("objekte", []))
     }
-    figurfelder = {tuple(f["feld"]) for f in szene.get("figuren", [])}
-    figurfelder |= {(x, y - 1) for x, y in figurfelder}
+    fuesse = {tuple(f["feld"]) for f in szene.get("figuren", [])}
+    figurfelder = fuesse | {(x, y - 1) for x, y in fuesse}
     # Eine sitzende Figur (R020) sitzt auf ihrem Stuhl; der darf sie (Beine) überdecken.
     sitzend = {tuple(f["feld"]) for f in szene.get("figuren", []) if f.get("sitzt")}
     sitzend |= {(x, y - 1) for x, y in sitzend}
@@ -80,7 +80,12 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             nah = [
                 f
                 for f in figurfelder
-                if x0 <= f[0] <= x1 and y0 <= f[1] <= y1 and not (sitz and f in sitzend)
+                if x0 <= f[0] <= x1
+                and y0 <= f[1] <= y1
+                and not (sitz and f in sitzend)
+                # Steht die Figur unter dem Möbel (Füße tiefer als seine unterste Reihe), wird sie
+                # davor gezeichnet; nur ihr Kopf ragt ins Bild (Carla vor dem Zaun, vor der Schule).
+                and not (f not in fuesse and (f[0], f[1] + 1) in fuesse and f[1] + 1 > y1)
             ]
             if nah:
                 befunde.append(f"{name} überdeckt eine Figur bei {nah[0]}")

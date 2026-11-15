@@ -16,7 +16,8 @@ Regeln (keine nennt eine Karte):
    Ein solcher Tisch ohne ``platte`` ist ein Befund (die Prüfung kann ihn sonst nicht messen).
 2. Brett mittig: Liegen n Bretter auf einer Platte, teilt die Platte sich längs in n gleiche Plätze;
    jedes Brett liegt (allein oder zusammen mit seiner Uhr) höchstens TOLERANZ Pixel neben der Mitte.
-3. Uhr: Eine Schachuhr liegt seitlich direkt neben einem Brett (gleiche Höhe, Lücke 0 bis LUECKE_UHR).
+3. Uhr: Eine Schachuhr liegt direkt neben einem Brett (Lücke 0 bis LUECKE_UHR): seitlich auf gleicher
+   Höhe oder davor bzw. dahinter in derselben Spalte (welche Seite, prüft anordnung.py mit den Stühlen).
 4. Hocker: Ein Hocker an Tisch oder Theke steht direkt daran (vorn an der Vorderkante, hinten verdeckt
    der Tisch den Fuß, seitlich höchstens LUECKE_SEITE Pixel).
 5. Stühle (mit ``zu``): Stühle links und rechts eines Tischs haben gleichen Abstand (der Tisch steht
@@ -136,10 +137,18 @@ def _brett_mittig(
 
 
 def _neben(uhr: Rechteck, brett: Rechteck) -> bool:
-    """Liegt die Uhr seitlich direkt am Brett (gleiche Höhe, Lücke 0 bis LUECKE_UHR)?"""
+    """Liegt die Uhr direkt am Brett, seitlich (gleiche Höhe) oder davor bzw. dahinter (gleiche Spalte),
+    mit einer Lücke von 0 bis LUECKE_UHR? Welche Seite für die Spieler „neben“ ist, hängt davon ab, wo
+    sie sitzen: An einem Tisch mit Stühlen links und rechts liegt die Uhr hinter oder vor dem Brett
+    (Kartennotiz des Autors 15.11.2026, Clubraum Maple Falls: „Jetzt steht die Uhr genau vorm Brett aus
+    der Perspektive eines der Stühle“); das prüft ``anordnung.py`` (Regel 10.80) mit den Stühlen."""
     gleich_hoch = abs(mitte(uhr)[1] - mitte(brett)[1]) <= TOLERANZ + 1
     luecke = max(uhr[0] - brett[2], brett[0] - uhr[2])
-    return gleich_hoch and 0 <= luecke <= LUECKE_UHR
+    gleiche_spalte = abs(mitte(uhr)[0] - mitte(brett)[0]) <= TOLERANZ + 1
+    luecke_senkrecht = max(uhr[1] - brett[3], brett[1] - uhr[3])
+    return (gleich_hoch and 0 <= luecke <= LUECKE_UHR) or (
+        gleiche_spalte and 0 <= luecke_senkrecht <= LUECKE_UHR
+    )
 
 
 def _uhr_daneben(szene: dict, uhr: Stueck, bretter: list[Stueck], platte: Rechteck) -> list[Befund]:

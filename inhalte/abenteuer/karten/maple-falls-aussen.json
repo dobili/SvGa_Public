@@ -12038,12 +12038,12 @@
     },
     {
      "id": 164,
-     "name": "svHausGruen",
+     "name": "sc7FerienhuetteB",
      "type": "moebel",
-     "x": 528,
-     "y": 112,
-     "width": 64,
-     "height": 64,
+     "x": 512,
+     "y": 96,
+     "width": 80,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -13004,12 +13004,12 @@
     },
     {
      "id": 206,
-     "name": "svHausGruen",
+     "name": "sc7Ferienhuette",
      "type": "moebel",
-     "x": 224,
-     "y": 496,
-     "width": 64,
-     "height": 64,
+     "x": 208,
+     "y": 480,
+     "width": 80,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -13351,7 +13351,7 @@
      "id": 221,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 272,
+     "x": 288,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13374,7 +13374,7 @@
      "id": 222,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 304,
+     "x": 320,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13397,7 +13397,7 @@
      "id": 223,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 336,
+     "x": 352,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13420,7 +13420,7 @@
      "id": 224,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 368,
+     "x": 464,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13443,7 +13443,7 @@
      "id": 225,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 464,
+     "x": 496,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13466,7 +13466,7 @@
      "id": 226,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 496,
+     "x": 528,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13489,7 +13489,7 @@
      "id": 227,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 528,
+     "x": 560,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13512,7 +13512,7 @@
      "id": 228,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 560,
+     "x": 656,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13535,7 +13535,7 @@
      "id": 229,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 656,
+     "x": 688,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13558,7 +13558,7 @@
      "id": 230,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 688,
+     "x": 720,
      "y": 480,
      "width": 32,
      "height": 16,
@@ -13581,29 +13581,6 @@
      "id": 231,
      "name": "cc4Hecke",
      "type": "moebel",
-     "x": 720,
-     "y": 480,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 232,
-     "name": "cc4Hecke",
-     "type": "moebel",
      "x": 752,
      "y": 480,
      "width": 32,
@@ -13624,7 +13601,7 @@
      ]
     },
     {
-     "id": 233,
+     "id": 232,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 192,
@@ -13647,7 +13624,7 @@
      ]
     },
     {
-     "id": 234,
+     "id": 233,
      "name": "mf4BaumGruen",
      "type": "moebel",
      "x": 192,
@@ -13670,7 +13647,7 @@
      ]
     },
     {
-     "id": 235,
+     "id": 234,
      "name": "sc7Ferienhuette",
      "type": "moebel",
      "x": 928,
@@ -13693,7 +13670,7 @@
      ]
     },
     {
-     "id": 236,
+     "id": 235,
      "name": "mf4BaumGruen",
      "type": "moebel",
      "x": 928,
@@ -13716,7 +13693,7 @@
      ]
     },
     {
-     "id": 237,
+     "id": 236,
      "name": "mf10SchildSackgasse",
      "type": "moebel",
      "x": 32,
@@ -13739,7 +13716,7 @@
      ]
     },
     {
-     "id": 238,
+     "id": 237,
      "name": "mf11HausHintenBBlau",
      "type": "moebel",
      "x": 48,
@@ -13762,7 +13739,7 @@
      ]
     },
     {
-     "id": 239,
+     "id": 238,
      "name": "mf11HausHintenBRot",
      "type": "moebel",
      "x": 288,
@@ -13785,7 +13762,7 @@
      ]
     },
     {
-     "id": 240,
+     "id": 239,
      "name": "mf11HausHintenBRot",
      "type": "moebel",
      "x": 480,
@@ -13808,7 +13785,7 @@
      ]
     },
     {
-     "id": 241,
+     "id": 240,
      "name": "mf11HausHintenBBlau",
      "type": "moebel",
      "x": 656,
@@ -13831,7 +13808,7 @@
      ]
     },
     {
-     "id": 242,
+     "id": 241,
      "name": "mf12Kreidebrett",
      "type": "moebel",
      "x": 240,
@@ -13859,7 +13836,7 @@
      ]
     },
     {
-     "id": 243,
+     "id": 242,
      "name": "mf3StuhlDunkelRechts",
      "type": "moebel",
      "x": 64,
@@ -13882,7 +13859,7 @@
      ]
     },
     {
-     "id": 244,
+     "id": 243,
      "name": "mf3StuhlDunkelLinks",
      "type": "moebel",
      "x": 96,
@@ -13905,7 +13882,7 @@
      ]
     },
     {
-     "id": 245,
+     "id": 244,
      "name": "mf12KreidebrettSpringer",
      "type": "moebel",
      "x": 240,
@@ -13933,11 +13910,11 @@
      ]
     },
     {
-     "id": 246,
+     "id": 245,
      "name": "mf12SchachtischVeranda",
      "type": "moebel",
      "x": 80,
-     "y": 496,
+     "y": 486,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13946,12 +13923,40 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 504
+       "value": 494
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelIronwood > 0"
+      }
+     ]
+    },
+    {
+     "id": 246,
+     "name": "mf3BrettKlein",
+     "type": "moebel",
+     "x": 82,
+     "y": 487,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 495
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       },
       {
        "name": "wenn",

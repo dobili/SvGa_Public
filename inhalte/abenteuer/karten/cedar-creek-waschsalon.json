@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 32,
+ "nextobjectid": 33,
  "layers": [
   {
    "id": 1,
@@ -1145,6 +1145,29 @@
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 64,
+     "y": 147,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "cc4Fussmatte",
+     "type": "moebel",
+     "x": 80,
      "y": 147,
      "width": 16,
      "height": 16,

@@ -154,9 +154,10 @@
       "feld": [3, 3]
     },
     {
-      "moebel": "mf12PizzakartonUnterBein",
+      "moebel": "mf14TischbeinPizzakarton",
       "feld": [15, 7],
-      "versatz": [0, 4]
+      "versatz": [3, 11],
+      "vorn": true
     },
     {
       "moebel": "mf4Esstisch",

@@ -109,7 +109,8 @@
     },
     {
       "moebel": "mf12BrettDecke",
-      "auf": "tisch"
+      "auf": "tisch",
+      "versatz": [0, 3]
     },
     {
       "moebel": "mf12SchaukelstuhlVorn",

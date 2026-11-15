@@ -1789,19 +1789,19 @@
     },
     {
      "id": 47,
-     "name": "mf12PizzakartonUnterBein",
+     "name": "mf14TischbeinPizzakarton",
      "type": "moebel",
-     "x": 240,
-     "y": 116,
-     "width": 16,
-     "height": 16,
+     "x": 243,
+     "y": 123,
+     "width": 10,
+     "height": 6,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 121
       },
       {
        "name": "kollision",

@@ -7,7 +7,7 @@
   "zustand": ["neu", "gebraucht"],
   "stil": ["klassisch", "industrie", "modern"],
   "zustand_der_karte": "nadelMapleFalls >= 1 und dinerAbendGesehen",
-  "beschreibung": "Zustand: nach der Nadel von Maple Falls und dem Abend im Diner (nadelMapleFalls >= 1 und dinerAbendGesehen, Ortsblatt Hector Stufe B) hängt das erste gelöste Tischset gerahmt an der Wand neben dem Foto. Das Falls Diner an der Birch Lane, lang und schmal wie ein Wagen (Roman Kap. 7), 16 × 13. Das Gebäude außen ist eine Fassade von 8 Kacheln Breite und 6 Dachreihen mit der Glastür im linken Drittel; nach KARTENREGELN 10.75 ist der Raum höchstens doppelt so breit und zweieinhalbmal so tief, und die Tür liegt innen ebenfalls links. Rote Wände, weiße Fliesen. An der Nordwand links die Tür zur Toilette (nur angedeutet), die Pinnwand mit gelösten Tischsets, die Durchreiche zur kleinen Küche, das Foto von der Eröffnung der Schule und zwei Bilder. Darunter an der Rückwand die Anrichte mit der Kaffeemaschine und links die alte Kasse, beide zum Personal gedreht (R004). Davor der schmale Gang, in dem Hector steht und über die lange rote Theke zu den Gästen schaut; die Kellnerin geht dort hin und her. Auf dem linken Ende der Theke der Stapel ungelöster Tischsets. Die Gäste sitzen auf drei roten Hockern südlich vor der Theke. Rechts an der Ostwand drei Sitznischen mit runden Tischen zwischen roten Polsterbänken. Unten links die Glastür mit Fußmatte und einem Läufer zur Theke, daneben eine Palme. An der Westwand über der Palme die leuchtende Jukebox; aus ihr kommt die Musik des Diners (Klangquelle). Laufwege: von der Tür über den Läufer zu den Hockern, rechts an der Theke vorbei zu den Nischen und hinter die Theke zu Hector.",
+  "beschreibung": "Zustand: nach der Nadel von Maple Falls und dem Abend im Diner (nadelMapleFalls >= 1 und dinerAbendGesehen, Ortsblatt Hector Stufe B) hängt das erste gelöste Tischset gerahmt an der Wand neben dem Foto. Das Falls Diner an der Birch Lane, lang und schmal wie ein Wagen (Roman Kap. 7), 16 × 13. Das Gebäude außen ist eine Fassade von 8 Kacheln Breite und 6 Dachreihen mit der Glastür im linken Drittel; nach KARTENREGELN 10.75 ist der Raum höchstens doppelt so breit und zweieinhalbmal so tief, und die Tür liegt innen ebenfalls links. Rote Wände, weiße Fliesen. An der Nordwand links die Tür zur Toilette (nur angedeutet), die Pinnwand mit gelösten Tischsets, die Durchreiche zur kleinen Küche, das Foto von der Eröffnung der Schule und zwei Bilder. Darunter an der Rückwand rechts neben der Durchreiche die Anrichte mit der Kaffeemaschine und links die alte Kasse, beide zum Personal gedreht (R004); unter der Durchreiche bleibt Platz zum Abholen der Teller. Davor der schmale Gang (eine Kachel breit, die Theke steht nah an der Wand), in dem Hector steht und über die lange rote Theke zu den Gästen schaut; die Kellnerin geht dort hin und her. Auf dem linken Ende der Theke der Stapel ungelöster Tischsets. Die Gäste sitzen auf sieben roten Hockern direkt vor der Theke; vor dem Lkw-Fahrer steht sein Teller Pfannkuchen. Rechts an der Ostwand drei Sitznischen mit runden Tischen zwischen roten Polsterbänken, in der Mitte des Raums zwei Tischgruppen mit je zwei Stühlen; auf den Tischen stehen Teller, Kaffeebecher und Gläser (bei den Rentnerinnen der Apfelkuchen). Unten links die Glastür, vor jedem ihrer beiden Flügel eine Fußmatte, daneben eine Palme. An der Westwand über der Palme die leuchtende Jukebox; aus ihr kommt die Musik des Diners (Klangquelle). Laufwege: von der Tür zwischen den Tischgruppen hindurch zu den Hockern, rechts an der Theke vorbei zu den Nischen und hinter die Theke zu Hector.",
   "raster": [
     "################",
     "################",
@@ -61,12 +61,13 @@
     },
     {
       "moebel": "mf5Buffet",
-      "feld": [6, 2],
+      "feld": [8, 2],
       "id": "anrichte"
     },
     {
       "moebel": "mf5Kaffeemaschine",
-      "auf": "anrichte"
+      "auf": "anrichte",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "mf5Kassentheke",
@@ -74,56 +75,45 @@
     },
     {
       "moebel": "mf5ThekeLinks",
-      "feld": [2, 5],
+      "feld": [2, 4],
       "id": "t0",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [4, 5],
+      "feld": [4, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [5, 5],
+      "feld": [5, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [6, 5],
+      "feld": [6, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [7, 5],
-      "bauteil_ok": true
+      "feld": [7, 4],
+      "bauteil_ok": true,
+      "id": "t7"
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [8, 5],
+      "feld": [8, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeRechts",
-      "feld": [9, 5],
+      "feld": [9, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "mf12Tischsets",
       "auf": "t0",
-      "versatz": [-4, 2]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [3, 7]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [5, 7]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [7, 7]
+      "versatz": [5, 2]
     },
     {
       "moebel": "mf12NischenbankRechts",
@@ -131,7 +121,8 @@
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [12, 3]
+      "feld": [12, 3],
+      "id": "n1"
     },
     {
       "moebel": "mf12NischenbankLinks",
@@ -143,7 +134,8 @@
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [12, 6]
+      "feld": [12, 6],
+      "id": "n2"
     },
     {
       "moebel": "mf12NischenbankLinks",
@@ -155,15 +147,12 @@
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [12, 9]
+      "feld": [12, 9],
+      "id": "n3"
     },
     {
       "moebel": "mf12NischenbankLinks",
       "feld": [14, 9]
-    },
-    {
-      "moebel": "wzTeppich",
-      "feld": [3, 9]
     },
     {
       "moebel": "mf4Palme",
@@ -172,6 +161,11 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [4, 11],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [5, 11],
       "versatz": [0, 3]
     },
     {
@@ -189,6 +183,126 @@
       "moebel": "mf12JukeboxAn",
       "feld": [1, 8],
       "versatz": [0, 6]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [3, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [4, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [5, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [6, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [7, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [8, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [9, 5],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf14TellerPfannkuchen",
+      "auf": "t7",
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf5NischenstuhlRechts",
+      "feld": [2, 8],
+      "zu": "g1"
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [3, 8],
+      "id": "g1"
+    },
+    {
+      "moebel": "mf5NischenstuhlLinks",
+      "feld": [5, 8],
+      "zu": "g1"
+    },
+    {
+      "moebel": "mf5NischenstuhlRechts",
+      "feld": [7, 8],
+      "zu": "g2"
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [8, 8],
+      "id": "g2"
+    },
+    {
+      "moebel": "mf5NischenstuhlLinks",
+      "feld": [10, 8],
+      "zu": "g2"
+    },
+    {
+      "moebel": "mf14TellerEssen",
+      "auf": "n1",
+      "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf14Glas",
+      "auf": "n1",
+      "versatz": [7, 1]
+    },
+    {
+      "moebel": "mf14TellerKuchen",
+      "auf": "n2",
+      "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf14Kaffeetasse",
+      "auf": "n2",
+      "versatz": [7, 1]
+    },
+    {
+      "moebel": "mf14TellerPfannkuchen",
+      "auf": "n3",
+      "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf14Kaffeetasse",
+      "auf": "n3",
+      "versatz": [7, 1]
+    },
+    {
+      "moebel": "mf14TellerEssen",
+      "auf": "g1",
+      "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf14Glas",
+      "auf": "g1",
+      "versatz": [7, 1]
+    },
+    {
+      "moebel": "mf14TellerKuchen",
+      "auf": "g2",
+      "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf14Kaffeetasse",
+      "auf": "g2",
+      "versatz": [7, 1]
     }
   ],
   "ausloeser": [
@@ -211,7 +325,7 @@
   "figuren": [
     {
       "name": "hector",
-      "feld": [6, 4]
+      "feld": [6, 3]
     }
   ],
   "belebung": [
@@ -230,7 +344,7 @@
     {
       "name": "lkwFahrer",
       "typ": "statist",
-      "feld": [7, 8],
+      "feld": [7, 6],
       "eigenschaften": {
         "tun": "sitzt auf dem Hocker am Thekenende und isst Pfannkuchen",
         "wann": "tag",

@@ -61,7 +61,7 @@ Die Staubstraße führt zurück zum Canyon und weiter zum Camp. #sprecher:erzaeh
 }
 ~ pruittGetroffen = true
 Etwas piept. Hinter dem Saloon kommt ein alter Mann mit Strohhut hervor und schwenkt ein Gerät an einer Stange über den Boden. #sprecher:erzaehler #klang:metalldetektor
-Hufnagel. Der dreiundvierzigste diese Woche. #sprecher:pruitt
+Hufnagel. Der dreiundvierzigste diese Woche. #sprecher:pruitt #stimmung:laechelt
 Besuch! Ich hab seit April keinen gehabt. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:froh
 Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei Jahren. Ein Opernhaus, das nie fertig wurde. #sprecher:pruitt #stimmung:nachdenklich
 Achtzehnhundertdreiundsiebzig ging der Letzte. Ein Schmied. Er ließ die Tür offen, weil es nichts mehr zu stehlen gab. #sprecher:pruitt #stimmung:nachdenklich
@@ -85,7 +85,7 @@ Die meisten fragen nach dem Gold. #sprecher:pruitt #stimmung:laechelt
 ~ grabGesehen = true
 {not pruittGetroffen:
     ~ pruittGetroffen = true
-    Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #klang:metalldetektor
+    Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:laechelt #klang:metalldetektor
 }
 Ganz hinten, wo der Zaun aufhört und die Wüste anfängt, liegt ein niedriger Stein ohne Namen. Eingeritzt: acht mal acht Vierecke. #sprecher:erzaehler #bild:stein_brett
 Mr. Pruitt nimmt den Hut ab. Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #stimmung:nachdenklich #bild:aus

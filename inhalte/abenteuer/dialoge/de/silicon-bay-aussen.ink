@@ -67,10 +67,10 @@ Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor #stimmung:nachdenkli
 // Victor zählt auf, weil Zahlen das Einzige sind, worüber er ohne Mühe redet (Kapitel 31).
 === ankunft_rundgang ===
 Er führt euch über den Campus. Vierzig Stockwerke, die Akademie im zweiten, die Serverhalle unter der Erde. #sprecher:erzaehler
-Gekühlt mit Meerwasser. #sprecher:victor
+Gekühlt mit Meerwasser. #sprecher:victor #stimmung:stolz
 Er gibt nicht an. Zahlen sind das Einzige, worüber er ohne Mühe reden kann. #sprecher:erzaehler
-Wohnst du hier? #sprecher:juno
-Im achtunddreißigsten. #sprecher:victor
+Wohnst du hier? #sprecher:juno #stimmung:ueberrascht
+Im achtunddreißigsten. #sprecher:victor #stimmung:neutral
 Kann man da die Fenster aufmachen? #sprecher:juno #stimmung:nachdenklich
 * [Auf Victors Antwort warten]
 - Victor überlegt. Ernsthaft. #sprecher:erzaehler
@@ -282,7 +282,7 @@ Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir ers
 
 === werbetafel ===
 Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie wieder Fehler.“ #sprecher:erzaehler
-{tabletNachtGesehen: Ambrose sieht lange hin. Er sagt nichts dazu. #sprecher:erzaehler|Nie wieder Fehler. Das ist ein großes Versprechen. #sprecher:ambrose}
+{tabletNachtGesehen: Ambrose sieht lange hin. Er sagt nichts dazu. #sprecher:erzaehler|Nie wieder Fehler. Das ist ein großes Versprechen. #sprecher:ambrose #stimmung:nachdenklich}
 -> END
 
 === netze ===

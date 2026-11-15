@@ -1097,3 +1097,33 @@ der Welt führte nach einer Partie oder Runde in die beendete Ansicht zurück (N
 Ergebniskarte zeigte kurz „Gewonnen gegen !“ (N2608), ohne Namen stand „Dein Abenteuer wartet,
 Du.“ (N2617). Beim Autor bleiben die Geschmacks- und iPhone-Punkte (N2629, N2631–N2634) sowie die
 nur teilweise prüfbaren N2616, N2620, N2621, N2628, N2630.
+
+## RO14: Jede Redezeile mit Stimmung; RO9 Nr. 4: der Name erst im Archiv; Sprachprüfung (15.11.2026)
+
+**RO14 erledigt** (Wunsch vom 14.11.2026, Empfehlung umgesetzt): Alle Redezeilen der Dialoge tragen
+jetzt ein `#stimmung`, der Erzähler keins. Beim Auftrag fehlte sie noch an 121 Zeilen (die anderen
+hatten frühere Runden schon versehen); vergeben nach Inhalt, meist `neutral` für Ansagen und
+Auskünfte (Turnierleiterin, Wegbeschreibungen, der Greifarm), `laechelt` für freundliche Sätze,
+`nachdenklich`/`ernst`, `ueberrascht` für kurze Fragen („Mister?“, „Karten?“), Ambrose in London
+`jung`. Die Zuordnung zu den sechs Feldern des Porträtblatts steht in
+`inhalte/abenteuer/portraetblatt.json` (dort zwei doppelte Schlüssel entfernt). Prüfung:
+`test_jede_redezeile_hat_eine_stimmung` in `pipeline/tests/test_abenteuer_stimmungen.py`.
+
+**RO9 Nr. 4** (Roman, Kapitel 12): Ambrose nennt den Helden erst im Archiv von Cedar Creek beim
+Namen, vorher „Kind“ oder „Lehrling“. Die Dialoge waren schon so gebaut (`ambroseNenntNamen`, Knoten
+`cedar-creek-archiv.name_im_archiv`); die Regel steht jetzt in der Story-Bibel (5.2) und wird von
+`pipeline/tests/test_abenteuer_ambrose_name.py` geprüft: ohne Compiler jede Ambrose-Zeile mit
+`{held}` in den Dialogen von Maple Falls, dem Weg, Cedar Creek und dem Kürbishof, mit dem
+Ink-Compiler jeder Knoten dieser Dialoge mit sechs zufälligen Wahlfolgen. Die Erinnerung in London
+(Akt 2) darf den Namen sagen.
+
+**Sprachprüfung** `python -m pipeline.abenteuer.sprache` (Test `test_abenteuer_sprache.py`):
+gerade und unpaarige Anführungszeichen, Bindestrich statt Gedankenstrich, drei Punkte statt …,
+doppelte Leerzeichen und Leerzeichen vor Satzzeichen, Apostroph, großes „Du“ mitten im Satz,
+doppelte Wörter, Figurennamen ohne Akzent (Tomas statt Tomás). Mit `--woerterbuch` (pyspellchecker,
+MIT, per pip, nicht in den Abhängigkeiten) zeigt sie seltene unbekannte Wörter zum Durchsehen.
+Befund beim ersten Lauf: Zeichensetzung, Anrede, Zahlen und Namen waren schon einheitlich; der
+Wörterbuchlauf fand keine Tippfehler (nur Umgangssprache, Komposita, englische Wörter in den
+Passantensätzen). Einziger Fund: Der Apostroph stand fünfmal als ’ und sonst (53-mal, auch in der
+App) als '. Vereinheitlicht auf ' (Tomás', Dex', Probier's, Pops', d'Échecs); Widerspruch genügt,
+dann wird die Regel auf ’ umgestellt und alle 58 Stellen getauscht.

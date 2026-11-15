@@ -57,7 +57,7 @@ Auf dem Geländer der Veranda sitzt jemand und redet auf drei Kinder mit einem K
 … und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick #stimmung:lacht
 Er sieht dich und rutscht vom Geländer. #sprecher:erzaehler
 Maple Falls! #sprecher:slick #stimmung:froh
-Hast du den Springer? #sprecher:tamsin
+Hast du den Springer? #sprecher:tamsin #stimmung:neutral
 * [Den Springer aus Stein hervorholen]
 - Slick dreht ihn in den Fingern. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
 Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. In einer Garage in der Wüste. #sprecher:slick #stimmung:laechelt
@@ -72,12 +72,12 @@ Es ist recht. #sprecher:erzaehler
 
 === mira ===
 {miraCrossroadsGetroffen:
-    {~Noch mal. Jetzt.|Atmen ist langweilig. Aber es hilft.|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira
+    {~Noch mal. Jetzt.|Atmen ist langweilig. Aber es hilft.|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
     -> END
 }
 ~ miraCrossroadsGetroffen = true
 Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
-Du. Noch mal. Jetzt. #sprecher:mira
+Du. Noch mal. Jetzt. #sprecher:mira #stimmung:ernst
 * [„Nach dem Essen.“]
 - Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft. #sprecher:mira #stimmung:laechelt
 Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler #musik:crossroads

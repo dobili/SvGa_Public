@@ -365,12 +365,12 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 // dann auf Hanks Reihe; vorher bestanden, hing sie für immer (Chaos-Prüfung, 14.11.2026).
 - not bigJoeGetroffen:
     Ein Mann im Blaumann sitzt allein am Ende des Tischs und sieht kaum hoch. #sprecher:erzaehler
-    Erst zu Big Joe. Der entscheidet, wer hier mitspielt. #sprecher:hank
+    Erst zu Big Joe. Der entscheidet, wer hier mitspielt. #sprecher:hank #stimmung:neutral
     -> END
 - not hankGetroffen:
     ~ hankGetroffen = true
     Ein Mann im Blaumann sitzt allein am Ende des Tischs und schiebt eine Figur hin und her. #sprecher:erzaehler
-    Hank. Gefesselt. #sprecher:hank
+    Hank. Gefesselt. #sprecher:hank #stimmung:neutral
     Nicht bewegen. Wie ich nach der Nachtschicht. #sprecher:hank #stimmung:laechelt
     -> hank_reihe
 - not reiheHankBestanden: -> hank_reihe
@@ -380,7 +380,7 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 }
 
 === hank_reihe ===
-Fesselungen. Willst du? #sprecher:hank
+Fesselungen. Willst du? #sprecher:hank #stimmung:laechelt
 * [„Ja.“]
     ~ beginneAufgaben("ironwood.reiheHank")
     -> END

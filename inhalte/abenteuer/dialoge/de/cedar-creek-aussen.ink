@@ -59,7 +59,7 @@ Du guckst nie! #sprecher:ivy #stimmung:lacht
 * [Leise vorbeigehen]
     Sie verstummen und sehen euch nach. #sprecher:erzaehler
 - Hier flüstert sogar die Straße. #sprecher:juno #stimmung:laechelt
-Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:juno
+Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:juno #stimmung:neutral
 -> END
 
 // ---------------------------------------------------------------- Plakat
@@ -138,7 +138,7 @@ Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor 
 * [Weiter nach oben sehen]
 * [Die Augen schließen]
 - Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
-Dex’ Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
+Dex' Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
 // Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
 ~ nachtImLesesaal = true
@@ -243,7 +243,7 @@ Antworten kannst du ihm nicht, nicht vor den anderen. #sprecher:erzaehler
 {nachtImLesesaal: Am Morgen liegt Nebel auf dem Bach. Irgendwo surrt eine Angelschnur. #sprecher:erzaehler #klang:angelschnur}
 Im Schilf am Steg glänzt etwas Rostiges: ein großer Schlüssel mit einem runden Griff. #sprecher:erzaehler
 {not rosaGetroffen: Am Ende des Stegs sitzt eine Frau mit Angel. Sie dreht sich nicht um. #sprecher:erzaehler}
-Den hat ein Angler verloren. Vor zwei Jahren schon. #sprecher:rosa
+Den hat ein Angler verloren. Vor zwei Jahren schon. #sprecher:rosa #stimmung:nachdenklich
 Nimm ihn mit. Vielleicht findest du das Schloss. #sprecher:rosa #stimmung:laechelt
 ~ gibFund("schluessel")
 -> END
@@ -451,8 +451,8 @@ Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer. Der ist hart. #spr
     Elf? Und ich hab geschlafen. Typisch. #sprecher:sam #stimmung:ueberrascht
 * [„Wir haben auf Matten geschlafen. Zwischen den Regalen.“]
     Zwischen Büchern? Da wär ich nie eingeschlafen. Doch. Wär ich. #sprecher:sam #stimmung:lacht
-- Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #klang:pfiff
-Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado
+- Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
+Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado #stimmung:neutral
 -> END
 
 // ---------------------------------------------------------------- Mr. Kettering, der Busfahrer
@@ -523,7 +523,7 @@ Dann ziehst du ja nie! #sprecher:ivy #stimmung:lacht
 
 === zwillinge_b ===
 Die Zwillinge sitzen wieder auf der Treppe. Zwischen ihnen liegt jetzt ein Zettel mit Strichen. #sprecher:erzaehler
-Miss Ashby zählt mit. Sie ist die Schiedsrichterin. Sie guckt immer. #sprecher:ivy
+Miss Ashby zählt mit. Sie ist die Schiedsrichterin. Sie guckt immer. #sprecher:ivy #stimmung:laechelt
 Dreizehn zu zwölf. Für mich. #sprecher:jonah #stimmung:laechelt
 Für mich! #sprecher:ivy #stimmung:bitter
 -> END

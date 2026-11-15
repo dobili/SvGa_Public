@@ -58,7 +58,7 @@ VAR hatKarteTaktikspuernase = false
 === garage_wartet ===
 {
 - not miraSteinGesehen:
-    Mira ist im Canyon, auf ihrem Stein. Ohne sie fängt hier nichts an. #sprecher:tomas
+    Mira ist im Canyon, auf ihrem Stein. Ohne sie fängt hier nichts an. #sprecher:tomas #stimmung:neutral
 - else:
     Warst du schon am Felsbogen, wenn die Sonne untergeht? Das sieht hier jeder einmal. Dann reden wir. #sprecher:tomas #stimmung:laechelt
 }
@@ -82,29 +82,29 @@ VAR hatKarteTaktikspuernase = false
 === mira_reihe_offen ===
 {not miraGarageGesehen: -> mira_weil_ich_kann ->}
 {not reiheTomasBestanden:
-    Erst Tomás, dann Dot, dann ich. Tomás ist langsam. Aber er hat recht. #sprecher:mira
+    Erst Tomás, dann Dot, dann ich. Tomás ist langsam. Aber er hat recht. #sprecher:mira #stimmung:neutral
 - else:
-    Jetzt Dot. Sie spielt seit fünfzig Jahren per Post. Sie hat Zeit. #sprecher:mira
+    Jetzt Dot. Sie spielt seit fünfzig Jahren per Post. Sie hat Zeit. #sprecher:mira #stimmung:laechelt
 }
 -> END
 
 === mira_weil_ich_kann ===
 ~ miraGarageGesehen = true
 Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. Sie setzt sich an einen Tisch und sieht dich an. #sprecher:erzaehler #musik:mira
-Ich opfere den Läufer. #sprecher:mira
+Ich opfere den Läufer. #sprecher:mira #stimmung:ernst
 * [„Wir haben noch nicht angefangen.“]
 - Ich sag's dir nur. Weil ich kann. #sprecher:mira #stimmung:laechelt
 ->->
 
 === mira_wartet_brief ===
-Morgen Abend spielen wir. Heute bin ich im Canyon. Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira
+Morgen Abend spielen wir. Heute bin ich im Canyon. Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira #stimmung:neutral
 -> END
 
 === mira_clubkampf ===
 // Kapitel 46 (Roman): ganz Desert Springs in der Garage; Nadel als Kupferkaktus mit Blüte.
 Ganz Desert Springs passt in die Garage. Buck mit Zahnstocher, Dot mit Lockenwicklern, Mr. Okoro mit einem Buch, falls es langweilig wird. #sprecher:erzaehler
 Die Nadel liegt auf einem Ölkanister. Ein kleiner Kaktus aus Kupfer, mit einer einzigen Blüte. #sprecher:erzaehler #bild:nadel_kaktus
-Karten? #sprecher:tomas #bild:aus
+Karten? #sprecher:tomas #stimmung:ueberrascht #bild:aus
 Nur, wenn du willst. Dann kommentiere ich. Aber du entscheidest. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe gelernt, was geschieht, wenn es andersherum läuft. #sprecher:ambrose #stimmung:still
 Mira setzt sich. Ihre Füße reichen nicht bis zum Boden. #sprecher:erzaehler
@@ -114,7 +114,7 @@ Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira #stimmung:laeche
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 * [„Noch nicht.“]
-    Okay. Ich warte. #sprecher:mira
+    Okay. Ich warte. #sprecher:mira #stimmung:neutral
     -> END
 
 // ---------------------------------------------------------------- Partiemomente (Kapitel 46)
@@ -179,7 +179,7 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira #stimmung:laechelt
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
-    Jetzt. #sprecher:mira
+    Jetzt. #sprecher:mira #stimmung:ernst
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 + [„Bis später, Mira.“]
@@ -279,7 +279,7 @@ Sie opfert. Immer. Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht,
 === tomas_erstes_treffen ===
 ~ tomasGetroffen = true
 Ein Auto auf der Hebebühne, Werkzeug an der Wand, zwischen Ölkanistern drei Klapptische. Unter dem Auto ragen Stiefel hervor. #sprecher:erzaehler #geraeusch:garage
-Mira ist im Canyon. Die kommt, wenn es dunkel wird. #sprecher:tomas
+Mira ist im Canyon. Die kommt, wenn es dunkel wird. #sprecher:tomas #stimmung:neutral
 Er rollt heraus, einen Schraubenschlüssel in der Hand. #sprecher:erzaehler
 Ich bin Tomás. Der Bruder, der Club und die Aufsicht. #sprecher:tomas #stimmung:laechelt
 Auf dem Regal über der Werkbank glänzt ein Pokal. Aus einer Limonadendose, aufgeschnitten, gebogen, mit Draht. #sprecher:erzaehler #bild:dosenpokal
@@ -346,8 +346,8 @@ Meine Aufgaben greifen den König an. Langsam, Liebes, wie ein Brief. #sprecher:
 === dot_okoro ===
 ~ dotOkoroErzaehlt = true
 Du magst alte Sachen, oder? Dein Brett sieht aus, als hätte es Geschichten. #sprecher:dot #stimmung:laechelt
-Mr. Okoro im Antiquariat hat den Kram von einem alten Brückenbauer im Keller. #sprecher:dot
-Kisten voller Briefe. Frag ihn. #sprecher:dot
+Mr. Okoro im Antiquariat hat den Kram von einem alten Brückenbauer im Keller. #sprecher:dot #stimmung:nachdenklich
+Kisten voller Briefe. Frag ihn. #sprecher:dot #stimmung:laechelt
 Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #stimmung:ueberrascht #pause
 -> END
 

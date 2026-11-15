@@ -69,9 +69,9 @@ Da bist du ja. Links das neunzehnte Jahrhundert, rechts das zwanzigste. Wo der B
 === ordnen_wahl ===
 Sie liest die Jahreszahlen vor. „1972.“ #sprecher:erzaehler
 * [Nach links]
-    Rechts. #sprecher:okafor
+    Rechts. #sprecher:okafor #stimmung:laechelt
 * [Nach rechts]
-    Gut. #sprecher:okafor
+    Gut. #sprecher:okafor #stimmung:laechelt
 - Ein Karton ist so durchweicht, dass der Boden nachgibt. Zeitungen rutschen heraus, braun und weich wie Herbstlaub. #sprecher:erzaehler
 * [Sie aufheben]
 * [Liegen lassen]
@@ -86,7 +86,7 @@ Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1
 ~ archivGeordnet = true
 Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #sprecher:okafor #stimmung:nachdenklich
 Ich habe den Kalender gelesen und nie in den Karton daneben geschaut. #sprecher:okafor #stimmung:bitter
-Ich muss nach oben. Prudence schließt sonst die Kasse falsch ab. Du findest dich zurecht. #sprecher:okafor
+Ich muss nach oben. Prudence schließt sonst die Kasse falsch ab. Du findest dich zurecht. #sprecher:okafor #stimmung:laechelt
 Ihre Schritte auf der Wendeltreppe. Dann nichts mehr. #sprecher:erzaehler #pause:2
 * [Den Karton öffnen]
     -> karton_1858

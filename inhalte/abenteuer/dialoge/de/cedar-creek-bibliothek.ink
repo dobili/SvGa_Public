@@ -56,14 +56,14 @@ VAR clubkampfZaehlGesagt = false
 ~ okaforGetroffen = true
 Hohe Regale, grüne Leselampen, vier Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
 Sie stellt ein Buch zurück und steigt herunter, ohne sich festzuhalten. #sprecher:erzaehler
-{teamAngekommen: Das Team aus Maple Falls. Grace Okafor. #sprecher:okafor|Ihr seid die Vorhut. Grace Okafor. Die Matten liegen im Lesesaal. #sprecher:okafor}
+{teamAngekommen: Das Team aus Maple Falls. Grace Okafor. #sprecher:okafor #stimmung:laechelt|Ihr seid die Vorhut. Grace Okafor. Die Matten liegen im Lesesaal. #sprecher:okafor #stimmung:laechelt}
 Juno Martínez. Du hast im Frühjahr gegen Mae deine Dame auf ein Feld gestellt, auf dem ein Springer stand. #sprecher:okafor #stimmung:nachdenklich
 Ich dachte, der gehört mir. #sprecher:juno #stimmung:ueberrascht
 Was glaubst du denn, warum er dort stand? #sprecher:okafor #stimmung:nachdenklich
 * [Juno anstoßen]
 * [Nichts sagen]
 - Dann sieht sie dich an. Dann deinen Rucksack, aus dem eine Ecke des Bretts ragt. Sie sagt lange nichts. #sprecher:erzaehler #pause:2
-Darf ich? #sprecher:okafor
+Darf ich? #sprecher:okafor #stimmung:laechelt
 * [Ihr das Brett geben]
 * [Nicken]
 - Sie hält es ins Licht der grünen Lampe und fährt mit dem Daumen über den Rand. #sprecher:erzaehler
@@ -83,14 +83,14 @@ Sechs Wörter. #sprecher:ambrose #stimmung:bitter #pause
 Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 {teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach.|Nach dem Spiel morgen gehen wir hinunter und sehen nach.} Oder heute schon, wenn du mir tragen hilfst. #sprecher:okafor #stimmung:laechelt
 * [„Ich helfe tragen.“]
-    Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
+    Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor #stimmung:nachdenklich
 * [„Erst will ich spielen.“]
     Erst Dex, dann Mae. Eins nach dem anderen. Der Keller wartet. #sprecher:okafor #stimmung:laechelt
 - -> END
 
 === okafor_reihe_offen ===
 {
-- not reiheDexBestanden: Fang bei Dex an. Dann Mae. Eins nach dem anderen. #sprecher:okafor
+- not reiheDexBestanden: Fang bei Dex an. Dann Mae. Eins nach dem anderen. #sprecher:okafor #stimmung:neutral
 - else: Dex hast du geschafft. Jetzt Mae. Sie kennt mehr Mattbilder als ich. #sprecher:okafor #stimmung:laechelt
 }
 {not archivGeordnet:
@@ -101,7 +101,7 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 // Ablauf nach dem Roman (Kapitel 10 bis 15): Der Clubkampf ist am Samstag, nach der Nacht im
 // Lesesaal. Wer nicht zum Steg geht, kann hier gleich schlafen gehen, damit nichts hängen bleibt.
 === okafor_bis_morgen ===
-Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor
+Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor #stimmung:laechelt
 {maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor #stimmung:laechelt}
 * [„Ich geh noch zum Steg.“]
     Geduld ist auch ein Zug. #sprecher:okafor #stimmung:laechelt
@@ -120,7 +120,7 @@ In der Bibliothek flüstert man auch beim Schach. Der lange Tisch ist geräumt b
 Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem Springer. #sprecher:erzaehler
 {teamAngekommen: Außerhalb des Lichtkreises sitzen sie alle. Der Coach hält die Pfeife in der Faust, damit sie nicht pfeift. #sprecher:erzaehler}
 {sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor #stimmung:laechelt}
-Setz dich. #sprecher:okafor
+Setz dich. #sprecher:okafor #stimmung:laechelt
 * [„Ich bin bereit.“]
     Die Uhr im Türmchen tickt. Man hört sie durch die Decke. #sprecher:erzaehler
     -> okafor_partie
@@ -170,7 +170,7 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimm
 === okafor_alltag ===
 {
 - not erzaehlung1858Gesehen:
-    Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor
+    Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor #stimmung:neutral
 - else:
     {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor #stimmung:laechelt
 }
@@ -191,7 +191,7 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimm
 === dex_erstes_treffen ===
 ~ dexGetroffen = true
 Ein Junge sitzt zwischen Kabeln und einem halb gebauten Roboter. Daneben ein Brett. #sprecher:erzaehler
-Dex. Halt mal. #sprecher:dex
+Dex. Halt mal. #sprecher:dex #stimmung:neutral
 Er drückt dir eine Zange in die Hand. #sprecher:erzaehler
 Fast fertig. Es ist immer fast fertig. #sprecher:dex #stimmung:nachdenklich
 Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. Alles ist tot. #sprecher:dex #stimmung:nachdenklich
@@ -203,7 +203,7 @@ Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex #stimmung:laechelt
     ~ beginneAufgaben("cedarCreek.reiheDex")
     -> END
 * [„Gleich.“]
-    Ich löte so lange. #sprecher:dex
+    Ich löte so lange. #sprecher:dex #stimmung:neutral
     -> END
 
 === dex_alltag ===

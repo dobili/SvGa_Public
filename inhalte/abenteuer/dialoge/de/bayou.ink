@@ -31,8 +31,8 @@ VAR finchFiguren = 0
 }
 ~ theronGetroffen = true
 Am Bootssteg liegt ein flaches Luftboot mit einem riesigen Propeller. Ein Mann mit Sonnenbrille winkt. #sprecher:erzaehler
-Theron. Ich fahre Leute durch den Bayou. Morgens, wenn der Nebel liegt, spielen wir Nebelschach. #sprecher:theron
-Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel. #sprecher:theron
+Theron. Ich fahre Leute durch den Bayou. Morgens, wenn der Nebel liegt, spielen wir Nebelschach. #sprecher:theron #stimmung:laechelt
+Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel. #sprecher:theron #stimmung:neutral
 Wie im Leben: Man sieht nie das ganze Brett. Aber man zieht trotzdem. #sprecher:ambrose #stimmung:friedlich
 -> END
 
@@ -67,15 +67,15 @@ Das Luftboot bringt dich zurück zum Kai von Port Delacroix. #sprecher:erzaehler
 === pepe_erstes ===
 ~ pepeGetroffen = true
 Auf dem Deck des Hausboots sitzt ein alter Mann neben einer verbeulten Blechkiste. Er hält ein Streichholz in der Hand. #sprecher:erzaehler
-Thibodeaux. Pépé sagen alle. Die Kiste kommt ins Feuer, heute Abend. Keiner liest das mehr. #sprecher:pepe
+Thibodeaux. Pépé sagen alle. Die Kiste kommt ins Feuer, heute Abend. Keiner liest das mehr. #sprecher:pepe #stimmung:bitter
 -> pepe_kiste
 
 === pepe_kiste ===
-Partieformulare aus dem Café des Exilés, 1852. Mein Urgroßvater hat da Kaffee ausgeschenkt. Schau ruhig rein, bevor sie brennen. #sprecher:pepe
+Partieformulare aus dem Café des Exilés, 1852. Mein Urgroßvater hat da Kaffee ausgeschenkt. Schau ruhig rein, bevor sie brennen. #sprecher:pepe #stimmung:laechelt
 + [In den Formularen blättern]
     -> pepe_formular
 + [„Bitte nicht verbrennen.“]
-    Dann sag mir, wofür sie gut sind. Blätter erst mal. #sprecher:pepe
+    Dann sag mir, wofür sie gut sind. Blätter erst mal. #sprecher:pepe #stimmung:neutral
     -> END
 
 === pepe_formular ===
@@ -92,7 +92,7 @@ Die Partie bricht nach dem 20. Zug ab. Weiß ist am Zug. #sprecher:erzaehler
     ~ beginnePartie("bayou.hausboot")
     -> END
 + [„Später.“]
-    Die Kiste wartet. Das Streichholz auch. #sprecher:pepe
+    Die Kiste wartet. Das Streichholz auch. #sprecher:pepe #stimmung:laechelt
     -> END
 
 === pepe_nach_partie ===

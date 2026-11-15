@@ -65,7 +65,7 @@ Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstoc
 Sie sind alle gekommen. #sprecher:mutter #stimmung:ueberrascht
 * [Zur Treppe sehen]
 - Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
-Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. Miss Odile, Remy, Lou. Mira auf Tomás’ Schultern. Dot mit Lockenwicklern. #sprecher:erzaehler
+Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. Miss Odile, Remy, Lou. Mira auf Tomás' Schultern. Dot mit Lockenwicklern. #sprecher:erzaehler
 Ward steht ein wenig abseits und betrachtet alles, als wäre es eine Stellung. #sprecher:erzaehler
 Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht. #sprecher:erzaehler #pause
 Das kommt ins Tagebuch. Ich hab zwei dabei. Das kommt alles ins Tagebuch. #sprecher:juno #stimmung:froh
@@ -87,7 +87,7 @@ Der Weg führt zurück zum Leuchtturm und weiter nach Ghost Town. #sprecher:erza
 === arena_ankunft ===
 ~ arenaGesehen = true
 Drinnen ist es kühl und hallt. Tribünen im Kreis, Scheinwerfer, Tische in langen Reihen. An den Wänden laufen Partien, die niemand spielt. #sprecher:erzaehler #musik:aus
-Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()}. #sprecher:juno
+Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()}. #sprecher:juno #stimmung:neutral
 {
 - ligapunkte() >= 22:
     Gold-Liga. Und es ist mir vollkommen egal. #sprecher:juno #stimmung:froh
@@ -222,7 +222,7 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
 - finaleGespielt() and wandererSeitenZurueck >= 13:
     -> wanderer_buch
 - wandererSeitenZurueck >= 13:
-    Alle dreizehn Blätter sind beim Buchbinder. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer
+    Alle dreizehn Blätter sind beim Buchbinder. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer #stimmung:laechelt
 - else:
     ~ wandererCapitalGetroffen = true
     Der Buchbinder ist gleich um die Ecke. Aber ohne die fehlenden Blätter will ich da nicht hinein. #sprecher:wanderer #stimmung:nachdenklich

@@ -78,10 +78,10 @@ Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jema
 Eine Bläserin putzt ihre Posaune und lacht dich an. #sprecher:erzaehler
 Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jeden Abend anders. #sprecher:blaeser #stimmung:froh
 Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser #stimmung:laechelt
-Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:blaeser
+Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:blaeser #stimmung:laechelt
 * [„Und die Rochade?“]
-- Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser
-Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser
+- Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser #stimmung:neutral
+Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser #stimmung:neutral
 Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose #stimmung:nachdenklich
 Als Kind fand ich das Unsinn. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
 Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich

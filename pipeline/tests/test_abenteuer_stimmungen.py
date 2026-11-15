@@ -34,3 +34,23 @@ def test_zuordnungen_zeigen_auf_fassungen():
     blatt = json.loads((INHALTE / "portraetblatt.json").read_text(encoding="utf-8"))
     falsch = {s: f for s, f in blatt["stimmungen"].items() if f not in blatt["fassungen"]}
     assert falsch == {}
+
+
+# Ein Abschnitt einer Ink-Zeile mit Sprecher (bei Bedingungen getrennt durch |).
+SPRECHER = re.compile(r"#\s*sprecher\s*:\s*([A-Za-z]+)")
+ERZAEHLER = "erzaehler"
+
+
+def test_jede_redezeile_hat_eine_stimmung():
+    # RO14 (15.11.2026): Alle Redezeilen tragen eine Stimmung, damit die Gesichter mitspielen;
+    # der Erzähler hat kein Porträt und braucht keine.
+    ohne = []
+    for datei in sorted((INHALTE / "dialoge").rglob("*.ink")):
+        for nummer, zeile in enumerate(datei.read_text(encoding="utf-8").split("\n"), 1):
+            if zeile.lstrip().startswith("//"):
+                continue
+            for teil in zeile.split("|"):
+                sprecher = SPRECHER.search(teil)
+                if sprecher and sprecher.group(1) != ERZAEHLER and not STIMMUNG.search(teil):
+                    ohne.append(f"{datei.name}:{nummer}")
+    assert ohne == [], f"Redezeilen ohne #stimmung: {ohne}"

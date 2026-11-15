@@ -1623,14 +1623,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       ZIP an den Hauptchat. Danach Porträt in Gemini mit dem Standbild von vorn als Vorlage. Für
       Juno fehlen noch die Laufbilder North und West. Weitere Figuren erst, wenn Juno im Spiel
       läuft (mittel-2 baut die Anzeige um). Offen: wann das Abo (24 $ im Monat) nötig wird.
-- [ ] RO14. **Ein Textfenster für die Geschichte, Porträts an jeder Rede (Wunsch vom 14.11.2026):**
-      Schon umgesetzt: Die Sätze der Passanten stehen jetzt unten im selben Fenster wie die Dialoge,
-      nicht mehr oben; Ambroses Antwort darauf trägt sein Porträt. Oben erscheinen nur noch
-      Meldungen zum Spiel (Fund, Ergebnis einer Partie oder Runde). Die Porträts im Dialog zeigen
-      schon die Stimmung der Zeile; bisher ist aber nur etwa jede achte Zeile mit einer Stimmung
-      versehen. In Arbeit: Alle Zeilen bekommen eine Stimmung passend zum Inhalt (neutral, lächelt,
-      nachdenklich, überrascht, bitter, lacht), damit die Gesichter mitspielen, sobald die neuen
-      Porträts da sind. Widerspruch genügt.
 - [ ] RO15. **Karten als echte Karten mit Motiv:** Der Kartenfächer ist gebaut, und alle 40
       Motive, Rückseite und Ersatzbild von Gemini sind ausgeschnitten und im Spiel (14.11.2026).
       Bitte auf dem Handy ansehen, ob die Motive in der kleinen Karte (etwa 2 cm breit) gut zu

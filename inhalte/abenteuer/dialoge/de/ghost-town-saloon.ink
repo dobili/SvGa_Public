@@ -62,7 +62,7 @@ Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. A. W. 1857. Daneben 
 - else:
     Victor zieht eine vergilbte Seite aus seinem Buch. Für den Tag, an dem jemand weiterspielt. #sprecher:erzaehler
 }
-Wer baut auf? #sprecher:victor #bild:aus
+Wer baut auf? #sprecher:victor #stimmung:nachdenklich #bild:aus
 * [„Wir beide.“]
 - Von vorn, Zug um Zug, wie man eine Geschichte vorliest. Du ziehst für Weiß, Victor für Schwarz. #sprecher:erzaehler #musik:fernpartie
 Der Bauer, der sich im vierten Zug anbietet. Mein Gambit. Er hat es angenommen. Ich war so erleichtert. #sprecher:ambrose #stimmung:froh

@@ -115,7 +115,7 @@ Wer bist du? #sprecher:mira #stimmung:nachdenklich
 * [„Ich werde besser.“]
 - Sie denkt darüber nach. Es scheint ihr als Antwort zu genügen. #sprecher:erzaehler
 Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett. #sprecher:mira #stimmung:nachdenklich
-Ich bin Mira. Komm morgen in die Garage. Am Motel. #sprecher:mira
+Ich bin Mira. Komm morgen in die Garage. Am Motel. #sprecher:mira #stimmung:laechelt
 Wenn du gut bist, spielen wir. Wenn nicht, auch, aber kürzer. #sprecher:mira #stimmung:laechelt
 Sie springt vom Stein und läuft barfuß über den heißen Sand davon, das Brett unter dem Arm. #sprecher:erzaehler
 -> END
@@ -281,7 +281,7 @@ VAR gefundenFinchLaeuferB = false
 ~ seilschaftBegonnen = true
 Zwei Kletterinnen hängen in der Wand am Felsbogen, eine unten, eine hoch oben. Zwischen ihnen pfeift der Wind. #sprecher:erzaehler
 Wir spielen eine Partie, ein Zug pro Seillänge. Aber ich höre Sol nicht mehr! #sprecher:wren #stimmung:ueberrascht
-Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu! #sprecher:ferris
+Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu! #sprecher:ferris #stimmung:froh
 -> seilschaft_runde
 
 === seilschaft_runde ===

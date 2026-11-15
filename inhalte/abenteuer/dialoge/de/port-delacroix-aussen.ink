@@ -60,13 +60,13 @@ An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu 
 * [„Was ist das?“]
 - Da stand das Wasser. #sprecher:mutter #stimmung:nachdenklich #pause
 Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler
-Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d’Échecs, depuis 1889.“ #sprecher:erzaehler
+Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d'Échecs, depuis 1889.“ #sprecher:erzaehler
 Das Musikhaus. Mein Vater hat die Orgel darin gestimmt. #sprecher:ambrose #stimmung:fern
 Ich habe unter der Empore gesessen und gewartet, bis er fertig war. #sprecher:ambrose #stimmung:fern
 * [Warten]
 - Er macht einen Schritt darauf zu. Dann noch einen. #sprecher:erzaehler
 Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzlich schnell, als könne sie sich nicht entscheiden. #sprecher:erzaehler #musik:karte
-Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. Wir sehen uns heute Abend. #sprecher:mutter
+Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. Wir sehen uns heute Abend. #sprecher:mutter #stimmung:ernst
 -> END
 
 === deich ===

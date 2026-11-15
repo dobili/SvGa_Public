@@ -33,11 +33,11 @@ VAR okaforGetroffen = false
 ~ boatengGetroffen = true
 {okaforGetroffen: Mrs. Okafor hat dich mit einem Sack Tischdecken herübergeschickt. #sprecher:erzaehler}
 Maschinen brummen, warme Luft, es riecht nach Seife. Hinter dem Tresen ein alter Mann mit sehr großen, ruhigen Händen. #sprecher:erzaehler #klang:waschmaschine
-Die Stellung da steht seit Montag. #sprecher:boateng
+Die Stellung da steht seit Montag. #sprecher:boateng #stimmung:nachdenklich
 Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boateng #stimmung:laechelt
 Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng #stimmung:laechelt
 * [„Ich versuche es.“]
-    Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
+    Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng #stimmung:laechelt
 * [„Ich habe gar keine Wäsche dabei.“]
     Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng #stimmung:laechelt
 - -> END

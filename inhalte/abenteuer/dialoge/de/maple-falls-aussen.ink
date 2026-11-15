@@ -151,7 +151,7 @@ Juno winkt dir von der Haltestelle aus zu. #sprecher:erzaehler
 === calloway_a ===
 ~ callowayGetroffen = true
 Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. Auf dem zweiten sitzt niemand. #sprecher:erzaehler #musik:aus
-Du bist {held}. Ich bin Eunice Calloway. Ich wohne hier seit vierundsechzig. #sprecher:calloway
+Du bist {held}. Ich bin Eunice Calloway. Ich wohne hier seit vierundsechzig. #sprecher:calloway #stimmung:laechelt
 Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. Das ist schlecht für den Rücken. #sprecher:calloway #stimmung:nachdenklich
 * [„Guten Morgen, Mrs. Calloway.“]
 * [„Es waren nur ein paar Kisten.“]

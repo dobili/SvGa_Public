@@ -161,7 +161,7 @@ Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmu
     ~ reise("wegIronwoodSilicon.raststaette", "start")
     -> END
 * [Noch nicht]
-    Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose
+    Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose #stimmung:laechelt
     -> END
 
 // ---------------------------------------------------------------- Gus
@@ -181,8 +181,8 @@ Gus. Fünfzehn Minuten Pause. Zehn für dich, fünf für mein Sandwich. #spreche
 -> gus_angebot
 
 === gus_angebot ===
-Zehn Minuten und fünf Sekunden je Zug, eine Stellung mit Vorteil für Weiß. Zehn Züge. #sprecher:gus
-Fertig? #sprecher:gus
+Zehn Minuten und fünf Sekunden je Zug, eine Stellung mit Vorteil für Weiß. Zehn Züge. #sprecher:gus #stimmung:neutral
+Fertig? #sprecher:gus #stimmung:laechelt
 * [„Fertig.“]
     Er spielt wie ein Fahrplan mit Verspätung: zuverlässig, aber nicht immer pünktlich. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("ironwood.gus")
@@ -216,14 +216,14 @@ Pause vorbei, Partie gewonnen. Für mich. Morgen wieder? #sprecher:gus #stimmung
 }
 ~ ednaGetroffen = true
 Hinter einem Verkaufsfenster voller Schrauben, Laternen und Fahrradketten sitzt eine alte Dame mit Lesebrille. #sprecher:erzaehler
-Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
+Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
 {
 - hatFahrrad and hatLaterne:
     Rad und Laterne hast du schon, sehe ich. Gute Wahl. Schrauben brauchst du immer. #sprecher:edna #stimmung:laechelt
 - hatFahrrad:
-    Ein Rad hast du schon. Aber eine Laterne für dunkle Ecken? Die Umkleide im Werk ist finster. #sprecher:edna
+    Ein Rad hast du schon. Aber eine Laterne für dunkle Ecken? Die Umkleide im Werk ist finster. #sprecher:edna #stimmung:neutral
 - else:
-    Im Fenster steht ein Rad für alle, die keins haben. Und Laternen für dunkle Ecken. #sprecher:edna
+    Im Fenster steht ein Rad für alle, die keins haben. Und Laternen für dunkle Ecken. #sprecher:edna #stimmung:neutral
 }
 -> edna_laden
 
@@ -283,7 +283,7 @@ Es beginnt zu schneien. Die ersten Flocken des Jahres bleiben auf dem Schild lie
 // Victors Thema gleichzeitig. Ambrose legt diesmal die Hand auf die Niete (Kapitel 24 nur darüber).
 ~ einladungGesehen = true
 An der alten Stahlbrücke hinter dem Werkstor. Victor kommt allein, ohne Tablet. Er weiß nicht, wohin mit den Händen. #sprecher:erzaehler #musik:victor.unsicher
-{held}. #sprecher:victor
+{held}. #sprecher:victor #stimmung:nachdenklich
 Du hast vier. #sprecher:victor #stimmung:nachdenklich
 * [„Ja.“]
 - Gegen den habe ich einmal gespielt. Kowalski. Bei einem Schaukampf. #sprecher:victor #stimmung:nachdenklich

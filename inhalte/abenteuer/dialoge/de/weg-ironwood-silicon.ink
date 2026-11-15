@@ -51,7 +51,7 @@ VAR seite04Gefunden = false
 }
 ~ kowalczykGetroffen = true
 Eine Fernfahrerin mit Armen wie Big Joe sieht dir zu, wie du in die erste Falle der Tafel hineintrittst. #sprecher:erzaehler
-Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk
+Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk #stimmung:neutral
 Ich fahr seit dreißig Jahren. Erst laden, dann fahren. Ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
 Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprecher:erzaehler
 -> END

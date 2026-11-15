@@ -99,23 +99,23 @@ Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #spr
 === greifarm_start ===
 ~ z1Gesehen = true
 Vor einem Tisch mit Brett steht ein Greifarm mit dem Logo von Perfect Move. Ein Kabel führt hinauf zum Solarpaneel. #sprecher:erzaehler
-Auf seinem kleinen Bildschirm leuchtet: „Prototyp Z-1. Bereit. Weiß beginnt.“ #sprecher:greifarm
+Auf seinem kleinen Bildschirm leuchtet: „Prototyp Z-1. Bereit. Weiß beginnt.“ #sprecher:greifarm #stimmung:neutral
 -> greifarm_angebot
 
 === greifarm_angebot ===
 + [Sich an den Tisch setzen.]
-    Der Arm zuckt, dann setzt er einen Bauern nach e4. Klack. #sprecher:greifarm
+    Der Arm zuckt, dann setzt er einen Bauern nach e4. Klack. #sprecher:greifarm #stimmung:neutral
     ~ beginnePartie("wegPinewoodGhost.z1")
     -> END
 + [Lieber nicht.]
-    Der Arm senkt sich wieder. Auf dem Bildschirm steht: „Warte.“ #sprecher:greifarm
+    Der Arm senkt sich wieder. Auf dem Bildschirm steht: „Warte.“ #sprecher:greifarm #stimmung:neutral
     -> END
 
 === greifarm_ende ===
 {z1Fertig: -> END}
 ~ z1Fertig = true
 Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauern aus Metall vor {held} hin. #sprecher:erzaehler
-„Danke für die Partie.“ #sprecher:greifarm
+„Danke für die Partie.“ #sprecher:greifarm #stimmung:neutral
 ~ gibFund("bauerZ1")
 {ambroseSprichtWieder:
     Eine Nähmaschine mit Ehrgeiz. Lasst ihn spielen, er hat sonst niemanden. #sprecher:ambrose #stimmung:laechelt

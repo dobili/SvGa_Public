@@ -214,7 +214,7 @@ Neben dir ist es still geworden. #sprecher:erzaehler
 -> END
 
 === theo_erst_lin ===
-Die Abfrage machen wir offiziell. Melde dich erst bei Dr. Lin, dann messe ich. #sprecher:theo
+Die Abfrage machen wir offiziell. Melde dich erst bei Dr. Lin, dann messe ich. #sprecher:theo #stimmung:neutral
 -> END
 
 === theo_reihe ===
@@ -223,7 +223,7 @@ Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #spre
     ~ beginneAufgaben("siliconBay.reiheTheo")
     -> END
 * [„Nicht jetzt.“]
-    Ich speichere den Termin. #sprecher:theo
+    Ich speichere den Termin. #sprecher:theo #stimmung:neutral
     -> END
 
 === theo_serverraum ===

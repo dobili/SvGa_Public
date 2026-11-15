@@ -124,7 +124,7 @@ Egal. Ich bin Nia. #sprecher:nia #stimmung:laechelt
 
 === nia_angebot ===
 Blitz. Drei Minuten. Du kriegst Weiß und die bessere Stellung, ich bin nett. #sprecher:nia #stimmung:laechelt
-Zehn Züge. Hältst du deinen Vorteil, darfst du vorbei. #sprecher:nia
+Zehn Züge. Hältst du deinen Vorteil, darfst du vorbei. #sprecher:nia #stimmung:neutral
 Sonst trägst du mein Board bis Cedar Creek. #sprecher:nia #stimmung:lacht
 * [„Abgemacht.“]
     -> nia_duell
@@ -383,7 +383,7 @@ Drei Krähen, zwei Vogelscheuchen. Wer gewinnt? #sprecher:ada #stimmung:laechelt
 Diese Woche fehlen wieder sechs. Ich frag nicht, wer. Ich schreib bloß einen Zettel. #sprecher:ada #stimmung:nachdenklich
 Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist alles. #sprecher:erzaehler
 Otis. Redet mit den Kühen. #sprecher:ada #stimmung:laechelt
-Gatter zu, wenn ihr geht. #sprecher:ada
+Gatter zu, wenn ihr geht. #sprecher:ada #stimmung:neutral
 -> END
 
 === ada_alltag ===
@@ -440,7 +440,7 @@ Der Stein mit dem eingeritzten Brett. Man fühlt die Linien eher, als man sie si
 
 === tessa_a ===
 Eine Frau läuft vorbei, rot im Gesicht. Am Gatter bleibt sie stehen und keucht. #sprecher:erzaehler
-Noch – drei Kilometer! Halbe – Strecke! #sprecher:joggerin
+Noch – drei Kilometer! Halbe – Strecke! #sprecher:joggerin #stimmung:laechelt
 Und weg ist sie. #sprecher:erzaehler
 -> END
 

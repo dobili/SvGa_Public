@@ -206,7 +206,7 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
     {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff. Ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.} #sprecher:ambrose #stimmung:laechelt
     -> END
 + [„Bis morgen.“]
-    Geh nur. #sprecher:ambrose
+    Geh nur. #sprecher:ambrose #stimmung:laechelt
     -> END
 
 // ---------------------------------------------------------------- Die erste Nacht

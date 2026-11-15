@@ -66,7 +66,7 @@ VAR kaffeehausGesehen = false
 ~ gatterschluessel = true
 Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen. #sprecher:erzaehler
 Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene #stimmung:laechelt
-Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Nova sagt, du musst nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene
+Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Nova sagt, du musst nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene #stimmung:laechelt
 Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose #stimmung:laechelt
 -> END
 
@@ -138,7 +138,7 @@ Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 An einem runden Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
 {not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
-    Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene
+    Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene #stimmung:neutral
     -> END
 }
 Was du schon kennst: #sprecher:erzaehler

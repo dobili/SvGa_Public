@@ -103,6 +103,8 @@ python -m pipeline.abenteuer.weltkarte PRIVAT ZIEL --orte mapleFalls,cedarCreek 
 python -m pipeline.abenteuer.portraetblatt EINGABE.png AUSGABE.png --raster 3x2   # Porträtblatt aus einem Gemini-Blatt (grüner Grund): Felder, Pixelraster, 3×2 à 64
 python -m pipeline.abenteuer.brettbilder BRETT.png FIGURENBLATT.png --stil schiefer PRIVAT   # Gemini-Brett und -Figurensatz zuschneiden, prüfen, nach spiel/brett/<stil>/ legen ("-" für einen fehlenden Teil)
 python -m pipeline.abenteuer.uebergangsbilder [--ort KENNUNG] [--boegen ORDNER --privat PRIVAT]   # Übergangsbilder prüfen (Regel 10.77), Kontaktbögen beider Seiten
+python -m pipeline.abenteuer.ausrichtung [--ort KENNUNG] [--bilder ORDNER --privat PRIVAT]   # Ausrichtung der Bilder und Bauteile (Regel 10.78)
+python -m pipeline.abenteuer.sprache [--woerterbuch]   # Sprachprüfung der Spieltexte (Zeichen, Anrede, Namen; Wörterbuch braucht pyspellchecker)
 python -m pipeline.wiki --zeigen   # Seiten des Wikis im Dashboard (Paket D); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 ```
 

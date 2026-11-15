@@ -137,7 +137,7 @@ Jo. Ich spiele um Limo. #sprecher:skaterJo #stimmung:laechelt
 -> jo_angebot
 
 === jo_angebot ===
-Fünf Minuten. Eine Partie. Ich spiel nicht von vorn, dauert zu lang. #sprecher:skaterJo
+Fünf Minuten. Eine Partie. Ich spiel nicht von vorn, dauert zu lang. #sprecher:skaterJo #stimmung:laechelt
 Du stehst besser. Wer verliert, holt Limo. #sprecher:skaterJo #stimmung:laechelt
 * [„Abgemacht.“]
     -> jo_duell
@@ -182,9 +182,9 @@ Du hast vergessen zu fragen, was hängt. #sprecher:ambrose #stimmung:nachdenklic
 - else:
     Limo geht eigentlich auf mich. Aber ich bin pleite. Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo #stimmung:laechelt
 }
-Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:skaterJo
+Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:skaterJo #stimmung:laechelt
 + [„Ich hol eine.“]
-    Ich warte. #sprecher:skaterJo
+    Ich warte. #sprecher:skaterJo #stimmung:neutral
     -> END
 + [„Erst noch eine Partie.“]
     -> jo_duell

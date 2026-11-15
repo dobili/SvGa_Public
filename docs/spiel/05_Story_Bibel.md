@@ -691,6 +691,13 @@ Münzen in `11_Karten_und_Gegenstaende.md`, Abschnitt 7.
   mutiger …“.
 - Antwortwahlen in der ersten Person brauchen kein Geschlecht und sind deshalb bevorzugt.
 - Mama sagt Kosenamen nur in neutraler Form („Hey, du“, „Spatz“ geht, „mein Großer“ nicht).
+- **Erst im Archiv der Name** (Roman, Kapitel 12; RO9 Nr. 4, 15.11.2026): Ambrose nennt {held}
+  zum ersten Mal im Archiv von Cedar Creek beim Namen, nach der Erinnerung an New York 1858
+  (Knoten `cedar-creek-archiv.name_im_archiv`, setzt `ambroseNenntNamen`). Vorher sagt er „Kind“
+  oder „Lehrling“. Ambrose-Zeilen in Akt 1, die vor und nach dem Archiv laufen können, schreiben
+  `{ambroseNenntNamen:{held}|Lehrling}`. Die anderen Figuren dürfen den Namen von Anfang an
+  sagen. Geprüft in `pipeline/tests/test_abenteuer_ambrose_name.py` (alle Dialoge der Orte vor
+  dem Archiv, ohne und mit dem Ink-Compiler).
 
 ### 5.3 Ambroses altmodische Sprache in fünf Regeln
 

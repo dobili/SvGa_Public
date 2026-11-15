@@ -67,7 +67,7 @@ Kreisliga spielt man zu viert. Wer die Clubnadel holt, spielt mit. Die Nadel hol
 * [„Gegen Sie?“]
     Gegen mich. Aber vorher zeigst du mir, dass du zählen kannst. Sam und Juno haben Aufgaben für dich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Was muss ich tun?“]
-    Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado
+    Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado #stimmung:neutral
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
 Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. Das ist Sam. #sprecher:erzaehler
 Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler
@@ -77,8 +77,8 @@ Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #spreche
 
 === coach_reihe_offen ===
 {
-- not reiheSamBestanden: Fang mit Sam an, dann kommt Juno. #sprecher:coachDelgado
-- else: Sam hast du geschafft. Jetzt noch Juno. Sie hat die Aufgaben selbst aufgeschrieben. #sprecher:coachDelgado
+- not reiheSamBestanden: Fang mit Sam an, dann kommt Juno. #sprecher:coachDelgado #stimmung:neutral
+- else: Sam hast du geschafft. Jetzt noch Juno. Sie hat die Aufgaben selbst aufgeschrieben. #sprecher:coachDelgado #stimmung:laechelt
 }
 {reiheSamBestanden:
     Juno winkt dir vom Nebentisch zu, ein Heft in der Hand. #sprecher:erzaehler

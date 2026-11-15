@@ -74,39 +74,39 @@ VAR novaNachPartieGesehen = false
 === turnierleiterin ===
 {
 - not arenaGesehen:
-    Bitte erst am Eingang anmelden. #sprecher:turnierleiterin
+    Bitte erst am Eingang anmelden. #sprecher:turnierleiterin #stimmung:neutral
     -> END
 - not vorrundeGeschafft and alleGespielt() and vorrundenpunkte() >= 2.5: -> vorrunde_geschafft
 - gespielt(ausgangCapitalArenaRunde3) and not novaNachPartieGesehen: -> nova_nach_partie
 - not vorrundeGeschafft: -> vorrunde_naechste
 - not aussageGesehen:
-    Das Halbfinale beginnt gleich. Vorher möchte Dr. Lin am Pressetisch etwas sagen. #sprecher:turnierleiterin
+    Das Halbfinale beginnt gleich. Vorher möchte Dr. Lin am Pressetisch etwas sagen. #sprecher:turnierleiterin #stimmung:neutral
     -> END
 - ausgangCapitalArenaHalbfinale != "sieg": -> halbfinale_angebot
 - else:
-    Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin
+    Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:neutral
     -> END
 }
 
 === vorrunde_naechste ===
 {alleGespielt():
-    Du hast {punktetext()} von 4 Punkten. Für das Halbfinale brauchst du 2,5. #sprecher:turnierleiterin
-    Du darfst eine Runde, die du nicht gewonnen hast, noch einmal spielen. #sprecher:turnierleiterin
+    Du hast {punktetext()} von 4 Punkten. Für das Halbfinale brauchst du 2,5. #sprecher:turnierleiterin #stimmung:neutral
+    Du darfst eine Runde, die du nicht gewonnen hast, noch einmal spielen. #sprecher:turnierleiterin #stimmung:neutral
 }
 {
 - not gespielt(ausgangCapitalArenaRunde1) or (alleGespielt() and ausgangCapitalArenaRunde1 != "sieg"):
-    Runde 1 gegen Bea Lindqvist. #sprecher:turnierleiterin #musik:arena.vorrunde
+    Runde 1 gegen Bea Lindqvist. #sprecher:turnierleiterin #stimmung:neutral #musik:arena.vorrunde
     Bea ist Maes große Schwester. Sie hat bei Mrs. Okafor gelernt. Sie wartet und will ein Remis von jedem, der ungeduldig wird. #sprecher:erzaehler
     -> runde1_spielen
 - not gespielt(ausgangCapitalArenaRunde2) or (alleGespielt() and ausgangCapitalArenaRunde2 != "sieg"):
-    Runde 2 gegen Marcus Oyelaran. #sprecher:turnierleiterin #musik:arena.vorrunde
+    Runde 2 gegen Marcus Oyelaran. #sprecher:turnierleiterin #stimmung:neutral #musik:arena.vorrunde
     Er sieht jede Gabel, bevor sie da ist. Er ist schnell und laut in seinen Zügen. #sprecher:erzaehler
     -> runde2_spielen
 - not gespielt(ausgangCapitalArenaRunde3) or (alleGespielt() and ausgangCapitalArenaRunde3 != "sieg"):
-    Tisch eins. Sinclair gegen … #sprecher:turnierleiterin #musik:aus
+    Tisch eins. Sinclair gegen … #sprecher:turnierleiterin #stimmung:ernst #musik:aus
     -> runde3_vorher
 - else:
-    Runde 4 gegen Tobias Wren, mit fester Uhr: fünf Minuten und drei Sekunden je Zug. #sprecher:turnierleiterin
+    Runde 4 gegen Tobias Wren, mit fester Uhr: fünf Minuten und drei Sekunden je Zug. #sprecher:turnierleiterin #stimmung:neutral
     Er spielt, als würde das Haus brennen. Du lässt die Uhr eine Figur sein. Sie ist nicht der König. #sprecher:erzaehler
     -> runde4_spielen
 }
@@ -116,7 +116,7 @@ VAR novaNachPartieGesehen = false
     ~ beginnePartie("capitalArena.runde1")
     -> END
 + [„Noch einen Moment.“]
-    Natürlich. Die Bretter warten. #sprecher:turnierleiterin
+    Natürlich. Die Bretter warten. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 
 === runde2_spielen ===
@@ -124,7 +124,7 @@ VAR novaNachPartieGesehen = false
     ~ beginnePartie("capitalArena.runde2")
     -> END
 + [„Noch einen Moment.“]
-    Natürlich. Die Bretter warten. #sprecher:turnierleiterin
+    Natürlich. Die Bretter warten. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 
 // Roman Kapitel 61: Nova ohne Gerät, beide Ohren frei, der Stöpsel offen neben der Uhr.
@@ -142,7 +142,7 @@ Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, w
     ~ beginnePartie("capitalArena.runde3")
     -> END
 + [„Noch einen Moment.“]
-    Natürlich. Die Bretter warten. #sprecher:turnierleiterin
+    Natürlich. Die Bretter warten. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 
 === runde4_spielen ===
@@ -150,7 +150,7 @@ Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, w
     ~ beginnePartie("capitalArena.runde4")
     -> END
 + [„Noch einen Moment.“]
-    Natürlich. Die Bretter warten. #sprecher:turnierleiterin
+    Natürlich. Die Bretter warten. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 
 === vorrunde_geschafft ===
@@ -223,9 +223,9 @@ Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #spr
 === halbfinale_angebot ===
 {
 - ausgangCapitalArenaHalbfinale == "remis":
-    Remis. Im Halbfinale braucht es einen Sieger. Ihr spielt noch einmal. #sprecher:turnierleiterin
+    Remis. Im Halbfinale braucht es einen Sieger. Ihr spielt noch einmal. #sprecher:turnierleiterin #stimmung:neutral
 - ausgangCapitalArenaHalbfinale == "niederlage":
-    Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. Noch einmal gegen Kade? #sprecher:turnierleiterin
+    Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. Noch einmal gegen Kade? #sprecher:turnierleiterin #stimmung:nachdenklich
 - not halbfinaleVorherGesehen:
     -> halbfinale_vorher
 }
@@ -337,7 +337,7 @@ Ich habe gerechnet und vergessen, wofür. Entschuldige, Victor. #sprecher:graham
 Du hörst, wie zwei Menschen einander festhalten, ungeschickt, wie Leute, die es lange nicht getan haben. #sprecher:erzaehler
 Ich spiel heute für mich. Und gegen meinen besten Gegner. Du darfst zugucken. Aber du darfst nichts aufschreiben. #sprecher:victor #stimmung:laechelt
 Ich weiß nicht, ob ich das kann. #sprecher:grahamHale #stimmung:nachdenklich
-Probier’s. Es ist luftig. #sprecher:victor #stimmung:laechelt
+Probier's. Es ist luftig. #sprecher:victor #stimmung:laechelt
 -> vor_dem_finale_mama
 
 === vor_dem_finale_mama ===
@@ -364,7 +364,7 @@ Aus der Halle kommt ein Gong. Deine Hände zittern nicht mehr. #sprecher:erzaehl
 // Roman Kapitel 65: ein Tisch im Lichtkreis; keine Karten, keine Hilfen, Ambrose nicht im Bild.
 Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
 Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
-Keine Karten. Keine Hilfen. #sprecher:turnierleiterin
+Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 + [„Ich bin bereit.“]
     Seine Hand ist trocken und warm. #sprecher:erzaehler
     ~ beginnePartie("capitalArena.finale")
@@ -490,7 +490,7 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 {aussageGesehen:
     Ich habe gekündigt, bevor wir hergefahren sind. Der Club ist in einem Keller. Ein Heizlüfter, kein einziger Bildschirm. #sprecher:lin #stimmung:nachdenklich
 - else:
-    Wir haben eine Mappe dabei. Nach der Vorrunde. Dann reden wir. #sprecher:lin
+    Wir haben eine Mappe dabei. Nach der Vorrunde. Dann reden wir. #sprecher:lin #stimmung:neutral
 }
 -> END
 
@@ -512,7 +512,7 @@ Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambro
 - aussageGesehen:
     Ich habe nichts gewusst. Das ist keine Ausrede. Es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
 - else:
-    Graham Hale. Ich sponsere dieses Turnier. #sprecher:grahamHale
+    Graham Hale. Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
     Viel Glück. Nein, ehrlich: viel Glück. #sprecher:grahamHale #stimmung:laechelt
 }
 -> END

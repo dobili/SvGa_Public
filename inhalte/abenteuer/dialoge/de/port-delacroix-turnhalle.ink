@@ -309,7 +309,7 @@ Du hast in jeder Stellung einen gefunden. Einen Plan, meine ich. #sprecher:lou #
 === lou_warten ===
 ~ louGetroffen = true
 Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
-Lou. Erst Remy, dann ich. #sprecher:lou
+Lou. Erst Remy, dann ich. #sprecher:lou #stimmung:neutral
 So ist die Reihenfolge. Remy hat sie erfunden. #sprecher:lou #stimmung:laechelt
 -> END
 

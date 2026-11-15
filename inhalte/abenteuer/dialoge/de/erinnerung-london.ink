@@ -43,7 +43,7 @@ Ein Junge mit Schirmmütze schwenkt eine Zeitung über dem Kopf. Der Wind trägt
 Extra! Extra! #sprecher:zeitungsjunge #stimmung:laechelt
 Die ganze Welt kommt nach London, zur großen Ausstellung! Und zum Schachturnier! #sprecher:zeitungsjunge #stimmung:laechelt
 Ein Turnier. Die besten Spieler der Welt, in einer Stadt. #sprecher:ambrose #stimmung:jung
-Und ich bin hier, um Klavierholz zu kaufen. #sprecher:ambrose
+Und ich bin hier, um Klavierholz zu kaufen. #sprecher:ambrose #stimmung:jung
 London, 1851. Bleib bei mir, {held}. Ich zeige dir, was ich sah. #sprecher:ambrose #stimmung:jung
 -> END
 
@@ -93,8 +93,8 @@ Es sieht aus wie ein Unfall. Weiß hat schon einen Läufer hergegeben, die schwa
 * [Hinsehen]
 - Der große Mann zieht einen Läufer. Mitten hinein, tief ins schwarze Lager. Ein Raunen. #sprecher:erzaehler
 Schwarz schlägt einen Turm. Einfach so, einen ganzen Turm. #sprecher:erzaehler #pause:2
-Jetzt. Halt. Schau hin. #sprecher:ambrose
-Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose
+Jetzt. Halt. Schau hin. #sprecher:ambrose #stimmung:jung
+Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose #stimmung:jung
 * [Zusehen und mitraten]
     ~ beginneAufgaben("riverton.flashbackLondon")
     -> END
@@ -107,7 +107,7 @@ Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du ge
 === rueckkehr ===
 Eine große Uhr an der Wand des Kaffeehauses. Ihr Ticken klingt genau wie das der Bahnhofsuhr in Riverton. #sprecher:erzaehler
 {not flashbackLondonBestanden:
-    Noch nicht, {held}. Erst sollst du sehen, was am Tisch in der Mitte geschieht. #sprecher:ambrose
+    Noch nicht, {held}. Erst sollst du sehen, was am Tisch in der Mitte geschieht. #sprecher:ambrose #stimmung:jung
     -> rueckkehr_wahl
 }
 {londonSchlussGesehen: -> rueckkehr_telegraf}

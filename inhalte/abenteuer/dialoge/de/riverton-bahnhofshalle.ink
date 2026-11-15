@@ -91,7 +91,7 @@ Mr. Harlan hebt den Kopf, sehr langsam. Hinter den Gläsern sind seine Augen rie
 -> harlan_angebot
 
 === harlan_angebot ===
-Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan
+Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan #stimmung:laechelt
 Er sieht hinauf zur großen Uhr. #sprecher:erzaehler
 Eile ist der Feind der Feder. Und der Unruh. Aber bitte. #sprecher:harlan #stimmung:laechelt
 Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose #stimmung:laechelt

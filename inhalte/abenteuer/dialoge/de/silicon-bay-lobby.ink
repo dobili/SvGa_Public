@@ -107,7 +107,7 @@ Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich wei
     Die Vitrine „Hale – Ingenieure seit 1850“. Das Notizbuch liegt aufgeschlagen, die Seite fehlt noch immer. #sprecher:erzaehler
     -> END
 }
-Hale. Ingenieure seit 1850. Von der Brücke zum Algorithmus. #sprecher:victor
+Hale. Ingenieure seit 1850. Von der Brücke zum Algorithmus. #sprecher:victor #stimmung:stolz
 Victor sagt es auf, weil es zur Führung gehört. Hinter dem Glas liegt ein Rechenschieber aus Elfenbein. #sprecher:erzaehler
 Daneben eine Zeichnung, braun vom Alter, lauter Dreiecke. Du erkennst sie, bevor du die Unterschrift liest. #sprecher:erzaehler
 Auf einem Pult ein Notizbuch. Schachzüge in zwei Spalten, jeder Buchstabe wie mit dem Lineal gezogen. #sprecher:erzaehler

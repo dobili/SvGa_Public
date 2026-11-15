@@ -67,7 +67,7 @@ VAR hatKartePhasenblick = false
 Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
 Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
 Sie betrachtet dich, wie man eine Stellung betrachtet. #sprecher:erzaehler
-Sieben. #sprecher:ward
+Sieben. #sprecher:ward #stimmung:neutral
 * [„Ja.“]
 - Wie hast du Big Joe geschlagen? #sprecher:ward #stimmung:nachdenklich
 * [„Grundreihe. Ein Springeropfer, damit der Turm hinunterkommt.“]
@@ -84,7 +84,7 @@ Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, verlier
 - Opposition. Der zuerst zieht, gibt nach. Wie im Leben, manchmal. #sprecher:ward #stimmung:nachdenklich
 Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden. Hier nicht. #sprecher:ward #stimmung:nachdenklich
 Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
-Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward #musik:karte
+Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward #stimmung:neutral #musik:karte
 -> END
 
 === ward_reihe_offen ===

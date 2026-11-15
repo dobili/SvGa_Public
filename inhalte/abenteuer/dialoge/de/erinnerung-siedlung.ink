@@ -36,7 +36,7 @@ Meine Hände liegen auf einer Decke. Sie sind sehr dünn. Es tut nichts weh. Das
 Auf dem Stuhl neben dem Bett steht das Brett. Jemand hat die Fäden gelöst. Die Figuren stehen frei. #sprecher:erzaehler
 Neben dem Brett ein aufgerissener Brief. Eine Zeile, senkrecht wie ein Zaun: „39. … Dame schlägt g3, Schach.“ #sprecher:erzaehler #bild:zettel_39
 Er hat also gezogen. Sein Zug ist mir nachgereist, elf Tage durch den Schnee, bis in ein Zimmer mit Rosen. #sprecher:ambrose #stimmung:jung #bild:aus
-Mister? #sprecher:gideon
+Mister? #sprecher:gideon #stimmung:ueberrascht
 In der Tür steht ein großer Mann mit Lederschurz und Armen wie Balken. Er trägt eine Schüssel, als wäre sie aus Glas. #sprecher:erzaehler
 Gideon. Stell es hin. Setz dich. Sieh her. Ich zeige dir, wie die Partie hierhergekommen ist. Nur die letzten Züge. Rate mit. #sprecher:ambrose #stimmung:jung
 -> zug37
@@ -103,9 +103,9 @@ Gideon hält das Blatt. Die Feder kratzt. Zweimal muss ich absetzen. #sprecher:e
 „40. König schlägt g3.“ #sprecher:erzaehler #pause
 Darunter wollte ich schreiben, dass ich ihm verziehen habe. Irgendwann um den zwanzigsten Zug, ohne es zu merken. Die Hand tut es nicht mehr. #sprecher:ambrose #stimmung:jung
 Gib es dem Postreiter. Bring ihn nach Norden. Er wartet. #sprecher:ambrose #stimmung:jung
-Wer? #sprecher:gideon
+Wer? #sprecher:gideon #stimmung:ueberrascht
 Ein unerträglicher Mann. Der beste Gegner, den ich hatte. #sprecher:ambrose #stimmung:jung
-Und das Brett, Mister? Wem soll ich es geben? #sprecher:gideon
+Und das Brett, Mister? Wem soll ich es geben? #sprecher:gideon #stimmung:traurig
 Meiner Schwester. Claire. Die Adresse steht innen im Deckel. Und die Stellung rührt niemand an. Er ist dran. #sprecher:ambrose #stimmung:jung
 Stiefel auf der Treppe, schwer, Stufe um Stufe. Unten ein Pferd. Hufe, die sich entfernen. #sprecher:erzaehler #klang:stiefel_pferd #geraeusch:aus
 Es ist still. Sehr schön still. #sprecher:erzaehler #musik:aus

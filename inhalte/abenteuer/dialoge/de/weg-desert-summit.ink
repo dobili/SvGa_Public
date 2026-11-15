@@ -162,7 +162,7 @@ VAR ruthGetroffen = false
 === funkschach_start ===
 ~ funkschachBegonnen = true
 Im Fenster des Diners steht ein altes CB-Funkgerät. Aus dem Lautsprecher kommen Buchstaben und Zahlen: „Echo vier, Echo zwei.“ #sprecher:erzaehler
-Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer. Willst du einspringen? #sprecher:earl
+Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer. Willst du einspringen? #sprecher:earl #stimmung:laechelt
 -> funkschach_partie
 
 === funkschach_partie ===

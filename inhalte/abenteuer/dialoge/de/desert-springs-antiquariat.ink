@@ -45,11 +45,11 @@ Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemand
 // Kapitel 44 (Roman): sieben Kisten im Keller, Ambroses eigene Briefe nach Jahren gebündelt,
 // das Siegel mit einer Fesselung wie in Ironwood.
 ~ okoroGetroffen = true
-Der Kram von dem Brückenbauer. Im Keller. Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #geraeusch:antiquariat
+Der Kram von dem Brückenbauer. Im Keller. Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #stimmung:nachdenklich #geraeusch:antiquariat
 Pläne, Rechnungen, ein Sextant. Ich wollte es immer durchsehen. Dann kam immer ein Buch dazwischen. #sprecher:okoro #stimmung:laechelt
 {gefundenUmschlag:
     Du legst den Umschlag aus Ironwood auf den Schalter. Mr. Okoro sieht ihn lange an. #sprecher:erzaehler
-    Der Keller ist die Treppe hinunter und dann links. #sprecher:okoro
+    Der Keller ist die Treppe hinunter und dann links. #sprecher:okoro #stimmung:neutral
 }
 Sieben Kisten. In der vierten Briefe, gebündelt mit Schnur, jedes Bündel ein Jahr. 1863. 1864. 1865. #sprecher:erzaehler #bild:briefbuendel
 Die Schrift darauf ist schräg und ungeduldig. Meine. Er hat sie aufgehoben. Jeden. #sprecher:ambrose #stimmung:still #bild:aus

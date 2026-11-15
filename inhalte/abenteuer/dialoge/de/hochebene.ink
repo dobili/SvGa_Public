@@ -52,8 +52,8 @@ Die kennst du nicht. Das hier ist fast Schach. Nur besser. #sprecher:kira #stimm
 Ich bin Kira. Der Bus fährt in einer halben Stunde, das reicht für eine Erklärung. #sprecher:kira #stimmung:laechelt
 * [„Was sind das für Figuren?“]
 - Sie hebt zwei Figuren hoch, die nicht in dein Schachspiel gehören: einen Vogel mit eckigen Flügeln und ein breites Tier mit gesenktem Kopf. #sprecher:erzaehler
-Der Falke zieht wie ein Läufer oder springt wie ein Springer. Der Bison zieht wie ein Turm oder springt wie ein Springer. #sprecher:kira
-Man setzt sie ein, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Dann landen sie auf dem Feld, das frei wird. #sprecher:kira
+Der Falke zieht wie ein Läufer oder springt wie ein Springer. Der Bison zieht wie ein Turm oder springt wie ein Springer. #sprecher:kira #stimmung:neutral
+Man setzt sie ein, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Dann landen sie auf dem Feld, das frei wird. #sprecher:kira #stimmung:neutral
 Bei uns heißt das Spiel einfach Falke und Bison. Meine Urgroßmutter hat die zwei geschnitzt, in einem Winter, als die Straße zugeschneit war und dem Schulschach zwei Figuren fehlten. #sprecher:kira #stimmung:laechelt
 Den Falken, weil über den Felstürmen immer einer kreist. Den Bison, weil ihr Bruder so stur war. Sagt jedenfalls meine Oma. #sprecher:kira #stimmung:lacht
 -> kira_vorfuehren
@@ -80,7 +80,7 @@ Werkstück. Den hab ich verschnitten. Aber er zieht trotzdem. #sprecher:kira #st
 === kira_alltag ===
 {~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden. Oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig. Mit Uhr. Ich hab eine.} #sprecher:kira #stimmung:laechelt
 + [„Erklär mir die Regeln noch einmal.“]
-    Falke: Läufer oder Springer. Bison: Turm oder Springer. Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira
+    Falke: Läufer oder Springer. Bison: Turm oder Springer. Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira #stimmung:laechelt
     -> END
 + [„Bis bald, Kira.“]
     -> END

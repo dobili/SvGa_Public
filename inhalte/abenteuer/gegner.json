@@ -1038,6 +1038,9 @@
         "art": "eingang",
         "versatz": 520
       },
+      "phasenversatz": {
+        "endspiel": -1
+      },
       "gewichte": {
         "koenigsschild": 1.6,
         "tempoverlust": 1.2
@@ -1325,6 +1328,9 @@
         "art": "eingang",
         "versatz": 550
       },
+      "phasenversatz": {
+        "mittelspiel": -1
+      },
       "gewichte": {
         "koenigPassiv": 1.2
       },
@@ -1353,6 +1359,9 @@
       "staerke": {
         "art": "eingang",
         "versatz": 583
+      },
+      "phasenversatz": {
+        "endspiel": -1
       },
       "gewichte": {
         "ruhig": 1.8
@@ -1411,6 +1420,9 @@
       "staerke": {
         "art": "eingang",
         "versatz": 650
+      },
+      "phasenversatz": {
+        "endspiel": -1
       },
       "gewichte": {
         "schlagreflex": 1.3

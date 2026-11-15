@@ -26,7 +26,23 @@
       "startstellung": {
         "art": "grundstellung"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "momente": [
+        {
+          "wenn": {
+            "zug": 6
+          },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.durchgehen"
+        },
+        {
+          "wenn": {
+            "abZug": 14
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.ambrose.stillVorDemZug"
+        }
+      ]
     },
     {
       "kennung": "mapleFalls.samRevanche",
@@ -52,7 +68,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 15
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.delgado.vorbeugen"
+        },
+        {
+          "wenn": {
+            "abZug": 22
+          },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.ichSageNichts"
+        }
+      ]
     },
     {
       "kennung": "mapleFalls.skaterJo",
@@ -84,7 +116,23 @@
         "fen": "r1b2rk1/2q1bppp/p2p1n2/1pp1p3/4P3/2P2N1P/P1BN1PP1/R1BQR1K1 b - - 2 12"
       },
       "kartenErlaubt": false,
-      "zaehltFuerApp": false
+      "zaehltFuerApp": false,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 4
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.victor.uhrwerk"
+        },
+        {
+          "wenn": {
+            "abZug": 10
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.victor.wand"
+        }
+      ]
     },
     {
       "kennung": "cedarCreek.rosaDuell",
@@ -707,7 +755,16 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 12
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.bea.wartet"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.runde2",
@@ -720,7 +777,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 8
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.marcus.leise"
+        },
+        {
+          "wenn": {
+            "abZug": 18
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.slick.tribuene"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.runde3",
@@ -774,7 +847,23 @@
       "zeit": {
         "sekunden": 300,
         "zuschlag": 3
-      }
+      },
+      "momente": [
+        {
+          "wenn": {
+            "zug": 2
+          },
+          "sprecher": "tobias",
+          "text": "moment.tobias.losLos"
+        },
+        {
+          "wenn": {
+            "uhrUnter": 60
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.tobias.eineMinute"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.halbfinale",

@@ -7,6 +7,8 @@ läuft nur, wenn das private Paket da ist.
 
 import pytest
 
+pytest.importorskip("PIL")  # anordnung_bild braucht Pillow, in Actions nicht installiert
+
 from pipeline.abenteuer.anordnung import (
     pruefe_anordnung,
     pruefe_hausgroesse,

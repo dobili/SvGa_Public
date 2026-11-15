@@ -150,6 +150,7 @@
     },
     "wds6LeitplankeL2": {
       "quelle": "spiel/eigene/leitplanke_laengs_2.png",
+      "lauf": "waagrecht",
       "breite": 32,
       "hoehe": 16,
       "kollision": true,
@@ -168,6 +169,7 @@
     },
     "wds6LeitplankeL3": {
       "quelle": "spiel/eigene/leitplanke_laengs_3.png",
+      "lauf": "waagrecht",
       "breite": 48,
       "hoehe": 16,
       "kollision": true,
@@ -186,6 +188,7 @@
     },
     "wds6LeitplankeL4": {
       "quelle": "spiel/eigene/leitplanke_laengs_4.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 16,
       "kollision": true,
@@ -204,6 +207,7 @@
     },
     "wds6LeitplankeL5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 16,
       "kollision": true,
@@ -222,6 +226,7 @@
     },
     "wds6LeitplankeL6": {
       "quelle": "spiel/eigene/leitplanke_laengs_6.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 16,
       "kollision": true,
@@ -240,6 +245,7 @@
     },
     "wds6LeitplankeL7": {
       "quelle": "spiel/eigene/leitplanke_laengs_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 16,
       "kollision": true,
@@ -258,6 +264,7 @@
     },
     "wds6LeitplankeL8": {
       "quelle": "spiel/eigene/leitplanke_laengs_8.png",
+      "lauf": "waagrecht",
       "breite": 128,
       "hoehe": 16,
       "kollision": true,

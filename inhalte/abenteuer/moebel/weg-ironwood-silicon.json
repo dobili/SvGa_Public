@@ -268,6 +268,7 @@
     },
     "ws5AutoBlau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_1.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": true,
@@ -278,6 +279,7 @@
     },
     "ws5AutoGruen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_10.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 80,
       "kollision": true,
@@ -288,6 +290,7 @@
     },
     "ws5AutoGrau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_14.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -298,6 +301,7 @@
     },
     "ws5Steg4": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_4.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 36,
       "kollision": false,
@@ -307,6 +311,7 @@
     },
     "ws5Steg5": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_5.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 36,
       "kollision": false,
@@ -316,6 +321,7 @@
     },
     "ws5Steg6": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_6.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 36,
       "kollision": false,
@@ -325,6 +331,7 @@
     },
     "ws5Steg7": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 36,
       "kollision": false,
@@ -400,6 +407,7 @@
     },
     "ws5Planke5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 16,
       "kollision": true,
@@ -409,6 +417,7 @@
     },
     "ws5Planke8": {
       "quelle": "spiel/eigene/leitplanke_laengs_8.png",
+      "lauf": "waagrecht",
       "breite": 128,
       "hoehe": 16,
       "kollision": true,
@@ -474,6 +483,7 @@
     },
     "wsgAutoAb1": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_1.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -486,6 +496,7 @@
     },
     "wsgAutoAb10": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_10.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 80,
       "kollision": false,
@@ -498,6 +509,7 @@
     },
     "wsgAutoAb14": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_14.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
@@ -510,6 +522,7 @@
     },
     "wsgAutoAb21": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_21.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 80,
       "kollision": false,
@@ -522,6 +535,7 @@
     },
     "wsgAutoAb17": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_17.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
@@ -534,6 +548,7 @@
     },
     "wsgAutoAuf2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Up_2.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -546,6 +561,7 @@
     },
     "wsgAutoAuf11": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Up_11.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 80,
       "kollision": false,
@@ -558,6 +574,7 @@
     },
     "wsgAutoAuf15": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Up_15.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
@@ -570,6 +587,7 @@
     },
     "wsgAutoAuf22": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Up_22.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 80,
       "kollision": false,
@@ -582,6 +600,7 @@
     },
     "wsgAutoAuf19": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Up_19.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 64,
       "kollision": false,
@@ -929,6 +948,7 @@
     },
     "wsrAutoLinks1": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 48,
       "kollision": true,
@@ -939,6 +959,7 @@
     },
     "wsrAutoLinks14": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_14.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,
@@ -949,6 +970,7 @@
     },
     "wsrAutoLinks21": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_21.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,
@@ -959,6 +981,7 @@
     },
     "wsrAutoRechts10": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_10.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,
@@ -969,6 +992,7 @@
     },
     "wsrAutoRechts2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_2.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 48,
       "kollision": true,
@@ -979,6 +1003,7 @@
     },
     "wsrAutoRechts17": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_17.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,
@@ -1141,6 +1166,7 @@
     },
     "wsrPlanke5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 16,
       "kollision": true,
@@ -1150,6 +1176,7 @@
     },
     "wsrPlanke7": {
       "quelle": "spiel/eigene/leitplanke_laengs_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 16,
       "kollision": true,
@@ -1312,6 +1339,7 @@
     },
     "wsr10Bus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_4.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 64,
       "kollision": true,
@@ -1320,6 +1348,7 @@
     },
     "wsr12Lastwagen": {
       "quelle": "spiel/eigene/lastwagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 144,
       "kollision": true,

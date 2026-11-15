@@ -268,6 +268,7 @@
     },
     "sd6SteglLaengs4": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_4.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 68,
       "kollision": false,
@@ -456,6 +457,7 @@
     },
     "dz12Lieferwagen": {
       "quelle": "spiel/eigene/lieferwagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 84,
       "kollision": true,

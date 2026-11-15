@@ -44,6 +44,7 @@
     },
     "sc7Theke": {
       "quelle": "spiel/eigene/theke_holz_laengs_3.png",
+      "lauf": "waagrecht",
       "breite": 48,
       "hoehe": 32,
       "kollision": true,

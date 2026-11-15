@@ -2,6 +2,7 @@
   "moebel": {
     "heSchulbus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 64,
       "kollision": true
@@ -235,6 +236,8 @@
     },
     "sc8TribueneLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_2.png",
+      "lauf": "senkrecht",
+      "blick": "links",
       "breite": 32,
       "hoehe": 64,
       "kollision": true,
@@ -244,6 +247,8 @@
     },
     "sc8TribueneMitte": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
+      "lauf": "waagrecht",
+      "blick": "unten",
       "breite": 64,
       "hoehe": 48,
       "kollision": true,
@@ -253,6 +258,8 @@
     },
     "sc8TribueneRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_3.png",
+      "lauf": "senkrecht",
+      "blick": "rechts",
       "breite": 32,
       "hoehe": 64,
       "kollision": true,

@@ -530,6 +530,7 @@
     },
     "wg5BootAb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -542,6 +543,7 @@
     },
     "wg5BootAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_1.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -586,6 +588,7 @@
     },
     "wg6BootLaengs": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 32,
       "kollision": false,
@@ -684,6 +687,7 @@
     },
     "mf8Wohnmobil": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Right_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": true,

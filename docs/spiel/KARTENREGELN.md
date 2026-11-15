@@ -1148,3 +1148,33 @@ mit „Bild:“), Kontaktbögen mit `--boegen ORDNER [--privat PFAD] [--ort KENN
 - **Sichtprüfung:** Die Kontaktbögen zeigen je Übergang beide Seiten (7 × 7 Kacheln, vierfach) mit
   roten Rahmen um den Auslöser. Material und Aussehen (Glastür außen, Holztür innen; Rolltor außen,
   Zimmertür innen; Tür aufgeklebt) sieht nur das Auge: jeden Bogen ansehen.
+
+### 10.78 Bilder stehen in der Richtung, in der sie funktionieren (Wunsch des Autors, 15.11.2026)
+
+„Bei allen verwendeten Assets schauen: In welcher Orientierung funktionieren sie und in welcher
+sind sie eingesetzt? […] steht es nicht in Verbindung mit anderen Assets im Raum, die eigentlich
+eine andere Orientierung oder Position voraussetzen?“ (Anlass: Kugelfang mit Schacht nach Norden
+an der Kegelbahn von West nach Ost im Gasthaus Lockport.) Prüfung:
+`python -m pipeline.abenteuer.ausrichtung [--ort KENNUNG] [--bilder ORDNER --privat PFAD]`, im
+Kartenbau als Hinweis „Ausrichtung:“; Übersichten aller Karten zum Durchsehen mit
+`python -m pipeline.abenteuer.ausrichtungsbilder ORDNER PRIVAT [innen|aussen|alle]`.
+
+- **Katalog:** `lauf` (waagrecht, senkrecht: Achse, entlang der ein Bild weiterläuft oder fährt;
+  bei Fahrzeugen und Booten sonst aus `blick`), `ende` (nord, sued, west, ost: Seite, an der das
+  Bild abschließt, etwa Kugelfang, Prellbock, Kopfende), `verbund` und `stelle` (Teile einer Anlage
+  und wo sie hingehören: Kegel am Ende, Kugelregal am Abwurf), `varianten` (Bilder anderer
+  Richtung), `blickziel` (Bühne, Schultafel). Maßgeblich ist das Bild, nicht der Dateiname
+  (`leitplanke_laengs` läuft waagrecht). Dasselbe Bild hat überall dieselben Angaben.
+- **Anlage:** Teile eines Verbunds, die aneinanderliegen, laufen in dieselbe Richtung; ein Endstück
+  liegt an dem Ende, das `ende` nennt (dahinter kein Teil der Anlage); Teile mit `stelle` liegen in
+  der passenden Hälfte.
+- **Untergrund:** Fahrzeuge laufen mit ihrer Fahrbahn (zusätzlich zu 10.65), Boote mit dem offenen
+  Wasser (am Steg oder an Deck frei), Brücken und Schleusentore quer über das Wasser.
+- **Betten:** Das Kopfende liegt an einer Wand.
+- **Sitze:** Ein Stuhl oder eine Bank direkt am Tisch schaut zu ihm; Stühle und Hocker an einer
+  Theke stehen auf der Seite, zu der die Theke schaut (`blick`), der Wirt dahinter. Hocker ohne
+  Lehne haben keine Blickrichtung. Stühle ohne Tisch schauen nicht vom Blickziel des Raums weg.
+- **Wandbilder:** Frontal gezeichnete Bilder an der Wand (`an_wand`) hängen an der Nordwand.
+- **Sichtprüfung:** Je Befund ein Ausschnitt mit roten Rahmen; dazu jede Innenkarte als Übersicht
+  ansehen, denn Sessel, die nicht zum Spieltisch schauen, Figuren hinter Bildschirmen oder Bänke
+  quer zum Riesenbrett erkennt nur das Auge.

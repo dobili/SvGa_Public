@@ -305,6 +305,7 @@
     },
     "wc5Steg3": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_3.png",
+      "lauf": "waagrecht",
       "breite": 48,
       "hoehe": 36,
       "kollision": false,
@@ -314,6 +315,7 @@
     },
     "wc5Steg4": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_4.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 36,
       "kollision": false,
@@ -323,6 +325,7 @@
     },
     "wc5Steg5": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_5.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 36,
       "kollision": false,
@@ -332,6 +335,7 @@
     },
     "wc5Steg6": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_6.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 36,
       "kollision": false,
@@ -341,6 +345,7 @@
     },
     "wc5Steg7": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 36,
       "kollision": false,
@@ -350,6 +355,7 @@
     },
     "wc5Steg8": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_8.png",
+      "lauf": "waagrecht",
       "breite": 128,
       "hoehe": 36,
       "kollision": false,
@@ -359,6 +365,9 @@
     },
     "wc5Gleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -743,6 +752,7 @@
     },
     "wc11HolzbrueckeQuer": {
       "quelle": "spiel/eigene/holzbruecke_waagrecht.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": false,
@@ -752,6 +762,7 @@
     },
     "wc14GleisbogenAb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Right_Up_Corner.png",
+      "verbund": "gleis",
       "breite": 48,
       "hoehe": 48,
       "kollision": true,
@@ -761,6 +772,7 @@
     },
     "wc14GleisbogenAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Left_Bottom_Corner.png",
+      "verbund": "gleis",
       "breite": 48,
       "hoehe": 48,
       "kollision": true,
@@ -770,6 +782,9 @@
     },
     "wc14GleisSenkrecht": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
+      "varianten": {"waagrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png"},
       "breite": 32,
       "hoehe": 16,
       "kollision": true,

@@ -14,6 +14,7 @@
     },
     "ldKarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Empty.png",
+      "lauf": "waagrecht",
       "breite": 32,
       "hoehe": 32,
       "kollision": true
@@ -108,6 +109,8 @@
     },
     "el7Droschke": {
       "quelle": "spiel/eigene/droschke.png",
+      "lauf": "waagrecht",
+      "varianten": {"senkrecht": "spiel/eigene/droschke_vorn.png"},
       "breite": 96,
       "hoehe": 64,
       "kollision": true,
@@ -118,6 +121,8 @@
     },
     "el7DroschkeB": {
       "quelle": "spiel/eigene/droschke.png",
+      "lauf": "waagrecht",
+      "varianten": {"senkrecht": "spiel/eigene/droschke_vorn.png"},
       "breite": 96,
       "hoehe": 64,
       "kollision": true,

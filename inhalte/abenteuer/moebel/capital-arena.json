@@ -14,18 +14,21 @@
     },
     "caBoot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 32,
       "kollision": true
     },
     "caBootMotor": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_2.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": true
     },
     "caFischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": true
@@ -92,6 +95,7 @@
     },
     "caBus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_4.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 64,
       "kollision": true
@@ -227,6 +231,7 @@
     },
     "ca7Buehne": {
       "quelle": "spiel/eigene/buehne_finale.png",
+      "blickziel": true,
       "breite": 96,
       "hoehe": 48,
       "kollision": false,
@@ -280,6 +285,7 @@
     },
     "ca7Tribuene": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 48,
       "kollision": true,
@@ -549,6 +555,7 @@
     },
     "ca7Turnierwand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
+      "blickziel": true,
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1196,6 +1203,7 @@
     },
     "ca8Eiswagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ice_Cream_Truck_3.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 64,
       "kollision": true,
@@ -1206,6 +1214,7 @@
     },
     "ca8Tacowagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Tacos_Truck_3.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 64,
       "kollision": true,
@@ -1226,6 +1235,7 @@
     },
     "ca8Wohnmobil": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": true,
@@ -1342,6 +1352,8 @@
     },
     "ci8ZugGraffiti": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Example_Graffiti_Train.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
       "breite": 288,
       "hoehe": 64,
       "kollision": true,
@@ -1352,6 +1364,9 @@
     },
     "ci8Schiene": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1514,6 +1529,7 @@
     },
     "ca9Turniertafel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
+      "blickziel": true,
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1994,6 +2010,7 @@
     },
     "ca12Hotdogwagen": {
       "quelle": "spiel/eigene/hotdogwagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 96,
       "kollision": true,

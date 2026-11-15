@@ -122,6 +122,7 @@
     },
     "ld5Lastkahn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": false,
@@ -134,6 +135,7 @@
     },
     "ld5LastkahnRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Right_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": false,
@@ -146,6 +148,7 @@
     },
     "ld5Ruderboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_2.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 32,
       "kollision": false,
@@ -158,6 +161,7 @@
     },
     "ld5Kahn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 32,
       "kollision": false,
@@ -217,6 +221,7 @@
     },
     "ld5Schleusentor": {
       "quelle": "spiel/eigene/schleusentor_laengs_3.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 48,
       "kollision": false,
@@ -246,6 +251,8 @@
     },
     "ld5Kegel": {
       "quelle": "spiel/eigene/kegel.png",
+      "verbund": "kegelbahn",
+      "stelle": "ende",
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -257,6 +264,7 @@
     },
     "ld5Kegelkugel": {
       "quelle": "spiel/eigene/kegelkugel.png",
+      "verbund": "kegelbahn",
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -286,6 +294,7 @@
     },
     "ld5Theke7": {
       "quelle": "spiel/eigene/theke_holz_laengs_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 32,
       "kollision": true,
@@ -384,6 +393,8 @@
     },
     "ld8Kegelbande": {
       "quelle": "spiel/eigene/kegelbande_tiefe.png",
+      "lauf": "waagrecht",
+      "verbund": "kegelbahn",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
@@ -393,6 +404,8 @@
     },
     "ld8Kugelregal": {
       "quelle": "spiel/eigene/kugelregal.png",
+      "verbund": "kegelbahn",
+      "stelle": "anfang",
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -414,6 +427,7 @@
     },
     "ld8Stemmtor": {
       "quelle": "spiel/eigene/schleusentor_stemm.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 144,
       "kollision": false,
@@ -555,6 +569,7 @@
     },
     "ld14Lastkahn": {
       "quelle": "spiel/eigene/lastkahn_lang_links.png",
+      "lauf": "waagrecht",
       "breite": 352,
       "hoehe": 39,
       "kollision": false,
@@ -566,6 +581,11 @@
     },
     "ld14Kugelfang": {
       "quelle": "spiel/eigene/kegelbahn_kugelfang.png",
+      "lauf": "senkrecht",
+      "ende": "nord",
+      "verbund": "kegelbahn",
+      "stelle": "ende",
+      "varianten": {"ost": "spiel/eigene/kegelbahn_hell_ende.png"},
       "breite": 32,
       "hoehe": 33,
       "kollision": true,

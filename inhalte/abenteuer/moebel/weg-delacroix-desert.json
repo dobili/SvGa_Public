@@ -69,6 +69,7 @@
     },
     "dd6Bruecke1879": {
       "quelle": "spiel/eigene/eisenbahnbruecke_1879_quer.png",
+      "lauf": "waagrecht",
       "breite": 192,
       "hoehe": 96,
       "kollision": false,

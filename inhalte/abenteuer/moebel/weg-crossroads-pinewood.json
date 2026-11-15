@@ -2,6 +2,7 @@
   "moebel": {
     "cp7Steg": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_4.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 36,
       "kollision": false,
@@ -11,6 +12,7 @@
     },
     "cp7StegLaengs": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_4.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 68,
       "kollision": false,

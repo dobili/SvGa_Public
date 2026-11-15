@@ -875,6 +875,7 @@
     },
     "cc4Ruderboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 32,
       "kollision": false,
@@ -986,6 +987,9 @@
     },
     "cc4Gleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -995,6 +999,9 @@
     },
     "cc4GleisRand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1103,6 +1110,7 @@
     },
     "cc5BootAmSteg": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -1115,6 +1123,7 @@
     },
     "cc5BootUfer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -1410,6 +1419,7 @@
     },
     "cc7Fussbruecke": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 36,
       "kollision": false,
@@ -1488,6 +1498,11 @@
     },
     "cc8Prellbock": {
       "quelle": "spiel/eigene/prellbock_stahl_oben.png",
+      "lauf": "senkrecht",
+      "ende": "nord",
+      "verbund": "gleis",
+      "stelle": "ende",
+      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "ost": "spiel/eigene/prellbock_stahl_rechts.png"},
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1596,6 +1611,11 @@
     },
     "cc8PrellbockQuer": {
       "quelle": "spiel/eigene/prellbock_stahl_links.png",
+      "lauf": "waagrecht",
+      "ende": "west",
+      "verbund": "gleis",
+      "stelle": "ende",
+      "varianten": {"ost": "spiel/eigene/prellbock_stahl_rechts.png", "nord": "spiel/eigene/prellbock_stahl_oben.png"},
       "breite": 16,
       "hoehe": 48,
       "kollision": true,
@@ -1606,6 +1626,11 @@
     },
     "cc8PrellbockQuerRechts": {
       "quelle": "spiel/eigene/prellbock_stahl_rechts.png",
+      "lauf": "waagrecht",
+      "ende": "ost",
+      "verbund": "gleis",
+      "stelle": "ende",
+      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "nord": "spiel/eigene/prellbock_stahl_oben.png"},
       "breite": 16,
       "hoehe": 48,
       "kollision": true,

@@ -116,6 +116,7 @@
     },
     "sbFoodtruck": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Tacos_Truck_1.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 80,
       "kollision": true
@@ -357,6 +358,7 @@
     },
     "sb5Fischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": false,
@@ -527,6 +529,8 @@
     },
     "sb5BahnLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Exterior_Train_Grey_Left.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
       "breite": 64,
       "hoehe": 64,
       "kollision": true,
@@ -536,6 +540,8 @@
     },
     "sb5BahnMitte": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Exterior_Train_Grey_Middle.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
       "breite": 160,
       "hoehe": 64,
       "kollision": true,
@@ -545,6 +551,8 @@
     },
     "sb5BahnRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Exterior_Train_Grey_Right.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
       "breite": 64,
       "hoehe": 64,
       "kollision": true,
@@ -607,6 +615,9 @@
     },
     "sb5GleisGrau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -616,6 +627,9 @@
     },
     "sb5GleisNeu": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Example_Grey_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1779,6 +1793,7 @@
     },
     "sb8Faehre": {
       "quelle": "spiel/eigene/hafen_faehre.png",
+      "lauf": "waagrecht",
       "breite": 288,
       "hoehe": 96,
       "kollision": false,

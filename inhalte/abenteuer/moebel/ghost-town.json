@@ -409,6 +409,7 @@
     },
     "gt7Theke": {
       "quelle": "spiel/eigene/theke_holz_laengs_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 32,
       "kollision": true,
@@ -543,6 +544,7 @@
     },
     "gt7Theke8": {
       "quelle": "spiel/eigene/theke_holz_laengs_8.png",
+      "lauf": "waagrecht",
       "breite": 128,
       "hoehe": 32,
       "kollision": true,
@@ -628,6 +630,9 @@
     },
     "gt7Lore": {
       "quelle": "spiel/eigene/lore.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "spiel/eigene/lore_laengs.png"},
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -828,6 +833,7 @@
     },
     "gt12PlanwagenHinten": {
       "quelle": "spiel/eigene/planwagen_hinten.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 93,
       "kollision": true,
@@ -838,6 +844,7 @@
     },
     "gt12PlanwagenVorn": {
       "quelle": "spiel/eigene/planwagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 118,
       "kollision": true,
@@ -857,6 +864,8 @@
     },
     "gt12Weiche": {
       "quelle": "spiel/eigene/weiche_stollen.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
       "breite": 64,
       "hoehe": 64,
       "kollision": false,

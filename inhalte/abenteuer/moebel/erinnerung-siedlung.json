@@ -2,6 +2,9 @@
   "moebel": {
     "es7Bett": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png",
+      "lauf": "waagrecht",
+      "ende": "ost",
+      "varianten": {"west": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png"},
       "breite": 48,
       "hoehe": 48,
       "kollision": true,

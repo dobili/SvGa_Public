@@ -2,6 +2,7 @@
   "moebel": {
     "n6Buehne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_1.png",
+      "blickziel": true,
       "breite": 128,
       "hoehe": 96,
       "kollision": true,
@@ -48,6 +49,7 @@
     },
     "n6Eiswagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ice_Cream_Truck_1.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 96,
       "kollision": true,
@@ -201,6 +203,8 @@
     },
     "n6Tribuene": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
+      "lauf": "waagrecht",
+      "blick": "unten",
       "breite": 64,
       "hoehe": 48,
       "kollision": true,
@@ -210,6 +214,7 @@
     },
     "n9BuehneBegehbar": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_1.png",
+      "blickziel": true,
       "breite": 128,
       "hoehe": 96,
       "kollision": false,

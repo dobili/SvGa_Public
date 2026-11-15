@@ -357,14 +357,18 @@ def baue(pfad: Path) -> list[str]:
 
 def hinweise(pfad: Path) -> list[str]:
     """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65),
-    Felswände, die frei im Gelände enden (Regel 10.74)."""
+    Felswände, die frei im Gelände enden (Regel 10.74), Bilder in falscher Richtung (Regel 10.78)."""
     from pipeline.abenteuer.fahrzeuge import fahrzeughinweise
 
     szene, moebel = lade(pfad), lade_moebel()
     from pipeline.abenteuer.hoehen import hoehenhinweise
 
     fahrzeuge = fahrzeughinweise(szene, raster(szene), platziere(szene, moebel)[0], moebel)
-    return fahrzeuge + hoehenhinweise(szene, raster(szene))
+    # Ausrichtung der Bilder (Regel 10.78): vorerst Hinweis, bis die Karten nachgezogen sind.
+    from pipeline.abenteuer.ausrichtung import pruefe_szene
+
+    ausrichtung = [f"Ausrichtung: {b.moebel} {b.feld}: {b.text}" for b in pruefe_szene(szene, moebel)]
+    return fahrzeuge + hoehenhinweise(szene, raster(szene)) + ausrichtung
 
 
 def main() -> int:

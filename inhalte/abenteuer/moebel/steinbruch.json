@@ -31,6 +31,9 @@
     },
     "st8FeldbahnLaengs": {
       "quelle": "spiel/eigene/feldbahn_laengs.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
+      "varianten": {"waagrecht": "spiel/eigene/feldbahn_quer.png"},
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -40,6 +43,9 @@
     },
     "st8LoreLaengs": {
       "quelle": "spiel/eigene/lore_laengs.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
+      "varianten": {"waagrecht": "spiel/eigene/lore.png"},
       "breite": 16,
       "hoehe": 24,
       "kollision": true,
@@ -49,6 +55,10 @@
     },
     "st8PrellbockFeldbahn": {
       "quelle": "spiel/eigene/prellbock_feldbahn.png",
+      "lauf": "senkrecht",
+      "ende": "nord",
+      "verbund": "gleis",
+      "stelle": "ende",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
@@ -108,6 +118,9 @@
     },
     "st5GleisSenkrecht": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
+      "varianten": {"waagrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png"},
       "breite": 32,
       "hoehe": 16,
       "kollision": false,
@@ -117,6 +130,9 @@
     },
     "st5GleisWaagerecht": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": false,

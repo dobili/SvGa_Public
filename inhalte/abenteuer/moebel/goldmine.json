@@ -2,6 +2,9 @@
   "moebel": {
     "n7Lore": {
       "quelle": "spiel/eigene/lore.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "spiel/eigene/lore_laengs.png"},
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -42,6 +45,9 @@
     },
     "n9GleisQuer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
+      "lauf": "waagrecht",
+      "verbund": "gleis",
+      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -69,6 +75,11 @@
     },
     "gm9PrellbockHolz": {
       "quelle": "spiel/eigene/prellbock_holz_oben.png",
+      "lauf": "senkrecht",
+      "ende": "nord",
+      "verbund": "gleis",
+      "stelle": "ende",
+      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "ost": "spiel/eigene/prellbock_stahl_rechts.png"},
       "breite": 32,
       "hoehe": 32,
       "kollision": true,

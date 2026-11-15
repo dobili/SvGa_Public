@@ -478,6 +478,7 @@
     },
     "mf2Tafel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
+      "blickziel": true,
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -2788,6 +2789,7 @@
     },
     "mf9FussbrueckeLaengs3": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 52,
       "kollision": false,
@@ -2806,6 +2808,7 @@
     },
     "mf9StrassenbrueckeGehwegQuer4": {
       "quelle": "spiel/eigene/bruecke_strasse_gehweg_quer_4.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 84,
       "kollision": false,
@@ -3039,6 +3042,7 @@
     },
     "mfc8Kreidetafel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
+      "blickziel": true,
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -3369,6 +3373,7 @@
     },
     "mf9StegNeu": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 52,
       "kollision": false,
@@ -3556,6 +3561,7 @@
     },
     "mf11HolzbrueckeQuer": {
       "quelle": "spiel/eigene/holzbruecke_waagrecht.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": false,

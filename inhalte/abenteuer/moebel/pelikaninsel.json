@@ -2,6 +2,7 @@
   "moebel": {
     "n4Boot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 32,
       "kollision": true,
@@ -10,6 +11,7 @@
     },
     "n4Fischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": true,
@@ -81,6 +83,7 @@
     },
     "n4BootUfer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -220,6 +223,7 @@
     },
     "n4FaehrbootWasser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_2.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 48,
       "kollision": false,
@@ -361,6 +365,7 @@
     },
     "pk9Faehre": {
       "quelle": "spiel/eigene/hafen_faehre.png",
+      "lauf": "waagrecht",
       "breite": 288,
       "hoehe": 96,
       "kollision": false,
@@ -373,6 +378,7 @@
     },
     "pk9BootWasser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 32,
       "kollision": false,

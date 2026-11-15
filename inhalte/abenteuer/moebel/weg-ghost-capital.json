@@ -32,6 +32,7 @@
     },
     "gc7Steg": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_7.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 116,
       "kollision": false,
@@ -291,6 +292,7 @@
     },
     "gc9StegQuer7": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 36,
       "kollision": false,
@@ -300,6 +302,7 @@
     },
     "gc9StegQuer3": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_3.png",
+      "lauf": "waagrecht",
       "breite": 48,
       "hoehe": 36,
       "kollision": false,
@@ -309,6 +312,7 @@
     },
     "gc10Seefaehre": {
       "quelle": "spiel/eigene/seefaehre.png",
+      "lauf": "waagrecht",
       "breite": 320,
       "hoehe": 96,
       "kollision": false,
@@ -340,6 +344,7 @@
     },
     "gc12Eiswagen": {
       "quelle": "spiel/eigene/eiswagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 96,
       "kollision": true,
@@ -349,6 +354,7 @@
     },
     "gc12Hotdogwagen": {
       "quelle": "spiel/eigene/hotdogwagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 96,
       "kollision": true,

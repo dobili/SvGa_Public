@@ -26,6 +26,7 @@
     },
     "pdBoot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 32,
       "kollision": true
@@ -702,6 +703,7 @@
     },
     "pd6Fischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "kollision": false,
@@ -713,6 +715,7 @@
     },
     "pd6Ruderboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "lauf": "waagrecht",
       "breite": 80,
       "hoehe": 32,
       "kollision": false,
@@ -724,6 +727,9 @@
     },
     "pd6Gleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
+      "varianten": {"waagrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png"},
       "breite": 32,
       "hoehe": 16,
       "kollision": true,
@@ -770,6 +776,11 @@
     },
     "pd6Prellbock": {
       "quelle": "spiel/eigene/prellbock_stahl_oben.png",
+      "lauf": "senkrecht",
+      "ende": "nord",
+      "verbund": "gleis",
+      "stelle": "ende",
+      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "ost": "spiel/eigene/prellbock_stahl_rechts.png"},
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -869,6 +880,9 @@
     },
     "pd6GleisGrau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Vertical.png",
+      "lauf": "senkrecht",
+      "verbund": "gleis",
+      "varianten": {"waagrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png"},
       "breite": 32,
       "hoehe": 16,
       "kollision": true,
@@ -1537,6 +1551,7 @@
       "zustand": "alt",
       "stil": "rustikal",
       "quelle": "spiel/eigene/hausboot.png",
+      "lauf": "waagrecht",
       "breite": 96,
       "hoehe": 64,
       "art": "boot",
@@ -1706,6 +1721,7 @@
     },
     "pd9BootAb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_2.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -1718,6 +1734,7 @@
     },
     "pd9BootAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",
+      "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 64,
       "kollision": false,
@@ -2093,6 +2110,7 @@
     },
     "pd12Bagger": {
       "quelle": "spiel/eigene/bagger_links.png",
+      "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 78,
       "kollision": true,
@@ -2102,6 +2120,7 @@
     },
     "pd12Lastwagen": {
       "quelle": "spiel/eigene/lastwagen_vorn.png",
+      "lauf": "senkrecht",
       "breite": 48,
       "hoehe": 144,
       "kollision": true,

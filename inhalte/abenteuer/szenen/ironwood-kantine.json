@@ -70,7 +70,8 @@
     {
       "moebel": "mf5Geschirr",
       "feld": [2, 0],
-      "auf": "spuelplatte"
+      "auf": "spuelplatte",
+      "versatz": [24, 0]
     },
     {
       "moebel": "mf8Sideboard",

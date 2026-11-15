@@ -15,7 +15,12 @@ Rolle im Gesamtbild: ``kartenbau`` druckt die Treffer als Hinweis (wie die Fahrz
 alle Karten umgebaut sind; nur für Szenen mit ``"kante": "klippe"``.
 """
 
+import re
+
+from pipeline.abenteuer.kartenbau import K
 from pipeline.abenteuer.klippe import BREITE_RAMPE, HOEHE_STANDARD, WAND, _ist_wand, _rolle
+
+SCHLEUSE = re.compile(r"schleus", re.I)
 
 RAT = "bis zum Kartenrand führen oder über dem Ende eine Spalte „#“ als Seitenkante hochziehen (Regel 10.74)"
 
@@ -40,13 +45,27 @@ def _seitenkante_endet_frei(zeilen: list[str], x: int, y: int) -> tuple[int, int
     return None if _ist_wand(zeilen, x, y) else (x, y + 1)
 
 
-def hoehenhinweise(szene: dict, zeilen: list[str]) -> list[str]:
+def schleusenfelder(gesetzt: list[dict]) -> set[tuple[int, int]]:
+    """Felder unter den Bildern von Schleusentoren. Eine Felswand, die an einem Schleusentor endet,
+    endet an dessen Mauern und nicht frei (Schleusentreppe zwischen Riverton und Ironwood)."""
+    return {
+        (x, y)
+        for s in gesetzt
+        if SCHLEUSE.search(s["name"])
+        for y in range(s["y"] // K, (s["y"] + s["hoehe"] - 1) // K + 1)
+        for x in range(s["x"] // K, (s["x"] + s["breite"] - 1) // K + 1)
+    }
+
+
+def hoehenhinweise(
+    szene: dict, zeilen: list[str], schleusen: set[tuple[int, int]] | None = None
+) -> list[str]:
     """Hinweise nach Regel 10.74: Wandenden und Seitenkanten, die frei im Gelände enden.
 
     Geprüft wird die oberste Reihe jedes Bands (die Kante). Beispiel: Band von Spalte 36 bis 63
     in den Reihen 9–11, rechts davon Gras → „Felswand endet frei bei (63, 9)“.
-    Sonderfälle: Enden am Kartenrand, an einer Lücke bis vier Felder (Treppe, Straße) und an einem
-    versetzten Stück desselben Bands zählen nicht.
+    Sonderfälle: Enden am Kartenrand, an einer Lücke bis vier Felder (Treppe, Straße), an einem
+    versetzten Stück desselben Bands und an einem Schleusentor (``schleusen``) zählen nicht.
     """
     if szene.get("kante") != "klippe":
         return []
@@ -60,7 +79,7 @@ def hoehenhinweise(szene: dict, zeilen: list[str]) -> list[str]:
                 nx = x + dx
                 if not 0 < nx < breite - 1 or _wand_in_der_naehe(zeilen, nx, y, hoehe):
                     continue
-                if _luecke(zeilen, x, y, dx, hoehe):
+                if _luecke(zeilen, x, y, dx, hoehe) or (nx, y) in (schleusen or set()):
                     continue
                 if not _ist_wand(zeilen, x, y - 1):
                     hinweise.append(f"Felswand endet frei bei ({x}, {y}): {RAT}")

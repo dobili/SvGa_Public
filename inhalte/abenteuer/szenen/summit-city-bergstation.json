@@ -2,15 +2,26 @@
   "karte": "summitCity.bergstation",
   "datei": "karten/summit-city-bergstation.json",
   "art": "innen",
-  "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand ein Band großer Fenster, hinter denen Wolken und Gipfel stehen; davor zwei Bänke und Pflanzen. Rechts die steinerne Plattform, an der die Gondel ankommt; das Seil läuft durch ein Glastor in der Wand hinaus, mit der Gondel fährt man auch zurück ins Tal. Links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer an der Ostwand. Rucksäcke von Wanderern liegen in der Halle.",
+  "beschreibung": "Die Bergstation der Seilbahn über den Wolken (Szene 88), 18 × 21: hinten die offene Aussichtsplattform, vorn die Halle aus Holz und Glas, kühl und hell. Die Plattform aus Stein liegt nördlich hinter der Halle, drei Reihen tief und fünfzehn Felder breit; an ihrer Kante läuft ein Stahlgeländer mit zwei Ecken, deren Pfosten bis an die Hallenwand reichen. Dahinter und daneben nichts als das Wolkenmeer. Victor steht dort am Geländer, wo er in Szene 88 sitzt; rechts am Geländer der Auslöser „aussicht“. Eine gläserne Doppeltür in der Mitte der Nordwand der Halle führt hinaus. In der Nordwand links zwei und rechts ein Fensterband, hinter denen Wolken und Gipfel stehen; davor zwei Bänke, links neben der Tür eine Pflanze. Rechts die steinerne Bucht der Gondel: Hinten steht das große Seilrad auf seinem Stahlgestell vor dem Glastor, durch das das Seil hinausläuft, darunter hängt die Gondel; mit ihr fährt man auch zurück ins Tal. Links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer an der Ostwand. In der Mitte der Halle zwei Wartebänke, Rucksäcke von Wanderern liegen herum.",
   "wand": "hellgrau",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch"],
   "raster": [
-    "##################",
-    "##################",
-    "##################",
+    "                  ",
+    "                  ",
+    "                  ",
+    "                  ",
+    "  kkkkkkkkkkkkkkk ",
+    "  kkkkkkkkkkkkkkk ",
+    "  kkkkkkkkkkkkkkk ",
+    "########..########",
+    "########..########",
+    "########..########",
+    "#............kkkk#",
+    "#............kkkk#",
+    "#............kkkk#",
+    "#............kkkk#",
     "#............kkkk#",
     "#............kkkk#",
     "#............kkkk#",
@@ -27,60 +38,55 @@
   "objekte": [
     {
       "moebel": "sc7FensterWolken",
-      "feld": [1, 1],
+      "feld": [1, 8],
       "an_wand": true
     },
     {
       "moebel": "sc7FensterWolken",
-      "feld": [4, 1],
+      "feld": [4, 8],
       "an_wand": true
     },
     {
       "moebel": "sc7FensterWolken",
-      "feld": [7, 1],
+      "feld": [10, 8],
       "an_wand": true
     },
     {
       "moebel": "sc7FensterWolken",
-      "feld": [10, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "sc7FensterWolken",
-      "feld": [14, 1],
+      "feld": [14, 8],
       "an_wand": true,
       "id": "gondeltor"
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [2, 3]
+      "feld": [2, 10]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [7, 3]
+      "feld": [10, 10]
     },
     {
       "moebel": "sc7Seil",
-      "feld": [14, 1],
+      "feld": [14, 8],
       "an_wand": true
     },
     {
       "moebel": "sc7Gondel",
-      "feld": [13, 2]
+      "feld": [13, 13]
     },
     {
       "moebel": "rvTopfpflanze",
-      "feld": [11, 3]
+      "feld": [7, 10]
     },
     {
       "moebel": "rv8SchalterA",
-      "feld": [1, 8],
+      "feld": [1, 19],
       "id": "schalter",
       "bauteil_ok": true
     },
     {
       "moebel": "rv8SchalterEnde",
-      "feld": [3, 8],
+      "feld": [3, 19],
       "bauteil_ok": true
     },
     {
@@ -91,57 +97,139 @@
     },
     {
       "moebel": "cc4Fahrplan",
-      "feld": [5, 8]
+      "feld": [5, 19]
     },
     {
       "moebel": "rvKaffeeautomat",
-      "feld": [1, 3]
+      "feld": [1, 10]
     },
     {
       "moebel": "iwSpind",
-      "feld": [15, 8]
+      "feld": [15, 19]
     },
     {
       "moebel": "scRucksack",
-      "feld": [6, 6]
+      "feld": [6, 17]
     },
     {
       "moebel": "scRucksackRot",
-      "feld": [8, 6]
+      "feld": [8, 17]
+    },
+    {
+      "moebel": "sc16Seilrad",
+      "feld": [13, 8],
+      "id": "seilrad"
+    },
+    {
+      "moebel": "rv8GlastuerNord",
+      "feld": [8, 8],
+      "an_wand": true,
+      "id": "plattformtuer"
+    },
+    {
+      "moebel": "sc16GelaenderEcke",
+      "feld": [2, 4],
+      "spiegeln": true,
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "sc16Gelaender",
+      "feld": [5, 4],
+      "versatz": [4, 4]
+    },
+    {
+      "moebel": "sc16Gelaender",
+      "feld": [8, 4],
+      "versatz": [4, 4]
+    },
+    {
+      "moebel": "sc16Gelaender",
+      "feld": [11, 4],
+      "versatz": [4, 4]
+    },
+    {
+      "moebel": "sc16GelaenderEcke",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "sc16Wolkenmeer",
+      "feld": [0, 0]
+    },
+    {
+      "moebel": "sc16Wolkenmeer",
+      "feld": [4, 0]
+    },
+    {
+      "moebel": "sc16Wolkenmeer",
+      "feld": [8, 0]
+    },
+    {
+      "moebel": "sc16Wolkenmeer",
+      "feld": [12, 0]
+    },
+    {
+      "moebel": "sc16WolkenmeerRandOben",
+      "feld": [16, 0]
+    },
+    {
+      "moebel": "sc16WolkenmeerRandLinks",
+      "feld": [0, 4]
+    },
+    {
+      "moebel": "sc16WolkenmeerRandRechts",
+      "feld": [17, 4]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [3, 13]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [7, 13]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [14, 8],
+      "feld": [14, 19],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
-    {"name": "seilbahnBerg", "feld": [14, 7], "eigenschaften": {"durchgang": "oben"}},
+    {
+      "name": "seilbahnBerg",
+      "feld": [14, 18],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
     {
       "name": "fundMurmeltierpfeife",
-      "feld": [16, 10]
+      "feld": [16, 21]
     },
     {
       "name": "fahrplan",
-      "feld": [6, 10]
+      "feld": [6, 21]
+    },
+    {
+      "name": "aussicht",
+      "feld": [12, 5]
     }
   ],
   "figuren": [
     {
       "name": "victor",
-      "feld": [4, 5]
+      "feld": [6, 6]
     }
   ],
   "belebung": [
     {
       "name": "skifahrerin",
       "typ": "statist",
-      "feld": [10, 7],
+      "feld": [10, 18],
       "eigenschaften": {
-        "von": "10,7",
-        "bis": "10,7",
+        "von": "10,18",
+        "bis": "10,18",
         "tun": "trägt ihre Ski hinauf zum Gletscher",
         "wann": "tag",
         "sagt": "statist.summitCity.bergstation.skifahrerin"
@@ -150,10 +238,10 @@
     {
       "name": "seilbahnfan",
       "typ": "statist",
-      "feld": [14, 6],
+      "feld": [14, 17],
       "eigenschaften": {
-        "von": "14,6",
-        "bis": "14,6",
+        "von": "14,17",
+        "bis": "14,17",
         "tun": "schaut durch das Fenster auf das Seil",
         "wann": "tag",
         "sagt": "statist.summitCity.bergstation.seilbahnfan"
@@ -162,10 +250,10 @@
     {
       "name": "schalterbeamter",
       "typ": "statist",
-      "feld": [2, 7],
+      "feld": [2, 18],
       "eigenschaften": {
-        "von": "2,7",
-        "bis": "2,7",
+        "von": "2,18",
+        "bis": "2,18",
         "tun": "verkauft Fahrkarten hinter dem Schalter",
         "wann": "tag"
       }

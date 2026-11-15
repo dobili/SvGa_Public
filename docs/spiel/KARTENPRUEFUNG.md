@@ -185,7 +185,8 @@ Diese Punkte haben Karten durchfallen lassen, die als reif galten. Sie gelten f�
   ist, und ist der Wechsel zwischen zwei Arten auf der Karte zu sehen?
 - **Abkürzung:** Kann man den vorgegebenen Weg umgehen (lichter Wald, offene Wiese am Rand)?
 - **Felswand:** Endet eine Wand frei, sodass man um sie herum auf die Höhe kommt? Sind Treppen im
-  Fels vollständig?
+  Fels vollständig? Quert ein Kanal die Wand, steht in ihrer Reihe ein Schleusentor; an seinen
+  Mauern endet die Wand nicht frei (`hoehen.schleusenfelder`, Schleusentreppe Riverton–Ironwood).
 - **Anschluss:** Setzen sich Fluss, Straße und Gelände am Kartenrand auf der Nachbarkarte fort?
 - **Innen und außen:** Zuerst die **Form**: Hat der Innenraum den Grundriss, den das Gebäudebild
   nahelegt (Rechteck, L, T, Anbau, Flügel, Turm)? Dann die Fläche (Abweichung unter 50 %) und die Lage

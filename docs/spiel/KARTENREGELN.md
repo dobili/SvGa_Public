@@ -1211,8 +1211,9 @@ Befund „Tischlage:“; jeder Befund nennt den passenden `versatz`.
 
 Aus den 31 Kartennotizen zu Maple Falls und Cedar Creek. Prüfung:
 `python -m pipeline.abenteuer.anordnung [--ort KENNUNG]` (`pipeline/abenteuer/anordnung.py`), im
-Kartenbau als Hinweis „Anordnung:“, bis alle Orte nachgezogen sind; für Maple Falls und Cedar Creek
-wacht `pipeline/tests/test_abenteuer_anordnung.py`. Gemessen wird die deckende Fläche der Bilder.
+Kartenbau als Befund „Anordnung:“ (seit 15.11.2026, als alle Orte nachgezogen waren; vorher Hinweis);
+für alle Szenen wacht `pipeline/tests/test_abenteuer_anordnung.py`. Gemessen wird die deckende Fläche
+der Bilder; ohne privates Paket (GitHub Actions) prüft der Kartenbau nur 10.84, 10.86 und 10.87.
 
 80. **Tisch und Spieler** (Notizen: „Tisch nicht mittig zwischen Stühlen“, Mrs. Calloways Veranda;
     „Jetzt steht die Uhr genau vorm Brett aus der Perspektive eines der Stühle“, Clubraum). Stehen
@@ -1226,11 +1227,15 @@ wacht `pipeline/tests/test_abenteuer_anordnung.py`. Gemessen wird die deckende F
 82. **Steg über Wasser** (Notiz: „Das Stegasset hat Wasser drunter, das Asset steht aber teilweise auf
     dem Gras“). Ein Steg liegt über Wasser oder Brückenboden; ein Bild mit eingemaltem Wasser (mehr als
     ein Zehntel wasserblaue Pixel) liegt ganz über Wasser. Eine Brücke darf auch über eine Schlucht
-    führen. Für Stege am Ufer gibt es Fassungen ohne eingemaltes Wasser (`mf14StegMorsch`).
+    führen. Für Stege am Ufer gibt es Fassungen ohne eingemaltes Wasser (`mf14StegMorsch`). Gemessen
+    wird Pixel für Pixel: Teile ohne Wasser dürfen auf dem Ufer stehen (Mauern eines offenen
+    Schleusentors an der Schleusentreppe zwischen Riverton und Ironwood).
 83. **Theke an der Wand** (Notizen Diner: „Tresen näher an die Wand“, „Zu weit weg vom Tresen“).
     Hinter einer Theke, an der Hocker stehen, liegt höchstens ein Gang von zwei Reihen bis zur
     Rückwand. Sperrt eine Theke im Bild mehr Reihen, als sie zeigt, bekommt sie eine `maske`, damit
-    die Hocker direkt an der Vorderkante stehen können (Hocker selbst: 10.79).
+    die Hocker direkt an der Vorderkante stehen können (Hocker selbst: 10.79). Gemessen wird ab der
+    sichtbaren Oberkante der Theke und die kürzeste Strecke über ihre Breite: Eine Durchreiche oder
+    Tür in der Rückwand verlängert den Gang nicht (Raststätte Crossroads).
 84. **Loch im Boden** (Notiz: „Es fehlt das Loch im Boden für die Treppe“, Zimmer und Dachboden). Ein
     Aufgang nach unten auf einer oberen Karte (Ebene nach 10.77) zeigt eine Öffnung im Boden mit
     Kante oder Geländer; das Bild trägt `bodenoeffnung: true`. Stufen auf dem Boden mit Geländer
@@ -1238,14 +1243,21 @@ wacht `pipeline/tests/test_abenteuer_anordnung.py`. Gemessen wird die deckende F
 85. **Häuser in Menschengröße** (Notiz: „Sofern das keine Hundehütte ist, ist das Haus zu klein“;
     Regel 10.66). Ein Wohnhaus draußen ist mindestens 5 × 5 Kacheln groß (deckend gemessen, eine
     halbe Kachel Spiel). Ausgenommen: Schuppen, Kiosk, Garage, Hütte, Gartenhaus, Zelt, Stand,
-    Wartehaus, Stall, Anbau und Häuser einer geschlossenen Häuserzeile. Warum 10.66 durchrutschte: Sie
+    Wartehaus, Stall, Anbau und Häuser einer geschlossenen Häuserzeile, außerdem Bilder mit
+    `kleinbau` im Katalog (Begründung als Text; Pfahlhütten der Pelikaninsel) und schmale Stadthäuser
+    ab drei Geschossen laut Grundriss, die mindestens 3 Kacheln breit sind (Reihenhaus in Capital). Warum 10.66 durchrutschte: Sie
     war nur eine Regel für das Gutachten, ohne Prüfung im Werkzeug, und das kleine Haus mit grünem
     Dach kam als Ersatz für einen flachen Schuppen (R002) in die Birch Lane.
 86. **Fußmatte vor jeder Tür** (Notiz: „Die zweite Fußmatte fehlt“, Diner). Innen liegt vor jedem Feld
-    einer Tür in der Südwand eine Fußmatte, bei Doppeltüren also zwei.
+    einer Tür in der Südwand eine Fußmatte, bei Doppeltüren also zwei. Keine Matte auf einer Treppe
+    vor der Tür (U-Bahnhof Capital: Stufen hinauf zum Rollgitter).
 87. **Gerade Straßen** (Notiz: „Die Straße ist teilweise nach unten versetzt, nicht gerade“, Cedar
     Creek). Eine Kante eines Straßenzugs (Asphalt, Landstraße) springt nicht um eine Kachel zur Seite
-    und nach höchstens 20 Kacheln zurück. Kurven und Straßen, die breiter werden, sind kein Befund.
+    und nach höchstens 20 Kacheln zurück. Kurven und Straßen, die breiter werden, sind kein Befund,
+    auch keine Schlangenlinie, deren Stufen schräg weiterlaufen (dieselbe Kante springt innerhalb von
+    4 Kacheln noch einmal in dieselbe Richtung, Landstraße und Flussweg). Dort springt die Unterkante
+    drei Spalten vor der Oberkante; der Zeichner macht daraus schräge Ränder. Springen beide Kanten in
+    derselben Spalte, zeichnet er harte Treppen (am 15.11.2026 ausprobiert und verworfen).
 
 Dazu aus denselben Notizen, ohne eigene Prüfung (Gutachten, KARTENPRUEFUNG): Regale und Schränke mit
 Blick nach Süden stehen mit dem Rücken an der Nordwand, nicht eine Kachel davor; ein Gegenstand auf

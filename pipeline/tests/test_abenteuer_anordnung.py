@@ -1,14 +1,15 @@
 """Tests der Anordnungsregeln KARTENREGELN 10.80 bis 10.87 (pipeline/abenteuer/anordnung.py).
 
 Die Einzeltests arbeiten mit erfundenen Bildern (ohne privates Paket gilt die ganze Bildfläche als
-deckend). Der letzte Test prüft alle Szenen von Maple Falls und Cedar Creek mit den echten Bildern und
-läuft nur, wenn das private Paket da ist.
+deckend). Die letzten Tests prüfen alle Szenen: mit den echten Bildern nur, wenn das private Paket da
+ist, die Regeln ohne Pixel immer.
 """
 
 import pytest
 
 pytest.importorskip("PIL")  # anordnung_bild braucht Pillow, in Actions nicht installiert
 
+from pipeline.abenteuer import anordnung
 from pipeline.abenteuer.anordnung import (
     pruefe_anordnung,
     pruefe_hausgroesse,
@@ -17,7 +18,7 @@ from pipeline.abenteuer.anordnung import (
     pruefe_stege,
     pruefe_tische,
 )
-from pipeline.abenteuer.anordnung_bild import privat
+from pipeline.abenteuer.anordnung_bild import bilder_da
 from pipeline.abenteuer.anordnung_raum import pruefe_fussmatten, pruefe_strassen, pruefe_theke_an_wand
 from pipeline.abenteuer.kartenbau import INHALTE, K, lade
 
@@ -36,6 +37,9 @@ MOEBEL = {
     "luke": {"quelle": "x/luke.png", "art": "treppe", "richtung": "runter"},
     "glastuer": {"quelle": "x/tuer.png", "art": "tuer"},
     "fussmatte": {"quelle": "x/matte.png", "art": "teppich"},
+    "treppeHoch": {"quelle": "x/treppe.png", "art": "treppe", "richtung": "hoch"},
+    "pfahlhaus": {"quelle": "x/pfahlhaus.png", "art": "gebaeude", "kleinbau": "Fischerhütte auf Pfählen"},
+    "stadthausSchmal": {"quelle": "x/stadthaus.png", "art": "gebaeude"},
 }
 
 
@@ -103,8 +107,20 @@ def test_theke_mit_hockern_steht_nah_an_der_wand():
     szene = {"art": "innen"}
     nah = [stueck("thekeMitte", 2, 4, 1, 2), stueck("barHocker", 2, 6, 1, 2)]
     assert pruefe_theke_an_wand(szene, nah, MOEBEL, zeilen) == []
-    fern = [stueck("thekeMitte", 2, 5, 1, 2), stueck("barHocker", 2, 7, 1, 2)]
+    # Gemessen ab der sichtbaren Oberkante (ohne Paket: Bildoberkante): Reihe 5 heißt Gang 3 und 4.
+    mitte = [stueck("thekeMitte", 2, 5, 1, 2), stueck("barHocker", 2, 7, 1, 2)]
+    assert pruefe_theke_an_wand(szene, mitte, MOEBEL, zeilen) == []
+    fern = [stueck("thekeMitte", 2, 6, 1, 2), stueck("barHocker", 2, 8, 1, 2)]
     assert pruefe_theke_an_wand(szene, fern, MOEBEL, zeilen) != []
+
+
+def test_durchreiche_in_der_rueckwand_verlaengert_den_gang_nicht():
+    """Raststätte Crossroads: Hinter dem Tresen liegt in zwei Spalten die Durchreiche zur Küche."""
+    zeilen = ["#######"] * 3 + ["#.#####", "#.....#", "#.....#", "#.....#", "#.....#"]
+    szene = {"art": "innen"}
+    theke = stueck("thekeMitte", 1, 6, 3, 2)
+    theke["breite"], theke["hoehe"] = 3 * K, 2 * K
+    assert pruefe_theke_an_wand(szene, [theke, stueck("barHocker", 2, 8, 1, 2)], MOEBEL, zeilen) == []
 
 
 def test_loch_im_boden_auf_oberen_karten():
@@ -122,6 +138,17 @@ def test_haeuser_in_menschengroesse():
     assert pruefe_hausgroesse(szene, [stueck("gartenhaus", 1, 1, 3, 4)], MOEBEL) == []
 
 
+def test_kleinbau_im_katalog_und_schmales_stadthaus(monkeypatch):
+    """Pfahlhäuser der Pelikaninsel tragen ``kleinbau``; das Reihenhaus in Capital ist 3 breit, aber
+    vier Geschosse hoch (Grundriss)."""
+    szene = {"art": "aussen"}
+    assert pruefe_hausgroesse(szene, [stueck("pfahlhaus", 1, 1, 4, 5)], MOEBEL) == []
+    schmal = [stueck("stadthausSchmal", 1, 1, 3, 12)]
+    assert pruefe_hausgroesse(szene, schmal, MOEBEL) != []
+    monkeypatch.setattr(anordnung, "_grundrisse", lambda: {"x/stadthaus.png": {"geschosse": 4}})
+    assert pruefe_hausgroesse(szene, schmal, MOEBEL) == []
+
+
 def test_fussmatte_vor_jedem_tuerfeld():
     zeilen = ["#####", "#...#", "##..#"]
     szene = {"art": "innen", "ausloeser": [{"name": "aus", "feld": [2, 2]}, {"name": "aus", "feld": [3, 2]}]}
@@ -130,6 +157,14 @@ def test_fussmatte_vor_jedem_tuerfeld():
     assert len(pruefe_fussmatten(szene, eine, MOEBEL, zeilen)) == 1  # Diner vorher: zweite Matte fehlt
     beide = [*eine, stueck("fussmatte", 3, 1, 1, 1)]
     assert pruefe_fussmatten(szene, beide, MOEBEL, zeilen) == []
+
+
+def test_keine_fussmatte_auf_der_treppe():
+    """U-Bahnhof Capital: Vor dem Rollgitter führt eine Treppe hinauf, dort liegt keine Matte."""
+    zeilen = ["#####", "#...#", "##.##"]
+    szene = {"art": "innen", "ausloeser": [{"name": "aus", "feld": [2, 2]}]}
+    gesetzt = [stueck("glastuer", 2, 2, 1, 1), stueck("treppeHoch", 2, 0, 1, 2)]
+    assert pruefe_fussmatten(szene, gesetzt, MOEBEL, zeilen) == []
 
 
 def test_strasse_springt_nicht_um_eine_kachel():
@@ -143,12 +178,64 @@ def test_strasse_springt_nicht_um_eine_kachel():
     assert pruefe_strassen(szene, kurve) == []  # springt nicht zurück: Kurve
 
 
-@pytest.mark.skipif(privat() is None, reason="Bilder aus dem privaten Paket fehlen")
-def test_maple_falls_und_cedar_creek_ohne_befund():
-    """Die Orte der Kartennotizen sind nachgezogen; offen ist nur das Treppenloch (Bild des Autors)."""
+def test_schlangenlinie_ist_kein_versatz():
+    """Landstraße: Die Straße steigt in Stufen von drei Spalten um zwei Reihen und fällt ebenso zurück;
+    die Unterkante springt drei Spalten vor der Oberkante, der Zeichner macht daraus schräge Ränder.
+    Ein einzelner Versatz von einer Reihe (Cedar Creek vorher) bleibt ein Befund."""
+    szene = {"art": "aussen", "boeden": {"l": "landstrasse"}}
+    oben = [9, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 9, 9]
+    unten = [
+        12,
+        12,
+        12,
+        12,
+        12,
+        11,
+        11,
+        11,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        11,
+        11,
+        11,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+    ]
+
+    def raster(o: list[int], u: list[int]) -> list[str]:
+        return ["".join("l" if a <= y < b else "." for a, b in zip(o, u, strict=True)) for y in range(14)]
+
+    assert pruefe_strassen(szene, raster(oben, unten)) == []
+    stufe = [9] * 8 + [8] * 10 + [9] * 8
+    assert pruefe_strassen(szene, raster(stufe, [s + 3 for s in stufe])) != []
+
+
+@pytest.mark.skipif(not bilder_da(), reason="Bilder aus dem privaten Paket fehlen")
+def test_alle_orte_ohne_befund():
+    """Alle Orte sind nachgezogen (Maple Falls und Cedar Creek nach den Kartennotizen, die übrigen am
+    15.11.2026); offen ist nur das Treppenloch (Bild des Autors)."""
     offen = []
     for pfad in sorted((INHALTE / "szenen").glob("*.json")):
-        szene = lade(pfad)
-        if szene.get("karte", "").split(".")[0] in ("mapleFalls", "cedarCreek"):
-            offen += [f"{pfad.name}: {b}" for b in pruefe_anordnung(szene) if not b.startswith("10.84")]
+        offen += [f"{pfad.name}: {b}" for b in pruefe_anordnung(lade(pfad)) if not b.startswith("10.84")]
     assert offen == []
+
+
+def test_ohne_bilder_nur_die_regeln_ohne_pixel():
+    """In GitHub Actions fehlen Paket und Pillow: Dann prüft der Kartenbau Fußmatten, Straßen und
+    Treppenlöcher, aber keine Tische, Platten, Stege, Theken und Häuser (die ganze Bildfläche als
+    deckend zu nehmen, ergäbe falsche Befunde)."""
+    for pfad in sorted((INHALTE / "szenen").glob("*.json")):
+        befunde = pruefe_anordnung(lade(pfad), mit_bildern=False)
+        assert all(b[:5] in ("10.84", "10.86", "10.87") for b in befunde), (pfad.name, befunde)
+        assert [b for b in befunde if not b.startswith("10.84")] == [], pfad.name

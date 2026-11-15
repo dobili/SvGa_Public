@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 39,
+ "nextobjectid": 40,
  "layers": [
   {
    "id": 1,
@@ -1391,8 +1391,8 @@
      "id": 27,
      "name": "el7Kerze",
      "type": "moebel",
-     "x": 80,
-     "y": 129,
+     "x": 76,
+     "y": 124,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1506,8 +1506,8 @@
      "id": 32,
      "name": "el7Kerze",
      "type": "moebel",
-     "x": 144,
-     "y": 129,
+     "x": 140,
+     "y": 124,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1621,8 +1621,8 @@
      "id": 37,
      "name": "el7Kerze",
      "type": "moebel",
-     "x": 224,
-     "y": 145,
+     "x": 220,
+     "y": 140,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1655,6 +1655,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 169
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "es7Fussmatte",
+     "type": "moebel",
+     "x": 128,
+     "y": 178,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

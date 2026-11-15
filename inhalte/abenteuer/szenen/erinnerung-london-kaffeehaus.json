@@ -84,7 +84,7 @@
     {
       "moebel": "el7Kerze",
       "auf": "t1",
-      "versatz": [8, -2]
+      "versatz": [4, -7]
     },
     {
       "moebel": "cc4Brett",
@@ -107,7 +107,7 @@
     {
       "moebel": "el7Kerze",
       "auf": "mitte",
-      "versatz": [8, -2]
+      "versatz": [4, -7]
     },
     {
       "moebel": "cc4Brett",
@@ -130,11 +130,16 @@
     {
       "moebel": "el7Kerze",
       "auf": "t3",
-      "versatz": [8, -2]
+      "versatz": [4, -7]
     },
     {
       "moebel": "cc4Brett",
       "auf": "t3",
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "es7Fussmatte",
+      "feld": [8, 11],
       "versatz": [0, 2]
     }
   ],

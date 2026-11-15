@@ -74,12 +74,14 @@
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [10, 6],
+      "feld": [9, 6],
+      "versatz": [8, 0],
       "zu": "schach1"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [10, 8],
+      "feld": [9, 8],
+      "versatz": [8, 0],
       "zu": "schach1"
     },
     {
@@ -113,6 +115,7 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [17, 12],
+      "versatz": [8, 0],
       "zu": "lese1"
     },
     {
@@ -128,6 +131,7 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [20, 12],
+      "versatz": [8, 0],
       "zu": "lese2"
     },
     {

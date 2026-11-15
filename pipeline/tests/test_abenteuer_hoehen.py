@@ -1,6 +1,6 @@
 """Tests der Höhenprüfung (pipeline/abenteuer/hoehen.py, KARTENREGELN 10.74)."""
 
-from pipeline.abenteuer.hoehen import hoehenhinweise
+from pipeline.abenteuer.hoehen import hoehenhinweise, schleusenfelder
 
 SZENE = {"kante": "klippe"}
 LEER = "............"
@@ -30,3 +30,13 @@ def test_treppe_und_versatz_sind_kein_ende():
     assert hoehenhinweise(SZENE, [LEER, luecke, luecke, luecke, LEER]) == []
     versatz = [LEER, "######......", "############", "############", "......######", LEER]
     assert hoehenhinweise(SZENE, versatz) == []
+
+
+def test_wand_endet_an_einem_schleusentor():
+    """Schleusentreppe zwischen Riverton und Ironwood: Die Felswand stößt an die Mauern des
+    Schleusentors, das den Kanal in ihrer Reihe überspannt; das ist kein freies Ende."""
+    band = "####~~~~~~~~~~####"
+    zeilen = ["....~~~~~~~~~~....", band, band, band, "....~~~~~~~~~~...."]
+    assert len(hoehenhinweise(SZENE, zeilen)) == 2
+    tor = {"name": "wrSchleusentorZu", "x": 4 * 16, "y": 0, "breite": 10 * 16, "hoehe": 4 * 16}
+    assert hoehenhinweise(SZENE, zeilen, schleusenfelder([tor])) == []

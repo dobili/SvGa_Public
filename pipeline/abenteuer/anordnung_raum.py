@@ -9,6 +9,7 @@ Rolle im Gesamtbild: Teil von ``anordnung.py``.
 
 import re
 
+from pipeline.abenteuer.anordnung_bild import flaeche
 from pipeline.abenteuer.kartenbau import K, sperrfelder
 
 WAND = "#"
@@ -18,6 +19,8 @@ STRASSENBELAG = {"asphalt", "landstrasse"}
 MINDESTBREITE_STRASSE = 2
 # Ein Versatz, der nach so vielen Linien zurückspringt, gilt als Fehler (keine Kurve).
 VERSATZ_LAENGE = 20
+# Springt dieselbe Kante innerhalb so vieler Linien noch einmal in dieselbe Richtung, ist es eine Kurve.
+RAMPE = 4
 THEKE = re.compile(r"theke|tresen", re.I)
 MATTE = re.compile(r"matte", re.I)
 HOCKER = re.compile(r"hocker", re.I)
@@ -26,7 +29,13 @@ HOCKER = re.compile(r"hocker", re.I)
 def pruefe_theke_an_wand(szene: dict, gesetzt: list[dict], moebel: dict, zeilen: list[str]) -> list[str]:
     """10.83 (zweiter Teil): Hinter einer Theke (Blick nach Süden, Hocker im Raum) liegt bis zur Wand
     höchstens ein Gang von zwei Reihen.
-    Beispiel: Falls Diner, Theke in Reihe 4, Gang in den Reihen 3 und 4 (vorher 3 bis 5)."""
+
+    Gemessen wird von der sichtbaren Oberkante der Theke (deckende Pixel, auf Reihen gerundet) bis zur
+    Rückwand, und zwar die kürzeste Strecke über die Spalten der Theke: Eine Durchreiche oder Tür in
+    der Rückwand (Raststätte Crossroads) verlängert den Gang nicht, und eine Theke, die im Bild zwei
+    Reihen zeigt, aber nur die untere sperrt (Gasthaus Lockport), zählt ab ihrer Platte.
+    Beispiel: Falls Diner, Theke sichtbar ab Reihe 5, Gang in den Reihen 3 und 4 (vorher 3 bis 5).
+    """
     # Nur Theken mit Hockern davor (Bar, Diner); ein Schalter in einer Halle steht frei im Raum.
     if szene.get("art") != "innen" or not any(HOCKER.search(s["name"]) for s in gesetzt):
         return []
@@ -34,13 +43,23 @@ def pruefe_theke_an_wand(szene: dict, gesetzt: list[dict], moebel: dict, zeilen:
         angabe = moebel.get(s["name"], {})
         if not THEKE.search(s["name"]) or angabe.get("blick") != "unten":
             continue
-        for x, y in sorted(sperrfelder(s)):
-            gang = 0
-            while y - gang - 1 >= 0 and zeilen[y - gang - 1][x] != WAND:
-                gang += 1
-            if gang > THEKENGANG:
-                return [f"10.83 {s['name']} ({x}, {y}): {gang} Reihen bis zur Rückwand (Theke an die Wand)"]
+        oben = round(flaeche(s, angabe)[1] / K)
+        spalten = sorted({x for x, _ in sperrfelder(s)})
+        if not spalten:
+            continue
+        gang = min(_freie_reihen_darueber(zeilen, x, oben) for x in spalten)
+        if gang > THEKENGANG:
+            feld = f"({spalten[0]}, {oben})"
+            return [f"10.83 {s['name']} {feld}: {gang} Reihen bis zur Rückwand (Theke an die Wand)"]
     return []
+
+
+def _freie_reihen_darueber(zeilen: list[str], x: int, y: int) -> int:
+    """Freie Reihen über (x, y) in Spalte x bis zur nächsten Wand."""
+    gang = 0
+    while y - gang - 1 >= 0 and zeilen[y - gang - 1][x] != WAND:
+        gang += 1
+    return gang
 
 
 def _auf_feld(stueck: dict, x: int, y: int) -> bool:
@@ -56,11 +75,14 @@ def pruefe_fussmatten(szene: dict, gesetzt: list[dict], moebel: dict, zeilen: li
     """10.86: Innen liegt vor jedem Feld einer Tür in der Südwand eine Fußmatte.
 
     Beispiel: Falls Diner, Glastür über zwei Felder (4, 12) und (5, 12): Matten auf (4, 11) und (5, 11).
+    Sonderfall: Führt vor der Tür eine Treppe hinauf (U-Bahnhof Capital: Stufen zum Rollgitter), liegt
+    keine Matte auf den Stufen.
     """
     if szene.get("art") != "innen":
         return []
     unten = len(zeilen) - 1
     tueren = [s for s in gesetzt if moebel.get(s["name"], {}).get("art") == "tuer"]
+    treppen = [s for s in gesetzt if moebel.get(s["name"], {}).get("art") == "treppe"]
     matten = [
         s
         for s in gesetzt
@@ -70,6 +92,8 @@ def pruefe_fussmatten(szene: dict, gesetzt: list[dict], moebel: dict, zeilen: li
     for punkt in szene.get("ausloeser", []):
         x, y = punkt["feld"]
         if y != unten or not any(_auf_feld(t, x, y) for t in tueren):
+            continue
+        if any(_auf_feld(t, x, y - 1) for t in treppen):
             continue
         if not any(_auf_feld(m, x, y - 1) for m in matten):
             befunde.append(f"10.86 Tür {punkt['name']} ({x}, {y}): keine Fußmatte auf ({x}, {y - 1})")
@@ -88,7 +112,10 @@ def _laeufe(zellen: list[bool]) -> list[tuple[int, int]]:
     return laeufe
 
 
-def _kanten(gitter: list[list[bool]]) -> list[tuple[int, str, int, int]]:
+Stufe = tuple[int, str, int, int]
+
+
+def _kanten(gitter: list[list[bool]]) -> list[Stufe]:
     """Stufen einer Straßenkante zwischen zwei Nachbarlinien: (Linie, Kante, von, nach).
 
     Kante „anfang“ ist die obere (linke) Kante eines Laufs, „ende“ die untere (rechte). Gezählt wird
@@ -107,16 +134,31 @@ def _kanten(gitter: list[list[bool]]) -> list[tuple[int, str, int, int]]:
     return stufen
 
 
+def _in_rampe(stufe: Stufe, stufen: list[Stufe]) -> bool:
+    """Gehört die Stufe zu einer Kurve? Dann springt dieselbe Kante kurz davor oder danach (höchstens
+    ``RAMPE`` Linien) noch einmal in dieselbe Richtung: Die Straße zieht schräg hinüber."""
+    i, kante, von, nach = stufe
+    return any(s[1] == kante and s[3] - s[2] == nach - von and 0 < abs(s[0] - i) <= RAMPE for s in stufen)
+
+
 def _spruenge(gitter: list[list[bool]]) -> list[tuple[int, int]]:
     """Versätze: Eine Kante springt um eine Kachel und kurz darauf (höchstens ``VERSATZ_LAENGE``
-    Linien später) wieder zurück. Ausgabe: (erste Linie, Lage der versetzten Kante)."""
+    Linien später) wieder zurück. Ausgabe: (erste Linie, Lage der versetzten Kante).
+
+    Sind Hin- und Rücksprung beide Teil einer Kurve (``_in_rampe``), ist es eine Schlangenlinie wie
+    auf der Landstraße und kein Befund. Dort springt die Unterkante drei Spalten vor der Oberkante; der
+    Zeichner macht daraus schräge Ränder (10.72), und die Stufe wirkt wie eine sanfte Kurve.
+    """
     stufen = _kanten(gitter)
     spruenge = []
-    for i, kante, von, nach in stufen:
-        zurueck = any(
-            k == kante and v == nach and n == von and i < j <= i + VERSATZ_LAENGE for j, k, v, n in stufen
-        )
-        if zurueck:
+    for stufe in stufen:
+        i, kante, von, nach = stufe
+        rueck = [
+            s
+            for s in stufen
+            if s[1] == kante and s[2] == nach and s[3] == von and i < s[0] <= i + VERSATZ_LAENGE
+        ]
+        if rueck and not (_in_rampe(stufe, stufen) and _in_rampe(rueck[0], stufen)):
             spruenge.append((i, nach))
     return spruenge
 
@@ -126,7 +168,8 @@ def pruefe_strassen(szene: dict, zeilen: list[str]) -> list[str]:
 
     Beispiel: Cedar Creek, die Hauptstraße lag in den Spalten 5 bis 17 eine Reihe tiefer als links und
     rechts davon. Gemeldet wird die erste Spalte (Reihe) des Versatzes. Eine Kurve oder eine Straße, die
-    breiter wird, springt nicht zurück und wird nicht gemeldet.
+    breiter wird, springt nicht zurück und wird nicht gemeldet; eine Schlangenlinie aus schrägen Stufen
+    auch nicht (``_spruenge``).
     """
     if szene.get("art") != "aussen" or not zeilen:
         return []

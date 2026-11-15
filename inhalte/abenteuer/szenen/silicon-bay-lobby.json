@@ -112,6 +112,16 @@
       "moebel": "sb8GlastuerSued",
       "feld": [13, 13],
       "an_wand": true
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [11, 12],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [13, 12],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

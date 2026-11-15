@@ -456,6 +456,79 @@
       "zustand": "alt",
       "stil": "rustikal",
       "hinweis": "altes Außenthermometer auf verwittertem Brett, an der Wand (Gemini 15.11.2026)"
+    },
+    "sc16Seilrad": {
+      "quelle": "spiel/eigene/seilrad.png",
+      "breite": 64,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "hinweis": "großes Seilrad der Bergstation auf einem Stahlgestell; die Gondel hängt darunter (Bild des Autors, 15.11.2026)"
+    },
+    "sc16Gelaender": {
+      "quelle": "spiel/eigene/bergstation_gelaender.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "lauf": "waagrecht",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "Stahlgeländer an der Kante der Aussichtsplattform, Handlauf oben in Pixel 1 bis 12; mit versatz [4, 4] schließt es an sc16GelaenderEcke an (Bergstation) (Bild des Autors, 15.11.2026)"
+    },
+    "sc16GelaenderEcke": {
+      "quelle": "spiel/eigene/bergstation_gelaender_ecke.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "neu",
+      "stil": "modern",
+      "maske": ["###", "..#", "..#"],
+      "hinweis": "Ecke des Plattformgeländers: oben der Handlauf (Pixel 4 bis 44), rechts der Pfosten nach unten; gespiegelt die linke Ecke. Gerade Stücke daneben mit versatz [4, 4], die gespiegelte linke Ecke mit [8, 0], dann stößt der Handlauf überall an (Bild des Autors, 15.11.2026)"
+    },
+    "sc16Wolkenmeer": {
+      "quelle": "spiel/eigene/wolkenmeer.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "Wolkenmeer unter der Bergstation, nahtlos kachelbar (Raster 64 Pixel); liegt auf leeren Feldern („ “), die ohnehin sperren (Bild des Autors, 15.11.2026)"
+    },
+    "sc16WolkenmeerRandOben": {
+      "quelle": "spiel/eigene/wolkenmeer_rand_oben.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "linke Hälfte von wolkenmeer.png (Pixel 0 bis 32) für den Kartenrand, wenn die Breite kein Vielfaches von 4 ist"
+    },
+    "sc16WolkenmeerRandLinks": {
+      "quelle": "spiel/eigene/wolkenmeer_rand_links.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "Ausschnitt [0, 0, 32, 48] von wolkenmeer.png: Wolken links neben der Plattform, setzt das Muster darüber nahtlos fort"
+    },
+    "sc16WolkenmeerRandRechts": {
+      "quelle": "spiel/eigene/wolkenmeer_rand_rechts.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "Ausschnitt [16, 0, 32, 48] von wolkenmeer.png: Wolken in Spalte 17 rechts neben der Plattform (Spalte 17 liegt bei Pixel 16 des Musters)"
     }
   }
 }

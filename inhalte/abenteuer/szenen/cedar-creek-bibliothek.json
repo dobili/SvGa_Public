@@ -148,6 +148,7 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [17, 12],
+      "versatz": [8, 0],
       "zu": "lese1"
     },
     {
@@ -163,6 +164,7 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [20, 12],
+      "versatz": [8, 0],
       "zu": "lese2"
     },
     {

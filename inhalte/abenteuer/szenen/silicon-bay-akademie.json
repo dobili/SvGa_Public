@@ -249,13 +249,14 @@
     {
       "moebel": "sb8StuhlRechts",
       "feld": [1, 15],
-      "zu": "couch"
+      "zu": "couch",
+      "versatz": [0, 9]
     },
     {
       "moebel": "sb8StuhlLinks",
       "feld": [4, 15],
       "zu": "couch",
-      "versatz": [-4, 0],
+      "versatz": [-4, 9],
       "vorn": true
     },
     {
@@ -408,6 +409,16 @@
       "moebel": "rv8GlastuerSued",
       "feld": [8, 19],
       "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [8, 18],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [9, 18],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

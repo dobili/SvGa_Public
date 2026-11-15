@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 85,
+ "nextobjectid": 87,
  "layers": [
   {
    "id": 1,
@@ -3463,7 +3463,7 @@
      "id": 77,
      "name": "ca7Fussmatte",
      "type": "moebel",
-     "x": 248,
+     "x": 240,
      "y": 290,
      "width": 16,
      "height": 16,
@@ -3640,6 +3640,52 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 85,
+     "name": "ca7Fussmatte",
+     "type": "moebel",
+     "x": 256,
+     "y": 290,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "ca7Fussmatte",
+     "type": "moebel",
+     "x": 272,
+     "y": 290,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

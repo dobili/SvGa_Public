@@ -1,4 +1,4 @@
-// Ort: Bergstation der Seilbahn über Summit City (Akt 4), Bank am Fenster über den Wolken
+// Ort: Bergstation der Seilbahn über Summit City (Akt 4), Plattform mit Geländer über den Wolken
 // (Story-Bibel Abschnitt 29, Weltbeschreibung 5.10).
 //
 // Szene 88 „An der Bergstation“: Victor nach seiner Niederlage gegen Ward; Wahl „Dann spielen wir“
@@ -41,7 +41,7 @@ VAR pfeifeGefunden = false
 }
 
 === victor_vorher ===
-Victor steht am Fenster und hört etwas über einen Ohrstöpsel. Als er dich sieht, nimmt er ihn heraus. #sprecher:erzaehler
+Victor steht draußen am Geländer der Plattform und hört etwas über einen Ohrstöpsel. Als er dich sieht, nimmt er ihn heraus. #sprecher:erzaehler
 Nicht jetzt. Ich hab Vorbereitung. Der Coach sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #sprecher:victor #stimmung:bitter
 -> END
 
@@ -129,7 +129,7 @@ Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprech
     -> END
 }
 ~ pfeifeGefunden = true
-Unter der Bank am Fenster liegt eine kleine Holzpfeife. Du pfeifst hinein. Draußen am Hang pfeift etwas zurück. #sprecher:erzaehler
+Unter einer der Wartebänke liegt eine kleine Holzpfeife. Du pfeifst hinein. Draußen am Hang pfeift etwas zurück. #sprecher:erzaehler
 Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Menschen. #sprecher:ambrose #stimmung:lacht
 ~ gibFund("murmeltierpfeife")
 -> END
@@ -139,6 +139,12 @@ Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Mens
 Der Fahrplan der Seilbahn: jede halbe Stunde eine Gondel, bei Sturm keine. Darunter ein Zettel: „Schachbretter bitte nicht in der Gondel liegen lassen.“ #sprecher:erzaehler
 -> END
 // <<< Runde 6 (mittel-4)
+
+// Aussicht vom Geländer der Plattform (Umbau 15.11.2026: Plattform mit Wolkenmeer, Wunsch des Autors).
+=== aussicht ===
+Hinter dem Geländer fällt der Fels senkrecht ab. Darunter wogt das Wolkenmeer bis an den Horizont, weiß und lautlos; ein paar Gipfel stehen darin wie Figuren auf einem leeren Brett. #sprecher:erzaehler
+Am Seil gleitet eine Gondel hinunter und taucht ins Weiß, als ginge sie unter. #sprecher:erzaehler
+-> END
 
 // Gutachten M2.9: geführter Moment in der freien Partie (begegnungen.json, summitCity.victorFrei).
 === victor_luftig ===

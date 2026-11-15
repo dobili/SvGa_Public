@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 20,
+ "nextobjectid": 21,
  "layers": [
   {
    "id": 1,
@@ -827,6 +827,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "gt7Fussmatte",
+     "type": "moebel",
+     "x": 128,
+     "y": 130,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

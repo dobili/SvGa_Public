@@ -59,6 +59,11 @@
       "moebel": "rv5TuerSuedHolz",
       "feld": [5, 7],
       "an_wand": true
+    },
+    {
+      "moebel": "gt7Fussmatte",
+      "feld": [5, 6],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

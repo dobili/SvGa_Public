@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 22,
+ "nextobjectid": 23,
  "layers": [
   {
    "id": 1,
@@ -809,7 +809,7 @@
      "name": "mf5Nischentisch",
      "type": "moebel",
      "x": 192,
-     "y": 64,
+     "y": 55,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -818,7 +818,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 63
       },
       {
        "name": "kollision",
@@ -865,6 +865,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "mf4Fussmatte",
+     "type": "moebel",
+     "x": 128,
+     "y": 82,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

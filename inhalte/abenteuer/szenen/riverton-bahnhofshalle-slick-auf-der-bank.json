@@ -198,6 +198,16 @@
     {
       "moebel": "rv14SpindRechts",
       "feld": [3, 6]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [12, 14],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [13, 14],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

@@ -313,13 +313,13 @@
       "moebel": "mf5Brotbrett",
       "feld": [0, 0],
       "auf": "arbeit",
-      "versatz": [-6, 0]
+      "versatz": [-7, 0]
     },
     {
       "moebel": "mf5Geschirr",
       "feld": [0, 0],
       "auf": "arbeit",
-      "versatz": [8, 0]
+      "versatz": [9, 0]
     },
     {
       "moebel": "cc4Kasse",

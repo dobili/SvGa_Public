@@ -4121,6 +4121,12 @@
           "karte": "summitCity.bergstation",
           "art": "dialog",
           "dialog": "summit-city-bergstation.fahrplan"
+        },
+        {
+          "name": "aussicht",
+          "karte": "summitCity.bergstation",
+          "art": "dialog",
+          "dialog": "summit-city-bergstation.aussicht"
         }
       ],
       "club": {

@@ -646,7 +646,7 @@
      "name": "cc4Hobelbank",
      "type": "moebel",
      "x": 16,
-     "y": 16,
+     "y": 21,
      "width": 80,
      "height": 64,
      "rotation": 0,
@@ -655,7 +655,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 77
       },
       {
        "name": "kollision",
@@ -669,7 +669,7 @@
      "name": "cc4Buegelsaege",
      "type": "moebel",
      "x": 24,
-     "y": 38,
+     "y": 43,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -678,7 +678,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 73
+       "value": 78
       },
       {
        "name": "kollision",
@@ -692,7 +692,7 @@
      "name": "cc4Spaene",
      "type": "moebel",
      "x": 48,
-     "y": 38,
+     "y": 43,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -701,7 +701,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 73
+       "value": 78
       },
       {
        "name": "kollision",
@@ -715,7 +715,7 @@
      "name": "cc4FotoRahmen",
      "type": "moebel",
      "x": 72,
-     "y": 38,
+     "y": 43,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -724,7 +724,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 73
+       "value": 78
       },
       {
        "name": "kollision",
@@ -891,7 +891,7 @@
      "name": "cc4Werktisch",
      "type": "moebel",
      "x": 160,
-     "y": 16,
+     "y": 21,
      "width": 48,
      "height": 48,
      "rotation": 0,
@@ -900,7 +900,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 61
       },
       {
        "name": "kollision",

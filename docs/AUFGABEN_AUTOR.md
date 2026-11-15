@@ -1762,4 +1762,17 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Menschengröße, Fußmatte vor Außentüren, keine versetzte Straße). Sie finden jeden Fall
       deiner Notizen. In den übrigen Orten melden sie 84 ähnliche Stellen; die behebt Claude als
       Nächstes.
+- [ ] RO29. **Zur Revision: dieselben Regeln in allen Orten, Bergstation mit Plattform (16.11.2026,
+      umgesetzt, Widerspruch genügt):** Die 84 Stellen sind behoben oder als Absicht erkannt; der
+      Kartenbau wertet solche Stellen jetzt als Fehler. Zur Durchsicht: (1) Die Pfahlhäuser der
+      Pelikaninsel bleiben bewusst kleine Fischerhütten. (2) Schmale Reihenhäuser in der Capital
+      gelten ab drei Geschossen als groß genug. (3) Das Haus des Schrankenwärters in Ironwood ist
+      jetzt ein Blockhaus; passt das zur Industriestadt? (4) Fußmatten auch vor Schuppen,
+      Wohnwagen, der verlassenen Tankstelle und der Musikhaus-Ruine. (5) Landstraße und Flussweg
+      schlängeln sich absichtlich; ein Sprung, der Teil einer schrägen Kurve ist, gilt nicht als
+      Fehler. (6) Bergstation (Szene 88): hinter einer gläsernen Doppeltür eine Plattform mit
+      Geländer über dem Wolkenmeer, Victor steht dort am Geländer statt am Fenster, ein neuer
+      Blick „Aussicht“ mit zwei Erzählersätzen, die Halle ist höher (Seilrad hinten). (7) In der
+      Bibliothek stehen die Stühle jetzt mittig an den Lesetischen, in der Drechslerei rücken
+      Hobelbank und Werktisch ein Stück an die Hocker heran.
 

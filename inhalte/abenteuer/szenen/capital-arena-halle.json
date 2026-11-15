@@ -282,7 +282,7 @@
     {
       "moebel": "ca7Fussmatte",
       "feld": [15, 18],
-      "versatz": [8, 2]
+      "versatz": [0, 2]
     },
     {
       "moebel": "caGlastuerDreifach",
@@ -314,6 +314,16 @@
     {
       "moebel": "ca7Pflanze",
       "feld": [27, 7]
+    },
+    {
+      "moebel": "ca7Fussmatte",
+      "feld": [16, 18],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "ca7Fussmatte",
+      "feld": [17, 18],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

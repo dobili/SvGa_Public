@@ -275,7 +275,8 @@
       "zustand": "alt",
       "blick": "unten",
       "begehbar": true,
-      "begehbar_grund": "steht auf Pfählen im Wasser, dort läuft niemand"
+      "begehbar_grund": "steht auf Pfählen im Wasser, dort läuft niemand",
+      "kleinbau": "Fischerhütte auf Pfählen mit einem Raum, nicht zu betreten; bewusst kleiner als ein Wohnhaus (10.85)"
     },
     "n4PfahlhausRot": {
       "quelle": "spiel/eigene/pfahlhaus_rot.png",
@@ -287,7 +288,8 @@
       "zustand": "alt",
       "blick": "unten",
       "begehbar": true,
-      "begehbar_grund": "steht auf Pfählen im Wasser, dort läuft niemand"
+      "begehbar_grund": "steht auf Pfählen im Wasser, dort läuft niemand",
+      "kleinbau": "Fischerhütte auf Pfählen mit einem Raum, nicht zu betreten; bewusst kleiner als ein Wohnhaus (10.85)"
     },
     "n4PfahlhausWeiss": {
       "quelle": "spiel/eigene/pfahlhaus_weiss.png",
@@ -299,7 +301,8 @@
       "zustand": "alt",
       "blick": "unten",
       "begehbar": true,
-      "begehbar_grund": "steht auf Pfählen im Wasser, dort läuft niemand"
+      "begehbar_grund": "steht auf Pfählen im Wasser, dort läuft niemand",
+      "kleinbau": "Fischerhütte auf Pfählen mit einem Raum, nicht zu betreten; bewusst kleiner als ein Wohnhaus (10.85)"
     },
     "n4Netzgestell": {
       "quelle": "spiel/eigene/netzgestell.png",

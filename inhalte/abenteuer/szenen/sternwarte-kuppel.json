@@ -51,7 +51,7 @@
       "feld": [10, 1]
     },
     {
-      "moebel": "cc3Schreibtisch",
+      "moebel": "mf14SchreibtischLeer",
       "feld": [10, 6],
       "id": "funktisch",
       "versatz": [8, 0]

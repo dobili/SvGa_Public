@@ -9,13 +9,16 @@ es ``None`` zurück; die Regeln, die Pixel brauchen, schweigen dann.
 Rolle im Gesamtbild: nur von ``anordnung.py`` benutzt.
 """
 
+import importlib.util
 import os
 from functools import cache
 from pathlib import Path
-
-from PIL import Image
+from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.kartenbau import HAUPT
+
+if TYPE_CHECKING:
+    from PIL import Image
 
 # Ab dieser Deckkraft zählt ein Pixel zum Bild (Schatten von LimeZu haben 100).
 DECKEND = 200
@@ -38,11 +41,22 @@ def privat() -> Path | None:
     return None
 
 
+def bilder_da() -> bool:
+    """Liegen die Bilder bereit (privates Paket und Pillow)? In GitHub Actions fehlt beides; dann prüft
+    der Kartenbau nur die Anordnungsregeln, die ohne Pixel auskommen (``anordnung.pruefe_anordnung``)."""
+    paket = privat()
+    return paket is not None and (paket / "spiel").is_dir() and importlib.util.find_spec("PIL") is not None
+
+
 @cache
-def _bild(quelle: str) -> Image.Image | None:
+def _bild(quelle: str) -> "Image.Image | None":
+    if not bilder_da():
+        return None
     paket = privat()
     if paket is None or not (paket / quelle).is_file():
         return None
+    from PIL import Image  # erst hier: Pillow fehlt in GitHub Actions
+
     return Image.open(paket / quelle).convert("RGBA")
 
 
@@ -61,15 +75,27 @@ def deckend(quelle: str, ausschnitt: tuple[int, ...] | None = None) -> Flaeche |
 
 
 @cache
-def wasser_im_bild(quelle: str) -> bool:
-    """Hat das Bild eingemaltes Wasser (mehr als ein Zehntel blaue Pixel)? Beispiel: Steg ``Pier_26``."""
+def wasserpixel(quelle: str) -> tuple[tuple[int, int], ...]:
+    """Lage (x, y) der wasserblauen deckenden Pixel im Bild, wenn es eingemaltes Wasser hat (mehr als
+    ein Zehntel blaue Pixel), sonst leer. Beispiel: Steg ``Pier_26``, offenes Schleusentor."""
     bild = _bild(quelle)
     if bild is None:
-        return False
-    roh = bild.tobytes()
-    pixel = [tuple(roh[i : i + 4]) for i in range(0, len(roh), 4) if roh[i + 3] > DECKEND]
-    blau = sum(1 for r, g, b, _ in pixel if b > r + 30 and b >= g - 10)
-    return bool(pixel) and blau / len(pixel) > WASSERANTEIL
+        return ()
+    breite, roh = bild.width, bild.tobytes()
+    deckend_zahl, blau = 0, []
+    for i in range(0, len(roh), 4):
+        r, g, b, a = roh[i : i + 4]
+        if a <= DECKEND:
+            continue
+        deckend_zahl += 1
+        if b > r + 30 and b >= g - 10:
+            blau.append(((i // 4) % breite, (i // 4) // breite))
+    return tuple(blau) if deckend_zahl and len(blau) / deckend_zahl > WASSERANTEIL else ()
+
+
+def wasser_im_bild(quelle: str) -> bool:
+    """Hat das Bild eingemaltes Wasser (mehr als ein Zehntel blaue Pixel)? Beispiel: Steg ``Pier_26``."""
+    return bool(wasserpixel(quelle))
 
 
 def flaeche(stueck: dict, angabe: dict) -> Flaeche:

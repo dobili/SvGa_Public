@@ -248,6 +248,17 @@
         7,
         9
       ]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [
+        10,
+        12
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     }
   ],
   "ausloeser": [

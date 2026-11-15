@@ -346,12 +346,15 @@ def baue(pfad: Path) -> list[str]:
         from pipeline.abenteuer.ausrichtung import pruefe_szene
 
         befunde += [f"Ausrichtung: {b.moebel} {b.feld}: {b.text}" for b in pruefe_szene(szene, moebel)]
-        # Lage am Tisch (Regel 10.79, 15.11.2026); Hocker und Stühle nur mit dem privaten Paket.
+        # Lage am Tisch (10.79) und Anordnung (10.80 bis 10.87, Befund seit 15.11.2026); was Pixel
+        # braucht, nur mit dem privaten Paket.
+        from pipeline.abenteuer.anordnung import pruefe_anordnung
         from pipeline.abenteuer.tischlage import BESTAND
         from pipeline.abenteuer.tischlage import pruefe_szene as tischlage
 
         sitze = BESTAND[0] is not None
         befunde += [f"Tischlage: {b.moebel} {b.feld}: {b.text}" for b in tischlage(szene, moebel, sitze)]
+        befunde += [f"Anordnung: {b}" for b in pruefe_anordnung(szene)]
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
         befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")
@@ -368,18 +371,15 @@ def baue(pfad: Path) -> list[str]:
 
 
 def hinweise(pfad: Path) -> list[str]:
-    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65) und
-    Felswände, die frei im Gelände enden (Regel 10.74). Bilder in falscher Richtung (Regel 10.78)
-    sind seit dem 15.11.2026 ein Befund in ``baue``. Anordnung der Möbel (10.80 bis 10.87,
-    ``anordnung.py``): Hinweis, bis alle Orte nachgezogen sind."""
-    from pipeline.abenteuer.anordnung import pruefe_anordnung
+    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zur Fahrbahn (10.65), Felswände, die frei
+    enden (10.74). Ausrichtung (10.78) und Anordnung (10.80–10.87) sind Befunde in ``baue``."""
     from pipeline.abenteuer.fahrzeuge import fahrzeughinweise
-    from pipeline.abenteuer.hoehen import hoehenhinweise
+    from pipeline.abenteuer.hoehen import hoehenhinweise, schleusenfelder
 
     szene, moebel = lade(pfad), lade_moebel()
-    fahrzeuge = fahrzeughinweise(szene, raster(szene), platziere(szene, moebel)[0], moebel)
-    anordnung = [f"Anordnung: {b}" for b in pruefe_anordnung(szene)]
-    return fahrzeuge + hoehenhinweise(szene, raster(szene)) + anordnung
+    gesetzt = platziere(szene, moebel)[0]
+    fahrzeuge = fahrzeughinweise(szene, raster(szene), gesetzt, moebel)
+    return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt))
 
 
 def main() -> int:

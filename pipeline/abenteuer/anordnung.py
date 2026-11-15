@@ -16,39 +16,49 @@ Regeln (Nummern wie in KARTENREGELN):
 - 10.81 Nichts übereinander: Was auf derselben Platte steht, überdeckt sich nicht, und nichts steht
   auf dem, was im Tischbild schon liegt (``BELEGT``).
 - 10.82 Steg über Wasser: Ein Stegbild liegt über Wasser oder Brückenboden (eine Brücke darf auch
-  über eine Schlucht führen); hat ein Steg- oder Brückenbild eingemaltes Wasser, liegt es ganz über
-  Wasser.
+  über eine Schlucht führen); eingemaltes Wasser im Bild liegt über Wasser (Pixel für Pixel, die
+  Mauern eines Schleusentors dürfen auf dem Ufer stehen).
 - 10.83 Theke an der Wand: Hinter einer Theke mit Hockern (Bar, Diner) liegt höchstens ein Gang von
-  zwei Reihen bis zur Wand (die Hocker selbst prüft ``tischlage.py``).
+  zwei Reihen bis zur Wand, gemessen ab der sichtbaren Oberkante, die kürzeste Strecke (eine
+  Durchreiche in der Rückwand zählt nicht; die Hocker selbst prüft ``tischlage.py``).
 - 10.84 Loch im Boden: Ein Aufgang nach unten auf einer oberen Karte zeigt eine Öffnung im Boden
   (Möbelangabe ``bodenoeffnung``).
 - 10.85 Häuser in Menschengröße (10.66): Ein Gebäude draußen ist mindestens 5 × 5 Kacheln groß, außer
   Schuppen, Kiosk, Garage, Hütte, Gartenhaus, Zelt, Stand, Wartehaus, Stall und Anbau und außer Häusern
-  in einer geschlossenen Häuserzeile.
-- 10.86 Fußmatte: Innen liegt vor jedem Feld einer Außentür eine Fußmatte.
-- 10.87 Gerade Straßen: Ein Straßenzug springt nicht um eine Kachel zur Seite.
+  in einer geschlossenen Häuserzeile, Bildern mit ``kleinbau`` im Katalog (Pfahlhütten) und schmalen
+  Stadthäusern ab drei Geschossen (mindestens 3 breit).
+- 10.86 Fußmatte: Innen liegt vor jedem Feld einer Außentür eine Fußmatte, außer auf einer Treppe.
+- 10.87 Gerade Straßen: Ein Straßenzug springt nicht um eine Kachel zur Seite und zurück (eine
+  Schlangenlinie aus schrägen Stufen ist erlaubt).
 
 Aufruf: ``python -m pipeline.abenteuer.anordnung [--ort KENNUNG]`` listet die Befunde aller Szenen.
-Im Kartenbau erscheinen sie als Hinweis (``kartenbau.hinweise``); für Maple Falls und Cedar Creek
-prüft ``pipeline/tests/test_abenteuer_anordnung.py``, dass nichts offen ist (außer Bildwünschen).
+Im Kartenbau sind sie seit dem 15.11.2026 Befunde (``kartenbau.baue``), nachdem alle Orte nachgezogen
+sind; ``pipeline/tests/test_abenteuer_anordnung.py`` prüft alle Szenen (außer Bildwünschen). Ohne
+privates Paket oder Pillow (GitHub Actions) laufen nur die Regeln ohne Pixel (10.84, 10.86, 10.87).
 """
 
 import re
 import sys
+from functools import cache
 from pathlib import Path
 
-from pipeline.abenteuer.anordnung_bild import flaeche, mitte, ueberlappen, wasser_im_bild
+from pipeline.abenteuer.anordnung_bild import bilder_da, flaeche, mitte, ueberlappen, wasserpixel
 from pipeline.abenteuer.anordnung_raum import pruefe_fussmatten, pruefe_strassen, pruefe_theke_an_wand
 from pipeline.abenteuer.kartenbau import INHALTE, K, lade, platziere, raster
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.uebergangsbilder import ebene
+from pipeline.abenteuer.uebergangsbilder import ebene, lade_grundrisse
 
 # Tischbilder, auf deren Platte schon etwas gezeichnet ist: Bilddatei → (Fläche im Bild, was).
 BELEGT = {
     "Classroom_and_Library_Singles_25.png": ((9, 7, 28, 20), "aufgeschlagenes Buch und Flasche"),
 }
 HOEHE_TOLERANZ = 10
+# Höchstens dieser Anteil des eingemalten Wassers eines Stegs oder einer Brücke liegt neben dem Wasser.
+WASSER_DANEBEN = 0.1
 MINDESTGROESSE = 5 * K
+# Stadthäuser ab so vielen Geschossen dürfen schmal sein (Reihenhaus in Capital: 3 breit, 4 Geschosse).
+STADTHAUS_GESCHOSSE = 3
+STADTHAUS_BREITE = 3 * K
 KLEINBAU = re.compile(
     r"schuppen|kiosk|garage|h(ü|ue)tte|gartenhaus|storage|shed|zelt|tent|stand|bude|wartehaus|haltestelle|"
     r"anbau|eingang|stellwerk|toilette|klo|bauteil|steuerhaus|pf(ö|oe)rtner|umkleide|stall|container",
@@ -145,21 +155,39 @@ def pruefe_platten(gesetzt: list[dict], moebel: dict, eintraege: dict) -> list[s
 
 
 def pruefe_stege(gesetzt: list[dict], moebel: dict, zeilen: list[str], bruecken: set[str]) -> list[str]:
-    """10.82: Steg- und Brückenbilder über Wasser; mit eingemaltem Wasser ganz über Wasser."""
+    """10.82: Steg- und Brückenbilder über Wasser; eingemaltes Wasser liegt über Wasser.
+
+    Gemessen wird Pixel für Pixel: Das Wasser im Bild liegt auf Wasserfeldern (höchstens ein Zehntel
+    daneben). Teile ohne Wasser dürfen auf dem Ufer stehen, etwa die Mauern eines offenen
+    Schleusentors (Schleusentreppe zwischen Riverton und Ironwood); der Steg mit Wasser auf dem Gras im
+    Stadtpark von Maple Falls bleibt ein Befund.
+    """
     befunde = []
     for s in gesetzt:
         angabe = moebel.get(s["name"], {})
         if angabe.get("art") not in ("steg", "bruecke") or PFOSTEN.search(s["name"]):
             continue
         felder = _felder(flaeche(s, angabe), zeilen)
-        unter = [zeilen[y][x] for x, y in felder]
-        nass = [z for z in unter if z == "~" or z in bruecken]
+        nass = [(x, y) for x, y in felder if zeilen[y][x] == "~" or zeilen[y][x] in bruecken]
         # Eine Brücke darf auch über eine Schlucht führen; nur ein Steg braucht Wasser.
         if not nass and angabe["art"] == "steg":
             befunde.append(f"10.82 {s['name']} {_feld(s)}: Steg ohne Wasser darunter")
-        elif wasser_im_bild(angabe.get("quelle", "")) and len(nass) < len(unter):
+        elif _wasser_auf_land(s, angabe, zeilen, set(nass) if "ausschnitt" not in angabe else None):
             befunde.append(f"10.82 {s['name']} {_feld(s)}: Bild mit Wasser steht teils auf Land")
     return befunde
+
+
+def _wasser_auf_land(s: dict, angabe: dict, zeilen: list[str], nass: set | None) -> bool:
+    """Liegt mehr als ein Zehntel des eingemalten Wassers auf Land? Ohne Pixellage (Ausschnitt eines
+    Bogens) gilt die alte, strengere Regel: Das ganze Bild liegt über Wasser."""
+    pixel = wasserpixel(angabe.get("quelle", ""))
+    if not pixel:
+        return False
+    if nass is None:
+        felder = _felder(flaeche(s, angabe), zeilen)
+        return any(zeilen[y][x] != "~" for x, y in felder)
+    trocken = sum(1 for px, py in pixel if ((s["x"] + px) // K, (s["y"] + py) // K) not in nass)
+    return trocken / len(pixel) > WASSER_DANEBEN
 
 
 def pruefe_loecher(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]:
@@ -184,13 +212,27 @@ def pruefe_hausgroesse(szene: dict, gesetzt: list[dict], moebel: dict) -> list[s
         if angabe.get("art") not in ("gebaeude", "haus") and not angabe.get("gebaeude"):
             continue
         text = f"{s['name']} {angabe.get('quelle', '')} {angabe.get('hinweis', '')}"
-        if KLEINBAU.search(text) or not WOHNHAUS.search(text) or _in_zeile(s, gesetzt, moebel):
+        if KLEINBAU.search(text) or angabe.get("kleinbau") or not WOHNHAUS.search(text):
+            continue
+        if _in_zeile(s, gesetzt, moebel):
             continue
         fl = flaeche(s, angabe)
-        if fl[2] - fl[0] < MINDESTGROESSE - K // 2 or fl[3] - fl[1] < MINDESTGROESSE - K // 2:
+        # Ein schmales Stadthaus mit vielen Geschossen (Grundriss, 10.74) ist schmal, aber kein Spielzeug.
+        breit_genug = MINDESTGROESSE if _geschosse(angabe) < STADTHAUS_GESCHOSSE else STADTHAUS_BREITE
+        if fl[2] - fl[0] < breit_genug - K // 2 or fl[3] - fl[1] < MINDESTGROESSE - K // 2:
             groesse = f"{(fl[2] - fl[0]) / K:.1f} × {(fl[3] - fl[1]) / K:.1f}"
             befunde.append(f"10.85 {s['name']} {_feld(s)}: Haus nur {groesse} Kacheln (Hundehütte?)")
     return befunde
+
+
+@cache
+def _grundrisse() -> dict[str, dict]:
+    return lade_grundrisse()
+
+
+def _geschosse(angabe: dict) -> int:
+    """Geschosse an der Front laut Grundriss (10.74); ohne Grundriss 1."""
+    return int((_grundrisse().get(angabe.get("quelle", "")) or {}).get("geschosse") or 1)
 
 
 def _in_zeile(haus: dict, gesetzt: list[dict], moebel: dict) -> bool:
@@ -220,20 +262,30 @@ def _felder(f: tuple, zeilen: list[str]) -> list[tuple[int, int]]:
     ]
 
 
-def pruefe_anordnung(szene: dict) -> list[str]:
-    """Alle Anordnungsregeln für eine Szene; Ausgabe: Befunde als Text („10.8x Möbel Feld: was“)."""
+def pruefe_anordnung(szene: dict, mit_bildern: bool | None = None) -> list[str]:
+    """Alle Anordnungsregeln für eine Szene; Ausgabe: Befunde als Text („10.8x Möbel Feld: was“).
+
+    Ohne Bilder (``mit_bildern`` falsch; ohne Angabe: privates Paket und Pillow vorhanden?) laufen nur
+    die Regeln, die keine Pixel brauchen: Loch im Boden, Fußmatte und gerade Straßen. Sonst gälte die
+    ganze Bildfläche als deckend, und Tische, Platten und Häuser würden falsch gemessen.
+    """
     gesetzt, moebel, eintraege = _setzen(szene)
     zeilen = raster(szene)
+    befunde = (
+        pruefe_loecher(szene, gesetzt, moebel)
+        + pruefe_fussmatten(szene, gesetzt, moebel, zeilen)
+        + pruefe_strassen(szene, zeilen)
+    )
+    if not (bilder_da() if mit_bildern is None else mit_bildern):
+        return befunde
     bruecken = set(szene.get("bruecken", []))
     return (
         pruefe_tische(szene, gesetzt, moebel, eintraege)
         + pruefe_platten(gesetzt, moebel, eintraege)
         + pruefe_stege(gesetzt, moebel, zeilen, bruecken)
         + pruefe_theke_an_wand(szene, gesetzt, moebel, zeilen)
-        + pruefe_loecher(szene, gesetzt, moebel)
         + pruefe_hausgroesse(szene, gesetzt, moebel)
-        + pruefe_fussmatten(szene, gesetzt, moebel, zeilen)
-        + pruefe_strassen(szene, zeilen)
+        + befunde
     )
 
 

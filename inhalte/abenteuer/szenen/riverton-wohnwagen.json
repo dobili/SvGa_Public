@@ -91,7 +91,8 @@
     {
       "moebel": "mf5Nischentisch",
       "feld": [12, 4],
-      "id": "nische"
+      "id": "nische",
+      "versatz": [0, -9]
     },
     {
       "moebel": "mf5NischenstuhlLinks",
@@ -101,6 +102,11 @@
       "moebel": "mf12InnentuerHolz",
       "feld": [5, 1],
       "an_wand": true
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [8, 5],
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

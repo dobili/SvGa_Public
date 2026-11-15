@@ -23060,12 +23060,12 @@
     },
     {
      "id": 374,
-     "name": "pd6HausRot",
+     "name": "sc7Ferienhuette",
      "type": "moebel",
      "x": 1120,
-     "y": 848,
+     "y": 832,
      "width": 80,
-     "height": 64,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [

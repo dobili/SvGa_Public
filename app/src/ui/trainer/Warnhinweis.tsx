@@ -19,6 +19,7 @@ import { warnsignaleSieben } from "../../analyse/k7-warnsignale";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import { MitInfo } from "../komponenten/bausteine/InfoKnopf";
+import { useImSpiel } from "./imSpiel";
 
 const SYMBOLGROESSE = 18;
 const MERKGROESSE = 24;
@@ -52,6 +53,8 @@ function signale(fen: string, amZug: "w" | "b"): { kennungen: Kennung[]; satz: s
 
 /** Ein Chip je Signal, ohne Signal ein grauer Chip „Kein Signal“. */
 function Signalchips({ kennungen }: { kennungen: readonly Kennung[] }) {
+  // Im Schach-Abenteuer ohne die Kürzel W1 bis W7, nur der Name (Spieltest „einstieg“, R4).
+  const imSpiel = useImSpiel();
   if (kennungen.length === 0)
     return <span className="statuschip">{t("wenigertext.werkzeug.status.keinSignal")}</span>;
   return (
@@ -60,7 +63,7 @@ function Signalchips({ kennungen }: { kennungen: readonly Kennung[] }) {
         <span key={k} className="signalchip">
           <span className="warnchip">
             <TriangleAlert size={SYMBOLGROESSE} aria-hidden="true" />
-            {k}
+            {!imSpiel && k}
           </span>
           <span>{t(`wenigertext.werkzeug.taktik.${k}`)}</span>
         </span>
@@ -76,13 +79,19 @@ function Signalchips({ kennungen }: { kennungen: readonly Kennung[] }) {
  */
 export function Warnhinweis({ fen, amZug }: { fen: string; amZug: "w" | "b" }) {
   const { kennungen, satz } = useMemo(() => signale(fen, amZug), [fen, amZug]);
+  // Im Spiel ohne ⓘ: Der Satz dahinter nennt die Kürzel („Signale auf dem Brett: W1“).
+  const imSpiel = useImSpiel();
   return (
     <div className="warnhinweis karte" data-testid="taktik-warnsignal">
-      <MitInfo
-        thema={t("wenigertext.werkzeug.taktik.thema")}
-        zeile={<Signalchips kennungen={kennungen} />}
-        erklaerung={<p>{t("taktiktrainer.hilfeWarnsignal", { text: satz })}</p>}
-      />
+      {imSpiel ? (
+        <Signalchips kennungen={kennungen} />
+      ) : (
+        <MitInfo
+          thema={t("wenigertext.werkzeug.taktik.thema")}
+          zeile={<Signalchips kennungen={kennungen} />}
+          erklaerung={<p>{t("taktiktrainer.hilfeWarnsignal", { text: satz })}</p>}
+        />
+      )}
       <ul className="merkzeichen">
         {MERKZEICHEN.map(({ bild: Bild, name }) => (
           <li key={name}>

@@ -76,9 +76,22 @@ function touchGeraet(): boolean {
 
 type Lauf = "start" | "rueckkehr" | null;
 
-/** Die Startanimation; nach ihrer Dauer oder einem Tipp ist sie weg. */
-export function Startanimation() {
-  const [lauf, setzeLauf] = useState<Lauf>(() => (startanimationFaellig() ? "start" : null));
+/**
+ * Die Startanimation; nach ihrer Dauer oder einem Tipp ist sie weg. `aus`: Die App startet im
+ * Schach-Abenteuer (Vollbild, etwa nach dem Neuladen mitten im Spiel). Dann läuft sie nicht, auch
+ * nicht bei der Rückkehr; die Sitzung gilt trotzdem als begonnen, damit sie nicht später beim
+ * Wechsel ins Buch nachkommt (Spieltest „einstieg“, 15.11.2026, R6: Startbild, Abzeichen und
+ * Ergebniskarte lagen übereinander).
+ */
+export function Startanimation({ aus = false }: { readonly aus?: boolean }) {
+  const [lauf, setzeLauf] = useState<Lauf>(() => {
+    const faellig = startanimationFaellig();
+    return faellig && !aus ? "start" : null;
+  });
+  const ausRef = useRef(aus);
+  useEffect(() => {
+    ausRef.current = aus;
+  }, [aus]);
   const orden = useStartorden(lauf === "start");
   const dauer = lauf === "rueckkehr" ? RUECKKEHR_MS : (orden.dauerMs ?? STARTANIMATION_MS);
   // Beginn des Laufs: Die Dauer kann sich verlängern, wenn ein Orden dazukommt (nach dem Laden).
@@ -99,6 +112,7 @@ export function Startanimation() {
         verstecktSeit = Date.now();
         return;
       }
+      if (ausRef.current) verstecktSeit = null;
       if (rueckkehrFaellig(verstecktSeit, Date.now(), touchGeraet(), erlaubt())) {
         setzeLauf("rueckkehr");
       }

@@ -60,6 +60,7 @@ describe("standNachPartie", () => {
     expect(r.stand.dialogvariablen).toEqual({
       ausgangMapleFallsClubkampf: "sieg",
       siegeMapleFallsClubkampf: 1,
+      zuegeMapleFallsClubkampf: 20,
       nadelMapleFalls: 3,
     });
   });

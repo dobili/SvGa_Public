@@ -99,8 +99,7 @@ Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht meh
 ~ ersterAbendGesehen = true
 Du kommst mit dem alten Brett die Treppe herunter. Auf der neunten Stufe knarrt es. #sprecher:erzaehler #klang:knarren
 Die hat schon geknarrt, als das Haus neu war. #sprecher:ambrose #stimmung:laechelt
-Mama sitzt auf dem Boden und schraubt den Tisch zusammen, die Anleitung verkehrt herum neben sich. #sprecher:erzaehler
-Ihr Blick fällt auf das Brett. Sie sieht dich nicht an. Sie sieht die Stellung an. #sprecher:erzaehler #pause:2
+Mama sitzt auf dem Boden und schraubt den Tisch zusammen. Ihr Blick fällt auf das Brett. Sie sieht nicht dich an, sondern die Stellung. #sprecher:erzaehler #pause:2
 Weiß steht besser. #sprecher:mutter #stimmung:nachdenklich #pause:2 #musik:aus
 Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler #musik:karte
 Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das her? #sprecher:mutter #stimmung:ertappt
@@ -110,8 +109,7 @@ Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das h
     Ich? Nein. #sprecher:mutter #stimmung:ueberrascht
     Sie lacht, ein bisschen zu kurz. Ich kann nicht mal diesen Tisch. #sprecher:mutter #stimmung:ueberrascht
 - Deine Mutter, wenn ich das sagen darf, lügt schlecht. #sprecher:ambrose #stimmung:laechelt
-In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. #sprecher:mutter #stimmung:laechelt
-Falls du Leute kennenlernen willst. #sprecher:mutter #stimmung:laechelt
+In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. Falls du Leute kennenlernen willst. #sprecher:mutter #stimmung:laechelt
 * [„Vielleicht schau ich mal hin.“]
     Mach das. #sprecher:mutter #stimmung:froh
 * [„Schach ist doch nur für Streber.“]

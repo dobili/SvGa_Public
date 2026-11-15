@@ -17,6 +17,7 @@ EXTERNAL setzeSzene(kennung)
 EXTERNAL schreibeTagebuch(name)
 EXTERNAL gibKarte(kennung)
 
+VAR ausgangMapleFallsErsteLektion = ""
 VAR held = "Du"
 VAR ambroseVertrauen = 0
 VAR clubBeigetreten = false
@@ -200,6 +201,9 @@ Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
 - not clubBeigetreten: -> sam_vor_dem_coach
 - not samGetroffen: -> sam_erstes_treffen
 - not reiheSamBestanden: -> sam_reihe
+// Sams Klage startet die Nebenquest „Sams Dame“, die die erste Lektion mit Ambrose voraussetzt; wer
+// vorher kommt, hört nur den Alltag, sonst wäre die Quest verpasst (Gesamtsimulation, 15.11.2026).
+- not samKlagt and (ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen"): -> sam_alltag
 - not samKlagt: -> sam_klagt
 - not todsuendenBestanden: -> sam_klagt_wieder
 - todsuendenBestanden and (ausgangMapleFallsSamRevanche == "" or ausgangMapleFallsSamRevanche == "abgebrochen"): -> sam_revanche_angebot

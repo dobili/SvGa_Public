@@ -179,7 +179,23 @@
           "$ref": "#/$defs/textschluessel"
         },
         "ereignis": { "$ref": "#/$defs/ereignis" },
-        "wirkungen": { "type": "array", "items": { "$ref": "#/$defs/wirkung" } }
+        "wirkungen": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/wirkung" }
+        },
+        "ziel": {
+          "description": "Wohin der Zielhinweis auf der Karte zeigt (Spieltest einstieg, R1): Karte und Objektname der Tiled-Karte (Auslöser oder Figur). Fehlt es, leitet die App das Ziel aus dem Ereignis ab (Ort, Steller der Runde, Gegner, Dialog).",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["karte", "objekt"],
+          "properties": {
+            "karte": {
+              "type": "string",
+              "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+            },
+            "objekt": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+          }
+        }
       }
     },
     "quest": {

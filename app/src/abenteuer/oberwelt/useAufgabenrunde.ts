@@ -23,8 +23,8 @@ import type { Oberweltkern } from "./kern";
 import { begegnungVon, type Partien } from "./usePartiestart";
 import type { Weltdaten } from "./weltdaten";
 
-/** Ergebnis der zuletzt gespielten Runde für die Ergebniskarte (R31). */
-export type Rundenergebnis = Rundenrueckweg & { readonly auftrag: Aufgabenauftrag };
+/** Ergebnis der zuletzt gespielten Runde für die Ergebniskarte (R31), ohne den neuen Stand. */
+export type Rundenergebnis = Omit<Rundenrueckweg, "stand"> & { readonly auftrag: Aufgabenauftrag };
 
 /** Was die Oberwelt von Runden, Gedächtnisstellung und Simultan sieht und auslöst. */
 export interface Runden {
@@ -63,6 +63,9 @@ function useRueckwegDerRunde(
 ): void {
   useEffect(() => {
     const auftrag = k.stand?.laufendeAufgaben;
+    // Nach dem Neuladen: die gemerkte Ergebniskarte wieder zeigen (R6), ohne neue Auswertung.
+    const gemerkt = k.stand?.ergebniskarte;
+    if (!auftrag && gemerkt?.art === "runde") setzen.ergebnis(gemerkt);
     if (!auftrag) return;
     void Promise.all([k.dienste.liesAufgabenergebnis(auftrag.kennung), ladeSpieldaten()]).then(
       ([ergebnis, daten]) => {
@@ -73,8 +76,10 @@ function useRueckwegDerRunde(
           return;
         }
         const r = standNachRunde(aktuell, auftrag, ergebnis, daten);
-        setzen.ergebnis({ auftrag, ...r });
-        k.schreibe(r.stand);
+        const { stand, ...werte } = r;
+        const karte = { art: "runde", auftrag, ...werte } as const;
+        setzen.ergebnis(karte);
+        k.schreibe({ ...stand, ergebniskarte: karte });
         if (r.bestanden) setzen.bestanden(auftrag.runde);
       },
     );
@@ -149,7 +154,11 @@ export function useAufgabenrunde(k: Oberweltkern, partie: Partien): Runden {
   const s = simultan(k, partie);
   return {
     rundenergebnis,
-    schliesseRundenergebnis: () => setzeRundenergebnis(null),
+    schliesseRundenergebnis: () => {
+      setzeRundenergebnis(null);
+      const aktuell = k.standRef.current;
+      if (aktuell?.ergebniskarte?.art === "runde") k.schreibe({ ...aktuell, ergebniskarte: null });
+    },
     offeneRunde,
     brichRundeAb: () => {
       setzeOffeneRunde(null);
@@ -166,7 +175,7 @@ export function useAufgabenrunde(k: Oberweltkern, partie: Partien): Runden {
         k.setzeMeldung(tSpiel("aufgaben.fehlt", { runde }));
         return;
       }
-      const mitPosition = { ...aktuell, position: k.position(aktuell) };
+      const mitPosition = { ...aktuell, position: k.position(aktuell), ergebniskarte: null };
       k.merke(mitPosition);
       setzeRundenergebnis(null);
       void k.dienste.schreibeStand(mitPosition).then(() => k.dienste.starteAufgaben(auftrag));

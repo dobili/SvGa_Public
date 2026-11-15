@@ -54,6 +54,10 @@
           "type": "array",
           "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
         },
+        "figur": {
+          "description": "Nur Motivaufgaben, deren erster Lösungszug diese Figur macht (Spieltest „einstieg“, R4: Lilys Springer-Lektion bringt nur Springeraufgaben); reichen sie nicht, kommen die übrigen dazu",
+          "enum": ["bauer", "springer", "laeufer", "turm", "dame", "koenig"]
+        },
         "anzahl": {
           "description": "Feste Zahl der Motivaufgaben (Rätsel, Erinnerung); fehlt sie, rechnet R30 aus dem Zeitbudget",
           "type": "integer",

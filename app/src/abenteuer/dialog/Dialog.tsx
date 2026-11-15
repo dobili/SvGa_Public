@@ -2,7 +2,7 @@
  * Das Dialogfenster: eine Ink-Geschichte Zeile für Zeile, mit Sprecher und Auswahl.
  *
  * Rolle im Gesamtbild: React statt Phaser (Entscheidung C4). Bekommt die übersetzte Geschichte
- * und den Startknoten, zeigt je Tipp eine Zeile, am Ende die Wahlen; beim Ende der Geschichte
+ * und den Startknoten, zeigt je Tipp eine Zeile, die Wahlen gleich unter der Zeile davor (R3); beim Ende der Geschichte
  * gibt es die Variablen zurück (Spielstand). Die Zurück-Taste schließt den Dialog
  * (app/blattstapel.ts). Sprecher „erzaehler“ hat keinen Namen. Eine Zeile mit `#pause` sperrt
  * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3); `#bild:kennung` zeigt ein Bild groß über der
@@ -37,6 +37,17 @@ function erinnerungNach(vorher: boolean, s: Dialogschritt): boolean {
   return s.zeile.tags.erinnerung !== "aus";
 }
 
+/**
+ * Folgen auf eine Zeile gleich die Wahlen, zeigt der Dialog sie unter dieser Zeile (R3 aus dem
+ * Spieltest „einstieg“): Der Schritt wird zur Wahl, die Zeile bleibt als Text darüber stehen.
+ * Sonst bleibt der Schritt, wie er ist. Eine Pause der Zeile sperrt die Wahlen wie sonst „Weiter“.
+ */
+function mitWahlen(geschichte: Geschichte, s: Dialogschritt): Dialogschritt {
+  if (s.art !== "zeile") return s;
+  const wahlen = geschichte.wahlenNachZeile();
+  return wahlen.length > 0 ? { art: "wahl", wahlen } : s;
+}
+
 export function Dialog({
   json,
   knoten,
@@ -64,18 +75,21 @@ export function Dialog({
   // Die Geschichte lebt, solange der Dialog offen ist; die Oberwelt baut den Dialog je Knoten neu
   // auf (key), deshalb genügt das einmalige Anlegen hier.
   const [geschichte] = useState(() => new Geschichte(json, wirkungen, variablen, heldname));
-  const [schritt, setzeSchritt] = useState<Dialogschritt>(() => {
+  const [letzteZeile, setzeLetzteZeile] = useState<Dialogschritt | null>(() => {
     geschichte.starte(knoten);
-    return geschichte.weiter();
+    const erster = geschichte.weiter();
+    return erster.art === "zeile" ? erster : null;
   });
-  const [letzteZeile, setzeLetzteZeile] = useState<Dialogschritt | null>(() =>
-    schritt.art === "zeile" ? schritt : null,
+  const [schritt, setzeSchritt] = useState<Dialogschritt>(() =>
+    letzteZeile ? mitWahlen(geschichte, letzteZeile) : geschichte.weiter(),
   );
   // Pause (#pause, #pause:3): „Weiter“ ist so lange gesperrt. Gesetzt wird sie mit der Zeile (in
   // weiter), aufgehoben von der Uhr; jede neue Zeile startet sie neu.
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
-  const [wartet, setzeWartet] = useState(() => dauerVon(schritt) > 0);
-  const [erinnerung, setzeErinnerung] = useState(() => erinnerungNach(false, schritt));
+  const [wartet, setzeWartet] = useState(() => (letzteZeile ? dauerVon(letzteZeile) > 0 : false));
+  const [erinnerung, setzeErinnerung] = useState(() =>
+    letzteZeile ? erinnerungNach(false, letzteZeile) : false,
+  );
   const fenster = useRef<HTMLElement>(null);
   const geister = useGeistsprecher();
   useEffect(() => {
@@ -115,7 +129,7 @@ export function Dialog({
       beiEnde(geschichte.variablen());
       return;
     }
-    setzeSchritt(naechster);
+    setzeSchritt(mitWahlen(geschichte, naechster));
     if (naechster.art === "zeile") {
       setzeWartet(dauerVon(naechster) > 0);
       setzeErinnerung((vorher) => erinnerungNach(vorher, naechster));

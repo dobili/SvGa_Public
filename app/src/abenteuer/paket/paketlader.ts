@@ -126,9 +126,26 @@ function mitZeitlimit<T>(versprechen: Promise<T>, ms: number): Promise<T> {
   });
 }
 
+/**
+ * „Fehlt“ mit der Größe des Grundpakets vom Server, damit die Startkarte sie vor dem Laden nennt
+ * (Spieltest „einstieg“, 15.11.2026, R9: die 45 MB standen erst nach dem Tippen da). Ohne Netz
+ * oder bei hängendem Server ohne Größe.
+ */
+async function fehltMitGroesse(): Promise<Paketzustand> {
+  try {
+    const verzeichnis = await mitZeitlimit(verzeichnisVomServer(), SERVER_ZEITLIMIT_MS);
+    return typeof verzeichnis.bytes === "number"
+      ? { art: "fehlt", bytes: verzeichnis.bytes }
+      : { art: "fehlt" };
+  } catch {
+    // Ohne Netz bleibt nur „fehlt“; das Laden meldet seinen Fehler dann selbst.
+    return { art: "fehlt" };
+  }
+}
+
 export async function paketzustand(): Promise<Paketzustand> {
   const geladen = await geladenesVerzeichnis();
-  if (!geladen) return { art: "fehlt" };
+  if (!geladen) return fehltMitGroesse();
   const { version, bytes } = geladen.verzeichnis;
   try {
     const neu = await mitZeitlimit(verzeichnisVomServer(), SERVER_ZEITLIMIT_MS);

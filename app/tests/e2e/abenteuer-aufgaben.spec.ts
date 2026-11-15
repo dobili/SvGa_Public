@@ -113,6 +113,37 @@ test("Aufgabenrunde von Sam: weitermachen, durchspielen, Ergebnis in der Stadt",
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toHaveCount(0);
 });
 
+test("Aufgabenrunde: nach dem Neuladen weiter bei der offenen Aufgabe (R5)", async ({ page }) => {
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
+  await page.getByRole("button", { name: "Weitermachen" }).click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 3", {
+    timeout: 20000,
+  });
+  await page.getByRole("button", { name: "Ich komme nicht drauf" }).click();
+  // Ohne „Nicht ganz“ und ohne Notation: Die Pfeile zeigen die Lösung (R4).
+  const meldung = page.getByTestId("abenteuer-raetselmeldung");
+  await expect(meldung).toContainText("Folge den grünen Pfeilen");
+  await expect(meldung).not.toContainText("Nicht ganz");
+  await expect(page.getByRole("button", { name: "Weiter", exact: true })).toBeVisible();
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  // Das Paket liegt jetzt im Speicher; je nach Stand öffnet die Welt ohne „Laden“.
+  const laden = page.getByTestId("abenteuer-laden");
+  const laeuft = page.getByText("Deine Aufgabenrunde läuft noch.");
+  await expect(laden.or(laeuft)).toBeVisible({ timeout: 30000 });
+  if (await laden.isVisible()) await laden.click();
+  await expect(laeuft).toBeVisible({ timeout: 30000 });
+  await page.getByRole("button", { name: "Weitermachen" }).click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 2 von 3", {
+    timeout: 20000,
+  });
+});
+
 test("Testhilfe: „Bestehen“ beendet die Runde von Sam als bestanden", async ({ page }) => {
   await starteImBrowser(page);
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);

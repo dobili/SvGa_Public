@@ -54,3 +54,15 @@ export const SpielanzeigeKontext = createContext<Spielanzeige | null>(null);
 export function useSpielanzeige(): Spielanzeige | null {
   return useContext(SpielanzeigeKontext);
 }
+
+/**
+ * Meldung „Ich komme nicht drauf“ (Spieltest „einstieg“, R4): Die Runde des Abenteuers erfährt,
+ * dass die nächste falsche Antwort keine falsche Lösung ist, sondern die gezeigte. Dann sagt am
+ * Tisch niemand „Fast“ oder „Nicht ganz“. In der Buch-App ist nichts gesetzt (null).
+ */
+export const LoesungGezeigtKontext = createContext<(() => void) | null>(null);
+
+/** Der Rückruf für „Lösung gezeigt“ oder null außerhalb des Spiels. */
+export function useLoesungGezeigtmeldung(): (() => void) | null {
+  return useContext(LoesungGezeigtKontext);
+}

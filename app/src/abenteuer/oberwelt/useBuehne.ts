@@ -40,6 +40,9 @@ export function useBuehne(k: Oberweltkern): Buehne {
         teilchenGeaendert.current = true;
       }
       if (anweisung.figur) blendeFigur(szene, anweisung.figur.name, anweisung.figur.deckkraft);
+      // `#erscheint` mit Sprecher, der nicht auf der Karte steht: Er erscheint im Bild (R8,
+      // Spieltest einstieg: Ambrose blieb auf dem Dachboden unsichtbar, als der Text ihn zeigte).
+      if (tags.erscheint && tags.sprecher) szene.erscheine(tags.sprecher);
     },
     ende: () => {
       const szene = szeneAus(k.spiel);

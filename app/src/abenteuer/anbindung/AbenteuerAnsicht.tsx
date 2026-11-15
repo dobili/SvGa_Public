@@ -33,6 +33,7 @@ import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { useAktton } from "../paket/aktton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
 import { Steuerkreuzwahl } from "./Steuerkreuzwahl";
+import { Zielhinweiswahl } from "./Zielhinweiswahl";
 import { Tonregler } from "./Tonregler";
 
 /** Der geladene Baustein, einmal je Seite. */
@@ -105,6 +106,15 @@ function Startkarte({
     <section className="karte abenteuer-start" data-testid="abenteuer-start">
       <h1 className="abenteuer-start-titel">{t("abenteuer.titel")}</h1>
       <p>{t("abenteuer.einleitung")}</p>
+      {/* Kurze Sätze und die Größe vor dem Laden (Spieltest „einstieg“, R9). */}
+      {zustand.art === "fehlt" && (
+        <p>
+          {zustand.bytes
+            ? t("abenteuer.groesse", { mb: mbText(zustand.bytes) })
+            : t("abenteuer.groesseUnbekannt")}{" "}
+          {t("abenteuer.speichertSelbst")}
+        </p>
+      )}
       {zustand.art === "fehler" && (
         <p className="fehlertext">
           {zustand.grund === "ohneNetz" ? t("abenteuer.ohneNetz") : t("abenteuer.fehler")}
@@ -207,6 +217,7 @@ function Spielmenue({
         </>
       )}
       <Steuerkreuzwahl />
+      <Zielhinweiswahl />
       <Tonregler />
       <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
         {t("abenteuer.paketLoeschen")}

@@ -41,7 +41,9 @@ import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 import { useVorzug } from "./useVorzug";
 import { Warnhinweis } from "./Warnhinweis";
-import { useHinweismeldung, useImSpiel } from "./imSpiel";
+import { useHinweismeldung, useImSpiel, useLoesungGezeigtmeldung } from "./imSpiel";
+import { loesungspfeile } from "./loesungspfeile";
+import { Loesungshinweis, Teilzuglob } from "./taktikImSpiel";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -208,6 +210,9 @@ export function Taktikaufgabe({
   const [stufe, setzeStufe] = useState(0);
   const [fehler, setzeFehler] = useState(false);
   const [gezeigt, setzeGezeigt] = useState(false);
+  // Im Spiel (R4): Lob nach einem richtigen Teilzug, bis der nächste Zug kommt.
+  const [lob, setzeLob] = useState(false);
+  const meldeLoesungGezeigt = useLoesungGezeigtmeldung();
   const falschzug = useFalschzug();
   const vorgespielt = useVorzug(zusatz !== null);
   const fen = stellungNach(aufgabe.fen, zuege);
@@ -219,6 +224,7 @@ export function Taktikaufgabe({
     const versuch = spieleZug(fen, von, nach, umwandlung);
     if (versuch.art !== "gespielt") return versuch.art;
     const pruefung = pruefeTaktikzug(zugaufgabe, zuege, versuch.san);
+    setzeLob(imSpiel && pruefung.art === "weiter");
     if (pruefung.art === "falsch") {
       setzeFehler(true);
       falschzug.merke(fen, versuch.san, loesungszug(zugaufgabe, zuege));
@@ -232,7 +238,10 @@ export function Taktikaufgabe({
   };
   const zeigeLoesung = () => {
     setzeGezeigt(true);
-    setzeZuege(zugaufgabe?.linien[0] ?? []);
+    setzeLob(false);
+    // Im Spiel bleibt die Stellung stehen, die Lösung kommt als Pfeile (loesungspfeile).
+    if (!imSpiel) setzeZuege(zugaufgabe?.linien[0] ?? []);
+    meldeLoesungGezeigt?.();
     antworteMitKarte(runde, "taktik", aufgabe.id, false, thema);
   };
   const bedienung = useBrettbedienung(
@@ -246,7 +255,11 @@ export function Taktikaufgabe({
     ...(stufe >= HILFEN && !fertig
       ? [{ typ: "feld" as const, farbe: "gold" as const, feld: aufgabe.schluesselfeld }]
       : []),
-    ...falschzugpfeile(falschzug, fen, fertig),
+    // Im Spiel zeigen die Lösungspfeile den Weg; der Vergleich der App bliebe doppelt.
+    ...falschzugpfeile(falschzug, fen, fertig && !imSpiel),
+    ...(imSpiel && gezeigt
+      ? loesungspfeile(aufgabe.fen, zugaufgabe?.linien[0] ?? [], zuege.length)
+      : []),
   ];
   const letzter =
     zuege.length > 0
@@ -273,10 +286,14 @@ export function Taktikaufgabe({
         />
       )}
       {!imSpiel && <Herkunft aufgabe={aufgabe} zusatz={zusatz !== null} />}
-      {!fertig && fehler && (
+      {!fertig && fehler && !lob && (
         <Antwortmeldung richtig={false}>{t("taktiktrainer.falsch")}</Antwortmeldung>
       )}
-      <Falschzugmeldung falschzug={falschzug} aufgedeckt={fertig} testid="taktik-falschzug" />
+      {!fertig && lob && <Teilzuglob />}
+      {/* Im Spiel ohne Verlust laut Engine und Bewertung in Bauerneinheiten (R4). */}
+      {!imSpiel && (
+        <Falschzugmeldung falschzug={falschzug} aufgedeckt={fertig} testid="taktik-falschzug" />
+      )}
       {!fertig && (
         <Hilfen
           aufgabe={aufgabe}
@@ -286,7 +303,8 @@ export function Taktikaufgabe({
           zeigeLoesung={zeigeLoesung}
         />
       )}
-      {fertig && (
+      {fertig && imSpiel && (gezeigt ? <Loesungshinweis /> : <Antwortmeldung richtig />)}
+      {fertig && !imSpiel && (
         <Antwortmeldung richtig={!gezeigt}>
           {t("taktiktrainer.loesung", {
             zuege: (zugaufgabe?.linien[0] ?? []).map((z) => sanInSprache(z, sprache())).join(" "),

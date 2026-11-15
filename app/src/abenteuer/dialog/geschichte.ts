@@ -174,6 +174,18 @@ export class Geschichte {
   }
 
   /**
+   * Die Wahlen, die direkt nach der zuletzt gelieferten Zeile anstehen; leer, wenn noch Text folgt.
+   * Warum: Der Dialog zeigt die Antworten gleich unter der Frage, statt erst „Weiter“ und dann
+   * denselben Satz noch einmal mit den Antworten (Spieltest „einstieg“, B6, R3). Nur nachsehen,
+   * nicht weiterlesen: Ink rechnet hier nichts, externe Funktionen laufen nicht.
+   * Beispiel: „Wie lange habe ich hier gelegen?“ → [„Ich weiß nicht. Wir sind heute eingezogen.“].
+   */
+  wahlenNachZeile(): readonly string[] {
+    if (this.story.canContinue) return [];
+    return this.story.currentChoices.map((w) => w.text);
+  }
+
+  /**
    * Die Knoten, die seit dem letzten Aufruf (neu) besucht wurden, in der Reihenfolge der Datei.
    * Warum: Der Zeiger der Geschichte steht nach der letzten Zeile vor END auf nichts; ein Knoten mit
    * nur einer Zeile (Leuchtfeuer einsetzen) ginge so verloren. Die Besuchszahl bleibt. Quests

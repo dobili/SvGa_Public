@@ -134,3 +134,26 @@ describe("Geschichte: neue Knoten", () => {
     expect(g.neueKnoten()).toEqual([]);
   });
 });
+
+const FRAGE = `
+=== frage ===
+Staub überall.
+Wie lange habe ich hier gelegen?
+* [„Ich weiß nicht.“]
+- Heute.
+-> END
+`;
+
+describe("Geschichte: Wahlen gleich unter der Frage (R3)", () => {
+  it("kennt die Wahlen nach der letzten Zeile vor der Auswahl, sonst keine", () => {
+    const json = new Compiler(FRAGE, ALLE_BESUCHE).Compile().ToJson() ?? "";
+    const g = new Geschichte(json, wirkungen([]), {}, "Kim");
+    g.starte("frage");
+    expect(g.weiter()).toMatchObject({ art: "zeile" });
+    expect(g.wahlenNachZeile()).toEqual([]);
+    expect(g.weiter()).toMatchObject({ zeile: { text: "Wie lange habe ich hier gelegen?" } });
+    expect(g.wahlenNachZeile()).toEqual(["„Ich weiß nicht.“"]);
+    g.waehle(0);
+    expect(g.weiter()).toMatchObject({ zeile: { text: "Heute." } });
+  });
+});

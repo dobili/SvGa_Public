@@ -47,6 +47,7 @@ import { LUPE, usePartiestart } from "./usePartiestart";
 import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
+import { Orientierung } from "./Orientierung";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
 /** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
@@ -173,6 +174,7 @@ export function Oberwelt() {
     >
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />
+      <Orientierung k={k} frei={!fensterOffen && meldung === null} />
       {/* In Erinnerungen (Ambroses Zeit) gibt es weder Tagebuch noch Münzen des Helden (F3). */}
       {!welt?.erinnerung && (
         <Kopfleiste
@@ -330,7 +332,8 @@ export function Oberwelt() {
           beiSchliessen={() => dialoge.zeigeVorfuehrung(null)}
         />
       )}
-      {meldung && (
+      {/* Erst nach der Ergebniskarte („Erledigt: …“ lag unter „Gewonnen!“, Spieltest einstieg). */}
+      {meldung && !ergebnis && !rundenergebnis && (
         <Meldungsleiste
           text={meldung}
           bild={meldungsbild}

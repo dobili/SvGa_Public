@@ -31,6 +31,18 @@ describe("Dialogvariablen aus Ergebnissen", () => {
     });
   });
 
+  it("merkt die Länge der Partie in Zügen (Nachgespräch nach Länge, R2)", () => {
+    expect(variablenNachPartie("mapleFalls.ersteLektion", "sieg", {}, 7)).toEqual({
+      ausgangMapleFallsErsteLektion: "sieg",
+      siegeMapleFallsErsteLektion: 1,
+      zuegeMapleFallsErsteLektion: 4,
+    });
+    expect(
+      variablenNachPartie("mapleFalls.ersteLektion", "niederlage", {}, 60)
+        .zuegeMapleFallsErsteLektion,
+    ).toBe(30);
+  });
+
   it("merkt bestandene Runden unter dem Namen der Runde", () => {
     expect(variablenNachRunde("mapleFalls.reiheSam", true)).toEqual({
       reiheSamBestanden: true,

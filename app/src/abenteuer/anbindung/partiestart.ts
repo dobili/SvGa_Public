@@ -98,6 +98,7 @@ export function partieeinstellungAus(
     stil: 0,
     ...stilfelder(profil.stil),
     ...(profil.gewichte ? { gewichte: profil.gewichte } : {}),
+    ...(profil.hoechstverlust ? { hoechstverlust: profil.hoechstverlust } : {}),
     haeufigkeit,
     ...(mitMaia && profil.menschlich !== false ? { maia: true } : {}),
     hilfen: { symbole: false, werkzeuge: false },

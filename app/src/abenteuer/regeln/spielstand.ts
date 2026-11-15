@@ -14,6 +14,7 @@ import type { Aufgabenauftrag, Aufgabenergebnis } from "../schnittstelle/aufgabe
 import {
   ABENTEUER_VERSION,
   type Abenteuerstand,
+  type Ergebniskarte,
   type Partiekarten,
   type Weltposition,
 } from "../schnittstelle/spielstand";
@@ -148,7 +149,14 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     aufgabenergebnis: istObjekt(roh.aufgabenergebnis)
       ? (roh.aufgabenergebnis as unknown as Aufgabenergebnis)
       : null,
+    aufgabenzwischenstand:
+      istObjekt(roh.aufgabenzwischenstand) &&
+      typeof roh.aufgabenzwischenstand.kennung === "string" &&
+      Array.isArray(roh.aufgabenzwischenstand.ergebnisse)
+        ? (roh.aufgabenzwischenstand as unknown as Aufgabenergebnis)
+        : null,
     runden: liste(roh.runden),
+    ...ergebniskarteAus(roh.ergebniskarte),
     dialogvariablen: istObjekt(roh.dialogvariablen)
       ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
       : {},
@@ -157,6 +165,15 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
       : {},
   };
+}
+
+/** Die offene Ergebniskarte (R6), grob geprüft; unlesbar → kein Feld. */
+function ergebniskarteAus(roh: unknown): { ergebniskarte?: Ergebniskarte } {
+  if (!istObjekt(roh)) return {};
+  const passt =
+    (roh.art === "partie" && istObjekt(roh.ergebnis)) ||
+    (roh.art === "runde" && istObjekt(roh.auftrag) && typeof roh.punkte === "number");
+  return passt ? { ergebniskarte: roh as unknown as Ergebniskarte } : {};
 }
 
 /** Die Karten der laufenden Partie; null, wenn keine oder unlesbar. */

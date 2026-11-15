@@ -20,21 +20,31 @@ function grossAnfang(wort: string): string {
   return wort.charAt(0).toUpperCase() + wort.slice(1);
 }
 
+/** Halbzüge je Zug (ein Zug jeder Seite). */
+const HALBZUEGE_JE_ZUG = 2;
+
 /**
  * Variablen zum Ausgang einer Begegnung: `ausgangMapleFallsClubkampf` = „sieg“, dazu bei einem Sieg
  * der Zähler `siegeRivertonHarlan` (wie oft gewonnen; Ink fragt etwa „drei Siege“ ab, Harlans
  * Lupe, docs/spiel/05, Szene 31a). `bisher` sind die Variablen vor der Partie.
+ * Mit `halbzuege` kommt die Länge dazu: `zuegeMapleFallsErsteLektion` = Züge der Partie
+ * (aufgerundet), damit ein Nachgespräch nach vier Zügen nicht von „über einer Stunde“ spricht
+ * (Spieltest „einstieg“, R2). Ohne Angabe fehlt die Variable (Ink: 0 = unbekannt).
+ * Beispiel: „mapleFalls.ersteLektion“, Sieg nach 7 Halbzügen → ausgang „sieg“, siege 1, zuege 4.
  */
 export function variablenNachPartie(
   begegnung: string,
   ausgang: Ausgang,
   bisher: Variablen = {},
+  halbzuege?: number,
 ): Variablen {
   const name = begegnung.split(".").map(grossAnfang).join("");
-  if (ausgang !== "sieg") return { [`ausgang${name}`]: ausgang };
+  const laenge =
+    halbzuege === undefined ? {} : { [`zuege${name}`]: Math.ceil(halbzuege / HALBZUEGE_JE_ZUG) };
+  if (ausgang !== "sieg") return { [`ausgang${name}`]: ausgang, ...laenge };
   const alt = bisher[`siege${name}`];
   const siege = (typeof alt === "number" ? alt : 0) + 1;
-  return { [`ausgang${name}`]: ausgang, [`siege${name}`]: siege };
+  return { [`ausgang${name}`]: ausgang, [`siege${name}`]: siege, ...laenge };
 }
 
 /**

@@ -21,6 +21,7 @@ import type { Gegnerprofil, Gegnerrolle, Gegnerzustand } from "../schnittstelle/
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
+import { profilDerLektion } from "./lektion";
 
 /** Ein Gegnerprofil aus den Spieldaten (die Formen stimmen, das Schema hat sie geprüft). */
 function profilAus(daten: Gegnerdaten): Gegnerprofil {
@@ -119,7 +120,8 @@ export function auftragFuer(
   const b = daten.begegnungen.find((x) => x.kennung === begegnung);
   const gegner = b && daten.gegner.find((g) => g.kennung === b.gegner);
   if (!b || !gegner) return null;
-  const profil = profilAus(gegner);
+  // Lektion (R2): Abweichungen vom Profil nur in dieser Begegnung, etwa die erste Partie.
+  const profil = profilDerLektion(profilAus(gegner), b.lektion);
   const zustand = zustandAus(stand, gegner.kennung, profil.rolle);
   // Bezugswerte A und E aus dem Spielstand (R2, R3); zweiter Durchlauf +300 (R10).
   const staerke = gerechneteStaerke(
@@ -248,6 +250,7 @@ export function auftragFuerRunde(
     schwierigkeit,
     versuch,
     zaehltFuerApp: true,
+    ...(r.figur ? { figur: r.figur } : {}),
     ...(r.erinnerung ? { erinnerung: r.erinnerung } : {}),
     ...(r.kulisse ? { kulisse: r.kulisse } : {}),
   };

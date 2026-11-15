@@ -77,7 +77,7 @@ export function Partieergebniskarte(props: {
 
 /** Ergebnis einer Aufgabenrunde, mit „Noch einmal“, wenn sie nicht bestanden ist. */
 export function Rundenergebniskarte(props: {
-  readonly ergebnis: Rundenrueckweg & { auftrag: Aufgabenauftrag };
+  readonly ergebnis: Omit<Rundenrueckweg, "stand"> & { auftrag: Aufgabenauftrag };
   readonly club: string;
   readonly beiNochmal: (runde: string) => void;
   readonly beiWeiter: () => void;

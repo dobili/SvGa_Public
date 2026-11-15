@@ -1690,4 +1690,20 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       mit Treppe zur Erinnerung 1866, Abzeichen nur noch Fund. (10) Ironwood: Gleise enden an
       Prellböcken (der Stein kam per Laster). (11) Offen: Der südliche Ring der Weltkarte über
       Summit City passt geometrisch nicht; Vorschlag folgt.
+- [ ] RO26. **Zur Revision: Einstieg für Kinder (Spieltest als 11-jähriges Kind, 15.11.2026, alles
+      umgesetzt, Widerspruch genügt):** (1) „Was jetzt?“ im Tagebuch nennt den nächsten Schritt,
+      Questschritte sagen, wo etwas ist. (2) Ein goldenes Dreieck zeigt auf das nächste Ziel, ein
+      Pfeil am Bildrand, wenn es außerhalb liegt; im Spielmenü abschaltbar. Beim Kartenwechsel kurz
+      ein Ortsschild. (3) Kurzes Antippen des Steuerkreuzes macht genau einen Schritt; die Kamera
+      hält den Helden über den Knöpfen. (4) Ambrose ist auf dem Dachboden zu sehen, wenn er
+      erscheint. (5) Erste Partie: Ambrose spielt fest leicht (750), lässt kein Schäfermatt mehr
+      zu und nimmt hängende Figuren; ein kurzer Nachgesprächszweig für schnelle Partien.
+      (6) Fragen stehen nur einmal da (Antworten direkt darunter); erster Tag behutsam gekürzt.
+      (7) Aufgaben: Lily nur Springeraufgaben, Stufe 1 höchstens zwei eigene Züge, keine
+      Engine-Zahlen und Kürzel im Spiel, Lösung als Pfeile, Lob nach jedem richtigen Teilzug,
+      „Ich komme nicht drauf“ ohne „Fast“. (8) Fortschritt in einer Aufgabenrunde und
+      Ergebniskarten überstehen das Neuladen; Startanimation und Abzeichen der App stören das Spiel
+      nicht. (9) Startkarte mit kurzen Sätzen und Downloadgröße; Münzen und Spielstärke werden
+      einmal erklärt. (10) Sams Klage wartet auf die erste Lektion, sonst wäre die Nebenquest
+      „Sams Dame“ verpasst (Simulation).
 

@@ -34,6 +34,9 @@ VAR ambroseErwachtGesehen = false
 VAR clubBeigetreten = false
 VAR kenntHale = false
 VAR ausgangMapleFallsErsteLektion = ""
+VAR zuegeMapleFallsErsteLektion = 0
+// Unter so vielen Zügen des Helden gilt die erste Partie als kurz (Nachgespräch, R2).
+CONST KURZE_PARTIE = 12
 VAR reiheSamBestanden = false
 VAR reiheJunoBestanden = false
 VAR nadelMapleFalls = 0
@@ -87,7 +90,6 @@ Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng #ersche
 ~ ambroseErwachtGesehen = true
 Über dem Brett steht jemand, halb durchsichtig wie ein Bild in einer dunklen Fensterscheibe. Ein schmaler Mann in einem langen Rock. #sprecher:erzaehler
 Ein Kind. Bei allen Heiligen. Ein Kind hält meinen König. #sprecher:ambrose #stimmung:streng #pause
-Er sieht sich um, sieht die Kisten, das Fenster. Etwas in seinem Gesicht gibt nach. #sprecher:erzaehler
 Wie lange habe ich hier gelegen? #sprecher:ambrose #stimmung:still
 * [„Ich weiß nicht. Wir sind heute eingezogen.“]
 - Heute. #sprecher:ambrose #stimmung:ueberrascht #pause
@@ -105,17 +107,16 @@ Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose #stimmung:laech
     -> erste_lektion
 
 === erste_lektion ===
-Stell ihn zurück. Sachte. #sprecher:ambrose #stimmung:nachdenklich #pause
-Sag mir nur eines. Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still
-Du nickst. #sprecher:erzaehler #pause
-Er schließt die Augen. Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
+// Gekürzt nach dem Spieltest „einstieg“ (R3, 15.11.2026): Das Nicken ist jetzt eine Wahl.
+Stell ihn zurück. Sachte. Und sag mir: Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still #pause
+* [Nicken]
+- Er schließt die Augen. Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
 Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. Ein Fingerzeig. #sprecher:ambrose #stimmung:laechelt #klang:karte
 // Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
 // Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest. Der Fingerzeig
 // kommt vor der Partie (Entscheidung 13.11.2026); der Roman erzählt ihn danach.
-Diese Stellung rührt niemand an. Wir spielen daneben. #sprecher:ambrose #stimmung:nachdenklich
 Er macht eine Bewegung mit zwei Fingern. Auf der anderen Hälfte des Tisches liegt ein zweites Brett, aus demselben Licht wie er. #sprecher:erzaehler
-Setz dich. Du gegen mich. Nur ein paar Züge. Ich möchte sehen, wie du denkst. #sprecher:ambrose #stimmung:laechelt
+Die alte Stellung rührt niemand an. Wir spielen daneben, du gegen mich. Ich möchte sehen, wie du denkst. #sprecher:ambrose #stimmung:laechelt
 * [„Jetzt?“]
     Ich habe lange genug gewartet. Länger, als du dir vorstellen kannst. #sprecher:ambrose #stimmung:bitter
     -> partie_beginnt
@@ -165,11 +166,22 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
 - "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose #stimmung:laechelt
 - else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose #stimmung:laechelt
 }
-Draußen dämmert es. Ihr habt über eine Stunde gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
-Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
+// Nach Länge der Partie (Spieltest „einstieg“, R2): zuegeMapleFallsErsteLektion setzt die Hülle
+// (Züge des Helden, regeln/dialogvariablen.ts); 0 heißt unbekannt und gilt als lange Partie.
+// Eine kurze Partie hatte den Moment „Was hängt?“ (Zug 6) noch nicht, deshalb fragt Ambrose hier.
+~ temp kurz = zuegeMapleFallsErsteLektion > 0 and zuegeMapleFallsErsteLektion < KURZE_PARTIE
+{ kurz:
+    Das ging schnell. Trotzdem dämmert es draußen schon, und durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    {ausgangMapleFallsErsteLektion == "sieg":So schnell war ich lange nicht matt. Ich habe vergessen zu fragen: Was hängt?|So schnell kann es gehen. Eine Frage, und es wäre anders gekommen: Was hängt?} #sprecher:ambrose #stimmung:nachdenklich
+- else:
+    Draußen dämmert es. Ihr habt lange gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
+}
 Der Fingerzeig bleibt dir. Ich zeige die Figur, die arbeiten will. Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
-* [„Was hängt? Das hast du mich gefragt.“]
+* {not kurz} [„Was hängt? Das hast du mich gefragt.“]
     Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose #stimmung:nachdenklich
+* {kurz} [„Was heißt das: Was hängt?“]
+    Die wichtigste Frage am Brett. Ich stelle sie vor jedem Zug. #sprecher:ambrose #stimmung:nachdenklich
 * [„Kannst du mir nicht jeden Zug zeigen?“]
     Dann spielte ich und nicht du. Merk dir lieber eine Frage: Was hängt? #sprecher:ambrose #stimmung:streng
 - Eine Figur hängt, wenn man sie schlagen kann und niemand zurückschlägt. Geh sie durch. Deine zuerst. Dann meine. #sprecher:ambrose #stimmung:nachdenklich
@@ -181,8 +193,7 @@ Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du l
     Langweilig ist ein verlorener Turm. Fragen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
 // Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
 // sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
-- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler
-Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
+- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
 * [„Wer hat hier gewohnt? Vor uns?“]
 * [„Wer hat das geschrieben?“]
 - Ambrose sieht zum Fenster. Draußen ist der Ahorn schwarz geworden vor dem Himmel. #sprecher:erzaehler #pause:3
@@ -238,15 +249,13 @@ Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen
     Lach nur. Ich bin seit hundertsechzig Jahren tot. Mir darf einiges entgangen sein. #sprecher:ambrose #stimmung:lacht
 * [„Ein Kasten, der das Essen kalt hält.“]
     Ein Eiskeller in der Küche. Herrje. Ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
-- Hundertsechzig Jahre. Du versuchst, es dir vorzustellen, und kannst es nicht. #sprecher:erzaehler #klang:auto_nacht
-Unter dem Fenster liegt die alte Stellung. Niemand hat sie angerührt. #sprecher:erzaehler
+- Unter dem Fenster liegt die alte Stellung. Niemand hat sie angerührt. #sprecher:erzaehler #klang:auto_nacht
 * [„Wer hat diese Partie gespielt?“]
 * [„Warum darf niemand die Figuren anrühren?“]
 - Lange kommt keine Antwort. Der Wasserfall rauscht. #sprecher:erzaehler #pause:3
 Ich. Und einer, der mir noch einen Zug schuldet. #sprecher:ambrose #stimmung:still
 * [„Und wer ist am Zug?“]
 - Er. #sprecher:ambrose #stimmung:still #pause:3
-Mehr sagt er nicht. Du fragst nicht weiter. #sprecher:erzaehler
 Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht besser. #sprecher:erzaehler
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #geraeusch:aus
 -> END

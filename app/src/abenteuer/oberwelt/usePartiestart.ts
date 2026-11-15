@@ -62,11 +62,47 @@ export interface Partien {
   readonly gegnername: (e: Partieergebnis) => string;
 }
 
+/** Kipppunkt der verlorenen Partie suchen (R14); „suche“, solange Ambrose nachsieht. */
+function sucheKipppunkt(
+  k: Oberweltkern,
+  kennung: string,
+  setze: (p: Kipppunkt | "suche" | null) => void,
+): void {
+  setze("suche");
+  void k.dienste
+    .sucheKipppunkt(kennung)
+    .then((p) => setze(p))
+    .catch(() => setze(null));
+}
+
+/**
+ * Nach dem Neuladen: Eine gemerkte Ergebniskarte der Partie (R6) wieder zeigen, ohne das Ergebnis
+ * noch einmal auszuwerten oder als Quest-Ereignis zu melden. Der Kipppunkt wird neu gesucht.
+ */
+function zeigeGemerkteKarte(
+  k: Oberweltkern,
+  setzen: {
+    readonly zeige: (e: Partieergebnis) => void;
+    readonly nadel: (n: Nadelstufe | null) => void;
+    readonly kipppunkt: (k: Kipppunkt | "suche" | null) => void;
+    readonly vorherigeKarten: (karten: Partiekarten | null) => void;
+  },
+): void {
+  const karte = k.stand?.ergebniskarte;
+  if (karte?.art !== "partie") return;
+  setzen.zeige(karte.ergebnis);
+  setzen.nadel(karte.nadel);
+  setzen.vorherigeKarten(karte.karten);
+  if (karte.wiedereinstieg) sucheKipppunkt(k, karte.ergebnis.kennung, setzen.kipppunkt);
+}
+
 /** Rückweg: Eine offene Partie ist beendet → Ergebnis in den Stand, Kipppunkt suchen. */
 function useRueckwegDerPartie(
   k: Oberweltkern,
   setzen: {
     readonly ergebnis: (e: Partieergebnis) => void;
+    /** Nur zeigen (gemerkte Karte nach dem Neuladen), nicht melden. */
+    readonly zeige: (e: Partieergebnis) => void;
     readonly offen: (kennung: string) => void;
     readonly nadel: (n: Nadelstufe | null) => void;
     readonly kipppunkt: (k: Kipppunkt | "suche" | null) => void;
@@ -75,7 +111,10 @@ function useRueckwegDerPartie(
 ): void {
   useEffect(() => {
     const kennung = k.stand?.laufendePartie;
-    if (!kennung) return;
+    if (!kennung) {
+      zeigeGemerkteKarte(k, setzen);
+      return;
+    }
     void k.dienste.liesErgebnis(kennung).then((e) => {
       const aktuell = k.standRef.current;
       if (!aktuell) return;
@@ -88,14 +127,18 @@ function useRueckwegDerPartie(
         const r = standNachPartie(k.standRef.current ?? aktuell, e, daten);
         setzen.nadel(r.nadel);
         setzen.vorherigeKarten(aktuell.partiekarten);
-        if (wiedereinstiegMoeglich(e, r.begegnung, daten, aktuell)) {
-          setzen.kipppunkt("suche");
-          void k.dienste
-            .sucheKipppunkt(kennung)
-            .then((p) => setzen.kipppunkt(p))
-            .catch(() => setzen.kipppunkt(null));
-        }
-        k.schreibe(r.stand);
+        const wiedereinstieg = wiedereinstiegMoeglich(e, r.begegnung, daten, aktuell);
+        if (wiedereinstieg) sucheKipppunkt(k, kennung, setzen.kipppunkt);
+        // Die Karte bleibt im Stand, bis „Weiter“ sie schließt (R6: übersteht das Neuladen).
+        const karten = aktuell.partiekarten;
+        const karte = {
+          art: "partie",
+          ergebnis: e,
+          nadel: r.nadel,
+          karten,
+          wiedereinstieg,
+        } as const;
+        k.schreibe({ ...r.stand, ergebniskarte: karte });
       });
     });
     // Nur beim Aufbau; der Spielstand ändert sich danach nur noch durch die Oberwelt.
@@ -123,6 +166,7 @@ export function usePartiestart(k: Oberweltkern): Partien {
       setzeErgebnis(e);
       offenesErgebnis.current = e;
     },
+    zeige: setzeErgebnis,
     offen: setzeOffenePartie,
     nadel: setzeNeueNadel,
     kipppunkt: setzeKipppunkt,
@@ -135,6 +179,8 @@ export function usePartiestart(k: Oberweltkern): Partien {
     setzeErgebnis(null);
     setzeNeueNadel(null);
     setzeKipppunkt(null);
+    const aktuell = k.standRef.current;
+    if (aktuell?.ergebniskarte?.art === "partie") k.schreibe({ ...aktuell, ergebniskarte: null });
   };
   const startePartie: Partien["startePartie"] = (begegnung, deck, schonGespielt = []) => {
     const aktuell = k.standRef.current;

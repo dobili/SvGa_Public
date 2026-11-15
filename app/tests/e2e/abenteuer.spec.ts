@@ -35,6 +35,9 @@ async function laufeBis(seite: Page, taste: string, ziel: string): Promise<void>
 }
 
 test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
+  // Der längste Weg der Abenteuertests (allein gut 40 s, mit dem Neuladen der Ergebniskarte, R6);
+  // unter Last lief er in die 60 s.
+  test.slow();
   await page.goto("/app/#abenteuer");
   await expect(page.getByTestId("abenteuer-start")).toBeVisible();
   await page.getByTestId("abenteuer-laden").click();
@@ -141,6 +144,11 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   const ergebnis = page.getByTestId("abenteuer-ergebnis");
   await expect(ergebnis).toBeVisible({ timeout: 30000 });
   await expect(ergebnis).toContainText("Gewonnen gegen Ambrose");
+  // Die Ergebniskarte übersteht das Neuladen (Spieltest „einstieg“, R6), ohne Startbild der App.
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await expect(ergebnis).toContainText("Gewonnen gegen Ambrose", { timeout: 30000 });
+  await expect(page.getByTestId("startanimation")).toHaveCount(0);
   await ergebnis.getByRole("button", { name: "Weiter", exact: true }).click();
   await expect(ergebnis).toHaveCount(0);
 
@@ -182,4 +190,6 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   // gehaltene Taste zählt dort erst nach einer kurzen Pause.
   await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("4,4");
   await page.keyboard.up("ArrowUp");
+  // Das Ortsschild nennt die neue Karte (Spieltest „einstieg“, R1).
+  await expect(page.getByTestId("abenteuer-ortsschild")).toHaveText("Dein Zimmer");
 });

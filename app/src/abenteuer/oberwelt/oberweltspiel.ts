@@ -6,10 +6,9 @@
  * Szene unter 400 Zeilen bleibt. Ändert sich die Größe des Elements (Gerät gedreht,
  * docs/spiel/30, Abschnitt 3), wächst das Spiel mit, und die Kamera bekommt neue Grenzen; der Held
  * bleibt, wo er ist.
- * Abhängigkeiten: phaser, szene.ts, kamera.ts.
+ * Abhängigkeiten: phaser, szene.ts (Kamera über kameraregie.ts).
  */
 import Phaser from "phaser";
-import { kameragrenzen } from "./kamera";
 import { Oberweltszene, ZOOM, type Szenendaten } from "./szene";
 
 /** Spielgröße zu einem Element: seine Fläche in Spielpixeln, mindestens ein Pixel. */
@@ -31,11 +30,9 @@ function passeAn(spiel: Phaser.Game, element: HTMLElement): void {
   spiel.scale.resize(breite, hoehe);
   const szene = szeneVon(spiel);
   if (!szene?.sys.isActive()) return;
-  const welt = szene.physics.world.bounds;
-  const kamera = szene.cameras.main;
-  kamera.setSize(breite, hoehe);
-  const g = kameragrenzen(welt.width, welt.height, breite, hoehe);
-  kamera.setBounds(g.x, g.y, g.breite, g.hoehe);
+  szene.cameras.main.setSize(breite, hoehe);
+  // Grenzen und Versatz über den Knöpfen neu (kameraregie.ts), etwa beim Drehen ins Hochformat.
+  szene.passeKameraAn();
 }
 
 /** Startet Phaser in einem Element; die Breite folgt dem Element, gezeichnet mit ZOOM. */

@@ -4,7 +4,7 @@
  * der Kombo (Gamifizierung P10).
  */
 import { describe, expect, it } from "vitest";
-import { rundenschritt, type Zustand } from "./useRunde";
+import { rundenanfang, rundenschritt, type Zustand } from "./useRunde";
 
 const START: Zustand = {
   index: 0,
@@ -49,5 +49,24 @@ describe("Trainerrunde", () => {
     z = rundenschritt(z, { art: "wiederhole" });
     z = rundenschritt(z, { art: "beantworte", richtig: true });
     expect(z.folge).toBe(0);
+  });
+});
+
+describe("Unterbrochene Runde (Schach-Abenteuer, R5)", () => {
+  it("beginnt ohne Start bei Aufgabe 1", () => {
+    expect(rundenanfang(null, 4)).toMatchObject({ index: 0, richtig: 0, fertig: false });
+  });
+
+  it("geht bei der ersten offenen Aufgabe weiter und zählt die Zeit mit", () => {
+    const z = rundenanfang({ index: 2, richtig: 1, sekunden: 60 }, 4);
+    expect(z).toMatchObject({ index: 2, richtig: 1, fertig: false });
+    expect(Date.now() - z.beginn).toBeGreaterThanOrEqual(60_000);
+  });
+
+  it("ist fertig, wenn alle Aufgaben beantwortet sind", () => {
+    expect(rundenanfang({ index: 4, richtig: 3, sekunden: 10 }, 4)).toMatchObject({
+      index: 3,
+      fertig: true,
+    });
   });
 });

@@ -78,23 +78,46 @@ export interface Runde {
 const MS_JE_SEKUNDE = 1000;
 
 /**
- * Zustand einer Runde.
- *
- * Eingaben: Kennung des Trainers (für den Fortschritt), Anzahl der Aufgaben.
- * Sonderfall: Eine zweite Antwort auf dieselbe Aufgabe zählt nicht (erste Antwort gilt).
+ * Wo eine unterbrochene Runde weitergeht (nur im Schach-Abenteuer, Spieltest „einstieg“, R5):
+ * erste offene Aufgabe, richtige Antworten bisher und schon verbrauchte Sekunden.
  */
-export function useRunde(kennung: TrainerKennung, anzahl: number): Runde {
-  const [zustand, sende] = useReducer(rundenschritt, null, () => ({
-    index: 0,
-    richtig: 0,
+export interface Rundenstart {
+  readonly index: number;
+  readonly richtig: number;
+  readonly sekunden: number;
+}
+
+/** Der Anfangszustand: ohne Start bei Aufgabe 1; alle beantwortet heißt fertig. */
+export function rundenanfang(start: Rundenstart | null, anzahl: number): Zustand {
+  const jetzt = Date.now();
+  const beginn = jetzt - (start?.sekunden ?? 0) * MS_JE_SEKUNDE;
+  const fertig = start !== null && start.index >= anzahl;
+  return {
+    index: start ? Math.min(start.index, Math.max(0, anzahl - 1)) : 0,
+    richtig: start?.richtig ?? 0,
     folge: 0,
     ergebnis: null,
     gezaehlt: false,
     versuch: 0,
-    fertig: false,
-    beginn: Date.now(),
-    ende: null,
-  }));
+    fertig,
+    beginn,
+    ende: fertig ? jetzt : null,
+  };
+}
+
+/**
+ * Zustand einer Runde.
+ *
+ * Eingaben: Kennung des Trainers (für den Fortschritt), Anzahl der Aufgaben, optional der Start
+ * einer unterbrochenen Runde (die Trainer der Buch-App geben keinen; dort beginnt jede Runde neu).
+ * Sonderfall: Eine zweite Antwort auf dieselbe Aufgabe zählt nicht (erste Antwort gilt).
+ */
+export function useRunde(
+  kennung: TrainerKennung,
+  anzahl: number,
+  start: Rundenstart | null = null,
+): Runde {
+  const [zustand, sende] = useReducer(rundenschritt, null, () => rundenanfang(start, anzahl));
   useEffect(() => {
     if (!zustand.fertig) return;
     void aendere((daten) =>

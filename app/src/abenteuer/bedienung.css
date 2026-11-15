@@ -316,3 +316,42 @@
     right: calc(var(--spalte-rechts) + var(--leistenknopf) + var(--raster) * 2);
   }
 }
+
+/* ---------- Ortsschild beim Kartenwechsel (Spieltest „einstieg“, 15.11.2026, R1) ----------
+   Der Name der Karte erscheint kurz oben in der Mitte unter Münzen und Menü und blendet nach gut
+   zwei Sekunden aus (Orientierung.tsx). Er nimmt keine Tipps an. */
+.abenteuer-ortsschild {
+  position: absolute;
+  z-index: 2;
+  top: calc(env(safe-area-inset-top) + var(--raster) * 2.5 + var(--leistenknopf));
+  left: 50%;
+  max-width: calc(100% - var(--raster) * 4);
+  margin: 0;
+  padding: calc(var(--raster) / 2) calc(var(--raster) * 1.5);
+  overflow: hidden;
+  transform: translateX(-50%);
+  background: rgb(22 37 61 / 85%);
+  box-shadow: 0 0 0 var(--spiel-pixel) var(--spiel-gold);
+  color: var(--spiel-creme);
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  opacity: 0;
+  animation: abenteuer-ortsschild 2.8s ease-out forwards;
+}
+
+@keyframes abenteuer-ortsschild {
+  0% {
+    opacity: 0;
+  }
+
+  12%,
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

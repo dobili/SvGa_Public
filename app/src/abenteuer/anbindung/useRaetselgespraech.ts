@@ -89,9 +89,14 @@ function sprich(
   );
 }
 
-/** Die Rückrufe der Runde: Antwort, Hinweis, letzte Aufgabe. */
+/** Die Rückrufe der Runde: Antwort, gezeigte Lösung, Hinweis, letzte Aufgabe. */
 export interface Raetselgespraech {
   readonly beiAntwort: (aufgabe: number, richtig: boolean) => void;
+  /**
+   * „Ich komme nicht drauf“: zählt wie eine verfehlte Aufgabe für die Serie, aber niemand sagt
+   * „Fast“ oder „Nicht ganz“, denn versucht hat der Leser nichts (Spieltest „einstieg“, R4).
+   */
+  readonly beiLoesungGezeigt: (aufgabe: number) => void;
   readonly beiHinweis: (aufgabe: number) => void;
   readonly vorLetzter: (aufgabe: number) => void;
 }
@@ -130,6 +135,9 @@ export function useRaetselgespraech(steller: string | null, kennung: string): Ra
   return {
     beiAntwort: (aufgabe, richtig) =>
       melde(ereignisDerAntwort(richtig, gedaechtnis.current), aufgabe),
+    beiLoesungGezeigt: () => {
+      ereignisDerAntwort(false, gedaechtnis.current);
+    },
     beiHinweis: (aufgabe) => melde("hinweis", aufgabe),
     vorLetzter: (aufgabe) => melde("letzte", aufgabe),
   };

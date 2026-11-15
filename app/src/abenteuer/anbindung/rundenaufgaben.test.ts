@@ -3,7 +3,13 @@ import { describe, expect, it } from "vitest";
 import type { Taktikaufgabe } from "../../daten/trainerdaten";
 import type { Zusatzaufgabe } from "../../training/zusatzaufgaben";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
-import { buchfrage, rundenaufgaben, zufallDerRunde } from "./rundenaufgaben";
+import {
+  buchfrage,
+  figurDerLoesung,
+  rundenaufgaben,
+  rundenstartAus,
+  zufallDerRunde,
+} from "./rundenaufgaben";
 
 const FEN = "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1";
 
@@ -73,6 +79,54 @@ describe("rundenaufgaben", () => {
   });
 });
 
+/** Springergabel aus dem Spieltest (Sf5+ Ke4 Sxh4): Springer d4, König e3, Dame h4 (frei erfunden). */
+const GABEL_FEN = "8/8/8/8/3N3q/4k3/8/6K1 w - - 0 1";
+
+describe("Lilys Springer-Lektion und Einsteiger (Spieltest „einstieg“, R4)", () => {
+  const lily: Aufgabenauftrag = {
+    ...AUFTRAG,
+    kennung: "mapleFalls.springerLily#1",
+    runde: "mapleFalls.springerLily",
+    buchuebungen: [],
+    themen: ["doppelangriff"],
+    figur: "springer",
+    anzahl: 2,
+    schwierigkeit: 1,
+  };
+  const springer = (id: string, halbzuege = 3): Zusatzaufgabe => ({
+    ...zusatz(id, "doppelangriff", 1),
+    aufgabe: {
+      ...taktik(id, null, 1),
+      fen: GABEL_FEN,
+      schluesselfeld: "d4",
+      loesung: ["Nf5+", "Ke4", "Nxh4", "Kf3", "Kf1"].slice(0, halbzuege) as [string, ...string[]],
+    },
+  });
+
+  it("erkennt die Figur des ersten Lösungszugs", () => {
+    expect(figurDerLoesung(springer("s1").aufgabe)).toBe("knight");
+    expect(figurDerLoesung({ ...taktik("t", null), schluesselfeld: "d1" })).toBe("rook");
+  });
+
+  it("nimmt nur Springeraufgaben mit kurzer Lösung, solange es genug gibt", () => {
+    const daten = [
+      zusatz("d1", "doppelangriff", 1),
+      springer("s1"),
+      springer("s5", 5),
+      springer("s2"),
+    ];
+    const ids = rundenaufgaben(lily, [], daten, () => 0).map((a) =>
+      a.art === "zusatz" ? a.aufgabe.aufgabe.id : "",
+    );
+    expect(ids.sort()).toEqual(["s1", "s2"]);
+  });
+
+  it("füllt mit anderen Aufgaben auf, wenn die Springer nicht reichen", () => {
+    const daten = [zusatz("d1", "doppelangriff", 1), springer("s1")];
+    expect(rundenaufgaben(lily, [], daten, () => 0)).toHaveLength(2);
+  });
+});
+
 describe("Themen falle und struktur", () => {
   it("nimmt Aufgaben aus den Trainern Falle oder Köder und Strukturen", async () => {
     const { readFileSync } = await import("node:fs");
@@ -128,5 +182,15 @@ describe("zufallDerRunde", () => {
     };
     expect(folge("mapleFalls.springerLily#a1")).toEqual(folge("mapleFalls.springerLily#a1"));
     expect(folge("mapleFalls.springerLily#a1")).not.toEqual(folge("mapleFalls.springerLily#a2"));
+  });
+});
+
+describe("rundenstartAus (R5)", () => {
+  it("startet nach den gesicherten Antworten", () => {
+    expect(rundenstartAus(null)).toBeNull();
+    expect(rundenstartAus({ kennung: "r#1", ergebnisse: [], sekunden: 0 })).toBeNull();
+    expect(
+      rundenstartAus({ kennung: "r#1", ergebnisse: ["richtig", "falsch"], sekunden: 95 }),
+    ).toEqual({ index: 2, richtig: 1, sekunden: 95 });
   });
 });

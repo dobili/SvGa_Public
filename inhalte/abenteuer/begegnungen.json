@@ -27,6 +27,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
+      "lektion": {
+        "staerke": {
+          "art": "fest",
+          "elo": 750
+        },
+        "gewichte": {
+          "figurHaengen": 3,
+          "drohungIgnoriert": 0,
+          "taktikUebersehen": 0,
+          "schlagVerpasst": 0
+        },
+        "hoechstverlust": {
+          "figurHaengen": 6
+        },
+        "hoechstverlustSonst": 2,
+        "menschlich": false
+      },
       "momente": [
         {
           "wenn": {

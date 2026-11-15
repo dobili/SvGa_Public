@@ -113,6 +113,30 @@ export interface Partiekarten {
   readonly frei?: readonly string[];
 }
 
+/**
+ * Die Ergebniskarte, die nach einer Partie oder Aufgabenrunde offen ist (Spieltest „einstieg“,
+ * 15.11.2026, R6): Sie liegt im Spielstand, damit sie ein Neuladen übersteht (vorher war sie nach
+ * dem Schließen der App weg). „Weiter“ auf der Karte löscht sie.
+ */
+export type Ergebniskarte =
+  | {
+      readonly art: "partie";
+      readonly ergebnis: Partieergebnis;
+      readonly nadel: Nadelstufe | null;
+      /** Deck der Partie, für den Wiedereinstieg am Kipppunkt (R15). */
+      readonly karten: Partiekarten | null;
+      /** Ist ein Wiedereinstieg möglich (dann sucht die Oberwelt den Kipppunkt erneut)? */
+      readonly wiedereinstieg: boolean;
+    }
+  | {
+      readonly art: "runde";
+      readonly auftrag: Aufgabenauftrag;
+      readonly punkte: number;
+      readonly moeglich: number;
+      readonly bestanden: boolean;
+      readonly reiheGeschafft: boolean;
+    };
+
 /** Gesammelte Partiefragmente von Ambroses alter Partie (Dokument 02, 3.3), als Halbzugindizes. */
 export interface Fragmente {
   readonly gefunden: readonly number[];
@@ -181,8 +205,16 @@ export interface Abenteuerstand {
   readonly partiekarten: Partiekarten | null;
   /** Die Aufgabenrunde, die gerade in der App läuft (R30); null sonst. */
   readonly laufendeAufgaben: Aufgabenauftrag | null;
+  /** Offene Ergebniskarte nach Partie oder Runde (R6); fehlt oder null: keine. */
+  readonly ergebniskarte?: Ergebniskarte | null;
   /** Ergebnis der zuletzt beendeten Runde, bis die Oberwelt es ausgewertet hat. */
   readonly aufgabenergebnis: Aufgabenergebnis | null;
+  /**
+   * Antworten der laufenden Runde bis jetzt, nach jeder Aufgabe gesichert (Spieltest „einstieg“,
+   * R5): Wer die App schließt, macht bei der nächsten offenen Aufgabe weiter; dieselben Aufgaben
+   * kommen aus der festen Saat der Kennung (anbindung/rundenaufgaben.ts). Fehlend oder null: keine.
+   */
+  readonly aufgabenzwischenstand?: Aufgabenergebnis | null;
   /** Stand je gespielter Runde (bestanden, Versuche), Grundlage für Clubstand.aufgabenreihe. */
   readonly runden: readonly Rundenstand[];
   /** Globale Ink-Variablen (über alle Szenen), etwa „ambroseVertrauen“: 3. */

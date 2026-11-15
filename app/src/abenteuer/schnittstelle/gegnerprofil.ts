@@ -108,6 +108,11 @@ export interface Gegnerprofil {
   readonly phasenversatz?: Readonly<Partial<Record<Phase, number>>>;
   /** Gewicht je Fehlerart und blindem Fleck (0 aus, 1 wie Menschen, 2 doppelt); fehlend: wie Menschen. */
   readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
+  /**
+   * Höchstverlust der Zusatzfehler je Fehlerart in Bauern; nur aus `lektion` einer Begegnung
+   * (oberwelt/lektion.ts), nicht im Schema der Gegner. Fehlend: ohne Grenze.
+   */
+  readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
   /** Stil des Gegners (engine/stile.ts) oder eine Mischung. */
   readonly stil: Stilname | Stilmix;
   readonly eroeffnung: Eroeffnungsverhalten;

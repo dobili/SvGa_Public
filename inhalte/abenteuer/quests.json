@@ -17,6 +17,10 @@
           "ereignis": {
             "art": "dialog",
             "knoten": "maple-falls-dachboden.brett_beruehren"
+          },
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "objekt": "brett"
           }
         },
         {
@@ -35,7 +39,11 @@
               "art": "karte",
               "karte": "fingerzeig"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "objekt": "brett"
+          }
         },
         {
           "text": "quest.dasBrett.schritt3",
@@ -50,7 +58,11 @@
               "akt": 1,
               "szene": "akt1.erstePartie"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "objekt": "brett"
+          }
         }
       ]
     },
@@ -78,7 +90,11 @@
               "akt": 1,
               "szene": "akt1.ersterAbend"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.wohnzimmer",
+            "objekt": "mutter"
+          }
         }
       ]
     },
@@ -111,7 +127,11 @@
               "art": "karte",
               "karte": "gefahrenradar"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "objekt": "junoClub"
+          }
         },
         {
           "text": "quest.viertesBrett.schritt4",
@@ -126,6 +146,10 @@
           "ereignis": {
             "art": "dialog",
             "knoten": "maple-falls-clubraum.coach_nach_sieg"
+          },
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "objekt": "coachDelgado"
           }
         }
       ]
@@ -182,7 +206,11 @@
               "akt": 1,
               "szene": "akt1.aufbruch"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.wohnzimmer",
+            "objekt": "mutter"
+          }
         },
         {
           "text": "quest.besserWerden.schritt5",
@@ -283,7 +311,11 @@
               "art": "karte",
               "karte": "fluestern"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.park",
+            "objekt": "abernathy"
+          }
         }
       ]
     },
@@ -316,7 +348,11 @@
               "art": "karte",
               "karte": "fluestern"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.aussen",
+            "objekt": "lily"
+          }
         }
       ]
     },
@@ -1179,7 +1215,11 @@
               "gegner": "mapleFalls.skaterJo",
               "analysiert": true
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.park",
+            "objekt": "skaterJo"
+          }
         }
       ]
     },

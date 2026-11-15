@@ -65,7 +65,7 @@ export function standNachPartie(
       : stand.clubs;
   const dialogvariablen = {
     ...stand.dialogvariablen,
-    ...variablenNachPartie(begegnung, ergebnis.ausgang, stand.dialogvariablen),
+    ...variablenNachPartie(begegnung, ergebnis.ausgang, stand.dialogvariablen, ergebnis.halbzuege),
     ...(ort
       ? variablenNachNadel(ort.kennung, clubs.find((c) => c.kennung === ort.kennung)?.nadel ?? null)
       : {}),

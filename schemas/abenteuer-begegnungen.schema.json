@@ -206,6 +206,34 @@
             }
           }
         },
+        "lektion": {
+          "description": "Abweichung vom Gegnerprofil nur in dieser Begegnung (Spieltest „einstieg“, R2, 15.11.2026): feste Zielstärke statt der Wertung des Lesers, Gewichte je Fehlerart (ergänzen und ersetzen die des Profils), Höchstverlust der Zusatzfehler in Bauern je Fehlerart (hoechstverlustSonst für alle nicht genannten Arten) und ob Maia mitspielt. Beispiel: Die erste Partie gegen Ambrose nimmt hängende Figuren, lässt kein Matt in einem Zug zu und stellt selbst Figuren ein.",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "staerke": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["art", "elo"],
+              "properties": {
+                "art": { "const": "fest" },
+                "elo": { "type": "integer", "minimum": 300, "maximum": 3200 }
+              }
+            },
+            "gewichte": {
+              "type": "object",
+              "propertyNames": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+              "additionalProperties": { "type": "number", "minimum": 0, "maximum": 3 }
+            },
+            "hoechstverlust": {
+              "type": "object",
+              "propertyNames": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+              "additionalProperties": { "type": "number", "minimum": 0.5, "maximum": 100 }
+            },
+            "hoechstverlustSonst": { "type": "number", "minimum": 0.5, "maximum": 100 },
+            "menschlich": { "type": "boolean" }
+          }
+        },
         "momente": {
           "description": "Partiemomente (Atmosphäre T5 und T11, docs/spiel/23): eine Sprechzeile (text) oder ein Ink-Dialog (dialog, Uhr des Helden hält an) über dem Brett. Ausgelöst, wenn alle Bedingungen in wenn gelten; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame); vor dem Zug des Helden: koeder (ein Bauer ist schlagbar, danach setzt der Gegner in höchstens zwei Zügen matt), turmopfer (ein Turm kann neben den gegnerischen König ziehen und ginge im Abtausch verloren); nach dem letzten Halbzug: opposition (die ziehende Seite stellt die Könige in Opposition, Kapitel 8), gabel (die gezogene Figur greift zwei lohnende gegnerische Figuren an, Kapitel 1); beide auch mit Seite: …Gegeben nach einem Zug des Helden, …Gegen nach einem Zug des Gegners",
           "type": "array",

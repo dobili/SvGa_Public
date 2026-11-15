@@ -30,13 +30,18 @@ import { t } from "../../i18n/sprache";
 import { aendere } from "../../speicher/speicher";
 import type { Antwortergebnis } from "../../training/wiederholung";
 import { useDaten } from "../../ui/komponenten/bausteine/useDaten";
-import { HinweisKontext, SpielanzeigeKontext } from "../../ui/trainer/imSpiel";
+import {
+  HinweisKontext,
+  LoesungGezeigtKontext,
+  SpielanzeigeKontext,
+} from "../../ui/trainer/imSpiel";
 import { Rundenrahmen } from "../../ui/trainer/Rundenrahmen";
 import { Endspielaufgabe } from "../../ui/trainer/Endspielaufgabe";
 import { Fallenaufgabe } from "../../ui/trainer/Fallenaufgabe";
 import { Strukturaufgabe } from "../../ui/trainer/Strukturaufgabe";
 import { Taktikaufgabe } from "../../ui/trainer/Taktikaufgabe";
 import { useRunde, type Runde } from "../../ui/trainer/useRunde";
+import type { Aufgabenergebnis } from "../schnittstelle/aufgaben";
 import type { Massstab } from "../../training/endspieltrainer";
 import { rundenBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { useZurWelt } from "./zurWelt";
@@ -49,9 +54,17 @@ import { Tischblase, TischblasenRahmen } from "./Tischblase";
 import { useRaetselgespraech } from "./useRaetselgespraech";
 import { useRaetselanzeige } from "./useRaetselanzeige";
 import { sprecherAusSchluessel } from "./huellentexte";
-import { buchfrage, rundenaufgaben, zufallDerRunde, type Rundenaufgabe } from "./rundenaufgaben";
+import {
+  buchfrage,
+  rundenaufgaben,
+  rundenstartAus,
+  zufallDerRunde,
+  type Rundenaufgabe,
+} from "./rundenaufgaben";
 import { testantworten } from "./testende";
 import { Raetseltest } from "./Testleiste";
+
+const MS_JE_SEKUNDE = 1000;
 
 /** Die Runde selbst; eigene Komponente, damit `useRunde` die fertige Aufgabenliste bekommt. */
 function Runde({
@@ -60,8 +73,14 @@ function Runde({
   beiEnde,
   steller,
   kennung,
+  bisher,
+  beiAntwort,
 }: {
   aufgaben: readonly Rundenaufgabe[];
+  /** Antworten einer unterbrochenen Runde (R5); null: von vorn. */
+  bisher: Aufgabenergebnis | null;
+  /** Nach jeder Antwort: alle Antworten bis jetzt und die verbrauchten Sekunden (R5). */
+  beiAntwort: (ergebnisse: readonly Antwortergebnis[], sekunden: number) => void;
   /** Wer die Aufgaben stellt (Textschlüssel) und Kennung des Auftrags, fürs Tischgespräch. */
   steller: string;
   kennung: string;
@@ -69,10 +88,16 @@ function Runde({
   massstab: Massstab | null;
   beiEnde: (ergebnisse: readonly Antwortergebnis[], sekunden: number) => void;
 }) {
-  const runde = useRunde("taktik", aufgaben.length);
-  const ergebnisse = useRef<Antwortergebnis[]>([]);
+  // Weiter bei der ersten offenen Aufgabe (Spieltest „einstieg“, R5); dieselben Aufgaben kommen
+  // aus der festen Saat der Kennung.
+  const [start] = useState(() => rundenstartAus(bisher));
+  const runde = useRunde("taktik", aufgaben.length, start);
+  const ergebnisse = useRef<Antwortergebnis[]>([...(bisher?.ergebnisse ?? [])]);
+  const [beginn] = useState(() => Date.now() - (start?.sekunden ?? 0) * MS_JE_SEKUNDE);
   // Dieselben Antworten als Zustand, damit die Figurenreihe sie beim Zeichnen lesen darf.
-  const [antworten, setzeAntworten] = useState<readonly Antwortergebnis[]>([]);
+  const [antworten, setzeAntworten] = useState<readonly Antwortergebnis[]>(
+    () => bisher?.ergebnisse ?? [],
+  );
   // Tischgespräch (docs/spiel/29): wer die Aufgaben stellt, kommentiert ab und zu.
   const gespraech = useRaetselgespraech(steller, kennung);
   // Ohne weiße Trainerkarte (docs/spiel/30): Figurenreihe und Ambrose in der Sprechblase.
@@ -83,6 +108,8 @@ function Runde({
     // Einmal, wenn die letzte Aufgabe beginnt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index, anzahl]);
+  // „Ich komme nicht drauf“ (R4): Die nächste falsche Antwort ist die gezeigte Lösung.
+  const loesungGezeigt = useRef(false);
   const gemeldet = useRef(false);
   // Testhilfe des Autors: die ganze Runde sofort bestehen (true) oder verfehlen (false).
   const [test, setzeTest] = useState<boolean | null>(null);
@@ -111,7 +138,10 @@ function Runde({
       if (runde.ergebnis === null) {
         ergebnisse.current[runde.index] = richtig ? "richtig" : "falsch";
         setzeAntworten([...ergebnisse.current]);
-        gespraech.beiAntwort(runde.index, richtig);
+        beiAntwort([...ergebnisse.current], Math.round((Date.now() - beginn) / MS_JE_SEKUNDE));
+        if (loesungGezeigt.current) gespraech.beiLoesungGezeigt(runde.index);
+        else gespraech.beiAntwort(runde.index, richtig);
+        loesungGezeigt.current = false;
       }
       runde.beantworte(richtig);
     },
@@ -120,48 +150,54 @@ function Runde({
     <>
       <HinweisKontext value={() => gespraech.beiHinweis(runde.index)}>
         <SpielanzeigeKontext value={anzeige}>
-          <Rundenrahmen
-            kennung="taktik"
-            runde={mitProtokoll}
-            nochmal={() => {}}
-            zurAuswahl={null}
-            imSpiel
+          <LoesungGezeigtKontext
+            value={() => {
+              loesungGezeigt.current = true;
+            }}
           >
-            <div key={runde.index} className="trainer-aufgabe">
-              {aktuelle.art === "endspiel" ? (
-                massstab ? (
-                  <Endspielaufgabe
-                    aufgabe={aktuelle.aufgabe}
-                    massstab={massstab}
+            <Rundenrahmen
+              kennung="taktik"
+              runde={mitProtokoll}
+              nochmal={() => {}}
+              zurAuswahl={null}
+              imSpiel
+            >
+              <div key={runde.index} className="trainer-aufgabe">
+                {aktuelle.art === "endspiel" ? (
+                  massstab ? (
+                    <Endspielaufgabe
+                      aufgabe={aktuelle.aufgabe}
+                      massstab={massstab}
+                      runde={mitProtokoll}
+                    />
+                  ) : (
+                    <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+                  )
+                ) : aktuelle.art === "falle" ? (
+                  <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+                ) : aktuelle.art === "struktur" ? (
+                  <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+                ) : aktuelle.art === "zusatz" ? (
+                  <Taktikaufgabe
+                    aufgabe={aktuelle.aufgabe.aufgabe}
                     runde={mitProtokoll}
+                    motivAbfragen={false}
+                    zusatz={{
+                      themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
+                      vorher: aktuelle.aufgabe.vorher,
+                    }}
                   />
                 ) : (
-                  <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
-                )
-              ) : aktuelle.art === "falle" ? (
-                <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-              ) : aktuelle.art === "struktur" ? (
-                <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-              ) : aktuelle.art === "zusatz" ? (
-                <Taktikaufgabe
-                  aufgabe={aktuelle.aufgabe.aufgabe}
-                  runde={mitProtokoll}
-                  motivAbfragen={false}
-                  zusatz={{
-                    themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
-                    vorher: aktuelle.aufgabe.vorher,
-                  }}
-                />
-              ) : (
-                <Taktikaufgabe
-                  aufgabe={aktuelle.aufgabe}
-                  runde={mitProtokoll}
-                  motivAbfragen={aktuelle.motivAbfragen}
-                  frage={buchfrage(aktuelle.aufgabe)}
-                />
-              )}
-            </div>
-          </Rundenrahmen>
+                  <Taktikaufgabe
+                    aufgabe={aktuelle.aufgabe}
+                    runde={mitProtokoll}
+                    motivAbfragen={aktuelle.motivAbfragen}
+                    frage={buchfrage(aktuelle.aufgabe)}
+                  />
+                )}
+              </div>
+            </Rundenrahmen>
+          </LoesungGezeigtKontext>
         </SpielanzeigeKontext>
       </HinweisKontext>
       <Raetseltest beiWahl={setzeTest} />
@@ -188,6 +224,9 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
   const stand = useAbenteuerstand();
   const [auftrag] = useState(() =>
     stand?.laufendeAufgaben?.kennung === wert ? stand.laufendeAufgaben : null,
+  );
+  const [bisher] = useState(() =>
+    stand?.aufgabenzwischenstand?.kennung === wert ? stand.aufgabenzwischenstand : null,
   );
   const taktik = useDaten(ladeTaktik, "trainer-taktik");
   const zusaetze = useDaten(ladeZusatzaufgaben, "zusatzaufgaben");
@@ -218,6 +257,7 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
       abenteuer: d.abenteuer
         ? {
             ...d.abenteuer,
+            aufgabenzwischenstand: null,
             aufgabenergebnis: {
               kennung: auftrag.kennung,
               ergebnisse: Array.from(
@@ -226,6 +266,19 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
               ),
               sekunden,
             },
+          }
+        : d.abenteuer,
+    }));
+  };
+  // Nach jeder Antwort in den Spielstand (R5), damit „Weitermachen“ bei der offenen Aufgabe beginnt.
+  const sichereZwischenstand = (ergebnisse: readonly Antwortergebnis[], sekunden: number) => {
+    if (!auftrag) return;
+    void aendere((d) => ({
+      ...d,
+      abenteuer: d.abenteuer
+        ? {
+            ...d.abenteuer,
+            aufgabenzwischenstand: { kennung: auftrag.kennung, ergebnisse, sekunden },
           }
         : d.abenteuer,
     }));
@@ -274,6 +327,8 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
             beiEnde={beiEnde}
             steller={auftrag.steller}
             kennung={auftrag.kennung}
+            bisher={bisher}
+            beiAntwort={sichereZwischenstand}
           />
         )}
       </Huelle>

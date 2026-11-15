@@ -55,7 +55,8 @@ export interface Paketverzeichnis {
 
 /** Zustand des Pakets auf dem Gerät, für die Anzeige in den Einstellungen und auf der Startkarte. */
 export type Paketzustand =
-  | { readonly art: "fehlt" }
+  /** Fehlt; `bytes` ist die Größe des Grundpakets auf dem Server, wenn er antwortete. */
+  | { readonly art: "fehlt"; readonly bytes?: number }
   | { readonly art: "laedt"; readonly geladen: number; readonly gesamt: number }
   | { readonly art: "vorhanden"; readonly version: string; readonly bytes: number }
   /** Vorhanden, aber eine neuere Version liegt auf dem Server. */

@@ -19,26 +19,31 @@ import {
   type Ausloeser,
   type Meldezustand,
 } from "./ausloeserebene";
-import { kameragrenzen } from "./kamera";
+import { richteKameraEin } from "./kameraregie";
+import { kachelVon, tippschrittBeimLoslassen, zielErreicht, type Tippschritt } from "./tippschritt";
+import { Zielmarker, type Zielfeld } from "./zielmarker";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import {
   erzeugeLaufanimationen,
   ladeFigurbogen,
+  fussUrsprungY,
   laufname,
   standbild,
   stelleAufKachel,
 } from "./figurbilder";
-import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
-import { setzeSitzend } from "./figurensitz";
-import { zeigeAlsGeist } from "./geistfigur";
+import { ladeMoebelbilder, stelleMoebelAuf } from "./moebel";
+import { stelleFigurenAuf } from "./figurenaufstellung";
+import { erscheinungsfeld, lasseGeistErscheinen } from "./geistfigur";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
-import { zeigeTeilchen, type Teilchenart } from "./teilchen";
+import { zeigeTeilchen } from "./teilchen";
 import { Toenungsschicht } from "./toenungsschicht";
 import { faerbeWinterlich } from "./winter";
 import { liesBelebung, type Belebung, type Feld } from "./belebung";
-import { Belebungsschicht, ladeBelebungsbilder, type Belebungsbilder } from "./belebungsschicht";
+import { Belebungsschicht, ladeBelebungsbilder } from "./belebungsschicht";
+import type { Szenendaten } from "./szenentypen";
+export type { Ausloesertreffer, Melder, Szenendaten } from "./szenentypen";
 
 export type Richtung = Weltposition["richtung"];
 
@@ -57,66 +62,6 @@ const BILD_JE_RICHTUNG: Readonly<Record<Richtung, number>> = {
 };
 const EBENEN = ["boden", "waende", "objekte"] as const;
 const AUSLOESER_EBENE = "ausloeser";
-
-/** Ein Auslöser, auf dem der Held steht oder den er ansieht: Name und Art aus der Tiled-Datei. */
-export interface Ausloesertreffer {
-  readonly name: string;
-  /**
-   * „ausloeser“ (Übergang, Gegenstand, Start), „figur“ (Objekt mit type = figur) oder „statist“
-   * (ansprechbarer Statist der Belebung, mit `sagt`).
-   */
-  readonly typ: "ausloeser" | "figur" | "statist";
-  /** Der Held steht selbst darauf (true) oder nur davor (false). */
-  readonly darauf: boolean;
-  /** Er steht darauf und geht in den Durchgang: Erst dann wechselt ein Übergang die Karte. */
-  readonly durch: boolean;
-}
-
-/** Was die Szene nach oben meldet. */
-export interface Melder {
-  /** Der Held steht auf einem Auslöser oder vor einer Figur, oder auf nichts (null). */
-  readonly beiAusloeser: (treffer: Ausloesertreffer | null) => void;
-  /** Der Held hat eine neue Kachel erreicht (für Anzeige und Oberflächentests), nur bei Änderung. */
-  readonly beiKachel?: (x: number, y: number) => void;
-}
-
-/** Was die Szene zum Aufbau braucht. */
-export interface Szenendaten {
-  /** Die Tiled-Karte als Objekt (aus dem Paket gelesen). */
-  readonly karte: object;
-  /** Adressen der Bilder (Objekt-Adressen aus dem Paket). */
-  readonly kachelbild: string;
-  readonly heldbild: string;
-  /** Spritesheet für alle Figuren ohne eigenes Bild (Platzhalter, 16 × 16). */
-  readonly figurbild: string;
-  /** Bogen des Helden im Format von LimeZu (figurbilder.ts); ohne gilt heldbild. */
-  readonly heldfigur?: string | null;
-  /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
-  readonly figurenbilder?: Readonly<Record<string, string>>;
-  /** Figuren mit geist: true (geistfigur.ts, regeln/geist.ts), nach Objektname. */
-  readonly geister?: ReadonlySet<string>;
-  /** Möbel und Schmuck der Karte (moebel.ts). */
-  readonly moebel?: readonly Moebel[];
-  /**
-   * Hintergrundbild aus dem Kartenbauer (Boden und Wände der gekauften Grafik); mit ihm werden die
-   * Kachelebenen nur noch für die Kollision gebraucht und nicht gezeichnet.
-   */
-  readonly hintergrund?: string | null;
-  readonly kachelsatz: string; // Name des Kachelsatzes in der Tiled-Datei
-  readonly start: Weltposition;
-  /** Namen der Auslöser, die Übergänge sind: Sie lösen erst beim Gehen in den Durchgang aus. */
-  readonly uebergaenge?: readonly string[];
-  readonly melder: Melder;
-  readonly tempofaktor?: number; // Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1)
-  /** Bögen der Statisten und Tiere (belebungsschicht.ts), Pfad im Paket → Adresse. */
-  readonly belebungsbilder?: Belebungsbilder;
-  readonly stunde?: number; // Stunde für die Statisten (`wann`); sonst die Uhr des Geräts
-  readonly toenung?: Toenung | null; // Tönung der Karte (toenung.ts)
-  readonly laterne?: boolean; // Der Held trägt eine Laterne (Lichtkreis bei „dunkel“)
-  /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen; sonst Teilchen der Karte (T8). */
-  readonly winter?: boolean;
-  readonly teilchen?: Teilchenart | null;
-}
 
 /** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
 const HINTERGRUND_TIEFE = -1;
@@ -146,6 +91,14 @@ export class Oberweltszene extends Phaser.Scene {
   private toenungsschicht: Toenungsschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
+  /** Kurzes Antippen (tippschritt.ts): Kachel beim Druck und der laufende Schritt danach. */
+  private druck: { richtung: Richtung; kachel: string } | null = null;
+  private tipp: Tippschritt | null = null;
+  /** Zielhinweis (zielmarker.ts) und das Ziel, das schon vor create() kommen kann. */
+  private zielmarker: Zielmarker | null = null;
+  private ziel: { feld: Zielfeld | null; an: boolean } = { feld: null, an: true };
+  /** Höhe des Streifens unten unter den Knöpfen in Spielpixeln (kameraregie.ts). */
+  private verdeckt = 0;
 
   constructor(private readonly daten: Szenendaten) {
     super("oberwelt");
@@ -209,13 +162,14 @@ export class Oberweltszene extends Phaser.Scene {
     for (const ebene of feste) this.physics.add.collider(held, ebene);
     this.physics.world.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
     const kamera = this.cameras.main;
-    const g = kameragrenzen(karte.widthInPixels, karte.heightInPixels, kamera.width, kamera.height);
-    kamera.setBounds(g.x, g.y, g.breite, g.hoehe);
+    this.verdeckt = richteKameraEin(kamera, karte.widthInPixels, karte.heightInPixels, ZOOM);
     this.cameras.main.startFollow(held, true);
+    this.zielmarker = new Zielmarker(this, KACHEL, () => this.verdeckt);
+    this.zielmarker.setze(this.ziel.feld, this.ziel.an);
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = liesAusloeserAus(karte);
     this.pause = EINGABEPAUSE_MS;
-    this.stelleFigurenAuf(held);
+    stelleFigurenAuf(this, held, this.ausloeser, this.daten, KACHEL, BILD_JE_RICHTUNG.unten);
     const liste = this.daten.moebel ?? [];
     if (this.daten.winter)
       faerbeWinterlich(
@@ -236,31 +190,50 @@ export class Oberweltszene extends Phaser.Scene {
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
-  /** Figuren als feste Sprites mit Kollision; wer weiter unten steht, wird davor gezeichnet. */
-  private stelleFigurenAuf(held: Phaser.Physics.Arcade.Sprite): void {
-    const gruppe = this.physics.add.staticGroup();
-    for (const a of this.ausloeser) {
-      if (a.typ !== "figur") continue;
-      const eigenes = this.daten.figurenbilder?.[a.name] !== undefined;
-      const figur = gruppe.create(
-        a.x * KACHEL + KACHEL / 2,
-        a.y * KACHEL + KACHEL / 2,
-        eigenes ? `figur:${a.name}` : "figur",
-        eigenes ? standbild("unten") : BILD_JE_RICHTUNG.unten,
-      ) as Phaser.Physics.Arcade.Sprite;
-      figur.setName(a.name);
-      if (eigenes) stelleAufKachel(figur, KACHEL);
-      if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt);
-      if (this.daten.geister?.has(a.name)) zeigeAlsGeist(this, figur);
-      figur.setDepth(figur.y);
+  /**
+   * Das Steuerkreuz: Richtung gedrückt oder losgelassen. Ein kurzes Antippen läuft bis zur
+   * nächsten Kachel weiter (tippschritt.ts), wenn der Held seine Kachel noch nicht verlassen hat.
+   */
+  setzeRichtung(richtung: Richtung, gedrueckt: boolean): void {
+    const mitte = this.held ? { x: this.held.x, y: this.held.y } : null;
+    if (gedrueckt) {
+      this.gedrueckt.add(richtung);
+      this.tipp = null;
+      const frei = mitte && this.laufen && this.pause === 0;
+      this.druck = frei ? { richtung, kachel: kachelVon(mitte, KACHEL) } : null;
+      return;
     }
-    this.physics.add.collider(held, gruppe);
+    this.gedrueckt.delete(richtung);
+    const d = this.druck;
+    this.druck = null;
+    if (d?.richtung !== richtung || !mitte || this.gedrueckt.size > 0) return;
+    this.tipp = tippschrittBeimLoslassen(richtung, d.kachel, mitte, KACHEL);
   }
 
-  /** Das Steuerkreuz: Richtung gedrückt oder losgelassen. */
-  setzeRichtung(richtung: Richtung, gedrueckt: boolean): void {
-    if (gedrueckt) this.gedrueckt.add(richtung);
-    else this.gedrueckt.delete(richtung);
+  /** Neue Größe des Bildes (Gerät gedreht, oberweltspiel.ts): Kamera neu einrichten. */
+  passeKameraAn(): void {
+    const welt = this.physics.world.bounds;
+    this.verdeckt = richteKameraEin(this.cameras.main, welt.width, welt.height, ZOOM);
+  }
+
+  /** Ziel des Zielhinweises (Kachelfeld oder null) und ob er an ist (Spielmenü). */
+  setzeZiel(feld: Zielfeld | null, an: boolean): void {
+    this.ziel = { feld, an };
+    this.zielmarker?.setze(feld, an);
+  }
+
+  /**
+   * Eine Figur erscheint als Geist, wenn der Dialog es sagt (`#erscheint`), sie aber nicht auf
+   * der Karte steht (geistfigur.ts): zwei Felder vor dem Helden, dort, wohin er schaut (auf dem
+   * Dachboden über dem Brett). Ohne geladenen Bogen der Figur oder wenn sie schon da ist: nichts.
+   */
+  erscheine(name: string): void {
+    const schluessel = `figur:${name}`;
+    const held = this.held;
+    if (!held || this.children.getByName(name) || !this.textures.exists(schluessel)) return;
+    const mitte = erscheinungsfeld(held, this.blick, KACHEL);
+    const bild = { schluessel, nummer: standbild("unten") };
+    lasseGeistErscheinen(this, name, bild, mitte, (s) => fussUrsprungY(s, KACHEL));
   }
 
   /** Neue Tönung, etwa nach `setzeToenung` in einem Dialog (null: keine). */
@@ -271,7 +244,9 @@ export class Oberweltszene extends Phaser.Scene {
   /** Dialog offen: Der Held bleibt stehen, Eingaben werden verworfen. */
   laufenErlaubt(erlaubt: boolean): void {
     this.laufen = erlaubt;
-    if (!erlaubt) this.gedrueckt.clear();
+    if (erlaubt) return;
+    this.gedrueckt.clear();
+    this.tipp = null;
   }
 
   /**
@@ -312,7 +287,7 @@ export class Oberweltszene extends Phaser.Scene {
     if (!this.held) return;
     const heldfeld: Feld = { x: this.held.x / KACHEL - 0.5, y: this.held.y / KACHEL - 0.5 };
     this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei);
-    const gewuenscht = this.gewuenschteRichtung();
+    const gewuenscht = this.gewuenschteRichtung() ?? this.tippRichtung();
     // Der Held kommt mit Blick vom Durchgang weg an; die Gegenrichtung führte zurück hinein.
     const zurueck = gewuenscht === gegenrichtung(this.daten.start.richtung);
     this.pause = pausenschritt(this.pause, delta, gewuenscht !== null, zurueck);
@@ -334,6 +309,21 @@ export class Oberweltszene extends Phaser.Scene {
     this.toenungsschicht?.folge(this.held.x, this.held.y);
     this.meldeAusloeser();
     this.meldeKachel();
+    this.zielmarker?.aktualisiere();
+  }
+
+  /** Richtung des laufenden Tippschritts; am Ziel (oder an einer Wand) endet er genau dort. */
+  private tippRichtung(): Richtung | null {
+    const tipp = this.tipp;
+    const held = this.held;
+    if (!tipp || !held) return null;
+    const koerper = held.body as Phaser.Physics.Arcade.Body;
+    const seite = { oben: "up", unten: "down", links: "left", rechts: "right" } as const;
+    const steht = koerper.blocked[seite[tipp.richtung]];
+    if (!zielErreicht(tipp, held) && !steht) return tipp.richtung;
+    if (!steht) held.setPosition(tipp.ziel.x, tipp.ziel.y);
+    this.tipp = null;
+    return null;
   }
 
   /**

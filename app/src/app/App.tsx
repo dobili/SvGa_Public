@@ -313,13 +313,14 @@ function Hauptrahmen() {
       {/* Im Schach-Abenteuer (Zusatzansicht mit „vollbild“ und seine Partien) tritt die
           Oberfläche der App zurück (Entscheidung D1 des Autors, 07.11.2026). */}
       {!vollbild && <Leiste />}
-      {/* Gratulation bei einem vollen Ring des Fortschritts (seit 0.2.144). */}
-      <Ringfeier />
+      {/* Gratulation bei einem vollen Ring des Fortschritts (seit 0.2.144). Nicht über dem
+          Schach-Abenteuer (Spieltest „einstieg“, 15.11.2026, R6): Sie kommt zurück in der App. */}
+      {!vollbild && <Ringfeier />}
       <TourAngebot />
       {/* Über der Frage nach dem Rundgang: erst die Sprache (Wunsch des Autors, 31.10.2026). */}
       <Sprachangebot />
       <TourEbene />
-      <Startanimation />
+      <Startanimation aus={vollbild} />
     </div>
   );
 }

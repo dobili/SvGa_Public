@@ -117,6 +117,31 @@ async function figurenbilderFuer(ort: Ortdaten, karte: object): Promise<Record<s
   return Object.fromEntries(paare.filter((p) => p !== null));
 }
 
+/**
+ * Bögen der Geister des Ortes, die nicht auf dieser Karte stehen: Sie können im Dialog erscheinen
+ * (`#erscheint`, szene.ts `erscheine`; Spieltest „einstieg“, R8). In Erinnerungen keine.
+ * Beispiel: Dachboden ohne Ambrose-Objekt → { ambrose: "blob:…" }.
+ */
+async function erscheinungsbilderFuer(
+  ort: Ortdaten,
+  karte: object,
+  erinnerung: boolean,
+): Promise<Record<string, string>> {
+  if (erinnerung) return {};
+  const aufKarte = new Set(figurennamen(karte));
+  const paare = await Promise.all(
+    ort.figuren
+      .filter((f) => f.geist === true && f.sprite)
+      .map(async (f) => {
+        const name = f.kennung.slice(f.kennung.indexOf(".") + 1);
+        if (aufKarte.has(name)) return null;
+        const adresse = await figurenbildAdresse(f.sprite);
+        return adresse ? ([name, adresse] as const) : null;
+      }),
+  );
+  return Object.fromEntries(paare.filter((p) => p !== null));
+}
+
 /** Orte in Wüste und Canyon (Weltbeschreibung): Sandboden statt Gras. */
 const WUESTE = new Set([
   "desertSprings",
@@ -181,7 +206,7 @@ export async function ladeWelt(
     variablen,
   );
   const erinnerung = fund.ort.art === "erinnerung";
-  const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder] =
+  const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder, geisterbilder] =
     await Promise.all([
       paketdateiAlsAdresseOderNull(
         `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
@@ -193,6 +218,7 @@ export async function ladeWelt(
         `grafik/karten/${kartenkennung}${fassung.zustand ? `-${fassung.zustand}` : ""}.png`,
       ),
       belebungsbilderFuer(karte),
+      erscheinungsbilderFuer(fund.ort, karte, erinnerung),
     ]);
   return {
     kennung: kartenkennung,
@@ -205,7 +231,7 @@ export async function ladeWelt(
     heldbild,
     figurbild,
     heldfigur,
-    figurenbilder,
+    figurenbilder: { ...geisterbilder, ...figurenbilder },
     geister: geisterDerKarte(
       figurennamen(karte),
       (n) => figurZu(fund.ort, n)?.geist === true,

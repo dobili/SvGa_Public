@@ -11,6 +11,9 @@
  * Beispiel: Sams Block (Buchübung „ueb:droh-ignorieren“, Thema „haengend“, anzahl 3,
  * Schwierigkeit 2) → vier Aufgaben: die Übung aus Abbildung 1.40, dann drei Hängeaufgaben.
  */
+import { parseFen } from "chessops/fen";
+import type { Role } from "chessops/types";
+import { parseSquare } from "chessops/util";
 import type {
   Endspielaufgabe,
   Fallenaufgabe,
@@ -29,7 +32,8 @@ import {
   type Zusatzthema,
 } from "../../training/zusatzaufgaben";
 import { streuwert } from "../oberwelt/belebung";
-import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
+import type { Aufgabenauftrag, Aufgabenergebnis, Figurname } from "../schnittstelle/aufgaben";
+import type { Rundenstart } from "../../ui/trainer/useRunde";
 import { hatSpieltext, tSpiel } from "../texte/texte";
 
 /** Vorsilbe der Übungskennungen des Buches („ueb:droh-ignorieren“). */
@@ -50,6 +54,62 @@ export interface Weitere {
   /** Aufgaben des Endspieltrainers (Kapitel 8 und 9) und sein Maßstab, falls geladen. */
   readonly endspiele?: readonly Endspielaufgabe[];
   readonly massstab?: Massstab;
+}
+
+/** Die Rolle in chessops zu jedem Figurnamen der Runden (runden.json, `figur`). */
+const ROLLE_DER_FIGUR: Readonly<Record<Figurname, Role>> = {
+  bauer: "pawn",
+  springer: "knight",
+  laeufer: "bishop",
+  turm: "rook",
+  dame: "queen",
+  koenig: "king",
+};
+/** Schwierigkeit der Einsteiger (Wertung bis etwa 700, regeln/aufgaben.ts). */
+const EINSTIEGSSTUFE = 1;
+/** Einsteiger bekommen Lösungen mit höchstens so vielen Halbzügen (zwei eigene Züge). */
+const EINSTIEG_HOECHSTENS_HALBZUEGE = 3;
+
+/** Die Figur, die den ersten Lösungszug macht (auf dem Schlüsselfeld); null bei kaputter FEN. */
+export function figurDerLoesung(aufgabe: Aufgabe): Role | null {
+  const stellung = parseFen(aufgabe.fen);
+  const feld = parseSquare(aufgabe.schluesselfeld);
+  if (stellung.isErr || feld === undefined) return null;
+  return stellung.value.board.get(feld)?.role ?? null;
+}
+
+/**
+ * Passt eine Motivaufgabe zur Runde (Spieltest „einstieg“, R4)? Mit `figur` nur Aufgaben, deren
+ * erster Zug diese Figur macht (Lilys Springer); in Schwierigkeit 1 nur kurze Lösungen (höchstens
+ * zwei eigene Züge: kein Matt in drei mit Damenopfer am ersten Tag).
+ * Beispiel: Springergabel Sf5+ Ke4 Sxh4 in Lilys Runde, Schwierigkeit 1 → passt.
+ */
+export function passtZurRunde(auftrag: Aufgabenauftrag, aufgabe: Aufgabe): boolean {
+  if (auftrag.figur && figurDerLoesung(aufgabe) !== ROLLE_DER_FIGUR[auftrag.figur]) return false;
+  if (auftrag.schwierigkeit > EINSTIEGSSTUFE) return true;
+  return aufgabe.loesung.length <= EINSTIEG_HOECHSTENS_HALBZUEGE;
+}
+
+/**
+ * Wählt zuerst unter den passenden Einträgen; reichen sie nicht, füllen die übrigen auf (eine
+ * Runde bleibt nie kürzer als geplant, auch wenn die Daten zu wenige Springeraufgaben haben).
+ */
+function mitVorzug<T>(
+  liste: readonly T[],
+  passt: (eintrag: T) => boolean,
+  anzahl: number,
+  runde: (auswahl: readonly T[], zahl: number) => T[],
+): T[] {
+  const zuerst = runde(
+    liste.filter((e) => passt(e)),
+    anzahl,
+  );
+  if (zuerst.length >= anzahl) return zuerst;
+  const rest = runde(
+    liste.filter((e) => !passt(e)),
+    anzahl - zuerst.length,
+  );
+  return [...zuerst, ...rest];
 }
 
 /** Mischt die Listen abwechselnd, bis `anzahl` erreicht ist (jedes Thema kommt gleich oft dran). */
@@ -86,12 +146,24 @@ export function rundenaufgaben(
   const stufe = auftrag.schwierigkeit;
   const jeThema = auftrag.themen.map((thema): Rundenaufgabe[] => {
     if (thema in ZUSATZTHEMEN) {
-      return zusatzrunde(zusaetze, { thema: thema as Zusatzthema, stufe }, auftrag.anzahl, zufall)
+      const wahl = { thema: thema as Zusatzthema, stufe };
+      return mitVorzug(
+        zusaetze,
+        (z) => passtZurRunde(auftrag, z.aufgabe),
+        auftrag.anzahl,
+        (liste, zahl) => zusatzrunde(liste, wahl, zahl, zufall),
+      )
         .filter((z) => !buchkennungen.has(z.aufgabe.id))
         .map((aufgabe) => ({ art: "zusatz" as const, aufgabe }));
     }
     if ((MOTIVE as readonly string[]).includes(thema) || thema === "mattbilder") {
-      return taktikrunde(taktik, { thema: thema as Taktikthema, stufe }, auftrag.anzahl, zufall)
+      const wahl = { thema: thema as Taktikthema, stufe };
+      return mitVorzug(
+        taktik,
+        (a) => passtZurRunde(auftrag, a),
+        auftrag.anzahl,
+        (liste, zahl) => taktikrunde(liste, wahl, zahl, zufall),
+      )
         .filter((a) => !buchkennungen.has(a.id))
         .map((aufgabe) => ({ art: "taktik" as const, aufgabe, motivAbfragen: false }));
     }
@@ -148,4 +220,17 @@ export function buchfrage(aufgabe: Aufgabe): string | null {
     .replace(/-([a-z0-9])/g, (_, b: string) => b.toUpperCase());
   const schluessel = `runde.buchfrage.${name}`;
   return hatSpieltext(schluessel) ? tSpiel(schluessel) : null;
+}
+
+/**
+ * Der Start einer unterbrochenen Runde aus den gesicherten Antworten (R5): erste offene Aufgabe,
+ * richtige bisher, verbrauchte Sekunden. Beispiel: [richtig, falsch], 95 s → Aufgabe 3, 1, 95.
+ */
+export function rundenstartAus(bisher: Aufgabenergebnis | null): Rundenstart | null {
+  if (!bisher || bisher.ergebnisse.length === 0) return null;
+  return {
+    index: bisher.ergebnisse.length,
+    richtig: bisher.ergebnisse.filter((e) => e === "richtig").length,
+    sekunden: bisher.sekunden,
+  };
 }

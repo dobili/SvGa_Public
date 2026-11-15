@@ -12,6 +12,9 @@
  */
 import type { Antwortergebnis } from "../../training/wiederholung";
 
+/** Figuren, nach denen eine Runde ihre Motivaufgaben auswählen kann. */
+export type Figurname = "bauer" | "springer" | "laeufer" | "turm" | "dame" | "koenig";
+
 export interface Aufgabenauftrag {
   /** Kennung dieses Versuchs (Runde plus Zeitstempel), zum Beispiel „mapleFalls.reiheSam#m3k9“. */
   readonly kennung: string;
@@ -25,6 +28,11 @@ export interface Aufgabenauftrag {
   readonly buchuebungen: readonly string[];
   /** Motive und Themen der Trainer, wie in training/zusatzaufgaben.ts („haengend“, „matt1“ …). */
   readonly themen: readonly string[];
+  /**
+   * Nur Motivaufgaben, deren erster Lösungszug diese Figur macht (runden.json, `figur`); fehlend:
+   * alle. Beispiel: Lilys Springer-Lektion → „springer“ (Spieltest „einstieg“, R4).
+   */
+  readonly figur?: Figurname;
   /** Zahl der Motivaufgaben (zusätzlich zu den Buchübungen) und Zielschwierigkeit 1–5 (R30). */
   readonly anzahl: number;
   readonly schwierigkeit: number;

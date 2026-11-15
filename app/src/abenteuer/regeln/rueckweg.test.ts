@@ -53,7 +53,7 @@ describe("standNachPartie", () => {
     const r = standNachPartie(STAND, ergebnis("sieg"), DATEN);
     expect(r.nadel).toBe("gold");
     expect(r.stand.clubs).toEqual([
-      { kennung: "mapleFalls", nadel: "gold", aufgabenreihe: false, versuche: 1, steckbrief: [] },
+      { kennung: "mapleFalls", nadel: "gold", aufgabenreihe: false, versuche: 1 },
     ]);
     expect(r.stand.laufendePartie).toBeNull();
     expect(r.stand.protokoll[0]).toMatchObject({ gegner: "mapleFalls.coachDelgado" });

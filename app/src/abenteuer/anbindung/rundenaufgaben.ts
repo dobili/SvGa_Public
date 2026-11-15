@@ -29,6 +29,10 @@ import {
   type Zusatzthema,
 } from "../../training/zusatzaufgaben";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
+import { hatSpieltext, tSpiel } from "../texte/texte";
+
+/** Vorsilbe der Übungskennungen des Buches („ueb:droh-ignorieren“). */
+const UEBUNGSVORSILBE = "ueb:";
 
 /** Eine Aufgabe der Runde: Buchübung oder Taktikaufgabe (ohne Vorzug) oder Zusatzaufgabe. */
 export type Rundenaufgabe =
@@ -114,4 +118,22 @@ export function rundenaufgaben(
     return [];
   });
   return [...buch, ...abwechselnd(jeThema, auftrag.anzahl)];
+}
+
+/**
+ * Die eigene Frage einer Buchübung in der Runde (N2614): Im Spiel stehen keine Buchtexte
+ * (docs/spiel/05, Entscheidung 10.11.2026), deshalb hat jede Übung, deren Frage mehr ist als das
+ * Ziel des Trainers, einen eigenen Satz in den Spieltexten (`runde.buchfrage.<übung>`, die Kennung
+ * ohne „ueb:“ in Binnenmajuskeln: „ueb:droh-ignorieren“ → „drohIgnorieren“). null für
+ * andere Aufgaben und Übungen ohne eigenen Satz (Kapitel 7: „Finde die Kombination“ sagt das Ziel).
+ * Beispiel: Abb. 1.40 → „Dein Springer auf b5 wird vom Bauern a6 angegriffen …“.
+ */
+export function buchfrage(aufgabe: Aufgabe): string | null {
+  const uebung = aufgabe.herkunft.quelle === "buch" ? aufgabe.herkunft.uebung : undefined;
+  if (!uebung) return null;
+  const name = uebung
+    .replace(UEBUNGSVORSILBE, "")
+    .replace(/-([a-z0-9])/g, (_, b: string) => b.toUpperCase());
+  const schluessel = `runde.buchfrage.${name}`;
+  return hatSpieltext(schluessel) ? tSpiel(schluessel) : null;
 }

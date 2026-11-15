@@ -17,6 +17,7 @@ import { deckErlaubt } from "../regeln/karten";
 import { ZEITKLASSEN, type Zeitklasse } from "../regeln/zeitkarten";
 import { DECKGROESSE, type Kartenbesitz, type Kartensorte } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
+import type { Deckwahlsteckbrief } from "./steckbrieftext";
 import { istAmbrosesKarte } from "../regeln/abwesenheit";
 import { Kartenfaecher } from "../anbindung/Kartenfaecher";
 import { Spielkarte } from "../anbindung/Spielkarte";
@@ -42,7 +43,7 @@ export function Deckwahl({
   ambroseFehlt = false,
   schutzengelGesperrt = false,
   freieKarten = [],
-  steckbrief = [],
+  steckbrief = { titel: "", zeilen: [] },
   beiWahl,
   beiAbbruch,
 }: {
@@ -66,8 +67,8 @@ export function Deckwahl({
   readonly schutzengelGesperrt?: boolean;
   /** Freie Karten der Begegnung (R29), liegen ohne Besitz zusätzlich im Deck. */
   readonly freieKarten?: readonly string[];
-  /** Was die Lupe des Uhrmachers über den Gegner verrät (leer ohne Lupe). */
-  readonly steckbrief?: readonly string[];
+  /** Was die Lupe des Uhrmachers verrät und was der Leser freigeschaltet hat (steckbrieftext.ts). */
+  readonly steckbrief?: Deckwahlsteckbrief;
   readonly beiWahl: (
     deck: readonly string[],
     zeit: Zeitklasse,
@@ -112,11 +113,11 @@ export function Deckwahl({
       data-testid="abenteuer-deckwahl"
     >
       <h2>{tSpiel("deck.titel")}</h2>
-      {steckbrief.length > 0 && (
+      {steckbrief.zeilen.length > 0 && (
         <div className="abenteuer-steckbrief" data-testid="abenteuer-lupe">
-          <h3>{tSpiel("steckbrief.titel")}</h3>
+          <h3>{steckbrief.titel}</h3>
           <ul>
-            {steckbrief.map((zeile) => (
+            {steckbrief.zeilen.map((zeile) => (
               <li key={zeile}>{zeile}</li>
             ))}
           </ul>

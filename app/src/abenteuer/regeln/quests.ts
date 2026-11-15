@@ -12,7 +12,7 @@
  * geht von Schritt 1 auf 2, Wirkungen: Szene „akt1.ambroseErwacht“, Karte „fingerzeig“.
  */
 import type { Questdaten } from "../daten/laden";
-import type { Abenteuerstand, Queststand } from "../schnittstelle/spielstand";
+import type { Abenteuerstand, Figurenstand, Queststand } from "../schnittstelle/spielstand";
 
 type Schritt = Questdaten["schritte"][number];
 export type Questereignis = Questdaten["start"];
@@ -104,6 +104,26 @@ export function werteEreignisAus(
   return { stand: { ...stand, quests: staende }, wirkungen, begonnen, erledigt, fortgeschritten };
 }
 
+/** Der Stand einer Figur; fehlt er, ein leerer (normal, nicht analysiert, ohne Steckbrief). */
+function figurstand(stand: Abenteuerstand, kennung: string): Figurenstand {
+  return (
+    stand.figuren.find((f) => f.kennung === kennung) ?? {
+      kennung,
+      abgelenkt: null,
+      analysiert: false,
+      dialogvariablen: {},
+    }
+  );
+}
+
+/** Der Spielstand mit dieser Figur statt der alten (gleiche Kennung). */
+function mitFigur(stand: Abenteuerstand, figur: Figurenstand): Abenteuerstand {
+  return {
+    ...stand,
+    figuren: [...stand.figuren.filter((f) => f.kennung !== figur.kennung), figur],
+  };
+}
+
 /** Wendet eine Wirkung auf den Spielstand an (reine Funktion; Texte löst die Oberfläche auf). */
 export function wendeWirkungAn(
   stand: Abenteuerstand,
@@ -122,36 +142,22 @@ export function wendeWirkungAn(
       return { ...stand, karten };
     }
     case "steckbrief": {
-      const ort = wirkung.gegner.split(".")[0] ?? "";
-      const club = stand.clubs.find((c) => c.kennung === ort);
-      const zeilen = club ? club.steckbrief : [];
+      // Je Gegner (N2621): die Figur bekommt die Zeile, ein neuer Eintrag entsteht leer.
+      const alt = figurstand(stand, wirkung.gegner);
+      const zeilen = alt.steckbrief ?? [];
       if (zeilen.includes(wirkung.zeile)) return stand;
-      const neu = club
-        ? { ...club, steckbrief: [...zeilen, wirkung.zeile] }
-        : {
-            kennung: ort,
-            nadel: null,
-            aufgabenreihe: false,
-            versuche: 0,
-            steckbrief: [wirkung.zeile],
-          };
-      return { ...stand, clubs: [...stand.clubs.filter((c) => c.kennung !== ort), neu] };
+      return mitFigur(stand, { ...alt, steckbrief: [...zeilen, wirkung.zeile] });
     }
     case "zustand": {
-      const alt = stand.figuren.find((f) => f.kennung === wirkung.gegner);
-      const figur = {
-        kennung: wirkung.gegner,
+      const alt = figurstand(stand, wirkung.gegner);
+      return mitFigur(stand, {
+        ...alt,
         abgelenkt:
           wirkung.faktor !== undefined
             ? { faktor: wirkung.faktor, grund: wirkung.grund ?? "" }
-            : (alt?.abgelenkt ?? null),
-        analysiert: wirkung.analysiert ?? alt?.analysiert ?? false,
-        dialogvariablen: alt?.dialogvariablen ?? {},
-      };
-      return {
-        ...stand,
-        figuren: [...stand.figuren.filter((f) => f.kennung !== wirkung.gegner), figur],
-      };
+            : alt.abgelenkt,
+        analysiert: wirkung.analysiert ?? alt.analysiert,
+      });
     }
     case "muenzen":
       return { ...stand, muenzen: stand.muenzen + wirkung.anzahl };

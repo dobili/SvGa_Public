@@ -40,19 +40,22 @@ Dialog, eine Partie der App, zurück. Platzhaltergrafik. Einstieg nur über die 
 sonst niemand findet: schach-von-grund-auf.com/app/#abenteuer (oder in der installierten App die
 Adresse mit „#abenteuer“ öffnen).
 
-- [ ] N2616. Tagebuch im Abenteuer: Unter den offenen Aufgaben steht „Deine Spielstärke im Abenteuer: N“; N ist beim Start
-      deine Wertung der App (klassisch) oder 600 ohne Wertung. Nach einer ganzen Partie gegen Ambrose ohne Flüstern oder
-      Mentor-Zug ändert sich N (Sieg etwa +25 bei gleich starkem Gegner); nach einer Partie mit Vorgabe oder einem
-      Wiedereinstieg nicht. Verlierst du zweimal gegen den Coach, steht in der dritten Partie unter dem Brett in der
-      gelben Leiste „Coach Delgado ist überheblich geworden.“, und er spielt spürbar lockerer (mehr Fehler).
-- [ ] N2620. Neue Karten (16 Stück): In den Läden gibt es jetzt auch Ablenkung (Spruch, 10 Münzen) und Röntgenblick
-      (Kiosk Maple Falls), Waage, Schmeichelei und Remisangebot (Zeitungsstand Riverton), Auszeit, Was droht? (60) und die
-      Kartentasche für 450 Münzen (Eisenwaren Ironwood; danach passen vier Karten ins Deck). Werkzeugkarten nutzen die
-      Werkzeuge des Buches auf der Partiestellung: Abzählen (sucht deine meistbedrohte Figur und zählt), Röntgenblick,
-      Zielkompass, Faktorenwaage, Bauernkompass, Planfinder, Taktikspürnase, Endspielkompass, Turmregel, Phasenblick.
-      „Was droht?“ zeigt als roten Pfeil, was der Gegner spielen würde, wenn er dran wäre (nur Schläge und Schachs
-      zählen als Drohung). „Waage“ sagt, wer besser steht. „Remisangebot“ (nicht im Clubkampf): Der Gegner nimmt
-      bei ausgeglichener Stellung an, sonst lehnt er ab. „Schmeichelei“ vor der Partie macht einen Straßengegner überheblich.
+- [ ] N2616. Tagebuch im Abenteuer: Unter den offenen Aufgaben steht „Meine Spielstärke im Abenteuer: N“; N ist beim
+      Start deine Wertung der App (klassisch) oder 600 ohne Wertung. Schon geprüft (Claude, 15.11.2026): 600 ohne
+      App-Wertung, nach einer Niederlage gegen Ambrose 584, ein Wiedereinstieg ändert nichts, ein Sieg in der
+      Übungspartie (Reisebrett) +16 (zählt fürs Abenteuer, nicht für die Wertung der App). Offen für dich: Verlierst du
+      zweimal gegen Coach Delgado, steht in der dritten Partie in der Leiste unter dem Brett „Coach Delgado ist
+      überheblich geworden.“, und er spielt spürbar lockerer (mehr Fehler). Die gelbe Trainerleiste gibt es in der
+      Spielhülle nicht mehr; die Zeile steht im Pixelrahmen unter dem Brett, auch ohne Karten im Deck.
+- [ ] N2620. Neue Karten (16 Stück): Die Läden hat Claude am 15.11.2026 geprüft (Kiosk Maple Falls: Ablenkung 10,
+      Röntgenblick 30, Farbwahl 10; Pops in Riverton: Waage, Schmeichelei, Remisangebot, Monatskarte 80; Eisenwaren
+      Ironwood: Auszeit, Was droht? 60, Kartentasche 450, danach passen vier Karten ins Deck). Offen für dich, in
+      einer Partie: Werkzeugkarten nutzen die Werkzeuge des Buches auf der Partiestellung: Abzählen (sucht deine
+      meistbedrohte Figur und zählt), Röntgenblick, Zielkompass, Faktorenwaage, Bauernkompass, Planfinder,
+      Taktikspürnase, Endspielkompass, Turmregel, Phasenblick. „Was droht?“ zeigt als roten Pfeil, was der Gegner
+      spielen würde, wenn er dran wäre (nur Schläge und Schachs zählen als Drohung). „Waage“ sagt, wer besser steht.
+      „Remisangebot“ (nicht im Clubkampf): Der Gegner nimmt bei ausgeglichener Stellung an, sonst lehnt er ab.
+      „Schmeichelei“ vor der Partie macht einen Straßengegner überheblich.
       Lernkarten gibt es seit 15.11.2026 nicht mehr für Buchkapitel, sondern im Spiel nach der passenden Lektion:
       Sam gibt Abzählen (nach der Runde „Todsünden“, wenn du ihn wieder ansprichst), Juno-Quest Gefahrenradar, Mama
       in der Kantine Ironwood die Faktorenwaage (nach eurer Partie, beim nächsten Ansprechen), Theo den Zielkompass
@@ -61,12 +64,16 @@ Adresse mit „#abenteuer“ öffnen).
       Haraldsen die Turmregel und Ward nach Hastings 1895 den Phasenblick (Hütte Summit City). Wer die Karte schon
       gekauft hat, bekommt keine zweite. Bitte prüfen: Kommt nach Sams Todsünden-Runde seine Karte, und steht
       Abzählen danach in der Kartentasche? Sprüche erscheinen in der Deckwahl nur vor Partien gegen Straßengegner.
-- [ ] N2621. Limo für Jo: Nach dem ersten Duell mit Skater Jo spricht sie dich noch einmal an und will eine
-      Zitronenlimo. Am Kiosk von Mr. Patel kostet die Limo 5 Münzen (Patel: „Die trinkt nur Zitrone.“). Bring sie
-      Jo: Sie verrät ihre Schwäche (sie zieht ungern zurück), die Zeile steht danach im Steckbrief, die Limo ist
-      weg, und beim nächsten Duell ist Jo „analysiert“. Außerdem neu: Straßensiege bringen nur beim ersten Sieg
-      je Gegner und Tag 10 Münzen, danach 2. Das Fahrrad gibt es nicht mehr im ersten Laden, die Kartentasche
-      kostet 450, und das Remisangebot geht nicht im Clubkampf.
+- [ ] N2621. Limo für Jo und Steckbriefe: Nach dem ersten Duell mit Skater Jo spricht sie dich noch einmal an und will
+      eine Zitronenlimo. Am Kiosk von Mr. Patel kostet die Limo 5 Münzen (Patel: „Die trinkt nur Zitrone.“). Bring
+      sie Jo: Sie verrät ihre Schwäche („Rückwärts zieh ich nicht gern“), die Limo ist weg. Neu seit 15.11.2026:
+      Was Gegner verraten, steht je Gegner (bisher je Club, Jo und Sam teilten sich einen Eintrag). Im Tagebuch gibt
+      es den Abschnitt „Gegner“: „Jo (vorbereitet)“ mit der Zeile „Blinder Fleck: übersieht Rückzüge“; vor
+      dem nächsten Duell zeigt die Deckwahl dieselbe Zeile unter „Was du über den Gegner weißt“, auch ohne die Lupe
+      des Uhrmachers (mit Lupe heißt der Kasten „Was die Lupe verrät“ und nennt die Zeile nur einmal). Nach Sams
+      Runde „Todsünden“ steht Sam mit seiner Schwäche dort und Coach Delgado als „vorbereitet“. Schon geprüft
+      (Claude): Limo 5 Münzen, Patels Satz, Jos Satz, zweiter Straßensieg am selben Tag nur +2. Bitte prüfen: Ist
+      der Abschnitt „Gegner“ verständlich, und stört dich, dass „vorbereitet“ sonst noch nichts bewirkt?
 - [ ] N2628. Einmal einrichten, damit die gekaufte Grafik auch in der App bei Cloudflare ankommt (sonst siehst du dort
       weiter die farbigen Platzhalter). Am Rechner: github.com › oben rechts dein Bild › Settings › Developer settings ›
       Personal access tokens › Fine-grained tokens › „Generate new token“. Name „Grafik für Cloudflare“, Ablauf ein
@@ -75,15 +82,18 @@ Adresse mit „#abenteuer“ öffnen).
       Dann dash.cloudflare.com › Workers & Pages › `schach-von-grund-auf` › Settings › Build › „Variables and
       secrets“ › Add: Typ „Secret“, Name `GRAFIK_TOKEN`, Wert einfügen, speichern. Danach einen neuen Bau auslösen
       (oder auf meinen nächsten Push warten). Prüfen: In der Beta-App im Schach-Abenteuer siehst du echte Böden,
-      Möbel und Figuren statt farbiger Kacheln. Der Schlüssel kann nur lesen und nur dieses eine Repository.
+      Möbel und Figuren statt farbiger Kacheln; die Startkarte lädt dann „Spiel herunterladen“ mit etwa 45 MB.
+      Der Schlüssel kann nur lesen und nur dieses eine Repository.
 - [ ] N2629. Schach-Abenteuer mit echter Grafik (nach N2628, Beta-App): Maple Falls mit Möbeln, Figuren laufen mit
-      Animation, im Dialog bewegt das Porträt beim Sprechen die Lippen, Fenster und Knöpfe haben Pixelrahmen in Navy
-      und Gold. Sag, was dir nicht gefällt (Figur, Möbel, Farbe der Rahmen); alles schnell änderbar. Hinweis: Die
+      Animation, im Dialog steht das Porträt neben dem Namen und bewegt beim Sprechen die Lippen (in Erinnerungen
+      der junge Ambrose), Fenster und Knöpfe haben Pixelrahmen in Navy und Gold. Sag, was dir nicht gefällt (Figur, Möbel, Farbe der Rahmen); alles schnell änderbar. Hinweis: Die
       dunkelste Hautfarbe der Grafik ist nur mittelbraun; ein dunklerer Ton ist schon nachgefärbt (Okafor, Okoro,
       Nia, Odile, Marcus, Pops). Widerspruch genügt.
-- [ ] N2630. Schach960 (Zufallsschach) im Musikhaus in Port Delacroix bei der Bläserin Mabel (nach dem Wiederaufbau)
-      und bei Ambrose am Varianten-Tisch in Crossroads: Die Grundreihe ist gemischt; zur Rochade tippst du erst den
-      König an, dann den eigenen Turm. Die Engine spielt mit; Varianten zählen nicht für Nadeln oder Wertung.
+- [ ] N2630. Schach960 (Zufallsschach) bei der Bläserin Mabel, die nach dem Wiederaufbau vor dem Musikhaus in Port
+      Delacroix steht, und bei Ambrose am Varianten-Tisch in Crossroads. Schon geprüft (Claude, 15.11.2026): Mabel
+      erklärt die Regeln, das erste Set startet mit gemischter Grundreihe, ungewertet; am Varianten-Tisch startet
+      „Schach960 gegen Ambrose“. Offen für dich: Zur Rochade tippst du erst den König an, dann den eigenen Turm;
+      klappt das auf dem Handy? Die Engine spielt mit; Varianten zählen nicht für Nadeln oder Wertung.
 - [ ] N2602. Partie auswerten, in der Zeitleiste eine Fehlerkarte (oder die erste klare Abweichung) suchen: Unter „Besser
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
@@ -1114,23 +1124,33 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       Klicken weiter, wenn sie von vorn beginnt (nach etwa 1 bis 2 Minuten)? Rauscht der Wasserfall
       ohne Bruch? Hört die Musik nach einer Erinnerung (Archiv in Cedar Creek) auf, statt sich zu
       wiederholen? Rückmeldung etwa „N2631 ok“ oder „N2631: Klick beim Wasserfall“.
-- [ ] N2632. **Spiel mit dem Daumen, hoch und quer (14.11.2026):** Im Abenteuer herumlaufen, dann
-      das Handy quer drehen: Steuerkreuz links unten halb durchsichtig, rechts Aktionsknopf und
-      runde Knöpfe für Tagebuch, Übungspartie, Reisen und Menü. Wieder hoch drehen: nichts darf
-      verloren gehen. Im Menü „Steuerkreuz links“ wählen und prüfen, ob es sich mit einer Hand gut
-      spielt. Eine Partie quer: Brett links in voller Höhe, rechts Porträt, Uhren, Karten und Knöpfe.
-      Erreichst du alles mit dem Daumen? Rückmeldung etwa „N2632 ok“ oder „N2632: Menü zu weit oben“.
+- [ ] N2632. **Spiel mit dem Daumen, hoch und quer (14.11.2026):** Hochkant steht das Steuerkreuz rechts unten und
+      der Aktionsknopf („Ansehen“, „Sprechen“) links; im Spielmenü lässt sich „Steuerkreuz links, Aktionsknopf
+      rechts“ wählen. Im Abenteuer herumlaufen, dann das Handy quer drehen: Steuerkreuz links unten halb
+      durchsichtig, rechts Aktionsknopf und runde Knöpfe für Tagebuch, Übungspartie, Reisen und Menü. Wieder hoch
+      drehen: nichts darf verloren gehen. Spielt es sich mit einer Hand gut, in beiden Lagen des Steuerkreuzes? Eine
+      Partie quer: Brett links in voller Höhe, rechts Porträt, Uhren, Karten und Knöpfe. Erreichst du alles mit dem
+      Daumen? Rückmeldung etwa „N2632 ok“ oder „N2632: Menü zu weit oben“.
 - [ ] N2633. **Farben, Pixelknöpfe und Brettstile (14.11.2026):** Navy, Pergament und Gold überall,
       Knöpfe im Pixelrahmen, Überschriften in Pixelschrift. Das Brett hat je Ort ein eigenes Aussehen
-      (Dachboden altes Holz, Schulclub grünes Vinyl, Riverton Steintisch …). Ein Rätsel lösen: Die
-      Aufgabe steht auf Pergament, Ambrose antwortet in einer Sprechblase, der Fortschritt ist eine
-      Reihe kleiner Figuren. Gefällt dir das, ist etwas schwer lesbar? Rückmeldung etwa „N2633 ok“.
+      (Dachboden altes Holz, Schulclub grünes Vinyl, Riverton Steintisch …). Über der Partie steht ein Kopf mit
+      Gegner und Ort (etwa „Ambrose / Dachboden“), unten der Knopf „Weiter“. Ein Rätsel lösen: Die Aufgabe steht
+      auf Pergament (bei Buchübungen mit ihrer eigenen Frage, etwa bei Sams erster Aufgabe „Dein Springer auf b5
+      wird vom Bauern a6 angegriffen …“), Ambrose antwortet in einer Sprechblase, der Fortschritt ist eine Reihe
+      kleiner Figuren, am Ende „Das war die Runde. N von M“. Gefällt dir das, ist etwas schwer lesbar? Rückmeldung
+      etwa „N2633 ok“.
 - [ ] N2634. **Karten aller Akte nach der Nacharbeit (15.11.2026):** Mit der Monatskarte durch
       die Orte reisen und je Ort kurz umsehen: Passen Türen innen zu außen (gleiche Seite, gleiche
       Breite)? Laufen Wege und Straßen am Kartenrand sauber in die Nachbarkarte weiter? Fällt etwas
       Unlogisches auf? Besonders neu: Zedernpfad (echter Wald), Bahnhofshalle Riverton, Lockport,
-      Crossroads, Ghost Town, Glasbrücke bei Silicon Bay. Rückmeldung je Ort genügt, etwa
-      „N2634 Lockport: Boot schwebt“.
+      Crossroads, Ghost Town, Glasbrücke bei Silicon Bay. Schon geprüft (Claude, 15.11.2026): Reisen in
+      alle 12 Städte, alle Übergänge führen auf die richtige Karte, der Held kommt vor der Tür an. Behoben:
+      Nach einer Reise (Monatskarte, Bus, Uhr) steht der Held jetzt sichtbar auf dem Ankunftsfeld, nicht
+      mehr hinter dem Wartehäuschen in Cedar Creek oder der Wartebank in der Bahnhofshalle; ein Test prüft
+      das für jede Reise. Kein Schnee mehr an der Küste (Port Delacroix, Glasbrücke). In Lockport
+      erreichst du nach der Ankunft (zu Fuß wie mit der Monatskarte am Kanalweg) das Südufer mit Gasthaus,
+      Kai, Booten und Pumpe erst über den Steg nach Imogens Tafel: So will es die Geschichte (Herbstwartung),
+      Widerspruch genügt. Rückmeldung je Ort genügt, etwa „N2634 Lockport: Boot schwebt“.
 
 ## Teil 2: Entscheiden
 

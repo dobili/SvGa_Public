@@ -31,7 +31,6 @@ function mitClub(
     nadel: null,
     aufgabenreihe: false,
     versuche: 0,
-    steckbrief: [],
   };
   return [...clubs.filter((c) => c.kennung !== kennung), aenderung(alt)];
 }

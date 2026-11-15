@@ -54,4 +54,35 @@ describe("Ankunft nach einem Übergang", () => {
     expect(ankunftsort(voll, {}, "tuer", 16)).toMatchObject({ x: 2, y: 3, aufAusloeser: true });
     expect(ankunftsort(voll, {}, "fehlt", 16)).toBeNull();
   });
+
+  it("steht nach einer Reise genau auf dem Start und schaut in dessen Richtung", () => {
+    const karte = raum([{ name: "tuer", x: 2, y: 3 }]);
+    const ebene = karte.layers[1];
+    const mitStart: Tiledkarte = {
+      ...karte,
+      layers: [
+        karte.layers[0] ?? {},
+        {
+          ...ebene,
+          objects: [
+            ...(ebene?.objects ?? []),
+            {
+              name: "start",
+              type: "ausloeser",
+              x: 16,
+              y: 16,
+              properties: [{ name: "richtung", value: "rechts" }],
+            },
+          ],
+        },
+      ],
+    };
+    expect(ankunftsort(mitStart, {}, "start", 16)).toEqual({
+      x: 1,
+      y: 1,
+      richtung: "rechts",
+      aufAusloeser: false,
+    });
+    expect(ankunftsort(karte, {}, "start", 16)).toBeNull();
+  });
 });

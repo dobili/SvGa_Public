@@ -153,3 +153,44 @@ test("Figuren sperren: der Held läuft nicht durch Skater Jo", async ({ page }) 
   await page.keyboard.up("ArrowUp");
   await expect(kachel).toHaveText(vorher ?? "");
 });
+
+test("Steckbrief je Gegner: Jos Schwäche ohne Lupe in Tagebuch und Deckwahl (N2621)", async ({
+  page,
+}) => {
+  // Nach der Limo: Jo hat Zeile 0 freigeschaltet und ist analysiert, eine Lupe gibt es nicht.
+  const stand = {
+    ...STAND,
+    figuren: [
+      {
+        kennung: "mapleFalls.skaterJo",
+        abgelenkt: null,
+        analysiert: true,
+        dialogvariablen: {},
+        steckbrief: [0],
+      },
+    ],
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-tagebuchknopf").click();
+  const akten = page.getByTestId("abenteuer-gegnerakten");
+  await expect(akten).toContainText("Jo (vorbereitet)");
+  await expect(akten).toContainText("Rückzüge");
+  await page.getByRole("button", { name: "Schließen" }).click();
+  await page.getByTestId("abenteuer-aktion").click();
+  const deckwahl = page.getByTestId("abenteuer-deckwahl");
+  for (let i = 0; i < 20 && !(await deckwahl.isVisible()); i++) {
+    const weiter = page.locator(".abenteuer-dialog-weiter");
+    const wahl = page.locator(".abenteuer-dialog-wahlen button").first();
+    if (await wahl.isVisible()) await wahl.click();
+    else if (await weiter.isVisible()) await weiter.click();
+    else await page.waitForTimeout(100);
+  }
+  const kasten = page.getByTestId("abenteuer-lupe");
+  await expect(kasten).toContainText("Was du über den Gegner weißt");
+  await expect(kasten).toContainText("Rückzüge");
+});

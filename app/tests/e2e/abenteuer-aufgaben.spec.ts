@@ -95,6 +95,8 @@ test("Aufgabenrunde von Sam: weitermachen, durchspielen, Ergebnis in der Stadt",
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 3", {
     timeout: 20000,
   });
+  // Die Buchübung stellt ihre eigene Frage, nicht nur „Weiß am Zug gewinnt.“ (N2614).
+  await expect(page.locator(".trainer-auftrag")).toContainText("Springer auf b5");
   await expect(page.getByRole("button", { name: "Brett drehen" })).toBeHidden();
   for (let i = 0; i < 3; i++) await loeseFalsch(page);
   await expect(page.getByTestId("abenteuer-aufgaben-ende")).toBeVisible();

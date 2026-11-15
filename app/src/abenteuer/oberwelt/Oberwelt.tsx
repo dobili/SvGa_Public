@@ -36,7 +36,7 @@ import { Laden } from "./Laden";
 import { Reisen } from "./Reisen";
 import { reiseziele } from "./reiseziele";
 import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
-import { lupenzeilen } from "./steckbrieftext";
+import { deckwahlsteckbrief } from "./steckbrieftext";
 import { Steuerkreuz } from "./Steuerkreuz";
 import type { Ausloesertreffer, Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
@@ -53,16 +53,6 @@ import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } f
 const REISEBRETT = "reisebrett";
 /** Gegenstand „Monatskarte“ (docs/spiel/11, I6): Schnellreise in besuchte Städte. */
 const MONATSKARTE = "monatskarte";
-
-/** Was die Lupe über einen Gegner verrät; leer ohne Lupe oder ohne Gegnerdaten. */
-function lupeFuer(
-  gegenstaende: readonly string[],
-  gegner: Weltdaten["daten"]["gegner"],
-  kennung: string,
-): readonly string[] {
-  const daten = gegenstaende.includes(LUPE) ? gegner.find((g) => g.kennung === kennung) : undefined;
-  return daten ? lupenzeilen(daten) : [];
-}
 
 /** Der Laden zu einer Kennung aus den Spieldaten; unbekannt → undefined (kein Fenster). */
 function ladenDaten(w: Weltdaten, kennung: string) {
@@ -235,7 +225,12 @@ export function Oberwelt() {
           groesse={deckgroesse(stand.gegenstaende)}
           sprueche={spruecheErlaubt(deckwahl.profil.rolle)}
           zeitwahl={deckwahl.zeitwahl === true}
-          steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
+          steckbrief={deckwahlsteckbrief(
+            stand,
+            welt.daten.gegner,
+            deckwahl.profil.kennung,
+            stand.gegenstaende.includes(LUPE),
+          )}
           farbeFrei={deckwahl.farbeFrei === true}
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
           ambroseFehlt={ambroseFehlt(stand.dialogvariablen)}

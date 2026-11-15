@@ -184,17 +184,21 @@ function MotivBenennen({ aufgabe }: { aufgabe: Aufgabe }) {
  * `motivAbfragen`: false, wenn der Leser nur ein Motiv übt; die Frage „Welches Motiv war es?“
  * hätte dann immer dieselbe Antwort (Wunsch des Autors R30, 23.10.2026).
  * `zusatz`: nur bei Zusatzaufgaben; der Gegnerzug wird vorgespielt, bevor der Leser zieht.
+ * `frage`: eigene Frage vor dem Ziel, etwa bei Buchübungen im Schach-Abenteuer (N2614: dort stand
+ * sonst nur „Weiß am Zug gewinnt.“); null: nur das Ziel.
  */
 export function Taktikaufgabe({
   aufgabe,
   runde,
   motivAbfragen = true,
   zusatz = null,
+  frage = null,
 }: {
   aufgabe: Aufgabe;
   runde: Runde;
   motivAbfragen?: boolean;
   zusatz?: Zusatzanzeige | null;
+  frage?: string | null;
 }) {
   useSammelstellung(aufgabe.fen, { fen: aufgabe.fen, zuege: aufgabe.loesung });
   // Im Schach-Abenteuer ohne Herkunftszeile und ohne „Freunde herausfordern“ (imSpiel.ts).
@@ -253,6 +257,7 @@ export function Taktikaufgabe({
   return (
     <>
       <p className="trainer-auftrag">
+        {frage && <>{frage} </>}
         {t(`taktiktrainer.ziel.${aufgabe.ziel}`, {
           farbe: t(aufgabe.amZug === "w" ? "farbe.w" : "farbe.b"),
         })}

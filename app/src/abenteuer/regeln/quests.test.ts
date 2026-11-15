@@ -107,6 +107,7 @@ describe("werteEreignisAus mit „Das Brett auf dem Dachboden“", () => {
       [
         { art: "steckbrief", gegner: "mapleFalls.sam", zeile: 0 },
         { art: "steckbrief", gegner: "mapleFalls.sam", zeile: 0 },
+        { art: "steckbrief", gegner: "mapleFalls.skaterJo", zeile: 0 },
         { art: "zustand", gegner: "mapleFalls.coachDelgado", analysiert: true },
         {
           art: "zustand",
@@ -120,10 +121,23 @@ describe("werteEreignisAus mit „Das Brett auf dem Dachboden“", () => {
       ],
       JETZT,
     );
-    expect(stand.clubs).toEqual([
-      { kennung: "mapleFalls", nadel: null, aufgabenreihe: false, versuche: 0, steckbrief: [0] },
-    ]);
+    // Je Gegner, nicht je Club (N2621): Sam und Jo aus Maple Falls haben je ihre eigene Zeile.
+    expect(stand.clubs).toEqual([]);
     expect(stand.figuren).toEqual([
+      {
+        kennung: "mapleFalls.sam",
+        abgelenkt: null,
+        analysiert: false,
+        dialogvariablen: {},
+        steckbrief: [0],
+      },
+      {
+        kennung: "mapleFalls.skaterJo",
+        abgelenkt: null,
+        analysiert: false,
+        dialogvariablen: {},
+        steckbrief: [0],
+      },
       {
         kennung: "mapleFalls.coachDelgado",
         abgelenkt: { faktor: 1.4, grund: "zustand.schlechtGeschlafen" },

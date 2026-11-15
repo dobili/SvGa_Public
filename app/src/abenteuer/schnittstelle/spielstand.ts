@@ -41,8 +41,6 @@ export interface Clubstand {
   readonly aufgabenreihe: boolean;
   /** Versuche gegen den Clubchef, für die sichtbare Überheblichkeit nach Niederlagen (Dokument 02, 2.7). */
   readonly versuche: number;
-  /** Freigeschaltete Steckbriefzeilen des Clubchefs (Index in Gegnerprofil.steckbrief). */
-  readonly steckbrief: readonly number[];
 }
 
 /** Zustand einer Figur der Welt, soweit er sich ändert (Gegnerzustand, Dialogfortschritt). */
@@ -51,6 +49,12 @@ export interface Figurenstand {
   /** Faktor auf die Fehlerhäufigkeit und Grund, wie Gegnerzustand; null: normal. */
   readonly abgelenkt: { readonly faktor: number; readonly grund: string } | null;
   readonly analysiert: boolean;
+  /**
+   * Freigeschaltete Steckbriefzeilen dieses Gegners (Index in Gegnerprofil.steckbrief), in der
+   * Reihenfolge des Freischaltens. Seit 15.11.2026 je Gegner statt je Club (N2621: Jo und Sam
+   * teilten sich sonst den Eintrag von Maple Falls). Fehlend: keine.
+   */
+  readonly steckbrief?: readonly number[];
   /** Ink-Variablen dieser Figur, die über Szenen hinweg gelten (etwa „begruesst“: 1). */
   readonly dialogvariablen: Readonly<Record<string, number | string | boolean>>;
 }

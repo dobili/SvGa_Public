@@ -49,7 +49,7 @@ import { Tischblase, TischblasenRahmen } from "./Tischblase";
 import { useRaetselgespraech } from "./useRaetselgespraech";
 import { useRaetselanzeige } from "./useRaetselanzeige";
 import { sprecherAusSchluessel } from "./huellentexte";
-import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
+import { buchfrage, rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
 import { testantworten } from "./testende";
 import { Raetseltest } from "./Testleiste";
 
@@ -157,6 +157,7 @@ function Runde({
                   aufgabe={aktuelle.aufgabe}
                   runde={mitProtokoll}
                   motivAbfragen={aktuelle.motivAbfragen}
+                  frage={buchfrage(aktuelle.aufgabe)}
                 />
               )}
             </div>

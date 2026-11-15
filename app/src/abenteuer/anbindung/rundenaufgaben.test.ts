@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { Taktikaufgabe } from "../../daten/trainerdaten";
 import type { Zusatzaufgabe } from "../../training/zusatzaufgaben";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
-import { rundenaufgaben } from "./rundenaufgaben";
+import { buchfrage, rundenaufgaben } from "./rundenaufgaben";
 
 const FEN = "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1";
 
@@ -108,5 +108,14 @@ describe("Thema endspiel", () => {
       endspiele: daten.aufgaben,
     });
     expect(runde.map((r) => r.art)).toEqual(["endspiel", "endspiel", "endspiel"]);
+  });
+});
+
+describe("buchfrage", () => {
+  it("gibt Abb. 1.40 ihre eigene Frage statt nur des Ziels (N2614), sonst nichts", () => {
+    expect(buchfrage(taktik("t1", "ueb:droh-ignorieren"))).toContain("Springer auf b5");
+    // Übungen ohne eigenen Satz (Kapitel 7) und Aufgaben ohne Übung behalten nur das Ziel.
+    expect(buchfrage(taktik("t2", "ueb:taktik-a02"))).toBeNull();
+    expect(buchfrage(taktik("t3", null))).toBeNull();
   });
 });

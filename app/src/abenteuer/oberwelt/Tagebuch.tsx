@@ -7,6 +7,8 @@
  * schließt es.
  * „Meine Partien“ (docs/spiel/18, Abschnitt 8): die beendeten Partien des Abenteuers, knapp, mit
  * „Ansehen“ zum Nachspielen in der Hülle; der Rückruf sichert vorher die Position des Helden.
+ * „Gegner“ (N2621): was der Leser über Gegner weiß, die freigeschalteten Steckbriefzeilen je
+ * Gegner und „vorbereitet“ für analysierte (oberwelt/steckbrieftext.ts, gegnerakten).
  * Abhängigkeiten: regeln/quests.ts, texte/texte.ts, app/blattstapel.ts, anbindung/meinePartien.ts,
  * speicher/speicher.ts (Partien der App).
  */
@@ -21,6 +23,7 @@ import { notizen } from "./notizbuch";
 import { finchKarteSichtbar } from "../regeln/finchjagd";
 import { FinchKarte } from "./FinchKarte";
 import { EigeneSeiten } from "./Tagebuchseite";
+import { gegnerakten } from "./steckbrieftext";
 
 export function Tagebuch({
   stand,
@@ -105,6 +108,7 @@ export function Tagebuch({
           })}
         </ul>
       )}
+      <Gegnerliste stand={stand} daten={daten} />
       {finchKarteSichtbar(stand.funde, stand.dialogvariablen) && (
         <FinchKarte gefunden={stand.funde} fundeDaten={daten.funde} />
       )}
@@ -131,6 +135,35 @@ export function Tagebuch({
         {tSpiel("tagebuch.schliessen")}
       </button>
     </section>
+  );
+}
+
+/** Die Gegner, über die der Leser etwas weiß, je mit ihren Steckbriefzeilen. */
+function Gegnerliste({ stand, daten }: { stand: Abenteuerstand; daten: Spieldaten }) {
+  const akten = gegnerakten(stand, daten.gegner);
+  return (
+    <>
+      <h3>{tSpiel("tagebuch.gegner")}</h3>
+      {akten.length === 0 ? (
+        <p>{tSpiel("tagebuch.keineGegner")}</p>
+      ) : (
+        <ul data-testid="abenteuer-gegnerakten">
+          {akten.map((a) => (
+            <li key={a.kennung}>
+              <strong>{a.name}</strong>
+              {a.analysiert && <> ({tSpiel("tagebuch.analysiert")})</>}
+              {a.zeilen.length > 0 && (
+                <ul>
+                  {a.zeilen.map((z) => (
+                    <li key={z}>{z}</li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 

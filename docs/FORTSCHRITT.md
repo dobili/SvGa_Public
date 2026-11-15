@@ -1,3 +1,20 @@
+Stand: 15.11.2026 nachmittags (Haupt-Chat, Schach-Abenteuer): **Runde „vorarbeiten“ abgeschlossen.**
+
+- Funktionstests vom Hauptchat (20 bestanden, 3 Fehler behoben), Prüfmappe für das Tablet (offline,
+  Karten, Roman, Entscheiden) im Scratchpad tag/mappe (bau.py).
+- Neue Prüfungen: Ausrichtung (10.78), Sprache (`pipeline.abenteuer.sprache`), Stimmung je
+  Redezeile, Ambroses Namensregel, Reiseankünfte, jede Karte mit Weg ins Spiel, axe.
+- RO11 (Lernkarten aus Lektionen), RO21 (kein Schnee an der Küste), RO15 (größere Karten, sieben
+  fehlende Motive), Capital/Ghost-Town-Laden/Ironwood-Gleise, Ring im Süden aufgelöst.
+- Balance (Bericht im Scratchpad vor/balance): Vorrunde Schwelle 2 mit Pause, Wards Ablenkung,
+  Gegner rechnen mit max(E, A − 200), R40 neu; Leistung (Speicherleck, WebP, Kartenwechsel 0,2 s);
+  Einstieg für Kinder (Zielhinweis, Tippschritt, leichte erste Lektion, Aufgaben ohne Fachzahlen).
+- Veröffentlichung: docs/spiel/31_Veroeffentlichung.md; Fragen RO24. Zur Revision: RO23, RO25, RO26.
+
+**Nächster Schritt:** Notizen des Autors aus der Prüfmappe einarbeiten (Text im Chat); Gerätetests
+(RO24 Punkt 7); Bildwünsche nach seiner Wahl einbauen; Leistung: Musik erst beim Abspielen laden,
+Möbel als Atlas je Ort; Untertitel für Töne.
+
 Stand: 15.11.2026 früh (Haupt-Chat, Schach-Abenteuer): **Nachtlauf mit Helfern abgeschlossen.**
 
 - Bedienung und Farben nach `docs/spiel/30_Bedienung_und_Brettstile.md`: Daumenzonen, Steuerkreuz

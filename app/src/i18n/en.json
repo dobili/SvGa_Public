@@ -28,6 +28,7 @@
   "abenteuer.heldname": "You",
   "abenteuer.karteEinladung": "Travel from town to town, learn with Ambrose and challenge the chess clubs.",
   "abenteuer.karteWeiter": "Your adventure is waiting, {name}.",
+  "abenteuer.karteWeiterOhneName": "Your adventure is waiting.",
   "abenteuer.karteKnopf": "To the adventure",
   "abenteuer.karteWeiterKnopf": "Continue playing",
   "abenteuer.nameFrage": "What is your name in the game?",

@@ -40,70 +40,11 @@ Dialog, eine Partie der App, zurück. Platzhaltergrafik. Einstieg nur über die 
 sonst niemand findet: schach-von-grund-auf.com/app/#abenteuer (oder in der installierten App die
 Adresse mit „#abenteuer“ öffnen).
 
-- [ ] N2605. Adresse /app/#abenteuer öffnen: Startkarte „Schach-Abenteuer“ mit dem Knopf „Spiel herunterladen“. Tippen:
-      Balken läuft, dann steht „Spielen“ da (das Paket ist im Prototyp unter 1 MB; echte Grafik und Musik kommen später).
-      Flugmodus an, App neu laden, wieder /app/#abenteuer: „Spielen“ steht sofort da, ohne Laden.
-- [ ] N2606. „Spielen“: Ein Dachboden aus farbigen Kacheln, unten links ein Steuerkreuz. Mit dem Kreuz laufen (der blaue
-      Kasten ist der Held); Wände, Kisten und Lampe halten auf. Vor das grün-weiße Brett stellen (von unten, Blick nach
-      oben): rechts unten erscheint der runde Knopf „Ansehen“.
-- [ ] N2607. „Ansehen“: Dialogkasten unten, „Weiter“ blättert Zeile für Zeile, Antworten als Knöpfe. Ambrose erwacht und
-      gibt den „Fingerzeig“ (Karte, noch ohne Wirkung). Am Ende beginnt die Partie gegen Ambrose in der normalen
-      Partieansicht: Titel „gegen Ambrose“, unter dem Brett die gelbe Leiste „Schach-Abenteuer“. Ambrose spielt etwa auf
-      deiner Stärke (ohne Wertung wie ein Einsteiger), ohne Spielhilfen, ungewertet.
-- [ ] N2608. Partie zu Ende spielen (oder aufgeben): Unter der Auswertung steht „Zurück zur Stadt“. Tippen: zurück auf den
-      Dachboden, oben eine Karte „Gewonnen/Verloren gegen Ambrose“ mit Zugzahl; „Weiter“ schließt sie. Die Partie steht
-      zusätzlich in der Partienliste der App.
-- [ ] N2609. Mitten in der Partie über „Spielen“ in der Leiste unten weggehen, dann /app/#abenteuer: Die Welt öffnet sich
-      ohne Startkarte, darüber die Karte „Deine Partie läuft noch“ mit „Weiterspielen“ (führt in dieselbe Partie) und
-      „Partie aufgeben und in der Stadt bleiben“. Die Startkarte siehst du nur noch ohne Spielstand oder ohne Paket.
-- [ ] N2610. Android-Zurück-Taste im Dialog schließt nur den Dialog; außerhalb führt sie aus dem Spiel. Beim Verlassen und
-      Zurückkommen steht der Held dort, wo du ihn verlassen hast.
-- [ ] N2611. Profil › Einstellungen › Deine Daten › Sicherung: Die Sicherung enthält jetzt den Spielstand (Format 11);
-      nach „Alle Daten löschen“ ist auch das Paket weg und die Startkarte zeigt wieder „Spiel herunterladen“.
-- [ ] N2612. Im Abenteuer eine ganze Partie gegen Ambrose nach mindestens 11 Zügen verlieren (etwa aufgeben, nachdem du
-      eine Figur eingestellt hast): Auf der Ergebniskarte erscheint erst „Ambrose sieht sich die Partie an …“, nach ein
-      paar Sekunden „Hier ist es passiert, in Zug N“ mit dem Knopf „Noch einmal von Zug N“. N liegt vor deinem groben
-      Fehler. Tippen: Eine neue Partie beginnt in der Stellung von damals, mit derselben Farbe. Gibst du sie wieder
-      verloren, kommt kein zweites Angebot. Verlierst du in weniger als 11 Zügen oder stand es schon lange schlecht,
-      kommt gar kein Angebot (nur „Weiter“).
-- [ ] N2613. Vom Wohnzimmer durch die Haustür nach draußen und wieder hinein, von draußen in die Schule und zurück, in
-      den Park und zurück, vom Wohnzimmer über die Treppe auf den Dachboden und zurück: Jeder Weg führt auf die richtige
-      Karte, der Held steht in der Tür und löst sie erst aus, wenn er sie verlässt und wieder betritt.
-- [ ] N2614. Nach der ersten Partie ins Wohnzimmer, zur Haustür hinaus, in die Schule, mit Coach Delgado und dann mit Sam
-      sprechen, bis Sam seine Aufgaben stellt: Die App zeigt „Aufgaben von Sam“ im gewohnten Trainerrahmen (Aufgabe x
-      von n), zuerst die Buchübung „Drohung ignoriert?“ (Abb. 1.40), dann Hängeaufgaben. Am Ende „Runde fertig“ und
-      „Zurück zur Stadt“; im Clubraum erscheint „Aufgaben bestanden: … Punkten“ (ab 70 Prozent) oder „Das reicht noch
-      nicht“ mit „Noch eine Runde, eine Stufe leichter“. Im Tagebuch rückt die Quest „Das vierte Brett“ einen Schritt
-      weiter. Die Runde steht auch in der App unter Trainer › Taktik als gespielte Runde.
-- [ ] N2615. Spielmenü (☰) › „Von vorn beginnen“ › „Ja, von vorn“: zurück auf die Startkarte, dort das Feld „Wie heißt du im
-      Spiel?“. Einen Namen eintippen (etwa „Kim“), „Spielen“: Ambrose spricht dich im Dialog mit diesem Namen an. Im
-      Spielmenü steht der Name im Feld; ändern und „Namen speichern“ wirkt sofort. Leer gelassen heißt der Held „Du“.
 - [ ] N2616. Tagebuch im Abenteuer: Unter den offenen Aufgaben steht „Deine Spielstärke im Abenteuer: N“; N ist beim Start
       deine Wertung der App (klassisch) oder 600 ohne Wertung. Nach einer ganzen Partie gegen Ambrose ohne Flüstern oder
       Mentor-Zug ändert sich N (Sieg etwa +25 bei gleich starkem Gegner); nach einer Partie mit Vorgabe oder einem
       Wiedereinstieg nicht. Verlierst du zweimal gegen den Coach, steht in der dritten Partie unter dem Brett in der
       gelben Leiste „Coach Delgado ist überheblich geworden.“, und er spielt spürbar lockerer (mehr Fehler).
-- [ ] N2617. Seite „Spielen“ (unten in der Leiste): Unter den Kacheln steht die Karte „Schach-Abenteuer“ mit „Zum
-      Abenteuer“; sie führt auf die Startkarte des Spiels. Hast du schon einen Spielstand, heißt sie „Dein Abenteuer
-      wartet, {Name}.“ mit „Weiterspielen“. Aus einer Abbildung oder eigenen Stellung heraus fehlt die Karte.
-- [ ] N2618. Neues Spiel beginnen und im Park (Maple Falls) zum Kiosk mit der Markise laufen, „Ansehen“: Mr. Patel
-      begrüßt dich, danach öffnet sich „Patels Kiosk“ mit Preisen. Oben rechts in der Welt stehen deine Münzen (am
-      Anfang 0, also ist alles gesperrt). Münzen gibt es für Siege gegen Straßengegner, bestandene Aufgabenrunden, die
-      erste Clubnadel und die Kiste am Flussweg; mit genug Münzen ist eine Karte kaufbar, und dauerhafte Karten wie das
-      Gefahrenradar gibt es nur einmal. Auf der Landstraße (Ortsausgang rechts im Park, erst nach dem Gespräch über die
-      Fahrt nach Cedar Creek offen) liegt ein Fund im Busch; er steht danach im Tagebuch unter „Funde“.
-- [ ] N2619. Bedenkzeit und Sprüche: Im Park zu Skater Jo (Halfpipe) und „Abgemacht.“ wählen. Vor der Partie
-      erscheint „Karten für die Partie“ mit der neuen Zeile „Bedenkzeit“: Ohne Uhr, Schnellschach 10 + 5, Blitz 3 + 2.
-      Blitz wählen: Die Partie hat eine Uhr mit 3:00. Mit Uhr gerät Jo in Zeitnot und spielt dann schwächer; das
-      kostet keine Nadel. Die Wahl gibt es bei Clubkämpfen und Straßengegnern; der Schaffner spielt immer 3 + 2,
-      Gus immer 10 + 5. Neu sind drei Sprüche statt „Zeitbonus“, die der Held selbst sagt: „Kühler Kopf“ (+2 Minuten
-      für dich, vom Schaffner nach dem ersten Sieg), „Grübelfalle“ (der Gegner verliert eine Minute, von Slick im
-      Wohnwagen) und „Großes Maul“ (der Gegner spielt fünf Züge wie in Zeitnot, seine Uhr bleibt gleich; vom Weg
-      nach Ironwood). Sprüche gehen nur gegen Straßengegner, nie im Clubkampf; Zeitkarten nur mit Uhr. Beim ersten
-      Spruch erklärt Ambrose: „Am Brett eines Clubs schweigt man, im Park redet man.“ Der Gegner antwortet mit einer
-      eigenen Zeile; Rosa und Mr. Harlan sind gegen manche Sprüche immun („lässt sich nicht beirren“), die Karte ist
-      dann trotzdem weg. Nebenbei behoben: Die Stellungsduelle aus Buchabbildungen (Jo, Rosa, Nia, Schaffner, Harlan,
-      Gus) starteten bisher gar nicht, man stand nach „Los“ wieder in der Welt.
 - [ ] N2620. Neue Karten (16 Stück): In den Läden gibt es jetzt auch Ablenkung (Spruch, 10 Münzen) und Röntgenblick
       (Kiosk Maple Falls), Waage, Schmeichelei und Remisangebot (Zeitungsstand Riverton), Auszeit, Was droht? (60) und die
       Kartentasche für 450 Münzen (Eisenwaren Ironwood; danach passen vier Karten ins Deck). Werkzeugkarten nutzen die
@@ -126,31 +67,6 @@ Adresse mit „#abenteuer“ öffnen).
       weg, und beim nächsten Duell ist Jo „analysiert“. Außerdem neu: Straßensiege bringen nur beim ersten Sieg
       je Gegner und Tag 10 Münzen, danach 2. Das Fahrrad gibt es nicht mehr im ersten Laden, die Kartentasche
       kostet 450, und das Remisangebot geht nicht im Clubkampf.
-- [ ] N2622. Erinnerungen: In Cedar Creek (Archiv, Programmheft), Riverton (große Uhr in der Bahnhofshalle) und
-      Ironwood (Vitrine im Museum) rätst du jetzt die echten Partien Zug für Zug: Paulsen gegen Morphy (New York
-      1857, ab Zug 13 mit Schwarz), die Unsterbliche Partie (London 1851, ab Zug 17 mit Weiß) und Bird gegen
-      Morphy (1858, ab Zug 17 mit Schwarz). Geschafft ab der Hälfte der Züge. In Riverton führt die Uhr zuerst
-      in die Erinnerung selbst: London in Sepia, du läufst als junger Ambrose über den Strand ins Kaffeehaus
-      (ohne Tagebuch und Münzen), am Schachtisch beginnt das Raten, die Uhr im Kaffeehaus bringt dich zurück.
-- [ ] N2623. Lupe des Uhrmachers: Gewinne dreimal gegen Mr. Harlan (Bahnhofshalle Riverton); beim nächsten Gespräch
-      schenkt er dir seine Lupe (Quest „Die Lupe des Uhrmachers“; im Laden gibt es sie nicht). Danach erscheint vor
-      jeder Partie in „Karten für die Partie“ der Abschnitt „Was die Lupe verrät“: zwei Zeilen aus dem Steckbrief
-      des Gegners (Stil, Schwäche, blinder Fleck oder Lieblingseröffnung) und die Sprüche, die bei ihm verpuffen.
-      Neu ist auch die Karte „Farbwahl“ (Kiosk, 10 Münzen): Wo die Farbe sonst ausgelost wird, wählst du Weiß
-      oder Schwarz selbst.
-- [ ] N2624. Monatskarte (Zeitungsstand Riverton, 80 Münzen): Draußen erscheint unter „Tagebuch“ der Knopf „Reisen“.
-      Er listet alle Städte, die du schon besucht hast (nicht die aktuelle); ein Tipp bringt dich an den Anfang
-      der Stadt, ohne die Wege zu laufen. In Häusern und Erinnerungen gibt es den Knopf nicht.
-- [ ] N2625. Mamas Turnierheft: Nach dem Foto (erster Besuch bei Oma Ruth in Ironwood) gibt sie dir beim zweiten
-      Besuch Mamas blaues Turnierheft. Danach steht im Tagebuch ganz unten „Mamas Turnierheft“ mit deinen letzten
-      fünf Partien (neueste zuerst): Gegner, Ausgang und bis zu drei Wendepunkte („Zug 12.: Sxe5, besser war Ld3“).
-- [ ] N2626. Reisebrett (Eisenwaren Ironwood, 100 Münzen; laut Bibel schenkt Juno es später in Akt 3): Überall, auch
-      in Häusern, erscheint links der Knopf „Übungspartie“. Er startet eine freie Partie gegen Ambrose mit Wahl der
-      Bedenkzeit und Karten; sie zählt für die Partienliste und deine Abenteuerwertung, nicht für Nadeln.
-- [ ] N2627. Porträts: In jedem Dialog steht links neben dem Namen der sprechenden Figur jetzt ein kleines
-      Pixel-Porträt (60 Figuren, selbst erzeugt, frei verwendbar). In Erinnerungen (London) zeigt Ambrose sein junges
-      Gesicht. Sag, welche Figur anders aussehen soll (Haar, Hautton, Kleidung, Brille, Bart); das ist schnell
-      geändert.
 - [ ] N2628. Einmal einrichten, damit die gekaufte Grafik auch in der App bei Cloudflare ankommt (sonst siehst du dort
       weiter die farbigen Platzhalter). Am Rechner: github.com › oben rechts dein Bild › Settings › Developer settings ›
       Personal access tokens › Fine-grained tokens › „Generate new token“. Name „Grafik für Cloudflare“, Ablauf ein

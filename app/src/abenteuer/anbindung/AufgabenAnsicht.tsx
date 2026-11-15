@@ -24,7 +24,6 @@
  * den Buchübungen der App vorbehalten und kommt hier noch nicht vor.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useNavigation } from "../../app/navigationsKontext";
 import { ladeZusatzaufgaben } from "../../daten/laden";
 import { ladeEndspiele, ladeFallen, ladeStrukturen, ladeTaktik } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
@@ -40,7 +39,7 @@ import { Taktikaufgabe } from "../../ui/trainer/Taktikaufgabe";
 import { useRunde, type Runde } from "../../ui/trainer/useRunde";
 import type { Massstab } from "../../training/endspieltrainer";
 import { rundenBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
-import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
+import { useZurWelt } from "./zurWelt";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { ErinnerungsRunde } from "./ErinnerungsRunde";
@@ -170,13 +169,13 @@ function Runde({
 }
 
 function ZurueckKnopf() {
-  const { navigiere } = useNavigation();
+  const zurWelt = useZurWelt();
   return (
     <button
       type="button"
       className="knopf-haupt"
       data-testid="abenteuer-aufgaben-zurueck"
-      onClick={() => navigiere({ bildschirm: "zusatz", kennung: ANSICHT_ABENTEUER })}
+      onClick={zurWelt}
     >
       {tSpiel("huelle.weiter")}
     </button>

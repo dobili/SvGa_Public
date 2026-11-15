@@ -342,7 +342,9 @@ export function Oberwelt() {
           beiSchliessen={() => setzeMeldung(null)}
         />
       )}
-      {ergebnis && (
+      {/* Erst mit geladener Welt: Der Name des Gegners kommt aus ihren Daten; vorher stand kurz
+          „Gewonnen gegen !“ da (Funktionstest N2608, 15.11.2026). */}
+      {ergebnis && welt && (
         <Partieergebniskarte
           ergebnis={ergebnis}
           gegner={partie.gegnername(ergebnis)}

@@ -1090,3 +1090,10 @@ Glasbrücke der Matschsaum. Port Delacroix bekommt auf der Außenkarte das vorha
 Regentropfen als Teilchen, Pfützen und nass glänzendes Pflaster, Raureif auf Glas in Silicon Bay.
 Die Raststätte auf dem Weg von Ironwood bleibt im Winter (nahe Ironwood, „Abfahrt im Schnee“).
 Szenen neu gebaut (kartenbau), Hintergründe im privaten Repository neu gezeichnet (kartenbild).
+
+Funktionstests vom Hauptchat übernommen (Wunsch des Autors, 15.11.2026): N2605–N2615, N2617–N2619
+und N2622–N2627 im Browser mit echter Grafik nachgespielt und bestanden; dabei behoben: Zurück aus
+der Welt führte nach einer Partie oder Runde in die beendete Ansicht zurück (N2610), die
+Ergebniskarte zeigte kurz „Gewonnen gegen !“ (N2608), ohne Namen stand „Dein Abenteuer wartet,
+Du.“ (N2617). Beim Autor bleiben die Geschmacks- und iPhone-Punkte (N2629, N2631–N2634) sowie die
+nur teilweise prüfbaren N2616, N2620, N2621, N2628, N2630.

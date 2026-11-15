@@ -15,6 +15,7 @@ import { t } from "../../i18n/sprache";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { useAbenteuerstand } from "./dienste";
 import { useEffect, useState } from "react";
+import { weiterText } from "./abenteuerkartentext";
 import { beiPaketAenderung, paketzustand } from "../paket/paketlader";
 
 export function Abenteuerkarte() {
@@ -27,11 +28,7 @@ export function Abenteuerkarte() {
   return (
     <section className="karte abenteuer-karte-spielen" data-testid="abenteuer-karte">
       <h2 className="karte-titel">{t("abenteuer.titel")}</h2>
-      <p>
-        {stand
-          ? t("abenteuer.karteWeiter", { name: stand.held.name })
-          : t("abenteuer.karteEinladung")}
-      </p>
+      <p>{stand ? weiterText(stand.held.name) : t("abenteuer.karteEinladung")}</p>
       <button
         type="button"
         className="knopf-haupt"

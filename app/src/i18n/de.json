@@ -28,6 +28,7 @@
   "abenteuer.heldname": "Du",
   "abenteuer.karteEinladung": "Reise von Stadt zu Stadt, lerne mit Ambrose und fordere die Schachclubs heraus.",
   "abenteuer.karteWeiter": "Dein Abenteuer wartet, {name}.",
+  "abenteuer.karteWeiterOhneName": "Dein Abenteuer wartet.",
   "abenteuer.karteKnopf": "Zum Abenteuer",
   "abenteuer.karteWeiterKnopf": "Weiterspielen",
   "abenteuer.nameFrage": "Wie heißt du im Spiel?",

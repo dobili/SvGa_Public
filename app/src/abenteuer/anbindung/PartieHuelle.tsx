@@ -22,7 +22,6 @@
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
-import { useNavigation } from "../../app/navigationsKontext";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie } from "../../spiel/partie";
@@ -33,7 +32,7 @@ import { passendeErweiterungen } from "../../ui/komponenten/partie/partieerweite
 import { useLeserzug } from "../../ui/komponenten/partie/useLeserzug";
 import { usePartie, type Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
 import { partieBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
-import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
+import { useZurWelt } from "./zurWelt";
 import { tSpiel } from "../texte/texte";
 import { Gegnerbild } from "./Gegnerbild";
 import { Huelle } from "./Huelle";
@@ -126,13 +125,13 @@ function Spielfuss({ s, gegner }: { s: Partiesteuerung; gegner: string }) {
 
 /** Der eine Weg zurück: in die Oberwelt, die das Ergebnis liest und ihre Karte zeigt. */
 function Weiterknopf() {
-  const { navigiere } = useNavigation();
+  const zurWelt = useZurWelt();
   return (
     <button
       type="button"
       className="knopf-haupt"
       data-testid="partie-zurueck-zur-stadt"
-      onClick={() => navigiere({ bildschirm: "zusatz", kennung: ANSICHT_ABENTEUER })}
+      onClick={zurWelt}
     >
       {tSpiel("huelle.weiter")}
     </button>

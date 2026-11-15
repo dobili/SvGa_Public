@@ -8,8 +8,9 @@ Stand: 16.11.2026 nachts (Haupt-Chat, Schach-Abenteuer): **Notizen, Gemini-Bilde
   `docs/spiel/KARTENEDITOR.md`); Kartenbau und App verstehen `drehung`, `spiegeln`, `massstab`,
   `ebene` (N2635).
 
-**Nächster Schritt:** Helfer „Anordnung aller Orte“ abnehmen (84 Befunde außerhalb von Akt 1,
-Bergstation mit Plattform), danach Editor-Paket neu bauen. Wenn der Autor eine Datei in
+- Anordnung in allen Orten erfüllt (Befund im Kartenbau), Bergstation mit Plattform (RO29).
+
+**Nächster Schritt:** Rückmeldungen des Autors zu N2635/N2636, RO27 bis RO29 einarbeiten. Wenn der Autor eine Datei in
 `editor/rueck/` hochlädt: `pipeline.abenteuer.editorrueck`, Bericht auswerten, Regeln ableiten.
 Offen: Formfelder in ausrichtung/tischlage/anordnung/fahrzeuge berücksichtigen; Motelzeile (RO27),
 Fundbilder B1/B2.

@@ -195,11 +195,15 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [4, 5]
+      "feld": [4, 5],
+      "versatz": [7, 0],
+      "vorn": true
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [7, 5]
+      "feld": [7, 5],
+      "versatz": [-7, 0],
+      "vorn": true
     },
     {
       "moebel": "n7Goldader",

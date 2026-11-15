@@ -1369,7 +1369,11 @@
         0,
         0
       ],
-      "auf": "brett"
+      "auf": "brett",
+      "versatz": [
+        0,
+        5
+      ]
     },
     {
       "moebel": "fz9Deckhaus",
@@ -1441,7 +1445,11 @@
         0,
         0
       ],
-      "auf": "kapitaenstisch"
+      "auf": "kapitaenstisch",
+      "versatz": [
+        0,
+        5
+      ]
     },
     {
       "moebel": "pd7Finkenzeichen",

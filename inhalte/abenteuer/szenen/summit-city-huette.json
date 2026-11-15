@@ -69,7 +69,8 @@
     },
     {
       "moebel": "mf2SchachbrettFiguren",
-      "auf": "ward"
+      "auf": "ward",
+      "versatz": [0, 5]
     },
     {
       "moebel": "sc15OhrensesselBlickLinks",
@@ -90,7 +91,8 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "t1"
+      "auf": "t1",
+      "versatz": [0, -5]
     },
     {
       "moebel": "mf2Schachtisch",
@@ -99,7 +101,8 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "t2"
+      "auf": "t2",
+      "versatz": [0, -5]
     },
     {
       "moebel": "mf2StuhlR",

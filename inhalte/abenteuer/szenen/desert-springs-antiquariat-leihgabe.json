@@ -103,7 +103,8 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [10, 6],
-      "zu": "lesetisch"
+      "zu": "lesetisch",
+      "versatz": [8, 0]
     },
     {
       "moebel": "mfc9Wanduhr",

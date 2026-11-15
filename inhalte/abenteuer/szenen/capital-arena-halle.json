@@ -69,7 +69,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "fin"
+      "auf": "fin",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -125,7 +129,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r8_9"
+      "auf": "r8_9",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -153,7 +161,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r13_9"
+      "auf": "r13_9",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -181,7 +193,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r18_9"
+      "auf": "r18_9",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -209,7 +225,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r8_12"
+      "auf": "r8_12",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -237,7 +257,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r13_12"
+      "auf": "r13_12",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -265,7 +289,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r18_12"
+      "auf": "r18_12",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -293,7 +321,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r8_15"
+      "auf": "r8_15",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -321,7 +353,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r13_15"
+      "auf": "r13_15",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",
@@ -349,7 +385,11 @@
     },
     {
       "moebel": "ca7Brett",
-      "auf": "r18_15"
+      "auf": "r18_15",
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "ca7StuhlRechts",

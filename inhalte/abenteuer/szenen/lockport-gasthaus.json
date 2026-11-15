@@ -1,7 +1,7 @@
 {
   "karte": "lockport.gasthaus",
   "art": "innen",
-  "beschreibung": "Hauptfassung nach dem Gebäudebild (Bauernhaus breit: Giebelhaus links, niedriger, weniger tiefer Anbau rechts mit der Tür), also ein L-förmiger Gastraum, 30 × 14, petrolgrüne Wände, Dielen. Im tiefen Westteil (Giebelhaus, Spalten 1–18) an der Nordwand die Kegelbahn (Spalten 1–15) mit einem Kegelsatz am Ende, dahinter der Schacht und das gepolsterte Prallbrett am Ostende (Bahn von West nach Ost), einer niedrigen Holzbande mit Pfosten direkt an der Bahn und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Hinter dem Prallbrett in der Ecke der Kanonenofen, daneben am Anbau der Holzstapel. Der Anbau (Spalten 19–28) ist weniger tief: an seiner Nordwand das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche, Fässer in der Ecke. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor. Sechs runde Tische mit dunklen Stühlen im Westteil, fünf mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand des Anbaus bei Spalte 21, wie außen.",
+  "beschreibung": "Hauptfassung nach dem Gebäudebild (Bauernhaus breit: Giebelhaus links, niedriger, weniger tiefer Anbau rechts mit der Tür), also ein L-förmiger Gastraum, 30 × 14, petrolgrüne Wände, Dielen. Im tiefen Westteil (Giebelhaus, Spalten 1–18) an der Nordwand die Kegelbahn über die ganze Breite (Spalten 1–18) mit einem Kegelsatz am Ende, dahinter der Schacht und das gepolsterte Prallbrett am Ostende (Bahn von West nach Ost), einer niedrigen Holzbande mit Pfosten direkt an der Bahn bis unter den Kugelfang und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Der Kanonenofen steht im Anbau an der Nordwand gleich am Durchgang, der Holzstapel davor. Der Anbau (Spalten 19–28) ist weniger tief: an seiner Nordwand das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche, Fässer in der Ecke. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor. Sechs runde Tische mit dunklen Stühlen im Westteil, fünf mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand des Anbaus bei Spalte 21, wie außen.",
   "wand": "gruen",
   "boden": "dielen",
   "boeden": {
@@ -11,8 +11,8 @@
     "##############################",
     "##############################",
     "##############################",
-    "#kkkkkkkkkkkkkkk...###########",
-    "#kkkkkkkkkkkkkkk...###########",
+    "#kkkkkkkkkkkkkkkk..###########",
+    "#kkkkkkkkkkkkkkkk..###########",
     "#..................###########",
     "#............................#",
     "#............................#",
@@ -41,7 +41,7 @@
     },
     {
       "moebel": "ld11Kanonenofen",
-      "feld": [18, 2]
+      "feld": [19, 4]
     },
     {
       "moebel": "ldBild",
@@ -60,7 +60,7 @@
     },
     {
       "moebel": "ld5Kegel",
-      "feld": [15, 3],
+      "feld": [16, 3],
       "versatz": [0, 8]
     },
     {
@@ -118,6 +118,18 @@
     {
       "moebel": "ld8Kegelbande",
       "feld": [15, 5]
+    },
+    {
+      "moebel": "ld8Kegelbande",
+      "feld": [16, 5]
+    },
+    {
+      "moebel": "ld8Kegelbande",
+      "feld": [17, 5]
+    },
+    {
+      "moebel": "ld8Kegelbande",
+      "feld": [18, 5]
     },
     {
       "moebel": "ld5Theke7",
@@ -321,11 +333,11 @@
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [19, 6]
+      "feld": [19, 7]
     },
     {
       "moebel": "ld14KegelbahnEndeOst",
-      "feld": [16, 3],
+      "feld": [17, 3],
       "versatz": [0, -8]
     },
     {

@@ -1099,7 +1099,13 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "schachtisch"
+      "auf": "schachtisch",
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "rv16Schachuhr",
+      "auf": "schachtisch",
+      "versatz": [-11, -6]
     },
     {
       "moebel": "sb8Kreidespringer",
@@ -1197,7 +1203,8 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "nachspieltisch1"
+      "auf": "nachspieltisch1",
+      "versatz": [0, -4]
     },
     {
       "moebel": "rvPicknicktisch",
@@ -1206,7 +1213,8 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "nachspieltisch2"
+      "auf": "nachspieltisch2",
+      "versatz": [0, -4]
     },
     {
       "moebel": "rvPicknicktisch",
@@ -1215,7 +1223,8 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "nachspieltisch3"
+      "auf": "nachspieltisch3",
+      "versatz": [0, -4]
     },
     {
       "moebel": "rvPicknicktisch",
@@ -1224,7 +1233,8 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "nachspieltisch4"
+      "auf": "nachspieltisch4",
+      "versatz": [0, -4]
     },
     {
       "moebel": "rvPicknicktisch",
@@ -1233,7 +1243,8 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "nachspieltisch5"
+      "auf": "nachspieltisch5",
+      "versatz": [0, -4]
     }
   ],
   "ausloeser": [

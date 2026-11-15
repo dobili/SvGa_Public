@@ -2309,7 +2309,7 @@
      "id": 19,
      "name": "cc4Hocker",
      "type": "moebel",
-     "x": 256,
+     "x": 251,
      "y": 80,
      "width": 16,
      "height": 16,
@@ -2324,7 +2324,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },

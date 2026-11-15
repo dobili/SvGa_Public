@@ -82,11 +82,13 @@
     {
       "moebel": "pd6Klapptisch",
       "feld": [3, 6],
-      "id": "t3_6"
+      "id": "t3_6",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t3_6"
+      "auf": "t3_6",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
@@ -101,11 +103,13 @@
     {
       "moebel": "pd6Klapptisch",
       "feld": [3, 10],
-      "id": "t3_10"
+      "id": "t3_10",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t3_10"
+      "auf": "t3_10",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
@@ -120,11 +124,13 @@
     {
       "moebel": "pd6Klapptisch",
       "feld": [7, 6],
-      "id": "t7_6"
+      "id": "t7_6",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t7_6"
+      "auf": "t7_6",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
@@ -139,11 +145,13 @@
     {
       "moebel": "pd6Klapptisch",
       "feld": [7, 10],
-      "id": "t7_10"
+      "id": "t7_10",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t7_10"
+      "auf": "t7_10",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
@@ -162,26 +170,31 @@
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t17_6"
+      "auf": "t17_6",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
       "feld": [17, 5],
-      "zu": "t17_6"
+      "zu": "t17_6",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6StuhlRuecken",
       "feld": [17, 7],
-      "zu": "t17_6"
+      "zu": "t17_6",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6Klapptisch",
       "feld": [17, 10],
-      "id": "t17_10"
+      "id": "t17_10",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t17_10"
+      "auf": "t17_10",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
@@ -196,11 +209,13 @@
     {
       "moebel": "pd6Klapptisch",
       "feld": [21, 6],
-      "id": "t21_6"
+      "id": "t21_6",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t21_6"
+      "auf": "t21_6",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",
@@ -215,11 +230,13 @@
     {
       "moebel": "pd6Klapptisch",
       "feld": [21, 10],
-      "id": "t21_10"
+      "id": "t21_10",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "pd6Brett",
-      "auf": "t21_10"
+      "auf": "t21_10",
+      "versatz": [0, 6]
     },
     {
       "moebel": "pd6StuhlVorn",

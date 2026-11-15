@@ -66,17 +66,20 @@
     },
     {
       "moebel": "pd6Brett",
-      "auf": "n3_6"
+      "auf": "n3_6",
+      "versatz": [0, 2]
     },
     {
       "moebel": "pd6StuhlVorn",
       "feld": [3, 5],
-      "zu": "n3_6"
+      "zu": "n3_6",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6StuhlRuecken",
       "feld": [3, 7],
-      "zu": "n3_6"
+      "zu": "n3_6",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6Tisch",
@@ -85,17 +88,20 @@
     },
     {
       "moebel": "pd6Brett",
-      "auf": "n14_6"
+      "auf": "n14_6",
+      "versatz": [0, 2]
     },
     {
       "moebel": "pd6StuhlVorn",
       "feld": [14, 5],
-      "zu": "n14_6"
+      "zu": "n14_6",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6StuhlRuecken",
       "feld": [14, 7],
-      "zu": "n14_6"
+      "zu": "n14_6",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6Tisch",
@@ -104,17 +110,20 @@
     },
     {
       "moebel": "pd6Brett",
-      "auf": "n3_10"
+      "auf": "n3_10",
+      "versatz": [0, 2]
     },
     {
       "moebel": "pd6StuhlVorn",
       "feld": [3, 9],
-      "zu": "n3_10"
+      "zu": "n3_10",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6StuhlRuecken",
       "feld": [3, 11],
-      "zu": "n3_10"
+      "zu": "n3_10",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6Tisch",
@@ -123,17 +132,20 @@
     },
     {
       "moebel": "pd6Brett",
-      "auf": "n14_10"
+      "auf": "n14_10",
+      "versatz": [0, 2]
     },
     {
       "moebel": "pd6StuhlVorn",
       "feld": [14, 9],
-      "zu": "n14_10"
+      "zu": "n14_10",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6StuhlRuecken",
       "feld": [14, 11],
-      "zu": "n14_10"
+      "zu": "n14_10",
+      "versatz": [8, 0]
     },
     {
       "moebel": "pd6Pflanze",

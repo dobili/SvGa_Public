@@ -67,12 +67,12 @@
     {
       "moebel": "rv5Brett",
       "auf": "t1",
-      "versatz": [-16, 0]
+      "versatz": [-15, 3]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t1",
-      "versatz": [16, 0]
+      "versatz": [12, 3]
     },
     {
       "moebel": "rv5StuhlVorn",
@@ -90,13 +90,13 @@
       "moebel": "rv5StuhlVorn",
       "feld": [3, 4],
       "zu": "t1",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
       "feld": [3, 6],
       "zu": "t1",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv8Holztisch",
@@ -106,12 +106,12 @@
     {
       "moebel": "rv5Brett",
       "auf": "t2",
-      "versatz": [-16, 0]
+      "versatz": [-15, 3]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t2",
-      "versatz": [16, 0]
+      "versatz": [12, 3]
     },
     {
       "moebel": "rv5StuhlVorn",
@@ -129,13 +129,13 @@
       "moebel": "rv5StuhlVorn",
       "feld": [21, 4],
       "zu": "t2",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
       "feld": [21, 6],
       "zu": "t2",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv8Holztisch",
@@ -145,12 +145,12 @@
     {
       "moebel": "rv5Brett",
       "auf": "t5",
-      "versatz": [-16, 0]
+      "versatz": [-15, 3]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t5",
-      "versatz": [16, 0]
+      "versatz": [12, 3]
     },
     {
       "moebel": "rv5StuhlVorn",
@@ -168,13 +168,13 @@
       "moebel": "rv5StuhlVorn",
       "feld": [3, 12],
       "zu": "t5",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
       "feld": [3, 14],
       "zu": "t5",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv8Holztisch",
@@ -184,12 +184,12 @@
     {
       "moebel": "rv5Brett",
       "auf": "t6",
-      "versatz": [-16, 0]
+      "versatz": [-15, 3]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t6",
-      "versatz": [16, 0]
+      "versatz": [12, 3]
     },
     {
       "moebel": "rv5StuhlVorn",
@@ -207,13 +207,13 @@
       "moebel": "rv5StuhlVorn",
       "feld": [21, 12],
       "zu": "t6",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
       "feld": [21, 14],
       "zu": "t6",
-      "versatz": [8, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "rv5Limonade",

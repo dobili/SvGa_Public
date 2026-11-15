@@ -53,11 +53,12 @@
     {
       "moebel": "cc3Schreibtisch",
       "feld": [10, 6],
-      "id": "funktisch"
+      "id": "funktisch",
+      "versatz": [8, 0]
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [10, 5],
+      "feld": [11, 5],
       "zu": "funktisch"
     },
     {
@@ -123,7 +124,7 @@
   "figuren": [
     {
       "name": "ngata",
-      "feld": [11, 5]
+      "feld": [10, 5]
     },
     {
       "name": "lucia",

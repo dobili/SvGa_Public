@@ -130,7 +130,8 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [15, 6],
-      "zu": "schreibtisch"
+      "zu": "schreibtisch",
+      "versatz": [8, 0]
     },
     {
       "moebel": "cc4Leselampe",

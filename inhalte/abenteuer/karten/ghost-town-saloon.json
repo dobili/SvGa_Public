@@ -1193,7 +1193,7 @@
      "name": "gt7Brett",
      "type": "moebel",
      "x": 138,
-     "y": 122,
+     "y": 124,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -1492,7 +1492,7 @@
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 48,
-     "y": 88,
+     "y": 82,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1501,7 +1501,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 112
+       "value": 106
       },
       {
        "name": "kollision",
@@ -1515,7 +1515,7 @@
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 64,
-     "y": 88,
+     "y": 82,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1524,7 +1524,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 112
+       "value": 106
       },
       {
        "name": "kollision",
@@ -1538,7 +1538,7 @@
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 96,
-     "y": 88,
+     "y": 82,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1547,7 +1547,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 112
+       "value": 106
       },
       {
        "name": "kollision",
@@ -1561,7 +1561,7 @@
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 112,
-     "y": 88,
+     "y": 82,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1570,7 +1570,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 112
+       "value": 106
       },
       {
        "name": "kollision",

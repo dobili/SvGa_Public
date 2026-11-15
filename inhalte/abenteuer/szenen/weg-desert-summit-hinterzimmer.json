@@ -34,32 +34,38 @@
     {
       "moebel": "cc5Tisch",
       "feld": [5, 4],
-      "id": "brett0"
+      "id": "brett0",
+      "versatz": [8, 0]
     },
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "brett0"
+      "auf": "brett0",
+      "versatz": [0, 2]
     },
     {
       "moebel": "cc5Tisch",
       "feld": [3, 6],
-      "id": "brett1"
+      "id": "brett1",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "brett1"
+      "auf": "brett1",
+      "versatz": [0, 2]
     },
     {
       "moebel": "cc5Tisch",
       "feld": [10, 5],
-      "id": "brett2"
+      "id": "brett2",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "brett2"
+      "auf": "brett2",
+      "versatz": [0, 2]
     },
     {
       "moebel": "cc4RegalA",
@@ -142,7 +148,7 @@
   "figuren": [
     {
       "name": "mags",
-      "feld": [7, 5]
+      "feld": [8, 5]
     },
     {
       "name": "ruthKeene",
@@ -188,13 +194,5 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": [
-    "einfach",
-    "klassisch",
-    "industrie",
-    "rustikal",
-    "modern",
-    "laendlich",
-    "schule"
-  ]
+  "stil": ["einfach", "klassisch", "industrie", "rustikal", "modern", "laendlich", "schule"]
 }

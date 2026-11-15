@@ -89,7 +89,7 @@
     {
       "moebel": "cc4Brett",
       "auf": "t1",
-      "versatz": [-4, 0]
+      "versatz": [0, 2]
     },
     {
       "moebel": "ld5StuhlDunkelR",
@@ -112,7 +112,7 @@
     {
       "moebel": "cc4Brett",
       "auf": "mitte",
-      "versatz": [-4, 0]
+      "versatz": [0, 2]
     },
     {
       "moebel": "ld5StuhlDunkelR",
@@ -135,7 +135,7 @@
     {
       "moebel": "cc4Brett",
       "auf": "t3",
-      "versatz": [-4, 0]
+      "versatz": [0, 2]
     }
   ],
   "ausloeser": [

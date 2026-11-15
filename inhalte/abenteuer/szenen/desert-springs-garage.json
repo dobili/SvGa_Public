@@ -58,7 +58,8 @@
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "club"
+      "auf": "club",
+      "versatz": [0, 2]
     },
     {
       "moebel": "cc4StuhlVorn",

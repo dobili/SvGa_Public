@@ -1100,7 +1100,13 @@
     },
     {
       "moebel": "rv5Brett",
-      "auf": "schachtisch"
+      "auf": "schachtisch",
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "rv16Schachuhr",
+      "auf": "schachtisch",
+      "versatz": [-11, -6]
     },
     {
       "moebel": "sb8Kreidespringer",

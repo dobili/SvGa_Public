@@ -80,54 +80,66 @@
     {
       "moebel": "sb8Bildschirmtisch",
       "feld": [3, 4],
-      "id": "t1"
+      "id": "t1",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb8Bildschirmtisch",
       "feld": [9, 4],
-      "id": "t2"
+      "id": "t2",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb8Bildschirmtisch",
       "feld": [3, 8],
-      "id": "t3"
+      "id": "t3",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb8Bildschirmtisch",
       "feld": [9, 8],
-      "id": "t4"
+      "id": "t4",
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [3, 5]
+      "feld": [3, 5],
+      "zu": "t1"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [5, 5]
+      "feld": [5, 5],
+      "zu": "t1"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [9, 5]
+      "feld": [9, 5],
+      "zu": "t2"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [11, 5]
+      "feld": [11, 5],
+      "zu": "t2"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [3, 9]
+      "feld": [3, 9],
+      "zu": "t3"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [5, 9]
+      "feld": [5, 9],
+      "zu": "t3"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [9, 9]
+      "feld": [9, 9],
+      "zu": "t4"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [11, 9]
+      "feld": [11, 9],
+      "zu": "t4"
     },
     {
       "moebel": "sb8StuhlRuecken",
@@ -242,7 +254,9 @@
     {
       "moebel": "sb8StuhlLinks",
       "feld": [4, 15],
-      "zu": "couch"
+      "zu": "couch",
+      "versatz": [-4, 0],
+      "vorn": true
     },
     {
       "moebel": "sb8Schreibtisch",
@@ -282,7 +296,8 @@
     },
     {
       "moebel": "cc4Brett",
-      "auf": "lin"
+      "auf": "lin",
+      "versatz": [-1, 4]
     },
     {
       "moebel": "sb8StuhlRuecken",

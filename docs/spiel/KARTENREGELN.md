@@ -1178,3 +1178,29 @@ Kartenbau als Befund „Ausrichtung:“ (seit 15.11.2026, vorher Hinweis); Über
 - **Sichtprüfung:** Je Befund ein Ausschnitt mit roten Rahmen; dazu jede Innenkarte als Übersicht
   ansehen, denn Sessel, die nicht zum Spieltisch schauen, Figuren hinter Bildschirmen oder Bänke
   quer zum Riesenbrett erkennt nur das Auge.
+
+### 10.79 Lage am Tisch (Wunsch des Autors, 15.11.2026)
+
+„Bretter mittig auf die Tische“, „Hocker zu weit weg vom Tresen“, „Stühle mittig vor die
+Bildschirme“, dazu allgemein: Schachuhr seitlich neben dem Brett, Tische mittig zwischen den Stühlen.
+Prüfung: `python -m pipeline.abenteuer.tischlage [--ort KENNUNG] [--privat PFAD]`, im Kartenbau als
+Befund „Tischlage:“; jeder Befund nennt den passenden `versatz`.
+
+- **Katalog:** Ein Tisch, auf dem ein Brett oder eine Uhr liegt oder an dem Stühle mit `zu` stehen,
+  trägt `platte`: das Rechteck der Tischplatte im Bild in Pixeln `[links, oben, rechts, unten]`
+  (rechts und unten ausschließlich). Dasselbe Bild hat überall dieselbe Platte. `plaetze` nennt bei
+  Tischen mit festen Plätzen die Mitten in Pixeln (Bildschirmtisch: `[16, 48]`). Stücke eines
+  Langtischs, deren Platten aneinanderstoßen, zählen als eine Platte.
+- **Brett:** Liegt ganz auf der Platte; n Bretter teilen sie längs in n gleiche Plätze, jedes liegt
+  mittig auf seinem (höchstens 2 Pixel daneben). Die Regel „auf“ des Kartenbauers setzt den Fuß auf
+  drei Fünftel der Bildhöhe; das ist auf den meisten Tischen zu hoch, der `versatz` gleicht es aus.
+- **Uhr:** Seitlich direkt neben einem Brett (gleiche Höhe, höchstens 3 Pixel Lücke), auf der Platte.
+- **Hocker:** Direkt an Tisch, Tresen oder Theke: vorn an der Vorderkante (bei Tischen mit Beinen
+  höchstens 4 Pixel unter der Platte), hinten mit dem Fuß hinter der Platte, seitlich höchstens
+  3 Pixel weg.
+- **Stühle:** Links und rechts gleich weit vom Tisch (der Tisch steht mittig), höchstens 6 Pixel weg;
+  oben und unten mittig vor ihrem Platz (passen sie nicht in gleiche Plätze, Seite an Seite mittig).
+- Gemessen wird die deckende Fläche der Bilder (mit dem privaten Paket, sonst das ganze Bild); der
+  Kartenbau prüft Hocker und Stühle deshalb nur, wenn das Paket neben dem Repository liegt.
+- Sitzt oder steht eine Figur auf dem Stuhlfeld (Figuren stehen auf Kachelmitten), wird der Tisch
+  verschoben, nicht der Stuhl.

@@ -346,6 +346,12 @@ def baue(pfad: Path) -> list[str]:
         from pipeline.abenteuer.ausrichtung import pruefe_szene
 
         befunde += [f"Ausrichtung: {b.moebel} {b.feld}: {b.text}" for b in pruefe_szene(szene, moebel)]
+        # Lage am Tisch (Regel 10.79, 15.11.2026); Hocker und Stühle nur mit dem privaten Paket.
+        from pipeline.abenteuer.tischlage import BESTAND
+        from pipeline.abenteuer.tischlage import pruefe_szene as tischlage
+
+        sitze = BESTAND[0] is not None
+        befunde += [f"Tischlage: {b.moebel} {b.feld}: {b.text}" for b in tischlage(szene, moebel, sitze)]
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
         befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")

@@ -489,7 +489,7 @@
      "name": "es15BettKopfWest",
      "type": "moebel",
      "x": 16,
-     "y": 48,
+     "y": 35,
      "width": 48,
      "height": 48,
      "rotation": 0,
@@ -498,7 +498,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 75
       },
       {
        "name": "kollision",
@@ -558,7 +558,7 @@
      "name": "es7Brett",
      "type": "moebel",
      "x": 90,
-     "y": 74,
+     "y": 76,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -580,8 +580,8 @@
      "id": 10,
      "name": "es7Kerze",
      "type": "moebel",
-     "x": 88,
-     "y": 67,
+     "x": 96,
+     "y": 65,
      "width": 16,
      "height": 16,
      "rotation": 0,

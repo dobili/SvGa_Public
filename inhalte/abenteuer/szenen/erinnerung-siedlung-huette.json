@@ -5,7 +5,7 @@
   "toenung": "sepia",
   "wand": "tapeteRosen",
   "boden": "dielen",
-  "beschreibung": "Das Zimmer über dem Laden in Ghost Town, Februar 1866 (Szene 99), 12 × 10: Dielenboden, die Wände mit einer verblassten Rosentapete (kleine rote Rosen auf Creme, eigene Wandkachel), durch das Fenster der Nachthimmel. An der Westwand das Bett, in dem Ambrose im Fieber liegt (nur angedeutet), daneben ein Stuhl und der dunkle Tisch mit dem Brett der Fernpartie und einer heruntergebrannten Kerze; an der Nordwand der Kleiderschrank, in der Nordostecke ein kleiner Kanonenofen. In der Tür in der Südwand (zur Treppe hinunter in den Laden) steht Gideon, der Schmied; der Postreiter wartet unten vor dem Haus und ist nicht zu sehen. Die Rosentapete ist bis zum Bild aus dem Wunsch ein gestreiftes Muster aus dem Paket.",
+  "beschreibung": "Das Zimmer über dem Laden in Ghost Town, Februar 1866 (Szene 99), 12 × 10: Dielenboden, die Wände mit einer verblassten Rosentapete (kleine rote Rosen auf Creme, eigene Wandkachel), durch das Fenster der Nachthimmel. In der Nordwestecke das Bett (Kopfende an der Westwand, Längsseite an der Nordwand), in dem Ambrose im Fieber liegt (nur angedeutet), daneben ein Stuhl und der dunkle Tisch mit dem Brett der Fernpartie und einer heruntergebrannten Kerze; an der Nordwand der Kleiderschrank, in der Nordostecke ein kleiner Kanonenofen. In der Tür in der Südwand (zur Treppe hinunter in den Laden) steht Gideon, der Schmied; der Postreiter wartet unten vor dem Haus und ist nicht zu sehen.",
   "zustand": ["alt", "verwittert", "gebraucht"],
   "stil": ["klassisch", "laendlich", "einfach", "rustikal"],
   "raster": [
@@ -23,7 +23,8 @@
   "objekte": [
     {
       "moebel": "es15BettKopfWest",
-      "feld": [1, 3]
+      "feld": [1, 2],
+      "versatz": [0, 3]
     },
     {
       "moebel": "es9TischDunkel",
@@ -32,17 +33,20 @@
     },
     {
       "moebel": "es7StuhlR",
-      "feld": [4, 4]
+      "feld": [4, 4],
+      "zu": "tisch"
     },
     {
       "moebel": "es7Brett",
       "feld": [0, 0],
-      "auf": "tisch"
+      "auf": "tisch",
+      "versatz": [0, 2]
     },
     {
       "moebel": "es7Kerze",
       "feld": [0, 0],
-      "auf": "tisch"
+      "auf": "tisch",
+      "versatz": [8, -2]
     },
     {
       "moebel": "es7Ofen",

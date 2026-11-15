@@ -46,6 +46,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_2.png",
       "breite": 32,
       "hoehe": 32,
+      "platte": [7, 10, 25, 24],
       "kollision": true
     },
     "holztisch": {

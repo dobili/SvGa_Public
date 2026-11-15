@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.raststaette",
   "art": "innen",
-  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit weißen Fliesen, Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, eine zwei Felder breite Öffnung mit einem Stahltisch voller Teller, durch die man in die Küche sieht, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
+  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit weißen Fliesen, Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, eine zwei Felder breite Öffnung mit einem Stahltisch voller Teller, durch die man in die Küche sieht, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei kleinen Brettern in gleichen Abständen, je ein Hocker davor und dahinter. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -145,25 +145,25 @@
       "moebel": "ld5Barhocker",
       "feld": [3, 12],
       "vorn": true,
-      "versatz": [0, -9]
+      "versatz": [0, -14]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [5, 12],
       "vorn": true,
-      "versatz": [0, -9]
+      "versatz": [0, -14]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [7, 12],
       "vorn": true,
-      "versatz": [0, -9]
+      "versatz": [0, -14]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [9, 12],
       "vorn": true,
-      "versatz": [0, -9]
+      "versatz": [0, -14]
     },
     {
       "moebel": "mf9Vorrat100",
@@ -211,47 +211,55 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "mf2SchachbrettFiguren",
+      "moebel": "ccSchachbrettKlein",
       "feld": [0, 0],
       "auf": "vtL",
-      "versatz": [6, 0]
+      "versatz": [10, -5]
     },
     {
       "moebel": "ccSchachbrettKlein",
       "feld": [0, 0],
-      "auf": "vtM1"
+      "auf": "vtM1",
+      "versatz": [-8, -5]
     },
     {
       "moebel": "ccSchachbrettKlein",
       "feld": [0, 0],
-      "auf": "vtM2"
+      "auf": "vtM2",
+      "versatz": [0, -5]
     },
     {
       "moebel": "cr7Hocker",
       "feld": [16, 14],
       "vorn": true,
-      "versatz": [0, -4]
+      "versatz": [1, -17]
     },
     {
       "moebel": "cr7Hocker",
       "feld": [18, 14],
       "vorn": true,
-      "versatz": [0, -4]
+      "versatz": [-8, -17]
+    },
+    {
+      "moebel": "cr7Hocker",
+      "feld": [19, 14],
+      "vorn": true,
+      "versatz": [-1, -17]
     },
     {
       "moebel": "cr7Hocker",
       "feld": [16, 11],
-      "versatz": [0, 6]
+      "versatz": [1, 6]
     },
     {
       "moebel": "cr7Hocker",
       "feld": [18, 11],
-      "versatz": [0, 6]
+      "versatz": [-8, 6]
     },
     {
       "moebel": "cr7Hocker",
-      "feld": [20, 11],
-      "versatz": [0, 6]
+      "feld": [19, 11],
+      "versatz": [-1, 6]
     },
     {
       "moebel": "ld5Rundtisch",
@@ -438,14 +446,7 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "klassisch",
-    "modern",
-    "rustikal",
-    "einfach",
-    "laendlich",
-    "industrie"
-  ],
+  "stil": ["klassisch", "modern", "rustikal", "einfach", "laendlich", "industrie"],
   "datei": "karten/crossroads-raststaette.json",
   "boeden": {
     "f": "fliesenWeiss"

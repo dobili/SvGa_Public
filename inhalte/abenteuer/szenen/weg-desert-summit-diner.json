@@ -105,7 +105,7 @@
     {
       "moebel": "wds6Brett",
       "auf": "tisch",
-      "versatz": [0, -2]
+      "versatz": [-10, 8]
     },
     {
       "moebel": "wds6Reifen",

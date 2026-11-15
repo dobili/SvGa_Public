@@ -56,7 +56,9 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [16, 5]
+      "feld": [16, 5],
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "iw9VitrineLokmodell",

@@ -60,7 +60,8 @@
     {
       "moebel": "gt7Brett",
       "feld": [0, 0],
-      "auf": "spiel"
+      "auf": "spiel",
+      "versatz": [0, 2]
     },
     {
       "moebel": "gt7Tisch",
@@ -118,22 +119,22 @@
     {
       "moebel": "gt7Barhocker",
       "feld": [3, 6],
-      "versatz": [0, -8]
+      "versatz": [0, -14]
     },
     {
       "moebel": "gt7Barhocker",
       "feld": [4, 6],
-      "versatz": [0, -8]
+      "versatz": [0, -14]
     },
     {
       "moebel": "gt7Barhocker",
       "feld": [6, 6],
-      "versatz": [0, -8]
+      "versatz": [0, -14]
     },
     {
       "moebel": "gt7Barhocker",
       "feld": [7, 6],
-      "versatz": [0, -8]
+      "versatz": [0, -14]
     },
     {
       "moebel": "gt7FassKlein",

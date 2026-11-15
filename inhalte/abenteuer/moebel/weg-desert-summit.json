@@ -285,6 +285,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Umbrella_Composition_16x16.png",
       "breite": 80,
       "hoehe": 80,
+      "platte": [23, 48, 37, 56],
       "kollision": true,
       "art": "tisch",
       "blick": "unten",

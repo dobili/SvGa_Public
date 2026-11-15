@@ -685,7 +685,8 @@
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "clubtisch"
+      "auf": "clubtisch",
+      "versatz": [0, 2]
     },
     {
       "moebel": "rv5Teppich",
@@ -709,7 +710,8 @@
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "clubtisch2"
+      "auf": "clubtisch2",
+      "versatz": [0, 2]
     },
     {
       "moebel": "rv5Teppich",
@@ -733,7 +735,8 @@
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "clubtisch3"
+      "auf": "clubtisch3",
+      "versatz": [0, 2]
     },
     {
       "moebel": "rv5Teppich",
@@ -757,7 +760,8 @@
     {
       "moebel": "cc4Brett",
       "feld": [0, 0],
-      "auf": "clubtisch4"
+      "auf": "clubtisch4",
+      "versatz": [0, 2]
     },
     {
       "moebel": "cc4Stehlampe",

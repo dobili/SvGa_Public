@@ -14,10 +14,8 @@ import type Phaser from "phaser";
 import { findeKarte } from "../daten/laden";
 import { appdienste } from "../modul/abenteuer";
 import { liesPaketJson } from "../paket/paketlader";
-import { mitLernkarten } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
 import { mitAppWertung } from "../regeln/wertung";
-import type { Kartensorte } from "../schnittstelle/karten";
 import type { Appdienste } from "../schnittstelle/modul";
 import type { Abenteuerstand, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
@@ -65,7 +63,10 @@ export function szeneAus(spiel: RefObject<Phaser.Game | null>) {
   return spiel.current ? szeneVon(spiel.current) : null;
 }
 
-/** Wertung A folgt der App (R2); Lernkarten für fertige Buchkapitel (docs/spiel/11, 5). */
+/**
+ * Wertung A folgt der App (R2). Lernkarten gibt es seit RO11 (15.11.2026) nur noch im Spiel selbst,
+ * als Lohn der passenden Lektion (Dialoge, docs/spiel/11, Abschnitt 5), nicht mehr für Buchkapitel.
+ */
 function useAufbaupruefungen(k: Oberweltkern): void {
   useEffect(() => {
     const aktuell = k.standRef.current;
@@ -75,26 +76,6 @@ function useAufbaupruefungen(k: Oberweltkern): void {
     // Nur beim Aufbau; danach ändert nur die Oberwelt den Stand.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const lernkartenGeprueft = useRef(false);
-  const welt = k.welt;
-  useEffect(() => {
-    const aktuell = k.standRef.current;
-    if (!welt || !aktuell || lernkartenGeprueft.current) return;
-    lernkartenGeprueft.current = true;
-    const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
-    const ergebnis = mitLernkarten(aktuell, k.dienste.fertigeKapitel(), sorten, new Date());
-    const erste = ergebnis.neu[0];
-    if (!erste) return;
-    k.schreibe(ergebnis.stand);
-    k.setzeMeldung(
-      tSpiel("karte.lernkarte", {
-        karte: tSpiel(erste.name),
-        satz: tSpiel(`karte.${erste.kennung}.geschenkt`),
-      }),
-    );
-    // Einmal je Aufbau, sobald die Welt da ist.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [welt]);
 }
 
 /** Quest-Ereignis auswerten (regeln/quests.ts) und die erste Meldung zeigen. */

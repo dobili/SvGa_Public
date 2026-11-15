@@ -340,6 +340,12 @@ def baue(pfad: Path) -> list[str]:
         befunde += pruefe_belebung(szene, ort.get("art", "stadt"), stadt, lade_texte())
         belegt = {feld: s["name"] for s in gesetzt for feld in sperrfelder(s)}
         befunde += pruefe_standorte(szene, zeilen, GESPERRT, belegt)
+    if pfad.parent.name != "varianten":
+        # Ausrichtung der Bilder (Regel 10.78): Befund, seit alle Karten nachgezogen sind
+        # (15.11.2026); Varianten zur Wahl prüft sie wie das Werkzeug ausrichtung.py nicht.
+        from pipeline.abenteuer.ausrichtung import pruefe_szene
+
+        befunde += [f"Ausrichtung: {b.moebel} {b.feld}: {b.text}" for b in pruefe_szene(szene, moebel)]
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
         befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")
@@ -356,19 +362,16 @@ def baue(pfad: Path) -> list[str]:
 
 
 def hinweise(pfad: Path) -> list[str]:
-    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65),
-    Felswände, die frei im Gelände enden (Regel 10.74), Bilder in falscher Richtung (Regel 10.78)."""
+    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65) und
+    Felswände, die frei im Gelände enden (Regel 10.74). Bilder in falscher Richtung (Regel 10.78)
+    sind seit dem 15.11.2026 ein Befund in ``baue``."""
     from pipeline.abenteuer.fahrzeuge import fahrzeughinweise
 
     szene, moebel = lade(pfad), lade_moebel()
     from pipeline.abenteuer.hoehen import hoehenhinweise
 
     fahrzeuge = fahrzeughinweise(szene, raster(szene), platziere(szene, moebel)[0], moebel)
-    # Ausrichtung der Bilder (Regel 10.78): vorerst Hinweis, bis die Karten nachgezogen sind.
-    from pipeline.abenteuer.ausrichtung import pruefe_szene
-
-    ausrichtung = [f"Ausrichtung: {b.moebel} {b.feld}: {b.text}" for b in pruefe_szene(szene, moebel)]
-    return fahrzeuge + hoehenhinweise(szene, raster(szene)) + ausrichtung
+    return fahrzeuge + hoehenhinweise(szene, raster(szene))
 
 
 def main() -> int:

@@ -897,3 +897,11 @@ Gutachten `silicon-bay-lobby-serverraum.md`.
   Bildwunsch `kaffeebecher_klein.py`) und damit niedriger als die Läden. Die Möwen auf der
   Terrasse (lasen sich als Gänse) sind weg.
 - **Alter Hafen:** Am Ostende der Hafenstraße steht der Angelladen (`sa8Angelladen`, x 55–61).
+
+## RO21 (15.11.2026): ohne Schnee
+
+Nach der Entscheidung des Autors hat Silicon Bay keinen Schnee mehr, wie die Story-Bibel sagt
+(„ohne Jahreszeit“): Die Altstadt und die Glasbrücke haben kein `"jahreszeit": "winter"` mehr;
+Schneemann, Schneewälle am Gehweg und der Matschsaum an der Autobahn sind entfernt. Kälte zeigen
+Glas, Licht und die Kleidung der Figuren. Der Weihnachtsbaum auf dem Marktplatz bleibt.
+Bildwunsch: Raureif auf Glas und Geländern, Atemwolken (offen).

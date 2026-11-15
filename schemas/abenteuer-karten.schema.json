@@ -144,12 +144,6 @@
           "enum": ["dauerhaft", "verbrauch"]
         },
         "wirkung": { "$ref": "#/$defs/wirkung" },
-        "kapitel": {
-          "description": "Lernkarte (docs/spiel/11, Abschnitt 5): wer in der App alle Übungen dieses Buchkapitels löst, bekommt die Karte im Spiel geschenkt",
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 12
-        },
         "spruch_art": {
           "description": "Ein Spruch des Helden (docs/spiel/10, S1 bis S6): nur gegen Straßengegner, nie im Club oder Turnier; Texte spruch.<kennung>.1 bis .8",
           "type": "boolean"

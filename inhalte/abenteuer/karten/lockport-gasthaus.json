@@ -2966,19 +2966,19 @@
     },
     {
      "id": 74,
-     "name": "ld14Kugelfang",
+     "name": "ld14KegelbahnEndeOst",
      "type": "moebel",
      "x": 256,
-     "y": 48,
+     "y": 40,
      "width": 32,
-     "height": 33,
+     "height": 40,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 73
+       "value": 72
       },
       {
        "name": "kollision",

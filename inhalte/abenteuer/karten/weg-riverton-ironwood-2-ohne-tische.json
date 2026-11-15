@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 350,
+ "nextobjectid": 335,
  "layers": [
   {
    "id": 1,
@@ -24720,19 +24720,19 @@
     },
     {
      "id": 324,
-     "name": "ld5Schleusentor",
+     "name": "wr15SchleusentorQuer8",
      "type": "moebel",
      "x": 32,
-     "y": 1520,
-     "width": 32,
-     "height": 48,
+     "y": 1528,
+     "width": 128,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1560
+       "value": 1552
       },
       {
        "name": "kollision",
@@ -24743,19 +24743,19 @@
     },
     {
      "id": 325,
-     "name": "ld5Schleusentor",
+     "name": "wr15SchleusentorQuer8",
      "type": "moebel",
-     "x": 64,
-     "y": 1520,
-     "width": 32,
-     "height": 48,
+     "x": 32,
+     "y": 1816,
+     "width": 128,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1560
+       "value": 1840
       },
       {
        "name": "kollision",
@@ -24766,19 +24766,19 @@
     },
     {
      "id": 326,
-     "name": "ld5Schleusentor",
+     "name": "wr15SchleusentorQuer8",
      "type": "moebel",
-     "x": 96,
-     "y": 1520,
-     "width": 32,
-     "height": 48,
+     "x": 32,
+     "y": 2104,
+     "width": 128,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1560
+       "value": 2128
       },
       {
        "name": "kollision",
@@ -24789,19 +24789,19 @@
     },
     {
      "id": 327,
-     "name": "ld5Schleusentor",
+     "name": "wr15SchleusentorQuer8",
      "type": "moebel",
-     "x": 128,
-     "y": 1520,
-     "width": 32,
-     "height": 48,
+     "x": 32,
+     "y": 2312,
+     "width": 128,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1560
+       "value": 2336
       },
       {
        "name": "kollision",
@@ -24812,19 +24812,19 @@
     },
     {
      "id": 328,
-     "name": "ld5Schleusentor",
+     "name": "wr15SchleusentorQuer8",
      "type": "moebel",
      "x": 32,
-     "y": 1808,
-     "width": 32,
-     "height": 48,
+     "y": 2456,
+     "width": 128,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1848
+       "value": 2480
       },
       {
        "name": "kollision",
@@ -24835,443 +24835,98 @@
     },
     {
      "id": 329,
-     "name": "ld5Schleusentor",
+     "name": "wc5Tor1",
      "type": "moebel",
-     "x": 64,
-     "y": 1808,
-     "width": 32,
-     "height": 48,
+     "x": 336,
+     "y": 1328,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1848
+       "value": 1336
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 330,
-     "name": "ld5Schleusentor",
+     "name": "wc5Tor2",
      "type": "moebel",
-     "x": 96,
-     "y": 1808,
-     "width": 32,
-     "height": 48,
+     "x": 352,
+     "y": 1328,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1848
+       "value": 1336
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 331,
-     "name": "ld5Schleusentor",
+     "name": "wc5Tor1",
      "type": "moebel",
-     "x": 128,
-     "y": 1808,
-     "width": 32,
-     "height": 48,
+     "x": 336,
+     "y": 1616,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1848
+       "value": 1624
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 332,
-     "name": "ld5Schleusentor",
+     "name": "wc5Tor2",
      "type": "moebel",
-     "x": 32,
-     "y": 2096,
-     "width": 32,
-     "height": 48,
+     "x": 352,
+     "y": 1616,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 2136
+       "value": 1624
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 333,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 64,
-     "y": 2096,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 334,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 96,
-     "y": 2096,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 335,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 128,
-     "y": 2096,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 336,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 32,
-     "y": 2304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 337,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 64,
-     "y": 2304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 338,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 96,
-     "y": 2304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 339,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 128,
-     "y": 2304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 340,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 32,
-     "y": 2448,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 341,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 64,
-     "y": 2448,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 342,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 96,
-     "y": 2448,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 343,
-     "name": "ld5Schleusentor",
-     "type": "moebel",
-     "x": 128,
-     "y": 2448,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 2488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 344,
-     "name": "wc5Tor1",
-     "type": "moebel",
-     "x": 336,
-     "y": 1328,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1336
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 345,
-     "name": "wc5Tor2",
-     "type": "moebel",
-     "x": 352,
-     "y": 1328,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1336
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 346,
-     "name": "wc5Tor1",
-     "type": "moebel",
-     "x": 336,
-     "y": 1616,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1624
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 347,
-     "name": "wc5Tor2",
-     "type": "moebel",
-     "x": 352,
-     "y": 1616,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1624
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 348,
      "name": "wc5Tor1",
      "type": "moebel",
      "x": 336,
@@ -25294,7 +24949,7 @@
      ]
     },
     {
-     "id": 349,
+     "id": 334,
      "name": "wc5Tor2",
      "type": "moebel",
      "x": 352,

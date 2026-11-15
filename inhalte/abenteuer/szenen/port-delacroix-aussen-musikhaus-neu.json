@@ -1208,7 +1208,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt", "kaputt"],
   "stil": ["klassisch", "rustikal", "industrie", "modern", "natur"],
-  "jahreszeit": "winter",
   "kante": "klippe",
   "fels": "gras",
   "zustand_der_karte": "musikhausOffen",

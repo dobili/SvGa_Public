@@ -17,6 +17,7 @@
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibKarte(kennung)
 
 VAR held = "Du"
 VAR wardBleibGesehen = false
@@ -35,6 +36,14 @@ VAR nadelSummitCity = 0
 VAR clubkampfSummitCityNadel = 0
 VAR kitGetroffen = false
 VAR haraldsenGetroffen = false
+// Lernkarten aus den Lektionen (kit_karte, haraldsen_karte, ward_nach_erinnerung); die hatKarte…
+// setzt die Hülle aus dem Besitz, wer eine Karte schon hat, bekommt keine zweite.
+VAR lernkarteEndspielkompass = false
+VAR lernkarteTurmregel = false
+VAR lernkartePhasenblick = false
+VAR hatKarteEndspielkompass = false
+VAR hatKarteTurmregel = false
+VAR hatKartePhasenblick = false
 
 // ---------------------------------------------------------------- Ward
 
@@ -231,6 +240,14 @@ Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und 
 Ein Turm, der hängt und hängt und nicht geschlagen werden darf, weil dahinter jedes Mal etwas Schlimmeres wartet. #sprecher:erzaehler
 * [„Das ist kein Endspiel.“]
 - Nein. Das ist ein Angriff, wie ihn sich ein Endspieler ausdenkt. Er war neunundfünfzig. #sprecher:ward #stimmung:laechelt
+{not lernkartePhasenblick:
+    ~ lernkartePhasenblick = true
+    Er wusste in jedem Zug, in welchem Teil der Partie er war, und was der von ihm wollte. Die meisten wissen es erst hinterher. #sprecher:ward #stimmung:nachdenklich
+    {not hatKartePhasenblick:
+        Sie zieht eine Karte aus dem Heft, als hätte sie dort als Lesezeichen gesteckt: drei Felder, hell, grau, dunkel. #sprecher:erzaehler
+        ~ gibKarte("phasenblick")
+    }
+}
 {ausgangSummitCityClubkampf == "":Zum ersten Mal lächelt sie.|Sie lächelt.} Es macht sie zwanzig Jahre jünger. #sprecher:erzaehler
 Achtzehnhundertfünfundneunzig. Neunundzwanzig Jahre nach mir. #sprecher:ambrose #stimmung:nachdenklich
 Ich dachte, danach hätten sie nur noch gerechnet. Brückenbauer, überall. Und sie spielen noch schöner. Schöner als wir. #sprecher:ambrose #stimmung:ueberrascht
@@ -280,8 +297,24 @@ Worauf wartest du? Ich bin vierundsechzig. Ich renne keinem mehr nach. #sprecher
     Erst zu Ward. Sie mag es nicht, wenn man an ihr vorbeiläuft. #sprecher:kit #stimmung:nachdenklich
     -> END
 - not reiheKitBestanden: -> kit_reihe
+- not lernkarteEndspielkompass: -> kit_karte
 - else: -> kit_alltag
 }
+
+// Lernkarten aus den Lektionen (RO11, 15.11.2026): Kit gibt nach ihrer Reihe (Quadrat, Opposition)
+// den Endspielkompass, Haraldsen nach seiner (Turmendspiele) die Turmregel, Ward nach Hastings 1895
+// den Phasenblick.
+=== kit_karte ===
+~ lernkarteEndspielkompass = true
+Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
+{hatKarteEndspielkompass:
+    Die Karte wollte ich dir geben. Du hast sie schon. Typisch. #sprecher:kit #stimmung:laechelt
+- else:
+    Sie gibt dir eine Karte aus der Jackentasche, die Ecken vom Wetter rund: ein König mit einer Kompassnadel. #sprecher:erzaehler
+    König raus, Freibauer zählen, Opposition. Wie beim Aufstieg: erst schauen, dann gehen. #sprecher:kit #stimmung:laechelt
+    ~ gibKarte("endspielkompass")
+}
+-> END
 
 === kit_reihe ===
 {not kitGetroffen:
@@ -313,8 +346,21 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
     Erst Kit. Bauern vor Türmen, das ist die Reihenfolge. Auch am Berg. #sprecher:haraldsen #stimmung:laechelt
     -> END
 - not reiheHaraldsenBestanden: -> haraldsen_reihe
+- not lernkarteTurmregel: -> haraldsen_karte
 - else: -> haraldsen_alltag
 }
+
+=== haraldsen_karte ===
+~ lernkarteTurmregel = true
+Die Brücke hast du gebaut. Und bist hinübergekommen. #sprecher:haraldsen #stimmung:laechelt
+{hatKarteTurmregel:
+    Eine Karte hätte ich noch. Aber die trägst du schon bei dir. Gut so. #sprecher:haraldsen #stimmung:laechelt
+- else:
+    Er stellt die polierte Turmfigur weg und reicht dir eine Karte: ein Turm hinter einem Bauern, darüber ein Seil. #sprecher:erzaehler
+    Hinter den Freibauern, auf die offene Linie. Dann schiebt er, und er hält. #sprecher:haraldsen #stimmung:laechelt
+    ~ gibKarte("turmregel")
+}
+-> END
 
 === haraldsen_reihe ===
 {not haraldsenGetroffen:

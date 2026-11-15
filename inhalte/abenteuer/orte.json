@@ -3002,6 +3002,7 @@
           "name": "ort.portDelacroix.aussen",
           "innen": false,
           "musik": "musik/port-delacroix.m4a",
+          "geraeusch": "klang/regen.m4a",
           "zustaende": {
             "musikhausOffen": "karten/port-delacroix-aussen-musikhaus-neu.json"
           }

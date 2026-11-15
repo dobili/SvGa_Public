@@ -408,3 +408,10 @@ Gutachten `docs/spiel/auftraege/gutachten/mittel-1-runde9-2.md`.
   (`pd12Lastwagen`, (34, 30)) steht am Ostrand des Marktplatzes direkt an der Hauptstraße; am Kai
   war er eingeklemmt (Sichtprüfung `gemini-fahrzeuge-teil2.md`). Fischer (53, 38) und Reiher
   stehen nördlich der Quergasse. Im Zustand `musikhaus-neu` gleich.
+
+## RO21 (15.11.2026): Regen statt Schnee
+
+Port Delacroix hat den nassen Winter der Story-Bibel ohne Schnee: Kein `"jahreszeit": "winter"` mehr
+(beide Zustände der Außenkarte, ebenso der Deich auf dem Weg von Silicon Bay); auf der Außenkarte
+läuft das Dauergeräusch `klang/regen.m4a` (Regen auf Planen, aus Riverton). Bildwunsch (offen):
+Regentropfen als Teilchen, Pfützen und nass glänzendes Pflaster als Bodenbilder.

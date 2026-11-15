@@ -22,7 +22,6 @@ import {
 } from "../schnittstelle/karten";
 import type { Ausgang, Nadelstufe } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
-import { wendeWirkungenAn } from "./quests";
 import { ambroseFehlt } from "./abwesenheit";
 
 /** Rangfolge der Nadeln (R21: beste bleibt). */
@@ -193,53 +192,6 @@ export function stufeVon(kennung: string, sorten: readonly Kartensorte[]): Karte
 /** Die Deckgröße des Lesers: 3, mit dem Gegenstand „Kartentasche“ 4 (docs/spiel/11, I2). */
 export function deckgroesse(gegenstaende: readonly string[]): number {
   return gegenstaende.includes("kartentasche") ? DECKGROESSE_MIT_TASCHE : DECKGROESSE;
-}
-
-/**
- * Lernkarten (docs/spiel/11, Abschnitt 5): Karten, deren Buchkapitel der Leser in der App
- * abgeschlossen hat und die er noch nie geschenkt bekam (Dialogvariable lernkarte<Kennung>).
- * Beispiel: Kapitel 1 fertig, Abzählen noch nicht geschenkt → [Abzählen].
- */
-export function neueLernkarten(
-  stand: Abenteuerstand,
-  fertigeKapitel: readonly number[],
-  sorten: readonly Kartensorte[],
-): readonly Kartensorte[] {
-  return sorten.filter(
-    (s) =>
-      s.kapitel !== undefined &&
-      fertigeKapitel.includes(s.kapitel) &&
-      stand.dialogvariablen[lernkartenvariable(s.kennung)] !== true,
-  );
-}
-
-/** Dialogvariable, die eine geschenkte Lernkarte merkt: „lernkarteAbzaehlen“. */
-export function lernkartenvariable(kennung: string): string {
-  return `lernkarte${kennung.charAt(0).toUpperCase()}${kennung.slice(1)}`;
-}
-
-/**
- * Schenkt alle neuen Lernkarten: Karte in den Besitz, Variable gesetzt. Ausgabe: neuer Stand und
- * die geschenkten Sorten (für die Meldung „Für Kapitel 1 im Buch: …“).
- */
-export function mitLernkarten(
-  stand: Abenteuerstand,
-  fertigeKapitel: readonly number[],
-  sorten: readonly Kartensorte[],
-  jetzt: Date,
-): { readonly stand: Abenteuerstand; readonly neu: readonly Kartensorte[] } {
-  const neu = neueLernkarten(stand, fertigeKapitel, sorten);
-  if (neu.length === 0) return { stand, neu };
-  const mitKarten = wendeWirkungenAn(
-    stand,
-    neu.map((s) => ({ art: "karte", karte: s.kennung }) as const),
-    jetzt,
-  );
-  const variablen = Object.fromEntries(neu.map((s) => [lernkartenvariable(s.kennung), true]));
-  return {
-    stand: { ...mitKarten, dialogvariablen: { ...mitKarten.dialogvariablen, ...variablen } },
-    neu,
-  };
 }
 
 /**

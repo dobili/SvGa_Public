@@ -13,6 +13,19 @@
       "zustand": "alt",
       "stil": "rustikal"
     },
+    "es15BettKopfWest": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_514.png",
+      "lauf": "waagrecht",
+      "ende": "west",
+      "varianten": {"ost": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png"},
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
     "es7Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
       "breite": 32,

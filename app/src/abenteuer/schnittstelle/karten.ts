@@ -87,8 +87,6 @@ export interface Kartensorte {
    * Straßengegner spielbar, nie im Clubkampf oder Turnier, und manche Gegner sind immun.
    */
   readonly spruch_art?: boolean;
-  /** Lernkarte: geschenkt, wenn der Leser in der App alle Übungen dieses Buchkapitels löst. */
-  readonly kapitel?: number;
 }
 
 /** Besitz einer Kartensorte im Spielstand: dauerhafte Karten zählen 1, Verbrauchskarten die Anzahl. */

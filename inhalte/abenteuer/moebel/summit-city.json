@@ -1,5 +1,27 @@
 {
   "moebel": {
+    "sc15OhrensesselBlickRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_217.png",
+      "varianten": {"links": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png", "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"},
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc15OhrensesselBlickLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png",
+      "varianten": {"rechts": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_217.png", "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"},
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
     "scFelsGross": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Big_16x16.png",
       "breite": 32,

@@ -2,7 +2,7 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon.json",
   "art": "innen",
-  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zur Wand, damit man zum Brett schaut. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -306,12 +306,12 @@
       "versatz": [0, -4]
     },
     {
-      "moebel": "rv5BankLang",
-      "feld": [1, 9]
+      "moebel": "rv15BankLangSenkrecht",
+      "feld": [2, 8]
     },
     {
-      "moebel": "rv5BankLang",
-      "feld": [20, 9]
+      "moebel": "rv15BankLangSenkrecht",
+      "feld": [21, 8]
     },
     {
       "moebel": "rv14FigurWeissLaeufer",

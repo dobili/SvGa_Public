@@ -1151,7 +1151,7 @@
     },
     {
      "id": 22,
-     "name": "mf2Ohrensessel",
+     "name": "sc15OhrensesselBlickRechts",
      "type": "moebel",
      "x": 80,
      "y": 80,
@@ -1220,7 +1220,7 @@
     },
     {
      "id": 25,
-     "name": "mf2Ohrensessel",
+     "name": "sc15OhrensesselBlickLinks",
      "type": "moebel",
      "x": 176,
      "y": 80,

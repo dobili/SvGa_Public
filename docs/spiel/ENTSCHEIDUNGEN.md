@@ -1060,3 +1060,33 @@ ersten fehlenden Figur in der Reihenfolge der Reise und zählt die Funde des Spi
 Ink-Zählers `finchFiguren`, den ein Neuladen mitten im Fund-Dialog verlieren konnte. Die
 Gesamtsimulation holt fehlende Stücke aller Sammelstränge vor der Rückkehr zu den Quests, wie ein
 Mensch, der zurückgeht. Test: `pipeline/tests/test_abenteuer_finchjagd.py`.
+
+## RO11: Lernkarten aus den Lektionen im Spiel, nicht mehr aus Buchkapiteln (15.11.2026)
+
+Der Autor hat die Empfehlung angenommen: Das Spiel steht für sich (Entscheidung vom 13.11.2026),
+deshalb schenkt es keine Lernkarten mehr für fertige Buchkapitel in der App. Jede der elf Lernkarten
+gibt jetzt eine Figur nach der Lektion, in der ihr Werkzeug gelernt wird: Sam (Abzählen, nach den
+Todsünden), Juno-Quest (Gefahrenradar, unverändert), Mama (Faktorenwaage, nach dem Damengambit), Theo
+(Zielkompass), Nova (Was droht?), Batiste (Bauernkompass, unverändert), Lou (Planfinder), Tomás
+(Taktikspürnase), Kit (Endspielkompass), Haraldsen (Turmregel), Ward nach Hastings 1895
+(Phasenblick). Wer die Karte schon gekauft hat, bekommt keine zweite. Entfernt: Feld `kapitel` in
+karten.json und Schema, `fertigeKapitel` in den Appdiensten, `mitLernkarten` und die Sätze
+`karte.*.geschenkt`. Die vier Ladenkarten (Abschnitt 9 in Dokument 11) bleiben als zusätzlicher Weg.
+Damit die Wirtschaftsziele halten (der sparsame Spieler hätte sonst 560 statt höchstens 400 Münzen
+übrig), kosten acht späte Werkzeugkarten 20 bis 40 Münzen mehr, und das Elementarmatt liegt jetzt im
+Fanshop der Capital Arena (130); Ergebnis 320 bis 350 Münzen, alle Ziele erfüllt. Die Dialogsätze der
+Übergabe gelten nach Regel 9 als abgesegnet. Prüfung: `test_jede_karte_hat_einen_weg_ins_spiel` und
+die Zeile „Hilfskarten ohne Weg“ der Gesamtsimulation. Einzelheiten: `11_Karten_und_Gegenstaende.md`,
+Abschnitte 5 und 10.
+
+## RO21: Silicon Bay ohne Schnee, Port Delacroix nass (15.11.2026)
+
+Der Autor hat die Empfehlung angenommen: wie die Story-Bibel („Silicon Bay ohne Jahreszeit, Port
+Delacroix nasser Winter“). Ohne `"jahreszeit": "winter"` sind jetzt die Altstadt von Silicon Bay,
+die Glasbrücke, der Deich, Port Delacroix (beide Zustände) und, damit der Weg dazwischen stimmt, die
+Pelikaninsel (Widerspruch genügt). In der Altstadt fehlen Schneemann und Schneewälle, an der
+Glasbrücke der Matschsaum. Port Delacroix bekommt auf der Außenkarte das vorhandene Dauergeräusch
+`klang/regen.m4a`. Eine Regen- oder Nässedarstellung im Bild gibt es noch nicht; Bildwunsch:
+Regentropfen als Teilchen, Pfützen und nass glänzendes Pflaster, Raureif auf Glas in Silicon Bay.
+Die Raststätte auf dem Weg von Ironwood bleibt im Winter (nahe Ironwood, „Abfahrt im Schnee“).
+Szenen neu gebaut (kartenbau), Hintergründe im privaten Repository neu gezeichnet (kartenbild).

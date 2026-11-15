@@ -2487,7 +2487,7 @@
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 256,
-     "y": 230,
+     "y": 220,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2496,7 +2496,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 254
+       "value": 244
       },
       {
        "name": "kollision",
@@ -2510,7 +2510,7 @@
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 288,
-     "y": 230,
+     "y": 220,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2519,7 +2519,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 254
+       "value": 244
       },
       {
        "name": "kollision",

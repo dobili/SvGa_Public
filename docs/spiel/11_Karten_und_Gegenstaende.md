@@ -51,11 +51,34 @@ Grübelfalle, Großes Maul), Gegenstände Fahrrad und Laterne.
 | I5  | **Limo**                | Verbrauch: Geschenk für Straßengegner (Jo: „Wer verliert, holt Limo.“); bringt eine Steckbriefzeile oder eine Revanche mit Vorteil. | Kiosk, 5 Münzen                    |
 | I6  | **Monatskarte**         | Schnellreise zwischen besuchten Städten (Fahrkarten-Regel aus 08).                                                                  | Bahnhof Riverton                   |
 
-## 5. Brücke zum Buch (Lernkarten)
+## 5. Lernkarten aus den Lektionen im Spiel (RO11, 15.11.2026)
 
-Wer in der App ein Kapitel des Buches abschließt (alle Übungen bestanden), bekommt im Abenteuer die
-Karte dieses Kapitels geschenkt: Kapitel 1 → Abzählen, Kapitel 4 → Gefahrenradar, Kapitel 12 →
-Was droht? Ambrose nennt das Buch dabei nicht (der frühere Satz „… sondern im Buch“ entfällt). **Offen:** Nach der Entscheidung des Autors vom 13.11.2026 (das Spiel steht für sich, nichts schickt den Spieler zum Buch) ist zu klären, ob es die Lernkarten als Brücke zum Buch überhaupt noch gibt.
+Früher schenkte das Spiel die elf Lernkarten, sobald der Leser in der App alle Übungen eines
+Buchkapitels gelöst hatte. Das schickte den Spieler mittelbar zum Buch; seit der Entscheidung vom
+13.11.2026 steht das Spiel für sich. Deshalb gibt es jede Lernkarte jetzt im Spiel selbst, als Lohn
+der Lektion, in der ihr Werkzeug gelernt wird; die Kopplung an Buchkapitel ist aus Spieldaten
+(`kapitel` in karten.json) und Code (`fertigeKapitel`, `mitLernkarten`) entfernt. Die Figur gibt die
+Karte im Dialog nach der Lektion (`gibKarte`, einmal je Spielstand über die Dialogvariable
+`lernkarte<Karte>`); wer die Karte schon gekauft hat, bekommt keine zweite (`hatKarte<Karte>`).
+Die Läden verkaufen ihre Lernkarten weiter (zusätzlicher Weg, Abschnitt 9).
+
+| Karte           | Lektion (wo das Werkzeug gelernt wird)                                   | Wer gibt sie       | Knoten                               |
+| --------------- | ------------------------------------------------------------------------ | ------------------ | ------------------------------------ |
+| Abzählen        | Maple Falls: Sams Reihe „Erst zählen“, dann zeigt der Held Sam das Zählen | Sam                | maple-falls-clubraum.sam_revanche_angebot |
+| Gefahrenradar   | Maple Falls: Junos Reihe (Quest `mapleFalls.viertesBrett`), unverändert   | Quest              | –                                    |
+| Faktorenwaage   | Ironwood: Mamas Partie mit dem Damengambit (was ein Bauer kauft)         | Mama               | ironwood-kantine.mama_karte          |
+| Zielkompass     | Silicon Bay: Theos Reihe „Eröffnungsgrundsätze“                          | Theo               | silicon-bay-akademie.theo_karte      |
+| Was droht?      | Silicon Bay: Novas Reihe „Fallen“ (was will der andere?)                 | Nova               | silicon-bay-akademie.nova_karte      |
+| Bauernkompass   | Port Delacroix: Sieg gegen Mr. Batiste („Welchen Bauern man wohin stellt“), unverändert | Batiste | port-delacroix-aussen.batiste_nach_sieg |
+| Planfinder      | Port Delacroix: Lous Reihe (Pläne mit Läufern)                           | Lou                | port-delacroix-turnhalle.lou_karte   |
+| Taktikspürnase  | Desert Springs: Tomás’ Reihe (Matt nach dem Opfer)                       | Tomás              | desert-springs-garage.tomas_karte    |
+| Endspielkompass | Summit City: Kits Reihe (Quadrat, Opposition, Tempo)                     | Kit                | summit-city-huette.kit_karte         |
+| Turmregel       | Summit City: Haraldsens Reihe (Turm hinter dem Freibauern, Brücke)       | Haraldsen          | summit-city-huette.haraldsen_karte   |
+| Phasenblick     | Summit City: Wards Erinnerung Hastings 1895 (eine ganze Partie)          | Ward               | summit-city-huette.ward_nach_erinnerung |
+
+Prüfungen: `pipeline/tests/test_abenteuer.py` (`test_jede_karte_hat_einen_weg_ins_spiel`: jede
+Karte aus Dialog, Quest oder Laden, jede Lernkarte aus einer Lektion) und die Gesamtsimulation
+(Zeile „Hilfskarten ohne Weg“, der gründliche Spieler findet alle Karten).
 
 ## 6. Empfehlung und Reihenfolge
 
@@ -105,13 +128,15 @@ mehr als G4 mit 60 bis 100, weil die Runden zählen).
 
 ### 7.2 Karten
 
-Stufe: L leicht, M mittel, S stark; Art: d dauerhaft, v Verbrauch. „Lernkarte“ heißt: geschenkt,
-sobald das Buchkapitel in der App fertig ist (Abschnitt 5), unabhängig vom Akt.
+Stufe: L leicht, M mittel, S stark; Art: d dauerhaft, v Verbrauch. „Lektion“ heißt: Eine Figur
+gibt die Lernkarte nach der Lektion, in der ihr Werkzeug gelernt wird (Abschnitt 5, seit RO11 vom
+15.11.2026; vorher nach einem fertigen Buchkapitel in der App). Preise im Stand vor RO11; die neuen
+Preise später Karten stehen in Abschnitt 10.
 
 | Karte                    | Stufe/Art | Herkunft (Szene, Laden, Lernkarte)                                                           | Preis      | Akt   | Münzen bis dahin |
 | ------------------------ | --------- | -------------------------------------------------------------------------------------------- | ---------- | ----- | ---------------- |
 | Fingerzeig               | L/d       | Szene 2 (Ambrose); Laden Riverton                                                            | 15         | 1, 2  | 0 / ≈ 280        |
-| Gefahrenradar            | L/d       | Quest `mapleFalls.viertesBrett`; Laden Maple Falls; Lernkarte Kapitel 4                      | 35         | 1     | ≈ 0–110          |
+| Gefahrenradar            | L/d       | Quest `mapleFalls.viertesBrett` (Junos Reihe); Läden Maple Falls, Crossroads                 | 35         | 1     | ≈ 0–110          |
 | Zweite Chance            | L/v       | Sams Dame (2), Straßensiege, erste Reihe je Club; Läden Maple Falls, Riverton, Ironwood      | 20         | 1–3   | ab ≈ 50          |
 | Ambroses Flüstern        | M/v       | Rätsel und Hilfe-Quests (R27); Läden Maple Falls, Ironwood, Akt 3                            | 40         | 1–3   | ab ≈ 50          |
 | Mentor-Zug               | M/v       | erste Clubnadel je Club (R27); nie im Laden (G4)                                             | –          | 1–3   | –                |
@@ -123,20 +148,20 @@ sobald das Buchkapitel in der App fertig ist (Abschnitt 5), unabhängig vom Akt.
 | Großes Maul (Spruch)     | M/v       | Weg 3, Ambrose auf der Brücke; Szene 74 (Buck)                                               | –          | 2, 3  | –                |
 | Schmeichelei (Spruch S7) | L/v       | Laden Riverton                                                                               | 15         | 2     | ≈ 280            |
 | Ablenkung (Spruch S9)    | L/v       | Laden Maple Falls                                                                            | 10         | 1     | ≈ 0–110          |
-| Was droht? (K1)          | L/d       | Laden Ironwood; Lernkarte Kapitel 12                                                         | 45         | 2     | ≈ 420            |
+| Was droht? (K1)          | L/d       | Lektion Nova (Silicon Bay); Läden Ironwood, Desert Springs, Crossroads                       | 45         | 2     | ≈ 420            |
 | Waage (K3)               | L/v       | Laden Riverton                                                                               | 15         | 2     | ≈ 280            |
 | Remisangebot (K5)        | M/v       | Laden Riverton                                                                               | 35         | 2     | ≈ 280            |
 | Auszeit (K8)             | L/v       | Laden Ironwood                                                                               | 15         | 2     | ≈ 420            |
-| Abzählen (K2)            | L/d       | Lernkarte Kapitel 1; Vorschlag: auch Runde Kapitel 1 in Maple Falls                          | –          | jeder | –                |
+| Abzählen (K2)            | L/d       | Lektion Sam (Maple Falls, nach den Todsünden)                                                | –          | jeder | –                |
 | Röntgenblick             | L/d       | Laden Maple Falls                                                                            | 30         | 1     | ≈ 0–110          |
-| Zielkompass              | L/d       | Lernkarte Kapitel 2                                                                          | –          | jeder | –                |
-| Faktorenwaage            | L/d       | Lernkarte Kapitel 3                                                                          | –          | jeder | –                |
-| Bauernkompass            | L/d       | Lernkarte Kapitel 5; Vorschlag: Clubsieg Port Delacroix (Bauernstruktur)                     | –          | jeder | –                |
-| Planfinder (K6)          | M/d       | Lernkarte Kapitel 6; Vorschlag: Clubsieg Port Delacroix                                      | –          | jeder | –                |
-| Taktikspürnase           | M/d       | Lernkarte Kapitel 7                                                                          | –          | jeder | –                |
-| Endspielkompass          | L/d       | Lernkarte Kapitel 8                                                                          | –          | jeder | –                |
-| Turmregel                | L/d       | Lernkarte Kapitel 9                                                                          | –          | jeder | –                |
-| Phasenblick              | L/d       | Lernkarte Kapitel 11                                                                         | –          | jeder | –                |
+| Zielkompass              | L/d       | Lektion Theo (Silicon Bay, Eröffnungsgrundsätze)                                             | –          | jeder | –                |
+| Faktorenwaage            | L/d       | Lektion Mama (Ironwood, nach dem Damengambit)                                                | –          | jeder | –                |
+| Bauernkompass            | L/d       | Sieg gegen Mr. Batiste (Port Delacroix)                                                      | –          | jeder | –                |
+| Planfinder (K6)          | M/d       | Lektion Lou (Port Delacroix); Laden Crossroads                                               | –          | jeder | –                |
+| Taktikspürnase           | M/d       | Lektion Tomás (Desert Springs); Laden Silicon Bay                                            | –          | jeder | –                |
+| Endspielkompass          | L/d       | Lektion Kit (Summit City); Laden Summit City                                                 | –          | jeder | –                |
+| Turmregel                | L/d       | Lektion Haraldsen (Summit City); Laden Summit City                                           | –          | jeder | –                |
+| Phasenblick              | L/d       | Lektion Ward (Summit City, Hastings 1895); Laden Capital Arena                               | –          | jeder | –                |
 | Spickzettel (K7, neu)    | L/v       | Szene 34 Riverton (Vorbereitungsquest), später Laden Silicon Bay                             | 20 (Akt 3) | 2, 3  | ≈ 670            |
 | Pokerface (S8, neu)      | M/v       | Szene 65, erster Sieg gegen Mr. Batiste; Laden Port Delacroix                                | 30         | 3     | ≈ 845            |
 | Schutzengel (K4, neu)    | M/v       | Szene 69, Benefiz-Simultan; Laden Desert Springs                                             | 50         | 3     | ≈ 990            |
@@ -237,3 +262,27 @@ verschwenderische kann in Akt 4 zehn Waren nicht kaufen. Keine Pflichtausgabe is
 einzige Ausgabe außerhalb der Läden ist der Lastkahn (5 Münzen, freiwillig). Die Auswertung bucht
 eine Fahrt jetzt nur, wenn das Geld reicht, wie `bezahle` in `regeln/muenzen.ts`; vorher rutschte der
 verschwenderische Spieler rechnerisch unter null.
+
+## 10. Preise nach RO11 (Lernkarten aus Lektionen, 15.11.2026)
+
+Warum: Seit die Lektionen alle Lernkarten schenken (Abschnitt 5), kauft der sparsame Spieler
+Planfinder (Crossroads) und Phasenblick (Capital Arena) nicht mehr; ihm blieben am Ende 560 Münzen
+(Ziel höchstens 400). Die vier Ladenkarten bleiben als zusätzlicher Weg im Angebot. Statt Belohnungen
+zu kürzen, kosten die übrigen späten Werkzeugkarten etwas mehr, und das Elementarmatt wandert in den
+Fanshop der Capital Arena, damit es auch nach Crossroads noch etwas zu kaufen gibt.
+
+| Karte                 | Laden                       | Preis vorher | Preis jetzt |
+| --------------------- | --------------------------- | ------------ | ----------- |
+| Sieben Warnsignale    | Silicon Bay (Foodtruck)     | 120          | 140         |
+| Schwache Felder       | Port Delacroix (Gebäck)     | 70           | 90          |
+| Figurenplatz          | Port Delacroix (Gebäck)     | 80           | 100         |
+| Goldene Angriffsregel | Desert Springs (Okoro)      | 110          | 140         |
+| Opposition            | Summit City (Bergladen)     | 90           | 110         |
+| Schlüsselfelder       | Summit City (Bergladen)     | 120          | 150         |
+| Erkennungsbild        | Crossroads (Darlene)        | 130          | 160         |
+| Elementarmatt         | Capital Arena (Fanshop), vorher Crossroads | 90 | 130     |
+
+Ergebnis der Auswertung (Startwerte 1 und 2): Der sparsame Spieler endet mit 320 bis 350 Münzen
+(vor RO11 350, ohne neue Preise 560) und kauft weiter jede dauerhafte Karte; Silber, eine leichte
+Karte vor jedem Clubkampf und starke Karten erst ab Akt 3 bleiben erfüllt; der verschwenderische
+kann in Akt 4 weiter Waren nicht kaufen.

@@ -2,7 +2,7 @@
   "karte": "siliconBay.altstadt",
   "art": "aussen",
   "viertel": true,
-  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; außerhalb der Glasbauten liegt Schnee. Die Straße läuft von Ost nach West, geräumt, mit Mittellinie und zwei Zebrastreifen an den Gassen; an beiden Rändern liegt der zur Seite geschobene Schnee als Wall, am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales viktorianisches Haus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter verschneite Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit geräumtem Weg aus Steinplatten, Bänken, Bäumen und dem Schneemann, den die Kinder bauen.",
+  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; es ist kalt und klar, Schnee liegt keiner (Glas und Kälte statt Schnee, RO21). Die Straße läuft von Ost nach West, mit Mittellinie und zwei Zebrastreifen an den Gassen; am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales viktorianisches Haus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit einem Weg aus Steinplatten, Bänken, Bäumen.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -818,95 +818,6 @@
       "feld": [58, 52]
     },
     {
-      "moebel": "sa8Schneemann",
-      "feld": [40, 51]
-    },
-    {
-      "moebel": "sa9SchneewallUnten16",
-      "feld": [1, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallUnten2",
-      "feld": [17, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [1, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben2",
-      "feld": [17, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallUnten16",
-      "feld": [21, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallUnten4",
-      "feld": [37, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [21, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben4",
-      "feld": [37, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallUnten16",
-      "feld": [43, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallUnten12",
-      "feld": [59, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [43, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben12",
-      "feld": [59, 26],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [1, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [17, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [33, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben16",
-      "feld": [49, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sa9SchneewallOben6",
-      "feld": [65, 51],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cr9StrichQ16",
       "feld": [1, 24],
       "versatz": [0, 7],
@@ -1203,6 +1114,5 @@
     "laendlich",
     "landhaus"
   ],
-  "datei": "karten/silicon-bay-altstadt.json",
-  "jahreszeit": "winter"
+  "datei": "karten/silicon-bay-altstadt.json"
 }

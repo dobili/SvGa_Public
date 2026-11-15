@@ -228,15 +228,15 @@
     },
     {
       "moebel": "cr7Hocker",
-      "feld": [16, 15],
+      "feld": [16, 14],
       "vorn": true,
-      "versatz": [0, -10]
+      "versatz": [0, -4]
     },
     {
       "moebel": "cr7Hocker",
-      "feld": [18, 15],
+      "feld": [18, 14],
       "vorn": true,
-      "versatz": [0, -10]
+      "versatz": [0, -4]
     },
     {
       "moebel": "cr7Hocker",

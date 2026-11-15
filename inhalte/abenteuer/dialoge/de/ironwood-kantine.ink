@@ -17,6 +17,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL setzeZustand(gegner, faktor, grund)
+EXTERNAL gibKarte(kennung)
 
 VAR held = "Du"
 VAR bigJoeGetroffen = false
@@ -44,6 +45,9 @@ VAR morgenNachFeier = false
 // Gutachten L1.3: Wer die Feier ablehnt, bekommt sie nicht noch einmal angeboten.
 VAR feierAbgelehnt = false
 VAR turnierheftBekommen = false
+// Lernkarte Faktorenwaage (mama_karte); hatKarteFaktorenwaage setzt die Hülle aus dem Besitz.
+VAR lernkarteFaktorenwaage = false
+VAR hatKarteFaktorenwaage = false
 
 // ---------------------------------------------------------------- Big Joe
 
@@ -228,6 +232,7 @@ Um eins singt jemand. Um halb zwei schläft Juno auf zwei Stühlen. #sprecher:er
 - not mamaInKantine: -> mama_ankunft
 - ausgangIronwoodMama == "" or ausgangIronwoodMama == "abgebrochen": -> mama_partie_angebot
 - not mamaSpielt: -> mama_nach_partie
+- not lernkarteFaktorenwaage: -> mama_karte
 - else: -> mama_alltag
 }
 
@@ -333,6 +338,20 @@ Du schreibst ja in mein Heft. #sprecher:mutter #stimmung:ueberrascht
 * [„Oma hat gesagt …“]
 - Ich weiß, was Oma gesagt hat. Schreib weiter. #sprecher:mutter #stimmung:laechelt
 ->->
+
+// Lernkarte aus der Lektion (RO11, 15.11.2026): Nach dem Damengambit erklärt Mama, was der Bauer
+// kauft, und gibt die Faktorenwaage.
+=== mama_karte ===
+~ lernkarteFaktorenwaage = true
+Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zählt, versteht das nie. #sprecher:mutter #stimmung:nachdenklich
+{hatKarteFaktorenwaage:
+    Aber das weißt du ja längst. Du hast sogar die Karte dafür. #sprecher:mutter #stimmung:laechelt
+- else:
+    Sie legt dir eine Karte hin, an den Ecken abgegriffen: eine Waage mit vier Schalen. #sprecher:erzaehler
+    Die lag in meinem alten Schachkasten bei Oma Ruth. Leg alles auf die Waage, nicht nur das Holz. #sprecher:mutter #stimmung:laechelt
+    ~ gibKarte("faktorenwaage")
+}
+-> END
 
 === mama_alltag ===
 {~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt

@@ -19,6 +19,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
+EXTERNAL gibKarte(kennung)
 
 VAR held = "Du"
 VAR miraSteinGesehen = false
@@ -48,6 +49,9 @@ VAR margaretErzaehlt = false
 // Seite ab dem 31. Zug (Begegnung desertSprings.dotFernpartie); den Ausgang setzt die Hülle.
 VAR ausgangDesertSpringsDotFernpartie = ""
 VAR dotFernpartieBesprochen = false
+// Lernkarte Taktikspürnase (tomas_karte); hatKarteTaktikspuernase setzt die Hülle aus dem Besitz.
+VAR lernkarteTaktikspuernase = false
+VAR hatKarteTaktikspuernase = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -244,8 +248,23 @@ Er wusste, dass er eine verlorene Partie gewonnen hatte, weil der andere die Ner
 {
 - not versoehnungGesehen: -> garage_wartet
 - not reiheTomasBestanden: -> tomas_reihe
+- not lernkarteTaktikspuernase: -> tomas_karte
 - else: -> tomas_alltag
 }
+
+// Lernkarte aus der Lektion (RO11, 15.11.2026): Nach seiner Reihe (Matt nach dem Opfer) gibt Tomás
+// die Taktikspürnase.
+=== tomas_karte ===
+~ lernkarteTaktikspuernase = true
+Gut. Jetzt weißt du, wie es aussieht, wenn sie opfert. #sprecher:tomas #stimmung:laechelt
+{hatKarteTaktikspuernase:
+    Und die Karte hast du auch schon. Dann bin ich ja überflüssig. #sprecher:tomas #stimmung:lacht
+- else:
+    Er wischt sich die Hände an einem Lappen ab und zieht eine Karte hinter dem Ölkanister hervor. #sprecher:erzaehler
+    Erst jedes Schach, jeder Schlag, jede Drohung. Wie beim Motor: erst die Zündkerzen. Dann der Rest. #sprecher:tomas #stimmung:laechelt
+    ~ gibKarte("taktikspuernase")
+}
+-> END
 
 === tomas_reihe ===
 {not tomasGetroffen: -> tomas_erstes_treffen ->}

@@ -1,5 +1,17 @@
 {
   "moebel": {
+    "sw15BettGrauKopfWest": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_514.png",
+      "lauf": "waagrecht",
+      "ende": "west",
+      "varianten": {"ost": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png"},
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
     "n9Kuppelspalt": {
       "quelle": "spiel/eigene/kuppelspalt.png",
       "breite": 32,

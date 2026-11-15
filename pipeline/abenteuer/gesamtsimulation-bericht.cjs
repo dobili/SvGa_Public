@@ -3,6 +3,25 @@
 // Gebraucht vom gründlichen Durchlauf und von der Chaos-Prüfung (gesamtsimulation-chaos.cjs).
 "use strict";
 
+/**
+ * Hilfskarten (karten.json), die der Lauf weder geschenkt bekam (Dialog, Quest) noch in einem
+ * besuchten Laden hätte kaufen können (RO11, 15.11.2026: jede Karte ist im Spiel erreichbar).
+ * Beispiel: Ist „sanduhr“ nur im Post-Game zu haben und der Lauf endet vorher, steht sie hier.
+ */
+function kartenOhneWeg(welt, st) {
+  const laeden = new Set(
+    st.zeitachse.filter((e) => e.art === "laden").map((e) => e.laden),
+  );
+  const kaufbar = new Set(
+    welt.laeden
+      .filter((l) => laeden.has(l.kennung))
+      .flatMap((l) => l.angebot.map((w) => w.kennung)),
+  );
+  return Object.keys(welt.karten).filter(
+    (k) => !st.karten[k] && !kaufbar.has(k),
+  );
+}
+
 function bericht(welt, st, ohneKarte, rueck) {
   const zeilen = [
     `Abspann: ${st.abspann ? "ja" : "NEIN"}`,
@@ -26,6 +45,7 @@ function bericht(welt, st, ohneKarte, rueck) {
     if (nie.length) zeilen.push(`  ${datei}: ${nie.join(", ")}`);
   }
   zeilen.push(`Figuren ohne Karte: ${ohneKarte.join(", ") || "keine"}`);
+  zeilen.push(`Hilfskarten ohne Weg: ${kartenOhneWeg(welt, st).join(", ") || "keine"}`);
   zeilen.push(
     `Rückkehr mit der Monatskarte nach: ${rueck.join(", ") || "keine"}`,
   );

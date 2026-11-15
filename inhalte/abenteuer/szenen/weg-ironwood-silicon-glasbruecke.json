@@ -2,7 +2,7 @@
   "karte": "wegIronwoodSilicon.glasbruecke",
   "datei": "karten/weg-ironwood-silicon-glasbruecke.json",
   "art": "aussen",
-  "beschreibung": "Die Glasbrücke vor Silicon Bay an einem hellen Wintertag (Runde 8, nach dem Gutachten), 140 × 26, Ansicht schräg von oben; Schnee liegt auf Rasen und Bäumen. Unter der Brücke läuft die Autobahn von Nord nach Süd: vier Spuren je Richtung in Autobreite, gestrichelte Fahrbahnmarkierung, durchgezogene Randlinien, Leitplanken an beiden Rändern und auf dem Mittelstreifen aus Beton; die Autos fahren rechts. Zu beiden Seiten ein Grünstreifen mit Bäumen und Heckensäulen als Lärm- und Sichtschutz. Im Nordosten mündet die Schnellstraße von der Raststätte her in die Autobahn: zwei Spuren mit Rechtsverkehr, Leitplanke und Hecke wie dort; die Einmündung liegt offen im rechten Fahrbahnrand. Der Pfad kommt am Ostrand in den Reihen 18–19 an, biegt nach Norden und steigt über eine Betonrampe mit Querrillen hinauf; deren Stirnwand wächst zur Brücke hin, an der Fuge zum Glas liegt ein Querträger. Das Deck aus Glas, vier Felder breit, ruht auf einem Stahlträger und Betonpfeilern, die nur auf den Grünstreifen, den Seitenstreifen und dem Mittelstreifen stehen; durch das halb durchsichtige Glas sieht man Straße und Schatten. Glasgeländer auf beiden Seiten, auf dem Deck eine Bank, unter der zwei weiße Ohrstöpsel liegen. Über der Mitte springt eine gläserne Aussichtsplattform nach Norden vor, getragen von zwei Pfeilern auf dem Mittelstreifen, mit Kikis Tisch und Ringlicht; daneben im westlichen Grünstreifen der Funkmast „Testfeld Signal“. Im Westen führt eine zweite Rampe hinunter auf den Stadtrand-Platz aus hellen Platten mit Bordstein: zwei Rastplätze mit moderner Laterne, Bank und Mülleimer, in der Mitte Bäume in Pflanzbeeten und zwei Bänke, am Südrand Pflanzkästen, am Nordrand die Werbetafel von ZERO („ZERO – Nie wieder Fehler“). Der Platz reicht nach Westen bis an den Kartenrand und geht dort in den Campus über (Übergang in den Reihen 18–19).",
+  "beschreibung": "Die Glasbrücke vor Silicon Bay an einem hellen Wintertag (Runde 8, nach dem Gutachten), 140 × 26, Ansicht schräg von oben; kein Schnee und kein Matsch am Fahrbahnrand, kalte klare Luft, das Glas glänzt (RO21). Unter der Brücke läuft die Autobahn von Nord nach Süd: vier Spuren je Richtung in Autobreite, gestrichelte Fahrbahnmarkierung, durchgezogene Randlinien, Leitplanken an beiden Rändern und auf dem Mittelstreifen aus Beton; die Autos fahren rechts. Zu beiden Seiten ein Grünstreifen mit Bäumen und Heckensäulen als Lärm- und Sichtschutz. Im Nordosten mündet die Schnellstraße von der Raststätte her in die Autobahn: zwei Spuren mit Rechtsverkehr, Leitplanke und Hecke wie dort; die Einmündung liegt offen im rechten Fahrbahnrand. Der Pfad kommt am Ostrand in den Reihen 18–19 an, biegt nach Norden und steigt über eine Betonrampe mit Querrillen hinauf; deren Stirnwand wächst zur Brücke hin, an der Fuge zum Glas liegt ein Querträger. Das Deck aus Glas, vier Felder breit, ruht auf einem Stahlträger und Betonpfeilern, die nur auf den Grünstreifen, den Seitenstreifen und dem Mittelstreifen stehen; durch das halb durchsichtige Glas sieht man Straße und Schatten. Glasgeländer auf beiden Seiten, auf dem Deck eine Bank, unter der zwei weiße Ohrstöpsel liegen. Über der Mitte springt eine gläserne Aussichtsplattform nach Norden vor, getragen von zwei Pfeilern auf dem Mittelstreifen, mit Kikis Tisch und Ringlicht; daneben im westlichen Grünstreifen der Funkmast „Testfeld Signal“. Im Westen führt eine zweite Rampe hinunter auf den Stadtrand-Platz aus hellen Platten mit Bordstein: zwei Rastplätze mit moderner Laterne, Bank und Mülleimer, in der Mitte Bäume in Pflanzbeeten und zwei Bänke, am Südrand Pflanzkästen, am Nordrand die Werbetafel von ZERO („ZERO – Nie wieder Fehler“). Der Platz reicht nach Westen bis an den Kartenrand und geht dort in den Campus über (Übergang in den Reihen 18–19).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -42,14 +42,6 @@
     "############################################################################################################################################"
   ],
   "objekte": [
-    {
-      "moebel": "wsgMatschL",
-      "feld": [53, 1]
-    },
-    {
-      "moebel": "wsgMatschR20",
-      "feld": [81, 5]
-    },
     {
       "moebel": "wsgPlanke8",
       "feld": [54, 0],
@@ -1144,6 +1136,5 @@
         "verhalten": "ausweichen"
       }
     }
-  ],
-  "jahreszeit": "winter"
+  ]
 }

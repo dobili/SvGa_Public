@@ -469,6 +469,17 @@
       "stil": "rustikal",
       "begehbar": true,
       "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+    },
+    "wr15SchleusentorQuer8": {
+      "quelle": "spiel/eigene/schleusentor_quer_8.png",
+      "lauf": "waagrecht",
+      "varianten": {"senkrecht": "spiel/eigene/schleusentor_laengs_3.png"},
+      "breite": 128,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

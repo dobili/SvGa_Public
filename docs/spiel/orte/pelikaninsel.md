@@ -149,3 +149,8 @@ Finkenzeichen aus Blech.
 - **Watt:** `watt` und Coral prüfen `hatGummistiefel`. Mit Stiefeln schenkt Coral den Fund
   `muschelCoral`. Die Gummistiefel gibt es in Lockport (niedrig-1).
 - **Fund:** `finchBauerH`.
+
+## RO21 (15.11.2026): ohne Schnee
+
+Zwischen Silicon Bay (ohne Schnee) und Port Delacroix (Regen) liegt auch auf der Pelikaninsel kein
+Schnee mehr: kein `"jahreszeit": "winter"`, Gras und Dorfplatz sind grün; kalter Wind von See.

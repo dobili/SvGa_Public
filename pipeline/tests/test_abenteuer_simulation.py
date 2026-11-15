@@ -63,6 +63,13 @@ def test_jede_figur_steht_auf_einer_karte(ausgabe: str):
     assert not ohne, f"Figuren ohne Platz auf einer gezeichneten Karte: {sorted(ohne)}"
 
 
+def test_jede_hilfskarte_ist_erreichbar(ausgabe: str):
+    """RO11 (15.11.2026): Der gründliche Spieler bekommt jede Karte geschenkt oder findet sie im Laden."""
+    treffer = re.search(r"^Hilfskarten ohne Weg: (.*)$", ausgabe, re.M)
+    assert treffer, "Die Ausgabe nennt keine Zeile „Hilfskarten ohne Weg“"
+    assert treffer.group(1).strip() == "keine"
+
+
 def test_wirtschaft_ziele():
     """Wirtschaft (R17, R21 ff.): sparsamer Spieler mindestens Silber, vor jedem Clubkampf eine
     leichte Karte im Besitz oder kaufbar, starke Karten erst ab Akt 3 im Laden, und der sparsame

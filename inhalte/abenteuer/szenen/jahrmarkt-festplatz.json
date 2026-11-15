@@ -1,7 +1,7 @@
 {
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
-  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat neben dem Zuckerwattestand. Lose- und Dosenbude, Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
+  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat neben dem Zuckerwattestand. Lose- und Dosenbude, Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -80,11 +80,11 @@
       "feld": [41, 10]
     },
     {
-      "moebel": "n6Tribuene",
+      "moebel": "n15TribueneBlickOben",
       "feld": [32, 13]
     },
     {
-      "moebel": "n6Tribuene",
+      "moebel": "n15TribueneBlickOben",
       "feld": [37, 13]
     },
     {

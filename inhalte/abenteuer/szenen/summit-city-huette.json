@@ -59,7 +59,7 @@
       "feld": [7, 5]
     },
     {
-      "moebel": "mf2Ohrensessel",
+      "moebel": "sc15OhrensesselBlickRechts",
       "feld": [5, 5]
     },
     {
@@ -72,7 +72,7 @@
       "auf": "ward"
     },
     {
-      "moebel": "mf2Ohrensessel",
+      "moebel": "sc15OhrensesselBlickLinks",
       "feld": [11, 5]
     },
     {

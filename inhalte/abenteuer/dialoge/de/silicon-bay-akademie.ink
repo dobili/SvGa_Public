@@ -21,6 +21,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
+EXTERNAL gibKarte(kennung)
 
 VAR held = "Du"
 VAR linGetroffen = false
@@ -37,6 +38,13 @@ VAR ausgangSiliconBayClubkampf = ""
 VAR nadelSiliconBay = 0
 VAR clubkampfSiliconBayBesprochen = false
 VAR clubkampfSiliconBayNadel = 0
+// Lernkarten aus den Lektionen (RO11, 15.11.2026): Theo gibt nach seiner Reihe
+// (Eröffnungsgrundsätze) den Zielkompass, Nova nach ihrer (Fallen) „Was droht?“. Die hatKarte…
+// setzt die Hülle aus dem Besitz; wer eine Karte schon hat, bekommt keine zweite.
+VAR lernkarteZielkompass = false
+VAR lernkarteWasDroht = false
+VAR hatKarteZielkompass = false
+VAR hatKarteWasDroht = false
 
 // ---------------------------------------------------------------- Dr. Lin
 
@@ -154,8 +162,21 @@ Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #
 - siliconBayAuswertungBestanden and not serverraumOffen: -> theo_serverraum
 - not linGetroffen: -> theo_erst_lin
 - not reiheTheoBestanden: -> theo_reihe
+- not lernkarteZielkompass: -> theo_karte
 - else: -> theo_alltag
 }
+
+=== theo_karte ===
+~ lernkarteZielkompass = true
+Zentrum, Entwicklung, König. Alle drei, jedes Mal. Das hat nicht jeder. #sprecher:theo #stimmung:nachdenklich
+{hatKarteZielkompass:
+    Er hält dir eine Karte hin und sieht dann, dass du sie schon hast. Er nickt, als hätte er das erwartet. #sprecher:erzaehler
+- else:
+    Er druckt eine Karte aus, noch warm: ein Kompass mit drei Strichen. #sprecher:erzaehler
+    Damit du nach der Eröffnung nachmisst. Ich messe auch immer nach. #sprecher:theo #stimmung:laechelt
+    ~ gibKarte("zielkompass")
+}
+-> END
 
 === theo_erstes_treffen ===
 ~ theoGetroffen = true
@@ -222,6 +243,7 @@ Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Hier wird alle
 - not novaGetroffen: -> nova_erstes_treffen
 - not reiheTheoBestanden: -> nova_erst_theo
 - not reiheNovaBestanden: -> nova_reihe
+- not lernkarteWasDroht: -> nova_karte
 - ohrempfaengerGefunden: -> nova_danach
 - else: -> nova_alltag
 }
@@ -243,6 +265,18 @@ Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #
     -> END
 * [„Nicht jetzt.“]
     -> END
+
+=== nova_karte ===
+~ lernkarteWasDroht = true
+Du bist in keine reingefallen. Die meisten fragen erst hinterher, was ich vorhatte. #sprecher:nova #stimmung:laechelt
+{hatKarteWasDroht:
+    Die Karte hast du ja schon. Gut. Dann frag weiter vorher. #sprecher:nova #stimmung:laechelt
+- else:
+    Sie zieht eine Karte aus der Kameratasche, ein roter Pfeil darauf. #sprecher:erzaehler
+    Frag vor jedem Zug, was der andere will. Ich mach das auch. Nicht nur am Brett. #sprecher:nova #stimmung:nachdenklich
+    ~ gibKarte("wasDroht")
+}
+-> END
 
 === nova_danach ===
 Nova sieht dich an und dann schnell weg. #sprecher:erzaehler

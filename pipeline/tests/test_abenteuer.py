@@ -108,12 +108,12 @@ def test_querverweise_stimmen():
         konter = [f"spruch.konter.{name}.{n}" in texte for n in (1, 2)]
         if any(konter) and not all(konter):
             fehler.append(f"{profil['kennung']}: Antworten auf Sprüche unvollständig")
-    # Jede Karte hat Ambroses Erklärung, jede Lernkarte ihren Satz beim Schenken (docs/spiel/11).
+    # Jede Karte hat Ambroses Erklärung (docs/spiel/11). Lernkarten schenken seit RO11 (15.11.2026)
+    # die Figuren der Lektion im Dialog; einen eigenen Satz beim Schenken gibt es nicht mehr.
     for karte in _lade("karten.json")["karten"]:
-        schluessel = [f"karte.{karte['kennung']}.erklaerung"]
-        if "kapitel" in karte:
-            schluessel.append(f"karte.{karte['kennung']}.geschenkt")
-        fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
+        schluessel = f"karte.{karte['kennung']}.erklaerung"
+        if schluessel not in texte:
+            fehler.append(f"Text {schluessel} fehlt")
     # Partiemomente (Atmosphäre T5, T11): Text und Name des Sprechers stehen in den Spieltexten,
     # ein geführter Moment nennt einen Knoten, den es in der Ink-Datei gibt.
     dialogordner = HAUPTORDNER / "inhalte" / "abenteuer" / "dialoge" / "de"
@@ -349,3 +349,42 @@ def test_startnummer_nur_bei_schach960():
             assert begegnung.get("variante") == "schach960", begegnung["kennung"]
         if begegnung.get("variante") == "schach960":
             assert begegnung["startstellung"] == {"art": "grundstellung"}, begegnung["kennung"]
+
+
+# Die elf Lernkarten (früher Karten der Buchkapitel, RO11 vom 15.11.2026): Jede gibt eine Figur im
+# Spiel als Lohn der Lektion, in der das Werkzeug gelernt wird (Dialog oder Quest), nicht nur ein Laden.
+LERNKARTEN = (
+    "abzaehlen",
+    "zielkompass",
+    "faktorenwaage",
+    "gefahrenradar",
+    "bauernkompass",
+    "planfinder",
+    "taktikspuernase",
+    "endspielkompass",
+    "turmregel",
+    "phasenblick",
+    "wasDroht",
+)
+
+
+def _geschenkte_karten() -> set[str]:
+    """Karten, die ein Dialog (gibKarte) oder eine Quest (Wirkung „karte“) schenkt."""
+    karten = {
+        name
+        for ink in (INHALTE / "dialoge" / "de").glob("*.ink")
+        for name in re.findall(r'gibKarte\("(\w+)"\)', ink.read_text("utf-8"))
+    }
+    for quest in _lade("quests.json")["quests"]:
+        for schritt in quest["schritte"]:
+            karten |= {w["karte"] for w in schritt.get("wirkungen", []) if w["art"] == "karte"}
+    return karten
+
+
+def test_jede_karte_hat_einen_weg_ins_spiel():
+    """Jede Karte kommt aus einem Dialog, einer Quest oder einem Laden; Lernkarten aus einer Lektion."""
+    geschenkt = _geschenkte_karten()
+    im_laden = {w["kennung"] for laden in _lade("laeden.json")["laeden"] for w in laden["angebot"]}
+    alle = {k["kennung"] for k in _lade("karten.json")["karten"]}
+    assert sorted(alle - geschenkt - im_laden) == []
+    assert sorted(set(LERNKARTEN) - geschenkt) == []

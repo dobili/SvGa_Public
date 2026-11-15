@@ -760,10 +760,6 @@
       "feld": [34, 31]
     },
     {
-      "moebel": "iw5AutoA",
-      "feld": [39, 29]
-    },
-    {
       "moebel": "dd6KaktusKlein",
       "feld": [28, 34]
     },
@@ -1083,7 +1079,7 @@
       "feld": [55, 33],
       "eigenschaften": {
         "von": "55,33",
-        "bis": "49,33",
+        "bis": "50,33",
         "tun": "kommt staubig aus dem Canyon",
         "wann": "tag"
       }

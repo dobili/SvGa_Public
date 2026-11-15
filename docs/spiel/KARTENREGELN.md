@@ -1156,7 +1156,7 @@ sind sie eingesetzt? […] steht es nicht in Verbindung mit anderen Assets im Ra
 eine andere Orientierung oder Position voraussetzen?“ (Anlass: Kugelfang mit Schacht nach Norden
 an der Kegelbahn von West nach Ost im Gasthaus Lockport.) Prüfung:
 `python -m pipeline.abenteuer.ausrichtung [--ort KENNUNG] [--bilder ORDNER --privat PFAD]`, im
-Kartenbau als Hinweis „Ausrichtung:“; Übersichten aller Karten zum Durchsehen mit
+Kartenbau als Befund „Ausrichtung:“ (seit 15.11.2026, vorher Hinweis); Übersichten aller Karten zum Durchsehen mit
 `python -m pipeline.abenteuer.ausrichtungsbilder ORDNER PRIVAT [innen|aussen|alle]`.
 
 - **Katalog:** `lauf` (waagrecht, senkrecht: Achse, entlang der ein Bild weiterläuft oder fährt;

@@ -212,6 +212,18 @@
       "zustand": "neu",
       "stil": "einfach"
     },
+    "n15TribueneBlickOben": {
+      "quelle": "spiel/eigene/tribuene_blick_oben.png",
+      "lauf": "waagrecht",
+      "blick": "oben",
+      "varianten": {"unten": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png"},
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
     "n9BuehneBegehbar": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_1.png",
       "blickziel": true,

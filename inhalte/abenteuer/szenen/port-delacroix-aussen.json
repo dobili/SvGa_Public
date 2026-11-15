@@ -12,7 +12,7 @@
     "e": "erde",
     "t": "stein"
   },
-  "beschreibung": "Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, eine lange Backsteinhalle mit Sägezahndach, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau hinter einem Bauzaun, Bäume, ein umgestürzter Stamm und Holz vom Sturm, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
+  "beschreibung": "Port Delacroix im nassen Winter (Regen und nasse Straßen, kein Schnee, RO21) nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, eine lange Backsteinhalle mit Sägezahndach, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau hinter einem Bauzaun, Bäume, ein umgestürzter Stamm und Holz vom Sturm, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -1263,7 +1263,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt", "kaputt"],
   "stil": ["klassisch", "rustikal", "industrie", "modern", "natur"],
-  "jahreszeit": "winter",
   "kante": "klippe",
   "fels": "gras",
   "bruecken": ["h"]

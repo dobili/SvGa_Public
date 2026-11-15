@@ -19316,11 +19316,6 @@
    "name": "kennung",
    "type": "string",
    "value": "portDelacroix.aussen"
-  },
-  {
-   "name": "jahreszeit",
-   "type": "string",
-   "value": "winter"
   }
  ]
 }

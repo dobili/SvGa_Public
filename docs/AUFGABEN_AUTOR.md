@@ -112,11 +112,14 @@ Adresse mit „#abenteuer“ öffnen).
       „Was droht?“ zeigt als roten Pfeil, was der Gegner spielen würde, wenn er dran wäre (nur Schläge und Schachs
       zählen als Drohung). „Waage“ sagt, wer besser steht. „Remisangebot“ (nicht im Clubkampf): Der Gegner nimmt
       bei ausgeglichener Stellung an, sonst lehnt er ab. „Schmeichelei“ vor der Partie macht einen Straßengegner überheblich.
-      Lernkarten: Wer in der App alle Übungen eines Kapitels gelöst hat, bekommt beim nächsten Öffnen der Welt die
-      Karte des Kapitels geschenkt (Kapitel 1 Abzählen, 2 Zielkompass, 3 Faktorenwaage, 4 Gefahrenradar, 5
-      Bauernkompass, 6 Planfinder, 7 Taktikspürnase, 8 Endspielkompass, 9 Turmregel, 11 Phasenblick, 12 Was droht?),
-      mit der Meldung „Für Kapitel 1 im Buch: …“. Zum Ausprobieren ein Kapitel in der App fertig lösen, dann die Welt
-      öffnen. Sprüche erscheinen in der Deckwahl nur vor Partien gegen Straßengegner.
+      Lernkarten gibt es seit 15.11.2026 nicht mehr für Buchkapitel, sondern im Spiel nach der passenden Lektion:
+      Sam gibt Abzählen (nach der Runde „Todsünden“, wenn du ihn wieder ansprichst), Juno-Quest Gefahrenradar, Mama
+      in der Kantine Ironwood die Faktorenwaage (nach eurer Partie, beim nächsten Ansprechen), Theo den Zielkompass
+      und Nova „Was droht?“ (Akademie Silicon Bay, nach ihren Reihen), Batiste den Bauernkompass, Lou den Planfinder
+      (Turnhalle Port Delacroix), Tomás die Taktikspürnase (Garage Desert Springs), Kit den Endspielkompass,
+      Haraldsen die Turmregel und Ward nach Hastings 1895 den Phasenblick (Hütte Summit City). Wer die Karte schon
+      gekauft hat, bekommt keine zweite. Bitte prüfen: Kommt nach Sams Todsünden-Runde seine Karte, und steht
+      Abzählen danach in der Kartentasche? Sprüche erscheinen in der Deckwahl nur vor Partien gegen Straßengegner.
 - [ ] N2621. Limo für Jo: Nach dem ersten Duell mit Skater Jo spricht sie dich noch einmal an und will eine
       Zitronenlimo. Am Kiosk von Mr. Patel kostet die Limo 5 Münzen (Patel: „Die trinkt nur Zitrone.“). Bring sie
       Jo: Sie verrät ihre Schwäche (sie zieht ungern zurück), die Zeile steht danach im Steckbrief, die Limo ist
@@ -1684,12 +1687,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       ZIP an den Hauptchat. Danach Porträt in Gemini mit dem Standbild von vorn als Vorlage. Für
       Juno fehlen noch die Laufbilder North und West. Weitere Figuren erst, wenn Juno im Spiel
       läuft (mittel-2 baut die Anzeige um). Offen: wann das Abo (24 $ im Monat) nötig wird.
-- [ ] RO11. **Lernkarten für abgeschlossene Buchkapitel:** Der Kartenplan belohnt im Spiel, wer in
-      der App ein Kapitel des Buches abschließt, mit einer Lernkarte. Das schickt den Spieler
-      mittelbar zum Buch und passt nicht zu einem Spiel, das für sich steht. Empfehlung: Die
-      Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
-      Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
-      Zustimmung oder Widerspruch genügt.
 - [ ] RO14. **Ein Textfenster für die Geschichte, Porträts an jeder Rede (Wunsch vom 14.11.2026):**
       Schon umgesetzt: Die Sätze der Passanten stehen jetzt unten im selben Fenster wie die Dialoge,
       nicht mehr oben; Ambroses Antwort darauf trägt sein Porträt. Oben erscheinen nur noch
@@ -1721,12 +1718,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Chaos-Prüfung). Schon umgesetzt: Im Pinewood Camp bietet Tamsin die mitgeschriebene
       Blitzpartie noch einmal an. Außerdem steht Ambroses Geist nach dem Abschied nicht mehr im
       Zimmer. Widerspruch genügt.
-- [ ] RO21. **Schnee in Silicon Bay und Port Delacroix?** Die Story-Bibel sagt „Silicon Bay ohne
-      Jahreszeit, Port Delacroix nasser Winter“; auf den Karten liegt aber Schnee (Altstadt, Port
-      Delacroix, Glasbrücke, Deich), weil frühere Runden das so gesetzt haben. Empfehlung: Silicon
-      Bay schneefrei (Glas und Kälte statt Schnee), Port Delacroix Regen und nasse Straßen statt
-      Schnee; das Bayou passt dann dazu. Noch nicht umgesetzt, weil es viele Karten betrifft;
-      „ja“ genügt, dann baue ich es um.
 - [ ] RO22. **Bildwünsche der Nacht (Datei „7_Gemini_Bildwuensche_Nacht.html“):** 19 Bilder, die
       im Katalog fehlen, je mit Prompt zum Kopieren (Drehbank, Staffelei, Doppeltür aus Holz,
       achteckiger Pavillon in Riverton, leeres Schwimmbecken mit Kakteen, Motelzeile mit bunten
@@ -1734,7 +1725,7 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       funktionieren ohne. Dazu in PixelLab: Gideon, der Schmied von 1866 (Lederschürze, Schüssel).
 - [ ] RO23. **Entscheidungen der Nacht (schon umgesetzt, Widerspruch genügt):** Späte Läden
       verkaufen vier Lernkarten (Taktikspürnase, Turmregel, Planfinder, Phasenblick), damit sich
-      Sparen lohnt und am Ende nicht 625 Münzen übrig sind (jetzt etwa 200). In Ghost Town stehen
+      Sparen lohnt und am Ende nicht 625 Münzen übrig sind (jetzt etwa 330). In Ghost Town stehen
       am Ortseingang zwei Pfosten ohne Schild (wie der Dialog sie beschreibt). Das Zimmer von 1866
       hat rosa Streifen statt Rosentapete (bis das Bild da ist). Das Gasthaus in Lockport ist
       L-förmig wie sein Gebäudebild, nicht T-förmig. Port Delacroix hat eine Brücke über das

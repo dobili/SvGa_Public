@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 199,
+ "nextobjectid": 198,
  "layers": [
   {
    "id": 1,
@@ -7839,7 +7839,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "49,33"
+       "value": "50,33"
       },
       {
        "name": "tun",
@@ -11312,29 +11312,6 @@
     },
     {
      "id": 175,
-     "name": "iw5AutoA",
-     "type": "moebel",
-     "x": 624,
-     "y": 464,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 176,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 448,
@@ -11357,7 +11334,7 @@
      ]
     },
     {
-     "id": 177,
+     "id": 176,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 576,
@@ -11380,7 +11357,7 @@
      ]
     },
     {
-     "id": 178,
+     "id": 177,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 800,
@@ -11403,7 +11380,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 178,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 320,
@@ -11426,7 +11403,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 179,
      "name": "mf4Diner",
      "type": "moebel",
      "x": 144,
@@ -11449,7 +11426,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 180,
      "name": "rvBahnsteigbank",
      "type": "moebel",
      "x": 288,
@@ -11472,7 +11449,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 181,
      "name": "rvBahnsteigbank",
      "type": "moebel",
      "x": 528,
@@ -11495,7 +11472,7 @@
      ]
     },
     {
-     "id": 183,
+     "id": 182,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 96,
@@ -11518,7 +11495,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 183,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 112,
@@ -11541,7 +11518,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 184,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 80,
@@ -11564,7 +11541,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 185,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 640,
@@ -11587,7 +11564,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 186,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 384,
@@ -11610,7 +11587,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 187,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 208,
@@ -11633,7 +11610,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 188,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 512,
@@ -11656,7 +11633,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 189,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 720,
@@ -11679,7 +11656,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 190,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 16,
@@ -11702,7 +11679,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 191,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 912,
@@ -11725,7 +11702,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 192,
      "name": "iw5GleisGrau",
      "type": "moebel",
      "x": 944,
@@ -11748,7 +11725,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 193,
      "name": "iw5GleisGrau",
      "type": "moebel",
      "x": 944,
@@ -11771,7 +11748,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 194,
      "name": "ds13Ortsschild",
      "type": "moebel",
      "x": 16,
@@ -11794,7 +11771,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 195,
      "name": "gt7Haltestelle",
      "type": "moebel",
      "x": 80,
@@ -11817,7 +11794,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 196,
      "name": "cc8PrellbockQuer",
      "type": "moebel",
      "x": 16,
@@ -11840,7 +11817,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 197,
      "name": "cc8PrellbockQuer",
      "type": "moebel",
      "x": 16,

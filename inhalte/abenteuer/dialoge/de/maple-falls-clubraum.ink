@@ -15,6 +15,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL setzeSzene(kennung)
 EXTERNAL schreibeTagebuch(name)
+EXTERNAL gibKarte(kennung)
 
 VAR held = "Du"
 VAR ambroseVertrauen = 0
@@ -35,6 +36,11 @@ VAR victorUeberrascht = 0
 VAR kenntHale = false
 // Neu nach dem Roman zu Akt 1 (Kapitel 8): heimwegNadelGesehen setzt diese Datei.
 VAR heimwegNadelGesehen = false
+// Lernkarte aus der Lektion (RO11, 15.11.2026): Sam gibt „Abzählen“, sobald der Held ihm das Zählen
+// gezeigt hat (Runde mapleFalls.todsuenden). hatKarteAbzaehlen setzt die Hülle aus dem Besitz; wer
+// die Karte schon hat, bekommt keine zweite.
+VAR lernkarteAbzaehlen = false
+VAR hatKarteAbzaehlen = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -239,6 +245,16 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
     -> END
 
 === sam_revanche_angebot ===
+{not lernkarteAbzaehlen:
+    ~ lernkarteAbzaehlen = true
+    Sam schiebt dir eine Karte über den Tisch. Darauf zwei Hände, die Figuren abzählen. #sprecher:erzaehler
+    {hatKarteAbzaehlen:
+        Ach, die hast du schon. Dann zähl weiter. Ich versuch's auch. #sprecher:sam #stimmung:laechelt
+    - else:
+        Hat mir der Coach mal gegeben. Ich hab sie nie benutzt. Du zählst ja sowieso. #sprecher:sam #stimmung:laechelt
+        ~ gibKarte("abzaehlen")
+    }
+}
 {ausgangMapleFallsSamRevanche == "":
     Okay. Die Dame bleibt erst mal zu Hause. Revanche? Jetzt? #sprecher:sam #stimmung:laechelt
 - else:

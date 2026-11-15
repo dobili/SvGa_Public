@@ -23,7 +23,6 @@
       "wirkung": {
         "art": "gefahrenradar"
       },
-      "kapitel": 4,
       "zeitpunkt": "waehrend"
     },
     {
@@ -169,7 +168,6 @@
         "art": "werkzeug",
         "werkzeug": "k1-zaehlen"
       },
-      "kapitel": 1,
       "zeitpunkt": "waehrend"
     },
     {
@@ -196,7 +194,6 @@
         "art": "werkzeug",
         "werkzeug": "k2-zielbilanz"
       },
-      "kapitel": 2,
       "zeitpunkt": "waehrend"
     },
     {
@@ -210,7 +207,6 @@
         "art": "werkzeug",
         "werkzeug": "k3-faktorenbilanz"
       },
-      "kapitel": 3,
       "zeitpunkt": "waehrend"
     },
     {
@@ -224,7 +220,6 @@
         "art": "werkzeug",
         "werkzeug": "k5-bauern"
       },
-      "kapitel": 5,
       "zeitpunkt": "waehrend"
     },
     {
@@ -238,7 +233,6 @@
         "art": "werkzeug",
         "werkzeug": "k6-wo"
       },
-      "kapitel": 6,
       "zeitpunkt": "waehrend"
     },
     {
@@ -252,7 +246,6 @@
         "art": "werkzeug",
         "werkzeug": "k7-erzwingend"
       },
-      "kapitel": 7,
       "zeitpunkt": "waehrend"
     },
     {
@@ -266,7 +259,6 @@
         "art": "werkzeug",
         "werkzeug": "k8-regeln"
       },
-      "kapitel": 8,
       "zeitpunkt": "waehrend"
     },
     {
@@ -280,7 +272,6 @@
         "art": "werkzeug",
         "werkzeug": "k9-turmbegriffe"
       },
-      "kapitel": 9,
       "zeitpunkt": "waehrend"
     },
     {
@@ -294,7 +285,6 @@
         "art": "werkzeug",
         "werkzeug": "k11-phase"
       },
-      "kapitel": 11,
       "zeitpunkt": "waehrend"
     },
     {
@@ -307,7 +297,6 @@
       "wirkung": {
         "art": "drohung"
       },
-      "kapitel": 12,
       "zeitpunkt": "waehrend"
     },
     {

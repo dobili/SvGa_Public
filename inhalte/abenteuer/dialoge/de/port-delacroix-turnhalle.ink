@@ -45,6 +45,9 @@ VAR louGetroffen = false
 VAR angesehenSpendenkasse = false
 VAR angesehenNotenheft = false
 VAR angesehenPlakatTurnhalle = false
+// Lernkarte Planfinder (lou_karte); hatKartePlanfinder setzt die Hülle aus dem Besitz.
+VAR lernkartePlanfinder = false
+VAR hatKartePlanfinder = false
 
 // ---------------------------------------------------------------- Der Vorwurf
 
@@ -285,8 +288,23 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
 - not tiefpunktGesehen: -> vorwurf
 - not reiheRemyBestanden: -> lou_warten
 - not reiheLouBestanden: -> lou_reihe
+- not lernkartePlanfinder: -> lou_karte
 - else: -> lou_alltag
 }
+
+// Lernkarte aus der Lektion (RO11, 15.11.2026): Nach ihrer Reihe (Pläne mit Läufern) gibt Lou den
+// Planfinder.
+=== lou_karte ===
+~ lernkartePlanfinder = true
+Du hast in jeder Stellung einen gefunden. Einen Plan, meine ich. #sprecher:lou #stimmung:laechelt
+{hatKartePlanfinder:
+    Die Karte hast du schon? Dann leg ich sie zu den Muscheln. #sprecher:lou #stimmung:laechelt
+- else:
+    Aus der Eierschachtel, zwischen zwei Muscheln, zieht sie eine Karte: ein Brett mit einem Pfeil zu einem Flügel. #sprecher:erzaehler
+    Erst fragen, wo. Dann wie. Die ist für dich. Ich hab den Plan ja schon im Kopf. #sprecher:lou #stimmung:laechelt
+    ~ gibKarte("planfinder")
+}
+-> END
 
 === lou_warten ===
 ~ louGetroffen = true

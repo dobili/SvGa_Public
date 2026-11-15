@@ -1565,103 +1565,33 @@
       "feld": [32, 128]
     },
     {
-      "moebel": "ld5Schleusentor",
+      "moebel": "wr15SchleusentorQuer8",
       "feld": [2, 95],
+      "versatz": [0, 8],
       "vorn": true
     },
     {
-      "moebel": "ld5Schleusentor",
-      "feld": [4, 95],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [6, 95],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [8, 95],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
+      "moebel": "wr15SchleusentorQuer8",
       "feld": [2, 113],
+      "versatz": [0, 8],
       "vorn": true
     },
     {
-      "moebel": "ld5Schleusentor",
-      "feld": [4, 113],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [6, 113],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [8, 113],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
+      "moebel": "wr15SchleusentorQuer8",
       "feld": [2, 131],
+      "versatz": [0, 8],
       "vorn": true
     },
     {
-      "moebel": "ld5Schleusentor",
-      "feld": [4, 131],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [6, 131],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [8, 131],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
+      "moebel": "wr15SchleusentorQuer8",
       "feld": [2, 144],
+      "versatz": [0, 8],
       "vorn": true
     },
     {
-      "moebel": "ld5Schleusentor",
-      "feld": [4, 144],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [6, 144],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [8, 144],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
+      "moebel": "wr15SchleusentorQuer8",
       "feld": [2, 153],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [4, 153],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [6, 153],
-      "vorn": true
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [8, 153],
+      "versatz": [0, 8],
       "vorn": true
     },
     {

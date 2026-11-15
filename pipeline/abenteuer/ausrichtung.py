@@ -32,7 +32,7 @@ Regeln (alle aus diesen Angaben, keine Regel nennt eine Karte):
    Nordwand, nicht an einer Seitenwand.
 
 Aufruf: ``python -m pipeline.abenteuer.ausrichtung [--ort KENNUNG] [--bilder ORDNER --privat PFAD]``.
-Im Kartenbau erscheinen die Befunde als Hinweis (``kartenbau.hinweise``).
+Im Kartenbau zählen die Befunde als Befund (``kartenbau.baue``, seit 15.11.2026; vorher Hinweis).
 """
 
 import re

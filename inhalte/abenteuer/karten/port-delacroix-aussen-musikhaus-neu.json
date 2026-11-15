@@ -19068,11 +19068,6 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "musikhausOffen"
-  },
-  {
-   "name": "jahreszeit",
-   "type": "string",
-   "value": "winter"
   }
  ]
 }

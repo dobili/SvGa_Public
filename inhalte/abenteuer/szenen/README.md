@@ -102,6 +102,12 @@ zaun, strassenmoebel …), `blick` (unten, oben, links, rechts: wohin Vorderseit
 bei Teppichen und Bäumen weglassen), `zustand` (neu, gebraucht, alt, kaputt), `stil` (modern, klassisch,
 rustikal, industrie, natur, kinder …). Jedes Bild vorher ansehen; das Register irrt manchmal.
 
+Schrägstücke der Landstraße (`"schraeg": "unten"` oder `"oben"`, etwa `wg14LandstrasseSchraegUnten`,
+48 × 64): Eine drei Kacheln breite Straße springt nicht mehr als Stufe um eine Reihe, sondern in einem
+Fenster von drei Spalten als weiche S-Kurve. Das Stück liegt mit der linken oberen Ecke auf der oberen
+der beiden Lagen; im Fenster trägt das Raster nur die zwei gemeinsamen Reihen (die Breitenprüfung
+zählt das Stück als Stufe). Mehrere Versätze folgen in aneinandergrenzenden Fenstern aufeinander.
+
 Szenen legen fest: `"zustand": ["neu", "gebraucht"]` (Standard) und `"stil": ["modern", "klassisch"]`.
 Kaputtes nur, wo die Geschichte es erklärt (Ghost Town, Turnhalle nach dem Sturm, Dachboden mit
 altem Gerümpel als _eigene Ecke_, nicht gemischt).

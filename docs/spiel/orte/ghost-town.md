@@ -421,8 +421,8 @@ Gutachten `docs/spiel/auftraege/gutachten/ghost-town.md`.
   alter Stelle; jetzt gleicht er der Grundkarte bis auf den offenen Stollen.
 - **Saloon:** Schwingtür innen zwei Felder breit wie außen (`gt13SchwingtuerDoppel`), Mr. Pruitt
   steht neben der Tür (9, 12) und sieht zu (Szene 100).
-- **Zimmer über dem Laden (`erinnerungSiedlung.huette`):** blassrosa Tapete (`tapeteRosa`, bis
-  zur Rosentapete), Kisten und Fass weg, Kleiderschrank und Kommode; Bett, Stuhl, Tisch mit
+- **Zimmer über dem Laden (`erinnerungSiedlung.huette`):** Rosentapete (`tapeteRosen`, eigene
+  Wandkachel `spiel/eigene/rosentapete.png`, seit 15.11.2026), Kisten und Fass weg, Kleiderschrank und Kommode; Bett, Stuhl, Tisch mit
   Brett und Kerze bleiben. Offen: Zugang über die Treppe im Laden und eine Figur für Gideon (das
   Bild ist noch der Postreiter).
 - **Goldmine:** Türstock und Tageslicht am Ausgang (10.77).

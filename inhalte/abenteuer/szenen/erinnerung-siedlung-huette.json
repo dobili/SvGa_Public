@@ -3,9 +3,9 @@
   "datei": "karten/erinnerung-siedlung-huette.json",
   "art": "innen",
   "toenung": "sepia",
-  "wand": "tapeteRosa",
+  "wand": "tapeteRosen",
   "boden": "dielen",
-  "beschreibung": "Das Zimmer über dem Laden in Ghost Town, Februar 1866 (Szene 99), 12 × 10: Dielenboden, die Wände mit einer blassrosa Tapete, durch das Fenster der Nachthimmel. An der Westwand das Bett, in dem Ambrose im Fieber liegt (nur angedeutet), daneben ein Stuhl und der dunkle Tisch mit dem Brett der Fernpartie und einer heruntergebrannten Kerze; an der Nordwand der Kleiderschrank, in der Nordostecke ein kleiner Kanonenofen. In der Tür in der Südwand (zur Treppe hinunter in den Laden) steht Gideon, der Schmied; der Postreiter wartet unten vor dem Haus und ist nicht zu sehen. Die Rosentapete ist bis zum Bild aus dem Wunsch ein gestreiftes Muster aus dem Paket.",
+  "beschreibung": "Das Zimmer über dem Laden in Ghost Town, Februar 1866 (Szene 99), 12 × 10: Dielenboden, die Wände mit einer verblassten Rosentapete (kleine rote Rosen auf Creme, eigene Wandkachel), durch das Fenster der Nachthimmel. An der Westwand das Bett, in dem Ambrose im Fieber liegt (nur angedeutet), daneben ein Stuhl und der dunkle Tisch mit dem Brett der Fernpartie und einer heruntergebrannten Kerze; an der Nordwand der Kleiderschrank, in der Nordostecke ein kleiner Kanonenofen. In der Tür in der Südwand (zur Treppe hinunter in den Laden) steht Gideon, der Schmied; der Postreiter wartet unten vor dem Haus und ist nicht zu sehen. Die Rosentapete ist bis zum Bild aus dem Wunsch ein gestreiftes Muster aus dem Paket.",
   "zustand": ["alt", "verwittert", "gebraucht"],
   "stil": ["klassisch", "laendlich", "einfach", "rustikal"],
   "raster": [

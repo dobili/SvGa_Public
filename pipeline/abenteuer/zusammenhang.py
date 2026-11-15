@@ -305,12 +305,39 @@ def pruefe_zaeune(gesetzt: list[dict], moebel: dict) -> list[str]:
     return befunde
 
 
+def mit_schraegstuecken(szene: dict, zeilen: list[str], moebel: dict) -> list[str]:
+    """Raster für die Breitenprüfung, in dem jedes Schrägstück der Straße als Stufe eingetragen ist.
+
+    Zweck: Ein Schrägstück (Katalogangabe ``"schraeg": "unten"`` oder ``"oben"``, 3 × 4 Kacheln,
+    etwa ``wg14LandstrasseSchraegUnten``) versetzt eine drei Kacheln breite Straße weich um eine Reihe.
+    Warum: Unter dem Stück trägt das Raster nur die zwei Reihen, die links und rechts gemeinsam sind;
+    die Kurve zeichnet das Bild. Für die Mindestbreite (10.33) zählt das Stück wie die frühere Stufe:
+    zwei Spalten in der Lage links, die dritte in der Lage rechts, je drei Reihen.
+    Eingaben: Szene (``objekte``), Raster, Katalog (Name → Angabe). Ausgabe: neues Raster.
+    Beispiel: Landstraße Maple Falls–Cedar Creek, Schrägstück bei (37, 15) von Reihe 15 nach 16.
+    Sonderfälle: Ohne Schrägstücke bleibt das Raster gleich; Stücke am Kartenrand werden abgeschnitten.
+    """
+    neu = [list(z) for z in zeilen]
+    for objekt in szene.get("objekte", []):
+        richtung = moebel.get(objekt.get("moebel", ""), {}).get("schraeg")
+        if richtung not in ("unten", "oben") or "feld" not in objekt:
+            continue
+        x, y = objekt["feld"]
+        links, rechts = (y, y + 1) if richtung == "unten" else (y + 1, y)
+        zeichen = zeilen[y + 1][x] if 0 <= y + 1 < len(zeilen) and 0 <= x < len(zeilen[0]) else LEER
+        for dx, oben in ((0, links), (1, links), (2, rechts)):
+            for dy in range(3):
+                if 0 <= oben + dy < len(neu) and 0 <= x + dx < len(neu[0]):
+                    neu[oben + dy][x + dx] = zeichen
+    return ["".join(z) for z in neu]
+
+
 def pruefe_zusammenhang(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
     """Alle Prüfungen dieses Moduls; nur für Außenkarten."""
     if szene.get("art") != "aussen":
         return []
     return (
-        pruefe_breiten(szene, zeilen)
+        pruefe_breiten(szene, mit_schraegstuecken(szene, zeilen, moebel))
         + pruefe_engstellen(szene, zeilen)
         + pruefe_enden(szene, zeilen, gesetzt, moebel)
         + pruefe_zaeune(gesetzt, moebel)

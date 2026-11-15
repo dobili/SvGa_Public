@@ -3,7 +3,7 @@
   "datei": "karten/weg-cedar-riverton-bahndamm.json",
   "art": "aussen",
   "wand": "damm",
-  "beschreibung": "Hauptfassung (früher C). Der Bahndamm: Das Gleis kommt im Westen in einem Bogen vom Nordrand (Haltepunkt Cedar Creek) und liegt dann mitten auf einer Schotterkrone (Reihen 6–9), Böschung nach Süden; die Nordböschung fällt vom Betrachter weg und zeigt sich als dunklerer Grasstreifen mit Kante; im Norden Wiese mit Hecke, Stellwerk mit Blick aufs Gleis, Signal und eine Kuhweide hinter dem Viehdurchlass. Der Bahnsteigrest oben auf dem Damm mit zwei Bänken, die zum Gleis schauen, Laternen und Treppe. Südlich der Weg durch Wiese und Birkenwald, zum Fluss mit Bank, an Kleingärten mit Kürbis und Sonnenblumen vorbei, vor Riverton läuft der Damm aus: Das Gleis kommt in einem Bogen herunter und liegt am Ostrand auf der Höhe des Gleises von Riverton; jenseits davon die Plakatwand von Perfect Move. Der Weg endet unten rechts, damit die Hauptstraße von Riverton unterhalb dieser Karte weiterläuft (Rückmeldung R078, R079).",
+  "beschreibung": "Hauptfassung (früher C). Der Bahndamm: Das Gleis kommt im Westen in einem weiten Bogen vom Nordrand (Haltepunkt Cedar Creek) und liegt dann mitten auf einer Schotterkrone (Reihen 6–9), Böschung nach Süden; die Nordböschung fällt vom Betrachter weg und zeigt sich als dunklerer Grasstreifen mit Kante; im Norden Wiese mit Hecke, Stellwerk mit Blick aufs Gleis, Signal und eine Kuhweide hinter dem Viehdurchlass. Der Bahnsteigrest oben auf dem Damm mit zwei Bänken, die zum Gleis schauen, Laternen und Treppe. Südlich der Weg durch Wiese und Birkenwald, zum Fluss mit Bank, an Kleingärten mit Kürbis und Sonnenblumen vorbei, vor Riverton läuft der Damm aus: Das Gleis kommt in einer weichen S-Kurve herunter und liegt am Ostrand auf der Höhe des Gleises von Riverton; jenseits davon die Plakatwand von Perfect Move. Der Weg endet unten rechts, damit die Hauptstraße von Riverton unterhalb dieser Karte weiterläuft (Rückmeldung R078, R079).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -34,10 +34,10 @@
     "#............kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk......................#",
     "#............kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk......................#",
     "#............kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkppppppppppppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk......................#",
-    "#............##################################pppppppppppppp############################################################kkkkkk......................#",
-    "#............#########################################kk########ee#######################################################kkkkkk......................#",
-    "#............#########################################kk########ee#######################################################kkkkkk......................#",
-    "#...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.................................................kkkkkk......................#",
+    "#............##################################pppppppppppppp###########################################################kkkkkkk......................#",
+    "#............#########################################kk########ee######################################################kkkkkkk......................#",
+    "#............#########################################kk########ee######################################################kkkkkkk......................#",
+    "#...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................kkkkkkk......................#",
     "#..............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#.............................eee......................................eeee.....ee.......................................kkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#............................eee........................................eeee....ee........eeeeeeeeeeeeeeeeeeeeeeee.......kkkkkk......................#",
@@ -495,17 +495,12 @@
     },
     {
       "moebel": "wc5Gleis",
-      "feld": [17, 7],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [18, 7],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
       "feld": [19, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc15GleisbogenObenRechts",
+      "feld": [14, 4],
       "bauteil_ok": true
     },
     {
@@ -1009,13 +1004,13 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wc5Gleis",
+      "moebel": "wc15GleisbogenLinksUnten",
       "feld": [120, 7],
       "bauteil_ok": true
     },
     {
-      "moebel": "wc5Gleis",
-      "feld": [121, 7],
+      "moebel": "wc15GleisbogenKleinObenRechts",
+      "feld": [123, 12],
       "bauteil_ok": true
     },
     {
@@ -2463,39 +2458,6 @@
       "feld": [95, 25]
     },
     {
-      "moebel": "wc14GleisbogenAb",
-      "feld": [122, 7],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisSenkrecht",
-      "feld": [123, 10],
-      "versatz": [1, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisSenkrecht",
-      "feld": [123, 11],
-      "versatz": [1, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisSenkrecht",
-      "feld": [123, 12],
-      "versatz": [1, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisbogenAuf",
-      "feld": [123, 13],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [126, 14],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wc5Gleis",
       "feld": [127, 14],
       "bauteil_ok": true
@@ -2664,23 +2626,6 @@
       "moebel": "wc14GleisSenkrecht",
       "feld": [14, 3],
       "versatz": [1, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisSenkrecht",
-      "feld": [14, 4],
-      "versatz": [1, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisSenkrecht",
-      "feld": [14, 5],
-      "versatz": [1, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc14GleisbogenAuf",
-      "feld": [14, 6],
       "bauteil_ok": true
     },
     {

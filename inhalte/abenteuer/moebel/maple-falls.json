@@ -1926,7 +1926,7 @@
       "blick": "links"
     },
     "mf6Haltestelle": {
-      "quelle": "spiel/eigene/wartehaus_hinten.png",
+      "quelle": "spiel/eigene/wartehaeuschen_hinten.png",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,

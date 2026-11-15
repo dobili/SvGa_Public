@@ -2,7 +2,7 @@
   "karte": "wegMapleCedar.zedernpfad",
   "datei": "karten/weg-maple-cedar-zedernpfad.json",
   "art": "aussen",
-  "beschreibung": "Der Zedernpfad, ein Trampelpfad durch dichten Zedernwald über den Hügel nach Cedar Creek, 240 Kacheln lang. Zwei Felsstufen laufen von Kartenrand zu Kartenrand; nur der Pfad führt hinauf und wieder hinab, über vier gerade, in den Fels geschlagene Treppen. Im Westen folgt der Pfad vom Fußsteg des Stadtparks dem Waldrand nach Osten, an einer kleinen Pilzlichtung vorbei, und steigt über die erste Treppe auf die mittlere Stufe. Dort liegt Sturmholz quer über dem Weg, man steigt darüber. Über die zweite Treppe geht es auf die obere Stufe zur Kuppe mit der Baumstammbank in einem Steinkreis, wo ein Maler die Zedern malt. Dahinter führt die dritte Treppe hinab zu einem Rastplatz, an dem Kinder Zapfen sammeln, die vierte hinab in die Senke und zum Ostrand. Der Wald steht beiderseits so dicht, dass der Pfad der einzige Weg ist. Kartengutachten Akt 1 (14.11.2026): Der Wald steht ohne Reihen, gemischt aus Zedern, Tannen und Kiefern, mit Farn, Ästen und Pilzen dazwischen; die Felskanten springen in Abschnitten um eine Reihe vor und zurück und laufen nur an den Treppen gerade; die Knicke des Pfads sind innen gerundet. Das Sturmholz liegt flach, man steigt darüber. Um die Bank auf der Kuppe liegt ein Kreis aus Steinen, am Rastplatz steht der Eimer der Kinder mit den Zapfen.",
+  "beschreibung": "Der Zedernpfad, ein Trampelpfad durch dichten Zedernwald über den Hügel nach Cedar Creek, 240 Kacheln lang. Zwei Felsstufen laufen von Kartenrand zu Kartenrand; nur der Pfad führt hinauf und wieder hinab, über vier gerade, in den Fels geschlagene Treppen. Im Westen folgt der Pfad vom Fußsteg des Stadtparks dem Waldrand nach Osten, an einer kleinen Pilzlichtung vorbei, und steigt über die erste Treppe auf die mittlere Stufe. Dort liegt Sturmholz quer über dem Weg, man steigt darüber. Über die zweite Treppe geht es auf die obere Stufe zur Kuppe mit der Baumstammbank in einem Steinkreis, wo ein Maler hinter seiner Staffelei steht und den Blick über die Zedern nach Süden malt (man sieht die Rückseite der Leinwand). Dahinter führt die dritte Treppe hinab zu einem Rastplatz, an dem Kinder Zapfen sammeln, die vierte hinab in die Senke und zum Ostrand. Der Wald steht beiderseits so dicht, dass der Pfad der einzige Weg ist. Kartengutachten Akt 1 (14.11.2026): Der Wald steht ohne Reihen, gemischt aus Zedern, Tannen und Kiefern, mit Farn, Ästen und Pilzen dazwischen; die Felskanten springen in Abschnitten um eine Reihe vor und zurück und laufen nur an den Treppen gerade; die Knicke des Pfads sind innen gerundet. Das Sturmholz liegt flach, man steigt darüber. Um die Bank auf der Kuppe liegt ein Kreis aus Steinen, am Rastplatz steht der Eimer der Kinder mit den Zapfen.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -85,7 +85,7 @@
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [135, 8]
+      "feld": [137, 8]
     },
     {
       "moebel": "wg4Farn",
@@ -142,6 +142,10 @@
     {
       "moebel": "wg4Baumstammbank",
       "feld": [133, 6]
+    },
+    {
+      "moebel": "wg14StaffeleiHinten",
+      "feld": [135, 7]
     },
     {
       "moebel": "wg6Stumpf",
@@ -2525,7 +2529,7 @@
     {
       "name": "landschaftsmaler",
       "typ": "statist",
-      "feld": [135, 7],
+      "feld": [135, 6],
       "eigenschaften": {
         "tun": "malt die Zedern auf eine kleine Leinwand",
         "wann": "tag",

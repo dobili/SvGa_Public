@@ -35,14 +35,14 @@
     "#...................................................ee.................................................................#",
     "#...................................................ee.................................................................#",
     "#...................................................ee.................................................................#",
-    "#.................lllllllllll.......................ee.................................................................#",
-    "#...............lllllllllllllll.....................ee.................................................................#",
-    "lllllllllllllllllllllllllllllllllllllllll...........ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
-    "lllllllllllllllllll.........llllllllllllll..........ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
-    "lllllllllllllllll.............lllllllllllll.........ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
-    "#.......................................lllllllllllllllllllllllll..............................kk......................#",
-    "#........................................lllllllllllllllllllllll........................kkkkkkkkkkk....................#",
-    "~~~~~~~~~.................................lllllllllllllllllllll.........................kkkkkkkkkkk...................~~",
+    "#..................lllllll..........................ee.................................................................#",
+    "#...............lllllllllllll.......................ee.................................................................#",
+    "lllllllllllllllllllllllllllllllllllll...............ee...........lllllllllllllllllllllllllllllllllllllllllllllllllllllll",
+    "llllllllllllllll.............lllllllllll............ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
+    "lllllllllllll...................lllllllllll.........ee.....lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
+    "#.......................................llllllllllllllllllllll.................................kk......................#",
+    "#..........................................llllllllllllllll.............................kkkkkkkkkkk....................#",
+    "~~~~~~~~~.....................................llllllllll................................kkkkkkkkkkk...................~~",
     "~~~~~~~~~~..............................................................................kkkkkkkkkkk..................~~~",
     "~~~~~~~~~~~~............................................................................kkkkkkkkkkk..................~~~",
     "~~~~~~~~~~~~~...........................................................................kkkkkkkkkkk.................~~~~",
@@ -54,6 +54,46 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   ],
   "objekte": [
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [13, 14]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [16, 13]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [26, 13]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [29, 14]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [37, 15]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [40, 16]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [43, 17]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [56, 17]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [59, 16]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [62, 15]
+    },
     {
       "moebel": "lm8Acker10x5",
       "feld": [1, 1]

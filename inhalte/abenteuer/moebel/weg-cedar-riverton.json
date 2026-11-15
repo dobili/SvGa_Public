@@ -830,6 +830,59 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "landhaus"
+    },
+    "wc15GleisbogenObenRechts": {
+      "quelle": "spiel/eigene/gleisbogen_oben_rechts.png",
+      "maske": [
+        "##...",
+        "###..",
+        ".....",
+        "..###",
+        "...##"
+      ],
+      "breite": 80,
+      "hoehe": 80,
+      "verbund": "gleis",
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "hinweis": "Weiter Gleisbogen (5 × 5) von oben nach rechts, aus dem geraden Gleisstück gebogen; senkrechtes Gleis mit Versatz (1, 0) setzt oben in Spalte 0–1 an; Maske aus der Deckung je Kachel, die dritte Reihe ist frei: dort überquert man das Gleis wie früher an der LimeZu-Ecke"
+    },
+    "wc15GleisbogenLinksUnten": {
+      "quelle": "spiel/eigene/gleisbogen_links_unten.png",
+      "maske": [
+        "##...",
+        "####.",
+        ".###.",
+        "..###",
+        "...##"
+      ],
+      "breite": 80,
+      "hoehe": 80,
+      "verbund": "gleis",
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "hinweis": "Weiter Gleisbogen (5 × 5) von links nach unten; unten setzt das senkrechte Gleis in Spalte 3–4 an"
+    },
+    "wc15GleisbogenKleinObenRechts": {
+      "quelle": "spiel/eigene/gleisbogen4_oben_rechts.png",
+      "maske": [
+        "##..",
+        "....",
+        ".###",
+        "..##"
+      ],
+      "breite": 64,
+      "hoehe": 64,
+      "verbund": "gleis",
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "hinweis": "Gleisbogen 4 × 4 von oben nach rechts, für die S-Kurve am Dammende (7 Reihen Höhenunterschied); Masken aus der Deckung je Kachel, damit der Schotter innen im Bogen begehbar bleibt; die zweite Reihe ist frei: dort überquert man das Gleis wie früher an der LimeZu-Ecke"
     }
   }
 }

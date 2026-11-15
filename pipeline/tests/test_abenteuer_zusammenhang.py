@@ -97,3 +97,24 @@ def test_mittellinie_zaehlt_zur_fahrbahn():
     assert pruefe_breiten(szene, zeilen) == []
     ohne = {"boeden": {"s": "asphalt", "m": "pflaster"}}
     assert any("zu schmal" in b for b in pruefe_breiten(ohne, zeilen))
+
+
+def test_schraegstueck_zaehlt_als_stufe():
+    """Schrägstück (Landstraße, 15.11.2026): Unter ihm trägt das Raster nur zwei Reihen; die
+    Breitenprüfung sieht die frühere Stufe, drei Reihen breit."""
+    from pipeline.abenteuer.zusammenhang import mit_schraegstuecken
+
+    zeilen = [
+        "..........",
+        "ssss......",
+        "sssssssss.",
+        "sssssssss.",
+        ".......ss.",
+        "..........",
+    ]
+    szene = {"art": "aussen", "boeden": BOEDEN, "objekte": [{"moebel": "schraeg", "feld": [4, 1]}]}
+    katalog = {"schraeg": {"schraeg": "unten"}}
+    assert any("zu schmal" in b for b in pruefe_breiten(szene, zeilen))
+    gestuft = mit_schraegstuecken(szene, zeilen, katalog)
+    assert gestuft[1][4:7] == "ss." and gestuft[4][4:7] == "..s"
+    assert pruefe_breiten(szene, gestuft) == []

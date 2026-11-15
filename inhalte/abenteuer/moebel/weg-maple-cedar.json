@@ -833,6 +833,41 @@
       "zustand": "gebraucht",
       "stil": "einfach",
       "hinweis": "Eimer der Kinder, die am Rastplatz des Zedernpfads Zapfen sammeln (Kartengutachten Akt 1, Befund 7)"
+    },
+    "wg14StaffeleiHinten": {
+      "quelle": "spiel/eigene/staffelei_hinten.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "einfach",
+      "hinweis": "Staffelei des Malers auf der Kuppe, von hinten: Er steht dahinter und malt den Blick über den Zedernwald nach Süden (Kartengutachten Akt 1, Befund 8)"
+    },
+    "wg14LandstrasseSchraegUnten": {
+      "quelle": "spiel/eigene/landstrasse_schraeg_unten.png",
+      "schraeg": "unten",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "alt",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "Fahrbahn am Boden: Schrägstück, das die Landstraße weich um eine Reihe nach unten versetzt"
+    },
+    "wg14LandstrasseSchraegOben": {
+      "quelle": "spiel/eigene/landstrasse_schraeg_oben.png",
+      "schraeg": "oben",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "alt",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "Fahrbahn am Boden: Schrägstück, das die Landstraße weich um eine Reihe nach oben versetzt"
     }
   }
 }

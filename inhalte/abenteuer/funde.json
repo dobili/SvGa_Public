@@ -106,7 +106,8 @@
       "kennung": "schluessel",
       "ort": "cedarCreek",
       "name": "fund.schluessel.name",
-      "text": "fund.schluessel.text"
+      "text": "fund.schluessel.text",
+      "bild": "bilder/fund-schluessel.webp"
     },
     {
       "kennung": "anstecker",

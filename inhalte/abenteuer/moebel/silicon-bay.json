@@ -115,11 +115,16 @@
       "kollision": true
     },
     "sbFoodtruck": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Tacos_Truck_1.png",
+      "quelle": "spiel/eigene/foodtruck_tuerkis.png",
       "lauf": "waagrecht",
-      "breite": 112,
+      "breite": 128,
       "hoehe": 80,
-      "kollision": true
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "hinweis": "Rosies Food-Truck: türkis, verbeult, Verkaufsklappe zur Betrachterseite, rechts die Kreidetafel (eigene Fassung, vom Autor angenommen 15.11.2026)"
     },
     "sb5Bildschirmtisch": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_320.png",

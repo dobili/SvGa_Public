@@ -25,7 +25,8 @@
     "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
     "watt": "spiel/eigene/wasser_watt.png",
     "sumpfboden": "spiel/eigene/sumpfboden.png",
-    "pisteRot": "spiel/eigene/piste_rot.png"
+    "pisteRot": "spiel/eigene/piste_rot.png",
+    "rosentapete": "spiel/eigene/rosentapete.png"
   },
   "boeden": {
     "holzHell": {
@@ -531,6 +532,11 @@
       "bogen": "wand",
       "oben": [12, 26],
       "unten": [12, 27]
+    },
+    "tapeteRosen": {
+      "bogen": "rosentapete",
+      "oben": [0, 0],
+      "unten": [0, 1]
     }
   }
 }

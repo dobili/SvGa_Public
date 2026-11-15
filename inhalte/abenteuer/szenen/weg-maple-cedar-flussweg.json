@@ -36,14 +36,14 @@
     "#......................................................................................................................#",
     "#......................................................................................................................#",
     "#......................................................................................................................#",
-    "#.................llllllllllllllllllll.................................................................................#",
-    "#...............llllllllllllllllllllllll...............................................................................#",
-    "#............llllllllllllllllllllllllllllll................................lllllllllllllllllllllllll......llllpppppppppp",
-    "lllllllllllllllllll..................llllllll.........................llllllllllllllllllllllllllllllllllllllllssssssssss",
-    "lllllllllllllllll......................llllllllll..................lllllllllllllllllllllllllllllllllllllllllllssssssssss",
-    "llllllllllllll............................llllllllllllllllllllllllllllllllll.......................lllllllllllssssssssss",
-    "#...........................................lllllllllllllllllllllllllll...................................llll.ppppppppp",
-    "#.............................~~~~~.........lllllllllllllllllllllllllll...............................~~~~~~...........#",
+    "#..................lllllllllllllll.....................................................................................#",
+    "#...............lllllllllllllllllllll..................................................................................#",
+    "#............lllllllllllllllllllllllllll..................................llllllllllllllllllllll..........llllpppppppppp",
+    "llllllllllllllll.....................llllll............................lllllllllllllllllllllllllllllllllllllllssssssssss",
+    "lllllllllllll...........................llllll......................llllllllllllllllllllllllllllllllllllllllllssssssssss",
+    "llllllllll.................................llllllllllllllllllllllllllll............................lllllllllllssssssssss",
+    "#.............................................llllllllllllllllllllll......................................llll.ppppppppp",
+    "#.............................~~~~~..............llllllllllllllll.....................................~~~~~~...........#",
     "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~...........#",
     "~~~~.....................~~~~~~~~~~~~~~~~~~...~~........ee........~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~...........#",
     "~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~..........#",
@@ -56,6 +56,54 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~####"
   ],
   "objekte": [
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [10, 14]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [13, 13]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [16, 12]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [34, 12]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [37, 13]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [40, 14]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [43, 15]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [46, 16]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [65, 16]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [68, 15]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegOben",
+      "feld": [71, 14]
+    },
+    {
+      "moebel": "wg14LandstrasseSchraegUnten",
+      "feld": [96, 14]
+    },
     {
       "moebel": "wg4Bank",
       "feld": [86, 13]

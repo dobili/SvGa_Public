@@ -15,6 +15,7 @@
  */
 import { liesAusloeser } from "./ausloeserebene";
 import { begehbar, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
+import { formAus, geformt } from "./moebelform";
 
 /** Ankunft in Kachelkoordinaten mit Blickrichtung. */
 export interface Ankunft {
@@ -132,8 +133,9 @@ export function verdeckendesMoebel(
   const tiefe = (feld.y + 0.5) * kachel;
   const mitte = (feld.x + 0.5) * kachel;
   for (const o of karte.layers.flatMap((e) => e.objects ?? [])) {
-    const angabe = o.type === "moebel" && o.name ? moebel[o.name] : undefined;
-    if (!angabe) continue;
+    const roh = o.type === "moebel" && o.name ? moebel[o.name] : undefined;
+    if (!roh) continue;
+    const angabe = geformt(roh, formAus(o.properties));
     const x = o.x ?? 0;
     const y = o.y ?? 0;
     const eigen = o.properties?.find((e) => e.name === "tiefe")?.value;

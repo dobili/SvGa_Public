@@ -20,6 +20,7 @@ from pipeline.abenteuer.kartenregeln import SITZMOEBEL, pruefe_regeln
 from pipeline.abenteuer.kehren import kehrenbefunde
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektform import formangaben, formeigenschaften, geformt
 from pipeline.abenteuer.saum import saumbefunde
 from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
 from pipeline.abenteuer.varianten import vergleiche_mit_a
@@ -70,7 +71,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     nach_id: dict[str, dict] = {}
     gesetzt: list[dict] = []
     for nummer, eintrag in enumerate(szene.get("objekte", [])):
-        angabe = moebel.get(eintrag["moebel"])
+        angabe = geformt(moebel.get(eintrag["moebel"]), eintrag)  # Drehung, Maßstab (objektform.py)
         if not angabe:
             befunde.append(f"Möbel {eintrag['moebel']} fehlt in inhalte/abenteuer/moebel/")
             continue
@@ -109,11 +110,11 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             "y": y,
             "breite": angabe["breite"],
             "hoehe": angabe["hoehe"],
-            "tiefe": tiefe,
+            "tiefe": tiefe + eintrag.get("ebene", 0),  # Ebene aus dem Karteneditor (objektform.py)
             "kollision": kollision,
             # Begehbare Reihen unten im Bild (Gang vor dem Motel, Veranda), Angabe „frei_unten“.
             "frei_unten": angabe.get("frei_unten", 0),
-            **({"maske": angabe["maske"]} if "maske" in angabe else {}),
+            **(({"maske": angabe["maske"]} if "maske" in angabe else {}) | formangaben(eintrag)),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
         }
         # Bedingte Möbel (wenn, Sprache von bedingung.py): Was auf einem bedingten Möbel steht,
@@ -135,7 +136,6 @@ def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
     return {(x0 + a, y0 + b) for a, b in maskenfelder(stueck)}
 
 
-# Möbel, auf denen Figuren und Statisten sitzen dürfen (Name enthält eines dieser Wörter).
 RICHTUNGEN = ("oben", "unten", "links", "rechts")
 
 
@@ -235,7 +235,7 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         eig = [
             {"name": "tiefe", "type": "int", "value": s["tiefe"]},
             {"name": "kollision", "type": "bool", "value": s["kollision"]},
-        ]
+        ] + formeigenschaften(s)
         if "wenn" in s:
             eig.append({"name": "wenn", "type": "string", "value": s["wenn"]})
         objekt(s["name"], "moebel", s["x"], s["y"], s["breite"], s["hoehe"], eig)

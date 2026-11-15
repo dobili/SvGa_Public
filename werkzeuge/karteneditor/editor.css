@@ -1,0 +1,315 @@
+/* Karteneditor des Schach-Abenteuers – Aussehen. Desktop mit Maus; dunkle Fläche um die Karte. */
+:root {
+  --grund: #1f2026;
+  --flaeche: #2b2c35;
+  --rand: #43454f;
+  --text: #e9e9ee;
+  --leise: #a2a4b0;
+  --akzent: #ffcc00;
+  --wichtig: #2f7cf6;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--grund);
+  color: var(--text);
+  font:
+    13px/1.35 "Segoe UI",
+    system-ui,
+    sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: 4px;
+}
+button {
+  padding: 3px 8px;
+  cursor: pointer;
+}
+button:hover:not(:disabled) {
+  border-color: var(--akzent);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+button.an {
+  background: #5b4a00;
+  border-color: var(--akzent);
+}
+button.wichtig {
+  background: var(--wichtig);
+  border-color: var(--wichtig);
+  color: #fff;
+}
+#leiste {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--rand);
+}
+.trenner {
+  width: 10px;
+}
+main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+#links {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--rand);
+}
+#links input,
+#bibkopf input[type="search"] {
+  margin: 6px;
+  padding: 4px 6px;
+}
+#kartenliste {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0 6px 6px;
+}
+details > summary {
+  cursor: pointer;
+  padding: 3px 0;
+  color: var(--leise);
+}
+.kartenknopf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+  width: 100%;
+  text-align: left;
+  margin: 2px 0;
+  background: transparent;
+}
+.kartenknopf.aktiv {
+  border-color: var(--akzent);
+}
+.kartenname {
+  font-weight: 600;
+}
+.dateiname {
+  color: var(--leise);
+  font-size: 11px;
+  width: 100%;
+}
+.geaendert {
+  color: var(--akzent);
+}
+.fassungen {
+  color: #8fd;
+  font-size: 11px;
+}
+#mitte {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+#leinwand {
+  position: absolute;
+  inset: 0;
+  cursor: crosshair;
+}
+#rechts {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--rand);
+  min-height: 0;
+}
+#eigenschaften {
+  padding: 8px;
+  border-bottom: 1px solid var(--rand);
+  max-height: 55%;
+  overflow-y: auto;
+}
+#eigenschaften .titel {
+  font-size: 15px;
+  font-weight: 600;
+}
+.kennung,
+.bibkennung {
+  color: var(--leise);
+  font-size: 11px;
+}
+.kurz {
+  color: var(--leise);
+  margin: 2px 0 4px;
+}
+.leer {
+  color: var(--leise);
+}
+.ebenenanzeige {
+  color: var(--akzent);
+}
+.knopfreihe,
+.pfeile {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin: 6px 0;
+  flex-wrap: wrap;
+}
+#massstab {
+  width: 64px;
+}
+.notiz {
+  width: 100%;
+  min-height: 44px;
+  margin: 4px 0;
+  padding: 4px;
+}
+.fassungshinweis {
+  margin: 8px 0;
+  padding: 6px;
+  border: 1px solid #3d8;
+  border-radius: 4px;
+}
+.zwischentitel {
+  color: var(--leise);
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 6px 0 2px;
+}
+#bibkopf {
+  padding: 4px 8px 0;
+}
+#bibkopf input[type="search"] {
+  width: calc(100% - 12px);
+}
+#bibliothek {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 8px 8px;
+}
+.bibuntergruppe {
+  margin-left: 10px;
+}
+.bibeintrag {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: grab;
+}
+.bibeintrag:hover {
+  background: var(--flaeche);
+}
+.vorschaubild {
+  image-rendering: pixelated;
+  min-width: 20px;
+  flex: none;
+}
+.bibeintrag .vorschaubild {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.bibname {
+  font-weight: 600;
+}
+.bibkurz {
+  color: var(--leise);
+  font-size: 11px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+footer {
+  display: flex;
+  gap: 16px;
+  padding: 4px 8px;
+  border-top: 1px solid var(--rand);
+  color: var(--leise);
+}
+#status {
+  flex: 1;
+}
+#status.fehler {
+  color: #ff7b7b;
+}
+#trefferliste {
+  position: fixed;
+  z-index: 10;
+  background: var(--flaeche);
+  border: 1px solid var(--akzent);
+  border-radius: 6px;
+  padding: 4px;
+  max-height: 320px;
+  overflow-y: auto;
+  min-width: 180px;
+}
+.trefferzeile {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+  margin: 2px 0;
+  text-align: left;
+}
+.trefferzeile .vorschaubild {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.trefferzeile.aktiv {
+  border-color: var(--akzent);
+}
+#hilfe {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+#hilfe[hidden],
+#trefferliste[hidden],
+#pinselwahl[hidden] {
+  display: none;
+}
+.hilfekasten {
+  background: var(--flaeche);
+  padding: 16px 20px;
+  border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.hilfekasten td {
+  padding: 2px 12px 2px 0;
+  vertical-align: top;
+}
+.hilfekasten td:first-child {
+  color: var(--akzent);
+  white-space: nowrap;
+}
+#hilfezu {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

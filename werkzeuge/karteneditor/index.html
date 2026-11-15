@@ -1,0 +1,179 @@
+<!doctype html>
+<!--
+  Karteneditor des Schach-Abenteuers (Wunsch des Autors, 15.11.2026).
+  Eigenständige Seite ohne Server und ohne Build: per Doppelklick in Chrome oder Edge öffnen.
+  Die Daten (Szenen, Bilder, Kacheln) kommen aus daten.js im privaten Paket
+  (python -m pipeline.abenteuer.editorpaket PRIVAT ZIEL). Anleitung: docs/spiel/KARTENEDITOR.md.
+-->
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Karteneditor</title>
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <header id="leiste">
+      <strong>Karteneditor</strong>
+      <button id="zurueck" title="Rückgängig (Strg+Z)">↶ Rückgängig</button>
+      <button id="vor" title="Wiederholen (Strg+Y)">↷ Wiederholen</button>
+      <span class="trenner"></span>
+      <button data-schalter="raster" title="Raster mit Koordinaten (G)">Raster</button>
+      <button data-schalter="kollision" title="Kollision zeigen (K)">Kollision</button>
+      <button data-schalter="markierungen" title="Auslöser und Figuren zeigen (M)">
+        Markierungen
+      </button>
+      <button data-schalter="nurUmgebung" title="Nur Boden, Wände, Gebäude, Wasser (U)">
+        Nur Umgebung
+      </button>
+      <button data-schalter="umgebungSperren" title="Boden, Wände, Gebäude nicht anwählbar (L)">
+        Umgebung sperren
+      </button>
+      <button data-schalter="vorher" title="Original zeigen (V)">Vorher</button>
+      <button data-schalter="pinsel" title="Boden malen (B)">Pinsel</button>
+      <span id="pinselwahl" hidden>
+        <select id="pinselzeichen" title="Was der Pinsel malt"></select>
+      </span>
+      <span class="trenner"></span>
+      <button id="zoomraus" title="Kleiner (−)">−</button>
+      <button id="zoomrein" title="Größer (+)">+</button>
+      <button id="einpassen" title="Ganze Karte (F)">Einpassen</button>
+      <span class="trenner"></span>
+      <button id="herunterladen" class="wichtig" title="Strg+S">
+        Änderungen herunterladen (0)
+      </button>
+      <button id="verwerfen" title="Alle Änderungen verwerfen">Verwerfen</button>
+      <button id="hilfeknopf" title="Tastenkürzel (?)">?</button>
+    </header>
+    <main>
+      <nav id="links">
+        <input id="kartensuche" type="search" placeholder="Karte suchen …" />
+        <div id="kartenliste"></div>
+      </nav>
+      <section id="mitte">
+        <canvas id="leinwand"></canvas>
+      </section>
+      <aside id="rechts">
+        <div id="eigenschaften"></div>
+        <div id="bibkopf">
+          <div class="zwischentitel">Bibliothek</div>
+          <input id="bibsuche" type="search" placeholder="Bild suchen (Sofa, Brücke …)" />
+          <label><input id="bibumgebung" type="checkbox" /> nur Umgebung</label>
+        </div>
+        <div id="bibliothek"></div>
+      </aside>
+    </main>
+    <footer>
+      <span id="koordinaten">(–, –)</span>
+      <span id="status"></span>
+      <span id="version"></span>
+    </footer>
+    <div id="trefferliste" hidden></div>
+    <div id="hilfe" hidden>
+      <div class="hilfekasten">
+        <button id="hilfezu" title="Schließen (Esc)">×</button>
+        <h2>Tastenkürzel</h2>
+        <table>
+          <tr>
+            <td>Klick</td>
+            <td>Bild auswählen (nochmal an dieselbe Stelle: das darunter)</td>
+          </tr>
+          <tr>
+            <td>Strg+Klick</td>
+            <td>zur Auswahl hinzu oder wieder heraus</td>
+          </tr>
+          <tr>
+            <td>Ziehen auf leerer Fläche</td>
+            <td>Rechteckauswahl (mit Strg: ergänzen)</td>
+          </tr>
+          <tr>
+            <td>Ziehen</td>
+            <td>verschieben, rastet auf Kacheln ein</td>
+          </tr>
+          <tr>
+            <td>Alt+Ziehen</td>
+            <td>pixelgenau verschieben</td>
+          </tr>
+          <tr>
+            <td>Pfeiltasten</td>
+            <td>1 Pixel verschieben (Umschalt: 1 Kachel)</td>
+          </tr>
+          <tr>
+            <td>R / Umschalt+R</td>
+            <td>drehen im / gegen den Uhrzeigersinn</td>
+          </tr>
+          <tr>
+            <td>H</td>
+            <td>waagrecht spiegeln</td>
+          </tr>
+          <tr>
+            <td>Bild auf / Bild ab</td>
+            <td>nach vorn / nach hinten (Umschalt: ganz)</td>
+          </tr>
+          <tr>
+            <td>Strg+D</td>
+            <td>duplizieren</td>
+          </tr>
+          <tr>
+            <td>Entf</td>
+            <td>löschen</td>
+          </tr>
+          <tr>
+            <td>Strg+A</td>
+            <td>alles auswählen</td>
+          </tr>
+          <tr>
+            <td>Strg+Z / Strg+Y</td>
+            <td>rückgängig / wiederholen</td>
+          </tr>
+          <tr>
+            <td>Strg+S</td>
+            <td>Änderungen herunterladen</td>
+          </tr>
+          <tr>
+            <td>Mausrad</td>
+            <td>zoomen</td>
+          </tr>
+          <tr>
+            <td>rechte Maustaste ziehen<br />oder Leertaste+Ziehen</td>
+            <td>Ansicht verschieben</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>ganze Karte zeigen</td>
+          </tr>
+          <tr>
+            <td>G / K / M</td>
+            <td>Raster / Kollision / Markierungen</td>
+          </tr>
+          <tr>
+            <td>U / L</td>
+            <td>nur Umgebung / Umgebung sperren</td>
+          </tr>
+          <tr>
+            <td>V</td>
+            <td>vorher (Original) zeigen</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Pinsel für den Boden</td>
+          </tr>
+          <tr>
+            <td>Esc</td>
+            <td>Auswahl aufheben</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="daten.js"></script>
+    <script src="js/zustand.js"></script>
+    <script src="js/geometrie.js"></script>
+    <script src="js/zeichnen.js"></script>
+    <script src="js/bearbeiten.js"></script>
+    <script src="js/bedienung.js"></script>
+    <script src="js/listen.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/start.js"></script>
+  </body>
+</html>

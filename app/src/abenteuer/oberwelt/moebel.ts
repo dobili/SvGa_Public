@@ -17,6 +17,7 @@
  */
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
+import { formAus, geformt, hatForm, type Moebelform } from "./moebelform";
 
 /** Eine Angabe aus daten/moebel.json im Paket. */
 export interface Moebelangabe {
@@ -37,7 +38,9 @@ export interface Moebelangabe {
 /** Ein Möbel der Karte, bereit zum Zeichnen. */
 export interface Moebel {
   readonly name: string;
-  /** Linke obere Ecke in Kartenpixeln. */
+  /** Drehung, Spiegelung, Maßstab aus dem Karteneditor (moebelform.ts); `angabe` ist schon geformt. */
+  readonly form?: Moebelform;
+  /** Linke obere Ecke in Kartenpixeln (des gedrehten Rechtecks). */
   readonly x: number;
   readonly y: number;
   readonly angabe: Moebelangabe;
@@ -73,9 +76,11 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
       .filter((o) => o.type === "moebel" && o.name && liste[o.name])
       .map(async (o) => {
         const name = o.name ?? "";
-        const angabe = liste[name];
-        if (!angabe) return null;
-        const bild = bildquelle(name, angabe);
+        const roh = liste[name];
+        if (!roh) return null;
+        const form = formAus(o.properties);
+        const angabe = geformt(roh, form);
+        const bild = bildquelle(name, roh);
         const adresse = await paketdateiAlsAdresse(bild.pfad).catch(() => null);
         if (!adresse) return null;
         const eigen = (n: string) => o.properties?.find((e) => e.name === n)?.value;
@@ -86,6 +91,7 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
           x: o.x ?? 0,
           y: o.y ?? 0,
           angabe,
+          ...(hatForm(form) ? { form } : {}),
           adresse,
           schluessel: bild.schluessel,
           ...(angabe.rahmen ? { rahmen: angabe.rahmen } : {}),
@@ -160,6 +166,14 @@ export function stelleMoebelAuf(
   for (const m of moebel) {
     const bild = szene.add.image(m.x, m.y, m.schluessel, m.rahmen ? m.name : undefined);
     bild.setOrigin(0, 0);
+    if (m.form) {
+      // Gedreht, gespiegelt oder skaliert (moebelform.ts): um die Mitte des Rechtecks.
+      bild.setOrigin(0.5, 0.5);
+      bild.setPosition(m.x + m.angabe.breite / 2, m.y + m.angabe.hoehe / 2);
+      bild.setScale(m.form.massstab);
+      bild.setFlipX(m.form.spiegeln);
+      bild.setAngle(m.form.drehung);
+    }
     bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
     if (m.angabe.maske) {

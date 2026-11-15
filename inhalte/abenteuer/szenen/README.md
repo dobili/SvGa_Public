@@ -112,6 +112,12 @@ Szenen legen fest: `"zustand": ["neu", "gebraucht"]` (Standard) und `"stil": ["m
 Kaputtes nur, wo die Geschichte es erklärt (Ghost Town, Turnhalle nach dem Sturm, Dachboden mit
 altem Gerümpel als _eigene Ecke_, nicht gemischt).
 
+Form im Eintrag einer Szene (Karteneditor, `pipeline/abenteuer/objektform.py`, alle optional):
+`"drehung": 90` (0, 90, 180, 270 im Uhrzeigersinn; Breite und Höhe tauschen, auch für die
+Kollision), `"spiegeln": true` (waagrecht), `"massstab": 1.5` (0,5 bis 3), `"ebene": 2` (wird zur
+berechneten Tiefe addiert: vor oder hinter Nachbarn). `feld` und `versatz` nennen die linke obere
+Ecke des gedrehten Rechtecks.
+
 Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Platte passen; hat das Bild durchsichtige Ränder, nennt die Möbelangabe `"sichtbar_breite"` die Breite der deckenden Pixel, dann vergleicht die Prüfung sichtbar mit sichtbar),
 `"an_wand": true`, `"zu": "<id>"` (Stuhl oder Sofa schaut zu Tisch oder Fernseher).
 

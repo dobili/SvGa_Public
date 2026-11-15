@@ -14,6 +14,22 @@ import { Portraet } from "../dialog/Portraet";
 /** Figur je Aufgabe: Bauern auf dem Weg, die letzte Aufgabe ist der König. */
 const BAUER = "♟";
 const KOENIG = "♚";
+/**
+ * Verfehlte Aufgaben zeigen die hohle Figur. Warum: Grün und gedämpftes Rot sind bei
+ * Rot-Grün-Schwäche fast gleich (Prüfung „zugang“, 15.11.2026); die Form trägt das Ergebnis
+ * auch ohne Farbe.
+ */
+const BAUER_HOHL = "♙";
+const KOENIG_HOHL = "♔";
+/** Textdarstellung erzwingen: Schachsymbole sollen auf dem Handy nicht als Emoji erscheinen. */
+const ALS_TEXT = "\uFE0E";
+
+/** Die Figur eines Feldes: der König am Ende, hohl, wenn die Aufgabe verfehlt ist. */
+function figur(letzte: boolean, zustand: string): string {
+  const hohl = zustand === "falsch";
+  if (letzte) return (hohl ? KOENIG_HOHL : KOENIG) + ALS_TEXT;
+  return (hohl ? BAUER_HOHL : BAUER) + ALS_TEXT;
+}
 
 /** Zustand eines Feldes der Reihe: beantwortet (richtig/falsch), jetzt dran oder noch offen. */
 function feldzustand(
@@ -28,7 +44,7 @@ function feldzustand(
 
 /**
  * Die Figurenreihe der Runde. Beispiel: vier Aufgaben, die erste richtig, die zweite dran →
- * ♟ (grün) ♟ (gold, hervorgehoben) ♟ (blass) ♚ (blass).
+ * ♟ (grün) ♟ (gold, hervorgehoben) ♟ (blass) ♚ (blass); eine verfehlte Aufgabe wäre ♙ (rot).
  * Für Vorleser zählt der Satz „Aufgabe 2 von 4“ über der Reihe (Rundenrahmen); die Reihe ist Bild.
  */
 export function Figurenreihe({
@@ -42,11 +58,14 @@ export function Figurenreihe({
 }) {
   return (
     <ol className="abenteuer-figurenreihe" aria-hidden="true" data-testid="abenteuer-figurenreihe">
-      {Array.from({ length: anzahl }, (_, i) => (
-        <li key={i} data-zustand={feldzustand(i, index, ergebnisse)}>
-          {i === anzahl - 1 ? KOENIG : BAUER}
-        </li>
-      ))}
+      {Array.from({ length: anzahl }, (_, i) => {
+        const zustand = feldzustand(i, index, ergebnisse);
+        return (
+          <li key={i} data-zustand={zustand}>
+            {figur(i === anzahl - 1, zustand)}
+          </li>
+        );
+      })}
     </ol>
   );
 }

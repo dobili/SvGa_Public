@@ -68,6 +68,7 @@ export function Kartenblick({
       >
         <Kartenmotiv sorte={sorte} rueckseite={ansicht === "rueckseite"} />
         <h2 id={titel}>{tSpiel(sorte.name)}</h2>
+        <p className="abenteuer-kartenblick-stufe">{tSpiel(`karte.stufe.${sorte.stufe}`)}</p>
         <p className="abenteuer-kartenblick-spruch">{tSpiel(sorte.spruch)}</p>
         <p className="abenteuer-kartenblick-erklaerung">
           <strong>{tSpiel("faecher.ambrose")}</strong> {tSpiel(`karte.${sorte.kennung}.erklaerung`)}

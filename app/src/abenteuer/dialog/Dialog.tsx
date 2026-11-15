@@ -13,7 +13,7 @@
  * Lage von Wahlen und „Weiter“ (hoch und quer) regelt bedienung.css.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { tSpiel } from "../texte/texte";
 import { tonregie } from "../ton/tonregie";
@@ -22,6 +22,7 @@ import { Grossansicht } from "./Grossansicht";
 import { bildpfad } from "./grossbild";
 import { Portraet } from "./Portraet";
 import { erscheinungDesPortraets } from "../regeln/geist";
+import { useDialogfokus } from "./useDialogfokus";
 import { useGeistsprecher } from "./useGeistsprecher";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
 
@@ -75,6 +76,7 @@ export function Dialog({
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
   const [wartet, setzeWartet] = useState(() => dauerVon(schritt) > 0);
   const [erinnerung, setzeErinnerung] = useState(() => erinnerungNach(false, schritt));
+  const fenster = useRef<HTMLElement>(null);
   const geister = useGeistsprecher();
   useEffect(() => {
     // Musik, Geräusche und Klänge der Zeile (#musik, #geraeusch, #klang; ton/tonregie.ts).
@@ -131,6 +133,9 @@ export function Dialog({
     beiEnde(geschichte.variablen());
   });
 
+  // Fokus auf „Weiter“ oder die erste Wahl, je Schritt und nach einer Pause (Tastatur, Vorleser).
+  useDialogfokus(fenster, schritt, letzteZeile, wartet);
+
   if (schritt.art === "ende") return null;
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;
   const sprecher = zeile?.tags.sprecher ?? ERZAEHLER;
@@ -139,7 +144,11 @@ export function Dialog({
   return (
     <section
       className={erinnerung ? "abenteuer-dialog abenteuer-dialog-erinnerung" : "abenteuer-dialog"}
+      ref={fenster}
       role="dialog"
+      aria-label={
+        sprecher !== ERZAEHLER ? tSpiel(`figur.${sprecher}.name`) : tSpiel("dialog.titel")
+      }
       aria-live="polite"
       data-testid="abenteuer-dialog"
     >

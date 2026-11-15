@@ -17,6 +17,7 @@ import { deflateSync } from "node:zlib";
 import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
 import { baueFigurenbogen } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
+import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -224,7 +225,6 @@ function platzhalterRechteck(breite, hoehe) {
   return pngAus(breite, hoehe, pixel);
 }
 
-/** Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. */
 /** Eine Grafik: aus dem privaten Ordner, wenn vorhanden, sonst der gezeichnete Platzhalter. */
 async function schreibeGrafik(pfad, platzhalter) {
   const privat = join(PRIVAT, pfad);
@@ -235,11 +235,22 @@ async function schreibeGrafik(pfad, platzhalter) {
   await schreibe(pfad, platzhalter(), "grafik");
 }
 
-async function schreibe(pfad, inhalt, gruppe, staffel = 1, akt = 1) {
+/**
+ * Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. PNG kommt als verlustfreies WebP
+ * ins Paket (skripte/paketbilder.mjs); der Paketlader setzt die Endung beim Lesen um.
+ */
+async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = 1) {
+  const bild = typeof inhalt !== "string" && wirdWebp(quellpfad);
+  const pfad = bild ? webpPfad(quellpfad) : quellpfad;
   const voll = join(ZIEL, pfad);
   await mkdir(dirname(voll), { recursive: true });
   if (typeof inhalt === "string") texte.push(inhalt);
-  const bytes = typeof inhalt === "string" ? Buffer.from(inhalt, "utf8") : inhalt;
+  const bytes =
+    typeof inhalt === "string"
+      ? Buffer.from(inhalt, "utf8")
+      : bild
+        ? await alsWebp(inhalt)
+        : inhalt;
   await writeFile(voll, bytes);
   dateien.push({
     pfad,

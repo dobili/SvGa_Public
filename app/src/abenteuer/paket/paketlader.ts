@@ -9,6 +9,11 @@
  * nach dem Laden der Daten, auch den Code vollständig vorzuhalten.
  * Lesen: `liesPaketdatei` nimmt die Datei aus dem Cache; fehlt sie (Entwicklung, Cache geleert),
  * aus dem Netz. So läuft das Spiel in der Entwicklung ohne „Download“.
+ * Leistung auf einfachen Handys (Prüfung „zugang“, 15.11.2026): Das Verzeichnis (gut 500 KB JSON)
+ * wird einmal gelesen und gemerkt, nicht bei jedem Bild; jede Bildadresse entsteht einmal je
+ * Datei und Sitzung (vorher bei jedem Kartenwechsel neu, ohne Freigabe: der Speicher wuchs mit
+ * jeder Karte). Rasterbilder liegen im Paket als verlustfreies WebP (skripte/paketbilder.mjs);
+ * Aufrufer nennen weiter den Namen der Quelle („moebel/sofa.png“), `paketpfad` setzt ihn um.
  * Abhängigkeiten: schnittstelle/paket.ts, app/sprachpaket.ts (Code-Baustein nachladen).
  */
 import { ladeSprachpaket } from "../../app/sprachpaket";
@@ -48,19 +53,53 @@ async function verzeichnisVomServer(): Promise<Paketverzeichnis> {
   return (await antwort.json()) as Paketverzeichnis;
 }
 
-/** Der vollständig geladene Cache auf dem Gerät (sein Verzeichnis liegt darin), sonst null. */
-async function geladenesVerzeichnis(): Promise<{
-  name: string;
-  verzeichnis: Paketverzeichnis;
-} | null> {
+/** Ein vollständig geladenes Paket: Cache-Name, Verzeichnis und die Menge seiner Pfade. */
+interface GeladenesPaket {
+  readonly name: string;
+  readonly verzeichnis: Paketverzeichnis;
+  readonly pfade: ReadonlySet<string>;
+}
+
+async function sucheGeladenesPaket(): Promise<GeladenesPaket | null> {
   if (!mitCache()) return null;
   for (const name of await caches.keys()) {
     if (!name.startsWith(CACHE_PRAEFIX)) continue;
     const speicher = await caches.open(name);
     const antwort = await speicher.match(adresse(VERZEICHNIS_DATEI));
-    if (antwort) return { name, verzeichnis: (await antwort.json()) as Paketverzeichnis };
+    if (!antwort) continue;
+    const verzeichnis = (await antwort.json()) as Paketverzeichnis;
+    return { name, verzeichnis, pfade: new Set(verzeichnis.dateien.map((d) => d.pfad)) };
   }
   return null;
+}
+
+/** Das gemerkte Ergebnis von sucheGeladenesPaket; `vergiss` setzt es zurück. */
+let gemerktesPaket: Promise<GeladenesPaket | null> | null = null;
+
+/**
+ * Der vollständig geladene Cache auf dem Gerät (sein Verzeichnis liegt darin), sonst null.
+ * Gemerkt bis zur nächsten Änderung am Paket (melde); ein Fehler wird nicht gemerkt.
+ */
+function geladenesVerzeichnis(): Promise<GeladenesPaket | null> {
+  if (!gemerktesPaket) {
+    const suche = sucheGeladenesPaket();
+    gemerktesPaket = suche;
+    suche.catch(() => {
+      if (gemerktesPaket === suche) gemerktesPaket = null;
+    });
+  }
+  return gemerktesPaket;
+}
+
+/**
+ * Der Pfad einer Datei im Paket: PNG der Quellen liegt dort als WebP. Ein Paket aus der Zeit
+ * davor (nur der PNG-Name im Verzeichnis) behält den alten Namen, bis es erneuert ist.
+ * Beispiel: „moebel/sofa.png“ → „moebel/sofa.webp“; „karten/park.json“ bleibt.
+ */
+export function paketpfad(pfad: string, pfade: ReadonlySet<string> | null = null): string {
+  const webp = pfad.replace(/\.png$/, ".webp");
+  if (webp === pfad || !pfade) return webp;
+  return !pfade.has(webp) && pfade.has(pfad) ? pfad : webp;
 }
 
 /**
@@ -243,8 +282,9 @@ export async function loeschePaket(): Promise<void> {
  * Liest eine Datei des Pakets: aus dem geladenen Cache, sonst vom Server (Entwicklung oder
  * verlorener Cache; der Spielstand bleibt davon unberührt).
  */
-export async function liesPaketdatei(pfad: string): Promise<Response> {
+export async function liesPaketdatei(name: string): Promise<Response> {
   const geladen = await geladenesVerzeichnis();
+  const pfad = paketpfad(name, geladen?.pfade);
   if (geladen) {
     const antwort = await (await caches.open(geladen.name)).match(adresse(pfad));
     if (antwort) return antwort;
@@ -259,9 +299,36 @@ export async function liesPaketJson<T>(pfad: string): Promise<T> {
   return (await (await liesPaketdatei(pfad)).json()) as T;
 }
 
-/** Eine Datei des Pakets als Objekt-Adresse für Bilder (Phaser lädt sie wie eine Netzadresse). */
-export async function paketdateiAlsAdresse(pfad: string): Promise<string> {
-  return URL.createObjectURL(await (await liesPaketdatei(pfad)).blob());
+/** Bildadressen je Name, einmal je Sitzung und Paket (Kartenwechsel ohne neue Blobs). */
+const adressen = new Map<string, Promise<string>>();
+
+/**
+ * Eine Datei des Pakets als Objekt-Adresse für Bilder (Phaser lädt sie wie eine Netzadresse).
+ * Dieselbe Datei ergibt dieselbe Adresse; Aufrufer geben sie nicht frei (das tut `vergiss`).
+ */
+export function paketdateiAlsAdresse(pfad: string): Promise<string> {
+  const bekannt = adressen.get(pfad);
+  if (bekannt) return bekannt;
+  const neu = liesPaketdatei(pfad)
+    .then((antwort) => antwort.blob())
+    .then((blob) => URL.createObjectURL(blob));
+  adressen.set(pfad, neu);
+  neu.catch(() => {
+    if (adressen.get(pfad) === neu) adressen.delete(pfad);
+  });
+  return neu;
+}
+
+/** Nach einer Änderung am Paket: Verzeichnis neu lesen, alte Bildadressen freigeben. */
+function vergiss(): void {
+  gemerktesPaket = null;
+  for (const adresse of adressen.values()) {
+    void adresse.then(
+      (a) => URL.revokeObjectURL(a),
+      () => undefined,
+    );
+  }
+  adressen.clear();
 }
 
 /**
@@ -271,7 +338,7 @@ export async function paketdateiAlsAdresse(pfad: string): Promise<string> {
  */
 export async function paketdateiAlsAdresseOderNull(pfad: string): Promise<string | null> {
   const geladen = await geladenesVerzeichnis();
-  if (geladen && !geladen.verzeichnis.dateien.some((d) => d.pfad === pfad)) return null;
+  if (geladen && !geladen.pfade.has(paketpfad(pfad, geladen.pfade))) return null;
   return paketdateiAlsAdresse(pfad).catch(() => null);
 }
 
@@ -279,6 +346,7 @@ export async function paketdateiAlsAdresseOderNull(pfad: string): Promise<string
 const beobachter = new Set<() => void>();
 
 function melde(): void {
+  vergiss();
   for (const b of beobachter) b();
 }
 

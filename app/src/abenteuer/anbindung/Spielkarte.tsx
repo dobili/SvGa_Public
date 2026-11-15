@@ -13,9 +13,9 @@
  * Abhängigkeiten: paket/paketlader.ts, schnittstelle/karten.ts, texte/texte.ts, Stil in
  * spielkarte.css.
  */
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useId, useState, type ReactNode } from "react";
 import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
-import type { Kartensorte } from "../schnittstelle/karten";
+import type { Kartensorte, Kartenstufe } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
 import "../spielkarte.css";
 
@@ -47,6 +47,22 @@ const SYMBOL: Readonly<Record<Kartensorte["wirkung"]["art"], string>> = {
   farbwahl: "♛",
   sanduhr: "♟",
 };
+
+/**
+ * Zeichen der Stufe in der Ecke des Motivs: ein, zwei oder drei Rauten. Warum: Die Stufe stand
+ * nur in der Randfarbe (grün, blau, gold); bei Rot-Grün-Schwäche sind Grün und Gold kaum zu
+ * unterscheiden (Prüfung „zugang“, 15.11.2026). Die Zahl der Rauten trägt sie ohne Farbe.
+ */
+const STUFENZEICHEN: Readonly<Record<Kartenstufe, string>> = {
+  leicht: "◆",
+  mittel: "◆◆",
+  stark: "◆◆◆",
+};
+
+/** Die Stufe als Wort („Stufe: leicht“), für Vorleser und die herausgehobene Karte. */
+function stufentext(stufe: Kartenstufe): string {
+  return tSpiel(`karte.stufe.${stufe}`);
+}
 
 /** Einmal geladene Bilder (Adresse oder null) für die ganze Sitzung, je Pfad im Paket. */
 const bilder = new Map<string, Promise<string | null>>();
@@ -94,6 +110,11 @@ export function Kartenmotiv({
       ) : rueckseite ? null : (
         <span className="abenteuer-spielkarte-symbol">{SYMBOL[sorte.wirkung.art] + ALS_TEXT}</span>
       )}
+      {!rueckseite && (
+        <span className="abenteuer-spielkarte-stufe" aria-hidden="true">
+          {STUFENZEICHEN[sorte.stufe] + ALS_TEXT}
+        </span>
+      )}
     </span>
   );
 }
@@ -130,6 +151,7 @@ export function Spielkarte({
   readonly frei?: boolean;
   readonly zusatz?: ReactNode;
 }) {
+  const stufeId = useId();
   return (
     <button
       type="button"
@@ -139,6 +161,7 @@ export function Spielkarte({
       data-frei={frei || undefined}
       data-gesperrt={gesperrt ? "ja" : undefined}
       aria-label={beschriftung}
+      aria-describedby={stufeId}
       aria-pressed={gewaehlt}
       disabled={deaktiviert}
       data-testid={testid}
@@ -146,6 +169,9 @@ export function Spielkarte({
     >
       <Kartenmotiv sorte={sorte} rueckseite={ansicht === "rueckseite"} />
       <span className="abenteuer-spielkarte-name">{tSpiel(sorte.name)}</span>
+      <span id={stufeId} hidden>
+        {stufentext(sorte.stufe)}
+      </span>
       {zusatz}
     </button>
   );

@@ -26,7 +26,7 @@ export type Dateigruppe = "code" | "grafik" | "karten" | "dialoge" | "musik" | "
 
 /** Eine Datei des Pakets. */
 export interface Paketdatei {
-  /** Pfad relativ zu PAKET_PFAD, zum Beispiel „grafik/ironwood.png“. */
+  /** Pfad relativ zu PAKET_PFAD, zum Beispiel „grafik/karten/ironwood.aussen.webp“ (Rasterbilder als WebP). */
   readonly pfad: string;
   readonly bytes: number;
   /** SHA-256 als Hexzahl; geprüft nach dem Laden, wie beim Maia-Paket. */

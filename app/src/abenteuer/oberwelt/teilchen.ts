@@ -133,6 +133,19 @@ function entferne(szene: Phaser.Scene): void {
 }
 
 /**
+ * Wünscht das Gerät weniger Bewegung (prefers-reduced-motion)? Dann bleiben Schnee, Staub, Nebel
+ * und Sternschnuppen weg (WCAG 2.3.3, wie die Bewegungen der App in ui/stil/basis.css): Sie
+ * tragen nur Stimmung, und ständiges Treiben über dem Bild stört Kinder mit Schwindel oder
+ * Konzentrationsproblemen (Prüfung „zugang“, 15.11.2026).
+ */
+export function wenigerBewegung(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches === true
+  );
+}
+
+/**
  * Zeigt Teilchen der Art in der Szene (null: keine). `karte: true` merkt sie als Art der Karte,
  * zu der `zeigeKartenteilchen` zurückkehrt. Beispiel: Dachboden mit Staub im Lichtstreifen.
  */
@@ -142,7 +155,7 @@ export function zeigeTeilchen(szene: Phaser.Scene, art: Teilchenart | null, kart
   entferne(szene);
   // Beim ersten Mal: Beim Verlassen der Szene räumt die Schicht sich selbst weg.
   if (!bekannt) szene.events.once("shutdown", () => entferne(szene));
-  const schicht = art ? baue(szene, art) : null;
+  const schicht = art && !wenigerBewegung() ? baue(szene, art) : null;
   const takt = (_zeit: number, delta: number) => schicht?.aktualisiere(delta);
   szene.events.on("update", takt);
   const abmelden = () => szene.events.off("update", takt);

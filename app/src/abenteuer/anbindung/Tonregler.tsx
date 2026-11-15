@@ -9,6 +9,7 @@
 import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { t } from "../../i18n/sprache";
 import { Aktton } from "./Aktton";
+import { Ladestandzeile } from "./Ladestand";
 
 /** Schrittweite der Regler in Prozent. */
 const SCHRITT = 10;
@@ -48,6 +49,7 @@ export function Tonregler() {
         {t("abenteuer.ton.stumm")}
       </label>
       {ton !== "an" && <p className="abenteuer-ton-hinweis">{t("abenteuer.ton.appTonAus")}</p>}
+      <Ladestandzeile />
       <Aktton />
     </fieldset>
   );

@@ -18,6 +18,7 @@ import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-a
 import { baueFigurenbogen } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
+import { baueMoebelboegen } from "./moebelboegen.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -117,8 +118,10 @@ const LETZTER_AKT = 4;
 async function kopiereTon(ordner) {
   const quelle = join(PRIVAT, ordner);
   if (!existsSync(quelle)) return;
-  // Akt 1 liegt direkt im Ordner und kommt ins Grundpaket; Akt 2 bis 4 in Unterordnern akt2 …
-  // akt4 und werden erst beim Betreten des Akts nachgeladen (Entscheidung des Autors, 13.11.2026).
+  // Akt 1 liegt direkt im Ordner, Akt 2 bis 4 in Unterordnern akt2 … akt4. Ton gehört nicht zum
+  // Grundpaket: Das Spiel startet ohne ihn; Akt 1 lädt gleich danach im Hintergrund, spätere
+  // Akte beim Betreten (Entscheidung des Autors, 13.11.2026; Messung „zugang“, 15.11.2026: 25 MB
+  // Ton hielten den Spielstart auf). Fehlt ein Ton noch, bleibt es still (ton/tonspieler.ts).
   // Im Paket liegen alle flach unter <ordner>/, damit die Kennung im Dialog gleich bleibt.
   const quellen = [{ pfad: quelle, akt: 1 }];
   for (let akt = 2; akt <= LETZTER_AKT; akt++) {
@@ -177,6 +180,7 @@ const MOEBEL_RAND = [58, 58, 80];
  * Warum: Jeder Ort hat seit Runde 4 seine eigene Möbeldatei (weniger Merge-Konflikte, wenn mehrere
  * Helfer parallel bauen); die App kennt weiter eine einzige daten/moebel.json im Paket. Namen sind
  * über alle Dateien eindeutig (wie pipeline/abenteuer/moebelliste.py); ein doppelter Name bricht ab.
+ * Ausgabe: { alle, herkunft } mit herkunft Name → Ortsdatei (danach richtet sich der Möbelbogen).
  */
 async function ladeMoebelliste() {
   const ordner = join(QUELLE, "moebel");
@@ -190,28 +194,46 @@ async function ladeMoebelliste() {
       herkunft[name] = datei;
     }
   }
-  return alle;
+  return { alle, herkunft };
 }
 
 /**
- * Möbel und Schmuck: daten/moebel.json aus allen Ortsdateien und je Möbel das Bild aus dem privaten
- * Repository, sonst ein Platzhalter in der angegebenen Größe (braune Fläche mit dunklem Rand),
- * damit Karten immer vollständig laden.
+ * Möbel und Schmuck: daten/moebel.json aus allen Ortsdateien, je Möbel mit Bogen und Rahmen
+ * (`bogen`, `rahmen` [x, y, breite, hoehe]), und die Bögen moebelboegen/<ortsdatei>-<n>.webp.
  */
 async function schreibeMoebel() {
+  const { alle, herkunft } = await ladeMoebelliste();
   // Nur Möbel, die eine Karte, die Daten oder ein Dialog nennen (abenteuerpaket-auswahl.mjs).
-  const moebel = genutzteMoebel(await ladeMoebelliste(), texte);
-  await schreibe("daten/moebel.json", JSON.stringify({ moebel }, null, 2) + "\n", "daten");
+  const moebel = genutzteMoebel(alle, texte);
+  // Je Ortsdatei ein Bogen statt einzelner Bilder (skripte/moebelboegen.mjs, Messung „zugang“).
+  const gruppen = new Map();
   for (const [name, angabe] of Object.entries(moebel)) {
-    // Umgefärbte Fassung zuerst: durchscheinender statt grauer Festschatten (werkzeuge/schatten.py
-    // im privaten Repository; Rückmeldung des Autors zum grauen Schleier, 9.11.2026).
-    const umgefaerbt = join(PRIVAT_WURZEL, "spiel/schatten", angabe.quelle);
-    const quelle = existsSync(umgefaerbt) ? umgefaerbt : join(PRIVAT_WURZEL, angabe.quelle);
-    const bild = existsSync(quelle)
-      ? await readFile(quelle)
-      : platzhalterRechteck(angabe.breite, angabe.hoehe);
-    await schreibe(`moebel/${name}.png`, bild, "grafik");
+    const gruppe = herkunft[name].replace(/\.json$/, "");
+    if (!gruppen.has(gruppe)) gruppen.set(gruppe, []);
+    gruppen.get(gruppe).push({ name, bild: await moebelbild(angabe) });
   }
+  const lage = {};
+  for (const [gruppe, bilder] of [...gruppen].sort(([a], [b]) => (a < b ? -1 : 1))) {
+    const { boegen, rahmen } = await baueMoebelboegen(gruppe, bilder);
+    for (const { name, png } of boegen) await schreibe(`moebelboegen/${name}.png`, png, "grafik");
+    Object.assign(lage, rahmen);
+  }
+  const mitLage = Object.fromEntries(
+    Object.entries(moebel).map(([name, angabe]) => [name, { ...angabe, ...lage[name] }]),
+  );
+  await schreibe("daten/moebel.json", JSON.stringify({ moebel: mitLage }, null, 2) + "\n", "daten");
+}
+
+/**
+ * Das Bild eines Möbels aus dem privaten Repository, sonst ein Platzhalter in der angegebenen
+ * Größe (braune Fläche mit dunklem Rand), damit Karten immer vollständig laden.
+ */
+async function moebelbild(angabe) {
+  // Umgefärbte Fassung zuerst: durchscheinender statt grauer Festschatten (werkzeuge/schatten.py
+  // im privaten Repository; Rückmeldung des Autors zum grauen Schleier, 9.11.2026).
+  const umgefaerbt = join(PRIVAT_WURZEL, "spiel/schatten", angabe.quelle);
+  const quelle = existsSync(umgefaerbt) ? umgefaerbt : join(PRIVAT_WURZEL, angabe.quelle);
+  return existsSync(quelle) ? readFile(quelle) : platzhalterRechteck(angabe.breite, angabe.hoehe);
 }
 
 function platzhalterRechteck(breite, hoehe) {
@@ -239,7 +261,7 @@ async function schreibeGrafik(pfad, platzhalter) {
  * Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. PNG kommt als verlustfreies WebP
  * ins Paket (skripte/paketbilder.mjs); der Paketlader setzt die Endung beim Lesen um.
  */
-async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = 1) {
+async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = undefined) {
   const bild = typeof inhalt !== "string" && wirdWebp(quellpfad);
   const pfad = bild ? webpPfad(quellpfad) : quellpfad;
   const voll = join(ZIEL, pfad);
@@ -258,8 +280,8 @@ async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = 1) {
     sha256: createHash("sha256").update(bytes).digest("hex"),
     gruppe,
     staffel,
-    // Nur Ton späterer Akte trägt den Akt; alles ohne „akt“ gehört zum Grundpaket.
-    ...(akt > 1 ? { akt } : {}),
+    // Nur Ton trägt den Akt (auch Akt 1); alles ohne „akt“ gehört zum Grundpaket.
+    ...(akt !== undefined ? { akt } : {}),
   });
 }
 
@@ -446,7 +468,7 @@ async function main() {
     version: `${PAKET.version}-${inhaltshash}`,
     appVersion: PAKET.version,
     dateien,
-    // Nur das Grundpaket; Ton späterer Akte lädt das Spiel nach (paket/aktton.ts).
+    // Nur das Grundpaket; Ton aller Akte lädt das Spiel nach (paket/aktton.ts).
     bytes: dateien.filter((d) => !d.akt).reduce((summe, d) => summe + d.bytes, 0),
   };
   await writeFile(join(ZIEL, "paket.json"), JSON.stringify(verzeichnis, null, 1));

@@ -153,9 +153,21 @@ export function istWinter(karte: object): boolean {
   return (eigenschaften ?? []).some((e) => e.name === "jahreszeit" && e.value === "winter");
 }
 
-/** Ersetzt geladene Texturen durch umgefärbte Leinwände (gleicher Schlüssel; ohne Möbelwasser). */
-export function faerbeWinterlich(szene: Phaser.Scene, schluessel: readonly string[]): void {
-  for (const s of schluessel) {
+/** Ein Ausschnitt einer Textur: x, y, Breite, Höhe in Pixeln. */
+type Ausschnitt = readonly [number, number, number, number];
+
+/**
+ * Ersetzt geladene Texturen durch umgefärbte Leinwände (gleicher Schlüssel; ohne Möbelwasser).
+ * Eingabe: je Schlüssel die Ausschnitte, die je für sich gefärbt werden (die Möbel auf einem
+ * Möbelbogen, damit jedes seine eigene Schneekappe bekommt); eine leere Liste heißt: das ganze
+ * Bild ist ein Möbel. Die Rahmen der Textur gehen dabei verloren; die Szene legt sie danach neu an
+ * (moebel.ts, richteMoebelrahmenEin).
+ */
+export function faerbeWinterlich(
+  szene: Phaser.Scene,
+  ausschnitte: ReadonlyMap<string, readonly Ausschnitt[]>,
+): void {
+  for (const [s, teile] of ausschnitte) {
     if (!szene.textures.exists(s)) continue;
     const quelle = szene.textures.get(s).getSourceImage() as CanvasImageSource & {
       width: number;
@@ -167,9 +179,12 @@ export function faerbeWinterlich(szene: Phaser.Scene, schluessel: readonly strin
     const malen = leinwand.getContext("2d");
     if (!malen) continue;
     malen.drawImage(quelle, 0, 0);
-    const bild = malen.getImageData(0, 0, leinwand.width, leinwand.height);
-    faerbeMoebelDaten(bild.data, leinwand.width, leinwand.height);
-    malen.putImageData(bild, 0, 0);
+    const ganz: Ausschnitt = [0, 0, leinwand.width, leinwand.height];
+    for (const [x, y, breite, hoehe] of teile.length > 0 ? teile : [ganz]) {
+      const bild = malen.getImageData(x, y, breite, hoehe);
+      faerbeMoebelDaten(bild.data, breite, hoehe);
+      malen.putImageData(bild, x, y);
+    }
     szene.textures.remove(s);
     szene.textures.addCanvas(s, leinwand);
   }

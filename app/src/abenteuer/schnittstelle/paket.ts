@@ -35,9 +35,10 @@ export interface Paketdatei {
   /** Staffel, zu der die Datei gehört (1, 2); Staffel 2 wird erst geladen, wenn sie beginnt. */
   readonly staffel: number;
   /**
-   * Nur Musik und Geräusche der Akte 2 bis 4: Sie gehören nicht zum Grundpaket und werden beim
-   * Betreten des Akts oder auf Wunsch in den Einstellungen nachgeladen (paket/aktton.ts).
-   * Fehlt das Feld, gehört die Datei zum Grundpaket (mit dem Ton von Akt 1).
+   * Nur Musik und Geräusche (seit 15.11.2026 aller Akte, auch Akt 1): Sie gehören nicht zum
+   * Grundpaket. Der Ton des laufenden Akts lädt im Hintergrund nach, sobald das Spiel läuft, die
+   * übrigen beim Betreten ihres Akts oder auf Wunsch im Spielmenü (paket/aktton.ts). Fehlt das
+   * Feld, gehört die Datei zum Grundpaket. Ein Paket von vorher trägt es nur ab Akt 2.
    */
   readonly akt?: number;
 }
@@ -49,7 +50,7 @@ export interface Paketverzeichnis {
   /** Version der App, mit der das Paket gebaut wurde; ein zu altes Paket wird neu geladen. */
   readonly appVersion: string;
   readonly dateien: readonly Paketdatei[];
-  /** Summe der Bytes des Grundpakets (ohne Ton der Akte 2 bis 4), für die Anzeige vor dem Laden. */
+  /** Summe der Bytes des Grundpakets (ohne Ton), für die Anzeige vor dem Laden. */
   readonly bytes: number;
 }
 

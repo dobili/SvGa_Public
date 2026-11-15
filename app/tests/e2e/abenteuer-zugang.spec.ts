@@ -7,6 +7,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 /** Schwere und kritische Verstöße im Spiel (leichte nehmen wir in Kauf, wie barrierefreiheit.spec.ts). */
 async function schwereVerstoesse(page: Page): Promise<string[]> {
@@ -72,7 +73,7 @@ test("axe: Startkarte, Welt, Spielmenü, Gespräch und Laden; Fokus im Gespräch
   await page.goto("/app/#abenteuer");
   await expect(page.getByTestId("abenteuer-start")).toBeVisible();
   expect(await schwereVerstoesse(page)).toEqual([]);
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 30000 });

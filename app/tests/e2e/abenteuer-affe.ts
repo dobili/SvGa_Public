@@ -11,6 +11,7 @@
  */
 import { expect, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 /** Zufallszahlen mit festem Startwert (mulberry32), damit ein Fund sich wiederholen lässt. */
 export function zufallMit(startwert: number): () => number {
@@ -133,7 +134,7 @@ export async function starteMitStand(seite: Page, stand: object): Promise<void> 
   const laden = seite.getByTestId("abenteuer-start").getByTestId("abenteuer-laden");
   const welt = seite.locator(".abenteuer-welt canvas");
   await expect(laden.or(welt)).toBeVisible({ timeout: 20000 });
-  if (await laden.isVisible()) await laden.click();
+  if (await laden.isVisible()) await ladeAbenteuerpaket(seite, laden);
   await expect(welt).toBeVisible({ timeout: 40000 });
   await seite.waitForTimeout(500);
 }

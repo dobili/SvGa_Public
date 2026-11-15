@@ -15,6 +15,7 @@ import {
 } from "./abenteuer-affe";
 import { feldDarunter } from "./abenteuer-karte";
 import { oeffneEinstellungen } from "./hilfen";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 /** So lange darf der Gegner für einen Zug rechnen (ms). */
 const ENGINE_FRIST = 30_000;
@@ -405,7 +406,7 @@ test("Ohne IndexedDB: Meldung, das Spiel startet trotzdem", async ({ page }) => 
   const start = page.getByTestId("abenteuer-start");
   await expect(start).toBeVisible({ timeout: 30000 });
   await expect(page.locator(".speicher-hinweis")).toBeVisible({ timeout: 20000 });
-  await start.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page, start.getByTestId("abenteuer-laden"));
   await page.getByTestId("abenteuer-spielen").click({ timeout: 60000 });
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });
   await findeAusweg(page);

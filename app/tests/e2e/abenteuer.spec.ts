@@ -5,6 +5,7 @@
  * Tastatur (Pfeile), die die Szene wie das Steuerkreuz behandelt.
  */
 import { expect, test, type Page } from "@playwright/test";
+import { ladeAbenteuerpaket, PAKET_FRIST_MS } from "./abenteuer-paket";
 
 /** Die Kachel des Helden („x,y“), die die Oberwelt in ein verstecktes Feld schreibt. */
 async function kachel(seite: Page): Promise<string> {
@@ -40,7 +41,7 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   test.slow();
   await page.goto("/app/#abenteuer");
   await expect(page.getByTestId("abenteuer-start")).toBeVisible();
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
   // Namenswahl vor dem ersten Start (Schritt 8g); der Name steht später im Spielmenü.
   await page.getByTestId("abenteuer-name").fill("Kim");
@@ -57,6 +58,11 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await ton.getByTestId("abenteuer-ton-stumm").check();
   await expect(ton.getByTestId("abenteuer-ton-musik")).toBeDisabled();
   await ton.getByTestId("abenteuer-ton-stumm").uncheck();
+  // Der Ton lädt im Hintergrund nach (paket/aktton.ts); am Ende liegt alles auf dem Gerät.
+  await expect(ton.getByTestId("abenteuer-ladestand-menue")).toHaveText(
+    "Spiel vollständig geladen",
+    { timeout: PAKET_FRIST_MS },
+  );
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
@@ -171,7 +177,7 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   // weil der Blick auf den Auslöser schon als derselbe Treffer galt. Ein echter Spieler geht immer
   // von vorn auf einen Durchgang zu.
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
   await page.getByTestId("abenteuer-name").fill("Kim");
   await page.getByTestId("abenteuer-spielen").click();

@@ -35,6 +35,7 @@ import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./di
 import { Steuerkreuzwahl } from "./Steuerkreuzwahl";
 import { Zielhinweiswahl } from "./Zielhinweiswahl";
 import { Tonregler } from "./Tonregler";
+import { Ladestand } from "./Ladestand";
 
 /** Der geladene Baustein, einmal je Seite. */
 let modulVorrat: Promise<Abenteuermodul> | null = null;
@@ -248,8 +249,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const [neuerName, setzeNeuenNamen] = useState("");
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
   useAbenteuerton();
-  // Ton der Akte 2 bis 4 beim Betreten des Akts nachladen (Grundpaket: Akt 1).
-  useAktton(stand?.handlung.akt);
+  useAktton(stand?.handlung.akt ?? 1); // Ton des Akts im Hintergrund (paket/aktton.ts)
 
   /** Ein eingegebener Name, bereinigt; leer → „Du“. */
   const bereinigt = (name: string) =>
@@ -383,6 +383,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
           beiStart={starte}
         />
       )}
+      <Ladestand />
       {menue && (
         <Spielmenue
           heldname={stand?.held.name ?? null}

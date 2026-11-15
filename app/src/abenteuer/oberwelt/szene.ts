@@ -31,7 +31,7 @@ import {
   standbild,
   stelleAufKachel,
 } from "./figurbilder";
-import { ladeMoebelbilder, stelleMoebelAuf } from "./moebel";
+import { ladeMoebelbilder, rahmenJeTextur, richteMoebelrahmenEin, stelleMoebelAuf } from "./moebel";
 import { stelleFigurenAuf } from "./figurenaufstellung";
 import { erscheinungsfeld, lasseGeistErscheinen } from "./geistfigur";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
@@ -171,11 +171,8 @@ export class Oberweltszene extends Phaser.Scene {
     this.pause = EINGABEPAUSE_MS;
     stelleFigurenAuf(this, held, this.ausloeser, this.daten, KACHEL, BILD_JE_RICHTUNG.unten);
     const liste = this.daten.moebel ?? [];
-    if (this.daten.winter)
-      faerbeWinterlich(
-        this,
-        liste.map((m) => `moebel:${m.name}`),
-      );
+    if (this.daten.winter) faerbeWinterlich(this, rahmenJeTextur(liste));
+    richteMoebelrahmenEin(this, liste);
     const moebel = stelleMoebelAuf(this, liste, KACHEL);
     this.physics.add.collider(held, moebel);
     this.frei = baueSperrkarte(karte, feste, moebel, KACHEL);

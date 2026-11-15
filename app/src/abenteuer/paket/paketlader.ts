@@ -228,7 +228,7 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   const verzeichnis = await verzeichnisVomServer();
   const speicher = await caches.open(cachename(verzeichnis.version));
   let geladen = 0;
-  // Ton der Akte 2 bis 4 gehört nicht dazu (paket/aktton.ts lädt ihn beim Betreten des Akts).
+  // Ton gehört nicht dazu: Das Spiel startet ohne ihn, paket/aktton.ts lädt ihn im Hintergrund.
   const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined);
   await jeGleichzeitig(grundpaket, GLEICHZEITIG, (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
@@ -249,7 +249,7 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
 }
 
 /**
- * Lädt Dateien eines geladenen Pakets in dessen Cache nach (Ton eines späteren Akts). Ohne
+ * Lädt Dateien eines geladenen Pakets in dessen Cache nach (Ton eines Akts). Ohne
  * geladenes Paket nichts. Ausgabe: true, wenn alle Dateien da sind. Wirft bei Netzfehlern.
  */
 export async function ladeNach(

@@ -9,6 +9,7 @@
  * paket/paketlader.ts (Dateien).
  */
 import { tonErzeuger } from "../../app/ton";
+import { beiTonladestand, tonladestand } from "../paket/aktton";
 import { liesPaketdatei } from "../paket/paketlader";
 import {
   befehleAus,
@@ -31,6 +32,8 @@ export interface Spielwerk {
   setzeNaehe(anteil: number): void;
   spieleEinmal(angabe: string): Promise<void>;
   stoppeAlles(): void;
+  /** Fehlende Stücke vergessen (nach dem Nachladen des Tons); im Test entbehrlich. */
+  vergissFehlende?(): void;
 }
 
 export class Tonregie {
@@ -85,6 +88,12 @@ export class Tonregie {
     this.spiele();
   }
 
+  /** Der Ton ist nachgeladen (paket/aktton.ts): Was eben fehlte, jetzt spielen. */
+  nachgeladen(): void {
+    this.werk()?.vergissFehlende?.();
+    this.spiele();
+  }
+
   /** Das Abenteuer wird verlassen: alles blendet aus, die Lage beginnt neu. */
   verlassen(): void {
     this.lage = STILLE_LAGE;
@@ -129,3 +138,8 @@ function spielwerk(): Spielwerk | null {
 
 /** Die eine Tonregie des Abenteuers. */
 export const tonregie = new Tonregie(spielwerk);
+
+// Ist der Ton im Hintergrund fertig geladen, spielt, was beim Betreten der Karte noch fehlte.
+beiTonladestand(() => {
+  if (tonladestand().art === "vollstaendig") tonregie.nachgeladen();
+});

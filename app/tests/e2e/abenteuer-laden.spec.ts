@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { feldDarunter, feldVon } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 /** So viele Zeichen eines Satzes vergleicht der Test (die Sprechblase bricht längere Sätze um). */
 const SATZANFANG = 30;
@@ -62,7 +63,7 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("50 Münzen", { timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
@@ -103,7 +104,7 @@ test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der n
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
@@ -139,7 +140,7 @@ test("Vorführung im Bergladen: der Kunde zeigt das Schäfermatt Zug für Zug", 
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
@@ -171,7 +172,7 @@ test("Dunkler Stollen: mit Laterne leuchtet ein Lichtkreis um den Helden", async
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   const welt = page.getByTestId("abenteuer-welt");
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await expect(welt).toHaveAttribute("data-toenung", "dunkel");
@@ -193,7 +194,7 @@ test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async 
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await expect(page.getByTestId("abenteuer-welt")).toHaveAttribute("data-fassung", "neu");
 });
@@ -208,7 +209,7 @@ test("Tagebuch: Sammelkarte der Finch-Jagd zeigt die gefundene Figur", async ({ 
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   await page.getByTestId("abenteuer-tagebuchknopf").click();
   const karte = page.getByTestId("abenteuer-finchkarte");
@@ -231,7 +232,7 @@ test("Weg 3: Kreidespringer an der Brücke, Rätsel lösen, Losungswort", async 
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toHaveText("Ansehen", { timeout: 30000 });
@@ -255,7 +256,7 @@ test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ pag
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   const welt = page.getByTestId("abenteuer-welt");
   await expect(welt).toBeVisible({ timeout: 30000 });
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
@@ -274,7 +275,7 @@ test("Monatskarte: Reisen in eine besuchte Stadt", async ({ page }) => {
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.getByTestId("abenteuer-reisenknopf").click();
   const reisen = page.getByTestId("abenteuer-reisen");
@@ -292,7 +293,7 @@ test("Reisebrett: Übungspartie gegen Ambrose von draußen", async ({ page }) =>
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.getByTestId("abenteuer-reisebrettknopf").click();
   await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible();

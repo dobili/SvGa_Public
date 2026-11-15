@@ -6,6 +6,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 /** Ein Spielstand mit laufender Runde; fehlende Listen füllt die App beim Lesen. */
 const STAND = {
@@ -83,7 +84,7 @@ test("Aufgabenrunde von Sam: weitermachen, durchspielen, Ergebnis in der Stadt",
   await page.reload();
   await page.goto("/app/#abenteuer");
   await expect(page.getByTestId("abenteuer-start")).toBeVisible();
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   // Mit Spielstand öffnet sich die Welt nach dem Laden von selbst, ohne Namenswahl.
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
   await page.getByRole("button", { name: "Weitermachen" }).click();
@@ -118,7 +119,7 @@ test("Aufgabenrunde: nach dem Neuladen weiter bei der offenen Aufgabe (R5)", asy
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
   await page.getByRole("button", { name: "Weitermachen" }).click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 3", {
@@ -136,7 +137,7 @@ test("Aufgabenrunde: nach dem Neuladen weiter bei der offenen Aufgabe (R5)", asy
   const laden = page.getByTestId("abenteuer-laden");
   const laeuft = page.getByText("Deine Aufgabenrunde läuft noch.");
   await expect(laden.or(laeuft)).toBeVisible({ timeout: 30000 });
-  if (await laden.isVisible()) await laden.click();
+  if (await laden.isVisible()) await ladeAbenteuerpaket(page, laden);
   await expect(laeuft).toBeVisible({ timeout: 30000 });
   await page.getByRole("button", { name: "Weitermachen" }).click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 2 von 3", {
@@ -149,7 +150,7 @@ test("Testhilfe: „Bestehen“ beendet die Runde von Sam als bestanden", async 
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
   await page.getByRole("button", { name: "Weitermachen" }).click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 3", {
@@ -183,7 +184,7 @@ test("Erinnerung New York 1857: Zugerraten der Partie Paulsen gegen Morphy", asy
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
   await page.getByRole("button", { name: "Weitermachen" }).click();
   await expect(page.getByTestId("abenteuer-aufgaben")).toBeVisible();

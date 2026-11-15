@@ -5,12 +5,17 @@
  * Kollision auf der unteren Fläche (alles außer der obersten Kachelreihe und den Reihen
  * `frei_unten`, die unten begehbar bleiben) oder nach einer eigenen `maske` je Kachel.
  *
+ * Bilder: Seit dem 15.11.2026 liegen die Möbel je Ortsdatei auf einem Bogen
+ * (moebelboegen/<ortsdatei>-<n>.webp, skripte/moebelboegen.mjs); `bogen` und `rahmen` in
+ * moebel.json sagen, wo. Die Szene lädt jeden Bogen einmal und schneidet die Möbel als Rahmen aus
+ * (Phaser-Frames). Ein Paket von vorher (ohne `bogen`) liefert weiter Einzelbilder moebel/<name>.png.
+ *
  * Rolle im Gesamtbild: Laden (weltdaten.ts) und Aufstellen (szene.ts) der Möbel, ausgelagert, damit
  * beide Dateien klein bleiben. Die Pipeline prüft dieselbe Regel (pipeline/abenteuer/karten.py,
  * moebelfelder), damit kein Möbel einen Auslöser zustellt.
  * Abhängigkeiten: Phaser, paket/paketlader.ts.
  */
-import Phaser from "phaser";
+import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
 
 /** Eine Angabe aus daten/moebel.json im Paket. */
@@ -23,6 +28,10 @@ export interface Moebelangabe {
   readonly frei_unten?: number;
   /** Eigene Sperrmaske je Kachelreihe, „#“ sperrt (offenes Tor, Mammutbaum); ersetzt die Regel oben. */
   readonly maske?: readonly string[];
+  /** Name des Bogens im Paket (moebelboegen/<bogen>.png), seit den Möbelbögen. */
+  readonly bogen?: string;
+  /** Lage auf dem Bogen: x, y, Breite, Höhe in Pixeln. */
+  readonly rahmen?: readonly [number, number, number, number];
 }
 
 /** Ein Möbel der Karte, bereit zum Zeichnen. */
@@ -32,7 +41,12 @@ export interface Moebel {
   readonly x: number;
   readonly y: number;
   readonly angabe: Moebelangabe;
+  /** Adresse des Bildes: der Bogen oder (altes Paket) das Einzelbild. */
   readonly adresse: string;
+  /** Texturschlüssel in Phaser: `moebelbogen:<bogen>` oder `moebel:<name>`. */
+  readonly schluessel: string;
+  /** Mit Bogen: der Rahmen (Frame-Name ist der Möbelname); ohne: das ganze Bild. */
+  readonly rahmen?: readonly [number, number, number, number];
   /** Vom Kartenbauer festgelegt: Zeichentiefe und Kollision (an der Wand, auf dem Tisch). */
   readonly tiefe?: number;
   readonly kollision?: boolean;
@@ -59,9 +73,11 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
       .filter((o) => o.type === "moebel" && o.name && liste[o.name])
       .map(async (o) => {
         const name = o.name ?? "";
-        const adresse = await paketdateiAlsAdresse(`moebel/${name}.png`).catch(() => null);
         const angabe = liste[name];
-        if (!adresse || !angabe) return null;
+        if (!angabe) return null;
+        const bild = bildquelle(name, angabe);
+        const adresse = await paketdateiAlsAdresse(bild.pfad).catch(() => null);
+        if (!adresse) return null;
         const eigen = (n: string) => o.properties?.find((e) => e.name === n)?.value;
         const tiefe = eigen("tiefe");
         const kollision = eigen("kollision");
@@ -71,6 +87,8 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
           y: o.y ?? 0,
           angabe,
           adresse,
+          schluessel: bild.schluessel,
+          ...(angabe.rahmen ? { rahmen: angabe.rahmen } : {}),
           ...(typeof tiefe === "number" ? { tiefe } : {}),
           ...(typeof kollision === "boolean" ? { kollision } : {}),
         };
@@ -79,11 +97,54 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
   return moebel.filter((m) => m !== null);
 }
 
-/** Lädt die Bilder der Möbel in eine Szene (Schlüssel `moebel:<name>`). */
-export function ladeMoebelbilder(szene: Phaser.Scene, moebel: readonly Moebel[]): void {
-  for (const m of moebel) {
-    if (!szene.textures.exists(`moebel:${m.name}`)) szene.load.image(`moebel:${m.name}`, m.adresse);
+/**
+ * Pfad und Texturschlüssel des Bildes eines Möbels: der Bogen, wenn moebel.json ihn nennt, sonst
+ * das Einzelbild (Paket von vor den Bögen). Beispiel: sofa auf maple-falls-1 →
+ * { pfad: "moebelboegen/maple-falls-1.png", schluessel: "moebelbogen:maple-falls-1" }.
+ */
+export function bildquelle(
+  name: string,
+  angabe: Moebelangabe,
+): { readonly pfad: string; readonly schluessel: string } {
+  if (angabe.bogen && angabe.rahmen) {
+    return { pfad: `moebelboegen/${angabe.bogen}.png`, schluessel: `moebelbogen:${angabe.bogen}` };
   }
+  return { pfad: `moebel/${name}.png`, schluessel: `moebel:${name}` };
+}
+
+/** Lädt die Bilder der Möbel in eine Szene, jeden Bogen nur einmal. */
+export function ladeMoebelbilder(szene: Phaser.Scene, moebel: readonly Moebel[]): void {
+  const geladen = new Set<string>();
+  for (const m of moebel) {
+    if (geladen.has(m.schluessel) || szene.textures.exists(m.schluessel)) continue;
+    geladen.add(m.schluessel);
+    szene.load.image(m.schluessel, m.adresse);
+  }
+}
+
+/**
+ * Schneidet die Möbel als Rahmen aus ihren Bögen (nach dem Laden, vor dem Aufstellen; auch nach
+ * dem Umfärben im Winter, das die Textur ersetzt). Ohne Bogen nichts zu tun.
+ */
+export function richteMoebelrahmenEin(szene: Phaser.Scene, moebel: readonly Moebel[]): void {
+  for (const m of moebel) {
+    if (!m.rahmen || !szene.textures.exists(m.schluessel)) continue;
+    const textur = szene.textures.get(m.schluessel);
+    if (!textur.has(m.name)) textur.add(m.name, 0, ...m.rahmen);
+  }
+}
+
+/** Die Rahmen je Texturschlüssel (für das Umfärben im Winter, winter.ts). */
+export function rahmenJeTextur(
+  moebel: readonly Moebel[],
+): ReadonlyMap<string, readonly (readonly [number, number, number, number])[]> {
+  const karte = new Map<string, (readonly [number, number, number, number])[]>();
+  for (const m of moebel) {
+    const liste = karte.get(m.schluessel) ?? [];
+    if (m.rahmen && !liste.includes(m.rahmen)) liste.push(m.rahmen);
+    karte.set(m.schluessel, liste);
+  }
+  return karte;
 }
 
 /**
@@ -97,7 +158,8 @@ export function stelleMoebelAuf(
 ): Phaser.Physics.Arcade.StaticGroup {
   const gruppe = szene.physics.add.staticGroup();
   for (const m of moebel) {
-    const bild = szene.add.image(m.x, m.y, `moebel:${m.name}`).setOrigin(0, 0);
+    const bild = szene.add.image(m.x, m.y, m.schluessel, m.rahmen ? m.name : undefined);
+    bild.setOrigin(0, 0);
     bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
     if (m.angabe.maske) {

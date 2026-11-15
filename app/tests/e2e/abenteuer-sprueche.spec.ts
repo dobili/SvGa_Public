@@ -7,6 +7,7 @@
 import { expect, test } from "@playwright/test";
 import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 /** Spielstand im Park, eine Kachel unter Skater Jo (Feld aus der Karte), Blick nach oben, mit einem Spruch. */
 const STAND = {
@@ -59,7 +60,7 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 10000 });
@@ -110,7 +111,7 @@ test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   await page.getByTestId("abenteuer-aktion").click();
   const deckwahl = page.getByTestId("abenteuer-deckwahl");
@@ -143,7 +144,7 @@ test("Figuren sperren: der Held läuft nicht durch Skater Jo", async ({ page }) 
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   await expect(page.getByTestId("abenteuer-aktion")).toBeVisible({ timeout: 10000 });
   const kachel = page.getByTestId("abenteuer-kachel");
@@ -174,7 +175,7 @@ test("Steckbrief je Gegner: Jos Schwäche ohne Lupe in Tagebuch und Deckwahl (N2
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
-  await page.getByTestId("abenteuer-laden").click();
+  await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   await page.getByTestId("abenteuer-tagebuchknopf").click();
   const akten = page.getByTestId("abenteuer-gegnerakten");

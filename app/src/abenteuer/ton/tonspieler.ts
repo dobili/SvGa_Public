@@ -49,6 +49,8 @@ const NAEHE_S = 0.3;
 
 export class Tonspieler {
   private readonly puffer = new Map<string, Promise<Geladen | null>>();
+  /** Schlüssel, zu denen es noch keine Datei gab (Ton lädt im Hintergrund nach, paket/aktton.ts). */
+  private readonly fehlend = new Set<string>();
   private angaben: Promise<Tonangaben> | null = null;
   private readonly laufend: Record<Spur, Schleife | null> = {
     musik: null,
@@ -194,8 +196,20 @@ export class Tonspieler {
     if (!versprechen) {
       versprechen = this.ladeErste(dateienFuer(ordner, angabe));
       this.puffer.set(schluessel, versprechen);
+      void versprechen.then((geladen) => {
+        if (!geladen) this.fehlend.add(schluessel);
+      });
     }
     return versprechen;
+  }
+
+  /**
+   * Vergisst, welche Stücke fehlten: Nach dem Nachladen des Tons (paket/aktton.ts) versucht der
+   * nächste Wunsch sie neu, statt still zu bleiben, bis die Seite neu lädt.
+   */
+  vergissFehlende(): void {
+    for (const schluessel of this.fehlend) this.puffer.delete(schluessel);
+    this.fehlend.clear();
   }
 
   private async ladeErste(pfade: readonly string[]): Promise<Geladen | null> {

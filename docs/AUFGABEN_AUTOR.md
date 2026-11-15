@@ -1668,3 +1668,19 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Hafenbecken; zum Hafen von Silicon Bay führt nur noch eine Treppe; vom Campus sind die Tiere
       verschwunden (nur Roboter, wie das Ortsblatt sagt). Die alte Bahnstrecke von 1879 endet an
       einem Prellbock hinter dem Laden in Desert Springs.
+- [ ] RO24. **Vor der Veröffentlichung (Recherche vom 15.11.2026, Rechtliches bitte fachlich
+      prüfen lassen):** Schon umgesetzt: Hinweis „mit KI erzeugt (PixelLab, Gemini)“ in Abspann und
+      Lizenzseite (Googles Bedingungen verbieten, KI-Bilder als Menschenwerk auszugeben), die
+      Pflichtnennung LimeZu mit Link auch auf der Lizenzseite, fehlende Grafikpakete in den
+      Lizenzlisten (WidseyLabs, Cute SCKR, Maru), Datenschutzerklärung um das Spiel und einen
+      Abschnitt „Kinder und Jugendliche“ ergänzt. Offen für dich: (1) Lizenz des Winterwald-Pakets
+      von Maru beim Urheber erfragen (weder Verkaufsseite noch Ordner nennen eine). (2) Bestätigen,
+      dass an Gemini und PixelLab keine gekauften Bilder (LimeZu, WidseyLabs) als Vorlage gingen und
+      in Gemini das Speichern der Aktivitäten aus ist. (3) Datenschutzerklärung fachlich gegenlesen
+      lassen. (4) Altersangabe: Empfehlung „geeignet ab etwa 8 Jahren (eigene Einschätzung)“; ein
+      USK-Zeichen braucht ein Browserspiel nicht. (5) Soll der KI-Hinweis auch am Spielstart
+      stehen? (6) Ist eine Fassung für Google Play oder den App Store geplant? Achtung: Die
+      Bedingungen von Apple gelten als unvereinbar mit der GPL (Stockfish, chessops). (7) Vor 1.0
+      einmal auf echten Geräten spielen: iPhone mit Safari, ein älteres Android-Handy, ein Tablet,
+      langsames Netz.
+

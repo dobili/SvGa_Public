@@ -106,5 +106,11 @@ export const BAUSTEINE: readonly Lizenzbaustein[] = [
   // Schach-Abenteuer (docs/spiel/LIZENZEN.md): Oberwelt und Dialoge, nur im Zusatzpaket.
   { kennung: "phaser", text: PAKETTEXTE, pakete: ["phaser", "eventemitter3"] },
   { kennung: "inkjs", text: PAKETTEXTE, pakete: ["inkjs"] },
+  // Grafik, KI-Bilder und Töne des Schach-Abenteuers (Zusatzpaket, Dateien nur im privaten
+  // Repository): Die Lizenz von LimeZu verlangt die Nennung mit Link. Sie steht auch hier, weil
+  // den Abspann nur sieht, wer das Spiel beendet (docs/spiel/31_Veroeffentlichung.md).
+  { kennung: "abenteuergrafik", quelle: "https://limezu.itch.io/" },
+  { kennung: "abenteuerki" },
+  { kennung: "abenteuerton" },
   { kennung: "badrap", text: PAKETTEXTE, pakete: ["@badrap/result"] },
 ];

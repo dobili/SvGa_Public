@@ -13,13 +13,24 @@ import { Portraet } from "../dialog/Portraet";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 
-/** Die Bausteine, die das Spiel verwendet (vollständig in docs/spiel/LIZENZEN.md). */
+/**
+ * Die Bausteine, die das Spiel verwendet (vollständig in docs/spiel/LIZENZEN.md). Pflicht ist die
+ * Nennung von LimeZu mit Link (Lizenz der Pakete); die übrigen sind freiwillig oder Dank. Die
+ * KI-Zeile steht hier, weil die Bedingungen von Google verbieten, KI-Bilder als Menschenwerk
+ * auszugeben (docs/spiel/31_Veroeffentlichung.md, Abschnitt 2, seit 15.11.2026).
+ */
 const MITWIRKENDE = [
   "abspann.mitwirkende.engine",
   "abspann.mitwirkende.phaser",
   "abspann.mitwirkende.ink",
-  "abspann.mitwirkende.portraets",
   "abspann.mitwirkende.grafik",
+  "abspann.mitwirkende.grafikWeitere",
+  "abspann.mitwirkende.ki",
+  "abspann.mitwirkende.portraets",
+  "abspann.mitwirkende.figuren",
+  "abspann.mitwirkende.schrift",
+  "abspann.mitwirkende.musik",
+  "abspann.mitwirkende.geraeusche",
 ] as const;
 
 /** Alle Figuren der Welt, je Name einmal, in der Reihenfolge der Orte. */

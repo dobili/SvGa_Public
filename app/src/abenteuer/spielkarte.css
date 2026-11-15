@@ -24,8 +24,16 @@
   --stufe-tief: #7d6007;
 }
 
-/* Der Fächer: waagerecht, wischen mit Einrasten, nie breiter als die Spalte (Brett bleibt groß). */
+/* Der Fächer: waagerecht, wischen mit Einrasten, nie breiter als die Spalte (Brett bleibt groß).
+   Die Karten richten sich nach der Breite des Fächers (Prüfung RO15, 15.11.2026: mit festen 78 px
+   war das Motiv auf dem iPhone nur gut 1 cm breit): hoch sind gut drei Karten zu sehen, so dass ein
+   Deck aus drei Karten ganz sichtbar ist und eine vierte als Rand zum Wischen einlädt. Nie kleiner
+   als bisher, nie größer als eine Daumenbreite mehr. Quer setzt huellenlage.css vier je Reihe. */
 .abenteuer-faecher {
+  --faecher-sichtbar: 3.25;
+  --karte-schmal: 78px;
+  --karte-breit: 112px;
+
   display: flex;
   flex: 1 1 100%;
   gap: var(--raster);
@@ -41,7 +49,15 @@
 }
 
 .abenteuer-faecher > li {
-  flex: 0 0 auto;
+  flex: 0 0
+    clamp(
+      var(--karte-schmal),
+      calc((100% - var(--raster) * 3) / var(--faecher-sichtbar)),
+      var(--karte-breit)
+    );
+
+  /* Ein langer Name („Taktikspürnase“) darf die Karte nicht breiter machen; er bricht um. */
+  min-width: 0;
   scroll-snap-align: start;
 }
 
@@ -50,7 +66,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 78px;
+  width: 100%;
   aspect-ratio: 3 / 4;
   padding: 3px;
   overflow: hidden;
@@ -80,7 +96,8 @@
 
 .abenteuer-spielkarte-motiv {
   display: flex;
-  flex: 1 1 auto;
+  /* Grundmaß 0: Das Motiv nimmt, was der Name übrig lässt (zweizeilige Namen bleiben ganz). */
+  flex: 1 1 0;
   align-items: center;
   justify-content: center;
   min-height: 0;
@@ -122,6 +139,8 @@
   font-size: var(--groesse-fein);
   font-weight: 600;
   line-height: 1.15;
+  hyphens: auto;
+  overflow-wrap: anywhere;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;

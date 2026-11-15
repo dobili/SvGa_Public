@@ -92,9 +92,18 @@
     order: 0;
   }
 
+  /* Quer ist die Spalte knapp: Die Leiste rückt enger an die (größeren) Karten (RO15). */
+  .abenteuer-partie-seite .abenteuer-kartenleiste {
+    padding-block: calc(var(--raster) / 2);
+  }
+
   /* Der Fächer läuft quer nicht nach rechts aus, sondern in Reihen, senkrecht wischbar. */
   .abenteuer-partie-seite .abenteuer-faecher {
+    /* Vier Karten je Reihe; etwas Luft, damit Rundung die vierte nicht umbricht. */
+    --faecher-sichtbar: 4.05;
+
     flex-wrap: wrap;
+    padding-bottom: calc(var(--raster) / 2);
     max-height: calc(100dvh / 2);
     overflow-x: hidden;
     overflow-y: auto;

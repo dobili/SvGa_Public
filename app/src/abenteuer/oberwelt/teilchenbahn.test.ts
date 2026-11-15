@@ -5,11 +5,25 @@ import {
   HOECHSTENS_TEILCHEN,
   naechsteSchnuppe,
   neuerNebel,
+  neuerRegen,
   neuerStaub,
   SCHNUPPE_DAUER_S,
 } from "./teilchenbahn";
 
 describe("Teilchen", () => {
+  it("lässt Regen schnell und leicht schräg fallen, höchstens so viele Tropfen wie fürs Handy", () => {
+    const regen = neuerRegen(() => 0.5);
+    expect(regen).toHaveLength(HOECHSTENS_TEILCHEN);
+    const [t] = regen;
+    if (!t) throw new Error("kein Regen");
+    expect(t.vy).toBeGreaterThan(1);
+    expect(t.vx).toBeGreaterThan(0);
+    expect(t.vx).toBeLessThan(t.vy / 10);
+    const vorher = t.y;
+    bewegeTeilchen([t], 0.1);
+    expect(t.y).toBeGreaterThan(vorher);
+  });
+
   it("begrenzt den Staub für das Handy", () => {
     expect(neuerStaub(500, () => 0.5)).toHaveLength(HOECHSTENS_TEILCHEN);
   });

@@ -93,2025 +93,1227 @@
   "objekte": [
     {
       "moebel": "fz9Bug",
-      "feld": [
-        7,
-        74
-      ]
+      "feld": [7, 74]
     },
     {
       "moebel": "sd6RelingObenLinks",
-      "feld": [
-        7,
-        4
-      ],
+      "feld": [7, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingObenRechts",
-      "feld": [
-        22,
-        4
-      ],
+      "feld": [22, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        8,
-        4
-      ],
+      "feld": [8, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        9,
-        4
-      ],
+      "feld": [9, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        10,
-        4
-      ],
+      "feld": [10, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        11,
-        4
-      ],
+      "feld": [11, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        12,
-        4
-      ],
+      "feld": [12, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingObenRechts",
-      "feld": [
-        13,
-        4
-      ],
+      "feld": [13, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingObenLinks",
-      "feld": [
-        16,
-        4
-      ],
+      "feld": [16, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        17,
-        4
-      ],
+      "feld": [17, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        18,
-        4
-      ],
+      "feld": [18, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        19,
-        4
-      ],
+      "feld": [19, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        20,
-        4
-      ],
+      "feld": [20, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingOben",
-      "feld": [
-        21,
-        4
-      ],
+      "feld": [21, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        5
-      ],
+      "feld": [7, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        5
-      ],
+      "feld": [22, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        6
-      ],
+      "feld": [7, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        6
-      ],
+      "feld": [22, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        7
-      ],
+      "feld": [7, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        7
-      ],
+      "feld": [22, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        8
-      ],
+      "feld": [7, 8],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        8
-      ],
+      "feld": [22, 8],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        9
-      ],
+      "feld": [7, 9],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        9
-      ],
+      "feld": [22, 9],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        10
-      ],
+      "feld": [7, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        10
-      ],
+      "feld": [22, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        11
-      ],
+      "feld": [7, 11],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        11
-      ],
+      "feld": [22, 11],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        12
-      ],
+      "feld": [7, 12],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        12
-      ],
+      "feld": [22, 12],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        13
-      ],
+      "feld": [7, 13],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        13
-      ],
+      "feld": [22, 13],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        14
-      ],
+      "feld": [7, 14],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        14
-      ],
+      "feld": [22, 14],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        15
-      ],
+      "feld": [7, 15],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        15
-      ],
+      "feld": [22, 15],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        16
-      ],
+      "feld": [7, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        16
-      ],
+      "feld": [22, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        17
-      ],
+      "feld": [7, 17],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        17
-      ],
+      "feld": [22, 17],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        18
-      ],
+      "feld": [7, 18],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        18
-      ],
+      "feld": [22, 18],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        19
-      ],
+      "feld": [7, 19],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        19
-      ],
+      "feld": [22, 19],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        20
-      ],
+      "feld": [7, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        20
-      ],
+      "feld": [22, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        21
-      ],
+      "feld": [7, 21],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        21
-      ],
+      "feld": [22, 21],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        22
-      ],
+      "feld": [7, 22],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        22
-      ],
+      "feld": [22, 22],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        23
-      ],
+      "feld": [7, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        23
-      ],
+      "feld": [22, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        24
-      ],
+      "feld": [7, 24],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        24
-      ],
+      "feld": [22, 24],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        25
-      ],
+      "feld": [7, 25],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        25
-      ],
+      "feld": [22, 25],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        26
-      ],
+      "feld": [7, 26],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        26
-      ],
+      "feld": [22, 26],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        27
-      ],
+      "feld": [7, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        27
-      ],
+      "feld": [22, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        28
-      ],
+      "feld": [7, 28],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        28
-      ],
+      "feld": [22, 28],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        29
-      ],
+      "feld": [7, 29],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        29
-      ],
+      "feld": [22, 29],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        30
-      ],
+      "feld": [7, 30],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        30
-      ],
+      "feld": [22, 30],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        31
-      ],
+      "feld": [7, 31],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        31
-      ],
+      "feld": [22, 31],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        32
-      ],
+      "feld": [7, 32],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        32
-      ],
+      "feld": [22, 32],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        33
-      ],
+      "feld": [7, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        33
-      ],
+      "feld": [22, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        34
-      ],
+      "feld": [7, 34],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        34
-      ],
+      "feld": [22, 34],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        35
-      ],
+      "feld": [7, 35],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        35
-      ],
+      "feld": [22, 35],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        36
-      ],
+      "feld": [7, 36],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        36
-      ],
+      "feld": [22, 36],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        37
-      ],
+      "feld": [7, 37],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        37
-      ],
+      "feld": [22, 37],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        38
-      ],
+      "feld": [7, 38],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        38
-      ],
+      "feld": [22, 38],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        39
-      ],
+      "feld": [7, 39],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        39
-      ],
+      "feld": [22, 39],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        40
-      ],
+      "feld": [7, 40],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        40
-      ],
+      "feld": [22, 40],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        41
-      ],
+      "feld": [7, 41],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        41
-      ],
+      "feld": [22, 41],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        42
-      ],
+      "feld": [7, 42],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        42
-      ],
+      "feld": [22, 42],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        43
-      ],
+      "feld": [7, 43],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        43
-      ],
+      "feld": [22, 43],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        44
-      ],
+      "feld": [7, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        44
-      ],
+      "feld": [22, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        45
-      ],
+      "feld": [7, 45],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        45
-      ],
+      "feld": [22, 45],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        46
-      ],
+      "feld": [7, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        46
-      ],
+      "feld": [22, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        47
-      ],
+      "feld": [7, 47],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        47
-      ],
+      "feld": [22, 47],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        48
-      ],
+      "feld": [7, 48],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        48
-      ],
+      "feld": [22, 48],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        49
-      ],
+      "feld": [7, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        49
-      ],
+      "feld": [22, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        50
-      ],
+      "feld": [7, 50],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        50
-      ],
+      "feld": [22, 50],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        51
-      ],
+      "feld": [7, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        51
-      ],
+      "feld": [22, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        52
-      ],
+      "feld": [7, 52],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        52
-      ],
+      "feld": [22, 52],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        53
-      ],
+      "feld": [7, 53],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        53
-      ],
+      "feld": [22, 53],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        54
-      ],
+      "feld": [7, 54],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        54
-      ],
+      "feld": [22, 54],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        55
-      ],
+      "feld": [7, 55],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        55
-      ],
+      "feld": [22, 55],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        56
-      ],
+      "feld": [7, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        56
-      ],
+      "feld": [22, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        57
-      ],
+      "feld": [7, 57],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        57
-      ],
+      "feld": [22, 57],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        58
-      ],
+      "feld": [7, 58],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        58
-      ],
+      "feld": [22, 58],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        59
-      ],
+      "feld": [7, 59],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        59
-      ],
+      "feld": [22, 59],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        60
-      ],
+      "feld": [7, 60],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        60
-      ],
+      "feld": [22, 60],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        61
-      ],
+      "feld": [7, 61],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        61
-      ],
+      "feld": [22, 61],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        62
-      ],
+      "feld": [7, 62],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        62
-      ],
+      "feld": [22, 62],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        63
-      ],
+      "feld": [7, 63],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        63
-      ],
+      "feld": [22, 63],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        64
-      ],
+      "feld": [7, 64],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        64
-      ],
+      "feld": [22, 64],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        65
-      ],
+      "feld": [7, 65],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        65
-      ],
+      "feld": [22, 65],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        66
-      ],
+      "feld": [7, 66],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        66
-      ],
+      "feld": [22, 66],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        67
-      ],
+      "feld": [7, 67],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        67
-      ],
+      "feld": [22, 67],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        68
-      ],
+      "feld": [7, 68],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        68
-      ],
+      "feld": [22, 68],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        69
-      ],
+      "feld": [7, 69],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        69
-      ],
+      "feld": [22, 69],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        70
-      ],
+      "feld": [7, 70],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        70
-      ],
+      "feld": [22, 70],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        71
-      ],
+      "feld": [7, 71],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        71
-      ],
+      "feld": [22, 71],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteLinks",
-      "feld": [
-        7,
-        72
-      ],
+      "feld": [7, 72],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingSeiteRechts",
-      "feld": [
-        22,
-        72
-      ],
+      "feld": [22, 72],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Container",
-      "feld": [
-        9,
-        8
-      ]
+      "feld": [9, 8]
     },
     {
       "moebel": "wr5Container",
-      "feld": [
-        9,
-        11
-      ]
+      "feld": [9, 11]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [
-        15,
-        9
-      ]
+      "feld": [15, 9]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [
-        15,
-        12
-      ]
+      "feld": [15, 12]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [
-        18,
-        14
-      ]
+      "feld": [18, 14]
     },
     {
       "moebel": "ld5Seil",
-      "feld": [
-        9,
-        16
-      ]
+      "feld": [9, 16]
     },
     {
       "moebel": "ld5Ruderboot",
-      "feld": [
-        16,
-        16
-      ],
+      "feld": [16, 16],
       "bauteil_ok": true
     },
     {
-      "moebel": "fz9Bordbar",
-      "feld": [
-        8,
-        20
-      ]
+      "moebel": "fzKioskGemini",
+      "feld": [9, 20]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [
-        18,
-        24
-      ],
+      "feld": [18, 24],
       "id": "brett"
     },
     {
       "moebel": "mf2SchachbrettFiguren",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "brett",
-      "versatz": [
-        0,
-        5
-      ]
+      "versatz": [0, 5]
     },
     {
-      "moebel": "fz9Deckhaus",
-      "feld": [
-        10,
-        28
-      ]
+      "moebel": "fzDeckhausGemini",
+      "feld": [11, 28]
     },
     {
       "moebel": "sd6Liegestuhl",
-      "feld": [
-        19,
-        61
-      ]
+      "feld": [19, 61]
     },
     {
       "moebel": "sd6LiegestuhlGrau",
-      "feld": [
-        9,
-        61
-      ]
+      "feld": [9, 61]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        68
-      ]
+      "feld": [10, 68]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        19,
-        68
-      ]
+      "feld": [19, 68]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [
-        8,
-        40
-      ]
+      "feld": [8, 40]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [
-        21,
-        40
-      ]
+      "feld": [21, 40]
     },
     {
       "moebel": "ld5Seil",
-      "feld": [
-        12,
-        69
-      ]
+      "feld": [12, 69]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [
-        17,
-        64
-      ],
+      "feld": [17, 64],
       "id": "kapitaenstisch"
     },
     {
       "moebel": "mf2SchachbrettFiguren",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "kapitaenstisch",
-      "versatz": [
-        0,
-        5
-      ]
+      "versatz": [0, 5]
     },
     {
       "moebel": "pd7Finkenzeichen",
-      "feld": [
-        9,
-        40
-      ],
+      "feld": [9, 40],
       "runde7": true
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        9,
-        42
-      ]
+      "feld": [9, 42]
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        17,
-        42
-      ]
+      "feld": [17, 42]
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        12,
-        47
-      ]
+      "feld": [12, 47]
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        8,
-        52
-      ]
+      "feld": [8, 52]
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        16,
-        52
-      ]
+      "feld": [16, 52]
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        12,
-        57
-      ]
+      "feld": [12, 57]
     },
     {
       "moebel": "sd6Liegestuhl",
-      "feld": [
-        9,
-        58
-      ]
+      "feld": [9, 58]
     },
     {
       "moebel": "sd6LiegestuhlGrau",
-      "feld": [
-        19,
-        58
-      ]
+      "feld": [19, 58]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [
-        18,
-        70
-      ]
+      "feld": [18, 70]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [
-        8,
-        62
-      ]
+      "feld": [8, 62]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [
-        21,
-        62
-      ]
+      "feld": [21, 62]
     },
     {
       "moebel": "fz10Fernglas",
-      "feld": [
-        8,
-        44
-      ]
+      "feld": [8, 44]
     },
     {
       "moebel": "fz10Fernglas",
-      "feld": [
-        21,
-        54
-      ]
+      "feld": [21, 54]
     },
     {
       "moebel": "fz10Fernglas",
-      "feld": [
-        8,
-        66
-      ]
+      "feld": [8, 66]
     },
     {
       "moebel": "fz10Fernglas",
-      "feld": [
-        21,
-        36
-      ]
+      "feld": [21, 36]
     },
     {
       "moebel": "fz10Koffer",
-      "feld": [
-        12,
-        42
-      ]
+      "feld": [12, 42]
     },
     {
       "moebel": "fz10Koffer",
-      "feld": [
-        20,
-        42
-      ]
+      "feld": [20, 42]
     },
     {
       "moebel": "fz10Koffer",
-      "feld": [
-        15,
-        47
-      ]
+      "feld": [15, 47]
     },
     {
       "moebel": "gc7Schirm",
-      "feld": [
-        11,
-        36
-      ]
+      "feld": [11, 36]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [
-        14,
-        38
-      ]
+      "feld": [14, 38]
     },
     {
       "moebel": "sd6Liegestuhl",
-      "feld": [
-        16,
-        38
-      ]
+      "feld": [16, 38]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [
-        20,
-        49
-      ]
+      "feld": [20, 49]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [
-        8,
-        55
-      ]
+      "feld": [8, 55]
     },
     {
       "moebel": "ld5Seil",
-      "feld": [
-        20,
-        52
-      ]
+      "feld": [20, 52]
     },
     {
       "moebel": "ld5Seil",
-      "feld": [
-        9,
-        49
-      ]
+      "feld": [9, 49]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [
-        19,
-        55
-      ]
+      "feld": [19, 55]
     },
     {
       "moebel": "gc7Schirm",
-      "feld": [
-        15,
-        60
-      ]
+      "feld": [15, 60]
     },
     {
       "moebel": "fz9Bank",
-      "feld": [
-        12,
-        65
-      ]
+      "feld": [12, 65]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [
-        8,
-        70
-      ]
+      "feld": [8, 70]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        13,
-        72
-      ]
+      "feld": [13, 72]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        16,
-        72
-      ]
+      "feld": [16, 72]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        6
-      ]
+      "feld": [6, 6]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        6
-      ]
+      "feld": [23, 6]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        9
-      ]
+      "feld": [6, 9]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        9
-      ]
+      "feld": [23, 9]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        12
-      ]
+      "feld": [6, 12]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        12
-      ]
+      "feld": [23, 12]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        15
-      ]
+      "feld": [6, 15]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        15
-      ]
+      "feld": [23, 15]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        18
-      ]
+      "feld": [6, 18]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        18
-      ]
+      "feld": [23, 18]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        21
-      ]
+      "feld": [6, 21]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        21
-      ]
+      "feld": [23, 21]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        24
-      ]
+      "feld": [6, 24]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        24
-      ]
+      "feld": [23, 24]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        27
-      ]
+      "feld": [6, 27]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        27
-      ]
+      "feld": [23, 27]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        30
-      ]
+      "feld": [6, 30]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        30
-      ]
+      "feld": [23, 30]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        33
-      ]
+      "feld": [6, 33]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        33
-      ]
+      "feld": [23, 33]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        36
-      ]
+      "feld": [6, 36]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        36
-      ]
+      "feld": [23, 36]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        39
-      ]
+      "feld": [6, 39]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        39
-      ]
+      "feld": [23, 39]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        42
-      ]
+      "feld": [6, 42]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        42
-      ]
+      "feld": [23, 42]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        45
-      ]
+      "feld": [6, 45]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        45
-      ]
+      "feld": [23, 45]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        48
-      ]
+      "feld": [6, 48]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        48
-      ]
+      "feld": [23, 48]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        51
-      ]
+      "feld": [6, 51]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        51
-      ]
+      "feld": [23, 51]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        54
-      ]
+      "feld": [6, 54]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        54
-      ]
+      "feld": [23, 54]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        57
-      ]
+      "feld": [6, 57]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        57
-      ]
+      "feld": [23, 57]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        60
-      ]
+      "feld": [6, 60]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        60
-      ]
+      "feld": [23, 60]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        63
-      ]
+      "feld": [6, 63]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        63
-      ]
+      "feld": [23, 63]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        66
-      ]
+      "feld": [6, 66]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        66
-      ]
+      "feld": [23, 66]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        69
-      ]
+      "feld": [6, 69]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        69
-      ]
+      "feld": [23, 69]
     },
     {
       "moebel": "fz12BullaugeLinks",
-      "feld": [
-        6,
-        72
-      ]
+      "feld": [6, 72]
     },
     {
       "moebel": "fz12BullaugeRechts",
-      "feld": [
-        23,
-        72
-      ]
+      "feld": [23, 72]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        14,
-        6
-      ],
+      "feld": [14, 6],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "zurueckSilicon",
-      "feld": [
-        14,
-        4
-      ]
+      "feld": [14, 4]
     },
     {
       "name": "zurueckSilicon",
-      "feld": [
-        15,
-        4
-      ]
+      "feld": [15, 4]
     },
     {
       "name": "weiterDeich",
-      "feld": [
-        14,
-        73
-      ]
+      "feld": [14, 73]
     },
     {
       "name": "weiterDeich",
-      "feld": [
-        15,
-        73
-      ]
+      "feld": [15, 73]
     },
     {
       "name": "tafel",
-      "feld": [
-        17,
-        35
-      ]
+      "feld": [17, 35]
     },
     {
       "name": "fundFlaschenpost",
-      "feld": [
-        8,
-        52
-      ]
+      "feld": [8, 52]
     },
     {
       "name": "ereignisKapitaen",
-      "feld": [
-        17,
-        67
-      ]
+      "feld": [17, 67]
     },
     {
       "name": "ladung",
-      "feld": [
-        13,
-        10
-      ]
+      "feld": [13, 10]
     },
     {
       "name": "delfin",
-      "feld": [
-        21,
-        52
-      ]
+      "feld": [21, 52]
     },
     {
       "name": "seite02",
-      "feld": [
-        21,
-        44
-      ]
+      "feld": [21, 44]
     },
     {
       "name": "finchTurmA",
-      "feld": [
-        9,
-        40
-      ]
+      "feld": [9, 40]
     }
   ],
   "figuren": [
     {
       "name": "schiffskoch",
-      "feld": [
-        17,
-        25
-      ]
+      "feld": [17, 25]
     },
     {
       "name": "kapitaen",
-      "feld": [
-        15,
-        69
-      ]
+      "feld": [15, 69]
     }
   ],
   "belebung": [
     {
       "name": "matrose",
       "typ": "statist",
-      "feld": [
-        19,
-        10
-      ],
+      "feld": [19, 10],
       "eigenschaften": {
         "von": "18,7",
         "bis": "19,18",
@@ -2124,10 +1326,7 @@
     {
       "name": "passagierin",
       "typ": "statist",
-      "feld": [
-        13,
-        43
-      ],
+      "feld": [13, 43],
       "eigenschaften": {
         "von": "13,43",
         "bis": "13,43",
@@ -2139,10 +1338,7 @@
     {
       "name": "angler",
       "typ": "statist",
-      "feld": [
-        20,
-        70
-      ],
+      "feld": [20, 70],
       "eigenschaften": {
         "von": "20,70",
         "bis": "20,70",
@@ -2154,10 +1350,7 @@
     {
       "name": "kind",
       "typ": "statist",
-      "feld": [
-        8,
-        26
-      ],
+      "feld": [8, 26],
       "eigenschaften": {
         "von": "8,26",
         "bis": "8,26",
@@ -2169,10 +1362,7 @@
     {
       "name": "moewen",
       "typ": "tier",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "eigenschaften": {
         "von": "8,1",
         "bis": "22,1",
@@ -2182,10 +1372,7 @@
     {
       "name": "pelikan",
       "typ": "tier",
-      "feld": [
-        20,
-        72
-      ],
+      "feld": [20, 72],
       "eigenschaften": {
         "von": "20,72",
         "bis": "20,72",
@@ -2195,10 +1382,7 @@
     {
       "name": "delfin",
       "typ": "tier",
-      "feld": [
-        25,
-        60
-      ],
+      "feld": [25, 60],
       "eigenschaften": {
         "von": "25,70",
         "bis": "25,45",
@@ -2208,10 +1392,7 @@
     {
       "name": "kormoran",
       "typ": "tier",
-      "feld": [
-        21,
-        6
-      ],
+      "feld": [21, 6],
       "eigenschaften": {
         "von": "21,6",
         "bis": "21,6",
@@ -2221,10 +1402,7 @@
     {
       "name": "robbe",
       "typ": "tier",
-      "feld": [
-        26,
-        30
-      ],
+      "feld": [26, 30],
       "eigenschaften": {
         "von": "26,20",
         "bis": "27,40",
@@ -2234,10 +1412,7 @@
     {
       "name": "quallen",
       "typ": "tier",
-      "feld": [
-        3,
-        50
-      ],
+      "feld": [3, 50],
       "eigenschaften": {
         "von": "2,44",
         "bis": "4,56",
@@ -2245,18 +1420,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "einfach",
-    "modern",
-    "rustikal",
-    "klassisch",
-    "natur",
-    "laendlich"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["einfach", "modern", "rustikal", "klassisch", "natur", "laendlich"],
   "datei": "karten/weg-silicon-delacroix-faehre.json"
 }

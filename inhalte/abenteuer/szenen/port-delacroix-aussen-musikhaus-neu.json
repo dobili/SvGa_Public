@@ -7,7 +7,7 @@
   "wand": "damm",
   "ufer": "stein",
   "boeden": {
-    "p": "pflaster",
+    "p": "pflasterNass",
     "s": "asphalt",
     "e": "erde",
     "t": "stein"
@@ -920,6 +920,30 @@
       "auf": "mh",
       "moebel": "pd6SchildMusikhaus",
       "versatz": [-30, 8]
+    },
+    {
+      "moebel": "pdPfuetze1",
+      "feld": [3, 16]
+    },
+    {
+      "moebel": "pdPfuetze2",
+      "feld": [54, 24]
+    },
+    {
+      "moebel": "pdPfuetze3",
+      "feld": [24, 30]
+    },
+    {
+      "moebel": "pdPfuetze4",
+      "feld": [19, 34]
+    },
+    {
+      "moebel": "pdPfuetze1",
+      "feld": [28, 40]
+    },
+    {
+      "moebel": "pdPfuetze2",
+      "feld": [53, 41]
     }
   ],
   "ausloeser": [

@@ -27,67 +27,44 @@
   "objekte": [
     {
       "moebel": "cc4RegalB",
-      "feld": [
-        5,
-        1
-      ]
+      "feld": [5, 1]
     },
     {
       "moebel": "cc4RegalD",
-      "feld": [
-        7,
-        1
-      ]
+      "feld": [7, 1]
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [
-        9,
-        1
-      ],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
       "moebel": "cc4RegalB",
-      "feld": [
-        11,
-        1
-      ]
+      "feld": [11, 1]
     },
-    { "moebel": "cc13Bibliotheksleiter", "feld": [12, 2], "vorn": true },
+    {
+      "moebel": "cc13Bibliotheksleiter",
+      "feld": [12, 2],
+      "vorn": true
+    },
     {
       "moebel": "cc4PinnwandK",
-      "feld": [
-        13,
-        1
-      ],
+      "feld": [13, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        6
-      ]
+      "versatz": [0, 6]
     },
     {
       "moebel": "cc12Zeitungsregal",
-      "feld": [
-        15,
-        1
-      ]
+      "feld": [15, 1]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [
-        9,
-        7
-      ],
+      "feld": [9, 7],
       "id": "schach1"
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [
-        11,
-        7
-      ],
+      "feld": [11, 7],
       "id": "schach2"
     },
     {
@@ -102,187 +79,109 @@
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        9,
-        6
-      ],
+      "feld": [9, 6],
       "zu": "schach1"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [
-        9,
-        8
-      ],
+      "feld": [9, 8],
       "zu": "schach1"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        10,
-        6
-      ],
+      "feld": [10, 6],
       "zu": "schach1"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [
-        10,
-        8
-      ],
+      "feld": [10, 8],
       "zu": "schach1"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        11,
-        6
-      ],
+      "feld": [11, 6],
       "zu": "schach2"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [
-        11,
-        8
-      ],
+      "feld": [11, 8],
       "zu": "schach2"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        12,
-        6
-      ],
+      "feld": [12, 6],
       "zu": "schach2"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [
-        12,
-        8
-      ],
+      "feld": [12, 8],
       "zu": "schach2"
     },
     {
       "moebel": "cc4Tresen",
-      "feld": [
-        6,
-        11
-      ]
+      "feld": [6, 11]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [
-        1,
-        13
-      ]
+      "feld": [1, 13]
     },
     {
       "moebel": "cc4RegalD",
-      "feld": [
-        14,
-        5
-      ],
-      "versatz": [
-        0,
-        0
-      ]
+      "feld": [14, 5],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4RegalB",
-      "feld": [
-        16,
-        5
-      ],
-      "versatz": [
-        0,
-        0
-      ]
+      "feld": [16, 5],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4RegalD",
-      "feld": [
-        14,
-        9
-      ],
-      "versatz": [
-        0,
-        0
-      ]
+      "feld": [14, 9],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4RegalB",
-      "feld": [
-        16,
-        9
-      ],
-      "versatz": [
-        0,
-        0
-      ]
+      "feld": [16, 9],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        17,
-        12
-      ],
+      "feld": [17, 12],
       "zu": "lese1"
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [
-        17,
-        13
-      ],
+      "feld": [17, 13],
       "id": "lese1"
     },
     {
-      "moebel": "cc4Leselampe",
+      "moebel": "ccBankerlampe",
       "auf": "lese1",
-      "versatz": [
-        6,
-        0
-      ]
+      "versatz": [6, 0]
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        20,
-        12
-      ],
+      "feld": [20, 12],
       "zu": "lese2"
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [
-        20,
-        13
-      ],
+      "feld": [20, 13],
       "id": "lese2"
     },
     {
-      "moebel": "cc4Leselampe",
+      "moebel": "ccBankerlampe",
       "auf": "lese2",
-      "versatz": [
-        6,
-        0
-      ]
+      "versatz": [6, 0]
     },
     {
-      "moebel": "cc4Stehlampe",
-      "feld": [
-        19,
-        12
-      ]
+      "moebel": "ccBankerlampeSteh",
+      "feld": [19, 13]
     },
     {
       "moebel": "cc5Anrichte",
-      "feld": [
-        23,
-        11
-      ],
+      "feld": [23, 11],
       "id": "anrichte"
     },
     {
@@ -290,184 +189,110 @@
       "auf": "anrichte"
     },
     {
-      "moebel": "cc6TuerSued",
-      "feld": [
-        2,
-        16
-      ],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc6TuerSued",
-      "feld": [
-        3,
-        16
-      ],
+      "moebel": "ccDoppeltuerSuedHolz",
+      "feld": [2, 16],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [
-        2,
-        14
-      ],
-      "versatz": [
-        0,
-        19
-      ]
+      "feld": [2, 14],
+      "versatz": [0, 19]
     },
     {
       "moebel": "cc6RegalSeiteHell",
-      "feld": [
-        5,
-        4
-      ]
+      "feld": [5, 4]
     },
     {
       "moebel": "cc6RegalSeiteDunkel",
-      "feld": [
-        5,
-        7
-      ]
+      "feld": [5, 7]
     },
     {
       "moebel": "cc12TreppeAb",
-      "feld": [
-        19,
-        3
-      ]
+      "feld": [19, 3]
     },
     {
       "moebel": "cc4Kellertuer",
-      "feld": [
-        2,
-        7
-      ],
+      "feld": [2, 7],
       "an_wand": true
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [
-        24,
-        12
-      ]
+      "feld": [24, 12]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [
-        1,
-        9
-      ]
+      "feld": [1, 9]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        2,
-        14
-      ],
+      "feld": [2, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "bibliothekAusgang",
-      "feld": [
-        2,
-        15
-      ]
+      "feld": [2, 15]
     },
     {
       "name": "bibliothekAusgang",
-      "feld": [
-        3,
-        15
-      ]
+      "feld": [3, 15]
     },
     {
       "name": "kellertreppe",
-      "feld": [
-        21,
-        4
-      ]
+      "feld": [21, 4]
     },
     {
       "name": "schildFluestern",
-      "feld": [
-        13,
-        3
-      ]
+      "feld": [13, 3]
     },
     {
       "name": "zeitungsregal",
-      "feld": [
-        16,
-        4
-      ]
+      "feld": [16, 4]
     },
     {
       "name": "globus",
-      "feld": [
-        23,
-        13
-      ],
+      "feld": [23, 13],
       "auf_moebel": false
     },
     {
       "name": "kellertreppe",
-      "feld": [
-        22,
-        4
-      ]
+      "feld": [22, 4]
     },
     {
       "name": "treppenhaus",
-      "feld": [
-        2,
-        9
-      ]
+      "feld": [2, 9]
     }
   ],
   "figuren": [
     {
       "name": "okafor",
-      "feld": [
-        13,
-        7
-      ]
+      "feld": [13, 7]
     },
     {
       "name": "dex",
-      "feld": [
-        8,
-        7
-      ]
+      "feld": [8, 7]
     },
     {
       "name": "mae",
-      "feld": [
-        10,
-        11
-      ]
+      "feld": [10, 11]
     },
     {
       "name": "zwillingeDrinnen",
-      "feld": [
-        9,
-        13
-      ]
+      "feld": [9, 13]
     },
-    { "name": "jonahDrinnen", "feld": [10, 13] }
+    {
+      "name": "jonahDrinnen",
+      "feld": [10, 13]
+    }
   ],
   "belebung": [
     {
       "name": "leserin",
       "typ": "statist",
-      "feld": [
-        14,
-        12
-      ],
+      "feld": [14, 12],
       "eigenschaften": {
         "tun": "liest in einem alten Buch",
         "wann": "tag",
@@ -477,10 +302,7 @@
     {
       "name": "student",
       "typ": "statist",
-      "feld": [
-        15,
-        8
-      ],
+      "feld": [15, 8],
       "eigenschaften": {
         "tun": "schreibt an einer Hausarbeit",
         "wann": "tag",
@@ -490,10 +312,7 @@
     {
       "name": "rentnerZeitung",
       "typ": "statist",
-      "feld": [
-        20,
-        12
-      ],
+      "feld": [20, 12],
       "eigenschaften": {
         "tun": "liest am Lesetisch Zeitung",
         "wann": "tag",
@@ -502,13 +321,8 @@
       }
     }
   ],
-  "zustand": [
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "klassisch"
-  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch"],
   "boeden": {
     "t": "teppichRot"
   }

@@ -133,6 +133,12 @@
     {
       "moebel": "rv8Truhe",
       "feld": [14, 7]
+    },
+    {
+      "moebel": "scThermometer",
+      "feld": [4, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
     }
   ],
   "ausloeser": [

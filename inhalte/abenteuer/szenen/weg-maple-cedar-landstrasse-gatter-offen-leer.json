@@ -12,15 +12,7 @@
     "l": "landstrasse"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "natur",
-    "rustikal",
-    "klassisch",
-    "laendlich",
-    "landhaus",
-    "einfach",
-    "modern"
-  ],
+  "stil": ["natur", "rustikal", "klassisch", "laendlich", "landhaus", "einfach", "modern"],
   "raster": [
     "####################################################ee##################################################################",
     "#...................................................ee.................................................................#",
@@ -983,9 +975,21 @@
       "feld": [36, 11],
       "bauteil_ok": true
     },
-    { "moebel": "wg4ZaunBottomMiddle", "feld": [37, 11], "bauteil_ok": true },
-    { "moebel": "wg4ZaunBottomMiddle", "feld": [38, 11], "bauteil_ok": true },
-    { "moebel": "wg4ZaunBottomMiddle", "feld": [39, 11], "bauteil_ok": true },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [37, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [38, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [39, 11],
+      "bauteil_ok": true
+    },
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [40, 11],
@@ -1046,9 +1050,22 @@
       "feld": [54, 11],
       "bauteil_ok": true
     },
-    { "moebel":  "wg4ZaunBottomRight", "feld":  [51, 11], "bauteil_ok":  true},
-    { "moebel": "wg13HolztorOffenLinks", "feld": [51, 11], "bauteil_ok": true },
-    { "moebel": "wg13HolztorOffenRechts", "feld": [52, 11], "versatz": [12, 0], "bauteil_ok": true },
+    {
+      "moebel": "wg4ZaunBottomRight",
+      "feld": [51, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg13HolztorOffenLinks",
+      "feld": [51, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg13HolztorOffenRechts",
+      "feld": [52, 11],
+      "versatz": [12, 0],
+      "bauteil_ok": true
+    },
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [55, 11],
@@ -1987,12 +2004,12 @@
     {
       "moebel": "wg4Aepfel",
       "auf": "stand",
-      "versatz": [-8, 14]
+      "versatz": [-14, 14]
     },
     {
       "moebel": "wg4Aepfel",
       "auf": "stand",
-      "versatz": [8, 14]
+      "versatz": [14, 14]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -2134,6 +2151,11 @@
       "moebel": "fz11TraktorHinten",
       "feld": [31, 5],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "wgEhrlichkeitskasse",
+      "auf": "stand",
+      "versatz": [0, 12]
     }
   ],
   "ausloeser": [
@@ -2198,7 +2220,11 @@
       "feld": [119, 17]
     }
   ],
-  "figuren": [{ "name": "pratt", "feld": [6, 14] }, 
+  "figuren": [
+    {
+      "name": "pratt",
+      "feld": [6, 14]
+    },
     {
       "name": "wanderer",
       "feld": [67, 16]
@@ -2220,10 +2246,7 @@
     {
       "name": "bauer",
       "typ": "statist",
-      "feld": [
-        30,
-        12
-      ],
+      "feld": [30, 12],
       "eigenschaften": {
         "von": "30,12",
         "bis": "35,12",
@@ -2235,10 +2258,7 @@
     {
       "name": "radfahrer",
       "typ": "statist",
-      "feld": [
-        61,
-        15
-      ],
+      "feld": [61, 15],
       "eigenschaften": {
         "von": "61,15",
         "bis": "74,15",
@@ -2249,10 +2269,7 @@
     {
       "name": "kuehe",
       "typ": "tier",
-      "feld": [
-        19,
-        20
-      ],
+      "feld": [19, 20],
       "eigenschaften": {
         "von": "19,20",
         "bis": "27,20",
@@ -2262,10 +2279,7 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [
-        106,
-        13
-      ],
+      "feld": [106, 13],
       "eigenschaften": {
         "von": "106,13",
         "bis": "112,13",
@@ -2275,10 +2289,7 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [
-        20,
-        12
-      ],
+      "feld": [20, 12],
       "eigenschaften": {
         "von": "20,12",
         "bis": "26,12",
@@ -2288,10 +2299,7 @@
     {
       "name": "reh",
       "typ": "tier",
-      "feld": [
-        104,
-        14
-      ],
+      "feld": [104, 14],
       "eigenschaften": {
         "von": "104,14",
         "bis": "104,14",
@@ -2302,10 +2310,7 @@
     {
       "name": "frauMitPferden",
       "typ": "statist",
-      "feld": [
-        23,
-        17
-      ],
+      "feld": [23, 17],
       "eigenschaften": {
         "tun": "beobachtet die wilden Pferde auf der Weide",
         "wann": "tag",
@@ -2315,10 +2320,7 @@
     {
       "name": "wildpferde",
       "typ": "tier",
-      "feld": [
-        24,
-        22
-      ],
+      "feld": [24, 22],
       "eigenschaften": {
         "verhalten": "ausweichen",
         "von": "20,21",
@@ -2328,10 +2330,7 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [
-        72,
-        20
-      ],
+      "feld": [72, 20],
       "eigenschaften": {
         "verhalten": "flitzen",
         "von": "70,19",
@@ -2341,10 +2340,7 @@
     {
       "name": "wanderin",
       "typ": "statist",
-      "feld": [
-        85,
-        16
-      ],
+      "feld": [85, 16],
       "eigenschaften": {
         "von": "80,16",
         "bis": "92,16",

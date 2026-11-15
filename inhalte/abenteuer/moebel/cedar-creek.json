@@ -821,12 +821,7 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "tuer": [
-        [
-          2,
-          10
-        ]
-      ]
+      "tuer": [[2, 10]]
     },
     "cc4Wohnhaus": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
@@ -991,7 +986,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -1003,7 +1000,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1061,27 +1060,10 @@
       "zustand": "alt",
       "stil": "klassisch",
       "tuer": [
-        [
-          1,
-          7
-        ],
-        [
-          2,
-          7
-        ]
+        [1, 7],
+        [2, 7]
       ],
-      "maske": [
-        "....",
-        "###.",
-        "###.",
-        "###.",
-        "###.",
-        "###.",
-        "....",
-        "....",
-        "....",
-        "...."
-      ]
+      "maske": ["....", "###.", "###.", "###.", "###.", "###.", "....", "....", "....", "...."]
     },
     "cc5Planke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_12.png",
@@ -1508,7 +1490,10 @@
       "ende": "nord",
       "verbund": "gleis",
       "stelle": "ende",
-      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "ost": "spiel/eigene/prellbock_stahl_rechts.png"},
+      "varianten": {
+        "west": "spiel/eigene/prellbock_stahl_links.png",
+        "ost": "spiel/eigene/prellbock_stahl_rechts.png"
+      },
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1621,7 +1606,10 @@
       "ende": "west",
       "verbund": "gleis",
       "stelle": "ende",
-      "varianten": {"ost": "spiel/eigene/prellbock_stahl_rechts.png", "nord": "spiel/eigene/prellbock_stahl_oben.png"},
+      "varianten": {
+        "ost": "spiel/eigene/prellbock_stahl_rechts.png",
+        "nord": "spiel/eigene/prellbock_stahl_oben.png"
+      },
       "breite": 16,
       "hoehe": 48,
       "kollision": true,
@@ -1636,7 +1624,10 @@
       "ende": "ost",
       "verbund": "gleis",
       "stelle": "ende",
-      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "nord": "spiel/eigene/prellbock_stahl_oben.png"},
+      "varianten": {
+        "west": "spiel/eigene/prellbock_stahl_links.png",
+        "nord": "spiel/eigene/prellbock_stahl_oben.png"
+      },
       "breite": 16,
       "hoehe": 48,
       "kollision": true,
@@ -1909,13 +1900,7 @@
       "art": "treppe",
       "zustand": "alt",
       "stil": "klassisch",
-      "maske": [
-        "......",
-        "##..##",
-        "##..##",
-        "##..##",
-        "##..##"
-      ]
+      "maske": ["......", "##..##", "##..##", "##..##", "##..##"]
     },
     "cc13MatteGruenLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_357.png",
@@ -2035,6 +2020,62 @@
       "stil": "modern",
       "blick": "unten",
       "hinweis": "Doppelte Glastür in der Südwand des Waschsalons, so breit wie außen (Regel 10.77)"
+    },
+    "ccDoppeltuerSuedHolz": {
+      "quelle": "spiel/eigene/doppeltuer_sued_holz.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "lauf": "waagrecht",
+      "stil": "klassisch",
+      "hinweis": "hölzerne Doppeltür in der Südwand, von innen gesehen (Gemini 15.11.2026); ersetzt zwei Einzeltüren"
+    },
+    "ccBankerlampe": {
+      "quelle": "spiel/eigene/bankerlampe_an.png",
+      "breite": 14,
+      "hoehe": 15,
+      "kollision": true,
+      "art": "lampe",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "grüne Bankerlampe, an (Gemini 15.11.2026); steht auf einem Lesetisch"
+    },
+    "ccBankerlampeAus": {
+      "quelle": "spiel/eigene/bankerlampe_aus.png",
+      "breite": 14,
+      "hoehe": 15,
+      "kollision": true,
+      "art": "lampe",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "grüne Bankerlampe, aus (Gemini 15.11.2026)"
+    },
+    "ccBankerlampeSteh": {
+      "quelle": "spiel/eigene/bankerlampe_steh.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stehlampe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Stehlampe mit grünem Glasschirm wie die Bankerlampen (Gemini 15.11.2026)"
+    },
+    "ccDrehbank": {
+      "quelle": "spiel/eigene/drehbank_gemini.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "lauf": "waagrecht",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "hinweis": "alte Drechselbank auf schwerer Werkbank, Spindelstock links, Reitstock rechts, halb gedrechselte Figur (Gemini 15.11.2026); Arbeitsplatz davor (Süden)"
     }
   }
 }

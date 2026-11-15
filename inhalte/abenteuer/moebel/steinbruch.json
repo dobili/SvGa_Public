@@ -33,7 +33,9 @@
       "quelle": "spiel/eigene/feldbahn_laengs.png",
       "lauf": "senkrecht",
       "verbund": "gleis",
-      "varianten": {"waagrecht": "spiel/eigene/feldbahn_quer.png"},
+      "varianten": {
+        "waagrecht": "spiel/eigene/feldbahn_quer.png"
+      },
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -45,7 +47,9 @@
       "quelle": "spiel/eigene/lore_laengs.png",
       "lauf": "senkrecht",
       "verbund": "gleis",
-      "varianten": {"waagrecht": "spiel/eigene/lore.png"},
+      "varianten": {
+        "waagrecht": "spiel/eigene/lore.png"
+      },
       "breite": 16,
       "hoehe": 24,
       "kollision": true,
@@ -59,7 +63,9 @@
       "ende": "nord",
       "verbund": "gleis",
       "stelle": "ende",
-      "varianten": {"sued": "spiel/eigene/prellbock_feldbahn_sued.png"},
+      "varianten": {
+        "sued": "spiel/eigene/prellbock_feldbahn_sued.png"
+      },
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
@@ -73,7 +79,9 @@
       "ende": "sued",
       "verbund": "gleis",
       "stelle": "ende",
-      "varianten": {"nord": "spiel/eigene/prellbock_feldbahn.png"},
+      "varianten": {
+        "nord": "spiel/eigene/prellbock_feldbahn.png"
+      },
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
@@ -135,7 +143,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
       "lauf": "senkrecht",
       "verbund": "gleis",
-      "varianten": {"waagrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png"},
+      "varianten": {
+        "waagrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png"
+      },
       "breite": 32,
       "hoehe": 16,
       "kollision": false,
@@ -147,7 +157,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -301,6 +313,20 @@
         [1, 4],
         [2, 4]
       ]
+    },
+    "st14StolleneingangFels": {
+      "quelle": "spiel/eigene/stolleneingang_braun.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stollen",
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "tuer": [
+        [1, 4],
+        [2, 4]
+      ],
+      "hinweis": "Stolleneingang im Fels mit Holzrahmen, ohne Schild (Gemini 15.11.2026), Fels in den Farben der Grubenwand umgefärbt"
     }
   }
 }

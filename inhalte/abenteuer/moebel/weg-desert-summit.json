@@ -581,6 +581,16 @@
       "stil": "modern",
       "begehbar": true,
       "begehbar_grund": "hängt an der Wand"
+    },
+    "wdsPoolKakteen": {
+      "quelle": "spiel/eigene/pool_kakteen.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern",
+      "hinweis": "leeres Motelbecken mit Rissen, Sand, rostiger Leiter und drei Saguaros (Gemini 15.11.2026)"
     }
   }
 }

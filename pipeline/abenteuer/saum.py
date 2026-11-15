@@ -11,6 +11,10 @@ welchen Saum bekommt, steht in ``materialien.json`` (``"saum"``):
 - ``randstein``: Reihe heller Kantensteine mit Fugen (Pflaster, Platten, Stein).
 - ``bankett``: dunkler, ausgefranster Streifen ohne Bordstein (Asphalt der Landstraße).
 - ``weich``: Der Nachbarboden greift unregelmäßig ein bis drei Pixel herein (Sand, Schotter, Fels).
+- ``fransen``: Übergang wie in den Gemini-Bodenübergängen (Wunsch des Autors, 15.11.2026): Der
+  Nachbarboden greift in Büscheln zwei bis fünf Pixel tief herein, jedes Büschel mit dunkler
+  Kontur, dazwischen flache Stellen; gegen jeden Naturboden (Sand an Gras und Erde, Nadelstreu an
+  Gras und Erdweg), damit Böden nicht mehr mit gerader Kachelkante aneinanderstoßen.
 
 Gezeichnet wird nur an Kanten zu Naturboden (``NATUR``; für ``weich`` nur zu Gras), nie zu Wasser
 (das hat sein Ufer), zu Wänden oder zu anderem befestigtem Boden. ``saumbefunde`` meldet im
@@ -20,11 +24,22 @@ Kartenbau Böden, die an Gras grenzen und weder Randkacheln noch einen Saum habe
 K = 16
 # Naturböden, gegen die ein befestigter Boden einen Saum zeigt.
 NATUR = frozenset(
-    {"gras", "hecke", "erde", "sand", "strand", "sandRot", "sandRotRand", "erdeRot", "sumpfboden"}
+    {
+        "gras",
+        "hecke",
+        "erde",
+        "sand",
+        "strand",
+        "sandRot",
+        "sandRotRand",
+        "erdeRot",
+        "sumpfboden",
+        "nadelstreu",
+    }
 )
 # Gras und seine Verwandten: Nur dagegen bekommt Naturboden (Sand, Schotter) seinen weichen Rand.
 GRUEN = frozenset({"gras", "hecke"})
-ARTEN = ("randstein", "bankett", "weich")
+ARTEN = ("randstein", "bankett", "weich", "fransen")
 # Holzböden draußen sind Stege und Brücken mit eigener Kante (wie bodenraster.HOLZ_BOEDEN; dort
 # nicht importiert, weil bodenraster den Kartenbau lädt und der dieses Modul).
 HOLZ_BOEDEN = frozenset({"dielen", "holzDunkel", "holzHell"})
@@ -35,6 +50,8 @@ STEIN_DUNKEL, STEIN, STEIN_HELL = (96, 92, 96, 255), (176, 172, 168, 255), (204,
 BANKETT_BREITE, ABDUNKELN = 2, 0.8
 # Weicher Rand: so tief greift der Nachbarboden höchstens herein.
 WEICH_TIEFE = 3
+# Fransen: Büschelbreite (Pixel), Tiefe eines Büschels und dazwischen, Abdunklung der Kontur.
+BUESCHEL_BREITE, BUESCHEL_TIEFE, ZWISCHEN_TIEFE, KONTUR = 3, (2, 5), (0, 1), 0.72
 RICHTUNGEN = ((0, -1), (0, 1), (-1, 0), (1, 0))
 
 
@@ -50,7 +67,8 @@ def saumart(boeden: dict, art: str, nachbar: str | None) -> str | None:
 
     Eingaben: Böden aus materialien.json, Name des Bodens und des Nachbarbodens (None: kein Boden,
     etwa Felswand oder Kartenrand). Beispiel: „pflaster“ neben „gras“ → „randstein“; „pflaster“
-    neben „asphalt“ → None; „sand“ neben „erde“ → None (weich nur gegen Gras).
+    neben „asphalt“ → None; „schotter“ (weich) neben „erde“ → None (weich nur gegen Gras);
+    „sand“ (fransen) neben „erde“ → „fransen“.
     """
     saum = boeden.get(art, {}).get("saum")
     if saum is None or nachbar is None or nachbar == art:
@@ -99,7 +117,31 @@ def _weich(px, x: int, y: int, dx: int, dy: int) -> None:
             px[_pixel(x, y, dx, dy, tiefe, laengs)] = px[_pixel(x + dx, y + dy, -dx, -dy, tiefe, laengs)]
 
 
-ZEICHNER = {"randstein": _randstein, "bankett": _bankett, "weich": _weich}
+def _fransen(px, x: int, y: int, dx: int, dy: int) -> None:
+    """Fransen: Büschel des Nachbarbodens mit dunkler Kontur greifen über die Kante herein.
+
+    Je BUESCHEL_BREITE Pixel entlang der Kante entscheidet ein fester Zufall, ob dort ein Büschel
+    (Tiefe BUESCHEL_TIEFE, zur Mitte hin am tiefsten) oder eine flache Stelle liegt. Der innerste
+    übernommene Pixel wird um KONTUR abgedunkelt: die Umrisslinie der Gemini-Übergänge.
+    """
+    for laengs in range(K):
+        welt = (x if dy else y) * K + laengs
+        reihe = (y * K if dy else x * K) + 7 * (dx + 2 * dy)
+        bueschel, lage = divmod(welt, BUESCHEL_BREITE)
+        wurf = _zufall(bueschel, reihe)
+        if wurf % 3:  # zwei von drei Stellen tragen ein Büschel
+            unten, oben = BUESCHEL_TIEFE
+            tiefe = unten + wurf % (oben - unten + 1) - (lage != BUESCHEL_BREITE // 2)
+        else:
+            tiefe = ZWISCHEN_TIEFE[0] + wurf % (ZWISCHEN_TIEFE[1] + 1)
+        for schritt in range(tiefe):
+            farbe = px[_pixel(x + dx, y + dy, -dx, -dy, schritt, laengs)]
+            if schritt == tiefe - 1 and tiefe > 1:
+                farbe = (int(farbe[0] * KONTUR), int(farbe[1] * KONTUR), int(farbe[2] * KONTUR), farbe[3])
+            px[_pixel(x, y, dx, dy, schritt, laengs)] = farbe
+
+
+ZEICHNER = {"randstein": _randstein, "bankett": _bankett, "weich": _weich, "fransen": _fransen}
 
 
 def saeume(bild, gezeichnet: dict, boeden: dict, ohne: frozenset = frozenset()) -> int:
@@ -113,7 +155,7 @@ def saeume(bild, gezeichnet: dict, boeden: dict, ohne: frozenset = frozenset()) 
     """
     px, kanten = bild.load(), 0
     # Erst die weichen Ränder, dann Bankett, zuletzt Randsteine: Steine liegen obenauf.
-    for art_saum in ("weich", "bankett", "randstein"):
+    for art_saum in ("fransen", "weich", "bankett", "randstein"):
         for (x, y), (art, _) in gezeichnet.items():
             if (x, y) in ohne:
                 continue

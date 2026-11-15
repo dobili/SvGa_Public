@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden. Mit „variation“ (pipeline/abenteuer/bodenvariation.py) bekommen Innenkacheln gewichtete Ersatzkacheln und seltene Überlagerungen (Anteile je Feld: flecken, risse, moos, flicken, farbe, gullys); an ist das je Szene mit „bodenvariation“, sonst gilt „bodenvariation_standard“. „saum“ nennt den Rand gegen Naturboden (saum.py, Regel 10.72). „landstrasse“ ist alter Asphalt ohne Bordstein mit Fahrspuren (strassenart.py, Regel 10.73).",
+  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden. Mit „variation“ (pipeline/abenteuer/bodenvariation.py) bekommen Innenkacheln gewichtete Ersatzkacheln und seltene Überlagerungen (Anteile je Feld: flecken, risse, moos, flicken, farbe, gullys); an ist das je Szene mit „bodenvariation“, sonst gilt „bodenvariation_standard“. „saum“ nennt den Rand gegen Naturboden (saum.py, Regel 10.72). „landstrasse“ ist alter Asphalt ohne Bordstein mit Fahrspuren (strassenart.py, Regel 10.73). „nadelstreu“ (Waldboden unter Nadelbäumen) und „pflasterNass“ (Regen in Port Delacroix) sind Gemini-Bilder (15.11.2026); Saum „fransen“ zeichnet Übergänge in Büscheln mit Kontur wie die Gemini-Bodenübergänge.",
   "bodenvariation_standard": false,
   "boegen": {
     "boden": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
@@ -26,7 +26,9 @@
     "watt": "spiel/eigene/wasser_watt.png",
     "sumpfboden": "spiel/eigene/sumpfboden.png",
     "pisteRot": "spiel/eigene/piste_rot.png",
-    "rosentapete": "spiel/eigene/rosentapete.png"
+    "rosentapete": "spiel/eigene/rosentapete.png",
+    "nadelstreu": "spiel/eigene/nadelstreu.png",
+    "pflasterNass": "spiel/eigene/pflaster_nass.png"
   },
   "boeden": {
     "holzHell": {
@@ -120,7 +122,7 @@
     "sand": {
       "bogen": "gelaende",
       "feld": [9, 31],
-      "saum": "weich"
+      "saum": "fransen"
     },
     "wasser": {
       "bogen": "gelaende",
@@ -446,6 +448,28 @@
         "farbe": 0.06
       },
       "saum": "bankett"
+    },
+    "nadelstreu": {
+      "bogen": "nadelstreu",
+      "feld": [0, 0],
+      "varianten": [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 0]
+      ],
+      "saum": "fransen"
+    },
+    "pflasterNass": {
+      "bogen": "pflasterNass",
+      "feld": [0, 0],
+      "varianten": [
+        [0, 0],
+        [1, 0],
+        [0, 1],
+        [1, 1]
+      ],
+      "saum": "randstein"
     }
   },
   "waende": {

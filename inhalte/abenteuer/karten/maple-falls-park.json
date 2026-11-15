@@ -5951,24 +5951,24 @@
     },
     {
      "id": 79,
-     "name": "mf4Wasserfall",
+     "name": "mf12WasserfallFelsen",
      "type": "moebel",
-     "x": 496,
+     "x": 464,
      "y": 0,
-     "width": 48,
-     "height": 64,
+     "width": 96,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 72
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

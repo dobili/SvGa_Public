@@ -621,19 +621,19 @@
     },
     {
      "id": 9,
-     "name": "mf12Treppenschacht",
+     "name": "mf12TreppenlochDachboden",
      "type": "moebel",
      "x": 16,
      "y": 32,
      "width": 48,
-     "height": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 88
       },
       {
        "name": "kollision",

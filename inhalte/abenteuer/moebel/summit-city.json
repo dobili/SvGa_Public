@@ -2,7 +2,10 @@
   "moebel": {
     "sc15OhrensesselBlickRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_217.png",
-      "varianten": {"links": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png", "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"},
+      "varianten": {
+        "links": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png",
+        "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"
+      },
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -13,7 +16,10 @@
     },
     "sc15OhrensesselBlickLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png",
-      "varianten": {"rechts": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_217.png", "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"},
+      "varianten": {
+        "rechts": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_217.png",
+        "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"
+      },
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -85,24 +91,10 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "tuer": [
-        [
-          3,
-          6
-        ],
-        [
-          4,
-          6
-        ]
+        [3, 6],
+        [4, 6]
       ],
-      "maske": [
-        "........",
-        "########",
-        "########",
-        "########",
-        "########",
-        "########",
-        "###..###"
-      ]
+      "maske": ["........", "########", "########", "########", "########", "########", "###..###"]
     },
     "sc7Bergladen": {
       "quelle": "spiel/eigene/bergladen.png",
@@ -113,12 +105,7 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "tuer": [
-        [
-          3,
-          6
-        ]
-      ]
+      "tuer": [[3, 6]]
     },
     "sc7Ferienhuette": {
       "quelle": "spiel/eigene/huette_a.png",
@@ -188,14 +175,8 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "tuer": [
-        [
-          3,
-          8
-        ],
-        [
-          4,
-          8
-        ]
+        [3, 8],
+        [4, 8]
       ]
     },
     "sc7Mast": {
@@ -465,6 +446,16 @@
       "art": "haus",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "scThermometer": {
+      "quelle": "spiel/eigene/thermometer_brett.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "hinweis": "altes Außenthermometer auf verwittertem Brett, an der Wand (Gemini 15.11.2026)"
     }
   }
 }

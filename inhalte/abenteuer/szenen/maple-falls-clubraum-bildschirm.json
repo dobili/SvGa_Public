@@ -812,13 +812,8 @@
       "vorn": true
     },
     {
-      "moebel": "mf5TuerSuedHolz",
+      "moebel": "mfDoppeltuerSuedHolz",
       "feld": [13, 14],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf5TuerSuedHolz",
-      "feld": [14, 14],
       "an_wand": true
     },
     {

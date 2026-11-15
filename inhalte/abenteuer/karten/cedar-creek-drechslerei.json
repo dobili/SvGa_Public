@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 33,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -934,11 +934,11 @@
     },
     {
      "id": 17,
-     "name": "pd9Werkbank",
+     "name": "ccDrehbank",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 96,
-     "width": 48,
+     "width": 64,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -1118,11 +1118,11 @@
     },
     {
      "id": 25,
-     "name": "cc8TuerSuedHolz",
+     "name": "ccDoppeltuerSuedHolz",
      "type": "moebel",
      "x": 64,
      "y": 160,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -1141,10 +1141,10 @@
     },
     {
      "id": 26,
-     "name": "cc8TuerSuedHolz",
+     "name": "cc5Fussmatte",
      "type": "moebel",
-     "x": 80,
-     "y": 160,
+     "x": 64,
+     "y": 147,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1153,7 +1153,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 1
       },
       {
        "name": "kollision",
@@ -1166,7 +1166,7 @@
      "id": 27,
      "name": "cc5Fussmatte",
      "type": "moebel",
-     "x": 64,
+     "x": 80,
      "y": 147,
      "width": 16,
      "height": 16,
@@ -1187,24 +1187,24 @@
     },
     {
      "id": 28,
-     "name": "cc5Fussmatte",
+     "name": "cc7Werkbank",
      "type": "moebel",
      "x": 80,
-     "y": 147,
-     "width": 16,
-     "height": 16,
+     "y": 96,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 120
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -1212,7 +1212,7 @@
      "id": 29,
      "name": "cc7Werkbank",
      "type": "moebel",
-     "x": 96,
+     "x": 112,
      "y": 96,
      "width": 32,
      "height": 32,
@@ -1233,32 +1233,9 @@
     },
     {
      "id": 30,
-     "name": "cc7Werkbank",
-     "type": "moebel",
-     "x": 128,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 31,
      "name": "cc5Leiste",
      "type": "moebel",
-     "x": 104,
+     "x": 88,
      "y": 104,
      "width": 16,
      "height": 16,
@@ -1278,10 +1255,10 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "cc5Werkstueck",
      "type": "moebel",
-     "x": 136,
+     "x": 120,
      "y": 104,
      "width": 16,
      "height": 16,

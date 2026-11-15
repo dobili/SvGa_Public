@@ -1,5 +1,6 @@
 /**
- * Bewegung der Teilchen über der Karte (Atmosphäre T8): Staub im Licht, Sternschnuppen, Nebel.
+ * Bewegung der Teilchen über der Karte (Atmosphäre T8): Staub im Licht, Sternschnuppen, Nebel,
+ * Regen (Port Delacroix, RO21: Regen statt Schnee).
  * Reine Rechnung in Anteilen des Bildausschnitts (0 bis 1), getestet in teilchenbahn.test.ts;
  * gezeichnet wird in oberwelt/teilchen.ts.
  * Abhängigkeiten: keine.
@@ -26,6 +27,29 @@ export const NEBEL_SCHWADEN = 6;
 const NEBEL_TEMPO = 0.01;
 const NEBEL_GROESSE_MIN = 60;
 const NEBEL_GROESSE_STREUUNG = 60;
+
+/** Regen: Tropfen fallen schnell und leicht schräg; Größe ist die Länge des Strichs in Weltpixeln. */
+const REGEN_FALL = 1.1;
+const REGEN_STREUUNG = 0.3;
+const REGEN_WIND = 0.06;
+const REGEN_LAENGE_MIN = 3;
+const REGEN_LAENGE_STREUUNG = 4;
+
+/**
+ * Regentropfen, über den Bildausschnitt verteilt (höchstens HOECHSTENS_TEILCHEN). Warum Striche
+ * statt Bilder: Gemini lieferte Tropfen von 1 × 4 bis 2 × 6 Pixeln; ein Strich derselben Länge
+ * in Regenfarbe sieht gleich aus und braucht kein Bild. Beispiel: `neuerRegen(Math.random)`.
+ */
+export function neuerRegen(zufall: () => number): Teilchen[] {
+  return Array.from({ length: HOECHSTENS_TEILCHEN }, () => ({
+    x: zufall(),
+    y: zufall(),
+    vx: REGEN_WIND,
+    vy: REGEN_FALL + REGEN_STREUUNG * zufall(),
+    groesse: REGEN_LAENGE_MIN + Math.floor(REGEN_LAENGE_STREUUNG * zufall()),
+    phase: VOLLKREIS * zufall(),
+  }));
+}
 
 /** Staubkörner, über den Bildausschnitt verteilt; `zufall` liefert Zahlen in [0, 1). */
 export function neuerStaub(anzahl: number, zufall: () => number): Teilchen[] {

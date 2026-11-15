@@ -1518,33 +1518,33 @@
       "feld": [32, 128]
     },
     {
-      "moebel": "wr15SchleusentorQuer8",
-      "feld": [2, 95],
-      "versatz": [0, 8],
+      "moebel": "wrSchleusentorZu",
+      "feld": [1, 92],
+      "versatz": [8, 0],
       "vorn": true
     },
     {
-      "moebel": "wr15SchleusentorQuer8",
-      "feld": [2, 113],
-      "versatz": [0, 8],
+      "moebel": "wrSchleusentorZu",
+      "feld": [1, 110],
+      "versatz": [8, 0],
       "vorn": true
     },
     {
-      "moebel": "wr15SchleusentorQuer8",
-      "feld": [2, 131],
-      "versatz": [0, 8],
+      "moebel": "wrSchleusentorZu",
+      "feld": [1, 128],
+      "versatz": [8, 0],
       "vorn": true
     },
     {
-      "moebel": "wr15SchleusentorQuer8",
-      "feld": [2, 144],
-      "versatz": [0, 8],
+      "moebel": "wrSchleusentorZu",
+      "feld": [1, 141],
+      "versatz": [8, 0],
       "vorn": true
     },
     {
-      "moebel": "wr15SchleusentorQuer8",
-      "feld": [2, 153],
-      "versatz": [0, 8],
+      "moebel": "wrSchleusentorOffen",
+      "feld": [1, 149],
+      "versatz": [8, 0],
       "vorn": true
     },
     {
@@ -1576,6 +1576,16 @@
       "moebel": "wc5Tor2",
       "feld": [22, 119],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "wrLastkahnBug",
+      "feld": [3, 116],
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "wrLastkahnHeck",
+      "feld": [3, 122],
+      "versatz": [8, 0]
     }
   ],
   "ausloeser": [
@@ -1807,15 +1817,7 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "rustikal",
-    "einfach",
-    "natur",
-    "laendlich",
-    "klassisch",
-    "modern",
-    "landhaus"
-  ],
+  "stil": ["rustikal", "einfach", "natur", "laendlich", "klassisch", "modern", "landhaus"],
   "datei": "karten/weg-riverton-ironwood-2-ohne-tische.json",
   "ufer": "stein",
   "kante": "klippe",

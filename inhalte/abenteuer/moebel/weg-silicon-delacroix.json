@@ -486,6 +486,28 @@
       "begehbar_grund": "sitzt in der Bordwand über dem Wasser, dort läuft niemand",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "fzDeckhausGemini": {
+      "quelle": "spiel/eigene/faehre_deckhaus_gemini.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "weißes Deckhaus mit Bullaugen, Tür und Rätseltafel an der Front, Dach von oben (Gemini 15.11.2026)"
+    },
+    "fzKioskGemini": {
+      "quelle": "spiel/eigene/faehre_kiosk_gemini.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "kleiner Kiosk mit gestreifter Markise und Verkaufsfenster, Dach von oben (Gemini 15.11.2026)"
     }
   }
 }

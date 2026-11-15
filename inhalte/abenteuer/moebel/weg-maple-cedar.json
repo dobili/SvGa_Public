@@ -868,6 +868,50 @@
       "stil": "laendlich",
       "begehbar": true,
       "begehbar_grund": "Fahrbahn am Boden: Schrägstück, das die Landstraße weich um eine Reihe nach oben versetzt"
+    },
+    "wgSteinBrett": {
+      "quelle": "spiel/eigene/stein_brett_trocken.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "maske": ["..", "##"],
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur",
+      "hinweis": "flacher Flussstein mit eingeritztem Brett, 8 × 8 Felder, Moos in den Rillen (Gemini 15.11.2026); Wahrzeichen der Fährstelle"
+    },
+    "wgSteinBrettNass": {
+      "quelle": "spiel/eigene/stein_brett_nass.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "maske": ["..", "##"],
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur",
+      "hinweis": "derselbe Stein nass nach Regen (Gemini 15.11.2026); für eine Regenfassung"
+    },
+    "wgEhrlichkeitskasse": {
+      "quelle": "spiel/eigene/kasse_apfelstand_zettel.png",
+      "breite": 12,
+      "hoehe": 14,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten",
+      "hinweis": "verbeulte Blechkasse mit Münzschlitz und Zettel (Gemini 15.11.2026); steht auf dem Apfelstand"
+    },
+    "wgEhrlichkeitskasseOhne": {
+      "quelle": "spiel/eigene/kasse_apfelstand.png",
+      "breite": 12,
+      "hoehe": 11,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "blick": "unten",
+      "hinweis": "dieselbe Kasse ohne Zettel (Gemini 15.11.2026)"
     }
   }
 }

@@ -1,6 +1,6 @@
 /**
- * Teilchen über der Karte (Atmosphäre T8): Staub im Licht, Sternschnuppen, Nebelschwaden und der
- * Schnee der Winterkarten. Je Szene höchstens eine Art.
+ * Teilchen über der Karte (Atmosphäre T8): Staub im Licht, Sternschnuppen, Nebelschwaden, Regen
+ * (Port Delacroix, RO21) und der Schnee der Winterkarten. Je Szene höchstens eine Art.
  *
  * Rolle im Gesamtbild: Die Szene (szene.ts) zeigt beim Aufbau die Teilchen der Karte (orte.json
  * `teilchen`, Winter: Schnee); ein Dialog wechselt sie mit `#teilchen:staub` bis zum Dialogende
@@ -16,14 +16,15 @@ import {
   HOECHSTENS_TEILCHEN,
   naechsteSchnuppe,
   neuerNebel,
+  neuerRegen,
   neuerStaub,
   SCHNUPPE_DAUER_S,
   type Schnuppe,
   type Teilchen,
 } from "./teilchenbahn";
 
-export type Teilchenart = "schnee" | "staub" | "sternschnuppen" | "nebel";
-const ARTEN: readonly Teilchenart[] = ["schnee", "staub", "sternschnuppen", "nebel"];
+export type Teilchenart = "schnee" | "staub" | "sternschnuppen" | "nebel" | "regen";
+const ARTEN: readonly Teilchenart[] = ["schnee", "staub", "sternschnuppen", "nebel", "regen"];
 
 /** Über der Tönung (200000), unter dem Schnee nicht nötig: je Szene nur eine Art. */
 const TIEFE = 300000;
@@ -32,6 +33,11 @@ const STAUB_DECKKRAFT = 0.6;
 const NEBEL_FARBE = 0xe8eef0;
 const NEBEL_DECKKRAFT = 0.12;
 const SCHNUPPE_FARBE = 0xffffff;
+/** Regen: hellgraublaue Striche wie die Tropfen der Gemini-Vorlage (Regen in Port Delacroix). */
+const REGEN_FARBE = 0xb8c8e0;
+const REGEN_DECKKRAFT = 0.55;
+/** Der Strich zeigt gegen die Fallrichtung: so viele Pixel Versatz je Anteil Wind. */
+const REGEN_SCHRAEGE = 20;
 /** Länge des Schweifs und Weg der Sternschnuppe (Anteile des Bildausschnitts). */
 const SCHNUPPE_SCHWEIF = 0.06;
 const SCHNUPPE_WEG = 0.25;
@@ -110,10 +116,36 @@ class Schnuppenschicht implements Schicht {
   }
 }
 
+/** Regen: Tropfen als kurze Striche, die schräg nach unten fallen und oben wieder einsetzen. */
+class Regenschicht implements Schicht {
+  private readonly grafik: Phaser.GameObjects.Graphics;
+  constructor(
+    private readonly szene: Phaser.Scene,
+    private readonly teilchen: Teilchen[],
+  ) {
+    this.grafik = szene.add.graphics().setDepth(TIEFE);
+  }
+  aktualisiere(deltaMs: number): void {
+    bewegeTeilchen(this.teilchen, deltaMs / MS_JE_S);
+    const sicht = this.szene.cameras.main.worldView;
+    this.grafik.clear();
+    this.grafik.lineStyle(1, REGEN_FARBE, REGEN_DECKKRAFT);
+    for (const t of this.teilchen) {
+      const x = sicht.x + t.x * sicht.width;
+      const y = sicht.y + t.y * sicht.height;
+      this.grafik.lineBetween(x - t.vx * REGEN_SCHRAEGE, y - t.groesse, x, y);
+    }
+  }
+  zerstoere(): void {
+    this.grafik.destroy();
+  }
+}
+
 /** Die Schicht einer Art. */
 function baue(szene: Phaser.Scene, art: Teilchenart): Schicht {
   if (art === "schnee") return new Schneeschicht(szene);
   if (art === "sternschnuppen") return new Schnuppenschicht(szene);
+  if (art === "regen") return new Regenschicht(szene, neuerRegen(Math.random));
   if (art === "staub")
     return new Treibschicht(szene, art, neuerStaub(HOECHSTENS_TEILCHEN, Math.random));
   return new Treibschicht(szene, art, neuerNebel(Math.random));
@@ -133,8 +165,8 @@ function entferne(szene: Phaser.Scene): void {
 }
 
 /**
- * Wünscht das Gerät weniger Bewegung (prefers-reduced-motion)? Dann bleiben Schnee, Staub, Nebel
- * und Sternschnuppen weg (WCAG 2.3.3, wie die Bewegungen der App in ui/stil/basis.css): Sie
+ * Wünscht das Gerät weniger Bewegung (prefers-reduced-motion)? Dann bleiben Schnee, Staub, Nebel,
+ * Regen und Sternschnuppen weg (WCAG 2.3.3, wie die Bewegungen der App in ui/stil/basis.css): Sie
  * tragen nur Stimmung, und ständiges Treiben über dem Bild stört Kinder mit Schwindel oder
  * Konzentrationsproblemen (Prüfung „zugang“, 15.11.2026).
  */

@@ -4122,6 +4122,58 @@
       "begehbar": true,
       "begehbar_grund": "liegt unter dem Tischbein; das Feld sperrt der Tisch selbst",
       "hinweis": "gefalteter Pizzakarton als Keil unter dem rechten vorderen Bein des runden Esstischs, mit dem Bein im Bild (Ink tisch_pizzakarton); Tisch an Feld (x, y): Bild an (x + 1, y + 1) mit Versatz [3, 11] und vorn; Bild aus bildwuensche/akt1_karten.py"
+    },
+    "mf12TreppenlochDachboden": {
+      "quelle": "spiel/eigene/treppenloch_dachboden.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "richtung": "runter",
+      "bodenoeffnung": true,
+      "maske": ["###", "#.#", "#.#", "#.#"],
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "lauf": "senkrecht",
+      "hinweis": "Öffnung im Dachboden mit Geländer an drei Seiten, Stufen führen nach Norden hinab (Gemini 15.11.2026, Regel 10.76); Zugang von Süden"
+    },
+    "mf12TreppenlochZimmer": {
+      "quelle": "spiel/eigene/treppenloch_zimmer.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "richtung": "runter",
+      "bodenoeffnung": true,
+      "maske": ["###", "#.#", "#.#", "#.#"],
+      "art": "treppe",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "lauf": "senkrecht",
+      "hinweis": "Öffnung in hellen Dielen mit Geländerpfosten, Stufen führen nach Norden hinab (Gemini 15.11.2026, Regel 10.76); Zugang von Süden"
+    },
+    "mf12WasserfallFelsen": {
+      "quelle": "spiel/eigene/wasserfall_felsen.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": true,
+      "maske": ["######", "######", "######", "######", "......"],
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur",
+      "lauf": "senkrecht",
+      "hinweis": "Wasserfall zwischen grauen Felsen, fällt nach Süden in den Fluss; Gischt in der untersten Reihe liegt auf dem Wasser (Gemini 15.11.2026, Notiz des Autors: kommt zwischen Felsen hervor)"
+    },
+    "mfDoppeltuerSuedHolz": {
+      "quelle": "spiel/eigene/doppeltuer_sued_holz.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "lauf": "waagrecht",
+      "stil": "klassisch",
+      "hinweis": "hölzerne Doppeltür in der Südwand, von innen gesehen (Gemini 15.11.2026); ersetzt zwei Einzeltüren"
     }
   }
 }

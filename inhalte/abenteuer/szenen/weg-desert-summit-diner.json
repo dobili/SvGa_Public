@@ -233,7 +233,7 @@
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [107, 6]
+      "feld": [109, 9]
     },
     {
       "moebel": "wds6SteinRot",
@@ -354,6 +354,10 @@
       "moebel": "fz12LastwagenHinten",
       "feld": [76, 18],
       "versatz": [8, 8]
+    },
+    {
+      "moebel": "wdsPoolKakteen",
+      "feld": [103, 5]
     }
   ],
   "ausloeser": [

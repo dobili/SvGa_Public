@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 317,
+ "nextobjectid": 316,
  "layers": [
   {
    "id": 1,
@@ -12705,7 +12705,7 @@
      "id": 85,
      "name": "wg6Kisten",
      "type": "moebel",
-     "x": 944,
+     "x": 960,
      "y": 320,
      "width": 32,
      "height": 32,
@@ -17970,12 +17970,12 @@
     },
     {
      "id": 314,
-     "name": "wg4Stein",
+     "name": "wgSteinBrett",
      "type": "moebel",
      "x": 928,
-     "y": 336,
-     "width": 16,
-     "height": 16,
+     "y": 320,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17993,29 +17993,6 @@
     },
     {
      "id": 315,
-     "name": "mfc8BrettLeer",
-     "type": "moebel",
-     "x": 930,
-     "y": 336,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 345
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 316,
      "name": "wg6Seil",
      "type": "moebel",
      "x": 1568,

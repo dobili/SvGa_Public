@@ -12,15 +12,7 @@
     "l": "landstrasse"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "natur",
-    "rustikal",
-    "klassisch",
-    "laendlich",
-    "landhaus",
-    "einfach",
-    "modern"
-  ],
+  "stil": ["natur", "rustikal", "klassisch", "laendlich", "landhaus", "einfach", "modern"],
   "raster": [
     "####################################################ee##################################################################",
     "#...................................................ee.................................................................#",
@@ -983,9 +975,21 @@
       "feld": [36, 11],
       "bauteil_ok": true
     },
-    { "moebel": "wg4ZaunBottomMiddle", "feld": [37, 11], "bauteil_ok": true },
-    { "moebel": "wg4ZaunBottomMiddle", "feld": [38, 11], "bauteil_ok": true },
-    { "moebel": "wg4ZaunBottomMiddle", "feld": [39, 11], "bauteil_ok": true },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [37, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [38, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [39, 11],
+      "bauteil_ok": true
+    },
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [40, 11],
@@ -1046,9 +1050,22 @@
       "feld": [54, 11],
       "bauteil_ok": true
     },
-    { "moebel":  "wg4ZaunBottomRight", "feld":  [51, 11], "bauteil_ok":  true},
-    { "moebel": "wg13HolztorOffenLinks", "feld": [51, 11], "bauteil_ok": true },
-    { "moebel": "wg13HolztorOffenRechts", "feld": [52, 11], "versatz": [12, 0], "bauteil_ok": true },
+    {
+      "moebel": "wg4ZaunBottomRight",
+      "feld": [51, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg13HolztorOffenLinks",
+      "feld": [51, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg13HolztorOffenRechts",
+      "feld": [52, 11],
+      "versatz": [12, 0],
+      "bauteil_ok": true
+    },
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [55, 11],
@@ -2012,12 +2029,12 @@
     {
       "moebel": "wg4Aepfel",
       "auf": "stand",
-      "versatz": [-8, 14]
+      "versatz": [-14, 14]
     },
     {
       "moebel": "wg4Aepfel",
       "auf": "stand",
-      "versatz": [8, 14]
+      "versatz": [14, 14]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -2159,6 +2176,11 @@
       "moebel": "fz11TraktorHinten",
       "feld": [31, 5],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "wgEhrlichkeitskasse",
+      "auf": "stand",
+      "versatz": [0, 12]
     }
   ],
   "ausloeser": [
@@ -2223,7 +2245,11 @@
       "feld": [119, 17]
     }
   ],
-  "figuren": [{ "name": "pratt", "feld": [6, 14] }, 
+  "figuren": [
+    {
+      "name": "pratt",
+      "feld": [6, 14]
+    },
     {
       "name": "wanderer",
       "feld": [67, 16]

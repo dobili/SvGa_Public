@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 203,
+ "nextobjectid": 202,
  "layers": [
   {
    "id": 1,
@@ -5607,11 +5607,11 @@
     },
     {
      "id": 194,
-     "name": "mf5TuerSuedHolz",
+     "name": "mfDoppeltuerSuedHolz",
      "type": "moebel",
      "x": 208,
      "y": 224,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -5630,29 +5630,6 @@
     },
     {
      "id": 195,
-     "name": "mf5TuerSuedHolz",
-     "type": "moebel",
-     "x": 224,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 196,
      "name": "mfc8Pokal",
      "type": "moebel",
      "x": 208,
@@ -5675,7 +5652,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 196,
      "name": "mf13SpindeGrau",
      "type": "moebel",
      "x": 320,
@@ -5698,7 +5675,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 197,
      "name": "mf13SpindeGrau",
      "type": "moebel",
      "x": 352,
@@ -5721,7 +5698,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 198,
      "name": "mf13BildschirmPult",
      "type": "moebel",
      "x": 256,
@@ -5744,7 +5721,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 199,
      "name": "mfc8RegalNiedrig",
      "type": "moebel",
      "x": 32,
@@ -5767,7 +5744,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 200,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 208,
@@ -5790,7 +5767,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 201,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 224,

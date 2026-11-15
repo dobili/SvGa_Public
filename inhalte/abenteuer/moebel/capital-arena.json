@@ -316,26 +316,11 @@
       "stil": "klassisch",
       "blick": "unten",
       "tuer": [
-        [
-          10,
-          28
-        ],
-        [
-          11,
-          28
-        ],
-        [
-          12,
-          28
-        ],
-        [
-          13,
-          28
-        ],
-        [
-          14,
-          28
-        ]
+        [10, 28],
+        [11, 28],
+        [12, 28],
+        [13, 28],
+        [14, 28]
       ],
       "maske": [
         ".........................",
@@ -1369,7 +1354,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -1570,27 +1557,11 @@
       "art": "treppe",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [
-        "######",
-        "######",
-        "######",
-        "######",
-        "##...#",
-        "......"
-      ],
+      "maske": ["######", "######", "######", "######", "##...#", "......"],
       "tuer": [
-        [
-          2,
-          5
-        ],
-        [
-          3,
-          5
-        ],
-        [
-          4,
-          5
-        ]
+        [2, 5],
+        [3, 5],
+        [4, 5]
       ]
     },
     "ca9BeetBaum": {
@@ -2032,6 +2003,41 @@
       "stil": "modern",
       "blick": "links",
       "beschreibung": "Gelbes Taxi mit Dachschild, von der Seite (fährt nach links); wartet am Rand der Allee in der Innenstadt von Capital (Gutachten 15.11.2026)."
+    },
+    "caFanshopStand": {
+      "quelle": "spiel/eigene/fanshop_stand.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Fanstand mit Markise in Marine und Gold, Schals, Wimpel, Tassen und T-Shirts (Gemini 15.11.2026)"
+    },
+    "caGlastuerDreifach": {
+      "quelle": "spiel/eigene/glastuer_dreifach.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben",
+      "lauf": "waagrecht",
+      "hinweis": "dreiflügelige Glastür in der Südwand, von innen (Gemini 15.11.2026); außen ist das Portal drei Felder breit"
+    },
+    "caGlastuerDreifachOffen": {
+      "quelle": "spiel/eigene/glastuer_dreifach_offen.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben",
+      "lauf": "waagrecht",
+      "hinweis": "dieselbe Tür, mittlerer Flügel offen (Gemini 15.11.2026)"
     }
   }
 }

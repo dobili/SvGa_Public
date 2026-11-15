@@ -44,7 +44,8 @@
     },
     {
       "moebel": "cc13Bibliotheksleiter",
-      "feld": [12, 2], "vorn": true
+      "feld": [12, 2],
+      "vorn": true
     },
     {
       "moebel": "cc4PinnwandK",
@@ -155,7 +156,7 @@
       "id": "lese1"
     },
     {
-      "moebel": "cc4Leselampe",
+      "moebel": "ccBankerlampe",
       "auf": "lese1",
       "versatz": [6, 0]
     },
@@ -170,13 +171,13 @@
       "id": "lese2"
     },
     {
-      "moebel": "cc4Leselampe",
+      "moebel": "ccBankerlampe",
       "auf": "lese2",
       "versatz": [6, 0]
     },
     {
-      "moebel": "cc4Stehlampe",
-      "feld": [19, 12]
+      "moebel": "ccBankerlampeSteh",
+      "feld": [19, 13]
     },
     {
       "moebel": "cc5Anrichte",
@@ -188,13 +189,8 @@
       "auf": "anrichte"
     },
     {
-      "moebel": "cc6TuerSued",
+      "moebel": "ccDoppeltuerSuedHolz",
       "feld": [2, 16],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc6TuerSued",
-      "feld": [3, 16],
       "an_wand": true
     },
     {

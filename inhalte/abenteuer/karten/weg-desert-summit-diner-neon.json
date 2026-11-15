@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 105,
+ "nextobjectid": 106,
  "layers": [
   {
    "id": 1,
@@ -16525,8 +16525,8 @@
      "id": 76,
      "name": "wds6KaktusKlein",
      "type": "moebel",
-     "x": 1712,
-     "y": 96,
+     "x": 1744,
+     "y": 144,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -16535,7 +16535,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 168
       },
       {
        "name": "kollision",
@@ -17180,6 +17180,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 432
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 105,
+     "name": "wdsPoolKakteen",
+     "type": "moebel",
+     "x": 1648,
+     "y": 80,
+     "width": 96,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
       },
       {
        "name": "kollision",

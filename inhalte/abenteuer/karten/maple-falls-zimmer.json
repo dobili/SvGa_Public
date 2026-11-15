@@ -791,19 +791,19 @@
     },
     {
      "id": 13,
-     "name": "mf12Treppenschacht",
+     "name": "mf12TreppenlochZimmer",
      "type": "moebel",
      "x": 16,
      "y": 80,
      "width": 48,
-     "height": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 136
       },
       {
        "name": "kollision",

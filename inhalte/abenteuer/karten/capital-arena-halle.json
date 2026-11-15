@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 86,
+ "nextobjectid": 85,
  "layers": [
   {
    "id": 1,
@@ -1917,8 +1917,8 @@
      "id": 5,
      "name": "fanshop",
      "type": "ausloeser",
-     "x": 416,
-     "y": 192,
+     "x": 400,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3392,12 +3392,12 @@
     },
     {
      "id": 74,
-     "name": "ca7Fanshop",
+     "name": "caFanshopStand",
      "type": "moebel",
-     "x": 400,
-     "y": 176,
-     "width": 48,
-     "height": 48,
+     "x": 384,
+     "y": 160,
+     "width": 64,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -3484,11 +3484,11 @@
     },
     {
      "id": 78,
-     "name": "rv8GlastuerSued",
+     "name": "caGlastuerDreifach",
      "type": "moebel",
      "x": 240,
      "y": 304,
-     "width": 32,
+     "width": 48,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -3507,29 +3507,6 @@
     },
     {
      "id": 79,
-     "name": "ca7Tuer",
-     "type": "moebel",
-     "x": 272,
-     "y": 304,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 80,
      "name": "ca9Turniertafel",
      "type": "moebel",
      "x": 304,
@@ -3552,7 +3529,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 80,
      "name": "ca7Pflanzekl",
      "type": "moebel",
      "x": 400,
@@ -3575,7 +3552,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 81,
      "name": "ca7Pflanzekl",
      "type": "moebel",
      "x": 448,
@@ -3598,7 +3575,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 82,
      "name": "ca7Muelleimer",
      "type": "moebel",
      "x": 368,
@@ -3621,7 +3598,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 83,
      "name": "ca7Pflanze",
      "type": "moebel",
      "x": 16,
@@ -3644,7 +3621,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 84,
      "name": "ca7Pflanze",
      "type": "moebel",
      "x": 432,

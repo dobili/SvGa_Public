@@ -39,6 +39,7 @@ from pipeline.abenteuer.klippe import (
     treppenfelder,
 )
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektform import formbild
 from pipeline.abenteuer.randspur import randhang, randluecken
 from pipeline.abenteuer.strasse import markiere
 from pipeline.abenteuer.toenung import schleier
@@ -64,8 +65,7 @@ def kachel(privat: Path, boegen: dict, angabe: dict, feld: list[int]) -> Image.I
 
 
 def moebelbild(privat: Path, quelle: str) -> Image.Image:
-    """Das Bild eines Möbels; die umgefärbte Fassung (spiel/schatten/, durchscheinender statt grauer
-    Festschatten, werkzeuge/schatten.py) geht vor, wie im Paketbau der App."""
+    """Das Bild eines Möbels; die umgefärbte Fassung (spiel/schatten/) geht vor, wie im Paketbau."""
     umgefaerbt = privat / "spiel" / "schatten" / quelle
     return Image.open(umgefaerbt if umgefaerbt.exists() else privat / quelle).convert("RGBA")
 
@@ -79,8 +79,7 @@ def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
     """Ein Wellen- oder Glanzbild für offenes Wasser an (x, y), oder None.
 
     Warum: Einfarbiges Wasser wirkte auf den Autor langweilig (KARTENREGELN 10.4). Nur auf
-    Mittelstücken (kein Ufer), fest je Ort gestreut, damit das Bild bei jedem Bau gleich bleibt.
-    """
+    Mittelstücken (kein Ufer), fest je Ort gestreut, damit das Bild bei jedem Bau gleich bleibt."""
     wellen = art.get("wellen")
     if not wellen or feld != [art["rand"][0] + 1, art["rand"][1] + 1]:
         return None
@@ -98,8 +97,7 @@ def flaechen(zeilen: list[str], innen: bool = False) -> dict[tuple[int, int], st
     gesehenen Trennwand ein Stück Wandfläche mit Fußleiste über dem Durchgang (Gutachten Runde 8,
     Punkt f: Diner zwischen Küche und Lager, Wohnzimmer zur Küche).
     Beispiel: Boden (24, 5), Wand (24, 4) und (24, 3), daneben Boden bei (23, 4) und (25, 4) → keine
-    Fläche, die Wand läuft als Krone bis an den Durchgang.
-    """
+    Fläche, die Wand läuft als Krone bis an den Durchgang."""
     flaeche = {}
     for y in range(2, len(zeilen)):
         for x, z in enumerate(zeilen[y]):
@@ -244,8 +242,7 @@ def angeschnitten(bild: Image.Image) -> list[str]:
     """Kanten, an denen das Bild angeschnitten wirkt (deckende, helle Pixel statt dunklem Umriss).
 
     Warum: Viele Einzelbilder von LimeZu sind Teile größerer Möbel (halber Tisch, Regalstück); allein
-    gesetzt wirken sie abgeschnitten (Rückmeldung des Autors, 9.11.2026).
-    """
+    gesetzt wirken sie abgeschnitten (Rückmeldung des Autors, 9.11.2026)."""
     rgba = bild.convert("RGBA")
     breite, hoehe = rgba.size
     px = rgba.load()
@@ -293,8 +290,7 @@ def mattenbefunde(szene: dict, privat: Path) -> list[str]:
     zwischen den deckenden Pixeln von Matte und Tür, oben oder unten.
 
     Warum: Die Matten lagen in fünf Räumen eine Handbreit über dem Türbild der Südwand, mit einem
-    Streifen Boden dazwischen (Bildprüfung 9.11.2026); im Raster stand alles richtig.
-    """
+    Streifen Boden dazwischen (Bildprüfung 9.11.2026); im Raster stand alles richtig."""
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
 
@@ -328,7 +324,10 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
-    teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
+    teile = [
+        (s["tiefe"], s["x"], s["y"], formbild(moebelbild(privat, moebel[s["name"]]["quelle"]), s))
+        for s in gesetzt
+    ]
     if ist_winter(szene):
         # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
         teile = [(t, x, y, winterliche_moebel(b)) for t, x, y, b in teile]
@@ -362,8 +361,7 @@ def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
     """Hintergrund (für das Spiel), Vorschau mit Möbeln und Tönung, gezeichnete Felder (Randspur).
 
     Gemeinsam für main und die Weltkarte (pipeline/abenteuer/weltkarte.py), die nur die Vorschau
-    braucht und nichts ins private Paket schreibt.
-    """
+    braucht und nichts ins private Paket schreibt."""
     gezeichnet: dict = {}
     grund = hintergrund(szene, privat, gezeichnet)
     mat = lade(INHALTE / "materialien.json")

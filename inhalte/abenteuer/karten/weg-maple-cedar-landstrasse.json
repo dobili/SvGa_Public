@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 521,
+ "nextobjectid": 522,
  "layers": [
   {
    "id": 1,
@@ -21829,7 +21829,7 @@
      "id": 484,
      "name": "wg4Aepfel",
      "type": "moebel",
-     "x": 744,
+     "x": 738,
      "y": 260,
      "width": 16,
      "height": 16,
@@ -21852,7 +21852,7 @@
      "id": 485,
      "name": "wg4Aepfel",
      "type": "moebel",
-     "x": 760,
+     "x": 766,
      "y": 260,
      "width": 16,
      "height": 16,
@@ -22673,6 +22673,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 521,
+     "name": "wgEhrlichkeitskasse",
+     "type": "moebel",
+     "x": 754,
+     "y": 260,
+     "width": 12,
+     "height": 14,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 281
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

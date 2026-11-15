@@ -362,6 +362,30 @@
       "art": "fahrzeug",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "gcFaehrhausHolz": {
+      "quelle": "spiel/eigene/faehrhaus_see.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Fährhaus aus dunklem Holz mit Schieferdach, Tür vorn, Fässer an der Seite (Gemini 15.11.2026)"
+    },
+    "gcSeefaehreGemini": {
+      "quelle": "spiel/eigene/seefaehre_gemini.png",
+      "lauf": "waagrecht",
+      "breite": 192,
+      "hoehe": 112,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "hinweis": "Seefähre mit offenem Autodeck, Reling und Steuerhaus, Bug nach Osten (Gemini 15.11.2026)"
     }
   }
 }

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 58,
+ "nextobjectid": 57,
  "layers": [
   {
    "id": 1,
@@ -2067,12 +2067,12 @@
     },
     {
      "id": 37,
-     "name": "cc4Leselampe",
+     "name": "ccBankerlampe",
      "type": "moebel",
-     "x": 286,
-     "y": 195,
-     "width": 16,
-     "height": 32,
+     "x": 287,
+     "y": 212,
+     "width": 14,
+     "height": 15,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -2136,12 +2136,12 @@
     },
     {
      "id": 40,
-     "name": "cc4Leselampe",
+     "name": "ccBankerlampe",
      "type": "moebel",
-     "x": 334,
-     "y": 195,
-     "width": 16,
-     "height": 32,
+     "x": 335,
+     "y": 212,
+     "width": 14,
+     "height": 15,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -2159,12 +2159,12 @@
     },
     {
      "id": 41,
-     "name": "cc4Stehlampe",
+     "name": "ccBankerlampeSteh",
      "type": "moebel",
      "x": 304,
-     "y": 192,
+     "y": 208,
      "width": 16,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -2228,11 +2228,11 @@
     },
     {
      "id": 44,
-     "name": "cc6TuerSued",
+     "name": "ccDoppeltuerSuedHolz",
      "type": "moebel",
      "x": 32,
      "y": 256,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -2251,29 +2251,6 @@
     },
     {
      "id": 45,
-     "name": "cc6TuerSued",
-     "type": "moebel",
-     "x": 48,
-     "y": 256,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 46,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 32,
@@ -2296,7 +2273,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 46,
      "name": "cc6RegalSeiteHell",
      "type": "moebel",
      "x": 80,
@@ -2319,7 +2296,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 47,
      "name": "cc6RegalSeiteDunkel",
      "type": "moebel",
      "x": 80,
@@ -2342,7 +2319,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 48,
      "name": "cc12TreppeAb",
      "type": "moebel",
      "x": 304,
@@ -2365,7 +2342,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 49,
      "name": "cc4Kellertuer",
      "type": "moebel",
      "x": 32,
@@ -2388,7 +2365,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 50,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 384,
@@ -2411,7 +2388,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 51,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,
@@ -2434,7 +2411,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 52,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 112,
@@ -2457,7 +2434,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 53,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 128,
@@ -2480,7 +2457,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 54,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 192,
@@ -2503,7 +2480,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 55,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 208,
@@ -2526,13 +2503,13 @@
      ]
     },
     {
-     "id": 57,
-     "name": "cc4Leselampe",
+     "id": 56,
+     "name": "ccBankerlampe",
      "type": "moebel",
-     "x": 177,
-     "y": 99,
-     "width": 16,
-     "height": 32,
+     "x": 178,
+     "y": 116,
+     "width": 14,
+     "height": 15,
      "rotation": 0,
      "visible": true,
      "properties": [

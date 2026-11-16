@@ -114,6 +114,25 @@
       },
       "saum": "randstein"
     },
+    "pflasterWeich": {
+      "bogen": "gelaende",
+      "feld": [25, 9],
+      "variation": {
+        "kacheln": [
+          [25, 9, 20],
+          [26, 9, 2],
+          [25, 10, 1],
+          [26, 10, 1]
+        ],
+        "flecken": 0.05,
+        "risse": 0.02,
+        "moos": 0.04,
+        "flicken": 0.015,
+        "farbe": 0.08,
+        "gullys": 0.008
+      },
+      "saum": "fransen"
+    },
     "erde": {
       "bogen": "gelaende",
       "feld": [1, 31],

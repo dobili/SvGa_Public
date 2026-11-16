@@ -290,7 +290,11 @@ def klippenbogen(szene: dict, privat: Path) -> str:
     return "gelaende"
 
 
+# Befahrene Beläge (Pflaster mit Randstein und mit weichem Saum, materialien.json).
+STRASSENBELAEGE = ("asphalt", "pflaster", "pflasterWeich")
+
+
 def strassenzeichen(szene: dict) -> set[str]:
     """Rasterzeichen für befahrene Beläge, auf die keine Treppe gehört (Asphalt, Pflaster)."""
-    zeichen = {z for z, art in szene.get("boeden", {}).items() if art in ("asphalt", "pflaster")}
-    return zeichen | ({"."} if szene.get("boden") in ("asphalt", "pflaster") else set())
+    zeichen = {z for z, art in szene.get("boeden", {}).items() if art in STRASSENBELAEGE}
+    return zeichen | ({"."} if szene.get("boden") in STRASSENBELAEGE else set())

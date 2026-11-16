@@ -8,7 +8,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "ld5Ofen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_109.png",
@@ -18,7 +19,21 @@
       "art": "herd",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "........",
+        "........"
+      ]
     },
     "ld5Flaschenregal": {
       "quelle": "spiel/eigene/flaschenregal_holz.png",
@@ -28,7 +43,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "ld5Stiefel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_Props_11.png",
@@ -59,7 +88,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "ld5Stuhl2": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -69,7 +99,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "ld5StuhlDunkelR": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
@@ -79,7 +110,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "ld5StuhlDunkelL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -89,7 +121,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "ld5Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_2.png",
@@ -99,7 +132,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "ld5LangtischL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_100.png",
@@ -110,7 +153,21 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "...#####",
+        "...#####",
+        "...#####",
+        "...#####",
+        "...#####",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "ld5LangtischR": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_102.png",
@@ -181,7 +238,21 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "#.##############",
+        "#......##.#....#",
+        "#..............#",
+        "#..............#",
+        "#..............#"
+      ]
     },
     "ld5WaescheWeiss": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Hanging_Clothes_6.png",
@@ -199,7 +270,21 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "#.##.######.##.#",
+        "#....#####.....#",
+        "#..............#",
+        "#..............#",
+        "#..............#"
+      ]
     },
     "ld5Rettungsring": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Life_Buoy_1.png",
@@ -208,7 +293,8 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", "...."]
     },
     "ld5Seil": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rope_1.png",
@@ -238,7 +324,8 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["............", "############", "############", "............"]
     },
     "ld5SchildSchleuse": {
       "quelle": "spiel/eigene/schild_zur_schleuse.png",
@@ -283,7 +370,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", ".##.", "####", "##.#"]
     },
     "ld5Flaschen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_173.png",
@@ -292,7 +380,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["##..", "####", "####", "..##"]
     },
     "ld5Theke7": {
       "quelle": "spiel/eigene/theke_holz_laengs_7.png",
@@ -391,7 +480,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", ".###", ".###", "..##"]
     },
     "ld8Kegelbande": {
       "quelle": "spiel/eigene/kegelbande_tiefe.png",
@@ -486,7 +576,21 @@
       "kollision": true,
       "art": "ofen",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "ld14BlockhuetteGruen": {
       "quelle": "spiel/eigene/blockhuette_gruen.png",

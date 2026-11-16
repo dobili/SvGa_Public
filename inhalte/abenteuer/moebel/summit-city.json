@@ -12,7 +12,17 @@
       "art": "sessel",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "######..",
+        "#####...",
+        ".####...",
+        "....#..."
+      ]
     },
     "sc15OhrensesselBlickLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png",
@@ -26,37 +36,79 @@
       "art": "sessel",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "...#####",
+        "...####.",
+        "...#...."
+      ]
     },
     "scFelsGross": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Big_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "...###..",
+        "..#####.",
+        "..#####.",
+        "...###.."
+      ]
     },
     "scFelsMittel": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Medium_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..#####.",
+        "..#####.",
+        "..####.."
+      ]
     },
     "scFelsKlein": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Small_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..#####.",
+        "..####.."
+      ]
     },
     "scRucksack": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Backpack_4.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "scRucksackRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Backpack_5.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "scSeil": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_483.png",
@@ -145,7 +197,21 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".#....#."
+      ]
     },
     "sc7Hackklotz": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
@@ -154,7 +220,8 @@
       "kollision": true,
       "art": "klotz",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["...##...", "..####..", "..####..", "..####.."]
     },
     "sc7Laterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
@@ -187,7 +254,37 @@
       "art": "mast",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".#....#."
+      ]
     },
     "sc7Seil": {
       "quelle": "spiel/eigene/seilbahn_seil.png",
@@ -231,7 +328,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sc9Kartenstaender": {
       "quelle": "spiel/eigene/kartenstaender.png",
@@ -241,7 +352,8 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "sc9Wanderkarte": {
       "quelle": "spiel/eigene/wanderkarte.png",
@@ -263,7 +375,25 @@
       "art": "kamin",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "sc7FensterWolken": {
       "quelle": "spiel/eigene/fenster_wolken.png",
@@ -283,7 +413,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "..############..",
+        "..############..",
+        "..############..",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        "..############..",
+        "................",
+        "................"
+      ]
     },
     "sc7Wimpel3": {
       "quelle": "spiel/eigene/wimpelkette_laengs_3.png",
@@ -455,7 +603,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "rustikal",
-      "hinweis": "altes Außenthermometer auf verwittertem Brett, an der Wand (Gemini 15.11.2026)"
+      "hinweis": "altes Außenthermometer auf verwittertem Brett, an der Wand (Gemini 15.11.2026)",
+      "maske_fein": [".##.", ".##.", ".##.", ".##."]
     },
     "sc16Seilrad": {
       "quelle": "spiel/eigene/seilrad.png",
@@ -466,7 +615,33 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "hinweis": "großes Seilrad der Bergstation auf einem Stahlgestell; die Gondel hängt darunter (Bild des Autors, 15.11.2026)"
+      "hinweis": "großes Seilrad der Bergstation auf einem Stahlgestell; die Gondel hängt darunter (Bild des Autors, 15.11.2026)",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "##..########..##",
+        "################",
+        ".##############.",
+        "..############..",
+        "...##########...",
+        "....########....",
+        "....########....",
+        "....########....",
+        "....##.##.##....",
+        "....###..###....",
+        "....########...."
+      ]
     },
     "sc16Gelaender": {
       "quelle": "spiel/eigene/bergstation_gelaender.png",
@@ -477,7 +652,8 @@
       "lauf": "waagrecht",
       "zustand": "neu",
       "stil": "modern",
-      "hinweis": "Stahlgeländer an der Kante der Aussichtsplattform, Handlauf oben in Pixel 1 bis 12; mit versatz [4, 4] schließt es an sc16GelaenderEcke an (Bergstation) (Bild des Autors, 15.11.2026)"
+      "hinweis": "Stahlgeländer an der Kante der Aussichtsplattform, Handlauf oben in Pixel 1 bis 12; mit versatz [4, 4] schließt es an sc16GelaenderEcke an (Bergstation) (Bild des Autors, 15.11.2026)",
+      "maske_fein": ["............", "............", "############", "############"]
     },
     "sc16GelaenderEcke": {
       "quelle": "spiel/eigene/bergstation_gelaender_ecke.png",
@@ -488,7 +664,21 @@
       "zustand": "neu",
       "stil": "modern",
       "maske": ["###", "..#", "..#"],
-      "hinweis": "Ecke des Plattformgeländers: oben der Handlauf (Pixel 4 bis 44), rechts der Pfosten nach unten; gespiegelt die linke Ecke. Gerade Stücke daneben mit versatz [4, 4], die gespiegelte linke Ecke mit [8, 0], dann stößt der Handlauf überall an (Bild des Autors, 15.11.2026)"
+      "hinweis": "Ecke des Plattformgeländers: oben der Handlauf (Pixel 4 bis 44), rechts der Pfosten nach unten; gespiegelt die linke Ecke. Gerade Stücke daneben mit versatz [4, 4], die gespiegelte linke Ecke mit [8, 0], dann stößt der Handlauf überall an (Bild des Autors, 15.11.2026)",
+      "maske_fein": [
+        "............",
+        "............",
+        ".##.####....",
+        ".#########..",
+        "........##..",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..........#.",
+        "..........#."
+      ]
     },
     "sc16Wolkenmeer": {
       "quelle": "spiel/eigene/wolkenmeer.png",

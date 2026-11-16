@@ -4,13 +4,41 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "laterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
       "breite": 16,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####"
+      ]
     },
     "kisteRot": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/13_Conference_Hall_Black_Shadow_Singles_16x16/Conference_Hall_Shadow_Singles_26.png",
@@ -92,7 +120,21 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_57.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        "........",
+        "........"
+      ]
     },
     "schreibtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_10.png",
@@ -111,7 +153,8 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_133.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [".##.", ".###", ".##.", ".##."]
     },
     "baum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_1.png",
@@ -153,7 +196,21 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "zaun": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_1.png",
@@ -186,7 +243,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", ".##.", ".###", "...."]
     },
     "felsKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_3.png",
@@ -195,7 +253,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "baumstumpf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
@@ -269,13 +328,33 @@
       "quelle": "spiel/serene/serene_29.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        ".######.",
+        ".######.",
+        "...####."
+      ]
     },
     "svFelsKlein": {
       "quelle": "spiel/serene/serene_30.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".####...",
+        ".######.",
+        ".######.",
+        "...####."
+      ]
     },
     "svBaumreihe": {
       "quelle": "spiel/serene/serene_04.png",
@@ -332,7 +411,8 @@
       "quelle": "spiel/serene/serene_14.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "automatBunt": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_222.png",
@@ -360,7 +440,37 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "############",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "..########.."
+      ]
     },
     "fz11BusAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Up_4.png",
@@ -371,7 +481,37 @@
       "art": "fahrzeug",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "..########..",
+        "............"
+      ]
     },
     "fz11SchulbusRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Right_1.png",
@@ -382,7 +522,25 @@
       "art": "fahrzeug",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        ".##########################.",
+        "......####...........###...."
+      ]
     },
     "fz11SchulbusAb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Down_1.png",
@@ -393,7 +551,37 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "############",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "..########.."
+      ]
     },
     "fz11SchulbusAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Up_1.png",
@@ -424,7 +612,33 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        "..############..",
+        "..############..",
+        "..############..",
+        "...##########...",
+        "..############..",
+        "..############..",
+        "..############..",
+        "...##########...",
+        "......####......",
+        "......####......",
+        "................"
+      ]
     },
     "fz11TraktorHinten": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tractor_Back_Side_16x16.png",
@@ -434,7 +648,33 @@
       "art": "fahrzeug",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "...##########...",
+        "...##########...",
+        "...##########...",
+        "...##########...",
+        "...##########...",
+        "...##########...",
+        "..############..",
+        "..############..",
+        "..#############.",
+        "..#############.",
+        "..#############.",
+        "..###.#####.##..",
+        "...#............",
+        "................"
+      ]
     },
     "fz11WohnmobilAb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Down_1.png",
@@ -445,7 +685,33 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "fz11WohnmobilAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Up_1.png",
@@ -517,7 +783,49 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        ".##########.",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "fz12SattelzugHinten": {
       "quelle": "spiel/eigene/sattelzug_hinten.png",
@@ -528,7 +836,49 @@
       "art": "fahrzeug",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "fz12SattelzugLinks": {
       "quelle": "spiel/eigene/sattelzug_links.png",
@@ -560,7 +910,45 @@
       "art": "fahrzeug",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "fz12LieferwagenVorn": {
       "quelle": "spiel/eigene/lieferwagen_vorn.png",
@@ -613,7 +1001,25 @@
       "art": "fahrzeug",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "####........################",
+        "####........################",
+        "####.........###############",
+        "####........################",
+        "####.......#################",
+        "####.......#################",
+        "#####......#################",
+        "#######.....################",
+        ".######....###############.."
+      ]
     },
     "fz12BaggerRechts": {
       "quelle": "spiel/eigene/bagger_rechts.png",
@@ -633,7 +1039,17 @@
       "kollision": true,
       "art": "tier_deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "####.###"
+      ]
     },
     "tier12SchimmelGrast": {
       "quelle": "spiel/eigene/pferd_grau_grast.png",
@@ -642,7 +1058,17 @@
       "kollision": true,
       "art": "tier_deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "####.###"
+      ]
     },
     "tier12KojoteSitzt": {
       "quelle": "spiel/eigene/kojote_sitzt.png",

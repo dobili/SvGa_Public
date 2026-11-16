@@ -7,7 +7,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......",
+        "......####......"
+      ]
     },
     "wg4LaubbaumHerbst": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_10.png",
@@ -16,7 +34,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......",
+        "......####......"
+      ]
     },
     "wg4Apfelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_100.png",
@@ -25,7 +61,29 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".....#####......",
+        ".....#####......"
+      ]
     },
     "wg4LaubbaumRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_103.png",
@@ -43,7 +101,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......"
+      ]
     },
     "wg4LaubbaumC": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_73.png",
@@ -52,7 +128,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".....#####......",
+        ".....#####......"
+      ]
     },
     "wg4Kegelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
@@ -61,7 +155,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wg4Erle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_170.png",
@@ -70,7 +165,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...###..",
+        "...###.."
+      ]
     },
     "wg4ObstbaumKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_257.png",
@@ -79,7 +188,18 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        ".######.",
+        "..####..",
+        "..####.."
+      ],
+      "maske_fein_von_hand": "Baum am Waldrand: Fuß über die ganze Breite, sonst gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wg4Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
@@ -88,7 +208,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wg4BuschB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_19.png",
@@ -97,7 +227,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wg4BuschBluete": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_21.png",
@@ -106,7 +246,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wg4BuschBreit": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_22.png",
@@ -115,7 +265,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        "###########.",
+        ".##########.",
+        "...#######.."
+      ]
     },
     "wg4BuschKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_4.png",
@@ -124,7 +284,8 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "wg4Gras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
@@ -243,7 +404,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "wg4SteinB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_4.png",
@@ -252,7 +414,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "wg4Felsgruppe": {
       "quelle": "spiel/serene/serene_29.png",
@@ -261,7 +424,17 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        ".######.",
+        ".######.",
+        "...####."
+      ]
     },
     "wg4FelsgruppeB": {
       "quelle": "spiel/serene/serene_36.png",
@@ -270,7 +443,17 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "#######.",
+        "#######.",
+        ".###...."
+      ]
     },
     "wg4Schild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
@@ -280,7 +463,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "wg4Zettelschild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -290,7 +474,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."]
     },
     "wg4Marktstand": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Market_Stand_Yellow_Small_16x16.png",
@@ -330,7 +515,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "wg4Aepfel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Apples_3.png",
@@ -351,7 +537,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["............", "............", ".##########.", "..#########."]
     },
     "wg4ZaunTopLeft": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Left_16x16.png",
@@ -360,14 +547,16 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4ZaunTopMiddle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Middle_16x16.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
-      "art": "zaun"
+      "art": "zaun",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4ZaunTopRight": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Right_16x16.png",
@@ -376,21 +565,24 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4ZaunMiddleLeft": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Left_16x16.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
-      "art": "zaun"
+      "art": "zaun",
+      "maske_fein": ["....", "....", "##..", "##.."]
     },
     "wg4ZaunMiddleRight": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
-      "art": "zaun"
+      "art": "zaun",
+      "maske_fein": ["....", "....", "..##", "..##"]
     },
     "wg4ZaunBottomLeft": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -399,7 +591,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4ZaunBottomMiddle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Middle_16x16.png",
@@ -408,7 +601,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4ZaunBottomRight": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Right_16x16.png",
@@ -417,7 +611,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4ZaunPass": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Pass_16x16.png",
@@ -435,7 +630,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wg4ZederSchmal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png",
@@ -444,7 +640,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wg4StammPilze": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_18.png",
@@ -453,7 +650,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."]
     },
     "wg4StammPilzeB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_19.png",
@@ -462,7 +660,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."]
     },
     "wg4Tor1": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
@@ -471,7 +670,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg4Tor2": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
@@ -480,7 +680,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wg5Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_7.png",
@@ -490,7 +691,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "wg5StegLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_28.png",
@@ -606,7 +808,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        "..###...",
+        "........",
+        "........"
+      ]
     },
     "wg6Kisten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_5.png",
@@ -615,7 +827,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "#####...",
+        ".####..."
+      ]
     },
     "wg6Stumpf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
@@ -624,7 +846,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "..###...", "..###..."]
     },
     "wg6StumpfB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_2.png",
@@ -633,7 +856,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "...###..", "...###.."]
     },
     "mf8FlohmarktSchild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Signboard_1.png",
@@ -649,7 +873,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "laendlich",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "mf8FlohmarktTischB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Table_2.png",
@@ -657,7 +891,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "laendlich",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "mf8FlohmarktTischC": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Table_4.png",
@@ -665,7 +909,21 @@
       "hoehe": 48,
       "kollision": true,
       "stil": "laendlich",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "..####......",
+        "..####.####.",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "mf8FlohmarktKarton": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_3.png",
@@ -675,7 +933,17 @@
       "art": "karton",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "..####..",
+        "..####.."
+      ]
     },
     "mf8FlohmarktKiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_9.png",
@@ -683,7 +951,21 @@
       "hoehe": 48,
       "kollision": true,
       "stil": "laendlich",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...###.."
+      ]
     },
     "mf8Wohnmobil": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Right_1.png",
@@ -694,7 +976,25 @@
       "art": "fahrzeug",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "#######################.",
+        "#######################.",
+        "#######################.",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        ".######################.",
+        ".....####........####...",
+        "......##..........#....."
+      ]
     },
     "mf8FlohmarktHof": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_2_16x16.png",
@@ -714,7 +1014,21 @@
       "art": "schild",
       "blick": "unten",
       "stil": "laendlich",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "#......#"
+      ]
     },
     "mf8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_blech.png",
@@ -798,7 +1112,8 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "hinweis": "Geschlossenes Holzgatter mit zwei Pfosten (Gemini 7, Abschnitt 2), drei Kacheln breit; sperrt die untere Reihe"
+      "hinweis": "Geschlossenes Holzgatter mit zwei Pfosten (Gemini 7, Abschnitt 2), drei Kacheln breit; sperrt die untere Reihe",
+      "maske_fein": ["............", "............", "............", "............"]
     },
     "wg13HolztorOffenLinks": {
       "quelle": "spiel/eigene/holztor_offen_links.png",
@@ -832,7 +1147,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "hinweis": "Eimer der Kinder, die am Rastplatz des Zedernpfads Zapfen sammeln (Kartengutachten Akt 1, Befund 7)"
+      "hinweis": "Eimer der Kinder, die am Rastplatz des Zedernpfads Zapfen sammeln (Kartengutachten Akt 1, Befund 7)",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "wg14StaffeleiHinten": {
       "quelle": "spiel/eigene/staffelei_hinten.png",
@@ -843,7 +1159,8 @@
       "blick": "oben",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "hinweis": "Staffelei des Malers auf der Kuppe, von hinten: Er steht dahinter und malt den Blick über den Zedernwald nach Süden (Kartengutachten Akt 1, Befund 8)"
+      "hinweis": "Staffelei des Malers auf der Kuppe, von hinten: Er steht dahinter und malt den Blick über den Zedernwald nach Süden (Kartengutachten Akt 1, Befund 8)",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "wg14LandstrasseSchraegUnten": {
       "quelle": "spiel/eigene/landstrasse_schraeg_unten.png",
@@ -878,7 +1195,17 @@
       "art": "stein",
       "zustand": "alt",
       "stil": "natur",
-      "hinweis": "flacher Flussstein mit eingeritztem Brett, 8 × 8 Felder, Moos in den Rillen (Gemini 15.11.2026); Wahrzeichen der Fährstelle"
+      "hinweis": "flacher Flussstein mit eingeritztem Brett, 8 × 8 Felder, Moos in den Rillen (Gemini 15.11.2026); Wahrzeichen der Fährstelle",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "wgSteinBrettNass": {
       "quelle": "spiel/eigene/stein_brett_nass.png",
@@ -900,7 +1227,8 @@
       "zustand": "alt",
       "stil": "rustikal",
       "blick": "unten",
-      "hinweis": "verbeulte Blechkasse mit Münzschlitz und Zettel (Gemini 15.11.2026); steht auf dem Apfelstand"
+      "hinweis": "verbeulte Blechkasse mit Münzschlitz und Zettel (Gemini 15.11.2026); steht auf dem Apfelstand",
+      "maske_fein": ["###.", "###.", "###.", "###."]
     },
     "wgEhrlichkeitskasseOhne": {
       "quelle": "spiel/eigene/kasse_apfelstand.png",

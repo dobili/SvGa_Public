@@ -223,7 +223,7 @@ def bibliothekseintrag(kennung: str, angabe: dict, ortsdatei: str, katalogeintra
     # Kollision des Katalogs (Maske, Grund) für die Übersteuerung im Editor (objektkollision.py);
     # „flach“: Art, über die man läuft (dann braucht „durchgehbar“ keinen Grund, Regel 10.69).
     felder = ("breite", "hoehe", "kollision", "art", "blick", "zustand", "stil", "maske", "frei_unten")
-    felder += ("begehbar_grund", "richtung")
+    felder += ("begehbar_grund", "richtung", "maske_fein")  # feine Maske: feinmasken.py (10.88)
     eintrag.update({k: angabe[k] for k in felder if k in angabe} | ({"art": art} if art else {}))
     eintrag["flach"] = art in FLACH
     if katalogeintrag and katalogeintrag.get("thema"):

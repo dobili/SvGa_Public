@@ -46,13 +46,29 @@
     return [r(b), r(h)];
   }
 
+  /**
+   * Die feine Maske, die gilt (objektform._feine_maske_von): die des Eintrags, sonst die des Katalogs
+   * (feinmasken.py, KARTENREGELN 10.88), diese nur ohne Maßstab, Zuschnitt und eigene `maske`.
+   */
+  function feineMaske(angabe, e) {
+    if (Array.isArray(e.maske_fein)) return e.maske_fein;
+    const zugeschnitten = !!(KE.zuschnittVon && KE.zuschnittVon(e));
+    const katalog = Array.isArray(angabe.maske_fein) && !Array.isArray(e.maske);
+    return katalog && Number(e.massstab ?? 1) === 1 && !zugeschnitten ? angabe.maske_fein : null;
+  }
+
   const geformtOhneFein = KE.geformt;
   /** objektform.geformt mit `maske_fein`: dreht und spiegelt mit, dazu die grobe Maske. */
   KE.geformt = function (angabe, e) {
     const neu = geformtOhneFein(angabe, e);
-    if (!neu || !Array.isArray(e.maske_fein)) return neu;
+    if (!neu) return neu;
+    const quelle = feineMaske(angabe, e);
+    if (!quelle) {
+      const { maske_fein: _katalog, ...rest } = neu;
+      return rest;
+    }
     const [sp, re] = grundraster(neu, e);
-    const fein = KE.dreheMaske(e.maske_fein, sp * Z, re * Z, e.drehung || 0, !!e.spiegeln);
+    const fein = KE.dreheMaske(quelle, sp * Z, re * Z, e.drehung || 0, !!e.spiegeln);
     return { ...neu, maske_fein: fein, maske: KE.grobAusFein(fein) };
   };
 

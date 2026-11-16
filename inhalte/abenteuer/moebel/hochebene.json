@@ -5,7 +5,25 @@
       "lauf": "waagrecht",
       "breite": 112,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        "############################",
+        ".##########################.",
+        "....###...........####......"
+      ]
     },
     "heBasketballkorb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Basketball_Net_1.png",
@@ -21,7 +39,25 @@
       "art": "fahrzeug",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "..##################",
+        ".###################",
+        "####################",
+        "####################",
+        "####################",
+        ".###################",
+        "..##################",
+        "..#####...#########.",
+        "...###........#####."
+      ]
     },
     "heVogelscheuche": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Scarecrow_16x16.png",
@@ -31,7 +67,21 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..#########.",
+        "....####..#.",
+        "....####....",
+        ".....##.....",
+        ".....#......",
+        "............"
+      ]
     },
     "hb7Schule": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_1.png",
@@ -61,7 +111,21 @@
       "art": "spielgeraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "######.#",
+        "######.#",
+        "########"
+      ]
     },
     "hb7Spielturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_10.png",
@@ -71,7 +135,21 @@
       "art": "spielgeraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        ".######...###...",
+        ".######........."
+      ]
     },
     "hb7Aushang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Info_Sign_1.png",
@@ -81,7 +159,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "hb7Trog": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_1_1.png",
@@ -91,7 +170,21 @@
       "art": "trog",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".######.",
+        ".######.",
+        ".######.",
+        "..####.."
+      ]
     },
     "hb7Zaun": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_2.png",
@@ -101,7 +194,8 @@
       "art": "zaun",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "####", "####", "...."]
     },
     "hb7Werkstatt": {
       "quelle": "spiel/eigene/garage_rolltor.png",
@@ -141,7 +235,17 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "..########.."
+      ]
     },
     "hb7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -151,7 +255,8 @@
       "art": "spiel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "hb7Basketballkorb": {
       "quelle": "spiel/eigene/basketballkorb_wand.png",
@@ -192,7 +297,8 @@
       "kollision": true,
       "art": "heu",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["..####..", "..####..", ".#####..", "..####.."]
     },
     "hb7Turnhalle": {
       "quelle": "spiel/eigene/turnhalle.png",
@@ -211,7 +317,21 @@
       "kollision": true,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "#......#"
+      ]
     },
     "sc8Fahnenmast": {
       "quelle": "spiel/eigene/fahnenmast_schule.png",
@@ -221,7 +341,45 @@
       "art": "mast",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske": ["...", "...", "...", "...", "...", "...", "...", ".#.", "###"]
+      "maske": ["...", "...", "...", "...", "...", "...", "...", ".#.", "###"],
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "sc8FinkenzeichenSchule": {
       "quelle": "spiel/eigene/finkenzeichen_kreide.png",

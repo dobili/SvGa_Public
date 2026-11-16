@@ -7,7 +7,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "ws5BuschB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_19.png",
@@ -16,7 +26,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "ws5BuschBreit": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_22.png",
@@ -25,7 +45,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        "###########.",
+        ".##########.",
+        "...#######.."
+      ]
     },
     "ws5Gras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
@@ -66,7 +96,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "ws5Schild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
@@ -76,7 +107,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "ws5Tafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png",
@@ -86,7 +118,17 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "ws5Huette": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
@@ -104,7 +146,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...###..",
+        "...###.."
+      ]
     },
     "ws5Tankstelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_1.png",
@@ -144,7 +200,33 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        ".########################...",
+        ".#######################....",
+        ".######################.....",
+        "######################......",
+        "######################......",
+        "#######################.....",
+        "#######################.....",
+        "#######################.....",
+        "#######################.....",
+        "######################......",
+        "######################......",
+        ".#####################......",
+        "..###################......."
+      ]
     },
     "ws5ImbissKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_3.png",
@@ -164,7 +246,21 @@
       "art": "haltestelle",
       "blick": "oben",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".#......##########..",
+        ".#################..",
+        ".#################.."
+      ]
     },
     "ws5Haltestelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
@@ -174,7 +270,21 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "ws5Picknick": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
@@ -205,7 +315,8 @@
       "art": "mulleimer",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
     },
     "ws5Leitplanke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_7.png",
@@ -214,7 +325,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", ".#..", "####", "#.##"]
     },
     "ws5Pfahl": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
@@ -223,7 +335,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [".##.", ".##.", ".##.", ".##."]
     },
     "ws5Laterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
@@ -233,7 +346,25 @@
       "art": "laterne",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####"
+      ]
     },
     "ws5Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_6.png",
@@ -243,7 +374,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "ws5Strandgras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sprout_1_Vers_1.png",
@@ -276,7 +408,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "ws5AutoGruen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_10.png",
@@ -287,7 +437,29 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        ".##########.",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "....####...."
+      ]
     },
     "ws5AutoGrau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_14.png",
@@ -298,7 +470,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..########..",
+        "..########..",
+        "..#########.",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "...######..."
+      ]
     },
     "ws5Steg4": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_4.png",
@@ -347,7 +537,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "ws5GlasM": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Glass_Railing_Modular_Middle_16x16.png",
@@ -356,7 +547,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "ws5GlasR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Glass_Railing_Modular_Right_16x16.png",
@@ -365,7 +557,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "ws5Kuebel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Potted_Plant_16x16.png",
@@ -375,7 +568,17 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "...###.."
+      ]
     },
     "ws5Aufzug": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_1.png",
@@ -395,7 +598,33 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "ws5LeitplankeB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_10.png",
@@ -404,7 +633,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", ".##.", ".##."]
     },
     "ws5Planke5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
@@ -414,7 +644,13 @@
       "kollision": true,
       "art": "zaun",
       "stil": "industrie",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "....................",
+        "#.###.###.###.###.##",
+        "####################",
+        ".#...#...#...#...#.."
+      ]
     },
     "ws5Planke8": {
       "quelle": "spiel/eigene/leitplanke_laengs_8.png",
@@ -424,7 +660,13 @@
       "kollision": true,
       "art": "zaun",
       "stil": "industrie",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "................................",
+        "#.###.###.###.###.###.###.###.##",
+        "################################",
+        ".#...#...#...#...#...#...#...#.."
+      ]
     },
     "ws5SattelzugRot": {
       "quelle": "spiel/eigene/sattelzug_rot.png",
@@ -434,7 +676,25 @@
       "art": "fahrzeug",
       "stil": "modern",
       "zustand": "gebraucht",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        "########################################",
+        ".#######################################",
+        ".######################################.",
+        "..###.####..............####.###.####...",
+        "...#..........................#........."
+      ]
     },
     "ws5SattelzugBlau": {
       "quelle": "spiel/eigene/sattelzug_blau.png",
@@ -444,7 +704,25 @@
       "art": "fahrzeug",
       "stil": "modern",
       "zustand": "gebraucht",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        "########################################",
+        ".#######################################",
+        ".######################################.",
+        "..###.####..............####.###.####...",
+        "...#..........................#........."
+      ]
     },
     "wsgRampeWest": {
       "quelle": "spiel/eigene/glasrampe_ab_west_12.png",
@@ -619,7 +897,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "...##...",
+        "...##..."
+      ]
     },
     "wsgBaum2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_2.png",
@@ -628,7 +920,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "..###..."
+      ]
     },
     "wsgBaum11": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_11.png",
@@ -637,7 +943,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        ".....##.....",
+        ".....##....."
+      ]
     },
     "wsgBaum12": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_12.png",
@@ -646,7 +970,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....###....",
+        ".....###...."
+      ]
     },
     "wsgKugel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_3.png",
@@ -701,7 +1043,17 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########."
+      ]
     },
     "wsgPlanke8": {
       "quelle": "spiel/eigene/leitplanke_quer_8.png",
@@ -721,7 +1073,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", ".##.", ".##."]
     },
     "wsgLinie16": {
       "quelle": "spiel/eigene/fahrbahn_linie_16.png",
@@ -865,7 +1218,13 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................................................................",
+        "................................................................",
+        "#...#...#...#...#...#...#...#...#...#...#...#...#...#...#...#..#",
+        "################################################################"
+      ]
     },
     "wsgGel14": {
       "quelle": "spiel/eigene/glasgelaender_14.png",
@@ -874,7 +1233,13 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........................................................",
+        "........................................................",
+        "#...#...#...#...#...#...#...#...#...#...#...#...#...#..#",
+        "########################################################"
+      ]
     },
     "wsgGel3": {
       "quelle": "spiel/eigene/glasgelaender_3.png",
@@ -883,7 +1248,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["............", "............", "#...#...#..#", "############"]
     },
     "wsgGelVorn16": {
       "quelle": "spiel/eigene/glasgelaender_vorn_16.png",
@@ -918,7 +1284,13 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................................",
+        "................................",
+        "#...#...#...#...#...#...#...#..#",
+        "################################"
+      ]
     },
     "wsgGelSeite6": {
       "quelle": "spiel/eigene/glasgelaender_seite_6.png",
@@ -935,6 +1307,32 @@
         "#",
         "#",
         "#"
+      ],
+      "maske_fein": [
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##."
       ]
     },
     "wsrLkw": {
@@ -956,7 +1354,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".##############.",
+        "..###.....###..."
+      ]
     },
     "wsrAutoLinks14": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_14.png",
@@ -967,7 +1379,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "..#################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        "..################..",
+        "...###############.."
+      ]
     },
     "wsrAutoLinks21": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_21.png",
@@ -978,7 +1404,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        "..################.."
+      ]
     },
     "wsrAutoRechts10": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_10.png",
@@ -989,7 +1429,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        ".##################."
+      ]
     },
     "wsrAutoRechts2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_2.png",
@@ -1000,7 +1454,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".###############",
+        "..############.."
+      ]
     },
     "wsrAutoRechts17": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_17.png",
@@ -1011,7 +1479,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".#################..",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        "..################..",
+        "..###############..."
+      ]
     },
     "wsrTafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png",
@@ -1021,7 +1503,17 @@
       "art": "tafel",
       "zustand": "neu",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "wsgLinieQ16": {
       "quelle": "spiel/eigene/fahrbahn_linie_quer_16.png",
@@ -1112,7 +1604,33 @@
       "art": "schild",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "wsgOhrstoepsel": {
       "quelle": "spiel/eigene/ohrstoepsel.png",
@@ -1133,7 +1651,25 @@
       "art": "laterne",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "wsgBeetBaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_9.png",
@@ -1143,7 +1679,25 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####.."
+      ]
     },
     "wsgBeetZypresse": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_8.png",
@@ -1153,7 +1707,25 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####.."
+      ]
     },
     "wsgBeetBusch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_7.png",
@@ -1163,7 +1735,25 @@
       "art": "busch",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "wsrPlanke5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
@@ -1173,7 +1763,13 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "#.###.###.###.###.##",
+        "####################",
+        ".#...#...#...#...#.."
+      ]
     },
     "wsrPlanke7": {
       "quelle": "spiel/eigene/leitplanke_laengs_7.png",
@@ -1183,7 +1779,13 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............................",
+        "#.###.###.###.###.###.###.##",
+        "############################",
+        ".#...#...#...#...#...#...#.."
+      ]
     },
     "wsgLinieQ6": {
       "quelle": "spiel/eigene/fahrbahn_linie_quer_6.png",
@@ -1291,7 +1893,21 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "wsgLinie11": {
       "quelle": "spiel/eigene/fahrbahn_linie_11.png",
@@ -1327,7 +1943,8 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["...#", "####", "####", "####"]
     },
     "wsrBuchtLinie": {
       "quelle": "spiel/eigene/fahrbahn_linie_5.png",
@@ -1355,7 +1972,45 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "###########.",
+        "############",
+        "############",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        ".##########."
+      ]
     },
     "wsr12Linie9": {
       "quelle": "spiel/eigene/fahrbahn_linie_9.png",

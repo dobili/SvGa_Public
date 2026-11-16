@@ -28,13 +28,41 @@
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_173.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "####....",
+        "####....",
+        "........",
+        "........"
+      ]
     },
     "sbServerKlein": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_174.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..#####.",
+        "..#####.",
+        "..#####.",
+        "..#####.",
+        "..#####.",
+        "........",
+        "........"
+      ]
     },
     "sbServer": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_175.png",
@@ -94,13 +122,49 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_8.png",
       "breite": 32,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sbKuebelbaumRund": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_7.png",
       "breite": 32,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sbKuebelpflanze": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_Potted_6.png",
@@ -112,7 +176,25 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
       "breite": 32,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "sbFoodtruck": {
       "quelle": "spiel/eigene/foodtruck_tuerkis.png",
@@ -124,7 +206,29 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern",
-      "hinweis": "Rosies Food-Truck: türkis, verbeult, Verkaufsklappe zur Betrachterseite, rechts die Kreidetafel (eigene Fassung, vom Autor angenommen 15.11.2026)"
+      "hinweis": "Rosies Food-Truck: türkis, verbeult, Verkaufsklappe zur Betrachterseite, rechts die Kreidetafel (eigene Fassung, vom Autor angenommen 15.11.2026)",
+      "maske_fein": [
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        ".###########################....",
+        ".###########################....",
+        ".###########################....",
+        ".##############################.",
+        ".###############################",
+        ".###############################",
+        ".###############################",
+        ".##########################.###.",
+        "..#..####.............###......."
+      ]
     },
     "sb5Bildschirmtisch": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_320.png",
@@ -134,7 +238,21 @@
       "art": "schreibtisch",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".######.",
+        "........",
+        "........"
+      ]
     },
     "sb5BildschirmtischB": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_321.png",
@@ -144,7 +262,21 @@
       "art": "schreibtisch",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".######.",
+        "........",
+        "........"
+      ]
     },
     "sb5Stuhl": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_101.png",
@@ -154,7 +286,21 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "####...."
+      ]
     },
     "sb5Datenwand": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_171.png",
@@ -188,7 +334,21 @@
       "art": "schreibtisch",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "....####",
+        "....####",
+        "....####",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sb5Sofa": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_205.png",
@@ -198,7 +358,21 @@
       "art": "sofa",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "sb5Sessel": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_206.png",
@@ -208,7 +382,21 @@
       "art": "sessel",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "........"
+      ]
     },
     "sb5Pflanze": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_98.png",
@@ -217,7 +405,21 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        ".##.....",
+        "........",
+        "........"
+      ]
     },
     "sb5Bild": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_164.png",
@@ -239,7 +441,21 @@
       "art": "automat",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "........",
+        "........"
+      ]
     },
     "sb5Wasserspender": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_173.png",
@@ -249,7 +465,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "####....",
+        "####....",
+        "........",
+        "........"
+      ]
     },
     "sb5Tuer": {
       "quelle": "spiel/generic/generic_073.png",
@@ -279,7 +509,17 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "#......#",
+        "########",
+        "########"
+      ]
     },
     "sb5Kurzwaren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_3_44.png",
@@ -391,7 +631,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        "############",
+        ".###########",
+        "...###......"
+      ]
     },
     "sb5Konzernturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/16_Office_Singles_16x16/ME_Singles_Office_16x16_Example_1.png",
@@ -441,7 +699,33 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "sb5WerbetafelB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_4.png",
@@ -451,7 +735,33 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "sb5Brunnen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_2_1.png",
@@ -470,7 +780,17 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "...###.."
+      ]
     },
     "sb5KuebelBluete": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Potted_Plant_Bloomed_16x16.png",
@@ -480,7 +800,17 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "...###.."
+      ]
     },
     "sb5Kaffeekiosk": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Coffee_Cup.png",
@@ -500,7 +830,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "sb5GlasLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Glass_Railing_Modular_Left_16x16.png",
@@ -510,7 +841,8 @@
       "art": "zaun",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "sb5GlasMitte": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Glass_Railing_Modular_Middle_16x16.png",
@@ -520,7 +852,8 @@
       "art": "zaun",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "sb5GlasRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Glass_Railing_Modular_Right_16x16.png",
@@ -530,7 +863,8 @@
       "art": "zaun",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "sb5BahnLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Exterior_Train_Grey_Left.png",
@@ -616,7 +950,26 @@
       "art": "baum",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########.."
+      ],
+      "maske_fein_von_hand": "Baum im Pflanzkasten bzw. Riesenstamm: Fuß über die ganze Breite (Kasten, Stamm), nicht nur die Mitte"
     },
     "sb5GleisGrau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
@@ -649,7 +1002,8 @@
       "kollision": true,
       "art": "behaelter",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".##.", "####", "####", "###."]
     },
     "sb5FassB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_2.png",
@@ -668,7 +1022,8 @@
       "art": "behaelter",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "sb5FischkisteB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_10.png",
@@ -678,7 +1033,8 @@
       "art": "behaelter",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "sb5Fischeimer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Fish_Bucket_1.png",
@@ -687,7 +1043,8 @@
       "kollision": true,
       "art": "behaelter",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "....", "....", "###.", "####", ".##.", "...."]
     },
     "sb5Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_3.png",
@@ -730,7 +1087,29 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern",
-      "maske": [".......", ".......", ".......", ".......", "#.....#"]
+      "maske": [".......", ".......", ".......", ".......", "#.....#"],
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        ".###....................###.",
+        ".###....................###.",
+        ".###....................###.",
+        "............................"
+      ]
     },
     "sb5LabGlas": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Large_Greenhouse_Example.png",
@@ -750,7 +1129,21 @@
       "art": "geraet",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "........"
+      ]
     },
     "sb5ServerB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_111.png",
@@ -760,7 +1153,21 @@
       "art": "geraet",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "........"
+      ]
     },
     "sb5ServerC": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_105.png",
@@ -770,7 +1177,21 @@
       "art": "geraet",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "........"
+      ]
     },
     "sb5Lamellen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_259.png",
@@ -790,7 +1211,21 @@
       "art": "schrank",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".#######"
+      ]
     },
     "sb5Messplatz": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/19_Hospital_SIngles/Hospital_Singles_315.png",
@@ -800,7 +1235,21 @@
       "art": "schreibtisch",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        ".######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "sb5Empfang": {
       "quelle": "spiel/eigene/empfang_tresen.png",
@@ -810,7 +1259,25 @@
       "art": "theke",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "################....####",
+        "........................",
+        "........................"
+      ]
     },
     "sb5Topfpflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_197.png",
@@ -819,7 +1286,21 @@
       "kollision": true,
       "art": "pflanze",
       "stil": "modern",
-      "zustand": "neu"
+      "zustand": "neu",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...##...",
+        "........"
+      ]
     },
     "sb5Aufzug": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Elevator_Closed_Lights_Down.png",
@@ -839,7 +1320,21 @@
       "art": "sofa",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "sb5Tisch": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_194.png",
@@ -849,7 +1344,21 @@
       "art": "schreibtisch",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "..######",
+        "..######",
+        "..######",
+        "..######",
+        "..######",
+        "..######",
+        "........"
+      ]
     },
     "sb5Bildschirm": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_170.png",
@@ -879,7 +1388,17 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "sb5Fussmatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
@@ -921,7 +1440,21 @@
       "kollision": true,
       "art": "deko",
       "stil": "klassisch",
-      "zustand": "neu"
+      "zustand": "neu",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sb5SockelB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_61.png",
@@ -930,7 +1463,21 @@
       "kollision": true,
       "art": "deko",
       "stil": "klassisch",
-      "zustand": "neu"
+      "zustand": "neu",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sb5VitrineHale": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_137.png",
@@ -940,7 +1487,21 @@
       "art": "vitrine",
       "stil": "modern",
       "zustand": "neu",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "########",
+        "########",
+        "#######."
+      ]
     },
     "sb5SesselRund": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_196.png",
@@ -950,7 +1511,21 @@
       "art": "sessel",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "........",
+        "........"
+      ]
     },
     "sb5StuhlBuero": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_102.png",
@@ -1453,7 +2028,37 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
-      "maske": ["...", "...", "...", "...", "...", "...", ".#."]
+      "maske": ["...", "...", "...", "...", "...", "...", ".#."],
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....####....",
+        "....####....",
+        "............",
+        "............"
+      ]
     },
     "sb8Ringlicht": {
       "quelle": "spiel/eigene/ringlicht.png",
@@ -1464,7 +2069,21 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [".", ".", "#"]
+      "maske": [".", ".", "#"],
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".###",
+        "#.##"
+      ]
     },
     "sb8Kreidespringer": {
       "quelle": "spiel/eigene/kreidespringer.png",
@@ -1500,7 +2119,17 @@
       "art": "schreibtisch",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "###############.",
+        "###############.",
+        "###############.",
+        "###############."
+      ]
     },
     "sb8Schreibtisch": {
       "quelle": "spiel/eigene/akademie_schreibtisch.png",
@@ -1511,7 +2140,17 @@
       "art": "schreibtisch",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########."
+      ]
     },
     "sb8Glaswand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_157.png",
@@ -1541,7 +2180,8 @@
       "art": "stuhl",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "oben"
+      "blick": "oben",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
     },
     "sb8Sofa": {
       "quelle": "spiel/eigene/akademie_sofa.png",
@@ -1551,7 +2191,17 @@
       "art": "sofa",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "sb8Couchtisch": {
       "quelle": "spiel/eigene/akademie_couchtisch.png",
@@ -1581,7 +2231,21 @@
       "art": "automat",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "sb8Snackautomat": {
       "quelle": "spiel/eigene/akademie_snackautomat.png",
@@ -1637,7 +2301,8 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".###"]
     },
     "sb8StuhlLinks": {
       "quelle": "spiel/eigene/akademie_stuhl_links.png",
@@ -1647,7 +2312,8 @@
       "art": "stuhl",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
     },
     "sb8StuhlRechts": {
       "quelle": "spiel/eigene/akademie_stuhl_rechts.png",
@@ -1657,7 +2323,8 @@
       "art": "stuhl",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
     },
     "sa8Baeckerei": {
       "quelle": "spiel/eigene/altstadt_baeckerei.png",
@@ -1871,7 +2538,17 @@
       "art": "tisch",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######."
+      ]
     },
     "sb8KaffeeautomatVorn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
@@ -1881,7 +2558,21 @@
       "art": "automat",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "sa8WohnhausA": {
       "quelle": "spiel/eigene/altstadt_wohnhaus_a.png",
@@ -1981,7 +2672,21 @@
       "art": "deko",
       "zustand": "neu",
       "stil": "klassisch",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "########",
+        "########",
+        ".######.",
+        "...##.#.",
+        "........"
+      ]
     },
     "sa8Gitarrenkoffer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Guitar_Case_Money.png",
@@ -2348,7 +3053,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "sb12Schubladenschrank": {
       "quelle": "spiel/eigene/schubladenschrank_metall.png",
@@ -2358,7 +3077,21 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "sb12Serverreihe": {
       "quelle": "spiel/eigene/serverreihe_6.png",
@@ -2368,7 +3101,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        ".######################################.",
+        ".######################################.",
+        ".######################################.",
+        ".######################################.",
+        ".######################################.",
+        "........................................"
+      ]
     },
     "sb9KonzernturmHoch": {
       "quelle": "spiel/eigene/konzernturm_hoch.png",

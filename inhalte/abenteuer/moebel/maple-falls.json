@@ -8,7 +8,21 @@
       "art": "geraet",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "...."
+      ]
     },
     "wzHerd": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_148.png",
@@ -18,7 +32,8 @@
       "art": "geraet",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "wzArbeitsplatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_121.png",
@@ -28,7 +43,17 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "wzEsstisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -38,7 +63,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "wzStuhlLinks": {
       "quelle": "spiel/generic/generic_124.png",
@@ -48,7 +83,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "###.", "....", "...."]
     },
     "wzStuhlRechts": {
       "quelle": "spiel/generic/generic_125.png",
@@ -58,20 +94,41 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "###.", "....", "...."]
     },
     "wzSofa": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_3.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".#....#.",
+        "........"
+      ]
     },
     "wzCouchtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
       "breite": 32,
       "hoehe": 32,
       "platte": [7, 10, 25, 24],
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "wzTeppich": {
       "quelle": "spiel/generic/generic_015.png",
@@ -122,7 +179,21 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".#####..",
+        "####....",
+        "###.....",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "wzPflanzeGross": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_13.png",
@@ -131,7 +202,21 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "..####..",
+        "...##...",
+        "........",
+        "........"
+      ]
     },
     "wzPflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
@@ -140,7 +225,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "####", ".##.", "....", "...."]
     },
     "wzStehlampe": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_79.png",
@@ -149,7 +235,21 @@
       "kollision": true,
       "art": "lampe",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "wzFenster": {
       "quelle": "spiel/generic/generic_086.png",
@@ -238,7 +338,26 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "...###########..",
+        "....#.#######...",
+        ".....#####......",
+        "....########....",
+        ".....######....."
+      ],
+      "maske_fein_von_hand": "Baum hinter den Villen: Fuß über die ganze Breite, sonst geht eine Lücke zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "mfBaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
@@ -247,7 +366,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "mfApfelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_100.png",
@@ -256,7 +376,29 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".....#####......",
+        ".....#####......"
+      ]
     },
     "mfBushaltestelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_1.png",
@@ -266,7 +408,21 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".#################..",
+        ".########.......##..",
+        ".#################..",
+        ".#################..",
+        ".#......##########..",
+        ".#.......#########.."
+      ]
     },
     "mfLaterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
@@ -275,7 +431,25 @@
       "kollision": true,
       "art": "lampe",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "mfBank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
@@ -285,7 +459,17 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "mfMuelltonne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Black_Closed_Trash_Can.png",
@@ -333,7 +517,17 @@
       "breite": 32,
       "hoehe": 32,
       "platte": [7, 10, 25, 24],
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "mf2Schachbrett": {
       "quelle": "spiel/eigene/schachbrett.png",
@@ -353,7 +547,17 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_204.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "..####..",
+        "..####..",
+        "........"
+      ]
     },
     "mf2Hutschachtel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_200.png",
@@ -362,7 +566,17 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "..####..",
+        "........",
+        "........"
+      ]
     },
     "mf2Standspiegel": {
       "quelle": "spiel/generic/generic_149.png",
@@ -372,7 +586,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "....", "...."]
     },
     "mf2Kartonstapel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
@@ -390,7 +605,17 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_95.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".######.",
+        "........"
+      ]
     },
     "mf2Kiste": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_102.png",
@@ -406,7 +631,21 @@
       "art": "schrank",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        ".######.",
+        "........"
+      ]
     },
     "mf2Stehlampe": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_88.png",
@@ -416,7 +655,21 @@
       "art": "lampe",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        "####",
+        ".##.",
+        "...."
+      ]
     },
     "mf2Besen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_104.png",
@@ -446,7 +699,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "mf2KisteTuch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
@@ -455,7 +709,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["..###...", ".######.", "..####..", ".....#.."]
     },
     "mf2Kiste1": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_96.png",
@@ -471,7 +726,21 @@
       "art": "regal",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "mf2StuhlAlt": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_94.png",
@@ -538,7 +807,17 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".#....#."
+      ]
     },
     "mf2Globus": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_34.png",
@@ -547,26 +826,39 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".#..", "....", "...."]
     },
     "mf2Schachtisch": {
       "quelle": "spiel/generic/generic_057.png",
       "breite": 48,
       "hoehe": 32,
       "platte": [14, 2, 34, 17],
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "...######...",
+        "....####....",
+        "............",
+        "............"
+      ]
     },
     "mf2StuhlL": {
       "quelle": "spiel/generic/generic_114.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "####", ".###", "....", "...."]
     },
     "mf2StuhlR": {
       "quelle": "spiel/generic/generic_115.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "###.", "##..", "....", "...."]
     },
     "mf2Spind": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_40.png",
@@ -592,7 +884,21 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        ".##.",
+        "....",
+        "...."
+      ]
     },
     "mf2Fenster": {
       "quelle": "spiel/generic/generic_086.png",
@@ -613,7 +919,21 @@
       "art": "strassenmoebel",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "###########.",
+        "############",
+        ".#########..",
+        "...######..."
+      ]
     },
     "mf2Rampe": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Entrance_Ramp_1.png",
@@ -629,7 +949,17 @@
       "art": "bank",
       "zustand": "neu",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "mf2Bank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
@@ -650,7 +980,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["............", "............", "############", "############"]
     },
     "mf2BlumenbeetKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_1.png",
@@ -659,7 +990,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "mf2Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_7.png",
@@ -704,7 +1036,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "...##..."
+      ]
     },
     "mf2ZederSchmal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png",
@@ -713,7 +1063,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "...##..."
+      ]
     },
     "mf2Haustuer": {
       "quelle": "spiel/generic/generic_074.png",
@@ -732,7 +1100,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "mf3BrettKleinFiguren": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -741,7 +1110,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "mf3Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -751,7 +1121,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf3Kartonstapel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
@@ -760,7 +1140,21 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".#####..",
+        "####....",
+        "###.....",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "mf3Kartons": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_99.png",
@@ -779,7 +1173,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "mf3StuhlDunkelLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -789,7 +1184,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "mf3StuhlOrangeRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
@@ -799,7 +1195,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "mf3StuhlOrangeLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -809,7 +1206,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "mf3StuhlHellRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_283.png",
@@ -819,7 +1217,8 @@
       "art": "stuhl",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "mf3StuhlHellLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_287.png",
@@ -829,7 +1228,8 @@
       "art": "stuhl",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "mf3Spieltisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -839,7 +1239,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf3Anrichte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_55.png",
@@ -849,7 +1259,17 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".##..##.",
+        "........"
+      ]
     },
     "mf3Pokal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_140.png",
@@ -858,7 +1278,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".##.", ".###", ".##.", ".##."]
     },
     "mf3PokalKlein": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_132.png",
@@ -867,7 +1288,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".##.", ".###", ".##.", ".##."]
     },
     "mf3Lowboard": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_57.png",
@@ -938,7 +1360,17 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "sichtbar_breite": 30
+      "sichtbar_breite": 30,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "mf4Lowboard": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_70.png",
@@ -948,7 +1380,17 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".######.",
+        "........"
+      ]
     },
     "mf4SesselHinten": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_206.png",
@@ -958,7 +1400,17 @@
       "art": "sessel",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "........",
+        "........"
+      ]
     },
     "mf4KartonStapel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_71.png",
@@ -967,7 +1419,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "####", "###.", "....", "...."]
     },
     "mf4Karton": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_72.png",
@@ -976,7 +1429,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "###.", ".##.", "....", "...."]
     },
     "mf4KartonBreit": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_73.png",
@@ -985,7 +1439,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "####", "###.", "....", "...."]
     },
     "mf4Esstisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -995,7 +1450,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf4BildKueche": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_271.png",
@@ -1025,7 +1490,17 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "...##..."
+      ]
     },
     "mf4Kommode": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_51.png",
@@ -1035,7 +1510,8 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "mf4RegalNiedrig": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
@@ -1045,7 +1521,21 @@
       "art": "buecherregal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "mf4Pinnwand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_33.png",
@@ -1066,7 +1556,17 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "#......#",
+        "########",
+        "########"
+      ]
     },
     "mf4Kasse": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_54.png",
@@ -1086,7 +1586,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "mf4VillaOrange": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_1.png",
@@ -1216,7 +1717,8 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".###", ".##.", ".##.", ".##."]
     },
     "mf4Sandkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Toy_Sand_Box_1.png",
@@ -1238,7 +1740,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "######.#",
+        "######.#",
+        "########"
+      ]
     },
     "mf4Rutsche": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_1.png",
@@ -1248,7 +1764,25 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "#####..#####",
+        "#####..#####",
+        "#####...###.",
+        "#####......."
+      ]
     },
     "mf4Klettergeruest": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_4.png",
@@ -1258,7 +1792,17 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "#.##########",
+        "#.##########",
+        "#.######...#",
+        "############"
+      ]
     },
     "mf4SchildVerkauf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_2.png",
@@ -1268,7 +1812,8 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "####", "####", ".##."]
     },
     "mf4StegKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_26.png",
@@ -1288,7 +1833,8 @@
       "art": "zaun",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", ".##.", "####", "#..#"]
     },
     "mf4Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -1298,7 +1844,8 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
     },
     "mf4TreppeAb": {
       "quelle": "spiel/eigene/treppe_ab_gelaender.png",
@@ -1329,7 +1876,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "mf4ZaunMitte": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_2.png",
@@ -1338,7 +1899,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "mf4ZaunSeite": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_4.png",
@@ -1347,7 +1909,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "..##", "..##"]
     },
     "mf4ZaunEckeRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_6.png",
@@ -1356,7 +1919,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["...#", "####", "###.", "...."]
     },
     "mf4ZaunEckeLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_8.png",
@@ -1365,7 +1929,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", ".###", ".###", "...."]
     },
     "mf4Laterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
@@ -1375,7 +1940,25 @@
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####"
+      ]
     },
     "mf4Strassenbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_145.png",
@@ -1384,7 +1967,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "mf4Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
@@ -1393,7 +1977,17 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "mf4BuschKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_1.png",
@@ -1402,7 +1996,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "mf4Gemuesebeet": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Topsoil_Arable_Vertical_2_Single_16x16.png",
@@ -1423,7 +2018,17 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "mf4TischLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_Props_3.png",
@@ -1432,7 +2037,8 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".###", "..##"]
     },
     "mf4TischRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_Props_4.png",
@@ -1441,7 +2047,8 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "###.", "##.."]
     },
     "mf4Wasserfall": {
       "quelle": "spiel/eigene/wasserfall_3hoch.png",
@@ -1511,7 +2118,8 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "####", "###.", ".##."]
     },
     "mf4SchildDiner": {
       "quelle": "spiel/eigene/schild_diner.png",
@@ -1531,7 +2139,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", ".##.", ".##."]
     },
     "mf4SchildSackgasse": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_2.png",
@@ -1541,7 +2150,8 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "####", "####", ".##."]
     },
     "mf4FernseherStand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
@@ -1552,7 +2162,17 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten",
-      "sichtbar_breite": 29
+      "sichtbar_breite": 29,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "..#####.",
+        "........"
+      ]
     },
     "mf4BaumGruen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_145.png",
@@ -1561,7 +2181,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....###.....",
+        "....###.....",
+        "....###....."
+      ]
     },
     "mf4BaumRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_148.png",
@@ -1570,7 +2204,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....###.....",
+        "....###.....",
+        "....###....."
+      ]
     },
     "mf4Fels": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -1579,7 +2227,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "mf4FelsHoch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_8.png",
@@ -1588,7 +2237,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["###.", "###.", "####", "####"]
     },
     "mf4ZaunEckeObenLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_15.png",
@@ -1597,7 +2247,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".##.", "##..", "#...", "...."]
     },
     "mf4ZaunEckeObenRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_18.png",
@@ -1606,7 +2257,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".##.", "..##", "...#", "...."]
     },
     "mf4Luke": {
       "quelle": "spiel/eigene/luke_leiter.png",
@@ -1638,7 +2290,21 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "maske": ["..", "##", ".."],
-      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83)."
+      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83).",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "...#####",
+        "...#####",
+        "...#####",
+        "...#####",
+        "........",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "mf5ThekeMitte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_92.png",
@@ -1662,7 +2328,21 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "maske": [".", "#", "."],
-      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83)."
+      "hinweis": "Die Theke ist im Bild 3 Reihen hoch, sichtbar aber nur von Pixel 13 bis 33: Sie sperrt nur die mittlere Reihe, damit Hocker direkt an der Vorderkante stehen können (Kartennotiz 15.11.2026: „Zu weit weg vom Tresen“, KARTENREGELN 10.83).",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "#...",
+        "#...",
+        "#...",
+        "#...",
+        "....",
+        "....",
+        "....",
+        "...."
+      ]
     },
     "mf5Hocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_107.png",
@@ -1672,7 +2352,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "mf5Kassentheke": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_54.png",
@@ -1682,7 +2363,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "mf5Buffet": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_121.png",
@@ -1692,7 +2387,17 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "mf5Kuchenvitrine": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_408.png",
@@ -1722,7 +2427,8 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", ".##.", "...."]
     },
     "mf5Gastroherd": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_148.png",
@@ -1732,7 +2438,8 @@
       "art": "herd",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "mf5Grillplatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_193.png",
@@ -1742,7 +2449,17 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "..#####.",
+        "........"
+      ]
     },
     "mf5Fritteuse": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_194.png",
@@ -1752,7 +2469,17 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "..#####.",
+        "........"
+      ]
     },
     "mf5Kuehlschrank": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_159.png",
@@ -1762,7 +2489,21 @@
       "art": "kuehlschrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "...."
+      ]
     },
     "mf5Dunstabzug": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_158.png",
@@ -1785,7 +2526,17 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "mf5Spuele": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_143.png",
@@ -1795,7 +2546,8 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [".....#..", ".######.", ".#######", ".######."]
     },
     "mf5Geschirr": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_147.png",
@@ -1804,7 +2556,8 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [".##.", "####", "####", "...."]
     },
     "mf5Nischentisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_280.png",
@@ -1814,7 +2567,8 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["####", "####", "####", "#..#"]
     },
     "mf5NischenstuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_281.png",
@@ -1824,7 +2578,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "mf5NischenstuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_285.png",
@@ -1834,7 +2589,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "mf5Toilette": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_32.png",
@@ -1844,7 +2600,21 @@
       "art": "sonstiges",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        ".##.",
+        "....",
+        "...."
+      ]
     },
     "mf5Handwaschbecken": {
       "quelle": "spiel/generic/generic_156.png",
@@ -1854,7 +2624,8 @@
       "art": "spuele",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [".##.", ".##.", ".##.", "...."]
     },
     "mf5Eingangstuer": {
       "quelle": "spiel/generic/generic_081.png",
@@ -1873,7 +2644,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "####", "####", "###."]
     },
     "mf6Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sprout_4.png",
@@ -1882,7 +2654,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "####", "####", ".##."]
     },
     "mf6Moos": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Moss_1.png",
@@ -1891,7 +2664,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", ".#..", "####", "####"]
     },
     "mf6StegBrueckeL": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_2.png",
@@ -1939,7 +2713,21 @@
       "art": "bank",
       "zustand": "neu",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "mf6Haltestelle": {
       "quelle": "spiel/eigene/wartehaeuschen_hinten.png",
@@ -1949,7 +2737,21 @@
       "art": "strassenmoebel",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "oben"
+      "blick": "oben",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".###################",
+        ".#################..",
+        ".#################..",
+        ".#......##########..",
+        ".#################..",
+        ".#################.."
+      ]
     },
     "mf6Seerose1": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_11.png",
@@ -2000,7 +2802,21 @@
       "kollision": true,
       "art": "lampe",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "mf7PflanzeHoch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_17.png",
@@ -2009,7 +2825,21 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        ".##.",
+        "....",
+        "...."
+      ]
     },
     "mf7PflanzeKlein": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_15.png",
@@ -2028,7 +2858,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf7StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
@@ -2038,7 +2878,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "mf7StuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -2048,7 +2889,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "mf7Buecherregal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_55.png",
@@ -2058,7 +2900,21 @@
       "art": "regal",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "mf7Tischlampe": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_76.png",
@@ -2067,7 +2923,8 @@
       "kollision": true,
       "art": "lampe",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", ".##.", ".##.", "...."]
     },
     "mf7Obstkorb": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_49.png",
@@ -2076,7 +2933,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "mf7HerdTopf": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_149.png",
@@ -2086,7 +2944,17 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "........"
+      ]
     },
     "mf7PflanzeBusch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_18.png",
@@ -2105,7 +2973,17 @@
       "art": "kiste",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".######.",
+        "........"
+      ]
     },
     "mf7Holzschrank": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_103.png",
@@ -2134,7 +3012,17 @@
       "art": "sessel",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "..####..",
+        "..####..",
+        "........"
+      ]
     },
     "mf7BaumTuerkis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_151.png",
@@ -2143,7 +3031,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....###.....",
+        "....###.....",
+        "....###....."
+      ]
     },
     "mf7BaumBraun": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_154.png",
@@ -2152,7 +3054,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....###.....",
+        "....###.....",
+        "....###....."
+      ]
     },
     "mf7LaterneArm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
@@ -2162,7 +3078,25 @@
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "mf7LaterneLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
@@ -2172,7 +3106,25 @@
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "mf7Spielturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_15.png",
@@ -2182,7 +3134,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "mf7Wippe": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Toy_Rocking_1.png",
@@ -2211,7 +3164,8 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "..##", "..##", "....", "...."]
     },
     "mf8GlasthekeMitte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_317.png",
@@ -2221,7 +3175,8 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "....", "....", "...."]
     },
     "mf8GlasthekeRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_318.png",
@@ -2231,7 +3186,8 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "##..", "##..", "....", "...."]
     },
     "mf8HockerBlau": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_103.png",
@@ -2241,7 +3197,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "mf8Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -2251,7 +3208,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf8StuhlHellRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_283.png",
@@ -2261,7 +3228,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "mf8StuhlHellLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_287.png",
@@ -2271,7 +3239,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "mf8Sideboard": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_312.png",
@@ -2281,7 +3250,17 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "##....##",
+        "........",
+        "........"
+      ]
     },
     "mf8HerdTopf": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_149.png",
@@ -2291,7 +3270,17 @@
       "art": "herd",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        "........"
+      ]
     },
     "mf8Herd": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_150.png",
@@ -2301,7 +3290,8 @@
       "art": "herd",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "mf8KuehlschrankWeiss": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_161.png",
@@ -2311,7 +3301,21 @@
       "art": "kuehlschrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "...."
+      ]
     },
     "mf8Spielautomat": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_218.png",
@@ -2321,7 +3325,8 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "mf8VitrineLeer": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_407.png",
@@ -2331,7 +3336,17 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "#......#",
+        "########",
+        "########"
+      ]
     },
     "mf8BildTeller": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_270.png",
@@ -2375,7 +3390,8 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["....", "....", "....", "....", "####", "#..#", "....", "...."]
     },
     "mf8SchulstuhlVorn": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
@@ -2385,7 +3401,8 @@
       "art": "stuhl",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "mf8SchulstuhlHinten": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_2.png",
@@ -2395,7 +3412,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "mf8Pinnwand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_33.png",
@@ -2417,7 +3435,17 @@
       "art": "schrank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "##....##",
+        "........",
+        "........"
+      ]
     },
     "mf8RegalRot": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
@@ -2427,7 +3455,21 @@
       "art": "buecherregal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        "........",
+        "........"
+      ]
     },
     "mf8Pokaltisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_157.png",
@@ -2437,7 +3479,21 @@
       "art": "pokal",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "mf8Lehrerpult": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_27.png",
@@ -2447,7 +3503,21 @@
       "art": "schreibtisch",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..#.####",
+        ".##.####",
+        ".#######",
+        ".#######",
+        ".#######",
+        "....####",
+        "....#.##",
+        "........"
+      ]
     },
     "mf8RundtischDunkel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -2457,7 +3527,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf8SchulstuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_3.png",
@@ -2467,7 +3547,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["....", "....", "....", "....", "####", "....", "....", "...."]
     },
     "mf8SchulstuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_4.png",
@@ -2477,7 +3558,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["....", "....", "....", "....", "####", "....", "....", "...."]
     },
     "mf8RegalHoch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_64.png",
@@ -2487,7 +3569,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        "........",
+        "........"
+      ]
     },
     "mf8RegalHoch2": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
@@ -2497,7 +3593,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        "........",
+        "........"
+      ]
     },
     "mf8GlobusFrei": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_35.png",
@@ -2516,7 +3626,17 @@
       "art": "tafel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "##....##",
+        "........",
+        "........"
+      ]
     },
     "mf7VillaGruen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_2.png",
@@ -2623,7 +3743,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "####"]
     },
     "mf7Zaun2EndeLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_2_1.png",
@@ -2632,7 +3753,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "####"]
     },
     "mf7Zaun2EndeRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_2_3.png",
@@ -2641,7 +3763,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "####"]
     },
     "mf7Zaun2Seite": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_2_4.png",
@@ -2650,7 +3773,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", ".###", ".###"]
     },
     "mf7CouchtischRund": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -2660,7 +3784,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf7SesselWeissRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_214.png",
@@ -2670,7 +3804,17 @@
       "art": "sessel",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "######..",
+        "#####...",
+        "#####...",
+        "#####..."
+      ]
     },
     "mf7SesselWeissLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_210.png",
@@ -2680,7 +3824,17 @@
       "art": "sessel",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "...#####",
+        "...#####",
+        "...#####"
+      ]
     },
     "mf7TeppichQuadrat": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_251.png",
@@ -2708,7 +3862,17 @@
       "art": "schrank",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "mf7Naehmaschine": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Sewing_Machine_Tailor_Crafting_Machine_16x16.png",
@@ -2718,7 +3882,8 @@
       "art": "geraet",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["..####..", ".######.", ".######.", ".######."]
     },
     "mf7Teddy": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_170.png",
@@ -2727,7 +3892,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "mf9Laterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
@@ -2737,7 +3903,25 @@
       "art": "lampe",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "mf9LaterneLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
@@ -2747,7 +3931,25 @@
       "art": "lampe",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "mf9BankRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_4.png",
@@ -2757,7 +3959,21 @@
       "art": "bank",
       "blick": "rechts",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "mf9BankLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_3.png",
@@ -2767,7 +3983,21 @@
       "art": "bank",
       "blick": "links",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "mf9BankRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_7.png",
@@ -2777,7 +4007,17 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "mf9Brunnen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_3_1.png",
@@ -2786,7 +4026,29 @@
       "kollision": true,
       "art": "deko",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".##############.",
+        ".##############.",
+        "..############..",
+        "...##########...",
+        ".....######....."
+      ]
     },
     "mf9Trinkbrunnen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Drinking_Fountain_1.png",
@@ -2796,7 +4058,21 @@
       "art": "strassenmoebel",
       "zustand": "neu",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "..####.."
+      ]
     },
     "mf9Blumenkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_1.png",
@@ -2805,7 +4081,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "mf9FussbrueckeLaengs3": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
@@ -2853,7 +4130,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "..##", ".###", ".#.."]
     },
     "mf5ZaunEckeObenRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_3.png",
@@ -2862,7 +4140,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "##..", "####", "..##"]
     },
     "mf5ZaunSeiteLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_9.png",
@@ -2871,7 +4150,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", ".#..", ".#.."]
     },
     "mf9Absperrbock": {
       "quelle": "spiel/eigene/absperrbock_gesperrt.png",
@@ -2881,7 +4161,17 @@
       "art": "zaun",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####.#",
+        "..####.#",
+        "##....#.",
+        "##....#."
+      ]
     },
     "mf8SpielautomatZwei": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_219.png",
@@ -2891,7 +4181,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "...."
+      ]
     },
     "mf9Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -2901,7 +4205,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "mf9Wartebank": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_25.png",
@@ -2953,7 +4267,8 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "mf9Vorrat100": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_100.png",
@@ -2963,7 +4278,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "mf9Vorrat102": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_102.png",
@@ -2973,7 +4302,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "mf9Vorrat105": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_105.png",
@@ -2983,7 +4326,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "mf9RadioAlt": {
       "quelle": "spiel/eigene/radio_alt.png",
@@ -2992,7 +4349,8 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "####", "####", "####"]
     },
     "mf8KulisseBauernhaus": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
@@ -3041,7 +4399,21 @@
       "art": "strassenmoebel",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "###########.",
+        "############",
+        ".#########..",
+        "...######..."
+      ]
     },
     "mf9AbsperrbockBreit": {
       "quelle": "spiel/eigene/absperrbock_breit.png",
@@ -3050,7 +4422,17 @@
       "kollision": true,
       "art": "absperrung",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "#..#######.#",
+        "############",
+        ".##.......#.",
+        "............"
+      ]
     },
     "mfc8Pult": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_27.png",
@@ -3122,7 +4504,8 @@
       "art": "pokal",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [".##.", ".###", ".##.", ".##."]
     },
     "mfc8PokalB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_135.png",
@@ -3171,7 +4554,21 @@
       "art": "buecherregal",
       "zustand": "gebraucht",
       "stil": "schule",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "mfc9TeppichLo": {
       "quelle": "spiel/eigene/teppich_lo.png",
@@ -3261,7 +4658,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "mfc9BrettOhneDame": {
       "quelle": "spiel/eigene/schachbrett_klein_ohne_dame.png",
@@ -3279,7 +4677,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": ["##..", "##..", "....", "...."]
     },
     "mfc9Pokal1994": {
       "quelle": "spiel/eigene/pokal_1994.png",
@@ -3342,7 +4741,17 @@
       "art": "schreibtisch",
       "zustand": "gebraucht",
       "stil": "schule",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".#....#."
+      ]
     },
     "mfc9Doppelspind": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
@@ -3372,7 +4781,21 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "schule",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "mfc9BankOst": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_3.png",
@@ -3382,7 +4805,21 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "schule",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "mfc9Kartons": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
@@ -3481,7 +4918,17 @@
       "kollision": true,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "###########.",
+        ".#.........."
+      ]
     },
     "mf10SchildSackgasse": {
       "quelle": "spiel/eigene/schild_sackgasse.png",
@@ -3490,7 +4937,8 @@
       "kollision": true,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", ".##.", ".##.", "...."]
     },
     "mf11HausHintenBlau": {
       "quelle": "spiel/eigene/haus_hinten_blau.png",
@@ -3570,7 +5018,17 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "oben"
+      "blick": "oben",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "##........##",
+        "#..........#"
+      ]
     },
     "mf11BahnsteigbankHinten": {
       "quelle": "spiel/eigene/bahnsteigbank_hinten.png",
@@ -3620,7 +5078,8 @@
       "art": "bank",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "mf12NischenbankLinks": {
       "quelle": "spiel/eigene/nischenbank_links.png",
@@ -3630,7 +5089,8 @@
       "art": "bank",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "mf12Hutschachtel": {
       "quelle": "spiel/eigene/hutschachtel_klein.png",
@@ -3639,7 +5099,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".##.", "####", "####", ".##."]
     },
     "mf12FensterAhorn": {
       "quelle": "spiel/eigene/fenster_ahorn.png",
@@ -3686,7 +5147,17 @@
       "kollision": true,
       "art": "karton",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "..####.."
+      ]
     },
     "mf13Spind": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_40.png",
@@ -3715,7 +5186,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "maske_fein": [".##.", ".###", ".##.", ".##."]
     },
     "mf13Urkunde": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_97.png",
@@ -3770,7 +5242,21 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Glasvitrine mit Holzrahmen und sichtbarer Glasplatte oben (R011: der alte Vitrinenschrank war frontal)"
+      "hinweis": "Glasvitrine mit Holzrahmen und sichtbarer Glasplatte oben (R011: der alte Vitrinenschrank war frontal)",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "mf13BildschirmPult": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_240.png",
@@ -3781,7 +5267,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
-      "hinweis": "Bildschirm von Perfect Move auf einem Ständerpult (Roman Kap. 9, Ink bildschirm_pult)"
+      "hinweis": "Bildschirm von Perfect Move auf einem Ständerpult (Roman Kap. 9, Ink bildschirm_pult)",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", ".##.", "...."]
     },
     "mf12InnentuerHolz": {
       "quelle": "spiel/eigene/innentuer_holz.png",
@@ -3815,7 +5302,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Stapel ungelöster Tischsets (Roman Kap. 7); Bild aus bildwuensche/tischsets.py"
+      "hinweis": "Stapel ungelöster Tischsets (Roman Kap. 7); Bild aus bildwuensche/tischsets.py",
+      "maske_fein": ["###.", "####", "####", ".###"]
     },
     "mf12TischsetGerahmt": {
       "quelle": "spiel/eigene/tischset_gerahmt.png",
@@ -3912,7 +5400,21 @@
       "art": "sport",
       "zustand": "gebraucht",
       "stil": "modern",
-      "hinweis": "Halfpipe aus Holz mit sichtbarer Fahrfläche (Gemini Teil 4; R022: die alte war eine Seitenansicht)"
+      "hinweis": "Halfpipe aus Holz mit sichtbarer Fahrfläche (Gemini Teil 4; R022: die alte war eine Seitenansicht)",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "#.############.#",
+        "################"
+      ]
     },
     "mf12KreidebrettSpringer": {
       "quelle": "spiel/eigene/kreidebrett_springer.png",
@@ -3957,7 +5459,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "klassisch",
-      "hinweis": "das alte Brett unter der staubfreien Decke (Roman Kap. 2), mit Brettstirn, überhängendem Tuch und Schatten (Kartennotiz 15.11.2026: „flach wie Abziehbild“); Bild aus bildwuensche/brett_decke.py"
+      "hinweis": "das alte Brett unter der staubfreien Decke (Roman Kap. 2), mit Brettstirn, überhängendem Tuch und Schatten (Kartennotiz 15.11.2026: „flach wie Abziehbild“); Bild aus bildwuensche/brett_decke.py",
+      "maske_fein": ["####", "####", "####", "###."]
     },
     "mf12BrettRadiergummi": {
       "quelle": "spiel/eigene/schachbrett_klein_radiergummi.png",
@@ -3967,7 +5470,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule",
-      "hinweis": "dasselbe Clubbrett wie auf den anderen Tischen, auf d8 der Radiergummi statt der schwarzen Dame (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py"
+      "hinweis": "dasselbe Clubbrett wie auf den anderen Tischen, auf d8 der Radiergummi statt der schwarzen Dame (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "mf12SchaukelstuhlSchraeg": {
       "quelle": "spiel/eigene/schaukelstuhl_schraeg.png",
@@ -3989,7 +5493,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "###.", "####"]
     },
     "mf12FahrradKopfueber": {
       "quelle": "spiel/eigene/fahrrad_kopfueber.png",
@@ -3999,7 +5504,8 @@
       "art": "fahrrad",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)"
+      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
+      "maske_fein": ["........", "........", "........", "#######."]
     },
     "mf12JukeboxAn": {
       "quelle": "spiel/eigene/jukebox_an.png",
@@ -4010,7 +5516,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "mf12SchaukelstuhlVorn": {
       "quelle": "spiel/eigene/schaukelstuhl_vorn.png",
@@ -4021,7 +5528,8 @@
       "zustand": "alt",
       "stil": "klassisch",
       "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "###."]
     },
     "mf14SchreibtischLeer": {
       "quelle": "spiel/eigene/schreibtisch_leer.png",
@@ -4033,7 +5541,17 @@
       "stil": "klassisch",
       "blick": "unten",
       "hinweis": "der grüne Schreibtisch des Pakets ohne Buch und Flasche, damit das Brett allein darauf liegt; Bild aus bildwuensche/akt1_karten.py",
-      "platte": [3, 10, 29, 23]
+      "platte": [3, 10, 29, 23],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".#....#."
+      ]
     },
     "mf14StegMorsch": {
       "quelle": "spiel/eigene/steg_morsch_ohne_wasser.png",
@@ -4055,7 +5573,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 13,
-      "hinweis": "Teller mit Essen (Diner)"
+      "hinweis": "Teller mit Essen (Diner)",
+      "maske_fein": [".##.", "####", "####", "...."]
     },
     "mf14TellerPfannkuchen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_385.png",
@@ -4066,7 +5585,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 12,
-      "hinweis": "Teller mit Pfannkuchen (Diner)"
+      "hinweis": "Teller mit Pfannkuchen (Diner)",
+      "maske_fein": [".##.", "####", "####", "...."]
     },
     "mf14TellerKuchen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_401.png",
@@ -4077,7 +5597,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 12,
-      "hinweis": "Teller mit einem Stück Kuchen (Diner)"
+      "hinweis": "Teller mit einem Stück Kuchen (Diner)",
+      "maske_fein": [".##.", "####", "####", "...."]
     },
     "mf14Kaffeetasse": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_395.png",
@@ -4088,7 +5609,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 9,
-      "hinweis": "Kaffeebecher (Diner)"
+      "hinweis": "Kaffeebecher (Diner)",
+      "maske_fein": [".##.", ".##.", ".##.", "...."]
     },
     "mf14Glas": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_396.png",
@@ -4099,7 +5621,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 5,
-      "hinweis": "Glas mit Wasser (Diner)"
+      "hinweis": "Glas mit Wasser (Diner)",
+      "maske_fein": ["....", "....", ".##.", ".#.."]
     },
     "mf14Muelleimer": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_110.png",
@@ -4109,7 +5632,8 @@
       "art": "geraet",
       "zustand": "neu",
       "stil": "modern",
-      "hinweis": "kleiner Treteimer für Küche oder Bad (ersetzt in der Küche den Straßenabfalleimer, Kartennotiz 15.11.2026: „Ist das ein Trinkbrunnen? Ein Pissoir?“)"
+      "hinweis": "kleiner Treteimer für Küche oder Bad (ersetzt in der Küche den Straßenabfalleimer, Kartennotiz 15.11.2026: „Ist das ein Trinkbrunnen? Ein Pissoir?“)",
+      "maske_fein": ["....", "....", "....", "....", "####", ".##.", "....", "...."]
     },
     "mf14TischbeinPizzakarton": {
       "quelle": "spiel/eigene/tischbein_pizzakarton.png",
@@ -4173,7 +5697,25 @@
       "zustand": "neu",
       "stil": "natur",
       "lauf": "senkrecht",
-      "hinweis": "Nur das fallende Wasser aus mf12WasserfallFelsen (Spalten 2–3), für eine Lücke von zwei Feldern in einer Felswand aus Klippenkacheln mit klippenhoehe 3 (fels grau): oben an der Kantenreihe, Lippe des Bachs über der Kante, Fall über drei Reihen, Gischt in der vierten Reihe auf dem Fluss auch links und rechts neben der Lücke. Werkzeug docs/spiel/auftraege/bildwuensche/wasserfall_band.py (Rückmeldung des Autors 16.11.2026: Felsen hörten links und rechts einfach auf)"
+      "hinweis": "Nur das fallende Wasser aus mf12WasserfallFelsen (Spalten 2–3), für eine Lücke von zwei Feldern in einer Felswand aus Klippenkacheln mit klippenhoehe 3 (fels grau): oben an der Kantenreihe, Lippe des Bachs über der Kante, Fall über drei Reihen, Gischt in der vierten Reihe auf dem Fluss auch links und rechts neben der Lücke. Werkzeug docs/spiel/auftraege/bildwuensche/wasserfall_band.py (Rückmeldung des Autors 16.11.2026: Felsen hörten links und rechts einfach auf)",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "....########....",
+        "....########....",
+        "....########....",
+        "....########....",
+        "................",
+        "................",
+        "................",
+        "................"
+      ]
     },
     "mfDoppeltuerSuedHolz": {
       "quelle": "spiel/eigene/doppeltuer_sued_holz.png",

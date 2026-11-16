@@ -1268,3 +1268,27 @@ Dazu aus denselben Notizen, ohne eigene Prüfung (Gutachten, KARTENPRUEFUNG): Re
 Blick nach Süden stehen mit dem Rücken an der Nordwand, nicht eine Kachel davor; ein Gegenstand auf
 einer Bank liegt auf der Sitzfläche, nicht über der Lehne; ein Weg endet an einem Ziel, nicht an
 Büschen; ein Teich hat ein rundes Ufer ohne Treppenkante; unter einer Durchreiche bleibt Platz.
+
+### 10.88 Kollision nach Standfläche (Perspektive) (Grundsatz des Autors, 16.11.2026)
+
+„Jedes Möbel soll möglichst fein so sperren, wie es geformt ist.“ Bei Stühlen, Sesseln, Bänken,
+Lampen, Bäumen, Schränken und ähnlichem kann man optisch hinter dem Gegenstand entlanggehen: Die
+Lehne oder der obere Teil verdeckt dann den Helden, das ist gewollt und wird nicht gesperrt.
+Gesperrt wird nur die Standfläche am Boden (unterer Teil, Beine, Sockel). Dass der Held hinter der
+Lehne verschwindet, regelt die Zeichenreihenfolge (Tiefe nach der unteren Kante).
+
+- **Katalog:** `maske_fein` je Möbel (Viertelkacheln, Format wie in Kollision fein); die grobe
+  `maske` leitet der Kartenbau daraus ab (`objektform.geformt`, App und Editor gleich). Sie gilt
+  ohne Maßstab, ohne Zuschnitt und ohne eigene `maske` der Szene, sonst die grobe Regel.
+- **Vorschlag:** `python -m pipeline.abenteuer.feinmasken [--schreiben] [--boegen ORDNER]`. Zellen
+  mit mindestens 4 von 16 deckenden Pixeln in einem Band über dem Fuß des Bildes, nie mehr als die
+  bisherige Maske. Band je Art: Stühle, Hocker, Sessel, Bänke, Sofas die untere Hälfte; Tische,
+  Theken, Betten alles Deckende (hinter einem Tisch steht man nicht); Schränke, Regale, Geräte an
+  der Wand die unterste Kachelreihe; Bäume nur der Stamm; Lampen, Pfosten, Schilder der Fuß;
+  Fahrzeuge die unteren 60 Prozent (ohne Dach); Zäune die Linie am Fuß (längs laufende ganz); sonst die
+  untere Hälfte. Gebäude, Türen, Brücken, Gleise, Teppiche, Möbel mit `frei_unten`, Verbünde und
+  Begehbares bleiben, wie sie sind.
+- **Gegenprobe:** `python -m pipeline.abenteuer.feinmasken_pruefung`: Öffnet eine feine Maske eine
+  Fläche, die vorher abgeschlossen war (Waldrand, Lücke hinter einer Theke), gilt für dieses Möbel
+  die grobe Maske (`ohne_maske_fein` mit Grund). Von Hand gesetzte Masken tragen
+  `maske_fein_von_hand` mit Grund; das Werkzeug lässt beide unangetastet.

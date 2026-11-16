@@ -11,7 +11,21 @@
       "art": "bett",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "...#########",
+        "..##########",
+        "..##########",
+        "..##########",
+        "..##########",
+        "....#.....#.",
+        "............",
+        "............"
+      ]
     },
     "es15BettKopfWest": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_514.png",
@@ -24,7 +38,21 @@
       "art": "bett",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "#########...",
+        "##########..",
+        "##########..",
+        "##########..",
+        "##########..",
+        ".#.....#....",
+        "............",
+        "............"
+      ]
     },
     "es7Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -34,7 +62,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "es7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -43,7 +81,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "es7Ofen": {
       "quelle": "spiel/eigene/kanonenofen.png",
@@ -53,7 +92,8 @@
       "art": "herd",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "es7Kisten": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_101.png",
@@ -62,7 +102,21 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "######..",
+        "#####...",
+        "#####...",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "es7Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -80,7 +134,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        ".#####..",
+        ".#####..",
+        "..####.."
+      ]
     },
     "es7Fenster": {
       "quelle": "spiel/generic/generic_087.png",
@@ -101,7 +165,8 @@
       "kollision": true,
       "art": "stuhl",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", ".##.", ".##.", ".##."]
     },
     "es7StuhlR": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
@@ -111,7 +176,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "es7StuhlL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -121,7 +187,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "es7Tuch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
@@ -130,7 +197,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["..###...", ".######.", "..####..", ".....#.."]
     },
     "es7Regal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_70.png",
@@ -140,7 +208,21 @@
       "art": "regal",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "es7Fass": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
@@ -148,7 +230,8 @@
       "hoehe": 16,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [".##.", "####", "####", "###."]
     },
     "es7Fussmatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
@@ -174,7 +257,8 @@
       "hoehe": 16,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": ["....", "....", ".##.", ".##."]
     },
     "es7Petroleumlampe": {
       "quelle": "spiel/eigene/petroleumlampe.png",
@@ -183,7 +267,8 @@
       "kollision": true,
       "art": "lampe",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", ".##.", ".##.", ".##."]
     },
     "es9FensterNacht": {
       "quelle": "spiel/eigene/fenster_nacht.png",
@@ -205,7 +290,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     }
   }
 }

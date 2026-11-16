@@ -4,7 +4,17 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#.......",
+        "#.####..",
+        "########",
+        "########"
+      ]
     },
     "rvWartebank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Triple_Wait_Seat_1.png",
@@ -21,7 +31,8 @@
       "breite": 48,
       "hoehe": 16,
       "kollision": true,
-      "art": "bank"
+      "art": "bank",
+      "maske_fein": ["............", "############", "############", ".#...#....#."]
     },
     "rvGetraenkeautomat": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Front.png",
@@ -37,19 +48,31 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
     },
     "rvFahrplan": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Map_Monitor.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "rvTopfpflanze": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Plant_Vase_1.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "....", ".###", ".###", ".##."]
     },
     "rvKoffer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Travel_Case_1.png",
@@ -73,7 +96,21 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "rvPicknicktisch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
@@ -107,20 +144,58 @@
       "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".##############.",
+        "..###.....###..."
+      ]
     },
     "rvAutoGruen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_3.png",
       "lauf": "waagrecht",
       "breite": 64,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".##############.",
+        "..###.....###..."
+      ]
     },
     "rvBildschirmtisch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Control_Big_Monitor.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "rvHydrant": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/18_Fire_Station_Singles_16x16/ME_Singles_Fire_Station_16x16_Fire_Hydrant.png",
@@ -157,7 +232,8 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", ".###", ".###", ".##."]
     },
     "rvKiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_1.png",
@@ -205,7 +281,17 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_3.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".#####..",
+        "........"
+      ]
     },
     "rvZeder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png",
@@ -232,13 +318,49 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......",
+        "......####......"
+      ]
     },
     "rvLaubbaumDunkel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_37.png",
       "breite": 64,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......"
+      ]
     },
     "rvBaumstumpf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
@@ -253,7 +375,8 @@
       "kollision": true,
       "art": "strassenmoebel",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", ".###", "####", "###."]
     },
     "rvGleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
@@ -273,7 +396,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["..####..", "..####..", ".#####..", "..####.."]
     },
     "rvHolzbankNatur": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",
@@ -289,7 +413,17 @@
       "stil": "rustikal",
       "blick": "rechts",
       "breite": 32,
-      "hoehe": 32
+      "hoehe": 32,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "#######."
+      ]
     },
     "rv5Werkbank": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_Full_16x16.png",
@@ -309,7 +443,21 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######"
+      ]
     },
     "rv5ReifenLiegend": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tire_1.png",
@@ -318,7 +466,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["###.", "####", "####", ".##."]
     },
     "rv5ReifenStehend": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tire_1.png",
@@ -336,7 +485,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "rv5Leiter": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Stairs.png",
@@ -346,7 +496,21 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "rv5KarrenWerkzeug": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Small_Wood_Cart_Full_3.png",
@@ -355,7 +519,17 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".########...",
+        "#########...",
+        "#######.....",
+        "..#####....."
+      ]
     },
     "rv5TuerSuedHolz": {
       "quelle": "spiel/eigene/tuer_sued_holz.png",
@@ -409,7 +583,21 @@
       "art": "regal",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "rv5Buecherregal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
@@ -419,7 +607,21 @@
       "art": "buecherregal",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######",
+        "........",
+        "........"
+      ]
     },
     "rv5Kuechenzeile": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_121.png",
@@ -429,7 +631,17 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "rv5Klapptisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_273.png",
@@ -458,7 +670,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "rv5TuerSuedHell": {
       "quelle": "spiel/eigene/tuer_sued_hell.png",
@@ -477,7 +690,21 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "####....",
+        "####....",
+        "####....",
+        ".###...."
+      ]
     },
     "rv5BettKopfRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png",
@@ -492,7 +719,8 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "links"
+      "blick": "links",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "rv5Spieltisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -512,7 +740,8 @@
       "art": "stuhl",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "rv5StuhlRuecken": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_2.png",
@@ -522,7 +751,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "rv5Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -531,7 +761,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "rv5Limonade": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Tiny_Table_With_Drinks_2_16x16.png",
@@ -540,7 +771,8 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [".#..", "####", "####", "####"]
     },
     "rv5Figurenkiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_1.png",
@@ -549,7 +781,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "..####.."
+      ]
     },
     "rv5Gedenktafel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_401.png",
@@ -570,7 +812,21 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "rv5Blumenbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Flowers_Bench_Vertical.png",
@@ -580,7 +836,21 @@
       "art": "pflanze",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "rv15BankLangSenkrecht": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Vertical.png",
@@ -593,7 +863,21 @@
       "kollision": true,
       "art": "bank",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "rv5BankLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
@@ -603,7 +887,8 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["............", "............", "############", "############"]
     },
     "rv5Schalter": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
@@ -613,7 +898,17 @@
       "art": "theke",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#.......",
+        "#.####..",
+        "########",
+        "########"
+      ]
     },
     "rv5Wartebank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Triple_Wait_Seat_1.png",
@@ -623,7 +918,17 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "rv5BankHarlan": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Frontal_1.png",
@@ -633,7 +938,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["............", "############", "############", ".#...#....#."]
     },
     "rv5Getraenkeautomat": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Front.png",
@@ -643,7 +949,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######.",
+        "........"
+      ]
     },
     "rv5Kaffeeautomat": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
@@ -653,7 +973,21 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "rv5Netzplan": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Map_Monitor.png",
@@ -674,7 +1008,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....", "....", "....", "....", "....", ".###", ".###", ".##."]
     },
     "rv5Koffer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Travel_Case_1.png",
@@ -702,7 +1037,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "rv5Bahnsteigtuer": {
       "quelle": "spiel/generic/generic_073.png",
@@ -745,7 +1094,17 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "##......",
+        "........"
+      ]
     },
     "rv5TuerSuedGlas": {
       "quelle": "spiel/eigene/tuer_sued_glas.png",
@@ -764,7 +1123,29 @@
       "kollision": true,
       "art": "saeule",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "...."
+      ]
     },
     "rv5Spind": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
@@ -774,7 +1155,17 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        ".######."
+      ]
     },
     "rv5Muelleimer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trashbin_1.png",
@@ -784,7 +1175,8 @@
       "art": "mulleimer",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
     },
     "rv5Bahnhof": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Clock_Tower_1.png",
@@ -934,7 +1326,29 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".##############.",
+        ".##############.",
+        "..############..",
+        "...##########...",
+        ".....######....."
+      ]
     },
     "rv5Marktstand": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Market_Stand_Yellow_Big_16x16.png",
@@ -944,7 +1358,25 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "##................##",
+        "##................##",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        ".##################."
+      ]
     },
     "rv5Obstkarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Fruit_Flowers_Cart_1.png",
@@ -954,7 +1386,25 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        "############",
+        ".###########",
+        "...###......"
+      ]
     },
     "rv5Imbisskarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Street_Food_Cart_1.png",
@@ -964,7 +1414,21 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".###########",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "..########.."
+      ]
     },
     "rv5Bruecke": {
       "quelle": "spiel/eigene/bruecke_strasse_gehweg_laengs_7.png",
@@ -984,7 +1448,17 @@
       "art": "theke",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "##....##",
+        "........",
+        "........"
+      ]
     },
     "rv5Kasse": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Register_Market_Stand_16x16.png",
@@ -994,7 +1468,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "####", "####", "####"]
     },
     "rv5Vitrine": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_407.png",
@@ -1004,7 +1479,17 @@
       "art": "vitrine",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "#......#",
+        "########",
+        "########"
+      ]
     },
     "rv5Parkbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
@@ -1014,7 +1499,17 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "rv5Holzbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Bench_Horizontal.png",
@@ -1034,7 +1529,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "rv5StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
@@ -1044,7 +1549,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "rv5StuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -1054,7 +1560,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "rv5SesselGelb": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_202.png",
@@ -1064,7 +1571,17 @@
       "art": "sessel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "..####..",
+        "..####..",
+        "........"
+      ]
     },
     "rv5SesselGrau": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_13.png",
@@ -1084,7 +1601,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [".##.", ".###", ".##.", ".##."]
     },
     "rv5PokalSilber": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_147.png",
@@ -1094,7 +1612,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "....", "...."]
     },
     "rv5TeppichRund": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_255.png",
@@ -1113,7 +1632,8 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "rv5Teppich": {
       "quelle": "spiel/generic/generic_015.png",
@@ -1132,7 +1652,21 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########."
+      ]
     },
     "rv5Kommode": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_322.png",
@@ -1142,7 +1676,8 @@
       "art": "kommode",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "rv5SesselWeissLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_210.png",
@@ -1152,7 +1687,17 @@
       "art": "sessel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "...#####",
+        "...#####",
+        "...#####"
+      ]
     },
     "rv5GleisGrau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
@@ -1176,7 +1721,25 @@
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "rv5LaterneAusleger": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
@@ -1186,7 +1749,25 @@
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".##.....",
+        ".##....."
+      ]
     },
     "rv5HolzhausRot": {
       "quelle": "spiel/serene/serene_51.png",
@@ -1265,7 +1846,33 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....#####...",
+        "....#####...",
+        "..########..",
+        ".##########.",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        ".##########.",
+        "..########..",
+        "...######..."
+      ]
     },
     "rv5Baumarkt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store_Example.png",
@@ -1395,7 +2002,25 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        "############",
+        ".###########",
+        "...###......"
+      ]
     },
     "rv8Imbisskarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Street_Food_Cart_2.png",
@@ -1405,7 +2030,21 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        "############",
+        "###########.",
+        "###########.",
+        ".##########.",
+        "..########.."
+      ]
     },
     "rv8KorbAepfel": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Basket_Apple_16x16.png",
@@ -1415,7 +2054,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["###.", "####", "####", "####"]
     },
     "rv8KorbBananen": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Basket_Bananas_16x16.png",
@@ -1425,7 +2065,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "rv8KorbMoehren": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Carrot_Small_Basket_16x16.png",
@@ -1435,7 +2076,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["###.", "####", "####", "####"]
     },
     "rv8KorbKohl": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Cabbage_1_Small_Basket_16x16.png",
@@ -1445,7 +2087,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["###.", "####", "####", "####"]
     },
     "rv8KorbTrauben": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Grapes_Small_Basket_16x16.png",
@@ -1455,7 +2098,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "rv8KorbMais": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Corn_Small_Basket_16x16.png",
@@ -1465,7 +2109,8 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["###.", "####", "####", "####"]
     },
     "rv8Querbett": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_87.png",
@@ -1477,7 +2122,21 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "#......#",
+        "........",
+        "........"
+      ]
     },
     "rv8Nasszelle": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_63.png",
@@ -1498,7 +2157,17 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "sichtbar_breite": 32
+      "sichtbar_breite": 32,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "rv8Kocher": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_137.png",
@@ -1508,7 +2177,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "..#."]
     },
     "rv8Sitzbank": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_34.png",
@@ -1576,7 +2246,17 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######"
+      ]
     },
     "rv8Bretterstapel": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Board_Load_16x16.png",
@@ -1586,7 +2266,17 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        "..####.."
+      ]
     },
     "rv8Brennholz": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_121.png",
@@ -1596,7 +2286,8 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "rv8Farbdose": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Color_Can_Empty_DIY_Crafting_Table_16x16.png",
@@ -1606,7 +2297,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [".##.", "###.", "###.", ".##."]
     },
     "rv8SchalterA": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_8.png",
@@ -1617,7 +2309,17 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "befestigung": "wand"
+      "befestigung": "wand",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#.......",
+        "#.####..",
+        "########",
+        "########"
+      ]
     },
     "rv8SchalterB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
@@ -1639,7 +2341,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "befestigung": "wand"
+      "befestigung": "wand",
+      "maske_fein": ["....", "....", "....", "....", "....", "##..", "####", "####"]
     },
     "rv8Abfahrtsmonitor": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Monitor.png",
@@ -1671,7 +2374,25 @@
       "art": "saeule",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "...."
+      ]
     },
     "rv8Getraenkeautomat": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Left.png",
@@ -1711,7 +2432,8 @@
       "art": "pflanze",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": ["....", "....", "....", "....", "....", ".###", ".###", ".##."]
     },
     "rv8Wartebank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Triple_Wait_Seat_1.png",
@@ -1721,7 +2443,17 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "rv8Zweierbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Couple_Wait_Seat_1.png",
@@ -1731,7 +2463,17 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "rv8Koffer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Baggage_1.png",
@@ -1751,7 +2493,17 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "..####..",
+        "..####.."
+      ]
     },
     "rv8Rollkoffer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Trolley_1.png",
@@ -1875,7 +2627,17 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "###############.",
+        "###############.",
+        "###############.",
+        "###############."
+      ]
     },
     "rv8Truhe": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Closed_1_16x16.png",
@@ -1915,7 +2677,21 @@
       "art": "automat",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######.",
+        "........"
+      ]
     },
     "rv8KaffeeVorn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
@@ -1925,7 +2701,21 @@
       "art": "automat",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "rv8Pavillon": {
       "quelle": "spiel/eigene/riverton_pavillon.png",
@@ -1956,7 +2746,21 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "rv9Bildschirmtisch": {
       "quelle": "spiel/eigene/bildschirmtisch.png",
@@ -1967,7 +2771,21 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "..########..",
+        "...#....#..."
+      ]
     },
     "rv9BildschirmtischKaputt": {
       "quelle": "spiel/eigene/bildschirmtisch_kaputt.png",
@@ -1976,7 +2794,21 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "kaputt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "..########..",
+        "...#....#..."
+      ]
     },
     "rv9Bogenfenster": {
       "quelle": "spiel/eigene/bogenfenster_halle.png",
@@ -2207,7 +3039,17 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        ".######."
+      ]
     },
     "rv14SpindRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
@@ -2217,7 +3059,17 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        ".######."
+      ]
     },
     "rv14FigurWeissTurm": {
       "quelle": "spiel/eigene/figur_gross_weiss_turm.png",
@@ -2226,7 +3078,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "####", "####"]
     },
     "rv14FigurWeissKoenig": {
       "quelle": "spiel/eigene/figur_gross_weiss_koenig.png",
@@ -2235,7 +3088,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "####", "####"]
     },
     "rv14FigurWeissBauer": {
       "quelle": "spiel/eigene/figur_gross_weiss_bauer.png",
@@ -2244,7 +3098,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "###.", "###."]
     },
     "rv14FigurWeissSpringer": {
       "quelle": "spiel/eigene/figur_gross_weiss_springer.png",
@@ -2253,7 +3108,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "###.", "###.", "####", "####"]
     },
     "rv14FigurWeissLaeufer": {
       "quelle": "spiel/eigene/figur_gross_weiss_laeufer.png",
@@ -2262,7 +3118,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "####", "####"]
     },
     "rv14FigurWeissDame": {
       "quelle": "spiel/eigene/figur_gross_weiss_dame.png",
@@ -2280,7 +3137,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "####", "####"]
     },
     "rv14FigurSchwarzKoenig": {
       "quelle": "spiel/eigene/figur_gross_schwarz_koenig.png",
@@ -2289,7 +3147,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "####", "####"]
     },
     "rv14FigurSchwarzBauer": {
       "quelle": "spiel/eigene/figur_gross_schwarz_bauer.png",
@@ -2298,7 +3157,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "###.", "###."]
     },
     "rv14FigurSchwarzSpringer": {
       "quelle": "spiel/eigene/figur_gross_schwarz_springer.png",
@@ -2307,7 +3167,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "###.", "###.", "####", "####"]
     },
     "rv14FigurSchwarzLaeufer": {
       "quelle": "spiel/eigene/figur_gross_schwarz_laeufer.png",
@@ -2316,7 +3177,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", "####", "####"]
     },
     "rv14FigurSchwarzDame": {
       "quelle": "spiel/eigene/figur_gross_schwarz_dame.png",
@@ -2352,7 +3214,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["##..", "##..", "....", "...."]
     },
     "rvPavillonAchteck": {
       "quelle": "spiel/eigene/pavillon_achteck.png",

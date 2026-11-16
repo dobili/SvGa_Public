@@ -156,12 +156,17 @@ BLICKZIELE = {"fernseher", "kamin"}
 SCHRANKARTEN = {"schrank", "regal"}
 
 
-def _sperrfelder(gesetzt: list[dict]) -> set[tuple[int, int]]:
-    """Kacheln unter Möbeln mit Kollision (Fußfläche ohne die oberste Reihe hoher Möbel)."""
+def _sperrfelder(gesetzt: list[dict], belegung: bool = False) -> set[tuple[int, int]]:
+    """Kacheln unter Möbeln mit Kollision (Fußfläche ohne die oberste Reihe hoher Möbel). Mit
+    ``belegung`` die grobe Fläche ohne feine Katalogmaske (``kartenbau._belegung``, 10.88)."""
     felder: set[tuple[int, int]] = set()
     for s in gesetzt:
         if s["kollision"]:
             x0, y0 = s["x"] // K, s["y"] // K
+            if belegung and "maske_belegung" in s:
+                s = {k: v for k, v in s.items() if k != "maske"} | (
+                    {"maske": s["maske_belegung"]} if s["maske_belegung"] is not None else {}
+                )
             felder |= {(x0 + a, y0 + b) for a, b in maskenfelder(s)}
     return felder
 
@@ -193,7 +198,7 @@ def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list
     boden = {(x, y) for y, z in enumerate(zeilen) for x, c in enumerate(z) if c not in GESPERRT}
     if not boden:
         return []
-    anteil = len(_sperrfelder(gesetzt) & boden) / len(boden)
+    anteil = len(_sperrfelder(gesetzt, belegung=True) & boden) / len(boden)
     hoechstens = BELEGUNG_DICHT if szene.get("dicht") else BELEGUNG_MAX
     mindestens = BELEGUNG_STOLLEN if szene.get("stollen") else BELEGUNG_MIN
     if anteil < mindestens:

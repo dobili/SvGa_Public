@@ -38,7 +38,7 @@ from pipeline.abenteuer.kollisionfein import feinlisten, gib_frei_fein
 from pipeline.abenteuer.kollisionspinsel import gib_frei, pinselbefunde, pinselfelder, pinselhinweise
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.objektform import deckkraftangabe, formangaben, geformt
+from pipeline.abenteuer.objektform import deckkraftangabe, formangaben, geformt, hat_form
 from pipeline.abenteuer.objektkollision import kollision_an, kollisionsbefunde
 from pipeline.abenteuer.saum import saumbefunde
 from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
@@ -125,10 +125,11 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             **deckkraftangabe(eintrag),  # Deckkraft 25 bis 75 % (objektform.py), nur das Bild
             # Eigene Maske der Szene, geformt, für die Eigenschaft „maske“ der Tiled-Karte; die feine
             # Maske (kollisionfein.py) dazu als „maske_fein“.
-            **({"objektmaske": angabe["maske"]} if "maske" in eintrag or "maske_fein" in angabe else {}),
+            **({"objektmaske": angabe["maske"]} if "maske" in eintrag or am_objekt(angabe, eintrag) else {}),
             **({"maske_fein": angabe["maske_fein"]} if "maske_fein" in angabe else {}),
-            **({"objektmaske_fein": angabe["maske_fein"]} if "maske_fein" in angabe else {}),
+            **({"objektmaske_fein": angabe["maske_fein"]} if am_objekt(angabe, eintrag) else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
+            **_belegung(moebel.get(eintrag["moebel"]), angabe, eintrag),
         }
         # Bedingte Möbel (wenn, Sprache von bedingung.py): Was auf einem bedingten Möbel steht,
         # erbt dessen Bedingung (Calloways Tisch mit Brett). Die App zeigt sie nur, wenn sie gilt.
@@ -141,6 +142,23 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     gib_frei(gesetzt, szene)  # Freigaben des Kollisionspinsels stechen Möbel und Masken
     gib_frei_fein(gesetzt, szene)  # ebenso die feinen Freigaben, Zelle für Zelle (kollisionfein.py)
     return gesetzt, befunde
+
+
+def am_objekt(angabe: dict, eintrag: dict) -> bool:
+    """Ob die feine Maske an das Tiled-Objekt muss: eigene des Eintrags oder geformt (gedreht,
+    gespiegelt). Die ungeformte des Katalogs (feinmasken.py) liest die App aus moebel.json; das spart
+    gut ein Megabyte im Paket. Gleiche Regel: App ``oberwelt/moebelform.geformtAusObjekt``."""
+    return "maske_fein" in angabe and ("maske_fein" in eintrag or hat_form(eintrag))
+
+
+def _belegung(roh: dict | None, angabe: dict, eintrag: dict) -> dict:
+    """Mit feiner Katalogmaske (feinmasken.py, KARTENREGELN 10.88) die grobe Fläche des Möbels ohne
+    sie, als ``maske_belegung`` (None: Standardregel): Die Belegung eines Raums (8.2) zählt, wo Möbel
+    stehen, nicht nur ihre Standfläche. Ohne feine Katalogmaske: nichts."""
+    if roh is None or "maske_fein" not in roh or "maske_fein" not in angabe or "maske_fein" in eintrag:
+        return {}
+    grob = geformt({k: v for k, v in roh.items() if k != "maske_fein"}, eintrag) or {}
+    return {"maske_belegung": grob.get("maske")}
 
 
 def sperrfelder(stueck: dict) -> set[tuple[int, int]]:

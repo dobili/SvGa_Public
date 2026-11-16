@@ -38,7 +38,10 @@ export interface Formbare {
   readonly hoehe: number;
   readonly frei_unten?: number;
   readonly maske?: readonly string[];
-  /** Feine Maske je Kachel 4 × 4 Zellen (feinsperren.ts); steht nur am Objekt, nie im Katalog. */
+  /**
+   * Feine Maske je Kachel 4 × 4 Zellen (feinsperren.ts). Wirksam ist nur die am Objekt; die des
+   * Katalogs (feinmasken.py) schreibt der Kartenbau geformt dorthin.
+   */
   readonly maske_fein?: readonly string[];
 }
 
@@ -139,6 +142,11 @@ function geformtBeschnitten<T extends Formbare>(roh: T, form: Moebelform): T {
   return { ...angabe, breite, hoehe, maske } as T;
 }
 
+/** Die Angabe ohne `maske_fein` (die des Katalogs; wirksam ist nur die am Objekt). */
+function ohneFeineMaske<T extends Formbare>(angabe: T): T {
+  return Object.fromEntries(Object.entries(angabe).filter(([k]) => k !== "maske_fein")) as T;
+}
+
 /** Trenner der Maskenreihen in der Tiled-Eigenschaft `maske` (pipeline/abenteuer/objektkollision.py). */
 const REIHENTRENNER = "/";
 
@@ -154,8 +162,13 @@ export function geformtAusObjekt<T extends Formbare>(
   eigenschaften: readonly { readonly name?: string; readonly value?: unknown }[] | undefined,
 ): T {
   const form = formAus(eigenschaften);
-  const geformte = geformt(angabe, form);
   const maske = eigenschaften?.find((e) => e.name === "maske")?.value;
+  // Die feine Maske des Katalogs (pipeline/abenteuer/feinmasken.py) gilt ungeformt und ohne eigene
+  // Maske der Szene; geformt schreibt der Kartenbau sie an das Objekt (kartenbau.am_objekt), mit
+  // Maßstab oder Zuschnitt gilt die grobe Regel (objektform.py).
+  const roh = geformt(angabe, form);
+  const katalogFein = roh.maske_fein && !hatForm(form) && typeof maske !== "string";
+  const geformte = roh.maske_fein && !katalogFein ? ohneFeineMaske(roh) : roh;
   const mitMaske =
     typeof maske === "string" ? { ...geformte, maske: maske.split(REIHENTRENNER) } : geformte;
   // Feine Maske (Karteneditor 1.6, feinsperren.ts), schon geformt wie `maske`.

@@ -4,20 +4,49 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_5.png",
       "breite": 16,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####"
+      ]
     },
     "ldFass": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brown_Barrel_1.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "ldKarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Empty.png",
       "lauf": "waagrecht",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "#######.",
+        ".###.#.."
+      ]
     },
     "ldTisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_275.png",
@@ -35,19 +64,57 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_407.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "ldOfen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/2_Living_Room_Singles/Living_Room_Singles_114.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "........",
+        "........"
+      ]
     },
     "ldKommode": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_56.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".##..##.",
+        "........"
+      ]
     },
     "ldTheke": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_285.png",
@@ -117,7 +184,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "..##########.#########..",
+        "...##################...",
+        "...##################...",
+        "....###########.##.##...",
+        "....###############.##..",
+        "....###..#####.#######..",
+        "....###..###.##.##.###..",
+        "....###..##..####..##...",
+        "....##...##...######....",
+        "................###....."
+      ]
     },
     "el7DroschkeB": {
       "quelle": "spiel/eigene/droschke.png",
@@ -129,7 +214,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "..##########.#########..",
+        "...##################...",
+        "...##################...",
+        "....###########.##.##...",
+        "....###############.##..",
+        "....###..#####.#######..",
+        "....###..###.##.##.###..",
+        "....###..##..####..##...",
+        "....##...##...######....",
+        "................###....."
+      ]
     },
     "el7Zeitungskarren": {
       "quelle": "spiel/eigene/zeitungskarren.png",
@@ -139,7 +242,17 @@
       "art": "karren",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        ".#######",
+        ".##.####",
+        "..#.###."
+      ]
     },
     "el7Gaslaterne": {
       "quelle": "spiel/eigene/gaslaterne.png",
@@ -149,7 +262,21 @@
       "art": "lampe",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "el7Lederbank3": {
       "quelle": "spiel/eigene/lederbank_laengs_3.png",
@@ -189,7 +316,8 @@
       "art": "kerze",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", ".##.", ".##."]
     },
     "el7Zeitungshalter": {
       "quelle": "spiel/eigene/zeitungshalter.png",
@@ -199,7 +327,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "el7FassadeD": {
       "quelle": "spiel/eigene/fassade_london_d_tief.png",

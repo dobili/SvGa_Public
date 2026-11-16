@@ -18,7 +18,17 @@
       "kollision": true,
       "art": "material",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "st8GranitquaderStapel": {
       "quelle": "spiel/eigene/granitquader_stapel.png",
@@ -27,7 +37,21 @@
       "kollision": true,
       "art": "material",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "st8FeldbahnLaengs": {
       "quelle": "spiel/eigene/feldbahn_laengs.png",
@@ -97,7 +121,33 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "############",
+        "############",
+        "############",
+        "############",
+        "...######...",
+        ".##########.",
+        "############",
+        "############",
+        "############",
+        ".##########."
+      ]
     },
     "st5Bauholz": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_1.png",
@@ -106,7 +156,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "st5Werkzeugkiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_1.png",
@@ -115,7 +166,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######"
+      ]
     },
     "st5GraffitiWolf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Wolf_Clean_Graffiti.png",
@@ -174,7 +235,29 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        "....###.....",
+        ".....##....."
+      ]
     },
     "st5BirkeKlein": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tree_Birch_Green_Medium_16x16.png",
@@ -183,7 +266,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        ".....##.....",
+        ".....##....."
+      ]
     },
     "st5Lore": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Small_Wood_Cart_Empty.png",
@@ -193,7 +294,17 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".########...",
+        "#########...",
+        "#######.....",
+        "..#####....."
+      ]
     },
     "st5Bude": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Junk_Shack_1.png",
@@ -251,7 +362,8 @@
       "kollision": true,
       "art": "haufen",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".####..###..", "###########.", ".##########.", "...#####...."]
     },
     "st5Steinpalette": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_5.png",
@@ -260,7 +372,21 @@
       "kollision": true,
       "art": "material",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "####...."
+      ]
     },
     "st5Bohlen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_6.png",
@@ -269,7 +395,21 @@
       "kollision": true,
       "art": "material",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "st5Schuppen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
@@ -288,7 +428,25 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "....##.#######..",
+        "....##.#######..",
+        "...###########..",
+        "...############.",
+        "...############.",
+        "...############.",
+        "...###########..",
+        "....##..####....",
+        ".........##....."
+      ]
     },
     "st11Eingangslicht": {
       "quelle": "spiel/eigene/stollenlicht.png",

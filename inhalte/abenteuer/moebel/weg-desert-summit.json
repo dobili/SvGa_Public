@@ -7,7 +7,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "wds6PinieB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
@@ -16,7 +30,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wds6Kegelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
@@ -25,7 +40,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "wds6Wacholder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
@@ -34,7 +67,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wds6WacholderB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_19.png",
@@ -43,7 +86,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wds6Fels": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -89,7 +142,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["............", "............", ".##########.", "..#########."]
     },
     "wds6Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -99,7 +153,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."]
     },
     "wds6Warnschild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_5.png",
@@ -109,7 +164,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "###."]
     },
     "wds6Holzstapel": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Trunk_Load_Big_Vertical_16x16.png",
@@ -118,7 +174,17 @@
       "kollision": true,
       "art": "material",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "wds6Quelle": {
       "quelle": "spiel/eigene/pfuetze_fels_gross.png",
@@ -137,7 +203,8 @@
       "art": "briefkasten",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
     },
     "wds6Schranke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Barrier_1.png",
@@ -146,7 +213,8 @@
       "kollision": true,
       "art": "absperrung",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "wds6LeitplankeL2": {
       "quelle": "spiel/eigene/leitplanke_laengs_2.png",
@@ -156,7 +224,8 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["........", "#.###.##", "########", ".#...#.."]
     },
     "wds6LeitplankeQ2": {
       "quelle": "spiel/eigene/leitplanke_quer_2.png",
@@ -184,7 +253,21 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "wds6LeitplankeL4": {
       "quelle": "spiel/eigene/leitplanke_laengs_4.png",
@@ -194,7 +277,8 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["................", "#.###.###.###.##", "################", ".#...#...#...#.."]
     },
     "wds6LeitplankeQ4": {
       "quelle": "spiel/eigene/leitplanke_quer_4.png",
@@ -213,7 +297,13 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "#.###.###.###.###.##",
+        "####################",
+        ".#...#...#...#...#.."
+      ]
     },
     "wds6LeitplankeQ5": {
       "quelle": "spiel/eigene/leitplanke_quer_5.png",
@@ -232,7 +322,13 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........................",
+        "#.###.###.###.###.###.##",
+        "########################",
+        ".#...#...#...#...#...#.."
+      ]
     },
     "wds6LeitplankeQ6": {
       "quelle": "spiel/eigene/leitplanke_quer_6.png",
@@ -251,7 +347,13 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............................",
+        "#.###.###.###.###.###.###.##",
+        "############################",
+        ".#...#...#...#...#...#...#.."
+      ]
     },
     "wds6LeitplankeQ7": {
       "quelle": "spiel/eigene/leitplanke_quer_7.png",
@@ -270,7 +372,13 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "................................",
+        "#.###.###.###.###.###.###.###.##",
+        "################################",
+        ".#...#...#...#...#...#...#...#.."
+      ]
     },
     "wds6LeitplankeQ8": {
       "quelle": "spiel/eigene/leitplanke_quer_8.png",
@@ -290,7 +398,29 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".##############.....",
+        ".##############.....",
+        ".##############.....",
+        ".##############.....",
+        ".##############.....",
+        ".###############....",
+        ".################...",
+        ".#################..",
+        "##################..",
+        "##########...#####..",
+        "###########..#####..",
+        "####....###..#####..",
+        "........###..#####..",
+        "..............###...",
+        "....................",
+        "...................."
+      ]
     },
     "wds6Container": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Dumpster_1.png",
@@ -300,7 +430,17 @@
       "art": "behaelter",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "wds6Wasserturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_1.png",
@@ -320,7 +460,33 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "wds6Tankstelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Petrol_Pump_1.png",
@@ -340,7 +506,17 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "wds6Reifen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tire_1.png",
@@ -359,7 +535,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "wds6Ortsschild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -369,7 +546,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."]
     },
     "wds6Wohnwagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_1.png",
@@ -379,7 +557,33 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "####################....",
+        "####################....",
+        "####################....",
+        "####################....",
+        "#######################.",
+        "#######################.",
+        "#######################.",
+        "#######################.",
+        "#######################.",
+        "####################....",
+        "####################....",
+        "####################....",
+        ".###################...."
+      ]
     },
     "wds6Diner": {
       "quelle": "spiel/eigene/diner_wagen.png",
@@ -413,7 +617,29 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        ".....##.....",
+        "............"
+      ]
     },
     "wds6SchildDiner": {
       "quelle": "spiel/eigene/schild_kings_diner.png",
@@ -447,7 +673,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        "########################################",
+        ".#######################################",
+        ".######################################.",
+        "..###.####..............####.###.####...",
+        "...#..........................#........."
+      ]
     },
     "wds6SattelzugBlau": {
       "quelle": "spiel/eigene/sattelzug_blau.png",
@@ -457,7 +701,25 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        "........................................",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        ".#######################################",
+        "########################################",
+        ".#######################################",
+        ".######################################.",
+        "..###.####..............####.###.####...",
+        "...#..........................#........."
+      ]
     },
     "wds6Saguaro": {
       "quelle": "spiel/eigene/kaktus_saguaro.png",
@@ -467,7 +729,25 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...##...",
+        "........"
+      ]
     },
     "wds6KaktusKlein": {
       "quelle": "spiel/eigene/kaktus_klein.png",
@@ -477,7 +757,8 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".#.."]
     },
     "wds6KaktusBluehend": {
       "quelle": "spiel/eigene/kaktus_bluehend.png",
@@ -487,7 +768,17 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "...##..."
+      ]
     },
     "wds6SteinRot": {
       "quelle": "spiel/eigene/stein_flach_rot.png",
@@ -527,7 +818,8 @@
       "art": "spiel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "wds6Windrad": {
       "quelle": "spiel/eigene/windrad.png",
@@ -537,7 +829,33 @@
       "art": "windrad",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..#..##..#..",
+        ".##########.",
+        "............"
+      ]
     },
     "sc8Funkgeraet": {
       "quelle": "spiel/eigene/cb_funkgeraet.png",
@@ -546,7 +864,8 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "####", "####", "###."]
     },
     "sc8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_blech.png",
@@ -590,7 +909,25 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "modern",
-      "hinweis": "leeres Motelbecken mit Rissen, Sand, rostiger Leiter und drei Saguaros (Gemini 15.11.2026)"
+      "hinweis": "leeres Motelbecken mit Rissen, Sand, rostiger Leiter und drei Saguaros (Gemini 15.11.2026)",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        ".######################.",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################"
+      ]
     }
   }
 }

@@ -131,7 +131,21 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..#########.",
+        "....####..#.",
+        "....####....",
+        ".....##.....",
+        ".....#......",
+        "............"
+      ]
     },
     "wr5Heu": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hay_Fresh_Pile_16x16.png",
@@ -140,7 +154,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["..####..", "..####..", ".#####..", "..####.."]
     },
     "wr5Kohl": {
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Cabbage_Ripe_16x16.png",
@@ -149,7 +164,8 @@
       "kollision": true,
       "art": "feldfrucht",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "####", "###.", "...."]
     },
     "wr5Kuerbis": {
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Ripe_16x16.png",
@@ -167,7 +183,29 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        "....###.....",
+        ".....##....."
+      ]
     },
     "wr5PappelHoch": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Green_Huge_16x16.png",
@@ -176,7 +214,41 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......###.......",
+        "......###.......",
+        "......###......."
+      ]
     },
     "wr5PappelGelb": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Yellow_Big_16x16.png",
@@ -185,7 +257,29 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        "....###.....",
+        ".....##....."
+      ]
     },
     "wr5Eiche": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Oak_Green_Medium_16x16.png",
@@ -194,7 +288,29 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......###.......",
+        ".......##......."
+      ]
     },
     "wr5Container": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Container_1.png",
@@ -203,7 +319,21 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".#############..",
+        ".#############..",
+        ".#############..",
+        ".#############..",
+        ".#############..",
+        "..############.."
+      ]
     },
     "wr5Autowrack": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Car_Wreck_4.png",
@@ -212,7 +342,25 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "alt",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "###############.",
+        "###############.",
+        "################",
+        "################",
+        "################",
+        "################",
+        ".###############",
+        "..#############."
+      ]
     },
     "wr5Leiterwagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Full_1.png",
@@ -222,7 +370,21 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "#######.",
+        ".###.#.."
+      ]
     },
     "wr5Karren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Small_Wood_Cart_Full_1.png",
@@ -231,7 +393,17 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".########...",
+        "#########...",
+        "#######.....",
+        "..#####....."
+      ]
     },
     "wr5MauerLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Wall_4.png",
@@ -356,7 +528,8 @@
       "kollision": true,
       "art": "feldfrucht",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", ".##.", ".###", "###.", ".##."]
     },
     "wr8Karotte": {
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Carrot_Ripe_1_16x16.png",
@@ -365,7 +538,8 @@
       "kollision": true,
       "art": "feldfrucht",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "##..", "###.", "...."]
     },
     "wr8Blumenkohl": {
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Cauliflower_Ripe_16x16.png",
@@ -413,7 +587,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "##....##"
+      ]
     },
     "ri8Kreidespringer": {
       "quelle": "spiel/eigene/kreidespringer.png",
@@ -455,7 +639,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "..##", "..##"]
     },
     "wr14Kutter": {
       "quelle": "spiel/eigene/kutter_laengs.png",

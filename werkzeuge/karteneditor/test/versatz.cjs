@@ -23,7 +23,14 @@ const schirm = (seite, px, py) =>
 
 async function versatz(seite, pruefe) {
   await seite.keyboard.press("Escape");
-  const a = await sperrendesObjekt(seite);
+  // Ein Möbel mit grober, sperrender Maske: Die feinen Katalogmasken (KARTENREGELN 10.88)
+  // bearbeitet der Editor in Zellen, dieser Test prüft die Kachelmaske.
+  const fein = await seite.evaluate(() =>
+    KE.platziere(KE.szene())
+      .filter((s) => s.angabe.maske_fein || !KE.maskenfelder(s.angabe).length)
+      .map((s) => s.uid),
+  );
+  const a = await sperrendesObjekt(seite, fein);
   await seite.mouse.click(a.p.x, a.p.y);
   for (let i = 0; i < 5; i++) await seite.keyboard.press("ArrowRight");
   const lage = await seite.evaluate((u) => {

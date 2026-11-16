@@ -128,7 +128,9 @@ def pruefe_engstellen(szene: dict, zeilen: list[str], gesetzt: list[dict], moebe
     grob = ohne_fein(szene)
     figuren = {z for f in figurenfelder(szene) for z in kachelzellen(f)}
     mit = sperrzellen(zeilen, gesetzt, szene) | figuren
-    ohne = sperrzellen(zeilen, platziere(grob, moebel)[0], grob) | figuren
+    # „Vorher“ auch ohne die feinen Masken des Katalogs (feinmasken.py, KARTENREGELN 10.88).
+    grobkatalog = {n: {k: v for k, v in a.items() if k != "maske_fein"} for n, a in moebel.items()}
+    ohne = sperrzellen(zeilen, platziere(grob, grobkatalog)[0], grob) | figuren
     ziele = _ziele(szene)
     if not ziele:
         return [], []

@@ -59,7 +59,8 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "###."]
     },
     "cp8Solarpaneel": {
       "quelle": "spiel/eigene/solarpaneel.png",
@@ -99,7 +100,21 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "########",
+        "########",
+        "########",
+        "##..####",
+        "#...####"
+      ]
     },
     "tk9Kanister": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Petrol_Pump_Props_5.png",
@@ -148,7 +163,21 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "verwittert",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "###############.",
+        ".######....##..."
+      ]
     },
     "pg13TankstelleVerlassen": {
       "quelle": "spiel/eigene/tankstelle_verlassen.png",

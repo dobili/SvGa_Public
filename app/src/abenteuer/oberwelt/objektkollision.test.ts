@@ -42,4 +42,19 @@ describe("Kollision je Objekt", () => {
     expect(angabe.maske).toEqual([".#", "..", "..", ".."]);
     expect(geformtAusObjekt(SOFA, undefined)).toBe(SOFA);
   });
+
+  it("nimmt die feine Maske des Katalogs nur ungeformt und ohne eigene Maske (KARTENREGELN 10.88)", () => {
+    // Stuhl 16 × 32: Nur die Beine sperren, die Lehne oben bleibt frei (pipeline/abenteuer/feinmasken.py).
+    const fein = ["....", "....", "....", "....", "####", "####", "....", "...."];
+    const stuhl = { breite: 16, hoehe: 32, kollision: true, maske_fein: fein };
+    expect(geformtAusObjekt(stuhl, []).maske_fein).toEqual(fein);
+    expect(geformtAusObjekt(stuhl, [{ name: "massstab", value: 2 }]).maske_fein).toBeUndefined();
+    expect(geformtAusObjekt(stuhl, [{ name: "maske", value: "./#" }]).maske_fein).toBeUndefined();
+    // Gedreht schreibt der Kartenbau die geformte feine Maske an das Objekt (kartenbau.am_objekt).
+    const gedreht = geformtAusObjekt(stuhl, [
+      { name: "drehung", value: 90 },
+      { name: "maske_fein", value: "......../........" },
+    ]);
+    expect(gedreht.maske_fein).toEqual(["........", "........"]);
+  });
 });

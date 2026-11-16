@@ -7,7 +7,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wc5ZederSchmal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png",
@@ -16,7 +17,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wc5Kegelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
@@ -25,7 +27,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wc5Farn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_7.png",
@@ -67,7 +70,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "wc5SteinB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_4.png",
@@ -76,7 +80,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [".##.", "####", "####", "...."]
     },
     "wc5Gras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
@@ -96,7 +101,8 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", ".##."]
     },
     "wc5Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
@@ -105,7 +111,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wc5BuschB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_19.png",
@@ -114,7 +130,17 @@
       "kollision": true,
       "art": "busch",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "..####.."
+      ]
     },
     "wc5Felsgruppe": {
       "quelle": "spiel/serene/serene_29.png",
@@ -132,7 +158,17 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "#######.",
+        "#######.",
+        ".###...."
+      ]
     },
     "wc5Wildblumen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Flowers_4.png",
@@ -185,7 +221,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."]
     },
     "wc5StammB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_19.png",
@@ -194,7 +231,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."]
     },
     "wc5Tafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png",
@@ -204,7 +242,17 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "wc5Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_7.png",
@@ -214,7 +262,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "wc5Stumpf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
@@ -223,7 +272,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "..###...", "..###..."]
     },
     "wc5Ast": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_11.png",
@@ -243,7 +293,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wc5BirkeKlein": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Green_Medium_16x16.png",
@@ -252,7 +303,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wc5BirkeHerbst": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Brown_Big_16x16.png",
@@ -261,7 +313,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "wc5ToteZeder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_Dead_15.png",
@@ -270,7 +323,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "alt",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....####....",
+        "....####....",
+        "....####...."
+      ]
     },
     "wc5Zelt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png",
@@ -383,7 +450,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "wc5Bahnbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Frontal_1.png",
@@ -393,7 +461,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["............", "############", "############", ".#...#....#."]
     },
     "wc5Schild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
@@ -403,7 +472,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "wc5Laubbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
@@ -412,7 +482,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......",
+        "......####......"
+      ]
     },
     "wc5LaubbaumB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_37.png",
@@ -421,7 +509,25 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......"
+      ]
     },
     "wc5Erle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_170.png",
@@ -430,7 +536,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...###..",
+        "...###.."
+      ]
     },
     "wc5ZaunOL": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Left_16x16.png",
@@ -439,14 +559,16 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5ZaunOM": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Middle_16x16.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
-      "art": "zaun"
+      "art": "zaun",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5ZaunOR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Right_16x16.png",
@@ -455,21 +577,24 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5ZaunML": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Left_16x16.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
-      "art": "zaun"
+      "art": "zaun",
+      "maske_fein": ["....", "....", "##..", "##.."]
     },
     "wc5ZaunMR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": true,
-      "art": "zaun"
+      "art": "zaun",
+      "maske_fein": ["....", "....", "..##", "..##"]
     },
     "wc5ZaunUL": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -478,7 +603,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5ZaunUM": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Middle_16x16.png",
@@ -487,7 +613,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5ZaunUR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Right_16x16.png",
@@ -496,7 +623,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5Tor1": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
@@ -505,7 +633,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5Tor2": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
@@ -514,7 +643,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc5Signal": {
       "quelle": "spiel/eigene/bahn_signal.png",
@@ -523,7 +653,21 @@
       "kollision": true,
       "art": "signal",
       "stil": "industrie",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "wc5Plakatwand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_1.png",
@@ -533,7 +677,33 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "wc5Gartenhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
@@ -573,7 +743,8 @@
       "kollision": true,
       "art": "blume",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "###.", ".#.."]
     },
     "wc5Kuerbis": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Pumpkin_Ripe_16x16.png",
@@ -582,7 +753,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "####"]
     },
     "wc5Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -612,7 +784,21 @@
       "kollision": true,
       "art": "baumstumpf",
       "zustand": "alt",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....###....",
+        ".....###...."
+      ]
     },
     "wc5Waggon": {
       "quelle": "spiel/eigene/bahn_gueterwagen.png",
@@ -620,7 +806,25 @@
       "hoehe": 64,
       "kollision": true,
       "stil": "industrie",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "..###.###......###.###.."
+      ]
     },
     "wc5WaggonLeer": {
       "quelle": "spiel/eigene/bahn_gueterwagen_leer.png",
@@ -628,7 +832,25 @@
       "hoehe": 64,
       "kollision": true,
       "stil": "industrie",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "..###.###......###.###.."
+      ]
     },
     "wc5Durchlass": {
       "quelle": "spiel/eigene/bahn_durchlass.png",
@@ -668,7 +890,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "wc8ZaunEndeRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Right_16x16.png",
@@ -677,7 +900,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc8ZaunEndeLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Left_16x16.png",
@@ -686,7 +910,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "wc8PlakatwandPM": {
       "quelle": "spiel/eigene/plakatwand_perfect_move.png",
@@ -696,7 +921,33 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "........####........",
+        "........####........",
+        ".........##........."
+      ]
     },
     "wc8TorOffen1": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
@@ -748,7 +999,17 @@
       "art": "bank",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        ".#.......##.",
+        "##.......##."
+      ]
     },
     "wc11HolzbrueckeQuer": {
       "quelle": "spiel/eigene/holzbruecke_waagrecht.png",

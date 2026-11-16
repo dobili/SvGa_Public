@@ -28,7 +28,17 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####.#",
+        "..####.#",
+        "##....#.",
+        "##....#."
+      ]
     },
     "gc7Steg": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_7.png",
@@ -47,7 +57,25 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "###########.",
+        ".##########.",
+        "..########..",
+        ".....##.....",
+        ".....##.....",
+        "....####....",
+        "....####....",
+        "....####...."
+      ]
     },
     "gc7SchirmZu": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Blue_Beach_Umbrella_Closed.png",
@@ -56,7 +84,25 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        ".##.",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "gc7Handtuch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Blue_Beach_Towel_1.png",
@@ -84,7 +130,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", "...."]
     },
     "gc7Treibholz": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Floating_Wood_2.png",
@@ -104,7 +151,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "gc7KieferB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
@@ -113,7 +174,21 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "gc7Tafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png",
@@ -123,7 +198,17 @@
       "art": "tafel",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######."
+      ]
     },
     "gc7Picknicktisch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
@@ -144,7 +229,8 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "gc7Kisten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_4.png",
@@ -153,7 +239,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "#######.",
+        "########",
+        "...####."
+      ]
     },
     "gc7Muelleimer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bin_1.png",
@@ -163,7 +259,8 @@
       "art": "mulleimer",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["###.", "####", "###.", ".##."]
     },
     "gc7Laubbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
@@ -172,7 +269,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
     },
     "gc7Birke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_50.png",
@@ -181,7 +279,8 @@
       "kollision": true,
       "art": "baum",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "gc7SchirmRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Green_Beach_Umbrella_Closed.png",
@@ -190,7 +289,25 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        ".##.",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "gc7Schilf": {
       "quelle": "spiel/eigene/schilf.png",
@@ -210,7 +327,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "gc7FelsFlach": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_7.png",
@@ -219,7 +337,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".##.", "####", "####", ".##."]
     },
     "gc7Leuchtturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Lighthouse.png",
@@ -331,7 +450,8 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", ".##.", ".##.", "...."]
     },
     "gc10Linse": {
       "quelle": "spiel/eigene/alte_linse.png",
@@ -341,7 +461,17 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        ".######.",
+        "########"
+      ]
     },
     "gc12Eiswagen": {
       "quelle": "spiel/eigene/eiswagen_vorn.png",
@@ -351,7 +481,33 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########..",
+        "..########.."
+      ]
     },
     "gc12Hotdogwagen": {
       "quelle": "spiel/eigene/hotdogwagen_vorn.png",
@@ -361,7 +517,33 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..#########.",
+        "..#########.",
+        "..#########.",
+        "..#########.",
+        "..#######...",
+        "..#######...",
+        "..#######...",
+        ".########...",
+        ".########...",
+        "..#######...",
+        "..#######...",
+        "..#######...",
+        "..#######..."
+      ]
     },
     "gcFaehrhausHolz": {
       "quelle": "spiel/eigene/faehrhaus_see.png",

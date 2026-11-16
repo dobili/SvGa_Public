@@ -109,10 +109,11 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
     if angabe is None:
         return None
     eigene = eintrag.get("maske")
+    fein = _feine_maske_von(angabe, eintrag)
     if not hat_form(eintrag):
         neu = angabe if eigene is None else {**angabe, "maske": list(eigene)}
         spalten, reihen = max(1, angabe["breite"] // K), max(1, angabe["hoehe"] // K)
-        return _mit_feiner_maske(neu, eintrag, spalten, reihen)
+        return _mit_feiner_maske(neu, fein, eintrag, spalten, reihen)
     # Zuschnitt zuerst (objektzuschnitt.py): kleineres Bild, Katalogmaske mitbeschnitten.
     angabe, beschnitt = beschnitten(angabe, eintrag)
     neu = dict(angabe)
@@ -131,20 +132,36 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
         neu.pop("maske", None)
     if drehung:
         neu.pop("frei_unten", None)
-    return _mit_feiner_maske(neu, eintrag, spalten, reihen)
+    return _mit_feiner_maske(neu, fein, eintrag, spalten, reihen)
 
 
-def _mit_feiner_maske(angabe: dict, eintrag: dict, spalten: int, reihen: int) -> dict:
-    """Die feine Maske des Eintrags (kollisionfein.py), gedreht und gespiegelt wie das Bild, und
-    dazu die grobe ``maske`` (eine Kachel sperrt, wenn eine ihrer Zellen sperrt). Ohne
-    ``maske_fein`` (oder ungültig) bleibt die Angabe, wie sie ist.
+def _feine_maske_von(angabe: dict, eintrag: dict) -> list | None:
+    """Die feine Maske, die für das Objekt gilt: die des Eintrags, sonst die des Katalogs.
+
+    Warum: Der Katalog trägt seit 16.11.2026 feine Masken nach der Standfläche (``feinmasken.py``,
+    KARTENREGELN 10.88). Sie gilt wie die Katalogmaske nur ohne Maßstab und ohne Zuschnitt (sonst die
+    grobe Regel) und nicht, wenn der Eintrag eine eigene ``maske`` hat.
+    Beispiel: Stuhl mit Katalog-``maske_fein`` und ``drehung`` 90 → die Katalogmaske (dreht mit);
+    mit ``massstab`` 2 → None.
+    """
+    fein = eintrag.get("maske_fein")
+    if fein is None and "maske" not in eintrag and float(eintrag.get("massstab", 1)) == 1:
+        fein = angabe.get("maske_fein") if zuschnitt_von(eintrag) is None else None
+    if not isinstance(fein, list) or not all(isinstance(z, str) for z in fein):
+        return None
+    return fein
+
+
+def _mit_feiner_maske(angabe: dict, fein: list | None, eintrag: dict, spalten: int, reihen: int) -> dict:
+    """Die feine Maske (kollisionfein.py), gedreht und gespiegelt wie das Bild, und dazu die grobe
+    ``maske`` (eine Kachel sperrt, wenn eine ihrer Zellen sperrt). Ohne feine Maske fällt eine
+    ``maske_fein`` des Katalogs weg, die Angabe bleibt sonst, wie sie ist.
 
     Beispiel: Kiste 16 × 16 mit ``maske_fein`` ["##..", "##..", "....", "...."] und ``spiegeln`` →
     ``maske_fein`` ["..##", "..##", "....", "...."], ``maske`` ["#"].
     """
-    fein = eintrag.get("maske_fein")
-    if not isinstance(fein, list) or not all(isinstance(z, str) for z in fein):
-        return angabe
+    if fein is None:
+        return {k: v for k, v in angabe.items() if k != "maske_fein"} if "maske_fein" in angabe else angabe
     z = ZELLEN_JE_KACHEL
     drehung, spiegeln = eintrag.get("drehung", 0) % 360, bool(eintrag.get("spiegeln"))
     geformte = drehe_maske(list(fein), spalten * z, reihen * z, drehung, spiegeln)

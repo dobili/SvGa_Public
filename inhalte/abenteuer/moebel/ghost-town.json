@@ -4,13 +4,24 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_1.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        "...###..",
+        "...##..."
+      ]
     },
     "gtHeu": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Hay_Dry_Pile_16x16.png",
       "breite": 32,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["..####..", "..####..", ".#####..", "..####.."]
     },
     "gt7Saloon": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
@@ -86,7 +97,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        "...###..",
+        "...##..."
+      ]
     },
     "gt7KreuzHoch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_3.png",
@@ -142,7 +163,21 @@
       "hoehe": 48,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "...######...",
+        "...######...",
+        "...######...",
+        "...######...",
+        "...#####....",
+        "............"
+      ]
     },
     "gt7Saguaro": {
       "quelle": "spiel/eigene/kaktus_saguaro.png",
@@ -150,7 +185,25 @@
       "hoehe": 64,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...##...",
+        "........"
+      ]
     },
     "gt7Kaktus": {
       "quelle": "spiel/eigene/kaktus_klein.png",
@@ -158,7 +211,8 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".#.."]
     },
     "gt7KaktusBluete": {
       "quelle": "spiel/eigene/kaktus_bluehend.png",
@@ -166,7 +220,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "...##..."
+      ]
     },
     "gt7FelsRot": {
       "quelle": "spiel/eigene/fels_rot.png",
@@ -202,7 +266,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "gt7Schild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
@@ -212,7 +277,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "gt7Haltestelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
@@ -222,7 +288,21 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "gt7Fass": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
@@ -231,7 +311,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "gt7Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -249,7 +330,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "gt7Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_4.png",
@@ -296,7 +378,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7ZaunOM": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Middle_16x16.png",
@@ -305,7 +388,8 @@
       "kollision": true,
       "art": "zaun",
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7ZaunOR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Right_16x16.png",
@@ -314,7 +398,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7ZaunML": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Left_16x16.png",
@@ -323,7 +408,8 @@
       "kollision": true,
       "art": "zaun",
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": ["....", "....", "##..", "##.."]
     },
     "gt7ZaunMR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
@@ -332,7 +418,8 @@
       "kollision": true,
       "art": "zaun",
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": ["....", "....", "..##", "..##"]
     },
     "gt7ZaunUL": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -341,7 +428,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7ZaunUM": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Middle_16x16.png",
@@ -350,7 +438,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7ZaunUR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Right_16x16.png",
@@ -359,7 +448,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7Traenke": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Drinking_Trough_Small_Full_16x16.png",
@@ -396,7 +486,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7ZaunEndeRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -405,7 +496,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "gt7Theke": {
       "quelle": "spiel/eigene/theke_holz_laengs_7.png",
@@ -426,7 +518,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "gt7Klavier": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_17.png",
@@ -436,7 +542,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
     },
     "gt7Treppe": {
       "quelle": "spiel/generic/generic_134.png",
@@ -457,7 +564,8 @@
       "art": "stuhl",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "gt7StuhlL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -467,7 +575,8 @@
       "art": "stuhl",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "gt7Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -477,7 +586,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "gt7TischDunkel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -487,7 +606,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "gt7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -496,7 +625,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "gt7Bild": {
       "quelle": "spiel/generic/generic_037.png",
@@ -515,7 +645,8 @@
       "hoehe": 16,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": ["....", ".###", ".###", ".##."]
     },
     "gt7FassKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
@@ -523,7 +654,8 @@
       "hoehe": 16,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [".##.", "####", "####", "###."]
     },
     "gt7Fussmatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
@@ -542,7 +674,21 @@
       "art": "regal",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "gt7Theke8": {
       "quelle": "spiel/eigene/theke_holz_laengs_8.png",
@@ -649,7 +795,21 @@
       "hoehe": 48,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "verwittert"
+      "zustand": "verwittert",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        ".###############",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        "###############.",
+        "#.#############.",
+        "..####....###...",
+        "................"
+      ]
     },
     "gt7Tumbleweed": {
       "quelle": "spiel/eigene/tumbleweed.png",
@@ -677,7 +837,8 @@
       "hoehe": 16,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [".##.", "####", "####", ".##."]
     },
     "gt7Felsgruppe": {
       "quelle": "spiel/serene/serene_29.png",
@@ -686,7 +847,17 @@
       "kollision": true,
       "art": "stein",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        ".######.",
+        ".######.",
+        "...####."
+      ]
     },
     "gt7FlaschenregalBreit": {
       "quelle": "spiel/eigene/flaschenregal_holz_breit.png",
@@ -696,7 +867,21 @@
       "art": "regal",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################"
+      ]
     },
     "gt7Barhocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_109.png",
@@ -706,7 +891,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "gt8Mietstall": {
       "quelle": "spiel/eigene/fassade_mietstall.png",
@@ -824,7 +1010,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "gt10Traenke": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Drinking_Trough_Horizontal_Full_16x16.png",
@@ -855,7 +1051,37 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "##.#....#.##",
+        "...#....#...",
+        "...#....#...",
+        "...##..##...",
+        "...##..##...",
+        "...##..##..."
+      ]
     },
     "gt12Anbindebalken": {
       "quelle": "spiel/eigene/anbindebalken.png",
@@ -864,7 +1090,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["#..######..#", "#.########.#", ".##......##.", ".#........#."]
     },
     "gt12Weiche": {
       "quelle": "spiel/eigene/weiche_stollen.png",
@@ -885,7 +1112,17 @@
       "maske": ["...", "#.#"],
       "art": "schild",
       "stil": "rustikal",
-      "zustand": "verwittert"
+      "zustand": "verwittert",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##......##.",
+        ".##......##.",
+        ".##......##."
+      ]
     },
     "gt13SchwingtuerDoppel": {
       "quelle": "spiel/eigene/schwingtuer_doppel.png",
@@ -902,7 +1139,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".###########",
+        "############",
+        ".##########.",
+        "............"
+      ]
     },
     "gt14Theke5": {
       "quelle": "spiel/eigene/theke_holz_laengs_5.png",
@@ -924,7 +1171,8 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [".##.", "####", ".###", "####"]
     },
     "gt14SaeckeA": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Sack_Jute_Load_1_16x16.png",
@@ -934,7 +1182,17 @@
       "art": "kiste",
       "zustand": "alt",
       "stil": "rustikal",
-      "beschreibung": "Jutesäcke (Mehl, Bohnen): Ware des Ladens, deshalb am Boden (Regel 10.18)."
+      "beschreibung": "Jutesäcke (Mehl, Bohnen): Ware des Ladens, deshalb am Boden (Regel 10.18).",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "#######.",
+        "........"
+      ]
     },
     "gt14SaeckeB": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Sack_Jute_Load_2_16x16.png",
@@ -944,7 +1202,17 @@
       "art": "kiste",
       "zustand": "alt",
       "stil": "rustikal",
-      "beschreibung": "Jutesäcke, zweite Fassung: Ware des Ladens."
+      "beschreibung": "Jutesäcke, zweite Fassung: Ware des Ladens.",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "#######.",
+        "........"
+      ]
     },
     "gt14Kisten": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Box_Load_16x16.png",
@@ -954,7 +1222,17 @@
       "art": "kiste",
       "zustand": "alt",
       "stil": "rustikal",
-      "beschreibung": "Gestapelte Holzkisten mit Ware im Laden (Lager unter der Treppe)."
+      "beschreibung": "Gestapelte Holzkisten mit Ware im Laden (Lager unter der Treppe).",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "....####"
+      ]
     },
     "gt14Spinnennetz": {
       "quelle": "spiel/eigene/spinnennetz_ecke.png",

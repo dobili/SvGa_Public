@@ -8,7 +8,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9VitrineLokmodell": {
       "quelle": "spiel/eigene/vitrine_lokmodell.png",
@@ -18,7 +32,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9VitrineFahrkarten": {
       "quelle": "spiel/eigene/vitrine_fahrkarten.png",
@@ -28,7 +56,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9FotoBrueckeA": {
       "quelle": "spiel/eigene/foto_bruecke_a.png",
@@ -134,7 +176,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["............", "............", "###########.", ".#........#."]
     },
     "iw9UmkleidebankSenkrecht": {
       "quelle": "spiel/eigene/umkleidebank_senkrecht.png",
@@ -217,7 +260,8 @@
       "kollision": true,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", ".##.", ".##."]
     },
     "iw8Duschkabine": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_152.png",
@@ -227,7 +271,21 @@
       "art": "dusche",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "iw8DuschkabineB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_154.png",
@@ -237,7 +295,21 @@
       "art": "dusche",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".######.",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "iw8Wandspiegel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_67.png",
@@ -259,7 +331,25 @@
       "art": "tresen",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "########################",
+        "########################",
+        "########################",
+        "##............########.#",
+        "#.............###..###.#",
+        "#.............###..###.#",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "################....####"
+      ]
     },
     "iw8VitrineA": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_135.png",
@@ -359,7 +449,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw8Absperrpfosten": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_71.png",
@@ -379,7 +483,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "iw8BildA": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_109.png",
@@ -425,7 +530,8 @@
       "art": "bank",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["........", "........", "########", "########"]
     },
     "iw8Pflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_197.png",
@@ -435,7 +541,21 @@
       "art": "pflanze",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...##...",
+        "........"
+      ]
     },
     "iw8Theke4": {
       "quelle": "spiel/eigene/theke_holz_laengs_4.png",
@@ -512,50 +632,106 @@
       "kollision": true,
       "art": "ware",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske_fein": ["###.", "####", "####", "####"]
     },
     "iwSpind": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
-      "art": "schrank"
+      "art": "schrank",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        ".######."
+      ]
     },
     "iwVitrine": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_134.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "########",
+        "########",
+        "#######."
+      ]
     },
     "iwBild": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_100.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "iwFass": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [".##.", "####", "####", "###."]
     },
     "iwFassGross": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        "..###...",
+        "........",
+        "........"
+      ]
     },
     "iwStrommast": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Electric_Pole_1.png",
       "breite": 16,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        ".##.",
+        ".##."
+      ]
     },
     "iwPylon": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Cone_10.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
     },
     "iwHantel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/8_Gym_Black_Shadow_Singles_16x16/Gym_Shadow_Singles_108.png",
@@ -690,7 +866,17 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "....########...."
+      ]
     },
     "iw5AutoA": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_1.png",
@@ -701,7 +887,25 @@
       "art": "fahrzeug",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "iw5AutoB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Down_4.png",
@@ -712,7 +916,25 @@
       "art": "fahrzeug",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ]
     },
     "iw5Kisten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_4.png",
@@ -721,7 +943,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "#######.",
+        "########",
+        "...####."
+      ]
     },
     "iw5KistenB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_5.png",
@@ -730,7 +962,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "#####...",
+        ".####..."
+      ]
     },
     "iw5Karren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Wood_Cart_Full_2.png",
@@ -740,7 +982,17 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "#######.",
+        ".###.#.."
+      ]
     },
     "iw5Haltestellenschild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_Sign_1.png",
@@ -750,7 +1002,21 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        ".##.",
+        ".##.",
+        ".##.",
+        ".##."
+      ]
     },
     "iw5Muelltonne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Small_Closed_Trash_Can.png",
@@ -760,7 +1026,8 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "iw5Tonne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trashbin_11.png",
@@ -770,7 +1037,8 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "iw5Prellbock": {
       "quelle": "spiel/eigene/prellbock_stahl_oben.png",
@@ -818,7 +1086,21 @@
       "kollision": true,
       "art": "bett",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "...#########",
+        "..##########",
+        "..##########",
+        "..##########",
+        "..##########",
+        "....#.....#.",
+        "............",
+        "............"
+      ]
     },
     "iw5BettLila": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png",
@@ -830,7 +1112,21 @@
       "kollision": true,
       "art": "bett",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "#########...",
+        "##########..",
+        "##########..",
+        "##########..",
+        "##########..",
+        ".#.....#....",
+        "............",
+        "............"
+      ]
     },
     "iw5Duschwanne": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_156.png",
@@ -839,7 +1135,17 @@
       "kollision": true,
       "art": "dusche",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######.",
+        "........"
+      ]
     },
     "iw5Postsack": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_Props_9.png",
@@ -848,7 +1154,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [".##.", "###.", ".##.", ".##."]
     },
     "iw5Sackkarre": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_73.png",
@@ -857,7 +1164,21 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        ".#####..",
+        ".#####..",
+        ".#####..",
+        "..####..",
+        "..####..",
+        "........"
+      ]
     },
     "iw5WerkHalle": {
       "quelle": "spiel/eigene/werk_halle.png",
@@ -920,7 +1241,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9VitrineLaterne": {
       "quelle": "spiel/eigene/vitrine_laterne.png",
@@ -930,7 +1265,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9VitrineWerkzeug": {
       "quelle": "spiel/eigene/vitrine_werkzeug.png",
@@ -940,7 +1289,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9VitrineGlasfunke": {
       "quelle": "spiel/eigene/vitrine_glasfunke.png",
@@ -950,7 +1313,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw9VitrineLeer": {
       "quelle": "spiel/eigene/vitrine_leer.png",
@@ -960,7 +1337,21 @@
       "art": "vitrine",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "iw5StadthausBlau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_1.png",
@@ -1042,7 +1433,17 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "########",
+        "########"
+      ]
     },
     "iw10Speiseplan": {
       "quelle": "spiel/eigene/kantine_speiseplan.png",

@@ -7,7 +7,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "....", "###.", ".##.", ".##."]
     },
     "dd6KaktusB": {
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Prickly_Pear_Ripe_2_16x16.png",
@@ -25,7 +26,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "....", "###.", ".##.", ".##."]
     },
     "dd6Wasserturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_2.png",
@@ -84,7 +86,25 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...##...",
+        "........"
+      ]
     },
     "dd6KaktusKlein": {
       "quelle": "spiel/eigene/kaktus_klein.png",
@@ -93,7 +113,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".#.."]
     },
     "dd6KaktusBluehend": {
       "quelle": "spiel/eigene/kaktus_bluehend.png",
@@ -102,7 +123,17 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "...##..."
+      ]
     },
     "dd6SteinFlach": {
       "quelle": "spiel/eigene/stein_flach_rot.png",
@@ -111,7 +142,17 @@
       "kollision": true,
       "art": "stein",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".###########",
+        "############",
+        ".##########.",
+        "............"
+      ]
     },
     "dd6Geierkreis": {
       "quelle": "spiel/eigene/geierkreis.png",

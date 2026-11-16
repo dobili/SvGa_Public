@@ -7,7 +7,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "maritim",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        ".##############.",
+        "..#############.",
+        "...###########..",
+        "................"
+      ]
     },
     "n4Fischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
@@ -16,7 +26,25 @@
       "hoehe": 64,
       "kollision": true,
       "stil": "maritim",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        ".#################..#...",
+        "##################..#...",
+        "##################..#...",
+        "##################.##...",
+        "##################.###..",
+        ".#####################..",
+        "..####################..",
+        "..###############..##...",
+        "..##....................",
+        "........................"
+      ]
     },
     "n4Rettungsring": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Life_Buoy_1.png",
@@ -24,7 +52,8 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "maritim",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", "...."]
     },
     "n4Fass": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_2.png",
@@ -42,7 +71,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        "..###...",
+        "........",
+        "........"
+      ]
     },
     "n4Kisten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_4.png",
@@ -50,7 +89,17 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "maritim",
-      "zustand": "gebraucht"
+      "zustand": "gebraucht",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "#######.",
+        "########",
+        "...####."
+      ]
     },
     "n4Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -70,7 +119,8 @@
       "art": "strassenmoebel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
     },
     "n4Fels": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -79,7 +129,8 @@
       "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "n4BootUfer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
@@ -102,7 +153,17 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####..",
+        "..####..",
+        "...###.."
+      ]
     },
     "n4MoeweLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Seagull_Left.png",
@@ -112,7 +173,17 @@
       "art": "deko",
       "blick": "links",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..###...",
+        "..#####.",
+        "..#####.",
+        "...##..."
+      ]
     },
     "n4MoeweRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Seagull_Right.png",
@@ -122,7 +193,17 @@
       "art": "deko",
       "blick": "rechts",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "...###..",
+        ".#####..",
+        ".#####..",
+        "...##..."
+      ]
     },
     "n4MuschelRosa": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Pink_Shell_1_Vers_1.png",
@@ -311,7 +392,17 @@
       "kollision": true,
       "art": "deko",
       "stil": "maritim",
-      "zustand": "alt"
+      "zustand": "alt",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "##........##"
+      ]
     },
     "n4PelikanLinks": {
       "quelle": "spiel/eigene/pelikan_sitzend_links.png",
@@ -364,7 +455,17 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "maritim"
+      "stil": "maritim",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".###########",
+        "############",
+        "#.#......#.#"
+      ]
     },
     "pk9Faehre": {
       "quelle": "spiel/eigene/hafen_faehre.png",

@@ -35,13 +35,15 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Bucket_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [".##.", "####", "####", ".##."]
     },
     "pdSeil": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rope_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": true
+      "kollision": true,
+      "maske_fein": [".##.", "####", ".###", "..#."]
     },
     "pdWerkzeugregal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Sprout_Tools_Shelf.png",
@@ -68,7 +70,8 @@
       "art": "stuhl",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "pd6StuhlRuecken": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_2.png",
@@ -78,7 +81,8 @@
       "art": "stuhl",
       "blick": "oben",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
     },
     "pd6Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -87,7 +91,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["###.", "###.", "###.", "...."]
     },
     "pd6Pult": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_27.png",
@@ -97,7 +102,21 @@
       "art": "schreibtisch",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..#.####",
+        ".##.####",
+        ".#######",
+        ".#######",
+        ".#######",
+        "....####",
+        "....#.##",
+        "........"
+      ]
     },
     "pd6Plakat": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_32.png",
@@ -156,7 +175,21 @@
       "art": "regal",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "pd6Turnmatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_54.png",
@@ -165,7 +198,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "pd6TurnmatteLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_55.png",
@@ -174,7 +208,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."]
     },
     "pd6Ball": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Basketball_Ball_1.png",
@@ -194,7 +229,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "pd6Figurenkiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_3.png",
@@ -204,7 +240,17 @@
       "art": "karton",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        "..####..",
+        "..####.."
+      ]
     },
     "pd6Bank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
@@ -214,7 +260,8 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["............", "............", "############", "############"]
     },
     "pd6Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -234,7 +281,21 @@
       "art": "kiste",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "######..",
+        "#####...",
+        "#####...",
+        "........",
+        "........",
+        "........"
+      ]
     },
     "pd6SpielfeldQuer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Basketball_Court_3.png",
@@ -271,7 +332,8 @@
       "kollision": true,
       "art": "stuhl",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", ".##.", ".##.", ".##."]
     },
     "pd6Kommode": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_322.png",
@@ -281,7 +343,17 @@
       "art": "kommode",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "##....##",
+        "........",
+        "........"
+      ]
     },
     "pd6Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -291,7 +363,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "pd6StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
@@ -301,7 +383,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
     },
     "pd6StuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -311,7 +394,8 @@
       "art": "stuhl",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "links"
+      "blick": "links",
+      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
     },
     "pd6Pflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
@@ -320,7 +404,8 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "####", ".##.", "....", "...."]
     },
     "pd6Werkzeugschrank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png",
@@ -330,7 +415,21 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######"
+      ]
     },
     "pd6Bretterstapel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Stacked_Material_1.png",
@@ -340,7 +439,21 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".#######"
+      ]
     },
     "pd6Holzscheite": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_3.png",
@@ -349,7 +462,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".#####..",
+        "........"
+      ]
     },
     "pd6Kanister": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Barrel_1.png",
@@ -358,7 +481,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."]
     },
     "pd6Hobelbank": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Woodwork_Crafting_Table_16x16.png",
@@ -368,7 +492,25 @@
       "art": "tisch",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "..###############...",
+        "...##############...",
+        "...##############...",
+        "..################..",
+        ".#################..",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##############.....",
+        ".######..#####......",
+        "..###..............."
+      ]
     },
     "pd6KlavierHell": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_1.png",
@@ -378,7 +520,21 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "pd6KlavierRot": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_10.png",
@@ -388,7 +544,21 @@
       "art": "geraet",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "pd6KlavierNatur": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_17.png",
@@ -398,7 +568,21 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "pd6FotoAlt": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_100.png",
@@ -420,7 +604,8 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "pd6Bastelbank": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_Full_16x16.png",
@@ -440,7 +625,17 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".#######",
+        "...##..."
+      ]
     },
     "pd6PfuetzeGross": {
       "quelle": "spiel/eigene/pfuetze_fels_gross.png",
@@ -472,7 +667,17 @@
       "art": "deko",
       "zustand": "kaputt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "#######.",
+        "########",
+        "..###.##"
+      ]
     },
     "pd6RahmenKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_Props_1.png",
@@ -492,7 +697,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": ["..###...", ".######.", "..####..", ".....#.."]
     },
     "pd6Splitter": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_4.png",
@@ -513,7 +719,17 @@
       "art": "deko",
       "zustand": "kaputt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".#######",
+        "..######"
+      ]
     },
     "pd6Regal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_70.png",
@@ -523,7 +739,21 @@
       "art": "buecherregal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "pd6Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -533,7 +763,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "pd6Notenregal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
@@ -543,7 +783,21 @@
       "art": "buecherregal",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        "........",
+        "........"
+      ]
     },
     "pd6PflanzeGross": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_13.png",
@@ -552,7 +806,21 @@
       "kollision": true,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "..####..",
+        "...##...",
+        "........",
+        "........"
+      ]
     },
     "pd6Bild": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_401.png",
@@ -582,7 +850,17 @@
       "art": "sessel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "..####..",
+        "..####..",
+        "........"
+      ]
     },
     "pd6Couchtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -592,7 +870,17 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        ".######.",
+        ".######.",
+        ".##..##."
+      ]
     },
     "pd6Turnhalle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_6.png",
@@ -697,7 +985,21 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        "############",
+        "###########.",
+        "###########.",
+        ".##########.",
+        "..########.."
+      ]
     },
     "pd6Fischerboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Left_1.png",
@@ -914,7 +1216,21 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".#########..",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        ".#######.#..",
+        ".#.#######..",
+        "...#####...."
+      ]
     },
     "pd6KlavierPlane": {
       "quelle": "spiel/eigene/klavier_plane.png",
@@ -924,7 +1240,21 @@
       "art": "geraet",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "##....##"
+      ]
     },
     "pd6Sandsaecke": {
       "quelle": "spiel/eigene/sandsaecke.png",
@@ -942,7 +1272,8 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [".######.", ".######.", "########", "########"]
     },
     "pd6SandsaeckeHaufen": {
       "quelle": "spiel/eigene/sandsaecke_haufen.png",
@@ -951,7 +1282,17 @@
       "kollision": true,
       "art": "kiste",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "........"
+      ]
     },
     "pd6BauzaunEndeLinks": {
       "quelle": "spiel/eigene/bauzaun_ende_links.png",
@@ -960,7 +1301,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "....", "..#.", "####", "##.#"]
     },
     "pd6BauzaunMitte": {
       "quelle": "spiel/eigene/bauzaun.png",
@@ -969,7 +1311,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "....", ".##.", "####", "#..#"]
     },
     "pd6BauzaunEndeRechts": {
       "quelle": "spiel/eigene/bauzaun_ende_rechts.png",
@@ -978,7 +1321,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "maske_fein": ["....", "....", "....", "....", "....", ".#..", "####", "#.##"]
     },
     "pd6SchildMusikhaus": {
       "quelle": "spiel/eigene/schild_musikhaus.png",
@@ -1011,7 +1355,17 @@
       "kollision": true,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "..####..",
+        "...###..",
+        "....#..."
+      ]
     },
     "pd6DielenNass": {
       "quelle": "spiel/eigene/dielen_nass.png",
@@ -1041,7 +1395,21 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "pd6Stamm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Floating_Wood_3.png",
@@ -1050,7 +1418,8 @@
       "kollision": true,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "natur"
+      "stil": "natur",
+      "maske_fein": [".##########.", "############", "############", ".##########."]
     },
     "pd6Werkhalle": {
       "quelle": "spiel/eigene/werk_halle.png",
@@ -1523,7 +1892,21 @@
       "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "#############...",
+        "##############..",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "..##.......##..."
+      ]
     },
     "pd7Blechkiste": {
       "quelle": "spiel/eigene/blechkiste.png",
@@ -1533,7 +1916,8 @@
       "art": "kiste",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [".##.", "####", "####", "####"]
     },
     "pd7Angel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_12.png",
@@ -1614,7 +1998,21 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "...#########",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ]
     },
     "pd9Spaene": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Shavings_Woodwork_Crafting_Table_16x16.png",
@@ -1636,7 +2034,17 @@
       "art": "schreibtisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        ".#....#."
+      ]
     },
     "pd9Ziegel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brick_5.png",
@@ -1645,7 +2053,17 @@
       "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#####..",
+        ".######.",
+        "....###.",
+        "........"
+      ]
     },
     "pd9LeiterKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Broken_Ladder_1.png",
@@ -1687,7 +2105,21 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "#######.",
+        "........"
+      ]
     },
     "pd9Schutt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_3.png",
@@ -1707,7 +2139,17 @@
       "art": "schrank",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        ".#######"
+      ]
     },
     "pd9Klavierhocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_171.png",
@@ -1717,7 +2159,8 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": ["....", ".##.", ".##.", "...."]
     },
     "pd9BootAb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_2.png",
@@ -1753,7 +2196,17 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        ".##############.",
+        ".##############.",
+        "...###########..",
+        ".....#######...."
+      ]
     },
     "pd9StrichQ16": {
       "quelle": "spiel/eigene/fahrbahn_strich_quer_16.png",
@@ -2101,7 +2554,8 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
     },
     "pd12Bagger": {
       "quelle": "spiel/eigene/bagger_links.png",
@@ -2111,7 +2565,25 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "####........################",
+        "####........################",
+        "####.........###############",
+        "####........################",
+        "####.......#################",
+        "####.......#################",
+        "#####......#################",
+        "#######.....################",
+        ".######....###############.."
+      ]
     },
     "pd12Lastwagen": {
       "quelle": "spiel/eigene/lastwagen_vorn.png",
@@ -2121,7 +2593,45 @@
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "###########.",
+        "############",
+        "############",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        ".##########."
+      ]
     },
     "pdPfuetze1": {
       "quelle": "spiel/eigene/pfuetze_1.png",

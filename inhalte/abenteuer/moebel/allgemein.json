@@ -1087,6 +1087,96 @@
       "art": "tier_deko",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "gelaenderHolzWaagrecht": {
+      "quelle": "spiel/eigene/gelaender_holz_waagrecht.png",
+      "breite": 33,
+      "hoehe": 15,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: gerades Stück waagrecht, Handlauf mit sieben Stäben; noch in keiner Karte"
+    },
+    "gelaenderHolzWaagrechtKurz": {
+      "quelle": "spiel/eigene/gelaender_holz_waagrecht_kurz.png",
+      "breite": 15,
+      "hoehe": 17,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: kurzes gerades Stück waagrecht, drei Stäbe; noch in keiner Karte"
+    },
+    "gelaenderHolzSenkrecht": {
+      "quelle": "spiel/eigene/gelaender_holz_senkrecht.png",
+      "breite": 11,
+      "hoehe": 53,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: gerades Stück senkrecht (Seitenansicht), etwa drei Kacheln lang; noch in keiner Karte"
+    },
+    "gelaenderHolzPfosten": {
+      "quelle": "spiel/eigene/gelaender_holz_pfosten.png",
+      "breite": 7,
+      "hoehe": 19,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: Endpfosten mit Kugel; noch in keiner Karte"
+    },
+    "gelaenderHolzSchraegPfostenLinks": {
+      "quelle": "spiel/eigene/gelaender_holz_schraeg_pfosten_links.png",
+      "breite": 17,
+      "hoehe": 22,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: kurzes schräges Stück, Pfosten links unten, steigt nach rechts; noch in keiner Karte"
+    },
+    "gelaenderHolzSchraegPfostenRechts": {
+      "quelle": "spiel/eigene/gelaender_holz_schraeg_pfosten_rechts.png",
+      "breite": 17,
+      "hoehe": 22,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: kurzes schräges Stück, Pfosten rechts unten, steigt nach links; noch in keiner Karte"
+    },
+    "gelaenderHolzAntrittLinks": {
+      "quelle": "spiel/eigene/gelaender_holz_antritt_links.png",
+      "breite": 33,
+      "hoehe": 27,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: Antritt: Pfosten links unten, schräg hoch, dann waagrecht weiter (Ecke oben); noch in keiner Karte"
+    },
+    "gelaenderHolzLaufPfostenLinks": {
+      "quelle": "spiel/eigene/gelaender_holz_lauf_pfosten_links.png",
+      "breite": 19,
+      "hoehe": 28,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: schräger Treppenlauf, Pfosten links unten, steigt nach rechts; noch in keiner Karte"
+    },
+    "gelaenderHolzLaufPfostenRechts": {
+      "quelle": "spiel/eigene/gelaender_holz_lauf_pfosten_rechts.png",
+      "breite": 20,
+      "hoehe": 28,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: schräger Treppenlauf, Pfosten rechts unten, steigt nach links; noch in keiner Karte"
     }
   }
 }

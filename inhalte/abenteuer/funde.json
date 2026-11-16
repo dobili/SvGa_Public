@@ -5,14 +5,16 @@
       "kennung": "formular1857",
       "ort": "wegMapleCedar",
       "name": "fund.formular1857.name",
-      "text": "fund.formular1857.text"
+      "text": "fund.formular1857.text",
+      "bild": "bilder/fund-formular1857.webp"
     },
     {
       "kennung": "muenzenFlussweg",
       "ort": "wegMapleCedar",
       "name": "fund.muenzenFlussweg.name",
       "text": "fund.muenzenFlussweg.text",
-      "muenzen": 15
+      "muenzen": 15,
+      "bild": "bilder/fund-muenzen-flussweg.webp"
     },
     {
       "kennung": "pfeilspitze",

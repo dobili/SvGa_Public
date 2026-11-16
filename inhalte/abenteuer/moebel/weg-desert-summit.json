@@ -609,6 +609,17 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
+    "wds6Motelzeile": {
+      "quelle": "spiel/eigene/motelzeile.png",
+      "breite": 224,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Starlight Motel aus Geminis Motelzeile (16.11.2026): vier der sieben bunten Türen (rot, gelb, türkis, violett), Dachfläche gekürzt, so groß wie wds6Motel; Türen 32 Pixel hoch wie die Spielfigur"
+    },
     "wds6SchildMotel": {
       "quelle": "spiel/eigene/schild_motel.png",
       "breite": 48,

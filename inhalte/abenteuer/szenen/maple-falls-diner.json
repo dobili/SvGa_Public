@@ -62,9 +62,7 @@
       "moebel": "mf5Buffet",
       "feld": [8, 2],
       "id": "anrichte",
-      "versatz": [0, 3],
-      "maske": ["..", ".."],
-      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Anrichte sperrt über die feine Sperre auf (8, 3) und (9, 3), obere Hälfte, statt über ihre Maske."
+      "versatz": [0, 3]
     },
     {
       "moebel": "mf5Kaffeemaschine",
@@ -195,9 +193,7 @@
     {
       "moebel": "mf12JukeboxAn",
       "feld": [8, 3],
-      "versatz": [-6, 27],
-      "maske": ["."],
-      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Jukebox sperrt über die gesperrte Bodenkachel bkFliesenWeiss auf (8, 5) statt über ihre Maske."
+      "versatz": [-6, 27]
     },
     {
       "moebel": "mf5Hocker",
@@ -251,24 +247,14 @@
       "versatz": [7, 1]
     },
     {
-      "moebel": "mf14TellerPfannkuchen",
+      "moebel": "mf16TellerBenutzt",
       "auf": "n3",
       "versatz": [-5, 8]
     },
     {
-      "moebel": "mf14Kaffeetasse",
-      "auf": "n3",
-      "versatz": [7, 7]
-    },
-    {
-      "moebel": "mf14TellerEssen",
+      "moebel": "mf16TellerBenutzt",
       "auf": "g1",
       "versatz": [4, 7]
-    },
-    {
-      "moebel": "mf14Glas",
-      "auf": "g1",
-      "versatz": [-8, 2]
     },
     {
       "moebel": "mf12NischenbankRechts",
@@ -303,15 +289,9 @@
       "ebene": -1
     },
     {
-      "moebel": "mf14TellerEssen",
+      "moebel": "mf16TellerBenutzt",
       "auf": "n1_2",
       "versatz": [-5, 5],
-      "ebene": -1
-    },
-    {
-      "moebel": "mf14Glas",
-      "auf": "n1_2",
-      "versatz": [7, 4],
       "ebene": -1
     },
     {
@@ -323,13 +303,6 @@
       "moebel": "ca7StuhlVorn",
       "feld": [2, 7],
       "versatz": [-8, 18]
-    },
-    {
-      "moebel": "bkFliesenWeiss",
-      "feld": [8, 6],
-      "versatz": [0, -16],
-      "kollision": true,
-      "maske": ["#"]
     }
   ],
   "ausloeser": [
@@ -390,12 +363,5 @@
         "sitzt": "links"
       }
     }
-  ],
-  "sperren_fein": [
-    [8, 3, "########........"],
-    [9, 3, "########........"]
-  ],
-  "freigeben_fein": [
-    [4, 11, "##..##..##..##.."]
   ]
 }

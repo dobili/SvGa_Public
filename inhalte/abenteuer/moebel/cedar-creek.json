@@ -2654,7 +2654,8 @@
       "art": "treppe",
       "zustand": "alt",
       "stil": "klassisch",
-      "maske": ["......", "##..##", "##..##", "##..##", "##..##"]
+      "maske": ["......", "##..##", "##..##", "##..##", "##..##"],
+      "hinweis": "NICHT MEHR VERWENDEN (Regel 10.89, Autor, 16.11.2026: Treppenloch aus Bildern statt Lochbild); früher der Abgang zur Kellertreppe in der Bibliothek"
     },
     "cc13MatteGruenLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_357.png",
@@ -2846,6 +2847,74 @@
         ".##############.",
         ".##..........##."
       ]
+    },
+    "cc15GelaenderPfostenLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Top_Left_16x16.png",
+      "ausschnitt": [0, 0, 5, 16],
+      "breite": 5,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Eckpfosten links am Zugang: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
+      "maske_fein": ["....", "....", "##..", "##.."]
+    },
+    "cc15GelaenderPfostenRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Top_Right_16x16.png",
+      "ausschnitt": [11, 0, 16, 16],
+      "breite": 5,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Eckpfosten rechts am Zugang: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
+      "maske_fein": ["....", "....", "##..", "##.."]
+    },
+    "cc15GelaenderSeiteLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Middle_Left_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "linke Seite: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
+      "maske_fein": ["....", "....", "##..", "##.."]
+    },
+    "cc15GelaenderSeiteRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Middle_Right_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "rechte Seite: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
+      "maske_fein": ["....", "....", "..##", "..##"]
+    },
+    "cc15GelaenderUntenLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Bottom_Left_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Ecke unten links: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
+      "maske_fein": ["....", "....", "####", "####"]
+    },
+    "cc15GelaenderUntenRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Bottom_Right_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Ecke unten rechts: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
+      "maske_fein": ["....", "....", "####", "####"]
     }
   }
 }

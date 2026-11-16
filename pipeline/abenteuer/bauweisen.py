@@ -149,3 +149,21 @@ def gemalt_belegt(szene: dict, gesetzt: list[dict], moebel: dict | None) -> set[
         y0, y1 = s["y"] // K, (s["y"] + s["hoehe"] - 1) // K
         belegt |= {f for f in gemalt if x0 <= f[0] <= x1 and y0 <= f[1] <= y1}
     return belegt
+
+
+def bodenkacheln_mit_kollision(szene: dict, moebel: dict) -> list[str]:
+    """Hinweise: Bodenkacheln (Art ``boden_teil``), die hier sperren.
+
+    Warum: Regel 10.90 (Autor, 16.11.2026): Ein Möbel sperrt mit seiner Katalogmaske; gibt es seine
+    Kollision ausnahmsweise ab, dann an den Pinsel. Eine unsichtbare Bodenkachel mit Kollision (so
+    stand eine weiße Fliese unter der Jukebox im Diner) ist ein Hinweis. Beispiel:
+    ``{"moebel": "bkFliesenWeiss", "feld": [8, 6], "kollision": true}`` → „Bodenkachel …“.
+    """
+    return [
+        f"Bodenkachel {e['moebel']} {tuple(e['feld'])} sperrt: Möbel mit Katalogmaske sperren lassen "
+        "oder den Kollisionspinsel nehmen (Regel 10.90)"
+        for e in szene.get("objekte", [])
+        if art_von(e["moebel"], moebel) == "boden_teil"
+        and kollision_an(moebel.get(e["moebel"], {}), e)
+        and "feld" in e
+    ]

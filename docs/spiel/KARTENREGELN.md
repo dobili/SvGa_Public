@@ -1202,6 +1202,11 @@ Befund „Tischlage:“; jeder Befund nennt den passenden `versatz`.
 - **Uhr:** Direkt neben einem Brett (höchstens 3 Pixel Lücke), auf der Platte: seitlich auf gleicher
   Höhe oder davor bzw. dahinter in derselben Spalte. Welche Seite für die Spieler „neben“ ist, hängt
   davon ab, wo sie sitzen; das regelt 10.80.
+- **Uhr hinter dem Brett (Autor, 16.11.2026):** Das Brett allein liegt mittig auf der Platte, nicht
+  Brett und Uhr zusammen. Steht die Uhr hinter dem Brett, steht sie mit ihrem Fuß (unterste 2 Pixel)
+  auf der Platte; nach hinten darf sie über die Kante ragen (aufrechte Dinge ragen in der Draufsicht
+  nach oben). So hat der Autor die sechs Tische im Clubraum Maple Falls gestellt; geprüft in
+  `tischlage.py` (`FUSS_UHR`).
 - **Hocker:** Direkt an Tisch, Tresen oder Theke: vorn an der Vorderkante (bei Tischen mit Beinen
   höchstens 4 Pixel unter der Platte), hinten mit dem Fuß hinter der Platte, seitlich höchstens
   3 Pixel weg.
@@ -1244,7 +1249,8 @@ der Bilder; ohne privates Paket (GitHub Actions) prüft der Kartenbau nur 10.84,
 84. **Loch im Boden** (Notiz: „Es fehlt das Loch im Boden für die Treppe“, Zimmer und Dachboden). Ein
     Aufgang nach unten auf einer oberen Karte (Ebene nach 10.77) zeigt eine Öffnung im Boden mit
     Kante oder Geländer; das Bild trägt `bodenoeffnung: true`. Stufen auf dem Boden mit Geländer
-    darum genügen nicht.
+    darum genügen nicht. Seit 16.11.2026 wird die Öffnung nicht mehr als fertiges Bild gesetzt,
+    sondern nach 10.89 gebaut (Loch im Raster, Treppe darunter, Geländer).
 85. **Häuser in Menschengröße** (Notiz: „Sofern das keine Hundehütte ist, ist das Haus zu klein“;
     Regel 10.66). Ein Wohnhaus draußen ist mindestens 5 × 5 Kacheln groß (deckend gemessen, eine
     halbe Kachel Spiel). Ausgenommen: Schuppen, Kiosk, Garage, Hütte, Gartenhaus, Zelt, Stand,
@@ -1292,3 +1298,74 @@ Lehne verschwindet, regelt die Zeichenreihenfolge (Tiefe nach der unteren Kante)
   Fläche, die vorher abgeschlossen war (Waldrand, Lücke hinter einer Theke), gilt für dieses Möbel
   die grobe Maske (`ohne_maske_fein` mit Grund). Von Hand gesetzte Masken tragen
   `maske_fein_von_hand` mit Grund; das Werkzeug lässt beide unangetastet.
+
+### 10.89 Treppenloch aus Bildern (Autor, 16.11.2026)
+
+Wortlaut des Autors (Antwort zu RO32): „Loch im Boden, darunter ein Ausschnitt von der im unteren
+Raum verwendeten Treppe mit 25 % Transparenz, und um das Loch herum an den Stellen, wo man nicht
+durchgehen soll, Geländer.“ Die fertigen Lochbilder aus Gemini (`mf12TreppenlochZimmer`,
+`mf12TreppenlochDachboden`, `cc12TreppeAb`) fand er unschön und unflexibel; sie tragen im Katalog
+„NICHT MEHR VERWENDEN“. Prüfung: `python -m pipeline.abenteuer.treppenloch`, im Kartenbau als Befund
+„Treppenloch:“ (jeder Übergang eines Innenraums auf eine tiefere Karte).
+
+- **Loch:** Leere „ “ im Raster, so breit wie die Treppe (mindestens 2 × 2). Die Auslöser liegen auf
+  der ersten Reihe des Lochs (der Zugangsreihe), mit Freigabe (grob oder fein, `freigeben_grund`);
+  die Ankunft (`ankunft`) liegt davor auf dem Boden.
+- **Treppe darunter:** derselbe Katalogeintrag wie die Treppe im unteren Raum, mit `zuschnitt`,
+  `massstab` (meist 1,1) und `deckkraft` 25, ohne Kollision, Ebene ≤ 0. Sie steigt in dieselbe
+  Richtung wie unten: Zugang ist die Seite, an der die Treppe oben ankommt.
+- **Geländer:** an jeder Seite des Lochs, die weder Wand noch Zugang ist, aus einem Reling- oder
+  Zaunsatz (`bauteil_ok`), Ecken und Pfosten aus demselben Satz. In Maple Falls die Reling C
+  (`sd6RelingC…`, `mf15GelaenderEckeLinks`, `mf15GelaenderPfostenLinks`, `mf15GelaenderPfostenRechts`);
+  hat der Ort einen anderen Stil, ein passender Satz (Bibliothek Cedar Creek: dieselbe Holzbalustrade
+  als `cc15Gelaender…` im Stil klassisch). Das Geländer steht auf der Kante, innen im Loch.
+- **Vorlage:** Zimmer und Dachboden in Maple Falls (Autor), Bibliothek Cedar Creek (Loch (21..22,
+  4..6), Zugang von Norden, Geländer links, rechts und unten). Draußen gilt die Regel nicht: Der
+  Abgang zur U-Bahn in Capital ist ein Bauwerk mit Treppe (`ca9UbahnSchacht`).
+
+### 10.90 Kollision gehört dem Möbel (Autor, 16.11.2026)
+
+Der Autor hat Kollision mit dem Pinsel gemalt, solange es keine feinen Möbelmasken gab. Seit 10.88
+sperrt jedes Katalogmöbel nach seiner Standfläche; die Ersatzlösungen in Maple Falls sind
+zurückgebaut (Stühle und Schaukelstuhl auf dem Dachboden, Sessel im Wohnzimmer, Anrichte, Palme und
+Jukebox im Diner).
+
+- Ein Möbel darf seine Kollision an den Pinsel abgeben (`kollision: false` oder leere Maske plus
+  gemalte Sperre darunter, mit `begehbar_grund`), aber nur als Ausnahme mit Grund.
+- Eine unsichtbare Bodenkachel mit Kollision (so stand eine weiße Fliese unter der Jukebox) ist ein
+  Hinweis im Kartenbau (`bauweisen.bodenkacheln_mit_kollision`).
+- Pinselfelder, die nichts bewirken, entfallen: Der Kartenbau meldet sie als „ohnehin begehbar“ bzw.
+  „ohnehin gesperrt“. Achtung bei groben Sperren: „ohnehin gesperrt“ zählt ganze Kacheln; eine grobe
+  Sperre kann fein trotzdem wirken (Holm der Dachbodentreppe im Zimmer) und bleibt dann.
+
+### 10.91 Frisches Essen nur an Tischen mit Gast (Autor, 16.11.2026)
+
+Notiz des Autors zum Diner: „An Tischen, wo frisches Essen steht, sollten auch Personen sitzen.
+Andernfalls dreckiges Geschirr oder nichts.“ Prüfung: `python -m pipeline.abenteuer.gedeck`, im
+Kartenbau als Befund „Gedeck:“.
+
+- Im Katalog tragen Teller mit Essen, Kuchen, Pfannkuchen, ein volles Glas und Kaffee
+  `essen: "frisch"`, benutztes Geschirr `essen: "benutzt"` (`mf16TellerBenutzt`).
+- Ein Tisch mit frischem Essen braucht eine sitzende Figur oder einen sitzenden Statisten (`sitzt`);
+  jede Person gehört zum nächsten Tisch (höchstens eine Kachel entfernt).
+- Im Diner stehen an n1, n1_2, n3 und g1 nur noch benutzte Teller oder nichts; an n2 sitzen die
+  Rentnerinnen, an der Theke der Lkw-Fahrer. Andere Karten mit Essen auf Tischen gibt es derzeit
+  nicht (Kantine, Raststätte und Gasthaus haben Geschirr nur in Regalen und auf dem Tresen).
+
+### 10.92 Türen in Menschengröße (Autor, 16.11.2026)
+
+„Die Tür eines Hauses auf einer Außenkarte ist mindestens so groß wie die Spielfigur (Breite und
+Höhe).“ Anlass: Der Autor hat die vier Häuser der hinteren Reihe in Maple Falls auf 125 %
+vergrößert, bis ihre Tür groß genug war. Prüfung: `python -m pipeline.abenteuer.tuergroesse
+[--offen]`, im Kartenbau als Hinweis „Tür von … ist … kleiner als die Figur“.
+
+- **Figur:** 16 × 22 Pixel deckend (Rahmen 16 × 32, `figurbilder.ts`; `held-0.png` von vorn).
+- **Tür:** Türrahmen außen im ungeskalierten Bild, gemessen in
+  `inhalte/abenteuer/katalog_korrekturen/tuermasse.json`; der `massstab` des Eintrags zählt mit. Zu
+  kleine Häuser bekommen einen `massstab` (wie der Autor: 1,25), die Umgebung rückt so wenig wie
+  nötig nach. Neue Gebäudebilder bekommen ihr Türmaß beim Eintragen.
+- **Stand 16.11.2026:** gemessen sind die Häuser von Maple Falls und Cedar Creek. Zu klein sind die
+  Villen in Maple Falls (Tür 18 × 19, nötig 1,16) und die Ladenfassaden aus Gemini mit Glastür
+  (Diner, Waschsalon: 29 × 17, nötig 1,29). Sie bleiben vorerst Hinweis: Das Diner und die Villa
+  Whitlock haben Eingänge (`tuer` im Katalog rechnet noch ohne Maßstab), und 1,16 bzw. 1,29 sprengt
+  die Häuserzeile. Rückfrage an den Autor (AUFGABEN_AUTOR RO33).

@@ -1,0 +1,17 @@
+{
+  "_hinweis": "Türrahmen außen in Pixeln des ungeskalierten Bildes [links, oben, rechts, unten] (rechts und unten ausschließlich), mit der Lupe abgelesen (16.11.2026). Regel 10.92, Prüfung pipeline/abenteuer/tuergroesse.py. Neue Gebäudebilder bekommen ihr Maß beim Eintragen.",
+  "spiel/eigene/villa_whitlock.png": [31, 151, 49, 170],
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_3.png": [31, 151, 49, 170],
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_5.png": [31, 151, 49, 170],
+  "spiel/eigene/haus_hinten_b_blau.png": [45, 75, 59, 94],
+  "spiel/eigene/haus_hinten_b_rot.png": [45, 74, 59, 93],
+  "spiel/eigene/fassade_diner.png": [16, 121, 45, 138],
+  "spiel/eigene/fassade_waschsalon.png": [15, 121, 46, 138],
+  "spiel/eigene/huette_a.png": [30, 49, 51, 74],
+  "spiel/eigene/huette_b.png": [30, 49, 51, 74],
+  "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Barn_Small_16x16.png": [26, 123, 52, 158],
+  "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png": [80, 128, 100, 158],
+  "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_2_16x16.png": [109, 113, 134, 142],
+  "spiel/eigene/haus_farm1_blau.png": [80, 128, 100, 158],
+  "spiel/eigene/haus_farm2_grau.png": [109, 113, 134, 142]
+}

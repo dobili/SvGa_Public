@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 57,
+ "nextobjectid": 63,
  "layers": [
   {
    "id": 1,
@@ -175,8 +175,8 @@
     0,
     1,
     1,
-    1,
-    1,
+    0,
+    0,
     1,
     1,
     0,
@@ -201,8 +201,8 @@
     0,
     1,
     1,
-    1,
-    1,
+    0,
+    0,
     1,
     1,
     0,
@@ -630,8 +630,8 @@
     2,
     0,
     0,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     2,
@@ -656,8 +656,8 @@
     2,
     0,
     0,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     2,
@@ -1437,7 +1437,19 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "ankunft",
+       "type": "string",
+       "value": "21,3"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 5,
@@ -1481,7 +1493,19 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "ankunft",
+       "type": "string",
+       "value": "21,3"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 9,
@@ -2381,19 +2405,90 @@
     },
     {
      "id": 49,
-     "name": "cc12TreppeAb",
+     "name": "cc4Treppe",
      "type": "moebel",
-     "x": 304,
-     "y": 48,
-     "width": 96,
-     "height": 80,
+     "x": 336,
+     "y": 64,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "10,7,9,13"
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 25
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "cc15GelaenderPfostenLinks",
+     "type": "moebel",
+     "x": 336,
+     "y": 64,
+     "width": 5,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "..../..../#.../#..."
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "cc15GelaenderSeiteLinks",
+     "type": "moebel",
+     "x": 336,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2403,7 +2498,109 @@
      ]
     },
     {
-     "id": 50,
+     "id": 52,
+     "name": "cc15GelaenderUntenLinks",
+     "type": "moebel",
+     "x": 336,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "cc15GelaenderPfostenRechts",
+     "type": "moebel",
+     "x": 363,
+     "y": 64,
+     "width": 5,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "..../..../.#../.#.."
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "cc15GelaenderSeiteRechts",
+     "type": "moebel",
+     "x": 352,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "cc15GelaenderUntenRechts",
+     "type": "moebel",
+     "x": 352,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 56,
      "name": "cc4Kellertuer",
      "type": "moebel",
      "x": 32,
@@ -2426,7 +2623,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 57,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 384,
@@ -2449,7 +2646,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 58,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,
@@ -2472,7 +2669,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 59,
      "name": "cc13MatteGruenLinks",
      "type": "moebel",
      "x": 128,
@@ -2495,7 +2692,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 60,
      "name": "cc13MatteGruenRechts",
      "type": "moebel",
      "x": 144,
@@ -2518,7 +2715,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 61,
      "name": "cc13MatteGrauLinks",
      "type": "moebel",
      "x": 176,
@@ -2541,7 +2738,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 62,
      "name": "cc13MatteGrauRechts",
      "type": "moebel",
      "x": 192,
@@ -2643,6 +2840,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "nachtImLesesaal und nicht teamAngekommen"
+  },
+  {
+   "name": "sperren_fein",
+   "type": "string",
+   "value": "21,4,#...#...#...#...;22,4,...#...#...#...#"
   }
  ]
 }

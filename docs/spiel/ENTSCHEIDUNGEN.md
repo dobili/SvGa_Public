@@ -1139,3 +1139,24 @@ optionale Objektfelder: `drehung` (0/90/180/270), `spiegeln`, `massstab`, `ebene
 berechnete Tiefe, statt sie fest zu setzen, damit Figuren weiter davor oder dahinter stehen).
 Mehrfachauswahl mit Strg und Duplizieren als Gruppe auf Wunsch des Autors.
 
+
+## RO32: Regeln aus den Editoränderungen des Autors (16.11.2026, abends)
+
+Der Autor hat die Vorschläge aus seinen Kartenänderungen (Karteneditor 1.6, Maple Falls) abgesegnet;
+alle stehen in KARTENREGELN mit dem Vermerk „(Autor, 16.11.2026)“:
+
+- **10.89 Treppenloch aus Bildern:** Loch im Raster, Ausschnitt der unteren Treppe mit 25 %
+  Deckkraft, Geländer an den Seiten ohne Wand und ohne Zugang, Auslöser auf der Zugangsreihe,
+  Ankunft davor. Umgebaut: Bibliothek Cedar Creek (drei Fassungen, Kellertreppe); Zimmer und
+  Dachboden in Maple Falls hatte der Autor selbst so gebaut. Prüfung `treppenloch.py`.
+- **10.79 Uhr hinter dem Brett:** Das Brett liegt mittig, die Uhr dahinter darf über die
+  Hinterkante ragen (bisher Ausnahme in `tischlage.py`, jetzt Regel).
+- **10.90 Kollision gehört dem Möbel:** Ersatzlösungen mit dem Pinsel in Maple Falls zurückgebaut;
+  sperrende Bodenkacheln sind ein Hinweis.
+- **10.91 Frisches Essen nur mit Gast:** Diner abgeräumt (benutzter Teller `mf16TellerBenutzt`),
+  Prüfung `gedeck.py`.
+- **10.92 Türen in Menschengröße:** Prüfung `tuergroesse.py` mit gemessenen Türen; Villen und
+  Ladenfassaden mit Glastür sind zu klein, die Entscheidung über den Umbau ist RO33.
+- **Spielstart** bleibt auf dem Dachboden oben am Treppenloch (2, 9): Der Held trägt die Kiste
+  hinauf (Roman Kap. 1, „Bring die hier hoch zu den anderen“). Die Beschreibungen von Wohnzimmer,
+  Zimmer und Dachboden nennen jetzt die neue Lage von Treppen, Löchern und Kartons.

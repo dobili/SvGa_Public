@@ -281,20 +281,6 @@
     0,
     0,
     0,
-    2,
-    0,
-    0,
-    2,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -314,7 +300,21 @@
     0,
     0,
     0,
+    0,
+    0,
     2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     2,
     2,
@@ -813,11 +813,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "./."
       }
      ]
     },
@@ -841,11 +836,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "./."
       }
      ]
     },
@@ -1081,11 +1071,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "."
       }
      ]
     },
@@ -1421,11 +1406,6 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "ersterAbendGesehen"
-  },
-  {
-   "name": "sperren",
-   "type": "string",
-   "value": "6,6;9,6;11,8"
   },
   {
    "name": "freigeben",

@@ -14,7 +14,7 @@ privates Grafikpaket das ganze Bild (dann meldet die Prüfung eher zu wenig als 
 Regeln (keine nennt eine Karte):
 1. Platte: Brett und Schachuhr auf einem Tisch, Tresen oder Schreibtisch liegen ganz auf der Platte;
    die aufrechte Uhr mit ihrem Fuß (unterste FUSS_UHR Reihen), oben darf sie über die hintere Kante
-   ragen (Lage des Autors im Clubraum, 16.11.2026; Vorschlag zur Regel liegt dem Autor vor).
+   ragen (Lage des Autors im Clubraum, als Regel bestätigt: KARTENREGELN 10.79, Autor, 16.11.2026).
    Ein solcher Tisch ohne ``platte`` ist ein Befund (die Prüfung kann ihn sonst nicht messen).
 2. Brett mittig: Liegen n Bretter auf einer Platte, teilt die Platte sich längs in n gleiche Plätze;
    jedes Brett liegt (allein oder zusammen mit seiner Uhr) höchstens TOLERANZ Pixel neben der Mitte.

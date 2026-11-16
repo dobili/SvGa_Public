@@ -5517,7 +5517,7 @@
       "stil": "klassisch",
       "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
       "blick": "unten",
-      "maske_fein": ["....", "....", "####", "####"]
+      "ohne_maske_fein": "Diner: Mit feiner Maske geht neben der Jukebox die Lücke hinter die Theke auf (Gegenprobe feinmasken_pruefung, RO32); vorher schloss sie eine unsichtbare Bodenkachel"
     },
     "mf12SchaukelstuhlVorn": {
       "quelle": "spiel/eigene/schaukelstuhl_vorn.png",
@@ -5564,6 +5564,19 @@
       "stil": "natur",
       "hinweis": "der morsche Steg des Pakets ohne eingemaltes Wasser, damit er am Ufer ansetzen kann; Bild aus bildwuensche/akt1_karten.py"
     },
+    "mf16TellerBenutzt": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_384.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "sichtbar_breite": 12,
+      "essen": "benutzt",
+      "hinweis": "benutzter Teller mit Krümeln und Resten: Geschirr an einem Tisch ohne Gast (Regel 10.91, Autor, 16.11.2026)",
+      "maske_fein": [".##.", "####", "####", "...."]
+    },
     "mf14TellerEssen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_389.png",
       "breite": 16,
@@ -5573,8 +5586,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 13,
-      "hinweis": "Teller mit Essen (Diner)",
-      "maske_fein": [".##.", "####", "####", "...."]
+      "essen": "frisch",
+      "hinweis": "Teller mit Essen (Diner)"
     },
     "mf14TellerPfannkuchen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_385.png",
@@ -5585,6 +5598,7 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 12,
+      "essen": "frisch",
       "hinweis": "Teller mit Pfannkuchen (Diner)",
       "maske_fein": [".##.", "####", "####", "...."]
     },
@@ -5597,6 +5611,7 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 12,
+      "essen": "frisch",
       "hinweis": "Teller mit einem Stück Kuchen (Diner)",
       "maske_fein": [".##.", "####", "####", "...."]
     },
@@ -5609,6 +5624,7 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 9,
+      "essen": "frisch",
       "hinweis": "Kaffeebecher (Diner)",
       "maske_fein": [".##.", ".##.", ".##.", "...."]
     },
@@ -5621,8 +5637,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "sichtbar_breite": 5,
-      "hinweis": "Glas mit Wasser (Diner)",
-      "maske_fein": ["....", "....", ".##.", ".#.."]
+      "essen": "frisch",
+      "hinweis": "Glas mit Wasser (Diner)"
     },
     "mf14Muelleimer": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_110.png",
@@ -5659,7 +5675,7 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "lauf": "senkrecht",
-      "hinweis": "Öffnung im Dachboden mit Geländer an drei Seiten, Stufen führen nach Norden hinab (Gemini 15.11.2026, Regel 10.76); Zugang von Süden; die unterste Reihe ist Boden mit Geländerpfosten am Rand und bleibt begehbar"
+      "hinweis": "NICHT MEHR VERWENDEN (Regel 10.89, Autor, 16.11.2026: Treppenloch aus Bildern statt Lochbild). Öffnung im Dachboden mit Geländer an drei Seiten, Stufen führen nach Norden hinab (Gemini 15.11.2026, Regel 10.76); Zugang von Süden; die unterste Reihe ist Boden mit Geländerpfosten am Rand und bleibt begehbar"
     },
     "mf12TreppenlochZimmer": {
       "quelle": "spiel/eigene/treppenloch_zimmer.png",
@@ -5673,7 +5689,7 @@
       "zustand": "neu",
       "stil": "klassisch",
       "lauf": "senkrecht",
-      "hinweis": "Öffnung in hellen Dielen mit Geländerpfosten, Stufen führen nach Norden hinab (Gemini 15.11.2026, Regel 10.76); Zugang von Süden; die unterste Reihe ist Boden mit Geländerpfosten am Rand und bleibt begehbar"
+      "hinweis": "NICHT MEHR VERWENDEN (Regel 10.89, Autor, 16.11.2026: Treppenloch aus Bildern statt Lochbild). Öffnung in hellen Dielen mit Geländerpfosten, Stufen führen nach Norden hinab (Gemini 15.11.2026, Regel 10.76); Zugang von Süden; die unterste Reihe ist Boden mit Geländerpfosten am Rand und bleibt begehbar"
     },
     "mf12WasserfallFelsen": {
       "quelle": "spiel/eigene/wasserfall_felsen.png",
@@ -5776,6 +5792,17 @@
       "stil": "rustikal",
       "hinweis": "nur der Eckpfosten rechts oben der Reling C: Abschluss eines Geländers am Treppenloch (Karteneditor des Autors, 16.11.2026)",
       "maske_fein": ["....", "....", "##..", "##.."]
+    },
+    "mf15GelaenderPfostenLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Top_Left_16x16.png",
+      "ausschnitt": [0, 0, 5, 16],
+      "breite": 5,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "hinweis": "nur der Eckpfosten links oben der Reling C: Abschluss der linken Seite eines Geländers am Treppenloch, Gegenstück zu mf15GelaenderPfostenRechts (Regel 10.89, Autor, 16.11.2026)"
     }
   }
 }

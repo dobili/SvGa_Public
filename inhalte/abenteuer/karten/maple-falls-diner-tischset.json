@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 67,
+ "nextobjectid": 61,
  "layers": [
   {
    "id": 1,
@@ -424,7 +424,7 @@
     2,
     0,
     0,
-    2,
+    0,
     0,
     0,
     0,
@@ -998,7 +998,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -1474,11 +1474,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "../.."
       }
      ]
     },
@@ -1594,11 +1589,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "."
       }
      ]
     },
@@ -1788,52 +1778,6 @@
     },
     {
      "id": 48,
-     "name": "mf14TellerEssen",
-     "type": "moebel",
-     "x": 195,
-     "y": 37,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 49,
-     "name": "mf14Glas",
-     "type": "moebel",
-     "x": 207,
-     "y": 36,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 50,
      "name": "mf14TellerKuchen",
      "type": "moebel",
      "x": 195,
@@ -1856,7 +1800,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 49,
      "name": "mf14Kaffeetasse",
      "type": "moebel",
      "x": 207,
@@ -1879,8 +1823,8 @@
      ]
     },
     {
-     "id": 52,
-     "name": "mf14TellerPfannkuchen",
+     "id": 50,
+     "name": "mf16TellerBenutzt",
      "type": "moebel",
      "x": 195,
      "y": 171,
@@ -1902,31 +1846,8 @@
      ]
     },
     {
-     "id": 53,
-     "name": "mf14Kaffeetasse",
-     "type": "moebel",
-     "x": 207,
-     "y": 170,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 185
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 54,
-     "name": "mf14TellerEssen",
+     "id": 51,
+     "name": "mf16TellerBenutzt",
      "type": "moebel",
      "x": 28,
      "y": 154,
@@ -1948,30 +1869,7 @@
      ]
     },
     {
-     "id": 55,
-     "name": "mf14Glas",
-     "type": "moebel",
-     "x": 16,
-     "y": 149,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 169
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 56,
+     "id": 52,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 24,
@@ -1994,7 +1892,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 53,
      "name": "ca7StuhlRuecken",
      "type": "moebel",
      "x": 23,
@@ -2017,7 +1915,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 54,
      "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 176,
@@ -2040,7 +1938,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 55,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 192,
@@ -2063,8 +1961,8 @@
      ]
     },
     {
-     "id": 60,
-     "name": "mf14TellerEssen",
+     "id": 56,
+     "name": "mf16TellerBenutzt",
      "type": "moebel",
      "x": 195,
      "y": 72,
@@ -2086,30 +1984,7 @@
      ]
     },
     {
-     "id": 61,
-     "name": "mf14Glas",
-     "type": "moebel",
-     "x": 207,
-     "y": 71,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 31
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 62,
+     "id": 57,
      "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 224,
@@ -2132,7 +2007,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 58,
      "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 176,
@@ -2155,7 +2030,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 59,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 192,
@@ -2178,7 +2053,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 60,
      "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 224,
@@ -2197,34 +2072,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "bkFliesenWeiss",
-     "type": "moebel",
-     "x": 128,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "#"
       }
      ]
     }
@@ -2308,16 +2155,6 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "nadelMapleFalls >= 1 und dinerAbendGesehen"
-  },
-  {
-   "name": "sperren",
-   "type": "string",
-   "value": "3,11"
-  },
-  {
-   "name": "sperren_fein",
-   "type": "string",
-   "value": "8,3,########........;9,3,########........"
   }
  ]
 }

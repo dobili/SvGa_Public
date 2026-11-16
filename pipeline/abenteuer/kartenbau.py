@@ -15,7 +15,12 @@ import json
 import sys
 from pathlib import Path
 
-from pipeline.abenteuer.bauweisen import darf_ueberlappen, doppelte_eintraege, gelaender_am_loch
+from pipeline.abenteuer.bauweisen import (
+    bodenkacheln_mit_kollision,
+    darf_ueberlappen,
+    doppelte_eintraege,
+    gelaender_am_loch,
+)
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.bodenteile import lege_bodenteile
 from pipeline.abenteuer.feinbericht import feinbefunde, feinhinweise
@@ -285,6 +290,12 @@ def baue(pfad: Path) -> list[str]:
         sitze = BESTAND[0] is not None
         befunde += [f"Tischlage: {b.moebel} {b.feld}: {b.text}" for b in tischlage(szene, moebel, sitze)]
         befunde += [f"Anordnung: {b}" for b in pruefe_anordnung(szene)]
+        from pipeline.abenteuer.treppenloch import pruefe_szene as treppenloch  # 10.89
+
+        befunde += [f"Treppenloch: {b}" for b in treppenloch(szene, zeilen, gesetzt, moebel)]
+        from pipeline.abenteuer.gedeck import pruefe_szene as gedeck  # 10.91
+
+        befunde += [f"Gedeck: {b}" for b in gedeck(szene, gesetzt, moebel)]
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
         befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")
@@ -318,6 +329,10 @@ def hinweise(pfad: Path) -> list[str]:
 
     pinsel += pruefe_engstellen(szene, raster(szene), gesetzt, moebel)[1]
     doppelt = doppelte_eintraege(szene, moebel, mit_kollision=False)  # flach doppelt gezeichnet
+    doppelt += bodenkacheln_mit_kollision(szene, moebel)  # Regel 10.90 (bauweisen.py)
+    from pipeline.abenteuer.tuergroesse import pruefe_szene as tuergroesse  # Regel 10.92
+
+    doppelt += tuergroesse(szene, moebel)
     return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt)) + pinsel + doppelt
 
 

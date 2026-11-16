@@ -63,9 +63,7 @@
       "moebel": "mf5Buffet",
       "feld": [8, 2],
       "id": "anrichte",
-      "versatz": [0, 3],
-      "kollision": false,
-      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Anrichte sperrt über die feine Sperre auf (8, 3) und (9, 3), obere Hälfte, statt über ihre Maske."
+      "versatz": [0, 3]
     },
     {
       "moebel": "mf5Kaffeemaschine",
@@ -176,9 +174,7 @@
     {
       "moebel": "mf4Palme",
       "feld": [3, 10],
-      "versatz": [-9, 0],
-      "maske": ["..", ".."],
-      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Palme sperrt über die gemalte Sperre auf (3, 11) statt über ihre Maske."
+      "versatz": [-9, 0]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -204,9 +200,7 @@
     {
       "moebel": "mf12JukeboxAn",
       "feld": [7, 4],
-      "versatz": [10, 11],
-      "maske": ["."],
-      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Jukebox sperrt über die gesperrte Bodenkachel bkFliesenWeiss auf (8, 5) statt über ihre Maske."
+      "versatz": [10, 11]
     },
     {
       "moebel": "mf5Hocker",
@@ -250,16 +244,6 @@
       "versatz": [0, 16]
     },
     {
-      "moebel": "mf14TellerEssen",
-      "auf": "n1",
-      "versatz": [-5, 2]
-    },
-    {
-      "moebel": "mf14Glas",
-      "auf": "n1",
-      "versatz": [7, 1]
-    },
-    {
       "moebel": "mf14TellerKuchen",
       "auf": "n2",
       "versatz": [-5, 2]
@@ -270,24 +254,14 @@
       "versatz": [7, 1]
     },
     {
-      "moebel": "mf14TellerPfannkuchen",
+      "moebel": "mf16TellerBenutzt",
       "auf": "n3",
       "versatz": [-5, 8]
     },
     {
-      "moebel": "mf14Kaffeetasse",
-      "auf": "n3",
-      "versatz": [7, 7]
-    },
-    {
-      "moebel": "mf14TellerEssen",
+      "moebel": "mf16TellerBenutzt",
       "auf": "g1",
       "versatz": [4, 7]
-    },
-    {
-      "moebel": "mf14Glas",
-      "auf": "g1",
-      "versatz": [-8, 2]
     },
     {
       "moebel": "ca7StuhlVorn",
@@ -313,15 +287,9 @@
       "ebene": -57
     },
     {
-      "moebel": "mf14TellerEssen",
+      "moebel": "mf16TellerBenutzt",
       "auf": "n1_2",
       "versatz": [-5, 5],
-      "ebene": -1
-    },
-    {
-      "moebel": "mf14Glas",
-      "auf": "n1_2",
-      "versatz": [7, 4],
       "ebene": -1
     },
     {
@@ -342,13 +310,6 @@
     {
       "moebel": "mf12NischenbankLinks",
       "feld": [14, 8]
-    },
-    {
-      "moebel": "bkFliesenWeiss",
-      "feld": [8, 6],
-      "versatz": [0, -16],
-      "kollision": true,
-      "maske": ["#"]
     }
   ],
   "ausloeser": [
@@ -409,12 +370,5 @@
         "sitzt": "links"
       }
     }
-  ],
-  "sperren": [
-    [3, 11]
-  ],
-  "sperren_fein": [
-    [8, 3, "########........"],
-    [9, 3, "########........"]
   ]
 }

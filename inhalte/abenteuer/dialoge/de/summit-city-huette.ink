@@ -221,11 +221,9 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 
 // ---------------------------------------------------------------- Erinnerung Hastings 1895 (Szene 85)
 
-=== ward_erinnerung ===
--> ward_bleib
-
 // Gutachten M2.1, Roman Kapitel 49: der vierte Abend als Pflicht, nach beiden Reihen und vor Victors
-// Partie; Ward bittet zu bleiben, der Held fragt nicht.
+// Partie; Ward bittet zu bleiben, der Held fragt nicht. (Der frühere Einstieg ward_erinnerung, nur
+// noch eine Weiterleitung hierher ohne Verweis, ist am 16.11.2026 entfallen.)
 === ward_bleib ===
 ~ wardBleibGesehen = true
 Bleib. Unten ist heute das Drachenfest. Die halbe Stadt spielt mit einer Figur, die es nicht gibt. #sprecher:ward #stimmung:laechelt

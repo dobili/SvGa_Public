@@ -50,7 +50,7 @@ Nicht jetzt. Ich hab Vorbereitung. Der Coach sagt, ich darf mit niemandem spiele
 Unter der Plattform liegen die Wolken im Tal wie Milch in einer Schüssel. Die Gipfel ragen daraus hervor wie Inseln. #sprecher:erzaehler #musik:aus
 Victor sitzt am Geländer, die Knie angezogen, nur im Hemd. Die weiße Jacke liegt neben ihm. #sprecher:erzaehler
 * [Dich zwei Meter weiter hinsetzen]
-- Du sagst nichts. Von Mrs. Okafor hast du gelernt, wie man das macht. Das Rad dreht sich, eine Gondel fährt hinunter. #sprecher:erzaehler
+- Du sagst nichts. Von Mrs. Okafor hast du gelernt, wie man das macht. Hinter dem Glastor dreht sich das Rad, eine Gondel fährt hinunter. #sprecher:erzaehler
 Ich war fünf, da hat er mir das erste Brett hingestellt. Das Einzige, bei dem man immer weiß, wer besser ist. #sprecher:victor #stimmung:nachdenklich
 Mit sieben hab ich ihn geschlagen. Er hat sich so gefreut. Danach hat er aufgehört, mit mir zu spielen. #sprecher:victor #stimmung:bitter
 Seit acht Jahren rechnet er nur noch nach. Jede Partie. Er schickt mir die Kurve. #sprecher:victor #stimmung:bitter
@@ -125,7 +125,7 @@ Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprech
 
 === fund_pfeife ===
 {pfeifeGefunden:
-    Unter der Bank liegt nur noch eine leere Bonbontüte. #sprecher:erzaehler
+    Unter der Wartebank liegt nur noch eine leere Bonbontüte. #sprecher:erzaehler
     -> END
 }
 ~ pfeifeGefunden = true
@@ -146,7 +146,9 @@ Hinter dem Geländer fällt der Fels senkrecht ab. Darunter wogt das Wolkenmeer 
 Am Seil gleitet eine Gondel hinunter und taucht ins Weiß, als ginge sie unter. #sprecher:erzaehler
 -> END
 
-// Gutachten M2.9: geführter Moment in der freien Partie (begegnungen.json, summitCity.victorFrei).
+// Gutachten M2.9: geführter Moment in der freien Partie (begegnungen.json, summitCity.victorFrei, ab dem
+// fünften Zug). Wie victor_gabel nur als Partiemoment erreichbar (anbindung/Momentzeile.tsx); die
+// Gesamtsimulation spielt keine Züge und führt beide deshalb unter „Nie erreichte Knoten“.
 === victor_luftig ===
 Das ist schlecht. Warum hab ich das gemacht? #sprecher:victor #stimmung:ueberrascht
 * [„Weiß ich nicht. Wie fühlt es sich an?“]

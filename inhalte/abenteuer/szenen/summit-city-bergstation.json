@@ -2,7 +2,7 @@
   "karte": "summitCity.bergstation",
   "datei": "karten/summit-city-bergstation.json",
   "art": "innen",
-  "beschreibung": "Die Bergstation der Seilbahn über den Wolken (Szene 88), 18 × 21: hinten die offene Aussichtsplattform, vorn die Halle aus Holz und Glas, kühl und hell. Die Plattform aus Stein liegt nördlich hinter der Halle, drei Reihen tief und fünfzehn Felder breit; an ihrer Kante läuft ein Stahlgeländer mit zwei Ecken, deren Pfosten bis an die Hallenwand reichen. Dahinter und daneben nichts als das Wolkenmeer. Victor steht dort am Geländer, wo er in Szene 88 sitzt; rechts am Geländer der Auslöser „aussicht“. Eine gläserne Doppeltür in der Mitte der Nordwand der Halle führt hinaus. In der Nordwand links zwei und rechts ein Fensterband, hinter denen Wolken und Gipfel stehen; davor zwei Bänke, links neben der Tür eine Pflanze. Rechts die steinerne Bucht der Gondel: Hinten steht das große Seilrad auf seinem Stahlgestell vor dem Glastor, durch das das Seil hinausläuft, darunter hängt die Gondel; mit ihr fährt man auch zurück ins Tal. Links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer an der Ostwand. In der Mitte der Halle zwei Wartebänke, Rucksäcke von Wanderern liegen herum.",
+  "beschreibung": "Die Bergstation der Seilbahn über den Wolken (Szene 88), 18 × 21: hinten die offene Aussichtsplattform, vorn die Halle aus Holz und Glas, kühl und hell. Die Plattform aus Stein liegt nördlich hinter der Halle, drei Reihen tief und fünfzehn Felder breit; an ihrer Kante läuft ein Stahlgeländer mit zwei Ecken, deren Pfosten bis an die Hallenwand reichen. Dahinter und daneben nichts als das Wolkenmeer. Victor steht dort am Geländer, wo er in Szene 88 sitzt; rechts am Geländer der Auslöser „aussicht“. Eine gläserne Doppeltür in der Mitte der Nordwand der Halle führt hinaus. In der Nordwand links zwei und rechts ein Fensterband, hinter denen Wolken und Gipfel stehen; davor zwei Bänke, links neben der Tür eine Pflanze. Rechts die steinerne Bucht der Gondel: Hinten steht das große Seilrad auf seinem Stahlgestell vor dem Glastor, durch das das Seil hinausläuft, darunter hängt die Gondel; mit ihr fährt man auch zurück ins Tal. Links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer an der Ostwand. In der Mitte der Halle zwei Wartebänke, unter der linken liegt die Murmeltierpfeife (Fund davor); Rucksäcke von Wanderern liegen herum.",
   "wand": "hellgrau",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht"],
@@ -205,7 +205,7 @@
     },
     {
       "name": "fundMurmeltierpfeife",
-      "feld": [16, 21]
+      "feld": [4, 14]
     },
     {
       "name": "fahrplan",

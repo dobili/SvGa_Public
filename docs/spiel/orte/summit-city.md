@@ -27,7 +27,7 @@ Sommer, Summit City feiert sein Sommerfest.
 | ------------------------ | -------- | ------------------------------ | ------------ |
 | `summitCity.aussen`      | 80 × 60  | Südrand → Markt → Südrand ≈ 65 | ≈ 19 s       |
 | `summitCity.huette`      | 18 × 13  | Innenraum (Club)               | ≈ 4 s        |
-| `summitCity.bergstation` | 18 × 12  | Innenraum                      | ≈ 4 s        |
+| `summitCity.bergstation` | 18 × 23  | Halle und Plattform            | ≈ 6 s        |
 | `summitCity.bergladen`   | 14 × 10  | Innenraum (Laden)              | ≈ 3 s        |
 | `hochebene.felsentuerme` | 100 × 30 | Ostrand → Westrand ≈ 105       | ≈ 30 s       |
 | `hochebene.schule`       | 60 × 40  | Ostrand → Schulhof ≈ 40        | ≈ 12 s       |
@@ -85,14 +85,14 @@ Foto: zwei Könige auf einem Brett). Gebaut sind rechts noch eine Vitrine mit de
 (Ward). Zwei Clubtische mit Brettern im Süden (Kit, Haraldsen). Tür in der Südwand (8–9, 12),
 `huetteAusgang`.
 
-### 1.3 Bergstation (`summitCity.bergstation`, 18 × 12)
+### 1.3 Bergstation (`summitCity.bergstation`, 18 × 23)
 
-Halle aus Holz und Glas über den Wolken. Nordwand mit großen Fenstern (Wolken, Gipfel), draußen die
-offene Plattform mit Geländer und dem großen Rad der Seilbahn über dem Wolkenmeer; dort sitzt Victor,
-den Rücken am Geländer (Szene 88; gebaut ist eine Bank am Fenster in der Halle, noch umzubauen,
-Entscheidung 13.11.2026). Rechts die Plattform mit der **Gondel** (`seilbahnBerg`, man
-kommt mit ihr an und fährt mit ihr zurück). Links Fahrkartenschalter, Fahrplan, Kaffeeautomat,
-Schließfächer; im Eck die **Murmeltierpfeife** (`fundMurmeltierpfeife`). Kein Ausgang zu Fuß.
+Halle aus Holz und Glas über den Wolken (gebaut 15.11.2026). Nordwand mit Fensterbändern (Wolken,
+Gipfel) und einer gläsernen Doppeltür hinaus auf die offene Plattform aus Stein mit Stahlgeländer über
+dem Wolkenmeer; dort steht Victor am Geländer (Szene 88), rechts davon der Auslöser `aussicht`. Rechts
+in der Halle das Rad und die **Gondel** (`seilbahnBerg`, man kommt mit ihr an und fährt mit ihr zurück),
+das Seil läuft durch ein Glastor. Links Fahrkartenschalter, Fahrplan, Kaffeeautomat, Schließfächer;
+Wartebänke, unter der linken die **Murmeltierpfeife** (`fundMurmeltierpfeife`). Kein Ausgang zu Fuß.
 
 ### 1.4 Bergladen (`summitCity.bergladen`, 14 × 10)
 
@@ -238,9 +238,9 @@ Felsstufe 13–15 mit Treppe bei 10–11). **Ränder** wie 1.1.
   Diagramme an der Wand (beides noch umzubauen, Entscheidung 13.11.2026: leere Wände, nur ein
   Thermometer), Sessel (6, 4) und (11, 4) mit Tisch und Brett (8, 4); Clubtische (3, 8) und (13, 8);
   Ward (9, 5), Kit (4, 10), Haraldsen (14, 10).
-- **Bergstation:** Wand `hellgrau`, Boden `fliesenGrau`, Fenster mit Wolken in der Nordwand, Bank (5, 3),
-  Gondel 13–16 / 2–5 mit `seilbahnBerg` davor, Schalter (2, 7), Fahrplan, Kaffeeautomat, Schließfächer,
-  Murmeltierpfeife (1, 10); Victor (6, 4).
+- **Bergstation:** Wand `hellgrau`, Boden `dielen`, Plattform Reihen 4–6 mit Geländer, Glastür (8, 8),
+  Gondel 13–16 / 10–18 mit `seilbahnBerg` (14, 18), Schalter (1, 19), Fahrplan, Kaffeeautomat, Schließfächer,
+  Wartebänke (3, 13) und (7, 13), Murmeltierpfeife (4, 14); Victor (6, 6), `aussicht` (12, 5).
 - **Bergladen:** Wand `holz`, Boden `dielen`, Theke (2, 2), Regale an Nord- und Ostwand, Kartenständer
   (9, 5), Rucksäcke; Ladenhilfe (Statist).
 

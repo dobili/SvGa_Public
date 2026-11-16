@@ -2,10 +2,11 @@
 //
 // Szenen der Story-Bibel (Abschnitt 20): 53 Glas und Licht (Ankunft, akt3.ankunftSiliconBay),
 // 54 Dash am Food-Truck (Begegnung siliconBay.dash, Sprüche S1 bis S4, beim ersten Sieg die Karte
-// gruebelfalle), 61 Die Nacht mit dem Tablet (Auslöser hotel, akt3.ambroseGebannt), dazu Bus
-// zurück nach Ironwood und die Fähre nach Port Delacroix (nach der Clubnadel).
-// Einstiege wie in orte.json: ankunft_zu_fuss, dash, rosie, glasbruecke, hotel, bus_ironwood,
-// faehre. Rosie öffnet nach dem Gespräch ihren Laden (siliconBay.foodtruck).
+// gruebelfalle), 61 Die Nacht mit dem Tablet (Auslöser hotel, akt3.ambroseGebannt), dazu die Fähre
+// nach Port Delacroix (nach der Clubnadel). Den Bus zurück nach Ironwood gibt es seit dem 9.11.2026
+// nicht mehr (in der Stadt fährt kein Bus, Ortsdokument silicon-bay.md 1.6); sein Knoten ist entfernt.
+// Einstiege wie in orte.json: ankunft_zu_fuss, dash, rosie, glasbruecke, hotel, faehre. Rosie öffnet
+// nach dem Gespräch ihren Laden (siliconBay.foodtruck).
 //
 // Runde 11 (13.11.2026): Ankunft, Dash und Rosie nach dem Roman (roman/akt3_teil1.md, Kapitel 31):
 // Victor holt euch ab („Ich war nicht sicher, ob das dasselbe ist“), Dashs „Hm“, Rosie gibt die
@@ -20,7 +21,6 @@
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
-EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
 EXTERNAL setzeToenung(name)
 
@@ -240,16 +240,7 @@ Du stehst da mit einem Brett im Rucksack, einem Reisebrett in der Jackentasche u
 Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #sprecher:erzaehler #musik:ambrose.fern #pause:4
 -> END
 
-// ---------------------------------------------------------------- Bus und Fähre
-
-=== bus_ironwood ===
-Der Fernbus nach Ironwood hält an der Haltestelle vor dem Campus. #sprecher:erzaehler
-* [Einsteigen]
-    Der Bus fährt über die Schnellstraße zurück in die Stadt aus Stahl. #sprecher:erzaehler
-    ~ reise("ironwood.aussen", "busSiliconBay")
-    -> END
-* [Noch bleiben]
-    -> END
+// ---------------------------------------------------------------- Fähre
 
 === faehre ===
 {nadelSiliconBay > 0:

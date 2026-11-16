@@ -1201,6 +1201,13 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       vervielfältigen oder „Als eigenes Bild merken“ (Bibliothek, „Eigene Zuschnitte“). Die
       Kollision wird mitbeschnitten. Deckkraft 25, 50, 75 oder 100 Prozent für die ganze Auswahl;
       die Kollision bleibt dabei, wie sie ist.
+      Fassung 1.6: Kollision fein. Im Kollisionspinsel und bei „Kollision bearbeiten“ schaltet
+      „Fein“ (Taste F) auf ein Gitter aus Viertelkacheln (4 Pixel); so lassen sich ein Viertel, die
+      Hälfte oder drei Viertel einer Kachel sperren, waagrecht und senkrecht getrennt. Der Held ist
+      12 Pixel breit und passt durch eine Lücke von drei Vierteln einer Kachel gerade noch. Kacheln,
+      auf denen er nicht mittig stehen kann, tragen einen braunen Punkt: Dort setzt ihn das Spiel nach
+      einem Übergang nie ab, Tiere laufen nicht hin, ein kurzes Antippen endet davor. Wird ein Ziel
+      durch feine Sperren unerreichbar, meldet die Prüfung das.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg
@@ -1822,4 +1829,10 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       (4) Zwei Kleinigkeiten zur Durchsicht: Die Wand in Summit City außen endet an einer Stelle
       frei; eine Seitenkante riss dort eine sichtbare Lücke, deshalb bleibt es wie es war. Die
       Murmeltierpfeife liegt jetzt vor einer Wartebank der Bergstation.
+- [ ] RO31. **Zur Revision: Laufhilfe des Helden (16.11.2026, umgesetzt, Widerspruch genügt):**
+      Bisher zog das Spiel den Helden beim Laufen starr zur Mitte der Kachelreihe. Mit feiner
+      Kollision gäbe es dann Lücken, durch die er passt, aber nicht kommt. Jetzt gleitet er bis zu
+      4 Pixel neben die Mitte, wenn die Mitte vor ihm gesperrt ist. Das gilt auf allen Karten und
+      macht das Laufen an Möbelkanten eher leichter. Bitte beim nächsten Spielen darauf achten, ob
+      sich das Laufen irgendwo anders anfühlt.
 

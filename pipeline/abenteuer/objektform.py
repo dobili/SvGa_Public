@@ -27,6 +27,8 @@ Spiegel der Regeln in der App: ``app/src/abenteuer/oberwelt/moebelform.ts``; im 
 
 from typing import TYPE_CHECKING
 
+from pipeline.abenteuer.kollisionfein import Z as ZELLEN_JE_KACHEL
+from pipeline.abenteuer.kollisionfein import grob_aus_fein
 from pipeline.abenteuer.objektzuschnitt import beschnitten, raster, standardmaske, zuschnitt_von
 
 if TYPE_CHECKING:  # Pillow nur für die Bilder; Kartenbau und Tests laufen ohne
@@ -108,7 +110,9 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
         return None
     eigene = eintrag.get("maske")
     if not hat_form(eintrag):
-        return angabe if eigene is None else {**angabe, "maske": list(eigene)}
+        neu = angabe if eigene is None else {**angabe, "maske": list(eigene)}
+        spalten, reihen = max(1, angabe["breite"] // K), max(1, angabe["hoehe"] // K)
+        return _mit_feiner_maske(neu, eintrag, spalten, reihen)
     # Zuschnitt zuerst (objektzuschnitt.py): kleineres Bild, Katalogmaske mitbeschnitten.
     angabe, beschnitt = beschnitten(angabe, eintrag)
     neu = dict(angabe)
@@ -127,7 +131,24 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
         neu.pop("maske", None)
     if drehung:
         neu.pop("frei_unten", None)
-    return neu
+    return _mit_feiner_maske(neu, eintrag, spalten, reihen)
+
+
+def _mit_feiner_maske(angabe: dict, eintrag: dict, spalten: int, reihen: int) -> dict:
+    """Die feine Maske des Eintrags (kollisionfein.py), gedreht und gespiegelt wie das Bild, und
+    dazu die grobe ``maske`` (eine Kachel sperrt, wenn eine ihrer Zellen sperrt). Ohne
+    ``maske_fein`` (oder ungültig) bleibt die Angabe, wie sie ist.
+
+    Beispiel: Kiste 16 × 16 mit ``maske_fein`` ["##..", "##..", "....", "...."] und ``spiegeln`` →
+    ``maske_fein`` ["..##", "..##", "....", "...."], ``maske`` ["#"].
+    """
+    fein = eintrag.get("maske_fein")
+    if not isinstance(fein, list) or not all(isinstance(z, str) for z in fein):
+        return angabe
+    z = ZELLEN_JE_KACHEL
+    drehung, spiegeln = eintrag.get("drehung", 0) % 360, bool(eintrag.get("spiegeln"))
+    geformte = drehe_maske(list(fein), spalten * z, reihen * z, drehung, spiegeln)
+    return {**angabe, "maske_fein": geformte, "maske": grob_aus_fein(geformte)}
 
 
 def formangaben(eintrag: dict) -> dict:

@@ -348,7 +348,8 @@ footer {
 #hilfe[hidden],
 #trefferliste[hidden],
 #pinselwahl[hidden],
-#kpinselwahl[hidden] {
+#kpinselwahl[hidden],
+#feinknopf[hidden] {
   display: none;
 }
 .hilfekasten {

@@ -9,12 +9,18 @@
  * Spiegelung wirken darauf wie auf die Katalogmaske) und `begehbar_grund` (Pflicht, wenn ein
  * nicht flaches Möbel an dieser Stelle durchgehbar wird, Regel 10.69). Jede Änderung ist ein
  * Schritt im Verlauf (Rückgängig).
+ * Fein (Editor 1.6, Taste F): Die Maske wird in Zellen von 4 Pixeln gemalt und als `maske_fein`
+ * gespeichert (je Kachel 4 Zeichen und 4 Zeilen, ungedreht wie `maske`, fein.js). Ziehen malt mit
+ * dem Wert der ersten Zelle weiter, Umschalt+Ziehen setzt ein Rechteck. Ist jede Kachel einheitlich,
+ * schreibt der Editor wie bisher die grobe `maske`.
  */
 "use strict";
 
 (function (KE) {
   const K = 16;
-  const FELDER = ["kollision", "maske", "begehbar_grund"];
+  const FELDER = ["kollision", "maske", "maske_fein", "begehbar_grund"];
+  const Z = 4; // Zellen je Kachelkante (fein.js)
+  const ZP = K / Z;
   const FARBE_FREI = "rgba(40, 200, 90, 0.35)";
   const FARBE_GESPERRT = "rgba(230, 40, 40, 0.5)";
   const el = (...a) => KE.el(...a);
@@ -26,7 +32,8 @@
   /** Ob ein Objekt an seiner Stelle ganz durchgehbar ist (objektkollision.durchgehbar). */
   KE.istDurchgehbar = function (e) {
     if (!KE.kollisionAn(katalog(e), e)) return true;
-    return Array.isArray(e.maske) && !e.maske.some((z) => z.includes("#"));
+    const maske = e.maske_fein || e.maske;
+    return Array.isArray(maske) && !maske.some((z) => z.includes("#"));
   };
 
   /** Ob für dieses Objekt ein Grund fehlt (nicht flach, sperrt laut Katalog, hier durchgehbar). */
@@ -40,8 +47,9 @@
   function setzeSperre(e, sperrt) {
     if (sperrt === !!katalog(e).kollision) delete e.kollision;
     else e.kollision = sperrt;
-    const offeneMaske = Array.isArray(e.maske) && !e.maske.some((z) => z.includes("#"));
-    if (!sperrt || offeneMaske) delete e.maske;
+    const maske = e.maske_fein || e.maske;
+    const offeneMaske = Array.isArray(maske) && !maske.some((z) => z.includes("#"));
+    if (!sperrt || offeneMaske) (delete e.maske, delete e.maske_fein);
     if (sperrt) delete e.begehbar_grund;
   }
 
@@ -81,21 +89,28 @@
     const z = KE.zustand;
     const erstes = objekte()[0];
     z.kollisionUid = an && erstes ? erstes.eintrag._uid : null;
-    if (z.kollisionUid) z.kpinsel = null; // Modus je Bild statt Kollisionspinsel (pinsel.js)
+    if (z.kollisionUid)
+      z.kpinsel = null; // Modus je Bild statt Kollisionspinsel (pinsel.js)
+    else z.fein = false; // „Fein“ endet mit dem Modus (feinmalen.js)
     if (z.kollisionUid) KE.schalte("kollision", true);
-    KE.meldeAenderung(z.kollisionUid ? "Kollision: Kachel anklicken schaltet sperrt/frei." : "");
+    KE.meldeAenderung(
+      z.kollisionUid
+        ? "Kollision: Kachel anklicken schaltet sperrt/frei, Ziehen malt, F schaltet „Fein“."
+        : "",
+    );
   };
 
   /** Spalten und Reihen eines Stücks in Kacheln (wie maskenfelder; beschnitten: zuschnitt.js). */
   const masse = (s) => KE.maskenmasse(s);
 
-  /** Die gesperrten Kacheln eines Stücks als Raster der gezeichneten (geformten) Lage. */
-  function raster(s) {
+  /** Die gesperrten Zellen eines Stücks als Raster der gezeichneten (geformten) Lage. */
+  function feinraster(s) {
     const [sp, re] = masse(s);
-    const zeilen = Array.from({ length: re }, () => Array(sp).fill("."));
+    const zeilen = Array.from({ length: re * Z }, () => Array(sp * Z).fill("."));
     if (s.kollision)
-      for (const [x, y] of KE.maskenfelder(s.angabe)) if (y < re && x < sp) zeilen[y][x] = "#";
-    return zeilen.map((z) => z.join(""));
+      for (const [x, y] of KE.stueckzellenLokal(s))
+        if (y < re * Z && x < sp * Z) zeilen[y][x] = "#";
+    return zeilen;
   }
 
   /** Geformtes Raster zurück ins Raster des ungedrehten Bildes: erst zurückdrehen, dann spiegeln. */
@@ -106,26 +121,116 @@
     return r;
   }
 
-  /** Klick in die Karte im Kollisionsmodus: schaltet die Kachel unter dem Punkt. */
-  KE.kollisionsKlick = function (px, py) {
+  /** Ob jede Kachel eines feinen Rasters einheitlich ist (dann genügt die grobe Maske). */
+  function einheitlich(zeilen) {
+    for (let y = 0; y < zeilen.length; y++)
+      for (let x = 0; x < zeilen[y].length; x++) {
+        const ecke = zeilen[y - (y % Z)][x - (x % Z)];
+        if (zeilen[y][x] !== ecke) return false;
+      }
+    return true;
+  }
+
+  /** Schreibt das feine Raster (gezeichnete Lage) an den Eintrag: grob, wenn es einheitlich ist. */
+  function schreibeMaske(e, raster) {
+    const ungedreht = zurueck(
+      raster.map((z) => z.join("")),
+      e,
+    );
+    if (!KE.kollisionAn(katalog(e), e)) setzeSperre(e, true);
+    if (einheitlich(ungedreht)) {
+      e.maske = KE.grobAusFein(ungedreht);
+      delete e.maske_fein;
+    } else {
+      e.maske_fein = ungedreht;
+      delete e.maske;
+    }
+  }
+
+  /** Stelle (Spalte, Reihe) im Raster des Stücks, in Kacheln oder (fein) Zellen. */
+  function stelle(s, px, py, fein) {
+    const e = fein ? ZP : K;
+    return [Math.floor((px - s.x) / e), Math.floor((py - s.y) / e)];
+  }
+
+  /** Setzt eine Kachel (alle 16 Zellen) oder eine Zelle im feinen Raster auf `wert`. */
+  function setze(raster, x, y, wert, fein) {
+    const n = fein ? 1 : Z;
+    for (let j = 0; j < n; j++)
+      for (let i = 0; i < n; i++) if (raster[y * n + j]) raster[y * n + j][x * n + i] = wert;
+  }
+
+  /**
+   * Maus gedrückt im Modus „Kollision bearbeiten“: schaltet die Kachel (fein: die Zelle) unter dem
+   * Punkt um. Ausgabe: der Zustand des Ziehens für bedienung.js, oder null außerhalb des Bildes.
+   */
+  KE.kollisionStart = function (ereignis, px, py) {
     const z = KE.zustand;
     const s = stueck(z.kollisionUid);
     if (!s) return (z.kollisionUid = null);
-    const x = Math.floor((px - s.x) / K);
-    const y = Math.floor((py - s.y) / K);
-    const zeilen = raster(s);
-    if (y < 0 || x < 0 || y >= zeilen.length || x >= zeilen[0].length)
-      return KE.status("Diese Kachel gehört nicht zum Bild. Fertig mit „Fertig“ oder Esc.");
-    const neu = zeilen[y][x] === "#" ? "." : "#";
-    zeilen[y] = zeilen[y].slice(0, x) + neu + zeilen[y].slice(x + 1);
-    KE.schritt("Kollision Kachel", [z.datei], () => {
-      const e = KE.finde(z.kollisionUid).eintrag;
-      if (!KE.kollisionAn(katalog(e), e)) setzeSperre(e, true);
-      e.maske = zurueck(zeilen, e);
-    });
+    const fein = !!z.fein;
+    const [x, y] = stelle(s, px, py, fein);
+    const [sp, re] = masse(s).map((v) => (fein ? v * Z : v));
+    if (y < 0 || x < 0 || y >= re || x >= sp) {
+      KE.status("Diese Stelle gehört nicht zum Bild. Fertig mit „Fertig“ oder Esc.");
+      return null;
+    }
+    const raster = feinraster(s);
+    const wert = raster[fein ? y : y * Z][fein ? x : x * Z] === "#" ? "." : "#";
+    const ziehen = {
+      art: "kollision",
+      vorher: KE.schnappschuss([z.datei]),
+      fein,
+      wert,
+      x0: x,
+      y0: y,
+    };
+    ziehen.rechteck = ereignis.shiftKey;
+    ziehen.einheit = fein ? ZP : K;
+    if (ziehen.rechteck) KE.kollisionRahmen = { x0: x, y0: y, x1: x, y1: y, s, e: ziehen.einheit };
+    else KE.kollisionZiehen(ziehen, px, py);
+    return ziehen;
   };
 
-  /** Gitter über dem bearbeiteten Objekt: grün frei, rot gesperrt. */
+  /** Maus bewegt: malt mit dem Wert der ersten Stelle weiter oder zieht das Rechteck auf. */
+  KE.kollisionZiehen = function (ziehen, px, py) {
+    const z = KE.zustand;
+    const s = stueck(z.kollisionUid);
+    if (!s) return;
+    const [x, y] = stelle(s, px, py, ziehen.fein);
+    if (ziehen.rechteck) {
+      const [x0, y0] = [ziehen.x0, ziehen.y0];
+      KE.kollisionRahmen = {
+        ...KE.kollisionRahmen,
+        x0: Math.min(x0, x),
+        y0: Math.min(y0, y),
+        x1: Math.max(x0, x),
+        y1: Math.max(y0, y),
+      };
+      return KE.zeichne();
+    }
+    const raster = feinraster(s);
+    setze(raster, x, y, ziehen.wert, ziehen.fein);
+    schreibeMaske(KE.finde(z.kollisionUid).eintrag, raster);
+    KE.zeichne();
+  };
+
+  /** Maus losgelassen: Rechteck setzen, alles als einen Schritt im Verlauf abschließen. */
+  KE.kollisionEnde = function (ziehen) {
+    const z = KE.zustand;
+    const r = KE.kollisionRahmen;
+    const s = stueck(z.kollisionUid);
+    if (ziehen.rechteck && r && s) {
+      const raster = feinraster(s);
+      for (let y = r.y0; y <= r.y1; y++)
+        for (let x = r.x0; x <= r.x1; x++) setze(raster, x, y, ziehen.wert, ziehen.fein);
+      schreibeMaske(KE.finde(z.kollisionUid).eintrag, raster);
+    }
+    KE.kollisionRahmen = null;
+    KE.schrittAbschliessen(ziehen.fein ? "Kollision Zellen" : "Kollision Kachel", ziehen.vorher);
+  };
+
+  /** Gitter über dem bearbeiteten Objekt: grün frei, rot gesperrt; fein in Zellen. */
   KE.zeichneKollisionsgitter = function (ctx, zoom) {
     const z = KE.zustand;
     if (!z.kollisionUid || z.schalter.vorher) return;
@@ -133,17 +238,29 @@
     if (!s) return (z.kollisionUid = null);
     // Am Bild ausgerichtet, nicht am Kartenraster: Die Maske gilt ab der linken oberen Ecke des
     // Bildes, auch wenn es um ein paar Pixel verschoben ist (Fehlerbericht des Autors, 16.11.2026).
-    const x0 = s.x;
-    const y0 = s.y;
-    raster(s).forEach((zeile, y) =>
-      [...zeile].forEach((c, x) => {
-        ctx.fillStyle = c === "#" ? FARBE_GESPERRT : FARBE_FREI;
-        ctx.fillRect(x0 + x * K, y0 + y * K, K, K);
-        ctx.strokeStyle = "#fff";
-        ctx.lineWidth = 1 / zoom;
-        ctx.strokeRect(x0 + x * K, y0 + y * K, K, K);
-      }),
+    const fein = z.fein || !!s.angabe.maske_fein;
+    const raster = feinraster(s);
+    const e = fein ? ZP : K;
+    ctx.lineWidth = 1 / zoom;
+    for (let y = 0; y * e < raster.length * ZP; y++)
+      for (let x = 0; x * e < raster[0].length * ZP; x++) {
+        ctx.fillStyle =
+          raster[fein ? y : y * Z][fein ? x : x * Z] === "#" ? FARBE_GESPERRT : FARBE_FREI;
+        ctx.fillRect(s.x + x * e, s.y + y * e, e, e);
+        ctx.strokeStyle = fein && (x % Z || y % Z) ? "rgba(255,255,255,0.35)" : "#fff";
+        ctx.strokeRect(s.x + x * e, s.y + y * e, e, e);
+      }
+    const r = KE.kollisionRahmen;
+    if (!r) return;
+    ctx.setLineDash([4 / zoom, 3 / zoom]);
+    ctx.strokeStyle = "#ffcc00";
+    ctx.strokeRect(
+      s.x + r.x0 * r.e,
+      s.y + r.y0 * r.e,
+      (r.x1 - r.x0 + 1) * r.e,
+      (r.y1 - r.y0 + 1) * r.e,
     );
+    ctx.setLineDash([]);
   };
 
   function knopf(text, titel, tu, klasse) {
@@ -202,6 +319,16 @@
       box.append(el("div", "grundhinweis", "Grund fehlt: Der Rücklauf meldet das (Regel 10.69)."));
     const modus = !!z.kollisionUid;
     const zweite = el("div", "knopfreihe");
+    if (modus) {
+      const fein = knopf(
+        "Fein",
+        "In Zellen von 4 Pixeln bearbeiten (F)",
+        () => KE.schalteFein(),
+        "fein",
+      );
+      fein.classList.toggle("an", !!z.fein);
+      zweite.append(fein);
+    }
     const bearbeiten = knopf(
       modus ? "Fertig" : "Kollision bearbeiten",
       "Kacheln des Bildes einzeln sperren oder freigeben",

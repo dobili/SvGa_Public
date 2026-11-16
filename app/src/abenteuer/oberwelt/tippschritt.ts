@@ -44,18 +44,24 @@ export function kachelVon(punkt: Punkt, kachel: number): string {
  * Beispiel: Druck auf „rechts“ auf Kachel 4,5, nach 80 ms losgelassen bei x = 75 → Ziel ist die
  * Mitte von Kachel 5,5 (x = 88, y = 88).
  * Sonderfall: Schon auf der Nachbarkachel → null (der Druck war lang genug, nichts nachlaufen).
+ * Sonderfall: Ist die Nachbarkachel gesperrt (`frei`, sperrkarte.ts), auch nur zum Teil durch eine
+ * feine Sperre (feinsperren.ts, Karteneditor 1.6), endet der Schritt vor ihr: Der Held kehrt zur
+ * Mitte seiner Kachel zurück, statt halb hineinzulaufen und an der Kante hängen zu bleiben.
  */
 export function tippschrittBeimLoslassen(
   richtung: Richtung,
   kachelBeimDruck: string,
   jetzt: Punkt,
   kachel: number,
+  frei: (x: number, y: number) => boolean = () => true,
 ): Tippschritt | null {
   if (kachelVon(jetzt, kachel) !== kachelBeimDruck) return null;
   const v = VERSATZ[richtung];
-  const mitte = (wert: number, schritt: number) =>
-    (Math.floor(wert / kachel) + schritt) * kachel + kachel / 2;
-  return { richtung, ziel: { x: mitte(jetzt.x, v.x), y: mitte(jetzt.y, v.y) } };
+  const x = Math.floor(jetzt.x / kachel);
+  const y = Math.floor(jetzt.y / kachel);
+  const schritt = frei(x + v.x, y + v.y) ? 1 : 0;
+  const mitte = (feld: number) => feld * kachel + kachel / 2;
+  return { richtung, ziel: { x: mitte(x + v.x * schritt), y: mitte(y + v.y * schritt) } };
 }
 
 /**

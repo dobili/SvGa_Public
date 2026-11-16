@@ -18,7 +18,8 @@ window.KE = window.KE || {};
   // 1.3: Kollisionspinsel (Kacheln sperren oder freigeben, unabhängig von den Bildern, pinsel.js).
   // 1.4: Übergänge zu beliebigen Karten, Ziele und Ankunftsfelder sehen (uebergaenge.js, ankunft.js).
   // 1.5: Zuschnitt (Objektfeld zuschnitt, zuschnitt.js, zuschnittfeld.js).
-  KE.VERSION = "1.5.0";
+  // 1.6: Kollision fein (sperren_fein, freigeben_fein, maske_fein; fein.js, feinmalen.js).
+  KE.VERSION = "1.6.0";
   /** Schlüssel der Übergangsdefinitionen (orte.json) im Verlauf, neben den Szenendateien. */
   KE.ORTE = "#orte";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";
@@ -50,6 +51,7 @@ window.KE = window.KE || {};
     pinselZeichen: ".",
     kollisionUid: null, // Objekt im Modus „Kollision bearbeiten“ (kollision.js)
     kpinsel: null, // Kollisionspinsel: null, "sperren", "freigeben" oder "radierer" (pinsel.js)
+    fein: false, // „Fein“: Kollision in Zellen von 4 Pixeln malen (feinmalen.js, Taste F)
     uebergangVorlage: null, // Name des Auslösers für „Übergang hier“ (ausloeser.js)
     setzen: null, // Neuer Übergang, Gegenauslöser oder Ankunftsfeld setzen (ausloeser.js)
     uebergaenge: {}, // Ort → Übergänge aus orte.json, Arbeitskopie (uebergaenge.js)

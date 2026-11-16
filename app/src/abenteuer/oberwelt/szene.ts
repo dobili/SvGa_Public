@@ -32,6 +32,7 @@ import {
   stelleAufKachel,
 } from "./figurbilder";
 import { ladeMoebelbilder, rahmenJeTextur, richteMoebelrahmenEin, stelleMoebelAuf } from "./moebel";
+import { querziel } from "./laufhilfe";
 import { stelleFigurenAuf } from "./figurenaufstellung";
 import { erscheinungsfeld, lasseGeistErscheinen } from "./geistfigur";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
@@ -91,6 +92,8 @@ export class Oberweltszene extends Phaser.Scene {
   private toenungsschicht: Toenungsschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
+  /** Dasselbe für Zellen von 4 Pixeln (Laufhilfe an feinen Sperren, laufhilfe.ts). */
+  private zellfrei: (x: number, y: number) => boolean = () => true;
   /** Kurzes Antippen (tippschritt.ts): Kachel beim Druck und der laufende Schritt danach. */
   private druck: { richtung: Richtung; kachel: string } | null = null;
   private tipp: Tippschritt | null = null;
@@ -173,9 +176,11 @@ export class Oberweltszene extends Phaser.Scene {
     const liste = this.daten.moebel ?? [];
     if (this.daten.winter) faerbeWinterlich(this, rahmenJeTextur(liste));
     richteMoebelrahmenEin(this, liste);
-    const moebel = stelleMoebelAuf(this, liste, KACHEL);
+    // Mit den feinen Sperren der Karte (Karteneditor 1.6, feinsperren.ts) in derselben Gruppe.
+    const moebel = stelleMoebelAuf(this, liste, KACHEL, this.daten.karte);
     this.physics.add.collider(held, moebel);
-    this.frei = baueSperrkarte(karte, feste, moebel, KACHEL);
+    const sperrkarte = baueSperrkarte(karte, feste, moebel, KACHEL);
+    [this.frei, this.zellfrei] = [sperrkarte.kachel, sperrkarte.zelle];
     this.ausloeser = mitDurchgang(this.ausloeser, this.frei, this.daten.uebergaenge ?? []);
     const stunde = this.daten.stunde ?? new Date().getHours();
     const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur");
@@ -204,7 +209,7 @@ export class Oberweltszene extends Phaser.Scene {
     const d = this.druck;
     this.druck = null;
     if (d?.richtung !== richtung || !mitte || this.gedrueckt.size > 0) return;
-    this.tipp = tippschrittBeimLoslassen(richtung, d.kachel, mitte, KACHEL);
+    this.tipp = tippschrittBeimLoslassen(richtung, d.kachel, mitte, KACHEL, this.frei);
   }
 
   /** Neue Größe des Bildes (Gerät gedreht, oberweltspiel.ts): Kamera neu einrichten. */
@@ -325,14 +330,15 @@ export class Oberweltszene extends Phaser.Scene {
 
   /**
    * Laufhilfe: Beim Gehen rückt der Held quer zur Richtung sanft zur Mitte seiner Kachel, damit er
-   * an Ecken von Möbeln und Wänden nicht hängen bleibt (auf dem Handy trifft man selten genau).
+   * an Ecken von Möbeln und Wänden nicht hängen bleibt (auf dem Handy trifft man selten genau);
+   * vor einer schmalen Lücke neben der Mitte bis zu 4 Pixel daneben (laufhilfe.ts, Editor 1.6).
    */
   private rueckeZurMitte(richtung: Richtung): void {
     const held = this.held;
     if (!held) return;
     const quer = richtung === "oben" || richtung === "unten" ? "x" : "y";
-    const mitte = Math.floor(held[quer] / KACHEL) * KACHEL + KACHEL / 2;
-    const abstand = mitte - held[quer];
+    const koerper = (held.body as Phaser.Physics.Arcade.Body).center;
+    const abstand = querziel(koerper, richtung, KACHEL, this.zellfrei) - koerper[quer];
     held[quer] += Math.sign(abstand) * Math.min(Math.abs(abstand), MITTENSCHRITT);
   }
 

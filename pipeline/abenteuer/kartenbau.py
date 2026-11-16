@@ -17,6 +17,7 @@ from pathlib import Path
 
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.bodenteile import lege_bodenteile
+from pipeline.abenteuer.feinbericht import feinbefunde, feinhinweise
 from pipeline.abenteuer.kartenregeln import SITZMOEBEL, pruefe_regeln
 
 # Rasterzeichen und Tiled-Ausgabe stehen in kartentiled.py; viele Module holen sie weiter hier.
@@ -33,6 +34,7 @@ from pipeline.abenteuer.kartentiled import (  # noqa: F401
     tiled,
 )
 from pipeline.abenteuer.kehren import kehrenbefunde
+from pipeline.abenteuer.kollisionfein import feinlisten, gib_frei_fein
 from pipeline.abenteuer.kollisionspinsel import gib_frei, pinselbefunde, pinselfelder, pinselhinweise
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -121,8 +123,11 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             "frei_unten": angabe.get("frei_unten", 0),
             **(({"maske": angabe["maske"]} if "maske" in angabe else {}) | formangaben(eintrag)),
             **deckkraftangabe(eintrag),  # Deckkraft 25 bis 75 % (objektform.py), nur das Bild
-            # Eigene Maske der Szene, geformt, für die Eigenschaft „maske“ der Tiled-Karte.
-            **({"objektmaske": angabe["maske"]} if "maske" in eintrag else {}),
+            # Eigene Maske der Szene, geformt, für die Eigenschaft „maske“ der Tiled-Karte; die feine
+            # Maske (kollisionfein.py) dazu als „maske_fein“.
+            **({"objektmaske": angabe["maske"]} if "maske" in eintrag or "maske_fein" in angabe else {}),
+            **({"maske_fein": angabe["maske_fein"]} if "maske_fein" in angabe else {}),
+            **({"objektmaske_fein": angabe["maske_fein"]} if "maske_fein" in angabe else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
         }
         # Bedingte Möbel (wenn, Sprache von bedingung.py): Was auf einem bedingten Möbel steht,
@@ -134,6 +139,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
         gesetzt.append(stueck)
     lege_bodenteile(gesetzt, moebel)  # Bodenkacheln über einer Treppe (bodenteile.py)
     gib_frei(gesetzt, szene)  # Freigaben des Kollisionspinsels stechen Möbel und Masken
+    gib_frei_fein(gesetzt, szene)  # ebenso die feinen Freigaben, Zelle für Zelle (kollisionfein.py)
     return gesetzt, befunde
 
 
@@ -211,6 +217,10 @@ def baue(pfad: Path) -> list[str]:
     befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
     befunde += kollisionsbefunde(szene, moebel)  # Übersteuerung im Karteneditor (Regel 10.69)
     befunde += pinselbefunde(szene, zeilen)  # Kollisionspinsel (kollisionspinsel.py)
+    befunde += feinbefunde(szene, zeilen)  # Kollision fein (kollisionfein.py, feinbericht.py)
+    from pipeline.abenteuer.engstelle import pruefe_engstellen  # hier: braucht platziere
+
+    befunde += pruefe_engstellen(szene, zeilen, gesetzt, moebel)[0]
     # Hier eingebunden statt oben: zusammenhang.py nutzt die Konstanten dieses Moduls.
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 
@@ -223,7 +233,7 @@ def baue(pfad: Path) -> list[str]:
         stadt = zaehlt_als_stadtkarte(szene) and "groesse" in ort
         befunde += pruefe_belebung(szene, ort.get("art", "stadt"), stadt, lade_texte())
         belegt = {feld: s["name"] for s in gesetzt for feld in sperrfelder(s)}
-        belegt |= {feld: "gemalter Sperre" for feld in pinselfelder(szene)[0]}
+        belegt |= {feld: "gemalter Sperre" for feld in pinselfelder(szene)[0] | set(feinlisten(szene)[0])}
         befunde += pruefe_standorte(szene, zeilen, GESPERRT, belegt)
     if pfad.parent.name != "varianten":
         # Ausrichtung der Bilder (Regel 10.78): Befund, seit alle Karten nachgezogen sind
@@ -265,8 +275,13 @@ def hinweise(pfad: Path) -> list[str]:
     szene, moebel = lade(pfad), lade_moebel()
     gesetzt = platziere(szene, moebel)[0]
     fahrzeuge = fahrzeughinweise(szene, raster(szene), gesetzt, moebel)
-    ohne_pinsel = platziere({**szene, "freigeben": []}, moebel)[0] if pinselfelder(szene)[1] else gesetzt
+    frei = pinselfelder(szene)[1] or feinlisten(szene)[1]
+    ohne_pinsel = platziere({**szene, "freigeben": [], "freigeben_fein": []}, moebel)[0] if frei else gesetzt
     pinsel = pinselhinweise(szene, raster(szene), ohne_pinsel)
+    pinsel += feinhinweise(szene, raster(szene), ohne_pinsel)  # Kollision fein (feinbericht.py)
+    from pipeline.abenteuer.engstelle import pruefe_engstellen
+
+    pinsel += pruefe_engstellen(szene, raster(szene), gesetzt, moebel)[1]
     return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt)) + pinsel
 
 

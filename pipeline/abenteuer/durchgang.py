@@ -33,6 +33,7 @@ import json
 import re
 
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, WAND, K, platziere, raster
+from pipeline.abenteuer.kollisionfein import hat_fein, hat_feine_moebel, kacheln_aus, sperrzellen
 from pipeline.abenteuer.kollisionspinsel import wende_an
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -53,7 +54,11 @@ def gesperrte_felder(zeilen: list[str], gesetzt: list[dict], szene: dict | None 
     Wie app/src/abenteuer/oberwelt/begehbar.ts: Ein Möbel sperrt jede Kachel, die seine
     Sperrfläche in Pixeln berührt (ein Feinschub von 8 Pixeln sperrt die Nachbarkachel mit). Mit
     ``szene`` gelten auch die gemalten Sperren und Freigaben (kollisionspinsel.py).
+    Kollision fein (kollisionfein.py): Mit feinen Sperren, Freigaben oder Möbelmasken rechnet sie
+    in Zellen; gesperrt ist jede Kachel mit einer gesperrten Zelle (der Held stünde mittig darauf).
     """
+    if hat_fein(szene or {}) or hat_feine_moebel(gesetzt):
+        return kacheln_aus(sperrzellen(zeilen, gesetzt, szene or {}))
     gesperrt = {(x, y) for y, zeile in enumerate(zeilen) for x, z in enumerate(zeile) if z in GESPERRT}
     for s in gesetzt:
         if not s["kollision"]:

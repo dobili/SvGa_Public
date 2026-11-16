@@ -1,0 +1,653 @@
+{
+  "moebel": {
+    "kiste": {
+      "quelle": "k.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste"
+    }
+  },
+  "faelle": [
+    {
+      "name": "Obere Hälfte gesperrt",
+      "szene": {
+        "karte": "t.fein",
+        "raster": ["...", "...", "..."],
+        "sperren_fein": [[1, 1, "########........"]]
+      },
+      "karte": {
+        "width": 3,
+        "height": 3,
+        "properties": [
+          {
+            "name": "kennung",
+            "type": "string",
+            "value": "t.fein"
+          },
+          {
+            "name": "sperren_fein",
+            "type": "string",
+            "value": "1,1,########........"
+          }
+        ],
+        "layers": [
+          {
+            "id": 1,
+            "name": "boden",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          },
+          {
+            "id": 2,
+            "name": "waende",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 3,
+            "name": "objekte",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 4,
+            "name": "ausloeser",
+            "type": "objectgroup",
+            "draworder": "topdown",
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "objects": []
+          }
+        ],
+        "tilesets": [
+          {
+            "firstgid": 1,
+            "name": "platzhalter",
+            "tiles": [
+              {
+                "id": 1,
+                "properties": [
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gesperrt": [[1, 1]]
+    },
+    {
+      "name": "Ein Viertel am Rand gesperrt",
+      "szene": {
+        "karte": "t.fein",
+        "raster": ["...", "...", "..."],
+        "sperren_fein": [[2, 0, "...#...#...#...#"]]
+      },
+      "karte": {
+        "width": 3,
+        "height": 3,
+        "properties": [
+          {
+            "name": "kennung",
+            "type": "string",
+            "value": "t.fein"
+          },
+          {
+            "name": "sperren_fein",
+            "type": "string",
+            "value": "2,0,...#...#...#...#"
+          }
+        ],
+        "layers": [
+          {
+            "id": 1,
+            "name": "boden",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          },
+          {
+            "id": 2,
+            "name": "waende",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 3,
+            "name": "objekte",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 4,
+            "name": "ausloeser",
+            "type": "objectgroup",
+            "draworder": "topdown",
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "objects": []
+          }
+        ],
+        "tilesets": [
+          {
+            "firstgid": 1,
+            "name": "platzhalter",
+            "tiles": [
+              {
+                "id": 1,
+                "properties": [
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gesperrt": [[2, 0]]
+    },
+    {
+      "name": "Wand zur Hälfte freigegeben",
+      "szene": {
+        "karte": "t.fein",
+        "raster": ["#..", "#..", "..."],
+        "freigeben_fein": [[0, 0, "########........"]],
+        "freigeben_grund": "Test"
+      },
+      "karte": {
+        "width": 3,
+        "height": 3,
+        "properties": [
+          {
+            "name": "kennung",
+            "type": "string",
+            "value": "t.fein"
+          },
+          {
+            "name": "sperren_fein",
+            "type": "string",
+            "value": "0,0,........########"
+          }
+        ],
+        "layers": [
+          {
+            "id": 1,
+            "name": "boden",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [1, 1, 1, 0, 1, 1, 1, 1, 1]
+          },
+          {
+            "id": 2,
+            "name": "waende",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 2, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 3,
+            "name": "objekte",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 4,
+            "name": "ausloeser",
+            "type": "objectgroup",
+            "draworder": "topdown",
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "objects": []
+          }
+        ],
+        "tilesets": [
+          {
+            "firstgid": 1,
+            "name": "platzhalter",
+            "tiles": [
+              {
+                "id": 1,
+                "properties": [
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gesperrt": [
+        [0, 0],
+        [0, 1]
+      ]
+    },
+    {
+      "name": "Möbel mit Feinschub, Hälfte frei",
+      "szene": {
+        "karte": "t.fein",
+        "raster": ["...", "...", "..."],
+        "objekte": [
+          {
+            "moebel": "kiste",
+            "feld": [0, 1],
+            "versatz": [8, 0]
+          }
+        ],
+        "freigeben_fein": [[1, 1, "##..##..##..##.."]]
+      },
+      "karte": {
+        "width": 3,
+        "height": 3,
+        "properties": [
+          {
+            "name": "kennung",
+            "type": "string",
+            "value": "t.fein"
+          }
+        ],
+        "layers": [
+          {
+            "id": 1,
+            "name": "boden",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          },
+          {
+            "id": 2,
+            "name": "waende",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 3,
+            "name": "objekte",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 4,
+            "name": "ausloeser",
+            "type": "objectgroup",
+            "draworder": "topdown",
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "objects": [
+              {
+                "id": 1,
+                "name": "kiste",
+                "type": "moebel",
+                "x": 8,
+                "y": 16,
+                "width": 16,
+                "height": 16,
+                "rotation": 0,
+                "visible": true,
+                "properties": [
+                  {
+                    "name": "tiefe",
+                    "type": "int",
+                    "value": 24
+                  },
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  },
+                  {
+                    "name": "maske",
+                    "type": "string",
+                    "value": "#"
+                  },
+                  {
+                    "name": "maske_fein",
+                    "type": "string",
+                    "value": "##../##../##../##.."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "tilesets": [
+          {
+            "firstgid": 1,
+            "name": "platzhalter",
+            "tiles": [
+              {
+                "id": 1,
+                "properties": [
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gesperrt": [[0, 1]]
+    },
+    {
+      "name": "Möbel mit feiner Maske, gespiegelt",
+      "szene": {
+        "karte": "t.fein",
+        "raster": ["...", "...", "..."],
+        "objekte": [
+          {
+            "moebel": "kiste",
+            "feld": [2, 2],
+            "spiegeln": true,
+            "maske_fein": ["##..", "##..", "....", "...."]
+          }
+        ]
+      },
+      "karte": {
+        "width": 3,
+        "height": 3,
+        "properties": [
+          {
+            "name": "kennung",
+            "type": "string",
+            "value": "t.fein"
+          }
+        ],
+        "layers": [
+          {
+            "id": 1,
+            "name": "boden",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          },
+          {
+            "id": 2,
+            "name": "waende",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 3,
+            "name": "objekte",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 4,
+            "name": "ausloeser",
+            "type": "objectgroup",
+            "draworder": "topdown",
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "objects": [
+              {
+                "id": 1,
+                "name": "kiste",
+                "type": "moebel",
+                "x": 32,
+                "y": 32,
+                "width": 16,
+                "height": 16,
+                "rotation": 0,
+                "visible": true,
+                "properties": [
+                  {
+                    "name": "tiefe",
+                    "type": "int",
+                    "value": 40
+                  },
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  },
+                  {
+                    "name": "spiegeln",
+                    "type": "bool",
+                    "value": true
+                  },
+                  {
+                    "name": "maske",
+                    "type": "string",
+                    "value": "#"
+                  },
+                  {
+                    "name": "maske_fein",
+                    "type": "string",
+                    "value": "..##/..##/..../...."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "tilesets": [
+          {
+            "firstgid": 1,
+            "name": "platzhalter",
+            "tiles": [
+              {
+                "id": 1,
+                "properties": [
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gesperrt": [[2, 2]]
+    },
+    {
+      "name": "Feine Sperre neben grober Freigabe",
+      "szene": {
+        "karte": "t.fein",
+        "raster": ["...", ".#.", "..."],
+        "freigeben": [[1, 1]],
+        "sperren_fein": [[1, 2, "............####"]],
+        "freigeben_grund": "Test"
+      },
+      "karte": {
+        "width": 3,
+        "height": 3,
+        "properties": [
+          {
+            "name": "kennung",
+            "type": "string",
+            "value": "t.fein"
+          },
+          {
+            "name": "freigeben",
+            "type": "string",
+            "value": "1,1"
+          },
+          {
+            "name": "sperren_fein",
+            "type": "string",
+            "value": "1,2,............####"
+          }
+        ],
+        "layers": [
+          {
+            "id": 1,
+            "name": "boden",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+          },
+          {
+            "id": 2,
+            "name": "waende",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 3,
+            "name": "objekte",
+            "type": "tilelayer",
+            "width": 3,
+            "height": 3,
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "id": 4,
+            "name": "ausloeser",
+            "type": "objectgroup",
+            "draworder": "topdown",
+            "x": 0,
+            "y": 0,
+            "opacity": 1,
+            "visible": true,
+            "objects": []
+          }
+        ],
+        "tilesets": [
+          {
+            "firstgid": 1,
+            "name": "platzhalter",
+            "tiles": [
+              {
+                "id": 1,
+                "properties": [
+                  {
+                    "name": "kollision",
+                    "type": "bool",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gesperrt": [[1, 2]]
+    }
+  ]
+}

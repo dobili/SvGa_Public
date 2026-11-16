@@ -64,6 +64,29 @@
   }
 
   /**
+   * Gesperrte Zellen (Kollision fein, fein.js): je [px, py] ein Feld von 4 × 4 Pixeln, transparent
+   * gelb; der gelbe Rand läuft nur außen um zusammenhängende Zellen.
+   */
+  function zeichneZellen(ctx, zellen, zoom) {
+    const z = KE.ZELLE;
+    const menge = new Set(zellen.map(([x, y]) => x + "," + y));
+    ctx.fillStyle = FARBE_KOLLISION;
+    ctx.strokeStyle = RAND_KOLLISION;
+    ctx.lineWidth = 1 / zoom;
+    ctx.beginPath();
+    for (const k of menge) {
+      const [x, y] = k.split(",").map(Number);
+      ctx.fillRect(x, y, z, z);
+      const kante = (dx, dy) => !menge.has(x + dx * z + "," + (y + dy * z));
+      if (kante(0, -1)) (ctx.moveTo(x, y), ctx.lineTo(x + z, y));
+      if (kante(0, 1)) (ctx.moveTo(x, y + z), ctx.lineTo(x + z, y + z));
+      if (kante(-1, 0)) (ctx.moveTo(x, y), ctx.lineTo(x, y + z));
+      if (kante(1, 0)) (ctx.moveTo(x + z, y), ctx.lineTo(x + z, y + z));
+    }
+    ctx.stroke();
+  }
+
+  /**
    * Kacheln, die eine Figur oder ein Statist nur unter einer Bedingung sperrt (orte.json „wenn“,
    * Tageszeit „wann“): transparent gelb mit eigener gestrichelter Umrandung je Kachel, damit der
    * Autor sieht, dass der Weg nur manchmal zu ist. Schon fest gesperrte Kacheln bleiben, wie sie sind.
@@ -306,6 +329,8 @@
       const anzeige = KE.sperranzeige(szene, stuecke);
       zeichneSperren(ctx, anzeige.kacheln, a.zoom);
       zeichneFlaechen(ctx, anzeige.flaechen, a.zoom);
+      zeichneZellen(ctx, anzeige.zellen, a.zoom); // Kollision fein (fein.js)
+      KE.zeichneTeilkacheln(ctx, anzeige.teilkacheln, a.zoom); // Punkt: Held steht dort nicht mittig
       zeichneBedingte(ctx, KE.figurensperren(szene).bedingt, gesperrt, a.zoom);
       KE.zeichnePinsel(ctx, szene, a.zoom); // Kreuz für gemalte Sperren, grün für Freigaben (pinsel.js)
     }
@@ -314,6 +339,11 @@
     // Ziel und Ankunft jedes Übergangs, Kacheln beim Setzen (uebergaenge.js, ankunft.js).
     if (marken.length || z.setzen) KE.zeichneUebergaenge(ctx, szene, stuecke, a.zoom);
     KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
+    if (z.fein && (z.kpinsel || z.kollisionUid)) {
+      // 4-Pixel-Gitter des Fein-Modus, nur im sichtbaren Ausschnitt (feinmalen.js).
+      const sicht = [a.x, a.y, a.x + canvas.width / a.zoom, a.y + canvas.height / a.zoom];
+      KE.zeichneFeingitter(ctx, breite, hoehe, a.zoom, sicht);
+    }
     KE.zeichneZuschnitt(ctx, a.zoom); // Modus „Zuschneiden“: Griffe, Weggeschnittenes (zuschnitt.js)
     if (z.schalter.raster) zeichneRaster(ctx, breite, hoehe, a.zoom);
     if (!z.schalter.vorher) zeichneAuswahl(ctx, sichtbar, marken, a.zoom);

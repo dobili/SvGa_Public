@@ -9,6 +9,7 @@
  * Beispiel: Eine Theke 48 × 32 auf (32, 48) sperrt die Kacheln (2..4, 4), ihre oberste Reihe
  * (2..4, 3) bleibt frei, weil man hinter hohen Möbeln durchgehen kann.
  */
+import { feinsperrenAus, kachelnMitFeinsperre, moebelRechtecke } from "./feinsperren";
 import { geformtAusObjekt } from "./moebelform";
 
 /** Angabe eines Möbels aus daten/moebel.json, so weit die Kollision sie braucht. */
@@ -18,6 +19,8 @@ export interface Sperrangabe {
   readonly kollision?: boolean;
   readonly frei_unten?: number;
   readonly maske?: readonly string[];
+  /** Feine Maske (Karteneditor 1.6, feinsperren.ts): je Kachel 4 × 4 Zellen, ersetzt `maske`. */
+  readonly maske_fein?: readonly string[];
 }
 
 interface Eigenschaft {
@@ -92,6 +95,12 @@ function sperreMoebel(
   angabe: Sperrangabe,
   kachel: number,
 ): void {
+  if (angabe.maske_fein) {
+    // Feine Maske: jede Zelle als kleines Rechteck, gesperrt ist jede berührte Kachel (feinsperren.ts).
+    for (const r of moebelRechtecke(ort, angabe.maske_fein, kachel))
+      sperreRechteck(ziel, r, kachel);
+    return;
+  }
   if (angabe.maske) {
     angabe.maske.forEach((zeile, reihe) => {
       [...zeile].forEach((zeichen, spalte) => {
@@ -151,6 +160,9 @@ export function sperrkacheln(
   }
   for (const k of pinselkacheln(karte, "sperren")) gesperrt.add(k);
   for (const k of pinselkacheln(karte, "freigeben")) gesperrt.delete(k);
+  // Kollision fein (Karteneditor 1.6): Eine Kachel mit einer gesperrten Zelle ist gesperrt, weil der
+  // Held mittig auf ihr (Pixel 2 bis 14) die Zelle berührte (feinsperren.ts).
+  for (const k of kachelnMitFeinsperre(feinsperrenAus(karte.properties))) gesperrt.add(k);
   for (const k of figuren) gesperrt.add(k);
   return gesperrt;
 }

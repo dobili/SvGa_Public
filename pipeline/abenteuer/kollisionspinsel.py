@@ -90,6 +90,12 @@ def gib_frei(gesetzt: list[dict], szene: dict) -> None:
         if bleiben != zellen:
             s["maske"] = _maske_aus(bleiben, max(1, s["breite"] // K), max(1, s["hoehe"] // K))
             s["objektmaske"] = s["maske"]
+            if isinstance(s.get("maske_fein"), list):  # feine Maske (kollisionfein.py): Zellen mit
+                s["maske_fein"] = [  # der Kachel weg
+                    "".join(c if (x // 4, y // 4) in bleiben else "." for x, c in enumerate(z))
+                    for y, z in enumerate(s["maske_fein"])
+                ]
+                s["objektmaske_fein"] = s["maske_fein"]
 
 
 def grundsperren(zeilen: list[str], gesetzt: list[dict]) -> set[Feld]:

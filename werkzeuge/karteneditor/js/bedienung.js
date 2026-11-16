@@ -116,7 +116,10 @@
     }
     if (ereignis.button !== 0 || z.schalter.vorher) return;
     // Modi aus kollision.js und ausloeser.js: Der Klick gilt der Kachel, nicht der Auswahl.
-    if (z.kollisionUid) return KE.kollisionsKlick(px, py);
+    if (z.kollisionUid) {
+      ziehen = KE.kollisionStart(ereignis, px, py); // Kacheln oder Zellen des Bildes (kollision.js)
+      return;
+    }
     if (z.uebergangVorlage) return KE.setzeUebergang(px, py);
     if (z.setzen) {
       ziehen = KE.setzenStart(px, py); // Neuer Übergang, Gegenauslöser, Ankunft (ausloeser.js)
@@ -148,6 +151,7 @@
     }
     if (ziehen.art === "pinsel") return pinsel(px, py);
     if (ziehen.art === "kpinsel") return KE.pinselZiehen(ziehen, px, py);
+    if (ziehen.art === "kollision") return KE.kollisionZiehen(ziehen, px, py);
     if (ziehen.art === "setzen") return KE.setzenZiehen(ziehen, px, py);
     if (ziehen.art === "zuschnitt") return KE.zuschnittZiehen(ziehen, ereignis, px, py);
     if (ziehen.art === "rechteck") {
@@ -185,6 +189,7 @@
     if (art === "objekte" && ziehen.bewegt) KE.schrittAbschliessen("Verschieben", ziehen.vorher);
     if (art === "pinsel") KE.schrittAbschliessen("Malen", ziehen.vorher);
     if (art === "kpinsel") KE.pinselEnde(ziehen);
+    if (art === "kollision") KE.kollisionEnde(ziehen);
     if (art === "setzen") KE.setzenEnde();
     if (art === "zuschnitt") KE.zuschnittEnde(ziehen);
     ziehen = null;
@@ -247,7 +252,8 @@
     "umschalt+pagedown": () => KE.ebene("ganzHinten"),
     "+": () => KE.zoome(ZOOM_FAKTOR),
     "-": () => KE.zoome(1 / ZOOM_FAKTOR),
-    f: () => KE.einpassen(),
+    // Im Kollisionspinsel und bei „Kollision bearbeiten“ schaltet F „Fein“ (Editor 1.6), sonst Einpassen.
+    f: () => (KE.zustand.kpinsel || KE.zustand.kollisionUid ? KE.schalteFein() : KE.einpassen()),
     g: () => KE.schalte("raster"),
     k: () => KE.schalte("kollision"),
     u: () => KE.schalte("nurUmgebung"),
@@ -266,6 +272,7 @@
       if (z.kollisionUid || z.uebergangVorlage || z.kpinsel || z.setzen || z.zuschnittModus) {
         z.kollisionUid = z.uebergangVorlage = z.kpinsel = z.setzen = null;
         z.zuschnittModus = false;
+        z.fein = false; // „Fein“ gehört zum Modus (feinmalen.js)
         return KE.meldeAenderung("Modus beendet");
       }
       KE.zustand.auswahl.clear();

@@ -11,6 +11,7 @@
  * Der Pinsel schreibt nur, was etwas ändert: „Sperren“ auf einer schon gesperrten Kachel nimmt nur
  * eine Freigabe weg, „Freigeben“ auf einer freien Kachel nur eine Sperre. Der Radierer entfernt
  * beides; dann gilt wieder, was Bilder und Raster sagen. Jeder Pinselstrich ist ein Schritt im Verlauf.
+ * Mit „Fein“ (Taste F, Editor 1.6) malt er Zellen von 4 × 4 Pixeln (feinmalen.js, fein.js).
  */
 "use strict";
 
@@ -22,6 +23,7 @@
   const FARBE_FREI = "rgba(30, 190, 80, 1)";
   const FARBE_RAHMEN = { sperren: "#ffcc00", freigeben: "#1ebe50", radierer: "#ffffff" };
   const KREUZ = 0.22; // halbe Länge des Kreuzes, Anteil einer Kachel
+  const ZP = 4; // Pixel je Zelle im Fein-Modus (fein.js)
   const GESPERRT = new Set(["#", "~", " "]);
   const el = (...a) => KE.el(...a);
 
@@ -29,6 +31,7 @@
   KE.kollisionspinsel = function (modus) {
     const z = KE.zustand;
     z.kpinsel = !modus || z.kpinsel === modus ? null : modus;
+    if (!z.kpinsel && !z.kollisionUid) z.fein = false; // „Fein“ endet mit dem Modus
     if (z.kpinsel) {
       // Andere Modi enden; die Kollisionsanzeige gehört zum Pinsel (Wunsch des Autors).
       z.schalter.kollision = true;
@@ -57,45 +60,63 @@
     const zeilen = szene.raster || [];
     const breite = Math.max(0, ...zeilen.map((z) => z.length));
     if (y < 0 || y >= zeilen.length || x < 0 || x >= breite) return false;
-    const vorher = JSON.stringify([szene.sperren, szene.freigeben]);
+    const felder = () => JSON.stringify([szene.sperren, szene.freigeben, szene.sperren_fein]);
+    const vorher = felder() + JSON.stringify(szene.freigeben_fein);
     const { sperren, freigeben } = KE.pinselmengen(szene);
     const k = x + "," + y;
+    KE.entferneFein(szene, k); // die ganze Kachel: feine Zellen dort entfallen (feinmalen.js)
     sperren.delete(k);
     freigeben.delete(k);
     if (modus === "sperren" && !grund.has(k)) sperren.add(k);
     if (modus === "freigeben" && grund.has(k)) freigeben.add(k);
     schreibe(szene, "sperren", sperren);
     schreibe(szene, "freigeben", freigeben);
-    if (!freigeben.size) delete szene.freigeben_grund;
-    return JSON.stringify([szene.sperren, szene.freigeben]) !== vorher;
+    if (!KE.hatFreigaben(szene)) delete szene.freigeben_grund;
+    return felder() + JSON.stringify(szene.freigeben_fein) !== vorher;
   };
 
-  const kachelVon = (px, py) => [Math.floor(px / K), Math.floor(py / K)];
+  /** Kachel oder (fein) Zelle unter einem Punkt in Pixeln. */
+  const stelleVon = (ziehen, px, py) => {
+    const e = ziehen.fein ? ZP : K;
+    return [Math.floor(px / e), Math.floor(py / e)];
+  };
+  const male = (ziehen, szene, x, y) =>
+    (ziehen.fein ? KE.malePinselzelle : KE.malePinselkachel)(
+      szene,
+      x,
+      y,
+      KE.zustand.kpinsel,
+      ziehen.grund,
+    );
 
   /** Beginnt einen Pinselstrich (Maus gedrückt); Ausgabe: der Zustand des Ziehens für bedienung.js. */
   KE.pinselStart = function (ereignis, px, py) {
     const z = KE.zustand;
     const szene = KE.szene();
-    const [x, y] = kachelVon(px, py);
+    const fein = !!z.fein;
+    const stuecke = KE.platziere(szene);
     const ziehen = {
       art: "kpinsel",
+      fein,
       vorher: KE.schnappschuss([z.datei]),
-      grund: KE.grundsperren(szene, KE.platziere(szene), false),
+      grund: fein ? KE.grundzellen(szene, stuecke, false) : KE.grundsperren(szene, stuecke, false),
       rechteck: ereignis.shiftKey,
-      x0: x,
-      y0: y,
       letzte: null,
     };
-    if (ziehen.rechteck) KE.pinselRahmen = { x0: x, y0: y, x1: x, y1: y };
+    const [x, y] = stelleVon(ziehen, px, py);
+    [ziehen.x0, ziehen.y0] = [x, y];
+    const einheit = fein ? ZP : K;
+    if (ziehen.rechteck) KE.pinselRahmen = { x0: x, y0: y, x1: x, y1: y, einheit };
     else KE.pinselZiehen(ziehen, px, py);
     return ziehen;
   };
 
   /** Maus bewegt: malt jede überstrichene Kachel (auch bei schnellen Bewegungen) oder zieht das Rechteck. */
   KE.pinselZiehen = function (ziehen, px, py) {
-    const [x, y] = kachelVon(px, py);
+    const [x, y] = stelleVon(ziehen, px, py);
     if (ziehen.rechteck) {
       KE.pinselRahmen = {
+        einheit: ziehen.fein ? ZP : K,
         x0: Math.min(ziehen.x0, x),
         y0: Math.min(ziehen.y0, y),
         x1: Math.max(ziehen.x0, x),
@@ -109,8 +130,7 @@
     for (let i = 1; i <= schritte; i++) {
       const kx = Math.round(ax + ((x - ax) * i) / schritte);
       const ky = Math.round(ay + ((y - ay) * i) / schritte);
-      geaendert =
-        KE.malePinselkachel(KE.szene(), kx, ky, KE.zustand.kpinsel, ziehen.grund) || geaendert;
+      geaendert = male(ziehen, KE.szene(), kx, ky) || geaendert;
     }
     ziehen.letzte = [x, y];
     if (geaendert) KE.zeichne();
@@ -122,8 +142,7 @@
     if (ziehen.rechteck && r) {
       const szene = KE.szene();
       for (let y = r.y0; y <= r.y1; y++)
-        for (let x = r.x0; x <= r.x1; x++)
-          KE.malePinselkachel(szene, x, y, KE.zustand.kpinsel, ziehen.grund);
+        for (let x = r.x0; x <= r.x1; x++) male(ziehen, szene, x, y);
     }
     KE.pinselRahmen = null;
     KE.schrittAbschliessen("Kollision malen", ziehen.vorher);
@@ -152,19 +171,21 @@
       const [x, y] = k.split(",").map(Number);
       ctx.strokeRect(x * K + rand, y * K + rand, K - 2 * rand, K - 2 * rand);
     }
+    KE.zeichneFeinpinsel(ctx, szene, zoom); // feine Sperren und Freigaben (feinmalen.js)
     const r = KE.pinselRahmen;
     if (!r) return;
+    const e = r.einheit || K;
     ctx.setLineDash([4 / zoom, 3 / zoom]);
     ctx.strokeStyle = FARBE_RAHMEN[KE.zustand.kpinsel] || "#fff";
-    ctx.strokeRect(r.x0 * K, r.y0 * K, (r.x1 - r.x0 + 1) * K, (r.y1 - r.y0 + 1) * K);
+    ctx.strokeRect(r.x0 * e, r.y0 * e, (r.x1 - r.x0 + 1) * e, (r.y1 - r.y0 + 1) * e);
     ctx.setLineDash([]);
   };
 
   /** Freigaben auf Wand, Wasser oder Leere des Rasters (brauchen freigeben_grund). */
   function freigabenInDerWand(szene) {
-    return (szene.freigeben || []).filter(([x, y]) =>
-      GESPERRT.has(((szene.raster || [])[y] || "")[x] ?? " "),
-    );
+    return [...(szene.freigeben || []), ...(szene.freigeben_fein || [])]
+      .filter(([x, y]) => GESPERRT.has(((szene.raster || [])[y] || "")[x] ?? " "))
+      .map(([x, y]) => [x, y]);
   }
 
   function setzeGrund(text) {
@@ -179,11 +200,14 @@
   KE.pinselfeld = function (ziel) {
     const szene = KE.szene();
     const z = KE.zustand;
-    const anzahl = (szene.sperren || []).length + (szene.freigeben || []).length;
+    const feine = (szene.sperren_fein || []).length + (szene.freigeben_fein || []).length;
+    const anzahl = (szene.sperren || []).length + (szene.freigeben || []).length + feine;
     if (!z.kpinsel && !anzahl) return;
     const box = el("div", "pinselfeld");
     box.append(el("div", "zwischentitel", "Kollisionspinsel"));
-    const zahl = `${(szene.sperren || []).length} gesperrt, ${(szene.freigeben || []).length} freigegeben`;
+    const zahl =
+      `${(szene.sperren || []).length} gesperrt, ${(szene.freigeben || []).length} freigegeben` +
+      (feine ? `, ${feine} Kacheln fein` : "");
     box.append(
       el("div", "kurz", `Gemalt: ${zahl}. Der Radierer stellt den Zustand der Bilder her.`),
     );
@@ -210,6 +234,9 @@
     const modus = KE.zustand.kpinsel;
     document.getElementById("kpinselknopf").classList.toggle("an", !!modus);
     document.getElementById("kpinselwahl").hidden = !modus;
+    const fein = document.getElementById("feinknopf");
+    fein.hidden = !modus && !KE.zustand.kollisionUid;
+    fein.classList.toggle("an", !!KE.zustand.fein);
     for (const k of document.querySelectorAll("[data-kmodus]"))
       k.classList.toggle("an", k.dataset.kmodus === modus);
   };
@@ -223,6 +250,7 @@
       k.title = `${MODI[k.dataset.kmodus]} (Taste ${TASTEN[k.dataset.kmodus]})`;
       k.addEventListener("click", () => KE.kollisionspinsel(k.dataset.kmodus));
     }
+    document.getElementById("feinknopf").addEventListener("click", () => KE.schalteFein());
   };
 
   /**
@@ -247,6 +275,9 @@
       for (const k of alt[name]) if (!hier[name].has(k) && dort[name].delete(k)) zahl++;
     }
     for (const name of ["sperren", "freigeben"]) schreibe(andere, name, dort[name]);
+    for (const name of ["sperren", "freigeben"])
+      for (const k of dort[name]) KE.entferneFein(andere, k);
+    zahl += KE.feinUebertragen(andere); // feine Kacheln (feinmalen.js)
     const grund = KE.szene().freigeben_grund;
     if (grund && grund !== z.original[z.datei].freigeben_grund) andere.freigeben_grund = grund;
     return zahl;
@@ -255,7 +286,8 @@
   /** Ob die Pinselkacheln dieser Karte vom Original abweichen (Knopf „auf Fassungen übertragen“). */
   KE.pinselGeaendert = function () {
     const z = KE.zustand;
-    const felder = (s) => JSON.stringify([s.sperren, s.freigeben, s.freigeben_grund]);
+    const felder = (s) =>
+      JSON.stringify([s.sperren, s.freigeben, s.freigeben_grund, s.sperren_fein, s.freigeben_fein]);
     return felder(KE.szene()) !== felder(z.original[z.datei]);
   };
 })(window.KE);

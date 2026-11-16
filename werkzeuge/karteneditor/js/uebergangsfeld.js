@@ -197,7 +197,11 @@
     const teil = el("details", "neuform");
     teil.open = !!f.offen;
     teil.addEventListener("toggle", () => (f.offen = teil.open));
-    teil.append(el("summary", "neuerUebergang", "Neuer Übergang"));
+    const kopf = el("summary", "neuerUebergang", "Neuer Übergang");
+    // Gleich beim Klick merken: „toggle“ kommt erst später, und ein Neuzeichnen des Felds dazwischen
+    // (etwa durch die nächste Eingabe) klappte es sonst wieder zu.
+    kopf.addEventListener("click", () => (f.offen = !teil.open));
+    teil.append(kopf);
     const szene = KE.szene();
     const zieldatei = KE.grunddatei(f.zielkarte);
     if (!f.nameGetippt)

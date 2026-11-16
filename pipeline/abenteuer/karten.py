@@ -15,6 +15,7 @@ from collections import deque
 from dataclasses import dataclass
 from pathlib import Path
 
+from pipeline.abenteuer.kollisionfein import feinsperren_der_karte
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektform import FORMFELDER, geformt
@@ -144,7 +145,9 @@ def blockiert(karte: dict) -> set[Feld]:
             if kachel in kollision:
                 felder.add((index % breite, index // breite))
     sperren, freigeben = pinselfelder(karte)
-    return (felder | sperren) - freigeben
+    # Feine Sperren (kollisionfein.py): Eine Kachel mit einer gesperrten Zelle ist gesperrt.
+    fein = {f for f, maske in feinsperren_der_karte(karte).items() if "#" in maske}
+    return ((felder | sperren) - freigeben) | fein
 
 
 def erreichbar(karte: dict, start: Feld) -> set[Feld]:

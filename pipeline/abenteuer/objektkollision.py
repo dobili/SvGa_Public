@@ -19,7 +19,7 @@ Tiled-Karte), Editor ``werkzeuge/karteneditor/js/geometrie.js``.
 """
 
 K = 16
-FELDER = ("kollision", "maske", "begehbar_grund")
+FELDER = ("kollision", "maske", "maske_fein", "begehbar_grund")
 # Arten, über die man läuft (KARTENREGELN 10.69): Sie brauchen keine Kollision und keine Begründung.
 FLACH = {
     "bordstein", "markierung", "teppich", "boden", "boden_teil", "schatten",
@@ -47,10 +47,10 @@ def kollision_an(angabe: dict, eintrag: dict) -> bool:
 
 def durchgehbar(angabe: dict, eintrag: dict) -> bool:
     """Ob das Objekt an dieser Stelle ganz durchgehbar ist: ohne Kollision oder mit einer eigenen
-    Maske ohne ``#``. Beispiel: ``"maske": ["..", ".."]`` → True."""
+    Maske (auch ``maske_fein``) ohne ``#``. Beispiel: ``"maske": ["..", ".."]`` → True."""
     if not kollision_an(angabe, eintrag):
         return True
-    maske = eintrag.get("maske")
+    maske = eintrag.get("maske_fein", eintrag.get("maske"))
     return isinstance(maske, list) and not any("#" in str(z) for z in maske)
 
 
@@ -59,17 +59,20 @@ def maskeneigenschaft(geformte_maske: list[str]) -> str:
     return REIHENTRENNER.join(geformte_maske)
 
 
-def _maskenbefund(maske: object, angabe: dict, eintrag: dict) -> str | None:
-    """Was an einer eigenen Maske nicht stimmt (Form, Zeichen, Größe); None, wenn sie passt."""
+def _maskenbefund(maske: object, angabe: dict, eintrag: dict, zellen: int = 1) -> str | None:
+    """Was an einer eigenen Maske nicht stimmt (Form, Zeichen, Größe); None, wenn sie passt.
+    ``zellen`` 4 prüft die feine Maske (je Kachel 4 Zeichen und 4 Zeilen, kollisionfein.py)."""
+    name = "maske_fein" if zellen > 1 else "maske"
     if not isinstance(maske, list) or not all(isinstance(z, str) for z in maske):
-        return "maske muss eine Liste von Zeichenketten sein"
+        return f"{name} muss eine Liste von Zeichenketten sein"
     if any(set(z) - {"#", "."} for z in maske):
-        return "maske kennt nur „#“ (sperrt) und „.“ (frei)"
+        return f"{name} kennt nur „#“ (sperrt) und „.“ (frei)"
     massstab = float(eintrag.get("massstab", 1))
-    spalten = max(1, round(angabe["breite"] * massstab) // K)
-    reihen = max(1, round(angabe["hoehe"] * massstab) // K)
+    spalten = max(1, round(angabe["breite"] * massstab) // K) * zellen
+    reihen = max(1, round(angabe["hoehe"] * massstab) // K) * zellen
     if len(maske) > reihen or any(len(z) > spalten for z in maske):
-        return f"maske ist größer als das Bild ({spalten} × {reihen} Kacheln)"
+        einheit = "Zellen" if zellen > 1 else "Kacheln"
+        return f"{name} ist größer als das Bild ({spalten} × {reihen} {einheit})"
     return None
 
 
@@ -91,6 +94,10 @@ def kollisionsbefunde(szene: dict, moebel: dict) -> list[str]:
             befunde.append(f"{wo}: kollision muss true oder false sein")
         if "maske" in eintrag and (fehler := _maskenbefund(eintrag["maske"], angabe, eintrag)):
             befunde.append(f"{wo}: {fehler}")
+        if "maske_fein" in eintrag and (fehler := _maskenbefund(eintrag["maske_fein"], angabe, eintrag, 4)):
+            befunde.append(f"{wo}: {fehler}")
+        if "maske" in eintrag and "maske_fein" in eintrag:
+            befunde.append(f"{wo}: maske und maske_fein zugleich (maske_fein gilt)")
         ohne_lage = not any(eintrag.get(k) for k in ("auf", "an_wand", "vorn"))
         sperrt_laut_katalog = bool(angabe.get("kollision")) and not ist_flach(angabe)
         grund = str(eintrag.get("begehbar_grund", "")).strip()
@@ -125,6 +132,10 @@ def _beschreibe(eintrag: dict, angabe: dict | None = None) -> str:
         teile.append(f"kollision {'true' if eintrag['kollision'] else 'false'}")
     if "maske" in eintrag:
         teile.append(f"maske {_maskentext(eintrag, angabe)}")
+    if isinstance(eintrag.get("maske_fein"), list):  # Kollision fein (feinbericht.py)
+        from pipeline.abenteuer.feinbericht import maske_fein_text
+
+        teile.append(f"maske_fein {maske_fein_text(eintrag['maske_fein'])} (ungedreht)")
     return ", ".join(teile) or "wie im Katalog"
 
 

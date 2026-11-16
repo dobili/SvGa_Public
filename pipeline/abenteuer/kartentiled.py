@@ -6,6 +6,8 @@ eigene Maske), Eigenschaften der Karte. Die Konstanten der Rasterzeichen stehen 
 Module sie ohne Kreisimport teilen; ``kartenbau`` gibt sie weiter.
 """
 
+from pipeline.abenteuer.kollisionfein import REIHENTRENNER, frei_im_raster
+from pipeline.abenteuer.kollisionfein import eigenschaften as feineigenschaften
 from pipeline.abenteuer.kollisionspinsel import eigenschaften as pinseleigenschaften
 from pipeline.abenteuer.kollisionspinsel import pinselfelder
 from pipeline.abenteuer.objektform import formeigenschaften
@@ -38,6 +40,8 @@ def kachelebenen(zeilen: list[str], szene: dict) -> tuple[list[int], list[int]]:
     """
     teppiche = set(szene.get("boeden", {}))
     sperren, freigeben = pinselfelder(szene)
+    # Feine Freigabe in Wand oder Wasser (kollisionfein.py): Boden; der Rest sperrt über „sperren_fein“.
+    freigeben = freigeben | frei_im_raster(zeilen, szene)
     boden, waende = [], []
     for y, zeile in enumerate(zeilen):
         for x, zeichen in enumerate(zeile):
@@ -101,6 +105,9 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
             # Eigene Maske der Szene (objektkollision.py), schon geformt; nur dann, damit alte Karten
             # gleich bleiben. Die App liest sie in oberwelt/moebelform.ts (geformtAusObjekt).
             eig.append({"name": "maske", "type": "string", "value": maskeneigenschaft(s["objektmaske"])})
+        if "objektmaske_fein" in s:  # feine Maske (kollisionfein.py); App: oberwelt/feinsperren.ts
+            wert = REIHENTRENNER.join(s["objektmaske_fein"])
+            eig.append({"name": "maske_fein", "type": "string", "value": wert})
         if "deckkraft" in s:  # nur wenn gesetzt (alte Karten bleiben gleich); App: moebel.ts
             eig.append({"name": "deckkraft", "type": "int", "value": s["deckkraft"]})
         if "wenn" in s:
@@ -148,7 +155,7 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         if isinstance(szene.get(k), str)
     ]
     # Gemalte Sperren und Freigaben (kollisionspinsel.py); die App liest sie in oberwelt/begehbar.ts.
-    eigenschaften += pinseleigenschaften(szene)
+    eigenschaften += pinseleigenschaften(szene) + feineigenschaften(zeilen, szene)
     return {
         **{
             k: vorlage[k]

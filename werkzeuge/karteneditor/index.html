@@ -42,10 +42,17 @@
         <button data-kmodus="freigeben">Freigeben</button>
         <button data-kmodus="radierer">Radierer</button>
       </span>
+      <button
+        id="feinknopf"
+        hidden
+        title="Fein: Zellen von 4 Pixeln statt ganzer Kacheln (F, im Kollisionspinsel und bei „Kollision bearbeiten“)"
+      >
+        Fein
+      </button>
       <span class="trenner"></span>
       <button id="zoomraus" title="Kleiner (−)">−</button>
       <button id="zoomrein" title="Größer (+)">+</button>
-      <button id="einpassen" title="Ganze Karte (F)">Einpassen</button>
+      <button id="einpassen" title="Ganze Karte (F, außer im Kollisionspinsel)">Einpassen</button>
       <span class="trenner"></span>
       <button id="herunterladen" class="wichtig" title="Strg+S">
         Änderungen herunterladen (0)
@@ -179,6 +186,10 @@
             <td>mit dem Kollisionspinsel ein Rechteck malen</td>
           </tr>
           <tr>
+            <td>F (im Kollisionspinsel oder bei „Kollision bearbeiten“)</td>
+            <td>Fein: in Vierteln einer Kachel malen (4-Pixel-Gitter); sonst ganze Karte zeigen</td>
+          </tr>
+          <tr>
             <td>Fußsymbol</td>
             <td>Ankunftsfeld eines Übergangs (weiß automatisch, türkis fest, rot falsch)</td>
           </tr>
@@ -212,6 +223,8 @@
     <script src="js/pinsel.js"></script>
     <script src="js/zuschnitt.js"></script>
     <script src="js/zuschnittfeld.js"></script>
+    <script src="js/fein.js"></script>
+    <script src="js/feinmalen.js"></script>
     <script src="js/deckkraft.js"></script>
     <script src="js/panel.js"></script>
     <script src="js/export.js"></script>

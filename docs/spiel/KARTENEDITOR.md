@@ -143,6 +143,20 @@ Unterschied zu „Kollision bearbeiten“: Das ändert ein einzelnes Bild an die
 mit, wenn du das Bild verschiebst). Der Kollisionspinsel gilt für die Kachel der Karte, egal was
 dort liegt, und bleibt, wenn du das Bild verschiebst.
 
+**Kollision fein** (Knopf „Fein“, Taste F)
+
+Sperrt ein Viertel, die Hälfte oder drei Viertel einer Kachel, waagrecht und senkrecht getrennt:
+Jede Kachel hat 4 × 4 Zellen von je 4 Pixeln.
+
+- Kollisionspinsel oder „Kollision bearbeiten“ an, dann „Fein“ (F): blaues Gitter, Malen, Radierer,
+  Umschalt+Ziehen und Strg+Z in Zellen. Noch einmal F: ganze Kacheln; Esc beendet beides.
+- Gelb sind genau die gesperrten Zellen; feine Sperren braun gestrichelt, Freigaben grün umrandet.
+- Der Held ist 12 Pixel breit, drei Viertel einer Kachel: Durch eine Lücke von drei Vierteln passt
+  er gerade noch, durch eine halbe nicht. Der Kartenbau meldet zu enge Wege.
+- Brauner Punkt: Die Kachel ist nur zum Teil gesperrt, zählt aber für Ankunft, Tiere, Statisten
+  und Tippschritt als gesperrt. Diese stellen den Helden in die Kachelmitte; dort reicht er bis 2
+  Pixel an jede Kante und berührte schon ein gesperrtes Viertel. Gehen kann er bis an die Kante.
+
 **Übergänge und Auslöser**
 
 Kurz: siehe Abschnitt 4 „Übergänge und Ankunft“. Für eine Kopie eines vorhandenen Auslösers:
@@ -240,7 +254,7 @@ Taste ? zeigt alle Kürzel.
 | G, K, M               | Raster, Kollision, Markierung |
 | U, L, V, B            | Umgebung, Sperren, Vorher, Pinsel |
 | S, O, X               | Kollisionspinsel: sperren, freigeben, Radierer |
-| F                     | ganze Karte zeigen            |
+| F                     | ganze Karte zeigen; im Kollisionspinsel und bei „Kollision bearbeiten“: Fein an/aus |
 | Esc                   | Auswahl aufheben, Modus beenden |
 
 ## 7. Speichern und zurückschicken
@@ -357,8 +371,29 @@ Taste ? zeigt alle Kürzel.
     Tiled-Eigenschaft `deckkraft` (int), App `setAlpha` (moebel.ts, moebelform.deckkraftAus),
     Vorschau `objektform.mit_deckkraft` (kartenbild, Rücklauf), Bericht „Deckkraft: … 100 → 50 %“.
     Kollision und Tiefe bleiben; Pixelprüfungen sehen das Bild ohne Deckkraft.
+- Editor 1.6 (16.11.2026), Kollision fein (js/fein.js, feinmalen.js; pipeline/abenteuer/kollisionfein.py,
+  feinbericht.py, engstelle.py; App oberwelt/feinsperren.ts):
+  - Szene `sperren_fein`, `freigeben_fein`: `[x, y, maske]`, 16 Zeichen „#“/„.“ je Kachel, Reihe für
+    Reihe („#“ = gesperrt bzw. freigegeben). Objekt `maske_fein`: je Kachel 4 Zeichen × 4 Zeilen, ungedreht
+    wie `maske`, ersetzt sie; `objektform.geformt` dreht mit und leitet `maske` ab. Ganze Kacheln und
+    einheitliche Masken schreibt der Editor grob. Befunde: grob und fein zugleich, Zellen gesperrt und
+    frei, `maske` und `maske_fein`, Wandfreigabe ohne Grund, Auslöser auf feiner Sperre.
+  - Ganzkachel-Regel (Held 12 × 12 mittig, Pixel 2 bis 14): Kachel mit gesperrter Zelle ist gesperrt
+    (`durchgang.gesperrte_felder` über `sperrzellen`, App `begehbar.sperrkacheln`, Tiere über die
+    Möbelgruppe in `sperrkarte.ts`, Tippschritt endet in der eigenen Kachelmitte). Gemeinsame Fälle:
+    `app/src/abenteuer/oberwelt/feinsperren.faelle.json` (Vitest und pytest; der pytest prüft, dass
+    die Datei zum Kartenbau passt).
+  - Tiled: feine Freigabe in Wand/Wasser/Leere wird Boden; Karteneigenschaft `sperren_fein`
+    („x,y,maske;…“) trägt feine Sperren und den Rest solcher Wände; Möbel mit feiner Maske (auch durch
+    `gib_frei_fein`) tragen `maske_fein` („..##/…“, geformt) und `maske`. Die App fasst Zellen zu
+    Physik-Rechtecken zusammen (`zellrechtecke`, `moebel.fuegeSperrflaechenHinzu`).
+  - Engstelle (nur mit feinen Feldern): 4-px-Raster, Körper 12 px; Befund, wenn ein Ziel nur ohne
+    die feinen Felder erreichbar ist, Hinweis unter 16 px.
+  - Rücklauf: „Kollision: Pinsel sperrt fein … : (5, 7) obere Hälfte“, „maske_fein (0, 1) untere
+    Hälfte“. Anzeige ohne feine Felder wie bisher, sonst in Zellen mit Punkt für Teilkacheln.
 - Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
   Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner),
   Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`, Kollisionspinsel in `test/pinsel.cjs`,
   Übergänge (neuer Übergang mit Gegenauslöser, Ankunft, „Zum Ziel“, Rücklauf in eine Kopie von
-  orte.json) in `test/uebergaenge.cjs`, Zuschnitt in `test/zuschnitt.cjs`.
+  orte.json) in `test/uebergaenge.cjs`, Zuschnitt in `test/zuschnitt.cjs`, Kollision fein in
+  `test/fein.cjs`.

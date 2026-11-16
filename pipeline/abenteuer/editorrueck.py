@@ -29,6 +29,7 @@ from typing import TYPE_CHECKING
 from pipeline.abenteuer.editorfiguren import figurwarnungen
 from pipeline.abenteuer.editoruebergaenge import ruecklauf as uebergangsruecklauf
 from pipeline.abenteuer.editorzuschnitt import deckkraftzeilen, zuschnittvorschlaege, zuschnittzeilen
+from pipeline.abenteuer.feinbericht import feinzeilen
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
 from pipeline.abenteuer.kollisionspinsel import pinselzeilen
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -205,6 +206,7 @@ def berichte(eintrag: dict, moebel: dict | None = None) -> list[str]:
     zeilen += rasterzeilen(vorher.get("raster", []), nachher.get("raster", []))
     # Kollisionspinsel (Editor 1.3): gemalte Sperren und Freigaben mit dem Bild, das dort lag.
     zeilen += pinselzeilen(vorher, nachher, moebel)
+    zeilen += feinzeilen(vorher, nachher, moebel)  # Kollision fein (Editor 1.6, feinbericht.py)
     for notiz in eintrag.get("objektnotizen", []):
         zeilen.append(f"Notiz zu {notiz['moebel']} (Objekt {notiz['index']}): {notiz['notiz']}")
     return zeilen

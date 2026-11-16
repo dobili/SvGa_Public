@@ -14,6 +14,7 @@
  * Zuschnitt (Editor 1.5, moebelzuschnitt.ts): wirkt vor allem anderen; beschnitten trägt das Möbel
  * immer eine Maske im Raster des Ausschnitts.
  */
+import { feineMaskeAus } from "./feinsperren";
 import {
   beschnitten,
   standardmaske,
@@ -37,6 +38,8 @@ export interface Formbare {
   readonly hoehe: number;
   readonly frei_unten?: number;
   readonly maske?: readonly string[];
+  /** Feine Maske je Kachel 4 × 4 Zellen (feinsperren.ts); steht nur am Objekt, nie im Katalog. */
+  readonly maske_fein?: readonly string[];
 }
 
 const KACHEL = 16;
@@ -153,7 +156,11 @@ export function geformtAusObjekt<T extends Formbare>(
   const form = formAus(eigenschaften);
   const geformte = geformt(angabe, form);
   const maske = eigenschaften?.find((e) => e.name === "maske")?.value;
-  return typeof maske === "string" ? { ...geformte, maske: maske.split(REIHENTRENNER) } : geformte;
+  const mitMaske =
+    typeof maske === "string" ? { ...geformte, maske: maske.split(REIHENTRENNER) } : geformte;
+  // Feine Maske (Karteneditor 1.6, feinsperren.ts), schon geformt wie `maske`.
+  const fein = feineMaskeAus(eigenschaften);
+  return fein ? { ...mitMaske, maske_fein: fein } : mitMaske;
 }
 
 /** Stufen der Deckkraft in Prozent (Karteneditor 1.5, pipeline/abenteuer/objektform.py). */

@@ -19,6 +19,7 @@
  */
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
+import { feinsperrenAus, feinsperrRechtecke, moebelRechtecke, type Rechteck } from "./feinsperren";
 import { deckkraftAus, formAus, geformtAusObjekt, hatForm, type Moebelform } from "./moebelform";
 
 /** Eine Angabe aus daten/moebel.json im Paket. */
@@ -31,6 +32,8 @@ export interface Moebelangabe {
   readonly frei_unten?: number;
   /** Eigene Sperrmaske je Kachelreihe, „#“ sperrt (offenes Tor, Mammutbaum); ersetzt die Regel oben. */
   readonly maske?: readonly string[];
+  /** Feine Maske je Kachel 4 × 4 Zellen (Karteneditor 1.6, feinsperren.ts); nur am Kartenobjekt. */
+  readonly maske_fein?: readonly string[];
   /** Name des Bogens im Paket (moebelboegen/<bogen>.png), seit den Möbelbögen. */
   readonly bogen?: string;
   /** Lage auf dem Bogen: x, y, Breite, Höhe in Pixeln. */
@@ -203,12 +206,14 @@ export function rahmenJeTextur(
 
 /**
  * Stellt die Möbel auf: Tiefe nach der unteren Kante (Figuren davor oder dahinter), Kollision auf
- * der Fläche unter der obersten Kachelreihe. Ausgabe: die Gruppe für den Zusammenstoß mit dem Helden.
+ * der Fläche unter der obersten Kachelreihe; mit `karte` dazu deren feine Sperren (feinsperren.ts).
+ * Ausgabe: die Gruppe für den Zusammenstoß mit dem Helden.
  */
 export function stelleMoebelAuf(
   szene: Phaser.Scene,
   moebel: readonly Moebel[],
   kachel: number,
+  karte?: object,
 ): Phaser.Physics.Arcade.StaticGroup {
   const gruppe = szene.physics.add.staticGroup();
   for (const m of moebel) {
@@ -226,6 +231,11 @@ export function stelleMoebelAuf(
     if (m.deckkraft !== undefined) bild.setAlpha(m.deckkraft); // nur das Bild, Kollision bleibt
     bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
+    if (m.angabe.maske_fein) {
+      // Feine Maske (Karteneditor 1.6): zusammengefasste Zellen, der Held stößt an der Kante an.
+      fuegeSperrflaechenHinzu(szene, gruppe, moebelRechtecke(m, m.angabe.maske_fein, kachel));
+      continue;
+    }
     if (m.angabe.maske) {
       // Gleiche Regel wie pipeline/abenteuer/maske.py: je „#“ eine gesperrte Kachel.
       m.angabe.maske.forEach((zeile, reihe) => {
@@ -257,6 +267,35 @@ export function stelleMoebelAuf(
     flaeche.setVisible(false);
     gruppe.add(flaeche);
   }
+  // Feine Sperren der Karte (Karteneditor 1.6, Eigenschaft `sperren_fein`) in dieselbe Gruppe:
+  // Physik und Sperrkarte (sperrkarte.ts) sehen sie dann wie Möbel.
+  const fein = feinsperrenAus(
+    (karte as { properties?: readonly Eigenschaft[] } | undefined)?.properties,
+  );
+  fuegeSperrflaechenHinzu(szene, gruppe, feinsperrRechtecke(fein, kachel));
   gruppe.refresh();
   return gruppe;
+}
+
+/** Eine Tiled-Eigenschaft (Name und Wert). */
+interface Eigenschaft {
+  readonly name?: string;
+  readonly value?: unknown;
+}
+
+/**
+ * Legt unsichtbare Rechtecke als feste Körper in die Gruppe (Möbel mit feiner Maske, feine Sperren
+ * der Karte aus `sperren_fein`, feinsperren.ts). Die Sperrkarte der Tiere (sperrkarte.ts) liest
+ * dieselbe Gruppe und sperrt jede berührte Kachel.
+ */
+export function fuegeSperrflaechenHinzu(
+  szene: Phaser.Scene,
+  gruppe: Phaser.Physics.Arcade.StaticGroup,
+  rechtecke: readonly Rechteck[],
+): void {
+  for (const r of rechtecke) {
+    const flaeche = szene.add.rectangle(r.x + r.b / 2, r.y + r.h / 2, r.b, r.h);
+    flaeche.setVisible(false);
+    gruppe.add(flaeche);
+  }
 }

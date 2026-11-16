@@ -1,3 +1,17 @@
+Stand: 16.11.2026 spät (Haupt-Chat, Schach-Abenteuer): **Editor 1.1 bis 1.6, Editoränderungen des Autors, RO32.**
+
+- Karteneditor bis 1.6 (Kollision je Stelle, Pinsel, fein in 4-px-Zellen, Übergänge, Zuschnitt,
+  Deckkraft, Änderungen laden); Rücklauf der Autordatei vom 16.11. 19:30 eingearbeitet.
+- Regeln 10.88 (Kollision nach Standfläche, 1130 Möbel mit `maske_fein`), 10.89 Treppenloch aus
+  Bildern, 10.90 Kollision ohne Pinsel-Notlösung, 10.91 Gedeck mit Gast, 10.92 Türgröße.
+- Wasserfall im Stadtpark in grauer Felswand (`fels: grau`), Gemini-Lieferung bis A32 eingebaut,
+  Treppe zum Betrachter (vom Autor gebaut) in der Bibliothek.
+- Figurengröße: Entscheidung Variante B (Welt 150 %, Kamera 2, Figuren unverkleinert); die
+  80-%-Zwischenlösung wird zurückgebaut.
+
+**Nächster Schritt:** Helfer „Variante B“ (App) und „Kartengutachten Akt 2–4“ abnehmen; danach
+Spieltest mit echter Grafik und Bildschirmfotos aller Übergänge.
+
 Stand: 16.11.2026 nachts (Haupt-Chat, Schach-Abenteuer): **Notizen, Gemini-Bilder, Karteneditor.**
 
 - Lage am Tisch (Regel 10.79) und Anordnung (10.80 bis 10.87, `pipeline.abenteuer.anordnung`): alle

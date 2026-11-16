@@ -86,8 +86,8 @@
     KE.meldeAenderung(z.kollisionUid ? "Kollision: Kachel anklicken schaltet sperrt/frei." : "");
   };
 
-  /** Spalten und Reihen eines Stücks in Kacheln (wie maskenfelder). */
-  const masse = (s) => [Math.max(1, Math.floor(s.b / K)), Math.max(1, Math.floor(s.h / K))];
+  /** Spalten und Reihen eines Stücks in Kacheln (wie maskenfelder; beschnitten: zuschnitt.js). */
+  const masse = (s) => KE.maskenmasse(s);
 
   /** Die gesperrten Kacheln eines Stücks als Raster der gezeichneten (geformten) Lage. */
   function raster(s) {

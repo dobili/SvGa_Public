@@ -244,7 +244,16 @@
     return true;
   };
 
-  const LAGEFELDER = ["feld", "versatz", "drehung", "spiegeln", "massstab", "ebene"].concat(
+  const LAGEFELDER = [
+    "feld",
+    "versatz",
+    "drehung",
+    "spiegeln",
+    "massstab",
+    "ebene",
+    "zuschnitt",
+    "deckkraft",
+  ].concat(
     ["kollision", "maske", "begehbar_grund"], // Kollision je Objekt (kollision.js)
   );
   const VERGLEICH = ["moebel", "feld", "versatz", "auf", "an_wand", "id"];

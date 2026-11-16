@@ -17,11 +17,17 @@ Lage: ``feld`` und ``versatz`` nennen die linke obere Ecke des *gedrehten* Recht
 mit; mit Maßstab gilt die Standardregel aus ``maske.py`` auf der neuen Größe, ``frei_unten`` gilt nur
 ungedreht. Eine Maske am Szeneneintrag (Übersteuerung, ``objektkollision.py``) formt sich genauso,
 bleibt aber auch mit Maßstab erhalten.
+Deckkraft (``deckkraft``, Editor 1.5): 25, 50, 75 oder 100 Prozent (100 = Standard, dann fehlt das
+Feld); nur das Bild wird durchsichtig, Kollision und Tiefe bleiben.
+Zuschnitt (``zuschnitt``, Editor 1.5): Pixel links, oben, rechts und unten weg, vor allem anderen;
+Regeln in ``objektzuschnitt.py``.
 Spiegel der Regeln in der App: ``app/src/abenteuer/oberwelt/moebelform.ts``; im Editor:
 ``werkzeuge/karteneditor/js/geometrie.js``.
 """
 
 from typing import TYPE_CHECKING
+
+from pipeline.abenteuer.objektzuschnitt import beschnitten, raster, standardmaske, zuschnitt_von
 
 if TYPE_CHECKING:  # Pillow nur für die Bilder; Kartenbau und Tests laufen ohne
     from PIL.Image import Image as Bild
@@ -29,12 +35,15 @@ if TYPE_CHECKING:  # Pillow nur für die Bilder; Kartenbau und Tests laufen ohne
 K = 16
 DREHUNGEN = (0, 90, 180, 270)
 MASSSTAB_MIN, MASSSTAB_MAX = 0.5, 3.0
+# Stufen der Deckkraft in Prozent (Wunsch des Autors, 16.11.2026: Transparenz in Stufen).
+DECKKRAFT_STUFEN = (25, 50, 75, 100)
+VOLL_DECKEND = 100
 # Felder, die die Form eines Objekts beschreiben (für Bericht und Tiled-Eigenschaften).
-FORMFELDER = ("drehung", "spiegeln", "massstab")
+FORMFELDER = ("drehung", "spiegeln", "massstab", "zuschnitt")
 
 
 def hat_form(eintrag: dict) -> bool:
-    """Ob ein Szeneneintrag gedreht, gespiegelt oder skaliert ist.
+    """Ob ein Szeneneintrag gedreht, gespiegelt, skaliert oder beschnitten ist.
 
     Beispiel: ``{"moebel": "mf4Sofa", "feld": [2, 3], "drehung": 90}`` → True; ohne die Felder
     (alle bestehenden Karten) → False.
@@ -43,6 +52,7 @@ def hat_form(eintrag: dict) -> bool:
         eintrag.get("drehung", 0) % 360 != 0
         or bool(eintrag.get("spiegeln"))
         or float(eintrag.get("massstab", 1)) != 1
+        or zuschnitt_von(eintrag) is not None
     )
 
 
@@ -50,7 +60,8 @@ def wirksame_groesse(breite: int, hoehe: int, eintrag: dict) -> tuple[int, int]:
     """Breite und Höhe des gezeichneten Rechtecks nach Maßstab und Drehung, in Pixeln.
 
     Beispiel: Sofa 64 × 32 mit ``drehung`` 90 → (32, 64); mit ``massstab`` 1.5 → (96, 48).
-    Sonderfall: Gerundet auf ganze Pixel, mindestens 1.
+    Sonderfall: Gerundet auf ganze Pixel, mindestens 1. ``breite`` und ``hoehe`` sind schon
+    beschnitten (``objektzuschnitt.beschnitten``), der Zuschnitt wirkt hier nicht noch einmal.
     """
     massstab = float(eintrag.get("massstab", 1))
     b, h = max(1, round(breite * massstab)), max(1, round(hoehe * massstab))
@@ -98,14 +109,19 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
     eigene = eintrag.get("maske")
     if not hat_form(eintrag):
         return angabe if eigene is None else {**angabe, "maske": list(eigene)}
+    # Zuschnitt zuerst (objektzuschnitt.py): kleineres Bild, Katalogmaske mitbeschnitten.
+    angabe, beschnitt = beschnitten(angabe, eintrag)
     neu = dict(angabe)
     neu["breite"], neu["hoehe"] = wirksame_groesse(angabe["breite"], angabe["hoehe"], eintrag)
     drehung, massstab = eintrag.get("drehung", 0) % 360, float(eintrag.get("massstab", 1))
     maske = eigene if eigene is not None else angabe.get("maske") if massstab == 1 else None
+    # Raster des skalierten, ungedrehten Bildes (ohne Maßstab: das Raster des Katalogs); beschnitten
+    # zählen angefangene Kacheln mit (objektzuschnitt.raster).
+    breite, hoehe = wirksame_groesse(angabe["breite"], angabe["hoehe"], {"massstab": massstab})
+    spalten, reihen = raster(breite, hoehe) if beschnitt else (max(1, breite // K), max(1, hoehe // K))
+    if maske is None and beschnitt:
+        maske = standardmaske(spalten, reihen)  # beschnitten immer mit Maske, im selben Raster
     if maske is not None:
-        # Raster des skalierten, ungedrehten Bildes (ohne Maßstab: das Raster des Katalogs).
-        breite, hoehe = wirksame_groesse(angabe["breite"], angabe["hoehe"], {"massstab": massstab})
-        spalten, reihen = max(1, breite // K), max(1, hoehe // K)
         neu["maske"] = drehe_maske(list(maske), spalten, reihen, drehung, bool(eintrag.get("spiegeln")))
     else:
         neu.pop("maske", None)
@@ -121,16 +137,28 @@ def formangaben(eintrag: dict) -> dict:
     """
     if not hat_form(eintrag):
         return {}
-    return {k: eintrag[k] for k in FORMFELDER if k in eintrag}
+    return {
+        k: eintrag[k] for k in FORMFELDER if k in eintrag and (k != "zuschnitt" or zuschnitt_von(eintrag))
+    }
 
 
 def formeigenschaften(stueck: dict) -> list[dict]:
     """Tiled-Eigenschaften der Form (App, oberwelt/moebelform.ts); ohne Form eine leere Liste.
 
     Beispiel: ``{"drehung": 90, "spiegeln": True}`` →
-    ``[{"name": "drehung", "type": "int", "value": 90}, {"name": "spiegeln", …}]``.
+    ``[{"name": "drehung", "type": "int", "value": 90}, {"name": "spiegeln", …}]``. Der Zuschnitt
+    steht als Text „links,oben,rechts,unten“ da (Tiled kennt keine Listen).
     """
-    typen = {"drehung": ("int", int), "spiegeln": ("bool", bool), "massstab": ("float", float)}
+
+    def als_text(wert: object) -> str:
+        return ",".join(str(t) for t in zuschnitt_von({"zuschnitt": wert}) or (0, 0, 0, 0))
+
+    typen = {
+        "drehung": ("int", int),
+        "spiegeln": ("bool", bool),
+        "massstab": ("float", float),
+        "zuschnitt": ("string", als_text),
+    }
     return [
         {"name": k, "type": typen[k][0], "value": typen[k][1](stueck[k])} for k in FORMFELDER if k in stueck
     ]
@@ -151,6 +179,8 @@ def formbefunde(szene: dict) -> list[str]:
             befunde.append(f"{wo}: massstab {massstab} liegt nicht zwischen 0,5 und 3")
         if not isinstance(eintrag.get("ebene", 0), int):
             befunde.append(f"{wo}: ebene {eintrag['ebene']} ist keine ganze Zahl")
+        if eintrag.get("deckkraft", VOLL_DECKEND) not in DECKKRAFT_STUFEN:
+            befunde.append(f"{wo}: deckkraft {eintrag['deckkraft']} ist nicht 25, 50, 75 oder 100")
         if not isinstance(eintrag.get("spiegeln", False), bool):
             befunde.append(f"{wo}: spiegeln muss true oder false sein")
     return befunde
@@ -159,12 +189,18 @@ def formbefunde(szene: dict) -> list[str]:
 def formbild(bild: "Bild", eintrag: dict) -> "Bild":
     """Ein Möbelbild in seiner Form (Vorschau in kartenbild.py, Rücklauf des Editors).
 
-    Reihenfolge wie in App und Editor: Maßstab, Spiegeln, dann Drehung im Uhrzeigersinn.
-    Beispiel: Sofa 64 × 32 mit ``drehung`` 90 → Bild 32 × 64.
+    Reihenfolge wie in App und Editor: Zuschnitt, Maßstab, Spiegeln, dann Drehung im Uhrzeigersinn.
+    Beispiel: Sofa 64 × 32 mit ``drehung`` 90 → Bild 32 × 64; Zaun 64 × 32 mit ``zuschnitt``
+    [26, 0, 32, 0] → Bild 6 × 32.
     """
     if not hat_form(eintrag):
         return bild
     from PIL import Image  # erst hier: Kartenbau und App-Prüfungen laufen ohne Pillow
+
+    z = zuschnitt_von(eintrag)
+    if z is not None:
+        breite, hoehe = max(1, bild.width - z[0] - z[2]), max(1, bild.height - z[1] - z[3])
+        bild = bild.crop((z[0], z[1], z[0] + breite, z[1] + hoehe))
 
     massstab = float(eintrag.get("massstab", 1))
     if massstab != 1:
@@ -175,3 +211,34 @@ def formbild(bild: "Bild", eintrag: dict) -> "Bild":
     # Pillow dreht gegen den Uhrzeigersinn: -90 heißt 90 Grad im Uhrzeigersinn.
     drehung = eintrag.get("drehung", 0) % 360
     return bild.rotate(-drehung, expand=True) if drehung else bild
+
+
+def deckkraft_von(eintrag: dict) -> int:
+    """Die Deckkraft eines Eintrags oder Stücks in Prozent; ohne Feld (oder ungültig) 100.
+
+    Beispiel: ``{"deckkraft": 50}`` → 50; ``{}`` → 100.
+    """
+    wert = eintrag.get("deckkraft", VOLL_DECKEND)
+    return wert if wert in DECKKRAFT_STUFEN else VOLL_DECKEND
+
+
+def deckkraftangabe(eintrag: dict) -> dict:
+    """Für das gesetzte Stück: ``{"deckkraft": 50}`` oder ``{}`` bei voller Deckkraft."""
+    wert = deckkraft_von(eintrag)
+    return {} if wert == VOLL_DECKEND else {"deckkraft": wert}
+
+
+def mit_deckkraft(bild: "Bild", eintrag: dict) -> "Bild":
+    """Das Bild mit der Deckkraft des Eintrags (Vorschau in kartenbild.py und im Rücklauf).
+
+    Warum: Die App zeichnet das Möbel mit ``setAlpha``; die Vorschau soll gleich aussehen. Die
+    Pixelprüfungen nehmen ``formbild`` ohne Deckkraft. Beispiel: Alpha 255 bei 50 % → 128.
+    """
+    wert = deckkraft_von(eintrag)
+    if wert == VOLL_DECKEND:
+        return bild
+    rot, gruen, blau, alpha = bild.convert("RGBA").split()
+    alpha = alpha.point(lambda a: round(a * wert / VOLL_DECKEND))
+    from PIL import Image  # erst hier: Kartenbau läuft ohne Pillow
+
+    return Image.merge("RGBA", (rot, gruen, blau, alpha))

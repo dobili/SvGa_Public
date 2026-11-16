@@ -28,6 +28,7 @@ from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.editorfiguren import figurwarnungen
 from pipeline.abenteuer.editoruebergaenge import ruecklauf as uebergangsruecklauf
+from pipeline.abenteuer.editorzuschnitt import deckkraftzeilen, zuschnittvorschlaege, zuschnittzeilen
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
 from pipeline.abenteuer.kollisionspinsel import pinselzeilen
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -43,7 +44,7 @@ BERICHTSORDNER = HAUPT / "buch" / "arbeit" / "editor"
 BREITE = 100  # Zeilenbreite wie Prettier in diesem Repository (app/.prettierrc.json)
 SCHMAL = 80  # Zeilenbreite von orte.json (Prettier-Vorgabe)
 LAGE = ("feld", "versatz", "auf")
-FORM = ("drehung", "spiegeln", "massstab", "ebene")
+FORM = ("drehung", "spiegeln", "massstab", "ebene", "zuschnitt", "deckkraft")
 MARKIERUNGEN = ("ausloeser", "figuren", "belebung")
 FELDER_HOECHSTENS = 20
 VARIANTEN = "varianten"  # Unterordner der Varianten B und C (szenen/varianten/README.md)
@@ -129,6 +130,8 @@ def objektzeilen(vorher: dict, nachher: dict, moebel: dict | None = None) -> lis
     if vorher.get("ebene", 0) != nachher.get("ebene", 0):
         zeilen.append(f"Ebene: {name} {ort(nachher)} {vorher.get('ebene', 0)} → {nachher.get('ebene', 0)}")
     angabe = (moebel or {}).get(name)
+    zeilen += zuschnittzeilen(vorher, nachher, angabe, ort(nachher))  # Editor 1.5, editorzuschnitt.py
+    zeilen += deckkraftzeilen(vorher, nachher, ort(nachher))
     if zeile := kollisionszeile(vorher, nachher, angabe, ort(nachher)):
         zeilen.append(zeile)
     rest = sorted(
@@ -190,6 +193,8 @@ def berichte(eintrag: dict, moebel: dict | None = None) -> list[str]:
     for j, i in enumerate(zuordnung):
         if i is None:
             zeilen.append(f"hinzugefügt: {neu[j]['moebel']} {ort(neu[j])}")
+            zeilen += zuschnittzeilen({}, neu[j], (moebel or {}).get(neu[j]["moebel"]), ort(neu[j]))
+            zeilen += deckkraftzeilen({}, neu[j], ort(neu[j]))
             if zeile := kollisionszeile({}, neu[j], (moebel or {}).get(neu[j]["moebel"]), ort(neu[j])):
                 zeilen.append(zeile)
         else:
@@ -227,13 +232,13 @@ def vorschau(szene: dict, privat: Path, markiert: set[int]) -> "Bild":
     from pipeline.abenteuer.kartenbau import platziere
     from pipeline.abenteuer.kartenbild import moebelbild, zeichne
     from pipeline.abenteuer.moebelliste import lade_moebel
-    from pipeline.abenteuer.objektform import formbild
+    from pipeline.abenteuer.objektform import formbild, mit_deckkraft
 
     grund = zeichne(szene, privat)[0].copy()
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     for s in sorted(gesetzt, key=lambda s: s["tiefe"]):
-        bild = formbild(moebelbild(privat, moebel[s["name"]]), s)
+        bild = mit_deckkraft(formbild(moebelbild(privat, moebel[s["name"]]), s), s)
         grund.alpha_composite(bild, (max(0, s["x"]), max(0, s["y"])))
     zeichner = ImageDraw.Draw(grund)
     # Kennung wie im Kartenbau (id oder „möbel@index“) → Index des Objekts in der Szene.
@@ -311,6 +316,10 @@ def main(argumente: list[str] | None = None) -> int:
         # Für den Hauptchat: Welche Katalogeinträge passen an diesen Stellen nicht (objektkollision.py)?
         text += ["", "## Kollision an einzelnen Stellen (Katalog prüfen)", ""] + [
             f"- {z}" for z in kollisionen
+        ]
+    if vorschlaege := zuschnittvorschlaege(daten["szenen"], moebel):
+        text += ["", "## Wiederholte Zuschnitte (eigener Katalogeintrag?)", ""] + [
+            f"- {z}" for z in vorschlaege
         ]
     if warnungen:
         text += ["", "## Warnungen (Figuren und Übergänge, die die Handlung braucht)", ""]

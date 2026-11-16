@@ -19,7 +19,7 @@
  */
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
-import { formAus, geformtAusObjekt, hatForm, type Moebelform } from "./moebelform";
+import { deckkraftAus, formAus, geformtAusObjekt, hatForm, type Moebelform } from "./moebelform";
 
 /** Eine Angabe aus daten/moebel.json im Paket. */
 export interface Moebelangabe {
@@ -72,6 +72,8 @@ export interface Moebel {
   /** Vom Kartenbauer festgelegt: Zeichentiefe und Kollision (an der Wand, auf dem Tisch). */
   readonly tiefe?: number;
   readonly kollision?: boolean;
+  /** Deckkraft 0,25 bis 1 (Karteneditor 1.5, Eigenschaft `deckkraft`); fehlt bei voller Deckkraft. */
+  readonly deckkraft?: number;
 }
 
 let angaben: Promise<Readonly<Record<string, Moebelangabe>>> | null = null;
@@ -109,6 +111,7 @@ export async function ladeMoebel(karte: object, ort?: string): Promise<Moebel[]>
         const eigen = (n: string) => o.properties?.find((e) => e.name === n)?.value;
         const tiefe = eigen("tiefe");
         const kollision = eigen("kollision");
+        const deckkraft = deckkraftAus(o.properties);
         return {
           name,
           x: o.x ?? 0,
@@ -120,6 +123,7 @@ export async function ladeMoebel(karte: object, ort?: string): Promise<Moebel[]>
           ...(lage.bogen && lage.rahmen ? { rahmen: lage.rahmen } : {}),
           ...(typeof tiefe === "number" ? { tiefe } : {}),
           ...(typeof kollision === "boolean" ? { kollision } : {}),
+          ...(deckkraft < 1 ? { deckkraft } : {}),
         };
       }),
   );
@@ -152,14 +156,35 @@ export function ladeMoebelbilder(szene: Phaser.Scene, moebel: readonly Moebel[])
 }
 
 /**
+ * Name des Rahmens, den Phaser für ein Möbel zeichnet: mit Zuschnitt ein eigener Rahmen
+ * („<name>|zuschnitt:26,0,32,0“), sonst der Rahmen auf dem Bogen oder (ohne Bogen) das ganze Bild.
+ */
+export function rahmenname(m: Moebel): string | undefined {
+  const z = m.form?.zuschnitt;
+  if (z) return `${m.name}|zuschnitt:${z.join(",")}`;
+  return m.rahmen ? m.name : undefined;
+}
+
+/**
  * Schneidet die Möbel als Rahmen aus ihren Bögen (nach dem Laden, vor dem Aufstellen; auch nach
- * dem Umfärben im Winter, das die Textur ersetzt). Ohne Bogen nichts zu tun.
+ * dem Umfärben im Winter, das die Textur ersetzt). Ohne Bogen und ohne Zuschnitt nichts zu tun.
+ * Zuschnitt (Karteneditor 1.5, moebelzuschnitt.ts): ein eigener, kleinerer Rahmen innerhalb des
+ * Möbelrahmens (Wunsch des Autors, 16.11.2026: ein Pfosten aus einem Zaunstück). Warum ein Rahmen
+ * statt `setCrop`: Mit dem Rahmen ist das Bild so groß wie der Ausschnitt, Ursprung, Drehung und
+ * Spiegeln wirken wie bei jedem anderen Möbel um seine Mitte.
  */
 export function richteMoebelrahmenEin(szene: Phaser.Scene, moebel: readonly Moebel[]): void {
   for (const m of moebel) {
-    if (!m.rahmen || !szene.textures.exists(m.schluessel)) continue;
+    if (!szene.textures.exists(m.schluessel)) continue;
     const textur = szene.textures.get(m.schluessel);
-    if (!textur.has(m.name)) textur.add(m.name, 0, ...m.rahmen);
+    if (m.rahmen && !textur.has(m.name)) textur.add(m.name, 0, ...m.rahmen);
+    const z = m.form?.zuschnitt;
+    const name = rahmenname(m);
+    if (!z || !name || textur.has(name)) continue;
+    const basis = textur.get(m.rahmen ? m.name : undefined);
+    const breite = Math.max(1, basis.cutWidth - z[0] - z[2]);
+    const hoehe = Math.max(1, basis.cutHeight - z[1] - z[3]);
+    textur.add(name, basis.sourceIndex, basis.cutX + z[0], basis.cutY + z[1], breite, hoehe);
   }
 }
 
@@ -187,16 +212,18 @@ export function stelleMoebelAuf(
 ): Phaser.Physics.Arcade.StaticGroup {
   const gruppe = szene.physics.add.staticGroup();
   for (const m of moebel) {
-    const bild = szene.add.image(m.x, m.y, m.schluessel, m.rahmen ? m.name : undefined);
+    const bild = szene.add.image(m.x, m.y, m.schluessel, rahmenname(m));
     bild.setOrigin(0, 0);
     if (m.form) {
-      // Gedreht, gespiegelt oder skaliert (moebelform.ts): um die Mitte des Rechtecks.
+      // Gedreht, gespiegelt, skaliert oder beschnitten (moebelform.ts): um die Mitte des Rechtecks;
+      // der Zuschnitt steckt schon im Rahmen (richteMoebelrahmenEin).
       bild.setOrigin(0.5, 0.5);
       bild.setPosition(m.x + m.angabe.breite / 2, m.y + m.angabe.hoehe / 2);
       bild.setScale(m.form.massstab);
       bild.setFlipX(m.form.spiegeln);
       bild.setAngle(m.form.drehung);
     }
+    if (m.deckkraft !== undefined) bild.setAlpha(m.deckkraft); // nur das Bild, Kollision bleibt
     bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
     if (m.angabe.maske) {

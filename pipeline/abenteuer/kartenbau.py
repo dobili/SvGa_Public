@@ -36,7 +36,7 @@ from pipeline.abenteuer.kehren import kehrenbefunde
 from pipeline.abenteuer.kollisionspinsel import gib_frei, pinselbefunde, pinselfelder, pinselhinweise
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.objektform import formangaben, geformt
+from pipeline.abenteuer.objektform import deckkraftangabe, formangaben, geformt
 from pipeline.abenteuer.objektkollision import kollision_an, kollisionsbefunde
 from pipeline.abenteuer.saum import saumbefunde
 from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
@@ -120,6 +120,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             # Begehbare Reihen unten im Bild (Gang vor dem Motel, Veranda), Angabe „frei_unten“.
             "frei_unten": angabe.get("frei_unten", 0),
             **(({"maske": angabe["maske"]} if "maske" in angabe else {}) | formangaben(eintrag)),
+            **deckkraftangabe(eintrag),  # Deckkraft 25 bis 75 % (objektform.py), nur das Bild
             # Eigene Maske der Szene, geformt, für die Eigenschaft „maske“ der Tiled-Karte.
             **({"objektmaske": angabe["maske"]} if "maske" in eintrag else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),

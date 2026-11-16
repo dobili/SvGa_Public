@@ -197,6 +197,7 @@
     const b = bilder[KE.zustand.daten.moebel[s.kennung].bild];
     if (!b || !b.complete) return;
     const e = s.eintrag;
+    if (KE.zuschnittVon(e)) return KE.zeichneBeschnitten(ctx, s, b); // Zuschnitt (zuschnitt.js)
     const m = Number(e.massstab ?? 1);
     const w = b.naturalWidth * m;
     const h = b.naturalHeight * m;
@@ -293,7 +294,11 @@
     zeichneGrund(ctx, szene, original, z.datei);
     const stuecke = KE.platziere(szene);
     const sichtbar = stuecke.filter((s) => !z.schalter.nurUmgebung || s.umgebung);
-    for (const s of sichtbar) zeichneStueck(ctx, s);
+    for (const s of sichtbar) {
+      ctx.globalAlpha = KE.deckkraftVon(s.eintrag) / 100; // Deckkraft in Stufen (deckkraft.js)
+      zeichneStueck(ctx, s);
+    }
+    ctx.globalAlpha = 1;
     // Alle Stücke zählen, auch die bei „Nur Umgebung“ ausgeblendeten: Der Held stößt trotzdem an.
     // Figuren und stehende Statisten sperren wie Möbel; nur bedingt anwesende gestrichelt.
     if (z.schalter.kollision) {
@@ -309,6 +314,7 @@
     // Ziel und Ankunft jedes Übergangs, Kacheln beim Setzen (uebergaenge.js, ankunft.js).
     if (marken.length || z.setzen) KE.zeichneUebergaenge(ctx, szene, stuecke, a.zoom);
     KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
+    KE.zeichneZuschnitt(ctx, a.zoom); // Modus „Zuschneiden“: Griffe, Weggeschnittenes (zuschnitt.js)
     if (z.schalter.raster) zeichneRaster(ctx, breite, hoehe, a.zoom);
     if (!z.schalter.vorher) zeichneAuswahl(ctx, sichtbar, marken, a.zoom);
     if (KE.rechteck) {

@@ -11,6 +11,7 @@ industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sin
 from pipeline.abenteuer.kollisionspinsel import pinselfelder
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.objektform import formbefunde
+from pipeline.abenteuer.objektzuschnitt import zuschnittbefunde
 
 # Möbel, auf denen Figuren sitzen können (R020; Name enthält eines dieser Wörter).
 SITZMOEBEL = ("stuhl", "bank", "sessel", "sofa", "hocker", "couch")
@@ -129,7 +130,12 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             antritt = s["y"] // K if abgang else y1 + 1
             if all(_gesperrt(zeilen, x, antritt) for x in range(x0, x1 + 1)):
                 befunde.append(f"{name}: Treppe ohne freien Antritt {'oben' if abgang else 'unten'}")
-    return befunde + pruefe_raum(szene, zeilen, gesetzt, moebel) + formbefunde(szene)
+    return (
+        befunde
+        + pruefe_raum(szene, zeilen, gesetzt, moebel)
+        + formbefunde(szene)
+        + zuschnittbefunde(szene, moebel)
+    )
 
 
 # ---------------------------------------------------------------- Raumregeln (KARTENREGELN.md, 8.6)

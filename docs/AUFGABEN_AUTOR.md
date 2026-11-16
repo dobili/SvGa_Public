@@ -1194,6 +1194,13 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       wo der Held ankommt (weiß automatisch, türkis festgelegt, rot fehlerhaft); „Ankunft
       festlegen“ und ein Klick setzen es selbst. Jede Seite eines Übergangs hat ihren eigenen
       Ankunftsort; „start“ gilt nur für Reisen und den Spielbeginn.
+      Fassung 1.5: Zuschneiden und Deckkraft. Im Bereich „Zuschnitt“ des ausgewählten Bildes vier
+      Zahlenfelder (links, oben, rechts, unten; −/+ je 1 Pixel, mit Umschalt 16) oder „Zuschneiden“
+      und die orangen Griffe ziehen (mit Alt in Kachelschritten); „Zuschnitt aufheben“ stellt das
+      ganze Bild wieder her. Beispiel: aus einem Zaun nur den Pfosten stehen lassen, mit Strg+D
+      vervielfältigen oder „Als eigenes Bild merken“ (Bibliothek, „Eigene Zuschnitte“). Die
+      Kollision wird mitbeschnitten. Deckkraft 25, 50, 75 oder 100 Prozent für die ganze Auswahl;
+      die Kollision bleibt dabei, wie sie ist.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg

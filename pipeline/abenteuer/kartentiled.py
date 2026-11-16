@@ -101,6 +101,8 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
             # Eigene Maske der Szene (objektkollision.py), schon geformt; nur dann, damit alte Karten
             # gleich bleiben. Die App liest sie in oberwelt/moebelform.ts (geformtAusObjekt).
             eig.append({"name": "maske", "type": "string", "value": maskeneigenschaft(s["objektmaske"])})
+        if "deckkraft" in s:  # nur wenn gesetzt (alte Karten bleiben gleich); App: moebel.ts
+            eig.append({"name": "deckkraft", "type": "int", "value": s["deckkraft"]})
         if "wenn" in s:
             eig.append({"name": "wenn", "type": "string", "value": s["wenn"]})
         objekt(s["name"], "moebel", s["x"], s["y"], s["breite"], s["hoehe"], eig)

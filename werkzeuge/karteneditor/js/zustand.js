@@ -17,7 +17,8 @@ window.KE = window.KE || {};
   // löschen (mit Rückfrage) und kopieren, Varianten in der Kartenliste, Bodenkacheln trotz Sperre.
   // 1.3: Kollisionspinsel (Kacheln sperren oder freigeben, unabhängig von den Bildern, pinsel.js).
   // 1.4: Übergänge zu beliebigen Karten, Ziele und Ankunftsfelder sehen (uebergaenge.js, ankunft.js).
-  KE.VERSION = "1.4.0";
+  // 1.5: Zuschnitt (Objektfeld zuschnitt, zuschnitt.js, zuschnittfeld.js).
+  KE.VERSION = "1.5.0";
   /** Schlüssel der Übergangsdefinitionen (orte.json) im Verlauf, neben den Szenendateien. */
   KE.ORTE = "#orte";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";

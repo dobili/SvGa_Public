@@ -11,13 +11,24 @@
  * Breite und Höhe; eine eigene `maske` dreht mit, mit Maßstab gilt die Standardregel,
  * `frei_unten` gilt nur ungedreht.
  * Beispiel: Sofa 64 × 32 mit drehung 90 → Rechteck 32 × 64, Kollision in 2 Spalten.
+ * Zuschnitt (Editor 1.5, moebelzuschnitt.ts): wirkt vor allem anderen; beschnitten trägt das Möbel
+ * immer eine Maske im Raster des Ausschnitts.
  */
+import {
+  beschnitten,
+  standardmaske,
+  zuschnittAus,
+  zuschnittRaster,
+  type Zuschnitt,
+} from "./moebelzuschnitt";
 
 /** Die Form eines Möbels; ohne Eigenschaften die neutrale Form. */
 export interface Moebelform {
   readonly drehung: number;
   readonly spiegeln: boolean;
   readonly massstab: number;
+  /** Pixel links, oben, rechts, unten des Katalogbilds, die wegfallen (Karteneditor 1.5). */
+  readonly zuschnitt?: Zuschnitt;
 }
 
 /** Was die Form an einer Möbelangabe ändert (Größe, Maske, freie Reihen). */
@@ -38,19 +49,26 @@ export function formAus(
   const wert = (n: string) => eigenschaften?.find((e) => e.name === n)?.value;
   const drehung = wert("drehung");
   const massstab = wert("massstab");
+  const zuschnitt = zuschnittAus(wert("zuschnitt"));
   return {
     drehung: typeof drehung === "number" ? ((drehung % 360) + 360) % 360 : 0,
     spiegeln: wert("spiegeln") === true,
     massstab: typeof massstab === "number" && massstab > 0 ? massstab : 1,
+    ...(zuschnitt ? { zuschnitt } : {}),
   };
 }
 
 /** Ob eine Form etwas ändert. */
 export function hatForm(form: Moebelform): boolean {
-  return form.drehung !== NEUTRAL.drehung || form.spiegeln || form.massstab !== NEUTRAL.massstab;
+  return (
+    form.drehung !== NEUTRAL.drehung ||
+    form.spiegeln ||
+    form.massstab !== NEUTRAL.massstab ||
+    form.zuschnitt !== undefined
+  );
 }
 
-/** Größe nach Maßstab und Drehung. Beispiel: 64 × 32, drehung 90 → [32, 64]. */
+/** Größe nach Maßstab und Drehung (Breite und Höhe schon beschnitten). Beispiel: 64 × 32, drehung 90 → [32, 64]. */
 export function wirksameGroesse(breite: number, hoehe: number, form: Moebelform): [number, number] {
   const b = Math.max(1, Math.round(breite * form.massstab));
   const h = Math.max(1, Math.round(hoehe * form.massstab));
@@ -81,6 +99,7 @@ export function dreheMaske(
 /** Die Angabe so, wie das Möbel in seiner Form liegt (Größe, Maske, freie Reihen). */
 export function geformt<T extends Formbare>(angabe: T, form: Moebelform): T {
   if (!hatForm(form)) return angabe;
+  if (form.zuschnitt) return geformtBeschnitten(angabe, form);
   const [breite, hoehe] = wirksameGroesse(angabe.breite, angabe.hoehe, form);
   const { maske, frei_unten: freiUnten, ...rest } = angabe;
   const spalten = Math.max(1, Math.floor(angabe.breite / KACHEL));
@@ -98,6 +117,25 @@ export function geformt<T extends Formbare>(angabe: T, form: Moebelform): T {
   } as T;
 }
 
+/**
+ * Beschnitten (moebelzuschnitt.ts): erst Ausschnitt und Maske, dann Maßstab, Spiegeln, Drehung. Die
+ * Maske gilt im Raster des skalierten Ausschnitts (angefangene Kacheln zählen); mit Maßstab gilt
+ * die Standardregel. Eine eigene Maske der Szene steht schon geformt an der Karte (geformtAusObjekt).
+ * Beispiel: Zaun 64 × 32, zuschnitt [26, 0, 32, 0], drehung 90 → 32 × 6, Maske ["#."].
+ */
+function geformtBeschnitten<T extends Formbare>(roh: T, form: Moebelform): T {
+  const angabe = form.zuschnitt ? beschnitten(roh, form.zuschnitt) : roh;
+  const [breite, hoehe] = wirksameGroesse(angabe.breite, angabe.hoehe, form);
+  const [b, h] = wirksameGroesse(angabe.breite, angabe.hoehe, {
+    ...NEUTRAL,
+    massstab: form.massstab,
+  });
+  const [spalten, reihen] = zuschnittRaster(b, h);
+  const grund = (form.massstab === 1 ? angabe.maske : undefined) ?? standardmaske(spalten, reihen);
+  const maske = dreheMaske(grund, spalten, reihen, form.drehung, form.spiegeln);
+  return { ...angabe, breite, hoehe, maske } as T;
+}
+
 /** Trenner der Maskenreihen in der Tiled-Eigenschaft `maske` (pipeline/abenteuer/objektkollision.py). */
 const REIHENTRENNER = "/";
 
@@ -112,7 +150,25 @@ export function geformtAusObjekt<T extends Formbare>(
   angabe: T,
   eigenschaften: readonly { readonly name?: string; readonly value?: unknown }[] | undefined,
 ): T {
-  const geformte = geformt(angabe, formAus(eigenschaften));
+  const form = formAus(eigenschaften);
+  const geformte = geformt(angabe, form);
   const maske = eigenschaften?.find((e) => e.name === "maske")?.value;
   return typeof maske === "string" ? { ...geformte, maske: maske.split(REIHENTRENNER) } : geformte;
+}
+
+/** Stufen der Deckkraft in Prozent (Karteneditor 1.5, pipeline/abenteuer/objektform.py). */
+const DECKKRAFT_STUFEN: readonly number[] = [25, 50, 75, 100];
+const VOLL = 100;
+
+/**
+ * Deckkraft eines Möbels als Faktor 0,25 bis 1 aus der Tiled-Eigenschaft `deckkraft` (Prozent).
+ * Warum: Der Autor macht Bilder im Karteneditor in Stufen durchsichtig (Wunsch des Autors,
+ * 16.11.2026); nur das Bild, die Kollision bleibt. Ohne oder ungültig: 1.
+ * Beispiel: [{ name: "deckkraft", value: 50 }] → 0.5.
+ */
+export function deckkraftAus(
+  eigenschaften: readonly { readonly name?: string; readonly value?: unknown }[] | undefined,
+): number {
+  const wert = eigenschaften?.find((e) => e.name === "deckkraft")?.value;
+  return typeof wert === "number" && DECKKRAFT_STUFEN.includes(wert) ? wert / VOLL : 1;
 }

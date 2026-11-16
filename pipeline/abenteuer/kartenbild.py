@@ -39,7 +39,7 @@ from pipeline.abenteuer.klippe import (
     treppenfelder,
 )
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.objektform import formbild
+from pipeline.abenteuer.objektform import formbild, mit_deckkraft
 from pipeline.abenteuer.randspur import randhang, randluecken
 from pipeline.abenteuer.strasse import markiere
 from pipeline.abenteuer.toenung import schleier
@@ -328,7 +328,8 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [
-        (s["tiefe"], s["x"], s["y"], formbild(moebelbild(privat, moebel[s["name"]]), s)) for s in gesetzt
+        (s["tiefe"], s["x"], s["y"], mit_deckkraft(formbild(moebelbild(privat, moebel[s["name"]]), s), s))
+        for s in gesetzt
     ]
     if ist_winter(szene):
         # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.

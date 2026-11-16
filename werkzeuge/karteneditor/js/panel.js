@@ -235,6 +235,8 @@
         ziel,
         auswahl.every((t) => t.liste !== "objekte"),
       );
+    KE.deckkraftfeld(ziel); // Deckkraft 25 bis 100 % (deckkraft.js)
+    KE.zuschnittfeld(ziel); // Zuschnitt: Zahlenfelder, Modus, eigenes Bild (zuschnittfeld.js)
     KE.kollisionsfeld(ziel); // Sperrt / Durchgehbar, Kollision bearbeiten (kollision.js)
     KE.pinselfeld(ziel); // Kollisionspinsel: Zahl der Kacheln, Grund (pinsel.js)
     if (auswahl.length === 1 && auswahl[0].liste === "objekte")

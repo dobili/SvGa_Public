@@ -372,3 +372,23 @@ footer {
   right: 10px;
   top: 10px;
 }
+/* Zuschnitt (zuschnitt.js, zuschnittfeld.js, Editor 1.5) */
+.zuschnittfeld {
+  margin: 8px 0;
+  padding: 6px;
+  border: 1px solid #c97a1e;
+  border-radius: 4px;
+}
+.zuschnittreihe {
+  margin: 2px 0;
+}
+.zuschnittname {
+  display: inline-block;
+  width: 48px;
+}
+.zuschnittreihe input {
+  width: 56px;
+}
+.eigenerzuschnitt button {
+  margin-left: auto;
+}

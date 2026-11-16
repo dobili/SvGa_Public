@@ -40,6 +40,7 @@ const kollisionspinsel = require("./pinsel.cjs");
 const laden = require("./laden.cjs");
 const versatz = require("./versatz.cjs");
 const uebergaenge = require("./uebergaenge.cjs");
+const zuschnitt = require("./zuschnitt.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -318,6 +319,7 @@ async function ruecklauf(seite, arbeit) {
   pruefe(/Kollision an einzelnen Stellen/.test(ausgabe), "Abschnitt für den Katalog");
   kollisionspinsel.ruecklauf(ausgabe, daten, path.join(szenen, KARTE), pruefe); // Kollisionspinsel
   uebergaenge.pruefeRuecklauf(ausgabe, arbeit, pruefe); // Übergänge in orte.json (Editor 1.4)
+  zuschnitt.ruecklauf(ausgabe, daten, pruefe); // Zuschnitt (Editor 1.5)
 
   // Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau.
   const pruefung = execFileSync(
@@ -370,6 +372,7 @@ async function ruecklauf(seite, arbeit) {
   await kollisionspinsel.kollisionspinsel(seite, pruefe);
   await versatz.versatz(seite, pruefe);
   await uebergaenge.uebergaenge(seite, pruefe); // Editor 1.4: neuer Übergang, Ankunft, Zum Ziel
+  await zuschnitt.zuschnitt(seite, pruefe); // Zuschnitt (Editor 1.5)
   await laden.laden(seite, arbeit, pruefe);
   await seite.reload();
   await seite.waitForFunction(() => KE.zustand.datei);

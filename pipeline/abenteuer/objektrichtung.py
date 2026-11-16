@@ -14,6 +14,7 @@ wie es ist.
 """
 
 from pipeline.abenteuer.objektform import FORMFELDER, geformt, hat_form
+from pipeline.abenteuer.objektzuschnitt import beschneide_rechteck, beschnittene_groesse, zuschnitt_von
 
 # Richtungen im Uhrzeigersinn: Ein Schritt ist eine Drehung um 90 Grad.
 BLICKE = ("oben", "rechts", "unten", "links")
@@ -26,13 +27,15 @@ Rechteck = tuple[float, float, float, float]
 
 
 def form_von(traeger: dict) -> dict:
-    """Nur die Formfelder (drehung, spiegeln, massstab) eines Eintrags oder Stücks.
+    """Nur die Formfelder (drehung, spiegeln, massstab, zuschnitt) eines Eintrags oder Stücks.
 
     Warum: Ein gesetztes Stück trägt außerdem die schon geformte ``maske``; ``geformt`` würde sie
     sonst als eigene Maske ein zweites Mal drehen. Beispiel: ``{"drehung": 90, "maske": [...]}`` →
-    ``{"drehung": 90}``.
+    ``{"drehung": 90}``. Der Zuschnitt kommt als Tupel (hashbar für ``formschluessel``).
     """
-    return {k: traeger[k] for k in FORMFELDER if k in traeger}
+    form = {k: traeger[k] for k in FORMFELDER if k in traeger and k != "zuschnitt"}
+    z = zuschnitt_von(traeger)
+    return form | ({"zuschnitt": z} if z else {})
 
 
 def formschluessel(traeger: dict) -> tuple:
@@ -77,9 +80,14 @@ def forme_rechteck(r: Rechteck, breite: int, hoehe: int, form: dict) -> Rechteck
     """Ein Rechteck im Bild (links, oben, rechts, unten) in das geformte Bild umgerechnet.
 
     Eingaben: Rechteck im ungeformten Bild der Größe ``breite`` × ``hoehe`` (etwa ``platte`` eines
-    Tischs). Ausgabe: dasselbe Rechteck im Bild nach Maßstab, Spiegeln und Drehung.
+    Tischs). Ausgabe: dasselbe Rechteck im Bild nach Zuschnitt, Maßstab, Spiegeln und Drehung.
     Beispiel: Platte (0, 0, 16, 8) im Bild 32 × 16, gespiegelt → (16, 0, 32, 8).
+    Sonderfall: Mit Zuschnitt wird das Rechteck verschoben und auf den Ausschnitt begrenzt.
     """
+    z = zuschnitt_von(form)
+    if z is not None:
+        r = beschneide_rechteck(r, breite, hoehe, z)
+        breite, hoehe = beschnittene_groesse(breite, hoehe, z)
     m = float(form.get("massstab", 1))
     x0, y0, x1, y1 = r[0] * m, r[1] * m, r[2] * m, r[3] * m
     b, h = max(1, round(breite * m)), max(1, round(hoehe * m))

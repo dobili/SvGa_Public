@@ -122,6 +122,7 @@
       ziehen = KE.setzenStart(px, py); // Neuer Übergang, Gegenauslöser, Ankunft (ausloeser.js)
       return;
     }
+    if (z.zuschnittModus && (ziehen = KE.zuschnittStart(ereignis, px, py))) return; // zuschnitt.js
     if (z.kpinsel) {
       ziehen = KE.pinselStart(ereignis, px, py);
       return;
@@ -148,6 +149,7 @@
     if (ziehen.art === "pinsel") return pinsel(px, py);
     if (ziehen.art === "kpinsel") return KE.pinselZiehen(ziehen, px, py);
     if (ziehen.art === "setzen") return KE.setzenZiehen(ziehen, px, py);
+    if (ziehen.art === "zuschnitt") return KE.zuschnittZiehen(ziehen, ereignis, px, py);
     if (ziehen.art === "rechteck") {
       KE.rechteck = {
         x0: Math.min(ziehen.x0, px),
@@ -184,6 +186,7 @@
     if (art === "pinsel") KE.schrittAbschliessen("Malen", ziehen.vorher);
     if (art === "kpinsel") KE.pinselEnde(ziehen);
     if (art === "setzen") KE.setzenEnde();
+    if (art === "zuschnitt") KE.zuschnittEnde(ziehen);
     ziehen = null;
     KE.rechteck = null;
     KE.meldeAenderung();
@@ -200,6 +203,7 @@
     ereignis.preventDefault();
     const kennung = ereignis.dataTransfer.getData("text/plain");
     const [px, py] = KE.karte(ereignis);
+    if (KE.legeZuschnittAb(kennung, px, py)) return; // eigener Zuschnitt (zuschnittfeld.js)
     if (KE.zustand.daten.moebel[kennung]) KE.fuegeEin(kennung, px, py);
   }
 
@@ -259,8 +263,9 @@
       KE.hilfe(false);
       KE.schliesseListe();
       const z = KE.zustand;
-      if (z.kollisionUid || z.uebergangVorlage || z.kpinsel || z.setzen) {
+      if (z.kollisionUid || z.uebergangVorlage || z.kpinsel || z.setzen || z.zuschnittModus) {
         z.kollisionUid = z.uebergangVorlage = z.kpinsel = z.setzen = null;
+        z.zuschnittModus = false;
         return KE.meldeAenderung("Modus beendet");
       }
       KE.zustand.auswahl.clear();

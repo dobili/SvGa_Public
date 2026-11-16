@@ -50,6 +50,8 @@ sie lassen sich bearbeiten; der Rücklauf schreibt sie an ihren Platz zurück.
 - Drehen: Knöpfe ⟲ und ⟳ oder Taste R.
 - Spiegeln: Knopf oder Taste H.
 - Größe: Knöpfe − und + oder eine Zahl zwischen 50 und 300 %.
+- Deckkraft: Knöpfe 25 %, 50 %, 75 % und 100 % machen ein Bild durchsichtig (etwa einen Lichtkegel);
+  man stößt trotzdem genauso daran an. Duplizieren behält die Deckkraft.
 - Ebene: „nach vorn“ und „nach hinten“ legen ein Bild vor oder hinter seinen Nachbarn,
   ⇈ und ⇊ ganz nach vorn oder ganz nach hinten. Die Zahl zeigt die Verschiebung.
 - Duplizieren: Strg+D. Mehrere Bilder werden als Gruppe kopiert, mit gleichen Abständen,
@@ -59,6 +61,32 @@ sie lassen sich bearbeiten; der Rücklauf schreibt sie an ihren Platz zurück.
   weil sie zur Geschichte gehören; die Rückfrage nennt das Gespräch der Figur. Strg+Z holt sie zurück.
 - Strg+D bei Auslösern, Figuren und Belebung: Kopie eine Kachel rechts daneben (bei Statisten
   wandert der Laufweg mit).
+
+**Zuschneiden** (Feld „Zuschnitt“ rechts, sobald ein Bild ausgewählt ist)
+
+Beispiel: Du brauchst nur den Pfosten eines Zauns (oder eines Viehgatters).
+
+1. Den Zaun aus der Bibliothek holen und auswählen.
+2. „Zuschneiden“ drücken. An den vier Kanten erscheinen orange Griffe.
+3. Die rechte Kante nach links ziehen, bis nur noch der Pfosten übrig ist. Die Kante rastet auf
+   Pixel ein, mit Alt springt sie in 16-Pixel-Schritten. Was weggeschnitten wird, siehst du
+   halbdurchsichtig daneben.
+4. „Fertig“ oder Esc.
+
+- Statt zu ziehen kannst du die vier Zahlen eintragen (links, oben, rechts, unten: so viele Pixel
+  fallen weg) oder mit − und + ändern (1 Pixel, mit Umschalt 16 Pixel).
+- Die Zahlen gelten für das Bild, wie es im Katalog liegt, auch wenn du es gedreht oder gespiegelt
+  hast. Die Griffe greifen immer die Kante, die du siehst.
+- Die linke obere Ecke des Ausschnitts bleibt an ihrer Stelle, wenn du rechts oder unten
+  schneidest; schneidest du links oder oben, rückt das Bild mit, und die anderen Kanten bleiben stehen.
+- Die Kollision folgt dem Ausschnitt: Kacheln, die ganz wegfallen, sperren nicht mehr.
+- „Zuschnitt aufheben“: wieder das ganze Bild.
+- Sind mehrere Bilder ausgewählt, gilt der Zuschnitt für alle gleichen Bilder.
+- Strg+D behält den Zuschnitt: So setzt du einen Pfosten mehrmals.
+- „Als eigenes Bild merken“: Der Ausschnitt steht dann in der Bibliothek unter „Eigene
+  Zuschnitte“ (nur in diesem Browser). Anklicken oder in die Karte ziehen setzt ihn mit Zuschnitt;
+  × entfernt ihn aus der Liste.
+- Strg+Z macht jeden Schritt rückgängig.
 
 **Neue Bilder**
 
@@ -302,8 +330,35 @@ Taste ? zeigt alle Kürzel.
     `uebergangsbilder`): Feld lesbar, in der Karte, frei (auch von Figuren), auf keinem Auslöser
     außer `start`, `blick` gültig, alle Felder eines Auslösers gleich.
   - Die Ankunftsanzeige baut ankunft.ts in JS nach (js/ankunft.js); Änderungen dort nachziehen.
+- Editor 1.5 (16.11.2026), Zuschnitt (js/zuschnitt.js, js/zuschnittfeld.js,
+  pipeline/abenteuer/objektzuschnitt.py):
+  - Objektfeld `zuschnitt`: `[links, oben, rechts, unten]` in Pixeln des Katalogbilds (nach dessen
+    `ausschnitt`), vor Maßstab, Spiegeln und Drehung. Das Objekt ist so groß wie der Ausschnitt;
+    `feld` und `versatz` nennen seine linke obere Ecke. Lauter Nullen gelten als kein Zuschnitt.
+  - Maske: Die Katalogmaske (auch die Standardregel mit `frei_unten`) wird mitbeschnitten. Das
+    Raster des Ausschnitts beginnt an seiner Ecke und zählt angefangene Kacheln (aufgerundet); eine
+    neue Kachel sperrt, wenn sie eine gesperrte Katalogkachel berührt. Ganz weggeschnittene Kacheln
+    entfallen, angeschnittene bleiben, solange etwas übrig ist. Beschnitten trägt das Objekt immer
+    eine Maske (mit Maßstab die Standardregel im aufgerundeten Raster); eine eigene `maske` gilt im
+    Raster des beschnittenen, skalierten Bildes. Die Tiefe folgt der unteren Kante des Ausschnitts.
+  - Kartenbau und Prüfungen über `objektform.geformt` und `formbild` (`zuschnitt` gehört zu
+    `FORMFELDER`); `objektrichtung.forme_rechteck` verschiebt und begrenzt `platte`. Befund im
+    Kartenbau, wenn nichts übrig bleibt oder der Wert keine vier ganzen Zahlen ab 0 sind.
+  - Tiled: Eigenschaft `zuschnitt` als Text „26,0,32,0“; die App (oberwelt/moebelzuschnitt.ts,
+    moebelform.ts) rechnet Größe und Maske gleich, moebel.ts zeichnet einen eigenen Phaser-Rahmen
+    im Möbelrahmen („<name>|zuschnitt:…“), damit Ursprung, Drehung und Spiegeln wie sonst wirken.
+  - Rücklauf (pipeline/abenteuer/editorzuschnitt.py): Zeile „Zuschnitt: BILD (x, y) beschnitten auf
+    B × H: links …“; kommt derselbe Zuschnitt in mindestens zwei Karten oder an drei Stellen vor,
+    schlägt der Abschnitt „Wiederholte Zuschnitte“ einen eigenen Katalogeintrag vor (quelle,
+    ausschnitt, Größe, Maske), legt ihn aber nicht an.
+  - Eigene Zuschnitte der Bibliothek liegen nur im Browser (localStorage
+    `karteneditor-zuschnitte-v1`).
+  - Deckkraft (js/deckkraft.js): Objektfeld `deckkraft` 25, 50 oder 75 (100 = Standard, Feld fehlt);
+    Tiled-Eigenschaft `deckkraft` (int), App `setAlpha` (moebel.ts, moebelform.deckkraftAus),
+    Vorschau `objektform.mit_deckkraft` (kartenbild, Rücklauf), Bericht „Deckkraft: … 100 → 50 %“.
+    Kollision und Tiefe bleiben; Pixelprüfungen sehen das Bild ohne Deckkraft.
 - Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
   Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner),
   Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`, Kollisionspinsel in `test/pinsel.cjs`,
   Übergänge (neuer Übergang mit Gegenauslöser, Ankunft, „Zum Ziel“, Rücklauf in eine Kopie von
-  orte.json) in `test/uebergaenge.cjs`.
+  orte.json) in `test/uebergaenge.cjs`, Zuschnitt in `test/zuschnitt.cjs`.

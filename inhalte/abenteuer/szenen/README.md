@@ -120,6 +120,11 @@ Form im Eintrag einer Szene (Karteneditor, `pipeline/abenteuer/objektform.py`, a
 Kollision), `"spiegeln": true` (waagrecht), `"massstab": 1.5` (0,5 bis 3), `"ebene": 2` (wird zur
 berechneten Tiefe addiert: vor oder hinter Nachbarn). `feld` und `versatz` nennen die linke obere
 Ecke des gedrehten Rechtecks.
+`"zuschnitt": [26, 0, 32, 0]` (Editor 1.5, `objektzuschnitt.py`): Pixel links, oben, rechts und
+unten des Katalogbilds, die wegfallen, vor Maßstab und Drehung; das Objekt ist dann so groß wie der
+Ausschnitt, die Katalogmaske wird mitbeschnitten (ein Pfosten aus einem Zaunstück).
+`"deckkraft": 50` (25, 50, 75; 100 ist Standard und fehlt): Das Bild ist durchsichtig, die
+Kollision bleibt.
 
 Kollision nur an dieser Stelle (Karteneditor, `pipeline/abenteuer/objektkollision.py`, optional):
 `"kollision": false` (durchgehbar) oder `true` (sperrt) statt der Angabe im Katalog, `"maske"`

@@ -114,6 +114,7 @@ def _maskentext(eintrag: dict, angabe: dict | None) -> str:
     wie = [f"gedreht {eintrag['drehung'] % 360}°"] if eintrag.get("drehung", 0) % 360 else []
     wie += ["gespiegelt"] if eintrag.get("spiegeln") else []
     wie += [f"Maßstab {round(float(eintrag['massstab']) * 100)} %"] if "massstab" in eintrag else []
+    wie += ["beschnitten"] if eintrag.get("zuschnitt") else []
     return f"{maskeneigenschaft(karte)} (wie auf der Karte, {', '.join(wie)})"
 
 

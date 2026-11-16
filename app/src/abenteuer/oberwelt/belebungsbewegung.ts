@@ -80,11 +80,14 @@ export function gangartVon(b: Pick<Belebung, "typ" | "verhalten">): Gangart {
   return b.typ === "statist" ? GANGARTEN.statist : GANGARTEN[b.verhalten];
 }
 
-/** Anfangszustand auf dem eigenen Feld (verschoben um den Versatz in einer Schar). */
-export function neueBewegung(feld: Feld): Bewegung {
+/**
+ * Anfangszustand auf dem eigenen Feld (verschoben um den Versatz in einer Schar). `blick` ist die
+ * Blickrichtung, solange er steht (Eigenschaft `blick`, R008); Vorgabe unten.
+ */
+export function neueBewegung(feld: Feld, blick: Richtung = "unten"): Bewegung {
   return {
     ...feld,
-    richtung: "unten",
+    richtung: blick,
     ziel: null,
     pause: 0,
     zumBis: true,

@@ -39,7 +39,7 @@ SPRUNG_HOECHSTENS = 60  # größter Sprung in Kacheln, den ein Zwischenstück er
 
 # Bodenarten in Klassen: Nur Wechsel zwischen Klassen sind Randbrüche.
 WASSER, STRASSE, WEG, NATUR, GESPERRT = "Wasser", "Straße", "Weg", "Natur", "gesperrt"
-STRASSENBOEDEN = ("asphalt", "pflaster", "platten", "stein", "hallenboden")
+STRASSENBOEDEN = ("asphalt", "pflaster", "pflasterWeich", "platten", "stein", "hallenboden")
 WEGBOEDEN = ("erde", "schotter", "piste", "sandplatz", "holz", "dielen")
 
 

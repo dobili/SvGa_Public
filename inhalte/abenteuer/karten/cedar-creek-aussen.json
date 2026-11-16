@@ -9320,7 +9320,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 24,
@@ -9331,7 +9338,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 25,
@@ -9342,7 +9356,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 26,
@@ -9651,6 +9672,11 @@
        "name": "zeigt",
        "type": "string",
        "value": "rubinsteinsUnsterbliche"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -9867,6 +9893,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },

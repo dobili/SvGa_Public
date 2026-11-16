@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und drei Bildschirme mit den Kennzahlen der Firma. Mitten im Raum, mit Abstand zur Tür, eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Pokalen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf gemustertem Teppich: ein Sofa an der Wand zwischen zwei Sesseln, davor ein runder Couchtisch; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand.",
+  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und drei Bildschirme mit den Kennzahlen der Firma. Mitten im Raum, mit Abstand zur Tür, eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Pokalen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf gemustertem Teppich: oben das Sofa, darunter mittig ein runder Couchtisch, links und rechts davon zwei weiße Sessel, seitlich zum Tisch gedreht; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand.",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch", "japanisch", "einfach"],
   "raster": [
@@ -70,8 +70,9 @@
       "feld": [21, 10]
     },
     {
-      "moebel": "sb5Sessel",
-      "feld": [3, 7]
+      "moebel": "sb17SesselWeissRechts",
+      "feld": [3, 9],
+      "zu": "lobbytisch"
     },
     {
       "moebel": "sb8Sofa",
@@ -79,12 +80,14 @@
       "id": "sofa"
     },
     {
-      "moebel": "sb5Sessel",
-      "feld": [7, 7]
+      "moebel": "sb17SesselWeissLinks",
+      "feld": [7, 9],
+      "zu": "lobbytisch"
     },
     {
       "moebel": "pd6Couchtisch",
-      "feld": [5, 10]
+      "feld": [5, 9],
+      "id": "lobbytisch"
     },
     {
       "moebel": "sb5Sockel",
@@ -164,7 +167,8 @@
         "von": "18,9",
         "bis": "18,9",
         "tun": "wartet mit Namensschild am Empfang auf die Führung",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -186,7 +190,8 @@
         "von": "20,9",
         "bis": "20,9",
         "tun": "schaut zur Zeitleiste an der Wand",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {

@@ -63,6 +63,36 @@ describe("liesBelebung", () => {
   });
 });
 
+describe("Blickrichtung stehender Statisten (R008)", () => {
+  it("liest blick, Sitzende und Unbekanntes bleiben ohne", () => {
+    const statist = (name: string, eigenschaften: { name: string; value: string }[]) => ({
+      name,
+      type: "statist",
+      x: 0,
+      y: 0,
+      properties: eigenschaften,
+    });
+    const karte = {
+      layers: [
+        {
+          objects: [
+            statist("verkaeuferin", [{ name: "blick", value: "links" }]),
+            statist("gast", [
+              { name: "sitzt", value: "oben" },
+              { name: "blick", value: "links" },
+            ]),
+            statist("passant", [{ name: "blick", value: "quer" }]),
+          ],
+        },
+      ],
+    };
+    const [verkaeuferin, gast, passant] = liesBelebung(karte);
+    expect(verkaeuferin?.blick).toBe("links");
+    expect(gast?.blick).toBeUndefined();
+    expect(passant?.blick).toBeUndefined();
+  });
+});
+
 describe("passtZurStunde", () => {
   it("prüft die Tageszeiten, auch über Mitternacht", () => {
     expect(passtZurStunde("morgen", 9)).toBe(true);

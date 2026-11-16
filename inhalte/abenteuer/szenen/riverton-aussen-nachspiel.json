@@ -1336,7 +1336,8 @@
         "bis": "35,19",
         "tun": "eilt mit Schirm zum Zug",
         "wann": "morgen",
-        "sagt": "statist.riverton.aussen.pendler"
+        "sagt": "statist.riverton.aussen.pendler",
+        "blick": "unten"
       }
     },
     {
@@ -1349,7 +1350,8 @@
         "tun": "klopft am Picknicktisch auf die Schachuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.parkschachspieler",
-        "zeigt": "partieDesJahrhunderts"
+        "zeigt": "partieDesJahrhunderts",
+        "blick": "oben"
       }
     },
     {
@@ -1373,7 +1375,8 @@
         "bis": "24,21",
         "tun": "zählt seine Tauben",
         "wann": "tag",
-        "sagt": "statist.riverton.aussen.taubenmann"
+        "sagt": "statist.riverton.aussen.taubenmann",
+        "blick": "oben"
       }
     },
     {
@@ -1492,7 +1495,8 @@
         "von": "20,31",
         "bis": "20,31",
         "tun": "verkauft Obst und Gemüse an beiden Ständen",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "links"
       }
     },
     {
@@ -1514,7 +1518,8 @@
         "von": "21,35",
         "bis": "21,35",
         "tun": "reicht Pommes aus dem Imbisskarren",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     }
   ],

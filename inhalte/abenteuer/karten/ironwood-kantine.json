@@ -2429,6 +2429,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.ironwood.kantine.schichtarbeiter"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },

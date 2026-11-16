@@ -721,7 +721,8 @@
         "von": "21,9",
         "bis": "21,9",
         "tun": "",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     },
     {
@@ -744,7 +745,8 @@
         "bis": "22,9",
         "tun": "schaut über die Kante in die Grube",
         "wann": "tag",
-        "sagt": "statist.steinbruch.grube.wanderer"
+        "sagt": "statist.steinbruch.grube.wanderer",
+        "blick": "links"
       }
     },
     {

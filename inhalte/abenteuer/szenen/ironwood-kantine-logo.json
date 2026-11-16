@@ -889,7 +889,8 @@
         "von": "9,13",
         "bis": "9,13",
         "tun": "isst Eintopf nach der Schicht",
-        "sagt": "statist.ironwood.kantine.schichtarbeiter"
+        "sagt": "statist.ironwood.kantine.schichtarbeiter",
+        "blick": "oben"
       }
     },
     {

@@ -1464,6 +1464,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },

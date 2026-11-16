@@ -729,7 +729,8 @@
         "tun": "verkauft Eis neben dem Wagen",
         "wann": "tag",
         "bild": "statist-05",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "links"
       }
     },
     {
@@ -742,7 +743,8 @@
         "tun": "reicht Hotdogs unter der Markise heraus",
         "wann": "tag",
         "bild": "statist-16",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "links"
       }
     },
     {
@@ -755,7 +757,8 @@
         "tun": "sitzt am Klapptisch und spielt Blitz",
         "wann": "tag",
         "bild": "statist-11",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "oben"
       }
     },
     {
@@ -768,7 +771,8 @@
         "tun": "sitzt am Klapptisch und grübelt",
         "wann": "tag",
         "bild": "statist-13",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "oben"
       }
     }
   ],

@@ -43,6 +43,7 @@ ZEITREISE = re.compile(r"(^|\s)erinnerung", re.I)
 # Böden, die als Weg gelten, auch wenn sie der Grundboden der Karte sind.
 BEFESTIGT = {
     "pflaster",
+    "pflasterWeich",
     "erde",
     "asphalt",
     "asphaltMitte",

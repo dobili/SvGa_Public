@@ -426,7 +426,8 @@
     },
     {
       "name": "mae",
-      "feld": [26, 19]
+      "feld": [26, 19],
+      "blick": "oben"
     },
     {
       "name": "lou",
@@ -463,7 +464,8 @@
         "bis": "37,21",
         "tun": "verteilt Eis am Kiosk",
         "wann": "tag",
-        "sagt": "statist.pinewoodCamp.aussen.koechin"
+        "sagt": "statist.pinewoodCamp.aussen.koechin",
+        "blick": "oben"
       }
     },
     {
@@ -567,7 +569,8 @@
         "von": "26,18",
         "bis": "26,18",
         "tun": "spielt Gitarre am Feuer",
-        "wann": "abend"
+        "wann": "abend",
+        "blick": "unten"
       }
     },
     {

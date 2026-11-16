@@ -2059,7 +2059,8 @@
       "feld": [22, 12],
       "eigenschaften": {
         "tun": "Leif Sorensen erklärt den Kindern die Schnitzeljagd",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "links"
       }
     },
     {
@@ -2068,7 +2069,8 @@
       "feld": [23, 12],
       "eigenschaften": {
         "tun": "Pfadfinderkind, sucht Kreidepfeile",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     },
     {
@@ -2088,7 +2090,8 @@
       "eigenschaften": {
         "tun": "streitet freundlich über die Karte",
         "wann": "tag",
-        "sagt": "statist.wegCedarRiverton.zedernwald.wanderpaar"
+        "sagt": "statist.wegCedarRiverton.zedernwald.wanderpaar",
+        "blick": "rechts"
       }
     },
     {
@@ -2125,7 +2128,8 @@
       "feld": [24, 12],
       "eigenschaften": {
         "tun": "Pfadfinderkind, malt einen Kreidepfeil",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "links"
       }
     },
     {
@@ -2134,7 +2138,8 @@
       "feld": [21, 12],
       "eigenschaften": {
         "tun": "Pfadfinderkind, hört Leif zu",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     },
     {
@@ -2143,7 +2148,8 @@
       "feld": [41, 13],
       "eigenschaften": {
         "tun": "wandert mit, zeigt auf die Karte",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "links"
       }
     }
   ]

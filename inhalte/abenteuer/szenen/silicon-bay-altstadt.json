@@ -1077,7 +1077,8 @@
         "tun": "verkauft Obst an ihrem Stand",
         "wann": "tag",
         "von": "7,44",
-        "bis": "7,44"
+        "bis": "7,44",
+        "blick": "rechts"
       }
     },
     {
@@ -1088,7 +1089,8 @@
         "tun": "wiegt Möhren an seinem Stand ab",
         "wann": "tag",
         "von": "20,43",
-        "bis": "20,43"
+        "bis": "20,43",
+        "blick": "links"
       }
     },
     {

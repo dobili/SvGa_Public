@@ -11853,6 +11853,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.lockport.aussen.kahnmaler"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -12133,6 +12138,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -12163,8 +12173,8 @@
      "id": 35,
      "name": "ld5SchildSchleuse",
      "type": "moebel",
-     "x": 238,
-     "y": 478,
+     "x": 318,
+     "y": 452,
      "width": 64,
      "height": 16,
      "rotation": 0,
@@ -13681,8 +13691,8 @@
      "id": 101,
      "name": "ld9SchildAnkerTaue",
      "type": "moebel",
-     "x": 480,
-     "y": 448,
+     "x": 476,
+     "y": 443,
      "width": 64,
      "height": 16,
      "rotation": 0,

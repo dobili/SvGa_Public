@@ -38,7 +38,7 @@ Feld = tuple[int, int]
 # „kein durchgehender Weg“, obwohl man der Straße folgt (Kartengutachten Akt 1, 14.11.2026).
 WEGBOEDEN = {
     "erde", "erdeRot", "asphalt", "asphaltMitte", "asphaltMitteSenkrecht", "pflaster", "schotter",
-    "pisteRot", "platten", "dielen", "stein", "sand", "sandplatz", "landstrasse",
+    "pflasterWeich", "pisteRot", "platten", "dielen", "stein", "sand", "sandplatz", "landstrasse",
 }  # fmt: skip
 # Querfeldein gilt als Abkürzung, wenn es höchstens diesen Anteil des Wegs lang ist …
 SCHWELLE = 0.85

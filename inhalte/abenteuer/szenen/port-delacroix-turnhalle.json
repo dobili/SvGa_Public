@@ -350,7 +350,8 @@
   "figuren": [
     {
       "name": "odile",
-      "feld": [19, 4]
+      "feld": [19, 4],
+      "blick": "links"
     },
     {
       "name": "remy",

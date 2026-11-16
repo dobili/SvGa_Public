@@ -911,12 +911,14 @@
     },
     {
       "name": "zwillinge",
-      "feld": [22, 23]
+      "feld": [22, 23],
+      "blick": "rechts"
     },
-    { "name": "jonah", "feld": [23, 23] },
+    { "name": "jonah", "feld": [23, 23], "blick": "links" },
     {
       "name": "kettering",
-      "feld": [40, 28]
+      "feld": [40, 28],
+      "blick": "links"
     }
   ],
   "belebung": [
@@ -1023,7 +1025,8 @@
         "tun": "sitzt am Picknicktisch und liest Zeitung",
         "wann": "tag",
         "sagt": "statist.cedarCreek.aussen.rentnerPicknick",
-        "zeigt": "rubinsteinsUnsterbliche"
+        "zeigt": "rubinsteinsUnsterbliche",
+        "blick": "links"
       }
     },
     {
@@ -1097,7 +1100,8 @@
       "feld": [39, 28],
       "eigenschaften": {
         "tun": "wartet mit einer Tasche an der Haltestelle",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     }
   ],

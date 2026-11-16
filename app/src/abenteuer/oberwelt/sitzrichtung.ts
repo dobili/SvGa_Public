@@ -8,8 +8,12 @@
  * skripte/figurenbogen.mjs; Doc 24), stehen dort die Sitzbilder ab Rahmen 48 in der Ordnung
  * rechts, oben, links, unten. Sonst gilt das Standbild der Richtung, um SITZ_HUB Pixel höher
  * gezeichnet (oberwelt/figurensitz.ts).
+ * Stehende Figuren und Statisten schauen nach unten, außer sie tragen die Eigenschaft `blick`
+ * (oben, unten, links, rechts; Rückmeldung R008 des Autors: „Stehen sie still, müssen sie logisch
+ * platziert sein, mit sinnvoller Blickrichtung“). Dann zeigen sie das Standbild dieser Richtung,
+ * etwa die Verkäuferin, die über ihren Tresen nach links zur Kundschaft schaut.
  * Rolle im Gesamtbild: gelesen von ausloeserebene.ts und belebung.ts, gezeichnet von
- * figurensitz.ts. Abhängigkeiten: szene.ts (Typ Richtung).
+ * figurensitz.ts, figurenaufstellung.ts und belebungsschicht.ts. Abhängigkeiten: szene.ts (Typ Richtung).
  */
 import type { Richtung } from "./szene";
 
@@ -26,6 +30,14 @@ const REIHENFOLGE: readonly Richtung[] = ["rechts", "oben", "links", "unten"];
  */
 export function sitzrichtung(wert: unknown): Richtung | null {
   if (wert === true || wert === "ja") return "unten";
+  return REIHENFOLGE.find((r) => r === wert) ?? null;
+}
+
+/**
+ * Blickrichtung einer stehenden Figur aus der Eigenschaft `blick` (R008), sonst null; dann gilt
+ * die Vorgabe „unten“. Beispiel: "links" → "links"; "ja", "" oder fehlend → null.
+ */
+export function blickrichtung(wert: unknown): Richtung | null {
   return REIHENFOLGE.find((r) => r === wert) ?? null;
 }
 

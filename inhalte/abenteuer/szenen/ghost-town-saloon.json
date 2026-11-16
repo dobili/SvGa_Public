@@ -187,7 +187,8 @@
   "figuren": [
     {
       "name": "pruitt",
-      "feld": [9, 12]
+      "feld": [9, 12],
+      "blick": "links"
     }
   ],
   "belebung": [

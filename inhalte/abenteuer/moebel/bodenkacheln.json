@@ -631,6 +631,21 @@
       "blick": "keine",
       "hinweis": "Bodenkachel pflasterNass"
     },
+    "bkPflasterWeich": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        400,
+        144,
+        416,
+        160
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel pflasterWeich"
+    },
     "bkPisteRot": {
       "quelle": "spiel/eigene/piste_rot.png",
       "ausschnitt": [

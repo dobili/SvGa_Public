@@ -17512,7 +17512,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 16,
@@ -18004,6 +18011,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-23"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -18060,6 +18072,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-29"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -18116,6 +18133,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-35"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

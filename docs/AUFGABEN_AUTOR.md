@@ -1865,3 +1865,26 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Sessel in der Lobby Silicon Bay zum Tisch gedreht; vier Stühle in der Garage bleiben
       (Zuschauer); gerader Läufer im Museum Ironwood bis zur Nordwand; besseres Kochfeld im
       Wohnwagen; Mülleimer der Arena-Halle an die Wand am Eingang.
+- [ ] RO35. **Nachtrunde 16./17.11. mit den Nebenchats (umgesetzt, Widerspruch genügt):**
+      Weltkarte: Alle 21 Brüche an den Kartennähten sind weg (14 waren Messfehler der Prüfung,
+      behoben am Bayou-Ufer, an der Gasse in Maple Falls, am Pfad nach Crossroads und am Canyon,
+      der jetzt auf seiner eigenen Karte nach Süden ausläuft). Der Zedernpfad mündet in Cedar Creek
+      zwei Reihen höher, oberhalb des Flusswegs (ein Nadelbaum weniger). Am Ostende des Flusswegs
+      beginnt der Asphalt gestaffelt mit Steinen und Grasbüscheln; die Bootsleine liegt am Poller.
+      Die Gleise in Desert Springs laufen links bis zum Rand, die Prellböcke dort sind weg.
+      Innenräume: Wards Ohrensessel direkt am Tisch, die Teekanne steht auf dem Tisch; weiße Sessel
+      seitlich am Tisch in der Lobby Silicon Bay; gerader Läufer im Museum; im Wohnwagen ein Herd
+      mit vier Platten (einen Zweiflammer gibt es im Grafiksatz nicht); Mülleimer neben der Tür der
+      Arena-Halle; Vitrinen im Museum und Antiquariat mit Tiefe statt Abziehbild; weißer
+      Garderobenschrank in Mamas Zimmer; roter Teppich im Diner zwischen Tür und Theke; der
+      Kellertreppenraum der Bibliothek hat eine Holztür; im Archiv liegt eine Pfütze unter dem
+      Wasserfleck, damit er nicht wie ein Schatten wirkt; Slick sitzt im Zustand „auf der Bank“ als
+      stille Figur mit dem Brett neben sich. Lockport: Schilder richtig gehängt, Pflaster am Gras mit
+      weichem Rand.
+      Blickrichtung: Stehende Figuren können jetzt in alle vier Richtungen schauen; 145 Figuren
+      schauen zu Tresen, Brett, Stand oder ihrem Gesprächspartner statt starr nach unten. Der
+      Schaffner am Bahndamm schaut weiter nach vorn (zum Gleis zeigte er dir den Rücken).
+      Spieltest mit echter Grafik (73 Türen, beide Bildschirmlagen): Der Held war an einigen
+      Haustüren hinter dem Haus verschwunden, das ist behoben; die Kinder sind gut erkennbar; die
+      Bildrate liegt bei 52 bis 60 Bildern je Sekunde. In Arbeit: Sitzende sitzen noch nicht
+      überall sichtbar auf dem Stuhl, im Querformat kann der Held unter dem Steuerkreuz liegen.

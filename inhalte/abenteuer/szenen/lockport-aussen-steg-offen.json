@@ -6,7 +6,8 @@
   "wandart": "gras",
   "boeden": {
     "e": "erde",
-    "p": "pflaster"
+    "p": "pflasterWeich",
+    "q": "pflaster"
   },
   "bruecken": ["h"],
   "raster": [
@@ -20,9 +21,9 @@
     "#........................................................................#",
     "#........................................................................#",
     "#........................................................................#",
-    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
-    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppqq",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppqq",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppq#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
@@ -30,14 +31,14 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#..........pp............pp...................................ppppppppppp#",
-    "#..........pp............pp...................................ppppppppppp#",
-    "#..........pp............pp...................................ppppppppppp#",
-    "#..........pp............pp...................................ppppppppppp#",
-    "#..........pp............pp...................................ppppppppppp#",
-    "#..........pp............pp...................................ppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppq#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppq#",
+    "#..........pp............pp...................................ppppppppppq#",
+    "#..........pp............pp...................................ppppppppppq#",
+    "#..........pp............pp...................................ppppppppppq#",
+    "#..........pp............pp...................................ppppppppppq#",
+    "#..........pp............pp...................................ppppppppppq#",
+    "#..........pp............pp...................................ppppppppppq#",
     "#..........pp............pp..............................................#",
     "#..........pp............pp..............................................#",
     "#..........pp............pp..............................................#",
@@ -71,7 +72,7 @@
     {
       "moebel": "ld5SchildSchleuse",
       "auf": "gasthaus",
-      "versatz": [-34, 40]
+      "versatz": [46, 14]
     },
     {
       "moebel": "mf4Bauernhaus",
@@ -346,7 +347,7 @@
     {
       "moebel": "ld9SchildAnkerTaue",
       "auf": "ausruester",
-      "versatz": [0, 10]
+      "versatz": [-4, 5]
     },
     {
       "moebel": "mf4BaumRot",
@@ -614,7 +615,8 @@
         "wann": "tag",
         "von": "11,20",
         "bis": "14,20",
-        "sagt": "statist.lockport.aussen.kahnmaler"
+        "sagt": "statist.lockport.aussen.kahnmaler",
+        "blick": "links"
       }
     },
     {
@@ -714,12 +716,21 @@
       "feld": [11, 20],
       "eigenschaften": {
         "tun": "sitzt auf dem Poller und sieht auf den Kahn",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
+  "stil": [
+    "rustikal",
+    "klassisch",
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
   "ufer": "stein",
   "datei": "karten/lockport-aussen-steg-offen.json",
   "zustand_der_karte": "lockportSteg"

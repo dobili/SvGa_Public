@@ -8455,7 +8455,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 13,
@@ -8495,7 +8502,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 16,
@@ -8842,6 +8856,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.mapleFalls.aussen.lehrer"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -8931,6 +8950,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

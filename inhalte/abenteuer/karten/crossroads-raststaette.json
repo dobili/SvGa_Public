@@ -1440,7 +1440,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 8,
@@ -1451,7 +1458,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 9,
@@ -1516,6 +1530,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.crossroads.raststaette.fernfahrer"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },

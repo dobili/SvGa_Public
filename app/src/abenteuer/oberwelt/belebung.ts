@@ -11,7 +11,7 @@
  * Beispiel: Objekt „tauben“ (type tier, verhalten ausweichen) → Art „taube“, eine Schar aus drei
  * bis fünf Tauben, Bild „tiere/taube.png“ mit Rahmen 16 × 16.
  */
-import { sitzrichtung } from "./sitzrichtung";
+import { blickrichtung, sitzrichtung } from "./sitzrichtung";
 import type { Richtung } from "./szene";
 
 /** Tageszeit, zu der ein Statist unterwegs ist (Eigenschaft `wann`; ohne Angabe: immer). */
@@ -44,6 +44,8 @@ export interface Belebung {
   readonly verhalten: Tierverhalten;
   /** Blickrichtung eines sitzenden Statisten (Eigenschaft `sitzt`), sonst null; er läuft nicht. */
   readonly sitzt: Richtung | null;
+  /** Blickrichtung eines stehenden Statisten (Eigenschaft `blick`, R008); fehlt sie, unten. */
+  readonly blick?: Richtung;
 }
 
 const VERHALTEN: readonly Tierverhalten[] = [
@@ -88,6 +90,7 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
   const wann = eigenschaft(o, "wann") as Tageszeit | undefined;
   const verhalten = eigenschaft(o, "verhalten") as Tierverhalten | undefined;
   const sitzt = o.type === "statist" ? sitzrichtung(eigenschaft(o, "sitzt")) : null;
+  const blick = o.type === "statist" && !sitzt ? blickrichtung(eigenschaft(o, "blick")) : null;
   return {
     name: o.name,
     typ: o.type,
@@ -102,6 +105,7 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
     // Unbekanntes Verhalten (etwa „wirbeln“ beim Staubteufel) steht still wie „sitzen“.
     verhalten: verhalten && VERHALTEN.includes(verhalten) ? verhalten : "sitzen",
     sitzt,
+    ...(blick ? { blick } : {}),
   };
 }
 

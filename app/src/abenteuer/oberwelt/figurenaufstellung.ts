@@ -17,7 +17,8 @@ import type { Szenendaten } from "./szenentypen";
  * Stellt alle Figuren (Auslöser mit typ „figur“) auf und lässt den Helden mit ihnen kollidieren.
  * Eingaben: Szene, Held, Auslöser der Karte, Szenendaten (Bögen, Geister), Kachelgröße und das
  * Bild „Blick nach unten“ im Platzhalterbogen. Beispiel: Mama im Wohnzimmer auf Kachel 16,7.
- * Sonderfall: Figur ohne eigenen Bogen → Platzhalterbild „figur“.
+ * Sonderfall: Figur ohne eigenen Bogen → Platzhalterbild „figur“. Eine stehende Figur mit `blick`
+ * (R008, etwa „links“ zur Kundschaft am Tresen) zeigt das Standbild dieser Richtung.
  */
 export function stelleFigurenAuf(
   szene: Phaser.Scene,
@@ -35,7 +36,8 @@ export function stelleFigurenAuf(
       a.x * kachel + kachel / 2,
       a.y * kachel + kachel / 2,
       eigenes ? `figur:${a.name}` : "figur",
-      eigenes ? standbild("unten") : platzhalterUnten,
+      // Stehende schauen nach `blick` (R008), sonst nach unten; der Platzhalter immer nach unten.
+      eigenes ? standbild(a.blick ?? "unten") : platzhalterUnten,
     ) as Phaser.Physics.Arcade.Sprite;
     figur.setName(a.name);
     if (eigenes) stelleAufKachel(figur, kachel);

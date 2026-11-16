@@ -10687,6 +10687,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -10758,6 +10763,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.steinbruch.grube.wanderer"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

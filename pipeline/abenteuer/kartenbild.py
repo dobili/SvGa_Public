@@ -28,6 +28,7 @@ from pipeline.abenteuer.kartenbau import (
     raster,
     sitzrichtung,
 )
+from pipeline.abenteuer.kartentiled import blickrichtung
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import (
     HOEHE_STANDARD,
@@ -339,7 +340,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     for f in szene.get("figuren", []):
         figur = next((x for x in ort["figuren"] if x["kennung"].split(".", 1)[1] == f["name"]), None)
         sitzt = sitzrichtung(f)
-        rahmen = SITZ_RAHMEN.index(sitzt or "unten")
+        rahmen = SITZ_RAHMEN.index(sitzt or blickrichtung(f) or "unten")
         teil = figurbild(privat, figur["sprite"], rahmen, rgba) if figur else None
         if teil:
             x, y = f["feld"][0] * K + (K - teil.width) // 2, (f["feld"][1] + 1) * K - teil.height

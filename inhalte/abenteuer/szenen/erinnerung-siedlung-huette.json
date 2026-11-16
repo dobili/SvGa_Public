@@ -103,7 +103,8 @@
   "figuren": [
     {
       "name": "gideon",
-      "feld": [7, 8]
+      "feld": [7, 8],
+      "blick": "links"
     }
   ],
   "belebung": []

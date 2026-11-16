@@ -2016,7 +2016,8 @@
         "von": "41,39",
         "bis": "41,39",
         "tun": "verkauft Kohl und Kürbisse",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -2027,7 +2028,8 @@
         "von": "46,39",
         "bis": "46,39",
         "tun": "wiegt Beeren ab",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -2038,7 +2040,8 @@
         "von": "52,39",
         "bis": "52,39",
         "tun": "ruft die Preise für Mais aus",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -2049,7 +2052,8 @@
         "von": "41,44",
         "bis": "41,44",
         "tun": "stapelt Körbe mit Karotten",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -2060,7 +2064,8 @@
         "von": "46,44",
         "bis": "46,44",
         "tun": "packt Gemüse für die Kantine ein",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -2071,7 +2076,8 @@
         "von": "52,44",
         "bis": "52,44",
         "tun": "kassiert bei den Schichtarbeitern",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     }
   ],

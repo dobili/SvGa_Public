@@ -1699,7 +1699,8 @@
   "figuren": [
     {
       "name": "dime",
-      "feld": [22, 65]
+      "feld": [22, 65],
+      "blick": "oben"
     }
   ],
   "belebung": [
@@ -1869,7 +1870,8 @@
       "eigenschaften": {
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "bild": "statist-23"
+        "bild": "statist-23",
+        "blick": "rechts"
       }
     },
     {
@@ -1889,7 +1891,8 @@
       "eigenschaften": {
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "bild": "statist-29"
+        "bild": "statist-29",
+        "blick": "links"
       }
     },
     {
@@ -1909,7 +1912,8 @@
       "eigenschaften": {
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "bild": "statist-35"
+        "bild": "statist-35",
+        "blick": "links"
       }
     },
     {

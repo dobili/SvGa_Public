@@ -365,7 +365,8 @@
     },
     {
       "name": "tamsin",
-      "feld": [8, 16]
+      "feld": [8, 16],
+      "blick": "rechts"
     }
   ],
   "belebung": [

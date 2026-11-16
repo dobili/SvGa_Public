@@ -219,7 +219,8 @@
   "figuren": [
     {
       "name": "victor",
-      "feld": [6, 6]
+      "feld": [6, 6],
+      "blick": "links"
     }
   ],
   "belebung": [

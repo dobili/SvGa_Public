@@ -313,7 +313,6 @@
       "hoehe": 32,
       "kollision": true,
       "art": "mulleimer",
-      "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern",
       "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]

@@ -3220,6 +3220,28 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "sb17SesselWeissRechts": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_214.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts",
+      "maske_fein": ["........", "........", "........", "........", "######..", "#####...", "#####...", "#####..."]
+    },
+    "sb17SesselWeissLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_210.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links",
+      "maske_fein": ["........", "........", "........", "........", "..######", "...#####", "...#####", "...#####"]
     }
   }
 }

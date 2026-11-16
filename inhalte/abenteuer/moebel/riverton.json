@@ -1175,7 +1175,6 @@
       "art": "mulleimer",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten",
       "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
     },
     "rv5Bahnhof": {
@@ -3239,6 +3238,18 @@
       "blick": "unten",
       "tuer": [[4, 9]],
       "hinweis": "achteckiger Parkpavillon mit grünem Blechdach, weißen Pfosten und Geländer, Eingang in der Mitte der Südseite (Gemini 15.11.2026, Ortsblatt Riverton); das Dach ragt über Weg und Ufer dahinter"
+    },
+    "rv17Herd": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_148.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."],
+      "beschreibung": "Freistehender Herd mit vier Kochplatten und Ofen, von vorn (Wohnwagen Riverton, RO34)"
     }
   }
 }

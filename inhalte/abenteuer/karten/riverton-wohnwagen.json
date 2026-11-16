@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 23,
+ "nextobjectid": 21,
  "layers": [
   {
    "id": 1,
@@ -645,11 +645,11 @@
     },
     {
      "id": 12,
-     "name": "rv8Arbeitsplatte",
+     "name": "rv17Herd",
      "type": "moebel",
      "x": 160,
      "y": 32,
-     "width": 32,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -668,52 +668,6 @@
     },
     {
      "id": 13,
-     "name": "rv8Kocher",
-     "type": "moebel",
-     "x": 162,
-     "y": 35,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 57
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 14,
-     "name": "rv8Kocher",
-     "type": "moebel",
-     "x": 174,
-     "y": 35,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 57
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 15,
      "name": "wzFenster",
      "type": "moebel",
      "x": 200,
@@ -736,7 +690,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 14,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 128,
@@ -759,7 +713,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 15,
      "name": "rv5Kuriertasche",
      "type": "moebel",
      "x": 240,
@@ -782,7 +736,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 16,
      "name": "mf5NischenstuhlRechts",
      "type": "moebel",
      "x": 192,
@@ -810,7 +764,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 17,
      "name": "mf5Nischentisch",
      "type": "moebel",
      "x": 208,
@@ -833,7 +787,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 18,
      "name": "mf5NischenstuhlLinks",
      "type": "moebel",
      "x": 224,
@@ -856,7 +810,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 19,
      "name": "mf12InnentuerHolz",
      "type": "moebel",
      "x": 80,
@@ -879,7 +833,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 20,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 128,

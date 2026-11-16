@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett, daneben Leselampe und Stehlampe. Im Süden zwei Clubtische, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale, eine Kommode und eine Holztruhe. Die Tür liegt in der Südwand.",
+  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich ein runder Tisch mit Wards altem Holzbrett und der Teekanne (Auslöser `teekanne` an der Tischkante), die zwei Ohrensessel stehen links und rechts direkt am Tisch (Regel 10.79); dazu Leselampe und Stehlampe. Im Süden zwei Clubtische direkt an ihren Stühlen, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale, eine Kommode und eine Holztruhe. Die Tür liegt in der Südwand.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -60,7 +60,8 @@
     },
     {
       "moebel": "sc15OhrensesselBlickRechts",
-      "feld": [5, 5]
+      "feld": [6, 5],
+      "zu": "ward"
     },
     {
       "moebel": "mf2Rundtisch",
@@ -74,16 +75,20 @@
     },
     {
       "moebel": "sc15OhrensesselBlickLinks",
-      "feld": [11, 5]
+      "feld": [10, 5],
+      "zu": "ward"
     },
     {
       "moebel": "mf2StuhlL",
-      "feld": [1, 9]
+      "feld": [1, 9],
+      "zu": "t1"
     },
     {
       "moebel": "mf2Schachtisch",
-      "feld": [2, 9],
-      "id": "t1"
+      "feld": [1, 9],
+      "id": "t1",
+      "versatz": [6, 0],
+      "maske": ["...", ".##"]
     },
     {
       "moebel": "cc4Brett",
@@ -93,7 +98,9 @@
     {
       "moebel": "mf2Schachtisch",
       "feld": [10, 9],
-      "id": "t2"
+      "id": "t2",
+      "versatz": [12, 0],
+      "maske": ["...", ".##"]
     },
     {
       "moebel": "cc4Brett",
@@ -102,7 +109,8 @@
     },
     {
       "moebel": "mf2StuhlR",
-      "feld": [13, 9]
+      "feld": [13, 9],
+      "zu": "t2"
     },
     {
       "moebel": "mf2Stehlampe",
@@ -169,7 +177,8 @@
     },
     {
       "name": "teekanne",
-      "feld": [10, 6]
+      "feld": [8, 6],
+      "auf_moebel": true
     },
     {
       "name": "huetteAusgang",

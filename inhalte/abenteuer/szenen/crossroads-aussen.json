@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge in eigenen Buchten mit Trennlinie, ein Imbisswagen, der gelbe Schulbus von Coach Delgado und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das geschlossene Viehgatter vor der Alten Minenstraße (S13), dahinter Rinder auf dem Asphalt. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West. Ein Erdweg hinter der Tankstelle führt zu Hühnerstall, Schuppen und den beiden Wohnwagen, ein Pflasterweg vom Vorplatz zum Farmhaus, ein Trampelpfad über die Weide zum Scheunentor.",
+  "beschreibung": "Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge in eigenen Buchten mit Trennlinie, ein Imbisswagen, der gelbe Schulbus von Coach Delgado und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel aus rissigem Lehmputz mit flachem Dach und vier bunten Zimmertüren, die Werkstatt als Wellblechschuppen, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das geschlossene Viehgatter vor der Alten Minenstraße (S13), dahinter Rinder auf dem Asphalt. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West. Ein Erdweg hinter der Tankstelle führt zu Hühnerstall, Schuppen und den beiden Wohnwagen, ein Pflasterweg vom Vorplatz zum Farmhaus, ein Trampelpfad über die Weide zum Scheunentor.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -74,7 +74,7 @@
       "feld": [36, 8]
     },
     {
-      "moebel": "cr7Motel",
+      "moebel": "wds6Motelzeile",
       "feld": [44, 26]
     },
     {
@@ -213,7 +213,7 @@
       "feld": [58, 22]
     },
     {
-      "moebel": "ds6Garage",
+      "moebel": "lp8Schuppen",
       "feld": [37, 27]
     },
     {

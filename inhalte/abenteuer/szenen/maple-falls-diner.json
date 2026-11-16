@@ -32,7 +32,7 @@
       "moebel": "mf4Pinnwand",
       "feld": [3, 1],
       "an_wand": true,
-      "versatz": [0, 4]
+      "versatz": [10, 6]
     },
     {
       "moebel": "mf12Durchreiche",
@@ -50,7 +50,7 @@
       "moebel": "mf8BildTeller",
       "feld": [11, 1],
       "an_wand": true,
-      "versatz": [0, 4]
+      "versatz": [6, 4]
     },
     {
       "moebel": "mf8BildPflanze",
@@ -61,12 +61,14 @@
     {
       "moebel": "mf5Buffet",
       "feld": [8, 2],
-      "id": "anrichte"
+      "id": "anrichte",
+      "versatz": [0, 3],
+      "maske": ["..", ".."]
     },
     {
       "moebel": "mf5Kaffeemaschine",
       "auf": "anrichte",
-      "versatz": [-8, 0]
+      "versatz": [-7, -7]
     },
     {
       "moebel": "mf5Kassentheke",
@@ -76,56 +78,72 @@
       "moebel": "mf5ThekeLinks",
       "feld": [2, 4],
       "id": "t0",
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "maske": ["..", ".#", ".."],
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf5ThekeMitte",
       "feld": [4, 4],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf5ThekeMitte",
       "feld": [5, 4],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf5ThekeMitte",
       "feld": [6, 4],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf5ThekeMitte",
       "feld": [7, 4],
       "bauteil_ok": true,
-      "id": "t7"
+      "id": "t7",
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf5ThekeMitte",
       "feld": [8, 4],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf5ThekeRechts",
       "feld": [9, 4],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "maske": [".", "#", "."],
+      "versatz": [-28, 0]
     },
     {
       "moebel": "mf12Tischsets",
       "auf": "t0",
-      "versatz": [5, 2]
+      "versatz": [5, -6],
+      "massstab": 0.7
     },
     {
       "moebel": "mf12NischenbankRechts",
-      "feld": [11, 3]
+      "feld": [11, 3],
+      "versatz": [0, -16],
+      "ebene": -57
     },
     {
       "moebel": "mf9Rundtisch",
       "feld": [12, 3],
-      "id": "n1"
+      "id": "n1",
+      "versatz": [0, -16],
+      "ebene": -57
     },
     {
       "moebel": "mf12NischenbankLinks",
-      "feld": [14, 3]
+      "feld": [14, 3],
+      "versatz": [0, -16],
+      "ebene": -1
     },
     {
       "moebel": "mf12NischenbankRechts",
@@ -142,20 +160,21 @@
     },
     {
       "moebel": "mf12NischenbankRechts",
-      "feld": [11, 9]
+      "feld": [11, 10]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [12, 9],
+      "feld": [12, 10],
       "id": "n3"
     },
     {
       "moebel": "mf12NischenbankLinks",
-      "feld": [14, 9]
+      "feld": [14, 10]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [1, 10]
+      "feld": [3, 10],
+      "versatz": [-9, 0]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -174,88 +193,50 @@
     },
     {
       "moebel": "mf12JukeboxAn",
-      "feld": [1, 8],
-      "versatz": [0, 6]
+      "feld": [8, 3],
+      "versatz": [-6, 27],
+      "maske": ["."]
     },
     {
       "moebel": "mf5Hocker",
       "feld": [3, 5],
-      "versatz": [0, 3]
+      "versatz": [-32, 3]
     },
     {
       "moebel": "mf5Hocker",
       "feld": [4, 5],
-      "versatz": [0, 3]
+      "versatz": [-32, 3]
     },
     {
       "moebel": "mf5Hocker",
       "feld": [5, 5],
-      "versatz": [0, 3]
+      "versatz": [-32, 3]
     },
     {
       "moebel": "mf5Hocker",
       "feld": [6, 5],
-      "versatz": [0, 3]
+      "versatz": [-32, 3]
     },
     {
       "moebel": "mf5Hocker",
       "feld": [7, 5],
-      "versatz": [0, 3]
+      "versatz": [-32, 3]
     },
     {
       "moebel": "mf5Hocker",
       "feld": [8, 5],
-      "versatz": [0, 3]
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [9, 5],
-      "versatz": [0, 3]
+      "versatz": [-32, 3]
     },
     {
       "moebel": "mf14TellerPfannkuchen",
       "auf": "t7",
-      "versatz": [0, 3]
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [2, 8],
-      "zu": "g1"
+      "versatz": [-4, -2]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [3, 8],
-      "id": "g1"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [5, 8],
-      "zu": "g1"
-    },
-    {
-      "moebel": "mf5NischenstuhlRechts",
-      "feld": [7, 8],
-      "zu": "g2"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [8, 8],
-      "id": "g2"
-    },
-    {
-      "moebel": "mf5NischenstuhlLinks",
-      "feld": [10, 8],
-      "zu": "g2"
-    },
-    {
-      "moebel": "mf14TellerEssen",
-      "auf": "n1",
-      "versatz": [-5, 2]
-    },
-    {
-      "moebel": "mf14Glas",
-      "auf": "n1",
-      "versatz": [7, 1]
+      "feld": [1, 8],
+      "id": "g1",
+      "versatz": [0, 16]
     },
     {
       "moebel": "mf14TellerKuchen",
@@ -270,38 +251,103 @@
     {
       "moebel": "mf14TellerPfannkuchen",
       "auf": "n3",
-      "versatz": [-5, 2]
+      "versatz": [-5, 8]
     },
     {
       "moebel": "mf14Kaffeetasse",
       "auf": "n3",
-      "versatz": [7, 1]
+      "versatz": [7, 7]
     },
     {
       "moebel": "mf14TellerEssen",
       "auf": "g1",
-      "versatz": [-5, 2]
+      "versatz": [4, 7]
     },
     {
       "moebel": "mf14Glas",
       "auf": "g1",
-      "versatz": [7, 1]
+      "versatz": [-8, 2]
     },
     {
-      "moebel": "mf14TellerKuchen",
-      "auf": "g2",
-      "versatz": [-5, 2]
+      "moebel": "mf12NischenbankRechts",
+      "feld": [11, 8]
     },
     {
-      "moebel": "mf14Kaffeetasse",
-      "auf": "g2",
-      "versatz": [7, 1]
+      "moebel": "mf9Rundtisch",
+      "feld": [12, 8],
+      "id": "n3_2"
+    },
+    {
+      "moebel": "mf12NischenbankLinks",
+      "feld": [14, 8]
+    },
+    {
+      "moebel": "mf12NischenbankRechts",
+      "feld": [11, 5],
+      "versatz": [0, -16],
+      "ebene": -57
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [12, 5],
+      "id": "n1_2",
+      "versatz": [0, -16],
+      "ebene": -57
+    },
+    {
+      "moebel": "mf12NischenbankLinks",
+      "feld": [14, 5],
+      "versatz": [0, -16],
+      "ebene": -1
+    },
+    {
+      "moebel": "mf14TellerEssen",
+      "auf": "n1_2",
+      "versatz": [-5, 5],
+      "ebene": -1
+    },
+    {
+      "moebel": "mf14Glas",
+      "auf": "n1_2",
+      "versatz": [7, 4],
+      "ebene": -1
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [1, 10],
+      "versatz": [7, 5]
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [2, 7],
+      "versatz": [-8, 18]
+    },
+    {
+      "moebel": "bkFliesenWeiss",
+      "feld": [8, 6],
+      "versatz": [0, -16],
+      "kollision": true,
+      "maske": ["#"]
+    },
+    {
+      "moebel": "bkFliesenWeiss",
+      "feld": [8, 6],
+      "versatz": [0, -16],
+      "kollision": true,
+      "maske": ["#"]
+    },
+    {
+      "moebel": "bkFliesenWeiss",
+      "feld": [8, 6],
+      "versatz": [0, -16],
+      "kollision": true,
+      "maske": ["#"]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [4, 11],
+      "feld": [5, 11],
       "eigenschaften": {
         "richtung": "oben"
       }
@@ -337,7 +383,7 @@
     {
       "name": "lkwFahrer",
       "typ": "statist",
-      "feld": [7, 6],
+      "feld": [5, 6],
       "eigenschaften": {
         "tun": "sitzt auf dem Hocker am Thekenende und isst Pfannkuchen",
         "wann": "tag",
@@ -356,5 +402,10 @@
         "sitzt": "links"
       }
     }
-  ]
+  ],
+  "sperren_fein": [
+    [8, 3, "########........"],
+    [9, 3, "########........"]
+  ],
+  "freigeben_fein": [[4, 11, "##..##..##..##.."]]
 }

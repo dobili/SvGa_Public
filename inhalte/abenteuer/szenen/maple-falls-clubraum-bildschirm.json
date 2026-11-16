@@ -461,7 +461,9 @@
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 11]
+      "feld": [17, 11],
+      "kollision": true,
+      "maske": ["#"]
     },
     {
       "moebel": "mfc9TeppichM",
@@ -613,7 +615,7 @@
     {
       "moebel": "mf2Globus",
       "auf": "regalLinks",
-      "versatz": [0, -4]
+      "versatz": [-3, 0]
     },
     {
       "moebel": "cc4RegalA",
@@ -651,24 +653,24 @@
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t1",
-      "versatz": [0, 6]
+      "versatz": [0, 3]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t1",
-      "versatz": [0, -3]
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [5, 7],
       "zu": "t1",
-      "versatz": [5, 0]
+      "versatz": [5, 5]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [8, 7],
       "zu": "t1",
-      "versatz": [-5, 0],
+      "versatz": [-5, 5],
       "vorn": true
     },
     {
@@ -679,24 +681,24 @@
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t2",
-      "versatz": [0, 6]
+      "versatz": [0, 3]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t2",
-      "versatz": [0, -3]
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [11, 7],
       "zu": "t2",
-      "versatz": [5, 0]
+      "versatz": [5, 5]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [14, 7],
       "zu": "t2",
-      "versatz": [-5, 0],
+      "versatz": [-5, 5],
       "vorn": true
     },
     {
@@ -707,24 +709,24 @@
     {
       "moebel": "mf12BrettRadiergummi",
       "auf": "t3",
-      "versatz": [0, 6]
+      "versatz": [0, 3]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t3",
-      "versatz": [0, -3]
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [17, 7],
       "zu": "t3",
-      "versatz": [5, 0]
+      "versatz": [5, 5]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [20, 7],
       "zu": "t3",
-      "versatz": [-5, 0],
+      "versatz": [-5, 5],
       "vorn": true
     },
     {
@@ -735,24 +737,24 @@
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t4",
-      "versatz": [0, 6]
+      "versatz": [0, 3]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t4",
-      "versatz": [0, -3]
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [5, 10],
       "zu": "t4",
-      "versatz": [5, 0]
+      "versatz": [5, 5]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [8, 10],
       "zu": "t4",
-      "versatz": [-5, 0],
+      "versatz": [-5, 5],
       "vorn": true
     },
     {
@@ -763,24 +765,24 @@
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t5",
-      "versatz": [0, 6]
+      "versatz": [0, 3]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t5",
-      "versatz": [0, -3]
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [11, 10],
       "zu": "t5",
-      "versatz": [5, 0]
+      "versatz": [5, 5]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [14, 10],
       "zu": "t5",
-      "versatz": [-5, 0],
+      "versatz": [-5, 5],
       "vorn": true
     },
     {
@@ -791,24 +793,24 @@
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t6",
-      "versatz": [0, 6]
+      "versatz": [0, 3]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t6",
-      "versatz": [0, -3]
+      "versatz": [0, -6]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [17, 10],
       "zu": "t6",
-      "versatz": [5, 0]
+      "versatz": [5, 5]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [20, 10],
       "zu": "t6",
-      "versatz": [-5, 0],
+      "versatz": [-5, 5],
       "vorn": true
     },
     {

@@ -154,7 +154,24 @@ def fehlende_felder(szene: dict, name: str, moebel: dict) -> tuple[set[Feld], se
             fehlt |= set(_strecke(frei, (x, y), 1, 0)) - felder
         for dx, dy in ((1, 0), (0, 1)):
             fehlt |= set(_tuerluecke(zeilen, frei, (x, y), dx, dy)) - felder
-    return {f for f in felder if not frei(*f)}, fehlt
+    betretbar = betretbare_kacheln(zeilen, gesetzt, szene) if not all(frei(*f) for f in felder) else set()
+    return {f for f in felder if not frei(*f) and f not in betretbar}, fehlt
+
+
+def betretbare_kacheln(zeilen: list[str], gesetzt: list[dict], szene: dict) -> set[Feld]:
+    """Kacheln, auf denen die Mitte des Helden (12 × 12 px) stehen kann, obwohl die Kachel nach der
+    Ganzkachel-Regel als gesperrt gilt (Kollision fein, 4-px-Zellen). Warum: Der Autor baut
+    Treppenlöcher mit fein gesetzten Geländerkanten (Karteneditor, 16.11.2026); der Held passt
+    hinein, und ein Übergang löst aus, sobald seine Mitte auf dem Auslöser steht.
+    Ohne feine Felder gibt es keine solchen Kacheln (leere Menge)."""
+    if not (hat_fein(szene) or hat_feine_moebel(gesetzt)):
+        return set()
+    from pipeline.abenteuer.engstelle import HELD, mittenkachel, stellplaetze
+    from pipeline.abenteuer.kollisionfein import Z
+
+    breite, hoehe = len(zeilen[0]) * Z, len(zeilen) * Z
+    frei = stellplaetze(sperrzellen(zeilen, gesetzt, szene), breite, hoehe, HELD)
+    return {mittenkachel(x, y, HELD) for y in range(hoehe) for x in range(breite) if frei[y * breite + x]}
 
 
 def tuerbefund(szene: dict, name: str, moebel: dict) -> str | None:

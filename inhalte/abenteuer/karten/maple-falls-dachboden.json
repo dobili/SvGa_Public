@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 43,
  "layers": [
   {
    "id": 1,
@@ -281,10 +281,10 @@
     0,
     0,
     0,
+    2,
     0,
     0,
-    0,
-    0,
+    2,
     0,
     0,
     0,
@@ -314,7 +314,7 @@
     0,
     0,
     0,
-    0,
+    2,
     0,
     2,
     2,
@@ -529,7 +529,7 @@
      "name": "start",
      "type": "ausloeser",
      "x": 32,
-     "y": 80,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -558,7 +558,7 @@
      "name": "spiegel",
      "type": "ausloeser",
      "x": 16,
-     "y": 112,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -569,7 +569,7 @@
      "name": "zeitungen1961",
      "type": "ausloeser",
      "x": 48,
-     "y": 128,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -601,49 +601,50 @@
      "id": 7,
      "name": "treppe",
      "type": "ausloeser",
-     "x": 32,
-     "y": 48,
+     "x": 16,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      },
+      {
+       "name": "ankunft",
+       "type": "string",
+       "value": "2,9"
+      }
+     ]
     },
     {
      "id": 8,
      "name": "treppe",
      "type": "ausloeser",
      "x": 32,
-     "y": 64,
+     "y": 128,
      "width": 16,
      "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 9,
-     "name": "mf12TreppenlochDachboden",
-     "type": "moebel",
-     "x": 16,
-     "y": 32,
-     "width": 48,
-     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       },
       {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
+       "name": "ankunft",
+       "type": "string",
+       "value": "2,9"
       }
      ]
     },
     {
-     "id": 10,
+     "id": 9,
      "name": "mf12FensterRund",
      "type": "moebel",
      "x": 112,
@@ -666,7 +667,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 10,
      "name": "mf2BildWald",
      "type": "moebel",
      "x": 64,
@@ -689,7 +690,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 11,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 144,
@@ -708,11 +709,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##/##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../########/########/########/########/########/########/########/........"
       }
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "mf2Buecherregal",
      "type": "moebel",
      "x": 176,
@@ -731,11 +742,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##/##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../########/########/########/########/########/########/########/........"
       }
      ]
     },
     {
-     "id": 14,
+     "id": 13,
      "name": "mf12Lichtkegel",
      "type": "moebel",
      "x": 96,
@@ -758,7 +779,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "mf2TeppichAlt",
      "type": "moebel",
      "x": 96,
@@ -781,7 +802,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "mf3Rundtisch",
      "type": "moebel",
      "x": 112,
@@ -804,11 +825,11 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "mf3StuhlDunkelRechts",
      "type": "moebel",
      "x": 96,
-     "y": 80,
+     "y": 85,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -817,40 +838,50 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 109
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "./."
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "mf3StuhlDunkelLinks",
+     "type": "moebel",
+     "x": 144,
+     "y": 85,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 109
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "./."
       }
      ]
     },
     {
      "id": 18,
-     "name": "mf3StuhlDunkelLinks",
-     "type": "moebel",
-     "x": 144,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 160,
@@ -873,7 +904,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 19,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 176,
@@ -896,7 +927,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 144,
@@ -919,7 +950,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "mf7Teddy",
      "type": "moebel",
      "x": 152,
@@ -942,11 +973,11 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 16,
-     "y": 128,
+     "y": 64,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -955,21 +986,31 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 88
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../..####../..####../..####../..####.."
       }
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "mf2Zeitungsstapel",
      "type": "moebel",
      "x": 48,
-     "y": 96,
+     "y": 32,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -978,17 +1019,22 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 72
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../##"
       }
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "mf12Hutschachtel",
      "type": "moebel",
      "x": 80,
@@ -1011,11 +1057,11 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "mf2Standspiegel",
      "type": "moebel",
      "x": 16,
-     "y": 96,
+     "y": 32,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1024,7 +1070,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 56
       },
       {
        "name": "kollision",
@@ -1034,7 +1080,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "cc4KisteLeer",
      "type": "moebel",
      "x": 64,
@@ -1053,11 +1099,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../#######./#######./#######./#######."
       }
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "mf12BrettDecke",
      "type": "moebel",
      "x": 117,
@@ -1080,7 +1136,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "mf12SchaukelstuhlVorn",
      "type": "moebel",
      "x": 178,
@@ -1099,6 +1155,433 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "."
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "bkDielen",
+     "type": "moebel",
+     "x": 16,
+     "y": 107,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "bkDielen",
+     "type": "moebel",
+     "x": 32,
+     "y": 107,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "sd6RelingCObenRechts",
+     "type": "moebel",
+     "x": 32,
+     "y": 106,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 114
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "sd6RelingCSeiteRechts",
+     "type": "moebel",
+     "x": 32,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "####/####/####/...#"
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "sd6RelingCSeiteRechts",
+     "type": "moebel",
+     "x": 32,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "...#/...#/...#/...#"
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "mf4Treppe",
+     "type": "moebel",
+     "x": 16,
+     "y": 129,
+     "width": 31,
+     "height": 14,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": -5
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "drehung",
+       "type": "int",
+       "value": 180
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "9,12,11,39"
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 25
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "bkDielen",
+     "type": "moebel",
+     "x": 16,
+     "y": 107,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "bkDielen",
+     "type": "moebel",
+     "x": 32,
+     "y": 107,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "sd6RelingCObenLinks",
+     "type": "moebel",
+     "x": 16,
+     "y": 106,
+     "width": 14,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 114
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "2,0,0,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": ".###/####/####/#.##"
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "sd6RelingCObenRechts",
+     "type": "moebel",
+     "x": 32,
+     "y": 106,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 114
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "sd6RelingCOben",
+     "type": "moebel",
+     "x": 23,
+     "y": 106,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 114
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "####/####/####/.###"
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "sd6RelingCSeiteRechts",
+     "type": "moebel",
+     "x": 32,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "####/####/####/...#"
+      }
+     ]
+    },
+    {
+     "id": 41,
+     "name": "sd6RelingCSeiteRechts",
+     "type": "moebel",
+     "x": 32,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "...#/...#/...#/...#"
+      }
+     ]
+    },
+    {
+     "id": 42,
+     "name": "sd6RelingCObenRechts",
+     "type": "moebel",
+     "x": 43,
+     "y": 128,
+     "width": 5,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "11,0,0,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "."
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "..../..../..../...."
       }
      ]
     }
@@ -1177,6 +1660,21 @@
    "name": "kennung",
    "type": "string",
    "value": "mapleFalls.dachboden"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "6,6;9,6;11,8"
+  },
+  {
+   "name": "freigeben",
+   "type": "string",
+   "value": "1,8"
+  },
+  {
+   "name": "sperren_fein",
+   "type": "string",
+   "value": "1,7,#########.##....;2,7,############...#;2,8,...#...#...#...#"
   }
  ]
 }

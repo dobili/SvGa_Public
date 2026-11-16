@@ -4724,8 +4724,8 @@
      "id": 155,
      "name": "mf2Globus",
      "type": "moebel",
-     "x": 120,
-     "y": 24,
+     "x": 117,
+     "y": 28,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -4932,7 +4932,7 @@
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 106,
-     "y": 128,
+     "y": 125,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -4955,7 +4955,7 @@
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 108,
-     "y": 122,
+     "y": 119,
      "width": 8,
      "height": 6,
      "rotation": 0,
@@ -4978,7 +4978,7 @@
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 85,
-     "y": 112,
+     "y": 117,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -4987,7 +4987,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 141
       },
       {
        "name": "kollision",
@@ -5001,7 +5001,7 @@
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 123,
-     "y": 112,
+     "y": 117,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5010,7 +5010,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 141
       },
       {
        "name": "kollision",
@@ -5047,7 +5047,7 @@
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 202,
-     "y": 128,
+     "y": 125,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -5070,7 +5070,7 @@
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 204,
-     "y": 122,
+     "y": 119,
      "width": 8,
      "height": 6,
      "rotation": 0,
@@ -5093,7 +5093,7 @@
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 181,
-     "y": 112,
+     "y": 117,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5102,7 +5102,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 141
       },
       {
        "name": "kollision",
@@ -5116,7 +5116,7 @@
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 219,
-     "y": 112,
+     "y": 117,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5125,7 +5125,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 141
       },
       {
        "name": "kollision",
@@ -5162,7 +5162,7 @@
      "name": "mf12BrettRadiergummi",
      "type": "moebel",
      "x": 298,
-     "y": 128,
+     "y": 125,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -5185,7 +5185,7 @@
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 300,
-     "y": 122,
+     "y": 119,
      "width": 8,
      "height": 6,
      "rotation": 0,
@@ -5208,7 +5208,7 @@
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 277,
-     "y": 112,
+     "y": 117,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5217,7 +5217,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 141
       },
       {
        "name": "kollision",
@@ -5231,7 +5231,7 @@
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 315,
-     "y": 112,
+     "y": 117,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5240,7 +5240,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 141
       },
       {
        "name": "kollision",
@@ -5277,7 +5277,7 @@
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 106,
-     "y": 176,
+     "y": 173,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -5300,7 +5300,7 @@
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 108,
-     "y": 170,
+     "y": 167,
      "width": 8,
      "height": 6,
      "rotation": 0,
@@ -5323,7 +5323,7 @@
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 85,
-     "y": 160,
+     "y": 165,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5332,7 +5332,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 189
       },
       {
        "name": "kollision",
@@ -5346,7 +5346,7 @@
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 123,
-     "y": 160,
+     "y": 165,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5355,7 +5355,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 189
       },
       {
        "name": "kollision",
@@ -5392,7 +5392,7 @@
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 202,
-     "y": 176,
+     "y": 173,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -5415,7 +5415,7 @@
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 204,
-     "y": 170,
+     "y": 167,
      "width": 8,
      "height": 6,
      "rotation": 0,
@@ -5438,7 +5438,7 @@
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 181,
-     "y": 160,
+     "y": 165,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5447,7 +5447,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 189
       },
       {
        "name": "kollision",
@@ -5461,7 +5461,7 @@
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 219,
-     "y": 160,
+     "y": 165,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5470,7 +5470,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 189
       },
       {
        "name": "kollision",
@@ -5507,7 +5507,7 @@
      "name": "mfc9BrettFiguren",
      "type": "moebel",
      "x": 298,
-     "y": 176,
+     "y": 173,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -5530,7 +5530,7 @@
      "name": "mfc9Schachuhr",
      "type": "moebel",
      "x": 300,
-     "y": 170,
+     "y": 167,
      "width": 8,
      "height": 6,
      "rotation": 0,
@@ -5553,7 +5553,7 @@
      "name": "mf8SchulstuhlRechts",
      "type": "moebel",
      "x": 277,
-     "y": 160,
+     "y": 165,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5562,7 +5562,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 189
       },
       {
        "name": "kollision",
@@ -5576,7 +5576,7 @@
      "name": "mf8SchulstuhlLinks",
      "type": "moebel",
      "x": 315,
-     "y": 160,
+     "y": 165,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -5585,7 +5585,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 189
       },
       {
        "name": "kollision",

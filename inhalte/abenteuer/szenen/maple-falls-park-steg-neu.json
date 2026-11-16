@@ -13,7 +13,7 @@
     "l": "landstrasse"
   },
   "raster": [
-    "####~~~~~~ee################################",
+    "####~~~~~~ee###################.############",
     "#....~~~~~ee...............................#",
     "#...~hh~~~hh~~~~~~~~~~~~~~~~~~~~~~.........#",
     "#...~hh~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
@@ -214,7 +214,8 @@
     {
       "moebel": "mf6BankSeiteLinks",
       "feld": [22, 22],
-      "id": "bankPlatz"
+      "id": "bankPlatz",
+      "spiegeln": true
     },
     {
       "moebel": "mf2Blumenbeet",
@@ -280,7 +281,8 @@
     {
       "moebel": "mf9StegNeu",
       "feld": [5, 2],
-      "id": "stegS5"
+      "id": "stegS5",
+      "ebene": 1
     },
     {
       "moebel": "mf6Busch",
@@ -292,11 +294,37 @@
     },
     {
       "moebel": "mf12WasserfallFelsen",
-      "feld": [29, 0]
+      "feld": [29, 0],
+      "versatz": [0, -3]
     },
     {
       "moebel": "mf12HalfpipeHolz",
-      "feld": [17, 22]
+      "feld": [17, 22],
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "bkWasserRandW",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "bkWasserRandW",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "bkWasserRandW",
+      "feld": [4, 0]
+    },
+    {
+      "moebel": "bkWasserRot",
+      "feld": [5, 0]
+    },
+    {
+      "moebel": "bkWasserRot",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "bkWasserRot",
+      "feld": [5, 2]
     }
   ],
   "ausloeser": [

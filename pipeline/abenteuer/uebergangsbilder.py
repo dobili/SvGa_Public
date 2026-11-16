@@ -171,13 +171,24 @@ def soll_richtung(seite: Seite, gegen: Seite) -> str | None:
     return None
 
 
+def _richtung(stueck: dict, angabe: dict) -> str | None:
+    """Richtung eines gesetzten Treppenbilds (Katalog ``richtung``). Eine Drehung ändert sie nicht:
+    Eine gedrehte Treppe hinauf führt weiter hinauf, nur in eine andere Himmelsrichtung. Ein
+    durchscheinendes Treppenbild (``deckkraft``) ist der Blick durch ein Bodenloch, wie der Autor es
+    im Karteneditor baut (16.11.2026): Es passt zu beiden Richtungen („beide“)."""
+    richtung = angabe.get("richtung")
+    if not richtung or stueck.get("deckkraft"):
+        return "beide" if richtung else None
+    return richtung
+
+
 def _pruefe_richtung(seite: Seite, treppen: list[tuple[dict, dict, str]], soll: str | None) -> list[Befund]:
     """Regel 2: Ein Treppenbild am Auslöser zeigt in die Richtung des Übergangs. Stehen mehrere
     Aufgänge nebeneinander (Zimmer: Treppe hoch zum Dachboden über dem Schacht nach unten), genügt
     eines in der richtigen Richtung."""
-    if not soll or not treppen or any(a.get("richtung") == soll for _, a, _ in treppen):
+    if not soll or not treppen or any(_richtung(s, a) in (soll, "beide") for s, a, _ in treppen):
         return []
-    falsch = [s["name"] for s, a, _ in treppen if a.get("richtung")]
+    falsch = [s["name"] for s, a, _ in treppen if _richtung(s, a)]
     if falsch:
         return [
             Befund(

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 81,
+ "nextobjectid": 87,
  "layers": [
   {
    "id": 1,
@@ -5135,7 +5135,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 105
       },
       {
        "name": "kollision",
@@ -5555,6 +5555,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
       }
      ]
     },
@@ -5954,7 +5959,7 @@
      "name": "mf12WasserfallFelsen",
      "type": "moebel",
      "x": 464,
-     "y": 0,
+     "y": -3,
      "width": 96,
      "height": 80,
      "rotation": 0,
@@ -5963,7 +5968,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 69
       },
       {
        "name": "kollision",
@@ -5976,7 +5981,7 @@
      "id": 80,
      "name": "mf12HalfpipeHolz",
      "type": "moebel",
-     "x": 272,
+     "x": 280,
      "y": 352,
      "width": 64,
      "height": 48,
@@ -5992,6 +5997,144 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 81,
+     "name": "bkWasserRandW",
+     "type": "moebel",
+     "x": 64,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "bkWasserRandW",
+     "type": "moebel",
+     "x": 64,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 83,
+     "name": "bkWasserRandW",
+     "type": "moebel",
+     "x": 64,
+     "y": 0,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 84,
+     "name": "bkWasserRot",
+     "type": "moebel",
+     "x": 80,
+     "y": 0,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 85,
+     "name": "bkWasserRot",
+     "type": "moebel",
+     "x": 80,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "bkWasserRot",
+     "type": "moebel",
+     "x": 80,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

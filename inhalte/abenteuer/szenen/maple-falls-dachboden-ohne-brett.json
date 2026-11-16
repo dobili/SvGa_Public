@@ -15,17 +15,12 @@
     "#............#",
     "#............#",
     "#............#",
-    "#............#",
-    "#............#",
+    "#  ..........#",
+    "#  ..........#",
     "#............#",
     "##############"
   ],
   "objekte": [
-    {
-      "moebel": "mf12TreppenlochDachboden",
-      "feld": [1, 2],
-      "id": "luke"
-    },
     {
       "moebel": "mf12FensterRund",
       "feld": [7, 1],
@@ -60,12 +55,16 @@
     {
       "moebel": "mf3StuhlDunkelRechts",
       "feld": [6, 5],
-      "zu": "tisch"
+      "zu": "tisch",
+      "versatz": [0, 5],
+      "maske": [".", "."]
     },
     {
       "moebel": "mf3StuhlDunkelLinks",
       "feld": [9, 5],
-      "zu": "tisch"
+      "zu": "tisch",
+      "versatz": [0, 5],
+      "maske": [".", "."]
     },
     {
       "moebel": "mf2Stehlampe",
@@ -87,11 +86,12 @@
     },
     {
       "moebel": "mf12KartonAltHoch",
-      "feld": [1, 8]
+      "feld": [1, 4]
     },
     {
       "moebel": "mf2Zeitungsstapel",
-      "feld": [3, 6]
+      "feld": [3, 2],
+      "maske": ["..", "..", "##"]
     },
     {
       "moebel": "mf12Hutschachtel",
@@ -99,7 +99,7 @@
     },
     {
       "moebel": "mf2Standspiegel",
-      "feld": [1, 6],
+      "feld": [1, 2],
       "id": "spiegel"
     },
     {
@@ -110,13 +110,65 @@
     {
       "moebel": "mf12SchaukelstuhlVorn",
       "feld": [11, 7],
-      "versatz": [2, 6]
+      "versatz": [2, 6],
+      "maske": ["."]
+    },
+    {
+      "moebel": "sd6RelingCObenLinks",
+      "feld": [1, 6],
+      "versatz": [0, 10],
+      "zuschnitt": [2, 0, 0, 0]
+    },
+    {
+      "moebel": "sd6RelingCObenRechts",
+      "feld": [2, 6],
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "sd6RelingCSeiteRechts",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "sd6RelingCSeiteRechts",
+      "feld": [3, 8],
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "bkDielen",
+      "feld": [1, 7],
+      "versatz": [0, -5]
+    },
+    {
+      "moebel": "bkDielen",
+      "feld": [2, 8],
+      "versatz": [0, -21]
+    },
+    {
+      "moebel": "mf4Treppe",
+      "feld": [0, 6],
+      "drehung": 180,
+      "versatz": [16, 33],
+      "zuschnitt": [9, 12, 11, 39],
+      "deckkraft": 25,
+      "massstab": 1.1,
+      "ebene": -6
+    },
+    {
+      "moebel": "sd6RelingCObenRechts",
+      "feld": [2, 8],
+      "zuschnitt": [11, 0, 0, 0],
+      "versatz": [11, 0]
+    },
+    {
+      "moebel": "sd6RelingCOben",
+      "feld": [2, 7],
+      "versatz": [-9, -6]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [2, 5],
+      "feld": [2, 9],
       "eigenschaften": {
         "richtung": "unten"
       }
@@ -128,12 +180,12 @@
     },
     {
       "name": "spiegel",
-      "feld": [1, 7],
+      "feld": [1, 3],
       "auf_moebel": true
     },
     {
       "name": "zeitungen1961",
-      "feld": [3, 8],
+      "feld": [3, 4],
       "auf_moebel": true
     },
     {
@@ -143,12 +195,39 @@
     },
     {
       "name": "treppe",
-      "feld": [2, 3]
+      "feld": [1, 8],
+      "eigenschaften": {
+        "blick": "rechts",
+        "ankunft": "2,9"
+      }
     },
     {
       "name": "treppe",
-      "feld": [2, 4]
+      "feld": [2, 8],
+      "eigenschaften": {
+        "blick": "rechts",
+        "ankunft": "2,9"
+      }
     }
   ],
-  "zustand_der_karte": "ersterAbendGesehen"
+  "zustand_der_karte": "ersterAbendGesehen",
+  "sperren": [
+    [6, 6],
+    [9, 6],
+    [11, 8]
+  ],
+  "freigeben": [[1, 8]],
+  "freigeben_fein": [
+    [9, 3, "............####"],
+    [10, 3, "............####"],
+    [11, 3, "............####"],
+    [12, 3, "............####"],
+    [5, 4, "...#...#...#...#"],
+    [1, 5, "##..##..##..##.."],
+    [2, 5, "..##..##..##..##"],
+    [1, 7, "............####"],
+    [2, 7, "............###."],
+    [2, 8, "###.###.###.###."],
+    [3, 8, "#.#.#.#.#.#.###."]
+  ]
 }

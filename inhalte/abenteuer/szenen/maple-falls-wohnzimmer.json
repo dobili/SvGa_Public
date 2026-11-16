@@ -7,8 +7,8 @@
   "boden": "holzHell",
   "raster": [
     "####################",
-    "####################",
-    "####################",
+    "#  #################",
+    "#  #################",
     "#..........#fffffff#",
     "#..........#fffffff#",
     "#..........#fffffff#",
@@ -23,8 +23,11 @@
   "objekte": [
     {
       "moebel": "mf4Treppe",
-      "feld": [1, 5],
-      "id": "treppe"
+      "feld": [1, 2],
+      "id": "treppe",
+      "versatz": [-8, -10],
+      "kollision": true,
+      "maske": [".##", ".##", ".##", "..."]
     },
     {
       "moebel": "mf4Anrichte",
@@ -72,15 +75,16 @@
     },
     {
       "moebel": "mf4KartonStapel",
-      "feld": [1, 3]
+      "feld": [1, 8]
     },
     {
       "moebel": "mf4KartonBreit",
-      "feld": [2, 3]
+      "feld": [2, 8]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [1, 10]
+      "feld": [1, 10],
+      "versatz": [-2, 7]
     },
     {
       "moebel": "wzFenster",
@@ -90,12 +94,14 @@
     {
       "moebel": "wzArbeitsplatte",
       "feld": [13, 2],
-      "versatz": [2, 6]
+      "versatz": [3, 6],
+      "maske": ["##", ".."]
     },
     {
       "moebel": "wzArbeitsplatte",
       "feld": [15, 2],
-      "versatz": [0, 6]
+      "versatz": [0, 6],
+      "maske": ["##", ".."]
     },
     {
       "moebel": "wzHerd",
@@ -112,7 +118,8 @@
     },
     {
       "moebel": "mf4KartonStapel",
-      "feld": [12, 3]
+      "feld": [12, 3],
+      "maske_fein": ["....", "....", "....", "####", "####", "####", "....", "...."]
     },
     {
       "moebel": "mf4Palme",
@@ -155,20 +162,36 @@
     },
     {
       "moebel": "mf4KartonBreit",
-      "feld": [3, 3]
+      "feld": [3, 8]
     },
     {
       "moebel": "mf4KartonBreit",
       "feld": [14, 6],
-      "id": "tischpaket"
+      "id": "tischpaket",
+      "maske_fein": ["....", "....", "####", "####", "####", "....", "....", "...."]
     },
     {
       "moebel": "mf3StuhlHellLinks",
-      "feld": [18, 5]
+      "feld": [18, 5],
+      "maske_fein": ["....", "....", "####", "####", "####", "####", "....", "...."]
     },
     {
       "moebel": "mf4KartonStapel",
       "feld": [17, 4]
+    },
+    {
+      "moebel": "bkHolzHell",
+      "feld": [1, 2],
+      "ebene": -1,
+      "versatz": [16, -15],
+      "deckkraft": 50
+    },
+    {
+      "moebel": "bkHolzHell",
+      "feld": [0, 2],
+      "ebene": -1,
+      "versatz": [16, -15],
+      "deckkraft": 50
     }
   ],
   "ausloeser": [
@@ -195,86 +218,20 @@
     },
     {
       "name": "treppeOben",
-      "feld": [1, 5],
+      "feld": [1, 4],
       "eigenschaften": {
-        "durchgang": "oben"
+        "durchgang": "oben",
+        "ankunft": "2,6",
+        "blick": "unten"
       }
     },
     {
       "name": "treppeOben",
-      "feld": [1, 6],
+      "feld": [2, 4],
       "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [1, 7],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [1, 8],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [2, 5],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [2, 6],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [2, 7],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [2, 8],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [3, 5],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [3, 6],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [3, 7],
-      "eigenschaften": {
-        "durchgang": "oben"
-      }
-    },
-    {
-      "name": "treppeOben",
-      "feld": [3, 8],
-      "eigenschaften": {
-        "durchgang": "oben"
+        "durchgang": "oben",
+        "ankunft": "2,6",
+        "blick": "unten"
       }
     }
   ],
@@ -288,5 +245,54 @@
   "stil": ["modern", "klassisch", "rustikal"],
   "boeden": {
     "f": "fliesenWeiss"
-  }
+  },
+  "freigeben_fein": [
+    [3, 3, "##..##..##..##.."],
+    [13, 3, "#####...#...####"],
+    [14, 3, "####........####"],
+    [15, 3, "####........####"],
+    [16, 3, "####........####"],
+    [17, 3, "............####"],
+    [18, 3, "............####"],
+    [3, 4, "##..#..........."],
+    [13, 4, "#.###.#........."],
+    [14, 4, "####............"],
+    [15, 4, "####............"],
+    [16, 4, "####............"],
+    [6, 6, "....#...#...#..."],
+    [6, 7, "#..............."],
+    [7, 7, "....############"],
+    [8, 7, "....############"],
+    [9, 7, "..##############"],
+    [1, 9, "########........"],
+    [2, 9, "########........"],
+    [3, 9, "########........"],
+    [4, 9, "##..##.........."],
+    [8, 10, "....############"],
+    [9, 10, "....############"],
+    [10, 10, "....############"]
+  ],
+  "sperren_fein": [
+    [1, 3, "#...#...#...#..."],
+    [12, 3, "......##..##...."],
+    [13, 3, "........####...."],
+    [14, 3, "........####...."],
+    [15, 3, "........####...."],
+    [16, 3, "........####...."],
+    [17, 3, "....########...."],
+    [18, 3, "....########...."],
+    [1, 4, "........#...#..."],
+    [2, 4, "...........#...#"],
+    [1, 5, "#...#..........."],
+    [2, 5, "...#...#........"],
+    [6, 6, ".....###.#...##."],
+    [7, 6, "....####.#######"],
+    [8, 6, "....############"],
+    [1, 8, "............####"],
+    [2, 8, "............####"],
+    [3, 8, "............####"],
+    [8, 9, "............####"],
+    [9, 9, "............####"],
+    [10, 9, "............####"]
+  ]
 }

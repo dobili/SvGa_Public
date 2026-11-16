@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 283,
+ "nextobjectid": 286,
  "layers": [
   {
    "id": 1,
@@ -4254,11 +4254,11 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
+    2,
     0,
     2,
     2,
@@ -4302,9 +4302,9 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -9296,6 +9296,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "......................../########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/########################/......................../..###.................../..###.############......"
       }
      ]
     },
@@ -9319,6 +9324,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../.../.../.../.../.../.#./.../..."
       }
      ]
     },
@@ -13721,20 +13731,25 @@
      "type": "moebel",
      "x": 48,
      "y": 528,
-     "width": 96,
-     "height": 103,
+     "width": 120,
+     "height": 129,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 623
+       "value": 649
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
       }
      ]
     },
@@ -13744,20 +13759,25 @@
      "type": "moebel",
      "x": 288,
      "y": 528,
-     "width": 96,
-     "height": 101,
+     "width": 120,
+     "height": 126,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 621
+       "value": 646
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
       }
      ]
     },
@@ -13767,20 +13787,25 @@
      "type": "moebel",
      "x": 480,
      "y": 528,
-     "width": 96,
-     "height": 101,
+     "width": 120,
+     "height": 126,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 621
+       "value": 646
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
       }
      ]
     },
@@ -13790,20 +13815,25 @@
      "type": "moebel",
      "x": 656,
      "y": 528,
-     "width": 96,
-     "height": 103,
+     "width": 120,
+     "height": 129,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 623
+       "value": 649
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
       }
      ]
     },
@@ -14802,6 +14832,75 @@
        "value": true
       }
      ]
+    },
+    {
+     "id": 283,
+     "name": "bkAsphalt",
+     "type": "moebel",
+     "x": 48,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 284,
+     "name": "bkAsphalt",
+     "type": "moebel",
+     "x": 64,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 285,
+     "name": "bkAsphalt",
+     "type": "moebel",
+     "x": 80,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
     }
    ]
   }
@@ -14878,6 +14977,11 @@
    "name": "kennung",
    "type": "string",
    "value": "mapleFalls.aussen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "57,22;58,22;59,22;60,22;61,22;41,23;42,23;43,23"
   }
  ]
 }

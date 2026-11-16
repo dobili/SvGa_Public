@@ -7,14 +7,17 @@ Haustür groß genug für die Figur war, und daraus eine Regel gemacht (Antwort 
 Höhe).“
 
 Maße:
-- Spielfigur: Rahmen 16 × 32 (``app/src/abenteuer/oberwelt/figurbilder.ts``), deckend 16 × 22 Pixel
-  (``spiel/figuren/held-0.png``, Blick nach unten, mit Armen, ohne den leeren Rand oben).
+- Spielfigur: der Held aus PixelLab (``spiel/figuren-neu/held-0/rotations/south.png``, Rahmen
+  32 × 32), deckend 17 × 30 Figurenpixel. Seit Variante B (Wunsch des Autors, 16.11.2026) steht
+  er mit 2/3 auf der Karte (``app/src/abenteuer/oberwelt/weltmassstab.ts``: zwei Bildschirmpixel
+  je Figurenpixel, drei je Kartenpixel), also 17/1,5 × 30/1,5 = 11⅓ × 20 Kartenpixel. Vorher galt
+  die LimeZu-Figur mit 16 × 22.
 - Tür: Türrahmen außen im ungeskalierten Bild, abgelesen mit der Lupe und gespeichert in
   ``inhalte/abenteuer/katalog_korrekturen/tuermasse.json`` (öffentlich, ohne Pixel prüfbar). Der
   Maßstab des Eintrags (``massstab``) zählt mit. Gebäude ohne gemessene Tür prüft das Werkzeug nicht;
   ``--offen`` listet sie.
 
-Beispiel: ``haus_hinten_b_blau.png`` hat eine Tür von 14 × 19 Pixeln: zu klein (Figur 16 × 22); mit
+Beispiel: ``haus_hinten_b_blau.png`` hat eine Tür von 14 × 19 Pixeln: zu klein (Figur 11⅓ × 20); mit
 ``massstab`` 1.25 sind es 17,5 × 23,75, groß genug.
 
 Aufruf: ``python -m pipeline.abenteuer.tuergroesse [--offen]``; im Kartenbau als Hinweis „Tür … zu
@@ -27,7 +30,10 @@ from functools import cache
 from pathlib import Path
 
 INHALTE = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer"
-FIGUR_BREITE, FIGUR_HOEHE = 16, 22
+# Held in Figurenpixeln (deckend, von vorn) und sein Maßstab auf der Karte (Variante B).
+HELD_BREITE, HELD_HOEHE = 17, 30
+FIGUR_MASSSTAB = 2 / 3
+FIGUR_BREITE, FIGUR_HOEHE = HELD_BREITE * FIGUR_MASSSTAB, HELD_HOEHE * FIGUR_MASSSTAB
 GEBAEUDE = ("gebaeude", "haus")
 
 
@@ -61,7 +67,7 @@ def pruefe_szene(szene: dict, moebel: dict) -> list[str]:
             noetig = max(FIGUR_BREITE / (tuer[2] - tuer[0]), FIGUR_HOEHE / (tuer[3] - tuer[1]))
             befunde.append(
                 f"Tür von {eintrag['moebel']} {tuple(eintrag.get('feld', ()))} ist {breite:g} × {hoehe:g} "
-                f"Pixel, kleiner als die Figur ({FIGUR_BREITE} × {FIGUR_HOEHE}): massstab mindestens "
+                f"Pixel, kleiner als die Figur ({FIGUR_BREITE:.3g} × {FIGUR_HOEHE:.3g}): massstab mindestens "
                 f"{noetig:.2f} (Regel 10.92)"
             )
     return befunde

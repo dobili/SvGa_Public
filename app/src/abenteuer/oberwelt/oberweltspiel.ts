@@ -9,19 +9,23 @@
  * Abhängigkeiten: phaser, szene.ts (Kamera über kameraregie.ts).
  */
 import Phaser from "phaser";
-import { Oberweltszene, ZOOM, type Szenendaten } from "./szene";
+import { Oberweltszene, type Szenendaten } from "./szene";
 
-/** Spielgröße zu einem Element: seine Fläche in Spielpixeln, mindestens ein Pixel. */
+/**
+ * Spielgröße zu einem Element: seine Fläche in Bildschirmpixeln (CSS), mindestens ein Pixel. Das
+ * Bild hat volle Auflösung, damit Kartenpixel (×3) und Figurenpixel (×2) beide ganzzahlig auf dem
+ * Schirm landen; vergrößert wird mit der Kamera (Variante B, weltmassstab.ts).
+ */
 function spielgroesse(element: HTMLElement): { breite: number; hoehe: number } {
   return {
-    breite: Math.max(1, Math.floor(element.clientWidth / ZOOM)),
-    hoehe: Math.max(1, Math.floor(element.clientHeight / ZOOM)),
+    breite: Math.max(1, Math.floor(element.clientWidth)),
+    hoehe: Math.max(1, Math.floor(element.clientHeight)),
   };
 }
 
 /**
  * Passt Spiel und Kamera an die neue Größe des Elements an. Beispiel: Drehen von 390 × 844 auf
- * 844 × 390 → Spiel 281 × 130 Spielpixel (bei ZOOM 3), Kameragrenzen neu, kleine Räume mittig.
+ * 844 × 390 → Bild 844 × 390, bei ZOOM 3 sichtbar 281⅓ × 130 Kartenpixel, Kameragrenzen neu.
  * Sonderfall: Läuft die Szene noch nicht, genügt die neue Spielgröße (create rechnet die Grenzen).
  */
 function passeAn(spiel: Phaser.Game, element: HTMLElement): void {
@@ -35,7 +39,7 @@ function passeAn(spiel: Phaser.Game, element: HTMLElement): void {
   szene.passeKameraAn();
 }
 
-/** Startet Phaser in einem Element; die Breite folgt dem Element, gezeichnet mit ZOOM. */
+/** Startet Phaser in einem Element; die Breite folgt dem Element, die Kamera vergrößert mit ZOOM. */
 export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser.Game {
   const szene = new Oberweltszene(daten);
   const { breite, hoehe } = spielgroesse(element);
@@ -44,7 +48,6 @@ export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser
     parent: element,
     width: breite,
     height: hoehe,
-    zoom: ZOOM,
     pixelArt: true,
     backgroundColor: "#1a1612",
     physics: { default: "arcade", arcade: { debug: false } },

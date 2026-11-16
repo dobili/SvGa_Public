@@ -24,6 +24,10 @@ Format 11), `sw/dateiliste.ts` (Code-Baustein als Paket), `vite.config.ts` und
 | `texte/`         | Oberflächentexte des Spiels (`inhalte/abenteuer/texte/de.json`)                           | `texte.ts`             |
 | `ton/`           | Musik und Geräusche, Musik der Nachbarkarten vorab, Geräusche als Text                    | `tonregie.ts`          |
 
+Maßstab (Variante B, Wunsch des Autors, 16.11.2026): Die Kamera vergrößert die Karte dreifach, die
+PixelLab-Figuren stehen mit 2/3 darin und erscheinen so mit zwei Bildschirmpixeln je Figurenpixel;
+die Welt rechnet weiter in Kartenpixeln (Kachel 16), siehe `oberwelt/weltmassstab.ts`.
+
 Die Partie selbst, die Aufgaben und das Brett kommen aus der App (`spiel/`, `training/`, `ui/`);
 das Spiel ruft sie über die Dienste in `anbindung/dienste.ts` auf. Inhalte (Gegner, Karten,
 Quests, Orte, Begegnungen, Ink, Tiled) liegen in `inhalte/abenteuer/`; `skripte/baue-abenteuerpaket.mjs`

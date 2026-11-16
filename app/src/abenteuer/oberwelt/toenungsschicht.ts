@@ -8,9 +8,10 @@
  * folgt; kein Zeichnen je Bild.
  * Übergang (Atmosphäre T6): Ein Wechsel während des Besuchs blendet in zwei Sekunden um (alter
  * Schleier aus, neuer ein); beim Betreten der Karte steht das Licht sofort.
- * Abhängigkeiten: Phaser, toenung.ts.
+ * Abhängigkeiten: Phaser, toenung.ts, kameraregie.ts (sichtbare Fläche bei vergrößernder Kamera).
  */
 import Phaser from "phaser";
+import { festerPunkt, sichtflaeche } from "./kameraregie";
 import { DUNKEL_DECKKRAFT, lichtkreis, SCHLEIER, type Toenung } from "./toenung";
 
 /** Über allem, auch über fliegenden Vögeln (belebungsschicht.ts). */
@@ -50,9 +51,13 @@ export class Toenungsschicht {
     }
     const schleier = toenung ? SCHLEIER[toenung] : undefined;
     if (!schleier) return;
+    // Ein festes Objekt über dem ganzen Bild; die Kamera vergrößert auch feste Objekte um die
+    // Bildmitte (Variante B, weltmassstab.ts), deshalb die sichtbare Fläche in Kartenpixeln.
     const kamera = this.szene.cameras.main;
+    const { sichtBreite, sichtHoehe } = sichtflaeche(kamera);
+    const ecke = festerPunkt(kamera, 0, 0);
     this.schleier = this.szene.add
-      .rectangle(0, 0, kamera.width, kamera.height, schleier.farbe, schleier.deckkraft)
+      .rectangle(ecke.x, ecke.y, sichtBreite, sichtHoehe, schleier.farbe, schleier.deckkraft)
       .setOrigin(0, 0)
       .setScrollFactor(0)
       .setDepth(TIEFE);
@@ -98,9 +103,9 @@ export class Toenungsschicht {
   private dunkelbild(felder: number): string {
     const schluessel = `dunkel:${felder}`;
     if (this.szene.textures.exists(schluessel)) return schluessel;
-    const kamera = this.szene.cameras.main;
-    const breite = Math.max(1, kamera.width * 2);
-    const hoehe = Math.max(1, kamera.height * 2);
+    const { sichtBreite, sichtHoehe } = sichtflaeche(this.szene.cameras.main);
+    const breite = Math.max(1, Math.ceil(sichtBreite * 2));
+    const hoehe = Math.max(1, Math.ceil(sichtHoehe * 2));
     const textur = this.szene.textures.createCanvas(schluessel, breite, hoehe);
     const ctx = textur?.getContext();
     if (!textur || !ctx) return schluessel;

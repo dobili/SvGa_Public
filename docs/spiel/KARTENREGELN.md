@@ -1359,7 +1359,9 @@ Höhe).“ Anlass: Der Autor hat die vier Häuser der hinteren Reihe in Maple Fa
 vergrößert, bis ihre Tür groß genug war. Prüfung: `python -m pipeline.abenteuer.tuergroesse
 [--offen]`, im Kartenbau als Hinweis „Tür von … ist … kleiner als die Figur“.
 
-- **Figur:** 16 × 22 Pixel deckend (Rahmen 16 × 32, `figurbilder.ts`; `held-0.png` von vorn).
+- **Figur:** der PixelLab-Held (`figuren-neu/held-0`, von vorn) mit 17 × 30 Figurenpixeln deckend,
+  seit Variante B (16.11.2026) mit 2/3 auf der Karte, also 11⅓ × 20 Kartenpixel
+  (`app/src/abenteuer/oberwelt/weltmassstab.ts`); vorher die LimeZu-Figur mit 16 × 22.
 - **Tür:** Türrahmen außen im ungeskalierten Bild, gemessen in
   `inhalte/abenteuer/katalog_korrekturen/tuermasse.json`; der `massstab` des Eintrags zählt mit. Zu
   kleine Häuser bekommen einen `massstab` (wie der Autor: 1,25), die Umgebung rückt so wenig wie

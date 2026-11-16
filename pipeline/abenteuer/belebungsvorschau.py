@@ -78,8 +78,11 @@ def rgba(pfad: Path) -> Image.Image:
     return Image.open(pfad).convert("RGBA")
 
 
-# PixelLab-Figuren werden auf 80 % gezeichnet (Wunsch des Autors, 16.11.2026; wie GROSS_MASSSTAB).
-PIXELLAB_MASSSTAB = 0.8
+# PixelLab-Figuren stehen mit 2/3 auf der Karte (Variante B, Wunsch des Autors, 16.11.2026; wie
+# GROSS_MASSSTAB in app/src/abenteuer/oberwelt/weltmassstab.ts): In der App zwei Bildschirmpixel je
+# Figurenpixel, drei je Kartenpixel. Die Vorschau zeichnet die Karte in Kartenpixeln, die Figur
+# deshalb geglättet verkleinert (BOX), damit Gesichter und Kinder erkennbar bleiben.
+PIXELLAB_MASSSTAB = 2 / 3
 
 
 def figurbild(privat: Path, bogen: str, rahmen: int, oeffne) -> Image.Image | None:
@@ -98,9 +101,9 @@ def figurbild(privat: Path, bogen: str, rahmen: int, oeffne) -> Image.Image | No
             return None
         gesetzt = Image.new("RGBA", bild.size)
         gesetzt.paste(bild, (0, FUSSZEILE + 1 - umriss[3]))
-        # Wie die App (oberwelt/figurbilder.ts, GROSS_MASSSTAB): PixelLab-Figuren auf 80 %, Füße bleiben.
+        # Wie die App (oberwelt/weltmassstab.ts, GROSS_MASSSTAB): PixelLab-Figuren mit 2/3, Füße bleiben.
         seite = round(bild.width * PIXELLAB_MASSSTAB)
-        klein = gesetzt.resize((seite, seite), Image.NEAREST)
+        klein = gesetzt.resize((seite, seite), Image.Resampling.BOX)
         verkleinert = Image.new("RGBA", bild.size)
         fuss = round((FUSSZEILE + 1) * PIXELLAB_MASSSTAB)
         verkleinert.paste(klein, ((bild.width - seite) // 2, FUSSZEILE + 1 - fuss))
@@ -159,5 +162,7 @@ def _statist(b: dict, privat: Path, oeffne, x: int, y: int) -> list[tuple[int, i
         return []
     sichtbar = _sichtbar(b, bild.height)
     bild = bild.crop((0, 0, bild.width, sichtbar))
-    hub = SITZ_HUB if sitzt in SITZ_RAHMEN else 0
+    # SITZ_HUB zählt in Figurenpixeln; PixelLab-Figuren (32 breit) stehen mit 2/3 auf der Karte.
+    massstab = PIXELLAB_MASSSTAB if bild.width >= 2 * K else 1
+    hub = round(SITZ_HUB * massstab) if sitzt in SITZ_RAHMEN else 0
     return [(y + K, x + (K - bild.width) // 2, y + K - sichtbar - hub, bild)]

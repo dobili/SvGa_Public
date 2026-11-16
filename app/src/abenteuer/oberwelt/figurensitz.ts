@@ -26,7 +26,9 @@ export function setzeSitzend(sprite: Phaser.GameObjects.Sprite, richtung: Richtu
   sprite.setOrigin(sprite.originX, sprite.originY + SITZ_HUB / sprite.frame.height);
   const koerper = (sprite as Phaser.Physics.Arcade.Sprite).body;
   if (koerper instanceof Phaser.Physics.Arcade.StaticBody) {
-    koerper.setOffset(koerper.offset.x, koerper.offset.y + SITZ_HUB);
+    // Der Hub zählt in Figurenpixeln, der feste Körper in Weltpixeln: mit dem Maßstab der Figur
+    // (PixelLab 2/3, weltmassstab.ts), damit der Körper auf der Fußkachel bleibt.
+    koerper.setOffset(koerper.offset.x, koerper.offset.y + SITZ_HUB * sprite.scaleY);
     (sprite as Phaser.Physics.Arcade.Sprite).refreshBody();
   }
 }

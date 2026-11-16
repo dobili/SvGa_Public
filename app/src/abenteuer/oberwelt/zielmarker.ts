@@ -8,9 +8,12 @@
  * Weg vorzulaufen. Welches Feld das Ziel ist, sagt oberwelt/zielsuche.ts; abschalten lässt sich der
  * Hinweis im Spielmenü (anbindung/Zielhinweiswahl.tsx).
  * Rolle im Gesamtbild: Hilfe für oberwelt/szene.ts; zeichnet mit Phaser-Grafik, keine Bilder.
- * Abhängigkeiten: Phaser.
+ * Die Kamera vergrößert (Variante B, weltmassstab.ts): gerechnet wird in Kartenpixeln der
+ * sichtbaren Fläche (worldView), der feste Pfeil wird mit kameraregie.ts/festerPunkt gesetzt.
+ * Abhängigkeiten: Phaser, kameraregie.ts.
  */
 import type Phaser from "phaser";
+import { festerPunkt } from "./kameraregie";
 
 /** Gold des Hinweises und dunkler Rand (Farben des Spiels, spielfarben.css). */
 const GOLD = 0xf2c14e;
@@ -103,10 +106,11 @@ export class Zielmarker {
       return;
     }
     const kamera = this.szene.cameras.main;
-    const hoehe = kamera.height - this.verdeckt();
-    const sx = (ziel.x + 0.5) * this.kachel - kamera.scrollX;
-    const sy = (ziel.y + 0.5) * this.kachel - kamera.scrollY;
-    const drin = sx >= 0 && sx <= kamera.width && sy >= 0 && sy <= hoehe;
+    const sicht = kamera.worldView;
+    const hoehe = sicht.height - this.verdeckt();
+    const sx = (ziel.x + 0.5) * this.kachel - sicht.x;
+    const sy = (ziel.y + 0.5) * this.kachel - sicht.y;
+    const drin = sx >= 0 && sx <= sicht.width && sy >= 0 && sy <= hoehe;
     this.ueber.setVisible(drin);
     this.pfeil.setVisible(!drin);
     if (drin) {
@@ -115,7 +119,8 @@ export class Zielmarker {
       this.ueber.setPosition(x, ziel.y * this.kachel - UEBER_KACHEL + wippen);
       return;
     }
-    const p = randpunkt(kamera.width, hoehe, { x: sx, y: sy });
-    this.pfeil.setPosition(p.x, p.y).setRotation(p.winkel);
+    const p = randpunkt(sicht.width, hoehe, { x: sx, y: sy });
+    const fest = festerPunkt(kamera, p.x, p.y);
+    this.pfeil.setPosition(fest.x, fest.y).setRotation(p.winkel);
   }
 }

@@ -6,7 +6,8 @@
  * einem Auslöser, Held hat ihn verlassen, Position beim Verlassen); nach unten `setzeRichtung`
  * (Steuerkreuz) und `laufenErlaubt` (Dialog offen → stehen bleiben).
  * Kacheln sind 16 px (inhalte/abenteuer/README.md), gezeichnet mit Faktor ZOOM (Architektur,
- * Abschnitt 10: DS-Look statt Game Boy). Kollision kommt aus der Kacheleigenschaft `kollision`
+ * Abschnitt 10: DS-Look statt Game Boy); die Kamera vergrößert, PixelLab-Figuren stehen mit 2/3
+ * in der Welt (Variante B, weltmassstab.ts). Kollision kommt aus der Kacheleigenschaft `kollision`
  * des Kachelsatzes; Auslöser aus der Objektebene `ausloeser` (Name = Bedeutung in orte.json).
  * Abhängigkeiten: phaser (MIT, docs/spiel/LIZENZEN.md), schnittstelle/spielstand.ts (Weltposition).
  */
@@ -20,6 +21,7 @@ import {
   type Meldezustand,
 } from "./ausloeserebene";
 import { richteKameraEin } from "./kameraregie";
+import { ZOOM } from "./weltmassstab";
 import { kachelVon, tippschrittBeimLoslassen, zielErreicht, type Tippschritt } from "./tippschritt";
 import { Zielmarker, type Zielfeld } from "./zielmarker";
 import type { Weltposition } from "../schnittstelle/spielstand";
@@ -50,8 +52,6 @@ export type Richtung = Weltposition["richtung"];
 
 /** Kachelgröße der Karten in Pixeln. */
 export const KACHEL = 16;
-/** Vergrößerung auf dem Bildschirm (drei Bildschirmpixel je Kachelpixel). */
-export const ZOOM = 3;
 /** Laufgeschwindigkeit des Helden in Kachelpixeln je Sekunde. */
 const TEMPO = 56;
 /** Bild je Blickrichtung im Spritesheet des Helden (grafik/held.png: unten, links, rechts, oben). */

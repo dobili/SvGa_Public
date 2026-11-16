@@ -1160,3 +1160,15 @@ alle stehen in KARTENREGELN mit dem Vermerk „(Autor, 16.11.2026)“:
 - **Spielstart** bleibt auf dem Dachboden oben am Treppenloch (2, 9): Der Held trägt die Kiste
   hinauf (Roman Kap. 1, „Bring die hier hoch zu den anderen“). Die Beschreibungen von Wohnzimmer,
   Zimmer und Dachboden nennen jetzt die neue Lage von Treppen, Löchern und Kartons.
+
+## Variante B: Karte dreifach, Figuren zweifach (Wunsch des Autors, 16.11.2026)
+
+Die PixelLab-Figuren (Rahmen 32 × 32, bis etwa 30 px hoch) waren größer als die Türen der
+Grafiksätze; die behelfsweise Verkleinerung auf 80 % verlor Figurenpixel. Jetzt erscheint ein
+Kartenpixel mit drei, ein Figurenpixel mit zwei Bildschirmpixeln: Das Spielbild hat volle
+Auflösung, die Kamera vergrößert mit 3, die Figuren stehen mit 2/3 in der Welt
+(`app/src/abenteuer/oberwelt/weltmassstab.ts`). Das entspricht „Welt mit 150 %, Kamera mal 2“,
+rechnet aber weiter in Kartenpixeln, sodass Karten, Kollision, Wege, Szenen und Editor unverändert
+bleiben. Im Verhältnis zur Karte ist der Held 11⅓ × 20 Pixel groß; `tuergroesse.py` (Regel 10.92)
+prüft mit diesem Maß. Noch zu klein: Villen in Maple Falls (Tür 19 hoch, nötig 1,05) sowie Diner
+und Waschsalon mit Glastür (17 hoch, nötig 1,18).

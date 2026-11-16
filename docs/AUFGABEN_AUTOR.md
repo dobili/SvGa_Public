@@ -1835,9 +1835,17 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       4 Pixel neben die Mitte, wenn die Mitte vor ihm gesperrt ist. Das gilt auf allen Karten und
       macht das Laufen an Möbelkanten eher leichter. Bitte beim nächsten Spielen darauf achten, ob
       sich das Laufen irgendwo anders anfühlt.
-- [ ] RO33. **Türen und Figurengröße (16.11.2026, umgesetzt, Widerspruch genügt):** Auf deinen
-      Wunsch sind alle PixelLab-Figuren (Held, Figuren, Statisten) im Spiel auf 80 % verkleinert;
-      sie passen damit in die Türen deiner 125-%-Häuser. Vor den Villen in Maple Falls und den
-      Glastüren von Diner und Waschsalon ragen sie noch etwas über die Tür; die bleiben vorerst,
-      wie sie sind. Später, wenn du magst: die Figuren in PixelLab gleich in der kleineren Größe
-      erzeugen, dann sind sie wieder pixelgenau statt verkleinert.
+- [ ] RO33. **Türen und Figurengröße (16.11.2026 nachts, Variante B umgesetzt, Widerspruch genügt):**
+      Die 80-%-Verkleinerung ist zurückgebaut. Jetzt gilt Variante B: Ein Kartenpixel ist auf dem
+      Schirm 3 Pixel groß wie bisher, ein Pixel der PixelLab-Figuren genau 2. Die Karten sehen also
+      aus wie vorher, die Figuren (auch die Kinder wie Lily, Ivy, Jonah) sind gestochen scharf und
+      zwei Drittel so groß wie ursprünglich. Technisch habe ich die Welt nicht auf 150 % umgerechnet,
+      sondern die Kamera zoomt das Bild in voller Auflösung, und nur die Figuren stehen mit zwei
+      Dritteln in der Welt; das Bild ist dasselbe, aber Kollision, Wege und Übergänge blieben
+      unverändert. Bitte prüfen: Passt die Figurengröße zu Möbeln und Türen? Läuft das Spiel auf
+      einem älteren Handy noch flüssig (das Bild hat jetzt neunmal so viele Pixel)? Noch zu klein
+      für den Helden (20 Kartenpixel hoch) sind die Türen der Villen Whitlock, Lila und Rot (19 hoch,
+      1 Pixel fehlt), des Diners (Maple Falls, Desert Springs) und des Waschsalons (beide 17 hoch).
+      Meine Empfehlung: diese Gebäude mit dem Maßstab 1,2 zeichnen. Noch nicht umgesetzt, weil sich
+      dabei die Kartenlage um die Gebäude ändert; „ok“ genügt, dann baue ich es.
+      Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).

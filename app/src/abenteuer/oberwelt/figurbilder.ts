@@ -13,6 +13,7 @@
 import Phaser from "phaser";
 import { istGrossbogen } from "./figurbogen";
 import type { Richtung } from "./szene";
+import { GROSS_MASSSTAB } from "./weltmassstab";
 
 /** Rahmen einer Figur von LimeZu. */
 export const FIGUR_BREITE = 16;
@@ -20,11 +21,6 @@ export const FIGUR_HOEHE = 32;
 /** Rahmen eines PixelLab-Bogens und Abstand der Füße vom unteren Rand. */
 export const GROSS_RAHMEN = 32;
 const GROSS_FUSSRAND = 2;
-/**
- * PixelLab-Figuren werden auf 80 % verkleinert (Wunsch des Autors, 16.11.2026): Sie waren mit etwa
- * 30 Pixeln Höhe größer als die Türen der Grafiksätze; mit 80 % passen sie in die Haustüren.
- */
-export const GROSS_MASSSTAB = 0.8;
 /** Laufbilder je Richtung und Bilder je Sekunde. */
 const LAUFBILDER = 6;
 const BILDRATE = 10;
@@ -77,7 +73,10 @@ function fusszeile(sprite: Phaser.GameObjects.Sprite): number {
   return width >= GROSS_RAHMEN ? height - GROSS_FUSSRAND : height;
 }
 
-/** Maßstab, mit dem eine Figur gezeichnet wird: PixelLab-Bögen 80 %, LimeZu-Figuren 100 %. */
+/**
+ * Maßstab, mit dem eine Figur gezeichnet wird: PixelLab-Bögen 2/3 (zwei Bildschirmpixel je
+ * Figurenpixel bei ZOOM 3, Variante B in weltmassstab.ts), LimeZu-Figuren 1.
+ */
 export function figurmassstab(sprite: Phaser.GameObjects.Sprite): number {
   return sprite.frame.width >= GROSS_RAHMEN ? GROSS_MASSSTAB : 1;
 }
@@ -85,8 +84,8 @@ export function figurmassstab(sprite: Phaser.GameObjects.Sprite): number {
 /**
  * Ursprung (Anteil der Höhe) so, dass die Mitte der Fußkachel auf dem Punkt der Figur liegt; für
  * Figuren und Statisten. Setzt dabei auch den Maßstab der Figur (figurmassstab), damit jeder Weg,
- * der eine Figur aufstellt, die verkleinerten PixelLab-Figuren richtig auf die Kachel stellt.
- * Beispiel: LimeZu 16 × 32, Kachel 16 → 0,75; PixelLab 32 × 32 bei 80 % → (30 − 10) / 32 = 0,625.
+ * der eine Figur aufstellt, die PixelLab-Figuren in ihrem Maßstab richtig auf die Kachel stellt.
+ * Beispiel: LimeZu 16 × 32, Kachel 16 → 0,75; PixelLab 32 × 32 bei 2/3 → (30 − 12) / 32 = 0,5625.
  */
 export function fussUrsprungY(sprite: Phaser.GameObjects.Sprite, kachel: number): number {
   const massstab = figurmassstab(sprite);

@@ -17,6 +17,7 @@
  * moebelfelder), damit kein Möbel einen Auslöser zustellt.
  * Abhängigkeiten: Phaser, paket/paketlader.ts.
  */
+import { zeichentiefe } from "./zeichentiefe";
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
 import { feinsperrenAus, feinsperrRechtecke, moebelRechtecke, type Rechteck } from "./feinsperren";
@@ -229,7 +230,7 @@ export function stelleMoebelAuf(
       bild.setAngle(m.form.drehung);
     }
     if (m.deckkraft !== undefined) bild.setAlpha(m.deckkraft); // nur das Bild, Kollision bleibt
-    bild.setDepth(m.tiefe ?? m.y + m.angabe.hoehe - kachel / 2);
+    bild.setDepth(m.tiefe ?? zeichentiefe(m, kachel));
     if (!(m.kollision ?? m.angabe.kollision)) continue;
     if (m.angabe.maske_fein) {
       // Feine Maske (Karteneditor 1.6): zusammengefasste Zellen, der Held stößt an der Kante an.

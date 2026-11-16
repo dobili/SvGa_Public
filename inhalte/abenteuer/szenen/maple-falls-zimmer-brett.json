@@ -111,14 +111,14 @@
       "feld": [10, 9]
     },
     {
-      "moebel": "mf4Treppe",
+      "moebel": "treppeZumBetrachter",
       "feld": [1, 7],
       "id": "treppeDach_2",
-      "versatz": [-8, 1],
-      "drehung": 180,
+      "versatz": [0, 3],
+      "zuschnitt": [0, 0, 0, 35],
       "ebene": 1,
       "kollision": true,
-      "maske": [".##", ".##", ".##", "..."]
+      "maske": ["...", "###", "###", "###"]
     },
     {
       "moebel": "bkDielen",
@@ -203,6 +203,14 @@
       }
     },
     {
+      "name": "treppeDachboden",
+      "feld": [3, 7],
+      "eigenschaften": {
+        "ankunft": "3,6",
+        "blick": "rechts"
+      }
+    },
+    {
       "name": "fensterbank",
       "feld": [9, 3]
     },
@@ -241,11 +249,6 @@
   "zustand_der_karte": "ersterAbendGesehen",
   "freigeben": [
     [1, 4]
-  ],
-  "sperren": [
-    [2, 8],
-    [2, 9],
-    [2, 10]
   ],
   "freigeben_fein": [
     [2, 4, "###.###.###.###."],

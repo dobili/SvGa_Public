@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 39,
+ "nextobjectid": 40,
  "layers": [
   {
    "id": 1,
@@ -359,23 +359,7 @@
     2,
     2,
     0,
-    2,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    2,
     0,
     0,
     0,
@@ -391,7 +375,23 @@
     2,
     2,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
+    2,
+    0,
+    0,
     0,
     0,
     0,
@@ -704,6 +704,29 @@
     },
     {
      "id": 4,
+     "name": "treppeDachboden",
+     "type": "ausloeser",
+     "x": 48,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "ankunft",
+       "type": "string",
+       "value": "3,6"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
+    },
+    {
+     "id": 5,
      "name": "fensterbank",
      "type": "ausloeser",
      "x": 144,
@@ -714,7 +737,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "fensterbank",
      "type": "ausloeser",
      "x": 160,
@@ -725,7 +748,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "brettSchreibtisch",
      "type": "ausloeser",
      "x": 208,
@@ -736,7 +759,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "treppeUnten",
      "type": "ausloeser",
      "x": 16,
@@ -759,7 +782,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "treppeUnten",
      "type": "ausloeser",
      "x": 32,
@@ -782,7 +805,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "ambrose",
      "type": "figur",
      "x": 176,
@@ -793,7 +816,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "mf7Buecherregal",
      "type": "moebel",
      "x": 112,
@@ -816,7 +839,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "wzFenster",
      "type": "moebel",
      "x": 144,
@@ -839,7 +862,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "mf12Fensterbank",
      "type": "moebel",
      "x": 144,
@@ -862,7 +885,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "mf2Weltkarte",
      "type": "moebel",
      "x": 176,
@@ -885,7 +908,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "mf14SchreibtischLeer",
      "type": "moebel",
      "x": 208,
@@ -908,7 +931,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "mf8SchulstuhlHinten",
      "type": "moebel",
      "x": 216,
@@ -931,7 +954,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "rv5BettKopfRechts",
      "type": "moebel",
      "x": 192,
@@ -959,7 +982,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "wzTeppich",
      "type": "moebel",
      "x": 80,
@@ -982,7 +1005,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "mf7SesselAlt",
      "type": "moebel",
      "x": 96,
@@ -1005,7 +1028,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 80,
@@ -1028,7 +1051,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 112,
@@ -1051,7 +1074,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "mf4Karton",
      "type": "moebel",
      "x": 128,
@@ -1074,7 +1097,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "mf4KartonBreit",
      "type": "moebel",
      "x": 144,
@@ -1097,7 +1120,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 224,
@@ -1120,7 +1143,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "mf8Kommode",
      "type": "moebel",
      "x": 208,
@@ -1148,7 +1171,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "mf7Tischlampe",
      "type": "moebel",
      "x": 216,
@@ -1171,7 +1194,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "mf3BrettKlein",
      "type": "moebel",
      "x": 218,
@@ -1194,7 +1217,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 80,
@@ -1217,7 +1240,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 160,
@@ -1240,20 +1263,20 @@
      ]
     },
     {
-     "id": 29,
-     "name": "mf4Treppe",
+     "id": 30,
+     "name": "treppeZumBetrachter",
      "type": "moebel",
-     "x": 8,
-     "y": 113,
+     "x": 16,
+     "y": 115,
      "width": 48,
-     "height": 64,
+     "height": 61,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 2
+       "value": 169
       },
       {
        "name": "kollision",
@@ -1261,19 +1284,19 @@
        "value": true
       },
       {
-       "name": "drehung",
-       "type": "int",
-       "value": 180
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,35"
       },
       {
        "name": "maske",
        "type": "string",
-       "value": ".../##./##./##."
+       "value": ".../###/###/###"
       }
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "bkDielen",
      "type": "moebel",
      "x": 20,
@@ -1301,7 +1324,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "bkDielen",
      "type": "moebel",
      "x": 32,
@@ -1329,7 +1352,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 32,
@@ -1362,7 +1385,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 32,
@@ -1385,7 +1408,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
@@ -1408,7 +1431,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "sd6RelingCObenRechts",
      "type": "moebel",
      "x": 32,
@@ -1431,7 +1454,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "sd6RelingCOben",
      "type": "moebel",
      "x": 24,
@@ -1454,7 +1477,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
@@ -1487,7 +1510,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "mf15TreppeLochZimmer",
      "type": "moebel",
      "x": 16,
@@ -1599,11 +1622,6 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "ersterAbendGesehen"
-  },
-  {
-   "name": "sperren",
-   "type": "string",
-   "value": "2,8;2,9;2,10"
   },
   {
    "name": "freigeben",

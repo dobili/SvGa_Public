@@ -71,6 +71,14 @@ def test_gedrehte_treppe_hat_den_antritt_oben():
     assert antritt(stueck, felder, False, {"drehung": 90})[0] == "links"
 
 
+def test_treppe_zum_betrachter_hat_den_antritt_oben():
+    """Treppe zum Dachboden im Zimmer seit 16.11.2026: ``treppeZumBetrachter`` mit ``antritt`` „oben“."""
+    stueck = {"x": 16, "y": 115, "breite": 48, "hoehe": 61}
+    felder = (1, 7, 3, 10)
+    assert antritt(stueck, felder, False, {}, "oben") == ("oben", [(1, 6), (2, 6), (3, 6)])
+    assert antritt(stueck, felder, False, {"drehung": 180}, "oben")[0] == "unten"
+
+
 def test_treppe_unter_dem_boden_liegt_im_loch():
     assert im_loch({"x": 16, "y": 61, "breite": 28, "hoehe": 24}, ZIMMER)
     assert not im_loch({"x": 48, "y": 16, "breite": 16, "hoehe": 32}, ZIMMER)

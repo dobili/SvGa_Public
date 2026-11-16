@@ -719,7 +719,7 @@
      "name": "mf4Kommode",
      "type": "moebel",
      "x": 112,
-     "y": 48,
+     "y": 43,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -728,7 +728,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 67
       },
       {
        "name": "kollision",

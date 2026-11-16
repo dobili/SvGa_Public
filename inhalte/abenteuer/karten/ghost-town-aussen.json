@@ -304,7 +304,7 @@
     0,
     0,
     0,
-    0,
+    1,
     1,
     1,
     1,
@@ -359,7 +359,7 @@
     1,
     1,
     1,
-    0,
+    1,
     0,
     1,
     1,
@@ -9884,6 +9884,11 @@
    "name": "kennung",
    "type": "string",
    "value": "ghostTown.aussen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "0,5;55,5"
   }
  ]
 }

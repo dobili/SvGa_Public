@@ -30,7 +30,7 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [10, 11],
-      "versatz": [0, 20]
+      "versatz": [0, 19]
     },
     {
       "moebel": "cc4RegalA",
@@ -142,7 +142,13 @@
     },
     {
       "moebel": "cc6TuerSued",
-      "feld": [11, 13]
+      "feld": [11, 13],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [11, 11],
+      "versatz": [0, 19]
     }
   ],
   "ausloeser": [

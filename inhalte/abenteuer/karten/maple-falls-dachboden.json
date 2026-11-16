@@ -1265,11 +1265,6 @@
        "value": false
       },
       {
-       "name": "drehung",
-       "type": "int",
-       "value": 180
-      },
-      {
        "name": "massstab",
        "type": "float",
        "value": 1.1

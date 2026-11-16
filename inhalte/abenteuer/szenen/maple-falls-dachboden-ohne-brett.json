@@ -146,7 +146,6 @@
     {
       "moebel": "mf15TreppeLochDachboden",
       "feld": [0, 6],
-      "drehung": 180,
       "versatz": [16, 33],
       "deckkraft": 25,
       "massstab": 1.1,

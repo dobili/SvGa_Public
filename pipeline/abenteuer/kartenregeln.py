@@ -129,7 +129,7 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             maske = angabe.get("maske")
             abgang = angabe.get("richtung") == "runter" and (not maske or "." in maske[0])
             # Gedreht (Karteneditor) liegt der Antritt auf der gedrehten Seite (bauweisen.antritt).
-            seite, felder = antritt(s, felder, abgang, eintrag)
+            seite, felder = antritt(s, felder, abgang, eintrag, angabe.get("antritt"))
             if not im_loch(s, zeilen) and all(_gesperrt(zeilen, x, y) for x, y in felder):
                 befunde.append(f"{name}: Treppe ohne freien Antritt {seite}")
     return (

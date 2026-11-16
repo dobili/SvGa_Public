@@ -1243,29 +1243,6 @@
     },
     {
      "id": 26,
-     "name": "cc4Leselampe",
-     "type": "moebel",
-     "x": 208,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
      "name": "mf2StuhlL",
      "type": "moebel",
      "x": 16,
@@ -1288,7 +1265,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "mf2Schachtisch",
      "type": "moebel",
      "x": 32,
@@ -1311,7 +1288,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 50,
@@ -1334,7 +1311,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "mf2Schachtisch",
      "type": "moebel",
      "x": 160,
@@ -1357,7 +1334,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 178,
@@ -1380,7 +1357,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "mf2StuhlR",
      "type": "moebel",
      "x": 208,
@@ -1403,7 +1380,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 32,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 16,
@@ -1426,7 +1403,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 33,
      "name": "cc4RegalC",
      "type": "moebel",
      "x": 240,
@@ -1449,7 +1426,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 34,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
      "x": 144,
@@ -1472,7 +1449,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 35,
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 144,
@@ -1495,7 +1472,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 36,
      "name": "pd6Kommode",
      "type": "moebel",
      "x": 208,
@@ -1514,6 +1491,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "cc4Leselampe",
+     "type": "moebel",
+     "x": 210,
+     "y": 19,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 57
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     },

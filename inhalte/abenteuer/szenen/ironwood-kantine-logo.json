@@ -675,7 +675,7 @@
       "zu": "clubtisch"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlDunkelLinks",
       "feld": [32, 6],
       "zu": "clubtisch"
     },
@@ -700,7 +700,7 @@
       "zu": "clubtisch2"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlDunkelLinks",
       "feld": [29, 11],
       "zu": "clubtisch2"
     },
@@ -725,7 +725,7 @@
       "zu": "clubtisch3"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlDunkelLinks",
       "feld": [33, 11],
       "zu": "clubtisch3"
     },
@@ -750,7 +750,7 @@
       "zu": "clubtisch4"
     },
     {
-      "moebel": "wzStuhlLinks",
+      "moebel": "mf3StuhlDunkelLinks",
       "feld": [31, 15],
       "zu": "clubtisch4"
     },

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 37,
+ "nextobjectid": 38,
  "layers": [
   {
    "id": 1,
@@ -1445,8 +1445,8 @@
      "id": 28,
      "name": "gt7Fussmatte",
      "type": "moebel",
-     "x": 168,
-     "y": 200,
+     "x": 160,
+     "y": 198,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1466,6 +1466,29 @@
     },
     {
      "id": 29,
+     "name": "gt7Fussmatte",
+     "type": "moebel",
+     "x": 176,
+     "y": 198,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
      "name": "gt13SchwingtuerDoppel",
      "type": "moebel",
      "x": 160,
@@ -1488,7 +1511,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 48,
@@ -1511,7 +1534,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 64,
@@ -1534,7 +1557,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 96,
@@ -1557,7 +1580,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 112,
@@ -1580,7 +1603,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "gt7FassKlein",
      "type": "moebel",
      "x": 144,
@@ -1603,7 +1626,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "gt7FassKlein",
      "type": "moebel",
      "x": 144,
@@ -1626,7 +1649,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "gt10Abzeichen",
      "type": "moebel",
      "x": 288,

@@ -53,7 +53,8 @@
     },
     {
       "moebel": "pd6PflanzeGross",
-      "feld": [17, 9]
+      "feld": [17, 8],
+      "versatz": [7, 0]
     },
     {
       "moebel": "pd6Teppich",

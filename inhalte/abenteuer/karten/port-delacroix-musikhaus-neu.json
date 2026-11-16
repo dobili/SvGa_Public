@@ -1128,8 +1128,8 @@
      "id": 14,
      "name": "pd6PflanzeGross",
      "type": "moebel",
-     "x": 272,
-     "y": 144,
+     "x": 279,
+     "y": 128,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1138,7 +1138,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 168
       },
       {
        "name": "kollision",

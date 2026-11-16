@@ -304,7 +304,7 @@
     0,
     0,
     0,
-    0,
+    1,
     1,
     1,
     1,
@@ -359,7 +359,7 @@
     1,
     1,
     1,
-    0,
+    1,
     0,
     1,
     1,
@@ -9889,6 +9889,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "goldmineOffen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "0,5;55,5"
   }
  ]
 }

@@ -74,7 +74,8 @@
     },
     {
       "moebel": "mf4Kommode",
-      "feld": [7, 3]
+      "feld": [7, 3],
+      "versatz": [0, -5]
     }
   ],
   "ausloeser": [

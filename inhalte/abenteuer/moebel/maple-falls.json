@@ -5758,8 +5758,8 @@
       "hinweis": "Stufen von mf4Treppe zwischen den Holmen, oben angeschnitten: die Treppe unter dem Treppenloch im Zimmer (Karteneditor des Autors, 16.11.2026; dort Maßstab 110 %, Deckkraft 25 %)"
     },
     "mf15TreppeLochDachboden": {
-      "quelle": "spiel/generic/generic_134.png",
-      "ausschnitt": [9, 12, 37, 25],
+      "quelle": "spiel/eigene/treppe_zum_betrachter.png",
+      "ausschnitt": [20, 48, 48, 61],
       "breite": 28,
       "hoehe": 13,
       "kollision": false,
@@ -5767,7 +5767,7 @@
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "oberste Stufen von mf4Treppe mit dem rechten Holm: die Treppe unter dem Treppenloch im Dachboden (Karteneditor des Autors, 16.11.2026; dort gedreht 180 Grad, Maßstab 110 %, Deckkraft 25 %)"
+      "hinweis": "oberste Stufen von treppeZumBetrachter mit dem rechten Pfosten (über dem Antrittspfosten): die Treppe unter dem Treppenloch im Dachboden, Ausschnitt der Treppe im Zimmer darunter (Regel 10.89). Bis 16.11.2026 ein Ausschnitt der gedrehten mf4Treppe (Karteneditor des Autors; dort Maßstab 110 %, Deckkraft 25 %), umgestellt mit der neuen Zimmertreppe; ungedreht, weil das Bild schon zum Betrachter ansteigt"
     },
     "mf15GelaenderEckeLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Top_Left_16x16.png",

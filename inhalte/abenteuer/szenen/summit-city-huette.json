@@ -77,10 +77,6 @@
       "feld": [11, 5]
     },
     {
-      "moebel": "cc4Leselampe",
-      "feld": [13, 5]
-    },
-    {
       "moebel": "mf2StuhlL",
       "feld": [1, 9]
     },
@@ -128,7 +124,13 @@
     },
     {
       "moebel": "pd6Kommode",
-      "feld": [13, 2]
+      "feld": [13, 2],
+      "id": "kommode"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "kommode",
+      "versatz": [-6, 0]
     },
     {
       "moebel": "rv8Truhe",

@@ -73,6 +73,7 @@
     {
       "moebel": "wzFenster",
       "feld": [12, 1],
+      "versatz": [8, 0],
       "an_wand": true
     },
     {
@@ -86,17 +87,18 @@
     },
     {
       "moebel": "mf5NischenstuhlRechts",
-      "feld": [11, 3]
+      "feld": [12, 3],
+      "maske": ["#", "#"]
     },
     {
       "moebel": "mf5Nischentisch",
-      "feld": [12, 4],
+      "feld": [13, 4],
       "id": "nische",
       "versatz": [0, -9]
     },
     {
       "moebel": "mf5NischenstuhlLinks",
-      "feld": [13, 3]
+      "feld": [14, 3]
     },
     {
       "moebel": "mf12InnentuerHolz",

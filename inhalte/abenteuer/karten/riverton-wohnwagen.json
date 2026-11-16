@@ -716,7 +716,7 @@
      "id": 15,
      "name": "wzFenster",
      "type": "moebel",
-     "x": 192,
+     "x": 200,
      "y": 16,
      "width": 32,
      "height": 32,
@@ -785,7 +785,7 @@
      "id": 18,
      "name": "mf5NischenstuhlRechts",
      "type": "moebel",
-     "x": 176,
+     "x": 192,
      "y": 48,
      "width": 16,
      "height": 32,
@@ -801,6 +801,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#/#"
       }
      ]
     },
@@ -808,7 +813,7 @@
      "id": 19,
      "name": "mf5Nischentisch",
      "type": "moebel",
-     "x": 192,
+     "x": 208,
      "y": 55,
      "width": 16,
      "height": 16,
@@ -831,7 +836,7 @@
      "id": 20,
      "name": "mf5NischenstuhlLinks",
      "type": "moebel",
-     "x": 208,
+     "x": 224,
      "y": 48,
      "width": 16,
      "height": 32,

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 73,
+ "nextobjectid": 74,
  "layers": [
   {
    "id": 1,
@@ -2837,7 +2837,7 @@
      "id": 69,
      "name": "pd6Fussmatte",
      "type": "moebel",
-     "x": 216,
+     "x": 208,
      "y": 227,
      "width": 16,
      "height": 16,
@@ -2858,6 +2858,29 @@
     },
     {
      "id": 70,
+     "name": "pd6Fussmatte",
+     "type": "moebel",
+     "x": 224,
+     "y": 227,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 71,
      "name": "pd9Lehrertisch",
      "type": "moebel",
      "x": 272,
@@ -2880,7 +2903,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 208,
@@ -2903,7 +2926,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 224,

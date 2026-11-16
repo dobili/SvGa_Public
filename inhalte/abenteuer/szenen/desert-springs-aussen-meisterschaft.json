@@ -18,10 +18,10 @@
   "raster": [
     "############################################################",
     "############################################################",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
     "#.............ppppppppppppppppppppppp......................#",
     "#.............ppppppppppppppppppppppp......................#",
     "#................pppppppppppppppppppp......................#",
@@ -1147,5 +1147,15 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "einfach", "industrie", "klassisch", "modern", "laendlich", "rustikal"],
-  "zustand_der_karte": "endeAkt3Gesehen"
+  "zustand_der_karte": "endeAkt3Gesehen",
+  "sperren": [
+    [0, 2],
+    [0, 3],
+    [0, 4],
+    [0, 5],
+    [59, 2],
+    [59, 3],
+    [59, 4],
+    [59, 5]
+  ]
 }

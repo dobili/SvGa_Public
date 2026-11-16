@@ -297,7 +297,12 @@
     {
       "moebel": "pd6Fussmatte",
       "feld": [13, 14],
-      "versatz": [8, 3]
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "pd6Fussmatte",
+      "feld": [14, 14],
+      "versatz": [0, 3]
     },
     {
       "moebel": "pd9Lehrertisch",

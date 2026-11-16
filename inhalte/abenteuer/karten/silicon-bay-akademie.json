@@ -2624,7 +2624,7 @@
      "id": 45,
      "name": "sb5SesselRund",
      "type": "moebel",
-     "x": 336,
+     "x": 320,
      "y": 80,
      "width": 32,
      "height": 48,
@@ -2670,8 +2670,8 @@
      "id": 47,
      "name": "sb8Beistelltisch",
      "type": "moebel",
-     "x": 352,
-     "y": 128,
+     "x": 340,
+     "y": 88,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -2680,7 +2680,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 112
       },
       {
        "name": "kollision",

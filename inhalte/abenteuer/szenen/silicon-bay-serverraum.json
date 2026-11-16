@@ -34,8 +34,13 @@
     },
     {
       "moebel": "sb5Fussmatte",
+      "feld": [8, 8],
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "sb5Fussmatte",
       "feld": [7, 8],
-      "versatz": [8, 2]
+      "versatz": [0, 2]
     },
     {
       "moebel": "sb12Klimageraet",

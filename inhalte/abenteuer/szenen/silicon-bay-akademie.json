@@ -175,7 +175,7 @@
     },
     {
       "moebel": "sb5SesselRund",
-      "feld": [21, 5]
+      "feld": [20, 5]
     },
     {
       "moebel": "sb5SesselRund",
@@ -183,7 +183,8 @@
     },
     {
       "moebel": "sb8Beistelltisch",
-      "feld": [22, 8]
+      "feld": [21, 5],
+      "versatz": [4, 8]
     },
     {
       "moebel": "sb8Pflanze",

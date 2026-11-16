@@ -114,17 +114,25 @@ def im_loch(stueck: dict, zeilen: list[str]) -> bool:
 
 
 def antritt(
-    stueck: dict, felder: tuple[int, int, int, int], abgang: bool, eintrag: dict
+    stueck: dict,
+    felder: tuple[int, int, int, int],
+    abgang: bool,
+    eintrag: dict,
+    grundseite: str | None = None,
 ) -> tuple[str, list[Feld]]:
     """Seite und Kacheln, von denen man eine Treppe betritt, so wie sie auf der Karte liegt.
 
     Eine Treppe hinauf betritt man vor ihrer unteren Kante, einen Abgang (Öffnung mit Geländer) in
     seiner obersten Reihe; Drehung und Spiegeln drehen die Seite mit (``objektrichtung``).
+    ``grundseite`` ist das Katalogfeld ``antritt`` für Bilder, die anders gezeichnet sind: Die
+    Treppe zum Betrachter (``treppeZumBetrachter``) steigt nach Süden an, ihre unterste Stufe ist
+    oben im Bild; man betritt sie vor der oberen Kante.
     Beispiel: Treppe zum Dachboden im Zimmer, ``drehung`` 180 → Seite „oben“, Kacheln der Reihe über
     dem Bild (vorher wurde unten gesucht, an der Südwand: „Treppe ohne freien Antritt unten“).
     """
     x0, y0, x1, y1 = felder
-    seite = drehe_richtung("oben" if abgang else "unten", form_von(eintrag)) or "unten"
+    grund = grundseite or ("oben" if abgang else "unten")
+    seite = drehe_richtung(grund, form_von(eintrag)) or grund
     oben = stueck["y"] // K
     if seite in ("oben", "unten"):
         y = (oben if abgang else oben - 1) if seite == "oben" else (y1 if abgang else y1 + 1)

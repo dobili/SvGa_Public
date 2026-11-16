@@ -1849,3 +1849,19 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Meine Empfehlung: diese Gebäude mit dem Maßstab 1,2 zeichnen. Noch nicht umgesetzt, weil sich
       dabei die Kartenlage um die Gebäude ändert; „ok“ genügt, dann baue ich es.
       Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).
+- [ ] RO34. **Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt):** Ein Helfer hat
+      alle Innenräume und die meisten Außenkarten von Akt 2 bis 4 nach den neuen Regeln durchgesehen
+      und 25 Karten verbessert: je Türfeld eine Fußmatte vor der Tür (Lockport Gasthaus, Riverton
+      Pavillon, Turnhalle Port Delacroix, Serverraum, Saloon, Antiquariat), gleiche Stühle in der
+      Kantine Ironwood, Mülleimer an die Garderobe, Tischlampe auf die Kommode in Wards Hütte,
+      Beistelltisch zwischen die Sessel in der Akademie, Kommode an die Wand in der Siedlungshütte,
+      Sitzecke im Wohnwagen Riverton nicht mehr vor der Kochplatte, Felswände in Ghost Town und
+      Desert Springs bis zum Kartenrand. Die gedrehte Treppe in deinem Zimmer ist jetzt deine Treppe
+      zum Betrachter (3 Kacheln breit, unten der Absatz abgeschnitten, damit sie wie vorher an der
+      Südwand endet); im Dachbodenloch liegen ihre obersten Stufen, nicht mehr gedreht.
+      Meine Entscheidungen zu den offenen Geschmacksfragen (werden gerade umgesetzt): Wards
+      Ohrensessel näher an den Spieltisch (die Teekanne rückt dafür); Steinbruch so lassen (die
+      dünnen Seitenlinien gelten als Grubenrand); Gleise in Desert Springs links bis zum Rand;
+      Sessel in der Lobby Silicon Bay zum Tisch gedreht; vier Stühle in der Garage bleiben
+      (Zuschauer); gerader Läufer im Museum Ironwood bis zur Nordwand; besseres Kochfeld im
+      Wohnwagen; Mülleimer der Arena-Halle an die Wand am Eingang.

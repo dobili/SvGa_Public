@@ -5689,7 +5689,7 @@
     },
     {
      "id": 153,
-     "name": "wzStuhlLinks",
+     "name": "mf3StuhlDunkelLinks",
      "type": "moebel",
      "x": 512,
      "y": 96,
@@ -5804,7 +5804,7 @@
     },
     {
      "id": 158,
-     "name": "wzStuhlLinks",
+     "name": "mf3StuhlDunkelLinks",
      "type": "moebel",
      "x": 464,
      "y": 176,
@@ -5919,7 +5919,7 @@
     },
     {
      "id": 163,
-     "name": "wzStuhlLinks",
+     "name": "mf3StuhlDunkelLinks",
      "type": "moebel",
      "x": 528,
      "y": 176,
@@ -6034,7 +6034,7 @@
     },
     {
      "id": 168,
-     "name": "wzStuhlLinks",
+     "name": "mf3StuhlDunkelLinks",
      "type": "moebel",
      "x": 496,
      "y": 240,

@@ -119,14 +119,14 @@
       "massstab": 0.75
     },
     {
-      "moebel": "mf4Treppe",
+      "moebel": "treppeZumBetrachter",
       "feld": [1, 7],
       "id": "treppeDach_2",
-      "versatz": [-8, 1],
-      "drehung": 180,
+      "versatz": [0, 3],
+      "zuschnitt": [0, 0, 0, 35],
       "ebene": 1,
       "kollision": true,
-      "maske": [".##", ".##", ".##", "..."]
+      "maske": ["...", "###", "###", "###"]
     },
     {
       "moebel": "gt7ZaunMR",
@@ -199,6 +199,14 @@
       }
     },
     {
+      "name": "treppeDachboden",
+      "feld": [3, 7],
+      "eigenschaften": {
+        "ankunft": "3,6",
+        "blick": "rechts"
+      }
+    },
+    {
       "name": "fensterbank",
       "feld": [9, 3]
     },
@@ -224,11 +232,6 @@
     }
   ],
   "figuren": [],
-  "sperren": [
-    [2, 8],
-    [2, 9],
-    [2, 10]
-  ],
   "freigeben": [
     [1, 4]
   ],

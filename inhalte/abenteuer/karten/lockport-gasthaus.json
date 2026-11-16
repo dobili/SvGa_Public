@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 79,
+ "nextobjectid": 78,
  "layers": [
   {
    "id": 1,
@@ -2808,7 +2808,7 @@
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 336,
-     "y": 200,
+     "y": 194,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2943,29 +2943,6 @@
     },
     {
      "id": 73,
-     "name": "mf4Fussmatte",
-     "type": "moebel",
-     "x": 336,
-     "y": 204,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 74,
      "name": "ld5Glaeser",
      "type": "moebel",
      "x": 168,
@@ -2988,7 +2965,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 74,
      "name": "ld5Glaeser",
      "type": "moebel",
      "x": 168,
@@ -3011,7 +2988,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 75,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 304,
@@ -3034,7 +3011,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 76,
      "name": "ld14KegelbahnEndeOst",
      "type": "moebel",
      "x": 272,
@@ -3057,7 +3034,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 77,
      "name": "ld14Kegelregal",
      "type": "moebel",
      "x": 16,

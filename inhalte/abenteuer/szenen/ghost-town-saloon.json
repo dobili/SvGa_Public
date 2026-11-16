@@ -110,7 +110,12 @@
     {
       "moebel": "gt7Fussmatte",
       "feld": [10, 12],
-      "versatz": [8, 8]
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "gt7Fussmatte",
+      "feld": [11, 12],
+      "versatz": [0, 6]
     },
     {
       "moebel": "gt13SchwingtuerDoppel",

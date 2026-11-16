@@ -37,6 +37,7 @@ const kollision = require("./kollision.cjs");
 const figuren = require("./figuren.cjs");
 const kollisionspinsel = require("./pinsel.cjs");
 const laden = require("./laden.cjs");
+const versatz = require("./versatz.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -363,6 +364,7 @@ async function ruecklauf(seite, arbeit) {
   await figuren.loeschenUndKopieren(seite, pruefe);
   await figuren.varianten(seite, pruefe);
   await kollisionspinsel.kollisionspinsel(seite, pruefe);
+  await versatz.versatz(seite, pruefe);
   await laden.laden(seite, arbeit, pruefe);
   await seite.reload();
   await seite.waitForFunction(() => KE.zustand.datei);

@@ -52,6 +52,17 @@
     ctx.stroke();
   }
 
+  /** Sperrflächen von Möbeln abseits des Rasters, pixelgenau wie im Spiel (geometrie.js). */
+  function zeichneFlaechen(ctx, flaechen, zoom) {
+    ctx.fillStyle = FARBE_KOLLISION;
+    ctx.strokeStyle = RAND_KOLLISION;
+    ctx.lineWidth = 1.5 / zoom;
+    for (const [px, py] of flaechen) {
+      ctx.fillRect(px, py, K, K);
+      ctx.strokeRect(px, py, K, K);
+    }
+  }
+
   /**
    * Kacheln, die eine Figur oder ein Statist nur unter einer Bedingung sperrt (orte.json „wenn“,
    * Tageszeit „wann“): transparent gelb mit eigener gestrichelter Umrandung je Kachel, damit der
@@ -287,7 +298,9 @@
     // Figuren und stehende Statisten sperren wie Möbel; nur bedingt anwesende gestrichelt.
     if (z.schalter.kollision) {
       const gesperrt = KE.sperrkacheln(szene, stuecke);
-      zeichneSperren(ctx, gesperrt, a.zoom);
+      const anzeige = KE.sperranzeige(szene, stuecke);
+      zeichneSperren(ctx, anzeige.kacheln, a.zoom);
+      zeichneFlaechen(ctx, anzeige.flaechen, a.zoom);
       zeichneBedingte(ctx, KE.figurensperren(szene).bedingt, gesperrt, a.zoom);
       KE.zeichnePinsel(ctx, szene, a.zoom); // Kreuz für gemalte Sperren, grün für Freigaben (pinsel.js)
     }

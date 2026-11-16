@@ -111,8 +111,8 @@
     const z = KE.zustand;
     const s = stueck(z.kollisionUid);
     if (!s) return (z.kollisionUid = null);
-    const x = Math.floor(px / K) - Math.floor(s.x / K);
-    const y = Math.floor(py / K) - Math.floor(s.y / K);
+    const x = Math.floor((px - s.x) / K);
+    const y = Math.floor((py - s.y) / K);
     const zeilen = raster(s);
     if (y < 0 || x < 0 || y >= zeilen.length || x >= zeilen[0].length)
       return KE.status("Diese Kachel gehört nicht zum Bild. Fertig mit „Fertig“ oder Esc.");
@@ -131,8 +131,10 @@
     if (!z.kollisionUid || z.schalter.vorher) return;
     const s = stueck(z.kollisionUid);
     if (!s) return (z.kollisionUid = null);
-    const x0 = Math.floor(s.x / K) * K;
-    const y0 = Math.floor(s.y / K) * K;
+    // Am Bild ausgerichtet, nicht am Kartenraster: Die Maske gilt ab der linken oberen Ecke des
+    // Bildes, auch wenn es um ein paar Pixel verschoben ist (Fehlerbericht des Autors, 16.11.2026).
+    const x0 = s.x;
+    const y0 = s.y;
     raster(s).forEach((zeile, y) =>
       [...zeile].forEach((c, x) => {
         ctx.fillStyle = c === "#" ? FARBE_GESPERRT : FARBE_FREI;

@@ -258,6 +258,29 @@
     return gesperrt;
   };
 
+  /**
+   * Für die Anzeige (Fehlerbericht des Autors, 16.11.2026): Im Spiel sperrt ein Möbel genau seine
+   * Pixelfläche (moebel.ts, Phaser-Körper je Maskenkachel). Steht es nicht auf dem Raster (Feinschub,
+   * Pfeiltasten, Alt-Ziehen), zeigt der Editor seine Maskenkacheln deshalb als Pixelflächen statt
+   * als zwei berührte Kacheln. Ausgabe: { kacheln: Set „x,y“, flaechen: [[px, py], …] } (je 16 × 16).
+   */
+  KE.sperranzeige = function (szene, stuecke) {
+    const { freigeben } = KE.pinselmengen(szene);
+    const amRaster = stuecke.filter((s) => s.x % K === 0 && s.y % K === 0);
+    const kacheln = KE.grundsperren(szene, amRaster);
+    for (const k of KE.figurensperren(szene).fest) kacheln.add(k);
+    const flaechen = [];
+    for (const s of stuecke) {
+      if (!s.kollision || (s.x % K === 0 && s.y % K === 0)) continue;
+      for (const [a, b] of KE.maskenfelder(s.angabe)) {
+        const px = s.x + a * K;
+        const py = s.y + b * K;
+        if (!KE.beruehrt(px, py).some((k) => freigeben.has(k))) flaechen.push([px, py]);
+      }
+    }
+    return { kacheln, flaechen };
+  };
+
   /** Markierungen (Auslöser, Figuren, Belebung) als Stücke von einer Kachel. */
   KE.markierungen = function (szene) {
     const arten = [

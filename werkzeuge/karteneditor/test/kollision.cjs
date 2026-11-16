@@ -216,4 +216,4 @@ async function treppenabgang(seite, pruefe) {
   await seite.click("[data-schalter=raster]");
 }
 
-module.exports = { schalterUndGrund, kachelnBearbeiten, treppenabgang, K };
+module.exports = { schalterUndGrund, kachelnBearbeiten, treppenabgang, sperrendesObjekt, K };

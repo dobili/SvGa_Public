@@ -1835,4 +1835,20 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       4 Pixel neben die Mitte, wenn die Mitte vor ihm gesperrt ist. Das gilt auf allen Karten und
       macht das Laufen an Möbelkanten eher leichter. Bitte beim nächsten Spielen darauf achten, ob
       sich das Laufen irgendwo anders anfühlt.
+- [ ] RO32. **Regelvorschläge aus deinen Editoränderungen (16.11.2026, abends; noch NICHT als
+      Regel gespeichert, bitte zustimmen oder korrigieren):** (1) Treppenloch aus Bildern als neue
+      Regel und Vorlage für andere Häuser: Loch als Leere im Boden (mindestens 2 × 2), darunter die
+      Treppe mit 25 % Deckkraft ohne eigene Kollision, Geländer an jeder Seite, die weder Wand noch
+      Zugang ist, Auslöser auf der ersten Reihe des Lochs, Ankunft davor. Treppe und Geländerteile
+      sind jetzt feste Bibliothekseinträge („mf15…“). (2) Schachuhr: Das Brett liegt mittig auf dem
+      Tisch, die Uhr dahinter darf mit ihrem oberen Rand über die Hinterkante ragen. (3) Ein Möbel
+      darf seine Kollision an den Pinsel abgeben (gemalte Sperre unter dem Bild); lieber so als eine
+      unsichtbare Bodenkachel mit Kollision (wie unter der Jukebox). (4) Frisches Essen nur an
+      Tischen mit Gast, sonst benutztes Geschirr oder nichts (deine Notiz; im Diner stehen noch an
+      drei Tischen Teller ohne Gast, ich räume sie ab, wenn du zustimmst). (5) Häuser in der hinteren
+      Reihe mindestens 5 × 5 wie die vorderen? (6) Spielbeginn auf dem Dachboden direkt vor dem
+      Treppenloch, so gewollt? Schon geändert, weil es Prüfungen waren, nicht Regeln: Geländerteile
+      am Lochrand, überlappende Geländerteile, eine Treppe unter dem Boden und Auslöser mit feiner
+      Kollision gelten nicht mehr als Fehler; doppelt übertragene Teile (Zimmer, Dachboden, Diner)
+      sind entfernt.
 

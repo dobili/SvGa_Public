@@ -4,9 +4,11 @@
  * Mehrfachauswahl, „Kollision bearbeiten“ mit Kachelklick, Kollisionsanzeige, Rückgängig,
  * „Zurück zum Katalog“; dann im Dachboden (nur im Browser und in einer Kopie im Testordner): Treppe
  * setzen, obere Kacheln mit Dielen abdecken, Treppe bis auf das Loch durchgehbar machen, Übergang
- * auf die Lochkacheln setzen, Auslöser duplizieren und löschen.
+ * auf die Lochkacheln setzen, Auslöser duplizieren und löschen; zuletzt die zurückgeschriebene
+ * Kopie im Kartenbau (Tiefen, Regel 10.84, Befunde).
  */
 "use strict";
+const { execFileSync } = require("child_process");
 const h = require("./hilfen.cjs");
 
 const K = 16;
@@ -156,21 +158,26 @@ async function treppenabgang(seite, pruefe) {
   // Treppe setzen (wie Ziehen aus der Bibliothek), dann die oberen zwei Reihen mit Dielen abdecken.
   await seite.evaluate(([k, x, y]) => KE.fuegeEin(k, x * 16 + 48, y * 16 + 40), [TREPPE, tx, ty]);
   const treppe = (await h.auswahl(seite))[0];
+  // Nur die eben gesetzten Dielen zählen: Die Karte des Autors trägt selbst Bodenkacheln.
+  const dielen = [];
   for (let y = 0; y < 2; y++)
-    for (let x = 0; x < 6; x++)
+    for (let x = 0; x < 6; x++) {
       await seite.evaluate(
         ([k, x, y]) => KE.fuegeEin(k, x * 16 + 8, y * 16 + 8),
         [DIELE, tx + x, ty + y],
       );
-  const tiefen = await seite.evaluate((u) => {
-    const alle = KE.platziere(KE.szene());
-    return {
-      treppe: alle.find((s) => s.uid === u).tiefe,
-      diele: alle.find((s) => s.kennung === "bkDielen").tiefe,
-    };
-  }, treppe);
+      dielen.push((await h.auswahl(seite))[0]);
+    }
+  const tiefen = await seite.evaluate(
+    ([u, dielen]) => {
+      const alle = KE.platziere(KE.szene());
+      const tiefe = (uid) => alle.find((s) => s.uid === uid).tiefe;
+      return { treppe: tiefe(u), diele: [...new Set(dielen.map(tiefe))] };
+    },
+    [treppe, dielen],
+  );
   pruefe(
-    tiefen.treppe === 1 && tiefen.diele === 2,
+    tiefen.treppe === 1 && tiefen.diele.join() === "2",
     `Dielen liegen über der Treppe (${JSON.stringify(tiefen)})`,
   );
   // Treppe bis auf das Loch durchgehbar: abgedeckte Reihen frei, unter dem Einstieg gesperrt.
@@ -216,4 +223,36 @@ async function treppenabgang(seite, pruefe) {
   await seite.click("[data-schalter=raster]");
 }
 
-module.exports = { schalterUndGrund, kachelnBearbeiten, treppenabgang, sperrendesObjekt, K };
+// Treppe flach (1), Dielen darüber (2), kein Befund 10.84, keine Kollisionsbefunde.
+const DACHBODENPRUEFUNG = `
+import json, sys
+from pipeline.abenteuer.anordnung import pruefe_loecher
+from pipeline.abenteuer.kartenbau import platziere
+from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektkollision import kollisionsbefunde
+szene, moebel = json.load(open(sys.argv[1])), lade_moebel()
+gesetzt = platziere(szene, moebel)[0]
+treppe = [s for s in gesetzt if s["name"] == "mf4TreppeAb"][0]
+# Nur Dielen auf der Treppe: Die Karte des Autors trägt selbst Bodenkacheln (etwa am Treppenloch).
+auf = lambda s: s["x"] < treppe["x"] + treppe["breite"] and treppe["x"] < s["x"] + s["breite"] and s["y"] < treppe["y"] + treppe["hoehe"] and treppe["y"] < s["y"] + s["hoehe"]
+d = ",".join(str(t) for t in sorted({s["tiefe"] for s in gesetzt if s["name"] == "bkDielen" and auf(s)}))
+print(treppe["tiefe"], d, pruefe_loecher(szene, gesetzt, moebel), kollisionsbefunde(szene, moebel))
+`;
+
+/** Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau. */
+function dachbodenRuecklauf(kopie, pruefe) {
+  const pruefung = execFileSync("python3", ["-c", DACHBODENPRUEFUNG, kopie], {
+    cwd: h.HAUPT,
+    encoding: "utf8",
+  }).trim();
+  pruefe(pruefung === "1 2 [] []", `Dachboden-Kopie: Tiefen, 10.84, Befunde (${pruefung})`);
+}
+
+module.exports = {
+  schalterUndGrund,
+  dachbodenRuecklauf,
+  kachelnBearbeiten,
+  treppenabgang,
+  sperrendesObjekt,
+  K,
+};

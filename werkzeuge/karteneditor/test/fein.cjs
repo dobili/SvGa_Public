@@ -7,6 +7,7 @@
  */
 "use strict";
 const { execFileSync } = require("child_process");
+const path = require("path");
 const h = require("./hilfen.cjs");
 
 const K = 16;
@@ -204,20 +205,25 @@ async function fein(seite, pruefe) {
 }
 
 // Die zurückgeschriebene Diner-Kopie: keine Befunde der feinen Felder, Tiled trägt „sperren_fein“.
+// Ausgabe: Befunde und die Zahl der feinen Sperren, die gegenüber der echten Szene hinzukamen (die
+// Karte des Autors trägt selbst feine Sperren).
 const DINERPRUEFUNG = `
 import json, sys
 from pipeline.abenteuer.feinbericht import feinbefunde
 from pipeline.abenteuer.kartenbau import platziere, raster, tiled, lade, INHALTE
 from pipeline.abenteuer.moebelliste import lade_moebel
-szene = json.load(open(sys.argv[1]))
-karte = tiled(szene, raster(szene), platziere(szene, lade_moebel())[0], lade(INHALTE / "karten" / "maple-falls-dachboden.json"))
-fein = [e["value"].count(";") + 1 for e in karte["properties"] if e["name"] == "sperren_fein"]
-print(feinbefunde(szene, raster(szene)), fein)
+moebel = lade_moebel()
+def feine(szene):
+    karte = tiled(szene, raster(szene), platziere(szene, moebel)[0], lade(INHALTE / "karten" / "maple-falls-dachboden.json"))
+    return sum(e["value"].count(";") + 1 for e in karte["properties"] if e["name"] == "sperren_fein")
+szene, echt = (json.load(open(d)) for d in sys.argv[1:3])
+print(feinbefunde(szene, raster(szene)), [feine(szene) - feine(echt)])
 `;
 
 /** Prüft die Zeilen des Rücklaufs zur feinen Kollision (Kachel und Anteil) und die Diner-Kopie. */
 function ruecklauf(ausgabe, pruefe, dinerKopie) {
-  const ergebnis = execFileSync("python3", ["-c", DINERPRUEFUNG, dinerKopie], {
+  const echt = path.join(h.HAUPT, "inhalte/abenteuer/szenen", h.KARTE);
+  const ergebnis = execFileSync("python3", ["-c", DINERPRUEFUNG, dinerKopie, echt], {
     cwd: h.HAUPT,
     encoding: "utf8",
   }).trim();

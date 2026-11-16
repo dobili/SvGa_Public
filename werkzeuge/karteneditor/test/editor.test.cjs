@@ -88,14 +88,20 @@ async function einzeln(seite) {
   await seite.keyboard.press("Delete");
   pruefe((await zahl(seite)) === anzahl, "Entf löscht die Kopie");
   await seite.mouse.click((await punkt(seite, uid)).x, (await punkt(seite, uid)).y);
+  // Autorkarten tragen eigene Ebenen (etwa -57 für Bänke hinter der Theke): relativ prüfen.
+  const ebeneVorher = vorher.ebene || 0;
   await seite.click("#eigenschaften button.vorn");
   const ebene = (await eintrag(seite, uid)).ebene || 0;
-  pruefe(ebene > 0, `Nach vorn setzt eine Ebene (${ebene})`);
-  pruefe((await seite.textContent(".ebenenanzeige")).includes("Ebene +"), "Ebene wird angezeigt");
+  pruefe(ebene > ebeneVorher, `Nach vorn hebt die Ebene (${ebeneVorher} → ${ebene})`);
+  const anzeige = `Ebene ${ebene > 0 ? "+" : ""}${ebene || 0} `;
+  pruefe((await seite.textContent(".ebenenanzeige")).includes(anzeige), "Ebene wird angezeigt");
   await seite.keyboard.press("Control+z");
-  pruefe(((await eintrag(seite, uid)).ebene || 0) === 0, "Strg+Z macht die Ebene rückgängig");
+  pruefe(
+    ((await eintrag(seite, uid)).ebene || 0) === ebeneVorher,
+    "Strg+Z macht die Ebene rückgängig",
+  );
   await seite.keyboard.press("Control+y");
-  pruefe((await eintrag(seite, uid)).ebene === ebene, "Strg+Y wiederholt");
+  pruefe(((await eintrag(seite, uid)).ebene || 0) === ebene, "Strg+Y wiederholt");
   return uid;
 }
 
@@ -267,20 +273,6 @@ async function schalter(seite) {
   await seite.keyboard.press("Escape");
 }
 
-// Treppe flach (1), Dielen darüber (2), kein Befund 10.84, keine Kollisionsbefunde.
-const DACHBODENPRUEFUNG = `
-import json, sys
-from pipeline.abenteuer.anordnung import pruefe_loecher
-from pipeline.abenteuer.kartenbau import platziere
-from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.objektkollision import kollisionsbefunde
-szene, moebel = json.load(open(sys.argv[1])), lade_moebel()
-gesetzt = platziere(szene, moebel)[0]
-t = [s["tiefe"] for s in gesetzt if s["name"] == "mf4TreppeAb"][0]
-d = [s["tiefe"] for s in gesetzt if s["name"] == "bkDielen"][0]
-print(t, d, pruefe_loecher(szene, gesetzt, moebel), kollisionsbefunde(szene, moebel))
-`;
-
 async function ruecklauf(seite, arbeit) {
   const [laden] = await Promise.all([
     seite.waitForEvent("download"),
@@ -323,19 +315,7 @@ async function ruecklauf(seite, arbeit) {
   zuschnitt.ruecklauf(ausgabe, daten, pruefe); // Zuschnitt (Editor 1.5)
   fein.ruecklauf(ausgabe, pruefe, path.join(szenen, KARTE)); // Kollision fein (Editor 1.6)
 
-  // Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau.
-  const pruefung = execFileSync(
-    "python3",
-    ["-c", DACHBODENPRUEFUNG, path.join(szenen, DACHBODEN)],
-    {
-      cwd: HAUPT,
-      encoding: "utf8",
-    },
-  );
-  pruefe(
-    pruefung.trim() === "1 2 [] []",
-    `Dachboden-Kopie: Tiefen, 10.84, Befunde (${pruefung.trim()})`,
-  );
+  kollision.dachbodenRuecklauf(path.join(szenen, DACHBODEN), pruefe); // Treppenabgang
   console.log(ausgabe.split("\n").slice(0, 60).join("\n"));
 }
 

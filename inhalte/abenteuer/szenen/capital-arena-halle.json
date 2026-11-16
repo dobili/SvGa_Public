@@ -277,7 +277,7 @@
     },
     {
       "moebel": "ca7Muelleimer",
-      "feld": [5, 16]
+      "feld": [14, 17]
     },
     {
       "moebel": "ca7Fussmatte",
@@ -297,7 +297,7 @@
     },
     {
       "moebel": "ca7Pflanzekl",
-      "feld": [25, 16]
+      "feld": [25, 17]
     },
     {
       "moebel": "ca7Pflanzekl",
@@ -305,7 +305,7 @@
     },
     {
       "moebel": "ca7Muelleimer",
-      "feld": [23, 16]
+      "feld": [18, 17]
     },
     {
       "moebel": "ca7Pflanze",
@@ -410,7 +410,7 @@
     },
     {
       "name": "juno",
-      "feld": [18, 18],
+      "feld": [19, 18],
       "blick": "links"
     }
   ],

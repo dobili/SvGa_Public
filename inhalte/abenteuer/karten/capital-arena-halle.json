@@ -2078,7 +2078,7 @@
      "id": 19,
      "name": "juno",
      "type": "figur",
-     "x": 288,
+     "x": 304,
      "y": 288,
      "width": 16,
      "height": 16,
@@ -3459,8 +3459,8 @@
      "id": 76,
      "name": "ca7Muelleimer",
      "type": "moebel",
-     "x": 80,
-     "y": 256,
+     "x": 224,
+     "y": 272,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3469,7 +3469,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 296
       },
       {
        "name": "kollision",
@@ -3552,7 +3552,7 @@
      "name": "ca7Pflanzekl",
      "type": "moebel",
      "x": 400,
-     "y": 256,
+     "y": 272,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3561,7 +3561,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 296
       },
       {
        "name": "kollision",
@@ -3597,8 +3597,8 @@
      "id": 82,
      "name": "ca7Muelleimer",
      "type": "moebel",
-     "x": 368,
-     "y": 256,
+     "x": 288,
+     "y": 272,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3607,7 +3607,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 296
       },
       {
        "name": "kollision",

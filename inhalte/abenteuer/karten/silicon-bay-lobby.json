@@ -1522,19 +1522,19 @@
     },
     {
      "id": 21,
-     "name": "sb5Sessel",
+     "name": "sb17SesselWeissRechts",
      "type": "moebel",
      "x": 48,
-     "y": 112,
+     "y": 144,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 168
       },
       {
        "name": "kollision",
@@ -1568,19 +1568,19 @@
     },
     {
      "id": 23,
-     "name": "sb5Sessel",
+     "name": "sb17SesselWeissLinks",
      "type": "moebel",
      "x": 112,
-     "y": 112,
+     "y": 144,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 168
       },
       {
        "name": "kollision",
@@ -1594,7 +1594,7 @@
      "name": "pd6Couchtisch",
      "type": "moebel",
      "x": 80,
-     "y": 160,
+     "y": 144,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -1603,7 +1603,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 168
       },
       {
        "name": "kollision",

@@ -830,7 +830,7 @@
      "id": 6,
      "name": "teekanne",
      "type": "ausloeser",
-     "x": 160,
+     "x": 128,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1153,7 +1153,7 @@
      "id": 22,
      "name": "sc15OhrensesselBlickRechts",
      "type": "moebel",
-     "x": 80,
+     "x": 96,
      "y": 80,
      "width": 32,
      "height": 32,
@@ -1222,7 +1222,7 @@
      "id": 25,
      "name": "sc15OhrensesselBlickLinks",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 80,
      "width": 32,
      "height": 32,
@@ -1268,7 +1268,7 @@
      "id": 27,
      "name": "mf2Schachtisch",
      "type": "moebel",
-     "x": 32,
+     "x": 22,
      "y": 144,
      "width": 48,
      "height": 32,
@@ -1284,6 +1284,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../.##"
       }
      ]
     },
@@ -1291,7 +1296,7 @@
      "id": 28,
      "name": "cc4Brett",
      "type": "moebel",
-     "x": 50,
+     "x": 40,
      "y": 149,
      "width": 12,
      "height": 9,
@@ -1314,7 +1319,7 @@
      "id": 29,
      "name": "mf2Schachtisch",
      "type": "moebel",
-     "x": 160,
+     "x": 172,
      "y": 144,
      "width": 48,
      "height": 32,
@@ -1330,6 +1335,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../.##"
       }
      ]
     },
@@ -1337,7 +1347,7 @@
      "id": 30,
      "name": "cc4Brett",
      "type": "moebel",
-     "x": 178,
+     "x": 190,
      "y": 149,
      "width": 12,
      "height": 9,

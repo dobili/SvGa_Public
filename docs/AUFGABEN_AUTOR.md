@@ -1835,15 +1835,9 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       4 Pixel neben die Mitte, wenn die Mitte vor ihm gesperrt ist. Das gilt auf allen Karten und
       macht das Laufen an Möbelkanten eher leichter. Bitte beim nächsten Spielen darauf achten, ob
       sich das Laufen irgendwo anders anfühlt.
-- [ ] RO33. **Türen kleiner als die Figur (16.11.2026, Rückfrage):** Deine neue Regel „Die Tür
-      eines Hauses auf einer Außenkarte ist mindestens so groß wie die Spielfigur“ wird jetzt
-      geprüft. Die Figur ist sichtbar 16 Pixel breit und 22 hoch. Gemessen sind bisher die Häuser
-      von Maple Falls und Cedar Creek. Zu klein sind: (1) die drei Villen in der Birch Lane
-      (Whitlock, Lila, Rot), Tür 18 × 19, nötig wäre 116 %; (2) die Ladenfassaden mit Glastür unter
-      der Markise (Diner in Maple Falls und Desert Springs, Waschsalon in Cedar Creek), Tür 29 × 17,
-      nötig wäre 129 %. Die Häuser der hinteren Reihe sind mit deinen 125 % groß genug, ebenso
-      Hütten, Scheune und Bauernhäuser. Ich habe die Villen und Fassaden noch nicht vergrößert:
-      Mit 116 % stoßen die drei Villen aneinander, mit 129 % das Diner an die Schule, und die
-      Eingänge von Villa Whitlock und Diner müssten mitwandern. Meine Empfehlung: für die Fassaden
-      neue Bilder mit höherer Tür (die Markise höher, gleiche Breite), die Villen auf 116 % und die
-      Häuserzeile um je eine Kachel auseinanderziehen. Soll ich das so machen?
+- [ ] RO33. **Türen und Figurengröße (16.11.2026, umgesetzt, Widerspruch genügt):** Auf deinen
+      Wunsch sind alle PixelLab-Figuren (Held, Figuren, Statisten) im Spiel auf 80 % verkleinert;
+      sie passen damit in die Türen deiner 125-%-Häuser. Vor den Villen in Maple Falls und den
+      Glastüren von Diner und Waschsalon ragen sie noch etwas über die Tür; die bleiben vorerst,
+      wie sie sind. Später, wenn du magst: die Figuren in PixelLab gleich in der kleineren Größe
+      erzeugen, dann sind sie wieder pixelgenau statt verkleinert.

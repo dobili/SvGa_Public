@@ -20,6 +20,11 @@ export const FIGUR_HOEHE = 32;
 /** Rahmen eines PixelLab-Bogens und Abstand der Füße vom unteren Rand. */
 export const GROSS_RAHMEN = 32;
 const GROSS_FUSSRAND = 2;
+/**
+ * PixelLab-Figuren werden auf 80 % verkleinert (Wunsch des Autors, 16.11.2026): Sie waren mit etwa
+ * 30 Pixeln Höhe größer als die Türen der Grafiksätze; mit 80 % passen sie in die Haustüren.
+ */
+export const GROSS_MASSSTAB = 0.8;
 /** Laufbilder je Richtung und Bilder je Sekunde. */
 const LAUFBILDER = 6;
 const BILDRATE = 10;
@@ -72,12 +77,21 @@ function fusszeile(sprite: Phaser.GameObjects.Sprite): number {
   return width >= GROSS_RAHMEN ? height - GROSS_FUSSRAND : height;
 }
 
+/** Maßstab, mit dem eine Figur gezeichnet wird: PixelLab-Bögen 80 %, LimeZu-Figuren 100 %. */
+export function figurmassstab(sprite: Phaser.GameObjects.Sprite): number {
+  return sprite.frame.width >= GROSS_RAHMEN ? GROSS_MASSSTAB : 1;
+}
+
 /**
  * Ursprung (Anteil der Höhe) so, dass die Mitte der Fußkachel auf dem Punkt der Figur liegt; für
- * Figuren und Statisten. Beispiel: LimeZu 16 × 32, Kachel 16 → 0,75; PixelLab 32 × 32 → 0,6875.
+ * Figuren und Statisten. Setzt dabei auch den Maßstab der Figur (figurmassstab), damit jeder Weg,
+ * der eine Figur aufstellt, die verkleinerten PixelLab-Figuren richtig auf die Kachel stellt.
+ * Beispiel: LimeZu 16 × 32, Kachel 16 → 0,75; PixelLab 32 × 32 bei 80 % → (30 − 10) / 32 = 0,625.
  */
 export function fussUrsprungY(sprite: Phaser.GameObjects.Sprite, kachel: number): number {
-  return (fusszeile(sprite) - kachel / 2) / sprite.frame.height;
+  const massstab = figurmassstab(sprite);
+  sprite.setScale(massstab);
+  return (fusszeile(sprite) - kachel / 2 / massstab) / sprite.frame.height;
 }
 
 /**
@@ -89,12 +103,16 @@ export function stelleAufKachel(sprite: Phaser.Physics.Arcade.Sprite, kachel: nu
   const breite = sprite.frame.width;
   const fuss = fusszeile(sprite);
   sprite.setOrigin(0.5, fussUrsprungY(sprite, kachel));
-  const links = (breite - kachel) / 2;
+  // Körpermaße im Rahmen des Bildes: Phaser multipliziert sie mit dem Maßstab der Figur, damit der
+  // Körper in der Welt wieder genau die Fußkachel ist (2 Pixel Rand beim Helden).
+  const m = figurmassstab(sprite);
   const koerper = sprite.body;
   if (koerper instanceof Phaser.Physics.Arcade.Body) {
-    koerper.setSize(kachel - 4, kachel - 4).setOffset(links + 2, fuss - kachel + 2);
+    const seite = (kachel - 4) / m;
+    koerper.setSize(seite, seite).setOffset(breite / 2 - seite / 2, fuss + (2 - kachel) / m);
   } else if (koerper instanceof Phaser.Physics.Arcade.StaticBody) {
-    koerper.setSize(kachel, kachel).setOffset(links, fuss - kachel);
+    // Ein fester Körper rechnet Größe und Versatz in Weltpixeln ab der linken oberen Bildecke.
+    koerper.setSize(kachel, kachel).setOffset((breite * m - kachel) / 2, fuss * m - kachel);
     sprite.refreshBody();
   }
 }

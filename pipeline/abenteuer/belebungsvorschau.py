@@ -78,6 +78,10 @@ def rgba(pfad: Path) -> Image.Image:
     return Image.open(pfad).convert("RGBA")
 
 
+# PixelLab-Figuren werden auf 80 % gezeichnet (Wunsch des Autors, 16.11.2026; wie GROSS_MASSSTAB).
+PIXELLAB_MASSSTAB = 0.8
+
+
 def figurbild(privat: Path, bogen: str, rahmen: int, oeffne) -> Image.Image | None:
     """Standbild einer Figur in Blickrichtung ``rahmen`` (Ordnung wie SITZ_RAHMEN).
 
@@ -94,7 +98,13 @@ def figurbild(privat: Path, bogen: str, rahmen: int, oeffne) -> Image.Image | No
             return None
         gesetzt = Image.new("RGBA", bild.size)
         gesetzt.paste(bild, (0, FUSSZEILE + 1 - umriss[3]))
-        return gesetzt
+        # Wie die App (oberwelt/figurbilder.ts, GROSS_MASSSTAB): PixelLab-Figuren auf 80 %, Füße bleiben.
+        seite = round(bild.width * PIXELLAB_MASSSTAB)
+        klein = gesetzt.resize((seite, seite), Image.NEAREST)
+        verkleinert = Image.new("RGBA", bild.size)
+        fuss = round((FUSSZEILE + 1) * PIXELLAB_MASSSTAB)
+        verkleinert.paste(klein, ((bild.width - seite) // 2, FUSSZEILE + 1 - fuss))
+        return verkleinert
     alt = privat / "spiel" / bogen
     return oeffne(alt).crop((rahmen * K, 0, (rahmen + 1) * K, 2 * K)) if alt.exists() else None
 

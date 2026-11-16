@@ -2,7 +2,7 @@
   "karte": "wegPinewoodGhost.canyonrand",
   "datei": "karten/weg-pinewood-ghost-canyonrand.json",
   "art": "aussen",
-  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Sand mit Kakteen; die Grenze läuft als schräge Linie durch den Wald. Der Weg zieht in weiten Schwüngen durch den Wald und über den Sand und kommt dabei immer wieder nahe an die Kante; die Kante hat in der Mitte eine weite Bucht. Darunter fällt eine fünf Reihen hohe rote Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper): Felsblöcke, die auf dem Canyonboden stehen und bis zur Kante reichen. Der Canyonboden liegt tief im Schatten, deutlich dunkler als die Hochfläche; darin windet sich ein Fluss in Schleifen, mit hellen Sandbänken am Ufer, Felsen und Kakteen.",
+  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Sand mit Kakteen; die Grenze läuft als schräge Linie durch den Wald. Der Weg zieht in weiten Schwüngen durch den Wald und über den Sand und kommt dabei immer wieder nahe an die Kante; die Kante hat in der Mitte eine weite Bucht. Darunter fällt eine fünf Reihen hohe rote Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper): Felsblöcke, die auf dem Canyonboden stehen und bis zur Kante reichen. Der Canyonboden liegt tief im Schatten, deutlich dunkler als die Hochfläche; darin windet sich ein Fluss in Schleifen, mit hellen Sandbänken am Ufer, Felsen und Kakteen. Am Ostende biegt der Fluss nach Süden aus dem Bild, und die Hochfläche schließt den Canyon ab; die Staubstraße dahinter liegt auf gleicher Höhe (R034).",
   "wand": "felsRot",
   "boden": "gras",
   "boeden": {
@@ -37,12 +37,12 @@
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "##############################################################fffffffffffffffffffffffffffffffffffffffffffffff#########################################",
-    "#fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~ffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~fffffffffffff~~~~~~~~~fffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffff~~~~~~~~~~~~~~~fffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffff~~~~~~~~~~~~~fffffffff~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~fffffffffffffffffffffffffffffffffff########",
+    "#ffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~fffffffffffff~~~~~~~~~fffffffffffffffffff~~~~~~~~~~fffff########",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fff########",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffff~~~~~~~~~~~~~~~fffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ff########",
+    "~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffff~~~~~~~~~~~~~fffffffff~~~~~~~~~~~~~~~~~~~fffff~~~~~~~~ff########",
+    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~~~~~~fff########",
     "######################################################################################################################################################"
   ],
   "objekte": [

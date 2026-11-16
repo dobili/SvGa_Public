@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 286,
+ "nextobjectid": 285,
  "layers": [
   {
    "id": 1,
@@ -2709,8 +2709,8 @@
     4,
     4,
     4,
-    4,
-    4,
+    0,
+    0,
     0,
     0,
     0,
@@ -5474,8 +5474,8 @@
     0,
     0,
     0,
-    0,
-    0,
+    2,
+    2,
     2,
     2,
     2,
@@ -14044,29 +14044,6 @@
     },
     {
      "id": 248,
-     "name": "cc4Hecke",
-     "type": "moebel",
-     "x": 992,
-     "y": 656,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 664
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 249,
      "name": "mf12FahrradKopfueber",
      "type": "moebel",
      "x": 464,
@@ -14094,7 +14071,7 @@
      ]
     },
     {
-     "id": 250,
+     "id": 249,
      "name": "mf12FahrradSteht",
      "type": "moebel",
      "x": 464,
@@ -14122,7 +14099,7 @@
      ]
     },
     {
-     "id": 251,
+     "id": 250,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 0,
@@ -14145,7 +14122,7 @@
      ]
     },
     {
-     "id": 252,
+     "id": 251,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 32,
@@ -14168,7 +14145,7 @@
      ]
     },
     {
-     "id": 253,
+     "id": 252,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 64,
@@ -14191,7 +14168,7 @@
      ]
     },
     {
-     "id": 254,
+     "id": 253,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 96,
@@ -14214,7 +14191,7 @@
      ]
     },
     {
-     "id": 255,
+     "id": 254,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 128,
@@ -14237,7 +14214,7 @@
      ]
     },
     {
-     "id": 256,
+     "id": 255,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 160,
@@ -14260,7 +14237,7 @@
      ]
     },
     {
-     "id": 257,
+     "id": 256,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 192,
@@ -14283,7 +14260,7 @@
      ]
     },
     {
-     "id": 258,
+     "id": 257,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 224,
@@ -14306,7 +14283,7 @@
      ]
     },
     {
-     "id": 259,
+     "id": 258,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 256,
@@ -14329,7 +14306,7 @@
      ]
     },
     {
-     "id": 260,
+     "id": 259,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 288,
@@ -14352,7 +14329,7 @@
      ]
     },
     {
-     "id": 261,
+     "id": 260,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 320,
@@ -14375,7 +14352,7 @@
      ]
     },
     {
-     "id": 262,
+     "id": 261,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 352,
@@ -14398,7 +14375,7 @@
      ]
     },
     {
-     "id": 263,
+     "id": 262,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 384,
@@ -14421,7 +14398,7 @@
      ]
     },
     {
-     "id": 264,
+     "id": 263,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 416,
@@ -14444,7 +14421,7 @@
      ]
     },
     {
-     "id": 265,
+     "id": 264,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 448,
@@ -14467,7 +14444,7 @@
      ]
     },
     {
-     "id": 266,
+     "id": 265,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 480,
@@ -14490,7 +14467,7 @@
      ]
     },
     {
-     "id": 267,
+     "id": 266,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 512,
@@ -14513,7 +14490,7 @@
      ]
     },
     {
-     "id": 268,
+     "id": 267,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 544,
@@ -14536,7 +14513,7 @@
      ]
     },
     {
-     "id": 269,
+     "id": 268,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 576,
@@ -14559,7 +14536,7 @@
      ]
     },
     {
-     "id": 270,
+     "id": 269,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 608,
@@ -14582,7 +14559,7 @@
      ]
     },
     {
-     "id": 271,
+     "id": 270,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 640,
@@ -14605,7 +14582,7 @@
      ]
     },
     {
-     "id": 272,
+     "id": 271,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 672,
@@ -14628,7 +14605,7 @@
      ]
     },
     {
-     "id": 273,
+     "id": 272,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 704,
@@ -14651,7 +14628,7 @@
      ]
     },
     {
-     "id": 274,
+     "id": 273,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 736,
@@ -14674,7 +14651,7 @@
      ]
     },
     {
-     "id": 275,
+     "id": 274,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 768,
@@ -14697,7 +14674,7 @@
      ]
     },
     {
-     "id": 276,
+     "id": 275,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 800,
@@ -14720,7 +14697,7 @@
      ]
     },
     {
-     "id": 277,
+     "id": 276,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 832,
@@ -14743,7 +14720,7 @@
      ]
     },
     {
-     "id": 278,
+     "id": 277,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 864,
@@ -14766,7 +14743,7 @@
      ]
     },
     {
-     "id": 279,
+     "id": 278,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 896,
@@ -14789,7 +14766,7 @@
      ]
     },
     {
-     "id": 280,
+     "id": 279,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 928,
@@ -14812,7 +14789,7 @@
      ]
     },
     {
-     "id": 281,
+     "id": 280,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 960,
@@ -14835,7 +14812,7 @@
      ]
     },
     {
-     "id": 282,
+     "id": 281,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 992,
@@ -14858,7 +14835,7 @@
      ]
     },
     {
-     "id": 283,
+     "id": 282,
      "name": "bkAsphalt",
      "type": "moebel",
      "x": 48,
@@ -14881,7 +14858,7 @@
      ]
     },
     {
-     "id": 284,
+     "id": 283,
      "name": "bkAsphalt",
      "type": "moebel",
      "x": 64,
@@ -14904,7 +14881,7 @@
      ]
     },
     {
-     "id": 285,
+     "id": 284,
      "name": "bkAsphalt",
      "type": "moebel",
      "x": 80,

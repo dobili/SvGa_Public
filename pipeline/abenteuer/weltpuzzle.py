@@ -248,12 +248,34 @@ def randklasse(szene: dict, seite: str, stelle: int) -> str:
     return GESPERRT
 
 
+def _lauf(szene: dict, seite: str, stelle: int) -> int:
+    """Länge des befestigten Streifens (Straße oder Weg) am Rand, zu dem ``stelle`` gehört.
+
+    Gezählt wird am ganzen Rand der Karte, solange die Klasse gleich bleibt. Natur, Wasser und
+    gesperrte Felder haben keine Breite, die einen Bruch erklärt: Sie gelten als beliebig breit.
+    Beispiel: Capital, Westrand: Platten und Pflaster von Reihe 16 bis 52 sind ein Lauf von 37.
+    """
+    klasse = randklasse(szene, seite, stelle)
+    if klasse not in (STRASSE, WEG):
+        return FLAECHE_AB
+    ende = groesse(szene)[1] if seite in ("ost", "west") else groesse(szene)[0]
+    anfang, schluss = stelle, stelle
+    while anfang > 0 and randklasse(szene, seite, anfang - 1) == klasse:
+        anfang -= 1
+    while schluss < ende - 1 and randklasse(szene, seite, schluss + 1) == klasse:
+        schluss += 1
+    return schluss - anfang + 1
+
+
 def randbrueche(naht: Naht, aussen: dict[str, dict]) -> list[str]:
     """Vergleicht die Randstreifen einer Naht. Gemeldet wird, wo Wasser, Straße oder Weg auf der
     einen Seite liegt und auf der anderen etwas anderes; Natur gegen gesperrt (Wiese gegen Wald)
     ist kein Bruch. Zusammenhängende Stellen werden zu einem Bereich zusammengefasst. Wasser zählt
     immer (R034: „plötzlich kein Wasser mehr“); Straße und Weg nur als schmaler Streifen, weil eine
-    breite befestigte Fläche der Stadtrand ist, den ein Zwischenstück erklärt."""
+    breite befestigte Fläche der Stadtrand ist, den ein Zwischenstück erklärt. Die Breite misst
+    ``_lauf`` am ganzen Rand der eigenen Karte, nicht am gemeldeten Stück: Sonst zerlegt ein
+    gesperrtes Eckfeld der Nachbarkarte den Stadtrand in kurze Stücke, die wie Wege aussehen
+    (Cedar Creek, Reihe 34: Pflaster am Westrand gegen die Ecke des Flusswegs)."""
     von, nach = aussen[naht.von], aussen[naht.nach]
     laengs = naht.seite in ("ost", "west")
     schub = naht.versatz[1] if laengs else naht.versatz[0]
@@ -265,6 +287,11 @@ def randbrueche(naht: Naht, aussen: dict[str, dict]) -> list[str]:
         dort = randklasse(nach, GEGENUEBER[naht.seite], stelle - schub)
         if hier == dort or {hier, dort} <= {NATUR, GESPERRT}:
             continue
+        schmal = _lauf(von, naht.seite, stelle) < FLAECHE_AB or (
+            _lauf(nach, GEGENUEBER[naht.seite], stelle - schub) < FLAECHE_AB
+        )
+        if WASSER not in (hier, dort) and not schmal:
+            continue
         if bereiche and bereiche[-1][1] == stelle - 1 and bereiche[-1][2:] == [hier, dort]:
             bereiche[-1][1] = stelle
         else:
@@ -274,7 +301,6 @@ def randbrueche(naht: Naht, aussen: dict[str, dict]) -> list[str]:
         f"Randbruch: {naht.von} „{naht.name}“ ({naht.seite}) {achse} {a}–{b}: {hier}, "
         f"auf {naht.nach} ({achse} {a - schub}–{b - schub}): {dort}"
         for a, b, hier, dort in bereiche
-        if WASSER in (hier, dort) or b - a < FLAECHE_AB
     ]
 
 

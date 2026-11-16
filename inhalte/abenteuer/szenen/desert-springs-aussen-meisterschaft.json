@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen-meisterschaft.json",
   "art": "aussen",
-  "beschreibung": "Zustand: in Akt 4 (endeAkt3Gesehen) stehen drei Autos von Meisterschaftsfahrern auf dem Hof vor dem Motel und über dem Hof hängt das Banner der Meisterschaft zwischen zwei Laternen, weil Dot die Zimmer an Fahrer zur Meisterschaft vermietet (13_Wegenetz, Akt 4). Sonst wie die Grundkarte. Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon. Von Osten kommt die alte Strecke von 1879 aus dem Felseinschnitt des Felsbogens und endet hinter dem Gemischtwarenladen an einem Prellbock.",
+  "beschreibung": "Zustand: in Akt 4 (endeAkt3Gesehen) stehen drei Autos von Meisterschaftsfahrern auf dem Hof vor dem Motel und über dem Hof hängt das Banner der Meisterschaft zwischen zwei Laternen, weil Dot die Zimmer an Fahrer zur Meisterschaft vermietet (13_Wegenetz, Akt 4). Sonst wie die Grundkarte. Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie, deren Gleise links und rechts bis zum Kartenrand laufen, mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon. Von Osten kommt die alte Strecke von 1879 aus dem Felseinschnitt des Felsbogens und endet hinter dem Gemischtwarenladen an einem Prellbock.",
   "wand": "felsRot",
   "wandart": "sandRot",
   "boden": "sandRot",
@@ -58,6 +58,26 @@
     "############################################################"
   ],
   "objekte": [
+    {
+      "moebel": "iw5GleisGrau",
+      "feld": [0, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "iw5GleisGrau",
+      "feld": [0, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "iw5GleisGrau",
+      "feld": [1, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "iw5GleisGrau",
+      "feld": [1, 4],
+      "bauteil_ok": true
+    },
     {
       "moebel": "iw5GleisGrau",
       "feld": [2, 2],
@@ -846,14 +866,6 @@
       "moebel": "gt7Haltestelle",
       "feld": [5, 19],
       "vorn": true
-    },
-    {
-      "moebel": "cc8PrellbockQuer",
-      "feld": [1, 1]
-    },
-    {
-      "moebel": "cc8PrellbockQuer",
-      "feld": [1, 3]
     },
     {
       "feld": [3, 29],

@@ -10,9 +10,20 @@
     {
       "karte": "wegMapleCedar.zedernpfad",
       "ausloeser": "zedernWeiterCedar",
-      "sprung": [22, 37],
+      "sprung": [22, 35],
       "hinweis": "Vom Ostrand des Zedernpfads fällt der Pfad ungezeichnet durch den Wald hinab zum Ortsrand von Cedar Creek, nördlich des Flusswegs."
     }
   ],
-  "rand_ausnahmen": []
+  "rand_ausnahmen": [
+    {
+      "karte": "desertSprings.aussen",
+      "ausloeser": "highway",
+      "hinweis": "Die Bahnlinie am Nordrand von Desert Springs läuft nach Westen aus dem Bild; die Wegkarte am Highway zeigt nur den Streifen an der Straße, ihr Nordrand ist die Felskante, hinter der die Strecke ungezeichnet weiterführt."
+    },
+    {
+      "karte": "hochebene.felsentuerme",
+      "ausloeser": "weiterSchule",
+      "hinweis": "Die Straße der Schule läuft südlich an den Felstürmen vorbei; die Karte der Felstürme endet mit ihrer Felskante genau auf Höhe der Straße, die dahinter ungezeichnet weiterführt."
+    }
+  ]
 }

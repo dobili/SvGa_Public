@@ -1,7 +1,7 @@
 /** Tests für zeichentiefe.ts: Figuren auf Veranden stehen vor dem Haus. */
 import { describe, expect, it } from "vitest";
 import type { Moebel } from "./moebel";
-import { zeichentiefe } from "./zeichentiefe";
+import { moebeltiefe, zeichentiefe } from "./zeichentiefe";
 
 const KACHEL = 16;
 
@@ -26,5 +26,27 @@ describe("zeichentiefe", () => {
   });
   it("lässt Bäume ohne ganz gesperrte Reihe unverändert", () => {
     expect(zeichentiefe(moebel([".#.", ".#."], 32), KACHEL)).toBe(100 + 32 - 8);
+  });
+  it("legt freie Reihen unter der letzten Sperre vor das Bild (Seiteneingang mit Stufen)", () => {
+    const maske = ["....", "###.", "###.", "....", "...."];
+    expect(zeichentiefe(moebel(maske, 80), KACHEL)).toBe(100 + 3 * KACHEL - 8);
+  });
+  it("bleibt ohne jede Sperre in der Maske bei der Bildunterkante", () => {
+    expect(zeichentiefe(moebel(["..", ".."], 32), KACHEL)).toBe(100 + 32 - 8);
+  });
+});
+
+describe("moebeltiefe", () => {
+  const veranda = ["...", "###", "#.#", "..."];
+  it("senkt die Vorgabe des Kartenbauers (Bildunterkante) nach der Maske", () => {
+    const m = { ...moebel(veranda, 64), tiefe: 100 + 64 - 8 };
+    expect(moebeltiefe(m, KACHEL)).toBe(100 + 2 * KACHEL - 8);
+  });
+  it("behält eine eigene Tiefe aus der Karte (Ebene, Wand, Tisch)", () => {
+    expect(moebeltiefe({ ...moebel(veranda, 64), tiefe: 0 }, KACHEL)).toBe(0);
+    expect(moebeltiefe({ ...moebel(veranda, 64), tiefe: 157 }, KACHEL)).toBe(157);
+  });
+  it("rechnet ohne Tiefe in der Karte wie zeichentiefe", () => {
+    expect(moebeltiefe(moebel(veranda, 64), KACHEL)).toBe(100 + 2 * KACHEL - 8);
   });
 });

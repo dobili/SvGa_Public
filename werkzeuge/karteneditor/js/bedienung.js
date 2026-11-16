@@ -122,7 +122,8 @@
       ziehen = KE.pinselStart(ereignis, px, py);
       return;
     }
-    if (z.schalter.pinsel && !z.schalter.umgebungSperren) {
+    if (z.schalter.pinsel) {
+      // Der Bodenpinsel malt auch bei „Umgebung sperren“: Er ist ein eigenes Werkzeug (16.11.2026).
       ziehen = { art: "pinsel", vorher: KE.schnappschuss([z.datei]) };
       pinsel(px, py);
       return;

@@ -1180,6 +1180,8 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       (danach gilt wieder, was Bilder und Boden sagen); mit gedrückter Maus malen, Umschalt+Ziehen
       für ein Rechteck, Esc beendet. Eine Freigabe durch Wand oder Wasser braucht einen kurzen Grund.
       „Kollision bearbeiten“ am einzelnen Bild gibt es weiter.
+      Fassung 1.3.1: Der Bodenpinsel (B) kennt „Leer (schwarz, nicht begehbar)“ und malt jetzt auch
+      bei eingeschaltetem „Umgebung sperren“.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg

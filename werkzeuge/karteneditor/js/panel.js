@@ -57,6 +57,7 @@
       [".", `. ${szene.boden || "Boden"}`],
       ["#", `# ${szene.wandart || "Wand"}`],
       ["~", "~ Wasser"],
+      [" ", "Leer (schwarz, nicht begehbar)"],
       ...Object.entries(szene.boeden || {}).map(([z, n]) => [z, `${z} ${n}`]),
     ];
     const vorher = KE.zustand.pinselZeichen;

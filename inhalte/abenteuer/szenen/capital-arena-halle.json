@@ -405,11 +405,13 @@
     },
     {
       "name": "mama",
-      "feld": [13, 18]
+      "feld": [13, 18],
+      "blick": "links"
     },
     {
       "name": "juno",
-      "feld": [18, 18]
+      "feld": [18, 18],
+      "blick": "links"
     }
   ],
   "belebung": [
@@ -469,7 +471,8 @@
         "von": "28,12",
         "bis": "28,12",
         "tun": "verkauft Schals und Trikots am Fanshop",
-        "wann": "immer"
+        "wann": "immer",
+        "blick": "links"
       }
     }
   ],

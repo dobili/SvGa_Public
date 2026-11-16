@@ -2417,6 +2417,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -2460,6 +2465,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },

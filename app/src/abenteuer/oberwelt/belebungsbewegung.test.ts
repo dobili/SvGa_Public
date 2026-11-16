@@ -138,3 +138,10 @@ describe("Tiere", () => {
     expect(b.x).toBeCloseTo(jetzt);
   });
 });
+
+describe("Blickrichtung im Stand (R008)", () => {
+  it("beginnt in der Richtung von blick, sonst nach unten", () => {
+    expect(neueBewegung({ x: 2, y: 3 }, "links").richtung).toBe("links");
+    expect(neueBewegung({ x: 2, y: 3 }).richtung).toBe("unten");
+  });
+});

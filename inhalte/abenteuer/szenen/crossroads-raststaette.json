@@ -392,11 +392,13 @@
     },
     {
       "name": "nova",
-      "feld": [20, 16]
+      "feld": [20, 16],
+      "blick": "rechts"
     },
     {
       "name": "theo",
-      "feld": [14, 16]
+      "feld": [14, 16],
+      "blick": "links"
     }
   ],
   "belebung": [
@@ -419,7 +421,8 @@
       "eigenschaften": {
         "tun": "sitzt am Tresen über einem Kaffee",
         "wann": "tag",
-        "sagt": "statist.crossroads.raststaette.fernfahrer"
+        "sagt": "statist.crossroads.raststaette.fernfahrer",
+        "blick": "oben"
       }
     },
     {

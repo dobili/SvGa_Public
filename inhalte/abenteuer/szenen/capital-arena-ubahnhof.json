@@ -644,7 +644,8 @@
         "tun": "sitzt am Klapptisch und spielt Blitz",
         "wann": "abend",
         "bild": "statist-09",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "rechts"
       }
     },
     {
@@ -660,7 +661,8 @@
         "tun": "sitzt am Klapptisch und spielt Blitz",
         "wann": "abend",
         "bild": "statist-12",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "rechts"
       }
     }
   ],

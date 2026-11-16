@@ -27,6 +27,26 @@ describe("Auslöser der Karte", () => {
     ]);
   });
 
+  it("liest die Blickrichtung stehender Figuren (R008), Sitzende behalten ihr Sitzen", () => {
+    const blick = (wert: string) => [{ name: "blick", value: wert }];
+    const objekte = [
+      { name: "hector", type: "figur", x: 32, y: 16, properties: blick("links") },
+      { name: "jo", type: "figur", x: 16, y: 16, properties: blick("seitlich") },
+      {
+        name: "mira",
+        type: "figur",
+        x: 0,
+        y: 0,
+        properties: [{ name: "sitzt", value: "oben" }, ...blick("rechts")],
+      },
+    ];
+    expect(liesAusloeser(objekte, KACHEL)).toEqual([
+      { name: "hector", typ: "figur", x: 2, y: 1, blick: "links" },
+      { name: "jo", typ: "figur", x: 1, y: 1 },
+      { name: "mira", typ: "figur", x: 0, y: 0, sitzt: "oben" },
+    ]);
+  });
+
   it("trifft zuerst die eigene Kachel, sonst die davor", () => {
     const brett = { name: "brett", typ: "ausloeser" as const, x: 3, y: 2 };
     const tuer = { name: "tuer", typ: "ausloeser" as const, x: 3, y: 3 };

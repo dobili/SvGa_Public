@@ -440,7 +440,8 @@
   "figuren": [
     {
       "name": "earl",
-      "feld": [90, 23]
+      "feld": [90, 23],
+      "blick": "links"
     }
   ],
   "belebung": [

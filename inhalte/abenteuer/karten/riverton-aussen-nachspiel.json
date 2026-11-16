@@ -12398,6 +12398,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.riverton.aussen.pendler"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -12441,6 +12446,11 @@
        "name": "zeigt",
        "type": "string",
        "value": "partieDesJahrhunderts"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
@@ -12517,6 +12527,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.riverton.aussen.taubenmann"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
@@ -12870,6 +12885,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -12936,6 +12956,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },

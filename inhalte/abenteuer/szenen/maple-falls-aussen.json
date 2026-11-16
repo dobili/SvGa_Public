@@ -1180,7 +1180,8 @@
     },
     {
       "name": "lily",
-      "feld": [14, 24]
+      "feld": [14, 24],
+      "blick": "rechts"
     },
     {
       "name": "calloway",
@@ -1193,7 +1194,8 @@
     },
     {
       "name": "carlaSchule",
-      "feld": [45, 23]
+      "feld": [45, 23],
+      "blick": "rechts"
     },
     {
       "name": "owen",
@@ -1309,7 +1311,8 @@
       "eigenschaften": {
         "tun": "steht vor der Schule und schaut auf die Uhr",
         "wann": "morgen",
-        "sagt": "statist.mapleFalls.aussen.lehrer"
+        "sagt": "statist.mapleFalls.aussen.lehrer",
+        "blick": "links"
       }
     },
     {
@@ -1340,7 +1343,8 @@
       "feld": [18, 24],
       "eigenschaften": {
         "tun": "streicht den Gartenzaun",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "links"
       }
     },
     {

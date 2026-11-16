@@ -164,7 +164,8 @@
         "von": "18,9",
         "bis": "18,9",
         "tun": "wartet mit Namensschild am Empfang auf die Führung",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -186,7 +187,8 @@
         "von": "20,9",
         "bis": "20,9",
         "tun": "schaut zur Zeitleiste an der Wand",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {

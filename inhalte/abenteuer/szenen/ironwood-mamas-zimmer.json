@@ -176,7 +176,8 @@
   "figuren": [
     {
       "name": "omaRuth",
-      "feld": [6, 7]
+      "feld": [6, 7],
+      "blick": "links"
     },
     {
       "name": "mama",

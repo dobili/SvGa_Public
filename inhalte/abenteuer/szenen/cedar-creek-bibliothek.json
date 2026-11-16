@@ -313,11 +313,13 @@
   "figuren": [
     {
       "name": "okafor",
-      "feld": [13, 7]
+      "feld": [13, 7],
+      "blick": "links"
     },
     {
       "name": "dex",
-      "feld": [8, 7]
+      "feld": [8, 7],
+      "blick": "rechts"
     },
     {
       "name": "mae",
@@ -325,11 +327,13 @@
     },
     {
       "name": "zwillingeDrinnen",
-      "feld": [9, 13]
+      "feld": [9, 13],
+      "blick": "rechts"
     },
     {
       "name": "jonahDrinnen",
-      "feld": [10, 13]
+      "feld": [10, 13],
+      "blick": "links"
     }
   ],
   "belebung": [

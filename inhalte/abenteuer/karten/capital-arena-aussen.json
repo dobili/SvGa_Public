@@ -14746,6 +14746,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.capitalArena.aussen.eisverkaeuferin"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -15299,6 +15304,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

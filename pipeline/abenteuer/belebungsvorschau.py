@@ -151,11 +151,13 @@ def _sichtbar(b: dict, hoehe: int) -> int:
 
 
 def _statist(b: dict, privat: Path, oeffne, x: int, y: int) -> list[tuple[int, int, int, object]]:
-    """Bildteil eines Statisten: Standbild von vorn (sitzend in Blickrichtung, SITZ_HUB höher, R020),
-    unten mittig auf seinem Feld; PixelLab 32 × 32 oder LimeZu 16 × 32 (figurbild)."""
+    """Bildteil eines Statisten: Standbild von vorn oder nach ``blick`` (R008), sitzend in seiner
+    Blickrichtung (SITZ_HUB höher, R020), unten mittig auf seinem Feld; PixelLab 32 × 32 oder LimeZu
+    16 × 32 (figurbild)."""
     eigenschaften = b.get("eigenschaften", {})
     sitzt = "unten" if eigenschaften.get("sitzt") == "ja" else eigenschaften.get("sitzt")
-    rahmen = SITZ_RAHMEN.index(sitzt) if sitzt in SITZ_RAHMEN else VORN
+    blick = eigenschaften.get("blick")  # stehender Statist mit Blickrichtung (R008)
+    rahmen = SITZ_RAHMEN.index(sitzt or blick) if (sitzt or blick) in SITZ_RAHMEN else VORN
     bogen = statistenbogen(b["name"], eigenschaften.get("bild"))
     bild = figurbild(privat, bogen, rahmen, oeffne)
     if bild is None:

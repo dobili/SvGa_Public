@@ -333,7 +333,8 @@
   "figuren": [
     {
       "name": "okafor",
-      "feld": [13, 7]
+      "feld": [13, 7],
+      "blick": "links"
     }
   ],
   "belebung": [],

@@ -12815,6 +12815,11 @@
        "name": "bis",
        "type": "string",
        "value": "7,44"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -12848,6 +12853,11 @@
        "name": "bis",
        "type": "string",
        "value": "20,43"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

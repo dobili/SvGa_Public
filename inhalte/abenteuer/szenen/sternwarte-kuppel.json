@@ -128,7 +128,8 @@
     },
     {
       "name": "lucia",
-      "feld": [5, 10]
+      "feld": [5, 10],
+      "blick": "links"
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],

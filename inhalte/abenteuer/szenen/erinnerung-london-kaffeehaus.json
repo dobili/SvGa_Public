@@ -184,7 +184,8 @@
         "bis": "7,8",
         "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "rechts"
       }
     },
     {
@@ -196,7 +197,8 @@
         "bis": "10,8",
         "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "links"
       }
     },
     {
@@ -207,7 +209,8 @@
         "von": "8,10",
         "bis": "8,10",
         "tun": "schauen zu",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "oben"
       }
     },
     {
@@ -253,7 +256,8 @@
         "bis": "3,8",
         "verhalten": "sitzen",
         "tun": "sitzt am linken Tisch und grübelt über einer Stellung",
-        "wann": "tag"
+        "wann": "tag",
+        "blick": "rechts"
       }
     }
   ],

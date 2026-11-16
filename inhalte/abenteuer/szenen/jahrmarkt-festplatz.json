@@ -715,7 +715,8 @@
   "figuren": [
     {
       "name": "dolores",
-      "feld": [22, 16]
+      "feld": [22, 16],
+      "blick": "rechts"
     }
   ],
   "belebung": [
@@ -738,7 +739,8 @@
         "tun": "Buster verkauft Lose neben seiner Bude",
         "wann": "tag",
         "von": "8,20",
-        "bis": "8,20"
+        "bis": "8,20",
+        "blick": "links"
       }
     },
     {
@@ -868,7 +870,8 @@
         "tun": "stellt die Dosenpyramide wieder auf",
         "wann": "tag",
         "von": "13,20",
-        "bis": "13,20"
+        "bis": "13,20",
+        "blick": "links"
       }
     },
     {
@@ -879,7 +882,8 @@
         "tun": "reicht Hot Dogs aus der Klappe des Wagens",
         "wann": "tag",
         "von": "32,23",
-        "bis": "32,23"
+        "bis": "32,23",
+        "blick": "links"
       }
     },
     {
@@ -890,7 +894,8 @@
         "tun": "reicht Eiswaffeln aus dem Fenster des Wagens",
         "wann": "tag",
         "von": "40,23",
-        "bis": "40,23"
+        "bis": "40,23",
+        "blick": "links"
       }
     },
     {
@@ -901,7 +906,8 @@
         "tun": "verkauft Limonade aus dem Krug",
         "wann": "tag",
         "von": "21,22",
-        "bis": "21,22"
+        "bis": "21,22",
+        "blick": "links"
       }
     },
     {
@@ -912,7 +918,8 @@
         "tun": "schaufelt Bonbons in Tüten",
         "wann": "tag",
         "von": "18,23",
-        "bis": "18,23"
+        "bis": "18,23",
+        "blick": "links"
       }
     },
     {

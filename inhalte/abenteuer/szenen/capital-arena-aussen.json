@@ -710,7 +710,8 @@
         "bis": "65,41",
         "tun": "verkauft Eis und Limonade am Wagen",
         "wann": "tag",
-        "sagt": "statist.capitalArena.aussen.eisverkaeuferin"
+        "sagt": "statist.capitalArena.aussen.eisverkaeuferin",
+        "blick": "links"
       }
     },
     {
@@ -939,7 +940,8 @@
         "bis": "9,41",
         "tun": "verkauft Hotdogs unter der Markise",
         "wann": "tag",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "blick": "links"
       }
     }
   ],

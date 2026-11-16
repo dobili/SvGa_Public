@@ -171,7 +171,7 @@ export class Belebungsschicht {
     bogen: string | null,
     sperre: Phaser.GameObjects.Rectangle | null,
   ): void {
-    const d: Darsteller = { v, b: neueBewegung(v.feld), sprite, bogen, sperre };
+    const d: Darsteller = { v, b: neueBewegung(v.feld, v.blick), sprite, bogen, sperre };
     this.darsteller.push(d);
     this.zeige(d);
   }

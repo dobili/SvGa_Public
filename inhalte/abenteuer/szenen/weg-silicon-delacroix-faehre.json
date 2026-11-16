@@ -1302,7 +1302,8 @@
   "figuren": [
     {
       "name": "schiffskoch",
-      "feld": [17, 25]
+      "feld": [17, 25],
+      "blick": "rechts"
     },
     {
       "name": "kapitaen",

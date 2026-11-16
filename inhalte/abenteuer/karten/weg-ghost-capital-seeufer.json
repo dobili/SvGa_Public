@@ -14067,6 +14067,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -14110,6 +14115,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -14153,6 +14163,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
@@ -14196,6 +14211,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },

@@ -8119,7 +8119,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 13,
@@ -8227,6 +8234,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.pinewoodCamp.aussen.koechin"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
@@ -8549,6 +8561,11 @@
        "name": "wann",
        "type": "string",
        "value": "abend"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

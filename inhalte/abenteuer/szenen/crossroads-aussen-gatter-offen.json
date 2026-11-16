@@ -1041,7 +1041,8 @@
     },
     {
       "name": "mira",
-      "feld": [34, 27]
+      "feld": [34, 27],
+      "blick": "rechts"
     }
   ],
   "belebung": [
@@ -1114,7 +1115,8 @@
         "tun": "Tomás zeigt Mira die Windräder am Horizont",
         "wann": "tag",
         "von": "35,27",
-        "bis": "35,27"
+        "bis": "35,27",
+        "blick": "links"
       }
     },
     {

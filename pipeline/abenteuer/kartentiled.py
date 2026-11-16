@@ -32,6 +32,21 @@ def sitzrichtung(eintrag: dict) -> str | None:
     return wert if wert in RICHTUNGEN else None
 
 
+def blickrichtung(eintrag: dict) -> str | None:
+    """Blickrichtung einer stehenden Figur oder eines Statisten (Eigenschaft ``blick``, R008): oben,
+    unten, links oder rechts; wer sitzt oder nichts angibt, bekommt None (die App zeigt dann „unten“).
+
+    Warum: Stehende schauten in der App immer nach unten, auch die Verkäuferin neben ihrem Tresen
+    (Rückmeldung R008). Beispiel: ``{"name": "hector", "blick": "links"}`` → "links"; ein Statist
+    trägt es unter ``eigenschaften``.
+    """
+    eigenschaften = eintrag.get("eigenschaften", {})
+    if sitzrichtung(eintrag) or eigenschaften.get("sitzt"):
+        return None
+    wert = eintrag.get("blick", eigenschaften.get("blick"))
+    return wert if wert in RICHTUNGEN else None
+
+
 def kachelebenen(zeilen: list[str], szene: dict) -> tuple[list[int], list[int]]:
     """Boden- und Wandebene: Wand, Wasser und Leere sperren, Buchstaben aus ``boeden`` sind Teppich.
 
@@ -88,9 +103,12 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         eig = [{"name": k, "type": "string", "value": v} for k, v in a.get("eigenschaften", {}).items()]
         objekt(a["name"], "ausloeser", a["feld"][0] * K, a["feld"][1] * K, eig=eig)
     for f in szene.get("figuren", []):
-        # Sitzende Figur (Wunsch des Autors R020): Blickrichtung als Eigenschaft „sitzt“.
-        sitzt = sitzrichtung(f)
+        # Sitzende Figur (Wunsch des Autors R020): Blickrichtung als Eigenschaft „sitzt“; stehende
+        # Figur mit „blick“ (R008), App: oberwelt/ausloeserebene.ts.
+        sitzt, blick = sitzrichtung(f), blickrichtung(f)
         eig = [{"name": "sitzt", "type": "string", "value": sitzt}] if sitzt else None
+        if blick:
+            eig = [{"name": "blick", "type": "string", "value": blick}]
         objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K, eig=eig)
     # Statisten und Tiere (Belebung, Weltbeschreibung 4a) mit ihren Laufwegen.
     for b in szene.get("belebung", []):

@@ -2260,7 +2260,8 @@
     },
     {
       "name": "ada",
-      "feld": [49, 16]
+      "feld": [49, 16],
+      "blick": "links"
     },
     {
       "name": "tessa",
@@ -2349,7 +2350,8 @@
       "eigenschaften": {
         "tun": "verkauft ihren Dachboden auf dem Hof",
         "wann": "tag",
-        "sagt": "statist.wegMapleCedar.landstrasse.verkaeuferin"
+        "sagt": "statist.wegMapleCedar.landstrasse.verkaeuferin",
+        "blick": "rechts"
       }
     },
     {

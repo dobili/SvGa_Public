@@ -1177,6 +1177,19 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "Holzgeländer aus Geminis Geländersatz (16.11.2026), passend zur Holztreppe: schräger Treppenlauf, Pfosten rechts unten, steigt nach links; noch in keiner Karte"
+    },
+    "treppeZumBetrachter": {
+      "quelle": "spiel/eigene/treppe_zum_betrachter.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "maske_fein": ["............", "............", "............", "............", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##", "##........##"],
+      "richtung": "hoch",
+      "lauf": "senkrecht",
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holztreppe, die zum Betrachter hin ansteigt: unterste Stufe oben (dort betritt die Figur sie), oberste Stufe und Absatz unten; Handläufe von oben gesehen, Pfosten an beiden Enden. Vom Autor aus Geminis Bild gebaut (16.11.2026); Holme sperren, die Mitte ist frei"
     }
   }
 }

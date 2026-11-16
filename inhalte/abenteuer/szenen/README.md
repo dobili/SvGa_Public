@@ -118,6 +118,13 @@ Kollision), `"spiegeln": true` (waagrecht), `"massstab": 1.5` (0,5 bis 3), `"ebe
 berechneten Tiefe addiert: vor oder hinter Nachbarn). `feld` und `versatz` nennen die linke obere
 Ecke des gedrehten Rechtecks.
 
+Kollision nur an dieser Stelle (Karteneditor, `pipeline/abenteuer/objektkollision.py`, optional):
+`"kollision": false` (durchgehbar) oder `true` (sperrt) statt der Angabe im Katalog, `"maske"`
+(wie im Katalog; dreht und spiegelt mit der Form) und `"begehbar_grund"` (Pflicht, wenn ein nicht
+flaches Möbel, das laut Katalog sperrt, hier durchgehbar wird, Regel 10.69). Bodenkacheln
+(`bk…`, Art `boden_teil`) über einer Treppe nach unten liegen darüber; die Treppe wird flach
+gezeichnet und gilt als Loch im Boden (`pipeline/abenteuer/bodenteile.py`, Regel 10.84).
+
 Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Platte passen; hat das Bild durchsichtige Ränder, nennt die Möbelangabe `"sichtbar_breite"` die Breite der deckenden Pixel, dann vergleicht die Prüfung sichtbar mit sichtbar),
 `"an_wand": true`, `"zu": "<id>"` (Stuhl oder Sofa schaut zu Tisch oder Fernseher).
 

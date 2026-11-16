@@ -17,7 +17,7 @@
  */
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
-import { formAus, geformt, hatForm, type Moebelform } from "./moebelform";
+import { formAus, geformtAusObjekt, hatForm, type Moebelform } from "./moebelform";
 
 /** Eine Angabe aus daten/moebel.json im Paket. */
 export interface Moebelangabe {
@@ -79,7 +79,7 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
         const roh = liste[name];
         if (!roh) return null;
         const form = formAus(o.properties);
-        const angabe = geformt(roh, form);
+        const angabe = geformtAusObjekt(roh, o.properties);
         const bild = bildquelle(name, roh);
         const adresse = await paketdateiAlsAdresse(bild.pfad).catch(() => null);
         if (!adresse) return null;

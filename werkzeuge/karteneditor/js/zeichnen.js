@@ -231,6 +231,7 @@
     }
     const marken = z.schalter.markierungen && !z.schalter.nurUmgebung ? KE.markierungen(szene) : [];
     for (const m of marken) zeichneMarkierung(ctx, m, a.zoom);
+    KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
     if (z.schalter.raster) zeichneRaster(ctx, breite, hoehe, a.zoom);
     if (!z.schalter.vorher) zeichneAuswahl(ctx, sichtbar, marken, a.zoom);
     if (KE.rechteck) {

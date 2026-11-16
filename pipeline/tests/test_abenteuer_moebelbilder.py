@@ -9,6 +9,7 @@ Möbellisten (inhalte/abenteuer/moebel), also ohne die gekaufte Grafik.
 import re
 
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektkollision import FLACH  # Arten, über die man läuft (10.69)
 
 # Regale mit bunten Dosen und Gläsern (LimeZu Classroom and Library 43 bis 45) und Supermarktregale.
 DOSENREGAL = re.compile(r"Classroom_and_Library_Singles_4[345]\.png$|Grocery_Store")
@@ -42,13 +43,6 @@ def test_pruefung_erkennt_die_alten_fehlgriffe():
     assert VERSPRICHT_INHALT.search("pd6Notenregal") and DOSENREGAL.search(dosen)
     assert STRASSENBAKE.search("spiel/eigene/prellbock.png")
     assert not STRASSENBAKE.search("spiel/eigene/prellbock_stahl_oben.png")
-
-
-# Arten, über die man läuft (KARTENREGELN 10.69): Sie brauchen keine Kollision und keine Begründung.
-FLACH = {
-    "bordstein", "markierung", "teppich", "boden", "boden_teil", "schatten",
-    "steg", "bruecke", "gleis", "treppe", "tuer",
-}  # fmt: skip
 
 
 def test_ohne_kollision_nur_flach_oder_mit_begruendung():

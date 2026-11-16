@@ -64,10 +64,13 @@ def kachel(privat: Path, boegen: dict, angabe: dict, feld: list[int]) -> Image.I
     return bogen.crop((feld[0] * K, feld[1] * K, (feld[0] + 1) * K, (feld[1] + 1) * K))
 
 
-def moebelbild(privat: Path, quelle: str) -> Image.Image:
-    """Das Bild eines Möbels; die umgefärbte Fassung (spiel/schatten/) geht vor, wie im Paketbau."""
-    umgefaerbt = privat / "spiel" / "schatten" / quelle
-    return Image.open(umgefaerbt if umgefaerbt.exists() else privat / quelle).convert("RGBA")
+def moebelbild(privat: Path, quelle: str | dict) -> Image.Image:
+    """Das Bild eines Möbels (Quelle oder ganze Angabe); die umgefärbte Fassung (spiel/schatten/) geht
+    vor, wie im Paketbau. Eine Angabe mit ``ausschnitt`` (bodenkacheln.py) gibt nur diesen Teil."""
+    angabe = quelle if isinstance(quelle, dict) else {"quelle": quelle}
+    umgefaerbt = privat / "spiel" / "schatten" / angabe["quelle"]
+    bild = Image.open(umgefaerbt if umgefaerbt.exists() else privat / angabe["quelle"]).convert("RGBA")
+    return bild.crop(tuple(angabe["ausschnitt"])) if "ausschnitt" in angabe else bild
 
 
 def grauer_schatten(privat: Path, quelle: str) -> bool:
@@ -266,13 +269,13 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
     befunde = []
     for eintrag in szene.get("objekte", []):
         angabe = moebel.get(eintrag["moebel"])
-        if angabe and grauer_schatten(privat, angabe["quelle"]):
+        if angabe and "ausschnitt" not in angabe and grauer_schatten(privat, angabe["quelle"]):
             befunde.append(
                 f"{eintrag['moebel']} hat den grauen Festschatten: werkzeuge/schatten.py im privaten "
                 "Repository laufen lassen (oder die Black_Shadow-Fassung nehmen)"
             )
-        if not angabe or eintrag.get("bauteil_ok"):
-            continue
+        if not angabe or eintrag.get("bauteil_ok") or "ausschnitt" in angabe:
+            continue  # Kacheln aus einem Bogen (bodenkacheln.py) sind gewollt geschnitten
         # Eigene Bilder (spiel/eigene/, werkzeuge/schilder.py) stehen nicht im Katalog der Pakete.
         eigen = angabe["quelle"].startswith("spiel/eigene/")
         befund = None if eigen else katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
@@ -325,8 +328,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [
-        (s["tiefe"], s["x"], s["y"], formbild(moebelbild(privat, moebel[s["name"]]["quelle"]), s))
-        for s in gesetzt
+        (s["tiefe"], s["x"], s["y"], formbild(moebelbild(privat, moebel[s["name"]]), s)) for s in gesetzt
     ]
     if ist_winter(szene):
         # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.

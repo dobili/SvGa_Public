@@ -1,0 +1,3200 @@
+{
+  "erklaerung": "Erzeugt von pipeline/abenteuer/bodenkacheln.py aus materialien.json; nicht von Hand ändern.",
+  "moebel": {
+    "bkAsphalt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
+      "ausschnitt": [
+        0,
+        64,
+        16,
+        80
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel asphalt"
+    },
+    "bkAsphaltMitte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
+      "ausschnitt": [
+        192,
+        96,
+        208,
+        112
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel asphaltMitte"
+    },
+    "bkAsphaltMitteSenkrecht": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
+      "ausschnitt": [
+        192,
+        112,
+        208,
+        128
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel asphaltMitteSenkrecht"
+    },
+    "bkDielen": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        80,
+        208,
+        96,
+        224
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel dielen"
+    },
+    "bkDielenUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        80,
+        192,
+        96,
+        208
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "dielen unter der Wand"
+    },
+    "bkErde": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        496,
+        32,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel erde"
+    },
+    "bkErdeRandN": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        480,
+        32,
+        496
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand N"
+    },
+    "bkErdeRandNO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        32,
+        480,
+        48,
+        496
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand NO"
+    },
+    "bkErdeRandNW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        0,
+        480,
+        16,
+        496
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand NW"
+    },
+    "bkErdeRandO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        32,
+        496,
+        48,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand O"
+    },
+    "bkErdeRandS": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        512,
+        32,
+        528
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand S"
+    },
+    "bkErdeRandSO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        32,
+        512,
+        48,
+        528
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand SO"
+    },
+    "bkErdeRandSW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        0,
+        512,
+        16,
+        528
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand SW"
+    },
+    "bkErdeRandW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        0,
+        496,
+        16,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erde, Rand W"
+    },
+    "bkErdeRot": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel erdeRot"
+    },
+    "bkErdeRotRandN": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand N"
+    },
+    "bkErdeRotRandNO": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand NO"
+    },
+    "bkErdeRotRandNW": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand NW"
+    },
+    "bkErdeRotRandO": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand O"
+    },
+    "bkErdeRotRandS": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand S"
+    },
+    "bkErdeRotRandSO": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand SO"
+    },
+    "bkErdeRotRandSW": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand SW"
+    },
+    "bkErdeRotRandW": {
+      "quelle": "spiel/eigene/weg_rot.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "erdeRot, Rand W"
+    },
+    "bkFelsboden": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel felsboden"
+    },
+    "bkFelsbodenRot": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel felsbodenRot"
+    },
+    "bkFelsbodenRotDunkel": {
+      "quelle": "spiel/eigene/fels_rot_dunkel.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel felsbodenRotDunkel"
+    },
+    "bkFliesenGrau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        208,
+        80,
+        224,
+        96
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel fliesenGrau"
+    },
+    "bkFliesenGrauUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        208,
+        64,
+        224,
+        80
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "fliesenGrau unter der Wand"
+    },
+    "bkFliesenWeiss": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        16,
+        80,
+        32,
+        96
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel fliesenWeiss"
+    },
+    "bkFliesenWeissUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        16,
+        64,
+        32,
+        80
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "fliesenWeiss unter der Wand"
+    },
+    "bkGras": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        48,
+        128,
+        64,
+        144
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel gras"
+    },
+    "bkHallenboden": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        16,
+        400,
+        32,
+        416
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel hallenboden"
+    },
+    "bkHallenbodenUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        16,
+        384,
+        32,
+        400
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "hallenboden unter der Wand"
+    },
+    "bkHecke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        112,
+        32,
+        128
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel hecke"
+    },
+    "bkHolzDunkel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        208,
+        432,
+        224,
+        448
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel holzDunkel"
+    },
+    "bkHolzDunkelUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        208,
+        416,
+        224,
+        432
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "holzDunkel unter der Wand"
+    },
+    "bkHolzHell": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        16,
+        208,
+        32,
+        224
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel holzHell"
+    },
+    "bkHolzHellUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        16,
+        192,
+        32,
+        208
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "holzHell unter der Wand"
+    },
+    "bkLandstrasse": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
+      "ausschnitt": [
+        0,
+        64,
+        16,
+        80
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel landstrasse"
+    },
+    "bkNadelstreu": {
+      "quelle": "spiel/eigene/nadelstreu.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel nadelstreu"
+    },
+    "bkPflaster": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        400,
+        144,
+        416,
+        160
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel pflaster"
+    },
+    "bkPflasterNass": {
+      "quelle": "spiel/eigene/pflaster_nass.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel pflasterNass"
+    },
+    "bkPisteRot": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel pisteRot"
+    },
+    "bkPisteRotRandN": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand N"
+    },
+    "bkPisteRotRandNO": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand NO"
+    },
+    "bkPisteRotRandNW": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand NW"
+    },
+    "bkPisteRotRandO": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand O"
+    },
+    "bkPisteRotRandS": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand S"
+    },
+    "bkPisteRotRandSO": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand SO"
+    },
+    "bkPisteRotRandSW": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand SW"
+    },
+    "bkPisteRotRandW": {
+      "quelle": "spiel/eigene/piste_rot.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "pisteRot, Rand W"
+    },
+    "bkPlatten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
+      "ausschnitt": [
+        160,
+        32,
+        176,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel platten"
+    },
+    "bkSand": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        144,
+        496,
+        160,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sand"
+    },
+    "bkSandRot": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sandRot"
+    },
+    "bkSandRotRand": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sandRotRand"
+    },
+    "bkSandRotRandRandN": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand N"
+    },
+    "bkSandRotRandRandNO": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand NO"
+    },
+    "bkSandRotRandRandNW": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand NW"
+    },
+    "bkSandRotRandRandO": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand O"
+    },
+    "bkSandRotRandRandS": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand S"
+    },
+    "bkSandRotRandRandSO": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand SO"
+    },
+    "bkSandRotRandRandSW": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand SW"
+    },
+    "bkSandRotRandRandW": {
+      "quelle": "spiel/eigene/sand_rot_gras.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandRotRand, Rand W"
+    },
+    "bkSandplatz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        144,
+        496,
+        160,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sandplatz"
+    },
+    "bkSandplatzRandN": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        144,
+        480,
+        160,
+        496
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand N"
+    },
+    "bkSandplatzRandNO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        160,
+        480,
+        176,
+        496
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand NO"
+    },
+    "bkSandplatzRandNW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        128,
+        480,
+        144,
+        496
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand NW"
+    },
+    "bkSandplatzRandO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        160,
+        496,
+        176,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand O"
+    },
+    "bkSandplatzRandS": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        144,
+        512,
+        160,
+        528
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand S"
+    },
+    "bkSandplatzRandSO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        160,
+        512,
+        176,
+        528
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand SO"
+    },
+    "bkSandplatzRandSW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        128,
+        512,
+        144,
+        528
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand SW"
+    },
+    "bkSandplatzRandW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        128,
+        496,
+        144,
+        512
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sandplatz, Rand W"
+    },
+    "bkSchotter": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel schotter"
+    },
+    "bkSinter": {
+      "quelle": "spiel/eigene/boden_sinter.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sinter"
+    },
+    "bkStein": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        208,
+        560,
+        224,
+        576
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel stein"
+    },
+    "bkSteinUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        208,
+        544,
+        224,
+        560
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "stein unter der Wand"
+    },
+    "bkStrand": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel strand"
+    },
+    "bkStrandRandN": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand N"
+    },
+    "bkStrandRandNO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand NO"
+    },
+    "bkStrandRandNW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand NW"
+    },
+    "bkStrandRandO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand O"
+    },
+    "bkStrandRandS": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        16,
+        48,
+        32,
+        64
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand S"
+    },
+    "bkStrandRandSO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        32,
+        48,
+        48,
+        64
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand SO"
+    },
+    "bkStrandRandSW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        0,
+        48,
+        16,
+        64
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand SW"
+    },
+    "bkStrandRandW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "strand, Rand W"
+    },
+    "bkSumpfboden": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sumpfboden"
+    },
+    "bkSumpfbodenRandN": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand N"
+    },
+    "bkSumpfbodenRandNO": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand NO"
+    },
+    "bkSumpfbodenRandNW": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand NW"
+    },
+    "bkSumpfbodenRandO": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand O"
+    },
+    "bkSumpfbodenRandS": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand S"
+    },
+    "bkSumpfbodenRandSO": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand SO"
+    },
+    "bkSumpfbodenRandSW": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand SW"
+    },
+    "bkSumpfbodenRandW": {
+      "quelle": "spiel/eigene/sumpfboden.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "sumpfboden, Rand W"
+    },
+    "bkTeppichBlau": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        144,
+        304,
+        160,
+        320
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel teppichBlau"
+    },
+    "bkTeppichBlauUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        144,
+        288,
+        160,
+        304
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "teppichBlau unter der Wand"
+    },
+    "bkTeppichRot": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        80,
+        144,
+        96,
+        160
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel teppichRot"
+    },
+    "bkTeppichRotUnterWand": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
+      "ausschnitt": [
+        80,
+        128,
+        96,
+        144
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "teppichRot unter der Wand"
+    },
+    "bkWandBacksteinOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        256,
+        32,
+        272
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand backstein, oben"
+    },
+    "bkWandBacksteinUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        272,
+        32,
+        288
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand backstein, unten"
+    },
+    "bkWandBlauOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        368,
+        128,
+        384,
+        144
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand blau, oben"
+    },
+    "bkWandBlauUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        368,
+        144,
+        384,
+        160
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand blau, unten"
+    },
+    "bkWandCremeOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        96,
+        32,
+        112
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand creme, oben"
+    },
+    "bkWandCremeUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        112,
+        32,
+        128
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand creme, unten"
+    },
+    "bkWandDammKrone": {
+      "quelle": "spiel/eigene/damm.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand damm, krone"
+    },
+    "bkWandDammOben": {
+      "quelle": "spiel/eigene/damm.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand damm, oben"
+    },
+    "bkWandDammUnten": {
+      "quelle": "spiel/eigene/damm.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand damm, unten"
+    },
+    "bkWandFelsKrone": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand fels, krone"
+    },
+    "bkWandFelsOben": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand fels, oben"
+    },
+    "bkWandFelsRotKrone": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand felsRot, krone"
+    },
+    "bkWandFelsRotOben": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand felsRot, oben"
+    },
+    "bkWandFelsRotUnten": {
+      "quelle": "spiel/eigene/fels_rot.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand felsRot, unten"
+    },
+    "bkWandFelsStollenKrone": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        144,
+        144,
+        160,
+        160
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand felsStollen, krone"
+    },
+    "bkWandFelsStollenOben": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand felsStollen, oben"
+    },
+    "bkWandFelsStollenUnten": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand felsStollen, unten"
+    },
+    "bkWandFelsUnten": {
+      "quelle": "spiel/eigene/fels.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand fels, unten"
+    },
+    "bkWandGruenOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        368,
+        192,
+        384,
+        208
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand gruen, oben"
+    },
+    "bkWandGruenUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        368,
+        208,
+        384,
+        224
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand gruen, unten"
+    },
+    "bkWandHellgrauOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        64,
+        32,
+        80
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand hellgrau, oben"
+    },
+    "bkWandHellgrauUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        80,
+        32,
+        96
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand hellgrau, unten"
+    },
+    "bkWandHolzOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        192,
+        0,
+        208,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand holz, oben"
+    },
+    "bkWandHolzUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        192,
+        16,
+        208,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand holz, unten"
+    },
+    "bkWandNachtblauOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        176,
+        544,
+        192,
+        560
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand nachtblau, oben"
+    },
+    "bkWandNachtblauUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        176,
+        560,
+        192,
+        576
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand nachtblau, unten"
+    },
+    "bkWandRautenOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand rauten, oben"
+    },
+    "bkWandRautenUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand rauten, unten"
+    },
+    "bkWandRotOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        368,
+        0,
+        384,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand rot, oben"
+    },
+    "bkWandRotUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        368,
+        16,
+        384,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand rot, unten"
+    },
+    "bkWandTapeteRosaOben": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        192,
+        416,
+        208,
+        432
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand tapeteRosa, oben"
+    },
+    "bkWandTapeteRosaUnten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
+      "ausschnitt": [
+        192,
+        432,
+        208,
+        448
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand tapeteRosa, unten"
+    },
+    "bkWandTapeteRosenOben": {
+      "quelle": "spiel/eigene/rosentapete.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand tapeteRosen, oben"
+    },
+    "bkWandTapeteRosenUnten": {
+      "quelle": "spiel/eigene/rosentapete.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Wand tapeteRosen, unten"
+    },
+    "bkWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        576,
+        32,
+        592
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser"
+    },
+    "bkWasserMoor": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_moor"
+    },
+    "bkWasserMoorRandN": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand N"
+    },
+    "bkWasserMoorRandNO": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand NO"
+    },
+    "bkWasserMoorRandNW": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand NW"
+    },
+    "bkWasserMoorRandO": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand O"
+    },
+    "bkWasserMoorRandS": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand S"
+    },
+    "bkWasserMoorRandSO": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand SO"
+    },
+    "bkWasserMoorRandSW": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand SW"
+    },
+    "bkWasserMoorRandW": {
+      "quelle": "spiel/eigene/wasser_moor.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_moor, Rand W"
+    },
+    "bkWasserRandN": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        560,
+        32,
+        576
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand N"
+    },
+    "bkWasserRandNO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        32,
+        560,
+        48,
+        576
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand NO"
+    },
+    "bkWasserRandNW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        0,
+        560,
+        16,
+        576
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand NW"
+    },
+    "bkWasserRandO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        32,
+        576,
+        48,
+        592
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand O"
+    },
+    "bkWasserRandS": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        16,
+        592,
+        32,
+        608
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand S"
+    },
+    "bkWasserRandSO": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        32,
+        592,
+        48,
+        608
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand SO"
+    },
+    "bkWasserRandSW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        0,
+        592,
+        16,
+        608
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand SW"
+    },
+    "bkWasserRandW": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
+      "ausschnitt": [
+        0,
+        576,
+        16,
+        592
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser, Rand W"
+    },
+    "bkWasserRot": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_rot"
+    },
+    "bkWasserRotRandN": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand N"
+    },
+    "bkWasserRotRandNO": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand NO"
+    },
+    "bkWasserRotRandNW": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand NW"
+    },
+    "bkWasserRotRandO": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand O"
+    },
+    "bkWasserRotRandS": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand S"
+    },
+    "bkWasserRotRandSO": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand SO"
+    },
+    "bkWasserRotRandSW": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand SW"
+    },
+    "bkWasserRotRandW": {
+      "quelle": "spiel/eigene/wasser_rot.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rot, Rand W"
+    },
+    "bkWasserRumpf": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_rumpf"
+    },
+    "bkWasserRumpfRandN": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand N"
+    },
+    "bkWasserRumpfRandNO": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand NO"
+    },
+    "bkWasserRumpfRandNW": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand NW"
+    },
+    "bkWasserRumpfRandO": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand O"
+    },
+    "bkWasserRumpfRandS": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand S"
+    },
+    "bkWasserRumpfRandSO": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand SO"
+    },
+    "bkWasserRumpfRandSW": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand SW"
+    },
+    "bkWasserRumpfRandW": {
+      "quelle": "spiel/eigene/wasser_rumpf.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_rumpf, Rand W"
+    },
+    "bkWasserSee": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_see"
+    },
+    "bkWasserSeeRandN": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand N"
+    },
+    "bkWasserSeeRandNO": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand NO"
+    },
+    "bkWasserSeeRandNW": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand NW"
+    },
+    "bkWasserSeeRandO": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand O"
+    },
+    "bkWasserSeeRandS": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand S"
+    },
+    "bkWasserSeeRandSO": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand SO"
+    },
+    "bkWasserSeeRandSW": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand SW"
+    },
+    "bkWasserSeeRandW": {
+      "quelle": "spiel/eigene/wasser_see.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_see, Rand W"
+    },
+    "bkWasserSinter": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_sinter"
+    },
+    "bkWasserSinterRandN": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand N"
+    },
+    "bkWasserSinterRandNO": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand NO"
+    },
+    "bkWasserSinterRandNW": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand NW"
+    },
+    "bkWasserSinterRandO": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand O"
+    },
+    "bkWasserSinterRandS": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand S"
+    },
+    "bkWasserSinterRandSO": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand SO"
+    },
+    "bkWasserSinterRandSW": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand SW"
+    },
+    "bkWasserSinterRandW": {
+      "quelle": "spiel/eigene/wasser_sinter.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_sinter, Rand W"
+    },
+    "bkWasserStein": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_stein"
+    },
+    "bkWasserSteinRandN": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand N"
+    },
+    "bkWasserSteinRandNO": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand NO"
+    },
+    "bkWasserSteinRandNW": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand NW"
+    },
+    "bkWasserSteinRandO": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand O"
+    },
+    "bkWasserSteinRandS": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand S"
+    },
+    "bkWasserSteinRandSO": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand SO"
+    },
+    "bkWasserSteinRandSW": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand SW"
+    },
+    "bkWasserSteinRandW": {
+      "quelle": "spiel/eigene/wasser_stein.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_stein, Rand W"
+    },
+    "bkWasserStrand": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_strand"
+    },
+    "bkWasserStrandRandN": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand N"
+    },
+    "bkWasserStrandRandNO": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand NO"
+    },
+    "bkWasserStrandRandNW": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand NW"
+    },
+    "bkWasserStrandRandO": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand O"
+    },
+    "bkWasserStrandRandS": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand S"
+    },
+    "bkWasserStrandRandSO": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand SO"
+    },
+    "bkWasserStrandRandSW": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand SW"
+    },
+    "bkWasserStrandRandW": {
+      "quelle": "spiel/eigene/wasser_strand.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_strand, Rand W"
+    },
+    "bkWasserWatt": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        16,
+        16,
+        32,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel wasser_watt"
+    },
+    "bkWasserWattRandN": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        16,
+        0,
+        32,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand N"
+    },
+    "bkWasserWattRandNO": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        32,
+        0,
+        48,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand NO"
+    },
+    "bkWasserWattRandNW": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand NW"
+    },
+    "bkWasserWattRandO": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        32,
+        16,
+        48,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand O"
+    },
+    "bkWasserWattRandS": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        16,
+        32,
+        32,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand S"
+    },
+    "bkWasserWattRandSO": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        32,
+        32,
+        48,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand SO"
+    },
+    "bkWasserWattRandSW": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        0,
+        32,
+        16,
+        48
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand SW"
+    },
+    "bkWasserWattRandW": {
+      "quelle": "spiel/eigene/wasser_watt.png",
+      "ausschnitt": [
+        0,
+        16,
+        16,
+        32
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "wasser_watt, Rand W"
+    }
+  }
+}

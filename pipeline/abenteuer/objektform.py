@@ -15,7 +15,8 @@ vier neuen, optionalen Feldern je Objekt; fehlen sie, bleibt alles wie vorher (b
 Lage: ``feld`` und ``versatz`` nennen die linke obere Ecke des *gedrehten* Rechtecks. Bei 90 und
 270 Grad tauschen Breite und Höhe (auch für die Kollision). Eine eigene ``maske`` dreht und spiegelt
 mit; mit Maßstab gilt die Standardregel aus ``maske.py`` auf der neuen Größe, ``frei_unten`` gilt nur
-ungedreht.
+ungedreht. Eine Maske am Szeneneintrag (Übersteuerung, ``objektkollision.py``) formt sich genauso,
+bleibt aber auch mit Maßstab erhalten.
 Spiegel der Regeln in der App: ``app/src/abenteuer/oberwelt/moebelform.ts``; im Editor:
 ``werkzeuge/karteneditor/js/geometrie.js``.
 """
@@ -85,18 +86,27 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
     Warum: Der Kartenbau rechnet Lage, Kollision und Prüfungen mit ``breite``, ``hoehe`` und
     ``maske`` der Angabe; mit der geformten Angabe gelten alle Regeln ohne weitere Änderung.
     Eingaben: Angabe aus ``moebel/<ort>.json`` (oder None, wenn das Möbel fehlt), Szeneneintrag.
-    Ausgabe: dieselbe Angabe (ohne Form) oder eine Kopie mit neuer Größe und Maske.
+    Ausgabe: dieselbe Angabe (ohne Form und eigene Maske) oder eine Kopie mit neuer Größe und Maske.
     Beispiel: ``{"breite": 64, "hoehe": 32, "maske": ["....", "##.."]}`` mit ``drehung`` 90 →
     ``breite`` 32, ``hoehe`` 64, ``maske`` ["#.", "#.", "..", ".."].
+    Sonderfall: Eine ``maske`` am Eintrag (objektkollision.py) ersetzt die Katalogmaske. Sie gilt im
+    Raster des skalierten, ungedrehten Bildes und dreht und spiegelt mit; anders als die
+    Katalogmaske bleibt sie auch mit Maßstab erhalten.
     """
-    if angabe is None or not hat_form(eintrag):
-        return angabe
+    if angabe is None:
+        return None
+    eigene = eintrag.get("maske")
+    if not hat_form(eintrag):
+        return angabe if eigene is None else {**angabe, "maske": list(eigene)}
     neu = dict(angabe)
     neu["breite"], neu["hoehe"] = wirksame_groesse(angabe["breite"], angabe["hoehe"], eintrag)
     drehung, massstab = eintrag.get("drehung", 0) % 360, float(eintrag.get("massstab", 1))
-    if "maske" in angabe and massstab == 1:
-        spalten, reihen = max(1, angabe["breite"] // K), max(1, angabe["hoehe"] // K)
-        neu["maske"] = drehe_maske(angabe["maske"], spalten, reihen, drehung, bool(eintrag.get("spiegeln")))
+    maske = eigene if eigene is not None else angabe.get("maske") if massstab == 1 else None
+    if maske is not None:
+        # Raster des skalierten, ungedrehten Bildes (ohne Maßstab: das Raster des Katalogs).
+        breite, hoehe = wirksame_groesse(angabe["breite"], angabe["hoehe"], {"massstab": massstab})
+        spalten, reihen = max(1, breite // K), max(1, hoehe // K)
+        neu["maske"] = drehe_maske(list(maske), spalten, reihen, drehung, bool(eintrag.get("spiegeln")))
     else:
         neu.pop("maske", None)
     if drehung:

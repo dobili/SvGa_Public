@@ -17,6 +17,8 @@ from pathlib import Path
 
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektform import FORMFELDER, geformt
+from pipeline.abenteuer.objektkollision import REIHENTRENNER
 
 KACHELEBENEN = ("boden", "waende", "objekte")
 OBJEKTEBENE = "ausloeser"
@@ -105,7 +107,11 @@ def moebelfelder(karte: dict) -> set[Feld]:
         if not angabe or not eigene.get("kollision", angabe.get("kollision")):
             continue
         x0, y0 = int(o["x"]) // KACHELGROESSE, int(o["y"]) // KACHELGROESSE
-        # Regel in maske.py: ohne oberste Reihe, „frei_unten“ oder eigene „maske“.
+        # Regel in maske.py: ohne oberste Reihe, „frei_unten“ oder eigene „maske“; Form und eigene
+        # Maske der Szene stehen als Eigenschaften am Objekt (objektform.py, objektkollision.py).
+        angabe = geformt(angabe, {k: v for k, v in eigene.items() if k in FORMFELDER}) or angabe
+        if isinstance(eigene.get("maske"), str):
+            angabe = {**angabe, "maske": eigene["maske"].split(REIHENTRENNER)}
         felder |= {(x0 + dx, y0 + dy) for dx, dy in maskenfelder(angabe)}
     return felder
 

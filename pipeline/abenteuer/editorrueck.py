@@ -3,7 +3,9 @@
 Warum: Der Autor rückt Karten im Editor zurecht (``werkzeuge/karteneditor/``, Wunsch des Autors,
 15.11.2026) und lädt die Änderungsdatei im privaten Repository in ``editor/rueck/`` hoch. Dieses
 Skript schreibt die Szenen nach ``inhalte/abenteuer/szenen/``, berichtet je Karte, was verschoben,
-gedreht, hinzugefügt, gelöscht oder in der Ebene geändert wurde (mit Koordinaten), legt Bericht und
+gedreht, hinzugefügt, gelöscht oder in der Ebene geändert wurde (mit Koordinaten), welche Kollision an
+einer Stelle übersteuert wurde (mit Katalogwert und Grund) und welche Auslöser neu oder gelöscht sind,
+legt Bericht und
 Vorschauen nach ``buch/arbeit/editor/`` (nur lokal) und baut die betroffenen Karten neu.
 
 Aufruf: ``python -m pipeline.abenteuer.editorrueck DATEI.json [--privat PRIVAT]``
@@ -20,6 +22,9 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
+from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektkollision import FELDER as KOLLISION
+from pipeline.abenteuer.objektkollision import kollisionszeile
 
 if TYPE_CHECKING:  # Pillow nur für die Vorschau
     from PIL.Image import Image as Bild
@@ -89,8 +94,8 @@ def ort(eintrag: dict) -> str:
     return text
 
 
-def objektzeilen(vorher: dict, nachher: dict) -> list[str]:
-    """Was sich an einem Objekt geändert hat, je Merkmal eine Zeile."""
+def objektzeilen(vorher: dict, nachher: dict, moebel: dict | None = None) -> list[str]:
+    """Was sich an einem Objekt geändert hat, je Merkmal eine Zeile (Kollision mit Katalogwert)."""
     name = nachher["moebel"]
     zeilen = []
     if any(vorher.get(k) != nachher.get(k) for k in LAGE):
@@ -105,8 +110,13 @@ def objektzeilen(vorher: dict, nachher: dict) -> list[str]:
         zeilen.append(f"skaliert: {name} {ort(nachher)} auf {prozent} %")
     if vorher.get("ebene", 0) != nachher.get("ebene", 0):
         zeilen.append(f"Ebene: {name} {ort(nachher)} {vorher.get('ebene', 0)} → {nachher.get('ebene', 0)}")
+    angabe = (moebel or {}).get(name)
+    if zeile := kollisionszeile(vorher, nachher, angabe, ort(nachher)):
+        zeilen.append(zeile)
     rest = sorted(
-        k for k in set(vorher) | set(nachher) if k not in (*LAGE, *FORM) and vorher.get(k) != nachher.get(k)
+        k
+        for k in set(vorher) | set(nachher)
+        if k not in (*LAGE, *FORM, *KOLLISION) and vorher.get(k) != nachher.get(k)
     )
     if rest:
         zeilen.append(f"geändert: {name} {ort(nachher)}: {', '.join(rest)}")
@@ -127,7 +137,33 @@ def rasterzeilen(vorher: list[str], nachher: list[str]) -> list[str]:
     return [f"Boden: {len(felder)} Felder bemalt: {', '.join(felder[:FELDER_HOECHSTENS])}{mehr}"]
 
 
-def berichte(eintrag: dict) -> list[str]:
+def markierungszeilen(eintrag: dict) -> list[str]:
+    """Verschobene, neue und gelöschte Auslöser, Figuren und Belebung.
+
+    Mit ``markierungen`` (Zuordnung je Liste wie bei den Objekten, Editor ab 1.1) erkennt der
+    Bericht neue und gelöschte Einträge; ältere Dateien vergleichen der Reihe nach.
+    Beispiel: „hinzugefügt (ausloeser): treppe (3, 6)“.
+    """
+    vorher, nachher, zeilen = eintrag["vorher"], eintrag["nachher"], []
+    for liste in MARKIERUNGEN:
+        alt, neu = vorher.get(liste, []), nachher.get(liste, [])
+        zuordnung = (eintrag.get("markierungen") or {}).get(liste)
+        if zuordnung is None:
+            zuordnung = [j if j < len(alt) else None for j in range(len(neu))]
+        for j, i in enumerate(zuordnung):
+            b = neu[j]
+            if i is None:
+                zeilen.append(f"hinzugefügt ({liste}): {b['name']} {tuple(b['feld'])}")
+            elif alt[i].get("feld") != b.get("feld"):
+                zeilen.append(
+                    f"verschoben ({liste}): {b['name']} {tuple(alt[i]['feld'])} → {tuple(b['feld'])}"
+                )
+        for i in sorted(set(range(len(alt))) - {i for i in zuordnung if i is not None}):
+            zeilen.append(f"gelöscht ({liste}): {alt[i]['name']} {tuple(alt[i]['feld'])}")
+    return zeilen
+
+
+def berichte(eintrag: dict, moebel: dict | None = None) -> list[str]:
     """Bericht zu einer Karte: Objekte (über die Zuordnung des Editors), Markierungen, Boden."""
     vorher, nachher = eintrag["vorher"], eintrag["nachher"]
     alt, neu = vorher.get("objekte", []), nachher.get("objekte", [])
@@ -136,14 +172,13 @@ def berichte(eintrag: dict) -> list[str]:
     for j, i in enumerate(zuordnung):
         if i is None:
             zeilen.append(f"hinzugefügt: {neu[j]['moebel']} {ort(neu[j])}")
+            if zeile := kollisionszeile({}, neu[j], (moebel or {}).get(neu[j]["moebel"]), ort(neu[j])):
+                zeilen.append(zeile)
         else:
-            zeilen += objektzeilen(alt[i], neu[j])
+            zeilen += objektzeilen(alt[i], neu[j], moebel)
     for i in sorted(set(range(len(alt))) - {i for i in zuordnung if i is not None}):
         zeilen.append(f"gelöscht: {alt[i]['moebel']} {ort(alt[i])}")
-    for liste in MARKIERUNGEN:
-        for a, b in zip(vorher.get(liste, []), nachher.get(liste, []), strict=False):
-            if a.get("feld") != b.get("feld"):
-                zeilen.append(f"verschoben ({liste}): {b['name']} {tuple(a['feld'])} → {tuple(b['feld'])}")
+    zeilen += markierungszeilen(eintrag)
     zeilen += rasterzeilen(vorher.get("raster", []), nachher.get("raster", []))
     for notiz in eintrag.get("objektnotizen", []):
         zeilen.append(f"Notiz zu {notiz['moebel']} (Objekt {notiz['index']}): {notiz['notiz']}")
@@ -178,7 +213,7 @@ def vorschau(szene: dict, privat: Path, markiert: set[int]) -> "Bild":
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     for s in sorted(gesetzt, key=lambda s: s["tiefe"]):
-        bild = formbild(moebelbild(privat, moebel[s["name"]]["quelle"]), s)
+        bild = formbild(moebelbild(privat, moebel[s["name"]]), s)
         grund.alpha_composite(bild, (max(0, s["x"]), max(0, s["y"])))
     zeichner = ImageDraw.Draw(grund)
     # Kennung wie im Kartenbau (id oder „möbel@index“) → Index des Objekts in der Szene.
@@ -217,13 +252,20 @@ def main(argumente: list[str] | None = None) -> int:
         f"Editor {daten.get('editor_version')}, {daten.get('zeitstempel')}",
     ]
     bauen = not a.ohne_bau and a.szenen.resolve() == (INHALTE / "szenen").resolve()
+    moebel, kollisionen = lade_moebel(), []
     for eintrag in daten["szenen"]:
         text += ["", f"## {eintrag['datei']} ({eintrag.get('karte', '')})", ""]
         if eintrag["datei"] in konflikte:
             text.append("- KONFLIKT: Szene seit dem Paket geändert, nicht geschrieben (--erzwingen)")
         if eintrag.get("notiz"):
             text.append(f"- Notiz des Autors: {eintrag['notiz']}")
-        text += [f"- {z}" for z in berichte(eintrag)]
+        zeilen = berichte(eintrag, moebel)
+        kollisionen += [
+            f"{eintrag['datei']}: {z.removeprefix('Kollision: ')}"
+            for z in zeilen
+            if z.startswith("Kollision:")
+        ]
+        text += [f"- {z}" for z in zeilen]
         if a.privat and eintrag["datei"] in geschrieben:
             bild = vorschau(eintrag["nachher"], a.privat, geaendert := geaenderte_objekte(eintrag))
             bild.convert("RGB").save(ordner / f"{Path(eintrag['datei']).stem}.png")
@@ -236,6 +278,11 @@ def main(argumente: list[str] | None = None) -> int:
             befunde = baue(a.szenen / eintrag["datei"])
             text.append("- Kartenbau: " + ("in Ordnung" if not befunde else f"{len(befunde)} Befunde"))
             text += [f"  - {b}" for b in befunde]
+    if kollisionen:
+        # Für den Hauptchat: Welche Katalogeinträge passen an diesen Stellen nicht (objektkollision.py)?
+        text += ["", "## Kollision an einzelnen Stellen (Katalog prüfen)", ""] + [
+            f"- {z}" for z in kollisionen
+        ]
     (ordner / "bericht.md").write_text("\n".join(text) + "\n", encoding="utf-8")
     print("\n".join(text))
     print(f"\nBericht: {ordner / 'bericht.md'}")

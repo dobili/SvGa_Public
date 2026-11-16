@@ -9,7 +9,7 @@
  * Beispiel: Eine Theke 48 × 32 auf (32, 48) sperrt die Kacheln (2..4, 4), ihre oberste Reihe
  * (2..4, 3) bleibt frei, weil man hinter hohen Möbeln durchgehen kann.
  */
-import { formAus, geformt } from "./moebelform";
+import { geformtAusObjekt } from "./moebelform";
 
 /** Angabe eines Möbels aus daten/moebel.json, so weit die Kollision sie braucht. */
 export interface Sperrangabe {
@@ -133,7 +133,7 @@ export function sperrkacheln(
       }
       const roh = o.type === "moebel" && o.name ? moebel[o.name] : undefined;
       if (!roh || !(hatKollision(o.properties) ?? roh.kollision)) continue;
-      sperreMoebel(gesperrt, ort, geformt(roh, formAus(o.properties)), kachel);
+      sperreMoebel(gesperrt, ort, geformtAusObjekt(roh, o.properties), kachel);
     }
   }
   return gesperrt;

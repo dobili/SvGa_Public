@@ -10,6 +10,8 @@ const path = require("path");
 const HAUPT = path.resolve(__dirname, "../../..");
 const KARTE = "maple-falls-diner.json";
 const FASSUNG = "maple-falls-diner-tischset.json";
+// Für den selbst gebauten Treppenabgang (kollision.cjs); geändert wird nur die Kopie im Testordner.
+const DACHBODEN = "maple-falls-dachboden.json";
 
 function chromiumPfad() {
   if (process.env.CHROMIUM_PFAD) return process.env.CHROMIUM_PFAD;
@@ -27,7 +29,7 @@ function bauePaket(arbeit) {
   if (process.env.PAKET) return process.env.PAKET;
   const privat = process.env.PRIVAT || path.resolve(HAUPT, "../schach-abenteuer-inhalte");
   const ziel = path.join(arbeit, "paket");
-  const nur = [KARTE, FASSUNG].map((d) => d.replace(".json", ""));
+  const nur = [KARTE, FASSUNG, DACHBODEN].map((d) => d.replace(".json", ""));
   execFileSync("python3", ["-m", "pipeline.abenteuer.editorpaket", privat, ziel, "--nur", ...nur], {
     cwd: HAUPT,
     stdio: "inherit",
@@ -113,6 +115,7 @@ module.exports = {
   HAUPT,
   KARTE,
   FASSUNG,
+  DACHBODEN,
   chromiumPfad,
   bauePaket,
   punkt,

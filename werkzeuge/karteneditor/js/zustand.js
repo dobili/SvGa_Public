@@ -13,7 +13,7 @@ window.KE = window.KE || {};
 
 (function (KE) {
   /** Version des Editors; steht in jeder heruntergeladenen Änderungsdatei. */
-  KE.VERSION = "1.0.0";
+  KE.VERSION = "1.1.0"; // 1.1: Kollision je Objekt, Auslöser anlegen und löschen
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";
   const ZULETZT_SCHLUESSEL = "karteneditor-zuletzt-v1";
   const ZULETZT_HOECHSTENS = 16;
@@ -41,6 +41,8 @@ window.KE = window.KE || {};
       markierungen: true,
     },
     pinselZeichen: ".",
+    kollisionUid: null, // Objekt im Modus „Kollision bearbeiten“ (kollision.js)
+    uebergangVorlage: null, // Name des Auslösers für „Übergang hier“ (ausloeser.js)
     ansicht: { zoom: 2, x: 0, y: 0 },
   };
   KE.zustand = zustand;
@@ -122,6 +124,7 @@ window.KE = window.KE || {};
     for (const [d, text] of Object.entries(stand)) zustand.bearbeitet[d] = JSON.parse(text);
     const vorhanden = new Set(KE.alleUids());
     zustand.auswahl = new Set([...zustand.auswahl].filter((u) => vorhanden.has(u)));
+    if (!vorhanden.has(zustand.kollisionUid)) zustand.kollisionUid = null;
   }
 
   KE.rueckgaengig = function () {

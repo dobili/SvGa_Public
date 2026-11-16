@@ -1,6 +1,7 @@
 /*
  * Karteneditor – Bedienfelder: Eigenschaften der Auswahl (Lage, Drehen, Spiegeln, Maßstab,
- * Ebene, Duplizieren, Löschen, Notiz), Hinweis auf Zustandsfassungen, Schalter der Ansicht,
+ * Ebene, Duplizieren, Löschen, Notiz; Kollision und Übergänge aus kollision.js und ausloeser.js),
+ * Hinweis auf Zustandsfassungen, Schalter der Ansicht,
  * Auswahlliste bei übereinanderliegenden Bildern, Statuszeile und Tastenkürzel-Hilfe.
  */
 "use strict";
@@ -206,8 +207,10 @@
         ziel,
         auswahl.every((t) => t.liste !== "objekte"),
       );
+    KE.kollisionsfeld(ziel); // Sperrt / Durchgehbar, Kollision bearbeiten (kollision.js)
     if (auswahl.length === 1 && auswahl[0].liste === "objekte")
       objektnotiz(ziel, auswahl[0].eintrag._uid);
+    KE.uebergangsfeld(ziel); // Übergang hier (ausloeser.js)
     fassungen(ziel);
     kartennotiz(ziel);
   };

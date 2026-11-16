@@ -53,6 +53,7 @@ Ein gelber Punkt ● in der Kartenliste heißt: Diese Karte hast du geändert.
 - Duplizieren: Strg+D. Mehrere Bilder werden als Gruppe kopiert, mit gleichen Abständen,
   eine Kachel versetzt. Danach sind die Kopien ausgewählt.
 - Löschen: Entf. Was auf einem Tisch steht, verschwindet mit dem Tisch.
+  Entf löscht auch Auslöser (blau), nicht aber Figuren und Belebung.
 
 **Neue Bilder**
 
@@ -72,6 +73,23 @@ Ein gelber Punkt ● in der Kartenliste heißt: Diese Karte hast du geändert.
 - Pinsel: malt den Boden um (Boden, Wand, Wasser oder die Sonderböden der Karte).
   Der genaue Rand wird erst beim Einarbeiten gezeichnet.
 
+**Durchgehen oder sperren** (Feld „Kollision“ rechts, wirkt auf alles Ausgewählte)
+
+- „Sperrt“: wie eine Wand. „Durchgehbar“: man läuft hindurch.
+- Bei „Durchgehbar“ erscheint ein Feld für den Grund. Kurz schreiben, warum
+  (etwa „nur ein Schatten“). Ohne Grund steht ein gelber Hinweis da, und der Bericht meldet es.
+- „Kollision bearbeiten“ (ein Bild auswählen): Die Kacheln des Bildes werden grün (frei) und
+  rot (gesperrt). Klick auf eine Kachel schaltet sie um. „Fertig“ oder Esc beendet das.
+- „Zurück zum Katalog“: Das Bild sperrt wieder wie überall.
+- Das gilt nur an dieser Stelle. Dasselbe Möbel anderswo bleibt, wie es ist.
+- Strg+Z macht jeden Klick rückgängig.
+
+**Übergänge und Auslöser**
+
+- Rechts „Übergang oder Auslöser anlegen“: in der Liste „wie treppe“ (oder einen anderen) wählen,
+  „Übergang hier“ drücken, dann die Kachel anklicken. Es entsteht eine Kopie mit gleichem Ziel.
+- Strg+D setzt eine weitere Kopie rechts daneben (für breite Durchgänge). Entf löscht sie.
+
 **Zur Umgebung zählen:** Gebäude, Häuser, Gebäudeteile, Türme, Stollen, Tribünen, Brücken,
 Stege, Wasser, Felsen, Gleise, Bodenbilder, Bordsteine und Straßenmarkierungen.
 Alles andere (Möbel, Deko, Pflanzen, Bäume, Zäune, Türen, Fahrzeuge) sind Objekte.
@@ -82,7 +100,23 @@ Alles andere (Möbel, Deko, Pflanzen, Bäume, Zäune, Türen, Fahrzeuge) sind Ob
 **Notizen:** Rechts gibt es ein Feld „Notiz zur Karte“ und bei einem ausgewählten Bild
 „Notiz zu diesem Objekt“. Schreib dort kurz, warum. Das kommt mit in die Datei.
 
-## 4. Tastenkürzel
+## 4. Treppenabgang selbst bauen
+
+So entsteht ein Loch im Boden ohne eigenes Lochbild:
+
+1. Eine Treppe nach unten aus der Bibliothek holen (Suche „Treppe ab“) und hinlegen.
+2. Bibliothek, Suche „bk“ oder den Boden der Karte („Dielen“, „Fliesen“, „Teppich“,
+   „Stein“, „Gras“, „Erde“): Diese Bodenkacheln (16 × 16) auf den Teil der Treppe legen,
+   der Boden sein soll. Sie liegen immer über der Treppe, man läuft darüber.
+3. Die Treppe auswählen, „Kollision bearbeiten“: Abgedeckte Kacheln grün (frei),
+   Lochränder und tiefe Stufen rot (gesperrt), die Einstiegskachel grün.
+4. „wie treppe“ wählen, „Übergang hier“, Einstiegskachel anklicken; für zwei Kacheln Strg+D.
+5. Wie immer herunterladen und schicken.
+
+Eine abgedeckte Treppe nach unten gilt im Kartenbau als Loch im Boden (Regel 10.84) und wird
+flach gezeichnet: Der Held läuft über die Dielen, nicht darunter.
+
+## 5. Tastenkürzel
 
 Taste ? zeigt alle Kürzel.
 
@@ -90,7 +124,7 @@ Taste ? zeigt alle Kürzel.
 | --------------------- | ----------------------------- |
 | Strg+Z / Strg+Y       | rückgängig / wiederholen      |
 | Strg+D                | duplizieren                   |
-| Entf                  | löschen                       |
+| Entf                  | löschen (Bilder, Auslöser)    |
 | R / Umschalt+R        | drehen rechts / links         |
 | H                     | spiegeln                      |
 | Bild auf / Bild ab    | nach vorn / nach hinten       |
@@ -100,9 +134,9 @@ Taste ? zeigt alle Kürzel.
 | G, K, M               | Raster, Kollision, Markierung |
 | U, L, V, B            | Umgebung, Sperren, Vorher, Pinsel |
 | F                     | ganze Karte zeigen            |
-| Esc                   | Auswahl aufheben              |
+| Esc                   | Auswahl aufheben, Modus beenden |
 
-## 5. Speichern und zurückschicken
+## 6. Speichern und zurückschicken
 
 - Deine Änderungen bleiben im Browser gespeichert, auch nach dem Schließen.
   Die Originalkarten werden nie überschrieben.
@@ -126,4 +160,18 @@ Taste ? zeigt alle Kürzel.
   `spiegeln`, `massstab` (0,5 bis 3) und `ebene` (ganze Zahl, wird zur Tiefe des Kartenbaus
   addiert; Entscheidung: Verschiebung statt fester Tiefe, damit die Tiefe beim Verschieben
   dem Fuß des Bildes folgt).
-- Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://).
+- Kollision je Objekt (pipeline/abenteuer/objektkollision.py): `kollision` (bool), `maske` (wie
+  im Katalog, im Raster des ungedrehten, skalierten Bildes; dreht und spiegelt mit, bleibt anders als
+  die Katalogmaske auch mit Maßstab), `begehbar_grund` (Pflicht, wenn ein nicht flaches, laut
+  Katalog sperrendes Möbel hier durchgehbar wird; sonst Befund im Kartenbau). Die Karte trägt die
+  geformte Maske als Eigenschaft `maske` („#.../....“), die App liest sie (oberwelt/moebelform.ts).
+  Der Rücklauf nennt jede Übersteuerung mit Katalogwert und Grund und sammelt sie am Ende unter
+  „Kollision an einzelnen Stellen“: Daraus lässt sich ablesen, welche Katalogeinträge falsch sind.
+- Bodenkacheln: `python -m pipeline.abenteuer.bodenkacheln` erzeugt `moebel/bodenkacheln.json`
+  aus materialien.json (Feld, unter_wand, Randblock, Wand oben/unten/Krone; `ausschnitt` aus dem
+  Bogen). Über einem Abgang (treppe, runter) liegen Bodenteile direkt darüber und der Abgang wird
+  flach und zählt als Bodenöffnung (pipeline/abenteuer/bodenteile.py).
+- Änderungsdatei ab Editor 1.1: `markierungen` (Zuordnung je Auslöser, Figur, Belebung), damit der
+  Rücklauf neue und gelöschte Auslöser meldet.
+- Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
+  Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner).

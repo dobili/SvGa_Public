@@ -19,7 +19,20 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const h = require("./hilfen.cjs");
-const { HAUPT, KARTE, FASSUNG, punkt, freiesObjekt, eintrag, zahl, auswahl, ziehe, foto } = h;
+const {
+  HAUPT,
+  KARTE,
+  FASSUNG,
+  DACHBODEN,
+  punkt,
+  freiesObjekt,
+  eintrag,
+  zahl,
+  auswahl,
+  ziehe,
+  foto,
+} = h;
+const kollision = require("./kollision.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -245,6 +258,20 @@ async function schalter(seite) {
   await seite.keyboard.press("Escape");
 }
 
+// Treppe flach (1), Dielen darüber (2), kein Befund 10.84, keine Kollisionsbefunde.
+const DACHBODENPRUEFUNG = `
+import json, sys
+from pipeline.abenteuer.anordnung import pruefe_loecher
+from pipeline.abenteuer.kartenbau import platziere
+from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektkollision import kollisionsbefunde
+szene, moebel = json.load(open(sys.argv[1])), lade_moebel()
+gesetzt = platziere(szene, moebel)[0]
+t = [s["tiefe"] for s in gesetzt if s["name"] == "mf4TreppeAb"][0]
+d = [s["tiefe"] for s in gesetzt if s["name"] == "bkDielen"][0]
+print(t, d, pruefe_loecher(szene, gesetzt, moebel), kollisionsbefunde(szene, moebel))
+`;
+
 async function ruecklauf(seite, arbeit) {
   const [laden] = await Promise.all([
     seite.waitForEvent("download"),
@@ -253,15 +280,19 @@ async function ruecklauf(seite, arbeit) {
   const datei = path.join(arbeit, "aenderungen.json");
   await laden.saveAs(datei);
   const daten = JSON.parse(fs.readFileSync(datei, "utf8"));
-  pruefe(daten.szenen.length === 2 && daten.editor_version, "Änderungsdatei mit beiden Karten");
+  pruefe(daten.szenen.length === 3 && daten.editor_version, "Änderungsdatei mit allen drei Karten");
   const szenen = path.join(arbeit, "szenen");
   fs.mkdirSync(szenen, { recursive: true });
-  for (const d of [KARTE, FASSUNG])
+  // Kopien der echten Szenen im Testordner: Der Rücklauf schreibt nur dorthin (--ohne-bau).
+  for (const d of [KARTE, FASSUNG, DACHBODEN])
     fs.copyFileSync(path.join(HAUPT, "inhalte/abenteuer/szenen", d), path.join(szenen, d));
   const bericht = path.join(arbeit, "bericht");
   const ausgabe = execFileSync(
     "python3",
-    ["-m", "pipeline.abenteuer.editorrueck", datei, "--szenen", szenen, "--bericht", bericht],
+    [
+      ...["-m", "pipeline.abenteuer.editorrueck", datei, "--szenen", szenen],
+      ...["--bericht", bericht, "--ohne-bau"],
+    ],
     { cwd: HAUPT, encoding: "utf8" },
   );
   pruefe(
@@ -269,7 +300,24 @@ async function ruecklauf(seite, arbeit) {
     "Rücklauf berichtet",
   );
   pruefe(/Notiz des Autors: Testnotiz/.test(ausgabe), "Notiz kommt in den Bericht");
-  console.log(ausgabe.split("\n").slice(0, 14).join("\n"));
+  pruefe(/Kollision: .*OHNE GRUND/.test(ausgabe), "Bericht nennt Kollision ohne Grund");
+  pruefe(/Kollision: mf4TreppeAb .*maske/.test(ausgabe), "Bericht nennt die Treppenmaske");
+  pruefe(/hinzugefügt \(ausloeser\): treppe/.test(ausgabe), "Bericht nennt neue Auslöser");
+  pruefe(/Kollision an einzelnen Stellen/.test(ausgabe), "Abschnitt für den Katalog");
+  // Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau.
+  const pruefung = execFileSync(
+    "python3",
+    ["-c", DACHBODENPRUEFUNG, path.join(szenen, DACHBODEN)],
+    {
+      cwd: HAUPT,
+      encoding: "utf8",
+    },
+  );
+  pruefe(
+    pruefung.trim() === "1 2 [] []",
+    `Dachboden-Kopie: Tiefen, 10.84, Befunde (${pruefung.trim()})`,
+  );
+  console.log(ausgabe.split("\n").slice(0, 40).join("\n"));
 }
 
 (async () => {
@@ -297,6 +345,9 @@ async function ruecklauf(seite, arbeit) {
   await seite.fill("#kartennotiz", "Testnotiz");
   await pinsel(seite);
   await schalter(seite);
+  await kollision.schalterUndGrund(seite, pruefe);
+  await kollision.kachelnBearbeiten(seite, pruefe);
+  await kollision.treppenabgang(seite, pruefe);
   await seite.reload();
   await seite.waitForFunction(() => KE.zustand.datei);
   pruefe(

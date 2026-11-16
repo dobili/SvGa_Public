@@ -186,6 +186,24 @@ details > summary {
   border: 1px solid #3d8;
   border-radius: 4px;
 }
+/* Kollision je Objekt und „Übergang hier“ (kollision.js, ausloeser.js) */
+.kollisionsfeld,
+.uebergangsfeld {
+  margin: 8px 0;
+  padding: 6px;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+#begehbargrund {
+  width: calc(100% - 12px);
+  margin: 4px 0;
+}
+.grundhinweis {
+  color: #f6a33c;
+}
+#uebergangsvorlage {
+  max-width: 100%;
+}
 .zwischentitel {
   color: var(--leise);
   font-size: 11px;

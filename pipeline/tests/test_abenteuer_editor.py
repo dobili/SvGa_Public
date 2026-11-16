@@ -56,6 +56,33 @@ def test_bibliothek_teilt_bilder_und_meldet_fehlende(tmp_path):
     assert befunde == ["tsFehlt: Bild bilder/fehlt.png fehlt"]
 
 
+def test_bibliothek_schneidet_bodenkacheln_und_liefert_kollision(tmp_path):
+    """Bodenkacheln (bodenkacheln.py) kommen als eigene Bilder aus dem Bogen; jeder Eintrag trägt
+    Kollision, Maske, Grund und „flach“ für die Übersteuerung im Editor."""
+    image = pytest.importorskip("PIL.Image")
+    privat, moebel = _privat(tmp_path)
+    image.new("RGBA", (32, 16), (200, 100, 0, 255)).save(privat / "bilder" / "bogen.png")
+    angaben = {
+        "bkA": {"quelle": "bilder/bogen.png", "ausschnitt": [0, 0, 16, 16], "breite": 16, "hoehe": 16},
+        "bkB": {"quelle": "bilder/bogen.png", "ausschnitt": [16, 0, 32, 16], "breite": 16, "hoehe": 16},
+        "tsKiste": {
+            "quelle": "bilder/sofa.png",
+            "breite": 16,
+            "hoehe": 16,
+            "kollision": True,
+            "maske": ["#"],
+        },
+    }
+    for eintrag in angaben.values():
+        eintrag.setdefault("art", "boden_teil")
+    angaben["tsKiste"].update(art="kiste", begehbar_grund="nur Test")
+    (moebel / "test.json").write_text(json.dumps({"moebel": angaben}), encoding="utf-8")
+    eintraege, bilder, _ = editorpaket.bibliothek(privat, moebel)
+    assert eintraege["bkA"]["bild"] != eintraege["bkB"]["bild"] and len(bilder) == 3
+    assert eintraege["bkA"]["flach"] and not eintraege["tsKiste"]["flach"]
+    assert eintraege["tsKiste"]["maske"] == ["#"] and eintraege["tsKiste"]["begehbar_grund"] == "nur Test"
+
+
 def test_geschwister_aus_zustaenden():
     orte = [{"karten": [{"datei": "karten/a.json", "zustaende": {"x": "karten/a-x.json"}}]}]
     szenen = [("a.json", {"datei": "karten/a.json"}), ("a-x.json", {"datei": "karten/a-x.json"})]

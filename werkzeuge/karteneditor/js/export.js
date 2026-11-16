@@ -9,7 +9,8 @@
  * Format (Fassung 1):
  * { "format": "karteneditor-aenderungen", "fassung": 1, "editor_version", "zeitstempel",
  *   "paket_erstellt", "szenen": [ { "datei", "karte", "notiz", "vorher", "nachher",
- *   "zuordnung": [Index im Vorher oder null je Objekt im Nachher], "objektnotizen": [{ "index",
+ *   "zuordnung": [Index im Vorher oder null je Objekt im Nachher], "markierungen": { "ausloeser":
+ *   [dasselbe je Auslöser], "figuren", "belebung" } (seit 1.1), "objektnotizen": [{ "index",
  *   "moebel", "notiz" }] } ] }
  */
 "use strict";
@@ -22,6 +23,24 @@
     return (szene.objekte || []).map((o) =>
       o._uid && o._uid[0] === "o" ? Number(o._uid.slice(1)) : null,
     );
+  }
+
+  /**
+   * Index im Original je Auslöser, Figur und Belebung (null = neu, etwa „Übergang hier“), damit der
+   * Rücklauf neue und gelöschte Auslöser nennt. Kennungen: a3, f0, b2 (zustand.js, vergibUids).
+   */
+  function markierungen(szene) {
+    const zuordnungen = {};
+    for (const [liste, buchstabe] of [
+      ["ausloeser", "a"],
+      ["figuren", "f"],
+      ["belebung", "b"],
+    ]) {
+      zuordnungen[liste] = (szene[liste] || []).map((o) =>
+        o._uid && o._uid[0] === buchstabe ? Number(o._uid.slice(1)) : null,
+      );
+    }
+    return zuordnungen;
   }
 
   /** Die Änderungsdatei als Objekt (auch für den Test). */
@@ -40,6 +59,7 @@
         vorher: KE.ohneUids(z.original[datei]),
         nachher: KE.ohneUids(nachher),
         zuordnung: zuordnung(nachher),
+        markierungen: markierungen(nachher),
         objektnotizen,
       };
     });

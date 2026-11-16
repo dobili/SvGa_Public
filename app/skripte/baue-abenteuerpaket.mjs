@@ -14,6 +14,7 @@ import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { deflateSync } from "node:zlib";
+import sharp from "sharp";
 import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
 import { baueFigurenbogen } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
@@ -233,7 +234,14 @@ async function moebelbild(angabe) {
   // im privaten Repository; Rückmeldung des Autors zum grauen Schleier, 9.11.2026).
   const umgefaerbt = join(PRIVAT_WURZEL, "spiel/schatten", angabe.quelle);
   const quelle = existsSync(umgefaerbt) ? umgefaerbt : join(PRIVAT_WURZEL, angabe.quelle);
-  return existsSync(quelle) ? readFile(quelle) : platzhalterRechteck(angabe.breite, angabe.hoehe);
+  if (!existsSync(quelle)) return platzhalterRechteck(angabe.breite, angabe.hoehe);
+  if (!angabe.ausschnitt) return readFile(quelle);
+  // Kachel aus einem Bogen (pipeline/abenteuer/bodenkacheln.py): links, oben, rechts, unten.
+  const [links, oben, rechts, unten] = angabe.ausschnitt;
+  return sharp(await readFile(quelle))
+    .extract({ left: links, top: oben, width: rechts - links, height: unten - oben })
+    .png()
+    .toBuffer();
 }
 
 function platzhalterRechteck(breite, hoehe) {

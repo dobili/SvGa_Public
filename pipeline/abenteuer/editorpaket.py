@@ -79,12 +79,17 @@ def geschwister(orte: list[dict], szenen: list[tuple[str, dict]]) -> dict[str, l
 
 def kachelbild(privat: Path, bogen: str, feld: list[int]) -> str:
     """Eine Kachel aus einem Bogen als data-URL (braucht Pillow)."""
+    return ausschnittbild(privat / bogen, [feld[0] * K, feld[1] * K, (feld[0] + 1) * K, (feld[1] + 1) * K])
+
+
+def ausschnittbild(pfad: Path, ausschnitt: list[int]) -> str:
+    """Ein Ausschnitt (links, oben, rechts, unten) eines Bildes als data-URL (braucht Pillow).
+    Beispiel: Dielen aus dem Bodenbogen, [80, 208, 96, 224] (Katalog bodenkacheln.json)."""
     import io
 
     from PIL import Image
 
-    bild = Image.open(privat / bogen).convert("RGBA")
-    teil = bild.crop((feld[0] * K, feld[1] * K, (feld[0] + 1) * K, (feld[1] + 1) * K))
+    teil = Image.open(pfad).convert("RGBA").crop(tuple(ausschnitt))
     puffer = io.BytesIO()
     teil.save(puffer, "PNG")
     return "data:image/png;base64," + base64.b64encode(puffer.getvalue()).decode("ascii")
@@ -129,11 +134,14 @@ def bibliothek(privat: Path, moebelordner: Path) -> tuple[dict, list[str], list[
             if pfad is None:
                 befunde.append(f"{kennung}: Bild {angabe['quelle']} fehlt")
                 continue
-            if angabe["quelle"] not in nummer:
-                nummer[angabe["quelle"]] = len(bilder)
-                bilder.append(data_url(pfad))
+            # Kacheln aus einem Bogen (bodenkacheln.py): je Ausschnitt ein eigenes Bild.
+            schluessel = f"{angabe['quelle']}#{angabe.get('ausschnitt', '')}"
+            if schluessel not in nummer:
+                nummer[schluessel] = len(bilder)
+                ausschnitt = angabe.get("ausschnitt")
+                bilder.append(ausschnittbild(pfad, ausschnitt) if ausschnitt else data_url(pfad))
             eintrag = bibliothekseintrag(kennung, angabe, datei.stem, katalog.get(angabe["quelle"]))
-            eintraege[kennung] = {**eintrag, "bild": nummer[angabe["quelle"]]}
+            eintraege[kennung] = {**eintrag, "bild": nummer[schluessel]}
     return eintraege, bilder, befunde
 
 

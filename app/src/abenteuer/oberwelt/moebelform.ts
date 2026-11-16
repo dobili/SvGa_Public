@@ -97,3 +97,22 @@ export function geformt<T extends Formbare>(angabe: T, form: Moebelform): T {
     ...(freiUnten !== undefined && form.drehung === 0 ? { frei_unten: freiUnten } : {}),
   } as T;
 }
+
+/** Trenner der Maskenreihen in der Tiled-Eigenschaft `maske` (pipeline/abenteuer/objektkollision.py). */
+const REIHENTRENNER = "/";
+
+/**
+ * Die Angabe so, wie das Objekt auf der Karte liegt: Form aus den Eigenschaften und, falls gesetzt,
+ * die eigene Maske der Szene (Eigenschaft `maske`, schon geformt, z. B. "#.../....").
+ * Warum: Der Autor legt im Karteneditor je Stelle fest, welche Kacheln eines Bildes sperren
+ * (Wunsch des Autors, 16.11.2026); der Kartenbau schreibt das nur an diese eine Stelle.
+ * Beispiel: Sofa 64 × 32 mit maske "#.../...." sperrt nur die Kachel oben links.
+ */
+export function geformtAusObjekt<T extends Formbare>(
+  angabe: T,
+  eigenschaften: readonly { readonly name?: string; readonly value?: unknown }[] | undefined,
+): T {
+  const geformte = geformt(angabe, formAus(eigenschaften));
+  const maske = eigenschaften?.find((e) => e.name === "maske")?.value;
+  return typeof maske === "string" ? { ...geformte, maske: maske.split(REIHENTRENNER) } : geformte;
+}

@@ -1,7 +1,9 @@
 /*
  * Karteneditor – Geometrie: Lage, Größe, Tiefe und Kollision der Objekte einer Szene, genau wie
  * der Kartenbau (pipeline/abenteuer/kartenbau.py, platziere) und die Form der Objekte
- * (pipeline/abenteuer/objektform.py: drehung, spiegeln, massstab, ebene).
+ * (pipeline/abenteuer/objektform.py: drehung, spiegeln, massstab, ebene), die Übersteuerung der
+ * Kollision je Objekt (objektkollision.py: kollision, maske) und Bodenteile über Abgängen
+ * (bodenteile.py).
  *
  * Warum: Der Editor soll die Karte so zeigen wie das Spiel; Zeichenreihenfolge (tiefe) und
  * Kollision müssen deshalb dieselben Regeln haben. Ändert sich eine Regel dort, muss sie hier
@@ -45,20 +47,58 @@
     return r;
   };
 
-  /** Die Möbelangabe in der Form des Eintrags (objektform.geformt). */
+  /**
+   * Die Möbelangabe in der Form des Eintrags (objektform.geformt). Eine eigene `maske` am Eintrag
+   * (Übersteuerung, objektkollision.py) ersetzt die Katalogmaske, gilt im Raster des skalierten,
+   * ungedrehten Bildes und bleibt anders als die Katalogmaske auch mit Maßstab erhalten.
+   */
   KE.geformt = function (angabe, e) {
-    if (!angabe || !KE.hatForm(e)) return angabe;
+    if (!angabe) return angabe;
+    const eigene = Array.isArray(e.maske) ? e.maske : null;
+    if (!KE.hatForm(e)) return eigene ? { ...angabe, maske: [...eigene] } : angabe;
     const neu = { ...angabe };
     [neu.breite, neu.hoehe] = KE.wirksameGroesse(angabe.breite, angabe.hoehe, e);
     const drehung = (e.drehung || 0) % 360;
-    if (angabe.maske && Number(e.massstab ?? 1) === 1) {
-      const sp = Math.max(1, Math.floor(angabe.breite / K));
-      const re = Math.max(1, Math.floor(angabe.hoehe / K));
-      neu.maske = KE.dreheMaske(angabe.maske, sp, re, drehung, !!e.spiegeln);
+    const massstab = Number(e.massstab ?? 1);
+    const maske = eigene || (massstab === 1 ? angabe.maske : null);
+    if (maske) {
+      const [b, h] = KE.wirksameGroesse(angabe.breite, angabe.hoehe, { massstab });
+      const sp = Math.max(1, Math.floor(b / K));
+      const re = Math.max(1, Math.floor(h / K));
+      neu.maske = KE.dreheMaske(maske, sp, re, drehung, !!e.spiegeln);
     } else delete neu.maske;
     if (drehung) delete neu.frei_unten;
     return neu;
   };
+
+  /** Ob ein Eintrag sperrt: `kollision` am Eintrag, sonst der Katalog (objektkollision.kollision_an). */
+  KE.kollisionAn = (roh, e) =>
+    typeof e.kollision === "boolean" ? e.kollision : !!(roh && roh.kollision);
+
+  /** Ob ein Möbel ein Abgang nach unten ist (bodenteile.ist_abgang). */
+  const istAbgang = (roh) => !!roh && roh.art === "treppe" && roh.richtung === "runter";
+  const beruehrt = (a, b) =>
+    a.x < b.x + b.b && b.x < a.x + a.b && a.y < b.y + b.h && b.y < a.y + a.h;
+
+  /**
+   * Bodenteile über einem Abgang (pipeline/abenteuer/bodenteile.py): Der abgedeckte Abgang wird
+   * flach (Tiefe 1 plus Ebene), das Bodenteil liegt direkt darüber.
+   */
+  function legeBodenteile(stuecke, moebel) {
+    const art = (s) => (moebel[s.kennung] || {}).art;
+    const teile = stuecke.filter((s) => art(s) === "boden_teil" && s.tiefe > 0);
+    if (!teile.length) return;
+    const ebene = (s) => s.eintrag.ebene || 0;
+    const abgaenge = stuecke.filter(
+      (s) =>
+        istAbgang(moebel[s.kennung]) && s.tiefe - ebene(s) > 0 && teile.some((t) => beruehrt(s, t)),
+    );
+    for (const s of abgaenge) s.tiefe = 1 + ebene(s);
+    for (const t of teile) {
+      const unter = abgaenge.filter((s) => beruehrt(s, t)).map((s) => s.tiefe);
+      if (unter.length) t.tiefe = Math.max(...unter) + 1 + ebene(t);
+    }
+  }
 
   /**
    * Alle Objekte der Szene mit Lage und Tiefe (wie platziere). Ausgabe: Liste von Stücken
@@ -87,7 +127,7 @@
         y = feld[1] * K + dy;
         const flach = !angabe.kollision && !e.an_wand && !e.vorn;
         tiefe = e.an_wand ? 0 : flach ? 1 : y + angabe.hoehe - K / 2;
-        kollision = !!angabe.kollision && !e.an_wand && !e.vorn;
+        kollision = KE.kollisionAn(roh, e) && !e.an_wand && !e.vorn;
       }
       const stueck = {
         uid: e._uid,
@@ -108,6 +148,7 @@
       nachId[stueck.id] = stueck;
       stuecke.push(stueck);
     });
+    legeBodenteile(stuecke, moebel);
     // Zeichenreihenfolge: nach Tiefe, bei Gleichstand in der Reihenfolge der Szene.
     return stuecke.sort((a, b) => a.tiefe - b.tiefe || a.index - b.index);
   };

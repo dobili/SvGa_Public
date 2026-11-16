@@ -13,6 +13,8 @@ Bordsteine und Straßenmarkierungen. Möbel, Deko, Fahrzeuge, Pflanzen, Zäune u
 
 import re
 
+from pipeline.abenteuer.objektkollision import FLACH
+
 # Arten, die zur Umgebung gehören (Dokumentation: docs/spiel/KARTENEDITOR.md).
 UMGEBUNG = (
     "gebaeude",
@@ -218,8 +220,12 @@ def bibliothekseintrag(kennung: str, angabe: dict, ortsdatei: str, katalogeintra
         "ort": ortsdatei,
         "umgebung": art in UMGEBUNG,
     }
+    # Kollision des Katalogs (Maske, Grund) für die Übersteuerung im Editor (objektkollision.py);
+    # „flach“: Art, über die man läuft (dann braucht „durchgehbar“ keinen Grund, Regel 10.69).
     felder = ("breite", "hoehe", "kollision", "art", "blick", "zustand", "stil", "maske", "frei_unten")
+    felder += ("begehbar_grund", "richtung")
     eintrag.update({k: angabe[k] for k in felder if k in angabe} | ({"art": art} if art else {}))
+    eintrag["flach"] = art in FLACH
     if katalogeintrag and katalogeintrag.get("thema"):
         eintrag["thema"] = katalogeintrag["thema"]
     return eintrag

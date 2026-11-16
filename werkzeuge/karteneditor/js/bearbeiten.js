@@ -153,13 +153,31 @@
     return `${id}_${n}`;
   }
 
+  /** Ausgewählte Auslöser (Übergänge): Sie lassen sich auch duplizieren und löschen. */
+  const ausloeser = () => KE.ausgewaehlt().filter((t) => t.liste === "ausloeser");
+
+  /** Strg+D bei Auslösern: Kopie eine Kachel rechts daneben (ein Übergang über mehrere Kacheln). */
+  function dupliziereAusloeser(auswahl) {
+    const szene = KE.szene();
+    KE.schritt("Auslöser duplizieren", [KE.zustand.datei], () => {
+      const neu = auswahl.map((t) => ({
+        ...KE.kopie(t.eintrag),
+        feld: [t.eintrag.feld[0] + 1, t.eintrag.feld[1]],
+        _uid: KE.neueUid(),
+      }));
+      szene.ausloeser.push(...neu);
+      KE.zustand.auswahl = new Set(neu.map((a) => a._uid));
+    });
+  }
+
   /**
    * Dupliziert die Auswahl als Gruppe: Abstände bleiben, die Kopien liegen eine Kachel nach
    * rechts unten und sind danach ausgewählt. Was auf einem mitkopierten Möbel steht, steht danach
-   * auf der Kopie.
+   * auf der Kopie. Sind nur Auslöser gewählt, entstehen Kopien rechts daneben.
    */
   KE.dupliziere = function () {
     const auswahl = objekte();
+    if (!auswahl.length && ausloeser().length) return dupliziereAusloeser(ausloeser());
     if (!auswahl.length) return;
     const szene = KE.szene();
     const neu = [];
@@ -183,21 +201,27 @@
     });
   };
 
-  /** Löscht die ausgewählten Objekte und was auf ihnen steht; Markierungen bleiben. */
+  /**
+   * Löscht die ausgewählten Objekte und was auf ihnen steht, dazu ausgewählte Auslöser; Figuren
+   * und Belebung bleiben (sie gehören zur Handlung).
+   */
   KE.loesche = function () {
     const szene = KE.szene();
-    const weg = new Set(objekte().map((t) => t.eintrag._uid));
-    if (!weg.size) return KE.status("Auslöser und Figuren lassen sich nur verschieben.");
+    const weg = new Set([...objekte(), ...ausloeser()].map((t) => t.eintrag._uid));
+    if (!weg.size) return KE.status("Figuren und Belebung lassen sich nur verschieben.");
     KE.schritt("Löschen", [KE.zustand.datei], () => {
+      szene.ausloeser = (szene.ausloeser || []).filter((a) => !weg.has(a._uid));
       let mehr = true;
       while (mehr) {
         mehr = false;
-        const ids = new Set(szene.objekte.filter((o) => weg.has(o._uid) && o.id).map((o) => o.id));
-        for (const o of szene.objekte)
+        const ids = new Set(
+          (szene.objekte || []).filter((o) => weg.has(o._uid) && o.id).map((o) => o.id),
+        );
+        for (const o of szene.objekte || [])
           if (o.auf !== undefined && ids.has(o.auf) && !weg.has(o._uid))
             (weg.add(o._uid), (mehr = true));
       }
-      szene.objekte = szene.objekte.filter((o) => !weg.has(o._uid));
+      szene.objekte = (szene.objekte || []).filter((o) => !weg.has(o._uid));
       KE.zustand.auswahl.clear();
     });
   };
@@ -230,7 +254,9 @@
     return true;
   };
 
-  const LAGEFELDER = ["feld", "versatz", "drehung", "spiegeln", "massstab", "ebene"];
+  const LAGEFELDER = ["feld", "versatz", "drehung", "spiegeln", "massstab", "ebene"].concat(
+    ["kollision", "maske", "begehbar_grund"], // Kollision je Objekt (kollision.js)
+  );
   const VERGLEICH = ["moebel", "feld", "versatz", "auf", "an_wand", "id"];
   const schluessel = (e) => JSON.stringify(VERGLEICH.map((k) => e[k] ?? null));
 

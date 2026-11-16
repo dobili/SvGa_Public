@@ -114,6 +114,9 @@
       return;
     }
     if (ereignis.button !== 0 || z.schalter.vorher) return;
+    // Modi aus kollision.js und ausloeser.js: Der Klick gilt der Kachel, nicht der Auswahl.
+    if (z.kollisionUid) return KE.kollisionsKlick(px, py);
+    if (z.uebergangVorlage) return KE.setzeUebergang(px, py);
     if (z.schalter.pinsel && !z.schalter.umgebungSperren) {
       ziehen = { art: "pinsel", vorher: KE.schnappschuss([z.datei]) };
       pinsel(px, py);
@@ -238,6 +241,10 @@
     escape: () => {
       KE.hilfe(false);
       KE.schliesseListe();
+      if (KE.zustand.kollisionUid || KE.zustand.uebergangVorlage) {
+        KE.zustand.kollisionUid = KE.zustand.uebergangVorlage = null;
+        return KE.meldeAenderung("Modus beendet");
+      }
       KE.zustand.auswahl.clear();
       KE.meldeAenderung();
     },

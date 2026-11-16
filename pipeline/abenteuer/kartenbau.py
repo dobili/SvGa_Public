@@ -16,22 +16,33 @@ import sys
 from pathlib import Path
 
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
+from pipeline.abenteuer.bodenteile import lege_bodenteile
 from pipeline.abenteuer.kartenregeln import SITZMOEBEL, pruefe_regeln
+
+# Rasterzeichen und Tiled-Ausgabe stehen in kartentiled.py; viele Module holen sie weiter hier.
+from pipeline.abenteuer.kartentiled import (  # noqa: F401
+    GESPERRT,
+    JAHRESZEITEN,
+    LEER,
+    RICHTUNGEN,
+    TOENUNGEN,
+    WAND,
+    WASSER,
+    K,
+    sitzrichtung,
+    tiled,
+)
 from pipeline.abenteuer.kehren import kehrenbefunde
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.objektform import formangaben, formeigenschaften, geformt
+from pipeline.abenteuer.objektform import formangaben, geformt
+from pipeline.abenteuer.objektkollision import kollision_an, kollisionsbefunde
 from pipeline.abenteuer.saum import saumbefunde
 from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
 from pipeline.abenteuer.varianten import vergleiche_mit_a
 
 HAUPT = Path(__file__).resolve().parents[2]
 INHALTE = HAUPT / "inhalte" / "abenteuer"
-K = 16
-WAND, WASSER, LEER = "#", "~", " "
-GESPERRT = {WAND, WASSER, LEER}
-# Gid im Raster des Platzhalters (Boden, Wand, Teppich) für Kollision und Ansicht ohne Grafik.
-GID_BODEN, GID_WAND, GID_TEPPICH = 1, 2, 4
 # Wörter in Dateinamen, die auf ein Bauteil statt eines ganzen Gegenstands deuten.
 BAUTEIL = ("modular", "_left", "_right", "_top", "_bottom", "_part", "_half", "_layer")
 
@@ -46,18 +57,6 @@ def raster(szene: dict) -> list[str]:
     return [z.ljust(breite, LEER) for z in zeilen]
 
 
-def kachelebenen(zeilen: list[str], szene: dict) -> tuple[list[int], list[int]]:
-    """Boden- und Wandebene: Wand, Wasser und Leere sperren, Buchstaben aus ``boeden`` sind Teppich."""
-    teppiche = set(szene.get("boeden", {}))
-    boden, waende = [], []
-    for zeile in zeilen:
-        for zeichen in zeile:
-            gesperrt = zeichen in GESPERRT
-            boden.append(0 if gesperrt else GID_TEPPICH if zeichen in teppiche else GID_BODEN)
-            waende.append(GID_WAND if gesperrt else 0)
-    return boden, waende
-
-
 def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     """Die Möbel der Szene in Pixeln, mit Tiefe und Kollision; dazu Befunde der Prüfung.
 
@@ -66,6 +65,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     allem, ohne Kollision); ``vorn`` = nach dem Fuß gezeichnet, ohne Kollision (Fahnenmast vor einer
     Fassade); ``versatz`` = Feinschub in Pixeln; ``wenn`` = nur sichtbar, wenn die Bedingung beim
     Betreten gilt (app/src/abenteuer/regeln/figurbedingung.ts); Gegenstände darauf erben sie.
+    ``kollision``, ``maske`` am Eintrag übersteuern den Katalog an dieser Stelle (objektkollision.py).
     """
     befunde: list[str] = []
     nach_id: dict[str, dict] = {}
@@ -100,10 +100,12 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             # „vorn“: nach dem Fuß gezeichnet, aber ohne Kollision und Überlappungsprüfung (Fahnenmast
             # oder Laterne vor einer Fassade, deren Bild bis zur Treppe Kollisionsfläche ist).
             vorn = eintrag.get("vorn", False)
-            # Ohne Kollision (Teppich, flache Dinge am Boden) liegt das Möbel unter allem.
+            # Ohne Kollision (Teppich, flache Dinge am Boden) liegt das Möbel unter allem. Die Tiefe
+            # folgt dem Katalog: Ein an einer Stelle durchgehbares Sofa bleibt nach dem Fuß gezeichnet.
             flach = not angabe.get("kollision") and not an_wand and not vorn
             tiefe = 0 if an_wand else 1 if flach else y + angabe["hoehe"] - K // 2
-            kollision = bool(angabe.get("kollision")) and not an_wand and not vorn
+            # Übersteuerung „kollision“ am Eintrag (Karteneditor, objektkollision.py).
+            kollision = kollision_an(angabe, eintrag) and not an_wand and not vorn
         stueck = {
             "name": eintrag["moebel"],
             "x": x,
@@ -111,10 +113,13 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             "breite": angabe["breite"],
             "hoehe": angabe["hoehe"],
             "tiefe": tiefe + eintrag.get("ebene", 0),  # Ebene aus dem Karteneditor (objektform.py)
+            **({"ebene": eintrag["ebene"]} if eintrag.get("ebene") else {}),
             "kollision": kollision,
             # Begehbare Reihen unten im Bild (Gang vor dem Motel, Veranda), Angabe „frei_unten“.
             "frei_unten": angabe.get("frei_unten", 0),
             **(({"maske": angabe["maske"]} if "maske" in angabe else {}) | formangaben(eintrag)),
+            # Eigene Maske der Szene, geformt, für die Eigenschaft „maske“ der Tiled-Karte.
+            **({"objektmaske": angabe["maske"]} if "maske" in eintrag else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
         }
         # Bedingte Möbel (wenn, Sprache von bedingung.py): Was auf einem bedingten Möbel steht,
@@ -124,6 +129,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             stueck["wenn"] = wenn
         nach_id[stueck["id"]] = stueck
         gesetzt.append(stueck)
+    lege_bodenteile(gesetzt, moebel)  # Bodenkacheln über einer Treppe (bodenteile.py)
     return gesetzt, befunde
 
 
@@ -136,21 +142,9 @@ def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
     return {(x0 + a, y0 + b) for a, b in maskenfelder(stueck)}
 
 
-RICHTUNGEN = ("oben", "unten", "links", "rechts")
-
-
 def ist_sitzmoebel(name: str) -> bool:
     """Ist das Möbel ein Sitzplatz? Beispiel: „cc4StuhlVorn“ → ja, „cc5Tisch“ → nein."""
     return any(w in name.lower() for w in SITZMOEBEL)
-
-
-def sitzrichtung(eintrag: dict) -> str | None:
-    """Blickrichtung einer sitzenden Figur: ``"sitzt": true`` heißt nach unten, sonst die
-    angegebene Richtung (oben, unten, links, rechts); ohne Angabe None."""
-    wert = eintrag.get("sitzt")
-    if wert is True:
-        return "unten"
-    return wert if wert in RICHTUNGEN else None
 
 
 def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: bool = False) -> list[str]:
@@ -190,122 +184,6 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
     return befunde
 
 
-# Felder der Szene, die als Eigenschaft in die Tiled-Karte gehen.
-KARTENFELDER = ("toenung", "zustand_der_karte", "jahreszeit")
-TOENUNGEN = ("nebel", "dunst", "nacht", "abend", "serverblau", "sepia", "dunkel")
-# Winter färbt kartenbild um und lässt in der App Schnee fallen (Entscheidung 10.11.2026).
-JAHRESZEITEN = ("winter",)
-
-
-def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) -> dict:
-    """Die Tiled-Karte (Format der übrigen Karten, Kachelsatz des Platzhalters)."""
-    boden, waende = kachelebenen(zeilen, szene)
-    breite, hoehe = len(zeilen[0]), len(zeilen)
-    objekte = []
-
-    def objekt(name: str, typ: str, x: int, y: int, b: int = K, h: int = K, eig: list | None = None) -> None:
-        o = {
-            "id": len(objekte) + 1,
-            "name": name,
-            "type": typ,
-            "x": x,
-            "y": y,
-            "width": b,
-            "height": h,
-            "rotation": 0,
-            "visible": True,
-        }
-        if eig:
-            o["properties"] = eig
-        objekte.append(o)
-
-    for a in szene.get("ausloeser", []):
-        eig = [{"name": k, "type": "string", "value": v} for k, v in a.get("eigenschaften", {}).items()]
-        objekt(a["name"], "ausloeser", a["feld"][0] * K, a["feld"][1] * K, eig=eig)
-    for f in szene.get("figuren", []):
-        # Sitzende Figur (Wunsch des Autors R020): Blickrichtung als Eigenschaft „sitzt“.
-        sitzt = sitzrichtung(f)
-        eig = [{"name": "sitzt", "type": "string", "value": sitzt}] if sitzt else None
-        objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K, eig=eig)
-    # Statisten und Tiere (Belebung, Weltbeschreibung 4a) mit ihren Laufwegen.
-    for b in szene.get("belebung", []):
-        eig = [{"name": k, "type": "string", "value": v} for k, v in b.get("eigenschaften", {}).items()]
-        objekt(b["name"], b["typ"], b["feld"][0] * K, b["feld"][1] * K, eig=eig)
-    for s in gesetzt:
-        eig = [
-            {"name": "tiefe", "type": "int", "value": s["tiefe"]},
-            {"name": "kollision", "type": "bool", "value": s["kollision"]},
-        ] + formeigenschaften(s)
-        if "wenn" in s:
-            eig.append({"name": "wenn", "type": "string", "value": s["wenn"]})
-        objekt(s["name"], "moebel", s["x"], s["y"], s["breite"], s["hoehe"], eig)
-    leer = [0] * (breite * hoehe)
-    ebenen = [("boden", boden), ("waende", waende), ("objekte", leer)]
-    layers = [
-        {
-            "id": i + 1,
-            "name": n,
-            "type": "tilelayer",
-            "width": breite,
-            "height": hoehe,
-            "x": 0,
-            "y": 0,
-            "opacity": 1,
-            "visible": True,
-            "data": d,
-        }
-        for i, (n, d) in enumerate(ebenen)
-    ]
-    layers.append(
-        {
-            "id": 4,
-            "name": "ausloeser",
-            "type": "objectgroup",
-            "draworder": "topdown",
-            "x": 0,
-            "y": 0,
-            "opacity": 1,
-            "visible": True,
-            "objects": objekte,
-        }
-    )
-    eigenschaften = [{"name": "kennung", "type": "string", "value": szene["karte"]}]
-    eigenschaften += [
-        {"name": k, "type": "string", "value": v} for k, v in szene.get("eigenschaften", {}).items()
-    ]
-    # Tönung (nebel, dunst, nacht, abend, sepia, dunkel), Zustand und Jahreszeit liest die App aus den
-    # Eigenschaften der Karte (oberwelt/toenung.ts, zustand_der_karte, oberwelt/winter.ts).
-    eigenschaften += [
-        {"name": k, "type": "string", "value": szene[k]}
-        for k in KARTENFELDER
-        if isinstance(szene.get(k), str)
-    ]
-    return {
-        **{
-            k: vorlage[k]
-            for k in (
-                "compressionlevel",
-                "orientation",
-                "renderorder",
-                "tiledversion",
-                "type",
-                "version",
-                "infinite",
-            )
-            if k in vorlage
-        },
-        "width": breite,
-        "height": hoehe,
-        "tilewidth": K,
-        "tileheight": K,
-        "nextlayerid": 5,
-        "nextobjectid": len(objekte) + 1,
-        "layers": layers,
-        "tilesets": vorlage["tilesets"],
-        "properties": eigenschaften,
-    }
-
-
 def ist_archiv(pfad: Path) -> bool:
     """Varianten einer Karte, für die der Autor schon gewählt hat (es gibt ``<karte>-a.json``).
 
@@ -327,6 +205,7 @@ def baue(pfad: Path) -> list[str]:
     punkte = szene.get("ausloeser", []) + szene.get("figuren", [])
     befunde += pruefe(zeilen, gesetzt, punkte, szene.get("art") == "aussen")
     befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
+    befunde += kollisionsbefunde(szene, moebel)  # Übersteuerung im Karteneditor (Regel 10.69)
     # Hier eingebunden statt oben: zusammenhang.py nutzt die Konstanten dieses Moduls.
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 

@@ -199,6 +199,8 @@ def pruefe_loecher(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]:
         for s in gesetzt
         if moebel.get(s["name"], {}).get("richtung") == "runter"
         and not moebel[s["name"]].get("bodenoeffnung")
+        # Mit Bodenkacheln abgedeckter Abgang (bodenteile.py): Das Loch entsteht aus der Abdeckung.
+        and not s.get("abgedeckt")
     ]
 
 

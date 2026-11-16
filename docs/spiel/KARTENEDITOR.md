@@ -170,6 +170,11 @@ Alles andere (Möbel, Deko, Pflanzen, Bäume, Zäune, Türen, Fahrzeuge) sind Ob
 **Fassungen:** Hat eine Karte Fassungen, steht rechts ein grüner Hinweis. Der Knopf
 „Auswahl auf Fassungen übertragen“ verschiebt dieselben Bilder dort genauso.
 
+**Blickrichtung (ab 1.7):** Figuren und stehende Statisten zeigt der Editor als Bild in ihrer
+Blickrichtung (ohne Bild als Kreis mit Pfeil). Eine oder mehrere auswählen (Strg+Klick), rechts
+unter „Blick“ ↑ ↓ ← → wählen; „Vorgabe“ heißt nach unten. Wer am Tresen steht, schaut zum
+Tresen, zwei im Gespräch schauen einander an. Sitzende behalten ihre Sitzrichtung.
+
 **Notizen:** Rechts gibt es ein Feld „Notiz zur Karte“ und bei einem ausgewählten Bild
 „Notiz zu diesem Objekt“. Schreib dort kurz, warum. Das kommt mit in die Datei.
 
@@ -241,22 +246,22 @@ flach gezeichnet: Der Held läuft über die Dielen, nicht darunter.
 
 Taste ? zeigt alle Kürzel.
 
-| Taste                 | Wirkung                       |
-| --------------------- | ----------------------------- |
-| Strg+Z / Strg+Y       | rückgängig / wiederholen      |
-| Strg+D                | duplizieren                   |
-| Entf                  | löschen (Figuren mit Rückfrage) |
-| R / Umschalt+R        | drehen rechts / links         |
-| H                     | spiegeln                      |
-| Bild auf / Bild ab    | nach vorn / nach hinten       |
-| Pfeile (+ Umschalt)   | 1 Pixel (1 Kachel)            |
-| Strg+A                | alles auswählen               |
-| Strg+S                | Änderungen herunterladen      |
-| G, K, M               | Raster, Kollision, Markierung |
-| U, L, V, B            | Umgebung, Sperren, Vorher, Pinsel |
-| S, O, X               | Kollisionspinsel: sperren, freigeben, Radierer |
-| F                     | ganze Karte zeigen; im Kollisionspinsel und bei „Kollision bearbeiten“: Fein an/aus |
-| Esc                   | Auswahl aufheben, Modus beenden |
+| Taste               | Wirkung                                                                             |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| Strg+Z / Strg+Y     | rückgängig / wiederholen                                                            |
+| Strg+D              | duplizieren                                                                         |
+| Entf                | löschen (Figuren mit Rückfrage)                                                     |
+| R / Umschalt+R      | drehen rechts / links                                                               |
+| H                   | spiegeln                                                                            |
+| Bild auf / Bild ab  | nach vorn / nach hinten                                                             |
+| Pfeile (+ Umschalt) | 1 Pixel (1 Kachel)                                                                  |
+| Strg+A              | alles auswählen                                                                     |
+| Strg+S              | Änderungen herunterladen                                                            |
+| G, K, M             | Raster, Kollision, Markierung                                                       |
+| U, L, V, B          | Umgebung, Sperren, Vorher, Pinsel                                                   |
+| S, O, X             | Kollisionspinsel: sperren, freigeben, Radierer                                      |
+| F                   | ganze Karte zeigen; im Kollisionspinsel und bei „Kollision bearbeiten“: Fein an/aus |
+| Esc                 | Auswahl aufheben, Modus beenden                                                     |
 
 ## 7. Speichern und zurückschicken
 
@@ -392,9 +397,17 @@ Taste ? zeigt alle Kürzel.
     die feinen Felder erreichbar ist, Hinweis unter 16 px.
   - Rücklauf: „Kollision: Pinsel sperrt fein … : (5, 7) obere Hälfte“, „maske_fein (0, 1) untere
     Hälfte“. Anzeige ohne feine Felder wie bisher, sonst in Zellen mit Punkt für Teilkacheln.
+- Editor 1.7 (16.11.2026), Blickrichtung (js/blick.js; Rückmeldung R008):
+  - Figur der Szene `blick`, Statist `eigenschaften.blick`: oben, unten, links oder rechts; „Vorgabe“
+    entfernt das Feld (App zeigt dann unten). Sitzende (`sitzt`) bekommen kein `blick`.
+  - Paket: `personenbilder` (Bogen → vier Standbilder rechts, oben, links, unten als data-URL) und je
+    Szene `personen` (`f:<name>` bzw. `b:<name>|<bild>` → Bogen); gebaut von
+    pipeline/abenteuer/editorpersonen.py mit `belebungsvorschau.figurbild` (PixelLab mit 2/3).
+  - Rücklauf: Figuren und Belebung kommen ganz aus „nachher“, `blick` bleibt erhalten; Bericht
+    „Blick (figuren): hector Vorgabe → links“. Prüfung danach: `python -m pipeline.abenteuer.blickrichtung`.
 - Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
   Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner),
   Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`, Kollisionspinsel in `test/pinsel.cjs`,
   Übergänge (neuer Übergang mit Gegenauslöser, Ankunft, „Zum Ziel“, Rücklauf in eine Kopie von
   orte.json) in `test/uebergaenge.cjs`, Zuschnitt in `test/zuschnitt.cjs`, Kollision fein in
-  `test/fein.cjs`.
+  `test/fein.cjs`, Blickrichtung in `test/blick.cjs`.

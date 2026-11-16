@@ -1,7 +1,7 @@
 {
   "karte": "wegSummitCrossroads.geysirbecken",
   "art": "aussen",
-  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit großen und kleinen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden eine offene Bisonweide, Wildblumen, Bänke unter Kiefern.",
+  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen aus dunklem Holz mit Schieferdach, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit großen und kleinen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden eine offene Bisonweide, Wildblumen, Bänke unter Kiefern.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "sinter",
@@ -309,7 +309,7 @@
       "feld": [13, 10]
     },
     {
-      "moebel": "sx7Rangerhaus",
+      "moebel": "gcFaehrhausHolz",
       "feld": [2, 13]
     },
     {

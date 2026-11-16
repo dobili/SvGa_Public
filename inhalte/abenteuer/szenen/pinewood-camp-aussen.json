@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten, links Zelte und die Schutzhütte, in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk und Rangerhaus; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild über der Tür. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der Bootsschuppen am Ufer; links am Weg eine weitere Blockhütte mit Holzstapel und Hackklotz des Holzhackers, unter der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise) und das Rangerhaus aus dunklem Holz mit Schieferdach; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Weg eine weitere Blockhütte mit Holzstapel und Hackklotz des Holzhackers, unter der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -78,16 +78,19 @@
       "feld": [31, 13]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [33, 4]
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [33, 4],
+      "versatz": [0, -8]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [39, 4]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [39, 4],
+      "versatz": [0, -13]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [45, 4]
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [45, 4],
+      "versatz": [0, -8]
     },
     {
       "moebel": "pwZelt",
@@ -102,7 +105,7 @@
       "feld": [12, 12]
     },
     {
-      "moebel": "pw7Kiosk",
+      "moebel": "n6Marktstand",
       "feld": [34, 16],
       "id": "kiosk"
     },
@@ -151,24 +154,27 @@
       "feld": [32, 28]
     },
     {
-      "moebel": "cp7Rangerhaus",
-      "feld": [40, 18]
+      "moebel": "gcFaehrhausHolz",
+      "feld": [41, 18]
     },
     {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [50, 28]
+      "moebel": "ld14Bootsschuppen",
+      "feld": [50, 28],
+      "versatz": [0, -7]
     },
     {
-      "moebel": "cp7Schutzhuette",
-      "feld": [1, 17]
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [3, 19],
+      "versatz": [0, -8]
     },
     {
       "moebel": "rv5Pavillon",
       "feld": [18, 20]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [2, 26]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [2, 26],
+      "versatz": [0, -13]
     },
     {
       "moebel": "cc4Holzstapel",
@@ -343,12 +349,14 @@
       "feld": [28, 38]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [51, 4]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [51, 4],
+      "versatz": [0, -13]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [47, 18],
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [48, 18],
+      "versatz": [0, -8],
       "id": "waschhaus"
     },
     {
@@ -366,8 +374,9 @@
       "feld": [13, 19]
     },
     {
-      "moebel": "pw7Campbude",
-      "feld": [52, 10]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [52, 10],
+      "versatz": [0, -13]
     },
     {
       "moebel": "cc7Picknicktisch",
@@ -626,10 +635,10 @@
     {
       "name": "specht",
       "typ": "tier",
-      "feld": [48, 4],
+      "feld": [47, 3],
       "eigenschaften": {
-        "von": "48,4",
-        "bis": "48,4",
+        "von": "47,3",
+        "bis": "47,3",
         "verhalten": "sitzen"
       }
     },

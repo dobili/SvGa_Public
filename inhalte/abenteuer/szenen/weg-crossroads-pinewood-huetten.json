@@ -2,7 +2,7 @@
   "karte": "wegCrossroadsPinewood.huetten",
   "datei": "karten/weg-crossroads-pinewood-huetten.json",
   "art": "aussen",
-  "beschreibung": "Der Long Ridge Trail durch dichten Nadelwald: Tannen und hohe Kiefern dicht an dicht, Farne und Pilze. Der Erdweg schwingt in weiten Wellen von Ost nach West, ein Bach mäandert von Nord nach Süd, ein Holzsteg führt über ihn. Nördlich des Wegs Gretas Schutzhütte mit Pfad zur Tür und Holzstapel, weiter westlich die Holzfällerhütte mit Holzstapel, davor auf einer Steinplatte das Kreidezeichen des Springers. Südlich des Wegs die Lichtung mit zwei Feuerstellen: ein Steinring mit Bank und Picknicktisch, daneben ein kleines Lagerfeuer mit Bank. Im Südwesten der Hang mit Felsgruppen und Bärenspuren. Wegweiser am Ostende, eine Tafel am Weg.",
+  "beschreibung": "Der Long Ridge Trail durch dichten Nadelwald: Tannen und hohe Kiefern dicht an dicht, Farne und Pilze. Der Erdweg schwingt in weiten Wellen von Ost nach West, ein Bach mäandert von Nord nach Süd, ein Holzsteg führt über ihn. Nördlich des Wegs Gretas Schutzhütte, eine Blockhütte mit Satteldach und gemauertem Kamin, mit Pfad zur Tür und Holzstapel, weiter westlich die Holzfällerhütte, eine Blockhütte mit grünem Dach und Holzstapel, davor auf einer Steinplatte das Kreidezeichen des Springers. Südlich des Wegs die Lichtung mit zwei Feuerstellen: ein Steinring mit Bank und Picknicktisch, daneben ein kleines Lagerfeuer mit Bank. Im Südwesten der Hang mit Felsgruppen und Bärenspuren. Wegweiser am Ostende, eine Tafel am Weg.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -45,13 +45,14 @@
   ],
   "objekte": [
     {
-      "moebel": "cp7Schutzhuette",
-      "feld": [78, 1],
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [80, 3],
+      "versatz": [0, -8],
       "id": "schutzhuette"
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [75, 5]
+      "feld": [78, 5]
     },
     {
       "moebel": "cc7Picknicktisch",
@@ -66,8 +67,9 @@
       "feld": [59, 22]
     },
     {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [38, 9]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [38, 9],
+      "versatz": [0, -13]
     },
     {
       "moebel": "cr8Kreidespringer",

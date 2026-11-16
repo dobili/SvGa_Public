@@ -13979,19 +13979,19 @@
     },
     {
      "id": 19,
-     "name": "cp7Schutzhuette",
+     "name": "ld14BlockhuetteKamin",
      "type": "moebel",
-     "x": 1248,
-     "y": 16,
-     "width": 128,
-     "height": 112,
+     "x": 1280,
+     "y": 40,
+     "width": 80,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 112
       },
       {
        "name": "kollision",
@@ -14004,7 +14004,7 @@
      "id": 20,
      "name": "cc4Holzstapel",
      "type": "moebel",
-     "x": 1200,
+     "x": 1248,
      "y": 80,
      "width": 32,
      "height": 32,
@@ -14094,10 +14094,10 @@
     },
     {
      "id": 24,
-     "name": "cr8Holzfaellerhuette",
+     "name": "ld14BlockhuetteGruen",
      "type": "moebel",
      "x": 608,
-     "y": 144,
+     "y": 131,
      "width": 80,
      "height": 80,
      "rotation": 0,
@@ -14106,7 +14106,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 203
       },
       {
        "name": "kollision",

@@ -96,7 +96,7 @@ def gelaende(szene: dict, moebel: dict) -> tuple:
 
     zeilen = raster(szene)
     gesetzt, _ = platziere(szene, moebel)
-    gesperrt = gesperrte_felder(zeilen, gesetzt)
+    gesperrt = gesperrte_felder(zeilen, gesetzt, szene)
     boeden = {".": szene.get("boden", ""), **szene.get("boeden", {})}
     wegzeichen = {z for z, art in boeden.items() if art in WEGBOEDEN} | set(szene.get("bruecken", []))
 

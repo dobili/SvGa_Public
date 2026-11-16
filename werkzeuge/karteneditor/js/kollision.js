@@ -81,6 +81,7 @@
     const z = KE.zustand;
     const erstes = objekte()[0];
     z.kollisionUid = an && erstes ? erstes.eintrag._uid : null;
+    if (z.kollisionUid) z.kpinsel = null; // Modus je Bild statt Kollisionspinsel (pinsel.js)
     if (z.kollisionUid) KE.schalte("kollision", true);
     KE.meldeAenderung(z.kollisionUid ? "Kollision: Kachel anklicken schaltet sperrt/frei." : "");
   };

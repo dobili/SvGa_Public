@@ -57,6 +57,7 @@
     verbindeKnoepfe();
     KE.bindeLeinwand(document.getElementById("leinwand"));
     KE.bindeTastatur();
+    KE.bindePinsel(); // Kollisionspinsel (pinsel.js)
     window.addEventListener("resize", groesse);
     document.getElementById("version").textContent =
       `Editor ${KE.VERSION} · Paket vom ${window.EDITOR_DATEN.erstellt.slice(0, 10)}`;

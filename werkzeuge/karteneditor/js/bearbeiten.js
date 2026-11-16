@@ -253,17 +253,20 @@
   /**
    * Überträgt die ausgewählten Objekte auf die Zustandsfassungen der Karte: Ein Objekt, das dort
    * genauso lag wie hier im Original, bekommt Lage und Form von hier; neu hinzugefügte Objekte
-   * werden dort ebenfalls angelegt. Ausgabe: Zahl der übertragenen Objekte.
+   * werden dort ebenfalls angelegt. Die Kacheln des Kollisionspinsels kommen mit (pinsel.js).
+   * Ausgabe: { objekte, kacheln } (Zahl der übertragenen Objekte und Pinseländerungen).
    */
   KE.uebertrage = function () {
     const z = KE.zustand;
     const geschwister = z.nachDatei[z.datei].geschwister;
     const auswahl = objekte();
-    if (!geschwister.length || !auswahl.length) return 0;
     let zahl = 0;
+    let kacheln = 0;
+    if (!geschwister.length) return { objekte: 0, kacheln };
     KE.schritt("Auf Fassungen übertragen", [z.datei, ...geschwister], () => {
       for (const d of geschwister) {
         const andere = KE.szene(d);
+        kacheln += KE.pinselUebertragen(andere);
         andere.objekte = andere.objekte || [];
         const benutzt = new Set();
         for (const t of auswahl) {
@@ -287,6 +290,6 @@
         }
       }
     });
-    return zahl;
+    return { objekte: zahl, kacheln };
   };
 })(window.KE);

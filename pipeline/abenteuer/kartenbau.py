@@ -33,6 +33,7 @@ from pipeline.abenteuer.kartentiled import (  # noqa: F401
     tiled,
 )
 from pipeline.abenteuer.kehren import kehrenbefunde
+from pipeline.abenteuer.kollisionspinsel import gib_frei, pinselbefunde, pinselfelder, pinselhinweise
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektform import formangaben, geformt
@@ -65,7 +66,8 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     allem, ohne Kollision); ``vorn`` = nach dem Fuß gezeichnet, ohne Kollision (Fahnenmast vor einer
     Fassade); ``versatz`` = Feinschub in Pixeln; ``wenn`` = nur sichtbar, wenn die Bedingung beim
     Betreten gilt (app/src/abenteuer/regeln/figurbedingung.ts); Gegenstände darauf erben sie.
-    ``kollision``, ``maske`` am Eintrag übersteuern den Katalog an dieser Stelle (objektkollision.py).
+    ``kollision``, ``maske`` am Eintrag übersteuern den Katalog an dieser Stelle (objektkollision.py);
+    ``freigeben`` der Szene (Kollisionspinsel) nimmt berührte Kacheln aus den Masken (kollisionspinsel.py).
     """
     befunde: list[str] = []
     nach_id: dict[str, dict] = {}
@@ -130,6 +132,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
         nach_id[stueck["id"]] = stueck
         gesetzt.append(stueck)
     lege_bodenteile(gesetzt, moebel)  # Bodenkacheln über einer Treppe (bodenteile.py)
+    gib_frei(gesetzt, szene)  # Freigaben des Kollisionspinsels stechen Möbel und Masken
     return gesetzt, befunde
 
 
@@ -206,6 +209,7 @@ def baue(pfad: Path) -> list[str]:
     befunde += pruefe(zeilen, gesetzt, punkte, szene.get("art") == "aussen")
     befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
     befunde += kollisionsbefunde(szene, moebel)  # Übersteuerung im Karteneditor (Regel 10.69)
+    befunde += pinselbefunde(szene, zeilen)  # Kollisionspinsel (kollisionspinsel.py)
     # Hier eingebunden statt oben: zusammenhang.py nutzt die Konstanten dieses Moduls.
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 
@@ -218,6 +222,7 @@ def baue(pfad: Path) -> list[str]:
         stadt = zaehlt_als_stadtkarte(szene) and "groesse" in ort
         befunde += pruefe_belebung(szene, ort.get("art", "stadt"), stadt, lade_texte())
         belegt = {feld: s["name"] for s in gesetzt for feld in sperrfelder(s)}
+        belegt |= {feld: "gemalter Sperre" for feld in pinselfelder(szene)[0]}
         befunde += pruefe_standorte(szene, zeilen, GESPERRT, belegt)
     if pfad.parent.name != "varianten":
         # Ausrichtung der Bilder (Regel 10.78): Befund, seit alle Karten nachgezogen sind
@@ -251,14 +256,17 @@ def baue(pfad: Path) -> list[str]:
 
 def hinweise(pfad: Path) -> list[str]:
     """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zur Fahrbahn (10.65), Felswände, die frei
-    enden (10.74). Ausrichtung (10.78) und Anordnung (10.80–10.87) sind Befunde in ``baue``."""
+    enden (10.74), überflüssige Pinselkacheln. Ausrichtung (10.78) und Anordnung (10.80–10.87) sind
+    Befunde in ``baue``."""
     from pipeline.abenteuer.fahrzeuge import fahrzeughinweise
     from pipeline.abenteuer.hoehen import hoehenhinweise, schleusenfelder
 
     szene, moebel = lade(pfad), lade_moebel()
     gesetzt = platziere(szene, moebel)[0]
     fahrzeuge = fahrzeughinweise(szene, raster(szene), gesetzt, moebel)
-    return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt))
+    ohne_pinsel = platziere({**szene, "freigeben": []}, moebel)[0] if pinselfelder(szene)[1] else gesetzt
+    pinsel = pinselhinweise(szene, raster(szene), ohne_pinsel)
+    return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt)) + pinsel
 
 
 def main() -> int:

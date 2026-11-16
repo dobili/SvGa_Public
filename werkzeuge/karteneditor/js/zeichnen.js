@@ -289,6 +289,7 @@
       const gesperrt = KE.sperrkacheln(szene, stuecke);
       zeichneSperren(ctx, gesperrt, a.zoom);
       zeichneBedingte(ctx, KE.figurensperren(szene).bedingt, gesperrt, a.zoom);
+      KE.zeichnePinsel(ctx, szene, a.zoom); // Kreuz für gemalte Sperren, grün für Freigaben (pinsel.js)
     }
     const marken = z.schalter.markierungen && !z.schalter.nurUmgebung ? KE.markierungen(szene) : [];
     for (const m of marken) zeichneMarkierung(ctx, m, a.zoom);

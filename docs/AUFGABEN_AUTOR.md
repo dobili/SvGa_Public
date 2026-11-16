@@ -1175,6 +1175,11 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       nicht anklickbar.
       Der Schalter „Kollision“ oben (Taste K) zeigt alle Stellen, an denen man nicht durchgehen kann,
       transparent gelb mit gelbem Rand, auch unter Bildern, die „Nur Umgebung“ ausblendet.
+      Neu in Fassung 1.3: der Kollisionspinsel, unabhängig von einzelnen Bildern. Taste S malt
+      Sperren (gelb mit Kreuz), O gibt frei (grüner Rand, sticht jedes Bild darunter), X radiert
+      (danach gilt wieder, was Bilder und Boden sagen); mit gedrückter Maus malen, Umschalt+Ziehen
+      für ein Rechteck, Esc beendet. Eine Freigabe durch Wand oder Wasser braucht einen kurzen Grund.
+      „Kollision bearbeiten“ am einzelnen Bild gibt es weiter.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg

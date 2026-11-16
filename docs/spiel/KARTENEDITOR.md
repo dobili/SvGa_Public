@@ -93,6 +93,27 @@ sie lassen sich bearbeiten; der Rücklauf schreibt sie an ihren Platz zurück.
 - Das gilt nur an dieser Stelle. Dasselbe Möbel anderswo bleibt, wie es ist.
 - Strg+Z macht jeden Klick rückgängig.
 
+**Kollision malen** (Knopf „Kollisionspinsel“ oben, Tasten S, O, X)
+
+Mit dem Kollisionspinsel malst du Kacheln einfach als gesperrt oder frei, egal welches Bild
+dort liegt. Beispiel: Ein Gebäudebild sperrt eine Fläche, durch die man gehen können soll. Oder am
+Rand fehlt eine unsichtbare Sperre.
+
+- „Sperren“ (Taste S): Die Kachel sperrt wie eine Wand. Sie wird gelb mit einem kleinen Kreuz.
+- „Freigeben“ (Taste O): Man kann hier gehen, auch wenn ein Bild oder die Wand darunter
+  sperrt. Die Kachel bekommt eine grüne Umrandung: Dort hast du etwas übersteuert.
+  Figuren und Statisten halten den Helden trotzdem auf.
+- „Radierer“ (Taste X): Entfernt, was du gemalt hast. Dann gilt wieder, was Bilder und Wände sagen.
+- Mit gedrückter Maus über mehrere Kacheln ziehen. Mit Umschalt ziehen: ein ganzes Rechteck.
+- Dieselbe Taste noch einmal oder Esc beendet den Pinsel. Die Kollisionsanzeige geht von selbst an.
+- Freigabe in einer Wand: Rechts erscheint ein Feld für den Grund (etwa „Geheimgang“). Ohne Grund
+  meldet der Kartenbau das.
+- Strg+Z macht jeden Strich rückgängig. „Auf Fassungen übertragen“ nimmt die Kacheln mit.
+
+Unterschied zu „Kollision bearbeiten“: Das ändert ein einzelnes Bild an dieser Stelle (wandert
+mit, wenn du das Bild verschiebst). Der Kollisionspinsel gilt für die Kachel der Karte, egal was
+dort liegt, und bleibt, wenn du das Bild verschiebst.
+
 **Übergänge und Auslöser**
 
 - Rechts „Übergang oder Auslöser anlegen“: in der Liste „wie treppe“ (oder einen anderen) wählen,
@@ -142,6 +163,7 @@ Taste ? zeigt alle Kürzel.
 | Strg+S                | Änderungen herunterladen      |
 | G, K, M               | Raster, Kollision, Markierung |
 | U, L, V, B            | Umgebung, Sperren, Vorher, Pinsel |
+| S, O, X               | Kollisionspinsel: sperren, freigeben, Radierer |
 | F                     | ganze Karte zeigen            |
 | Esc                   | Auswahl aufheben, Modus beenden |
 
@@ -202,6 +224,22 @@ Taste ? zeigt alle Kürzel.
     Blick, Lauf, Ende und Platte so, wie das Bild auf der Karte liegt (gespiegelt: links und rechts
     tauschen; gedreht: die Richtung dreht mit); Pixelprüfungen mit `objektform.formbild` und dem
     Katalogfeld `ausschnitt`. Der Bericht zeigt eine eigene Maske so, wie sie auf der Karte liegt.
+- Editor 1.3 (16.11.2026), Kollisionspinsel (js/pinsel.js, pipeline/abenteuer/kollisionspinsel.py):
+  - Szenenfelder `sperren` und `freigeben` (Listen `[x, y]`) und `freigeben_grund`. Die Freigabe
+    sticht Möbel, Masken und Raster, nicht Figuren. Eine Maskenkachel eines Möbels entfällt, wenn
+    ihr Pixelrechteck eine Freigabe berührt (wie begehbar.ts bei Feinschub).
+  - Kartenbau: `platziere` nimmt die Kacheln aus den Masken (`gib_frei`), die Tiled-Karte trägt
+    Sperren als Wandkachel in `waende`, Freigaben als Boden, geänderte Masken als Eigenschaft
+    `maske` und die Karteneigenschaften `sperren` und `freigeben` („3,4;5,6“, App:
+    oberwelt/begehbar.ts, Prüfung: karten.blockiert). Durchgang, Übergänge, Figurensperre,
+    Abkürzung und Kartenregeln (Eingänge, Türen) rechnen mit `gesperrte_felder(…, szene)`.
+  - Befunde: Freigabe auf Wand, Wasser oder Leere ohne `freigeben_grund`, Kacheln außerhalb, in
+    beiden Listen, Auslöser auf einer gemalten Sperre. Hinweise: Freigabe auf ohnehin freier und
+    Sperre auf ohnehin gesperrter Kachel. Der Editor schreibt solche Kacheln gar nicht erst.
+  - Rücklauf: „Kollision: Pinsel sperrt / gibt frei unter BILD (sperrte dort)“ je Karte, gruppiert
+    nach dem Bild darunter; die Zeilen stehen auch unter „Kollision an einzelnen Stellen“.
+  - Kollisionsanzeige wie die App: Ein Möbel mit Feinschub sperrt jede berührte Kachel (vorher
+    zeigte der Editor die Kachel nach `x // 16`).
 - Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
   Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner),
-  Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`.
+  Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`, Kollisionspinsel in `test/pinsel.cjs`.

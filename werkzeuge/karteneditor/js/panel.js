@@ -25,6 +25,7 @@
   KE.schalte = function (name, wert) {
     const s = KE.zustand.schalter;
     s[name] = wert === undefined ? !s[name] : wert;
+    if (name === "pinsel" && s.pinsel) KE.zustand.kpinsel = null; // Bodenpinsel statt Kollisionspinsel
     // Was nicht mehr anwählbar oder sichtbar ist, fällt aus der Auswahl.
     if ((name === "umgebungSperren" || name === "nurUmgebung") && s[name] && KE.szene()) {
       const stuecke = KE.platziere(KE.szene());
@@ -44,6 +45,7 @@
       knopf.classList.toggle("an", !!KE.zustand.schalter[knopf.dataset.schalter]);
     }
     document.getElementById("pinselwahl").hidden = !KE.zustand.schalter.pinsel;
+    KE.zeigePinselwahl(); // Kollisionspinsel (pinsel.js)
   }
 
   /** Füllt die Auswahl des Pinsels mit den Zeichen der Szene (Boden, Wand, Wasser, Sonderböden). */
@@ -189,13 +191,16 @@
     box.append(el("div", "", `Diese Karte hat Zustandsfassungen: ${geschwister.join(", ")}.`));
     const k = knopf(
       "Auswahl auf Fassungen übertragen",
-      "Lage und Form der Auswahl dort übernehmen",
+      "Lage und Form der Auswahl dort übernehmen, dazu die Kacheln des Kollisionspinsels",
       () => {
-        const zahl = KE.uebertrage();
-        KE.status(`${zahl} Objekt(e) auf ${geschwister.length} Fassung(en) übertragen.`);
+        const { objekte, kacheln } = KE.uebertrage();
+        const pinsel = kacheln ? ` und ${kacheln} Pinselkachel(n)` : "";
+        KE.status(
+          `${objekte} Objekt(e)${pinsel} auf ${geschwister.length} Fassung(en) übertragen.`,
+        );
       },
     );
-    k.disabled = !KE.ausgewaehlt().some((t) => t.liste === "objekte");
+    k.disabled = !KE.ausgewaehlt().some((t) => t.liste === "objekte") && !KE.pinselGeaendert();
     box.append(k);
     ziel.append(box);
   }
@@ -230,6 +235,7 @@
         auswahl.every((t) => t.liste !== "objekte"),
       );
     KE.kollisionsfeld(ziel); // Sperrt / Durchgehbar, Kollision bearbeiten (kollision.js)
+    KE.pinselfeld(ziel); // Kollisionspinsel: Zahl der Kacheln, Grund (pinsel.js)
     if (auswahl.length === 1 && auswahl[0].liste === "objekte")
       objektnotiz(ziel, auswahl[0].eintrag._uid);
     KE.uebergangsfeld(ziel); // Übergang hier (ausloeser.js)

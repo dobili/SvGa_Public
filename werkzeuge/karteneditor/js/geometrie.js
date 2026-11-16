@@ -3,7 +3,8 @@
  * der Kartenbau (pipeline/abenteuer/kartenbau.py, platziere) und die Form der Objekte
  * (pipeline/abenteuer/objektform.py: drehung, spiegeln, massstab, ebene), die Übersteuerung der
  * Kollision je Objekt (objektkollision.py: kollision, maske), Bodenteile über Abgängen
- * (bodenteile.py) und Figuren als Hindernis wie in der App (oberwelt/begehbar.ts).
+ * (bodenteile.py), Kollisionspinsel (kollisionspinsel.py: sperren, freigeben) und Figuren als
+ * Hindernis wie in der App (oberwelt/begehbar.ts).
  *
  * Warum: Der Editor soll die Karte so zeigen wie das Spiel; Zeichenreihenfolge (tiefe) und
  * Kollision müssen deshalb dieselben Regeln haben. Ändert sich eine Regel dort, muss sie hier
@@ -203,10 +204,30 @@
   };
 
   /**
-   * Alle gesperrten Kacheln der Szene: Raster (Wand, Wasser, Leere), Möbel mit Kollision und
-   * Figuren und stehende Belebung, die immer da sind (bedingte zeigt zeichnen.js gestrichelt).
+   * Kacheln, die ein 16 × 16 großes Pixelrechteck ab (px, py) berührt, als „x,y“ (eine, zwei oder vier).
+   * Wie die App (oberwelt/begehbar.ts): Ein Möbel mit Feinschub sperrt jede berührte Kachel.
    */
-  KE.sperrkacheln = function (szene, stuecke) {
+  KE.beruehrt = function (px, py) {
+    const kacheln = [];
+    for (let x = Math.floor(px / K); x * K < px + K; x++)
+      for (let y = Math.floor(py / K); y * K < py + K; y++) kacheln.push(x + "," + y);
+    return kacheln;
+  };
+
+  /** Die gemalten Kacheln einer Szene als Mengen „x,y“ (Kollisionspinsel, pinsel.js). */
+  KE.pinselmengen = (szene) => ({
+    sperren: new Set((szene.sperren || []).map((f) => f.join(","))),
+    freigeben: new Set((szene.freigeben || []).map((f) => f.join(","))),
+  });
+
+  /**
+   * Was Raster (Wand, Wasser, Leere) und Möbel mit Kollision sperren, ohne Figuren. Mit `pinsel`
+   * gilt der Kollisionspinsel wie im Kartenbau (kollisionspinsel.py): Eine Maskenkachel, die eine
+   * Freigabe berührt, entfällt; Freigaben stechen auch das Raster, Sperren kommen dazu.
+   */
+  KE.grundsperren = function (szene, stuecke, pinsel = true) {
+    const leer = { sperren: new Set(), freigeben: new Set() };
+    const { sperren, freigeben } = pinsel ? KE.pinselmengen(szene) : leer;
     const gesperrt = new Set();
     const bruecken = new Set(szene.bruecken || []);
     (szene.raster || []).forEach((zeile, y) =>
@@ -216,10 +237,23 @@
     );
     for (const s of stuecke) {
       if (!s.kollision) continue;
-      const x0 = Math.floor(s.x / K);
-      const y0 = Math.floor(s.y / K);
-      for (const [a, b] of KE.maskenfelder(s.angabe)) gesperrt.add(x0 + a + "," + (y0 + b));
+      for (const [a, b] of KE.maskenfelder(s.angabe)) {
+        const kacheln = KE.beruehrt(s.x + a * K, s.y + b * K);
+        if (!kacheln.some((k) => freigeben.has(k))) for (const k of kacheln) gesperrt.add(k);
+      }
     }
+    for (const k of sperren) gesperrt.add(k);
+    for (const k of freigeben) gesperrt.delete(k);
+    return gesperrt;
+  };
+
+  /**
+   * Alle gesperrten Kacheln der Szene: Raster, Möbel und Kollisionspinsel (grundsperren), dazu
+   * Figuren und stehende Belebung, die immer da sind (bedingte zeigt zeichnen.js gestrichelt). Die
+   * Freigabe des Pinsels sticht keine Figur, wie in der App.
+   */
+  KE.sperrkacheln = function (szene, stuecke) {
+    const gesperrt = KE.grundsperren(szene, stuecke);
     for (const k of KE.figurensperren(szene).fest) gesperrt.add(k);
     return gesperrt;
   };

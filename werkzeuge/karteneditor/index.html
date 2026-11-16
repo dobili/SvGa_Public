@@ -34,6 +34,14 @@
       <span id="pinselwahl" hidden>
         <select id="pinselzeichen" title="Was der Pinsel malt"></select>
       </span>
+      <button id="kpinselknopf" title="Kollision malen: Kacheln sperren oder freigeben (S)">
+        Kollisionspinsel
+      </button>
+      <span id="kpinselwahl" hidden>
+        <button data-kmodus="sperren">Sperren</button>
+        <button data-kmodus="freigeben">Freigeben</button>
+        <button data-kmodus="radierer">Radierer</button>
+      </span>
       <span class="trenner"></span>
       <button id="zoomraus" title="Kleiner (−)">−</button>
       <button id="zoomrein" title="Größer (+)">+</button>
@@ -159,8 +167,18 @@
             <td>Pinsel für den Boden</td>
           </tr>
           <tr>
+            <td>S / O / X</td>
+            <td>Kollisionspinsel: sperren / freigeben / Radierer (nochmal: aus)</td>
+          </tr>
+          <tr>
+            <td>Umschalt+Ziehen</td>
+            <td>mit dem Kollisionspinsel ein Rechteck malen</td>
+          </tr>
+          <tr>
             <td>Esc</td>
-            <td>Auswahl aufheben, Modus „Kollision“ oder „Übergang hier“ beenden</td>
+            <td>
+              Auswahl aufheben, Modus „Kollision“, „Übergang hier“ oder Kollisionspinsel beenden
+            </td>
           </tr>
         </table>
       </div>
@@ -175,6 +193,7 @@
     <script src="js/kollision.js"></script>
     <script src="js/ausloeser.js"></script>
     <script src="js/markierungen.js"></script>
+    <script src="js/pinsel.js"></script>
     <script src="js/panel.js"></script>
     <script src="js/export.js"></script>
     <script src="js/start.js"></script>

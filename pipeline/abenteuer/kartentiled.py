@@ -6,6 +6,8 @@ eigene Maske), Eigenschaften der Karte. Die Konstanten der Rasterzeichen stehen 
 Module sie ohne Kreisimport teilen; ``kartenbau`` gibt sie weiter.
 """
 
+from pipeline.abenteuer.kollisionspinsel import eigenschaften as pinseleigenschaften
+from pipeline.abenteuer.kollisionspinsel import pinselfelder
 from pipeline.abenteuer.objektform import formeigenschaften
 from pipeline.abenteuer.objektkollision import maskeneigenschaft
 
@@ -29,12 +31,21 @@ def sitzrichtung(eintrag: dict) -> str | None:
 
 
 def kachelebenen(zeilen: list[str], szene: dict) -> tuple[list[int], list[int]]:
-    """Boden- und Wandebene: Wand, Wasser und Leere sperren, Buchstaben aus ``boeden`` sind Teppich."""
+    """Boden- und Wandebene: Wand, Wasser und Leere sperren, Buchstaben aus ``boeden`` sind Teppich.
+
+    Kollisionspinsel (kollisionspinsel.py): ``sperren`` legt eine Wandkachel in die Ebene ``waende``,
+    ``freigeben`` macht Wand, Wasser oder Leere zu Boden. So sperrt Phaser dieselben Kacheln.
+    """
     teppiche = set(szene.get("boeden", {}))
+    sperren, freigeben = pinselfelder(szene)
     boden, waende = [], []
-    for zeile in zeilen:
-        for zeichen in zeile:
-            gesperrt = zeichen in GESPERRT
+    for y, zeile in enumerate(zeilen):
+        for x, zeichen in enumerate(zeile):
+            gesperrt = (zeichen in GESPERRT or (x, y) in sperren) and (x, y) not in freigeben
+            if (x, y) in sperren - freigeben and zeichen not in GESPERRT:
+                boden.append(GID_TEPPICH if zeichen in teppiche else GID_BODEN)
+                waende.append(GID_WAND)
+                continue
             boden.append(0 if gesperrt else GID_TEPPICH if zeichen in teppiche else GID_BODEN)
             waende.append(GID_WAND if gesperrt else 0)
     return boden, waende
@@ -134,6 +145,8 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         for k in KARTENFELDER
         if isinstance(szene.get(k), str)
     ]
+    # Gemalte Sperren und Freigaben (kollisionspinsel.py); die App liest sie in oberwelt/begehbar.ts.
+    eigenschaften += pinseleigenschaften(szene)
     return {
         **{
             k: vorlage[k]

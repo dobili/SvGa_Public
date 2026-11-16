@@ -1,7 +1,8 @@
 /*
  * Karteneditor – Bedienung mit Maus und Tastatur: Auswählen (auch Strg+Klick und Rechteck),
  * Ziehen mit Einrasten (Alt pixelgenau), Ansicht verschieben und zoomen, Auswahlliste bei
- * übereinanderliegenden Bildern, Ziehen aus der Bibliothek, Pinsel und Tastenkürzel.
+ * übereinanderliegenden Bildern, Ziehen aus der Bibliothek, Pinsel, Kollisionspinsel (pinsel.js)
+ * und Tastenkürzel.
  */
 "use strict";
 
@@ -11,7 +12,7 @@
   const ZOOM_MAX = 8;
   const ZOOM_FAKTOR = 1.2;
   const KLICK_TOLERANZ = 3; // Bildschirmpixel, ab denen ein Klick als Ziehen gilt
-  let ziehen = null; // { art: "objekte" | "ansicht" | "rechteck" | "pinsel", … }
+  let ziehen = null; // { art: "objekte" | "ansicht" | "rechteck" | "pinsel" | "kpinsel", … }
   let letzterKlick = null; // { x, y, nummer } für das Durchschalten übereinanderliegender Bilder
 
   /** Bildschirmpunkt → Kartenpixel. */
@@ -117,6 +118,10 @@
     // Modi aus kollision.js und ausloeser.js: Der Klick gilt der Kachel, nicht der Auswahl.
     if (z.kollisionUid) return KE.kollisionsKlick(px, py);
     if (z.uebergangVorlage) return KE.setzeUebergang(px, py);
+    if (z.kpinsel) {
+      ziehen = KE.pinselStart(ereignis, px, py);
+      return;
+    }
     if (z.schalter.pinsel && !z.schalter.umgebungSperren) {
       ziehen = { art: "pinsel", vorher: KE.schnappschuss([z.datei]) };
       pinsel(px, py);
@@ -136,6 +141,7 @@
       return KE.zeichne();
     }
     if (ziehen.art === "pinsel") return pinsel(px, py);
+    if (ziehen.art === "kpinsel") return KE.pinselZiehen(ziehen, px, py);
     if (ziehen.art === "rechteck") {
       KE.rechteck = {
         x0: Math.min(ziehen.x0, px),
@@ -170,6 +176,7 @@
     const art = ziehen.art;
     if (art === "objekte" && ziehen.bewegt) KE.schrittAbschliessen("Verschieben", ziehen.vorher);
     if (art === "pinsel") KE.schrittAbschliessen("Malen", ziehen.vorher);
+    if (art === "kpinsel") KE.pinselEnde(ziehen);
     ziehen = null;
     KE.rechteck = null;
     KE.meldeAenderung();
@@ -237,12 +244,16 @@
     v: () => KE.schalte("vorher"),
     b: () => KE.schalte("pinsel"),
     m: () => KE.schalte("markierungen"),
+    s: () => KE.kollisionspinsel("sperren"),
+    o: () => KE.kollisionspinsel("freigeben"),
+    x: () => KE.kollisionspinsel("radierer"),
     "?": () => KE.hilfe(true),
     escape: () => {
       KE.hilfe(false);
       KE.schliesseListe();
-      if (KE.zustand.kollisionUid || KE.zustand.uebergangVorlage) {
-        KE.zustand.kollisionUid = KE.zustand.uebergangVorlage = null;
+      const z = KE.zustand;
+      if (z.kollisionUid || z.uebergangVorlage || z.kpinsel) {
+        z.kollisionUid = z.uebergangVorlage = z.kpinsel = null;
         return KE.meldeAenderung("Modus beendet");
       }
       KE.zustand.auswahl.clear();

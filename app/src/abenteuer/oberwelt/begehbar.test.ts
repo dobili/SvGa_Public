@@ -41,3 +41,39 @@ describe("Möbel neben dem Kachelraster", () => {
     expect(freieSpalten(karteMitKisten(0, 34))).toEqual([1, 4, 5]);
   });
 });
+
+describe("Kollisionspinsel (Karteneditor 1.3, Wunsch des Autors, 16.11.2026)", () => {
+  const SOFA: Sperrangabe = { breite: 48, hoehe: 16, kollision: true };
+  /** Karte 6 × 2: Sofa auf (0, 0) bis (2, 0), eine Figur auf (4, 1), Pinsel als Eigenschaften. */
+  function karte(sperren: string, freigeben: string): Tiledkarte {
+    const objects = [
+      { name: "sofa", type: "moebel", x: 0, y: 0 },
+      { name: "mutter", type: "figur", x: 64, y: 16 },
+    ];
+    const properties = [
+      { name: "sperren", value: sperren },
+      { name: "freigeben", value: freigeben },
+    ];
+    return { width: 6, height: 2, properties, layers: [{ type: "objectgroup", objects }] };
+  }
+  const frei = (k: Tiledkarte, x: number, y: number) =>
+    begehbar(k, sperrkacheln(k, { sofa: SOFA }, KACHEL))(x, y);
+
+  it("gemalte Sperren sperren freie Kacheln", () => {
+    expect(frei(karte("", ""), 5, 0)).toBe(true);
+    expect(frei(karte("5,0;3,1", ""), 5, 0)).toBe(false);
+    expect(frei(karte("5,0;3,1", ""), 3, 1)).toBe(false);
+  });
+
+  it("gemalte Freigaben stechen Möbel, aber keine Figuren", () => {
+    expect(frei(karte("", ""), 1, 0)).toBe(false);
+    expect(frei(karte("", "1,0;4,1"), 1, 0)).toBe(true);
+    expect(frei(karte("", "1,0;4,1"), 0, 0)).toBe(false);
+    expect(frei(karte("", "1,0;4,1"), 4, 1)).toBe(false);
+  });
+
+  it("übergeht kaputte Angaben", () => {
+    expect(frei(karte("x;5", "1;"), 5, 0)).toBe(true);
+    expect(frei(karte("x;5", "1;"), 1, 0)).toBe(false);
+  });
+});

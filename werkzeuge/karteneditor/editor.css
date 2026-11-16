@@ -186,17 +186,25 @@ details > summary {
   border: 1px solid #3d8;
   border-radius: 4px;
 }
-/* Kollision je Objekt und „Übergang hier“ (kollision.js, ausloeser.js) */
+/* Kollision je Objekt, Kollisionspinsel und „Übergang hier“ (kollision.js, pinsel.js, ausloeser.js) */
 .kollisionsfeld,
+.pinselfeld,
 .uebergangsfeld {
   margin: 8px 0;
   padding: 6px;
   border: 1px solid #555;
   border-radius: 4px;
 }
-#begehbargrund {
+#begehbargrund,
+#freigabegrund {
   width: calc(100% - 12px);
   margin: 4px 0;
+}
+#kpinselwahl button[data-kmodus="sperren"].an {
+  background: #8a6d00;
+}
+#kpinselwahl button[data-kmodus="freigeben"].an {
+  background: #1d7a3f;
 }
 .grundhinweis {
   color: #f6a33c;
@@ -307,7 +315,8 @@ footer {
 }
 #hilfe[hidden],
 #trefferliste[hidden],
-#pinselwahl[hidden] {
+#pinselwahl[hidden],
+#kpinselwahl[hidden] {
   display: none;
 }
 .hilfekasten {

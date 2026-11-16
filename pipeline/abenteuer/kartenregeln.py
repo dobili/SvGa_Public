@@ -8,6 +8,7 @@ Vorderseite zeigt), ``zustand`` (neu, gebraucht, alt, kaputt) und ``stil`` (mode
 industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sind.
 """
 
+from pipeline.abenteuer.kollisionspinsel import pinselfelder
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.objektform import formbefunde
 
@@ -159,6 +160,18 @@ def _sperrfelder(gesetzt: list[dict]) -> set[tuple[int, int]]:
     return felder
 
 
+def _zu(szene: dict, zeilen: list[str], gesetzt: list[dict]):
+    """Abfrage „ist die Kachel gesperrt?“: Raster, Möbel und Kollisionspinsel (kollisionspinsel.py)."""
+    gesperrt, (sperren, freigeben) = _sperrfelder(gesetzt), pinselfelder(szene)
+
+    def zu(x: int, y: int) -> bool:
+        if (x, y) in freigeben:
+            return False
+        return _gesperrt(zeilen, x, y) or (x, y) in gesperrt or (x, y) in sperren
+
+    return zu
+
+
 def _art(s: dict, moebel: dict) -> str | None:
     return moebel.get(s["name"], {}).get("art")
 
@@ -203,7 +216,7 @@ def pruefe_eingaenge(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> lis
 
     Beispiel: Eisdiele des Zeichners, Gang drei Kacheln breit von der Tür zur Theke.
     """
-    befunde, gesperrt = [], _sperrfelder(gesetzt)
+    befunde, zu = [], _zu(szene, zeilen, gesetzt)
     for a in szene.get("ausloeser", []):
         x, y = a["feld"]
         richtung = _nach_innen(zeilen, x, y)
@@ -211,7 +224,7 @@ def pruefe_eingaenge(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> lis
             continue
         for schritt in range(1, GANG_TIEFE + 1):
             fx, fy = x + richtung[0] * schritt, y + richtung[1] * schritt
-            if _gesperrt(zeilen, fx, fy) or (fx, fy) in gesperrt:
+            if zu(fx, fy):
                 befunde.append(f"Eingang {a['name']}: kein freier Gang von {GANG_TIEFE} Kacheln")
                 break
     return befunde
@@ -279,7 +292,7 @@ def pruefe_tueren(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
 
     Beispiel: Haustür Whitlock in der Südwand (5, 12), frei sein muss (5, 10) über dem Türbild.
     """
-    befunde, gesperrt = [], _sperrfelder(gesetzt)
+    befunde, zu = [], _zu(szene, zeilen, gesetzt)
     for s, e in _mit_eintrag(szene, gesetzt):
         if _art(s, moebel) != "tuer" or not e.get("an_wand"):
             continue
@@ -287,7 +300,7 @@ def pruefe_tueren(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
         fuss = (s["y"] + s["hoehe"] - 1) // K
         suedwand = fuss >= len(zeilen) - 1
         vor = s["y"] // K - 1 if suedwand else fuss + 1
-        if all(_gesperrt(zeilen, x, vor) or (x, vor) in gesperrt for x in range(x0, x1 + 1)):
+        if all(zu(x, vor) for x in range(x0, x1 + 1)):
             befunde.append(f"{s['name']}: keine freie Kachel vor der Tür")
     return befunde
 

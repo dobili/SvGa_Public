@@ -62,7 +62,10 @@ nachträgliches Möblieren:
       "eigenschaften": { "von": "9,18", "bis": "9,18", "verhalten": "sitzen" }
     }
   ],
-  "eigenschaften": { "stil": "kueste" }
+  "eigenschaften": { "stil": "kueste" },
+  "sperren": [[0, 7]], // Kollisionspinsel: zusätzlich gesperrte Kacheln (unsichtbare Sperre)
+  "freigeben": [[5, 3]], // begehbar, egal welches Möbel oder Rasterzeichen darunter liegt
+  "freigeben_grund": "…" // Pflicht bei Freigaben auf Wand oder Wasser (kollisionspinsel.py)
 }
 ```
 

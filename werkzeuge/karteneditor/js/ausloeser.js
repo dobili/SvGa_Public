@@ -27,7 +27,7 @@
   /** Startet „Übergang hier“: Der nächste Klick in die Karte setzt die Kopie der Vorlage. */
   KE.uebergangHier = function (name) {
     KE.zustand.uebergangVorlage = name;
-    KE.zustand.kollisionUid = null;
+    KE.zustand.kollisionUid = KE.zustand.kpinsel = null;
     KE.meldeAenderung(
       `Kachel anklicken: dort entsteht ein Auslöser wie „${name}“ (Esc bricht ab).`,
     );

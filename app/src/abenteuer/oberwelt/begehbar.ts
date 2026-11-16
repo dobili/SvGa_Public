@@ -29,6 +29,8 @@ interface Eigenschaft {
 export interface Tiledkarte {
   readonly width: number;
   readonly height: number;
+  /** Eigenschaften der Karte, darunter `sperren` und `freigeben` (Kollisionspinsel, „3,4;5,6“). */
+  readonly properties?: readonly Eigenschaft[];
   readonly layers: readonly {
     readonly type?: string;
     readonly data?: readonly number[];
@@ -106,11 +108,21 @@ function sperreMoebel(
   sperreRechteck(ziel, { x: ort.x, y: ort.y + oben, b: angabe.breite, h: hoehe }, kachel);
 }
 
+/** Kacheln einer Karteneigenschaft im Format „3,4;5,6“ (pipeline/abenteuer/kollisionspinsel.py). */
+function pinselkacheln(karte: Tiledkarte, name: "sperren" | "freigeben"): string[] {
+  const wert = karte.properties?.find((e) => e.name === name)?.value;
+  if (typeof wert !== "string" || !wert) return [];
+  return wert.split(";").filter((k) => /^-?\d+,-?\d+$/.test(k));
+}
+
 /**
  * Alle gesperrten Kacheln einer Karte als „x,y“: Kachelebenen mit Kollision, Möbel mit Kollision
  * (Angabe aus der Möbelliste, am Objekt überschreibbar), die Figuren und Statisten, die an einem
  * Fleck stehen (`von` gleich `bis`; belebungsschicht.ts sperrt sie im Stehen). Wandernde Statisten
  * und Tiere sperren hier nicht: Sie geben den Weg wieder frei.
+ * Kollisionspinsel (Karteneditor 1.3, Wunsch des Autors, 16.11.2026): Die Eigenschaft `sperren` der
+ * Karte sperrt Kacheln dazu, `freigeben` gibt Wände und Möbel frei, nicht aber Figuren. Der Kartenbau
+ * schreibt beides auch in Ebenen und Masken, damit Phaser (szene.ts, moebel.ts) gleich sperrt.
  * Sonderfall: Möbel, die die Liste nicht kennt, sperren nicht (die App zeichnet sie auch nicht).
  * Mit `mitFiguren` false zählen nur Wände und Möbel (für den Durchgang eines Übergangs, R060).
  */
@@ -121,6 +133,7 @@ export function sperrkacheln(
   mitFiguren = true,
 ): Set<string> {
   const gesperrt = new Set<string>();
+  const figuren = new Set<string>();
   const gids = sperrendeKacheln(karte);
   for (const ebene of karte.layers) {
     (ebene.data ?? []).forEach((gid, i) => {
@@ -129,13 +142,16 @@ export function sperrkacheln(
     for (const o of ebene.objects ?? []) {
       const ort = { x: o.x ?? 0, y: o.y ?? 0 };
       if (mitFiguren && (o.type === "figur" || stehtFest(o))) {
-        sperreRechteck(gesperrt, { ...ort, b: kachel, h: kachel }, kachel);
+        sperreRechteck(figuren, { ...ort, b: kachel, h: kachel }, kachel);
       }
       const roh = o.type === "moebel" && o.name ? moebel[o.name] : undefined;
       if (!roh || !(hatKollision(o.properties) ?? roh.kollision)) continue;
       sperreMoebel(gesperrt, ort, geformtAusObjekt(roh, o.properties), kachel);
     }
   }
+  for (const k of pinselkacheln(karte, "sperren")) gesperrt.add(k);
+  for (const k of pinselkacheln(karte, "freigeben")) gesperrt.delete(k);
+  for (const k of figuren) gesperrt.add(k);
   return gesperrt;
 }
 

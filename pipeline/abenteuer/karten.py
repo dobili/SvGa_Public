@@ -116,8 +116,26 @@ def moebelfelder(karte: dict) -> set[Feld]:
     return felder
 
 
+def pinselfelder(karte: dict) -> tuple[set[Feld], set[Feld]]:
+    """(gemalte Sperren, gemalte Freigaben) aus den Eigenschaften der Karte (kollisionspinsel.py).
+
+    Beispiel: Eigenschaft ``sperren`` „0,3;0,4“ → ({(0, 3), (0, 4)}, set()).
+    """
+    werte = {e.get("name"): e.get("value") for e in karte.get("properties", [])}
+    listen = []
+    for name in ("sperren", "freigeben"):
+        text = werte.get(name)
+        teile = text.split(";") if isinstance(text, str) and text else []
+        listen.append({(int(t.split(",")[0]), int(t.split(",")[1])) for t in teile})
+    return listen[0], listen[1]
+
+
 def blockiert(karte: dict) -> set[Feld]:
-    """Alle Felder, auf denen in einer Kachelebene eine Kollisionskachel oder ein Möbel steht."""
+    """Alle Felder, auf denen in einer Kachelebene eine Kollisionskachel oder ein Möbel steht.
+
+    Der Kartenbau schreibt den Kollisionspinsel schon in Ebenen und Masken; die Eigenschaften
+    ``sperren`` und ``freigeben`` gelten hier noch einmal, wie in der App (oberwelt/begehbar.ts).
+    """
     breite, kollision = karte["width"], kollisionskacheln(karte)
     felder: set[Feld] = moebelfelder(karte)
     for name in KACHELEBENEN:
@@ -125,7 +143,8 @@ def blockiert(karte: dict) -> set[Feld]:
         for index, kachel in enumerate(daten):
             if kachel in kollision:
                 felder.add((index % breite, index // breite))
-    return felder
+    sperren, freigeben = pinselfelder(karte)
+    return (felder | sperren) - freigeben
 
 
 def erreichbar(karte: dict, start: Feld) -> set[Feld]:

@@ -71,7 +71,7 @@ def pruefe_szene(szene: dict, moebel: dict, uebergaenge: set[str]) -> list[str]:
     """Befunde einer Szene: gesperrte Übergänge und Figuren auf Übergangs- oder Startfeldern."""
     zeilen = raster(szene)
     gesetzt, _ = platziere(szene, moebel)
-    grund = gesperrte_felder(zeilen, gesetzt)
+    grund = gesperrte_felder(zeilen, gesetzt, szene)
     figuren = figurenfelder(szene)
     hoehe, breite = len(zeilen), len(zeilen[0])
     ziele: dict[str, set[Feld]] = {}

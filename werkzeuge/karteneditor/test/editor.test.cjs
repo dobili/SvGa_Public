@@ -5,8 +5,8 @@
  * ein kleines Paket (zwei Karten des Diners mit Zustandsfassung) mit dem privaten Repository,
  * bedient den Editor wie der Autor (Ziehen, Alt-Ziehen, Drehen, Strg+Klick-Mehrfachauswahl,
  * Duplizieren als Gruppe, Löschen, Ebene, Bibliothek, Auswahlliste, Rückgängig, Übertragen auf die
- * Fassung, Neuladen; Figuren und Varianten in figuren.cjs) und schickt die heruntergeladene Datei
- * durch den Rücklauf.
+ * Fassung, Neuladen; Figuren und Varianten in figuren.cjs, Kollisionspinsel in pinsel.cjs) und
+ * schickt die heruntergeladene Datei durch den Rücklauf.
  *
  * Aufruf (Hauptordner): node werkzeuge/karteneditor/test/editor.test.cjs
  * Umgebung: PRIVAT (Vorgabe ../schach-abenteuer-inhalte), CHROMIUM_PFAD (sonst aus /opt/pw-browsers),
@@ -35,6 +35,7 @@ const {
 } = h;
 const kollision = require("./kollision.cjs");
 const figuren = require("./figuren.cjs");
+const kollisionspinsel = require("./pinsel.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -310,6 +311,8 @@ async function ruecklauf(seite, arbeit) {
     "Bericht warnt vor der gelöschten Figur mit Gespräch",
   );
   pruefe(/Kollision an einzelnen Stellen/.test(ausgabe), "Abschnitt für den Katalog");
+  kollisionspinsel.ruecklauf(ausgabe, daten, path.join(szenen, KARTE), pruefe); // Kollisionspinsel
+
   // Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau.
   const pruefung = execFileSync(
     "python3",
@@ -323,7 +326,7 @@ async function ruecklauf(seite, arbeit) {
     pruefung.trim() === "1 2 [] []",
     `Dachboden-Kopie: Tiefen, 10.84, Befunde (${pruefung.trim()})`,
   );
-  console.log(ausgabe.split("\n").slice(0, 40).join("\n"));
+  console.log(ausgabe.split("\n").slice(0, 60).join("\n"));
 }
 
 (async () => {
@@ -358,6 +361,7 @@ async function ruecklauf(seite, arbeit) {
   await figuren.hindernisse(seite, pruefe);
   await figuren.loeschenUndKopieren(seite, pruefe);
   await figuren.varianten(seite, pruefe);
+  await kollisionspinsel.kollisionspinsel(seite, pruefe);
   await seite.reload();
   await seite.waitForFunction(() => KE.zustand.datei);
   pruefe(

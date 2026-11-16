@@ -4,8 +4,9 @@ Warum: Der Autor rückt Karten im Editor zurecht (``werkzeuge/karteneditor/``, W
 15.11.2026) und lädt die Änderungsdatei im privaten Repository in ``editor/rueck/`` hoch. Dieses
 Skript schreibt die Szenen nach ``inhalte/abenteuer/szenen/``, berichtet je Karte, was verschoben,
 gedreht, hinzugefügt, gelöscht oder in der Ebene geändert wurde (mit Koordinaten), welche Kollision an
-einer Stelle übersteuert wurde (mit Katalogwert und Grund) und welche Auslöser, Figuren und Statisten neu
-oder gelöscht sind (mit Warnung, wenn ein Ink-Knoten oder eine Quest eine Figur braucht,
+einer Stelle übersteuert wurde (mit Katalogwert und Grund), welche Kacheln der Kollisionspinsel
+sperrt oder freigibt (mit dem Bild darunter, ``kollisionspinsel.py``) und welche Auslöser, Figuren
+und Statisten neu oder gelöscht sind (mit Warnung, wenn ein Ink-Knoten oder eine Quest eine Figur braucht,
 ``editorfiguren.py``), schreibt Varianten (``varianten/…``) an ihren Ort zurück, legt Bericht und
 Vorschauen nach ``buch/arbeit/editor/`` (nur lokal) und baut die betroffenen Karten neu.
 
@@ -24,6 +25,7 @@ from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.editorfiguren import figurwarnungen
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
+from pipeline.abenteuer.kollisionspinsel import pinselzeilen
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektkollision import FELDER as KOLLISION
 from pipeline.abenteuer.objektkollision import kollisionszeile
@@ -186,6 +188,8 @@ def berichte(eintrag: dict, moebel: dict | None = None) -> list[str]:
         zeilen.append(f"gelöscht: {alt[i]['moebel']} {ort(alt[i])}")
     zeilen += markierungszeilen(eintrag)
     zeilen += rasterzeilen(vorher.get("raster", []), nachher.get("raster", []))
+    # Kollisionspinsel (Editor 1.3): gemalte Sperren und Freigaben mit dem Bild, das dort lag.
+    zeilen += pinselzeilen(vorher, nachher, moebel)
     for notiz in eintrag.get("objektnotizen", []):
         zeilen.append(f"Notiz zu {notiz['moebel']} (Objekt {notiz['index']}): {notiz['notiz']}")
     return zeilen

@@ -33,6 +33,7 @@ import json
 import re
 
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, WAND, K, platziere, raster
+from pipeline.abenteuer.kollisionspinsel import wende_an
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
 
@@ -46,11 +47,12 @@ LUECKE_MAX = 4
 Feld = tuple[int, int]
 
 
-def gesperrte_felder(zeilen: list[str], gesetzt: list[dict]) -> set[Feld]:
+def gesperrte_felder(zeilen: list[str], gesetzt: list[dict], szene: dict | None = None) -> set[Feld]:
     """Alle gesperrten Kacheln: Raster (Wand, Wasser, Leere) und Möbel mit Kollision.
 
     Wie app/src/abenteuer/oberwelt/begehbar.ts: Ein Möbel sperrt jede Kachel, die seine
-    Sperrfläche in Pixeln berührt (ein Feinschub von 8 Pixeln sperrt die Nachbarkachel mit).
+    Sperrfläche in Pixeln berührt (ein Feinschub von 8 Pixeln sperrt die Nachbarkachel mit). Mit
+    ``szene`` gelten auch die gemalten Sperren und Freigaben (kollisionspinsel.py).
     """
     gesperrt = {(x, y) for y, zeile in enumerate(zeilen) for x, z in enumerate(zeile) if z in GESPERRT}
     for s in gesetzt:
@@ -61,7 +63,7 @@ def gesperrte_felder(zeilen: list[str], gesetzt: list[dict]) -> set[Feld]:
             for x in range(x0 // K, (x0 + K - 1) // K + 1):
                 for y in range(y0 // K, (y0 + K - 1) // K + 1):
                     gesperrt.add((x, y))
-    return gesperrt
+    return gesperrt if szene is None else wende_an(gesperrt, szene)
 
 
 def _flaeche(stueck: dict) -> set[Feld]:
@@ -123,7 +125,7 @@ def fehlende_felder(szene: dict, name: str, moebel: dict) -> tuple[set[Feld], se
     """
     zeilen = raster(szene)
     gesetzt, _ = platziere(szene, moebel)
-    gesperrt = gesperrte_felder(zeilen, gesetzt)
+    gesperrt = gesperrte_felder(zeilen, gesetzt, szene)
     hoehe, breite = len(zeilen), len(zeilen[0])
 
     def frei(x: int, y: int) -> bool:

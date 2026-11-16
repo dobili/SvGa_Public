@@ -66,7 +66,7 @@ Ein gelber Punkt ● in der Kartenliste heißt: Diese Karte hast du geändert.
 - Mausrad: zoomen. Rechte Maustaste ziehen (oder Leertaste + Ziehen): Ansicht verschieben.
 - Raster: Kacheln mit Koordinaten, wie in deinen Notizen „(x, y)“. Unten links steht immer
   die Kachel unter der Maus.
-- Kollision: rot, wo man nicht laufen kann.
+- Kollision (Taste K): transparent gelb mit gelbem Rand, wo man nicht laufen kann, auch unter ausgeblendeten Bildern.
 - Nur Umgebung: blendet Möbel, Deko und Figuren aus.
 - Umgebung sperren: Boden, Wände und Gebäude lassen sich nicht mehr anklicken.
 - Vorher: zeigt das Original zum Vergleich.

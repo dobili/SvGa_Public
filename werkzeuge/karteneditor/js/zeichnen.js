@@ -16,14 +16,44 @@
   const kacheln = { boeden: {}, waende: {} };
   const hintergruende = {}; // Datei → HTMLImageElement
   const FARBE_AUSWAHL = "#ffcc00";
-  const FARBE_KOLLISION = "rgba(230, 40, 40, 0.38)";
-  const FARBE_MARKIERUNG = { ausloeser: "#2f7cf6", figuren: "#e0457b", belebung: "#2fb36b" };
+  const FARBE_KOLLISION = "rgba(255, 210, 0, 0.30)"; // Wunsch des Autors: transparent gelb
+  const RAND_KOLLISION = "rgba(255, 200, 0, 0.95)";
+  const FARBE_MARKIERUNG = {
+    ausloeser: "#2f7cf6",
+    figuren: "#e0457b",
+    belebung: "#2fb36b",
+  };
   const DUNKEL = "#1a1612";
 
   function bild(url) {
     const b = new Image();
     b.src = url;
     return b;
+  }
+
+  /**
+   * Gesperrte Kacheln: transparent gelb gefüllt, die Außenkante jeder gesperrten Fläche gelb
+   * umrandet (Wunsch des Autors, 16.11.2026), damit Lücken und Engstellen sofort auffallen.
+   */
+  function zeichneSperren(ctx, gesperrt, zoom) {
+    ctx.fillStyle = FARBE_KOLLISION;
+    ctx.strokeStyle = RAND_KOLLISION;
+    ctx.lineWidth = 1.5 / zoom;
+    ctx.beginPath();
+    for (const k of gesperrt) {
+      const [x, y] = k.split(",").map(Number);
+      ctx.fillRect(x * K, y * K, K, K);
+      const kante = (dx, dy) => !gesperrt.has(x + dx + "," + (y + dy));
+      if (kante(0, -1))
+        (ctx.moveTo(x * K, y * K), ctx.lineTo((x + 1) * K, y * K));
+      if (kante(0, 1))
+        (ctx.moveTo(x * K, (y + 1) * K), ctx.lineTo((x + 1) * K, (y + 1) * K));
+      if (kante(-1, 0))
+        (ctx.moveTo(x * K, y * K), ctx.lineTo(x * K, (y + 1) * K));
+      if (kante(1, 0))
+        (ctx.moveTo((x + 1) * K, y * K), ctx.lineTo((x + 1) * K, (y + 1) * K));
+    }
+    ctx.stroke();
   }
 
   /** Legt die Bilder des Pakets an (sie dekodieren im Hintergrund, gezeichnet wird, was fertig ist). */
@@ -36,10 +66,12 @@
       };
       bilder[i] = b;
     });
-    for (const [n, url] of Object.entries(daten.kacheln.boeden)) kacheln.boeden[n] = bild(url);
+    for (const [n, url] of Object.entries(daten.kacheln.boeden))
+      kacheln.boeden[n] = bild(url);
     for (const [n, teile] of Object.entries(daten.kacheln.waende)) {
       kacheln.waende[n] = {};
-      for (const [t, url] of Object.entries(teile)) kacheln.waende[n][t] = bild(url);
+      for (const [t, url] of Object.entries(teile))
+        kacheln.waende[n][t] = bild(url);
     }
   };
 
@@ -93,7 +125,8 @@
         }
       }
     } else if (zeichen === "~") kachel = kacheln.boeden.wasser;
-    else if (zeichen !== " ") kachel = kacheln.boeden[boeden[zeichen] || szene.boden || "holzHell"];
+    else if (zeichen !== " ")
+      kachel = kacheln.boeden[boeden[zeichen] || szene.boden || "holzHell"];
     if (kachel && kachel.complete) ctx.drawImage(kachel, x * K, y * K);
     else {
       ctx.fillStyle = DUNKEL;
@@ -157,8 +190,10 @@
     ctx.strokeStyle = "rgba(255,255,255,0.28)";
     ctx.lineWidth = 1 / zoom;
     ctx.beginPath();
-    for (let x = 0; x <= breite; x += K) (ctx.moveTo(x, 0), ctx.lineTo(x, hoehe));
-    for (let y = 0; y <= hoehe; y += K) (ctx.moveTo(0, y), ctx.lineTo(breite, y));
+    for (let x = 0; x <= breite; x += K)
+      (ctx.moveTo(x, 0), ctx.lineTo(x, hoehe));
+    for (let y = 0; y <= hoehe; y += K)
+      (ctx.moveTo(0, y), ctx.lineTo(breite, y));
     ctx.stroke();
     if (zoom < 2.5) return;
     ctx.fillStyle = "rgba(255,255,255,0.8)";
@@ -220,16 +255,17 @@
     const [breite, hoehe] = KE.kartengroesse(szene);
     zeichneGrund(ctx, szene, original, z.datei);
     const stuecke = KE.platziere(szene);
-    const sichtbar = stuecke.filter((s) => !z.schalter.nurUmgebung || s.umgebung);
+    const sichtbar = stuecke.filter(
+      (s) => !z.schalter.nurUmgebung || s.umgebung,
+    );
     for (const s of sichtbar) zeichneStueck(ctx, s);
-    if (z.schalter.kollision) {
-      ctx.fillStyle = FARBE_KOLLISION;
-      for (const k of KE.sperrkacheln(szene, sichtbar)) {
-        const [x, y] = k.split(",").map(Number);
-        ctx.fillRect(x * K, y * K, K, K);
-      }
-    }
-    const marken = z.schalter.markierungen && !z.schalter.nurUmgebung ? KE.markierungen(szene) : [];
+    // Alle Stücke zählen, auch die bei „Nur Umgebung“ ausgeblendeten: Der Held stößt trotzdem an.
+    if (z.schalter.kollision)
+      zeichneSperren(ctx, KE.sperrkacheln(szene, stuecke), a.zoom);
+    const marken =
+      z.schalter.markierungen && !z.schalter.nurUmgebung
+        ? KE.markierungen(szene)
+        : [];
     for (const m of marken) zeichneMarkierung(ctx, m, a.zoom);
     KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
     if (z.schalter.raster) zeichneRaster(ctx, breite, hoehe, a.zoom);

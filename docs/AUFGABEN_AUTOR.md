@@ -1173,6 +1173,8 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       bauen: Treppe legen, obere Kacheln mit Dielen abdecken, Treppe auf „Durchgehbar“, mit
       „Kollision bearbeiten“ die Ränder des Lochs sperren, „Übergang hier“ auf die Lochkachel. Achtung: Bei „Umgebung sperren“ sind die Bodenkacheln
       nicht anklickbar.
+      Der Schalter „Kollision“ oben (Taste K) zeigt alle Stellen, an denen man nicht durchgehen kann,
+      transparent gelb mit gelbem Rand, auch unter Bildern, die „Nur Umgebung“ ausblendet.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg

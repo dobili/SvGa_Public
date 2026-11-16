@@ -16508,11 +16508,11 @@
     },
     {
      "id": 52,
-     "name": "sx7Rangerhaus",
+     "name": "gcFaehrhausHolz",
      "type": "moebel",
      "x": 32,
      "y": 208,
-     "width": 96,
+     "width": 80,
      "height": 96,
      "rotation": 0,
      "visible": true,

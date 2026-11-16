@@ -2,7 +2,7 @@
   "karte": "summitCity.aussen",
   "datei": "karten/summit-city-aussen.json",
   "art": "aussen",
-  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte und der Bergladen, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten verschiedener Bauart, Schutzhütte und Bergwacht, zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten. Westen und Osten säumt Pinienwald; die Bergstraße kommt als Asphalt am Südrand an, im Süden verbindet eine Gasse Hof, Schuppen, Hütte und Kiosk.",
+  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte, eine schlichte Berghütte (noch das alte flache Bild, bis es ein Bild mit Tiefe und zweiflügeliger Tür gibt), und der Bergladen in einer Blockhütte mit grünem Dach, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten als Blockhütten mit Schindel-, Grün- und Schieferdach, Schutzhütte (Blockhütte mit offener Tür) und Bergwacht, zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten. Westen und Osten säumt Pinienwald; die Bergstraße kommt als Asphalt am Südrand an, im Süden verbindet eine Gasse Hof, Schuppen, Hütte und Kiosk (ein Marktstand mit Lagerschuppen).",
   "wand": "fels",
   "boden": "gras",
   "boeden": {
@@ -99,8 +99,9 @@
       "feld": [5, 19]
     },
     {
-      "moebel": "sc7Bergladen",
-      "feld": [18, 18]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [20, 18],
+      "massstab": 1.25
     },
     {
       "moebel": "sc7Brunnen",
@@ -121,6 +122,10 @@
     {
       "moebel": "scRucksack",
       "feld": [25, 26]
+    },
+    {
+      "moebel": "scRucksackRot",
+      "feld": [24, 24]
     },
     {
       "moebel": "wg6StandGross",
@@ -163,20 +168,20 @@
       "feld": [58, 31]
     },
     {
-      "moebel": "sc7Ferienhuette",
+      "moebel": "ld14BlockhuetteGruen",
       "feld": [6, 41]
     },
     {
-      "moebel": "sc7FerienhuetteB",
+      "moebel": "ld14BlockhuetteKamin",
       "feld": [14, 41]
     },
     {
-      "moebel": "cr8Holzfaellerhuette",
+      "moebel": "ld14BlockhuetteGruen",
       "feld": [22, 41]
     },
     {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [47, 41]
+      "moebel": "gcFaehrhausHolz",
+      "feld": [47, 40]
     },
     {
       "moebel": "cp8Schuppen",
@@ -239,28 +244,33 @@
       "feld": [19, 48]
     },
     {
-      "moebel": "cp7Schutzhuette",
-      "feld": [60, 24]
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [62, 25],
+      "massstab": 1.25
     },
     {
       "moebel": "sc8Stadel",
       "feld": [68, 36]
     },
     {
-      "moebel": "sc7Huette",
-      "feld": [58, 49]
+      "moebel": "gcFaehrhausHolz",
+      "feld": [60, 50]
     },
     {
-      "moebel": "pw7Kiosk",
-      "feld": [70, 51]
+      "moebel": "wg6StandGross",
+      "feld": [70, 52]
+    },
+    {
+      "moebel": "rv5Schuppen",
+      "feld": [66, 52]
     },
     {
       "moebel": "sc8Hof",
       "feld": [38, 6]
     },
     {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [18, 33]
+      "moebel": "ld14BlockhuetteKamin",
+      "feld": [19, 33]
     },
     {
       "moebel": "cp8Schuppen",
@@ -271,8 +281,8 @@
       "feld": [2, 31]
     },
     {
-      "moebel": "sx7Rangerhaus",
-      "feld": [71, 25]
+      "moebel": "ld14BlockhuetteGruen",
+      "feld": [72, 26]
     },
     {
       "moebel": "sc7Seil",

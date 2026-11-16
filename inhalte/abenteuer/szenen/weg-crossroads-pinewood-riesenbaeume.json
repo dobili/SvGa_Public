@@ -2,7 +2,7 @@
   "karte": "wegCrossroadsPinewood.riesenbaeume",
   "datei": "karten/weg-crossroads-pinewood-riesenbaeume.json",
   "art": "aussen",
-  "beschreibung": "Ganz dichter, dunkler Hain mit Farnen und Pilzen. Der Weg windet sich in Kehren zwischen frei stehenden Mammutbäumen hindurch, das Ranger-Häuschen tief im Wald mit Pfad zur Tür. Auf einer Lichtung das Lebendschach-Brett der Pfadfinder aus Rasen und Kies (8 × 8), mit Fahnen an den Ecken, einer kleinen Holztribüne und Kindern in weißen und schwarzen Westen. Ein Bach mäandert quer durch den Hain, ein Steg führt hinüber.",
+  "beschreibung": "Ganz dichter, dunkler Hain mit Farnen und Pilzen. Der Weg windet sich in Kehren zwischen frei stehenden Mammutbäumen hindurch, das Ranger-Häuschen aus dunklem Holz mit Schieferdach tief im Wald mit Pfad zur Tür. Auf einer Lichtung das Lebendschach-Brett der Pfadfinder aus Rasen und Kies (8 × 8), mit Fahnen an den Ecken, einer kleinen Holztribüne und Kindern in weißen und schwarzen Westen. Ein Bach mäandert quer durch den Hain, ein Steg führt hinüber.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -145,8 +145,8 @@
   ],
   "objekte": [
     {
-      "moebel": "cp7Rangerhaus",
-      "feld": [17, 45],
+      "moebel": "gcFaehrhausHolz",
+      "feld": [18, 45],
       "id": "rangerhaus"
     },
     {

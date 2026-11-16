@@ -1,7 +1,7 @@
 {
   "moebel": {
     "iw9VitrineMuetze": {
-      "quelle": "spiel/eigene/vitrine_muetze.png",
+      "quelle": "spiel/eigene/vitrine_muetze_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -25,7 +25,7 @@
       ]
     },
     "iw9VitrineLokmodell": {
-      "quelle": "spiel/eigene/vitrine_lokmodell.png",
+      "quelle": "spiel/eigene/vitrine_lokmodell_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -49,7 +49,7 @@
       ]
     },
     "iw9VitrineFahrkarten": {
-      "quelle": "spiel/eigene/vitrine_fahrkarten.png",
+      "quelle": "spiel/eigene/vitrine_fahrkarten_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1234,7 +1234,7 @@
       ]
     },
     "iw9VitrineZeitung": {
-      "quelle": "spiel/eigene/vitrine_zeitung.png",
+      "quelle": "spiel/eigene/vitrine_zeitung_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1258,7 +1258,7 @@
       ]
     },
     "iw9VitrineLaterne": {
-      "quelle": "spiel/eigene/vitrine_laterne.png",
+      "quelle": "spiel/eigene/vitrine_laterne_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1282,7 +1282,7 @@
       ]
     },
     "iw9VitrineWerkzeug": {
-      "quelle": "spiel/eigene/vitrine_werkzeug.png",
+      "quelle": "spiel/eigene/vitrine_werkzeug_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1306,7 +1306,7 @@
       ]
     },
     "iw9VitrineGlasfunke": {
-      "quelle": "spiel/eigene/vitrine_glasfunke.png",
+      "quelle": "spiel/eigene/vitrine_glasfunke_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1330,7 +1330,7 @@
       ]
     },
     "iw9VitrineLeer": {
-      "quelle": "spiel/eigene/vitrine_leer.png",
+      "quelle": "spiel/eigene/vitrine_leer_tief.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1454,6 +1454,31 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "industrie"
+    },
+    "iw17Garderobenschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_409.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "#######.",
+        "#######.",
+        "#######.",
+        "#######.",
+        ".######.",
+        "........"
+      ],
+      "beschreibung": "Weißer Garderobenschrank mit zwei Türen, von vorn (Mamas Zimmer, ersetzt das Abziehbild garderobe_jacken, R055)"
     }
   }
 }

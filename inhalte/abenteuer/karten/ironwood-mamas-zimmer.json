@@ -1163,7 +1163,7 @@
      "id": 21,
      "name": "cc4PflanzeK",
      "type": "moebel",
-     "x": 16,
+     "x": 144,
      "y": 144,
      "width": 16,
      "height": 32,
@@ -1437,24 +1437,24 @@
     },
     {
      "id": 33,
-     "name": "iw8Garderobe",
+     "name": "iw17Garderobenschrank",
      "type": "moebel",
-     "x": 96,
-     "y": 144,
+     "x": 16,
+     "y": 112,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 152
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     }

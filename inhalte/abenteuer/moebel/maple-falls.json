@@ -4163,6 +4163,18 @@
       "lauf": "senkrecht",
       "hinweis": "Wasserfall zwischen grauen Felsen, fällt nach Süden in den Fluss; Gischt in der untersten Reihe liegt auf dem Wasser (Gemini 15.11.2026, Notiz des Autors: kommt zwischen Felsen hervor)"
     },
+    "mf12WasserfallBand": {
+      "quelle": "spiel/eigene/wasserfall_band.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "maske": [".##.", ".##.", ".##.", "...."],
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur",
+      "lauf": "senkrecht",
+      "hinweis": "Nur das fallende Wasser aus mf12WasserfallFelsen (Spalten 2–3), für eine Lücke von zwei Feldern in einer Felswand aus Klippenkacheln mit klippenhoehe 3 (fels grau): oben an der Kantenreihe, Lippe des Bachs über der Kante, Fall über drei Reihen, Gischt in der vierten Reihe auf dem Fluss auch links und rechts neben der Lücke. Werkzeug docs/spiel/auftraege/bildwuensche/wasserfall_band.py (Rückmeldung des Autors 16.11.2026: Felsen hörten links und rechts einfach auf)"
+    },
     "mfDoppeltuerSuedHolz": {
       "quelle": "spiel/eigene/doppeltuer_sued_holz.png",
       "breite": 32,

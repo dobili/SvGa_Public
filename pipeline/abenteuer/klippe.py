@@ -30,12 +30,15 @@ from pathlib import Path
 ROTE_KLIPPE = "spiel/eigene/klippe_rot.png"
 # Grün umgefärbte Erdklippe für Deiche (Bogen „klippeGras“, Bildwunsch klippe_gras.py, mittel-1).
 GRAS_KLIPPE = "spiel/eigene/klippe_gras.png"
+# Graue Felswand mit Moos für Wasserfälle (Bogen „klippeGrau“, Bildwunsch klippe_grau.py, 16.11.2026).
+GRAUE_KLIPPE = "spiel/eigene/klippe_grau.png"
 # Geländebogen (materialien.json „gelaende“): Spalte je Variante für links, Mitte, rechts.
 SPALTEN = {"gras": (8, 9, 10), "erde": (14, 15, 16)}
 REIHE_RAND, REIHE_KANTE, REIHE_WAND, REIHE_FUSS, REIHE_OBEN = 42, 44, 45, 46, 43
 # In den Fels geschlagene Treppe, eine Kachel breit: oben mit Kappe, Mitte, unten mit Grasfuß.
 TREPPE = {"oben": (25, 47), "mitte": (25, 46), "unten": (25, 48)}
 WAND = "#"
+WASSER = "~"
 # Höhe einer Kante in Reihen, wenn die Szene nichts sagt (Kante, Wand, Fuß).
 HOEHE_STANDARD = 3
 # Breiteste Rampe, die als Treppe durch eine Kante gilt (Grube: vier Felder).
@@ -87,7 +90,10 @@ def _variante(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> str:
     # Treppenfelder in der Wand zählen nicht als Boden darüber (schräger Weg durch die Kante).
     while oben >= 0 and (zeilen[oben][x] == WAND or treppenfeld(zeilen, x, oben) is not None):
         oben -= 1
-    # Reicht die Wand bis an den oberen Rand (Seitenkante über dem Wandende), zählt der nächste Boden.
+    # Reicht die Wand bis an den oberen Rand (Seitenkante über dem Wandende), zählt der nächste Boden;
+    # mit „hochflaeche“: „gras“ ist der Rand selbst die Wiese oben (Stadtpark: Felswand am Nordrand).
+    if oben < 0 and WAND in grasboden:
+        return "gras"
     zeichen = zeilen[oben][x] if oben >= 0 else _naechster_boden(zeilen, x, y)
     if zeichen in grasboden:
         return "gras"
@@ -167,8 +173,8 @@ def _flaechenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tup
     """
     gras = WAND in grasboden or _naechster_boden(zeilen, x, y) in grasboden
     links, mitte, rechts = SPALTEN["gras" if gras else "erde"]
-    boden_links = 0 < x and not _ist_wand(zeilen, x - 1, y)
-    boden_rechts = x + 1 < len(zeilen[0]) and not _ist_wand(zeilen, x + 1, y)
+    boden_links = 0 < x and _zeigt_boden(zeilen, x - 1, y)
+    boden_rechts = x + 1 < len(zeilen[0]) and _zeigt_boden(zeilen, x + 1, y)
     spalte = (
         links if boden_links and not boden_rechts else rechts if boden_rechts and not boden_links else mitte
     )
@@ -178,6 +184,16 @@ def _flaechenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tup
         spalte = {"links": rechts, "rechts": links}.get(hochseite(zeilen, x, y), mitte)
     reihe = REIHE_RAND if 0 < y and not _ist_wand(zeilen, x, y - 1) else REIHE_OBEN
     return (spalte, reihe)
+
+
+def _zeigt_boden(zeilen: list[str], x: int, y: int) -> bool:
+    """Ob das Feld als Boden erscheint: kein „#“ oder ein Kartenrand mit Boden dahinter.
+
+    Warum: Die Seitenkante einer Felswand am Nordrand (Stadtpark, Wand biegt nach hinten ab) steht
+    in der obersten Reihe neben einem Randfeld, das den Boden darunter zeigt; ohne diese Prüfung
+    fehlte dort der Rand der Hochfläche.
+    """
+    return not _ist_wand(zeilen, x, y) or (y == 0 and _rand_neben_boden(zeilen, x, y))
 
 
 def hochseite(zeilen: list[str], x: int, y: int) -> str | None:
@@ -211,7 +227,8 @@ def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = No
     Beispiel: Rampe von drei Feldern durch ein Band → Treppe oben, Mitte, unten.
     Sonderfall: Straßen (Zeichen in ``strasse``, etwa Asphalt) bekommen keine Treppe.
     """
-    if _ist_wand(zeilen, x, y) or zeilen[y][x] in (strasse or set()):
+    # Wasser in einer Lücke der Wand ist ein Wasserfall, keine Treppe (Stadtpark, 16.11.2026).
+    if _ist_wand(zeilen, x, y) or zeilen[y][x] in (strasse or set()) | {WASSER}:
         return None
     # Nur echte Rampen: Boden darüber und darunter. Eine Einbuchtung der Kante ist keine Treppe
     # (Gutachten Steinbruchgrube, dritte Prüfung: Tritte ohne Weg auf der Kantenkrone). Läuft der
@@ -257,7 +274,8 @@ def grasboden(szene: dict) -> set[str]:
 
 def klippenbogen(szene: dict, privat: Path) -> str:
     """Bogen der Klippenkacheln: „klippeRot“ für roten Fels (Szene „fels“: „rot“), „klippeGras“ für
-    einen Grashang (Szene „fels“: „gras“, Deich), sonst „gelaende“.
+    einen Grashang (Szene „fels“: „gras“, Deich), „klippeGrau“ für grauen Fels mit Moos (Szene
+    „fels“: „grau“, Wasserfall im Stadtpark), sonst „gelaende“.
 
     Warum: Canyon, Sternwarte und Wüste liegen auf rotem Sandstein; ``klippe_rot.png`` (Bildwunsch
     ``docs/spiel/auftraege/bildwuensche/klippe_rot.py``) hat die Erdklippe an derselben Kachellage rot
@@ -267,6 +285,8 @@ def klippenbogen(szene: dict, privat: Path) -> str:
         return "klippeRot"
     if szene.get("fels") == "gras" and (privat / GRAS_KLIPPE).exists():
         return "klippeGras"
+    if szene.get("fels") == "grau" and (privat / GRAUE_KLIPPE).exists():
+        return "klippeGrau"
     return "gelaende"
 
 

@@ -202,3 +202,36 @@ def test_treppe_laeuft_schraeg_durch_die_wand():
 
     felder = {(x, y) for x, y, _ in treppenfelder(zeilen, set())}
     assert felder == {(5, 1), (6, 1), (7, 1), (4, 2), (5, 2), (6, 2), (3, 3), (4, 3), (5, 3)}
+
+
+def test_graue_felswand_nur_wenn_das_bild_da_ist(tmp_path):
+    """Regel: KARTENREGELN Regel 45, der Wasserfall im Stadtpark fällt eine graue Felswand hinunter
+    (Rückmeldung des Autors, 16.11.2026)."""
+    from pipeline.abenteuer.klippe import GRAUE_KLIPPE
+
+    szene = {"kante": "klippe", "fels": "grau"}
+    assert klippenbogen(szene, tmp_path) == "gelaende"
+    (tmp_path / GRAUE_KLIPPE).parent.mkdir(parents=True)
+    (tmp_path / GRAUE_KLIPPE).write_bytes(b"")
+    assert klippenbogen(szene, tmp_path) == "klippeGrau"
+
+
+def test_wasser_in_der_wandluecke_ist_keine_treppe():
+    """Regel: KARTENREGELN Regel 45, ein Wasserfall in der Lücke einer Felswand ist keine Rampe."""
+    assert treppenfeld(["..~~..", "##~~##", "##~~##", "##~~##", "~~~~~~"], 2, 2) is None
+    assert treppenfeld(["......", "##..##", "##..##", "##..##", "......"], 2, 2) is not None
+
+
+def test_hochflaeche_bis_zum_oberen_rand_bleibt_gras():
+    """Regel: KARTENREGELN 10.74, die Wiese über der Wand reicht bis an den oberen Kartenrand
+    (Szene „hochflaeche“: „gras“); ohne Boden darüber wäre die Wand sonst Erde."""
+    raster = ["#####", "#####", "#####", "#####", "~~~~~"]
+    assert klippenfeld(raster, 2, 1, {".", "#"}) == (SPALTEN["gras"][1], REIHE_KANTE)
+    assert klippenfeld(raster, 2, 1, {"."}) == (SPALTEN["erde"][1], REIHE_KANTE)
+
+
+def test_seitenkante_am_oberen_rand_neben_randfeld():
+    """Regel: KARTENREGELN 10.74, die Wand biegt am oberen Kartenrand nach hinten ab: Neben einem
+    Randfeld, das den Boden darunter zeigt, hat die oberste Reihe den Rand der Hochfläche."""
+    raster = ["#######", "...####", "~~~####", "~~~####", "~~~####", "~~~~~~~"]
+    assert klippenfeld(raster, 3, 0, {".", "#"}) == (SPALTEN["gras"][0], REIHE_OBEN)

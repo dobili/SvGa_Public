@@ -701,6 +701,11 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     verbinden beide Seiten.
 45. **Wasserfälle nur mit Fels oder Geländestufe.** Ohne Berg, Klippe oder Felswand im Bild gibt es
     keinen Wasserfall; ein Bach kommt dann vom Kartenrand oder aus einer Quelle zwischen Steinen.
+    Die Felswand ist ein Klippenband (`"kante": "klippe"`, für grauen Stein mit Moos
+    `"fels": "grau"`), das bis zum Kartenrand läuft oder als Seitenkante nach hinten abbiegt
+    (10.74); der Wasserfall (`mf12WasserfallBand`) füllt nur eine Lücke von zwei Feldern darin,
+    darüber kommt der Bach an die Kante. Felsblöcke, die neben dem Wasser auf Gras enden, gehen
+    nicht (Stadtpark, Rückmeldung des Autors 16.11.2026).
 46. **Bibliotheken zeigen Bücher an allen Wänden:** Regalreihen im Raum und an den Seitenwänden
     Regale in Seitenansicht, wo der Katalog sie hat.
 47. **Straßen enden sichtbar.** Am Kartenrand läuft die Straße samt Gehweg bis in die letzte Spalte;

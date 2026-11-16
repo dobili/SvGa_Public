@@ -327,6 +327,8 @@ test("Zwei Tabs mit demselben Spielstand", async ({ page, context }) => {
   await page.bringToFront();
   await page.getByTestId("abenteuer-reisenknopf").click();
   await page.getByTestId("abenteuer-reisen").getByRole("button", { name: "Cedar Creek" }).click();
+  // Erst wenn die alte Welt weg ist, gibt es genau eine Leinwand (sonst strenger Modus in WebKit).
+  await expect(page.locator(".abenteuer-welt canvas")).toHaveCount(1, { timeout: 30000 });
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await expect
     .poll(async () => (await page.evaluate(liesSpeicherImBrowser)).abenteuer?.position)

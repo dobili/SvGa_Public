@@ -1784,4 +1784,16 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Blick „Aussicht“ mit zwei Erzählersätzen, die Halle ist höher (Seilrad hinten). (7) In der
       Bibliothek stehen die Stühle jetzt mittig an den Lesetischen, in der Drechslerei rücken
       Hobelbank und Werktisch ein Stück an die Hocker heran.
+- [ ] RO30. **Zur Revision: Musik lädt später, Geräusche als Text (16.11.2026, umgesetzt,
+      Widerspruch genügt):** (1) Das Spiel lädt beim Start 24 statt 39 MB: Musik kommt erst, wenn
+      sie läuft (dazu bis zu zwei Stücke der Nachbarkarten). Ohne Netz bleibt ein Stück still, das
+      noch nie lief; „Musik aller Akte laden“ im Spielmenü lädt weiter alles vorab. Die Ladezeile
+      sagt jetzt „Spiel geladen. Musik kommt beim ersten Hören dazu.“ (2) Möbelbilder liegen je Ort
+      in einem Bogen; ein Kartenwechsel braucht etwa ein Viertel des Grafikspeichers. (3) Neu im
+      Spielmenü unter Ton: „Geräusche als Text“ (ab Werk aus). Dann steht unten kurz, was zu hören
+      ist, etwa „[Wind pfeift am Fenster]“ oder „[Musik: ruhig]“, auch bei ausgeschaltetem Ton. Die
+      342 Texte sind Entwürfe; manche Stimmungen könnten zu viel verraten („erlöst“, „endgültig“).
+      (4) Zwei Kleinigkeiten zur Durchsicht: Die Wand in Summit City außen endet an einer Stelle
+      frei; eine Seitenkante riss dort eine sichtbare Lücke, deshalb bleibt es wie es war. Die
+      Murmeltierpfeife liegt jetzt vor einer Wartebank der Bergstation.
 

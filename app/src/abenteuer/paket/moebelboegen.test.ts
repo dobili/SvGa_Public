@@ -1,11 +1,13 @@
 /**
  * Tests der Möbelbögen (skripte/moebelboegen.mjs) und ihrer Nutzung in der Szene
- * (oberwelt/moebel.ts: bildquelle, rahmenJeTextur).
+ * (oberwelt/moebel.ts: bildquelle, rahmenJeTextur) und ihrer Aufteilung je Ort
+ * (skripte/abenteuerpaket-moebel.mjs, lageFuer).
  */
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import { BOGEN_RAND, baueMoebelboegen, packeRegal } from "../../../skripte/moebelboegen.mjs";
-import { bildquelle, rahmenJeTextur, type Moebel } from "../oberwelt/moebel";
+import { moebelJeOrt } from "../../../skripte/abenteuerpaket-moebel.mjs";
+import { bildquelle, lageFuer, rahmenJeTextur, type Moebel } from "../oberwelt/moebel";
 
 /** Ein einfarbiges PNG. */
 function flaeche(breite: number, hoehe: number, rot: number): Promise<Buffer> {
@@ -123,5 +125,55 @@ describe("Möbel aus Bögen in der Szene", () => {
     const karte = rahmenJeTextur(moebel);
     expect(karte.get("moebelbogen:o-1")?.length).toBe(2);
     expect(karte.get("moebel:c")).toEqual([]);
+  });
+});
+
+describe("Möbelbögen je Ort", () => {
+  /** Eine Tiled-Karte mit Möbeln als Text. */
+  const karte = (...namen: string[]) =>
+    JSON.stringify({ layers: [{ objects: namen.map((name) => ({ name, type: "moebel" })) }] });
+
+  it("sammelt die Möbel aller Karten eines Orts samt Zuständen, nur bekannte", () => {
+    const orte = {
+      orte: [
+        {
+          kennung: "mapleFalls",
+          karten: [
+            { datei: "karten/mf-park.json" },
+            { datei: "karten/mf-club.json", zustaende: { leer: "karten/mf-club-leer.json" } },
+          ],
+        },
+        { kennung: "riverton", karten: [{ datei: "karten/rv.json" }] },
+        { kennung: "leer", karten: [{ datei: "karten/fehlt.json" }] },
+      ],
+    };
+    const texte = new Map([
+      ["mf-park.json", karte("bank", "stuhl", "unbekannt")],
+      ["mf-club.json", karte("tisch")],
+      ["mf-club-leer.json", karte("kiste")],
+      ["rv.json", karte("stuhl")],
+    ]);
+    const moebel = { bank: {}, stuhl: {}, tisch: {}, kiste: {} };
+    expect(Object.fromEntries(moebelJeOrt(orte, texte, moebel))).toEqual({
+      mapleFalls: ["bank", "kiste", "stuhl", "tisch"],
+      riverton: ["stuhl"],
+    });
+  });
+
+  it("wählt den Bogen des Orts, sonst den ersten", () => {
+    const angabe = {
+      quelle: "x.png",
+      breite: 16,
+      hoehe: 16,
+      bogen: "mapleFalls-1",
+      rahmen: [1, 1, 16, 16] as const,
+      jeOrt: {
+        mapleFalls: { bogen: "mapleFalls-1", rahmen: [1, 1, 16, 16] as const },
+        riverton: { bogen: "riverton-1", rahmen: [19, 1, 16, 16] as const },
+      },
+    };
+    expect(lageFuer(angabe, "riverton")).toEqual({ bogen: "riverton-1", rahmen: [19, 1, 16, 16] });
+    expect(lageFuer(angabe, "cedarCreek").bogen).toBe("mapleFalls-1");
+    expect(lageFuer(angabe).bogen).toBe("mapleFalls-1");
   });
 });

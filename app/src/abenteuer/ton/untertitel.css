@@ -1,0 +1,24 @@
+/*
+ * Geräusche als Text (ton/Untertitelzeile.tsx): eine kleine Zeile unten in der Mitte, über Karte,
+ * Dialog und Meldungen (z-index 3), aber unter dem Spielmenü (4). Sie nimmt keine Berührung an,
+ * damit Steuerkreuz und Dialog darunter bedienbar bleiben. Farben wie die Ladestandzeile.
+ */
+.abenteuer-untertitel {
+  position: absolute;
+  bottom: calc(env(safe-area-inset-bottom) + var(--raster) * 2);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  max-width: 70%;
+  pointer-events: none;
+  text-align: center;
+}
+
+.abenteuer-untertitel p {
+  margin: 2px 0 0;
+  padding: 2px 8px;
+  font-size: 0.8em;
+  color: #fff;
+  background: rgba(22, 37, 61, 0.85);
+  border-radius: 4px;
+}

@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Teil von anbindung/AbenteuerAnsicht.tsx (Spielmenü); die Werte stehen in
  * den Einstellungen der App (Feld abenteuerton) und gehen mit der Datensicherung mit. Ist der
- * allgemeine Ton der App aus, sagt ein Hinweis, dass die Regler erst damit wirken.
+ * allgemeine Ton der App aus, sagt ein Hinweis, dass die Regler erst damit wirken. Dazu der
+ * Schalter „Geräusche als Text“ (ton/untertitel.ts); er wirkt auch bei ausgeschaltetem Ton.
  * Abhängigkeiten: app/einstellungen.ts, i18n.
  */
 import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
@@ -47,6 +48,15 @@ export function Tonregler() {
           onChange={(e) => setze({ stumm: e.target.checked })}
         />
         {t("abenteuer.ton.stumm")}
+      </label>
+      <label className="abenteuer-tonregler">
+        <input
+          type="checkbox"
+          checked={abenteuerton.untertitel}
+          data-testid="abenteuer-ton-untertitel"
+          onChange={(e) => setze({ untertitel: e.target.checked })}
+        />
+        {t("abenteuer.ton.untertitel")}
       </label>
       {ton !== "an" && <p className="abenteuer-ton-hinweis">{t("abenteuer.ton.appTonAus")}</p>}
       <Ladestandzeile />

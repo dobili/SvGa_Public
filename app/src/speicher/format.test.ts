@@ -377,10 +377,17 @@ describe("Format 8 (Varianten)", () => {
   });
 
   it("liest den Ton des Abenteuers und füllt Fehlendes mit der Vorgabe", () => {
-    expect(einstellungenAus({}).abenteuerton).toEqual({ musik: 60, geraeusche: 80, stumm: false });
+    expect(einstellungenAus({}).abenteuerton).toEqual({
+      musik: 60,
+      geraeusche: 80,
+      stumm: false,
+      untertitel: false,
+    });
     expect(
-      einstellungenAus({ abenteuerton: { musik: 140, geraeusche: -5, stumm: true } }).abenteuerton,
-    ).toEqual({ musik: 100, geraeusche: 0, stumm: true });
+      einstellungenAus({
+        abenteuerton: { musik: 140, geraeusche: -5, stumm: true, untertitel: true },
+      }).abenteuerton,
+    ).toEqual({ musik: 100, geraeusche: 0, stumm: true, untertitel: true });
     expect(einstellungenAus({ abenteuerton: { musik: "laut" } }).abenteuerton.musik).toBe(60);
   });
 

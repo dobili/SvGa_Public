@@ -149,14 +149,22 @@ export type Maiaschalter = "an" | "aus";
 /**
  * Musik und Geräusche im Schach-Abenteuer (abenteuer/ton/, Atmosphäre T1 und T2): Lautstärken in
  * Prozent (0 bis 100) und ein Stummschalter. Wirken nur, wenn der allgemeine Ton an ist.
+ * `untertitel`: Geräusche als Text (abenteuer/ton/untertitel.ts, seit 16.11.2026), Vorgabe aus;
+ * ältere Stände ohne den Eintrag lesen sich als aus.
  */
 export interface Abenteuerton {
   readonly musik: number;
   readonly geraeusche: number;
   readonly stumm: boolean;
+  readonly untertitel: boolean;
 }
 
-export const STANDARD_ABENTEUERTON: Abenteuerton = { musik: 60, geraeusche: 80, stumm: false };
+export const STANDARD_ABENTEUERTON: Abenteuerton = {
+  musik: 60,
+  geraeusche: 80,
+  stumm: false,
+  untertitel: false,
+};
 const PROZENT_HOECHSTENS = 100;
 
 /** Eine Lautstärke aus Rohdaten: ganze Prozent 0 bis 100, sonst die Vorgabe. */
@@ -174,6 +182,7 @@ export function abenteuertonAus(roh: unknown): Abenteuerton {
     musik: prozentAus(r.musik, STANDARD_ABENTEUERTON.musik),
     geraeusche: prozentAus(r.geraeusche, STANDARD_ABENTEUERTON.geraeusche),
     stumm: r.stumm === true,
+    untertitel: r.untertitel === true,
   };
 }
 

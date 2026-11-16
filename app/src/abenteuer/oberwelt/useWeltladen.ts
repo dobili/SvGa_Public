@@ -11,6 +11,7 @@
 import { klangorte } from "../ton/klangquelle";
 import { istTeilchenart } from "./teilchen";
 import { tonregie } from "../ton/tonregie";
+import { ladeNachbarmusikVorab } from "../ton/vorabladen";
 import { useEffect, useState, type RefObject } from "react";
 import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -65,6 +66,8 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     eintrag?.geraeusch,
     klangorte(w.karte, eintrag?.klangquellen ?? [], KACHEL),
   );
+  // Musik lädt erst beim Abspielen; die der Nachbarkarten schon jetzt (ton/vorabladen.ts).
+  void ladeNachbarmusikVorab(w.kennung, w.karte, tonregie.hoerbar);
   k.spiel.current = starteOberwelt(rahmen, {
     karte: w.karte,
     kachelbild: w.kachelbild,

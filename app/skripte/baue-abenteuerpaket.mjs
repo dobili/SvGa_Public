@@ -13,13 +13,17 @@ import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { deflateSync } from "node:zlib";
-import sharp from "sharp";
-import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
+import { kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
+import { schreibeMoebel } from "./abenteuerpaket-moebel.mjs";
+import {
+  platzhalterFigur,
+  platzhalterHeld,
+  platzhalterKacheln,
+  platzhalterRechteck,
+} from "./platzhaltergrafik.mjs";
 import { baueFigurenbogen } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
-import { baueMoebelboegen } from "./moebelboegen.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -41,28 +45,12 @@ const PRIVAT =
 const ZIEL = resolve(HIER, "../public/abenteuer");
 const PAKET = JSON.parse(await readFile(resolve(HIER, "../package.json"), "utf8"));
 
-/** Kachelgröße des Prototyps und Farben der acht Platzhalterkacheln (inhalte/abenteuer/README.md). */
-const KACHEL = 16;
-const KACHELFARBEN = [
-  [200, 181, 142], // 1 Boden
-  [92, 66, 40], // 2 Wand
-  [154, 107, 58], // 3 Kiste
-  [122, 59, 59], // 4 Teppich
-  [47, 107, 79], // 5 Brett
-  [140, 140, 140], // 6 Treppe
-  [240, 208, 112], // 7 Lampe
-  [158, 197, 232], // 8 Fenster
-];
-/** Farben des Helden: Körper und das Merkmal, das die Blickrichtung zeigt. */
-const HELD_KOERPER = [38, 70, 120];
-const HELD_GESICHT = [255, 220, 180];
-/** Farbe der übrigen Figuren (ein Platzhalter für alle, bis die Spritesheets da sind). */
-const FIGUR_KOERPER = [120, 60, 90];
-
 /** Die Dateien des Pakets mit Gruppe und Staffel (schnittstelle/paket.ts). */
 const dateien = [];
 /** Texte der geschriebenen Daten, Karten und Dialoge: Danach richtet sich, welche Möbel ins Paket kommen. */
 const texte = [];
+/** Die Karten im Paket (Dateiname → kompakter Text): Danach entstehen die Möbelbögen je Ort. */
+const kartentexte = new Map();
 
 async function kopiereJson(unterordner, name, gruppe) {
   const inhalt = await readFile(join(QUELLE, name), "utf8");
@@ -172,88 +160,6 @@ async function kopierePrivatordner(ordner, behalte = () => true, endungen = [".p
 
 /** Wurzel des privaten Repositorys (die Pfade „quelle“ der Möbel beziehen sich darauf). */
 const PRIVAT_WURZEL = resolve(HIER, "../inhalte-privat/quelle");
-const MOEBEL_GRUND = [150, 120, 90];
-const MOEBEL_RAND = [58, 58, 80];
-
-/**
- * Alle Möbel aus inhalte/abenteuer/moebel/<ort>.json in einem Objekt Name → Angabe.
- *
- * Warum: Jeder Ort hat seit Runde 4 seine eigene Möbeldatei (weniger Merge-Konflikte, wenn mehrere
- * Helfer parallel bauen); die App kennt weiter eine einzige daten/moebel.json im Paket. Namen sind
- * über alle Dateien eindeutig (wie pipeline/abenteuer/moebelliste.py); ein doppelter Name bricht ab.
- * Ausgabe: { alle, herkunft } mit herkunft Name → Ortsdatei (danach richtet sich der Möbelbogen).
- */
-async function ladeMoebelliste() {
-  const ordner = join(QUELLE, "moebel");
-  const alle = {};
-  const herkunft = {};
-  for (const datei of (await readdir(ordner)).filter((d) => d.endsWith(".json")).sort()) {
-    const { moebel } = JSON.parse(await readFile(join(ordner, datei), "utf8"));
-    for (const [name, angabe] of Object.entries(moebel)) {
-      if (name in alle) throw new Error(`Möbelname doppelt: ${name} (${herkunft[name]}, ${datei})`);
-      alle[name] = angabe;
-      herkunft[name] = datei;
-    }
-  }
-  return { alle, herkunft };
-}
-
-/**
- * Möbel und Schmuck: daten/moebel.json aus allen Ortsdateien, je Möbel mit Bogen und Rahmen
- * (`bogen`, `rahmen` [x, y, breite, hoehe]), und die Bögen moebelboegen/<ortsdatei>-<n>.webp.
- */
-async function schreibeMoebel() {
-  const { alle, herkunft } = await ladeMoebelliste();
-  // Nur Möbel, die eine Karte, die Daten oder ein Dialog nennen (abenteuerpaket-auswahl.mjs).
-  const moebel = genutzteMoebel(alle, texte);
-  // Je Ortsdatei ein Bogen statt einzelner Bilder (skripte/moebelboegen.mjs, Messung „zugang“).
-  const gruppen = new Map();
-  for (const [name, angabe] of Object.entries(moebel)) {
-    const gruppe = herkunft[name].replace(/\.json$/, "");
-    if (!gruppen.has(gruppe)) gruppen.set(gruppe, []);
-    gruppen.get(gruppe).push({ name, bild: await moebelbild(angabe) });
-  }
-  const lage = {};
-  for (const [gruppe, bilder] of [...gruppen].sort(([a], [b]) => (a < b ? -1 : 1))) {
-    const { boegen, rahmen } = await baueMoebelboegen(gruppe, bilder);
-    for (const { name, png } of boegen) await schreibe(`moebelboegen/${name}.png`, png, "grafik");
-    Object.assign(lage, rahmen);
-  }
-  const mitLage = Object.fromEntries(
-    Object.entries(moebel).map(([name, angabe]) => [name, { ...angabe, ...lage[name] }]),
-  );
-  await schreibe("daten/moebel.json", JSON.stringify({ moebel: mitLage }, null, 2) + "\n", "daten");
-}
-
-/**
- * Das Bild eines Möbels aus dem privaten Repository, sonst ein Platzhalter in der angegebenen
- * Größe (braune Fläche mit dunklem Rand), damit Karten immer vollständig laden.
- */
-async function moebelbild(angabe) {
-  // Umgefärbte Fassung zuerst: durchscheinender statt grauer Festschatten (werkzeuge/schatten.py
-  // im privaten Repository; Rückmeldung des Autors zum grauen Schleier, 9.11.2026).
-  const umgefaerbt = join(PRIVAT_WURZEL, "spiel/schatten", angabe.quelle);
-  const quelle = existsSync(umgefaerbt) ? umgefaerbt : join(PRIVAT_WURZEL, angabe.quelle);
-  if (!existsSync(quelle)) return platzhalterRechteck(angabe.breite, angabe.hoehe);
-  if (!angabe.ausschnitt) return readFile(quelle);
-  // Kachel aus einem Bogen (pipeline/abenteuer/bodenkacheln.py): links, oben, rechts, unten.
-  const [links, oben, rechts, unten] = angabe.ausschnitt;
-  return sharp(await readFile(quelle))
-    .extract({ left: links, top: oben, width: rechts - links, height: unten - oben })
-    .png()
-    .toBuffer();
-}
-
-function platzhalterRechteck(breite, hoehe) {
-  const pixel = Buffer.alloc(breite * hoehe * 4);
-  for (let y = 0; y < hoehe; y++) {
-    for (let x = 0; x < breite; x++) {
-      const rand = x === 0 || y === 0 || x === breite - 1 || y === hoehe - 1;
-      setzePixel(pixel, breite, x, y, rand ? MOEBEL_RAND : MOEBEL_GRUND);
-    }
-  }
-  return pngAus(breite, hoehe, pixel);
-}
 
 /** Eine Grafik: aus dem privaten Ordner, wenn vorhanden, sonst der gezeichnete Platzhalter. */
 async function schreibeGrafik(pfad, platzhalter) {
@@ -306,96 +212,6 @@ async function uebersetzeDialoge(sprache) {
   }
 }
 
-/** Ein PNG ohne Bibliothek: RGBA, ohne Filter, deflate. Für Platzhalterbilder genügt das. */
-function pngAus(breite, hoehe, pixel) {
-  const zeilen = Buffer.alloc((breite * 4 + 1) * hoehe);
-  for (let y = 0; y < hoehe; y++) {
-    zeilen[y * (breite * 4 + 1)] = 0;
-    pixel.copy(zeilen, y * (breite * 4 + 1) + 1, y * breite * 4, (y + 1) * breite * 4);
-  }
-  const kopf = Buffer.alloc(13);
-  kopf.writeUInt32BE(breite, 0);
-  kopf.writeUInt32BE(hoehe, 4);
-  kopf.set([8, 6, 0, 0, 0], 8);
-  return Buffer.concat([
-    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
-    abschnitt("IHDR", kopf),
-    abschnitt("IDAT", deflateSync(zeilen)),
-    abschnitt("IEND", Buffer.alloc(0)),
-  ]);
-}
-
-function abschnitt(typ, daten) {
-  const laenge = Buffer.alloc(4);
-  laenge.writeUInt32BE(daten.length, 0);
-  const typUndDaten = Buffer.concat([Buffer.from(typ, "ascii"), daten]);
-  const pruefsumme = Buffer.alloc(4);
-  pruefsumme.writeUInt32BE(crc32(typUndDaten), 0);
-  return Buffer.concat([laenge, typUndDaten, pruefsumme]);
-}
-
-const CRC_TABELLE = new Uint32Array(256).map((_, n) => {
-  let c = n;
-  for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
-  return c >>> 0;
-});
-
-function crc32(daten) {
-  let c = 0xffffffff;
-  for (const byte of daten) c = CRC_TABELLE[(c ^ byte) & 0xff] ^ (c >>> 8);
-  return (c ^ 0xffffffff) >>> 0;
-}
-
-function setzePixel(pixel, breite, x, y, [r, g, b], a = 255) {
-  const i = (y * breite + x) * 4;
-  pixel[i] = r;
-  pixel[i + 1] = g;
-  pixel[i + 2] = b;
-  pixel[i + 3] = a;
-}
-
-/** Der Kachelsatz des Prototyps: 4 × 4 Kacheln, davon acht gefüllt, mit dunklem Rand je Kachel. */
-function platzhalterKacheln() {
-  const breite = KACHEL * 4;
-  const pixel = Buffer.alloc(breite * breite * 4);
-  KACHELFARBEN.forEach((farbe, index) => {
-    const kx = (index % 4) * KACHEL;
-    const ky = Math.floor(index / 4) * KACHEL;
-    for (let y = 0; y < KACHEL; y++) {
-      for (let x = 0; x < KACHEL; x++) {
-        const rand = x === 0 || y === 0 || x === KACHEL - 1 || y === KACHEL - 1;
-        const dunkel = farbe.map((w) => Math.round(w * 0.8));
-        // Das Brett (Kachel 5) bekommt ein Schachbrettmuster, damit es auffällt.
-        const feld = index === 4 && (Math.floor(x / 4) + Math.floor(y / 4)) % 2 === 0;
-        setzePixel(pixel, breite, kx + x, ky + y, rand ? dunkel : feld ? [230, 220, 190] : farbe);
-      }
-    }
-  });
-  return pngAus(breite, breite, pixel);
-}
-
-/** Der Held: vier Bilder (unten, links, rechts, oben) als Spritesheet 64 × 16. */
-function platzhalterHeld(koerper = HELD_KOERPER) {
-  const breite = KACHEL * 4;
-  const pixel = Buffer.alloc(breite * KACHEL * 4);
-  const gesichter = [
-    [6, 10, 4, 3], // unten: Gesicht unten
-    [3, 5, 3, 6], // links
-    [10, 5, 3, 6], // rechts
-    [6, 3, 4, 3], // oben
-  ];
-  gesichter.forEach(([gx, gy, gb, gh], richtung) => {
-    const kx = richtung * KACHEL;
-    for (let y = 2; y < KACHEL - 1; y++) {
-      for (let x = 3; x < KACHEL - 3; x++) setzePixel(pixel, breite, kx + x, y, koerper);
-    }
-    for (let y = gy; y < gy + gh; y++) {
-      for (let x = gx; x < gx + gb; x++) setzePixel(pixel, breite, kx + x, y, HELD_GESICHT);
-    }
-  });
-  return pngAus(breite, KACHEL, pixel);
-}
-
 async function main() {
   await rm(ZIEL, { recursive: true, force: true });
   await mkdir(ZIEL, { recursive: true });
@@ -422,10 +238,12 @@ async function main() {
     await kopiereJson("texte", `texte/${name}`, "daten");
   }
   // Nur Karten und Hintergründe, die orte.json erreicht; Karten ohne Einrückung (Paketgröße).
-  const ladbar = ladbareKarten(JSON.parse(await readFile(join(QUELLE, "orte.json"), "utf8")));
+  const orte = JSON.parse(await readFile(join(QUELLE, "orte.json"), "utf8"));
+  const ladbar = ladbareKarten(orte);
   for (const name of (await readdir(join(QUELLE, "karten"))).filter((d) => ladbar.dateien.has(d))) {
-    const text = await readFile(join(QUELLE, "karten", name), "utf8");
-    await schreibe(`karten/${name}`, kompakteKarte(text), "karten");
+    const text = kompakteKarte(await readFile(join(QUELLE, "karten", name), "utf8"));
+    kartentexte.set(name, text);
+    await schreibe(`karten/${name}`, text, "karten");
   }
   for (const sprache of (await readdir(join(QUELLE, "dialoge"), { withFileTypes: true }))
     .filter((d) => d.isDirectory())
@@ -462,10 +280,19 @@ async function main() {
   await kopiereTon("klang");
   await kopiereBilder();
   await kopierePrivatordner("grafik/karten", (name) => ladbar.hintergruende.has(name));
-  await schreibeMoebel();
+  // Möbel: je Ort ein Bogen mit den Möbeln seiner Karten (skripte/abenteuerpaket-moebel.mjs).
+  const moebelzahlen = await schreibeMoebel({
+    quelle: QUELLE,
+    privatWurzel: PRIVAT_WURZEL,
+    texte,
+    orte,
+    kartentexte,
+    schreibe,
+    platzhalter: platzhalterRechteck,
+  });
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
-  await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));
+  await schreibeGrafik("grafik/figur.png", platzhalterFigur);
   // Die Version: App-Version plus Kurzhash aller Inhalte, damit jede Änderung einen neuen Cache
   // bekommt (Stellungnahme, Abschnitt 4: Schwäche des Maia-Pakets ohne Versionsvergleich).
   const inhaltshash = createHash("sha256")
@@ -481,7 +308,8 @@ async function main() {
   };
   await writeFile(join(ZIEL, "paket.json"), JSON.stringify(verzeichnis, null, 1));
   console.log(
-    `Abenteuerpaket ${verzeichnis.version}: ${dateien.length} Dateien, ${(verzeichnis.bytes / 1024).toFixed(0)} KB.`,
+    `Abenteuerpaket ${verzeichnis.version}: ${dateien.length} Dateien, ${(verzeichnis.bytes / 1024).toFixed(0)} KB; ` +
+      `${moebelzahlen.moebel} Möbel auf ${moebelzahlen.boegen} Bögen je Ort (${moebelzahlen.doppelt} doppelt).`,
   );
 }
 

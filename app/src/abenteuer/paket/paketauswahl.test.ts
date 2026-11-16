@@ -8,7 +8,7 @@ import {
   kompakteKarte,
   ladbareKarten,
 } from "../../../skripte/abenteuerpaket-auswahl.mjs";
-import { jeGleichzeitig } from "./paketlader";
+import { jeGleichzeitig } from "./ladehilfen";
 
 describe("Abenteuerpaket: Auswahl", () => {
   it("verdichtet Karten ohne Einrückung, rotation 0 und visible true", () => {

@@ -14,6 +14,8 @@
  * Datei und Sitzung (vorher bei jedem Kartenwechsel neu, ohne Freigabe: der Speicher wuchs mit
  * jeder Karte). Rasterbilder liegen im Paket als verlustfreies WebP (skripte/paketbilder.mjs);
  * Aufrufer nennen weiter den Namen der Quelle („moebel/sofa.png“), `paketpfad` setzt ihn um.
+ * Musik lädt erst beim Abspielen (Auftrag „Leistung“, 16.11.2026): `liesPaketdatei` holt eine
+ * fehlende Datei des Verzeichnisses geprüft in den Cache, `haltePaketdateiVor` tut es ohne Lesen.
  * Abhängigkeiten: schnittstelle/paket.ts, app/sprachpaket.ts (Code-Baustein nachladen).
  */
 import { ladeSprachpaket } from "../../app/sprachpaket";
@@ -26,6 +28,7 @@ import {
   type Paketzustand,
 } from "../schnittstelle/paket";
 import { Spielfehler } from "../schnittstelle/spielfehler";
+import { jeGleichzeitig, mitZeitlimit, pruefsumme } from "./ladehilfen";
 
 const CACHE_PRAEFIX = "abenteuer-";
 
@@ -53,11 +56,14 @@ async function verzeichnisVomServer(): Promise<Paketverzeichnis> {
   return (await antwort.json()) as Paketverzeichnis;
 }
 
-/** Ein vollständig geladenes Paket: Cache-Name, Verzeichnis und die Menge seiner Pfade. */
+type Paketdatei = Paketverzeichnis["dateien"][number];
+
+/** Ein vollständig geladenes Paket: Cache-Name, Verzeichnis und seine Dateien je Pfad. */
 interface GeladenesPaket {
   readonly name: string;
   readonly verzeichnis: Paketverzeichnis;
   readonly pfade: ReadonlySet<string>;
+  readonly dateien: ReadonlyMap<string, Paketdatei>;
 }
 
 async function sucheGeladenesPaket(): Promise<GeladenesPaket | null> {
@@ -68,7 +74,8 @@ async function sucheGeladenesPaket(): Promise<GeladenesPaket | null> {
     const antwort = await speicher.match(adresse(VERZEICHNIS_DATEI));
     if (!antwort) continue;
     const verzeichnis = (await antwort.json()) as Paketverzeichnis;
-    return { name, verzeichnis, pfade: new Set(verzeichnis.dateien.map((d) => d.pfad)) };
+    const dateien = new Map(verzeichnis.dateien.map((d) => [d.pfad, d] as const));
+    return { name, verzeichnis, pfade: new Set(dateien.keys()), dateien };
   }
   return null;
 }
@@ -109,23 +116,6 @@ export function paketpfad(pfad: string, pfade: ReadonlySet<string> | null = null
 /** So lange wartet die Startkarte höchstens auf den Server; danach gilt das vorhandene Paket. */
 const SERVER_ZEITLIMIT_MS = 3000;
 
-/** Ein Versprechen mit Zeitlimit: Nach `ms` Millisekunden wird es mit einem Fehler abgelehnt. */
-function mitZeitlimit<T>(versprechen: Promise<T>, ms: number): Promise<T> {
-  return new Promise<T>((erfuellt, abgelehnt) => {
-    const uhr = setTimeout(() => abgelehnt(new Error(`Zeitlimit ${ms} ms`)), ms);
-    versprechen.then(
-      (wert) => {
-        clearTimeout(uhr);
-        erfuellt(wert);
-      },
-      (fehler: unknown) => {
-        clearTimeout(uhr);
-        abgelehnt(fehler instanceof Error ? fehler : new Error(String(fehler)));
-      },
-    );
-  });
-}
-
 /**
  * „Fehlt“ mit der Größe des Grundpakets vom Server, damit die Startkarte sie vor dem Laden nennt
  * (Spieltest „einstieg“, 15.11.2026, R9: die 45 MB standen erst nach dem Tippen da). Ohne Netz
@@ -156,16 +146,10 @@ export async function paketzustand(): Promise<Paketzustand> {
   return { art: "vorhanden", version, bytes };
 }
 
-/** SHA-256 eines Blobs als Hexzahl. */
-async function pruefsumme(bytes: ArrayBuffer): Promise<string> {
-  const summe = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
-  return [...summe].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
 /** Lädt eine Datei mit Fortschritt, prüft sie und legt sie in den Cache. */
 async function ladeDatei(
   speicher: Cache,
-  datei: Paketverzeichnis["dateien"][number],
+  datei: Paketdatei,
   weiter: (bytes: number) => void,
 ): Promise<void> {
   if (await speicher.match(adresse(datei.pfad))) {
@@ -198,25 +182,6 @@ async function ladeDatei(
  * gleichzeitigen Verbindungen eines Browsers je Server unter HTTP/1.1.
  */
 const GLEICHZEITIG = 6;
-
-/**
- * Führt `aufgabe` für alle Einträge aus, höchstens `anzahl` zugleich; der erste Fehler bricht ab
- * (die übrigen laufenden Aufgaben enden noch, ihr Ergebnis bleibt im Cache).
- * Beispiel: 2000 Dateien, anzahl 6 → sechs Arbeiter nehmen sich der Reihe nach die nächste Datei.
- */
-export async function jeGleichzeitig<T>(
-  eintraege: readonly T[],
-  anzahl: number,
-  aufgabe: (eintrag: T) => Promise<void>,
-): Promise<void> {
-  let naechster = 0;
-  const arbeiter = async (): Promise<void> => {
-    for (let i = naechster++; i < eintraege.length; i = naechster++) {
-      await aufgabe(eintraege[i] as T);
-    }
-  };
-  await Promise.all(Array.from({ length: Math.min(anzahl, eintraege.length) }, arbeiter));
-}
 
 /**
  * Lädt das Paket der aktuellen Version (nur Fehlendes), legt zuletzt das Verzeichnis ab (das
@@ -253,7 +218,7 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
  * geladenes Paket nichts. Ausgabe: true, wenn alle Dateien da sind. Wirft bei Netzfehlern.
  */
 export async function ladeNach(
-  waehle: (datei: Paketverzeichnis["dateien"][number]) => boolean,
+  waehle: (datei: Paketdatei) => boolean,
   fortschritt: Ladefortschritt,
 ): Promise<boolean> {
   const geladen = await geladenesVerzeichnis();
@@ -274,12 +239,12 @@ export async function ladeNach(
 
 /** Die Dateien des geladenen Pakets, die noch nicht im Cache liegen (nach Auswahl). */
 export async function fehlendeDateien(
-  waehle: (datei: Paketverzeichnis["dateien"][number]) => boolean,
+  waehle: (datei: Paketdatei) => boolean,
 ): Promise<Paketverzeichnis["dateien"]> {
   const geladen = await geladenesVerzeichnis();
   if (!geladen) return [];
   const speicher = await caches.open(geladen.name);
-  const fehlend: Paketverzeichnis["dateien"][number][] = [];
+  const fehlend: Paketdatei[] = [];
   for (const datei of geladen.verzeichnis.dateien.filter(waehle)) {
     if (!(await speicher.match(adresse(datei.pfad)))) fehlend.push(datei);
   }
@@ -295,16 +260,64 @@ export async function loeschePaket(): Promise<void> {
   melde();
 }
 
+/** Laufende Abrufe einzelner Dateien in den Cache, damit eine Datei nicht doppelt lädt. */
+const behalten = new Map<string, Promise<void>>();
+
 /**
- * Liest eine Datei des Pakets: aus dem geladenen Cache, sonst vom Server (Entwicklung oder
- * verlorener Cache; der Spielstand bleibt davon unberührt).
+ * Holt eine Datei des geladenen Pakets in dessen Cache, falls sie noch fehlt (geprüft wie beim
+ * Laden des Pakets). Warum: Musik lädt erst, wenn sie gespielt wird (Auftrag „Leistung“,
+ * 16.11.2026); danach liegt sie offline bereit wie das übrige Paket.
+ */
+function behalte(geladen: GeladenesPaket, datei: Paketdatei): Promise<void> {
+  const schluessel = `${geladen.name}:${datei.pfad}`;
+  let vorgang = behalten.get(schluessel);
+  if (!vorgang) {
+    vorgang = caches
+      .open(geladen.name)
+      .then((speicher) => ladeDatei(speicher, datei, () => undefined))
+      .finally(() => behalten.delete(schluessel));
+    behalten.set(schluessel, vorgang);
+  }
+  return vorgang;
+}
+
+/**
+ * Legt eine Datei des geladenen Pakets vorab in den Cache, ohne sie zu lesen (Musik des nächsten
+ * Orts, ton/vorabladen.ts). Ausgabe: true, wenn sie danach im Cache liegt; ohne geladenes Paket,
+ * bei unbekanntem Pfad oder Netzfehler false.
+ */
+export async function haltePaketdateiVor(name: string): Promise<boolean> {
+  const geladen = await geladenesVerzeichnis();
+  const datei = geladen?.dateien.get(paketpfad(name, geladen.pfade));
+  if (!geladen || !datei) return false;
+  return behalte(geladen, datei).then(
+    () => true,
+    () => false,
+  );
+}
+
+/**
+ * Liest eine Datei des Pakets: aus dem geladenen Cache. Fehlt sie dort, aber steht sie im
+ * Verzeichnis (Musik, die erst beim Abspielen lädt), kommt sie geprüft in den Cache und von dort.
+ * Sonst vom Server (Entwicklung oder verlorener Cache; der Spielstand bleibt davon unberührt).
  */
 export async function liesPaketdatei(name: string): Promise<Response> {
   const geladen = await geladenesVerzeichnis();
   const pfad = paketpfad(name, geladen?.pfade);
   if (geladen) {
-    const antwort = await (await caches.open(geladen.name)).match(adresse(pfad));
+    const speicher = await caches.open(geladen.name);
+    const antwort = await speicher.match(adresse(pfad));
     if (antwort) return antwort;
+    const datei = geladen.dateien.get(pfad);
+    // Ohne Netz bleibt nur der Versuch unten; er meldet den Fehler.
+    const behalten = datei
+      ? await behalte(geladen, datei).then(
+          () => true,
+          () => false,
+        )
+      : false;
+    const nachgeladen = behalten ? await speicher.match(adresse(pfad)) : undefined;
+    if (nachgeladen) return nachgeladen;
   }
   const antwort = await fetch(adresse(pfad));
   if (!antwort.ok) throw new Spielfehler("fehler.paket.datei", { pfad, status: antwort.status });

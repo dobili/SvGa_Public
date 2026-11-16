@@ -11,8 +11,7 @@
  * - useDialogende.ts: Dialoge öffnen und ausführen, was sie angestoßen haben.
  * Hier bleiben Auslöser und Aktionsknopf: Ein Übergang wechselt die Karte (oder öffnet erst seinen
  * Dialog), Gegenstand und Figur öffnen ihren Ink-Dialog, ein Statist spricht in einer Blase.
- * Abhängigkeiten: die Hooks oben, oberwelt/Steuerkreuz.tsx, oberwelt/Tagebuch.tsx,
- * dialog/Dialog.tsx, oberwelt/weltdaten.ts.
+ * Abhängigkeiten: Hooks oben, Steuerkreuz.tsx, Tagebuch.tsx, weltdaten.ts, dialog/Dialog.tsx.
  */
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
@@ -48,6 +47,7 @@ import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
+import { Untertitelzeile } from "../ton/Untertitelzeile";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
 /** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
@@ -175,6 +175,7 @@ export function Oberwelt() {
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />
       <Orientierung k={k} frei={!fensterOffen && meldung === null} />
+      <Untertitelzeile />
       {/* In Erinnerungen (Ambroses Zeit) gibt es weder Tagebuch noch Münzen des Helden (F3). */}
       {!welt?.erinnerung && (
         <Kopfleiste

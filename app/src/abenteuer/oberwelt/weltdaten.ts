@@ -213,7 +213,7 @@ export async function ladeWelt(
       ),
       figurenbildAdresse(heldfigurpfad(erinnerung, heldvariante)),
       figurenbilderFuer(fund.ort, karte),
-      ladeMoebel(karte),
+      ladeMoebel(karte, fund.ort.kennung),
       paketdateiAlsAdresseOderNull(
         `grafik/karten/${kartenkennung}${fassung.zustand ? `-${fassung.zustand}` : ""}.png`,
       ),

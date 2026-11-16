@@ -58,9 +58,16 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await ton.getByTestId("abenteuer-ton-stumm").check();
   await expect(ton.getByTestId("abenteuer-ton-musik")).toBeDisabled();
   await ton.getByTestId("abenteuer-ton-stumm").uncheck();
-  // Der Ton lädt im Hintergrund nach (paket/aktton.ts); am Ende liegt alles auf dem Gerät.
+  // Geräusche als Text (ton/untertitel.ts): eingeschaltet zeigt die Zeile gleich das Dauergeräusch
+  // des Dachbodens; ausgeschaltet verschwindet sie.
+  await ton.getByTestId("abenteuer-ton-untertitel").check();
+  await expect(page.getByTestId("abenteuer-untertitel")).toContainText("[Wind pfeift am Fenster]");
+  await ton.getByTestId("abenteuer-ton-untertitel").uncheck();
+  await expect(page.getByTestId("abenteuer-untertitel")).toHaveCount(0);
+  // Der Ton lädt im Hintergrund nach (paket/aktton.ts); am Ende liegt alles auf dem Gerät, die
+  // Musik kommt beim ersten Hören dazu.
   await expect(ton.getByTestId("abenteuer-ladestand-menue")).toHaveText(
-    "Spiel vollständig geladen",
+    "Spiel geladen. Musik kommt beim ersten Hören dazu.",
     { timeout: PAKET_FRIST_MS },
   );
   await page.getByRole("button", { name: "Weiterspielen" }).click();

@@ -3,18 +3,22 @@
  * 15.11.2026): Musik und Geräusche gehören nicht zum Grundpaket. Das Spiel startet, sobald Grafik
  * und Daten da sind; der Ton des laufenden Akts lädt danach im Hintergrund (beim ersten Spielen
  * Akt 1), der späterer Akte beim Betreten des Akts oder auf Wunsch im Spielmenü
- * (anbindung/Aktton.tsx).
+ * (anbindung/Aktton.tsx). Musik gehört seit dem 16.11.2026 nicht mehr dazu (Auftrag „Leistung“:
+ * 18 MB Musik von Akt 1 luden bei jedem ersten Start mit): Ein Stück lädt, wenn es gespielt wird,
+ * das der Nachbarkarten vorab (ton/vorabladen.ts); danach liegt es im Cache. Nur der Wunsch im
+ * Spielmenü lädt alle Musik auf einmal.
  *
  * Rolle im Gesamtbild: Die Dateien stehen im Verzeichnis des Pakets mit `akt`
  * (schnittstelle/paket.ts); sie landen im selben Cache wie das Grundpaket. Bis sie da sind, liest
  * liesPaketdatei sie aus dem Netz, und ohne Netz bleibt es still (ton/tonspieler.ts). Den Stand
  * des Nachladens („lädt“, „vollständig“) zeigt anbindung/Ladestand.tsx; „vollständig“ heißt:
- * Grundpaket und Ton des laufenden Akts liegen auf dem Gerät, das Spiel geht ohne Netz.
+ * Grundpaket und Geräusche des laufenden Akts liegen auf dem Gerät, das Spiel geht ohne Netz
+ * (Musik, die noch nie lief, bleibt dann still).
  * Abhängigkeiten: paket/paketlader.ts.
  */
 import { useEffect, useSyncExternalStore } from "react";
 import { beiPaketAenderung, fehlendeDateien, ladeNach } from "./paketlader";
-import type { Ladefortschritt } from "../schnittstelle/paket";
+import type { Ladefortschritt, Paketverzeichnis } from "../schnittstelle/paket";
 
 /** Erster Akt, dessen Ton nachgeladen wird (seit 15.11.2026 auch Akt 1). */
 export const ERSTER_NACHLADEAKT = 1;
@@ -51,6 +55,16 @@ export function beiTonladestand(b: () => void): () => void {
   return () => beobachter.delete(b);
 }
 
+/** Musik des Pakets (lädt beim Abspielen, nicht mit dem Akt). Beispiel: „musik/weg.m4a“. */
+export function istMusik(datei: { readonly pfad: string }): boolean {
+  return datei.pfad.startsWith("musik/");
+}
+
+/** Was im Hintergrund zu einem Akt gehört: Grundpaket und Geräusche des Akts, keine Musik. */
+function zumAkt(akt: number): (datei: Paketverzeichnis["dateien"][number]) => boolean {
+  return (d) => (d.akt === undefined || d.akt === akt) && !istMusik(d);
+}
+
 /** Laufende Ladevorgänge je Akt, damit ein Akt nicht doppelt lädt. */
 const laufend = new Map<number, Promise<boolean>>();
 
@@ -58,7 +72,7 @@ const laufend = new Map<number, Promise<boolean>>();
 const STILL: Ladefortschritt = () => undefined;
 
 /**
- * Lädt den Ton eines Akts nach (einmal je Sitzung und Paket, auch bei mehrfachem Aufruf).
+ * Lädt die Geräusche eines Akts nach (einmal je Sitzung und Paket, auch bei mehrfachem Aufruf).
  * Ausgabe: true, wenn alles da ist; ohne geladenes Paket oder bei Netzfehlern false (dann gilt
  * der Vorgang nicht als erledigt, der nächste Aufruf versucht es neu).
  */
@@ -66,11 +80,13 @@ export function ladeAktton(akt: number, fortschritt: Ladefortschritt = STILL): P
   if (akt < ERSTER_NACHLADEAKT) return Promise.resolve(true);
   let vorgang = laufend.get(akt);
   if (!vorgang) {
-    vorgang = ladeNach((d) => d.akt === akt, fortschritt).catch((fehler: unknown) => {
-      // Ohne Netz bleibt der Ton aus; beim nächsten Betreten des Akts ein neuer Versuch.
-      console.warn(`Ton von Akt ${akt} nicht geladen`, fehler);
-      return false;
-    });
+    vorgang = ladeNach((d) => d.akt === akt && !istMusik(d), fortschritt).catch(
+      (fehler: unknown) => {
+        // Ohne Netz bleibt der Ton aus; beim nächsten Betreten des Akts ein neuer Versuch.
+        console.warn(`Ton von Akt ${akt} nicht geladen`, fehler);
+        return false;
+      },
+    );
     const dieser = vorgang;
     laufend.set(akt, dieser);
     void dieser.then((ok) => {
@@ -91,7 +107,7 @@ export async function ladeTonImHintergrund(akt: number): Promise<void> {
   const setze = (neu: Tonladestand) => {
     if (dieser === laeufe) setzeStand(neu);
   };
-  const fehlend = await fehlendeDateien((d) => d.akt === undefined || d.akt === akt);
+  const fehlend = await fehlendeDateien(zumAkt(akt));
   const frisch = fehlend.length > 0;
   if (frisch) setze({ art: "laedt", geladen: 0, gesamt: 1 });
   const ok = await ladeAktton(akt, (geladen, gesamt) => {
@@ -101,11 +117,11 @@ export async function ladeTonImHintergrund(akt: number): Promise<void> {
     setze(frisch ? { art: "unvollstaendig" } : { art: "ruht" });
     return;
   }
-  const rest = await fehlendeDateien((d) => d.akt === undefined || d.akt === akt);
+  const rest = await fehlendeDateien(zumAkt(akt));
   setze(rest.length === 0 ? { art: "vollstaendig", frisch } : { art: "unvollstaendig" });
 }
 
-/** Lädt den Ton aller Akte (Wunsch im Spielmenü). */
+/** Lädt den Ton aller Akte samt aller Musik (Wunsch im Spielmenü). */
 export async function ladeAlleAkte(fortschritt: Ladefortschritt): Promise<boolean> {
   const ok = await ladeNach((d) => d.akt !== undefined, fortschritt);
   return ok;

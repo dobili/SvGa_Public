@@ -22,6 +22,7 @@ Format 11), `sw/dateiliste.ts` (Code-Baustein als Paket), `vite.config.ts` und
 | `oberwelt/`      | Phaser: Karte, Held, Kollision, Auslöser; Steuerkreuz in React                            | `Oberwelt.tsx`         |
 | `dialog/`        | Ink-Geschichten abspielen und anzeigen                                                    | `geschichte.ts`        |
 | `texte/`         | Oberflächentexte des Spiels (`inhalte/abenteuer/texte/de.json`)                           | `texte.ts`             |
+| `ton/`           | Musik und Geräusche, Musik der Nachbarkarten vorab, Geräusche als Text                    | `tonregie.ts`          |
 
 Die Partie selbst, die Aufgaben und das Brett kommen aus der App (`spiel/`, `training/`, `ui/`);
 das Spiel ruft sie über die Dienste in `anbindung/dienste.ts` auf. Inhalte (Gegner, Karten,

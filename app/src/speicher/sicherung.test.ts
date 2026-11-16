@@ -40,7 +40,7 @@ describe("Rundreise", () => {
         ton: "an",
         vorWerkzeugen: "an",
         maia: "aus",
-        abenteuerton: { musik: 30, geraeusche: 50, stumm: true },
+        abenteuerton: { musik: 30, geraeusche: 50, stumm: true, untertitel: true },
         abenteuersteuerkreuz: "links",
       },
       lernstand: { 1: [0, 2] },

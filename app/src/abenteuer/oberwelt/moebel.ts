@@ -5,10 +5,12 @@
  * Kollision auf der unteren Fläche (alles außer der obersten Kachelreihe und den Reihen
  * `frei_unten`, die unten begehbar bleiben) oder nach einer eigenen `maske` je Kachel.
  *
- * Bilder: Seit dem 15.11.2026 liegen die Möbel je Ortsdatei auf einem Bogen
- * (moebelboegen/<ortsdatei>-<n>.webp, skripte/moebelboegen.mjs); `bogen` und `rahmen` in
- * moebel.json sagen, wo. Die Szene lädt jeden Bogen einmal und schneidet die Möbel als Rahmen aus
- * (Phaser-Frames). Ein Paket von vorher (ohne `bogen`) liefert weiter Einzelbilder moebel/<name>.png.
+ * Bilder: Seit dem 16.11.2026 liegen die Möbel je Ort auf einem Bogen mit genau den Möbeln
+ * seiner Karten (moebelboegen/<ort>-<n>.webp, skripte/abenteuerpaket-moebel.mjs; vorher je
+ * Ortsdatei, dann lud eine Karte im Mittel 4,8 Bögen). `bogen` und `rahmen` in moebel.json sagen,
+ * wo; ein Möbel mehrerer Orte nennt dazu `jeOrt`. Die Szene lädt jeden Bogen einmal und schneidet
+ * die Möbel als Rahmen aus (Phaser-Frames). Ein Paket ohne `bogen` liefert Einzelbilder
+ * moebel/<name>.png.
  *
  * Rolle im Gesamtbild: Laden (weltdaten.ts) und Aufstellen (szene.ts) der Möbel, ausgelagert, damit
  * beide Dateien klein bleiben. Die Pipeline prüft dieselbe Regel (pipeline/abenteuer/karten.py,
@@ -33,6 +35,23 @@ export interface Moebelangabe {
   readonly bogen?: string;
   /** Lage auf dem Bogen: x, y, Breite, Höhe in Pixeln. */
   readonly rahmen?: readonly [number, number, number, number];
+  /** Liegt das Möbel in den Bögen mehrerer Orte: Bogen und Rahmen je Ort (orte.json-Kennung). */
+  readonly jeOrt?: Readonly<Record<string, Bogenlage>>;
+}
+
+/** Wo ein Möbel auf einem Bogen liegt. */
+export interface Bogenlage {
+  readonly bogen?: string;
+  readonly rahmen?: readonly [number, number, number, number];
+}
+
+/**
+ * Die Lage eines Möbels für einen Ort: die des Orts, wenn es in mehreren Bögen liegt, sonst die
+ * eine. Beispiel: Stuhl in Maple Falls und Riverton, Karte in Riverton → Bogen „riverton-1“.
+ */
+export function lageFuer(angabe: Moebelangabe, ort?: string): Bogenlage {
+  const eigene = ort ? angabe.jeOrt?.[ort] : undefined;
+  return eigene ?? { bogen: angabe.bogen, rahmen: angabe.rahmen };
 }
 
 /** Ein Möbel der Karte, bereit zum Zeichnen. */
@@ -57,8 +76,11 @@ export interface Moebel {
 
 let angaben: Promise<Readonly<Record<string, Moebelangabe>>> | null = null;
 
-/** Die Möbel einer Tiled-Karte mit Bildadressen; unbekannte Namen werden übergangen. */
-export async function ladeMoebel(karte: object): Promise<Moebel[]> {
+/**
+ * Die Möbel einer Tiled-Karte mit Bildadressen; unbekannte Namen werden übergangen. `ort` (Kennung
+ * aus orte.json) wählt den Bogen des Orts, damit eine Karte nur ihren eigenen Bogen lädt.
+ */
+export async function ladeMoebel(karte: object, ort?: string): Promise<Moebel[]> {
   angaben ??= liesPaketJson<{ moebel: Record<string, Moebelangabe> }>("daten/moebel.json")
     .then((d) => d.moebel)
     .catch(() => ({}));
@@ -80,7 +102,8 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
         if (!roh) return null;
         const form = formAus(o.properties);
         const angabe = geformtAusObjekt(roh, o.properties);
-        const bild = bildquelle(name, roh);
+        const lage = lageFuer(roh, ort);
+        const bild = bildquelle(name, lage);
         const adresse = await paketdateiAlsAdresse(bild.pfad).catch(() => null);
         if (!adresse) return null;
         const eigen = (n: string) => o.properties?.find((e) => e.name === n)?.value;
@@ -94,7 +117,7 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
           ...(hatForm(form) ? { form } : {}),
           adresse,
           schluessel: bild.schluessel,
-          ...(angabe.rahmen ? { rahmen: angabe.rahmen } : {}),
+          ...(lage.bogen && lage.rahmen ? { rahmen: lage.rahmen } : {}),
           ...(typeof tiefe === "number" ? { tiefe } : {}),
           ...(typeof kollision === "boolean" ? { kollision } : {}),
         };
@@ -110,7 +133,7 @@ export async function ladeMoebel(karte: object): Promise<Moebel[]> {
  */
 export function bildquelle(
   name: string,
-  angabe: Moebelangabe,
+  angabe: Bogenlage | Moebelangabe,
 ): { readonly pfad: string; readonly schluessel: string } {
   if (angabe.bogen && angabe.rahmen) {
     return { pfad: `moebelboegen/${angabe.bogen}.png`, schluessel: `moebelbogen:${angabe.bogen}` };

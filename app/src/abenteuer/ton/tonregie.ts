@@ -5,7 +5,10 @@
  * Rolle im Gesamtbild: Eine Regie für das ganze Abenteuer, weil Musik über Dialog, Karte und
  * Partie hinweg weiterläuft. Ohne Web Audio oder vor der ersten Berührung (iPhone) bleibt sie
  * stumm, merkt sich aber die Lage, damit nach dem Entsperren das Richtige spielt.
- * Abhängigkeiten: ton/tonplan.ts, ton/tonspieler.ts, app/ton.ts (Tonerzeuger),
+ * Geräusche als Text (ton/untertitel.ts): Ist die Einstellung an, meldet die Regie Musik beim
+ * Wechsel, das Dauergeräusch beim Betreten einer Karte oder beim Wechsel im Dialog und jedes
+ * einmalige Geräusch, auch wenn der Ton aus ist (wer nicht hört, schaltet ihn oft gar nicht ein).
+ * Abhängigkeiten: ton/tonplan.ts, ton/tonspieler.ts, ton/untertitel.ts, app/ton.ts (Tonerzeuger),
  * paket/paketlader.ts (Dateien).
  */
 import { tonErzeuger } from "../../app/ton";
@@ -24,6 +27,10 @@ import {
 } from "./tonplan";
 import { KEINE_NAEHE, naehe, type Klangort, type Naehe } from "./klangquelle";
 import { Tonspieler, type Laden } from "./tonspieler";
+import { leereUntertitel, meldeUntertitel, type Untertitelart } from "./untertitel";
+
+/** Was zuletzt als Text gemeldet wurde je Spur; undefined heißt „beim nächsten Mal melden“. */
+type Gemeldet = Partial<Record<"musik" | "geraeusch" | "quelle", string | null>>;
 
 /** Was die Regie vom Spieler braucht (im Test ein Mitschreiber). */
 export interface Spielwerk {
@@ -42,13 +49,27 @@ export class Tonregie {
   /** Klangquellen der aktuellen Karte (T28) und was davon gerade beim Helden klingt. */
   private orte: readonly Klangort[] = [];
   private nah: Naehe = KEINE_NAEHE;
+  private untertitelAn = false;
+  private gemeldet: Gemeldet = {};
 
-  constructor(private readonly werk: () => Spielwerk | null) {}
+  constructor(
+    private readonly werk: () => Spielwerk | null,
+    private readonly melde: (art: Untertitelart, angabe: string) => void = meldeUntertitel,
+  ) {}
+
+  /** Ist Ton zu hören (Ton der App an, nicht stumm, ein Regler über 0)? */
+  get hoerbar(): boolean {
+    return this.laut;
+  }
 
   /** Lautstärken und Stummschalter (Einstellungen); `tonAn` ist der allgemeine Ton der App. */
   stelleEin(e: Abenteuerton, tonAn: boolean): void {
     const p = pegel(e, tonAn);
     this.laut = p.musik > 0 || p.geraeusche > 0;
+    // Frisch eingeschaltet: Was gerade klingt, gleich als Text zeigen.
+    if (e.untertitel && !this.untertitelAn) this.gemeldet = {};
+    if (!e.untertitel) leereUntertitel();
+    this.untertitelAn = e.untertitel;
     this.werk()?.setzePegel(p.musik, p.geraeusche);
     this.spiele();
   }
@@ -62,6 +83,8 @@ export class Tonregie {
     this.lage = betritt(this.lage, musik, geraeusch);
     this.orte = quellen;
     this.nah = KEINE_NAEHE;
+    // Das Dauergeräusch erscheint bei jedem Betreten als Text, die Musik nur beim Wechsel.
+    this.gemeldet = { musik: this.gemeldet.musik };
     this.spiele();
   }
 
@@ -76,6 +99,7 @@ export class Tonregie {
   dialogzeile(tags: Readonly<Record<string, string>>): void {
     for (const befehl of befehleAus(tags)) {
       if (befehl.art === "klang") {
+        if (this.untertitelAn) this.melde("klang", befehl.kennung);
         if (this.laut) void this.werk()?.spieleEinmal(befehl.kennung);
       } else this.lage = wende(this.lage, befehl);
     }
@@ -99,6 +123,8 @@ export class Tonregie {
     this.lage = STILLE_LAGE;
     this.orte = [];
     this.nah = KEINE_NAEHE;
+    this.gemeldet = {};
+    leereUntertitel();
     this.werk()?.stoppeAlles();
   }
 
@@ -107,7 +133,23 @@ export class Tonregie {
     return soll(this.lage);
   }
 
+  /** Meldet als Text, was sich seit der letzten Meldung geändert hat (nur Neues, nicht Stille). */
+  private meldeAenderungen(): void {
+    const s = soll(this.lage);
+    const spuren = [
+      ["musik", "musik", s.musik],
+      ["geraeusch", "klang", s.geraeusch],
+      ["quelle", "musik", this.nah.musik],
+    ] as const;
+    for (const [spur, art, angabe] of spuren) {
+      if (this.gemeldet[spur] === angabe) continue;
+      this.gemeldet[spur] = angabe;
+      if (this.untertitelAn && angabe) this.melde(art, angabe);
+    }
+  }
+
   private spiele(): void {
+    this.meldeAenderungen();
     const werk = this.werk();
     if (!werk) return;
     const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };

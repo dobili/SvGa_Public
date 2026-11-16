@@ -153,64 +153,54 @@
     return `${id}_${n}`;
   }
 
-  /** Ausgewählte Auslöser (Übergänge): Sie lassen sich auch duplizieren und löschen. */
-  const ausloeser = () => KE.ausgewaehlt().filter((t) => t.liste === "ausloeser");
-
-  /** Strg+D bei Auslösern: Kopie eine Kachel rechts daneben (ein Übergang über mehrere Kacheln). */
-  function dupliziereAusloeser(auswahl) {
-    const szene = KE.szene();
-    KE.schritt("Auslöser duplizieren", [KE.zustand.datei], () => {
-      const neu = auswahl.map((t) => ({
-        ...KE.kopie(t.eintrag),
-        feld: [t.eintrag.feld[0] + 1, t.eintrag.feld[1]],
-        _uid: KE.neueUid(),
-      }));
-      szene.ausloeser.push(...neu);
-      KE.zustand.auswahl = new Set(neu.map((a) => a._uid));
+  /** Kopien der ausgewählten Objekte als Gruppe (innerhalb von KE.schritt); Ausgabe: neue uids. */
+  function kopiereObjekte(szene, auswahl) {
+    const ids = {};
+    const neu = auswahl.map((t) => {
+      const kopie = KE.kopie(t.eintrag);
+      kopie._uid = KE.neueUid();
+      if (kopie.id) {
+        ids[kopie.id] = neueId(szene, kopie.id);
+        kopie.id = ids[kopie.id];
+      }
+      return kopie;
     });
+    for (const kopie of neu) {
+      if (kopie.auf !== undefined && ids[kopie.auf]) kopie.auf = ids[kopie.auf];
+      else KE.setzeLage(kopie, KE.kopie(kopie), K, K);
+      szene.objekte.push(kopie);
+    }
+    return neu.map((k) => k._uid);
   }
 
   /**
-   * Dupliziert die Auswahl als Gruppe: Abstände bleiben, die Kopien liegen eine Kachel nach
-   * rechts unten und sind danach ausgewählt. Was auf einem mitkopierten Möbel steht, steht danach
-   * auf der Kopie. Sind nur Auslöser gewählt, entstehen Kopien rechts daneben.
+   * Dupliziert die Auswahl: Objekte als Gruppe (Abstände bleiben, eine Kachel nach rechts unten;
+   * was auf einem mitkopierten Möbel steht, steht danach auf der Kopie), Auslöser, Figuren und
+   * Belebung eine Kachel rechts daneben (markierungen.js). Danach sind die Kopien ausgewählt.
    */
   KE.dupliziere = function () {
     const auswahl = objekte();
-    if (!auswahl.length && ausloeser().length) return dupliziereAusloeser(ausloeser());
-    if (!auswahl.length) return;
+    const marken = KE.markierungenAusgewaehlt();
+    if (!auswahl.length && !marken.length) return;
     const szene = KE.szene();
-    const neu = [];
     KE.schritt("Duplizieren", [KE.zustand.datei], () => {
-      const ids = {};
-      for (const t of auswahl) {
-        const kopie = KE.kopie(t.eintrag);
-        kopie._uid = KE.neueUid();
-        if (kopie.id) {
-          ids[kopie.id] = neueId(szene, kopie.id);
-          kopie.id = ids[kopie.id];
-        }
-        neu.push(kopie);
-      }
-      for (const kopie of neu) {
-        if (kopie.auf !== undefined && ids[kopie.auf]) kopie.auf = ids[kopie.auf];
-        else KE.setzeLage(kopie, KE.kopie(kopie), K, K);
-        szene.objekte.push(kopie);
-      }
-      KE.zustand.auswahl = new Set(neu.map((k) => k._uid));
+      const neu = [...kopiereObjekte(szene, auswahl), ...KE.kopiereMarkierungen(szene, marken)];
+      KE.zustand.auswahl = new Set(neu);
     });
   };
 
   /**
-   * Löscht die ausgewählten Objekte und was auf ihnen steht, dazu ausgewählte Auslöser; Figuren
-   * und Belebung bleiben (sie gehören zur Handlung).
+   * Löscht die ausgewählten Objekte und was auf ihnen steht, dazu ausgewählte Auslöser, Figuren und
+   * Belebung; Figuren und Belebung nur nach Rückfrage (sie gehören zur Handlung, markierungen.js).
    */
   KE.loesche = function () {
     const szene = KE.szene();
-    const weg = new Set([...objekte(), ...ausloeser()].map((t) => t.eintrag._uid));
-    if (!weg.size) return KE.status("Figuren und Belebung lassen sich nur verschieben.");
+    const marken = KE.markierungenAusgewaehlt();
+    const weg = new Set([...objekte(), ...marken].map((t) => t.eintrag._uid));
+    if (!weg.size) return;
+    if (!KE.frageLoeschen(marken)) return KE.status("Nicht gelöscht.");
     KE.schritt("Löschen", [KE.zustand.datei], () => {
-      szene.ausloeser = (szene.ausloeser || []).filter((a) => !weg.has(a._uid));
+      KE.entferneMarkierungen(szene, weg);
       let mehr = true;
       while (mehr) {
         mehr = false;

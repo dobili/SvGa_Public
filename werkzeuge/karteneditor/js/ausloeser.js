@@ -1,7 +1,7 @@
 /*
  * Karteneditor – Übergänge und Auslöser anlegen: „Übergang hier“ setzt eine Kopie eines
  * bestehenden Auslösers der Karte („wie Übergang X“) auf die nächste angeklickte Kachel.
- * Duplizieren (Strg+D) und Löschen (Entf) eines Auslösers stehen in bearbeiten.js.
+ * Duplizieren (Strg+D) und Löschen (Entf) eines Auslösers stehen in markierungen.js.
  *
  * Warum: Der Autor baut Treppenabgänge selbst (Wunsch des Autors, 16.11.2026) und setzt den
  * Übergang dann auf die Lochkachel. Typ und Ziel eines Übergangs stehen in orte.json unter seinem

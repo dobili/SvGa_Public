@@ -27,8 +27,12 @@
     s[name] = wert === undefined ? !s[name] : wert;
     // Was nicht mehr anwählbar oder sichtbar ist, fällt aus der Auswahl.
     if ((name === "umgebungSperren" || name === "nurUmgebung") && s[name] && KE.szene()) {
-      const weg = name === "umgebungSperren" ? (st) => st.umgebung : (st) => !st.umgebung;
-      for (const st of KE.platziere(KE.szene())) if (weg(st)) KE.zustand.auswahl.delete(st.uid);
+      const stuecke = KE.platziere(KE.szene());
+      const weg =
+        name === "umgebungSperren"
+          ? (st) => KE.gesperrteUmgebung(st, stuecke) // Bodenkacheln auf Möbeln bleiben (geometrie.js)
+          : (st) => !st.umgebung;
+      for (const st of stuecke) if (weg(st)) KE.zustand.auswahl.delete(st.uid);
       if (name === "nurUmgebung")
         for (const m of KE.markierungen(KE.szene())) KE.zustand.auswahl.delete(m.uid);
     }
@@ -118,7 +122,25 @@
       knopf("→", "1 Pixel nach rechts", (e) => KE.verschiebe(e.shiftKey ? K : 1, 0)),
     );
     ziel.append(pfeile);
-    if (nurMarken) return;
+    if (nurMarken) {
+      // Auslöser, Figuren, Belebung: Kopie rechts daneben, Löschen mit Rückfrage (markierungen.js).
+      const reihe = el("div", "knopfreihe");
+      reihe.append(
+        knopf(
+          "Duplizieren",
+          "Strg+D: Kopie eine Kachel rechts daneben",
+          () => KE.dupliziere(),
+          "duplizieren",
+        ),
+        knopf(
+          "Löschen",
+          "Entf (Figuren und Belebung mit Rückfrage)",
+          () => KE.loesche(),
+          "loeschen",
+        ),
+      );
+      return ziel.append(reihe);
+    }
     const masse = el("input");
     masse.type = "number";
     masse.min = "50";

@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.kartenbau import HAUPT
+from pipeline.abenteuer.objektrichtung import formschluessel
 
 if TYPE_CHECKING:
     from PIL import Image
@@ -61,24 +62,38 @@ def _bild(quelle: str) -> "Image.Image | None":
 
 
 @cache
-def deckend(quelle: str, ausschnitt: tuple[int, ...] | None = None) -> Flaeche | None:
-    """Deckende Fläche eines Bilds (links, oben, rechts, unten; rechts und unten ausschließlich).
-
-    Beispiel: ``Kitchen_Shadow_Singles_282.png`` (Stuhl 16 × 32) → ``(2, 1, 15, 22)``.
-    """
+def _geformt(quelle: str, ausschnitt: tuple[int, ...] | None, form: tuple) -> "Image.Image | None":
+    """Das Bild so, wie es auf der Karte liegt: Ausschnitt eines Bogens (Bodenkacheln), dann Maßstab,
+    Spiegeln und Drehung (``objektform.formbild``, Karteneditor)."""
     bild = _bild(quelle)
     if bild is None:
         return None
-    if ausschnitt:
-        bild = bild.crop(ausschnitt)
+    from pipeline.abenteuer.objektform import formbild
+
+    return formbild(bild.crop(ausschnitt) if ausschnitt else bild, dict(form))
+
+
+@cache
+def deckend(quelle: str, ausschnitt: tuple[int, ...] | None = None, form: tuple = ()) -> Flaeche | None:
+    """Deckende Fläche eines Bilds (links, oben, rechts, unten; rechts und unten ausschließlich).
+
+    ``form``: Drehung, Spiegeln, Maßstab (``objektrichtung.formschluessel``).
+    Beispiel: ``Kitchen_Shadow_Singles_282.png`` (Stuhl 16 × 32) → ``(2, 1, 15, 22)``.
+    """
+    bild = _geformt(quelle, ausschnitt, form)
+    if bild is None:
+        return None
     return bild.getchannel("A").point(lambda v: 255 if v > DECKEND else 0).getbbox()
 
 
 @cache
-def wasserpixel(quelle: str) -> tuple[tuple[int, int], ...]:
-    """Lage (x, y) der wasserblauen deckenden Pixel im Bild, wenn es eingemaltes Wasser hat (mehr als
-    ein Zehntel blaue Pixel), sonst leer. Beispiel: Steg ``Pier_26``, offenes Schleusentor."""
-    bild = _bild(quelle)
+def wasserpixel(
+    quelle: str, ausschnitt: tuple[int, ...] | None = None, form: tuple = ()
+) -> tuple[tuple[int, int], ...]:
+    """Lage (x, y) der wasserblauen deckenden Pixel im Bild (wie auf der Karte: Ausschnitt und Form),
+    wenn es eingemaltes Wasser hat (mehr als ein Zehntel blaue Pixel), sonst leer. Beispiel: Steg
+    ``Pier_26``, offenes Schleusentor."""
+    bild = _geformt(quelle, ausschnitt, form)
     if bild is None:
         return ()
     breite, roh = bild.width, bild.tobytes()
@@ -98,9 +113,15 @@ def wasser_im_bild(quelle: str) -> bool:
     return bool(wasserpixel(quelle))
 
 
+def ausschnitt_von(angabe: dict) -> tuple[int, ...] | None:
+    """Der Ausschnitt eines Bogens (Bodenkacheln, ``bodenkacheln.json``) als Tupel, sonst None."""
+    return tuple(angabe["ausschnitt"]) if "ausschnitt" in angabe else None
+
+
 def flaeche(stueck: dict, angabe: dict) -> Flaeche:
-    """Deckende Fläche eines gesetzten Möbels in Kartenpixeln; ohne Paket die ganze Bildfläche."""
-    innen = deckend(angabe.get("quelle", ""), tuple(angabe["ausschnitt"]) if "ausschnitt" in angabe else None)
+    """Deckende Fläche eines gesetzten Möbels in Kartenpixeln (mit Ausschnitt und Form des Stücks);
+    ohne Paket die ganze Bildfläche."""
+    innen = deckend(angabe.get("quelle", ""), ausschnitt_von(angabe), formschluessel(stueck))
     x, y = stueck["x"], stueck["y"]
     if not innen:
         return (x, y, x + stueck["breite"], y + stueck["hoehe"])

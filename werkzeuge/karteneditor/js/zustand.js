@@ -13,7 +13,9 @@ window.KE = window.KE || {};
 
 (function (KE) {
   /** Version des Editors; steht in jeder heruntergeladenen Änderungsdatei. */
-  KE.VERSION = "1.1.0"; // 1.1: Kollision je Objekt, Auslöser anlegen und löschen
+  // 1.1: Kollision je Objekt, Auslöser anlegen und löschen. 1.2: Figuren und Belebung als Hindernis,
+  // löschen (mit Rückfrage) und kopieren, Varianten in der Kartenliste, Bodenkacheln trotz Sperre.
+  KE.VERSION = "1.2.0";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";
   const ZULETZT_SCHLUESSEL = "karteneditor-zuletzt-v1";
   const ZULETZT_HOECHSTENS = 16;

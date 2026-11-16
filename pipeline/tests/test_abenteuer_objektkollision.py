@@ -142,3 +142,11 @@ def test_ruecklauf_nennt_kollision_und_auslöser():
     zeile = kollisionszeile({}, mit_grund, SOFA, "(1, 1)")
     assert zeile == "Kollision: sofa (1, 1): kollision true, maske #. (Katalog: sperrt), Grund: Loch"
     assert kollisionszeile(vorher["objekte"][0], vorher["objekte"][0], SOFA, "(1, 1)") is None
+
+
+def test_bericht_zeigt_die_maske_wie_auf_der_karte():
+    """Der Rücklauf nennt die eigene Maske gedreht und gespiegelt, so wie sie auf der Karte liegt."""
+    eintrag = {"moebel": "sofa", "feld": [1, 1], "maske": ["#...", "...."], "drehung": 90, "spiegeln": True}
+    zeile = kollisionszeile({}, eintrag, SOFA, "(1, 1)")
+    # Gespiegelt: „...#“ oben; dann 90 Grad im Uhrzeigersinn: die Ecke oben rechts wandert nach unten rechts.
+    assert "maske ../../../.# (wie auf der Karte, gedreht 90°, gespiegelt)" in zeile

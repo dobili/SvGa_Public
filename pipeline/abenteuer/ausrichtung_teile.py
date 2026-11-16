@@ -13,6 +13,7 @@ from pathlib import Path
 
 from pipeline.abenteuer.kartenbau import K, platziere
 from pipeline.abenteuer.kartenregeln import _felder
+from pipeline.abenteuer.objektrichtung import ausgerichtet, form_von, katalogrichtung
 
 RICHTUNG = {"unten": (0, 1), "oben": (0, -1), "links": (-1, 0), "rechts": (1, 0)}
 GEGENSEITE = {
@@ -226,14 +227,17 @@ class Teil:
 
 
 def teile_der_szene(szene: dict, moebel: dict) -> list[Teil]:
-    """Alle gesetzten Bilder einer Szene als Teile, mit ``an_wand`` und ``auf`` aus der Szene."""
+    """Alle gesetzten Bilder einer Szene als Teile, mit ``an_wand`` und ``auf`` aus der Szene.
+
+    Gedrehte und gespiegelte Bilder (Karteneditor) tragen Blick, Lauf und Ende so, wie sie auf der
+    Karte liegen (``objektrichtung.ausgerichtet``), damit keine falschen Befunde zur Richtung entstehen.
+    """
     eintraege = {e.get("id", f"{e['moebel']}@{i}"): e for i, e in enumerate(szene.get("objekte", []))}
     teile = []
     for s in platziere(szene, moebel)[0]:
         eintrag = eintraege.get(s["id"], {})
-        teile.append(
-            Teil(s["name"], moebel.get(s["name"], {}), s, bool(eintrag.get("an_wand")), "auf" in eintrag)
-        )
+        angabe = ausgerichtet(moebel.get(s["name"], {}), s)
+        teile.append(Teil(s["name"], angabe, s, bool(eintrag.get("an_wand")), "auf" in eintrag))
     return teile
 
 
@@ -293,13 +297,25 @@ class Befund:
 
 
 def variante(teil: Teil, richtung: str) -> str:
-    """Vorschlag mit dem Bild einer anderen Richtung aus ``varianten``, sonst ein Hinweis darauf."""
+    """Vorschlag mit dem Bild einer anderen Richtung aus ``varianten``, sonst ein Hinweis darauf.
+
+    Sonderfälle: Ist das Bild gedreht oder gespiegelt, gelten die Varianten des Katalogs in seiner
+    Richtung (``katalogrichtung``), und der Vorschlag nennt auch das Drehen im Editor. Eine
+    Bodenkachel aus einem Bogen (``ausschnitt``) hat keine Varianten im Bestand.
+    """
+    form = form_von(teil.stueck)
+    if form.get("drehung") or form.get("spiegeln"):
+        return (
+            f"im Karteneditor drehen oder spiegeln, bis es {richtung} zeigt "
+            f"(Katalogbild der Richtung {katalogrichtung(richtung, form)})"
+        )
     varianten = teil.angabe.get("varianten", {})
     if richtung in varianten:
         return f"Bild der Richtung {richtung} nehmen: {varianten[richtung]}"
     from pipeline.abenteuer.katalogausrichtung import varianten_im_bestand
 
-    bestand = varianten_im_bestand(teil.angabe.get("quelle", ""), PRIVAT_PAKET[0])
+    quelle = "" if "ausschnitt" in teil.angabe else teil.angabe.get("quelle", "")
+    bestand = varianten_im_bestand(quelle, PRIVAT_PAKET[0])
     if bestand:
         return (
             f"Bild der Richtung {richtung} wählen, im Bestand: {', '.join(Path(b).name for b in bestand[:4])}"

@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from pipeline.abenteuer.kartenbau import K, platziere
+from pipeline.abenteuer.objektrichtung import ausgerichtet, formschluessel
 
 # Bilddateien von Brettern und Uhren (Dateiname beginnt so).
 BRETT = re.compile(r"^schachbrett")
@@ -24,7 +25,7 @@ TISCHARTEN = {"tisch", "schreibtisch", "tresen", "theke"}
 # da ist); None: ganzes Bild. Eine Liste, damit Prüfung und Tests den Wert setzen können.
 _NEBEN = Path(__file__).resolve().parents[3] / "schach-abenteuer-inhalte"
 BESTAND: list[Path | None] = [_NEBEN if (_NEBEN / "spiel").exists() else None]
-_DECKEND: dict[str, tuple[int, int, int, int] | None] = {}
+_DECKEND: dict[tuple, tuple[int, int, int, int] | None] = {}
 
 Rechteck = tuple[float, float, float, float]
 
@@ -56,8 +57,10 @@ class Stueck:
 
     @property
     def deckend(self) -> Rechteck:
-        """Deckende Fläche (Bildinhalt ohne durchsichtigen Rand), ohne Grafikpaket das ganze Bild."""
-        innen = _deckend_im_bild(self.angabe.get("quelle", ""))
+        """Deckende Fläche (Bildinhalt ohne durchsichtigen Rand), ohne Grafikpaket das ganze Bild.
+        Mit Ausschnitt (Bodenkachel) und Form (gedreht, gespiegelt, skaliert) wie auf der Karte."""
+        ausschnitt = tuple(self.angabe["ausschnitt"]) if "ausschnitt" in self.angabe else None
+        innen = _deckend_im_bild(self.angabe.get("quelle", ""), ausschnitt, formschluessel(self.s))
         if innen is None:
             return self.rahmen
         return self.s["x"] + innen[0], self.s["y"] + innen[1], self.s["x"] + innen[2], self.s["y"] + innen[3]
@@ -76,22 +79,31 @@ class Stueck:
         return f"versatz [{alt[0] + round(dx)}, {alt[1] + round(dy)}]"
 
 
-def _deckend_im_bild(quelle: str) -> tuple[int, int, int, int] | None:
-    """Begrenzungsrechteck der deckenden Pixel eines Bilds im privaten Paket (zwischengespeichert)."""
+def _deckend_im_bild(
+    quelle: str, ausschnitt: tuple[int, ...] | None = None, form: tuple = ()
+) -> tuple[int, int, int, int] | None:
+    """Begrenzungsrechteck der deckenden Pixel eines Bilds im privaten Paket (zwischengespeichert).
+
+    ``ausschnitt``: Teil eines Bogens (Bodenkacheln, ``bodenkacheln.json``); ``form``: Drehung,
+    Spiegeln, Maßstab (``objektrichtung.formschluessel``), gerechnet mit ``objektform.formbild``.
+    """
     if BESTAND[0] is None or not quelle:
         return None
-    if quelle not in _DECKEND:
+    schluessel = (quelle, ausschnitt, form)
+    if schluessel not in _DECKEND:
         pfad = BESTAND[0] / quelle
         if not pfad.exists():
-            _DECKEND[quelle] = None
+            _DECKEND[schluessel] = None
         else:
             from PIL import Image
 
-            with Image.open(pfad) as bild:
-                _DECKEND[quelle] = (
-                    bild.convert("RGBA").getchannel("A").point(lambda a: 255 if a > 128 else 0).getbbox()
-                )
-    return _DECKEND[quelle]
+            from pipeline.abenteuer.objektform import formbild
+
+            with Image.open(pfad) as roh:
+                bild = roh.convert("RGBA")
+            bild = formbild(bild.crop(ausschnitt) if ausschnitt else bild, dict(form))
+            _DECKEND[schluessel] = bild.getchannel("A").point(lambda a: 255 if a > 128 else 0).getbbox()
+    return _DECKEND[schluessel]
 
 
 def mitte(r: Rechteck) -> tuple[float, float]:
@@ -108,10 +120,12 @@ def vereinige(rechtecke: list[Rechteck]) -> Rechteck:
 
 
 def stuecke_der_szene(szene: dict, moebel: dict) -> list[Stueck]:
-    """Alle gesetzten Bilder einer Szene mit ihrem Szeneneintrag."""
+    """Alle gesetzten Bilder einer Szene mit ihrem Szeneneintrag; die Angabe so, wie das Bild auf der
+    Karte liegt (Platte und Blick gedreht und gespiegelt, ``objektrichtung.ausgerichtet``)."""
     eintraege = {e.get("id", f"{e['moebel']}@{i}"): e for i, e in enumerate(szene.get("objekte", []))}
     return [
-        Stueck(moebel.get(s["name"], {}), s, eintraege.get(s["id"], {})) for s in platziere(szene, moebel)[0]
+        Stueck(ausgerichtet(moebel.get(s["name"], {}), s), s, eintraege.get(s["id"], {}))
+        for s in platziere(szene, moebel)[0]
     ]
 
 

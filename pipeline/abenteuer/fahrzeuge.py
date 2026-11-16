@@ -103,6 +103,15 @@ def linienrichtung(quelle: str) -> str | None:
     return SEITE if treffer.group(1) else LAENGS
 
 
+def ansicht_auf_karte(art: str | None, stueck: dict) -> str | None:
+    """Die Ansicht wie auf der Karte: Ein um 90 oder 270 Grad gedrehtes Bild (Karteneditor,
+    ``objektform.py``) tauscht „seite“ und „laengs“; Spiegeln ändert nichts.
+    Beispiel: Bus von der Seite mit ``drehung`` 90 → „laengs“."""
+    if art is None or (int(stueck.get("drehung", 0)) % 180) != 90:
+        return art
+    return LAENGS if art == SEITE else SEITE
+
+
 def _ueberlappt(a: dict, b: dict) -> bool:
     """Ob sich zwei gesetzte Möbel (Pixelrechtecke) in ihrer Fläche schneiden."""
     return (
@@ -137,11 +146,12 @@ def fahrzeughinweise(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel
     linien = [
         (s, richtung)
         for s in gesetzt
-        if (richtung := linienrichtung(moebel.get(s["name"], {}).get("quelle", ""))) is not None
+        if (richtung := ansicht_auf_karte(linienrichtung(moebel.get(s["name"], {}).get("quelle", "")), s))
+        is not None
     ]
     hinweise = []
     for s in gesetzt:
-        art = ansicht(moebel.get(s["name"], {}).get("quelle", ""))
+        art = ansicht_auf_karte(ansicht(moebel.get(s["name"], {}).get("quelle", "")), s)
         if art is None:
             continue
         # Eine halbe Kachel über der Unterkante: Dort stehen die Räder; ein Feinschub von wenigen

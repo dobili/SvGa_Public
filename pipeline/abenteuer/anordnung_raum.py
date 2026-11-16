@@ -11,6 +11,7 @@ import re
 
 from pipeline.abenteuer.anordnung_bild import flaeche
 from pipeline.abenteuer.kartenbau import K, sperrfelder
+from pipeline.abenteuer.objektrichtung import ausgerichtet
 
 WAND = "#"
 # Höchstens so viele freie Reihen liegen zwischen Theke und Rückwand (Gang für das Personal).
@@ -40,7 +41,7 @@ def pruefe_theke_an_wand(szene: dict, gesetzt: list[dict], moebel: dict, zeilen:
     if szene.get("art") != "innen" or not any(HOCKER.search(s["name"]) for s in gesetzt):
         return []
     for s in gesetzt:
-        angabe = moebel.get(s["name"], {})
+        angabe = ausgerichtet(moebel.get(s["name"], {}), s)  # Blick wie auf der Karte (gedreht)
         if not THEKE.search(s["name"]) or angabe.get("blick") != "unten":
             continue
         oben = round(flaeche(s, angabe)[1] / K)

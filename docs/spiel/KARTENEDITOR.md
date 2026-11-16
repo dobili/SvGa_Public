@@ -11,7 +11,7 @@ Edge, ohne Installation und ohne Internet.
 3. Wichtig: `index.html`, `daten.js`, `editor.css` und der Ordner `js` müssen
    zusammen in einem Ordner liegen.
 
-Das Paket ist etwa 13 MB groß. Es enthält alle Karten und Bilder. Nicht weitergeben:
+Das Paket ist etwa 16 MB groß. Es enthält alle Karten und Bilder. Nicht weitergeben:
 Die gekauften Bilder dürfen nicht öffentlich werden.
 
 ## 2. Öffnen
@@ -25,6 +25,8 @@ Doppelklick auf `index.html`. Die Seite öffnet sich in Chrome oder Edge.
 
 Ein gelber Punkt ● in der Kartenliste heißt: Diese Karte hast du geändert.
 „+1“ oder „+2“ heißt: Es gibt Fassungen derselben Karte (etwa das Diner mit und ohne Tischset).
+Ganz unten steht die Gruppe „Varianten“: die Varianten B und C der Karten (zur Wahl gebaut). Auch
+sie lassen sich bearbeiten; der Rücklauf schreibt sie an ihren Platz zurück.
 
 ## 3. Bedienung
 
@@ -53,7 +55,10 @@ Ein gelber Punkt ● in der Kartenliste heißt: Diese Karte hast du geändert.
 - Duplizieren: Strg+D. Mehrere Bilder werden als Gruppe kopiert, mit gleichen Abständen,
   eine Kachel versetzt. Danach sind die Kopien ausgewählt.
 - Löschen: Entf. Was auf einem Tisch steht, verschwindet mit dem Tisch.
-  Entf löscht auch Auslöser (blau), nicht aber Figuren und Belebung.
+  Entf löscht auch Auslöser (blau). Figuren (rosa) und Belebung (grün) erst nach einer Rückfrage,
+  weil sie zur Geschichte gehören; die Rückfrage nennt das Gespräch der Figur. Strg+Z holt sie zurück.
+- Strg+D bei Auslösern, Figuren und Belebung: Kopie eine Kachel rechts daneben (bei Statisten
+  wandert der Laufweg mit).
 
 **Neue Bilder**
 
@@ -67,8 +72,12 @@ Ein gelber Punkt ● in der Kartenliste heißt: Diese Karte hast du geändert.
 - Raster: Kacheln mit Koordinaten, wie in deinen Notizen „(x, y)“. Unten links steht immer
   die Kachel unter der Maus.
 - Kollision (Taste K): transparent gelb mit gelbem Rand, wo man nicht laufen kann, auch unter ausgeblendeten Bildern.
+  Figuren und Statisten, die an einem Fleck stehen, sperren ihre Kachel wie im Spiel. Steht jemand
+  nur manchmal da (eine Figur erst ab einem Punkt der Geschichte, ein Statist nur tagsüber), hat
+  seine Kachel einen gestrichelten Rand. Wer herumläuft, sperrt nicht.
 - Nur Umgebung: blendet Möbel, Deko und Figuren aus.
-- Umgebung sperren: Boden, Wände und Gebäude lassen sich nicht mehr anklicken.
+- Umgebung sperren: Boden, Wände und Gebäude lassen sich nicht mehr anklicken. Ausnahme:
+  Bodenkacheln, die auf einem Möbel liegen (Dielen über der Treppe nach unten), bleiben anwählbar.
 - Vorher: zeigt das Original zum Vergleich.
 - Pinsel: malt den Boden um (Boden, Wand, Wasser oder die Sonderböden der Karte).
   Der genaue Rand wird erst beim Einarbeiten gezeichnet.
@@ -124,7 +133,7 @@ Taste ? zeigt alle Kürzel.
 | --------------------- | ----------------------------- |
 | Strg+Z / Strg+Y       | rückgängig / wiederholen      |
 | Strg+D                | duplizieren                   |
-| Entf                  | löschen (Bilder, Auslöser)    |
+| Entf                  | löschen (Figuren mit Rückfrage) |
 | R / Umschalt+R        | drehen rechts / links         |
 | H                     | spiegeln                      |
 | Bild auf / Bild ab    | nach vorn / nach hinten       |
@@ -173,5 +182,26 @@ Taste ? zeigt alle Kürzel.
   flach und zählt als Bodenöffnung (pipeline/abenteuer/bodenteile.py).
 - Änderungsdatei ab Editor 1.1: `markierungen` (Zuordnung je Auslöser, Figur, Belebung), damit der
   Rücklauf neue und gelöschte Auslöser meldet.
+- Editor 1.2 (16.11.2026):
+  - Figuren als Hindernis wie in der App (oberwelt/begehbar.ts): Figuren und stehende Belebung
+    (von gleich bis, Tiere ohne fliegen, schwimmen, folgen) sperren; bedingt (Figur mit `wenn` in
+    orte.json, Statist mit `wann` außer `immer`) gestrichelt. Das Paket trägt dafür je Karte
+    `figurangaben` (Name → `wenn`, `dialog`).
+  - Figuren und Belebung löschen (Rückfrage, js/markierungen.js) und kopieren. Der Rücklauf warnt
+    (pipeline/abenteuer/editorfiguren.py), wenn eine gelöschte Figur einen `dialog` (Ink-Knoten) hat
+    oder eine Quest ihren Knoten oder sie als `ziel.objekt` braucht, und nennt die Karten, auf denen
+    sie noch steht; ebenso doppelte Figuren nach einer Kopie und gelöschte Statisten mit `sagt`.
+  - Varianten: `szenen/varianten/*.json` im Paket als `varianten/<name>.json`, Gruppe „Varianten“,
+    ohne Hintergrund (der Editor zeichnet Boden und Wandflächen selbst); der Rücklauf schreibt dorthin
+    zurück und baut sie wie jede Szene.
+  - „Umgebung sperren“: Statt eines eigenen Schalters bleiben Bodenkacheln (Art `boden_teil`)
+    anwählbar, wenn sie ein Nicht-Umgebungs-Bild berühren. Einfacher als ein weiterer Knopf, und die
+    438 Kaimauerstücke in Silicon Bay (auch `boden_teil`) bleiben gesperrt, solange sie kein Möbel berühren.
+  - Prüfungen mit Formfeldern (pipeline/abenteuer/objektrichtung.py): Ausrichtung (10.78),
+    Tischlage (10.79), Anordnung (10.80 ff.), Fahrzeuge (10.65) und Übergangsbilder (10.77) lesen
+    Blick, Lauf, Ende und Platte so, wie das Bild auf der Karte liegt (gespiegelt: links und rechts
+    tauschen; gedreht: die Richtung dreht mit); Pixelprüfungen mit `objektform.formbild` und dem
+    Katalogfeld `ausschnitt`. Der Bericht zeigt eine eigene Maske so, wie sie auf der Karte liegt.
 - Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
-  Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner).
+  Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner),
+  Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`.

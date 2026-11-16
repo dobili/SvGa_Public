@@ -4,8 +4,9 @@ Warum: Der Autor rückt Karten im Editor zurecht (``werkzeuge/karteneditor/``, W
 15.11.2026) und lädt die Änderungsdatei im privaten Repository in ``editor/rueck/`` hoch. Dieses
 Skript schreibt die Szenen nach ``inhalte/abenteuer/szenen/``, berichtet je Karte, was verschoben,
 gedreht, hinzugefügt, gelöscht oder in der Ebene geändert wurde (mit Koordinaten), welche Kollision an
-einer Stelle übersteuert wurde (mit Katalogwert und Grund) und welche Auslöser neu oder gelöscht sind,
-legt Bericht und
+einer Stelle übersteuert wurde (mit Katalogwert und Grund) und welche Auslöser, Figuren und Statisten neu
+oder gelöscht sind (mit Warnung, wenn ein Ink-Knoten oder eine Quest eine Figur braucht,
+``editorfiguren.py``), schreibt Varianten (``varianten/…``) an ihren Ort zurück, legt Bericht und
 Vorschauen nach ``buch/arbeit/editor/`` (nur lokal) und baut die betroffenen Karten neu.
 
 Aufruf: ``python -m pipeline.abenteuer.editorrueck DATEI.json [--privat PRIVAT]``
@@ -21,6 +22,7 @@ import sys
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from pipeline.abenteuer.editorfiguren import figurwarnungen
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektkollision import FELDER as KOLLISION
@@ -37,6 +39,7 @@ LAGE = ("feld", "versatz", "auf")
 FORM = ("drehung", "spiegeln", "massstab", "ebene")
 MARKIERUNGEN = ("ausloeser", "figuren", "belebung")
 FELDER_HOECHSTENS = 20
+VARIANTEN = "varianten"  # Unterordner der Varianten B und C (szenen/varianten/README.md)
 
 
 def _wert(wert: object, einzug: int, vorne: int) -> str:
@@ -78,7 +81,10 @@ def lies(pfad: Path) -> dict:
         raise ValueError(f"{pfad.name}: Fassung {daten.get('fassung')} unbekannt (erwartet {FASSUNG})")
     for eintrag in daten["szenen"]:
         name = eintrag["datei"]
-        if Path(name).name != name or not name.endswith(".json"):
+        # Erlaubt: „karte.json“ oder „varianten/karte-b.json“ (Varianten, Editor ab 1.2).
+        teile = Path(name).parts
+        ordner_gut = len(teile) == 1 or (len(teile) == 2 and teile[0] == VARIANTEN)
+        if not ordner_gut or ".." in teile or not name.endswith(".json"):
             raise ValueError(f"Ungültiger Dateiname {name!r}")
     return daten
 
@@ -252,14 +258,16 @@ def main(argumente: list[str] | None = None) -> int:
         f"Editor {daten.get('editor_version')}, {daten.get('zeitstempel')}",
     ]
     bauen = not a.ohne_bau and a.szenen.resolve() == (INHALTE / "szenen").resolve()
-    moebel, kollisionen = lade_moebel(), []
+    moebel, kollisionen, warnungen = lade_moebel(), [], []
     for eintrag in daten["szenen"]:
         text += ["", f"## {eintrag['datei']} ({eintrag.get('karte', '')})", ""]
         if eintrag["datei"] in konflikte:
             text.append("- KONFLIKT: Szene seit dem Paket geändert, nicht geschrieben (--erzwingen)")
         if eintrag.get("notiz"):
             text.append(f"- Notiz des Autors: {eintrag['notiz']}")
-        zeilen = berichte(eintrag, moebel)
+        # Figuren und Statisten, die Ink-Knoten oder Quests brauchen (Editor 1.2: löschen, kopieren).
+        zeilen = berichte(eintrag, moebel) + figurwarnungen(eintrag, a.szenen)
+        warnungen += [f"{eintrag['datei']}: {z}" for z in zeilen if z.startswith("WARNUNG")]
         kollisionen += [
             f"{eintrag['datei']}: {z.removeprefix('Kollision: ')}"
             for z in zeilen
@@ -283,6 +291,8 @@ def main(argumente: list[str] | None = None) -> int:
         text += ["", "## Kollision an einzelnen Stellen (Katalog prüfen)", ""] + [
             f"- {z}" for z in kollisionen
         ]
+    if warnungen:
+        text += ["", "## Warnungen (Figuren, die die Handlung braucht)", ""] + [f"- {w}" for w in warnungen]
     (ordner / "bericht.md").write_text("\n".join(text) + "\n", encoding="utf-8")
     print("\n".join(text))
     print(f"\nBericht: {ordner / 'bericht.md'}")

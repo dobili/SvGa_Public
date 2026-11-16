@@ -1,5 +1,6 @@
 /*
- * Karteneditor – Listen: Kartenliste links (nach Ort gruppiert, mit Suche) und Bibliothek rechts
+ * Karteneditor – Listen: Kartenliste links (nach Ort gruppiert, Varianten B und C in einer eigenen
+ * Gruppe, mit Suche) und Bibliothek rechts
  * (Kategorie und Unterkategorie, Vorschaubild, Name, Kurzbeschreibung, Suche, zuletzt benutzt).
  * Hinzufügen per Ziehen in die Karte oder per Klick (in die Mitte der Ansicht).
  */
@@ -36,8 +37,10 @@
     for (const e of z.daten.szenen) {
       const text = `${e.ortsname} ${e.kartenname} ${e.datei}`.toLowerCase();
       if (suche && !text.includes(suche)) continue;
-      if (!gruppen.has(e.ortsname)) gruppen.set(e.ortsname, []);
-      gruppen.get(e.ortsname).push(e);
+      // Varianten B und C (szenen/varianten/) bilden eine eigene Gruppe „Varianten“ am Ende.
+      const gruppe = e.gruppe || e.ortsname;
+      if (!gruppen.has(gruppe)) gruppen.set(gruppe, []);
+      gruppen.get(gruppe).push(e);
     }
     for (const [ort, eintraege] of gruppen) {
       const gruppe = el("details", "kartengruppe");
@@ -47,7 +50,7 @@
         const knopf = el("button", "kartenknopf");
         knopf.dataset.datei = e.datei;
         knopf.title = e.datei;
-        const stamm = e.datei.replace(/\.json$/, "");
+        const stamm = e.datei.replace(/\.json$/, "").replace(/^varianten\//, "");
         knopf.append(el("span", "kartenname", e.kartenname), el("span", "dateiname", stamm));
         if (KE.istGeaendert(e.datei)) knopf.append(el("span", "geaendert", "●"));
         if (e.geschwister.length) knopf.append(el("span", "fassungen", `+${e.geschwister.length}`));

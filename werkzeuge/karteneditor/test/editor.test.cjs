@@ -5,7 +5,8 @@
  * ein kleines Paket (zwei Karten des Diners mit Zustandsfassung) mit dem privaten Repository,
  * bedient den Editor wie der Autor (Ziehen, Alt-Ziehen, Drehen, Strg+Klick-Mehrfachauswahl,
  * Duplizieren als Gruppe, Löschen, Ebene, Bibliothek, Auswahlliste, Rückgängig, Übertragen auf die
- * Fassung, Neuladen) und schickt die heruntergeladene Datei durch den Rücklauf.
+ * Fassung, Neuladen; Figuren und Varianten in figuren.cjs) und schickt die heruntergeladene Datei
+ * durch den Rücklauf.
  *
  * Aufruf (Hauptordner): node werkzeuge/karteneditor/test/editor.test.cjs
  * Umgebung: PRIVAT (Vorgabe ../schach-abenteuer-inhalte), CHROMIUM_PFAD (sonst aus /opt/pw-browsers),
@@ -33,6 +34,7 @@ const {
   foto,
 } = h;
 const kollision = require("./kollision.cjs");
+const figuren = require("./figuren.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -303,6 +305,10 @@ async function ruecklauf(seite, arbeit) {
   pruefe(/Kollision: .*OHNE GRUND/.test(ausgabe), "Bericht nennt Kollision ohne Grund");
   pruefe(/Kollision: mf4TreppeAb .*maske/.test(ausgabe), "Bericht nennt die Treppenmaske");
   pruefe(/hinzugefügt \(ausloeser\): treppe/.test(ausgabe), "Bericht nennt neue Auslöser");
+  pruefe(
+    /WARNUNG: Figur hector gelöscht: Ink-Knoten maple-falls-diner\.hector/.test(ausgabe),
+    "Bericht warnt vor der gelöschten Figur mit Gespräch",
+  );
   pruefe(/Kollision an einzelnen Stellen/.test(ausgabe), "Abschnitt für den Katalog");
   // Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau.
   const pruefung = execFileSync(
@@ -348,6 +354,10 @@ async function ruecklauf(seite, arbeit) {
   await kollision.schalterUndGrund(seite, pruefe);
   await kollision.kachelnBearbeiten(seite, pruefe);
   await kollision.treppenabgang(seite, pruefe);
+  await figuren.bodenkachelnTrotzSperre(seite, pruefe);
+  await figuren.hindernisse(seite, pruefe);
+  await figuren.loeschenUndKopieren(seite, pruefe);
+  await figuren.varianten(seite, pruefe);
   await seite.reload();
   await seite.waitForFunction(() => KE.zustand.datei);
   pruefe(

@@ -99,13 +99,31 @@ def kollisionsbefunde(szene: dict, moebel: dict) -> list[str]:
     return befunde
 
 
-def _beschreibe(eintrag: dict) -> str:
+def _maskentext(eintrag: dict, angabe: dict | None) -> str:
+    """Die eigene Maske so, wie sie auf der Karte liegt (gedreht und gespiegelt wie das Bild).
+
+    Warum: Der Autor zeichnet die Maske im Editor auf dem gedrehten Bild; gespeichert wird sie im
+    Raster des ungedrehten Bildes (``objektform.geformt``). Der Bericht zeigt sie wie auf der Karte.
+    Beispiel: maske [„#.“, „..“] mit ``drehung`` 90 → „.#/.. (wie auf der Karte, gedreht 90°)“.
+    """
+    from pipeline.abenteuer.objektform import geformt, hat_form
+
+    if angabe is None or not hat_form(eintrag) or "breite" not in angabe:
+        return maskeneigenschaft(eintrag["maske"])
+    karte = (geformt(angabe, eintrag) or {}).get("maske", eintrag["maske"])
+    wie = [f"gedreht {eintrag['drehung'] % 360}°"] if eintrag.get("drehung", 0) % 360 else []
+    wie += ["gespiegelt"] if eintrag.get("spiegeln") else []
+    wie += [f"Maßstab {round(float(eintrag['massstab']) * 100)} %"] if "massstab" in eintrag else []
+    return f"{maskeneigenschaft(karte)} (wie auf der Karte, {', '.join(wie)})"
+
+
+def _beschreibe(eintrag: dict, angabe: dict | None = None) -> str:
     """Kollisionsfelder eines Eintrags als Text. Beispiel: „kollision false, maske ../#.“."""
     teile = []
     if "kollision" in eintrag:
         teile.append(f"kollision {'true' if eintrag['kollision'] else 'false'}")
     if "maske" in eintrag:
-        teile.append(f"maske {maskeneigenschaft(eintrag['maske'])}")
+        teile.append(f"maske {_maskentext(eintrag, angabe)}")
     return ", ".join(teile) or "wie im Katalog"
 
 
@@ -122,7 +140,7 @@ def kollisionszeile(vorher: dict, nachher: dict, angabe: dict | None, wo: str) -
     if angabe is not None:
         katalog = "sperrt" if angabe.get("kollision") else "durchgehbar"
         katalog += ", eigene Maske" if "maske" in angabe else ""
-    zeile = f"Kollision: {nachher.get('moebel')} {wo}: {_beschreibe(nachher)} (Katalog: {katalog})"
+    zeile = f"Kollision: {nachher.get('moebel')} {wo}: {_beschreibe(nachher, angabe)} (Katalog: {katalog})"
     grund = str(nachher.get("begehbar_grund", "")).strip()
     if grund:
         return f"{zeile}, Grund: {grund}"

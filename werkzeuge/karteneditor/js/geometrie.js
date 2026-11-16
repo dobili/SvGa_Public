@@ -2,8 +2,8 @@
  * Karteneditor – Geometrie: Lage, Größe, Tiefe und Kollision der Objekte einer Szene, genau wie
  * der Kartenbau (pipeline/abenteuer/kartenbau.py, platziere) und die Form der Objekte
  * (pipeline/abenteuer/objektform.py: drehung, spiegeln, massstab, ebene), die Übersteuerung der
- * Kollision je Objekt (objektkollision.py: kollision, maske) und Bodenteile über Abgängen
- * (bodenteile.py).
+ * Kollision je Objekt (objektkollision.py: kollision, maske), Bodenteile über Abgängen
+ * (bodenteile.py) und Figuren als Hindernis wie in der App (oberwelt/begehbar.ts).
  *
  * Warum: Der Editor soll die Karte so zeigen wie das Spiel; Zeichenreihenfolge (tiefe) und
  * Kollision müssen deshalb dieselben Regeln haben. Ändert sich eine Regel dort, muss sie hier
@@ -168,7 +168,44 @@
     return felder;
   };
 
-  /** Alle gesperrten Kacheln der Szene: Raster (Wand, Wasser, Leere) und Möbel mit Kollision. */
+  /** Verhalten von Tieren, die den Helden nicht aufhalten (belebungsbewegung.ts, haeltAuf). */
+  const FREI_LAUFEND = new Set(["fliegen", "schwimmen", "folgen"]);
+
+  /**
+   * Ob eine Belebung den Helden an ihrem Feld aufhält: Statist oder Tier am Boden, das an einem Fleck
+   * steht (von gleich bis, begehbar.ts stehtFest). Wandernde geben den Weg wieder frei.
+   */
+  function stehtFest(b) {
+    const e = b.eigenschaften || {};
+    if (b.typ === "tier" && FREI_LAUFEND.has(e.verhalten)) return false;
+    return (e.von ?? null) === (e.bis ?? null);
+  }
+
+  /**
+   * Kacheln, die Figuren und stehende Belebung sperren (wie die App: oberwelt/begehbar.ts,
+   * figurenaufstellung.ts, belebungsschicht.ts). „bedingt“: Die Figur steht nur, wenn ihre Bedingung
+   * aus orte.json gilt (wenn, regeln/figurbedingung.ts), der Statist nur zu seiner Tageszeit (wann).
+   * Ausgabe: { fest: Set("x,y"), bedingt: Map("x,y" → Name) }.
+   */
+  KE.figurensperren = function (szene, datei = KE.zustand.datei) {
+    const angaben = KE.zustand.nachDatei[datei]?.figurangaben || {};
+    const fest = new Set();
+    const bedingt = new Map();
+    const merke = (e, nurBedingt) =>
+      nurBedingt ? bedingt.set(e.feld.join(","), e.name) : fest.add(e.feld.join(","));
+    for (const f of szene.figuren || []) merke(f, !!angaben[f.name]?.wenn);
+    for (const b of szene.belebung || []) {
+      const wann = (b.eigenschaften || {}).wann;
+      if (stehtFest(b)) merke(b, !!wann && wann !== "immer");
+    }
+    for (const k of fest) bedingt.delete(k);
+    return { fest, bedingt };
+  };
+
+  /**
+   * Alle gesperrten Kacheln der Szene: Raster (Wand, Wasser, Leere), Möbel mit Kollision und
+   * Figuren und stehende Belebung, die immer da sind (bedingte zeigt zeichnen.js gestrichelt).
+   */
   KE.sperrkacheln = function (szene, stuecke) {
     const gesperrt = new Set();
     const bruecken = new Set(szene.bruecken || []);
@@ -183,6 +220,7 @@
       const y0 = Math.floor(s.y / K);
       for (const [a, b] of KE.maskenfelder(s.angabe)) gesperrt.add(x0 + a + "," + (y0 + b));
     }
+    for (const k of KE.figurensperren(szene).fest) gesperrt.add(k);
     return gesperrt;
   };
 
@@ -230,6 +268,17 @@
   };
 
   /**
+   * Ob ein Stück wegen „Umgebung sperren“ nicht anwählbar ist. Ausnahme: Bodenkacheln (Art
+   * boden_teil), die auf einem Nicht-Umgebungs-Bild liegen (Dielen über einer Treppe nach unten,
+   * Treppenabgang selbst bauen): Sonst käme der Autor bei gesperrter Umgebung nicht an sie heran.
+   */
+  KE.gesperrteUmgebung = function (s, stuecke) {
+    if (!KE.zustand.schalter.umgebungSperren || !s.umgebung) return false;
+    if ((KE.zustand.daten.moebel[s.kennung] || {}).art !== "boden_teil") return true;
+    return !stuecke.some((o) => !o.umgebung && beruehrt(o, s));
+  };
+
+  /**
    * Alles unter einem Punkt, oberstes zuerst: Markierungen, dann Objekte (sichtbare, anwählbare).
    */
   KE.trefferAn = function (px, py) {
@@ -242,7 +291,7 @@
     const stuecke = KE.platziere(szene).reverse();
     for (const s of stuecke) {
       if (sch.nurUmgebung && !s.umgebung) continue;
-      if (sch.umgebungSperren && s.umgebung) continue;
+      if (KE.gesperrteUmgebung(s, stuecke)) continue;
       if (KE.trifft(s, px, py)) treffer.push(s);
     }
     return treffer;
@@ -252,9 +301,10 @@
   KE.imRechteck = function (x0, y0, x1, y1) {
     const sch = KE.zustand.schalter;
     const szene = KE.szene();
+    const stuecke = KE.platziere(szene);
     const alle = [
-      ...KE.platziere(szene).filter(
-        (s) => !(sch.nurUmgebung && !s.umgebung) && !(sch.umgebungSperren && s.umgebung),
+      ...stuecke.filter(
+        (s) => !(sch.nurUmgebung && !s.umgebung) && !KE.gesperrteUmgebung(s, stuecke),
       ),
       ...(sch.markierungen && !sch.nurUmgebung ? KE.markierungen(szene) : []),
     ];

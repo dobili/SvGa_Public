@@ -42,10 +42,18 @@ import sys
 from functools import cache
 from pathlib import Path
 
-from pipeline.abenteuer.anordnung_bild import bilder_da, flaeche, mitte, ueberlappen, wasserpixel
+from pipeline.abenteuer.anordnung_bild import (
+    ausschnitt_von,
+    bilder_da,
+    flaeche,
+    mitte,
+    ueberlappen,
+    wasserpixel,
+)
 from pipeline.abenteuer.anordnung_raum import pruefe_fussmatten, pruefe_strassen, pruefe_theke_an_wand
 from pipeline.abenteuer.kartenbau import INHALTE, K, lade, platziere, raster
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektrichtung import ausgerichtet, formschluessel
 from pipeline.abenteuer.uebergangsbilder import ebene, lade_grundrisse
 
 # Tischbilder, auf deren Platte schon etwas gezeichnet ist: Bilddatei → (Fläche im Bild, was).
@@ -83,7 +91,7 @@ def _sitze_am_tisch(tisch: dict, gesetzt: list[dict], moebel: dict) -> dict[str,
     ft = flaeche(tisch, moebel[tisch["name"]])
     sitze: dict[str, dict] = {}
     for s in gesetzt:
-        angabe = moebel.get(s["name"], {})
+        angabe = ausgerichtet(moebel.get(s["name"], {}), s)  # Blick wie auf der Karte (gespiegelt)
         if angabe.get("art") != "stuhl" or angabe.get("blick") not in ("links", "rechts"):
             continue
         fs = flaeche(s, angabe)
@@ -172,20 +180,17 @@ def pruefe_stege(gesetzt: list[dict], moebel: dict, zeilen: list[str], bruecken:
         # Eine Brücke darf auch über eine Schlucht führen; nur ein Steg braucht Wasser.
         if not nass and angabe["art"] == "steg":
             befunde.append(f"10.82 {s['name']} {_feld(s)}: Steg ohne Wasser darunter")
-        elif _wasser_auf_land(s, angabe, zeilen, set(nass) if "ausschnitt" not in angabe else None):
+        elif _wasser_auf_land(s, angabe, zeilen, set(nass)):
             befunde.append(f"10.82 {s['name']} {_feld(s)}: Bild mit Wasser steht teils auf Land")
     return befunde
 
 
-def _wasser_auf_land(s: dict, angabe: dict, zeilen: list[str], nass: set | None) -> bool:
-    """Liegt mehr als ein Zehntel des eingemalten Wassers auf Land? Ohne Pixellage (Ausschnitt eines
-    Bogens) gilt die alte, strengere Regel: Das ganze Bild liegt über Wasser."""
-    pixel = wasserpixel(angabe.get("quelle", ""))
+def _wasser_auf_land(s: dict, angabe: dict, zeilen: list[str], nass: set) -> bool:
+    """Liegt mehr als ein Zehntel des eingemalten Wassers auf Land? Die Pixel liegen wie auf der Karte:
+    mit dem Ausschnitt eines Bogens (Bodenkacheln) und der Form des Stücks (gedreht, gespiegelt)."""
+    pixel = wasserpixel(angabe.get("quelle", ""), ausschnitt_von(angabe), formschluessel(s))
     if not pixel:
         return False
-    if nass is None:
-        felder = _felder(flaeche(s, angabe), zeilen)
-        return any(zeilen[y][x] != "~" for x, y in felder)
     trocken = sum(1 for px, py in pixel if ((s["x"] + px) // K, (s["y"] + py) // K) not in nass)
     return trocken / len(pixel) > WASSER_DANEBEN
 

@@ -44,16 +44,32 @@
       const [x, y] = k.split(",").map(Number);
       ctx.fillRect(x * K, y * K, K, K);
       const kante = (dx, dy) => !gesperrt.has(x + dx + "," + (y + dy));
-      if (kante(0, -1))
-        (ctx.moveTo(x * K, y * K), ctx.lineTo((x + 1) * K, y * K));
-      if (kante(0, 1))
-        (ctx.moveTo(x * K, (y + 1) * K), ctx.lineTo((x + 1) * K, (y + 1) * K));
-      if (kante(-1, 0))
-        (ctx.moveTo(x * K, y * K), ctx.lineTo(x * K, (y + 1) * K));
-      if (kante(1, 0))
-        (ctx.moveTo((x + 1) * K, y * K), ctx.lineTo((x + 1) * K, (y + 1) * K));
+      if (kante(0, -1)) (ctx.moveTo(x * K, y * K), ctx.lineTo((x + 1) * K, y * K));
+      if (kante(0, 1)) (ctx.moveTo(x * K, (y + 1) * K), ctx.lineTo((x + 1) * K, (y + 1) * K));
+      if (kante(-1, 0)) (ctx.moveTo(x * K, y * K), ctx.lineTo(x * K, (y + 1) * K));
+      if (kante(1, 0)) (ctx.moveTo((x + 1) * K, y * K), ctx.lineTo((x + 1) * K, (y + 1) * K));
     }
     ctx.stroke();
+  }
+
+  /**
+   * Kacheln, die eine Figur oder ein Statist nur unter einer Bedingung sperrt (orte.json „wenn“,
+   * Tageszeit „wann“): transparent gelb mit eigener gestrichelter Umrandung je Kachel, damit der
+   * Autor sieht, dass der Weg nur manchmal zu ist. Schon fest gesperrte Kacheln bleiben, wie sie sind.
+   */
+  function zeichneBedingte(ctx, bedingt, gesperrt, zoom) {
+    ctx.fillStyle = FARBE_KOLLISION;
+    ctx.strokeStyle = RAND_KOLLISION;
+    ctx.lineWidth = 1.5 / zoom;
+    ctx.setLineDash([4 / zoom, 3 / zoom]);
+    const rand = 1 / zoom; // eine Spur nach innen, damit sich die Striche benachbarter Kacheln nicht decken
+    for (const k of bedingt.keys()) {
+      if (gesperrt.has(k)) continue;
+      const [x, y] = k.split(",").map(Number);
+      ctx.fillRect(x * K, y * K, K, K);
+      ctx.strokeRect(x * K + rand, y * K + rand, K - 2 * rand, K - 2 * rand);
+    }
+    ctx.setLineDash([]);
   }
 
   /** Legt die Bilder des Pakets an (sie dekodieren im Hintergrund, gezeichnet wird, was fertig ist). */
@@ -66,12 +82,10 @@
       };
       bilder[i] = b;
     });
-    for (const [n, url] of Object.entries(daten.kacheln.boeden))
-      kacheln.boeden[n] = bild(url);
+    for (const [n, url] of Object.entries(daten.kacheln.boeden)) kacheln.boeden[n] = bild(url);
     for (const [n, teile] of Object.entries(daten.kacheln.waende)) {
       kacheln.waende[n] = {};
-      for (const [t, url] of Object.entries(teile))
-        kacheln.waende[n][t] = bild(url);
+      for (const [t, url] of Object.entries(teile)) kacheln.waende[n][t] = bild(url);
     }
   };
 
@@ -107,6 +121,21 @@
     return [Math.max(0, ...zeilen.map((z) => z.length)) * K, zeilen.length * K];
   };
 
+  /**
+   * Wandfläche einer Nordwand (szenen/README.md: oberste Reihe Krone, zwei Reihen Fläche): das
+   * Wandfeld direkt über dem Boden zeigt „unten“, das darüber „oben“; sonst null (Krone).
+   * Für Karten ohne Hintergrundbild (Varianten) und mit dem Pinsel gemalte Wände.
+   */
+  function wandflaeche(szene, x, y, wand) {
+    const boden = (dy) => {
+      const z = (szene.raster[y + dy] || "")[x];
+      return z !== undefined && z !== "#" && z !== " ";
+    };
+    if (boden(1)) return wand.unten || null;
+    if (!boden(1) && (szene.raster[y + 1] || "")[x] === "#" && boden(2)) return wand.oben || null;
+    return null;
+  }
+
   /** Zeichnet ein Feld mit der Grundkachel seines Bodens oder seiner Wand. */
   function feld(ctx, szene, zeichen, x, y) {
     const boeden = szene.boeden || {};
@@ -115,7 +144,7 @@
       kachel = szene.wandart ? kacheln.boeden[szene.wandart] : null;
       if (!kachel) {
         const wand = kacheln.waende[szene.wand || "creme"] || {};
-        kachel = wand.krone || null;
+        kachel = wandflaeche(szene, x, y, wand) || wand.krone || null;
         if (!kachel) {
           ctx.fillStyle = "#f6f6f8";
           ctx.fillRect(x * K, y * K, K, K);
@@ -125,8 +154,7 @@
         }
       }
     } else if (zeichen === "~") kachel = kacheln.boeden.wasser;
-    else if (zeichen !== " ")
-      kachel = kacheln.boeden[boeden[zeichen] || szene.boden || "holzHell"];
+    else if (zeichen !== " ") kachel = kacheln.boeden[boeden[zeichen] || szene.boden || "holzHell"];
     if (kachel && kachel.complete) ctx.drawImage(kachel, x * K, y * K);
     else {
       ctx.fillStyle = DUNKEL;
@@ -190,10 +218,8 @@
     ctx.strokeStyle = "rgba(255,255,255,0.28)";
     ctx.lineWidth = 1 / zoom;
     ctx.beginPath();
-    for (let x = 0; x <= breite; x += K)
-      (ctx.moveTo(x, 0), ctx.lineTo(x, hoehe));
-    for (let y = 0; y <= hoehe; y += K)
-      (ctx.moveTo(0, y), ctx.lineTo(breite, y));
+    for (let x = 0; x <= breite; x += K) (ctx.moveTo(x, 0), ctx.lineTo(x, hoehe));
+    for (let y = 0; y <= hoehe; y += K) (ctx.moveTo(0, y), ctx.lineTo(breite, y));
     ctx.stroke();
     if (zoom < 2.5) return;
     ctx.fillStyle = "rgba(255,255,255,0.8)";
@@ -255,17 +281,16 @@
     const [breite, hoehe] = KE.kartengroesse(szene);
     zeichneGrund(ctx, szene, original, z.datei);
     const stuecke = KE.platziere(szene);
-    const sichtbar = stuecke.filter(
-      (s) => !z.schalter.nurUmgebung || s.umgebung,
-    );
+    const sichtbar = stuecke.filter((s) => !z.schalter.nurUmgebung || s.umgebung);
     for (const s of sichtbar) zeichneStueck(ctx, s);
     // Alle Stücke zählen, auch die bei „Nur Umgebung“ ausgeblendeten: Der Held stößt trotzdem an.
-    if (z.schalter.kollision)
-      zeichneSperren(ctx, KE.sperrkacheln(szene, stuecke), a.zoom);
-    const marken =
-      z.schalter.markierungen && !z.schalter.nurUmgebung
-        ? KE.markierungen(szene)
-        : [];
+    // Figuren und stehende Statisten sperren wie Möbel; nur bedingt anwesende gestrichelt.
+    if (z.schalter.kollision) {
+      const gesperrt = KE.sperrkacheln(szene, stuecke);
+      zeichneSperren(ctx, gesperrt, a.zoom);
+      zeichneBedingte(ctx, KE.figurensperren(szene).bedingt, gesperrt, a.zoom);
+    }
+    const marken = z.schalter.markierungen && !z.schalter.nurUmgebung ? KE.markierungen(szene) : [];
     for (const m of marken) zeichneMarkierung(ctx, m, a.zoom);
     KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
     if (z.schalter.raster) zeichneRaster(ctx, breite, hoehe, a.zoom);

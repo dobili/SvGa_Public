@@ -17,6 +17,7 @@ import re
 from dataclasses import dataclass, field
 
 from pipeline.abenteuer.kartenbau import WAND, K, platziere, raster
+from pipeline.abenteuer.objektrichtung import ausgerichtet
 from pipeline.abenteuer.uebergaenge import felder, rand, regel_fuer
 
 Feld = tuple[int, int]
@@ -163,10 +164,11 @@ def auf_weg(szene: dict, liste: list[Feld]) -> bool:
 
 
 def moebel_am(szene: dict, liste: list[Feld], moebel: dict) -> list[tuple[dict, dict, str]]:
-    """(Stück, Angabe, Bildart) aller Möbel, deren Bild ein Feld berührt oder daneben liegt."""
+    """(Stück, Angabe, Bildart) aller Möbel, deren Bild ein Feld berührt oder daneben liegt. Die Angabe
+    gilt so, wie das Bild auf der Karte liegt (Größe und Blick gedreht, ``objektrichtung.ausgerichtet``)."""
     ergebnis = []
     for s in platziere(szene, moebel)[0]:
-        angabe = moebel.get(s["name"], {})
+        angabe = ausgerichtet(moebel.get(s["name"], {}), s)
         art = bildart(s["name"], angabe)
         if art is None:
             continue

@@ -30,6 +30,7 @@ from pipeline.abenteuer.moebelliste import moebeldateien
 EDITOR = HAUPT / "werkzeuge" / "karteneditor"
 # Version des Datenformats im Paket; der Editor nennt seine eigene Version in js/zustand.js.
 PAKETFORMAT = 1
+VARIANTEN = "varianten"  # Unterordner der Varianten B und C (szenen/varianten/README.md)
 # Was aus werkzeuge/karteneditor/ ins Paket kommt (der Test bleibt draußen).
 EDITORDATEIEN = ("index.html", "editor.css", "js")
 
@@ -49,16 +50,33 @@ def bildpfad(privat: Path, quelle: str) -> Path | None:
 
 
 def lade_szenen(ordner: Path, nur: list[str] | None = None) -> list[tuple[str, dict]]:
-    """Alle Szenen (ohne Varianten im Unterordner) als (Dateiname, Szene), nach Namen sortiert.
+    """Alle Szenen als (Dateiname, Szene), nach Namen sortiert, danach die Varianten B und C aus dem
+    Unterordner ``varianten/`` (Dateiname ``varianten/<name>.json``, Editor ab 1.2).
 
     Beispiel: ``nur=["maple-falls-diner"]`` → nur ``maple-falls-diner.json``.
     """
     szenen = []
-    for pfad in sorted(ordner.glob("*.json")):
+    for pfad in [*sorted(ordner.glob("*.json")), *sorted((ordner / VARIANTEN).glob("*.json"))]:
         if nur and pfad.stem not in nur:
             continue
-        szenen.append((pfad.name, lade(pfad)))
+        name = pfad.name if pfad.parent == ordner else f"{VARIANTEN}/{pfad.name}"
+        szenen.append((name, lade(pfad)))
     return szenen
+
+
+def figurangaben(orte: list[dict], ort: str) -> dict[str, dict]:
+    """Bedingung (``wenn``) und Dialog der Figuren eines Ortes aus orte.json, nach Namen auf der Karte.
+
+    Warum: Der Editor zeigt Figuren als Hindernis; steht eine nur unter einer Bedingung da, bekommt
+    sie eine gestrichelte Umrandung. Beispiel: mapleFalls → {"ambrose": {"wenn": "nicht
+    abschiedGesehen", "dialog": "maple-falls-dachboden.ambrose"}, …}.
+    """
+    ergebnis = {}
+    for o in (o for o in orte if o["kennung"] == ort):
+        for f in o.get("figuren", []):
+            name = f["kennung"].removeprefix(f"{ort}.")
+            ergebnis[name] = {k: f[k] for k in ("wenn", "dialog") if k in f}
+    return ergebnis
 
 
 def geschwister(orte: list[dict], szenen: list[tuple[str, dict]]) -> dict[str, list[str]]:
@@ -155,14 +173,20 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
     liste = []
     for name, szene in szenen:
         ort = szene["karte"].split(".")[0]
+        kartenname = texte.get(f"ort.{szene['karte']}", szene["karte"])
+        variante = szene.get("variante")
         liste.append(
             {
                 "datei": name,
                 "ort": ort,
                 "ortsname": texte.get(f"ort.{ort}.name", ort),
-                "kartenname": texte.get(f"ort.{szene['karte']}", szene["karte"]),
-                "hintergrund": hintergrundbild(privat, szene),
+                # Varianten stehen in der Kartenliste in einer eigenen Gruppe (listen.js).
+                **({"gruppe": "Varianten"} if variante else {}),
+                "kartenname": f"{kartenname}, Variante {variante.upper()}" if variante else kartenname,
+                # Varianten haben keinen Hintergrund für das Spiel; der Editor zeichnet die Kacheln.
+                "hintergrund": None if variante else hintergrundbild(privat, szene),
                 "geschwister": paare.get(name, []),
+                "figurangaben": figurangaben(orte, ort),
                 "szene": szene,
             }
         )

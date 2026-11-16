@@ -6,7 +6,7 @@
   "boden": "fliesenWeiss",
   "zustand": ["neu", "gebraucht"],
   "stil": ["klassisch", "industrie", "modern"],
-  "beschreibung": "Das Falls Diner an der Birch Lane, lang und schmal wie ein Wagen (Roman Kap. 7), 16 × 13. Das Gebäude außen ist eine Fassade von 8 Kacheln Breite und 6 Dachreihen mit der Glastür im linken Drittel; nach KARTENREGELN 10.75 ist der Raum höchstens doppelt so breit und zweieinhalbmal so tief, und die Tür liegt innen ebenfalls links. Rote Wände, weiße Fliesen. An der Nordwand links die Tür zur Toilette (nur angedeutet), die Pinnwand mit gelösten Tischsets, die Durchreiche zur kleinen Küche, das Foto von der Eröffnung der Schule und zwei Bilder. Darunter an der Rückwand rechts neben der Durchreiche die Anrichte mit der Kaffeemaschine und links die alte Kasse, beide zum Personal gedreht (R004); unter der Durchreiche bleibt Platz zum Abholen der Teller. Davor der schmale Gang (eine Kachel breit, die Theke steht nah an der Wand), in dem Hector steht und über die lange rote Theke zu den Gästen schaut; die Kellnerin geht dort hin und her. Auf dem linken Ende der Theke der Stapel ungelöster Tischsets. Die Gäste sitzen auf sieben roten Hockern direkt vor der Theke; vor dem Lkw-Fahrer steht sein Teller Pfannkuchen. Rechts an der Ostwand drei Sitznischen mit runden Tischen zwischen roten Polsterbänken, in der Mitte des Raums zwei Tischgruppen mit je zwei Stühlen; auf den Tischen stehen Teller, Kaffeebecher und Gläser (bei den Rentnerinnen der Apfelkuchen). Unten links die Glastür, vor jedem ihrer beiden Flügel eine Fußmatte, daneben eine Palme. An der Westwand über der Palme die leuchtende Jukebox; aus ihr kommt die Musik des Diners (Klangquelle). Laufwege: von der Tür zwischen den Tischgruppen hindurch zu den Hockern, rechts an der Theke vorbei zu den Nischen und hinter die Theke zu Hector.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, lang und schmal wie ein Wagen (Roman Kap. 7), 16 × 13. Das Gebäude außen ist eine Fassade von 8 Kacheln Breite und 6 Dachreihen mit der Glastür im linken Drittel; nach KARTENREGELN 10.75 ist der Raum höchstens doppelt so breit und zweieinhalbmal so tief, und die Tür liegt innen ebenfalls links. Rote Wände, weiße Fliesen. An der Nordwand links die Tür zur Toilette (nur angedeutet), die Pinnwand mit gelösten Tischsets, die Durchreiche zur kleinen Küche, das Foto von der Eröffnung der Schule und zwei Bilder. Darunter an der Rückwand rechts neben der Durchreiche die Anrichte mit der Kaffeemaschine und links die alte Kasse, beide zum Personal gedreht (R004); unter der Durchreiche bleibt Platz zum Abholen der Teller. Davor der schmale Gang (eine Kachel breit, die Theke steht nah an der Wand), in dem Hector steht und über die lange rote Theke zu den Gästen schaut; die Kellnerin geht dort hin und her. Auf dem linken Ende der Theke der Stapel ungelöster Tischsets. Die Gäste sitzen auf sieben roten Hockern direkt vor der Theke; vor dem Lkw-Fahrer steht sein Teller Pfannkuchen. Rechts an der Ostwand drei Sitznischen mit runden Tischen zwischen roten Polsterbänken, in der Mitte des Raums zwei Tischgruppen mit je zwei Stühlen; auf den Tischen stehen Teller, Kaffeebecher und Gläser (bei den Rentnerinnen der Apfelkuchen). Unten links die Glastür, vor jedem ihrer beiden Flügel eine Fußmatte, daneben eine Palme. An der Westwand über der Palme die leuchtende Jukebox; aus ihr kommt die Musik des Diners (Klangquelle). Laufwege: von der Tür zwischen den Tischgruppen hindurch zu den Hockern, rechts an der Theke vorbei zu den Nischen und hinter die Theke zu Hector. Vor der Tür liegt ein roter Teppich mit goldenem Rand bis kurz vor die Theke (R010).",
   "raster": [
     "################",
     "################",
@@ -174,6 +174,10 @@
       "moebel": "mf4Palme",
       "feld": [3, 10],
       "versatz": [-9, 0]
+    },
+    {
+      "moebel": "wzTeppich",
+      "feld": [3, 8]
     },
     {
       "moebel": "mf4Fussmatte",

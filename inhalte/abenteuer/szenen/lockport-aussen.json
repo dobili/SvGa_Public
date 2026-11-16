@@ -71,7 +71,7 @@
     {
       "moebel": "ld5SchildSchleuse",
       "auf": "gasthaus",
-      "versatz": [-34, 40]
+      "versatz": [46, 14]
     },
     {
       "moebel": "mf4Bauernhaus",
@@ -356,7 +356,7 @@
     {
       "moebel": "ld9SchildAnkerTaue",
       "auf": "ausruester",
-      "versatz": [0, 10]
+      "versatz": [-4, 5]
     },
     {
       "moebel": "mf4BaumRot",
@@ -729,7 +729,15 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
+  "stil": [
+    "rustikal",
+    "klassisch",
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
   "ufer": "stein",
   "datei": "karten/lockport-aussen.json"
 }

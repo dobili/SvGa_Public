@@ -2915,6 +2915,18 @@
       "stil": "klassisch",
       "hinweis": "Ecke unten rechts: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
       "maske_fein": ["....", "....", "####", "####"]
+    },
+    "cc17PfuetzeKeller": {
+      "quelle": "spiel/eigene/pfuetze_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "Wasserlache am Fuß des Wasserflecks im Keller, man tritt hinein",
+      "hinweis": "R068: macht den Wasserfleck in Springerform als Wasser lesbar"
     }
   }
 }

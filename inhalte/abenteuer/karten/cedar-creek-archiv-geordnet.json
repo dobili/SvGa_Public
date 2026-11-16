@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 28,
+ "nextobjectid": 29,
  "layers": [
   {
    "id": 1,
@@ -907,6 +907,29 @@
     },
     {
      "id": 23,
+     "name": "cc17PfuetzeKeller",
+     "type": "moebel",
+     "x": 116,
+     "y": 124,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 24,
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
@@ -929,7 +952,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 176,
@@ -952,7 +975,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 193,
@@ -975,7 +998,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "cc12BuchOffen",
      "type": "moebel",
      "x": 180,
@@ -998,7 +1021,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "cc12Programmheft",
      "type": "moebel",
      "x": 181,

@@ -74,11 +74,14 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
 
-  // Dachboden (Runde 12): Der Held steht auf (2,5) neben der Luke (1,4); das Brett liegt auf dem
-  // runden Tisch unter dem Giebelfenster bei (7,6), die Kiste „Whitlock“ sperrt (3..5,4). Rechts
-  // bis (6,5), hinauf bis (6,4), rechts bis (7,4) und hinunter auf die Tischplatte (7,5); das Brett
-  // liegt dann vor ihm.
-  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,5");
+  // Dachboden (Umbau des Autors im Karteneditor, 16.11.2026): Der Held steht auf (2,9) vor dem
+  // Treppenloch (1..2, 7..8); das Brett liegt auf dem runden Tisch unter dem Giebelfenster bei
+  // (7,6), die Hutschachtel sperrt (5,9). Rechts bis (4,9), hinauf bis (4,5), rechts bis (6,5),
+  // hinauf bis (6,4), rechts bis (7,4) und hinunter auf die Tischplatte (7,5); das Brett liegt dann
+  // vor ihm.
+  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,9");
+  await laufeBis(page, "ArrowRight", "4,9");
+  await laufeBis(page, "ArrowUp", "4,5");
   await laufeBis(page, "ArrowRight", "6,5");
   await laufeBis(page, "ArrowUp", "6,4");
   await laufeBis(page, "ArrowRight", "7,4");
@@ -190,18 +193,18 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
-  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,5");
-  // Seit dem Kartengutachten Akt 1 ist der Abgang eine Treppenöffnung mit Geländer; begehbar sind
-  // nur ihre Mitte (2,3) und (2,4). Erst nach links, zurück vor die Öffnung, dann von unten hinein:
-  // Der Held schaut die Öffnung vorher an.
-  await laufeBis(page, "ArrowLeft", "1,5");
-  await laufeBis(page, "ArrowRight", "2,5");
+  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,9");
+  // Seit dem Umbau des Autors (Karteneditor, 16.11.2026) liegt das Treppenloch auf (1..2, 7..8),
+  // mit Geländer oben und rechts; man betritt es von Süden, über (1,8) und (2,8). Erst nach links,
+  // zurück vor die Öffnung, dann von unten hinein: Der Held schaut die Öffnung vorher an.
+  await laufeBis(page, "ArrowLeft", "1,9");
+  await laufeBis(page, "ArrowRight", "2,9");
   await page.keyboard.down("ArrowUp");
-  // Seit Runde 12 führt die Luke ins Zimmer des Helden im Obergeschoss. Dort kommt der Held rechts
-  // neben der Treppe zum Dachboden an, auf (4,4) mit Blick von ihr weg (oberwelt/ankunft.ts); auf
-  // dem Dachboden ist (4,4) die Kiste „Whitlock“, die Kachel zeigt also den Kartenwechsel. Die
-  // gehaltene Taste zählt dort erst nach einer kurzen Pause.
-  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("4,4");
+  // Das Loch führt ins Zimmer des Helden im Obergeschoss. Dort kommt der Held neben der Treppe zum
+  // Dachboden an, auf (3,6) mit Blick nach rechts (festes Ankunftsfeld); auf dem Dachboden erreicht
+  // die gehaltene Taste (3,6) nicht, die Kachel zeigt also den Kartenwechsel. Die gehaltene Taste
+  // zählt dort erst nach einer kurzen Pause.
+  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("3,6");
   await page.keyboard.up("ArrowUp");
   // Das Ortsschild nennt die neue Karte (Spieltest „einstieg“, R1).
   await expect(page.getByTestId("abenteuer-ortsschild")).toHaveText("Dein Zimmer");

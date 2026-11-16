@@ -1386,7 +1386,7 @@
     },
     {
      "id": 34,
-     "name": "sd6RelingCObenLinks",
+     "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
      "y": 81,
@@ -1404,11 +1404,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "2,0,0,0"
       }
      ]
     },
@@ -1460,7 +1455,7 @@
     },
     {
      "id": 37,
-     "name": "sd6RelingCObenRechts",
+     "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
      "y": 63,
@@ -1480,11 +1475,6 @@
        "value": true
       },
       {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "11,0,0,0"
-      },
-      {
        "name": "maske",
        "type": "string",
        "value": "."
@@ -1498,7 +1488,7 @@
     },
     {
      "id": 38,
-     "name": "mf4Treppe",
+     "name": "mf15TreppeLochZimmer",
      "type": "moebel",
      "x": 16,
      "y": 61,
@@ -1515,27 +1505,12 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       },
       {
        "name": "massstab",
        "type": "float",
        "value": 1.1
-      },
-      {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "12,7,11,35"
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": ".#/.#"
-      },
-      {
-       "name": "maske_fein",
-       "type": "string",
-       "value": ".......#/.......#/.......#/.......#/.......#/....####/....####/....####"
       },
       {
        "name": "deckkraft",

@@ -15,6 +15,7 @@ import json
 import sys
 from pathlib import Path
 
+from pipeline.abenteuer.bauweisen import darf_ueberlappen, doppelte_eintraege, gelaender_am_loch
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.bodenteile import lege_bodenteile
 from pipeline.abenteuer.feinbericht import feinbefunde, feinhinweise
@@ -175,11 +176,21 @@ def ist_sitzmoebel(name: str) -> bool:
     return any(w in name.lower() for w in SITZMOEBEL)
 
 
-def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: bool = False) -> list[str]:
+def pruefe(
+    zeilen: list[str],
+    gesetzt: list[dict],
+    punkte: list[dict],
+    aussen: bool = False,
+    moebel: dict | None = None,
+    betretbar: frozenset = frozenset(),
+) -> list[str]:
     """Rand, Wände, Überlappungen und zugestellte Auslöser.
 
     Außen ist die Randwand nur Kollision und zeigt den Boden dahinter (KARTENREGELN 10.2): Zäune,
-    Hecken und Gleise dürfen dort bis in die letzte Spalte oder Reihe stehen."""
+    Hecken und Gleise dürfen dort bis in die letzte Spalte oder Reihe stehen.
+    Mit ``moebel`` (Katalog) kennt die Prüfung innen das Geländer am Treppenloch (bauweisen.py): Es
+    steht am Rand der Leere und seine Teile überlappen sich. ``betretbar``: Kacheln, auf denen die
+    Mitte des Helden trotz feiner Sperren stehen kann; ein Auslöser dort ist nicht zugestellt."""
     befunde = []
     breite, hoehe = len(zeilen[0]) * K, len(zeilen) * K
     belegt: dict[tuple[int, int], str] = {}
@@ -197,9 +208,11 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
             am_rand = feld[0] in (0, len(zeilen[0]) - 1) or feld[1] in (0, len(zeilen) - 1)
             if auf_wand and aussen and am_rand and zeilen[feld[1]][feld[0]] == WAND:
                 auf_wand = False
+            if auf_wand and not aussen and gelaender_am_loch(s["name"], moebel, zeilen, feld):
+                auf_wand = False  # Geländer am Rand eines Treppenlochs (bauweisen.py)
             if auf_wand and feld[1] == unten:
                 befunde.append(f"{s['name']} steht auf Wand oder Wasser bei {feld}")
-            if feld in belegt:
+            if feld in belegt and not (not aussen and darf_ueberlappen(s["name"], belegt[feld], moebel)):
                 befunde.append(f"{s['name']} überlappt {belegt[feld]} bei {feld}")
             belegt[feld] = s["name"]
     for p in punkte:
@@ -207,7 +220,7 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
         # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett);
         # eine sitzende Figur sitzt auf einem Stuhl, einer Bank oder einem Sofa.
         sitzplatz = sitzrichtung(p) and feld in belegt and ist_sitzmoebel(belegt[feld])
-        if feld in belegt and not p.get("auf_moebel") and not sitzplatz:
+        if feld in belegt and not p.get("auf_moebel") and not sitzplatz and feld not in betretbar:
             befunde.append(f"{p['name']} ist von {belegt[feld]} zugestellt")
     return befunde
 
@@ -231,11 +244,15 @@ def baue(pfad: Path) -> list[str]:
     zeilen = raster(szene)
     gesetzt, befunde = platziere(szene, moebel)
     punkte = szene.get("ausloeser", []) + szene.get("figuren", [])
-    befunde += pruefe(zeilen, gesetzt, punkte, szene.get("art") == "aussen")
+    from pipeline.abenteuer.durchgang import betretbare_kacheln  # braucht dieses Modul
+
+    betretbar = frozenset(betretbare_kacheln(zeilen, gesetzt, szene))
+    befunde += pruefe(zeilen, gesetzt, punkte, szene.get("art") == "aussen", moebel, betretbar)
+    befunde += doppelte_eintraege(szene, moebel)  # zweimal übertragen (bauweisen.py)
     befunde += pruefe_regeln(szene, zeilen, gesetzt, moebel)
     befunde += kollisionsbefunde(szene, moebel)  # Übersteuerung im Karteneditor (Regel 10.69)
     befunde += pinselbefunde(szene, zeilen)  # Kollisionspinsel (kollisionspinsel.py)
-    befunde += feinbefunde(szene, zeilen)  # Kollision fein (kollisionfein.py, feinbericht.py)
+    befunde += feinbefunde(szene, zeilen, betretbar)  # Kollision fein (kollisionfein.py, feinbericht.py)
     from pipeline.abenteuer.engstelle import pruefe_engstellen  # hier: braucht platziere
 
     befunde += pruefe_engstellen(szene, zeilen, gesetzt, moebel)[0]
@@ -300,7 +317,8 @@ def hinweise(pfad: Path) -> list[str]:
     from pipeline.abenteuer.engstelle import pruefe_engstellen
 
     pinsel += pruefe_engstellen(szene, raster(szene), gesetzt, moebel)[1]
-    return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt)) + pinsel
+    doppelt = doppelte_eintraege(szene, moebel, mit_kollision=False)  # flach doppelt gezeichnet
+    return fahrzeuge + hoehenhinweise(szene, raster(szene), schleusenfelder(gesetzt)) + pinsel + doppelt
 
 
 def main() -> int:

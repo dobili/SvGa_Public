@@ -83,13 +83,16 @@ def _formbefunde(szene: dict) -> list[str]:
     return befunde
 
 
-def feinbefunde(szene: dict, zeilen: list[str]) -> list[str]:
+def feinbefunde(szene: dict, zeilen: list[str], betretbar: frozenset = frozenset()) -> list[str]:
     """Befunde zu den feinen Feldern einer Szene.
 
     Regel (Wunsch des Autors, 16.11.2026, wie beim groben Pinsel): Kacheln außerhalb der Karte,
     Kacheln grob und fein zugleich, Zellen zugleich gesperrt und frei, eine feine Freigabe in Wand,
     Wasser oder Leere ohne ``freigeben_grund`` und Auslöser auf einer feinen Sperre (außer
-    ``auf_moebel``: Der Held kann dort nicht mittig stehen) sind Befunde.
+    ``auf_moebel``: Der Held kann dort nicht mittig stehen) sind Befunde. Ausnahme: Die Kachel ist in
+    ``betretbar`` (``durchgang.betretbare_kacheln``), die Mitte des Helden passt also zwischen die
+    feinen Sperren; ein Übergang löst aus, sobald sie auf dem Auslöser steht (Treppe im Wohnzimmer
+    zwischen den fein gesetzten Geländerkanten, Karteneditor 16.11.2026).
     Beispiel: ``"sperren_fein": [[0, 0, …]]`` und ``"sperren": [[0, 0]]`` → „Kachel (0, 0) ist grob
     und fein bemalt“.
     """
@@ -113,7 +116,7 @@ def feinbefunde(szene: dict, zeilen: list[str]) -> list[str]:
             befunde.append(f"Kachel {feld}: Zellen zugleich fein gesperrt und frei")
     zu = {f for f, m in sperren.items() if "#" in m}
     for a in szene.get("ausloeser", []):
-        if tuple(a["feld"]) in zu and not a.get("auf_moebel"):
+        if tuple(a["feld"]) in zu and not a.get("auf_moebel") and tuple(a["feld"]) not in betretbar:
             befunde.append(
                 f"{a['name']} liegt auf einer feinen Sperre {tuple(a['feld'])}: "
                 "Der Held kann dort nicht mittig stehen"

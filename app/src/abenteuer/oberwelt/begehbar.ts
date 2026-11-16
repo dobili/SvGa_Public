@@ -54,7 +54,9 @@ export interface Tiledkarte {
   }[];
 }
 
-function hatKollision(eigenschaften: readonly Eigenschaft[] | undefined): boolean | undefined {
+export function hatKollision(
+  eigenschaften: readonly Eigenschaft[] | undefined,
+): boolean | undefined {
   const wert = eigenschaften?.find((e) => e.name === "kollision")?.value;
   return typeof wert === "boolean" ? wert : undefined;
 }
@@ -67,7 +69,7 @@ function stehtFest(o: { readonly type?: string; readonly properties?: readonly E
 }
 
 /** Kachelnummern (GID) mit der Eigenschaft `kollision` aus den Kachelsätzen der Karte. */
-function sperrendeKacheln(karte: Tiledkarte): Set<number> {
+export function sperrendeKacheln(karte: Tiledkarte): Set<number> {
   const gids = new Set<number>();
   for (const satz of karte.tilesets ?? []) {
     for (const k of satz.tiles ?? []) {
@@ -88,17 +90,22 @@ function sperreRechteck(
   }
 }
 
-/** Die Fläche, die ein Möbel sperrt: eigene Maske, sonst alles unter der obersten Kachelreihe. */
-function sperreMoebel(
+/**
+ * Die Fläche, die ein Möbel sperrt: eigene Maske, sonst alles unter der obersten Kachelreihe.
+ * `raster`: Größe der Felder, die eingetragen werden (Vorgabe: die Kachel; 4 für die Zellen der
+ * Kollision fein, mittenkacheln.ts).
+ */
+export function sperreMoebel(
   ziel: Set<string>,
   ort: { readonly x: number; readonly y: number },
   angabe: Sperrangabe,
   kachel: number,
+  raster = kachel,
 ): void {
   if (angabe.maske_fein) {
     // Feine Maske: jede Zelle als kleines Rechteck, gesperrt ist jede berührte Kachel (feinsperren.ts).
     for (const r of moebelRechtecke(ort, angabe.maske_fein, kachel))
-      sperreRechteck(ziel, r, kachel);
+      sperreRechteck(ziel, r, raster);
     return;
   }
   if (angabe.maske) {
@@ -106,7 +113,7 @@ function sperreMoebel(
       [...zeile].forEach((zeichen, spalte) => {
         if (zeichen !== "#") return;
         const x = ort.x + spalte * kachel;
-        sperreRechteck(ziel, { x, y: ort.y + reihe * kachel, b: kachel, h: kachel }, kachel);
+        sperreRechteck(ziel, { x, y: ort.y + reihe * kachel, b: kachel, h: kachel }, raster);
       });
     });
     return;
@@ -114,11 +121,11 @@ function sperreMoebel(
   const oben = angabe.hoehe > kachel ? kachel : 0;
   const hoehe = angabe.hoehe - oben - (angabe.frei_unten ?? 0) * kachel;
   if (hoehe <= 0) return;
-  sperreRechteck(ziel, { x: ort.x, y: ort.y + oben, b: angabe.breite, h: hoehe }, kachel);
+  sperreRechteck(ziel, { x: ort.x, y: ort.y + oben, b: angabe.breite, h: hoehe }, raster);
 }
 
 /** Kacheln einer Karteneigenschaft im Format „3,4;5,6“ (pipeline/abenteuer/kollisionspinsel.py). */
-function pinselkacheln(karte: Tiledkarte, name: "sperren" | "freigeben"): string[] {
+export function pinselkacheln(karte: Tiledkarte, name: "sperren" | "freigeben"): string[] {
   const wert = karte.properties?.find((e) => e.name === name)?.value;
   if (typeof wert !== "string" || !wert) return [];
   return wert.split(";").filter((k) => /^-?\d+,-?\d+$/.test(k));

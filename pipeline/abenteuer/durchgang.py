@@ -32,6 +32,7 @@ Aufruf über ``python -m pipeline.abenteuer.uebergaenge``.
 import json
 import re
 
+from pipeline.abenteuer.bauweisen import im_loch
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, WAND, K, platziere, raster
 from pipeline.abenteuer.kollisionfein import hat_fein, hat_feine_moebel, kacheln_aus, sperrzellen
 from pipeline.abenteuer.kollisionspinsel import wende_an
@@ -144,7 +145,9 @@ def fehlende_felder(szene: dict, name: str, moebel: dict) -> tuple[set[Feld], se
     for s in gesetzt:
         art = moebel.get(s["name"], {}).get("art")
         durchgang = art in DURCHGANGSART or DURCHGANGSNAME.search(s["name"])
-        if durchgang and not s["kollision"] and felder & _flaeche(s):
+        # Eine Treppe unter dem Boden eines Treppenlochs ist nur Bild; man betritt das Loch über
+        # den Auslöser, auf dem Absatz davor kommt man an (bauweisen.im_loch, Zimmer 16.11.2026).
+        if durchgang and not s["kollision"] and felder & _flaeche(s) and not im_loch(s, zeilen):
             ganz = bool(GANZ.search(f"{art} {s['name']}")) and not am_rand
             fehlt |= _fehlend_im_moebel(felder, _flaeche(s), frei, ganz)
     for x, y in felder:

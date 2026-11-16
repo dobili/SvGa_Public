@@ -73,7 +73,7 @@ const BEREICHE: readonly Bereich[] = [
     name: "Aufgabenrunde",
     stand: {
       ...GRUNDSTAND,
-      position: { karte: "mapleFalls.dachboden", x: 2, y: 5, richtung: "unten" },
+      position: { karte: "mapleFalls.dachboden", x: 2, y: 9, richtung: "unten" },
       laufendeAufgaben: {
         kennung: "mapleFalls.reiheSam#affe",
         runde: "mapleFalls.reiheSam",

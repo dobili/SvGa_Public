@@ -9,6 +9,7 @@ import { describe, expect, it } from "vitest";
 import { liesAusloeser, mitDurchgang, type Ausloeser } from "./ausloeserebene";
 import { ankunftsfehler, ankunftsort } from "./ankunft";
 import { begehbar, laufwege, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
+import { freiMitMitte } from "./mittenkacheln";
 import { erreichbar, gehe, kuerzesterWeg, loestAus, type Kachelort } from "./uebergangslauf";
 
 const KACHEL = 16;
@@ -98,7 +99,8 @@ function pruefeKarte(
   // Statisten und Tiere stehen an ihrem Platz (auch die, die später loslaufen).
   const gesperrt = sperrkacheln(karte, moebel, KACHEL);
   for (const w of laufwege(karte, KACHEL)) gesperrt.add(`${w.start.x},${w.start.y}`);
-  const frei = begehbar(karte, gesperrt);
+  // Kollision fein: Kacheln, auf denen die Mitte des Helden steht, sind begehbar (mittenkacheln.ts).
+  const frei = freiMitMitte(karte, moebel, KACHEL, gesperrt);
   const felderVon = (name: string) => alle.filter((a) => a.name === name && a.typ === "ausloeser");
   const namen = [...new Set(alle.map((a) => a.name))].filter(
     (name) => felderVon(name).length > 0 && regel(ort, kennung, name)?.art === "uebergang",
@@ -139,8 +141,8 @@ function pruefeKarte(
   return [
     ...befunde,
     ...fest,
-    ...versperrer(datei, karte, alle, gesperrt, namen, stege),
-    ...versperrerPaare(datei, karte, alle, gesperrt, namen, stege),
+    ...versperrer(datei, karte, alle, frei, namen, stege),
+    ...versperrerPaare(datei, karte, alle, frei, namen, stege),
   ];
 }
 
@@ -220,11 +222,10 @@ function versperrer(
   datei: string,
   karte: Tiledkarte,
   alle: readonly Ausloeser[],
-  gesperrt: ReadonlySet<string>,
+  ohne: (x: number, y: number) => boolean,
   uebergaenge: readonly string[],
   stege: readonly { readonly von: readonly Kachelort[]; readonly nach: Kachelort }[],
 ): string[] {
-  const ohne = begehbar(karte, gesperrt);
   const inKarte = (x: number, y: number) => x >= 0 && y >= 0 && x < karte.width && y < karte.height;
   const vorher = erreichteNamen(ohne, alle, uebergaenge, stege);
   const befunde: string[] = [];
@@ -260,11 +261,10 @@ function versperrerPaare(
   datei: string,
   karte: Tiledkarte,
   alle: readonly Ausloeser[],
-  gesperrt: ReadonlySet<string>,
+  ohne: (x: number, y: number) => boolean,
   uebergaenge: readonly string[],
   stege: readonly { readonly von: readonly Kachelort[]; readonly nach: Kachelort }[],
 ): string[] {
-  const ohne = begehbar(karte, gesperrt);
   const inKarte = (x: number, y: number) => x >= 0 && y >= 0 && x < karte.width && y < karte.height;
   const vorher = erreichteNamen(ohne, alle, uebergaenge, stege);
   const wege = laufwege(karte, KACHEL);
@@ -367,9 +367,9 @@ describe("Übergänge zu Fuß", () => {
       { name: "start", typ: "ausloeser", x: 0, y: 1 },
       { name: "tuer", typ: "ausloeser", x: 4, y: 1 },
     ];
-    const mauer = new Set(["2,0", "2,3", "3,0", "3,3"]);
-    expect(versperrer("probe", karte, alle, mauer, ["tuer"], [])).toEqual([]);
-    expect(versperrerPaare("probe", karte, alle, mauer, ["tuer"], [])).toEqual([
+    const ohne = begehbar(karte, new Set(["2,0", "2,3", "3,0", "3,3"]));
+    expect(versperrer("probe", karte, alle, ohne, ["tuer"], [])).toEqual([]);
+    expect(versperrerPaare("probe", karte, alle, ohne, ["tuer"], [])).toEqual([
       // Gestartet wird an den Übergängen (hier „tuer“); verloren geht, was dahinter liegt.
       "probe: anna und ben versperren gemeinsam start",
     ]);

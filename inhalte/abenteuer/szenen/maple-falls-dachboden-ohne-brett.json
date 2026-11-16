@@ -57,14 +57,16 @@
       "feld": [6, 5],
       "zu": "tisch",
       "versatz": [0, 5],
-      "maske": [".", "."]
+      "maske": [".", "."],
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Der Stuhl sperrt über die gemalte Sperre auf (6, 6) statt über seine Maske."
     },
     {
       "moebel": "mf3StuhlDunkelLinks",
       "feld": [9, 5],
       "zu": "tisch",
       "versatz": [0, 5],
-      "maske": [".", "."]
+      "maske": [".", "."],
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Der Stuhl sperrt über die gemalte Sperre auf (9, 6) statt über seine Maske."
     },
     {
       "moebel": "mf2Stehlampe",
@@ -91,7 +93,7 @@
     {
       "moebel": "mf2Zeitungsstapel",
       "feld": [3, 2],
-      "maske": ["..", "..", "##"]
+      "maske": ["..", "..", "#."]
     },
     {
       "moebel": "mf12Hutschachtel",
@@ -111,27 +113,31 @@
       "moebel": "mf12SchaukelstuhlVorn",
       "feld": [11, 7],
       "versatz": [2, 6],
-      "maske": ["."]
+      "maske": ["."],
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Der Schaukelstuhl sperrt über die gemalte Sperre auf (11, 8) statt über seine Maske."
     },
     {
-      "moebel": "sd6RelingCObenLinks",
+      "moebel": "mf15GelaenderEckeLinks",
       "feld": [1, 6],
       "versatz": [0, 10],
-      "zuschnitt": [2, 0, 0, 0]
+      "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCObenRechts",
       "feld": [2, 6],
-      "versatz": [0, 10]
+      "versatz": [0, 10],
+      "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [2, 7]
+      "feld": [2, 7],
+      "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
       "feld": [3, 8],
-      "versatz": [-16, 0]
+      "versatz": [-16, 0],
+      "bauteil_ok": true
     },
     {
       "moebel": "bkDielen",
@@ -144,25 +150,25 @@
       "versatz": [0, -21]
     },
     {
-      "moebel": "mf4Treppe",
+      "moebel": "mf15TreppeLochDachboden",
       "feld": [0, 6],
       "drehung": 180,
       "versatz": [16, 33],
-      "zuschnitt": [9, 12, 11, 39],
       "deckkraft": 25,
       "massstab": 1.1,
       "ebene": -6
     },
     {
-      "moebel": "sd6RelingCObenRechts",
+      "moebel": "mf15GelaenderPfostenRechts",
       "feld": [2, 8],
-      "zuschnitt": [11, 0, 0, 0],
-      "versatz": [11, 0]
+      "versatz": [11, 0],
+      "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
       "feld": [2, 7],
-      "versatz": [-9, -6]
+      "versatz": [-9, -6],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -216,7 +222,9 @@
     [9, 6],
     [11, 8]
   ],
-  "freigeben": [[1, 8]],
+  "freigeben": [
+    [1, 8]
+  ],
   "freigeben_fein": [
     [9, 3, "............####"],
     [10, 3, "............####"],
@@ -229,5 +237,6 @@
     [2, 7, "............###."],
     [2, 8, "###.###.###.###."],
     [3, 8, "#.#.#.#.#.#.###."]
-  ]
+  ],
+  "freigeben_grund": "Autor, Karteneditor 16.11.2026: Einstieg ins Treppenloch; der Held betritt die Öffnung im Boden, um die Treppe zu nehmen."
 }

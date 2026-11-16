@@ -461,9 +461,7 @@
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 11],
-      "kollision": true,
-      "maske": ["#"]
+      "feld": [17, 11]
     },
     {
       "moebel": "mfc9TeppichM",

@@ -21,7 +21,8 @@ import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { liesAusloeser, type Ausloeser } from "./ausloeserebene";
 import { ankunftsort, verdeckendesMoebel, type Ankunft } from "./ankunft";
-import { begehbar, laufwege, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
+import { laufwege, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
+import { freiMitMitte } from "./mittenkacheln";
 import { erreichbar, type Kachelort } from "./uebergangslauf";
 
 const KACHEL = 16;
@@ -153,7 +154,8 @@ function pruefeReise(
   if (!an) return [`${wo}: Auslöser fehlt`];
   const gesperrt = sperrkacheln(karte, moebel, KACHEL);
   for (const w of laufwege(karte, KACHEL)) gesperrt.add(`${w.start.x},${w.start.y}`);
-  const frei = begehbar(karte, gesperrt);
+  // Kollision fein: Kacheln, auf denen die Mitte des Helden steht, sind begehbar (mittenkacheln.ts).
+  const frei = freiMitMitte(karte, moebel, KACHEL, gesperrt);
   const befunde: string[] = [];
   if (!frei(an.x, an.y) || an.aufAusloeser)
     befunde.push(`${wo}: Feld (${an.x}, ${an.y}) ist nicht frei`);

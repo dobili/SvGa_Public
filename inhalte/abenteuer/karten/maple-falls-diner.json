@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 66,
+ "nextobjectid": 64,
  "layers": [
   {
    "id": 1,
@@ -2133,62 +2133,6 @@
     },
     {
      "id": 63,
-     "name": "bkFliesenWeiss",
-     "type": "moebel",
-     "x": 128,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "#"
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "bkFliesenWeiss",
-     "type": "moebel",
-     "x": 128,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "#"
-      }
-     ]
-    },
-    {
-     "id": 65,
      "name": "bkFliesenWeiss",
      "type": "moebel",
      "x": 128,

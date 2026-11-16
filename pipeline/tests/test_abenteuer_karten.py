@@ -55,6 +55,33 @@ def _uebergaenge(ort: dict) -> list[dict]:
     return [a for a in ort["ausloeser"] if a["art"] == "uebergang"]
 
 
+def _fein(eintrag: dict, start: set) -> tuple[set, set]:
+    """(Kacheln, auf denen die Mitte des Helden trotz feiner Sperren stehen kann; davon die von
+    ``start`` aus erreichten). Leer ohne feine Felder in der Szene der Karte.
+
+    Warum: Die Tiled-Karte zählt eine Kachel mit einer gesperrten Zelle als gesperrt (Ganzkachel-
+    Regel). Ein Auslöser zwischen fein gesetzten Geländerkanten (Treppenloch, Karteneditor 1.6,
+    16.11.2026) ist trotzdem erreichbar; die App löst aus, sobald die Mitte des Helden darauf steht.
+    Gerechnet wird wie in ``durchgang.betretbare_kacheln`` und ``engstelle.erreichte_kacheln``.
+    """
+    from pipeline.abenteuer.durchgang import betretbare_kacheln
+    from pipeline.abenteuer.engstelle import HELD, erreichte_kacheln
+    from pipeline.abenteuer.kartenbau import platziere, raster
+    from pipeline.abenteuer.kollisionfein import sperrzellen
+
+    pfad = INHALTE / "szenen" / Path(eintrag["datei"]).name
+    if not pfad.exists():
+        return set(), set()
+    szene = json.loads(pfad.read_text(encoding="utf-8"))
+    zeilen = raster(szene)
+    gesetzt = platziere(szene, moebelliste.lade_moebel())[0]
+    betretbar = betretbare_kacheln(zeilen, gesetzt, szene)
+    if not betretbar:
+        return set(), set()
+    groesse = (len(zeilen[0]), len(zeilen))
+    return betretbar, erreichte_kacheln(sperrzellen(zeilen, gesetzt, szene), groesse, HELD, start)
+
+
 @pytest.mark.parametrize(("ort", "eintrag"), FAELLE, ids=KENNUNGEN)
 def test_ebenen_und_kachelsatz(ort: dict, eintrag: dict):
     karte = _karte(eintrag)
@@ -123,6 +150,10 @@ def test_alles_von_start_erreichbar(ort: dict, eintrag: dict):
         x, y = eingang.feld
         for feld in [(x, y), (x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]:
             begehbar |= k.erreichbar(karte, feld)
+    # Kollision fein: Was die Mitte des Helden erreicht, ist erreichbar (siehe _fein).
+    betretbar, mitte = _fein(eintrag, set(begehbar))
+    begehbar |= mitte
+    gesperrt -= betretbar & mitte
     for objekt in alle:
         # Möbel, Statisten und Tiere muss man nicht erreichen (Schmuck und Belebung).
         if objekt.moebel or objekt.belebung:
@@ -175,12 +206,16 @@ def test_moebel_bekannt_und_frei_von_ausloesern():
         ohne_sitze = gesperrt - k.moebelfelder(nur_sitze)
         # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett).
         ansehen = {a["name"] for a in ort["ausloeser"] if a["art"] == "gegenstand"}
+        # Ein Auslöser zwischen feinen Sperren (Geländer am Treppenloch) ist frei, wenn die Mitte
+        # des Helden auf seiner Kachel stehen kann (siehe _fein).
+        betretbar = _fein(eintrag, set())[0]
         for objekt in k.objekte(karte):
             if objekt.moebel:
                 assert objekt.name in k.MOEBEL, f"{eintrag['kennung']}: Möbel {objekt.name} fehlt"
             elif not objekt.belebung and objekt.name not in ansehen:
                 sperre = ohne_sitze if objekt.eigenschaften.get("sitzt") else gesperrt
-                assert objekt.feld not in sperre, f"{eintrag['kennung']}: {objekt.name} zugestellt"
+                frei = objekt.feld not in sperre or objekt.feld in betretbar
+                assert frei, f"{eintrag['kennung']}: {objekt.name} zugestellt"
 
 
 def _nur_sitzmoebel(ebene: dict) -> dict:

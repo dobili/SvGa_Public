@@ -12,7 +12,9 @@ lückenlos nebeneinanderliegen. Für Hocker und Stühle zählt die deckende Flä
 privates Grafikpaket das ganze Bild (dann meldet die Prüfung eher zu wenig als zu viel).
 
 Regeln (keine nennt eine Karte):
-1. Platte: Brett und Schachuhr auf einem Tisch, Tresen oder Schreibtisch liegen ganz auf der Platte.
+1. Platte: Brett und Schachuhr auf einem Tisch, Tresen oder Schreibtisch liegen ganz auf der Platte;
+   die aufrechte Uhr mit ihrem Fuß (unterste FUSS_UHR Reihen), oben darf sie über die hintere Kante
+   ragen (Lage des Autors im Clubraum, 16.11.2026; Vorschlag zur Regel liegt dem Autor vor).
    Ein solcher Tisch ohne ``platte`` ist ein Befund (die Prüfung kann ihn sonst nicht messen).
 2. Brett mittig: Liegen n Bretter auf einer Platte, teilt die Platte sich längs in n gleiche Plätze;
    jedes Brett liegt (allein oder zusammen mit seiner Uhr) höchstens TOLERANZ Pixel neben der Mitte.
@@ -56,6 +58,8 @@ TOLERANZ = 2
 # Überstand über den Rand der Platte, der nicht auffällt (durchsichtiger Bildrand, Pixel).
 UEBERSTAND = 1
 LUECKE_UHR = 3
+# So viele unterste Pixelreihen der Uhr zählen als Fuß, der auf der Platte stehen muss.
+FUSS_UHR = 2
 # Hocker stehen seitlich höchstens so weit (Pixel) von Tisch oder Theke; vorn berühren sie die
 # Vorderkante (Lücke höchstens LUECKE_VORN, wie die vier Hocker im Gasthaus Lockport, vom Autor
 # abgenommen); hinten steckt ihr Fuß mindestens VERDECKT_HINTEN Pixel hinter der Oberkante der Platte.
@@ -103,9 +107,12 @@ def _pruefe_platte(szene: dict, platte: Rechteck, liegend: list[Stueck]) -> list
     befunde = []
     for st in liegend:
         r = st.rahmen
+        # Eine Uhr steht aufrecht: Nur ihr Fuß muss auf der Platte stehen, oben darf sie über die
+        # hintere Kante ragen (Clubraum, Karteneditor 16.11.2026: Brett mittig, Uhr dahinter am Rand).
+        oben = r[3] - FUSS_UHR if UHR.match(st.datei) else r[1]
         if (
             r[0] < platte[0] - UEBERSTAND
-            or r[1] < platte[1] - UEBERSTAND
+            or oben < platte[1] - UEBERSTAND
             or r[2] > platte[2] + UEBERSTAND
             or r[3] > platte[3] + UEBERSTAND
         ):

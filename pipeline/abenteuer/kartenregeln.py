@@ -8,6 +8,7 @@ Vorderseite zeigt), ``zustand`` (neu, gebraucht, alt, kaputt) und ``stil`` (mode
 industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sind.
 """
 
+from pipeline.abenteuer.bauweisen import antritt, gemalt_belegt, im_loch
 from pipeline.abenteuer.kollisionspinsel import pinselfelder
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.objektform import formbefunde
@@ -121,15 +122,16 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             if not neben_moebel and not any(_gesperrt(zeilen, x, y) for x, y in rand):
                 befunde.append(f"{name} ({art}) steht allein mitten im Raum")
         if art == "treppe":
-            x0, _, x1, y1 = _felder(s)
+            felder = _felder(s)
             # Ein Abgang (richtung „runter“: Öffnung mit Geländer, KARTENREGELN 10.77), dessen oberste
             # Reihe frei ist (Maske), wird von oben betreten; eine Treppe hinauf und ein Schacht mit
             # Geländer oben (Treppenschacht im Dachboden) von unten.
             maske = angabe.get("maske")
             abgang = angabe.get("richtung") == "runter" and (not maske or "." in maske[0])
-            antritt = s["y"] // K if abgang else y1 + 1
-            if all(_gesperrt(zeilen, x, antritt) for x in range(x0, x1 + 1)):
-                befunde.append(f"{name}: Treppe ohne freien Antritt {'oben' if abgang else 'unten'}")
+            # Gedreht (Karteneditor) liegt der Antritt auf der gedrehten Seite (bauweisen.antritt).
+            seite, felder = antritt(s, felder, abgang, eintrag)
+            if not im_loch(s, zeilen) and all(_gesperrt(zeilen, x, y) for x, y in felder):
+                befunde.append(f"{name}: Treppe ohne freien Antritt {seite}")
     return (
         befunde
         + pruefe_raum(szene, zeilen, gesetzt, moebel)
@@ -187,9 +189,12 @@ def _art(s: dict, moebel: dict) -> str | None:
     return moebel.get(s["name"], {}).get("art")
 
 
-def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list[str]:
+def pruefe_belegung(
+    szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict | None = None
+) -> list[str]:
     """Innenräume: 20–45 % der Bodenkacheln unter Möbeln (Lager und Archive mit "dicht": true bis
-    60 %, Stollen mit "stollen": true ab 10 %), sonst „karg“ oder „vollgestellt“.
+    60 %, Stollen mit "stollen": true ab 10 %), sonst „karg“ oder „vollgestellt“. Mit Katalog zählen
+    auch Kacheln unter einem Möbel, dessen Sperre der Autor gemalt hat (bauweisen.gemalt_belegt).
 
     Beispiel: Generic Home des Zeichners, etwa ein Drittel der Bodenkacheln belegt.
     """
@@ -198,7 +203,9 @@ def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list
     boden = {(x, y) for y, z in enumerate(zeilen) for x, c in enumerate(z) if c not in GESPERRT}
     if not boden:
         return []
-    anteil = len(_sperrfelder(gesetzt, belegung=True) & boden) / len(boden)
+    anteil = len(
+        (_sperrfelder(gesetzt, belegung=True) | gemalt_belegt(szene, gesetzt, moebel)) & boden
+    ) / len(boden)
     hoechstens = BELEGUNG_DICHT if szene.get("dicht") else BELEGUNG_MAX
     mindestens = BELEGUNG_STOLLEN if szene.get("stollen") else BELEGUNG_MIN
     if anteil < mindestens:
@@ -380,7 +387,7 @@ def pruefe_doppelte(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]
 def pruefe_raum(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
     """Alle Raumregeln aus Abschnitt 8.6 der Kartenregeln."""
     return (
-        pruefe_belegung(szene, zeilen, gesetzt)
+        pruefe_belegung(szene, zeilen, gesetzt, moebel)
         + pruefe_eingaenge(szene, zeilen, gesetzt)
         + pruefe_stuehle(szene, gesetzt, moebel)
         + pruefe_blickabstand(szene, gesetzt, moebel)

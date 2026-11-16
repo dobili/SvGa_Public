@@ -5728,6 +5728,54 @@
       "lauf": "waagrecht",
       "stil": "klassisch",
       "hinweis": "hölzerne Doppeltür in der Südwand, von innen gesehen (Gemini 15.11.2026); ersetzt zwei Einzeltüren"
+    },
+    "mf15TreppeLochZimmer": {
+      "quelle": "spiel/generic/generic_134.png",
+      "ausschnitt": [12, 7, 37, 29],
+      "breite": 25,
+      "hoehe": 22,
+      "kollision": false,
+      "richtung": "hoch",
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Stufen von mf4Treppe zwischen den Holmen, oben angeschnitten: die Treppe unter dem Treppenloch im Zimmer (Karteneditor des Autors, 16.11.2026; dort Maßstab 110 %, Deckkraft 25 %)"
+    },
+    "mf15TreppeLochDachboden": {
+      "quelle": "spiel/generic/generic_134.png",
+      "ausschnitt": [9, 12, 37, 25],
+      "breite": 28,
+      "hoehe": 13,
+      "kollision": false,
+      "richtung": "hoch",
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "oberste Stufen von mf4Treppe mit dem rechten Holm: die Treppe unter dem Treppenloch im Dachboden (Karteneditor des Autors, 16.11.2026; dort gedreht 180 Grad, Maßstab 110 %, Deckkraft 25 %)"
+    },
+    "mf15GelaenderEckeLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Top_Left_16x16.png",
+      "ausschnitt": [2, 0, 16, 16],
+      "breite": 14,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "hinweis": "linke obere Ecke der Reling C ohne die linken 2 Pixel: Geländer am Treppenloch (Karteneditor des Autors, 16.11.2026)",
+      "maske_fein": ["....", "....", "####", "####"]
+    },
+    "mf15GelaenderPfostenRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Top_Right_16x16.png",
+      "ausschnitt": [11, 0, 16, 16],
+      "breite": 5,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "hinweis": "nur der Eckpfosten rechts oben der Reling C: Abschluss eines Geländers am Treppenloch (Karteneditor des Autors, 16.11.2026)",
+      "maske_fein": ["....", "....", "##..", "##.."]
     }
   }
 }

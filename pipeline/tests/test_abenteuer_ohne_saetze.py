@@ -29,6 +29,9 @@ NOTIZFELDER = {
     # Bedingungen (Zustände, Übergänge): Logik in der Bedingungssprache, kein Text für den Spieler.
     "zustand_der_karte",
     "wenn",
+    # Begründungen für Kollision im Karteneditor (Regel 10.69, kollisionspinsel.py): Notiz für Menschen.
+    "begehbar_grund",
+    "freigeben_grund",
 }
 # Bauhilfen des Kartenbauers; sie kommen nicht ins Spielpaket.
 BAUHILFEN = ("ortsprofile.json", "materialien.json", "katalog_korrekturen/", "moebel/", "texte/")

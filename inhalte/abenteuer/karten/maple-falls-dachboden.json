@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 43,
+ "nextobjectid": 38,
  "layers": [
   {
    "id": 1,
@@ -999,7 +999,7 @@
       {
        "name": "maske",
        "type": "string",
-       "value": "../../##"
+       "value": "../../#."
       }
      ]
     },
@@ -1260,7 +1260,7 @@
     },
     {
      "id": 34,
-     "name": "mf4Treppe",
+     "name": "mf15TreppeLochDachboden",
      "type": "moebel",
      "x": 16,
      "y": 129,
@@ -1290,11 +1290,6 @@
        "value": 1.1
       },
       {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "9,12,11,39"
-      },
-      {
        "name": "deckkraft",
        "type": "int",
        "value": 25
@@ -1303,53 +1298,7 @@
     },
     {
      "id": 35,
-     "name": "bkDielen",
-     "type": "moebel",
-     "x": 16,
-     "y": 107,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "bkDielen",
-     "type": "moebel",
-     "x": 32,
-     "y": 107,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "sd6RelingCObenLinks",
+     "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
      "y": 106,
@@ -1369,11 +1318,6 @@
        "value": true
       },
       {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "2,0,0,0"
-      },
-      {
        "name": "maske",
        "type": "string",
        "value": "#"
@@ -1381,35 +1325,12 @@
       {
        "name": "maske_fein",
        "type": "string",
-       "value": ".###/####/####/#.##"
+       "value": "..../..../####/#.##"
       }
      ]
     },
     {
-     "id": 38,
-     "name": "sd6RelingCObenRechts",
-     "type": "moebel",
-     "x": 32,
-     "y": 106,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 114
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
+     "id": 36,
      "name": "sd6RelingCOben",
      "type": "moebel",
      "x": 23,
@@ -1442,74 +1363,8 @@
      ]
     },
     {
-     "id": 40,
-     "name": "sd6RelingCSeiteRechts",
-     "type": "moebel",
-     "x": 32,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "#"
-      },
-      {
-       "name": "maske_fein",
-       "type": "string",
-       "value": "..../..../..##/...#"
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "sd6RelingCSeiteRechts",
-     "type": "moebel",
-     "x": 32,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "#"
-      },
-      {
-       "name": "maske_fein",
-       "type": "string",
-       "value": "..../..../...#/...#"
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "sd6RelingCObenRechts",
+     "id": 37,
+     "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
      "y": 128,
@@ -1527,11 +1382,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "11,0,0,0"
       },
       {
        "name": "maske",

@@ -63,13 +63,15 @@
       "moebel": "mf4SesselHinten",
       "feld": [6, 6],
       "zu": "tvboard",
-      "kollision": false
+      "kollision": false,
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Der Sessel sperrt über die gemalte feine Sperre an Lehne und Sitzkante (sperren_fein) statt über seine Maske."
     },
     {
       "moebel": "mf4SesselHinten",
       "feld": [8, 6],
       "zu": "tvboard",
-      "kollision": false
+      "kollision": false,
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Der Sessel sperrt über die gemalte feine Sperre an Lehne und Sitzkante (sperren_fein) statt über seine Maske."
     },
     {
       "moebel": "wzStehlampe",
@@ -284,7 +286,7 @@
   ],
   "freigeben_fein": [
     [3, 3, "##..##..##..##.."],
-    [13, 3, "#####...#...####"],
+    [13, 3, "#####.......####"],
     [14, 3, "####........####"],
     [15, 3, "####........####"],
     [16, 3, "####........####"],

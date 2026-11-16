@@ -63,7 +63,8 @@
       "feld": [8, 2],
       "id": "anrichte",
       "versatz": [0, 3],
-      "maske": ["..", ".."]
+      "maske": ["..", ".."],
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Anrichte sperrt über die feine Sperre auf (8, 3) und (9, 3), obere Hälfte, statt über ihre Maske."
     },
     {
       "moebel": "mf5Kaffeemaschine",
@@ -195,7 +196,8 @@
       "moebel": "mf12JukeboxAn",
       "feld": [8, 3],
       "versatz": [-6, 27],
-      "maske": ["."]
+      "maske": ["."],
+      "begehbar_grund": "Autor, Karteneditor 16.11.2026: Die Jukebox sperrt über die gesperrte Bodenkachel bkFliesenWeiss auf (8, 5) statt über ihre Maske."
     },
     {
       "moebel": "mf5Hocker",
@@ -328,20 +330,6 @@
       "versatz": [0, -16],
       "kollision": true,
       "maske": ["#"]
-    },
-    {
-      "moebel": "bkFliesenWeiss",
-      "feld": [8, 6],
-      "versatz": [0, -16],
-      "kollision": true,
-      "maske": ["#"]
-    },
-    {
-      "moebel": "bkFliesenWeiss",
-      "feld": [8, 6],
-      "versatz": [0, -16],
-      "kollision": true,
-      "maske": ["#"]
     }
   ],
   "ausloeser": [
@@ -407,5 +395,7 @@
     [8, 3, "########........"],
     [9, 3, "########........"]
   ],
-  "freigeben_fein": [[4, 11, "##..##..##..##.."]]
+  "freigeben_fein": [
+    [4, 11, "##..##..##..##.."]
+  ]
 }

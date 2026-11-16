@@ -108,6 +108,7 @@ Beispiel: Du brauchst nur den Pfosten eines Zauns (oder eines Viehgatters).
   Bodenkacheln, die auf einem Möbel liegen (Dielen über der Treppe nach unten), bleiben anwählbar.
 - Vorher: zeigt das Original zum Vergleich.
 - Pinsel (B): malt den Boden um (Boden, Wand, Wasser, die Sonderböden der Karte oder „Leer“: schwarz, nicht begehbar, entfernt den Boden).
+- Felswände draußen (etwa Zedernpfad) sind kein Bild, sondern „#“ im Boden: Pinsel, „# Felswand (Klippe)“. Der Editor zeigt neue Felsfelder braun, die echte Klippe zeichnet erst der Kartenbau. Eine Wand muss bis zum Rand oder an eine andere Wand laufen.
 - Änderungen laden: öffnet eine früher heruntergeladene Änderungsdatei wieder, auch aus einer älteren Editorfassung, und du arbeitest dort weiter.
   Der genaue Rand wird erst beim Einarbeiten gezeichnet.
 

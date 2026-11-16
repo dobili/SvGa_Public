@@ -174,6 +174,15 @@
   function feld(ctx, szene, zeichen, x, y) {
     const boeden = szene.boeden || {};
     let kachel = null;
+    if (zeichen === "#" && szene.kante === "klippe") {
+      // Felswand: Die echte Klippe zeichnet erst der Kartenbau (klippe.py) mit Kante und Höhe;
+      // der Editor zeigt gemalte Felsfelder als braune Fläche, damit sie nicht wie Gras aussehen.
+      ctx.fillStyle = "#8a5a3c";
+      ctx.fillRect(x * K, y * K, K, K);
+      ctx.strokeStyle = "#5b3a26";
+      ctx.strokeRect(x * K + 0.5, y * K + 0.5, K - 1, K - 1);
+      return;
+    }
     if (zeichen === "#") {
       kachel = szene.wandart ? kacheln.boeden[szene.wandart] : null;
       if (!kachel) {

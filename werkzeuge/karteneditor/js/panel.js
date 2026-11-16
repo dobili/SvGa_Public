@@ -55,7 +55,11 @@
     if (!szene) return;
     const optionen = [
       [".", `. ${szene.boden || "Boden"}`],
-      ["#", `# ${szene.wandart || "Wand"}`],
+      [
+        "#",
+        // Außenkarten mit „kante: klippe“ zeichnen „#“ als Felswand (pipeline/abenteuer/klippe.py).
+        szene.kante === "klippe" ? "# Felswand (Klippe)" : `# ${szene.wandart || "Wand"}`,
+      ],
       ["~", "~ Wasser"],
       [" ", "Leer (schwarz, nicht begehbar)"],
       ...Object.entries(szene.boeden || {}).map(([z, n]) => [z, `${z} ${n}`]),

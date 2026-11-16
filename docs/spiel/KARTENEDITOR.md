@@ -80,6 +80,7 @@ sie lassen sich bearbeiten; der Rücklauf schreibt sie an ihren Platz zurück.
   Bodenkacheln, die auf einem Möbel liegen (Dielen über der Treppe nach unten), bleiben anwählbar.
 - Vorher: zeigt das Original zum Vergleich.
 - Pinsel (B): malt den Boden um (Boden, Wand, Wasser, die Sonderböden der Karte oder „Leer“: schwarz, nicht begehbar, entfernt den Boden).
+- Änderungen laden: öffnet eine früher heruntergeladene Änderungsdatei wieder, auch aus einer älteren Editorfassung, und du arbeitest dort weiter.
   Der genaue Rand wird erst beim Einarbeiten gezeichnet.
 
 **Durchgehen oder sperren** (Feld „Kollision“ rechts, wirkt auf alles Ausgewählte)

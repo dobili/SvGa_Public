@@ -16,7 +16,7 @@ window.KE = window.KE || {};
   // 1.1: Kollision je Objekt, Auslöser anlegen und löschen. 1.2: Figuren und Belebung als Hindernis,
   // löschen (mit Rückfrage) und kopieren, Varianten in der Kartenliste, Bodenkacheln trotz Sperre.
   // 1.3: Kollisionspinsel (Kacheln sperren oder freigeben, unabhängig von den Bildern, pinsel.js).
-  KE.VERSION = "1.3.1";
+  KE.VERSION = "1.3.2";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";
   const ZULETZT_SCHLUESSEL = "karteneditor-zuletzt-v1";
   const ZULETZT_HOECHSTENS = 16;

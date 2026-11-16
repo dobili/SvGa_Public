@@ -26,6 +26,12 @@
     klick("zoomraus", () => KE.zoome(0.8));
     klick("einpassen", () => KE.einpassen());
     klick("herunterladen", () => KE.herunterladen());
+    klick("laden", () => document.getElementById("ladedatei").click());
+    document.getElementById("ladedatei").addEventListener("change", (e) => {
+      const datei = e.target.files && e.target.files[0];
+      if (datei) KE.ladeAenderungsdatei(datei);
+      e.target.value = "";
+    });
     klick("hilfeknopf", () => KE.hilfe(true));
     klick("hilfezu", () => KE.hilfe(false));
     klick("verwerfen", () => {

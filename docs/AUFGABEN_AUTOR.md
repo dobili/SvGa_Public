@@ -1188,6 +1188,12 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       Fassung 1.3.3 (dein Fehlerbericht): Steht ein Möbel nach dem Verschieben ein paar Pixel neben
       dem Raster, zeigt die gelbe Anzeige seine Sperrfläche jetzt pixelgenau wie im Spiel, und das
       Gitter von „Kollision bearbeiten“ liegt genau auf dem Bild.
+      Fassung 1.4: Übergänge frei anlegen. Im Feld „Übergänge“ Zielkarte und Zielauslöser wählen
+      oder „neuen Gegenauslöser anlegen“ (dann öffnet sich die Zielkarte, ein Klick setzt die
+      Gegenseite). Unter jedem Übergang steht sein Ziel, „Zum Ziel“ springt hin. Ein Fußsymbol zeigt,
+      wo der Held ankommt (weiß automatisch, türkis festgelegt, rot fehlerhaft); „Ankunft
+      festlegen“ und ein Klick setzen es selbst. Jede Seite eines Übergangs hat ihren eigenen
+      Ankunftsort; „start“ gilt nur für Reisen und den Spielbeginn.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg

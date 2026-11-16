@@ -117,9 +117,8 @@ dort liegt, und bleibt, wenn du das Bild verschiebst.
 
 **Übergänge und Auslöser**
 
-- Rechts „Übergang oder Auslöser anlegen“: in der Liste „wie treppe“ (oder einen anderen) wählen,
-  „Übergang hier“ drücken, dann die Kachel anklicken. Es entsteht eine Kopie mit gleichem Ziel.
-- Strg+D setzt eine weitere Kopie rechts daneben (für breite Durchgänge). Entf löscht sie.
+Kurz: siehe Abschnitt 4 „Übergänge und Ankunft“. Für eine Kopie eines vorhandenen Auslösers:
+rechts unter „Übergänge“ in der Liste „wie treppe“ wählen, „Übergang hier“, Kachel anklicken.
 
 **Zur Umgebung zählen:** Gebäude, Häuser, Gebäudeteile, Türme, Stollen, Tribünen, Brücken,
 Stege, Wasser, Felsen, Gleise, Bodenbilder, Bordsteine und Straßenmarkierungen.
@@ -131,7 +130,54 @@ Alles andere (Möbel, Deko, Pflanzen, Bäume, Zäune, Türen, Fahrzeuge) sind Ob
 **Notizen:** Rechts gibt es ein Feld „Notiz zur Karte“ und bei einem ausgewählten Bild
 „Notiz zu diesem Objekt“. Schreib dort kurz, warum. Das kommt mit in die Datei.
 
-## 4. Treppenabgang selbst bauen
+## 4. Übergänge und Ankunft
+
+Ein Übergang hat zwei Seiten, etwa die Treppe im Wohnzimmer und die Treppe im Zimmer oben. Jede
+Seite ist ein blauer Auslöser auf ihrer Karte und sagt, wohin sie führt.
+
+**Sehen, wohin es geht**
+
+- Unter jedem Übergang steht hellblau „→ Zielkarte · Zielauslöser“.
+- Das kleine Fußsymbol mit Pfeil zeigt, wo der Held ankommt, wenn er von der anderen Seite
+  kommt, und wohin er schaut. Weiß: von selbst gewählt. Türkis: von dir festgelegt.
+  Rot: so geht es nicht (Feld gesperrt oder auf einem Auslöser).
+- Übergang anklicken, rechts „Zum Ziel“: Die Zielkarte geht auf, die Gegenseite ist ausgewählt.
+
+**Neuen Übergang anlegen**
+
+1. Rechts unter „Übergänge“ auf „Neuer Übergang“ tippen.
+2. Art wählen (tuer, treppe, weg …). Zielkarte suchen und wählen.
+3. Ziel: einen Auslöser der Zielkarte wählen. Oder „neuen Gegenauslöser anlegen“.
+4. Den Namen schlägt der Editor vor („treppeDiner“). Du kannst ihn ändern.
+5. Durchgang: in welche Richtung man hineingeht (oben bei einer Treppe nach oben). Leer: von selbst.
+6. „Setzen“, dann die Kachel anklicken. Für mehrere Kacheln über sie ziehen.
+7. Mit neuem Gegenauslöser öffnet sich danach die Zielkarte. Dort die Stelle anklicken.
+   Fertig: Beide Seiten verweisen aufeinander.
+
+Neue Übergänge kommen auch in die Fassungen der Karte (etwa Diner mit Tischset).
+Strg+D setzt ein weiteres Feld daneben, Entf löscht eins.
+
+**Ankunft**
+
+Jede Seite hat ihren eigenen Ankunftsort. Beispiel Wohnzimmer: Wer die Treppe herunterkommt, steht
+neben der Treppe. Wer von draußen kommt, steht neben der Haustür.
+
+- Von selbst: Der Held steht auf dem freien Feld neben dem Auslöser mit dem meisten Platz und
+  schaut vom Durchgang weg.
+- Selbst festlegen: Übergang anklicken, „Ankunft festlegen“, Feld anklicken. Bei „Blick“ die
+  Richtung wählen. „Automatisch“ macht es rückgängig.
+- Das Feld muss frei sein und darf nicht auf einem Auslöser liegen. Sonst ist das Symbol rot.
+- Der Auslöser „start“ ist etwas anderes: Er gilt nur für Reisen (Bus, Fähre) und den Spielbeginn.
+  Dort steht der Held genau auf dem Feld.
+
+**Ziel ändern oder entfernen**
+
+- Übergang anklicken, „Ziel ändern“: neue Zielkarte und Zielauslöser, „Ziel übernehmen“.
+  Mit „Rückweg umstellen“ zeigt die Gegenseite gleich zurück.
+- „Übergang entfernen“ löscht alle Felder des Übergangs auf dieser Karte und sein Ziel.
+  Führt von woanders noch etwas hierher, warnt der Bericht.
+
+## 5. Treppenabgang selbst bauen
 
 So entsteht ein Loch im Boden ohne eigenes Lochbild:
 
@@ -142,12 +188,13 @@ So entsteht ein Loch im Boden ohne eigenes Lochbild:
 3. Die Treppe auswählen, „Kollision bearbeiten“: Abgedeckte Kacheln grün (frei),
    Lochränder und tiefe Stufen rot (gesperrt), die Einstiegskachel grün.
 4. „wie treppe“ wählen, „Übergang hier“, Einstiegskachel anklicken; für zwei Kacheln Strg+D.
+   Oder „Neuer Übergang“ (Abschnitt 4), wenn die Treppe woandershin führen soll.
 5. Wie immer herunterladen und schicken.
 
 Eine abgedeckte Treppe nach unten gilt im Kartenbau als Loch im Boden (Regel 10.84) und wird
 flach gezeichnet: Der Held läuft über die Dielen, nicht darunter.
 
-## 5. Tastenkürzel
+## 6. Tastenkürzel
 
 Taste ? zeigt alle Kürzel.
 
@@ -168,7 +215,7 @@ Taste ? zeigt alle Kürzel.
 | F                     | ganze Karte zeigen            |
 | Esc                   | Auswahl aufheben, Modus beenden |
 
-## 6. Speichern und zurückschicken
+## 7. Speichern und zurückschicken
 
 - Deine Änderungen bleiben im Browser gespeichert, auch nach dem Schließen.
   Die Originalkarten werden nie überschrieben.
@@ -241,6 +288,22 @@ Taste ? zeigt alle Kürzel.
     nach dem Bild darunter; die Zeilen stehen auch unter „Kollision an einzelnen Stellen“.
   - Kollisionsanzeige wie die App: Ein Möbel mit Feinschub sperrt jede berührte Kachel (vorher
     zeigte der Editor die Kachel nach `x // 16`).
+- Editor 1.4 (16.11.2026), Übergänge (js/uebergaenge.js, ankunft.js, ausloeser.js, uebergangsfeld.js):
+  - Paket: `uebergaenge` (je Ort die Übergänge aus orte.json, nur `name`, `karte`, `art`, `ziel`)
+    und `karten` (Kennung, Ort, Namen, Szenendatei der Grundkarte) für die Zielwahl.
+  - Änderungsdatei: `uebergaenge` mit `vorher` und `nachher` je geändertem Ort. Der Rücklauf
+    (pipeline/abenteuer/editoruebergaenge.py) schreibt neue, geänderte und gelöschte Übergänge nach
+    orte.json (übrige Felder wie `wenn` bleiben, Stil Prettier Breite 80 bleibt; `--orte` für eine
+    Kopie), nennt sie im Bericht und warnt, wenn ein gelöschter Auslöser noch Ziel eines Übergangs
+    ist. Neue Definitionen tragen immer `karte`.
+  - Auslöser-Eigenschaften `ankunft` („x,y“) und `blick`: festes Ankunftsfeld. App:
+    oberwelt/ankunft.ts (festeAnkunft, ohne `blick` vom nächsten Auslöserfeld weg), Lauftest:
+    `ankunftsfehler`, Pipeline: pipeline/abenteuer/ankunftsfeld.py (in `uebergaenge` und
+    `uebergangsbilder`): Feld lesbar, in der Karte, frei (auch von Figuren), auf keinem Auslöser
+    außer `start`, `blick` gültig, alle Felder eines Auslösers gleich.
+  - Die Ankunftsanzeige baut ankunft.ts in JS nach (js/ankunft.js); Änderungen dort nachziehen.
 - Test: `node werkzeuge/karteneditor/test/editor.test.cjs` (Playwright, Chromium über file://),
   Kollision und Treppenabgang in `test/kollision.cjs` (an einer Kopie des Dachbodens im Testordner),
-  Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`, Kollisionspinsel in `test/pinsel.cjs`.
+  Figuren, Varianten und Bodenkacheln in `test/figuren.cjs`, Kollisionspinsel in `test/pinsel.cjs`,
+  Übergänge (neuer Übergang mit Gegenauslöser, Ankunft, „Zum Ziel“, Rücklauf in eine Kopie von
+  orte.json) in `test/uebergaenge.cjs`.

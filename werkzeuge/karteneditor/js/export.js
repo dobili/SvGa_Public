@@ -11,7 +11,8 @@
  *   "paket_erstellt", "szenen": [ { "datei", "karte", "notiz", "vorher", "nachher",
  *   "zuordnung": [Index im Vorher oder null je Objekt im Nachher], "markierungen": { "ausloeser":
  *   [dasselbe je Auslöser], "figuren", "belebung" } (seit 1.1), "objektnotizen": [{ "index",
- *   "moebel", "notiz" }] } ] }
+ *   "moebel", "notiz" }] } ], "uebergaenge": { "vorher": { Ort: [Übergänge] }, "nachher": { … } }
+ *   (seit 1.4, nur geänderte Orte; Übergang: { name, karte?, art, ziel }, Rücklauf schreibt orte.json) }
  */
 "use strict";
 
@@ -63,6 +64,8 @@
         objektnotizen,
       };
     });
+    const orte = KE.geaenderteOrte();
+    const je = (quelle) => Object.fromEntries(orte.map((o) => [o, quelle[o] || []]));
     return {
       format: KE.FORMAT,
       fassung: 1,
@@ -70,13 +73,17 @@
       zeitstempel: new Date().toISOString(),
       paket_erstellt: z.daten.erstellt,
       szenen,
+      ...(orte.length
+        ? { uebergaenge: { vorher: je(z.uebergaengeOriginal), nachher: je(z.uebergaenge) } }
+        : {}),
     };
   };
 
   /** Lädt die Änderungen als Datei herunter (karteneditor-aenderungen-JJJJ-MM-TT-HHMM.json). */
   KE.herunterladen = function () {
     const daten = KE.aenderungen();
-    if (!daten.szenen.length) return KE.status("Noch keine Änderungen zum Herunterladen.");
+    if (!daten.szenen.length && !daten.uebergaenge)
+      return KE.status("Noch keine Änderungen zum Herunterladen.");
     const jetzt = new Date();
     const zwei = (n) => String(n).padStart(2, "0");
     const name =

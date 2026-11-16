@@ -16,7 +16,10 @@ window.KE = window.KE || {};
   // 1.1: Kollision je Objekt, Auslöser anlegen und löschen. 1.2: Figuren und Belebung als Hindernis,
   // löschen (mit Rückfrage) und kopieren, Varianten in der Kartenliste, Bodenkacheln trotz Sperre.
   // 1.3: Kollisionspinsel (Kacheln sperren oder freigeben, unabhängig von den Bildern, pinsel.js).
-  KE.VERSION = "1.3.3";
+  // 1.4: Übergänge zu beliebigen Karten, Ziele und Ankunftsfelder sehen (uebergaenge.js, ankunft.js).
+  KE.VERSION = "1.4.0";
+  /** Schlüssel der Übergangsdefinitionen (orte.json) im Verlauf, neben den Szenendateien. */
+  KE.ORTE = "#orte";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";
   const ZULETZT_SCHLUESSEL = "karteneditor-zuletzt-v1";
   const ZULETZT_HOECHSTENS = 16;
@@ -47,6 +50,10 @@ window.KE = window.KE || {};
     kollisionUid: null, // Objekt im Modus „Kollision bearbeiten“ (kollision.js)
     kpinsel: null, // Kollisionspinsel: null, "sperren", "freigeben" oder "radierer" (pinsel.js)
     uebergangVorlage: null, // Name des Auslösers für „Übergang hier“ (ausloeser.js)
+    setzen: null, // Neuer Übergang, Gegenauslöser oder Ankunftsfeld setzen (ausloeser.js)
+    uebergaenge: {}, // Ort → Übergänge aus orte.json, Arbeitskopie (uebergaenge.js)
+    uebergaengeOriginal: {}, // Ort → Übergänge, wie im Paket
+    neuForm: null, // Eingaben im Feld „Neuer Übergang“ (uebergangsfeld.js)
     ansicht: { zoom: 2, x: 0, y: 0 },
   };
   KE.zustand = zustand;
@@ -70,6 +77,8 @@ window.KE = window.KE || {};
       zustand.nachDatei[eintrag.datei] = eintrag;
       zustand.original[eintrag.datei] = vergibUids(KE.kopie(eintrag.szene));
     }
+    zustand.uebergaengeOriginal = KE.kopie(daten.uebergaenge || {});
+    zustand.uebergaenge = KE.kopie(zustand.uebergaengeOriginal);
     ladeZwischenstand();
   };
 
@@ -110,7 +119,8 @@ window.KE = window.KE || {};
   KE.schnappschuss = schnappschuss;
   function schnappschuss(dateien) {
     const s = {};
-    for (const d of dateien) s[d] = JSON.stringify(KE.szene(d));
+    for (const d of dateien)
+      s[d] = JSON.stringify(d === KE.ORTE ? zustand.uebergaenge : KE.szene(d));
     return s;
   }
 
@@ -125,7 +135,10 @@ window.KE = window.KE || {};
   };
 
   function setze(stand) {
-    for (const [d, text] of Object.entries(stand)) zustand.bearbeitet[d] = JSON.parse(text);
+    for (const [d, text] of Object.entries(stand)) {
+      if (d === KE.ORTE) zustand.uebergaenge = JSON.parse(text);
+      else zustand.bearbeitet[d] = JSON.parse(text);
+    }
     const vorhanden = new Set(KE.alleUids());
     zustand.auswahl = new Set([...zustand.auswahl].filter((u) => vorhanden.has(u)));
     if (!vorhanden.has(zustand.kollisionUid)) zustand.kollisionUid = null;
@@ -176,6 +189,7 @@ window.KE = window.KE || {};
       version: KE.VERSION,
       paket: zustand.daten.erstellt,
       bearbeitet: geaendert,
+      uebergaenge: geaenderteUebergaenge(),
       notizen: zustand.notizen,
       zaehler: zustand.zaehler,
     };
@@ -196,6 +210,8 @@ window.KE = window.KE || {};
       for (const [d, szene] of Object.entries(stand.bearbeitet || {})) {
         if (zustand.original[d]) zustand.bearbeitet[d] = szene;
       }
+      for (const [ort, liste] of Object.entries(stand.uebergaenge || {}))
+        if (zustand.uebergaenge[ort]) zustand.uebergaenge[ort] = liste;
       zustand.notizen = stand.notizen || {};
       zustand.zaehler = stand.zaehler || 0;
     } catch (fehler) {
@@ -203,9 +219,23 @@ window.KE = window.KE || {};
     }
   }
 
+  /** Orte, deren Übergänge vom Paket abweichen (Editor 1.4). */
+  KE.geaenderteOrte = () =>
+    Object.keys(zustand.uebergaenge).filter(
+      (o) =>
+        JSON.stringify(zustand.uebergaenge[o]) !== JSON.stringify(zustand.uebergaengeOriginal[o]),
+    );
+
+  function geaenderteUebergaenge() {
+    const ergebnis = {};
+    for (const o of KE.geaenderteOrte()) ergebnis[o] = zustand.uebergaenge[o];
+    return ergebnis;
+  }
+
   /** Verwirft alle Änderungen (nach Rückfrage in der Oberfläche). */
   KE.allesVerwerfen = function () {
     zustand.bearbeitet = {};
+    zustand.uebergaenge = KE.kopie(zustand.uebergaengeOriginal);
     zustand.notizen = {};
     zustand.verlauf = [];
     zustand.zukunft = [];

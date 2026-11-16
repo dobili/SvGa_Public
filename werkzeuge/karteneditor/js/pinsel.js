@@ -33,7 +33,7 @@
       // Andere Modi enden; die Kollisionsanzeige gehört zum Pinsel (Wunsch des Autors).
       z.schalter.kollision = true;
       z.schalter.pinsel = false;
-      z.kollisionUid = z.uebergangVorlage = null;
+      z.kollisionUid = z.uebergangVorlage = z.setzen = null;
     }
     KE.meldeAenderung(
       z.kpinsel

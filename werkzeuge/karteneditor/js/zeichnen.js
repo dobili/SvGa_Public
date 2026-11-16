@@ -306,6 +306,8 @@
     }
     const marken = z.schalter.markierungen && !z.schalter.nurUmgebung ? KE.markierungen(szene) : [];
     for (const m of marken) zeichneMarkierung(ctx, m, a.zoom);
+    // Ziel und Ankunft jedes Übergangs, Kacheln beim Setzen (uebergaenge.js, ankunft.js).
+    if (marken.length || z.setzen) KE.zeichneUebergaenge(ctx, szene, stuecke, a.zoom);
     KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
     if (z.schalter.raster) zeichneRaster(ctx, breite, hoehe, a.zoom);
     if (!z.schalter.vorher) zeichneAuswahl(ctx, sichtbar, marken, a.zoom);

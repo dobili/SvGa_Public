@@ -5,7 +5,8 @@
  * ein kleines Paket (zwei Karten des Diners mit Zustandsfassung) mit dem privaten Repository,
  * bedient den Editor wie der Autor (Ziehen, Alt-Ziehen, Drehen, Strg+Klick-Mehrfachauswahl,
  * Duplizieren als Gruppe, Löschen, Ebene, Bibliothek, Auswahlliste, Rückgängig, Übertragen auf die
- * Fassung, Neuladen; Figuren und Varianten in figuren.cjs, Kollisionspinsel in pinsel.cjs, Laden in laden.cjs) und
+ * Fassung, Neuladen; Figuren und Varianten in figuren.cjs, Kollisionspinsel in pinsel.cjs, Laden in laden.cjs,
+ * Übergänge in uebergaenge.cjs) und
  * schickt die heruntergeladene Datei durch den Rücklauf.
  *
  * Aufruf (Hauptordner): node werkzeuge/karteneditor/test/editor.test.cjs
@@ -38,6 +39,7 @@ const figuren = require("./figuren.cjs");
 const kollisionspinsel = require("./pinsel.cjs");
 const laden = require("./laden.cjs");
 const versatz = require("./versatz.cjs");
+const uebergaenge = require("./uebergaenge.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -297,6 +299,7 @@ async function ruecklauf(seite, arbeit) {
     [
       ...["-m", "pipeline.abenteuer.editorrueck", datei, "--szenen", szenen],
       ...["--bericht", bericht, "--ohne-bau"],
+      ...uebergaenge.ruecklaufArgumente(arbeit), // orte.json nur als Kopie im Testordner
     ],
     { cwd: HAUPT, encoding: "utf8" },
   );
@@ -314,6 +317,7 @@ async function ruecklauf(seite, arbeit) {
   );
   pruefe(/Kollision an einzelnen Stellen/.test(ausgabe), "Abschnitt für den Katalog");
   kollisionspinsel.ruecklauf(ausgabe, daten, path.join(szenen, KARTE), pruefe); // Kollisionspinsel
+  uebergaenge.pruefeRuecklauf(ausgabe, arbeit, pruefe); // Übergänge in orte.json (Editor 1.4)
 
   // Die zurückgeschriebene Kopie des Dachbodens: Tiefe, Loch (10.84) und Befunde wie im Kartenbau.
   const pruefung = execFileSync(
@@ -365,6 +369,7 @@ async function ruecklauf(seite, arbeit) {
   await figuren.varianten(seite, pruefe);
   await kollisionspinsel.kollisionspinsel(seite, pruefe);
   await versatz.versatz(seite, pruefe);
+  await uebergaenge.uebergaenge(seite, pruefe); // Editor 1.4: neuer Übergang, Ankunft, Zum Ziel
   await laden.laden(seite, arbeit, pruefe);
   await seite.reload();
   await seite.waitForFunction(() => KE.zustand.datei);

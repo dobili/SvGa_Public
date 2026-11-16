@@ -5,7 +5,8 @@ Editors liegt öffentlich in ``werkzeuge/karteneditor/``; die Bilder (u. a. Lime
 öffentlich als Bibliothek herumliegen. Deshalb baut dieses Skript ein privates Paket: die Editorseite
 und ``daten.js`` (``window.EDITOR_DATEN = {…}``, per ``<script src>`` geladen, damit die Seite auch
 über file:// läuft) mit allen Szenen, der Bibliothek, jedem Bild als data-URL, den Hintergründen
-der Karten und den Boden- und Wandkacheln.
+der Karten und den Boden- und Wandkacheln, dazu (ab Editor 1.4) die Übergänge aller Orte aus
+``orte.json`` (nur Name, Karte, Art, Ziel) und das Verzeichnis der Karten als Ziele.
 
 Aufruf: ``python -m pipeline.abenteuer.editorpaket PRIVAT ZIEL`` (ZIEL üblich: ``PRIVAT/editor``).
 Optionen: ``--nur maple-falls-diner`` (nur diese Szenen, für Tests), ``--szenen`` und ``--moebel``
@@ -93,6 +94,42 @@ def geschwister(orte: list[dict], szenen: list[tuple[str, dict]]) -> dict[str, l
             for name in namen:
                 ergebnis[name] = [n for n in namen if n != name]
     return {k: v for k, v in ergebnis.items() if v}
+
+
+def uebergangsdefinitionen(orte: list[dict]) -> dict[str, list[dict]]:
+    """Je Ort die Übergänge aus orte.json, nur Name, Karte (falls angegeben), Art und Ziel (Editor 1.4).
+
+    Warum: Der Editor zeigt an jedem Übergang Zielkarte und Zielauslöser, springt „Zum Ziel“ und legt
+    neue Übergänge an; der Rücklauf (editoruebergaenge.py) schreibt die Änderungen zurück.
+    Beispiel: mapleFalls → [{"name": "treppe", "art": "uebergang", "ziel": {"karte":
+    "mapleFalls.zimmer", "ausloeser": "treppeDachboden"}}, …].
+    """
+    from pipeline.abenteuer.editoruebergaenge import ART, kurz
+
+    return {o["kennung"]: [kurz(a) for a in o.get("ausloeser", []) if a.get("art") == ART] for o in orte}
+
+
+def kartenverzeichnis(orte: list[dict], szenen: list[tuple[str, dict]], texte: dict) -> list[dict]:
+    """Alle Karten aus orte.json mit Ort, Namen und der Szenendatei im Paket (Grundkarte, nicht ein
+    Zustand), für die Zielwahl eines neuen Übergangs. Karten ohne Szene im Paket fehlen.
+    Beispiel: {"kennung": "mapleFalls.zimmer", "ort": "mapleFalls", "ortsname": "Maple Falls",
+    "kartenname": "Zimmer", "datei": "maple-falls-zimmer.json"}.
+    """
+    nach_datei = {sz.get("datei"): name for name, sz in szenen if not sz.get("variante")}
+    ergebnis = []
+    for o in orte:
+        for karte in o["karten"]:
+            if karte.get("datei") in nach_datei:
+                ergebnis.append(
+                    {
+                        "kennung": karte["kennung"],
+                        "ort": o["kennung"],
+                        "ortsname": texte.get(f"ort.{o['kennung']}.name", o["kennung"]),
+                        "kartenname": texte.get(f"ort.{karte['kennung']}", karte["kennung"]),
+                        "datei": nach_datei[karte["datei"]],
+                    }
+                )
+    return ergebnis
 
 
 def kachelbild(privat: Path, bogen: str, feld: list[int]) -> str:
@@ -195,6 +232,9 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
         "erstellt": datetime.now(UTC).isoformat(timespec="seconds"),
         "kachel": K,
         "szenen": liste,
+        # Übergänge (Editor 1.4): Definitionen je Ort und alle Karten als Ziele.
+        "uebergaenge": uebergangsdefinitionen(orte),
+        "karten": kartenverzeichnis(orte, szenen, texte),
         "moebel": moebel,
         "bilder": bilder,
         "kacheln": kacheln(privat, lade(INHALTE / "materialien.json")),

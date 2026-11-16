@@ -209,8 +209,40 @@ details > summary {
 .grundhinweis {
   color: #f6a33c;
 }
-#uebergangsvorlage {
+#uebergangsvorlage,
+#neuzielkarte,
+#zielkartenwahl,
+#zielsuche {
   max-width: 100%;
+}
+/* Übergänge (uebergangsfeld.js, Editor 1.4) */
+.neuform,
+.zielform {
+  margin: 6px 0;
+}
+.neuform > summary,
+.zielform > summary {
+  cursor: pointer;
+  color: #9fd3ff;
+}
+.neuform select,
+.neuform input,
+.zielform select {
+  margin: 2px 0;
+}
+.neuform input[type="search"],
+.neuform select#neuzielkarte,
+.zielform select {
+  display: block;
+  width: calc(100% - 4px);
+}
+.beschriftung {
+  min-width: 90px;
+  color: var(--leise);
+}
+.zielanzeige {
+  color: #9fd3ff;
+  margin: 2px 0;
 }
 .zwischentitel {
   color: var(--leise);

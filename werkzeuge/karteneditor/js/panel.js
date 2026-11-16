@@ -239,7 +239,7 @@
     KE.pinselfeld(ziel); // Kollisionspinsel: Zahl der Kacheln, Grund (pinsel.js)
     if (auswahl.length === 1 && auswahl[0].liste === "objekte")
       objektnotiz(ziel, auswahl[0].eintrag._uid);
-    KE.uebergangsfeld(ziel); // Übergang hier (ausloeser.js)
+    KE.uebergangsfeld(ziel); // Übergänge: Ziel, Ankunft, neuer Übergang, Übergang hier (uebergangsfeld.js)
     fassungen(ziel);
     kartennotiz(ziel);
   };
@@ -278,7 +278,7 @@
     fuellePinsel();
     KE.zeichne();
     KE.zeichnePanel();
-    const zahl = KE.geaenderteDateien().length;
+    const zahl = KE.geaenderteDateien().length + (KE.geaenderteOrte().length ? 1 : 0); // + orte.json
     document.getElementById("herunterladen").textContent = `Änderungen herunterladen (${zahl})`;
     document.getElementById("zurueck").disabled = !KE.zustand.verlauf.length;
     document.getElementById("vor").disabled = !KE.zustand.zukunft.length;

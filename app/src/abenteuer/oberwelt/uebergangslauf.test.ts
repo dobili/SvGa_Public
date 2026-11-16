@@ -7,7 +7,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { liesAusloeser, mitDurchgang, type Ausloeser } from "./ausloeserebene";
-import { ankunftsort } from "./ankunft";
+import { ankunftsfehler, ankunftsort } from "./ankunft";
 import { begehbar, laufwege, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
 import { erreichbar, gehe, kuerzesterWeg, loestAus, type Kachelort } from "./uebergangslauf";
 
@@ -118,9 +118,9 @@ function pruefeKarte(
         befunde.push(`${datei} ${ziel}: Feld (${f.x}, ${f.y}) braucht die Angabe „durchgang“`);
       }
     }
-    if (ankunftsort(karte, moebel, ziel, KACHEL)?.aufAusloeser) {
-      befunde.push(`${datei} ${ziel}: kein freies Feld neben dem Durchgang für die Ankunft`);
-    }
+    // Neben dem Durchgang frei; ein festes Ankunftsfeld frei und auf keinem Auslöser.
+    const fehler = ankunftsfehler(ankunftsort(karte, moebel, ziel, KACHEL), alle, frei);
+    if (fehler) befunde.push(`${datei} ${ziel}: ${fehler}`);
     // Ankünfte: jeder andere Übergang; hat die Karte nur einen, der Auslöser „start“.
     const andere = namen.filter((n) => n !== ziel);
     for (const start of andere.length > 0 ? andere : ["start"]) {

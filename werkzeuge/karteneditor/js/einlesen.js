@@ -61,6 +61,9 @@
       z.notizen[eintrag.datei] = notizenNachDatei(szene, eintrag);
       geladen.push(eintrag.datei);
     }
+    // Übergänge (seit 1.4): der Stand der Datei für jeden Ort, den es im Paket gibt.
+    for (const [ort, liste] of Object.entries(daten.uebergaenge?.nachher || {}))
+      if (z.uebergaengeOriginal[ort]) z.uebergaenge[ort] = KE.kopie(liste);
     z.verlauf = [];
     z.zukunft = [];
     z.auswahl.clear();

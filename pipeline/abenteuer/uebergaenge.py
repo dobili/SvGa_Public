@@ -13,7 +13,9 @@ Regeln (``docs/spiel/orte/README.md``, Ortsplan):
   10.11.2026): jede begehbare Kachel der Luke, Treppe oder Tür, die ganze Breite des Wegs am
   Kartenrand, die ganze Lücke in der Wand. Kein Feld des Auslösers ist gesperrt.
 
-Dazu die Bilder an den Übergängen (``uebergangsbilder.py``, KARTENREGELN 10.77), Befunde mit „Bild:“.
+Dazu die Bilder an den Übergängen (``uebergangsbilder.py``, KARTENREGELN 10.77), Befunde mit „Bild:“,
+und feste Ankunftsfelder (``ankunftsfeld.py``, Karteneditor 1.4), Befunde mit „Ankunft:“: Das Feld
+ist frei und liegt auf keinem Auslöser.
 
 Aufruf: ``python -m pipeline.abenteuer.uebergaenge`` (Befunde, Rückgabewert 1 bei Befunden).
 """
@@ -129,6 +131,7 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
 
 
 def main() -> int:
+    from pipeline.abenteuer.ankunftsfeld import ankunftsbefunde
     from pipeline.abenteuer.durchgang import pruefe_durchgaenge, tueren_ohne_angabe
     from pipeline.abenteuer.moebelliste import lade_moebel
     from pipeline.abenteuer.uebergangsbilder import pruefe_alle
@@ -136,7 +139,9 @@ def main() -> int:
     alle, liste = szenen(), uebergaenge()
     befunde = pruefe(alle, liste) + pruefe_durchgaenge(alle, liste)
     # Bilder an den Übergängen (KARTENREGELN 10.77, uebergangsbilder.py): Tür, Treppe, Weg passen.
-    befunde += [f"Bild: {b}" for b in pruefe_alle(alle, liste, lade_moebel())]
+    moebel = lade_moebel()
+    befunde += [f"Bild: {b}" for b in pruefe_alle(alle, liste, moebel)]
+    befunde += [f"Ankunft: {b}" for b in ankunftsbefunde(alle, moebel)]
     for b in befunde:
         print(f"- {b}")
     for t in tueren_ohne_angabe(alle, liste):

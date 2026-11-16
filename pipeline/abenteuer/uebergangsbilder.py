@@ -20,7 +20,8 @@ Je Übergang (beide Seiten, ``uebergangsarten.paare``):
    derselben Stelle (10.76).
 
 Aufruf: ``python -m pipeline.abenteuer.uebergangsbilder [--ort KENNUNG] [--boegen ORDNER [--privat PFAD]]``;
-auch als Teil von ``python -m pipeline.abenteuer.uebergaenge``. Kontaktbögen: ``uebergangsbogen.py``.
+auch als Teil von ``python -m pipeline.abenteuer.uebergaenge``. Die eigene Ausgabe nennt dazu die
+Befunde fester Ankunftsfelder (``ankunftsfeld.py``, Editor 1.4). Kontaktbögen: ``uebergangsbogen.py``.
 """
 
 import json
@@ -339,11 +340,15 @@ def pruefe_alle(
 
 
 def main(argumente: list[str]) -> int:
+    from pipeline.abenteuer.ankunftsfeld import ankunftsbefunde
     from pipeline.abenteuer.moebelliste import lade_moebel
     from pipeline.abenteuer.uebergaenge import szenen, uebergaenge
 
     ort = argumente[argumente.index("--ort") + 1] if "--ort" in argumente else None
-    befunde = pruefe_alle(szenen(), uebergaenge(), lade_moebel(), ort)
+    alle, moebel = szenen(), lade_moebel()
+    befunde: list = pruefe_alle(alle, uebergaenge(), moebel, ort)
+    # Feste Ankunftsfelder (Editor 1.4, ankunftsfeld.py): frei und auf keinem Auslöser.
+    befunde += [f"Ankunft: {b}" for b in ankunftsbefunde(alle, moebel, ort)]
     for b in befunde:
         print(f"- {b}")
     if "--boegen" in argumente:

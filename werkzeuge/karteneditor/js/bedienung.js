@@ -12,7 +12,7 @@
   const ZOOM_MAX = 8;
   const ZOOM_FAKTOR = 1.2;
   const KLICK_TOLERANZ = 3; // Bildschirmpixel, ab denen ein Klick als Ziehen gilt
-  let ziehen = null; // { art: "objekte" | "ansicht" | "rechteck" | "pinsel" | "kpinsel", … }
+  let ziehen = null; // { art: "objekte" | "ansicht" | "rechteck" | "pinsel" | "kpinsel" | "setzen", … }
   let letzterKlick = null; // { x, y, nummer } für das Durchschalten übereinanderliegender Bilder
 
   /** Bildschirmpunkt → Kartenpixel. */
@@ -118,6 +118,10 @@
     // Modi aus kollision.js und ausloeser.js: Der Klick gilt der Kachel, nicht der Auswahl.
     if (z.kollisionUid) return KE.kollisionsKlick(px, py);
     if (z.uebergangVorlage) return KE.setzeUebergang(px, py);
+    if (z.setzen) {
+      ziehen = KE.setzenStart(px, py); // Neuer Übergang, Gegenauslöser, Ankunft (ausloeser.js)
+      return;
+    }
     if (z.kpinsel) {
       ziehen = KE.pinselStart(ereignis, px, py);
       return;
@@ -143,6 +147,7 @@
     }
     if (ziehen.art === "pinsel") return pinsel(px, py);
     if (ziehen.art === "kpinsel") return KE.pinselZiehen(ziehen, px, py);
+    if (ziehen.art === "setzen") return KE.setzenZiehen(ziehen, px, py);
     if (ziehen.art === "rechteck") {
       KE.rechteck = {
         x0: Math.min(ziehen.x0, px),
@@ -178,6 +183,7 @@
     if (art === "objekte" && ziehen.bewegt) KE.schrittAbschliessen("Verschieben", ziehen.vorher);
     if (art === "pinsel") KE.schrittAbschliessen("Malen", ziehen.vorher);
     if (art === "kpinsel") KE.pinselEnde(ziehen);
+    if (art === "setzen") KE.setzenEnde();
     ziehen = null;
     KE.rechteck = null;
     KE.meldeAenderung();
@@ -253,8 +259,8 @@
       KE.hilfe(false);
       KE.schliesseListe();
       const z = KE.zustand;
-      if (z.kollisionUid || z.uebergangVorlage || z.kpinsel) {
-        z.kollisionUid = z.uebergangVorlage = z.kpinsel = null;
+      if (z.kollisionUid || z.uebergangVorlage || z.kpinsel || z.setzen) {
+        z.kollisionUid = z.uebergangVorlage = z.kpinsel = z.setzen = null;
         return KE.meldeAenderung("Modus beendet");
       }
       KE.zustand.auswahl.clear();

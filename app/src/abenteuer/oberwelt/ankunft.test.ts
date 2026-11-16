@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ankunftsort } from "./ankunft";
+import { ankunftsfehler, ankunftsort } from "./ankunft";
 import type { Tiledkarte } from "./begehbar";
 
 /** Raum 5 × 4 mit Wand ringsum (GID 2 sperrt), Tür unten in der Mitte. */
@@ -84,5 +84,51 @@ describe("Ankunft nach einem Übergang", () => {
       aufAusloeser: false,
     });
     expect(ankunftsort(karte, {}, "start", 16)).toBeNull();
+  });
+
+  it("nimmt ein festes Ankunftsfeld der Szene mit Blick (Karteneditor 1.4)", () => {
+    const karte = raum([{ name: "tuer", x: 2, y: 3 }]);
+    const ebene = karte.layers[1];
+    const mit = (eigenschaften: { name: string; value: string }[]): Tiledkarte => ({
+      ...karte,
+      layers: [
+        karte.layers[0] ?? {},
+        {
+          ...ebene,
+          objects: [{ name: "tuer", type: "ausloeser", x: 32, y: 48, properties: eigenschaften }],
+        },
+      ],
+    });
+    const mitBlick = mit([
+      { name: "ankunft", value: "1,1" },
+      { name: "blick", value: "links" },
+    ]);
+    expect(ankunftsort(mitBlick, {}, "tuer", 16)).toEqual({
+      x: 1,
+      y: 1,
+      richtung: "links",
+      aufAusloeser: false,
+      festgelegt: true,
+    });
+    // Ohne Blick schaut der Held vom Durchgang weg; ein unlesbares Feld zählt nicht.
+    const ohneBlick = mit([{ name: "ankunft", value: "2,1" }]);
+    expect(ankunftsort(ohneBlick, {}, "tuer", 16)).toMatchObject({ x: 2, y: 1, richtung: "oben" });
+    const kaputt = mit([{ name: "ankunft", value: "zwei" }]);
+    expect(ankunftsort(kaputt, {}, "tuer", 16)).toMatchObject({ x: 2, y: 2, richtung: "oben" });
+    expect(ankunftsort(kaputt, {}, "tuer", 16)?.festgelegt).toBeUndefined();
+  });
+
+  it("meldet ein festes Ankunftsfeld auf einem Auslöser oder einer Sperre", () => {
+    const fest = { x: 2, y: 3, richtung: "oben", aufAusloeser: false, festgelegt: true } as const;
+    const tuer = [{ name: "tuer", typ: "ausloeser", x: 2, y: 3 }] as const;
+    const frei = () => true;
+    expect(ankunftsfehler(fest, tuer, frei)).toBe(
+      "festes Ankunftsfeld (2, 3) liegt auf dem Auslöser tuer",
+    );
+    expect(ankunftsfehler({ ...fest, y: 2 }, tuer, () => false)).toBe(
+      "festes Ankunftsfeld (2, 2) ist gesperrt",
+    );
+    expect(ankunftsfehler({ ...fest, y: 2 }, tuer, frei)).toBeNull();
+    expect(ankunftsfehler({ ...fest, festgelegt: undefined }, tuer, frei)).toBeNull();
   });
 });

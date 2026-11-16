@@ -11,7 +11,10 @@ und Statisten neu oder gelöscht sind (mit Warnung, wenn ein Ink-Knoten oder ein
 Vorschauen nach ``buch/arbeit/editor/`` (nur lokal) und baut die betroffenen Karten neu.
 
 Aufruf: ``python -m pipeline.abenteuer.editorrueck DATEI.json [--privat PRIVAT]``
-Optionen: ``--szenen ORDNER`` (anderes Ziel, dann ohne Kartenbau, für Tests), ``--bericht ORDNER``,
+Übergänge (Editor ab 1.4): neue, geänderte und gelöschte Definitionen nach ``orte.json``
+(``editoruebergaenge.py``); Warnung, wenn ein gelöschter Auslöser noch Ziel eines Übergangs ist.
+Optionen: ``--szenen ORDNER`` (anderes Ziel, dann ohne Kartenbau, für Tests), ``--orte DATEI``
+(Übergänge in eine Kopie statt nach orte.json, für Tests), ``--bericht ORDNER``,
 ``--ohne-bau``, ``--erzwingen`` (auch schreiben, wenn die Szene seit dem Paket geändert wurde).
 Sicherheit: Weicht die Szene auf der Platte vom „vorher“ der Datei ab, wird sie nicht überschrieben
 (jemand hat sie inzwischen geändert); der Bericht nennt sie als Konflikt.
@@ -24,6 +27,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.editorfiguren import figurwarnungen
+from pipeline.abenteuer.editoruebergaenge import ruecklauf as uebergangsruecklauf
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
 from pipeline.abenteuer.kollisionspinsel import pinselzeilen
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -37,6 +41,7 @@ FORMAT = "karteneditor-aenderungen"
 FASSUNG = 1
 BERICHTSORDNER = HAUPT / "buch" / "arbeit" / "editor"
 BREITE = 100  # Zeilenbreite wie Prettier in diesem Repository (app/.prettierrc.json)
+SCHMAL = 80  # Zeilenbreite von orte.json (Prettier-Vorgabe)
 LAGE = ("feld", "versatz", "auf")
 FORM = ("drehung", "spiegeln", "massstab", "ebene")
 MARKIERUNGEN = ("ausloeser", "figuren", "belebung")
@@ -44,21 +49,22 @@ FELDER_HOECHSTENS = 20
 VARIANTEN = "varianten"  # Unterordner der Varianten B und C (szenen/varianten/README.md)
 
 
-def _wert(wert: object, einzug: int, vorne: int) -> str:
-    """JSON wie Prettier: Objekte aufgeklappt, kurze Listen einfacher Werte in einer Zeile."""
+def _wert(wert: object, einzug: int, vorne: int, breite: int = BREITE) -> str:
+    """JSON wie Prettier: Objekte aufgeklappt, kurze Listen einfacher Werte in einer Zeile
+    (``breite``: Zeilenbreite; orte.json ist mit 80 formatiert, die Szenen mit 100)."""
     raum = "  " * einzug
     if isinstance(wert, dict) and wert:
         teile = []
         for k, v in wert.items():
             kopf = f"{raum}  {json.dumps(k, ensure_ascii=False)}: "
-            teile.append(kopf + _wert(v, einzug + 1, len(kopf)))
+            teile.append(kopf + _wert(v, einzug + 1, len(kopf), breite))
         return "{\n" + ",\n".join(teile) + "\n" + raum + "}"
     if isinstance(wert, list) and wert:
         if all(not isinstance(x, dict | list) for x in wert):
             zeile = "[" + ", ".join(json.dumps(x, ensure_ascii=False) for x in wert) + "]"
-            if vorne + len(zeile) + 1 <= BREITE:
+            if vorne + len(zeile) + 1 <= breite:
                 return zeile
-        innen = [raum + "  " + _wert(x, einzug + 1, len(raum) + 2) for x in wert]
+        innen = [raum + "  " + _wert(x, einzug + 1, len(raum) + 2, breite) for x in wert]
         return "[\n" + ",\n".join(innen) + "\n" + raum + "]"
     return json.dumps(wert, ensure_ascii=False)
 
@@ -68,9 +74,13 @@ def als_text(szene: dict, alt: str | None = None) -> str:
 
     Warum: Ein Rücklauf soll im Git-Vergleich nur die echten Änderungen zeigen. Die meisten Szenen
     sind mit Prettier formatiert, einige mit ``json.dumps(indent=2)``; der Stil bleibt erhalten.
+    Die Zeilenbreite (100 oder 80, orte.json) übernimmt er, wenn die alte Datei genau so aussieht.
     """
     if alt is not None and json.dumps(json.loads(alt), ensure_ascii=False, indent=2) + "\n" == alt:
         return json.dumps(szene, ensure_ascii=False, indent=2) + "\n"
+    for breite in (BREITE, SCHMAL):
+        if alt is not None and _wert(json.loads(alt), 0, 0, breite) + "\n" == alt:
+            return _wert(szene, 0, 0, breite) + "\n"
     return _wert(szene, 0, 0) + "\n"
 
 
@@ -247,6 +257,7 @@ def main(argumente: list[str] | None = None) -> int:
     teiler = argparse.ArgumentParser(description="Änderungen des Karteneditors zurückschreiben")
     teiler.add_argument("datei", type=Path)
     teiler.add_argument("--szenen", type=Path, default=INHALTE / "szenen")
+    teiler.add_argument("--orte", type=Path, default=INHALTE / "orte.json", help="Ziel der Übergänge")
     teiler.add_argument("--bericht", type=Path, default=BERICHTSORDNER)
     teiler.add_argument("--privat", type=Path, help="privates Repository (für Vorschauen)")
     teiler.add_argument("--ohne-bau", action="store_true")
@@ -290,17 +301,24 @@ def main(argumente: list[str] | None = None) -> int:
             befunde = baue(a.szenen / eintrag["datei"])
             text.append("- Kartenbau: " + ("in Ordnung" if not befunde else f"{len(befunde)} Befunde"))
             text += [f"  - {b}" for b in befunde]
+    # Übergänge (Editor 1.4): neue, geänderte, gelöschte Definitionen in orte.json (editoruebergaenge.py).
+    zeilen, orte_konflikte, verweise = uebergangsruecklauf(daten, a.orte)
+    if zeilen or orte_konflikte:
+        text += ["", f"## Übergänge ({a.orte.name})", ""] + [f"- {z}" for z in zeilen]
+        text += [f"- KONFLIKT: {k}" for k in orte_konflikte]
+    warnungen += verweise
     if kollisionen:
         # Für den Hauptchat: Welche Katalogeinträge passen an diesen Stellen nicht (objektkollision.py)?
         text += ["", "## Kollision an einzelnen Stellen (Katalog prüfen)", ""] + [
             f"- {z}" for z in kollisionen
         ]
     if warnungen:
-        text += ["", "## Warnungen (Figuren, die die Handlung braucht)", ""] + [f"- {w}" for w in warnungen]
+        text += ["", "## Warnungen (Figuren und Übergänge, die die Handlung braucht)", ""]
+        text += [f"- {w}" for w in warnungen]
     (ordner / "bericht.md").write_text("\n".join(text) + "\n", encoding="utf-8")
     print("\n".join(text))
     print(f"\nBericht: {ordner / 'bericht.md'}")
-    return 1 if konflikte else 0
+    return 1 if konflikte or orte_konflikte else 0
 
 
 if __name__ == "__main__":

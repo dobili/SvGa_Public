@@ -13,7 +13,7 @@
  * dessen Blickrichtung (Befund der Funktionstests, 15.11.2026: In Cedar Creek landete er auf einem
  * Nachbarfeld hinter dem Wartehäuschen). Der Start ist kein Durchgang, also gibt es kein „davor“.
  */
-import { liesAusloeser } from "./ausloeserebene";
+import { liesAusloeser, type Ausloeser } from "./ausloeserebene";
 import { begehbar, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
 import { geformtAusObjekt } from "./moebelform";
 
@@ -24,6 +24,8 @@ export interface Ankunft {
   readonly richtung: "oben" | "unten" | "links" | "rechts";
   /** true, wenn kein freies Feld daneben lag und der Held auf dem Auslöser selbst steht. */
   readonly aufAusloeser: boolean;
+  /** true, wenn die Szene das Feld mit der Eigenschaft `ankunft` festlegt (Prüfung im Lauftest). */
+  readonly festgelegt?: true;
 }
 
 const RICHTUNGEN: readonly Ankunft["richtung"][] = ["oben", "unten", "links", "rechts"];
@@ -75,6 +77,8 @@ export function ankunftsort(
   const felder = alle.filter((a) => a.name === name && a.typ === "ausloeser");
   const erstes = felder[0];
   if (!erstes) return null;
+  const fest = festeAnkunft(karte, name, felder);
+  if (fest) return fest;
   const frei = begehbar(karte, sperrkacheln(karte, moebel, kachel));
   // „start“ ist nur der Einstieg in die Karte und löst nichts aus: Dort darf der Held ankommen.
   const belegt = new Set(alle.filter((a) => a.name !== START).map((a) => `${a.x},${a.y}`));
@@ -95,6 +99,58 @@ export function ankunftsort(
     }
   }
   return beste ?? { x: erstes.x, y: erstes.y, richtung: "unten", aufAusloeser: true };
+}
+
+/** Ein Feld als Text „x,y“ in Kachelkoordinaten, sonst null. Beispiel: „3,5“ → { x: 3, y: 5 }. */
+function liesFeld(wert: unknown): { readonly x: number; readonly y: number } | null {
+  if (typeof wert !== "string") return null;
+  const teile = wert.split(",").map((t) => Number(t.trim()));
+  const [x, y] = teile;
+  if (teile.length !== 2 || x === undefined || y === undefined) return null;
+  return Number.isInteger(x) && Number.isInteger(y) ? { x, y } : null;
+}
+
+/**
+ * Blick vom nächsten Auslöserfeld weg (die größere Achse entscheidet), wenn die Szene keinen
+ * `blick` nennt. Beispiel: Tür auf (5, 9), Ankunft (5, 7) → „oben“.
+ */
+function blickWeg(
+  feld: { readonly x: number; readonly y: number },
+  felder: readonly { readonly x: number; readonly y: number }[],
+): Ankunft["richtung"] {
+  const abstand = (f: { readonly x: number; readonly y: number }) =>
+    Math.abs(f.x - feld.x) + Math.abs(f.y - feld.y);
+  const naechstes = [...felder].sort((a, b) => abstand(a) - abstand(b))[0];
+  const dx = feld.x - (naechstes?.x ?? feld.x);
+  const dy = feld.y - (naechstes?.y ?? feld.y);
+  if (dx === 0 && dy === 0) return "unten";
+  if (Math.abs(dx) >= Math.abs(dy)) return dx > 0 ? "rechts" : "links";
+  return dy > 0 ? "unten" : "oben";
+}
+
+/**
+ * Das feste Ankunftsfeld des Auslösers `name` (Eigenschaft `ankunft` an einem seiner Felder, mit
+ * `blick`), oder null. Ob das Feld frei ist und auf keinem Auslöser liegt, prüfen der Lauftest
+ * (uebergangslauf.test.ts mit ankunftsfehler) und pipeline/abenteuer/ankunftsfeld.py, nicht das Spiel.
+ * Beispiel: Wohnzimmer, „haustuer“ mit ankunft „5,10“ und blick „oben“ → { x: 5, y: 10, richtung:
+ * "oben", aufAusloeser: false, festgelegt: true }.
+ */
+function festeAnkunft(
+  karte: Tiledkarte,
+  name: string,
+  felder: readonly { readonly x: number; readonly y: number }[],
+): Ankunft | null {
+  const objekte = karte.layers
+    .flatMap((e) => e.objects ?? [])
+    .filter((o) => o.name === name && o.type === "ausloeser");
+  for (const o of objekte) {
+    const wert = (n: string) => o.properties?.find((e) => e.name === n)?.value;
+    const feld = liesFeld(wert("ankunft"));
+    if (!feld) continue;
+    const blick = RICHTUNGEN.find((r) => r === wert("blick")) ?? blickWeg(feld, felder);
+    return { ...feld, richtung: blick, aufAusloeser: false, festgelegt: true };
+  }
+  return null;
 }
 
 /**
@@ -145,4 +201,28 @@ export function verdeckendesMoebel(
     if (hoehen.some((h) => h >= y && h < y + angabe.hoehe)) return o.name ?? null;
   }
   return null;
+}
+
+/**
+ * Was an einer Ankunft nicht stimmt, oder null. Neben dem Durchgang war nichts frei (der Held
+ * stünde auf dem Auslöser), oder ein festes Ankunftsfeld der Szene (Eigenschaft `ankunft`,
+ * Karteneditor 1.4) ist gesperrt oder liegt auf einem Auslöser (der Held stünde gleich im nächsten
+ * Übergang). „start“ zählt nicht als Auslöser, er löst nichts aus.
+ * Beispiel: haustuer mit ankunft „5,12“ auf der Tür selbst → „festes Ankunftsfeld (5, 12) liegt
+ * auf dem Auslöser haustuer“.
+ */
+export function ankunftsfehler(
+  ankunft: Ankunft | null,
+  alle: readonly Ausloeser[],
+  frei: (x: number, y: number) => boolean,
+): string | null {
+  if (!ankunft) return null;
+  if (ankunft.aufAusloeser) return "kein freies Feld neben dem Durchgang für die Ankunft";
+  if (!ankunft.festgelegt) return null;
+  const ort = `festes Ankunftsfeld (${ankunft.x}, ${ankunft.y})`;
+  if (!frei(ankunft.x, ankunft.y)) return `${ort} ist gesperrt`;
+  const darauf = alle.find(
+    (a) => a.typ === "ausloeser" && a.name !== "start" && a.x === ankunft.x && a.y === ankunft.y,
+  );
+  return darauf ? `${ort} liegt auf dem Auslöser ${darauf.name}` : null;
 }

@@ -1,3 +1,18 @@
+Stand: 16.11.2026 nachts, 23 Uhr (Haupt-Chat, Schach-Abenteuer): **Variante B, Kartendurchsicht Akt 2–4, Runde mit Nebenchats.**
+
+- Variante B (7d63cd28): Kamera zoomt 3 auf volles Bild, PixelLab-Figuren 2/3 in der Welt
+  (`weltmassstab.ts`); Zeichentiefe nach Maske (`zeichentiefe.ts`, Held vor der Veranda sichtbar).
+- Kartendurchsicht Akt 2–4 (d5a6fab3), Treppe zum Betrachter im Zimmer; Fragen mit Entscheidungen RO34.
+- Bestand der Rückmeldungen (2cb81f18): 130 erledigt, 14 teilweise, 3 offen, 2 überholt.
+- Laufend: Fable-Chat `uebergabe/weltkarte` (21 Randbrüche, R033, R049, R050, Gleise Desert Springs),
+  Mittel-2 `uebergabe/innenraeume` (RO34-Innenräume, R055, Lockport R140–R142, R010, R066, R068, R102),
+  Mittel-4 `uebergabe/pruefwerkzeuge` (R065 Raumgröße, R008 Blickrichtung), Helfer Spieltest
+  Variante B (Bericht in scratchpad/spieltest_b).
+
+**Nächster Schritt:** Übergabezweige zusammenführen (Prüfungen, Kartenbilder und Editorpaket im
+privaten Repo neu bauen), Spieltest auswerten; Villen/Diner/Waschsalon mit Maßstab 1,2 erst nach
+„ok“ des Autors (RO33).
+
 Stand: 16.11.2026 spät (Haupt-Chat, Schach-Abenteuer): **Editor 1.1 bis 1.6, Editoränderungen des Autors, RO32.**
 
 - Karteneditor bis 1.6 (Kollision je Stelle, Pinsel, fein in 4-px-Zellen, Übergänge, Zuschnitt,

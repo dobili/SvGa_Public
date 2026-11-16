@@ -54,7 +54,7 @@
     "#.........................pp......................dddddd.......#",
     "#.........................pp......................dddddd.......#",
     "#.........................pp...................................#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp###",
     "################################################################"
   ],
   "objekte": [
@@ -968,10 +968,6 @@
     {
       "moebel": "cc4Hecke",
       "feld": [0, 41]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [62, 41]
     },
     {
       "moebel": "mf12FahrradKopfueber",

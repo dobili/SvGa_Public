@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 316,
+ "nextobjectid": 320,
  "layers": [
   {
    "id": 1,
@@ -1814,9 +1814,9 @@
     1,
     1,
     1,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
     4,
     4,
     4,
@@ -2295,10 +2295,10 @@
     1,
     1,
     1,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
     4,
     4,
     4,
@@ -17993,10 +17993,102 @@
     },
     {
      "id": 315,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 1792,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 316,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 1776,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 317,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 1824,
+     "y": 288,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 318,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 1808,
+     "y": 288,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 319,
      "name": "wg6Seil",
      "type": "moebel",
-     "x": 1568,
-     "y": 336,
+     "x": 1582,
+     "y": 333,
      "width": 16,
      "height": 16,
      "rotation": 0,

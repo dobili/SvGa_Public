@@ -130,6 +130,20 @@ def test_randbruch_strasse_wird_zum_weg_aber_stadtboden_zaehlt_nicht():
     assert randbrueche(naht, {"a.stadt": hoch, "a.land": _karte(["...."] * 9, {"west": [(0, 1)]})}) == []
 
 
+def test_randbruch_misst_die_breite_am_ganzen_rand_nicht_am_gemeldeten_stueck():
+    """Cedar Creek, Westrand: Pflaster über die ganze Kante. Die Nachbarkarte ist kürzer und endet
+    mit einer gesperrten Ecke; das letzte Feld war früher ein eigener Bruch „Straße gegen gesperrt“.
+    Ein schmaler Weg bleibt ein Bruch, auch wenn daneben Wiese liegt."""
+    stadt = _karte(["p..."] * 9, {"west": [(0, 1)]}, boeden={"p": "pflaster"})
+    wiese = _karte(["...."] * 5 + ["####"], {"ost": [(3, 1)]})
+    naht = Naht("a.stadt", "west", "a.wiese", "west", (-4, 0))
+    assert randbrueche(naht, {"a.stadt": stadt, "a.wiese": wiese}) == []
+    gasse = _karte(["...."] * 5 + ["p..."] + ["...."] * 3, {"west": [(0, 1)]}, boeden={"p": "pflaster"})
+    assert randbrueche(naht, {"a.stadt": gasse, "a.wiese": wiese}) == [
+        "Randbruch: a.stadt „west“ (west) y 5–5: Straße, auf a.wiese (y 5–5): gesperrt"
+    ]
+
+
 def test_echte_karten_lassen_sich_legen():
     """Das Werkzeug läuft über alle Außenkarten, jede liegt in genau einer Insel."""
     from pipeline.abenteuer.uebergaenge import szenen, uebergaenge

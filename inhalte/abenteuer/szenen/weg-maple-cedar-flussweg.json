@@ -2,7 +2,7 @@
   "karte": "wegMapleCedar.flussweg",
   "datei": "karten/weg-maple-cedar-flussweg.json",
   "art": "aussen",
-  "beschreibung": "Variante C (reicher): Der Uferweg schlängelt sich: im Westen hoch nach Norden unter die Bäume, in der Mitte tief zum Wasser, wo der Steg mit zwei Booten, Fässern und Kisten liegt, im Osten über eine Wiese voller Wildblumen. An der Fährstelle im Osten liegt ein Boot längs am Ufer am Pfahl. Zwei Baumreihen im Norden, Erlen am Ufer, viel Kleinkram.",
+  "beschreibung": "Variante C (reicher): Der Uferweg schlängelt sich: im Westen hoch nach Norden unter die Bäume, in der Mitte tief zum Wasser, wo der Steg mit zwei Booten, Fässern und Kisten liegt, im Osten über eine Wiese voller Wildblumen. An der Fährstelle im Osten liegt ein Boot längs am Ufer, mit einer Leine am Poller festgemacht (R050). Am Ostende wird die Schotterstraße zu Asphalt; die gepflasterten Gehwege beginnen erst versetzt dahinter, mit Steinen und Grasbüscheln an ihren Enden (R049). Zwei Baumreihen im Norden, Erlen am Ufer, viel Kleinkram.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -30,11 +30,11 @@
     "#......................................................................................................................#",
     "#..................lllllllllllllll.....................................................................................#",
     "#...............lllllllllllllllllllll..................................................................................#",
-    "#............lllllllllllllllllllllllllll..................................llllllllllllllllllllll..............pppppppppp",
+    "#............lllllllllllllllllllllllllll..................................llllllllllllllllllllll.................ppppppp",
     "llllllllllllllll.....................llllll............................lllllllllllllllllllllllllllllllllllllllssssssssss",
     "lllllllllllll...........................llllll......................llllllllllllllllllllllllllllllllllllllllllssssssssss",
     "llllllllll.................................llllllllllllllllllllllllllll............................lllllllllllssssssssss",
-    "#.............................................llllllllllllllllllllll...........................................ppppppppp",
+    "#.............................................llllllllllllllllllllll...............................................ppppp",
     "#.............................~~~~~..............llllllllllllllll.....................................~~~~~~...........#",
     "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~...........#",
     "~~~~.....................~~~~~~~~~~~~~~~~~~...~~........ee........~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~...........#",
@@ -1220,8 +1220,25 @@
       "id": "faehrstein"
     },
     {
+      "moebel": "wg4SteinB",
+      "feld": [112, 14]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [111, 14]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [114, 18]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [113, 18]
+    },
+    {
       "moebel": "wg6Seil",
-      "feld": [98, 21]
+      "feld": [99, 21],
+      "versatz": [-2, -3]
     }
   ],
   "ausloeser": [

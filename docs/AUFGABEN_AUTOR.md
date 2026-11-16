@@ -1166,6 +1166,12 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       je Änderung hilft dabei sehr. Noch nicht möglich: Figuren und Auslöser löschen (nur
       verschieben), die Fassungen aus dem Ordner „varianten“. Rückmeldung: „N2635 ok“ oder was
       fehlt oder hakt.
+      Neu in Fassung 1.1: „Sperrt / Durchgehbar“ für das ausgewählte Bild (mit kurzem Grund), „Kollision
+      bearbeiten“ schaltet einzelne Kacheln, Bodenkacheln (Dielen, Fliesen, Teppich, Stein, Gras,
+      Erde und mehr) liegen in der Bibliothek unter „Boden und Straße“, „Übergang hier“ setzt einen
+      Übergang wie einen vorhandenen, Entf löscht ihn. Damit lässt sich ein Treppenabgang selbst
+      bauen (Anleitung im Editor unter „?“). Achtung: Bei „Umgebung sperren“ sind die Bodenkacheln
+      nicht anklickbar.
 - [ ] N2636. **Deine Gemini-Bilder in den Karten (16.11.2026):** Ansehen: Maple Falls Dachboden
       und Zimmer (Treppenloch mit Geländer), Park (Wasserfall zwischen Felsen), Clubraum und
       Bibliothek Cedar Creek (Doppeltüren, Bankerlampen), Drechslerei (Drehbank), Flussweg

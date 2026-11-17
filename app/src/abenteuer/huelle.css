@@ -252,3 +252,31 @@ body.abenteuer-mit-kulisse .abenteuer-huelle {
   background-position: center;
   image-rendering: pixelated;
 }
+
+/* Kurze Partieformen (anbindung/Kurzformzeile.tsx): Ziel und Restzüge, Einstieg, Ausklang. */
+.abenteuer-kurzform {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.abenteuer-nachwort {
+  margin: 0;
+  font-style: italic;
+}
+
+.abenteuer-erzaehlung {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  padding: var(--raster);
+  border: 2px solid currentcolor;
+  animation: abenteuer-moment-ein 0.4s ease-out;
+}
+
+.abenteuer-erzaehlung p {
+  margin: 0;
+}
+
+.abenteuer-erzaehlung-verlauf {
+  font-family: var(--schrift-zuege, monospace);
+}

@@ -62,7 +62,27 @@ function formteil(roh: Record<string, unknown>): Partial<Abenteuerteil> {
   if (buchbruch) teil.buchbruch = buchbruch;
   if (typeof roh.kulisse === "string") teil.kulisse = roh.kulisse;
   if (typeof roh.portraet === "string") teil.portraet = roh.portraet;
+  const kurzform = kurzformAus(roh.kurzform);
+  if (kurzform) teil.kurzform = kurzform;
   return teil;
+}
+
+const KURZFORMEN = ["stellungsduell", "vorteil", "endspiel"] as const;
+const ZIELE = ["sieg", "remis"] as const;
+
+/** Kurze Partieform: Art und eine ganze Zugzahl über null, sonst nichts. */
+function kurzformAus(roh: unknown): Abenteuerteil["kurzform"] | undefined {
+  if (!istObjekt(roh)) return undefined;
+  const art = KURZFORMEN.find((k) => k === roh.art);
+  const zuege = roh.zuege;
+  if (!art || typeof zuege !== "number" || !Number.isInteger(zuege) || zuege <= 0) return undefined;
+  const ziel = ZIELE.find((z) => z === roh.ziel);
+  return {
+    art,
+    zuege,
+    ...(typeof roh.mindestvorteil === "number" ? { mindestvorteil: roh.mindestvorteil } : {}),
+    ...(ziel ? { ziel } : {}),
+  };
 }
 
 /**

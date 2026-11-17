@@ -21,7 +21,14 @@ export type Partieende =
   /** Zeit abgelaufen, aber der Gegner kann nicht mehr mattsetzen (Kapitel 0). */
   | { readonly art: "zeitRemis" }
   /** Remis durch Vereinbarung, nur bei eingelesenen Partien (PGN-Import). */
-  | { readonly art: "vereinbart" };
+  | { readonly art: "vereinbart" }
+  /**
+   * Kurze Partieform des Abenteuers (Regelwerk R13, R13a, R13b): Nach der vereinbarten Zahl von
+   * Zügen entschied die Bewertung der Stellung; `sieger` hat das Ziel erreicht oder verteidigt.
+   */
+  | { readonly art: "ziel"; readonly sieger: Color }
+  /** Kurze Partieform: Nach den Zügen stand es so, dass keiner das Ziel erreicht hat. */
+  | { readonly art: "zielRemis" };
 
 /** 50 Züge je Seite ohne Bauernzug und ohne Schlag = 100 Halbzüge. */
 const FUENFZIG_ZUEGE_HALBZUEGE = 100;

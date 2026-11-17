@@ -36,6 +36,7 @@ import { useZurWelt } from "./zurWelt";
 import { tSpiel } from "../texte/texte";
 import { Gegnerbild } from "./Gegnerbild";
 import { Huelle } from "./Huelle";
+import { Erzaehlvorhang, Kurzformzeile, Nachwort } from "./Kurzformzeile";
 import { endgrund, gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
@@ -44,6 +45,7 @@ import { Tischgespraech } from "./Tischgespraech";
 import { useBegegnung } from "./useBegegnung";
 import { useSchutzengel } from "./useSchutzengel";
 import { useStaerkewechsel } from "./useStaerkewechsel";
+import { useKurzform } from "./useKurzform";
 import { useZugerraten } from "./useZugerraten";
 import { Testleiste } from "./Testleiste";
 
@@ -191,6 +193,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   useStaerkewechsel(partie);
   // Zugerraten im Halbfinale (regeln/zugerraten.ts): prüft den Zug vor dem Schutzengel.
   const raten = useZugerraten(engel.steuerung, partie);
+  // Kurze Partieformen (R13 bis R13b): nach den vereinbarten Zügen entscheidet die Bewertung.
+  const kurz = useKurzform(partie);
   const bedienung = useLeserzug(raten.steuerung, s.fen, false);
   // Nachspielen der beendeten Partie: Zahl der gezeigten Halbzüge; null = Schlussstellung.
   const [stelle, setzeStelle] = useState<number | null>(null);
@@ -253,6 +257,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
       {/* Rechte Spalte im Querformat, im Hochformat unter dem Brett (huellenlage.css); die Uhr des
           Gegners steht hoch über dem Brett, quer oben in der Spalte. */}
       <div className="abenteuer-partie-seite">
+        {/* Erzählter Einstieg der kurzen Partieformen; blockiert nichts, verschwindet beim ersten Zug. */}
+        <Erzaehlvorhang begegnung={begegnung} partie={partie} />
         {partie.uhr && (
           <Uhr
             uhr={partie.uhr}
@@ -275,6 +281,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
               beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
             />
           ))}
+        {kurz && !partie.ende && <Kurzformzeile stand={kurz} />}
+        <Nachwort begegnung={begegnung} partie={partie} />
         {partie.ende && anzahl > 0 && (
           <Blaettern stelle={gezeigt} anzahl={anzahl} setze={setzeStelle} />
         )}

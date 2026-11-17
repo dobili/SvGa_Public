@@ -146,6 +146,16 @@ export interface Partieeinstellung {
      * (abenteuer/anbindung/PartieHuelle.tsx, docs/spiel/18_Spielhuelle.md).
      */
     readonly portraet?: string;
+    /**
+     * Kurze Partieform (Regelwerk R13 bis R13b, abenteuer/regeln/kurzform.ts): Nach `zuege`
+     * eigenen Zügen entscheidet die Bewertung der Stellung; fehlend bei ganzen Partien.
+     */
+    readonly kurzform?: {
+      readonly art: "stellungsduell" | "vorteil" | "endspiel";
+      readonly zuege: number;
+      readonly mindestvorteil?: number;
+      readonly ziel?: "sieg" | "remis";
+    };
   };
 }
 

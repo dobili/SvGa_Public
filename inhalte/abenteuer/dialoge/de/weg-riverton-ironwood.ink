@@ -258,7 +258,7 @@ Das Wort ist „Td8“. #sprecher:erzaehler
 === brueckenbauern ===
 {gefundenKreide1 == false:
     Unter der Brücke stehen drei Klapptische. Ein Mann mit Schiebermütze redet, ohne Luft zu holen. #sprecher:erzaehler
-    Zehn Cent die Partie, drei Minuten, zwei Sekunden dazu. Aber erst das Wort. #sprecher:dime #stimmung:laechelt
+    Zehn Cent die Partie, drei Minuten, zwei Sekunden dazu, und die Eröffnung such ich aus. Aber erst das Wort. #sprecher:dime #stimmung:laechelt
     Das Wort steht am Pfeiler, wenn man richtig hinschaut. Die meisten schauen nicht richtig. #sprecher:dime #stimmung:laechelt
     -> END
 }

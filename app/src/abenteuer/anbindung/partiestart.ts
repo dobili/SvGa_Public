@@ -37,6 +37,7 @@ export function startFenAus(stellung: Startstellung): string {
       return stellungNach(GRUNDSTELLUNG, stellung.zuege);
     case "abbildung":
     case "meisterpartie":
+    case "vorrat":
       throw new Error(`Startstellung ${stellung.art} muss vorher in eine FEN aufgelöst werden`);
   }
 }
@@ -118,6 +119,7 @@ export function partieeinstellungAus(
       ...(auftrag.buchbruch ? { buchbruch: auftrag.buchbruch } : {}),
       ...(profil.portraet ? { portraet: profil.portraet } : {}),
       ...(kurzform ? { kurzform } : {}),
+      ...(auftrag.vorgeschichte ? { vorgeschichte: auftrag.vorgeschichte } : {}),
     },
   };
 }

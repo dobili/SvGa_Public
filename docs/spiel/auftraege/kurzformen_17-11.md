@@ -40,6 +40,31 @@ Story-Partien mit festem Verlauf, Varianten (Blind, Schach960, nach Gehör), die
 Einstieg haben dazu Skater Jo (Akt 1), Mr. Harlan (Akt 2), Buck (Akt 3) und Rangerin Hollis
 (Akt 4). Die Dialoge nennen das neue Format (Sol, Ruiz, Mags, Dime, Mo).
 
+## Vorrat Bot gegen Bot (Zusatz des Autors, 17.11.2026)
+
+- **Pipeline:** `python -m pipeline.abenteuer.stellungsvorrat --erzeugen` lässt Stockfish 19 lite
+  (dieselbe Engine wie die App) je Stärkeband mit der Stufe des Bandes gegen sich selbst spielen.
+  Die ersten vier Halbzüge sind zufällig, damit die Partien verschieden werden. Ab Halbzug 16 wird
+  jede Stellung mit Tiefe 12 bewertet, solange ihre Phase noch zu einem gesuchten Format passt.
+  Je Partie kommt höchstens eine Stellung je Format in den Vorrat, mit der Zugfolge bis dahin.
+  `--pruefen` bewertet alles noch einmal und prüft Zugfolge, Phase und Fenster. Die
+  App-Bots mit ihren Fehlerprofilen laufen nur in der App (TypeScript, Maia); deshalb spielt hier
+  die schnelle Engine mit Stufen, wie im Auftrag als Rückfall vorgesehen.
+- **Bänder:** bis 900 (Stufe 0), 900 bis 1200 (3), 1200 bis 1500 (6), 1500 bis 1800 (10), ab 1800
+  (15); je Format bis zu acht Stellungen (Stand siehe `stellungsvorrat.json`).
+- **App:** Startstellung `{ "art": "vorrat", "format": "stellungsduell" | "vorteil" |
+"endspielSieg" | "endspielRemis" }`. Gewählt wird nach der Zielstärke des Gegners, zufällig
+  und ohne Wiederholung, bis ein Format im Band durch ist (`vorratGenutzt` im Spielstand,
+  `regeln/vorrat.ts`, `anbindung/vorratsstellung.ts`). Der Leser übernimmt die Seite am Zug. Der
+  Einstieg zeigt die letzten zwölf Halbzüge der Vorgeschichte.
+- **Eingesetzt:** Gus in Ironwood (Akt 2), die Joggerin auf der Glasbrücke (Akt 3) und Rangerin
+  Hollis (Akt 4), alle als Stellungsduell aus dem Vorrat und mit erzähltem Einstieg. Ihre alten
+  Abbildungen 6.14 und 4.41 lagen am unteren Rand des Fensters.
+- **Kein Erzeugen auf dem Handy:** Eine Partie mit Prüfung braucht schon hier mit Node einige
+  Sekunden, und nicht jede Partie liefert eine passende Stellung (Endspiele zum Halten sind
+  selten). Mit der WebAssembly-Engine auf einem Kern eines Handys wäre es ein Vielfaches, also weit
+  über „wenige Sekunden“.
+
 ## Für die Wegsperren (Fable-Chat)
 
 - Endspiel: `"format": { "art": "endspiel", "zuege": 15, "ziel": "sieg" }` oder `"ziel": "remis"`,
@@ -54,13 +79,14 @@ Einstieg haben dazu Skater Jo (Akt 1), Mr. Harlan (Akt 2), Buck (Akt 3) und Rang
 
 ## Nicht gebaut
 
-- Auswahl der fremden Eröffnung nach dem Eröffnungsprofil oder nach den Schwächen des Lesers:
-  Dafür müsste der Auftrag zur Laufzeit das Profil lesen. Vorgemerkt in R13c.
+- Auswahl der fremden Eröffnung nach den Schwächen des Lesers (Fehlerdatenbank): Dafür fehlt eine
+  Zuordnung von Fehlerarten zu Eröffnungen. Die Auswahl nach dem, was der Leser selten spielt, ist
+  gebaut (R13c, `alternativen`; Dime hat vier Eröffnungen zur Wahl).
 - Meisterpartien als Quelle (`startstellung: meisterpartie`) löst die App weiterhin nicht auf.
 
-## Befund am Rande
+## Simultan auf Weg 11 (nachgezogen)
 
-Die Simultanbretter auf Weg 11 (`wegGhostCapital.simultan1` bis `5`, Stellungsduelle mit
-Mindestvorteil 0,5) starten zwischen −0,2 und +5,4. Brett 1 ist fast gewonnen, die Bretter 2 bis 5
-sind ausgeglichen. Die Prüfung nimmt sie aus, weil die Simultanvorstellung eigene Regeln hat
-(partieformen.json). Bitte prüfen, ob das so gewollt ist.
+Die Bretter `wegGhostCapital.simultan1` bis `5` starteten zwischen −0,2 und +5,4. Jetzt liegen
+alle zwischen +0,9 und +1,4 aus Sicht des Lesers: 6.29 (Slick), 3.62 (Big Joe), 3.41 mit Schwarz
+(Mrs. Okafor), 5.15 (Céleste, Bauernendspiel), 4.41 (Hollis). Die Ausnahme in der Prüfung ist
+entfernt; `python -m pipeline.abenteuer.kurzformate` meldet 0 Funde.

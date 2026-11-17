@@ -228,6 +228,8 @@ async function main() {
     "vorfuehrungen.json",
     // Gedächtnisstellungen und Simultan (Runde 6, docs/spiel/15 Abschnitt 4).
     "partieformen.json",
+    // Startstellungen der kurzen Formate aus Partien Bot gegen Bot (regeln/vorrat.ts).
+    "stellungsvorrat.json",
     // Aufbau der Porträtblätter (dialog/portraetblatt.ts): Fassung → Feld, Stimmung → Fassung.
     "portraetblatt.json",
   ]) {

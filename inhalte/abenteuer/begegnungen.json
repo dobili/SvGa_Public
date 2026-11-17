@@ -334,13 +334,21 @@
         "mindestvorteil": 1.0
       },
       "startstellung": {
-        "art": "abbildung",
-        "nummer": "6.14"
+        "art": "vorrat",
+        "format": "stellungsduell"
       },
       "kartenErlaubt": true,
       "zeit": {
         "sekunden": 600,
         "zuschlag": 5
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.gus.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.gus.sieg",
+          "remis": "erzaehlung.gus.remis",
+          "niederlage": "erzaehlung.gus.niederlage"
+        }
       }
     },
     {
@@ -410,13 +418,21 @@
         "mindestvorteil": 1.0
       },
       "startstellung": {
-        "art": "abbildung",
-        "nummer": "4.41"
+        "art": "vorrat",
+        "format": "stellungsduell"
       },
       "kartenErlaubt": true,
       "zeit": {
         "sekunden": 180,
         "zuschlag": 2
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.joggerin.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.joggerin.sieg",
+          "remis": "erzaehlung.joggerin.remis",
+          "niederlage": "erzaehlung.joggerin.niederlage"
+        }
       }
     },
     {
@@ -768,8 +784,8 @@
         "mindestvorteil": 1.0
       },
       "startstellung": {
-        "art": "abbildung",
-        "nummer": "6.14"
+        "art": "vorrat",
+        "format": "stellungsduell"
       },
       "kartenErlaubt": true,
       "erzaehlung": {
@@ -1311,7 +1327,23 @@
       },
       "startstellung": {
         "art": "eroeffnung",
-        "zuege": ["e4", "c6", "d4", "d5", "e5", "Bf5", "Nf3", "e6", "Be2", "c5"]
+        "zuege": [
+          "e4",
+          "c6",
+          "d4",
+          "d5",
+          "e5",
+          "Bf5",
+          "Nf3",
+          "e6",
+          "Be2",
+          "c5"
+        ],
+        "alternativen": [
+          ["e4", "e6", "d4", "d5", "e5", "c5", "c3", "Nc6", "Nf3", "Qb6"],
+          ["c4", "e5", "Nc3", "Nf6", "Nf3", "Nc6", "g3", "d5", "cxd5", "Nxd5"],
+          ["e4", "d5", "exd5", "Qxd5", "Nc3", "Qa5", "d4", "Nf6", "Nf3", "Bf5"]
+        ]
       },
       "kartenErlaubt": true,
       "zeit": {
@@ -1338,7 +1370,7 @@
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.33"
+        "nummer": "6.29"
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
@@ -1354,7 +1386,7 @@
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.34"
+        "nummer": "3.62"
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
@@ -1370,7 +1402,7 @@
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.35"
+        "nummer": "3.41"
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
@@ -1386,7 +1418,7 @@
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.36"
+        "nummer": "5.15"
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
@@ -1402,7 +1434,7 @@
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.38"
+        "nummer": "4.41"
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false

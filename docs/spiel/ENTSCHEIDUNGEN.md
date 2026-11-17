@@ -1215,3 +1215,12 @@ Nach Ambroses Abschied bleiben die Erinnerungen und Fundstücke (Archiv, Museum,
 aber ohne seine Stimme: Ein Abschnitt `allein` bietet „Die Partie nachspielen“ oder Weitergehen;
 in den Erinnerungsszenen spricht der junge Ambrose als „die Stimme kommt aus dir“. Geprüft mit
 `ambrose-danach.cjs` (0 Funde bei drei Spielertypen).
+
+## Wegsperren: Testteam von Perfect Move (Idee des Autors, 17.11.2026)
+
+Drei Sperren S15 bis S17 an Übergängen zu Beginn von Akt 2, 3 und 4 (Zedernwald, Raststätte,
+Diner), nur bis zur ersten Ankunft in der nächsten Stadt. Gegner sind drei Jugendliche eines
+Testteams von Perfect Move (Bezug zu ZERO), mit kurzen Formaten statt ganzer Partie. Sieg oder
+Remis öffnet dauerhaft, die dritte gewertete Niederlage auch (Notausgang, damit niemand
+festhängt); Abbruch zählt nicht. Bogen bis zum Seitenwechsel in Akt 4. Konzept und Stand:
+`docs/spiel/32_Wegsperren.md`; offene Fragen in RO39.

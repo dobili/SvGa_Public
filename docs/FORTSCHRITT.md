@@ -1,3 +1,17 @@
+Stand: 17.11.2026 nachts, 0:30 Uhr (Haupt-Chat, Schach-Abenteuer): **Wegsperren, kurze Partien, Spieltest 2.**
+
+- Wegsperren S15 bis S17 (Fable, `32_Wegsperren.md`): Testteam von Perfect Move, Notausgang nach
+  drei Niederlagen, Bogen bis Akt 4, Nebenquest. Rückfragen RO39.
+- Kurze Partieformen (`endspiel`, `vorteil`, `eroeffnung`, erzählter Einstieg) und Stellungsvorrat
+  Bot gegen Bot (160 Stellungen, `stellungsvorrat`, `kurzformate`).
+- Spieltest 2 behoben (mittel-2, mittel-4): Haustür Maple Falls, Pavillon-Zugang, Kantinenlogo,
+  Ironwood-Aufbruch, Earl draußen; Prüfung „Richtung“ in `uebergaenge`.
+- Spiel-Wiki (`wiki_spiel.py`, Umschalter im Dashboard); sichtbar erst nach Push auf main.
+- CI übersetzt jetzt alle Ink-Dialoge.
+
+**Nächster Schritt:** Antworten zu RO34 bis RO39 einarbeiten; Wegsperren im Browser ansehen (kein
+e2e-Test führt bis zu einer Sperre); Bildwünsche RO37/RO39 einbauen, sobald geliefert.
+
 Stand: 17.11.2026 früh, 5 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde mit vier Nebenchats abgeschlossen.**
 
 - App: Variante B (Kamera-Zoom 3, PixelLab-Figuren 2/3), Zeichentiefe nach Maske, Sitzplatz-Regel

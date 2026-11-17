@@ -13,7 +13,6 @@ import json
 import pytest
 
 from pipeline.abenteuer import editorrueck
-from pipeline.abenteuer.editorpersonen import boegen_der_szene, personenschluessel
 
 VORHER = {
     "karte": "test.raum",
@@ -69,6 +68,9 @@ def test_ruecklauf_behaelt_blick_und_nennt_aenderung(tmp_path):
 
 
 def test_personenschluessel_und_boegen():
+    pytest.importorskip("PIL")
+    from pipeline.abenteuer.editorpersonen import boegen_der_szene, personenschluessel
+
     assert personenschluessel("figuren", {"name": "hector"}) == "f:hector"
     statist = {"name": "gast", "eigenschaften": {"bild": "statist-07"}}
     assert personenschluessel("belebung", statist) == "b:gast|statist-07"

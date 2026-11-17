@@ -15,21 +15,20 @@ const { dialog } = require("./gesamtsimulation-dialoge.cjs");
 
 const HAUPT = path.resolve(__dirname, "..", "..");
 const DATEN = path.join(HAUPT, "inhalte", "abenteuer");
-const MOMENTZEILE = path.join(
-  HAUPT,
-  "app",
-  "src",
-  "abenteuer",
-  "anbindung",
-  "Momentzeile.tsx",
-);
+const APP = path.join(HAUPT, "app", "src", "abenteuer");
+const MOMENTZEILE = path.join(APP, "anbindung", "Momentzeile.tsx");
+const ABWESENHEIT = path.join(APP, "regeln", "abwesenheit.ts");
+const PARTIESTART = path.join(APP, "oberwelt", "usePartiestart.ts");
 
 /** Kurzname Ambroses in den Dialogtags (`#sprecher:ambrose`) und in den Partiemomenten. */
 const AMBROSE = "ambrose";
 /** Kennung des Gegners Ambrose in gegner.json und begegnungen.json. */
 const GEGNER_AMBROSE = "mapleFalls.ambrose";
-/** Regel der App, die Ambroses Partiemomente nach dem Abschied weglässt (regeln/abwesenheit.ts). */
-const REGEL_DER_APP = "ambroseVerabschiedet";
+/**
+ * Regel der App „Ambrose ist nicht da“ (regeln/abwesenheit.ts: Tiefpunkt oder Abschied); mit ihr
+ * lässt die Momentzeile Ambroses Partiemomente nach dem Abschied weg.
+ */
+const REGEL_DER_APP = "ambroseNichtDa";
 /** Eine Wahl, die eine Partie gegen Ambrose anbietet („Blindschach gegen Ambrose“). */
 const WAHL_GEGEN_AMBROSE = /gegen Ambrose/i;
 /** Zeilen anderer Sprecher, die Ambrose nennen (Hinweise zum Nachlesen, keine Funde). */
@@ -66,12 +65,47 @@ function knotenDerZeile(offen, knoten) {
 
 /**
  * Ob die App Ambroses Partiemomente nach dem Abschied weglässt: Die Momentzeile muss die Regel
- * `ambroseVerabschiedet` aus regeln/abwesenheit.ts benutzen. Fehlt sie dort, sind die Momente
+ * `ambroseNichtDa` aus regeln/abwesenheit.ts benutzen. Fehlt sie dort, sind die Momente
  * Funde. Warum am Quelltext: Das Werkzeug kann die App nicht ausführen; den Rest prüft
  * abwesenheit.test.ts.
  */
 function appFiltertMomente() {
   return fs.readFileSync(MOMENTZEILE, "utf8").includes(REGEL_DER_APP);
+}
+
+/** Regel der App für die Übungspartie des Reisebretts und ihre Begegnung ohne Ambrose. */
+const REGEL_REISEBRETT = "uebungspartie";
+const REISEBRETT_OHNE_AMBROSE = "reisebrett.juno";
+
+/**
+ * Das Reisebrett nach dem Abschied: Die Hülle bietet die Übungspartie über den Gegenstand an, Ink
+ * steuert sie nicht. In Ordnung ist es, wenn die App die Regel `uebungspartie` benutzt
+ * (oberwelt/usePartiestart.ts), diese ohne Ambrose (`ambroseNichtDa`) auf „reisebrett.juno“ zeigt
+ * (regeln/abwesenheit.ts) und diese Begegnung einen anderen Gegner als Ambrose hat.
+ * Ausgabe: null, wenn alles stimmt, sonst der Text des Fundes. Warum am Quelltext: wie
+ * `appFiltertMomente`; die Regel selbst prüft abwesenheit.test.ts.
+ * Eingaben (für den Test): Quelltext der beiden Dateien und die Begegnungen; Vorgabe: die echten.
+ */
+function reisebrettNachAbschied(
+  quellen = {
+    regel: fs.readFileSync(ABWESENHEIT, "utf8"),
+    start: fs.readFileSync(PARTIESTART, "utf8"),
+    begegnungen: lade("begegnungen.json").begegnungen,
+  },
+) {
+  const b = quellen.begegnungen.find(
+    (x) => x.kennung === REISEBRETT_OHNE_AMBROSE,
+  );
+  if (!b || b.gegner === GEGNER_AMBROSE)
+    return `Die Begegnung ${REISEBRETT_OHNE_AMBROSE} fehlt oder hat Ambrose als Gegner.`;
+  const regelt =
+    quellen.start.includes(REGEL_REISEBRETT + "(") &&
+    quellen.regel.includes(`function ${REGEL_REISEBRETT}(`) &&
+    quellen.regel.includes(REGEL_DER_APP + "(variablen) ?") &&
+    quellen.regel.includes(`"${REISEBRETT_OHNE_AMBROSE}"`);
+  return regelt
+    ? null
+    : "Die Hülle bietet nach dem Abschied die Übungspartie gegen Ambrose an (Regel uebungspartie fehlt).";
 }
 
 /**
@@ -206,4 +240,9 @@ function pruefeMoment(welt, st, { begegnung, m, texte, gefiltert, fund }) {
   if (m.dialog) dialog(welt, st, m.dialog);
 }
 
-module.exports = { neuerBeobachter, sprecherAus, AMBROSE };
+module.exports = {
+  neuerBeobachter,
+  sprecherAus,
+  reisebrettNachAbschied,
+  AMBROSE,
+};

@@ -31,6 +31,8 @@
 // Rückgabewert 1 bei Funden oder wenn ein Spieler den Abschied nicht erreicht, sonst 0.
 // Grenzen: Statisten und alles, was die Hülle ohne Ink sagt (Tischgespräch, Karten), prüft die App
 // selbst (regeln/abwesenheit.ts); Partien werden nicht gespielt, nur ihre Ausgänge durchgezählt.
+// Das Reisebrett (Übungspartie der Hülle): Fund, wenn die App danach nicht Juno spielen lässt
+// (reisebrettNachAbschied im Beobachter, am Quelltext der App geprüft).
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -44,7 +46,11 @@ const {
 const { erkunde, SCHRITTE } = require("./gesamtsimulation.cjs");
 const { dialog, wendeFolgenAn } = require("./gesamtsimulation-dialoge.cjs");
 const { nachbarorte } = require("./gesamtsimulation-rueckkehr.cjs");
-const { neuerBeobachter, AMBROSE } = require("./ambrose-danach-beobachter.cjs");
+const {
+  neuerBeobachter,
+  reisebrettNachAbschied,
+  AMBROSE,
+} = require("./ambrose-danach-beobachter.cjs");
 const { eiligerSpieler } = require("./ambrose-danach-eilig.cjs");
 const { launischerSpieler } = require("./ambrose-danach-launisch.cjs");
 
@@ -61,7 +67,10 @@ const RUHE_JE_ORT = 50;
 const GEDULD = 5;
 /** Zähler in Variablen gelten ab diesem Wert als gleich (wie in `zustand`). */
 const ZAEHLER_KAPPE = 5;
-/** Gegenstand, mit dem die Hülle die Übungspartie gegen Ambrose anbietet (oberwelt/Oberwelt.tsx). */
+/**
+ * Gegenstand, mit dem die Hülle die Übungspartie anbietet (oberwelt/Oberwelt.tsx): gegen Ambrose,
+ * nach dem Abschied gegen Juno (regeln/abwesenheit.ts uebungspartie); sonst ein Fund.
+ */
 const REISEBRETT = "reisebrett";
 
 /**
@@ -294,10 +303,6 @@ function berichtLauf(l) {
     .filter((o) => o.art !== "erinnerung" && !l.st.besucht.has(o.kennung))
     .map((o) => o.kennung);
   if (nie.length) zeilen.push(`  auch danach nie betreten: ${nie.join(", ")}`);
-  if (l.st.besitz.has(REISEBRETT))
-    zeilen.push(
-      "  Hinweis (Hülle, kein Fund): Das Reisebrett bietet die Übungspartie reisebrett.ambrose an.",
-    );
   for (const m of l.st.meldungen) zeilen.push(`  Meldung: ${m}`);
   return zeilen;
 }
@@ -313,6 +318,8 @@ function bericht(laeufe, arg) {
   for (const l of laeufe) {
     zeilen.push(...berichtLauf(l));
     for (const [k, f] of l.beobachter?.funde || []) funde.set(k, f);
+    const text = l.st?.besitz.has(REISEBRETT) ? reisebrettNachAbschied() : null;
+    if (text) funde.set(REISEBRETT, { art: "Partie", wo: REISEBRETT, text });
     for (const k of l.beobachter?.gelesen || []) gelesen.add(k);
   }
   const sortiert = [...funde.values()].sort(

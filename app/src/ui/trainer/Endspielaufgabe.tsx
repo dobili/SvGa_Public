@@ -26,7 +26,7 @@ import { useEndspielpartie } from "./useEndspielpartie";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
-import { useHinweismeldung, useImSpiel } from "./imSpiel";
+import { useHinweismeldung, useHinweistext, useImSpiel } from "./imSpiel";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -59,6 +59,7 @@ function Hilfen({
   const imSpiel = useImSpiel();
   // Im Spiel meldet „Ambrose fragen“ sich beim Tischgespräch (docs/spiel/29, Ereignis hinweis).
   const meldeHinweis = useHinweismeldung();
+  const imSpieltext = useHinweistext();
   return (
     <div className="uebung-hilfe">
       {stufe >= 1 && (
@@ -80,7 +81,7 @@ function Hilfen({
             }}
           >
             <Knopfsymbol art="hinweis" />
-            {imSpiel ? t("imSpiel.hinweis") : t("uebung.hinweis", { stufe: stufe + 1 })}
+            {imSpiel ? imSpieltext : t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>
         )}
         <button type="button" className="knopf-link" onClick={gibAuf}>

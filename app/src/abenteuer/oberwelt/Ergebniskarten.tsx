@@ -23,6 +23,8 @@ function zugNummer(k: Kipppunkt): number {
  * Ergebnis der Partie, knapp (Spielhülle, docs/spiel/18, Abschnitt 4): Ausgang, die neue Nadel und
  * nach einer Niederlage Ambroses Satz zum Kipppunkt mit dem Wiedereinstieg, wo das Regelwerk ihn
  * erlaubt (R14, R15). Zahl der Züge, Karten und Momente stehen nicht mehr hier; sie lenken ab.
+ * Ist Ambrose nicht da (`ohneAmbrose`, regeln/abwesenheit.ts: Tiefpunkt, nach dem Abschied),
+ * bleibt der Wiedereinstieg, aber der Satz ist der des Helden, ohne Ambroses Namen.
  */
 export function Partieergebniskarte(props: {
   readonly ergebnis: Partieergebnis;
@@ -31,11 +33,16 @@ export function Partieergebniskarte(props: {
   readonly club: string | null;
   readonly neueNadel: Nadelstufe | null;
   readonly kipppunkt: Kipppunkt | "suche" | null;
+  /** Ambrose ist nicht da: Kipppunkt ohne seinen Namen (Vorgabe: er ist da). */
+  readonly ohneAmbrose?: boolean;
   readonly beiWiedereinstieg: (k: Kipppunkt) => void;
   readonly beiWeiter: () => void;
 }) {
   const { ergebnis, kipppunkt } = props;
   const mitKipppunkt = kipppunkt !== null && kipppunkt !== "suche";
+  const allein = props.ohneAmbrose === true;
+  const suche = allein ? "ergebnis.kipppunktSucheAllein" : "ergebnis.kipppunktSuche";
+  const satz = allein ? "ergebnis.kipppunktAllein" : "ergebnis.kipppunkt";
   return (
     <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-ergebnis">
       <p>
@@ -50,10 +57,10 @@ export function Partieergebniskarte(props: {
           </strong>
         </p>
       )}
-      {kipppunkt === "suche" && <p className="lade">{tSpiel("ergebnis.kipppunktSuche")}</p>}
+      {kipppunkt === "suche" && <p className="lade">{tSpiel(suche)}</p>}
       {mitKipppunkt && (
         <>
-          <p>{tSpiel("ergebnis.kipppunkt", { zug: zugNummer(kipppunkt) })}</p>
+          <p>{tSpiel(satz, { zug: zugNummer(kipppunkt) })}</p>
           <button
             type="button"
             className="knopf-haupt"

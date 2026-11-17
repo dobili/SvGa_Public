@@ -33,6 +33,7 @@ import { useDaten } from "../../ui/komponenten/bausteine/useDaten";
 import {
   HinweisKontext,
   LoesungGezeigtKontext,
+  OhneMentorKontext,
   SpielanzeigeKontext,
 } from "../../ui/trainer/imSpiel";
 import { Rundenrahmen } from "../../ui/trainer/Rundenrahmen";
@@ -45,6 +46,7 @@ import type { Aufgabenergebnis } from "../schnittstelle/aufgaben";
 import type { Massstab } from "../../training/endspieltrainer";
 import { rundenBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { useZurWelt } from "./zurWelt";
+import { ambroseNichtDa } from "../regeln/abwesenheit";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { ErinnerungsRunde } from "./ErinnerungsRunde";
@@ -285,53 +287,58 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
   };
   return (
     <TischblasenRahmen>
-      <Huelle
-        figur={auftrag ? tSpiel(auftrag.steller) : ""}
-        sprecher={auftrag ? sprecherAusSchluessel(auftrag.steller) : null}
-        testid="abenteuer-aufgaben"
-        klasse="abenteuer-huelle-aufgaben"
-      >
-        {/* Lebendschach (Weg 9): das Bild der Lichtung hinter dem Brett, wie in der Partie. */}
-        <Kulisse karte={auftrag?.kulisse ?? null} />
-        {/* Sprechblasen (docs/spiel/29): oben wer die Aufgaben stellt, unten Ambrose. */}
-        <Tischblase lage="oben" />
-        <Tischblase lage="unten" />
-        {!auftrag && (
-          <section className="karte">
-            <p className="fehlertext">{t("abenteuer.aufgaben.keinAuftrag")}</p>
-            <ZurueckKnopf />
-          </section>
-        )}
-        {auftrag?.erinnerung && (
-          <ErinnerungsRunde
-            erinnerung={auftrag.erinnerung}
-            steller={auftrag.steller}
-            kennung={auftrag.kennung}
-            beiEnde={beiEnde}
-            zurueck={<ZurueckKnopf />}
-          />
-        )}
-        {auftrag && !auftrag.erinnerung && (taktik.art === "laedt" || zusaetze.art === "laedt") && (
-          <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
-        )}
-        {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length === 0 && (
-          <section className="karte">
-            <p className="hinweis">{t("trainer.keineAufgaben")}</p>
-            <ZurueckKnopf />
-          </section>
-        )}
-        {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
-          <Runde
-            aufgaben={aufgaben}
-            massstab={endspiele.art === "fertig" ? endspiele.wert.massstab : null}
-            beiEnde={beiEnde}
-            steller={auftrag.steller}
-            kennung={auftrag.kennung}
-            bisher={bisher}
-            beiAntwort={sichereZwischenstand}
-          />
-        )}
-      </Huelle>
+      {/* Ohne Ambrose (regeln/abwesenheit.ts) heißt der Hinweisknopf „Hinweis“ statt „Ambrose fragen“. */}
+      <OhneMentorKontext value={ambroseNichtDa(stand?.dialogvariablen ?? {})}>
+        <Huelle
+          figur={auftrag ? tSpiel(auftrag.steller) : ""}
+          sprecher={auftrag ? sprecherAusSchluessel(auftrag.steller) : null}
+          testid="abenteuer-aufgaben"
+          klasse="abenteuer-huelle-aufgaben"
+        >
+          {/* Lebendschach (Weg 9): das Bild der Lichtung hinter dem Brett, wie in der Partie. */}
+          <Kulisse karte={auftrag?.kulisse ?? null} />
+          {/* Sprechblasen (docs/spiel/29): oben wer die Aufgaben stellt, unten Ambrose. */}
+          <Tischblase lage="oben" />
+          <Tischblase lage="unten" />
+          {!auftrag && (
+            <section className="karte">
+              <p className="fehlertext">{t("abenteuer.aufgaben.keinAuftrag")}</p>
+              <ZurueckKnopf />
+            </section>
+          )}
+          {auftrag?.erinnerung && (
+            <ErinnerungsRunde
+              erinnerung={auftrag.erinnerung}
+              steller={auftrag.steller}
+              kennung={auftrag.kennung}
+              beiEnde={beiEnde}
+              zurueck={<ZurueckKnopf />}
+            />
+          )}
+          {auftrag &&
+            !auftrag.erinnerung &&
+            (taktik.art === "laedt" || zusaetze.art === "laedt") && (
+              <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+            )}
+          {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length === 0 && (
+            <section className="karte">
+              <p className="hinweis">{t("trainer.keineAufgaben")}</p>
+              <ZurueckKnopf />
+            </section>
+          )}
+          {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
+            <Runde
+              aufgaben={aufgaben}
+              massstab={endspiele.art === "fertig" ? endspiele.wert.massstab : null}
+              beiEnde={beiEnde}
+              steller={auftrag.steller}
+              kennung={auftrag.kennung}
+              bisher={bisher}
+              beiAntwort={sichereZwischenstand}
+            />
+          )}
+        </Huelle>
+      </OhneMentorKontext>
     </TischblasenRahmen>
   );
 }

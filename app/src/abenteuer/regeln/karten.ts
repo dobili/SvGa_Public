@@ -22,7 +22,7 @@ import {
 } from "../schnittstelle/karten";
 import type { Ausgang, Nadelstufe } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
-import { ambroseFehlt } from "./abwesenheit";
+import { ambroseNichtDa } from "./abwesenheit";
 
 /** Rangfolge der Nadeln (R21: beste bleibt). */
 const NADELRANG: Readonly<Record<Nadelstufe, number>> = { bronze: 1, silber: 2, gold: 3 };
@@ -196,9 +196,10 @@ export function deckgroesse(gegenstaende: readonly string[]): number {
 
 /**
  * Regel R29: Zwischen „Tiefpunkt“ (Port Delacroix) und „Versöhnung“ (Desert Springs) ist der
- * Mentor-Zug gesperrt; Ambrose hat {held} verlassen und zieht nicht für ihn.
- * Beispiel: tiefpunktGesehen true, versoehnungGesehen false → gesperrt.
+ * Mentor-Zug gesperrt; Ambrose hat {held} verlassen und zieht nicht für ihn. Dasselbe gilt nach
+ * dem Abschied (Q21-5, regeln/abwesenheit.ts ambroseNichtDa).
+ * Beispiel: tiefpunktGesehen true, versoehnungGesehen false → gesperrt; abschiedGesehen → gesperrt.
  */
 export function mentorzugGesperrt(variablen: Abenteuerstand["dialogvariablen"]): boolean {
-  return ambroseFehlt(variablen);
+  return ambroseNichtDa(variablen);
 }

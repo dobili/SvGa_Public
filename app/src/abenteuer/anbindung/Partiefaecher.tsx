@@ -49,7 +49,8 @@ function kartenbeschriftung(sorte: Kartensorte, zustand: Kartenzustand): string 
 /**
  * Fächer und herausgehobene Karte.
  * Eingaben: Partiekarten, die Sorten des Decks (in Deckreihenfolge), Spiel- und Partielage, die
- * gerade wirkende Karte und `beiSpielen` (der Ablauf der Kartenleiste).
+ * gerade wirkende Karte und `beiSpielen` (der Ablauf der Kartenleiste); `ambroseDa` (Vorgabe ja)
+ * für die Erklärung im Kartenblick.
  */
 export function Partiefaecher({
   karten,
@@ -57,6 +58,7 @@ export function Partiefaecher({
   lage,
   partielage,
   laeuft,
+  ambroseDa = true,
   beiSpielen,
 }: {
   readonly karten: Partiekarten;
@@ -64,6 +66,7 @@ export function Partiefaecher({
   readonly lage: Spiellage;
   readonly partielage: Partielage;
   readonly laeuft: string | null;
+  readonly ambroseDa?: boolean;
   readonly beiSpielen: (sorte: Kartensorte) => void;
 }) {
   const [offen, setzeOffen] = useState<string | null>(null);
@@ -101,6 +104,7 @@ export function Partiefaecher({
           ansicht={ansichtVon(befund.zustand)}
           grund={befund.grund}
           spielbar={befund.zustand === "spielbar"}
+          ambroseDa={ambroseDa}
           beiZurueck={schliesse}
           beiAusspielen={() => {
             schliesse();

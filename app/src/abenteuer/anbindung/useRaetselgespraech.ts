@@ -6,13 +6,14 @@
  * Rolle im Gesamtbild: Haken für anbindung/AufgabenAnsicht.tsx und ErinnerungsRunde.tsx; die
  * Regeln (wer, wie oft) stehen in regeln/tischgespraech.ts, die Texte in anbindung/tischtexte.ts,
  * die Zeilen gehen in die Sprechblasen (anbindung/Tischblase.tsx). Ambrose fehlt, wo
- * regeln/abwesenheit.ts es sagt, und spricht nicht unten, wenn er selbst die Aufgaben stellt.
+ * regeln/abwesenheit.ts es sagt (Tiefpunkt, nach dem Abschied; dann schweigt er auch als Steller
+ * seiner Erinnerungen), und spricht nicht unten, wenn er selbst die Aufgaben stellt.
  * Leitsatz 5: Die Zeilen zu „falsch“ machen Mut, spotten nie.
  * Abhängigkeiten: regeln/tischgespraech.ts, regeln/abwesenheit.ts, anbindung/tischtexte.ts,
  * anbindung/tischsprecher.ts, anbindung/huellentexte.ts.
  */
 import { useRef } from "react";
-import { AMBROSE, ambroseFehlt } from "../regeln/abwesenheit";
+import { raetselstimmen } from "../regeln/abwesenheit";
 import { raetselsprecher, temperamentVon, TEMPERAMENT_DER_RAETSEL } from "../regeln/tischgespraech";
 import type { Raetselereignis } from "../regeln/tischereignisse";
 import { tSpiel } from "../texte/texte";
@@ -119,16 +120,20 @@ export function useRaetselgespraech(steller: string | null, kennung: string): Ra
   });
   const sprecher = steller ? sprecherAusSchluessel(steller) : null;
   const profil = sprecher ? liste.find((g) => kurzname(g.kennung) === sprecher) : undefined;
-  const tisch: Raetseltisch | null = blasen && {
-    blasen,
-    stimme: profil
-      ? { kennung: profil.kennung, temperament: temperamentVon(profil) }
-      : { kennung: "", temperament: TEMPERAMENT_DER_RAETSEL },
-    sprecher,
-    name: steller ? tSpiel(steller) : "",
-    ambroseDa: !ambroseFehlt(stand?.dialogvariablen ?? {}) && sprecher !== AMBROSE,
-    kennung,
-  };
+  const stimmen = raetselstimmen(sprecher, stand?.dialogvariablen ?? {});
+  const tisch: Raetseltisch | null =
+    blasen && stimmen.steller
+      ? {
+          blasen,
+          stimme: profil
+            ? { kennung: profil.kennung, temperament: temperamentVon(profil) }
+            : { kennung: "", temperament: TEMPERAMENT_DER_RAETSEL },
+          sprecher,
+          name: steller ? tSpiel(steller) : "",
+          ambroseDa: stimmen.ambrose,
+          kennung,
+        }
+      : null;
   const melde = (ereignis: Raetselereignis, aufgabe: number) => {
     if (tisch) sprich(tisch, gedaechtnis.current, ereignis, aufgabe);
   };

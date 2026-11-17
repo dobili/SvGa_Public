@@ -43,7 +43,7 @@ import { Zugkommentare, type Rateversuch } from "./Zugkommentare";
 import { Zugvergleich } from "./Zugvergleich";
 import { Zusatzkarte } from "./Zusatzkarte";
 import { partieKennung, useRatestand, type Ratezustand } from "./useRatestand";
-import { useImSpiel } from "./imSpiel";
+import { useHinweistext, useImSpiel } from "./imSpiel";
 
 const KEINE_WAHL = () => undefined;
 
@@ -95,11 +95,12 @@ function markierungen(
 function Hinweis({ aktiv, zeige }: { aktiv: boolean; zeige: () => void }) {
   // Im Schach-Abenteuer hilft Ambrose: „Ambrose fragen“ statt „Hinweis: Figur zeigen“.
   const imSpiel = useImSpiel();
+  const imSpieltext = useHinweistext();
   if (aktiv) return <p className="hinweis">{t("zugerraten.hinweisAktiv")}</p>;
   return (
     <button type="button" className="knopf-zweit" onClick={zeige} data-testid="zugerraten-hinweis">
       <Knopfsymbol art="hinweis" />
-      {t(imSpiel ? "imSpiel.hinweis" : "zugerraten.hinweis")}
+      {imSpiel ? imSpieltext : t("zugerraten.hinweis")}
     </button>
   );
 }

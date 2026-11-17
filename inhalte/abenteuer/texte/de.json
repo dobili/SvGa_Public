@@ -124,6 +124,8 @@
   "ergebnis.kipppunkt": "Ambrose: „Hier ist es passiert, in Zug {zug}. Noch einmal von hier?“",
   "ergebnis.nochEinmal": "Noch einmal von Zug {zug}",
   "ergebnis.kipppunktSuche": "Ambrose sieht sich die Partie an …",
+  "ergebnis.kipppunktAllein": "Du gehst die Partie noch einmal durch. In Zug {zug} ist sie gekippt. Noch einmal von hier?",
+  "ergebnis.kipppunktSucheAllein": "Du gehst die Partie noch einmal durch …",
   "figur.juno.name": "Juno",
   "figur.lily.name": "Lily",
   "figur.abernathy.name": "Mr. Abernathy",

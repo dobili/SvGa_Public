@@ -17,7 +17,7 @@ import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
 import { schutzengelGesperrt } from "../regeln/schutzengel";
-import { ambroseFehlt, ambroseSprichtJetzt } from "../regeln/abwesenheit";
+import { ambroseNichtDa, ambroseSprichtJetzt } from "../regeln/abwesenheit";
 import { kaufe } from "../regeln/muenzen";
 import { variablenAusBesitz } from "../regeln/dialogvariablen";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
@@ -50,7 +50,7 @@ import { Orientierung } from "./Orientierung";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
-/** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
+/** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose, ohne ihn gegen Juno. */
 const REISEBRETT = "reisebrett";
 /** Gegenstand „Monatskarte“ (docs/spiel/11, I6): Schnellreise in besuchte Städte. */
 const MONATSKARTE = "monatskarte";
@@ -239,7 +239,7 @@ export function Oberwelt() {
           )}
           farbeFrei={deckwahl.farbeFrei === true}
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
-          ambroseFehlt={ambroseFehlt(stand.dialogvariablen)}
+          ambroseNichtDa={ambroseNichtDa(stand.dialogvariablen)}
           schutzengelGesperrt={schutzengelGesperrt(stand.dialogvariablen, deckwahl.kennung)}
           freieKarten={deckwahl.freieKarten ?? []}
           beiWahl={(deck, zeit, farbe) =>
@@ -353,6 +353,7 @@ export function Oberwelt() {
           club={welt?.ort.club ? tSpiel(welt.ort.club.name) : null}
           neueNadel={partie.neueNadel}
           kipppunkt={partie.kipppunkt}
+          ohneAmbrose={ambroseNichtDa(stand.dialogvariablen)}
           beiWiedereinstieg={(p) => partie.starteWiedereinstieg(ergebnis, p)}
           beiWeiter={() => {
             partie.schliesseErgebnis();

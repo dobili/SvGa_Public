@@ -24,6 +24,7 @@ VAR abzeichenGefunden = false
 VAR ausgangGhostTownFernpartie = ""
 VAR fernpartieGespielt = false
 VAR victorSaloonGetroffen = false
+VAR ausgangCapitalArenaFinale = ""
 VAR held = "Du"
 
 // ---------------------------------------------------------------- Victor und die Fernpartie
@@ -139,7 +140,7 @@ Er wischt sich über die Augen. #sprecher:erzaehler #pause:2
 Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.schluss
 {ausgangGhostTownFernpartie == "sieg": Gewonnen. Ich habe es nie gebraucht, und es freut mich trotzdem wie einen Jungen am Kai. #sprecher:ambrose #stimmung:froh}
 Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor #stimmung:laechelt
-Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch. #sprecher:erzaehler
+{hatHalesSeite:Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Dann gibt er sie dir zurück.|Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch.} #sprecher:erzaehler
 Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor #stimmung:nachdenklich
 In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 ~ gibFund("schlussstellungFernpartie")
@@ -152,7 +153,7 @@ In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 ->->
 
 === victor_alltag ===
-{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":Das Finale war die zweitschönste Partie. Die schönste stand hier.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.}} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Brett und Abzeichen

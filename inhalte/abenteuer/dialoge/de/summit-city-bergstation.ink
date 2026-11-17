@@ -28,6 +28,10 @@ VAR victorBergstationGesprochen = false
 VAR victorSeiteGegeben = false
 VAR ausgangSummitCityVictorFrei = ""
 VAR pfeifeGefunden = false
+// Aus silicon-bay-lobby.ink, ironwood-aussen.ink und der Hülle (nur gelesen).
+VAR notizbuchseiteFotografiert = false
+VAR einladungGesehen = false
+VAR ausgangCapitalArenaFinale = ""
 
 // ---------------------------------------------------------------- Victor
 
@@ -99,7 +103,17 @@ Das hat meinem Großvater gehört. Er hat es mir gegeben, als ich sieben war. Me
 Er hat gesagt, da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf. #sprecher:victor #stimmung:nachdenklich
 * [Hinsehen]
 - Zwischen den letzten Seiten liegt ein Blatt, herausgerissen, sauber, dicht am Falz. Die Schrift ist klein und senkrecht. #sprecher:erzaehler #musik:aus #pause:2
-In Silicon Bay hast du auf das Notizbuch gestarrt. In Ironwood auf ein Geländer. Und du redest mit einem Brett. #sprecher:victor #stimmung:nachdenklich
+{
+- notizbuchseiteFotografiert and einladungGesehen:
+    In Silicon Bay hast du auf das Notizbuch gestarrt. In Ironwood auf ein Geländer. #sprecher:victor #stimmung:nachdenklich
+- notizbuchseiteFotografiert:
+    In Silicon Bay hast du auf das Notizbuch gestarrt, als würdest du es kennen. #sprecher:victor #stimmung:nachdenklich
+- einladungGesehen:
+    In Ironwood hast du auf ein Geländer gestarrt, als stünde da etwas. #sprecher:victor #stimmung:nachdenklich
+- else:
+    Du siehst manchmal auf Dinge, die keiner sonst sieht. #sprecher:victor #stimmung:nachdenklich
+}
+Und du redest mit einem Brett. #sprecher:victor #stimmung:nachdenklich
 Ich hab meinen Vater gefragt, wer der Mann aus dem Süden war. Er hat es nicht gewusst. Ich glaub, du weißt es. #sprecher:victor #stimmung:nachdenklich
 -> victor_blatt
 
@@ -125,7 +139,11 @@ Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprech
 -> END
 
 === victor_alltag ===
-{~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
+{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":
+    {~Hier oben ist kein Netz. Ich komme immer noch her.|Mein Vater fährt jetzt manchmal mit hoch. Er sagt nichts. Das ist schön.} #sprecher:victor #stimmung:laechelt
+- else:
+    {~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Fund

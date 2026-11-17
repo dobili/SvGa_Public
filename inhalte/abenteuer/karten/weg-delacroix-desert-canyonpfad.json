@@ -53,10 +53,10 @@
     0,
     0,
     0,
-    0,
+    1,
     1,
     4,
-    0,
+    1,
     0,
     0,
     0,
@@ -17943,6 +17943,11 @@
    "name": "kennung",
    "type": "string",
    "value": "wegDelacroixDesert.canyonpfad"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "29,0;32,0"
   }
  ]
 }

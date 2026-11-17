@@ -233,7 +233,9 @@
           "ziel": {
             "karte": "mapleFalls.aussen",
             "ausloeser": "haustuer"
-          }
+          },
+          "wenn": "ersteLektionBesprochen",
+          "dialog": "maple-falls-wohnzimmer.haustuer"
         },
         {
           "name": "haustuer",

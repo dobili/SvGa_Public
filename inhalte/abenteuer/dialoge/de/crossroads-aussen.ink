@@ -19,6 +19,7 @@ VAR ankunftCrossroadsGesehen = false
 VAR novaBitteGehoert = false
 VAR slickGetroffen = false
 VAR miraCrossroadsGetroffen = false
+VAR atmeGesagt = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR rosieCrossroadsGetroffen = false
 VAR gatterschluessel = false
@@ -72,14 +73,14 @@ Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
 
 === mira ===
 {miraCrossroadsGetroffen:
-    {~Noch mal. Jetzt.|Atmen ist langweilig. Aber es hilft.|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
+    {~Noch mal. Jetzt.|{atmeGesagt:Atmen ist langweilig. Aber es hilft.|Im Canyon ist es still. Hier redet jeder.}|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
     -> END
 }
 ~ miraCrossroadsGetroffen = true
 Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
 Du. Noch mal. Jetzt. #sprecher:mira #stimmung:ernst
 * [„Nach dem Essen.“]
-- Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft. #sprecher:mira #stimmung:laechelt
+- {atmeGesagt:Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft.|Ich hab geübt. Jeden Tag im Canyon. Ich bin schneller geworden.} #sprecher:mira #stimmung:laechelt
 Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler #musik:crossroads
 -> END
 

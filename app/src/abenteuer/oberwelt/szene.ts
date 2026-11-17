@@ -20,6 +20,7 @@ import {
   type Ausloeser,
   type Meldezustand,
 } from "./ausloeserebene";
+import { OHNE_RAENDER, type Raender } from "./kamera";
 import { richteKameraEin } from "./kameraregie";
 import { ZOOM } from "./weltmassstab";
 import { kachelVon, tippschrittBeimLoslassen, zielErreicht, type Tippschritt } from "./tippschritt";
@@ -36,6 +37,8 @@ import {
 import { ladeMoebelbilder, rahmenJeTextur, richteMoebelrahmenEin, stelleMoebelAuf } from "./moebel";
 import { querziel } from "./laufhilfe";
 import { stelleFigurenAuf } from "./figurenaufstellung";
+import { sitzmoebelAus } from "./sitzplatz";
+import { sichtbarMesser } from "./sitzumriss";
 import { erscheinungsfeld, lasseGeistErscheinen } from "./geistfigur";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
@@ -100,8 +103,8 @@ export class Oberweltszene extends Phaser.Scene {
   /** Zielhinweis (zielmarker.ts) und das Ziel, das schon vor create() kommen kann. */
   private zielmarker: Zielmarker | null = null;
   private ziel: { feld: Zielfeld | null; an: boolean } = { feld: null, an: true };
-  /** Höhe des Streifens unten unter den Knöpfen in Spielpixeln (kameraregie.ts). */
-  private verdeckt = 0;
+  /** Ränder unter festen Bedienelementen in Spielpixeln (kamera.ts, kameraregie.ts). */
+  private verdeckt: Raender = OHNE_RAENDER;
 
   constructor(private readonly daten: Szenendaten) {
     super("oberwelt");
@@ -172,10 +175,12 @@ export class Oberweltszene extends Phaser.Scene {
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = liesAusloeserAus(karte);
     this.pause = EINGABEPAUSE_MS;
-    stelleFigurenAuf(this, held, this.ausloeser, this.daten, KACHEL, BILD_JE_RICHTUNG.unten);
     const liste = this.daten.moebel ?? [];
     if (this.daten.winter) faerbeWinterlich(this, rahmenJeTextur(liste));
     richteMoebelrahmenEin(this, liste);
+    // Sitzende rücken auf ihr Möbel (sitzplatz.ts); gemessen am geladenen Bild (sitzumriss.ts).
+    const sitze = sitzmoebelAus(liste, KACHEL, sichtbarMesser(this));
+    stelleFigurenAuf(this, held, this.ausloeser, this.daten, KACHEL, BILD_JE_RICHTUNG.unten, sitze);
     // Mit den feinen Sperren der Karte (Karteneditor 1.6, feinsperren.ts) in derselben Gruppe.
     const moebel = stelleMoebelAuf(this, liste, KACHEL, this.daten.karte);
     this.physics.add.collider(held, moebel);
@@ -183,7 +188,7 @@ export class Oberweltszene extends Phaser.Scene {
     [this.frei, this.zellfrei] = [sperrkarte.kachel, sperrkarte.zelle];
     this.ausloeser = mitDurchgang(this.ausloeser, this.frei, this.daten.uebergaenge ?? []);
     const stunde = this.daten.stunde ?? new Date().getHours();
-    const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur");
+    const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur", sitze);
     this.physics.add.collider(held, schicht.sperren());
     this.belebungsschicht = schicht;
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);

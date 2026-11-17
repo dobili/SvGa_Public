@@ -7,9 +7,10 @@
  * Statisten und 15 Tiere flüssig auf dem Handy): Tiere haben keinen Physikkörper, Statisten nur
  * ein unsichtbares Rechteck, das an- und ausgeschaltet wird; bewegt wird nur, was in der Nähe des
  * Bildausschnitts steht.
- * Abhängigkeiten: Phaser, figurbilder.ts.
+ * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
 import { rahmenzahl, setzeSitzend } from "./figurensitz";
+import { sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import { sitzbild } from "./sitzrichtung";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
@@ -51,6 +52,8 @@ interface Darsteller {
   readonly bogen: string | null;
   /** Unsichtbare Sperrfläche eines Statisten (nur im Stehen an). */
   readonly sperre: Phaser.GameObjects.Rectangle | null;
+  /** Feste Zeichentiefe einer Sitzenden auf ihrem Möbel (sitzplatz.ts); sonst die Fußlinie. */
+  readonly tiefe?: number;
 }
 
 /** Im Sichtbereich plus so viele Kacheln ringsum wird bewegt. */
@@ -108,7 +111,8 @@ export class Belebungsschicht {
 
   /**
    * Stellt alle Statisten (zur Stunde passend) und Tiere auf. `platzhalter` ist der Schlüssel des
-   * Bildes für Statisten ohne eigenen Bogen; Tiere ohne Bogen werden nicht gezeichnet.
+   * Bildes für Statisten ohne eigenen Bogen; Tiere ohne Bogen werden nicht gezeichnet. `sitze`
+   * (sitzplatz.ts, sitzmoebelAus) sind die Sitzmöbel der Karte: Sitzende rücken auf ihr Möbel.
    */
   constructor(
     private readonly szene: Phaser.Scene,
@@ -116,6 +120,7 @@ export class Belebungsschicht {
     private readonly kachel: number,
     stunde: number,
     platzhalter: string,
+    private readonly sitze: readonly Sitzmoebel[] = [],
   ) {
     for (const v of eintraege) {
       if (!passtZurStunde(v.wann, stunde)) continue;
@@ -131,9 +136,10 @@ export class Belebungsschicht {
     if (eigen) {
       erzeugeLaufanimationen(this.szene, bogen);
       sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
-      if (v.sitzt) setzeSitzend(sprite, v.sitzt);
     }
-    this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre());
+    const sitz = v.sitzt ? sitzlageAuf(this.sitze, v.feld, this.kachel) : null;
+    if (eigen && v.sitzt) setzeSitzend(sprite, v.sitzt, sitz);
+    this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre(), sitz?.tiefe);
   }
 
   /** Unsichtbare Fläche von einer Kachel, an der der Held anstößt (Statist oder Tier). */
@@ -170,8 +176,17 @@ export class Belebungsschicht {
     sprite: Phaser.GameObjects.Sprite,
     bogen: string | null,
     sperre: Phaser.GameObjects.Rectangle | null,
+    tiefe?: number,
   ): void {
-    const d: Darsteller = { v, b: neueBewegung(v.feld, v.blick), sprite, bogen, sperre };
+    const b = neueBewegung(v.feld, v.blick);
+    const d: Darsteller = {
+      v,
+      b,
+      sprite,
+      bogen,
+      sperre,
+      ...(tiefe === undefined ? {} : { tiefe }),
+    };
     this.darsteller.push(d);
     this.zeige(d);
   }
@@ -215,7 +230,7 @@ export class Belebungsschicht {
     const k = this.kachel;
     d.sprite.setPosition(d.b.x * k + k / 2, d.b.y * k + k / 2);
     const fliegt = d.v.verhalten === "fliegen" && !steht(d.b);
-    d.sprite.setDepth(fliegt ? FLUGTIEFE : d.sprite.y);
+    d.sprite.setDepth(fliegt ? FLUGTIEFE : (d.tiefe ?? d.sprite.y));
     if (!d.bogen) return;
     if (!steht(d.b)) d.sprite.anims.play(laufname(d.bogen, d.b.richtung), true);
     else {

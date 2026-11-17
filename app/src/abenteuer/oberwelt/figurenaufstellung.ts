@@ -4,13 +4,14 @@
  *
  * Rolle im Gesamtbild: ausgelagert aus oberwelt/szene.ts (Größengrenze 400 Zeilen, Spieltest
  * „einstieg“: Zielhinweis und Tippschritt kamen dazu). Abhängigkeiten: Phaser, ausloeserebene.ts,
- * figurbilder.ts, figurensitz.ts, geistfigur.ts, szenentypen.ts.
+ * figurbilder.ts, figurensitz.ts, geistfigur.ts, sitzplatz.ts, szenentypen.ts.
  */
 import type Phaser from "phaser";
 import type { Ausloeser } from "./ausloeserebene";
 import { standbild, stelleAufKachel } from "./figurbilder";
 import { setzeSitzend } from "./figurensitz";
 import { zeigeAlsGeist } from "./geistfigur";
+import { sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
 
 /**
@@ -18,7 +19,9 @@ import type { Szenendaten } from "./szenentypen";
  * Eingaben: Szene, Held, Auslöser der Karte, Szenendaten (Bögen, Geister), Kachelgröße und das
  * Bild „Blick nach unten“ im Platzhalterbogen. Beispiel: Mama im Wohnzimmer auf Kachel 16,7.
  * Sonderfall: Figur ohne eigenen Bogen → Platzhalterbild „figur“. Eine stehende Figur mit `blick`
- * (R008, etwa „links“ zur Kundschaft am Tresen) zeigt das Standbild dieser Richtung.
+ * (R008, etwa „links“ zur Kundschaft am Tresen) zeigt das Standbild dieser Richtung. Eine
+ * Sitzende rückt auf ihr Sitzmöbel aus `sitze` (sitzplatz.ts, sitzmoebelAus) und liegt in der
+ * Tiefe knapp darüber (Spieltest Variante B, F2: Sam saß neben dem Stuhl unter der Lehne).
  */
 export function stelleFigurenAuf(
   szene: Phaser.Scene,
@@ -27,6 +30,7 @@ export function stelleFigurenAuf(
   daten: Pick<Szenendaten, "figurenbilder" | "geister">,
   kachel: number,
   platzhalterUnten: number,
+  sitze: readonly Sitzmoebel[] = [],
 ): void {
   const gruppe = szene.physics.add.staticGroup();
   for (const a of ausloeser) {
@@ -41,9 +45,10 @@ export function stelleFigurenAuf(
     ) as Phaser.Physics.Arcade.Sprite;
     figur.setName(a.name);
     if (eigenes) stelleAufKachel(figur, kachel);
-    if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt);
+    const sitz = a.sitzt ? sitzlageAuf(sitze, a, kachel) : null;
+    if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt, sitz);
     if (daten.geister?.has(a.name)) zeigeAlsGeist(szene, figur);
-    figur.setDepth(figur.y);
+    figur.setDepth(sitz?.tiefe ?? figur.y);
   }
   szene.physics.add.collider(held, gruppe);
 }

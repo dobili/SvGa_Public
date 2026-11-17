@@ -197,6 +197,23 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
 {~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|{aufbruchGesehen:Dein Zimmer sieht fast bewohnt aus. Fast.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?}|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter #stimmung:laechelt
 -> END
 
+// ---------------------------------------------------------------- Haustür am ersten Tag
+
+// Übergang „haustuer“ nach draußen (orte.json, `wenn: ersteLektionBesprochen`): Der Dialog läuft vor
+// dem Wechsel, die Hülle prüft die Bedingung danach. Bis Ambrose die erste Partie besprochen hat
+// („Nimm das Brett mit, Kind“, maple-falls-dachboden.nach_erster_partie), bleibt {held} im Haus;
+// sonst spräche Ambrose draußen (Lily, Mr. Abernathy, Mrs. Calloway, Jo), obwohl das Brett noch auf
+// dem Dachboden liegt (Dialogprüfung 17.11.2026). Danach kommt hier keine Zeile, die Tür geht
+// einfach auf. Ambrose spricht in diesem Knoten nie: Vorher ist er nicht erwacht oder nicht dabei.
+=== haustuer ===
+{ersteLektionBesprochen: -> END}
+{brettBeruehrt:
+    Du hast die Hand schon an der Klinke. Aber oben auf dem Dachboden steht das Brett, und es lässt dich nicht los. #sprecher:erzaehler
+- else:
+    Die Stadt läuft nicht weg. Heute ist Umzug. Sieh dich lieber erst auf dem Dachboden um, da oben steht noch alles voll. #sprecher:mutter #stimmung:muede
+}
+-> END
+
 // ---------------------------------------------------------------- Abend im Diner
 
 // Szene akt1.dinerAbend (Roman, Kapitel 7; neu gegenüber der Story-Bibel), etwa vier Minuten,

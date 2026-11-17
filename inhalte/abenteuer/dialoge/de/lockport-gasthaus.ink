@@ -68,6 +68,6 @@ Ein Foto der Schleuse im Hochwasser: nur noch die Kurbeln schauen aus dem Wasser
 -> END
 
 === kegelkoenig ===
-Auf der Tafel steht „Kegelkönig des Monats“. Darunter, seit fünfzehn Jahren nicht weggewischt: Henrik. #sprecher:erzaehler
+Auf der Tafel steht „Kegelkönig des Monats“. Darunter, seit über dreißig Jahren nicht weggewischt: Henrik. #sprecher:erzaehler
 Manche Throne bleiben einfach besetzt. #sprecher:ambrose #stimmung:laechelt
 -> END

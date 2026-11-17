@@ -25,9 +25,9 @@ VAR angesehenHintertuer = false
     -> END
 }
 Kalt wie in einem Kühlschrank. Schränke aus Metall in langen Reihen, tausend grüne Lichter, ohne Takt. Hier also wohnt es. #sprecher:erzaehler
-In der dritten Schublade eines Rollschranks liegt eine weiße Schachtel. Darin, je in einer Mulde: Ohrstöpsel. Vier fehlen. #sprecher:erzaehler
+In der dritten Schublade eines Rollschranks liegt eine weiße Schachtel. Darin, je in einer Mulde: Ohrstöpsel. Fünf Mulden sind leer. #sprecher:erzaehler
 {ohrstoepselGefunden:
-    Du nimmst den Stöpsel von der Glasbrücke aus der Tasche. Er passt in die fünfte Mulde. #sprecher:erzaehler #pause:2
+    Der Stöpsel von der Glasbrücke passt genau in eine davon. Vier bleiben leer. #sprecher:erzaehler #pause:2
 - else:
     Hautfarben, mit einem winzigen Loch an der Seite. Darin glänzt etwas Metallenes. #sprecher:erzaehler
 }

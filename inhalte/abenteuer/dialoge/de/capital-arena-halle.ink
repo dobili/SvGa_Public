@@ -136,6 +136,12 @@ VAR pauseNachRunde2Gesehen = false
 
 // Roman Kapitel 61: Nova ohne Gerät, beide Ohren frei, der Stöpsel offen neben der Uhr.
 === runde3_vorher ===
+// Nachspiel der Runde 3: Nova hat ihre erste Partie ohne Gerät schon hinter sich.
+{gespielt(ausgangCapitalArenaRunde3):
+    Nova gibt dir noch einmal die Hand. Diesmal zittert sie kaum. #sprecher:erzaehler
+    Noch mal. Jetzt weiß ich, wie ich anfange. #sprecher:nova #stimmung:laechelt
+    -> runde3_spielen
+}
 Sie sitzt schon da, im zu großen Pullover, die Haare zurückgebunden, sodass man beide Ohren sieht. Das soll man bemerken. #sprecher:erzaehler
 Neben der Uhr liegt etwas Kleines, Hautfarbenes, offen, wo jeder es sehen kann. Am Rand steht ein Mann mit einem Prüfgerät. #sprecher:erzaehler
 Nova gibt dir die Hand. Ihre zittert so, dass du es bis in den Ellbogen spürst. #sprecher:erzaehler
@@ -277,7 +283,7 @@ Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #spr
 ~ halbfinaleVorherGesehen = true
 Kade Sterling gibt dir die Hand, ohne dich anzusehen. Er ist nicht unfreundlich. Er ist nicht da. #sprecher:erzaehler
 Am Rand schwenkt der Funkprüfer sein Gerät, sieht auf die Anzeige und schüttelt den Kopf. #sprecher:erzaehler
-Er sucht an der falschen Stelle. Seit das Mädchen ausgesagt hat, wissen sie, wonach er sucht. #sprecher:ambrose #stimmung:nachdenklich
+Er sucht an den Ohren. Seit das Mädchen ausgesagt hat, wissen die anderen, dass dort gesucht wird. #sprecher:ambrose #stimmung:nachdenklich
 Neben deinen Karten liegt eine vierte, die du nicht hingelegt hast. „Mentor-Zug“, mit einem goldenen Rand. #sprecher:erzaehler
 Ein einziges Mal. Heute. Wenn du mich rufst, komme ich. Wenn nicht, schaue ich zu. Beides ist mir recht. #sprecher:ambrose #stimmung:laechelt
 * [„Was passiert, wenn ich sie spiele?“]
@@ -327,7 +333,7 @@ Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht er da?“ Un
 // Roman Kapitel 63, nach dem Sieg: Kade und „Das ist meine unsterbliche Partie. Mit dir.“
 === halbfinale_danach ===
 ~ halbfinaleDanachGesehen = true
-Kade sitzt da, in einem Schuh, und sieht auf seinen König. Er hat es zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh. #sprecher:erzaehler
+Kade sitzt da, einen Schuh ausgezogen, und sieht auf seinen König. Er hat es zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh. #sprecher:erzaehler
 Du gehst um den Tisch und hältst ihm die Hand hin. Er nimmt sie. #sprecher:erzaehler
 Ich hab ihn nicht gesehen. Ich hab seit dem Frühjahr kein Brett mehr angeguckt. Ich war mal richtig gut. In der achten Klasse. #sprecher:kade #stimmung:bitter
 * [„Dann bist du es noch. Frag Nova.“]
@@ -457,7 +463,11 @@ Die Siegerehrung vergisst du. Es gibt einen Pokal, der zu groß ist, und Hände,
 
 === marcus ===
 {gespielt(ausgangCapitalArenaRunde2):
-    Dieser stille Zug. Den hab ich nicht kommen sehen. Den sieht keiner kommen. #sprecher:marcus #stimmung:ueberrascht
+    {ausgangCapitalArenaRunde2 == "niederlage":
+        Eine Gabel, drei Züge vorher angekündigt. Nicht laut. Aber angekündigt. #sprecher:marcus #stimmung:laechelt
+    - else:
+        Dieser stille Zug. Den hab ich nicht kommen sehen. Den sieht keiner kommen. #sprecher:marcus #stimmung:ueberrascht
+    }
 - else:
     Marcus. Ich sehe jede Gabel. #sprecher:marcus #stimmung:laechelt
     Jede! Na gut, fast jede. #sprecher:marcus #stimmung:lacht
@@ -469,7 +479,7 @@ Die Siegerehrung vergisst du. Es gibt einen Pokal, der zu groß ist, und Hände,
 - gespielt(ausgangCapitalArenaRunde3) and not novaNachPartieGesehen:
     -> nova_nach_partie
 - aussageGesehen and novaHilfeZugesagt:
-    Du hast neben mir gestanden. Das vergesse ich nicht. Jetzt bin ich frei. #sprecher:nova #stimmung:froh
+    Du hast in der ersten Reihe gestanden. Das vergesse ich nicht. Jetzt bin ich frei. #sprecher:nova #stimmung:froh
 - aussageGesehen:
     Ich hab es gesagt. Alles. Jetzt bin ich frei. Und ein bisschen müde. #sprecher:nova #stimmung:laechelt
 - gespielt(ausgangCapitalArenaRunde3):
@@ -503,7 +513,11 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 
 === tobias ===
 {gespielt(ausgangCapitalArenaRunde4):
-    Du hast mich auf meiner eigenen Uhr erwischt. Respekt. #sprecher:tobias #stimmung:laechelt
+    {ausgangCapitalArenaRunde4 == "niederlage":
+        Fünf Minuten. Siehst du, eine Ewigkeit. Nur nicht für dich. #sprecher:tobias #stimmung:lacht
+    - else:
+        Du hast mich auf meiner eigenen Uhr erwischt. Respekt. #sprecher:tobias #stimmung:laechelt
+    }
 - else:
     Tobias. Fünf Minuten sind eine Ewigkeit. #sprecher:tobias #stimmung:laechelt
     Für mich. Für dich gleich nicht mehr. #sprecher:tobias #stimmung:lacht
@@ -539,7 +553,8 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 ~ mappeGezeigt = true
 Du legst Dr. Lin deine eigene Mappe hin: die Drohne, der Funkmast, der Messwagen, die Server, der Geysirantrag, der Greifarm. #sprecher:erzaehler
 Das hier kenne ich. Woher hast du das? #sprecher:lin #stimmung:ueberrascht
-Sie blättert lange. Damit wird unsere Aussage doppelt so schwer. Danke. Und bitte sei vorsichtig. #sprecher:lin #stimmung:nachdenklich
+Sie blättert lange. #sprecher:erzaehler
+Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach. Danke. #sprecher:lin #stimmung:nachdenklich
 ~ gibFund("fotoMappe")
 Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambrose #stimmung:laechelt
 -> END

@@ -85,7 +85,7 @@ Diese Partie gehört euch. Keine Karten. Kein Wort von mir. Die nächsten Züge 
 * [„Ich spiele für dich.“]
 - Nein. Du spielst für dich, mit meinen Figuren. Das ist ein Unterschied, und er ist mir wichtig. #sprecher:ambrose #stimmung:nachdenklich
 Ein Turm gegen zwei Springer. Du stehst besser. Aber zwei Springer sind wie zwei Hunde, die ein Schaf nicht aus den Augen lassen. #sprecher:erzaehler #musik:aus
-* [Den König ziehen]
+* [Den ersten Zug machen]
     ~ beginnePartie("ghostTown.fernpartie")
     -> END
 * [„Gleich.“]
@@ -126,7 +126,7 @@ Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. Und eu
 Er wischt sich über die Augen. #sprecher:erzaehler #pause:2
 Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.schluss
 {ausgangGhostTownFernpartie == "sieg": Du hast für mich gewonnen, was ich nie gebraucht hätte. #sprecher:ambrose #stimmung:laechelt}
-Das beste, das ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor #stimmung:laechelt
+Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor #stimmung:laechelt
 Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch. #sprecher:erzaehler
 Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor #stimmung:nachdenklich
 In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
@@ -140,7 +140,7 @@ In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 ->->
 
 === victor_alltag ===
-{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|Bei der Meisterschaft spiele ich gegen dich. Ich freu mich. Ehrlich.} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Brett und Abzeichen
@@ -174,8 +174,8 @@ In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne au
 }
 ~ gibFund("postreiterabzeichen")
 Er hat meinen Brief getragen. #sprecher:ambrose #stimmung:fern #pause
-Gegenüber im Laden hält die Treppe noch. Das Zimmer darüber ist leer. In einer Ecke hängt ein Fetzen Tapete, groß wie deine Hand. Rosen. #sprecher:erzaehler #bild:tapete_rosen
-Dreihundertzwölf. Auf dieser Wand. Ich bin nie über die andere hinausgekommen. #sprecher:ambrose #stimmung:still #bild:aus
+Durch die Schwingtür siehst du gegenüber den Laden. Hinten darin führt eine Treppe hinauf zu dem Zimmer. #sprecher:erzaehler
+Dreihundertzwölf Rosen. Auf einer Wand. Ich bin nie über die andere hinausgekommen. #sprecher:ambrose #stimmung:still #bild:aus
 Der Mond scheint durch ihn hindurch. #sprecher:erzaehler
 Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal. #sprecher:ambrose #stimmung:friedlich
 -> END

@@ -7,6 +7,8 @@ EXTERNAL gibFund(kennung)
 
 VAR hatLaterne = false
 VAR holzturmGefunden = false
+VAR holzspringerGefunden = false
+VAR holzlaeuferGefunden = false
 
 === schliessfach ===
 {
@@ -22,5 +24,9 @@ VAR holzturmGefunden = false
 ~ holzturmGefunden = true
 Du hältst die Laterne in das klemmende Schließfach. Hinten, unter einem alten Helm, liegt ein Turm aus hellem Holz. #sprecher:erzaehler
 ~ gibFund("holzturm")
-Der letzte. Jetzt ist der Satz vollständig. #sprecher:ambrose #stimmung:stolz
+{holzspringerGefunden and holzlaeuferGefunden:
+    Der letzte. Jetzt ist der Satz vollständig. #sprecher:ambrose #stimmung:stolz
+- else:
+    Noch einer aus demselben Holz. Irgendwo liegen die anderen. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END

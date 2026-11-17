@@ -55,7 +55,7 @@ Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutte
 ~ slickGetroffen = true
 Auf den Stufen vor dem Speisewagen sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
 … und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick #stimmung:lacht
-Er sieht dich und rutscht vom Geländer. #sprecher:erzaehler
+Er sieht dich und springt von den Stufen. #sprecher:erzaehler
 Maple Falls! #sprecher:slick #stimmung:froh
 Hast du den Springer? #sprecher:tamsin #stimmung:neutral
 * [Den Springer aus Stein hervorholen]
@@ -65,7 +65,7 @@ Ich hab es an die Brücke gehängt. Unter den Bogen, wo der Stein liegt. #sprech
 Ich hab seit März wieder angefangen. Mit den Dosen. Meine sind schief. Tamsin hat einen gekriegt. Bester Verlierer. #sprecher:slick #stimmung:laechelt
 Ich hab nur einmal verloren! #sprecher:tamsin #stimmung:bitter
 Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. Der gehört auf den Stein. #sprecher:slick #stimmung:lacht
-Es ist recht. #sprecher:erzaehler
+Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Mira und Tomás

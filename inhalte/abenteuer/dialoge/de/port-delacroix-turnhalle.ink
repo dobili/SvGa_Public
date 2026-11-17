@@ -54,7 +54,7 @@ VAR hatKartePlanfinder = false
 === vorwurf ===
 ~ tiefpunktGesehen = true
 Das Turnier ist in der Turnhalle der Schule. Unter dem Basketballkorb stehen Klapptische, die Bretter passen nicht zusammen. #sprecher:erzaehler
-Wenn ein Fremder hereinkommt, wird es einen Moment leiser. Du bist ein Fremder, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
+Wenn jemand Fremdes hereinkommt, wird es einen Moment leiser. Du bist fremd hier, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
 Aus Silicon Bay. Die waren hier, nach dem Sturm. Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy #stimmung:bitter
 Bildschirme haben sie gebracht. Zwanzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy #stimmung:bitter
 Er stößt seinen Trompetenkasten mit dem Fuß an. #sprecher:erzaehler
@@ -68,7 +68,7 @@ Du zählst. Es hilft nicht. Es hängt nichts, es gibt nur diese Mauer, und sie k
 König nach h1. #sprecher:ambrose #stimmung:nachdenklich #musik:zero
 * [„Was?“]
 - König. Eine Ecke weiter. Jetzt. #sprecher:ambrose #stimmung:nachdenklich
-Dein König steht sicher. Ihn zu bewegen ergibt keinen Sinn. #sprecher:erzaehler
+Dein König scheint sicher zu stehen. Ihn zu bewegen ergibt für dich keinen Sinn. #sprecher:erzaehler
 * [„Warum?“]
 - Spiel es. #sprecher:ambrose #stimmung:nachdenklich
 -> vorwurf_zug
@@ -224,7 +224,7 @@ Remy steht an der Wand, die Trompete unter dem Arm. Er sagt nichts. Er nickt. Ei
 
 === odile_simultan ===
 Die Bretter sind da, jetzt brauchen wir Geld für das Dach. #sprecher:odile #stimmung:nachdenklich
-Spielst du eine Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dollar in die Kasse. #sprecher:odile #stimmung:laechelt
+Spielst du ein Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dollar in die Kasse. #sprecher:odile #stimmung:laechelt
 + [„Ich spiele.“]
     Drei Tische, drei Kinder. Am dritten setzt sich Remy hin, die Arme verschränkt. #sprecher:erzaehler
     ~ beginneAufgaben("portDelacroix.simultan")
@@ -247,7 +247,8 @@ Die ganze Halle klatscht im Takt. Mama tanzt mit einem Mann aus dem Notzelt. #sp
 Miss Odile drückt dir eine Karte in die Hand: ein kleiner Engel mit einem Schild. #sprecher:erzaehler
 Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile #stimmung:laechelt
 ~ gibKarte("schutzengel")
-Den Geigenkasten schiebt sie dir über den Tisch. Der Kasten hat lange keine Geige mehr getragen. Jetzt hat er wieder was zu tun. #sprecher:odile #stimmung:laechelt
+Sie legt die Hand auf den Geigenkasten an deiner Seite. #sprecher:erzaehler
+Behalt ihn. Er hat lange keine Geige getragen, jetzt hat er wieder was zu tun. #sprecher:odile #stimmung:laechelt
 Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 -> END
 

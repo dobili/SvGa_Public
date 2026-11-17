@@ -35,6 +35,7 @@ VAR bildschirmtischeGesehen = false
 VAR albescuGetroffen = false
 VAR gefundenSchluessel = false
 VAR schuppenOffen = false
+VAR fahrradErhalten = false
 VAR holzlaeuferGefunden = false
 VAR nadelRiverton = 0
 VAR clubkampfRivertonBesprochen = false
@@ -132,7 +133,7 @@ Wir sind nicht mehr dazu gekommen. #sprecher:albescu #stimmung:bitter #pause:2
 ~ schuppenOffen = true
 Der Schlüssel aus dem Schilf. Du hast ihn vergessen, wie man Dinge vergisst, die nichts wiegen. #sprecher:erzaehler
 Du hältst ihn ihr hin. Sie sieht ihn an. Sie nimmt ihn nicht gleich. #sprecher:erzaehler #pause:2
-Den hat mein Mann verloren. Beim Angeln. Vor zwei Jahren! #sprecher:albescu #stimmung:froh
+Das ist seiner. Der runde Griff. Ich erkenn ihn sofort. #sprecher:albescu #stimmung:froh
 Sie lacht, und gleichzeitig wischt sie sich mit dem Handrücken über die Augen. #sprecher:erzaehler
 Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännchen in ihrer Schürze. Dann geht die Tür auf. #sprecher:erzaehler #klang:schloss
 -> END
@@ -149,7 +150,11 @@ Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännc
     Vor der Werkstatt steht ein Rad auf dem Kopf. Mrs. Albescu sitzt auf einem Hocker davor und dreht an der Kette. #sprecher:erzaehler
     Dafür brauche ich keine Knie. Nur Zeit. #sprecher:albescu #stimmung:laechelt
 - else:
-    {~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht.} #sprecher:albescu #stimmung:laechelt
+    {fahrradErhalten:
+        {~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Öl die Kette, wenn es geregnet hat. Hier regnet es immer.} #sprecher:albescu #stimmung:laechelt
+    - else:
+        Der Schuppen ist offen. Geh nur hinein, hinten unter der Plane steht etwas für dich. #sprecher:albescu #stimmung:laechelt
+    }
 }
 -> END
 
@@ -250,7 +255,7 @@ Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:er
 - else:
     An einem Tisch sitzt jetzt ein Junge, kleiner als Tamsin, allein. Der Bildschirm wirft Licht auf sein Gesicht. #sprecher:erzaehler
     Er sieht nicht auf. Der Tisch wartet geduldig, bis er zieht. #sprecher:erzaehler
-    Geduldig ist er, das muss man ihm lassen. Geduldiger als ich. #sprecher:ambrose #stimmung:nachdenklich
+    Geduldig ist der Tisch, das muss man ihm lassen. Geduldiger als ich. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
@@ -268,7 +273,7 @@ Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:am
 Unter der Brücke spielt ein Straßenmusiker Gitarre. Neben seinem Hut liegt ein Läufer aus hellem Holz. #sprecher:erzaehler
 „Den hab ich hier gefunden“, sagt er. „Behalt ihn, ich spiele nur Gitarre.“ #sprecher:erzaehler
 ~ gibFund("holzlaeufer")
-Noch ein Holzstück. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose #stimmung:nachdenklich
+Ein Läufer aus hellem Holz, ganz allein. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Anleger am Kanalbecken (Runde 6)

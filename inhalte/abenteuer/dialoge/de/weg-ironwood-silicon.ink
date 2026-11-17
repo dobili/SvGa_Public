@@ -50,7 +50,7 @@ VAR seite04Gefunden = false
     -> END
 }
 ~ kowalczykGetroffen = true
-Eine Fernfahrerin mit Armen wie Big Joe sieht dir zu, wie du in die erste Falle der Tafel hineintrittst. #sprecher:erzaehler
+Eine Fernfahrerin mit Armen wie Big Joe steht am Kaffeeautomaten und nickt zur Blechtafel mit den Fallen hinüber. #sprecher:erzaehler
 Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk #stimmung:neutral
 Ich fahr seit dreißig Jahren. Erst laden, dann fahren. Ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
 Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprecher:erzaehler
@@ -82,8 +82,8 @@ Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang 
 
 === joggerin_erstes_treffen ===
 ~ joggerinGetroffen = true
-Auf der Glasbrücke läuft eine Frau auf der Stelle. Ihre Uhr am Handgelenk piept ohne Pause. #sprecher:erzaehler
-Schach? Klar. Drei Minuten, plus zwei Sekunden. Mein Puls bleibt oben. #sprecher:joggerin #stimmung:laechelt
+Auf der Glasbrücke läuft eine Frau auf der Stelle. Ihre Uhr piept ohne Pause, ihr Blick fällt auf das Brett unter deinem Arm. #sprecher:erzaehler
+Schach? Klar. Drei Minuten, plus zwei Sekunden je Zug. Mein Puls bleibt oben. #sprecher:joggerin #stimmung:laechelt
 Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #stimmung:lacht
 -> joggerin_angebot
 
@@ -159,7 +159,8 @@ Du steckst ihn ein. Du hast dir angewöhnt, Dinge einzustecken. #sprecher:erzaeh
 }
 ~ glasbrueckeGesehen = true
 Die Brücke ist aus Glas. Der Boden, das Geländer, alles. Zwölf Meter tiefer fließen die Lichter der Autobahn. #sprecher:erzaehler
-Juno geht auf Zehenspitzen und hält sich an dir fest. Woher weißt du, dass das trägt? #sprecher:juno #stimmung:ueberrascht
+Juno geht auf Zehenspitzen und hält sich an dir fest. #sprecher:erzaehler
+Woher weißt du, dass das trägt? #sprecher:juno #stimmung:ueberrascht
 * [„Das trägt.“]
 * [„Ich weiß es nicht.“]
 - Du denkst an eine andere Brücke, aus schwarzem Eisen, mit Tausenden von Nieten, jede signiert. An der hast du nicht gezweifelt. #sprecher:erzaehler
@@ -185,7 +186,7 @@ Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschl
 -> stream_angebot
 
 === stream_angebot ===
-Der Chat liebt Fallen. Wenn er dir eine stellt, sieh sie. Wenn er sich selbst eine stellt, bestraf sie. Spielst du mit? #sprecher:kiki #stimmung:laechelt
+Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. Machst du mit? #sprecher:kiki #stimmung:laechelt
 Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
 + [„Ich spiele mit.“]
     ~ beginneAufgaben("wegIronwoodSilicon.stream")

@@ -97,7 +97,7 @@ Ich opfere den Läufer. #sprecher:mira #stimmung:ernst
 ->->
 
 === mira_wartet_brief ===
-Morgen Abend spielen wir. Heute bin ich im Canyon. Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira #stimmung:neutral
+Morgen Abend spielen wir. Heute geh ich noch in den Canyon. Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira #stimmung:neutral
 -> END
 
 === mira_clubkampf ===
@@ -109,11 +109,11 @@ Nur, wenn du willst. Dann kommentiere ich. Aber du entscheidest. #sprecher:ambro
 Ich habe gelernt, was geschieht, wenn es andersherum läuft. #sprecher:ambrose #stimmung:still
 Mira setzt sich. Ihre Füße reichen nicht bis zum Boden. #sprecher:erzaehler
 Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira #stimmung:laechelt
-* [„Ich will sehen, ob es stimmt.“]
++ [„Ich will sehen, ob es stimmt.“]
     Sie grinst. Zum ersten Mal sieht sie aus wie zehn. #sprecher:erzaehler #musik:desertSprings.clubkampf
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
-* [„Noch nicht.“]
++ [„Noch nicht.“]
     Okay. Ich warte. #sprecher:mira #stimmung:neutral
     -> END
 
@@ -146,10 +146,10 @@ Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand v
 
 === mira_nach_niederlage ===
 Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
-* [„Noch mal.“]
++ [„Noch mal.“]
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     -> END
 
 === mira_nach_sieg ===
@@ -166,7 +166,7 @@ Morgen. #sprecher:tomas #stimmung:nachdenklich
 Jetzt! #sprecher:mira #stimmung:bitter
 Mira. #sprecher:tomas #stimmung:nachdenklich
 Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand. #sprecher:erzaehler
-{atmeGesagt: -> warum_atme ->}
+{atmeGesagt and not warum_atme: -> warum_atme ->}
 -> END
 
 = warum_atme
@@ -190,8 +190,12 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 === mira_erinnerung ===
 // Kapitel 45 (Roman): die siebte Partie von 1858 auf dem Klapptisch. Musik: die Erinnerung von
 // Cedar Creek gedämpft; bei den drei fahrigen Zügen stolpert sie (ambrose.stolpert), S58.
+{mira_erinnerung_wahl:
+    Die Stellung von 1858 liegt noch auf dem Clubtisch, zwischen Zündkerze und Keksdose. #sprecher:erzaehler
+    -> mira_erinnerung_wahl
+}
 Abend in der Garage. Grillen, ein Radio aus dem Motel. Mira hockt auf einem Reifenstapel, isst Kekse und tut, als höre sie nicht zu. #sprecher:erzaehler #geraeusch:garage
-Ich habe sie niemandem gezeigt. Man hat nur das Ergebnis gedruckt. #sprecher:ambrose #stimmung:alt
+Die Partie von 1858 habe ich niemandem gezeigt. Man hat nur das Ergebnis gedruckt. #sprecher:ambrose #stimmung:alt
 * [„Er hat geschrieben, es war Mut.“]
 - Er war höflich. #sprecher:ambrose #stimmung:nachdenklich
 * [„Er war nie höflich. Er war unerträglich.“]
@@ -203,11 +207,13 @@ Bemerkenswert unnötig. #sprecher:ambrose #stimmung:still
 Er zeigt dir, was er danach spielte. Ein Schach, das nichts bringt. Ein Rückzug. Ein zweites Schach. #sprecher:erzaehler #klang:figuren_kippen
 Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. Ich wollte nur noch, dass es vorbei ist. #sprecher:ambrose #stimmung:bitter #pause:2 #bild:aus #erinnerung:aus
 Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zählst. #sprecher:erzaehler
-* [Die Stellung von 1858 spielen]
+-> mira_erinnerung_wahl
+=== mira_erinnerung_wahl ===
++ [Die Stellung von 1858 spielen]
     Du spielst Weiß. Gegen Hale, wie er damals saß. #sprecher:erzaehler
     ~ beginnePartie("desertSprings.erinnerung1858")
     -> END
-* [„Ein andermal.“]
++ [„Ein andermal.“]
     Ich habe hundertsechzig Jahre gewartet. Ein Abend mehr schadet nicht. #sprecher:ambrose #stimmung:laechelt
     -> END
 
@@ -269,10 +275,10 @@ Gut. Jetzt weißt du, wie es aussieht, wenn sie opfert. #sprecher:tomas #stimmun
 === tomas_reihe ===
 {not tomasGetroffen: -> tomas_erstes_treffen ->}
 Sie opfert. Immer. Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht, bist du in zwölf Zügen fertig. #sprecher:tomas #stimmung:nachdenklich
-* [„Zeig her.“]
++ [„Zeig her.“]
     ~ beginneAufgaben("desertSprings.reiheTomas")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Kein Problem. Das Auto wartet auch. #sprecher:tomas #stimmung:laechelt
     -> END
 
@@ -296,7 +302,7 @@ Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen n
 
 === dot ===
 {
-- not versoehnungGesehen: -> garage_wartet
+- not versoehnungGesehen: -> dot_vorher
 - not reiheTomasBestanden: -> dot_warten
 - not reiheDotBestanden: -> dot_reihe
 - not dotOkoroErzaehlt: -> dot_okoro
@@ -305,6 +311,10 @@ Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen n
 - else: -> dot_alltag
 }
 
+=== dot_vorher ===
+Eine alte Dame mit Lockenwicklern schreibt an einem Brief und sieht kurz auf. #sprecher:erzaehler
+Schach gibt's in der Garage, Liebes. Aber erst, wenn Mira aus dem Canyon zurück ist. #sprecher:dot #stimmung:laechelt
+-> END
 === dot_warten ===
 {not dotGetroffen: -> dot_margaret ->}
 Erst Tomás, Liebes. Ich bin danach dran. #sprecher:dot #stimmung:laechelt
@@ -324,7 +334,8 @@ Hier hatte ich eine, vierzig Jahre lang. Margaret. Aus einem Kaff mit einem Wass
 Im letzten Brief schrieb sie, sie räumt jetzt auf. Dann kam nichts mehr. Wir waren im einunddreißigsten Zug. #sprecher:dot #stimmung:bitter
 Ich stand besser. Ich sag das nicht gern, wenn jemand nicht mehr widersprechen kann. #sprecher:dot #stimmung:nachdenklich
 * [„Sie hat ein Brett abgestaubt. Sechzig Jahre lang.“]
-- Dot sieht dich an. Du kommst aus dem Kaff. #sprecher:dot #stimmung:ueberrascht
+- Dot sieht dich an. #sprecher:erzaehler
+Du kommst aus dem Kaff. #sprecher:dot #stimmung:ueberrascht
 * [„Ich wohne in ihrem Haus.“]
 - Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. Oben ein Wasserfall. #sprecher:erzaehler #bild:postkarten_wasserfall
 Dann weißt du vielleicht, was sie gezogen hätte. #sprecher:dot #stimmung:nachdenklich #bild:aus
@@ -336,10 +347,10 @@ An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:ris
 {not dotGetroffen: -> dot_margaret ->}
 Ich spiele seit fünfzig Jahren per Post. Ein Zug pro Woche, aber jeder sitzt. #sprecher:dot #stimmung:laechelt
 Meine Aufgaben greifen den König an. Langsam, Liebes, wie ein Brief. #sprecher:dot #stimmung:laechelt
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginneAufgaben("desertSprings.reiheDot")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Die Post kommt auch nicht schneller. #sprecher:dot #stimmung:laechelt
     -> END
 
@@ -354,12 +365,12 @@ Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #stimmung:ueberrascht 
 // Nebenaufgabe: Margarets Partie zu Ende spielen (Dot steht besser, Turm auf der siebten Reihe).
 === dot_fernpartie ===
 Dot legt ein kleines Steckbrett auf die Theke. Die Stellung nach dem einunddreißigsten Zug, seit Jahren unverändert. #sprecher:erzaehler
-Margaret hatte Schwarz. Mein Turm steht auf ihrer siebten Reihe. Spielst du für sie weiter, Liebes? #sprecher:dot #stimmung:nachdenklich
-* [„Ich spiele für Margaret.“]
+Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem Lager. Spielst du für sie weiter, Liebes? #sprecher:dot #stimmung:nachdenklich
++ [„Ich spiele für Margaret.“]
     Sie hat nie schnell gezogen. Lass dir Zeit. #sprecher:ambrose #stimmung:nachdenklich
     ~ beginnePartie("desertSprings.dotFernpartie")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Vierzig Jahre hat sie gewartet. Die Stellung auch. #sprecher:dot #stimmung:nachdenklich
     -> END
 
@@ -367,7 +378,8 @@ Margaret hatte Schwarz. Mein Turm steht auf ihrer siebten Reihe. Spielst du für
 ~ dotFernpartieBesprochen = true
 {ausgangDesertSpringsDotFernpartie:
 - "sieg":
-    Dot nimmt die Lesebrille ab. Du hast mich geschlagen. Mit ihren Figuren. #sprecher:dot #stimmung:froh
+    Dot nimmt die Lesebrille ab. #sprecher:erzaehler
+    Du hast mich geschlagen. Mit ihren Figuren. #sprecher:dot #stimmung:froh
     Sie hätte gelacht, glaube ich. Sie hat nie gelacht, wenn sie verloren hat. #sprecher:dot #stimmung:laechelt
 - "remis":
     Remis. Das ist gerecht. Wir hätten uns nie geeinigt, wer besser war. #sprecher:dot #stimmung:laechelt
@@ -380,5 +392,5 @@ An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. Jetzt weiß ich, wofür
 -> END
 
 === dot_alltag ===
-{~Heute kam ein Brief aus Reykjavík. Mein Gegner hat endlich gezogen. Nach drei Wochen.|Briefe sind wie Züge, Liebes. Man schickt sie los und wartet.|Willst du ein Zimmer? Für Schachspieler die Hälfte.} #sprecher:dot #stimmung:laechelt
+{~Heute kam ein Brief aus Reykjavík. Mein Gegner hat endlich gezogen. Nach vier Monaten.|Briefe sind wie Züge, Liebes. Man schickt sie los und wartet.|Willst du ein Zimmer? Für Schachspieler die Hälfte.} #sprecher:dot #stimmung:laechelt
 -> END

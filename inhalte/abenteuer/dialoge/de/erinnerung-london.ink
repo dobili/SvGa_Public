@@ -88,7 +88,7 @@ Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht 
 }
 In der Mitte ein Tisch, um den es still ist. Zwei Männer. Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler
 Anderssen. Aus Breslau. Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
-Der andere heißt Kieseritzky und gibt hier Unterricht, fünf Franc die Stunde. Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
+Der andere heißt Kieseritzky. In Paris gibt er Unterricht, fünf Franc die Stunde. Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
 Es sieht aus wie ein Unfall. Weiß hat schon einen Läufer hergegeben, die schwarze Dame steht tief in der weißen Stellung und frisst. #sprecher:erzaehler
 * [Hinsehen]
 - Der große Mann zieht einen Läufer. Mitten hinein, tief ins schwarze Lager. Ein Raunen. #sprecher:erzaehler
@@ -113,7 +113,7 @@ Eine große Uhr an der Wand des Kaffeehauses. Ihr Ticken klingt genau wie das de
 {londonSchlussGesehen: -> rueckkehr_telegraf}
 ~ londonSchlussGesehen = true
 Der große Mann zieht seinen König ein Feld nach vorn, als träte er einem Besucher entgegen. #sprecher:erzaehler
-Dann gleitet ein Läufer ein einziges Feld, und es ist vorbei. #sprecher:erzaehler #musik:aus
+Ein Springerschach, dann gibt er die Dame. Zuletzt gleitet ein Läufer ein einziges Feld, und es ist vorbei. #sprecher:erzaehler #musik:aus
 Matt. Mit drei kleinen Figuren, gegen eine ganze Armee, die nie aufgewacht ist. #sprecher:erzaehler #pause:2
 Niemand sagt etwas. #sprecher:erzaehler
 * [Warten]
@@ -122,7 +122,7 @@ Niemand sagt etwas. #sprecher:erzaehler
 === rueckkehr_telegraf ===
 Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht. #sprecher:erzaehler #klang:lachen_kieseritzky
 Er schüttelt dem anderen die Hand mit beiden Händen, ruft etwas auf Französisch und läuft zur Tür, ohne Hut. #sprecher:erzaehler #musik:london.lauf
-Seine Stimme ist wieder die alte. Sie zittert. #sprecher:erzaehler #pause
+Ambroses Stimme ist wieder die alte. Sie zittert. #sprecher:erzaehler #pause
 Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose #stimmung:laechelt
 Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose #stimmung:nachdenklich
 Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #stimmung:laechelt #pause:2

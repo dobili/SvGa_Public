@@ -25,6 +25,7 @@ VAR victorFalschGesagt = false
 VAR notizbuchseiteFotografiert = false
 VAR roboterGetroffen = false
 VAR tabletNachtGesehen = false
+VAR linGetroffen = false
 
 // ---------------------------------------------------------------- Victor
 
@@ -41,11 +42,11 @@ VAR tabletNachtGesehen = false
 ~ victorLobbyGetroffen = true
 Victor sitzt auf dem weißen Sofa der Lobby, unter einem Bildschirm mit dem Gesicht seines Vaters. #sprecher:erzaehler
 Mein Vater hält heute drei Reden. Ich muss bei allen klatschen. #sprecher:victor #stimmung:muede
-Geh erst zu Dr. Lin. Sie ist die Einzige hier, die noch ein Holzbrett hat. #sprecher:victor #stimmung:nachdenklich
+{linGetroffen:Du warst schon bei Dr. Lin? Gut.|Geh erst zu Dr. Lin.} Sie ist die Einzige hier, die noch ein Holzbrett hat. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_warten ===
-Theo misst dich gerade, oder? Er misst alle. Mich auch. #sprecher:victor #stimmung:nachdenklich
+Warst du schon bei Theo? Er misst alle. Mich auch. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_berichte ===
@@ -65,7 +66,7 @@ Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #s
 // Kapitel 33: die Auswertung mit Juno; Ambrose sieht auf das dunkle Tablet. Victors „Das ist
 // falsch“ aus der Story-Bibel (Abschnitt 18.1) steht am Schluss.
 ~ victorFalschGesagt = true
-{tabletNachtGesehen:Am Abend, im Hotelzimmer. Du sitzt bis Mitternacht allein auf dem Teppich.|Am Abend, im Hotelzimmer. Juno und du sitzt bis Mitternacht auf dem Teppich.} #sprecher:erzaehler
+{tabletNachtGesehen:Am Abend, im Hotelzimmer. Du sitzt bis Mitternacht auf dem Teppich, Juno am Telefon.|Am Abend, im Hotelzimmer. Juno und du sitzt bis Mitternacht auf dem Teppich.} #sprecher:erzaehler
 Im Training spielt Nova vierundsiebzig Prozent, jede Woche, das ganze Jahr. Im Turnier achtundneunzig. #sprecher:erzaehler #musik:spannung
 Vielleicht ist sie im Turnier besser. Manche sind das. #sprecher:juno #stimmung:nachdenklich
 * [„Nicht so.“]
@@ -78,13 +79,13 @@ Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprec
 Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 * [Schlafen gehen]
-- Am nächsten Morgen wartet Victor in der Lobby. Er hat die Berichte auch gesehen. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
 -> END
 
 === victor_alltag ===
-{~Mein Vater hat gefragt, ob du gut bist. Ich hab „ja“ gesagt. Er hat nichts mehr gefragt.|Ich glaube, ich hab heute zum ersten Mal ein Spiel genossen. Gegen dich. Das ist peinlich.|Pass auf Nova auf. Sie hat keine Wahl, glaube ich.} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat gefragt, ob du gut bist. Ich hab „ja“ gesagt. Er hat nichts mehr gefragt.|Ich hab dir bei Dash zugesehen. Du lachst beim Spielen. Das hab ich nie gemessen.|Pass auf Nova auf. Sie hat keine Wahl, glaube ich.} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Empfangsroboter

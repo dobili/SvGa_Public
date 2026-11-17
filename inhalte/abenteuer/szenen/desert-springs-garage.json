@@ -146,7 +146,8 @@
     },
     {
       "name": "mira",
-      "feld": [10, 7]
+      "feld": [10, 7],
+      "blick": "oben"
     },
     {
       "name": "dot",

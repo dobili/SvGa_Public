@@ -40,11 +40,12 @@ Abschnitt R008 von ``blickrichtung.py`` bleibt erhalten). Beispiel:
 """
 
 import math
+import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-from pipeline.abenteuer.kartenbau import WAND, K, platziere, raster
+from pipeline.abenteuer.kartenbau import LEER, WAND, K, platziere, raster
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.uebergaenge import regel_fuer, szenen, uebergaenge
 from pipeline.abenteuer.uebergangsarten import Seite, paare
@@ -56,6 +57,9 @@ MINDESTBREITE_KLEIN, MINDESTTIEFE_KLEIN = 8, 6
 FAKTOR_BREITE = {"klein": 2.5, "mittel": 2.0, "gross": 1.5}
 FAKTOR_TIEFE = {"mittel": 2.5, "gross": 2.0}
 GEBAEUDEARTEN = ("gebaeude", "haus")
+# Übergänge, die eine Reise sind, kein Eingang (Seilbahn Summit City: Talstation außen ↔ Bergstation
+# innen, Hinweis von mittel-2, 17.11.2026); nach dem Namen des Auslösers.
+REISE = re.compile(r"seilbahn|gondel|bus|faehre|fähre|zug|kahn|boot", re.I)
 # So viele Vorschläge für ein anderes Gebäudebild nennt der Bericht höchstens (die kleinsten passenden).
 VORSCHLAEGE = 2
 # Eigene Bilder, die aus einem Paketbild abgeleitet sind und dessen Grundriss teilen (10.74).
@@ -93,13 +97,15 @@ class Raum:
 
 
 def innenmasse(szene: dict) -> tuple[int, int]:
-    """Breite und Tiefe des Bodens eines Innenraums in Kacheln (Spalten und Reihen ohne Wand).
+    """Breite und Tiefe des Bodens eines Innenraums in Kacheln (Spalten und Reihen ohne Wand und
+    ohne Leerfelder; Leerfelder rahmen etwa den Gondelraum der Bergstation, Hinweis von mittel-2).
 
     Beispiel: Diner Maple Falls, Raster 16 × 13 mit Wänden → 14 × 9.
     """
     zeilen = raster(szene)
-    spalten = {x for zeile in zeilen for x, z in enumerate(zeile) if z != WAND}
-    reihen = {y for y, zeile in enumerate(zeilen) if any(z != WAND for z in zeile)}
+    boden = [[z not in (WAND, LEER) for z in zeile] for zeile in zeilen]
+    spalten = {x for zeile in boden for x, ist in enumerate(zeile) if ist}
+    reihen = {y for y, zeile in enumerate(boden) if any(zeile)}
     if not spalten:
         return 0, 0
     return max(spalten) - min(spalten) + 1, max(reihen) - min(reihen) + 1
@@ -155,8 +161,8 @@ def zuordnung(alle: dict, liste: list[dict], moebel: dict, grundrisse: dict) -> 
     direkt: dict[str, tuple] = {}
     innen_paare: list[tuple[str, str]] = []
     for hier, gegen, _ in paare(alle, liste, moebel):
-        if gegen is None:
-            continue
+        if gegen is None or REISE.search(hier.name) or REISE.search(gegen.name):
+            continue  # Reise (Gondel, Bus, Fähre): Die Bergstation ist kein Raum der Talstation
         for aussen, innen in ((hier, gegen), (gegen, hier)):
             if not aussen.innen and innen.innen:
                 gefunden = gebaeude_zum_eingang(aussen, grundrisse)

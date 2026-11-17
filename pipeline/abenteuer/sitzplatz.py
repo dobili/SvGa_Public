@@ -9,6 +9,8 @@ waagerecht auf seine sichtbare Mitte, und liegt in der Tiefe knapp darüber, auc
 gesehen (Schüler der Akademie in Silicon Bay vor Stühlen mit hoher Lehne).
 Lange Bänke und Sofas (breiter als eine Kachel oder höher als zwei) tragen mehrere Leute: Dort
 zählt nur der Feinschub des Möbels gegen das Raster.
+Ohne Sitzmöbel sitzt man am Boden (Lily auf dem Bordstein, wie BODENSITZ in sitzplatz.ts):
+``sitzlage_auf`` gibt None, die Vorschau rückt dann nicht und hebt nicht an (``am_boden``).
 
 Abhängigkeiten: Pillow nur über die gemessenen Bilder (kartenbild.py).
 """
@@ -102,6 +104,14 @@ def sitzlage(sitz: dict, feld: tuple[int, int]) -> tuple[int, int, float]:
 def _begrenzt(wert: float) -> int:
     """Auf ±K begrenzt und gerundet: Eine Sitzende rückt höchstens eine Kachel weg."""
     return _runde(max(-K, min(K, wert)))
+
+
+def am_boden(sitze: list[dict], feld: tuple[int, int]) -> bool:
+    """Sitzt eine Sitzende auf ``feld`` am Boden (kein Sitzmöbel)? Dann ohne Hub und Verschiebung.
+
+    Beispiel: Lily auf dem Bordstein in Maple Falls (14, 24) → True; Sam im Clubraum → False.
+    """
+    return finde_sitz(sitze, feld) is None
 
 
 def sitzlage_auf(sitze: list[dict], feld: tuple[int, int]) -> tuple[int, int, float] | None:

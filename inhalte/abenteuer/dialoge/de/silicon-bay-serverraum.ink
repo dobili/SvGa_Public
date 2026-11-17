@@ -4,7 +4,7 @@
 // Ohrempfänger (Gegenstand ohrempfaenger, passt zum Ohrstöpsel von der Glasbrücke), Nova bittet {held},
 // noch nichts zu sagen (Auflösung in Akt 4). Die Quest siliconBay.spielberichte wartet auf den
 // Knoten „schummelgeraete“.
-// Einstieg wie in orte.json: schummelgeraete.
+// Einstiege wie in orte.json: schummelgeraete, hintertuer.
 //
 // Variablen: ohrstoepselGefunden (vom Weg 4, nur gelesen), ohrempfaengerGefunden (gesetzt hier,
 // gelesen in der Akademie). Den Gegenstand ohrempfaenger gibt die Quest siliconBay.spielberichte.
@@ -17,6 +17,7 @@ VAR held = "Du"
 VAR ohrstoepselGefunden = false
 VAR ohrempfaengerGefunden = false
 VAR novaVersprechen = false
+VAR angesehenHintertuer = false
 
 === schummelgeraete ===
 {ohrempfaengerGefunden:
@@ -59,3 +60,13 @@ Nova sieht es. Sie sagt nichts dazu. #sprecher:erzaehler
 Ob das richtig war, weißt du nicht sicher. #sprecher:erzaehler
 -> END
 
+// Verschlossene Tür neben dem Klimagerät (R065, 17.11.2026): Hinweis auf weitere Räume der Akademie.
+=== hintertuer ===
+{angesehenHintertuer:
+    Die Tür bleibt zu. Das Lämpchen am Kartenleser leuchtet rot. #sprecher:erzaehler
+- else:
+    ~ angesehenHintertuer = true
+    Eine graue Tür mit Kartenleser. Auf dem Schild steht „Technik – Zutritt nur mit Ausweis“. #sprecher:erzaehler
+    Abgeschlossen. #sprecher:erzaehler
+}
+-> END

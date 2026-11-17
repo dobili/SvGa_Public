@@ -13,6 +13,9 @@
  * Bay vor ihren Stühlen mit hoher Lehne: dahinter sah man nur noch die Haare).
  * Lange Bänke und Sofas (mehr als eine Kachel breit oder zwei hoch) tragen mehrere Leute: Dort
  * übernimmt die Figur nur den Feinschub des Möbels gegen das Raster.
+ * Ohne Sitzmöbel sitzt man am Boden (Lily auf dem Bordstein vor ihrem Haus, maple-falls-aussen.ink):
+ * BODENSITZ, keine Verschiebung und kein Hub, denn der Hub hebt eine Figur nur auf die Sitzfläche
+ * eines Möbels; die Figur bleibt mit den Füßen auf ihrer Kachel.
  *
  * Rolle im Gesamtbild: gelesen von figurenaufstellung.ts (Figuren) und belebungsschicht.ts
  * (Statisten), gezeichnet über figurensitz.ts; den sichtbaren Umriss misst sitzumriss.ts.
@@ -53,7 +56,15 @@ export interface Sitzlage {
   readonly dx: number;
   readonly dy: number;
   readonly tiefe: number;
+  /** Sitzt am Boden (kein Sitzmöbel): ohne Hub, siehe BODENSITZ. */
+  readonly amBoden?: boolean;
 }
+
+/**
+ * Lage einer Sitzenden ohne Sitzmöbel: am Boden, nicht verschoben, ohne Hub (figurensitz.ts).
+ * Die Tiefe zählt hier nicht; es bleibt die der Fußlinie (Aufrufer nehmen sitzlageAuf dafür).
+ */
+export const BODENSITZ: Sitzlage = { dx: 0, dy: 0, tiefe: 0, amBoden: true };
 
 /** Drehung, Spiegelung und Maßstab eines Möbelbilds um seine Mitte (moebelform.ts). */
 export interface Bildlage {

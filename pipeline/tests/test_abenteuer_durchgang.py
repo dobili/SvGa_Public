@@ -55,3 +55,16 @@ def test_ausloeser_liegt_genau_an_der_tuer_des_gebaeudes():
     assert "nicht an der Tür von haus" in tuerbefund(daneben, "tuer", {"haus": haus})
     woanders = szene([{"name": "tuer", "feld": [0, 5]}], objekte, wiese)
     assert tuerbefund(woanders, "tuer", {"haus": haus}) is None  # gehört nicht zu diesem Haus
+
+
+def test_richtung_nur_am_start():
+    # „richtung“ liest die App nur am Auslöser „start“ (ankunft.ts). An einem Übergang wirkt sie nicht;
+    # der Steg in Lockport (stegSued) löste deshalb beim Betreten von Süden nichts aus (17.11.2026).
+    # Gemeint ist dort „durchgang“.
+    falsch = [
+        (k, a["name"])
+        for k, s in szenen().items()
+        for a in s.get("ausloeser", [])
+        if a["name"] != "start" and "richtung" in a.get("eigenschaften", {})
+    ]
+    assert falsch == []

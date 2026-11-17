@@ -1234,7 +1234,7 @@
     {
       "name": "lily",
       "feld": [14, 24],
-      "blick": "rechts"
+      "sitzt": "rechts"
     },
     {
       "name": "calloway",

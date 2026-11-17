@@ -31,7 +31,8 @@ export function setzeSitzend(
   const rahmen = rahmenzahl(sprite);
   sprite.setFrame(sitzbild(rahmen, richtung));
   // Alles in Kartenpixeln; der Hub zählt in Figurenpixeln, also mal Maßstab (PixelLab 2/3).
-  const hub = hatSitzbilder(rahmen) ? 0 : SITZ_HUB * sprite.scaleY;
+  // Am Boden (BODENSITZ, Lily auf dem Bordstein) gibt es keine Sitzfläche, also keinen Hub.
+  const hub = hatSitzbilder(rahmen) || lage?.amBoden ? 0 : SITZ_HUB * sprite.scaleY;
   const dx = lage?.dx ?? 0;
   const dy = (lage?.dy ?? 0) - hub;
   if (dx === 0 && dy === 0) return;

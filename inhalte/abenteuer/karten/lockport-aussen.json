@@ -11455,7 +11455,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "durchgang",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 7,
@@ -11466,7 +11473,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "durchgang",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 8,
@@ -11480,9 +11494,9 @@
      "visible": true,
      "properties": [
       {
-       "name": "richtung",
+       "name": "durchgang",
        "type": "string",
-       "value": "unten"
+       "value": "oben"
       }
      ]
     },
@@ -11498,9 +11512,9 @@
      "visible": true,
      "properties": [
       {
-       "name": "richtung",
+       "name": "durchgang",
        "type": "string",
-       "value": "unten"
+       "value": "oben"
       }
      ]
     },

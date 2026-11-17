@@ -272,7 +272,8 @@
   "figuren": [
     {
       "name": "okafor",
-      "feld": [13, 7]
+      "feld": [13, 7],
+      "blick": "links"
     },
     {
       "name": "dex",
@@ -281,17 +282,18 @@
     },
     {
       "name": "mae",
-      "feld": [10, 10]
+      "feld": [10, 10],
+      "blick": "links"
     },
     {
       "name": "zwillingeDrinnen",
       "feld": [8, 10],
-      "blick": "rechts"
+      "blick": "links"
     },
     {
       "name": "jonahDrinnen",
       "feld": [9, 10],
-      "blick": "links"
+      "blick": "rechts"
     }
   ],
   "belebung": [
@@ -303,18 +305,18 @@
         "tun": "wartet auf den Clubkampf",
         "wann": "tag",
         "sagt": "statist.cedarCreek.bibliothek.leserin",
-        "blick": "oben"
+        "blick": "rechts"
       }
     },
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [13, 8],
+      "feld": [12, 4],
       "eigenschaften": {
         "tun": "wartet auf den Clubkampf",
         "wann": "tag",
         "sagt": "statist.cedarCreek.bibliothek.rentnerZeitung",
-        "blick": "oben"
+        "blick": "unten"
       }
     }
   ],

@@ -478,24 +478,30 @@
     },
     {
       "name": "steg",
-      "feld": [30, 12]
+      "feld": [30, 12],
+      "eigenschaften": {
+        "durchgang": "unten"
+      }
     },
     {
       "name": "steg",
-      "feld": [31, 12]
+      "feld": [31, 12],
+      "eigenschaften": {
+        "durchgang": "unten"
+      }
     },
     {
       "name": "stegSued",
       "feld": [30, 19],
       "eigenschaften": {
-        "richtung": "unten"
+        "durchgang": "oben"
       }
     },
     {
       "name": "stegSued",
       "feld": [31, 19],
       "eigenschaften": {
-        "richtung": "unten"
+        "durchgang": "oben"
       }
     },
     {

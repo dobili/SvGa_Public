@@ -452,7 +452,8 @@
     },
     {
       "name": "nova",
-      "feld": [2, 6]
+      "feld": [2, 6],
+      "blick": "oben"
     }
   ],
   "belebung": [

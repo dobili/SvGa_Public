@@ -6,6 +6,7 @@
 import { describe, expect, it } from "vitest";
 import type { Moebel } from "./moebel";
 import {
+  BODENSITZ,
   findeSitz,
   istSitzmoebel,
   SITZ_TIEFENABSTAND,
@@ -182,5 +183,12 @@ describe("sitzmoebelAus und sitzlageAuf", () => {
   });
   it("ohne Möbel unter dem Feld: null", () => {
     expect(sitzlageAuf([], { x: 5, y: 8 }, K)).toBeNull();
+  });
+});
+
+describe("Sitzen am Boden (Lily auf dem Bordstein)", () => {
+  it("ohne Sitzmöbel: keine Lage auf einem Möbel, dafür BODENSITZ ohne Verschiebung", () => {
+    expect(sitzlageAuf([], { x: 14, y: 24 }, 16)).toBeNull();
+    expect(BODENSITZ).toMatchObject({ dx: 0, dy: 0, amBoden: true });
   });
 });

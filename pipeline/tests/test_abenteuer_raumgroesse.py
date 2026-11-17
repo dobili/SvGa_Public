@@ -63,6 +63,21 @@ def test_maple_falls_bestand():
     assert all(r.befund for r in raeume.values())
 
 
+def test_leerfelder_zaehlen_nicht_als_boden():
+    # Leerfelder („ “) rahmen etwa die Bergstation (Hinweis von mittel-2, 17.11.2026).
+    from pipeline.abenteuer.raumgroesse import innenmasse
+
+    szene = {"karte": "test.raum", "raster": ["      ", " #### ", " #..# ", " #..# ", " #### ", "      "]}
+    assert innenmasse(szene) == (2, 2)
+
+
+def test_gondel_ist_kein_eingang():
+    from pipeline.abenteuer.raumgroesse import REISE
+
+    assert REISE.search("seilbahnBerg") and REISE.search("faehreNord")
+    assert not REISE.search("haustuer") and not REISE.search("treppe")
+
+
 def test_massstab_des_stuecks_kommt_aus_dem_katalog():
     """Kantine Ironwood: Halle im Katalog 208 Pixel breit, gesetzt 354 Pixel (massstab 1.7)."""
     from pipeline.abenteuer.raumgroesse import massstab_des_stuecks

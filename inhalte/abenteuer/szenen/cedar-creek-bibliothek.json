@@ -302,17 +302,18 @@
     },
     {
       "name": "mae",
-      "feld": [10, 10]
+      "feld": [10, 10],
+      "blick": "links"
     },
     {
       "name": "zwillingeDrinnen",
       "feld": [8, 10],
-      "blick": "rechts"
+      "blick": "links"
     },
     {
       "name": "jonahDrinnen",
       "feld": [9, 10],
-      "blick": "links"
+      "blick": "rechts"
     }
   ],
   "belebung": [

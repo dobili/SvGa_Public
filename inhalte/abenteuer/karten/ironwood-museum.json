@@ -1325,6 +1325,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-05"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -1363,6 +1368,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-07"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },

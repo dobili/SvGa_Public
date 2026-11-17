@@ -9,7 +9,8 @@ Szeneneintrag übersteuern das nur an dieser Stelle:
 - ``kollision`` (true/false): sperrt oder ist durchgehbar, statt der Angabe im Katalog.
 - ``maske`` (Liste wie im Katalog, ``#`` sperrt, ``.`` frei): ersetzt die Katalogmaske. Sie gilt im
   Raster des (skalierten) ungedrehten Bildes; ``drehung`` und ``spiegeln`` wirken darauf wie auf
-  die Katalogmaske (``objektform.geformt``).
+  die Katalogmaske (``objektform.geformt``). Mit ``massstab`` darf sie auch die angefangene Kachel
+  rechts und unten nennen (Fassade 154 × 173: 10 Spalten, 11 Reihen).
 - ``begehbar_grund`` (Text): Pflicht, wenn ein nicht flaches Möbel mit Kollision an dieser Stelle
   durchgehbar wird (Regel 10.69 sinngemäß: Der Autor lief durch einen Zeitungsstapel).
 
@@ -68,8 +69,10 @@ def _maskenbefund(maske: object, angabe: dict, eintrag: dict, zellen: int = 1) -
     if any(set(z) - {"#", "."} for z in maske):
         return f"{name} kennt nur „#“ (sperrt) und „.“ (frei)"
     massstab = float(eintrag.get("massstab", 1))
-    spalten = max(1, round(angabe["breite"] * massstab) // K) * zellen
-    reihen = max(1, round(angabe["hoehe"] * massstab) // K) * zellen
+    # Mit Maßstab zählen angefangene Kacheln rechts und unten mit (objektmassstab.py).
+    rest = K - 1 if massstab != 1 else 0
+    spalten = max(1, (round(angabe["breite"] * massstab) + rest) // K) * zellen
+    reihen = max(1, (round(angabe["hoehe"] * massstab) + rest) // K) * zellen
     if len(maske) > reihen or any(len(z) > spalten for z in maske):
         einheit = "Zellen" if zellen > 1 else "Kacheln"
         return f"{name} ist größer als das Bild ({spalten} × {reihen} {einheit})"

@@ -131,7 +131,7 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             **deckkraftangabe(eintrag),  # Deckkraft 25 bis 75 % (objektform.py), nur das Bild
             # Eigene Maske der Szene, geformt, für die Eigenschaft „maske“ der Tiled-Karte; die feine
             # Maske (kollisionfein.py) dazu als „maske_fein“.
-            **({"objektmaske": angabe["maske"]} if "maske" in eintrag or am_objekt(angabe, eintrag) else {}),
+            **({"objektmaske": angabe["maske"]} if maske_ans_objekt(angabe, eintrag, kollision) else {}),
             **({"maske_fein": angabe["maske_fein"]} if "maske_fein" in angabe else {}),
             **({"objektmaske_fein": angabe["maske_fein"]} if am_objekt(angabe, eintrag) else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
@@ -148,6 +148,19 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     gib_frei(gesetzt, szene)  # Freigaben des Kollisionspinsels stechen Möbel und Masken
     gib_frei_fein(gesetzt, szene)  # ebenso die feinen Freigaben, Zelle für Zelle (kollisionfein.py)
     return gesetzt, befunde
+
+
+def maske_ans_objekt(angabe: dict, eintrag: dict, kollision: bool) -> bool:
+    """Ob die grobe Maske als Eigenschaft ``maske`` an das Tiled-Objekt muss: eigene Maske der Szene,
+    geformte feine Maske oder ein sperrendes Möbel mit ``massstab``.
+
+    Warum: Die App rechnet die Kollision selbst aus Katalog und Objekt (``oberwelt/moebelform.ts``);
+    mit Maßstab nähme sie die Standardregel auf dem skalierten Bild. Mit der Maske am Objekt sperrt
+    sie dieselben Kacheln wie der Kartenbau (objektmassstab.py).
+    Beispiel: ``{"moebel": "iw5Eisenwaren", "massstab": 1.2}`` → True; ein skalierter Teppich → False.
+    """
+    skaliert = kollision and "maske" in angabe and float(eintrag.get("massstab", 1)) != 1
+    return "maske" in eintrag or am_objekt(angabe, eintrag) or skaliert
 
 
 def am_objekt(angabe: dict, eintrag: dict) -> bool:

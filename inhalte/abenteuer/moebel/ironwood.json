@@ -1489,8 +1489,8 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "industrie",
-      "tuer": [[12, 17], [13, 17], [14, 17]],
-      "beschreibung": "Werkskantine Ironwood: Holzhalle mit rostigem Blechdach (Bild wie wr5Fabrikhalle), gedacht für massstab 1.7 (Grundriss dann 22 × 8,5, passend zum Innenraum 34 × 16, Regel 10.75); tuer nennt die Felder vor den Stufen bei diesem Maßstab"
+      "tuer": [[7, 10], [8, 10]],
+      "beschreibung": "Werkskantine Ironwood: Holzhalle mit rostigem Blechdach (Bild wie wr5Fabrikhalle), gedacht für massstab 1.7 (Grundriss dann 22 × 8,5, passend zum Innenraum 34 × 16, Regel 10.75); tuer nennt die Felder vor den Stufen im ungeskalierten Bild, die Prüfung rechnet den Maßstab ein"
     }
   }
 }

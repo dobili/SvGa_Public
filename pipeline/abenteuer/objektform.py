@@ -14,9 +14,11 @@ vier neuen, optionalen Feldern je Objekt; fehlen sie, bleibt alles wie vorher (b
 
 Lage: ``feld`` und ``versatz`` nennen die linke obere Ecke des *gedrehten* Rechtecks. Bei 90 und
 270 Grad tauschen Breite und Höhe (auch für die Kollision). Eine eigene ``maske`` dreht und spiegelt
-mit; mit Maßstab gilt die Standardregel aus ``maske.py`` auf der neuen Größe, ``frei_unten`` gilt nur
-ungedreht. Eine Maske am Szeneneintrag (Übersteuerung, ``objektkollision.py``) formt sich genauso,
-bleibt aber auch mit Maßstab erhalten.
+mit, ``frei_unten`` gilt nur ungedreht. Mit Maßstab wächst die Standfläche des Katalogs (``maske``
+oder Standardregel aus ``maske.py``) mit dem Bild; eine Kachel sperrt, wenn sie zu mehr als einem
+Viertel gedeckt ist, auch ein angefangener Rest rechts oder unten (``objektmassstab.py``). Eine Maske
+am Szeneneintrag (Übersteuerung, ``objektkollision.py``) formt sich wie die Katalogmaske und gilt
+auch mit Maßstab, dann im Raster des skalierten Bildes (angefangene Kacheln zählen mit).
 Deckkraft (``deckkraft``, Editor 1.5): 25, 50, 75 oder 100 Prozent (100 = Standard, dann fehlt das
 Feld); nur das Bild wird durchsichtig, Kollision und Tiefe bleiben.
 Zuschnitt (``zuschnitt``, Editor 1.5): Pixel links, oben, rechts und unten weg, vor allem anderen;
@@ -29,7 +31,8 @@ from typing import TYPE_CHECKING
 
 from pipeline.abenteuer.kollisionfein import Z as ZELLEN_JE_KACHEL
 from pipeline.abenteuer.kollisionfein import grob_aus_fein
-from pipeline.abenteuer.objektzuschnitt import beschnitten, raster, standardmaske, zuschnitt_von
+from pipeline.abenteuer.objektmassstab import skalierte_maske
+from pipeline.abenteuer.objektzuschnitt import beschnitten, raster, zuschnitt_von
 
 if TYPE_CHECKING:  # Pillow nur für die Bilder; Kartenbau und Tests laufen ohne
     from PIL.Image import Image as Bild
@@ -103,8 +106,9 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
     Beispiel: ``{"breite": 64, "hoehe": 32, "maske": ["....", "##.."]}`` mit ``drehung`` 90 →
     ``breite`` 32, ``hoehe`` 64, ``maske`` ["#.", "#.", "..", ".."].
     Sonderfall: Eine ``maske`` am Eintrag (objektkollision.py) ersetzt die Katalogmaske. Sie gilt im
-    Raster des skalierten, ungedrehten Bildes und dreht und spiegelt mit; anders als die
-    Katalogmaske bleibt sie auch mit Maßstab erhalten.
+    Raster des skalierten, ungedrehten Bildes und dreht und spiegelt mit. Ohne sie rechnet
+    ``objektmassstab.skalierte_maske`` bei einem Maßstab die Standfläche des Katalogs um: Fassade
+    128 × 144 mit ``massstab`` 1.2 → Maske mit 10 Spalten und 11 Reihen, nur die oberste frei.
     """
     if angabe is None:
         return None
@@ -119,17 +123,18 @@ def geformt(angabe: dict | None, eintrag: dict) -> dict | None:
     neu = dict(angabe)
     neu["breite"], neu["hoehe"] = wirksame_groesse(angabe["breite"], angabe["hoehe"], eintrag)
     drehung, massstab = eintrag.get("drehung", 0) % 360, float(eintrag.get("massstab", 1))
-    maske = eigene if eigene is not None else angabe.get("maske") if massstab == 1 else None
     # Raster des skalierten, ungedrehten Bildes (ohne Maßstab: das Raster des Katalogs); beschnitten
-    # zählen angefangene Kacheln mit (objektzuschnitt.raster).
+    # oder skaliert zählen angefangene Kacheln mit (objektzuschnitt.raster).
     breite, hoehe = wirksame_groesse(angabe["breite"], angabe["hoehe"], {"massstab": massstab})
-    spalten, reihen = raster(breite, hoehe) if beschnitt else (max(1, breite // K), max(1, hoehe // K))
-    if maske is None and beschnitt:
-        maske = standardmaske(spalten, reihen)  # beschnitten immer mit Maske, im selben Raster
-    if maske is not None:
-        neu["maske"] = drehe_maske(list(maske), spalten, reihen, drehung, bool(eintrag.get("spiegeln")))
+    angefangen = beschnitt or massstab != 1
+    spalten, reihen = raster(breite, hoehe) if angefangen else (max(1, breite // K), max(1, hoehe // K))
+    if massstab != 1 and eigene is None:
+        # Mit Maßstab wächst die Standfläche des Katalogs mit dem Bild (objektmassstab.py).
+        neu["maske"] = skalierte_maske(angabe, eintrag)
     else:
-        neu.pop("maske", None)
+        maske = eigene if eigene is not None else angabe.get("maske")
+        if maske is not None:
+            neu["maske"] = drehe_maske(list(maske), spalten, reihen, drehung, bool(eintrag.get("spiegeln")))
     if drehung:
         neu.pop("frei_unten", None)
     return _mit_feiner_maske(neu, fein, eintrag, spalten, reihen)

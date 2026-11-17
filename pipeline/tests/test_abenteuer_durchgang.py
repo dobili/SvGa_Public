@@ -57,6 +57,25 @@ def test_ausloeser_liegt_genau_an_der_tuer_des_gebaeudes():
     assert tuerbefund(woanders, "tuer", {"haus": haus}) is None  # gehört nicht zu diesem Haus
 
 
+def test_tuerangabe_rechnet_den_massstab_des_gebaeudes_ein():
+    """Kantine Ironwood (208 × 160, Tür vor den Stufen in den Spalten 7 und 8 des ungeskalierten
+    Bildes), gesetzt mit 1,7: Der Auslöser liegt im Bild vor der Tür auf (12..14, 17). Ohne die
+    Umrechnung meldete die Prüfung „liegt nicht an der Tür“."""
+    from pipeline.abenteuer.durchgang import tuerbefund
+
+    halle = {"quelle": "x.png", "breite": 208, "hoehe": 160, "kollision": True, "tuer": [[7, 10], [8, 10]]}
+    wiese = ["." * 26] * 20
+    gross = [{"moebel": "halle", "feld": [1, 0], "massstab": 1.7}]
+    vor_der_tuer = [{"name": "tuer", "feld": [x, 17]} for x in (13, 14, 15)]
+    assert tuerbefund(szene(vor_der_tuer, gross, wiese), "tuer", {"halle": halle}) is None
+    ungeskaliert = [{"name": "tuer", "feld": [x, 10]} for x in (8, 9)]
+    befund = tuerbefund(szene(ungeskaliert, gross, wiese), "tuer", {"halle": halle})
+    assert "statt [(13, 17), (14, 17), (15, 17)]" in befund
+    # Ohne Maßstab bleiben die Felder des Katalogs.
+    klein = [{"moebel": "halle", "feld": [1, 0]}]
+    assert tuerbefund(szene(ungeskaliert, klein, wiese), "tuer", {"halle": halle}) is None
+
+
 def test_richtung_nur_am_start():
     # „richtung“ liest die App nur am Auslöser „start“ (ankunft.ts). An einem Übergang wirkt sie nicht;
     # der Steg in Lockport (stegSued) löste deshalb beim Betreten von Süden nichts aus (17.11.2026).

@@ -66,7 +66,8 @@ def test_zuschnitt_vor_drehung_und_spiegeln():
     assert gespiegelt["maske"] == ["...", "#..", "#.."]
     skaliert = geformt(ZAUN, {"zuschnitt": POSTEN, "massstab": 2})
     assert (skaliert["breite"], skaliert["hoehe"]) == (12, 64)
-    assert skaliert["maske"] == [".", "#", "#", "#"]
+    # Die beschnittene Katalogmaske [".", "#"] wächst mit (objektmassstab.py): oben 32 Pixel frei.
+    assert skaliert["maske"] == [".", ".", "#", "#"]
 
 
 def test_kartenbau_tiefe_folgt_der_unteren_kante_und_tiled_traegt_den_zuschnitt():

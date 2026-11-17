@@ -1286,6 +1286,14 @@ Lehne verschwindet, regelt die Zeichenreihenfolge (Tiefe nach der unteren Kante)
 - **Katalog:** `maske_fein` je Möbel (Viertelkacheln, Format wie in Kollision fein); die grobe
   `maske` leitet der Kartenbau daraus ab (`objektform.geformt`, App und Editor gleich). Sie gilt
   ohne Maßstab, ohne Zuschnitt und ohne eigene `maske` der Szene, sonst die grobe Regel.
+- **Mit Maßstab** (`massstab` am Objekt, `objektmassstab.py`, 17.11.2026): Die grobe Standfläche
+  des Katalogs (`maske`, sonst alles unter der obersten Kachelreihe, ohne `frei_unten`) wächst mit
+  dem Bild. Im Raster des gesetzten Bildes sperrt eine Kachel, wenn die Standfläche sie zu mehr als
+  einem Viertel deckt, auch der angefangene Rest rechts und unten (Fassade 128 × 144 mit 1,2: die
+  Reihe mit der Tür sperrt mit). Der Kartenbau schreibt diese Maske als `maske` an das Kartenobjekt,
+  damit die App dasselbe sperrt. Eine eigene `maske` der Szene geht vor. Die Türfelder `tuer` des
+  Katalogs gelten für das ungeskalierte Bild; die Prüfung der Übergänge rechnet sie mit dem Maßstab
+  um (`objektmassstab.skalierte_tuerfelder`).
 - **Vorschlag:** `python -m pipeline.abenteuer.feinmasken [--schreiben] [--boegen ORDNER]`. Zellen
   mit mindestens 4 von 16 deckenden Pixeln in einem Band über dem Fuß des Bildes, nie mehr als die
   bisherige Maske. Band je Art: Stühle, Hocker, Sessel, Bänke, Sofas die untere Hälfte; Tische,
@@ -1369,5 +1377,5 @@ vergrößert, bis ihre Tür groß genug war. Prüfung: `python -m pipeline.abent
 - **Stand 16.11.2026:** gemessen sind die Häuser von Maple Falls und Cedar Creek. Zu klein sind die
   Villen in Maple Falls (Tür 18 × 19, nötig 1,16) und die Ladenfassaden aus Gemini mit Glastür
   (Diner, Waschsalon: 29 × 17, nötig 1,29). Sie bleiben vorerst Hinweis: Das Diner und die Villa
-  Whitlock haben Eingänge (`tuer` im Katalog rechnet noch ohne Maßstab), und 1,16 bzw. 1,29 sprengt
+  Whitlock haben Eingänge (`tuer` im Katalog rechnet seit 17.11.2026 den Maßstab ein), und 1,16 bzw. 1,29 sprengt
   die Häuserzeile. Rückfrage an den Autor (AUFGABEN_AUTOR RO33).

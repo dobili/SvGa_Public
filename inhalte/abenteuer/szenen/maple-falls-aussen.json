@@ -1191,7 +1191,7 @@
     },
     {
       "name": "haustuer",
-      "feld": [3, 19]
+      "feld": [3, 20]
     },
     {
       "name": "dinerTuer",
@@ -1288,7 +1288,7 @@
       "eigenschaften": {
         "tun": "spielt Ball auf dem Spielplatz",
         "wann": "tag",
-        "von": "48,37",
+        "von": "50,37",
         "bis": "53,37",
         "sagt": "statist.mapleFalls.aussen.kindMitBall"
       }

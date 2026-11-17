@@ -43,11 +43,12 @@ def test_maske_dreht_im_uhrzeigersinn_und_spiegelt():
     assert drehe_maske(["#"], 2, 2, 90, False) == [".#", ".."]
 
 
-def test_geformt_dreht_maske_und_laesst_sie_bei_massstab_weg():
+def test_geformt_dreht_maske_und_skaliert_sie_mit_dem_massstab():
     gedreht = geformt(TOR, {"drehung": 90})
     assert (gedreht["breite"], gedreht["hoehe"]) == (48, 32)
     assert gedreht["maske"] == ["##.", "..."]
-    assert "maske" not in geformt(TOR, {"massstab": 2})
+    # Mit Maßstab wächst die Katalogmaske mit dem Bild (objektmassstab.py), statt wegzufallen.
+    assert geformt(TOR, {"massstab": 2})["maske"] == ["....", "....", "##..", "##..", "##..", "##.."]
 
 
 def test_kartenbau_rechnet_mit_gedrehter_groesse_und_ebene():

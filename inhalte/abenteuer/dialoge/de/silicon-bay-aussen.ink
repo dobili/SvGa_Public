@@ -34,6 +34,7 @@ VAR rosieGetroffen = false
 VAR tabletNachtGesehen = false
 VAR batterieErhalten = false
 VAR leuchtfeuerAuftrag = false
+VAR ausgangIronwoodClubkampf = ""
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -150,7 +151,7 @@ Er hat gesagt, die gehört dem, der Dash zum Schweigen bringt. #sprecher:rosie #
 -> dash_victor
 
 === dash_victor ===
-Victor hat die ganze Zeit dabeigestanden. Er hat nichts gegessen. #sprecher:erzaehler
+Victor ist über den Platz gekommen und hat die letzten Züge gesehen. Er hat nichts gegessen. #sprecher:erzaehler
 Er verliert jeden Tag. Seine Genauigkeit liegt bei sechzig Prozent. Warum kommt er wieder? #sprecher:victor #stimmung:nachdenklich
 Es ist keine Verachtung in der Frage. Er will es wissen. #sprecher:erzaehler
 * [„Frag ihn.“]
@@ -200,12 +201,14 @@ Du hast es nicht eingeschaltet. Ambrose sitzt davor, auf der Kante des Stuhls. D
 Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
 Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte. #sprecher:ambrose #stimmung:gebannt
 Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit fällt heraus. Wie Späne. #sprecher:ambrose #stimmung:gebannt
-* [„In Ironwood hast du gesagt, meine Partie war schön.“]
+* {ausgangIronwoodClubkampf != "remis"} [„In Ironwood hast du gesagt, meine Partie war schön.“]
+    -> hotel_nacht_frage
+* {ausgangIronwoodClubkampf == "remis"} [„In Ironwood hast du gesagt, das Schöne holen wir nach.“]
     -> hotel_nacht_frage
 
 // Die Frage ohne Antwort (Kapitel 34). Die Musik läuft weiter; es gibt keine Stille.
 === hotel_nacht_frage ===
-Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen. #sprecher:ambrose #stimmung:laechelt
+{ausgangIronwoodClubkampf == "remis":Ja. Und ich habe es so gemeint. Ein Opfer, eines Tages, das ganz dir gehört.|Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen.} #sprecher:ambrose #stimmung:laechelt
 Das hier macht es in jeder. In jeder, {held}. Ohne zu zittern. Ohne dreimal zu zählen. #sprecher:ambrose #stimmung:gebannt
 Partie 1851. Partie 1852. #sprecher:erzaehler
 Sie zweifelt nie. Siehst du, wie schön das ist? #sprecher:ambrose #stimmung:gebannt

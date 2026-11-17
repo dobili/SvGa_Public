@@ -40,6 +40,14 @@ VAR ankunftIronwoodGesehen = false
 VAR fotoGefunden = false
 VAR mamaFotoGesehen = false
 VAR mamaInKantine = false
+// Mamas Alltag je Akt (Querschnitt 17.11.2026): endeAkt1Gesehen setzt cedar-creek-aussen.ink,
+// mamaSpielt ironwood-kantine.ink, einladungGesehen ironwood-aussen.ink, tiefpunktGesehen
+// port-delacroix-turnhalle.ink, endeAkt3Gesehen desert-springs-aussen.ink.
+VAR endeAkt1Gesehen = false
+VAR mamaSpielt = false
+VAR einladungGesehen = false
+VAR tiefpunktGesehen = false
+VAR endeAkt3Gesehen = false
 
 === mutter ===
 {
@@ -107,7 +115,8 @@ Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das h
     Schön. Ist alt, oder? Pass auf, dass keine Figur wegkommt. #sprecher:mutter #stimmung:laechelt
 * [„Spielst du Schach?“]
     Ich? Nein. #sprecher:mutter #stimmung:ueberrascht
-    Sie lacht, ein bisschen zu kurz. Ich kann nicht mal diesen Tisch. #sprecher:mutter #stimmung:ueberrascht
+    Sie lacht, ein bisschen zu kurz. #sprecher:erzaehler
+    Ich kann nicht mal diesen Tisch. #sprecher:mutter #stimmung:ueberrascht
 - Deine Mutter, wenn ich das sagen darf, lügt schlecht. #sprecher:ambrose #stimmung:laechelt
 In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. Falls du Leute kennenlernen willst. #sprecher:mutter #stimmung:laechelt
 * [„Vielleicht schau ich mal hin.“]
@@ -158,7 +167,7 @@ Du legst das Foto auf den Küchentisch. Dorthin, wo der Zettel gelegen hat. #spr
 Mama kommt von der Frühschicht. Mantel, Tasche, ob du gegessen hast. Dann sieht sie es. #sprecher:erzaehler
 * [„Ich hab das gefunden.“]
 - Sie setzt sich. Nicht auf den Stuhl, an dem sie steht. Auf den nächsten, als wäre der Weg zu weit. #sprecher:erzaehler #pause:2
-Du warst in Ironwood. Bei Mama. #sprecher:mutter #stimmung:verschlossen
+Du warst in Ironwood. Bei Oma Ruth. #sprecher:mutter #stimmung:verschlossen
 * [„Und bei Big Joe. Er lässt grüßen.“]
 - Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
 Ihm tut es leid. Joe. Dieser sture, alberne … Ihm tut es leid. #sprecher:mutter #stimmung:riss
@@ -193,7 +202,44 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
     -> END
 
 === mutter_alltag ===
-{~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter #stimmung:laechelt
+// Je Akt eine Stufe (Querschnitt 17.11.2026), damit Mama nie hinter der Geschichte zurückbleibt:
+// Akt 4 Stolz, Akt 3 Nähe am Telefon (nach dem Vorwurf: sie glaubt {held}), nach Ironwood das
+// Taschenschach, Akt 2 Sorge und das Verbot, Akt 1 der Einzug.
+{
+- endeAkt3Gesehen:
+    {~Ich hab im Werk erzählt, dass du gegen eine Großmeisterin spielst. Die halbe Schicht weiß es jetzt.|Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Grundreihe. Und dann spiel, wie du willst. Ich bin stolz auf dich, weißt du das?} #sprecher:mutter #stimmung:froh
+- tiefpunktGesehen:
+    {~Was die in Port Delacroix gesagt haben, glaube ich keine Sekunde. Ich kenne deine Züge.|Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Wer dir das noch mal vorwirft, kriegt es mit mir zu tun. Und mit Joe.} #sprecher:mutter #stimmung:nachdenklich
+- einladungGesehen:
+    {~Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Juno schreibt mir jeden Abend, ob du gegessen hast. Ich glaube ihr nicht immer.|Nachtschicht. Aber wenn du anrufst, gehe ich ran. Immer.} #sprecher:mutter #stimmung:laechelt
+- mamaSpielt:
+    {~Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Das blaue Heft liegt auf dem Küchentisch. Schreib rein, wenn du gespielt hast.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
+- endeAkt1Gesehen:
+    {verbotGesehen:
+        {~Ironwood nicht. Ich weiß, dass du fragen willst. Bitte nicht.|Riverton ist in Ordnung. Ruf an, wenn der Zug Verspätung hat.|Ich hab gleich Nachtschicht. Schließ ab, wenn du gehst.} #sprecher:mutter #stimmung:nachdenklich
+    - else:
+        {~Riverton, ja? Mit dem Zug zurück, vor dem Dunkelwerden.|Du läufst jetzt durch Wälder bis nach Riverton. Ich sag dazu nichts. Fast nichts.|Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.} #sprecher:mutter #stimmung:nachdenklich
+    }
+- else:
+    {~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|{aufbruchGesehen:Dein Zimmer sieht fast bewohnt aus. Fast.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?}|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter #stimmung:laechelt
+}
+-> END
+
+// ---------------------------------------------------------------- Haustür am ersten Tag
+
+// Übergang „haustuer“ nach draußen (orte.json, `wenn: ersteLektionBesprochen`): Der Dialog läuft vor
+// dem Wechsel, die Hülle prüft die Bedingung danach. Bis Ambrose die erste Partie besprochen hat
+// („Nimm das Brett mit, Kind“, maple-falls-dachboden.nach_erster_partie), bleibt {held} im Haus;
+// sonst spräche Ambrose draußen (Lily, Mr. Abernathy, Mrs. Calloway, Jo), obwohl das Brett noch auf
+// dem Dachboden liegt (Dialogprüfung 17.11.2026). Danach kommt hier keine Zeile, die Tür geht
+// einfach auf. Ambrose spricht in diesem Knoten nie: Vorher ist er nicht erwacht oder nicht dabei.
+=== haustuer ===
+{ersteLektionBesprochen: -> END}
+{brettBeruehrt:
+    Du hast die Hand schon an der Klinke. Aber oben auf dem Dachboden steht das Brett, und es lässt dich nicht los. #sprecher:erzaehler
+- else:
+    Die Stadt läuft nicht weg. Heute ist Umzug. Sieh dich lieber erst auf dem Dachboden um, da oben steht noch alles voll. #sprecher:mutter #stimmung:muede
+}
 -> END
 
 // ---------------------------------------------------------------- Abend im Diner

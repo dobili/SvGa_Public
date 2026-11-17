@@ -3332,9 +3332,8 @@
       "haupt": false,
       "klein": true,
       "start": {
-        "art": "ort",
-        "karte": "wegMapleCedar.landstrasse",
-        "ausloeser": "ereignisFlohmarkt"
+        "art": "dialog",
+        "knoten": "weg-maple-cedar.flohmarkt_karte"
       },
       "schritte": [
         {

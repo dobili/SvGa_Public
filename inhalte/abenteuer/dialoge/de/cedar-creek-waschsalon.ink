@@ -38,7 +38,7 @@ Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boa
 Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng #stimmung:laechelt
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng #stimmung:laechelt
-* [„Ich habe gar keine Wäsche dabei.“]
+* [„Ich habe keine eigene Wäsche dabei.“]
     Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng #stimmung:laechelt
 - -> END
 
@@ -71,7 +71,7 @@ Die Figuren zittern leicht, weil die Maschine läuft. Weiß am Zug, Matt in zwei
 // Danach steht die Geschichte als Steckbriefzeile von Mrs. Okafor im Clubtagebuch.
 ~ boatengLagos = true
 Mr. Boateng nickt, zieht das Paketband ab und stellt eine neue Stellung auf. #sprecher:erzaehler
-Die alte hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng #stimmung:nachdenklich
+Die alte hat mir eine junge Frau gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng #stimmung:nachdenklich
 Die Männer mochten das nicht. #sprecher:boateng #stimmung:bitter
 Er lächelt auf das Brett hinunter. #sprecher:erzaehler
 Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #stimmung:froh
@@ -117,7 +117,7 @@ Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose #stimmung:nachdenklich
 // das Bild vorher gezeigt (Roman Kapitel 12); ohne Mae nur die Maschine.
 === trockner_danach ===
 {trocknerStellungBestanden:
-    {maeGetroffen: Mae hat dir das vor einer Stunde gezeigt. #sprecher:erzaehler|Die Maschine schleudert. Die Figuren halten. #sprecher:erzaehler}
+    {maeGetroffen: So ein Bild steht in Maes Heft. #sprecher:erzaehler|Die Maschine schleudert. Die Figuren halten. #sprecher:erzaehler}
 - else:
     Die Maschine läuft weiter. Die Stellung auch. #sprecher:erzaehler
 }

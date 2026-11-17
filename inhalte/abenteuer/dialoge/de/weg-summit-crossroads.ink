@@ -21,7 +21,7 @@ VAR finchFiguren = 0
 VAR spurenPM = 0
 VAR wegSummitCrossroadsTafelBestanden = false
 VAR bellGetroffen = false
-VAR rayGetroffen = false
+VAR rayCastilloGetroffen = false
 VAR varianteAtomschachGelernt = false
 VAR varianteEntenschachGelernt = false
 VAR bisonhaarGefunden = false
@@ -65,8 +65,8 @@ Ich hab nur ein Brett, und das liegt noch in der Station. Wenn du wiederkommst, 
 // ---------------------------------------------------------------- Ray Castillo und das Entenschach
 
 === ray ===
-{rayGetroffen: -> ray_alltag}
-~ rayGetroffen = true
+{rayCastilloGetroffen: -> ray_alltag}
+~ rayCastilloGetroffen = true
 Am Rand der Weizenfelder steht ein verbeulter Wagen voller Antennen. Ein Mann sieht durch ein Fernglas zum Horizont. #sprecher:erzaehler
 Ray Castillo. Sturmjäger. Da hinten braut sich was zusammen. #sprecher:rayCastillo #stimmung:laechelt
 Castillo? So heißen auch Mira und Tomás in Desert Springs. Du fragst ihn danach. #sprecher:erzaehler

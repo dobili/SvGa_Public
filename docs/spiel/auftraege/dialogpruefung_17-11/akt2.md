@@ -80,27 +80,19 @@ drei Variablen anderer Dateien zusätzlich deklariert; die Hülle teilt Variable
 | `erinnerung-siedlung.ink`    | `rueckkehr`             | „Nicht auf den Falschen gewartet. Das ist ungerecht. Aber nur auf den einen.“ → „Ich habe nicht auf den Falschen gewartet. Nur immer auf den einen. Das ist ungerecht.“                                                                                                                                                                                                                                     | Verständlichkeit: Die drei Satzstücke ergaben keinen klaren Sinn; gemeint ist, dass er nur an Hale dachte und Gideon dabei übersah.                                                                                                                                    |
 | `erinnerung-london.ink`      | `rueckkehr`             | „Dann gleitet ein Läufer ein einziges Feld, und es ist vorbei.“ → „Ein Springerschach, dann gibt er die Dame. Zuletzt gleitet ein Läufer ein einziges Feld, und es ist vorbei.“                                                                                                                                                                                                                             | Schach: Zwischen 20. Ke2 und 23. Le7 matt liegen Springerschach und Damenopfer (21. Sxg7+, 22. Df6+); „Dann“ sprang über den Höhepunkt der Partie hinweg.                                                                                                              |
 
-## Rückfragen
+## Rückfragen und Entscheidungen
 
-1. **Kennt {held} Oma Ruths Haus?** Oma Ruth sagt „Du bist gewachsen. Seit dem Frühjahr.“, und der
-   Erzähler: „Die Tür war immer zu, solange du denken kannst.“ Danach war {held} schon oft in der
-   Elm Street. Dann ist seltsam, dass Big Joe die Adresse erklärt („Nummer zehn, das Eckhaus mit
-   dem grünen Geländer“). Seltsam ist dann auch, dass Ambrose sagt, Mama habe „Angst vor einer
-   Stadt“, in der ihre Mutter wohnt und die ihr Kind kennt. Die Bibel (9.3) sagt: Oma Ruth hat
-   {held} „seit dem Umzug nicht gesehen“.
-   - **Empfehlung (nicht umgesetzt, weil es die Geschichte betrifft):** {held} war als kleines
-     Kind zuletzt dort.
-   - Dann würde Oma Ruth sagen: „Du bist gewachsen. Seit du sechs warst.“
-   - Der Erzähler würde sagen: „Ein kleines Zimmer unter dem Dach. Du warst nie darin.“
-   - Big Joes Wegbeschreibung bliebe dann richtig.
-2. **Tamsins Angebot zum Zuschauen nach dem Sonntag.** Wer Tamsins Reihe erst nach dem Clubkampf
-   besteht, hört „Die beiden spielen nicht mehr lange hier.“, obwohl der Pavillon schon geräumt
-   ist. Ob Tamsin nach dem Montag noch im Pavillon steht, entscheidet `orte.json` (Zustände). Ich
-   habe es nicht geändert; falls sie dort steht, wäre eine Bedingung auf `rivertonMontagGesehen`
-   nötig.
-3. **Karte des Zeitnot-Tricks.** Ambrose gibt die Karte `grossesMaul`, der Text beschreibt eine
-   Sanduhr. Das ist bekannt (Kommentar in `weg-riverton-ironwood.ink`) und nicht Teil dieser
-   Prüfung.
+1. **Kennt {held} Oma Ruths Haus?** Entschieden (Hauptchat, 17.11.2026, nach der Empfehlung):
+   {held} war zuletzt mit sechs Jahren in der Elm Street, weil Mama Ironwood meidet. Umgesetzt:
+   Oma Ruth („Als du das letzte Mal hier warst, warst du sechs.“), der Erzähler im Zimmer („Von damals
+   weißt du nur noch die steile Treppe, nicht diese Tür.“), Big Joe („Deine Oma wohnt noch in der
+   Elm Street …“, „Ruth hat dich nicht mehr gesehen, seit du so klein warst.“) und die Story-Bibel,
+   Abschnitt 9.3. Mamas Sätze brauchen keine Änderung: Ihr Verbot passt jetzt dazu.
+2. **Tamsins Satz nach dem Sonntag.** Tamsin steht im Pavillon, bis Slick sich im Wohnwagen
+   verabschiedet hat (`orte.json`, Zustand `slickAbschiedGesehen`). Umgesetzt: Nach dem Clubkampf
+   (`clubkampfRivertonBesprochen`) sagt sie „Die beiden spielen jetzt überall, wo eine Stufe frei
+   ist.“, vorher wie bisher.
+3. **Karte des Zeitnot-Tricks** (`grossesMaul` gegen das Sanduhrbild): bleibt bekannt offen.
 
 ## Prüfungen
 

@@ -38,6 +38,8 @@ VAR finaleBesprochen = false
 VAR angesehenBanner = false
 VAR spurenPM = 0
 VAR mappeGezeigt = false
+// Aus cedar-creek-aussen.ink: nur wer Victor dort nach dem Spaß gefragt hat.
+VAR victorCedarCreekGesehen = false
 VAR halbfinaleVorherGesehen = false
 VAR halbfinaleDanachGesehen = false
 VAR ambroseImHalbfinaleGerufen = false
@@ -146,7 +148,7 @@ Sie sitzt schon da, im zu großen Pullover, die Haare zurückgebunden, sodass ma
 Neben der Uhr liegt etwas Kleines, Hautfarbenes, offen, wo jeder es sehen kann. Am Rand steht ein Mann mit einem Prüfgerät. #sprecher:erzaehler
 Nova gibt dir die Hand. Ihre zittert so, dass du es bis in den Ellbogen spürst. #sprecher:erzaehler
 Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, wie ich anfange. #sprecher:nova #stimmung:nachdenklich
-* [„Mit einem Bauern in der Mitte. Das machen alle.“]
++ [„Mit einem Bauern in der Mitte. Das machen alle.“]
 - Sie lacht, kurz, erschrocken. #sprecher:erzaehler
 -> runde3_spielen
 
@@ -260,7 +262,7 @@ Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Hall
 Ich hab es gesehen. In Silicon Bay, im Januar. Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor #stimmung:bitter
 In Summit City hatte ich selbst eines in der Tasche. Ich hab es getragen. #sprecher:victor #stimmung:bitter
 * [Victor ansehen]
-- Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht. #sprecher:victor #stimmung:nachdenklich
+- {victorCedarCreekGesehen:Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht.|Ich hab mich jahrelang nicht gefragt, ob mir das Spaß macht. Ich hab ein Jahr für die Frage gebraucht.} #sprecher:victor #stimmung:nachdenklich
 Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
 Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #sprecher:erzaehler #pause:2
 -> END
@@ -307,27 +309,27 @@ Dann erfahre ich, dass du mich nicht gebraucht hast. Das wäre auch ein schöner
 === halbfinale_turm ===
 {zugerratenTurm:Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König.|Du siehst etwas. Keine Rettung. Da ist ein Zug. Er sieht falsch aus, und dahinter ist sein König.} #sprecher:erzaehler #musik:aus
 Du zählst Angreifer und Verteidiger. Dann suchst du den stillen Zug für ihn. Gibt es einen? Es ist zu tief. #sprecher:erzaehler
-* [„Ambrose.“]
++ [„Ambrose.“]
     ~ ambroseImHalbfinaleGerufen = true
     -> halbfinale_zusammen
-* [Allein prüfen]
++ [Allein prüfen]
     Du prüfst, so gut du kannst. Dann hoffst du. Und siehst ihm ins Gesicht. #sprecher:erzaehler #musik:held.allein
     -> END
 
 === halbfinale_zusammen ===
 Er ist sofort da, so nah, dass du die Kälte spürst. #sprecher:erzaehler #musik:ambrose.suchend
 {zugerratenTurm:Ich sehe es. Der Turm, {held}. Der Turm.|Ich sehe es. Dieser Zug, {held}. Dieser Zug.} #sprecher:ambrose #stimmung:ueberrascht
-* [„Stimmt es?“]
++ [„Stimmt es?“]
 - Er rechnet und kommt an dieselbe Stelle wie du, an den stillen Zug für ihn. Dahinter ist es dunkel. #sprecher:erzaehler
 Ich weiß es nicht. Bis dorthin stimmt es. Danach ist es dunkel. Die Maschine weiß es. Ich nicht. Du nicht. #sprecher:ambrose #stimmung:lacht
-* [„Was machen wir?“]
++ [„Was machen wir?“]
 - Was hast du in der Wüste gelernt? #sprecher:ambrose #stimmung:nachdenklich
-* [„Prüfen, so gut man kann. Dann hoffen.“]
-- Er hat kein Gesicht. Noch nicht. Aber jetzt, in einem Schuh, hat er eines. #sprecher:ambrose #stimmung:nachdenklich
-* [„Zusammen.“]
++ [„Prüfen, so gut man kann. Dann hoffen.“]
+- Die Maschine hat kein Gesicht. Noch nicht. Sieh auf den Mann mit dem Gerät. #sprecher:ambrose #stimmung:nachdenklich
++ [„Zusammen.“]
 - Zusammen. #sprecher:ambrose #stimmung:laechelt #musik:zusammen
 Du fühlst seine Hand auf deiner, kalt und leicht wie Atem. #sprecher:erzaehler
-Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht er da?“ Und Ward, ganz ruhig: „Er hofft.“ #sprecher:erzaehler #pause:2
+Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht {held} da?“ Und Ward, ganz ruhig: „Hoffen.“ #sprecher:erzaehler #pause:2
 -> END
 
 // Roman Kapitel 63, nach dem Sieg: Kade und „Das ist meine unsterbliche Partie. Mit dir.“
@@ -568,7 +570,7 @@ Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambro
 - aussageGesehen:
     Ich habe nichts gewusst. Das ist keine Ausrede. Es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
 - else:
-    Graham Hale. Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
+    Graham Hale. Wir haben uns in Maple Falls gesehen, im Clubraum. Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
     Viel Glück. Nein, ehrlich: viel Glück. #sprecher:grahamHale #stimmung:laechelt
 }
 -> END

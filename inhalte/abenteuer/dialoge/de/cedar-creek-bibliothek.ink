@@ -30,6 +30,8 @@ VAR clubkampfCedarCreekBesprochen = 0
 VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
+// Alltag nach Akt 1 (Querschnitt 17.11.2026): tiefpunktGesehen setzt port-delacroix-turnhalle.ink.
+VAR tiefpunktGesehen = false
 VAR ambroseNenntNamen = false
 VAR clubkampfBauerGesehen = false
 VAR nachtImLesesaal = false
@@ -81,7 +83,7 @@ Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab
 Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor #stimmung:laechelt
 Sechs Wörter. #sprecher:ambrose #stimmung:bitter #pause
 Eine Fußnote. #sprecher:ambrose #stimmung:bitter
-{teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach.|Nach dem Spiel morgen gehen wir hinunter und sehen nach.} Oder heute schon, wenn du mir tragen hilfst. #sprecher:okafor #stimmung:laechelt
+{teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach. Oder gleich, wenn du mir tragen hilfst.|Nach dem Spiel morgen gehen wir hinunter und sehen nach. Oder heute schon, wenn du mir tragen hilfst.} #sprecher:okafor #stimmung:laechelt
 * [„Ich helfe tragen.“]
     Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor #stimmung:nachdenklich
 * [„Erst will ich spielen.“]
@@ -151,12 +153,12 @@ Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor #stimmung:l
 === okafor_nadel ===
 Über euch schlägt die Uhr. Zwölf Schläge, einer nach dem anderen. #sprecher:erzaehler #klang:turmuhr12 #musik:aus #pause:3
 Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #stimmung:laechelt #klang:fanfare
-{teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
+{teamAngekommen and nadelCedarCreek == 1: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
 Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
 * [Nicken]
 * [Die Nadel ansehen]
 - Ambrose sagt nichts. Aber er ist da. #sprecher:erzaehler #pause:2
-Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt
+{nadelCedarCreek == 1: Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt}
 -> END
 
 === okafor_nach_niederlage ===
@@ -171,6 +173,10 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimm
 {
 - not erzaehlung1858Gesehen:
     Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor #stimmung:neutral
+- tiefpunktGesehen:
+    {~Ich habe gehört, was man in Port Delacroix über dich sagt. Ich habe deine Partien hier im Ordner. Jede einzelne.|Wer ehrlich spielt, kann jeden Zug erklären. Erklär mir einen. Ich habe Zeit.|Hier steht immer noch kein Bildschirm. Und dein Stuhl steht noch da, wo er stand.} #sprecher:okafor #stimmung:nachdenklich
+- nadelIronwood > 0:
+    {~Ein Herr mit zwei Telefonen war im Rathaus. Hier steht noch kein Bildschirm. Ich habe Geduld, und ich habe den Schlüssel.|Juno schickt mir Bilder aus ihrem Tagebuch. Vier Nadeln. Ich habe es mir aufgeschrieben.|Riverton, Ironwood. Ich lese die Zeitungen. Ich lese auch, was nicht drinsteht.} #sprecher:okafor #stimmung:nachdenklich
 - else:
     {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor #stimmung:laechelt
 }
@@ -217,7 +223,7 @@ Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex #stimmung:laechelt
 - not maeGetroffen: -> mae_erstes_treffen
 - not reiheDexBestanden: -> mae_erst_dex
 - not reiheMaeBestanden: -> mae_reihe
-- not maeEingeladen: -> mae_einladung
+- not maeEingeladen and not nachtImLesesaal: -> mae_einladung
 - else: -> mae_alltag
 }
 
@@ -257,8 +263,13 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 - -> END
 
 === mae_alltag ===
-{sternennachtGesehen:
+// Dialogprüfung, 17.11.2026: Wer die Sternennacht verschlafen hat, wird am Morgen nicht mehr
+// zum Steg eingeladen; Mae erzählt stattdessen, wie sie es versprochen hat.
+{
+- sternennachtGesehen:
     {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor ist heute müde. Das ist meine Schuld. Und die der Sterne.} #sprecher:mae #stimmung:lacht
+- nachtImLesesaal:
+    {~Du hast vierzehn Sternschnuppen verpasst! Dex sagt elf. Dex zählt falsch.|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae #stimmung:laechelt
 - else:
     {~Am Steg sieht man die Sterne am besten. Komm doch!|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae #stimmung:laechelt
 }

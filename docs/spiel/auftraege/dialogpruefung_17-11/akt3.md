@@ -35,6 +35,20 @@ wurden nur bei Logikfehlern geändert; diese Stellen sind in der Tabelle als sol
    `+` wie bei allen anderen Gegnern. Die Erinnerung 1858 springt beim zweiten Besuch gleich zur
    Wahl. **Hinweis für die anderen Akte:** Dasselbe Muster sollte dort jemand suchen; in Akt 3 lag
    es nur in Desert Springs und am Canyon.
+
+   **Berichtigung (17.11.2026):** Diese Sackgassen gab es in der App nicht. Sie legt für jeden
+   Dialog eine neue Ink-Geschichte an (`app/src/abenteuer/dialog/Dialog.tsx`) und behält nur die
+   globalen Variablen; eine `*`-Wahl war deshalb nie über Dialoge hinweg verbraucht. Das gilt auch
+   für alle Tabellenzeilen unten mit „Logik: … einmalige Wahl“. Die Umstellung `*` → `+` bleibt, sie
+   schadet nicht. Aus demselben Grund griff der Rücksprung `{mira_erinnerung_wahl: …}` nie: Der
+   Besuchszähler steht in jedem Dialog wieder auf 0, die Szene von 1858 lief nach „Ein andermal.“
+   oder einem Abbruch weiter ganz von vorn. Behoben ist stattdessen das: Besuchszähler über Dialoge
+   hinweg sind durch Variablen ersetzt. `mira_erinnerung` fragt `erinnerung1858Gesehen` (gesetzt in
+   `mira_erinnerung_wahl`), `mira_nach_sieg` fragt `warumAtmeGefragt` statt `not warum_atme` (Miras
+   „Atme. Warum?“ kam nach jeder besseren Nadel wieder). Die neue Prüfung
+   `python -m pipeline.abenteuer.inkbesuche` (Test `test_abenteuer_inkbesuche.py`) findet solche
+   Bedingungen in allen Dialogen; Stand: 0 Befunde.
+
 2. **Wissen vor dem Ereignis.** Mr. Batiste sprach über Remys Vorwurf und lobte „Aber allein“,
    auch wenn der Held die Turnhalle noch nicht betreten hatte. Dr. Lin und Theo wurden in der ersten
    Zeile beim Namen genannt, bevor der Held ihn erfährt. Das „Hm“ vor dem Spiegel setzte einen Sieg
@@ -267,3 +281,24 @@ Text ohne die Marken (`#sprecher` usw.); „⏎“ trennt Zeilen.
 | --------------- | ------------------------------------------- | -------------------------------------------------- |
 | `ngata_angebot` | + [Ja, zeig her.] → **+ [„Ja, zeig her.“]** | Gesprochene Wahl in Anführungszeichen wie überall. |
 | `ngata_angebot` | + [Später.] → **+ [„Nicht jetzt.“]**        | „Später“ als Wahl nur in Akt 1.                    |
+
+## Nachtrag (17.11.2026): Antworten auf die Rückfragen und Akt 2
+
+- **Rückfrage 1 (Ohrstöpsel):** Das Spiel bleibt wie angepasst; der Widerspruch im Roman (Kapitel 33,
+  „Vier fehlten … fünfte Mulde“) geht als Befund an den Autor.
+- **Rückfrage 2 (zwei Sol):** Laut Story-Bibel (Abschnitt 27.2) ist die Bergführerin Sol Soledad Reyna,
+  Mitte dreißig; die Kletterin am Canyon (Ortsdokument desert-springs.md) ist eine andere Person. Sie
+  heißt jetzt **Tess Ferris** (texte/de.json `figur.ferris.name`, drei Zeilen in
+  weg-delacroix-desert.ink, Ortsdokument). „Skye“ war schon an die Joggerin vergeben.
+- **Rückfrage 3 (Henri):** Bleibt beim „Sie“: Es passt zu einem älteren, förmlichen Handwerker und ist
+  in allen seinen Zeilen einheitlich.
+- **Rückfrage 4 (Miss Odile):** Bleibt: Die Halle steht auch nach einer Niederlage auf, weil sie
+  ehrt, dass der Held die Partie allein gespielt hat; genau darum ging der Vorwurf.
+- **Akt 2, Muster „einmalige Wahl vor Partie oder Aufgaben“:** In riverton-_, lockport-_, ironwood-*,
+  weg-cedar-riverton und weg-riverton-ironwood standen 23 Wahlblöcke mit `*` vor `beginnePartie` oder
+  `beginneAufgaben` (Gus, Big Joe Clubkampf und Revanche, Mamas Partie, Reihen Hank, Priya, Tamsin,
+  Ray, Siegel und Erinnerung im Museum, drei Aufgaben in Lockport, Harlan, Odum, Slicks Revanche,
+  Slick beobachten, zwei Wegtafeln, Schaffner Quinn, Zugpartie, Brückenbauern). Alle 46 Wahlen dieser
+  Blöcke stehen jetzt auf `+`, dazu „Warum nicht?“ beim Postsack, das sonst beim zweiten Besuch
+  verbraucht war. Texte unverändert. Nebenbei gesehen, nicht geändert: In lockport-aussen.ink steht
+  dreimal „Später“ als Wahl (nach der Regel nur in Akt 1).

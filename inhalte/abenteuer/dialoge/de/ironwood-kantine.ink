@@ -41,6 +41,8 @@ VAR clubkampfIronwoodNadel = 0
 VAR pokalregalGesehen = false
 // Kapitel 27 (Roman): Mama kommt in die Kantine, Big Joe hält sie fest.
 VAR mamaInKantine = false
+// kaufGesehen setzt ironwood-aussen.ink (Szene 49, der Kauf).
+VAR kaufGesehen = false
 VAR morgenNachFeier = false
 // Gutachten L1.3: Wer die Feier ablehnt, bekommt sie nicht noch einmal angeboten.
 VAR feierAbgelehnt = false
@@ -90,8 +92,8 @@ Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe #
 * [„Ja.“]
 - Du hast nie darüber nachgedacht. #sprecher:erzaehler
 Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001. #sprecher:erzaehler
-Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe #stimmung:nachdenklich
-Geh hin. Ruth wartet seit fünfundzwanzig Jahren, dass jemand klingelt. #sprecher:bigJoe #stimmung:nachdenklich
+Deine Oma wohnt noch in der Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe #stimmung:nachdenklich
+Geh hin. Ruth hat dich nicht mehr gesehen, seit du so klein warst. #sprecher:bigJoe #stimmung:nachdenklich
 Und wenn du deine Mutter siehst: Big Joe lässt grüßen. #sprecher:bigJoe #stimmung:laechelt
 Und dass es ihm leidtut. #sprecher:bigJoe #stimmung:ernst #pause:2
 Was tut ihm leid? #sprecher:juno #stimmung:ueberrascht
@@ -130,19 +132,19 @@ Die Nadel liegt auf dem Stahlbrett. Ein kleines Zahnrad aus dunklem Metall, mit 
 Mama sitzt in der ersten Reihe. Zum ersten Mal sieht sie dir zu. Sie beugt sich vor und sagt zwei Wörter, so leise, dass nur du sie hörst. #sprecher:erzaehler
 Grundreihe. Immer. #sprecher:mutter #stimmung:nachdenklich
 Um die Nadel, Kumpel? Auf meinem Stahlbrett. #sprecher:bigJoe #stimmung:laechelt
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-* [„Noch nicht.“]
++ [„Noch nicht.“]
     Das Stahlbrett wartet. Es rostet nicht. #sprecher:bigJoe #stimmung:lacht
     -> END
 
 === big_joe_nach_niederlage ===
 Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:laechelt
-* [„Noch eine.“]
++ [„Noch eine.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     -> END
 
 === big_joe_nach_sieg ===
@@ -254,12 +256,12 @@ Ich weiß. Jetzt. #sprecher:bigJoe #stimmung:nachdenklich #musik:karte
 
 === mama_partie_angebot ===
 Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, als müsste sie sich an ihre Namen erinnern. #sprecher:erzaehler
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder. Dann der daneben. #sprecher:erzaehler
     Damengambit. Hat sie von mir. #sprecher:bigJoe #stimmung:froh
     ~ beginnePartie("ironwood.mama")
     -> END
-* [„Gleich, Mama.“]
++ [„Gleich, Mama.“]
     Ich laufe nicht weg. Nicht mehr. #sprecher:mutter #stimmung:laechelt
     -> END
 
@@ -354,7 +356,12 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 -> END
 
 === mama_alltag ===
-{~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
+// Nach dem Kauf (ironwood-aussen.kauf, kaufGesehen) steht der Club ohne Raum da (Querschnitt 17.11.2026).
+{kaufGesehen:
+    {~Joe hat die Pokale in seiner Garage. Wir suchen einen neuen Raum. Wir finden einen.|Hier stehen jetzt Bildschirme. Ich komme trotzdem her. Wegen der Leute.|Grundreihe. Immer die Grundreihe. Sag das Joe nicht.} #sprecher:mutter #stimmung:nachdenklich
+- else:
+    {~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Hank und Priya
@@ -381,10 +388,10 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 
 === hank_reihe ===
 Fesselungen. Willst du? #sprecher:hank #stimmung:laechelt
-* [„Ja.“]
++ [„Ja.“]
     ~ beginneAufgaben("ironwood.reiheHank")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     -> END
 
 === priya ===
@@ -408,10 +415,10 @@ Fesselungen. Willst du? #sprecher:hank #stimmung:laechelt
 
 === priya_reihe ===
 Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya #stimmung:laechelt
-* [„Bereit.“]
++ [„Bereit.“]
     ~ beginneAufgaben("ironwood.reihePriya")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     -> END
 
 // ---------------------------------------------------------------- Gegenstände

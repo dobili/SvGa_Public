@@ -121,7 +121,7 @@ Er steht am Beckenrand und sieht hinauf. #sprecher:erzaehler
 - Worüber? #sprecher:juno #stimmung:ueberrascht
 * [„Über sich.“]
 - Oh. Oh, das ist gut. Das schreib ich auf. #sprecher:juno #stimmung:laechelt
-Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. „Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
+Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
 Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch. Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler #musik:victor.maschine
 Der zweite Satz gefällt dir nicht. #sprecher:erzaehler #pause
 Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht

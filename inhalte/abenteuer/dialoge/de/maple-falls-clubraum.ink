@@ -43,6 +43,9 @@ VAR heimwegNadelGesehen = false
 // die Karte schon hat, bekommt keine zweite.
 VAR lernkarteAbzaehlen = false
 VAR hatKarteAbzaehlen = false
+// Dialogprüfung 17.11.2026: endeAkt1Gesehen setzt cedar-creek-aussen.ink; hier nur gelesen, damit
+// Coach und Sam nach Akt 1 nicht mehr vom kommenden Samstag in Cedar Creek reden.
+VAR endeAkt1Gesehen = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -117,7 +120,7 @@ Nicht, weil der Junge besser war. Weil ich Hunger hatte. Das steht auf keinem Po
 Juno drückt dir einen halben Apfel in die Hand und beißt in die andere Hälfte. #sprecher:erzaehler
 Die Hälfte ist für den Kopf. Die andere für die Nerven. Steht in keinem Buch. Nur in meinem. #sprecher:juno #stimmung:lacht
 Draußen schlägt die Schnur gegen den Fahnenmast. Du zählst mit, bis du vergisst zu zählen. #sprecher:erzaehler
-Aufhören, wenn es gerade gut läuft. Das habe ich nie gekonnt. Mach es besser als ich. #sprecher:ambrose #stimmung:lacht
+Innehalten, wenn man gleich weiterspielen will. Das habe ich nie gekonnt. Mach es besser als ich. #sprecher:ambrose #stimmung:lacht
 -> coach_clubkampf
 
 === function gespieltSamRevanche() ===
@@ -137,10 +140,10 @@ Aufhören, wenn es gerade gut läuft. Das habe ich nie gekonnt. Mach es besser a
     Abpfiff! Gute Partie! Du hast gezählt, als ich nicht gezählt habe. #sprecher:coachDelgado #stimmung:froh #klang:pfiff_finger
 }
 Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler #klang:fanfare
-Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado #stimmung:laechelt #musik:karte
+{heimwegNadelGesehen:Eine Stufe besser als die alte. So macht man das.|Viertes Brett. Samstag spielen wir in Cedar Creek.} #sprecher:coachDelgado #stimmung:laechelt #musik:karte
 {not heimwegNadelGesehen:
     Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler
-    Ich hab's dir gesagt. #sprecher:sam #stimmung:froh
+    {samVersoehnt:Ich hab's dir gesagt.|Nicht schlecht. Für ein viertes Brett.} #sprecher:sam #stimmung:froh
 }
 // Den Mentor-Zug gibt es erst nach dem Clubkampf von Cedar Creek (Roman und Story-Bibel,
 // Entscheidung des Hauptchats 13.11.2026; quests.json, cedarCreek.clubkampf).
@@ -161,9 +164,9 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 
 === coach_alltag ===
 {nadelMapleFalls < 3:
-    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado #stimmung:laechelt
+    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|{endeAkt1Gesehen:Cedar Creek hast du hinter dir. In der Vitrine ist noch Platz für einen Pokal. Ich sag's nur.|Samstag Cedar Creek. Pünktlich sein, sonst pfeife ich.}} #sprecher:coachDelgado #stimmung:laechelt
 - else:
-    {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado #stimmung:froh
+    {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|{endeAkt1Gesehen:Cedar Creek hast du hinter dir. In der Vitrine ist noch Platz für einen Pokal. Ich sag's nur.|Samstag Cedar Creek. Pünktlich sein, sonst pfeife ich.}} #sprecher:coachDelgado #stimmung:froh
 }
 + {nadelMapleFalls > 0 and nadelMapleFalls < 3} [„Noch eine Partie um die Nadel.“]
     -> coach_partie
@@ -278,10 +281,10 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
         ~ gibKarte("abzaehlen")
     }
 }
-{ausgangMapleFallsSamRevanche == "":
+{ausgangMapleFallsSamRevanche == "" or ausgangMapleFallsSamRevanche == "abgebrochen":
     Okay. Die Dame bleibt erst mal zu Hause. Revanche? Jetzt? #sprecher:sam #stimmung:laechelt
 - else:
-    Noch mal! Diesmal mache ich alles richtig. Fast alles. #sprecher:sam #stimmung:laechelt
+    {ausgangMapleFallsSamRevanche == "niederlage":Noch mal? Klar! Aber diesmal passt du besser auf deine Figuren auf.|Noch mal! Diesmal mache ich alles richtig. Fast alles.} #sprecher:sam #stimmung:laechelt
 }
 * [„Revanche.“]
     ~ beginnePartie("mapleFalls.samRevanche")
@@ -301,7 +304,18 @@ Juno schreibt es ins Tagebuch. Mit Glitzer. #sprecher:erzaehler
 -> END
 
 === sam_alltag ===
-{~Dame raus, Zug sechs. Ich arbeite dran.|Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?} #sprecher:sam #stimmung:laechelt
+// Dialogprüfung 17.11.2026: Der Satz über den Coach erst mit der Nadel, „Zug sechs“ erst nach Sams
+// Dame, Cedar Creek nach Akt 1 als Rückblick.
+{
+- nadelMapleFalls == 0 and samVersoehnt:
+    {~Dame raus, Zug sechs. Ich arbeite dran.|Der Coach sagt, ich ziehe zu schnell. Ich sag: Die anderen ziehen zu langsam!} #sprecher:sam #stimmung:laechelt
+- nadelMapleFalls == 0:
+    {~Der Coach sagt, ich ziehe zu schnell. Ich sag: Die anderen ziehen zu langsam!|Die Pokale da sind von 1994. Wird Zeit für einen neuen!} #sprecher:sam #stimmung:laechelt
+- samVersoehnt:
+    {~Dame raus, Zug sechs. Ich arbeite dran.|Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|{endeAkt1Gesehen:In Cedar Creek spielen sie in einer Bibliothek. Ich hab die ganze Zeit geflüstert. Ich!|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?}} #sprecher:sam #stimmung:laechelt
+- else:
+    {~Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|{endeAkt1Gesehen:In Cedar Creek spielen sie in einer Bibliothek. Ich hab die ganze Zeit geflüstert. Ich!|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?}} #sprecher:sam #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Juno im Club
@@ -361,9 +375,9 @@ In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:ha
 
 === victor_wartet ===
 Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen. #sprecher:victor #stimmung:bitter
-Spanisch, Zug zwölf. Du hast Schwarz und einen Springer weniger. #sprecher:victor #stimmung:kalt
+Spanisch, Zug zwölf. Du hast Schwarz, einen Springer weniger und zwei Bauern mehr. #sprecher:victor #stimmung:kalt
 Das sage ich dir vorher, damit du dich nachher nicht beschwerst. #sprecher:victor #stimmung:bitter
-Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
+Ein Springer gegen zwei Bauern. Das ist schwer, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
 * [„Ich spiele.“]
     -> victor_partie
 * [„Das ist nicht fair.“]
@@ -422,11 +436,11 @@ Auf dem Pult steht noch der Bildschirm. Darauf ziehen die Figuren von selbst. #s
 Coach Delgado schaltet ihn aus. Sie steht eine Weile davor. #sprecher:erzaehler #pause
 Kostet zunächst nichts. #sprecher:coachDelgado #stimmung:ernst
 Sie sagt es zu niemandem. #sprecher:erzaehler
-Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehler
+Als der Raum leer ist, holst du das Brett aus der Tasche und legst es auf einen Tisch. #sprecher:erzaehler
 {ausgangMapleFallsVictor == "niederlage":
     Ambrose zeigt dir zwei Stellen. Genau und ohne ein Wort zu viel. #sprecher:erzaehler
 - else:
-    Du hast eine verlorene Stellung gehalten. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
+    Du hast eine schwere Stellung gehalten, mit einem Springer weniger. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
 }
 * [„Du bist erschrocken. Vorhin.“]
     Bin ich das. #sprecher:ambrose #stimmung:bitter

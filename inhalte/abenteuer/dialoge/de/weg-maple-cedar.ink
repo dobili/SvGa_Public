@@ -31,6 +31,9 @@ VAR wegMapleCedarTafelBestanden = false
 VAR wandererBesuche = 0
 VAR niaGetroffen = false
 VAR ausgangWegMapleCedarNia = ""
+// Ausgang des Duells mit Jo im Park (setzt die Hülle): Nia spricht nur dann von Jo, wenn {held}
+// wirklich gegen sie gespielt hat (Dialogprüfung, 17.11.2026).
+VAR ausgangMapleFallsSkaterJo = ""
 VAR formularGefunden = false
 VAR muenzenGefunden = false
 VAR nadelMapleFalls = 0
@@ -55,17 +58,20 @@ VAR schildCedarGesehen = false
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
     -> END
 }
+// Erster Blick: aus der VAR, nicht aus dem Besuchszähler; die App beginnt jeden Dialog als neue
+// Geschichte, „tafel == 1“ galt deshalb immer (python -m pipeline.abenteuer.inkbesuche, 17.11.2026).
+~ temp ersterBlick = not tafelGesehen
 {not tafelGesehen:
     ~ tafelGesehen = true
     Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler
 }
 Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
-{tafel == 1: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+{ersterBlick: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegMapleCedar.tafel")
     -> END
 * [Weitergehen]
-    {tafel == 1: -> juno_weg}
+    {ersterBlick: -> juno_weg}
     -> END
 
 // Runde 11 (Dialogprüfung B2, „Fehlt im Spiel“; Roman Kapitel 10): Juno erzählt auf der
@@ -118,8 +124,13 @@ Heute hab ich am Gatter einen Bauern geschlagen. Am Fluss hat es mir leidgetan. 
 === nia_erstes_treffen ===
 ~ niaGetroffen = true
 Ein Mädchen mit Skateboard unter dem Arm versperrt halb den Weg. Auf dem Board klebt ein Schachbrett. #sprecher:erzaehler
-Du bist das Kind, das Jo im Park geschlagen hat? Oder das sie geschlagen hat? #sprecher:nia #stimmung:laechelt
-Egal. Ich bin Nia. #sprecher:nia #stimmung:laechelt
+{ausgangMapleFallsSkaterJo == "" or ausgangMapleFallsSkaterJo == "abgebrochen":
+    Aus deinem Rucksack guckt ein Brett. Dann spielst du. #sprecher:nia #stimmung:laechelt
+    Ich bin Nia. Sonst spiele ich im Park von Maple Falls, mit Jo. #sprecher:nia #stimmung:laechelt
+- else:
+    Du bist das Kind, das Jo im Park geschlagen hat? Oder das sie geschlagen hat? #sprecher:nia #stimmung:laechelt
+    Egal. Ich bin Nia. #sprecher:nia #stimmung:laechelt
+}
 -> nia_angebot
 
 === nia_angebot ===
@@ -184,7 +195,8 @@ Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 ~ muenzenGefunden = true
 Zwischen zwei Steinen am Ufer klemmt eine kleine Holzkiste. Darin klimpern Münzen. #sprecher:erzaehler
 ~ gibFund("muenzenFlussweg")
-Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders überlegt. #sprecher:ambrose #stimmung:nachdenklich
+// Dialogprüfung, 17.11.2026: Die Kiste liegt vor der Fährstelle; bis dorthin schweigt Ambrose.
+{faehrsteinGesehen: Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders überlegt. #sprecher:ambrose #stimmung:nachdenklich|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
 -> END
 
 // ---------------------------------------------------------------- Rast und Schild
@@ -244,7 +256,8 @@ Odette Finch. Problemhefte, fünfzig Cent das Stück. Aber erst stelle ich dir e
 === flohmarkt_angebot ===
 Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. #sprecher:odette #stimmung:laechelt
 Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:lacht
-Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt
+// Dialogprüfung, 17.11.2026: Auf dem ersten Weg schweigt Ambrose bis zur Fährstelle.
+{faehrsteinGesehen: Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
 * [Die Fallen lösen]
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END
@@ -257,11 +270,11 @@ Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #spr
 Odette klatscht in die Hände. #sprecher:erzaehler
 Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe. #sprecher:odette #stimmung:froh
 Sie gibt dir eine Karte mit sechzehn leeren Kästchen. #sprecher:erzaehler
-Sechzehn weiße Figuren aus Buchsbaum, versteckt an den Wegen. Unter jeder steht ihr Feld. #sprecher:odette #stimmung:laechelt
+Sechzehn weiße Figuren aus Buchsbaum. Fünfzehn liegen versteckt an den Wegen, unter jeder steht ihr Feld. Den König behalte ich, bis du alle hast. #sprecher:odette #stimmung:laechelt
 ~ gibFund("finchKarte")
 Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft nimmst du mit, drei Aufgaben für unterwegs. #sprecher:odette #stimmung:laechelt
 ~ gibFund("problemheft")
-Sechzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht
+{faehrsteinGesehen: Fünfzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht}
 -> END
 
 === flohmarkt_spaeter ===
@@ -425,7 +438,7 @@ Juno hat nichts gehört. Sie fotografiert den Stein für das Tagebuch. #sprecher
 
 === faehrstein_spaeter ===
 Der Stein mit dem eingeritzten Brett. Man fühlt die Linien eher, als man sie sieht. #sprecher:erzaehler
-{nadelCedarCreek == 0: Fische? Die wissen, wann ich komme. #sprecher:silas #stimmung:laechelt}
+{nadelCedarCreek == 0: Wieder nichts. Die Fische wissen, wann ich komme. #sprecher:silas #stimmung:laechelt}
 -> END
 
 // ---------------------------------------------------------------- Tessa, die Joggerin

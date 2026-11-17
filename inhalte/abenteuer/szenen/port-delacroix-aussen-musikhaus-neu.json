@@ -12,7 +12,7 @@
     "e": "erde",
     "t": "stein"
   },
-  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) ist das Musikhaus am Kai wieder aufgebaut: Planen und Bauzaun sind weg, über der Tür hängt das Schild „Musik und Schach, seit 1889“, weil der Club es nach dem Hurrikan gemeinsam repariert hat. Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, eine lange Backsteinhalle mit Sägezahndach, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau hinter einem Bauzaun, Bäume, ein umgestürzter Stamm und Holz vom Sturm, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
+  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) ist das Musikhaus am Kai wieder aufgebaut: Planen und Bauzaun sind weg, über der Tür hängt das Schild „Musik und Schach, seit 1889“, weil der Club es nach dem Hurrikan gemeinsam repariert hat. Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, eine lange Backsteinhalle mit Sägezahndach, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau hinter einem Bauzaun, Bäume, ein umgestürzter Stamm und Holz vom Sturm, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach und dem neuen Schild, ohne Bauzaun und Planen. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
@@ -598,7 +598,7 @@
     {
       "moebel": "pd6PlaneDachKlein",
       "auf": "h3",
-      "versatz": [16, -54]
+      "versatz": [0, -16]
     },
     {
       "moebel": "pd10HausBlau",
@@ -674,7 +674,7 @@
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [53, 26]
+      "feld": [53, 28]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
@@ -712,11 +712,11 @@
     },
     {
       "moebel": "rvLaubbaum",
-      "feld": [56, 50]
+      "feld": [56, 49]
     },
     {
       "moebel": "rvLaubbaumDunkel",
-      "feld": [62, 50]
+      "feld": [60, 49]
     },
     {
       "moebel": "rvLaubbaum",
@@ -804,11 +804,11 @@
     },
     {
       "moebel": "pd9Ziegel",
-      "feld": [33, 21]
+      "feld": [48, 22]
     },
     {
       "moebel": "pd9Ziegel",
-      "feld": [19, 49]
+      "feld": [20, 49]
     },
     {
       "moebel": "pd9StrichQ16",
@@ -1212,10 +1212,10 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [53, 11],
+      "feld": [55, 11],
       "eigenschaften": {
-        "von": "53,11",
-        "bis": "53,11",
+        "von": "55,11",
+        "bis": "55,11",
         "verhalten": "sitzen"
       }
     },

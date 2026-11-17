@@ -14750,7 +14750,7 @@
      "id": 36,
      "name": "katze",
      "type": "tier",
-     "x": 848,
+     "x": 880,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -14760,12 +14760,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "53,11"
+       "value": "55,11"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "53,11"
+       "value": "55,11"
       },
       {
        "name": "verhalten",
@@ -17267,8 +17267,8 @@
      "id": 145,
      "name": "pd6PlaneDachKlein",
      "type": "moebel",
-     "x": 432,
-     "y": 688,
+     "x": 416,
+     "y": 726,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -17705,7 +17705,7 @@
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
      "x": 848,
-     "y": 416,
+     "y": 448,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -17714,7 +17714,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 424
+       "value": 456
       },
       {
        "name": "kollision",
@@ -17889,7 +17889,7 @@
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 896,
-     "y": 800,
+     "y": 784,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -17898,7 +17898,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 840
       },
       {
        "name": "kollision",
@@ -17911,8 +17911,8 @@
      "id": 173,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
-     "x": 992,
-     "y": 800,
+     "x": 960,
+     "y": 784,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -17921,7 +17921,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 840
       },
       {
        "name": "kollision",
@@ -18417,8 +18417,8 @@
      "id": 195,
      "name": "pd9Ziegel",
      "type": "moebel",
-     "x": 528,
-     "y": 336,
+     "x": 768,
+     "y": 352,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18427,7 +18427,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 376
       },
       {
        "name": "kollision",
@@ -18440,7 +18440,7 @@
      "id": 196,
      "name": "pd9Ziegel",
      "type": "moebel",
-     "x": 304,
+     "x": 320,
      "y": 784,
      "width": 32,
      "height": 32,

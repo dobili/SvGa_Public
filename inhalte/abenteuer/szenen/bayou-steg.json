@@ -1,7 +1,7 @@
 {
   "karte": "bayou.steg",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Schwarzes, stehendes Wasser mit Seerosen mit ausgefransten Inseln aus nassem, dunklem Boden und dichten Zypressen. Therons Bretterhütte mit Fässern und Brennholz steht auf der großen Insel, sein Luftboot am Südsteg. Nördlich eine Zypresseninsel mit Steg, im Osten eine Baumgruppe. Südöstlich die Hütte der Krebsfischerin mit Kisten, über einen langen Steg zu erreichen. Ein kurzer Steg führt zur kleinen Südwestinsel, wo der Angler neben seinem hölzernen Kahn sitzt. Eingangssteg mit überflutetem Stück (S8) und Nebelsteg bleiben; Sumpfzypressen mit Moos und Schilf an den Ufern. Am Westrand ein schmaler Streifen Marschland wie am Ostrand von Port Delacroix; der Marschpfad kommt dort herein und geht in den Eingangssteg über (Weltpuzzle, 15.11.2026).",
+  "beschreibung": "Variante C, reich: Schwarzes, stehendes Wasser mit Seerosen mit ausgefransten Inseln aus nassem, dunklem Boden und dichten Zypressen. Therons Bretterhütte mit Fässern und Brennholz steht auf der großen Insel, sein Luftboot am Südsteg. Nördlich eine Zypresseninsel, von Therons Insel über einen Quersteg zu erreichen, der auf ihren Südsteg trifft (dessen Ende bleibt als Angelplatz im Wasser stehen); im Osten eine Baumgruppe. Das Hausboot liegt westlich davon frei im Wasser, ein Feld vor dem Ufer der Marsch. Südöstlich die Hütte der Krebsfischerin mit Kisten, über einen langen Steg zu erreichen. Ein kurzer Steg führt zur kleinen Südwestinsel, wo der Angler neben seinem hölzernen Kahn sitzt. Eingangssteg mit überflutetem Stück (S8) und Nebelsteg bleiben; Sumpfzypressen mit Moos und Schilf an den Ufern. Am Westrand ein schmaler Streifen Marschland wie am Ostrand von Port Delacroix; der Marschpfad kommt dort herein und geht in den Eingangssteg über (Weltpuzzle, 15.11.2026).",
   "boden": "sumpfboden",
   "wandart": "gras",
   "bruecken": [
@@ -19,9 +19,9 @@
     "#ee~~~~~~~~~~~~~~~...~~~~............hh........~",
     "#ee~~~~~~~~~~~~~~~...~~~~~...........hh........~",
     "#..~~~~~~~~~~..........~~~...........~~........~",
-    "#.~~~~~~~~~~...........hhh~~~~hh~~~~~~~........~",
-    "#.~~~~~hhhhh...........hhh~~~~hh~~~~~~~........~",
-    "#.~~~~~hhhhh...........~~~~~~~hh~~~~~~~......~~~",
+    "#.~~~~~~~~~~...........hhhhhhhhh~~~~~~~........~",
+    "#.~~~~~~hhhh...........hhhhhhhhh~~~~~~~........~",
+    "#.~~~~~~hhhh...........~~~~~~~hh~~~~~~~......~~~",
     "#.~~~~~~~~~~...........~~~~~~~hh~~~~~~~......~~~",
     "#.~~~~~~~~~~...........~~~~~~~hh~~~~~~~~hh~~~~~~",
     "#..~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "moebel": "by6StegQuer3",
+      "moebel": "by6StegQuer7",
       "feld": [
         23,
         11
@@ -184,7 +184,7 @@
       "moebel": "sd6Zypresse",
       "feld": [
         40,
-        6
+        4
       ]
     },
     {
@@ -475,13 +475,6 @@
       ]
     },
     {
-      "moebel": "sd6Schilf",
-      "feld": [
-        3,
-        23
-      ]
-    },
-    {
       "moebel": "wg4BlumenWeiss",
       "feld": [
         46,
@@ -524,9 +517,9 @@
       ]
     },
     {
-      "moebel": "by6StegQuer5",
+      "moebel": "by6StegQuer4",
       "feld": [
-        7,
+        8,
         12
       ],
       "runde7": true
@@ -534,7 +527,7 @@
     {
       "moebel": "pd7Hausboot",
       "feld": [
-        1,
+        2,
         10
       ],
       "bauteil_ok": true,
@@ -543,7 +536,7 @@
     {
       "moebel": "el7Gaslaterne",
       "feld": [
-        6,
+        7,
         10
       ],
       "vorn": true,
@@ -652,7 +645,7 @@
     {
       "name": "pepe",
       "feld": [
-        7,
+        8,
         13
       ]
     }
@@ -721,12 +714,12 @@
       "name": "reiher",
       "typ": "tier",
       "feld": [
-        41,
+        42,
         24
       ],
       "eigenschaften": {
-        "von": "41,24",
-        "bis": "41,24",
+        "von": "42,24",
+        "bis": "42,24",
         "verhalten": "sitzen"
       }
     },

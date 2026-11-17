@@ -8738,22 +8738,27 @@
      "id": 46,
      "name": "sb5Leuchtturm",
      "type": "moebel",
-     "x": 896,
-     "y": 336,
-     "width": 112,
-     "height": 256,
+     "x": 864,
+     "y": 304,
+     "width": 133,
+     "height": 304,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 584
+       "value": 600
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1875
       }
      ]
     },
@@ -8761,7 +8766,7 @@
      "id": 47,
      "name": "sb5Faehrhaus",
      "type": "moebel",
-     "x": 816,
+     "x": 800,
      "y": 400,
      "width": 48,
      "height": 64,

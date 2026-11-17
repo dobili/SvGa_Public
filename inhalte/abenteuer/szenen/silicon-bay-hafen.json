@@ -198,11 +198,12 @@
     },
     {
       "moebel": "sb5Leuchtturm",
-      "feld": [56, 21]
+      "feld": [54, 19],
+      "massstab": 1.1875
     },
     {
       "moebel": "sb5Faehrhaus",
-      "feld": [51, 25]
+      "feld": [50, 25]
     },
     {
       "moebel": "sb5Fischerboot",

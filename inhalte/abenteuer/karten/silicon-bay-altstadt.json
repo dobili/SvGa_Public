@@ -13174,22 +13174,27 @@
      "id": 37,
      "name": "sa8Eisenwaren",
      "type": "moebel",
-     "x": 352,
-     "y": 512,
-     "width": 128,
-     "height": 144,
+     "x": 336,
+     "y": 480,
+     "width": 160,
+     "height": 180,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 648
+       "value": 652
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
       }
      ]
     },
@@ -13197,7 +13202,7 @@
      "id": 38,
      "name": "sa8LadenD",
      "type": "moebel",
-     "x": 480,
+     "x": 496,
      "y": 512,
      "width": 112,
      "height": 144,
@@ -13335,8 +13340,8 @@
      "id": 44,
      "name": "wg4Laubbaum",
      "type": "moebel",
-     "x": 592,
-     "y": 560,
+     "x": 544,
+     "y": 448,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -13345,7 +13350,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 616
+       "value": 504
       },
       {
        "name": "kollision",

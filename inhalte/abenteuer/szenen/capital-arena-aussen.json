@@ -261,14 +261,14 @@
     {
       "moebel": "ca7Fahne",
       "feld": [
-        31,
+        30,
         38
       ]
     },
     {
       "moebel": "ca7Fahne",
       "feld": [
-        45,
+        46,
         38
       ]
     },
@@ -327,7 +327,7 @@
       "moebel": "ca7Laterne",
       "feld": [
         35,
-        42
+        41
       ],
       "vorn": true
     },
@@ -335,7 +335,7 @@
       "moebel": "ca7Laterne",
       "feld": [
         43,
-        42
+        41
       ],
       "vorn": true
     },
@@ -447,44 +447,46 @@
     {
       "moebel": "ca8Markt2",
       "feld": [
-        2,
+        1,
         48
       ]
     },
     {
       "moebel": "ca8Eisenwaren",
       "feld": [
-        10,
-        48
-      ]
+        9,
+        46
+      ],
+      "massstab": 1.25
     },
     {
       "moebel": "ca8Markt6",
       "feld": [
-        22,
+        21,
         48
       ]
     },
     {
       "moebel": "ca8Stadthaus45",
       "feld": [
-        29,
+        28,
         47
       ]
     },
     {
       "moebel": "ca8Laden2",
       "feld": [
-        35,
+        45,
         49
       ]
     },
     {
       "moebel": "ca10Cafe",
       "feld": [
-        41,
-        48
-      ]
+        34,
+        46
+      ],
+      "massstab": 1.25
     },
     {
       "moebel": "ca8Markt9",
@@ -641,7 +643,7 @@
     {
       "name": "fahnen",
       "feld": [
-        34,
+        33,
         44
       ]
     }
@@ -674,12 +676,12 @@
       "name": "reporterin",
       "typ": "statist",
       "feld": [
-        50,
+        51,
         43
       ],
       "eigenschaften": {
-        "von": "48,43",
-        "bis": "52,43",
+        "von": "49,43",
+        "bis": "53,43",
         "tun": "filmt vom Platz aus die Freitreppe",
         "wann": "tag"
       }

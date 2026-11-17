@@ -11,7 +11,7 @@ import type { Ausloeser } from "./ausloeserebene";
 import { standbild, stelleAufKachel } from "./figurbilder";
 import { setzeSitzend } from "./figurensitz";
 import { zeigeAlsGeist } from "./geistfigur";
-import { sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
+import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
 
 /**
@@ -46,7 +46,8 @@ export function stelleFigurenAuf(
     figur.setName(a.name);
     if (eigenes) stelleAufKachel(figur, kachel);
     const sitz = a.sitzt ? sitzlageAuf(sitze, a, kachel) : null;
-    if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt, sitz);
+    // Ohne Sitzmöbel sitzt die Figur am Boden (BODENSITZ, sitzplatz.ts).
+    if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt, sitz ?? BODENSITZ);
     if (daten.geister?.has(a.name)) zeigeAlsGeist(szene, figur);
     figur.setDepth(sitz?.tiefe ?? figur.y);
   }

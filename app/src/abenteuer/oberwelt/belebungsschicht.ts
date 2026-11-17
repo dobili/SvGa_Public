@@ -10,7 +10,7 @@
  * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
 import { rahmenzahl, setzeSitzend } from "./figurensitz";
-import { sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
+import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import { sitzbild } from "./sitzrichtung";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
@@ -138,7 +138,7 @@ export class Belebungsschicht {
       sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
     }
     const sitz = v.sitzt ? sitzlageAuf(this.sitze, v.feld, this.kachel) : null;
-    if (eigen && v.sitzt) setzeSitzend(sprite, v.sitzt, sitz);
+    if (eigen && v.sitzt) setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ);
     this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre(), sitz?.tiefe);
   }
 

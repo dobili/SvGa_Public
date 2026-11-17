@@ -9,6 +9,7 @@
 import type { PunktMitVerlauf } from "../../worker/bericht";
 import type { Meldeart } from "../../worker/meldungen";
 import type { Meldestatus } from "../../worker/verwaltung";
+import type { Wikiname } from "./wikiadresse";
 
 export type { Meldeart, Meldestatus, PunktMitVerlauf };
 
@@ -105,18 +106,18 @@ export interface Wikitreffer {
   ausschnitt: string;
 }
 
-/** Alle Seiten des Wikis (Paket D). */
-export const ladeWikiliste = () =>
-  hole<{ seiten: Wikieintrag[] }>("/api/admin/wiki").then((d) => d.seiten);
+/** Alle Seiten eines Wikis (Paket D; seit 17.11.2026 „app“ oder „spiel“). */
+export const ladeWikiliste = (wiki: Wikiname) =>
+  hole<{ seiten: Wikieintrag[] }>(`/api/admin/wiki?wiki=${wiki}`).then((d) => d.seiten);
 
 /** Eine Seite mit Inhalt. */
-export const ladeWikiseite = (pfad: string) =>
+export const ladeWikiseite = (wiki: Wikiname, pfad: string) =>
   hole<{ seite: Wikieintrag & { inhalt: string } }>(
-    `/api/admin/wiki/seite?pfad=${encodeURIComponent(pfad)}`,
+    `/api/admin/wiki/seite?wiki=${wiki}&pfad=${encodeURIComponent(pfad)}`,
   ).then((d) => d.seite);
 
-/** Suche in Titeln und Texten. */
-export const sucheImWiki = (begriff: string) =>
-  hole<{ treffer: Wikitreffer[] }>(`/api/admin/wiki/suche?q=${encodeURIComponent(begriff)}`).then(
-    (d) => d.treffer,
-  );
+/** Suche in Titeln und Texten eines Wikis. */
+export const sucheImWiki = (wiki: Wikiname, begriff: string) =>
+  hole<{ treffer: Wikitreffer[] }>(
+    `/api/admin/wiki/suche?wiki=${wiki}&q=${encodeURIComponent(begriff)}`,
+  ).then((d) => d.treffer);

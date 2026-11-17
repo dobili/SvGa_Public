@@ -108,7 +108,12 @@ test("Dashboard: Wiki mit Bereichen, Suche und Seite (Paket D)", async ({ page }
     stand: null,
     zeit: "2026-10-30T12:00:00Z",
   }));
-  await page.route("**/api/admin/wiki", (route) => route.fulfill({ json: { seiten: liste } }));
+  const spielliste = [{ ...liste[0], pfad: "projekt/regelwerk", titel: "Regelwerk des Spiels" }];
+  await page.route(/\/api\/admin\/wiki\?wiki=(app|spiel)$/, (route) =>
+    route.fulfill({
+      json: { seiten: route.request().url().endsWith("spiel") ? spielliste : liste },
+    }),
+  );
   await page.route("**/api/admin/wiki/suche**", (route) =>
     route.fulfill({
       json: {
@@ -141,4 +146,15 @@ test("Dashboard: Wiki mit Bereichen, Suche und Seite (Paket D)", async ({ page }
   // HTML in Seiten bleibt Text (kein eingeschleuster Code)
   await expect(seite).toContainText("<script>alert(1)</script>");
   await expect(seite.locator("script")).toHaveCount(0);
+  // Seit 17.11.2026 zwei Wikis: Umschalter oben, Zustand in der Adresse (Links, Neuladen).
+  await expect(page).toHaveURL(/\?wiki=app&seite=projekt%2Farbeitsregeln$/);
+  await seite.getByRole("button", { name: "Zurück zur Liste" }).click();
+  await wiki.getByRole("button", { name: "Spiel", exact: true }).click();
+  await expect(wiki.getByRole("heading", { name: "Wiki des Spiels" })).toBeVisible();
+  await expect(wiki.getByRole("button", { name: "Regelwerk des Spiels" })).toBeVisible();
+  await expect(page).toHaveURL(/\?wiki=spiel$/);
+  await page.reload();
+  await expect(
+    page.getByTestId("wiki").getByRole("heading", { name: "Wiki des Spiels" }),
+  ).toBeVisible();
 });

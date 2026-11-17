@@ -20,6 +20,7 @@ import {
 } from "./schnittstelle";
 import { mit, TEXTE } from "./texte";
 import { Wiki } from "./Wiki";
+import { liesWikiadresse } from "./wikiadresse";
 
 const KEIN_ZUGANG = [401, 403];
 
@@ -70,7 +71,10 @@ export function Dashboard() {
   const [ansicht, setzeAnsicht] = useState<Meldestatus | null>(null);
   const [meldungen, setzeMeldungen] = useState<GespeicherteMeldung[] | null>(null);
   const [fehler, setzeFehler] = useState<number | null>(null);
-  const [reiter, setzeReiter] = useState<"uebersicht" | "wiki">("uebersicht");
+  // Nennt die Adresse ein Wiki (Link auf eine Seite), öffnet das Dashboard gleich den Reiter Wiki.
+  const [reiter, setzeReiter] = useState<"uebersicht" | "wiki">(() =>
+    liesWikiadresse() ? "wiki" : "uebersicht",
+  );
   // Jeder Tipp auf „Neu laden“ und jede Änderung zählt hoch und löst das Laden neu aus.
   const [ladung, setzeLadung] = useState(0);
   const lade = () => setzeLadung((n) => n + 1);

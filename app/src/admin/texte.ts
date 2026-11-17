@@ -20,9 +20,14 @@ export const TEXTE = {
   neuLaden: "Neu laden",
   reiter: { uebersicht: "Übersicht", wiki: "Wiki" },
   wiki: {
-    titel: "Wiki",
-    erklaerung:
-      "Code und Projekt zum Nachlesen, aus docs/ und CLAUDE.md, nach jedem Push nach main neu (ohne Buchtexte und Buchbefunde).",
+    titel: { app: "Wiki der Schach-App", spiel: "Wiki des Spiels" },
+    erklaerung: {
+      app: "Code und Projekt der App zum Nachlesen, aus docs/ und CLAUDE.md, nach jedem Push nach main neu (ohne Buchtexte und Buchbefunde).",
+      spiel:
+        "Das Schach-Abenteuer zum Nachlesen: Projekt aus docs/spiel/, Code aus app/src/abenteuer und pipeline/abenteuer, nach jedem Push nach main neu (ohne Buch- und Romantexte).",
+    },
+    umschalter: "Wiki wählen",
+    wikis: { app: "Schach-App", spiel: "Spiel" },
     suche: "Im Wiki suchen",
     suchen: "Suchen",
     bereiche: { projekt: "Projekt", code: "Code" },

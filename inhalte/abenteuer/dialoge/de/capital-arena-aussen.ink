@@ -163,7 +163,15 @@ Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine 
 === abschied_rede ===
 Ich muss dir etwas sagen. Hör zu, ich sage es nur einmal. #sprecher:ambrose #stimmung:nachdenklich
 Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambrose #stimmung:nachdenklich
-{ausgangGhostTownFernpartie == "remis":Die Fernpartie ist remis, mit einem Fehler darin.|Die Fernpartie hatte einen Fehler darin.} Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose #stimmung:nachdenklich
+{
+- ausgangGhostTownFernpartie == "sieg":
+    Die Fernpartie hast du für uns gewonnen, mit einem Fehler darin. Ich habe gejubelt, ganz ohne Haltung. #sprecher:ambrose #stimmung:froh
+- ausgangGhostTownFernpartie == "remis":
+    Die Fernpartie ist remis, mit einem Fehler darin. #sprecher:ambrose #stimmung:nachdenklich
+- else:
+    Die Fernpartie hatte einen Fehler darin. #sprecher:ambrose #stimmung:nachdenklich
+}
+Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose #stimmung:nachdenklich
 * [„Tut mir leid.“]
 - Sei still. Ich bin noch nicht fertig. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh #musik:abschied
 * [Zuhören]

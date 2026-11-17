@@ -225,10 +225,10 @@ Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis #stim
 === tamsin_zuschauen_nachholen ===
 Ich hab Slick und Ray mitgeschrieben. Die ganze Blitzpartie, Zug für Zug. #sprecher:tamsin #stimmung:froh
 Willst du sie sehen? Achte darauf, was Slick nicht sieht. #sprecher:tamsin #stimmung:nachdenklich
-* [„Zeig her.“]
++ [„Zeig her.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Der Zettel bleibt in meiner Tasche. #sprecher:tamsin #stimmung:laechelt
     -> END
 

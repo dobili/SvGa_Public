@@ -41,10 +41,10 @@ Aber Ambrose ist still geworden. Er sieht nach Osten, wo die Staubstraße versch
     -> END
 }
 An einem Pfosten am Canyonrand hängt eine Tafel mit drei Diagrammen: „Ein Schach mit Folgen. Findest du es?“ #sprecher:erzaehler
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegPinewoodGhost.tafel")
     -> END
-* [Weitergehen]
++ [Weitergehen]
     -> END
 
 === zurueck_camp ===

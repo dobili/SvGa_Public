@@ -21,29 +21,30 @@ VAR kegelKerbeGefunden = false
 {taueAngenommen: -> henrik_wartet}
 {henrikGetroffen: -> henrik_angebot}
 ~ henrikGetroffen = true
-Hinter dem Tresen poliert ein alter Mann ein Glas. „Henrik Dahl. Kegelkönig von 1979 bis 1994.“ #sprecher:erzaehler
+Hinter dem Tresen poliert ein alter Mann ein Glas. #sprecher:erzaehler
+Henrik Dahl. Kegelkönig von 1979 bis 1994. #sprecher:henrik #stimmung:laechelt
 -> henrik_angebot
 
 === henrik_angebot ===
-„Mein Ruderboot muss für den Winter an Land. Aber es hängt an vier Tauen, und wenn du das falsche löst, kippt alles.“ #sprecher:erzaehler
+Mein Ruderboot muss für den Winter an Land. Aber es hängt an vier Tauen, und wenn du das falsche löst, kippt alles. #sprecher:henrik #stimmung:laechelt
 * [Ich sehe es mir an]
     ~ taueAngenommen = true
     -> henrik_tipp
 * [Später]
-    „Das Boot hat Zeit. Der Winter nicht.“ #sprecher:erzaehler
+    Das Boot hat Zeit. Der Winter nicht. #sprecher:henrik #stimmung:laechelt
     -> END
 
 === henrik_tipp ===
-„Siehst du den Kegel in der Mitte? Der hält alle anderen. Fällt der, fallen sie alle.“ #sprecher:erzaehler
-„Das Boot liegt am Kai neben dem Bootsschuppen.“ #sprecher:erzaehler
+Siehst du den Kegel in der Mitte? Der hält alle anderen. Fällt der, fallen sie alle. #sprecher:henrik #stimmung:laechelt
+Das Boot liegt am Kai neben dem Bootsschuppen. #sprecher:henrik #stimmung:laechelt
 -> END
 
 === henrik_wartet ===
-„Ein Tau hält das andere. Such das, an dem alles hängt.“ #sprecher:erzaehler
+Ein Tau hält das andere. Such das, an dem alles hängt. #sprecher:henrik #stimmung:laechelt
 -> END
 
 === henrik_danach ===
-„Alle Neune! … Na ja, acht.“ #sprecher:erzaehler
+Alle Neune! … Na ja, acht. #sprecher:henrik #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Ansehen und Fund
@@ -55,7 +56,8 @@ Hinter dem Tresen poliert ein alter Mann ein Glas. „Henrik Dahl. Kegelkönig v
 }
 ~ kegelKerbeGefunden = true
 Am Ende der Bahn steht ein Kegel mit einer tiefen Kerbe. #sprecher:erzaehler
-Henrik ruft vom Tresen: „1979 hab ich mit dem alle Neune geworfen. Die Kerbe ist vom Jubeln.“ #sprecher:erzaehler
+Henrik ruft vom Tresen. #sprecher:erzaehler
+1979 hab ich mit dem alle Neune geworfen. Die Kerbe ist vom Jubeln. #sprecher:henrik #stimmung:laechelt
 ~ gibFund("kegelKerbe")
 -> END
 

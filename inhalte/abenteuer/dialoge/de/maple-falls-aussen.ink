@@ -16,6 +16,8 @@
 
 EXTERNAL beginneAufgaben(runde)
 
+VAR nadelRiverton = 0
+VAR einladungGesehen = false
 VAR ausgangMapleFallsErsteLektion = ""
 VAR junoGetroffen = false
 VAR clubBeigetreten = false
@@ -70,9 +72,24 @@ Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #
 Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stimmung:lacht
 -> END
 
+// Lektorat Akt 2 (17.11.2026): Juno reist mit; zu Hause redet sie über den Stand der Reise.
+=== function junoStand() ===
+{
+- einladungGesehen:
+    ~ return "Silicon Bay! Ich hab im Tagebuch schon eine Seite freigemacht. Mit Glitzerrand."
+- nadelIronwood > 0:
+    ~ return "Vier Nadeln im Tagebuch. Und ein Foto von deiner Mama. Mit Glitzer, diesmal ja."
+- nadelRiverton > 0:
+    ~ return "Riverton hat im Tagebuch sieben Seiten. Eine davon ist nur Regen."
+- endeAkt1Gesehen:
+    ~ return "Cedar Creek hat im Tagebuch vier Seiten bekommen. Und einen Fettfleck von den Keksen."
+- else:
+    ~ return "Samstag Cedar Creek! Ich packe Kekse ein. Für die Nerven."
+}
+
 === juno_alltag ===
 {nadelMapleFalls > 0:
-    {~Die Clubnadel steht schon im Tagebuch. Mit Glitzer, wie versprochen.|{endeAkt1Gesehen:Cedar Creek hat im Tagebuch vier Seiten bekommen. Und einen Fettfleck von den Keksen.|Samstag Cedar Creek! Ich packe Kekse ein. Für die Nerven.}}  #sprecher:juno #stimmung:froh
+    {~Die Clubnadel steht schon im Tagebuch. Mit Glitzer, wie versprochen.|{junoStand()}}  #sprecher:juno #stimmung:froh
 - else:
     {~Ich hab meinen Turm verloren. Schon wieder. Er war so jung.|Das Clubtagebuch hat jetzt eine Seite für dich. Noch leer. Noch!|Sam gibt an, aber er meint es nicht so. Meistens.} #sprecher:juno #stimmung:lacht
 }

@@ -332,13 +332,14 @@ Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten
 === anleger ===
 {lastkahnFrei:
     Am Anleger liegt die Ashford Belle, der Kahn aus Lockport. Kapitän Ruben rollt ein Seil auf. #sprecher:erzaehler
-    „Die Fahrt kostet 5 Münzen“, sagt Ruben. #sprecher:erzaehler
+    Die Fahrt kostet 5 Münzen. #sprecher:ruben #stimmung:laechelt
     * {muenzen >= 5} [Mit der Ashford Belle nach Lockport (5 Münzen)]
         ~ zahle(5)
         ~ reise("lockport.aussen", "kai")
         -> END
     * {muenzen < 5} [Mitfahren (5 Münzen)]
-        Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
+        Du hast nicht genug Münzen. Ruben zuckt die Schultern. #sprecher:erzaehler
+        Komm wieder, wenn die Kasse stimmt. #sprecher:ruben #stimmung:laechelt
         -> END
     * [Hierbleiben]
         -> END

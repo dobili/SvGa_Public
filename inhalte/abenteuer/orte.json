@@ -1289,7 +1289,7 @@
             "ausloeser": "zurueckRiverton"
           },
           "dialog": "riverton-aussen.kanalweg",
-          "wenn": "nadelRiverton"
+          "wenn": "nadelRiverton und verbotGesehen"
         },
         {
           "name": "bahnhofTuer",
@@ -1808,6 +1808,7 @@
           "name": "figur.bigJoe.name",
           "sprite": "figuren/big-joe.png",
           "dialog": "ironwood-kantine.big_joe",
+          "wenn": "nicht endeAkt3Gesehen",
           "gegner": "ironwood.bigJoe"
         },
         {
@@ -1815,6 +1816,7 @@
           "name": "figur.hank.name",
           "sprite": "figuren/hank.png",
           "dialog": "ironwood-kantine.hank",
+          "wenn": "nicht kaufGesehen",
           "gegner": "ironwood.hank"
         },
         {
@@ -1822,6 +1824,7 @@
           "name": "figur.priya.name",
           "sprite": "figuren/priya.png",
           "dialog": "ironwood-kantine.priya",
+          "wenn": "nicht kaufGesehen",
           "gegner": "ironwood.priya"
         },
         {
@@ -1854,6 +1857,7 @@
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",
           "dialog": "ironwood-kantine.mama",
+          "wenn": "nicht kaufGesehen oder (mamaSpielt und nicht lernkarteFaktorenwaage)",
           "gegner": "ironwood.mama"
         },
         {

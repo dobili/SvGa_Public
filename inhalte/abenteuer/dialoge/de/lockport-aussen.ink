@@ -41,27 +41,27 @@ VAR auszeitErhalten = false
 {imogenGetroffen: -> tafel_angebot}
 ~ imogenGetroffen = true
 Neben der Tafel steht eine Frau in Ölzeug, einen Schlüsselbund am Gürtel. #sprecher:erzaehler
-„Imogen Rourke, Schleusenwärterin. Erst das Wasser, dann das Boot.“ #sprecher:erzaehler
+Imogen Rourke, Schleusenwärterin. Erst das Wasser, dann das Boot. #sprecher:imogen #stimmung:nachdenklich
 -> tafel_angebot
 
 === tafel_angebot ===
-„Der Steg ist zu, Herbstwartung. Wer zwei Dinge zugleich im Blick hat, darf mit mir hinüber. Hier ist die Tafel.“ #sprecher:erzaehler
+Der Steg ist zu, Herbstwartung. Wer zwei Dinge zugleich im Blick hat, darf mit mir hinüber. Hier ist die Tafel. #sprecher:imogen #stimmung:nachdenklich
 + [Die Tafel lösen]
     ~ beginneAufgaben("lockport.tafelSchleuse")
     -> END
 + [Später]
-    „Das Wasser wartet. Ich auch.“ #sprecher:erzaehler
+    Das Wasser wartet. Ich auch. #sprecher:imogen #stimmung:nachdenklich
     -> END
 
 === tafel_geloest ===
 ~ lockportSteg = true
-„Zwei Ziele mit einem Zug. Du darfst über den Steg, ich halte dich am Arm.“ #sprecher:erzaehler
+Zwei Ziele mit einem Zug. Du darfst über den Steg, ich halte dich am Arm. #sprecher:imogen #stimmung:nachdenklich
 -> END
 
 === auszeit ===
 ~ auszeitErhalten = true
 Imogen läutet die Glocke am Wärterhaus, einmal, für dich. #sprecher:erzaehler
-„Erst das Wasser, dann das Boot. Manchmal muss man warten, bis die Kammer voll ist.“ #sprecher:erzaehler
+Erst das Wasser, dann das Boot. Manchmal muss man warten, bis die Kammer voll ist. #sprecher:imogen #stimmung:nachdenklich
 ~ gibKarte("auszeit")
 -> END
 
@@ -82,7 +82,7 @@ Das Geländer des Stegs liegt abgeschraubt auf der Mauer. Ein Schild: „Herbstw
 {rubenGetroffen: -> kai_auswahl}
 ~ rubenGetroffen = true
 Ein Mann mit Schiffermütze sitzt auf einem Poller und sieht auf den leeren Kahn. #sprecher:erzaehler
-„Ruben Castellano. Kapitän der Ashford Belle. Ein Kahn ohne Fracht ist ein Haus ohne Leute.“ #sprecher:erzaehler
+Ruben Castellano. Kapitän der Ashford Belle. Ein Kahn ohne Fracht ist ein Haus ohne Leute. #sprecher:ruben #stimmung:laechelt
 -> kai_auswahl
 
 === kai_auswahl ===
@@ -90,30 +90,30 @@ Ein Mann mit Schiffermütze sitzt auf einem Poller und sieht auf den leeren Kahn
 {lockportKahnrennenBestanden && not kahnrennenErledigt: -> kahnrennen_geloest}
 {not kahnrennenErledigt: -> kahnrennen_angebot}
 {lastkahnFrei:
-    „Die Belle hat wieder zu tun. Riverton, Lockport, Ironwood, wie früher.“ #sprecher:erzaehler
+    Die Belle hat wieder zu tun. Riverton, Lockport, Ironwood, wie früher. #sprecher:ruben #stimmung:laechelt
   - else:
-    „Zwei Ziele, ein Schuss. So legt man an. So gabelt man auch.“ #sprecher:erzaehler
+    Zwei Ziele, ein Schuss. So legt man an. So gabelt man auch. #sprecher:ruben #stimmung:laechelt
 }
 -> END
 
 === kahnrennen_angebot ===
 Am Kai schwimmen drei Spielzeugkähne aus Holz. Ein Junge, Finn, und zwei andere Kinder knien an der Kante. #sprecher:erzaehler
-„Ich bin Schiedsrichter. Wer an der Tafel zwei Kähne mit einem Zug trifft, darf den Startschuss geben.“ #sprecher:erzaehler
+Ich bin Schiedsrichter. Wer an der Tafel zwei Kähne mit einem Zug trifft, darf den Startschuss geben. #sprecher:ruben #stimmung:laechelt
 + [An die Kreidetafel]
     ~ beginneAufgaben("lockport.kahnrennen")
     -> END
 + [Später]
-    „Die Kähne laufen nicht weg. Höchstens ab.“ #sprecher:erzaehler
+    Die Kähne laufen nicht weg. Höchstens ab. #sprecher:ruben #stimmung:laechelt
     -> END
 
 === kahnrennen_geloest ===
 ~ kahnrennenErledigt = true
-„Drei von drei. Dann los, du gibst das Zeichen.“ #sprecher:erzaehler
+Drei von drei. Dann los, du gibst das Zeichen. #sprecher:ruben #stimmung:froh
 Du klatschst in die Hände. Die Kähne treiben los, Finns Kahn dreht sich einmal und gewinnt trotzdem. #sprecher:erzaehler
 -> END
 
 === post_abgeben ===
-„Ein Brief? Für mich?“ #sprecher:erzaehler
+Ein Brief? Für mich? #sprecher:ruben #stimmung:ueberrascht
 * [Den Brief von Big Joe geben]
     -> post_geloest
 
@@ -121,7 +121,7 @@ Du klatschst in die Hände. Die Kähne treiben los, Finns Kahn dreht sich einmal
 ~ postErledigt = true
 ~ lastkahnFrei = true
 Ruben liest, dann lacht er so laut, dass die Möwen auffliegen. #sprecher:erzaehler
-„Eine Fuhre Stahlträger. Solange Joe das Sagen hat, fährt die Belle wieder.“ #sprecher:erzaehler
+Eine Fuhre Stahlträger. Solange Joe das Sagen hat, fährt die Belle wieder. #sprecher:ruben #stimmung:froh
 Ein Brief kann ein ganzes Schiff bewegen. #sprecher:ambrose #stimmung:laechelt
 -> END
 
@@ -145,7 +145,8 @@ Henriks Ruderboot hängt an vier Tauen. Löst du das falsche, kippt alles. #spre
 === taue_geloest ===
 ~ taueErledigt = true
 Ein Tau nach dem anderen, und das Boot gleitet die Slipanlage hinauf. #sprecher:erzaehler
-Henrik kommt aus dem Gasthaus gelaufen. „Damit du beim nächsten Boot keine nassen Füße kriegst. Ich hab zwei Paar.“ #sprecher:erzaehler
+Henrik kommt aus dem Gasthaus gelaufen. #sprecher:erzaehler
+Damit du beim nächsten Boot keine nassen Füße kriegst. Ich hab zwei Paar. #sprecher:henrik #stimmung:laechelt
 Er drückt dir ein Paar Gummistiefel in die Hand. #sprecher:erzaehler
 -> END
 
@@ -170,9 +171,11 @@ An einem Pfosten am Ufer hängt eine Messingglocke. Imogen läutet sie für jede
     Die Ashford Belle liegt vertäut unter ihrer Plane. Ohne Fracht fährt sie nirgendwohin. #sprecher:erzaehler
     -> END
 }
-Ruben steht an der Gangway. „Die Belle legt gleich ab. 5 Münzen die Fahrt. Wohin?“ #sprecher:erzaehler
+Ruben steht an der Gangway. #sprecher:erzaehler
+Die Belle legt gleich ab. 5 Münzen die Fahrt. Wohin? #sprecher:ruben #stimmung:laechelt
 * {muenzen < 5} [Mitfahren (5 Münzen)]
-    Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
+    Du hast nicht genug Münzen. Ruben zuckt die Schultern. #sprecher:erzaehler
+    Komm wieder, wenn die Kasse stimmt. #sprecher:ruben #stimmung:laechelt
     -> END
 * {muenzen >= 5} [Nach Riverton (5 Münzen)]
     ~ zahle(5)
@@ -185,5 +188,5 @@ Ruben steht an der Gangway. „Die Belle legt gleich ab. 5 Münzen die Fahrt. Wo
     ~ reise("ironwood.aussen", "anleger")
     -> END
 * [Hierbleiben]
-    „Die Belle wartet nicht ewig. Aber heute schon.“ #sprecher:erzaehler
+    Die Belle wartet nicht ewig. Aber heute schon. #sprecher:ruben #stimmung:laechelt
     -> END

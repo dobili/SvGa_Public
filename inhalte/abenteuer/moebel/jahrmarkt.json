@@ -375,6 +375,17 @@
       "zustand": "gebraucht",
       "stil": "rustikal"
     },
+    "n6Zuckerwattewagen": {
+      "quelle": "spiel/eigene/zuckerwattewagen.png",
+      "breite": 32,
+      "hoehe": 40,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "beschreibung": "Zuckerwattewagen von schräg oben mit rosa-weißer Markise, links Zuckerwatte auf Stäbchen, rechts die Trommel (Gemini, ersetzt das Abziehbild n6Zuckerwatte, Regel 10.71)"
+    },
     "n6Zuckerwatte": {
       "quelle": "spiel/eigene/zuckerwatte.png",
       "breite": 32,

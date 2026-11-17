@@ -98,12 +98,14 @@ Adresse mit „#abenteuer“ öffnen).
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
       und Glühbirnen-Zeile dasselbe (gleicher Trainer, gleiches Thema), steht nur die Warum-Zeile da.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Karte „Verpasst“ nur mit dieser Zeile.
 - [ ] N2603. Im Rückblick Zug für Zug zu einem Zug mit „?!“ oder „?“ gehen: Unter „Besser war …“ steht die Glühbirnen-
       Zeile mit Kapitel; aufgeklappt gibt es einen eigenen Knopf „Üben“. Bei „gut“ und „sehr gut“ erscheint sie nie.
 - [ ] N2604. Nach mindestens 5 ausgewerteten Partien, in denen in 3 oder mehr derselbe Fehler vorkam, zeigt die Karte
       „Heute“ eine Kachel wie „Drohung stehen gelassen · 3 von 5 Partien · Kapitel 1“. Der Knopf öffnet den Trainer; nach
       dem Üben verschwindet die Kachel bis zur nächsten Partie. (Ältere Partien bekommen die Kürzel im Leerlauf
       nachberechnet.)
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Kachel verschwindet nach dem Üben.
 
 ### Neu in 0.3.53: Aussehen nur noch im Profil, Fehler mit Buchbezug (7.11.2026)
 
@@ -112,10 +114,12 @@ Adresse mit „#abenteuer“ öffnen).
       „Brett“ offen. Dort stehen alle Bretter, die freischaltbaren mit Schloss und Bedingung („Nacht und Gold“: „Mit
       allen Orden der Buchteile“). „Grün“ antippen: Vorschau und jede Abbildung im Buch werden grün. Reiter „Figuren“
       ebenso (etwa „Merida“; „Gold“ mit Schloss „Ab Stufe 5“). Der Schalter „Koordinaten“ steht unter den Brettern.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2601. Auswertung einer Partie mit Fehler oder Patzer: Auf der Fehlerkarte der Zeitleiste steht unter „Besser war“
       eine Zeile mit Buchsymbol, etwa „Drohung stehen gelassen (Kapitel 1)“. Tipp klappt den Satz mit der ganzen
       Fundstelle auf; „Üben“ neben „Zur Stellung“ öffnet den passenden Trainer (bei Taktik mit dem Motiv). Passt der Grund zum Zug?
       Fehlt die Zeile, wo ein klarer Grund erkennbar ist? Bei „Verpasst“ gibt es nur die Zeile zum besseren Zug.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); offen für dich: Passt der Grund zum Zug, fehlt die Zeile irgendwo?
 
 ### Neu in 0.3.52: Linienknöpfe in der Zugfolgenleiste (7.11.2026)
 
@@ -126,6 +130,7 @@ Adresse mit „#abenteuer“ öffnen).
       keine Knöpfe „Besserer Zug“ und „Bestrafung“ mehr. An einem Fehler spielt ein Tipp auf Glühbirne oder
       Schwerter die Folge Zug für Zug vor (nochmal tippen hält an); danach geht man mit Vor/Zurück selbst durch,
       „Partie“ (erstes Symbol) führt zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.51: Deine Meldungen vom 6.11.2026
 
@@ -147,6 +152,7 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2589. Kapitelseite (etwa Kapitel 0), Karte „Dein Fortschritt“: Tipp auf den Ring Abbildungen oder
       Warum-Fragen rollt zu den Abbildungen, Tipp auf den Ring Lernziele öffnet die Checkliste mit der
       aufgeklappten Karte dieses Kapitels, Tipp auf Übungen rollt zu den Übungen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (geprüft an Kapitel 1).
 - [ ] N2590. Startseite, Karte „Heute“: Wer schon Aufgaben am Brett lösen kann, sieht unter den Vorschlägen
       jetzt auch „Kurzplan“ (etwa 15 Minuten, fertig zusammengestellt); Tipp öffnet die Kurzpläne.
 - [ ] N2591. Einstellungen › Bedienung, ganz unten „Was zuerst kommt“: Buch / Spielen / Umsehen. Auf „Spielen“
@@ -163,11 +169,13 @@ Adresse mit „#abenteuer“ öffnen).
       Bestrafung“. Vor/Zurück und die Pfeiltasten gehen Zug für Zug durch die Folge, Brett und
       markierter Zug passen immer zusammen; Zurück am ersten Zug oder „Zurück zur Partie“ führt in
       die Partie zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Linie heute über die Knöpfe aus N2599).
 - [ ] N2597. Karte „Heute“ › „Wann übst du?“ › Übungszeit planen: Wochentage und Dauer wählen (10 bis 60
       Minuten), keine Uhrzeit mehr. An einem Plantag steht beim Öffnen „Heute ist dein Übungstag: 0 von
       20 Minuten geschafft“ mit Balken und „Jetzt üben“. Ein paar Minuten in der App üben (lesen,
       ziehen, lösen): Die Zahl steigt etwa jede Minute; wer drei Minuten nichts antippt, zählt nicht
       weiter. Im Reiter der Karte steht „7/20 Min“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Minuten zählen beim Üben, „7/20 Min“ im Reiter.
 - [ ] N2598. Mindestens 5 gewertete Partien gegen Bots in derselben Zeitart spielen und auswerten lassen. Liegt eine
       Phase deutlich (mindestens etwa 150 Punkte) unter deiner Schätzung, steht auf der Karte „Heute“
       die Kachel „Aus deinen Partien“: „Ein Hinweis aus deinen letzten 8 Partien: Im Endspiel spielst
@@ -200,15 +208,19 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Brett nur noch Gold 1, die Felder bleiben markiert; die beiden stehen in der Liste als „– Feld e4“ mit
       „Nummer geben“. Beschriftete Nummern behalten ihren Text, auch wenn sie dadurch eine neue Nummer
       bekommen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2583. „Nummern von Rot“ aufklappen, Haken „Nummern“ weg: Alle roten Marken der ganzen Variante sind ohne
       Nummer, der Text bei „Rot“ in der Legende gilt für alle. Haken wieder an: Die Nummern sind zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2584. PGN der Variante sichern und wieder einlesen: Marken ohne Nummer bleiben ohne Nummer.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.49: Goldener Pfeil in Varianten wie in der Auswertung (1.11.2026)
 
 - [ ] N2581. Analysierte Variante: Steht ein Zug am Brett, der nicht der beste war (etwa 3... Sf6?? im Schäfermatt),
       zeigt ein goldener Pfeil den besseren Zug, wie in der Partieauswertung. Der grüne Pfeil für den
       besten nächsten Zug ist weg. Der Schalter „Engine-Pfeil“ blendet den goldenen Pfeil aus und ein.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.48: Bearbeiten und Löschen auffindbar (1.11.2026)
 
@@ -216,28 +228,34 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Name und Kommentar („Speichern“ übernimmt, „Abbrechen“ nicht), der Papierkorb fragt „„…“ endgültig
       löschen?“. In einer geöffneten Variante steht hinter dem Titel ein goldener Stift; Antippen öffnet
       Name, Kommentar, Teilen und Löschen. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2576. **Engine-Folgen vorab an:** Eine ausgewertete Partie mit mindestens einem eigenen Fehler, Patzer oder
       verpassten Gewinn öffnen → Gabel-Knopf am Brett: Der Schalter „Engine-Folgen übernehmen („Besser
       war …“, „So wird bestraft“)“ ist jetzt schon angehakt → „Öffnen“. An jedem eigenen Fehler zweigt
       „Besser war (Engine)“ ab, bei Fehler und Patzer zusätzlich nach deinem Zug „So wird bestraft
       (Engine)“. Ungenauigkeiten bekommen keine Folgen. Ebenso unter Varianten › Neue Variante ›
       Partie. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Haken vorab an; Abzweige an den Fehlern).
 - [ ] N2577. **Fehler des Gegners:** Am Gabel-Knopf einer ausgewerteten Partie steht unter „Engine-Folgen
       übernehmen“ der Haken „Auch an Fehlern des Gegners“ (vorab an). Mit beiden Haken bekommen auch die
       Fehler des Gegners „Besser war (Engine)“ und „So wird bestraft (Engine)“. Ebenso unter Neue Variante ›
       Partie. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Haken vorab an).
 - [ ] N2578. **Engine-Folgen nach der Analyse einer Variante:** Variante mit einem Fehler (etwa PGN „1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#“ einlesen) → „Analyse“ → wenn sie fertig ist, erscheint oben „Engine-
       Folgen übernehmen (+… Züge)“. Antippen legt an Fehlern, Patzern und verpassten Gewinnen beider Seiten
       „Besser war“ und „So wird bestraft“ als Abzweige an (Züge mit Chip-Zeichen „Engine“); danach
       verschwindet der Knopf. Ungenauigkeiten bekommen nichts.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2579. **Karte:** Rechts neben dem letzten Zug jeder Linie steht ihre Endstellung als kleines Brett.
       Nach der Analyse steht neben jedem Brett der Karte (Abzweige und Endstellungen) ein schmaler
       Bewertungsbalken (unten Weiß, oben Schwarz): So sieht man beim Scrollen, welche Linie wem liegt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2580. **Baumansicht:** Nach der Analyse steht links an jedem kleinen Brett der Abzweig-Karten der
       Bewertungsbalken mit Zahl.
 - [ ] N2575. Touren (Kompass): Die Tour der Variante beginnt mit dem Titel (Bearbeiten, Löschen), die Tour der
       Liste nennt Stift und Papierkorb, die Touren von Lernsammlung und Fehlerdatenbank sagen, dass ein
       aufgeklappter Eintrag „Bearbeiten“ und „Löschen“ (mit „Rückgängig“) hat.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Texte und Durchlauf aller Touren).
 
 ### Neu in 0.3.47: Meisterpartien statt Studien, gespeicherte Werte (1.11.2026)
 
@@ -247,6 +265,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       und „Aktuelle Turniere“ listen die Zusatzpartien von „Zug erraten“ (Hinweis „Zusatzinhalt“);
       „Anderssen – Kieseritzky, Freie Partie, London 1851“ öffnet die Unsterbliche Partie als Variante ab der
       Grundstellung. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: „Aktuelle Turniere“.
 - [ ] N2572. **Speichern nur per Abfrage:** Neue Variante aus der Grundstellung, 1. e4 ziehen: oben steht
       „Geändert · nicht gespeichert“ mit dem Knopf „Speichern“; in der Liste „Varianten“ ist noch nichts.
       „Zurück“ (oben, Zurück-Taste oder untere Leiste) fragt „Variante speichern?“ mit Speichern, Nicht
@@ -255,10 +274,12 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Züge … speichern?“ (oder „Nur das Buch öffnen“); „Als Variante speichern“ in der Zugleiste und
       „Einlesen und speichern“ bei PGN sind selbst die Antwort. Eine gespeicherte Variante speichert
       Änderungen weiter von selbst. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Nachfrage bei Karte, Von hier spielen, Abfragen und am Gabel-Knopf einer Abbildung.
 - [ ] N2573. **Bretter in der Karte:** Abb. 2.40 als Variante → „Karte“: Unter „3. Sxe5“ und „4. De2!“ steht je
       ein kleines Brett mit der Stellung am Abzweig und den blauen gepunkteten Pfeilen (Stern am
       Hauptzug, „2“, „3“ …); die Nebenäste beginnen darunter. Ein Tipp aufs Brett springt zu diesem
       Abzweig. Zoomen macht die Bretter größer. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2571. Eine ausgewertete Partie → Moment „Als Variante“ (oder Gabel in der Auswertung) → in der
       Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
       Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler

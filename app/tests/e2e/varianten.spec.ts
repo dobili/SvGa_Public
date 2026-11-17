@@ -196,6 +196,9 @@ test("Laden aus Grundstellung, FEN, Stellungseditor, Partie (mit Engine-Folgen),
   await expect(page.getByTestId("variantentitel")).toHaveText("Königsbauernspiel");
   await expect(page.getByTestId("variantenkommentar")).toContainText("Springer raus");
   await quelle("Partie");
+  // Seit 0.3.48 (N2576, N2577): Engine-Folgen und „Auch an Fehlern des Gegners“ vorab an.
+  await expect(page.getByLabel(/Engine-Folgen übernehmen/)).toBeChecked();
+  await expect(page.getByLabel("Auch an Fehlern des Gegners")).toBeChecked();
   await page.getByLabel(/Engine-Folgen übernehmen/).check();
   await page
     .getByTestId("varianten-neu")

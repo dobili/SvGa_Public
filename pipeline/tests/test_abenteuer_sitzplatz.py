@@ -8,6 +8,7 @@ import pytest
 
 from pipeline.abenteuer.sitzplatz import (
     SITZ_TIEFENABSTAND,
+    am_boden,
     finde_sitz,
     ist_sitzmoebel,
     sichtbarer_umriss,
@@ -66,3 +67,15 @@ def test_sichtbarer_umriss_und_sitzmoebel_aus_bildern():
     ]
     katalog = {"mf8SchulstuhlRechts": {"art": "stuhl"}, "t1": {"art": "tisch"}}
     assert sitzmoebel(gesetzt, katalog, [bild, bild]) == [SCHULSTUHL]
+
+
+def test_am_boden_ohne_hub():
+    # Lily sitzt auf dem Bordstein (maple-falls-aussen.ink): kein Möbel, also kein Hub, kein Versatz.
+    assert am_boden([], (14, 24)) and not am_boden([SCHULSTUHL], (5, 7))
+    pytest.importorskip("PIL")
+    from pipeline.abenteuer.belebungsvorschau import sitzend
+
+    class Bild:
+        width = 32
+
+    assert sitzend(Bild, (400, 224, 368), (14, 24), "rechts", [])[1:3] == (224, 368)

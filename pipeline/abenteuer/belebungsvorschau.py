@@ -127,9 +127,11 @@ def sitzend(bild, teil: tuple, feld: tuple[int, int], sitzt: str | None, sitze) 
     tiefe, x, y = teil
     if sitzt not in SITZ_RAHMEN:
         return tiefe, x, y, bild
-    y -= round(SITZ_HUB * (PIXELLAB_MASSSTAB if bild.width >= 2 * K else 1))
     lage = sitzlage_auf(sitze, feld)
-    return (tiefe, x, y, bild) if lage is None else (lage[2], x + lage[0], y + lage[1], bild)
+    if lage is None:
+        return tiefe, x, y, bild  # am Boden (Bordstein, sitzplatz.BODENSITZ): kein Hub, nicht verschoben
+    y -= round(SITZ_HUB * (PIXELLAB_MASSSTAB if bild.width >= 2 * K else 1))
+    return lage[2], x + lage[0], y + lage[1], bild
 
 
 def figurenteile(szene: dict, privat: Path, figuren: list[dict], sitze, oeffne) -> list[tuple]:

@@ -643,7 +643,7 @@
       "eigenschaften": {
         "von": "35,31",
         "bis": "35,31",
-        "tun": "flickt am Steg ein Netz",
+        "tun": "flickt am Ufer ein Netz",
         "wann": "tag",
         "sagt": "statist.pelikaninsel.dorf.fischerin"
       }
@@ -655,7 +655,7 @@
       "eigenschaften": {
         "von": "30,32",
         "bis": "30,32",
-        "tun": "sitzt mit Mütze auf einer Kiste",
+        "tun": "sitzt mit Mütze im Sand und flickt ein Netz",
         "wann": "tag",
         "sagt": "statist.pelikaninsel.dorf.netzflicker"
       }

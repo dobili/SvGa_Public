@@ -235,7 +235,7 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
     {~Na, {held}? Frische Karten sind da. Und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles. Nur keine Siege.} #sprecher:patel #stimmung:laechelt
 - else:
     ~ patelGetroffen = true
-    Ein kleiner Kiosk mit bunter Markise. Hinter der Theke sortiert ein Mann Zeitschriften. #sprecher:erzaehler
+    Ein kleiner Verkaufswagen mit bunter Markise. Hinter der Klappe sortiert ein Mann Zeitschriften. #sprecher:erzaehler
     Willkommen bei Patel! Zeitungen, Limo und Schachkarten für unterwegs. #sprecher:patel #stimmung:froh
     Münzen gibt es hier fürs Gewinnen. Bei mir wirst du sie wieder los. #sprecher:patel #stimmung:lacht
 }

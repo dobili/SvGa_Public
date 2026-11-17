@@ -1015,7 +1015,7 @@
       "typ": "statist",
       "feld": [16, 19],
       "eigenschaften": {
-        "tun": "fegt Laub vom Steg vor der Ranger-Station",
+        "tun": "fegt Laub vor dem Tor der Ranger-Station",
         "wann": "tag",
         "von": "14,19",
         "bis": "20,20",

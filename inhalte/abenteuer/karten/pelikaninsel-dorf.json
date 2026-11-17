@@ -6875,7 +6875,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "flickt am Steg ein Netz"
+       "value": "flickt am Ufer ein Netz"
       },
       {
        "name": "wann",
@@ -6913,7 +6913,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "sitzt mit Mütze auf einer Kiste"
+       "value": "sitzt mit Mütze im Sand und flickt ein Netz"
       },
       {
        "name": "wann",

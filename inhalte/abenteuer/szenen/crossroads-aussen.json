@@ -1131,7 +1131,7 @@
       "typ": "statist",
       "feld": [52, 20],
       "eigenschaften": {
-        "tun": "spritzt einen Pick-up ab",
+        "tun": "spritzt den Vorplatz der Tankstelle ab",
         "wann": "tag",
         "von": "51,19",
         "bis": "55,21"

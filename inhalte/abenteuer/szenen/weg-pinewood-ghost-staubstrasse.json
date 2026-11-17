@@ -704,7 +704,7 @@
       "eigenschaften": {
         "von": "42,20",
         "bis": "42,20",
-        "tun": "wartet neben ihrem Lastwagen auf Hilfe",
+        "tun": "wartet am Straßenrand auf den Abschleppwagen",
         "wann": "tag",
         "sagt": "statist.wegPinewoodGhost.staubstrasse.truckerin"
       }
@@ -728,7 +728,7 @@
       "eigenschaften": {
         "von": "140,12",
         "bis": "140,12",
-        "tun": "trinkt Wasser im Schatten eines Mastes",
+        "tun": "trinkt Wasser im Schatten eines Saguaros",
         "wann": "tag"
       }
     },

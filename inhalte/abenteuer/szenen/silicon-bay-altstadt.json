@@ -1014,7 +1014,7 @@
       "typ": "statist",
       "feld": [60, 41],
       "eigenschaften": {
-        "tun": "verkauft Eis, obwohl es schneit",
+        "tun": "verkauft Eis, obwohl Winter ist",
         "wann": "tag",
         "von": "58,41",
         "bis": "63,42",
@@ -1039,7 +1039,7 @@
       "typ": "statist",
       "feld": [39, 52],
       "eigenschaften": {
-        "tun": "baut einen Schneemann im Park",
+        "tun": "baut im Park eine Burg aus Laub",
         "wann": "tag",
         "von": "36,52",
         "bis": "42,53"
@@ -1104,7 +1104,7 @@
       "typ": "statist",
       "feld": [42, 52],
       "eigenschaften": {
-        "tun": "rollt eine Schneekugel für den Schneemann",
+        "tun": "rollt einen Ball über den Rasen",
         "wann": "tag",
         "von": "41,53",
         "bis": "44,53"

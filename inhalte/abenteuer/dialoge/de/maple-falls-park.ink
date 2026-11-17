@@ -57,13 +57,13 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
 * [„Ich suche es für Sie.“]
     Wie freundlich. Es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 * [„Wie sieht es aus?“]
-    Klein, grün, mit Magnetfiguren. Und mit einer Stellung, die ich nicht lösen kann. #sprecher:abernathy #stimmung:laechelt
+    Klein, grün, mit Magnetfiguren. Daneben liegt ein Zettel mit Aufgaben, die ich nicht lösen kann. #sprecher:abernathy #stimmung:laechelt
 - Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === bibliothekar_wartet ===
 {parkbankBrettGefunden:
-    Ah, du hast es gesehen? Und die Stellung? Weiß am Zug, so heißt es, gewinnt eine Figur. #sprecher:abernathy #stimmung:ueberrascht
+    Ah, du hast es gesehen? Und den Zettel? Weiß setzt in einem Zug matt, so heißt es. Dreimal. #sprecher:abernathy #stimmung:ueberrascht
 - else:
     Eine Bank, ein grünes Brett. Weiter weiß ich leider auch nicht. #sprecher:abernathy #stimmung:nachdenklich
 }
@@ -71,9 +71,9 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
 
 === bibliothekar_brief ===
 ~ abernathyBrief = true
-Mein Brett! Und du hast die Stellung gelöst? Wunderbar. #sprecher:abernathy #stimmung:froh
+Mein Brett! Und du hast die Aufgaben gelöst? Wunderbar. #sprecher:abernathy #stimmung:froh
 Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
-Die Stellung stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
+Die Stellung auf dem Brett stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
 Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy #stimmung:nachdenklich
 So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
 Auf dem Heimweg ist Ambrose lange still. #sprecher:erzaehler #pause
@@ -105,13 +105,13 @@ Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #st
 
 === parkbank_fund ===
 ~ parkbankBrettGefunden = true
-Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zettel. #sprecher:erzaehler
-„Weiß am Zug gewinnt eine Figur.“ #sprecher:erzaehler
-Zähl, Kind. Wer greift an, wer verteidigt? #sprecher:ambrose #stimmung:nachdenklich
+Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zettel mit drei kleinen Diagrammen. #sprecher:erzaehler
+„Weiß zieht und setzt in einem Zug matt.“ #sprecher:erzaehler
+Ein Zug, Kind. Sieh nach, wohin der König noch kann. #sprecher:ambrose #stimmung:nachdenklich
 -> parkbank_raetsel
 
 === parkbank_raetsel ===
-* [Die Stellung lösen]
+* [Die Aufgaben lösen]
     ~ beginneAufgaben("mapleFalls.parkbankRaetsel")
     -> END
 * [Nicht jetzt]
@@ -160,7 +160,7 @@ Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 
 === jo_nach_niederlage ===
 {limoGebracht:
-    Gewonnen! Die Limo war gut, aber die Revanche ist besser. #sprecher:skaterJo #stimmung:lacht
+    Gewonnen! Die Limo war gut, aber Gewinnen schmeckt besser. #sprecher:skaterJo #stimmung:lacht
 - else:
     Limo, bitte. Mit Eis. #sprecher:skaterJo #stimmung:lacht
 }
@@ -217,7 +217,7 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
     Juno wartet an der Landstraße. Zu Fuß, am Fluss entlang. #sprecher:erzaehler
     -> END
 - else:
-    Der Linienbus nach Cedar Creek fährt jede Stunde. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
+    Der Bus nach Cedar Creek steht an der Haltestelle, der Motor läuft. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
 }
 * [Einsteigen]
     Der Bus fährt los, die Landstraße entlang nach Cedar Creek. #sprecher:erzaehler
@@ -232,7 +232,7 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 
 === kiosk ===
 {patelGetroffen:
-    {~Na, {held}? Frische Karten sind da. Und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles. Nur keine Siege.} #sprecher:patel #stimmung:laechelt
+    {~Na, wieder da? Frische Karten sind da. Und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles. Nur keine Siege.} #sprecher:patel #stimmung:laechelt
 - else:
     ~ patelGetroffen = true
     Ein kleiner Verkaufswagen mit bunter Markise. Hinter der Klappe sortiert ein Mann Zeitschriften. #sprecher:erzaehler
@@ -240,8 +240,8 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
     Münzen gibt es hier fürs Gewinnen. Bei mir wirst du sie wieder los. #sprecher:patel #stimmung:lacht
 }
 {limoGefragt and not limoGebracht and not hatLimo:
-    Für Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel #stimmung:laechelt
-    Er zählt das Wechselgeld zweimal. Du bist nicht der Erste. Aber die meisten kommen nicht wieder. #sprecher:patel #stimmung:laechelt
+    Schickt dich Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel #stimmung:laechelt
+    Du bist nicht der Erste, der für sie Limo holt. Aber die meisten kommen nicht wieder. #sprecher:patel #stimmung:laechelt
 }
 ~ oeffneLaden("mapleFalls.kiosk")
 -> END

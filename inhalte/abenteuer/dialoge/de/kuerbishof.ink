@@ -38,7 +38,7 @@ An jeder Kreuzung hängt eine Stellung. Wer das Matt findet, weiß den Weg. Trau
 + [Ja, rein in den Mais.]
     ~ beginneAufgaben("kuerbishof.irrgarten")
     -> END
-+ [Später.]
++ [Nicht jetzt.]
     Der Mais läuft nicht weg. #sprecher:clover #stimmung:laechelt
     -> END
 

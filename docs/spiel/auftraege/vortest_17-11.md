@@ -22,6 +22,26 @@ nachstellen lässt.
   „Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße)“, bei FEHLER „Vorgeprüft:
   Abweichung …“.
 
+## Gesamt (alle 273 offenen Punkte)
+
+| Ergebnis  | Anzahl |
+| --------- | ------ |
+| BESTANDEN | 108    |
+| FEHLER    | 0      |
+| ÜBERHOLT  | 5      |
+| NUR AUTOR | 113    |
+| OFFEN     | 47     |
+
+- Der Autor kann die 108 bestandenen Punkte abhaken, wenn ihm die Zeile genügt. Steht dort „nicht
+  geprüft“ oder „offen für dich“, bleibt genau dieser Teil.
+- Die 5 überholten Punkte beschreiben einen älteren Stand und können ebenfalls weg.
+- Die 47 offenen Punkte brauchen aufwendige Zustände, etwa viele ausgewertete Partien,
+  Zeitgrenzen oder den Flugmodus. Sie sind die Kandidaten für weitere Tests.
+- Neue dauerhafte Prüfungen aus diesem Durchgang:
+  - `varianten.spec.ts`: Haken der Engine-Folgen vorab an.
+  - `varianten-stufe4.spec.ts`: eigene Züge an einer Abbildung als Variante.
+  - `wochenziel.spec.ts`: Plan ändern und entfernen.
+
 ## Paket 1: N2616 bis N2573 (40 Punkte)
 
 | Nummer | Ergebnis  | Beleg/Foto                                                                                        | Hinweis                                                                                                   |
@@ -122,6 +142,216 @@ Zusammen: 21 BESTANDEN, 0 FEHLER, 8 NUR AUTOR, 11 OFFEN.
 
 Zusammen: 33 BESTANDEN, 0 FEHLER, 4 ÜBERHOLT (der Text beschreibt einen älteren Stand, die App ist richtig; in `AUFGABEN_AUTOR.md` als „Vorgeprüft: Abweichung, nur im Text“), 2 NUR AUTOR, 7 OFFEN.
 
+## Paket 3: N2480 bis N2549, 0.3.45 (38 Punkte)
+
+| Nummer | Ergebnis  | Beleg/Foto                                                                             | Hinweis                                                        |
+| ------ | --------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| N2480  | BESTANDEN | spielen: „2. g4?? erlaubt Matt … kein Zurücknehmen“                                    | Aufgeben und Wiederöffnen nicht geprüft.                       |
+| N2481  | OFFEN     | –                                                                                      | Braucht eine verlorene Partie mit „Bester Zug“.                |
+| N2482  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) | Phasenkarte und Daumenwischen nicht geprüft.                   |
+| N2483  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) | Zwei schnelle Tipps nicht geprüft.                             |
+| N2484  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) |                                                                |
+| N2485  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) |                                                                |
+| N2486  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) | Bewegung reduziert: kein weiches Scrollen.                     |
+| N2487  | NUR AUTOR | –                                                                                      | Aussehen hell/dunkel, Querformat, Tablet.                      |
+| N2530  | BESTANDEN | trainer-repertoire: „Startkarte …“, „Königsgambit als Weiß …“                          | Übereinstimmung mit Kapitel 3 beurteilt der Autor.             |
+| N2531  | OFFEN     | –                                                                                      | Gedächtnis je Quelle nicht nachgestellt.                       |
+| N2532  | NUR AUTOR | –                                                                                      | Frage „Passt das so?“.                                         |
+| N2533  | BESTANDEN | trainer-repertoire: „Italienisch aus der Praxis …“                                     |                                                                |
+| N2534  | BESTANDEN | trainer-repertoire: „Italienisch aus der Praxis …“                                     | Herkunft, falscher Zug mit Meldung.                            |
+| N2535  | BESTANDEN | trainer-repertoire: „Italienisch …“, „Startkarte …“                                    | Neuladen statt App schließen.                                  |
+| N2536  | BESTANDEN | Texte `tour.trainer.repertoire.*` in `de.json`                                         |                                                                |
+| N2540  | BESTANDEN | sammlung-bearbeiten: „Fehlerdatenbank: Kachel im Training …“                           | Reihenfolge der Kacheln nicht geprüft.                         |
+| N2541  | BESTANDEN | sammlung-bearbeiten: „Auswertung: nach „Merken“ Bestätigung …“                         |                                                                |
+| N2542  | BESTANDEN | sammlung-bearbeiten: „Auswertung: …“                                                   |                                                                |
+| N2543  | BESTANDEN | sammlung-bearbeiten: „Lernsammlung: anlegen, Plan ergänzen …“                          |                                                                |
+| N2544  | BESTANDEN | sammlung-bearbeiten: „Lernsammlung: …“                                                 | Gruppe „Narrenmatt“.                                           |
+| N2545  | BESTANDEN | sammlung-bearbeiten: „Lernsammlung: …“                                                 | 10 Sekunden nicht geprüft.                                     |
+| N2546  | BESTANDEN | sammlung-bearbeiten: „Fehlerdatenbank: …“                                              | Auswertung zählt beim neuen Kapitel.                           |
+| N2547  | BESTANDEN | sammlung-bearbeiten: „Fehlerdatenbank: …“                                              |                                                                |
+| N2548  | BESTANDEN | `src/tour/touren.ts` und tour: „jede Tour der Bereiche …“                              |                                                                |
+| N2490  | BESTANDEN | fehlertest-3: „geteilter Link bei offener App …“                                       |                                                                |
+| N2491  | BESTANDEN | fehlertest-3: „Startwahl aus den Einstellungen …“                                      |                                                                |
+| N2492  | BESTANDEN | fehlertest-3: „Zurück-Taste bei offener Startwahl …“                                   |                                                                |
+| N2493  | BESTANDEN | fehlertest-3: „„Los geht's“ im Profil …“                                               | Orden „Teil Endspiel“ nicht geprüft.                           |
+| N2494  | BESTANDEN | fehlertest-3: „Maia laden ohne Netz …“                                                 |                                                                |
+| N2495  | OFFEN     | –                                                                                      | Keine Gratulation nach Einspielen: nicht nachgestellt.         |
+| N2496  | BESTANDEN | fehlertest-3: „Gratulation zum vollen Ring …“                                          |                                                                |
+| N2497  | BESTANDEN | fehlertest-3: „QR-Code ?start=buch …“                                                  |                                                                |
+| N2498  | BESTANDEN | fehlertest-3: „App offen über Mitternacht …“                                           |                                                                |
+| N2550  | BESTANDEN | trainer-repertoire: „Old Sicilian …“                                                   | Satz „um 1200“; Verständlichkeit beurteilt der Autor.          |
+| N2551  | BESTANDEN | trainer-repertoire: „Old Sicilian …“                                                   | Gefühl für die Länge beim Autor.                               |
+| N2552  | BESTANDEN | Erkundung: Englische Eröffnung als Schwarz                                             | Knopf „1 Variante“, App zieht 1. c4.                           |
+| N2553  | OFFEN     | –                                                                                      | Ohne Netz nicht nachgestellt.                                  |
+| N2549  | BESTANDEN | sammlung-bearbeiten: „Auswertung: …“                                                   | „Zur Stellung“ zeigt 12. O-O-O??, eingetragen wird dieser Zug. |
+
+Zusammen: 32 BESTANDEN, 0 FEHLER, 2 NUR AUTOR, 4 OFFEN.
+
+## Paket 4: N2440 bis N2329, 0.3.44 bis 0.3.38 (58 Punkte)
+
+| Nummer | Ergebnis  | Beleg/Foto                                                                                | Hinweis                                                                |
+| ------ | --------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| N2440  | OFFEN     | –                                                                                         | Karte „Heute“ mitten im Buch nicht nachgestellt.                       |
+| N2441  | OFFEN     | –                                                                                         | Eigenes Ziel „Übungen von Kapitel 3“.                                  |
+| N2442  | OFFEN     | –                                                                                         | Über 20 fällige Karten.                                                |
+| N2443  | OFFEN     | –                                                                                         | Alles erledigt: Kachel „Partie“.                                       |
+| N2444  | OFFEN     | –                                                                                         | Zähltrainer: Seite am Zug über fünf Aufgaben.                          |
+| N2445  | NUR AUTOR | –                                                                                         | Bilder der Werkzeugseite ansehen.                                      |
+| N2446  | OFFEN     | –                                                                                         | Kapitelseite mit 150 % Schrift.                                        |
+| N2460  | BESTANDEN | auswertungbilder: „Züge von Derya“                                                        |                                                                        |
+| N2461  | OFFEN     | –                                                                                         | Leere Fläche über „Eigene Bots verwalten“.                             |
+| N2462  | BESTANDEN | fehlertest-spielen: „PGN in deutscher Notation mit Doppeltipp …“                          |                                                                        |
+| N2463  | BESTANDEN | fehlertest-spielen: „PGN einer Schachvariante …“                                          |                                                                        |
+| N2464  | BESTANDEN | fehlertest-spielen: „zwei Tabs: Änderung im ersten Tab überlebt …“                        | Anders als der Zwei-Tab-Test der Varianten (Nebenbefund) grün.         |
+| N2465  | OFFEN     | –                                                                                         | Zahl der Partien in der Rückfrage.                                     |
+| N2466  | OFFEN     | –                                                                                         | Zug genau beim Zeitablauf.                                             |
+| N2467  | OFFEN     | –                                                                                         | Datum nach Mitternacht in PGN und Sicherung.                           |
+| N2420  | BESTANDEN | startseite: „Impressum, Datenschutz und Lizenzen …“                                       | onnxruntime-Bausteine und Bauwerkzeuge; übrige Einträge nicht geprüft. |
+| N2421  | BESTANDEN | startseite: „Impressum, Datenschutz und Lizenzen …“                                       | CC BY-SA liegt in der App; Flugmodus nicht geprüft.                    |
+| N2422  | BESTANDEN | startseite: „Impressum, Datenschutz und Lizenzen …“                                       | GPL 3.0 oder neuer, Quelltext, Lizenzen.                               |
+| N2423  | OFFEN     | –                                                                                         | Fußzeile der Trainingsseiten.                                          |
+| N2424  | OFFEN     | sprache: „Sprache: … Lizenzen“ (nur Überschrift und Link)                                 | Neue Einträge auf Englisch nicht geprüft.                              |
+| N2430  | BESTANDEN | `pipeline.wiki.baue_seiten()`                                                             | Inhalt der Seite; Dashboard selbst nicht geprüft.                      |
+| N2431  | NUR AUTOR | `pipeline.wiki.baue_seiten()`                                                             | Beide genannten Abläufe da; Verständlichkeit beim Autor.               |
+| N2432  | BESTANDEN | `pipeline.wiki.baue_seiten()`                                                             | Kein Treffer in 336 Seiten.                                            |
+| N2433  | NUR AUTOR | –                                                                                         | Konzeptkarte auf dem Handy.                                            |
+| N2434  | NUR AUTOR | –                                                                                         | Eindruck der Zahlen.                                                   |
+| N2370  | BESTANDEN | tour: „erster Start: Startwahl, einmal …“                                                 |                                                                        |
+| N2371  | BESTANDEN | tour: „Startwahl „Ich lese das Buch“ …“                                                   | „An die Hand nehmen“ beurteilt der Autor.                              |
+| N2372  | BESTANDEN | tour: „Startwahl „spielen“ führt durch Spielen …“                                         |                                                                        |
+| N2373  | BESTANDEN | tour: „… ?start=buch beginnt ohne Frage …“; fehlertest-3 (Rundgang aus den Einstellungen) |                                                                        |
+| N2374  | OFFEN     | –                                                                                         | Kennzahlen im Profil.                                                  |
+| N2375  | BESTANDEN | naechster-schritt: „Karte „Heute“: Neue fangen bei Abb. 0.1 an …“                         | Teilfälle nicht geprüft.                                               |
+| N2400  | BESTANDEN | nebenaufgaben: „Profil: Infofenster zu Orden, Abzeichen und Ring …“                       |                                                                        |
+| N2401  | BESTANDEN | nebenaufgaben: „Profil: …“                                                                | Glanzstück und „Als Nächstes“ nicht geprüft.                           |
+| N2404  | BESTANDEN | nebenaufgaben: „Lernpfad: Nebenaufgaben …“ (360 px)                                       | Ruhe des Weges beim Autor.                                             |
+| N2405  | NUR AUTOR | nebenaufgaben: „Lernpfad: …“                                                              | Liste da; Niveau der Stücke beim Autor.                                |
+| N2406  | BESTANDEN | nebenaufgaben: „Lernpfad: …“                                                              | Nur „Trainer Kapitel 0“.                                               |
+| N2409  | NUR AUTOR | –                                                                                         | Name, Bild, Bedingung.                                                 |
+| N2410  | BESTANDEN | nebenaufgaben: „axe (dunkel) …“                                                           | Kontrast maschinell; Lesbarkeit beim Autor.                            |
+| N2412  | OFFEN     | –                                                                                         | Ring bis 17.                                                           |
+| N2361  | OFFEN     | –                                                                                         | Texte der Profil-Tour nicht einzeln geprüft.                           |
+| N2362  | OFFEN     | –                                                                                         | Jeder Schritt auf jeder Spielen-Seite.                                 |
+| N2363  | NUR AUTOR | –                                                                                         | Meldung, wenn ein Text nicht passt.                                    |
+| N2350  | NUR AUTOR | –                                                                                         | Wirkung der Leerzustände.                                              |
+| N2352  | NUR AUTOR | –                                                                                         | Inhalt der zwei Sätze.                                                 |
+| N2353  | BESTANDEN | wenigertext-seiten: „P3, P13: Partiekopf …“ (hell, dunkel)                                | ⓘ-Text und Kopf über der Auswertung nicht geprüft.                     |
+| N2356  | NUR AUTOR | –                                                                                         | Treffen die Kurzzeilen den Schritt.                                    |
+| N2341  | NUR AUTOR | –                                                                                         | Meldung bei unpassender Legende.                                       |
+| N2344  | BESTANDEN | werkzeuge-k6-k12: „Werkzeug Kandidaten (Abb. 12.1) …“                                     |                                                                        |
+| N2300  | ÜBERHOLT  | einstellungen: „Aussehen: …“                                                              | Brettvorschau seit 0.3.53 entfernt (N2600).                            |
+| N2304  | NUR AUTOR | –                                                                                         | Treffen mit dem Finger.                                                |
+| N2308  | NUR AUTOR | –                                                                                         | Fehlt etwas?                                                           |
+| N2309  | NUR AUTOR | –                                                                                         | Texte der Tour gegen den Eindruck.                                     |
+| N2317  | NUR AUTOR | –                                                                                         | Wärme und Akku auf dem älteren Handy.                                  |
+| N2316  | NUR AUTOR | –                                                                                         | Flüssigkeit auf dem Redmi.                                             |
+| N2339  | OFFEN     | rivale: „Rivalenkarte: … Revanche gegen Tom …“ (nur Rivalenkarte)                         | „Zuletzt gespielt“ und angeheftetes Ziel nicht geprüft.                |
+| N2321  | NUR AUTOR | –                                                                                         | Eindruck der Zeitleiste.                                               |
+| N2325  | OFFEN     | –                                                                                         | Kurve mit Finger und zwei Fingern.                                     |
+| N2329  | OFFEN     | –                                                                                         | Liste „Nichts verloren“ nicht vollständig nachgestellt.                |
+
+Zusammen: 21 BESTANDEN, 0 FEHLER, 1 ÜBERHOLT, 17 NUR AUTOR, 19 OFFEN.
+
+## Paket 5: N2254 bis N2636, 0.3.38 bis 0.2.131 und Abenteuer (91 Punkte)
+
+Fast alle Punkte dieses Teils fragen nach Eindruck, Geschmack oder Gefühl („Gefällt dir …?“, „Passt …?“, „Klingt …?“) oder brauchen ein echtes Gerät. Sie bleiben beim Autor; die Tabelle nennt nur die Ausnahmen ausführlich.
+
+| Nummer | Ergebnis  | Beleg/Foto                                           | Hinweis                                                  |
+| ------ | --------- | ---------------------------------------------------- | -------------------------------------------------------- |
+| N2254  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2257  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2280  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2284  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2290  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2291  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2292  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2295  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2296  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2310  | OFFEN     | –                                                    | Braucht mehrere ausgewertete gewertete Partien.          |
+| N2261  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2263  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2266  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2270  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2274  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2240  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2241  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2243  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2246  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2181  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2184  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2185  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2186  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2188  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2190  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2195  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2196  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2198  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2212  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2218  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2207  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2208  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2230  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2238  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2221  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2224  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2141  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2145  | OFFEN     | –                                                    | Gewonnene gewertete Partie ohne Patzer.                  |
+| N2147  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2160  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2163  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2165  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2166  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2167  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2150  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2156  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2136  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2137  | BESTANDEN | wochenziel: „Übungsplan: …“ (ergänzt)                | Ändern und Entfernen.                                    |
+| N2138  | NUR AUTOR | –                                                    | Kalender auf dem iPhone.                                 |
+| N2139  | NUR AUTOR | –                                                    | Kalender unter Android.                                  |
+| N2100  | NUR AUTOR | –                                                    | Update auf dem echten Handy.                             |
+| N2002  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2006  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2007  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2012  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1044  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1045  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1046  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1048  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1090  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1091  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1095  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1083  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1084  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1087  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1072  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1073  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1074  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1075  | OFFEN     | –                                                    | Falscher Zug in einer Lichess-Aufgabe.                   |
+| N1076  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1078  | OFFEN     | –                                                    | Zusatzaufgaben im Flugmodus.                             |
+| N1061  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1064  | OFFEN     | –                                                    | Listen „Zug erraten“ ohne Netz.                          |
+| N1052  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1040  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1036  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1034  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1030  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1031  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1023  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N1013  | OFFEN     | –                                                    | Pfeile in „Zug erraten“.                                 |
+| N990   | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N993   | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N924   | NUR AUTOR | –                                                    | Installierte App unter Android.                          |
+| N935   | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2631  | NUR AUTOR | –                                                    | Ton am iPhone.                                           |
+| N2632  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2633  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+| N2634  | NUR AUTOR | Spieltest 17.11. (`rueckmeldung/spieltest_17-11.md`) | 73 von 73 Übergängen laufen; Eindruck je Ort beim Autor. |
+| N2635  | NUR AUTOR | –                                                    | Karteneditor am PC.                                      |
+| N2636  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
+
+Zusammen: 1 BESTANDEN, 0 FEHLER, 84 NUR AUTOR, 6 OFFEN.
+
 ### Nebenbefund außerhalb der Punkte
 
 - `varianten.spec.ts`, Test „zwei Tabs: eine Variante im ersten Tab überlebt eine Änderung im
@@ -132,3 +362,5 @@ Zusammen: 33 BESTANDEN, 0 FEHLER, 4 ÜBERHOLT (der Text beschreibt einen ältere
   verloren.
 - Möglicher Rückschritt beim Speichern über mehrere Tabs. Nicht weiter untersucht, an den Hauptchat
   gemeldet.
+- Der entsprechende Test für Profil und Partien („zwei Tabs: Änderung im ersten Tab überlebt …“ in
+  `fehlertest-spielen.spec.ts`) ist grün. Betroffen sind also nur Varianten.

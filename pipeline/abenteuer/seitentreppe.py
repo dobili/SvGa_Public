@@ -8,14 +8,16 @@ oben. Daraus lässt sich die Draufsicht der Karten (top-down 3/4 wie LimeZu) nic
 umrechnen, es fehlt die Fläche, auf der man geht (Auftrag des Hauptchats, 17.11.2026). Dieses
 Werkzeug setzt die Treppe deshalb aus Farben und Bauweise der Treppe zum Betrachter zusammen.
 
-Bauweise (Bild ``BREITE`` × ``HOEHE`` Pixel, 4 × 3 Kacheln; Licht von links oben wie die Vorlage):
+Bauweise (Bild ``BREITE`` × ``HOEHE`` Pixel, 4 × 4 Kacheln; Licht von links oben wie die Vorlage):
 
 - **Stufen** als senkrechte Draufsicht-Streifen vom Antritt (links) bis zum Absatz (rechts). Jede
   Stufe hat links ihre Vorderkante im Glanzton, dann die Trittfläche, rechts Schatten und die dunkle
   Fuge zur nächsten Stufe; die obere Hälfte ist heller wie bei der Vorlage (nähere Stufen heller).
 - **Anstieg:** Jede Stufe liegt ``HUB`` Pixel höher als die vorige. Die Trittfläche beginnt oben am
-  schrägen Handlauf und endet unten abgesetzt; darunter zeigt die Wange (dunkles Holz) die
-  Stufenkanten als Sägezahn, so liest man die Höhe.
+  schrägen Handlauf und endet unten abgesetzt; darunter zeigt die Wange (Bretter in drei
+  Holztönen) die Stufenkanten als Sägezahn, so liest man die Höhe.
+- **Breite:** Zwischen den Handläufen bleiben gut zwei Kacheln frei (Wunsch des Hauptchats,
+  17.11.2026: Der Held soll bequem gehen, nicht ständig anstoßen).
 - **Handläufe** stufenlos schräg (Profil aus den Holmen der Vorlage: Kontur, Glanz, Holz, Mittel),
   der vordere so hoch, dass die Stufenkanten darunter sichtbar bleiben; Pfosten an beiden Enden.
 - **Nach links** ist die gespiegelte Bauweise; Pfostenköpfe und Vorderkanten behalten das Licht
@@ -42,13 +44,13 @@ if TYPE_CHECKING:  # Pillow nur zum Zeichnen
 
 K = 16
 BREITE = 4 * K
-HOEHE = 3 * K
+HOEHE = 4 * K
 FEIN = 4  # Kantenlänge einer Zelle der feinen Maske (Viertelkachel)
 STUFEN = 6
-HUB = 3  # so viel höher liegt jede Stufe (Pixel)
+HUB = 2  # so viel höher liegt jede Stufe (Pixel)
 PFOSTEN = 5  # Breite der Pfosten an beiden Enden
 ABSATZ = 8  # Breite des Absatzes oben (Pixel)
-TRITT = 22  # Höhe der Trittfläche quer zur Laufrichtung (Pixel)
+TRITT = 45  # Höhe der Trittfläche quer zur Laufrichtung (Pixel); frei bleiben gut 2 Kacheln
 LAUF_VON = PFOSTEN
 LAUF_BIS = BREITE - PFOSTEN - ABSATZ
 VORLAGE = Path("spiel/eigene/treppe_zum_betrachter.png")
@@ -78,6 +80,7 @@ FARBEN: dict[str, Farbe] = {
 HOLM_ROLLEN = ("dunkel", "glanz", "holz", "mittel", "dunkel")
 HOLM = len(HOLM_ROLLEN)
 LEER, SPERRT, GEHT = ".", "#", "~"  # Pixelarten für die Maske
+BRETT = 4  # Höhe eines Bretts der Wange (Pixel)
 
 
 def stufe_bei(x: int) -> int:
@@ -123,15 +126,28 @@ def trittrolle(x: int) -> str:
     return "tief" if rel < breite - 1 else "dunkel"
 
 
+def wangenrolle(tiefe: int, grund: bool) -> str:
+    """Farbrolle der Wange ``tiefe`` Pixel unter der Stufenkante: Bretter in drei Holztönen.
+
+    Oben die dunkle Kante, dann Bretter (Holz, Mittel) mit dunklerer Fuge alle ``BRETT`` Reihen,
+    unten die dunkle Grundlinie; so wirkt die Wange wie Holz und nicht wie ein Loch.
+    """
+    if tiefe == 0 or grund:
+        return "dunkel"
+    if tiefe % BRETT == 0:
+        return "tief"
+    return "holz" if tiefe % BRETT == 1 else "mittel"
+
+
 def spaltenrollen(x: int) -> list[tuple[int, str, str]]:
     """Die Pixel einer Spalte als (Reihe, Rolle, Art), Art ``SPERRT`` oder ``GEHT``; Rest leer."""
     oben = handlauf_oben(x)
     boden = trittboden(x)
-    pixel = [(y, trittrolle(x), GEHT) for y in range(oben + HOLM, boden)]
-    for y in range(boden, HOEHE):
-        rolle = "dunkel" if y in (boden, HOEHE - 1) else ("mittel" if y == boden + 1 else "schatten")
-        pixel.append((y, rolle, SPERRT))
-    for start in (oben, vorderer_holm(x)):
+    # Der Tritt unter dem vorderen Handlauf liegt außerhalb des Geländers: sichtbar, aber gesperrt.
+    vorne = vorderer_holm(x)
+    pixel = [(y, trittrolle(x), GEHT if y < vorne else SPERRT) for y in range(oben + HOLM, boden)]
+    pixel += [(y, wangenrolle(y - boden, y == HOEHE - 1), SPERRT) for y in range(boden, HOEHE)]
+    for start in (oben, vorne):
         pixel += [(start + i, rolle, SPERRT) for i, rolle in enumerate(HOLM_ROLLEN)]
     return pixel
 

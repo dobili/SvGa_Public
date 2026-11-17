@@ -58,3 +58,21 @@ def test_zeichnen_mit_ersatzfarben():
     assert bild.getpixel((s.LAUF_VON, s.HOEHE - 1)) == s.FARBEN["dunkel"]
     bogen = s.kontaktbogen([bild, s.zeichne(s.FARBEN, False)], massstab=2)
     assert bogen.width > 2 * s.BREITE * 2
+
+
+def test_zwischen_den_handlaeufen_mindestens_zwei_kacheln_frei():
+    """Wunsch des Hauptchats (17.11.2026): Der Held soll bequem gehen, nicht ständig anstoßen."""
+    for rechts in (True, False):
+        maske = s.feinmaske(rechts)
+        for spalte in range(s.BREITE // s.FEIN):
+            frei, laengste = 0, 0
+            for zeile in maske:
+                frei = frei + 1 if zeile[spalte] == "." else 0
+                laengste = max(laengste, frei)
+            assert laengste * s.FEIN >= 2 * s.K, (rechts, spalte)
+
+
+def test_wange_aus_brettern_nicht_als_flaeche():
+    rollen = {s.wangenrolle(t, False) for t in range(1, 3 * s.BRETT)}
+    assert rollen == {"holz", "mittel", "tief"}
+    assert s.wangenrolle(0, False) == s.wangenrolle(5, True) == "dunkel"

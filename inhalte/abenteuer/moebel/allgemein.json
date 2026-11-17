@@ -1195,9 +1195,9 @@
     "treppeNachRechts": {
       "quelle": "spiel/eigene/treppe_nach_rechts.png",
       "breite": 64,
-      "hoehe": 48,
+      "hoehe": 64,
       "kollision": true,
-      "maske_fein": ["............####",  ".........###....",  ".......###......",  "....###.........",  ".####...........",  "##........######",  "........###.....",  ".....###....####",  "...###...#######",  "###....#########",  ".....###########",  "################"],
+      "maske_fein": ["...........#####", ".......#####....", "...#####........", "####............", "................", "................", "................", "................", "................", "................", "............####", "........########", "....############", "################", "################", "################"],
       "maske_fein_von_hand": "aus pipeline/abenteuer/seitentreppe.py (--masken): Handläufe, Pfosten und Wange sperren, der Lauf zwischen den Handläufen ist frei",
       "richtung": "hoch",
       "antritt": "links",
@@ -1205,14 +1205,14 @@
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Holztreppe quer im Raum, steigt nach rechts an: Antritt links, Absatz rechts; Stufen von oben als Streifen mit heller Vorderkante, darunter die Wange mit den Stufenkanten, zwei schräge Handläufe. Gebaut mit pipeline/abenteuer/seitentreppe.py aus Farben und Bauweise von treppeZumBetrachter (17.11.2026); Handläufe und Wange sperren, der Lauf dazwischen ist frei; noch in keiner Karte"
+      "hinweis": "Holztreppe quer im Raum, steigt nach rechts an: Antritt links, Absatz rechts; Stufen von oben als Streifen mit heller Vorderkante, darunter die Wange mit den Stufenkanten, zwei schräge Handläufe, dazwischen gut zwei Kacheln frei; die Wange aus Brettern. Gebaut mit pipeline/abenteuer/seitentreppe.py aus Farben und Bauweise von treppeZumBetrachter (17.11.2026); Handläufe und Wange sperren, der Lauf dazwischen ist frei; noch in keiner Karte"
     },
     "treppeNachLinks": {
       "quelle": "spiel/eigene/treppe_nach_links.png",
       "breite": 64,
-      "hoehe": 48,
+      "hoehe": 64,
       "kollision": true,
-      "maske_fein": ["####............",  "....###.........",  "......###.......",  ".........###....",  "...........####.",  "######........##",  ".....###........",  "####....###.....",  "#######...###...",  "#########....###",  "###########.....",  "################"],
+      "maske_fein": ["#####...........", "....#####.......", "........#####...", "............####", "................", "................", "................", "................", "................", "................", "####............", "########........", "############....", "################", "################", "################"],
       "maske_fein_von_hand": "aus pipeline/abenteuer/seitentreppe.py (--masken): Handläufe, Pfosten und Wange sperren, der Lauf zwischen den Handläufen ist frei",
       "richtung": "hoch",
       "antritt": "rechts",

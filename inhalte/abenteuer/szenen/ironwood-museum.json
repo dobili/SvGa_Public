@@ -2,28 +2,25 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, ein gerader blauer Läufer, so breit wie die Doppeltür, von der Tür bis an die Nordwand; rechts daneben das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne und ein leeres Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk, Bahnhof und Arbeiter, eine große Vitrine mit Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke. Bank, Infotafeln, Pflanzen. In der Halle zwei weitere alte Fotos zwischen den Fenstern. Weitere Vitrinen zeigen ein Lokmodell, alte Fahrkarten und eine Schaffnermütze.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 23 × 15, so kompakt, dass es in ein Haus von etwa 10 × 4 Kacheln passt (R065). Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, einem hohen Fenster, einem alten Foto vom Bahnhof und dem Fahrplan davor; dunkle Dielen, ein gerader blauer Läufer, so breit wie die Doppeltür, von der Tür bis an die Nordwand; rechts daneben das Pult von Mr. Teague und eine Bank. Links die große Vitrine mit dem Lokmodell, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne, ein leeres Fach für Brief und Umschlag und alte Fahrkarten. Die Postsäcke von 1866 liegen als Ausstellungsstück neben dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk und Arbeiter, eine Infotafel, die große Vitrine mit der Schaffnermütze und einer Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke; zwei Pflanzen.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
-    "##################################",
-    "##################################",
-    "##################################",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhhhhhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "#hhhhhhhhhhtthhhhhhhhh#hhhhhhhhhh#",
-    "###########..#####################",
-    "##################################"
+    "#######################",
+    "#######################",
+    "#######################",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhhhhhhhhhh#",
+    "#hhhhhhtthhhhhhhhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#hhhhhhtthhhhh#hhhhhhh#",
+    "#######..##############",
+    "#######################"
   ],
   "objekte": [
     {
@@ -31,32 +28,27 @@
       "feld": [1, 1]
     },
     {
-      "moebel": "cc4Fenster",
-      "feld": [8, 1],
+      "moebel": "iw9FotoBahnhofA",
+      "feld": [7, 1],
       "an_wand": true
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [13, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc4Fenster",
-      "feld": [17, 1],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
       "moebel": "cc4Fahrplan",
-      "feld": [19, 2]
+      "feld": [11, 2]
     },
     {
       "moebel": "pd9Lehrertisch",
-      "feld": [14, 4],
+      "feld": [10, 4],
       "id": "pult"
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [16, 5],
+      "feld": [12, 5],
       "versatz": [-5, 0],
       "vorn": true
     },
@@ -66,184 +58,148 @@
     },
     {
       "moebel": "iw8Museumsbank",
-      "feld": [16, 9]
+      "feld": [10, 7]
     },
     {
       "moebel": "iw9VitrineZeitung",
-      "feld": [2, 12]
-    },
-    {
-      "moebel": "iw9VitrineLaterne",
-      "feld": [5, 12]
-    },
-    {
-      "moebel": "iw9VitrineFahrkarten",
-      "feld": [14, 12]
-    },
-    {
-      "moebel": "iw9VitrineLeer",
-      "feld": [7, 12]
-    },
-    {
-      "moebel": "iw5Sackkarre",
-      "feld": [19, 4]
-    },
-    {
-      "moebel": "iw5Postsack",
-      "feld": [20, 7]
-    },
-    {
-      "moebel": "iw5Postsack",
-      "feld": [21, 7]
-    },
-    {
-      "moebel": "iw8Infotafel",
-      "feld": [6, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw8Museumsbank",
-      "feld": [7, 4]
-    },
-    {
-      "moebel": "iw8Pflanze",
       "feld": [1, 9]
     },
     {
+      "moebel": "iw9VitrineLaterne",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "iw9VitrineLeer",
+      "feld": [5, 9]
+    },
+    {
+      "moebel": "iw9VitrineFahrkarten",
+      "feld": [9, 9]
+    },
+    {
+      "moebel": "iw5Sackkarre",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "iw5Postsack",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "iw5Postsack",
+      "feld": [13, 11]
+    },
+    {
       "moebel": "iw9FotoBrueckeA",
-      "feld": [24, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw9FotoWerkA",
-      "feld": [27, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw9FotoBahnhofA",
-      "feld": [30, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw9FotoArbeiterA",
-      "feld": [32, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw9VitrineMuetze",
-      "feld": [27, 6]
-    },
-    {
-      "moebel": "iw8Pflanze",
-      "feld": [24, 4]
-    },
-    {
-      "moebel": "iw8Pflanze",
-      "feld": [20, 9]
-    },
-    {
-      "moebel": "iw8Museumsbank",
-      "feld": [7, 9]
-    },
-    {
-      "moebel": "iw9VitrineWerkzeug",
-      "feld": [24, 12]
-    },
-    {
-      "moebel": "iw9VitrineGlasfunke",
-      "feld": [27, 12]
-    },
-    {
-      "moebel": "iw8Schaukasten3",
-      "feld": [30, 12]
-    },
-    {
-      "moebel": "iw8Infotafel",
-      "feld": [23, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw8Pflanze",
-      "feld": [31, 4]
-    },
-    {
-      "moebel": "cc6TuerSued",
-      "feld": [11, 17],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc5Fussmatte",
-      "feld": [11, 15],
-      "versatz": [0, 19]
-    },
-    {
-      "moebel": "iw8Museumsbank",
-      "feld": [29, 10]
-    },
-    {
-      "moebel": "iw9FotoBrueckeB",
-      "feld": [11, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "iw9FotoWerkB",
       "feld": [15, 1],
       "an_wand": true
     },
     {
+      "moebel": "iw9FotoWerkA",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw9FotoArbeiterA",
+      "feld": [19, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw8Infotafel",
+      "feld": [21, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [15, 3]
+    },
+    {
+      "moebel": "iw9VitrineMuetze",
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [20, 4]
+    },
+    {
+      "moebel": "iw8Museumsbank",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "iw9VitrineWerkzeug",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "iw9VitrineGlasfunke",
+      "feld": [17, 9]
+    },
+    {
+      "moebel": "iw8Schaukasten3",
+      "feld": [19, 9]
+    },
+    {
       "moebel": "cc6TuerSued",
-      "feld": [12, 17],
+      "feld": [7, 14],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [12, 15],
+      "feld": [7, 12],
+      "versatz": [0, 19]
+    },
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [8, 14],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [8, 12],
       "versatz": [0, 19]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [11, 15],
+      "feld": [7, 12],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "museumAusgang",
-      "feld": [11, 16]
+      "feld": [7, 13]
     },
     {
       "name": "postsack",
-      "feld": [19, 8]
+      "feld": [11, 11]
     },
     {
       "name": "vitrine1858",
-      "feld": [3, 15]
+      "feld": [1, 12]
     },
     {
       "name": "fundGlasfunke",
-      "feld": [28, 15]
+      "feld": [18, 12]
     },
     {
       "name": "museumAusgang",
-      "feld": [12, 16]
+      "feld": [8, 13]
     }
   ],
   "figuren": [
     {
       "name": "teague",
-      "feld": [16, 7]
+      "feld": [12, 6]
     }
   ],
   "belebung": [
     {
       "name": "besucherin",
       "typ": "statist",
-      "feld": [25, 10],
+      "feld": [16, 7],
       "eigenschaften": {
-        "von": "25,10",
-        "bis": "30,10",
+        "von": "16,7",
+        "bis": "21,7",
         "tun": "liest die Schilder",
         "wann": "tag",
         "sagt": "statist.ironwood.museum.besucherin"
@@ -252,10 +208,10 @@
     {
       "name": "lehrer",
       "typ": "statist",
-      "feld": [6, 10],
+      "feld": [6, 6],
       "eigenschaften": {
-        "von": "6,10",
-        "bis": "6,10",
+        "von": "6,6",
+        "bis": "6,6",
         "tun": "führt eine Schulklasse durch das Museum",
         "sagt": "statist.ironwood.museum.lehrer"
       }
@@ -263,10 +219,10 @@
     {
       "name": "schulkindA",
       "typ": "statist",
-      "feld": [4, 10],
+      "feld": [5, 7],
       "eigenschaften": {
-        "von": "4,10",
-        "bis": "4,10",
+        "von": "5,7",
+        "bis": "5,7",
         "tun": "hört dem Lehrer zu",
         "wann": "tag",
         "bild": "statist-02"
@@ -275,10 +231,10 @@
     {
       "name": "schulkindB",
       "typ": "statist",
-      "feld": [5, 11],
+      "feld": [6, 8],
       "eigenschaften": {
-        "von": "5,11",
-        "bis": "5,11",
+        "von": "6,8",
+        "bis": "6,8",
         "tun": "hört dem Lehrer zu",
         "wann": "tag",
         "bild": "statist-05"
@@ -287,10 +243,10 @@
     {
       "name": "schulkindC",
       "typ": "statist",
-      "feld": [8, 11],
+      "feld": [5, 8],
       "eigenschaften": {
-        "von": "8,11",
-        "bis": "8,11",
+        "von": "5,8",
+        "bis": "5,8",
         "tun": "hört dem Lehrer zu",
         "wann": "tag",
         "bild": "statist-07"

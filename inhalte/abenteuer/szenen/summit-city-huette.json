@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich ein runder Tisch mit Wards altem Holzbrett und der Teekanne (Auslöser `teekanne` an der Tischkante), die zwei Ohrensessel stehen links und rechts direkt am Tisch (Regel 10.79); dazu Leselampe und Stehlampe. Im Süden zwei Clubtische direkt an ihren Stühlen, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale, eine Kommode und eine Holztruhe. Die Tür liegt in der Südwand.",
+  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich ein runder Tisch mit Wards altem Holzbrett und der Teekanne (Auslöser `teekanne` an der Tischkante), die zwei Ohrensessel stehen links und rechts direkt am Tisch (Regel 10.79); dazu Leselampe und Stehlampe. Links und rechts der Tür zwei Clubtische direkt an ihren Stühlen, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale und eine Kommode. Die Hütte ist innen so flach wie außen (R065), deshalb stehen die Clubtische gleich am Eingang. Die Tür liegt in der Südwand.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -17,20 +17,17 @@
     "#................#",
     "#................#",
     "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
     "########..########"
   ],
   "objekte": [
     {
       "moebel": "cc8TuerSuedHolz",
-      "feld": [8, 12],
+      "feld": [8, 9],
       "an_wand": true
     },
     {
       "moebel": "cc4Fussmatte",
-      "feld": [8, 11],
+      "feld": [8, 8],
       "versatz": [0, 3]
     },
     {
@@ -80,12 +77,12 @@
     },
     {
       "moebel": "mf2StuhlL",
-      "feld": [1, 9],
+      "feld": [1, 7],
       "zu": "t1"
     },
     {
       "moebel": "mf2Schachtisch",
-      "feld": [1, 9],
+      "feld": [1, 7],
       "id": "t1",
       "versatz": [6, 0],
       "maske": ["...", ".##"]
@@ -97,7 +94,7 @@
     },
     {
       "moebel": "mf2Schachtisch",
-      "feld": [10, 9],
+      "feld": [11, 7],
       "id": "t2",
       "versatz": [12, 0],
       "maske": ["...", ".##"]
@@ -109,12 +106,12 @@
     },
     {
       "moebel": "mf2StuhlR",
-      "feld": [13, 9],
+      "feld": [14, 7],
       "zu": "t2"
     },
     {
       "moebel": "mf2Stehlampe",
-      "feld": [1, 5]
+      "feld": [1, 4]
     },
     {
       "moebel": "cc4RegalC",
@@ -122,12 +119,12 @@
     },
     {
       "moebel": "cc8TuerSuedHolz",
-      "feld": [9, 12],
+      "feld": [9, 9],
       "an_wand": true
     },
     {
       "moebel": "cc4Fussmatte",
-      "feld": [9, 11],
+      "feld": [9, 8],
       "versatz": [0, 3]
     },
     {
@@ -141,10 +138,6 @@
       "versatz": [-6, 0]
     },
     {
-      "moebel": "rv8Truhe",
-      "feld": [14, 7]
-    },
-    {
       "moebel": "scThermometer",
       "feld": [4, 1],
       "an_wand": true,
@@ -154,14 +147,14 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [8, 11],
+      "feld": [8, 8],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "huetteAusgang",
-      "feld": [8, 12]
+      "feld": [8, 9]
     },
     {
       "name": "pokal",
@@ -182,21 +175,21 @@
     },
     {
       "name": "huetteAusgang",
-      "feld": [9, 12]
+      "feld": [9, 9]
     }
   ],
   "figuren": [
     {
       "name": "ward",
-      "feld": [9, 8]
+      "feld": [9, 7]
     },
     {
       "name": "kit",
-      "feld": [5, 10]
+      "feld": [3, 6]
     },
     {
       "name": "haraldsen",
-      "feld": [9, 10]
+      "feld": [13, 6]
     }
   ],
   "belebung": [
@@ -213,7 +206,7 @@
     {
       "name": "gegnerinKit",
       "typ": "statist",
-      "feld": [1, 10],
+      "feld": [1, 8],
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Kit",
         "wann": "tag",
@@ -223,7 +216,7 @@
     {
       "name": "gegnerHaraldsen",
       "typ": "statist",
-      "feld": [13, 10],
+      "feld": [14, 8],
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Haraldsen",
         "wann": "tag",

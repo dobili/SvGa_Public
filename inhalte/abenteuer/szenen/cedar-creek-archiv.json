@@ -2,7 +2,7 @@
   "karte": "cedarCreek.archiv",
   "datei": "karten/cedar-creek-archiv.json",
   "art": "innen",
-  "beschreibung": "Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und hell gekalkten Ziegelwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertreppe im abgetrennten Bereich des Lesesaals; der Keller liegt unter dem Ostteil des Saals. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das vierte Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht links ein offener Karton: „1850“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; daneben liegt das alte Programmheft (nicht auf dem Buch), dahinter ein Stuhl, auf dem Tisch eine Leselampe mit warmem Licht. Am Westende der Reihen zwei Stapel höherer Kartons. Auf dem Boden vorn, vor der unteren Reihe, ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
+  "beschreibung": "Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und hell gekalkten Ziegelwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertreppe im abgetrennten Bereich des Lesesaals; der Keller liegt unter dem Ostteil des Saals. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das vierte Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht links ein offener Karton: „1850“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; daneben liegt das alte Programmheft (nicht auf dem Buch), dahinter ein Stuhl, auf dem Tisch eine Leselampe mit warmem Licht. Am Westende der Reihen zwei Stapel höherer Kartons. Auf dem Boden vorn, vor der unteren Reihe, ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck. In der Nordwand zwischen den Regalen eine verschlossene Kellertür zu weiteren Kellerräumen unter dem Haus (R065).",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -42,11 +42,12 @@
       "an_wand": true
     },
     {
-      "moebel": "cc4Archivregal",
+      "moebel": "cc4Kellertuer",
       "feld": [
         6,
         1
-      ]
+      ],
+      "an_wand": true
     },
     {
       "moebel": "cc12RegalSchatten",

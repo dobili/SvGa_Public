@@ -72,12 +72,19 @@ Ich bleib hier. Hier oben ruft keiner an. Kein Netz. #sprecher:victor #stimmung:
     -> END
 
 === victor_spielen ===
+// Zweiter Besuch (abgebrochene Partie): das Brett ist schon abgebaut, Victor schon überredet.
+{victor_spielen > 1: -> victor_spielen_wieder}
 Auf dem Reisebrett steht die Stellung, die niemand anrührt. #sprecher:erzaehler #musik:bergstation
 Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hingehören. #sprecher:erzaehler
-* [„Ohne Uhr. Ohne Gerät. Es zählt für nichts.“]
++ [„Ohne Uhr. Ohne Gerät. Es zählt für nichts.“]
 - Das ist ein Kinderbrett. #sprecher:victor #stimmung:nachdenklich
-* [„Juno verliert darauf seit Jahren, und es geht ihr gut.“]
++ [„Juno verliert darauf seit Jahren, und es geht ihr gut.“]
 - Er sieht dich an. Dann rückt er herüber. #sprecher:erzaehler
+~ beginnePartie("summitCity.victorFrei")
+-> END
+
+=== victor_spielen_wieder ===
+Das Reisebrett liegt noch zwischen euch, die Figuren in der Grundstellung. Victor rückt wieder heran. #sprecher:erzaehler
 ~ beginnePartie("summitCity.victorFrei")
 -> END
 
@@ -151,7 +158,7 @@ Am Seil gleitet eine Gondel hinunter und taucht ins Weiß, als ginge sie unter. 
 // Gesamtsimulation spielt keine Züge und führt beide deshalb unter „Nie erreichte Knoten“.
 === victor_luftig ===
 Das ist schlecht. Warum hab ich das gemacht? #sprecher:victor #stimmung:ueberrascht
-* [„Weiß ich nicht. Wie fühlt es sich an?“]
++ [„Weiß ich nicht. Wie fühlt es sich an?“]
 - Er denkt nach, ernsthaft, mit schiefem Kopf. #sprecher:erzaehler
 Komisch. Luftig. #sprecher:victor #stimmung:lacht
 -> END

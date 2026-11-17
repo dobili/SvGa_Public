@@ -93,10 +93,10 @@ Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor #stimmung
 }
 An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
 Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose #stimmung:laechelt
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegRivertonIronwood.tafel")
     -> END
-* [Weitergehen]
++ [Weitergehen]
     -> END
 
 // ---------------------------------------------------------------- Funde
@@ -250,11 +250,11 @@ Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime 
 -> spielen
 
 = spielen
-* [Spielen]
++ [Spielen]
     Dime stellt die Uhr. Bevor du den ersten Zug machst, hat er schon drei Sätze gesagt. #sprecher:erzaehler
     ~ beginnePartie("wegRivertonIronwood.dime")
     -> END
-* [Nicht jetzt]
++ [Nicht jetzt]
     Ich bin hier. Die Brücke auch. #sprecher:dime #stimmung:laechelt
     -> END
 

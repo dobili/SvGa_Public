@@ -11,6 +11,7 @@
  */
 import { useNavigation } from "../../app/navigationsKontext";
 import "../abenteuer.css";
+import "../abenteuer-atmosphaere.css";
 import { t } from "../../i18n/sprache";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { useAbenteuerstand } from "./dienste";

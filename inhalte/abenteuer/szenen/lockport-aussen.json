@@ -1,7 +1,7 @@
 {
   "karte": "lockport.aussen",
   "art": "aussen",
-  "beschreibung": "Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen Wohnhäuser mit Gärten, ganz im Osten das Haus der Schleusenwärterin mit der Rätseltafel und der Glocke, und am Westende des Wegs der Bootsschuppen mit dem Tor zum Wasser. In der Mitte die Schleusenkammer, 28 Kacheln lang und 7 Reihen Wasser breit (Regel 10.64), zwischen Untertor und Obertor (Stemmtore mit Laufsteg; während der Herbstwartung mit GESPERRT-Böcken, Sperre S3). Westlich das Hafenbecken, offen zum Fluss; darin liegt längs der Frachtkahn „Ashford Belle“ (24 × 5 Kacheln) unter seinen Lukendeckeln, am Kai Poller, Seile, Kisten und Fässer. Im Oberwasser östlich der Kammer Henriks Ruderboot an seinen Tauen, gegenüber der Werftplatz mit Werkstattschuppen. Hinter dem Kai das Gasthaus „Zur Schleuse“, die Eisenwaren und eine Reihe Holzhäuser, dazwischen gepflasterte Gassen zum Dorfplatz mit Brunnen, Linde und Bank; im Süden eine zweite Häuserreihe mit Gärten und Wäscheleinen an einer Hintergasse, dahinter Bäume.",
+  "beschreibung": "Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen Wohnhäuser mit Gärten, ganz im Osten das Haus der Schleusenwärterin mit der Rätseltafel und der Glocke, und am Westende des Wegs der Bootsschuppen mit dem Tor zum Wasser. In der Mitte die Schleusenkammer, 28 Kacheln lang und 7 Reihen Wasser breit (Regel 10.64), zwischen Untertor und Obertor (über jedem Tor ein Fußgängersteg mit Geländerpfosten, R133; während der Herbstwartung mit breiten GESPERRT-Böcken, Sperre S3). Westlich das Hafenbecken, offen zum Fluss; darin liegt längs der Frachtkahn „Ashford Belle“ (24 × 5 Kacheln) unter seinen Lukendeckeln, am Kai Poller, Seile, Kisten und Fässer. Im Oberwasser östlich der Kammer Henriks Ruderboot an seinen Tauen, gegenüber der Werftplatz mit Werkstattschuppen. Hinter dem Kai das Gasthaus „Zur Schleuse“, die Eisenwaren und eine Reihe Holzhäuser, dazwischen gepflasterte Gassen zum Dorfplatz mit Brunnen, Linde und Bank; im Süden eine zweite Häuserreihe mit Gärten und Wäscheleinen an einer Hintergasse, dahinter Bäume.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -154,22 +154,28 @@
       "id": "ausruester"
     },
     {
-      "moebel": "ld8Stemmtor",
-      "feld": [30, 12]
+      "moebel": "by6StegLaengs9",
+      "feld": [30, 12],
+      "versatz": [0, -2]
     },
     {
-      "moebel": "ld8Stemmtor",
-      "feld": [60, 12]
+      "moebel": "by6StegLaengs9",
+      "feld": [60, 12],
+      "versatz": [0, -2]
     },
     {
-      "moebel": "mf9Absperrbock",
+      "moebel": "mf9AbsperrbockBreit",
       "feld": [30, 13],
-      "id": "sperreUntertor"
+      "id": "sperreUntertor",
+      "versatz": [-8, 0],
+      "maske": ["...", ".##"]
     },
     {
-      "moebel": "mf9Absperrbock",
+      "moebel": "mf9AbsperrbockBreit",
       "feld": [60, 13],
-      "id": "sperreObertor"
+      "id": "sperreObertor",
+      "versatz": [-8, 0],
+      "maske": ["...", ".##"]
     },
     {
       "moebel": "ld5Rettungsring",

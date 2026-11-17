@@ -12650,12 +12650,12 @@
     },
     {
      "id": 55,
-     "name": "ld8Stemmtor",
+     "name": "by6StegLaengs9",
      "type": "moebel",
      "x": 480,
-     "y": 192,
+     "y": 190,
      "width": 32,
-     "height": 144,
+     "height": 148,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12673,12 +12673,12 @@
     },
     {
      "id": 56,
-     "name": "ld8Stemmtor",
+     "name": "by6StegLaengs9",
      "type": "moebel",
      "x": 960,
-     "y": 192,
+     "y": 190,
      "width": 32,
-     "height": 144,
+     "height": 148,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12696,11 +12696,11 @@
     },
     {
      "id": 57,
-     "name": "mf9Absperrbock",
+     "name": "mf9AbsperrbockBreit",
      "type": "moebel",
-     "x": 480,
+     "x": 472,
      "y": 208,
-     "width": 32,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -12714,16 +12714,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../.##"
       }
      ]
     },
     {
      "id": 58,
-     "name": "mf9Absperrbock",
+     "name": "mf9AbsperrbockBreit",
      "type": "moebel",
-     "x": 960,
+     "x": 952,
      "y": 208,
-     "width": 32,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -12737,6 +12742,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../.##"
       }
      ]
     },

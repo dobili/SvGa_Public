@@ -32,7 +32,7 @@ Feld = (Spalte, Reihe), linke obere Kachel; Bereiche „Spalten / Reihen“. Nor
 | `wegSummitCrossroads.geysirbecken` | 30 × 170 | Nord → Süd mit Stegen ≈ 230 | ≈ 66 s       | Ranger-Station, Aussichtssteg am großen Geysir |
 | `wegSummitCrossroads.praerie`      | 30 × 170 | Nord → Süd ≈ 180            | ≈ 51 s       | Farm mit Sturmkeller, Windrad                  |
 | `crossroads.aussen`                | 64 × 48  | Nordrand → Raststätte ≈ 30  | ≈ 9 s        | Tankstelle, Parkplatz, Wanderweg, Minenstraße  |
-| `crossroads.raststaette`           | 24 × 18  | Tür → Tresen ≈ 8            | ≈ 3 s        | Küche, WC                                      |
+| `crossroads.raststaette`           | 23 × 11  | Tür → Tresen ≈ 8            | ≈ 3 s        | Küche, WC                                      |
 
 Weg 8 zusammen 340 Kacheln (7a.2: 280–400), etwa zwei Minuten zu Fuß.
 
@@ -308,3 +308,9 @@ Auslöser `fernbus` (3, 20) in allen Varianten. Der Dialog `crossroads-aussen.fe
 Haltestellen und Bahnhöfen von Maple Falls, Cedar Creek, Riverton, Ironwood, Port Delacroix, Desert
 Springs, zur Raststätte vor Silicon Bay und an den Südrand von Summit City; zurück geht es mit den
 Bussen und Zügen der Städte.
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `crossroads.raststaette` (23 × 11): ein einziger flacher Gastraum wie das Haus außen. Die getrennte Großküche, das WC und die Durchreiche gibt es nicht mehr: Hinter dem langen Tresen liegt an der Nordwand die offene Küche (Kühlschränke, drei Herde unter Hauben, Grill, Fritteuse, Spültisch). Vier Hocker am Tresen (Fernfahrer und Schausteller sitzen dort). Rechts der Laden mit Postkartenständer, Regalen, Pinnwand, Spielautomat und der Tür zum WC; davor der lange Varianten-Tisch. Rechts unten nur noch Novas Ecktisch; die runden Tische mit Stühlen sind weg. Theo steht am Tresen.

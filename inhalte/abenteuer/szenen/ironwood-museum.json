@@ -2,7 +2,7 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 23 × 15, so kompakt, dass es in ein Haus von etwa 10 × 4 Kacheln passt (R065). Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, einem hohen Fenster, einem alten Foto vom Bahnhof und dem Fahrplan davor; dunkle Dielen, ein gerader blauer Läufer, so breit wie die Doppeltür, von der Tür bis an die Nordwand; rechts daneben das Pult von Mr. Teague und eine Bank. Links die große Vitrine mit dem Lokmodell, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne, ein leeres Fach für Brief und Umschlag und alte Fahrkarten. Die Postsäcke von 1866 liegen als Ausstellungsstück neben dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk und Arbeiter, eine Infotafel, die große Vitrine mit der Schaffnermütze und einer Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke; zwei Pflanzen.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 23 × 15, so kompakt, dass es in ein Haus von etwa 10 × 4 Kacheln passt (R065). Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, der alten Bahnhofsuhr, die stehen geblieben ist, einem alten Foto vom Bahnhof und dem Fahrplan davor; dunkle Dielen, ein gerader blauer Läufer, so breit wie die Doppeltür, von der Tür bis an die Nordwand; rechts daneben das Pult von Mr. Teague und eine Bank. Links die große Vitrine mit dem Lokmodell, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne, ein leeres Fach für Brief und Umschlag und alte Fahrkarten. Die Postsäcke von 1866 liegen als Ausstellungsstück neben dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk und Arbeiter, eine Infotafel, die große Vitrine mit der Schaffnermütze und einer Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke; zwei Pflanzen.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
@@ -33,7 +33,7 @@
       "an_wand": true
     },
     {
-      "moebel": "cc4Fenster",
+      "moebel": "rv5Bahnhofsuhr",
       "feld": [9, 1],
       "an_wand": true
     },

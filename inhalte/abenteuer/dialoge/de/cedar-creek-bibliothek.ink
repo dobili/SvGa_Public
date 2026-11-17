@@ -54,7 +54,7 @@ VAR clubkampfZaehlGesagt = false
 // das lange Ansehen, „Whitlock.“ mit Stille (Klang: alles setzt aus bis auf die Uhr), die sechs
 // Wörter, „Aha.“ und kein Weiterfragen. Klang: Stille S13 bei „Whitlock“.
 ~ okaforGetroffen = true
-Hohe Regale, grüne Leselampen, vier Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
+Hohe Regale, grüne Leselampen, zwei Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
 Sie stellt ein Buch zurück und steigt herunter, ohne sich festzuhalten. #sprecher:erzaehler
 {teamAngekommen: Das Team aus Maple Falls. Grace Okafor. #sprecher:okafor #stimmung:laechelt|Ihr seid die Vorhut. Grace Okafor. Die Matten liegen im Lesesaal. #sprecher:okafor #stimmung:laechelt}
 Juno Martínez. Du hast im Frühjahr gegen Mae deine Dame auf ein Feld gestellt, auf dem ein Springer stand. #sprecher:okafor #stimmung:nachdenklich
@@ -108,7 +108,7 @@ Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #spreche
     -> END
 * [„Ich geh schlafen.“]
     ~ nachtImLesesaal = true
-    Du rollst dich auf einer Matte zwischen den Regalen ein. Die Uhr im Türmchen tickt. #sprecher:erzaehler #geraeusch:uhr_ticken
+    Du rollst dich auf einer Matte unter dem langen Tisch ein. Die Uhr im Türmchen tickt. #sprecher:erzaehler #geraeusch:uhr_ticken
     Am Morgen sitzt Mrs. Okafor schon am langen Tisch, eine Tasse in der Hand. #sprecher:erzaehler
     -> END
 

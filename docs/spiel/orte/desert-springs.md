@@ -37,7 +37,7 @@ nicht: Wer zurück will, nimmt die Schnellreise oder den Zug über Port Delacroi
 | `wegDelacroixDesert.felsbogen`  | 140 × 30 | ≈ 160                       | ≈ 46 s      |
 | **Weg 6 zusammen**              | 300      | ≈ 340                       | **≈ 97 s**  |
 | `desertSprings.aussen`          | 60 × 40  | Canyonrand → Antiquariat 50 | ≈ 14 s      |
-| `desertSprings.garage`          | 18 × 12  | –                           | –           |
+| `desertSprings.garage`          | 14 × 11  | –                           | –           |
 | `desertSprings.antiquariat`     | 20 × 13  | –                           | –           |
 
 ### 1.1 Canyonpfad (`wegDelacroixDesert.canyonpfad`, 160 × 30)
@@ -205,3 +205,9 @@ davon.
   Dunkelheit).
 - **Offen:** Mira hat auf dem Canyonpfad keine eigene Figur. Ihr Stein (`stein`) bleibt der Ort von
   Szene 72; eine zweite Mira-Figur würde neben der Garage gleichzeitig stehen.
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `desertSprings.garage` (14 × 11): Werkbank, Werkzeugschrank mit Miras Dosenpokal, zwei Fenster; links das aufgebockte Auto und Ölfässer mit Kanister, in der Mitte der runde Clubtisch mit vier Stühlen, rechts der Reifenstapel mit Miras Brett, liegende Reifen und ein Karton. Kisten, der zweite Werkzeugschrank und zwei einzelne Reifen sind weg.

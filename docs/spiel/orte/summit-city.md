@@ -428,3 +428,10 @@ Randlinie, offen zur Straße (`"randlinie"`, `strasse.py`).
 Die Belebung `pferd` der Hochebene zeigt jetzt das braune Pferd aus Gemini statt des Esels (Art `pferd` in
 `tierarten.json`, Schnitt „ansichten“; der Bogen kommt vom Haupt-Chat). Dazu grasen auf der Koppel ein
 Schimmel (66, 15) und ein Brauner (61, 19) als Möbel (`tier12SchimmelGrast`, `tier12PferdGrast`).
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `summitCity.huette` (18 × 10): nur noch sechs Bodenreihen; die Clubtische stehen links und rechts der Tür, Kit und Haraldsen dahinter; die Truhe ist weg.
+- `summitCity.bergstation` (18 × 19): Halle acht Reihen tief; Schalter, Fahrplan und Schließfächer vorn, Seilbahnfan schaut zum Seilrad.

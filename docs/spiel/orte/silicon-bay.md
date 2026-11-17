@@ -905,3 +905,10 @@ Nach der Entscheidung des Autors hat Silicon Bay keinen Schnee mehr, wie die Sto
 Schneemann, Schneewälle am Gehweg und der Matschsaum an der Autobahn sind entfernt. Kälte zeigen
 Glas, Licht und die Kleidung der Figuren. Der Weihnachtsbaum auf dem Marktplatz bleibt.
 Bildwunsch: Raureif auf Glas und Geländern, Atemwolken (offen).
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `siliconBay.akademie` (26 × 18): zwei Reihen weniger, eine Pflanze weniger; Nova steht neben dem Ringlicht.
+- `siliconBay.serverraum` (15 × 10): eine Spalte breiter, rechts neben dem Klimagerät eine verschlossene Tür mit Kartenleser (Auslöser `hintertuer`).

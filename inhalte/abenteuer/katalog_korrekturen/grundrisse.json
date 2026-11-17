@@ -12270,5 +12270,24 @@
       "aufgang": null
     },
     "nur_pfad": true
+  },
+  "spiel/eigene/pavillon_achteck.png": {
+    "grundriss": {
+      "form": "achteck",
+      "breite": 8,
+      "tiefe": 5,
+      "geschosse": 1,
+      "tueren": [
+        {
+          "von": 5,
+          "bis": 5
+        }
+      ],
+      "fenster": {
+        "EG": []
+      },
+      "hinweis": "offener achteckiger Parkpavillon (eigenes Bild, Gemini 15.11.2026): Blechdach über fünf Reihen, darunter Dielen mit Geländer ringsum, Eingang zwischen zwei Pfosten in der Mitte der Südseite (eine Kachel, wie „tuer“ im Katalog); keine Wände und Fenster, innen ein offener Saal (R065, mittel-2, 17.11.2026)",
+      "aufgang": null
+    }
   }
 }

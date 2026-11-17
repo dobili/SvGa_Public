@@ -25,7 +25,7 @@ VAR slickAbschiedGesehen = false
 
 === slick_abschied ===
 ~ slickAbschiedGesehen = true
-Drinnen ist es eng und warm. An der Wand hängt ein Kurierrad. Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler #musik:riverton.wohnwagen
+Drinnen ist es eng und warm. In der Ecke lehnt seine Kuriertasche. Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler #musik:riverton.wohnwagen
 Sie sind aus Limonadendosen, aufgeschnitten, gebogen, mit Draht. „Parkmeister 2019.“ „Bester Verlierer 2017.“ #sprecher:erzaehler
 Der Alte hat die gebaut. Jedes Jahr einen. Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick #stimmung:nachdenklich
 Er setzt sich aufs Bett. Ohne das Reden sieht er jünger aus. #sprecher:erzaehler

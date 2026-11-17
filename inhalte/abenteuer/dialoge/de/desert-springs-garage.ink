@@ -195,7 +195,7 @@ Ich habe sie niemandem gezeigt. Man hat nur das Ergebnis gedruckt. #sprecher:amb
 * [„Er hat geschrieben, es war Mut.“]
 - Er war höflich. #sprecher:ambrose #stimmung:nachdenklich
 * [„Er war nie höflich. Er war unerträglich.“]
-- Das sitzt. Auf dem Klapptisch, zwischen einer Zündkerze und einer Keksdose, liegt die Stellung. #sprecher:erzaehler #musik:ambrose.stolpert #erinnerung #bild:stellung1858
+- Das sitzt. Auf dem Clubtisch, zwischen einer Zündkerze und einer Keksdose, liegt die Stellung. #sprecher:erzaehler #musik:ambrose.stolpert #erinnerung #bild:stellung1858
 Weiß steht gut. Der Bauer, den man nehmen und nach Hause gehen konnte. Und daneben die offene Linie. #sprecher:erzaehler
 Da. Dorthin der Turm. Jetzt du, für Schwarz. Such, was er gesucht hat. #sprecher:ambrose #stimmung:nachdenklich
 Du weißt, dass es ihn gibt: den stillen Zug. Den Läufer, ein Feld zurück. Er deckt alles. #sprecher:erzaehler
@@ -278,7 +278,7 @@ Sie opfert. Immer. Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht,
 
 === tomas_erstes_treffen ===
 ~ tomasGetroffen = true
-Ein Auto auf der Hebebühne, Werkzeug an der Wand, zwischen Ölkanistern drei Klapptische. Unter dem Auto ragen Stiefel hervor. #sprecher:erzaehler #geraeusch:garage
+Ein aufgebocktes Auto, Werkzeug an der Wand, zwischen Ölfässern ein runder Clubtisch mit vier Stühlen. Unter dem Auto ragen Stiefel hervor. #sprecher:erzaehler #geraeusch:garage
 Mira ist im Canyon. Die kommt, wenn es dunkel wird. #sprecher:tomas #stimmung:neutral
 Er rollt heraus, einen Schraubenschlüssel in der Hand. #sprecher:erzaehler
 Ich bin Tomás. Der Bruder, der Club und die Aufsicht. #sprecher:tomas #stimmung:laechelt

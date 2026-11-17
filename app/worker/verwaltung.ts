@@ -101,7 +101,7 @@ export async function verwalte(anfrage: Request, env: Umgebung, wer: string): Pr
   if (anfrage.method === "GET" && pfad === "uebersicht") return uebersicht(env, wer);
   if (anfrage.method === "GET" && pfad === "meldungen") return meldungen(env, url);
   // Wiki (Paket D, 0.3.12)
-  if (anfrage.method === "GET" && pfad === "wiki") return wikiliste(env);
+  if (anfrage.method === "GET" && pfad === "wiki") return wikiliste(env, url);
   if (anfrage.method === "GET" && pfad === "wiki/seite") return wikiseite(env, url);
   if (anfrage.method === "GET" && pfad === "wiki/suche") return wikisuche(env, url);
   const treffer = /^meldungen\/(\d+)$/.exec(pfad);

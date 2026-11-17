@@ -8,6 +8,10 @@
  * „Wartung“ baut die Seiten (pipeline/wiki.py) und schickt sie an POST /api/wiki mit demselben
  * Schlüssel wie den Prüfbericht; jedes Hochladen ersetzt alle Seiten. Das Dashboard liest sie über
  * /api/admin/wiki (Liste), /api/admin/wiki/seite?pfad=… und /api/admin/wiki/suche?q=….
+ * Seit 17.11.2026 (Wunsch des Autors) zwei getrennte Wikis auf derselben Plattform: „app“ (die
+ * Schach-App) und „spiel“ (das Schach-Abenteuer, das später auch eigenständig erscheinen soll).
+ * Jede Seite trägt ihre Wiki-Kennung; eine Sendung ersetzt nur die Seiten ihres Wikis, Liste,
+ * Seite und Suche nehmen `?wiki=…` (Vorgabe „app“, damit alte Aufrufe weiter gehen).
  * Abhängigkeiten: worker/umgebung.ts, worker/datenbank.ts, worker/bericht.ts (Schlüssel).
  */
 import { schluesselStimmt } from "./bericht";
@@ -15,6 +19,10 @@ import { sorgeFuerTabellen } from "./datenbank";
 import { fehler, jsonAntwort, type Umgebung } from "./umgebung";
 
 export const BEREICHE = ["projekt", "code"] as const;
+/** Die Wikis der Plattform; „app“ ist die Vorgabe für Sendungen und Abfragen ohne Angabe. */
+export const WIKIS = ["app", "spiel"] as const;
+export type Wikiname = (typeof WIKIS)[number];
+const VORGABE_WIKI: Wikiname = "app";
 export type Wikibereich = (typeof BEREICHE)[number];
 
 export interface Wikiseite {
@@ -56,19 +64,29 @@ export function pruefeSeite(roh: unknown): Wikiseite | null {
   return { pfad, bereich: bereich as Wikibereich, titel, inhalt, quelle };
 }
 
+/** Die Wiki-Kennung aus einem Wert; ohne Angabe die Vorgabe, unbekannt → null. */
+export function wikiname(roh: unknown): Wikiname | null {
+  if (roh === undefined || roh === null || roh === "") return VORGABE_WIKI;
+  return (WIKIS as readonly unknown[]).includes(roh) ? (roh as Wikiname) : null;
+}
+
 /** Prüft die ganze Sendung; null, wenn eine Seite ungültig ist oder ein Pfad doppelt vorkommt. */
-export function pruefeSendung(roh: unknown): { stand: string | null; seiten: Wikiseite[] } | null {
+export function pruefeSendung(
+  roh: unknown,
+): { wiki: Wikiname; stand: string | null; seiten: Wikiseite[] } | null {
   if (typeof roh !== "object" || roh === null) return null;
   const { stand, seiten } = roh as Record<string, unknown>;
+  const wiki = wikiname((roh as Record<string, unknown>).wiki);
+  if (!wiki) return null;
   if (!Array.isArray(seiten) || seiten.length === 0 || seiten.length > MEISTE_SEITEN) return null;
   const geprueft = seiten.map(pruefeSeite);
   if (geprueft.some((s) => s === null)) return null;
   const gut = geprueft as Wikiseite[];
   if (new Set(gut.map((s) => s.pfad)).size !== gut.length) return null;
-  return { stand: typeof stand === "string" ? stand.slice(0, KURZTEXT) : null, seiten: gut };
+  return { wiki, stand: typeof stand === "string" ? stand.slice(0, KURZTEXT) : null, seiten: gut };
 }
 
-/** POST /api/wiki mit „Authorization: Bearer <BERICHT_SCHLUESSEL>“: ersetzt alle Seiten. */
+/** POST /api/wiki mit „Authorization: Bearer <BERICHT_SCHLUESSEL>“: ersetzt alle Seiten eines Wikis. */
 export async function nimmWikiAn(anfrage: Request, env: Umgebung): Promise<Response> {
   if (!env.BERICHT_SCHLUESSEL) return fehler(503, "nicht eingerichtet");
   const gegeben = (anfrage.headers.get("Authorization") ?? "").replace(/^Bearer /, "");
@@ -89,33 +107,43 @@ export async function nimmWikiAn(anfrage: Request, env: Umgebung): Promise<Respo
   const einfuegen = sendung.seiten.map((s) =>
     db
       .prepare(
-        "INSERT INTO wiki (pfad, bereich, titel, inhalt, quelle, stand, zeit) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO wikiseiten (wiki, pfad, bereich, titel, inhalt, quelle, stand, zeit) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
       )
-      .bind(s.pfad, s.bereich, s.titel, s.inhalt, s.quelle, sendung.stand, zeit),
+      .bind(sendung.wiki, s.pfad, s.bereich, s.titel, s.inhalt, s.quelle, sendung.stand, zeit),
   );
-  // Erst alles löschen, dann in Stapeln einfügen; eine Sammelanweisung ist in D1 eine Transaktion.
-  await db.batch([db.prepare("DELETE FROM wiki"), ...einfuegen.slice(0, JE_STAPEL)]);
+  // Erst das Wiki leeren, dann in Stapeln einfügen; eine Sammelanweisung ist in D1 eine Transaktion.
+  const leeren = db.prepare("DELETE FROM wikiseiten WHERE wiki = ?").bind(sendung.wiki);
+  await db.batch([leeren, ...einfuegen.slice(0, JE_STAPEL)]);
   for (let i = JE_STAPEL; i < einfuegen.length; i += JE_STAPEL) {
     await db.batch(einfuegen.slice(i, i + JE_STAPEL));
   }
-  return jsonAntwort({ ok: true, seiten: sendung.seiten.length });
+  return jsonAntwort({ ok: true, wiki: sendung.wiki, seiten: sendung.seiten.length });
 }
 
-/** GET /api/admin/wiki: alle Seiten ohne Inhalt (Pfad, Bereich, Titel, Länge, Stand). */
-export async function wikiliste(env: Umgebung): Promise<Response> {
+/** Das Wiki einer Abfrage (`?wiki=…`); unbekannt → null. */
+const wikiDer = (url: URL): Wikiname | null => wikiname(url.searchParams.get("wiki"));
+
+/** GET /api/admin/wiki?wiki=…: alle Seiten eines Wikis ohne Inhalt (Pfad, Bereich, Titel, Länge, Stand). */
+export async function wikiliste(env: Umgebung, url: URL): Promise<Response> {
+  const wiki = wikiDer(url);
+  if (!wiki) return fehler(400, "wiki");
   const { results } = await env.ADMIN_DB.prepare(
-    "SELECT pfad, bereich, titel, quelle, LENGTH(inhalt) AS laenge, stand, zeit FROM wiki ORDER BY rowid",
-  ).all();
-  return jsonAntwort({ seiten: results });
+    "SELECT pfad, bereich, titel, quelle, LENGTH(inhalt) AS laenge, stand, zeit FROM wikiseiten WHERE wiki = ? ORDER BY rowid",
+  )
+    .bind(wiki)
+    .all();
+  return jsonAntwort({ wiki, seiten: results });
 }
 
-/** GET /api/admin/wiki/seite?pfad=…: eine Seite mit Inhalt; unbekannt → 404. */
+/** GET /api/admin/wiki/seite?wiki=…&pfad=…: eine Seite mit Inhalt; unbekannt → 404. */
 export async function wikiseite(env: Umgebung, url: URL): Promise<Response> {
+  const wiki = wikiDer(url);
+  if (!wiki) return fehler(400, "wiki");
   const pfad = url.searchParams.get("pfad") ?? "";
   const seite = await env.ADMIN_DB.prepare(
-    "SELECT pfad, bereich, titel, inhalt, quelle, stand, zeit FROM wiki WHERE pfad = ?",
+    "SELECT pfad, bereich, titel, inhalt, quelle, stand, zeit FROM wikiseiten WHERE wiki = ? AND pfad = ?",
   )
-    .bind(pfad)
+    .bind(wiki, pfad)
     .first();
   return seite ? jsonAntwort({ seite }) : fehler(404, "unbekannt");
 }
@@ -132,15 +160,17 @@ export function ausschnitt(inhalt: string, suche: string): string {
   return `${anfang > 0 ? "…" : ""}${inhalt.slice(anfang, ende)}${ende < inhalt.length ? "…" : ""}`;
 }
 
-/** GET /api/admin/wiki/suche?q=…: Seiten, in deren Titel oder Text der Begriff steht. */
+/** GET /api/admin/wiki/suche?wiki=…&q=…: Seiten eines Wikis, in deren Titel oder Text der Begriff steht. */
 export async function wikisuche(env: Umgebung, url: URL): Promise<Response> {
+  const wiki = wikiDer(url);
+  if (!wiki) return fehler(400, "wiki");
   const suche = (url.searchParams.get("q") ?? "").trim().slice(0, KURZTEXT);
   if (suche.length < KUERZESTE_SUCHE) return jsonAntwort({ treffer: [] });
   const muster = `%${suche.replace(/[\\%_]/g, (z) => `\\${z}`)}%`;
   const { results } = await env.ADMIN_DB.prepare(
-    "SELECT pfad, bereich, titel, inhalt FROM wiki WHERE titel LIKE ? ESCAPE '\\' OR inhalt LIKE ? ESCAPE '\\' LIMIT ?",
+    "SELECT pfad, bereich, titel, inhalt FROM wikiseiten WHERE wiki = ? AND (titel LIKE ? ESCAPE '\\' OR inhalt LIKE ? ESCAPE '\\') LIMIT ?",
   )
-    .bind(muster, muster, TREFFER)
+    .bind(wiki, muster, muster, TREFFER)
     .all<{ pfad: string; bereich: string; titel: string; inhalt: string }>();
   return jsonAntwort({
     treffer: results.map((r) => ({

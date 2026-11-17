@@ -1139,7 +1139,6 @@ optionale Objektfelder: `drehung` (0/90/180/270), `spiegeln`, `massstab`, `ebene
 berechnete Tiefe, statt sie fest zu setzen, damit Figuren weiter davor oder dahinter stehen).
 Mehrfachauswahl mit Strg und Duplizieren als Gruppe auf Wunsch des Autors.
 
-
 ## RO32: Regeln aus den Editoränderungen des Autors (16.11.2026, abends)
 
 Der Autor hat die Vorschläge aus seinen Kartenänderungen (Karteneditor 1.6, Maple Falls) abgesegnet;
@@ -1184,3 +1183,14 @@ und Waschsalon mit Glastür (17 hoch, nötig 1,18).
 - **RO36:** Slicks Club im Pavillon Riverton wird innen ein offener Pavillon mit Geländer und Blick
   auf den Fluss statt eines Holzsaals mit Wänden; außen bleibt der offene Achteckpavillon (Maßstab
   1,375). Vom Autor bestätigt, Umsetzung durch den Nebenchat mittel-2.
+
+## Eigenes Wiki für das Spiel (17.11.2026)
+
+Wunsch des Autors: ein paralleles Wiki für das Schach-Abenteuer auf derselben Plattform wie das
+Wiki der Schach-App, mit Umschalter „Schach-App / Spiel“ im Dashboard, aber nicht ineinander
+gewoben. Umsetzung: Der Worker speichert jede Seite mit Wiki-Kennung („app“ oder „spiel“), eine
+Sendung ersetzt nur ihr Wiki. `pipeline/wiki_spiel.py` baut die Seiten des Spiels aus
+`docs/spiel/` (Überblick, Story-Bibel nur mit Kern und Szenentiteln, Welt, Regelwerk, Kartenregeln,
+Karteneditor, Entscheidungen, Fortschritt) und dem Code (Begriffe, Codeführer in
+`docs/spiel/codefuehrer/`, Module aus den Dateiköpfen von `app/src/abenteuer/`, Werkzeuge aus
+`pipeline/abenteuer/`). Romantexte (`docs/spiel/roman/`) und Buchbefunde kommen nie hinein.

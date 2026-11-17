@@ -2,7 +2,7 @@
  * Oberflächentests für den Variationsbrowser, Stufe 4 (1.11.2026): ganze Eröffnung aus Buch und
  * Praxis laden, eine Meisterpartie (Buch und Klassiker) öffnen, eine Variante abfragen (falsch, „andere Linie“, richtig, Ergebnis), eine Variante
  * mit einem Lernsammlungs-Eintrag verknüpfen und in der Abfrage der Sammlung abfragen, eine Übung
- * erst nach dem Lösen als Variante öffnen.
+ * erst nach dem Lösen als Variante öffnen, eigene Züge an einer Abbildung als Variante speichern.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { oeffneAbbildung, starteImBrowser } from "./hilfen";
@@ -154,4 +154,23 @@ test("Übung erst nach dem Lösen als Variante: Übung 8 mit der Lösung im Baum
   await expect(page.getByTestId("variantentitel")).toHaveText("Übung 8");
   await expect(page.getByTestId("variantenzeile")).toContainText("Sg5");
   await expect(page.getByTestId("variantenzeile")).toContainText("Dxg5");
+});
+
+// Vortest 17.11.2026 (N2506): Eigene Züge an einer Abbildung werden mit „Als Variante speichern“
+// in der Zugleiste selbst gespeichert, die Variante öffnet am letzten eigenen Zug, und die
+// Abbildung nennt danach „1 eigene Variante“.
+test("Abbildung: eigene Züge als Variante speichern, Zahl an der Abbildung", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneAbbildung(page, "2.2", "2.2");
+  await page.getByRole("button", { name: "Ziehen" }).click();
+  await ziehe(page, ".brettbereich", "h7", "h6");
+  await expect(page.getByTestId("eigene-zuege")).toBeVisible();
+  await ziehe(page, ".brettbereich", "b5", "a4");
+  await page.getByRole("button", { name: "Als Variante speichern" }).click();
+  await expect(page.getByTestId("variantenstatus")).toContainText("Gespeichert unter Varianten");
+  await expect(page.getByTestId("variantenzeile").locator('[aria-current="step"]')).toHaveText(
+    /La4/,
+  );
+  await page.getByRole("button", { name: "Zurück" }).first().click();
+  await expect(page.getByTestId("variantenzahl")).toContainText("1 eigene Variante");
 });

@@ -398,12 +398,12 @@ geräumt, mit Mittellinie, zwei Zebrastreifen an den Gassen und Schneewällen an
 geräumter Weg aus Steinplatten mit Schneewall statt brauner Erde. Statt der grauen Rückseite
 (Condo 9) steht ein Wohnhaus mit Haustür (`altstadt.py`, `wohnhaus_e`, Möbel `sa9WohnhausE`); die
 Metzgerei rückt eine Spalte nach Osten, die Laterne steht in der Lücke. Der Marktplatz hat einen
-Rand aus hellen Platten (`platten`). Der Mähroboter heißt im Winter Schneeräumroboter. Offen: Die
+Rand aus hellen Platten (`platten`). Der frühere Schneeräumroboter heißt Kehrroboter (`kehrroboter`), weil in der Stadt kein Schnee liegt (RO21). Offen: Die
 Roboter bleiben ohne Bild, bis der Lieferroboter des Autors (Gemini, `ki-roh/lieferroboter.png`)
 kommt; der Gitarrenkoffer ist ein Bild mit zwei Koffern. Drittes Gutachten (`silicon-bay-altstadt-3.md`, „bereit für den Autor“),
 Restpunkte: Die Laternen stehen an den Hausgrenzen statt vor den Schaufenstern; ein zweites Kind
 rollt am Schneemann eine Schneekugel. Gemini-Bilder (Runde 9): Die Roboter
-(Liefer-, Staubsauger-, Schneeräumroboter in der Altstadt, Saugroboter in der Akademie, Lieferroboter
+(Liefer-, Staubsauger-, Kehrroboter in der Altstadt, Saugroboter in der Akademie, Lieferroboter
 und Roboterhund am Campus) zeigen jetzt den Lieferroboter von Perfect Move (Tierart `lieferroboter`
 in `tierarten.json`, Schnitt `ansichten` aus `lieferroboter_rechts/_oben/_unten`). In der Akademie heißt
 die Belebung jetzt `lieferroboter` und steht in der Beschreibung: Perfect Move erprobt seinen

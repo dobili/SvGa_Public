@@ -92,7 +92,9 @@ wer errät, dass Ike im Kasten sitzt, bekommt den Fund `geheimnisTuerke` mit zeh
 
 ## Stand Text gegen Karte (Nebenchat mittel-2, 17.11.2026)
 
-Auf dem heutigen Festplatz fehlen die Bude Dosenwerfen, ein Glücksrad und ein Zuckerwattestand; die
-Zuckerwattefrau steht am Gebäckstand. Die Statistentexte sind darauf angepasst (Zuckerwattefrau
-verkauft am Gebäckstand Krapfen und Zuckerwatte, der Dosenwirt ruft Besucher an die Süßigkeitenbude).
-Kommen die Buden zurück auf die Karte, können die alten Texte wieder gelten.
+Nachgezogen am 17.11.2026 (Kartenrunde): Der Zuckerwattewagen (`n6Zuckerwattewagen`, eigenes Bild
+von schräg oben) steht bei (24, 14) statt des Gebäckstands, die Zuckerwattefrau dreht wieder
+Zuckerwatte. Die Dosenbude ist der Stand bei (10, 18) mit drei Dosen und Ball, der Dosenwirt stellt
+die Dosen wieder auf. Die gelieferten Buden von vorn (`bude_dosenwerfen`, `bude_lose` mit Glücksrad,
+`zuckerwatte`) bleiben als Abziehbilder draußen (Regel 10.71); ein Glücksrad fehlt weiter, und eine
+Dosenpyramide braucht ein eigenes Bild oder eine Ausnahme von Regel 10.81.

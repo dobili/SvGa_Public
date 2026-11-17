@@ -1,7 +1,7 @@
 {
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
-  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat neben dem Zuckerwattewagen mit rosa Markise. Lose- und Dosenbude als Marktstände mit gestreifter Markise (auf dem Tresen Teddys und Pokale als Gewinne, Dosen und ein Ball zum Werfen), Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
+  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat, rechts daneben der Zuckerwattewagen mit rosa-weißer Markise, Zuckerwatte auf Stäbchen und Trommel. Lose- und Dosenbude als Marktstände mit gestreifter Markise (auf dem Tresen Teddys und Pokale als Gewinne, Dosen und ein Ball zum Werfen), Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -92,8 +92,8 @@
       "feld": [20, 14]
     },
     {
-      "moebel": "pd6Gebaeckstand",
-      "feld": [23, 14]
+      "moebel": "n6Zuckerwattewagen",
+      "feld": [24, 14]
     },
     {
       "moebel": "rv5Marktstand",
@@ -825,7 +825,7 @@
       "typ": "statist",
       "feld": [26, 15],
       "eigenschaften": {
-        "tun": "verkauft am Gebäckstand Krapfen und Zuckerwatte",
+        "tun": "dreht Zuckerwatte auf Stäbchen",
         "wann": "tag",
         "von": "26,14",
         "bis": "27,15",
@@ -909,7 +909,7 @@
       "typ": "statist",
       "feld": [13, 20],
       "eigenschaften": {
-        "tun": "ruft Besucher an die Süßigkeitenbude",
+        "tun": "stellt die Dosen wieder auf und ruft zum Dosenwerfen",
         "wann": "tag",
         "von": "13,20",
         "bis": "13,20",

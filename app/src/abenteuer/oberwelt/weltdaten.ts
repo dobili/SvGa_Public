@@ -291,7 +291,9 @@ export function aktionFuer(w: Weltdaten, treffer: Ausloesertreffer | null): stri
 
 /**
  * Was ein ansprechbarer Statist beim n-ten Ansprechen (ab 0) sagt, fertig übersetzt; {held} wird
- * durch den Namen des Helden ersetzt. Null, wenn der Statist keinen Satz hat.
+ * durch den Namen des Helden ersetzt. Null, wenn der Statist keinen Satz hat. Ambroses Kommentar
+ * nur, wenn er gerade sprechen kann (`ambroseSpricht`, regeln/abwesenheit.ts ambroseSprichtJetzt);
+ * sonst fällt er weg.
  * Beispiel: Ladenhilfe im Bergladen, erstes Ansprechen → Satz „statist.summitCity.bergladen.ladenhilfe“.
  */
 export function sprechblaseFuer(
@@ -299,11 +301,12 @@ export function sprechblaseFuer(
   name: string,
   besuch: number,
   held: string,
+  ambroseSpricht: boolean,
 ): SprechblasenInhalt | null {
   const statist = liesBelebung(w.karte).find((b) => b.typ === "statist" && b.name === name);
   const sagt = statist?.sagt;
   const s = sagt ? statistensatz(sagt, besuch, hatSpieltext) : null;
   if (!s) return null;
-  const ambrose = s.ambrose ? tSpiel(s.ambrose, { held }) : null;
+  const ambrose = s.ambrose && ambroseSpricht ? tSpiel(s.ambrose, { held }) : null;
   return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
 }

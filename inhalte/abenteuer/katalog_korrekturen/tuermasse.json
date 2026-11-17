@@ -57,184 +57,184 @@
     "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Victorian_House_1_Side_Entrance_16x16.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [20, 76, 47, 103],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png": {
-    "herkunft": "verworfen",
-    "grund": "Zelt oder Kleinbau ohne echte Tür"
+    "rahmen": [18, 38, 48, 58],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png": {
-    "herkunft": "verworfen",
-    "grund": "Zelt oder Kleinbau ohne echte Tür"
+    "rahmen": [18, 38, 48, 58],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [14, 43, 34, 63],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_1.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [15, 92, 34, 112],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_2.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [15, 156, 34, 176],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_3.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [15, 156, 34, 176],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store_Example.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [17, 121, 46, 139],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Grace_Chapel.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [24, 98, 56, 130],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/12_Hotel_and_Hospital_Singles_16x16/ME_Singles_Hotel_and_Hospital_16x16_Hotel_1.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [120, 307, 151, 349],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Roof_Cabin_1.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "herkunft": "nicht messbar",
+    "grund": "keine Tür im Bild (Automatenhäuschen auf dem Dach), im Bild geprüft"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Small_2.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [47, 190, 67, 206],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_baeckerei.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [74, 175, 109, 207],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_campus_coolies.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_campus_danger.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_campus_fitness.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [77, 112, 100, 142],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_campus_groove.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_campus_musik.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_campus_plume.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_laden_a.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_laden_b.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_laden_d.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_metzgerei.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [32, 111, 49, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_musikladen.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [72, 175, 103, 207],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_wohnhaus_a.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [44, 175, 68, 198],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_wohnhaus_e.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [44, 175, 69, 198],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/bahnhof_alt_veranda.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [63, 71, 96, 114],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/bootsschuppen_grau.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [15, 38, 40, 69],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/diner_wagen.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [64, 56, 96, 101],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_cafe.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [16, 121, 46, 138],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_eisenwaren.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [16, 121, 46, 138],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_kramladen.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [16, 121, 46, 138],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_rasthaus.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [16, 121, 46, 138],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/feuerwache.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [104, 151, 154, 191],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/haus_farm2_gruen.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [109, 113, 131, 139],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/huette_bretter_a.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [33, 47, 49, 72],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/huette_bretter_b.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [31, 47, 48, 72],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/konzernturm_hoch.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [81, 434, 125, 459],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/pfahlhaus_blau.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [32, 27, 49, 52],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/pfahlhaus_weiss.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [32, 28, 48, 52],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/polizei.png": {
-    "herkunft": "verworfen",
-    "grund": "Treppe oder Stufen statt Tür gemessen"
+    "rahmen": [40, 218, 76, 241],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/riverton_bahnhof.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [160, 177, 192, 222],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/schuppen_rot.png": {
-    "herkunft": "verworfen",
-    "grund": "Fenster, Schild oder Dach statt Tür gemessen"
+    "rahmen": [15, 46, 32, 71],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/sternwarte_aussen.png": {
-    "herkunft": "verworfen",
-    "grund": "Mauer um die Tür mitgemessen, Tür ist schmaler"
+    "rahmen": [46, 89, 68, 120],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/wuestenbahnhof.png": {
-    "herkunft": "verworfen",
-    "grund": "ein Flügel einer Doppeltür oder einer Glasfront gemessen, Tür ist breiter"
+    "rahmen": [32, 60, 64, 93],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Lighthouse.png": {
     "rahmen": [44, 218, 68, 236],
@@ -569,20 +569,20 @@
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_Brown_Wood_Storage.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [15, 43, 33, 64],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Palace_Example_1.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [186, 403, 214, 437],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Pergola_Structure.png": {
     "herkunft": "nicht messbar",
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [14, 43, 34, 64],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_8.png": {
     "herkunft": "nicht messbar",
@@ -625,24 +625,24 @@
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "spiel/eigene/altstadt_campus_bimbum.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/altstadt_laden_c.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [72, 111, 103, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/baeckerei_haus.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [74, 111, 104, 143],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/berghuette.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [48, 69, 80, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/blockhuette_kamin.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [18, 55, 34, 80],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/campkiosk.png": {
     "herkunft": "nicht messbar",
@@ -661,32 +661,32 @@
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "spiel/eigene/fassade_barbier.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [48, 63, 63, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_bestatter.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [49, 59, 64, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_laden.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [48, 62, 64, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_post.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [48, 58, 64, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_pruefamt.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [49, 59, 64, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_sheriff.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [48, 60, 64, 103],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/holzfaellerhuette.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [33, 48, 48, 74],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/kaffeebecher_klein.png": {
     "herkunft": "nicht messbar",
@@ -697,40 +697,40 @@
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "spiel/eigene/london_buchladen_hell.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [65, 160, 84, 192],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/london_kaffeehaus_hell.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [74, 159, 90, 192],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/london_pub_hell.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [63, 156, 78, 190],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/london_schachsalon_hell.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [49, 155, 64, 192],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/london_schneider_hell.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [66, 158, 84, 192],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/motelzeile.png": {
     "herkunft": "nicht messbar",
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "spiel/eigene/pavillon_achteck.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [56, 92, 86, 136],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/pfahlhaus_rot.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [15, 26, 32, 53],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/seilbahn_talstation.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "rahmen": [48, 100, 80, 125],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/silo_kurz.png": {
     "herkunft": "nicht messbar",
@@ -738,7 +738,7 @@
   },
   "spiel/eigene/stellwerk_ziegel.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türfläche gefunden"
+    "grund": "Eingang oben über die Außentreppe, im Bild kaum zu sehen; im Bild geprüft"
   },
   "spiel/eigene/tunnelportal_west_4.png": {
     "herkunft": "nicht messbar",

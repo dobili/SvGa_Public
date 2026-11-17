@@ -141,6 +141,25 @@ def _zeile_zu_klein(kennung: str, g: dict, angabe: dict) -> str | None:
     return f"| {kennung} | {g['bild']} | {tb} × {th} | {angabe['herkunft']} | {noetig:.2f} | {orte} |"
 
 
+def liste_zu_klein(gebaeude: dict, angaben: dict) -> list[str]:
+    """Je zu kleiner Tür auf einer Karte eine Zeile: Gebäude, Karte, Feld, massstab jetzt und nötig.
+
+    Beispiel: „mf4Diner auf maple-falls-aussen (30, 14): massstab 1 → mindestens 1.18“.
+    """
+    zeilen = []
+    for kennung, g in sorted(gebaeude.items()):
+        rahmen = angaben.get(g["bild"], {}).get("rahmen")
+        if not rahmen:
+            continue
+        noetig = max(FIGUR_BREITE / (rahmen[2] - rahmen[0]), FIGUR_HOEHE / (rahmen[3] - rahmen[1]))
+        zeilen += [
+            f"- {kennung} auf {datei} {feld}: massstab {m:g} → mindestens {noetig:.2f}"
+            for datei, feld, m in g["orte"]
+            if m < noetig
+        ]
+    return zeilen
+
+
 def bericht(moebel: dict) -> str:
     """Bericht (Markdown): zu kleine Türen je Gebäude mit Karten und nötigem Maßstab, dann Gebäude
     ohne Maß mit Grund. Grundlage für ``docs/spiel/auftraege/rueckmeldung/tuermasse_17-11.md``."""
@@ -176,6 +195,10 @@ def bericht(moebel: dict) -> str:
             "| Gebäude | Bild | Stand | Grund |",
             "| ------- | ---- | ----- | ----- |",
             *ohne,
+            "",
+            "## Liste: alle zu kleinen Türen (Gebäude, Karte, Feld, nötiger massstab)",
+            "",
+            *liste_zu_klein(gebaeude, angaben),
             "",
         ]
     )

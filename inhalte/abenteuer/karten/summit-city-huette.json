@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 37,
+ "nextobjectid": 36,
  "layers": [
   {
    "id": 1,
@@ -1310,29 +1310,6 @@
     },
     {
      "id": 35,
-     "name": "rv8Truhe",
-     "type": "moebel",
-     "x": 224,
-     "y": 112,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
      "name": "scThermometer",
      "type": "moebel",
      "x": 64,

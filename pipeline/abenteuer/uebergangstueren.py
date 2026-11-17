@@ -7,6 +7,8 @@ Türbild, das zu dieser Wand gehört, und im Stil des Hauses. Ein Gebäude hat i
 Geschosse als außen.
 """
 
+import math
+
 from pipeline.abenteuer.kartenbau import K
 from pipeline.abenteuer.uebergangsarten import Seite, wand_der_tuer
 from pipeline.abenteuer.uebergangsbilder import (
@@ -21,6 +23,10 @@ from pipeline.abenteuer.uebergangsbilder import (
 
 # Türbilder bis zu dieser Höhe in Pixeln sind flach (Schwelle in der Südwand, von oben gesehen).
 FLACHE_TUER = 16
+# Bis zu dieser Abweichung vom Faktor 1 gilt ein Gebäude als ungeskaliert (Rundung der Breite).
+MASSSTAB_SPIEL = 0.05
+# Aufschlag beim Runden der skalierten Türbreite: 1,5 Kacheln bleiben eine Tür, 1,7 werden zwei.
+TUER_RUNDUNG = 0.4
 SEITENNAME = {"sued": "Süd", "nord": "Nord", "west": "West", "ost": "Ost"}
 
 
@@ -116,10 +122,34 @@ def tuerbreite(aussen: Seite, stueck: dict, grundriss: dict | None) -> int:
     Treppe (durchgang.py), die Tür selbst bleibt eine Kachel (Musikhaus in Port Delacroix)."""
     x0 = stueck["x"] // K
     spalten = {x - x0 + 1 for x, _ in aussen.felder}
-    for t in (grundriss or {}).get("tueren") or []:
-        if any(t["von"] - 1 <= s <= t["bis"] + 1 for s in spalten):
-            return t["bis"] - t["von"] + 1
+    for von, bis in tuerstellen(stueck, grundriss):
+        if any(von - 1 <= s <= bis + 1 for s in spalten):
+            return bis - von + 1
     return len(aussen.felder)
+
+
+def tuerstellen(stueck: dict, grundriss: dict | None) -> list[tuple[int, int]]:
+    """Türstellen des Grundrisses in Kachelspalten des gesetzten Stücks (ab 1, von–bis).
+
+    Warum: Der Grundriss zählt Spalten des ungeskalierten Bildes. Steht das Gebäude mit
+    ``massstab`` auf der Karte, liegen seine Türen entsprechend weiter rechts und sind breiter;
+    ohne die Umrechnung meldet die Prüfung einen Auslöser, der im Bild genau vor der Tür liegt.
+    Der Faktor ergibt sich aus der gesetzten Breite des Stücks und der Breite im Grundriss.
+    Beispiel: Kantine Ironwood, Halle 13 Kacheln breit mit Tür in Spalte 8, gesetzt mit 1,7:
+    Türstelle 12–13. Eine einflügelige Tür bleibt bis Faktor 1,5 eine Kachel breit.
+    Sonderfall: ohne Breite im Grundriss oder ohne Maßstab bleiben die Spalten.
+    """
+    tueren = (grundriss or {}).get("tueren") or []
+    breite = (grundriss or {}).get("breite")
+    faktor = stueck["breite"] / (breite * K) if breite and "breite" in stueck else 1.0
+    if abs(faktor - 1) < MASSSTAB_SPIEL:
+        return [(t["von"], t["bis"]) for t in tueren]
+    stellen = []
+    for t in tueren:
+        von = math.floor((t["von"] - 1) * faktor) + 1
+        breite = max(1, math.floor((t["bis"] - t["von"] + 1) * faktor + TUER_RUNDUNG))
+        stellen.append((von, von + breite - 1))
+    return stellen
 
 
 def _pruefe_grundriss(aussen: Seite, stueck: dict, grundriss: dict | None) -> list[Befund]:
@@ -128,7 +158,7 @@ def _pruefe_grundriss(aussen: Seite, stueck: dict, grundriss: dict | None) -> li
         return []
     x0 = stueck["x"] // K
     spalten = {x - x0 + 1 for x, _ in aussen.felder}
-    tueren = grundriss.get("tueren") or []
+    tueren = tuerstellen(stueck, grundriss)
     if not tueren:
         return [
             Befund(
@@ -138,9 +168,9 @@ def _pruefe_grundriss(aussen: Seite, stueck: dict, grundriss: dict | None) -> li
                 "Gebäudebild mit Tür nehmen oder Tür ansetzen (10.2 Punkt 9)",
             )
         ]
-    if any(t["von"] - 1 <= s <= t["bis"] + 1 for t in tueren for s in spalten):
+    if any(von - 1 <= s <= bis + 1 for von, bis in tueren for s in spalten):
         return []
-    stellen = ", ".join(f"{t['von']}–{t['bis']}" for t in tueren)
+    stellen = ", ".join(f"{von}–{bis}" for von, bis in tueren)
     return [
         Befund(
             aussen.karte,

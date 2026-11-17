@@ -970,3 +970,135 @@ Big Joe (Kantine Akt 2, Crossroads Akt 4: Anrede „Kumpel“, Pokal 2001, Stahl
 - Die Funde zum Ablauf (Zweige mit Variablen) sind aus dem Text hergeleitet, nicht im Spiel nachgestellt.
 - FEN und Aufgaben der Runden wurden nicht nachgerechnet, außer der Stellung des Meisterproblems.
 - Die Figuren der anderen Helfer (auch Slicks „seit März“ und Mamas Jahreszahlen) nur am Rand mitgelesen, nicht bewertet.
+
+## Teil 6: Sackgassen durch einmalige Wahlen vor Partien (geprüft, nichts geändert)
+
+## Sackgassen durch einmalige Wahlen: Akt 1 (Maple Falls, Cedar Creek, Kürbishof, Weg 1)
+
+Stand 17.11.2026. Geprüft: 15 Dateien, 22 Aufrufstellen von `beginnePartie`/`beginneAufgaben`
+(die Zahl 37 aus dem Auftrag enthält die `EXTERNAL`-Zeilen und einen Kommentar).
+
+### Ergebnis vorweg
+
+**Es gibt in diesen Dateien keine Sackgasse, und ich habe keine Datei geändert.**
+
+Die Annahme des Auftrags trifft in der App nicht zu: Eine `*`-Wahl bleibt nicht über Besuche
+hinweg verbraucht. Die App legt für jeden Dialog eine neue Ink-Geschichte an und sichert davon
+nur die globalen Variablen, nicht den Ink-Zustand.
+
+- `app/src/abenteuer/dialog/Dialog.tsx`, Zeile 77: `useState(() => new Geschichte(json, …))`, mit
+  dem Kommentar „Die Geschichte lebt, solange der Dialog offen ist; die Oberwelt baut den Dialog
+  je Knoten neu auf“.
+- `app/src/abenteuer/oberwelt/useDialogende.ts`: `beiDialogende` setzt `setzeDialog(null)`, der
+  Dialog wird also abgebaut. `oeffneDialog` lädt das JSON neu.
+- `app/src/abenteuer/dialog/geschichte.ts`: `variablen()` gibt nur die globalen Variablen zurück.
+  `state.ToJson`/`LoadJson` kommt in der App nirgends vor. Die Besuchszähler (`neueKnoten`) gelten
+  nur innerhalb des offenen Dialogs.
+- Die Gesamtsimulation macht es genauso (`gesamtsimulation-dialoge.cjs`, Zeile 29: `new Story` je
+  Dialog).
+
+Verbraucht ist `*` deshalb nur, wenn derselbe Wahlpunkt **innerhalb eines offenen Dialogs** ein
+zweites Mal erreicht wird (Rücksprung per `->`). Genau danach habe ich gesucht.
+
+Folge für Akt 3: Die dort heute geänderten `*` → `+` (Commit c5b39203) schaden nicht, haben in der
+App aber auch nichts behoben; die beschriebenen Sackgassen gab es so nicht. Der Rücksprung
+`{mira_erinnerung_wahl: … -> mira_erinnerung_wahl}` in `desert-springs-garage.ink` (Zeile 193) greift
+in der App nie, weil der Besuchszähler in der neuen Geschichte immer 0 ist: Nach einem Abbruch läuft
+die ganze Szene weiterhin noch einmal (mit frischen Wahlen, also spielbar). Wer das kürzen will,
+braucht dafür eine Variable (`VAR`), keinen Besuchszähler. Diese Datei durfte ich nicht ändern.
+
+### Änderungen
+
+| Datei   | Knoten | vorher → nachher | Grund                                                                                                                                                           |
+| ------- | ------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (keine) |        |                  | Kein Knoten mit `*` vor einer Partie oder Aufgabenrunde wird innerhalb eines Dialogs zweimal erreicht; über Besuche hinweg ist `*` in der App nicht verbraucht. |
+
+Falls ihr die Dateien trotzdem vorsorglich an Akt 3 angleichen wollt (alle Spiel- und
+„Später“-Wahlen als `+`), ändert das am Verhalten heute nichts. Es wäre nur dann nötig, wenn die
+App künftig den Ink-Zustand speichert. Die betroffenen Stellen stehen in der Liste unten.
+
+### Geprüfte Aufrufstellen ohne Befund
+
+Für alle gilt: Der Knoten ist erneut erreichbar (Verteiler nach Niederlage, Abbruch, „Später“),
+aber jedes Mal in einer neuen Geschichte, die Wahlen sind also wieder da. Innerhalb eines Dialogs
+führt kein Weg zum Wahlpunkt zurück.
+
+| Datei                      | Knoten (Wahl davor)                                                                                                                                  | Aufruf                                       | Warum unkritisch                                                                                                  |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| maple-falls-aussen.ink     | `lily_lektion` (`*` „Und er springt immer auf die andere Farbe.“, eine Wahl, danach Sammelpunkt)                                                     | Aufgaben `mapleFalls.springerLily`           | Kein Rücksprung im Dialog; Wiederholung über `lily` in neuer Geschichte.                                          |
+| maple-falls-clubraum.ink   | `coach_clubkampf` (`*` „Ich bin bereit.“ / `*` „Noch nicht.“) → `coach_partie`                                                                       | Partie `mapleFalls.clubkampf`                | `pause_vor_clubkampf -> coach_clubkampf` springt vor den Wahlen ab, der Wahlpunkt wird je Dialog einmal erreicht. |
+| maple-falls-clubraum.ink   | `coach_nach_niederlage` (`*` „Noch einmal.“ / `*` „Nicht jetzt.“) → `coach_partie`                                                                   | Partie `mapleFalls.clubkampf`                | Nach jeder Niederlage neuer Dialog; mit inkjs nachgewiesen.                                                       |
+| maple-falls-clubraum.ink   | `sam_erstes_treffen` → `sam_reihe` (`*` „Erst zählen.“ / `*` „Gleich.“)                                                                              | Aufgaben `mapleFalls.reiheSam`               | Kein Rücksprung.                                                                                                  |
+| maple-falls-clubraum.ink   | `sam_klagt` (zwei `*`, beide führen zur Runde)                                                                                                       | Aufgaben `mapleFalls.todsuenden` (2 Stellen) | Kein Rücksprung; danach `sam_klagt_wieder`.                                                                       |
+| maple-falls-clubraum.ink   | `sam_klagt_wieder` (`*` „Ja, los.“ / `*` „Gleich.“)                                                                                                  | Aufgaben `mapleFalls.todsuenden`             | Neuer Dialog je Ansprechen.                                                                                       |
+| maple-falls-clubraum.ink   | `sam_revanche_angebot` (`*` „Revanche.“ / `*` „Gleich.“)                                                                                             | Partie `mapleFalls.samRevanche`              | Wiederholbar nach Niederlage und Abbruch, je neuer Dialog; mit inkjs nachgewiesen.                                |
+| maple-falls-clubraum.ink   | `juno_reihe` (`*` „Her damit.“ / `*` „Gleich.“)                                                                                                      | Aufgaben `mapleFalls.reiheJuno`              | Kein Rücksprung.                                                                                                  |
+| maple-falls-clubraum.ink   | `victor_angebot` (`*` „Ich spiele.“ / „Das ist nicht fair.“ / „Nicht jetzt.“) → `victor_partie`                                                      | Partie `mapleFalls.victor`                   | Kein Rücksprung.                                                                                                  |
+| maple-falls-dachboden.ink  | `ambrose_erwacht` … → `partie_beginnt`; `ambrose_spaeter` (`*` „Lass uns spielen.“ / `*` „Später.“)                                                  | Partie `mapleFalls.ersteLektion`             | Kein Rücksprung zu diesen Wahlpunkten.                                                                            |
+| maple-falls-park.ink       | `parkbank_raetsel` (`*` Die Aufgaben lösen / `*` Nicht jetzt)                                                                                        | Aufgaben `mapleFalls.parkbankRaetsel`        | `parkbank_fund -> parkbank_raetsel` nur vorwärts.                                                                 |
+| maple-falls-park.ink       | `jo_angebot`, `jo_nach_sieg`, `jo_nach_niederlage`, `jo_limo` → `jo_duell`                                                                           | Partie `mapleFalls.skaterJo`                 | Verteiler `skater_jo` in neuer Geschichte; `jo_duell` hat keine Wahl.                                             |
+| cedar-creek-archiv.ink     | `erinnerung` (`*` „Los geht's.“ / `*` „Gleich.“)                                                                                                     | Aufgaben `cedarCreek.erinnerungNewYork`      | Kein Rücksprung.                                                                                                  |
+| cedar-creek-aussen.ink     | `rosa_angebot` (`*` „Abgemacht.“ / `*` „Nicht jetzt.“) → `rosa_duell`                                                                                | Partie `cedarCreek.rosaDuell`                | Kein Rücksprung.                                                                                                  |
+| cedar-creek-bibliothek.ink | `okafor_clubkampf` (`*` „Ich bin bereit.“ / `*` „Noch nicht.“), `okafor_nach_niederlage` (`*` „Noch einmal.“ / `*` „Nicht jetzt.“) → `okafor_partie` | Partie `cedarCreek.clubkampf`                | Kein Rücksprung.                                                                                                  |
+| cedar-creek-bibliothek.ink | `dex_reihe` (`*` „Her damit.“ / `*` „Gleich.“)                                                                                                       | Aufgaben `cedarCreek.reiheDex`               | Kein Rücksprung.                                                                                                  |
+| cedar-creek-bibliothek.ink | `mae_reihe` (`*` „Los geht's.“ / `*` „Gleich.“)                                                                                                      | Aufgaben `cedarCreek.reiheMae`               | Kein Rücksprung.                                                                                                  |
+| cedar-creek-waschsalon.ink | `trockner_raetsel` (`*` Die Stellung lösen / `*` Nicht jetzt)                                                                                        | Aufgaben `cedarCreek.trocknerStellung`       | Kein Rücksprung.                                                                                                  |
+| kuerbishof.ink             | `clover_irrgarten` (`+` Ja, rein in den Mais.)                                                                                                       | Aufgaben `kuerbishof.irrgarten`              | Schon `+`.                                                                                                        |
+| weg-maple-cedar.ink        | `tafel` (`*` Die Aufgaben lösen / `*` Weitergehen)                                                                                                   | Aufgaben `wegMapleCedar.tafel`               | Kein Rücksprung; mit inkjs nachgewiesen.                                                                          |
+| weg-maple-cedar.ink        | `nia_angebot` (`*` „Abgemacht.“ / `*` „Nicht jetzt.“), `nia_nach_sieg`, `nia_nach_niederlage` → `nia_duell`                                          | Partie `wegMapleCedar.nia`                   | Kein Rücksprung.                                                                                                  |
+| weg-maple-cedar.ink        | `flohmarkt_angebot` (`*` Die Fallen lösen / `*` Nicht jetzt)                                                                                         | Aufgaben `wegMapleCedar.finchFallen`         | Kein Rücksprung.                                                                                                  |
+
+Ohne Aufrufstelle: maple-falls-diner.ink, maple-falls-wohnzimmer.ink, ansehen-maple-falls.ink,
+cedar-creek-drechslerei.ink, ansehen-cedar-creek.ink (dort nur der allgemeine Fall geprüft).
+
+#### Allgemeiner Fall (alle Wahlen `*`, Knoten im selben Dialog erneut erreicht)
+
+Geprüft mit einem Zufallslauf (`fuzz.cjs` im Scratchpad): jeder Knoten aller 15 Dateien als
+Einstieg, je 400 Läufe mit neuer Geschichte, zufälligen Variablen (auch alle Ausgänge sieg,
+niederlage, remis, abgebrochen, leer) und zufälligen Wahlen. Gemeldet wird jeder Laufzeitfehler
+(„ran out of content“) und jeder Wahlpunkt, der im selben Dialog zweimal erscheint.
+
+- Kein einziger Lauf endet leer oder fällt durch.
+- `maple-falls-dachboden.ink`, `dachboden_brett`: „Lieber nicht anfassen“ springt zurück auf
+  denselben Knoten; beim zweiten Mal steht nur noch „Die Decke wegziehen“. Das ist gewollt (der
+  Spieler soll das Brett aufdecken) und keine Sackgasse. „Den König fallen lassen“ springt
+  ebenfalls zurück, dann greift `brettBeruehrt` und es geht zu `ambrose`.
+- `cedar-creek-aussen.ink`, `bus_zurueck` und `kettering_a`: Wahlpunkte kommen im selben Dialog
+  wieder, sind aber `+` und bleiben vollständig.
+- Sechs gemeldete Laufzeitfehler sind Artefakte des Tests (Tunnel `calloway_a`,
+  `pratt_und_heimweg`, `fehler_am_steg`, `sterne_ambrose` und die Funktion `gespieltSamRevanche`
+  direkt als Einstieg gestartet); im Spiel werden sie nur über `-> knoten ->` bzw. als Funktion
+  aufgerufen.
+
+### Nachweis mit inkjs (`nachweis.cjs` im Scratchpad)
+
+Knoten zweimal durchlaufen, jeweils die erste Wahl gewählt:
+
+| Datei, Knoten                                     | wie die App (neue Geschichte je Dialog), 2. Besuch | Gegenprobe (dieselbe Geschichte), 2. Besuch |
+| ------------------------------------------------- | -------------------------------------------------- | ------------------------------------------- |
+| maple-falls-clubraum.ink, `coach_nach_niederlage` | „Noch einmal.“, „Nicht jetzt.“                     | nur „Nicht jetzt.“                          |
+| maple-falls-clubraum.ink, `sam_revanche_angebot`  | „Revanche.“, „Gleich.“                             | nur „Gleich.“                               |
+| weg-maple-cedar.ink, `tafel`                      | Die Aufgaben lösen, Weitergehen                    | nur Weitergehen                             |
+
+Die Gegenprobe zeigt, was der Auftrag befürchtet; so läuft die App aber nicht.
+
+### Prüfergebnisse
+
+- Ink-Compiler (wie `app/skripte/baue-abenteuerpaket.mjs`, „alle Besuche zählen“): alle 15 Dateien
+  übersetzen ohne Fehler (im Zufallslauf).
+- `python -m pipeline.abenteuer.sprache`: 0 Funde.
+- `node pipeline/abenteuer/gesamtsimulation.cjs --startwert 1 --sekunden 300`: „Meldungen: keine“.
+- `git status`: keine Änderungen im Repository.
+
+### Ungeprüft
+
+- `python -m pytest -q -k "not chaos" pipeline/tests` und `npx vitest run src/abenteuer` nicht
+  gelaufen, weil keine Datei geändert wurde.
+- Der Zufallslauf ist kein vollständiger Beweis: Sehr seltene Kombinationen aus Variablen und
+  Wahlen können fehlen. Zahlen-Variablen liefen nur von 0 bis 3, Text-Variablen außer den
+  Ausgängen blieben auf ihrem Anfangswert.
+- Nicht in der laufenden App (Browser) nachgestellt; der Befund stützt sich auf den Code von
+  `Dialog.tsx`, `useDialogende.ts`, `geschichte.ts` und die inkjs-Läufe.
+- Der Momentdialog in der Partie (`anbindung/Momentdialog.tsx`) legt ebenfalls je Dialog eine neue
+  Geschichte an; seine Knoten habe ich nicht eigens durchgesehen.
+- Die übrigen Akte (2 und 4) habe ich nicht geprüft.

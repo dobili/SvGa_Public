@@ -141,6 +141,57 @@ def bodenfeld(
     return art["feld"]
 
 
+def uferfelder(
+    boeden: dict, ufer: str, zeilen: list[str], x: int, y: int, bruecken: frozenset[str] = frozenset()
+) -> tuple[list[int], list[int]]:
+    """Die Kachel eines Wasserfelds zweimal: im gewöhnlichen Wasserbogen und im Bogen des Ufers.
+
+    Warum: Szenen mit eigenem Ufer (Szene „ufer“: „rot“ → Bodenart „wasser_rot“, KARTENREGELN 10.6)
+    wählen die Kachel wie gewöhnliches Wasser und zeichnen sie aus dem eigenen Bogen an derselben
+    Lage im Block; die Randspur rechnet weiter mit dem gewöhnlichen Wasser. Die Wahl liegt hier,
+    damit Wasserfelder und Randfelder davor dieselbe Rechnung benutzen.
+    Eingaben: Böden aus materialien.json, Bodenart des Ufers („wasser“ oder „wasser_<ufer>“), Raster
+    (Brückenfelder schon als Wasser), Feld, Brückenzeichen. Ausgabe: (Feld im Bogen „wasser“, Feld
+    im Bogen des Ufers); ohne eigenes Ufer sind beide gleich.
+    Beispiel: Canyonrand, Ufer „wasser_rot“ mit „rand“ [0, 0]: Mittelstück [1, 36] → [1, 1].
+    Sonderfall: Mit „diagonalen“ wählt das Ufer Schrägkacheln (Buchten), auch wenn „wasser“ keine hat.
+    """
+    art = boeden[ufer]
+    wasser = boeden["wasser"] | {"diagonalen": art.get("diagonalen")}
+    feld = bodenfeld(wasser, zeilen, x, y, bruecken)
+    eigen = [art["rand"][i] + feld[i] - boeden["wasser"]["rand"][i] for i in (0, 1)]
+    return feld, eigen
+
+
+def randkachel(
+    boeden: dict,
+    ufer: str,
+    sichten: tuple[list[str], list[str]],
+    innen: tuple[int, int],
+    bodenart: str,
+    bruecken: frozenset[str] = frozenset(),
+) -> tuple[str, str, list[int], list[int]]:
+    """Was ein Wandfeld am Kartenrand zeigt: den Boden des Felds ``innen`` dahinter.
+
+    Warum: Liegt hinter dem Rand Wasser, zeichnete der Rand es aus dem gewöhnlichen Wasserbogen mit
+    grünem Grasufer, auch wenn die Szene ein eigenes Ufer hat; im Canyon standen so zwei Grasstücke
+    am Bildrand, wo der Fluss die Karte verlässt (Durchsicht 17.11.2026).
+    Eingaben: Böden, Bodenart des Ufers, ``sichten`` = (Raster mit Brücken als Wasser, rohes Raster),
+    das Feld dahinter, dessen Bodenart ohne Wasser (Sonderboden oder Grundboden), Brückenzeichen.
+    Ausgabe: (Bodenart für die Randspur, Bodenart des gezeichneten Bogens, Feld für die Randspur,
+    gezeichnetes Feld).
+    Beispiel: Canyonrand, Randfeld (133, 29) vor Wasser (133, 28) → („wasser“, „wasser_rot“, linkes
+    Randstück im Wasserbogen, linkes Randstück im roten Bogen).
+    Sonderfall: Zum Kartenrand hin gibt es nie ein Ufer (der Fluss läuft aus dem Bild), weil das
+    Randfeld für seinen Nachbarn als Wasser zählt (``wirksames_zeichen``).
+    """
+    zeilen, roh = sichten
+    if zeilen[innen[1]][innen[0]] == WASSER:
+        return ("wasser", ufer, *uferfelder(boeden, ufer, zeilen, *innen, bruecken))
+    feld = bodenfeld(boeden[bodenart], roh, *innen, bruecken)
+    return (bodenart, bodenart, feld, feld)
+
+
 def randnachbar(zeilen: list[str], x: int, y: int) -> tuple[int, int] | None:
     """Für ein Wandfeld am Kartenrand das nächste Feld nach innen, das kein Wand- oder Leerfeld
     ist; sonst None (dann bleibt es Wand, etwa eine Hecke, die bis an den Rand reicht)."""

@@ -20,6 +20,7 @@ from pipeline.abenteuer.klippe import (
     klippenfeld,
     strassenzeichen,
     treppenfeld,
+    vorhandene_fassung,
 )
 
 # Wiese oben, ein Band aus drei Reihen „#“, eine Rampe (Spalten 5–6), Schotter unten.
@@ -235,3 +236,36 @@ def test_seitenkante_am_oberen_rand_neben_randfeld():
     Randfeld, das den Boden darunter zeigt, hat die oberste Reihe den Rand der Hochfläche."""
     raster = ["#######", "...####", "~~~####", "~~~####", "~~~####", "~~~~~~~"]
     assert klippenfeld(raster, 3, 0, {".", "#"}) == (SPALTEN["gras"][0], REIHE_OBEN)
+
+
+def test_fehlende_grasfassung_nimmt_die_erdfassung_des_bogens():
+    # Roter Klippenbogen: nur die Erdfassung (Spalten 14–16) ist gezeichnet. Am Canyonrand lag Gras
+    # neben der roten Felswand, die Grasfassung wurde gewählt, und 4 × 5 Kacheln blieben schwarz.
+    erde = set(SPALTEN["erde"])
+    for stelle, spalte in enumerate(SPALTEN["gras"]):
+        for reihe in (REIHE_RAND, REIHE_OBEN, REIHE_KANTE, REIHE_WAND, REIHE_FUSS):
+            feld = vorhandene_fassung((spalte, reihe), lambda f: f[0] in erde)
+            assert feld == (SPALTEN["erde"][stelle], reihe)
+
+
+def test_vorhandene_fassung_bleibt_und_treppe_wird_nie_ersetzt():
+    alles = vorhandene_fassung((SPALTEN["gras"][1], REIHE_WAND), lambda f: True)
+    assert alles == (SPALTEN["gras"][1], REIHE_WAND)
+    # Fehlen beide Fassungen, bleibt die Kachel (nichts Besseres da); Treppen haben keine Fassung.
+    assert vorhandene_fassung((SPALTEN["erde"][0], REIHE_FUSS), lambda f: False) == (
+        SPALTEN["erde"][0],
+        REIHE_FUSS,
+    )
+    assert vorhandene_fassung(TREPPE["mitte"], lambda f: False) == TREPPE["mitte"]
+
+
+def test_gras_neben_roter_wand_waehlt_gras_und_wird_im_bogen_ersetzt():
+    # Stufe der Felskante wie am Canyonrand: links Gras über der Wand, rechts roter Sand („g“);
+    # wegen des Grases daneben (R027) wählt auch die Wand unter dem Sand die Grasfassung.
+    zeilen = ["..gg", "####", "####", "####", "ffff"]
+    erde = set(SPALTEN["erde"])
+    for x in range(4):
+        for y in (1, 2, 3):
+            feld = klippenfeld(zeilen, x, y, {"."})
+            assert feld is not None and feld[0] in SPALTEN["gras"]
+            assert vorhandene_fassung(feld, lambda f: f[0] in erde)[0] in erde

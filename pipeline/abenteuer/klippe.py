@@ -24,6 +24,7 @@ eine Bordsteinkante“): Das Band ist dann so viele Reihen hoch; oben die Kante,
 dazwischen wiederholt sich die Felswand. Ohne Angabe bleibt es bei drei Reihen.
 """
 
+from collections.abc import Callable
 from pathlib import Path
 
 # Rot umgefärbte Erdklippe (Bogen „klippeRot“ in materialien.json), gleiche Kachellage.
@@ -133,6 +134,32 @@ def klippenfeld(
     ende_rechts = _rolle(zeilen, x + 1, y, hoehe) != rolle or not _ist_wand(zeilen, x + 1, y)
     spalte = links if ende_links and not ende_rechts else rechts if ende_rechts and not ende_links else mitte
     return (spalte, reihe)
+
+
+def vorhandene_fassung(
+    feld: tuple[int, int], vorhanden: Callable[[tuple[int, int]], object]
+) -> tuple[int, int]:
+    """Die Kachel ``feld``, oder dieselbe Stelle in der anderen Fassung, wenn der Bogen sie nicht hat.
+
+    Warum: Der rote Klippenbogen (``klippe_rot.png``) hat nur die Erdfassung (Spalten 14–16); die
+    Spalten der Grasfassung sind dort leer. Lag Gras neben einer roten Felswand, wählte
+    ``_variante`` die Grasfassung, und die Wand blieb schwarz (Canyonrand, Spalten 58–65, Reihen
+    17–21, Durchsicht 17.11.2026). Schwarze oder leere Kacheln darf es nie geben.
+    Eingaben: Kachel aus ``klippenfeld``; ``vorhanden`` sagt je Kachel, ob der Bogen dort etwas
+    zeichnet (``kartenbild`` prüft das Bild). Ausgabe: die Kachel, die gezeichnet wird.
+    Beispiel: (9, 45), Grasfassung fehlt, Erdfassung vorhanden → (15, 45).
+    Sonderfälle: Fehlen beide Fassungen oder ist die Kachel keine Klippenkachel (Treppe), bleibt
+    ``feld`` unverändert.
+    """
+    if vorhanden(feld):
+        return feld
+    for name, spalten in SPALTEN.items():
+        if feld[0] not in spalten:
+            continue
+        andere = next(s for n, s in SPALTEN.items() if n != name)
+        ersatz = (andere[spalten.index(feld[0])], feld[1])
+        return ersatz if vorhanden(ersatz) else feld
+    return feld
 
 
 def _rand_neben_boden(zeilen: list[str], x: int, y: int) -> bool:

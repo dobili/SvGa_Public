@@ -14,7 +14,15 @@ from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.belebungsvorschau import figurenteile, rgba
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
-from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randergaenzt, randnachbar, randsichten
+from pipeline.abenteuer.bodenraster import (
+    bodenfeld,
+    brueckenzeichen,
+    randergaenzt,
+    randkachel,
+    randnachbar,
+    randsichten,
+    uferfelder,
+)
 from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
 from pipeline.abenteuer.kartenbau import (
     GESPERRT,
@@ -36,6 +44,7 @@ from pipeline.abenteuer.klippe import (
     klippenfeld,
     strassenzeichen,
     treppenfelder,
+    vorhandene_fassung,
 )
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektform import formbild, mit_deckkraft
@@ -152,15 +161,17 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 if feld[1] == REIHE_RAND:  # Rand der Hochfläche: oben schaut der Boden darüber durch
                     art = boeden[sonder.get(roh[y - 1][x], grund)]
                     bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, roh, x, y - 1)), ort)
+                # Fehlt dem Bogen diese Fassung (roter Fels hat kein Gras), die vorhandene nehmen.
+                feld = vorhandene_fassung(
+                    feld, lambda f: kachel(privat, boegen, klippenart, list(f)).getbbox()
+                )
                 bild.alpha_composite(kachel(privat, boegen, klippenart, list(feld)), ort)
                 continue
             if z == WASSER:
                 # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
                 # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
                 art = boeden[ufer]  # mit „diagonalen“ wählt das Ufer Schrägkacheln (Buchten)
-                wasser = boeden["wasser"] | {"diagonalen": art.get("diagonalen")}
-                feld = bodenfeld(wasser, zeilen, x, y, ueber)
-                eigen = [art["rand"][i] + feld[i] - boeden["wasser"]["rand"][i] for i in (0, 1)]
+                feld, eigen = uferfelder(boeden, ufer, zeilen, x, y, ueber)
                 bild.alpha_composite(kachel(privat, boegen, art, eigen), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = ("wasser", feld)
@@ -169,11 +180,10 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
             elif z == WAND and wandart and (innen := randnachbar(zeilen, x, y)) is not None:
                 # Außen ist der Rand nur Kollision: Er zeigt den Boden dahinter, damit Felder und
                 # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).
-                nz = zeilen[innen[1]][innen[0]]
-                artname = "wasser" if nz == WASSER else sonder.get(nz, grund)
-                art, quelle = boeden[artname], zeilen if nz == WASSER else roh
-                feld = bodenfeld(art, quelle, *innen, ueber)
-                bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
+                # Wasser dahinter behält das Ufer der Szene (bodenraster.randkachel).
+                innenart = sonder.get(zeilen[innen[1]][innen[0]], grund)
+                artname, bogen, feld, eigen = randkachel(boeden, ufer, (zeilen, roh), innen, innenart, ueber)
+                bild.alpha_composite(kachel(privat, boegen, boeden[bogen], eigen), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (artname, feld)
             elif z == WAND and szene.get("hang_bis_rand") and (nachbar := randhang(x, y, zeilen, flaeche)):

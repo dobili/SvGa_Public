@@ -21,8 +21,15 @@ Maße:
 Beispiel: ``haus_hinten_b_blau.png`` hat eine Tür von 14 × 19 Pixeln: zu klein (Figur 11⅓ × 20); mit
 ``massstab`` 1.25 sind es 17,5 × 23,75, groß genug.
 
-Aufruf: ``python -m pipeline.abenteuer.tuergroesse [--offen] [--bericht DATEI]``; im Kartenbau als
-Hinweis „Tür … zu klein“, solange die Entscheidung über große Umbauten (Villen, Ladenfassaden) aussteht.
+Innen (``--innen PRIVAT``, seit 17.11.2026): Zimmertüren, Treppenhaus- und WC-Türen in Innenräumen
+sind ebenfalls mindestens so groß wie die Figur. Gemessen wird die deckende Fläche des Türbilds
+(Katalogart ``tuer``) im privaten Grafikpaket, mal ``massstab``. Ausgenommen sind Türen in den
+untersten zwei Rasterreihen: Das sind die Ausgänge in der Südwand, die nach Regel 38 (10.8) nur so
+hoch wie die Wand sind, weil man sie von oben sieht.
+
+Aufruf: ``python -m pipeline.abenteuer.tuergroesse [--offen] [--bericht DATEI] [--innen PRIVAT]``;
+im Kartenbau als Hinweis „Tür … zu klein“, solange die Entscheidung über große Umbauten (Villen,
+Ladenfassaden) aussteht.
 """
 
 import json
@@ -37,6 +44,9 @@ HELD_BREITE, HELD_HOEHE = 17, 30
 FIGUR_MASSSTAB = 2 / 3
 FIGUR_BREITE, FIGUR_HOEHE = HELD_BREITE * FIGUR_MASSSTAB, HELD_HOEHE * FIGUR_MASSSTAB
 GEBAEUDE = ("gebaeude", "haus")
+ART_TUER = "tuer"
+# So viele untere Rasterreihen gehören zur Südwand; Türen dort sind Ausgänge (Regel 38, 10.8).
+SUEDWAND_REIHEN = 2
 BERICHTSKOPF = """# Türmaße der Gebäude auf Außenkarten (Regel 10.92), 17.11.2026
 
 Erzeugt mit `python -m pipeline.abenteuer.tuergroesse --bericht <diese Datei>`. Türmaße aus
@@ -94,6 +104,49 @@ def pruefe_szene(szene: dict, moebel: dict) -> list[str]:
                 f"Tür von {eintrag['moebel']} {tuple(eintrag.get('feld', ()))} ist {breite:g} × {hoehe:g} "
                 f"Pixel, kleiner als die Figur ({FIGUR_BREITE:.3g} × {FIGUR_HOEHE:.3g}): massstab mindestens "
                 f"{noetig:.2f} (Regel 10.92)"
+            )
+    return befunde
+
+
+@cache
+def deckende_flaeche(bilddatei: str) -> tuple[int, int] | None:
+    """Breite und Höhe der deckenden Pixel eines Bilds (None, wenn es fehlt oder ganz leer ist).
+
+    Beispiel: ``mf12InnentuerHolz`` (Bild 16 × 48) → (16, 28). Braucht Pillow.
+    """
+    from PIL import Image
+
+    pfad = Path(bilddatei)
+    if not pfad.exists():
+        return None
+    rahmen = Image.open(pfad).convert("RGBA").getchannel("A").getbbox()
+    return (rahmen[2] - rahmen[0], rahmen[3] - rahmen[1]) if rahmen else None
+
+
+def pruefe_innen(szene: dict, moebel: dict, privat: Path) -> list[str]:
+    """Befunde: Innentüren (nicht in der Südwand), deren deckende Fläche kleiner ist als die Figur.
+
+    Warum: Regel 10.92 gilt auch innen (Hauptchat, 17.11.2026). Eingaben: Szene, Katalog, Ordner des
+    privaten Grafikpakets. Sonderfall: Türbilder, die im Paket fehlen, bleiben ohne Befund.
+    """
+    if szene.get("art") != "innen" or not szene.get("raster"):
+        return []
+    grenze = len(szene["raster"]) - SUEDWAND_REIHEN
+    befunde = []
+    for eintrag in szene.get("objekte", []):
+        angabe = moebel.get(eintrag["moebel"], {})
+        feld = eintrag.get("feld")
+        if angabe.get("art") != ART_TUER or not feld or feld[1] >= grenze:
+            continue
+        flaeche = deckende_flaeche(str(privat / angabe["quelle"]))
+        if not flaeche:
+            continue
+        massstab = float(eintrag.get("massstab", 1))
+        breite, hoehe = flaeche[0] * massstab, flaeche[1] * massstab
+        if breite < FIGUR_BREITE or hoehe < FIGUR_HOEHE:
+            befunde.append(
+                f"Innentür {eintrag['moebel']} {tuple(feld)} ist {breite:g} × {hoehe:g} Pixel, kleiner "
+                f"als die Figur ({FIGUR_BREITE:.3g} × {FIGUR_HOEHE:.3g}) (Regel 10.92)"
             )
     return befunde
 
@@ -214,6 +267,11 @@ def main(argumente: list[str]) -> int:
             print(f"{pfad.name}: {b}")
             anzahl += 1
         ohne |= offen(szene, moebel)
+        if "--innen" in argumente:
+            privat = Path(argumente[argumente.index("--innen") + 1])
+            for b in pruefe_innen(szene, moebel, privat):
+                print(f"{pfad.name}: {b}")
+                anzahl += 1
     if "--bericht" in argumente:
         datei = Path(argumente[argumente.index("--bericht") + 1])
         datei.write_text(BERICHTSKOPF + bericht(moebel), encoding="utf-8")

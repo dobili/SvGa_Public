@@ -37,3 +37,39 @@ def test_herkunft_und_bericht():
     assert not any(n for n, e in angaben.items() if e["herkunft"] == "verworfen" and n in tuermasse())
     text = bericht(MOEBEL)
     assert "## Türen kleiner als die Figur" in text and "mf4Diner" in text
+
+
+def test_innentueren_in_figurgroesse(tmp_path):
+    # Regel: KARTENREGELN 10.92 innen; Südwand-Ausgänge (Regel 38) zählen nicht.
+    import pytest
+
+    image = pytest.importorskip("PIL.Image")
+    from pipeline.abenteuer.tuergroesse import pruefe_innen
+
+    def tuerbild(name: str, breite: int, hoehe: int) -> str:
+        bild = image.new("RGBA", (16, 48), (0, 0, 0, 0))
+        for x in range(breite):
+            for y in range(hoehe):
+                bild.putpixel((x, 48 - hoehe + y), (120, 80, 40, 255))
+        bild.save(tmp_path / name)
+        return name
+
+    moebel = {
+        "gross": {"quelle": tuerbild("gross.png", 14, 21), "art": "tuer"},
+        "klein": {"quelle": tuerbild("klein.png", 14, 15), "art": "tuer"},
+    }
+    raster = ["#" * 8] * 3 + ["#......#"] * 5 + ["###.####", "#" * 8]
+    szene = {
+        "art": "innen",
+        "raster": raster,
+        "objekte": [
+            {"moebel": "gross", "feld": [2, 1]},
+            {"moebel": "klein", "feld": [5, 1]},
+            {"moebel": "klein", "feld": [3, 9]},
+        ],
+    }
+    befunde = pruefe_innen(szene, moebel, tmp_path)
+    assert len(befunde) == 1 and "klein (5, 1)" in befunde[0]
+    szene["objekte"][1]["massstab"] = 1.4
+    assert pruefe_innen(szene, moebel, tmp_path) == []
+    assert pruefe_innen({**szene, "art": "aussen"}, moebel, tmp_path) == []

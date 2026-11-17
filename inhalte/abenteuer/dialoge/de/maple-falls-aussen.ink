@@ -116,13 +116,16 @@ Du setzt den Springer auf ihr Brett und fährst mit dem Finger: zwei Felder gera
 Dann lässt du ihn über einen Bauern hüpfen. Das darf nur er. #sprecher:erzaehler
 * [„Und er springt immer auf die andere Farbe.“]
 - Lily sieht dich an, als hättest du ihr ein Geheimnis verraten. #sprecher:erzaehler
-Noch mal! Zeig mir, wo er überall hindarf! #sprecher:lily #stimmung:froh
+Du malst mit ihrer Kreide zwei Kreuze auf den Gehweg und setzt den Springer so, dass er beide erreicht. #sprecher:erzaehler
+* [„Jetzt greift er zwei auf einmal an. Das heißt Gabel.“]
+- Zwei auf einmal? Dann kann ja nur einer weglaufen! #sprecher:lily #stimmung:froh
+Noch mal! Zeig mir, wo er zwei erwischt! #sprecher:lily #stimmung:froh
 ~ beginneAufgaben("mapleFalls.springerLily")
 -> END
 
 === lily_danke ===
 ~ lilyGeholfen = true
-Ein L! Und immer auf die andere Farbe! Weiß, schwarz, weiß, schwarz! #sprecher:lily #stimmung:froh #klang:aha
+Ein L! Immer auf die andere Farbe! Und zwei auf einmal, das ist die Gabel! #sprecher:lily #stimmung:froh #klang:aha
 Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #sprecher:erzaehler
 Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
 -> END

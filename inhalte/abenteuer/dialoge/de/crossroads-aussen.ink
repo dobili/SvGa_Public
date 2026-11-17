@@ -17,8 +17,9 @@ EXTERNAL reise(karte, ausloeser)
 VAR held = "Du"
 VAR ankunftCrossroadsGesehen = false
 VAR novaBitteGehoert = false
-VAR slickGetroffen = false
+VAR slickCrossroadsGetroffen = false
 VAR miraCrossroadsGetroffen = false
+VAR atmeGesagt = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR rosieCrossroadsGetroffen = false
 VAR gatterschluessel = false
@@ -47,12 +48,12 @@ Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutte
 // ---------------------------------------------------------------- Slick
 
 === slick ===
-{slickGetroffen:
+{slickCrossroadsGetroffen:
     {~Wände sind was für Leute, die Angst vor Wetter haben.|Meine Pokale sind schief. Aber es sind welche.|Tamsin hat nur einmal verloren. Deshalb ja.} #sprecher:slick #stimmung:lacht
     -> END
 }
 // Kapitel 53 (Roman): Slick redet langsamer und lässt Platz zwischen den Sätzen.
-~ slickGetroffen = true
+~ slickCrossroadsGetroffen = true
 Auf den Stufen vor dem Speisewagen sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
 … und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick #stimmung:lacht
 Er sieht dich und springt von den Stufen. #sprecher:erzaehler
@@ -72,14 +73,14 @@ Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
 
 === mira ===
 {miraCrossroadsGetroffen:
-    {~Noch mal. Jetzt.|Atmen ist langweilig. Aber es hilft.|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
+    {~Noch mal. Jetzt.|{atmeGesagt:Atmen ist langweilig. Aber es hilft.|Im Canyon ist es still. Hier redet jeder.}|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
     -> END
 }
 ~ miraCrossroadsGetroffen = true
 Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
 Du. Noch mal. Jetzt. #sprecher:mira #stimmung:ernst
 * [„Nach dem Essen.“]
-- Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft. #sprecher:mira #stimmung:laechelt
+- {atmeGesagt:Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft.|Ich hab geübt. Jeden Tag im Canyon. Ich bin schneller geworden.} #sprecher:mira #stimmung:laechelt
 Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler #musik:crossroads
 -> END
 
@@ -133,7 +134,7 @@ Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado #
 * [„Was ist mit dem Bildschirm im Clubraum?“]
 - Sie wird nicht verlegen. Sie sieht dich gerade an. #sprecher:erzaehler
 Ich hab unterschrieben. Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. #sprecher:coachDelgado #stimmung:nachdenklich
-Wir hatten kein Geld für den Bus nach Cedar Creek. Die haben den Bus bezahlt und die Bretter und das Startgeld für sieben Kinder. #sprecher:coachDelgado #stimmung:nachdenklich
+Wir hatten kein Geld für die Liga. Die haben die Busse bezahlt, die Bretter und das Startgeld für sieben Kinder. #sprecher:coachDelgado #stimmung:nachdenklich
 Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. #sprecher:coachDelgado #stimmung:bitter
 Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado #stimmung:laechelt
 Der Bildschirm steht im Flur und zeigt den Vertretungsplan. Das Beste, was er je gezeigt hat. #sprecher:coachDelgado #stimmung:lachtOhneSpott

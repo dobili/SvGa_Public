@@ -67,10 +67,10 @@ Das weiß jeder. Bis er angreift. #sprecher:fenwick #stimmung:laechelt
 }
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
 Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose #stimmung:nachdenklich
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCedarRiverton.tafel")
     -> END
-* [Weitergehen]
++ [Weitergehen]
     -> END
 
 // ---------------------------------------------------------------- Mr. Quinn, der Schaffner
@@ -106,11 +106,11 @@ Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin 
 
 === quinn_angebot ===
 Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffner #stimmung:laechelt
-* [„Abgemacht.“]
++ [„Abgemacht.“]
     Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose #stimmung:nachdenklich
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Dann nach dem Elfuhrsieben. Ich sitz hier jede Pause. #sprecher:schaffner #stimmung:laechelt
     -> END
 
@@ -189,7 +189,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nach
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
 
-// Marian Shaw spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
+// Marian Shaw spielt seit 23 Jahren eine Partie mit Lokführer Earl (nicht der Fernfahrer Earl Dubois aus Akt 4), ein Zug pro
 // Vorbeifahrt. Heute hat sie sich die Hand verstaucht. {held} findet, warum ihr erster Einfall
 // eine Figur einstellt (Kapitel 1, was hängt?), und hängt einen besseren Zug ans Signal.
 === ereignis_zugpartie ===
@@ -204,10 +204,10 @@ Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verba
 === zugpartie_angebot ===
 „Er hält seinen Zug auf einer Tafel aus dem Fenster, ich hänge meine Antwort ans Signal. Heute krieg ich die Tafel nicht hoch, und der Zug kommt gleich.“ #sprecher:erzaehler
 „Mein erster Einfall ist der Läufer nach vorn. Schaust du drauf, bevor wir ihn aufhängen?“ #sprecher:erzaehler
-* [Die Stellung ansehen]
++ [Die Stellung ansehen]
     ~ beginneAufgaben("wegCedarRiverton.zugpartie")
     -> END
-* [Gleich]
++ [Gleich]
     „Viel Zeit ist nicht. Hörst du die Schienen schon?“ #sprecher:erzaehler
     -> END
 

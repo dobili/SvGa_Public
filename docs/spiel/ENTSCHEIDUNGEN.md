@@ -1194,3 +1194,24 @@ Sendung ersetzt nur ihr Wiki. `pipeline/wiki_spiel.py` baut die Seiten des Spiel
 Karteneditor, Entscheidungen, Fortschritt) und dem Code (Begriffe, Codeführer in
 `docs/spiel/codefuehrer/`, Module aus den Dateiköpfen von `app/src/abenteuer/`, Werkzeuge aus
 `pipeline/abenteuer/`). Romantexte (`docs/spiel/roman/`) und Buchbefunde kommen nie hinein.
+
+## Kurze Partieformen und Stellungsvorrat (Wunsch des Autors, 17.11.2026)
+
+Nicht jede Begegnung ist eine ganze Partie. Neue Formate in `begegnungen.json` (Regelwerk R13a bis
+R13c): `endspiel` (gewinnen oder Remis halten), `vorteil` (aus ausgeglichener Stellung mindestens
++1,0 in N Zügen) und die Startstellung `eroeffnung` (fremde Eröffnung, danach ganze Partie oder
+Vorteil). Jede kurze Form endet nach ihren Zügen; die Engine bewertet mit Tiefe 12. Ein erzählter
+Einstieg (`erzaehlung`: vorher, Verlauf, nachher je Ausgang) steht über der Kartenleiste. Eingesetzt
+bei Dime, Schiffskoch, Kreideblitz, Kreidenacht 1 und Sol; drei von sieben ganzen Straßenpartien
+sind jetzt kurz. Zusatz des Autors: Stellungen aus Partien Bot gegen Bot. `stellungsvorrat` lässt
+dafür Stockfish auf ähnlichen Stufen gegeneinander spielen und nimmt Stellungen, deren Bewertung
+zum Format passt (160 Stellungen); die Startstellung `vorrat` zieht daraus ohne Wiederholung. Die
+App-Bots selbst (Fehlerprofile, Maia) laufen nur in der App, deshalb Stockfish auf Stufen.
+Prüfung: `python -m pipeline.abenteuer.kurzformate`.
+
+## Erinnerungen nach dem Abschied (17.11.2026, Widerspruch genügt)
+
+Nach Ambroses Abschied bleiben die Erinnerungen und Fundstücke (Archiv, Museum, Hütte) zugänglich,
+aber ohne seine Stimme: Ein Abschnitt `allein` bietet „Die Partie nachspielen“ oder Weitergehen;
+in den Erinnerungsszenen spricht der junge Ambrose als „die Stimme kommt aus dir“. Geprüft mit
+`ambrose-danach.cjs` (0 Funde bei drei Spielertypen).

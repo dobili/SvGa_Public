@@ -1622,3 +1622,16 @@ im Bestand nicht. Der Fluss ist im Pavillon nicht mehr zu sehen: Er hätte als B
 der Pavillon außen hätte dafür auf das 2,1-Fache wachsen müssen. Außen steht der Pavillon in allen
 fünf Fassungen von Riverton mit `massstab` 1,4375 (184 × 207 Pixel, 11,5 Kacheln breit), der Eingang
 liegt auf (41, 54). Raumgröße: innen 24 × 17 gegen außen 11,5 × 7,2, passt.
+
+### Nachtrag: schräge Geländer (17.11.2026, Rückmeldung des Autors)
+
+Die Stufen aus Eckstücken waren mehrfach abgeschnitten, zwischen den Stufen fehlte die Verbindung,
+und die Dielen ragten außen über die Stufen hinaus. Neu zeichnet `pipeline/abenteuer/schraegzaun.py`
+aus LimeZus Fence_2 echte 45°-Stücke (je Ecke 5 × 6 Kacheln, Holm und Pfosten aus dem geraden
+Stück geschert, Eckpfosten an der Seite, Wiese außen) sowie ein gerades Stück oben ohne Graszeile
+und gerade Stücke unten und den Durchgang mit Wiese in der letzten Reihe. Katalog:
+`rv18SchraegzaunObenLinks` … `UntenRechts`, `rv18GelaenderOben`, `rv18GelaenderUnten`; der Eingang
+`rv18PavillonEingang` nimmt `schraegzaun_durchgang.png`. Der Eckschnitt ist jetzt 3 statt 4: So
+liegen die Stufen des Kachelrasters ganz unter dem Band, außen ist nur Wiese, innen nur Dielen. Die
+Schrägen sperren fein nur das Band über den Dielen (`maske_fein`), die Wiese sperrt das Raster.
+Bilder erzeugen: `python -m pipeline.abenteuer.schraegzaun PRIVAT`.

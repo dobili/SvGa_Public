@@ -57,7 +57,14 @@ VAR ersterTagSpaeter = false
 {abschiedGesehen and not epilogGesehen: -> epilog}
 // Szene 2 nach dem Roman, Kapitel 2, und der Dialogprüfung (VM8 bis VM13). Stimmung: still,
 // dann Staunen, nie gruselig. Klang: keine Musik, Holzknacken, Wind am Fenster.
-Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler #musik:aus
+// Dialogprüfung 17.11.2026: Wer weggerannt ist, hebt zuerst den König wieder auf (sonst „hält“ das
+// Kind in ambrose_erwacht einen König, der auf den Dielen liegt); die Decke liegt nur vor dem Fund
+// noch über dem Brett.
+{brettBeruehrt and not ambroseErwachtGesehen:
+    Der weiße König liegt auf den Dielen, wo er hingerollt ist. Du gehst zurück und hebst ihn auf. #sprecher:erzaehler #musik:aus
+    -> ambrose
+}
+{brettBeruehrt:Staub, Kisten, ein Lampenschirm ohne Lampe. Die Decke liegt zusammengeschoben neben dem Tisch.|Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flaches, Schweres.} #sprecher:erzaehler #musik:aus
 // Roman, Kapitel 2: Die Decke ist das Einzige ohne Staub (Mrs. Whitlock hat das Brett gepflegt).
 { not brettBeruehrt:
     Auf allem hier oben liegt Staub. Nur auf dieser Decke nicht. #sprecher:erzaehler
@@ -110,7 +117,8 @@ Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose #stimmung:laech
 // Gekürzt nach dem Spieltest „einstieg“ (R3, 15.11.2026): Das Nicken ist jetzt eine Wahl.
 Stell ihn zurück. Sachte. Und sag mir: Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still #pause
 * [Nicken]
-- Er schließt die Augen. Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
+- Er schließt die Augen. #sprecher:erzaehler
+Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
 Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. Ein Fingerzeig. #sprecher:ambrose #stimmung:laechelt #klang:karte
 // Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
 // Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest. Der Fingerzeig
@@ -269,7 +277,7 @@ Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #ge
 
 === abend_nach_sam ===
 ~ abendSamGesehen = true
-Abend. Durch das runde Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Durch das offene Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
 Ambrose geht am Fenster auf und ab. Bei jemandem, durch den man hindurchsehen kann, lenkt das sehr ab. #sprecher:erzaehler
 Du zählst richtig. Aber du zählst wie ein Buchhalter. #sprecher:ambrose #stimmung:streng
 Es geht nicht nur darum, wie viele. Es geht darum, wer zuerst schlägt und was er dabei aufs Spiel setzt. #sprecher:ambrose #stimmung:nachdenklich
@@ -283,7 +291,7 @@ Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:
 
 === abend_nach_juno ===
 ~ abendJunoGesehen = true
-Abend. Junos Aufgaben liegen ausgebreitet auf dem Dachboden, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
 Es gibt wenige Sterne. Es stört sie nicht. #sprecher:erzaehler
 Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. Wer aufschreibt, kann zurückblättern. #sprecher:ambrose #stimmung:laechelt
 * [„Und du? Hast du deine Partien aufgeschrieben?“]

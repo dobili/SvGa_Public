@@ -36,6 +36,9 @@ VAR nadelCedarCreek = 0
 VAR ersterTagSpaeter = false
 VAR ambroseNenntNamen = false
 VAR newYorkBesprochen = false
+// Ausgang der Partie gegen Victor (setzt die Hülle): Der Vergleich „wie bei mir gegen Victor“
+// passt nur nach einer Niederlage (Dialogprüfung, 17.11.2026).
+VAR ausgangMapleFallsVictor = ""
 
 // ---------------------------------------------------------------- Karton
 
@@ -59,7 +62,7 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose #st
 ~ ordnenAngeboten = true
 Eine Wendeltreppe hinunter. Es riecht nach Büchern, die nass geworden sind. #sprecher:erzaehler
 Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
-Da bist du ja. Links das neunzehnte Jahrhundert, rechts das zwanzigste. Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
+Da bin ich. Links das neunzehnte Jahrhundert, rechts das zwanzigste. Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
 * [Anfangen]
     -> ordnen_wahl
 * [Nicht jetzt]
@@ -74,8 +77,9 @@ Sie liest die Jahreszahlen vor. „1972.“ #sprecher:erzaehler
     Gut. #sprecher:okafor #stimmung:laechelt
 - Ein Karton ist so durchweicht, dass der Boden nachgibt. Zeitungen rutschen heraus, braun und weich wie Herbstlaub. #sprecher:erzaehler
 * [Sie aufheben]
+    Lass. #sprecher:okafor #stimmung:bitter
 * [Liegen lassen]
-- Lass. Die sind verloren. Man kann nicht alles retten. #sprecher:okafor #stimmung:bitter
+- Die sind verloren. Man kann nicht alles retten. #sprecher:okafor #stimmung:bitter
 Sie sagt es ruhig. Aber sie hebt trotzdem jede einzelne auf. #sprecher:erzaehler #pause:2
 Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1859“. Er ist trocken geblieben. #sprecher:erzaehler
 * [Vorsichtig auf den Tisch stellen]
@@ -109,7 +113,7 @@ Auf der dritten Seite, zwischen einer Anzeige für Schiffspassagen und dem Preis
 Du liest es zweimal. #sprecher:erzaehler
 Leg es weg. #sprecher:ambrose #stimmung:bitter #pause:2
 Er steht neben dem Tisch, im Lichtkegel. Zum ersten Mal sieht er alt aus. #sprecher:erzaehler
-* [„Du hast gesagt, es gibt viele Hales.“]
+* [„Hale.“]
     Es gibt viele. #sprecher:ambrose #stimmung:bitter
 * [„Ambrose.“]
 - Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
@@ -133,7 +137,7 @@ Das Wort bleibt im Raum. #sprecher:erzaehler
 Es gab eine Verteidigung. Einen einzigen stillen Zug. Er brauchte vierzig Minuten. #sprecher:ambrose #stimmung:nachdenklich
 Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose #stimmung:bitter #bild:stellung1858
 Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
-* [„Das ist wie bei mir gegen Victor.“]
+* {ausgangMapleFallsVictor == "niederlage"} [„Das ist wie bei mir gegen Victor.“]
     Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose #stimmung:nachdenklich
     Ich hatte eine gewonnene und habe sie verschenkt. #sprecher:ambrose #stimmung:bitter
 * [Nichts sagen]
@@ -153,7 +157,7 @@ Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #spreche
 
 
 === karton_alltag ===
-{~Der Karton mit den Jahren 1850 bis 1859 steht trocken im Regal. Die Zeitung liegt obenauf.|Bemerkenswert unnötig. Ich höre es noch.} #sprecher:ambrose #stimmung:nachdenklich
+{~Die Zeitung liegt obenauf. Ich weiß, was darin steht.|Bemerkenswert unnötig. Ich höre es noch.} #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Programmheft

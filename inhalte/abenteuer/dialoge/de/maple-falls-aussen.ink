@@ -60,7 +60,8 @@ Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
     Ein bisschen reicht! Ich spiele auch nur ein bisschen. Ich verliere meistens. #sprecher:juno #stimmung:froh
 * [„Ich kann kaum Schach.“]
     Ich auch nicht. Ich verliere meistens. Es stört mich nicht. #sprecher:juno #stimmung:laechelt
-- Sie klopft auf das Heft. Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
+- Sie klopft auf das Heft. #sprecher:erzaehler
+Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
 Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno #stimmung:laechelt
 Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
 -> END
@@ -71,7 +72,7 @@ Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stim
 
 === juno_alltag ===
 {nadelMapleFalls > 0:
-    {~Die Clubnadel steht schon im Tagebuch. Mit Glitzer, wie versprochen.|Samstag Cedar Creek! Ich packe Kekse ein. Für die Nerven.}  #sprecher:juno #stimmung:froh
+    {~Die Clubnadel steht schon im Tagebuch. Mit Glitzer, wie versprochen.|{endeAkt1Gesehen:Cedar Creek hat im Tagebuch vier Seiten bekommen. Und einen Fettfleck von den Keksen.|Samstag Cedar Creek! Ich packe Kekse ein. Für die Nerven.}}  #sprecher:juno #stimmung:froh
 - else:
     {~Ich hab meinen Turm verloren. Schon wieder. Er war so jung.|Das Clubtagebuch hat jetzt eine Seite für dich. Noch leer. Noch!|Sam gibt an, aber er meint es nicht so. Meistens.} #sprecher:juno #stimmung:lacht
 }
@@ -89,7 +90,7 @@ Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stim
 // Szene 8 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM43 bis VM47).
 ~ lilyGetroffen = true
 Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe. Darauf ein Plastikpferd. #sprecher:erzaehler
-Du kannst Schach, oder? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily #stimmung:nachdenklich
+Kannst du Schach? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily #stimmung:nachdenklich
 Der Pferd hüpft doch einfach irgendwohin, oder? #sprecher:lily #stimmung:nachdenklich
 * [„Ich zeig es dir.“]
     -> lily_lektion
@@ -115,7 +116,7 @@ Du setzt den Springer auf ihr Brett und fährst mit dem Finger: zwei Felder gera
 Dann lässt du ihn über einen Bauern hüpfen. Das darf nur er. #sprecher:erzaehler
 * [„Und er springt immer auf die andere Farbe.“]
 - Lily sieht dich an, als hättest du ihr ein Geheimnis verraten. #sprecher:erzaehler
-Zeig es mir an meinem Brett! #sprecher:lily #stimmung:froh
+Noch mal! Zeig mir, wo er überall hindarf! #sprecher:lily #stimmung:froh
 ~ beginneAufgaben("mapleFalls.springerLily")
 -> END
 
@@ -179,8 +180,8 @@ Man hat mir erzählt, du hast der Lehrerin eine Nadel abgenommen. #sprecher:call
 * [„Es war knapp.“]
     Knapp ist gut. Knapp heißt, beide haben sich Mühe gegeben. #sprecher:calloway #stimmung:laechelt
 * [„Ich habe gezählt.“]
-    Das hätte Margaret gefallen. Sie hat sogar die Briefmarken gezählt. #sprecher:calloway #stimmung:laechelt
-- Margaret hätte dich gemocht. Sie mochte Leute, die verlieren können. #sprecher:calloway #stimmung:froh
+    Das würde Margaret gefallen. Sie zählt sogar die Briefmarken. #sprecher:calloway #stimmung:laechelt
+- Margaret würde dich mögen. Sie mag Leute, die verlieren können. #sprecher:calloway #stimmung:froh
 Leute, die verlieren können. Dann hätte sie mich nicht gemocht. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -203,9 +204,9 @@ Sie sagt „hat“. Nicht mehr „spielt“. #sprecher:erzaehler #pause
 Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen erklärt. Mrs. Calloway runzelt die Stirn. #sprecher:erzaehler
 Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway #stimmung:nachdenklich
 * [„Das stimmt. Immer.“]
-    Dann hat er es von Lily. Und Lily hat es von dir. So geht das hier. #sprecher:calloway #stimmung:froh
+    {lilyGeholfen:Dann hat er es von Lily. Und Lily hat es von dir. So geht das hier.|Dann hat er es von Lily von nebenan. Die weiß alles über Pferde.} #sprecher:calloway #stimmung:froh
 * [„Wer hat ihm das beigebracht?“]
-    Lily von nebenan. Und die sagt, sie hat es von dir. #sprecher:calloway #stimmung:froh
+    {lilyGeholfen:Lily von nebenan. Und die sagt, sie hat es von dir.|Lily von nebenan. Die weiß alles über Pferde.} #sprecher:calloway #stimmung:froh
 - Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway #stimmung:laechelt
 Margaret hätte gelacht. Sie hat oft gelacht. Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
 Das wusste ich nicht. #sprecher:ambrose #stimmung:still
@@ -226,10 +227,10 @@ Das wusste ich nicht. #sprecher:ambrose #stimmung:still
 // Stufe A (Ankunft): Sie repariert ein Fahrrad am Zaun und winkt ab, wenn es um Schach geht.
 === carla_a ===
 Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem Fahrrad. #sprecher:erzaehler
-Du bist Junos neues viertes Brett? Viel Glück. Sie redet, bis du umfällst. #sprecher:carla #stimmung:laechelt
+{junoGetroffen:Du bist Junos neues viertes Brett? Viel Glück. Sie redet, bis du umfällst.|Du bist aus dem Whitlock-Haus, oder? Meine Schwester Juno sucht ein viertes Brett fürs Schachteam. Sie findet dich.} #sprecher:carla #stimmung:laechelt
 * [„Spielst du auch Schach?“]
     Hab ich mal. Jetzt hab ich fast ein Auto. #sprecher:carla #stimmung:laechelt
-* [„Juno sagt, du warst gut.“]
+* {junoGetroffen} [„Juno sagt, du warst gut.“]
     Juno sagt viel. #sprecher:carla #stimmung:nachdenklich
 - Sie winkt ab und dreht weiter an der Kette. #sprecher:erzaehler
 -> END

@@ -47,7 +47,7 @@ VAR angesehenKellertuer = false
 - else:
     ~ angesehenSchildFluestern = true
     Ein Schild am Tresen: „Bitte flüstern“. #sprecher:erzaehler
-    Flüstern. Das kann ich. Mich hört ohnehin nur einer. #sprecher:ambrose #stimmung:laechelt
+    Flüstern. Das kann ich. Mich hörst ohnehin nur du. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 

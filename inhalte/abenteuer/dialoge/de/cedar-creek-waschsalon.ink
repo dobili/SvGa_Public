@@ -38,7 +38,7 @@ Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boa
 Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng #stimmung:laechelt
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng #stimmung:laechelt
-* [„Ich habe gar keine Wäsche dabei.“]
+* [„Ich habe keine eigene Wäsche dabei.“]
     Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng #stimmung:laechelt
 - -> END
 
@@ -117,7 +117,7 @@ Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose #stimmung:nachdenklich
 // das Bild vorher gezeigt (Roman Kapitel 12); ohne Mae nur die Maschine.
 === trockner_danach ===
 {trocknerStellungBestanden:
-    {maeGetroffen: Mae hat dir das vor einer Stunde gezeigt. #sprecher:erzaehler|Die Maschine schleudert. Die Figuren halten. #sprecher:erzaehler}
+    {maeGetroffen: So ein Bild steht in Maes Heft. #sprecher:erzaehler|Die Maschine schleudert. Die Figuren halten. #sprecher:erzaehler}
 - else:
     Die Maschine läuft weiter. Die Stellung auch. #sprecher:erzaehler
 }

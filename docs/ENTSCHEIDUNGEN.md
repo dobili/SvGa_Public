@@ -4,7 +4,7 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
-## 8.11.2026 – Version 0.3.55: App weitergeben, Testliste vorgeprüft
+## 8.11.2026 – Version 0.3.56: App weitergeben, Testliste vorgeprüft
 
 - **App weitergeben (Wunsch des Autors):** Profil und Einstellungen › Über die App öffnen ein Blatt mit
   QR-Code (eigener Erzeuger nach der Norm, ohne Abhängigkeit, gegen python-qrcode und qrcodegen
@@ -16,6 +16,13 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   Überholt: N2300 (Brettvorschau in den Einstellungen); N2329 (Nichts verloren in der Auswertung); N2138 (Kalender auf dem iPhone); N2139 (Kalender auf Android). Q15-2 (Plan mit Wochentagen und Dauer) war mit 0.3.51 erledigt.
 - **Entscheidungsseite:** Alle übrigen Rückfragen und Testpunkte stehen zum Antippen auf einer
   Seite (claude.ai-Artefakt), die Antworten liest Claude von dort.
+## 17.11.2026 – Version 0.3.55: Das Buch ist erschienen
+
+- **Startseite:** Die Platzhalter „ISBN folgt“ und „Links folgen“ sind ersetzt durch Links zu Thalia
+  und Amazon (vom Autor genannt) und die ISBN 978-3-9824715-8-7 (aus der ISBN-10 3982471583 im
+  Amazon-Link, Prüfziffer nachgerechnet) für die Buchhandlung; dazu `book:isbn` für die Vorschau
+  beim Teilen. Die App-Updates aus `uebernahme-welle2` (App weitergeben) bleiben getrennt, bis der
+  Autor die Entscheidungsseite beantwortet hat; sie werden dort zu 0.3.56.
 
 ## 7.11.2026 – Version 0.3.54: Fehler mit Buchbezug vollständig
 

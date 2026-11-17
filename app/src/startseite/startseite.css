@@ -139,11 +139,9 @@
   font-weight: 600;
 }
 
-/* Platzhalter, bis die Shops feststehen: sichtbar, aber erkennbar noch ohne Ziel. */
-.shop-folgt {
-  border-style: dashed;
-  color: var(--text-leise);
-  font-weight: 400;
+/* Die ISBN bricht nie mitten in der Nummer um (360 px). */
+.isbn {
+  white-space: nowrap;
 }
 
 .startseite-fuss {

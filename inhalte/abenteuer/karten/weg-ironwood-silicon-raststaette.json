@@ -13597,7 +13597,7 @@
      "id": 8,
      "name": "finchBauerB",
      "type": "ausloeser",
-     "x": 2272,
+     "x": 2288,
      "y": 272,
      "width": 16,
      "height": 16,
@@ -15916,6 +15916,11 @@
        "name": "massstab",
        "type": "float",
        "value": 1.2
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "........../##########/##########/##########/##########/##########/##########/##########/##########/##########/##########"
       }
      ]
     },
@@ -16935,7 +16940,7 @@
      "id": 151,
      "name": "sb5KuebelBluete",
      "type": "moebel",
-     "x": 2272,
+     "x": 2288,
      "y": 240,
      "width": 32,
      "height": 32,
@@ -16981,7 +16986,7 @@
      "id": 153,
      "name": "sb8Finkenzeichen",
      "type": "moebel",
-     "x": 2292,
+     "x": 2308,
      "y": 254,
      "width": 16,
      "height": 16,

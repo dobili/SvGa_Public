@@ -588,11 +588,15 @@
     },
     {
       "name": "huetteTuer",
-      "feld": [8, 25]
+      "feld": [8, 26]
     },
     {
       "name": "huetteTuer",
-      "feld": [9, 25]
+      "feld": [9, 26]
+    },
+    {
+      "name": "huetteTuer",
+      "feld": [10, 26]
     },
     {
       "name": "wegDesert",
@@ -843,10 +847,10 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [10, 26],
+      "feld": [11, 26],
       "eigenschaften": {
-        "von": "10,26",
-        "bis": "10,26",
+        "von": "11,26",
+        "bis": "11,26",
         "verhalten": "schlafen"
       }
     }

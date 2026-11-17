@@ -666,7 +666,7 @@
     },
     {
       "moebel": "sb5KuebelBluete",
-      "feld": [142, 15]
+      "feld": [143, 15]
     },
     {
       "moebel": "sb8Kreidespringer",
@@ -676,7 +676,7 @@
     },
     {
       "moebel": "sb8Finkenzeichen",
-      "feld": [143, 16],
+      "feld": [144, 16],
       "vorn": true,
       "versatz": [4, -2]
     },
@@ -1230,7 +1230,7 @@
     },
     {
       "name": "finchBauerB",
-      "feld": [142, 17]
+      "feld": [143, 17]
     },
     {
       "name": "seite04",

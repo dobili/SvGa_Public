@@ -19,8 +19,9 @@ Regeln je Übergang (Auslöser mit ``art: uebergang`` in orte.json):
 
 5. Führt er in ein Gebäude, liegt er genau an der Tür des Gebäudebilds (Befund des Autors: Er
    ging am Clubhaus vorbei und stand plötzlich drinnen). Das Möbel nennt die Felder vor oder in
-   seiner Tür in ``tuer`` (Spalte, Reihe ab der linken oberen Kachel des Bildes); der Auslöser
-   liegt auf genau diesen Feldern. Gebäude mit Veranda oder Stufen lassen den Weg zur Tür in
+   seiner Tür in ``tuer`` (Spalte, Reihe ab der linken oberen Kachel des ungeskalierten Bildes;
+   mit ``massstab`` am gesetzten Gebäude umgerechnet, objektmassstab.py); der Auslöser liegt auf
+   genau diesen Feldern. Gebäude mit Veranda oder Stufen lassen den Weg zur Tür in
    ihrer ``maske`` frei. Übergänge an Gebäuden ohne ``tuer`` listet ``tueren_ohne_angabe`` zur
    Sichtprüfung.
 
@@ -38,6 +39,7 @@ from pipeline.abenteuer.kollisionfein import hat_fein, hat_feine_moebel, kacheln
 from pipeline.abenteuer.kollisionspinsel import wende_an
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.objektmassstab import skalierte_tuerfelder
 
 # Möbel, durch die man geht: nach ``art`` oder nach dem Namen.
 DURCHGANGSART = {"tuer", "treppe", "luke", "leiter", "steg", "bruecke"}
@@ -182,15 +184,15 @@ def tuerbefund(szene: dict, name: str, moebel: dict) -> str | None:
 
     Ein Gebäude gehört zum Auslöser, wenn ein Auslöserfeld in seinem Bild, in der Reihe darunter
     oder auf einem seiner Türfelder liegt. Beispiel: Schule auf (39, 0) mit ``tuer``
-    [[8, 20], [9, 20]] → der Auslöser „schule“ liegt auf (47, 20) und (48, 20).
+    [[8, 20], [9, 20]] → der Auslöser „schule“ liegt auf (47, 20) und (48, 20). Steht das Gebäude
+    mit ``massstab`` auf der Karte, gelten die umgerechneten Türfelder (``_tuerfelder``).
     """
     felder = {tuple(a["feld"]) for a in szene.get("ausloeser", []) if a["name"] == name}
     for s in platziere(szene, moebel)[0]:
         tuer = moebel.get(s["name"], {}).get("tuer")
         if not tuer:
             continue
-        x0, y0 = s["x"] // K, s["y"] // K
-        erwartet = {(x0 + a, y0 + b) for a, b in tuer}
+        erwartet = _tuerfelder(s, moebel)
         nah = _flaeche(s) | {(x, y + 1) for x, y in _flaeche(s)} | erwartet
         if felder & nah and felder != erwartet:
             return f"liegt nicht an der Tür von {s['name']}: {sorted(felder)} statt {sorted(erwartet)}"
@@ -221,9 +223,15 @@ def tueren_ohne_angabe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
 
 
 def _tuerfelder(stueck: dict, moebel: dict) -> set[Feld]:
-    """Die Türfelder eines gesetzten Möbels in Kartenkoordinaten."""
+    """Die Türfelder eines gesetzten Möbels in Kartenkoordinaten.
+
+    ``tuer`` nennt Felder des ungeskalierten Bildes; mit ``massstab`` am Stück rechnet
+    ``objektmassstab.skalierte_tuerfelder`` sie um. Beispiel: Kantine Ironwood auf (56, 0) mit 1.7,
+    ``tuer`` [[7, 10], [8, 10]] → (68, 17), (69, 17), (70, 17); ohne Maßstab (63, 10), (64, 10).
+    """
     x0, y0 = stueck["x"] // K, stueck["y"] // K
-    return {(x0 + a, y0 + b) for a, b in moebel[stueck["name"]]["tuer"]}
+    angabe = moebel[stueck["name"]]
+    return {(x0 + a, y0 + b) for a, b in skalierte_tuerfelder(angabe["tuer"], angabe, stueck)}
 
 
 def alle_fassungen(grund: dict[str, dict]) -> list[tuple[str, dict]]:

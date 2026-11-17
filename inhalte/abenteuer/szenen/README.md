@@ -120,6 +120,8 @@ Form im Eintrag einer Szene (Karteneditor, `pipeline/abenteuer/objektform.py`, a
 Kollision), `"spiegeln": true` (waagrecht), `"massstab": 1.5` (0,5 bis 3), `"ebene": 2` (wird zur
 berechneten Tiefe addiert: vor oder hinter Nachbarn). `feld` und `versatz` nennen die linke obere
 Ecke des gedrehten Rechtecks.
+Mit `massstab` wächst die Kollision mit dem Bild (`objektmassstab.py`): Eine Kachel sperrt, wenn
+die skalierte Standfläche sie zu mehr als einem Viertel deckt, auch angefangene Reste rechts und unten.
 `"zuschnitt": [26, 0, 32, 0]` (Editor 1.5, `objektzuschnitt.py`): Pixel links, oben, rechts und
 unten des Katalogbilds, die wegfallen, vor Maßstab und Drehung; das Objekt ist dann so groß wie der
 Ausschnitt, die Katalogmaske wird mitbeschnitten (ein Pfosten aus einem Zaunstück).

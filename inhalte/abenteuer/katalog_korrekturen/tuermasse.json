@@ -13,5 +13,20 @@
   "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png": [80, 128, 100, 158],
   "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_2_16x16.png": [109, 113, 134, 142],
   "spiel/eigene/haus_farm1_blau.png": [80, 128, 100, 158],
-  "spiel/eigene/haus_farm2_grau.png": [109, 113, 134, 142]
+  "spiel/eigene/haus_farm2_grau.png": [109, 113, 134, 142],
+  "_von_hand_17_11_2026": "herkunft: von Hand am vergrößerten Bild gemessen (Helfer e, 17.11.2026): speisewagen (Doppeltür mit Sturz), motelzeile (rote Tür links mit Rahmen; die drei anderen sind gleich groß), Junk_Shack_1 (Blechtür rechts mit Rahmen)",
+  "spiel/eigene/speisewagen.png": [71, 33, 89, 54],
+  "spiel/eigene/motelzeile.png": [24, 57, 46, 94],
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Junk_Shack_1.png": [63, 70, 82, 93],
+  "_von_hand_17_11_2026_f": "herkunft: von Hand an der Pixelkarte des Bildes gemessen (Helfer f, 17.11.2026): blockhuette_gruen (Tür mit Sturz und Pfosten), blockhuette_kamin (offene Tür mit Sturz und Pfosten, ohne Stufe), faehrhaus_see (Tür mit Sturz), serene_59 und serene_77 (Rundbogentür mit äußerem Rahmen; ohne massstab zu klein, mit 1,25 genau 20 hoch), Brown_Wood_Storage (Brettertür mit Herzloch zwischen den Pfosten), bahnhof_alt_veranda (Doppeltür mit Oberlicht)",
+  "spiel/eigene/blockhuette_gruen.png": [20, 55, 39, 86],
+  "spiel/eigene/blockhuette_kamin.png": [18, 53, 35, 78],
+  "spiel/eigene/faehrhaus_see.png": [31, 72, 50, 96],
+  "spiel/serene/serene_59.png": [31, 31, 49, 47],
+  "spiel/serene/serene_77.png": [31, 31, 49, 47],
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png": [13, 35, 31, 64],
+  "spiel/eigene/bahnhof_alt_veranda.png": [63, 70, 97, 114],
+  "_von_hand_17_11_2026_g": "herkunft: von Hand am zehnfach vergrößerten Bild mit Pixelraster gemessen (Helfer g, 17.11.2026): Condo_6 (Glas-Doppeltür mit Rahmen, ohne die Seitenfenster und ohne Stufe; Turnhalle Port Delacroix), Post_Apocalyptic_House_1 (orange Blechtür mit Rahmen, ohne das Seitenfeld links und ohne Stufen; Kantine Ironwood mit massstab 1,7)",
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_6.png": [37, 220, 76, 244],
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png": [120, 107, 137, 134]
 }

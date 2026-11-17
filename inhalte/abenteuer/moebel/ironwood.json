@@ -1479,6 +1479,18 @@
         "........"
       ],
       "beschreibung": "Weißer Garderobenschrank mit zwei Türen, von vorn (Mamas Zimmer, ersetzt das Abziehbild garderobe_jacken, R055)"
+    },
+    "iw17Kantinenhalle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "industrie",
+      "tuer": [[12, 17], [13, 17], [14, 17]],
+      "beschreibung": "Werkskantine Ironwood: Holzhalle mit rostigem Blechdach (Bild wie wr5Fabrikhalle), gedacht für massstab 1.7 (Grundriss dann 22 × 8,5, passend zum Innenraum 34 × 16, Regel 10.75); tuer nennt die Felder vor den Stufen bei diesem Maßstab"
     }
   }
 }

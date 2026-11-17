@@ -42,7 +42,7 @@ VAR moldeGefuehlt = false
 // ---------------------------------------------------------------- Slick
 
 === slick ===
-{~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.} #sprecher:erzaehler
+{~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer und blättert in den Partieformularen.} #sprecher:erzaehler
 {
 - not slickGetroffen: -> slick_erstes_treffen
 - nadelRiverton > clubkampfRivertonNadel: -> slick_nach_sieg
@@ -307,7 +307,7 @@ Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die
     -> END
 }
 ~ odumGedenktafelGesehen = true
-Eine kleine Messingtafel an einem Pfeiler: „Für Elias Odum, der hier Generationen von Kindern das Schachspiel zeigte.“ #sprecher:erzaehler
+Am Geländer zum Fluss steht eine kleine Tafel unter einem Holzdach, darauf eine Messingplatte: „Für Elias Odum, der hier Generationen von Kindern das Schachspiel zeigte.“ #sprecher:erzaehler
 Ein Lehrer, der eine Tafel bekommt. Das ist mehr, als die meisten Meister bekommen. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 

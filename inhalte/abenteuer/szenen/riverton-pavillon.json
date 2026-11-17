@@ -2,13 +2,13 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon.json",
   "art": "innen",
-  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zur Wand, damit man zum Brett schaut. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein offener Pavillon mit Dielenboden unter einem Dach, ringsum ein weißes Geländer, dahinter die Wiese und im Norden der Fluss; der Wind vom Wasser zieht hindurch (RO36, 17.11.2026). In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. Am Geländer zum Fluss steht die Gedenktafel für Elias Odum unter einem kleinen Holzdach, daneben zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zum Geländer, damit man zum Brett schaut. Vor dem Eingang ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten der Eingang, eine Lücke im Geländer mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
-    "########################",
-    "########################",
-    "########################",
+    "#~~~~~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~#",
     "#......................#",
     "#......................#",
     "#......rrrrrrrrrr......#",
@@ -27,29 +27,506 @@
   ],
   "objekte": [
     {
-      "moebel": "wzFenster",
-      "feld": [2, 1],
-      "an_wand": true
+      "moebel": "sd6RelingObenLinks",
+      "feld": [0, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "wzFenster",
-      "feld": [5, 1],
-      "an_wand": true
+      "moebel": "sd6RelingObenRechts",
+      "feld": [23, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "rv8Gruendungsbild",
-      "feld": [11, 1],
-      "an_wand": true
+      "moebel": "sd6RelingOben",
+      "feld": [1, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "wzFenster",
-      "feld": [17, 1],
-      "an_wand": true
+      "moebel": "sd6RelingOben",
+      "feld": [2, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "wzFenster",
-      "feld": [20, 1],
-      "an_wand": true
+      "moebel": "sd6RelingOben",
+      "feld": [3, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [4, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [5, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [6, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [7, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [8, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [9, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [10, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [13, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [14, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [15, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [16, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [17, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [18, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [19, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [20, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [21, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingOben",
+      "feld": [22, 2],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 3],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 3],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 5],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 5],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 6],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 6],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 7],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 7],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 8],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 8],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 9],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 9],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 10],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 10],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 11],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 11],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 12],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 12],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 13],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 13],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 14],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 14],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 15],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 15],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 16],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [23, 16],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUntenLinks",
+      "feld": [0, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUntenRechts",
+      "feld": [23, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [1, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [2, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [3, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [4, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [5, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [6, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [7, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [8, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [9, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [10, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [14, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [15, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [16, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [17, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [18, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [19, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [20, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [21, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingUnten",
+      "feld": [22, 17],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "cr8InfotafelDach",
+      "feld": [11, 2],
+      "id": "gruendungstafel"
     },
     {
       "moebel": "rv5BankLang",
@@ -241,11 +718,6 @@
       "versatz": [0, 2]
     },
     {
-      "moebel": "mf5TuerSuedHolz",
-      "feld": [12, 17],
-      "an_wand": true
-    },
-    {
       "moebel": "rv14FigurWeissTurm",
       "feld": [8, 12],
       "versatz": [0, -4]
@@ -330,6 +802,11 @@
     {
       "moebel": "rv14FigurentruheB",
       "feld": [16, 15]
+    },
+    {
+      "moebel": "rv18PavillonEingang",
+      "feld": [11, 17],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -397,5 +874,6 @@
     "w": "fliesenWeiss",
     "d": "holzDunkel",
     "r": "stein"
-  }
+  },
+  "wandart": "gras"
 }

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 70,
+ "nextobjectid": 137,
  "layers": [
   {
    "id": 1,
@@ -1507,19 +1507,19 @@
     },
     {
      "id": 10,
-     "name": "wzFenster",
+     "name": "sd6RelingObenLinks",
      "type": "moebel",
-     "x": 32,
-     "y": 16,
-     "width": 32,
-     "height": 32,
+     "x": 0,
+     "y": 32,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 40
       },
       {
        "name": "kollision",
@@ -1530,19 +1530,19 @@
     },
     {
      "id": 11,
-     "name": "wzFenster",
+     "name": "sd6RelingObenRechts",
      "type": "moebel",
-     "x": 80,
-     "y": 16,
-     "width": 32,
-     "height": 32,
+     "x": 368,
+     "y": 32,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 40
       },
       {
        "name": "kollision",
@@ -1553,19 +1553,19 @@
     },
     {
      "id": 12,
-     "name": "rv8Gruendungsbild",
+     "name": "sd6RelingOben",
      "type": "moebel",
-     "x": 176,
-     "y": 16,
-     "width": 32,
-     "height": 32,
+     "x": 16,
+     "y": 32,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 40
       },
       {
        "name": "kollision",
@@ -1576,19 +1576,19 @@
     },
     {
      "id": 13,
-     "name": "wzFenster",
+     "name": "sd6RelingOben",
      "type": "moebel",
-     "x": 272,
-     "y": 16,
-     "width": 32,
-     "height": 32,
+     "x": 32,
+     "y": 32,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 40
       },
       {
        "name": "kollision",
@@ -1599,19 +1599,19 @@
     },
     {
      "id": 14,
-     "name": "wzFenster",
+     "name": "sd6RelingOben",
      "type": "moebel",
-     "x": 320,
-     "y": 16,
-     "width": 32,
-     "height": 32,
+     "x": 48,
+     "y": 32,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 40
       },
       {
        "name": "kollision",
@@ -1622,6 +1622,1547 @@
     },
     {
      "id": 15,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 64,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 80,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 96,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 112,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 128,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 144,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 160,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 208,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 224,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 240,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 256,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 272,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 288,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 304,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 320,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 336,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "sd6RelingOben",
+     "type": "moebel",
+     "x": 352,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 41,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 42,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 43,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 44,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 45,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 46,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 47,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 49,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 52,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 56,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 57,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 58,
+     "name": "sd6RelingSeiteLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "sd6RelingSeiteRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "name": "sd6RelingUntenLinks",
+     "type": "moebel",
+     "x": 0,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "name": "sd6RelingUntenRechts",
+     "type": "moebel",
+     "x": 368,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 16,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 32,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 48,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 64,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 80,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 96,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 112,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 128,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 144,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 160,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 72,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 224,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 240,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 256,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 272,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 288,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 304,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 320,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 79,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 336,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 80,
+     "name": "sd6RelingUnten",
+     "type": "moebel",
+     "x": 352,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 81,
+     "name": "cr8InfotafelDach",
+     "type": "moebel",
+     "x": 176,
+     "y": 32,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 82,
      "name": "rv5BankLang",
      "type": "moebel",
      "x": 128,
@@ -1644,7 +3185,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 83,
      "name": "rv5BankLang",
      "type": "moebel",
      "x": 208,
@@ -1667,7 +3208,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 84,
      "name": "rv8Holztisch",
      "type": "moebel",
      "x": 16,
@@ -1690,7 +3231,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 85,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 27,
@@ -1713,7 +3254,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 86,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 54,
@@ -1736,7 +3277,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 87,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 24,
@@ -1759,7 +3300,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 88,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 24,
@@ -1782,7 +3323,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 89,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 52,
@@ -1805,7 +3346,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 90,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 52,
@@ -1828,7 +3369,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 91,
      "name": "rv8Holztisch",
      "type": "moebel",
      "x": 304,
@@ -1851,7 +3392,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 92,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 315,
@@ -1874,7 +3415,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 93,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 342,
@@ -1897,7 +3438,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 94,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 312,
@@ -1920,7 +3461,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 95,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 312,
@@ -1943,7 +3484,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 96,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 340,
@@ -1966,7 +3507,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 97,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 340,
@@ -1989,7 +3530,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 98,
      "name": "rv8Holztisch",
      "type": "moebel",
      "x": 16,
@@ -2012,7 +3553,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 99,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 27,
@@ -2035,7 +3576,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 100,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 54,
@@ -2058,7 +3599,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 101,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 24,
@@ -2081,7 +3622,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 102,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 24,
@@ -2104,7 +3645,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 103,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 52,
@@ -2127,7 +3668,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 104,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 52,
@@ -2150,7 +3691,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 105,
      "name": "rv8Holztisch",
      "type": "moebel",
      "x": 304,
@@ -2173,7 +3714,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 106,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 315,
@@ -2196,7 +3737,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 107,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 342,
@@ -2219,7 +3760,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 108,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 312,
@@ -2242,7 +3783,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 109,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 312,
@@ -2265,7 +3806,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 110,
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 340,
@@ -2288,7 +3829,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 111,
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 340,
@@ -2311,7 +3852,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 112,
      "name": "rv5Limonade",
      "type": "moebel",
      "x": 176,
@@ -2334,7 +3875,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 113,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 288,
@@ -2357,7 +3898,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 114,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 80,
@@ -2380,7 +3921,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 115,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 80,
@@ -2403,7 +3944,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 116,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 288,
@@ -2426,7 +3967,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 117,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 192,
@@ -2449,30 +3990,7 @@
      ]
     },
     {
-     "id": 51,
-     "name": "mf5TuerSuedHolz",
-     "type": "moebel",
-     "x": 192,
-     "y": 272,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 52,
+     "id": 118,
      "name": "rv14FigurWeissTurm",
      "type": "moebel",
      "x": 128,
@@ -2495,7 +4013,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 119,
      "name": "rv14FigurWeissKoenig",
      "type": "moebel",
      "x": 160,
@@ -2518,7 +4036,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 120,
      "name": "rv14FigurWeissBauer",
      "type": "moebel",
      "x": 144,
@@ -2541,7 +4059,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 121,
      "name": "rv14FigurWeissBauer",
      "type": "moebel",
      "x": 176,
@@ -2564,7 +4082,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 122,
      "name": "rv14FigurWeissSpringer",
      "type": "moebel",
      "x": 192,
@@ -2587,7 +4105,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 123,
      "name": "rv14FigurWeissBauer",
      "type": "moebel",
      "x": 160,
@@ -2610,7 +4128,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 124,
      "name": "rv14FigurSchwarzTurm",
      "type": "moebel",
      "x": 144,
@@ -2633,7 +4151,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 125,
      "name": "rv14FigurSchwarzKoenig",
      "type": "moebel",
      "x": 176,
@@ -2656,7 +4174,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 126,
      "name": "rv14FigurSchwarzBauer",
      "type": "moebel",
      "x": 160,
@@ -2679,7 +4197,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 127,
      "name": "rv14FigurSchwarzBauer",
      "type": "moebel",
      "x": 192,
@@ -2702,7 +4220,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 128,
      "name": "rv14FigurSchwarzBauer",
      "type": "moebel",
      "x": 176,
@@ -2725,7 +4243,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 129,
      "name": "rv14FigurSchwarzLaeufer",
      "type": "moebel",
      "x": 208,
@@ -2748,7 +4266,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 130,
      "name": "rv15BankLangSenkrecht",
      "type": "moebel",
      "x": 32,
@@ -2771,7 +4289,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 131,
      "name": "rv15BankLangSenkrecht",
      "type": "moebel",
      "x": 336,
@@ -2794,7 +4312,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 132,
      "name": "rv14FigurWeissLaeufer",
      "type": "moebel",
      "x": 208,
@@ -2817,7 +4335,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 133,
      "name": "rv14FigurSchwarzSpringer",
      "type": "moebel",
      "x": 224,
@@ -2840,7 +4358,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 134,
      "name": "rv14FigurentruheA",
      "type": "moebel",
      "x": 96,
@@ -2863,7 +4381,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 135,
      "name": "rv14FigurentruheB",
      "type": "moebel",
      "x": 256,
@@ -2882,6 +4400,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 136,
+     "name": "rv18PavillonEingang",
+     "type": "moebel",
+     "x": 176,
+     "y": 272,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

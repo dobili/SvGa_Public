@@ -3250,6 +3250,18 @@
       "blick": "unten",
       "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."],
       "beschreibung": "Freistehender Herd mit vier Kochplatten und Ofen, von vorn (Wohnwagen Riverton, RO34)"
+    },
+    "rv18PavillonEingang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_2_Pass_16x16.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "begehbar_grund": "Durchgang im Geländer; die Pfosten stehen auf dem gesperrten Rand",
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "oben",
+      "beschreibung": "Eingang im weißen Geländer des offenen Pavillons: zwei Pfosten, dazwischen die Lücke (Riverton, RO36)"
     }
   }
 }

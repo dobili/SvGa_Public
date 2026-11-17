@@ -43,6 +43,15 @@ export interface Spielwerk {
   vergissFehlende?(): void;
 }
 
+/**
+ * Ein Ton, der nicht spielt, ist kein Fehler für den Leser: Safari wirft etwa „Context is stopped“,
+ * wenn der Tonerzeuger beim Seitenwechsel oder im Hintergrund angehalten ist. Vermerkt für die
+ * Fehlersuche, statt als unbehandelte Ausnahme die Seite zu stören (Affentest in WebKit).
+ */
+function tonfehler(fehler: unknown): void {
+  console.warn("Ton nicht gespielt:", fehler);
+}
+
 export class Tonregie {
   private lage: Tonlage = STILLE_LAGE;
   private laut = false;
@@ -100,7 +109,7 @@ export class Tonregie {
     for (const befehl of befehleAus(tags)) {
       if (befehl.art === "klang") {
         if (this.untertitelAn) this.melde("klang", befehl.kennung);
-        if (this.laut) void this.werk()?.spieleEinmal(befehl.kennung);
+        if (this.laut) void this.werk()?.spieleEinmal(befehl.kennung).catch(tonfehler);
       } else this.lage = wende(this.lage, befehl);
     }
     this.spiele();
@@ -153,10 +162,10 @@ export class Tonregie {
     const werk = this.werk();
     if (!werk) return;
     const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
-    void werk.spieleSchleife("musik", s.musik);
-    void werk.spieleSchleife("geraeusch", s.geraeusch);
+    void werk.spieleSchleife("musik", s.musik).catch(tonfehler);
+    void werk.spieleSchleife("geraeusch", s.geraeusch).catch(tonfehler);
     // Die Quelle schweigt im Dialog mit eigener Musik nicht: Sie gehört zum Ort, nicht zur Szene.
-    void werk.spieleSchleife("quelle", this.laut ? this.nah.musik : null);
+    void werk.spieleSchleife("quelle", this.laut ? this.nah.musik : null).catch(tonfehler);
     werk.setzeNaehe(this.laut && this.nah.musik ? this.nah.anteil : 0);
   }
 }

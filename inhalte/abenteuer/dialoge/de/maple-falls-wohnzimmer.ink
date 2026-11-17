@@ -318,8 +318,9 @@ Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler #m
 === nicht_ironwood ===
 ~ verbotGesehen = true
 ~ setzeSzene("akt2.verbot")
-Im November kommt ein Zettel von Coach Delgado, schief kopiert: „Freundschaftsturnier beim Stahlwerker-Club Ironwood. Vier Bretter. Wir fahren!!!“ #sprecher:erzaehler #bild:zettel_ironwood #musik:aus #geraeusch:kuehlschrank
-Drei Ausrufezeichen. So viele hat sie seit Wochen nicht gemacht. Du legst ihn neben Mamas Tasse. #sprecher:erzaehler #bild:aus
+// Spieltest 2 (17.11.2026): Juno hat den Zettel in Riverton schon angekündigt (riverton-wohnwagen.turnier_nachricht), deshalb liegt er hier nur noch da.
+Der Zettel von Coach Delgado liegt auf dem Küchentisch, wie Juno gesagt hat. Schief kopiert: „Freundschaftsturnier beim Stahlwerker-Club Ironwood. Vier Bretter. Wir fahren!!!“ #sprecher:erzaehler #bild:zettel_ironwood #musik:aus #geraeusch:kuehlschrank
+Unten ist eine Zeile frei für die Unterschrift. Du legst ihn neben Mamas Tasse. #sprecher:erzaehler #bild:aus
 Mama liest ihn im Stehen, den Mantel schon an, die Schlüssel in der Hand. Ihre Augen halten an. #sprecher:erzaehler
 Nein. #sprecher:mutter #stimmung:verschlossen
 Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
@@ -339,4 +340,14 @@ Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt
 Er klingt nicht tadelnd. Er klingt neugierig. Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
 Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
 Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
--> END
+// Spieltest 2 (17.11.2026): Der Held steht noch in Maple Falls; die Reise bringt ihn an den Anfang des Kanalwegs.
+Bis Riverton nimmt uns der Zug mit, Räder dürfen mit. Ab da immer am Kanal entlang, bis Ironwood. #sprecher:juno #stimmung:froh
+-> aufbruch_ironwood
+
+=== aufbruch_ironwood ===
+* [Mit Juno nach Riverton fahren]
+    ~ reise("riverton.aussen", "kanalweg")
+    -> END
+* [Noch nicht]
+    Ich warte. Das Rad auch. #sprecher:juno #stimmung:laechelt
+    -> END

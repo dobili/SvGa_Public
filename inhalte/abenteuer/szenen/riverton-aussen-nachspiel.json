@@ -1107,7 +1107,7 @@
         "###########.",
         "###########.",
         "###########.",
-        ".##########."
+        ".#####.####."
       ]
     },
     {
@@ -1311,7 +1311,12 @@
     },
     {
       "name": "pavillonEingang",
-      "feld": [41, 54]
+      "feld": [41, 53],
+      "eigenschaften": {
+        "durchgang": "oben",
+        "ankunft": "41,54",
+        "blick": "unten"
+      }
     },
     {
       "name": "bildschirmtische",

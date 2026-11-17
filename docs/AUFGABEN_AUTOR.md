@@ -1835,34 +1835,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       4 Pixel neben die Mitte, wenn die Mitte vor ihm gesperrt ist. Das gilt auf allen Karten und
       macht das Laufen an Möbelkanten eher leichter. Bitte beim nächsten Spielen darauf achten, ob
       sich das Laufen irgendwo anders anfühlt.
-- [ ] RO33. **Türen und Figurengröße (16.11.2026 nachts, Variante B umgesetzt, Widerspruch genügt):**
-      Die 80-%-Verkleinerung ist zurückgebaut. Jetzt gilt Variante B: Ein Kartenpixel ist auf dem
-      Schirm 3 Pixel groß wie bisher, ein Pixel der PixelLab-Figuren genau 2. Die Karten sehen also
-      aus wie vorher, die Figuren (auch die Kinder wie Lily, Ivy, Jonah) sind gestochen scharf und
-      zwei Drittel so groß wie ursprünglich. Technisch habe ich die Welt nicht auf 150 % umgerechnet,
-      sondern die Kamera zoomt das Bild in voller Auflösung, und nur die Figuren stehen mit zwei
-      Dritteln in der Welt; das Bild ist dasselbe, aber Kollision, Wege und Übergänge blieben
-      unverändert. Bitte prüfen: Passt die Figurengröße zu Möbeln und Türen? Läuft das Spiel auf
-      einem älteren Handy noch flüssig (das Bild hat jetzt neunmal so viele Pi      Alle Türen sind
-      jetzt gemessen (217 Gebäude, teils automatisch, teils von Hand). Zu klein für den Helden
-      (11 × 20 Kartenpixel) sind 16 Gebäudebilder an 29 Stellen: die Ladenfassaden mit Glastür
-      (Café in Capital und Riverton, Eisenwaren in Capital, Kramladen in Desert Springs, Lockport und
-      zweimal in Ironwood), das Diner (Maple Falls, Desert Springs) und der Waschsalon in Cedar Creek
-      (alle Tür 17 hoch, nötig Maßstab 1,18), Hardware Store in Crossroads und die beiden Leuchttürme
-      am Weg nach Capital und im Hafen von Silicon Bay (nötig 1,11), die kleine Polizeiwache der
-      Altstadt Silicon Bay (1,25) und die drei Villen in Maple Falls (19 hoch, nötig 1,05).
-      Umgesetzt (Widerspruch genügt): Die drei Villen sind 1,1-mal so groß,
-      Eisenwaren in Crossroads und Capital, Diner in Desert Springs, Rasthaus, Kramladen in
-      Lockport, Café in Capital (tauscht dafür den Platz mit dem Modeladen), Eisenwaren der Altstadt
-      und beide Leuchttürme 1,2- bis 1,25-mal; am Leuchtturm am Seeweg läuft der Weg dafür zwei
-      Reihen tiefer. Inzwischen auch umgesetzt: Café Riverton, Waschsalon (die
-      Drechslerei rückt eine Spalte), Kramläden in Ironwood und Desert Springs, Polizeiwache der
-      Altstadt (dafür ersetzt ein Mietshaus das viktorianische Haus ohne Tür); der Laden an der Elm
-      Street in Ironwood ist jetzt das Reihenhaus Nr. 8 aus dem Ortsdokument. Rückfrage: Das Diner in
-      Maple Falls passt mit größerer Tür nur, wenn der Plattenweg zwischen Diner und Schule entfällt,
-      den du in Runde 8 wolltest. Ich habe den Weg behalten und das Diner gelassen (Tür etwas zu
-      niedrig). Weg weg und Diner größer, oder so lassen?
-      Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).
 - [ ] RO34. **Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt):** Ein Helfer hat
       alle Innenräume und die meisten Außenkarten von Akt 2 bis 4 nach den neuen Regeln durchgesehen
       und 25 Karten verbessert: je Türfeld eine Fußmatte vor der Tür (Lockport Gasthaus, Riverton
@@ -1917,17 +1889,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       ein alter Bahnhof am Canyonpfad. Auf der Hochebene geht die grüne Wiese jetzt weich in den
       roten Sand über. Im Bayou führt der Quersteg jetzt bis zur Zypresseninsel (vorher waren drei
       Inseln zu Fuß nicht erreichbar).
-- [ ] RO36. **Pavillon in Riverton (Rückfrage):** Außen steht ein offener achteckiger Pavillon mit
-      Geländer, innen ist Slicks Club ein Holzsaal mit Wänden und Fensterreihe (22 × 15 Kacheln, mit
-      vier Clubtischen und dem Bodenbrett; kleiner geht es nicht). Damit innen und außen
-      zusammenpassen, wird der Pavillon außen gerade etwa 1,4-mal so groß gezeichnet. Offen ist
-      die Form: Soll der Pavillon außen ein geschlossener Holzsaal werden (neues Bild), oder soll
-      der Club innen ein offener Pavillon mit Geländer statt Wänden sein? Meine Empfehlung: innen
-      offen mit Geländer und Blick auf den Fluss, weil der Pavillon in der Geschichte ein Treffpunkt
-      im Freien ist; das baue ich, wenn du zustimmst.
-      Nebenbei gemessen (Leistung nach Variante B): Auf einem künstlich gebremsten Gerät (zehnfach
-      langsamer) läuft das Spiel mit 37 bis 45 Bildern je Sekunde, nur etwa 2 weniger als vorher;
-      eine eigene Grafikstufe ist nicht nötig. Wenn es auf deinem Handy doch ruckelt, sag Bescheid.
 - [ ] RO37. **Neue Bildwünsche aus der Nacht (für Gemini und PixelLab, wenn du Zeit hast):**
       (1) Sitzbilder in PixelLab (Bewegung „Sitting“) für Lily, Owen, Sam, Mrs. Calloway, Abernathy,
       Carla, Dash, Slick und die Statisten 05, 06, 07, 09, 11, 12, 13, 14, 16 und 18; heute sitzen

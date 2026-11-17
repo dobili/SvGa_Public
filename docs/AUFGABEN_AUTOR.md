@@ -2040,3 +2040,20 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Fußgängerstege mit Geländer und einem breiten „GESPERRT“-Bock statt des flachen Bretts (R133).
       Deine Rückmeldungssammlung ist gepflegt: 145 von 149 Punkten sind erledigt oder überholt;
       offen sind nur die Sitzbilder (oben); das Diner in Maple Falls bleibt mit dem Plattenweg wie bestätigt.
+- [ ] RO38. **Dialogprüfung aller Akte (17.11.2026, umgesetzt, Widerspruch genügt):** Vier Chats haben
+      alle 71 Dialogdateien darauf geprüft, ob jede Figur im Moment passend spricht (erstes Treffen
+      wie mit einem Fremden, kein Wissen vor dem Ereignis, Rückbezüge nur, wenn es passiert ist,
+      gleiche Stimme in allen Akten, richtige Schachaussagen); rund 270 Stellen sind verbessert.
+      Dazu: Victor steht immer nur an einem Ort; in der Kreidenacht heißt er „Junge mit Kapuze“ mit
+      eigenem kleinen Porträt. Oma Ruth hat dich zuletzt mit sechs gesehen. Die Kletterin am Canyon
+      heißt jetzt Tess Ferris (die Bergführerin bleibt Sol). Die Haustür in Maple Falls bleibt zu,
+      bis die erste Lektion besprochen ist. Mrs. Okafor und Mama bekommen je Akt neue Alltagssätze
+      (Okafor steht nach dem Vorwurf in Port Delacroix still zu dir, Mama ist in Akt 4 stolz).
+      Gewinnst du die Fernpartie, hat Ambrose eigene Abschiedsworte dafür.
+      Drei Dinge nur für dich, weil sie den Roman betreffen: (1) Kapitel 33 sagt „Vier fehlten …“
+      und zugleich „fünfte Mulde“; im Spiel ist es stimmig gemacht, bitte den Roman angleichen.
+      (2) Boateng nennt Mrs. Okafor jetzt „eine junge Frau“ statt „ein Mädchen“ (sie war damals
+      Anfang zwanzig); Story-Bibel und Roman haben noch „Mädchen“. (3) Victors Nachricht im Motel
+      lautet im Spiel länger: „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt
+      kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“, weil er das Brett nie gesehen hat;
+      im Roman steht die kurze Fassung.

@@ -7,8 +7,11 @@ Buchtexte und ohne Buchbefunde. Gespeichert wird nur in D1 hinter Cloudflare Acc
 im Repository und nie unter app/public: Dieser Lauf baut die Seiten im Speicher aus `docs/` und
 `CLAUDE.md` und schickt sie an POST /api/wiki (Schlüssel BERICHT_SCHLUESSEL wie der Prüfbericht).
 Er läuft im Lauf „Wartung“ nach jedem Push nach main.
+Seit 17.11.2026 zwei getrennte Wikis auf derselben Plattform (Wunsch des Autors): „app“ (diese
+Seiten) und „spiel“ (das Schach-Abenteuer, gebaut in pipeline/wiki_spiel.py). Jede Sendung trägt
+ihre Wiki-Kennung und ersetzt im Worker nur die Seiten ihres Wikis.
 
-Aufruf: python -m pipeline.wiki [--senden] [--zeigen]
+Aufruf: python -m pipeline.wiki [--senden] [--zeigen] (immer beide Wikis)
 """
 
 from __future__ import annotations
@@ -189,15 +192,15 @@ def baue_seiten(wurzel: Path = HAUPTORDNER) -> list[Wikiseite]:
     return [s for s in seiten if len(s.inhalt) <= LAENGSTE_SEITE]
 
 
-def sende(seiten: list[Wikiseite]) -> bool:
-    """Schickt alle Seiten an POST /api/wiki; ohne Schlüssel nichts (gilt als erfolgreich)."""
+def sende(seiten: list[Wikiseite], wiki: str = "app") -> bool:
+    """Schickt alle Seiten eines Wikis an POST /api/wiki; ohne Schlüssel nichts (gilt als erfolgreich)."""
     from pipeline.wartung.netz import abrufen
 
     schluessel = os.environ.get("BERICHT_SCHLUESSEL")
     if not schluessel:
         print("BERICHT_SCHLUESSEL fehlt: Wiki nicht hochgeladen.")
         return True
-    daten = {"stand": os.environ.get("GITHUB_SHA"), "seiten": [asdict(s) for s in seiten]}
+    daten = {"wiki": wiki, "stand": os.environ.get("GITHUB_SHA"), "seiten": [asdict(s) for s in seiten]}
     antwort = abrufen(
         f"{SEITE}/api/wiki",
         "POST",
@@ -205,9 +208,9 @@ def sende(seiten: list[Wikiseite]) -> bool:
         daten=json.dumps(daten, ensure_ascii=False).encode("utf-8"),
     )
     if antwort.status != ERFOLG:
-        print(f"Wiki nicht hochgeladen: {antwort.status or antwort.fehler}", file=sys.stderr)
+        print(f"Wiki „{wiki}“ nicht hochgeladen: {antwort.status or antwort.fehler}", file=sys.stderr)
         return False
-    print(f"Wiki hochgeladen: {len(seiten)} Seiten.")
+    print(f"Wiki „{wiki}“ hochgeladen: {len(seiten)} Seiten.")
     return True
 
 
@@ -216,12 +219,18 @@ def main() -> int:
     parser.add_argument("--senden", action="store_true", help="an das Dashboard schicken")
     parser.add_argument("--zeigen", action="store_true", help="Titel und Größen ausgeben")
     argumente = parser.parse_args()
-    seiten = baue_seiten()
-    if argumente.zeigen:
-        for s in seiten:
-            print(f"{s.bereich:8} {len(s.inhalt):7} {s.pfad}  {s.titel}")
-    print(f"{len(seiten)} Seiten, {sum(len(s.inhalt) for s in seiten)} Zeichen.")
-    return 0 if not argumente.senden or sende(seiten) else 1
+    from pipeline.wiki_spiel import WIKI as SPIEL
+    from pipeline.wiki_spiel import baue_spielseiten
+
+    gut = True
+    for wiki, seiten in (("app", baue_seiten()), (SPIEL, baue_spielseiten())):
+        if argumente.zeigen:
+            for s in seiten:
+                print(f"{wiki:5} {s.bereich:8} {len(s.inhalt):7} {s.pfad}  {s.titel}")
+        print(f"Wiki „{wiki}“: {len(seiten)} Seiten, {sum(len(s.inhalt) for s in seiten)} Zeichen.")
+        if argumente.senden:
+            gut = sende(seiten, wiki) and gut
+    return 0 if gut else 1
 
 
 if __name__ == "__main__":

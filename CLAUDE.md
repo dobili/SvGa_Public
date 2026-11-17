@@ -107,7 +107,7 @@ python -m pipeline.abenteuer.ausrichtung [--ort KENNUNG] [--bilder ORDNER --priv
 python -m pipeline.abenteuer.sprache [--woerterbuch]   # Sprachprüfung der Spieltexte (Zeichen, Anrede, Namen; Wörterbuch braucht pyspellchecker)
 python -m pipeline.abenteuer.inkbesuche [--alle]   # Besuchszähler in Ink-Bedingungen, die einen früheren Dialog voraussetzen (die App beginnt jeden Dialog neu; dafür VAR nehmen)
 node pipeline/abenteuer/lesefassung.cjs --ziel DATEI.md [--akte]   # Lesefassung: ganzer Spielverlauf als Lesetext aus der Gesamtsimulation (Sprecher, Ort, Questschritt, gewählte Antwort)
-python -m pipeline.wiki --zeigen   # Seiten des Wikis im Dashboard (Paket D); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
+python -m pipeline.wiki --zeigen   # Seiten beider Wikis im Dashboard (Paket D): „app“ (Schach-App) und „spiel“ (Schach-Abenteuer, pipeline/wiki_spiel.py aus docs/spiel/, Codeführer in docs/spiel/codefuehrer/); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 python -m pipeline.abenteuer.editorpaket PRIVAT PRIVAT/editor   # Karteneditor-Paket (Seite + daten.js mit Szenen, Bildern, Kacheln) fürs private Repo; Anleitung docs/spiel/KARTENEDITOR.md
 python -m pipeline.abenteuer.editorrueck PRIVAT/editor/rueck/DATEI.json --privat PRIVAT   # Änderungen des Editors zurück in die Szenen, Bericht und Vorschauen nach buch/arbeit/editor/, Kartenbau
 python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude außen (Regel 10.75, R065), Bericht nach docs/spiel/auftraege/rueckmeldung/

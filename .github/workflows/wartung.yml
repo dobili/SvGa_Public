@@ -41,8 +41,9 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         # Nach einem Push nach main höchstens 15 Minuten warten, bis Cloudflare den Stand ausliefert.
         run: python -m pipeline.wartung --ausgabe wartung-bericht.json --warten ${{ github.event_name == 'push' && 900 || 0 }}
-      # Wiki des Dashboards (Paket D): Seiten aus docs/ und CLAUDE.md an /api/wiki, auch wenn ein
-      # Prüfpunkt rot ist (pipeline/wiki.py). Ohne Secret wird nichts geschickt.
+      # Wiki des Dashboards (Paket D): beide Wikis („app“ aus docs/ und CLAUDE.md, „spiel“ aus
+      # docs/spiel/ und dem Code des Abenteuers) an /api/wiki, auch wenn ein Prüfpunkt rot ist
+      # (pipeline/wiki.py, pipeline/wiki_spiel.py). Ohne Secret wird nichts geschickt.
       - name: Wiki
         if: always()
         env:

@@ -16,6 +16,11 @@ const NOCH_OHNE_PORTRAET = new Set([
   "dunmore",
   "ivy",
   "jonah",
+  // Lockport und Bahndamm (Lektorat Akt 2, 17.11.2026): sprechen jetzt mit eigener Zeile statt als Erzähler.
+  "imogen",
+  "ruben",
+  "henrik",
+  "rosalind",
 ]);
 
 describe("Porträts", () => {

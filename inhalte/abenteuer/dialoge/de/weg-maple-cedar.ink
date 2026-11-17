@@ -306,7 +306,7 @@ Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Wei
     -> END
 }
 Am Pfosten neben der Bank hängt ein Blechschild mit einem Finken. Unter der Bank klemmt etwas. #sprecher:erzaehler
-Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+Ein weißer Bauer aus Buchsbaum. Unter dem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ finchBauerAGefunden = true
 ~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchBauerA")

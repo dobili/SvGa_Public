@@ -139,7 +139,7 @@ Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillo
 // als grünes Achteck mit Uhr; „Lang spielen. Ich.“
 ~ clubkampfRivertonNadel = nadelRiverton
 {clubkampfRivertonBesprochen:
-    Eine bessere Nadel, auf der Treppe erspielt. Die Treppe zählt genauso. #sprecher:slick #stimmung:froh
+    Eine bessere Nadel, unter der Brücke erspielt. Die Treppe zählt genauso. #sprecher:slick #stimmung:froh
     -> END
 }
 ~ clubkampfRivertonBesprochen = true
@@ -158,7 +158,7 @@ Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
 === slick_alltag ===
 // Kapitel 22: Montag im Pavillon (Stille S33: nur der Konzernton, wo vorher die Uhren klopften).
 {slickAbschiedGesehen:
-    Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
+    Slick spielt unten auf der Treppe unter der alten Steinbrücke Blitz gegen Tamsin. #sprecher:erzaehler
     Die Treppe gehört der Stadt. Die kann keiner verpachten. #sprecher:slick #stimmung:laechelt
     -> slick_alltag_wahl
 }
@@ -171,12 +171,12 @@ Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kurier
 Die haben sie mir gelassen. Einer von den Arbeitern hat weggeguckt. #sprecher:slick #stimmung:laechelt
 * [Warten]
 - Er zieht den Riemen fest. #sprecher:erzaehler
-Dann spielen wir eben auf der Treppe. Ich wohn im Wohnwagen am Fluss, an der alten Steinbrücke. #sprecher:slick #stimmung:laechelt
+Dann spielen wir eben auf der Treppe unter der alten Steinbrücke. Da hat man ein Dach. Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
 -> slick_alltag_wahl
 
 === slick_alltag_wahl ===
 + {nadelRiverton < 3} [„Revanche um eine bessere Nadel?“]
-    Auf der Treppe? Immer. #sprecher:slick #stimmung:laechelt
+    Unter der Brücke? Immer. #sprecher:slick #stimmung:laechelt
     ~ beginnePartie("riverton.clubkampf")
     -> END
 + [„Bis bald, Slick.“]

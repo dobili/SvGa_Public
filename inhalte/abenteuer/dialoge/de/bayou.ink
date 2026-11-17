@@ -168,7 +168,7 @@ Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme.
     Die Reuse ist leer bis auf Schlamm. #sprecher:erzaehler
     -> END
 }
-An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus hellem Holz. #sprecher:erzaehler
+An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ finchBauerCGefunden = true
 ~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchBauerC")

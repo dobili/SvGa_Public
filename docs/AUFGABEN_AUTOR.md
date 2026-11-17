@@ -149,16 +149,19 @@ Adresse mit „#abenteuer“ öffnen).
       weiterverwendet.
 - [ ] N2588. Auswertung, Zeitleiste: Kacheln „Absichtlicher Fehler der Engine“ erscheinen nur noch, wenn der Zug
       wirklich ein Fehler, Patzer oder verpasster Gewinn war, nicht bei kleinen Ungenauigkeiten.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (nur der echte Patzer der Engine 12... Td8 hat eine Kachel, die zwei Kleinigkeiten nicht).
 - [ ] N2589. Kapitelseite (etwa Kapitel 0), Karte „Dein Fortschritt“: Tipp auf den Ring Abbildungen oder
       Warum-Fragen rollt zu den Abbildungen, Tipp auf den Ring Lernziele öffnet die Checkliste mit der
       aufgeklappten Karte dieses Kapitels, Tipp auf Übungen rollt zu den Übungen.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (geprüft an Kapitel 1).
 - [ ] N2590. Startseite, Karte „Heute“: Wer schon Aufgaben am Brett lösen kann, sieht unter den Vorschlägen
       jetzt auch „Kurzplan“ (etwa 15 Minuten, fertig zusammengestellt); Tipp öffnet die Kurzpläne.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kurzplan unter den Vorschlägen, Tipp öffnet die Kurzpläne; neuer Test).
 - [ ] N2591. Einstellungen › Bedienung, ganz unten „Was zuerst kommt“: Buch / Spielen / Umsehen. Auf „Spielen“
       stellen: Die Karte „Heute“ schlägt nach fälligen Wiederholungen zuerst Partie, Taktikthema und
       Kurzplan vor. Die Startwahl der ersten Tour (Einstellungen › Hilfe › Rundgang) stellt das
       ebenfalls ein.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „Spielen“: Partie steht vorn, danach Kurzplan; neuer Test. Nicht geprüft: Startwahl der Tour.
 - [ ] N2593. Lernpfad „Dein Weg durchs Buch“: Unter dem Balken stehen jetzt auch „… Warum-Fragen“ und
       „… Lernziele“. In Kapitel 1 eine Warum-Frage richtig beantworten und in der Gesamt-Checkliste ein
       Lernziel von Kapitel 1 abhaken: Beide Zahlen sinken um eins, die Station füllt sich. Golden wird
@@ -182,9 +185,11 @@ Adresse mit „#abenteuer“ öffnen).
       du etwa 250 Punkte schwächer als sonst …“ mit Kapitel und Trainer (Eröffnung: Kapitel 2,
       Repertoire; Mittelspiel: Kapitel 7, Taktik; Endspiel: Kapitel 8, Endspieltrainer). Bei weniger
       Partien oder ausgeglichenen Phasen kommt kein Hinweis.
+      Vorgeprüft: Abweichung. Für die Eröffnung bestanden (zehn gewertete Partien mit schwacher Eröffnung: „Aus deinen Partien“, Kapitel 2, Repertoire-Trainer; neuer Test). Für das Endspiel kann der Hinweis nie kommen und im Blitz für keine Phase: Das Elo-Modell gibt dort auch nach zehn Partien eine zu breite Spanne (Endspiel Schnellschach ±954, Grenze 460). Frage an dich: so lassen (Endspiel nur als Eindruck) oder die Grenze fürs Endspiel lockern?
 - [ ] N2592. Karte „Heute“ › Ziel wählen: Mit einer Wertung um 900 stehen keine Engine-Bots und keine Orden der
       Stufen 6 bis 10 mehr unter den Vorschlägen, wohl aber Bots bis etwa 1200 und Kapitelziele. Ohne
       Wertung zählt der stärkste besiegte Bot.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zehn Wertungspunkte bei 900: Bots bis Stufe 4–5 und „Teil Grundlagen“, keine Engine-Bots, keine Stufe 6 bis 10; neuer Test); nicht geprüft: ohne Wertung.
 
 ### Neu in 0.3.51: Taktiktrainer – mehrere Motive und gleich schnelle Matts (6.11.2026)
 
@@ -532,14 +537,18 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2440. Karte „Heute“ mitten im Buch: Lies in Kapitel 6 ein paar Abbildungen (Kapitel 0 bis
       5 abgehakt, Übungen offen). Die Übungskachel nennt jetzt Kapitel 5 (das zuletzt gelesene
       fertige Kapitel), nicht mehr Kapitel 0.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 0 bis 5 gelesen, Kapitel 6 begonnen: Übungskachel „Kapitel 5“; neuer Test).
 - [ ] N2441. Karte „Heute“ mit eigenem Ziel: Hefte unter „Ziele“ das Ziel „Übungen von Kapitel 3“
       an. Die Übungskachel nennt jetzt Kapitel 3, auch wenn du dort noch nicht fertig gelesen hast.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (angeheftetes Ziel Kapitel 3; neuer Test).
 - [ ] N2442. Karte „Heute“ mit sehr vielen fälligen Karten (über 20): Statt „etwa 134 Minuten“
       steht „Fang mit 20 an, das dauert etwa 14 Minuten“; die Kachel zeigt „200 fällig · 20 in etwa
       14 Min“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (200 fällige Karten: „200 fällig · 20 in etwa 14 Min“, Vorlesetext „Fang mit 20 an, das dauert etwa 14 Minuten“; neuer Test).
 - [ ] N2443. Karte „Heute“, alles erledigt (Tagesaufgabe gelöst, Kapitel gelesen): Als letzte
       Kachel steht „Partie · Gegen die Engine“; ein Tipp öffnet Spielen. Neulinge vor Kapitel 0
       sehen sie nicht.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (alles erledigt: letzte Kachel „Partie · Gegen die Engine“; neuer Test).
 - [ ] N2444. Zähltrainer: Unter dem Brett steht immer die Seite am Zug, die auf dem rot
       markierten Feld schlagen würde (fünf Aufgaben durchtippen).
 - [ ] N2445. Nachschlagen › Werkzeuge des Buches: Die Bilder zeigen die neue Oberfläche (Leiste
@@ -846,6 +855,7 @@ ohne die neuen Karten zu überladen. Profil: Tipp auf „Profil“ unten in der 
 - [ ] N2310. **Verlauf je Phase:** Erst nach einigen ausgewerteten gewerteten Partien: In „Deine
       Wertung“ unter „Nach Phasen“ einen Balken antippen: Die Kurve dieser Phase erscheint mit
       „Spanne …“; ein zweiter Tipp schließt sie.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Balken „Eröffnung“ öffnet die Kurve mit „Spanne …“, zweiter Tipp schließt sie; neuer Test).
 
 ### Neu in 0.3.33: Training und Checkliste neu (Arbeitschat, 31.10.2026)
 

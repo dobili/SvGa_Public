@@ -267,11 +267,11 @@ Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:la
 Odette klatscht in die Hände. #sprecher:erzaehler
 Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe. #sprecher:odette #stimmung:froh
 Sie gibt dir eine Karte mit sechzehn leeren Kästchen. #sprecher:erzaehler
-Sechzehn weiße Figuren aus Buchsbaum, versteckt an den Wegen. Unter jeder steht ihr Feld. #sprecher:odette #stimmung:laechelt
+Sechzehn weiße Figuren aus Buchsbaum. Fünfzehn liegen versteckt an den Wegen, unter jeder steht ihr Feld. Den König behalte ich, bis du alle hast. #sprecher:odette #stimmung:laechelt
 ~ gibFund("finchKarte")
 Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft nimmst du mit, drei Aufgaben für unterwegs. #sprecher:odette #stimmung:laechelt
 ~ gibFund("problemheft")
-{faehrsteinGesehen: Sechzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht}
+{faehrsteinGesehen: Fünfzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht}
 -> END
 
 === flohmarkt_spaeter ===

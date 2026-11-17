@@ -61,7 +61,7 @@ Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengelä
 {verbotGesehen:
     Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler
     Die können hier zählen. #sprecher:juno #stimmung:laechelt
-    Deine Mama hat gesagt: nicht zum Turnier. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
+    Wir gucken nur. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
     -> END
 }
 ~ verbotGesehen = true
@@ -75,7 +75,7 @@ Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 - Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
 Sie hat schon aufgelegt. #sprecher:erzaehler
 Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
-Sie hat gesagt: nicht zum Turnier. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
+Wir gucken nur. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
 Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
 -> END
 

@@ -15397,24 +15397,29 @@
     },
     {
      "id": 41,
-     "name": "sc7Huette",
+     "name": "ld14BlockhuetteKamin",
      "type": "moebel",
-     "x": 80,
-     "y": 304,
-     "width": 128,
-     "height": 112,
+     "x": 112,
+     "y": 288,
+     "width": 120,
+     "height": 120,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 408
+       "value": 400
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.5
       }
      ]
     },

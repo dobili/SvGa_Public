@@ -20,7 +20,7 @@
     "#................#",
     "#................#",
     "#................#",
-    "########..########"
+    "########.#########"
   ],
   "objekte": [
     {
@@ -121,16 +121,6 @@
       "feld": [15, 4]
     },
     {
-      "moebel": "cc8TuerSuedHolz",
-      "feld": [9, 12],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc4Fussmatte",
-      "feld": [9, 11],
-      "versatz": [0, 3]
-    },
-    {
       "moebel": "pd6Kommode",
       "feld": [13, 2],
       "id": "kommode"
@@ -179,10 +169,6 @@
       "name": "teekanne",
       "feld": [8, 6],
       "auf_moebel": true
-    },
-    {
-      "name": "huetteAusgang",
-      "feld": [9, 12]
     }
   ],
   "figuren": [

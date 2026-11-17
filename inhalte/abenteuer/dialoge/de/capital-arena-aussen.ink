@@ -4,7 +4,8 @@
 // Szenen der Bibel (Abschnitt 29): Ankunft vom Leuchtturm (Ende von Szene 102), 103 Die Capital
 // Arena (beim ersten Betreten der Halle: Juno liest die Liga vor, Dr. Lin und Nova gehen zur
 // Turnierleitung), 109 Abschied (nach dem Finale auf der Treppe, danach zeigeAbspann()).
-// Einstiege wie in orte.json: ankunft_zu_fuss, mama, juno, weg_ghost, halle_betreten, treppe.
+// Einstiege wie in orte.json: ankunft_zu_fuss, mama, juno, weg_ghost, halle_betreten, treppe,
+// testteam (Auflösung der Wegsperren, 32_Wegsperren.md).
 //
 // Die Liga zählt Ink aus den Nadeln der acht Clubs (R22: Gold 3, Silber 2, Bronze 1; Bronze-Liga ab
 // 8, Silber ab 16, Gold ab 22 Punkten). Variablen: nadel<Ort> und ausgangCapitalArenaFinale setzt
@@ -38,6 +39,9 @@ VAR wandererCapitalGetroffen = false
 // Aus capital-arena-halle.ink und weg-ghost-capital.ink (nur gelesen).
 VAR zugerratenTurm = false
 VAR wandererGetroffen = false
+// Wegsperren (32_Wegsperren.md): testteamStand setzen die Wege 2, 5 und 9 (3 = Seitenwechsel).
+VAR testteamStand = 0
+VAR testteamArenaGesehen = false
 
 === function ligapunkte() ===
 ~ return nadelMapleFalls + nadelCedarCreek + nadelRiverton + nadelIronwood + nadelSiliconBay + nadelPortDelacroix + nadelDesertSprings + nadelSummitCity
@@ -252,3 +256,19 @@ Für dich. Dreizehn Blätter haben gefehlt, und jedes hast du einmal in der Hand
 }
 -> END
 
+
+// ---------------------------------------------------------------- Das Testteam vor der Arena
+
+// Auflösung der Wegsperren S15 bis S17 (32_Wegsperren.md, Abschnitt 3): Die drei stehen nur hier,
+// wenn sie am Viehgitter die Seite gewechselt haben (orte.json, wenn: testteamStand >= 3).
+// Szene 105 (Aussage von Dr. Lin) bleibt, wie sie ist.
+=== testteam ===
+{testteamArenaGesehen:
+    {~Wir sitzen ganz oben. Von dort sieht man jedes Brett.|Die Limonade hier ist besser als jeder Gutschein.} #sprecher:benji #stimmung:lacht
+    -> END
+}
+~ testteamArenaGesehen = true
+Am Limonadenwagen stehen drei, die du kennst. Ohne Westen, ohne Tablets. #sprecher:erzaehler
+Dr. Lin hat unsere Protokolle. Zwanzigtausend Partien, alle von uns, keine von ZERO. #sprecher:zoe #stimmung:laechelt
+Sie sagt, das wiegt. #sprecher:imani #stimmung:nachdenklich
+-> END

@@ -1241,6 +1241,18 @@
     {
       "name": "kowalczyk",
       "feld": [121, 25]
+    },
+    {
+      "name": "testteamZoe",
+      "feld": [2, 17]
+    },
+    {
+      "name": "testteamBenji",
+      "feld": [4, 17]
+    },
+    {
+      "name": "testteamImani",
+      "feld": [6, 17]
     }
   ],
   "belebung": [

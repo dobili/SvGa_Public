@@ -18,6 +18,8 @@ VAR kreidenachtErledigt = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Wegsperren (32_Wegsperren.md): testteamStand setzen die Wege 2, 5 und 9; hier nur gelesen.
+VAR testteamStand = 0
 
 === mo ===
 {
@@ -34,6 +36,9 @@ VAR abschiedGesehen = false
 Eine Frau mit Kreide an den Fingern steht auf einer Bank und klatscht in die Hände. #sprecher:erzaehler
 Mo. Willkommen in der Nacht der Kreidespringer. Drei Runden Blitz, drei Minuten, zwei Sekunden Zuschlag. Gewinnen ist schön, mitspielen ist Pflicht. #sprecher:mo #stimmung:laechelt
 Alle sind hier: die von der Brücke, von der Raststätte, aus dem Diner, aus den Wäldern. #sprecher:mo #stimmung:laechelt
+{testteamStand >= 3:
+    Am hinteren Tisch sitzen drei, die du kennst. Ohne Westen, ohne Tablets. Benji verliert gerade und lacht. #sprecher:erzaehler
+}
 -> mo_runde1
 
 === mo_runde1 ===

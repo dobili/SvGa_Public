@@ -1,12 +1,109 @@
 # 32 Wegsperren durch Schachgegner: das Testteam
 
-Stand: 17.11.2026 (nachts). Konzept, noch nichts gebaut. Idee des Autors: wie die Trainer-Sperren
+Stand: 17.11.2026 (nachts). **Umgesetzt** (Abschnitt 0 nennt, was gebaut ist und wo es vom Konzept
+abweicht; die Abschnitte 1 bis 6 sind das freigegebene Konzept und bleiben zum Nachlesen stehen).
+Idee des Autors: wie die Trainer-Sperren
 in Pokémon versperrt an wenigen Stellen eine Gruppe den Weg und lässt {held} erst nach einer
 gewonnenen Stellung durch. Ausdrücklich „kein Muss, nicht zu viel, damit es nicht nervt“. Zusatz
 des Autors: nicht immer ganze Partien, sondern je Sperre ein anderes kurzes Format mit erzähltem
 Einstieg. Grundlagen: `13_Wegenetz.md` (Sperren S1 bis S14), `15_Routen_Ereignisse.md` (Spuren
 P1 bis P6, Kreidespringer K1 bis K5), `05_Story_Bibel.md`, `06_Regelwerk.md` (R4, R13, R29b, R34,
 R42), `orte.json`, `begegnungen.json`, `gegner.json`.
+
+## 0. Umgesetzter Stand
+
+**Gebaut:** die drei Sperren S15 bis S17, die Auflösung vor der Capital Arena, die Zeile in der
+Kreidenacht und die kleine Nebenquest „Das Testteam“.
+
+| Nr. | Übergang (`wenn` in `orte.json`)                                                                                                        | Figuren (Felder, `wenn`)                                                                                        | Begegnung, Format                                                                                                | Stärke (Rolle `story`) |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| S15 | `wegCedarRiverton.zedernwald`, `weiterBahndamm`: `testteamWaldDurch oder ankunftRivertonGesehen oder nicht endeAkt1Gesehen`             | 131,16 · 133,16 · 135,16 unter dem Weg; `endeAkt1Gesehen und nicht ankunftRivertonGesehen`                      | `wegCedarRiverton.testteam`, Benji: Vorteil herausarbeiten (R13b), Abb. 7.3, 10 Züge, Mindestvorteil 1,0         | E + 260                |
+| S16 | `wegIronwoodSilicon.raststaette`, `weiterGlasbruecke`: `testteamBrueckeDurch oder ankunftSiliconBayGesehen oder nicht einladungGesehen` | 2,17 · 4,17 · 6,17 über der Straße; `einladungGesehen und nicht ankunftSiliconBayGesehen`                       | `wegIronwoodSilicon.testteam`, Imani: Eröffnung fremd (R13c, Russische Verteidigung), dann Vorteil, 12 Züge, 1,0 | E + 380                |
+| S17 | `wegDesertSummit.diner`, `weiterBergstrasse`: `testteamGitterDurch oder ankunftSummitGesehen oder nicht endeAkt3Gesehen`                | 2,14 · 4,14 · 6,14 über der Straße (auch in der Neon-Fassung); `endeAkt3Gesehen und nicht ankunftSummitGesehen` | `wegDesertSummit.testteam`, Zoe: Endspiel gewinnen (R13a), Abb. 8.2, 15 Züge                                     | E + 560                |
+
+**Stellungen** (Leser mit Weiß am Zug, Karten erlaubt, keine Uhr; Bewertung Stockfish 19 lite,
+Tiefe 12, zum Vergleich 16; `python -m pipeline.abenteuer.kurzformate` meldet 0 Funde):
+
+| Nr. | Stellung                                                                                                                                                                          | Bewertung     | Warum diese                                                                                                                                                                                |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| S15 | Abb. 7.3 (Die zwölf Grundmotive, Bauerngabel): `r1bqkb1r/ppp2ppp/2n5/3pp3/2B1N3/5N2/PPPP1PPP/R1BQK2R w KQkq - 0 6`, Verlauf 1. e4 e5 2. Sf3 Sc6 3. Sc3 Sf6 4. Lc4 Sxe4 5. Sxe4 d5 | −0,09 (−0,16) | Fenster von R13b ist −0,5 bis +0,5; Abb. 2.27 aus dem Konzept (+1,3 bis +2,1) passt dort nicht mehr. 7.3 ist das Thema von Riverton (Doppelangriff, Kapitel 7), und Benji „schlägt alles“. |
+| S16 | Startstellung `eroeffnung`: 1. e4 e5 2. Sf3 Sf6 3. Sxe5 d6 4. Sf3 Sxe4 (die Stellung von Abb. 2.42), `rnbqkb1r/ppp2ppp/3p4/8/4n3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 5`              | +0,36 (+0,39) | Abb. 2.49 aus dem Konzept (+0,7 bis +1,0) liegt über dem Fenster. Die Hauptvariante der Russischen Verteidigung ist „fremd“ und ausgeglichen; {held} muss nur entwickeln.                  |
+| S17 | Abb. 8.2: `6k1/pp1q1ppp/1n6/8/4N3/2P5/PP3PPP/3Q2K1 w - - 0 1`                                                                                                                     | +2,6 bis +3,3 | Wie im Konzept. Mit dem neuen Format „Endspiel gewinnen“ (Fenster +1,5 bis +8) braucht es keine Ausnahme mehr; Sieg ab +3,0 nach 15 Zügen, darunter Remis (öffnet auch).                   |
+
+**Ablauf je Sperre** (Knoten `testteam_wald*`, `testteam_bruecke*`, `testteam_gitter*` in den
+Ink-Dateien der Wege): erstes Treffen, Angebot („Eine Stellung.“ / „Später.“), erzählter Einstieg
+und Ausklang in der Spielhülle (`erzaehlung.testteamWald.*`, `…Bruecke.*`, `…Gitter.*`), danach beim
+nächsten Ansprechen oder am Übergang: Sieg oder Remis öffnet für immer, eine Niederlage kostet
+nichts (ein Satz von Ambrose, ohne ihn ein Erzählsatz, dazu der Hinweis auf die Rätseltafel der
+Karte, solange sie nicht gelöst ist), die dritte Niederlage öffnet auch. Niederlagen zählt die
+Variable `testteam…Niederlagen`; `testteam…Spielt` sorgt dafür, dass jede Partie genau einmal
+zählt und ein Abbruch nicht. `testteamStand` steigt je Sperre auf 1, 2, 3.
+
+**Bogen:** `capital-arena-aussen.testteam` (drei Figuren bei 69,43 · 71,43 · 73,43 neben dem
+Limonadenwagen, `wenn: testteamStand >= 3`), eine bedingte Erzählzeile in
+`capital-arena-ubahnhof.mo_erstes`. Szene 105 ist unberührt. Quest `wegCedarRiverton.testteam`
+(klein, vier Dialogschritte, je 10 Münzen).
+
+**Abweichungen vom Konzept, mit Grund:**
+
+1. **Formate statt Stellungsduell:** Die kurzen Formate (R13a bis R13c) waren beim Bau schon da;
+   jede Sperre hat jetzt ihr Wunsch-Format. Deshalb neue Stellungen für S15 und S16 (Tabelle).
+2. **`wenn` am Übergang hat ein drittes Glied** (`oder nicht endeAkt1Gesehen` usw.): Die Sperre ist
+   so genau dann zu, wenn die Truppe dasteht. Ohne das Glied wäre ein Übergang zu, an dem niemand
+   steht, falls {held} je vor dem Akt dorthin kommt (alter Spielstand, Reise).
+3. **Zählung der Niederlagen** statt „Versuche“: gezählt wird die gewertete Niederlage, nicht der
+   Klick auf „Noch einmal“; ein Abbruch zählt nicht.
+4. **S16:** Der Knoten `glasbruecke` (Erzählung des Übergangs) springt zur Truppe, solange die
+   Sperre zu ist; ein eigener Tor-Knoten ist dort nicht nötig.
+5. **Kein Klapptisch auf der Karte:** Der Tisch steht nur im Text (wie der Absperrbock von S12).
+   Ein bedingtes Möbel braucht ein Bild; siehe Bildwünsche.
+6. **Zahlen ohne Leerzeichen** („4113“, „20000“ auf dem Tablet, sonst „Zwanzigtausend“).
+7. **Ink in den Dateien der Wege**, nicht ausgelagert: Der Übergang von S16 kann nur einen Dialog
+   haben, und der Sprung dorthin geht nur innerhalb einer Datei. Die drei Dateien bleiben unter
+   400 Zeilen (372, 392, 398); die nächste Ergänzung dort muss auslagern.
+8. **Questtexte** nennen die späteren Orte nicht („Ihm noch einmal begegnen“), damit das Tagebuch
+   nichts vorwegnimmt.
+
+**Bilder (vorläufig aus dem Bestand):** Figurenbögen aus dem Statistenvorrat, weil es keinen als
+„jugend“ ausgewiesenen Bogen gibt (alle 40 Statisten haben dieselbe Größe): Zoe `statist-36`,
+Benji `statist-23`, Imani `statist-22` (alle drei mit hellem Oberteil, passend zur weißen Weste).
+Porträts als Ersatzbilder aus dem Skript (`portraets/zoe.svg`, `benji.svg`, `imani.svg`, DiceBear,
+CC0), wie bei allen Figuren ohne Porträtblatt.
+
+**Bildwünsche an den Autor:**
+
+1. Figurenbogen Zoe (16): weiße Weste mit kleinem silbernem Logo über dem Kapuzenpulli, Tablet.
+2. Figurenbogen Benji (14): zu große Weste, Rucksack, Apfel.
+3. Figurenbogen Imani (15): Weste offen, Kopfhörer um den Hals.
+4. Dieselben drei ohne Weste (Akt 4: Diner, Vorplatz der Arena, U-Bahnhof). Bis dahin tragen sie
+   in Akt 4 denselben Bogen wie vorher, der Text sagt „ohne Westen“.
+5. Klapptisch mit Tablet-Ständer als Möbel (bedingt sichtbar wie die Truppe).
+6. Je ein Porträtblatt (neutral, lächelt, lacht, nachdenklich: diese Stimmungen benutzen die
+   Dialoge).
+
+**Offene Rückfragen an den Autor:**
+
+1. **Stärke:** E + 260, 380, 560 ist ungeprüft gegen echte Leser. „Vorteil herausarbeiten“ beginnt
+   ausgeglichen; +1,0 in 10 oder 12 Zügen gegen einen Gegner knapp unter Clubchef-Stärke ist
+   schwerer als das alte Stellungsduell mit Startvorteil. Remis (nicht schlechter stehen) öffnet
+   aber schon, und nach drei Niederlagen geht es ohnehin weiter. Empfehlung: so lassen und im
+   Spieltest ansehen; wenn es nervt, zuerst den Versatz senken, nicht den Notausgang.
+2. **„Wer rauf zur Meisterschaft will“** (Zoe am Viehgitter): Die Straße führt nach Summit City,
+   die Meisterschaft ist erst in der Capital Arena. Der Satz steht so im Konzept und ist
+   übernommen; Alternative „Wer hier rauf will“.
+3. **ZERO in Akt 2:** Auf dem Tablet steht schon im Zedernwald „ZERO lernt“ (wie im Konzept). Die
+   Bibel führt ZERO erst in Akt 3 ein; hier ist es nur ein Name auf einem Balken.
+4. **Eigene Bögen** (Bildwünsche 1 bis 5): erst, wenn die Truppe im Spieltest gefällt?
+
+**Später: Stellungsvorrat statt fester Stellung** (auf `beta` gibt es inzwischen
+`"startstellung": { "art": "vorrat", "format": … }`, eine andere Stellung je Versuch, passend zur
+Stärke; hier noch nicht benutzt, die Sperren haben feste Stellungen wie beauftragt):
+
+- **S15:** sinnvoll. Nach einer Niederlage käme nicht dieselbe Stellung noch einmal. Der erzählte
+  Einstieg („Bauerngabel“) müsste dann allgemeiner werden.
+- **S16:** nein. „Eröffnung fremd“ lebt von der festen Zugfolge; sie bleibt `eroeffnung`.
+- **S17:** sinnvoll (`endspielSieg`), aus demselben Grund wie S15; der Einstieg („ein Bauer mehr,
+  Zoe will die Damen behalten“) müsste zur gezogenen Stellung passen oder allgemeiner werden.
 
 ## 1. Bestand: was es schon gibt
 

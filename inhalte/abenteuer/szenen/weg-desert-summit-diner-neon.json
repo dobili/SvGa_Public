@@ -439,6 +439,18 @@
       "name": "earl",
       "feld": [90, 23],
       "blick": "links"
+    },
+    {
+      "name": "testteamZoe",
+      "feld": [2, 14]
+    },
+    {
+      "name": "testteamBenji",
+      "feld": [4, 14]
+    },
+    {
+      "name": "testteamImani",
+      "feld": [6, 14]
     }
   ],
   "belebung": [

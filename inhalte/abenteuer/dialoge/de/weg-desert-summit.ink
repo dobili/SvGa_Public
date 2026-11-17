@@ -147,6 +147,17 @@ VAR ruthGetroffen = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Wegsperre S17 (32_Wegsperren.md): endeAkt3Gesehen setzt desert-springs-aussen.ink,
+// ankunftSummitGesehen summit-city-aussen.ink, den Ausgang die Hülle (R42), testteamStand auch die
+// Wege 2 und 5; die übrigen setzt diese Datei.
+VAR endeAkt3Gesehen = false
+VAR ankunftSummitGesehen = false
+VAR ausgangWegDesertSummitTestteam = ""
+VAR testteamStand = 0
+VAR testteamGitterGesehen = false
+VAR testteamGitterDurch = false
+VAR testteamGitterSpielt = false
+VAR testteamGitterNiederlagen = 0
 
 // ---------------------------------------------------------------- Ereignis: Schach über Funk (Dokument 15, 2.8)
 // Akt 4. Das CB-Funkgerät im Fenster des Diners. Partie nach Gehör gegen Mama Bear (Begegnung
@@ -308,3 +319,80 @@ Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steck
 ~ gibFund("spurPM4")
 -> END
 // <<< Runde 6 (mittel-4)
+
+// ---------------------------------------------------------------- Wegsperre S17: das Testteam
+
+// 32_Wegsperren.md: Die drei haben die Seite gewechselt, ohne Westen und Tablets. Am Viehgitter
+// hinter der Tankstelle spielt Zoe ein Endspiel mit {held}. Regeln wie bei S15 und S16: Sieg oder
+// Remis öffnet, die dritte Niederlage auch; Niederlagen zählt eine Variable. Einstiege:
+// testteam_gitter (drei Figuren), testteam_gitter_tor (Übergang weiterBergstrasse).
+// Regel: Kapitel 8, Mehrbauer verwerten (Abb. 8.2: die Startstellung).
+=== testteam_gitter_tor ===
+{testteamGitterDurch or ankunftSummitGesehen or not endeAkt3Gesehen: -> END}
+-> testteam_gitter
+
+=== testteam_gitter ===
+{testteamGitterDurch: -> testteam_gitter_danach}
+{testteamGitterSpielt:
+    ~ testteamGitterSpielt = false
+    {ausgangWegDesertSummitTestteam == "niederlage":
+        ~ testteamGitterNiederlagen = testteamGitterNiederlagen + 1
+    }
+}
+{
+- ausgangWegDesertSummitTestteam == "sieg" or ausgangWegDesertSummitTestteam == "remis": -> testteam_gitter_durch
+- ausgangWegDesertSummitTestteam == "niederlage": -> testteam_gitter_niederlage
+}
+{not testteamGitterGesehen:
+    ~ testteamGitterGesehen = true
+    Hinter der Tankstelle liegt ein Viehgitter im Asphalt. Daneben sitzen drei um ein Reisebrett. {testteamStand >= 1:Du kennst sie. Die weißen Westen sind weg, die Tablets auch.|Sie tragen keine Westen und keine Tablets.} #sprecher:erzaehler
+    Kein Testteam mehr. Wir prüfen jetzt selber: Wer rauf zur Meisterschaft will, spielt eine Stellung ohne Stöpsel. #sprecher:zoe #stimmung:laechelt
+}
+Ein Endspiel, fünfzehn Züge. Du hast einen Bauern mehr. Zeig, dass er reicht. #sprecher:zoe #stimmung:laechelt
++ [„Eine Stellung.“]
+    -> testteam_gitter_partie
++ [„Später.“]
+    Das Gitter liegt morgen auch noch hier. #sprecher:zoe #stimmung:laechelt
+    -> END
+
+=== testteam_gitter_partie ===
+~ testteamGitterSpielt = true
+~ beginnePartie("wegDesertSummit.testteam")
+-> END
+
+=== testteam_gitter_niederlage ===
+Das zähle ich nicht mehr. Ich merke es mir nur. #sprecher:zoe #stimmung:laechelt
+{testteamGitterNiederlagen >= 3: -> testteam_gitter_genug}
+{not abschiedGesehen:
+    Tausche, was dir schadet, und behalte, was dir nützt. #sprecher:ambrose #stimmung:nachdenklich
+- else:
+    Du hast getauscht, was dir nützte, und behalten, was dir schadete. #sprecher:erzaehler
+}
+{not wegDesertSummitTafelBestanden:
+    Im Diner hängt neben der Kasse eine Tafel mit drei Endspielen. Danach weißt du eher, was du tauschen darfst. #sprecher:erzaehler
+}
++ [„Noch einmal.“]
+    -> testteam_gitter_partie
++ [„Nicht jetzt.“]
+    -> END
+
+=== testteam_gitter_genug ===
+Zoe stellt die Figuren zurück in die Schachtel. #sprecher:erzaehler
+Dreimal ehrlich verloren. Das reicht uns. Geh durch. #sprecher:zoe #stimmung:laechelt
+-> testteam_gitter_offen
+
+=== testteam_gitter_durch ===
+Zoe gibt dir über dem Brett die Hand. #sprecher:erzaehler
+Ehrlich gespielt. Das schreibe ich auf. Mit der Hand. #sprecher:zoe #stimmung:laechelt
+-> testteam_gitter_offen
+
+=== testteam_gitter_offen ===
+~ testteamGitterDurch = true
+~ testteamStand = 3
+Der blaue Laster da oben. Da drin sind unsere Partien. #sprecher:benji #stimmung:nachdenklich
+In Silicon Bay hat eine gekündigt, Dr. Lin. Der bringen wir unsere Protokolle. #sprecher:imani #stimmung:nachdenklich
+-> END
+
+=== testteam_gitter_danach ===
+{~Oben ist die Luft dünn. Zieh langsam.|Zwanzigtausend Partien. Jede davon haben wir selbst gespielt.} #sprecher:zoe #stimmung:laechelt
+-> END

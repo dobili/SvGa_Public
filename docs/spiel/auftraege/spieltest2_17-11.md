@@ -76,3 +76,33 @@ Türen.
   die Lage des Helden direkt aus Phaser gelesen.
 - Die einmaligen Erklärungen zu Münzen und Spielstärke liegen über dem Aktionsknopf. In
   Testständen deshalb `muenzenErklaert` und `staerkeErklaert` setzen.
+
+## Nachtrag (17.11.2026, spät)
+
+Folgeauftrag des Hauptchats nach dem Bericht:
+
+- **Befund 1 behoben** (Hauptchat): `"durchgang": "oben"` am Auslöser `haustuer` in
+  `szenen/maple-falls-aussen.json`.
+- **Neue Prüfung „Richtung“** in `pipeline/abenteuer/durchgangsrichtung.py`, Teil von
+  `python -m pipeline.abenteuer.uebergaenge`. Sie prüft Übergänge von draußen in einen Innenraum
+  an einem Gebäude: Gebäude ist ein Möbel mit Kollision, mindestens 3 × 3 Kacheln, auf dem Feld oder
+  höchstens zwei Kacheln geradeaus davon. Die Durchgangsrichtung wird wie in der App gerechnet
+  (`ausloeserebene.ts`, `mitDurchgang`) und muss zur Mitte des Gebäudes zeigen. Tests stehen in
+  `pipeline/tests/test_abenteuer_durchgangsrichtung.py`. Die Haustür ohne die Angabe ergibt den
+  Befund „Durchgang links/rechts, ins Gebäude geht es nach oben“. Alle Szenen und Zustände: **keine
+  Befunde**.
+- **Befund 2 berichtigt:** Am Pavillon rechnet die App den Durchgang „oben, unten“, weil das Feld
+  über dem Auslöser gesperrt ist. Man kommt also hinein, wenn man auf das Feld (41, 54) tritt und
+  nach oben drückt. „Nur nach unten“ kam aus meinem Testplan, der nur das Raster las. Es bleibt ein
+  Hinweis: Bei der Rückkehr schaut der Held nach links statt nach unten. Abhilfe ist
+  `"blick": "unten"` am Auslöser.
+- **Befund 4 umgesetzt:** Earls erste Zeile heißt jetzt „Durchs Fenster des Diners sieht man
+  Fernfahrer Könige über Bretter schieben. Draußen an der Wand lehnt ein Mann mit Kappe und
+  Kaffeebecher und dreht sich nach dir um.“ (`weg-desert-summit.ink`, `diner_ankunft`).
+- **Statist mit `.ambrose` bei Tag geprüft:** Der Test lief in der Zeitzone New York, 17 Uhr
+  Ortszeit. Geprüft wurde der Rentner an der Haltestelle in Maple Falls (56, 24):
+  - vor der ersten Lektion nur sein Satz;
+  - nach der ersten Lektion darunter „Ambrose: Man nannte es das Schach der rasenden Dame. Ein
+    schöner Name für eine Revolution.“;
+  - nach dem Abschied wieder nur sein Satz.
+    Das ist alles in Ordnung.

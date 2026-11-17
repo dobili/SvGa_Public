@@ -12,6 +12,8 @@ Regeln (``docs/spiel/orte/README.md``, Ortsplan):
 - Der Auslöser deckt den ganzen Durchgang (``durchgang.py``, Befund des Autors beim ersten Spielen,
   10.11.2026): jede begehbare Kachel der Luke, Treppe oder Tür, die ganze Breite des Wegs am
   Kartenrand, die ganze Lücke in der Wand. Kein Feld des Auslösers ist gesperrt.
+- Der Durchgang einer Tür vor einem Gebäude führt ins Gebäude (``durchgangsrichtung.py``, Spieltest 2,
+  17.11.2026), Befunde mit „Richtung:“.
 
 Dazu die Bilder an den Übergängen (``uebergangsbilder.py``, KARTENREGELN 10.77), Befunde mit „Bild:“,
 und feste Ankunftsfelder (``ankunftsfeld.py``, Karteneditor 1.4), Befunde mit „Ankunft:“: Das Feld
@@ -133,11 +135,14 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
 def main() -> int:
     from pipeline.abenteuer.ankunftsfeld import ankunftsbefunde
     from pipeline.abenteuer.durchgang import pruefe_durchgaenge, tueren_ohne_angabe
+    from pipeline.abenteuer.durchgangsrichtung import pruefe_richtungen
     from pipeline.abenteuer.moebelliste import lade_moebel
     from pipeline.abenteuer.uebergangsbilder import pruefe_alle
 
     alle, liste = szenen(), uebergaenge()
     befunde = pruefe(alle, liste) + pruefe_durchgaenge(alle, liste)
+    # Richtung: Der Durchgang einer Gebäudetür führt ins Gebäude (durchgangsrichtung.py, Spieltest 2).
+    befunde += [f"Richtung: {b}" for b in pruefe_richtungen(alle, liste)]
     # Bilder an den Übergängen (KARTENREGELN 10.77, uebergangsbilder.py): Tür, Treppe, Weg passen.
     moebel = lade_moebel()
     befunde += [f"Bild: {b}" for b in pruefe_alle(alle, liste, moebel)]

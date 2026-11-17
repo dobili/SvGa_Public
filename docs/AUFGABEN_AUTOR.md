@@ -144,6 +144,7 @@ Adresse mit „#abenteuer“ öffnen).
       dazu, auch wenn der Schlag Material kostet (Lxf7+ …: −2 Bauerneinheiten).“ In Schritt 2 (Schläge)
       musst du diesen Schlag nicht markieren. Zu deiner Frage: Die Markierung war richtig verlangt, aber
       als Schach, nicht als Schlag; nur der Satz war irreführend.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Meldung „Lxf7+ gibt Schach und gehört deshalb dazu, auch wenn der Schlag Material kostet (Lxf7+ Kxf7: −2 Bauerneinheiten).“; in Schritt 2 nicht verlangt). Gefunden durch Durchspielen zufälliger Runden, deshalb kein dauerhafter Test.
 - [ ] N2587. 10-Minuten-Partie gegen einen Bot zu Ende spielen: Die Auswertung danach ist nach wenigen
       Sekunden fertig (vorher etwa 20 Sekunden). Grund: Jeder Zug hat die gerade rechnende Stellung
       verworfen und neu angefangen; jetzt wird das Ergebnis behalten und eine laufende Rechnung
@@ -203,9 +204,11 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
       Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
       Zutreffend waren: …“ mit allen passenden Motiven.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Abb. 7.14 lösen, „Doppelangriff“: „Richtig! Ebenfalls dabei: Hinlenkung.“; neuer Test). Wortlaut bei falschem Motiv mit nur einem zutreffenden: „Nicht ganz. Das Motiv: Doppelschach.“ (bei mehreren „Zutreffend waren: …“).
 - [ ] N2595. Abb. 7.60 (Damiano-Matt, gemischt oder Mattbilder): nach 1. Th8+ Kxh8 statt 2. Dh5+ den Zug 2. Dh1+
       spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
       langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Abb. 7.60: 2. Dh1+ Kg8 3. Dh7# löst die Aufgabe; Abb. 7.11: Sc5+ bleibt falsch mit „laut Engine schwächer“; neuer Test).
 
 ### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
 
@@ -389,6 +392,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2526. Steckbrief (z. B. Spanische Partie) → „Ganze Eröffnung als Variante“; außerdem „Nur Praxis“ (z. B.
       Wiener Partie) ausprobieren.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Steckbrief Spanische Partie › „Ganze Eröffnung als Variante“; „Nur Praxis (Lichess)“ › Wiener Partie: „Buch 0 · Praxis … Züge“; neuer Test).
 - [ ] N2527. Übung 8 (Abb. 2.148): vor dem Lösen kein „Als Variante öffnen“, nach „Lösung zeigen“ schon; die
       Variante steht nach 4. Sg5, dahinter 4... Dxg5. Ebenso nach einer Taktik- oder Repertoire-Aufgabe (mit Lösung).
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Übung 8; nicht geprüft: Taktik- und Repertoire-Aufgabe.
@@ -455,6 +459,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Gambits mit kurzem Namen, Königsgambit 2. f4 exf4); offen für dich: Stimmen die Varianten mit Kapitel 3 überein?
 - [ ] N2531. Zurück zur Auswahl, „Aus“ auf „Eröffnungen (Kapitel 2)“: Die zuletzt gewählte Eröffnung aus
       Kapitel 2 ist noch da, und beim Wechsel auf Gambits das zuletzt gewählte Gambit.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 2 und Gambits behalten je ihre zuletzt gewählte Eröffnung; neuer Test).
 - [ ] N2532. Der Repertoire-Trainer steht jetzt auch bei Kapitel 3 unter „Die Trainer zu diesem
       Kapitel“. Passt das so?
 - [ ] N2533. Hake „Auch Eröffnungen aus der Praxis (Lichess)“ an: „Aus“ springt auf „Praxis (Lichess)“,
@@ -560,6 +565,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (alles erledigt: letzte Kachel „Partie · Gegen die Engine“; neuer Test).
 - [ ] N2444. Zähltrainer: Unter dem Brett steht immer die Seite am Zug, die auf dem rot
       markierten Feld schlagen würde (fünf Aufgaben durchtippen).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (fünf Aufgaben: Die Rechnung nennt jeweils die Seite unter dem Brett als angreifende Seite; neuer Test).
 - [ ] N2445. Nachschlagen › Werkzeuge des Buches: Die Bilder zeigen die neue Oberfläche (Leiste
       mit Symbolen, Bündel als Chips).
 - [ ] N2446. Kapitelseite bei großer Schrift (Einstellungen › Schriftgröße 150 %) auf dem Handy:
@@ -1159,6 +1165,7 @@ werden deine bisherigen Daten in das neue Format 7 umgewandelt; aus dem, was sch
       angenehm?
 - [ ] N1075. **Lichess-Aufgabe, falscher Zug:** Roter Pfeil und Verlust laut Engine wie bei den
       Buchaufgaben?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Lichess-Zusatzaufgabe, falscher Zug: „Nicht ganz“, roter Pfeil, „laut Engine“; neuer Test).
 - [ ] N1076. **Motivfrage:** Einverstanden mit der Zuordnung der Lichess-Themen zu den zwölf
       Grundmotiven (Räumung zur Hinlenkung, Ablenkung zur Überlastung)?
 - [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
@@ -1232,6 +1239,7 @@ Alles nach deinem Wunsch umgesetzt; Widerspruch genügt, dann baue ich es zurüc
 - [ ] N1013. **Zügeraten, Pfeile:** Trainer „Zug erraten“: Hast du den Partiezug selbst
       gefunden (auch mit Hinweis), erscheint kein Pfeil. Bei einem falschen Zug bleiben der
       goldene (Partiezug) und der rote Pfeil (dein Zug).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Treffer: kein Pfeil; falscher Zug: roter und goldener Pfeil; neuer Test).
 
 ### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
 

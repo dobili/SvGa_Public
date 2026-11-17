@@ -1675,9 +1675,9 @@
       "eigenschaften": {
         "von": "26,62",
         "bis": "26,62",
-        "tun": "schaut an den Klapptischen zu",
+        "tun": "steht dort, wo im Sommer die Klapptische standen",
         "wann": "tag",
-        "sagt": "statist.wegRivertonIronwood.bruecke.kiebitz",
+        "sagt": "statist.wegRivertonIronwood.bruecke.kiebitzOhneTische",
         "zeigt": "timmanShort"
       }
     },

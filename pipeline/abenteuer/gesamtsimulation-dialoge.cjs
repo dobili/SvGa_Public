@@ -1,6 +1,11 @@
 // Gesamtsimulation, Dialoge und ihre Folgen (aus gesamtsimulation-regeln.cjs, Größengrenze): Ink-
 // Geschichten mit den externen Funktionen der App (dialog/geschichte.ts) und was nach dem Dialog
 // geschieht (Partie, Runde, Partieform, Laden, Reise, Übergang) wie in oberwelt/useDialogende.ts.
+//
+// Haken für Werkzeuge, die mitlesen (lesefassung.cjs): Steht im Stand ein Leser (`st.leser`),
+// bekommt er jeden Dialogbeginn, jede Zeile mit ihren Tags und jedes Dialogende, darf die Wahl
+// treffen und nach Partie oder Runde gleich das Nachgespräch führen (`nachgespraech`). Ohne Leser
+// (Gesamtsimulation, Chaos-Prüfung) bleibt alles wie bisher, auch der Zufall.
 "use strict";
 const { Story } = require(require("./gesamtsimulation-regeln.cjs").APP);
 const {
@@ -104,6 +109,7 @@ function dialog(welt, st, knoten) {
     st.meldungen.add(`Knoten fehlt: ${knoten}`);
     return {};
   }
+  st.leser?.beginn(knoten, s);
   const abbruch = spieleAb(welt, st, s, datei, knoten);
   for (const kk of welt.knoten[datei])
     if (s.state.VisitCountAtPathString(kk) > 0)
@@ -116,6 +122,7 @@ function dialog(welt, st, knoten) {
     return { huelle: {}, neugeladen: true };
   }
   uebernimmVariablen(st, inkVariablen(s));
+  st.leser?.ende(knoten, st.folgen);
   return st.folgen;
 }
 
@@ -131,6 +138,17 @@ function inkVariablen(s) {
 function uebernimmVariablen(st, ausInk) {
   Object.assign(st.vars, ausInk, st.folgen.huelle);
   for (const n of Object.keys(besitzvariablen(st))) delete st.vars[n];
+}
+
+/**
+ * Welche Antwort genommen wird: die des Lesers (`st.leser.waehle`, bekommt die Texte der Antworten
+ * und gibt ihren Index zurück), sonst eine zufällige nach dem Startwert.
+ * Beispiel: Auf dem Dachboden stehen „Die Decke wegziehen“ und „Lieber nicht anfassen“ zur Wahl.
+ * Sonderfall: Ohne Leser wird der Zufall genau einmal je Wahl gezogen, wie vor dem Haken.
+ */
+function waehle(st, wahlen) {
+  if (st.leser) return st.leser.waehle(wahlen.map((w) => w.text));
+  return Math.floor(zufall(st) * wahlen.length);
 }
 
 /**
@@ -157,7 +175,8 @@ function spieleAb(welt, st, s, datei, knoten) {
   try {
     for (let wahlen = 0; wahlen <= WAHLEN_JE_DIALOG; wahlen++) {
       while (s.canContinue) {
-        s.Continue();
+        const text = s.Continue();
+        st.leser?.zeile(text, s.currentTags);
         meldeNeue();
         // Nur, solange noch etwas folgt: Nach der letzten Zeile endet der Dialog in der App sofort,
         // samt der Wirkungen dazwischen (Dialog.tsx, weiter).
@@ -165,7 +184,7 @@ function spieleAb(welt, st, s, datei, knoten) {
         if (a) return a;
       }
       if (!s.currentChoices.length) return null;
-      s.ChooseChoiceIndex(Math.floor(zufall(st) * s.currentChoices.length));
+      s.ChooseChoiceIndex(waehle(st, s.currentChoices));
     }
   } catch (e) {
     st.meldungen.add(`Laufzeitfehler ${knoten}: ${e.message}`);
@@ -268,6 +287,10 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
   if (f.partieform) spielePartieform(welt, st, f.partieform);
   if (f.partie) spielePartie(welt, st, f.partie);
   if (ziel) betrete(welt, st, ziel.karte);
+  // Leser: Wer gerade gespielt hat, spricht den Gegner gleich noch einmal an (derselbe Knoten).
+  const nochmal = ziel ? null : st.leser?.nachgespraech(f);
+  if (nochmal)
+    wendeFolgenAn(welt, st, dialog(welt, st, nochmal), null, reiseErlaubt);
 }
 
 module.exports = { dialog, wendeFolgenAn };

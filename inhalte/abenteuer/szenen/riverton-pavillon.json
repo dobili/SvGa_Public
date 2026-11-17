@@ -2,66 +2,357 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon.json",
   "art": "innen",
-  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zur Wand, damit man zum Brett schaut. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein offener achteckiger Pavillon mit Dielenboden unter einem Dach, ringsum ein weißes Metallgeländer, das an den vier schrägen Seiten gerade unter 45° durchläuft, mit einem Pfosten an jeder Ecke; die Dielen enden genau am Geländer, dahinter Wiese; der Fluss liegt gleich hinter dem Pavillon, sein Wind zieht hindurch (RO36, 17.11.2026, Achteck auf Wunsch des Autors). In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. Am nördlichen Geländer steht die Gedenktafel für Elias Odum unter einem kleinen Holzdach, daneben zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zum Geländer, damit man zum Brett schaut. Vor dem Eingang ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten der Eingang, eine Lücke im Geländer mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
-    "########################",
-    "########################",
-    "########################",
-    "#......................#",
-    "#......................#",
-    "#......rrrrrrrrrr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rwdwdwdwdr......#",
-    "#......rdwdwdwdwr......#",
-    "#......rrrrrrrrrr......#",
-    "#......................#",
-    "#......................#",
-    "############.###########"
+    "##########################",
+    "##########################",
+    "##########################",
+    "##########################",
+    "##########################",
+    "####..................####",
+    "###....................###",
+    "##......................##",
+    "#.......rrrrrrrrrr.......#",
+    "#.......rwdwdwdwdr.......#",
+    "#.......rdwdwdwdwr.......#",
+    "#.......rwdwdwdwdr.......#",
+    "#.......rdwdwdwdwr.......#",
+    "#.......rwdwdwdwdr.......#",
+    "#.......rdwdwdwdwr.......#",
+    "#.......rwdwdwdwdr.......#",
+    "#.......rdwdwdwdwr.......#",
+    "#.......rrrrrrrrrr.......#",
+    "##......................##",
+    "###....................###",
+    "####..................####",
+    "#############.############"
   ],
   "objekte": [
     {
-      "moebel": "wzFenster",
-      "feld": [2, 1],
-      "an_wand": true
+      "moebel": "rv18GelaenderOben",
+      "feld": [5, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "wzFenster",
-      "feld": [5, 1],
-      "an_wand": true
+      "moebel": "rv18GelaenderUnten",
+      "feld": [5, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "rv8Gruendungsbild",
-      "feld": [11, 1],
-      "an_wand": true
+      "moebel": "rv18GelaenderOben",
+      "feld": [6, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "wzFenster",
-      "feld": [17, 1],
-      "an_wand": true
+      "moebel": "rv18GelaenderUnten",
+      "feld": [6, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
     },
     {
-      "moebel": "wzFenster",
-      "feld": [20, 1],
-      "an_wand": true
+      "moebel": "rv18GelaenderOben",
+      "feld": [7, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [7, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [8, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [8, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [9, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [9, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [10, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [10, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [11, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [11, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [12, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [13, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [14, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [15, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [15, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [16, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [16, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [17, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [17, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [18, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [18, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [19, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [19, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderOben",
+      "feld": [20, 4],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18GelaenderUnten",
+      "feld": [20, 21],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 10],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [25, 10],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 11],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [25, 11],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 12],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [25, 12],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 13],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [25, 13],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 14],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [25, 14],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteLinks",
+      "feld": [0, 15],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "sd6RelingSeiteRechts",
+      "feld": [25, 15],
+      "bauteil_ok": true,
+      "kollision": false,
+      "begehbar_grund": "steht auf dem gesperrten Rand (Wiese, Fluss) des offenen Pavillons"
+    },
+    {
+      "moebel": "rv18SchraegzaunObenLinks",
+      "feld": [0, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv18SchraegzaunObenRechts",
+      "feld": [21, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv18SchraegzaunUntenLinks",
+      "feld": [0, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv18SchraegzaunUntenRechts",
+      "feld": [21, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr8InfotafelDach",
+      "feld": [12, 4],
+      "id": "gruendungstafel"
     },
     {
       "moebel": "rv5BankLang",
-      "feld": [8, 3]
+      "feld": [9, 6]
     },
     {
       "moebel": "rv5BankLang",
-      "feld": [13, 3]
+      "feld": [14, 6]
     },
     {
       "moebel": "rv8Holztisch",
-      "feld": [1, 5],
+      "feld": [3, 8],
       "id": "t1"
     },
     {
@@ -76,31 +367,31 @@
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [1, 4],
+      "feld": [3, 7],
       "zu": "t1",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [1, 6],
+      "feld": [3, 9],
       "zu": "t1",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [3, 4],
+      "feld": [5, 7],
       "zu": "t1",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [3, 6],
+      "feld": [5, 9],
       "zu": "t1",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv8Holztisch",
-      "feld": [19, 5],
+      "feld": [19, 8],
       "id": "t2"
     },
     {
@@ -115,31 +406,31 @@
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [19, 4],
+      "feld": [19, 7],
       "zu": "t2",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [19, 6],
+      "feld": [19, 9],
       "zu": "t2",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [21, 4],
+      "feld": [21, 7],
       "zu": "t2",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [21, 6],
+      "feld": [21, 9],
       "zu": "t2",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv8Holztisch",
-      "feld": [1, 13],
+      "feld": [3, 16],
       "id": "t5"
     },
     {
@@ -154,31 +445,31 @@
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [1, 12],
+      "feld": [3, 15],
       "zu": "t5",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [1, 14],
+      "feld": [3, 17],
       "zu": "t5",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [3, 12],
+      "feld": [5, 15],
       "zu": "t5",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [3, 14],
+      "feld": [5, 17],
       "zu": "t5",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv8Holztisch",
-      "feld": [19, 13],
+      "feld": [19, 16],
       "id": "t6"
     },
     {
@@ -193,179 +484,195 @@
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [19, 12],
+      "feld": [19, 15],
       "zu": "t6",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [19, 14],
+      "feld": [19, 17],
       "zu": "t6",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [21, 12],
+      "feld": [21, 15],
       "zu": "t6",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [21, 14],
+      "feld": [21, 17],
       "zu": "t6",
       "versatz": [4, 0]
     },
     {
       "moebel": "rv5Limonade",
-      "feld": [11, 16]
+      "feld": [12, 20]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [18, 15]
+      "feld": [19, 18]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [5, 15]
+      "feld": [6, 18]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [5, 3]
+      "feld": [6, 6]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [18, 3]
+      "feld": [19, 6]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [12, 16],
+      "feld": [13, 20],
       "versatz": [0, 2]
     },
     {
-      "moebel": "mf5TuerSuedHolz",
-      "feld": [12, 17],
-      "an_wand": true
-    },
-    {
       "moebel": "rv14FigurWeissTurm",
-      "feld": [8, 12],
+      "feld": [9, 15],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurWeissKoenig",
-      "feld": [10, 12],
+      "feld": [11, 15],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurWeissBauer",
-      "feld": [9, 11],
+      "feld": [10, 14],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurWeissBauer",
-      "feld": [11, 11],
+      "feld": [12, 14],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurWeissSpringer",
-      "feld": [12, 10],
+      "feld": [13, 13],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurWeissBauer",
-      "feld": [10, 9],
+      "feld": [11, 12],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzTurm",
-      "feld": [9, 5],
+      "feld": [10, 8],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzKoenig",
-      "feld": [11, 5],
+      "feld": [12, 8],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzBauer",
-      "feld": [10, 6],
+      "feld": [11, 9],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzBauer",
-      "feld": [12, 6],
+      "feld": [13, 9],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzBauer",
-      "feld": [11, 8],
+      "feld": [12, 11],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzLaeufer",
-      "feld": [13, 7],
+      "feld": [14, 10],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv15BankLangSenkrecht",
-      "feld": [2, 8]
+      "feld": [3, 11]
     },
     {
       "moebel": "rv15BankLangSenkrecht",
-      "feld": [21, 8]
+      "feld": [22, 11]
     },
     {
       "moebel": "rv14FigurWeissLaeufer",
-      "feld": [13, 11],
+      "feld": [14, 14],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurSchwarzSpringer",
-      "feld": [14, 6],
+      "feld": [15, 9],
       "versatz": [0, -4]
     },
     {
       "moebel": "rv14FigurentruheA",
-      "feld": [6, 15]
+      "feld": [7, 18]
     },
     {
       "moebel": "rv14FigurentruheB",
-      "feld": [16, 15]
+      "feld": [17, 18]
+    },
+    {
+      "moebel": "rv18PavillonEingang",
+      "feld": [12, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [23, 9]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [2, 16]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [23, 16]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [12, 16],
+      "feld": [13, 20],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "pavillonAusgang",
-      "feld": [12, 17]
+      "feld": [13, 21]
     },
     {
       "name": "gedenktafel",
-      "feld": [11, 4]
+      "feld": [12, 6]
     },
     {
       "name": "limonadenglas",
-      "feld": [11, 16],
+      "feld": [12, 20],
       "auf_moebel": true
     }
   ],
   "figuren": [
     {
       "name": "slick",
-      "feld": [5, 8]
+      "feld": [6, 11]
     },
     {
       "name": "ray",
-      "feld": [18, 8]
+      "feld": [19, 11]
     },
     {
       "name": "tamsin",
-      "feld": [8, 16],
+      "feld": [9, 19],
       "blick": "rechts"
     }
   ],
@@ -373,7 +680,7 @@
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [9, 3],
+      "feld": [10, 6],
       "eigenschaften": {
         "tun": "sitzt auf der Bank und schaut der Partie auf dem Bodenbrett zu",
         "wann": "tag",
@@ -383,7 +690,7 @@
     {
       "name": "wettender",
       "typ": "statist",
-      "feld": [21, 4],
+      "feld": [22, 7],
       "eigenschaften": {
         "tun": "sitzt am Brett und wettet um eine Limonade",
         "wann": "tag",
@@ -397,5 +704,6 @@
     "w": "fliesenWeiss",
     "d": "holzDunkel",
     "r": "stein"
-  }
+  },
+  "wandart": "gras"
 }

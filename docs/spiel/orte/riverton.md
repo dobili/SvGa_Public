@@ -1598,3 +1598,40 @@ Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibun
 - `riverton.wohnwagen` (14 × 9): sechs Reihen tief; Bett mit Bord und Pokalen, Nasszellentür, Küchenzeile, Sitzecke unter dem Fenster, Kuriertasche in der Ecke, Teppich vor dem Bett (kein Kurierrad).
 - `riverton.schuppen` (beide Fassungen): eine Reihe tiefer.
 - `lockport.gasthaus` (23 × 14): Kegelbahn bis Spalte 14, kurzer Tresen mit drei Hockern, Küchentür im Eck; Fässer und Holzstapel sind weg; sechs Tische mit Gängen dazwischen (einer mit nur einem Stuhl).
+
+## Pavillon offen (RO36, Nebenchat mittel-2, 17.11.2026)
+
+Der Autor hat RO36 zugestimmt: Slicks Club im Pavillon (`riverton-pavillon`, beide Fassungen mit
+Perfect Move) ist innen ein offener Pavillon wie das Bild außen, kein Holzsaal mehr. Dielenboden
+unter dem Dach, ringsum ein weißes Geländer (`sd6Reling*`, auf dem gesperrten Rand), dahinter Wiese
+(`wandart` gras) und im Norden der Fluss (drei Reihen Wasser). Der Eingang ist eine Lücke im Geländer
+mit zwei Pfosten (`rv18PavillonEingang`). Die Gedenktafel für Elias Odum steht am Geländer zum Fluss
+unter einem kleinen Holzdach (`cr8InfotafelDach`, Auslöser `gedenktafel` davor); in der Fassung mit
+Perfect Move hängt deren Schild links am Geländer, die Rechnerschränke stehen am Geländer zum Fluss.
+Clubtische, Bodenbrett, Figuren, Bänke, Truhen, Auslöser und Ausgang sind unverändert. Fenster und
+Wände gibt es nicht mehr. Raumgröße: 22 × 18 gegen den Pavillon außen (11 × 7 nach dem neuen
+Maßstab), passt.
+
+### Nachtrag: Achteck (17.11.2026, Wunsch des Autors)
+
+Das rechteckige Deck mit Tischen, Bodenbrett, Truhen, Figuren und Auslösern bleibt; darum liegt jetzt
+ein Achteck (Rand eine Kachel, Ecken um vier Kacheln schräg abgeschnitten, Raum 26 × 22). Die
+Seitentische rücken eine Kachel nach innen, dazu vier Pflanzen an den Seiten. Das Geländer läuft an
+den Schrägen in Stufen aus Eckstücken (`sd6RelingObenLinks` usw.), ein schräges Geländerbild gibt es
+im Bestand nicht. Der Fluss ist im Pavillon nicht mehr zu sehen: Er hätte als Boden mitgezählt, und
+der Pavillon außen hätte dafür auf das 2,1-Fache wachsen müssen. Außen steht der Pavillon in allen
+fünf Fassungen von Riverton mit `massstab` 1,4375 (184 × 207 Pixel, 11,5 Kacheln breit), der Eingang
+liegt auf (41, 54). Raumgröße: innen 24 × 17 gegen außen 11,5 × 7,2, passt.
+
+### Nachtrag: schräge Geländer (17.11.2026, Rückmeldung des Autors)
+
+Die Stufen aus Eckstücken waren mehrfach abgeschnitten, zwischen den Stufen fehlte die Verbindung,
+und die Dielen ragten außen über die Stufen hinaus. Neu zeichnet `pipeline/abenteuer/schraegzaun.py`
+aus LimeZus Fence_2 echte 45°-Stücke (je Ecke 5 × 6 Kacheln, Holm und Pfosten aus dem geraden
+Stück geschert, Eckpfosten an der Seite, Wiese außen) sowie ein gerades Stück oben ohne Graszeile
+und gerade Stücke unten und den Durchgang mit Wiese in der letzten Reihe. Katalog:
+`rv18SchraegzaunObenLinks` … `UntenRechts`, `rv18GelaenderOben`, `rv18GelaenderUnten`; der Eingang
+`rv18PavillonEingang` nimmt `schraegzaun_durchgang.png`. Der Eckschnitt ist jetzt 3 statt 4: So
+liegen die Stufen des Kachelrasters ganz unter dem Band, außen ist nur Wiese, innen nur Dielen. Die
+Schrägen sperren fein nur das Band über den Dielen (`maske_fein`), die Wiese sperrt das Raster.
+Bilder erzeugen: `python -m pipeline.abenteuer.schraegzaun PRIVAT`.

@@ -1172,3 +1172,15 @@ rechnet aber weiter in Kartenpixeln, sodass Karten, Kollision, Wege, Szenen und 
 bleiben. Im Verhältnis zur Karte ist der Held 11⅓ × 20 Pixel groß; `tuergroesse.py` (Regel 10.92)
 prüft mit diesem Maß. Noch zu klein: Villen in Maple Falls (Tür 19 hoch, nötig 1,05) sowie Diner
 und Waschsalon mit Glastür (17 hoch, nötig 1,18).
+
+## RO33 und RO36: Türen in Figurgröße, Pavillon offen (Antwort des Autors, 17.11.2026 morgens)
+
+- **RO33:** Alle Gebäude haben Türen in Figurgröße (Regel 10.92, Figur 11⅓ × 20 Kartenpixel nach
+  Variante B); dafür sind 16 Gebäudebilder mit Maßstab 1,1 bis 1,25 gezeichnet, Nachbarn gerückt,
+  Kollision und Türangaben rechnen den Maßstab mit (`objektmassstab.py`). Einzige Ausnahme ist das
+  Diner in Maple Falls: Der Plattenweg zwischen Diner und Schule (Wunsch des Autors, Runde 8) geht
+  vor, die Tür bleibt etwas niedrig; `tuergroesse` meldet sie weiter als Hinweis. Vom Autor so
+  bestätigt.
+- **RO36:** Slicks Club im Pavillon Riverton wird innen ein offener Pavillon mit Geländer und Blick
+  auf den Fluss statt eines Holzsaals mit Wänden; außen bleibt der offene Achteckpavillon (Maßstab
+  1,375). Vom Autor bestätigt, Umsetzung durch den Nebenchat mittel-2.

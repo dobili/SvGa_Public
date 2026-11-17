@@ -21,6 +21,7 @@ import { t } from "../../i18n/sprache";
 import { speicherzustand } from "../../speicher/speicher";
 import { ANFANGSPARTIEN } from "../../spiel/wertung";
 import "../abenteuer.css";
+import "../abenteuer-atmosphaere.css";
 import "../spielfarben.css";
 import "../bedienung.css";
 import { useEinstellungen } from "../../app/einstellungen";

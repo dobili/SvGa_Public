@@ -29,6 +29,7 @@ import { tSpiel } from "../texte/texte";
 import { sucheKipppunkt, type Bewerter } from "./kipppunkt";
 import { partieeinstellungAus } from "./partiestart";
 import { partieergebnisAus } from "./partieergebnis";
+import { mitFremderEroeffnung, mitVorratsstellung } from "./vorratsstellung";
 
 /** Rechenzeit und Tiefe je Stellung bei der Kipppunktsuche (klein, damit das Angebot schnell kommt). */
 const KIPPPUNKT_MS = 600;
@@ -94,7 +95,8 @@ async function mitAufgeloesterStellung(auftrag: Partieauftrag): Promise<Partieau
  * Kennung im Spielstand merken (damit ein Neuladen mitten in der Partie zurückfindet).
  */
 async function legePartieAn(auftrag: Partieauftrag, mitMaia: boolean): Promise<string | null> {
-  const aufgeloest = await mitAufgeloesterStellung(auftrag);
+  const ausVorrat = await mitVorratsstellung(mitFremderEroeffnung(auftrag));
+  const aufgeloest = ausVorrat ? await mitAufgeloesterStellung(ausVorrat) : null;
   if (!aufgeloest) return null;
   // Der Name im Profil ist ein Textschlüssel; die Partie zeigt den Namen in der Sprache des Lesers.
   const einstellung = {

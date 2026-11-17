@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-stellungsvorrat.schema.json",
+  "title": "Stellungsvorrat des Schach-Abenteuers",
+  "description": "Startstellungen der kurzen Partieformen aus Partien Bot gegen Bot (pipeline/abenteuer/stellungsvorrat.py), je Stärkeband und Format; der Leser übernimmt die Seite am Zug. Die App wählt passend zur Stärke des Gegners und ohne Wiederholung (app/src/abenteuer/regeln/vorrat.ts).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "baender"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "baender": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/band" }
+    }
+  },
+  "$defs": {
+    "eintrag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "fen", "zuege", "bewertung"],
+      "properties": {
+        "kennung": {
+          "type": "string",
+          "pattern": "^band[0-9]+\\.[a-zA-Z]+[0-9]+$"
+        },
+        "fen": { "type": "string", "minLength": 10 },
+        "zuege": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "bewertung": {
+          "description": "Bewertung aus Sicht der Seite am Zug in Bauern (Stockfish, Tiefe 12)",
+          "type": "number"
+        }
+      }
+    },
+    "band": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "eloVon", "eloBis", "formate"],
+      "properties": {
+        "kennung": { "type": "string", "pattern": "^band[0-9]+$" },
+        "eloVon": { "type": "number" },
+        "eloBis": { "type": "number" },
+        "formate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stellungsduell",
+            "vorteil",
+            "endspielSieg",
+            "endspielRemis"
+          ],
+          "properties": {
+            "stellungsduell": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/eintrag" }
+            },
+            "vorteil": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/eintrag" }
+            },
+            "endspielSieg": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/eintrag" }
+            },
+            "endspielRemis": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/eintrag" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

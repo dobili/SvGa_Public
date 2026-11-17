@@ -32,6 +32,7 @@ describe("Eröffnung fremd (R13c)", () => {
 
   it("zeigt den Verlauf in der Notation des Buches", () => {
     expect(verlaufAlsText(["e4", "c6", "Nf3", "d5"], "de")).toBe("1. e4 c6 2. Sf3 d5");
+    expect(verlaufAlsText(["e4", "c6", "Nf3", "d5", "Nc3"], "de", 2)).toBe("… 2... d5 3. Sc3");
   });
 });
 

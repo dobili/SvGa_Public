@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Das Zusatzpaket enthält `ui/rahmen.json` und die Bilder (eigene Platzhalter
  * aus inhalte/abenteuer/ui, später die gekauften Rahmen aus Modern UI im privaten Ordner). Diese
- * Datei lädt sie und liefert CSS-Variablen; abenteuer.css zeichnet damit `border-image` unter der
+ * Datei lädt sie und liefert CSS-Variablen; abenteuer-atmosphaere.css zeichnet damit `border-image` unter der
  * Klasse `mit-pixelrahmen`. Fehlt etwas, bleibt das bisherige Aussehen (keine Klasse).
  * Abhängigkeiten: paket/paketlader.ts.
  */

@@ -183,9 +183,12 @@ Quellen der Stellungen (`Startstellung`): `abbildung` (Buchabbildung des Clubkap
 - Keine eigene Siegbedingung, sondern eine Startstellung (`startstellung: eroeffnung`): Die Partie
   beginnt nach 6 bis 12 Halbzügen einer Eröffnung, danach gilt das Format der Begegnung (R12 ganze
   Partie oder R13b Vorteil herausarbeiten). Der Einstieg zeigt die Züge der Eröffnung.
-- Auswahl: fest in der Begegnung (Lichess-Eröffnungen). Die Auswahl nach dem Eröffnungsprofil oder
-  den Schwächen des Lesers ist vorgemerkt, aber nicht gebaut (braucht das Profil zur Laufzeit beim
-  Bau des Auftrags).
+- Auswahl: Die Begegnung nennt eine Eröffnung und optional `alternativen`. Gewählt wird die, die
+  der Leser in seinen Partien der App (aus der Grundstellung) am seltensten mit denselben ersten
+  zwei Halbzügen hatte, bei Gleichstand zufällig (`regeln/fremdeEroeffnung.ts`). Ein eigenes
+  Eröffnungsprofil gibt es in der App nicht; die Partienliste genügt. Die Auswahl nach den
+  Schwächen des Lesers (Fehlerdatenbank) ist nicht gebaut: Sie bräuchte eine Zuordnung von
+  Fehlerarten zu Eröffnungen, die es noch nicht gibt.
 - Karten: wie das Format; Vorgaben nur bei ganzer Partie.
 
 ### Gemeinsam für R13 bis R13c
@@ -197,9 +200,20 @@ Quellen der Stellungen (`Startstellung`): `abbildung` (Buchabbildung des Clubkap
   `nachher` je Ausgang), Texte unter `erzaehlung.*` in `inhalte/abenteuer/texte/de.json`. Die
   Spielhülle zeigt den Einstieg vor dem ersten eigenen Zug, das Ziel mit den restlichen Zügen
   während der Partie und den Satz je Ausgang danach.
+- **Vorrat Bot gegen Bot (Wunsch des Autors, 17.11.2026):** Startstellung `vorrat` mit `format`
+  `stellungsduell`, `vorteil`, `endspielSieg` oder `endspielRemis`. Stockfish spielt je
+  Stärkeband (bis 900, 900 bis 1200, 1200 bis 1500, 1500 bis 1800, ab 1800) mit der Stufe des
+  Bandes gegen sich selbst; geprüfte Übernahmepunkte (Fenster wie oben, Phase nach Material:
+  Endspiel bis 26 Punkte ohne Bauern, kein Matt in drei) liegen mit der Zugfolge in
+  `inhalte/abenteuer/stellungsvorrat.json` (`python -m pipeline.abenteuer.stellungsvorrat
+--erzeugen`, `--pruefen`). Die App wählt nach der Zielstärke des Gegners, zufällig und ohne
+  Wiederholung, bis ein Format durch ist (`vorratGenutzt` im Spielstand); der Leser übernimmt die
+  Seite am Zug, der Einstieg zeigt die letzten Züge der Vorgeschichte. Erzeugen auf dem Handy
+  entfällt: Schon auf dem Rechner braucht eine Partie mit Prüfung einige Sekunden und nicht jede
+  liefert eine passende Stellung; mit der WebAssembly-Engine auf einem Kern wäre es ein Vielfaches.
 - **Kein Wiedereinstieg** (R14, Punkt 1).
 - **Prüfung:** `python -m pipeline.abenteuer.kurzformate` bewertet alle Startstellungen einmal
-  mit derselben Engine wie die App (Fenster wie oben, Spielraum 0,1; Simultanbretter ausgenommen).
+  mit derselben Engine wie die App (Fenster wie oben, Spielraum 0,1; auch die Simultanbretter).
 - **Einsatz (17.11.2026):** Etwa ein Drittel der ganzen Straßen- und Nebenpartien ist kurz:
   Dime auf Weg 3 (Eröffnung fremd mit R13b), Mags am Diner (R13b), Dime in der Kreidenacht (R13a
   gewinnen), dazu wurden zwei Stellungsduelle zu Endspielen (Sol in Summit City: gewinnen; Ruiz

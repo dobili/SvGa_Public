@@ -32,8 +32,13 @@ export function Kurzformzeile({ stand }: { stand: Kurzformstand }) {
   );
 }
 
-/** Die Züge, die der Einstieg zeigt: aus der Erzählung oder aus der Eröffnung der Begegnung. */
-function verlaufDer(begegnung: Begegnungsdaten): readonly string[] {
+/**
+ * Die Züge, die der Einstieg zeigt: die Vorgeschichte aus dem Vorrat, die Erzählung oder die
+ * Eröffnung der Begegnung.
+ */
+function verlaufDer(begegnung: Begegnungsdaten, partie: Partie): readonly string[] {
+  const vorgeschichte = partie.einstellung.abenteuer?.vorgeschichte;
+  if (vorgeschichte) return vorgeschichte;
   if (begegnung.erzaehlung?.verlauf) return begegnung.erzaehlung.verlauf;
   return begegnung.startstellung.art === "eroeffnung" ? begegnung.startstellung.zuege : [];
 }
@@ -53,7 +58,7 @@ export function Erzaehlvorhang({
   const [zu, setzeZu] = useState(schonGezogen);
   const vorher = begegnung?.erzaehlung?.vorher;
   if (!begegnung || !vorher || zu || schonGezogen || partie.ende) return null;
-  const verlauf = verlaufAlsText(verlaufDer(begegnung), sprache());
+  const verlauf = verlaufAlsText(verlaufDer(begegnung, partie), sprache());
   return (
     <section className="abenteuer-erzaehlung" role="dialog" data-testid="abenteuer-erzaehlung">
       <p>{tSpiel(vorher)}</p>

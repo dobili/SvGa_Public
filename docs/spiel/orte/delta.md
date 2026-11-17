@@ -222,8 +222,8 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
 - **Deich, Spur P3:** Messwagen in der Marsch unter der Krone, zwischen Sandsäcken (`pd7Messwagen`,
   eigenes Bild `messwagen.png`, 4 × 3). A (135, 11), B (137, 11), C (139, 11).
   - `spurPM3` (liegengelassene Mappe): A (140, 15), B (142, 15), C (144, 15).
-- **Bayou, Kiste im Hausboot (15, 2.6):** neuer Steg (Spalten 7–11, Reihen 12–13) von der ersten Insel
-  nach Westen zum Hausboot (`pd7Hausboot`, eigenes Bild `hausboot.png`, 6 × 4, bei (1, 10)), Laterne
+- **Bayou, Kiste im Hausboot (15, 2.6):** neuer Steg (Spalten 8–11, Reihen 12–13) von der ersten Insel
+  nach Westen zum Hausboot (`pd7Hausboot`, eigenes Bild `hausboot.png`, 6 × 4, bei (2, 10)), Laterne
   am Steg, Blechkiste auf der Insel (16, 14). Alle Varianten gleich.
   - `ereignisHausboot`: (8, 12); `finchBauerC` in der Reuse am Steg: (10, 13), mit Finkenzeichen;
   - `seite05`: Nordostufer der ersten Insel (22, 10), später an einer Sumpfzypresse.
@@ -242,11 +242,11 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   Aufgabenrunde `wegSiliconDelacroix.kapitaensproblem` (Umwandlung, Hinlenkung, vier Aufgaben), dann
   Horn, Fund `kapitaensmuetze` (Extra `aussehen:kapitaensmuetze`) und 20 Münzen.
 - **Deich:** `pumpenhaus` (153, 16), `spurPM3` an den Feldern oben (Fund Mappe „Hochwasserhilfe“).
-- **Bayou:** Figur Pépé Thibodeaux (`bayou.pepe`, (7, 13)), Auslöser `ereignisHausboot`, `finchBauerC`,
+- **Bayou:** Figur Pépé Thibodeaux (`bayou.pepe`, (8, 13)), Auslöser `ereignisHausboot`, `finchBauerC`,
   `seite05`, `sperreHochwasser` (8, 17, am überfluteten Steg, einmal ein Satz), `luftboot` (A und C
   (17, 26), B (14, 29)). Quest `bayou.kisteImHausboot` (klein): Formulare ansehen, Partie
   `bayou.hausboot` ab dem 21. Zug (Weiß, Ambroses Seite, Gegner `bayou.hafenarbeiter`), Fund
-  `formularCafeDesExiles`, 15 Münzen. Die Laterne steht jetzt bei (6, 10).
+  `formularCafeDesExiles`, 15 Münzen. Die Laterne steht jetzt bei (7, 10). Stand 17.11.2026: Hausboot, Steg, Pépé und Laterne liegen ein Feld weiter östlich, weil das Ufer am Westrand durchgezogen wurde (Weltpuzzle); der Quersteg von der ersten Insel reicht bis an den Südsteg der Zypresseninsel (Reihen 11–12, bis Spalte 29).
 - **Sperre S8:** Der Übergang `bayou` in Port Delacroix prüft `bayouOffen` = Musikhaus offen und
   Gummistiefel, im Sommer (Nadel Summit City) ohne Stiefel; der Dialog nennt den Grund.
 - **Sammelstränge:** Fundknoten zählen die gemeinsamen Ink-Variablen `buchseiten`, `finchFiguren`,

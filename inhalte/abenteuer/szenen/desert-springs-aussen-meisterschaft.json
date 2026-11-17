@@ -22,9 +22,9 @@
     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "#.............ppppppppppppppppppppppp......................#",
-    "#.............ppppppppppppppppppppppp......................#",
-    "#................pppppppppppppppppppp......................#",
+    "#..................pppppppppppppppppp......................#",
+    "#..................pppppppppppppppppp......................#",
+    "#..................pppppppppppppppppp......................#",
     "#..............................pppppp......................#",
     "#..............................pppppp......................#",
     "#..............................pppppp......................#",
@@ -753,7 +753,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [17, 14],
+      "feld": [19, 14],
       "vorn": true
     },
     {
@@ -797,12 +797,14 @@
     },
     {
       "moebel": "mf4Diner",
-      "feld": [9, 7],
+      "feld": [9, 6],
+      "versatz": [-5, 0],
+      "massstab": 1.2,
       "id": "diner"
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [18, 6]
+      "feld": [20, 6]
     },
     {
       "moebel": "rvBahnsteigbank",
@@ -814,7 +816,7 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [7, 13]
+      "feld": [6, 13]
     },
     {
       "moebel": "wg4Felsgruppe",
@@ -958,10 +960,10 @@
     {
       "name": "touristen",
       "typ": "statist",
-      "feld": [16, 7],
+      "feld": [20, 7],
       "eigenschaften": {
-        "von": "16,7",
-        "bis": "20,7",
+        "von": "20,7",
+        "bis": "24,7",
         "tun": "fotografieren den alten Bahnhof",
         "wann": "tag",
         "sagt": "statist.desertSprings.aussen.touristen"

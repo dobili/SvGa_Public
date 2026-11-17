@@ -219,7 +219,9 @@
     },
     {
       "moebel": "iw5Eisenwaren",
-      "feld": [38, 36]
+      "feld": [38, 35],
+      "versatz": [-5, 0],
+      "massstab": 1.2
     },
     {
       "moebel": "ds6Wohnwagen",
@@ -239,7 +241,7 @@
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [38, 35]
+      "feld": [36, 37]
     },
     {
       "moebel": "wg4Gras",
@@ -263,7 +265,7 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [46, 42]
+      "feld": [48, 42]
     },
     {
       "moebel": "wg4Gras",
@@ -351,7 +353,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [37, 35]
+      "feld": [36, 35]
     },
     {
       "moebel": "wg4BlumeGelb",

@@ -5521,8 +5521,8 @@
      "id": 13,
      "name": "zuckerwattefrau",
      "type": "statist",
-     "x": 352,
-     "y": 384,
+     "x": 416,
+     "y": 240,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5541,12 +5541,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "21,23"
+       "value": "26,14"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "25,25"
+       "value": "27,15"
       },
       {
        "name": "sagt",
@@ -6219,7 +6219,7 @@
      "id": 34,
      "name": "geigerin",
      "type": "statist",
-     "x": 624,
+     "x": 608,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -6239,12 +6239,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "39,10"
+       "value": "38,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "39,10"
+       "value": "38,10"
       }
      ]
     },

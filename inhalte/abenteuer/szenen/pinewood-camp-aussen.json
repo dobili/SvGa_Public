@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise) und das Rangerhaus aus dunklem Holz mit Schieferdach; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Weg eine weitere Blockhütte mit Holzstapel und Hackklotz des Holzhackers, unter der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise) und das Rangerhaus aus dunklem Holz mit Schieferdach; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Ufer eine weitere Blockhütte mit Holzstapel, daneben der Hackklotz des Holzhackers; neben der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -23,8 +23,8 @@
     "#..................ee......................................#",
     "#..................ee......................................#",
     "#..................ee......................................#",
-    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
-    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
+    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee......#",
+    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee......#",
     "#..................eeeeee..................................#",
     "#..................eeeeeefffff.............................#",
     "#......................fffffffff...........................#",
@@ -119,11 +119,11 @@
     },
     {
       "moebel": "mf6Seerose1",
-      "feld": [20, 37]
+      "feld": [23, 37]
     },
     {
       "moebel": "mf6Seerose2",
-      "feld": [21, 38]
+      "feld": [24, 38]
     },
     {
       "moebel": "mf6Seerose3",
@@ -175,10 +175,6 @@
       "moebel": "ld14BlockhuetteGruen",
       "feld": [2, 26],
       "versatz": [0, -13]
-    },
-    {
-      "moebel": "cc4Holzstapel",
-      "feld": [8, 27]
     },
     {
       "moebel": "sc7Hackklotz",
@@ -504,10 +500,10 @@
     {
       "name": "anglerin",
       "typ": "statist",
-      "feld": [38, 26],
+      "feld": [42, 32],
       "eigenschaften": {
-        "von": "38,26",
-        "bis": "38,26",
+        "von": "42,32",
+        "bis": "42,32",
         "tun": "wirft am Steg die Angel aus",
         "wann": "tag",
         "sagt": "statist.pinewoodCamp.aussen.anglerin"
@@ -516,10 +512,10 @@
     {
       "name": "bademeister",
       "typ": "statist",
-      "feld": [32, 26],
+      "feld": [34, 30],
       "eigenschaften": {
-        "von": "32,26",
-        "bis": "32,26",
+        "von": "34,30",
+        "bis": "34,30",
         "tun": "sitzt am Strand und passt auf",
         "wann": "tag",
         "sagt": "statist.pinewoodCamp.aussen.bademeister"
@@ -540,10 +536,10 @@
     {
       "name": "holzhacker",
       "typ": "statist",
-      "feld": [5, 24],
+      "feld": [9, 28],
       "eigenschaften": {
-        "von": "5,24",
-        "bis": "5,24",
+        "von": "9,28",
+        "bis": "9,28",
         "tun": "hackt Holz für das Feuer",
         "wann": "morgen"
       }
@@ -551,10 +547,10 @@
     {
       "name": "laeufer",
       "typ": "statist",
-      "feld": [46, 22],
+      "feld": [46, 24],
       "eigenschaften": {
-        "von": "46,22",
-        "bis": "54,22",
+        "von": "46,24",
+        "bis": "57,24",
         "tun": "zwei Kinder laufen um die Wette",
         "wann": "tag"
       }
@@ -573,10 +569,10 @@
     {
       "name": "gitarrist",
       "typ": "statist",
-      "feld": [26, 18],
+      "feld": [24, 18],
       "eigenschaften": {
-        "von": "26,18",
-        "bis": "26,18",
+        "von": "24,18",
+        "bis": "24,18",
         "tun": "spielt Gitarre am Feuer",
         "wann": "abend",
         "blick": "unten"
@@ -635,10 +631,10 @@
     {
       "name": "specht",
       "typ": "tier",
-      "feld": [47, 3],
+      "feld": [30, 4],
       "eigenschaften": {
-        "von": "47,3",
-        "bis": "47,3",
+        "von": "30,4",
+        "bis": "30,4",
         "verhalten": "sitzen"
       }
     },

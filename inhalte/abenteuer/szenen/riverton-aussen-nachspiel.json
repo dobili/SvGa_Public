@@ -66,10 +66,10 @@
     "#...................ee........................ee.........ppp~~~~~~~~...#",
     "#...................ee........................ee.........ppp~~~~~~~~...#",
     "#...................ee........................ee.........ppp~~~~~~~~...#",
-    "#...................ee............ppppppppppppee.........ppp~~~~~~~~...#",
-    "#...................ee............ppppppppppppee.........ppp~~~~~~~~...#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppppppppee.........ppp~~~~~~~~...#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...................ppp~~~~~~~~...#",
+    "#...................ee........................ee.........ppp~~~~~~~~...#",
+    "#...................ee........................ee.........ppp~~~~~~~~...#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppppppppppppee.........ppp~~~~~~~~...#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppppppppppp...........ppp~~~~~~~~...#",
     "#########################################################pp#~~~~~~~~####"
   ],
   "objekte": [
@@ -1090,11 +1090,26 @@
     },
     {
       "moebel": "rvPavillonAchteck",
-      "feld": [35, 42]
+      "feld": [35, 41],
+      "massstab": 1.375,
+      "maske": [
+        "...........",
+        "...........",
+        "...........",
+        "...........",
+        "...........",
+        "###########",
+        "###########",
+        "###########",
+        "###########",
+        "###########",
+        "###########",
+        ".#########."
+      ]
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [41, 51],
+      "feld": [50, 47],
       "id": "schachtisch"
     },
     {
@@ -1109,15 +1124,15 @@
     },
     {
       "moebel": "sb8Kreidespringer",
-      "feld": [34, 52]
+      "feld": [35, 54]
     },
     {
       "moebel": "rvLaubbaumDunkel",
-      "feld": [48, 48]
+      "feld": [48, 50]
     },
     {
       "moebel": "rvLaubbaum",
-      "feld": [52, 49]
+      "feld": [52, 51]
     },
     {
       "moebel": "wg4Busch",
@@ -1125,7 +1140,7 @@
     },
     {
       "moebel": "wg4Busch",
-      "feld": [50, 52]
+      "feld": [55, 49]
     },
     {
       "moebel": "wg4Busch",
@@ -1293,7 +1308,7 @@
     },
     {
       "name": "pavillonEingang",
-      "feld": [39, 51]
+      "feld": [40, 53]
     },
     {
       "name": "bildschirmtische",
@@ -1323,7 +1338,7 @@
     },
     {
       "name": "victor",
-      "feld": [46, 46]
+      "feld": [47, 46]
     }
   ],
   "belebung": [
@@ -1343,10 +1358,10 @@
     {
       "name": "parkschachspieler",
       "typ": "statist",
-      "feld": [41, 53],
+      "feld": [50, 49],
       "eigenschaften": {
-        "von": "41,53",
-        "bis": "41,53",
+        "von": "50,49",
+        "bis": "50,49",
         "tun": "klopft am Picknicktisch auf die Schachuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.parkschachspieler",
@@ -1418,10 +1433,10 @@
     {
       "name": "kreidekinder",
       "typ": "statist",
-      "feld": [34, 51],
+      "feld": [35, 53],
       "eigenschaften": {
-        "von": "34,51",
-        "bis": "34,51",
+        "von": "35,53",
+        "bis": "35,53",
         "tun": "malen ein Brett mit Kreide auf den Weg",
         "wann": "tag"
       }

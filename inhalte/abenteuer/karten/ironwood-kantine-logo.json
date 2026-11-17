@@ -2351,7 +2351,7 @@
       {
        "name": "sagt",
        "type": "string",
-       "value": "statist.ironwood.kantine.kantinenkoch"
+       "value": "statist.ironwood.kantine.kantinenkochLogo"
       }
      ]
     },
@@ -2417,7 +2417,7 @@
       {
        "name": "sagt",
        "type": "string",
-       "value": "statist.ironwood.kantine.schichtarbeiter"
+       "value": "statist.ironwood.kantine.schichtarbeiterLogo"
       },
       {
        "name": "blick",

@@ -29,3 +29,13 @@ describe("Abzeichen: braucht es eine Meldung?", () => {
     );
   });
 });
+
+describe("Stufe nach dem Einspielen einer Sicherung", () => {
+  it("vergisst die gemerkte Stufe, damit die Meldung die neue still merkt (N2495)", async () => {
+    const { schreibeMerker, liesMerker } = await import("../../../app/merker");
+    const { vergissGefeierteStufe } = await import("./abzeichenstand");
+    schreibeMerker("stufeGefeiert", "1");
+    vergissGefeierteStufe();
+    expect(liesMerker("stufeGefeiert")).toBeNull();
+  });
+});

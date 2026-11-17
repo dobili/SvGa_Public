@@ -14,16 +14,16 @@ Erzeugt mit `node pipeline/abenteuer/lesefassung.cjs --ziel DATEI.md --startwert
 
 **Nicht enthalten.** Statisten und Tiere (Belebung der Karten): Die Simulation spricht sie nicht an. Ebenso Texte außerhalb der Dialoge (Tagebuch, Steckbriefe, Questtexte, Aufgabenstellungen, Kommentare in Partien, Läden).
 
-**Umfang.** Mitgeschrieben wurden 17840 Dialoge der Simulation; weggelassen 14811 wortgleiche Wiederholungen, 1417 ohne neue Zeile und 424 ohne Zeile.
+**Umfang.** Mitgeschrieben wurden 17840 Dialoge der Simulation; weggelassen 14807 wortgleiche Wiederholungen, 1416 ohne neue Zeile und 424 ohne Zeile.
 
 | Teil                                                 | Dialoge | Zeilen | Wörter |
 | ---------------------------------------------------- | ------: | -----: | -----: |
 | Akt 1                                                |     248 |   1104 |  11164 |
-| Akt 2                                                |     249 |    953 |  10669 |
+| Akt 2                                                |     254 |    960 |  10758 |
 | Akt 3                                                |     282 |   1138 |  12914 |
 | Akt 4                                                |     374 |   1301 |  16061 |
 | Nach dem Abspann: Epilog und nachgeholte Nebenquests |      35 |     98 |   1226 |
-| Gesamt                                               |    1188 |   4594 |  52034 |
+| Gesamt                                               |    1193 |   4601 |  52123 |
 
 **Was fehlt.** 102 von 1100 Knoten der Dialogdateien kommen in dieser Lesefassung nicht vor (andere Antworten, Niederlagen und Remis, Wartesätze, Zweitgespräche), verteilt auf 39 Dateien. Die Dateien mit den meisten ungelesenen Knoten:
 
@@ -3100,7 +3100,7 @@ _Der Steg liegt still in der Abendsonne. Der Bus nach Maple Falls wartet an der 
 
 `cedar-creek-bibliothek.okafor` · keine laufende Quest
 
-**Mrs. Okafor:** Komm wieder, wenn du magst. Wir haben Zeit.
+**Mrs. Okafor:** Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.
 
 **Kim (Antwort):** „Noch eine Partie um die Nadel.“\
 (andere Antworten: „Bis bald, Mrs. Okafor.“)
@@ -3111,7 +3111,7 @@ _Der Steg liegt still in der Abendsonne. Der Bus nach Maple Falls wartet an der 
 
 `cedar-creek-bibliothek.okafor` · keine laufende Quest
 
-**Mrs. Okafor:** Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.
+**Mrs. Okafor:** Komm wieder, wenn du magst. Wir haben Zeit.
 
 **Kim (Antwort):** „Bis bald, Mrs. Okafor.“\
 (andere Antworten: „Noch eine Partie um die Nadel.“)
@@ -3324,7 +3324,7 @@ _„Wer es war, kann es zurücklegen. Ich frag nicht.“_
 
 `cedar-creek-bibliothek.okafor` · keine laufende Quest
 
-**Mrs. Okafor:** Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.
+**Mrs. Okafor:** Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.
 
 **Kim (Antwort):** „Bis bald, Mrs. Okafor.“\
 (andere Antworten: „Noch eine Partie um die Nadel.“)
@@ -6377,7 +6377,7 @@ _Über der Essensausgabe hängt das weiße Logo. An der Tür steht der Karton mi
 
 `ironwood-kantine.mama` · keine laufende Quest
 
-**Mama:** Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.
+**Mama:** Hier stehen jetzt Bildschirme. Ich komme trotzdem her. Wegen der Leute.
 
 #### 441 · Werkskantine
 
@@ -6411,7 +6411,7 @@ _Über der Essensausgabe hängt das weiße Logo. An der Tür steht der Karton mi
 
 `ironwood-kantine.mama` · keine laufende Quest
 
-**Mama:** Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.
+**Mama:** Joe hat die Pokale in seiner Garage. Wir suchen einen neuen Raum. Wir finden einen.
 
 ### Schnellstraße nach Silicon Bay
 
@@ -6864,7 +6864,13 @@ _Er hängt das Geschirrtuch über die Schulter. Das gerahmte Set an der Wand hä
 
 **Hector:** Bestellung läuft.
 
-#### 487 · Dein Zimmer
+#### 487 · Wohnzimmer
+
+`maple-falls-wohnzimmer.mutter` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
+
+**Mama:** Nachtschicht. Aber wenn du anrufst, gehe ich ran. Immer.
+
+#### 488 · Dein Zimmer
 
 `maple-falls-dachboden.ambrose` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6875,9 +6881,15 @@ _Er hängt das Geschirrtuch über die Schulter. Das gerahmte Set an der Wand hä
 
 **Ambrose:** Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.
 
+#### 489 · Wohnzimmer
+
+`maple-falls-wohnzimmer.mutter` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
+
+**Mama:** Juno schreibt mir jeden Abend, ob du gegessen hast. Ich glaube ihr nicht immer.
+
 ### Landstraße nach Cedar Creek
 
-#### 488 · Landstraße
+#### 490 · Landstraße
 
 `weg-maple-cedar.apfelstand` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6885,7 +6897,7 @@ _Die Kasse stimmt, der Zettel hängt noch. Daneben ein Zeitungsausschnitt in ein
 
 _Ein Foto von der Joggerin, die Arme oben, hinter ihr ein Zielband. Sie selbst ist heute nicht da._
 
-#### 489 · Landstraße
+#### 491 · Landstraße
 
 `weg-maple-cedar.ada` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6893,7 +6905,7 @@ _Ein Foto von der Joggerin, die Arme oben, hinter ihr ein Zielband. Sie selbst i
 
 ### Cedar Creek
 
-#### 490 · Drechslerei Dunmore
+#### 492 · Drechslerei Dunmore
 
 `cedar-creek-drechslerei.dunmore` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6903,7 +6915,16 @@ _Auf der Werkbank steht ein zweiter Satz, halb fertig. Die Springer sind diesmal
 
 **Mr. Dunmore:** Dach hat er, sagt er. Wände nicht. Figuren braucht er trotzdem.
 
-#### 491 · Stadtbibliothek
+#### 493 · Stadtbibliothek
+
+`cedar-creek-bibliothek.okafor` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
+
+**Mrs. Okafor:** Juno schickt mir Bilder aus ihrem Tagebuch. Vier Nadeln. Ich habe es mir aufgeschrieben.
+
+**Kim (Antwort):** „Bis bald, Mrs. Okafor.“\
+(andere Antworten: „Noch eine Partie um die Nadel.“)
+
+#### 494 · Stadtbibliothek
 
 `cedar-creek-bibliothek.zwillinge` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6911,9 +6932,18 @@ _Jonah sitzt im Club am Brett, gegen Dex. Ivy sitzt daneben und liest._
 
 **Ivy:** Wir streiten nicht mehr. Es ist furchtbar.
 
+#### 495 · Stadtbibliothek
+
+`cedar-creek-bibliothek.okafor` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
+
+**Mrs. Okafor:** Ein Herr mit zwei Telefonen war im Rathaus. Hier steht noch kein Bildschirm. Ich habe Geduld, und ich habe den Schlüssel.
+
+**Kim (Antwort):** „Bis bald, Mrs. Okafor.“\
+(andere Antworten: „Noch eine Partie um die Nadel.“)
+
 ### Weg nach Riverton
 
-#### 492 · Am Bahndamm
+#### 496 · Am Bahndamm
 
 `weg-cedar-riverton.durchlass` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6921,7 +6951,7 @@ _Im Licht der Laterne glänzt nasses Mauerwerk. Sonst ist hier nichts mehr._
 
 ### Riverton
 
-#### 493 · Bahnhofshalle
+#### 497 · Bahnhofshalle
 
 `riverton-bahnhofshalle.harlan` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6936,7 +6966,7 @@ _Auf der Bank unter der Uhr spielt Tamsin gegen Mr. Harlan. Ohne Uhr. Sie zählt
 
 ### Lockport
 
-#### 494 · Schleusendorf
+#### 498 · Schleusendorf
 
 `lockport-aussen.steg_s3` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6944,7 +6974,7 @@ _Imogen nimmt dich am Arm. Unter den Bohlen rauscht das Wasser durch das Tor._
 
 ### Maple Falls
 
-#### 495 · Clubraum der Maple Falls High
+#### 499 · Clubraum der Maple Falls High
 
 `maple-falls-aussen.carla` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6957,7 +6987,7 @@ _Imogen nimmt dich am Arm. Unter den Bohlen rauscht das Wasser durch das Tor._
 
 **Ambrose:** Sie kommt zurück. So fängt es an.
 
-#### 496 · Falls Diner
+#### 500 · Falls Diner
 
 `maple-falls-diner.hector` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6972,7 +7002,13 @@ _Er hängt das Geschirrtuch über die Schulter. Das gerahmte Set an der Wand hä
 
 **Hector:** Bestellung läuft.
 
-#### 497 · Clubraum der Maple Falls High
+#### 501 · Wohnzimmer
+
+`maple-falls-wohnzimmer.mutter` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
+
+**Mama:** Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.
+
+#### 502 · Clubraum der Maple Falls High
 
 `maple-falls-clubraum.sam` · Quest „Die Stadt aus Glas“, Schritt 2 von 7
 
@@ -6982,7 +7018,7 @@ _Er hängt das Geschirrtuch über die Schulter. Das gerahmte Set an der Wand hä
 
 ### Schnellstraße nach Silicon Bay
 
-#### 498 · Glasbrücke
+#### 503 · Glasbrücke
 
 `silicon-bay-aussen.ankunft_zu_fuss` · Quest „Die Stadt aus Glas“, Schritt 2 von 7: In Silicon Bay ankommen.
 
@@ -7048,13 +7084,13 @@ _Victor überlegt. Ernsthaft._
 
 ### Silicon Bay
 
-#### 499 · Silicon Bay, Campus
+#### 504 · Silicon Bay, Campus
 
 `silicon-bay-aussen.infosaeule` · Quest „Die Stadt aus Glas“, Schritt 3 von 7: Bei Dr. Lin in der Akademie melden.
 
 _Die Infosäule zeigt einen Stadtplan, der sich dreht, sobald man hinsieht: „Sie sind hier.“_
 
-#### 500 · Silicon Bay, Campus
+#### 505 · Silicon Bay, Campus
 
 `silicon-bay-aussen.werbetafel` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7062,13 +7098,13 @@ _Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie
 
 **Ambrose:** Nie wieder Fehler. Das ist ein großes Versprechen.
 
-#### 501 · Silicon Bay, Campus
+#### 506 · Silicon Bay, Campus
 
 `silicon-bay-aussen.hotel` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
 _Das Hotel der Akademie. Dein Zimmer ist im zwölften Stock. Schlafen kannst du nach dem Turnier._
 
-#### 502 · Silicon Bay, Campus
+#### 507 · Silicon Bay, Campus
 
 `silicon-bay-aussen.rosie` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7082,7 +7118,7 @@ _Auf dem Dach dreht sich ein Blechschild, von Hand gemalt: „Rosies“. Die Fra
 
 [Laden: Rosies Food-Truck]
 
-#### 503 · Silicon Bay, Campus
+#### 508 · Silicon Bay, Campus
 
 `silicon-bay-aussen.dash` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7107,7 +7143,7 @@ _Der Mann im Anzug gegenüber stellt einen Turm ein, steht auf und geht._
 
 [Stellungsduell gegen Dash – Ausgang: gewonnen]
 
-#### 504 · Silicon Bay, Campus
+#### 509 · Silicon Bay, Campus
 
 `silicon-bay-aussen.dash` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7145,7 +7181,7 @@ _Victor sieht zurück zur Bank. Dash hat schon den Nächsten._
 
 **Victor Hale:** Das kann man nicht messen.
 
-#### 505 · Silicon Bay, Campus
+#### 510 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7155,7 +7191,7 @@ _Victor sitzt auf dem weißen Sofa der Lobby, unter einem Bildschirm mit dem Ges
 
 **Victor Hale:** Geh erst zu Dr. Lin. Sie ist die Einzige hier, die noch ein Holzbrett hat.
 
-#### 506 · Alter Hafen
+#### 511 · Alter Hafen
 
 `silicon-bay-aussen.netze` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7163,13 +7199,13 @@ _An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz.
 
 **Ambrose:** Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etwas.
 
-#### 507 · Silicon Bay, Campus
+#### 512 · Silicon Bay, Campus
 
 `silicon-bay-aussen.infosaeule` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
 _Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schlägt sie drei Cafés vor._
 
-#### 508 · Silicon Bay, Campus
+#### 513 · Silicon Bay, Campus
 
 `silicon-bay-aussen.rosie` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7177,7 +7213,7 @@ _Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schl
 
 [Laden: Rosies Food-Truck]
 
-#### 509 · Silicon Bay, Campus
+#### 514 · Silicon Bay, Campus
 
 `silicon-bay-aussen.dash` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7188,13 +7224,13 @@ _Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schl
 
 [Stellungsduell gegen Dash, erneut – Ausgang: gewonnen]
 
-#### 510 · Silicon Bay, Campus
+#### 515 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
 **Victor Hale:** Warst du schon bei Theo? Er misst alle. Mich auch.
 
-#### 511 · Silicon Bay, Altstadt
+#### 516 · Silicon Bay, Altstadt
 
 `silicon-bay-aussen.eisenwaren` · Quest „Eine Batterie für das Leuchtfeuer“, Schritt 1 von 1: Im Eisenwarenladen der Altstadt eine Batterie für das Leuchtfeuer der Pelikaninsel holen.
 
@@ -7208,13 +7244,13 @@ _„Schauen ist umsonst. Das ist das Letzte in dieser Stadt, was umsonst ist.“
 
 → Quest begonnen: „Eine Batterie für das Leuchtfeuer“
 
-#### 512 · Silicon Bay, Campus
+#### 517 · Silicon Bay, Campus
 
 `silicon-bay-aussen.infosaeule` · Quest „Die Stadt aus Glas“, Schritt 3 von 7: Bei Dr. Lin in der Akademie melden.
 
 _Auf der Infosäule läuft die Wettervorhersage: klar, kalt, Empfang ausgezeichnet._
 
-#### 513 · Silicon Bay, Campus
+#### 518 · Silicon Bay, Campus
 
 `silicon-bay-aussen.rosie` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7222,7 +7258,7 @@ _Auf der Infosäule läuft die Wettervorhersage: klar, kalt, Empfang ausgezeichn
 
 [Laden: Rosies Food-Truck]
 
-#### 514 · Silicon Bay, Campus
+#### 519 · Silicon Bay, Campus
 
 `silicon-bay-aussen.dash` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7231,7 +7267,7 @@ _Auf der Infosäule läuft die Wettervorhersage: klar, kalt, Empfang ausgezeichn
 **Kim (Antwort):** „Guten Appetit.“\
 (andere Antworten: „Noch eine?“)
 
-#### 515 · Schachakademie von Perfect Move
+#### 520 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7287,7 +7323,7 @@ _Eine andere Partie. Ein Opfer in der Mitte, ein Turm, der stehen bleibt, und al
 
 _Neben dir ist es still geworden._
 
-#### 516 · Schachakademie von Perfect Move
+#### 521 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · Quest „Die Stadt aus Glas“, Schritt 3 von 7
 
@@ -7329,7 +7365,7 @@ _Sie lächelt._
 
 → Quest „Die Stadt aus Glas“: Schritt 3 von 7 erledigt
 
-#### 517 · Schachakademie von Perfect Move
+#### 522 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.nova` · Quest „Die Stadt aus Glas“, Schritt 4 von 7: Theos Aufgaben lösen.
 
@@ -7337,13 +7373,13 @@ _Neben dem Ringlicht hockt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamer
 
 _Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus._
 
-#### 518 · Schachakademie von Perfect Move
+#### 523 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.serverraum_zu` · Quest „Die Stadt aus Glas“, Schritt 4 von 7
 
 _Auf der Tür steht „Serverraum – nur Personal“. Sie ist nicht abgeschlossen. Du hast dort unten nichts zu suchen. Noch nicht._
 
-#### 519 · Schachakademie von Perfect Move
+#### 524 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · Quest „Die Stadt aus Glas“, Schritt 4 von 7
 
@@ -7358,7 +7394,7 @@ _Theo murmelt Prozente vor sich hin._
 
 → Quest „Die Stadt aus Glas“: Schritt 4 von 7 erledigt
 
-#### 520 · Schachakademie von Perfect Move
+#### 525 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · Quest „Die Stadt aus Glas“, Schritt 5 von 7: Novas Aufgaben lösen.
 
@@ -7370,7 +7406,7 @@ _Er druckt eine Karte aus, noch warm: ein Kompass mit drei Strichen._
 
 **Theo:** Damit du nach der Eröffnung nachmisst. Ich messe auch immer nach.
 
-#### 521 · Schachakademie von Perfect Move
+#### 526 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · Quest „Die Stadt aus Glas“, Schritt 5 von 7
 
@@ -7378,7 +7414,7 @@ _Dr. Lin räumt ein einziges Holzbrett auf ihrem Schreibtisch gerade._
 
 **Dr. Lin:** Theo ist zufrieden. Jetzt Nova. Sie kennt jede Falle.
 
-#### 522 · Schachakademie von Perfect Move
+#### 527 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.nova` · Quest „Die Stadt aus Glas“, Schritt 5 von 7
 
@@ -7391,7 +7427,7 @@ _Dr. Lin räumt ein einziges Holzbrett auf ihrem Schreibtisch gerade._
 
 → Quest „Die Stadt aus Glas“: Schritt 5 von 7 erledigt
 
-#### 523 · Schachakademie von Perfect Move
+#### 528 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.nova` · Quest „Die Stadt aus Glas“, Schritt 6 von 7: Gegen Dr. Lin um die Clubnadel spielen.
 
@@ -7401,7 +7437,7 @@ _Sie zieht eine Karte aus der Kameratasche, ein roter Pfeil darauf._
 
 **Nova:** Frag vor jedem Zug, was der andere will. Ich mach das auch. Nicht nur am Brett.
 
-#### 524 · Schachakademie von Perfect Move
+#### 529 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · Quest „Die Stadt aus Glas“, Schritt 6 von 7
 
@@ -7409,7 +7445,7 @@ _Auf Theos Bildschirm wandern Kurven nach oben._
 
 **Theo:** Ich glaube Zahlen. Aber ich glaube auch dir. Komisch, oder?
 
-#### 525 · Schachakademie von Perfect Move
+#### 530 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · Quest „Die Stadt aus Glas“, Schritt 6 von 7
 
@@ -7440,7 +7476,7 @@ _Du lässt es._
 
 → Quest „Die Stadt aus Glas“: Schritt 6 von 7 erledigt
 
-#### 526 · Schachakademie von Perfect Move
+#### 531 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · Quest „Die Stadt aus Glas“, Schritt 7 von 7: Ins Hotel gehen und ausruhen.
 
@@ -7462,13 +7498,13 @@ _Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide 
 
 _Sie sieht dich an, als warte sie auf etwas. Du weißt nicht, worauf._
 
-#### 527 · Schachakademie von Perfect Move
+#### 532 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.nova` · Quest „Die Stadt aus Glas“, Schritt 7 von 7
 
 **Nova:** Ich muss gleich zu einem Termin. Ich hab immer einen Termin.
 
-#### 528 · Schachakademie von Perfect Move
+#### 533 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · Quest „Die Stadt aus Glas“, Schritt 7 von 7
 
@@ -7476,7 +7512,7 @@ _Theo tippt auf einer Tabelle mit Zahlen._
 
 **Theo:** Du hast deine Genauigkeit gesteigert. Zwei Prozent. Nicht schlecht für einen Menschen.
 
-#### 529 · Schachakademie von Perfect Move
+#### 534 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · Quest „Die Stadt aus Glas“, Schritt 7 von 7
 
@@ -7491,7 +7527,7 @@ _Auf den Bildschirmbrettern laufen stumme Partien._
 
 [Partie gegen Dr. Lin, erneut – Ausgang: gewonnen]
 
-#### 530 · Schachakademie von Perfect Move
+#### 535 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · Quest „Die Stadt aus Glas“, Schritt 7 von 7
 
@@ -7502,13 +7538,13 @@ _Irgendwo summt ein Lüfter, sonst ist es still._
 **Kim (Antwort):** „Bis bald.“\
 (andere Antworten: „Revanche um eine bessere Nadel?“)
 
-#### 531 · Schachakademie von Perfect Move
+#### 536 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.nova` · Quest „Die Stadt aus Glas“, Schritt 7 von 7
 
 **Nova:** Du spielst, als würde es dir Spaß machen. Wie machst du das?
 
-#### 532 · Silicon Bay, Campus
+#### 537 · Silicon Bay, Campus
 
 `silicon-bay-aussen.hotel` · Quest „Die Stadt aus Glas“, Schritt 7 von 7
 
@@ -7592,13 +7628,13 @@ _Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein._
 
 → Quest abgeschlossen: „Die Stadt aus Glas“
 
-#### 533 · Silicon Bay, Campus
+#### 538 · Silicon Bay, Campus
 
 `silicon-bay-aussen.hotel` · keine laufende Quest
 
 _Im Hotelzimmer liegt das Tablet neben dem Brett. Der Bildschirm ist dunkel._
 
-#### 534 · Silicon Bay, Campus
+#### 539 · Silicon Bay, Campus
 
 `silicon-bay-aussen.rosie` · keine laufende Quest
 
@@ -7606,7 +7642,7 @@ _Im Hotelzimmer liegt das Tablet neben dem Brett. Der Bildschirm ist dunkel._
 
 [Laden: Rosies Food-Truck]
 
-#### 535 · Silicon Bay, Campus
+#### 540 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · Quest „Die Spielberichte“, Schritt 1 von 2: Die Spielberichte auswerten, die Victor mir gegeben hat.
 
@@ -7629,7 +7665,7 @@ _Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht._
 
 → Quest „Die Spielberichte“: Schritt 1 von 2 erledigt
 
-#### 536 · Silicon Bay, Campus
+#### 541 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · keine laufende Quest
 
@@ -7665,7 +7701,7 @@ _Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefund
 
 **Victor Hale:** Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken.
 
-#### 537 · Schachakademie von Perfect Move
+#### 542 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · keine laufende Quest
 
@@ -7675,13 +7711,13 @@ _Theo tippt auf einer Tabelle mit Zahlen._
 
 **Theo:** Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Wozu auch, hier wird alles gefilmt.
 
-#### 538 · Schachakademie von Perfect Move
+#### 543 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.serverraum_zu` · keine laufende Quest
 
 _Die Tür zum Serverraum steht einen Spalt offen. Kalte Luft weht heraus._
 
-#### 539 · Serverraum
+#### 544 · Serverraum
 
 `silicon-bay-serverraum.schummelgeraete` · Quest „Die Spielberichte“, Schritt 2 von 2: Den Serverraum der Akademie ansehen.
 
@@ -7735,7 +7771,7 @@ _Ob das richtig war, weißt du nicht sicher._
 
 → Quest abgeschlossen: „Die Spielberichte“
 
-#### 540 · Serverraum
+#### 545 · Serverraum
 
 `silicon-bay-serverraum.hintertuer` · keine laufende Quest
 
@@ -7743,7 +7779,7 @@ _Eine graue Tür mit Kartenleser. Auf dem Schild steht „Technik – Zutritt nu
 
 _Abgeschlossen._
 
-#### 541 · Schachakademie von Perfect Move
+#### 546 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.nova` · keine laufende Quest
 
@@ -7751,7 +7787,7 @@ _Nova sieht dich an und dann schnell weg._
 
 **Nova:** Noch nicht. Bitte.
 
-#### 542 · Silicon Bay, Campus
+#### 547 · Silicon Bay, Campus
 
 `silicon-bay-aussen.werbetafel` · keine laufende Quest
 
@@ -7759,13 +7795,13 @@ _Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie
 
 _Ambrose sieht lange hin. Er sagt nichts dazu._
 
-#### 543 · Silicon Bay, Campus
+#### 548 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · keine laufende Quest
 
 **Victor Hale:** Pass auf Nova auf. Sie hat keine Wahl, glaube ich.
 
-#### 544 · Lobby von Perfect Move
+#### 549 · Lobby von Perfect Move
 
 `silicon-bay-lobby.vitrine` · Quest „Die fehlende Seite“, Schritt 1 von 2: Die Vitrine der Hales in der Lobby ansehen.
 
@@ -7815,7 +7851,7 @@ _Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an._
 
 → Quest „Die fehlende Seite“: Schritt 1 von 2 erledigt
 
-#### 545 · Lobby von Perfect Move
+#### 550 · Lobby von Perfect Move
 
 `silicon-bay-lobby.empfangsroboter` · keine laufende Quest
 
@@ -7825,7 +7861,7 @@ _Ein Roboter mit freundlichem Bildschirmgesicht rollt heran._
 
 **Ambrose:** Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich weiß das.
 
-#### 546 · Silicon Bay, Campus
+#### 551 · Silicon Bay, Campus
 
 `silicon-bay-aussen.dash` · keine laufende Quest
 
@@ -7834,13 +7870,13 @@ _Ein Roboter mit freundlichem Bildschirmgesicht rollt heran._
 **Kim (Antwort):** „Guten Appetit.“\
 (andere Antworten: „Noch eine?“)
 
-#### 547 · Silicon Bay, Campus
+#### 552 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · keine laufende Quest
 
 **Victor Hale:** Mein Vater hat gefragt, ob du gut bist. Ich hab „ja“ gesagt. Er hat nichts mehr gefragt.
 
-#### 548 · Alter Hafen
+#### 553 · Alter Hafen
 
 `silicon-bay-aussen.inselfaehre` · keine laufende Quest
 
@@ -7848,7 +7884,7 @@ _Der Fährmann winkt dich an Bord. Seit du die Nadel hast, fährt er für dich j
 
 ### Pelikaninsel
 
-#### 549 · Inseldorf
+#### 554 · Inseldorf
 
 `pelikaninsel.leuchtfeuer` · Quest „Das Leuchtfeuer“, Schritt 1 von 1: Eine Batterie aus Silicon Bay holen und ins Leuchtfeuer einsetzen.
 
@@ -7858,31 +7894,31 @@ _Das Leuchtfeuer auf der Felsspitze ist dunkel. Im Kasten fehlt die Batterie._
 
 → Quest begonnen: „Das Leuchtfeuer“
 
-#### 550 · Inseldorf
+#### 555 · Inseldorf
 
 `pelikaninsel.netze` · keine laufende Quest
 
 _Netze hängen zum Trocknen am Gestell. In einem ist ein Loch, groß wie eine Faust._
 
-#### 551 · Inseldorf
+#### 556 · Inseldorf
 
 `pelikaninsel.watt` · keine laufende Quest
 
 _Mit den Gummistiefeln geht es durch den Schlick. Bei jedem Schritt schmatzt es._
 
-#### 552 · Inseldorf
+#### 557 · Inseldorf
 
 `pelikaninsel.finch_bauer_h` · keine laufende Quest
 
 _An einem Pfahl hängt ein kleiner Fink aus Blech. Darunter im Sand steckt ein weißer Bauer aus Buchsbaum._
 
-#### 553 · Inseldorf
+#### 558 · Inseldorf
 
 `pelikaninsel.delphine` · keine laufende Quest
 
 **Delphine:** Delphine. Ich fische hier, seit ich laufen kann. Empfang gibt es keinen, das Internet kommt nicht über das Wasser. Uns fehlt nichts.
 
-#### 554 · Inseldorf
+#### 559 · Inseldorf
 
 `pelikaninsel.old_pete` · Quest „Netze flicken“, Schritt 1 von 1: Mit Old Pete die Löcher im Netz finden: Welche Figur hängt?
 
@@ -7903,13 +7939,13 @@ _Ein alter Mann sitzt am Netzgestell und knotet._
 
 → Quest abgeschlossen: „Netze flicken“
 
-#### 555 · Inseldorf
+#### 560 · Inseldorf
 
 `pelikaninsel.old_pete` · keine laufende Quest
 
 **Old Pete:** Das Netz hält wieder. Den Turm aus Treibholz hab ich dir ans Gestell gelegt.
 
-#### 556 · Inseldorf
+#### 561 · Inseldorf
 
 `pelikaninsel.coral` · keine laufende Quest
 
@@ -7917,7 +7953,7 @@ _Ein alter Mann sitzt am Netzgestell und knotet._
 
 ### Silicon Bay
 
-#### 557 · Silicon Bay, Campus
+#### 562 · Silicon Bay, Campus
 
 `silicon-bay-aussen.glasbruecke` · keine laufende Quest
 
@@ -7925,7 +7961,7 @@ _Die Glasbrücke führt zurück zur Raststätte an der Schnellstraße._
 
 ### Schnellstraße nach Silicon Bay
 
-#### 558 · Glasbrücke
+#### 563 · Glasbrücke
 
 `silicon-bay-aussen.ankunft_zu_fuss` · keine laufende Quest
 
@@ -7933,7 +7969,7 @@ _Die Glasbrücke endet am Campus von Silicon Bay. Kein Baum, kein Vogel, nur Gla
 
 ### Silicon Bay
 
-#### 559 · Silicon Bay, Altstadt
+#### 564 · Silicon Bay, Altstadt
 
 `silicon-bay-aussen.eisenwaren` · Quest „Eine Batterie für das Leuchtfeuer“, Schritt 1 von 1: Im Eisenwarenladen der Altstadt eine Batterie für das Leuchtfeuer der Pelikaninsel holen.
 
@@ -7954,19 +7990,19 @@ _Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für
 
 → Quest abgeschlossen: „Eine Batterie für das Leuchtfeuer“
 
-#### 560 · Serverraum
+#### 565 · Serverraum
 
 `silicon-bay-serverraum.schummelgeraete` · keine laufende Quest
 
 _Die Schublade ist zu. Tausend grüne Lichter blinken, ohne Takt._
 
-#### 561 · Serverraum
+#### 566 · Serverraum
 
 `silicon-bay-serverraum.hintertuer` · keine laufende Quest
 
 _Die Tür bleibt zu. Das Lämpchen am Kartenleser leuchtet rot._
 
-#### 562 · Schachakademie von Perfect Move
+#### 567 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.theo` · keine laufende Quest
 
@@ -7974,7 +8010,7 @@ _Theo murmelt Prozente vor sich hin._
 
 **Theo:** ZERO hat heute wieder gewonnen. Gegen sich selbst. Ist das ein Sieg?
 
-#### 563 · Schachakademie von Perfect Move
+#### 568 · Schachakademie von Perfect Move
 
 `silicon-bay-akademie.lin` · keine laufende Quest
 
@@ -7985,19 +8021,19 @@ _Theo murmelt Prozente vor sich hin._
 **Kim (Antwort):** „Bis bald.“\
 (andere Antworten: „Revanche um eine bessere Nadel?“)
 
-#### 564 · Silicon Bay, Campus
+#### 569 · Silicon Bay, Campus
 
 `silicon-bay-lobby.victor` · keine laufende Quest
 
 **Victor Hale:** Ich hab dir bei Dash zugesehen. Du lachst beim Spielen. Das hab ich nie gemessen.
 
-#### 565 · Lobby von Perfect Move
+#### 570 · Lobby von Perfect Move
 
 `silicon-bay-lobby.vitrine` · keine laufende Quest
 
 _Die Vitrine „Hale – Ingenieure seit 1850“. Das Notizbuch liegt aufgeschlagen, die Seite fehlt noch immer._
 
-#### 566 · Lobby von Perfect Move
+#### 571 · Lobby von Perfect Move
 
 `silicon-bay-lobby.empfangsroboter` · keine laufende Quest
 
@@ -8005,7 +8041,7 @@ _Die Vitrine „Hale – Ingenieure seit 1850“. Das Notizbuch liegt aufgeschla
 
 ### Pelikaninsel
 
-#### 567 · Inseldorf
+#### 572 · Inseldorf
 
 `pelikaninsel.leuchtfeuer` · Quest „Das Leuchtfeuer“, Schritt 1 von 1: Eine Batterie aus Silicon Bay holen und ins Leuchtfeuer einsetzen.
 
@@ -8015,25 +8051,25 @@ _Du setzt die Batterie ein. Das Leuchtfeuer flackert, dann blinkt es über die B
 
 → Quest abgeschlossen: „Das Leuchtfeuer“
 
-#### 568 · Inseldorf
+#### 573 · Inseldorf
 
 `pelikaninsel.netze` · keine laufende Quest
 
 _Das Netz ist geflickt. Old Pete hat einen kleinen Turm aus Treibholz daneben gelegt._
 
-#### 569 · Inseldorf
+#### 574 · Inseldorf
 
 `pelikaninsel.finch_bauer_h` · keine laufende Quest
 
 _Unter dem Finkenzeichen ist nur noch Sand._
 
-#### 570 · Inseldorf
+#### 575 · Inseldorf
 
 `pelikaninsel.delphine` · keine laufende Quest
 
 **Delphine:** Der Wind dreht. Morgen kommt die Fähre später.
 
-#### 571 · Inseldorf
+#### 576 · Inseldorf
 
 `pelikaninsel.coral` · keine laufende Quest
 
@@ -8041,7 +8077,7 @@ _Unter dem Finkenzeichen ist nur noch Sand._
 
 ### Silicon Bay
 
-#### 572 · Silicon Bay, Altstadt
+#### 577 · Silicon Bay, Altstadt
 
 `silicon-bay-aussen.eisenwaren` · keine laufende Quest
 
@@ -8049,7 +8085,7 @@ _Im Schaufenster des Eisenwarenladens liegen Schrauben, Taschenlampen und ein Sc
 
 ### Pelikaninsel
 
-#### 573 · Inseldorf
+#### 578 · Inseldorf
 
 `pelikaninsel.leuchtfeuer` · keine laufende Quest
 
@@ -8057,7 +8093,7 @@ _Das Leuchtfeuer blinkt wieder über die Bucht. Die Pelikane schauen hin._
 
 ### Silicon Bay
 
-#### 574 · Alter Hafen
+#### 579 · Alter Hafen
 
 `silicon-bay-aussen.faehre` · keine laufende Quest
 
@@ -8069,7 +8105,7 @@ _Mama steht schon an der Gangway, die Tasche über der Schulter. Das Notzelt in 
 
 ### Küste nach Port Delacroix
 
-#### 575 · Küstenfähre
+#### 580 · Küstenfähre
 
 `weg-silicon-delacroix.tafel` · keine laufende Quest
 
@@ -8086,19 +8122,19 @@ _Im Salon der Fähre hängt eine Tafel mit drei Diagrammen: „Wer die Bauern ve
 
 → Quest abgeschlossen: „Die Tafel im Salon“
 
-#### 576 · Küstenfähre
+#### 581 · Küstenfähre
 
 `weg-silicon-delacroix.tafel` · keine laufende Quest
 
 _Auf der Tafel im Salon hat jemand mit Kreide eine Möwe gemalt. Darunter: „Gelöst“._
 
-#### 577 · Küstenfähre
+#### 582 · Küstenfähre
 
 `weg-silicon-delacroix.fund_flaschenpost` · keine laufende Quest
 
 _Zwischen zwei Rettungsringen klemmt eine Flasche mit einem gerollten Zettel darin. Darauf ein Schachdiagramm und „Wer findet den Zug?“._
 
-#### 578 · Küstenfähre
+#### 583 · Küstenfähre
 
 `weg-silicon-delacroix.ereignis_kapitaen` · Quest „Das Kapitänsproblem“, Schritt 1 von 2: Die drei Zettel am Brett des Kapitäns widerlegen und die Aufgabe lösen.
 
@@ -8121,7 +8157,7 @@ _Am Steuer steht ein Mann mit weißem Bart und blauer Mütze. Er nickt zur Wand 
 
 → Quest „Das Kapitänsproblem“: Schritt 1 von 2 erledigt
 
-#### 579 · Küstenfähre
+#### 584 · Küstenfähre
 
 `weg-silicon-delacroix.ereignis_kapitaen` · Quest „Das Kapitänsproblem“, Schritt 2 von 2: Dem Kapitän die Lösung zeigen und das Horn blasen.
 
@@ -8141,25 +8177,25 @@ _Ein tiefer Ton rollt über das Wasser. Auf dem Deich drehen sich Leute um und w
 
 → Quest abgeschlossen: „Das Kapitänsproblem“
 
-#### 580 · Küstenfähre
+#### 585 · Küstenfähre
 
 `weg-silicon-delacroix.ladung` · keine laufende Quest
 
 _Auf dem Achterdeck stehen Container mit der Aufschrift „Hochwasserhilfe“. Einer ist offen: Sandsäcke, Decken, Konserven._
 
-#### 581 · Küstenfähre
+#### 586 · Küstenfähre
 
 `weg-silicon-delacroix.delfin` · keine laufende Quest
 
 _Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind._
 
-#### 582 · Küstenfähre
+#### 587 · Küstenfähre
 
 `weg-silicon-delacroix.seite02` · keine laufende Quest
 
 _An der Reling hat sich ein Blatt Papier verfangen, nass von der Gischt. Darauf eine gezeichnete Stellung._
 
-#### 583 · Küstenfähre
+#### 588 · Küstenfähre
 
 `weg-silicon-delacroix.finch_turm_a` · keine laufende Quest
 
@@ -8167,7 +8203,7 @@ _Am Kasten der Rettungsringe klebt ein kleiner Fink aus Blech. Hinter dem Deckel
 
 _Unter dem Turm ist ein Feld eingebrannt._
 
-#### 584 · Küstenfähre
+#### 589 · Küstenfähre
 
 `weg-silicon-delacroix.schiffskoch` · keine laufende Quest
 
@@ -8186,7 +8222,7 @@ _Mama lehnt in der Tür._
 
 [Stellungsduell gegen Mr. Ruiz – Ausgang: gewonnen]
 
-#### 585 · Küstenfähre
+#### 590 · Küstenfähre
 
 `weg-silicon-delacroix.schiffskoch` · keine laufende Quest
 
@@ -8197,13 +8233,13 @@ _Mama lehnt in der Tür._
 
 [Stellungsduell gegen Mr. Ruiz, erneut – Ausgang: gewonnen]
 
-#### 586 · Küstenfähre
+#### 591 · Küstenfähre
 
 `weg-silicon-delacroix.kapitaen` · keine laufende Quest
 
 **Kapitän Fall:** Das Horn hört man bis Port Delacroix. Jetzt wissen alle, dass jemand das Brett gelöst hat.
 
-#### 587 · Küstenfähre
+#### 592 · Küstenfähre
 
 `weg-silicon-delacroix.bug` · keine laufende Quest
 
@@ -8225,7 +8261,7 @@ _Er sagt „sie“. Wie bei einem Menschen._
 
 _Vorn kommt die Küste als brauner Strich aus dem Dunst._
 
-#### 588 · Deichweg
+#### 593 · Deichweg
 
 `weg-silicon-delacroix.fund_muschel` · keine laufende Quest
 
@@ -8233,19 +8269,19 @@ _Im Sand am Deich liegt eine Muschel mit einem kleinen, runden Loch, wie für ei
 
 **Ambrose:** Meine Schwester sammelte solche. Sie fädelte sie auf und trug sie sonntags.
 
-#### 589 · Deichweg
+#### 594 · Deichweg
 
 `weg-silicon-delacroix.pumpenhaus` · keine laufende Quest
 
 _Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. Bitte nicht treten.“_
 
-#### 590 · Deichweg
+#### 595 · Deichweg
 
 `weg-silicon-delacroix.spur_pm3` · keine laufende Quest
 
 _Neben dem weißen Messwagen liegt eine Mappe im Gras. Auf dem Deckel: „Hochwasserhilfe: 40 Bildschirmtische, Nutzerdaten Port Delacroix“._
 
-#### 591 · Deichweg
+#### 596 · Deichweg
 
 `weg-silicon-delacroix.guidry` · keine laufende Quest
 
@@ -8253,91 +8289,91 @@ _Am Deich stapeln Männer und Frauen in Gummistiefeln Sandsäcke. Einer richtet 
 
 **Mr. Guidry:** Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. Hinterher ist man immer klüger.
 
-#### 592 · Küstenfähre
+#### 597 · Küstenfähre
 
 `weg-silicon-delacroix.fund_flaschenpost` · keine laufende Quest
 
 _An der Reling glitzert nur noch Gischt._
 
-#### 593 · Küstenfähre
+#### 598 · Küstenfähre
 
 `weg-silicon-delacroix.ereignis_kapitaen` · keine laufende Quest
 
 _An der Wand der Kajüte hängt das Brett. Unter dem Rahmen steht mit Kreide: „Gelöst.“_
 
-#### 594 · Küstenfähre
+#### 599 · Küstenfähre
 
 `weg-silicon-delacroix.ladung` · keine laufende Quest
 
 _Die Container stehen gut verzurrt. Hochwasserhilfe für Port Delacroix._
 
-#### 595 · Küstenfähre
+#### 600 · Küstenfähre
 
 `weg-silicon-delacroix.delfin` · keine laufende Quest
 
 _Das Wasser ist ruhig. Am Bug steht Ambrose und sieht nach vorn._
 
-#### 596 · Küstenfähre
+#### 601 · Küstenfähre
 
 `weg-silicon-delacroix.seite02` · keine laufende Quest
 
 _An der Reling flattert nichts mehr._
 
-#### 597 · Küstenfähre
+#### 602 · Küstenfähre
 
 `weg-silicon-delacroix.finch_turm_a` · keine laufende Quest
 
 _Im Kasten liegen nur noch die Rettungsringe._
 
-#### 598 · Küstenfähre
+#### 603 · Küstenfähre
 
 `weg-silicon-delacroix.kapitaen` · keine laufende Quest
 
 **Kapitän Fall:** Neue Zettel? Nein. Ich hänge nur noch das Brett auf. Und deinen Namen daneben.
 
-#### 599 · Küstenfähre
+#### 604 · Küstenfähre
 
 `weg-silicon-delacroix.zurueck_silicon` · keine laufende Quest
 
 _Die Fähre legt bald wieder ab, zurück nach Silicon Bay._
 
-#### 600 · Küstenfähre
+#### 605 · Küstenfähre
 
 `weg-silicon-delacroix.kapitaen` · keine laufende Quest
 
 **Kapitän Fall:** Mein Vorgänger hätte gelacht. Er hat immer gesagt, die Lösung sitzt irgendwann an Bord.
 
-#### 601 · Deichweg
+#### 606 · Deichweg
 
 `weg-silicon-delacroix.fund_muschel` · keine laufende Quest
 
 _Am Deich liegen nur noch Kiesel._
 
-#### 602 · Deichweg
+#### 607 · Deichweg
 
 `weg-silicon-delacroix.pumpenhaus` · keine laufende Quest
 
 _Die Pumpe brummt. Das Wasser fließt dahin, wo es hingehört._
 
-#### 603 · Deichweg
+#### 608 · Deichweg
 
 `weg-silicon-delacroix.spur_pm3` · keine laufende Quest
 
 _Der Messwagen steht verschlossen in der Marsch._
 
-#### 604 · Deichweg
+#### 609 · Deichweg
 
 `weg-silicon-delacroix.guidry` · keine laufende Quest
 
 **Mr. Guidry:** Die Stadt steht wieder auf. Langsam. Aber sie steht.
 
-#### 605 · Deichweg
+#### 610 · Deichweg
 
 `weg-silicon-delacroix.guidry` · keine laufende Quest
 
 **Mr. Guidry:** Jeder Sandsack zählt. Jeder Bauer auch.
 
-#### 606 · Deichweg
+#### 611 · Deichweg
 
 `port-delacroix-aussen.ankunft_zu_fuss` · keine laufende Quest
 
@@ -8373,7 +8409,7 @@ _Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzli
 
 ### Port Delacroix
 
-#### 607 · Port Delacroix, Kai
+#### 612 · Port Delacroix, Kai
 
 `port-delacroix-aussen.gebaeckstand` · keine laufende Quest
 
@@ -8385,19 +8421,19 @@ _Vor der Turnhalle steht ein Gebäckstand, Puderzucker überall. Eine alte Dame 
 
 [Laden: Gebäckstand von Mrs. Arceneaux]
 
-#### 608 · Port Delacroix, Kai
+#### 613 · Port Delacroix, Kai
 
 `port-delacroix-aussen.brett_haus1` · keine laufende Quest
 
 _Ein Haus mit neu gestrichener Tür. Drinnen räumt jemand Kisten._
 
-#### 609 · Port Delacroix, Kai
+#### 614 · Port Delacroix, Kai
 
 `port-delacroix-aussen.bauzaun` · keine laufende Quest
 
 _Ein Bauzaun mit blauer Plane vor dem Musikhaus. Ein Schild: „Betreten verboten. Musik erlaubt.“_
 
-#### 610 · Port Delacroix, Kai
+#### 615 · Port Delacroix, Kai
 
 `port-delacroix-aussen.batiste` · keine laufende Quest
 
@@ -8418,7 +8454,7 @@ _Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern ma
 
 [Stellungsduell gegen Mr. Batiste – Ausgang: gewonnen]
 
-#### 611 · Port Delacroix, Kai
+#### 616 · Port Delacroix, Kai
 
 `port-delacroix-aussen.batiste` · keine laufende Quest
 
@@ -8437,7 +8473,7 @@ _Er schiebt dir zwei Karten über das Brett. Eine für einen zweiten Versuch, ei
 
 [Stellungsduell gegen Mr. Batiste, erneut – Ausgang: gewonnen]
 
-#### 612 · Port Delacroix, Kai
+#### 617 · Port Delacroix, Kai
 
 `port-delacroix-aussen.arceneaux` · keine laufende Quest
 
@@ -8445,13 +8481,13 @@ _Er schiebt dir zwei Karten über das Brett. Eine für einen zweiten Versuch, ei
 
 [Laden: Gebäckstand von Mrs. Arceneaux]
 
-#### 613 · Port Delacroix, Kai
+#### 618 · Port Delacroix, Kai
 
 `port-delacroix-musikhaus.blaeser` · keine laufende Quest
 
 _In der Ruine liegt ein verbeultes Notenpult. Noch spielt hier niemand._
 
-#### 614 · Turnhalle
+#### 619 · Turnhalle
 
 `port-delacroix-turnhalle.spendenkasse` · Quest „Ohne Ambrose“, Schritt 1 von 4: In der Turnhalle mit dem Club reden.
 
@@ -8459,19 +8495,19 @@ _In der Ruine liegt ein verbeultes Notenpult. Noch spielt hier niemand._
 
 _Eine Blechdose mit Schlitz: „Für das Musikhaus.“ Darin Münzen, ein Knopf und eine Busfahrkarte._
 
-#### 615 · Turnhalle
+#### 620 · Turnhalle
 
 `port-delacroix-turnhalle.notenheft` · Quest „Ohne Ambrose“, Schritt 1 von 4
 
 _Ein Notenheft, aufgequollen vom Hochwasser. Auf dem Umschlag steht in Bleistift: „Nicht wegwerfen. Spielt noch.“_
 
-#### 616 · Turnhalle
+#### 621 · Turnhalle
 
 `port-delacroix-turnhalle.plakat_turnhalle` · Quest „Ohne Ambrose“, Schritt 1 von 4
 
 _Ein handgemaltes Plakat an der Wand: „Wir spielen weiter. Jeden Abend, solange das Licht reicht.“_
 
-#### 617 · Turnhalle
+#### 622 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · Quest „Ohne Ambrose“, Schritt 1 von 4
 
@@ -8579,7 +8615,7 @@ _Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame._
 
 → Quest „Ohne Ambrose“: Schritt 1 von 4 erledigt
 
-#### 618 · Turnhalle
+#### 623 · Turnhalle
 
 `port-delacroix-turnhalle.remy` · Quest „Ohne Ambrose“, Schritt 2 von 4: Remys Aufgaben zu Bauernstrukturen lösen.
 
@@ -8594,13 +8630,13 @@ _Remy poliert seine Trompete und sieht dich nicht an._
 
 → Quest „Ohne Ambrose“: Schritt 2 von 4 erledigt
 
-#### 619 · Turnhalle
+#### 624 · Turnhalle
 
 `port-delacroix-turnhalle.remy` · Quest „Ohne Ambrose“, Schritt 3 von 4: Lous Aufgaben zu Plänen lösen.
 
 **Remy:** Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.
 
-#### 620 · Turnhalle
+#### 625 · Turnhalle
 
 `port-delacroix-turnhalle.lou` · Quest „Ohne Ambrose“, Schritt 3 von 4
 
@@ -8619,7 +8655,7 @@ _Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach._
 
 → Quest „Ohne Ambrose“: Schritt 3 von 4 erledigt
 
-#### 621 · Turnhalle
+#### 626 · Turnhalle
 
 `port-delacroix-turnhalle.lou` · Quest „Ohne Ambrose“, Schritt 4 von 4: Den Clubkampf gegen Miss Odile gewinnen, ohne Karten.
 
@@ -8629,7 +8665,7 @@ _Aus der Eierschachtel, zwischen zwei Muscheln, zieht sie eine Karte: ein Brett 
 
 **Lou:** Erst fragen, wo. Dann wie. Die ist für dich. Ich hab den Plan ja schon im Kopf.
 
-#### 622 · Port Delacroix, Kai
+#### 627 · Port Delacroix, Kai
 
 `port-delacroix-aussen.gebaeckstand` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8637,13 +8673,13 @@ _Aus der Eierschachtel, zwischen zwei Muscheln, zieht sie eine Karte: ein Brett 
 
 [Laden: Gebäckstand von Mrs. Arceneaux]
 
-#### 623 · Port Delacroix, Kai
+#### 628 · Port Delacroix, Kai
 
 `port-delacroix-aussen.bauzaun` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Hinter dem Bauzaun hämmert jemand. Das Musikhaus wird wieder._
 
-#### 624 · Port Delacroix, Kai
+#### 629 · Port Delacroix, Kai
 
 `port-delacroix-aussen.batiste` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8652,7 +8688,7 @@ _Hinter dem Bauzaun hämmert jemand. Das Musikhaus wird wieder._
 **Kim (Antwort):** „Danke, Mr. Batiste.“\
 (andere Antworten: „Noch eine Partie.“)
 
-#### 625 · Klavierwerkstatt Whitlock-Duval
+#### 630 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.werkbank` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8660,19 +8696,19 @@ _Hinter dem Bauzaun hämmert jemand. Das Musikhaus wird wieder._
 
 _Eine alte Werkbank voller Späne. Henri arbeitet hier. Du hast keinen Grund, sie anzufassen._
 
-#### 626 · Klavierwerkstatt Whitlock-Duval
+#### 631 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.foto_wand` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _An der Wand hängt ein altes Foto in einem ovalen Rahmen, braun und blass. Henri weiß sicher, wer darauf ist._
 
-#### 627 · Klavierwerkstatt Whitlock-Duval
+#### 632 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.laptop` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Célestes Laptop, zwischen Hobelspänen. Auf dem Bildschirm Tonspuren in bunten Streifen, daneben ein Zettel: „Nicht anfassen. Ich weiß, wo alles ist.“_
 
-#### 628 · Klavierwerkstatt Whitlock-Duval
+#### 633 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.henri` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8684,13 +8720,13 @@ _Ein Mann mit Sägemehl in den Augenbrauen kommt dir entgegen. Er lacht viel und
 
 **Henri Whitlock-Duval:** Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam.
 
-#### 629 · Klavierwerkstatt Whitlock-Duval
+#### 634 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.celeste` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Ein Mädchen mit Kopfhörern tippt auf einem Laptop. Sie nickt dir zu und tippt weiter._
 
-#### 630 · Altes Musikhaus
+#### 635 · Altes Musikhaus
 
 `port-delacroix-musikhaus.schild` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8698,13 +8734,13 @@ _Durch das Dach fällt Regen. An der Wand lehnt das Schild vom Eingang, die Buch
 
 _„Maison de Musique. Club d'Échecs, depuis 1889.“ Darunter Schlamm, bis auf Kniehöhe._
 
-#### 631 · Altes Musikhaus
+#### 636 · Altes Musikhaus
 
 `port-delacroix-musikhaus.loch_im_dach` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Über dir ein Loch im Dach, so groß wie ein Tisch. Ein Lichtstreifen fällt auf die Dielen, mitten in eine Pfütze._
 
-#### 632 · Port Delacroix, Kai
+#### 637 · Port Delacroix, Kai
 
 `port-delacroix-aussen.deich` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8712,7 +8748,7 @@ _Zurück auf den Deichweg zur Fähre._
 
 ### Küste nach Port Delacroix
 
-#### 633 · Deichweg
+#### 638 · Deichweg
 
 `port-delacroix-aussen.ankunft_zu_fuss` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8720,25 +8756,25 @@ _Der Deichweg endet am Kai von Port Delacroix. An allen Häusern läuft der brau
 
 ### Port Delacroix
 
-#### 634 · Turnhalle
+#### 639 · Turnhalle
 
 `port-delacroix-turnhalle.spendenkasse` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _In der Kasse klimpert es. Jemand hat einen Zettel dazugelegt: „Für neue Bretter.“_
 
-#### 635 · Turnhalle
+#### 640 · Turnhalle
 
 `port-delacroix-turnhalle.notenheft` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Das Notenheft trocknet. Die Seiten wellen sich, die Töne bleiben._
 
-#### 636 · Turnhalle
+#### 641 · Turnhalle
 
 `port-delacroix-turnhalle.plakat_turnhalle` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _„Wir spielen weiter.“ Jemand hat ein Herz daneben gemalt._
 
-#### 637 · Turnhalle
+#### 642 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · Quest „Das Musikhaus am Kai“, Schritt 1 von 4: Bei vier Häusern der Stadt Bretter sammeln.
 
@@ -8758,13 +8794,13 @@ _Sie gibt dir einen Handkarren._
 
 → Quest begonnen: „Das Musikhaus am Kai“
 
-#### 638 · Turnhalle
+#### 643 · Turnhalle
 
 `port-delacroix-turnhalle.lou` · Quest „Ohne Ambrose“, Schritt 4 von 4: Den Clubkampf gegen Miss Odile gewinnen, ohne Karten.
 
 **Lou:** Wenn das Musikhaus fertig ist, kriege ich ein Regal für meine Muscheln.
 
-#### 639 · Port Delacroix, Kai
+#### 644 · Port Delacroix, Kai
 
 `port-delacroix-aussen.brett_haus1` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8782,7 +8818,7 @@ _Es ist still in deinem Kopf, zum ersten Mal seit dem Sommer. Es ist gut._
 
 _Und es ist, wie wenn ein Zahn fehlt._
 
-#### 640 · Port Delacroix, Kai
+#### 645 · Port Delacroix, Kai
 
 `port-delacroix-aussen.brett_haus2` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8792,7 +8828,7 @@ _Sie hat Muscheln dazugelegt._
 
 _2 von vier Häusern. Aus jedem zweiten Haus kommt Hämmern._
 
-#### 641 · Port Delacroix, Kai
+#### 646 · Port Delacroix, Kai
 
 `port-delacroix-aussen.brett_haus3` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8802,7 +8838,7 @@ _„Das hat mein Großvater geschnitzt. Nimm es. An der Wand spielt keiner.“_
 
 _3 von vier Häusern. Aus jedem zweiten Haus kommt Hämmern._
 
-#### 642 · Port Delacroix, Kai
+#### 647 · Port Delacroix, Kai
 
 `port-delacroix-aussen.brett_haus4` · Quest „Das Musikhaus am Kai“, Schritt 1 von 4: Bei vier Häusern der Stadt Bretter sammeln.
 
@@ -8830,31 +8866,31 @@ _Dann baust du auf Junos Reisebrett die Stellung von Batiste auf und spielst sie
 
 → Quest „Das Musikhaus am Kai“: Schritt 1 von 4 erledigt
 
-#### 643 · Klavierwerkstatt Whitlock-Duval
+#### 648 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.foto_wand` · Quest „Ohne Ambrose“, Schritt 4 von 4: Den Clubkampf gegen Miss Odile gewinnen, ohne Karten.
 
 _Das Foto hängt schief. Henri weiß sicher, wer darauf ist._
 
-#### 644 · Klavierwerkstatt Whitlock-Duval
+#### 649 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.laptop` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Die bunten Streifen auf dem Bildschirm laufen weiter. Ein Takt wiederholt sich._
 
-#### 645 · Klavierwerkstatt Whitlock-Duval
+#### 650 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.henri` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Henri stimmt ein Klavier. Er hebt kurz die Hand, ohne aufzusehen._
 
-#### 646 · Port Delacroix, Kai
+#### 651 · Port Delacroix, Kai
 
 `port-delacroix-aussen.brett_haus1` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Hier warst du schon. Jemand winkt dir aus dem Fenster zu._
 
-#### 647 · Port Delacroix, Kai
+#### 652 · Port Delacroix, Kai
 
 `port-delacroix-aussen.arceneaux` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8862,13 +8898,13 @@ _Hier warst du schon. Jemand winkt dir aus dem Fenster zu._
 
 [Laden: Gebäckstand von Mrs. Arceneaux]
 
-#### 648 · Altes Musikhaus
+#### 653 · Altes Musikhaus
 
 `port-delacroix-musikhaus.loch_im_dach` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 _Durch das Loch im Dach fällt Licht auf die nassen Dielen._
 
-#### 649 · Turnhalle
+#### 654 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8880,19 +8916,19 @@ _Den Geigenkasten gibt sie dir mit._
 
 **Miss Odile:** Das soll er sein.
 
-#### 650 · Turnhalle
+#### 655 · Turnhalle
 
 `port-delacroix-turnhalle.remy` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 **Remy:** Tonleitern. Jeden Tag. Auch ohne Dach.
 
-#### 651 · Turnhalle
+#### 656 · Turnhalle
 
 `port-delacroix-turnhalle.lou` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
 **Lou:** Diese Muschel hat elf Rillen. Die hier zwölf. Das ist ein Plan, glaube ich.
 
-#### 652 · Klavierwerkstatt Whitlock-Duval
+#### 657 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.werkbank` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8940,7 +8976,7 @@ _Auf der Werkbank steht ein Brett, helles Holz und dunkles, die Ecken noch schar
 
 → Quest abgeschlossen: „Erinnerung: Die Werkstatt, 1852“
 
-#### 653 · Klavierwerkstatt Whitlock-Duval
+#### 658 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.werkbank` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -8974,7 +9010,7 @@ _Das Gold verblasst. Du stehst in der Werkstatt, dein Gesicht ist nass, und du w
 
 _Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er hat ihn längst verbraucht._
 
-#### 654 · Turnhalle
+#### 659 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · Quest „Ohne Ambrose“, Schritt 4 von 4
 
@@ -9010,7 +9046,7 @@ _Dann ist er fort, und du bist allein mit vierundsechzig Feldern._
 
 → Quest abgeschlossen: „Ohne Ambrose“
 
-#### 655 · Turnhalle
+#### 660 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · keine laufende Quest
 
@@ -9034,19 +9070,19 @@ _Die Nadel ist eine kleine Lyra aus Messing, grün angelaufen, wo das Salzwasser
 
 _Du legst die Hand auf den Geigenkasten. Du öffnest ihn nicht. Noch nicht._
 
-#### 656 · Turnhalle
+#### 661 · Turnhalle
 
 `port-delacroix-turnhalle.lou` · keine laufende Quest
 
 **Lou:** Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern.
 
-#### 657 · Klavierwerkstatt Whitlock-Duval
+#### 662 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.werkbank` · keine laufende Quest
 
 _Auf der Werkbank liegen Späne. Sie riechen wie vor hundertachtzig Jahren._
 
-#### 658 · Klavierwerkstatt Whitlock-Duval
+#### 663 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.henri` · Quest „Die Familie“, Schritt 1 von 2: Eine Partie gegen Céleste spielen.
 
@@ -9096,7 +9132,7 @@ _Du musst lachen. Es ist das erste Mal seit der Turnhalle._
 
 → Quest begonnen: „Die Familie“
 
-#### 659 · Klavierwerkstatt Whitlock-Duval
+#### 664 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.celeste` · keine laufende Quest
 
@@ -9121,7 +9157,7 @@ _Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. E
 
 → Quest „Die Familie“: Schritt 1 von 2 erledigt
 
-#### 660 · Klavierwerkstatt Whitlock-Duval
+#### 665 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.celeste` · Quest „Die Familie“, Schritt 2 von 2: Nach der Partie mit Céleste reden.
 
@@ -9163,7 +9199,7 @@ _Er sieht dich an, richtig, zum ersten Mal seit einer weißen, flackernden Nacht
 
 → Quest abgeschlossen: „Die Familie“
 
-#### 661 · Turnhalle
+#### 666 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · keine laufende Quest
 
@@ -9179,7 +9215,7 @@ _Er sieht dich an, richtig, zum ersten Mal seit einer weißen, flackernden Nacht
 
 [Partie gegen Miss Odile, erneut – Ausgang: gewonnen]
 
-#### 662 · Turnhalle
+#### 667 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · keine laufende Quest
 
@@ -9201,31 +9237,31 @@ _Drei Tische, drei Kinder. Am dritten setzt sich Remy hin, die Arme verschränkt
 
 → Quest „Das Musikhaus am Kai“: Schritt 2 von 4 erledigt
 
-#### 663 · Klavierwerkstatt Whitlock-Duval
+#### 668 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.foto_wand` · keine laufende Quest
 
 _Das ovale Foto: ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. Er kann es kaum erwarten, dass das Stillsitzen vorbei ist._
 
-#### 664 · Klavierwerkstatt Whitlock-Duval
+#### 669 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.laptop` · keine laufende Quest
 
 _Auf dem Bildschirm läuft jetzt eine Partie. Célestes Figuren stehen sehr weit vorn._
 
-#### 665 · Klavierwerkstatt Whitlock-Duval
+#### 670 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.henri` · keine laufende Quest
 
 **Henri Whitlock-Duval:** Céleste macht Musik mit dem Laptop. Ich verstehe es nicht, aber es hat Takt.
 
-#### 666 · Klavierwerkstatt Whitlock-Duval
+#### 671 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.celeste` · keine laufende Quest
 
 _Céleste ist skaten. Auf ihrem Laptop klebt ein Zettel: „Bin weg. Pferde rumschieben war okay.“_
 
-#### 667 · Turnhalle
+#### 672 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · Quest „Das Musikhaus am Kai“, Schritt 3 von 4: Nach der Simultan mit Miss Odile reden.
 
@@ -9255,13 +9291,13 @@ _Du siehst ihn an. Der Deckel steht offen._
 
 → Quest „Das Musikhaus am Kai“: Schritt 3 von 4 erledigt
 
-#### 668 · Turnhalle
+#### 673 · Turnhalle
 
 `port-delacroix-turnhalle.remy` · keine laufende Quest
 
 **Remy:** Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.
 
-#### 669 · Altes Musikhaus
+#### 674 · Altes Musikhaus
 
 `port-delacroix-musikhaus.schild` · keine laufende Quest
 
@@ -9269,7 +9305,7 @@ _Handwerker decken das Dach. Das Schild lehnt noch an der Wand und wartet._
 
 **Miss Odile:** Das dauert noch, bis zum Frühjahr. Komm wieder, wenn du aus der Wüste zurück bist.
 
-#### 670 · Turnhalle
+#### 675 · Turnhalle
 
 `port-delacroix-turnhalle.odile` · keine laufende Quest
 
@@ -9280,37 +9316,37 @@ _Handwerker decken das Dach. Das Schild lehnt noch an der Wand und wartet._
 
 **Miss Odile:** Gut. Eine Melodie übt man, bevor man sie spielt.
 
-#### 671 · Turnhalle
+#### 676 · Turnhalle
 
 `port-delacroix-turnhalle.remy` · keine laufende Quest
 
 **Remy:** Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.
 
-#### 672 · Klavierwerkstatt Whitlock-Duval
+#### 677 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.henri` · keine laufende Quest
 
 **Henri Whitlock-Duval:** Für das Musikhaus stifte ich ein Klavier. Das alte da hinten, es klingt wie ein Gewitter.
 
-#### 673 · Klavierwerkstatt Whitlock-Duval
+#### 678 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.henri` · keine laufende Quest
 
 **Henri Whitlock-Duval:** Das Dach ist fast dicht. Die Klaviere danken es uns.
 
-#### 674 · Klavierwerkstatt Whitlock-Duval
+#### 679 · Klavierwerkstatt Whitlock-Duval
 
 `port-delacroix-werkstatt.celeste` · keine laufende Quest
 
 _Céleste hört Musik und wippt mit dem Fuß. Sie hebt kurz den Daumen._
 
-#### 675 · Turnhalle
+#### 680 · Turnhalle
 
 `port-delacroix-turnhalle.remy` · keine laufende Quest
 
 **Remy:** Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist. Der Sturm hat meine Trompete auch fast genommen.
 
-#### 676 · Port Delacroix, Kai
+#### 681 · Port Delacroix, Kai
 
 `port-delacroix-aussen.wuestenzug` · keine laufende Quest
 
@@ -9330,7 +9366,7 @@ _Ambrose und du redet wenig. Es ist das Schweigen von zwei, die sich gestritten 
 
 ### Durch den Canyon
 
-#### 677 · Canyonpfad
+#### 682 · Canyonpfad
 
 `weg-delacroix-desert.tafel` · Quest „Wieder zusammen“, Schritt 1 von 7: Durch den Canyon nach Desert Springs gehen.
 
@@ -9349,13 +9385,13 @@ _Am Wanderschild „Desert Springs, 4 Meilen“ hängt eine Rätseltafel, das Bl
 
 → Quest abgeschlossen: „Die Tafel im Canyon“
 
-#### 678 · Canyonpfad
+#### 683 · Canyonpfad
 
 `weg-delacroix-desert.tafel` · Quest „Wieder zusammen“, Schritt 1 von 7
 
 _Auf dem Wanderschild hat jemand mit Kreide einen kleinen Kaktus gemalt. Darunter: „Gelöst“._
 
-#### 679 · Canyonpfad
+#### 684 · Canyonpfad
 
 `weg-delacroix-desert.mira_stein` · Quest „Wieder zusammen“, Schritt 1 von 7
 
@@ -9423,7 +9459,7 @@ _Sie springt vom Stein und läuft barfuß über den heißen Sand davon, das Bret
 
 → Quest „Wieder zusammen“: Schritt 1 von 7 erledigt
 
-#### 680 · Canyonpfad
+#### 685 · Canyonpfad
 
 `weg-delacroix-desert.fund_eidechsenhaut` · Quest „Wieder zusammen“, Schritt 2 von 7: Am Felsbogen stehen bleiben, wenn es Abend wird.
 
@@ -9431,7 +9467,7 @@ _Zwischen zwei Steinen liegt eine Eidechsenhaut, dünn wie Papier und ganz heil.
 
 **Ambrose:** Sie lässt ihr Kleid einfach liegen. Donnerwetter.
 
-#### 681 · Canyonpfad
+#### 686 · Canyonpfad
 
 `weg-delacroix-desert.holloway` · Quest „Wieder zusammen“, Schritt 2 von 7
 
@@ -9441,31 +9477,31 @@ _Eine Frau mit Strohhut füllt am Wanderschild ihre Flasche an einem Rohr, aus d
 
 **Mrs. Holloway:** Gilt auch fürs Wandern. Mehr Wasser als Weg.
 
-#### 682 · Canyonpfad
+#### 687 · Canyonpfad
 
 `weg-delacroix-desert.sternwarte_abzweig` · Quest „Wieder zusammen“, Schritt 2 von 7
 
 _Geröll liegt quer über dem Pfad nach oben. Mit dem Streit im Kopf willst du hier nicht klettern._
 
-#### 683 · Canyonpfad
+#### 688 · Canyonpfad
 
 `weg-delacroix-desert.mira_stein` · Quest „Wieder zusammen“, Schritt 2 von 7
 
 _Der flache Stein ist leer. Im Staub sieht man noch die Abdrücke eines Bretts._
 
-#### 684 · Canyonpfad
+#### 689 · Canyonpfad
 
 `weg-delacroix-desert.fund_eidechsenhaut` · Quest „Wieder zusammen“, Schritt 2 von 7
 
 _Zwischen den Steinen sonnt sich eine Eidechse. Sie hat eine neue Haut._
 
-#### 685 · Canyonpfad
+#### 690 · Canyonpfad
 
 `weg-delacroix-desert.holloway` · Quest „Wieder zusammen“, Schritt 2 von 7
 
 **Mrs. Holloway:** Mehr Wasser als Weg.
 
-#### 686 · Felsbogen
+#### 691 · Felsbogen
 
 `weg-delacroix-desert.versoehnung` · Quest „Wieder zusammen“, Schritt 2 von 7
 
@@ -9595,13 +9631,13 @@ _Er legt die Hand auf das Eisen._
 
 → Quest „Wieder zusammen“: Schritt 2 von 7 erledigt
 
-#### 687 · Felsbogen
+#### 692 · Felsbogen
 
 `weg-delacroix-desert.fund_nieten` · Quest „Wieder zusammen“, Schritt 3 von 7: Tomás' Aufgaben zu Mattbildern lösen.
 
 _Die Nieten der Brücke glänzen, Reihe um Reihe. Am Pfeiler die Platte: 1879._
 
-#### 688 · Felsbogen
+#### 693 · Felsbogen
 
 `weg-delacroix-desert.ereignis_seilschaft` · Quest „Die Seilschaft“, Schritt 1 von 1: Die Stellung aus der Wand merken, sie für Wren aufbauen und ihr erzählen, wie es ausgeht.
 
@@ -9617,7 +9653,7 @@ _Zwei Kletterinnen hängen in der Wand am Felsbogen, eine unten, eine hoch oben.
 
 [Gedächtnisstellung (wegDelacroixDesert.seilschaft) – Ausgang: bestanden]
 
-#### 689 · Felsbogen
+#### 694 · Felsbogen
 
 `weg-delacroix-desert.ereignis_seilschaft` · Quest „Die Seilschaft“, Schritt 1 von 1
 
@@ -9631,13 +9667,13 @@ _Das Echo trägt deine Züge durch den Canyon. Unten nickt Wren, oben jubelt Tes
 
 → Quest abgeschlossen: „Die Seilschaft“
 
-#### 690 · Felsbogen
+#### 695 · Felsbogen
 
 `weg-delacroix-desert.seite06` · Quest „Wieder zusammen“, Schritt 3 von 7: Tomás' Aufgaben zu Mattbildern lösen.
 
 _Unter dem Felsbogen klemmt eine lose Seite zwischen zwei Steinen, voller Schachdiagramme._
 
-#### 691 · Felsbogen
+#### 696 · Felsbogen
 
 `weg-delacroix-desert.finch_laeufer_b` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9645,13 +9681,13 @@ _Neben einem kleinen Fink aus Kreide steckt etwas im Felsspalt: ein weißer Läu
 
 _Unter seinem Fuß ist ein Feld eingebrannt._
 
-#### 692 · Canyonpfad
+#### 697 · Canyonpfad
 
 `weg-delacroix-desert.holloway` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 **Mrs. Holloway:** Wer angreift, braucht mehr Figuren am König. Und mehr Wasser.
 
-#### 693 · Canyonpfad
+#### 698 · Canyonpfad
 
 `weg-delacroix-desert.sternwarte_abzweig` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9659,19 +9695,19 @@ _Die Laterne zeigt den schmalen Pfad zwischen dem Geröll. Oben auf der Felsnase
 
 ### Sternwarte am Canyon
 
-#### 694 · Felsnase der Sternwarte
+#### 699 · Felsnase der Sternwarte
 
 `sternwarte.bank` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Von der Bank sieht man tief hinunter in den Canyon. Der Pfad unten ist nur noch ein dunkler Faden._
 
-#### 695 · Felsnase der Sternwarte
+#### 700 · Felsnase der Sternwarte
 
 `sternwarte.antennenmast` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Ein alter Antennenmast, festgebunden mit Draht. Er summt leise im Wind. Von hier geht Dr. Ngatas Funk um die Welt._
 
-#### 696 · Kuppel der Sternwarte
+#### 701 · Kuppel der Sternwarte
 
 `sternwarte.teleskop` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9679,19 +9715,19 @@ _Durch das große Teleskop schimmert der Mond. Man sieht Krater, scharf wie Feld
 
 **Ambrose:** Vierundsechzig Felder, und trotzdem kommt man nie ans Ende. Wie da oben.
 
-#### 697 · Kuppel der Sternwarte
+#### 702 · Kuppel der Sternwarte
 
 `sternwarte.sternkarte` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _An der Wand hängt eine Sternkarte. Jemand hat mit Bleistift Züge eingetragen: Sf3, Lc4, und ein Sternbild in L-Form._
 
-#### 698 · Kuppel der Sternwarte
+#### 703 · Kuppel der Sternwarte
 
 `sternwarte.finch_bauer_g` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Auf dem Boden ist ein kleiner Fink aus Kreide gemalt. Darunter, hinter einer Kiste mit Fotoplatten, steht ein weißer Bauer aus Buchsbaum._
 
-#### 699 · Kuppel der Sternwarte
+#### 704 · Kuppel der Sternwarte
 
 `sternwarte.ngata` · Quest „Königsangriff unter Sternen“, Schritt 1 von 1: Dr. Ngatas Mattbilder lösen, bevor der Mond hinter dem Canyon versinkt.
 
@@ -9712,13 +9748,13 @@ _Am Schreibtisch sitzt eine Frau mit Kopfhörern. Aus dem Funkgerät kommen Zahl
 
 → Quest abgeschlossen: „Königsangriff unter Sternen“
 
-#### 700 · Kuppel der Sternwarte
+#### 705 · Kuppel der Sternwarte
 
 `sternwarte.ngata` · Quest „Wieder zusammen“, Schritt 3 von 7: Tomás' Aufgaben zu Mattbildern lösen.
 
 **Dr. Ngata:** Weiß hat gewonnen, sagt mein Funkpartner in Chile. Ich sage: der Himmel.
 
-#### 701 · Kuppel der Sternwarte
+#### 706 · Kuppel der Sternwarte
 
 `sternwarte.lucia` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9728,7 +9764,7 @@ _Ein Mädchen mit Bleistift hinter dem Ohr zeichnet Linien auf eine Sternkarte._
 
 ### Durch den Canyon
 
-#### 702 · Canyonpfad
+#### 707 · Canyonpfad
 
 `weg-delacroix-desert.zurueck_delacroix` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9736,7 +9772,7 @@ _Der Pfad führt zurück zum einsamen Bahnhof. Der nächste Zug fährt nach Port
 
 ### Port Delacroix
 
-#### 703 · Port Delacroix, Kai
+#### 708 · Port Delacroix, Kai
 
 `port-delacroix-aussen.wuestenzug` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9744,25 +9780,25 @@ _Am Bahnhof wartet der Wüstenzug nach Westen. Hinter den Bergen liegt Desert Sp
 
 ### Durch den Canyon
 
-#### 704 · Felsbogen
+#### 709 · Felsbogen
 
 `weg-delacroix-desert.versoehnung` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Unter dem Felsbogen pfeift der Wind durch die alte Eisenbahnbrücke._
 
-#### 705 · Felsbogen
+#### 710 · Felsbogen
 
 `weg-delacroix-desert.ereignis_seilschaft` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Wren winkt von unten, Tess von weit oben. Das Seil ist straff._
 
-#### 706 · Felsbogen
+#### 711 · Felsbogen
 
 `weg-delacroix-desert.seite06` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Unter dem Bogen ist nur noch Sand._
 
-#### 707 · Felsbogen
+#### 712 · Felsbogen
 
 `weg-delacroix-desert.finch_laeufer_b` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9770,13 +9806,13 @@ _Im Felsspalt ist nur noch das Finkenzeichen aus Kreide._
 
 ### Sternwarte am Canyon
 
-#### 708 · Kuppel der Sternwarte
+#### 713 · Kuppel der Sternwarte
 
 `sternwarte.finch_bauer_g` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Unter dem Finkenzeichen liegt nur noch Staub._
 
-#### 709 · Kuppel der Sternwarte
+#### 714 · Kuppel der Sternwarte
 
 `sternwarte.lucia` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9784,7 +9820,7 @@ _Unter dem Finkenzeichen liegt nur noch Staub._
 
 ### Durch den Canyon
 
-#### 710 · Felsbogen
+#### 715 · Felsbogen
 
 `desert-springs-aussen.ankunft_zu_fuss` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9798,19 +9834,19 @@ _Ambrose schweigt. Das Schild sagt alles._
 
 ### Desert Springs
 
-#### 711 · Desert Springs, Hauptstraße
+#### 716 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.motel` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Am Motel „Zur Quelle“ summt die Leuchtschrift. Zwei Buchstaben fehlen._
 
-#### 712 · Desert Springs, Hauptstraße
+#### 717 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.bahnhof` · Quest „Wieder zusammen“, Schritt 3 von 7
 
 _Am alten Bahnhof hält einmal am Tag ein Zug. In der Halle ist ein Antiquariat._
 
-#### 713 · Desert Springs, Hauptstraße
+#### 718 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.buck` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9831,7 +9867,7 @@ _Er spuckt den Zahnstocher aus._
 
 [Stellungsduell gegen Buck – Ausgang: gewonnen]
 
-#### 714 · Desert Springs, Hauptstraße
+#### 719 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.buck` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9848,7 +9884,7 @@ _Mitten in der Partie hast du einen guten Zug gefunden und gesagt: „Na, das wi
 
 [Stellungsduell gegen Buck, erneut – Ausgang: gewonnen]
 
-#### 715 · Desert Springs, Hauptstraße
+#### 720 · Desert Springs, Hauptstraße
 
 `desert-springs-garage.dot` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9884,7 +9920,7 @@ _Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stape
 
 **Dot:** Erst Tomás, Liebes. Ich bin danach dran.
 
-#### 716 · Garage am Motel
+#### 721 · Garage am Motel
 
 `desert-springs-garage.tomas` · Quest „Wieder zusammen“, Schritt 3 von 7
 
@@ -9913,7 +9949,7 @@ _Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen 
 
 → Quest „Wieder zusammen“: Schritt 3 von 7 erledigt
 
-#### 717 · Garage am Motel
+#### 722 · Garage am Motel
 
 `desert-springs-garage.tomas` · Quest „Wieder zusammen“, Schritt 4 von 7: Dots Aufgaben zum Königsangriff lösen.
 
@@ -9923,7 +9959,7 @@ _Er wischt sich die Hände an einem Lappen ab und zieht eine Karte hinter dem Ö
 
 **Tomás:** Erst jedes Schach, jeder Schlag, jede Drohung. Wie beim Motor: erst die Zündkerzen. Dann der Rest.
 
-#### 718 · Garage am Motel
+#### 723 · Garage am Motel
 
 `desert-springs-garage.mira` · Quest „Wieder zusammen“, Schritt 4 von 7
 
@@ -9937,7 +9973,7 @@ _Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. Sie setzt sich an ein
 
 **Mira:** Jetzt Dot. Sie spielt seit fünfzig Jahren per Post. Sie hat Zeit.
 
-#### 719 · Garage am Motel
+#### 724 · Garage am Motel
 
 `desert-springs-garage.dot` · Quest „Wieder zusammen“, Schritt 4 von 7
 
@@ -9952,7 +9988,7 @@ _Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. Sie setzt sich an ein
 
 → Quest „Wieder zusammen“: Schritt 4 von 7 erledigt
 
-#### 720 · Garage am Motel
+#### 725 · Garage am Motel
 
 `desert-springs-garage.dot` · Quest „Der Brief“, Schritt 1 von 2: Im Antiquariat die Stellung auf dem Siegel lösen.
 
@@ -9966,13 +10002,13 @@ _Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. Sie setzt sich an ein
 
 → Quest begonnen: „Der Brief“
 
-#### 721 · Desert Springs, Hauptstraße
+#### 726 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.motel` · Quest „Wieder zusammen“, Schritt 5 von 7: Den Clubkampf gegen Mira gewinnen.
 
 _Vor dem Motel steht ein Liegestuhl. Auf dem Tisch daneben ein Fernschachbrief mit Briefmarken aus aller Welt._
 
-#### 722 · Desert Springs, Hauptstraße
+#### 727 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.buck` · Quest „Wieder zusammen“, Schritt 5 von 7
 
@@ -9983,7 +10019,7 @@ _Vor dem Motel steht ein Liegestuhl. Auf dem Tisch daneben ein Fernschachbrief m
 
 **Buck:** Gute Fahrt! Und tank voll.
 
-#### 723 · Desert Springs, Hauptstraße
+#### 728 · Desert Springs, Hauptstraße
 
 `desert-springs-garage.dot` · Quest „Dots Partie“, Schritt 1 von 2: Margarets Partie gegen Dot ab dem 31. Zug zu Ende spielen.
 
@@ -10002,7 +10038,7 @@ _Dot legt ein kleines Steckbrett auf die Theke. Die Stellung nach dem einunddrei
 
 → Quest „Dots Partie“: Schritt 1 von 2 erledigt
 
-#### 724 · Desert Springs, Hauptstraße
+#### 729 · Desert Springs, Hauptstraße
 
 `desert-springs-garage.dot` · Quest „Dots Partie“, Schritt 2 von 2: Dot sagen, wie es ausgegangen ist.
 
@@ -10022,7 +10058,7 @@ _Sie zieht einen Faden von der Nadel im Nordosten zu einer leeren Postkarte und 
 
 → Quest abgeschlossen: „Dots Partie“
 
-#### 725 · Antiquariat im alten Bahnhof
+#### 730 · Antiquariat im alten Bahnhof
 
 `desert-springs-antiquariat.okoro` · Quest „Wieder zusammen“, Schritt 5 von 7: Den Clubkampf gegen Mira gewinnen.
 
@@ -10057,7 +10093,7 @@ _Wieder eine Fesselung. Eine andere, schwerer._
 
 → Quest „Der Brief“: Schritt 1 von 2 erledigt
 
-#### 726 · Antiquariat im alten Bahnhof
+#### 731 · Antiquariat im alten Bahnhof
 
 `desert-springs-antiquariat.okoro` · Quest „Der Brief“, Schritt 2 von 2: Den Brief mit Ambrose lesen.
 
@@ -10119,13 +10155,13 @@ _Oben sieht Mr. Okoro dein Gesicht und fragt nichts._
 
 → Quest abgeschlossen: „Der Brief“
 
-#### 727 · Desert Springs, Hauptstraße
+#### 732 · Desert Springs, Hauptstraße
 
 `desert-springs-garage.dot` · Quest „Wieder zusammen“, Schritt 5 von 7: Den Clubkampf gegen Mira gewinnen.
 
 **Dot:** Willst du ein Zimmer? Für Schachspieler die Hälfte.
 
-#### 728 · Desert Springs, Hauptstraße
+#### 733 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.canyon` · Quest „Wieder zusammen“, Schritt 5 von 7
 
@@ -10133,7 +10169,7 @@ _Der Pfad führt zurück in den Canyon, zum Felsbogen._
 
 ### Durch den Canyon
 
-#### 729 · Felsbogen
+#### 734 · Felsbogen
 
 `desert-springs-aussen.ankunft_zu_fuss` · Quest „Wieder zusammen“, Schritt 5 von 7
 
@@ -10141,19 +10177,19 @@ _Der Pfad aus dem Canyon endet an der Hauptstraße von Desert Springs._
 
 ### Desert Springs
 
-#### 730 · Desert Springs, Hauptstraße
+#### 735 · Desert Springs, Hauptstraße
 
 `desert-springs-garage.dot` · Quest „Wieder zusammen“, Schritt 5 von 7
 
 **Dot:** Heute kam ein Brief aus Reykjavík. Mein Gegner hat endlich gezogen. Nach vier Monaten.
 
-#### 731 · Garage am Motel
+#### 736 · Garage am Motel
 
 `desert-springs-garage.tomas` · Quest „Wieder zusammen“, Schritt 5 von 7
 
 **Tomás:** Ein Motor und ein Angriff brauchen dasselbe: alle Teile an der richtigen Stelle.
 
-#### 732 · Garage am Motel
+#### 737 · Garage am Motel
 
 `desert-springs-garage.mira` · Quest „Erinnerung: Das letzte Spiel, 1858“, Schritt 1 von 2: Die Stellung von 1858 nach Hales Läuferzug mit Weiß weiterspielen.
 
@@ -10194,7 +10230,7 @@ _Du spielst Weiß. Gegen Hale, wie er damals saß._
 
 → Quest „Erinnerung: Das letzte Spiel, 1858“: Schritt 1 von 2 erledigt
 
-#### 733 · Garage am Motel
+#### 738 · Garage am Motel
 
 `desert-springs-garage.mira` · Quest „Erinnerung: Das letzte Spiel, 1858“, Schritt 2 von 2: Danach mit Mira reden.
 
@@ -10244,7 +10280,7 @@ _Als es still ist, sagt er noch etwas._
 
 → Quest abgeschlossen: „Erinnerung: Das letzte Spiel, 1858“
 
-#### 734 · Antiquariat im alten Bahnhof
+#### 739 · Antiquariat im alten Bahnhof
 
 `desert-springs-antiquariat.okoro` · Quest „Wieder zusammen“, Schritt 5 von 7: Den Clubkampf gegen Mira gewinnen.
 
@@ -10252,13 +10288,13 @@ _Als es still ist, sagt er noch etwas._
 
 [Laden: Antiquariat von Mr. Okoro]
 
-#### 735 · Garage am Motel
+#### 740 · Garage am Motel
 
 `desert-springs-garage.tomas` · Quest „Wieder zusammen“, Schritt 5 von 7
 
 **Tomás:** Mira hat heute schon drei Damen geopfert. Zwei waren richtig.
 
-#### 736 · Garage am Motel
+#### 741 · Garage am Motel
 
 `desert-springs-garage.mira` · Quest „Wieder zusammen“, Schritt 5 von 7
 
@@ -10285,7 +10321,7 @@ _Sie grinst. Zum ersten Mal sieht sie aus wie zehn._
 
 → Quest „Wieder zusammen“: Schritt 5 von 7 erledigt
 
-#### 737 · Garage am Motel
+#### 742 · Garage am Motel
 
 `desert-springs-garage.mira` · Quest „Wieder zusammen“, Schritt 6 von 7: Am Abend die Sterne über dem Motel ansehen.
 
@@ -10303,13 +10339,13 @@ _Am Ende gibt sie dir die Hand. Ihre ist klebrig._
 
 _Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand._
 
-#### 738 · Garage am Motel
+#### 743 · Garage am Motel
 
 `desert-springs-garage.dot` · Quest „Wieder zusammen“, Schritt 6 von 7
 
 **Dot:** Briefe sind wie Züge, Liebes. Man schickt sie los und wartet.
 
-#### 739 · Desert Springs, Hauptstraße
+#### 744 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.motel` · Quest „Wieder zusammen“, Schritt 6 von 7
 
@@ -10347,7 +10383,7 @@ _Der letzte Satz gefällt dir nicht._
 
 → Quest „Wieder zusammen“: Schritt 6 von 7 erledigt
 
-#### 740 · Desert Springs, Hauptstraße
+#### 745 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.bahnhof` · Quest „Wieder zusammen“, Schritt 7 von 7: Zum Bahnhof gehen, wenn ich abreisen will.
 
@@ -10376,7 +10412,7 @@ _Der Zug fährt gleich. Wohin?_
 
 → Quest abgeschlossen: „Wieder zusammen“
 
-#### 741 · Antiquariat im alten Bahnhof
+#### 746 · Antiquariat im alten Bahnhof
 
 `desert-springs-antiquariat.okoro` · keine laufende Quest
 
@@ -10384,7 +10420,7 @@ _Der Zug fährt gleich. Wohin?_
 
 [Laden: Antiquariat von Mr. Okoro]
 
-#### 742 · Garage am Motel
+#### 747 · Garage am Motel
 
 `desert-springs-garage.mira` · keine laufende Quest
 
@@ -10397,7 +10433,7 @@ _Der Zug fährt gleich. Wohin?_
 
 [Partie gegen Mira, erneut – Ausgang: gewonnen]
 
-#### 743 · Garage am Motel
+#### 748 · Garage am Motel
 
 `desert-springs-garage.mira` · keine laufende Quest
 
@@ -10406,7 +10442,7 @@ _Der Zug fährt gleich. Wohin?_
 **Kim (Antwort):** „Bis später, Mira.“\
 (andere Antworten: „Revanche um eine bessere Nadel?“)
 
-#### 744 · Antiquariat im alten Bahnhof
+#### 749 · Antiquariat im alten Bahnhof
 
 `desert-springs-antiquariat.okoro` · keine laufende Quest
 
@@ -10414,13 +10450,13 @@ _Der Zug fährt gleich. Wohin?_
 
 [Laden: Antiquariat von Mr. Okoro]
 
-#### 745 · Garage am Motel
+#### 750 · Garage am Motel
 
 `desert-springs-garage.tomas` · keine laufende Quest
 
 **Tomás:** Wenn du Mira schlägst, ist sie einen Tag lang still. Dann redet sie doppelt.
 
-#### 746 · Desert Springs, Hauptstraße
+#### 751 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.highway` · keine laufende Quest
 
@@ -10436,7 +10472,7 @@ _Die Straße flimmert. Nach einer Stunde taucht ein Diner mit Neonschild auf. Ma
 
 ### Hinauf in die Berge
 
-#### 747 · Diner an der Wüstenstraße
+#### 752 · Diner an der Wüstenstraße
 
 `weg-desert-summit.tafel` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7: In Summit City ankommen.
 
@@ -10457,13 +10493,13 @@ _Neben der Kasse hängt eine Tafel: „Drei Endspiele. Wer alle löst, kriegt de
 
 → Quest abgeschlossen: „Die Tafel am Diner“
 
-#### 748 · Diner an der Wüstenstraße
+#### 753 · Diner an der Wüstenstraße
 
 `weg-desert-summit.tafel` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Auf der Tafel neben der Kasse steht mit Kreide: „Gelöst. Kaffee geht aufs Haus.“_
 
-#### 749 · Diner an der Wüstenstraße
+#### 754 · Diner an der Wüstenstraße
 
 `weg-desert-summit.fund_neon` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10471,7 +10507,7 @@ _Hinter dem Diner, zwischen leeren Kisten, liegt ein gebogenes Glasrohr in Form 
 
 **Earl Dubois:** Das K von King's Diner. Ist seit neunundachtzig kaputt. Nimm's mit, wir haben uns dran gewöhnt.
 
-#### 750 · Diner an der Wüstenstraße
+#### 755 · Diner an der Wüstenstraße
 
 `weg-desert-summit.ereignis_funkschach` · Quest „Schach über Funk“, Schritt 1 von 2: Im Funkturnier der Fernfahrer mitspielen, Gegnerin ist Mama Bear.
 
@@ -10489,7 +10525,7 @@ _Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, set
 
 → Quest „Schach über Funk“: Schritt 1 von 2 erledigt
 
-#### 751 · Diner an der Wüstenstraße
+#### 756 · Diner an der Wüstenstraße
 
 `weg-desert-summit.ereignis_funkschach` · Quest „Schach über Funk“, Schritt 2 von 2: Zuhören, was Mama Bear über ihre Fracht erzählt.
 
@@ -10503,7 +10539,7 @@ _Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, set
 
 → Quest abgeschlossen: „Schach über Funk“
 
-#### 752 · Diner an der Wüstenstraße
+#### 757 · Diner an der Wüstenstraße
 
 `weg-desert-summit.kreide3` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7: In Summit City ankommen.
 
@@ -10513,37 +10549,37 @@ _Darunter, ganz klein: „Dreimal klopfen.“_
 
 **Ambrose:** Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt.
 
-#### 753 · Diner an der Wüstenstraße
+#### 758 · Diner an der Wüstenstraße
 
 `weg-desert-summit.finch_springer_b` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Im Blumenkasten am Motel steckt ein kleiner Fink aus Blech. Zwischen den Blumen liegt ein weißer Springer aus Buchsbaum._
 
-#### 754 · Diner an der Wüstenstraße
+#### 759 · Diner an der Wüstenstraße
 
 `weg-desert-summit.seite08` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme._
 
-#### 755 · Diner an der Wüstenstraße
+#### 760 · Diner an der Wüstenstraße
 
 `weg-desert-summit.reklame` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Eine große Reklametafel: „King's Diner – 2 Meilen“. Bis zum Diner sind es kaum zweihundert Schritte._
 
-#### 756 · Diner an der Wüstenstraße
+#### 761 · Diner an der Wüstenstraße
 
 `weg-desert-summit.motelschild` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Das Neonschild des Starlight Motels summt. „VACANCY“, und das V flackert._
 
-#### 757 · Diner an der Wüstenstraße
+#### 762 · Diner an der Wüstenstraße
 
 `weg-desert-summit.aussicht` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Von der Rastbank sieht man nach Westen die ersten Berge, blau im Dunst. Dort oben liegt Summit City._
 
-#### 758 · Diner an der Wüstenstraße
+#### 763 · Diner an der Wüstenstraße
 
 `weg-desert-summit.earl` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10573,7 +10609,7 @@ _An einem Diner mit einem Neonschild in Form eines Königs haltet ihr zum Tanken
 
 **Earl Dubois:** Komm wieder, wenn du hier durchfährst. Dann rennen wir.
 
-#### 759 · Bergstraße
+#### 764 · Bergstraße
 
 `weg-desert-summit.spur_pm4` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10581,31 +10617,31 @@ _In der Haltebucht steht ein blauer Sattelzug. Auf den Kisten klebt das Logo von
 
 _Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steckt ein Frachtbrief._
 
-#### 760 · Bergstraße
+#### 765 · Bergstraße
 
 `weg-desert-summit.aussicht_berg` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Unter der Bank fällt der Hang steil ab. Weit unten liegt die Wüste, flach wie ein leeres Brett._
 
-#### 761 · Bergstraße
+#### 766 · Bergstraße
 
 `weg-desert-summit.wegweiser_hochebene` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Ein Wegweiser: „Summit City ↑ 2 Meilen. Hochebene: in Summit City links.“_
 
-#### 762 · Bergstraße
+#### 767 · Bergstraße
 
 `weg-desert-summit.quelle` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Aus dem Fels rinnt kaltes Wasser in einen Steintrog. Du trinkst ein paar Schlucke._
 
-#### 763 · Diner an der Wüstenstraße
+#### 768 · Diner an der Wüstenstraße
 
 `weg-desert-summit.fund_neon` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Hinter dem Diner liegen leere Kisten und ein alter Reifen._
 
-#### 764 · Diner an der Wüstenstraße
+#### 769 · Diner an der Wüstenstraße
 
 `weg-desert-summit.ereignis_funkschach` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10613,25 +10649,25 @@ _Aus dem Funkgerät rauscht es._
 
 **Mama Bear:** Kim Junior, bist du da? Wir spielen Dienstag wieder.
 
-#### 765 · Diner an der Wüstenstraße
+#### 770 · Diner an der Wüstenstraße
 
 `weg-desert-summit.kreide3` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Der Springer aus Kreide ist noch da. Daneben die Tür zum Hinterzimmer._
 
-#### 766 · Diner an der Wüstenstraße
+#### 771 · Diner an der Wüstenstraße
 
 `weg-desert-summit.finch_springer_b` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Im Blumenkasten wachsen nur noch Blumen._
 
-#### 767 · Diner an der Wüstenstraße
+#### 772 · Diner an der Wüstenstraße
 
 `weg-desert-summit.seite08` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Auf dem Parkplatz liegt nur noch Staub._
 
-#### 768 · Diner an der Wüstenstraße
+#### 773 · Diner an der Wüstenstraße
 
 `weg-desert-summit.earl` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10650,13 +10686,13 @@ _Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“._
 
 **Earl Dubois:** Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls.
 
-#### 769 · Diner an der Wüstenstraße
+#### 774 · Diner an der Wüstenstraße
 
 `weg-desert-summit.hinterzimmer_tuer` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Du klopfst dreimal. Von drinnen ruft jemand: „Rein mit dir, aber leise.“_
 
-#### 770 · Hinterzimmer des Diners
+#### 775 · Hinterzimmer des Diners
 
 `weg-desert-summit.mags` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10669,19 +10705,19 @@ _Kein Bildschirm, keine Uhr an der Wand. Nur Bretter, Kreide und Kaffee._
 
 [Partie gegen Mags – Ausgang: gewonnen]
 
-#### 771 · Hinterzimmer des Diners
+#### 776 · Hinterzimmer des Diners
 
 `weg-desert-summit.mags` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 **Mags:** Du hast mich geschlagen. Komm wieder, dann revanchiere ich mich.
 
-#### 772 · Hinterzimmer des Diners
+#### 777 · Hinterzimmer des Diners
 
 `weg-desert-summit.ruth_keene` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 **Ruth Keene:** Ruth Keene. Am Funk heiße ich Mama Bear. Hier hinten darf ich einfach Ruth sein.
 
-#### 773 · Diner an der Wüstenstraße
+#### 778 · Diner an der Wüstenstraße
 
 `weg-desert-summit.earl` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10702,7 +10738,7 @@ _Kein Bildschirm, keine Uhr an der Wand. Nur Bretter, Kreide und Kaffee._
 
 **Earl Dubois:** Komm wieder, wenn du hier durchfährst. Dann rennen wir.
 
-#### 774 · Diner an der Wüstenstraße
+#### 779 · Diner an der Wüstenstraße
 
 `weg-desert-summit.zurueck_desert` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10710,7 +10746,7 @@ _Die Straße führt zurück nach Desert Springs, durch flimmernde Hitze._
 
 ### Desert Springs
 
-#### 775 · Desert Springs, Hauptstraße
+#### 780 · Desert Springs, Hauptstraße
 
 `desert-springs-aussen.highway` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10718,7 +10754,7 @@ _Der Highway führt nach Norden, durch die Wüste, Richtung Berge._
 
 ### Hinauf in die Berge
 
-#### 776 · Diner an der Wüstenstraße
+#### 781 · Diner an der Wüstenstraße
 
 `weg-desert-summit.earl` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10729,13 +10765,13 @@ _Der Highway führt nach Norden, durch die Wüste, Richtung Berge._
 
 **Earl Dubois:** Gute Fahrt. Und lass den König nicht im Schach stehen.
 
-#### 777 · Bergstraße
+#### 782 · Bergstraße
 
 `weg-desert-summit.spur_pm4` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
 _Der Sattelzug steht noch in der Haltebucht. Die Kisten summen._
 
-#### 778 · Diner an der Wüstenstraße
+#### 783 · Diner an der Wüstenstraße
 
 `weg-desert-summit.earl` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10756,7 +10792,7 @@ _Der Sattelzug steht noch in der Haltebucht. Die Kisten summen._
 
 **Earl Dubois:** Komm wieder, wenn du hier durchfährst. Dann rennen wir.
 
-#### 779 · Hinterzimmer des Diners
+#### 784 · Hinterzimmer des Diners
 
 `weg-desert-summit.ruth_keene` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7
 
@@ -10766,7 +10802,7 @@ _Der Sattelzug steht noch in der Haltebucht. Die Kisten summen._
 
 ### Hinauf in die Berge
 
-#### 780 · Bergstraße
+#### 785 · Bergstraße
 
 `summit-city-aussen.ankunft_zu_fuss` · Quest „Die Wahrheit des Endspiels“, Schritt 1 von 7: In Summit City ankommen.
 
@@ -10804,7 +10840,7 @@ _Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt un
 
 ### Summit City
 
-#### 781 · Summit City, Talstation
+#### 786 · Summit City, Talstation
 
 `summit-city-aussen.drachenfest` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7: Großmeisterin Ward in ihrer Hütte besuchen.
 
@@ -10824,13 +10860,13 @@ _Alle Bretter sind belegt. Die Bergführer spielen bis Mitternacht, und die Kind
 
 **Ambrose:** Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt.
 
-#### 782 · Summit City, Talstation
+#### 787 · Summit City, Talstation
 
 `summit-city-aussen.plakat` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
 _Ein Plakat am Platz: „Landesmeisterschaft – Finale in der Capital Arena“. Darunter hat jemand mit Bleistift geschrieben: „Wir fahren hin!“_
 
-#### 783 · Summit City, Talstation
+#### 788 · Summit City, Talstation
 
 `summit-city-aussen.fernrohr` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
@@ -10838,7 +10874,7 @@ _Vom Felsplateau sieht man über das ganze Tal. Die Gondel hängt wie eine Figur
 
 **Ambrose:** Von hier oben sieht das Tal aus wie ein Brett nach der Eröffnung. Alles steht noch, nichts ist entschieden.
 
-#### 784 · Summit City, Talstation
+#### 789 · Summit City, Talstation
 
 `summit-city-aussen.sol` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
@@ -10857,7 +10893,7 @@ _Auf dem Gipfelfelsen sitzt eine Frau mit Kletterseil über der Schulter. Vor ih
 
 [Stellungsduell gegen Sol – Ausgang: gewonnen]
 
-#### 785 · Summit City, Talstation
+#### 790 · Summit City, Talstation
 
 `summit-city-aussen.sol` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
@@ -10872,31 +10908,31 @@ _Auf dem Gipfelfelsen sitzt eine Frau mit Kletterseil über der Schulter. Vor ih
 
 [Stellungsduell gegen Sol, erneut – Ausgang: gewonnen]
 
-#### 786 · Hütte der Großmeisterin
+#### 791 · Hütte der Großmeisterin
 
 `summit-city-huette.pokal` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
 _An der Wand hängt ein Thermometer. Sonst nichts. Keine Pokale._
 
-#### 787 · Hütte der Großmeisterin
+#### 792 · Hütte der Großmeisterin
 
 `summit-city-huette.kaminfeuer` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
 _Im Juli brennt hier ein Feuer. Es ist das Einzige, das Ward schmückt._
 
-#### 788 · Hütte der Großmeisterin
+#### 793 · Hütte der Großmeisterin
 
 `summit-city-huette.foto` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
 _Ein leerer Haken an der Wand. Was hier einmal hing, hat Ward abgenommen._
 
-#### 789 · Hütte der Großmeisterin
+#### 794 · Hütte der Großmeisterin
 
 `summit-city-huette.teekanne` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
 _Auf dem runden Tisch steht eine Teekanne, noch warm. Daneben ein Brett, auf dem eine Partie wartet._
 
-#### 790 · Hütte der Großmeisterin
+#### 795 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Die Wahrheit des Endspiels“, Schritt 2 von 7
 
@@ -10941,7 +10977,7 @@ _Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein s
 
 → Quest „Die Wahrheit des Endspiels“: Schritt 2 von 7 erledigt
 
-#### 791 · Hütte der Großmeisterin
+#### 796 · Hütte der Großmeisterin
 
 `summit-city-huette.kit` · Quest „Die Wahrheit des Endspiels“, Schritt 3 von 7: Kits Aufgaben zu Bauernendspielen lösen.
 
@@ -10960,7 +10996,7 @@ _Am Clubtisch sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Fing
 
 → Quest „Die Wahrheit des Endspiels“: Schritt 3 von 7 erledigt
 
-#### 792 · Hütte der Großmeisterin
+#### 797 · Hütte der Großmeisterin
 
 `summit-city-huette.kit` · Quest „Die Wahrheit des Endspiels“, Schritt 4 von 7: Haraldsens Aufgaben zu Turmendspielen lösen.
 
@@ -10970,7 +11006,7 @@ _Sie gibt dir eine Karte aus der Jackentasche, die Ecken vom Wetter rund: ein K�
 
 **Kit:** König raus, Freibauer zählen, Opposition. Wie beim Aufstieg: erst schauen, dann gehen.
 
-#### 793 · Hütte der Großmeisterin
+#### 798 · Hütte der Großmeisterin
 
 `summit-city-huette.haraldsen` · Quest „Die Wahrheit des Endspiels“, Schritt 4 von 7
 
@@ -10991,7 +11027,7 @@ _Ein alter Mann in Seilbahnuniform sitzt am Kamin und poliert eine Turmfigur._
 
 → Quest „Die Wahrheit des Endspiels“: Schritt 4 von 7 erledigt
 
-#### 794 · Hütte der Großmeisterin
+#### 799 · Hütte der Großmeisterin
 
 `summit-city-huette.haraldsen` · Quest „Haraldsens Studie“, Schritt 1 von 1: Ward die Studie aus Haraldsens Mantel bringen.
 
@@ -11020,13 +11056,13 @@ _Er gibt dir einen Zettel, so oft gefaltet, dass die Falten weich sind wie Stoff
 
 → Quest begonnen: „Haraldsens Studie“
 
-#### 795 · Summit City, Talstation
+#### 800 · Summit City, Talstation
 
 `summit-city-aussen.drachenfest` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7: Noch einmal mit Ward reden.
 
 _Ein Murmeltier sitzt auf dem Brunnenrand und pfeift._
 
-#### 796 · Summit City, Talstation
+#### 801 · Summit City, Talstation
 
 `summit-city-aussen.sol` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11037,13 +11073,13 @@ _Ein Murmeltier sitzt auf dem Brunnenrand und pfeift._
 
 **Sol:** Langsam abwärts. Abwärts passieren die Unfälle.
 
-#### 797 · Summit City, Talstation
+#### 802 · Summit City, Talstation
 
 `summit-city-aussen.seilbahn` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 _Die Gondel schaukelt bergauf, über Tannen und Murmeltierbauten, bis über die Wolken._
 
-#### 798 · Bergstation der Seilbahn
+#### 803 · Bergstation der Seilbahn
 
 `summit-city-bergstation.fund_pfeife` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11051,13 +11087,13 @@ _Unter einer der Wartebänke liegt eine kleine Holzpfeife. Du pfeifst hinein. Dr
 
 **Ambrose:** Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Menschen.
 
-#### 799 · Bergstation der Seilbahn
+#### 804 · Bergstation der Seilbahn
 
 `summit-city-bergstation.fahrplan` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 _Der Fahrplan der Seilbahn: jede halbe Stunde eine Gondel, bei Sturm keine. Darunter ein Zettel: „Schachbretter bitte nicht in der Gondel liegen lassen.“_
 
-#### 800 · Bergstation der Seilbahn
+#### 805 · Bergstation der Seilbahn
 
 `summit-city-bergstation.aussicht` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11065,7 +11101,7 @@ _Hinter dem Geländer fällt der Fels senkrecht ab. Darunter wogt das Wolkenmeer
 
 _Am Seil gleitet eine Gondel hinunter und taucht ins Weiß, als ginge sie unter._
 
-#### 801 · Bergstation der Seilbahn
+#### 806 · Bergstation der Seilbahn
 
 `summit-city-bergstation.victor` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11073,7 +11109,7 @@ _Victor steht draußen am Geländer der Plattform und hört etwas über einen Oh
 
 **Victor Hale:** Nicht jetzt. Ich hab Vorbereitung. Der Coach sagt, ich darf mit niemandem spielen, der nicht im Plan steht.
 
-#### 802 · Bergladen
+#### 807 · Bergladen
 
 `summit-city-bergladen.theke` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11085,13 +11121,13 @@ _Auf der Theke steht eine Blechdose und ein Schild: „Bin in Wards Hütte. Bedi
 
 [Laden: Haraldsens Bergladen]
 
-#### 803 · Summit City, Talstation
+#### 808 · Summit City, Talstation
 
 `summit-city-aussen.drachenfest` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 _Die Laternen vom Fest hängen noch. Am Brunnen erklärt ein Vater seinem Sohn den Drachen._
 
-#### 804 · Summit City, Talstation
+#### 809 · Summit City, Talstation
 
 `summit-city-aussen.weg_desert` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11099,7 +11135,7 @@ _Die Bergstraße windet sich hinunter, Richtung Wüste._
 
 ### Hinauf in die Berge
 
-#### 805 · Bergstraße
+#### 810 · Bergstraße
 
 `summit-city-aussen.ankunft_zu_fuss` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11107,13 +11143,13 @@ _Die Bergstraße endet an der Talstation von Summit City. Irgendwo pfeift ein Mu
 
 ### Summit City
 
-#### 806 · Hütte der Großmeisterin
+#### 811 · Hütte der Großmeisterin
 
 `summit-city-huette.kaminfeuer` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 _Auf dem Kaminsims steht eine Teekanne mit Sprung. Darüber ist die Wand leer._
 
-#### 807 · Hütte der Großmeisterin
+#### 812 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11133,31 +11169,31 @@ _Er antwortet nicht gleich._
 
 **Ambrose:** Deshalb lernst du es. Nicht ich.
 
-#### 808 · Hütte der Großmeisterin
+#### 813 · Hütte der Großmeisterin
 
 `summit-city-huette.kit` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 **Kit:** Im Winter zählen wir Felder, im Sommer Höhenmeter. Ist dasselbe.
 
-#### 809 · Hütte der Großmeisterin
+#### 814 · Hütte der Großmeisterin
 
 `summit-city-huette.haraldsen` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 **Mr. Haraldsen:** Die Gondel ist einmal stehen geblieben, eine Nacht lang. Wir haben Blindschach gespielt.
 
-#### 810 · Summit City, Talstation
+#### 815 · Summit City, Talstation
 
 `summit-city-aussen.drachenfest` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 _Am Drachenbrunnen liegt eine vergessene Figur mit Flügeln._
 
-#### 811 · Bergstation der Seilbahn
+#### 816 · Bergstation der Seilbahn
 
 `summit-city-bergstation.fund_pfeife` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
 _Unter der Wartebank liegt nur noch eine leere Bonbontüte._
 
-#### 812 · Bergladen
+#### 817 · Bergladen
 
 `summit-city-bergladen.theke` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11165,7 +11201,7 @@ _Die Blechdose auf der Theke klimpert. „Ehrlich bleiben.“_
 
 [Laden: Haraldsens Bergladen]
 
-#### 813 · Hütte der Großmeisterin
+#### 818 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Hastings 1895“, Schritt 1 von 2: Die Züge von Steinitz in Wards Lieblingspartie erraten.
 
@@ -11194,7 +11230,7 @@ _Sie holt ein dünnes Heft aus dem Regal, mit einem Umschlag aus Packpapier._
 
 → Quest „Hastings 1895“: Schritt 1 von 2 erledigt
 
-#### 814 · Hütte der Großmeisterin
+#### 819 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Hastings 1895“, Schritt 2 von 2: Mit Ward über die Partie reden.
 
@@ -11234,13 +11270,13 @@ _Unten im Tal steigt ein Feuerwerk auf, grün, in der Form von etwas mit Flügel
 
 → Quest abgeschlossen: „Hastings 1895“
 
-#### 815 · Hütte der Großmeisterin
+#### 820 · Hütte der Großmeisterin
 
 `summit-city-huette.haraldsen` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7: Noch einmal mit Ward reden.
 
 **Mr. Haraldsen:** Turmendspiele sind immer remis, sagt man. Man sagt viel.
 
-#### 816 · Hütte der Großmeisterin
+#### 821 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Die Wahrheit des Endspiels“, Schritt 5 von 7
 
@@ -11288,25 +11324,25 @@ _Ward hebt den schwarzen König auf und stellt ihn zurück._
 
 → Quest „Die Wahrheit des Endspiels“: Schritt 5 von 7 erledigt
 
-#### 817 · Hütte der Großmeisterin
+#### 822 · Hütte der Großmeisterin
 
 `summit-city-huette.kit` · Quest „Die Wahrheit des Endspiels“, Schritt 6 von 7: Victor an der Bergstation suchen und mit ihm spielen.
 
 **Kit:** Ward sagt, ich soll weniger rennen. Am Brett und am Berg.
 
-#### 818 · Hütte der Großmeisterin
+#### 823 · Hütte der Großmeisterin
 
 `summit-city-huette.haraldsen` · Quest „Die Wahrheit des Endspiels“, Schritt 6 von 7
 
 **Mr. Haraldsen:** Im Bergladen habe ich Seilbahnkarten. Und Karten für das Brett.
 
-#### 819 · Summit City, Talstation
+#### 824 · Summit City, Talstation
 
 `summit-city-aussen.seilbahn` · Quest „Die Wahrheit des Endspiels“, Schritt 6 von 7
 
 _Der Wärter an der Talstation zeigt nach oben. „Ein Junge ist eben den Pfad hinaufgerannt. Nicht hinunter. Allein.“_
 
-#### 820 · Bergstation der Seilbahn
+#### 825 · Bergstation der Seilbahn
 
 `summit-city-bergstation.victor` · Quest „Die Wahrheit des Endspiels“, Schritt 6 von 7
 
@@ -11351,7 +11387,7 @@ _Er sieht dich an. Dann rückt er herüber._
 
 [Partie gegen Victor Hale – Ausgang: gewonnen]
 
-#### 821 · Bergstation der Seilbahn
+#### 826 · Bergstation der Seilbahn
 
 `summit-city-bergstation.victor` · Quest „Die fehlende Seite“, Schritt 2 von 2: Die Seite finden, die im Notizbuch fehlt.
 
@@ -11419,7 +11455,7 @@ _Und dass er hundertsechzig Jahre auf diesen Zug gewartet hat._
 
 → Quest „Die Wahrheit des Endspiels“: Schritt 6 von 7 erledigt
 
-#### 822 · Hütte der Großmeisterin
+#### 827 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Haraldsens Studie“, Schritt 1 von 1: Ward die Studie aus Haraldsens Mantel bringen.
 
@@ -11443,13 +11479,13 @@ _Am Morgen sitzt sie noch genauso da. Das Feuer ist heruntergebrannt. Auf dem Ti
 
 → Quest abgeschlossen: „Haraldsens Studie“
 
-#### 823 · Bergstation der Seilbahn
+#### 828 · Bergstation der Seilbahn
 
 `summit-city-bergstation.victor` · Quest „Die Wahrheit des Endspiels“, Schritt 7 von 7: Den Clubkampf gegen Ward gewinnen.
 
 **Victor Hale:** Hier oben ist kein Netz. Ich komme jetzt öfter her.
 
-#### 824 · Hütte der Großmeisterin
+#### 829 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · Quest „Die Wahrheit des Endspiels“, Schritt 7 von 7
 
@@ -11488,7 +11524,7 @@ _Sie nickt. Mehr nicht._
 
 → Quest abgeschlossen: „Die Wahrheit des Endspiels“
 
-#### 825 · Hütte der Großmeisterin
+#### 830 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · keine laufende Quest
 
@@ -11536,13 +11572,13 @@ _In der Tür steht Juno, keuchend._
 
 **Ambrose:** Ich lerne noch. Stell dir das vor.
 
-#### 826 · Bergstation der Seilbahn
+#### 831 · Bergstation der Seilbahn
 
 `summit-city-bergstation.victor` · keine laufende Quest
 
 **Victor Hale:** Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.
 
-#### 827 · Hütte der Großmeisterin
+#### 832 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · keine laufende Quest
 
@@ -11555,7 +11591,7 @@ _In der Tür steht Juno, keuchend._
 
 [Partie gegen Großmeisterin Ward, erneut – Ausgang: gewonnen]
 
-#### 828 · Hütte der Großmeisterin
+#### 833 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · keine laufende Quest
 
@@ -11564,13 +11600,13 @@ _In der Tür steht Juno, keuchend._
 **Kim (Antwort):** „Bis morgen.“\
 (andere Antworten: „Revanche um eine bessere Nadel?“)
 
-#### 829 · Hütte der Großmeisterin
+#### 834 · Hütte der Großmeisterin
 
 `summit-city-huette.kaminfeuer` · keine laufende Quest
 
 _Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke._
 
-#### 830 · Hütte der Großmeisterin
+#### 835 · Hütte der Großmeisterin
 
 `summit-city-huette.ward` · keine laufende Quest
 
@@ -11579,19 +11615,19 @@ _Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke._
 **Kim (Antwort):** „Bis morgen.“\
 (andere Antworten: „Revanche um eine bessere Nadel?“)
 
-#### 831 · Hütte der Großmeisterin
+#### 836 · Hütte der Großmeisterin
 
 `summit-city-huette.kit` · keine laufende Quest
 
 **Kit:** Hast du die Murmeltiere an der Bergstation gesehen? Die pfeifen, wenn du pfeifst.
 
-#### 832 · Bergstation der Seilbahn
+#### 837 · Bergstation der Seilbahn
 
 `summit-city-bergstation.victor` · keine laufende Quest
 
 **Victor Hale:** Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.
 
-#### 833 · Summit City, Talstation
+#### 838 · Summit City, Talstation
 
 `summit-city-aussen.weg_hochebene` · keine laufende Quest
 
@@ -11601,7 +11637,7 @@ _Rote Felstürme, und darüber kreisen Falken._
 
 ### Hochebene
 
-#### 834 · Felsentürme
+#### 839 · Felsentürme
 
 `hochebene.steintisch` · keine laufende Quest
 
@@ -11609,19 +11645,19 @@ _Rote Felstürme, und darüber kreisen Falken._
 
 _Ein flacher Stein wie ein Tisch, mit eingeritzten Feldern. Acht mal acht._
 
-#### 835 · Felsentürme
+#### 840 · Felsentürme
 
 `hochebene.pferd` · keine laufende Quest
 
 _Am Zaun steht ein braunes Pferd und frisst Heu. Es schaut Kim an, als würde es gleich über den Zaun springen. Tut es aber nicht._
 
-#### 836 · Felsentürme
+#### 841 · Felsentürme
 
 `hochebene.schild_schule` · keine laufende Quest
 
 _Ein Wegweiser: „Schule 400 m“. Jemand hat einen kleinen Bison darunter gemalt._
 
-#### 837 · Felsentürme
+#### 842 · Felsentürme
 
 `hochebene.kira` · Quest „Falke und Bison“, Schritt 1 von 3: Kira an den Felstürmen ihr Spiel zeigen lassen.
 
@@ -11657,43 +11693,43 @@ _Sie schlägt dich in vierzehn Zügen. Der Falke kommt aus einer Richtung, mit d
 
 → Quest „Falke und Bison“: Schritt 1 von 3 erledigt
 
-#### 838 · Schule am Rand der Hochebene
+#### 843 · Schule am Rand der Hochebene
 
 `hochebene.werkstatt` · keine laufende Quest
 
 _An der Wand ein Kalender mit dem Spielplan der Schulmannschaft._
 
-#### 839 · Schule am Rand der Hochebene
+#### 844 · Schule am Rand der Hochebene
 
 `hochebene.aushang` · keine laufende Quest
 
 _Am Schwarzen Brett der Schule hängen Zettel: „Basketball dienstags“, „Busfahrplan Sommer“ und „Falke-und-Bison-Turnier der Schule, Anmeldung bei Frau Vell“._
 
-#### 840 · Schule am Rand der Hochebene
+#### 845 · Schule am Rand der Hochebene
 
 `hochebene.bus` · keine laufende Quest
 
 _Der gelbe Schulbus. Auf der Rückbank liegt ein vergessenes Taschenschach._
 
-#### 841 · Schule am Rand der Hochebene
+#### 846 · Schule am Rand der Hochebene
 
 `hochebene.ereignis_diplom` · keine laufende Quest
 
 _Auf dem Plakat steht „Diplomtag – bald!“. Drei Steintische warten schon mit Brettern._
 
-#### 842 · Schule am Rand der Hochebene
+#### 847 · Schule am Rand der Hochebene
 
 `hochebene.seite03` · keine laufende Quest
 
 _Am Fuß der Fahnenstange flattert eine lose Seite im Wind, voller Schachdiagramme._
 
-#### 843 · Schule am Rand der Hochebene
+#### 848 · Schule am Rand der Hochebene
 
 `hochebene.finch_turm_b` · keine laufende Quest
 
 _Auf der Kiste mit den Sportgeräten ist ein Fink aus Kreide gemalt. Zwischen den Bällen liegt ein weißer Turm aus Buchsbaum._
 
-#### 844 · Schule am Rand der Hochebene
+#### 849 · Schule am Rand der Hochebene
 
 `hochebene.annek` · Quest „Falke und Bison“, Schritt 2 von 3: Annek an der Schule Schach beibringen.
 
@@ -11721,7 +11757,7 @@ _Nach einer Viertelstunde spielt sie ihre erste Partie. Sie verliert, lacht und 
 
 → Quest „Falke und Bison“: Schritt 2 von 3 erledigt
 
-#### 845 · Schule am Rand der Hochebene
+#### 850 · Schule am Rand der Hochebene
 
 `hochebene.joss` · keine laufende Quest
 
@@ -11743,13 +11779,13 @@ _Ein Mann rollt auf einem Brett hervor, Öl an der Stirn._
 
 **Ambrose:** Ein Mann, der weiß, was er nicht verkauft. Selten.
 
-#### 846 · Felsentürme
+#### 851 · Felsentürme
 
 `hochebene.steintisch` · keine laufende Quest
 
 _Auf dem Steintisch sind die Felder eingeritzt, halb verwittert. Daneben hat jemand mit Kreide „Kira 14, Cousin 3“ geschrieben._
 
-#### 847 · Felsentürme
+#### 852 · Felsentürme
 
 `hochebene.kira` · Quest „Falke und Bison“, Schritt 3 von 3: Noch einmal mit Kira reden.
 
@@ -11765,13 +11801,13 @@ _Sie drückt dir einen Falken in die Hand, aus hellem Holz, kleiner als die auf 
 
 → Quest abgeschlossen: „Falke und Bison“
 
-#### 848 · Felsentürme
+#### 853 · Felsentürme
 
 `hochebene.zurueck` · keine laufende Quest
 
 _Die Schotterstraße führt zurück nach Summit City. Hinter dir kreist ein Falke über den Felstürmen._
 
-#### 849 · Felsentürme
+#### 854 · Felsentürme
 
 `hochebene.kira` · keine laufende Quest
 
@@ -11782,7 +11818,7 @@ _Die Schotterstraße führt zurück nach Summit City. Hinter dir kreist ein Falk
 
 **Kira Vell:** Falke: Läufer oder Springer. Bison: Turm oder Springer. Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig.
 
-#### 850 · Schule am Rand der Hochebene
+#### 855 · Schule am Rand der Hochebene
 
 `hochebene.aushang` · keine laufende Quest
 
@@ -11790,7 +11826,7 @@ _Am Schwarzen Brett der Schule hängen Zettel: „Basketball dienstags“, „Bu
 
 _Darunter, ganz neu und mit Filzstift: „Schach-AG, freitags. Anfänger willkommen. Die Lehrerin auch.“_
 
-#### 851 · Schule am Rand der Hochebene
+#### 856 · Schule am Rand der Hochebene
 
 `hochebene.ereignis_diplom` · Quest „Das Bauerndiplom“, Schritt 1 von 2: Beim Diplomtag prüfen: den drei Kindern ihre Aufgaben stellen.
 
@@ -11806,7 +11842,7 @@ _Darunter, ganz neu und mit Filzstift: „Schach-AG, freitags. Anfänger willkom
 
 → Quest „Das Bauerndiplom“: Schritt 1 von 2 erledigt
 
-#### 852 · Schule am Rand der Hochebene
+#### 857 · Schule am Rand der Hochebene
 
 `hochebene.ereignis_diplom` · Quest „Das Bauerndiplom“, Schritt 2 von 2: Mit Annek die Diplome überreichen.
 
@@ -11820,31 +11856,31 @@ _Darunter, ganz neu und mit Filzstift: „Schach-AG, freitags. Anfänger willkom
 
 → Quest abgeschlossen: „Das Bauerndiplom“
 
-#### 853 · Schule am Rand der Hochebene
+#### 858 · Schule am Rand der Hochebene
 
 `hochebene.seite03` · keine laufende Quest
 
 _Am Fuß der Fahnenstange ist nichts mehr._
 
-#### 854 · Schule am Rand der Hochebene
+#### 859 · Schule am Rand der Hochebene
 
 `hochebene.finch_turm_b` · keine laufende Quest
 
 _In der Kiste liegen nur Bälle und Seilchen._
 
-#### 855 · Schule am Rand der Hochebene
+#### 860 · Schule am Rand der Hochebene
 
 `hochebene.annek` · keine laufende Quest
 
 **Annek Vell:** Ich habe meiner Klasse heute das Springerproblem gegeben. Ein Feld nach dem anderen, ohne eins zweimal. Sie hassen mich.
 
-#### 856 · Schule am Rand der Hochebene
+#### 861 · Schule am Rand der Hochebene
 
 `hochebene.joss` · keine laufende Quest
 
 **Joss Vell:** Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.
 
-#### 857 · Felsentürme
+#### 862 · Felsentürme
 
 `hochebene.kira` · keine laufende Quest
 
@@ -11853,25 +11889,25 @@ _In der Kiste liegen nur Bälle und Seilchen._
 **Kim (Antwort):** „Bis bald, Kira.“\
 (andere Antworten: „Erklär mir die Regeln noch einmal.“)
 
-#### 858 · Schule am Rand der Hochebene
+#### 863 · Schule am Rand der Hochebene
 
 `hochebene.werkstatt` · keine laufende Quest
 
 _Auf der Werkbank liegt ein halb geschnitzter Bison neben einem Vergaser._
 
-#### 859 · Schule am Rand der Hochebene
+#### 864 · Schule am Rand der Hochebene
 
 `hochebene.ereignis_diplom` · keine laufende Quest
 
 _Kira hat ihr Diplom an die Tribüne geklebt. Mit Falke und Bison._
 
-#### 860 · Schule am Rand der Hochebene
+#### 865 · Schule am Rand der Hochebene
 
 `hochebene.annek` · keine laufende Quest
 
 **Annek Vell:** Wenn der Bus wieder streikt, rufe ich Joss. Der repariert alles außer schlechter Laune.
 
-#### 861 · Felsentürme
+#### 866 · Felsentürme
 
 `hochebene.kira` · keine laufende Quest
 
@@ -11882,25 +11918,25 @@ _Kira hat ihr Diplom an die Tribüne geklebt. Mit Falke und Bison._
 
 **Kira Vell:** Falke: Läufer oder Springer. Bison: Turm oder Springer. Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig.
 
-#### 862 · Schule am Rand der Hochebene
+#### 867 · Schule am Rand der Hochebene
 
 `hochebene.annek` · keine laufende Quest
 
 **Annek Vell:** Kira sagt, ich spiele Schach wie Basketball. Ich glaube, das ist ein Kompliment.
 
-#### 863 · Schule am Rand der Hochebene
+#### 868 · Schule am Rand der Hochebene
 
 `hochebene.joss` · keine laufende Quest
 
 **Joss Vell:** Kira hat den Falken im Werkunterricht gemacht. Besser als meiner damals. Sag ihr das nicht.
 
-#### 864 · Schule am Rand der Hochebene
+#### 869 · Schule am Rand der Hochebene
 
 `hochebene.joss` · keine laufende Quest
 
 **Joss Vell:** Schach? Zu viele Regeln für zu wenig Figuren. Aber Annek hat jetzt ein Brett im Lehrerzimmer. Ich verliere jeden Mittag.
 
-#### 865 · Schule am Rand der Hochebene
+#### 870 · Schule am Rand der Hochebene
 
 `hochebene.werkstatt` · keine laufende Quest
 
@@ -11908,7 +11944,7 @@ _In der Werkstatt hängen Schraubenschlüssel nach Größe sortiert. Ein Radio s
 
 ### Summit City
 
-#### 866 · Summit City, Talstation
+#### 871 · Summit City, Talstation
 
 `summit-city-aussen.weg_crossroads` · keine laufende Quest
 
@@ -11922,7 +11958,7 @@ _Hinter Summit City wird die Straße flacher. Weit vorn dampft der Boden._
 
 ### Geysire und Prärie
 
-#### 867 · Geysirbecken
+#### 872 · Geysirbecken
 
 `weg-summit-crossroads.tafel` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2: In Crossroads ankommen.
 
@@ -11943,13 +11979,13 @@ _Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, b
 
 → Quest abgeschlossen: „Die Tafel am Geysir“
 
-#### 868 · Geysirbecken
+#### 873 · Geysirbecken
 
 `weg-summit-crossroads.tafel` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Auf der Tafel am Steg steht: „Gelöst. Erst zählen, dann schlagen.“_
 
-#### 869 · Geysirbecken
+#### 874 · Geysirbecken
 
 `weg-summit-crossroads.bisons` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -11964,7 +12000,7 @@ _Nach vierzig Minuten trotten die Bisons zur Seite._
 
 **Ambrose:** Geduld. Die schwerste Figur auf jedem Brett.
 
-#### 870 · Geysirbecken
+#### 875 · Geysirbecken
 
 `weg-summit-crossroads.fund_bisonhaar` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -11972,7 +12008,7 @@ _Am Zaun hängt ein dickes Büschel braunes Fell._
 
 **Ambrose:** Ein Tier, das niemandem ausweicht. Respekt.
 
-#### 871 · Geysirbecken
+#### 876 · Geysirbecken
 
 `weg-summit-crossroads.ereignis_geysirblitz` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -11993,7 +12029,7 @@ _Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bre
 
 → Quest „Der Geysirblitz“: Schritt 1 von 2 erledigt
 
-#### 872 · Geysirbecken
+#### 877 · Geysirbecken
 
 `weg-summit-crossroads.ereignis_geysirblitz` · Quest „Der Geysirblitz“, Schritt 2 von 2: Bei Bell mein Abzeichen abholen.
 
@@ -12007,7 +12043,7 @@ _Bell steckt dir ein Abzeichen aus Messing an die Jacke._
 
 → Quest abgeschlossen: „Der Geysirblitz“
 
-#### 873 · Geysirbecken
+#### 878 · Geysirbecken
 
 `weg-summit-crossroads.spur_pm5` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2: In Crossroads ankommen.
 
@@ -12017,19 +12053,19 @@ _Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Mo
 
 **Ambrose:** Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner.
 
-#### 874 · Geysirbecken
+#### 879 · Geysirbecken
 
 `weg-summit-crossroads.finch_bauer_d` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der Bohlen, liegt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt._
 
-#### 875 · Geysirbecken
+#### 880 · Geysirbecken
 
 `weg-summit-crossroads.geysir_ausbruch` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Old Patience ist still. Nur ein dünner Faden Dampf steigt auf._
 
-#### 876 · Geysirbecken
+#### 881 · Geysirbecken
 
 `weg-summit-crossroads.bell` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12047,13 +12083,13 @@ _Zwischen den dampfenden Becken steht eine Rangerin mit breitem Hut und sieht au
 
 **Rangerin Bell:** Ich hab nur ein Brett, und das liegt noch in der Station. Wenn du wiederkommst, bring ich es mit.
 
-#### 877 · Prärie
+#### 882 · Prärie
 
 `weg-summit-crossroads.sturmkeller` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Eine Kellerklappe mitten in der Prärie. Darauf mit Farbe: „Bei Sturm hier rein. Ray.“_
 
-#### 878 · Prärie
+#### 883 · Prärie
 
 `weg-summit-crossroads.seite09` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12061,13 +12097,13 @@ _An der Klappe des Sturmkellers hat sich ein loses Blatt verfangen. Darauf eine 
 
 **Ambrose:** Der Sturm trägt alles irgendwohin. Sogar Stellungen.
 
-#### 879 · Prärie
+#### 884 · Prärie
 
 `weg-summit-crossroads.windrad` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Das Windrad steht still. Ray sagt, dann kommt der Sturm._
 
-#### 880 · Prärie
+#### 885 · Prärie
 
 `weg-summit-crossroads.ray` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12089,37 +12125,37 @@ _Castillo? So heißen auch Mira und Tomás in Desert Springs. Du fragst ihn dana
 
 **Ray Castillo:** Der Sturm dreht ab. Heute kein Keller, heute keine Ente. Nächstes Mal.
 
-#### 881 · Geysirbecken
+#### 886 · Geysirbecken
 
 `weg-summit-crossroads.bisons` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Die Bisons grasen jetzt neben dem Steg. Einer hebt den Kopf und kaut weiter._
 
-#### 882 · Geysirbecken
+#### 887 · Geysirbecken
 
 `weg-summit-crossroads.fund_bisonhaar` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Am Zaun hängt nur noch Dampf._
 
-#### 883 · Geysirbecken
+#### 888 · Geysirbecken
 
 `weg-summit-crossroads.ereignis_geysirblitz` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 **Rangerin Bell:** Die Klasse fragt, ob du nächstes Jahr wiederkommst.
 
-#### 884 · Geysirbecken
+#### 889 · Geysirbecken
 
 `weg-summit-crossroads.spur_pm5` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Am Infobrett hängt der Antrag noch. Jemand hat einen Bison daneben gemalt._
 
-#### 885 · Geysirbecken
+#### 890 · Geysirbecken
 
 `weg-summit-crossroads.finch_bauer_d` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Unter dem Steg ist nur noch warmer Sinter._
 
-#### 886 · Geysirbecken
+#### 891 · Geysirbecken
 
 `weg-summit-crossroads.bell` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12138,13 +12174,13 @@ _Unter dem Steg ist nur noch warmer Sinter._
 
 **Rangerin Bell:** Ich hab nur ein Brett, und das liegt noch in der Station. Wenn du wiederkommst, bring ich es mit.
 
-#### 887 · Geysirbecken
+#### 892 · Geysirbecken
 
 `weg-summit-crossroads.zurueck_summit` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Der Steg führt zurück, bergauf nach Summit City._
 
-#### 888 · Geysirbecken
+#### 893 · Geysirbecken
 
 `weg-summit-crossroads.bell` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12153,13 +12189,13 @@ _Der Steg führt zurück, bergauf nach Summit City._
 **Kim (Antwort):** „Bis bald, Bell.“\
 (andere Antworten: „Erklär mir das Atomschach noch einmal.“)
 
-#### 889 · Prärie
+#### 894 · Prärie
 
 `weg-summit-crossroads.sturmkeller` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Die Klappe zum Sturmkeller steht offen. Unten ein Tisch, ein Brett und eine Holzente._
 
-#### 890 · Prärie
+#### 895 · Prärie
 
 `weg-summit-crossroads.ray` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12176,19 +12212,19 @@ _Die Klappe zum Sturmkeller steht offen. Unten ein Tisch, ein Brett und eine Hol
 
 **Ray Castillo:** Der Sturm dreht ab. Heute kein Keller, heute keine Ente. Nächstes Mal.
 
-#### 891 · Geysirbecken
+#### 896 · Geysirbecken
 
 `weg-summit-crossroads.ereignis_geysirblitz` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 **Rangerin Bell:** Am Infobrett hängt ein Antrag. Lies ihn, wenn du dich ärgern willst.
 
-#### 892 · Prärie
+#### 897 · Prärie
 
 `weg-summit-crossroads.windrad` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Das Windrad quietscht bei jeder Drehung, wie eine alte Tür._
 
-#### 893 · Prärie
+#### 898 · Prärie
 
 `weg-summit-crossroads.ray` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12197,13 +12233,13 @@ _Das Windrad quietscht bei jeder Drehung, wie eine alte Tür._
 **Kim (Antwort):** „Bis bald, Ray.“\
 (andere Antworten: „Erklär mir das Entenschach noch einmal.“)
 
-#### 894 · Geysirbecken
+#### 899 · Geysirbecken
 
 `weg-summit-crossroads.geysir_ausbruch` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Das Becken um den Geysir brodelt. Gleich ist es so weit._
 
-#### 895 · Geysirbecken
+#### 900 · Geysirbecken
 
 `weg-summit-crossroads.bell` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12212,19 +12248,19 @@ _Das Becken um den Geysir brodelt. Gleich ist es so weit._
 **Kim (Antwort):** „Bis bald, Bell.“\
 (andere Antworten: „Erklär mir das Atomschach noch einmal.“)
 
-#### 896 · Geysirbecken
+#### 901 · Geysirbecken
 
 `weg-summit-crossroads.geysir_ausbruch` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Der Boden zittert, dann schießt Old Patience eine weiße Säule in den Himmel. Tropfen regnen auf die Stege._
 
-#### 897 · Prärie
+#### 902 · Prärie
 
 `weg-summit-crossroads.windrad` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 _Unter dem Windrad liegt ein Eimer voll Wasser, frisch gepumpt._
 
-#### 898 · Prärie
+#### 903 · Prärie
 
 `weg-summit-crossroads.ray` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12233,13 +12269,13 @@ _Unter dem Windrad liegt ein Eimer voll Wasser, frisch gepumpt._
 **Kim (Antwort):** „Bis bald, Ray.“\
 (andere Antworten: „Erklär mir das Entenschach noch einmal.“)
 
-#### 899 · Geysirbecken
+#### 904 · Geysirbecken
 
 `weg-summit-crossroads.ereignis_geysirblitz` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
 **Rangerin Bell:** Old Patience ist pünktlich. Pünktlicher als jeder Bus.
 
-#### 900 · Prärie
+#### 905 · Prärie
 
 `crossroads-aussen.ankunft_zu_fuss` · Quest „Alle Wege kreuzen sich“, Schritt 1 von 2
 
@@ -12255,7 +12291,7 @@ _Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironw
 
 ### Crossroads
 
-#### 901 · Crossroads, Kreuzung
+#### 906 · Crossroads, Kreuzung
 
 `crossroads-aussen.wegweiser` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2: Mit Nova in der Raststätte reden.
 
@@ -12263,7 +12299,7 @@ _Ein Wegweiser mit Schildern in alle Richtungen: Maple Falls, Cedar Creek, River
 
 _Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“._
 
-#### 902 · Crossroads, Kreuzung
+#### 907 · Crossroads, Kreuzung
 
 `crossroads-aussen.viehgatter` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12271,7 +12307,7 @@ _Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf 
 
 **Ambrose:** Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat.
 
-#### 903 · Crossroads, Kreuzung
+#### 908 · Crossroads, Kreuzung
 
 `crossroads-aussen.fernbus` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12282,7 +12318,7 @@ _Die Fahrerin lehnt sich aus dem Fenster: „Wohin? Ich fahre überallhin, wo es
 **Kim (Antwort):** Maple Falls\
 (andere Antworten: Cedar Creek · Riverton · Ironwood · Silicon Bay, Raststätte an der Küste · Port Delacroix · Desert Springs · Summit City · Hierbleiben)
 
-#### 904 · Crossroads, Kreuzung
+#### 909 · Crossroads, Kreuzung
 
 `crossroads-aussen.rosie` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12294,7 +12330,7 @@ _Davor redet Dash auf Buck ein, Buck redet zurück. Keiner hört dem anderen zu,
 
 [Laden: Rosies Food-Truck]
 
-#### 905 · Crossroads, Kreuzung
+#### 910 · Crossroads, Kreuzung
 
 `crossroads-aussen.big_joe` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12316,7 +12352,7 @@ _Sein Gesicht wird einen Moment lang ernst._
 
 _Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist._
 
-#### 906 · Crossroads, Kreuzung
+#### 911 · Crossroads, Kreuzung
 
 `crossroads-aussen.slick` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12346,7 +12382,7 @@ _Slick dreht ihn in den Fingern. Die Mähne ist an einer Stelle abgestoßen._
 
 _Du nickst. Der Springer gehört auf den Stein._
 
-#### 907 · Crossroads, Kreuzung
+#### 912 · Crossroads, Kreuzung
 
 `crossroads-aussen.coach` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12374,7 +12410,7 @@ _Sie wird nicht verlegen. Sie sieht dich gerade an._
 
 **Coach Delgado:** Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut darin.
 
-#### 908 · Crossroads, Kreuzung
+#### 913 · Crossroads, Kreuzung
 
 `crossroads-aussen.mira` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12388,7 +12424,7 @@ _Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und di
 
 _Sie zieht an vier Brettern hintereinander, ohne hinzusehen._
 
-#### 909 · Raststätte von Darlene
+#### 914 · Raststätte von Darlene
 
 `crossroads-raststaette.varianten_tisch` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12410,7 +12446,7 @@ _Falke und Bison, von Kira auf der Hochebene. Die zwei Figuren liegen obenauf in
 
 **Kim (Antwort):** Nur schauen
 
-#### 910 · Raststätte von Darlene
+#### 915 · Raststätte von Darlene
 
 `crossroads-raststaette.fund_postkarte` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12418,7 +12454,7 @@ _Neben den Regalen steht ein Drehständer mit Postkarten. Auf einer sind alle St
 
 **Juno:** Wir waren überall! Die kommt ins Tagebuch. Ganz hinten, auf die letzte Seite.
 
-#### 911 · Raststätte von Darlene
+#### 916 · Raststätte von Darlene
 
 `crossroads-raststaette.darlene` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12430,7 +12466,7 @@ _Hinter der Theke Darlene. Sechzig, mit den Händen von einer, die vierzig Jahre
 
 [Laden: Darlenes Raststätte]
 
-#### 912 · Raststätte von Darlene
+#### 917 · Raststätte von Darlene
 
 `crossroads-raststaette.nova` · Quest „Alle Wege kreuzen sich“, Schritt 2 von 2
 
@@ -12472,7 +12508,7 @@ _Du weißt, wie jeder von ihnen spielt. Was jeder übersieht. Was jeder kann, da
 
 → Quest abgeschlossen: „Alle Wege kreuzen sich“
 
-#### 913 · Raststätte von Darlene
+#### 918 · Raststätte von Darlene
 
 `crossroads-raststaette.theo` · keine laufende Quest
 
@@ -12494,7 +12530,7 @@ _Er tippt etwas ein. Dann hört er auf zu tippen._
 
 **Theo:** Ich glaub, ich geh hin.
 
-#### 914 · Crossroads, Kreuzung
+#### 919 · Crossroads, Kreuzung
 
 `crossroads-aussen.wegweiser` · keine laufende Quest
 
@@ -12504,7 +12540,7 @@ _Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“._
 
 **Ambrose:** Acht Städte. Und in jeder habe ich etwas gelernt. Oder verlernt.
 
-#### 915 · Crossroads, Kreuzung
+#### 920 · Crossroads, Kreuzung
 
 `crossroads-aussen.rosie` · keine laufende Quest
 
@@ -12512,25 +12548,25 @@ _Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“._
 
 [Laden: Rosies Food-Truck]
 
-#### 916 · Crossroads, Kreuzung
+#### 921 · Crossroads, Kreuzung
 
 `crossroads-aussen.big_joe` · keine laufende Quest
 
 **Big Joe:** Zwölf Mann, ein Heizstrahler. Mehr braucht ein Club nicht.
 
-#### 917 · Crossroads, Kreuzung
+#### 922 · Crossroads, Kreuzung
 
 `crossroads-aussen.slick` · keine laufende Quest
 
 **Slick:** Meine Pokale sind schief. Aber es sind welche.
 
-#### 918 · Crossroads, Kreuzung
+#### 923 · Crossroads, Kreuzung
 
 `crossroads-aussen.coach` · keine laufende Quest
 
 **Coach Delgado:** Mr. Pratt verkauft den Kuchen. Er ist erschreckend gut darin.
 
-#### 919 · Crossroads, Kreuzung
+#### 924 · Crossroads, Kreuzung
 
 `crossroads-aussen.mira` · keine laufende Quest
 
@@ -12538,7 +12574,7 @@ _Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“._
 
 ### Sommerjahrmarkt
 
-#### 920 · Festplatz
+#### 925 · Festplatz
 
 `jahrmarkt.schachautomat` · keine laufende Quest
 
@@ -12559,19 +12595,19 @@ _Aus dem Kasten klopft es dreimal. Eine Klappe geht auf, und ein Junge mit Tasch
 
 **Ambrose:** In Kempelens Kiste saß auch ein Mensch. Ein guter Spieler, der sich klein machen konnte.
 
-#### 921 · Festplatz
+#### 926 · Festplatz
 
 `jahrmarkt.riesenrad` · keine laufende Quest
 
 _Eine Gondel schaukelt im Wind. Darin sitzt ein Paar und teilt sich eine Zuckerwatte._
 
-#### 922 · Festplatz
+#### 927 · Festplatz
 
 `jahrmarkt.losbude` · keine laufende Quest
 
 _Im Regal der Losbude sitzen Plüschbisons neben einem Schachbrett mit Glitzerfiguren._
 
-#### 923 · Festplatz
+#### 928 · Festplatz
 
 `jahrmarkt.dolores` · keine laufende Quest
 
@@ -12579,25 +12615,25 @@ _Dolores legt den Finger auf die Lippen: Das Geschäft lebt vom Rätsel._
 
 ### Crossroads
 
-#### 924 · Crossroads, Kreuzung
+#### 929 · Crossroads, Kreuzung
 
 `crossroads-aussen.big_joe` · keine laufende Quest
 
 **Big Joe:** Geliehen ist ein großes Wort, Kumpel.
 
-#### 925 · Crossroads, Kreuzung
+#### 930 · Crossroads, Kreuzung
 
 `crossroads-aussen.coach` · keine laufende Quest
 
 **Coach Delgado:** Aufstellung! Wer zuletzt am Büfett ist, spielt gegen Mira!
 
-#### 926 · Crossroads, Kreuzung
+#### 931 · Crossroads, Kreuzung
 
 `crossroads-aussen.mira` · keine laufende Quest
 
 **Mira:** Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.
 
-#### 927 · Crossroads, Kreuzung
+#### 932 · Crossroads, Kreuzung
 
 `crossroads-aussen.weg_summit` · keine laufende Quest
 
@@ -12605,7 +12641,7 @@ _Die Straße führt durch die Prärie zurück, Richtung Geysire und Berge._
 
 ### Geysire und Prärie
 
-#### 928 · Prärie
+#### 933 · Prärie
 
 `crossroads-aussen.ankunft_zu_fuss` · keine laufende Quest
 
@@ -12613,7 +12649,7 @@ _Die Prärie endet an einer Kreuzung. Vier Straßen, eine Raststätte, ein Wegwe
 
 ### Crossroads
 
-#### 929 · Crossroads, Kreuzung
+#### 934 · Crossroads, Kreuzung
 
 `crossroads-aussen.rosie` · keine laufende Quest
 
@@ -12621,13 +12657,13 @@ _Die Prärie endet an einer Kreuzung. Vier Straßen, eine Raststätte, ein Wegwe
 
 [Laden: Rosies Food-Truck]
 
-#### 930 · Raststätte von Darlene
+#### 935 · Raststätte von Darlene
 
 `crossroads-raststaette.fund_postkarte` · keine laufende Quest
 
 _An der Wand hängen Postkarten aus allen Städten, dicht an dicht._
 
-#### 931 · Raststätte von Darlene
+#### 936 · Raststätte von Darlene
 
 `crossroads-raststaette.darlene` · Quest „Darlenes Lieferung“, Schritt 1 von 1: Darlenes Kiste zu Dolores auf den Sommerjahrmarkt bringen.
 
@@ -12641,19 +12677,19 @@ _Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen._
 
 → Quest begonnen: „Darlenes Lieferung“
 
-#### 932 · Raststätte von Darlene
+#### 937 · Raststätte von Darlene
 
 `crossroads-raststaette.nova` · keine laufende Quest
 
 **Nova:** Ich übe jetzt ohne Stimme im Ohr. Es ist erst mal sehr still.
 
-#### 933 · Raststätte von Darlene
+#### 938 · Raststätte von Darlene
 
 `crossroads-raststaette.theo` · keine laufende Quest
 
 **Theo:** Ich messe noch, ob es sich lohnt. Ich glaub, ich geh hin.
 
-#### 934 · Crossroads, Kreuzung
+#### 939 · Crossroads, Kreuzung
 
 `crossroads-aussen.viehgatter` · keine laufende Quest
 
@@ -12662,7 +12698,7 @@ _Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über
 **Kim (Antwort):** Die Minenstraße nach Ghost Town nehmen\
 (andere Antworten: Hierbleiben)
 
-#### 935 · Crossroads, Kreuzung
+#### 940 · Crossroads, Kreuzung
 
 `crossroads-aussen.slick` · keine laufende Quest
 
@@ -12670,7 +12706,7 @@ _Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über
 
 ### Sommerjahrmarkt
 
-#### 936 · Festplatz
+#### 941 · Festplatz
 
 `jahrmarkt.schachautomat` · Quest „Darlenes Lieferung“, Schritt 1 von 1: Darlenes Kiste zu Dolores auf den Sommerjahrmarkt bringen.
 
@@ -12682,19 +12718,19 @@ _Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über
 
 → Quest abgeschlossen: „Darlenes Lieferung“
 
-#### 937 · Festplatz
+#### 942 · Festplatz
 
 `jahrmarkt.riesenrad` · keine laufende Quest
 
 _Am Abend leuchten die Speichen des Riesenrads in allen Farben._
 
-#### 938 · Festplatz
+#### 943 · Festplatz
 
 `jahrmarkt.losbude` · keine laufende Quest
 
 _An der Losbude ruft Buster: „Jedes Los gewinnt! Fast jedes!“_
 
-#### 939 · Festplatz
+#### 944 · Festplatz
 
 `jahrmarkt.dolores` · keine laufende Quest
 
@@ -12702,19 +12738,19 @@ _Ike winkt aus der Klappe und macht sie schnell wieder zu._
 
 ### Crossroads
 
-#### 940 · Crossroads, Kreuzung
+#### 945 · Crossroads, Kreuzung
 
 `crossroads-aussen.big_joe` · keine laufende Quest
 
 **Big Joe:** Der Pokal steht jetzt auf der Werkbank. Laurie hat gesagt, er soll stehen, wo man ihn sieht.
 
-#### 941 · Crossroads, Kreuzung
+#### 946 · Crossroads, Kreuzung
 
 `crossroads-aussen.slick` · keine laufende Quest
 
 **Slick:** Wände sind was für Leute, die Angst vor Wetter haben.
 
-#### 942 · Raststätte von Darlene
+#### 947 · Raststätte von Darlene
 
 `crossroads-raststaette.darlene` · keine laufende Quest
 
@@ -12722,7 +12758,7 @@ _Ike winkt aus der Klappe und macht sie schnell wieder zu._
 
 [Laden: Darlenes Raststätte]
 
-#### 943 · Raststätte von Darlene
+#### 948 · Raststätte von Darlene
 
 `crossroads-raststaette.nova` · keine laufende Quest
 
@@ -12730,7 +12766,7 @@ _Ike winkt aus der Klappe und macht sie schnell wieder zu._
 
 ### Sommerjahrmarkt
 
-#### 944 · Festplatz
+#### 949 · Festplatz
 
 `jahrmarkt.losbude` · keine laufende Quest
 
@@ -12738,7 +12774,7 @@ _Buster zählt Lose ab und verliert jedes Mal beim Zählen den Faden._
 
 ### Crossroads
 
-#### 945 · Crossroads, Kreuzung
+#### 950 · Crossroads, Kreuzung
 
 `crossroads-aussen.fernbus` · keine laufende Quest
 
@@ -12749,7 +12785,7 @@ _Buster zählt Lose ab und verliert jedes Mal beim Zählen den Faden._
 
 _„Ich fahre in zehn Minuten. Oder in zwanzig. Kommt drauf an, wann der Kaffee alle ist.“_
 
-#### 946 · Raststätte von Darlene
+#### 951 · Raststätte von Darlene
 
 `crossroads-raststaette.theo` · keine laufende Quest
 
@@ -12757,7 +12793,7 @@ _„Ich fahre in zehn Minuten. Oder in zwanzig. Kommt drauf an, wann der Kaffee 
 
 ### Sommerjahrmarkt
 
-#### 947 · Festplatz
+#### 952 · Festplatz
 
 `jahrmarkt.riesenrad` · keine laufende Quest
 
@@ -12765,7 +12801,7 @@ _Das Riesenrad dreht sich langsam. Von ganz oben sieht man die Kreuzung und die 
 
 ### Crossroads
 
-#### 948 · Raststätte von Darlene
+#### 953 · Raststätte von Darlene
 
 `crossroads-raststaette.nova` · keine laufende Quest
 
@@ -12773,7 +12809,7 @@ _Das Riesenrad dreht sich langsam. Von ganz oben sieht man die Kreuzung und die 
 
 ### Sommerjahrmarkt
 
-#### 949 · Festplatz
+#### 954 · Festplatz
 
 `jahrmarkt.dolores` · keine laufende Quest
 
@@ -12781,7 +12817,7 @@ _Der Türke hat heute dreimal gewonnen. Ike ist müde._
 
 ### Crossroads
 
-#### 950 · Raststätte von Darlene
+#### 955 · Raststätte von Darlene
 
 `crossroads-raststaette.darlene` · keine laufende Quest
 
@@ -12789,7 +12825,7 @@ _Der Türke hat heute dreimal gewonnen. Ike ist müde._
 
 [Laden: Darlenes Raststätte]
 
-#### 951 · Raststätte von Darlene
+#### 956 · Raststätte von Darlene
 
 `crossroads-raststaette.darlene` · keine laufende Quest
 
@@ -12797,7 +12833,7 @@ _Der Türke hat heute dreimal gewonnen. Ike ist müde._
 
 [Laden: Darlenes Raststätte]
 
-#### 952 · Crossroads, Kreuzung
+#### 957 · Crossroads, Kreuzung
 
 `crossroads-aussen.weg_pinewood` · keine laufende Quest
 
@@ -12805,7 +12841,7 @@ _Ein Wanderweg führt nach Norden in den Wald. Ein Schild: „Fernwanderweg – 
 
 ### Der Fernwanderweg
 
-#### 953 · Schutzhütte am Fernwanderweg
+#### 958 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.tafel` · Quest „Das Sommercamp“, Schritt 1 von 2: Im Pinewood Camp ankommen.
 
@@ -12826,13 +12862,13 @@ _An der Hüttenwand hängt eine Schiefertafel: „Drei Stellungen. Erst rechnen,
 
 → Quest abgeschlossen: „Die Tafel an der Hütte“
 
-#### 954 · Schutzhütte am Fernwanderweg
+#### 959 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.tafel` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _An der Hüttenwand steht mit Kohle: „Gelöst. Weiter so, Wanderer.“_
 
-#### 955 · Schutzhütte am Fernwanderweg
+#### 960 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.kreide4` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12840,7 +12876,7 @@ _An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter,
 
 **Ambrose:** Wieder dieser Springer. Er reist schneller als wir.
 
-#### 956 · Schutzhütte am Fernwanderweg
+#### 961 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.greta` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12901,7 +12937,7 @@ _Die Figuren verschwinden. Nur die Züge bleiben._
 
 [Partie gegen Ambrose – Ausgang: gewonnen]
 
-#### 957 · Schutzhütte am Fernwanderweg
+#### 962 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.greta` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12912,7 +12948,7 @@ _Die Figuren verschwinden. Nur die Züge bleiben._
 
 [Partie gegen Ambrose, erneut – Ausgang: gewonnen]
 
-#### 958 · Unter den Riesenbäumen
+#### 963 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.rangerhaus` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12922,7 +12958,7 @@ _Die Bäume sind so dick, dass zehn Leute sie nicht umfassen. Die Rinde ist rot,
 
 **Ambrose:** Ich nehme zurück, was ich damals gesagt habe. Das hier ist jemand in meinem Alter.
 
-#### 959 · Unter den Riesenbäumen
+#### 964 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.ereignis_lebendschach` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12945,7 +12981,7 @@ _Auf der Lichtung ist ein Brett aus Rasen und Kies ausgelegt. Dreißig Kinder in
 
 → Quest „Lebendschach unter den Mammutbäumen“: Schritt 1 von 2 erledigt
 
-#### 960 · Unter den Riesenbäumen
+#### 965 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.ereignis_lebendschach` · Quest „Lebendschach unter den Mammutbäumen“, Schritt 2 von 2: Nach der Partie mit Ezra reden.
 
@@ -12957,7 +12993,7 @@ _Die weißen Kinder reißen die Arme hoch. Ein geschlagener schwarzer Bauer setz
 
 → Quest abgeschlossen: „Lebendschach unter den Mammutbäumen“
 
-#### 961 · Unter den Riesenbäumen
+#### 966 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.seite10` · Quest „Das Sommercamp“, Schritt 1 von 2: Im Pinewood Camp ankommen.
 
@@ -12965,7 +13001,7 @@ _Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeich
 
 **Ambrose:** Ein Blatt Papier an einem Baum, der älter ist als jedes Papier.
 
-#### 962 · Unter den Riesenbäumen
+#### 967 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.finch_dame` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12973,13 +13009,13 @@ _In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fi
 
 **Ambrose:** Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas.
 
-#### 963 · Schutzhütte am Fernwanderweg
+#### 968 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.kreide4` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _Der Kreidespringer an der Hütte ist noch da. Jemand hat ihn nachgezogen._
 
-#### 964 · Schutzhütte am Fernwanderweg
+#### 969 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.greta` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12990,7 +13026,7 @@ _Der Kreidespringer an der Hütte ist noch da. Jemand hat ihn nachgezogen._
 
 **Greta:** Gute Wanderung. Die Bären sind satt um diese Zeit. Meistens.
 
-#### 965 · Schutzhütte am Fernwanderweg
+#### 970 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.zurueck_crossroads` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -12998,7 +13034,7 @@ _Der Fernwanderweg führt zurück aus dem Wald, zur Kreuzung in der Prärie._
 
 ### Crossroads
 
-#### 966 · Raststätte von Darlene
+#### 971 · Raststätte von Darlene
 
 `crossroads-raststaette.varianten_tisch` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -13029,43 +13065,43 @@ _Blindschach, von Greta an der Hütte. Eine Frau sagt ihre Züge an und sieht da
 
 ### Der Fernwanderweg
 
-#### 967 · Unter den Riesenbäumen
+#### 972 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.rangerhaus` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _Am Rangerhaus hängt ein Zettel: „Bärenspuren am Bach. Essen nicht offen lassen.“_
 
-#### 968 · Unter den Riesenbäumen
+#### 973 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.ereignis_lebendschach` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 **Ezra:** Das Sommerfest wird groß. Komm, wenn du kannst.
 
-#### 969 · Unter den Riesenbäumen
+#### 974 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.seite10` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _Hier lag die Seite. Zwischen den Wurzeln ist nichts mehr._
 
-#### 970 · Unter den Riesenbäumen
+#### 975 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.finch_dame` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _In der Astgabel sitzt nur noch Moos._
 
-#### 971 · Unter den Riesenbäumen
+#### 976 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.rangerhaus` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _Im Nebel zwischen den Riesenbäumen ist das Rangerhaus winzig wie eine Spielfigur._
 
-#### 972 · Unter den Riesenbäumen
+#### 977 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.ereignis_lebendschach` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 **Ezra:** Die Kinder fragen, wann du wieder kommandierst.
 
-#### 973 · Schutzhütte am Fernwanderweg
+#### 978 · Schutzhütte am Fernwanderweg
 
 `weg-crossroads-pinewood.greta` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -13076,19 +13112,19 @@ _Im Nebel zwischen den Riesenbäumen ist das Rangerhaus winzig wie eine Spielfig
 
 **Greta:** Gute Wanderung. Die Bären sind satt um diese Zeit. Meistens.
 
-#### 974 · Unter den Riesenbäumen
+#### 979 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.rangerhaus` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 _Vor dem Rangerhaus ein Abdruck im Schlamm, so groß wie eine Pfanne._
 
-#### 975 · Unter den Riesenbäumen
+#### 980 · Unter den Riesenbäumen
 
 `weg-crossroads-pinewood.ereignis_lebendschach` · Quest „Das Sommercamp“, Schritt 1 von 2
 
 **Ezra:** Der Feldherr ist wieder gesund. Er sagt, du warst zu streng mit den Bauern.
 
-#### 976 · Unter den Riesenbäumen
+#### 981 · Unter den Riesenbäumen
 
 `pinewood-camp-aussen.ankunft_zu_fuss` · Quest „Das Sommercamp“, Schritt 1 von 2
 
@@ -13120,7 +13156,7 @@ _Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. 
 
 ### Pinewood Camp
 
-#### 977 · Pinewood Camp am See
+#### 982 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lagerfeuer` · Quest „Das Sommercamp“, Schritt 2 von 2: Den Abend am Lagerfeuer verbringen.
 
@@ -13188,7 +13224,7 @@ _Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in
 
 → Quest abgeschlossen: „Das Sommercamp“
 
-#### 978 · Pinewood Camp am See
+#### 983 · Pinewood Camp am See
 
 `pinewood-camp-aussen.kiosk` · keine laufende Quest
 
@@ -13196,19 +13232,19 @@ _Am Kiosk des Camps hängen Schwimmwesten, Taschenlampen und ein Schild: „Limo
 
 [Laden: Kiosk des Pinewood Camps]
 
-#### 979 · Pinewood Camp am See
+#### 984 · Pinewood Camp am See
 
 `pinewood-camp-aussen.steg` · keine laufende Quest
 
 _Der Steg ragt in den See. Das Wasser ist so klar, dass man die Fische zählen könnte._
 
-#### 980 · Pinewood Camp am See
+#### 985 · Pinewood Camp am See
 
 `pinewood-camp-aussen.kanus` · keine laufende Quest
 
 _Zwei Kanus liegen kieloben am Ufer. Auf eins hat jemand mit Kreide ein Schachbrett gemalt._
 
-#### 981 · Pinewood Camp am See
+#### 986 · Pinewood Camp am See
 
 `pinewood-camp-aussen.ezra` · keine laufende Quest
 
@@ -13222,31 +13258,31 @@ _Ezra hat eine Gitarre, auf der zwei Saiten fehlen._
 
 **Ezra:** Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Erster keine Figur mehr hat, ist Sieger.
 
-#### 982 · Pinewood Camp am See
+#### 987 · Pinewood Camp am See
 
 `pinewood-camp-aussen.dex` · keine laufende Quest
 
 **Dex:** Bea ist Maes große Schwester. Die spielt bei der Meisterschaft! Gegen dich vielleicht!
 
-#### 983 · Pinewood Camp am See
+#### 988 · Pinewood Camp am See
 
 `pinewood-camp-aussen.mae` · keine laufende Quest
 
 **Mae:** Heute Nacht sieht man die Milchstraße. In der Stadt sieht man die nie.
 
-#### 984 · Pinewood Camp am See
+#### 989 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lou` · keine laufende Quest
 
 **Lou:** Das Musikhaus ist fertig! Also fast. Das Dach ist neu. Miss Odile spielt jeden Abend.
 
-#### 985 · Pinewood Camp am See
+#### 990 · Pinewood Camp am See
 
 `pinewood-camp-aussen.tamsin` · keine laufende Quest
 
 **Tamsin:** Ich hab Ezra im Tandem einen Turm gegeben. Er hat ihn sofort verloren.
 
-#### 986 · Pinewood Camp am See
+#### 991 · Pinewood Camp am See
 
 `pinewood-camp-aussen.hollis` · keine laufende Quest
 
@@ -13261,7 +13297,7 @@ _Unter einem der Riesenbäume sitzt eine Rangerin, ein Fernglas um den Hals. Das
 
 [Stellungsduell gegen Rangerin Hollis – Ausgang: gewonnen]
 
-#### 987 · Pinewood Camp am See
+#### 992 · Pinewood Camp am See
 
 `pinewood-camp-aussen.hollis` · keine laufende Quest
 
@@ -13278,7 +13314,7 @@ _Eine Partie, die für nichts zählt, nur für den Wald. Du merkst, wie gut dir 
 
 [Stellungsduell gegen Rangerin Hollis, erneut – Ausgang: gewonnen]
 
-#### 988 · Pinewood Camp am See
+#### 993 · Pinewood Camp am See
 
 `pinewood-camp-aussen.weg_crossroads` · keine laufende Quest
 
@@ -13286,7 +13322,7 @@ _Der Fernwanderweg führt zurück unter die Riesenbäume, Richtung Crossroads._
 
 ### Der Fernwanderweg
 
-#### 989 · Unter den Riesenbäumen
+#### 994 · Unter den Riesenbäumen
 
 `pinewood-camp-aussen.ankunft_zu_fuss` · keine laufende Quest
 
@@ -13294,13 +13330,13 @@ _Zwischen den Riesenbäumen öffnet sich der Wald. Vor dir liegt der See mit den
 
 ### Pinewood Camp
 
-#### 990 · Pinewood Camp am See
+#### 995 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lagerfeuer` · keine laufende Quest
 
 _Das Feuer ist heruntergebrannt. In der Glut liegt ein verkohlter Marshmallow._
 
-#### 991 · Pinewood Camp am See
+#### 996 · Pinewood Camp am See
 
 `pinewood-camp-aussen.kiosk` · keine laufende Quest
 
@@ -13308,7 +13344,7 @@ _Der Kiosk des Camps. Ezra hat einen Zettel hingehängt: „Bin am See. Geld in 
 
 [Laden: Kiosk des Pinewood Camps]
 
-#### 992 · Pinewood Camp am See
+#### 997 · Pinewood Camp am See
 
 `pinewood-camp-aussen.ezra` · keine laufende Quest
 
@@ -13323,19 +13359,19 @@ _Ezra hat eine Gitarre, auf der zwei Saiten fehlen._
 
 **Ezra:** Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Erster keine Figur mehr hat, ist Sieger.
 
-#### 993 · Pinewood Camp am See
+#### 998 · Pinewood Camp am See
 
 `pinewood-camp-aussen.dex` · keine laufende Quest
 
 **Dex:** Ich hab Mae dreimal geschlagen. Im Räuberschach. Da ist Verlieren Gewinnen, also hat sie gewonnen. Glaube ich.
 
-#### 994 · Pinewood Camp am See
+#### 999 · Pinewood Camp am See
 
 `pinewood-camp-aussen.tamsin` · keine laufende Quest
 
 **Tamsin:** In Riverton regnet es jetzt bestimmt. Hier regnet es nie. Doch, gestern.
 
-#### 995 · Pinewood Camp am See
+#### 1000 · Pinewood Camp am See
 
 `pinewood-camp-aussen.ezra` · keine laufende Quest
 
@@ -13344,25 +13380,25 @@ _Ezra hat eine Gitarre, auf der zwei Saiten fehlen._
 **Kim (Antwort):** „Bis nachher.“\
 (andere Antworten: „Erklär mir die Regeln vom Lagerfeuer noch einmal.“)
 
-#### 996 · Pinewood Camp am See
+#### 1001 · Pinewood Camp am See
 
 `pinewood-camp-aussen.mae` · keine laufende Quest
 
 **Mae:** Sterne sind wie Figuren. Man muss wissen, wo sie stehen.
 
-#### 997 · Pinewood Camp am See
+#### 1002 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lou` · keine laufende Quest
 
 **Lou:** Hier ist es so still. Zu Hause hört man immer irgendwo Musik.
 
-#### 998 · Pinewood Camp am See
+#### 1003 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lagerfeuer` · keine laufende Quest
 
 _Am Feuerplatz stehen noch zwei Bretter. Auf einem liegt ein Stapel geschlagener Figuren für das Tandem._
 
-#### 999 · Pinewood Camp am See
+#### 1004 · Pinewood Camp am See
 
 `pinewood-camp-aussen.ezra` · keine laufende Quest
 
@@ -13377,37 +13413,37 @@ _Ezra hat eine Gitarre, auf der zwei Saiten fehlen._
 
 **Ezra:** Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Erster keine Figur mehr hat, ist Sieger.
 
-#### 1000 · Pinewood Camp am See
+#### 1005 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lou` · keine laufende Quest
 
 **Lou:** Räuberschach ist wie Jazz. Man gibt alles her und gewinnt trotzdem.
 
-#### 1001 · Pinewood Camp am See
+#### 1006 · Pinewood Camp am See
 
 `pinewood-camp-aussen.tamsin` · keine laufende Quest
 
 **Tamsin:** Slick hat gesagt, du bist jetzt berühmt. Bist du berühmt?
 
-#### 1002 · Pinewood Camp am See
+#### 1007 · Pinewood Camp am See
 
 `pinewood-camp-aussen.dex` · keine laufende Quest
 
 **Dex:** Wusstest du, dass Kanus umkippen? Ich jetzt schon.
 
-#### 1003 · Pinewood Camp am See
+#### 1008 · Pinewood Camp am See
 
 `pinewood-camp-aussen.mae` · keine laufende Quest
 
 **Mae:** Bea ist meine Schwester. Sie spielt bei der Meisterschaft. Sie spielt immer auf Remis. Du brauchst Geduld.
 
-#### 1004 · Pinewood Camp am See
+#### 1009 · Pinewood Camp am See
 
 `pinewood-camp-aussen.lagerfeuer` · keine laufende Quest
 
 _Über dem See steht der Polarstern. Er bleibt immer da._
 
-#### 1005 · Pinewood Camp am See
+#### 1010 · Pinewood Camp am See
 
 `pinewood-camp-aussen.weg_ghost` · keine laufende Quest
 
@@ -13415,7 +13451,7 @@ _Hinter dem Camp führt eine Staubstraße nach Osten, zum Rand eines Canyons. Ei
 
 ### Zum Echo Canyon
 
-#### 1006 · Canyonrand
+#### 1011 · Canyonrand
 
 `weg-pinewood-ghost.tafel` · keine laufende Quest
 
@@ -13432,25 +13468,25 @@ _An einem Pfosten am Canyonrand hängt eine Tafel mit drei Diagrammen: „Ein Sc
 
 → Quest abgeschlossen: „Die Tafel am Canyonrand“
 
-#### 1007 · Canyonrand
+#### 1012 · Canyonrand
 
 `weg-pinewood-ghost.tafel` · keine laufende Quest
 
 _Auf der Tafel am Canyonrand steht in Kreide: „Gelöst. Echo!“_
 
-#### 1008 · Canyonrand
+#### 1013 · Canyonrand
 
 `weg-pinewood-ghost.finch_bauer_e` · keine laufende Quest
 
 _Neben der Bank an der Aussicht hängt ein kleiner Fink aus Blech. Darunter, zwischen zwei Steinen, liegt ein weißer Bauer aus Buchsbaum._
 
-#### 1009 · Canyonrand
+#### 1014 · Canyonrand
 
 `weg-pinewood-ghost.kletterwand` · keine laufende Quest
 
 _Eine Kletterwand mit zwei Routen ragt über die Kante. Die Griffe sind bunt, die Seile frisch._
 
-#### 1010 · Canyonrand
+#### 1015 · Canyonrand
 
 `weg-pinewood-ghost.juniper` · keine laufende Quest
 
@@ -13464,7 +13500,7 @@ _Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. 
 
 _Aber Ambrose ist still geworden. Er sieht nach Osten, wo die Staubstraße verschwindet._
 
-#### 1011 · Staubstraße
+#### 1016 · Staubstraße
 
 `weg-pinewood-ghost.ereignis_tankstelle` · keine laufende Quest
 
@@ -13476,25 +13512,25 @@ _Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt._
 
 **Ambrose:** Gespenster spielen nicht in Tankstellen. Ich muss es wissen.
 
-#### 1012 · Staubstraße
+#### 1017 · Staubstraße
 
 `weg-pinewood-ghost.spur_pm6` · keine laufende Quest
 
 _An der Tür klebt ein Typenschild: „Prototyp Z-1, Testlabor Perfect Move. Nicht entfernen.“ Es ist schon halb abgelöst._
 
-#### 1013 · Staubstraße
+#### 1018 · Staubstraße
 
 `weg-pinewood-ghost.seite11` · keine laufende Quest
 
 _Im alten Ölwechsel-Graben liegt eine lose Seite, kaum ölig und voller Schachdiagramme._
 
-#### 1014 · Staubstraße
+#### 1019 · Staubstraße
 
 `weg-pinewood-ghost.wagen` · keine laufende Quest
 
 _Ein Autowrack, rot vom Rost und vom Sand. Im Handschuhfach liegt eine Straßenkarte von 1962._
 
-#### 1015 · Alte Tankstelle
+#### 1020 · Alte Tankstelle
 
 `weg-pinewood-ghost.greifarm` · Quest „Das Gespenst der Tankstelle“, Schritt 1 von 2: An den Tisch setzen und gegen den Greifarm Z-1 spielen.
 
@@ -13515,7 +13551,7 @@ _Der Arm zuckt, dann setzt er einen Bauern nach e4. Klack._
 
 → Quest „Das Gespenst der Tankstelle“: Schritt 1 von 2 erledigt
 
-#### 1016 · Alte Tankstelle
+#### 1021 · Alte Tankstelle
 
 `weg-pinewood-ghost.greifarm` · Quest „Das Gespenst der Tankstelle“, Schritt 2 von 2: Schauen, was Z-1 nach der Partie macht.
 
@@ -13529,61 +13565,61 @@ _Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Baue
 
 → Quest abgeschlossen: „Das Gespenst der Tankstelle“
 
-#### 1017 · Staubstraße
+#### 1022 · Staubstraße
 
 `weg-pinewood-ghost.ereignis_tankstelle` · keine laufende Quest
 
 _Die alte Tankstelle. Auf dem Dach glänzt ein Solarpaneel, viel zu neu für das Blech darunter._
 
-#### 1018 · Staubstraße
+#### 1023 · Staubstraße
 
 `weg-pinewood-ghost.spur_pm6` · keine laufende Quest
 
 _An der Tür klebt noch der Rest eines Etiketts._
 
-#### 1019 · Staubstraße
+#### 1024 · Staubstraße
 
 `weg-pinewood-ghost.seite11` · keine laufende Quest
 
 _Im Ölwechsel-Graben liegt nur noch Staub._
 
-#### 1020 · Canyonrand
+#### 1025 · Canyonrand
 
 `weg-pinewood-ghost.finch_bauer_e` · keine laufende Quest
 
 _An der Aussicht ist nur noch das Finkenzeichen aus Blech._
 
-#### 1021 · Canyonrand
+#### 1026 · Canyonrand
 
 `weg-pinewood-ghost.juniper` · keine laufende Quest
 
 **Juniper:** Drei Schachs, drei Echos. Dann ist die Partie vorbei.
 
-#### 1022 · Canyonrand
+#### 1027 · Canyonrand
 
 `weg-pinewood-ghost.zurueck_camp` · keine laufende Quest
 
 _Der Pfad führt zurück in den Wald, zum Pinewood Camp._
 
-#### 1023 · Canyonrand
+#### 1028 · Canyonrand
 
 `weg-pinewood-ghost.juniper` · keine laufende Quest
 
 **Juniper:** Hinter der Staubstraße liegt Ghost Town. Niemand wohnt da. Fast niemand.
 
-#### 1024 · Alte Tankstelle
+#### 1029 · Alte Tankstelle
 
 `weg-pinewood-ghost.greifarm` · keine laufende Quest
 
 _Z-1 hat die Figuren wieder aufgestellt. Auf dem kleinen Bildschirm steht: „Nächste Partie?“_
 
-#### 1025 · Canyonrand
+#### 1030 · Canyonrand
 
 `weg-pinewood-ghost.juniper` · keine laufende Quest
 
 **Juniper:** Das Seil hält. Das Brett auch.
 
-#### 1026 · Staubstraße
+#### 1031 · Staubstraße
 
 `ghost-town-aussen.ankunft_zu_fuss` · keine laufende Quest
 
@@ -13605,7 +13641,7 @@ _Er steht mitten auf der Straße und dreht sich langsam um sich selbst._
 
 ### Ghost Town
 
-#### 1027 · Ghost Town, Hauptstraße
+#### 1032 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.grab` · Quest „Die Fernpartie“, Schritt 1 von 5: In Ghost Town umsehen. Mr. Pruitt kennt ein Grab.
 
@@ -13653,31 +13689,31 @@ _Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geh
 
 → Quest „Die Fernpartie“: Schritt 1 von 5 erledigt
 
-#### 1028 · Ghost Town, Hauptstraße
+#### 1033 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.nacht` · Quest „Die Fernpartie“, Schritt 2 von 5: Im Saloon nach Ambroses letztem Brief suchen.
 
 _Über Ghost Town steht die Sonne. Die Sterne kommen erst heute Nacht._
 
-#### 1029 · Ghost Town, Hauptstraße
+#### 1034 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.ortsschild` · Quest „Die Fernpartie“, Schritt 2 von 5
 
 _Am Ortseingang stehen zwei Pfosten. Das Schild dazwischen fehlt._
 
-#### 1030 · Ghost Town, Hauptstraße
+#### 1035 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.steckbrief` · Quest „Die Fernpartie“, Schritt 2 von 5
 
 _Am Brett vor dem Sheriffbüro klebt ein Steckbrief, von der Sonne fast weiß: „Gesucht: Kartenzinker. 50 Dollar.“ Das Gesicht ist nicht mehr zu erkennen._
 
-#### 1031 · Ghost Town, Hauptstraße
+#### 1036 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.amboss` · Quest „Die Fernpartie“, Schritt 2 von 5
 
 _Ein rostiger Amboss im Sand. Ein Hufeisen liegt noch darauf, als wäre der Schmied nur kurz weg._
 
-#### 1032 · Ghost Town, Hauptstraße
+#### 1037 · Ghost Town, Hauptstraße
 
 `ghost-town-saloon.victor` · Quest „Die Fernpartie“, Schritt 2 von 5
 
@@ -13687,7 +13723,7 @@ _Victor stellt Figuren auf, nimmt sie wieder weg, stellt sie neu auf._
 
 **Ambrose:** Hinter dem Tresen. Der Postreiter hat hier unten gewartet.
 
-#### 1033 · Ghost Town, Hauptstraße
+#### 1038 · Ghost Town, Hauptstraße
 
 `goldmine.eingang` · Quest „Die letzte Schicht“, Schritt 1 von 1: In der Goldmine das Logbuch der Bergleute von 1866 finden.
 
@@ -13697,7 +13733,7 @@ _Mr. Pruitt hat die Bretter vom Stolleneingang genommen. Die Laterne wirft einen
 
 ### Goldmine
 
-#### 1034 · Stollen der Goldmine
+#### 1039 · Stollen der Goldmine
 
 `goldmine.logbuch` · Quest „Die letzte Schicht“, Schritt 1 von 1
 
@@ -13713,7 +13749,7 @@ _Daneben steht eine alte Grubenlampe._
 
 → Quest abgeschlossen: „Die letzte Schicht“
 
-#### 1035 · Stollen der Goldmine
+#### 1040 · Stollen der Goldmine
 
 `goldmine.lore` · Quest „Lorenendspiel“, Schritt 1 von 1: Die Turmendspiele lösen, die Mr. Pruitt mit Loren auf Gleisen erklärt.
 
@@ -13730,13 +13766,13 @@ _Eine Lore auf dem Gleis. Mr. Pruitt hat Kreidestriche auf die Schwellen gemalt:
 
 → Quest abgeschlossen: „Lorenendspiel“
 
-#### 1036 · Stollen der Goldmine
+#### 1041 · Stollen der Goldmine
 
 `goldmine.lore` · Quest „Die Fernpartie“, Schritt 2 von 5: Im Saloon nach Ambroses letztem Brief suchen.
 
 _Die Lore steht wieder auf ihrem Gleis. Turm hinter den Freibauern, sagt Pruitt immer._
 
-#### 1037 · Stollen der Goldmine
+#### 1042 · Stollen der Goldmine
 
 `goldmine.goldader` · Quest „Die Fernpartie“, Schritt 2 von 5
 
@@ -13744,19 +13780,19 @@ _In der Felswand glänzt eine Goldader. Unter einem Stein liegt ein einzelnes Go
 
 ### Ghost Town
 
-#### 1038 · Ghost Town, Hauptstraße
+#### 1043 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.grab` · Quest „Die Fernpartie“, Schritt 2 von 5
 
 _Der Stein ohne Namen. Auf e4 liegt eine gelbe Blume._
 
-#### 1039 · Saloon
+#### 1044 · Saloon
 
 `ghost-town-saloon.brett` · Quest „Die Fernpartie“, Schritt 2 von 5
 
 _Ein altes Brett auf einem staubigen Tisch. Eine Figur fehlt, ein Springer._
 
-#### 1040 · Saloon
+#### 1045 · Saloon
 
 `ghost-town-saloon.fund_abzeichen` · Quest „Die Fernpartie“, Schritt 2 von 5
 
@@ -13774,7 +13810,7 @@ _Der Mond scheint durch ihn hindurch._
 
 **Ambrose:** Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal.
 
-#### 1041 · Saloon
+#### 1046 · Saloon
 
 `ghost-town-saloon.klavier` · Quest „Die Fernpartie“, Schritt 2 von 5
 
@@ -13782,13 +13818,13 @@ _Du drückst eine Taste. Nichts. Die nächste klingt schief und viel zu laut im 
 
 **Ambrose:** Ein Klavier verstimmt sich in der Hitze. Und in der Stille.
 
-#### 1042 · Saloon
+#### 1047 · Saloon
 
 `ghost-town-aussen.pruitt` · Quest „Die Fernpartie“, Schritt 2 von 5
 
 **Mr. Pruitt:** Die meisten fragen nach dem Gold.
 
-#### 1043 · Laden
+#### 1048 · Laden
 
 `ghost-town-laden.treppe` · Quest „Die Fernpartie“, Schritt 2 von 5
 
@@ -13800,7 +13836,7 @@ _In einer Ecke hängt ein Fetzen Tapete, groß wie deine Hand. Rosen. Du legst d
 
 ### Erinnerung: Die letzte Kerze, 1866
 
-#### 1044 · Zimmer über dem Laden, 1866
+#### 1049 · Zimmer über dem Laden, 1866
 
 `erinnerung-siedlung.kerze` · Quest „Die Fernpartie“, Schritt 2 von 5
 
@@ -13898,13 +13934,13 @@ _Sie geht aus._
 
 → Quest „Die Fernpartie“: Schritt 2 von 5 erledigt
 
-#### 1045 · Zimmer über dem Laden, 1866
+#### 1050 · Zimmer über dem Laden, 1866
 
 `erinnerung-siedlung.gideon` · Quest „Die Fernpartie“, Schritt 3 von 5: Mit Victor die Fernpartie zu Ende spielen.
 
 _Gideon hält das Brett auf den Knien. Er rührt die Figuren nicht an._
 
-#### 1046 · Zimmer über dem Laden, 1866
+#### 1051 · Zimmer über dem Laden, 1866
 
 `erinnerung-siedlung.rueckkehr` · Quest „Die Fernpartie“, Schritt 3 von 5
 
@@ -13926,7 +13962,7 @@ _Ambrose steht am Fenster und sieht die Straße hinunter, nach Norden._
 
 ### Ghost Town
 
-#### 1047 · Ghost Town, Hauptstraße
+#### 1052 · Ghost Town, Hauptstraße
 
 `ghost-town-saloon.victor` · Quest „Die Fernpartie“, Schritt 3 von 5
 
@@ -13993,7 +14029,7 @@ _Ein Turm gegen zwei Springer. Du stehst besser. Aber zwei Springer sind wie zwe
 
 → Quest „Die Fernpartie“: Schritt 3 von 5 erledigt
 
-#### 1048 · Ghost Town, Hauptstraße
+#### 1053 · Ghost Town, Hauptstraße
 
 `ghost-town-saloon.victor` · Quest „Die Fernpartie“, Schritt 4 von 5: Nach der Partie mit Victor reden.
 
@@ -14027,7 +14063,7 @@ _In der Tür nimmt Mr. Pruitt den Hut ab._
 
 → Quest „Die Fernpartie“: Schritt 4 von 5 erledigt
 
-#### 1049 · Ghost Town, Hauptstraße
+#### 1054 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.weg_pinewood` · Quest „Die Fernpartie“, Schritt 5 von 5: In der Nacht die Sterne über Ghost Town ansehen.
 
@@ -14035,7 +14071,7 @@ _Die Staubstraße führt zurück zum Canyon und weiter zum Camp._
 
 ### Zum Echo Canyon
 
-#### 1050 · Staubstraße
+#### 1055 · Staubstraße
 
 `ghost-town-aussen.ankunft_zu_fuss` · Quest „Die Fernpartie“, Schritt 5 von 5
 
@@ -14043,7 +14079,7 @@ _Die Staubstraße endet an der Hauptstraße von Ghost Town._
 
 ### Ghost Town
 
-#### 1051 · Ghost Town, Hauptstraße
+#### 1056 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.nacht` · Quest „Die Fernpartie“, Schritt 5 von 5
 
@@ -14116,7 +14152,7 @@ _Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof._
 
 → Quest abgeschlossen: „Die Fernpartie“
 
-#### 1052 · Ghost Town, Hauptstraße
+#### 1057 · Ghost Town, Hauptstraße
 
 `ghost-town-saloon.victor` · keine laufende Quest
 
@@ -14124,13 +14160,13 @@ _Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof._
 
 ### Goldmine
 
-#### 1053 · Stollen der Goldmine
+#### 1058 · Stollen der Goldmine
 
 `goldmine.logbuch` · keine laufende Quest
 
 _Auf dem Tisch ist der Abdruck des Logbuchs im Staub._
 
-#### 1054 · Stollen der Goldmine
+#### 1059 · Stollen der Goldmine
 
 `goldmine.goldader` · keine laufende Quest
 
@@ -14138,55 +14174,55 @@ _Die Goldader glänzt im Laternenlicht. Mehr gibt sie nicht her._
 
 ### Ghost Town
 
-#### 1055 · Ghost Town, Hauptstraße
+#### 1060 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.nacht` · keine laufende Quest
 
 _Über Ghost Town stehen mehr Sterne als Häuser._
 
-#### 1056 · Ghost Town, Hauptstraße
+#### 1061 · Ghost Town, Hauptstraße
 
 `ghost-town-saloon.victor` · keine laufende Quest
 
 **Victor Hale:** Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.
 
-#### 1057 · Saloon
+#### 1062 · Saloon
 
 `ghost-town-saloon.brett` · keine laufende Quest
 
 _Auf dem Brett steht noch die Schlussstellung der Fernpartie. Niemand räumt sie weg._
 
-#### 1058 · Saloon
+#### 1063 · Saloon
 
 `ghost-town-saloon.fund_abzeichen` · keine laufende Quest
 
 _Hinter dem Tresen liegt nur noch Staub. Das Abzeichen trägst du bei dir._
 
-#### 1059 · Saloon
+#### 1064 · Saloon
 
 `ghost-town-aussen.pruitt` · keine laufende Quest
 
 **Mr. Pruitt:** Ich bin die Einwohnerzahl.
 
-#### 1060 · Ghost Town, Hauptstraße
+#### 1065 · Ghost Town, Hauptstraße
 
 `ghost-town-saloon.victor` · keine laufende Quest
 
 **Victor Hale:** Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.
 
-#### 1061 · Laden
+#### 1066 · Laden
 
 `ghost-town-laden.treppe` · keine laufende Quest
 
 _Oben ist das Zimmer leer. In der Ecke hängt der Fetzen Rosentapete. Du lässt ihn hängen._
 
-#### 1062 · Saloon
+#### 1067 · Saloon
 
 `ghost-town-aussen.pruitt` · keine laufende Quest
 
 **Mr. Pruitt:** Hufnagel. Der dreiundvierzigste diese Woche.
 
-#### 1063 · Ghost Town, Hauptstraße
+#### 1068 · Ghost Town, Hauptstraße
 
 `ghost-town-aussen.weg_capital` · keine laufende Quest
 
@@ -14194,7 +14230,7 @@ _Ein Bus hält am Ortsrand: „Große Seen, Capital Arena“. Victor steigt mit 
 
 ### An den Großen Seen
 
-#### 1064 · Seeufer
+#### 1069 · Seeufer
 
 `weg-ghost-capital.tafel` · keine laufende Quest
 
@@ -14211,13 +14247,13 @@ _Am Steg hängt eine Tafel mit drei Diagrammen: „Im Endspiel ist der König ei
 
 → Quest abgeschlossen: „Die Tafel am Seeufer“
 
-#### 1065 · Seeufer
+#### 1070 · Seeufer
 
 `weg-ghost-capital.tafel` · keine laufende Quest
 
 _Auf der Tafel am Steg hat jemand mit Kreide einen Leuchtturm gemalt. Darunter: „Gelöst“._
 
-#### 1066 · Seeufer
+#### 1071 · Seeufer
 
 `weg-ghost-capital.ereignis_weltschachtag` · Quest „Weltschachtag am Leuchtturm“, Schritt 1 von 2: Das Simultan an der langen Tafel bestehen: fünf Bretter, fünf Bekannte, den Vorteil verwerten.
 
@@ -14238,7 +14274,7 @@ _Am Ufer steht eine Bühne mit zwei Fahnen, schwarz und weiß. Davor eine lange 
 
 → Quest „Weltschachtag am Leuchtturm“: Schritt 1 von 2 erledigt
 
-#### 1067 · Seeufer
+#### 1072 · Seeufer
 
 `weg-ghost-capital.ereignis_weltschachtag` · Quest „Weltschachtag am Leuchtturm“, Schritt 2 von 2: Bei Abes Partie gegen die Welt einen Zug vorschlagen.
 
@@ -14259,19 +14295,19 @@ _Das Publikum hebt die Hände. Dein Zug gewinnt die Abstimmung. Abe kratzt sich 
 
 → Quest abgeschlossen: „Weltschachtag am Leuchtturm“
 
-#### 1068 · Seeufer
+#### 1073 · Seeufer
 
 `weg-ghost-capital.faehrterminal` · keine laufende Quest
 
 _Ein kleines Fährterminal mit einem Fahrplan unter Glas. Die Fähre fährt zweimal am Tag über den See, sonntags dreimal._
 
-#### 1069 · Seeufer
+#### 1074 · Seeufer
 
 `weg-ghost-capital.seite12` · keine laufende Quest
 
 _Am Anleger klebt ein Blatt an einem Pfosten. Eine lose Seite voller Schachdiagramme._
 
-#### 1070 · Seeufer
+#### 1075 · Seeufer
 
 `weg-ghost-capital.wanderer` · Quest „Die verlorenen Seiten“, Schritt 1 von 2: Die Seiten des Wanderers auf den Wegen aufheben und ihm am Seeufer zurückgeben.
 
@@ -14283,7 +14319,7 @@ _Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. Dann 
 
 → Quest „Die verlorenen Seiten“: Schritt 1 von 2 erledigt
 
-#### 1071 · Leuchtturm
+#### 1076 · Leuchtturm
 
 `weg-ghost-capital.fund_linse` · keine laufende Quest
 
@@ -14291,13 +14327,13 @@ _Im Wärterhaus liegt eine alte Linse aus dickem Glas, so groß wie ein Teller._
 
 **Abe Lindgren:** Die hat hundert Schiffe heimgebracht. Nimm sie mit. Ich hab eine neue.
 
-#### 1072 · Leuchtturm
+#### 1077 · Leuchtturm
 
 `weg-ghost-capital.plakat_weltschachtag` · keine laufende Quest
 
 _Am Fuß des Leuchtturms steht ein Aufsteller: „20. Juli. Weltschachtag am Leuchtturm. Alle Bretter willkommen.“_
 
-#### 1073 · Leuchtturm
+#### 1078 · Leuchtturm
 
 `weg-ghost-capital.abe` · keine laufende Quest
 
@@ -14319,97 +14355,97 @@ _Dein König läuft los, sobald er kann. Das hast du inzwischen gelernt._
 
 _Es klingt nicht traurig. Du tust, als hättest du es nicht gehört._
 
-#### 1074 · Leuchtturm
+#### 1079 · Leuchtturm
 
 `weg-ghost-capital.odette` · keine laufende Quest
 
 **Odette Finch:** 14 von fünfzehn hast du. Ich verrate dir eine: Sie steckt an einer Reuse am Steg im Bayou.
 
-#### 1075 · Seeufer
+#### 1080 · Seeufer
 
 `weg-ghost-capital.ereignis_weltschachtag` · keine laufende Quest
 
 _Die Bühne wird abgebaut, die Bretter bleiben bis zum Abend._
 
-#### 1076 · Seeufer
+#### 1081 · Seeufer
 
 `weg-ghost-capital.faehrterminal` · keine laufende Quest
 
 _Am Fahrplan hängt ein Zettel: „Sonderfahrt am 20. Juli, Weltschachtag.“_
 
-#### 1077 · Seeufer
+#### 1082 · Seeufer
 
 `weg-ghost-capital.seite12` · keine laufende Quest
 
 _Am Anleger schaukelt nur noch das Wasser._
 
-#### 1078 · Seeufer
+#### 1083 · Seeufer
 
 `weg-ghost-capital.wanderer` · keine laufende Quest
 
 **Wanderer:** Ich sammle Stellungen, die jemand irgendwo aufgezeichnet hat. Jede hat jemandem etwas bedeutet.
 
-#### 1079 · Seeufer
+#### 1084 · Seeufer
 
 `weg-ghost-capital.zurueck_ghost` · keine laufende Quest
 
 _Der Weg führt zurück nach Süden, nach Ghost Town._
 
-#### 1080 · Leuchtturm
+#### 1085 · Leuchtturm
 
 `weg-ghost-capital.fund_linse` · keine laufende Quest
 
 _Im Wärterhaus liegt nur noch ein altes Logbuch._
 
-#### 1081 · Leuchtturm
+#### 1086 · Leuchtturm
 
 `weg-ghost-capital.plakat_weltschachtag` · keine laufende Quest
 
 _„20. Juli. Weltschachtag am Leuchtturm.“_
 
-#### 1082 · Leuchtturm
+#### 1087 · Leuchtturm
 
 `weg-ghost-capital.abe` · keine laufende Quest
 
 **Abe Lindgren:** Der Turm ist hundert Jahre alt. Die Stufen auch. Ich zähle sie jeden Tag.
 
-#### 1083 · Seeufer
+#### 1088 · Seeufer
 
 `weg-ghost-capital.wanderer` · keine laufende Quest
 
 **Wanderer:** Der Wind hier ist freundlicher. Er nimmt nur Hüte.
 
-#### 1084 · Leuchtturm
+#### 1089 · Leuchtturm
 
 `weg-ghost-capital.abe` · keine laufende Quest
 
 **Abe Lindgren:** Bei Sturm suchen die Kapitäne das Licht. Bei dir ist es die Mitte.
 
-#### 1085 · Seeufer
+#### 1090 · Seeufer
 
 `weg-ghost-capital.ereignis_weltschachtag` · keine laufende Quest
 
 _Abe funkt die Partie gegen die Welt noch über das ganze Land._
 
-#### 1086 · Leuchtturm
+#### 1091 · Leuchtturm
 
 `weg-ghost-capital.abe` · keine laufende Quest
 
 **Abe Lindgren:** Viel Glück in der Arena. Bring den König in den Hafen.
 
-#### 1087 · Seeufer
+#### 1092 · Seeufer
 
 `weg-ghost-capital.ereignis_weltschachtag` · keine laufende Quest
 
 _Am Eiswagen gibt es heute Sorte „Rochade“: Vanille mit Schokoladenkern._
 
-#### 1088 · Seeufer
+#### 1093 · Seeufer
 
 `weg-ghost-capital.wanderer` · keine laufende Quest
 
 **Wanderer:** Jede Seite hat ihren eigenen Weg genommen. Ich hätte sie festbinden sollen.
 
-#### 1089 · Leuchtturm
+#### 1094 · Leuchtturm
 
 `capital-arena-aussen.ankunft_zu_fuss` · keine laufende Quest
 
@@ -14443,7 +14479,7 @@ _Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht._
 
 ### Capital Arena
 
-#### 1090 · Capital Arena, Vorplatz
+#### 1095 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.treppe` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7: In die Halle der Capital Arena gehen.
 
@@ -14451,19 +14487,19 @@ _Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht._
 
 _Die breite Treppe vor der Arena. Am Abend wird hier gefeiert, sagt man._
 
-#### 1091 · Capital Arena, Vorplatz
+#### 1096 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.fahnen` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7
 
 _Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten Landesmeisterschaft. Der Mast ist frisch gestrichen._
 
-#### 1092 · Capital Arena, Vorplatz
+#### 1097 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.wanderer` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7
 
 **Wanderer:** Der Buchbinder ist gleich um die Ecke. Aber ohne die fehlenden Blätter will ich da nicht hinein.
 
-#### 1093 · Innenstadt
+#### 1098 · Innenstadt
 
 `capital-arena-innenstadt.kreide5` · Quest „Die Kreidespringer“, Schritt 1 von 2: Den Kreidespringern folgen: unter der Brücke, an der Raststätte, im Diner, bei den Holzfällern und in Capital.
 
@@ -14480,19 +14516,19 @@ _Unter der Stellung steht: „Zwei Fliegen, eine Klappe. Der Zug ist das Wort.�
 
 [Aufgaben von Mo (capitalArena.kreideraetsel) – Ausgang: bestanden]
 
-#### 1094 · Innenstadt
+#### 1099 · Innenstadt
 
 `capital-arena-innenstadt.kreide5` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7: In die Halle der Capital Arena gehen.
 
 _Der Springer aus Kreide zeigt auf das Gitter. Das Losungswort kennst du jetzt._
 
-#### 1095 · Innenstadt
+#### 1100 · Innenstadt
 
 `capital-arena-innenstadt.ubahn` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7
 
 _Du sagst den Zug durch das Gitter. Eine Hand zieht die Kette ab, und das Gitter rollt nach oben. „Willkommen bei den Kreidespringern.“_
 
-#### 1096 · U-Bahnhof
+#### 1101 · U-Bahnhof
 
 `capital-arena-ubahnhof.ereignis_kreidenacht` · Quest „Die Nacht der Kreidespringer“, Schritt 1 von 4: Runde eins des Blitzturniers im alten U-Bahnhof gegen Dime spielen.
 
@@ -14515,7 +14551,7 @@ _Eine Frau mit Kreide an den Fingern steht auf einer Bank und klatscht in die H�
 
 → Quest „Die Nacht der Kreidespringer“: Schritt 1 von 4 erledigt
 
-#### 1097 · U-Bahnhof
+#### 1102 · U-Bahnhof
 
 `capital-arena-ubahnhof.ereignis_kreidenacht` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7: In die Halle der Capital Arena gehen.
 
@@ -14530,7 +14566,7 @@ _Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapu
 
 → Quest „Die Nacht der Kreidespringer“: Schritt 2 von 4 erledigt
 
-#### 1098 · U-Bahnhof
+#### 1103 · U-Bahnhof
 
 `capital-arena-ubahnhof.mo` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7
 
@@ -14543,7 +14579,7 @@ _Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapu
 
 → Quest „Die Nacht der Kreidespringer“: Schritt 3 von 4 erledigt
 
-#### 1099 · U-Bahnhof
+#### 1104 · U-Bahnhof
 
 `capital-arena-ubahnhof.mo` · Quest „Die Kreidespringer“, Schritt 2 von 2: In der Nacht der Kreidespringer im alten U-Bahnhof mitspielen.
 
@@ -14565,19 +14601,19 @@ _Nach dem letzten Zug zieht dein Gegner die Kapuze vom Kopf. Es ist Victor._
 
 → Quest abgeschlossen: „Die Nacht der Kreidespringer“
 
-#### 1100 · U-Bahnhof
+#### 1105 · U-Bahnhof
 
 `capital-arena-ubahnhof.ausgang` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7: In die Halle der Capital Arena gehen.
 
 _Die Treppe führt hinauf zum Rollgitter und in die Innenstadt._
 
-#### 1101 · Capital Arena, Vorplatz
+#### 1106 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.fahnen` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7
 
 _Die Fahnen knattern im Wind. Auf jeder ein König, schwarz auf weiß._
 
-#### 1102 · Capital Arena, Vorplatz
+#### 1107 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.halle_betreten` · Quest „Die Landesmeisterschaft“, Schritt 1 von 7
 
@@ -14603,19 +14639,19 @@ _Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. Einm
 
 → Quest „Die Landesmeisterschaft“: Schritt 1 von 7 erledigt
 
-#### 1103 · Turnierhalle
+#### 1108 · Turnierhalle
 
 `capital-arena-halle.turniertafel` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7: In der Vorrunde mindestens 2 von 4 Punkten holen.
 
 _An der Turniertafel steht dein Stand: 0 von 4 Punkten. Weiter geht es ab 2._
 
-#### 1104 · Turnierhalle
+#### 1109 · Turnierhalle
 
 `capital-arena-halle.pressetisch` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _Am Pressetisch sitzen Dr. Lin und Nova mit einer Mappe. Sie warten auf das Ende der Vorrunde._
 
-#### 1105 · Turnierhalle
+#### 1110 · Turnierhalle
 
 `capital-arena-halle.fanshop` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14623,19 +14659,19 @@ _Am Fanshop gibt es Schals und Anstecker der Meisterschaft._
 
 [Laden: Fanshop der Landesmeisterschaft]
 
-#### 1106 · Turnierhalle
+#### 1111 · Turnierhalle
 
 `capital-arena-halle.banner` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _Über den Tribünen hängt ein langes Banner: „Landesmeisterschaft“. An einer Ecke hat sich die Naht gelöst und flattert._
 
-#### 1107 · Turnierhalle
+#### 1112 · Turnierhalle
 
 `capital-arena-halle.victor` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Victor Hale:** Ich hab mein Gerät zu Hause gelassen. Für immer.
 
-#### 1108 · Turnierhalle
+#### 1113 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14648,7 +14684,7 @@ _Bea ist Maes große Schwester. Sie hat bei Mrs. Okafor gelernt. Sie wartet und 
 
 [Partie gegen Bea Lindqvist – Ausgang: gewonnen]
 
-#### 1109 · Turnierhalle
+#### 1114 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14661,7 +14697,7 @@ _Er sieht jede Gabel, bevor sie da ist. Er ist schnell und laut in seinen Zügen
 
 [Partie gegen Marcus Oyelaran – Ausgang: gewonnen]
 
-#### 1110 · Turnierhalle
+#### 1115 · Turnierhalle
 
 `capital-arena-halle.nova` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14669,19 +14705,19 @@ _Er sieht jede Gabel, bevor sie da ist. Er ist schnell und laut in seinen Zügen
 
 **Nova:** Spielst du trotzdem gegen mich?
 
-#### 1111 · Turnierhalle
+#### 1116 · Turnierhalle
 
 `capital-arena-halle.bea` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Bea Lindqvist:** Gut gespielt. Meine kleine Schwester Mae hat gesagt, du gibst nie auf. Stimmt.
 
-#### 1112 · Turnierhalle
+#### 1117 · Turnierhalle
 
 `capital-arena-halle.marcus` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Marcus Oyelaran:** Dieser stille Zug. Den hab ich nicht kommen sehen. Den sieht keiner kommen.
 
-#### 1113 · Turnierhalle
+#### 1118 · Turnierhalle
 
 `capital-arena-halle.tobias` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14689,19 +14725,19 @@ _Er sieht jede Gabel, bevor sie da ist. Er ist schnell und laut in seinen Zügen
 
 **Tobias Wren:** Für mich. Für dich gleich nicht mehr.
 
-#### 1114 · Turnierhalle
+#### 1119 · Turnierhalle
 
 `capital-arena-halle.kade` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _Ein Junge in Weiß sitzt am Rand, beide Hände auf dem Tisch. Er hält den Kopf ganz gerade._
 
-#### 1115 · Turnierhalle
+#### 1120 · Turnierhalle
 
 `capital-arena-halle.lin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Dr. Lin:** Wir haben eine Mappe dabei. Nach der Vorrunde. Dann reden wir.
 
-#### 1116 · Turnierhalle
+#### 1121 · Turnierhalle
 
 `capital-arena-halle.graham_hale` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14709,19 +14745,19 @@ _Ein Junge in Weiß sitzt am Rand, beide Hände auf dem Tisch. Er hält den Kopf
 
 **Graham Hale:** Viel Glück. Nein, ehrlich: viel Glück.
 
-#### 1117 · Turnierhalle
+#### 1122 · Turnierhalle
 
 `capital-arena-aussen.mama` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Mama:** Ich hab Kaffee für alle. Und Brötchen. Und ein Pflaster, falls du dich am Brett stößt.
 
-#### 1118 · Turnierhalle
+#### 1123 · Turnierhalle
 
 `capital-arena-aussen.juno` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Juno:** Ich zähle deine Punkte. Laut. Damit es alle hören.
 
-#### 1119 · Capital Arena, Vorplatz
+#### 1124 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.weg_ghost` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14729,7 +14765,7 @@ _Der Weg führt zurück zum Leuchtturm und weiter nach Ghost Town._
 
 ### An den Großen Seen
 
-#### 1120 · Leuchtturm
+#### 1125 · Leuchtturm
 
 `capital-arena-aussen.ankunft_zu_fuss` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14737,7 +14773,7 @@ _Der Weg vom See endet am Vorplatz der Capital Arena._
 
 ### Capital Arena
 
-#### 1121 · U-Bahnhof
+#### 1126 · U-Bahnhof
 
 `capital-arena-ubahnhof.ereignis_kreidenacht` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14745,37 +14781,37 @@ _Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapu
 
 **Mo:** Victor kommt jetzt jeden Donnerstag. Er sagt, wegen der Limonade.
 
-#### 1122 · U-Bahnhof
+#### 1127 · U-Bahnhof
 
 `capital-arena-ubahnhof.mo` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Mo:** Wer eine Mauer findet, malt einen Springer. So finden wir uns.
 
-#### 1123 · Capital Arena, Vorplatz
+#### 1128 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.halle_betreten` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _Du gehst durch die Glastür in die Halle._
 
-#### 1124 · Turnierhalle
+#### 1129 · Turnierhalle
 
 `capital-arena-halle.turniertafel` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _An der Turniertafel steht dein Stand: 2 von 4 Punkten. Weiter geht es ab 2._
 
-#### 1125 · Turnierhalle
+#### 1130 · Turnierhalle
 
 `capital-arena-halle.banner` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _„Landesmeisterschaft“. Darunter hat jemand mit Bleistift einen kleinen Springer gemalt._
 
-#### 1126 · Turnierhalle
+#### 1131 · Turnierhalle
 
 `capital-arena-halle.victor` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Victor Hale:** Wir sehen uns im Finale. Hoffentlich.
 
-#### 1127 · Turnierhalle
+#### 1132 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14826,7 +14862,7 @@ _Sie lacht, kurz, erschrocken._
 
 [Partie gegen Nova – Ausgang: gewonnen]
 
-#### 1128 · Turnierhalle
+#### 1133 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14846,25 +14882,25 @@ _Sie strahlt, mit dem ganzen Gesicht._
 
 _Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand vor dem Mund._
 
-#### 1129 · Turnierhalle
+#### 1134 · Turnierhalle
 
 `capital-arena-halle.nova` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Nova:** Ich hab es keine Sekunde gewusst. Die ganze Partie nicht.
 
-#### 1130 · U-Bahnhof
+#### 1135 · U-Bahnhof
 
 `capital-arena-ubahnhof.mo` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 **Mo:** Nächstes Jahr wieder. Andere Station, gleiche Kreide.
 
-#### 1131 · Turnierhalle
+#### 1136 · Turnierhalle
 
 `capital-arena-halle.turniertafel` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
 _An der Turniertafel steht dein Stand: 3 von 4 Punkten. Weiter geht es ab 2._
 
-#### 1132 · Turnierhalle
+#### 1137 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14877,7 +14913,7 @@ _Er spielt, als würde das Haus brennen. Du lässt die Uhr eine Figur sein. Sie 
 
 [Partie gegen Tobias Wren – Ausgang: gewonnen]
 
-#### 1133 · Turnierhalle
+#### 1138 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 2 von 7
 
@@ -14893,25 +14929,25 @@ _An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf ga
 
 → Quest „Die Landesmeisterschaft“: Schritt 2 von 7 erledigt
 
-#### 1134 · Turnierhalle
+#### 1139 · Turnierhalle
 
 `capital-arena-halle.tobias` · Quest „Die Landesmeisterschaft“, Schritt 3 von 7: Am Pressetisch zuhören, was Dr. Lin und Nova sagen.
 
 **Tobias Wren:** Du hast mich auf meiner eigenen Uhr erwischt. Respekt.
 
-#### 1135 · Turnierhalle
+#### 1140 · Turnierhalle
 
 `capital-arena-halle.kade` · Quest „Die Landesmeisterschaft“, Schritt 3 von 7
 
 _Kade Sterling sieht auf einen Punkt über deiner Schulter. Er ist nicht unfreundlich. Er ist nicht da._
 
-#### 1136 · Turnierhalle
+#### 1141 · Turnierhalle
 
 `capital-arena-halle.turniertafel` · Quest „Die Landesmeisterschaft“, Schritt 3 von 7
 
 _An der Tafel steht dein Name im Halbfinale. Darunter, mit Kreide: „Ehrlich gespielt.“_
 
-#### 1137 · Turnierhalle
+#### 1142 · Turnierhalle
 
 `capital-arena-halle.pressetisch` · Quest „Die Landesmeisterschaft“, Schritt 3 von 7
 
@@ -14979,7 +15015,7 @@ _Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch._
 
 → Quest „Die Landesmeisterschaft“: Schritt 3 von 7 erledigt
 
-#### 1138 · Turnierhalle
+#### 1143 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 4 von 7: Das Halbfinale gegen Kade Sterling gewinnen.
 
@@ -15010,19 +15046,19 @@ _Er lächelt._
 
 → Quest „Die Landesmeisterschaft“: Schritt 4 von 7 erledigt
 
-#### 1139 · Turnierhalle
+#### 1144 · Turnierhalle
 
 `capital-arena-halle.turnierleiterin` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7: Vor dem Finale mit Victor reden.
 
 **Turnierleiterin:** Das Finale spielst du auf der Bühne. Victor wartet im Gang.
 
-#### 1140 · Turnierhalle
+#### 1145 · Turnierhalle
 
 `capital-arena-halle.nova` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7
 
 **Nova:** Du hast in der ersten Reihe gestanden. Das vergesse ich nicht. Jetzt bin ich frei.
 
-#### 1141 · Turnierhalle
+#### 1146 · Turnierhalle
 
 `capital-arena-halle.kade` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7
 
@@ -15040,7 +15076,7 @@ _Ambrose steht neben dem Brett._
 
 **Ambrose:** Dann weiß ich jetzt, dass du mich nicht gebraucht hast. Das ist auch ein schöner Tag.
 
-#### 1142 · Turnierhalle
+#### 1147 · Turnierhalle
 
 `capital-arena-halle.lin` · Quest „Die Spuren von Perfect Move“, Schritt 1 von 1: Sechs Spuren von Perfect Move an den Wegen sammeln und Dr. Lin in Capital zeigen.
 
@@ -15058,25 +15094,25 @@ _Sie blättert lange._
 
 → Quest abgeschlossen: „Die Spuren von Perfect Move“
 
-#### 1143 · Turnierhalle
+#### 1148 · Turnierhalle
 
 `capital-arena-halle.graham_hale` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7: Vor dem Finale mit Victor reden.
 
 **Graham Hale:** Ich habe nichts gewusst. Das ist keine Ausrede. Es ist schlimmer.
 
-#### 1144 · Turnierhalle
+#### 1149 · Turnierhalle
 
 `capital-arena-aussen.juno` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7
 
 **Juno:** Wenn du gewinnst, hüpfe ich. Wenn nicht, hüpfe ich auch.
 
-#### 1145 · Turnierhalle
+#### 1150 · Turnierhalle
 
 `capital-arena-halle.pressetisch` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7
 
 _Am Pressetisch schreiben Reporter. Einer fotografiert die Turniertafel._
 
-#### 1146 · Turnierhalle
+#### 1151 · Turnierhalle
 
 `capital-arena-halle.victor` · Quest „Die Landesmeisterschaft“, Schritt 5 von 7
 
@@ -15153,7 +15189,7 @@ _Seine Hand ist trocken und warm._
 
 → Quest „Die Landesmeisterschaft“: Schritt 6 von 7 erledigt
 
-#### 1147 · Turnierhalle
+#### 1152 · Turnierhalle
 
 `capital-arena-halle.victor` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7: Nach der Siegerehrung auf die Treppe vor der Arena setzen.
 
@@ -15185,37 +15221,37 @@ _Du kannst ihn nicht hören. Aber du siehst seine Lippen: Er läuft zum Telegraf
 
 _Die Siegerehrung vergisst du. Es gibt einen Pokal, der zu groß ist, und Hände, viele._
 
-#### 1148 · Turnierhalle
+#### 1153 · Turnierhalle
 
 `capital-arena-halle.kade` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7
 
 _Kade sitzt bei Nova. Sie stellt ihm eine Stellung auf. Er sieht hin._
 
-#### 1149 · Turnierhalle
+#### 1154 · Turnierhalle
 
 `capital-arena-halle.lin` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7
 
 **Dr. Lin:** Ich habe gekündigt, bevor wir hergefahren sind. Der Club ist in einem Keller. Ein Heizlüfter, kein einziger Bildschirm.
 
-#### 1150 · Turnierhalle
+#### 1155 · Turnierhalle
 
 `capital-arena-halle.graham_hale` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7
 
 **Graham Hale:** Mein Sohn hat für sich gespielt. Und ich habe zum ersten Mal einfach nur zugesehen.
 
-#### 1151 · Turnierhalle
+#### 1156 · Turnierhalle
 
 `capital-arena-aussen.mama` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7
 
 **Mama:** Ich bin so stolz auf dich. Nicht wegen des Titels. Wegen allem.
 
-#### 1152 · Turnierhalle
+#### 1157 · Turnierhalle
 
 `capital-arena-aussen.juno` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7
 
 **Juno:** Ich hab alles ins Tagebuch geschrieben. Mit Glitzer. Diesmal ganz viel.
 
-#### 1153 · Capital Arena, Vorplatz
+#### 1158 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.treppe` · Quest „Die Landesmeisterschaft“, Schritt 7 von 7
 
@@ -15305,13 +15341,13 @@ _Sie hält dir den Stift hin. Du überlegst lange. Dann schreibst du, in deiner 
 
 ### Capital Arena
 
-#### 1154 · Capital Arena, Vorplatz
+#### 1159 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.treppe` · keine laufende Quest
 
 _Auf der Treppe vor der Arena ist es still geworden. Die Fahnen werfen lange Schatten._
 
-#### 1155 · Turnierhalle
+#### 1160 · Turnierhalle
 
 `capital-arena-halle.victor` · keine laufende Quest
 
@@ -15319,13 +15355,13 @@ _Auf der Treppe vor der Arena ist es still geworden. Die Fahnen werfen lange Sch
 
 ### Port Delacroix
 
-#### 1156 · Port Delacroix, Kai
+#### 1161 · Port Delacroix, Kai
 
 `port-delacroix-aussen.bayou` · keine laufende Quest
 
 _Am Kai liegt ein Luftboot unter einer Plane. „Wenn das Musikhaus wieder offen ist“, steht auf einem Zettel._
 
-#### 1157 · Altes Musikhaus
+#### 1162 · Altes Musikhaus
 
 `port-delacroix-musikhaus.schild` · Quest „Das Musikhaus am Kai“, Schritt 4 von 4: Nach der Reise durch die Wüste zurückkommen und das Schild aufhängen.
 
@@ -15343,19 +15379,19 @@ _Remy spielt drei Töne auf der Trompete. Alle klatschen._
 
 → Quest abgeschlossen: „Das Musikhaus am Kai“
 
-#### 1158 · Altes Musikhaus
+#### 1163 · Altes Musikhaus
 
 `port-delacroix-musikhaus.loch_im_dach` · keine laufende Quest
 
 _Das Dach ist geflickt. Wo das Loch war, ist jetzt ein Fenster, und die Sonne fällt aufs Klavier._
 
-#### 1159 · Port Delacroix, Kai
+#### 1164 · Port Delacroix, Kai
 
 `port-delacroix-aussen.bauzaun` · keine laufende Quest
 
 _Der Bauzaun ist weg. Am Musikhaus hängt ein neues Schild, und drinnen spielt jemand._
 
-#### 1160 · Port Delacroix, Kai
+#### 1165 · Port Delacroix, Kai
 
 `port-delacroix-musikhaus.blaeser` · Quest „Nie zweimal dasselbe Stück“, Schritt 1 von 3: Das erste Set Schach960 gegen Mabel im Musikhaus spielen.
 
@@ -15386,7 +15422,7 @@ _Eine Bläserin putzt ihre Posaune und lacht dich an._
 
 → Quest „Nie zweimal dasselbe Stück“: Schritt 1 von 3 erledigt
 
-#### 1161 · Port Delacroix, Kai
+#### 1166 · Port Delacroix, Kai
 
 `port-delacroix-musikhaus.blaeser` · keine laufende Quest
 
@@ -15401,7 +15437,7 @@ _Eine Bläserin putzt ihre Posaune und lacht dich an._
 
 → Quest „Nie zweimal dasselbe Stück“: Schritt 2 von 3 erledigt
 
-#### 1162 · Port Delacroix, Kai
+#### 1167 · Port Delacroix, Kai
 
 `port-delacroix-aussen.bayou` · keine laufende Quest
 
@@ -15409,7 +15445,7 @@ _Der Marschpfad führt hinaus in den Bayou. Das Wasser gluckst um die Stiefel._
 
 ### Im Bayou
 
-#### 1163 · Bootssteg im Bayou
+#### 1168 · Bootssteg im Bayou
 
 `bayou.nebel` · keine laufende Quest
 
@@ -15417,7 +15453,7 @@ _Über dem Wasser liegt dichter Nebel. Irgendwo platscht etwas, irgendwo ruft ei
 
 _Du kannst kaum drei Bootslängen weit sehen. So ungefähr fühlt sich Nebelschach an._
 
-#### 1164 · Bootssteg im Bayou
+#### 1169 · Bootssteg im Bayou
 
 `bayou.ereignis_hausboot` · Quest „Die Kiste im Hausboot“, Schritt 1 von 3: In Pépés Blechkiste blättern, bevor sie brennt.
 
@@ -15451,7 +15487,7 @@ _Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, We
 
 → Quest „Die Kiste im Hausboot“: Schritt 2 von 3 erledigt
 
-#### 1165 · Bootssteg im Bayou
+#### 1170 · Bootssteg im Bayou
 
 `bayou.ereignis_hausboot` · Quest „Die Kiste im Hausboot“, Schritt 3 von 3: Pépé erzählen, wie die Partie ausging.
 
@@ -15467,7 +15503,7 @@ _Pépé steckt das Streichholz zurück in die Schachtel._
 
 → Quest abgeschlossen: „Die Kiste im Hausboot“
 
-#### 1166 · Bootssteg im Bayou
+#### 1171 · Bootssteg im Bayou
 
 `bayou.finch_bauer_c` · keine laufende Quest
 
@@ -15475,25 +15511,25 @@ _An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen st
 
 _Unter dem Bauern ist ein Feld eingebrannt._
 
-#### 1167 · Bootssteg im Bayou
+#### 1172 · Bootssteg im Bayou
 
 `bayou.seite05` · keine laufende Quest
 
 _Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme._
 
-#### 1168 · Bootssteg im Bayou
+#### 1173 · Bootssteg im Bayou
 
 `bayou.sperre_hochwasser` · keine laufende Quest
 
 _Das Wasser steht knöcheltief über den Planken. Mit Gummistiefeln geht es, langsam._
 
-#### 1169 · Bootssteg im Bayou
+#### 1174 · Bootssteg im Bayou
 
 `bayou.luftboot` · keine laufende Quest
 
 _Ein flaches Boot mit einem Propeller so groß wie ein Scheunentor. Auf der Bank liegt ein Schachbrett mit einem Stein darauf, gegen den Wind._
 
-#### 1170 · Bootssteg im Bayou
+#### 1175 · Bootssteg im Bayou
 
 `bayou.theron` · keine laufende Quest
 
@@ -15503,67 +15539,67 @@ _Am Bootssteg liegt ein flaches Luftboot mit einem riesigen Propeller. Ein Mann 
 
 **Theron:** Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel.
 
-#### 1171 · Bootssteg im Bayou
+#### 1176 · Bootssteg im Bayou
 
 `bayou.pepe` · keine laufende Quest
 
 **Pépé Thibodeaux:** Mein Urgroßvater hätte dir einen Kaffee ausgegeben. Ich hab nur Wasser. Viel Wasser.
 
-#### 1172 · Bootssteg im Bayou
+#### 1177 · Bootssteg im Bayou
 
 `bayou.nebel` · keine laufende Quest
 
 _Der Nebel hat sich gehoben. Zwischen den Zypressen glitzert das Wasser._
 
-#### 1173 · Bootssteg im Bayou
+#### 1178 · Bootssteg im Bayou
 
 `bayou.ereignis_hausboot` · keine laufende Quest
 
 _Das Hausboot schaukelt leise. Die Blechkiste ist fort._
 
-#### 1174 · Bootssteg im Bayou
+#### 1179 · Bootssteg im Bayou
 
 `bayou.finch_bauer_c` · keine laufende Quest
 
 _Die Reuse ist leer bis auf Schlamm._
 
-#### 1175 · Bootssteg im Bayou
+#### 1180 · Bootssteg im Bayou
 
 `bayou.seite05` · keine laufende Quest
 
 _Am Ufer liegt nur noch Moos._
 
-#### 1176 · Bootssteg im Bayou
+#### 1181 · Bootssteg im Bayou
 
 `bayou.luftboot` · keine laufende Quest
 
 _Therons Luftboot schaukelt am Steg. Der Propeller steht still._
 
-#### 1177 · Bootssteg im Bayou
+#### 1182 · Bootssteg im Bayou
 
 `bayou.theron` · keine laufende Quest
 
 **Theron:** Nächsten Sommer bringe ich dir das richtig bei. Mit Brett und Nebel.
 
-#### 1178 · Bootssteg im Bayou
+#### 1183 · Bootssteg im Bayou
 
 `bayou.pepe` · keine laufende Quest
 
 **Pépé Thibodeaux:** Hörst du die Frösche? Die spielen auch, nur ohne Brett.
 
-#### 1179 · Bootssteg im Bayou
+#### 1184 · Bootssteg im Bayou
 
 `bayou.theron` · keine laufende Quest
 
 **Theron:** Der Alligator dort heißt Bernard. Er spielt nicht mit.
 
-#### 1180 · Bootssteg im Bayou
+#### 1185 · Bootssteg im Bayou
 
 `bayou.theron` · keine laufende Quest
 
 **Theron:** Im Nebel siehst du nur, wohin deine Figuren ziehen können. Der Rest ist Geduld.
 
-#### 1181 · Bootssteg im Bayou
+#### 1186 · Bootssteg im Bayou
 
 `bayou.pepe` · keine laufende Quest
 
@@ -15571,7 +15607,7 @@ _Therons Luftboot schaukelt am Steg. Der Propeller steht still._
 
 ### Maple Falls
 
-#### 1182 · Dein Zimmer
+#### 1187 · Dein Zimmer
 
 `maple-falls-dachboden.ambrose` · Quest „Ein Jahr später“, Schritt 1 von 1: Das alte Brett wartet auf deinem Schreibtisch.
 
@@ -15629,7 +15665,7 @@ _Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwa
 
 ### Port Delacroix
 
-#### 1183 · Port Delacroix, Kai
+#### 1188 · Port Delacroix, Kai
 
 `port-delacroix-musikhaus.blaeser` · keine laufende Quest
 
@@ -15646,7 +15682,7 @@ _Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwa
 
 → Quest abgeschlossen: „Nie zweimal dasselbe Stück“
 
-#### 1184 · Port Delacroix, Kai
+#### 1189 · Port Delacroix, Kai
 
 `port-delacroix-musikhaus.blaeser` · keine laufende Quest
 
@@ -15658,7 +15694,7 @@ _Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 u
 
 ### An den Großen Seen
 
-#### 1185 · Seeufer
+#### 1190 · Seeufer
 
 `weg-ghost-capital.wanderer` · keine laufende Quest
 
@@ -15666,7 +15702,7 @@ _Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 u
 
 **Wanderer:** Alle dreizehn. Jetzt lasse ich sie binden. Komm mich in Capital besuchen.
 
-#### 1186 · Leuchtturm
+#### 1191 · Leuchtturm
 
 `weg-ghost-capital.odette` · Quest „Die Finch-Jagd“, Schritt 1 von 3: Finchs fünfzehn weiße Figuren an den Wegen suchen. Wo ein kleiner Fink gemalt ist, lohnt sich ein Blick.
 
@@ -15685,7 +15721,7 @@ _Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 u
 
 → Quest „Die Finch-Jagd“: Schritt 2 von 3 erledigt
 
-#### 1187 · Leuchtturm
+#### 1192 · Leuchtturm
 
 `weg-ghost-capital.odette` · Quest „Die Finch-Jagd“, Schritt 3 von 3: Odette die Lösung zeigen.
 
@@ -15699,7 +15735,7 @@ _Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 u
 
 ### Capital Arena
 
-#### 1188 · Capital Arena, Vorplatz
+#### 1193 · Capital Arena, Vorplatz
 
 `capital-arena-aussen.wanderer` · Quest „Die verlorenen Seiten“, Schritt 2 von 2: Nach dem Finale den Wanderer vor der Arena treffen.
 

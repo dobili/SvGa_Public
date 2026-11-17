@@ -17576,7 +17576,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "schaut an den Klapptischen zu"
+       "value": "steht dort, wo im Sommer die Klapptische standen"
       },
       {
        "name": "wann",
@@ -17586,7 +17586,7 @@
       {
        "name": "sagt",
        "type": "string",
-       "value": "statist.wegRivertonIronwood.bruecke.kiebitz"
+       "value": "statist.wegRivertonIronwood.bruecke.kiebitzOhneTische"
       },
       {
        "name": "zeigt",

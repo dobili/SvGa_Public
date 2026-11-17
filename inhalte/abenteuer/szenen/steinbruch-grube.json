@@ -720,7 +720,8 @@
       "eigenschaften": {
         "von": "21,9",
         "bis": "21,9",
-        "tun": "",
+        "tun": "sitzt auf der Bank vor der alten Bude",
+        "sagt": "statist.steinbruch.grube.hargrove",
         "wann": "tag",
         "blick": "rechts"
       }
@@ -732,7 +733,8 @@
       "eigenschaften": {
         "von": "24,9",
         "bis": "24,9",
-        "tun": "",
+        "tun": "fotografiert das Wasserloch in der Grube",
+        "sagt": "statist.steinbruch.grube.lena",
         "wann": "tag"
       }
     },
@@ -756,7 +758,8 @@
       "eigenschaften": {
         "von": "50,30",
         "bis": "50,30",
-        "tun": "",
+        "tun": "leuchten mit Taschenlampen in den Stollenmund",
+        "sagt": "statist.steinbruch.grube.kinder",
         "wann": "tag"
       }
     },

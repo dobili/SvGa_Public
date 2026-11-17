@@ -144,6 +144,7 @@ Adresse mit „#abenteuer“ öffnen).
       dazu, auch wenn der Schlag Material kostet (Lxf7+ …: −2 Bauerneinheiten).“ In Schritt 2 (Schläge)
       musst du diesen Schlag nicht markieren. Zu deiner Frage: Die Markierung war richtig verlangt, aber
       als Schach, nicht als Schlag; nur der Satz war irreführend.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Meldung „Lxf7+ gibt Schach und gehört deshalb dazu, auch wenn der Schlag Material kostet (Lxf7+ Kxf7: −2 Bauerneinheiten).“; in Schritt 2 nicht verlangt). Gefunden durch Durchspielen zufälliger Runden, deshalb kein dauerhafter Test.
 - [ ] N2587. 10-Minuten-Partie gegen einen Bot zu Ende spielen: Die Auswertung danach ist nach wenigen
       Sekunden fertig (vorher etwa 20 Sekunden). Grund: Jeder Zug hat die gerade rechnende Stellung
       verworfen und neu angefangen; jetzt wird das Ergebnis behalten und eine laufende Rechnung
@@ -168,6 +169,7 @@ Adresse mit „#abenteuer“ öffnen).
       Lernziel von Kapitel 1 abhaken: Beide Zahlen sinken um eins, die Station füllt sich. Golden wird
       sie erst, wenn auch Warum-Fragen und Lernziele erledigt sind. Ein Orden, den du schon hast, bleibt
       golden (im ⓘ: „Den Orden „Teil …“ hast du schon.“); er zählt weiter nur Abbildungen und Übungen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 1: eine Warum-Frage und ein Lernziel, „18 Warum-Fragen“ → 17, „6 Lernziele“ → 5, die Station steigt; neuer Test); nicht geprüft: goldene Station und Orden.
 - [ ] N2596. Ausgewertete Partie: einen Fehler (?) antippen, unter der Zugliste „Besserer Zug“ oder „Bestrafung“
       wählen. Die Folge steht in Klammern hinter dem Fehler, darunter „Linie: Partie / Besserer Zug /
       Bestrafung“. Vor/Zurück und die Pfeiltasten gehen Zug für Zug durch die Folge, Brett und
@@ -203,9 +205,11 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Th8+ Kxh8 Sxf7+), dann bei „Welches Motiv war es?“ „Doppelangriff“ wählen. Erwartet: „Richtig.
       Ebenfalls dabei: Hinlenkung.“ Bei einer anderen Aufgabe ein falsches Motiv wählen: „Falsch.
       Zutreffend waren: …“ mit allen passenden Motiven.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Abb. 7.14 lösen, „Doppelangriff“: „Richtig! Ebenfalls dabei: Hinlenkung.“; neuer Test). Wortlaut bei falschem Motiv mit nur einem zutreffenden: „Nicht ganz. Das Motiv: Doppelschach.“ (bei mehreren „Zutreffend waren: …“).
 - [ ] N2595. Abb. 7.60 (Damiano-Matt, gemischt oder Mattbilder): nach 1. Th8+ Kxh8 statt 2. Dh5+ den Zug 2. Dh1+
       spielen. Erwartet: kein „falsch“, Schwarz antwortet Kg8, 3. Dh7# löst die Aufgabe. Ein
       langsameres Matt (Abb. 7.11: Sc5+ statt Sd6+) bleibt falsch.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Abb. 7.60: 2. Dh1+ Kg8 3. Dh7# löst die Aufgabe; Abb. 7.11: Sc5+ bleibt falsch mit „laut Engine schwächer“; neuer Test).
 
 ### Neu in 0.3.50: Marken ohne Nummer (1.11.2026)
 
@@ -389,6 +393,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2526. Steckbrief (z. B. Spanische Partie) → „Ganze Eröffnung als Variante“; außerdem „Nur Praxis“ (z. B.
       Wiener Partie) ausprobieren.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Steckbrief Spanische Partie › „Ganze Eröffnung als Variante“; „Nur Praxis (Lichess)“ › Wiener Partie: „Buch 0 · Praxis … Züge“; neuer Test).
 - [ ] N2527. Übung 8 (Abb. 2.148): vor dem Lösen kein „Als Variante öffnen“, nach „Lösung zeigen“ schon; die
       Variante steht nach 4. Sg5, dahinter 4... Dxg5. Ebenso nach einer Taktik- oder Repertoire-Aufgabe (mit Lösung).
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Übung 8; nicht geprüft: Taktik- und Repertoire-Aufgabe.
@@ -455,6 +460,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Gambits mit kurzem Namen, Königsgambit 2. f4 exf4); offen für dich: Stimmen die Varianten mit Kapitel 3 überein?
 - [ ] N2531. Zurück zur Auswahl, „Aus“ auf „Eröffnungen (Kapitel 2)“: Die zuletzt gewählte Eröffnung aus
       Kapitel 2 ist noch da, und beim Wechsel auf Gambits das zuletzt gewählte Gambit.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 2 und Gambits behalten je ihre zuletzt gewählte Eröffnung; neuer Test).
 - [ ] N2532. Der Repertoire-Trainer steht jetzt auch bei Kapitel 3 unter „Die Trainer zu diesem
       Kapitel“. Passt das so?
 - [ ] N2533. Hake „Auch Eröffnungen aus der Praxis (Lichess)“ an: „Aus“ springt auf „Praxis (Lichess)“,
@@ -511,6 +517,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2495. Datensicherung von einem Gerät mit verdienten Abzeichen auf einem zweiten Gerät (oder
       nach „Alle Daten löschen“) einspielen: Es kommen keine Gratulationen zu alten Ringen oder
       Abzeichen.
+      Vorgeprüft: Abweichung gefunden und behoben. Nach dem Einspielen kam „Neue Stufe erreicht“ zur alten Stufe der Sicherung (die Stufe merkte sich das Gerät, nicht die Sicherung). Seit dieser Fassung vergisst die App nach dem Einspielen die gemerkte Stufe; keine Gratulation zu Ringen, Abzeichen oder Stufe mehr (neuer Test).
 - [ ] N2496. Orden-Probe (Aufgabenseite › Orden testen › ein Ring auf 100 %): Die Gratulation hat
       den Fokus auf „Weiter“ (Tastatur am Rechner: Tab bleibt in der Karte, Esc schließt sie).
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
@@ -536,6 +543,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (King's English Variation als Schwarz, Knopf „1 Variante“, die App zieht 1. c4).
 - [ ] N2553. Ohne Netz (Flugmodus, App schon installiert): Die Runde aus der Praxis ist trotzdem
       verlängert.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Flugmodus: Old Sicilian aus der Praxis geht über 2... Sc6 hinaus; neuer Test).
 - [ ] N2549. **„Zur Stellung“ an einem Fehler:** In der Auswertung am Moment eines Patzers „Zur
       Stellung“ tippen. Das große Brett zeigt die Stellung nach dem Fehlerzug (der Zug ist in der
       Zugliste markiert); „Merken“ trägt genau diesen Zug in die Fehlerdatenbank ein.
@@ -560,17 +568,20 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (alles erledigt: letzte Kachel „Partie · Gegen die Engine“; neuer Test).
 - [ ] N2444. Zähltrainer: Unter dem Brett steht immer die Seite am Zug, die auf dem rot
       markierten Feld schlagen würde (fünf Aufgaben durchtippen).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (fünf Aufgaben: Die Rechnung nennt jeweils die Seite unter dem Brett als angreifende Seite; neuer Test).
 - [ ] N2445. Nachschlagen › Werkzeuge des Buches: Die Bilder zeigen die neue Oberfläche (Leiste
       mit Symbolen, Bündel als Chips).
 - [ ] N2446. Kapitelseite bei großer Schrift (Einstellungen › Schriftgröße 150 %) auf dem Handy:
       nichts ragt über den Rand, „Alle abhaken“ und „Alle zurücksetzen“ stehen bei Platzmangel
       untereinander.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 0 bei 150 %: nichts breiter als das Fenster, beide Knöpfe im Bild; neuer Test).
 - [ ] N2460. Auswertung einer Partie gegen einen Bot: Unter „In Zahlen“ auf „Schwarz (Botname)“
       tippen. Die Karte heißt jetzt „Züge von Botname“ statt „Deine Züge“; auf der eigenen Seite
       weiter „Deine Züge“.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2461. Spielen → Eigene Bots ohne eigenen Gegner: Über „Eigene Bots verwalten“ steht keine
       leere Fläche mit Trennlinie mehr.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Bildschirmfoto: über „Eigene Bots verwalten“ keine leere Fläche).
 - [ ] N2462. Profil → Partie einlesen (PGN): „1. e4 e5 2. Lc4 Sc6 3. Dh5 Sf6 4. Dxf7# 1-0“
       einfügen (deutsche Notation) und doppelt auf „Einlesen und auswerten“ tippen. Erwartet: Schäfermatt
       wird erkannt, in der Partienliste steht die Partie genau einmal.
@@ -584,10 +595,13 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zwei Tabs, beide Änderungen bleiben).
 - [ ] N2465. Datensicherung → „Sicherung einspielen“: Die Rückfrage nennt jetzt auch die Zahl der
       Partien.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Rückfrage nennt „Partien: 1“; neuer Test).
 - [ ] N2466. Blitzpartie 3 + 2 bis kurz vor 0:00 laufen lassen und genau beim Ablauf ziehen:
       Die Partie endet auf Zeit, der Zug wird nicht mehr ausgeführt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Blitz 3 + 2, Zug nach Ablauf der Zeit: „Deine Zeit ist abgelaufen“, der Zug wird nicht ausgeführt; neuer Test).
 - [ ] N2467. Nach Mitternacht (0–1 Uhr) eine Partie als PGN herunterladen bzw. eine Sicherung
       anlegen: Datei- und PGN-Datum zeigen den heutigen Tag, nicht gestern.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Ortszeit Berlin, 0:30 Uhr: Sicherung „…-2026-11-18.json“, PGN mit Datum 2026.11.18; neuer Test).
 - [ ] N2420. Einstellungen (Zahnrad) › Lizenzen: Neu sind „In onnxruntime-web enthalten:
       protobuf.js, long.js, FlatBuffers, guid-typescript“, „Bibliotheken in der
       WebAssembly-Laufzeit von onnxruntime“, „Schrift Source Serif 4 (Adobe)“, „Häufige
@@ -603,7 +617,9 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „GNU GPL 3.0 oder neuer“, Link zum Quelltext und Lizenzseite; nicht geprüft: genauer Wortlaut im Impressum.
 - [ ] N2423. Eine Trainingsseite (schach-von-grund-auf.com/training/) und die Datenschutzseite
       zeigen unten den Link „Lizenzen“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Fußzeile von /training/ und /datenschutz/ mit „Lizenzen“; neuer Test).
 - [ ] N2424. Sprache Englisch: Die Lizenzseite zeigt auch die neuen Einträge auf Englisch.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (die fünf neuen Einträge auf Englisch; neuer Test).
 - [ ] N2430. Dashboard › Wiki (nach dem Zusammenführen und dem nächsten Push nach main):
       Seite „Die Ordner der App“ öffnen und nach „Lernpfad“ suchen. Erwartet: ein Abschnitt
       „ui/komponenten/lernpfad“ mit Stationen, Landschaften und Nebenaufgaben.
@@ -645,6 +661,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2374. **Kennzahlen im Profil:** Unter Stufe und Erfahrung stehen drei Kacheln: ✓ Übungen
       gelöst, Hantel Trainer-Durchgänge, Sprechblase Warum-Fragen, je mit großer Zahl. Eine Null
       steht blass. Die alten Zeilen unter den Orden sind weg.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (drei Kacheln, die Null blass; neuer Test).
 - [ ] N2375. **Karte „Heute“ für Neue:** Frisch installiert steht dort „Anfangen · Kapitel 0 ·
       Abb. 0.1“, auch wenn du vorher kurz in eine andere Abbildung geschaut hast. Eine Abbildung,
       die nur kurz offen war, wird selbst vorgeschlagen statt übersprungen. Die Tagesaufgabe
@@ -681,17 +698,20 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2412. **Trainer-Orden:** Der Ring „Trainings erstmalig absolviert“ zählt jetzt bis 17 (ohne
       Fehlerdatenbank, die keine Runde hat). Vorher war der Orden unerreichbar; wer alle 17 schon
       hat, bekommt nach dem Update die Gratulation.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) („Trainings erstmalig absolviert: 0 von 17“; neuer Test); nicht geprüft: Gratulation nach dem Update.
 
 ### Neu in 0.3.42: Erklärungen und Tour geprüft (31.10.2026)
 
 - [ ] N2361. **Tour im Profil:** Profil öffnen, Toursymbol oben rechts. Die Tour zeigt jetzt auch
       Erfolge (Orden und Abzeichen), den Weg durchs Buch, Themen, Rekorde und Extras; der Schritt
       zur Wertung spricht von Kacheln je Zeitklasse und dem „i“, nicht mehr von Reitern.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Tour nennt Erfolge, Weg, Themen, Rekorde und Aussehen, Wertung „als Kacheln“ mit ⓘ; neuer Test).
 - [ ] N2362. **Tour bei Spielen:** Auf der Startseite von Spielen und auf jeder Unterseite (Gegner
       aussuchen, Eigene Stufe, Eigene Bots, Freie Partie) das Toursymbol antippen: Jeder Schritt
       zeigt auf etwas, das auf dieser Seite zu sehen ist. Im Blatt „Partie einstellen“ stehen die
       Erklärungen zu Spielhilfen und Eröffnung jetzt hinter einem „i“ an ihrer Überschrift, die zu
       Bedenkzeit und Wertung im „i“ bei „Gewertete Partie“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (jeder Schritt auf Spielen und den vier Unterseiten hebt ein Ziel hervor; neuer Test); nicht geprüft: ⓘ im Blatt „Partie einstellen“.
 - [ ] N2363. **Texte nennen nur, was es gibt:** Kapitel- und Denkroutine-Tour sprechen vom „i“ und
       von den Phasenkacheln; der Hinweis zu Maia verweist auf Profil › Einstellungen › „Bots und
       Wertung“; das Abzeichen „Zehn Ziele“ auf Buch › Karte „Heute“ › Ziele. Wenn dir irgendwo noch
@@ -791,6 +811,7 @@ Am besten einmal hell und einmal dunkel prüfen (Profil › Einstellungen › An
       „Schnell eine Partie“ mit genau diesem Bot (Satz „dein gewählter Gegner“) und einer Zeit
       derselben Zeitklasse. Genauso wirken „Revanche“/„Herausfordern“ auf der Rivalenkarte und
       „Spielen“ an einem angehefteten Ziel („Besiege Lotte in Schnellschach.“).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zwei Partien: „Zuletzt gespielt“ mit Name, „heute · 10 + 0“ und Ergebnis; „Revanche“ schlägt Derya als „dein gewählter Gegner“ mit 10 + 0 vor; neuer Test); nicht geprüft: Rivalenkarte und angeheftetes Ziel.
 
 ### Neu in 0.3.38: Auswertung neu (Arbeitschat, 31.10.2026)
 
@@ -1159,16 +1180,19 @@ werden deine bisherigen Daten in das neue Format 7 umgewandelt; aus dem, was sch
       angenehm?
 - [ ] N1075. **Lichess-Aufgabe, falscher Zug:** Roter Pfeil und Verlust laut Engine wie bei den
       Buchaufgaben?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Lichess-Zusatzaufgabe, falscher Zug: „Nicht ganz“, roter Pfeil, „laut Engine“; neuer Test).
 - [ ] N1076. **Motivfrage:** Einverstanden mit der Zuordnung der Lichess-Themen zu den zwölf
       Grundmotiven (Räumung zur Hinlenkung, Ablenkung zur Überlastung)?
 - [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
       „Zusatzaufgaben (Lichess)“ öffnen. Die Themen erscheinen und die Runde läuft.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Flugmodus: Zusatzaufgaben von Lichess, Runde startet; neuer Test).
 
 ### Neu in 0.3.14: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1061. **Berühmte Partien:** Bitte ein paar Kurztexte lesen: Stimmen sie, klingen sie gut?
 - [ ] N1064. **Offline:** Ohne Netz „Berühmte Partien“ und „Aktuelle Turniere“ öffnen: Die Listen
       kommen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Flugmodus: „Berühmte Partien“ und „Aktuelle Turniere“ zeigen ihre Listen; neuer Test).
 
 ### Neu in 0.3.14: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
 
@@ -1232,6 +1256,7 @@ Alles nach deinem Wunsch umgesetzt; Widerspruch genügt, dann baue ich es zurüc
 - [ ] N1013. **Zügeraten, Pfeile:** Trainer „Zug erraten“: Hast du den Partiezug selbst
       gefunden (auch mit Hinweis), erscheint kein Pfeil. Bei einem falschen Zug bleiben der
       goldene (Partiezug) und der rote Pfeil (dein Zug).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Treffer: kein Pfeil; falscher Zug: roter und goldener Pfeil; neuer Test).
 
 ### Neu in 0.2.144: Feiern, Gruppenkreis, Maia-Hinweis, einfachere Texte (Opus, Nacht 25./26.10.2026)
 
@@ -2040,3 +2065,20 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Fußgängerstege mit Geländer und einem breiten „GESPERRT“-Bock statt des flachen Bretts (R133).
       Deine Rückmeldungssammlung ist gepflegt: 145 von 149 Punkten sind erledigt oder überholt;
       offen sind nur die Sitzbilder (oben); das Diner in Maple Falls bleibt mit dem Plattenweg wie bestätigt.
+- [ ] RO38. **Dialogprüfung aller Akte (17.11.2026, umgesetzt, Widerspruch genügt):** Vier Chats haben
+      alle 71 Dialogdateien darauf geprüft, ob jede Figur im Moment passend spricht (erstes Treffen
+      wie mit einem Fremden, kein Wissen vor dem Ereignis, Rückbezüge nur, wenn es passiert ist,
+      gleiche Stimme in allen Akten, richtige Schachaussagen); rund 270 Stellen sind verbessert.
+      Dazu: Victor steht immer nur an einem Ort; in der Kreidenacht heißt er „Junge mit Kapuze“ mit
+      eigenem kleinen Porträt. Oma Ruth hat dich zuletzt mit sechs gesehen. Die Kletterin am Canyon
+      heißt jetzt Tess Ferris (die Bergführerin bleibt Sol). Die Haustür in Maple Falls bleibt zu,
+      bis die erste Lektion besprochen ist. Mrs. Okafor und Mama bekommen je Akt neue Alltagssätze
+      (Okafor steht nach dem Vorwurf in Port Delacroix still zu dir, Mama ist in Akt 4 stolz).
+      Gewinnst du die Fernpartie, hat Ambrose eigene Abschiedsworte dafür.
+      Drei Dinge nur für dich, weil sie den Roman betreffen: (1) Kapitel 33 sagt „Vier fehlten …“
+      und zugleich „fünfte Mulde“; im Spiel ist es stimmig gemacht, bitte den Roman angleichen.
+      (2) Boateng nennt Mrs. Okafor jetzt „eine junge Frau“ statt „ein Mädchen“ (sie war damals
+      Anfang zwanzig); Story-Bibel und Roman haben noch „Mädchen“. (3) Victors Nachricht im Motel
+      lautet im Spiel länger: „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt
+      kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“, weil er das Brett nie gesehen hat;
+      im Roman steht die kurze Fassung.

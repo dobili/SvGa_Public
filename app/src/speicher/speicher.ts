@@ -6,13 +6,17 @@
  * lesen und schreiben ausschließlich hierüber. Regeln aus Konzept 9.4: speichern nach jeder
  * Antwort, um dauerhaften Speicher bitten (seit V8, Nutzungsprüfung 25.10.2026, bei jedem Start,
  * solange der Browser ihn nicht gewährt hat), Fehler dem Leser zeigen, ältere Formate umwandeln. Komponenten abonnieren den Stand mit useSpeicher.
- * Abhängigkeiten: speicher/datenbank.ts, speicher/format.ts, app/merker.ts, React.
+ * Ein Schreibvorgang, der beim Verlassen der Seite noch läuft, wird als Notstand gesichert
+ * (speicher/notstand.ts) und beim nächsten Laden nachgeholt.
+ * Abhängigkeiten: speicher/datenbank.ts, speicher/format.ts, speicher/notstand.ts, app/merker.ts,
+ * React.
  */
 import { useSyncExternalStore } from "react";
 import { entferneMerker, liesMerker } from "../app/merker";
 import { hebeAuf, liesRoh, schreibeRoh } from "./datenbank";
 import { leereDaten, wandleUm, type Nutzerdaten } from "./format";
 import { merkerAlsFormat0 } from "./format0";
+import { nimmNotstand, sichereNotstand, verwirfNotstand } from "./notstand";
 import { mitMerkerRekorden } from "./rekordmerker";
 
 /** Was beim Laden oder Speichern schiefging, für den Hinweis an den Leser. */
@@ -53,6 +57,10 @@ const abonnenten = new Set<() => void>();
 let ladevorgang: Promise<void> | null = null;
 /** Schreibvorgänge nacheinander, damit ein älterer Stand nie einen neueren überholt. */
 let schreibkette: Promise<void> = Promise.resolve();
+/** Der Stand, der sicher in IndexedDB liegt (zuletzt gelesen oder fertig geschrieben). */
+let bestaetigt: unknown = undefined;
+/** Der Stand, den der laufende Schreibvorgang gerade schreibt (undefined: keiner läuft). */
+let inArbeit: unknown = undefined;
 
 function setze(teil: Partial<Speicherzustand>): void {
   zustand = { ...zustand, ...teil };
@@ -125,13 +133,28 @@ async function ersterStart(jetzt: Date): Promise<Nutzerdaten> {
   const ergebnis = wandleUm(roh, jetzt);
   const daten = ergebnis.ok ? ergebnis.daten : leereDaten(jetzt);
   await schreibeRoh(daten);
+  bestaetigt = daten;
   ALTE_MERKER.forEach(entferneMerker);
   return daten;
 }
 
+/**
+ * Liest den gespeicherten Stand; ein passender Notstand (notstand.ts) ersetzt ihn.
+ * Ausgabe: der Stand und ob er aus dem Notstand kommt (dann muss er noch geschrieben werden).
+ */
+async function liesMitNotstand(): Promise<{ roh: unknown; gerettet: boolean }> {
+  const gelesen = await liesRoh();
+  const notstand = nimmNotstand(gelesen);
+  if (notstand === null) {
+    bestaetigt = gelesen;
+    return { roh: gelesen, gerettet: false };
+  }
+  return { roh: notstand, gerettet: true };
+}
+
 async function ladeJetzt(jetzt: Date): Promise<void> {
   try {
-    const roh = await liesRoh();
+    const { roh, gerettet } = await liesMitNotstand();
     if (roh === undefined) {
       setze({ daten: await ersterStart(jetzt), geladen: true });
       tabkanal();
@@ -146,9 +169,13 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
         liesMerker("tagesserie"),
         jetzt,
       );
-      // Ein älteres Format (oder ein neuer Rekord aus den Merkern) wird sofort gespeichert.
-      if (ergebnis.vonVersion !== daten.schemaVersion || daten !== ergebnis.daten)
+      // Ein älteres Format, ein neuer Rekord aus den Merkern oder ein Notstand wird sofort
+      // gespeichert.
+      if (gerettet || ergebnis.vonVersion !== daten.schemaVersion || daten !== ergebnis.daten) {
         await schreibeRoh(daten);
+        bestaetigt = daten;
+        if (gerettet) meldeAndereTabs();
+      }
       setze({ daten, geladen: true });
       tabkanal();
       return;
@@ -176,6 +203,7 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
 export function lade(jetzt: Date = new Date()): Promise<void> {
   if (!ladevorgang) {
     ladevorgang = ladeJetzt(jetzt);
+    beobachteVerlassen();
     // Nebenher und ohne zu warten: Firefox fragt den Leser, das darf das Laden nicht aufhalten.
     void ladevorgang.then(sichereDauerhaftenSpeicher);
   }
@@ -200,11 +228,32 @@ let ausstehend = 0;
 async function uebernimmAusAnderemTab(): Promise<void> {
   if (ausstehend > 0) return;
   try {
-    const ergebnis = wandleUm(await liesRoh(), new Date());
-    if (ergebnis.ok && ausstehend === 0) setze({ daten: ergebnis.daten });
+    const roh = await liesRoh();
+    const ergebnis = wandleUm(roh, new Date());
+    if (ergebnis.ok && ausstehend === 0) {
+      bestaetigt = roh;
+      setze({ daten: ergebnis.daten });
+    }
   } catch (fehler) {
     console.warn("Stand eines anderen Tabs nicht lesbar:", fehler);
   }
+}
+
+/**
+ * Sichert beim Verlassen der Seite den Stand als Notstand, wenn noch geschrieben wird.
+ *
+ * Warum: Lädt der Leser direkt nach einem Zug neu (oder schließt die App), verwirft der Browser
+ * den unfertigen Schreibvorgang in IndexedDB; ohne Notstand fehlte der Zug danach (Fehlertest
+ * „zwei Tabs“ in varianten.spec.ts, 17.11.2026). Ohne ausstehendes Schreiben geschieht nichts.
+ */
+function sichereBeimVerlassen(): void {
+  if (ausstehend > 0) sichereNotstand(zustand.daten, [bestaetigt, inArbeit]);
+}
+
+/** Meldet sichereBeimVerlassen einmal je Sitzung an (pagehide; fehlt in Node-Tests). */
+function beobachteVerlassen(): void {
+  if (typeof window === "undefined" || typeof window.addEventListener !== "function") return;
+  window.addEventListener("pagehide", sichereBeimVerlassen);
 }
 
 /** Der Kanal zu den anderen Tabs, beim ersten Gebrauch geöffnet; null ohne BroadcastChannel. */
@@ -241,7 +290,11 @@ export function speichere(daten: Nutzerdaten): Promise<boolean> {
   ausstehend += 1;
   const vorgang = schreibkette.then(async () => {
     try {
-      await schreibeRoh(zustand.daten);
+      inArbeit = zustand.daten;
+      await schreibeRoh(inArbeit);
+      bestaetigt = inArbeit;
+      // Liegt der neueste Stand sicher in IndexedDB, ist ein Notstand überholt.
+      if (ausstehend === 1) verwirfNotstand();
       meldeAndereTabs();
       if (zustand.fehler?.art === "speichern" || zustand.fehler?.art === "voll")
         setze({ fehler: null });
@@ -251,6 +304,7 @@ export function speichere(daten: Nutzerdaten): Promise<boolean> {
       setze({ fehler: { art: speicherfehlerArt(fehler), meldung: alsMeldung(fehler) } });
       return false;
     } finally {
+      inArbeit = undefined;
       ausstehend -= 1;
     }
   });

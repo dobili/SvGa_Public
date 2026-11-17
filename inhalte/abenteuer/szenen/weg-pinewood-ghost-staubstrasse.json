@@ -525,6 +525,11 @@
       "id": "ereignisTankstelleHaus"
     },
     {
+      "moebel": "cc4Kellertuer",
+      "auf": "ereignisTankstelleHaus",
+      "versatz": [24, 36]
+    },
+    {
       "moebel": "mf4Wegweiser",
       "feld": [143, 10]
     },

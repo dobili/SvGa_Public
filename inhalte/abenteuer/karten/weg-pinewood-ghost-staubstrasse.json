@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 163,
+ "nextobjectid": 164,
  "layers": [
   {
    "id": 1,
@@ -16784,6 +16784,29 @@
     },
     {
      "id": 142,
+     "name": "cc4Kellertuer",
+     "type": "moebel",
+     "x": 1616,
+     "y": 157,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 185
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 143,
      "name": "mf4Wegweiser",
      "type": "moebel",
      "x": 2288,
@@ -16806,7 +16829,7 @@
      ]
     },
     {
-     "id": 143,
+     "id": 144,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 192,
@@ -16829,7 +16852,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 145,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 416,
@@ -16852,7 +16875,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 146,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 640,
@@ -16875,7 +16898,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 147,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 864,
@@ -16898,7 +16921,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 148,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 1088,
@@ -16921,7 +16944,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 149,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 1312,
@@ -16944,7 +16967,7 @@
      ]
     },
     {
-     "id": 149,
+     "id": 150,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 1536,
@@ -16967,7 +16990,7 @@
      ]
     },
     {
-     "id": 150,
+     "id": 151,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 1760,
@@ -16990,7 +17013,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 152,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 1984,
@@ -17013,7 +17036,7 @@
      ]
     },
     {
-     "id": 152,
+     "id": 153,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 2208,
@@ -17036,7 +17059,7 @@
      ]
     },
     {
-     "id": 153,
+     "id": 154,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 200,
@@ -17059,7 +17082,7 @@
      ]
     },
     {
-     "id": 154,
+     "id": 155,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 424,
@@ -17082,7 +17105,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 156,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 648,
@@ -17105,7 +17128,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 157,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 872,
@@ -17128,7 +17151,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 158,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 1096,
@@ -17151,7 +17174,7 @@
      ]
     },
     {
-     "id": 158,
+     "id": 159,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 1320,
@@ -17174,7 +17197,7 @@
      ]
     },
     {
-     "id": 159,
+     "id": 160,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 1544,
@@ -17197,7 +17220,7 @@
      ]
     },
     {
-     "id": 160,
+     "id": 161,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 1768,
@@ -17220,7 +17243,7 @@
      ]
     },
     {
-     "id": 161,
+     "id": 162,
      "name": "pg9Telegrafenleitung",
      "type": "moebel",
      "x": 1992,
@@ -17243,7 +17266,7 @@
      ]
     },
     {
-     "id": 162,
+     "id": 163,
      "name": "pg13TankstelleVerlassen",
      "type": "moebel",
      "x": 1408,

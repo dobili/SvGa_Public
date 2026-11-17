@@ -15084,8 +15084,8 @@
      "id": 30,
      "name": "gaertnerin",
      "type": "statist",
-     "x": 192,
-     "y": 448,
+     "x": 240,
+     "y": 336,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15094,12 +15094,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "12,28"
+       "value": "15,21"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "12,28"
+       "value": "15,21"
       },
       {
        "name": "tun",
@@ -15110,6 +15110,11 @@
        "name": "wann",
        "type": "string",
        "value": "morgen"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },

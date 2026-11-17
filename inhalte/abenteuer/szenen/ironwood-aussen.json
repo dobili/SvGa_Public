@@ -33,18 +33,18 @@
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
     "##~~~~~~~~pppppppppppppppppppppppppppppppppsssp................................#",
-    "##~~~~~~~~pppppppp......pp................psssp....................qqqq........#",
-    "##~~~~~~~~pppppppp......pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
-    "##~~~~~~~~pp............pp................psssp.........qqqqq..................#",
+    "##~~~~~~~~pppppppp........pp..............psssp....................qqqq........#",
+    "##~~~~~~~~pppppp..........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~ppppp...........pp..............psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
+    "##~~~~~~~~pp..............pp..............psssp.........qqqqq..................#",
     "##hhhhhhhhpppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
     "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -98,8 +98,12 @@
       "feld": [26, 1]
     },
     {
-      "moebel": "iw5Laden",
-      "feld": [32, 2]
+      "moebel": "iw5ReihenhausHoch",
+      "feld": [34, 1]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [32, 8]
     },
     {
       "moebel": "iw5ReihenhausHoch",
@@ -112,11 +116,11 @@
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [19, 16]
+      "feld": [39, 22]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [33, 16]
+      "feld": [35, 19]
     },
     {
       "moebel": "mf4Strassenbaum",
@@ -124,12 +128,14 @@
     },
     {
       "moebel": "iw5Laden",
-      "feld": [16, 19],
+      "feld": [16, 17],
+      "massstab": 1.2,
+      "versatz": [0, 3],
       "id": "eisenwaren"
     },
     {
       "moebel": "iw5StadthausGrau",
-      "feld": [27, 17],
+      "feld": [28, 17],
       "id": "kneipe"
     },
     {
@@ -1940,10 +1946,10 @@
     {
       "name": "wirt",
       "typ": "statist",
-      "feld": [27, 28],
+      "feld": [28, 28],
       "eigenschaften": {
-        "von": "27,28",
-        "bis": "27,28",
+        "von": "28,28",
+        "bis": "28,28",
         "tun": "fegt vor der Kneipe „Zum Hoch“",
         "wann": "abend",
         "sagt": "statist.ironwood.aussen.wirt",

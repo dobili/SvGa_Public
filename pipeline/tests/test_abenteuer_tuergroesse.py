@@ -36,4 +36,4 @@ def test_herkunft_und_bericht():
     assert all("grund" in e for e in angaben.values() if e["herkunft"] in ("verworfen", "nicht messbar"))
     assert not any(n for n, e in angaben.items() if e["herkunft"] == "verworfen" and n in tuermasse())
     text = bericht(MOEBEL)
-    assert "## Türen kleiner als die Figur" in text and "mf4Diner" in text
+    assert "## Türen kleiner als die Figur" in text

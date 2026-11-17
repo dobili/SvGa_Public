@@ -775,12 +775,13 @@
     {
       "name": "gaertnerin",
       "typ": "statist",
-      "feld": [12, 28],
+      "feld": [15, 21],
       "eigenschaften": {
-        "von": "12,28",
-        "bis": "12,28",
+        "von": "15,21",
+        "bis": "15,21",
         "tun": "gießt die Blumenbüsche",
-        "wann": "morgen"
+        "wann": "morgen",
+        "blick": "oben"
       }
     },
     {

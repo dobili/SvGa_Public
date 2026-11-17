@@ -2,7 +2,7 @@
   "karte": "siliconBay.altstadt",
   "art": "aussen",
   "viertel": true,
-  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; es ist kalt und klar, Schnee liegt keiner (Glas und Kälte statt Schnee, RO21). Die Straße läuft von Ost nach West, mit Mittellinie und zwei Zebrastreifen an den Gassen; am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales viktorianisches Haus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit einem Weg aus Steinplatten, Bänken, Bäumen.",
+  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; es ist kalt und klar, Schnee liegt keiner (Glas und Kälte statt Schnee, RO21). Die Straße läuft von Ost nach West, mit Mittellinie und zwei Zebrastreifen an den Gassen; am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales Mietshaus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit einem Weg aus Steinplatten, Bänken, Bäumen.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -77,12 +77,14 @@
     },
     {
       "moebel": "sa8Polizei2",
-      "feld": [8, 8]
+      "feld": [8, 4],
+      "massstab": 1.25,
+      "versatz": [0, 12]
     },
     {
-      "moebel": "sa8Viktorianisch",
-      "feld": [15, 5],
-      "bauteil_ok": true
+      "moebel": "rv8MietshausB",
+      "feld": [17, 6],
+      "massstab": 1.25
     },
     {
       "moebel": "sa8WohnhausA",
@@ -503,7 +505,7 @@
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [10, 4]
+      "feld": [21, 3]
     },
     {
       "moebel": "wg4Laubbaum",
@@ -519,7 +521,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [14, 19],
+      "feld": [16, 19],
       "vorn": true
     },
     {
@@ -906,7 +908,7 @@
       }
     },
     {
-      "name": "schneeraeumroboter",
+      "name": "kehrroboter",
       "typ": "tier",
       "feld": [20, 50],
       "eigenschaften": {

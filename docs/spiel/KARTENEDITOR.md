@@ -289,7 +289,9 @@ Taste ? zeigt alle Kürzel.
   dem Fuß des Bildes folgt).
 - Kollision je Objekt (pipeline/abenteuer/objektkollision.py): `kollision` (bool), `maske` (wie
   im Katalog, im Raster des ungedrehten, skalierten Bildes; dreht und spiegelt mit, bleibt anders als
-  die Katalogmaske auch mit Maßstab), `begehbar_grund` (Pflicht, wenn ein nicht flaches, laut
+  die Katalogmaske auch mit Maßstab; ohne eigene Maske wird die Standfläche des Katalogs mit dem
+  Bild skaliert, und eine Kachel sperrt, wenn sie zu mehr als einem Viertel gedeckt ist,
+  `objektmassstab.py`, im Editor `js/massstab.js`), `begehbar_grund` (Pflicht, wenn ein nicht flaches, laut
   Katalog sperrendes Möbel hier durchgehbar wird; sonst Befund im Kartenbau). Die Karte trägt die
   geformte Maske als Eigenschaft `maske` („#.../....“), die App liest sie (oberwelt/moebelform.ts).
   Der Rücklauf nennt jede Übersteuerung mit Katalogwert und Grund und sammelt sie am Ende unter
@@ -359,7 +361,7 @@ Taste ? zeigt alle Kürzel.
     Raster des Ausschnitts beginnt an seiner Ecke und zählt angefangene Kacheln (aufgerundet); eine
     neue Kachel sperrt, wenn sie eine gesperrte Katalogkachel berührt. Ganz weggeschnittene Kacheln
     entfallen, angeschnittene bleiben, solange etwas übrig ist. Beschnitten trägt das Objekt immer
-    eine Maske (mit Maßstab die Standardregel im aufgerundeten Raster); eine eigene `maske` gilt im
+    eine Maske (mit Maßstab die skalierte Standfläche des Katalogs im aufgerundeten Raster); eine eigene `maske` gilt im
     Raster des beschnittenen, skalierten Bildes. Die Tiefe folgt der unteren Kante des Ausschnitts.
   - Kartenbau und Prüfungen über `objektform.geformt` und `formbild` (`zuschnitt` gehört zu
     `FORMFELDER`); `objektrichtung.forme_rechteck` verschiebt und begrenzt `platte`. Befund im

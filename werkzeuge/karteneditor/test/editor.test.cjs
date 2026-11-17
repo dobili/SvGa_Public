@@ -6,7 +6,8 @@
  * bedient den Editor wie der Autor (Ziehen, Alt-Ziehen, Drehen, Strg+Klick-Mehrfachauswahl,
  * Duplizieren als Gruppe, Löschen, Ebene, Bibliothek, Auswahlliste, Rückgängig, Übertragen auf die
  * Fassung, Neuladen; Figuren und Varianten in figuren.cjs, Kollisionspinsel in pinsel.cjs, Laden in laden.cjs,
- * Übergänge in uebergaenge.cjs, feine Kollision in fein.cjs, Blickrichtung in blick.cjs) und
+ * Übergänge in uebergaenge.cjs, feine Kollision in fein.cjs, Blickrichtung in blick.cjs, Kollision
+ * skalierter Objekte in massstab.cjs) und
  * schickt die heruntergeladene Datei durch den Rücklauf.
  *
  * Aufruf (Hauptordner): node werkzeuge/karteneditor/test/editor.test.cjs
@@ -43,6 +44,7 @@ const uebergaenge = require("./uebergaenge.cjs");
 const zuschnitt = require("./zuschnitt.cjs");
 const fein = require("./fein.cjs");
 const blick = require("./blick.cjs");
+const massstab = require("./massstab.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -337,6 +339,7 @@ async function ruecklauf(seite, arbeit) {
   await seite.waitForFunction(() => KE.bildpixel(0) !== null);
   await seite.waitForTimeout(300);
   await foto(seite, "01-karte");
+  await massstab.imEditor(seite, pruefe); // Kollision skalierter Objekte (Editor 1.7.1)
   const uid = await einzeln(seite);
   await mehrfach(seite, uid);
   await rechteck(seite);

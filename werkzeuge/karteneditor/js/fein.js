@@ -41,7 +41,8 @@
   function grundraster(neu, e) {
     const quer = (e.drehung || 0) % 180 === 90;
     const [b, h] = quer ? [neu.hoehe, neu.breite] : [neu.breite, neu.hoehe];
-    const auf = !!(KE.zuschnittVon && KE.zuschnittVon(e));
+    // Beschnitten oder skaliert zählen angefangene Kacheln mit (objektform.geformt, massstab.js).
+    const auf = !!(KE.zuschnittVon && KE.zuschnittVon(e)) || Number(e.massstab ?? 1) !== 1;
     const r = (v) => Math.max(1, auf ? Math.ceil(v / K) : Math.floor(v / K));
     return [r(b), r(h)];
   }

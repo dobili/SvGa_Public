@@ -50,8 +50,8 @@
 
   /**
    * Die Möbelangabe in der Form des Eintrags (objektform.geformt). Eine eigene `maske` am Eintrag
-   * (Übersteuerung, objektkollision.py) ersetzt die Katalogmaske, gilt im Raster des skalierten,
-   * ungedrehten Bildes und bleibt anders als die Katalogmaske auch mit Maßstab erhalten.
+   * (Übersteuerung, objektkollision.py) ersetzt die Katalogmaske und gilt im Raster des skalierten,
+   * ungedrehten Bildes. Mit Maßstab rechnet massstab.js die Maske neu (skalierte Standfläche).
    */
   KE.geformt = function (angabe, e) {
     if (!angabe) return angabe;

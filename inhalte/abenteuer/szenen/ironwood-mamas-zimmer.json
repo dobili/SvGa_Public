@@ -165,7 +165,7 @@
     },
     {
       "name": "mama",
-      "feld": [11, 5]
+      "feld": [11, 6]
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],

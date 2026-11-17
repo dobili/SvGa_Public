@@ -250,7 +250,7 @@ Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Hier wird alle
 
 === nova_erstes_treffen ===
 ~ novaGetroffen = true
-Auf der Fensterbank sitzt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
+Neben dem Ringlicht hockt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
 Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus. #sprecher:erzaehler #pause
 -> END
 

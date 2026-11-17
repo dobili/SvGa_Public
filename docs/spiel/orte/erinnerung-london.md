@@ -134,3 +134,9 @@ Gutachten `niedrig-1-5.md`: Schaufenster und Türen am Strand waren kaum zu erke
 Fronten bekommen eine beleuchtete Ladenzone (Bildwunsch `london_<name>_hell.png` aus
 `niedrig1_runde10.py`): Das Erdgeschoss ist heller, hinter dem Glas brennt warmes Gaslicht. Die
 Möbel `el11*` zeigen auf die neuen Bilder.
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `erinnerungLondon.kaffeehaus` (12 × 13): eine kurze Lederbank, Ofen, ein Bild und die große Wanduhr (dasselbe Bild wie die Bahnhofsuhr in Riverton; Auslöser `rueckkehr` davor), Flaschenregal, kurze Theke mit dem Kellner, zwei Schachtische (der berühmte in der Mitte, einer in der Ecke), ein runder Tisch vor der Bank, Zeitungsständer.

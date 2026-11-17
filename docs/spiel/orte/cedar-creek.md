@@ -959,3 +959,10 @@ Gutachten `cedar-creek-innen.md`. Neue Bilder aus `bildwuensche/niedrig1_runde11
     richtig. Die Beschreibung nennt sie jetzt.
 - **Drechslerei:** Fenster mit Tageslicht in der Nordwand (6, 1). Mr. Dunmore bekommt ein
   festes Bild eines älteren Mannes (`bild: statist-13`).
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `cedarCreek.bibliothek` (alle drei Fassungen, 26 × 13): Saal nur noch so tief wie das Haus. Eine Reihe freistehender Regale, darunter zwei Lesetische; ein schmales Regal an der Westwand; der Globus auf der Kommode steht im Treppenraum neben dem Loch, die Stehlampe in der Südostecke, eine Pflanze im Vorraum. Die Haustür liegt eine Reihe höher als die Südwand des Saals. Lesesaal: die Schlafmatten liegen unter dem langen Tisch. Clubkampf: zwei Zuschauerstühle.
+- `cedarCreek.archiv` (beide Fassungen): statt eines Archivregals eine verschlossene Kellertür (Auslöser `kellertuer`, „Heizung und Lager“).

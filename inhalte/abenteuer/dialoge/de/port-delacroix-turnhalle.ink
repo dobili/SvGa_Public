@@ -53,7 +53,7 @@ VAR hatKartePlanfinder = false
 
 === vorwurf ===
 ~ tiefpunktGesehen = true
-Das Turnier ist in der Turnhalle der Schule. Unter den Basketballkörben stehen Biertische, die Bretter passen nicht zusammen. #sprecher:erzaehler
+Das Turnier ist in der Turnhalle der Schule. Unter dem Basketballkorb stehen Klapptische, die Bretter passen nicht zusammen. #sprecher:erzaehler
 Wenn ein Fremder hereinkommt, wird es einen Moment leiser. Du bist ein Fremder, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
 Aus Silicon Bay. Die waren hier, nach dem Sturm. Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy #stimmung:bitter
 Bildschirme haben sie gebracht. Zwanzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy #stimmung:bitter

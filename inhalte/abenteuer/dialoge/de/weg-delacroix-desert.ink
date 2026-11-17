@@ -202,10 +202,11 @@ Zweite Frage: Hat er einen Zug, der alles hält? Den suchst du. Für ihn. So gr�
 Das ist der Teil, den keine Maschine kann. Sie muss nie hoffen. Arme Maschine. #sprecher:ambrose #stimmung:laechelt
 Ihr übt, bis das Licht fort ist. #sprecher:erzaehler
 Im Geigenkasten liegt eine Karte, die du seit Port Delacroix nicht angefasst hast. #sprecher:erzaehler
-Als ihr absteigt, im letzten Grau, siehst du unter dem Felsbogen etwas, das du vorher nicht bemerkt hast. #sprecher:erzaehler
 {nietenCanyonGefunden:
+    Als ihr absteigt, im letzten Grau, bleibt ihr an der Brücke unter dem Felsbogen stehen. J. H. auf jeder Niete, am Pfeiler die Platte: 1879. #sprecher:erzaehler
     -> fund_nieten.nieten_ambrose
 }
+Als ihr absteigt, im letzten Grau, siehst du etwas, das du vorher nicht bemerkt hast. #sprecher:erzaehler
 -> fund_nieten
 
 // ---------------------------------------------------------------- Funde
@@ -298,7 +299,7 @@ Schau genau hin. Unten sieht Wren das Brett nicht. #sprecher:ferris #stimmung:na
 {seilschaftFertig: -> END}
 ~ seilschaftFertig = true
 Das Echo trägt deine Züge durch den Canyon. Unten nickt Wren, oben jubelt Tess. #sprecher:erzaehler
-Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als er wiegt. #sprecher:wren #stimmung:laechelt
+Du hast die Stellung im Kopf behalten. Hier, der Karabiner gehört dir. Er hält mehr, als er wiegt. #sprecher:wren #stimmung:laechelt
 ~ gibFund("karabiner")
 {ambroseSprichtWieder:
     Blind spielen heißt: das Brett tragen, ohne es zu sehen. #sprecher:ambrose #stimmung:nachdenklich

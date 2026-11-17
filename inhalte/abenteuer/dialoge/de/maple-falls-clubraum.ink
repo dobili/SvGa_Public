@@ -295,11 +295,12 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
 === sam_nach_revanche ===
 // Der Tipp zur Trainerin ist Sams Lohn nach der Revanche (Roman, Kapitel 6; Dialogprüfung VM49).
 ~ samVersoehnt = true
-Okay. Die Dame bleibt zu Hause. Fürs Erste. #sprecher:sam #stimmung:laechelt
+Okay. Die Chefin war brav zu Hause. Verloren hab ich trotzdem. #sprecher:sam #stimmung:laechelt
 Du bist gut, {held}. Nicht so gut wie ich. Noch nicht. #sprecher:sam #stimmung:froh
 Er erzählt weiter, ohne dass du fragst. #sprecher:erzaehler
 Der Coach guckt nur auf ihren eigenen Angriff. Immer. #sprecher:sam #stimmung:nachdenklich
-Hab ich nie ausnutzen können. Aber du vielleicht. #sprecher:sam #stimmung:laechelt
+// Lektorat der Lesefassung, 17.11.2026: Wer die Nadel schon hat, bekommt den Tipp nicht mehr als Aussicht.
+Hab ich nie ausnutzen können. {nadelMapleFalls > 0:Du schon, wie es aussieht.|Aber du vielleicht.} #sprecher:sam #stimmung:laechelt
 Juno schreibt es ins Tagebuch. Mit Glitzer. #sprecher:erzaehler
 -> END
 

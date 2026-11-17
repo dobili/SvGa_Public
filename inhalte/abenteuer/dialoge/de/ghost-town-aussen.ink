@@ -85,7 +85,8 @@ Die meisten fragen nach dem Gold. #sprecher:pruitt #stimmung:laechelt
 ~ grabGesehen = true
 {not pruittGetroffen:
     ~ pruittGetroffen = true
-    Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:laechelt #klang:metalldetektor
+    Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. #sprecher:erzaehler #klang:metalldetektor
+    Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:laechelt
 }
 Ganz hinten, wo der Zaun aufhört und die Wüste anfängt, liegt ein niedriger Stein ohne Namen. Eingeritzt: acht mal acht Vierecke. #sprecher:erzaehler #bild:stein_brett
 Mr. Pruitt nimmt den Hut ab. #sprecher:erzaehler #bild:aus
@@ -124,7 +125,7 @@ Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht
 // Kapitel 59 (Roman): Ambrose sagt es. Nachtstück zum dritten und letzten Mal mit Ambroses
 // Thema als Gegenstimme; bei „Bleib“ ein gehaltener Ton (S74). Er sitzt zum vierten Mal.
 ~ ambroseSagtEsGesehen = true
-Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine Remispartie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
+Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
 Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. Ich hab sie gemacht. #sprecher:juno #stimmung:froh
 Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. Sie kommt dir vor wie etwas, das fertig ist. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck
 Er wartet am Ende des Gehsteigs, wo die Bretter aufhören. #sprecher:erzaehler

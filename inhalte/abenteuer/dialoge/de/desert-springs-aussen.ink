@@ -78,7 +78,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
 {not buckKarteGegeben:
     ~ buckKarteGegeben = true
     Mitten in der Partie hast du einen guten Zug gefunden und gesagt: „Na, das wird teuer.“ Buck hat sofort gezogen, zu schnell. #sprecher:erzaehler
-    Na, jetzt willst du's aber wissen! Hier, die hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
+    Na, jetzt willst du's aber wissen! Hier, die Karte hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
     {versoehnungGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
@@ -123,7 +123,7 @@ Er steht am Beckenrand und sieht hinauf. #sprecher:erzaehler
 - Oh. Oh, das ist gut. Das schreib ich auf. #sprecher:juno #stimmung:laechelt
 Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
 Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch. Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler #musik:victor.maschine
-Der zweite Satz gefällt dir nicht. #sprecher:erzaehler #pause
+Der letzte Satz gefällt dir nicht. #sprecher:erzaehler #pause
 Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
 Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 * [„Sicher?“]

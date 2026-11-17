@@ -13,6 +13,9 @@ VAR logbuchGefunden = false
 VAR lorenBestanden = false
 VAR goldaderGefunden = false
 VAR ambroseSprichtWieder = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // Sperre S11: Laterne und Pruitts Geschichte (nach dem Grab). Der Dialog setzt goldmineOffen, die Hülle
 // prüft danach `wenn` am Übergang goldmine in Ghost Town.
@@ -43,7 +46,9 @@ Auf dem Tisch in der Kammer liegt ein Logbuch, die Seiten gewellt vom Wasser. Di
 Daneben steht eine alte Grubenlampe. #sprecher:erzaehler
 ~ gibFund("grubenlampe1866")
 {ambroseSprichtWieder:
-    Bei Kerzenlicht. Ich erinnere mich an den Geruch von Wachs. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Bei Kerzenlicht. Ich erinnere mich an den Geruch von Wachs. #sprecher:ambrose #stimmung:nachdenklich
+    }
 }
 -> END
 

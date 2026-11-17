@@ -88,8 +88,13 @@ Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie K
 === ankunft_kurz ===
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Da bist du ja. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter #stimmung:muede
-Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #stimmung:laechelt
+// Lektorat der Lesefassung, 17.11.2026: Wer nach der ersten Lektion herunterkommt (der übliche Weg,
+// seit die Haustür bis dahin zu bleibt), beginnt gleich mit dem Abend. Sonst fragte Mama „Warst du
+// schon auf dem Dachboden?“, und erst danach kam {held} mit dem Brett die Treppe herunter.
+{not ersteLektionBesprochen:
+    Da bist du ja. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter #stimmung:muede
+    Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #stimmung:laechelt
+}
 -> mutter
 
 === erster_abend ===
@@ -146,7 +151,7 @@ Mit Juno. Am Fluss. Gut. #sprecher:mutter #stimmung:laechelt
 Sie drückt dir eine Tüte in die Hand, belegte Brote, als hätte sie es die ganze Zeit gewusst. #sprecher:erzaehler
 Brett nicht verlieren. #sprecher:mutter #stimmung:froh
 * [„Woher weißt du, dass ich es mitnehme?“]
-    Du trägst es seit Tagen herum. Wie ein Haustier. #sprecher:mutter #stimmung:lacht
+    Du trägst es seit Wochen herum. Wie ein Haustier. #sprecher:mutter #stimmung:lacht
 * [„Versprochen.“]
 - Juno wartet am Park, wo die Landstraße beginnt. #sprecher:erzaehler
 -> END

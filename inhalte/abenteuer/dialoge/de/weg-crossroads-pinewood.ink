@@ -31,6 +31,9 @@ VAR kreide4Gefunden = false
 VAR seite10Gefunden = false
 VAR finchFiguren = 0
 VAR finchDameGefunden = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Kapitel 54 (Roman): Ambrose sieht die Stellung der Fernpartie nicht mehr im Dunkeln.
 VAR esIstStillGesagt = false
 VAR baeumeGesehen = false
@@ -67,7 +70,8 @@ Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzi
 Ich habe nicht gewusst, dass man es üben kann. Auf einem Wanderweg, zum Vergnügen. #sprecher:ambrose #stimmung:laechelt
 Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose #stimmung:laechelt
 * [„Läufer schlägt f7, Schach.“]
-- Greta macht die Augen auf. Der steht doch gar nicht … #sprecher:greta #stimmung:ueberrascht
+- Greta macht die Augen auf. #sprecher:erzaehler
+Der steht doch gar nicht … #sprecher:greta #stimmung:ueberrascht
 Ihre Lippen bewegen sich. #sprecher:erzaehler
 Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta #stimmung:laechelt
 * [„Ich hab einen Freund. Der sieht für mich.“]
@@ -87,7 +91,9 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
 === greta_nach_partie ===
 {~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta #stimmung:laechelt
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
-    Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
+    }
 }
 + [Noch eine Partie blind]
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
@@ -104,7 +110,9 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
     -> END
 }
 An der Hüttenwand hängt eine Schiefertafel: „Drei Stellungen. Erst rechnen, dann ziehen. Wie beim Wandern.“ #sprecher:erzaehler
-Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {held}. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {held}. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCrossroadsPinewood.tafel")
     -> END
@@ -117,8 +125,10 @@ Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {
 {not baeumeGesehen:
     ~ baeumeGesehen = true
     Die Bäume sind so dick, dass zehn Leute sie nicht umfassen. Die Rinde ist rot, weich und tief gefurcht. #sprecher:erzaehler #geraeusch:wald_tief #musik:wald.orgelpunkt
-    Diese sind älter. Älter als die in Cedar Creek, älter als ich, als das Land, als das Spiel. #sprecher:ambrose #stimmung:ueberrascht
-    Ich nehme zurück, was ich damals gesagt habe. Das hier ist jemand in meinem Alter. #sprecher:ambrose #stimmung:lachtOhneSpott
+    {not abschiedGesehen:
+        Diese sind älter. Älter als die in Cedar Creek, älter als ich, als das Land, als das Spiel. #sprecher:ambrose #stimmung:ueberrascht
+        Ich nehme zurück, was ich damals gesagt habe. Das hier ist jemand in meinem Alter. #sprecher:ambrose #stimmung:lachtOhneSpott
+    }
     -> END
 }
 {~Am Rangerhaus hängt ein Zettel: „Bärenspuren am Bach. Essen nicht offen lassen.“|Im Nebel zwischen den Riesenbäumen ist das Rangerhaus winzig wie eine Spielfigur.|Vor dem Rangerhaus ein Abdruck im Schlamm, so groß wie eine Pfanne.} #sprecher:erzaehler
@@ -146,7 +156,9 @@ Du kommst wie gerufen. Kannst du kommandieren? #sprecher:ezra #stimmung:laechelt
 
 === lebendschach_angebot ===
 Die Kinder ziehen erst, wenn sie den Zug laut hören. Und wer geschlagen werden soll, protestiert. #sprecher:ezra #stimmung:laechelt
-Opfere niemanden ohne Not, {held}. Diese Figuren haben eine Stimme. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Opfere niemanden ohne Not, {held}. Diese Figuren haben eine Stimme. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Ich kommandiere.“]
     ~ beginneAufgaben("wegCrossroadsPinewood.lebendschach")
     -> END
@@ -171,7 +183,9 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
     -> END
 }
 Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeichneten Stellung. #sprecher:erzaehler
-Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose #stimmung:nachdenklich
+}
 ~ seite10Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite10")
@@ -185,7 +199,9 @@ Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambro
     -> END
 }
 In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fink aus Blech. Darunter steckt eine weiße Dame aus Buchsbaum. Unter ihrem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
-Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose #stimmung:laechelt
+}
 ~ finchDameGefunden = true
 ~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchDame")
@@ -199,7 +215,9 @@ Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas
     -> END
 }
 An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, klein: „K4. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
-Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose #stimmung:laechelt
+}
 ~ kreide4Gefunden = true
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 ~ gibFund("kreide4")

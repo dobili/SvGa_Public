@@ -102,7 +102,7 @@ Ein kleiner Zug. Der einzige, den es gab. Jedes Kind hätte ihn gefunden. #sprec
 Gideon hält das Blatt. Die Feder kratzt. Zweimal muss ich absetzen. #sprecher:erzaehler
 „40. König schlägt g3.“ #sprecher:erzaehler #pause
 Darunter wollte ich schreiben, dass ich ihm verziehen habe. Irgendwann um den zwanzigsten Zug, ohne es zu merken. Die Hand tut es nicht mehr. #sprecher:ambrose #stimmung:jung
-Gib es dem Postreiter. Bring ihn nach Norden. Er wartet. #sprecher:ambrose #stimmung:jung
+Gib den Brief dem Postreiter. Er soll ihn nach Norden bringen. Dort wartet jemand. #sprecher:ambrose #stimmung:jung
 Wer? #sprecher:gideon #stimmung:ueberrascht
 Ein unerträglicher Mann. Der beste Gegner, den ich hatte. #sprecher:ambrose #stimmung:jung
 Und das Brett, Mister? Wem soll ich es geben? #sprecher:gideon #stimmung:traurig

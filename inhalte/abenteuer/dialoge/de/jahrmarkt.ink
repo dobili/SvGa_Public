@@ -14,6 +14,9 @@ VAR doloresGetroffen = false
 VAR tuerkeGeheimnisGeloest = false
 VAR lieferungFuerDolores = false
 VAR lieferungAbgegeben = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Der Schachtürke
 
@@ -48,7 +51,9 @@ Wer errät, wie er funktioniert, bekommt eine Münze. Also? #sprecher:dolores #s
 ~ tuerkeGeheimnisGeloest = true
 Aus dem Kasten klopft es dreimal. Eine Klappe geht auf, und ein Junge mit Taschenlampe grinst heraus. #sprecher:erzaehler
 Erwischt! Ich bin Ike. Das hat diese Woche noch niemand erraten. Hier, deine Münze. #sprecher:ike #stimmung:froh
-In Kempelens Kiste saß auch ein Mensch. Ein guter Spieler, der sich klein machen konnte. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    In Kempelens Kiste saß auch ein Mensch. Ein guter Spieler, der sich klein machen konnte. #sprecher:ambrose #stimmung:laechelt
+}
 ~ gibFund("geheimnisTuerke")
 -> END
 

@@ -96,14 +96,14 @@ Er hat auf mich gewartet und ich auf ihn. Und jeder hat gedacht, der andere schw
 Auf der Rückseite stehen vier Züge, sauber untereinander. #sprecher:erzaehler
 Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. Damit wir dieselbe Stellung aufbauen, wenn ich ankomme. #sprecher:ambrose #stimmung:nachdenklich
 Zwei Umschläge am selben Dienstag. Der mit dem Zug kam an. Der mit der Einladung blieb leer in einem Postsack liegen. #sprecher:ambrose #stimmung:bitter
-Seine Antwort auf meinen letzten Zug hat er nie abgeschickt. An wen auch. Sie steht auf der Seite, die fehlt. #sprecher:ambrose #stimmung:still
 Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie geöffnet. #sprecher:ambrose #stimmung:still
+Seine Antwort auf meinen letzten Zug hat er nie abgeschickt. An wen auch. Sie steht auf der Seite, die fehlt. #sprecher:ambrose #stimmung:still
 {gefundenUmschlag:
     Du faltest den Brief und legst ihn in den Umschlag aus Ironwood. Er passt genau. #sprecher:erzaehler
 }
 ~ gibFund("halesBrief")
 Oben sieht Mr. Okoro dein Gesicht und fragt nichts. #sprecher:erzaehler
-Manche Bücher stehen fünfzig Jahre im Regal, bis der Richtige kommt. Das ist kein Unglück. Das ist ein Antiquariat. #sprecher:okoro #stimmung:laechelt
+Manche Bücher stehen fünfzig Jahre im Regal, bis jemand sie braucht. Das ist kein Unglück. Das ist ein Antiquariat. #sprecher:okoro #stimmung:laechelt
 -> END
 
 === okoro_alltag ===

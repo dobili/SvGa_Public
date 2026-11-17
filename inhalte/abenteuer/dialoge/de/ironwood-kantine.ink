@@ -48,11 +48,23 @@ VAR turnierheftBekommen = false
 // Lernkarte Faktorenwaage (mama_karte); hatKarteFaktorenwaage setzt die Hülle aus dem Besitz.
 VAR lernkarteFaktorenwaage = false
 VAR hatKarteFaktorenwaage = false
+// Lektorat Akt 2 (17.11.2026): kaufGesehen setzt ironwood-aussen.ink (Szene 49). Danach zeigt die
+// Karte das Logo über der Ausgabe und den Karton mit den Pokalen an der Tür; die Texte folgen dem.
+VAR kaufGesehen = false
 
 // ---------------------------------------------------------------- Big Joe
 
 === big_joe ===
-{~Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren.|Big Joe stellt Figuren auf sein Stahlbrett, so behutsam, als wären sie aus Glas.|Es riecht nach Kaffee, Eisen und nassen Jacken.} #sprecher:erzaehler
+// Lektorat Akt 2 (17.11.2026): Vor „Ach, Kumpel“ baut Big Joe nicht noch einmal auf, und nach dem
+// Kauf klappern keine Figuren mehr an den langen Tischen. Das Bild vom Glas bleibt dem ersten Treffen.
+{
+- kaufGesehen:
+    Über der Essensausgabe hängt das weiße Logo. An der Tür steht der Karton mit den Pokalen. #sprecher:erzaehler
+- nadelIronwood > clubkampfIronwoodNadel:
+    Es riecht nach Kaffee, Eisen und nassen Jacken. #sprecher:erzaehler
+- else:
+    {~Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren.|Big Joe stellt Figuren auf sein Stahlbrett, eine nach der anderen. Es klirrt kein einziges Mal.|Es riecht nach Kaffee, Eisen und nassen Jacken.} #sprecher:erzaehler
+}
 {
 - not bigJoeGetroffen: -> big_joe_erkennt
 - not briefFuerRuben and not lastkahnFrei: -> big_joe_brief
@@ -279,7 +291,8 @@ Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, 
 Und ab jetzt fahre ich mit. Zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
 Du spielst zu langsam. #sprecher:mutter #stimmung:laechelt
 Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lachtOhneSpott
-Juno klebt das Foto ins Tagebuch. Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
+Juno klebt das Foto ins Tagebuch. #sprecher:erzaehler
+Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
 -> END
 
 // ---------------------------------------------------------------- Partiemomente (Roman, Kap. 27/28)
@@ -417,6 +430,10 @@ Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya
 // ---------------------------------------------------------------- Gegenstände
 
 === pokalregal ===
+{kaufGesehen:
+    Das Regal ist leer. Die Pokale stecken im Karton an der Tür. Nur das Messingschild hängt noch: 2001. #sprecher:erzaehler
+    -> END
+}
 {pokalregalGesehen:
     Die Lücke im Regal ist noch da, so breit wie eine Hand. Darunter das Messingschild: 2001. #sprecher:erzaehler
     -> END

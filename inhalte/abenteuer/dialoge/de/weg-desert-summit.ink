@@ -96,7 +96,7 @@ Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl #stimmu
     -> END
 }
 Neben der Kasse hängt eine Tafel: „Drei Endspiele. Wer alle löst, kriegt den Kaffee umsonst.“ #sprecher:erzaehler
-Nur Könige und Bauern. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
+Nur Könige und Bauern. So wenig Holz, und kein Zug ist leicht. #sprecher:ambrose #stimmung:nachdenklich
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDesertSummit.tafel")
     -> END
@@ -148,7 +148,8 @@ VAR ruthGetroffen = false
 
 === ereignis_funkschach ===
 {funkschachFertig:
-    Aus dem Funkgerät rauscht es. „{held} Junior, bist du da? Wir spielen Dienstag wieder.“ #sprecher:mamaBear #stimmung:laechelt
+    Aus dem Funkgerät rauscht es. #sprecher:erzaehler
+    {held} Junior, bist du da? Wir spielen Dienstag wieder. #sprecher:mamaBear #stimmung:laechelt
     -> END
 }
 {ausgangWegDesertSummitFunkschach != "" and ausgangWegDesertSummitFunkschach != "abgebrochen": -> funkschach_ende}
@@ -218,7 +219,7 @@ Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme. #s
 {
 - gefundenKreide3:
     ~ hinterzimmerOffen = true
-    {held} klopft dreimal. Von drinnen ruft jemand: „Rein mit dir, aber leise.“ #sprecher:erzaehler
+    Du klopfst dreimal. Von drinnen ruft jemand: „Rein mit dir, aber leise.“ #sprecher:erzaehler
 - else:
     Eine schmale Tür an der Seite des Diners. Sie ist zu. Auf der Klinke liegt etwas Kreidestaub. #sprecher:erzaehler
 }
@@ -282,7 +283,7 @@ Ein Wegweiser: „Summit City ↑ 2 Meilen. Hochebene: in Summit City links.“ 
 -> END
 
 === quelle ===
-Aus dem Fels rinnt kaltes Wasser in einen Steintrog. {held} trinkt ein paar Schlucke. #sprecher:erzaehler
+Aus dem Fels rinnt kaltes Wasser in einen Steintrog. Du trinkst ein paar Schlucke. #sprecher:erzaehler
 -> END
 
 === spur_pm4 ===

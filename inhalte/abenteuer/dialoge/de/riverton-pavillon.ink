@@ -42,7 +42,13 @@ VAR moldeGefuehlt = false
 // ---------------------------------------------------------------- Slick
 
 === slick ===
-{~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer und blättert in den Partieformularen.} #sprecher:erzaehler
+// Lektorat Akt 2 (17.11.2026): Nach dem Clubkampf passen Uhren, Formulare und ein Slick, der
+// nebenbei gewinnt, nicht mehr (er hat eben verloren, am Montag sind die Steintische fort).
+{nadelRiverton > clubkampfRivertonNadel or clubkampfRivertonBesprochen:
+    {~Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer.} #sprecher:erzaehler
+- else:
+    {~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer und blättert in den Partieformularen.} #sprecher:erzaehler
+}
 {
 - not slickGetroffen: -> slick_erstes_treffen
 - nadelRiverton > clubkampfRivertonNadel: -> slick_nach_sieg
@@ -269,7 +275,7 @@ Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt. Beides mit Fahrpl
 -> ray_erst_tamsin
 
 === ray_erst_tamsin ===
-Erst Tamsin, dann ich. Ein Bus hält auch nicht zweimal an derselben Haltestelle. #sprecher:ray #stimmung:laechelt
+Erst Tamsin, dann ich. Ein Bus fährt seine Haltestellen auch der Reihe nach an. #sprecher:ray #stimmung:laechelt
 -> END
 
 === ray_reihe ===
@@ -300,7 +306,13 @@ Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die
     -> END
 
 === ray_alltag ===
-{~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray #stimmung:nachdenklich
+// Lektorat Akt 2 (17.11.2026): „war unsere Endhaltestelle“ und der Weg nach Ironwood erst nach dem
+// letzten Spiel; vorher steht der Pavillon noch, und von Ironwood war keine Rede.
+{nadelRiverton > 0:
+    {~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray #stimmung:nachdenklich
+- else:
+    Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt. #sprecher:ray #stimmung:nachdenklich
+}
 -> END
 
 // ---------------------------------------------------------------- Gegenstände

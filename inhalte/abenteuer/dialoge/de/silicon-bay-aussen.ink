@@ -35,6 +35,8 @@ VAR tabletNachtGesehen = false
 VAR batterieErhalten = false
 VAR leuchtfeuerAuftrag = false
 VAR ausgangIronwoodClubkampf = ""
+// Globale Variable aus weg-silicon-delacroix.ink: Mama an der Gangway nur vor der ersten Überfahrt.
+VAR bugGesehen = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -249,6 +251,7 @@ Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #spre
 === faehre ===
 {nadelSiliconBay > 0:
     Am Kai liegt die Küstenfähre nach Süden. Zwei Tage bis nach Port Delacroix. #sprecher:erzaehler
+    {not bugGesehen: Mama steht schon an der Gangway, die Tasche über der Schulter. Das Notzelt in Port Delacroix braucht Hände, und sie hat zwei. #sprecher:erzaehler}
     Port Delacroix. Ich kenne diesen Namen. Ich kenne ihn sehr gut. #sprecher:ambrose #stimmung:traurig
 - else:
     Am Kai liegt eine Fähre nach Süden. „Erst das Turnier“, steht auf deinem Zettel. #sprecher:erzaehler

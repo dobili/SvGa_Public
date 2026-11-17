@@ -15,6 +15,9 @@ VAR ausgangCapitalArenaKreidenacht1 = ""
 VAR ausgangCapitalArenaKreidenacht2 = ""
 VAR ausgangCapitalArenaKreidenacht3 = ""
 VAR kreidenachtErledigt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === mo ===
 {
@@ -65,7 +68,9 @@ Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:vict
 Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo #stimmung:laechelt
 ~ gibKarte("sanduhr")
 ~ gibFund("fotoKreidenacht")
-Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. So war es im Kaffeehaus auch. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. So war es im Kaffeehaus auch. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === mo_danach ===

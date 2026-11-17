@@ -78,9 +78,6 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 {nadelPortDelacroix > 0 and not abschiedPortDelacroixGesehen: -> abschied_mama}
 {nadelPortDelacroix > 0:
     Am Bahnhof wartet der Wüstenzug nach Westen. Hinter den Bergen liegt Desert Springs. #sprecher:erzaehler
-    {ambroseSprichtWieder:
-        Wüste. Ich war nie in der Wüste. Es wird Zeit. #sprecher:ambrose #stimmung:laechelt
-    }
 - else:
     Am Bahnhof steht ein Zug nach Westen. Erst willst du hier noch etwas zu Ende bringen. #sprecher:erzaehler
 }
@@ -218,7 +215,7 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste #stimmung:laechelt
     // „Kühler Kopf“ hat schon Mr. Quinn geschenkt; Batiste gibt den Bauernkompass (Bauer um Bauer,
     // ohne Uhr; Dokument 11 schlug ihn für Port Delacroix vor).
-    Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine mit einem Bauern und einer Kompassnadel. #sprecher:erzaehler
+    Er schiebt dir zwei Karten über das Brett. Eine für einen zweiten Versuch, eine mit einem Bauern und einer Kompassnadel. #sprecher:erzaehler
     Welchen Bauern man wohin stellt. Das ist das Ganze. #sprecher:batiste #stimmung:nachdenklich
     ~ gibKarte("zweiteChance")
     ~ gibKarte("bauernkompass")

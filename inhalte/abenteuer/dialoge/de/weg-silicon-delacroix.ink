@@ -176,7 +176,7 @@ Er zeigt auf die Kordel über dem Steuer. #sprecher:erzaehler
 Zieh. Kräftig. #sprecher:kapitaen #stimmung:laechelt
 Ein tiefer Ton rollt über das Wasser. Auf dem Deich drehen sich Leute um und winken. #sprecher:erzaehler
 ~ gibFund("kapitaensmuetze")
-Die gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie diese. #sprecher:kapitaen #stimmung:laechelt
+Die Mütze gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie diese. #sprecher:kapitaen #stimmung:laechelt
 -> END
 
 === kapitaen_danach ===

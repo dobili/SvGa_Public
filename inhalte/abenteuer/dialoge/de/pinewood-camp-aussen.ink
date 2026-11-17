@@ -79,7 +79,7 @@ Geh weiter. Es ist gut. Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:
 {ezraGetroffen: -> ezra_alltag}
 ~ ezraGetroffen = true
 Ein junger Mann mit Pfeife um den Hals und Klemmbrett unter dem Arm kommt angelaufen. #sprecher:erzaehler
-{lebendschachGesehen:Da bist du ja! Unser Feldherr aus dem Wald. Heute Abend ist Lagerfeuer.|Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden? Heute Abend ist Lagerfeuer.} #sprecher:ezra #stimmung:froh
+{lebendschachGesehen:Da bist du ja! Unser Feldherr aus dem Wald.|Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden?} Heute Abend ist {lagerfeuerGesehen:wieder }Lagerfeuer. #sprecher:ezra #stimmung:froh
 -> ezra_regeln
 
 === ezra_regeln ===

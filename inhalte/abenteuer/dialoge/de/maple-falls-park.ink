@@ -86,7 +86,7 @@ Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #st
 -> END
 
 === bibliothekar_alltag ===
-{~Heute habe ich nur die Thermoskanne vergessen. Ein guter Tag.|Margaret spielte jeden Sonntag. Per Post. Ein Zug, eine Briefmarke.|Ein Bibliothekar hört nie auf zu sortieren. Jetzt sortiere ich Enten.} #sprecher:abernathy #stimmung:laechelt
+{~Heute habe ich nur die Thermoskanne vergessen. Ein guter Tag.|Margaret spielte jeden Sonntag per Post. Die Schachbücher dazu hat sie bei mir geliehen. Alle.|Ein Bibliothekar hört nie auf zu sortieren. Jetzt sortiere ich Enten.} #sprecher:abernathy #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Die Parkbank

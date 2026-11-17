@@ -31,6 +31,9 @@ VAR victorSeiteGegeben = false
 VAR varianteDracheGelernt = false
 VAR drachenschuppeGefunden = false
 VAR abschiedSummitGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 83)
 
@@ -80,7 +83,9 @@ Mit Uhr. Das Wetter schlägt schneller um, als man denkt. #sprecher:sol #stimmun
 === sol_angebot ===
 Drei Minuten, zwei Sekunden Zuschlag. Eine Stellung, du hast Weiß. Bevor die Wolken kommen? #sprecher:sol #stimmung:laechelt
 + [„Los.“]
-    Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose #stimmung:laechelt
+    }
     ~ beginnePartie("summitCity.sol")
     -> END
 + [„Nicht jetzt.“]
@@ -138,7 +143,9 @@ Am Abend hängen Laternen über dem Marktplatz. Rund um den Drachenbrunnen stehe
 Ein Mädchen erklärt dir die Regel, ohne zu fragen, ob du sie hören willst. #sprecher:erzaehler
 Einmal im Jahr spielt hier jeder mit dem Drachen. Der Drache zieht wie eine Dame und springt wie ein Springer. #sprecher:erzaehler
 Die Sage sagt, er hat die Bergleute aus dem Stollen geführt. Deshalb darf er alles. #sprecher:erzaehler
-Eine Figur, die alles darf. Und keiner hier findet das ungerecht. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Eine Figur, die alles darf. Und keiner hier findet das ungerecht. #sprecher:ambrose #stimmung:lacht
+}
 {not drachenschuppeGefunden:
     ~ drachenschuppeGefunden = true
     Das Mädchen drückt dir eine Schuppe aus grünem Glas in die Hand. Für alle, die zum ersten Mal mitmachen. #sprecher:erzaehler
@@ -149,12 +156,14 @@ Eine Figur, die alles darf. Und keiner hier findet das ungerecht. #sprecher:ambr
 === drachenfest_angebot ===
 // VARIANTE-FEHLT: Drache (L10). Bis sie gebaut ist, nur die Regel und eine Vertröstung.
 Alle Bretter sind belegt. Die Bergführer spielen bis Mitternacht, und die Kinder schauen zu. #sprecher:erzaehler
-Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === drachenfest_alltag ===
 {~Am Drachenbrunnen liegt eine vergessene Figur mit Flügeln.|Ein Murmeltier sitzt auf dem Brunnenrand und pfeift.|Die Laternen vom Fest hängen noch. Am Brunnen erklärt ein Vater seinem Sohn den Drachen.} #sprecher:erzaehler
--> drachenfest_angebot
+-> END
 
 // ---------------------------------------------------------------- Wege
 
@@ -191,7 +200,9 @@ Ein Plakat am Platz: „Landesmeisterschaft – Finale in der Capital Arena“. 
 === fernrohr ===
 Vom Felsplateau sieht man über das ganze Tal. Die Gondel hängt wie eine Figur am Faden über dem Abgrund. #sprecher:erzaehler
 {ambroseSprichtWieder:
-    Von hier oben sieht das Tal aus wie ein Brett nach der Eröffnung. Alles steht noch, nichts ist entschieden. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Von hier oben sieht das Tal aus wie ein Brett nach der Eröffnung. Alles steht noch, nichts ist entschieden. #sprecher:ambrose #stimmung:nachdenklich
+    }
 }
 -> END
 // <<< Runde 6 (mittel-4)

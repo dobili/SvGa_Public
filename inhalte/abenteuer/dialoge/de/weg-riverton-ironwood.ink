@@ -153,6 +153,7 @@ Und Tausende Nieten, runde Köpfe in geraden Reihen. #sprecher:erzaehler
 Wer baut so etwas? #sprecher:juno #stimmung:ueberrascht
 * [„Jemand, der nichts dem Zufall überlässt.“]
 - Du weißt nicht, warum du das sagst. Ambrose ist sehr still. #sprecher:erzaehler #pause
+Dann redet er von etwas ganz anderem, ein wenig zu schnell. #sprecher:erzaehler
 Im Kaffeehaus gab es einen Trick. Man tat, als brenne die Kerze des Gegners schon herunter. #sprecher:ambrose #stimmung:laechelt
 Man sah darauf. Man seufzte. Er glaubte es, und er eilte. #sprecher:ambrose #stimmung:laechelt
 * [„Ist das nicht Schummeln?“]
@@ -215,7 +216,7 @@ Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #spre
 * [Td8]
     -> kreidespringer_geloest
 * [Td7]
-    Der Turm steht schön auf der siebten Reihe. Aber der König hat noch Luft. #sprecher:erzaehler
+    Der Turm steht schön auf der siebten Reihe. Aber er gibt nicht einmal Schach. #sprecher:erzaehler
     -> raten
 * [Kf2]
     Der König geht spazieren. Ein Matt ist das nicht. #sprecher:erzaehler
@@ -245,7 +246,11 @@ Das Wort ist „Td8“. #sprecher:erzaehler
     -> nach_der_partie
 }
 „Td8“? Richtig. Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. Fast nie. #sprecher:dime #stimmung:lacht
-Über dem Kanal surrt etwas. Eine kleine Drohne steht in der Luft und dreht sich zum Tisch. #sprecher:erzaehler
+{gefundenSpurPM1:
+    Über dem Kanal surrt die Drohne und dreht sich zum Tisch. #sprecher:erzaehler
+- else:
+    Über dem Kanal surrt etwas. Eine kleine Drohne steht in der Luft und dreht sich zum Tisch. #sprecher:erzaehler
+}
 Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime #stimmung:nachdenklich
 -> spielen
 
@@ -297,7 +302,7 @@ Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
     Am Brückenfuß hängt nur noch der kleine Fink aus Blech. #sprecher:erzaehler
     -> END
 }
-Am Brückenfuß hängt ein kleiner Fink aus Blech. Darunter, im Spalt zwischen zwei Steinen, steckt ein weißer Läufer aus hellem Holz. #sprecher:erzaehler
+Am Brückenfuß hängt ein kleiner Fink aus Blech. Darunter, im Spalt zwischen zwei Steinen, steckt ein weißer Läufer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchLaeuferA")
 ~ finchFiguren = finchFiguren + 1
 -> END

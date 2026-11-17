@@ -34,6 +34,9 @@ VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
 VAR varianteSchach960Gelernt = false
 VAR varianteFalkeUndBisonGelernt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Kapitel 53 (Roman): Theo bekommt das Tablet zurück (Figur crossroads.theo am Fenster, M3.1).
 VAR theoTabletZurueck = false
 // Aus weg-ironwood-silicon (Glasbrücke): der Ohrstöpsel ist ein Fund, kein Muss.
@@ -73,8 +76,10 @@ VAR kaffeehausGesehen = false
 }
 Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen. #sprecher:erzaehler
 Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene #stimmung:laechelt
-Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Nova sagt, du musst nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene #stimmung:laechelt
-Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose #stimmung:laechelt
+Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Das Mädchen mit dem Tagebuch sagt, ihr wollt nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene #stimmung:laechelt
+{not abschiedGesehen:
+    Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Nova (Szene 93)
@@ -163,7 +168,7 @@ Was du schon kennst: #sprecher:erzaehler
     Atomschach, von Bell am Geysir. Auf einem Brett fehlt schon die halbe Mitte. #sprecher:erzaehler
 }
 {varianteEntenschachGelernt:
-    Entenschach, von Ray im Sturmkeller. Die Holzente steht mitten auf e4 und rührt sich nicht. #sprecher:erzaehler
+    Entenschach, von Ray in der Prärie. Die Holzente steht mitten auf e4 und rührt sich nicht. #sprecher:erzaehler
 }
 {varianteRaeuberschachGelernt:
     Räuberschach, vom Lagerfeuer im Camp. Ein Junge verschenkt strahlend seine Dame. #sprecher:erzaehler

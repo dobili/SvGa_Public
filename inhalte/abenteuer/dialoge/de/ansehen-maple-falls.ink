@@ -173,7 +173,7 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenBrettOhneDame = true
     Auf einem Brett fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler
-    Ein Radiergummi als Dame. Wenigstens zieht er nicht zu früh heraus. #sprecher:ambrose #stimmung:lacht
+    Wenigstens zieht diese Dame nicht zu früh heraus. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 

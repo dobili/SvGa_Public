@@ -351,7 +351,7 @@ An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:ris
 
 === dot_reihe ===
 {not dotGetroffen: -> dot_margaret ->}
-Ich spiele seit fünfzig Jahren per Post. Ein Zug pro Woche, aber jeder sitzt. #sprecher:dot #stimmung:laechelt
+Bei mir geht ein Zug pro Woche zur Post. Aber jeder sitzt. #sprecher:dot #stimmung:laechelt
 Meine Aufgaben greifen den König an. Langsam, Liebes, wie ein Brief. #sprecher:dot #stimmung:laechelt
 + [„Ich bin bereit.“]
     ~ beginneAufgaben("desertSprings.reiheDot")

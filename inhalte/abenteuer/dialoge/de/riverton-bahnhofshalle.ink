@@ -140,7 +140,12 @@ Langsam ist auch eine Geschwindigkeit. Noch einmal? #sprecher:harlan #stimmung:l
 {
 - popsGetroffen and harlanGetroffen and not popsOdumErzaehlt: -> pops_odum
 - popsGetroffen:
-    {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.|Slick kauft jeden Morgen eine Limo. Heute zwei. Er ist nervös.} #sprecher:pops #stimmung:laechelt
+    // Lektorat Akt 2 (17.11.2026): Slicks zwei Limos nur vor dem letzten Spiel.
+    {nadelRiverton == 0:
+        {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.|Slick kauft jeden Morgen eine Limo. Heute zwei. Er ist nervös.} #sprecher:pops #stimmung:laechelt
+    - else:
+        {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.} #sprecher:pops #stimmung:laechelt
+    }
     -> pops_laden
 }
 ~ popsGetroffen = true
@@ -251,6 +256,9 @@ In der Lokalzeitung steht groß: „Perfect Move übernimmt Parkclub“. Die Sch
 ~ zeitungsausschnittGefunden = true
 Hinter dem Zeitungsständer klemmt ein vergilbter Ausschnitt: eine Schachspalte, eine Aufgabe, darunter mit Bleistift „E. O.“. #sprecher:erzaehler
 ~ gibFund("zeitungsausschnitt")
+{not popsGetroffen:
+    Der Mann hinter dem Zeitungsstand beugt sich herüber. #sprecher:erzaehler
+}
 Das ist Mr. Odums Handschrift. Seine letzte Aufgabe. #sprecher:pops #stimmung:nachdenklich
 Er hat sie nie gelöst, sagt Slick. #sprecher:pops #stimmung:nachdenklich
 -> odum_aufgabe
@@ -270,7 +278,7 @@ Willst du es versuchen? Für Elias. #sprecher:pops #stimmung:laechelt
     -> END
 }
 ~ taubenfederGefunden = true
-Auf der Bank neben Mr. Harlan liegt eine graue Taubenfeder. Er schiebt sie dir hin, ohne aufzusehen. #sprecher:erzaehler
+Auf der Bank neben {harlanGetroffen:Mr. Harlan|dem Mann mit der Lupenbrille} liegt eine graue Taubenfeder. Er schiebt sie dir hin, ohne aufzusehen. #sprecher:erzaehler
 ~ gibFund("taubenfeder")
 Eine Feder. Damit schrieb man früher Partien auf. Ich auch. #sprecher:ambrose #stimmung:laechelt
 -> END

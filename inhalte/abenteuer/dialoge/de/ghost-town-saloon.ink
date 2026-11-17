@@ -25,6 +25,9 @@ VAR ausgangGhostTownFernpartie = ""
 VAR fernpartieGespielt = false
 VAR victorSaloonGetroffen = false
 VAR ausgangCapitalArenaFinale = ""
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Die Fernpartie steht auf dem Brett (Victors b5 ist gezogen). Eine VAR, weil die App jeden Dialog
 // neu beginnt und Besuchszähler von Knoten dann wieder auf null stehen.
 VAR fernpartieAufgebaut = false
@@ -201,5 +204,7 @@ Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal. #sprecher:ambro
 
 === klavier ===
 Du drückst eine Taste. Nichts. Die nächste klingt schief und viel zu laut im leeren Saloon. #sprecher:erzaehler
-Ein Klavier verstimmt sich in der Hitze. Und in der Stille. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Klavier verstimmt sich in der Hitze. Und in der Stille. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END

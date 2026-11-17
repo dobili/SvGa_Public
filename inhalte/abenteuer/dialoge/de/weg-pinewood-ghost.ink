@@ -12,6 +12,9 @@ EXTERNAL beginneAufgaben(runde)
 
 VAR wegPinewoodGhostTafelBestanden = false
 VAR juniperGetroffen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
 // Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
 VAR spurPM6Gezaehlt = false
@@ -82,7 +85,9 @@ Eine verlassene Tankstelle, die Zapfsäulen voller Staub. Auf dem Dach glänzt e
 Von drinnen kommt ein Geräusch: klack. Pause. Klack. #sprecher:erzaehler
 Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #sprecher:erzaehler
 {ambroseSprichtWieder:
-    Gespenster spielen nicht in Tankstellen. Ich muss es wissen. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Gespenster spielen nicht in Tankstellen. Ich muss es wissen. #sprecher:ambrose #stimmung:lacht
+    }
 }
 -> END
 
@@ -99,7 +104,7 @@ Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #spr
 === greifarm_start ===
 ~ z1Gesehen = true
 Vor einem Tisch mit Brett steht ein Greifarm mit dem Logo von Perfect Move. Ein Kabel führt hinauf zum Solarpaneel. #sprecher:erzaehler
-Auf seinem kleinen Bildschirm leuchtet: „Prototyp Z-1. Bereit. Weiß beginnt.“ #sprecher:greifarm #stimmung:neutral
+Auf seinem kleinen Bildschirm leuchtet: „Prototyp Z-1. Bereit. Weiß beginnt.“ #sprecher:erzaehler
 Darunter springt eine Uhr an: fünf Minuten für jede Seite, drei Sekunden je Zug. Eine Maschine wartet nicht gern. #sprecher:erzaehler
 -> greifarm_angebot
 
@@ -119,7 +124,9 @@ Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauer
 „Danke für die Partie.“ #sprecher:greifarm #stimmung:neutral
 ~ gibFund("bauerZ1")
 {ambroseSprichtWieder:
-    Eine Nähmaschine mit Ehrgeiz. Lasst ihn spielen, er hat sonst niemanden. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Eine Nähmaschine mit Ehrgeiz. Lass ihn spielen, er hat sonst niemanden. #sprecher:ambrose #stimmung:laechelt
+    }
 }
 -> END
 

@@ -37,6 +37,9 @@ VAR novaBitteGehoert = false
 VAR capitalZugang = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Funde der fünfzehn Figuren (setzt die Hülle bei gibFund, regeln/dialogvariablen.ts).
 VAR gefundenFinchBauerA = false
 VAR gefundenFinchSpringerA = false
@@ -73,8 +76,10 @@ König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, 
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe #stimmung:laechelt
 * [Eine Partie spielen]
 - Dein König läuft los, sobald er kann. Das hast du inzwischen gelernt. #sprecher:erzaehler
-Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:froh
-Es klingt nicht traurig. Du tust, als hättest du es nicht gehört. #sprecher:erzaehler
+{not abschiedGesehen:
+    Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:froh
+    Es klingt nicht traurig. Du tust, als hättest du es nicht gehört. #sprecher:erzaehler
+}
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel, Fund und Rückweg
@@ -161,7 +166,9 @@ Und jetzt die Partie gegen die Welt. Ich spiele gegen alle hier, jeder stimmt ü
 Das Publikum hebt die Hände. Dein Zug gewinnt die Abstimmung. Abe kratzt sich am Kopf und lächelt. #sprecher:erzaehler
 Gut gestimmt. Das geht ins Logbuch. Und ein Foto für dich, damit du den Tag nicht vergisst. #sprecher:abe #stimmung:laechelt
 ~ gibFund("fotoWeltschachtag")
-So viele Menschen an einem Brett. So war es früher in den Cafés. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    So viele Menschen an einem Brett. So war es früher in den Cafés. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === weltschachtag_danach ===
@@ -284,7 +291,9 @@ Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn 
 ~ gibFund("finchsBuchsbaum")
 Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette #stimmung:laechelt
 ~ zeigeVorfuehrung("finchFalle")
-Ein Problem will gelöst werden. Dieses hat lange gewartet. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    Ein Problem will gelöst werden. Dieses hat lange gewartet. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === odette_danach ===
@@ -314,7 +323,7 @@ Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir ein
 ~ wandererSeitenZurueck = buchseiten
 Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
 {buchseiten >= 13:
-    Alle dreizehn. Nach deinem Finale lasse ich sie binden. Komm mich in Capital besuchen. #sprecher:wanderer #stimmung:laechelt
+    Alle dreizehn. Jetzt lasse ich sie binden. Komm mich in Capital besuchen. #sprecher:wanderer #stimmung:laechelt
 - else:
     {buchseiten} von dreizehn. Der Rest liegt noch irgendwo zwischen hier und Maple Falls. #sprecher:wanderer #stimmung:laechelt
 }

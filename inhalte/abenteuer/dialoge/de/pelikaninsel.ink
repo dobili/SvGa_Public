@@ -69,7 +69,7 @@ Netze hängen zum Trocknen am Gestell. In einem ist ein Loch, groß wie eine Fau
 {
 - hatGummistiefel:
     ~ muschelGeschenkt = true
-    Mit Stiefeln kommst du ja ins Watt! Hier, die mit dem Loch. Da sieht man genau ein Feld durch. #sprecher:coral #stimmung:ueberrascht
+    Mit Stiefeln kommst du ja ins Watt! Hier, die Muschel mit dem Loch. Da sieht man genau ein Feld durch. #sprecher:coral #stimmung:ueberrascht
     ~ gibFund("muschelCoral")
 - else:
     Komm ins Watt! Aber ohne Gummistiefel bleibst du stecken. #sprecher:coral #stimmung:laechelt

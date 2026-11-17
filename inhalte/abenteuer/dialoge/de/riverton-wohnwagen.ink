@@ -28,7 +28,7 @@ VAR slickAbschiedGesehen = false
 Drinnen ist es eng und warm. In der Ecke lehnt seine Kuriertasche. Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler #musik:riverton.wohnwagen
 Sie sind aus Limonadendosen, aufgeschnitten, gebogen, mit Draht. „Parkmeister 2019.“ „Bester Verlierer 2017.“ #sprecher:erzaehler
 Der Alte hat die gebaut. Jedes Jahr einen. Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick #stimmung:nachdenklich
-Er setzt sich aufs Bett. Ohne das Reden sieht er jünger aus. #sprecher:erzaehler
+Er setzt sich aufs Bett und sieht hinauf zu den Dosen. #sprecher:erzaehler
 Ich hab seit März keinen neuen. #sprecher:slick #stimmung:bitter #pause:2
 * [Nichts sagen]
 * [Juno ansehen]
@@ -49,8 +49,8 @@ Er ist kalt und schwer. #sprecher:erzaehler #pause:2
 === slick_fluss ===
 // Gutachten K2.4 und K2.5: drei Schläge mit Stille; Ambrose antwortet in keinem Zweig.
 Draußen läuft der Fluss schwarz unter der Brücke. Oben im Park leuchtet es, jetzt an zehn Stellen. #sprecher:erzaehler #musik:aus #geraeusch:fluss
-Er hat recht. #sprecher:ambrose #stimmung:nachdenklich #pause:2
-Er hat recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose #stimmung:bitter
+Slick ist im Recht. #sprecher:ambrose #stimmung:nachdenklich #pause:2
+Er ist im Recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose #stimmung:bitter
 Und die Tische spielen trotzdem besser als er. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ja.“]
 * [Schweigen]

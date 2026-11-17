@@ -112,7 +112,7 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 // die Hand auf dem Brett liegt (sterne_ambrose). Klang: Stille S20 bis zur ersten Sternschnuppe,
 // dann das Nachtstück.
 ~ sternennachtGesehen = true
-Am Steg liegen Decken. Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen
+Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen
 Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
 Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher:erzaehler
 Die da ist Kassiopeia. Sieht aus wie ein W. Und das ist der Große Wagen, und das … #sprecher:mae #stimmung:laechelt
@@ -142,7 +142,7 @@ Dex' Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
 // Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
 ~ nachtImLesesaal = true
-Nach Mitternacht geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen den Regalen. #sprecher:erzaehler
+Dann geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen den Regalen. #sprecher:erzaehler
 -> END
 
 === ende_akt1 ===
@@ -364,7 +364,9 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 - nadelCedarCreek > 0:
     Der Bus fährt um sieben. Am Steg ist das Wasser rot von der Sonne. #sprecher:erzaehler
 - else:
-    Der Linienbus nach Maple Falls fährt jede Stunde. {teamAngekommen:Das Auswärtsspiel läuft noch.|Morgen ist der Clubkampf.} #sprecher:erzaehler
+    // Lektorat der Lesefassung, 17.11.2026: nicht mehr „fährt jede Stunde“; in Maple Falls hängt der
+    // Zettel „Mr. Kettering fährt nach Cedar Creek nur samstags“, deshalb gehen die beiden zu Fuß.
+    Die Haltestelle von Cedar Creek. {teamAngekommen:Das Auswärtsspiel läuft noch.|Morgen ist der Clubkampf.} #sprecher:erzaehler
 }
 + [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
@@ -461,6 +463,9 @@ Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coac
 // mit eigener Kennung „kettering“ (noch ohne Porträt). Einstieg: Wahl in bus_zurueck.
 
 === kettering ===
+// Lektorat der Lesefassung, 17.11.2026: Am Samstagmorgen kommt zuerst der Bus mit dem Team. Sonst las
+// Mr. Kettering an der Haltestelle Zeitung, und gleich darauf klapperte sein Bus erst heran.
+{nachtImLesesaal and not teamAngekommen: -> team_kommt}
 {
 - nadelIronwood > 0: -> kettering_d
 - nadelRiverton > 0: -> kettering_c

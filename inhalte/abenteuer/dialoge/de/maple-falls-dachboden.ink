@@ -185,7 +185,7 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
     Draußen dämmert es. Ihr habt lange gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
     Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
 }
-Der Fingerzeig bleibt dir. Ich zeige die Figur, die arbeiten will. Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
+Der Fingerzeig bleibt dir. Die Figur zeige ich. Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
 * {not kurz} [„Was hängt? Das hast du mich gefragt.“]
     Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose #stimmung:nachdenklich
 * {kurz} [„Was heißt das: Was hängt?“]

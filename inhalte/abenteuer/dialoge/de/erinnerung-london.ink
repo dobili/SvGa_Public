@@ -82,8 +82,14 @@ Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht 
 -> END
 
 === schachtisch ===
-{flashbackLondonBestanden:
+// Lektorat Akt 2 (17.11.2026): Aufgebaut wird erst, wenn das Schlussbild an der Uhr erzählt ist;
+// sonst stünden die Figuren schon wieder, bevor das Matt fällt.
+{flashbackLondonBestanden and londonSchlussGesehen:
     Am Tisch in der Mitte stellen sie die Figuren wieder auf. Niemand redet. Alle wissen, was sie gesehen haben. #sprecher:erzaehler
+    -> END
+}
+{flashbackLondonBestanden:
+    Am Tisch in der Mitte rührt sich niemand. Nur die große Uhr an der Wand tickt. #sprecher:erzaehler
     -> END
 }
 In der Mitte ein Tisch, um den es still ist. Zwei Männer. Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler

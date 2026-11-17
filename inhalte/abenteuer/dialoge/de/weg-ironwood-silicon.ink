@@ -274,6 +274,6 @@ Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:am
 === werbetafel_zero ===
 Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint die Schrift: „ZERO. Nie wieder Fehler.“ #sprecher:erzaehler
 Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #stimmung:nachdenklich #pause
-Das ist ein großes Versprechen. #sprecher:ambrose #stimmung:nachdenklich
+Ich kannte keinen Spieler, der das versprechen konnte. Nicht einmal Morphy. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 

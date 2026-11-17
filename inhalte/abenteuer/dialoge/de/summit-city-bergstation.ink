@@ -26,6 +26,9 @@ VAR victorGelacht = false
 VAR victorKriseGesehen = false
 VAR victorBergstationGesprochen = false
 VAR victorSeiteGegeben = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Das Reisebrett ist abgebaut und Victor überredet. Eine VAR, weil die App jeden Dialog neu
 // beginnt und Besuchszähler von Knoten dann wieder auf null stehen.
 VAR victorReisebrettBereit = false
@@ -159,7 +162,9 @@ Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprech
 }
 ~ pfeifeGefunden = true
 Unter einer der Wartebänke liegt eine kleine Holzpfeife. Du pfeifst hinein. Draußen am Hang pfeift etwas zurück. #sprecher:erzaehler
-Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Menschen. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Menschen. #sprecher:ambrose #stimmung:lacht
+}
 ~ gibFund("murmeltierpfeife")
 -> END
 

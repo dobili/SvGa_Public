@@ -104,7 +104,7 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor #stimmung:laechelt
 {maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor #stimmung:laechelt}
 * [„Ich geh noch zum Steg.“]
-    Geduld ist auch ein Zug. #sprecher:okafor #stimmung:laechelt
+    Geh nur. Am Wasser wird es abends kalt. #sprecher:okafor #stimmung:laechelt
     -> END
 * [„Ich geh schlafen.“]
     ~ nachtImLesesaal = true
@@ -150,7 +150,9 @@ Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor #stimmung:l
 
 === okafor_nadel ===
 Über euch schlägt die Uhr. Zwölf Schläge, einer nach dem anderen. #sprecher:erzaehler #klang:turmuhr12 #musik:aus #pause:3
-Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #stimmung:laechelt #klang:fanfare
+// Lektorat der Lesefassung, 17.11.2026: Der Erzählsatz stand in Mrs. Okafors Sprechzeile.
+Sie reicht dir die Nadel über das Brett. #sprecher:erzaehler #klang:fanfare
+{sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #stimmung:laechelt
 {teamAngekommen and nadelCedarCreek == 1: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
 Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
 * [Nicken]

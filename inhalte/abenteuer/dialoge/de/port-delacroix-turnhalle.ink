@@ -138,7 +138,7 @@ Da liegt es trocken. Hol es, wenn du es brauchst. Nicht vorher. #sprecher:odile 
 * [Nicken]
 - Sie gibt dir einen Handkarren. #sprecher:erzaehler
 Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines. Geh fragen. #sprecher:odile #stimmung:nachdenklich
-Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #sprecher:odile #stimmung:laechelt
+{reiheRemyBestanden and reiheLouBestanden:Remy und Lou hast du hinter dir. Wenn du um die Nadel spielen willst: Ich bin hier.|Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich.} #sprecher:odile #stimmung:laechelt
 -> END
 
 // Gutachten L3.4, Roman Kapitel 38: Miss Odile schickt den Helden mit dem Geigenkasten zum
@@ -164,14 +164,14 @@ Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
 
 === odile_clubkampf ===
 {nadelPortDelacroix > 0:
-    Noch einmal? Gut. Ein Plan ist kein Sprint. #sprecher:odile #stimmung:laechelt
+    Noch einmal? Gut. Ich spiele wieder langsam. #sprecher:odile #stimmung:laechelt
     -> odile_clubkampf_wahl
 }
 Die Turnhalle ist voll. Sie sind alle gekommen, um zu sehen, wer da in einen Rucksack flüstert. #sprecher:erzaehler #musik:aus
 Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten. #sprecher:erzaehler
 Miss Odile setzt sich dir gegenüber, in einem Kleid mit kleinen Notenschlüsseln. #sprecher:erzaehler
 Ein Plan ist kein Sprint. Ich spiele langsam. Du wirst denken, es passiert nichts. #sprecher:odile #stimmung:laechelt
-Es passiert die ganze Zeit etwas. Bauern sind die Melodie. Die Figuren spielen nur dazu. #sprecher:odile #stimmung:laechelt
+Es passiert die ganze Zeit etwas. Hör auf die Bauern. #sprecher:odile #stimmung:laechelt
 * [Die Hände auf den Tisch legen]
 - Bevor ihr anfangt, hörst du ihn. Aus dem Kasten, drei Meter entfernt. Drei Wörter. #sprecher:erzaehler
 Spiel deine Partie. #sprecher:ambrose #stimmung:still
@@ -275,7 +275,7 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
     -> END
 
 === remy_alltag ===
-{~Remy übt Tonleitern auf der Trompete. Er hört kurz auf, als du vorbeigehst.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett. Zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
+{~Tonleitern. Jeden Tag. Auch ohne Dach.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett. Zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
 -> END
 
 === remy_versoehnt ===

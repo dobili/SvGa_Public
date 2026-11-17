@@ -30,6 +30,9 @@ VAR annekSchachGelernt = false
 VAR jossGetroffen = false
 VAR falkeGeschenkt = false
 VAR varianteFalkeUndBisonGelernt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
 // Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
 VAR seite03Gezaehlt = false
@@ -62,8 +65,10 @@ Den Falken, weil über den Felstürmen immer einer kreist. Den Bison, weil ihr B
 Kira zeigt es dir an einer kurzen Partie. Du ziehst vorsichtig, sie zieht schnell. #sprecher:erzaehler
 Sie schlägt dich in vierzehn Zügen. Der Falke kommt aus einer Richtung, mit der du nicht rechnest, und dann aus einer anderen. #sprecher:erzaehler
 Das passiert allen beim ersten Mal. Mein Cousin hat ein Jahr gebraucht. #sprecher:kira #stimmung:laechelt
-Ich könnte dir erklären, wie man dagegen spielt. Aber ich weiß es nicht. Ich sehe diese Figuren zum ersten Mal. #sprecher:ambrose #stimmung:froh
-Ich habe gelernt, dass man Spiele nicht erklärt. Man lernt sie. Spiel noch eine. #sprecher:ambrose #stimmung:froh
+{not abschiedGesehen:
+    Ich würde dir gern erklären, wie man dagegen spielt. Aber ich weiß es nicht. Ich sehe diese Figuren zum ersten Mal. #sprecher:ambrose #stimmung:froh
+    Ich habe gelernt, dass man Spiele nicht erklärt. Man lernt sie. Spiel noch eine. #sprecher:ambrose #stimmung:froh
+}
 // VARIANTE-FEHLT: Falke und Bison (L9). Bis es gebaut ist, nur die Regel, die Vorführung und eine Vertröstung.
 Der Bus! Eine richtige Partie, wenn du wiederkommst. Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn Jahren. #sprecher:kira #stimmung:ueberrascht
 -> END
@@ -115,7 +120,9 @@ Ihr setzt euch vor die alte Scheune, über deren Tor „Turnhalle“ steht. Du s
 Euer Springer springt wie unser Falke. Nur feiger. Er darf danach nicht weiterfliegen. #sprecher:annek #stimmung:lacht
 Und der Turm ist ein Bison, der das Springen verlernt hat. Armes Tier. #sprecher:annek #stimmung:lacht
 Nach einer Viertelstunde spielt sie ihre erste Partie. Sie verliert, lacht und baut sofort neu auf. #sprecher:erzaehler
-Zwei Spiele auf demselben Brett. Ich dachte immer, es gäbe nur eins. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    Zwei Spiele auf demselben Brett. Ich dachte immer, es gäbe nur eins. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === annek_alltag ===
@@ -140,7 +147,9 @@ Joss Vell. Ich halte den Bus am Leben, die Traktoren und die Heizung der Schule.
 - Letztes Jahr war einer von Perfect Move hier. Anzug, neue Schuhe. Er wollte eine App aus Falke und Bison machen. Mit Bewertung nach jedem Zug. #sprecher:joss #stimmung:nachdenklich
 Ich hab ihm gesagt: Bei uns sagt dir nach jedem Zug die Großtante, was du falsch gemacht hast. Das reicht. #sprecher:joss #stimmung:lacht
 Er hat nicht gelacht. Seine Schuhe waren danach auch nicht mehr neu. Hier oben ist alles Staub. #sprecher:joss #stimmung:lacht
-Ein Mann, der weiß, was er nicht verkauft. Selten. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Mann, der weiß, was er nicht verkauft. Selten. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === joss_alltag ===
@@ -227,7 +236,9 @@ Alle drei haben bestanden. Und ich habe auch etwas gelernt. #sprecher:annek #sti
 Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira #stimmung:laechelt
 ~ gibFund("diplomKira")
 {ambroseSprichtWieder:
-    Drei Diplome, und die Lehrerin lernt mit. Zu meiner Zeit hätte man das für Unordnung gehalten. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Drei Diplome, und die Lehrerin lernt mit. Zu meiner Zeit hätte man das für Unordnung gehalten. #sprecher:ambrose #stimmung:lacht
+    }
 }
 -> END
 

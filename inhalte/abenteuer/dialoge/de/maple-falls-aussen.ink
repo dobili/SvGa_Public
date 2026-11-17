@@ -140,7 +140,7 @@ Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
 // Stimmung: fremd, dann überrumpelt. Klang: Die Musik nimmt sich zurück, Vögel und Wasserfall.
 === calloway_auf_dem_weg ===
 -> calloway_a ->
-Juno winkt dir von der Haltestelle aus zu. #sprecher:erzaehler
+Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler
 -> juno_trifft
 
 === calloway ===

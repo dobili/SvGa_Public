@@ -91,3 +91,26 @@ Alle mit `set -o pipefail`:
 - vitest `src/abenteuer`: 566 bestanden
 - Gesamtsimulation 300 Sekunden: „Meldungen: keine“, alle Orte besucht, alle Sammelstränge
   vollständig
+
+## Nachtrag: Alltag von Mrs. Okafor und Mama (17.11.2026)
+
+Zweiter Auftrag des Hauptchats nach dem Querschnitt (Teil 4, Okafor; Teil 3, Familie). Es gibt keine
+neuen Szenen. Die vorhandenen Alltagsknoten bekommen Stufen. Alle Stufen hängen an Variablen, die
+andere Dateien setzen, nicht an Knotenbesuchen.
+
+- **Mrs. Okafor** (`cedar-creek-bibliothek.okafor_alltag`):
+  - Nach Akt 2 (`nadelIronwood > 0`) zeigt sie, dass sie die Sache verfolgt: der Herr mit den zwei
+    Telefonen im Rathaus, „Ich habe Geduld, und ich habe den Schlüssel“, Junos Bilder.
+  - Nach dem Vorwurf in Port Delacroix (`tiefpunktGesehen`) steht sie zu {held}: „Ich habe deine
+    Partien hier im Ordner. Jede einzelne.“
+- **Mama** (`maple-falls-wohnzimmer.mutter_alltag`), eine Stufe je Akt:
+  - Akt 2 (`endeAkt1Gesehen`): Sorge um Riverton, nach `verbotGesehen` das Verbot („Ironwood
+    nicht. Ich weiß, dass du fragen willst.“).
+  - Nach ihrer Partie (`mamaSpielt`): Taschenschach und das blaue Heft.
+  - Akt 3 (`einladungGesehen`): Nähe am Telefon statt Kuchen und Pizza.
+  - Nach dem Vorwurf (`tiefpunktGesehen`): „Ich kenne deine Züge.“
+  - Akt 4 (`endeAkt3Gesehen`): Stolz („Ich bin stolz auf dich, weißt du das?“).
+- **In der Kantine** (`ironwood-kantine.mama_alltag`) spricht Mama nach dem Kauf (`kaufGesehen`)
+  von Joes Pokalen in der Garage und dem neuen Raum, den sie suchen.
+
+Prüfungen wie oben: Sprachprüfung 0 Funde, pytest 1585, vitest 566, Simulation ohne Meldungen.

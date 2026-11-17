@@ -41,6 +41,8 @@ VAR clubkampfIronwoodNadel = 0
 VAR pokalregalGesehen = false
 // Kapitel 27 (Roman): Mama kommt in die Kantine, Big Joe hält sie fest.
 VAR mamaInKantine = false
+// kaufGesehen setzt ironwood-aussen.ink (Szene 49, der Kauf).
+VAR kaufGesehen = false
 VAR morgenNachFeier = false
 // Gutachten L1.3: Wer die Feier ablehnt, bekommt sie nicht noch einmal angeboten.
 VAR feierAbgelehnt = false
@@ -354,7 +356,12 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 -> END
 
 === mama_alltag ===
-{~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
+// Nach dem Kauf (ironwood-aussen.kauf, kaufGesehen) steht der Club ohne Raum da (Querschnitt 17.11.2026).
+{kaufGesehen:
+    {~Joe hat die Pokale in seiner Garage. Wir suchen einen neuen Raum. Wir finden einen.|Hier stehen jetzt Bildschirme. Ich komme trotzdem her. Wegen der Leute.|Grundreihe. Immer die Grundreihe. Sag das Joe nicht.} #sprecher:mutter #stimmung:nachdenklich
+- else:
+    {~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Hank und Priya

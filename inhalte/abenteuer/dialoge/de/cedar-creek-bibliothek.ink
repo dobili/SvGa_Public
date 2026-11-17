@@ -30,6 +30,8 @@ VAR clubkampfCedarCreekBesprochen = 0
 VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
+// Alltag nach Akt 1 (Querschnitt 17.11.2026): tiefpunktGesehen setzt port-delacroix-turnhalle.ink.
+VAR tiefpunktGesehen = false
 VAR ambroseNenntNamen = false
 VAR clubkampfBauerGesehen = false
 VAR nachtImLesesaal = false
@@ -171,6 +173,10 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimm
 {
 - not erzaehlung1858Gesehen:
     Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor #stimmung:neutral
+- tiefpunktGesehen:
+    {~Ich habe gehört, was man in Port Delacroix über dich sagt. Ich habe deine Partien hier im Ordner. Jede einzelne.|Wer ehrlich spielt, kann jeden Zug erklären. Erklär mir einen. Ich habe Zeit.|Hier steht immer noch kein Bildschirm. Und dein Stuhl steht noch da, wo er stand.} #sprecher:okafor #stimmung:nachdenklich
+- nadelIronwood > 0:
+    {~Ein Herr mit zwei Telefonen war im Rathaus. Hier steht noch kein Bildschirm. Ich habe Geduld, und ich habe den Schlüssel.|Juno schickt mir Bilder aus ihrem Tagebuch. Vier Nadeln. Ich habe es mir aufgeschrieben.|Riverton, Ironwood. Ich lese die Zeitungen. Ich lese auch, was nicht drinsteht.} #sprecher:okafor #stimmung:nachdenklich
 - else:
     {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor #stimmung:laechelt
 }

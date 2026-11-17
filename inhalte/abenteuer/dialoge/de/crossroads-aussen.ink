@@ -23,6 +23,9 @@ VAR atmeGesagt = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR rosieCrossroadsGetroffen = false
 VAR gatterschluessel = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Kapitel 53 (Roman): Delgado und der Bildschirm; noch ohne Figur in Crossroads.
 VAR coachCrossroadsGetroffen = false
 
@@ -147,7 +150,9 @@ Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut 
 Ein Wegweiser mit Schildern in alle Richtungen: Maple Falls, Cedar Creek, Riverton, Ironwood, Silicon Bay, Port Delacroix, Desert Springs, Summit City. #sprecher:erzaehler
 Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“. #sprecher:erzaehler
 {novaBitteGehoert:
-    Acht Städte. Und in jeder habe ich etwas gelernt. Oder verlernt. #sprecher:ambrose #stimmung:friedlich
+    {not abschiedGesehen:
+        Acht Städte. Und in jeder habe ich etwas gelernt. Oder verlernt. #sprecher:ambrose #stimmung:friedlich
+    }
 }
 -> END
 
@@ -167,7 +172,9 @@ Ein Wanderweg führt nach Norden in den Wald. Ein Schild: „Fernwanderweg – P
 === viehgatter ===
 {gatterschluessel: -> viehgatter_offen}
 Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf dem Asphalt. Am Gatter hängt ein Schild: „Privatweg. Schlüssel bei Darlene.“ #sprecher:erzaehler
-Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 === viehgatter_offen ===

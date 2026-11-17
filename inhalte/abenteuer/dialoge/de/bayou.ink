@@ -23,6 +23,9 @@ VAR seite05Gefunden = false
 VAR finchBauerCGefunden = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === theron ===
 {theronGetroffen:
@@ -33,7 +36,9 @@ VAR finchFiguren = 0
 Am Bootssteg liegt ein flaches Luftboot mit einem riesigen Propeller. Ein Mann mit Sonnenbrille winkt. #sprecher:erzaehler
 Theron. Ich fahre Leute durch den Bayou. Morgens, wenn der Nebel liegt, spielen wir Nebelschach. #sprecher:theron #stimmung:laechelt
 Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel. #sprecher:theron #stimmung:neutral
-Wie im Leben: Man sieht nie das ganze Brett. Aber man zieht trotzdem. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    Wie im Leben: Man sieht nie das ganze Brett. Aber man zieht trotzdem. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === nebel ===
@@ -81,8 +86,12 @@ Partieformulare aus dem Café des Exilés, 1852. Mein Urgroßvater hat da Kaffee
 === pepe_formular ===
 ~ hausbootFormularGesehen = true
 Vergilbte Blätter, sauber in Spalten geschrieben. Auf einem bleibt dein Blick hängen: dieselbe schräge Schrift wie in den Notizen im Brett. #sprecher:erzaehler
-Warte. Zeig mir das Blatt. #sprecher:ambrose #stimmung:fern
-Das ist meine Schrift. Ich habe gegen einen Hafenarbeiter verloren, damals. Ich habe es niemandem erzählt. #sprecher:ambrose #stimmung:fern
+{abschiedGesehen:
+    Es ist Ambroses Schrift. Eine Partie gegen einen Hafenarbeiter. Von ihr hat er nie erzählt. #sprecher:erzaehler
+- else:
+    Warte. Zeig mir das Blatt. #sprecher:ambrose #stimmung:fern
+    Das ist meine Schrift. Ich habe gegen einen Hafenarbeiter verloren, damals. Ich habe es niemandem erzählt. #sprecher:ambrose #stimmung:fern
+}
 Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, Weiß ist am Zug. #sprecher:erzaehler
 -> pepe_angebot
 
@@ -97,9 +106,13 @@ Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, Wei
 
 === pepe_nach_partie ===
 ~ hausbootErledigt = true
-{ausgangBayouHausboot:
-- "sieg": Diesmal nicht. Diesmal nicht! #sprecher:ambrose #stimmung:froh
-- "remis": Remis. Das hätte ich damals unterschrieben. #sprecher:ambrose #stimmung:laechelt
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr; dann erzählt die Szene.
+{
+- abschiedGesehen and ausgangBayouHausboot == "sieg": Diesmal gewinnt Weiß. Du hättest es ihm gern gezeigt. #sprecher:erzaehler
+- abschiedGesehen and ausgangBayouHausboot == "remis": Remis. Das hätte er damals wohl unterschrieben. #sprecher:erzaehler
+- abschiedGesehen: Wieder verloren. Schön war es trotzdem, sie noch einmal zu spielen. #sprecher:erzaehler
+- ausgangBayouHausboot == "sieg": Diesmal nicht. Diesmal nicht! #sprecher:ambrose #stimmung:froh
+- ausgangBayouHausboot == "remis": Remis. Das hätte ich damals unterschrieben. #sprecher:ambrose #stimmung:laechelt
 - else: Wieder verloren. Und weißt du was? Es ist trotzdem schön, sie noch einmal gespielt zu haben. #sprecher:ambrose #stimmung:laechelt
 }
 Pépé steckt das Streichholz zurück in die Schachtel. #sprecher:erzaehler
@@ -155,9 +168,13 @@ Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme.
     Die Reuse ist leer bis auf Schlamm. #sprecher:erzaehler
     -> END
 }
-An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus hellem Holz. #sprecher:erzaehler
+An der Reuse am Steg hängt ein kleiner Fink aus Blech. Zwischen den Maschen steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ finchBauerCGefunden = true
 ~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchBauerC")
-Unter dem Bauern ist ein Feld eingebrannt. Wer versteckt Schachfiguren in Fischreusen? #sprecher:ambrose #stimmung:ueberrascht
+{abschiedGesehen:
+    Unter dem Bauern ist ein Feld eingebrannt. #sprecher:erzaehler
+- else:
+    Unter dem Bauern ist ein Feld eingebrannt. Wer versteckt Schachfiguren in Fischreusen? #sprecher:ambrose #stimmung:ueberrascht
+}
 -> END

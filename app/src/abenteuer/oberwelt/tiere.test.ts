@@ -24,6 +24,7 @@ describe("tierartVon", () => {
     expect(tierartVon("eichhoernchen")).toBe("hase");
     expect(tierartVon("drohne")).toBe("drohne");
     expect(tierartVon("saugroboter")).toBe("lieferroboter");
+    expect(tierartVon("kehrroboter")).toBe("kehrroboter");
   });
 
   it("zeichnet nichts ohne passenden Ersatz", () => {

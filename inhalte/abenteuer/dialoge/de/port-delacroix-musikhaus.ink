@@ -25,6 +25,9 @@ VAR ausgangPortDelacroixSchach960Set1 = ""
 VAR ausgangPortDelacroixSchach960Set2 = ""
 VAR ausgangPortDelacroixSchach960Set3 = ""
 VAR angesehenLochImDach = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === schild ===
 {
@@ -52,7 +55,9 @@ Du hängst das Schild über die Tür: „Maison de Musique. Club d'Échecs, depu
 Remy spielt drei Töne auf der Trompete. Alle klatschen. #sprecher:erzaehler
 Seit 1889. Und wieder. #sprecher:odile #stimmung:froh
 ~ gibFund("erstesBrettMusikhaus")
-Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jemand. #sprecher:ambrose #stimmung:froh
+{not abschiedGesehen:
+    Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jemand. #sprecher:ambrose #stimmung:froh
+}
 -> END
 
 === schild_offen ===
@@ -84,9 +89,11 @@ Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf ve
 * [„Und die Rochade?“]
 - Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser #stimmung:neutral
 Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser #stimmung:neutral
-Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose #stimmung:nachdenklich
-Als Kind hätte ich das Unsinn gefunden. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
-Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose #stimmung:nachdenklich
+    Als Kind hätte ich das Unsinn gefunden. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
+    Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
+}
 -> blaeser_set1
 
 === blaeser_set1 ===
@@ -113,7 +120,9 @@ Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #
 === blaeser_set3 ===
 Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser #stimmung:laechelt
 Und schneller. Fünf Minuten, drei Sekunden je Zug. Eine Jam-Session wartet auf niemanden. #sprecher:blaeser #stimmung:lacht
-Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.schach960Set3")
     -> END
@@ -127,7 +136,9 @@ Die Band spielt einen Tusch. Mabel hebt die Posaune wie einen Pokal. #sprecher:e
 Drei Sets, und du hast nie nach der Eröffnung gefragt. Hier, unsere Setliste. #sprecher:blaeser #stimmung:froh
 Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 und 959, die Startstellung des Abends. #sprecher:erzaehler
 ~ gibFund("setliste960")
-In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedacht, dass mir das gefällt. #sprecher:ambrose #stimmung:froh
+{not abschiedGesehen:
+    In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedacht, dass mir das gefällt. #sprecher:ambrose #stimmung:froh
+}
 -> END
 
 === blaeser_alltag ===
@@ -152,5 +163,5 @@ In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedach
 }
 ~ angesehenLochImDach = true
 Über dir ein Loch im Dach, so groß wie ein Tisch. Ein Lichtstreifen fällt auf die Dielen, mitten in eine Pfütze. #sprecher:erzaehler
-{ambroseSprichtWieder: Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern}
+{ambroseSprichtWieder and not abschiedGesehen: Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern}
 -> END

@@ -79,7 +79,7 @@ Geh weiter. Es ist gut. Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:
 {ezraGetroffen: -> ezra_alltag}
 ~ ezraGetroffen = true
 Ein junger Mann mit Pfeife um den Hals und Klemmbrett unter dem Arm kommt angelaufen. #sprecher:erzaehler
-{lebendschachGesehen:Da bist du ja! Unser Feldherr aus dem Wald. Heute Abend ist Lagerfeuer.|Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden? Heute Abend ist Lagerfeuer.} #sprecher:ezra #stimmung:froh
+{lebendschachGesehen:Da bist du ja! Unser Feldherr aus dem Wald.|Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden?} Heute Abend ist {lagerfeuerGesehen:wieder }Lagerfeuer. #sprecher:ezra #stimmung:froh
 -> ezra_regeln
 
 === ezra_regeln ===
@@ -118,6 +118,10 @@ Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Er
 }
 // VARIANTE-FEHLT: Tandem und Räuberschach. Bis sie gebaut sind, wird am Feuer erzählt statt gespielt.
 Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem
+{not ezraGetroffen:
+    ~ ezraGetroffen = true
+    Ein junger Mann mit Gitarre ruft über das Feuer: „Ich bin Ezra! Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“ #sprecher:erzaehler
+}
 Springer! Ich brauch einen Springer! #sprecher:dex #stimmung:lacht
 Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. #sprecher:erzaehler
 Die Chefin ist zurück! #sprecher:sam #stimmung:froh

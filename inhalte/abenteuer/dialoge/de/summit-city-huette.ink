@@ -42,6 +42,9 @@ VAR studieAngeboten = false
 VAR studieDabei = false
 VAR wardStudieGesehen = false
 VAR wardMuede = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Lernkarten aus den Lektionen (kit_karte, haraldsen_karte, ward_nach_erinnerung); die hatKarte…
 // setzt die Hülle aus dem Besitz, wer eine Karte schon hat, bekommt keine zweite.
 VAR lernkarteEndspielkompass = false
@@ -402,7 +405,9 @@ Die Brücke hast du gebaut. Und bist hinübergekommen. #sprecher:haraldsen #stim
 ~ studieDabei = true
 Er gibt dir einen Zettel, so oft gefaltet, dass die Falten weich sind wie Stoff. #sprecher:erzaehler
 Gib ihn ihr nach dem Abendessen. Und sag nicht, von wem. Sie weiß es sowieso. #sprecher:haraldsen #stimmung:lacht
-Du willst sie mit einem Endspiel wach halten? Das ist die freundlichste Gemeinheit, die ich kenne. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Du willst sie mit einem Endspiel wach halten? Das ist die freundlichste Gemeinheit, die ich kenne. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 
 === ward_studie ===

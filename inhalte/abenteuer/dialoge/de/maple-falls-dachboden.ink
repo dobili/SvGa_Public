@@ -185,7 +185,7 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
     Draußen dämmert es. Ihr habt lange gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
     Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
 }
-Der Fingerzeig bleibt dir. Ich zeige die Figur, die arbeiten will. Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
+Der Fingerzeig bleibt dir. Die Figur zeige ich. Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
 * {not kurz} [„Was hängt? Das hast du mich gefragt.“]
     Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose #stimmung:nachdenklich
 * {kurz} [„Was heißt das: Was hängt?“]
@@ -352,7 +352,7 @@ An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte
 {ausgangCapitalArenaFinale == "sieg":Mama sagt, du hast gewonnen.|Mama sagt, du warst bei der Meisterschaft.} Mein Cousin sagt, Mädchen können nicht richtig spielen. Nur den Springer. #sprecher:lily #stimmung:laechelt
 * [„Dein Cousin redet viel.“]
 - Bringst du es mir bei? Richtig? #sprecher:lily #stimmung:laechelt
-Du räumst die zwei Könige und den Springer ab, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
+Du räumst die Schlussstellung ab, Figur für Figur, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
 Der weiße König ist schwer, unten mit Blei ausgegossen, und das Kreuz auf seiner Krone ist ein bisschen schief. #sprecher:erzaehler
 * [„Setz dich. Du hast Weiß.“]
 - Lily klettert auf den Schaukelstuhl. Er knarrt. Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler

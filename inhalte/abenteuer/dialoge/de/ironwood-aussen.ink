@@ -134,6 +134,7 @@ Zu Fuß ist es ein halber Tag. #sprecher:erzaehler
 // Klang: Mamas Thema warm mit Schnee (mama.schnee).
 ~ abfahrtSiliconGesehen = true
 Im Dezember, auf der Treppe vor der Schule, fragt Juno zum dritten Mal, was Victor auf der Brücke wollte. #sprecher:erzaehler #musik:mama.schnee
+Und warum du danach so lange auf ein Geländer gestarrt hast. #sprecher:erzaehler
 * [„In dem Brett wohnt jemand.“]
 - Sie lacht nicht. Sie blättert im Tagebuch weit zurück, bis in den September, und dreht es zu dir um. #sprecher:erzaehler
 In rosa Tinte, zwischen einer verlorenen Partie und einem Sticker: „{held} redet mit dem Brett. Nicht fragen. Noch nicht.“ #sprecher:erzaehler #bild:tagebuch_september
@@ -150,6 +151,7 @@ Guck dir alles an. Und glaub nicht alles, was glänzt. #sprecher:mutter #stimmun
 Ich hab mal ein Turnier in so einem Glaskasten gespielt. Man friert darin, und man weiß nicht, warum. #sprecher:mutter #stimmung:denktNach
 Juno drückt dir eine kleine Holzkiste mit Stickern in die Hand. Auf dem Deckel in rosa Buchstaben: „Clubtagebuch, Außenstelle.“ #sprecher:erzaehler #bild:reisebrett
 Darin ein Brett zum Aufklappen, mit Magnetfiguren. #sprecher:erzaehler #bild:aus
+Ich kann nur bis Mittwoch mit. Dann ist Schule. #sprecher:juno #stimmung:nachdenklich
 Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. Oder mit mir, wenn ich anrufe. #sprecher:juno #stimmung:froh
 Ein Brett für die Tasche. Meines ist schwerer. Und gesprächiger. #sprecher:ambrose #stimmung:laechelt
 Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmung:froh
@@ -330,13 +332,14 @@ Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten
 === anleger ===
 {lastkahnFrei:
     Am Anleger liegt die Ashford Belle, der Kahn aus Lockport. Kapitän Ruben rollt ein Seil auf. #sprecher:erzaehler
-    „Die Fahrt kostet 5 Münzen“, sagt Ruben. #sprecher:erzaehler
+    Die Fahrt kostet 5 Münzen. #sprecher:ruben #stimmung:laechelt
     * {muenzen >= 5} [Mit der Ashford Belle nach Lockport (5 Münzen)]
         ~ zahle(5)
         ~ reise("lockport.aussen", "kai")
         -> END
     * {muenzen < 5} [Mitfahren (5 Münzen)]
-        Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
+        Du hast nicht genug Münzen. Ruben zuckt die Schultern. #sprecher:erzaehler
+        Komm wieder, wenn die Kasse stimmt. #sprecher:ruben #stimmung:laechelt
         -> END
     * [Hierbleiben]
         -> END

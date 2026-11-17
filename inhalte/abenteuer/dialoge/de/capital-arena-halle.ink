@@ -38,6 +38,9 @@ VAR finaleBesprochen = false
 VAR angesehenBanner = false
 VAR spurenPM = 0
 VAR mappeGezeigt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Aus cedar-creek-aussen.ink: nur wer Victor dort nach dem Spaß gefragt hat.
 VAR victorCedarCreekGesehen = false
 VAR halbfinaleVorherGesehen = false
@@ -505,7 +508,7 @@ Nova sieht auf die Stellung, dann auf die Uhr, dann auf den kleinen Gegenstand, 
 - ausgangCapitalArenaRunde3 == "sieg": Ich hab verloren. Und ich weiß genau, wo. #sprecher:nova #stimmung:nachdenklich
 - else: Ich hab gewonnen. Ohne. #sprecher:nova #stimmung:laechelt
 }
-Zum ersten Mal weiß ich nicht, ob ich gewinne. Ich hab es keine Sekunde gewusst. #sprecher:nova #stimmung:laechelt
+Zum ersten Mal wusste ich nicht, ob ich gewinne. Ich hab es keine Sekunde gewusst. #sprecher:nova #stimmung:laechelt
 Sie strahlt, mit dem ganzen Gesicht. #sprecher:erzaehler
 Das fühlt sich gut an. Das fühlt sich so gut an. #sprecher:nova #stimmung:froh
 * [„Dein Springer. Der war deiner.“]
@@ -558,7 +561,9 @@ Das hier kenne ich. Woher hast du das? #sprecher:lin #stimmung:ueberrascht
 Sie blättert lange. #sprecher:erzaehler
 Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach. Danke. #sprecher:lin #stimmung:nachdenklich
 ~ gibFund("fotoMappe")
-Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === graham_hale ===

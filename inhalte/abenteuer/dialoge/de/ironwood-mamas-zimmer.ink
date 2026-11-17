@@ -40,6 +40,9 @@ Ein kleines Zimmer unter dem Dach. Von damals weißt du nur noch die steile Trep
 An der Wand ein Foto: ein Mädchen, die Hände in den Ärmeln, über einem Brett. „Jugendmeisterschaft des Bundesstaats 2001. Finale. Laura M., Stahlwerker-Club Ironwood.“ #sprecher:erzaehler #bild:foto2001
 ~ gibFund("foto2001")
 Sie sieht so sicher aus. #sprecher:erzaehler #bild:aus #pause
+// Lektorat Akt 2 (17.11.2026): Das Formular ist damit gesehen; beim Ansehen danach kommt nur
+// noch der kurze Satz, nicht dieselbe Beschreibung ein zweites Mal.
+~ partieformular2001Gesehen = true
 Daneben unter Glas ein Partieformular. Um den dreiunddreißigsten Zug ist ein Kreis, so fest gedrückt, dass das Papier fast durch ist. #sprecher:erzaehler #bild:partieformular2001
 Sie hat es eingerahmt und nie wieder angesehen. #sprecher:omaRuth #stimmung:nachdenklich #bild:aus
 Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat. Dann hat man sie bis zum Werkstor gehört. #sprecher:omaRuth #stimmung:laechelt
@@ -96,5 +99,4 @@ Silber. Eine Niederlage, die man aufhängt. Mutig. #sprecher:ambrose #stimmung:l
 ~ partieformular2001Gesehen = true
 Unter Glas ein Partieformular. Züge in zwei Spalten, in einer Schrift, die du kennst. Nur runder, jünger. #sprecher:erzaehler #bild:partieformular2001
 Um den dreiunddreißigsten Zug ist ein Kreis. So fest gedrückt, dass das Papier fast durch ist. #sprecher:erzaehler
-Sie hat es eingerahmt und nie wieder angesehen. #sprecher:omaRuth #stimmung:nachdenklich
 -> END

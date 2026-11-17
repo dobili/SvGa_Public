@@ -12,6 +12,7 @@
 
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR slickAbschiedGesehen = false
@@ -28,7 +29,7 @@ VAR slickAbschiedGesehen = false
 Drinnen ist es eng und warm. In der Ecke lehnt seine Kuriertasche. Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler #musik:riverton.wohnwagen
 Sie sind aus Limonadendosen, aufgeschnitten, gebogen, mit Draht. „Parkmeister 2019.“ „Bester Verlierer 2017.“ #sprecher:erzaehler
 Der Alte hat die gebaut. Jedes Jahr einen. Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick #stimmung:nachdenklich
-Er setzt sich aufs Bett. Ohne das Reden sieht er jünger aus. #sprecher:erzaehler
+Er setzt sich aufs Bett und sieht hinauf zu den Dosen. #sprecher:erzaehler
 Ich hab seit März keinen neuen. #sprecher:slick #stimmung:bitter #pause:2
 * [Nichts sagen]
 * [Juno ansehen]
@@ -49,8 +50,8 @@ Er ist kalt und schwer. #sprecher:erzaehler #pause:2
 === slick_fluss ===
 // Gutachten K2.4 und K2.5: drei Schläge mit Stille; Ambrose antwortet in keinem Zweig.
 Draußen läuft der Fluss schwarz unter der Brücke. Oben im Park leuchtet es, jetzt an zehn Stellen. #sprecher:erzaehler #musik:aus #geraeusch:fluss
-Er hat recht. #sprecher:ambrose #stimmung:nachdenklich #pause:2
-Er hat recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose #stimmung:bitter
+Slick ist im Recht. #sprecher:ambrose #stimmung:nachdenklich #pause:2
+Er ist im Recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose #stimmung:bitter
 Und die Tische spielen trotzdem besser als er. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ja.“]
 * [Schweigen]
@@ -65,5 +66,22 @@ Und ein Mann mit Dosenpokalen kann keines von beiden ganz. Was heißt das? #spre
     Er nickt nicht. Er sieht wieder hinauf zum Park, wo es leuchtet. #sprecher:erzaehler
 * [Den Springer in der Hand drehen]
     Du siehst auf die Stelle, wo die Mähne fehlt. Er wartet. Dann sieht er wieder zum Park. #sprecher:erzaehler
-- -> END
+- -> turnier_nachricht
+
+// Lektorat Akt 2 (17.11.2026): der Anlass für Ironwood. Juno liest die Nachricht des Coachs; den
+// Zettel zeigt {held} zu Hause Mama (maple-falls-wohnzimmer.nicht_ironwood, Quest ironwood.turnier).
+=== turnier_nachricht ===
+Juno sieht auf ihr Telefon. Das Licht vom Bildschirm macht ihr Gesicht blau. #sprecher:erzaehler #pause
+Coach Delgado hat geschrieben. Freundschaftsturnier in Ironwood, beim Stahlwerker-Club. Vier Bretter. Drei Ausrufezeichen. #sprecher:juno #stimmung:ueberrascht
+Der Zettel liegt bei dir zu Hause. Deine Mama muss unterschreiben. #sprecher:juno #stimmung:laechelt
+Vier Bretter. Dann brauchen sie dich. #sprecher:ambrose #stimmung:nachdenklich
+-> heimfahrt
+
+=== heimfahrt ===
+* [Mit dem Abendzug nach Hause fahren]
+    Der Zug ruckelt durch die Dunkelheit. Juno schläft nach zwei Stationen ein, den Kopf am Fenster. #sprecher:erzaehler
+    ~ reise("mapleFalls.wohnzimmer", "haustuer")
+    -> END
+* [Noch in Riverton bleiben]
+    -> END
 

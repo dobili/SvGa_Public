@@ -42,7 +42,13 @@ VAR moldeGefuehlt = false
 // ---------------------------------------------------------------- Slick
 
 === slick ===
-{~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer und blättert in den Partieformularen.} #sprecher:erzaehler
+// Lektorat Akt 2 (17.11.2026): Nach dem Clubkampf passen Uhren, Formulare und ein Slick, der
+// nebenbei gewinnt, nicht mehr (er hat eben verloren, am Montag sind die Steintische fort).
+{nadelRiverton > clubkampfRivertonNadel or clubkampfRivertonBesprochen:
+    {~Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer.} #sprecher:erzaehler
+- else:
+    {~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer und blättert in den Partieformularen.} #sprecher:erzaehler
+}
 {
 - not slickGetroffen: -> slick_erstes_treffen
 - nadelRiverton > clubkampfRivertonNadel: -> slick_nach_sieg
@@ -133,7 +139,7 @@ Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillo
 // als grünes Achteck mit Uhr; „Lang spielen. Ich.“
 ~ clubkampfRivertonNadel = nadelRiverton
 {clubkampfRivertonBesprochen:
-    Eine bessere Nadel, auf der Treppe erspielt. Die Treppe zählt genauso. #sprecher:slick #stimmung:froh
+    Eine bessere Nadel, unter der Brücke erspielt. Die Treppe zählt genauso. #sprecher:slick #stimmung:froh
     -> END
 }
 ~ clubkampfRivertonBesprochen = true
@@ -152,7 +158,7 @@ Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
 === slick_alltag ===
 // Kapitel 22: Montag im Pavillon (Stille S33: nur der Konzernton, wo vorher die Uhren klopften).
 {slickAbschiedGesehen:
-    Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
+    Slick spielt unten auf der Treppe unter der alten Steinbrücke Blitz gegen Tamsin. #sprecher:erzaehler
     Die Treppe gehört der Stadt. Die kann keiner verpachten. #sprecher:slick #stimmung:laechelt
     -> slick_alltag_wahl
 }
@@ -165,12 +171,12 @@ Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kurier
 Die haben sie mir gelassen. Einer von den Arbeitern hat weggeguckt. #sprecher:slick #stimmung:laechelt
 * [Warten]
 - Er zieht den Riemen fest. #sprecher:erzaehler
-Dann spielen wir eben auf der Treppe. Ich wohn im Wohnwagen am Fluss, an der alten Steinbrücke. #sprecher:slick #stimmung:laechelt
+Dann spielen wir eben auf der Treppe unter der alten Steinbrücke. Da hat man ein Dach. Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
 -> slick_alltag_wahl
 
 === slick_alltag_wahl ===
 + {nadelRiverton < 3} [„Revanche um eine bessere Nadel?“]
-    Auf der Treppe? Immer. #sprecher:slick #stimmung:laechelt
+    Unter der Brücke? Immer. #sprecher:slick #stimmung:laechelt
     ~ beginnePartie("riverton.clubkampf")
     -> END
 + [„Bis bald, Slick.“]
@@ -269,7 +275,7 @@ Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt. Beides mit Fahrpl
 -> ray_erst_tamsin
 
 === ray_erst_tamsin ===
-Erst Tamsin, dann ich. Ein Bus hält auch nicht zweimal an derselben Haltestelle. #sprecher:ray #stimmung:laechelt
+Erst Tamsin, dann ich. Ein Bus fährt seine Haltestellen auch der Reihe nach an. #sprecher:ray #stimmung:laechelt
 -> END
 
 === ray_reihe ===
@@ -300,7 +306,13 @@ Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die
     -> END
 
 === ray_alltag ===
-{~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray #stimmung:nachdenklich
+// Lektorat Akt 2 (17.11.2026): „war unsere Endhaltestelle“ und der Weg nach Ironwood erst nach dem
+// letzten Spiel; vorher steht der Pavillon noch, und von Ironwood war keine Rede.
+{nadelRiverton > 0:
+    {~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray #stimmung:nachdenklich
+- else:
+    Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt. #sprecher:ray #stimmung:nachdenklich
+}
 -> END
 
 // ---------------------------------------------------------------- Gegenstände

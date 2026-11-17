@@ -870,9 +870,8 @@
       "feld": [9, 16]
     },
     {
-      "moebel": "ld5Ruderboot",
-      "feld": [16, 16],
-      "bauteil_ok": true
+      "moebel": "fzRettungsboot",
+      "feld": [17, 16]
     },
     {
       "moebel": "fzKioskGemini",

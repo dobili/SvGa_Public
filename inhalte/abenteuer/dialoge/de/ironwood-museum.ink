@@ -42,6 +42,9 @@ Und das dort in der Ecke ist mein Kummer. #sprecher:teague #stimmung:nachdenklic
 - siegelStellungBestanden: -> postsack_offen
 }
 Säcke aus grauem Segeltuch, steif vom Alter, jeder mit einem Klumpen Wachs versiegelt. #sprecher:erzaehler
+{not teagueGetroffen:
+    Ein sehr alter Mann in einer Weste kommt herüber. Er hütet das Museum. #sprecher:erzaehler
+}
 Post von achtzehnhundertsechsundsechzig. Die Strecke war drei Monate zu, und der Postmeister hatte das Fieber. #sprecher:teague #stimmung:nachdenklich
 Dann kam ein neuer Postmeister, dann eine neue Bahn, dann kam ich. Niemand hat sie je geöffnet. #sprecher:teague #stimmung:nachdenklich
 + [„Warum nicht?“]
@@ -123,7 +126,7 @@ Nein. Wenn ich ehrlich bin. Länger. #sprecher:ambrose #stimmung:still
     -> END
 }
 ~ glasfunkeGefunden = true
-In einem Schaukasten funkelt ein kleiner Glassplitter, geschliffen wie ein Edelstein. #sprecher:erzaehler
+In einem Schaukasten funkelt ein kleiner Glassplitter, geschliffen wie ein Edelstein. Ein Funke aus Glas. #sprecher:erzaehler
 Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 ~ gibFund("glasfunke")
 Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt. #sprecher:ambrose #stimmung:laechelt

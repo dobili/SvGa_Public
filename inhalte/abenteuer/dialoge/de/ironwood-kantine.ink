@@ -41,7 +41,8 @@ VAR clubkampfIronwoodNadel = 0
 VAR pokalregalGesehen = false
 // Kapitel 27 (Roman): Mama kommt in die Kantine, Big Joe hält sie fest.
 VAR mamaInKantine = false
-// kaufGesehen setzt ironwood-aussen.ink (Szene 49, der Kauf).
+// kaufGesehen setzt ironwood-aussen.ink (Szene 49, der Kauf). Danach zeigt die Karte das Logo über
+// der Ausgabe und den Karton mit den Pokalen an der Tür; die Texte folgen dem.
 VAR kaufGesehen = false
 VAR morgenNachFeier = false
 // Gutachten L1.3: Wer die Feier ablehnt, bekommt sie nicht noch einmal angeboten.
@@ -54,11 +55,21 @@ VAR hatKarteFaktorenwaage = false
 // ---------------------------------------------------------------- Big Joe
 
 === big_joe ===
-{~Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren.|Big Joe stellt Figuren auf sein Stahlbrett, so behutsam, als wären sie aus Glas.|Es riecht nach Kaffee, Eisen und nassen Jacken.} #sprecher:erzaehler
+// Lektorat Akt 2 (17.11.2026): Vor „Ach, Kumpel“ baut Big Joe nicht noch einmal auf, und nach dem
+// Kauf klappern keine Figuren mehr an den langen Tischen. Das Bild vom Glas bleibt dem ersten Treffen.
+{
+- kaufGesehen:
+    Über der Essensausgabe hängt das weiße Logo. An der Tür steht der Karton mit den Pokalen. #sprecher:erzaehler
+- nadelIronwood > clubkampfIronwoodNadel:
+    Es riecht nach Kaffee, Eisen und nassen Jacken. #sprecher:erzaehler
+- else:
+    {~Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren.|Big Joe stellt Figuren auf sein Stahlbrett, eine nach der anderen. Es klirrt kein einziges Mal.|Es riecht nach Kaffee, Eisen und nassen Jacken.} #sprecher:erzaehler
+}
 {
 - not bigJoeGetroffen: -> big_joe_erkennt
 - not briefFuerRuben and not lastkahnFrei: -> big_joe_brief
 - nadelIronwood > clubkampfIronwoodNadel: -> big_joe_nach_sieg
+- kaufGesehen: -> big_joe_nach_kauf
 - ausgangIronwoodMama != "" and ausgangIronwoodMama != "abgebrochen" and not mamaSpielt: -> mama_nach_partie
 - not (reiheHankBestanden and reihePriyaBestanden): -> big_joe_reihe_offen
 - nadelIronwood == 0 and not mamaSpielt: -> big_joe_wartet
@@ -172,6 +183,23 @@ Auf dem Weg hinaus, im Lärm, sagt Ambrose etwas. Du verstehst es fast nicht. #s
 Es war schön. Und es hat gestimmt. Beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
 -> END
 
+// Lektorat Akt 2 (17.11.2026): Nach dem Kauf räumt der Club die Kantine. Hank, Priya und Mama sind
+// fort (orte.json, wenn); Big Joe holt die letzten Kisten, bis er in Akt 4 nach Crossroads fährt.
+// Das Stahlbrett steht seit dem Kauf in seiner Garage (ironwood-aussen.kauf).
+=== big_joe_nach_kauf ===
+Big Joe sitzt auf einer Kiste zwischen den Kartons und reißt Klebeband ab. Das Geräusch hallt durch den leeren Raum. #sprecher:erzaehler
+{~Die Garage ist eng, Kumpel. Aber sie gehört uns. Hier hole ich nur noch, was uns gehört.|Dreißig Jahre, Kumpel. Und die Kisten sind in zwei Stunden gepackt.|Laurie hat gesagt, sie hilft beim Streichen. Die Garage kriegt Grün. Wie das Geländer bei Ruth.} #sprecher:bigJoe #stimmung:nachdenklich
++ {mamaSpielt and not feierGesehen} [„Wird noch gefeiert?“]
+    // Wer die Feier abgelehnt hat, kann sie nachholen (Nebenquest ironwood.feier), jetzt in der Garage.
+    In der Garage, Kumpel. Schinken haben wir noch. #sprecher:bigJoe #stimmung:lacht
+    -> feier
++ {nadelIronwood < 3} [„Revanche um eine bessere Nadel?“]
+    Immer, Kumpel. Komm mit in die Garage, das Stahlbrett steht schon dort. #sprecher:bigJoe #stimmung:laechelt
+    ~ beginnePartie("ironwood.clubkampf")
+    -> END
++ [„Bis nachher, Big Joe.“]
+    -> END
+
 === big_joe_brief ===
 Big Joe zieht einen zerknitterten Umschlag aus der Brusttasche. #sprecher:erzaehler
 Kumpel, fährst du am Kanal entlang? Bring das Ruben in Lockport. Der Mann hat seit dem Sommer keine Fracht. #sprecher:bigJoe #stimmung:nachdenklich
@@ -206,7 +234,7 @@ Bleibst du? Wird spät. #sprecher:bigJoe #stimmung:laechelt
 === feier ===
 // Kapitel 28 (Roman): das Fest; bei Big Joes Pokal wird es kurz leise.
 ~ feierGesehen = true
-Jemand holt einen Schinken aus dem Kühlraum. Priya steigt auf einen Stuhl und hält eine Rede über Tragwerke. Alle klatschen. #sprecher:erzaehler #musik:ironwood.feier
+{kaufGesehen:Big Joe holt einen Schinken aus der Kühltruhe in seiner Garage.|Jemand holt einen Schinken aus dem Kühlraum.} Priya steigt auf einen Stuhl und hält eine Rede über Tragwerke. Alle klatschen. #sprecher:erzaehler #musik:ironwood.feier
 Hank, der sonst drei Wörter am Tag sagt, erzählt Mama, was aus jedem geworden ist. Der Reihe nach, mit Jahreszahlen. #sprecher:erzaehler
 Laurie kam mit neun zum ersten Mal her, an der Hand ihres Vaters. Hat das Stahlbrett angefasst und gesagt: Das ist kalt. #sprecher:bigJoe #stimmung:froh
 Den Pokal von 2001 hatte ich schon gekauft. Vorher. So sicher war ich. #sprecher:bigJoe #stimmung:nachdenklich
@@ -281,7 +309,8 @@ Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, 
 Und ab jetzt fahre ich mit. Zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
 Du spielst zu langsam. #sprecher:mutter #stimmung:laechelt
 Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lachtOhneSpott
-Juno klebt das Foto ins Tagebuch. Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
+Juno klebt das Foto ins Tagebuch. #sprecher:erzaehler
+Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
 -> END
 
 // ---------------------------------------------------------------- Partiemomente (Roman, Kap. 27/28)
@@ -356,12 +385,7 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 -> END
 
 === mama_alltag ===
-// Nach dem Kauf (ironwood-aussen.kauf, kaufGesehen) steht der Club ohne Raum da (Querschnitt 17.11.2026).
-{kaufGesehen:
-    {~Joe hat die Pokale in seiner Garage. Wir suchen einen neuen Raum. Wir finden einen.|Hier stehen jetzt Bildschirme. Ich komme trotzdem her. Wegen der Leute.|Grundreihe. Immer die Grundreihe. Sag das Joe nicht.} #sprecher:mutter #stimmung:nachdenklich
-- else:
-    {~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
-}
+{~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Hank und Priya
@@ -424,6 +448,10 @@ Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya
 // ---------------------------------------------------------------- Gegenstände
 
 === pokalregal ===
+{kaufGesehen:
+    Das Regal ist leer. Die Pokale stecken im Karton an der Tür. Nur das Messingschild hängt noch: 2001. #sprecher:erzaehler
+    -> END
+}
 {pokalregalGesehen:
     Die Lücke im Regal ist noch da, so breit wie eine Hand. Darunter das Messingschild: 2001. #sprecher:erzaehler
     -> END
@@ -434,6 +462,10 @@ Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Sch
 -> END
 
 === stahlbrett ===
+{kaufGesehen:
+    Wo das Stahlbrett stand, ist ein heller Fleck auf dem Tisch. Hank und Priya haben es hinausgetragen. #sprecher:erzaehler
+    -> END
+}
 Ein Schachbrett aus Stahl. Die Felder hell geschliffen und dunkel angelassen, die Schweißnähte am Rand dick wie Finger. #sprecher:erzaehler #bild:stahlbrett
 Stahl für das Brett, Holz für die Figuren. Ein Mann, der weiß, was hart sein muss und was nicht. #sprecher:ambrose #stimmung:laechelt
 -> END

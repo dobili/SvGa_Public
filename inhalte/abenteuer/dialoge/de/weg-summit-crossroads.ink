@@ -32,27 +32,36 @@ VAR geysirblitzBelohnt = false
 VAR spurPM5Gefunden = false
 VAR finchBauerDGefunden = false
 VAR seite09Gefunden = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
+// Bell stellt sich beim ersten Auftritt vor, wo immer der ist (Lektorat Akt 4, Frage 4).
+VAR bellVorgestellt = false
 
 // ---------------------------------------------------------------- Rangerin Bell und das Atomschach
 
 === bell ===
 {bellGetroffen: -> bell_alltag}
 ~ bellGetroffen = true
-Zwischen den dampfenden Becken steht eine Rangerin mit breitem Hut und sieht auf die Uhr. #sprecher:erzaehler
-Bell. Rangerin. In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst du was Verrücktes sehen? #sprecher:bell #stimmung:froh
+Zwischen den dampfenden Becken steht {bellVorgestellt:Bell|eine Rangerin} mit breitem Hut und sieht auf die Uhr. #sprecher:erzaehler
+{not bellVorgestellt:Bell. Rangerin. }In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst du was Verrücktes sehen? #sprecher:bell #stimmung:froh
+~ bellVorgestellt = true
 -> bell_regel
 
 === bell_regel ===
 ~ varianteAtomschachGelernt = true
 Atomschach. Wer schlägt, löst eine Explosion aus: Die schlagende Figur und alle Figuren rund um das Feld fliegen vom Brett, eigene auch, nur Bauern nicht. #sprecher:bell #stimmung:laechelt
 Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luft. #sprecher:bell #stimmung:nachdenklich
-Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
-Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
+    Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose #stimmung:laechelt
+}
 -> bell_angebot
 
 === bell_angebot ===
 // VARIANTE-FEHLT: Atomschach (L4). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Ich hab nur ein Brett, und das liegt noch in der Station. Wenn du wiederkommst, bring ich es mit. #sprecher:bell #stimmung:laechelt
+Bell zieht mit der Stiefelspitze ein Brett in den Sinter. Ein Läufer schlägt auf e5, und sie wischt mit dem Fuß die halbe Mitte weg. #sprecher:erzaehler
+So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring ich es mit. #sprecher:bell #stimmung:laechelt
 -> END
 
 === bell_alltag ===
@@ -78,7 +87,9 @@ Wenn der Sturm kommt, gehen wir in den Keller. Und im Keller spielen wir Entensc
 ~ varianteEntenschachGelernt = true
 Nach jedem Zug setzt du eine Ente auf ein leeres Feld. Die Ente gehört keinem. Keiner darf durch sie hindurch, keiner darf sie schlagen. #sprecher:rayCastillo #stimmung:laechelt
 Wir nennen sie den Twister. Sie steht immer genau da, wo du hinwolltest. #sprecher:rayCastillo #stimmung:lacht
-Eine Figur, die nur im Weg steht. Ich kannte Menschen dieser Art. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Eine Figur, die nur im Weg steht. Ich kannte Menschen dieser Art. #sprecher:ambrose #stimmung:laechelt
+}
 -> ray_angebot
 
 === ray_angebot ===
@@ -101,7 +112,9 @@ Der Sturm dreht ab. Heute kein Keller, heute keine Ente. Nächstes Mal. #spreche
     -> END
 }
 Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, bevor der Geysir kommt.“ #sprecher:erzaehler
-Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. Nicht raten. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. Nicht raten. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegSummitCrossroads.tafel")
     -> END
@@ -120,7 +133,9 @@ Mitten auf dem Steg stehen drei Bisons. Sie sehen dich an. Sie gehen nicht weg. 
     ~ bisonsGewartet = true
     Du wartest. Niemand hupt. Juno malt einen Bison ins Tagebuch, mit Glitzer. #sprecher:erzaehler #geraeusch:praerie
     Nach vierzig Minuten trotten die Bisons zur Seite. #sprecher:erzaehler
-    Geduld. Die schwerste Figur auf jedem Brett. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Geduld. Die schwerste Figur auf jedem Brett. #sprecher:ambrose #stimmung:nachdenklich
+    }
     -> END
 + [Vorsichtig vorbeigehen]
     Der größte Bison schnaubt. Du überlegst es dir anders. #sprecher:erzaehler
@@ -133,7 +148,9 @@ Mitten auf dem Steg stehen drei Bisons. Sie sehen dich an. Sie gehen nicht weg. 
 }
 ~ bisonhaarGefunden = true
 Am Zaun hängt ein dickes Büschel braunes Fell. #sprecher:erzaehler
-Ein Tier, das niemandem ausweicht. Respekt. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Tier, das niemandem ausweicht. Respekt. #sprecher:ambrose #stimmung:laechelt
+}
 ~ gibFund("bisonhaar")
 -> END
 
@@ -161,13 +178,19 @@ Der Steg führt zurück, bergauf nach Summit City. #sprecher:erzaehler
 {wegSummitCrossroadsGeysirblitzBestanden: -> geysirblitz_ende}
 {geysirblitzGesehen: -> geysirblitz_angebot}
 ~ geysirblitzGesehen = true
-Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bretter auf den Knien. Bell steht mit der Uhr davor. #sprecher:erzaehler
+Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bretter auf den Knien. Eine Rangerin steht mit der Uhr davor. #sprecher:erzaehler
+{not bellVorgestellt:
+    ~ bellVorgestellt = true
+    Ich bin Bell, die Rangerin hier. Du kommst genau richtig. #sprecher:bell #stimmung:froh
+}
 Der Geysirblitz! Old Patience bricht alle neun Minuten aus. Bis dahin löst ihr so viele Aufgaben, wie ihr schafft. #sprecher:bell #stimmung:froh
 -> geysirblitz_angebot
 
 === geysirblitz_angebot ===
 Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen. Machst du mit? #sprecher:bell #stimmung:laechelt
-Im Endspiel zählt jedes Tempo, {held}, und hier zählt die Natur mit. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Im Endspiel zählt jedes Tempo, {held}, und hier zählt die Natur mit. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Ich bin dabei.“]
     ~ beginneAufgaben("wegSummitCrossroads.geysirblitz")
     -> END
@@ -198,9 +221,15 @@ Bell steckt dir ein Abzeichen aus Messing an die Jacke. #sprecher:erzaehler
     Am Infobrett hängt der Antrag noch. Jemand hat einen Bison daneben gemalt. #sprecher:erzaehler
     -> END
 }
-Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Move: „Kühlung für Rechenzentrum Summit. Entnahme von Geysirwasser.“ Quer darüber steht in Bells Schrift: „Abgelehnt.“ #sprecher:erzaehler
+Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Move: „Kühlung für Rechenzentrum Summit. Entnahme von Geysirwasser.“ Quer darüber steht in roter Schrift: „Abgelehnt.“ #sprecher:erzaehler
+{not bellVorgestellt:
+    ~ bellVorgestellt = true
+    Neben dir bleibt eine Rangerin mit breitem Hut stehen. Auf ihrem Namensschild steht „Bell“. #sprecher:erzaehler
+}
 Über meine Leiche. Und über die der Bisons. #sprecher:bell #stimmung:bitter
-Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose #stimmung:laechelt
+}
 ~ spurPM5Gefunden = true
 ~ spurenPM = spurenPM + 1
 ~ gibFund("spurPM5")
@@ -225,7 +254,9 @@ Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der B
     -> END
 }
 An der Klappe des Sturmkellers hat sich ein loses Blatt verfangen. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
-Der Sturm trägt alles irgendwohin. Sogar Stellungen. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Der Sturm trägt alles irgendwohin. Sogar Stellungen. #sprecher:ambrose #stimmung:nachdenklich
+}
 ~ seite09Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite09")

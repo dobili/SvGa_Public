@@ -37,6 +37,9 @@ VAR novaBitteGehoert = false
 VAR capitalZugang = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Funde der fünfzehn Figuren (setzt die Hülle bei gibFund, regeln/dialogvariablen.ts).
 VAR gefundenFinchBauerA = false
 VAR gefundenFinchSpringerA = false
@@ -54,6 +57,8 @@ VAR gefundenFinchBauerD = false
 VAR gefundenFinchDame = false
 VAR gefundenFinchBauerE = false
 VAR abeGetroffen = false
+// Abe stellt sich beim ersten Auftritt vor, wo immer der ist (Lektorat Akt 4, Frage 4).
+VAR abeVorgestellt = false
 VAR linseGefunden = false
 VAR angesehenFaehrterminal = false
 
@@ -66,15 +71,19 @@ VAR angesehenFaehrterminal = false
 }
 ~ abeGetroffen = true
 // Roman Kapitel 60: König der Hügel; Ambrose: „Wie wir alle.“ Es klingt nicht traurig.
-Die Farben kommen zurück, als ihr den See erreicht. #sprecher:erzaehler
-Der See ist so groß, dass man das andere Ufer nicht sieht. Vor dem Leuchtturm, weiß mit rotem Band, flickt ein Mann ein Netz. #sprecher:erzaehler #musik:leuchtturm
-Abe Lindgren. Ich pass auf den Turm auf, und der Turm passt auf die Schiffe auf. #sprecher:abe #stimmung:laechelt
+Vor dem Leuchtturm, weiß mit rotem Band, flickt {abeVorgestellt:Abe|ein Mann} ein Netz. #sprecher:erzaehler #musik:leuchtturm
+{not abeVorgestellt:
+    ~ abeVorgestellt = true
+    Abe Lindgren. Ich pass auf den Turm auf, und der Turm passt auf die Schiffe auf. #sprecher:abe #stimmung:laechelt
+}
 König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe #stimmung:laechelt
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe #stimmung:laechelt
 * [Eine Partie spielen]
 - Dein König läuft los, sobald er kann. Das hast du inzwischen gelernt. #sprecher:erzaehler
-Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:froh
-Es klingt nicht traurig. Du tust, als hättest du es nicht gehört. #sprecher:erzaehler
+{not abschiedGesehen:
+    Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:froh
+    Es klingt nicht traurig. Du tust, als hättest du es nicht gehört. #sprecher:erzaehler
+}
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel, Fund und Rückweg
@@ -98,6 +107,10 @@ Am Steg hängt eine Tafel mit drei Diagrammen: „Im Endspiel ist der König ein
 }
 ~ linseGefunden = true
 Im Wärterhaus liegt eine alte Linse aus dickem Glas, so groß wie ein Teller. #sprecher:erzaehler
+{not abeVorgestellt:
+    ~ abeVorgestellt = true
+    Ein Mann mit Netznadel steht in der Tür. Abe Lindgren, ich pass hier auf den Turm auf. #sprecher:abe #stimmung:laechelt
+}
 Die hat hundert Schiffe heimgebracht. Nimm sie mit. Ich hab eine neue. #sprecher:abe #stimmung:laechelt
 ~ gibFund("leuchtturmlinse")
 -> END
@@ -130,6 +143,10 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 }
 ~ weltschachtagBegonnen = true
 Am Ufer steht eine Bühne mit zwei Fahnen, schwarz und weiß. Davor eine lange Tafel mit fünf Brettern, und an jedem sitzt jemand, den du kennst. #sprecher:erzaehler
+{not abeVorgestellt:
+    ~ abeVorgestellt = true
+    Abe Lindgren, Leuchtturmwärter. Heute bin ich auch Schiedsrichter. #sprecher:abe #stimmung:laechelt
+}
 Weltschachtag! Der 20. Juli, seit 1924. Heute spielt das ganze Ufer. #sprecher:abe #stimmung:laechelt
 Fünf Bretter, fünf Gegner, und du gehst von Brett zu Brett. Wie die großen Meister. #sprecher:abe #stimmung:laechelt
 An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst du es nur noch nach Hause bringen. #sprecher:abe #stimmung:laechelt
@@ -161,7 +178,9 @@ Und jetzt die Partie gegen die Welt. Ich spiele gegen alle hier, jeder stimmt ü
 Das Publikum hebt die Hände. Dein Zug gewinnt die Abstimmung. Abe kratzt sich am Kopf und lächelt. #sprecher:erzaehler
 Gut gestimmt. Das geht ins Logbuch. Und ein Foto für dich, damit du den Tag nicht vergisst. #sprecher:abe #stimmung:laechelt
 ~ gibFund("fotoWeltschachtag")
-So viele Menschen an einem Brett. So war es früher in den Cafés. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    So viele Menschen an einem Brett. So war es früher in den Cafés. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === weltschachtag_danach ===
@@ -284,7 +303,9 @@ Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn 
 ~ gibFund("finchsBuchsbaum")
 Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette #stimmung:laechelt
 ~ zeigeVorfuehrung("finchFalle")
-Ein Problem will gelöst werden. Dieses hat lange gewartet. #sprecher:ambrose #stimmung:friedlich
+{not abschiedGesehen:
+    Ein Problem will gelöst werden. Dieses hat lange gewartet. #sprecher:ambrose #stimmung:friedlich
+}
 -> END
 
 === odette_danach ===
@@ -314,7 +335,7 @@ Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir ein
 ~ wandererSeitenZurueck = buchseiten
 Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
 {buchseiten >= 13:
-    Alle dreizehn. Nach deinem Finale lasse ich sie binden. Komm mich in Capital besuchen. #sprecher:wanderer #stimmung:laechelt
+    Alle dreizehn. Jetzt lasse ich sie binden. Komm mich in Capital besuchen. #sprecher:wanderer #stimmung:laechelt
 - else:
     {buchseiten} von dreizehn. Der Rest liegt noch irgendwo zwischen hier und Maple Falls. #sprecher:wanderer #stimmung:laechelt
 }

@@ -198,24 +198,25 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nach
 {rosalindGetroffen: -> zugpartie_angebot}
 ~ rosalindGetroffen = true
 Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
-„Marian Shaw. Seit dreiundzwanzig Jahren spiele ich mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
+Marian Shaw. Seit dreiundzwanzig Jahren spiele ich mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt. #sprecher:rosalind #stimmung:nachdenklich
 -> zugpartie_angebot
 
 === zugpartie_angebot ===
-„Er hält seinen Zug auf einer Tafel aus dem Fenster, ich hänge meine Antwort ans Signal. Heute krieg ich die Tafel nicht hoch, und der Zug kommt gleich.“ #sprecher:erzaehler
-„Mein erster Einfall ist der Läufer nach vorn. Schaust du drauf, bevor wir ihn aufhängen?“ #sprecher:erzaehler
+Er hält seinen Zug auf einer Tafel aus dem Fenster, ich hänge meine Antwort ans Signal. Heute krieg ich die Tafel nicht hoch, und der Zug kommt gleich. #sprecher:rosalind #stimmung:nachdenklich
+Mein erster Einfall ist der Läufer nach vorn. Schaust du drauf, bevor wir ihn aufhängen? #sprecher:rosalind #stimmung:nachdenklich
 + [Die Stellung ansehen]
     ~ beginneAufgaben("wegCedarRiverton.zugpartie")
     -> END
 + [Gleich]
-    „Viel Zeit ist nicht. Hörst du die Schienen schon?“ #sprecher:erzaehler
+    Viel Zeit ist nicht. Hörst du die Schienen schon? #sprecher:rosalind #stimmung:nachdenklich
     -> END
 
 === zugpartie_geloest ===
 ~ zugpartieErledigt = true
-Marian sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
+Marian sieht auf das Brett. #sprecher:erzaehler
+Der Läufer hätte gehangen. Und Earl sieht so etwas sofort. #sprecher:rosalind #stimmung:nachdenklich
 Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
-„Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
+Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt. #sprecher:rosalind #stimmung:nachdenklich
 ~ gibFund("signalkelle")
 Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose #stimmung:laechelt
 -> END

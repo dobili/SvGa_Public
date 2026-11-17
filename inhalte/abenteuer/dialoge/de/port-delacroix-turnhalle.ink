@@ -138,7 +138,7 @@ Da liegt es trocken. Hol es, wenn du es brauchst. Nicht vorher. #sprecher:odile 
 * [Nicken]
 - Sie gibt dir einen Handkarren. #sprecher:erzaehler
 Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines. Geh fragen. #sprecher:odile #stimmung:nachdenklich
-Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #sprecher:odile #stimmung:laechelt
+{reiheRemyBestanden and reiheLouBestanden:Remy und Lou hast du hinter dir. Wenn du um die Nadel spielen willst: Ich bin hier.|Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich.} #sprecher:odile #stimmung:laechelt
 -> END
 
 // Gutachten L3.4, Roman Kapitel 38: Miss Odile schickt den Helden mit dem Geigenkasten zum
@@ -164,14 +164,14 @@ Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
 
 === odile_clubkampf ===
 {nadelPortDelacroix > 0:
-    Noch einmal? Gut. Ein Plan ist kein Sprint. #sprecher:odile #stimmung:laechelt
+    Noch einmal? Gut. Ich spiele wieder langsam. #sprecher:odile #stimmung:laechelt
     -> odile_clubkampf_wahl
 }
 Die Turnhalle ist voll. Sie sind alle gekommen, um zu sehen, wer da in einen Rucksack flüstert. #sprecher:erzaehler #musik:aus
 Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten. #sprecher:erzaehler
 Miss Odile setzt sich dir gegenüber, in einem Kleid mit kleinen Notenschlüsseln. #sprecher:erzaehler
 Ein Plan ist kein Sprint. Ich spiele langsam. Du wirst denken, es passiert nichts. #sprecher:odile #stimmung:laechelt
-Es passiert die ganze Zeit etwas. Bauern sind die Melodie. Die Figuren spielen nur dazu. #sprecher:odile #stimmung:laechelt
+Es passiert die ganze Zeit etwas. Hör auf die Bauern. #sprecher:odile #stimmung:laechelt
 * [Die Hände auf den Tisch legen]
 - Bevor ihr anfangt, hörst du ihn. Aus dem Kasten, drei Meter entfernt. Drei Wörter. #sprecher:erzaehler
 Spiel deine Partie. #sprecher:ambrose #stimmung:still
@@ -259,6 +259,7 @@ Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 - not tiefpunktGesehen: -> vorwurf
 // Erst die Reihe, dann die Versöhnung: Wer das Simultan vor Remys Reihe spielt, darf die Reihe
 // nicht verlieren (Sackgasse in der Gesamtsimulation, 10.11.2026).
+- not brettersammelnBegonnen: -> remy_erst_odile
 - not reiheRemyBestanden: -> remy_reihe
 - simultanGedankt: -> remy_versoehnt
 - else: -> remy_alltag
@@ -274,8 +275,12 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
     Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Flüstern. #sprecher:remy #stimmung:bitter
     -> END
 
+=== remy_erst_odile ===
+Remy zeigt mit dem Kinn zum Schiedsrichtertisch. #sprecher:erzaehler
+Erst zu Miss Odile. Sie hat dein Brett. #sprecher:remy #stimmung:bitter
+-> END
 === remy_alltag ===
-{~Remy übt Tonleitern auf der Trompete. Er hört kurz auf, als du vorbeigehst.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett. Zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
+{~Tonleitern. Jeden Tag. Auch ohne Dach.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett. Zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
 -> END
 
 === remy_versoehnt ===
@@ -287,7 +292,7 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
 === lou ===
 {
 - not tiefpunktGesehen: -> vorwurf
-- not reiheRemyBestanden: -> lou_warten
+- not brettersammelnBegonnen or not reiheRemyBestanden: -> lou_warten
 - not reiheLouBestanden: -> lou_reihe
 - not lernkartePlanfinder: -> lou_karte
 - else: -> lou_alltag
@@ -308,9 +313,11 @@ Du hast in jeder Stellung einen gefunden. Einen Plan, meine ich. #sprecher:lou #
 -> END
 
 === lou_warten ===
+{not louGetroffen:
+    Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
+}
 ~ louGetroffen = true
-Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
-Lou. Erst Remy, dann ich. #sprecher:lou #stimmung:neutral
+{brettersammelnBegonnen:Lou. Erst Remy, dann ich.|Lou. Erst Miss Odile, dann Remy, dann ich.} #sprecher:lou #stimmung:neutral
 So ist die Reihenfolge. Remy hat sie erfunden. #sprecher:lou #stimmung:laechelt
 -> END
 

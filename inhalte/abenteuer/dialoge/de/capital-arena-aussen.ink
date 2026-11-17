@@ -247,6 +247,8 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
 Der Mann mit dem gelben Rucksack hält einen Packen alter Blätter in den Händen, frisch gebunden, in einem Leinendeckel. #sprecher:erzaehler
 Für dich. Dreizehn Blätter haben gefehlt, und jedes hast du einmal in der Hand gehabt. #sprecher:wanderer #stimmung:laechelt
 ~ gibFund("buchVonGrundAuf")
-Stellungen, die jemand aufgehoben hat. Das kenne ich. #sprecher:ambrose #stimmung:froh
+{not abschiedGesehen:
+    Stellungen, die jemand aufgehoben hat. Das kenne ich. #sprecher:ambrose #stimmung:froh
+}
 -> END
 

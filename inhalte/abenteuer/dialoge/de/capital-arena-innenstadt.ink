@@ -14,6 +14,11 @@ VAR kreide5Gefunden = false
 VAR kreideraetselBestanden = false
 VAR ubahnOffen = false
 VAR kreideTreffpunkte = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
+// Kreidenacht erst nach dem Finale (Lektorat Akt 4, Frage 5); setzt die Hülle.
+VAR ausgangCapitalArenaFinale = ""
 
 === kreide5 ===
 {
@@ -27,7 +32,9 @@ Neben dem Rollgitter hat jemand einen Springer auf das Pflaster gemalt, mit Krei
 ~ kreide5Gefunden = true
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 ~ gibFund("kreide5")
-Der Springer springt über die Mauer, nicht durch die Tür. Die Kreidespringer wohnen hier unten. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Der Springer springt über die Mauer, nicht durch die Tür. Die Kreidespringer wohnen hier unten. #sprecher:ambrose #stimmung:laechelt
+}
 -> kreide_raetsel
 
 === kreide_raetsel ===
@@ -39,7 +46,11 @@ Unter der Stellung steht: „Zwei Fliegen, eine Klappe. Der Zug ist das Wort.“
     -> END
 
 === ubahn ===
-~ ubahnOffen = kreideraetselBestanden
+~ ubahnOffen = kreideraetselBestanden and ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen"
+{kreideraetselBestanden and not ubahnOffen:
+    Du sagst den Zug durch das Gitter. Von unten lacht jemand: „Richtig. Aber die Kreidenacht ist nach der Meisterschaft. Dann bist du dabei.“ #sprecher:erzaehler
+    -> END
+}
 {ubahnOffen:
     Du sagst den Zug durch das Gitter. Eine Hand zieht die Kette ab, und das Gitter rollt nach oben. „Willkommen bei den Kreidespringern.“ #sprecher:erzaehler
 - else:

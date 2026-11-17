@@ -60,15 +60,15 @@
   ],
   "objekte": [
     {
-      "moebel": "wr5Scheune",
-      "feld": [9, 6],
-      "versatz": [6, 0],
+      "moebel": "hb7TurnhalleBogendach",
+      "feld": [8, 7],
+      "versatz": [-1, 0],
       "id": "halle"
     },
     {
       "moebel": "pd6SchildTurnhalle",
       "auf": "halle",
-      "versatz": [-22, 25]
+      "versatz": [-15, 27]
     },
     {
       "moebel": "hb7Schule",

@@ -1007,6 +1007,13 @@ in der App nie, weil der Besuchszähler in der neuen Geschichte immer 0 ist: Nac
 die ganze Szene weiterhin noch einmal (mit frischen Wahlen, also spielbar). Wer das kürzen will,
 braucht dafür eine Variable (`VAR`), keinen Besuchszähler. Diese Datei durfte ich nicht ändern.
 
+Nachtrag (17.11.2026): Behoben mit der neuen Prüfung `python -m pipeline.abenteuer.inkbesuche`
+(alle Bedingungen auf Besuchszähler, 0 Befunde). `mira_erinnerung` fragt jetzt die Variable
+`erinnerung1858Gesehen`, `mira_nach_sieg` fragt `warumAtmeGefragt`. In Akt 1 galt an der Rätseltafel
+(`weg-maple-cedar.ink`, `tafel`) die Bedingung `tafel == 1` in jedem Dialog: Junos Satz über Mr. Pratt
+und ihre Erzählung auf der Landstraße (`juno_weg`) kamen bei jedem Blick wieder. Jetzt gilt beides
+nur beim ersten Blick (`ersterBlick`, aus `tafelGesehen`).
+
 ### Änderungen
 
 | Datei   | Knoten | vorher → nachher | Grund                                                                                                                                                           |

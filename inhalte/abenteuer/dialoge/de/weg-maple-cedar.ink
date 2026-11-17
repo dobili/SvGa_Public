@@ -58,17 +58,20 @@ VAR schildCedarGesehen = false
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
     -> END
 }
+// Erster Blick: aus der VAR, nicht aus dem Besuchszähler; die App beginnt jeden Dialog als neue
+// Geschichte, „tafel == 1“ galt deshalb immer (python -m pipeline.abenteuer.inkbesuche, 17.11.2026).
+~ temp ersterBlick = not tafelGesehen
 {not tafelGesehen:
     ~ tafelGesehen = true
     Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler
 }
 Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
-{tafel == 1: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+{ersterBlick: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegMapleCedar.tafel")
     -> END
 * [Weitergehen]
-    {tafel == 1: -> juno_weg}
+    {ersterBlick: -> juno_weg}
     -> END
 
 // Runde 11 (Dialogprüfung B2, „Fehlt im Spiel“; Roman Kapitel 10): Juno erzählt auf der

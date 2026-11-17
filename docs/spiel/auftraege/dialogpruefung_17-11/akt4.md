@@ -22,6 +22,12 @@ Capital Arena mit Innenstadt und U-Bahnhof.
   Stellen: Revanche bei Ward, Darlenes erstes Treffen, Ezras zweite Vorstellung, Annek und Joss vor
   der Schachstunde, Novas Nachspiel. Dazu Sprecher-Tags, wo Erzählsätze als Rede einer Figur
   standen, und ein neu gelesener Merker (`lebendschachGesehen` im Camp).
+- Nachtrag (17.11.2026): Die App legt für jeden Dialog eine neue Ink-Geschichte an und behält nur
+  die globalen Variablen. Einmalige Wahlen (`*`) vor `beginnePartie` und `beginneAufgaben` sind
+  deshalb nie über Dialoge hinweg verbraucht; in Akt 4 gab es keine solche Sackgasse, und dieser
+  Bericht hat dort nichts umgestellt. Besuchszähler über Dialoge hinweg (der eigentliche Fehler
+  dieser Art, behoben in Akt 1 und 3) gibt es in Akt 4 nicht: `python -m pipeline.abenteuer.inkbesuche`
+  meldet 0 Befunde.
 
 ## Prüfungen
 

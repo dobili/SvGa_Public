@@ -57,20 +57,20 @@ Der Pfad führt zurück in den Canyon, zum Felsbogen. #sprecher:erzaehler
 === buck_erstes_treffen ===
 ~ buckGetroffen = true
 An der Tankstelle steht ein Brett auf der Motorhaube eines Pick-ups. Daneben lehnt ein Mann mit Zahnstocher. #sprecher:erzaehler #klang:zapfsaeule
-Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck #stimmung:lacht
+Das Schild am Ortseingang? Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck #stimmung:lacht
 Er spuckt den Zahnstocher aus. #sprecher:erzaehler
-Buck. Drei Minuten. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck #stimmung:laechelt
+Buck. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck #stimmung:laechelt
 -> buck_angebot
 
 === buck_angebot ===
 Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du dich? #sprecher:buck #stimmung:laechelt
-* [„Klar.“]
++ [„Klar.“]
     {versoehnungGesehen:
         Er redet so schnell, wie er zieht. Lass ihn reden. Du denkst. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Die Tankstelle hat immer offen. Ich auch. #sprecher:buck #stimmung:lacht
     -> END
 
@@ -168,6 +168,10 @@ Der Zug fährt gleich. Wohin? #sprecher:erzaehler
 // ---------------------------------------------------------------- Highway nach Summit City (Akt 4)
 
 === highway ===
+{not endeAkt3Gesehen:
+    Am Ende der Hauptstraße beginnt der Highway nach Norden. Zu Fuß ist die Wüste zu weit. #sprecher:erzaehler
+    -> END
+}
 {highwayAufbruchGesehen:
     Der Highway führt nach Norden, durch die Wüste, Richtung Berge. #sprecher:erzaehler
     -> END

@@ -35,8 +35,8 @@ VAR angesehenLochImDach = false
 }
 
 === schild_ruine ===
-Durch das Dach fällt Regen. An der Wand lehnt ein Schild, die Buchstaben halb abgeblättert. #sprecher:erzaehler
-„Musik- und Schachclub Port Delacroix, seit 1889“. Darunter Schlamm, bis auf Kniehöhe. #sprecher:erzaehler
+Durch das Dach fällt Regen. An der Wand lehnt das Schild vom Eingang, die Buchstaben halb abgeblättert. #sprecher:erzaehler
+„Maison de Musique. Club d'Échecs, depuis 1889.“ Darunter Schlamm, bis auf Kniehöhe. #sprecher:erzaehler
 -> END
 
 === schild_baustelle ===
@@ -47,8 +47,8 @@ Das dauert noch, bis zum Frühjahr. Komm wieder, wenn du aus der Wüste zurück 
 === schild_aufhaengen ===
 ~ musikhausOffen = true
 Das Dach ist neu. Im Saal stehen Tische, auf jedem eines der Bretter aus der Stadt. In der Ecke glänzt Henris Klavier. #sprecher:erzaehler
-Miss Odile, Remy, Lou, Henri und Mama warten unter der Tür. Jemand reicht dir eine Leiter. #sprecher:erzaehler
-Du hängst das Schild über die Tür: „Musik- und Schachclub Port Delacroix, seit 1889“. #sprecher:erzaehler #pause
+Miss Odile, Remy, Lou und Henri warten unter der Tür. Jemand reicht dir eine Leiter. #sprecher:erzaehler
+Du hängst das Schild über die Tür: „Maison de Musique. Club d'Échecs, depuis 1889.“ #sprecher:erzaehler #pause
 Remy spielt drei Töne auf der Trompete. Alle klatschen. #sprecher:erzaehler
 Seit 1889. Und wieder. #sprecher:odile #stimmung:froh
 ~ gibFund("erstesBrettMusikhaus")
@@ -78,14 +78,14 @@ Mein Vater hat für dieses Haus Klaviere gestimmt. Jetzt spielt hier wieder jema
 ~ blaeserGetroffen = true
 ~ varianteSchach960Gelernt = true
 Eine Bläserin putzt ihre Posaune und lacht dich an. #sprecher:erzaehler
-Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jeden Abend anders. #sprecher:blaeser #stimmung:froh
+Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jedes Mal anders. #sprecher:blaeser #stimmung:froh
 Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser #stimmung:laechelt
 Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:blaeser #stimmung:laechelt
 * [„Und die Rochade?“]
 - Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser #stimmung:neutral
 Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser #stimmung:neutral
 Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose #stimmung:nachdenklich
-Als Kind fand ich das Unsinn. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
+Als Kind hätte ich das Unsinn gefunden. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
 Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
 -> blaeser_set1
 
@@ -95,7 +95,7 @@ Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden d
 + [„Spielen wir.“]
     ~ beginnePartie("portDelacroix.schach960Set1")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser #stimmung:lacht
     -> END
 
@@ -107,7 +107,7 @@ Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #
 + [„Gern.“]
     ~ beginnePartie("portDelacroix.schach960Set2")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 === blaeser_set3 ===
@@ -117,7 +117,7 @@ Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose #s
 + [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.schach960Set3")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Jam-Sessions fangen sowieso immer zu spät an. #sprecher:blaeser #stimmung:lacht
     -> END
 

@@ -2,7 +2,7 @@
   "karte": "wegDelacroixDesert.canyonpfad",
   "datei": "karten/weg-delacroix-desert-canyonpfad.json",
   "art": "aussen",
-  "beschreibung": "Variante C, blühend: Canyon aus rotem Fels mit Felswänden im Norden und der Kante der Hochfläche im Süden, Sandboden mit Flecken aus Felsboden, ein trockenes Bachbett aus Fels und Kieseln am Südrand, viele Kakteen, Bänke an den Rastpunkten, der Pfad schwingt weit nach Süden. Im Osten der Kopfbahnhof der Wüstenbahn mit Prellböcken, Häuschen und Wasserturm am Canyonausgang.",
+  "beschreibung": "Variante C, blühend: Canyon aus rotem Fels mit Felswänden im Norden und der Kante der Hochfläche im Süden, Sandboden mit Flecken aus Felsboden, ein trockenes Bachbett aus Fels und Kieseln am Südrand, viele Kakteen, Bänke an den Rastpunkten, der Pfad schwingt weit nach Süden. Im Osten der Kopfbahnhof der Wüstenbahn mit Prellböcken, dem alten Bahnhofsgebäude mit Veranda und Wasserturm am Canyonausgang.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -248,8 +248,8 @@
       "feld": [145, 8]
     },
     {
-      "moebel": "dd6Wuestenbahnhof",
-      "feld": [141, 10],
+      "moebel": "ds6BahnhofAlt",
+      "feld": [139, 10],
       "id": "wuestenbahnhof"
     },
     {
@@ -837,10 +837,10 @@
     {
       "name": "falke",
       "typ": "tier",
-      "feld": [140, 17],
+      "feld": [131, 17],
       "eigenschaften": {
-        "von": "140,17",
-        "bis": "146,17",
+        "von": "131,17",
+        "bis": "137,17",
         "verhalten": "fliegen"
       }
     }

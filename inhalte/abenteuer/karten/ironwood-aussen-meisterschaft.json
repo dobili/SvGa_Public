@@ -23113,24 +23113,29 @@
     },
     {
      "id": 375,
-     "name": "sc7Ferienhuette",
+     "name": "wc14Stellwerk",
      "type": "moebel",
      "x": 1120,
      "y": 832,
      "width": 80,
-     "height": 80,
+     "height": 79,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 904
+       "value": 903
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
       }
      ]
     },

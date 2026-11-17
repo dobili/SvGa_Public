@@ -183,11 +183,11 @@ Gus. Fünfzehn Minuten Pause. Zehn für dich, fünf für mein Sandwich. #spreche
 === gus_angebot ===
 Zehn Minuten und fünf Sekunden je Zug, eine Stellung mit Vorteil für Weiß. Zehn Züge. #sprecher:gus #stimmung:neutral
 Fertig? #sprecher:gus #stimmung:laechelt
-* [„Fertig.“]
++ [„Fertig.“]
     Er spielt wie ein Fahrplan mit Verspätung: zuverlässig, aber nicht immer pünktlich. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("ironwood.gus")
     -> END
-* [„Nach Ihrem Sandwich.“]
++ [„Nach Ihrem Sandwich.“]
     Kluger Mensch. #sprecher:gus #stimmung:laechelt
     -> END
 

@@ -130,19 +130,19 @@ Die Nadel liegt auf dem Stahlbrett. Ein kleines Zahnrad aus dunklem Metall, mit 
 Mama sitzt in der ersten Reihe. Zum ersten Mal sieht sie dir zu. Sie beugt sich vor und sagt zwei Wörter, so leise, dass nur du sie hörst. #sprecher:erzaehler
 Grundreihe. Immer. #sprecher:mutter #stimmung:nachdenklich
 Um die Nadel, Kumpel? Auf meinem Stahlbrett. #sprecher:bigJoe #stimmung:laechelt
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-* [„Noch nicht.“]
++ [„Noch nicht.“]
     Das Stahlbrett wartet. Es rostet nicht. #sprecher:bigJoe #stimmung:lacht
     -> END
 
 === big_joe_nach_niederlage ===
 Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:laechelt
-* [„Noch eine.“]
++ [„Noch eine.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     -> END
 
 === big_joe_nach_sieg ===
@@ -254,12 +254,12 @@ Ich weiß. Jetzt. #sprecher:bigJoe #stimmung:nachdenklich #musik:karte
 
 === mama_partie_angebot ===
 Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, als müsste sie sich an ihre Namen erinnern. #sprecher:erzaehler
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder. Dann der daneben. #sprecher:erzaehler
     Damengambit. Hat sie von mir. #sprecher:bigJoe #stimmung:froh
     ~ beginnePartie("ironwood.mama")
     -> END
-* [„Gleich, Mama.“]
++ [„Gleich, Mama.“]
     Ich laufe nicht weg. Nicht mehr. #sprecher:mutter #stimmung:laechelt
     -> END
 
@@ -381,10 +381,10 @@ Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. Wer nur die Figuren zä
 
 === hank_reihe ===
 Fesselungen. Willst du? #sprecher:hank #stimmung:laechelt
-* [„Ja.“]
++ [„Ja.“]
     ~ beginneAufgaben("ironwood.reiheHank")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     -> END
 
 === priya ===
@@ -408,10 +408,10 @@ Fesselungen. Willst du? #sprecher:hank #stimmung:laechelt
 
 === priya_reihe ===
 Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya #stimmung:laechelt
-* [„Bereit.“]
++ [„Bereit.“]
     ~ beginneAufgaben("ironwood.reihePriya")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     -> END
 
 // ---------------------------------------------------------------- Gegenstände

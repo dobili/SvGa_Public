@@ -96,10 +96,10 @@ Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan #stimmung:laechelt
 Er sieht hinauf zur großen Uhr. #sprecher:erzaehler
 Eile ist der Feind der Feder. Und der Unruh. Aber bitte. #sprecher:harlan #stimmung:laechelt
 Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose #stimmung:laechelt
-* [„Spielen wir.“]
++ [„Spielen wir.“]
     ~ beginnePartie("riverton.harlan")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Ich habe Zeit. Das ist mein einziger Reichtum. #sprecher:harlan #stimmung:laechelt
     -> END
 
@@ -257,10 +257,10 @@ Er hat sie nie gelöst, sagt Slick. #sprecher:pops #stimmung:nachdenklich
 
 === odum_aufgabe ===
 Willst du es versuchen? Für Elias. #sprecher:pops #stimmung:laechelt
-* [„Ich versuche es.“]
++ [„Ich versuche es.“]
     ~ beginneAufgaben("riverton.odumAufgabe")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     Die Aufgabe ist alt. Sie läuft nicht weg. #sprecher:pops #stimmung:laechelt
     -> END
 

@@ -881,10 +881,10 @@
     {
       "name": "rangerin",
       "typ": "statist",
-      "feld": [115, 15],
+      "feld": [100, 16],
       "eigenschaften": {
-        "von": "115,15",
-        "bis": "115,15",
+        "von": "100,16",
+        "bis": "100,16",
         "tun": "zählt die Besucher am Bogen",
         "wann": "tag",
         "sagt": "statist.wegDelacroixDesert.felsbogen.rangerin"

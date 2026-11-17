@@ -823,12 +823,12 @@
     {
       "name": "zuckerwattefrau",
       "typ": "statist",
-      "feld": [22, 24],
+      "feld": [26, 15],
       "eigenschaften": {
         "tun": "dreht Zuckerwatte auf Stäbchen",
         "wann": "tag",
-        "von": "21,23",
-        "bis": "25,25",
+        "von": "26,14",
+        "bis": "27,15",
         "sagt": "statist.jahrmarkt.festplatz.zuckerwattefrau"
       }
     },
@@ -1055,12 +1055,12 @@
     {
       "name": "geigerin",
       "typ": "statist",
-      "feld": [39, 10],
+      "feld": [38, 10],
       "eigenschaften": {
         "tun": "spielt Fiedel auf der Bühne",
         "wann": "immer",
-        "von": "39,10",
-        "bis": "39,10"
+        "von": "38,10",
+        "bis": "38,10"
       }
     }
   ],

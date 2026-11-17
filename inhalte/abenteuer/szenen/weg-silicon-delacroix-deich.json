@@ -1090,10 +1090,7 @@
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        152,
-        16
-      ]
+      "feld": [148, 12]
     },
     {
       "moebel": "sd6Schilf",
@@ -1405,10 +1402,7 @@
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        191,
-        21
-      ]
+      "feld": [187, 22]
     },
     {
       "moebel": "wg4BuschB",

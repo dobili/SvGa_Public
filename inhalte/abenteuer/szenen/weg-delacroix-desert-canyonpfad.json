@@ -2,7 +2,7 @@
   "karte": "wegDelacroixDesert.canyonpfad",
   "datei": "karten/weg-delacroix-desert-canyonpfad.json",
   "art": "aussen",
-  "beschreibung": "Variante C, blühend: Canyon aus rotem Fels mit Felswänden im Norden und der Kante der Hochfläche im Süden, Sandboden mit Flecken aus Felsboden, ein trockenes Bachbett aus Fels und Kieseln am Südrand, viele Kakteen, Bänke an den Rastpunkten, der Pfad schwingt weit nach Süden. Im Osten der Kopfbahnhof der Wüstenbahn mit Prellböcken, dem alten Bahnhofsgebäude mit Veranda und Wasserturm am Canyonausgang.",
+  "beschreibung": "Variante C, blühend: Canyon aus rotem Fels mit Felswänden im Norden und der Kante der Hochfläche im Süden, Sandboden mit Flecken aus Felsboden, ein trockenes Bachbett aus Fels und Kieseln am Südrand, viele Kakteen, Bänke an den Rastpunkten, der Pfad schwingt weit nach Süden. Im Osten der Kopfbahnhof der Wüstenbahn mit Prellböcken, dem alten Bahnhofsgebäude mit Veranda und Wasserturm am Canyonausgang; der Pfad biegt vor dem Bahnhofsgebäude nach Norden zum Bahnsteig ab.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -21,13 +21,13 @@
     "#############################..w.#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
     "#############################..w.#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
     "#############################..w.#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
-    "#############################..w.#####################################################################################################.....pppppppppppppppppppp#",
-    "#############################..w.#####################################################################################################.....pppppppppppppppppppp#",
-    "#############################..w.########################################################################........................#####.........................#",
-    "#############################..w.####################..........................#######################............................####.........................#",
-    "##.........................##..w.#################..............................######################............................####.........................#",
-    "#...........................#..w.#################..............................######################wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww........#",
-    "............................#..w.#################..............................######################wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww........#",
+    "#############################..w.#####################################################################################################..wwwpppppppppppppppppppp#",
+    "#############################..w.#####################################################################################################..wwwpppppppppppppppppppp#",
+    "#############################..w.########################################################################........................#####..ww.....................#",
+    "#############################..w.####################..........................#######################............................####..ww.....................#",
+    "##.........................##..w.#################..............................######################............................####..ww.....................#",
+    "#...........................#..w.#################..............................######################wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....................#",
+    "............................#..w.#################..............................######################wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....................#",
     "ww..........................#..w.#################..............................######################w...ffffffffffffffffffff.................................#",
     "#ww.........................#..w.#################....ffffffffffffffffffffff....######################w...fffffffffffffffffffffff..............................#",
     "##wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwffffffffffffffffffffffw.........###############ww...####################fff..............................#",
@@ -279,7 +279,7 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [4, 15]
+      "feld": [4, 13]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -287,7 +287,7 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [14, 17]
+      "feld": [14, 15]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -295,7 +295,7 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [24, 15]
+      "feld": [24, 13]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -303,7 +303,7 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [39, 17]
+      "feld": [39, 19]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -335,7 +335,7 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [79, 17]
+      "feld": [79, 16]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -363,7 +363,7 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [129, 13]
+      "feld": [128, 11]
     },
     {
       "moebel": "felsKlein",
@@ -371,7 +371,7 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [41, 17]
+      "feld": [41, 19]
     },
     {
       "moebel": "felsKlein",
@@ -387,7 +387,7 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [109, 14]
+      "feld": [108, 12]
     },
     {
       "moebel": "felsKlein",
@@ -719,7 +719,7 @@
     },
     {
       "name": "tafel",
-      "feld": [119, 12]
+      "feld": [118, 12]
     },
     {
       "name": "stein",

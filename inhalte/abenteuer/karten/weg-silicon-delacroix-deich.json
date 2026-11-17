@@ -23535,8 +23535,8 @@
      "id": 161,
      "name": "sd6Schilf",
      "type": "moebel",
-     "x": 2432,
-     "y": 256,
+     "x": 2368,
+     "y": 192,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -24570,8 +24570,8 @@
      "id": 206,
      "name": "wg4Busch",
      "type": "moebel",
-     "x": 3056,
-     "y": 336,
+     "x": 2992,
+     "y": 352,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -24580,7 +24580,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 376
       },
       {
        "name": "kollision",

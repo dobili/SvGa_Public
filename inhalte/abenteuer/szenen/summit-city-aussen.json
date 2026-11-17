@@ -2,7 +2,7 @@
   "karte": "summitCity.aussen",
   "datei": "karten/summit-city-aussen.json",
   "art": "aussen",
-  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte, eine schlichte Blockhütte mit gemauertem Kamin, und der Bergladen in einer Blockhütte mit grünem Dach, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten als Blockhütten mit Schindel-, Grün- und Schieferdach, Schutzhütte (Blockhütte mit offener Tür) und Bergwacht, zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten. Westen und Osten säumt Pinienwald; die Bergstraße kommt als Asphalt am Südrand an, im Süden verbindet eine Gasse Hof, Schuppen, Hütte und Kiosk (ein Marktstand mit Lagerschuppen).",
+  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte, eine schlichte Blockhütte mit gemauertem Kamin, und der Bergladen in einer Blockhütte mit grünem Dach und dem Holzschild „BERGLADEN“ am Giebel, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten als Blockhütten mit Schindel-, Grün- und Schieferdach, Schutzhütte (Blockhütte mit offener Tür) und Bergwacht (Blockhütte mit grünem Dach, am Giebel das Holzschild „BERGWACHT“ mit rotem Kreuz), zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten. Westen und Osten säumt Pinienwald; die Bergstraße kommt als Asphalt am Südrand an, im Süden verbindet eine Gasse Hof, Schuppen, Hütte und Kiosk (ein Marktstand mit Lagerschuppen, am Querbalken das Holzschild „KIOSK“).",
   "wand": "fels",
   "boden": "gras",
   "boeden": {
@@ -102,7 +102,14 @@
     {
       "moebel": "ld14BlockhuetteGruen",
       "feld": [20, 18],
-      "massstab": 1.25
+      "massstab": 1.25,
+      "id": "bergladen"
+    },
+    {
+      "moebel": "sc17SchildBergladen",
+      "feld": [0, 0],
+      "auf": "bergladen",
+      "versatz": [0, 10]
     },
     {
       "moebel": "sc7Brunnen",
@@ -259,7 +266,14 @@
     },
     {
       "moebel": "wg6StandGross",
-      "feld": [70, 52]
+      "feld": [70, 52],
+      "id": "kioskStand"
+    },
+    {
+      "moebel": "pw17SchildKiosk",
+      "feld": [0, 0],
+      "auf": "kioskStand",
+      "versatz": [0, -25]
     },
     {
       "moebel": "rv5Schuppen",
@@ -283,7 +297,14 @@
     },
     {
       "moebel": "ld14BlockhuetteGruen",
-      "feld": [72, 26]
+      "feld": [72, 26],
+      "id": "bergwacht"
+    },
+    {
+      "moebel": "sc17SchildBergwacht",
+      "feld": [0, 0],
+      "auf": "bergwacht",
+      "versatz": [0, 10]
     },
     {
       "moebel": "sc7Seil",

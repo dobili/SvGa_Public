@@ -194,6 +194,30 @@
       "begehbar": true,
       "begehbar_grund": "hängt an der Wand"
     },
+    "pw17SchildRanger": {
+      "quelle": "spiel/eigene/schild_ranger.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "Holzschild „RANGER“ mit grünem Wimpel, Brett 36 × 10 mittig im Bild ab Zeile 3; für den Giebel der Rangerhäuser (pipeline/abenteuer/schildbild.py, 17.11.2026)"
+    },
+    "pw17SchildKiosk": {
+      "quelle": "spiel/eigene/schild_kiosk.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "Holzschild „KIOSK“, Brett 23 × 10 mittig im Bild ab Zeile 3; hängt am Ausleger oder Querbalken eines Marktstands (pipeline/abenteuer/schildbild.py, 17.11.2026)"
+    },
     "pw7Kiosk": {
       "quelle": "spiel/eigene/campkiosk.png",
       "breite": 80,

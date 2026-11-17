@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise) und das Rangerhaus aus dunklem Holz mit Schieferdach; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Ufer eine weitere Blockhütte mit Holzstapel, daneben der Hackklotz des Holzhackers; neben der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise, am Ausleger hängt das Holzschild „KIOSK“) und das Rangerhaus aus dunklem Holz mit Schieferdach und dem Holzschild „RANGER“ mit grünem Wimpel über der Tür; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Ufer eine weitere Blockhütte mit Holzstapel, daneben der Hackklotz des Holzhackers; neben der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -110,6 +110,12 @@
       "id": "kiosk"
     },
     {
+      "moebel": "pw17SchildKiosk",
+      "feld": [0, 0],
+      "auf": "kiosk",
+      "versatz": [33, -17]
+    },
+    {
       "moebel": "pw9KanuSee",
       "feld": [18, 37]
     },
@@ -155,7 +161,14 @@
     },
     {
       "moebel": "gcFaehrhausHolz",
-      "feld": [41, 18]
+      "feld": [41, 18],
+      "id": "rangerhaus"
+    },
+    {
+      "moebel": "pw17SchildRanger",
+      "feld": [0, 0],
+      "auf": "rangerhaus",
+      "versatz": [0, 16]
     },
     {
       "moebel": "ld14Bootsschuppen",

@@ -600,7 +600,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "tuer": [[1, 6]]
     },
     "ld14BlockhuetteKamin": {
       "quelle": "spiel/eigene/blockhuette_kamin.png",
@@ -610,7 +611,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "tuer": [[1, 7], [2, 7]]
     },
     "ld14HausBlau": {
       "quelle": "spiel/eigene/haus_farm1_blau.png",

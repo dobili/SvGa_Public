@@ -41,6 +41,8 @@ export interface Moebelangabe {
   readonly rahmen?: readonly [number, number, number, number];
   /** Liegt das Möbel in den Bögen mehrerer Orte: Bogen und Rahmen je Ort (orte.json-Kennung). */
   readonly jeOrt?: Readonly<Record<string, Bogenlage>>;
+  /** Art im Katalog („stuhl“, „bank“, …); Sitzmöbel erkennt sitzplatz.ts daran. */
+  readonly art?: string;
 }
 
 /** Wo ein Möbel auf einem Bogen liegt. */

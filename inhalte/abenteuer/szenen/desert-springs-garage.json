@@ -2,28 +2,26 @@
   "karte": "desertSprings.garage",
   "datei": "karten/desert-springs-garage.json",
   "art": "innen",
-  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 18 × 12 Kacheln, Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal und Fenster, auf dem Regal Miras Dosenpokal; links ein Auto in Reparatur und Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, Kisten und Kartons. Tür in der Mitte der Südwand.",
+  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 14 × 11 Kacheln (passt nach R065 in die kleine Garage außen), Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal mit Miras Dosenpokal und zwei Fenster; links ein Auto in Reparatur und Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, und ein Karton. Tür in der Mitte der Südwand.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
-    "##################",
-    "##################",
-    "##################",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#................#",
-    "#########.########",
-    "##################"
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######",
+    "##############"
   ],
   "objekte": [
     {
       "moebel": "cc5Fussmatte",
-      "feld": [9, 10],
+      "feld": [7, 8],
       "versatz": [0, 19]
     },
     {
@@ -33,7 +31,7 @@
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [12, 1],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
@@ -48,11 +46,11 @@
     },
     {
       "moebel": "iw5AutoA",
-      "feld": [1, 5]
+      "feld": [1, 4]
     },
     {
       "moebel": "cc6TischHell",
-      "feld": [8, 6],
+      "feld": [6, 5],
       "id": "club"
     },
     {
@@ -63,32 +61,32 @@
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [8, 5],
+      "feld": [6, 4],
       "zu": "club"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [8, 7],
+      "feld": [6, 6],
       "zu": "club"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [9, 5],
+      "feld": [7, 4],
       "zu": "club"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [9, 7],
+      "feld": [7, 6],
       "zu": "club"
     },
     {
       "moebel": "dsReifen",
-      "feld": [14, 7],
+      "feld": [10, 6],
       "id": "reifen"
     },
     {
       "moebel": "dsReifen",
-      "feld": [15, 7]
+      "feld": [11, 6]
     },
     {
       "moebel": "cc4Brett",
@@ -97,78 +95,62 @@
     },
     {
       "moebel": "cc4Karton",
-      "feld": [15, 9]
-    },
-    {
-      "moebel": "iw5Kisten",
-      "feld": [12, 9]
+      "feld": [11, 7]
     },
     {
       "moebel": "cc4Werktisch",
       "feld": [1, 2]
     },
     {
-      "moebel": "rv5Werkzeugschrank",
-      "feld": [15, 2]
-    },
-    {
-      "moebel": "dsReifen",
-      "feld": [3, 8]
-    },
-    {
       "moebel": "pd6Kanister",
-      "feld": [3, 9]
+      "feld": [3, 7]
     },
     {
       "moebel": "iwFass",
-      "feld": [1, 10]
+      "feld": [1, 8]
     },
     {
       "moebel": "iwFass",
-      "feld": [2, 10]
+      "feld": [2, 8]
     },
     {
       "moebel": "rv5ReifenLiegend",
-      "feld": [16, 7]
+      "feld": [12, 6]
     },
     {
       "moebel": "rv5ReifenLiegend",
-      "feld": [16, 8]
-    },
-    {
-      "moebel": "rv5ReifenStehend",
-      "feld": [4, 8]
+      "feld": [12, 7]
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [9, 12]
+      "feld": [7, 10]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [9, 10],
+      "feld": [7, 8],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "garageAusgang",
-      "feld": [9, 11]
+      "feld": [7, 9]
     }
   ],
   "figuren": [
     {
       "name": "tomas",
-      "feld": [4, 6]
+      "feld": [4, 5]
     },
     {
       "name": "mira",
-      "feld": [14, 9]
+      "feld": [10, 7]
     },
     {
       "name": "dot",
-      "feld": [11, 7]
+      "feld": [9, 4]
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],

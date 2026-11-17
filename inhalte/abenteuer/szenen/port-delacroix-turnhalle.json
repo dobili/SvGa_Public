@@ -2,45 +2,45 @@
   "karte": "portDelacroix.turnhalle",
   "datei": "karten/port-delacroix-turnhalle.json",
   "art": "innen",
-  "beschreibung": "Die Turnhalle der Schule von Port Delacroix, Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. An der Nordwand hängen zwei Basketballkörbe zwischen den Fenstern.",
+  "beschreibung": "Die Turnhalle der Schule von Port Delacroix (22 × 16, R065: braucht außen das Hallenbild pd6Turnhalle), Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. An der Nordwand hängen zwei Basketballkörbe zwischen den Fenstern.",
   "wand": "hellgrau",
   "boden": "hallenboden",
   "raster": [
-    "##########################",
-    "##########################",
-    "##########################",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#........................#",
-    "#############..###########"
+    "######################",
+    "######################",
+    "######################",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "#....................#",
+    "############..########"
   ],
   "objekte": [
     {
       "moebel": "pd9Linie5",
-      "feld": [10, 3],
+      "feld": [9, 3],
       "versatz": [-1, 0]
     },
     {
       "moebel": "pd9Linie5",
-      "feld": [14, 3],
+      "feld": [13, 3],
       "versatz": [-1, 0]
     },
     {
       "moebel": "pd9LinieQ4",
-      "feld": [10, 8]
+      "feld": [9, 8]
     },
     {
       "moebel": "pd9LinieQ5",
-      "feld": [10, 3]
+      "feld": [9, 3]
     },
     {
       "moebel": "pd6Fenster",
@@ -54,17 +54,17 @@
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [16, 1],
+      "feld": [14, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [22, 1],
+      "feld": [19, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Basketballkorb",
-      "feld": [11, 1],
+      "feld": [10, 1],
       "an_wand": true
     },
     {
@@ -165,7 +165,7 @@
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [17, 6],
+      "feld": [14, 6],
       "id": "t17_6"
     },
     {
@@ -175,19 +175,19 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [17, 5],
+      "feld": [14, 5],
       "zu": "t17_6",
       "versatz": [8, 0]
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [17, 7],
+      "feld": [14, 7],
       "zu": "t17_6",
       "versatz": [8, 0]
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [17, 10],
+      "feld": [14, 10],
       "id": "t17_10",
       "versatz": [-8, 0]
     },
@@ -198,17 +198,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [17, 9],
+      "feld": [14, 9],
       "zu": "t17_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [17, 11],
+      "feld": [14, 11],
       "zu": "t17_10"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [21, 6],
+      "feld": [18, 6],
       "id": "t21_6",
       "versatz": [-8, 0]
     },
@@ -219,17 +219,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [21, 5],
+      "feld": [18, 5],
       "zu": "t21_6"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [21, 7],
+      "feld": [18, 7],
       "zu": "t21_6"
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [21, 10],
+      "feld": [18, 10],
       "id": "t21_10",
       "versatz": [-8, 0]
     },
@@ -240,17 +240,17 @@
     },
     {
       "moebel": "pd6StuhlVorn",
-      "feld": [21, 9],
+      "feld": [18, 9],
       "zu": "t21_10"
     },
     {
       "moebel": "pd6StuhlRuecken",
-      "feld": [21, 11],
+      "feld": [18, 11],
       "zu": "t21_10"
     },
     {
       "moebel": "pd6Spendenkasse",
-      "feld": [15, 3]
+      "feld": [14, 3]
     },
     {
       "moebel": "pd6TurnmatteLinks",
@@ -268,15 +268,15 @@
     },
     {
       "moebel": "pd6Ball",
-      "feld": [23, 13]
+      "feld": [20, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [17, 13]
+      "feld": [14, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [21, 13]
+      "feld": [18, 13]
     },
     {
       "moebel": "pd6Bank",
@@ -284,11 +284,11 @@
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [23, 2]
+      "feld": [19, 2]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [22, 4]
+      "feld": [20, 5]
     },
     {
       "moebel": "pd6Kiste",
@@ -296,80 +296,80 @@
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [13, 14],
+      "feld": [12, 14],
       "versatz": [0, 3]
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [14, 14],
+      "feld": [13, 14],
       "versatz": [0, 3]
     },
     {
       "moebel": "pd9Lehrertisch",
-      "feld": [17, 3],
+      "feld": [15, 3],
       "id": "lehrertisch"
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [13, 15]
+      "feld": [12, 15]
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [14, 15]
+      "feld": [13, 15]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [13, 14],
+      "feld": [12, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "turnhalleAusgang",
-      "feld": [13, 15]
+      "feld": [12, 15]
     },
     {
       "name": "spendenkasse",
-      "feld": [15, 4]
+      "feld": [14, 4]
     },
     {
       "name": "notenheft",
-      "feld": [17, 5]
+      "feld": [15, 5]
     },
     {
       "name": "plakatTurnhalle",
-      "feld": [14, 3]
+      "feld": [13, 3]
     },
     {
       "name": "turnhalleAusgang",
-      "feld": [14, 15]
+      "feld": [13, 15]
     }
   ],
   "figuren": [
     {
       "name": "odile",
-      "feld": [19, 4],
+      "feld": [17, 4],
       "blick": "links"
     },
     {
       "name": "remy",
-      "feld": [10, 8]
+      "feld": [9, 8]
     },
     {
       "name": "lou",
-      "feld": [16, 8]
+      "feld": [12, 9]
     }
   ],
   "belebung": [
     {
       "name": "kinder",
       "typ": "statist",
-      "feld": [11, 12],
+      "feld": [10, 12],
       "eigenschaften": {
         "von": "9,12",
-        "bis": "13,12",
+        "bis": "12,12",
         "tun": "spielen Fangen um die Bretter",
         "wann": "immer",
         "sagt": "statist.portDelacroix.turnhalle.kinder"
@@ -390,10 +390,10 @@
     {
       "name": "zuschauerin",
       "typ": "statist",
-      "feld": [17, 9],
+      "feld": [14, 9],
       "eigenschaften": {
-        "von": "19,8",
-        "bis": "19,8",
+        "von": "16,8",
+        "bis": "16,8",
         "tun": "steht mit verschränkten Armen am Rand und schaut zu",
         "wann": "immer",
         "sagt": "statist.portDelacroix.turnhalle.zuschauerin"
@@ -404,8 +404,8 @@
       "typ": "statist",
       "feld": [7, 9],
       "eigenschaften": {
-        "von": "12,9",
-        "bis": "12,9",
+        "von": "11,9",
+        "bis": "11,9",
         "tun": "sitzt auf einer umgedrehten Kiste und schaut aufs Brett",
         "wann": "immer",
         "sagt": "statist.portDelacroix.turnhalle.alterHerr"

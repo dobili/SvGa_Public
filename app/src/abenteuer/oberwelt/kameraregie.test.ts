@@ -45,12 +45,22 @@ describe("Kamera mit Vergrößerung", () => {
   it("sichtbare Fläche und verdeckter Streifen wie zuvor (Hochformat 390 × 843)", () => {
     const k = kamera(390, 843);
     // Dachboden 224 × 176: früher Bild 130 × 281, 80 verdeckt, Karte mittig in 201 freien Pixeln.
+    // Seit F3/F4 (Spieltest Variante B) oben dazu 19 für die Münzen: Mitte der 182 freien Pixel.
     const verdeckt = richteKameraEin(alsKamera(k), 224, 176, ZOOM);
     expect(k.zoomX).toBe(ZOOM);
     expect(sichtflaeche(alsKamera(k))).toEqual({ sichtBreite: 130, sichtHoehe: 281 });
-    expect(verdeckt).toBe(80);
-    expect(k.grenzen).toEqual([0, -12, 224, 281]);
-    expect(k.versatz).toEqual([0, -40]);
+    expect(verdeckt).toEqual({ oben: 19, unten: 80, links: 0, rechts: 0 });
+    expect(k.grenzen).toEqual([0, -22, 224, 281]);
+    expect(k.versatz).toEqual([0, -30]);
+  });
+
+  it("quer 800 × 420: Held mittig zwischen Steuerkreuz und Knopfspalte", () => {
+    const k = kamera(800, 420);
+    const verdeckt = richteKameraEin(alsKamera(k), 896, 528, ZOOM);
+    expect(verdeckt).toEqual({ oben: 19, unten: 0, links: 61, rechts: 32 });
+    expect(k.grenzen).toEqual([-61, -19, 989, 547]);
+    // Links mehr verdeckt als rechts: Bildmitte links vom Helden, er steht weiter rechts.
+    expect(k.versatz).toEqual([15, 10]);
   });
 
   it("feste Objekte: Ansichtspunkt auf den Platz vor der Vergrößerung um die Bildmitte", () => {

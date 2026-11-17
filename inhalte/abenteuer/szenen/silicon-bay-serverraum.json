@@ -4,20 +4,20 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen sechs Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus zwei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. An der Westwand ein Arbeitsplatz mit Bildschirmen und Stuhl. Die Glastür in der Südwand führt zurück in die Akademie.",
+  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen sechs Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus zwei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. An der Westwand ein Arbeitsplatz mit Bildschirmen und Stuhl. Die Glastür in der Südwand führt zurück in die Akademie. Rechts neben dem Klimagerät eine verschlossene Tür in die übrigen Räume der Akademie (R065).",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "japanisch"],
   "raster": [
-    "##############",
-    "##############",
-    "##############",
-    "#............#",
-    "#............#",
-    "#............#",
-    "#............#",
-    "#............#",
-    "#............#",
-    "#######..#####"
+    "###############",
+    "###############",
+    "###############",
+    "#.............#",
+    "#.............#",
+    "#.............#",
+    "#.............#",
+    "#.............#",
+    "#.............#",
+    "#######..######"
   ],
   "objekte": [
     {
@@ -68,6 +68,11 @@
     {
       "moebel": "sb8GlastuerSued",
       "feld": [7, 9],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Tuer",
+      "feld": [13, 1],
       "an_wand": true
     }
   ],

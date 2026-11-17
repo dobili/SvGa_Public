@@ -7,7 +7,10 @@ Tiere dazu; ohne sie sähe er die neue Belebung nicht. Die Auswahl der Bilder fo
 fest nach dem Namen einen Bogen aus dem Vorrat, Tiere den Bogen ihrer Art oder einen nahen Ersatz.
 Das Standbild „von vorn“ ist bei LimeZu das vierte der oberen Reihe.
 
-Abhängigkeiten: Pillow (nur über kartenbild.py, lokal).
+Sitzende Figuren und Statisten rücken auf ihr Sitzmöbel wie in der App (sitzplatz.py; Spieltest
+Variante B, 16.11.2026, F2); die festen Figuren der Szene zeichnet ``figurenteile``.
+
+Abhängigkeiten: Pillow (nur über kartenbild.py, lokal), kartentiled.py, sitzplatz.py.
 """
 
 import json
@@ -15,6 +18,9 @@ import zlib
 from pathlib import Path
 
 from PIL import Image
+
+from pipeline.abenteuer.kartentiled import blickrichtung, sitzrichtung
+from pipeline.abenteuer.sitzplatz import sitzlage_auf
 
 K = 16
 STATISTEN = 40
@@ -112,10 +118,43 @@ def figurbild(privat: Path, bogen: str, rahmen: int, oeffne) -> Image.Image | No
     return oeffne(alt).crop((rahmen * K, 0, (rahmen + 1) * K, 2 * K)) if alt.exists() else None
 
 
-def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object]]:
+def sitzend(bild, teil: tuple, feld: tuple[int, int], sitzt: str | None, sitze) -> tuple:
+    """Bildteil (tiefe, x, y, bild) einer Figur, sitzend angehoben und auf ihr Sitzmöbel gerückt.
+
+    SITZ_HUB zählt in Figurenpixeln; PixelLab-Figuren (32 breit) stehen mit 2/3 auf der Karte.
+    Beispiel: Sam auf dem Schulstuhl im Clubraum → 6 nach rechts, 9 nach oben, Tiefe 141,5.
+    """
+    tiefe, x, y = teil
+    if sitzt not in SITZ_RAHMEN:
+        return tiefe, x, y, bild
+    y -= round(SITZ_HUB * (PIXELLAB_MASSSTAB if bild.width >= 2 * K else 1))
+    lage = sitzlage_auf(sitze, feld)
+    return (tiefe, x, y, bild) if lage is None else (lage[2], x + lage[0], y + lage[1], bild)
+
+
+def figurenteile(szene: dict, privat: Path, figuren: list[dict], sitze, oeffne) -> list[tuple]:
+    """Bildteile der festen Figuren einer Szene (``figuren``: Einträge des Orts aus orte.json).
+
+    Wie die App: Füße am unteren Rand des Feldes, Tiefe die Feldmitte; Sitzende über ``sitzend``.
+    """
+    ergebnis = []
+    for f in szene.get("figuren", []):
+        figur = next((x for x in figuren if x["kennung"].split(".", 1)[1] == f["name"]), None)
+        sitzt = sitzrichtung(f)
+        rahmen = SITZ_RAHMEN.index(sitzt or blickrichtung(f) or "unten")
+        teil = figurbild(privat, figur["sprite"], rahmen, oeffne) if figur else None
+        if teil:
+            fx, fy = f["feld"]
+            lage = (fy * K + K // 2, fx * K + (K - teil.width) // 2, (fy + 1) * K - teil.height)
+            ergebnis.append(sitzend(teil, lage, (fx, fy), sitzt, sitze))
+    return ergebnis
+
+
+def teile(szene: dict, privat: Path, oeffne, sitze=()) -> list[tuple[int, int, int, object]]:
     """Bildteile (tiefe, x, y, bild) für alle Statisten und Tiere einer Szene.
 
-    Eingaben: Szene, privates Repository, ``oeffne(pfad) -> Image`` (RGBA).
+    Eingaben: Szene, privates Repository, ``oeffne(pfad) -> Image`` (RGBA), Sitzmöbel der Karte
+    (sitzplatz.sitzmoebel).
     Sonderfall: Ohne Bogen (Art unbekannt oder Datei fehlt) wird nichts gezeichnet, wie in der App;
     Schwimmer (``verhalten: schwimmen``) nur bis zur Wasserlinie.
     """
@@ -123,7 +162,7 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
     for b in szene.get("belebung", []):
         x, y = b["feld"][0] * K, b["feld"][1] * K
         if b.get("typ") == "statist":
-            ergebnis += _statist(b, privat, oeffne, x, y)
+            ergebnis += _statist(b, privat, oeffne, (x, y), sitze)
             continue
         art = tierart(b["name"])
         pfad = privat / "spiel" / "tiere" / f"{art}.png"
@@ -150,10 +189,11 @@ def _sichtbar(b: dict, hoehe: int) -> int:
     return hoehe
 
 
-def _statist(b: dict, privat: Path, oeffne, x: int, y: int) -> list[tuple[int, int, int, object]]:
+def _statist(b: dict, privat: Path, oeffne, ecke: tuple[int, int], sitze) -> list[tuple]:
     """Bildteil eines Statisten: Standbild von vorn oder nach ``blick`` (R008), sitzend in seiner
-    Blickrichtung (SITZ_HUB höher, R020), unten mittig auf seinem Feld; PixelLab 32 × 32 oder LimeZu
-    16 × 32 (figurbild)."""
+    Blickrichtung (SITZ_HUB höher, R020, auf seinem Sitzmöbel), unten mittig auf seinem Feld;
+    PixelLab 32 × 32 oder LimeZu 16 × 32 (figurbild)."""
+    x, y = ecke
     eigenschaften = b.get("eigenschaften", {})
     sitzt = "unten" if eigenschaften.get("sitzt") == "ja" else eigenschaften.get("sitzt")
     blick = eigenschaften.get("blick")  # stehender Statist mit Blickrichtung (R008)
@@ -164,7 +204,5 @@ def _statist(b: dict, privat: Path, oeffne, x: int, y: int) -> list[tuple[int, i
         return []
     sichtbar = _sichtbar(b, bild.height)
     bild = bild.crop((0, 0, bild.width, sichtbar))
-    # SITZ_HUB zählt in Figurenpixeln; PixelLab-Figuren (32 breit) stehen mit 2/3 auf der Karte.
-    massstab = PIXELLAB_MASSSTAB if bild.width >= 2 * K else 1
-    hub = round(SITZ_HUB * massstab) if sitzt in SITZ_RAHMEN else 0
-    return [(y + K, x + (K - bild.width) // 2, y + K - sichtbar - hub, bild)]
+    lage = (y + K, x + (K - bild.width) // 2, y + K - sichtbar)
+    return [sitzend(bild, lage, (x // K, y // K), sitzt, sitze)]

@@ -19,7 +19,8 @@ window.KE = window.KE || {};
   // 1.4: Übergänge zu beliebigen Karten, Ziele und Ankunftsfelder sehen (uebergaenge.js, ankunft.js).
   // 1.5: Zuschnitt (Objektfeld zuschnitt, zuschnitt.js, zuschnittfeld.js).
   // 1.6: Kollision fein (sperren_fein, freigeben_fein, maske_fein; fein.js, feinmalen.js).
-  KE.VERSION = "1.6.1";
+  // 1.7: Blickrichtung stehender Figuren und Statisten (blick, R008; blick.js), Standbilder im Paket.
+  KE.VERSION = "1.7.0";
   /** Schlüssel der Übergangsdefinitionen (orte.json) im Verlauf, neben den Szenendateien. */
   KE.ORTE = "#orte";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";

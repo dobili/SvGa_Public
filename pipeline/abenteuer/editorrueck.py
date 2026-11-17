@@ -180,9 +180,18 @@ def markierungszeilen(eintrag: dict) -> list[str]:
                 zeilen.append(
                     f"verschoben ({liste}): {b['name']} {tuple(alt[i]['feld'])} → {tuple(b['feld'])}"
                 )
+            if i is not None and _blick(alt[i]) != _blick(b):
+                # Blickrichtung (Editor 1.7, R008); ohne Angabe schaut die Person nach unten.
+                zeilen.append(f"Blick ({liste}): {b['name']} {_blick(alt[i])} → {_blick(b)}")
         for i in sorted(set(range(len(alt))) - {i for i in zuordnung if i is not None}):
             zeilen.append(f"gelöscht ({liste}): {alt[i]['name']} {tuple(alt[i]['feld'])}")
     return zeilen
+
+
+def _blick(eintrag: dict) -> str:
+    """Blickrichtung einer Figur (``blick``) oder eines Statisten (``eigenschaften.blick``), sonst
+    „Vorgabe“. Beispiel: {"name": "hector", "blick": "links"} → „links“."""
+    return eintrag.get("blick") or eintrag.get("eigenschaften", {}).get("blick") or "Vorgabe"
 
 
 def berichte(eintrag: dict, moebel: dict | None = None) -> list[str]:

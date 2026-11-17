@@ -10,9 +10,10 @@
  * Rolle im Gesamtbild: Hilfe für oberwelt/szene.ts; zeichnet mit Phaser-Grafik, keine Bilder.
  * Die Kamera vergrößert (Variante B, weltmassstab.ts): gerechnet wird in Kartenpixeln der
  * sichtbaren Fläche (worldView), der feste Pfeil wird mit kameraregie.ts/festerPunkt gesetzt.
- * Abhängigkeiten: Phaser, kameraregie.ts.
+ * Abhängigkeiten: Phaser, kamera.ts (Typ der Ränder), kameraregie.ts.
  */
 import type Phaser from "phaser";
+import type { Raender } from "./kamera";
 import { festerPunkt } from "./kameraregie";
 
 /** Gold des Hinweises und dunkler Rand (Farben des Spiels, spielfarben.css). */
@@ -77,13 +78,14 @@ export class Zielmarker {
   private an = true;
 
   /**
-   * Legt beide Zeichen an (unsichtbar bis zum ersten Ziel). `verdeckt` liefert die Höhe des
-   * Streifens unten unter den Knöpfen in Spielpixeln (kamera.ts).
+   * Legt beide Zeichen an (unsichtbar bis zum ersten Ziel). `verdeckt` liefert die Ränder unter
+   * festen Bedienelementen in Spielpixeln (kamera.ts, verdeckteRaender); der Pfeil bleibt im
+   * freien Rechteck dazwischen.
    */
   constructor(
     private readonly szene: Phaser.Scene,
     private readonly kachel: number,
-    private readonly verdeckt: () => number,
+    private readonly verdeckt: () => Raender,
   ) {
     this.ueber = szene.add.graphics().setDepth(TIEFE).setVisible(false);
     zeichneDreieck(this.ueber, true);
@@ -107,10 +109,13 @@ export class Zielmarker {
     }
     const kamera = this.szene.cameras.main;
     const sicht = kamera.worldView;
-    const hoehe = sicht.height - this.verdeckt();
-    const sx = (ziel.x + 0.5) * this.kachel - sicht.x;
-    const sy = (ziel.y + 0.5) * this.kachel - sicht.y;
-    const drin = sx >= 0 && sx <= sicht.width && sy >= 0 && sy <= hoehe;
+    const r = this.verdeckt();
+    const breite = sicht.width - r.links - r.rechts;
+    const hoehe = sicht.height - r.oben - r.unten;
+    // Lage im freien Rechteck zwischen den Bedienelementen.
+    const sx = (ziel.x + 0.5) * this.kachel - sicht.x - r.links;
+    const sy = (ziel.y + 0.5) * this.kachel - sicht.y - r.oben;
+    const drin = sx >= 0 && sx <= breite && sy >= 0 && sy <= hoehe;
     this.ueber.setVisible(drin);
     this.pfeil.setVisible(!drin);
     if (drin) {
@@ -119,8 +124,8 @@ export class Zielmarker {
       this.ueber.setPosition(x, ziel.y * this.kachel - UEBER_KACHEL + wippen);
       return;
     }
-    const p = randpunkt(sicht.width, hoehe, { x: sx, y: sy });
-    const fest = festerPunkt(kamera, p.x, p.y);
+    const p = randpunkt(breite, hoehe, { x: sx, y: sy });
+    const fest = festerPunkt(kamera, p.x + r.links, p.y + r.oben);
     this.pfeil.setPosition(fest.x, fest.y).setRotation(p.winkel);
   }
 }

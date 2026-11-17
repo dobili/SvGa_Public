@@ -12,7 +12,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from pipeline.abenteuer.belebungsvorschau import figurbild, rgba
+from pipeline.abenteuer.belebungsvorschau import figurenteile, rgba
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randergaenzt, randnachbar, randsichten
 from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
@@ -26,9 +26,7 @@ from pipeline.abenteuer.kartenbau import (
     lade,
     platziere,
     raster,
-    sitzrichtung,
 )
-from pipeline.abenteuer.kartentiled import blickrichtung
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import (
     HOEHE_STANDARD,
@@ -42,15 +40,13 @@ from pipeline.abenteuer.klippe import (
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektform import formbild, mit_deckkraft
 from pipeline.abenteuer.randspur import randhang, randluecken
+from pipeline.abenteuer.sitzplatz import sitzmoebel
 from pipeline.abenteuer.strasse import markiere
 from pipeline.abenteuer.toenung import schleier
 from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, winterliche_moebel
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import bildname
 
-# Sitzende Figuren wie in der App (oberwelt/sitzrichtung.ts): Rahmenfolge und Anhebung in Pixeln.
-SITZ_RAHMEN = ("rechts", "oben", "links", "unten")
-SITZ_HUB = 6
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
 DUNKEL = (26, 22, 18, 255)
@@ -328,24 +324,16 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
-    teile = [
-        (s["tiefe"], s["x"], s["y"], mit_deckkraft(formbild(moebelbild(privat, moebel[s["name"]]), s), s))
-        for s in gesetzt
-    ]
+    bilder = [formbild(moebelbild(privat, moebel[s["name"]]), s) for s in gesetzt]
+    teile = [(s["tiefe"], s["x"], s["y"], mit_deckkraft(b, s)) for s, b in zip(gesetzt, bilder, strict=True)]
+    sitze = sitzmoebel(gesetzt, moebel, bilder)  # Sitzende rücken auf ihr Möbel (sitzplatz.py)
     if ist_winter(szene):
         # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
         teile = [(t, x, y, winterliche_moebel(b)) for t, x, y, b in teile]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
-    for f in szene.get("figuren", []):
-        figur = next((x for x in ort["figuren"] if x["kennung"].split(".", 1)[1] == f["name"]), None)
-        sitzt = sitzrichtung(f)
-        rahmen = SITZ_RAHMEN.index(sitzt or blickrichtung(f) or "unten")
-        teil = figurbild(privat, figur["sprite"], rahmen, rgba) if figur else None
-        if teil:
-            x, y = f["feld"][0] * K + (K - teil.width) // 2, (f["feld"][1] + 1) * K - teil.height
-            teile.append((f["feld"][1] * K + K // 2, x, y - (SITZ_HUB if sitzt else 0), teil))
-    teile += belebungsteile(szene, privat, rgba)
+    teile += figurenteile(szene, privat, ort["figuren"], sitze, rgba)
+    teile += belebungsteile(szene, privat, rgba, sitze)
     for _, x, y, teil in sorted(teile, key=lambda t: t[0]):
         bild.alpha_composite(teil, (max(0, x), max(0, y)))
     return bild.resize((bild.width * 2, bild.height * 2), Image.NEAREST)

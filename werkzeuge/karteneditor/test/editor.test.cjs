@@ -6,7 +6,7 @@
  * bedient den Editor wie der Autor (Ziehen, Alt-Ziehen, Drehen, Strg+Klick-Mehrfachauswahl,
  * Duplizieren als Gruppe, Löschen, Ebene, Bibliothek, Auswahlliste, Rückgängig, Übertragen auf die
  * Fassung, Neuladen; Figuren und Varianten in figuren.cjs, Kollisionspinsel in pinsel.cjs, Laden in laden.cjs,
- * Übergänge in uebergaenge.cjs, feine Kollision in fein.cjs) und
+ * Übergänge in uebergaenge.cjs, feine Kollision in fein.cjs, Blickrichtung in blick.cjs) und
  * schickt die heruntergeladene Datei durch den Rücklauf.
  *
  * Aufruf (Hauptordner): node werkzeuge/karteneditor/test/editor.test.cjs
@@ -42,6 +42,7 @@ const versatz = require("./versatz.cjs");
 const uebergaenge = require("./uebergaenge.cjs");
 const zuschnitt = require("./zuschnitt.cjs");
 const fein = require("./fein.cjs");
+const blick = require("./blick.cjs");
 
 const K = 16;
 let fehler = 0;
@@ -314,6 +315,7 @@ async function ruecklauf(seite, arbeit) {
   uebergaenge.pruefeRuecklauf(ausgabe, arbeit, pruefe); // Übergänge in orte.json (Editor 1.4)
   zuschnitt.ruecklauf(ausgabe, daten, pruefe); // Zuschnitt (Editor 1.5)
   fein.ruecklauf(ausgabe, pruefe, path.join(szenen, KARTE)); // Kollision fein (Editor 1.6)
+  blick.ruecklauf(ausgabe, path.join(szenen, KARTE), pruefe); // Blickrichtung (Editor 1.7)
 
   kollision.dachbodenRuecklauf(path.join(szenen, DACHBODEN), pruefe); // Treppenabgang
   console.log(ausgabe.split("\n").slice(0, 60).join("\n"));
@@ -348,6 +350,7 @@ async function ruecklauf(seite, arbeit) {
   await kollision.kachelnBearbeiten(seite, pruefe);
   await kollision.treppenabgang(seite, pruefe);
   await figuren.bodenkachelnTrotzSperre(seite, pruefe);
+  await blick.blickrichtung(seite, pruefe); // Blickrichtung (Editor 1.7), vor dem Löschen von hector
   await figuren.hindernisse(seite, pruefe);
   await figuren.loeschenUndKopieren(seite, pruefe);
   await figuren.varianten(seite, pruefe);

@@ -240,6 +240,7 @@
         auswahl.every((t) => t.liste !== "objekte"),
       );
     KE.deckkraftfeld(ziel); // Deckkraft 25 bis 100 % (deckkraft.js)
+    KE.blickfeld(ziel); // Blickrichtung stehender Figuren und Statisten (blick.js)
     KE.zuschnittfeld(ziel); // Zuschnitt: Zahlenfelder, Modus, eigenes Bild (zuschnittfeld.js)
     KE.kollisionsfeld(ziel); // Sperrt / Durchgehbar, Kollision bearbeiten (kollision.js)
     KE.pinselfeld(ziel); // Kollisionspinsel: Zahl der Kacheln, Grund (pinsel.js)

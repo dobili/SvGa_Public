@@ -75,6 +75,9 @@ export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser
 export function beendeOberwelt(spiel: Phaser.Game): void {
   const zerstoere = () => {
     try {
+      // Phaser entfernt die Leinwand erst beim nächsten Bildaufbau; in einem gedrosselten Tab
+      // (WebKit im Hintergrund) standen so beim Reisen kurz zwei Leinwände nebeneinander.
+      spiel.canvas?.remove();
       spiel.destroy(true);
     } catch (fehler) {
       console.warn("Oberwelt konnte nicht sauber beendet werden:", fehler);

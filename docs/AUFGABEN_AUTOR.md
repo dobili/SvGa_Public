@@ -1843,11 +1843,16 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       sondern die Kamera zoomt das Bild in voller Auflösung, und nur die Figuren stehen mit zwei
       Dritteln in der Welt; das Bild ist dasselbe, aber Kollision, Wege und Übergänge blieben
       unverändert. Bitte prüfen: Passt die Figurengröße zu Möbeln und Türen? Läuft das Spiel auf
-      einem älteren Handy noch flüssig (das Bild hat jetzt neunmal so viele Pixel)? Noch zu klein
-      für den Helden (20 Kartenpixel hoch) sind die Türen der Villen Whitlock, Lila und Rot (19 hoch,
-      1 Pixel fehlt), des Diners (Maple Falls, Desert Springs) und des Waschsalons (beide 17 hoch).
-      Meine Empfehlung: diese Gebäude mit dem Maßstab 1,2 zeichnen. Noch nicht umgesetzt, weil sich
-      dabei die Kartenlage um die Gebäude ändert; „ok“ genügt, dann baue ich es.
+      einem älteren Handy noch flüssig (das Bild hat jetzt neunmal so viele Pi      Alle Türen sind
+      jetzt gemessen (217 Gebäude, teils automatisch, teils von Hand). Zu klein für den Helden
+      (11 × 20 Kartenpixel) sind 16 Gebäudebilder an 29 Stellen: die Ladenfassaden mit Glastür
+      (Café in Capital und Riverton, Eisenwaren in Capital, Kramladen in Desert Springs, Lockport und
+      zweimal in Ironwood), das Diner (Maple Falls, Desert Springs) und der Waschsalon in Cedar Creek
+      (alle Tür 17 hoch, nötig Maßstab 1,18), Hardware Store in Crossroads und die beiden Leuchttürme
+      am Weg nach Capital und im Hafen von Silicon Bay (nötig 1,11), die kleine Polizeiwache der
+      Altstadt Silicon Bay (1,25) und die drei Villen in Maple Falls (19 hoch, nötig 1,05).
+      Meine Empfehlung: diese Gebäude mit dem Maßstab 1,2 zeichnen (Polizeiwache 1,25). Noch nicht
+      umgesetzt, weil sich dabei die Kartenlage um die Gebäude ändert; „ok“ genügt, dann baue ich es.
       Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).
 - [ ] RO34. **Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt):** Ein Helfer hat
       alle Innenräume und die meisten Außenkarten von Akt 2 bis 4 nach den neuen Regeln durchgesehen
@@ -1886,5 +1891,20 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Schaffner am Bahndamm schaut weiter nach vorn (zum Gleis zeigte er dir den Rücken).
       Spieltest mit echter Grafik (73 Türen, beide Bildschirmlagen): Der Held war an einigen
       Haustüren hinter dem Haus verschwunden, das ist behoben; die Kinder sind gut erkennbar; die
-      Bildrate liegt bei 52 bis 60 Bildern je Sekunde. In Arbeit: Sitzende sitzen noch nicht
-      überall sichtbar auf dem Stuhl, im Querformat kann der Held unter dem Steuerkreuz liegen.
+      Bildrate liegt bei 52 bis 60 Bildern je Sekunde. Sitzende sitzen jetzt sichtbar auf ihrem Stuhl,
+      Sessel oder ihrer Bank (Spiel und Vorschau rechnen gleich); der Held liegt nie mehr unter
+      Steuerkreuz, Knopfspalte oder Münzanzeige, und in der obersten Kartenreihe bleibt sein Kopf
+      sichtbar.
+      Raumgrößen: 15 Innenräume waren größer als ihr Gebäude außen. 11 passen jetzt (dafür weniger
+      Möbel: Raststätte Crossroads mit offener Küche hinter dem Tresen und WC-Tür statt eigener
+      Räume, Bibliothek Cedar Creek mit einer Regalreihe weniger, Gasthaus Lockport mit kürzerem
+      Tresen, Kaffeehaus London mit zwei statt drei Schachtischen, Umkleide mit vier Spinden, Garage
+      ohne Kisten und Reifen, Wohnwagen 12 × 6); Archiv und Serverraum haben je eine verschlossene
+      Tür als Hinweis auf weitere Räume. Für Museum, Turnhalle und Kantine werden stattdessen die
+      Gebäude außen größer (Museum im alten Bahnhof).
+      Außenkarten ohne Abziehbilder: Motels in Crossroads und Desert Springs, Blockhütten in Summit
+      City und im Pinewood-Camp, Marktstände auf dem Jahrmarkt (Glücksrad und Dosenpyramide fehlen),
+      eine Scheune mit Schild als Turnhalle der Hochebene (Notlösung), ein Stellwerk in Ironwood,
+      ein alter Bahnhof am Canyonpfad. Auf der Hochebene geht die grüne Wiese jetzt weich in den
+      roten Sand über. Im Bayou führt der Quersteg jetzt bis zur Zypresseninsel (vorher waren drei
+      Inseln zu Fuß nicht erreichbar).

@@ -246,12 +246,16 @@
   }
 
   function zeichneMarkierung(ctx, m, zoom) {
-    ctx.fillStyle = FARBE_MARKIERUNG[m.liste];
-    ctx.globalAlpha = 0.75;
-    ctx.beginPath();
-    ctx.arc(m.x + K / 2, m.y + K / 2, K / 2 - 2, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.globalAlpha = 1;
+    // Personen als Standbild in Blickrichtung (blick.js, Editor 1.7), sonst Kreis mit Pfeil.
+    if (!KE.zeichnePerson(ctx, m, K)) {
+      ctx.fillStyle = FARBE_MARKIERUNG[m.liste];
+      ctx.globalAlpha = 0.75;
+      ctx.beginPath();
+      ctx.arc(m.x + K / 2, m.y + K / 2, K / 2 - 2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      KE.zeichnePfeil(ctx, m, K);
+    }
     ctx.fillStyle = "#fff";
     ctx.font = `${Math.max(4, 10 / zoom)}px sans-serif`;
     ctx.textAlign = "center";

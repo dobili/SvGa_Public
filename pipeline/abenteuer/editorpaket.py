@@ -6,7 +6,8 @@ Editors liegt öffentlich in ``werkzeuge/karteneditor/``; die Bilder (u. a. Lime
 und ``daten.js`` (``window.EDITOR_DATEN = {…}``, per ``<script src>`` geladen, damit die Seite auch
 über file:// läuft) mit allen Szenen, der Bibliothek, jedem Bild als data-URL, den Hintergründen
 der Karten und den Boden- und Wandkacheln, dazu (ab Editor 1.4) die Übergänge aller Orte aus
-``orte.json`` (nur Name, Karte, Art, Ziel) und das Verzeichnis der Karten als Ziele.
+``orte.json`` (nur Name, Karte, Art, Ziel) und das Verzeichnis der Karten als Ziele, (ab Editor
+1.7) die Standbilder der Figuren und Statisten je Blickrichtung (``editorpersonen.py``).
 
 Aufruf: ``python -m pipeline.abenteuer.editorpaket PRIVAT ZIEL`` (ZIEL üblich: ``PRIVAT/editor``).
 Optionen: ``--nur maple-falls-diner`` (nur diese Szenen, für Tests), ``--szenen`` und ``--moebel``
@@ -207,6 +208,9 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
     szenen = lade_szenen(szenenordner, nur)
     paare = geschwister(orte, szenen)
     moebel, bilder, befunde = bibliothek(privat, moebelordner)
+    # Standbilder der Personen (Editor 1.7, Blickrichtung R008); braucht Pillow wie die Kacheln.
+    from pipeline.abenteuer.editorpersonen import boegen_der_szene, standbilder
+
     liste = []
     for name, szene in szenen:
         ort = szene["karte"].split(".")[0]
@@ -224,6 +228,7 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
                 "hintergrund": None if variante else hintergrundbild(privat, szene),
                 "geschwister": paare.get(name, []),
                 "figurangaben": figurangaben(orte, ort),
+                "personen": boegen_der_szene(szene, orte),
                 "szene": szene,
             }
         )
@@ -237,6 +242,7 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
         "karten": kartenverzeichnis(orte, szenen, texte),
         "moebel": moebel,
         "bilder": bilder,
+        "personenbilder": standbilder(privat, {b for e in liste for b in e["personen"].values()}),
         "kacheln": kacheln(privat, lade(INHALTE / "materialien.json")),
         "umgebung": list(UMGEBUNG),
         "befunde": befunde,

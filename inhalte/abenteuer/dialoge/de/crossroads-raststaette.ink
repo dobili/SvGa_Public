@@ -64,6 +64,11 @@ VAR kaffeehausGesehen = false
 // Gatterschlüssel mit (13_Wegenetz, S13). Quest crossroads.lieferung.
 ~ lieferungFuerDolores = true
 ~ gatterschluessel = true
+{not darleneGetroffen:
+    ~ darleneGetroffen = true
+    Hinter der Theke steht Darlene. Sechzig, mit den Händen von einer, die vierzig Jahre Kaffee eingeschenkt hat. #sprecher:erzaehler
+    Ich bin Darlene. Du hast mit Nova geredet, dann kann ich dir was anvertrauen. #sprecher:darlene #stimmung:laechelt
+}
 Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen. #sprecher:erzaehler
 Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene #stimmung:laechelt
 Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Nova sagt, du musst nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene #stimmung:laechelt
@@ -75,7 +80,7 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 === nova ===
 {novaBitteGehoert and slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and not kaffeehausGesehen: -> kaffeehaus}
 {novaBitteGehoert:
-    {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut an.} #sprecher:nova #stimmung:nachdenklich
+    {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Ich übe jetzt ohne Stimme im Ohr. Es ist erst mal sehr still.} #sprecher:nova #stimmung:nachdenklich
     -> END
 }
 -> nova_bitte
@@ -121,7 +126,7 @@ Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines
     -> END
 }
 ~ theoTabletZurueck = true
-Am Tresen steht Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler
+Am Fenster steht Theo, gewachsen, einen Bildschirm unter dem Arm. Du legst das Tablet vor ihn hin. #sprecher:erzaehler
 Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo #stimmung:ueberrascht
 * [„Es ist das Beste, was ich je gesehen habe.“]
 - Aber? #sprecher:theo #stimmung:nachdenklich

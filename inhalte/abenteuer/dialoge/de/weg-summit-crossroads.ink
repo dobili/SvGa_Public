@@ -44,7 +44,7 @@ Bell. Rangerin. In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst
 
 === bell_regel ===
 ~ varianteAtomschachGelernt = true
-Atomschach. Wer schlägt, löst eine Explosion aus. Alle Figuren rund um das Feld fliegen vom Brett, die eigenen auch. Nur Bauern bleiben stehen. #sprecher:bell #stimmung:laechelt
+Atomschach. Wer schlägt, löst eine Explosion aus: Die schlagende Figur und alle Figuren rund um das Feld fliegen vom Brett, eigene auch, nur Bauern nicht. #sprecher:bell #stimmung:laechelt
 Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luft. #sprecher:bell #stimmung:nachdenklich
 Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
 Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose #stimmung:laechelt
@@ -171,7 +171,7 @@ Im Endspiel zählt jedes Tempo, {held}, und hier zählt die Natur mit. #sprecher
 + [„Ich bin dabei.“]
     ~ beginneAufgaben("wegSummitCrossroads.geysirblitz")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Old Patience wartet auf niemanden. Aber sie kommt wieder. #sprecher:bell #stimmung:laechelt
     -> END
 

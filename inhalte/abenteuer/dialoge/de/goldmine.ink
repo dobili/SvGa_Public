@@ -38,7 +38,7 @@ VAR ambroseSprichtWieder = false
 === logbuch_gefunden ===
 ~ logbuchGefunden = true
 Auf dem Tisch in der Kammer liegt ein Logbuch, die Seiten gewellt vom Wasser. Die letzte Eintragung ist von 1866. #sprecher:erzaehler
-„Ein Fremder kam in die Mine, setzte sich hier hin und schrieb bei Kerzenlicht einen Brief. Am Morgen war er fort.“ #sprecher:erzaehler
+„Februar 1866. Gideon, der Schmied, holt zwei Kerzen für den kranken Fremden über dem Laden. Er schreibe noch einen Brief.“ #sprecher:erzaehler
 ~ gibFund("logbuch1866")
 Daneben steht eine alte Grubenlampe. #sprecher:erzaehler
 ~ gibFund("grubenlampe1866")

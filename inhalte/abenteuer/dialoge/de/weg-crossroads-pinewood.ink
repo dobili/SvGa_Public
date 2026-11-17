@@ -140,7 +140,8 @@ Der Fernwanderweg führt zurück aus dem Wald, zur Kreuzung in der Prärie. #spr
 {lebendschachGesehen: -> lebendschach_angebot}
 ~ lebendschachGesehen = true
 Auf der Lichtung ist ein Brett aus Rasen und Kies ausgelegt. Dreißig Kinder in weißen und schwarzen Westen warten an den Rändern. #sprecher:erzaehler
-Der Feldherr der Weißen liegt mit Fieber im Zelt. Du kommst wie gerufen. Kannst du kommandieren? #sprecher:ezra #stimmung:laechelt
+Ezra, Betreuer im Camp. Unser Feldherr der Weißen liegt mit Fieber im Zelt. #sprecher:ezra #stimmung:laechelt
+Du kommst wie gerufen. Kannst du kommandieren? #sprecher:ezra #stimmung:laechelt
 -> lebendschach_angebot
 
 === lebendschach_angebot ===
@@ -149,7 +150,7 @@ Opfere niemanden ohne Not, {held}. Diese Figuren haben eine Stimme. #sprecher:am
 + [„Ich kommandiere.“]
     ~ beginneAufgaben("wegCrossroadsPinewood.lebendschach")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Wir üben bis zum Sommerfest. Du findest uns hier. #sprecher:ezra #stimmung:laechelt
     -> END
 

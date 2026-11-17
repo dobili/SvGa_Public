@@ -121,7 +121,7 @@ Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines
     -> END
 }
 ~ theoTabletZurueck = true
-Am Fenster sitzt Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler
+Am Tresen steht Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler
 Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo #stimmung:ueberrascht
 * [„Es ist das Beste, was ich je gesehen habe.“]
 - Aber? #sprecher:theo #stimmung:nachdenklich
@@ -135,7 +135,7 @@ Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 // ---------------------------------------------------------------- Varianten-Tisch
 
 === varianten_tisch ===
-An einem runden Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
+An einem langen Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
 {not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
     Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene #stimmung:neutral
@@ -164,7 +164,7 @@ Was du schon kennst: #sprecher:erzaehler
     Falke und Bison, von Kira auf der Hochebene. Die zwei Figuren liegen obenauf in der Kiste. #sprecher:erzaehler
 }
 {varianteBlindschachGelernt:
-    Blindschach, von Greta an der Hütte. Eine Frau sagt ihre Züge an und sieht dabei aus dem Fenster. #sprecher:erzaehler
+    Blindschach, von Greta an der Hütte. Eine Frau sagt ihre Züge an und sieht dabei an die Decke. #sprecher:erzaehler
 }
 {varianteSchach960Gelernt:
     Schach960, von Mabel im Musikhaus. Jemand würfelt die Grundreihe aus und stöhnt. #sprecher:erzaehler
@@ -190,7 +190,7 @@ Was du schon kennst: #sprecher:erzaehler
     -> END
 }
 ~ postkarteGefunden = true
-Neben der Kasse steht ein Drehständer mit Postkarten. Auf einer sind alle Städte zugleich: Maple Falls, die Brücke von Cedar Creek, der Pavillon, die Werkhallen, die Glasbrücke, das Musikhaus, der Canyon, die Seilbahn. #sprecher:erzaehler
+Neben den Regalen steht ein Drehständer mit Postkarten. Auf einer sind alle Städte zugleich: Maple Falls, die Brücke von Cedar Creek, der Pavillon, die Werkhallen, die Glasbrücke, das Musikhaus, der Canyon, die Seilbahn. #sprecher:erzaehler
 Wir waren überall! Die kommt ins Tagebuch. Ganz hinten, auf die letzte Seite. #sprecher:juno #stimmung:froh
 ~ gibFund("postkarteStaedte")
 -> END

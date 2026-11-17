@@ -1574,3 +1574,11 @@ Gutachten `weg-riverton-ironwood-1-3.md`, Befund 1: Die Fabrik im Norden war das
 Kantine in Ironwood. Jetzt steht dort die flache alte Werkhalle mit Wellblechdach (`wr5Fabrikhalle`, Feld
 (1, 7)), dahinter zwei Schornsteine. Gilt auch für den Zustand „graffiti“. Befund 3 (Silo): bleibt, es ist
 schon das gekürzte Bild `silo_kurz` (neun Felder).
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `riverton.wohnwagen` (14 × 9): sechs Reihen tief; Bett mit Bord und Pokalen, Nasszellentür, Küchenzeile, Sitzecke unter dem Fenster, Kuriertasche in der Ecke, Teppich vor dem Bett (kein Kurierrad).
+- `riverton.schuppen` (beide Fassungen): eine Reihe tiefer.
+- `lockport.gasthaus` (23 × 14): Kegelbahn bis Spalte 14, kurzer Tresen mit drei Hockern, Küchentür im Eck; Fässer und Holzstapel sind weg; sechs Tische mit Gängen dazwischen (einer mit nur einem Stuhl).

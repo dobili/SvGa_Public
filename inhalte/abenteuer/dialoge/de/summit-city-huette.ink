@@ -141,7 +141,7 @@ Was willst du? #sprecher:ward #stimmung:nachdenklich
 // Kapitel 52, vor der Partie: Mama kommt zum ersten Mal den Pfad herauf.
 === ward_laurie ===
 ~ wardLaurieGesagt = true
-Victor sitzt am Fenster, in einem Pullover von Mr. Haraldsen, der ihm zu groß ist. Die weiße Jacke hat er zurückgegeben. #sprecher:erzaehler
+Victor sitzt am Kamin, in einem Pullover von Mr. Haraldsen, der ihm zu groß ist. Die weiße Jacke hat er zurückgegeben. #sprecher:erzaehler
 Neben ihm sitzt Mama. Sie ist den Pfad heraufgekommen, zum ersten Mal. Sie und Ward sehen einander an, quer durch die Hütte. #sprecher:erzaehler
 Laurie. #sprecher:ward #stimmung:nachdenklich
 Mrs. Ward. #sprecher:mutter #stimmung:nachdenklich
@@ -277,7 +277,7 @@ Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätt
 ~ victorKriseGesehen = true
 Am fünften Tag ist Victor an der Reihe. Der Mann im grauen Anzug wartet draußen. In die Hütte lässt Ward ihn nicht. #sprecher:erzaehler #musik:geraet
 Hier drin sind Spieler und ein Feuer. Sie sind keines von beiden. #sprecher:ward #stimmung:bitter
-Du sitzt am Fenster. Victor legt nichts auf den Tisch. Seine rechte Hand hat er in der Jackentasche. #sprecher:erzaehler
+Du sitzt am Clubtisch. Victor legt nichts auf den Tisch. Seine rechte Hand hat er in der Jackentasche. #sprecher:erzaehler
 Nach dreißig Zügen hat er einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt. Die Brücke. #sprecher:erzaehler
 * [Zusehen]
 - Er zieht nicht. Er hält die Schulter schief, als horche er auf etwas. Es summt. Kurz. Dann zwei lange. #sprecher:erzaehler #klang:geraet_summen
@@ -328,7 +328,7 @@ Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
 === kit_reihe ===
 {not kitGetroffen:
     ~ kitGetroffen = true
-    Am Fenster sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger. #sprecher:erzaehler
+    Am Clubtisch sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger. #sprecher:erzaehler
     Kit. Ward sagt, ich soll dir die Bauern zeigen. Sie sagt nie bitte. #sprecher:kit #stimmung:laechelt
 }
 Der Bauer läuft, der König rennt. Wer ist schneller? Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit #stimmung:laechelt

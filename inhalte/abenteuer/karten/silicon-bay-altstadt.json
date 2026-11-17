@@ -12601,7 +12601,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "verkauft Eis, obwohl es schneit"
+       "value": "verkauft Eis, obwohl Winter ist"
       },
       {
        "name": "wann",
@@ -12682,7 +12682,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "baut einen Schneemann im Park"
+       "value": "baut im Park eine Burg aus Laub"
       },
       {
        "name": "wann",
@@ -12875,7 +12875,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "rollt eine Schneekugel für den Schneemann"
+       "value": "rollt einen Ball über den Rasen"
       },
       {
        "name": "wann",

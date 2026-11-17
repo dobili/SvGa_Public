@@ -864,3 +864,12 @@ aus FORTSCHRITT, Widerspruch genügt): Die Gleise sind Abstellgleise des Güterb
 im Osten an zwei Prellböcken (`cc8PrellbockQuerRechts` bei (76, 48) und (76, 50)), dahinter Busch und
 Hecke (77–78, 49–52). Zum Steinbruch führt nur der Steinbruchweg (Reihen 57–58); der Stein kam früher
 per Laster in die Stadt. Gilt für Grundkarte und beide Zustände (`-vermietet`, `-meisterschaft`).
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `ironwood.mamasZimmer` (14 × 13): Wohnküche mit Kühlschrank, einem Herd und Theke mit Spüle unter dem Fenster, Küchenschrank und Garderobenschrank an der Westwand, runder Tisch mit zwei Stühlen. Zweiter Herd, Ofen, Sessel und Stehlampe sind weg. Mamas Zimmer: Bett, Rahmen mit dem Partieformular, Kleiderschrank, Schreibtisch mit Lampe, runder Teppich.
+- `ironwood.umkleide` (14 × 12): vier Spinde statt sechs, sonst wie beschrieben.
+- `ironwood.museum` (23 × 15): Schalterhalle mit Schalter, Foto vom Bahnhof, der stehen gebliebenen Bahnhofsuhr und dem Fahrplan; Läufer von der Tür zur Nordwand, Pult von Mr. Teague, eine Bank; Vitrinen Lokmodell, Zeitung 1858, Laterne, leeres Fach, Fahrkarten; Postsäcke neben dem Gepäckkarren. Nebenraum: Fotos Brückenbau, Werk, Arbeiter, Infotafel, Vitrine mit Schaffnermütze und Bank, Schaukästen mit Werkzeug und Glasfunke, zwei Pflanzen. Außen braucht das Museum ein Haus von mindestens 10 × 4 Kacheln.
+- `ironwood.kantine`: unverändert (34 × 16 Boden); außen braucht sie ein Gebäude von mindestens 22 × 8.

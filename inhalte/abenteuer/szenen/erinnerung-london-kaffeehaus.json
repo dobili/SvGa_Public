@@ -2,7 +2,7 @@
   "karte": "erinnerungLondon.kaffeehaus",
   "datei": "karten/erinnerung-london-kaffeehaus.json",
   "art": "innen",
-  "beschreibung": "Ein Kaffeehaus am Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia), 12 × 13 Kacheln (schmal wie das Haus außen, R065): dunkles Holz, alte Dielen, eine Lederbank an der Nordwand, ein Ofen, Bilder an den Wänden. An runden Tischen spielen Herren Schach bei Kerzenlicht, andere lesen Zeitung; es riecht nach Kaffee. In der Mitte der Tisch, um den sich alle drängen: Anderssen gegen Kieseritzky. Rechts die Theke mit dem Kellner (in allen Varianten). Die Tür liegt in der Südwand. Zwei Schachtische, der berühmte in der Mitte, ein zweiter in der Ecke rechts unten, Theke rechts, Zeitungsständer links.",
+  "beschreibung": "Ein Kaffeehaus am Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia), 12 × 13 Kacheln (schmal wie das Haus außen, R065): dunkles Holz, alte Dielen, eine Lederbank an der Nordwand, ein Ofen, ein Bild und eine große Wanduhr an der Wand (dieselbe wie die Bahnhofsuhr in Riverton, über sie geht es zurück). An runden Tischen spielen Herren Schach bei Kerzenlicht, andere lesen Zeitung; es riecht nach Kaffee. In der Mitte der Tisch, um den sich alle drängen: Anderssen gegen Kieseritzky. Rechts die Theke mit dem Kellner (in allen Varianten). Die Tür liegt in der Südwand. Zwei Schachtische, der berühmte in der Mitte, ein zweiter in der Ecke rechts unten, Theke rechts, Zeitungsständer links.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -38,7 +38,7 @@
       "feld": [4, 1]
     },
     {
-      "moebel": "gt7Bild",
+      "moebel": "rv5Bahnhofsuhr",
       "feld": [7, 1],
       "an_wand": true
     },
@@ -134,7 +134,7 @@
     },
     {
       "name": "rueckkehr",
-      "feld": [4, 4]
+      "feld": [7, 3]
     }
   ],
   "figuren": [

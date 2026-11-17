@@ -5531,7 +5531,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "dreht Zuckerwatte auf Stäbchen"
+       "value": "verkauft am Gebäckstand Krapfen und Zuckerwatte"
       },
       {
        "name": "wann",
@@ -5775,7 +5775,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "stellt die Dosenpyramide wieder auf"
+       "value": "ruft Besucher an die Süßigkeitenbude"
       },
       {
        "name": "wann",

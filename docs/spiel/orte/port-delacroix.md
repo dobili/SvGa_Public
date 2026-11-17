@@ -36,7 +36,7 @@ Häusern das Marschland mit dem Pfad zum Bayou.
 | `portDelacroix.aussen`    | 80 × 58 | Westrand (Deich) → Rampe → Turnhalle 45 | ≈ 13 s      |
 |                           |         | Rampe → Kai → Musikhaus 52              | ≈ 15 s      |
 |                           |         | Bahnsteig → Bayou (Ostrand) 80          | ≈ 23 s      |
-| `portDelacroix.turnhalle` | 26 × 16 | Tür → Lehrertisch 12                    | ≈ 3 s       |
+| `portDelacroix.turnhalle` | 22 × 16 | Tür → Lehrertisch 12                    | ≈ 3 s       |
 | `portDelacroix.werkstatt` | 20 × 13 | Tür → Hobelbank 8                       | ≈ 3 s       |
 | `portDelacroix.musikhaus` | 20 × 14 | Tür → Nordwand 10                       | ≈ 3 s       |
 
@@ -415,3 +415,9 @@ Port Delacroix hat den nassen Winter der Story-Bibel ohne Schnee: Kein `"jahresz
 (beide Zustände der Außenkarte, ebenso der Deich auf dem Weg von Silicon Bay); auf der Außenkarte
 läuft das Dauergeräusch `klang/regen.m4a` (Regen auf Planen, aus Riverton). Bildwunsch (offen):
 Regentropfen als Teilchen, Pfützen und nass glänzendes Pflaster als Bodenbilder.
+
+## Stand der Innenräume nach R065 (Raumgröße, Nebenchat mittel-2, 17.11.2026)
+
+Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
+
+- `portDelacroix.turnhalle` (22 × 16): Mittelgang und rechter Rand je eine Spalte schmaler, acht Klapptische bleiben, ein Basketballkorb. Lehrertisch mit Spendenkasse etwas weiter rechts. Außen braucht die Halle ein größeres Bild (Vorschlag `pd6Turnhalle`, 13 × 8), siehe raumgroesse_16-11.md.

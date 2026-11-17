@@ -14892,7 +14892,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "macht Pause neben seinem Bus"
+       "value": "macht Pause an der Bordsteinkante"
       },
       {
        "name": "wann",

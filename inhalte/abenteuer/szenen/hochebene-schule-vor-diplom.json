@@ -61,7 +61,8 @@
   "objekte": [
     {
       "moebel": "wr5Scheune",
-      "feld": [9, 6], "versatz": [6, 0],
+      "feld": [9, 6],
+      "versatz": [6, 0],
       "id": "halle"
     },
     {
@@ -538,7 +539,7 @@
       "eigenschaften": {
         "von": "13,18",
         "bis": "13,18",
-        "tun": "fegt den Hof vor der Turnhalle",
+        "tun": "fegt den Hof vor der Scheune mit dem Turnhallenschild",
         "wann": "tag",
         "sagt": "statist.hochebene.schule.hausmeister"
       }

@@ -1851,8 +1851,12 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       (alle Tür 17 hoch, nötig Maßstab 1,18), Hardware Store in Crossroads und die beiden Leuchttürme
       am Weg nach Capital und im Hafen von Silicon Bay (nötig 1,11), die kleine Polizeiwache der
       Altstadt Silicon Bay (1,25) und die drei Villen in Maple Falls (19 hoch, nötig 1,05).
-      Meine Empfehlung: diese Gebäude mit dem Maßstab 1,2 zeichnen (Polizeiwache 1,25). Noch nicht
-      umgesetzt, weil sich dabei die Kartenlage um die Gebäude ändert; „ok“ genügt, dann baue ich es.
+      Umgesetzt (Widerspruch genügt): Die drei Villen sind 1,1-mal so groß,
+      Eisenwaren in Crossroads und Capital, Diner in Desert Springs, Rasthaus, Kramladen in
+      Lockport, Café in Capital (tauscht dafür den Platz mit dem Modeladen), Eisenwaren der Altstadt
+      und beide Leuchttürme 1,2- bis 1,25-mal; am Leuchtturm am Seeweg läuft der Weg dafür zwei
+      Reihen tiefer. Noch zu klein, weil der Platz fehlt (wird gerade gelöst): Diner Maple Falls,
+      Waschsalon, Café Riverton, Kramläden in Ironwood und Desert Springs, Polizeiwache der Altstadt.
       Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).
 - [ ] RO34. **Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt):** Ein Helfer hat
       alle Innenräume und die meisten Außenkarten von Akt 2 bis 4 nach den neuen Regeln durchgesehen
@@ -1908,3 +1912,14 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       ein alter Bahnhof am Canyonpfad. Auf der Hochebene geht die grüne Wiese jetzt weich in den
       roten Sand über. Im Bayou führt der Quersteg jetzt bis zur Zypresseninsel (vorher waren drei
       Inseln zu Fuß nicht erreichbar).
+- [ ] RO36. **Pavillon in Riverton (Rückfrage):** Außen steht ein offener achteckiger Pavillon mit
+      Geländer, innen ist Slicks Club ein Holzsaal mit Wänden und Fensterreihe (22 × 15 Kacheln, mit
+      vier Clubtischen und dem Bodenbrett; kleiner geht es nicht). Damit innen und außen
+      zusammenpassen, wird der Pavillon außen gerade etwa 1,4-mal so groß gezeichnet. Offen ist
+      die Form: Soll der Pavillon außen ein geschlossener Holzsaal werden (neues Bild), oder soll
+      der Club innen ein offener Pavillon mit Geländer statt Wänden sein? Meine Empfehlung: innen
+      offen mit Geländer und Blick auf den Fluss, weil der Pavillon in der Geschichte ein Treffpunkt
+      im Freien ist; das baue ich, wenn du zustimmst.
+      Nebenbei gemessen (Leistung nach Variante B): Auf einem künstlich gebremsten Gerät (zehnfach
+      langsamer) läuft das Spiel mit 37 bis 45 Bildern je Sekunde, nur etwa 2 weniger als vorher;
+      eine eigene Grafikstufe ist nicht nötig. Wenn es auf deinem Handy doch ruckelt, sag Bescheid.

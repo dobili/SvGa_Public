@@ -740,6 +740,18 @@
     "modern"
   ],
   "ufer": "stein",
+  "sperren": [
+    [27, 32],
+    [28, 32],
+    [29, 32],
+    [30, 32],
+    [31, 32],
+    [32, 32],
+    [33, 32],
+    [34, 32],
+    [35, 32],
+    [36, 32]
+  ],
   "datei": "karten/lockport-aussen-steg-offen.json",
   "zustand_der_karte": "lockportSteg"
 }

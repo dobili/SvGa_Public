@@ -89,3 +89,10 @@ wer errät, dass Ike im Kasten sitzt, bekommt den Fund `geheimnisTuerke` mit zeh
 | `schachautomat` | (24, 17) | (22, 13) | (20, 17) |
 | `riesenrad`     | (21, 14) | (33, 14) | (7, 14)  |
 | `losbude`       | (6, 22)  | (31, 22) | (5, 22)  |
+
+## Stand Text gegen Karte (Nebenchat mittel-2, 17.11.2026)
+
+Auf dem heutigen Festplatz fehlen die Bude Dosenwerfen, ein Glücksrad und ein Zuckerwattestand; die
+Zuckerwattefrau steht am Gebäckstand. Die Statistentexte sind darauf angepasst (Zuckerwattefrau
+verkauft am Gebäckstand Krapfen und Zuckerwatte, der Dosenwirt ruft Besucher an die Süßigkeitenbude).
+Kommen die Buden zurück auf die Karte, können die alten Texte wieder gelten.

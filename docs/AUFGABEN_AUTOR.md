@@ -1053,6 +1053,7 @@ Trainerfrage, einer Karte oder einer Partie (bloßes Öffnen nicht).
       (Strahlenkranz mit 12) im Regal „Abzeichen“. Gefallen Namen und Bilder?
 - [ ] N2137. **Übungsplan ändern:** Buch › Karte „Heute“ › Reiter „Plan“: einen gespeicherten Plan
       ändern und dann „Plan entfernen“. Klappt beides?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße): Plan ändern (Freitag dazu) und „Plan entfernen“ (neuer Test).
 - [ ] N2138. **Kalender auf dem iPhone:** „In meinen Kalender“ (und, wo es angeboten wird,
       „Teilen“) gibt die Datei „schach-ueben.ics“ weiter. Lässt sich der Termin übernehmen, mit
       Wiederholung an deinen Tagen, 20 Minuten lang, Erinnerung zur Startzeit, Titel „Schach üben“
@@ -1264,6 +1265,7 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       erreichst du nach der Ankunft (zu Fuß wie mit der Monatskarte am Kanalweg) das Südufer mit Gasthaus,
       Kai, Booten und Pumpe erst über den Steg nach Imogens Tafel: So will es die Geschichte (Herbstwartung),
       Widerspruch genügt. Rückmeldung je Ort genügt, etwa „N2634 Lockport: Boot schwebt“.
+      Von Claude vorgeprüft am 17.11.: Alle 73 Türübergänge mit Innenraum führen auf die Zielkarte, hoch und quer, mit echter Grafik (Spieltest 17.11.); offen für dich: Eindruck je Ort.
 - [ ] N2635. **Karteneditor am PC (16.11.2026):** Im privaten Repository den Ordner `editor`
       herunterladen (auf GitHub: Code, Download ZIP, dann entpacken) und `editor/index.html` mit
       Doppelklick in Chrome oder Edge öffnen. Links eine Karte wählen, zum Beispiel „Maple Falls –

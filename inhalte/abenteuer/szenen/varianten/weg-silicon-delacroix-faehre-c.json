@@ -933,9 +933,8 @@
       "feld": [15, 12]
     },
     {
-      "moebel": "ld5Ruderboot",
-      "feld": [9, 12],
-      "bauteil_ok": true
+      "moebel": "fzRettungsboot",
+      "feld": [10, 12]
     },
     {
       "moebel": "ld5Kahn",

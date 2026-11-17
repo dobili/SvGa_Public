@@ -967,9 +967,8 @@
       "feld": [12, 52]
     },
     {
-      "moebel": "ld5Ruderboot",
-      "feld": [15, 38],
-      "bauteil_ok": true
+      "moebel": "fzRettungsboot",
+      "feld": [16, 38]
     },
     {
       "moebel": "sd6LiegestuhlGrau",

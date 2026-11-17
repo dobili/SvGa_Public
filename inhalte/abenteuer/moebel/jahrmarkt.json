@@ -375,6 +375,38 @@
       "zustand": "gebraucht",
       "stil": "rustikal"
     },
+    "n6GluecksradBude": {
+      "quelle": "spiel/eigene/gluecksrad_bude.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "beschreibung": "Losbude mit Glücksrad von schräg oben: rot-weiß gestreiftes Stoffdach mit Tiefe, zwei Holzpfosten, Holztresen mit leerer Platte, an der Rückwand das Glücksrad mit acht bunten Feldern, rechte Seitenwand im Schatten (Gemini 17.11.2026, Auftrag 12 Variante A; ersetzt das Abziehbild n6BudeLose, Regel 10.71)"
+    },
+    "n6Gluecksrad": {
+      "quelle": "spiel/eigene/gluecksrad.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "beschreibung": "Freistehendes Glücksrad auf einem Holzpodest mit gestreifter Schürze, Podest von oben sichtbar (Gemini 17.11.2026, Auftrag 12 Variante B)"
+    },
+    "n6Dosenpyramide": {
+      "quelle": "spiel/eigene/dosenpyramide.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "beschreibung": "Pyramide aus sechs Blechdosen (rot, silbern, blau) zum Dosenwerfen, ohne Tresen; steht auf dem Tresen der Dosenbude (Gemini 17.11.2026, Auftrag 12)"
+    },
     "n6Zuckerwattewagen": {
       "quelle": "spiel/eigene/zuckerwattewagen.png",
       "breite": 32,

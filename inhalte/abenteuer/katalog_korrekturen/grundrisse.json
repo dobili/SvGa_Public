@@ -11750,6 +11750,35 @@
     },
     "nur_pfad": true
   },
+  "spiel/eigene/turnhalle_hochebene.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 10,
+      "tiefe": 5,
+      "geschosse": 1,
+      "tueren": [
+        {
+          "von": 4,
+          "bis": 5
+        }
+      ],
+      "fenster": {
+        "EG": [
+          {
+            "von": 2,
+            "bis": 3
+          },
+          {
+            "von": 7,
+            "bis": 8
+          }
+        ]
+      },
+      "hinweis": "Turnhalle der Hochebene: Backstein mit Bogendach aus Blech, Doppeltür links der Mitte, je zwei hohe Fenster links und rechts",
+      "aufgang": null
+    },
+    "nur_pfad": true
+  },
   "spiel/eigene/wartehaus_hinten.png": {
     "grundriss": {
       "form": "sonder",

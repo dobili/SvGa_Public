@@ -22,25 +22,37 @@ nachstellen lässt.
   „Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße)“, bei FEHLER „Vorgeprüft:
   Abweichung …“.
 
-## Gesamt (alle 273 offenen Punkte)
+## Gesamt (alle 273 offenen Punkte, nach Runde 2)
 
-| Ergebnis  | Anzahl |
-| --------- | ------ |
-| BESTANDEN | 108    |
-| FEHLER    | 0      |
-| ÜBERHOLT  | 5      |
-| NUR AUTOR | 113    |
-| OFFEN     | 47     |
+| Ergebnis                        | Anzahl |
+| ------------------------------- | ------ |
+| BESTANDEN                       | 152    |
+| FEHLER (in Runde 2 behoben)     | 1      |
+| ABWEICHUNG (Frage an den Autor) | 1      |
+| ÜBERHOLT                        | 6      |
+| NUR AUTOR                       | 113    |
+| OFFEN                           | 0      |
 
-- Der Autor kann die 108 bestandenen Punkte abhaken, wenn ihm die Zeile genügt. Steht dort „nicht
+- Der Autor kann die 152 bestandenen Punkte abhaken, wenn ihm die Zeile genügt. Steht dort „nicht
   geprüft“ oder „offen für dich“, bleibt genau dieser Teil.
-- Die 5 überholten Punkte beschreiben einen älteren Stand und können ebenfalls weg.
-- Die 47 offenen Punkte brauchen aufwendige Zustände, etwa viele ausgewertete Partien,
-  Zeitgrenzen oder den Flugmodus. Sie sind die Kandidaten für weitere Tests.
-- Neue dauerhafte Prüfungen aus diesem Durchgang:
-  - `varianten.spec.ts`: Haken der Engine-Folgen vorab an.
-  - `varianten-stufe4.spec.ts`: eigene Züge an einer Abbildung als Variante.
-  - `wochenziel.spec.ts`: Plan ändern und entfernen.
+- Die 6 überholten Punkte beschreiben einen älteren Stand und können ebenfalls weg.
+- Runde 2 (Abschnitt ganz unten) hat alle 47 offenen Punkte maschinell geprüft. Dafür setzt die Hilfe
+  `app/tests/e2e/zustand.ts` Zustände direkt in den Speicher; dazu kommen die gefälschte Uhr
+  (`page.clock`) und der Flugmodus (`offlinehilfen.ts`). Dabei ist ein Fehler der App aufgefallen
+  und behoben (N2495). N2598 ist eine Modellfrage an den Autor.
+- Neue dauerhafte Prüfungen:
+  - Runde 1:
+    - `varianten.spec.ts`: Haken der Engine-Folgen vorab an.
+    - `varianten-stufe4.spec.ts`: eigene Züge an einer Abbildung als Variante.
+    - `wochenziel.spec.ts`: Plan ändern und entfernen.
+  - Runde 2:
+    - `heute-zustaende.spec.ts`
+    - `auswertung-varianten.spec.ts`, `auswertung-kurve.spec.ts`
+    - `taktik-wiederholung.spec.ts`, `trainer-feinheiten.spec.ts`
+    - `offline-zusatz.spec.ts`
+    - `sicherung-zustaende.spec.ts`
+    - `zeitablauf.spec.ts`
+    - `profil-und-seiten.spec.ts`
 
 ## Paket 1: N2616 bis N2573 (40 Punkte)
 
@@ -351,6 +363,84 @@ Fast alle Punkte dieses Teils fragen nach Eindruck, Geschmack oder Gefühl („G
 | N2636  | NUR AUTOR | –                                                    | Frage nach Eindruck, Geschmack oder Gefühl.              |
 
 Zusammen: 1 BESTANDEN, 0 FEHLER, 84 NUR AUTOR, 6 OFFEN.
+
+## Runde 2: die 47 offenen Punkte (47 Punkte)
+
+Auftrag des Hauptchats am 17.11. nachmittags: die OFFEN-Punkte maschinell prüfbar machen. Belege sind die neuen e2e-Tests (Dateinamen ohne `.spec.ts`).
+
+| Nummer | Ergebnis        | Beleg/Foto                   | Hinweis                                                                              |
+| ------ | --------------- | ---------------------------- | ------------------------------------------------------------------------------------ |
+| N2440  | BESTANDEN       | heute-zustaende              | Kapitel 0 bis 5 gelesen, Kapitel 6 begonnen: Übungen Kapitel 5.                      |
+| N2441  | BESTANDEN       | heute-zustaende              | Ziel Kapitel 3 angeheftet.                                                           |
+| N2442  | BESTANDEN       | heute-zustaende              | 200 fällig: „20 in etwa 14 Min“, Satz im Vorlesetext.                                |
+| N2443  | BESTANDEN       | heute-zustaende              | Letzte Kachel „Partie“.                                                              |
+| N2590  | BESTANDEN       | heute-zustaende              | Kurzplan unter den Vorschlägen, öffnet die Kurzpläne.                                |
+| N2591  | BESTANDEN       | heute-zustaende              | Startweg „Spielen“: Partie vorn.                                                     |
+| N2592  | BESTANDEN       | heute-zustaende              | Wertung 900: Bots bis Stufe 5, Kapitelziel, keine Engine-Bots.                       |
+| N2598  | ABWEICHUNG      | heute-zustaende              | Eröffnung bestanden; Endspiel nie, Blitz nie (Spanne des Modells über SCHMAL).       |
+| N2310  | BESTANDEN       | heute-zustaende              | Balken öffnet die Kurve mit Spanne.                                                  |
+| N2588  | BESTANDEN       | auswertungbilder (bestehend) | Nur der echte Patzer der Engine hat eine Kachel.                                     |
+| N2603  | BESTANDEN       | auswertung-varianten         | Findezeile mit „Üben“ an 8. Sc3?, nicht am Theoriezug.                               |
+| N2481  | BESTANDEN       | auswertung-varianten         | Verloren mit besten Zügen: kein „?“.                                                 |
+| N2509  | BESTANDEN       | auswertung-varianten         | Engine-Abzweige an beiden Fehlern und am Patzer der Engine.                          |
+| N2510  | BESTANDEN       | auswertung-varianten         | „1 eigene Variante“ in Auswertung und Liste.                                         |
+| N2512  | BESTANDEN       | auswertung-varianten         | Probepartie mit Weiß, „Verwerfen“ speichert nichts.                                  |
+| N2571  | BESTANDEN       | auswertung-varianten         | Zugarten sofort, Analyse nur 3 neue Stellungen.                                      |
+| N2580  | BESTANDEN       | auswertung-varianten         | Balken mit Zahl im Baum.                                                             |
+| N2565  | BESTANDEN       | auswertung-varianten         | Analyse läuft nach dem Verlassen weiter.                                             |
+| N2567  | BESTANDEN       | auswertung-varianten         | „[%eval]“: Balken sofort, Zugarten nach der Analyse.                                 |
+| N2329  | ÜBERHOLT        | bestehende Tests             | Zurücknehmen nach dem Ende und alte Knöpfe gibt es nicht mehr.                       |
+| N2325  | BESTANDEN       | auswertung-kurve             | Finger und zwei Finger über CDP.                                                     |
+| N2145  | BESTANDEN       | auswertung-varianten         | „30 Halbzüge ohne Patzer“.                                                           |
+| N2594  | BESTANDEN       | taktik-wiederholung          | „Ebenfalls dabei: Hinlenkung.“; Wortlaut bei einem Motiv „Nicht ganz. Das Motiv: …“. |
+| N2595  | BESTANDEN       | taktik-wiederholung          | Dh1+ löst 7.60, Sc5+ bleibt falsch.                                                  |
+| N2586  | BESTANDEN       | Erkundung (Zufallsrunden)    | Meldung wörtlich wie beschrieben.                                                    |
+| N2444  | BESTANDEN       | trainer-feinheiten           | Rechnung nennt die Seite unter dem Brett.                                            |
+| N2531  | BESTANDEN       | trainer-feinheiten           | Gedächtnis je Quelle.                                                                |
+| N2526  | BESTANDEN       | trainer-feinheiten           | Steckbrief und Wiener Partie aus „Nur Praxis“.                                       |
+| N1075  | BESTANDEN       | taktik-wiederholung          | Lichess-Aufgabe, falscher Zug.                                                       |
+| N1013  | BESTANDEN       | trainer-feinheiten           | Pfeile in „Zug erraten“.                                                             |
+| N2553  | BESTANDEN       | offline-zusatz               | Praxis-Runde im Flugmodus verlängert.                                                |
+| N1078  | BESTANDEN       | offline-zusatz               | Zusatzaufgaben im Flugmodus.                                                         |
+| N1064  | BESTANDEN       | offline-zusatz               | Zusatzpartien im Flugmodus.                                                          |
+| N2465  | BESTANDEN       | sicherung-zustaende          | „Partien: 1“.                                                                        |
+| N2495  | FEHLER, behoben | sicherung-zustaende          | „Neue Stufe erreicht“ nach dem Einspielen; jetzt vergessen (vergissGefeierteStufe).  |
+| N2467  | BESTANDEN       | sicherung-zustaende          | 0:30 Uhr Berlin: Sicherung und PGN mit dem 18.11.                                    |
+| N2466  | BESTANDEN       | zeitablauf                   | Zug nach Zeitablauf wird nicht ausgeführt.                                           |
+| N2593  | BESTANDEN       | profil-und-seiten            | Warum-Fragen und Lernziele sinken je um eins.                                        |
+| N2374  | BESTANDEN       | profil-und-seiten            | Drei Kacheln, Null blass.                                                            |
+| N2412  | BESTANDEN       | profil-und-seiten            | „0 von 17“.                                                                          |
+| N2361  | BESTANDEN       | profil-und-seiten            | Tour mit allen Karten, Wertung als Kacheln.                                          |
+| N2362  | BESTANDEN       | profil-und-seiten            | Jeder Schritt hebt ein Ziel hervor.                                                  |
+| N2446  | BESTANDEN       | profil-und-seiten            | Kapitel 0 bei 150 % ohne Überstand.                                                  |
+| N2461  | BESTANDEN       | Bildschirmfoto (lokal)       | Keine leere Fläche.                                                                  |
+| N2423  | BESTANDEN       | profil-und-seiten            | Fußzeilen mit „Lizenzen“.                                                            |
+| N2424  | BESTANDEN       | profil-und-seiten            | Neue Einträge auf Englisch.                                                          |
+| N2339  | BESTANDEN       | profil-und-seiten            | „Zuletzt gespielt“ und Revanche.                                                     |
+
+Zusammen: 44 BESTANDEN, 1 ABWEICHUNG, 1 ÜBERHOLT, 1 FEHLER, behoben.
+
+### Befunde aus Runde 2
+
+- **N2495, behoben:** Auf einem neuen Gerät merkt der erste Start Stufe 1. Nach dem Einspielen
+  einer Sicherung mit höherer Stufe gratulierte die App zu einer längst erreichten Stufe.
+  - Ursache: Die gefeierte Stufe ist ein Merker des Geräts und reist nicht mit der Sicherung.
+  - Korrektur: `Datensicherung.tsx` ruft nach dem Einspielen `vergissGefeierteStufe()` auf
+    (`abzeichenstand.ts`). Die Meldung merkt die Stufe dann still wie beim ersten Start.
+  - Belegt durch einen Komponententest und `sicherung-zustaende.spec.ts`.
+- **N2598, Frage an den Autor:** Der Hinweis „Aus deinen Partien“ kann für das Endspiel nie
+  erscheinen, im Blitz für keine Phase.
+  - Ursache: Die Spanne des Elo-Modells je Phase (`ELO_MODELLE[tempo].phasen[…].spanne`) bleibt
+    dort auch nach zehn Partien über SCHMAL = 460.
+  - Werte nach zehn Partien: Endspiel ±954 (Schnellschach), ±1241 (Blitz), ±658 (Klassisch);
+    Blitz-Eröffnung ±538.
+  - Das ist eine Modell- und Grenzfrage, deshalb nicht geändert.
+- **Kein Fehler, nur zur Vorsicht:** Eine eingespielte Partie mit widersprüchlichen Werten (Matt
+  von Weiß, Werte für Schwarz) lässt die App die Auswertung im Hintergrund neu rechnen. Tests
+  brauchen deshalb stimmige Werte (`auswertung-varianten.spec.ts`).
+- **Testhinweis:** Erst eine gezeigte Abzeichen-Meldung schreibt das Datum in „verdient“ und damit
+  in die Sicherung. Tests mit Sicherungen dürfen die Meldungen auf dem ersten Gerät nicht
+  stummschalten.
 
 ### Nebenbefund außerhalb der Punkte
 

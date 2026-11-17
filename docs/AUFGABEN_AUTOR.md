@@ -169,6 +169,7 @@ Adresse mit „#abenteuer“ öffnen).
       Lernziel von Kapitel 1 abhaken: Beide Zahlen sinken um eins, die Station füllt sich. Golden wird
       sie erst, wenn auch Warum-Fragen und Lernziele erledigt sind. Ein Orden, den du schon hast, bleibt
       golden (im ⓘ: „Den Orden „Teil …“ hast du schon.“); er zählt weiter nur Abbildungen und Übungen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 1: eine Warum-Frage und ein Lernziel, „18 Warum-Fragen“ → 17, „6 Lernziele“ → 5, die Station steigt; neuer Test); nicht geprüft: goldene Station und Orden.
 - [ ] N2596. Ausgewertete Partie: einen Fehler (?) antippen, unter der Zugliste „Besserer Zug“ oder „Bestrafung“
       wählen. Die Folge steht in Klammern hinter dem Fehler, darunter „Linie: Partie / Besserer Zug /
       Bestrafung“. Vor/Zurück und die Pfeiltasten gehen Zug für Zug durch die Folge, Brett und
@@ -573,12 +574,14 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2446. Kapitelseite bei großer Schrift (Einstellungen › Schriftgröße 150 %) auf dem Handy:
       nichts ragt über den Rand, „Alle abhaken“ und „Alle zurücksetzen“ stehen bei Platzmangel
       untereinander.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 0 bei 150 %: nichts breiter als das Fenster, beide Knöpfe im Bild; neuer Test).
 - [ ] N2460. Auswertung einer Partie gegen einen Bot: Unter „In Zahlen“ auf „Schwarz (Botname)“
       tippen. Die Karte heißt jetzt „Züge von Botname“ statt „Deine Züge“; auf der eigenen Seite
       weiter „Deine Züge“.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2461. Spielen → Eigene Bots ohne eigenen Gegner: Über „Eigene Bots verwalten“ steht keine
       leere Fläche mit Trennlinie mehr.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Bildschirmfoto: über „Eigene Bots verwalten“ keine leere Fläche).
 - [ ] N2462. Profil → Partie einlesen (PGN): „1. e4 e5 2. Lc4 Sc6 3. Dh5 Sf6 4. Dxf7# 1-0“
       einfügen (deutsche Notation) und doppelt auf „Einlesen und auswerten“ tippen. Erwartet: Schäfermatt
       wird erkannt, in der Partienliste steht die Partie genau einmal.
@@ -595,6 +598,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Rückfrage nennt „Partien: 1“; neuer Test).
 - [ ] N2466. Blitzpartie 3 + 2 bis kurz vor 0:00 laufen lassen und genau beim Ablauf ziehen:
       Die Partie endet auf Zeit, der Zug wird nicht mehr ausgeführt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Blitz 3 + 2, Zug nach Ablauf der Zeit: „Deine Zeit ist abgelaufen“, der Zug wird nicht ausgeführt; neuer Test).
 - [ ] N2467. Nach Mitternacht (0–1 Uhr) eine Partie als PGN herunterladen bzw. eine Sicherung
       anlegen: Datei- und PGN-Datum zeigen den heutigen Tag, nicht gestern.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Ortszeit Berlin, 0:30 Uhr: Sicherung „…-2026-11-18.json“, PGN mit Datum 2026.11.18; neuer Test).
@@ -613,7 +617,9 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „GNU GPL 3.0 oder neuer“, Link zum Quelltext und Lizenzseite; nicht geprüft: genauer Wortlaut im Impressum.
 - [ ] N2423. Eine Trainingsseite (schach-von-grund-auf.com/training/) und die Datenschutzseite
       zeigen unten den Link „Lizenzen“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Fußzeile von /training/ und /datenschutz/ mit „Lizenzen“; neuer Test).
 - [ ] N2424. Sprache Englisch: Die Lizenzseite zeigt auch die neuen Einträge auf Englisch.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (die fünf neuen Einträge auf Englisch; neuer Test).
 - [ ] N2430. Dashboard › Wiki (nach dem Zusammenführen und dem nächsten Push nach main):
       Seite „Die Ordner der App“ öffnen und nach „Lernpfad“ suchen. Erwartet: ein Abschnitt
       „ui/komponenten/lernpfad“ mit Stationen, Landschaften und Nebenaufgaben.
@@ -655,6 +661,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2374. **Kennzahlen im Profil:** Unter Stufe und Erfahrung stehen drei Kacheln: ✓ Übungen
       gelöst, Hantel Trainer-Durchgänge, Sprechblase Warum-Fragen, je mit großer Zahl. Eine Null
       steht blass. Die alten Zeilen unter den Orden sind weg.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (drei Kacheln, die Null blass; neuer Test).
 - [ ] N2375. **Karte „Heute“ für Neue:** Frisch installiert steht dort „Anfangen · Kapitel 0 ·
       Abb. 0.1“, auch wenn du vorher kurz in eine andere Abbildung geschaut hast. Eine Abbildung,
       die nur kurz offen war, wird selbst vorgeschlagen statt übersprungen. Die Tagesaufgabe
@@ -691,17 +698,20 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2412. **Trainer-Orden:** Der Ring „Trainings erstmalig absolviert“ zählt jetzt bis 17 (ohne
       Fehlerdatenbank, die keine Runde hat). Vorher war der Orden unerreichbar; wer alle 17 schon
       hat, bekommt nach dem Update die Gratulation.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) („Trainings erstmalig absolviert: 0 von 17“; neuer Test); nicht geprüft: Gratulation nach dem Update.
 
 ### Neu in 0.3.42: Erklärungen und Tour geprüft (31.10.2026)
 
 - [ ] N2361. **Tour im Profil:** Profil öffnen, Toursymbol oben rechts. Die Tour zeigt jetzt auch
       Erfolge (Orden und Abzeichen), den Weg durchs Buch, Themen, Rekorde und Extras; der Schritt
       zur Wertung spricht von Kacheln je Zeitklasse und dem „i“, nicht mehr von Reitern.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Tour nennt Erfolge, Weg, Themen, Rekorde und Aussehen, Wertung „als Kacheln“ mit ⓘ; neuer Test).
 - [ ] N2362. **Tour bei Spielen:** Auf der Startseite von Spielen und auf jeder Unterseite (Gegner
       aussuchen, Eigene Stufe, Eigene Bots, Freie Partie) das Toursymbol antippen: Jeder Schritt
       zeigt auf etwas, das auf dieser Seite zu sehen ist. Im Blatt „Partie einstellen“ stehen die
       Erklärungen zu Spielhilfen und Eröffnung jetzt hinter einem „i“ an ihrer Überschrift, die zu
       Bedenkzeit und Wertung im „i“ bei „Gewertete Partie“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (jeder Schritt auf Spielen und den vier Unterseiten hebt ein Ziel hervor; neuer Test); nicht geprüft: ⓘ im Blatt „Partie einstellen“.
 - [ ] N2363. **Texte nennen nur, was es gibt:** Kapitel- und Denkroutine-Tour sprechen vom „i“ und
       von den Phasenkacheln; der Hinweis zu Maia verweist auf Profil › Einstellungen › „Bots und
       Wertung“; das Abzeichen „Zehn Ziele“ auf Buch › Karte „Heute“ › Ziele. Wenn dir irgendwo noch
@@ -801,6 +811,7 @@ Am besten einmal hell und einmal dunkel prüfen (Profil › Einstellungen › An
       „Schnell eine Partie“ mit genau diesem Bot (Satz „dein gewählter Gegner“) und einer Zeit
       derselben Zeitklasse. Genauso wirken „Revanche“/„Herausfordern“ auf der Rivalenkarte und
       „Spielen“ an einem angehefteten Ziel („Besiege Lotte in Schnellschach.“).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zwei Partien: „Zuletzt gespielt“ mit Name, „heute · 10 + 0“ und Ergebnis; „Revanche“ schlägt Derya als „dein gewählter Gegner“ mit 10 + 0 vor; neuer Test); nicht geprüft: Rivalenkarte und angeheftetes Ziel.
 
 ### Neu in 0.3.38: Auswertung neu (Arbeitschat, 31.10.2026)
 

@@ -1191,7 +1191,10 @@
     },
     {
       "name": "haustuer",
-      "feld": [3, 20]
+      "feld": [3, 20],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
     },
     {
       "name": "dinerTuer",

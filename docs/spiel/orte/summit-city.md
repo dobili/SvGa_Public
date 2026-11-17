@@ -142,15 +142,15 @@ Kulturen (O5): Menschen von heute mit Berufen. Der Weg kommt am **Ostrand (59, 1
 
 ### 1.7 Übergänge (Felder auf beiden Seiten)
 
-| Auslöser (Karte, Feld)                                | Gegenstück (Karte, Feld)                           | Bemerkung                                                            |
-| ----------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------- |
-| aussen `wegDesert` Südrand (39–41, 59)                | bergstrasse `weiterSummit` Nordrand (18–20, 0)     | drei Felder                                                          |
-| aussen `hochebene` Westrand (0, 39–40)                | felsentuerme `zurueckSummit` Ostrand (99, 14–15)   | zwei Felder Schotter (seit 15.11.2026, 1.7)                          |
-| aussen `wegCrossroads` Südrand (5–6, 59)              | geysirbecken `zurueckSummit` Nordrand (14–15, 0)   | Erdweg zwei Felder, `wenn: nadelSummitCity`, mit mittel-3 abgestimmt |
-| aussen `huetteTuer` (8, 26)                           | huette `huetteAusgang` (8–9, 12)                   | Tür der Hütte                                                        |
-| aussen `bergladenTuer` (21, 24)                       | bergladen `bergladenAusgang` (6–7, 9)              | Tür des Ladens                                                       |
-| aussen `seilbahnTal` (54, 22)                         | bergstation `seilbahnBerg` an der Gondel           | Fahrt mit der Seilbahn                                               |
-| felsentuerme `weiterSchule` Westrand (0, 14–15)       | schule `zurueckFelsentuerme` Ostrand (59, 19–20)   | zwei Felder                                                          |
+| Auslöser (Karte, Feld)                          | Gegenstück (Karte, Feld)                         | Bemerkung                                                            |
+| ----------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------- |
+| aussen `wegDesert` Südrand (39–41, 59)          | bergstrasse `weiterSummit` Nordrand (18–20, 0)   | drei Felder                                                          |
+| aussen `hochebene` Westrand (0, 39–40)          | felsentuerme `zurueckSummit` Ostrand (99, 14–15) | zwei Felder Schotter (seit 15.11.2026, 1.7)                          |
+| aussen `wegCrossroads` Südrand (5–6, 59)        | geysirbecken `zurueckSummit` Nordrand (14–15, 0) | Erdweg zwei Felder, `wenn: nadelSummitCity`, mit mittel-3 abgestimmt |
+| aussen `huetteTuer` (8, 26)                     | huette `huetteAusgang` (8–9, 12)                 | Tür der Hütte                                                        |
+| aussen `bergladenTuer` (21, 24)                 | bergladen `bergladenAusgang` (6–7, 9)            | Tür des Ladens                                                       |
+| aussen `seilbahnTal` (54, 22)                   | bergstation `seilbahnBerg` an der Gondel         | Fahrt mit der Seilbahn                                               |
+| felsentuerme `weiterSchule` Westrand (0, 14–15) | schule `zurueckFelsentuerme` Ostrand (59, 19–20) | zwei Felder                                                          |
 
 ## 2. Ortsbild
 
@@ -223,7 +223,7 @@ Felsstufe 13–15 mit Treppe bei 10–11). **Ränder** wie 1.1.
 
 | Abschnitt | Inventar                                                                                                         |
 | --------- | ---------------------------------------------------------------------------------------------------------------- |
-| S1        | Ortsschild (31, 50), Plakat (38, 46), Bank (39, 50)                                                              |
+| S1        | Ortsschild (31, 50), Plakat (42, 53) mit Auslöser `plakat` (42, 56), Bank (39, 50)                               |
 | S2        | Drachenbrunnen (34, 31), Wimpelketten über dem Platz (Reihe 28), Marktstände (27, 36), (42, 36), Bänke, Laternen |
 | S3        | Berghütte 5–12 / 19–25, Holzstapel (12, 24), Bank auf der Veranda                                                |
 | S4        | Bergladen 18–24 / 18–23, Rucksäcke und Seil vor der Tür                                                          |

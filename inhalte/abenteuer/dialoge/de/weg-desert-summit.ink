@@ -60,8 +60,8 @@ Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe 
 
 === earl_angebot ===
 // VARIANTE-FEHLT: Königsrennen (L8). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Heute sind alle Bretter belegt. Die Jungs spielen um die nächste Tankfüllung. #sprecher:earl #stimmung:laechelt
-Komm wieder, wenn du hier durchfährst. Dann rennen wir. #sprecher:earl #stimmung:laechelt
+Am Fenstertisch rennen zwei Fahrer los. Der eine schiebt seinen König stur nach vorn, der andere schlägt unterwegs einen Läufer und zahlt den Kaffee. #sprecher:erzaehler
+Siehst du? Laufen, nicht schlagen. Wenn du wieder durchfährst, rennst du selbst. #sprecher:earl #stimmung:laechelt
 -> END
 
 === earl_alltag ===

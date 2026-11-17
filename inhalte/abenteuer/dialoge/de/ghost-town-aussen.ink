@@ -15,6 +15,7 @@ VAR fernpartieGespielt = false
 VAR ambroseSagtEsGesehen = false
 VAR held = "Du"
 VAR esIstStillGesagt = false
+VAR seeErreichtGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -47,6 +48,10 @@ Die Staubstraße führt zurück zum Canyon und weiter zum Camp. #sprecher:erzaeh
     -> nacht_ambrose
 - fernpartieGespielt:
     Ein Bus hält am Ortsrand: „Große Seen, Capital Arena“. Victor steigt mit dir ein. #sprecher:erzaehler
+    {not seeErreichtGesehen:
+        ~ seeErreichtGesehen = true
+        Hinter den Hügeln kommen die Farben zurück. Dann liegt ein See vor euch, so groß, dass man das andere Ufer nicht sieht. #sprecher:erzaehler
+    }
 - else:
     Am Ortsrand steht ein Bus nach Norden. Erst willst du hier etwas zu Ende bringen. #sprecher:erzaehler
 }

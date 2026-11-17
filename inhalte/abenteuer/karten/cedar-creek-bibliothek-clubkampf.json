@@ -1215,7 +1215,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 11,
@@ -1244,7 +1251,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 13,
@@ -1260,7 +1274,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "rechts"
+       "value": "links"
       }
      ]
     },
@@ -1278,7 +1292,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "links"
+       "value": "rechts"
       }
      ]
     },
@@ -1311,7 +1325,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "oben"
+       "value": "rechts"
       }
      ]
     },
@@ -1319,8 +1333,8 @@
      "id": 16,
      "name": "zuschauer",
      "type": "statist",
-     "x": 208,
-     "y": 128,
+     "x": 192,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1344,7 +1358,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "oben"
+       "value": "unten"
       }
      ]
     },

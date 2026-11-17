@@ -237,7 +237,8 @@
         "bis": "6,8",
         "tun": "hört dem Lehrer zu",
         "wann": "tag",
-        "bild": "statist-05"
+        "bild": "statist-05",
+        "blick": "links"
       }
     },
     {
@@ -249,7 +250,8 @@
         "bis": "5,8",
         "tun": "hört dem Lehrer zu",
         "wann": "tag",
-        "bild": "statist-07"
+        "bild": "statist-07",
+        "blick": "rechts"
       }
     }
   ],

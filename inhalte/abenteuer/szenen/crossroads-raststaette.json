@@ -305,7 +305,7 @@
     {
       "name": "nova",
       "feld": [19, 8],
-      "blick": "rechts"
+      "blick": "oben"
     },
     {
       "name": "theo",

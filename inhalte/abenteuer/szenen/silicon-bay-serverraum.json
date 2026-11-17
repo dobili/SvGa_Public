@@ -96,6 +96,10 @@
     {
       "name": "serverraumAusgang",
       "feld": [8, 9]
+    },
+    {
+      "name": "hintertuer",
+      "feld": [13, 3]
     }
   ],
   "figuren": [],

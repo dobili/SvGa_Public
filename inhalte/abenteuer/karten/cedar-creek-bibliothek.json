@@ -1251,7 +1251,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 13,
@@ -1267,7 +1274,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "rechts"
+       "value": "links"
       }
      ]
     },
@@ -1285,7 +1292,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "links"
+       "value": "rechts"
       }
      ]
     },

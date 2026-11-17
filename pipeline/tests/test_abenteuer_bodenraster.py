@@ -1,6 +1,14 @@
 """Tests der Kachelwahl für Böden (pipeline/abenteuer/bodenraster.py), ohne Pillow."""
 
-from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randergaenzt, ueberbrueckt
+from pipeline.abenteuer.bodenraster import (
+    bodenfeld,
+    brueckenzeichen,
+    randergaenzt,
+    randkachel,
+    randnachbar,
+    ueberbrueckt,
+    uferfelder,
+)
 
 WASSER_ART = {"rand": [0, 0]}
 HOLZ = frozenset({"h"})
@@ -93,3 +101,48 @@ def test_strasse_reicht_fuer_die_linien_bis_in_die_randspalte():
     # Eine Hecke, die zwei Spalten breit an den Rand reicht, bleibt Wand.
     assert randergaenzt(["##..", "##..", "##.."])[1][0] == "#"
     assert randergaenzt(zeilen, aussen=False) == zeilen
+
+
+# Böden wie in materialien.json: gewöhnliches Wasser im Geländebogen, rotes Ufer im eigenen Bogen.
+BOEDEN = {
+    "wasser": {"bogen": "gelaende", "rand": [0, 35]},
+    "wasser_rot": {"bogen": "wasser_rot", "rand": [0, 0], "diagonalen": True},
+    "fels": {"bogen": "gelaende", "feld": [7, 7]},
+}
+# Fluss, der unten aus der Karte läuft: Rand aus „#“, dahinter Wasser (Spalten 2–3) zwischen Fels.
+FLUSS = ["######", "#f~~f#", "#f~~f#", "#f~~f#"]
+FLUSS_RAND = ["######", "#f~~f#", "#f~~f#", "######"]
+
+
+def test_uferfelder_legen_die_kachel_in_den_bogen_des_ufers():
+    feld, eigen = uferfelder(BOEDEN, "wasser_rot", FLUSS_RAND, 2, 1)
+    assert feld == [0, 36] and eigen == [0, 1]  # linkes Randstück, in beiden Bögen dieselbe Lage
+    assert uferfelder(BOEDEN, "wasser", FLUSS_RAND, 2, 1) == ([0, 36], [0, 36])
+
+
+def test_randfeld_vor_wasser_bekommt_das_ufer_der_szene():
+    # Canyonrand: Am unteren Bildrand standen zwei Grasstücke, weil das Randfeld vor dem Fluss aus
+    # dem gewöhnlichen Wasserbogen (Grasufer) gezeichnet wurde statt aus dem roten.
+    for x, spalte in ((2, 0), (3, 2)):
+        innen = randnachbar(FLUSS_RAND, x, 3)
+        artname, bogenart, feld, eigen = randkachel(
+            BOEDEN, "wasser_rot", (FLUSS_RAND, FLUSS_RAND), innen, "fels"
+        )
+        assert (artname, bogenart) == ("wasser", "wasser_rot")
+        # Seitliches Ufer ja, zum Kartenrand hin keines: Reihe 1 des Blocks (der Fluss läuft hinaus).
+        assert feld == [spalte, 36] and eigen == [spalte, 1]
+
+
+def test_wasser_in_der_randreihe_hat_zum_rand_kein_ufer():
+    for x, spalte in ((2, 0), (3, 2)):
+        assert uferfelder(BOEDEN, "wasser_rot", FLUSS, x, 3)[1] == [spalte, 1]
+
+
+def test_randfeld_vor_anderem_boden_bleibt_wie_bisher():
+    innen = randnachbar(FLUSS_RAND, 1, 3)
+    assert randkachel(BOEDEN, "wasser_rot", (FLUSS_RAND, FLUSS_RAND), innen, "fels") == (
+        "fels",
+        "fels",
+        [7, 7],
+        [7, 7],
+    )

@@ -23,7 +23,8 @@ Aufruf: ``python -m pipeline.abenteuer.tuermessung PRIVAT [--schreiben] [--bilde
 ``--schreiben`` nur die Liste; ``--bilder`` legt Kontaktbögen der Grenzfälle ab (nur lokal, die Bilder
 sind privat). Braucht Pillow und numpy (beide nur hier, die Prüfung selbst nicht). Ein neuer Lauf
 misst nur Bilder ohne Eintrag; wer neu messen will, löscht den Eintrag. Durchsicht der Kontaktbögen:
-Fehlmessungen mit ``verwirf`` als „verworfen“ eintragen (17.11.2026: 45 von 119).
+Fehlmessungen mit ``verwirf`` als „verworfen“ eintragen (17.11.2026: 45 von 119, danach alle
+von Hand im vergrößerten Bild mit Raster abgelesen).
 """
 
 import json

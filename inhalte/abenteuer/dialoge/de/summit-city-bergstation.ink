@@ -26,6 +26,9 @@ VAR victorGelacht = false
 VAR victorKriseGesehen = false
 VAR victorBergstationGesprochen = false
 VAR victorSeiteGegeben = false
+// Das Reisebrett ist abgebaut und Victor überredet. Eine VAR, weil die App jeden Dialog neu
+// beginnt und Besuchszähler von Knoten dann wieder auf null stehen.
+VAR victorReisebrettBereit = false
 VAR ausgangSummitCityVictorFrei = ""
 VAR pfeifeGefunden = false
 
@@ -73,13 +76,14 @@ Ich bleib hier. Hier oben ruft keiner an. Kein Netz. #sprecher:victor #stimmung:
 
 === victor_spielen ===
 // Zweiter Besuch (abgebrochene Partie): das Brett ist schon abgebaut, Victor schon überredet.
-{victor_spielen > 1: -> victor_spielen_wieder}
+{victorReisebrettBereit: -> victor_spielen_wieder}
 Auf dem Reisebrett steht die Stellung, die niemand anrührt. #sprecher:erzaehler #musik:bergstation
 Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hingehören. #sprecher:erzaehler
 + [„Ohne Uhr. Ohne Gerät. Es zählt für nichts.“]
 - Das ist ein Kinderbrett. #sprecher:victor #stimmung:nachdenklich
 + [„Juno verliert darauf seit Jahren, und es geht ihr gut.“]
 - Er sieht dich an. Dann rückt er herüber. #sprecher:erzaehler
+~ victorReisebrettBereit = true
 ~ beginnePartie("summitCity.victorFrei")
 -> END
 

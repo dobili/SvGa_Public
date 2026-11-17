@@ -189,7 +189,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nach
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
 
-// Marian Shaw spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
+// Marian Shaw spielt seit 23 Jahren eine Partie mit Lokführer Earl (nicht der Fernfahrer Earl Dubois aus Akt 4), ein Zug pro
 // Vorbeifahrt. Heute hat sie sich die Hand verstaucht. {held} findet, warum ihr erster Einfall
 // eine Figur einstellt (Kapitel 1, was hängt?), und hängt einen besseren Zug ans Signal.
 === ereignis_zugpartie ===

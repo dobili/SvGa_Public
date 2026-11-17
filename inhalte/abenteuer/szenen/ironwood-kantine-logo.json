@@ -858,7 +858,7 @@
         "bis": "7,4",
         "tun": "rührt in der Suppe",
         "wann": "tag",
-        "sagt": "statist.ironwood.kantine.kantinenkoch"
+        "sagt": "statist.ironwood.kantine.kantinenkochLogo"
       }
     },
     {
@@ -880,7 +880,7 @@
         "von": "9,13",
         "bis": "9,13",
         "tun": "isst Eintopf nach der Schicht",
-        "sagt": "statist.ironwood.kantine.schichtarbeiter",
+        "sagt": "statist.ironwood.kantine.schichtarbeiterLogo",
         "blick": "oben"
       }
     },

@@ -2,25 +2,25 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/ironwood-umkleide.json",
   "art": "innen",
-  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der hohe Metallschrank als Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke ohne Lehne, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacke und Schutzhelm, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
+  "beschreibung": "Die Umkleide des Werks (Runde 8), 14 × 12 (passt nach R065 in den Bau außen), graue Fliesen. An der Nordwand vier gleiche Spinde in einer Reihe, gleich daneben der hohe Metallschrank als Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke ohne Lehne, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacke und Schutzhelm, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "boeden": {
     "f": "fliesenWeiss"
   },
   "raster": [
-    "################",
-    "################",
-    "################",
-    "#.........fffff#",
-    "#.........fffff#",
-    "#.........fffff#",
-    "#.........fffff#",
-    "#..............#",
-    "#..............#",
-    "#..............#",
-    "######.#########",
-    "################"
+    "##############",
+    "##############",
+    "##############",
+    "#.......fffff#",
+    "#.......fffff#",
+    "#.......fffff#",
+    "#.......fffff#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "####.#########",
+    "##############"
   ],
   "objekte": [
     {
@@ -40,57 +40,49 @@
       "feld": [4, 2]
     },
     {
-      "moebel": "mf2Spind",
-      "feld": [5, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [6, 2]
-    },
-    {
       "moebel": "sb5Metallschrank",
-      "feld": [7, 1],
+      "feld": [5, 1],
       "id": "schliessfachSpind"
     },
     {
       "moebel": "iw8Wandspiegel",
-      "feld": [9, 1],
+      "feld": [7, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Handwaschbecken",
-      "feld": [9, 3]
+      "feld": [7, 3]
     },
     {
       "moebel": "iw8Duschkabine",
-      "feld": [10, 2]
+      "feld": [8, 2]
     },
     {
       "moebel": "iw8DuschkabineB",
-      "feld": [12, 2]
+      "feld": [10, 2]
     },
     {
       "moebel": "iw8Kabinentuer",
-      "feld": [10, 5],
+      "feld": [8, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "iw8KabinentuerB",
-      "feld": [12, 5],
+      "feld": [10, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "iw8Trennwand",
-      "feld": [14, 2],
+      "feld": [12, 2],
       "bauteil_ok": true
     },
     {
       "moebel": "iw9UmkleidebankWaagrecht",
-      "feld": [6, 6]
+      "feld": [4, 6]
     },
     {
       "moebel": "iw9UmkleidebankWaagrecht",
-      "feld": [6, 8]
+      "feld": [4, 8]
     },
     {
       "moebel": "iw9GarderobeHelm",
@@ -102,43 +94,43 @@
     },
     {
       "moebel": "iw9UmkleidebankWaagrecht",
-      "feld": [11, 8]
+      "feld": [9, 8]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [14, 8]
+      "feld": [12, 8]
     },
     {
       "moebel": "cc6TuerSued",
-      "feld": [6, 11],
+      "feld": [4, 11],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [6, 9],
+      "feld": [4, 9],
       "versatz": [0, 19]
     },
     {
       "moebel": "iw8Trennwand",
-      "feld": [14, 5],
+      "feld": [12, 5],
       "bauteil_ok": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [6, 9],
+      "feld": [4, 9],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "umkleideAusgang",
-      "feld": [6, 10]
+      "feld": [4, 10]
     },
     {
       "name": "schliessfach",
-      "feld": [7, 4]
+      "feld": [5, 4]
     }
   ],
   "figuren": [],
@@ -146,7 +138,7 @@
     {
       "name": "arbeiter",
       "typ": "statist",
-      "feld": [6, 6],
+      "feld": [4, 6],
       "eigenschaften": {
         "tun": "sitzt auf der Bank und zieht nach der Schicht die Schuhe aus",
         "wann": "morgen"

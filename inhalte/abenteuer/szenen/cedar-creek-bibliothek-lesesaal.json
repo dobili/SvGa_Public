@@ -2,7 +2,7 @@
   "karte": "cedarCreek.bibliothek",
   "datei": "karten/cedar-creek-bibliothek-lesesaal.json",
   "art": "innen",
-  "beschreibung": "Zustand: Nacht im Lesesaal vor dem Clubkampf (nachtImLesesaal, das Team ist noch nicht da). Der Saal ist still, die Leser sind gegangen. Zwischen den freistehenden Regalen liegen zwei Schlafmatten, eine grüne und eine graue, für den Helden und Juno. Mrs. Okafor schließt noch ab und steht am Ende des Schachtischs; Dex, Mae und die Zwillinge sind nach Hause gegangen.\n\nDer Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch ein Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nMan kommt links durch den Vorraum herein, der unter dem Balkon des Eingangsbaus liegt: unten die Haustür, in seiner Rückwand die verschlossene Tür zum Treppenhaus in die oberen Stockwerke, rechts der Durchgang in den Saal.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, dazwischen ein Fenster, die Pinnwand mit dem Schild „Bitte flüstern“ und das niedrige Zeitungsregal mit den Zeitungen über Stangen. Oben rechts ist ein kleiner Bereich abgetrennt; man betritt ihn durch eine wandhohe Holztür in seiner Südwand, vom unteren Teil des Saals aus (R066); in der Mitte liegt ein Loch im Boden, durch das man auf die Kellertreppe ins Archiv sieht, mit einem Holzgeländer an der West-, Ost- und Südseite, an der Nordseite betritt man die Treppe (KARTENREGELN 10.89).\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem ein Brett mit aufgebauten Figuren mittig zwischen den Spielern (für zwei Bretter ist die Platte zu klein, Tischlage 10.79), oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts daneben zwei Reihen freistehender Bücherregale, davor zwei Lesetische mit Leselampen und Stühlen, daneben eine Stehlampe.\n\nGleich rechts neben dem Durchgang der Ausleihtresen mit der alten Kasse, in der Südostecke der alte Globus auf einer Kommode, Pflanzen in den Ecken. Eine Leserin trägt Bücher durch den Saal, ein Student sucht zwischen den Regalreihen, ein Rentner liest an den Lesetischen Zeitung. An der Westwand stehen zwei schmale Regale quer zum Raum.\n\nLaufwege: von der Haustür durch den Vorraum nach rechts in den Saal, links um den Schachtisch, rechts an den Lesetischen vorbei, an der Nordwand entlang zum Zeitungsregal; durch die Holztür rechts unten in den Bereich mit der Kellertreppe.",
+  "beschreibung": "Zustand: Nacht im Lesesaal vor dem Clubkampf (nachtImLesesaal, das Team ist noch nicht da). Der Saal ist still, die Leser sind gegangen. Unter dem Schachtisch liegen zwei Schlafmatten, eine grüne und eine graue, für den Helden und Juno. Mrs. Okafor schließt noch ab und steht am Ende des Schachtischs; Dex, Mae und die Zwillinge sind nach Hause gegangen.\n\nDer Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch ein Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nMan kommt links durch den Vorraum herein, der unter dem Balkon des Eingangsbaus liegt: unten die Haustür, in seiner Rückwand die verschlossene Tür zum Treppenhaus in die oberen Stockwerke, rechts der Durchgang in den Saal.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, dazwischen ein Fenster, die Pinnwand mit dem Schild „Bitte flüstern“ und das niedrige Zeitungsregal mit den Zeitungen über Stangen. Oben rechts ist ein kleiner Bereich abgetrennt; man betritt ihn durch eine wandhohe Holztür in seiner Südwand, vom unteren Teil des Saals aus (R066); in der Mitte liegt ein Loch im Boden, durch das man auf die Kellertreppe ins Archiv sieht, mit einem Holzgeländer an der West-, Ost- und Südseite, an der Nordseite betritt man die Treppe (KARTENREGELN 10.89).\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem ein Brett mit aufgebauten Figuren mittig zwischen den Spielern (für zwei Bretter ist die Platte zu klein, Tischlage 10.79), oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts daneben eine Reihe freistehender Bücherregale, darunter zwei Lesetische mit Leselampen und Stühlen. Der Saal ist nur so tief, wie das Haus außen erlaubt (R065); die Haustür liegt deshalb eine Reihe höher als die Südwand des Saals.\n\nGleich rechts neben dem Durchgang der Ausleihtresen mit der alten Kasse, im Treppenraum neben dem Loch der alte Globus auf einer Kommode, eine Stehlampe in der Südostecke, eine Pflanze im Vorraum. Eine Leserin trägt Bücher durch den Saal, ein Student sucht zwischen den Regalreihen, ein Rentner liest an den Lesetischen Zeitung. An der Westwand steht ein schmales Regal quer zum Raum.\n\nLaufwege: von der Haustür durch den Vorraum nach rechts in den Saal, links um den Schachtisch, rechts an den Lesetischen vorbei, an der Nordwand entlang zum Zeitungsregal; durch die Holztür rechts unten in den Bereich mit der Kellertreppe.",
   "wand": "hellgrau",
   "boden": "dielen",
   "raster": [
@@ -17,11 +17,7 @@
     "#####...tttttt....#.######",
     "#...#...tttttt....#.######",
     "#.................#.######",
-    "#........................#",
-    "#...#....................#",
-    "#...#....................#",
-    "#...#....................#",
-    "##..######################",
+    "##..#....................#",
     "##########################"
   ],
   "objekte": [
@@ -119,11 +115,7 @@
     },
     {
       "moebel": "cc4Tresen",
-      "feld": [6, 11]
-    },
-    {
-      "moebel": "cc4PflanzeK",
-      "feld": [1, 13]
+      "feld": [6, 8]
     },
     {
       "moebel": "cc4RegalD",
@@ -136,24 +128,14 @@
       "versatz": [0, 0]
     },
     {
-      "moebel": "cc4RegalD",
-      "feld": [14, 9],
-      "versatz": [0, 0]
-    },
-    {
-      "moebel": "cc4RegalB",
-      "feld": [16, 9],
-      "versatz": [0, 0]
-    },
-    {
       "moebel": "cc4StuhlVorn",
-      "feld": [17, 12],
+      "feld": [14, 8],
       "versatz": [8, 0],
       "zu": "lese1"
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [17, 13],
+      "feld": [14, 9],
       "id": "lese1"
     },
     {
@@ -163,13 +145,13 @@
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [20, 12],
+      "feld": [16, 8],
       "versatz": [8, 0],
       "zu": "lese2"
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [20, 13],
+      "feld": [16, 9],
       "id": "lese2"
     },
     {
@@ -179,11 +161,11 @@
     },
     {
       "moebel": "ccBankerlampeSteh",
-      "feld": [19, 13]
+      "feld": [24, 10]
     },
     {
       "moebel": "cc5Anrichte",
-      "feld": [23, 11],
+      "feld": [19, 4],
       "id": "anrichte"
     },
     {
@@ -192,21 +174,17 @@
     },
     {
       "moebel": "ccDoppeltuerSuedHolz",
-      "feld": [2, 16],
+      "feld": [2, 12],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [2, 14],
+      "feld": [2, 10],
       "versatz": [0, 19]
     },
     {
       "moebel": "cc6RegalSeiteHell",
       "feld": [5, 4]
-    },
-    {
-      "moebel": "cc6RegalSeiteDunkel",
-      "feld": [5, 7]
     },
     {
       "moebel": "cc4Treppe",
@@ -258,48 +236,44 @@
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [24, 12]
-    },
-    {
-      "moebel": "cc4PflanzeK",
       "feld": [1, 9]
     },
     {
       "moebel": "cc13MatteGruenLinks",
-      "feld": [8, 12],
+      "feld": [8, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "cc13MatteGruenRechts",
-      "feld": [9, 12],
+      "feld": [9, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "cc13MatteGrauLinks",
-      "feld": [11, 12],
+      "feld": [11, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "cc13MatteGrauRechts",
-      "feld": [12, 12],
+      "feld": [12, 10],
       "bauteil_ok": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [2, 14],
+      "feld": [2, 10],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "bibliothekAusgang",
-      "feld": [2, 15]
+      "feld": [2, 11]
     },
     {
       "name": "bibliothekAusgang",
-      "feld": [3, 15]
+      "feld": [3, 11]
     },
     {
       "name": "kellertreppe",
@@ -319,7 +293,7 @@
     },
     {
       "name": "globus",
-      "feld": [23, 13],
+      "feld": [19, 6],
       "auf_moebel": false
     },
     {

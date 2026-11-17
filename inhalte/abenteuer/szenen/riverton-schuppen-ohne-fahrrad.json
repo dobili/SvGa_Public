@@ -13,6 +13,7 @@
     "#........#",
     "#........#",
     "#........#",
+    "#........#",
     "#####.####"
   ],
   "objekte": [
@@ -49,11 +50,11 @@
     },
     {
       "moebel": "rv5ReifenLiegend",
-      "feld": [1, 6]
+      "feld": [1, 7]
     },
     {
       "moebel": "rv5TuerSuedHolz",
-      "feld": [5, 7],
+      "feld": [5, 8],
       "an_wand": true
     },
     {
@@ -62,21 +63,21 @@
     },
     {
       "moebel": "gt7Fussmatte",
-      "feld": [5, 6],
+      "feld": [5, 7],
       "versatz": [0, 2]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [5, 6],
+      "feld": [5, 7],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "schuppenAusgang",
-      "feld": [5, 7]
+      "feld": [5, 8]
     }
   ],
   "figuren": [],
@@ -84,10 +85,10 @@
     {
       "name": "maus",
       "typ": "tier",
-      "feld": [2, 6],
+      "feld": [2, 7],
       "eigenschaften": {
-        "von": "2,6",
-        "bis": "4,6",
+        "von": "2,7",
+        "bis": "4,7",
         "verhalten": "ausweichen"
       }
     }

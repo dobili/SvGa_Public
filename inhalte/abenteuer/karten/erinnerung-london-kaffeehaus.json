@@ -6,18 +6,18 @@
  "type": "map",
  "version": "1.10",
  "infinite": false,
- "width": 18,
+ "width": 12,
  "height": 13,
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 40,
+ "nextobjectid": 34,
  "layers": [
   {
    "id": 1,
    "name": "boden",
    "type": "tilelayer",
-   "width": 18,
+   "width": 12,
    "height": 13,
    "x": 0,
    "y": 0,
@@ -61,30 +61,6 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -107,38 +83,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -161,38 +107,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -215,6 +131,12 @@
     1,
     1,
     1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
     1,
     1,
     1,
@@ -233,15 +155,18 @@
     1,
     1,
     1,
+    0,
+    0,
+    1,
     1,
     1,
     1,
     1,
     1,
     1,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -249,9 +174,6 @@
     0,
     0,
     1,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -264,7 +186,7 @@
    "id": 2,
    "name": "waende",
    "type": "tilelayer",
-   "width": 18,
+   "width": 12,
    "height": 13,
    "x": 0,
    "y": 0,
@@ -308,30 +230,6 @@
     2,
     2,
     2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -354,38 +252,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -408,38 +276,8 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -462,6 +300,12 @@
     0,
     0,
     0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -480,15 +324,18 @@
     0,
     0,
     0,
+    2,
+    2,
+    0,
     0,
     0,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -496,9 +343,6 @@
     2,
     2,
     0,
-    2,
-    2,
-    2,
     2,
     2,
     2,
@@ -511,91 +355,13 @@
    "id": 3,
    "name": "objekte",
    "type": "tilelayer",
-   "width": 18,
+   "width": 12,
    "height": 13,
    "x": 0,
    "y": 0,
    "opacity": 1,
    "visible": true,
    "data": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -768,7 +534,7 @@
      "id": 1,
      "name": "start",
      "type": "ausloeser",
-     "x": 128,
+     "x": 80,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -786,7 +552,7 @@
      "id": 2,
      "name": "tuer",
      "type": "ausloeser",
-     "x": 128,
+     "x": 80,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -797,7 +563,7 @@
      "id": 3,
      "name": "schachtisch",
      "type": "ausloeser",
-     "x": 144,
+     "x": 96,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -808,7 +574,7 @@
      "id": 4,
      "name": "rueckkehr",
      "type": "ausloeser",
-     "x": 128,
+     "x": 64,
      "y": 64,
      "width": 16,
      "height": 16,
@@ -819,7 +585,7 @@
      "id": 5,
      "name": "kellner",
      "type": "figur",
-     "x": 208,
+     "x": 128,
      "y": 64,
      "width": 16,
      "height": 16,
@@ -841,7 +607,7 @@
      "id": 7,
      "name": "anderssen",
      "type": "statist",
-     "x": 112,
+     "x": 64,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -851,12 +617,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "7,8"
+       "value": "4,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "7,8"
+       "value": "4,8"
       },
       {
        "name": "tun",
@@ -884,7 +650,7 @@
      "id": 8,
      "name": "kieseritzky",
      "type": "statist",
-     "x": 160,
+     "x": 112,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -894,12 +660,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "10,8"
+       "value": "7,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "10,8"
+       "value": "7,8"
       },
       {
        "name": "tun",
@@ -927,7 +693,7 @@
      "id": 9,
      "name": "gaeste",
      "type": "statist",
-     "x": 128,
+     "x": 80,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -937,12 +703,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "8,10"
+       "value": "5,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "8,10"
+       "value": "5,10"
       },
       {
        "name": "tun",
@@ -965,7 +731,7 @@
      "id": 10,
      "name": "zuschauer",
      "type": "statist",
-     "x": 96,
+     "x": 48,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -975,12 +741,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "6,7"
+       "value": "3,7"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "6,7"
+       "value": "3,7"
       },
       {
        "name": "tun",
@@ -998,8 +764,8 @@
      "id": 11,
      "name": "herrMitZylinder",
      "type": "statist",
-     "x": 176,
-     "y": 160,
+     "x": 128,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1008,12 +774,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "6,10"
+       "value": "8,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "6,10"
+       "value": "8,8"
       },
       {
        "name": "tun",
@@ -1024,6 +790,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -1031,7 +802,7 @@
      "id": 12,
      "name": "zeitungsleserBank",
      "type": "statist",
-     "x": 48,
+     "x": 32,
      "y": 48,
      "width": 16,
      "height": 16,
@@ -1041,12 +812,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "3,3"
+       "value": "2,3"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "3,3"
+       "value": "2,3"
       },
       {
        "name": "tun",
@@ -1069,8 +840,8 @@
      "id": 13,
      "name": "gastAmFenstertisch",
      "type": "statist",
-     "x": 48,
-     "y": 128,
+     "x": 128,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1079,12 +850,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "3,8"
+       "value": "8,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "3,8"
+       "value": "8,10"
       },
       {
        "name": "verhalten",
@@ -1094,7 +865,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "sitzt am linken Tisch und grübelt über einer Stellung"
+       "value": "sitzt am Ecktisch und grübelt über einer Stellung"
       },
       {
        "name": "wann",
@@ -1112,7 +883,7 @@
      "id": 14,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
-     "x": 128,
+     "x": 80,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -1133,32 +904,9 @@
     },
     {
      "id": 15,
-     "name": "ldOfen",
-     "type": "moebel",
-     "x": 112,
-     "y": 16,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 16,
      "name": "ldBild",
      "type": "moebel",
-     "x": 48,
+     "x": 16,
      "y": 16,
      "width": 32,
      "height": 32,
@@ -1178,10 +926,33 @@
      ]
     },
     {
+     "id": 16,
+     "name": "ldOfen",
+     "type": "moebel",
+     "x": 64,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
      "id": 17,
      "name": "gt7Bild",
      "type": "moebel",
-     "x": 160,
+     "x": 112,
      "y": 16,
      "width": 32,
      "height": 32,
@@ -1202,11 +973,34 @@
     },
     {
      "id": 18,
-     "name": "el7Lederbank5",
+     "name": "ld5Flaschenregal",
+     "type": "moebel",
+     "x": 144,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "el7Lederbank3",
      "type": "moebel",
      "x": 16,
      "y": 48,
-     "width": 80,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1224,10 +1018,10 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "ld5Rundtisch",
      "type": "moebel",
-     "x": 32,
+     "x": 16,
      "y": 80,
      "width": 32,
      "height": 32,
@@ -1247,10 +1041,10 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "el7Kerze",
      "type": "moebel",
-     "x": 48,
+     "x": 32,
      "y": 81,
      "width": 16,
      "height": 16,
@@ -1270,7 +1064,30 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
+     "name": "gt14Theke5",
+     "type": "moebel",
+     "x": 96,
+     "y": 80,
+     "width": 80,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 23,
      "name": "el7Zeitungshalter",
      "type": "moebel",
      "x": 16,
@@ -1293,56 +1110,10 @@
      ]
     },
     {
-     "id": 22,
-     "name": "ld5Flaschenregal",
-     "type": "moebel",
-     "x": 224,
-     "y": 16,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 23,
-     "name": "ld5Theke7",
-     "type": "moebel",
-     "x": 160,
-     "y": 80,
-     "width": 112,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 24,
      "name": "ld5StuhlDunkelR",
      "type": "moebel",
-     "x": 48,
+     "x": 64,
      "y": 128,
      "width": 16,
      "height": 32,
@@ -1365,7 +1136,7 @@
      "id": 25,
      "name": "ld5Rundtisch",
      "type": "moebel",
-     "x": 64,
+     "x": 80,
      "y": 128,
      "width": 32,
      "height": 32,
@@ -1388,7 +1159,7 @@
      "id": 26,
      "name": "ld5StuhlDunkelL",
      "type": "moebel",
-     "x": 96,
+     "x": 112,
      "y": 128,
      "width": 16,
      "height": 32,
@@ -1411,7 +1182,7 @@
      "id": 27,
      "name": "el7Kerze",
      "type": "moebel",
-     "x": 76,
+     "x": 92,
      "y": 124,
      "width": 16,
      "height": 16,
@@ -1434,7 +1205,7 @@
      "id": 28,
      "name": "cc4Brett",
      "type": "moebel",
-     "x": 74,
+     "x": 90,
      "y": 140,
      "width": 12,
      "height": 9,
@@ -1457,8 +1228,8 @@
      "id": 29,
      "name": "ld5StuhlDunkelR",
      "type": "moebel",
-     "x": 112,
-     "y": 128,
+     "x": 128,
+     "y": 160,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1467,7 +1238,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 184
       },
       {
        "name": "kollision",
@@ -1480,8 +1251,8 @@
      "id": 30,
      "name": "ld5Rundtisch",
      "type": "moebel",
-     "x": 128,
-     "y": 128,
+     "x": 144,
+     "y": 160,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -1490,7 +1261,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 184
       },
       {
        "name": "kollision",
@@ -1501,33 +1272,10 @@
     },
     {
      "id": 31,
-     "name": "ld5StuhlDunkelL",
-     "type": "moebel",
-     "x": 160,
-     "y": 128,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 32,
      "name": "el7Kerze",
      "type": "moebel",
-     "x": 140,
-     "y": 124,
+     "x": 156,
+     "y": 156,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1536,7 +1284,30 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 153
+       "value": 185
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "cc4Brett",
+     "type": "moebel",
+     "x": 154,
+     "y": 172,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 185
       },
       {
        "name": "kollision",
@@ -1547,147 +1318,9 @@
     },
     {
      "id": 33,
-     "name": "cc4Brett",
-     "type": "moebel",
-     "x": 138,
-     "y": 140,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 153
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 34,
-     "name": "ld5StuhlDunkelR",
-     "type": "moebel",
-     "x": 192,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "ld5Rundtisch",
-     "type": "moebel",
-     "x": 208,
-     "y": 144,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "ld5StuhlDunkelL",
-     "type": "moebel",
-     "x": 240,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "el7Kerze",
-     "type": "moebel",
-     "x": 220,
-     "y": 140,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 169
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "cc4Brett",
-     "type": "moebel",
-     "x": 218,
-     "y": 156,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 169
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 39,
      "name": "es7Fussmatte",
      "type": "moebel",
-     "x": 128,
+     "x": 80,
      "y": 178,
      "width": 16,
      "height": 16,

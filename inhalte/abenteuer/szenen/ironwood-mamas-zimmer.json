@@ -2,33 +2,33 @@
   "karte": "ironwood.mamasZimmer",
   "datei": "karten/ironwood-mamas-zimmer.json",
   "art": "innen",
-  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8). Küche mit weißen Fliesen: Kühlschrank, zwei verschiedene Herde und Theke mit Spüle an der Nordwand, Fenster, der Ofen mit dem Rücken an der Wand, daneben die Leseecke mit Sessel und Stehlampe; ein Küchenschrank, ein weißer Garderobenschrank an der Westwand, eine Pflanze neben der Tür, runder Tisch mit Obstschale und zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
+  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8), 14 × 13 Kacheln (passt nach R065 ins schmale Reihenhaus außen). Küche mit weißen Fliesen: Kühlschrank, Herd und Theke mit Spüle an der Nordwand unter dem Fenster; ein Küchenschrank und ein weißer Garderobenschrank an der Westwand, eine Pflanze neben der Tür, runder Tisch mit Obstschale und zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
-    "##################",
-    "##################",
-    "##################",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkkzzzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "########k#########",
-    "##################"
+    "##############",
+    "##############",
+    "##############",
+    "#kkkkkk#zzzzz#",
+    "#kkkkkk#zzzzz#",
+    "#kkkkkk#zzzzz#",
+    "#kkkkkk#zzzzz#",
+    "#kkkkkkzzzzzz#",
+    "#kkkkkk#zzzzz#",
+    "#kkkkkk#zzzzz#",
+    "#kkkkkk#zzzzz#",
+    "####k#########",
+    "##############"
   ],
   "objekte": [
     {
       "moebel": "cc6TuerSued",
-      "feld": [8, 12],
+      "feld": [4, 12],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [8, 10],
+      "feld": [4, 10],
       "versatz": [0, 19]
     },
     {
@@ -40,12 +40,8 @@
       "feld": [2, 2]
     },
     {
-      "moebel": "wzHerd",
-      "feld": [3, 2]
-    },
-    {
       "moebel": "iw8Theke4",
-      "feld": [4, 2],
+      "feld": [3, 2],
       "id": "platte"
     },
     {
@@ -55,45 +51,33 @@
     },
     {
       "moebel": "wzFenster",
-      "feld": [6, 1],
+      "feld": [4, 1],
       "an_wand": true
     },
     {
-      "moebel": "ldOfen",
-      "feld": [8, 1]
-    },
-    {
-      "moebel": "mf7SesselWeissLinks",
-      "feld": [7, 5]
-    },
-    {
-      "moebel": "cc4Stehlampe",
-      "feld": [9, 4]
-    },
-    {
       "moebel": "mf3Rundtisch",
-      "feld": [4, 6],
+      "feld": [3, 6],
       "id": "kuechentisch"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [4, 5],
+      "feld": [3, 5],
       "zu": "kuechentisch",
       "versatz": [8, 0]
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [4, 7],
+      "feld": [3, 7],
       "zu": "kuechentisch",
       "versatz": [8, 6]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [9, 9]
+      "feld": [6, 9]
     },
     {
       "moebel": "mf8Sideboard",
-      "feld": [1, 5]
+      "feld": [1, 4]
     },
     {
       "moebel": "mf7Obstkorb",
@@ -103,33 +87,33 @@
     },
     {
       "moebel": "wzFenster",
-      "feld": [12, 1],
+      "feld": [8, 1],
       "an_wand": true
     },
     {
       "moebel": "iw5BettLila",
-      "feld": [11, 3],
+      "feld": [8, 4],
       "id": "bett"
     },
     {
       "moebel": "iw8Partieformular",
-      "feld": [14, 1],
+      "feld": [10, 1],
       "an_wand": true,
       "id": "rahmen2001",
       "versatz": [0, 6]
     },
     {
       "moebel": "mf2Kleiderschrank",
-      "feld": [15, 1]
+      "feld": [11, 1]
     },
     {
       "moebel": "mf14SchreibtischLeer",
-      "feld": [15, 7],
+      "feld": [11, 8],
       "id": "schreibtisch"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [15, 6],
+      "feld": [11, 7],
       "zu": "schreibtisch",
       "versatz": [8, 0]
     },
@@ -141,11 +125,11 @@
     },
     {
       "moebel": "mf7TeppichRund",
-      "feld": [12, 7]
+      "feld": [9, 8]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [11, 9]
+      "feld": [8, 9]
     },
     {
       "moebel": "iw17Garderobenschrank",
@@ -155,33 +139,33 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [8, 10],
+      "feld": [4, 10],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "zimmerAusgang",
-      "feld": [8, 11]
+      "feld": [4, 11]
     },
     {
       "name": "medaille",
-      "feld": [14, 8]
+      "feld": [10, 9]
     },
     {
       "name": "partieformular2001",
-      "feld": [14, 3]
+      "feld": [10, 3]
     }
   ],
   "figuren": [
     {
       "name": "omaRuth",
-      "feld": [6, 7],
+      "feld": [5, 7],
       "blick": "links"
     },
     {
       "name": "mama",
-      "feld": [14, 5]
+      "feld": [11, 5]
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],

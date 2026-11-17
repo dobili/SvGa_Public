@@ -61,6 +61,10 @@ jobs:
         run: npm ci
       - name: Typen, Stil, Komponententests
         run: npm run pruefen
+      # Alle Ink-Dialoge des Abenteuers übersetzen: vitest übersetzt die echten Dateien nicht,
+      # und im Pipeline-Job fehlt inkjs (eine doppelte VAR blieb so am 17.11.2026 unbemerkt).
+      - name: Ink-Dialoge übersetzen
+        run: node ../pipeline/abenteuer/inkuebersetzung.cjs
       - name: Build mit Größenbudget
         run: npm run build
       - name: Cloudflare-Probelauf

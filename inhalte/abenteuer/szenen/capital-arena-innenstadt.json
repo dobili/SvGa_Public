@@ -257,6 +257,10 @@
       "feld": [
         37,
         42
+      ],
+      "versatz": [
+        8,
+        0
       ]
     },
     {
@@ -466,7 +470,7 @@
       "moebel": "ci8Kreidespringer",
       "feld": [
         38,
-        46
+        47
       ]
     },
     {

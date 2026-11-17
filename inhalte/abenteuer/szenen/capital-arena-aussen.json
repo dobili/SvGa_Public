@@ -793,12 +793,12 @@
       "name": "schachlehrer",
       "typ": "statist",
       "feld": [
-        34,
-        45
+        36,
+        42
       ],
       "eigenschaften": {
-        "von": "34,45",
-        "bis": "34,45",
+        "von": "36,42",
+        "bis": "36,42",
         "tun": "sitzt mit einem Taschenschach auf dem Brunnenrand",
         "wann": "abend",
         "zeigt": "immergruenePartie",

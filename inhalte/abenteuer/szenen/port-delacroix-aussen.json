@@ -608,7 +608,7 @@
     {
       "moebel": "pd6PlaneDachKlein",
       "auf": "h3",
-      "versatz": [16, -54]
+      "versatz": [0, -16]
     },
     {
       "moebel": "pd10HausBlau",
@@ -734,7 +734,7 @@
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [53, 26]
+      "feld": [53, 28]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
@@ -772,11 +772,11 @@
     },
     {
       "moebel": "rvLaubbaum",
-      "feld": [56, 50]
+      "feld": [56, 49]
     },
     {
       "moebel": "rvLaubbaumDunkel",
-      "feld": [62, 50]
+      "feld": [60, 49]
     },
     {
       "moebel": "rvLaubbaum",
@@ -864,11 +864,11 @@
     },
     {
       "moebel": "pd9Ziegel",
-      "feld": [33, 21]
+      "feld": [48, 22]
     },
     {
       "moebel": "pd9Ziegel",
-      "feld": [19, 49]
+      "feld": [20, 49]
     },
     {
       "moebel": "pd9StrichQ16",
@@ -1267,10 +1267,10 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [53, 11],
+      "feld": [55, 11],
       "eigenschaften": {
-        "von": "53,11",
-        "bis": "53,11",
+        "von": "55,11",
+        "bis": "55,11",
         "verhalten": "sitzen"
       }
     },

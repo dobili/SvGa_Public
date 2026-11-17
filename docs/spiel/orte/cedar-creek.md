@@ -149,11 +149,11 @@ Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C
   Ostrand Richtung Riverton; im Westen endet es an einem Halteschild (11, 2). Darunter der gepflasterte
   Bahnsteig (Spalten 12–21, Reihen 3–4) mit grüner Bank, Stationsschild „Cedar Creek“, Fahrplantafel
   („Riverton: jeden Tag“, ohne Uhrzeiten) und dem Auslöser `bahnhof` (14, 3). Laufweg vom Platz über den
-  Zedernpfad (Spalten 10–11) und dessen Ostende (Reihe 4) auf den Bahnsteig. Der Uferweg beginnt dafür
+  Zedernpfad (Spalten 9–10) und dessen Ostende (Reihe 4) auf den Bahnsteig. Der Uferweg beginnt dafür
   erst in Reihe 3.
 - **Hinter den Häusern** (Abschnitte A1 bis A3): Zedernwiese mit lockeren Zedern; der **Zedernpfad**
   kommt am Westrand in den Reihen 4–5 an und führt als Erdweg nach Südosten zum Gehweg Nord neben der
-  Drechslerei (Spalte 10).
+  Drechslerei (Spalten 9–10).
 - **Südseite** (Abschnitte C1 bis C3): **Haus Süd 1** von Mrs. Holm (Spalten 3–9) mit Zedernhecke
   (`zedernhecke`), **Haus Süd 2** (Spalten 12–18), beide mit Vorgarten, Zaun, Pforte zum Gehweg Süd,
   Plattenweg zur Tür in der Nordfassade, Briefkasten außen an der Pforte; östlich davon die
@@ -203,8 +203,8 @@ die Tür sitzt unten im Turm links (3 von 18), innen deshalb bei Spalte 4.
 | mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (34, 27)                                   | Busfahrt                                                                                               |
 | cedarCreek.aussen `busZurueck` (43, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                                        |
 | riverton.bahnhofshalle `zugCedar` (Dialog, Reise; riverton.md 1.8)   | cedarCreek.aussen `bahnhof` (14, 3), Ankunft auf dem Bahnsteig                | Zug, 10 Münzen, frei nach der Nadel von Riverton; die Rückfahrt (Dialog am Bahnsteig) folgt in Runde 5 |
-| aussen `drechslereiTuer` (4, 19)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 4)                          | hinein nach Norden                                                                                     |
-| aussen `waschsalonTuer` (16, 19)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                                     |
+| aussen `drechslereiTuer` (3, 19)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 4)                          | hinein nach Norden                                                                                     |
+| aussen `waschsalonTuer` (12–13, 19)                                  | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                                     |
 | aussen `bibliothekTuer` (25, 19)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 4)                            | hinein nach Norden                                                                                     |
 | bibliothek `kellertreppe` (Nordwand, Spalte 19)                      | archiv `kellerAusgang` (Nordwand, Spalte 11)                                  | Treppen übereinander; oben nach unten, unten nach oben (Regel 2.4)                                     |
 | aussen `zedernwald` (Ostrand, Spalte 59, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                                            |
@@ -537,7 +537,7 @@ und Uferweg (Spalten 48–49), dunkles Holz für Brücke (Reihen 8–9) und Steg
 **Laufwege:** Start an der Haltestelle südlich der Busbucht (34, 27) → über die Straße, Gehweg Nord nach Westen an Anschlagtafel,
 Bibliothek, Waschsalon und Drechslerei vorbei → Straße nach Westen zum Flussweg. Nach Osten zum
 Uferweg, nach oben über die Brücke zum Ostrand, nach unten am Steg und am Kanuverleih vorbei. Der
-Zedernpfad kommt hinter der Drechslerei (Spalten 10–11) herunter. Südlich führen Gartenwege um die
+Zedernpfad kommt hinter der Drechslerei (Spalten 9–10) herunter. Südlich führen Gartenwege um die
 beiden Wohnhäuser.
 
 **Abschnitte und Entdeckungen** (je etwa ein Bildschirm, 7a.2 Regel 4):
@@ -552,9 +552,9 @@ beiden Wohnhäuser.
 
 | Zone      | Gegenstand                                                                                                                              | Feld                                                                   | Ausrichtung                    | Material, Stil, Zustand   | Zweck                                                                |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------ | ------------------------- | -------------------------------------------------------------------- |
-| Nordseite | Drechslerei: kleine Holzscheune, Blechdach, Rolltor                                                                                     | (2, 9), 8 × 10                                                         | Vorderseite unten              | Holz, ländlich, gebraucht | `drechslereiTuer` (4, 19)                                            |
-| Nordseite | Holzstapel aus Rundholz                                                                                                                 | (6, 18)                                                                | –                              | Holz                      | vor der Drechslerei; wächst nach dem Zedernpfad (13 §7.4)            |
-| Nordseite | Waschsalon mit Markisen, darüber das türkise Neonschild „Waschsalon“ (eigenes Bild)                                                     | (12, 10), 8 × 9                                                        | Vorderseite unten              | klassisch, gebraucht      | `waschsalonTuer` (16, 19); Hund (17–19, 19)                          |
+| Nordseite | Drechslerei: kleine Holzscheune, Blechdach, Rolltor                                                                                     | (1, 9), 8 × 10                                                         | Vorderseite unten              | Holz, ländlich, gebraucht | `drechslereiTuer` (3, 19)                                            |
+| Nordseite | Holzstapel aus Rundholz                                                                                                                 | (5, 18)                                                                | –                              | Holz                      | vor der Drechslerei; wächst nach dem Zedernpfad (13 §7.4)            |
+| Nordseite | Waschsalon mit Markisen, darüber das türkise Neonschild „Waschsalon“ (eigenes Bild)                                                     | (11, 8), 8 × 9, Maßstab 1.2                                            | Vorderseite unten              | klassisch, gebraucht      | `waschsalonTuer` (12–13, 19); Hund (17–19, 19)                       |
 | Nordseite | zwei Laternen links und rechts der Bibliothekstreppe (vor der Fassade, ohne Kollision)                                                  | (21, 16), (26, 16)                                                     | –                              | Metall, klassisch         | geben dem Eingang Gewicht                                            |
 | Nordseite | Bibliothek, Backstein mit Turm; unten im Turm ein Steinbogen mit zwei Lampen und Stufen zum Gehweg                                      | (22, 3), 18 × 16; Bogen 3 × 3 im Turm                                  | Vorderseite unten              | Backstein, klassisch, alt | `bibliothekTuer` (24, 19)                                            |
 | Nordseite | Anschlagtafel mit Zetteln                                                                                                               | (40, 17)                                                               | Vorderseite unten              | Holz, ländlich            | `plakat` (40, 19); Zettel je Akt (13 §7.4)                           |
@@ -582,6 +582,13 @@ Offen (Haltepunkt): `bahnhof` ist vorläufig nur
 Ankunftspunkt (Art `start`, wie die Bushaltestelle); die Rückfahrt nach Riverton (Dialog am Bahnsteig, 10 Münzen)
 kommt in Runde 5. Die Karte des Bahnhofs Riverton gibt es noch nicht; der Dialog `riverton-bahnhofshalle.zug`
 führt schon auf `bahnhof`.
+
+Nachgezogen am 17.11.2026 (Kartenrunde, Regel 10.92): Der Waschsalon steht auf (11, 8) mit Maßstab 1.2 und Versatz
+[0, 3], seine Tür `waschsalonTuer` liegt auf (12, 19) und (13, 19). Dafür rückten die Drechslerei auf
+(1, 9), ihre Tür `drechslereiTuer` auf (3, 19), der Holzstapel auf (5, 18), der Zedernpfad in die
+Spalten 9–10 (Reihen 4–18) und die Laterne am Pfad auf (9, 16). Der Drechslergeselle fegt auf dem
+Gehweg von (8, 19) bis (10, 19). Die Maße der Nordseite in 1.4 (Drechslerei Spalten 2–9, Laterne
+Spalte 11, Waschsalon Spalten 12–18) sind der alte Plan.
 
 ### 4.6 Nacharbeit nach der Rückmeldung des Autors (KARTENREGELN 10, Runde 5)
 

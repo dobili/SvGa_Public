@@ -925,6 +925,22 @@ noch Wanduhr.
   Rundtisch. Kein Kurierrad (fehlt im Katalog), dafür die Kuriertasche.
 - **Schuppen (10 × 8):** A Fahrrad in der Mitte; B Rad an der Ostseite; C halb Holzlager.
 
+Nachgezogen am 17.11.2026 (Kartenrunde, Regel 10.92): Stand der Außenkarte in allen fünf Fassungen:
+
+- Café `rv5Cafe` auf (40, 26) mit Maßstab 1.2 und Versatz [0, 3] (vorher (42, 27)); Bäckerei
+  `rv8Baeckerei` auf (31, 27) (vorher (32, 27)), dazwischen eine Gasse in den Spalten 38–39. Die
+  Laternen am Café stehen auf (39, 34) und (48, 34).
+- Große Pfütze `rv9PfuetzeGross` auf (39, 20) statt auf dem Startfeld (36, 19) vor der Bahnhofstür.
+- Pavillon `rvPavillonAchteck` auf (35, 41) mit Maßstab 1.375 (11 Kacheln breit, Standfläche
+  Spalten 35–45, Reihen 46–52); `pavillonEingang` auf (40, 53); der Pflasterplatz davor liegt in den
+  Reihen 53–54, Spalten 34–45.
+- Der Tisch des Parkschachspielers (`schachtisch`) steht auf der Wiese östlich des Wegs auf
+  (50, 47), der Spieler auf (50, 49); Kreidekinder (35, 53), Kreidespringer (35, 54), Victor (47, 46).
+- Fassungen `trainingszentrum`, `tische-kaputt`, `unterschriften`: Absperrbock auf (42, 53). Fassung
+  `unterschriften`: Der Tisch für die Unterschriftenliste (`liste`) steht auf (53, 47) neben dem
+  Schachtisch, nicht mehr auf dem Platz vor dem Pavillon.
+- Die Felder in 1.3, 1.8 und 4.5 (etwa `pavillonEingang` (40, 48)) sind der alte Plan.
+
 ### 4.1 Bahnhofshalle (`riverton.bahnhofshalle`)
 
 **Größe:** 26 × 16 (großer Saal). Nordwand Reihen 0–2 Backstein mit Fliesensockel, Boden ab Reihe 3

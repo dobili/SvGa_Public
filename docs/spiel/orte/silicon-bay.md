@@ -419,6 +419,11 @@ goldmuenzenPartie`, die Münzen nur als Gerücht); dazu Briefträgerin, Kinder, 
 Hundebesitzer. Tiere: Möwen, Tauben, Hund, Katze im Hinterhof; dazu Drohne, Lieferroboter,
 Mähroboter und Staubsaugerroboter.
 
+Nachgezogen am 17.11.2026 (Kartenrunde, Regel 10.92): Die Polizeiwache `sa8Polizei2` steht auf (8, 4) mit Maßstab
+1.25 und Versatz [0, 12] (vorher (8, 8)). Das schmale viktorianische Haus (`sa8Viktorianisch`,
+(15, 5)) entfällt; an seiner Stelle steht das schmale Mietshaus `rv8MietshausB` auf (17, 6) mit
+Maßstab 1.25. Der Laubbaum im Hinterhof steht auf (21, 3), die Laterne am Gehweg auf (16, 19).
+
 ### 1.5 Gebäude und Maße
 
 | Gebäude                       | Lage außen (Spalten / Reihen), Tür                      | Fassade                                         | Innen (7a.2)                                                                                                                                                                                                | Begehbar        |

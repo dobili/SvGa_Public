@@ -198,7 +198,7 @@ davon.
 
 - **Seilschaft** (`ereignisSeilschaft`, Dialog `weg-delacroix-desert.ereignis_seilschaft`):
   - Vor der Versöhnung liegen nur Seile und Rucksäcke da.
-  - Danach rufen Wren Okoro (unten) und Sol Ferris (oben) um Hilfe.
+  - Danach rufen Wren Okoro (unten) und Tess Ferris (oben) um Hilfe.
   - Quest `wegDelacroixDesert.seilschaft` (klein), ein Schritt: Gedächtnisstellung
     `wegDelacroixDesert.seilschaft` (partieformen.json, fünf Sekunden; `beginneGedaechtnis`), danach
     `seilschaft_ende`.

@@ -46,10 +46,10 @@ Neben der Tafel steht eine Frau in Ölzeug, einen Schlüsselbund am Gürtel. #sp
 
 === tafel_angebot ===
 „Der Steg ist zu, Herbstwartung. Wer zwei Dinge zugleich im Blick hat, darf mit mir hinüber. Hier ist die Tafel.“ #sprecher:erzaehler
-* [Die Tafel lösen]
++ [Die Tafel lösen]
     ~ beginneAufgaben("lockport.tafelSchleuse")
     -> END
-* [Später]
++ [Später]
     „Das Wasser wartet. Ich auch.“ #sprecher:erzaehler
     -> END
 
@@ -99,10 +99,10 @@ Ein Mann mit Schiffermütze sitzt auf einem Poller und sieht auf den leeren Kahn
 === kahnrennen_angebot ===
 Am Kai schwimmen drei Spielzeugkähne aus Holz. Ein Junge, Finn, und zwei andere Kinder knien an der Kante. #sprecher:erzaehler
 „Ich bin Schiedsrichter. Wer an der Tafel zwei Kähne mit einem Zug trifft, darf den Startschuss geben.“ #sprecher:erzaehler
-* [An die Kreidetafel]
++ [An die Kreidetafel]
     ~ beginneAufgaben("lockport.kahnrennen")
     -> END
-* [Später]
++ [Später]
     „Die Kähne laufen nicht weg. Höchstens ab.“ #sprecher:erzaehler
     -> END
 
@@ -136,10 +136,10 @@ Ein Ruderboot, an vier Tauen festgemacht, kreuz und quer. Daran hat jemand mit v
 
 === boot_taue ===
 Henriks Ruderboot hängt an vier Tauen. Löst du das falsche, kippt alles. #sprecher:erzaehler
-* [Die Taue ansehen]
++ [Die Taue ansehen]
     ~ beginneAufgaben("lockport.taue")
     -> END
-* [Später]
++ [Später]
     -> END
 
 === taue_geloest ===

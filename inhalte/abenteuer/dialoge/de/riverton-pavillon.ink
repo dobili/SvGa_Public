@@ -122,10 +122,10 @@ Jedes Mal. Vierzehn Jahre lang. #sprecher:slick #stimmung:nachdenklich
 === slick_nach_niederlage ===
 Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
 Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
-* [„Noch einmal.“]
++ [„Noch einmal.“]
     ~ beginnePartie("riverton.clubkampf")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     -> END
 
 === slick_nach_sieg ===
@@ -196,10 +196,10 @@ Nicht nachdenken. Gucken. Ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
 
 === tamsin_reihe ===
 Meine Aufgaben sind Springer, die auf zwei Figuren gleichzeitig zeigen. Du findest sie, bevor ich bei null bin. #sprecher:tamsin #stimmung:laechelt
-* [„Bereit.“]
++ [„Bereit.“]
     ~ beginneAufgaben("riverton.reiheTamsin")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     Ich zähle so lange bis tausend. Rückwärts. #sprecher:tamsin #stimmung:lacht
     -> END
 
@@ -208,10 +208,10 @@ Meine Aufgaben sind Springer, die auf zwei Figuren gleichzeitig zeigen. Du finde
 ~ zuschauenAngeboten = true
 Willst du was sehen? Slick und Ray spielen gleich Blitz. #sprecher:tamsin #stimmung:laechelt
 Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin #stimmung:nachdenklich
-* [„Ich schau zu.“]
++ [„Ich schau zu.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     {clubkampfRivertonBesprochen:
         Okay. Die beiden spielen jetzt überall, wo eine Stufe frei ist. #sprecher:tamsin #stimmung:nachdenklich
     - else:
@@ -221,10 +221,10 @@ Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin
 
 === tamsin_zuschauen_wieder ===
 Zuschauen? Slick und Ray spielen schon wieder. #sprecher:tamsin #stimmung:laechelt
-* [„Ja.“]
++ [„Ja.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     -> END
 
 === tamsin_alltag ===
@@ -292,10 +292,10 @@ Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die
 -> ray_reihe_wahl
 
 === ray_reihe_wahl ===
-* [„Zeigen Sie es mir.“]
++ [„Zeigen Sie es mir.“]
     ~ beginneAufgaben("riverton.reiheRay")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     Ich warte. Ich bin das Warten gewohnt. #sprecher:ray #stimmung:laechelt
     -> END
 

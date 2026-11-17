@@ -32,8 +32,8 @@
     "#..............................pppppp......................#",
     "#..............................pppppp......................#",
     "#..............................pppppp......................#",
-    "#..pppppppppppppppppppppppppppppppppppppppppppppppppppp....#",
-    "#..pppppppppppppppppppppppppppppppppppppppppppppppppppp....#",
+    "#..ppppppppppppppppppppppppppppppppppppppppppppppppppp.....#",
+    "#..ppppppppppppppppppppppppppppppppppppppppppppppppppp.....#",
     "ssssssssssssssssssssssssssssssssssssssssssssppp............#",
     "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmsspp............#",
     "ssssssssssssssssssssssssssssssssssssssssssssssp............#",
@@ -44,10 +44,10 @@
     "#.........................................psns.............#",
     "#.........................................psns.............#",
     "#.........................................psns.............#",
-    "#.........................................psns........fffff#",
-    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq........fffff#",
+    "#.........................................psns..........fff#",
+    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq..........fff#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
-    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppp....#",
+    "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpppppppppp...#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkk......",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkk......",
     "#..........................................................#",
@@ -700,7 +700,7 @@
     },
     {
       "moebel": "ds8Containerhaus",
-      "feld": [54, 11]
+      "feld": [54, 7]
     },
     {
       "moebel": "ds8Containerhaus",
@@ -716,25 +716,17 @@
     },
     {
       "moebel": "ds8Gemischtwaren",
-      "feld": [46, 22]
+      "feld": [46, 20],
+      "massstab": 1.2,
+      "versatz": [0, 3]
     },
     {
       "moebel": "by9HuetteKrebs",
-      "feld": [54, 18]
+      "feld": [54, 13]
     },
     {
       "moebel": "cc8PrellbockQuer",
-      "feld": [54, 27]
-    },
-    {
-      "moebel": "cc4Gleis",
-      "feld": [55, 28],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Gleis",
-      "feld": [56, 28],
-      "bauteil_ok": true
+      "feld": [56, 27]
     },
     {
       "moebel": "cc4Gleis",

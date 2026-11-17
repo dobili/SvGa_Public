@@ -12267,7 +12267,7 @@
     },
     {
      "id": 7,
-     "name": "schneeraeumroboter",
+     "name": "kehrroboter",
      "type": "tier",
      "x": 320,
      "y": 800,
@@ -12922,9 +12922,9 @@
      "name": "sa8Polizei2",
      "type": "moebel",
      "x": 128,
-     "y": 128,
-     "width": 112,
-     "height": 208,
+     "y": 76,
+     "width": 140,
+     "height": 260,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12937,17 +12937,27 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "........./#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/........."
       }
      ]
     },
     {
      "id": 27,
-     "name": "sa8Viktorianisch",
+     "name": "rv8MietshausB",
      "type": "moebel",
-     "x": 240,
-     "y": 80,
-     "width": 96,
-     "height": 256,
+     "x": 272,
+     "y": 96,
+     "width": 60,
+     "height": 240,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12960,6 +12970,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.25
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "..../####/####/####/####/####/####/####/####/####/####/####/####/####/####"
       }
      ]
     },
@@ -14978,8 +14998,8 @@
      "id": 115,
      "name": "wg4Laubbaum",
      "type": "moebel",
-     "x": 160,
-     "y": 64,
+     "x": 336,
+     "y": 48,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -14988,7 +15008,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 104
       },
       {
        "name": "kollision",
@@ -15070,7 +15090,7 @@
      "id": 119,
      "name": "mf4Laterne",
      "type": "moebel",
-     "x": 224,
+     "x": 256,
      "y": 304,
      "width": 16,
      "height": 64,

@@ -15503,7 +15503,7 @@
      "id": 146,
      "name": "rv8Baeckerei",
      "type": "moebel",
-     "x": 512,
+     "x": 496,
      "y": 432,
      "width": 112,
      "height": 144,
@@ -15526,22 +15526,32 @@
      "id": 147,
      "name": "rv5Cafe",
      "type": "moebel",
-     "x": 672,
-     "y": 432,
-     "width": 128,
-     "height": 144,
+     "x": 640,
+     "y": 419,
+     "width": 154,
+     "height": 173,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 568
+       "value": 584
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.2
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "........../##########/##########/##########/##########/##########/##########/##########/##########/##########/##########"
       }
      ]
     },
@@ -15871,7 +15881,7 @@
      "id": 162,
      "name": "mf4Laterne",
      "type": "moebel",
-     "x": 656,
+     "x": 624,
      "y": 544,
      "width": 16,
      "height": 64,
@@ -15894,8 +15904,8 @@
      "id": 163,
      "name": "mf4Laterne",
      "type": "moebel",
-     "x": 784,
-     "y": 480,
+     "x": 768,
+     "y": 544,
      "width": 16,
      "height": 64,
      "rotation": 0,
@@ -15904,7 +15914,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 536
+       "value": 600
       },
       {
        "name": "kollision",
@@ -18296,8 +18306,8 @@
      "id": 267,
      "name": "rv9PfuetzeGross",
      "type": "moebel",
-     "x": 576,
-     "y": 304,
+     "x": 624,
+     "y": 320,
      "width": 48,
      "height": 32,
      "rotation": 0,

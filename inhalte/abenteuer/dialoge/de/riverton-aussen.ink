@@ -44,6 +44,9 @@ VAR verbotGesehen = false
 VAR nadelIronwood = 0
 VAR endeAkt3Gesehen = false
 VAR eliGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -81,7 +84,9 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 }
 {nadelRiverton > 0:
     Der Treidelpfad am Kanal führt nach Ironwood. Zu Fuß ist es weit, mit dem Rad geht es schneller. #sprecher:erzaehler
-    Ironwood. Dort riecht die Luft nach Eisen, sagt man. Gehen wir. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Ironwood. Dort riecht die Luft nach Eisen, sagt man. Gehen wir. #sprecher:ambrose #stimmung:laechelt
+    }
 - else:
     Ein Treidelpfad führt am Kanal entlang Richtung Ironwood. #sprecher:erzaehler
     Erst der Pavillon, {held}. Wer eine Stadt verlässt, bevor er dort gespielt hat, war nie richtig da. #sprecher:ambrose #stimmung:laechelt
@@ -251,7 +256,7 @@ Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:er
 {
 - not eliGesehen: -> eli
 - else:
-    Auf allen Bildschirmen laufen Partien, Zug um Zug, ohne Pause. Ambrose sieht hin. Lange. #sprecher:erzaehler #musik:konzern.flaeche
+    Auf allen Bildschirmen laufen Partien, Zug um Zug, ohne Pause. {not abschiedGesehen:Ambrose sieht hin. Lange.} #sprecher:erzaehler #musik:konzern.flaeche
     -> END
 }
 
@@ -277,7 +282,9 @@ Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:er
 
 === handyladen ===
 Ein Laden voller Tablets mit dem Logo von Perfect Move. Im Schaufenster: „Dein persönlicher Trainer, schon ab heute.“ #sprecher:erzaehler
-Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === fund_laeufer ===
@@ -289,7 +296,9 @@ Ein Trainer in einem Glaskasten. Hoffentlich bekommt er genug Luft. #sprecher:am
 Unter der Brücke spielt ein Straßenmusiker Gitarre. Neben seinem Hut liegt ein Läufer aus hellem Holz. #sprecher:erzaehler
 „Den hab ich hier gefunden“, sagt er. „Behalt ihn, ich spiele nur Gitarre.“ #sprecher:erzaehler
 ~ gibFund("holzlaeufer")
-Ein Läufer aus hellem Holz, ganz allein. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Läufer aus hellem Holz, ganz allein. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 // ---------------------------------------------------------------- Anleger am Kanalbecken (Runde 6)

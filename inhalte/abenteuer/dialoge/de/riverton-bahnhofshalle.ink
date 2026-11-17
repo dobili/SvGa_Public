@@ -40,6 +40,9 @@ VAR nadelRiverton = 0
 VAR nadelIronwood = 0
 VAR endeAkt3Gesehen = false
 VAR londonNachgespraechGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mr. Harlan
 
@@ -77,7 +80,9 @@ VAR londonNachgespraechGesehen = false
 Er greift in die Westentasche und legt dir etwas in die Hand. Eine kleine Lupe aus Messing, zum Aufklappen, blank gerieben. #sprecher:erzaehler
 Fünfzig Jahre an Uhrwerken. Man sieht damit nicht die Zahnräder. Man sieht, wo es hakt. #sprecher:harlan #stimmung:nachdenklich
 Bei mir: Ich denke zu lange. Du darfst das wissen. Die meisten wollen es nicht wissen, sie wollen nur schneller sein. #sprecher:harlan #stimmung:nachdenklich
-Ein ehrliches Werkzeug. Es zeigt nur, was ohnehin da ist. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein ehrliches Werkzeug. Es zeigt nur, was ohnehin da ist. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === harlan_erstes_treffen ===
@@ -95,7 +100,9 @@ Mr. Harlan hebt den Kopf, sehr langsam. Hinter den Gläsern sind seine Augen rie
 Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan #stimmung:laechelt
 Er sieht hinauf zur großen Uhr. #sprecher:erzaehler
 Eile ist der Feind der Feder. Und der Unruh. Aber bitte. #sprecher:harlan #stimmung:laechelt
-Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose #stimmung:laechelt
+}
 + [„Spielen wir.“]
     ~ beginnePartie("riverton.harlan")
     -> END
@@ -194,7 +201,7 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 {
 - flashbackLondonBestanden and not londonNachgespraechGesehen: -> london_nachgespraech
 - flashbackLondonBestanden:
-    Die große Uhr tickt. Ambrose sieht zu den hohen Fenstern und sagt nichts. #sprecher:erzaehler
+    Die große Uhr tickt. {not abschiedGesehen:Ambrose sieht zu den hohen Fenstern und sagt nichts.} #sprecher:erzaehler
     -> END
 - not bildschirmtischeGesehen:
     Eine Uhr, so groß wie ein Wagenrad. Sie tickt so laut, dass man es im Bauch spürt. #sprecher:erzaehler
@@ -202,19 +209,28 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 }
 Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
 Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
+// Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; die Uhr führt allein nach London.
+{abschiedGesehen: -> schlag}
 Ich war einmal jünger als du jetzt. Fast. #sprecher:ambrose #stimmung:laechelt
 Er sieht nicht zu den Fenstern. Er sieht hinauf zur Uhr. #sprecher:erzaehler
 Mein Vater baute Klaviere. Für das Holz fuhr er nach London, einmal im Jahr. Als ich zwanzig war, nahm er mich mit. #sprecher:ambrose #stimmung:nachdenklich
 Ich sollte lernen, wie man Fichte prüft. Man klopft darauf und hört zu. Ich habe nichts gehört. Ich dachte an etwas anderes. #sprecher:ambrose #stimmung:laechelt
 * [„Woran?“]
 * [Zuhören]
-- Die Uhr schlägt. Neunmal. Mit jedem Schlag wird die Halle heller, und der Hall wird zu Hufen auf Pflaster. #sprecher:erzaehler #klang:uhr_hufschlag #musik:aus
-Komm. Ich zeige es dir. #sprecher:ambrose #stimmung:laechelt
+- -> schlag
+
+= schlag
+Die Uhr schlägt. Neunmal. Mit jedem Schlag wird die Halle heller, und der Hall wird zu Hufen auf Pflaster. #sprecher:erzaehler #klang:uhr_hufschlag #musik:aus
+{not abschiedGesehen:
+    Komm. Ich zeige es dir. #sprecher:ambrose #stimmung:laechelt
+}
 * [Mitgehen]
     ~ reise("erinnerungLondon.strand", "ankunft")
     -> END
 * [„Nicht jetzt.“]
-    Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. Es wartet auch noch eine Stunde. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. Es wartet auch noch eine Stunde. #sprecher:ambrose #stimmung:laechelt
+    }
     -> END
 
 // Kapitel 21, Schluss: der Gedanke, der Ambrose in Akt 3 trägt. Wer alles sieht, muss nicht hoffen.
@@ -222,6 +238,7 @@ Komm. Ich zeige es dir. #sprecher:ambrose #stimmung:laechelt
 === london_nachgespraech ===
 ~ londonNachgespraechGesehen = true
 Du sitzt wieder auf der Bank unter der Uhr. Juno schläft. Deine Hände sind deine. #sprecher:erzaehler
+{abschiedGesehen: -> END}
 Sie nennen sie die Unsterbliche. Heute noch, nehme ich an. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ja.“]
 * [Nicken]
@@ -280,5 +297,7 @@ Willst du es versuchen? Für Elias. #sprecher:pops #stimmung:laechelt
 ~ taubenfederGefunden = true
 Auf der Bank neben {harlanGetroffen:Mr. Harlan|dem Mann mit der Lupenbrille} liegt eine graue Taubenfeder. Er schiebt sie dir hin, ohne aufzusehen. #sprecher:erzaehler
 ~ gibFund("taubenfeder")
-Eine Feder. Damit schrieb man früher Partien auf. Ich auch. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Eine Feder. Damit schrieb man früher Partien auf. Ich auch. #sprecher:ambrose #stimmung:laechelt
+}
 -> END

@@ -49,34 +49,56 @@ VAR nadelIronwood = 0
 VAR adaGetroffen = false
 VAR faehrsteinGesehen = false
 VAR tafelGesehen = false
+VAR junoWegErzaehlt = false
 VAR schildCedarGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Rätseltafel
 
 === tafel ===
 {wegMapleCedarTafelBestanden:
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
+    {junoErzaehltNoch(): -> juno_weg}
     -> END
 }
 // Erster Blick: aus der VAR, nicht aus dem Besuchszähler; die App beginnt jeden Dialog als neue
 // Geschichte, „tafel == 1“ galt deshalb immer (python -m pipeline.abenteuer.inkbesuche, 17.11.2026).
-~ temp ersterBlick = not tafelGesehen
-{not tafelGesehen:
-    ~ tafelGesehen = true
-    Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler
-}
+{not tafelGesehen: Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler}
 Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
-{ersterBlick: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+{not tafelGesehen: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+~ tafelGesehen = true
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegMapleCedar.tafel")
     -> END
 * [Weitergehen]
-    {ersterBlick: -> juno_weg}
+    {junoErzaehltNoch(): -> juno_weg}
     -> END
 
+// Nach der Runde an der Tafel (runden.json, „danach“; startet, sobald die Ergebniskarte zu ist):
+// Wer die Aufgaben löst, hört Junos Erzählung hier statt nach „Weitergehen“ (Lektorat Akt 1,
+// 17.11.2026). Eine abgebrochene Runde hat keine Ergebniskarte; dann erzählt Juno beim nächsten
+// Blick auf die Tafel.
+=== tafel_danach ===
+{wegMapleCedarTafelBestanden:
+    Die letzte Magnetfigur klackt aufs Blech. Das Rätsel ist gelöst. #sprecher:erzaehler
+- else:
+    Die Magnetfiguren rutschen zurück an ihren Platz. Das Rätsel wartet. #sprecher:erzaehler
+}
+{junoErzaehltNoch(): -> juno_weg}
+-> END
+
+// Junos Erzählung steht noch aus: genau einmal, und nur auf dem ersten Weg nach Cedar Creek
+// (danach stimmt „noch niemand hat gewonnen“ nicht mehr, und Juno geht nicht mehr mit).
+=== function junoErzaehltNoch() ===
+~ return not junoWegErzaehlt and nadelCedarCreek == 0
+
 // Runde 11 (Dialogprüfung B2, „Fehlt im Spiel“; Roman Kapitel 10): Juno erzählt auf der
-// Landstraße. Läuft einmal, nach dem ersten Blick auf die Tafel.
+// Landstraße. Läuft genau einmal, beim ersten Verlassen der Tafel, gleich auf welchem Weg
+// (Weitergehen, nach der Runde oder beim Blick auf die gelöste Tafel); merkt es in junoWegErzaehlt.
 === juno_weg ===
+~ junoWegErzaehlt = true
 Die Landstraße läuft zwischen Feldern, gerade wie mit dem Lineal gezogen. Der Himmel ist sehr groß. #sprecher:erzaehler
 Meine Schwester Carla war drei Jahre im Team. Dann kam das Auto. Jetzt tut sie, als hätte es sie nie interessiert. #sprecher:juno #stimmung:nachdenklich
 Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno #stimmung:nachdenklich
@@ -145,14 +167,14 @@ Sonst trägst du mein Board bis Cedar Creek. #sprecher:nia #stimmung:lacht
 
 === nia_duell ===
 // Ambrose schweigt auf dem ersten Weg bis zum Fluss (Roman, Kapitel 10).
-{faehrsteinGesehen: Sie hat die Figuren aufgestellt, bevor ich „Guten Tag“ sagen konnte. #sprecher:ambrose #stimmung:ueberrascht}
+{faehrsteinGesehen and not abschiedGesehen: Sie hat die Figuren aufgestellt, bevor ich „Guten Tag“ sagen konnte. #sprecher:ambrose #stimmung:ueberrascht}
 ~ beginnePartie("wegMapleCedar.nia")
 Nia stellt die Figuren auf ihr Board, so schnell, dass du kaum hinsiehst. #sprecher:erzaehler
 -> END
 
 === nia_nach_sieg ===
 Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia #stimmung:ueberrascht
-{faehrsteinGesehen: Schnell war sie. Du warst da. #sprecher:ambrose #stimmung:laechelt}
+{faehrsteinGesehen and not abschiedGesehen: Schnell war sie. Du warst da. #sprecher:ambrose #stimmung:laechelt}
 + [„Noch eine.“]
     -> nia_duell
 + [„Ich muss weiter.“]
@@ -161,7 +183,7 @@ Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia #stimmu
 
 === nia_nach_niederlage ===
 Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia #stimmung:lacht
-{faehrsteinGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
+{faehrsteinGesehen and not abschiedGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]
@@ -180,7 +202,7 @@ Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 ~ gibFund("formular1857")
 // Gutachten K1.11: Vor dem Fluss schweigt Ambrose (Roman Kapitel 10); die Handschrift erkennt er
 // erst beim Entziffern im Waschsalon.
-{faehrsteinGesehen:
+{faehrsteinGesehen and not abschiedGesehen:
     Heb es gut auf, Kind. #sprecher:ambrose #stimmung:traurig
 - else:
     Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2
@@ -196,7 +218,7 @@ Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 Zwischen zwei Steinen am Ufer klemmt eine kleine Holzkiste. Darin klimpern Münzen. #sprecher:erzaehler
 ~ gibFund("muenzenFlussweg")
 // Dialogprüfung, 17.11.2026: Die Kiste liegt vor der Fährstelle; bis dorthin schweigt Ambrose.
-{faehrsteinGesehen: Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders überlegt. #sprecher:ambrose #stimmung:nachdenklich|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
+{faehrsteinGesehen and not abschiedGesehen: Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders überlegt. #sprecher:ambrose #stimmung:nachdenklich|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
 -> END
 
 // ---------------------------------------------------------------- Rast und Schild
@@ -257,7 +279,7 @@ Odette Finch. Problemhefte, fünfzig Cent das Stück. Aber erst stelle ich dir e
 Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. #sprecher:odette #stimmung:laechelt
 Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:lacht
 // Dialogprüfung, 17.11.2026: Auf dem ersten Weg schweigt Ambrose bis zur Fährstelle.
-{faehrsteinGesehen: Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
+{faehrsteinGesehen and not abschiedGesehen: Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
 * [Die Fallen lösen]
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END
@@ -274,7 +296,7 @@ Sechzehn weiße Figuren aus Buchsbaum. Fünfzehn liegen versteckt an den Wegen, 
 ~ gibFund("finchKarte")
 Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft nimmst du mit, drei Aufgaben für unterwegs. #sprecher:odette #stimmung:laechelt
 ~ gibFund("problemheft")
-{faehrsteinGesehen: Fünfzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht}
+{faehrsteinGesehen and not abschiedGesehen: Fünfzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht}
 -> END
 
 === flohmarkt_spaeter ===
@@ -297,7 +319,7 @@ Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Wei
 ~ seite00Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite00")
-{faehrsteinGesehen: Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose #stimmung:nachdenklich|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
+{faehrsteinGesehen and not abschiedGesehen: Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose #stimmung:nachdenklich|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
 -> END
 
 === finch_bauer_a ===
@@ -364,13 +386,17 @@ Juno legt einen Dollar in die Dose und nimmt zwei Äpfel. Einen gibt sie dir. #s
 === apfelstand_b ===
 An der Blechdose klebt jetzt ein Zettel in großer Schrift. #sprecher:erzaehler
 „Wer es war, kann es zurücklegen. Ich frag nicht.“ #sprecher:erzaehler
-Eine Frau, die nicht fragt. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Eine Frau, die nicht fragt. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 === apfelstand_c ===
 Der Zettel hängt noch an der Dose. Darunter hat jemand einen Apfelkern geklebt. #sprecher:erzaehler
 „Stimmt wieder“, steht in Adas Schrift daneben. „Mit Zinsen.“ #sprecher:erzaehler
-Ein Apfelkern als Entschuldigung. Das gefällt mir. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Ein Apfelkern als Entschuldigung. Das gefällt mir. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 
 === apfelstand_d ===
@@ -466,7 +492,9 @@ Am Steg steht ihre Wasserflasche, wie ein Merkzeichen. #sprecher:erzaehler
 === tessa_c ===
 Unter den Zedern läuft dir jemand entgegen, gleichmäßig, ohne Hast. Die Joggerin. #sprecher:erzaehler
 Sie hebt nur die Hand und läuft weiter. Zum Reden braucht sie den Atem nicht mehr. #sprecher:erzaehler
-Die ganze Strecke. Wer hätte das gedacht? Sie vermutlich nicht. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Die ganze Strecke. Wer hätte das gedacht? Sie vermutlich nicht. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === tessa_d ===

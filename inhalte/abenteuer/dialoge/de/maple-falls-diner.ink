@@ -17,6 +17,9 @@ VAR nadelMapleFalls = 0
 VAR endeAkt1Gesehen = false
 VAR nadelIronwood = 0
 VAR hectorGetroffen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === hector ===
 {
@@ -50,7 +53,9 @@ Die meisten nicken nur. Aber ich weiß, was es heißt. #sprecher:hector #stimmun
     Dass es geht. Jemand sitzt da und sieht es. Dann kann ich es auch. Irgendwann. #sprecher:hector #stimmung:laechelt
 * [„Meine Mutter war schneller.“]
     Deine Mutter? Die hat nur Ketchup bestellt. #sprecher:hector #stimmung:lacht
-    Ein Gentleman schweigt über Damen. Du hast es dennoch gesagt. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Ein Gentleman schweigt über Damen. Du hast es dennoch gesagt. #sprecher:ambrose #stimmung:lacht
+    }
 - -> END
 
 === hector_c ===
@@ -62,7 +67,9 @@ Ich hab erst die Dame gezogen, dann gemerkt, das ist falsch, dann den Turm. Und 
 - Ein Gast kommt herein. Hector dreht sich zu ihm um. #sprecher:erzaehler
 Hast du's gehört? Ich hab eins gelöst. Selbst! Matt in zwei! #sprecher:hector #stimmung:froh
 Beim Bezahlen hörst du es ein drittes Mal. #sprecher:erzaehler
-Drei Wochen für ein Matt in zwei. Ich hätte keinen Tag gebraucht. Aber ich hätte mich nicht so gefreut. #sprecher:ambrose #stimmung:still
+{not abschiedGesehen:
+    Drei Wochen für ein Matt in zwei. Ich hätte keinen Tag gebraucht. Aber ich hätte mich nicht so gefreut. #sprecher:ambrose #stimmung:still
+}
 -> END
 
 === hector_d ===

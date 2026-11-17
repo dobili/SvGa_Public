@@ -156,6 +156,10 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
 // erreichbar (Chaos-Prüfung der Gesamtsimulation, 14.11.2026).
 {
 - abschiedGesehen and not epilogGesehen: -> epilog
+- abschiedGesehen:
+    // Nach dem Epilog spricht niemand mehr aus dem Brett (Entscheidung Q21-5).
+    Es ist still im Zimmer. Draußen rauscht der Wasserfall. #sprecher:erzaehler
+    -> END
 - not ambroseErwachtGesehen: -> ambrose_erwacht
 - ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen": -> ambrose_wartet
 - not ersteLektionBesprochen: -> nach_erster_partie

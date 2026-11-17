@@ -37,6 +37,9 @@ VAR clubkampfBauerGesehen = false
 VAR nachtImLesesaal = false
 VAR clubkampfBauerAbgelehnt = false
 VAR clubkampfZaehlGesagt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -105,10 +108,17 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 === okafor_bis_morgen ===
 Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor #stimmung:laechelt
 {maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor #stimmung:laechelt}
-* [„Ich geh noch zum Steg.“]
+// Wer schlafen ginge, bevor Mae eingeladen hat, bekäme die Sternennacht nie angeboten (die Quest
+// beginnt in mae_einladung, und nach der Nacht lädt Mae nicht mehr ein). Deshalb schickt
+// Mrs. Okafor erst zu Mae; schlafen geht man danach.
+{not maeEingeladen: Mae sucht dich übrigens. Es geht um Sterne, glaube ich. #sprecher:okafor #stimmung:laechelt}
+* {not maeEingeladen} [„Ich frag sie.“]
+    Tu das. Sie platzt sonst. #sprecher:okafor #stimmung:laechelt
+    -> END
+* {maeEingeladen} [„Ich geh noch zum Steg.“]
     Geh nur. Am Wasser wird es abends kalt. #sprecher:okafor #stimmung:laechelt
     -> END
-* [„Ich geh schlafen.“]
+* {maeEingeladen} [„Ich geh schlafen.“]
     ~ nachtImLesesaal = true
     Du rollst dich auf einer Matte unter dem langen Tisch ein. Die Uhr im Türmchen tickt. #sprecher:erzaehler #geraeusch:uhr_ticken
     Am Morgen sitzt Mrs. Okafor schon am langen Tisch, eine Tasse in der Hand. #sprecher:erzaehler
@@ -246,7 +256,9 @@ Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae #stimmung:l
 Das hier ist das Arabische. Und das … #sprecher:mae #stimmung:laechelt
 Sie senkt die Stimme. #sprecher:erzaehler
 Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine Luft kriegt. #sprecher:mae #stimmung:lacht
-Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
+{not abschiedGesehen:
+    Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
+}
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END
@@ -296,7 +308,9 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 === zwillinge_c ===
 Am Tresen hängt eine Strichliste in Miss Ashbys Schrift: Ivy 14, Jonah 14. #sprecher:erzaehler
 Die Zwillinge spielen am langen Tisch. Leise. Keiner sagt, wer gewinnt. #sprecher:erzaehler
-Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 
 === zwillinge_d ===

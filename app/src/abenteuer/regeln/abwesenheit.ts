@@ -3,7 +3,8 @@
  * Zwischen „Tiefpunkt“ (Port Delacroix nach dem Vorwurf, Dialogvariable tiefpunktGesehen) und
  * „Versöhnung“ (Desert Springs, versoehnungGesehen) ist Ambrose nicht da. Er steht auf keiner
  * Karte, seine Karten sind im Kartenmenü grau („Er ist nicht da.“), und Partiemomente, in denen er
- * spricht, fallen weg.
+ * spricht, fallen weg. Nach dem Abschied im Finale (abschiedGesehen, Entscheidung Q21-5) sagt er
+ * nichts mehr: keine Kommentare zu Statisten, keine Partiemomente (ambroseVerabschiedet).
  *
  * Rolle im Gesamtbild: reine Regeln für weltdaten.ts (Karte), Deckwahl.tsx (Karten),
  * anbindung/Momentzeile.tsx (Momente) und Oberwelt.tsx (Ambroses Kommentar zu Statisten); karten.ts und schutzengel.ts fragen dieselbe Bedingung.
@@ -32,16 +33,29 @@ export function ambroseFehlt(variablen: Abenteuerstand["dialogvariablen"]): bool
 }
 
 /**
+ * Hat Ambrose sich verabschiedet? Nach dem Abschied auf der Treppe der Capital Arena
+ * (Dialogvariable abschiedGesehen, capital-arena-aussen.ink) spricht er nicht mehr (Story-Bibel
+ * Abschnitt 33, Frage 5; Entscheidung Q21-5). Die Dialoge halten das selbst ein
+ * (`{not abschiedGesehen: …}`, geprüft von pipeline/abenteuer/ambrose-danach.cjs); die Hülle fragt
+ * hier für seine Kommentare zu Statisten und seine Partiemomente (Revanchen nach dem Finale).
+ * Beispiel: abschiedGesehen → ja; im Tiefpunkt → nein (dafür ambroseFehlt).
+ */
+export function ambroseVerabschiedet(variablen: Abenteuerstand["dialogvariablen"]): boolean {
+  return variablen.abschiedGesehen === true;
+}
+
+/**
  * Kann Ambrose gerade etwas sagen, etwa einen Kommentar zu einem Statisten (`<sagt>.ambrose`,
  * Wunsch des Haupt-Chats, 17.11.2026)? Erst nach der ersten Lektion auf dem Dachboden
  * (ersteLektionBesprochen); vorher ist er noch nicht erwacht. Nach dem Vorwurf (tiefpunktGesehen)
  * schweigt er, bis er bei der Familie in Port Delacroix wieder spricht (ambroseSprichtWieder,
  * Story-Bibel Szene 68) oder spätestens bei der Versöhnung (versoehnungGesehen); so halten es auch
- * die Dialoge (weg-delacroix-desert.ink, port-delacroix-turnhalle.ink).
+ * die Dialoge (weg-delacroix-desert.ink, port-delacroix-turnhalle.ink). Nach dem Abschied
+ * (ambroseVerabschiedet) sagt er nichts mehr.
  * Beispiel: tiefpunktGesehen ohne ambroseSprichtWieder → nein; danach mit ihm → ja.
  */
 export function ambroseSprichtJetzt(variablen: Abenteuerstand["dialogvariablen"]): boolean {
-  if (variablen.ersteLektionBesprochen !== true) return false;
+  if (variablen.ersteLektionBesprochen !== true || ambroseVerabschiedet(variablen)) return false;
   if (variablen.tiefpunktGesehen !== true) return true;
   return variablen.ambroseSprichtWieder === true || variablen.versoehnungGesehen === true;
 }
@@ -74,7 +88,10 @@ export function ohneAbwesende<T extends object>(
   return { ...karte, layers: ohne };
 }
 
-/** Partiemomente ohne die, in denen Ambrose spricht, wenn er fehlt (`fehlt`: ambroseFehlt). */
+/**
+ * Partiemomente ohne die, in denen Ambrose spricht, wenn er fehlt (`fehlt`: ambroseFehlt im
+ * Tiefpunkt oder ambroseVerabschiedet nach dem Abschied).
+ */
 export function anwesendeMomente<T extends { readonly sprecher: string }>(
   momente: readonly T[],
   fehlt: boolean,

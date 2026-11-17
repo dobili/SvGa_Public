@@ -19,6 +19,9 @@ VAR glasfunkeGefunden = false
 VAR birdNachgesprochen = false
 VAR held = "Du"
 VAR hankGetroffen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === teague ===
 {teagueGetroffen:
@@ -73,6 +76,8 @@ Zuunterst ein Umschlag aus dickem, gelblichem Papier. Die Schrift ist klein und 
 In der Ecke, noch kleiner: „J. Hale.“ #sprecher:erzaehler #geraeusch:aus #musik:aus
 Die Klappe ist offen. Der Umschlag ist leer. #sprecher:erzaehler
 Sonderbar. Der Brief muss herausgefallen sein. Es gab damals eine Verordnung, bei Fieber … #sprecher:teague #stimmung:ueberrascht
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: gleich weiter mit Mr. Teague.
+{abschiedGesehen: -> umschlag_leer}
 Ambrose steht so still, wie du ihn noch nie gesehen hast. #sprecher:erzaehler #pause:5
 Er hat mir geschrieben. #sprecher:ambrose #stimmung:still #musik:ambrose.cello
 Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs. #sprecher:ambrose #stimmung:nachdenklich #pause
@@ -81,7 +86,10 @@ Er hat geschrieben, und ich war schon unterwegs. #sprecher:ambrose #stimmung:bit
 - Ich weiß es nicht. #sprecher:ambrose #stimmung:nachdenklich
 Er streckt die Hand nach dem Umschlag aus. Sie geht hindurch. #sprecher:erzaehler #bild:aus
 Ich weiß es nicht, {held}. Ich habe hundertsechzig Jahre lang geglaubt, er habe geschwiegen. #sprecher:ambrose #stimmung:traurig
-Mr. Teague sieht dich über die Brille an. #sprecher:erzaehler
+-> umschlag_leer
+
+= umschlag_leer
+Mr. Teague sieht dich über die Brille an. #sprecher:erzaehler #bild:aus
 Du kennst den Namen. #sprecher:teague #stimmung:ueberrascht
 * [„Ein bisschen.“]
 - Er nickt langsam. #sprecher:erzaehler
@@ -93,10 +101,11 @@ Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was 
 {erinnerungBirdBestanden and not birdNachgesprochen: -> vitrine_mut}
 // Die Hülle öffnet vitrine_mut nach der Runde von selbst (runden.json, danach), auch ohne Bestehen.
 {erinnerungBirdBestanden:
-    In der Vitrine liegt die Zeitung von 1858. Ambrose sieht sie nicht mehr an. #sprecher:erzaehler
+    In der Vitrine liegt die Zeitung von 1858. {not abschiedGesehen:Ambrose sieht sie nicht mehr an.} #sprecher:erzaehler
     -> END
 }
 In der Vitrine liegt eine vergilbte Zeitung, aufgeschlagen bei einem kleinen gedruckten Schachbrett. #sprecher:erzaehler
+{abschiedGesehen: -> allein}
 Die habe ich gelesen. In der Nacht nach dem Match. Vier zu drei. #sprecher:ambrose #stimmung:alt
 Ich wollte nie wieder eine Figur anrühren. Auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. #sprecher:ambrose #stimmung:bitter
 Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzigmal. Bis es hell wurde. #sprecher:ambrose #stimmung:nachdenklich
@@ -106,12 +115,23 @@ Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzi
 + [„Nicht jetzt.“]
     -> END
 
+// Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; {held} spielt die Partie aus der
+// Zeitung allein nach.
+= allein
+Unter dem Brett stehen die Züge: Morphy gegen Bird, London 1858. #sprecher:erzaehler
++ [Die Partie nachspielen]
+    ~ beginneAufgaben("ironwood.erinnerungBird")
+    -> END
++ [Weitergehen]
+    -> END
+
 // Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat.
 // Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat (Gutachten L1.10).
 === vitrine_mut ===
 {birdNachgesprochen: -> END}
 ~ birdNachgesprochen = true
 Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, an den Rand. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
+{abschiedGesehen: -> END}
 Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose #stimmung:nachdenklich
 {umschlagGeoeffnet: Er sieht auf den Umschlag in deiner Hand. #sprecher:erzaehler}
 Ich schon. Ich habe den Mut verloren. Einen Abend lang. #sprecher:ambrose #stimmung:bitter
@@ -129,5 +149,7 @@ Nein. Wenn ich ehrlich bin. Länger. #sprecher:ambrose #stimmung:still
 In einem Schaukasten funkelt ein kleiner Glassplitter, geschliffen wie ein Edelstein. Ein Funke aus Glas. #sprecher:erzaehler
 Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 ~ gibFund("glasfunke")
-Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt. #sprecher:ambrose #stimmung:laechelt
+}
 -> END

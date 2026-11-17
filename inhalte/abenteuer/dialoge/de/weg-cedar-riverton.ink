@@ -41,6 +41,9 @@ VAR zugpartieErledigt = false
 VAR seite01Gefunden = false
 VAR thermoskanneGefunden = false
 VAR gueterzugGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mrs. Fenwick
 
@@ -66,7 +69,9 @@ Das weiß jeder. Bis er angreift. #sprecher:fenwick #stimmung:laechelt
     -> END
 }
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
-Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCedarRiverton.tafel")
     -> END
@@ -97,6 +102,7 @@ Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
 === gueterzug ===
 ~ gueterzugGesehen = true
 Erst singt die Schiene. Dann zittert der Boden. Dann rattert ein Güterzug vorbei, vierzig Wagen. Du zählst sie. #sprecher:erzaehler #klang:gueterzug
+{abschiedGesehen: ->->}
 So schnell. #sprecher:ambrose #stimmung:ueberrascht #pause:2
 Er klingt nicht beeindruckt. Er klingt müde. #sprecher:erzaehler
 Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin nicht angekommen. #sprecher:ambrose #stimmung:traurig
@@ -107,7 +113,9 @@ Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin 
 === quinn_angebot ===
 Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffner #stimmung:laechelt
 + [„Abgemacht.“]
-    Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose #stimmung:nachdenklich
+    }
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
 + [„Nicht jetzt.“]
@@ -142,7 +150,9 @@ Ihr habt keinen. #sprecher:erzaehler
 
 === quinn_nach_niederlage ===
 Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner #stimmung:laechelt
-Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -159,7 +169,9 @@ Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
 ~ pfeilspitzeGefunden = true
 Unter einem Farn am Bach glänzt etwas: eine Pfeilspitze aus Stein, scharf wie am ersten Tag. #sprecher:erzaehler
 ~ gibFund("pfeilspitze")
-Wer hier jagte, kannte den Wald besser als jede Karte. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Wer hier jagte, kannte den Wald besser als jede Karte. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 === fund_holzspringer ===
@@ -173,7 +185,9 @@ Unter dem Fuß ist ein Feld eingebrannt, daneben ein winziger Fink. #sprecher:er
 ~ holzspringerGefunden = true
 ~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchSpringerA")
-Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 
 === fund_fahrkarte ===
@@ -184,7 +198,9 @@ Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:l
 ~ fahrkarte1958Gefunden = true
 Im Schotter steckt eine vergilbte Pappkarte: „Riverton, einfache Fahrt, 1958“. #sprecher:erzaehler
 ~ gibFund("fahrkarte1958")
-Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
@@ -218,7 +234,9 @@ Der Läufer hätte gehangen. Und Earl sieht so etwas sofort. #sprecher:rosalind 
 Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
 Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt. #sprecher:rosalind #stimmung:nachdenklich
 ~ gibFund("signalkelle")
-Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === zugpartie_danach ===

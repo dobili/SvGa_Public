@@ -38,6 +38,9 @@ VAR limonadenglasGesehen = false
 VAR tamsinZettelGegeben = false
 VAR tamsinEliErzaehlt = false
 VAR moldeGefuehlt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Slick
 
@@ -324,7 +327,9 @@ Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die
 }
 ~ odumGedenktafelGesehen = true
 Am Geländer zum Fluss steht eine kleine Tafel unter einem Holzdach, darauf eine Messingplatte: „Für Elias Odum, der hier Generationen von Kindern das Schachspiel zeigte.“ #sprecher:erzaehler
-Ein Lehrer, der eine Tafel bekommt. Das ist mehr, als die meisten Meister bekommen. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Lehrer, der eine Tafel bekommt. Das ist mehr, als die meisten Meister bekommen. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 === limonadenglas ===

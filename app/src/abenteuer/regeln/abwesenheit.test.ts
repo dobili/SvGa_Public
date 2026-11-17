@@ -1,11 +1,12 @@
 /**
  * Tests für abwesenheit.ts: Ambrose fehlt zwischen Tiefpunkt und Versöhnung; seine Kommentare zu
- * Statisten nur, wenn er sprechen kann.
+ * Statisten nur, wenn er sprechen kann; nach dem Abschied im Finale sagt er nichts mehr.
  */
 import { describe, expect, it } from "vitest";
 import {
   ambroseFehlt,
   ambroseSprichtJetzt,
+  ambroseVerabschiedet,
   anwesendeMomente,
   istAmbrosesKarte,
   ohneAbwesende,
@@ -70,5 +71,14 @@ describe("Kann Ambrose gerade sprechen (Kommentar zu Statisten)?", () => {
       ambroseSprichtJetzt({ ...LEKTION, tiefpunktGesehen: true, ambroseSprichtWieder: true }),
     ).toBe(true);
     expect(ambroseSprichtJetzt({ ...LEKTION, ...VERSOEHNT })).toBe(true);
+  });
+
+  it("sagt nach dem Abschied im Finale nichts mehr (Entscheidung Q21-5)", () => {
+    const nachFinale = { ...LEKTION, ...VERSOEHNT, ambroseSprichtWieder: true };
+    expect(ambroseVerabschiedet(nachFinale)).toBe(false);
+    expect(ambroseSprichtJetzt(nachFinale)).toBe(true);
+    expect(ambroseVerabschiedet({ ...nachFinale, abschiedGesehen: true })).toBe(true);
+    expect(ambroseSprichtJetzt({ ...nachFinale, abschiedGesehen: true })).toBe(false);
+    expect(ambroseSprichtJetzt({ ...LEKTION, abschiedGesehen: true })).toBe(false);
   });
 });

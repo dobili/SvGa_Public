@@ -106,7 +106,9 @@ python -m pipeline.abenteuer.uebergangsbilder [--ort KENNUNG] [--boegen ORDNER -
 python -m pipeline.abenteuer.ausrichtung [--ort KENNUNG] [--bilder ORDNER --privat PRIVAT]   # Ausrichtung der Bilder und Bauteile (Regel 10.78)
 python -m pipeline.abenteuer.sprache [--woerterbuch]   # Sprachprüfung der Spieltexte (Zeichen, Anrede, Namen; Wörterbuch braucht pyspellchecker)
 python -m pipeline.abenteuer.inkbesuche [--alle]   # Besuchszähler in Ink-Bedingungen, die einen früheren Dialog voraussetzen (die App beginnt jeden Dialog neu; dafür VAR nehmen)
+node pipeline/abenteuer/inkuebersetzung.cjs [--ordner ORDNER]   # alle Ink-Dateien übersetzen, Fehler mit Datei und Zeile (läuft auch als pytest-Dauertest)
 node pipeline/abenteuer/lesefassung.cjs --ziel DATEI.md [--akte]   # Lesefassung: ganzer Spielverlauf als Lesetext aus der Gesamtsimulation (Sprecher, Ort, Questschritt, gewählte Antwort)
+node pipeline/abenteuer/ambrose-danach.cjs [--startwert 1] [--spieler gruendlich,eilig,launisch] [--hinweise] [--abdeckung]   # Ambrose nach dem Abschied (Q21-5): spielt bis nach dem Abschied, geht die Welt ab, meldet jede Zeile, Partie und jeden Moment von ihm („0 Funde“; pytest mit ABENTEUER_SIMULATION=1)
 python -m pipeline.wiki --zeigen   # Seiten beider Wikis im Dashboard (Paket D): „app“ (Schach-App) und „spiel“ (Schach-Abenteuer, pipeline/wiki_spiel.py aus docs/spiel/, Codeführer in docs/spiel/codefuehrer/); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 python -m pipeline.abenteuer.editorpaket PRIVAT PRIVAT/editor   # Karteneditor-Paket (Seite + daten.js mit Szenen, Bildern, Kacheln) fürs private Repo; Anleitung docs/spiel/KARTENEDITOR.md
 python -m pipeline.abenteuer.editorrueck PRIVAT/editor/rueck/DATEI.json --privat PRIVAT   # Änderungen des Editors zurück in die Szenen, Bericht und Vorschauen nach buch/arbeit/editor/, Kartenbau

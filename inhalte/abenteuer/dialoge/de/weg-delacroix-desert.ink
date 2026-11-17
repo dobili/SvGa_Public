@@ -27,6 +27,9 @@ VAR eidechsenhautGefunden = false
 VAR nietenCanyonGefunden = false
 VAR gefundenNietenkopf = false
 VAR nietenAmbroseGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 // Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
 // Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
 VAR seite06Gezaehlt = false
@@ -220,7 +223,9 @@ Als ihr absteigt, im letzten Grau, siehst du etwas, das du vorher nicht bemerkt 
 Zwischen zwei Steinen liegt eine Eidechsenhaut, dünn wie Papier und ganz heil. #sprecher:erzaehler
 ~ gibFund("eidechsenhaut")
 {ambroseSprichtWieder:
-    Sie lässt ihr Kleid einfach liegen. Donnerwetter. #sprecher:ambrose #stimmung:ueberrascht
+    {not abschiedGesehen:
+        Sie lässt ihr Kleid einfach liegen. Donnerwetter. #sprecher:ambrose #stimmung:ueberrascht
+    }
 }
 -> END
 
@@ -235,11 +240,20 @@ Zwischen zwei Steinen liegt eine Eidechsenhaut, dünn wie Papier und ganz heil. 
     Die Nieten der Brücke glänzen, Reihe um Reihe. Am Pfeiler die Platte: 1879. #sprecher:erzaehler
     -> END
 }
+// Nach dem Abschied (abschiedGesehen) entfällt Ambroses Satz an der Brücke.
+{nietenCanyonGefunden and abschiedGesehen:
+    Die Nieten der Brücke glänzen, Reihe um Reihe. Am Pfeiler die Platte: 1879. #sprecher:erzaehler
+    -> END
+}
 {nietenCanyonGefunden: -> nieten_ambrose}
 ~ nietenCanyonGefunden = true
 Unter dem Felsbogen überspannt eine Brücke die Schlucht, wo sie am engsten ist. Schwarzes Eisen, lauter Dreiecke. #sprecher:erzaehler
 Auf jeder Niete, klein und sauber: J. H. Am Pfeiler, eingegossen in eine Platte: 1879. #sprecher:erzaehler #bild:platte_1879
 ~ gibFund("nietenCanyonbruecke")
+{abschiedGesehen:
+    Die Nieten glänzen, Reihe um Reihe. #sprecher:erzaehler #bild:aus
+    -> END
+}
 {versoehnungGesehen:
     -> nieten_ambrose
 }
@@ -302,7 +316,9 @@ Das Echo trägt deine Züge durch den Canyon. Unten nickt Wren, oben jubelt Tess
 Du hast die Stellung im Kopf behalten. Hier, der Karabiner gehört dir. Er hält mehr, als er wiegt. #sprecher:wren #stimmung:laechelt
 ~ gibFund("karabiner")
 {ambroseSprichtWieder:
-    Blind spielen heißt: das Brett tragen, ohne es zu sehen. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Blind spielen heißt: das Brett tragen, ohne es zu sehen. #sprecher:ambrose #stimmung:nachdenklich
+    }
 }
 -> END
 

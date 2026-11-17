@@ -33,6 +33,9 @@ VAR nadelMapleFalls = 0
 VAR nadelCedarCreek = 0
 VAR stegNeuGesehen = false
 VAR initialenGefunden = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mr. Abernathy
 
@@ -58,7 +61,7 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
     Wie freundlich. Es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 * [„Wie sieht es aus?“]
     Klein, grün, mit Magnetfiguren. Daneben liegt ein Zettel mit Aufgaben, die ich nicht lösen kann. #sprecher:abernathy #stimmung:laechelt
-- Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt
+- {not abschiedGesehen: Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt}
 -> END
 
 === bibliothekar_wartet ===
@@ -76,6 +79,11 @@ Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
 Die Stellung auf dem Brett stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
 Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy #stimmung:nachdenklich
 So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
+// Nach dem Abschied (abschiedGesehen) erkennt {held} die Züge selbst; Ambrose spricht nicht mehr.
+{abschiedGesehen:
+    A. W. Du erkennst die Züge. So beginnt seine Partie gegen Hale. #sprecher:erzaehler
+    -> END
+}
 Auf dem Heimweg ist Ambrose lange still. #sprecher:erzaehler #pause
 Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #stimmung:still #pause
 * [„Kennst du die Stellung?“]
@@ -107,7 +115,9 @@ Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #st
 ~ parkbankBrettGefunden = true
 Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zettel mit drei kleinen Diagrammen. #sprecher:erzaehler
 „Weiß zieht und setzt in einem Zug matt.“ #sprecher:erzaehler
-Ein Zug, Kind. Sieh nach, wohin der König noch kann. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Zug, Kind. Sieh nach, wohin der König noch kann. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> parkbank_raetsel
 
 === parkbank_raetsel ===
@@ -164,7 +174,9 @@ Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 - else:
     Limo, bitte. Mit Eis. #sprecher:skaterJo #stimmung:lacht
 }
-Du hast vergessen zu fragen, was hängt. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Du hast vergessen zu fragen, was hängt. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Revanche.“]
     -> jo_duell
 + [„Gleich.“]
@@ -199,7 +211,9 @@ Du reichst Jo die kalte Zitronenlimo. Sie trinkt die halbe Flasche in einem Zug,
     Danke. Du hast mich ja schon geschlagen, also verrat ich nicht mehr viel. #sprecher:skaterJo #stimmung:laechelt
     Nur so viel: Rückwärts zieh ich nicht gern. Revanche, wenn ich satt bin. #sprecher:skaterJo #stimmung:laechelt
 }
-Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung:lacht
+}
 Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 -> END
 

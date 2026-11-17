@@ -13,6 +13,9 @@ VAR henrikGetroffen = false
 VAR taueAngenommen = false
 VAR taueErledigt = false
 VAR kegelKerbeGefunden = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Henrik (L2)
 
@@ -71,5 +74,7 @@ Ein Foto der Schleuse im Hochwasser: nur noch die Kurbeln schauen aus dem Wasser
 
 === kegelkoenig ===
 Auf der Tafel steht „Kegelkönig des Monats“. Darunter, seit über dreißig Jahren nicht weggewischt: Henrik. #sprecher:erzaehler
-Manche Throne bleiben einfach besetzt. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Manche Throne bleiben einfach besetzt. #sprecher:ambrose #stimmung:laechelt
+}
 -> END

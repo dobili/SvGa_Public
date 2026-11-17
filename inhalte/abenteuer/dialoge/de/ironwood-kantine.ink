@@ -51,6 +51,9 @@ VAR turnierheftBekommen = false
 // Lernkarte Faktorenwaage (mama_karte); hatKarteFaktorenwaage setzt die Hülle aus dem Besitz.
 VAR lernkarteFaktorenwaage = false
 VAR hatKarteFaktorenwaage = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Big Joe
 
@@ -167,7 +170,9 @@ Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:la
     Remis. Ehrlich verdient, Kumpel. #sprecher:bigJoe #stimmung:laechelt
     Er steckt dir das Zahnrad an die Jacke, neben die anderen Nadeln. #sprecher:erzaehler #klang:fanfare
     {feierGesehen: Revanche, wenn ich ausgeschlafen bin! #sprecher:bigJoe #stimmung:froh}
-    Es hat gestimmt. Das Schöne holen wir nach. #sprecher:ambrose #stimmung:lachtOhneSpott
+    {not abschiedGesehen:
+        Es hat gestimmt. Das Schöne holen wir nach. #sprecher:ambrose #stimmung:lachtOhneSpott
+    }
     -> END
 }
 Ach, Kumpel. Ach, Kumpel. #sprecher:bigJoe #stimmung:muede #musik:aus
@@ -179,8 +184,10 @@ Er steckt dir das Zahnrad an die Jacke, neben die anderen Nadeln. #sprecher:erza
     Revanche, wenn ich ausgeschlafen bin! #sprecher:bigJoe #stimmung:froh
 }
 Die Kantine brüllt. #sprecher:erzaehler
-Auf dem Weg hinaus, im Lärm, sagt Ambrose etwas. Du verstehst es fast nicht. #sprecher:erzaehler #pause
-Es war schön. Und es hat gestimmt. Beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
+{not abschiedGesehen:
+    Auf dem Weg hinaus, im Lärm, sagt Ambrose etwas. Du verstehst es fast nicht. #sprecher:erzaehler #pause
+    Es war schön. Und es hat gestimmt. Beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
+}
 -> END
 
 // Lektorat Akt 2 (17.11.2026): Nach dem Kauf räumt der Club die Kantine. Hank, Priya und Mama sind
@@ -467,5 +474,7 @@ Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Sch
     -> END
 }
 Ein Schachbrett aus Stahl. Die Felder hell geschliffen und dunkel angelassen, die Schweißnähte am Rand dick wie Finger. #sprecher:erzaehler #bild:stahlbrett
-Stahl für das Brett, Holz für die Figuren. Ein Mann, der weiß, was hart sein muss und was nicht. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Stahl für das Brett, Holz für die Figuren. Ein Mann, der weiß, was hart sein muss und was nicht. #sprecher:ambrose #stimmung:laechelt
+}
 -> END

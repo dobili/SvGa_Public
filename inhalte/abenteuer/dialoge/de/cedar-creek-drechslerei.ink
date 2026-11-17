@@ -15,6 +15,9 @@
 VAR nadelCedarCreek = 0
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === dunmore ===
 {
@@ -32,7 +35,7 @@ Für den Club. Alles fertig bis auf das Pferd. Die Mähne will nicht. #sprecher:
     Zusehen ist frei. Reden kostet einen Span. #sprecher:dunmore #stimmung:laechelt
 * [„Warum ist der Springer so schwer?“]
     Alles andere ist rund. Das Pferd hat einen Kopf. Köpfe sind schwer. #sprecher:dunmore #stimmung:laechelt
-- Ein Handwerker, der an einem Springer verzweifelt. Willkommen im Schach, Sir. #sprecher:ambrose #stimmung:lacht
+- {not abschiedGesehen: Ein Handwerker, der an einem Springer verzweifelt. Willkommen im Schach, Sir. #sprecher:ambrose #stimmung:lacht}
 -> END
 
 === dunmore_b ===
@@ -45,7 +48,9 @@ Das Pferd will nicht. Noch nicht. #sprecher:dunmore #stimmung:nachdenklich
 Der Springer ist fertig. Er ist ein wenig schief und sieht sehr stolz aus. #sprecher:erzaehler
 Steht drüben im Club, auf dem langen Tisch. Mrs. Okafor sagt, er schaut immer zur falschen Seite. #sprecher:dunmore #stimmung:laechelt
 Ich sage: Er schaut dahin, wo er hinwill. #sprecher:dunmore #stimmung:laechelt
-Ein Springer mit eigenem Kopf. Das sind die besten. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Springer mit eigenem Kopf. Das sind die besten. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === dunmore_d ===

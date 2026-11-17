@@ -54,8 +54,10 @@ Na, auch auf dem Weg nach oben? Ich bin Earl. Ich fahr seit dreißig Jahren dies
 ~ varianteKoenigsrennenGelernt = true
 Das hier ist Königsrennen. Beide Könige laufen bis zur letzten Reihe, und Schach geben ist verboten. #sprecher:earl #stimmung:laechelt
 Wer zuerst ankommt, zahlt nicht. Und wer unterwegs nur schlagen will, zahlt meistens. #sprecher:earl #stimmung:laechelt
-Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
-Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
+    Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> earl_angebot
 
 === earl_angebot ===
@@ -79,7 +81,9 @@ Siehst du? Laufen, nicht schlagen. Wenn du wieder durchfährst, rennst du selbst
 Earl dreht das gebogene Glasrohr in der Hand. Dann holt er eine Leiter aus dem Lastwagen. #sprecher:erzaehler
 Ich hab gesagt, nimm's mit. Und du bringst es mir zurück. #sprecher:earl #stimmung:froh
 Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #sprecher:erzaehler
-Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
+}
 Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl #stimmung:laechelt
 -> END
 
@@ -91,7 +95,9 @@ Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl #stimmu
     -> END
 }
 Neben der Kasse hängt eine Tafel: „Drei Endspiele. Wer alle löst, kriegt den Kaffee umsonst.“ #sprecher:erzaehler
-Nur Könige und Bauern. So wenig Holz, und kein Zug ist leicht. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Nur Könige und Bauern. So wenig Holz, und kein Zug ist leicht. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDesertSummit.tafel")
     -> END
@@ -138,6 +144,9 @@ VAR gefundenSpurPM4 = false
 VAR magsGetroffen = false
 VAR ausgangWegDesertSummitKreideblitz = ""
 VAR ruthGetroffen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ereignis: Schach über Funk (Dokument 15, 2.8)
 // Akt 4. Das CB-Funkgerät im Fenster des Diners. Partie nach Gehör gegen Mama Bear (Begegnung
@@ -188,7 +197,9 @@ Darunter, ganz klein: „Dreimal klopfen.“ #sprecher:erzaehler
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 ~ gibFund("kreide3")
 {ambroseSprichtWieder:
-    Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose #stimmung:laechelt
+    }
 }
 -> END
 

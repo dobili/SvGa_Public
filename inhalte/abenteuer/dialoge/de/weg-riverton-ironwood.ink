@@ -40,6 +40,9 @@ VAR finchFiguren = 0
 VAR buchseiten = 0
 VAR spurenPM = 0
 VAR kreideTreffpunkte = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mr. Dale
 
@@ -92,7 +95,9 @@ Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor #stimmung
     -> END
 }
 An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
-Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose #stimmung:laechelt
+}
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegRivertonIronwood.tafel")
     -> END
@@ -110,7 +115,9 @@ Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambro
 Eine Fabrik aus rotem Stein, und niemand ist darin. Fenster ohne Glas. Aus dem Schornstein wächst ein Baum. #sprecher:erzaehler
 Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 ~ gibFund("zahnrad")
-Ein Rad, das kein anderes mehr dreht. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Rad, das kein anderes mehr dreht. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 === fund_nietenkopf ===
@@ -131,6 +138,11 @@ J. H. #sprecher:erzaehler #klang:hale
 Auf dem nächsten auch. Und auf dem übernächsten. #sprecher:erzaehler
 Der Erbauer. Der hat überall unterschrieben. Eitel! #sprecher:juno #stimmung:lacht
 ~ gibFund("nietenkopf")
+// Nach dem Abschied (abschiedGesehen) steht Ambrose nicht mehr am Geländer; {held} kennt den Namen.
+{abschiedGesehen:
+    J. H. Du weißt inzwischen, wessen Brücke das ist. #sprecher:erzaehler #bild:aus
+    ->->
+}
 Ambrose sieht auf die Buchstaben. Sein Gesicht ist leer. Wie ein Zimmer, aus dem gerade jemand hinausgegangen ist. #sprecher:erzaehler #bild:aus
 * [„Ambrose?“]
 - Ein Brückenbauer. Es gibt viele. #sprecher:ambrose #stimmung:still
@@ -150,6 +162,14 @@ Ambrose steht noch einen Augenblick am Geländer. Eine Hand ausgestreckt, dicht 
 ~ zeitnotTrickErhalten = true
 Über das Tal läuft eine Brücke aus schwarzem Eisen, sehr alt und sehr schön, auf eine strenge Art. Lauter Dreiecke, jedes genau so groß wie das nächste. #sprecher:erzaehler #musik:aus #geraeusch:wind_traeger
 Und Tausende Nieten, runde Köpfe in geraden Reihen. #sprecher:erzaehler
+// Nach dem Abschied (abschiedGesehen) gibt es Ambroses Kaffeehaus-Trick und seine Karte nicht mehr
+// (die Karte „Großes Maul“ schenkt auch Buck in Desert Springs); es bleibt der Fund an den Nieten.
+{abschiedGesehen:
+    {nietenkopfGefunden == false:
+        -> jh ->
+    }
+    -> END
+}
 Wer baut so etwas? #sprecher:juno #stimmung:ueberrascht
 * [„Jemand, der nichts dem Zufall überlässt.“]
 - Du weißt nicht, warum du das sagst. Ambrose ist sehr still. #sprecher:erzaehler #pause

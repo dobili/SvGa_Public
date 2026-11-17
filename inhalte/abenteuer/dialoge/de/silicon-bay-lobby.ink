@@ -26,6 +26,9 @@ VAR notizbuchseiteFotografiert = false
 VAR roboterGetroffen = false
 VAR tabletNachtGesehen = false
 VAR linGetroffen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Victor
 
@@ -98,7 +101,9 @@ Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stim
 ~ roboterGetroffen = true
 Ein Roboter mit freundlichem Bildschirmgesicht rollt heran. #sprecher:erzaehler
 Willkommen bei Perfect Move. Wir machen Menschen besser. Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
-Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Vitrine der Hales (Szene 57)
@@ -114,13 +119,18 @@ Victor sagt es auf, weil es zur Führung gehört. Hinter dem Glas liegt ein Rech
 Daneben eine Zeichnung, braun vom Alter, lauter Dreiecke. Du erkennst sie, bevor du die Unterschrift liest. #sprecher:erzaehler
 Auf einem Pult ein Notizbuch. Schachzüge in zwei Spalten, jeder Buchstabe wie mit dem Lineal gezogen. #sprecher:erzaehler
 Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. #sprecher:erzaehler #musik:aus #geraeusch:aus
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: gleich weiter mit Victor.
+{abschiedGesehen: -> seite_fehlt}
 * [Warten]
 - Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
 Das sind meine Züge. Die linke Spalte. Jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
 Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
 Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:traurig
+-> seite_fehlt
+
+= seite_fehlt
 Mein Vater sagt, die Seite war schon immer weg. #sprecher:victor #stimmung:nachdenklich
-Victor hat Ambrose nicht gehört. Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
+{not abschiedGesehen:Victor hat Ambrose nicht gehört. }Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
 * [„Wer hat das geschrieben?“]
     -> vitrine_victor
 
@@ -135,7 +145,9 @@ Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. 
 === vitrine_foto ===
 ~ notizbuchseiteFotografiert = true
 {tabletNachtGesehen:Du machst ein Foto für Juno.|Juno macht ein Foto.} Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
-Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
-Er hat sie aufgehoben. Meine Züge. In einem Buch. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
+    Er hat sie aufgehoben. Meine Züge. In einem Buch. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 

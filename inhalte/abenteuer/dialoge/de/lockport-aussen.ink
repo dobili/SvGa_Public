@@ -32,6 +32,9 @@ VAR postErledigt = false
 VAR lastkahnFrei = false
 VAR muenzen = 0
 VAR auszeitErhalten = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Rätseltafel und Imogen (S3)
 
@@ -122,7 +125,9 @@ Ein Brief? Für mich? #sprecher:ruben #stimmung:ueberrascht
 ~ lastkahnFrei = true
 Ruben liest, dann lacht er so laut, dass die Möwen auffliegen. #sprecher:erzaehler
 Eine Fuhre Stahlträger. Solange Joe das Sagen hat, fährt die Belle wieder. #sprecher:ruben #stimmung:froh
-Ein Brief kann ein ganzes Schiff bewegen. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Brief kann ein ganzes Schiff bewegen. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Henriks Boot (L2)

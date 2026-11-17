@@ -44,6 +44,9 @@ VAR spurPM3Gefunden = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
 VAR spurenPM = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mr. Ruiz, der Schiffskoch
 
@@ -204,12 +207,12 @@ Auf dem Achterdeck stehen Container mit der Aufschrift „Hochwasserhilfe“. Ei
 
 === delfin ===
 {angesehenDelfin:
-    Das Wasser ist ruhig. Am Bug steht Ambrose und sieht nach vorn. #sprecher:erzaehler
+    Das Wasser ist ruhig. {not abschiedGesehen:Am Bug steht Ambrose und sieht nach vorn.} #sprecher:erzaehler
     -> END
 }
 ~ angesehenDelfin = true
 Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind. #sprecher:erzaehler #klang:delfin
-{bugGesehen: Du drehst dich nach Ambrose um. Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste. #sprecher:erzaehler}
+{bugGesehen and not abschiedGesehen: Du drehst dich nach Ambrose um. Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste. #sprecher:erzaehler}
 -> END
 
 // Gutachten L3.5: Ambrose am Bug als Pflichtereignis beim Übergang auf den Deich (orte.json,

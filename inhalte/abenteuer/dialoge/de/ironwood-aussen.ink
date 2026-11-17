@@ -42,6 +42,9 @@ VAR verbotGesehen = false
 VAR held = "Du"
 // Gutachten L1.2: „Und er hat mir geschrieben“ nur mit dem Umschlag aus dem Museum.
 VAR umschlagGeoeffnet = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Verbot
 
@@ -163,7 +166,9 @@ Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmu
     ~ reise("wegIronwoodSilicon.raststaette", "start")
     -> END
 * [Noch nicht]
-    Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose #stimmung:laechelt
+    }
     -> END
 
 // ---------------------------------------------------------------- Gus
@@ -186,7 +191,9 @@ Gus. Fünfzehn Minuten Pause. Zehn für dich, fünf für mein Sandwich. #spreche
 Zehn Minuten und fünf Sekunden je Zug, eine Stellung mit Vorteil für Weiß. Zehn Züge. #sprecher:gus #stimmung:neutral
 Fertig? #sprecher:gus #stimmung:laechelt
 + [„Fertig.“]
-    Er spielt wie ein Fahrplan mit Verspätung: zuverlässig, aber nicht immer pünktlich. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Er spielt wie ein Fahrplan mit Verspätung: zuverlässig, aber nicht immer pünktlich. #sprecher:ambrose #stimmung:lacht
+    }
     ~ beginnePartie("ironwood.gus")
     -> END
 + [„Nach Ihrem Sandwich.“]
@@ -324,7 +331,9 @@ Im Fenster von Ednas Laden: Schrauben in Gläsern, drei Laternen, eine Fahrradke
 ~ kreidebrettGesehen = true
 Auf dem Gehweg haben Kinder ein Schachbrett mit Kreide gemalt. Ein richtiges, acht mal acht. #sprecher:erzaehler
 Die h-Linie ist breiter als die a-Linie. Aber es sind acht. #sprecher:juno #stimmung:laechelt
-Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten genug. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten genug. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 // ---------------------------------------------------------------- Anleger am Kanal (Runde 6)

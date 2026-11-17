@@ -210,4 +210,4 @@ function nachholen(welt, st, frist, h) {
   return geholt;
 }
 
-module.exports = { nebenorte, rueckkehr, nachholen, fundort };
+module.exports = { nachbarorte, nebenorte, rueckkehr, nachholen, fundort };

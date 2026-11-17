@@ -61,6 +61,11 @@ Wer drei Wochen läuft, trägt kein Holz, das er nicht braucht. Das Brett ist da
 Sie tippt sich an die Stirn. #sprecher:erzaehler
 Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Greta. Ich mach hier den Kaffee. #sprecher:greta #stimmung:laechelt
 Sie lässt dich mitspielen. Nach sechs Zügen weißt du nicht mehr, wo dein Läufer steht. #sprecher:erzaehler #musik:blindschach
+// Nach dem Abschied (abschiedGesehen) sieht Ambrose nicht mehr für {held}: {held} findet den Läufer selbst.
+{abschiedGesehen:
+    Du schließt die Augen. c4. Dort steht er, seit dem dritten Zug. #sprecher:erzaehler
+    -> ansage
+}
 c4. Er steht auf c4. Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt
 Er hat die Augen geschlossen, die Hände auf dem Rücken. Sein Gesicht ist so ruhig, wie du es noch nie gesehen hast. #sprecher:erzaehler #musik:ambrose.still
 Zwölf Jahre habe ich Partien in Briefen gespielt. Ich bin mit der Stellung aufgestanden und mit ihr zu Bett gegangen. #sprecher:ambrose #stimmung:friedlich
@@ -69,16 +74,26 @@ Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzi
 - Es war furchtbar. Aber es ist auch ein Zuhause. Dieses Sehen ohne Augen. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe nicht gewusst, dass man es üben kann. Auf einem Wanderweg, zum Vergnügen. #sprecher:ambrose #stimmung:laechelt
 Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose #stimmung:laechelt
+-> ansage
+
+= ansage
 * [„Läufer schlägt f7, Schach.“]
 - Greta macht die Augen auf. #sprecher:erzaehler
 Der steht doch gar nicht … #sprecher:greta #stimmung:ueberrascht
 Ihre Lippen bewegen sich. #sprecher:erzaehler
 Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta #stimmung:laechelt
+{abschiedGesehen: -> greta_angebot}
 * [„Ich hab einen Freund. Der sieht für mich.“]
 - Dann halt ihn fest. Solche findet man nicht oft. #sprecher:greta #stimmung:laechelt
 -> greta_angebot
 
 === greta_angebot ===
+// Blindschach an der Hütte ist die Partie gegen Ambrose (Begegnung wegCrossroadsPinewood.blindschach);
+// nach dem Abschied (abschiedGesehen) gibt es sie nicht mehr.
+{abschiedGesehen:
+    Greta schenkt Kaffee ein. Die Wanderer sagen ihre Züge an, und du hörst mit geschlossenen Augen zu. #sprecher:erzaehler
+    -> END
+}
 Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
 + [Blindschach gegen Ambrose]
     Die Figuren verschwinden. Nur die Züge bleiben. #sprecher:erzaehler
@@ -95,7 +110,7 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
         Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
     }
 }
-+ [Noch eine Partie blind]
++ {not abschiedGesehen} [Noch eine Partie blind]
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
 + [„Ich wandere weiter.“]

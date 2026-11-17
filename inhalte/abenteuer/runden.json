@@ -93,7 +93,8 @@
       "reihe": false,
       "buchuebungen": [],
       "themen": ["matt1"],
-      "anzahl": 3
+      "anzahl": 3,
+      "danach": "weg-maple-cedar.tafel_danach"
     },
     {
       "kennung": "wegCedarRiverton.tafel",

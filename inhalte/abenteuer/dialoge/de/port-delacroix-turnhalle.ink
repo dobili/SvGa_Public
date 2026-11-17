@@ -48,6 +48,9 @@ VAR angesehenPlakatTurnhalle = false
 // Lernkarte Planfinder (lou_karte); hatKartePlanfinder setzt die Hülle aus dem Besitz.
 VAR lernkartePlanfinder = false
 VAR hatKartePlanfinder = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Der Vorwurf
 
@@ -358,7 +361,7 @@ Eine Blechdose mit Schlitz: „Für das Musikhaus.“ Darin Münzen, ein Knopf u
 }
 ~ angesehenNotenheft = true
 Ein Notenheft, aufgequollen vom Hochwasser. Auf dem Umschlag steht in Bleistift: „Nicht wegwerfen. Spielt noch.“ #sprecher:erzaehler
-{ambroseSprichtWieder: Musik und Schach. Beides wird nicht schlechter, wenn es nass wird. #sprecher:ambrose #stimmung:laechelt}
+{ambroseSprichtWieder and not abschiedGesehen: Musik und Schach. Beides wird nicht schlechter, wenn es nass wird. #sprecher:ambrose #stimmung:laechelt}
 -> END
 
 === plakat_turnhalle ===

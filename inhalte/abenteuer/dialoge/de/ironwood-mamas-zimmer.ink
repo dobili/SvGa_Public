@@ -17,6 +17,9 @@ VAR medailleGesehen = false
 VAR partieformular2001Gesehen = false
 VAR turnierheftBekommen = false
 VAR mamaFotoGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === oma_ruth ===
 // Kapitel 25 (Roman): Oma Ruth kennt {held}, zuletzt gesehen mit sechs (Mama meidet Ironwood;
@@ -67,6 +70,7 @@ Die Schrift wird erwachsener. Die letzte beschriebene Seite: „Finale. 12. Mai 
 Und darunter nichts. Danach nur leere Seiten. Mehr als die Hälfte des Hefts. #sprecher:erzaehler #musik:aus #pause:2
 Sie hat es mir dagelassen. Ich glaube, sie wollte, dass jemand weiterschreibt. #sprecher:omaRuth #stimmung:nachdenklich
 Draußen leuchtet der Himmel über dem Werk orange auf. Das Fauchen kommt einen Atemzug später. #sprecher:erzaehler #licht:ironwood #klang:hochofen
+{abschiedGesehen: -> heimfahrt}
 Drei Sätze nach jeder Partie. Deine Mutter war eine ordentliche Spielerin, {held}. #sprecher:ambrose #stimmung:still
 Ich war das nie. Ich habe meine Niederlagen nicht aufgeschrieben. Ich habe sie auswendig gelernt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Was macht man damit?“]
@@ -88,7 +92,9 @@ Ich war das nie. Ich habe meine Niederlagen nicht aufgeschrieben. Ich habe sie a
 }
 ~ medailleGesehen = true
 An der Wand hängt eine Medaille an einem blauen Band. Silber. #sprecher:erzaehler
-Silber. Eine Niederlage, die man aufhängt. Mutig. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Silber. Eine Niederlage, die man aufhängt. Mutig. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === partieformular ===

@@ -29,6 +29,9 @@ VAR held = "Du"
 VAR callowayGetroffen = false
 VAR endeAkt1Gesehen = false
 VAR nadelIronwood = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === juno ===
 {
@@ -65,7 +68,9 @@ Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
 - Sie klopft auf das Heft. #sprecher:erzaehler
 Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
 Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno #stimmung:laechelt
-Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
+}
 -> END
 
 === juno_zum_club ===
@@ -124,11 +129,16 @@ Zeigst du mir jetzt das Pferd? Den Springer, meine ich. #sprecher:lily #stimmung
     -> END
 
 === lily_lektion ===
+// Nach dem Abschied (abschiedGesehen) fordert Ambrose nicht mehr auf: {held} setzt sich gleich zu Lily.
+{abschiedGesehen: -> erklaeren}
 Erklär es ihr. #sprecher:ambrose #stimmung:laechelt
 * [„Du kannst das besser.“]
     Sie hört mich nicht. Und selbst wenn. #sprecher:ambrose #stimmung:nachdenklich
 * [Neben sie auf den Bordstein setzen]
 - Lehre es ihr. Dann weißt du, ob du es kannst. #sprecher:ambrose #stimmung:laechelt
+-> erklaeren
+
+= erklaeren
 Du setzt den Springer auf ihr Brett und fährst mit dem Finger: zwei Felder geradeaus, eins zur Seite. Wie ein L. #sprecher:erzaehler
 Dann lässt du ihn über einen Bauern hüpfen. Das darf nur er. #sprecher:erzaehler
 * [„Und er springt immer auf die andere Farbe.“]
@@ -144,7 +154,9 @@ Noch mal! Zeig mir, wo er zwei erwischt! #sprecher:lily #stimmung:froh
 ~ lilyGeholfen = true
 Ein L! Immer auf die andere Farbe! Und zwei auf einmal, das ist die Gabel! #sprecher:lily #stimmung:froh #klang:aha
 Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #sprecher:erzaehler
-Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
+{not abschiedGesehen:
+    Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
+}
 -> END
 
 === lily_alltag ===
@@ -184,9 +196,11 @@ Die Kisten auf dem Dachboden hat nie jemand aufgemacht. Nicht mal sie. #sprecher
 Dann blinzelt sie, als käme sie von weit her zurück, und lächelt. #sprecher:erzaehler
 Du kommst zu spät zur Schule, Kind. #sprecher:calloway #stimmung:froh
 // Roman: Ambrose schweigt, bis sie außer Hörweite sind.
-Ambrose schweigt, bis ihr außer Hörweite seid. #sprecher:erzaehler #pause:3
-Per Post. Sechzig Jahre lang. #sprecher:ambrose #stimmung:still
-An meinem Tisch. #sprecher:ambrose #stimmung:still #musik:karte
+{not abschiedGesehen:
+    Ambrose schweigt, bis ihr außer Hörweite seid. #sprecher:erzaehler #pause:3
+    Per Post. Sechzig Jahre lang. #sprecher:ambrose #stimmung:still
+    An meinem Tisch. #sprecher:ambrose #stimmung:still #musik:karte
+}
 ->->
 
 === calloway_a_wieder ===
@@ -229,7 +243,9 @@ Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #s
     {lilyGeholfen:Lily von nebenan. Und die sagt, sie hat es von dir.|Lily von nebenan. Die weiß alles über Pferde.} #sprecher:calloway #stimmung:froh
 - Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway #stimmung:laechelt
 Margaret hätte gelacht. Sie hat oft gelacht. Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
-Das wusste ich nicht. #sprecher:ambrose #stimmung:still
+{not abschiedGesehen:
+    Das wusste ich nicht. #sprecher:ambrose #stimmung:still
+}
 -> END
 
 // ---------------------------------------------------------------- Carla Martínez
@@ -290,5 +306,5 @@ Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stim
     Sag Juno nichts. Sonst steht es morgen im Tagebuch. Mit Glitzer. #sprecher:carla #stimmung:laechelt
 * [„Der Radiergummi hat schon zwei Partien gewonnen.“]
     Drei. Heute Morgen noch eine. #sprecher:carla #stimmung:froh
-- Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still
+- {not abschiedGesehen: Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still}
 -> END

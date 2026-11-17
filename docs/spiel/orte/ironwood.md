@@ -74,6 +74,10 @@ nach 7a.2 (mittlere Stadt) mit Ziel: Uferweg → Kai und Lastkahn; Bahnhofstraß
 Platz, Lok, Museumstür; Bahnübergang → Gus und Steinbruch; Elm Street → Haus von Oma Ruth und
 Werkspforte (geschlossen, Ziel ist das Schild).
 
+Nachgezogen am 17.11.2026 (Kartenrunde, Regel 10.92): Die Gasse zwischen Elm Street und Hauptstraße liegt jetzt in
+den Spalten 26–27 (Reihen 16–27); Treppe und Gasse nördlich der Elm Street bleiben in den Spalten
+24–25. Die beiden Gassen liegen damit nicht mehr in einer Flucht.
+
 **Sichtachsen:**
 
 | Standort                                             | Ziel                                                         | Warum                                                      |
@@ -396,6 +400,14 @@ Trägern und Geländer (`fliegen`), Tauben am Platz (`folgen`), Fledermäuse am 
 Schichtwechsel (Gruppe von vier, Werkstor ↔ Parkplatz, `wann: morgen, abend`), Frau mit Kohleneimern
 (Mrs. Brody, Kohlenhof ↔ Elm Street), Kreidekinder, Mann mit Tauben (Mr. Flores), Gabelstapler im
 Werkhof, Güterzug (Kulisse, fährt über Gleis 2).
+
+Nachgezogen am 17.11.2026 (Kartenrunde, Regel 10.92): Stand der Außenkarte in allen drei Fassungen: Eisenwaren
+(`iw5Laden`, Kennung `eisenwaren`) auf (16, 17) mit Maßstab 1.2 und Versatz [0, 3], Auslöser
+`eisenwarenfenster` unverändert auf (20, 28). Gassenpflaster in den Spalten 26–27, Reihen 16–27.
+Kneipe (`iw5StadthausGrau`, Kennung `kneipe`) auf (28, 17), der Wirt auf (28, 28). Zwei Straßenbäume
+stehen jetzt auf (35, 19) und (39, 22). An der Elm Street ersetzt ein zweites `iw5ReihenhausHoch` auf
+(34, 1) den Laden auf (32, 2), daneben ein Busch auf (32, 8); `haustuerRuth` bleibt auf (42, 10). Das
+Bild `iw5ReihenhausHoch` steht damit dreimal in der Zeile.
 
 ### 4.2 Kantine, Clubraum des Werksclubs (`ironwood.kantine`)
 

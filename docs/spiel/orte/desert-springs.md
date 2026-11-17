@@ -138,6 +138,12 @@ Kind (Gabel), Händlerin vor dem Antiquariat (Saavedra-Stellung 1895, zeigt die 
 `saavedraStellung`). Ohne Satz: Mechaniker, Trucker, Motelgast, Wanderin. Tiere: Hund,
 Eidechse, Geier, Roadrunner, Katze, Hühner.
 
+Nachgezogen am 17.11.2026 (Kartenrunde, Regel 10.92): Stand der Außenkarte in beiden Fassungen: Gemischtwarenladen
+`ds8Gemischtwaren` auf (46, 20) mit Maßstab 1.2 und Versatz [0, 3] (vorher (46, 22)). Der Gleisstumpf
+im Osten ist kürzer: Prellbock `cc8PrellbockQuer` auf (56, 27), Gleis in Reihe 28 ab Spalte 57. Der
+Gehweg in Reihe 31 reicht bis Spalte 55. Hütte `by9HuetteKrebs` auf (54, 13), Containerhaus
+`ds8Containerhaus` auf (54, 7).
+
 ### Weg 6 in Runde 9: Mängel der Variantenwahl (10.11.2026, mittel-4)
 
 **Canyonpfad (Wahl C).** (1) Der Canyon hat Felswände im Norden und die Kante der Hochfläche im Süden aus

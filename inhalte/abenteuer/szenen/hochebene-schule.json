@@ -2,7 +2,7 @@
   "karte": "hochebene.schule",
   "datei": "karten/hochebene-schule.json",
   "art": "aussen",
-  "beschreibung": "Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten, Steintischen, Tribüne und Fahnenmast, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle mit Weg zum Hof. An der Straße mit Mittellinie die Haltebucht quer am Hof, darin der gelbe Schulbus mit der Front zur Straße und der Haltestelle, daneben die Werkstatt von Joss Vell mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
+  "beschreibung": "Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten, Steintischen, Tribüne und Fahnenmast, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle, eine Halle mit gewölbtem Blechdach und Schild, mit Weg zum Hof. An der Straße mit Mittellinie die Haltebucht quer am Hof, darin der gelbe Schulbus mit der Front zur Straße und der Haltestelle, daneben die Werkstatt von Joss Vell, ein Wellblechschuppen mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an; dort greift der rote Sand der Hochebene mit ausgefranster Grenze in die Wiese (Kakteen und Steine), damit der Boden an der Kartengrenze nicht hart wechselt. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -10,7 +10,9 @@
     "s": "asphalt",
     "k": "schotter",
     "a": "asphalt",
-    "b": "pflaster"
+    "b": "pflaster",
+    "R": "sandRot",
+    "g": "sandRotRand"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "laendlich", "rustikal"],
@@ -20,34 +22,34 @@
     "#..........................................ppppppppppppppp.#",
     "#..........................................ppppppppppppppp.#",
     "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........................................ppppppppppppppp.#",
-    "#..........pp..............................ppppppppppppppp.#",
-    "#..........pp..............................ppppppppppppppp.#",
-    "#..........pp...............................pp.............#",
+    "#..........................................pppppppppppppppg#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........................................pppppppppppppppR#",
+    "#..........pp..............................pppppppppppppppR#",
+    "#..........pp..............................pppppppppppppppR#",
+    "#..........pp...............................pp.........gRRR#",
     "#..........pp...............................pp....kkkkkkkkkk",
     "#..........pp...............................pp....kkkkkkkkkk",
-    "#..........pp...............................pp....kk.......#",
-    "#..........pp...............................pp....kk.......#",
-    "#..........pp...............................pp....kk.......#",
-    "#..........ppppppppppppppppppppppppppppppppppp....kk.......#",
-    "#..........pppppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#.............ppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#.............ppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#.............ppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk.......#",
-    "#..aaaa.....................pppppppppp........bbb.kk.......#",
+    "#..........pp...............................pp....kk...gRRR#",
+    "#..........pp...............................pp....kk..ggRRR#",
+    "#..........pp...............................pp....kk..ggRRR#",
+    "#..........ppppppppppppppppppppppppppppppppppp....kk...ggRR#",
+    "#..........pppppppppppppppppppppppppppppppppppbbb.kk....gRR#",
+    "#.............ppppppppppppppppppppppppppppppppbbb.kk....gRR#",
+    "#.............ppppppppppppppppppppppppppppppppbbb.kk....gRR#",
+    "#.............ppppppppppppppppppppppppppppppppbbb.kk...ggRR#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk..ggRRR#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk..ggRRR#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk...gggR#",
+    "#..aaaa.....................pppppppppp........bbb.kk.....gR#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -58,9 +60,14 @@
   ],
   "objekte": [
     {
-      "moebel": "hb7Turnhalle",
-      "feld": [8, 10],
+      "moebel": "wr5Scheune",
+      "feld": [9, 6], "versatz": [6, 0],
       "id": "halle"
+    },
+    {
+      "moebel": "pd6SchildTurnhalle",
+      "auf": "halle",
+      "versatz": [-22, 25]
     },
     {
       "moebel": "hb7Schule",
@@ -91,7 +98,7 @@
       "feld": [40, 28]
     },
     {
-      "moebel": "hb7Werkstatt",
+      "moebel": "lp8Schuppen",
       "feld": [2, 23]
     },
     {
@@ -164,7 +171,23 @@
     },
     {
       "moebel": "cc3Busch",
-      "feld": [56, 24]
+      "feld": [52, 22]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [56, 22]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [57, 26]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [56, 29]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [55, 31]
     },
     {
       "moebel": "sc8TribueneLinks",

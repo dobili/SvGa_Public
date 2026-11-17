@@ -1,7 +1,7 @@
 {
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
-  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat neben dem Zuckerwattestand. Lose- und Dosenbude, Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
+  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat neben dem Zuckerwattewagen mit rosa Markise. Lose- und Dosenbude als Marktstände mit gestreifter Markise (auf dem Tresen Teddys und Pokale als Gewinne, Dosen und ein Ball zum Werfen), Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -92,16 +92,58 @@
       "feld": [20, 14]
     },
     {
-      "moebel": "n6Zuckerwatte",
+      "moebel": "pd6Gebaeckstand",
       "feld": [23, 14]
     },
     {
-      "moebel": "n6BudeLose",
-      "feld": [4, 18]
+      "moebel": "rv5Marktstand",
+      "feld": [3, 18],
+      "id": "losbude"
     },
     {
-      "moebel": "n6BudeDosen",
-      "feld": [9, 18]
+      "moebel": "mf7Teddy",
+      "auf": "losbude",
+      "versatz": [-24, 14]
+    },
+    {
+      "moebel": "mf3Pokal",
+      "auf": "losbude",
+      "versatz": [-6, 7]
+    },
+    {
+      "moebel": "mf3PokalKlein",
+      "auf": "losbude",
+      "versatz": [10, 7]
+    },
+    {
+      "moebel": "mf7Teddy",
+      "auf": "losbude",
+      "versatz": [27, 14]
+    },
+    {
+      "moebel": "n1Laden",
+      "feld": [10, 18],
+      "id": "dosenbude"
+    },
+    {
+      "moebel": "rv8Farbdose",
+      "auf": "dosenbude",
+      "versatz": [-16, 7]
+    },
+    {
+      "moebel": "rv8Farbdose",
+      "auf": "dosenbude",
+      "versatz": [-5, 7]
+    },
+    {
+      "moebel": "rv8Farbdose",
+      "auf": "dosenbude",
+      "versatz": [6, 7]
+    },
+    {
+      "moebel": "pd6Ball",
+      "auf": "dosenbude",
+      "versatz": [17, 8]
     },
     {
       "moebel": "n6Marktstand",

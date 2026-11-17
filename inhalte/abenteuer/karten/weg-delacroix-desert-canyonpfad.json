@@ -14877,7 +14877,7 @@
      "id": 20,
      "name": "falke",
      "type": "tier",
-     "x": 2240,
+     "x": 2096,
      "y": 272,
      "width": 16,
      "height": 16,
@@ -14887,12 +14887,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "140,17"
+       "value": "131,17"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "146,17"
+       "value": "137,17"
       },
       {
        "name": "verhalten",
@@ -15846,19 +15846,19 @@
     },
     {
      "id": 62,
-     "name": "dd6Wuestenbahnhof",
+     "name": "ds6BahnhofAlt",
      "type": "moebel",
-     "x": 2256,
+     "x": 2224,
      "y": 160,
-     "width": 96,
-     "height": 96,
+     "width": 160,
+     "height": 128,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 280
       },
       {
        "name": "kollision",

@@ -35,6 +35,20 @@ wurden nur bei Logikfehlern geändert; diese Stellen sind in der Tabelle als sol
    `+` wie bei allen anderen Gegnern. Die Erinnerung 1858 springt beim zweiten Besuch gleich zur
    Wahl. **Hinweis für die anderen Akte:** Dasselbe Muster sollte dort jemand suchen; in Akt 3 lag
    es nur in Desert Springs und am Canyon.
+
+   **Berichtigung (17.11.2026):** Diese Sackgassen gab es in der App nicht. Sie legt für jeden
+   Dialog eine neue Ink-Geschichte an (`app/src/abenteuer/dialog/Dialog.tsx`) und behält nur die
+   globalen Variablen; eine `*`-Wahl war deshalb nie über Dialoge hinweg verbraucht. Das gilt auch
+   für alle Tabellenzeilen unten mit „Logik: … einmalige Wahl“. Die Umstellung `*` → `+` bleibt, sie
+   schadet nicht. Aus demselben Grund griff der Rücksprung `{mira_erinnerung_wahl: …}` nie: Der
+   Besuchszähler steht in jedem Dialog wieder auf 0, die Szene von 1858 lief nach „Ein andermal.“
+   oder einem Abbruch weiter ganz von vorn. Behoben ist stattdessen das: Besuchszähler über Dialoge
+   hinweg sind durch Variablen ersetzt. `mira_erinnerung` fragt `erinnerung1858Gesehen` (gesetzt in
+   `mira_erinnerung_wahl`), `mira_nach_sieg` fragt `warumAtmeGefragt` statt `not warum_atme` (Miras
+   „Atme. Warum?“ kam nach jeder besseren Nadel wieder). Die neue Prüfung
+   `python -m pipeline.abenteuer.inkbesuche` (Test `test_abenteuer_inkbesuche.py`) findet solche
+   Bedingungen in allen Dialogen; Stand: 0 Befunde.
+
 2. **Wissen vor dem Ereignis.** Mr. Batiste sprach über Remys Vorwurf und lobte „Aber allein“,
    auch wenn der Held die Turnhalle noch nicht betreten hatte. Dr. Lin und Theo wurden in der ersten
    Zeile beim Namen genannt, bevor der Held ihn erfährt. Das „Hm“ vor dem Spiegel setzte einen Sieg

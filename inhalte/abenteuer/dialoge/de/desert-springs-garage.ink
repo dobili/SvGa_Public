@@ -39,11 +39,15 @@ VAR ausgangDesertSpringsErinnerung1858 = ""
 // Kapitel 46). briefGelesen setzt desert-springs-antiquariat.ink.
 VAR briefGelesen = false
 VAR erinnerung1858Besprochen = false
+// Merker statt Besuchszähler: Die App beginnt jeden Dialog als neue Geschichte, Zähler stehen
+// dann wieder auf 0 (python -m pipeline.abenteuer.inkbesuche, 17.11.2026).
+VAR erinnerung1858Gesehen = false
 // Kapitel 43 (Roman): Dot und Margaret, Tomás und der Dosenpokal, Miras „Weil ich kann“.
 VAR miraGarageGesehen = false
 // Kapitel 46 (Roman): „Atme“ als Wahl mitten im Clubkampf (Partiemoment clubkampf_atme).
 VAR atmeGesagt = false
 VAR atmeMomentGesehen = false
+VAR warumAtmeGefragt = false
 VAR margaretErzaehlt = false
 // Nebenaufgabe „Dots Partie“ (Tabelle „Neu gegenüber“, Akt 3 Teil 3): {held} spielt Margarets
 // Seite ab dem 31. Zug (Begegnung desertSprings.dotFernpartie); den Ausgang setzt die Hülle.
@@ -166,10 +170,11 @@ Morgen. #sprecher:tomas #stimmung:nachdenklich
 Jetzt! #sprecher:mira #stimmung:bitter
 Mira. #sprecher:tomas #stimmung:nachdenklich
 Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand. #sprecher:erzaehler
-{atmeGesagt and not warum_atme: -> warum_atme ->}
+{atmeGesagt and not warumAtmeGefragt: -> warum_atme ->}
 -> END
 
 = warum_atme
+~ warumAtmeGefragt = true
 Du hast gesagt: Atme. Warum? Ich hätte verloren. Schneller. #sprecher:mira #stimmung:nachdenklich
 * [„Weil mir jemand erzählt hat, was sonst passiert.“]
 - Sie versteht es nicht. Sie wird es verstehen. In zehn Jahren, oder in hundertsechzig. #sprecher:erzaehler
@@ -190,7 +195,7 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 === mira_erinnerung ===
 // Kapitel 45 (Roman): die siebte Partie von 1858 auf dem Klapptisch. Musik: die Erinnerung von
 // Cedar Creek gedämpft; bei den drei fahrigen Zügen stolpert sie (ambrose.stolpert), S58.
-{mira_erinnerung_wahl:
+{erinnerung1858Gesehen:
     Die Stellung von 1858 liegt noch auf dem Clubtisch, zwischen Zündkerze und Keksdose. #sprecher:erzaehler
     -> mira_erinnerung_wahl
 }
@@ -209,6 +214,7 @@ Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. Ich wol
 Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zählst. #sprecher:erzaehler
 -> mira_erinnerung_wahl
 === mira_erinnerung_wahl ===
+~ erinnerung1858Gesehen = true
 + [Die Stellung von 1858 spielen]
     Du spielst Weiß. Gegen Hale, wie er damals saß. #sprecher:erzaehler
     ~ beginnePartie("desertSprings.erinnerung1858")

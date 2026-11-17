@@ -12,6 +12,7 @@
 import { expect, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
+import { lagebild, offeneFenster, tippbarerText } from "./abenteuer-lage";
 
 /** Zufallszahlen mit festem Startwert (mulberry32), damit ein Fund sich wiederholen lässt. */
 export function zufallMit(startwert: number): () => number {
@@ -190,21 +191,6 @@ export async function ort(seite: Page): Promise<string> {
     .catch(() => "laedt");
 }
 
-/** Overlays der Oberwelt, die gerade offen sind (mehr als eins ist verdächtig). */
-export async function offeneFenster(seite: Page): Promise<string[]> {
-  return seite
-    .evaluate(() =>
-      [
-        ...document.querySelectorAll<HTMLElement>(
-          ".abenteuer-welt [role=dialog], .abenteuer-welt .abenteuer-ergebnis, .abenteuer-menue",
-        ),
-      ]
-        .filter((e) => e.getBoundingClientRect().height > 0)
-        .map((e) => e.dataset.testid ?? e.getAttribute("aria-label") ?? e.className),
-    )
-    .catch(() => []);
-}
-
 /** Tasten, die ein Affe drückt. */
 const TASTEN = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Enter", "Escape", " "];
 
@@ -304,9 +290,13 @@ export async function lasseAffenLos(
     }
     const fenster = await offeneFenster(seite);
     if (fenster.length > 1) auffaellig.add(`zugleich offen: ${fenster.join(" + ")}`);
-    if ((await sichtbareKnoepfe(seite)).length > 0) zuletztKnopf = Date.now();
-    else if (Date.now() - zuletztKnopf > OHNE_AUSWEG_MS) {
-      throw new Error(`Kein Ausweg (${wo}) nach ${protokoll.slice(-8).join(" | ")}`);
+    if ((await sichtbareKnoepfe(seite)).length > 0 || (await tippbarerText(seite))) {
+      zuletztKnopf = Date.now();
+    } else if (Date.now() - zuletztKnopf > OHNE_AUSWEG_MS) {
+      // Mit Lagebild (abenteuer-lage.ts), damit ein Fund aus CI erklärbar ist.
+      throw new Error(
+        `Kein Ausweg (${wo}) nach ${protokoll.slice(-12).join(" | ")}; Lage: ${await lagebild(seite)}`,
+      );
     }
   }
   return { protokoll, auffaellig: [...auffaellig] };

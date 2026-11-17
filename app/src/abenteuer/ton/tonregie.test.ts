@@ -1,5 +1,5 @@
 /** Tests für tonregie.ts: Regie mit einem Mitschreiber statt Web Audio (Atmosphäre T1, T2). */
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { tagsAus } from "../dialog/geschichte";
 import { Tonregie, type Spielwerk } from "./tonregie";
 import { STANDARD_ABENTEUERTON } from "./tonplan";
@@ -75,5 +75,22 @@ describe("Tonregie", () => {
     regie.dialogzeile(tagsAus(["musik:z", "klang:k"]));
     regie.verlassen();
     expect(regie.soll).toEqual({ musik: null, geraeusch: null });
+  });
+  it("ein abgelehnter Ton stört die Seite nicht (Safari: „Context is stopped“)", async () => {
+    const { werk } = mitschreiber();
+    const fehler = new Error("Context is stopped");
+    const abgelehnt: Spielwerk = {
+      ...werk,
+      spieleSchleife: () => Promise.reject(fehler),
+      spieleEinmal: () => Promise.reject(fehler),
+    };
+    const warnung = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    const regie = new Tonregie(() => abgelehnt);
+    regie.stelleEin(STANDARD_ABENTEUERTON, true);
+    regie.karteBetreten("maple-falls", "wind");
+    regie.dialogzeile(tagsAus(["klang:glocke"]));
+    await new Promise((fertig) => setTimeout(fertig, 0));
+    expect(warnung).toHaveBeenCalledWith("Ton nicht gespielt:", fehler);
+    warnung.mockRestore();
   });
 });

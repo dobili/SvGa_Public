@@ -118,7 +118,15 @@
         "nummer": "1.21"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "erzaehlung": {
+        "vorher": "erzaehlung.skaterJo.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.skaterJo.sieg",
+          "remis": "erzaehlung.skaterJo.remis",
+          "niederlage": "erzaehlung.skaterJo.niederlage"
+        }
+      }
     },
     {
       "kennung": "mapleFalls.victor",
@@ -261,7 +269,15 @@
         "nummer": "3.77"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "erzaehlung": {
+        "vorher": "erzaehlung.harlan.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.harlan.sieg",
+          "remis": "erzaehlung.harlan.remis",
+          "niederlage": "erzaehlung.harlan.niederlage"
+        }
+      }
     },
     {
       "kennung": "riverton.clubkampf",
@@ -425,20 +441,27 @@
     {
       "kennung": "wegSiliconDelacroix.schiffskoch",
       "gegner": "wegSiliconDelacroix.schiffskoch",
-      "farbe": "white",
+      "farbe": "black",
       "format": {
-        "art": "stellungsduell",
-        "zuege": 10,
-        "mindestvorteil": 1.0
+        "art": "endspiel",
+        "zuege": 15,
+        "ziel": "remis"
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.25"
+        "nummer": "9.46"
       },
       "kartenErlaubt": true,
       "zeit": {
         "sekunden": 600,
         "zuschlag": 5
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.schiffskoch.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.schiffskoch.sieg",
+          "niederlage": "erzaehlung.schiffskoch.niederlage"
+        }
       }
     },
     {
@@ -473,6 +496,14 @@
       "zeit": {
         "sekunden": 180,
         "zuschlag": 2
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.buck.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.buck.sieg",
+          "remis": "erzaehlung.buck.remis",
+          "niederlage": "erzaehlung.buck.niederlage"
+        }
       }
     },
     {
@@ -705,18 +736,26 @@
       "gegner": "summitCity.sol",
       "farbe": "white",
       "format": {
-        "art": "stellungsduell",
-        "zuege": 10,
-        "mindestvorteil": 1.0
+        "art": "endspiel",
+        "zuege": 15,
+        "ziel": "sieg"
       },
       "startstellung": {
         "art": "abbildung",
-        "nummer": "6.21"
+        "nummer": "8.27"
       },
       "kartenErlaubt": true,
       "zeit": {
         "sekunden": 180,
         "zuschlag": 2
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.sol.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.sol.sieg",
+          "remis": "erzaehlung.sol.remis",
+          "niederlage": "erzaehlung.sol.niederlage"
+        }
       }
     },
     {
@@ -732,7 +771,15 @@
         "art": "abbildung",
         "nummer": "6.14"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "erzaehlung": {
+        "vorher": "erzaehlung.hollis.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.hollis.sieg",
+          "remis": "erzaehlung.hollis.remis",
+          "niederlage": "erzaehlung.hollis.niederlage"
+        }
+      }
     },
     {
       "kennung": "ghostTown.fernpartie",
@@ -1075,17 +1122,28 @@
     {
       "kennung": "wegDesertSummit.kreideblitz",
       "gegner": "wegDesertSummit.mags",
-      "farbe": "zufall",
+      "farbe": "white",
       "format": {
-        "art": "partie"
+        "art": "vorteil",
+        "zuege": 10,
+        "mindestvorteil": 1.0
       },
       "startstellung": {
-        "art": "grundstellung"
+        "art": "abbildung",
+        "nummer": "5.43"
       },
       "kartenErlaubt": true,
       "zeit": {
         "sekunden": 180,
         "zuschlag": 2
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.kreideblitz.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.kreideblitz.sieg",
+          "remis": "erzaehlung.kreideblitz.remis",
+          "niederlage": "erzaehlung.kreideblitz.niederlage"
+        }
       }
     },
     {
@@ -1147,19 +1205,30 @@
       "kennung": "capitalArena.kreidenacht1",
       "brett": "abgegriffen",
       "gegner": "capitalArena.dime",
-      "farbe": "zufall",
+      "farbe": "white",
       "format": {
-        "art": "partie"
+        "art": "endspiel",
+        "zuege": 20,
+        "ziel": "sieg"
       },
       "startstellung": {
-        "art": "grundstellung"
+        "art": "abbildung",
+        "nummer": "9.8"
       },
       "kartenErlaubt": false,
       "zeit": {
         "sekunden": 180,
         "zuschlag": 2
       },
-      "zaehltFuerApp": false
+      "zaehltFuerApp": false,
+      "erzaehlung": {
+        "vorher": "erzaehlung.kreidenacht1.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.kreidenacht1.sieg",
+          "remis": "erzaehlung.kreidenacht1.remis",
+          "niederlage": "erzaehlung.kreidenacht1.niederlage"
+        }
+      }
     },
     {
       "kennung": "capitalArena.kreidenacht2",
@@ -1236,15 +1305,26 @@
       "gegner": "wegRivertonIronwood.dime",
       "farbe": "zufall",
       "format": {
-        "art": "partie"
+        "art": "vorteil",
+        "zuege": 12,
+        "mindestvorteil": 1.0
       },
       "startstellung": {
-        "art": "grundstellung"
+        "art": "eroeffnung",
+        "zuege": ["e4", "c6", "d4", "d5", "e5", "Bf5", "Nf3", "e6", "Be2", "c5"]
       },
       "kartenErlaubt": true,
       "zeit": {
         "sekunden": 180,
         "zuschlag": 2
+      },
+      "erzaehlung": {
+        "vorher": "erzaehlung.dime.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.dime.sieg",
+          "remis": "erzaehlung.dime.remis",
+          "niederlage": "erzaehlung.dime.niederlage"
+        }
       }
     },
     {

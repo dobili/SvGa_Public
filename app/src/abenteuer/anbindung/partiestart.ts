@@ -16,6 +16,8 @@
 import type { Color } from "chessops/types";
 import type { Stilmix, Stilname } from "../../engine/stile";
 import { EROEFFNUNG_PRAXIS, type Partieeinstellung } from "../../spiel/partie";
+import { stellungNach } from "../../training/uebungsaufgabe";
+import { kurzformAus } from "../regeln/kurzform";
 import type { Gegnerprofil } from "../schnittstelle/gegnerprofil";
 import type { Partieauftrag, Startstellung } from "../schnittstelle/partie";
 
@@ -31,6 +33,8 @@ export function startFenAus(stellung: Startstellung): string {
       return GRUNDSTELLUNG;
     case "fen":
       return stellung.fen;
+    case "eroeffnung":
+      return stellungNach(GRUNDSTELLUNG, stellung.zuege);
     case "abbildung":
     case "meisterpartie":
       throw new Error(`Startstellung ${stellung.art} muss vorher in eine FEN aufgelöst werden`);
@@ -74,6 +78,7 @@ export function partieeinstellungAus(
   zufall: () => number = Math.random,
 ): Partieeinstellung {
   const startFen = startFenAus(auftrag.startstellung);
+  const kurzform = kurzformAus(auftrag.format);
   const { stufenJePhase, haeufigkeit } = auftrag.staerke;
   const profil = auftrag.profil;
   return {
@@ -112,6 +117,7 @@ export function partieeinstellungAus(
       ...(auftrag.kulisse ? { kulisse: auftrag.kulisse } : {}),
       ...(auftrag.buchbruch ? { buchbruch: auftrag.buchbruch } : {}),
       ...(profil.portraet ? { portraet: profil.portraet } : {}),
+      ...(kurzform ? { kurzform } : {}),
     },
   };
 }

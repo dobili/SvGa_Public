@@ -15,6 +15,7 @@
 import { phasenJeStellung } from "../../spiel/phasen";
 import { alsPgn } from "../../spiel/pgn";
 import { stellungen, type Partie } from "../../spiel/partie";
+import { ausgangDerKurzform } from "../regeln/kurzform";
 import type { Kartenspiel } from "../schnittstelle/karten";
 import type { Ausgang, Partieergebnis, Schluesselmoment } from "../schnittstelle/partie";
 
@@ -25,6 +26,8 @@ export const MOMENTE_JE_PARTIE = 2;
 export function ausgangAus(partie: Partie): Ausgang {
   const ende = partie.ende;
   if (!ende) return "abgebrochen";
+  // Endspiel „Remis halten“ (R13a): Ein Remis nach den Regeln ist das Ziel.
+  if (ausgangDerKurzform(partie.einstellung.abenteuer?.kurzform, ende)) return "sieg";
   if ("sieger" in ende)
     return ende.sieger === partie.einstellung.eigeneFarbe ? "sieg" : "niederlage";
   return "remis";

@@ -69,7 +69,7 @@ function farbeAus(wert: unknown): Color | null {
 
 const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const QUELLEN: readonly Partiezug["quelle"][] = ["leser", "buch", "engine", "fehler"];
-const ENDEN_MIT_SIEGER = ["matt", "aufgabe", "zeit"] as const;
+const ENDEN_MIT_SIEGER = ["matt", "aufgabe", "zeit", "ziel"] as const;
 const ENDEN_OHNE_SIEGER = [
   "patt",
   "fuenfzigZuege",
@@ -77,6 +77,7 @@ const ENDEN_OHNE_SIEGER = [
   "material",
   "zeitRemis",
   "vereinbart",
+  "zielRemis",
 ] as const;
 
 function auswahl<T>(liste: readonly T[], wert: unknown): T | undefined {

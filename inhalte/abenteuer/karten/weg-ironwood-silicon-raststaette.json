@@ -15895,22 +15895,27 @@
      "id": 106,
      "name": "ws5Rasthaus",
      "type": "moebel",
-     "x": 2144,
-     "y": 112,
-     "width": 128,
-     "height": 144,
+     "x": 2132,
+     "y": 96,
+     "width": 154,
+     "height": 173,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 261
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.2
       }
      ]
     },

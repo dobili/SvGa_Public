@@ -10848,22 +10848,27 @@
      "id": 68,
      "name": "iw5Eisenwaren",
      "type": "moebel",
-     "x": 608,
-     "y": 576,
-     "width": 128,
-     "height": 144,
+     "x": 603,
+     "y": 560,
+     "width": 154,
+     "height": 173,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 712
+       "value": 725
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.2
       }
      ]
     },
@@ -10963,8 +10968,8 @@
      "id": 73,
      "name": "wg4GrasB",
      "type": "moebel",
-     "x": 608,
-     "y": 560,
+     "x": 576,
+     "y": 592,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11101,7 +11106,7 @@
      "id": 79,
      "name": "wg4Gras",
      "type": "moebel",
-     "x": 736,
+     "x": 768,
      "y": 672,
      "width": 16,
      "height": 16,
@@ -11607,7 +11612,7 @@
      "id": 101,
      "name": "wg4BlumeGelb",
      "type": "moebel",
-     "x": 592,
+     "x": 576,
      "y": 560,
      "width": 16,
      "height": 16,

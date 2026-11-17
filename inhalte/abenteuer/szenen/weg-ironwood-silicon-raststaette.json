@@ -484,7 +484,9 @@
     },
     {
       "moebel": "ws5Rasthaus",
-      "feld": [134, 7]
+      "feld": [133, 6],
+      "versatz": [4, 0],
+      "massstab": 1.2
     },
     {
       "moebel": "ws5Imbiss",

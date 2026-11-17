@@ -6206,16 +6206,16 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -12610,22 +12610,27 @@
      "id": 54,
      "name": "ds8Gemischtwaren",
      "type": "moebel",
-     "x": 448,
-     "y": 368,
-     "width": 128,
-     "height": 144,
+     "x": 435,
+     "y": 352,
+     "width": 154,
+     "height": 173,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 504
+       "value": 517
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.2
       }
      ]
     },
@@ -13738,7 +13743,7 @@
      "name": "ld9SchildAnkerTaue",
      "type": "moebel",
      "x": 476,
-     "y": 443,
+     "y": 444,
      "width": 64,
      "height": 16,
      "rotation": 0,
@@ -13747,7 +13752,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 505
+       "value": 518
       },
       {
        "name": "kollision",
@@ -14337,6 +14342,11 @@
    "name": "kennung",
    "type": "string",
    "value": "lockport.aussen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "27,32;28,32;29,32;30,32;31,32;32,32;33,32;34,32;35,32;36,32"
   }
  ]
 }

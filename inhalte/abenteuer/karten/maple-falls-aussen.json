@@ -8341,7 +8341,7 @@
      "name": "haustuer",
      "type": "ausloeser",
      "x": 48,
-     "y": 320,
+     "y": 304,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -8572,7 +8572,7 @@
      "name": "laubharker",
      "type": "statist",
      "x": 368,
-     "y": 144,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -8591,12 +8591,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "23,9"
+       "value": "23,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "25,9"
+       "value": "25,8"
       },
       {
        "name": "sagt",
@@ -8662,7 +8662,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "9,9"
+       "value": "9,8"
       },
       {
        "name": "verhalten",
@@ -9052,7 +9052,7 @@
      "name": "mfBaum",
      "type": "moebel",
      "x": 192,
-     "y": 80,
+     "y": 64,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -9061,7 +9061,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 120
       },
       {
        "name": "kollision",
@@ -9075,7 +9075,7 @@
      "name": "mfAhorn",
      "type": "moebel",
      "x": 256,
-     "y": 80,
+     "y": 64,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -9084,7 +9084,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 120
       },
       {
        "name": "kollision",
@@ -9098,7 +9098,7 @@
      "name": "mfAhorn",
      "type": "moebel",
      "x": 352,
-     "y": 80,
+     "y": 64,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -9107,7 +9107,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 120
       },
       {
        "name": "kollision",
@@ -9121,7 +9121,7 @@
      "name": "mfBaum",
      "type": "moebel",
      "x": 416,
-     "y": 80,
+     "y": 64,
      "width": 64,
      "height": 64,
      "rotation": 0,
@@ -9130,7 +9130,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 120
       },
       {
        "name": "kollision",
@@ -9144,7 +9144,7 @@
      "name": "mf4Gemuesebeet",
      "type": "moebel",
      "x": 176,
-     "y": 112,
+     "y": 96,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -9167,7 +9167,7 @@
      "name": "mf4Gartenbank",
      "type": "moebel",
      "x": 224,
-     "y": 128,
+     "y": 112,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -9176,7 +9176,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 136
       },
       {
        "name": "kollision",
@@ -9190,7 +9190,7 @@
      "name": "mf4Busch",
      "type": "moebel",
      "x": 336,
-     "y": 128,
+     "y": 112,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -9199,7 +9199,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 136
       },
       {
        "name": "kollision",
@@ -9213,21 +9213,36 @@
      "name": "mf4VillaWhitlock",
      "type": "moebel",
      "x": 16,
-     "y": 160,
-     "width": 144,
-     "height": 208,
+     "y": 144,
+     "width": 143,
+     "height": 229,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 365
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,14,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "........./#########/#########/#########/#########/#########/#########/#########/#########/#########/##.######/##.######/#...#####/#...#####/........."
       }
      ]
     },
@@ -9236,21 +9251,36 @@
      "name": "mf4VillaLila",
      "type": "moebel",
      "x": 176,
-     "y": 160,
-     "width": 144,
-     "height": 208,
+     "y": 144,
+     "width": 143,
+     "height": 229,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 365
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,14,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "........./#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/........."
       }
      ]
     },
@@ -9259,21 +9289,36 @@
      "name": "mf4VillaRot",
      "type": "moebel",
      "x": 336,
-     "y": 160,
-     "width": 144,
-     "height": 208,
+     "y": 144,
+     "width": 143,
+     "height": 229,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 365
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,14,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "........./#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/........."
       }
      ]
     },

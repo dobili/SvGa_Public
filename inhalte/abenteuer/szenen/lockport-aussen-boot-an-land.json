@@ -148,7 +148,9 @@
     },
     {
       "moebel": "ds8Gemischtwaren",
-      "feld": [28, 23],
+      "feld": [27, 22],
+      "versatz": [3, 0],
+      "massstab": 1.2,
       "id": "ausruester"
     },
     {
@@ -732,6 +734,18 @@
     "modern"
   ],
   "ufer": "stein",
+  "sperren": [
+    [27, 32],
+    [28, 32],
+    [29, 32],
+    [30, 32],
+    [31, 32],
+    [32, 32],
+    [33, 32],
+    [34, 32],
+    [35, 32],
+    [36, 32]
+  ],
   "datei": "karten/lockport-aussen-boot-an-land.json",
   "zustand_der_karte": "taueErledigt"
 }

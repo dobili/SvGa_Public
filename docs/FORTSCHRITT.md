@@ -1,3 +1,22 @@
+Stand: 17.11.2026 früh, 5 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde mit vier Nebenchats abgeschlossen.**
+
+- App: Variante B (Kamera-Zoom 3, PixelLab-Figuren 2/3), Zeichentiefe nach Maske, Sitzplatz-Regel
+  (`sitzplatz.ts`/`.py`), Kameraränder und vorausschauende Kamera (`kameravoraus.ts`), Blickrichtung
+  `blick` für Stehende, Leinwand beim Kartenwechsel sofort entfernt, Tonbefehle ohne unbehandelte
+  Ausnahme (WebKit). Leistung gemessen (`leistung_17-11.md`): keine Grafikstufe nötig.
+- Karten: Weltpuzzle ohne Randbruch, Abziehbilder innen und außen ersetzt, Raumgrößen (R065),
+  Türen in Figurgröße (10.92, nur Diner Maple Falls offen, RO33), Pavillon, Museum, Turnhalle,
+  Kantine passend, Lockport-Stege (R133), Texte gegen Karten innen und außen.
+- Pipeline: `raumgroesse`, `blickrichtung`, `tuermessung`, `tuergroesse --innen`, `objektmassstab`
+  (Kollision und Türen mit Maßstab), `vitrinenbild`, `schildbild`; Kartenzeichner ohne schwarze
+  Klippenkacheln, Ufer am Rand. Karteneditor 1.7.1 (Blick, Maßstab).
+- Rückmeldungssammlung gepflegt: 145 von 149 erledigt; offen R005 (RO33), R020 (Sitzbilder).
+- Für den Autor: RO33 bis RO37 (Revision der Entscheidungen, Pavillonform, Bildwünsche).
+
+**Nächster Schritt:** Antworten des Autors zu RO33 bis RO37 einarbeiten; Bilder aus RO37 einbauen,
+sobald geliefert; CI-Lauf nach jedem Sammelpush abwarten (Lauf dauert 30–45 Minuten, Zwischenstände
+auf dem lokalen Zweig „zwischen“ sammeln und nur auf beta sichern).
+
 Stand: 16.11.2026 nachts, 23 Uhr (Haupt-Chat, Schach-Abenteuer): **Variante B, Kartendurchsicht Akt 2–4, Runde mit Nebenchats.**
 
 - Variante B (7d63cd28): Kamera zoomt 3 auf volles Bild, PixelLab-Figuren 2/3 in der Welt

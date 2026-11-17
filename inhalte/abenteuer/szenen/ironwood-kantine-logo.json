@@ -804,11 +804,6 @@
       "an_wand": true
     },
     {
-      "moebel": "rv5TuerSuedGlas",
-      "feld": [19, 19],
-      "an_wand": true
-    },
-    {
       "moebel": "cc5Fussmatte",
       "feld": [17, 17],
       "versatz": [0, 19]
@@ -833,10 +828,6 @@
     {
       "name": "stahlbrett",
       "feld": [30, 8]
-    },
-    {
-      "name": "kantineAusgang",
-      "feld": [19, 18]
     },
     {
       "name": "kantineAusgang",

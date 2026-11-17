@@ -684,7 +684,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 8,
@@ -761,6 +768,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-22"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
@@ -789,6 +801,11 @@
        "name": "bild",
        "type": "string",
        "value": "statist-27"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },

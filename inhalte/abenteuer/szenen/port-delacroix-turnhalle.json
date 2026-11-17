@@ -21,7 +21,7 @@
     "#....................#",
     "#....................#",
     "#....................#",
-    "############..########"
+    "############...#######"
   ],
   "objekte": [
     {
@@ -272,7 +272,7 @@
     },
     {
       "moebel": "pd6Bank",
-      "feld": [14, 13]
+      "feld": [9, 13]
     },
     {
       "moebel": "pd6Bank",
@@ -305,6 +305,11 @@
       "versatz": [0, 3]
     },
     {
+      "moebel": "pd6Fussmatte",
+      "feld": [14, 14],
+      "versatz": [0, 3]
+    },
+    {
       "moebel": "pd9Lehrertisch",
       "feld": [15, 3],
       "id": "lehrertisch"
@@ -316,6 +321,10 @@
     {
       "moebel": "rv5TuerSuedHell",
       "feld": [13, 15]
+    },
+    {
+      "moebel": "rv5TuerSuedHell",
+      "feld": [14, 15]
     }
   ],
   "ausloeser": [
@@ -345,6 +354,10 @@
     {
       "name": "turnhalleAusgang",
       "feld": [13, 15]
+    },
+    {
+      "name": "turnhalleAusgang",
+      "feld": [14, 15]
     }
   ],
   "figuren": [

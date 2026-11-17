@@ -269,7 +269,7 @@ def miss(ort: str | None = None) -> list[Raum]:
             raum.befund = "Gebäudebild ohne Grundriss (10.74), nicht messbar"
             raeume.append(raum)
             continue
-        massstab = stueck["breite"] / angabe["breite"] if angabe.get("breite") else 1.0
+        massstab = massstab_des_stuecks(stueck, moebel)
         raum.aussen_breite = round(gr.get("breite", 0) * massstab, 1)
         raum.aussen_tiefe = round(gr.get("tiefe", 0) * massstab, 1)
         raum.form = gr.get("form", "")
@@ -280,6 +280,18 @@ def miss(ort: str | None = None) -> list[Raum]:
                 raum.vorschlag += ("; " if raum.vorschlag else "") + "oder Gebäudebild " + ", ".join(andere)
         raeume.append(raum)
     return raeume
+
+
+def massstab_des_stuecks(stueck: dict, moebel: dict) -> float:
+    """Faktor, mit dem ein Gebäude auf der Karte steht: gesetzte Breite durch Breite im Katalog.
+
+    Warum: Die Angabe, die mit dem Stück geliefert wird, ist schon skaliert; der Quotient war
+    deshalb immer 1, und ein Gebäude mit ``massstab`` wurde zu klein gemessen (Kantine Ironwood:
+    Halle 13 breit mit 1,7 gesetzt, gemeldet 13 × 5 statt 22,1 × 8,5).
+    Beispiel: Stück 354 Pixel breit, Katalog 208 → 1,7. Sonderfall: unbekanntes Möbel → 1.
+    """
+    breite = moebel.get(stueck.get("name", ""), {}).get("breite")
+    return stueck["breite"] / breite if breite else 1.0
 
 
 def zeile(raum: Raum) -> str:

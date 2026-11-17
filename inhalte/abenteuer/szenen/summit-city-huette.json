@@ -167,7 +167,8 @@
   "figuren": [
     {
       "name": "ward",
-      "feld": [9, 7]
+      "feld": [9, 7],
+      "blick": "oben"
     },
     {
       "name": "kit",
@@ -196,7 +197,8 @@
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Kit",
         "wann": "tag",
-        "bild": "statist-22"
+        "bild": "statist-22",
+        "blick": "oben"
       }
     },
     {
@@ -206,7 +208,8 @@
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Haraldsen",
         "wann": "tag",
-        "bild": "statist-27"
+        "bild": "statist-27",
+        "blick": "rechts"
       }
     }
   ]

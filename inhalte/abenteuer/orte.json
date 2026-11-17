@@ -3671,7 +3671,6 @@
           "name": "weiterBergstrasse",
           "karte": "wegDesertSummit.diner",
           "art": "uebergang",
-          "dialog": "weg-desert-summit.diner_ankunft",
           "ziel": {
             "karte": "wegDesertSummit.bergstrasse",
             "ausloeser": "zurueckDiner"

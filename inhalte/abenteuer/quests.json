@@ -1613,9 +1613,8 @@
       "ort": "portDelacroix",
       "haupt": false,
       "start": {
-        "art": "ort",
-        "karte": "portDelacroix.werkstatt",
-        "ausloeser": "werkbank"
+        "art": "dialog",
+        "knoten": "port-delacroix-werkstatt.werkbank_flashback"
       },
       "schritte": [
         {
@@ -3255,7 +3254,7 @@
       "klein": true,
       "start": {
         "art": "dialog",
-        "knoten": "silicon-bay-aussen.eisenwaren"
+        "knoten": "pelikaninsel.leuchtfeuer_auftrag"
       },
       "schritte": [
         {

@@ -46,12 +46,7 @@ VAR spurPM4Gezaehlt = false
 === diner_ankunft ===
 {earlGetroffen: -> END}
 ~ earlGetroffen = true
-Es ist Sommer, und du bist fünfzehn. #sprecher:erzaehler
-Juno hat dir eine Seite im Tagebuch geschenkt, leer, mit einem Rahmen aus Glitzer: Für das, was noch kommt. #sprecher:erzaehler
-Mama hat drei Wochen Urlaub und fährt. Ambrose ist leichter seit dem Canyon. Er lobt einen Bauern, der einfach ein Feld vorrückt. #sprecher:erzaehler
-Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
-* [Weiterfahren]
-- An einem Diner mit einem Neonschild in Form eines Königs haltet ihr zum Tanken. Drinnen schieben Fernfahrer Könige über Bretter. #sprecher:erzaehler
+Drinnen schieben Fernfahrer Könige über Bretter. Ein Mann mit Kappe und Kaffeebecher dreht sich nach dir um. #sprecher:erzaehler
 Na, auch auf dem Weg nach oben? Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
 -> earl_regel
 
@@ -112,6 +107,9 @@ Nur Könige und Bauern. So wenig Holz, und kein Zug ist leicht. #sprecher:ambros
 }
 ~ neonGefunden = true
 Hinter dem Diner, zwischen leeren Kisten, liegt ein gebogenes Glasrohr in Form eines „K“. #sprecher:erzaehler
+{not earlGetroffen:
+    Aus der Hintertür sieht ein Mann mit Kappe und Kaffeebecher heraus. #sprecher:erzaehler
+}
 Das K von King's Diner. Ist seit neunundachtzig kaputt. Nimm's mit, wir haben uns dran gewöhnt. #sprecher:earl #stimmung:laechelt
 ~ gibFund("neonK")
 -> END
@@ -159,6 +157,7 @@ VAR ruthGetroffen = false
 === funkschach_start ===
 ~ funkschachBegonnen = true
 Im Fenster des Diners steht ein altes CB-Funkgerät. Aus dem Lautsprecher kommen Buchstaben und Zahlen: „Echo vier, Echo zwei.“ #sprecher:erzaehler
+{not earlGetroffen:Ein Mann mit Kappe stellt seinen Kaffeebecher ab.|Earl stellt seinen Kaffeebecher ab.} #sprecher:erzaehler
 Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer. Willst du einspringen? #sprecher:earl #stimmung:laechelt
 -> funkschach_partie
 

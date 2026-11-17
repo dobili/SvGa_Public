@@ -12650,12 +12650,12 @@
     },
     {
      "id": 55,
-     "name": "ld8Stemmtor",
+     "name": "by6StegLaengs9",
      "type": "moebel",
      "x": 480,
-     "y": 192,
+     "y": 190,
      "width": 32,
-     "height": 144,
+     "height": 148,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12673,12 +12673,12 @@
     },
     {
      "id": 56,
-     "name": "ld8Stemmtor",
+     "name": "by6StegLaengs9",
      "type": "moebel",
      "x": 960,
-     "y": 192,
+     "y": 190,
      "width": 32,
-     "height": 144,
+     "height": 148,
      "rotation": 0,
      "visible": true,
      "properties": [

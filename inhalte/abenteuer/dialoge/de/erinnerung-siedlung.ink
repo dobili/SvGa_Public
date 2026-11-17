@@ -59,9 +59,9 @@ Der 38. Zug. Meine Dame muss zurück zum König. #sprecher:ambrose #stimmung:jun
     ~ kerzeRichtig = kerzeRichtig + 1
     Ja. Ein stilles Feld. Über a3 kommt sie nach g3. #sprecher:ambrose #stimmung:jung
 * [38. Td8+]
-    Ein Schach ins Leere. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
+    Dann schlägt der Springer von c6 den Turm. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
 * [38. Dxc6]
-    Zu gierig, dann jagt seine Dame meinen König. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
+    Zu gierig. Der Springer von a5 schlägt die Dame zurück. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
 - Sein Springer kommt herüber. 38… Sc4. #sprecher:erzaehler
 Und jetzt? #sprecher:gideon #stimmung:nachdenklich
 -> zug39
@@ -72,9 +72,9 @@ Der 39. Zug. Jetzt gebe ich Schach. Mit der Dame. #sprecher:ambrose #stimmung:ju
     ~ kerzeRichtig = kerzeRichtig + 1
     Ja. Mit Schach. #sprecher:ambrose #stimmung:jung
 * [39. Dxa7]
-    Ein Bauer, aber seine Dame bleibt. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
+    Ein Bauer, aber der Springer von c6 schlägt die Dame. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
 * [39. Td8+]
-    Der König geht nach g7, und nichts ist gewonnen. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
+    Dann schlägt der Springer von c6 den Turm. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
 - Dann nimmt er sie doch. #sprecher:gideon #stimmung:nachdenklich
 Ja. Dann nimmt er sie. Er tauscht immer, wenn er kann. Ich habe es trotzdem gespielt, weil es richtig war. #sprecher:ambrose #stimmung:jung
 Zum ersten Mal in meinem Leben wollte ich nicht gewinnen, bevor es so weit war. #sprecher:ambrose #stimmung:jung

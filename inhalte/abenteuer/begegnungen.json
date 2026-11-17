@@ -736,7 +736,7 @@
     },
     {
       "kennung": "ghostTown.fernpartie",
-      "gegner": "summitCity.victor",
+      "gegner": "ghostTown.victor",
       "farbe": "white",
       "format": {
         "art": "stellungsduell",
@@ -1182,7 +1182,7 @@
     {
       "kennung": "capitalArena.kreidenacht3",
       "brett": "abgegriffen",
-      "gegner": "capitalArena.victor",
+      "gegner": "capitalArena.kapuze",
       "farbe": "zufall",
       "format": {
         "art": "partie"

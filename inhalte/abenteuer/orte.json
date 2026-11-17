@@ -571,7 +571,8 @@
           "kennung": "cedarCreek.victor",
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
-          "dialog": "cedar-creek-aussen.victor"
+          "dialog": "cedar-creek-aussen.victor",
+          "wenn": "nicht endeAkt1Gesehen"
         },
         {
           "kennung": "cedarCreek.zwillinge",
@@ -1260,7 +1261,8 @@
           "kennung": "riverton.victor",
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
-          "dialog": "riverton-aussen.victor"
+          "dialog": "riverton-aussen.victor",
+          "wenn": "nadelRiverton == 0"
         }
       ],
       "ausloeser": [
@@ -2577,7 +2579,8 @@
           "kennung": "siliconBay.victor",
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
-          "dialog": "silicon-bay-lobby.victor"
+          "dialog": "silicon-bay-lobby.victor",
+          "wenn": "einladungGesehen und nicht endeAkt3Gesehen"
         },
         {
           "kennung": "siliconBay.empfangsroboter",
@@ -3984,6 +3987,7 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "summit-city-bergstation.victor",
+          "wenn": "endeAkt3Gesehen und nicht grabGesehen",
           "gegner": "summitCity.victor"
         }
       ],
@@ -4917,8 +4921,8 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "ghost-town-saloon.victor",
-          "wenn": "grabGesehen",
-          "gegner": "summitCity.victor"
+          "wenn": "grabGesehen und nicht ankunftCapitalArenaGesehen",
+          "gegner": "ghostTown.victor"
         }
       ],
       "ausloeser": [
@@ -5331,6 +5335,7 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "capital-arena-halle.victor",
+          "wenn": "ankunftCapitalArenaGesehen",
           "gegner": "capitalArena.victor"
         },
         {

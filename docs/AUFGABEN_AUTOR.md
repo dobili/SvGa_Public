@@ -1908,3 +1908,14 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       ein alter Bahnhof am Canyonpfad. Auf der Hochebene geht die grüne Wiese jetzt weich in den
       roten Sand über. Im Bayou führt der Quersteg jetzt bis zur Zypresseninsel (vorher waren drei
       Inseln zu Fuß nicht erreichbar).
+- [ ] RO36. **Pavillon in Riverton (Rückfrage):** Außen steht ein offener achteckiger Pavillon mit
+      Geländer, innen ist Slicks Club ein Holzsaal mit Wänden und Fensterreihe (22 × 15 Kacheln, mit
+      vier Clubtischen und dem Bodenbrett; kleiner geht es nicht). Damit innen und außen
+      zusammenpassen, wird der Pavillon außen gerade etwa 1,4-mal so groß gezeichnet. Offen ist
+      die Form: Soll der Pavillon außen ein geschlossener Holzsaal werden (neues Bild), oder soll
+      der Club innen ein offener Pavillon mit Geländer statt Wänden sein? Meine Empfehlung: innen
+      offen mit Geländer und Blick auf den Fluss, weil der Pavillon in der Geschichte ein Treffpunkt
+      im Freien ist; das baue ich, wenn du zustimmst.
+      Nebenbei gemessen (Leistung nach Variante B): Auf einem künstlich gebremsten Gerät (zehnfach
+      langsamer) läuft das Spiel mit 37 bis 45 Bildern je Sekunde, nur etwa 2 weniger als vorher;
+      eine eigene Grafikstufe ist nicht nötig. Wenn es auf deinem Handy doch ruckelt, sag Bescheid.

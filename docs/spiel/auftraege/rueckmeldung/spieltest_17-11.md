@@ -59,3 +59,29 @@ schauen zu Tisch, Tresen oder Brett, Sitzende sitzen auf ihrem Möbel.
   - Die Hilfen dafür stehen in `app/tests/e2e/abenteuer-lage.ts`; `abenteuer-affe.ts` bleibt damit
     unter 400 Zeilen.
 - Tritt der Fehler wieder auf, sagt die Meldung, was den Weg versperrt.
+
+## Nachtrag: vorausschauende Kamera (Befunde 5 und 6)
+
+Umgesetzt in der App:
+
+- Neu sind `app/src/abenteuer/oberwelt/kameravoraus.ts` (Rechenregeln, mit Tests) und
+  `kamerafuehrung.ts` (Anbindung an Phaser). `szene.ts` ruft die Kamera nur noch auf.
+- Beim Laufen schaut die Kamera 2 Kacheln in Laufrichtung voraus. Liegt ein Auslöser (Tür,
+  Treppe, Schild) bis 6 Kacheln voraus und höchstens eine Kachel daneben, rückt sie so weit, dass
+  er mit 3 Kacheln dahinter (das Gebäude über der Tür) in der freien Fläche neben den
+  Bedienelementen liegt.
+- Grenze: Der Held bleibt mindestens 2 Kacheln vom Rand der freien Fläche entfernt. Die
+  verdeckten Ränder aus `kamera.ts` zählen mit. Am Kartenrand hält die Kamera wie bisher an.
+- Die Kamera folgt weich (exponentiell, 350 ms beim Laufen). Beim Stehen kehrt sie langsam zur
+  Mitte zurück (900 ms). Ein Richtungswechsel ruckt nicht: Ein Bild ändert den Versatz um weniger
+  als 3 Kartenpixel.
+
+Vorher und nachher, quer 800 × 420, beim Laufen nach oben (Fotos nur lokal):
+
+- Kantinenhalle Ironwood: vorher nur die Stufen, nachher die Tür ganz.
+- Turnhalle Port Delacroix: vorher das Schild halb abgeschnitten, nachher Schild und Tür ganz.
+- Bahnhof Riverton: vorher die Tür halb abgeschnitten, nachher die Tür ganz samt Bogen.
+- Befund 5 (Wohnzimmer hoch): Läuft der Held zur Haustür, schaut die Kamera jetzt nach unten. Im
+  heutigen Stand der Karte liegt die Tür bei der Ankunft schon über dem Steuerkreuz.
+- Prüfungen: typen, tsc, stil, vitest `src/abenteuer` (565 Tests), build, e2e Abenteuer in
+  Chromium (40 bestanden, 7 übersprungen).

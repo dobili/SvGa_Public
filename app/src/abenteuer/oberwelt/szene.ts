@@ -21,7 +21,7 @@ import {
   type Meldezustand,
 } from "./ausloeserebene";
 import { OHNE_RAENDER, type Raender } from "./kamera";
-import { richteKameraEin } from "./kameraregie";
+import { Kamerafuehrung } from "./kamerafuehrung";
 import { ZOOM } from "./weltmassstab";
 import { kachelVon, tippschrittBeimLoslassen, zielErreicht, type Tippschritt } from "./tippschritt";
 import { Zielmarker, type Zielfeld } from "./zielmarker";
@@ -105,6 +105,7 @@ export class Oberweltszene extends Phaser.Scene {
   private ziel: { feld: Zielfeld | null; an: boolean } = { feld: null, an: true };
   /** Ränder unter festen Bedienelementen in Spielpixeln (kamera.ts, kameraregie.ts). */
   private verdeckt: Raender = OHNE_RAENDER;
+  private kamerafuehrung: Kamerafuehrung | null = null; // vorausschauend (kameravoraus.ts)
 
   constructor(private readonly daten: Szenendaten) {
     super("oberwelt");
@@ -168,11 +169,11 @@ export class Oberweltszene extends Phaser.Scene {
     for (const ebene of feste) this.physics.add.collider(held, ebene);
     this.physics.world.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
     const kamera = this.cameras.main;
-    this.verdeckt = richteKameraEin(kamera, karte.widthInPixels, karte.heightInPixels, ZOOM);
-    this.cameras.main.startFollow(held, true);
+    this.kamerafuehrung = new Kamerafuehrung(kamera, KACHEL, () => this.ausloeser);
+    this.verdeckt = this.kamerafuehrung.richteEin(karte.widthInPixels, karte.heightInPixels, ZOOM);
+    kamera.startFollow(held, true).setRoundPixels(true);
     this.zielmarker = new Zielmarker(this, KACHEL, () => this.verdeckt);
     this.zielmarker.setze(this.ziel.feld, this.ziel.an);
-    this.cameras.main.setRoundPixels(true);
     this.ausloeser = liesAusloeserAus(karte);
     this.pause = EINGABEPAUSE_MS;
     const liste = this.daten.moebel ?? [];
@@ -220,7 +221,7 @@ export class Oberweltszene extends Phaser.Scene {
   /** Neue Größe des Bildes (Gerät gedreht, oberweltspiel.ts): Kamera neu einrichten. */
   passeKameraAn(): void {
     const welt = this.physics.world.bounds;
-    this.verdeckt = richteKameraEin(this.cameras.main, welt.width, welt.height, ZOOM);
+    this.verdeckt = this.kamerafuehrung?.richteEin(welt.width, welt.height, ZOOM) ?? this.verdeckt;
   }
 
   /** Ziel des Zielhinweises (Kachelfeld oder null) und ob er an ist (Spielmenü). */
@@ -313,6 +314,7 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung === "unten") koerper.setVelocityY(tempo);
     }
     this.held.setDepth(this.held.y);
+    this.kamerafuehrung?.schritt(delta, richtung, { x: this.held.x, y: this.held.y });
     this.toenungsschicht?.folge(this.held.x, this.held.y);
     this.meldeAusloeser();
     this.meldeKachel();

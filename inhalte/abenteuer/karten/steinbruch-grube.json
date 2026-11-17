@@ -10681,7 +10681,12 @@
       {
        "name": "tun",
        "type": "string",
-       "value": ""
+       "value": "sitzt auf der Bank vor der alten Bude"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.steinbruch.grube.hargrove"
       },
       {
        "name": "wann",
@@ -10719,7 +10724,12 @@
       {
        "name": "tun",
        "type": "string",
-       "value": ""
+       "value": "fotografiert das Wasserloch in der Grube"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.steinbruch.grube.lena"
       },
       {
        "name": "wann",
@@ -10795,7 +10805,12 @@
       {
        "name": "tun",
        "type": "string",
-       "value": ""
+       "value": "leuchten mit Taschenlampen in den Stollenmund"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.steinbruch.grube.kinder"
       },
       {
        "name": "wann",

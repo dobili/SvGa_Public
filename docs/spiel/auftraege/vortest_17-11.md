@@ -122,6 +122,51 @@ Zusammen: 21 BESTANDEN, 0 FEHLER, 8 NUR AUTOR, 11 OFFEN.
 
 Zusammen: 33 BESTANDEN, 0 FEHLER, 4 ÜBERHOLT (der Text beschreibt einen älteren Stand, die App ist richtig; in `AUFGABEN_AUTOR.md` als „Vorgeprüft: Abweichung, nur im Text“), 2 NUR AUTOR, 7 OFFEN.
 
+## Paket 3: N2480 bis N2549, 0.3.45 (38 Punkte)
+
+| Nummer | Ergebnis  | Beleg/Foto                                                                             | Hinweis                                                        |
+| ------ | --------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| N2480  | BESTANDEN | spielen: „2. g4?? erlaubt Matt … kein Zurücknehmen“                                    | Aufgeben und Wiederöffnen nicht geprüft.                       |
+| N2481  | OFFEN     | –                                                                                      | Braucht eine verlorene Partie mit „Bester Zug“.                |
+| N2482  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) | Phasenkarte und Daumenwischen nicht geprüft.                   |
+| N2483  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) | Zwei schnelle Tipps nicht geprüft.                             |
+| N2484  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) |                                                                |
+| N2485  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) |                                                                |
+| N2486  | BESTANDEN | auswertung-zeitleiste: „Zeitleiste waagerecht und Zur Stellung“ (393 × 851, 320 × 568) | Bewegung reduziert: kein weiches Scrollen.                     |
+| N2487  | NUR AUTOR | –                                                                                      | Aussehen hell/dunkel, Querformat, Tablet.                      |
+| N2530  | BESTANDEN | trainer-repertoire: „Startkarte …“, „Königsgambit als Weiß …“                          | Übereinstimmung mit Kapitel 3 beurteilt der Autor.             |
+| N2531  | OFFEN     | –                                                                                      | Gedächtnis je Quelle nicht nachgestellt.                       |
+| N2532  | NUR AUTOR | –                                                                                      | Frage „Passt das so?“.                                         |
+| N2533  | BESTANDEN | trainer-repertoire: „Italienisch aus der Praxis …“                                     |                                                                |
+| N2534  | BESTANDEN | trainer-repertoire: „Italienisch aus der Praxis …“                                     | Herkunft, falscher Zug mit Meldung.                            |
+| N2535  | BESTANDEN | trainer-repertoire: „Italienisch …“, „Startkarte …“                                    | Neuladen statt App schließen.                                  |
+| N2536  | BESTANDEN | Texte `tour.trainer.repertoire.*` in `de.json`                                         |                                                                |
+| N2540  | BESTANDEN | sammlung-bearbeiten: „Fehlerdatenbank: Kachel im Training …“                           | Reihenfolge der Kacheln nicht geprüft.                         |
+| N2541  | BESTANDEN | sammlung-bearbeiten: „Auswertung: nach „Merken“ Bestätigung …“                         |                                                                |
+| N2542  | BESTANDEN | sammlung-bearbeiten: „Auswertung: …“                                                   |                                                                |
+| N2543  | BESTANDEN | sammlung-bearbeiten: „Lernsammlung: anlegen, Plan ergänzen …“                          |                                                                |
+| N2544  | BESTANDEN | sammlung-bearbeiten: „Lernsammlung: …“                                                 | Gruppe „Narrenmatt“.                                           |
+| N2545  | BESTANDEN | sammlung-bearbeiten: „Lernsammlung: …“                                                 | 10 Sekunden nicht geprüft.                                     |
+| N2546  | BESTANDEN | sammlung-bearbeiten: „Fehlerdatenbank: …“                                              | Auswertung zählt beim neuen Kapitel.                           |
+| N2547  | BESTANDEN | sammlung-bearbeiten: „Fehlerdatenbank: …“                                              |                                                                |
+| N2548  | BESTANDEN | `src/tour/touren.ts` und tour: „jede Tour der Bereiche …“                              |                                                                |
+| N2490  | BESTANDEN | fehlertest-3: „geteilter Link bei offener App …“                                       |                                                                |
+| N2491  | BESTANDEN | fehlertest-3: „Startwahl aus den Einstellungen …“                                      |                                                                |
+| N2492  | BESTANDEN | fehlertest-3: „Zurück-Taste bei offener Startwahl …“                                   |                                                                |
+| N2493  | BESTANDEN | fehlertest-3: „„Los geht's“ im Profil …“                                               | Orden „Teil Endspiel“ nicht geprüft.                           |
+| N2494  | BESTANDEN | fehlertest-3: „Maia laden ohne Netz …“                                                 |                                                                |
+| N2495  | OFFEN     | –                                                                                      | Keine Gratulation nach Einspielen: nicht nachgestellt.         |
+| N2496  | BESTANDEN | fehlertest-3: „Gratulation zum vollen Ring …“                                          |                                                                |
+| N2497  | BESTANDEN | fehlertest-3: „QR-Code ?start=buch …“                                                  |                                                                |
+| N2498  | BESTANDEN | fehlertest-3: „App offen über Mitternacht …“                                           |                                                                |
+| N2550  | BESTANDEN | trainer-repertoire: „Old Sicilian …“                                                   | Satz „um 1200“; Verständlichkeit beurteilt der Autor.          |
+| N2551  | BESTANDEN | trainer-repertoire: „Old Sicilian …“                                                   | Gefühl für die Länge beim Autor.                               |
+| N2552  | BESTANDEN | Erkundung: Englische Eröffnung als Schwarz                                             | Knopf „1 Variante“, App zieht 1. c4.                           |
+| N2553  | OFFEN     | –                                                                                      | Ohne Netz nicht nachgestellt.                                  |
+| N2549  | BESTANDEN | sammlung-bearbeiten: „Auswertung: …“                                                   | „Zur Stellung“ zeigt 12. O-O-O??, eingetragen wird dieser Zug. |
+
+Zusammen: 32 BESTANDEN, 0 FEHLER, 2 NUR AUTOR, 4 OFFEN.
+
 ### Nebenbefund außerhalb der Punkte
 
 - `varianten.spec.ts`, Test „zwei Tabs: eine Variante im ersten Tab überlebt eine Änderung im

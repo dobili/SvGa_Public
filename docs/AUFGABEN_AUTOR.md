@@ -1851,8 +1851,12 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       (alle Tür 17 hoch, nötig Maßstab 1,18), Hardware Store in Crossroads und die beiden Leuchttürme
       am Weg nach Capital und im Hafen von Silicon Bay (nötig 1,11), die kleine Polizeiwache der
       Altstadt Silicon Bay (1,25) und die drei Villen in Maple Falls (19 hoch, nötig 1,05).
-      Meine Empfehlung: diese Gebäude mit dem Maßstab 1,2 zeichnen (Polizeiwache 1,25). Noch nicht
-      umgesetzt, weil sich dabei die Kartenlage um die Gebäude ändert; „ok“ genügt, dann baue ich es.
+      Umgesetzt (Widerspruch genügt): Die drei Villen sind 1,1-mal so groß,
+      Eisenwaren in Crossroads und Capital, Diner in Desert Springs, Rasthaus, Kramladen in
+      Lockport, Café in Capital (tauscht dafür den Platz mit dem Modeladen), Eisenwaren der Altstadt
+      und beide Leuchttürme 1,2- bis 1,25-mal; am Leuchtturm am Seeweg läuft der Weg dafür zwei
+      Reihen tiefer. Noch zu klein, weil der Platz fehlt (wird gerade gelöst): Diner Maple Falls,
+      Waschsalon, Café Riverton, Kramläden in Ironwood und Desert Springs, Polizeiwache der Altstadt.
       Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).
 - [ ] RO34. **Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt):** Ein Helfer hat
       alle Innenräume und die meisten Außenkarten von Akt 2 bis 4 nach den neuen Regeln durchgesehen

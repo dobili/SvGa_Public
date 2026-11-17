@@ -31,6 +31,8 @@ VAR victorSeiteGegeben = false
 VAR varianteDracheGelernt = false
 VAR drachenschuppeGefunden = false
 VAR abschiedSummitGesehen = false
+// Aus summit-city-huette.ink: Ward nennt am vierten Abend das Drachenfest (nur gelesen).
+VAR wardBleibGesehen = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
@@ -133,31 +135,52 @@ Gewitter. Ich hab dich gewarnt. Noch mal, bevor es regnet? #sprecher:sol #stimmu
 - not ankunftSummitGesehen:
     Ein Brunnen mit einem steinernen Drachen. Wasser läuft aus seinem Maul. #sprecher:erzaehler
     -> END
-- varianteDracheGelernt: -> drachenfest_alltag
-- else: -> drachenfest_erstes_mal
+- not wardBleibGesehen: -> drachenfest_vorbereitung
+- not drachenschuppeGefunden: -> drachenfest_erstes_mal
+- else: -> drachenfest_alltag
 }
 
-=== drachenfest_erstes_mal ===
+// Vor dem vierten Abend (Ward: „Unten ist heute das Drachenfest“) wird das Fest erst vorbereitet;
+// das Mädchen erklärt den Drachen schon hier (Lektorat Akt 4, Frage 3).
+=== drachenfest_vorbereitung ===
+{varianteDracheGelernt:
+    Über dem Marktplatz hängen schon die Laternen. Bis zum Fest sind es noch ein paar Tage. #sprecher:erzaehler
+    -> END
+}
 ~ varianteDracheGelernt = true
-Am Abend hängen Laternen über dem Marktplatz. Rund um den Drachenbrunnen stehen zwanzig Bretter auf Bierbänken. #sprecher:erzaehler
+Am Drachenbrunnen stapeln Männer Bierbänke, zwei Jungen hängen Laternen auf. Bald ist Drachenfest. #sprecher:erzaehler
+-> drachenfest_regel
+
+=== drachenfest_erstes_mal ===
+Am Abend leuchten die Laternen über dem Marktplatz. Rund um den Drachenbrunnen stehen zwanzig Bretter auf Bierbänken. #sprecher:erzaehler
+{varianteDracheGelernt: -> drachenfest_schuppe}
+~ varianteDracheGelernt = true
+-> drachenfest_regel
+
+=== drachenfest_regel ===
 Ein Mädchen erklärt dir die Regel, ohne zu fragen, ob du sie hören willst. #sprecher:erzaehler
 Einmal im Jahr spielt hier jeder mit dem Drachen. Der Drache zieht wie eine Dame und springt wie ein Springer. #sprecher:erzaehler
 Die Sage sagt, er hat die Bergleute aus dem Stollen geführt. Deshalb darf er alles. #sprecher:erzaehler
 {not abschiedGesehen:
     Eine Figur, die alles darf. Und keiner hier findet das ungerecht. #sprecher:ambrose #stimmung:lacht
 }
+{wardBleibGesehen: -> drachenfest_schuppe}
+Das Mädchen zeigt auf die Laternen. Am Festabend spielt die ganze Stadt, sagt sie, dann bist du dabei. #sprecher:erzaehler
+-> END
+
+=== drachenfest_schuppe ===
 {not drachenschuppeGefunden:
     ~ drachenschuppeGefunden = true
-    Das Mädchen drückt dir eine Schuppe aus grünem Glas in die Hand. Für alle, die zum ersten Mal mitmachen. #sprecher:erzaehler
+    Das Mädchen vom Brunnen drückt dir eine Schuppe aus grünem Glas in die Hand. Für alle, die zum ersten Mal mitmachen. #sprecher:erzaehler
     ~ gibFund("drachenschuppe")
 }
 -> drachenfest_angebot
 
 === drachenfest_angebot ===
 // VARIANTE-FEHLT: Drache (L10). Bis sie gebaut ist, nur die Regel und eine Vertröstung.
-Alle Bretter sind belegt. Die Bergführer spielen bis Mitternacht, und die Kinder schauen zu. #sprecher:erzaehler
+Du schaust an einem Tisch zu. Ein Bergführer fängt den Drachen mit zwei Bauern, und die Kinder johlen. #sprecher:erzaehler
 {not abschiedGesehen:
-    Nächstes Mal setzen wir uns dazu. Ich will sehen, wie man einen Drachen fängt. #sprecher:ambrose #stimmung:laechelt
+    Mit zwei Bauern. Nächstes Mal setzen wir uns dazu, und ich zähle mit. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 

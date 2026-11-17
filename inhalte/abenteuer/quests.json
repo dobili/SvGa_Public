@@ -927,6 +927,33 @@
       ]
     },
     {
+      "kennung": "ironwood.turnier",
+      "titel": "quest.turnier.titel",
+      "typ": "haupt",
+      "ort": "ironwood",
+      "haupt": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "riverton-wohnwagen.turnier_nachricht"
+      },
+      "schritte": [
+        {
+          "text": "quest.turnier.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-wohnzimmer.nicht_ironwood"
+          }
+        },
+        {
+          "text": "quest.turnier.schritt2",
+          "ereignis": {
+            "art": "ort",
+            "karte": "ironwood.aussen"
+          }
+        }
+      ]
+    },
+    {
       "kennung": "ironwood.clubkampf",
       "titel": "quest.clubkampf.titel",
       "typ": "haupt",
@@ -1613,9 +1640,8 @@
       "ort": "portDelacroix",
       "haupt": false,
       "start": {
-        "art": "ort",
-        "karte": "portDelacroix.werkstatt",
-        "ausloeser": "werkbank"
+        "art": "dialog",
+        "knoten": "port-delacroix-werkstatt.werkbank_flashback"
       },
       "schritte": [
         {
@@ -3255,7 +3281,7 @@
       "klein": true,
       "start": {
         "art": "dialog",
-        "knoten": "silicon-bay-aussen.eisenwaren"
+        "knoten": "pelikaninsel.leuchtfeuer_auftrag"
       },
       "schritte": [
         {

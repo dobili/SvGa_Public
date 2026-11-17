@@ -39,6 +39,8 @@ VAR fahrradErhalten = false
 VAR holzlaeuferGefunden = false
 VAR nadelRiverton = 0
 VAR clubkampfRivertonBesprochen = false
+// verbotGesehen setzt maple-falls-wohnzimmer.nicht_ironwood (Lektorat Akt 2).
+VAR verbotGesehen = false
 VAR nadelIronwood = 0
 VAR endeAkt3Gesehen = false
 VAR eliGesehen = false
@@ -73,6 +75,13 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 -> END
 
 === kanalweg ===
+// Lektorat Akt 2 (17.11.2026): Der Kanalweg öffnet erst, wenn Mama den Zettel gesehen hat
+// (orte.json, wenn nadelRiverton und verbotGesehen); so läuft Szene 38 zu Hause für alle.
+{nadelRiverton > 0 and not verbotGesehen:
+    Ein Treidelpfad führt am Kanal entlang Richtung Ironwood. #sprecher:erzaehler
+    Erst nach Hause. Der Zettel vom Coach wartet auf deine Mama. #sprecher:juno #stimmung:laechelt
+    -> kanalweg_heim
+}
 {nadelRiverton > 0:
     Der Treidelpfad am Kanal führt nach Ironwood. Zu Fuß ist es weit, mit dem Rad geht es schneller. #sprecher:erzaehler
     {not abschiedGesehen:
@@ -83,6 +92,13 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
     Erst der Pavillon, {held}. Wer eine Stadt verlässt, bevor er dort gespielt hat, war nie richtig da. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
+
+=== kanalweg_heim ===
+* [Mit dem Zug nach Hause fahren]
+    ~ reise("mapleFalls.wohnzimmer", "haustuer")
+    -> END
+* [Noch bleiben]
+    -> END
 
 === wohnwagen_zu ===
 {rivertonMontagGesehen:
@@ -291,13 +307,14 @@ Unter der Brücke spielt ein Straßenmusiker Gitarre. Neben seinem Hut liegt ein
 Am Anleger hängt ein Blechschild: „Lastkahn Ashford Belle: Riverton – Lockport – Ironwood. Fahrten nach Ansage.“ #sprecher:erzaehler
 {lastkahnFrei:
     Die Belle liegt am Anleger, Kapitän Ruben winkt vom Deck. #sprecher:erzaehler
-    „Die Fahrt kostet 5 Münzen“, sagt Ruben. #sprecher:erzaehler
+    Die Fahrt kostet 5 Münzen. #sprecher:ruben #stimmung:laechelt
     * {muenzen >= 5} [Mit der Ashford Belle nach Lockport (5 Münzen)]
         ~ zahle(5)
         ~ reise("lockport.aussen", "kai")
         -> END
     * {muenzen < 5} [Mitfahren (5 Münzen)]
-        Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
+        Du hast nicht genug Münzen. Ruben zuckt die Schultern. #sprecher:erzaehler
+        Komm wieder, wenn die Kasse stimmt. #sprecher:ruben #stimmung:laechelt
         -> END
     * [Hierbleiben]
         -> END

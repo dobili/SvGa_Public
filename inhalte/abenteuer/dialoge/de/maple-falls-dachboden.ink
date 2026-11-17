@@ -356,7 +356,7 @@ An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte
 {ausgangCapitalArenaFinale == "sieg":Mama sagt, du hast gewonnen.|Mama sagt, du warst bei der Meisterschaft.} Mein Cousin sagt, Mädchen können nicht richtig spielen. Nur den Springer. #sprecher:lily #stimmung:laechelt
 * [„Dein Cousin redet viel.“]
 - Bringst du es mir bei? Richtig? #sprecher:lily #stimmung:laechelt
-Du räumst die zwei Könige und den Springer ab, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
+Du räumst die Schlussstellung ab, Figur für Figur, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
 Der weiße König ist schwer, unten mit Blei ausgegossen, und das Kreuz auf seiner Krone ist ein bisschen schief. #sprecher:erzaehler
 * [„Setz dich. Du hast Weiß.“]
 - Lily klettert auf den Schaukelstuhl. Er knarrt. Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler

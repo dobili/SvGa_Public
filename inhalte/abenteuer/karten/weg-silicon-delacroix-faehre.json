@@ -11368,11 +11368,11 @@
     },
     {
      "id": 182,
-     "name": "ld5Ruderboot",
+     "name": "fzRettungsboot",
      "type": "moebel",
-     "x": 256,
+     "x": 272,
      "y": 256,
-     "width": 80,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -11380,12 +11380,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 280
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

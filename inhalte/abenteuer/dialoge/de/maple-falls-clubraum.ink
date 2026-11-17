@@ -46,6 +46,9 @@ VAR hatKarteAbzaehlen = false
 // Dialogprüfung 17.11.2026: endeAkt1Gesehen setzt cedar-creek-aussen.ink; hier nur gelesen, damit
 // Coach und Sam nach Akt 1 nicht mehr vom kommenden Samstag in Cedar Creek reden.
 VAR endeAkt1Gesehen = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
+VAR einladungGesehen = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -162,11 +165,27 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
     Kein Problem. Das Brett wartet. #sprecher:coachDelgado #stimmung:laechelt
     -> END
 
+// Lektorat Akt 2 (17.11.2026): der Satz zum Stand der Reise, damit der Coach mit vier Nadeln
+// nicht mehr von Cedar Creek redet.
+=== function coachStand() ===
+{
+- einladungGesehen:
+    ~ return "Silicon Bay. Schick mir jede Partie, die du dort spielst. Die Partien, nicht die Zahlen."
+- nadelIronwood > 0:
+    ~ return "Vier Nadeln. Ich hab die Vitrine abgestaubt. Für alle Fälle."
+- nadelRiverton > 0:
+    ~ return "Riverton geschafft! Für Ironwood hab ich uns schon angemeldet. Vier Bretter."
+- endeAkt1Gesehen:
+    ~ return "Cedar Creek hast du hinter dir. In der Vitrine ist noch Platz für einen Pokal. Ich sag's nur."
+- else:
+    ~ return "Samstag Cedar Creek. Pünktlich sein, sonst pfeife ich."
+}
+
 === coach_alltag ===
 {nadelMapleFalls < 3:
-    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|{endeAkt1Gesehen:Cedar Creek hast du hinter dir. In der Vitrine ist noch Platz für einen Pokal. Ich sag's nur.|Samstag Cedar Creek. Pünktlich sein, sonst pfeife ich.}} #sprecher:coachDelgado #stimmung:laechelt
+    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|{coachStand()}} #sprecher:coachDelgado #stimmung:laechelt
 - else:
-    {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|{endeAkt1Gesehen:Cedar Creek hast du hinter dir. In der Vitrine ist noch Platz für einen Pokal. Ich sag's nur.|Samstag Cedar Creek. Pünktlich sein, sonst pfeife ich.}} #sprecher:coachDelgado #stimmung:froh
+    {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|{coachStand()}} #sprecher:coachDelgado #stimmung:froh
 }
 + {nadelMapleFalls > 0 and nadelMapleFalls < 3} [„Noch eine Partie um die Nadel.“]
     -> coach_partie

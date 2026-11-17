@@ -12,6 +12,7 @@
 
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR slickAbschiedGesehen = false
@@ -65,5 +66,22 @@ Und ein Mann mit Dosenpokalen kann keines von beiden ganz. Was heißt das? #spre
     Er nickt nicht. Er sieht wieder hinauf zum Park, wo es leuchtet. #sprecher:erzaehler
 * [Den Springer in der Hand drehen]
     Du siehst auf die Stelle, wo die Mähne fehlt. Er wartet. Dann sieht er wieder zum Park. #sprecher:erzaehler
-- -> END
+- -> turnier_nachricht
+
+// Lektorat Akt 2 (17.11.2026): der Anlass für Ironwood. Juno liest die Nachricht des Coachs; den
+// Zettel zeigt {held} zu Hause Mama (maple-falls-wohnzimmer.nicht_ironwood, Quest ironwood.turnier).
+=== turnier_nachricht ===
+Juno sieht auf ihr Telefon. Das Licht vom Bildschirm macht ihr Gesicht blau. #sprecher:erzaehler #pause
+Coach Delgado hat geschrieben. Freundschaftsturnier in Ironwood, beim Stahlwerker-Club. Vier Bretter. Drei Ausrufezeichen. #sprecher:juno #stimmung:ueberrascht
+Der Zettel liegt bei dir zu Hause. Deine Mama muss unterschreiben. #sprecher:juno #stimmung:laechelt
+Vier Bretter. Dann brauchen sie dich. #sprecher:ambrose #stimmung:nachdenklich
+-> heimfahrt
+
+=== heimfahrt ===
+* [Mit dem Abendzug nach Hause fahren]
+    Der Zug ruckelt durch die Dunkelheit. Juno schläft nach zwei Stationen ein, den Kopf am Fenster. #sprecher:erzaehler
+    ~ reise("mapleFalls.wohnzimmer", "haustuer")
+    -> END
+* [Noch in Riverton bleiben]
+    -> END
 

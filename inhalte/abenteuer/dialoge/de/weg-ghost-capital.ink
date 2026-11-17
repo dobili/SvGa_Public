@@ -57,6 +57,8 @@ VAR gefundenFinchBauerD = false
 VAR gefundenFinchDame = false
 VAR gefundenFinchBauerE = false
 VAR abeGetroffen = false
+// Abe stellt sich beim ersten Auftritt vor, wo immer der ist (Lektorat Akt 4, Frage 4).
+VAR abeVorgestellt = false
 VAR linseGefunden = false
 VAR angesehenFaehrterminal = false
 
@@ -69,9 +71,11 @@ VAR angesehenFaehrterminal = false
 }
 ~ abeGetroffen = true
 // Roman Kapitel 60: König der Hügel; Ambrose: „Wie wir alle.“ Es klingt nicht traurig.
-Die Farben kommen zurück, als ihr den See erreicht. #sprecher:erzaehler
-Der See ist so groß, dass man das andere Ufer nicht sieht. Vor dem Leuchtturm, weiß mit rotem Band, flickt ein Mann ein Netz. #sprecher:erzaehler #musik:leuchtturm
-Abe Lindgren. Ich pass auf den Turm auf, und der Turm passt auf die Schiffe auf. #sprecher:abe #stimmung:laechelt
+Vor dem Leuchtturm, weiß mit rotem Band, flickt {abeVorgestellt:Abe|ein Mann} ein Netz. #sprecher:erzaehler #musik:leuchtturm
+{not abeVorgestellt:
+    ~ abeVorgestellt = true
+    Abe Lindgren. Ich pass auf den Turm auf, und der Turm passt auf die Schiffe auf. #sprecher:abe #stimmung:laechelt
+}
 König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe #stimmung:laechelt
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe #stimmung:laechelt
 * [Eine Partie spielen]
@@ -103,6 +107,10 @@ Am Steg hängt eine Tafel mit drei Diagrammen: „Im Endspiel ist der König ein
 }
 ~ linseGefunden = true
 Im Wärterhaus liegt eine alte Linse aus dickem Glas, so groß wie ein Teller. #sprecher:erzaehler
+{not abeVorgestellt:
+    ~ abeVorgestellt = true
+    Ein Mann mit Netznadel steht in der Tür. Abe Lindgren, ich pass hier auf den Turm auf. #sprecher:abe #stimmung:laechelt
+}
 Die hat hundert Schiffe heimgebracht. Nimm sie mit. Ich hab eine neue. #sprecher:abe #stimmung:laechelt
 ~ gibFund("leuchtturmlinse")
 -> END
@@ -135,6 +143,10 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 }
 ~ weltschachtagBegonnen = true
 Am Ufer steht eine Bühne mit zwei Fahnen, schwarz und weiß. Davor eine lange Tafel mit fünf Brettern, und an jedem sitzt jemand, den du kennst. #sprecher:erzaehler
+{not abeVorgestellt:
+    ~ abeVorgestellt = true
+    Abe Lindgren, Leuchtturmwärter. Heute bin ich auch Schiedsrichter. #sprecher:abe #stimmung:laechelt
+}
 Weltschachtag! Der 20. Juli, seit 1924. Heute spielt das ganze Ufer. #sprecher:abe #stimmung:laechelt
 Fünf Bretter, fünf Gegner, und du gehst von Brett zu Brett. Wie die großen Meister. #sprecher:abe #stimmung:laechelt
 An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst du es nur noch nach Hause bringen. #sprecher:abe #stimmung:laechelt

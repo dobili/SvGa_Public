@@ -528,6 +528,10 @@
     "rahmen": [48, 59, 80, 92],
     "herkunft": "gemessen"
   },
+  "spiel/eigene/turnhalle_hochebene.png": {
+    "rahmen": [53, 115, 77, 135],
+    "herkunft": "von Hand"
+  },
   "spiel/eigene/werk_halle.png": {
     "rahmen": [32, 56, 65, 92],
     "herkunft": "gemessen"

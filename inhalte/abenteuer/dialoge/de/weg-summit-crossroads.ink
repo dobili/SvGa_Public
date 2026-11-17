@@ -35,14 +35,17 @@ VAR seite09Gefunden = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Bell stellt sich beim ersten Auftritt vor, wo immer der ist (Lektorat Akt 4, Frage 4).
+VAR bellVorgestellt = false
 
 // ---------------------------------------------------------------- Rangerin Bell und das Atomschach
 
 === bell ===
 {bellGetroffen: -> bell_alltag}
 ~ bellGetroffen = true
-Zwischen den dampfenden Becken steht eine Rangerin mit breitem Hut und sieht auf die Uhr. #sprecher:erzaehler
-Bell. Rangerin. In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst du was Verrücktes sehen? #sprecher:bell #stimmung:froh
+Zwischen den dampfenden Becken steht {bellVorgestellt:Bell|eine Rangerin} mit breitem Hut und sieht auf die Uhr. #sprecher:erzaehler
+{not bellVorgestellt:Bell. Rangerin. }In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst du was Verrücktes sehen? #sprecher:bell #stimmung:froh
+~ bellVorgestellt = true
 -> bell_regel
 
 === bell_regel ===
@@ -57,7 +60,8 @@ Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luf
 
 === bell_angebot ===
 // VARIANTE-FEHLT: Atomschach (L4). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Ich hab nur ein Brett, und das liegt noch in der Station. Wenn du wiederkommst, bring ich es mit. #sprecher:bell #stimmung:laechelt
+Bell zieht mit der Stiefelspitze ein Brett in den Sinter. Ein Läufer schlägt auf e5, und sie wischt mit dem Fuß die halbe Mitte weg. #sprecher:erzaehler
+So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring ich es mit. #sprecher:bell #stimmung:laechelt
 -> END
 
 === bell_alltag ===
@@ -174,7 +178,11 @@ Der Steg führt zurück, bergauf nach Summit City. #sprecher:erzaehler
 {wegSummitCrossroadsGeysirblitzBestanden: -> geysirblitz_ende}
 {geysirblitzGesehen: -> geysirblitz_angebot}
 ~ geysirblitzGesehen = true
-Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bretter auf den Knien. Bell steht mit der Uhr davor. #sprecher:erzaehler
+Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bretter auf den Knien. Eine Rangerin steht mit der Uhr davor. #sprecher:erzaehler
+{not bellVorgestellt:
+    ~ bellVorgestellt = true
+    Ich bin Bell, die Rangerin hier. Du kommst genau richtig. #sprecher:bell #stimmung:froh
+}
 Der Geysirblitz! Old Patience bricht alle neun Minuten aus. Bis dahin löst ihr so viele Aufgaben, wie ihr schafft. #sprecher:bell #stimmung:froh
 -> geysirblitz_angebot
 
@@ -213,7 +221,11 @@ Bell steckt dir ein Abzeichen aus Messing an die Jacke. #sprecher:erzaehler
     Am Infobrett hängt der Antrag noch. Jemand hat einen Bison daneben gemalt. #sprecher:erzaehler
     -> END
 }
-Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Move: „Kühlung für Rechenzentrum Summit. Entnahme von Geysirwasser.“ Quer darüber steht in Bells Schrift: „Abgelehnt.“ #sprecher:erzaehler
+Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Move: „Kühlung für Rechenzentrum Summit. Entnahme von Geysirwasser.“ Quer darüber steht in roter Schrift: „Abgelehnt.“ #sprecher:erzaehler
+{not bellVorgestellt:
+    ~ bellVorgestellt = true
+    Neben dir bleibt eine Rangerin mit breitem Hut stehen. Auf ihrem Namensschild steht „Bell“. #sprecher:erzaehler
+}
 Über meine Leiche. Und über die der Bisons. #sprecher:bell #stimmung:bitter
 {not abschiedGesehen:
     Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose #stimmung:laechelt

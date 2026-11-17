@@ -155,7 +155,7 @@ Und danach: Summit City. Großmeisterin Ward. Ich hab schon Urlaub eingereicht. 
 Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter #stimmung:nachdenklich
 Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit hundertsechzig Jahren auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
 Schwarz am Zug. #sprecher:erzaehler #pause:3
--> bahnhof_fahrten
+-> END
 
 === bahnhof_fahrten ===
 Der Zug fährt gleich. Wohin? #sprecher:erzaehler
@@ -180,9 +180,14 @@ Der Zug fährt gleich. Wohin? #sprecher:erzaehler
     -> END
 }
 ~ highwayAufbruchGesehen = true
+Es ist Sommer, und du bist fünfzehn. #sprecher:erzaehler
+Juno hat dir eine Seite im Tagebuch geschenkt, leer, mit einem Rahmen aus Glitzer: Für das, was noch kommt. #sprecher:erzaehler
 Am Ende der Hauptstraße beginnt der Highway. Mama klimpert mit einem Autoschlüssel. #sprecher:erzaehler
-Dot leiht uns ihr Auto. Es ist alt, aber es fährt, und wir sehen mehr als vom Zug aus. #sprecher:mutter #stimmung:laechelt
+Dot leiht uns ihr Auto. Drei Wochen Urlaub, und wir sehen mehr als vom Zug aus. #sprecher:mutter #stimmung:laechelt
 Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #stimmung:froh
 Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
-Die Straße flimmert. Nach einer Stunde taucht ein Diner mit Neonschild auf. Mama hält an. #sprecher:erzaehler
+* [Weiterfahren]
+- Ambrose ist leichter seit dem Canyon. Er lobt einen Bauern, der einfach ein Feld vorrückt. #sprecher:erzaehler
+Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
+Die Straße flimmert. Nach einer Stunde taucht ein Diner auf, über der Tür ein Neonschild: „ING'S DINER“. Das K fehlt. Mama hält zum Tanken. #sprecher:erzaehler
 -> END

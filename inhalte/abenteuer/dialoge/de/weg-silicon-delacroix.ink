@@ -258,7 +258,7 @@ An der Reling hat sich ein Blatt Papier verfangen, nass von der Gischt. Darauf e
     Im Kasten liegen nur noch die Rettungsringe. #sprecher:erzaehler
     -> END
 }
-Am Kasten der Rettungsringe klebt ein kleiner Fink aus Blech. Hinter dem Deckel liegt ein weißer Turm aus hellem Holz. #sprecher:erzaehler
+Am Kasten der Rettungsringe klebt ein kleiner Fink aus Blech. Hinter dem Deckel liegt ein weißer Turm aus Buchsbaum. #sprecher:erzaehler
 Unter dem Turm ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ finchTurmAGefunden = true
 ~ finchFiguren = finchFiguren + 1

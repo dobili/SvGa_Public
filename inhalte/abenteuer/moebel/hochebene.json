@@ -310,6 +310,21 @@
       "zustand": "gebraucht",
       "stil": "modern"
     },
+    "hb7TurnhalleBogendach": {
+      "quelle": "spiel/eigene/turnhalle_hochebene.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "tuer": [
+        [3, 8],
+        [4, 8]
+      ],
+      "hinweis": "Turnhalle der Schule auf der Hochebene: Backstein, gewölbtes Blechdach von oben, rechte Seitenwand im Schatten, Doppeltür mit zwei Stufen (Gemini 17.11.2026, Auftrag 12). Tür 24 × 20 Pixel, so groß wie die Figur (Regel 10.92). Ohne Schild im Bild; das Schild „Turnhalle“ (pd6SchildTurnhalle) hängt über der Tür."
+    },
     "sc8PlakatDiplomtag": {
       "quelle": "spiel/eigene/plakat_diplomtag.png",
       "breite": 32,

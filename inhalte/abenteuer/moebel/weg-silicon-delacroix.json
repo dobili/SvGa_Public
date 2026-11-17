@@ -648,6 +648,18 @@
       "blick": "unten",
       "hinweis": "weißes Deckhaus mit Bullaugen, Tür und Rätseltafel an der Front, Dach von oben (Gemini 15.11.2026)"
     },
+    "fzRettungsboot": {
+      "quelle": "spiel/eigene/rettungsboot.png",
+      "lauf": "waagrecht",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "boot",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "hinweis": "orangefarbenes Rettungsboot mit Plane in zwei grauen Davitwiegen auf dem Deck, von schräg oben (Gemini 17.11.2026, Auftrag 12); steht an Deck, darum mit Kollision"
+    },
     "fzKioskGemini": {
       "quelle": "spiel/eigene/faehre_kiosk_gemini.png",
       "breite": 48,

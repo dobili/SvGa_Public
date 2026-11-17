@@ -37,15 +37,46 @@ const ERST_DANACH = "abschiedGesehen";
 /** Nach so vielen Schritten ohne Fortschritt fasst auch der eilige Spieler alles an. */
 const RUHE_BIS_ALLES = 120;
 
-/** Ob im Ort noch eine Hauptquest offen ist, die schon beginnen darf (Epilog erst nach dem Finale). */
+/** Ob ein Dialog (Datei.Knoten) an einer Figur oder einem Auslöser dieses Ortes hängt. */
+function dialogImOrt(welt, ort, knoten) {
+  const datei = knoten.split(".")[0] + ".";
+  const o = welt.orte.find((x) => x.kennung === ort);
+  return [...(o?.figuren || []), ...(o?.ausloeser || [])].some((x) =>
+    (x.dialog || "").startsWith(datei),
+  );
+}
+
+/**
+ * Ob der nächste Schritt einer laufenden Hauptquest in diesem Ort spielt, obwohl die Quest einem
+ * anderen Ort gehört. Beispiel: „ironwood.turnier“ beginnt in Riverton, ihr erster Schritt ist
+ * Mamas Verbot zu Hause (maple-falls-wohnzimmer.nicht_ironwood); ohne das Gespräch bleibt der
+ * Kanalweg nach Ironwood zu.
+ */
+function schrittImOrt(welt, st, ort) {
+  return st.staende.some((s) => {
+    const q = welt.quests.find((x) => x.kennung === s.k);
+    const e = !s.fertig && q?.haupt && q.schritte?.[s.i]?.ereignis;
+    if (!e) return false;
+    if (e.knoten) return dialogImOrt(welt, ort, e.knoten);
+    return welt.karteZuOrt[e.karte]?.kennung === ort;
+  });
+}
+
+/**
+ * Ob im Ort noch eine Hauptquest offen ist, die schon beginnen darf (Epilog erst nach dem Finale),
+ * oder der nächste Schritt einer laufenden Hauptquest hier spielt (schrittImOrt).
+ */
 function hauptquestOffen(welt, st, ort) {
   const fertig = (k) => st.staende.some((s) => s.k === k && s.fertig);
-  return welt.quests.some(
-    (q) =>
-      q.haupt &&
-      q.ort === ort &&
-      !fertig(q.kennung) &&
-      (q.voraussetzung || []).every(fertig),
+  return (
+    schrittImOrt(welt, st, ort) ||
+    welt.quests.some(
+      (q) =>
+        q.haupt &&
+        q.ort === ort &&
+        !fertig(q.kennung) &&
+        (q.voraussetzung || []).every(fertig),
+    )
   );
 }
 

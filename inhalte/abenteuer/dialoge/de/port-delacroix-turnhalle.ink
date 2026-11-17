@@ -262,6 +262,7 @@ Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 - not tiefpunktGesehen: -> vorwurf
 // Erst die Reihe, dann die Versöhnung: Wer das Simultan vor Remys Reihe spielt, darf die Reihe
 // nicht verlieren (Sackgasse in der Gesamtsimulation, 10.11.2026).
+- not brettersammelnBegonnen: -> remy_erst_odile
 - not reiheRemyBestanden: -> remy_reihe
 - simultanGedankt: -> remy_versoehnt
 - else: -> remy_alltag
@@ -277,6 +278,10 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
     Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Flüstern. #sprecher:remy #stimmung:bitter
     -> END
 
+=== remy_erst_odile ===
+Remy zeigt mit dem Kinn zum Schiedsrichtertisch. #sprecher:erzaehler
+Erst zu Miss Odile. Sie hat dein Brett. #sprecher:remy #stimmung:bitter
+-> END
 === remy_alltag ===
 {~Tonleitern. Jeden Tag. Auch ohne Dach.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett. Zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
 -> END
@@ -290,7 +295,7 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
 === lou ===
 {
 - not tiefpunktGesehen: -> vorwurf
-- not reiheRemyBestanden: -> lou_warten
+- not brettersammelnBegonnen or not reiheRemyBestanden: -> lou_warten
 - not reiheLouBestanden: -> lou_reihe
 - not lernkartePlanfinder: -> lou_karte
 - else: -> lou_alltag
@@ -311,9 +316,11 @@ Du hast in jeder Stellung einen gefunden. Einen Plan, meine ich. #sprecher:lou #
 -> END
 
 === lou_warten ===
+{not louGetroffen:
+    Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
+}
 ~ louGetroffen = true
-Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
-Lou. Erst Remy, dann ich. #sprecher:lou #stimmung:neutral
+{brettersammelnBegonnen:Lou. Erst Remy, dann ich.|Lou. Erst Miss Odile, dann Remy, dann ich.} #sprecher:lou #stimmung:neutral
 So ist die Reihenfolge. Remy hat sie erfunden. #sprecher:lou #stimmung:laechelt
 -> END
 

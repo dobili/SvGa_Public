@@ -768,6 +768,12 @@
           "dialog": "ansehen-cedar-creek.wasserfleck"
         },
         {
+          "name": "kellertuer",
+          "karte": "cedarCreek.archiv",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.kellertuer"
+        },
+        {
           "name": "zettelTurm",
           "karte": "cedarCreek.waschsalon",
           "art": "gegenstand",
@@ -2670,6 +2676,12 @@
           "karte": "siliconBay.serverraum",
           "art": "gegenstand",
           "dialog": "silicon-bay-serverraum.schummelgeraete"
+        },
+        {
+          "name": "hintertuer",
+          "karte": "siliconBay.serverraum",
+          "art": "gegenstand",
+          "dialog": "silicon-bay-serverraum.hintertuer"
         },
         {
           "name": "vitrineHale",

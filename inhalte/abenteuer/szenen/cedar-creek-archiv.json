@@ -251,6 +251,13 @@
         7,
         9
       ]
+    },
+    {
+      "name": "kellertuer",
+      "feld": [
+        6,
+        3
+      ]
     }
   ],
   "figuren": [],

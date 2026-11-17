@@ -205,3 +205,17 @@ def test_bild_ohne_art_am_uebergang_wird_gemeldet():
     alle, liste = treppenpaar("treppeHoch", [2, 2], [2, 2])
     alle["t.wohnzimmer"]["objekte"].append({"moebel": "raetsel", "feld": [3, 2]})
     assert any("raetsel am Übergang hat keine Art" in b for b in texte(alle, liste))
+
+
+def test_tuerstellen_rechnen_den_massstab_des_gebaeudes_ein():
+    """Kantine Ironwood: Halle 13 Kacheln breit, Tür laut Grundriss in Spalte 8, gesetzt mit 1,7
+    (354 Pixel breit). Die Tür liegt dann in den Spalten 12 bis 13; ohne Maßstab bleibt Spalte 8.
+    Eine Blockhütte mit 1,5 behält ihre einflügelige Tür."""
+    from pipeline.abenteuer.uebergangstueren import tuerstellen
+
+    grundriss = {"breite": 13, "tueren": [{"von": 8, "bis": 8}]}
+    assert tuerstellen({"breite": 208}, grundriss) == [(8, 8)]
+    assert tuerstellen({"breite": 354}, grundriss) == [(12, 13)]
+    assert tuerstellen({"breite": 312}, grundriss) == [(11, 11)]
+    assert tuerstellen({"breite": 354}, {"tueren": [{"von": 8, "bis": 8}]}) == [(8, 8)]
+    assert tuerstellen({"breite": 208}, None) == []

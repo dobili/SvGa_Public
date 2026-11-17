@@ -76,3 +76,13 @@ def test_gondel_ist_kein_eingang():
 
     assert REISE.search("seilbahnBerg") and REISE.search("faehreNord")
     assert not REISE.search("haustuer") and not REISE.search("treppe")
+
+
+def test_massstab_des_stuecks_kommt_aus_dem_katalog():
+    """Kantine Ironwood: Halle im Katalog 208 Pixel breit, gesetzt 354 Pixel (massstab 1.7)."""
+    from pipeline.abenteuer.raumgroesse import massstab_des_stuecks
+
+    katalog = {"iw17Kantinenhalle": {"breite": 208}}
+    assert round(massstab_des_stuecks({"name": "iw17Kantinenhalle", "breite": 354}, katalog), 1) == 1.7
+    assert massstab_des_stuecks({"name": "iw17Kantinenhalle", "breite": 208}, katalog) == 1.0
+    assert massstab_des_stuecks({"name": "unbekannt", "breite": 96}, katalog) == 1.0

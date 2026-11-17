@@ -599,6 +599,21 @@
       "zustand": "gebraucht",
       "stil": "modern"
     },
+    "wds6Speisewagen": {
+      "quelle": "spiel/eigene/speisewagen.png",
+      "breite": 160,
+      "hoehe": 66,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "tuer": [
+        [4, 5],
+        [5, 5]
+      ],
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "hinweis": "Diner-Speisewagen von schräg oben mit gewölbtem Dach (ersetzt das flache diner_wagen, Regel 10.71). Das Bild ist 66 Pixel hoch: mit versatz [0, 14] setzen, dann liegt die Unterkante mit der Trittstufe auf der Kachelgrenze und die Doppeltür (Pixel 71 bis 89) über den Türfeldern; gesperrt sind dann die vier Kachelreihen des Wagens, die Reihe davor bleibt frei"
+    },
     "wds6Motel": {
       "quelle": "spiel/eigene/motel.png",
       "breite": 224,

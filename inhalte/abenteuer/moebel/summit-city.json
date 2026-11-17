@@ -159,6 +159,30 @@
       "stil": "rustikal",
       "tuer": [[3, 6]]
     },
+    "sc17SchildBergladen": {
+      "quelle": "spiel/eigene/schild_bergladen.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "Holzschild „BERGLADEN“, Brett 42 × 10 mittig im Bild ab Zeile 3; für den Giebel der Blockhütte (pipeline/abenteuer/schildbild.py, 17.11.2026)"
+    },
+    "sc17SchildBergwacht": {
+      "quelle": "spiel/eigene/schild_bergwacht.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "Holzschild „BERGWACHT“ mit rotem Kreuz auf weißem Feld, Brett 47 × 10 im Bild ab (0, 3); für den Giebel der Blockhütte (pipeline/abenteuer/schildbild.py, 17.11.2026)"
+    },
     "sc7Ferienhuette": {
       "quelle": "spiel/eigene/huette_a.png",
       "breite": 80,

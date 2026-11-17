@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 39,
+ "nextobjectid": 36,
  "layers": [
   {
    "id": 1,
@@ -195,7 +195,7 @@
     0,
     0,
     1,
-    1,
+    0,
     0,
     0,
     0,
@@ -388,7 +388,7 @@
     2,
     2,
     0,
-    0,
+    2,
     2,
     2,
     2,
@@ -677,17 +677,6 @@
     },
     {
      "id": 7,
-     "name": "huetteAusgang",
-     "type": "ausloeser",
-     "x": 144,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 8,
      "name": "ward",
      "type": "figur",
      "x": 144,
@@ -695,10 +684,17 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
-     "id": 9,
+     "id": 8,
      "name": "kit",
      "type": "figur",
      "x": 48,
@@ -709,7 +705,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 9,
      "name": "haraldsen",
      "type": "figur",
      "x": 208,
@@ -720,7 +716,7 @@
      "visible": true
     },
     {
-     "id": 11,
+     "id": 10,
      "name": "katze",
      "type": "tier",
      "x": 32,
@@ -748,7 +744,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 11,
      "name": "gegnerinKit",
      "type": "statist",
      "x": 16,
@@ -772,11 +768,16 @@
        "name": "bild",
        "type": "string",
        "value": "statist-22"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "gegnerHaraldsen",
      "type": "statist",
      "x": 224,
@@ -800,11 +801,16 @@
        "name": "bild",
        "type": "string",
        "value": "statist-27"
+      },
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
     {
-     "id": 14,
+     "id": 13,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
      "x": 128,
@@ -827,7 +833,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 128,
@@ -850,7 +856,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "sc7Kamin",
      "type": "moebel",
      "x": 112,
@@ -873,7 +879,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 96,
@@ -896,7 +902,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 176,
@@ -919,7 +925,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 18,
      "name": "mf2Buecherregal",
      "type": "moebel",
      "x": 16,
@@ -942,7 +948,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 19,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 240,
@@ -965,7 +971,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "wzTeppich",
      "type": "moebel",
      "x": 112,
@@ -988,7 +994,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "sc15OhrensesselBlickRechts",
      "type": "moebel",
      "x": 96,
@@ -1011,7 +1017,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "mf2Rundtisch",
      "type": "moebel",
      "x": 128,
@@ -1034,7 +1040,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "mf2SchachbrettFiguren",
      "type": "moebel",
      "x": 135,
@@ -1057,7 +1063,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "sc15OhrensesselBlickLinks",
      "type": "moebel",
      "x": 160,
@@ -1080,7 +1086,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "mf2StuhlL",
      "type": "moebel",
      "x": 16,
@@ -1103,7 +1109,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "mf2Schachtisch",
      "type": "moebel",
      "x": 22,
@@ -1131,7 +1137,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 40,
@@ -1154,7 +1160,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "mf2Schachtisch",
      "type": "moebel",
      "x": 188,
@@ -1182,7 +1188,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 206,
@@ -1205,7 +1211,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "mf2StuhlR",
      "type": "moebel",
      "x": 224,
@@ -1228,7 +1234,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 16,
@@ -1251,7 +1257,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 32,
      "name": "cc4RegalC",
      "type": "moebel",
      "x": 240,
@@ -1274,53 +1280,7 @@
      ]
     },
     {
-     "id": 34,
-     "name": "cc8TuerSuedHolz",
-     "type": "moebel",
-     "x": 144,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "cc4Fussmatte",
-     "type": "moebel",
-     "x": 144,
-     "y": 131,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 36,
+     "id": 33,
      "name": "pd6Kommode",
      "type": "moebel",
      "x": 208,
@@ -1343,7 +1303,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 34,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 210,
@@ -1366,7 +1326,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 35,
      "name": "scThermometer",
      "type": "moebel",
      "x": 64,

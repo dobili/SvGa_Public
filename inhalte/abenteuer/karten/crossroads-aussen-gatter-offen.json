@@ -10110,12 +10110,12 @@
     },
     {
      "id": 36,
-     "name": "cr7Raststaette",
+     "name": "wds6Speisewagen",
      "type": "moebel",
      "x": 160,
-     "y": 192,
+     "y": 238,
      "width": 160,
-     "height": 112,
+     "height": 66,
      "rotation": 0,
      "visible": true,
      "properties": [

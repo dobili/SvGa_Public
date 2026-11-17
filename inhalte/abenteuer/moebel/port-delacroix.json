@@ -2680,6 +2680,18 @@
       "begehbar": true,
       "begehbar_grund": "Pfütze auf dem Pflaster, man läuft hindurch",
       "hinweis": "Regenpfütze mit Lichtreflex (Gemini 15.11.2026, RO21)"
+    },
+    "pd17Turnhalle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_6.png",
+      "breite": 208,
+      "hoehe": 256,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "tuer": [[3, 16], [4, 16]],
+      "beschreibung": "Turnhalle der Schule in Port Delacroix: Bild wie pd6Turnhalle, dazu die Türfelder vor der Glas-Doppeltür (Grundriss 13 × 8, Regel 10.74)"
     }
   }
 }

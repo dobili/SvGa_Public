@@ -17,7 +17,7 @@
     "#................#",
     "#................#",
     "#................#",
-    "########..########"
+    "########.#########"
   ],
   "objekte": [
     {
@@ -118,16 +118,6 @@
       "feld": [15, 4]
     },
     {
-      "moebel": "cc8TuerSuedHolz",
-      "feld": [9, 9],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc4Fussmatte",
-      "feld": [9, 8],
-      "versatz": [0, 3]
-    },
-    {
       "moebel": "pd6Kommode",
       "feld": [13, 2],
       "id": "kommode"
@@ -172,16 +162,13 @@
       "name": "teekanne",
       "feld": [8, 6],
       "auf_moebel": true
-    },
-    {
-      "name": "huetteAusgang",
-      "feld": [9, 9]
     }
   ],
   "figuren": [
     {
       "name": "ward",
-      "feld": [9, 7]
+      "feld": [9, 7],
+      "blick": "oben"
     },
     {
       "name": "kit",
@@ -210,7 +197,8 @@
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Kit",
         "wann": "tag",
-        "bild": "statist-22"
+        "bild": "statist-22",
+        "blick": "oben"
       }
     },
     {
@@ -220,7 +208,8 @@
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Haraldsen",
         "wann": "tag",
-        "bild": "statist-27"
+        "bild": "statist-27",
+        "blick": "rechts"
       }
     }
   ]

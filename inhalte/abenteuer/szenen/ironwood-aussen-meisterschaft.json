@@ -3,7 +3,7 @@
   "datei": "karten/ironwood-aussen-meisterschaft.json",
   "art": "aussen",
   "zustand_der_karte": "endeAkt3Gesehen",
-  "beschreibung": "Zustand: Akt 4 (endeAkt3Gesehen): Das Schild von Perfect Move hängt noch, der Werksbus fehlt im Werkhof, weil er mit der Mannschaft zur Meisterschaft nach Crossroads fährt. Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße beginnt in voller Breite an der Kaipromenade und mündet direkt in die Hauptstraße. Im Werk eine Halle mit Dach, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und enden auch im Osten an zwei Prellböcken vor der Hecke am Stadtrand (Abstellgleise des Güterbahnhofs; zum Steinbruch führt nur der Steinbruchweg, der Stein kam früher per Laster); der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, der alte Bahnhof steht mit der Veranda direkt am Bahnsteig vor den Prellböcken, mit Bahnhofsuhr, Bank und Gepäckkarre, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters (ein Stellwerk aus Backstein mit Walmdach und Außentreppe, R055); der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch.",
+  "beschreibung": "Zustand: Akt 4 (endeAkt3Gesehen): Das Schild von Perfect Move hängt noch, der Werksbus fehlt im Werkhof, weil er mit der Mannschaft zur Meisterschaft nach Crossroads fährt. Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße beginnt in voller Breite an der Kaipromenade und mündet direkt in die Hauptstraße. Im Werk die Kantine in einer langen Holzhalle mit rostigem Blechdach (Bild der Werkshalle mit massstab 1,7, damit der Innenraum hineinpasst, Regel 10.75), eine gepflasterte Stufe führt vom Werkhof zur Tür; der Umkleidecontainer steht links davon unter den Schornsteinen, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und enden auch im Osten an zwei Prellböcken vor der Hecke am Stadtrand (Abstellgleise des Güterbahnhofs; zum Steinbruch führt nur der Steinbruchweg, der Stein kam früher per Laster); der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, der alte Bahnhof steht mit der Veranda direkt am Bahnsteig vor den Prellböcken, mit Bahnhofsuhr, Bank und Gepäckkarre; in ihm ist das Heimatmuseum, die Tür liegt an der Veranda (das graue Stadthaus daneben ist ein Wohnhaus); in den Schrebergärten am Erdweg steht ein Geräteschuppen, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters (ein Stellwerk aus Backstein mit Walmdach und Außentreppe, R055); der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -29,12 +29,12 @@
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq..........................#",
-    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq....................qq....#",
-    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp.qqqqq....................qq....#",
-    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
-    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
-    "##~~~~~~~~pppppppppppppppppppppppppppppppppsssp..........................qq....#",
-    "##~~~~~~~~pppppppp......pp................psssp..........................qq....#",
+    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq..........................#",
+    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp.qqqqq..........................#",
+    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
+    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp................................#",
+    "##~~~~~~~~pppppppppppppppppppppppppppppppppsssp................................#",
+    "##~~~~~~~~pppppppp......pp................psssp....................qqqq........#",
     "##~~~~~~~~pppppppp......pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
@@ -150,13 +150,14 @@
       "feld": [14, 19]
     },
     {
-      "moebel": "iw5Kantine",
-      "feld": [53, 1],
+      "moebel": "iw17Kantinenhalle",
+      "feld": [56, 0],
+      "massstab": 1.7,
       "id": "kantine"
     },
     {
       "moebel": "iw5Umkleide",
-      "feld": [67, 12],
+      "feld": [51, 12],
       "id": "umkleide"
     },
     {
@@ -180,8 +181,7 @@
     },
     {
       "moebel": "iw5StadthausGrau",
-      "feld": [21, 35],
-      "id": "museum"
+      "feld": [21, 35]
     },
     {
       "moebel": "iw5Kirche",
@@ -343,6 +343,10 @@
     {
       "moebel": "cc7Picknicktisch",
       "feld": [47, 55]
+    },
+    {
+      "moebel": "iw5Schuppen",
+      "feld": [38, 54]
     },
     {
       "moebel": "iwFassGross",
@@ -1031,10 +1035,6 @@
       "vorn": true
     },
     {
-      "moebel": "wr5FabrikhalleB",
-      "feld": [66, 1]
-    },
-    {
       "moebel": "wr5Container",
       "feld": [69, 20]
     },
@@ -1642,7 +1642,7 @@
     {
       "moebel": "ds6BahnhofAlt",
       "feld": [10, 41],
-      "id": "alterBahnhof"
+      "id": "museum"
     },
     {
       "moebel": "wc14Stellwerk",
@@ -1720,7 +1720,7 @@
     },
     {
       "moebel": "rv5Bahnhofsuhr",
-      "auf": "alterBahnhof",
+      "auf": "museum",
       "versatz": [-48, -8]
     },
     {
@@ -1766,11 +1766,19 @@
     },
     {
       "name": "kantineTuer",
-      "feld": [56, 17]
+      "feld": [68, 17]
+    },
+    {
+      "name": "kantineTuer",
+      "feld": [69, 17]
+    },
+    {
+      "name": "kantineTuer",
+      "feld": [70, 17]
     },
     {
       "name": "umkleideTuer",
-      "feld": [69, 17]
+      "feld": [53, 17]
     },
     {
       "name": "haustuerRuth",
@@ -1778,11 +1786,11 @@
     },
     {
       "name": "museumTuer",
-      "feld": [23, 46]
+      "feld": [14, 48]
     },
     {
       "name": "museumTuer",
-      "feld": [24, 46]
+      "feld": [15, 48]
     },
     {
       "name": "eisenwarenfenster",
@@ -1975,10 +1983,10 @@
     {
       "name": "arbeiterinPause",
       "typ": "statist",
-      "feld": [52, 16],
+      "feld": [66, 17],
       "eigenschaften": {
-        "von": "52,16",
-        "bis": "52,16",
+        "von": "66,17",
+        "bis": "66,17",
         "tun": "trinkt Kaffee vor der Kantine",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.arbeiterinPause"

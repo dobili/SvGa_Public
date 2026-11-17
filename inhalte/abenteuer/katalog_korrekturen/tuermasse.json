@@ -657,8 +657,8 @@
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
   },
   "spiel/eigene/faehrhaus_see.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [31, 72, 50, 96],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_barbier.png": {
     "rahmen": [48, 63, 63, 103],
@@ -717,8 +717,8 @@
     "herkunft": "von Hand"
   },
   "spiel/eigene/motelzeile.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [24, 57, 46, 94],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/pavillon_achteck.png": {
     "rahmen": [56, 92, 86, 136],
@@ -743,5 +743,17 @@
   "spiel/eigene/tunnelportal_west_4.png": {
     "herkunft": "nicht messbar",
     "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+  },
+  "spiel/eigene/speisewagen.png": {
+    "rahmen": [71, 33, 89, 54],
+    "herkunft": "von Hand"
+  },
+  "spiel/serene/serene_59.png": {
+    "rahmen": [31, 31, 49, 47],
+    "herkunft": "von Hand"
+  },
+  "spiel/serene/serene_77.png": {
+    "rahmen": [31, 31, 49, 47],
+    "herkunft": "von Hand"
   }
 }

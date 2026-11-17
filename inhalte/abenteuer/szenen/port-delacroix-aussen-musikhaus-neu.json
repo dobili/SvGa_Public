@@ -12,7 +12,7 @@
     "e": "erde",
     "t": "stein"
   },
-  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) ist das Musikhaus am Kai wieder aufgebaut: Planen und Bauzaun sind weg, über der Tür hängt das Schild „Musik und Schach, seit 1889“, weil der Club es nach dem Hurrikan gemeinsam repariert hat. Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, eine lange Backsteinhalle mit Sägezahndach, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau hinter einem Bauzaun, Bäume, ein umgestürzter Stamm und Holz vom Sturm, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach und dem neuen Schild, ohne Bauzaun und Planen. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
+  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) ist das Musikhaus am Kai wieder aufgebaut: Planen und Bauzaun sind weg, über der Tür hängt das Schild „Musik und Schach, seit 1889“, weil der Club es nach dem Hurrikan gemeinsam repariert hat. Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, ein hoher Steinbau mit Flachdach, Bogenfenstern und niedrigem Anbau, der hinten bis an den Deich reicht (passend zum Innenraum, Regel 10.75), über der Glastür das Schild, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, östlich der Turnhalle ein Erdweg von der Deichrampe zur Straße, daneben die Baustelle mit Bagger hinter einem Bauzaun, Sturmschutt, Holz und einem umgestürzten Stamm, der Rohbau steht am Deichfuß hinter dem Haus, ein Baum, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach und dem neuen Schild, ohne Bauzaun und Planen. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen, am Ostkai ein kleines grünes Holzhaus zwischen den Bäumen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
@@ -25,20 +25,20 @@
     "#############################ee#####################ee##~~~~~~~~pp.............#",
     "#############################ee#####################ee##~~~~~~~~pp.............#",
     "#############################ee#####################ee##~~~~~~~~pp.............#",
-    "#tt.................................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~ppppppppppppppp#",
-    "#ttppp..............................................pppp~~~~~~~~ppppppppppppppp#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
-    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#tt..........................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
+    "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
     "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
     "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssphhhhhhhhpp.............#",
     "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssphhhhhhhhpp.............#",
@@ -527,18 +527,14 @@
       "feld": [47, 7]
     },
     {
-      "moebel": "pd6Werkhalle",
-      "feld": [20, 19],
+      "moebel": "pd17Turnhalle",
+      "feld": [16, 9],
       "id": "th"
-    },
-    {
-      "moebel": "pd6Werkhalle",
-      "feld": [26, 19]
     },
     {
       "moebel": "pd6SchildTurnhalle",
       "auf": "th",
-      "versatz": [24, -3]
+      "versatz": [-50, 67]
     },
     {
       "moebel": "pd6HausGross",
@@ -566,7 +562,12 @@
     },
     {
       "moebel": "pd6Rohbau",
-      "feld": [22, 10]
+      "feld": [39, 8]
+    },
+    {
+      "moebel": "pd6HausGruen",
+      "feld": [67, 47],
+      "massstab": 1.25
     },
     {
       "moebel": "pd6Zelt",
@@ -654,7 +655,7 @@
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [16, 22]
+      "feld": [7, 22]
     },
     {
       "moebel": "pd6Leiter",
@@ -662,11 +663,11 @@
     },
     {
       "moebel": "pd6Stamm",
-      "feld": [16, 12]
+      "feld": [34, 21]
     },
     {
       "moebel": "pd6Holzscheite",
-      "feld": [18, 15]
+      "feld": [35, 19]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
@@ -682,7 +683,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [17, 22],
+      "feld": [6, 22],
       "vorn": true
     },
     {
@@ -720,7 +721,7 @@
     },
     {
       "moebel": "rvLaubbaum",
-      "feld": [36, 10]
+      "feld": [47, 10]
     },
     {
       "moebel": "pd6Fass",
@@ -800,7 +801,7 @@
     },
     {
       "moebel": "pd9Sturmschutt",
-      "feld": [16, 13]
+      "feld": [31, 19]
     },
     {
       "moebel": "pd9Ziegel",
@@ -831,77 +832,37 @@
     },
     {
       "moebel": "pd6BauzaunEndeLinks",
-      "feld": [16, 17],
+      "feld": [31, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [17, 17],
+      "feld": [32, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [18, 17],
+      "feld": [33, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [19, 17],
+      "feld": [34, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [20, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [21, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [22, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [23, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [24, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [25, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [26, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [27, 17],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [28, 17],
+      "feld": [35, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeRechts",
-      "feld": [29, 17],
+      "feld": [36, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "pd12Bagger",
-      "feld": [29, 12]
+      "feld": [31, 11]
     },
     {
       "moebel": "pd12Lastwagen",
@@ -972,11 +933,11 @@
     },
     {
       "name": "turnhalleTuer",
-      "feld": [22, 25]
+      "feld": [19, 25]
     },
     {
       "name": "turnhalleTuer",
-      "feld": [23, 25]
+      "feld": [20, 25]
     },
     {
       "name": "werkstattTuer",

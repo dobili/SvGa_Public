@@ -25,6 +25,9 @@ VAR ausgangGhostTownFernpartie = ""
 VAR fernpartieGespielt = false
 VAR victorSaloonGetroffen = false
 VAR ausgangCapitalArenaFinale = ""
+// Die Fernpartie steht auf dem Brett (Victors b5 ist gezogen). Eine VAR, weil die App jeden Dialog
+// neu beginnt und Besuchszähler von Knoten dann wieder auf null stehen.
+VAR fernpartieAufgebaut = false
 VAR held = "Du"
 
 // ---------------------------------------------------------------- Victor und die Fernpartie
@@ -49,7 +52,7 @@ Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #st
 // Kapitel 58 (Roman): Aufbau der Fernpartie unter dem Loch im Dach (Musik fernpartie: zu jedem
 // Fragment vier Takte des Fundorts, immer leiser), dann Victors b5 (holz_zug, b5).
 // Zweiter Besuch (nach „Gleich.“ oder abgebrochener Partie): die Stellung steht schon.
-{victor_aufstellen > 1: -> fernpartie_bereit}
+{fernpartieAufgebaut: -> fernpartie_bereit}
 ~ victorSaloonGetroffen = true
 Am Morgen fegt Mr. Pruitt den Saloon, bis in die Ecken, als käme Besuch. Er rückt einen Tisch unter das Loch im Dach, wo die Sonne in einer schrägen Säule fällt. #sprecher:erzaehler #klang:besen
 Ich hab hier dreißig Jahre nach Gold gesucht. Ich glaub, ich hab die ganze Zeit auf was anderes gewartet. #sprecher:pruitt #stimmung:nachdenklich
@@ -84,6 +87,7 @@ Er fragt nicht dich. #sprecher:erzaehler
 Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
 Victor schiebt den Bauern vor. Ein Feld. Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
 So. So. Da ist er. #sprecher:ambrose #stimmung:friedlich
+~ fernpartieAufgebaut = true
 Diese Partie gehört euch. Keine Karten. Kein Wort von mir. Die nächsten Züge sind deine. #sprecher:ambrose #stimmung:laechelt
 + [„Ich spiele für dich.“]
 - Nein. Du spielst für dich, mit meinen Figuren. Das ist ein Unterschied, und er ist mir wichtig. #sprecher:ambrose #stimmung:nachdenklich

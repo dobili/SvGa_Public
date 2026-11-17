@@ -550,16 +550,20 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2460. Auswertung einer Partie gegen einen Bot: Unter „In Zahlen“ auf „Schwarz (Botname)“
       tippen. Die Karte heißt jetzt „Züge von Botname“ statt „Deine Züge“; auf der eigenen Seite
       weiter „Deine Züge“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2461. Spielen → Eigene Bots ohne eigenen Gegner: Über „Eigene Bots verwalten“ steht keine
       leere Fläche mit Trennlinie mehr.
 - [ ] N2462. Profil → Partie einlesen (PGN): „1. e4 e5 2. Lc4 Sc6 3. Dh5 Sf6 4. Dxf7# 1-0“
       einfügen (deutsche Notation) und doppelt auf „Einlesen und auswerten“ tippen. Erwartet: Schäfermatt
       wird erkannt, in der Partienliste steht die Partie genau einmal.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2463. Partie einlesen mit einer Crazyhouse- oder Chess960-PGN von Lichess: Meldung „Das ist
       eine Schachvariante …“ statt einer kaputten Partie.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2464. Zwei Tabs (oder installierte App und Browser-Tab) offen: im einen den Namen im Profil
       ändern, im anderen eine Übung lösen oder Partie einlesen; danach beide neu laden. Erwartet: Name
       und die andere Änderung sind beide da.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zwei Tabs, beide Änderungen bleiben).
 - [ ] N2465. Datensicherung → „Sicherung einspielen“: Die Rückfrage nennt jetzt auch die Zahl der
       Partien.
 - [ ] N2466. Blitzpartie 3 + 2 bis kurz vor 0:00 laufen lassen und genau beim Ablauf ziehen:
@@ -571,22 +575,28 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       WebAssembly-Laufzeit von onnxruntime“, „Schrift Source Serif 4 (Adobe)“, „Häufige
       Eröffnungszüge ‚Aus der Praxis‘ …“ und „Hilfscode der Bauwerkzeuge …“. Bei jedem öffnet
       „Lizenztext“ einen lesbaren Text (der für die WebAssembly-Laufzeit nur mit Internet).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für die Lizenztexte der onnxruntime-Bausteine und der Bauwerkzeuge; nicht geprüft: Source Serif 4, „Aus der Praxis“, Text der WebAssembly-Laufzeit.
 - [ ] N2421. Lizenzen, Eintrag „Zusatzpartien für ‚Zug erraten‘“: „Lizenztext“ öffnet den Text
       der CC BY-SA 4.0, auch im Flugmodus.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Lizenztext CC BY-SA 4.0 liegt in der App); nicht geprüft: Flugmodus.
 - [ ] N2422. Impressum (Startseite unten): Abschnitt „Quelltext und Rechte“ nennt „Version 3
       oder (nach deiner Wahl) jeder späteren Version“, den Link zum Quelltext und „Einstellungen ›
       Lizenzen“; der Link „Lizenzen“ unten führt zur Lizenzseite der App.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „GNU GPL 3.0 oder neuer“, Link zum Quelltext und Lizenzseite; nicht geprüft: genauer Wortlaut im Impressum.
 - [ ] N2423. Eine Trainingsseite (schach-von-grund-auf.com/training/) und die Datenschutzseite
       zeigen unten den Link „Lizenzen“.
 - [ ] N2424. Sprache Englisch: Die Lizenzseite zeigt auch die neuen Einträge auf Englisch.
 - [ ] N2430. Dashboard › Wiki (nach dem Zusammenführen und dem nächsten Push nach main):
       Seite „Die Ordner der App“ öffnen und nach „Lernpfad“ suchen. Erwartet: ein Abschnitt
       „ui/komponenten/lernpfad“ mit Stationen, Landschaften und Nebenaufgaben.
+      Von Claude vorgeprüft am 17.11.: bestanden (Inhalt der Wikiseite aus der Pipeline, Abschnitt „ui/komponenten/lernpfad“ mit Stationen, Landschaften, Nebenaufgaben); nicht geprüft: Anzeige im Dashboard.
 - [ ] N2431. Dashboard › Wiki: Seite „Acht Wege durch den Code“ öffnen. Erwartet: acht Abläufe,
       darunter „Belohnungen“ und „Der erste Start: Startwahl und Touren“. Verständlich ohne
       Programmierkenntnisse? Notiz, was unklar ist.
+      Von Claude vorgeprüft am 17.11.: Die Seite enthält „Belohnungen“ und „Der erste Start: Startwahl und Touren“; offen für dich: Ist sie ohne Programmierkenntnisse verständlich?
 - [ ] N2432. Dashboard › Wiki: Suche nach „Buchbefund B7“ und nach „Zeit-Zählhilfe“. Erwartet:
       kein Treffer (Buchbefunde bleiben aus dem Wiki).
+      Von Claude vorgeprüft am 17.11.: bestanden (keine der 336 Wikiseiten enthält „Buchbefund B7“ oder „Zeit-Zählhilfe“).
 - [ ] N2433. Konzeptkarte (docs/konzeptkarte.html auf GitHub über „Raw“ oder lokal) auf dem
       Handy öffnen. Erwartet: neue Kreise wie „lernpfad“, „erfolge“, „start“; ein Tipp zeigt einen
       kurzen Text ohne abgeschnittenes „:“ am Ende.
@@ -599,17 +609,21 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       öffnen (wie eine frische Installation). Nach der Startanimation fragt die App „Willkommen! Wie
       möchtest du starten?“ mit drei Knöpfen: „Ich lese das Buch“, „Ich will spielen und Partien
       auswerten“, „Erst einmal umsehen“, darunter „Später“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2371. **Buch-Weg:** „Ich lese das Buch“: Die Tour zeigt Willkommen, die Karte „Heute“, das
       Weg-Symbol („Dein Weg durchs Buch“), das Nummernfeld, die Kapitel (mit „Schon weiter? Hake
       Gelesenes ab“), die Leiste, das Toursymbol, im Browser den Tipp zum Installieren und am Ende
       „Los: Kapitel 0“. Der Knopf öffnet Kapitel 0. Nimmt dich das an die Hand?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Schritte und „Los: Kapitel 0“); offen für dich: Nimmt dich das an die Hand?
 - [ ] N2372. **Spielen-Weg:** In einem neuen privaten Fenster „Ich will spielen …“ wählen: Die App
       wechselt zu Spielen und zeigt „Schnell eine Partie“, die Kacheln, die Auswertung und das
       Einlesen einer Partie von Lichess oder chess.com mit dem Knopf „Partie einlesen“ (springt ins
       Profil zu „Deine Partien“).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2373. **QR-Adresse:** schach-von-grund-auf.com/app/?start=buch in einem privaten Fenster:
       Die Frage entfällt, die Buch-Tour beginnt gleich. Profil › Einstellungen › Hilfe › „Rundgang
       durch die App“ öffnet die Startwahl jederzeit wieder.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2374. **Kennzahlen im Profil:** Unter Stufe und Erfahrung stehen drei Kacheln: ✓ Übungen
       gelöst, Hantel Trainer-Durchgänge, Sprechblase Warum-Fragen, je mit großer Zahl. Eine Null
       steht blass. Die alten Zeilen unter den Orden sind weg.
@@ -618,28 +632,34 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       die nur kurz offen war, wird selbst vorgeschlagen statt übersprungen. Die Tagesaufgabe
       (Taktik) erscheint erst, wenn Kapitel 0 zu 80 % gelesen oder ein Trainer geschafft ist. Gibt
       es keine Alternativen, steht das Kreuz „Nicht jetzt“ rechts neben der großen Kachel.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „Anfangen · Kapitel 0 · Abb. 0.1“ ohne Tagesaufgabe; nicht geprüft: kurz geöffnete Abbildung, 80-%-Grenze, Lage des Kreuzes.
 - [ ] N2400. **Infofenster der Orden:** Profil › „Deine Erfolge“: Tippe auf einen Orden oder ein
       Abzeichen. Ein Fenster geht von unten auf: Bild, ein Satz, was man dafür tun muss, und der
       Stand („3 von 10“) oder „Geschafft am …“ mit „Teilen“. Ein offenes Stück zeigt das Bild blass
       in Farbe („so sieht es aus, wenn du es hast“). Kreuz oder Tipp daneben schließt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2401. **Ringe:** Profil, „Dein Fortschritt“: Ein Tipp auf einen Ring (Abbildungen, Übungen,
       Lernziele, Trainer) öffnet dasselbe Fenster mit der Bedingung des Ordens. Auch Glanzstück und
       „Als Nächstes“ öffnen es. Bei einem offenen Abzeichen wie „Erste Partie“ führt „Los geht's“
       direkt dorthin.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Ringe und „Los geht's“; nicht geprüft: Glanzstück und „Als Nächstes“.
 - [ ] N2404. **Nebenaufgaben auf dem Weg:** Dein Weg durchs Buch: Neben jeder Station steht ein
       kleines Feld mit Stern oder Bild und „0/5“. Nichts ragt über den Rand. Wirkt der Weg noch
       ruhig?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, 360 px breit): 13 Felder, keines ragt über den Rand; offen für dich: Wirkt der Weg noch ruhig?
 - [ ] N2405. **Liste je Kapitel:** Tippe auf ein Feld: „Nebenaufgaben · Kapitel N“ mit Übungen,
       Lernzielen, Trainern des Kapitels und passenden Abzeichen und Orden. Passen die Stücke vom
       Niveau her zu den Kapiteln (etwa „Kurzer Prozess“ bei Kapitel 4, Kapitel 12 mit 11 Stücken)?
 - [ ] N2406. **Los geht's:** In der Liste „Übungen Kapitel 1“ → „Los geht's“ öffnet die erste
       ungelöste Übung; „Trainer Kapitel 0“ den Koordinatentrainer (nach einer Runde 1/1 mit Haken,
       das Feld an Station 0 wird farbig); „Lernziele Kapitel 2“ die Checkliste.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „Trainer Kapitel 0“ (öffnet den Koordinatentrainer); nicht geprüft: Übungen Kapitel 1, Lernziele Kapitel 2, Feld nach der Runde.
 - [ ] N2409. **Neue Abzeichen:** Im Regal „Abzeichen“ stehen „Kurzer Prozess“ (Matt in höchstens
       15 eigenen Zügen aus der Grundstellung) und „Neue Dame“ (eigenen Bauern umgewandelt).
       Gefallen dir Name, Bild und Bedingung? „Kurzer Prozess“ zählt auch gegen Stufe 1 (als
       Einsteigerziel); sag, falls nur gewertete Partien oder Bots ab Stufe 3 zählen sollen.
 - [ ] N2410. **Dunkel:** Felder, Liste und Fenster der Nebenaufgaben sind im Dunkelmodus gut lesbar.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (axe dunkel ohne schweren Befund); offen für dich: Lesbarkeit nach Gefühl.
 - [ ] N2412. **Trainer-Orden:** Der Ring „Trainings erstmalig absolviert“ zählt jetzt bis 17 (ohne
       Fehlerdatenbank, die keine Runde hat). Vorher war der Orden unerreichbar; wer alle 17 schon
       hat, bekommt nach dem Update die Gratulation.
@@ -680,6 +700,7 @@ dunklen und im hellen Modus ansehen und darauf achten, dass auf dem Handy nichts
       du spielst Weiß · Eröffnung wie Menschen dieser Stärke“. Nach dem Ende der Partie steht
       derselbe Kopf über der Auswertung. Zu zweit oder gegen eine eigene Stufe ohne Bot bleibt die
       alte Textzeile.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Porträt, Farbchip und Sprechblase, hell und dunkel; nicht geprüft: Text hinter ⓘ, Kopf über der Auswertung.
 - [ ] N2356. **Denkroutine als Karten:** Nachschlagen, „Denkroutine“: Treffen die fünf Kurzzeilen
       („Was hat sich verändert?“, „Schach, Schlag, Drohung zuerst“, „Nicht die bequemste“, „Bis zur
       Ruhe, dann zählen“, „König sicher? Figur gedeckt?“) den Schritt, und sind die Titel die des
@@ -700,6 +721,7 @@ Bündel des Kapitels, etwa „Denkroutine“ oder „Planfindung“; ein Tipp ö
       passt, was am Brett markiert ist: bitte mit Werkzeug melden.
 - [ ] N2344. **Kandidaten als Zeilen:** Abb. 12.1, Werkzeug „Kandidaten“: Bekommen nach einigen
       Sekunden alle drei Zeilen eine Zahl (in der Prüfung stand bei Db1 einmal noch „–“)?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (alle Kandidaten bekommen eine Bewertung).
 
 ### Neu in 0.3.41: Einstellungen neu (Arbeitschat, 31.10.2026)
 
@@ -711,6 +733,7 @@ dann oben „Einstellungen“. Bitte im dunklen und im hellen Modus ansehen.
 
 - [ ] N2300. **Brettvorschau:** Profil › Einstellungen: Wirkt das große Brett oben ruhig genug, und
       passt der Hintergrund (dunkel Nachtblau, hell Creme)?
+      Vorgeprüft: Abweichung, nur im Text: Die Brettvorschau gibt es seit 0.3.53 nicht mehr (N2600); das Aussehen wählt man im Profil.
 - [ ] N2304. **Reiter „Bedienung“:** Lassen sich die fünf Schalter mit dem Finger gut treffen?
 - [ ] N2308. **Unterseiten:** „Bots und Wertung“, „Deine Daten“, „Über die App“: Fehlt dir etwas,
       das es vorher gab?

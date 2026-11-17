@@ -167,6 +167,71 @@ Zusammen: 33 BESTANDEN, 0 FEHLER, 4 ÜBERHOLT (der Text beschreibt einen ältere
 
 Zusammen: 32 BESTANDEN, 0 FEHLER, 2 NUR AUTOR, 4 OFFEN.
 
+## Paket 4: N2440 bis N2329, 0.3.44 bis 0.3.38 (58 Punkte)
+
+| Nummer | Ergebnis  | Beleg/Foto                                                                                | Hinweis                                                                |
+| ------ | --------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| N2440  | OFFEN     | –                                                                                         | Karte „Heute“ mitten im Buch nicht nachgestellt.                       |
+| N2441  | OFFEN     | –                                                                                         | Eigenes Ziel „Übungen von Kapitel 3“.                                  |
+| N2442  | OFFEN     | –                                                                                         | Über 20 fällige Karten.                                                |
+| N2443  | OFFEN     | –                                                                                         | Alles erledigt: Kachel „Partie“.                                       |
+| N2444  | OFFEN     | –                                                                                         | Zähltrainer: Seite am Zug über fünf Aufgaben.                          |
+| N2445  | NUR AUTOR | –                                                                                         | Bilder der Werkzeugseite ansehen.                                      |
+| N2446  | OFFEN     | –                                                                                         | Kapitelseite mit 150 % Schrift.                                        |
+| N2460  | BESTANDEN | auswertungbilder: „Züge von Derya“                                                        |                                                                        |
+| N2461  | OFFEN     | –                                                                                         | Leere Fläche über „Eigene Bots verwalten“.                             |
+| N2462  | BESTANDEN | fehlertest-spielen: „PGN in deutscher Notation mit Doppeltipp …“                          |                                                                        |
+| N2463  | BESTANDEN | fehlertest-spielen: „PGN einer Schachvariante …“                                          |                                                                        |
+| N2464  | BESTANDEN | fehlertest-spielen: „zwei Tabs: Änderung im ersten Tab überlebt …“                        | Anders als der Zwei-Tab-Test der Varianten (Nebenbefund) grün.         |
+| N2465  | OFFEN     | –                                                                                         | Zahl der Partien in der Rückfrage.                                     |
+| N2466  | OFFEN     | –                                                                                         | Zug genau beim Zeitablauf.                                             |
+| N2467  | OFFEN     | –                                                                                         | Datum nach Mitternacht in PGN und Sicherung.                           |
+| N2420  | BESTANDEN | startseite: „Impressum, Datenschutz und Lizenzen …“                                       | onnxruntime-Bausteine und Bauwerkzeuge; übrige Einträge nicht geprüft. |
+| N2421  | BESTANDEN | startseite: „Impressum, Datenschutz und Lizenzen …“                                       | CC BY-SA liegt in der App; Flugmodus nicht geprüft.                    |
+| N2422  | BESTANDEN | startseite: „Impressum, Datenschutz und Lizenzen …“                                       | GPL 3.0 oder neuer, Quelltext, Lizenzen.                               |
+| N2423  | OFFEN     | –                                                                                         | Fußzeile der Trainingsseiten.                                          |
+| N2424  | OFFEN     | sprache: „Sprache: … Lizenzen“ (nur Überschrift und Link)                                 | Neue Einträge auf Englisch nicht geprüft.                              |
+| N2430  | BESTANDEN | `pipeline.wiki.baue_seiten()`                                                             | Inhalt der Seite; Dashboard selbst nicht geprüft.                      |
+| N2431  | NUR AUTOR | `pipeline.wiki.baue_seiten()`                                                             | Beide genannten Abläufe da; Verständlichkeit beim Autor.               |
+| N2432  | BESTANDEN | `pipeline.wiki.baue_seiten()`                                                             | Kein Treffer in 336 Seiten.                                            |
+| N2433  | NUR AUTOR | –                                                                                         | Konzeptkarte auf dem Handy.                                            |
+| N2434  | NUR AUTOR | –                                                                                         | Eindruck der Zahlen.                                                   |
+| N2370  | BESTANDEN | tour: „erster Start: Startwahl, einmal …“                                                 |                                                                        |
+| N2371  | BESTANDEN | tour: „Startwahl „Ich lese das Buch“ …“                                                   | „An die Hand nehmen“ beurteilt der Autor.                              |
+| N2372  | BESTANDEN | tour: „Startwahl „spielen“ führt durch Spielen …“                                         |                                                                        |
+| N2373  | BESTANDEN | tour: „… ?start=buch beginnt ohne Frage …“; fehlertest-3 (Rundgang aus den Einstellungen) |                                                                        |
+| N2374  | OFFEN     | –                                                                                         | Kennzahlen im Profil.                                                  |
+| N2375  | BESTANDEN | naechster-schritt: „Karte „Heute“: Neue fangen bei Abb. 0.1 an …“                         | Teilfälle nicht geprüft.                                               |
+| N2400  | BESTANDEN | nebenaufgaben: „Profil: Infofenster zu Orden, Abzeichen und Ring …“                       |                                                                        |
+| N2401  | BESTANDEN | nebenaufgaben: „Profil: …“                                                                | Glanzstück und „Als Nächstes“ nicht geprüft.                           |
+| N2404  | BESTANDEN | nebenaufgaben: „Lernpfad: Nebenaufgaben …“ (360 px)                                       | Ruhe des Weges beim Autor.                                             |
+| N2405  | NUR AUTOR | nebenaufgaben: „Lernpfad: …“                                                              | Liste da; Niveau der Stücke beim Autor.                                |
+| N2406  | BESTANDEN | nebenaufgaben: „Lernpfad: …“                                                              | Nur „Trainer Kapitel 0“.                                               |
+| N2409  | NUR AUTOR | –                                                                                         | Name, Bild, Bedingung.                                                 |
+| N2410  | BESTANDEN | nebenaufgaben: „axe (dunkel) …“                                                           | Kontrast maschinell; Lesbarkeit beim Autor.                            |
+| N2412  | OFFEN     | –                                                                                         | Ring bis 17.                                                           |
+| N2361  | OFFEN     | –                                                                                         | Texte der Profil-Tour nicht einzeln geprüft.                           |
+| N2362  | OFFEN     | –                                                                                         | Jeder Schritt auf jeder Spielen-Seite.                                 |
+| N2363  | NUR AUTOR | –                                                                                         | Meldung, wenn ein Text nicht passt.                                    |
+| N2350  | NUR AUTOR | –                                                                                         | Wirkung der Leerzustände.                                              |
+| N2352  | NUR AUTOR | –                                                                                         | Inhalt der zwei Sätze.                                                 |
+| N2353  | BESTANDEN | wenigertext-seiten: „P3, P13: Partiekopf …“ (hell, dunkel)                                | ⓘ-Text und Kopf über der Auswertung nicht geprüft.                     |
+| N2356  | NUR AUTOR | –                                                                                         | Treffen die Kurzzeilen den Schritt.                                    |
+| N2341  | NUR AUTOR | –                                                                                         | Meldung bei unpassender Legende.                                       |
+| N2344  | BESTANDEN | werkzeuge-k6-k12: „Werkzeug Kandidaten (Abb. 12.1) …“                                     |                                                                        |
+| N2300  | ÜBERHOLT  | einstellungen: „Aussehen: …“                                                              | Brettvorschau seit 0.3.53 entfernt (N2600).                            |
+| N2304  | NUR AUTOR | –                                                                                         | Treffen mit dem Finger.                                                |
+| N2308  | NUR AUTOR | –                                                                                         | Fehlt etwas?                                                           |
+| N2309  | NUR AUTOR | –                                                                                         | Texte der Tour gegen den Eindruck.                                     |
+| N2317  | NUR AUTOR | –                                                                                         | Wärme und Akku auf dem älteren Handy.                                  |
+| N2316  | NUR AUTOR | –                                                                                         | Flüssigkeit auf dem Redmi.                                             |
+| N2339  | OFFEN     | rivale: „Rivalenkarte: … Revanche gegen Tom …“ (nur Rivalenkarte)                         | „Zuletzt gespielt“ und angeheftetes Ziel nicht geprüft.                |
+| N2321  | NUR AUTOR | –                                                                                         | Eindruck der Zeitleiste.                                               |
+| N2325  | OFFEN     | –                                                                                         | Kurve mit Finger und zwei Fingern.                                     |
+| N2329  | OFFEN     | –                                                                                         | Liste „Nichts verloren“ nicht vollständig nachgestellt.                |
+
+Zusammen: 21 BESTANDEN, 0 FEHLER, 1 ÜBERHOLT, 17 NUR AUTOR, 19 OFFEN.
+
 ### Nebenbefund außerhalb der Punkte
 
 - `varianten.spec.ts`, Test „zwei Tabs: eine Variante im ersten Tab überlebt eine Änderung im

@@ -1611,3 +1611,14 @@ Perfect Move hängt deren Schild links am Geländer, die Rechnerschränke stehen
 Clubtische, Bodenbrett, Figuren, Bänke, Truhen, Auslöser und Ausgang sind unverändert. Fenster und
 Wände gibt es nicht mehr. Raumgröße: 22 × 18 gegen den Pavillon außen (11 × 7 nach dem neuen
 Maßstab), passt.
+
+### Nachtrag: Achteck (17.11.2026, Wunsch des Autors)
+
+Das rechteckige Deck mit Tischen, Bodenbrett, Truhen, Figuren und Auslösern bleibt; darum liegt jetzt
+ein Achteck (Rand eine Kachel, Ecken um vier Kacheln schräg abgeschnitten, Raum 26 × 22). Die
+Seitentische rücken eine Kachel nach innen, dazu vier Pflanzen an den Seiten. Das Geländer läuft an
+den Schrägen in Stufen aus Eckstücken (`sd6RelingObenLinks` usw.), ein schräges Geländerbild gibt es
+im Bestand nicht. Der Fluss ist im Pavillon nicht mehr zu sehen: Er hätte als Boden mitgezählt, und
+der Pavillon außen hätte dafür auf das 2,1-Fache wachsen müssen. Außen steht der Pavillon in allen
+fünf Fassungen von Riverton mit `massstab` 1,4375 (184 × 207 Pixel, 11,5 Kacheln breit), der Eingang
+liegt auf (41, 54). Raumgröße: innen 24 × 17 gegen außen 11,5 × 7,2, passt.

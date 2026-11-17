@@ -411,20 +411,26 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Rücknahme bis zum Ende (etwa aufgeben). Unter dem Brett steht kein „Zurücknehmen“ mehr, auch
       nicht, wenn du die Partie später im Profil unter „Deine Partien“ wieder öffnest. Während der
       Partie ist der Knopf wie bisher da.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für das Ende durch Matt; nicht geprüft: Aufgeben und Wiederöffnen aus „Deine Partien“.
 - [ ] N2481. Bester Zug ohne „?“: Öffne die Auswertung einer Partie, in der du schon klar
       verloren standest. Züge mit dem Stern „Bester Zug“ tragen nirgends „?!“, „?“ oder „??“ (Zugliste,
       Momente, Zahlen „Deine Züge“), auch wenn die Gewinnchance dabei weiter fällt.
 - [ ] N2482. Die Partie in Momenten wischen: In der Auswertung stehen die Momente nebeneinander.
       Wische mit dem Daumen nach links: Die Karten rasten ein, rechts schaut die nächste heraus, oben
       zählt „2 von 7“ usw. mit. Jede Phase beginnt mit einer schmalen Karte „Mittelspiel · Zug … · %“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Einrasten, nächste Karte schaut heraus, „1 von 5“); nicht geprüft: Phasenkarte „Mittelspiel · Zug … · %“, Wischen mit dem Daumen.
 - [ ] N2483. Blättern mit Knöpfen: Die Pfeile neben „1 von 7“ gehen einen Moment weiter oder
       zurück, auch bei zwei schnellen Tipps; am Anfang ist der linke Pfeil grau, am Ende der rechte.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: zwei schnelle Tipps.
 - [ ] N2484. Phasenknöpfe: Tippe unter der Kurve auf „Mittelspiel“: Kurve zoomt wie bisher und die
       Reihe rückt die Karte „Mittelspiel“ nach vorn; „Ganze Partie“ springt an den Anfang.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2485. Zur Stellung: Tippe in einer Karte auf „Zur Stellung“. Das Brett oben ist danach ganz
       zu sehen (auf kleinem Handy samt „Merken“ darunter), nicht mehr unten angeschnitten.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (393 × 851 und 320 × 568).
 - [ ] N2486. Bewegung reduzieren: Stelle am Handy „Bewegung reduzieren“ ein. Blättern in den
       Momenten und „Zur Stellung“ springen ohne Gleiten.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Bewegung reduzieren nachgestellt).
 - [ ] N2487. Hell und dunkel, Querformat, Tablet: Die Momente sehen in hellem und dunklem Design
       gut aus; im Querformat steht das Brett links und „Zur Stellung“ scrollt nicht unnötig.
 - [ ] N2530. Repertoire-Trainer (Training › Repertoire-Trainer): Unter „Deine Runde“ steht die Zeile
@@ -432,6 +438,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Buches mit kurzem Namen (Königsgambit, Evans-Gambit, Dänisches Gambit, …, Damengambit). Wähle
       „Königsgambit“, Seite Weiß, „Runde starten“: Nach 1. e4 e5 ziehst du 2. f4, die App antwortet exf4.
       Stimmen die Varianten mit Kapitel 3 überein?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Gambits mit kurzem Namen, Königsgambit 2. f4 exf4); offen für dich: Stimmen die Varianten mit Kapitel 3 überein?
 - [ ] N2531. Zurück zur Auswahl, „Aus“ auf „Eröffnungen (Kapitel 2)“: Die zuletzt gewählte Eröffnung aus
       Kapitel 2 ist noch da, und beim Wechsel auf Gambits das zuletzt gewählte Gambit.
 - [ ] N2532. Der Repertoire-Trainer steht jetzt auch bei Kapitel 3 unter „Die Trainer zu diesem
@@ -441,59 +448,84 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       gesperrter Knopf „Runde starten · keine Variante“; darunter die offene Klappe „Eröffnungen nach
       Spielstärke“. Öffne bei „Italienische Partie“ die „Varianten“ und tippe „Die häufigsten 3“: Über dem
       Knopf steht „3 gewählt“, der Knopf heißt „Runde starten · 3 Varianten“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2534. Starte die Runde als Weiß: Über dem Brett steht der Name der Variante, „wie echte Spieler
       sie auf Lichess am häufigsten spielen“ und „Aus der Praxis, Lichess (nicht aus dem Buch)“. Ein falscher
       Zug zeigt „Nicht der Zug dieser Variante“ und den richtigen Zug als Pfeil.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2535. Schließe die App und öffne den Trainer wieder: Schalter, Quelle und die gewählten Varianten
       sind noch da. Haken weg: zurück auf „Eröffnungen (Kapitel 2)“, die Lichess-Liste verschwindet.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Neuladen statt App schließen).
 - [ ] N2536. Rundgang im Repertoire-Trainer (Kompass oben rechts): Ein Schritt erklärt die Zeile „Aus“,
       ein weiterer den Schalter „Praxis“; der Schritt zum Ziehen erwähnt keine Warum-Fragen mehr.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Texte der Tour).
 - [ ] N2540. Training öffnen: Direkt unter „Dein Stapel für heute“ stehen drei Kacheln: Lernsammlung, Fehlerdatenbank (Datenbank-Symbol) und Alle Kapitel. Die Kachel Fehlerdatenbank zeigt „noch leer“ bzw. die Zahl der Einträge und öffnet die Fehlerdatenbank.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für die Kachel Fehlerdatenbank („noch leer“, öffnet sie); nicht geprüft: Reihenfolge der drei Kacheln.
 - [ ] N2541. Eine Partie spielen, in der Auswertung auf einen Zug gehen, „Merken“, dann „Fehler“, dann „In die Fehlerdatenbank“: Es erscheint „In der Fehlerdatenbank gespeichert. Zur Fehlerdatenbank“. Der Link führt hin, und der Eintrag steht dort.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2542. Dasselbe mit „Lernen“ und „Speichern“: „In der Lernsammlung gespeichert. Zur Lernsammlung“ führt in die Lernsammlung.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2543. Lernsammlung: einen Eintrag aufklappen. Hat er keinen Plan, heißt der Knopf „Plan ergänzen“, sonst „Bearbeiten“. Die Felder Plan, Notiz und Eröffnung sind beschriftet wie beim Anlegen. Plan ändern und „Änderung speichern“: Der neue Plan steht in der Zeile, und „Abfragen“ zeigt ihn.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2544. Lernsammlung: Eine geänderte Eröffnung verschiebt den Eintrag in die passende Gruppe.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2545. Lernsammlung: „Löschen“ entfernt den Eintrag sofort. Unten schwebt „Gelöscht. Rückgängig“; ein Tipp holt ihn an dieselbe Stelle zurück. Nach etwa 10 Sekunden verschwindet die Leiste.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Leiste verschwindet nach etwa 10 Sekunden.
 - [ ] N2546. Fehlerdatenbank: einen Eintrag aufklappen, „Bearbeiten“, Fehlerart und Satz ändern, „Änderung speichern“. Die Zeile und die Auswertung je Fehlerart zählen den Fehler jetzt beim neuen Kapitel.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2547. Fehlerdatenbank: „Eintrag löschen“, dann „Rückgängig“: Der Eintrag ist wieder da, die Auswertung zählt ihn wieder.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2548. Tour im Training (Kompass oben rechts): Nach der Lernsammlung kommt ein Schritt zur Fehlerdatenbank.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Schritt „Fehlerdatenbank“ folgt in der Tour auf die Lernsammlung).
 - [ ] N2490. Geteilten Link bei offener App öffnen: App offen lassen, dann im selben Browser-Tab
       die Adresse schach-von-grund-auf.com/app/#aufgabe-taktik-l-1Vybh eingeben. Die Aufgabe
       „Herausforderung“ öffnet sich sofort; „Training“ oben links führt zur Trainingsübersicht.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2491. Profil › Einstellungen › Hilfe › „Rundgang durch die App“ › „Ich will spielen und
       Partien auswerten“: Die Tour läuft auf „Spielen“, unten ist „Spielen“ golden markiert (nicht
       mehr „Profil“).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2492. Rundgang aus den Einstellungen öffnen und, solange die Frage „Wie möchtest du
       starten?“ zu sehen ist, die Zurück-Taste (Android) drücken: Die Frage schließt sich.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2493. Profil › Abzeichen „Erste Partie“ antippen › „Los geht's“: Spielen öffnet, unten ist
       „Spielen“ markiert. Profil › Orden „Teil Endspiel“ › „Los geht's“: Kapitel 8 öffnet.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „Erste Partie“; nicht geprüft: Orden „Teil Endspiel“.
 - [ ] N2494. Ohne Internet (Flugmodus) Profil › Einstellungen › Bots und Wertung › „Maia laden“:
       Es erscheint „Ohne Internetverbindung lässt sich Maia nicht laden …“ (kein „Failed to fetch“).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2495. Datensicherung von einem Gerät mit verdienten Abzeichen auf einem zweiten Gerät (oder
       nach „Alle Daten löschen“) einspielen: Es kommen keine Gratulationen zu alten Ringen oder
       Abzeichen.
 - [ ] N2496. Orden-Probe (Aufgabenseite › Orden testen › ein Ring auf 100 %): Die Gratulation hat
       den Fokus auf „Weiter“ (Tastatur am Rechner: Tab bleibt in der Karte, Esc schließt sie).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2497. Handy auf Englisch stellen, App-Daten löschen, App über den QR-Code des Buches
       (…/app/?start=buch) öffnen: Zuerst kommt die Frage nach der Sprache, die Tour „Mit dem Buch
       starten“ erst danach.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2498. App am Abend auf „Buch“ offen lassen, am nächsten Morgen wieder nach vorn holen:
       „Heute“ zeigt den neuen Tag (am 1. eines Monats steht „Dein … ist fertig“), ohne etwas
       anzutippen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2550. Repertoire-Trainer, Haken „Auch Eröffnungen aus der Praxis (Lichess)“: Unter dem
       Hinweis „nicht aus dem Buch“ steht jetzt ein Satz: „Nach dem Namen geht jede Variante mit den
       häufigsten Zügen von Spielern um 1200 weiter …“. Hast du schon gewertete Partien gegen die Bots
       gespielt, steht dort dein Band („dein Band nach deiner Wertung“). Ist der Satz verständlich?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für den Satz „um 1200“; nicht geprüft: „dein Band“ mit Wertung; offen für dich: Ist der Satz verständlich?
 - [ ] N2551. Wähle bei „Sizilianische Verteidigung“ unter „Varianten“ nur „Old Sicilian“, Seite
       Weiß, „Runde starten“. Die Variante endet nicht mehr nach 2… Sc6, sondern geht weiter: 3. Lc4 e6 4. O-O d5 5. exd5 exd5 6. Lb5 Ld7 7. Te1+ (ohne Wertung, Band 1200). Fühlt sich die Länge
       richtig an?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); offen für dich: Fühlt sich die Länge richtig an?
 - [ ] N2552. Dasselbe als Schwarz mit „Englische Eröffnung“ (1. c4): Früher gab es als Schwarz
       keine Aufgabe, jetzt ziehst du die häufigsten Antworten (etwa 1… e5 …). Startknopf: „1 Variante“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (King's English Variation als Schwarz, Knopf „1 Variante“, die App zieht 1. c4).
 - [ ] N2553. Ohne Netz (Flugmodus, App schon installiert): Die Runde aus der Praxis ist trotzdem
       verlängert.
 - [ ] N2549. **„Zur Stellung“ an einem Fehler:** In der Auswertung am Moment eines Patzers „Zur
       Stellung“ tippen. Das große Brett zeigt die Stellung nach dem Fehlerzug (der Zug ist in der
       Zugliste markiert); „Merken“ trägt genau diesen Zug in die Fehlerdatenbank ein.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Brett nach 12. O-O-O??, „Merken“ trägt genau diesen Zug ein).
 
 ### Neu in 0.3.44: Lizenzen, Wiki und großer Fehlertest (Nacht 31.10./1.11.2026)
 

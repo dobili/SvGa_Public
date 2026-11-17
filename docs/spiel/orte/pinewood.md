@@ -48,7 +48,7 @@ nie über Pinewood.
 
 Der Fernwanderweg (Erde, 2 breit) kommt am **Ostrand bei den Reihen 14–15** aus Crossroads
 (`zurueckCrossroads`) und läuft in Bögen durch lichten Kiefernwald nach Westen zum **Westrand bei den
-Reihen 14–15** (`weiterRiesenbaeume`). In der Mitte die **Schutzhütte** mit Veranda; dort spielt
+Reihen 14–15** (`weiterRiesenbaeume`). In der Mitte die **Schutzhütte** (Blockhütte ohne Veranda); dort spielt
 Hüttenwirtin Greta Blindschach (L2).
 
 | Abschnitt (Spalten)     | Thema        | Inhalt                                                  | Zum Entdecken            |
@@ -57,7 +57,7 @@ Hüttenwirtin Greta Blindschach (L2).
 | HU2 (120–134) Wiese     | Sommer       | Blumenwiese, Bach mit Steg                              | Bach                     |
 | HU3 (105–119) Wald      | lichter Wald | Kiefern, Farne, Wanderer mit Riesenrucksack (Statist)   | Wanderer                 |
 | HU4 (90–104) Tafel      | Rätsel       | Rätseltafel am Wegrand (`tafel`)                        | Tafel                    |
-| HU5 (70–89) Schutzhütte | Rast         | Schutzhütte mit Veranda, Holzstapel, Wasserfass, Greta  | Greta, Blindschach       |
+| HU5 (70–89) Schutzhütte | Rast         | Schutzhütte, Holzstapel, Wasserfass, Greta              | Greta, Blindschach       |
 | HU6 (55–69) Lichtung    | Picknick     | Picknicktisch, Feuerstelle aus Steinen                  | Feuerstelle              |
 | HU7 (35–54) Hang        | Steine       | Weg steigt an, Felsen, Moos                             | Bärenspur (Bodenbild)    |
 | HU8 (15–34) Kamm        | Ausblick     | erster Blick auf die Riesenbäume im Westen (Sichtachse) | Riesenbäume in der Ferne |
@@ -134,7 +134,7 @@ erst als Tönung der Szene, die Karte bleibt farbig.
 
 **Hütten:** Ein Sommermorgen am Long Ridge Trail. Der Weg ist weich von Nadeln, es riecht nach Harz und
 nassem Moos. Wanderer mit Rucksäcken, so groß wie Kühlschränke, grüßen kurz. Die Schutzhütte ist aus
-dunklen Bohlen, auf der Veranda sitzt Greta mit einer Kanne Kaffee und ruft Züge in den Wald, ohne
+dunklen Bohlen, vor der Tür sitzt Greta mit einer Kanne Kaffee und ruft Züge in den Wald, ohne
 Brett. **Riesenbäume:** Plötzlich wird es still und kühl. Die Stämme sind rot und so breit wie ein
 Haus, oben verliert sich die Krone im Nebel. Im weichen Boden eine Bärenspur, frisch. Das
 Ranger-Häuschen hat eine Fahne und eine Tafel „Bitte keine Lebensmittel draußen lassen“. **Camp:**

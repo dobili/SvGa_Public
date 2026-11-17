@@ -825,7 +825,7 @@
       "typ": "statist",
       "feld": [26, 15],
       "eigenschaften": {
-        "tun": "dreht Zuckerwatte auf Stäbchen",
+        "tun": "verkauft am Gebäckstand Krapfen und Zuckerwatte",
         "wann": "tag",
         "von": "26,14",
         "bis": "27,15",
@@ -909,7 +909,7 @@
       "typ": "statist",
       "feld": [13, 20],
       "eigenschaften": {
-        "tun": "stellt die Dosenpyramide wieder auf",
+        "tun": "ruft Besucher an die Süßigkeitenbude",
         "wann": "tag",
         "von": "13,20",
         "bis": "13,20",

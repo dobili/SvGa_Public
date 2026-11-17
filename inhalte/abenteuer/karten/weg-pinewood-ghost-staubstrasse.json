@@ -13769,7 +13769,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "wartet neben ihrem Lastwagen auf Hilfe"
+       "value": "wartet am Straßenrand auf den Abschleppwagen"
       },
       {
        "name": "wann",
@@ -13845,7 +13845,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "trinkt Wasser im Schatten eines Mastes"
+       "value": "trinkt Wasser im Schatten eines Saguaros"
       },
       {
        "name": "wann",

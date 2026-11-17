@@ -109,7 +109,7 @@ Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. Suchst du jemanden?
 ~ annekSchachGelernt = true
 Kira hat dich also schon verlieren lassen. Gut. Dann bist du dran. #sprecher:annek #stimmung:lacht
 Ich wollte immer Schach lernen. Aber jeder, der es mir erklären wollte, hat nach fünf Minuten von Eröffnungen geredet. #sprecher:annek #stimmung:nachdenklich
-Ihr setzt euch auf die Treppe vor der Turnhalle. Du stellst die Figuren auf und erklärst, eine nach der anderen. #sprecher:erzaehler
+Ihr setzt euch vor die alte Scheune, über deren Tor „Turnhalle“ steht. Du stellst die Figuren auf und erklärst, eine nach der anderen. #sprecher:erzaehler
 * [Mit dem Springer anfangen]
 - Annek nimmt den Springer in die Hand und lässt ihn über die Bauern hüpfen. #sprecher:erzaehler
 Euer Springer springt wie unser Falke. Nur feiger. Er darf danach nicht weiterfliegen. #sprecher:annek #stimmung:lacht

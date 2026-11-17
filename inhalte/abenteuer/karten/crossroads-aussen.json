@@ -9715,7 +9715,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "spritzt einen Pick-up ab"
+       "value": "spritzt den Vorplatz der Tankstelle ab"
       },
       {
        "name": "wann",

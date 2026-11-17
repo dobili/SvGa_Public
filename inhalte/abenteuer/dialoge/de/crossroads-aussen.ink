@@ -39,7 +39,7 @@ VAR coachCrossroadsGetroffen = false
 // Ortsthemen nacheinander über einem fröhlichen Rhythmus (crossroads), Stimmengewirr.
 ~ ankunftCrossroadsGesehen = true
 Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #geraeusch:crossroads_stimmen #licht:abend
-An der Ecke eine Raststätte, niedrig und breit, mit Veranda rundherum: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
+An der Ecke eine Raststätte, ein silberner Speisewagen, lang und niedrig: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
 Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus
 Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter #stimmung:laechelt
 -> END
@@ -53,7 +53,7 @@ Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutte
 }
 // Kapitel 53 (Roman): Slick redet langsamer und lässt Platz zwischen den Sätzen.
 ~ slickGetroffen = true
-Auf dem Geländer der Veranda sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
+Auf den Stufen vor dem Speisewagen sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
 … und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick #stimmung:lacht
 Er sieht dich und rutscht vom Geländer. #sprecher:erzaehler
 Maple Falls! #sprecher:slick #stimmung:froh
@@ -108,7 +108,7 @@ Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #s
 === rosie ===
 {not rosieCrossroadsGetroffen:
     ~ rosieCrossroadsGetroffen = true
-    Am Ende der Veranda dampft ein türkisfarbener Lastwagen mit Beulen. Rosie winkt mit einem Pfannenwender. #sprecher:erzaehler
+    Neben dem Speisewagen dampft ein türkisfarbener Lastwagen mit Beulen. Rosie winkt mit einem Pfannenwender. #sprecher:erzaehler
     Davor redet Dash auf Buck ein, Buck redet zurück. Keiner hört dem anderen zu, und beide sind glücklich. #sprecher:erzaehler
     Wo Schachspieler sind, ist Hunger. Das hab ich in Silicon Bay gelernt. #sprecher:rosie #stimmung:froh
 - else:
@@ -126,7 +126,7 @@ Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #s
     -> END
 }
 ~ coachCrossroadsGetroffen = true
-Auf der Veranda pfeift jemand. Auf zwei Fingern. Du kennst den Pfiff. #sprecher:erzaehler #klang:pfiff
+Vor dem Speisewagen pfeift jemand. Auf zwei Fingern. Du kennst den Pfiff. #sprecher:erzaehler #klang:pfiff
 Coach Delgado zählt neben einem Schulbus Köpfe. Sam, zwei Jüngere. Und eine Siebzehnjährige mit Fahrrad auf dem Dachträger, die so tut, als gehöre sie nicht dazu. #sprecher:erzaehler
 Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal. Sie hat es dreimal gesagt. #sprecher:juno #stimmung:froh
 Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado #stimmung:lacht

@@ -1,5 +1,5 @@
 /**
- * Tests der Deckwahl im Tiefpunkt (regeln/abwesenheit.ts): Ambroses Karten bleiben sichtbar, aber
+ * Tests der Deckwahl ohne Ambrose (Tiefpunkt, nach dem Abschied; regeln/abwesenheit.ts): Ambroses Karten bleiben sichtbar, aber
  * grau und gesperrt, mit „Er ist nicht da.“; Karten des Helden bleiben wählbar. Server-Renderer.
  */
 import { renderToStaticMarkup } from "react-dom/server";
@@ -15,14 +15,14 @@ const BESITZ = ["mentorzug", "abzaehlen"].map((kennung) => ({
   erhalten: "2026-11-13T10:00:00.000Z",
 }));
 
-function zeichne(ambroseFehlt: boolean): string {
+function zeichne(ambroseNichtDa: boolean): string {
   return renderToStaticMarkup(
     <Deckwahl
       besitz={BESITZ}
       sorten={SORTEN}
       mitKarten
       zeitwahl={false}
-      ambroseFehlt={ambroseFehlt}
+      ambroseNichtDa={ambroseNichtDa}
       beiWahl={() => undefined}
       beiAbbruch={() => undefined}
     />,

@@ -3,6 +3,9 @@
 // Szenen der Story-Bibel (docs/spiel/05_Story_Bibel.md, Abschnitt 4): 5 Erster Schultag, erster
 // Teil (Juno an der Bushaltestelle, akt1.ersterSchultag), 8 Lilys Springer (Hilfe-Quest
 // mapleFalls.lilysSpringer). Einstiege: „juno“ und „lily“; beide verzweigen nach dem Spielstand.
+// Einstieg „schultuer“ (Übergang „schule“ in orte.json): Wer Juno noch nicht kennt, trifft sie dort
+// von selbst, bevor er die Schule betritt; im Clubraum gilt sie als bekannt („Juno, wen bringst du
+// mir da?“, maple-falls-clubraum.coach_erstes_treffen).
 // springerLilyBestanden setzt die Hülle nach der Aufgabenrunde mapleFalls.springerLily
 // (regeln/dialogvariablen.ts). Belohnungen stehen in quests.json.
 //
@@ -34,6 +37,11 @@ VAR nadelIronwood = 0
 VAR abschiedGesehen = false
 
 === juno ===
+// Alte Spielstände (vor der Schultür, 17.11.2026): Wer schon im Club ist, kennt Juno von dort; das
+// erste Treffen läuft dann nicht mehr nach, auch nicht nach dem Finale.
+{clubBeigetreten:
+    ~ junoGetroffen = true
+}
 {
 - not callowayGetroffen and not junoGetroffen and ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen": -> calloway_auf_dem_weg
 - not junoGetroffen and ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen": -> juno_trifft
@@ -72,6 +80,16 @@ Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno #stimmung
     Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
+
+// Die Schultür (Übergang „schule“, wenn: junoGetroffen oder clubBeigetreten). Warum: Das Treffen an
+// der Haltestelle war überspringbar; ein Prüfspieler kam ohne es in den Club und bis ins Finale, die
+// Szene lief dann danach (Bericht ambrose_danach_17-11, Nebenbefunde). Die Haltestelle liegt gleich
+// neben der Schule; Juno ruft, die Szene läuft von selbst, danach geht die Tür auf. Die App fragt
+// `wenn` nach dem Dialog mit den neuen Variablen (oberwelt/useDialogende.ts).
+=== schultuer ===
+{junoGetroffen or clubBeigetreten: -> END}
+Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle nebenan. Du drehst dich um. #sprecher:erzaehler
+-> juno_trifft
 
 === juno_zum_club ===
 Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stimmung:lacht

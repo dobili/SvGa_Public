@@ -6,10 +6,12 @@
  * Rolle im Gesamtbild: Ausgelagert aus oberwelt/Oberwelt.tsx (Aufteilen, Schritt 3). Arbeitet auf
  * dem gemeinsamen Kern (kern.ts); die Oberwelt zeichnet Deckwahl und Ergebniskarte aus dem, was
  * dieser Hook zurückgibt.
- * Abhängigkeiten: regeln/rueckweg.ts, oberwelt/auftraege.ts, oberwelt/partiestart.ts.
+ * Abhängigkeiten: regeln/rueckweg.ts, regeln/abwesenheit.ts, oberwelt/auftraege.ts,
+ * oberwelt/partiestart.ts.
  */
 import { useEffect, useRef, useState } from "react";
 import { ladeSpieldaten } from "../daten/laden";
+import { uebungspartie } from "../regeln/abwesenheit";
 import { standNachPartie } from "../regeln/rueckweg";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
@@ -25,8 +27,6 @@ import type { Oberweltkern } from "./kern";
 import { partiestart } from "./partiestart";
 import type { Weltdaten } from "./weltdaten";
 
-/** Begegnung des Reisebretts (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
-const UEBUNGSPARTIE = "reisebrett.ambrose";
 /** Gegenstand „Lupe des Uhrmachers“ (docs/spiel/11, I1): Steckbrief vor jeder Partie. */
 export const LUPE = "lupe";
 
@@ -212,7 +212,9 @@ export function usePartiestart(k: Oberweltkern): Partien {
     // Reisebrett (docs/spiel/11, I3): eine freie Übungspartie, mit Bedenkzeit und Karten.
     starteUebungspartie: () => {
       const aktuell = k.standRef.current;
-      const auftrag = k.welt && aktuell && auftragFuer(UEBUNGSPARTIE, k.welt.daten, aktuell);
+      // Gegen Ambrose; ist er nicht da (Tiefpunkt, nach dem Abschied), gegen Juno (abwesenheit.ts).
+      const begegnung = aktuell && uebungspartie(aktuell.dialogvariablen);
+      const auftrag = k.welt && begegnung && auftragFuer(begegnung, k.welt.daten, aktuell);
       if (auftrag) setzeDeckwahl(auftrag);
     },
     starteWiedereinstieg: (e, p) => {

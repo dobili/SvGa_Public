@@ -16,6 +16,20 @@
       "zeit": "wahl"
     },
     {
+      "kennung": "reisebrett.juno",
+      "brett": "abgegriffen",
+      "gegner": "mapleFalls.juno",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
       "kennung": "mapleFalls.ersteLektion",
       "brett": "dachboden",
       "gegner": "mapleFalls.ambrose",

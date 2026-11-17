@@ -21,6 +21,8 @@ const ESCAPE = "Escape";
 
 /**
  * Die Karte groß. `grund` ist der Textschlüssel, warum sie gerade nicht geht (null: sie geht).
+ * `ambroseDa` (Vorgabe ja): Ist er nicht da (regeln/abwesenheit.ts), steht die Erklärung ohne
+ * „Ambrose:“ davor.
  * Beispiel: Zweite Chance vor dem ersten Zug → Grund „Erst nach deinem ersten Zug.“, Ausspielen aus.
  */
 export function Kartenblick({
@@ -28,6 +30,7 @@ export function Kartenblick({
   ansicht,
   grund,
   spielbar,
+  ambroseDa = true,
   beiAusspielen,
   beiZurueck,
 }: {
@@ -35,6 +38,7 @@ export function Kartenblick({
   readonly ansicht: Kartenansicht;
   readonly grund: string | null;
   readonly spielbar: boolean;
+  readonly ambroseDa?: boolean;
   readonly beiAusspielen: () => void;
   readonly beiZurueck: () => void;
 }) {
@@ -71,7 +75,8 @@ export function Kartenblick({
         <p className="abenteuer-kartenblick-stufe">{tSpiel(`karte.stufe.${sorte.stufe}`)}</p>
         <p className="abenteuer-kartenblick-spruch">{tSpiel(sorte.spruch)}</p>
         <p className="abenteuer-kartenblick-erklaerung">
-          <strong>{tSpiel("faecher.ambrose")}</strong> {tSpiel(`karte.${sorte.kennung}.erklaerung`)}
+          {ambroseDa && <strong>{tSpiel("faecher.ambrose")}</strong>}{" "}
+          {tSpiel(`karte.${sorte.kennung}.erklaerung`)}
         </p>
         {grund && (
           <p className="abenteuer-kartenblick-hinweis" data-testid="abenteuer-karte-grund">

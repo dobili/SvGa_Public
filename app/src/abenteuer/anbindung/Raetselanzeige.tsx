@@ -70,7 +70,7 @@ export function Figurenreihe({
   );
 }
 
-/** Wer die Rückmeldung spricht: Sprecherkennung und Name. */
+/** Wer die Rückmeldung spricht: Sprecherkennung und Name; beides leer: niemand (ohne Ambrose). */
 export interface Ratgeber {
   readonly sprecher: string | null;
   readonly name: string;
@@ -98,7 +98,7 @@ export function Raetselmeldung({
         <Portraet sprecher={ratgeber.sprecher} stimmung={richtig ? "froh" : null} />
       )}
       <p className={`meldung ${richtig ? "gut" : "schlecht"}`} role="status">
-        <strong>{ratgeber.name}</strong> {text}
+        {ratgeber.name && <strong>{ratgeber.name}</strong>} {text}
       </p>
     </div>
   );

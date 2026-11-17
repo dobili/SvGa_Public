@@ -305,3 +305,24 @@ test("Reisebrett: Übungspartie gegen Ambrose von draußen", async ({ page }) =>
   await expect(page.getByTestId("abenteuer-partie-aufgeben")).toBeVisible();
   await expect(page.getByTestId("abenteuer-kartenleiste")).toHaveCount(0);
 });
+
+test("Reisebrett: nach dem Abschied spielt Juno statt Ambrose", async ({ page }) => {
+  // Entscheidung Q21-5: Nach dem Abschied sitzt Ambrose an keinem Brett (regeln/abwesenheit.ts).
+  const stand = {
+    ...STAND,
+    gegenstaende: ["reisebrett"],
+    dialogvariablen: { abschiedGesehen: true },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await ladeAbenteuerpaket(page);
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-reisebrettknopf").click();
+  await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible();
+  await page.getByTestId("abenteuer-deck-los").click();
+  const kopf = page.getByTestId("abenteuer-huelle-kopf");
+  await expect(kopf).toContainText("Juno", { timeout: 30000 });
+  await expect(kopf).not.toContainText("Ambrose");
+});

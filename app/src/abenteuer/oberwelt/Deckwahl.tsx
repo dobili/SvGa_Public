@@ -40,7 +40,7 @@ export function Deckwahl({
   zeitwahl,
   farbeFrei = false,
   mentorGesperrt = false,
-  ambroseFehlt = false,
+  ambroseNichtDa = false,
   schutzengelGesperrt = false,
   freieKarten = [],
   steckbrief = { titel: "", zeilen: [] },
@@ -61,8 +61,8 @@ export function Deckwahl({
   readonly farbeFrei?: boolean;
   /** Regel R29: Mentor-Zug zwischen Tiefpunkt und Versöhnung gesperrt. */
   readonly mentorGesperrt?: boolean;
-  /** Ambrose ist nicht da (Tiefpunkt): seine Karten grau mit „Er ist nicht da.“ */
-  readonly ambroseFehlt?: boolean;
+  /** Ambrose ist nicht da (Tiefpunkt, nach dem Abschied): seine Karten grau mit „Er ist nicht da.“ */
+  readonly ambroseNichtDa?: boolean;
   /** Schutzengel (K4) gesperrt: ohne Ambrose (regeln/schutzengel.ts). */
   readonly schutzengelGesperrt?: boolean;
   /** Freie Karten der Begegnung (R29), liegen ohne Besitz zusätzlich im Deck. */
@@ -91,7 +91,7 @@ export function Deckwahl({
   const gesperrt = (kennung: string) => {
     const sorte = alleSorten.find((s) => s.kennung === kennung);
     if (!sorte) return false;
-    if (ambroseFehlt && istAmbrosesKarte(sorte)) return true;
+    if (ambroseNichtDa && istAmbrosesKarte(sorte)) return true;
     if (sorte.wirkung.art === "mentorzug" && mentorGesperrt) return true;
     return sorte.wirkung.art === "schutzengel" && schutzengelGesperrt;
   };

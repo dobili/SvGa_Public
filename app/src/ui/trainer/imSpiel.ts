@@ -8,9 +8,10 @@
  * seine Eigenschaft `imSpiel` (Vorgabe aus) und reicht ihn als Kontext an die Aufgaben weiter,
  * damit nicht jede Aufgabenkomponente eine eigene Eigenschaft braucht. In der Buch-App ist der
  * Schalter immer aus; dort ändert sich nichts.
- * Abhängigkeiten: React.
+ * Abhängigkeiten: React, i18n/sprache.ts.
  */
 import { createContext, useContext, type ReactNode } from "react";
+import { t } from "../../i18n/sprache";
 
 /** Der Kontext; ohne Rundenrahmen des Spiels immer false. */
 export const ImSpielKontext = createContext(false);
@@ -33,6 +34,22 @@ export const HinweisKontext = createContext<(() => void) | null>(null);
 /** Der Rückruf für „Ambrose fragen“ oder null außerhalb des Spiels. */
 export function useHinweismeldung(): (() => void) | null {
   return useContext(HinweisKontext);
+}
+
+/**
+ * Hilft gerade niemand mit Namen? Im Schach-Abenteuer heißt der Hinweisknopf „Ambrose fragen“;
+ * ist Ambrose nicht da (Tiefpunkt, nach dem Abschied; abenteuer/regeln/abwesenheit.ts), setzt die
+ * Runde diesen Schalter, und der Knopf heißt schlicht „Hinweis“. Der Hinweis selbst (Warnsignal,
+ * Motiv, Figur) ist die Hilfe der App und bleibt; nur Ambroses Name fällt weg.
+ */
+export const OhneMentorKontext = createContext(false);
+
+/**
+ * Die Beschriftung des Hinweisknopfs im Spiel.
+ * Beispiel: Ambrose ist da → „Ambrose fragen“; nach dem Abschied → „Hinweis“.
+ */
+export function useHinweistext(): string {
+  return useContext(OhneMentorKontext) ? t("imSpiel.hinweisAllein") : t("imSpiel.hinweis");
 }
 
 /**

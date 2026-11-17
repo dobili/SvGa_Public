@@ -27,11 +27,21 @@ const DIALOGE = path.join(
 );
 /** Der launische Spieler lässt jedes dritte freie Objekt liegen. */
 const JEDES_WIEVIELTE = 3;
+/**
+ * Nach je so vielen Schritten ohne Fortschritt versucht er gesperrte Wege mit Dialog noch einmal.
+ * Warum: Die Gesamtsimulation probiert einen solchen Weg je Zustand nur einmal; am Kanalweg in
+ * Riverton („Mit dem Zug nach Hause fahren“ oder „Noch bleiben“, Mamas Verbot öffnet Ironwood)
+ * blieb der launische Spieler nach einem „Noch bleiben“ für immer stehen, weil er zu wenig
+ * anfasst, um den Zustand noch zu ändern (alle Startwerte 1 bis 5, 17.11.2026).
+ */
+const RUHE_NEUER_WEGVERSUCH = 100;
 /** Startwert und Primzahl des Streuwerts FNV-1a (32 Bit). */
 const FNV_START = 2166136261;
 const FNV_PRIMZAHL = 16777619;
 const NAME = /[A-Za-z_]\w*/g;
 const AUFRUF = /\b(beginne\w+|gibFund|oeffneLaden)\("([\w.]+)"\)/g;
+/** Eine Reise aus dem Dialog (Bus, Zug, Fähre): `reise("ort.karte", "ausloeser")`. */
+const REISE = /\breise\(/;
 
 /** Streuwert einer Zeichenkette (FNV-1a, 32 Bit) für die Launen des Spielers. */
 function streuwert(text) {
@@ -70,7 +80,7 @@ function gesetztDurch(welt, aufruf, kennung) {
 /**
  * Liest alle Ink-Dateien in Knoten: je „Datei.Knoten“ die Ziele seiner Weiterleitungen, die
  * Variablen, die er setzt, die Namen, die in ihm vorkommen (gelesene Variablen, großzügig), und
- * seine Aufrufe der Hülle. Ausgabe: Map „Datei.Knoten“ → { ziele, setzt, liest, aufrufe }.
+ * seine Aufrufe der Hülle. Ausgabe: Map „Datei.Knoten“ → { ziele, setzt, liest, aufrufe, reist }.
  */
 function leseKnoten(welt) {
   const knoten = new Map();
@@ -88,6 +98,7 @@ function leseKnoten(welt) {
         ]),
         liest: new Set(text.match(NAME) || []),
         aufrufe,
+        reist: REISE.test(text),
       });
     }
   }
@@ -119,8 +130,8 @@ function variablenDerWelt(welt) {
 }
 
 /**
- * Die Knoten, die die Hauptgeschichte braucht (großzügig): Knoten der Hauptquests, alles, was zu
- * ihnen weiterleitet, und alles, was eine Variable setzt, die ein gebrauchter Knoten oder ein
+ * Die Knoten, die die Hauptgeschichte braucht (großzügig): Knoten der Hauptquests, Knoten mit einer
+ * Reise, alles, was zu ihnen weiterleitet, und alles, was eine Variable setzt, die ein gebrauchter Knoten oder ein
  * Übergang liest; dazu Quests, die einen gebrauchten Gegenstand geben. Wiederholt, bis nichts mehr
  * dazukommt. Ausgabe: Menge „Datei.Knoten“.
  */
@@ -134,6 +145,9 @@ function gebrauchteKnoten(welt) {
       knotenZu(knoten, e).forEach((k) => gebraucht.add(k)),
     );
   welt.quests.filter((q) => q.haupt).forEach(nimm);
+  // Reisen aus einem Dialog tragen die Hauptgeschichte weiter (Bus nach Silicon Bay an der
+  // Haltestelle in Ironwood, der Zug nach Hause am Kanalweg); wer sie liegen lässt, kommt nie an.
+  for (const [name, k] of knoten) if (k.reist) gebraucht.add(name);
   for (let groesse = -1; groesse !== gebraucht.size + variablen.size;) {
     groesse = gebraucht.size + variablen.size;
     for (const [name, k] of knoten) {
@@ -161,7 +175,8 @@ function gebrauchteKnoten(welt) {
  * Ausgabe: `oeffne()`, das den Spieler nach dem Abschied wieder gründlich macht.
  * Beispiel: Mit Startwert 4 bleibt Mrs. Boateng im Waschsalon liegen; ihr Formular wird erst
  * nach dem Abschied entziffert.
- * Sonderfall: Was die Hauptgeschichte braucht (gebrauchteKnoten), bleibt nie liegen.
+ * Sonderfälle: Was die Hauptgeschichte braucht (gebrauchteKnoten), bleibt nie liegen. Kommt er
+ * nicht voran, versucht er gesperrte Wege mit Dialog noch einmal (RUHE_NEUER_WEGVERSUCH).
  */
 function launischerSpieler(welt, st, startwert) {
   const gebraucht = gebrauchteKnoten(welt);
@@ -176,6 +191,8 @@ function launischerSpieler(welt, st, startwert) {
     return figur ? figur.dialog : a?.dialog;
   };
   st.auslassen = (w, s, karte, o) => {
+    if (s.ruhe > 0 && s.ruhe % RUHE_NEUER_WEGVERSUCH === 0)
+      for (const k of Object.keys(s.gesperrt)) delete s.gesperrt[k];
     const dialog = dialogVon(karte, o);
     if (!dialog || gebraucht.has(dialog)) return false;
     return streuwert(`${startwert}:${karte}.${o.name}`) % JEDES_WIEVIELTE === 0;

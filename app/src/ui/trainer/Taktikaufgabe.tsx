@@ -41,7 +41,7 @@ import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 import { useVorzug } from "./useVorzug";
 import { Warnhinweis } from "./Warnhinweis";
-import { useHinweismeldung, useImSpiel, useLoesungGezeigtmeldung } from "./imSpiel";
+import { useHinweismeldung, useHinweistext, useImSpiel, useLoesungGezeigtmeldung } from "./imSpiel";
 import { loesungspfeile } from "./loesungspfeile";
 import { Loesungshinweis, Teilzuglob } from "./taktikImSpiel";
 
@@ -88,6 +88,7 @@ function Hilfen({
   const imSpiel = useImSpiel();
   // Im Spiel meldet „Ambrose fragen“ sich beim Tischgespräch (docs/spiel/29, Ereignis hinweis).
   const meldeHinweis = useHinweismeldung();
+  const imSpieltext = useHinweistext();
   const motiv = themenname
     ? themenname
     : aufgabe.motiv
@@ -112,7 +113,7 @@ function Hilfen({
             }}
           >
             <Knopfsymbol art="hinweis" />
-            {imSpiel ? t("imSpiel.hinweis") : t("uebung.hinweis", { stufe: stufe + 1 })}
+            {imSpiel ? imSpieltext : t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>
         )}
         <button type="button" className="knopf-link" onClick={zeigeLoesung}>

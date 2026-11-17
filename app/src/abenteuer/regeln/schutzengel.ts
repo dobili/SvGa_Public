@@ -11,7 +11,7 @@
  * Abhängigkeiten: engine/spielbewerter.ts (Wert aus Sicht einer Seite).
  */
 import { wertFuer } from "../../engine/spielbewerter";
-import { ambroseFehlt } from "./abwesenheit";
+import { ambroseNichtDa } from "./abwesenheit";
 import type { Wert } from "../../engine/uci";
 import type { Kartenspiel } from "../schnittstelle/karten";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
@@ -80,11 +80,12 @@ const OHNE_AMBROSE: readonly string[] = ["capitalArena.finale"];
 
 /**
  * Ist der Schutzengel gesperrt? Ohne Ambrose: zwischen Tiefpunkt und Versöhnung (wie der
- * Mentor-Zug, R29) und im Finale. Beispiel: tiefpunktGesehen ohne versoehnungGesehen → gesperrt.
+ * Mentor-Zug, R29), im Finale und nach dem Abschied (regeln/abwesenheit.ts ambroseNichtDa).
+ * Beispiel: tiefpunktGesehen ohne versoehnungGesehen → gesperrt; abschiedGesehen → gesperrt.
  */
 export function schutzengelGesperrt(
   variablen: Abenteuerstand["dialogvariablen"],
   begegnung: string,
 ): boolean {
-  return ambroseFehlt(variablen) || OHNE_AMBROSE.includes(begegnung.split("#")[0] ?? "");
+  return ambroseNichtDa(variablen) || OHNE_AMBROSE.includes(begegnung.split("#")[0] ?? "");
 }

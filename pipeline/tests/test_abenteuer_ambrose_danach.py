@@ -107,3 +107,18 @@ def test_launischer_spieler_laesst_nichts_liegen_was_die_hauptgeschichte_braucht
     )
     erwartet = ["true"] * len(HAUPTKNOTEN) + ["false"] * len(NEBENKNOTEN)
     assert node(skript) == ",".join(erwartet)
+
+
+@ohne_node
+def test_reisebrett_nach_dem_abschied_spielt_juno():
+    """Die Übungspartie des Reisebretts: mit dem Stand der App kein Fund, ohne die Regel ein Fund."""
+    skript = (
+        f"const {{ reisebrettNachAbschied }} = require({str(BEOBACHTER)!r});"
+        "const juno = [{ kennung: 'reisebrett.juno', gegner: 'mapleFalls.juno' }];"
+        "const ohne = { regel: '', start: 'auftragFuer(UEBUNGSPARTIE)', begegnungen: juno };"
+        "const falsch = [{ kennung: 'reisebrett.juno', gegner: 'mapleFalls.ambrose' }];"
+        "const gegner = { regel: '', start: '', begegnungen: falsch };"
+        "const f = [reisebrettNachAbschied(), reisebrettNachAbschied(ohne), reisebrettNachAbschied(gegner)];"
+        "console.log(f.map((t) => (t === null ? 'gut' : 'fund')).join(','));"
+    )
+    assert node(skript) == "gut,fund,fund"

@@ -30,7 +30,7 @@ import { uciZuSan } from "../../spiel/zuege";
 import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/laden";
 import { mitGespielterKarte, nurAnwesenheit } from "../regeln/karten";
 import { remisMoeglich, spruecheErlaubt } from "../regeln/zeitkarten";
-import { ambroseFehlt } from "../regeln/abwesenheit";
+import { ambroseNichtDa } from "../regeln/abwesenheit";
 import { gegnerName, sprecherAusPfad } from "./huellentexte";
 import { meldungstext, stimmenDerKarte } from "./kartenstimme";
 import { spieleZeitkarte, type Spruchzeilen } from "./spruchkarte";
@@ -223,7 +223,7 @@ export function KartenleisteAnzeige({
           sprecher: sprecherAusPfad(partie.einstellung.abenteuer?.portraet),
           name: gegnerName(partie),
         },
-        ambroseDa: !ambroseFehlt(stand.dialogvariablen),
+        ambroseDa: !ambroseNichtDa(stand.dialogvariablen),
         ersterSpruch,
       });
       stimmen.forEach((z) => blasen?.zeige(z));
@@ -310,6 +310,7 @@ export function KartenleisteAnzeige({
         lage={lage}
         partielage={partielage}
         laeuft={laeuft}
+        ambroseDa={!ambroseNichtDa(stand.dialogvariablen)}
         beiSpielen={(sorte) => void spiele(sorte)}
       />
       {meldung && <span className="abenteuer-karte-meldung">{meldung}</span>}

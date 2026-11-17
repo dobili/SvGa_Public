@@ -257,7 +257,9 @@
           "ziel": {
             "karte": "mapleFalls.clubraum",
             "ausloeser": "schule"
-          }
+          },
+          "wenn": "junoGetroffen oder clubBeigetreten",
+          "dialog": "maple-falls-aussen.schultuer"
         },
         {
           "name": "schule",

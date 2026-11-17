@@ -1,25 +1,35 @@
 /**
- * Tests für abwesenheit.ts: Ambrose fehlt zwischen Tiefpunkt und Versöhnung; seine Kommentare zu
- * Statisten nur, wenn er sprechen kann; nach dem Abschied im Finale sagt er nichts mehr.
+ * Tests für abwesenheit.ts: Ambrose ist zwischen Tiefpunkt und Versöhnung und nach dem Abschied
+ * nicht da (eine Regel für die ganze Hülle: Karten, Schutzengel, Tischgespräch, Rätsel,
+ * Reisebrett); seine Kommentare zu Statisten nur, wenn er sprechen kann.
  */
 import { describe, expect, it } from "vitest";
+import begegnungsdatei from "../../../../inhalte/abenteuer/begegnungen.json";
+import { mentorzugGesperrt } from "./karten";
+import { schutzengelGesperrt } from "./schutzengel";
+import { raetselsprecher, tischplan } from "./tischgespraech";
 import {
-  ambroseFehlt,
+  ambroseNichtDa,
   ambroseSprichtJetzt,
   ambroseVerabschiedet,
   anwesendeMomente,
   istAmbrosesKarte,
   ohneAbwesende,
+  raetselstimmen,
+  uebungspartie,
 } from "./abwesenheit";
 
 const TIEFPUNKT = { tiefpunktGesehen: true };
 const VERSOEHNT = { tiefpunktGesehen: true, versoehnungGesehen: true };
+const ABSCHIED = { ...VERSOEHNT, abschiedGesehen: true };
 
 describe("Ambroses Abwesenheit", () => {
-  it("gilt nur zwischen Tiefpunkt und Versöhnung", () => {
-    expect(ambroseFehlt({})).toBe(false);
-    expect(ambroseFehlt(TIEFPUNKT)).toBe(true);
-    expect(ambroseFehlt(VERSOEHNT)).toBe(false);
+  it("gilt zwischen Tiefpunkt und Versöhnung und nach dem Abschied", () => {
+    expect(ambroseNichtDa({})).toBe(false);
+    expect(ambroseNichtDa(TIEFPUNKT)).toBe(true);
+    expect(ambroseNichtDa(VERSOEHNT)).toBe(false);
+    expect(ambroseNichtDa(ABSCHIED)).toBe(true);
+    expect(ambroseNichtDa({ abschiedGesehen: true })).toBe(true);
   });
 
   it("nimmt Ambrose von der Karte, andere Figuren bleiben", () => {
@@ -41,6 +51,7 @@ describe("Ambroses Abwesenheit", () => {
       "ambrose:ausloeser",
     ]);
     expect(ohneAbwesende(karte, VERSOEHNT)).toBe(karte);
+    expect(ohneAbwesende(karte, ABSCHIED).layers[1]?.objects).toHaveLength(2);
   });
 
   it("macht nur seine Karten grau", () => {
@@ -51,8 +62,70 @@ describe("Ambroses Abwesenheit", () => {
 
   it("lässt Partiemomente mit Ambrose weg", () => {
     const momente = [{ sprecher: "ambrose" }, { sprecher: "okafor" }];
-    expect(anwesendeMomente(momente, ambroseFehlt(TIEFPUNKT))).toEqual([{ sprecher: "okafor" }]);
-    expect(anwesendeMomente(momente, ambroseFehlt({}))).toHaveLength(2);
+    expect(anwesendeMomente(momente, ambroseNichtDa(TIEFPUNKT))).toEqual([{ sprecher: "okafor" }]);
+    expect(anwesendeMomente(momente, ambroseNichtDa(ABSCHIED))).toEqual([{ sprecher: "okafor" }]);
+    expect(anwesendeMomente(momente, ambroseNichtDa({}))).toHaveLength(2);
+  });
+});
+
+describe("Was die Hülle ohne Ambrose tut (Tiefpunkt und nach dem Abschied gleich)", () => {
+  it("sperrt Mentor-Zug und Schutzengel", () => {
+    for (const variablen of [TIEFPUNKT, ABSCHIED]) {
+      expect(mentorzugGesperrt(variablen)).toBe(true);
+      expect(schutzengelGesperrt(variablen, "mapleFalls.clubkampf")).toBe(true);
+    }
+    expect(mentorzugGesperrt(VERSOEHNT)).toBe(false);
+    expect(schutzengelGesperrt(VERSOEHNT, "mapleFalls.clubkampf")).toBe(false);
+  });
+
+  it("lässt Ambrose am Brett schweigen: Der Plan des Tischgesprächs hat keine Zeile von ihm", () => {
+    // Der Held verliert im 3. Halbzug die Dame: Ereignis „hinten“, sonst mit Ambroses Zeile.
+    const verlauf = {
+      fens: [
+        "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+        "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "rnbqkbnr/pppp1ppp/8/4p2Q/3P4/8/PPP1PPPP/RNB1KBNR b KQkq - 1 2",
+        "rnb1kbnr/pppp1ppp/8/4p2q/3P4/8/PPP1PPPP/RNB1KBNR w KQkq - 0 3",
+      ],
+      vomHelden: [true, false, true, false],
+      held: "white" as const,
+    };
+    const da = !schutzengelGesperrt(VERSOEHNT, "mapleFalls.clubkampf");
+    const weg = !schutzengelGesperrt(ABSCHIED, "mapleFalls.clubkampf");
+    expect(tischplan(verlauf, "p1", da).some((z) => z.sprecher === "ambrose")).toBe(true);
+    expect(tischplan(verlauf, "p1", weg).some((z) => z.sprecher === "ambrose")).toBe(false);
+  });
+
+  it("lässt in den Rätseln nur sprechen, wer da ist", () => {
+    expect(raetselstimmen("sam", {})).toEqual({ steller: true, ambrose: true });
+    expect(raetselstimmen("sam", TIEFPUNKT)).toEqual({ steller: true, ambrose: false });
+    expect(raetselstimmen("sam", ABSCHIED)).toEqual({ steller: true, ambrose: false });
+    // Ambroses Erinnerungen: Er stellt selbst; ist er nicht da, läuft die Runde ohne Stimme.
+    expect(raetselstimmen("ambrose", {})).toEqual({ steller: true, ambrose: false });
+    expect(raetselstimmen("ambrose", ABSCHIED)).toEqual({ steller: false, ambrose: false });
+    expect(raetselstimmen(null, ABSCHIED)).toEqual({ steller: true, ambrose: false });
+  });
+
+  it("gibt ohne Ambrose weder Hinweiszeile noch Zuspruch von ihm", () => {
+    const lage = { kennung: "r1", aufgabe: 2, falschInFolge: 2, gesprochenBei: null };
+    const ohne = { ...lage, ambroseDa: raetselstimmen("sam", ABSCHIED).ambrose };
+    const mit = { ...lage, ambroseDa: raetselstimmen("sam", VERSOEHNT).ambrose };
+    expect(raetselsprecher("hinweis", mit)).toBe("ambrose");
+    expect(raetselsprecher("falsch", mit)).toBe("ambrose");
+    expect(raetselsprecher("hinweis", ohne)).toBeNull();
+    expect(raetselsprecher("falsch", ohne)).not.toBe("ambrose");
+  });
+
+  it("lässt am Reisebrett Juno spielen", () => {
+    expect(uebungspartie({})).toBe("reisebrett.ambrose");
+    expect(uebungspartie(VERSOEHNT)).toBe("reisebrett.ambrose");
+    expect(uebungspartie(TIEFPUNKT)).toBe("reisebrett.juno");
+    expect(uebungspartie(ABSCHIED)).toBe("reisebrett.juno");
+    const gegner = (kennung: string) =>
+      begegnungsdatei.begegnungen.find((b) => b.kennung === kennung)?.gegner;
+    expect(gegner(uebungspartie(ABSCHIED))).toBe("mapleFalls.juno");
+    expect(gegner(uebungspartie({}))).toBe("mapleFalls.ambrose");
   });
 });
 

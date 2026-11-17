@@ -154,6 +154,58 @@ Mit Zustand „abgelenkt“ 1,4: Clubchef 1 bei E = 800 → h = 0,76 · 1,4 = 1,
 
 Quellen der Stellungen (`Startstellung`): `abbildung` (Buchabbildung des Clubkapitels), `meisterpartie` (Meisterpartien des Trainers „Zug erraten“, `inhalte/zusatzpartien`), `fen` (Lichess-Eröffnungen; später Bot-gegen-Bot-Stellungen passend zur Stärke). Die Pipeline prüft jede vorgemerkte Stellung einmal auf den Startvorteil; die App rechnet ihn nicht zur Laufzeit.
 
+### R13a Endspiel (Wunsch des Autors, 17.11.2026)
+
+| Feld       | Regel                                                                                                                            |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Rollen     | `strasse`, Nebenbegegnungen, Wegsperren; nie Clubkampf                                                                           |
+| Stellung   | Endspiel aus Kapitel 8 oder 9 des Buches (Abbildung), Leser am Zug                                                               |
+| `ziel`     | `sieg`: Start +1,5 bis +8 ohne Matt in drei; `remis`: Start −1,5 bis +0,3                                                        |
+| `zuege`    | 15 bis 20 (Startwert), höchstens 40                                                                                              |
+| Sieg       | `sieg`: Matt, oder nach `zuege` Bewertung ≥ +3,0; `remis`: Remis nach den Regeln, oder nach `zuege` Bewertung ≥ −1,5 (gehalten)  |
+| Remis      | nur bei `sieg`: Remis nach den Regeln, oder nach `zuege` Bewertung zwischen −1,5 und +3,0                                        |
+| Niederlage | Leser wird matt oder gibt auf, oder nach `zuege` Bewertung darunter                                                              |
+| Karten     | erlaubt außer Vorgaben und Zeitbonus (wie R13); Remisangebot zählt beim Ziel `remis` nicht als Erfolg, es beendet nur die Partie |
+
+### R13b Vorteil herausarbeiten
+
+| Feld                    | Regel                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| Rollen                  | `strasse`, Nebenbegegnungen, Wegsperren; nie Clubkampf                                     |
+| Stellung                | ausgeglichene Mittelspielstellung (Abbildung, Meisterpartie oder Eröffnung), −0,5 bis +0,5 |
+| `zuege`                 | 10 bis 12 (Startwert)                                                                      |
+| `mindestvorteil`        | 1,0 Bauern (Startwert)                                                                     |
+| Sieg, Remis, Niederlage | wie R13: ≥ Mindestvorteil Sieg, ab 0 Remis, darunter Niederlage                            |
+| Karten                  | erlaubt außer Vorgaben und Zeitbonus                                                       |
+
+### R13c Eröffnung fremd
+
+- Keine eigene Siegbedingung, sondern eine Startstellung (`startstellung: eroeffnung`): Die Partie
+  beginnt nach 6 bis 12 Halbzügen einer Eröffnung, danach gilt das Format der Begegnung (R12 ganze
+  Partie oder R13b Vorteil herausarbeiten). Der Einstieg zeigt die Züge der Eröffnung.
+- Auswahl: fest in der Begegnung (Lichess-Eröffnungen). Die Auswahl nach dem Eröffnungsprofil oder
+  den Schwächen des Lesers ist vorgemerkt, aber nicht gebaut (braucht das Profil zur Laufzeit beim
+  Bau des Auftrags).
+- Karten: wie das Format; Vorgaben nur bei ganzer Partie.
+
+### Gemeinsam für R13 bis R13c
+
+- **Wertung:** nach `zuege` eigenen Zügen und der Antwort des Gegners, Auswertungs-Engine Tiefe 12
+  (`app/src/abenteuer/regeln/kurzform.ts`, `anbindung/useKurzform.ts`). Das Ende heißt in der App
+  „ziel“ (mit Sieger) oder „zielRemis“.
+- **Erzählter Einstieg:** Feld `erzaehlung` der Begegnung (`vorher`, optional `verlauf` als Züge,
+  `nachher` je Ausgang), Texte unter `erzaehlung.*` in `inhalte/abenteuer/texte/de.json`. Die
+  Spielhülle zeigt den Einstieg vor dem ersten eigenen Zug, das Ziel mit den restlichen Zügen
+  während der Partie und den Satz je Ausgang danach.
+- **Kein Wiedereinstieg** (R14, Punkt 1).
+- **Prüfung:** `python -m pipeline.abenteuer.kurzformate` bewertet alle Startstellungen einmal
+  mit derselben Engine wie die App (Fenster wie oben, Spielraum 0,1; Simultanbretter ausgenommen).
+- **Einsatz (17.11.2026):** Etwa ein Drittel der ganzen Straßen- und Nebenpartien ist kurz:
+  Dime auf Weg 3 (Eröffnung fremd mit R13b), Mags am Diner (R13b), Dime in der Kreidenacht (R13a
+  gewinnen), dazu wurden zwei Stellungsduelle zu Endspielen (Sol in Summit City: gewinnen; Ruiz
+  auf der Fähre: Remis halten). Clubkämpfe, Story-Partien und die Meisterschaft bleiben ganze
+  Partien (Balance 15.11.2026).
+
 ### R14 Wiedereinstieg am Kipppunkt (Entscheidungen B1, B2)
 
 Bedingungen, alle nötig:

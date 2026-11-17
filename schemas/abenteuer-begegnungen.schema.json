@@ -7,11 +7,15 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "begegnungen"],
   "properties": {
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": {
+      "const": 1
+    },
     "begegnungen": {
       "type": "array",
       "minItems": 1,
-      "items": { "$ref": "#/$defs/begegnung" }
+      "items": {
+        "$ref": "#/$defs/begegnung"
+      }
     }
   },
   "$defs": {
@@ -25,16 +29,70 @@
           "type": "object",
           "additionalProperties": false,
           "required": ["art"],
-          "properties": { "art": { "const": "partie" } }
+          "properties": {
+            "art": {
+              "const": "partie"
+            }
+          }
         },
         {
           "type": "object",
           "additionalProperties": false,
           "required": ["art", "zuege", "mindestvorteil"],
           "properties": {
-            "art": { "const": "stellungsduell" },
-            "zuege": { "type": "integer", "minimum": 5, "maximum": 30 },
-            "mindestvorteil": { "type": "number", "minimum": 0, "maximum": 5 }
+            "art": {
+              "const": "stellungsduell"
+            },
+            "zuege": {
+              "type": "integer",
+              "minimum": 5,
+              "maximum": 30
+            },
+            "mindestvorteil": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "zuege", "mindestvorteil"],
+          "description": "Vorteil herausarbeiten (Regelwerk R13b): aus einer ausgeglichenen Stellung nach zuege eigenen Zügen mindestens mindestvorteil Bauern",
+          "properties": {
+            "art": {
+              "const": "vorteil"
+            },
+            "zuege": {
+              "type": "integer",
+              "minimum": 5,
+              "maximum": 30
+            },
+            "mindestvorteil": {
+              "type": "number",
+              "minimum": 0.3,
+              "maximum": 5
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "zuege", "ziel"],
+          "description": "Endspiel (Regelwerk R13a): vorgegebene Endspielstellung gewinnen oder Remis halten, längstens zuege eigene Züge",
+          "properties": {
+            "art": {
+              "const": "endspiel"
+            },
+            "zuege": {
+              "type": "integer",
+              "minimum": 5,
+              "maximum": 40
+            },
+            "ziel": {
+              "enum": ["sieg", "remis"]
+            }
           }
         }
       ]
@@ -45,15 +103,24 @@
           "type": "object",
           "additionalProperties": false,
           "required": ["art"],
-          "properties": { "art": { "const": "grundstellung" } }
+          "properties": {
+            "art": {
+              "const": "grundstellung"
+            }
+          }
         },
         {
           "type": "object",
           "additionalProperties": false,
           "required": ["art", "fen"],
           "properties": {
-            "art": { "const": "fen" },
-            "fen": { "type": "string", "minLength": 10 }
+            "art": {
+              "const": "fen"
+            },
+            "fen": {
+              "type": "string",
+              "minLength": 10
+            }
           }
         },
         {
@@ -61,10 +128,32 @@
           "additionalProperties": false,
           "required": ["art", "nummer"],
           "properties": {
-            "art": { "const": "abbildung" },
+            "art": {
+              "const": "abbildung"
+            },
             "nummer": {
               "type": "string",
               "pattern": "^[0-9]{1,2}\\.[0-9]{1,3}$"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "zuege"],
+          "description": "Eröffnung fremd (Regelwerk R13c): Die Partie beginnt nach diesen Zügen ab der Grundstellung (SAN, englisch)",
+          "properties": {
+            "art": {
+              "const": "eroeffnung"
+            },
+            "zuege": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 24,
+              "items": {
+                "type": "string",
+                "minLength": 2
+              }
             }
           }
         }
@@ -82,15 +171,25 @@
         "kartenErlaubt"
       ],
       "properties": {
-        "kennung": { "$ref": "#/$defs/kennung" },
-        "gegner": { "$ref": "#/$defs/kennung" },
+        "kennung": {
+          "$ref": "#/$defs/kennung"
+        },
+        "gegner": {
+          "$ref": "#/$defs/kennung"
+        },
         "farbe": {
           "description": "Farbe des Lesers; „zufall“ wechselt",
           "enum": ["white", "black", "zufall"]
         },
-        "format": { "$ref": "#/$defs/format" },
-        "startstellung": { "$ref": "#/$defs/startstellung" },
-        "kartenErlaubt": { "type": "boolean" },
+        "format": {
+          "$ref": "#/$defs/format"
+        },
+        "startstellung": {
+          "$ref": "#/$defs/startstellung"
+        },
+        "kartenErlaubt": {
+          "type": "boolean"
+        },
         "brett": {
           "description": "Eigener Brettstil dieser Begegnung statt des Stils ihres Ortes (orte.json, brett; docs/spiel/30, Abschnitt 5), etwa das alte Holzbrett vom Dachboden für Ambrose oder Sepia für eine Erinnerung. Blindschach zeigt nie einen Stil",
           "enum": [
@@ -124,8 +223,16 @@
           "additionalProperties": false,
           "required": ["halbzug", "faktor"],
           "properties": {
-            "halbzug": { "type": "integer", "minimum": 1, "maximum": 300 },
-            "faktor": { "type": "number", "minimum": 1, "maximum": 3 }
+            "halbzug": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 300
+            },
+            "faktor": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 3
+            }
           }
         },
         "kandidaten": {
@@ -133,7 +240,10 @@
           "type": "array",
           "minItems": 2,
           "maxItems": 5,
-          "items": { "type": "string", "minLength": 2 }
+          "items": {
+            "type": "string",
+            "minLength": 2
+          }
         },
         "buchbruch": {
           "description": "Partieform Buch und Bruch (Runde 6, Z-1): Der Gegner folgt der Linie (SAN beider Seiten ab der Startstellung); weicht der Leser ab, spielt er auf dieser Stufe weiter",
@@ -144,9 +254,16 @@
             "linie": {
               "type": "array",
               "minItems": 2,
-              "items": { "type": "string", "minLength": 2 }
+              "items": {
+                "type": "string",
+                "minLength": 2
+              }
             },
-            "stufe": { "type": "integer", "minimum": 1, "maximum": 10 }
+            "stufe": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            }
           }
         },
         "kulisse": {
@@ -157,12 +274,17 @@
         "freieKarten": {
           "description": "Karten, die in dieser Begegnung ohne Besitz zusätzlich im Deck liegen, nicht verbraucht werden und nicht für Nadel und Wertung zählen (R29: Mentor-Zug im Halbfinale); Kennungen aus karten.json",
           "type": "array",
-          "items": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          }
         },
         "zeit": {
           "description": "Bedenkzeit (Schritt 13): „wahl“ lässt den Leser vor der Partie wählen (ohne Uhr, Schnellschach, Blitz); eine feste Uhr gehört zur Geschichte (Schaffner 3 + 2). Fehlend: ohne Uhr",
           "oneOf": [
-            { "const": "wahl" },
+            {
+              "const": "wahl"
+            },
             {
               "type": "object",
               "additionalProperties": false,
@@ -173,7 +295,11 @@
                   "minimum": 60,
                   "maximum": 3600
                 },
-                "zuschlag": { "type": "integer", "minimum": 0, "maximum": 60 }
+                "zuschlag": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 60
+                }
               }
             }
           ]
@@ -190,8 +316,15 @@
             "additionalProperties": false,
             "required": ["wenn", "stufe"],
             "properties": {
-              "wenn": { "type": "string", "minLength": 1 },
-              "stufe": { "type": "integer", "minimum": -3, "maximum": 3 },
+              "wenn": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stufe": {
+                "type": "integer",
+                "minimum": -3,
+                "maximum": 3
+              },
               "profil": {
                 "enum": [
                   "angreifer",
@@ -216,33 +349,65 @@
               "additionalProperties": false,
               "required": ["art", "elo"],
               "properties": {
-                "art": { "const": "fest" },
-                "elo": { "type": "integer", "minimum": 300, "maximum": 3200 }
+                "art": {
+                  "const": "fest"
+                },
+                "elo": {
+                  "type": "integer",
+                  "minimum": 300,
+                  "maximum": 3200
+                }
               }
             },
             "gewichte": {
               "type": "object",
-              "propertyNames": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
-              "additionalProperties": { "type": "number", "minimum": 0, "maximum": 3 }
+              "propertyNames": {
+                "type": "string",
+                "pattern": "^[a-z][a-zA-Z0-9]*$"
+              },
+              "additionalProperties": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 3
+              }
             },
             "hoechstverlust": {
               "type": "object",
-              "propertyNames": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
-              "additionalProperties": { "type": "number", "minimum": 0.5, "maximum": 100 }
+              "propertyNames": {
+                "type": "string",
+                "pattern": "^[a-z][a-zA-Z0-9]*$"
+              },
+              "additionalProperties": {
+                "type": "number",
+                "minimum": 0.5,
+                "maximum": 100
+              }
             },
-            "hoechstverlustSonst": { "type": "number", "minimum": 0.5, "maximum": 100 },
-            "menschlich": { "type": "boolean" }
+            "hoechstverlustSonst": {
+              "type": "number",
+              "minimum": 0.5,
+              "maximum": 100
+            },
+            "menschlich": {
+              "type": "boolean"
+            }
           }
         },
         "momente": {
           "description": "Partiemomente (Atmosphäre T5 und T11, docs/spiel/23): eine Sprechzeile (text) oder ein Ink-Dialog (dialog, Uhr des Helden hält an) über dem Brett. Ausgelöst, wenn alle Bedingungen in wenn gelten; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame); vor dem Zug des Helden: koeder (ein Bauer ist schlagbar, danach setzt der Gegner in höchstens zwei Zügen matt), turmopfer (ein Turm kann neben den gegnerischen König ziehen und ginge im Abtausch verloren); nach dem letzten Halbzug: opposition (die ziehende Seite stellt die Könige in Opposition, Kapitel 8), gabel (die gezogene Figur greift zwei lohnende gegnerische Figuren an, Kapitel 1); beide auch mit Seite: …Gegeben nach einem Zug des Helden, …Gegen nach einem Zug des Gegners",
           "type": "array",
-
           "items": {
             "type": "object",
             "additionalProperties": false,
             "required": ["wenn", "sprecher"],
-            "oneOf": [{ "required": ["text"] }, { "required": ["dialog"] }],
+            "oneOf": [
+              {
+                "required": ["text"]
+              },
+              {
+                "required": ["dialog"]
+              }
+            ],
             "properties": {
               "wenn": {
                 "description": "Alle angegebenen Bedingungen müssen gelten",
@@ -303,6 +468,47 @@
                 "type": "string",
                 "pattern": "^[a-z0-9][a-zA-Z0-9.-]*$"
               }
+            }
+          }
+        },
+        "erzaehlung": {
+          "$ref": "#/$defs/erzaehlung"
+        }
+      }
+    },
+    "erzaehlung": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vorher"],
+      "description": "Erzählter Einstieg und Ausklang einer kurzen Partieform (Wunsch des Autors 17.11.2026); alle Werte sind Schlüssel der Spieltexte (texte/de.json), verlauf sind Züge (SAN, englisch) ab der Grundstellung, die der Einstieg zeigt",
+      "properties": {
+        "vorher": {
+          "type": "string",
+          "pattern": "^erzaehlung\\."
+        },
+        "verlauf": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2
+          },
+          "maxItems": 80
+        },
+        "nachher": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sieg": {
+              "type": "string",
+              "pattern": "^erzaehlung\\."
+            },
+            "remis": {
+              "type": "string",
+              "pattern": "^erzaehlung\\."
+            },
+            "niederlage": {
+              "type": "string",
+              "pattern": "^erzaehlung\\."
             }
           }
         }

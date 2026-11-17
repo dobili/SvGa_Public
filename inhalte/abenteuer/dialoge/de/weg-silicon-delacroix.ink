@@ -67,7 +67,7 @@ Spiel ruhig. Ich hol uns Kaffee. #sprecher:mutter #stimmung:laechelt
 -> ruiz_angebot
 
 === ruiz_angebot ===
-Zehn Minuten und fünf Sekunden je Zug, solange die Suppe zieht. Eine Stellung, du hast Weiß. #sprecher:schiffskoch #stimmung:laechelt
+Zehn Minuten und fünf Sekunden je Zug, solange die Suppe zieht. Ein Endspiel, du hast Schwarz und hältst es. #sprecher:schiffskoch #stimmung:laechelt
 + [„Abgemacht.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END

@@ -83,7 +83,7 @@ Mit Uhr. Das Wetter schlägt schneller um, als man denkt. #sprecher:sol #stimmun
 -> sol_angebot
 
 === sol_angebot ===
-Drei Minuten, zwei Sekunden Zuschlag. Eine Stellung, du hast Weiß. Bevor die Wolken kommen? #sprecher:sol #stimmung:laechelt
+Drei Minuten, zwei Sekunden Zuschlag. Ein Endspiel, du hast Weiß. Bevor die Wolken kommen? #sprecher:sol #stimmung:laechelt
 + [„Los.“]
     {not abschiedGesehen:
         Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose #stimmung:laechelt

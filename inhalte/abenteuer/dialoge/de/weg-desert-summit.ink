@@ -250,11 +250,11 @@ Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme. #s
 }
 ~ magsGetroffen = true
 Kein Bildschirm, keine Uhr an der Wand. Nur Bretter, Kreide und Kaffee. #sprecher:erzaehler
-Mags. Ich fahre Kühlwagen und spiele Blitz. Drei Minuten, zwei Sekunden dazu. Gewinnen musst du nicht. Mitspielen schon. #sprecher:mags #stimmung:laechelt
+Mags. Ich fahre Kühlwagen und spiele Blitz aus der Mitte heraus. Drei Minuten, zwei Sekunden dazu. Mitspielen musst du. #sprecher:mags #stimmung:laechelt
 -> mags_angebot
 
 === mags_angebot ===
-+ [Eine Blitzpartie, drei plus zwei.]
++ [„Eine Stellung, drei plus zwei.“]
     ~ beginnePartie("wegDesertSummit.kreideblitz")
     -> END
 + [Erst mal zuschauen.]

@@ -34,6 +34,16 @@ export type Partieformat =
    */
   | { readonly art: "stellungsduell"; readonly zuege: number; readonly mindestvorteil: number }
   /**
+   * Vorteil herausarbeiten (R13b): aus einer ausgeglichenen Stellung; gewonnen, wenn nach `zuege`
+   * eigenen Zügen die Bewertung mindestens `mindestvorteil` Bauern beträgt.
+   */
+  | { readonly art: "vorteil"; readonly zuege: number; readonly mindestvorteil: number }
+  /**
+   * Endspiel (R13a): eine vorgegebene Endspielstellung gewinnen oder Remis halten, längstens
+   * `zuege` eigene Züge; danach entscheidet die Bewertung (regeln/kurzform.ts).
+   */
+  | { readonly art: "endspiel"; readonly zuege: number; readonly ziel: "sieg" | "remis" }
+  /**
    * Wiedereinstieg am Kipppunkt (Entscheidung B1): dieselbe Begegnung ab einer Stellung der
    * verlorenen Partie; `vorherigeKennung` nennt die verlorene Partie.
    */
@@ -47,7 +57,12 @@ export type Startstellung =
   /** Abbildung des Buches als Ausgangsstellung eines Stellungsduells („5.12“). */
   | { readonly art: "abbildung"; readonly nummer: string }
   /** Stellung aus einer Meisterpartie der App (inhalte/zusatzpartien) nach `halbzug` Halbzügen. */
-  | { readonly art: "meisterpartie"; readonly kennung: string; readonly halbzug: number };
+  | { readonly art: "meisterpartie"; readonly kennung: string; readonly halbzug: number }
+  /**
+   * Eröffnung fremd (R13c): Die Partie beginnt nach diesen Zügen (SAN, englisch, ab der
+   * Grundstellung), etwa einer Eröffnung, die der Leser selten spielt.
+   */
+  | { readonly art: "eroeffnung"; readonly zuege: readonly string[] };
 
 /**
  * Alles, was das Spiel der App übergibt, damit sie eine Partie anlegt.

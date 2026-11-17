@@ -13,7 +13,12 @@ const DATEN = path.join(__dirname, "..", "..", "inhalte", "abenteuer");
 const ERZAEHLER = "erzaehler";
 const HELD = "held";
 const AUSGANG = { sieg: "gewonnen", remis: "Remis", niederlage: "verloren" };
-const FORMAT = { partie: "Partie", stellungsduell: "Stellungsduell" };
+const FORMAT = {
+  partie: "Partie",
+  stellungsduell: "Stellungsduell",
+  vorteil: "Vorteil herausarbeiten",
+  endspiel: "Endspiel",
+};
 
 const lade = (name) =>
   JSON.parse(fs.readFileSync(path.join(DATEN, name), "utf8"));

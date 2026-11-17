@@ -37,7 +37,7 @@ Alle sind hier: die von der Brücke, von der Raststätte, aus dem Diner, aus den
 -> mo_runde1
 
 === mo_runde1 ===
-Runde eins. Dime wartet schon, und Dime wartet nicht gern. #sprecher:mo #stimmung:laechelt
+Runde eins. Dime wartet schon, mit einem Endspiel, und Dime wartet nicht gern. #sprecher:mo #stimmung:laechelt
 + [Runde eins spielen]
     ~ beginnePartie("capitalArena.kreidenacht1")
     -> END

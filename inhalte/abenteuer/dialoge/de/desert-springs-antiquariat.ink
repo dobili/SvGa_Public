@@ -45,12 +45,12 @@ Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemand
 // Kapitel 44 (Roman): sieben Kisten im Keller, Ambroses eigene Briefe nach Jahren gebündelt,
 // das Siegel mit einer Fesselung wie in Ironwood.
 ~ okoroGetroffen = true
-Der Kram von dem Brückenbauer. Im Keller. Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #stimmung:nachdenklich #geraeusch:antiquariat
+Dot hat dich geschickt? Der Kram von dem Brückenbauer liegt im Keller. Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #stimmung:nachdenklich #geraeusch:antiquariat
 Pläne, Rechnungen, ein Sextant. Ich wollte es immer durchsehen. Dann kam immer ein Buch dazwischen. #sprecher:okoro #stimmung:laechelt
 {gefundenUmschlag:
     Du legst den Umschlag aus Ironwood auf den Schalter. Mr. Okoro sieht ihn lange an. #sprecher:erzaehler
-    Der Keller ist die Treppe hinunter und dann links. #sprecher:okoro #stimmung:neutral
 }
+Die Treppe hinunter und dann links. #sprecher:okoro #stimmung:neutral
 Sieben Kisten. In der vierten Briefe, gebündelt mit Schnur, jedes Bündel ein Jahr. 1863. 1864. 1865. #sprecher:erzaehler #bild:briefbuendel
 Die Schrift darauf ist schräg und ungeduldig. Meine. Er hat sie aufgehoben. Jeden. #sprecher:ambrose #stimmung:still #bild:aus
 Unter dem Bündel 1866 liegt ein einzelnes Blatt, zweimal gefaltet, mit Wachs verschlossen. Ins Wachs ist eine Stellung gedrückt. #sprecher:erzaehler
@@ -63,10 +63,10 @@ Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer h
 -> kiste_wahl
 
 = kiste_wahl
-* [Die Stellung lösen]
++ [Die Stellung lösen]
     ~ beginneAufgaben("desertSprings.siegel")
     -> END
-* [Nicht jetzt]
++ [„Nicht jetzt.“]
     Die Briefe warten schon lange. Ein paar Tage mehr schaden nicht. #sprecher:okoro #stimmung:laechelt
     -> END
 
@@ -107,7 +107,7 @@ Manche Bücher stehen fünfzig Jahre im Regal, bis der Richtige kommt. Das ist k
 -> END
 
 === okoro_alltag ===
-{~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|Unten im Keller stehen noch sechs Kisten. Pläne, Rechnungen, ein Sextant.|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro #stimmung:laechelt
+{~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|Unten im Keller stehen Kisten von der Bahn. Pläne, Rechnungen, ein Sextant.|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro #stimmung:laechelt
 -> okoro_laden
 
 === okoro_laden ===

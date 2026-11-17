@@ -27,12 +27,12 @@ VAR finchBauerHGezaehlt = false
     -> END
 }
 ~ delphineGetroffen = true
-Delphine. Ich fische hier, seit ich laufen kann. Netz gibt es keins, das Internet kommt nicht über das Wasser. Uns fehlt nichts. #sprecher:delphine #stimmung:laechelt
+Delphine. Ich fische hier, seit ich laufen kann. Empfang gibt es keinen, das Internet kommt nicht über das Wasser. Uns fehlt nichts. #sprecher:delphine #stimmung:laechelt
 -> END
 
 === old_pete ===
 {netzeBestanden:
-    Das Netz hält wieder. Hier, für dich, aus Treibholz. #sprecher:oldPete #stimmung:laechelt
+    Das Netz hält wieder. Den Turm aus Treibholz hab ich dir ans Gestell gelegt. #sprecher:oldPete #stimmung:laechelt
     -> END
 }
 {peteGetroffen: -> old_pete_netze}
@@ -44,10 +44,10 @@ Eine Masche reißt, und das ganze Netz ist offen. Beim Schach genauso. #sprecher
 === old_pete_netze ===
 {netzeBestanden: -> END}
 Hilf mir suchen: Wo ist das Loch? Welche Figur hängt? #sprecher:oldPete #stimmung:laechelt
-+ [Ich suche mit.]
++ [„Ich suche mit.“]
     ~ beginneAufgaben("pelikaninsel.netze")
     -> END
-+ [Später.]
++ [„Nicht jetzt.“]
     Das Netz wartet. Die Fische nicht. #sprecher:oldPete #stimmung:laechelt
     -> END
 
@@ -81,7 +81,7 @@ Netze hängen zum Trocknen am Gestell. In einem ist ein Loch, groß wie eine Fau
 - hatGummistiefel:
     Mit den Gummistiefeln geht es durch den Schlick. Bei jedem Schritt schmatzt es. #sprecher:erzaehler
 - else:
-    Der Schlick ist tief und kalt. Ohne Gummistiefel versinkt {held} bis zu den Knöcheln. #sprecher:erzaehler
+    Der Schlick ist tief und kalt. Ohne Gummistiefel versinkst du bis zu den Knöcheln. #sprecher:erzaehler
 }
 -> END
 
@@ -107,7 +107,7 @@ Seit dem Winter ist es aus. Die Batterie gibt es nur drüben in Silicon Bay. #sp
 {
 - hatBatterie:
     ~ leuchtfeuerAn = true
-    {held} setzt die Batterie ein. Das Leuchtfeuer flackert, dann blinkt es über die Bucht. #sprecher:erzaehler
+    Du setzt die Batterie ein. Das Leuchtfeuer flackert, dann blinkt es über die Bucht. #sprecher:erzaehler
 - else:
     Ohne Batterie bleibt das Leuchtfeuer dunkel. #sprecher:erzaehler
 }

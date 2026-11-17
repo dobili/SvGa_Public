@@ -30,6 +30,10 @@ VAR flashbackLondonBestanden = false
 VAR londonKaffeehausGesehen = false
 VAR zeitungsjungeGesehen = false
 VAR londonSchlussGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen: Wer die Erinnerung
+// erst danach besucht, geht ohne seine Stimme durch London.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Strand
 
@@ -42,14 +46,18 @@ VAR londonSchlussGesehen = false
 Ein Junge mit Schirmmütze schwenkt eine Zeitung über dem Kopf. Der Wind trägt den Geruch der Themse heran. #sprecher:erzaehler
 Extra! Extra! #sprecher:zeitungsjunge #stimmung:laechelt
 Die ganze Welt kommt nach London, zur großen Ausstellung! Und zum Schachturnier! #sprecher:zeitungsjunge #stimmung:laechelt
-Ein Turnier. Die besten Spieler der Welt, in einer Stadt. #sprecher:ambrose #stimmung:jung
-Und ich bin hier, um Klavierholz zu kaufen. #sprecher:ambrose #stimmung:jung
-London, 1851. Bleib bei mir, {held}. Ich zeige dir, was ich sah. #sprecher:ambrose #stimmung:jung
+{not abschiedGesehen:
+    Ein Turnier. Die besten Spieler der Welt, in einer Stadt. #sprecher:ambrose #stimmung:jung
+    Und ich bin hier, um Klavierholz zu kaufen. #sprecher:ambrose #stimmung:jung
+    London, 1851. Bleib bei mir, {held}. Ich zeige dir, was ich sah. #sprecher:ambrose #stimmung:jung
+}
 -> END
 
 === droschke ===
 Eine Droschke wartet am Straßenrand, das Pferd schnaubt in der kalten Luft. Der Kutscher schläft unter seinem Hut. #sprecher:erzaehler
-Mein Vater nahm immer die Droschke. Ich ging lieber zu Fuß, da sieht man mehr. #sprecher:ambrose #stimmung:jung
+{not abschiedGesehen:
+    Mein Vater nahm immer die Droschke. Ich ging lieber zu Fuß, da sieht man mehr. #sprecher:ambrose #stimmung:jung
+}
 -> END
 
 === kaffeehaus_betreten ===
@@ -60,13 +68,17 @@ Mein Vater nahm immer die Droschke. Ich ging lieber zu Fuß, da sieht man mehr. 
 ~ londonKaffeehausGesehen = true
 Du stehst in einer Straße. Alles ist braun und golden, wie eine alte Fotografie, in die jemand hineingegangen ist. #sprecher:erzaehler
 Du siehst auf Hände hinunter, die nicht deine sind. Schmal, mit Tintenflecken. Die Stiefel drücken. #sprecher:erzaehler #pause
-Der Strand. So heißt die Straße. Dort, das Haus mit dem Schild. Geh hinein. #sprecher:ambrose #stimmung:jung
-Die Stimme kommt aus dir. #sprecher:erzaehler
+{not abschiedGesehen:
+    Der Strand. So heißt die Straße. Dort, das Haus mit dem Schild. Geh hinein. #sprecher:ambrose #stimmung:jung
+    Die Stimme kommt aus dir. #sprecher:erzaehler
+}
 * [Hineingehen]
 - Die Tür ist schwer. Dahinter ist es warm und voll, viele Stimmen, die alle halblaut sprechen. #sprecher:erzaehler #musik:ambrose.london #geraeusch:kaffeehaus
 Zeitungen an Holzstangen. Kaffee in dicken Tassen. Männer mit Backenbärten über Brettern, und hinter ihnen Zuschauer, drei Reihen tief. #sprecher:erzaehler
-Ich bin damals hineingegangen, weil es regnete. Mein Vater sagte, ich solle nicht lange bleiben. #sprecher:ambrose #stimmung:jung
-Ich bin lange geblieben. #sprecher:ambrose #stimmung:jung
+{not abschiedGesehen:
+    Ich bin damals hineingegangen, weil es regnete. Mein Vater sagte, ich solle nicht lange bleiben. #sprecher:ambrose #stimmung:jung
+    Ich bin lange geblieben. #sprecher:ambrose #stimmung:jung
+}
 -> END
 
 // ---------------------------------------------------------------- Kaffeehaus
@@ -93,14 +105,20 @@ Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht 
     -> END
 }
 In der Mitte ein Tisch, um den es still ist. Zwei Männer. Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler
-Anderssen. Aus Breslau. Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
-Der andere heißt Kieseritzky. In Paris gibt er Unterricht, fünf Franc die Stunde. Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
+{not abschiedGesehen:
+    Anderssen. Aus Breslau. Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
+    Der andere heißt Kieseritzky. In Paris gibt er Unterricht, fünf Franc die Stunde. Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
+}
 Es sieht aus wie ein Unfall. Weiß hat schon einen Läufer hergegeben, die schwarze Dame steht tief in der weißen Stellung und frisst. #sprecher:erzaehler
 * [Hinsehen]
 - Der große Mann zieht einen Läufer. Mitten hinein, tief ins schwarze Lager. Ein Raunen. #sprecher:erzaehler
 Schwarz schlägt einen Turm. Einfach so, einen ganzen Turm. #sprecher:erzaehler #pause:2
-Jetzt. Halt. Schau hin. #sprecher:ambrose #stimmung:jung
-Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose #stimmung:jung
+{abschiedGesehen:
+    Weiß hat einen Turm weniger, und der zweite Turm hängt auch. #sprecher:erzaehler
+- else:
+    Jetzt. Halt. Schau hin. #sprecher:ambrose #stimmung:jung
+    Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose #stimmung:jung
+}
 * [Zusehen und mitraten]
     ~ beginneAufgaben("riverton.flashbackLondon")
     -> END
@@ -113,7 +131,9 @@ Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du ge
 === rueckkehr ===
 Eine große Uhr an der Wand des Kaffeehauses. Ihr Ticken klingt genau wie das der Bahnhofsuhr in Riverton. #sprecher:erzaehler
 {not flashbackLondonBestanden:
-    Noch nicht, {held}. Erst sollst du sehen, was am Tisch in der Mitte geschieht. #sprecher:ambrose #stimmung:jung
+    {not abschiedGesehen:
+        Noch nicht, {held}. Erst sollst du sehen, was am Tisch in der Mitte geschieht. #sprecher:ambrose #stimmung:jung
+    }
     -> rueckkehr_wahl
 }
 {londonSchlussGesehen: -> rueckkehr_telegraf}
@@ -128,10 +148,14 @@ Niemand sagt etwas. #sprecher:erzaehler
 === rueckkehr_telegraf ===
 Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht. #sprecher:erzaehler #klang:lachen_kieseritzky
 Er schüttelt dem anderen die Hand mit beiden Händen, ruft etwas auf Französisch und läuft zur Tür, ohne Hut. #sprecher:erzaehler #musik:london.lauf
-Ambroses Stimme ist wieder die alte. Sie zittert. #sprecher:erzaehler #pause
-Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose #stimmung:laechelt
-Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose #stimmung:nachdenklich
-Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #stimmung:laechelt #pause:2
+{abschiedGesehen:
+    Er läuft zum Telegrafenamt, um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:erzaehler #pause:2
+- else:
+    Ambroses Stimme ist wieder die alte. Sie zittert. #sprecher:erzaehler #pause
+    Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose #stimmung:laechelt
+    Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose #stimmung:nachdenklich
+    Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #stimmung:laechelt #pause:2
+}
 -> rueckkehr_wahl
 
 === rueckkehr_wahl ===

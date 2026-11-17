@@ -41,6 +41,9 @@ VAR streamBelohnt = false
 VAR kreide2Gefunden = false
 VAR finchBauerBGefunden = false
 VAR seite04Gefunden = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mrs. Kowalczyk
 
@@ -89,7 +92,9 @@ Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #sti
 
 === joggerin_angebot ===
 Eine Stellung, zehn Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
-Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
@@ -99,7 +104,9 @@ Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #spreche
 
 === joggerin_nach_niederlage ===
 Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmung:lacht
-Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
@@ -187,7 +194,9 @@ Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschl
 
 === stream_angebot ===
 Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. Machst du mit? #sprecher:kiki #stimmung:laechelt
-Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Ich spiele mit.“]
     ~ beginneAufgaben("wegIronwoodSilicon.stream")
     -> END
@@ -199,7 +208,9 @@ Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:n
 // Partie mit Kandidatenwahl (mittel-2): Nach 1.e4 e5 2.Lc4 Sc6 3.Dh5 wählt der Chat zwischen g6, De7
 // und Sf6. Sf6 ist der Fehler: Dxf7 ist matt (Kapitel 4, Fallenkabinett).
 Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
-Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Los geht's.“]
     ~ beginnePartie("wegIronwoodSilicon.stream")
     -> END
@@ -216,7 +227,9 @@ Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #s
 }
 Der Chat jubelt. Dann friert das Bild auf dem Laptop ein. Am Funkmast neben der Brücke blinkt eine rote Leuchte: „Testfeld Signal“. #sprecher:erzaehler
 Das ist jedes Mal so, wenn die da testen. Perfect Move sponsert mich. Ich frage lieber nicht, was sie testen. #sprecher:kiki #stimmung:still
-Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose #stimmung:nachdenklich
+}
 Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #stimmung:froh
 ~ gibFund("fotoLive")
 -> END
@@ -234,7 +247,9 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
 }
 An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. #sprecher:erzaehler
 Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
-Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose #stimmung:laechelt
+}
 ~ kreide2Gefunden = true
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
 ~ gibFund("kreide2")
@@ -258,7 +273,9 @@ Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß i
     -> END
 }
 Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
-Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
+}
 ~ seite04Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite04")
@@ -268,12 +285,16 @@ Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:
 
 === schild_smart_city ===
 Am Fuß der Rampe steht ein Schild: „Ab hier: Smart City. Bitte Sensoren nicht verdecken.“ #sprecher:erzaehler
-Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 
 === werbetafel_zero ===
 Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint die Schrift: „ZERO. Nie wieder Fehler.“ #sprecher:erzaehler
-Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #stimmung:nachdenklich #pause
-Ich kannte keinen Spieler, der das versprechen konnte. Nicht einmal Morphy. #sprecher:ambrose #stimmung:nachdenklich
+{not abschiedGesehen:
+    Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #stimmung:nachdenklich #pause
+    Ich kannte keinen Spieler, der das versprechen konnte. Nicht einmal Morphy. #sprecher:ambrose #stimmung:nachdenklich
+}
 -> END
 

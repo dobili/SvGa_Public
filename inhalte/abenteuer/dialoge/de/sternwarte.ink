@@ -18,6 +18,9 @@ VAR ambroseSternwarte = 0
 // Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
 // Zähler und dem Fund, damit Abbrechen oder Neuladen kein Stück verliert.
 VAR finchBauerGGezaehlt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === ngata ===
 {
@@ -55,7 +58,7 @@ Lucía. Ich habe ein Sternbild gefunden, das noch keiner kennt. Ich nenne es Spr
 === teleskop ===
 ~ ambroseSternwarte = ambroseSternwarte + 1
 Durch das große Teleskop schimmert der Mond. Man sieht Krater, scharf wie Felder auf einem Brett. #sprecher:erzaehler
-{ambroseSprichtWieder and ambroseSternwarte == 1:
+{ambroseSprichtWieder and ambroseSternwarte == 1 and not abschiedGesehen:
     Vierundsechzig Felder, und trotzdem kommt man nie ans Ende. Wie da oben. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END

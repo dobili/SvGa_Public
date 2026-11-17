@@ -149,6 +149,8 @@ function besucheKarte(welt, st) {
       wege.push(a);
       continue;
     }
+    // Haken für Werkzeuge, deren Spieler etwas liegen lässt (ambrose-danach.cjs und -eilig.cjs).
+    if (st.auslassen?.(welt, st, hier, o)) continue;
     const schl = hier + "." + o.name,
       gleich = st.letzteSig[schl] === jetzt;
     if (gleich && (st.versuche[schl] || 0) >= VERSUCHE_JE_ZUSTAND) continue;

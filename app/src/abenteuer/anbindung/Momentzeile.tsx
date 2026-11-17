@@ -18,7 +18,12 @@ import type { Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
 import { faelligerMoment, type Partiemoment } from "../regeln/partiemomente";
 import { tSpiel } from "../texte/texte";
 import { tonregie } from "../ton/tonregie";
-import { AMBROSE, ambroseFehlt, anwesendeMomente } from "../regeln/abwesenheit";
+import {
+  AMBROSE,
+  ambroseFehlt,
+  ambroseVerabschiedet,
+  anwesendeMomente,
+} from "../regeln/abwesenheit";
 import { useAbenteuerstand } from "./dienste";
 import { useBegegnung } from "./useBegegnung";
 import { Momentdialog } from "./Momentdialog";
@@ -101,10 +106,11 @@ export function Momentzeile({
   readonly s: Partiesteuerung;
   readonly partie: Partie;
 }) {
-  // Im Tiefpunkt spricht Ambrose nicht (regeln/abwesenheit.ts).
+  // Im Tiefpunkt und nach dem Abschied spricht Ambrose nicht (regeln/abwesenheit.ts).
   const stand = useAbenteuerstand();
   const alle = useMomente(partie.einstellung.abenteuer?.kennung ?? "");
-  const fehlt = ambroseFehlt(stand?.dialogvariablen ?? {});
+  const variablen = stand?.dialogvariablen ?? {};
+  const fehlt = ambroseFehlt(variablen) || ambroseVerabschiedet(variablen);
   const momente = useMemo(() => anwesendeMomente(alle, fehlt), [alle, fehlt]);
   const verlauf = useVerlauf(partie, momente, s.jetztMs);
   const faellig = useMemo(

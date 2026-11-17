@@ -39,6 +39,9 @@ VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
 VAR ambroseNenntNamen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -69,6 +72,7 @@ Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:jun
 {nachtImLesesaal and not teamAngekommen: -> team_kommt}
 Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“ #sprecher:erzaehler
 Darauf ein Kind, das in einen Bildschirm lächelt. Es ist das einzige Glänzende weit und breit. #sprecher:erzaehler
+{abschiedGesehen: -> END}
 Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
 * [„Das ist die Firma von Victors Vater.“]
     So. Dann hat die Drohung einen Namen. #sprecher:ambrose #stimmung:nachdenklich
@@ -118,7 +122,7 @@ Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher
 Die da ist Kassiopeia. Sieht aus wie ein W. Und das ist der Große Wagen, und das … #sprecher:mae #stimmung:laechelt
 Mae. Du musst nicht alles benennen. #sprecher:dex #stimmung:laechelt
 Doch. Sonst weiß man nicht, was man sieht. #sprecher:mae #stimmung:laechelt
-* [Die Hand auf das Brett legen]
+* {not abschiedGesehen} [Die Hand auf das Brett legen]
     Das Brett liegt neben dir auf der Decke, in sein Handtuch gewickelt. #sprecher:erzaehler
     -> sterne_ambrose ->
 * [Nach oben sehen]
@@ -289,7 +293,9 @@ Rosa legt die Angel quer über die Knie und stellt die Figuren auf. #sprecher:er
 
 === rosa_nach_sieg ===
 Nicht gezappelt. Gut. Noch eine Runde, während die Fische schlafen? #sprecher:rosa #stimmung:laechelt
-Ruhige Hände, ruhiger Kopf. Das hatte ich in deinem Alter nicht. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ruhige Hände, ruhiger Kopf. Das hatte ich in deinem Alter nicht. #sprecher:ambrose #stimmung:laechelt
+}
 + [„Noch eine.“]
     -> rosa_duell
 + [„Nicht jetzt.“]
@@ -499,7 +505,9 @@ Mr. Kettering sieht hinüber und sagt nichts. Er nickt dir zu und lässt den Mot
 === kettering_d ===
 Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doch.“ #sprecher:erzaehler
 Einunddreißig Jahre. Und ein paar Monate. Wer zählt mit? #sprecher:kettering #stimmung:laechelt
-Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
+}
 -> bus_zurueck
 
 // ================================================================ Runde 11: Roman, Kapitel 11

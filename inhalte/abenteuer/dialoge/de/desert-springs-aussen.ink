@@ -24,6 +24,9 @@ VAR nadelDesertSprings = 0
 VAR abendMotelGesehen = false
 VAR endeAkt3Gesehen = false
 VAR highwayAufbruchGesehen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -65,7 +68,7 @@ Buck. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck #
 === buck_angebot ===
 Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du dich? #sprecher:buck #stimmung:laechelt
 + [„Klar.“]
-    {versoehnungGesehen:
+    {versoehnungGesehen and not abschiedGesehen:
         Er redet so schnell, wie er zieht. Lass ihn reden. Du denkst. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
@@ -79,7 +82,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
     ~ buckKarteGegeben = true
     Mitten in der Partie hast du einen guten Zug gefunden und gesagt: „Na, das wird teuer.“ Buck hat sofort gezogen, zu schnell. #sprecher:erzaehler
     Na, jetzt willst du's aber wissen! Hier, die Karte hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
-    {versoehnungGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
+    {versoehnungGesehen and not abschiedGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
 Schnell und gut. Das gibt's hier draußen selten. Noch eine Runde? #sprecher:buck #stimmung:laechelt

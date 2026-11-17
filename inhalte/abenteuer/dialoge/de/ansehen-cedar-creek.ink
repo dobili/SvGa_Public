@@ -19,6 +19,9 @@ VAR angesehenZettelTurm = false
 VAR angesehenComicheft = false
 VAR angesehenAutomat = false
 VAR angesehenKellertuer = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Bibliothek
 
@@ -37,7 +40,9 @@ VAR angesehenKellertuer = false
 - else:
     ~ angesehenGlobus = true
     Ein alter Globus mit vergilbten Meeren. Manche Länder darauf gibt es heute nicht mehr. #sprecher:erzaehler
-    Ich suche New Orleans. Da. Es ist noch da. #sprecher:ambrose #stimmung:froh
+    {not abschiedGesehen:
+        Ich suche New Orleans. Da. Es ist noch da. #sprecher:ambrose #stimmung:froh
+    }
 }
 -> END
 
@@ -47,7 +52,9 @@ VAR angesehenKellertuer = false
 - else:
     ~ angesehenSchildFluestern = true
     Ein Schild am Tresen: „Bitte flüstern“. #sprecher:erzaehler
-    Flüstern. Das kann ich. Mich hörst ohnehin nur du. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Flüstern. Das kann ich. Mich hörst ohnehin nur du. #sprecher:ambrose #stimmung:laechelt
+    }
 }
 -> END
 
@@ -81,7 +88,9 @@ VAR angesehenKellertuer = false
 - else:
     ~ angesehenBoxerfoto = true
     Ein vergilbtes Foto: ein Boxer mit erhobenen Fäusten, darunter „Cedar Creek, 1923“. #sprecher:erzaehler
-    Ein Mann mit zwei Talenten. Das zweite war das bessere. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Ein Mann mit zwei Talenten. Das zweite war das bessere. #sprecher:ambrose #stimmung:laechelt
+    }
 }
 -> END
 
@@ -91,7 +100,9 @@ VAR angesehenKellertuer = false
 - else:
     ~ angesehenWasserfleck = true
     An der Wand ein Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler
-    Ein Springer. Das Wasser hat sich Mühe gegeben. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Ein Springer. Das Wasser hat sich Mühe gegeben. #sprecher:ambrose #stimmung:laechelt
+    }
 }
 -> END
 
@@ -121,6 +132,8 @@ VAR angesehenKellertuer = false
 - else:
     ~ angesehenAutomat = true
     Ein Automat für Waschpulver und Kaugummi. Eine Kugel Kaugummi kostet eine Münze. #sprecher:erzaehler
-    Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
+    }
 }
 -> END

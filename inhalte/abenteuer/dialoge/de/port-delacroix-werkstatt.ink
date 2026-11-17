@@ -34,6 +34,9 @@ VAR flashbackWerkstattBestanden = false
 VAR claireErzaehlt = false
 VAR angesehenFotoWand = false
 VAR angesehenLaptop = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Henri
 
@@ -67,7 +70,14 @@ Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem. #sprecher:henri #
 Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen. #sprecher:henri #stimmung:nachdenklich
 Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. Ich fand, er sieht nett aus. #sprecher:henri #stimmung:laechelt
 * [Das Foto ansehen]
-- Der Deckel des Geigenkastens ist zu. Du hast ihn nicht angerührt. #sprecher:erzaehler #musik:aus #pause:2
+-
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: {held} erkennt ihn selbst, dann
+// kommt Céleste.
+{abschiedGesehen:
+    Du kennst das Gesicht. #sprecher:erzaehler #musik:aus #pause:2
+    -> tuer
+}
+Der Deckel des Geigenkastens ist zu. Du hast ihn nicht angerührt. #sprecher:erzaehler #musik:aus #pause:2
 Das bin ich. #sprecher:ambrose #stimmung:still #musik:ambrose.verstimmt
 * [Hinsehen]
 - Du siehst ihn, zum ersten Mal seit sechs Tagen: schmal, hochgeschlossen, blasser als früher. #sprecher:erzaehler
@@ -78,8 +88,12 @@ Keiner weiß mehr, wer. Ein Spieler. Sie haben nicht gern von mir gesprochen. #s
 - Nein. Lass. Sechs Generationen. Sie haben weitergemacht. Jede Saite muss stimmen. #sprecher:ambrose #stimmung:bitter
 Mein Vater hätte ihn sehr gemocht. #sprecher:ambrose #stimmung:still
 * [Nichts sagen]
-- Eine Tür schlägt. Ein Mädchen, fünfzehn vielleicht, ein Skateboard unter dem Arm, Kopfhörer um den Hals. #sprecher:erzaehler #musik:celeste
+- -> tuer
+
+= tuer
+Eine Tür schlägt. Ein Mädchen, fünfzehn vielleicht, ein Skateboard unter dem Arm, Kopfhörer um den Hals. #sprecher:erzaehler #musik:celeste
 Papa, hast du mein Ladekabel … Oh. Besuch. Schach? Das ist doch was für alte Leute. #sprecher:celeste #stimmung:ueberrascht
+{abschiedGesehen: -> END}
 Für sehr alte. #sprecher:ambrose #stimmung:lacht
 Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 -> END
@@ -121,9 +135,16 @@ Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er
 ~ celesteNachPartieGesehen = true
 ~ ambroseSprichtWieder = true
 Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er gehört. #sprecher:erzaehler
-Hast du das gesehen? Das hat sie von … #sprecher:ambrose #stimmung:froh
-Er bricht ab. Er lächelt über sich selbst. #sprecher:erzaehler
+{not abschiedGesehen:
+    Hast du das gesehen? Das hat sie von … #sprecher:ambrose #stimmung:froh
+    Er bricht ab. Er lächelt über sich selbst. #sprecher:erzaehler
+}
 Okay. Das war nicht so schlecht. Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
+// Nach dem Abschied (abschiedGesehen) endet die Szene mit Céleste; Ambroses Gespräch entfällt.
+{abschiedGesehen:
+    Draußen rattert das Skateboard über das Pflaster, kleiner werdend. #sprecher:erzaehler
+    -> END
+}
 Draußen rattert das Skateboard über das Pflaster, kleiner werdend. Ambrose sieht ihr nach. #sprecher:erzaehler
 * [Warten]
 - Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat. Auf diesem Brett. #sprecher:ambrose #stimmung:froh
@@ -160,9 +181,14 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 === werkbank_flashback ===
 Über der Tür hängt ein Schild, neuer als die anderen, die Buchstaben alt: „Whitlock-Duval. Facteurs de pianos depuis 1826.“ #sprecher:erzaehler
 Frisch gehobeltes Holz. Leim, warm. Etwas Harziges. Ein Geruch, den du kennst, ohne ihn zu kennen. #sprecher:erzaehler
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr; die Werkstatt erinnert sich allein.
+{abschiedGesehen: -> golden}
 {fotoAmbroseGesehen:Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn.|Im Geigenkasten unter deinem Arm bewegt sich nichts. Du hörst ihn, zum ersten Mal seit fünf Tagen.} #sprecher:erzaehler
 Hier. Hier war es. #sprecher:ambrose #stimmung:fern #musik:ambrose.verstimmt
-Mehr nicht. Aber die Werkstatt wird golden. #sprecher:erzaehler
+-> golden
+
+= golden
+{abschiedGesehen:Die Werkstatt wird golden.|Mehr nicht. Aber die Werkstatt wird golden.} #sprecher:erzaehler
 + [Mitgehen]
     -> werkstatt_1840
 + [Zurück in die Gegenwart]
@@ -209,6 +235,11 @@ Bei jedem Opfer klatscht Claire. Sie versteht nichts davon. Sie klatscht, weil d
 * [„Abgemacht. Aber du musst darauf aufpassen.“]
 - „Ich pass immer auf“, sagt Claire. #sprecher:erzaehler
 Das Gold verblasst. Du stehst in der Werkstatt, dein Gesicht ist nass, und du weißt nicht, ob es deine Tränen sind. #sprecher:erzaehler #musik:aus
+// Nach dem Abschied (abschiedGesehen) sagt es der Erzähler: Was Ambrose über Claire erzählt hätte.
+{abschiedGesehen:
+    Claire hat aufgepasst. Das Brett steht heute im Norden, in einer Stadt mit einem Wasserfall. #sprecher:erzaehler
+    -> END
+}
 Claire. Sie hat nach Norden geheiratet. In eine Stadt mit einem Wasserfall. Sie hat das Brett geerbt. #sprecher:ambrose #stimmung:still
 Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
 * [Warten]

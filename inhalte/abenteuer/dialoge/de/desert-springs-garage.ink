@@ -56,6 +56,9 @@ VAR dotFernpartieBesprochen = false
 // Lernkarte Taktikspürnase (tomas_karte); hatKarteTaktikspuernase setzt die Hülle aus dem Besitz.
 VAR lernkarteTaktikspuernase = false
 VAR hatKarteTaktikspuernase = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -346,7 +349,11 @@ Du kommst aus dem Kaff. #sprecher:dot #stimmung:ueberrascht
 - Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. Oben ein Wasserfall. #sprecher:erzaehler #bild:postkarten_wasserfall
 Dann weißt du vielleicht, was sie gezogen hätte. #sprecher:dot #stimmung:nachdenklich #bild:aus
 ~ gibFund("postkartenMargaret")
-An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings
+{abschiedGesehen:
+    Vierzig Jahre, Zug um Zug, mit der Post. #sprecher:erzaehler #musik:desertSprings
+- else:
+    An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings
+}
 ->->
 
 === dot_reihe ===
@@ -365,7 +372,9 @@ Meine Aufgaben greifen den König an. Langsam, Liebes, wie ein Brief. #sprecher:
 Du magst alte Sachen, oder? Dein Brett sieht aus, als hätte es Geschichten. #sprecher:dot #stimmung:laechelt
 Mr. Okoro im Antiquariat hat den Kram von einem alten Brückenbauer im Keller. #sprecher:dot #stimmung:nachdenklich
 Kisten voller Briefe. Frag ihn. #sprecher:dot #stimmung:laechelt
-Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #stimmung:ueberrascht #pause
+{not abschiedGesehen:
+    Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #stimmung:ueberrascht #pause
+}
 -> END
 
 // Nebenaufgabe: Margarets Partie zu Ende spielen (Dot steht besser, Turm auf der siebten Reihe).
@@ -373,7 +382,9 @@ Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #stimmung:ueberrascht 
 Dot legt ein kleines Steckbrett auf die Theke. Die Stellung nach dem einunddreißigsten Zug, seit Jahren unverändert. #sprecher:erzaehler
 Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem Lager. Spielst du für sie weiter, Liebes? #sprecher:dot #stimmung:nachdenklich
 + [„Ich spiele für Margaret.“]
-    Sie hat nie schnell gezogen. Lass dir Zeit. #sprecher:ambrose #stimmung:nachdenklich
+    {not abschiedGesehen:
+        Sie hat nie schnell gezogen. Lass dir Zeit. #sprecher:ambrose #stimmung:nachdenklich
+    }
     ~ beginnePartie("desertSprings.dotFernpartie")
     -> END
 + [„Nicht jetzt.“]
@@ -394,7 +405,9 @@ Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem L
 }
 Sie zieht einen Faden von der Nadel im Nordosten zu einer leeren Postkarte und knotet ihn fest. #sprecher:erzaehler
 Jetzt ist die Partie fertig. #sprecher:dot #stimmung:nachdenklich
-An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. Jetzt weiß ich, wofür. #sprecher:ambrose #stimmung:still
+{not abschiedGesehen:
+    An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. Jetzt weiß ich, wofür. #sprecher:ambrose #stimmung:still
+}
 -> END
 
 === dot_alltag ===

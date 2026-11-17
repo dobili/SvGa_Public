@@ -17,6 +17,9 @@ VAR maeGetroffen = false
 VAR formularGefunden = false
 VAR formularEntziffert = false
 VAR okaforGetroffen = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === boateng ===
 {
@@ -105,8 +108,12 @@ Sehr alt. Gib mir einen Moment und eine Waschladung Zeit. #sprecher:boateng #sti
 Das ist eine alte Schrift. Die Züge sind englisch notiert, K für König, Kt für Springer. #sprecher:boateng #stimmung:nachdenklich
 Er schreibt die Züge Zeile für Zeile in heutiger Notation auf einen Zettel und reicht ihn dir. #sprecher:erzaehler
 // Gutachten K1.6: Welche Partie es ist, bleibt offen bis zum Steg.
-Das sind Züge von mir. In meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig #pause:2
-Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose #stimmung:nachdenklich
+{abschiedGesehen:
+    Es sind seine Züge. In seiner eigenen Hand. #sprecher:erzaehler #pause:2
+- else:
+    Das sind Züge von mir. In meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig #pause:2
+    Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose #stimmung:nachdenklich
+}
 * [„Danke, Mr. Boateng.“]
     Gern. Bring mehr davon, wenn du welche findest. #sprecher:boateng #stimmung:laechelt
 * [„Woher können Sie das lesen?“]

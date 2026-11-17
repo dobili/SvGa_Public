@@ -212,6 +212,8 @@ Sie steckt dir die Nadel an. Die achte. #sprecher:erzaehler #klang:fanfare
 Victor klatscht, allein, dreimal, ungeschickt. Dann Mama, Kit und Mr. Haraldsen. #sprecher:erzaehler
 In der Tür steht Juno, keuchend. #sprecher:erzaehler
 Acht! Acht! Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh
+// Nach dem Abschied (abschiedGesehen) antwortet Ambrose nicht mehr; die Szene endet bei Juno.
+{abschiedGesehen: -> END}
 * [„Es war keine schöne Partie.“]
 - Sie war makellos. #sprecher:ambrose #stimmung:laechelt
 Fast. Ein, zwei Züge waren ungenau. Aber sie war schön. Ich wusste nicht, dass etwas so Stilles schön sein kann. #sprecher:ambrose #stimmung:froh
@@ -268,16 +270,28 @@ Ein Turm, der hängt und hängt und nicht geschlagen werden darf, weil dahinter 
     }
 }
 {ausgangSummitCityClubkampf == "":Zum ersten Mal lächelt sie.|Sie lächelt.} Es macht sie zwanzig Jahre jünger. #sprecher:erzaehler
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: gleich zum Zettel, den {held} dann
+// selbst erkennt.
+{abschiedGesehen: -> zettel}
 Achtzehnhundertfünfundneunzig. Neunundzwanzig Jahre nach mir. #sprecher:ambrose #stimmung:nachdenklich
 Ich dachte, danach hätten sie nur noch gerechnet. Brückenbauer, überall. Und sie spielen noch schöner. Schöner als wir. #sprecher:ambrose #stimmung:ueberrascht
 * [„Macht dich das traurig?“]
 - Es tröstet mich. Ich habe geglaubt, ich hätte etwas verpasst. Dabei habe ich nur den Anfang gesehen. #sprecher:ambrose #stimmung:froh
 Die meisten Leute reden mit sich selbst, wenn sie Schach lernen. Du hörst dabei zu. Das ist ungewöhnlich. Ich frage nicht. #sprecher:ward #stimmung:nachdenklich
+-> zettel
+
+= zettel
 Zwischen den Seiten steckt ein Zettel in fremder Schrift. Züge aus einer alten Fernpartie, vier Paare. Ward weiß nicht, woher er kommt. #sprecher:erzaehler
-Das ist meine Partie gegen Hale. #sprecher:ambrose #stimmung:ueberrascht #pause
+{abschiedGesehen:
+    Du kennst die Züge. Es ist seine Partie gegen Hale. #sprecher:erzaehler #pause
+- else:
+    Das ist meine Partie gegen Hale. #sprecher:ambrose #stimmung:ueberrascht #pause
+}
 * [Hinaussehen]
 - Unten im Tal steigt ein Feuerwerk auf, grün, in der Form von etwas mit Flügeln. #sprecher:erzaehler
-Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 
 // ---------------------------------------------------------------- Victor verliert (Szene 87)

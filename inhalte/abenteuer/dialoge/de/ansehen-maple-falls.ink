@@ -34,6 +34,9 @@ VAR angesehenKreidebrett = false
 VAR lilyGeholfen = false
 VAR angesehenBildschirmPult = false
 VAR nadelCedarCreek = 0
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Wohnzimmer
 
@@ -54,7 +57,7 @@ VAR nadelCedarCreek = 0
         ~ angesehenPizzakarton = true
     }
     Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu. #sprecher:erzaehler
-    {ersteLektionBesprochen:
+    {ersteLektionBesprochen and not abschiedGesehen:
         Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
@@ -68,7 +71,9 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenTischPizzakarton = true
     Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. Fast nicht. #sprecher:erzaehler
-    Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
+    }
 }
 -> END
 
@@ -79,7 +84,7 @@ VAR nadelCedarCreek = 0
 {
 - lilyGeholfen:
     Neben dem Kreidebrett ist ein L gemalt, dann noch eins und noch eins, bis zur Ecke. Weiß, schwarz, weiß, schwarz. #sprecher:erzaehler
-    {not angesehenKreidebrett:
+    {not angesehenKreidebrett and not abschiedGesehen:
         ~ angesehenKreidebrett = true
         Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
     }
@@ -101,7 +106,7 @@ VAR nadelCedarCreek = 0
         ~ angesehenHutschachtel = true
     }
     Eine runde Hutschachtel mit Samtband. Darin liegt ein Damenhut mit einer kleinen Feder. #sprecher:erzaehler
-    {ersteLektionBesprochen:
+    {ersteLektionBesprochen and not abschiedGesehen:
         Ein Hut für den Sonntag. Meine Schwester trug so einen zur Kirche. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
@@ -109,13 +114,13 @@ VAR nadelCedarCreek = 0
 
 === spiegel ===
 {angesehenSpiegel:
-    Im Spiegel nur du und die Kisten. Ambrose schweigt diesmal höflich. #sprecher:erzaehler
+    Im Spiegel nur du und die Kisten. {not abschiedGesehen:Ambrose schweigt diesmal höflich.} #sprecher:erzaehler
 - else:
     {ersteLektionBesprochen:
         ~ angesehenSpiegel = true
     }
     Ein alter Spiegel mit einem Sprung quer über das Glas. Darin siehst du dich und die Kisten, sonst niemand. #sprecher:erzaehler
-    {ersteLektionBesprochen:
+    {ersteLektionBesprochen and not abschiedGesehen:
         Ich habe nachgesehen. Geister haben kein Spiegelbild. Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
     }
 }
@@ -129,7 +134,7 @@ VAR nadelCedarCreek = 0
         ~ angesehenZeitungen1961 = true
     }
     Ein Stapel Zeitungen von 1961, gelb und brüchig. Ganz oben: „Miss Whitlock gewinnt die Schachmeisterschaft des Kreises“. #sprecher:erzaehler
-    {ersteLektionBesprochen:
+    {ersteLektionBesprochen and not abschiedGesehen:
         Eine Whitlock, die gewinnt. Endlich. #sprecher:ambrose #stimmung:stolz
     }
 }
@@ -150,7 +155,7 @@ VAR nadelCedarCreek = 0
     ~ angesehenKisteWhitlock = true
     Eine Kiste aus Holz, nicht aus Pappe. Auf dem Deckel steht in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen“. #sprecher:erzaehler
     Obenauf ein gerahmtes Foto: eine Frau mit weißem Dutt, vor ihr ein Schachbrett. Auf der Rückseite: „Margaret, Sonntag“. #sprecher:erzaehler #klang:holzklacken
-    {ersteLektionBesprochen:
+    {ersteLektionBesprochen and not abschiedGesehen:
         Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:still
     }
 }
@@ -173,7 +178,9 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenBrettOhneDame = true
     Auf einem Brett fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler
-    Wenigstens zieht diese Dame nicht zu früh heraus. #sprecher:ambrose #stimmung:lacht
+    {not abschiedGesehen:
+        Wenigstens zieht diese Dame nicht zu früh heraus. #sprecher:ambrose #stimmung:lacht
+    }
 }
 -> END
 
@@ -183,7 +190,9 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenPlakatZaehlen = true
     Ein handgemaltes Plakat in großen Buchstaben: ERST ZÄHLEN. Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
-    Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose #stimmung:laechelt
+    {not abschiedGesehen:
+        Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose #stimmung:laechelt
+    }
 }
 -> END
 
@@ -198,6 +207,8 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenBildschirmPult = true
     Ein Bildschirm auf dem Pult, ausgeschaltet. Auf dem Rahmen ein Aufkleber: „Perfect Move – Pilotschule“. #sprecher:erzaehler
-    Ein Brett, das allein spielt. Gegen wen eigentlich? #sprecher:ambrose #stimmung:still
+    {not abschiedGesehen:
+        Ein Brett, das allein spielt. Gegen wen eigentlich? #sprecher:ambrose #stimmung:still
+    }
 }
 -> END

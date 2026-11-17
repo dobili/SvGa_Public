@@ -39,6 +39,9 @@ VAR newYorkBesprochen = false
 // Ausgang der Partie gegen Victor (setzt die Hülle): Der Vergleich „wie bei mir gegen Victor“
 // passt nur nach einer Niederlage (Dialogprüfung, 17.11.2026).
 VAR ausgangMapleFallsVictor = ""
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Karton
 
@@ -157,6 +160,10 @@ Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #spreche
 
 
 === karton_alltag ===
+{abschiedGesehen:
+    Die Zeitung von 1858 liegt obenauf. Du weißt, was darin steht. #sprecher:erzaehler
+    -> END
+}
 {~Die Zeitung liegt obenauf. Ich weiß, was darin steht.|Bemerkenswert unnötig. Ich höre es noch.} #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
@@ -175,6 +182,7 @@ Ein dünnes, vergilbtes Heft. Es liegt in einem Karton, den du noch nicht öffne
 
 === erinnerung ===
 „Erster Amerikanischer Schachkongress. New York, 1857.“ Ein Programmheft mit einem Adler auf dem Umschlag. #sprecher:erzaehler #bild:erinnerungNewYork
+{abschiedGesehen: -> allein}
 Ambrose macht ein Geräusch, das du von ihm nicht kennst. #sprecher:erzaehler
 Ich war dort. Ich stand in der dritten Reihe. #sprecher:ambrose #stimmung:stolz #musik:ambrose.walzer
 Ein Junge aus meiner Stadt spielte gegen einen Meister aus dem Westen, Paulsen. Der Junge hieß Morphy. #sprecher:ambrose #stimmung:laechelt
@@ -187,6 +195,15 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose #stimm
     Nun gut. Der Junge sieht ohnehin aus dem Fenster. #sprecher:ambrose #stimmung:laechelt
     -> END
 
+// Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; {held} spielt die Partie allein nach.
+= allein
+Darin steht eine Partie, Zug für Zug: Paulsen gegen Morphy. #sprecher:erzaehler
+* [Die Partie nachspielen]
+    ~ beginneAufgaben("cedarCreek.erinnerungNewYork")
+    -> END
+* [Das Heft zurücklegen]
+    -> END
+
 === programmheft_danach ===
 {not erinnerungNewYorkBestanden:
     Das Programmheft liegt aufgeschlagen. Die Züge warten. #sprecher:erzaehler
@@ -197,6 +214,10 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose #stimm
     -> END
 }
 ~ newYorkBesprochen = true
+{abschiedGesehen:
+    Morphy opfert die Dame, und du vergisst zu atmen. Du legst das Heft zurück in den Karton. #sprecher:erzaehler #musik:aus
+    -> END
+}
 Er opferte seine Dame, und ich vergaß zu atmen. Dreihundert Leute, und man hätte eine Nadel fallen hören. #sprecher:ambrose #stimmung:stolz #musik:aus #pause:2
 Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.walzer
 // Lektorat Akt 1, 17.11.2026: nicht mehr „Gestern hast du gesagt, Zählen ist alles“ (Roman): Den

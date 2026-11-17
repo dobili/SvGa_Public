@@ -126,7 +126,9 @@ Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium.
 ~ kaffeehausGesehen = true
 Es wird ein langer Abend, an einem Tisch aus vier Tischen, zwischen Menschen aus acht Städten. Du kennst jeden. #sprecher:erzaehler #musik:crossroads #geraeusch:kaffeehaus
 Du weißt, wie jeder von ihnen spielt. Was jeder übersieht. Was jeder kann, das du nie können wirst. #sprecher:erzaehler
-Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines. So hat es geklungen. #sprecher:ambrose #stimmung:still
+{not abschiedGesehen:
+    Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines. So hat es geklungen. #sprecher:ambrose #stimmung:still
+}
 -> END
 
 // ---------------------------------------------------------------- Theo (Kapitel 53)
@@ -187,11 +189,13 @@ Was du schon kennst: #sprecher:erzaehler
 }
 // Der Tisch ist Kulisse: Die Sätze zeigen, was dort gespielt wird, ohne ein Versprechen an den
 // Spieler („Kommt bald“). Spielbar sind bisher nur Blindschach und Schach960 bei ihren Figuren.
-+ {varianteBlindschachGelernt} [Blindschach gegen Ambrose]
+// Nach dem Abschied (abschiedGesehen) spielt Ambrose nicht mehr mit: Beide Partien entfallen.
+// Schach960 bleibt bei Mabel im Musikhaus spielbar.
++ {varianteBlindschachGelernt and not abschiedGesehen} [Blindschach gegen Ambrose]
     Zwölf Jahre Briefe, {held}. Ich sehe das Brett mit geschlossenen Augen besser als mit offenen. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
-+ {varianteSchach960Gelernt} [Schach960 gegen Ambrose]
++ {varianteSchach960Gelernt and not abschiedGesehen} [Schach960 gegen Ambrose]
     Gemischte Figuren. Mal sehen, ob ein alter Mann noch umlernen kann. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("crossroads.schach960")
     -> END

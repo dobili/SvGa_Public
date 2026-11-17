@@ -5,6 +5,9 @@
 
 VAR held = "Du"
 VAR fahrradErhalten = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 === fahrrad ===
 // Kapitel 20: „Es soll fahren. Nicht stehen.“ Musik riverton.gitarre, Klingel als Geräusch des
@@ -26,7 +29,9 @@ Nimm es. #sprecher:albescu #stimmung:laechelt
 - Fahr damit weit. Und wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht. #sprecher:albescu #stimmung:laechelt
 Dafür brauche ich keine Knie. #sprecher:albescu #stimmung:lacht
 Du schiebst es hinaus in den Regen. Die Klingel funktioniert noch. #sprecher:erzaehler #klang:fahrradklingel
-Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
+}
 Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.“ Darunter, kleiner: „Mrs. A. hat geweint, aber gut.“ #sprecher:erzaehler
 -> END
 

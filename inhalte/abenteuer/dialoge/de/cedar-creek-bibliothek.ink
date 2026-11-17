@@ -37,6 +37,9 @@ VAR clubkampfBauerGesehen = false
 VAR nachtImLesesaal = false
 VAR clubkampfBauerAbgelehnt = false
 VAR clubkampfZaehlGesagt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -253,7 +256,9 @@ Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae #stimmung:l
 Das hier ist das Arabische. Und das … #sprecher:mae #stimmung:laechelt
 Sie senkt die Stimme. #sprecher:erzaehler
 Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine Luft kriegt. #sprecher:mae #stimmung:lacht
-Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
+{not abschiedGesehen:
+    Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
+}
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END
@@ -303,7 +308,9 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 === zwillinge_c ===
 Am Tresen hängt eine Strichliste in Miss Ashbys Schrift: Ivy 14, Jonah 14. #sprecher:erzaehler
 Die Zwillinge spielen am langen Tisch. Leise. Keiner sagt, wer gewinnt. #sprecher:erzaehler
-Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+{not abschiedGesehen:
+    Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+}
 -> END
 
 === zwillinge_d ===

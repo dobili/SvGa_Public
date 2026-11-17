@@ -33,7 +33,9 @@ Am Canyonrand hängt eine Frau im Seil und winkt. Unten auf einem Felsvorsprung 
 Juniper. Wir Kletterer spielen hier Drei-Schach. Wer dreimal Schach gibt, gewinnt. #sprecher:juniper #stimmung:laechelt
 Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schluss. #sprecher:juniper #stimmung:laechelt
 Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. Ein seltsames, schönes Spiel. #sprecher:erzaehler #geraeusch:canyonrand
-Aber Ambrose ist still geworden. Er sieht nach Osten, wo die Staubstraße verschwindet. #sprecher:erzaehler
+{not abschiedGesehen:
+    Aber Ambrose ist still geworden. Er sieht nach Osten, wo die Staubstraße verschwindet. #sprecher:erzaehler
+}
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg

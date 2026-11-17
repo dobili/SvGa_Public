@@ -15,6 +15,10 @@ VAR fernpartieGespielt = false
 VAR ambroseSagtEsGesehen = false
 VAR held = "Du"
 VAR esIstStillGesagt = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen: Wer über die Alte
+// Minenstraße kam, erlebt die Ankunft zu Fuß vielleicht erst danach.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -30,6 +34,7 @@ Mit jedem Kilometer wird alles blasser. Das Rot der Erde, das Grün der Büsche,
 Guck mal. Es sieht aus wie ein altes Foto. #sprecher:juno #stimmung:ueberrascht
 Die Stadt kommt ohne Schild. Häuser aus Brettern, die das Wetter silbern gemacht hat. Ein Saloon mit einem Balkon, der an einer Seite herunterhängt. #sprecher:erzaehler
 Es ist niemand da. Seit hundert Jahren. Der Wind schiebt einen Busch über die Straße. #sprecher:erzaehler
+{abschiedGesehen: -> END}
 Hier. #sprecher:ambrose #stimmung:fern
 Er steht mitten auf der Straße und dreht sich langsam um sich selbst. #sprecher:erzaehler
 Der Laden. Das war der Laden. Darüber war ein Zimmer. Es hatte eine Tapete mit Rosen. #sprecher:ambrose #stimmung:nachdenklich

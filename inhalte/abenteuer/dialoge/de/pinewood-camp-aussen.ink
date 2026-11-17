@@ -40,6 +40,9 @@ VAR esIstStillGesagt = false
 // und Ray den Pavillon verlassen haben (Befund der Chaos-Simulation, 14.11.2026).
 VAR zuschauenAngeboten = false
 VAR slickBeobachtenBestanden = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
+// (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 95)
 
@@ -65,6 +68,8 @@ Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt. Ich br
 === es_ist_still ===
 ~ esIstStillGesagt = true
 Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fünf Zehen. Mama geht ein wenig schneller. #sprecher:erzaehler #bild:baerenspuren
+// Wer das Camp erst nach dem Abschied besucht, sieht nur die Spuren; Ambroses Satz entfällt.
+{abschiedGesehen: ->->}
 {held}. Die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
 * [„Was heißt das?“]
 - Ich weiß es nicht genau. Seit der Bergstation. Seit dieser Zug gekommen ist. #sprecher:ambrose #stimmung:nachdenklich
@@ -122,14 +127,21 @@ Springer! Ich brauch einen Springer! #sprecher:dex #stimmung:lacht
 Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. #sprecher:erzaehler
 Die Chefin ist zurück! #sprecher:sam #stimmung:froh
 Er wird gekitzelt. #sprecher:erzaehler
+// Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: Der Abend läuft ohne seine Sätze.
+{abschiedGesehen: -> raeuberschach}
 Das ist kein Schach. #sprecher:ambrose #stimmung:ueberrascht
 * [„Nein.“]
 - Es ist Wahnsinn. Figuren fallen vom Himmel. #sprecher:ambrose #stimmung:lachtOhneSpott
 Ich hätte gern mitgespielt. Mit zwanzig. Ich wäre unerträglich gewesen. #sprecher:ambrose #stimmung:lacht
+-> raeuberschach
+
+= raeuberschach
 Dann Räuberschach gegen Lou. Alles ist verkehrt herum. Du stellst deine Dame hin und flehst, dass jemand sie nimmt. #sprecher:erzaehler #musik:held.rueckwaerts
 Lou gewinnt. Sie hatte einen Plan. #sprecher:erzaehler
-Ein Spiel, bei dem man alles hergibt, und am Ende hat der gewonnen, dem nichts bleibt. #sprecher:ambrose #stimmung:still #pause:2
-Es ist nicht das dümmste Spiel, das ich gesehen habe. #sprecher:ambrose #stimmung:laechelt
+{not abschiedGesehen:
+    Ein Spiel, bei dem man alles hergibt, und am Ende hat der gewonnen, dem nichts bleibt. #sprecher:ambrose #stimmung:still #pause:2
+    Es ist nicht das dümmste Spiel, das ich gesehen habe. #sprecher:ambrose #stimmung:laechelt
+}
 -> steg_nacht
 
 // Am Steg: derselbe Himmelsausschnitt wie in Cedar Creek (Kapitel 14), Nachtstück zum zweiten Mal.
@@ -147,6 +159,10 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
     „Da hab ich nicht gewonnen. Da hab ich dir was gezeigt.“ #sprecher:erzaehler
     Ja. Eben. #sprecher:sam #stimmung:laechelt
 }
+{abschiedGesehen:
+    {sternennachtGesehen: Sie stehen noch wie früher. Das hat er einmal gesagt, an einem anderen Steg. #sprecher:erzaehler}
+    -> stern
+}
 {sternennachtGesehen:
     Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
     Ich war damals beleidigt, weil ich nur eine Fußnote bin. Erinnerst du dich? #sprecher:ambrose #stimmung:laechelt
@@ -158,6 +174,9 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
 - Sechs Wörter. #sprecher:ambrose #stimmung:lachtOhneSpott
 Vierzig Kinder. In hundert Jahren weiß niemand mehr, wie sie hießen. Und es wird nicht das Geringste ausmachen. #sprecher:ambrose #stimmung:friedlich
 Sie haben heute Abend gespielt. Das war es. Das war immer alles. #sprecher:ambrose #stimmung:friedlich #pause:2
+-> stern
+
+= stern
 Über euch fällt ein Stern. Mae schreit auf. #sprecher:erzaehler #klang:sternschnuppe
 Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in Ordnung. #sprecher:erzaehler
 -> END

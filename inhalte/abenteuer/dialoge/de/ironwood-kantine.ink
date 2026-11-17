@@ -90,8 +90,8 @@ Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe #
 * [„Ja.“]
 - Du hast nie darüber nachgedacht. #sprecher:erzaehler
 Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001. #sprecher:erzaehler
-Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe #stimmung:nachdenklich
-Geh hin. Ruth wartet seit fünfundzwanzig Jahren, dass jemand klingelt. #sprecher:bigJoe #stimmung:nachdenklich
+Deine Oma wohnt noch in der Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe #stimmung:nachdenklich
+Geh hin. Ruth hat dich nicht mehr gesehen, seit du so klein warst. #sprecher:bigJoe #stimmung:nachdenklich
 Und wenn du deine Mutter siehst: Big Joe lässt grüßen. #sprecher:bigJoe #stimmung:laechelt
 Und dass es ihm leidtut. #sprecher:bigJoe #stimmung:ernst #pause:2
 Was tut ihm leid? #sprecher:juno #stimmung:ueberrascht

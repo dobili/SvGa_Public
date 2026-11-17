@@ -939,7 +939,9 @@ kaufst du zweimal.“
 
 **Oma Ruth** (Nebenfigur). Ruth M., Mamas Mutter, Mitte siebzig, sie. Wohnt noch im Reihenhaus
 in der Elm Street, in dem Mama aufgewachsen ist; telefoniert jeden Sonntag mit Mama und hat {held}
-seit dem Umzug nicht gesehen. Hält Mamas altes Zimmer unverändert, „falls sie mal wieder
+zuletzt gesehen, als {held} sechs war: Mama meidet Ironwood, seitdem gibt es nur Telefon und
+Päckchen (Entscheidung 17.11.2026, Dialogprüfung Akt 2). Deshalb erklärt Big Joe den Weg, und {held}
+kennt Mamas altes Zimmer nicht. Hält Mamas altes Zimmer unverändert, „falls sie mal wieder
 schlafen will“. Beispiel: „Deine Mutter war das stillste Kind der Straße. Außer, wenn sie
 gewonnen hat.“ Rolle: öffnet Mamas Geheimnis (Szene 39).
 

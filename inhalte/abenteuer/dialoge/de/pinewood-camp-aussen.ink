@@ -30,6 +30,8 @@ VAR hollisGetroffen = false
 VAR hollisKarteGegeben = false
 VAR ausgangPinewoodCampHollis = ""
 VAR kioskGesehen = false
+// Aus weg-crossroads-pinewood.ink: Wer beim Lebendschach im Wald kommandiert hat, kennt Ezra schon.
+VAR lebendschachGesehen = false
 // Gutachten M3.4: „Es ist still“ (Kapitel 54, Schluss) fällt beim Eintritt ins Camp, nicht am Rangerhaus.
 VAR esIstStillGesagt = false
 // Aus Riverton (riverton-pavillon.ink): Die Nebenquest „Zuschauen“ bleibt nachholbar, auch wenn Slick
@@ -75,7 +77,7 @@ Geh weiter. Es ist gut. Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:
 {ezraGetroffen: -> ezra_alltag}
 ~ ezraGetroffen = true
 Ein junger Mann mit Pfeife um den Hals und Klemmbrett unter dem Arm kommt angelaufen. #sprecher:erzaehler
-Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden? Wunderbar. Heute Abend ist Lagerfeuer. #sprecher:ezra #stimmung:froh
+{lebendschachGesehen:Da bist du ja! Unser Feldherr aus dem Wald. Heute Abend ist Lagerfeuer.|Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden? Heute Abend ist Lagerfeuer.} #sprecher:ezra #stimmung:froh
 -> ezra_regeln
 
 === ezra_regeln ===
@@ -140,7 +142,7 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
     Sam reicht dir einen Stock, vom Feuer geschwärzt, mit Kerben in der Rinde. #sprecher:erzaehler
     Für jeden Sieg eine. Tradition. Du hast acht. Und eine für die Sache mit der Chefin. Die erste. Im Clubraum. #sprecher:sam #stimmung:laechelt
     ~ gibFund("marshmallowStock")
-    Da hast du nicht gewonnen, sagst du. Da hast du ihm was gezeigt. #sprecher:erzaehler
+    „Da hab ich nicht gewonnen. Da hab ich dir was gezeigt.“ #sprecher:erzaehler
     Ja. Eben. #sprecher:sam #stimmung:laechelt
 }
 Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
@@ -186,7 +188,7 @@ Eine Stellung, du hast Weiß. Keine Uhr. Der Wald hat Zeit, wir auch. #sprecher:
 {not hollisKarteGegeben:
     ~ hollisKarteGegeben = true
     Gut gespielt. Ruhig, wie ein Baum, der wächst. #sprecher:hollis #stimmung:froh
-Es war die erste Partie seit langem, die für nichts zählte. Du merkst, wie sehr dir das gefehlt hat. #sprecher:erzaehler
+    Eine Partie, die für nichts zählt, nur für den Wald. Du merkst, wie gut dir das tut. #sprecher:erzaehler
     Hier. Jeder verdient im Wald eine zweite Chance. Auch auf dem Brett. #sprecher:hollis #stimmung:laechelt
     ~ gibKarte("zweiteChance")
 }
@@ -226,7 +228,7 @@ Willst du sie sehen? Achte darauf, was Slick nicht sieht. #sprecher:tamsin #stim
 * [„Zeig her.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Der Zettel bleibt in meiner Tasche. #sprecher:tamsin #stimmung:laechelt
     -> END
 

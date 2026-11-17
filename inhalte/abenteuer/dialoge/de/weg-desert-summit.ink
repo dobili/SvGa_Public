@@ -52,13 +52,13 @@ Mama hat drei Wochen Urlaub und fährt. Ambrose ist leichter seit dem Canyon. Er
 Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
 * [Weiterfahren]
 - An einem Diner mit einem Neonschild in Form eines Königs haltet ihr zum Tanken. Drinnen schieben Fernfahrer Könige über Bretter. #sprecher:erzaehler
-Königsrennen. Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
+Na, auch auf dem Weg nach oben? Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
 -> earl_regel
 
 === earl_regel ===
 ~ varianteKoenigsrennenGelernt = true
-Wer zuerst hinten ankommt, ohne dass ihm einer Schach gibt, zahlt nicht. Alle anderen zahlen dem seinen Kaffee. #sprecher:earl #stimmung:laechelt
-Den ersten Kaffee verlierst du, weil du versuchst, etwas zu schlagen. #sprecher:erzaehler
+Das hier ist Königsrennen. Beide Könige laufen bis zur letzten Reihe, und Schach geben ist verboten. #sprecher:earl #stimmung:laechelt
+Wer zuerst ankommt, zahlt nicht. Und wer unterwegs nur schlagen will, zahlt meistens. #sprecher:earl #stimmung:laechelt
 Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
 Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
 -> earl_angebot
@@ -82,7 +82,7 @@ Komm wieder, wenn du hier durchfährst. Dann rennen wir. #sprecher:earl #stimmun
 === earl_k ===
 ~ neonRepariert = true
 Earl dreht das gebogene Glasrohr in der Hand. Dann holt er eine Leiter aus dem Lastwagen. #sprecher:erzaehler
-Seit neunundachtzig fehlt das Ding. Und du bringst es einfach zurück. #sprecher:earl #stimmung:froh
+Ich hab gesagt, nimm's mit. Und du bringst es mir zurück. #sprecher:earl #stimmung:froh
 Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #sprecher:erzaehler
 Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
 Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl #stimmung:laechelt
@@ -162,7 +162,7 @@ Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen.
 -> funkschach_partie
 
 === funkschach_partie ===
-Hier Mama Bear. Bedenkzeit bis zur nächsten Ausfahrt. Ich sag dir meine Züge an, du hörst gut hin. #sprecher:mamaBear #stimmung:laechelt
+Hier Mama Bear, Pause oben in der Haltebucht. Ich sag dir meine Züge an, du hörst gut hin. #sprecher:mamaBear #stimmung:laechelt
 Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setzt er für Mama Bear aufs Brett. #sprecher:erzaehler
 ~ beginnePartie("wegDesertSummit.funkschach")
 -> END
@@ -172,7 +172,7 @@ Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setz
 ~ funkschachFertig = true
 Gut gespielt, {held} Junior. Ab heute ist das dein Funkname. #sprecher:mamaBear #stimmung:laechelt
 Sag mal, du kommst doch rum. Ich fahre seit drei Wochen versiegelte Kisten von Perfect Move in die Berge. Sie summen. Kisten summen nicht. #sprecher:mamaBear #stimmung:nachdenklich
-Mein Laster steht in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn du willst. #sprecher:mamaBear #stimmung:nachdenklich
+Mein Laster steht oben in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn du vorbeikommst. #sprecher:mamaBear #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Funde am Diner

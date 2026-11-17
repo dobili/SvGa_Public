@@ -53,7 +53,7 @@ VAR angesehenLaptop = false
 ~ henriGetroffen = true
 Ein Mann mit Sägemehl in den Augenbrauen kommt dir entgegen. Er lacht viel und arbeitet dabei weiter. #sprecher:erzaehler
 Henri Whitlock-Duval. {leimAuftrag:Leim für den Club? Natürlich für den Club. Umsonst.|Klavierbauer, seit sechs Generationen.} #sprecher:henri #stimmung:laechelt
-Meine Großmutter hat dort Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri #stimmung:laechelt
+Meine Großmutter hat im Musikhaus Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri #stimmung:laechelt
 Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri #stimmung:lacht
 -> END
 
@@ -160,7 +160,7 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 === werkbank_flashback ===
 Über der Tür hängt ein Schild, neuer als die anderen, die Buchstaben alt: „Whitlock-Duval. Facteurs de pianos depuis 1826.“ #sprecher:erzaehler
 Frisch gehobeltes Holz. Leim, warm. Etwas Harziges. Ein Geruch, den du kennst, ohne ihn zu kennen. #sprecher:erzaehler
-Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn. Zum ersten Mal seit fünf Tagen. #sprecher:erzaehler
+{fotoAmbroseGesehen:Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn.|Im Geigenkasten unter deinem Arm bewegt sich nichts. Du hörst ihn, zum ersten Mal seit fünf Tagen.} #sprecher:erzaehler
 Hier. Hier war es. #sprecher:ambrose #stimmung:fern #musik:ambrose.verstimmt
 Mehr nicht. Aber die Werkstatt wird golden. #sprecher:erzaehler
 + [Mitgehen]
@@ -213,7 +213,7 @@ Claire. Sie hat nach Norden geheiratet. In eine Stadt mit einem Wasserfall. Sie 
 Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
 * [Warten]
 - Deshalb bist du hier. #sprecher:ambrose #stimmung:still #pause:2
-Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er hat ihn längst verbraucht. #sprecher:erzaehler
+{ambroseSprichtWieder:Dann ist er lange still.|Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er hat ihn längst verbraucht.} #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)
@@ -232,9 +232,9 @@ Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er hat ihn 
 
 === laptop ===
 {angesehenLaptop:
-    Auf dem Bildschirm läuft eine Partie. Célestes Figuren stehen sehr weit vorn. #sprecher:erzaehler
+    {celesteNachPartieGesehen:Auf dem Bildschirm läuft jetzt eine Partie. Célestes Figuren stehen sehr weit vorn.|Die bunten Streifen auf dem Bildschirm laufen weiter. Ein Takt wiederholt sich.} #sprecher:erzaehler
     -> END
 }
 ~ angesehenLaptop = true
-Célestes Laptop, zwischen Hobelspänen. Auf dem Bildschirm eine Tabelle mit Eröffnungen, daneben ein Zettel: „Nicht anfassen. Ich weiß, wo alles ist.“ #sprecher:erzaehler
+Célestes Laptop, zwischen Hobelspänen. Auf dem Bildschirm Tonspuren in bunten Streifen, daneben ein Zettel: „Nicht anfassen. Ich weiß, wo alles ist.“ #sprecher:erzaehler
 -> END

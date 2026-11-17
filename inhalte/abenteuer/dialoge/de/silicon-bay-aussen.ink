@@ -33,6 +33,7 @@ VAR dashKarteGegeben = false
 VAR rosieGetroffen = false
 VAR tabletNachtGesehen = false
 VAR batterieErhalten = false
+VAR leuchtfeuerAuftrag = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -167,7 +168,7 @@ Das kann man nicht messen. #sprecher:victor #stimmung:nachdenklich
 ~ rosieGetroffen = true
 Ein alter Lastwagen, türkis, mit Beulen. Aus der Klappe kommen Dampf und der Geruch von gebratenen Zwiebeln. #sprecher:erzaehler #musik:rosie
 Auf dem Dach dreht sich ein Blechschild, von Hand gemalt: „Rosies“. Die Frau in der Klappe hat Mehl an den Armen. #sprecher:erzaehler
-Ich bin das Einzige in dieser Stadt, das nicht leuchtet. Was wollt ihr? Sagt nicht Salat. #sprecher:rosie #stimmung:lacht
+Ich bin das Einzige in dieser Stadt, das nicht leuchtet. Was darf's sein? Sag nicht Salat. #sprecher:rosie #stimmung:lacht
 Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie #stimmung:laechelt
 -> rosie_laden
 
@@ -262,7 +263,7 @@ Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #spre
     -> END
 }
 Am Fährhäuschen hängt ein Fahrplan: „Pelikaninsel. Sonntags.“ Der Fährmann flickt ein Tau und schaut nicht auf. #sprecher:erzaehler
-Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir erst die Nadel im Club. #sprecher:faehrmann #stimmung:nachdenklich
+Heute ist nicht Sonntag. Unter der Woche fahr ich nur Leute, die man hier kennt. Hol dir die Nadel im Club, dann kennt man dich. #sprecher:faehrmann #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)
@@ -293,14 +294,14 @@ Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etw
 }
 Der Eisenwarenladen riecht nach Öl und Holz. Hinter der Theke sortiert ein alter Mann Schrauben in Gläser. #sprecher:erzaehler
 „Was brauchst du? Bei mir gibt es noch Dinge, die man mit den Händen repariert.“ #sprecher:erzaehler
-+ [„Eine Batterie für das Leuchtfeuer auf der Pelikaninsel.“]
++ {leuchtfeuerAuftrag} [„Eine Batterie für das Leuchtfeuer auf der Pelikaninsel.“]
     -> eisenwaren_batterie
 + [„Ich schaue nur.“]
     „Schauen ist umsonst. Das ist das Letzte in dieser Stadt, was umsonst ist.“ #sprecher:erzaehler
     -> END
 
 === eisenwaren_batterie ===
-„Das Leuchtfeuer? Das hat seit Jahren keiner mehr gewartet. Die Leute auf dem Campus wissen nicht mal, dass es da draußen brennt.“ #sprecher:erzaehler
+„Das Leuchtfeuer? Das hat seit Jahren keiner mehr gewartet. Die Leute auf dem Campus wissen nicht mal, dass es da draußen steht.“ #sprecher:erzaehler
 ~ batterieErhalten = true
 Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für genau so einen Tag aufgehoben. Nimm sie.“ #sprecher:erzaehler
 Ein Licht für die Insel. Manche Züge macht man für andere. #sprecher:ambrose #stimmung:laechelt

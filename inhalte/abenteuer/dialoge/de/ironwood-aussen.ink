@@ -187,12 +187,12 @@ Fertig? #sprecher:gus #stimmung:laechelt
     Er spielt wie ein Fahrplan mit Verspätung: zuverlässig, aber nicht immer pünktlich. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("ironwood.gus")
     -> END
-* [„Nach deinem Sandwich.“]
+* [„Nach Ihrem Sandwich.“]
     Kluger Mensch. #sprecher:gus #stimmung:laechelt
     -> END
 
 === gus_nach_sieg ===
-Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine, morgen um zwölf? #sprecher:gus #stimmung:laechelt
+Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine? Ich nehm mir fünf Minuten von morgen. #sprecher:gus #stimmung:laechelt
 + [„Noch eine, jetzt.“]
     ~ beginnePartie("ironwood.gus")
     -> END
@@ -200,7 +200,7 @@ Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine, morgen um zwölf?
     -> END
 
 === gus_nach_niederlage ===
-Pause vorbei, Partie gewonnen. Für mich. Morgen wieder? #sprecher:gus #stimmung:laechelt
+Pause vorbei, Partie gewonnen. Für mich. Revanche? Die Pause kann ich strecken. Ein bisschen. #sprecher:gus #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("ironwood.gus")
     -> END
@@ -321,7 +321,7 @@ Im Fenster von Ednas Laden: Schrauben in Gläsern, drei Laternen, eine Fahrradke
 }
 ~ kreidebrettGesehen = true
 Auf dem Gehweg haben Kinder ein Schachbrett mit Kreide gemalt. Ein richtiges, acht mal acht. #sprecher:erzaehler
-Die können hier zählen. #sprecher:juno #stimmung:laechelt
+Die h-Linie ist breiter als die a-Linie. Aber es sind acht. #sprecher:juno #stimmung:laechelt
 Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten genug. #sprecher:ambrose #stimmung:laechelt
 -> END
 

@@ -83,7 +83,7 @@ Partieformulare aus dem Café des Exilés, 1852. Mein Urgroßvater hat da Kaffee
 Vergilbte Blätter, sauber in Spalten geschrieben. Auf einem bleibt dein Blick hängen: dieselbe schräge Schrift wie in den Notizen im Brett. #sprecher:erzaehler
 Warte. Zeig mir das Blatt. #sprecher:ambrose #stimmung:fern
 Das ist meine Schrift. Ich habe gegen einen Hafenarbeiter verloren, damals. Ich habe es niemandem erzählt. #sprecher:ambrose #stimmung:fern
-Die Partie bricht nach dem 20. Zug ab. Weiß ist am Zug. #sprecher:erzaehler
+Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, Weiß ist am Zug. #sprecher:erzaehler
 -> pepe_angebot
 
 === pepe_angebot ===
@@ -91,7 +91,7 @@ Die Partie bricht nach dem 20. Zug ab. Weiß ist am Zug. #sprecher:erzaehler
     Na los. Ich will sehen, ob der alte Kram noch was taugt. #sprecher:pepe #stimmung:laechelt
     ~ beginnePartie("bayou.hausboot")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Die Kiste wartet. Das Streichholz auch. #sprecher:pepe #stimmung:laechelt
     -> END
 

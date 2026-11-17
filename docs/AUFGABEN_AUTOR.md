@@ -98,12 +98,14 @@ Adresse mit „#abenteuer“ öffnen).
       war …“ steht eine Zeile mit Glühbirne, etwa „Guter Schlag ausgelassen (Kapitel 1)“. Antippen klappt den Satz mit
       der ganzen Fundstelle auf, „Üben“ öffnet den passenden Trainer. Bei „Verpasst“ steht nur diese Zeile. Sagen Warum-
       und Glühbirnen-Zeile dasselbe (gleicher Trainer, gleiches Thema), steht nur die Warum-Zeile da.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Karte „Verpasst“ nur mit dieser Zeile.
 - [ ] N2603. Im Rückblick Zug für Zug zu einem Zug mit „?!“ oder „?“ gehen: Unter „Besser war …“ steht die Glühbirnen-
       Zeile mit Kapitel; aufgeklappt gibt es einen eigenen Knopf „Üben“. Bei „gut“ und „sehr gut“ erscheint sie nie.
 - [ ] N2604. Nach mindestens 5 ausgewerteten Partien, in denen in 3 oder mehr derselbe Fehler vorkam, zeigt die Karte
       „Heute“ eine Kachel wie „Drohung stehen gelassen · 3 von 5 Partien · Kapitel 1“. Der Knopf öffnet den Trainer; nach
       dem Üben verschwindet die Kachel bis zur nächsten Partie. (Ältere Partien bekommen die Kürzel im Leerlauf
       nachberechnet.)
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Kachel verschwindet nach dem Üben.
 
 ### Neu in 0.3.53: Aussehen nur noch im Profil, Fehler mit Buchbezug (7.11.2026)
 
@@ -112,10 +114,12 @@ Adresse mit „#abenteuer“ öffnen).
       „Brett“ offen. Dort stehen alle Bretter, die freischaltbaren mit Schloss und Bedingung („Nacht und Gold“: „Mit
       allen Orden der Buchteile“). „Grün“ antippen: Vorschau und jede Abbildung im Buch werden grün. Reiter „Figuren“
       ebenso (etwa „Merida“; „Gold“ mit Schloss „Ab Stufe 5“). Der Schalter „Koordinaten“ steht unter den Brettern.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2601. Auswertung einer Partie mit Fehler oder Patzer: Auf der Fehlerkarte der Zeitleiste steht unter „Besser war“
       eine Zeile mit Buchsymbol, etwa „Drohung stehen gelassen (Kapitel 1)“. Tipp klappt den Satz mit der ganzen
       Fundstelle auf; „Üben“ neben „Zur Stellung“ öffnet den passenden Trainer (bei Taktik mit dem Motiv). Passt der Grund zum Zug?
       Fehlt die Zeile, wo ein klarer Grund erkennbar ist? Bei „Verpasst“ gibt es nur die Zeile zum besseren Zug.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); offen für dich: Passt der Grund zum Zug, fehlt die Zeile irgendwo?
 
 ### Neu in 0.3.52: Linienknöpfe in der Zugfolgenleiste (7.11.2026)
 
@@ -126,6 +130,7 @@ Adresse mit „#abenteuer“ öffnen).
       keine Knöpfe „Besserer Zug“ und „Bestrafung“ mehr. An einem Fehler spielt ein Tipp auf Glühbirne oder
       Schwerter die Folge Zug für Zug vor (nochmal tippen hält an); danach geht man mit Vor/Zurück selbst durch,
       „Partie“ (erstes Symbol) führt zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.51: Deine Meldungen vom 6.11.2026
 
@@ -147,6 +152,7 @@ Adresse mit „#abenteuer“ öffnen).
 - [ ] N2589. Kapitelseite (etwa Kapitel 0), Karte „Dein Fortschritt“: Tipp auf den Ring Abbildungen oder
       Warum-Fragen rollt zu den Abbildungen, Tipp auf den Ring Lernziele öffnet die Checkliste mit der
       aufgeklappten Karte dieses Kapitels, Tipp auf Übungen rollt zu den Übungen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (geprüft an Kapitel 1).
 - [ ] N2590. Startseite, Karte „Heute“: Wer schon Aufgaben am Brett lösen kann, sieht unter den Vorschlägen
       jetzt auch „Kurzplan“ (etwa 15 Minuten, fertig zusammengestellt); Tipp öffnet die Kurzpläne.
 - [ ] N2591. Einstellungen › Bedienung, ganz unten „Was zuerst kommt“: Buch / Spielen / Umsehen. Auf „Spielen“
@@ -163,11 +169,13 @@ Adresse mit „#abenteuer“ öffnen).
       Bestrafung“. Vor/Zurück und die Pfeiltasten gehen Zug für Zug durch die Folge, Brett und
       markierter Zug passen immer zusammen; Zurück am ersten Zug oder „Zurück zur Partie“ führt in
       die Partie zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Linie heute über die Knöpfe aus N2599).
 - [ ] N2597. Karte „Heute“ › „Wann übst du?“ › Übungszeit planen: Wochentage und Dauer wählen (10 bis 60
       Minuten), keine Uhrzeit mehr. An einem Plantag steht beim Öffnen „Heute ist dein Übungstag: 0 von
       20 Minuten geschafft“ mit Balken und „Jetzt üben“. Ein paar Minuten in der App üben (lesen,
       ziehen, lösen): Die Zahl steigt etwa jede Minute; wer drei Minuten nichts antippt, zählt nicht
       weiter. Im Reiter der Karte steht „7/20 Min“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Minuten zählen beim Üben, „7/20 Min“ im Reiter.
 - [ ] N2598. Mindestens 5 gewertete Partien gegen Bots in derselben Zeitart spielen und auswerten lassen. Liegt eine
       Phase deutlich (mindestens etwa 150 Punkte) unter deiner Schätzung, steht auf der Karte „Heute“
       die Kachel „Aus deinen Partien“: „Ein Hinweis aus deinen letzten 8 Partien: Im Endspiel spielst
@@ -200,15 +208,19 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Brett nur noch Gold 1, die Felder bleiben markiert; die beiden stehen in der Liste als „– Feld e4“ mit
       „Nummer geben“. Beschriftete Nummern behalten ihren Text, auch wenn sie dadurch eine neue Nummer
       bekommen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2583. „Nummern von Rot“ aufklappen, Haken „Nummern“ weg: Alle roten Marken der ganzen Variante sind ohne
       Nummer, der Text bei „Rot“ in der Legende gilt für alle. Haken wieder an: Die Nummern sind zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2584. PGN der Variante sichern und wieder einlesen: Marken ohne Nummer bleiben ohne Nummer.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.49: Goldener Pfeil in Varianten wie in der Auswertung (1.11.2026)
 
 - [ ] N2581. Analysierte Variante: Steht ein Zug am Brett, der nicht der beste war (etwa 3... Sf6?? im Schäfermatt),
       zeigt ein goldener Pfeil den besseren Zug, wie in der Partieauswertung. Der grüne Pfeil für den
       besten nächsten Zug ist weg. Der Schalter „Engine-Pfeil“ blendet den goldenen Pfeil aus und ein.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.48: Bearbeiten und Löschen auffindbar (1.11.2026)
 
@@ -216,28 +228,34 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Name und Kommentar („Speichern“ übernimmt, „Abbrechen“ nicht), der Papierkorb fragt „„…“ endgültig
       löschen?“. In einer geöffneten Variante steht hinter dem Titel ein goldener Stift; Antippen öffnet
       Name, Kommentar, Teilen und Löschen. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2576. **Engine-Folgen vorab an:** Eine ausgewertete Partie mit mindestens einem eigenen Fehler, Patzer oder
       verpassten Gewinn öffnen → Gabel-Knopf am Brett: Der Schalter „Engine-Folgen übernehmen („Besser
       war …“, „So wird bestraft“)“ ist jetzt schon angehakt → „Öffnen“. An jedem eigenen Fehler zweigt
       „Besser war (Engine)“ ab, bei Fehler und Patzer zusätzlich nach deinem Zug „So wird bestraft
       (Engine)“. Ungenauigkeiten bekommen keine Folgen. Ebenso unter Varianten › Neue Variante ›
       Partie. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Haken vorab an); nicht geprüft: Abzweige an den Fehlern einer ausgewerteten Partie.
 - [ ] N2577. **Fehler des Gegners:** Am Gabel-Knopf einer ausgewerteten Partie steht unter „Engine-Folgen
       übernehmen“ der Haken „Auch an Fehlern des Gegners“ (vorab an). Mit beiden Haken bekommen auch die
       Fehler des Gegners „Besser war (Engine)“ und „So wird bestraft (Engine)“. Ebenso unter Neue Variante ›
       Partie. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Haken vorab an).
 - [ ] N2578. **Engine-Folgen nach der Analyse einer Variante:** Variante mit einem Fehler (etwa PGN „1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#“ einlesen) → „Analyse“ → wenn sie fertig ist, erscheint oben „Engine-
       Folgen übernehmen (+… Züge)“. Antippen legt an Fehlern, Patzern und verpassten Gewinnen beider Seiten
       „Besser war“ und „So wird bestraft“ als Abzweige an (Züge mit Chip-Zeichen „Engine“); danach
       verschwindet der Knopf. Ungenauigkeiten bekommen nichts.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2579. **Karte:** Rechts neben dem letzten Zug jeder Linie steht ihre Endstellung als kleines Brett.
       Nach der Analyse steht neben jedem Brett der Karte (Abzweige und Endstellungen) ein schmaler
       Bewertungsbalken (unten Weiß, oben Schwarz): So sieht man beim Scrollen, welche Linie wem liegt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2580. **Baumansicht:** Nach der Analyse steht links an jedem kleinen Brett der Abzweig-Karten der
       Bewertungsbalken mit Zahl.
 - [ ] N2575. Touren (Kompass): Die Tour der Variante beginnt mit dem Titel (Bearbeiten, Löschen), die Tour der
       Liste nennt Stift und Papierkorb, die Touren von Lernsammlung und Fehlerdatenbank sagen, dass ein
       aufgeklappter Eintrag „Bearbeiten“ und „Löschen“ (mit „Rückgängig“) hat.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Texte und Durchlauf aller Touren).
 
 ### Neu in 0.3.47: Meisterpartien statt Studien, gespeicherte Werte (1.11.2026)
 
@@ -247,6 +265,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       und „Aktuelle Turniere“ listen die Zusatzpartien von „Zug erraten“ (Hinweis „Zusatzinhalt“);
       „Anderssen – Kieseritzky, Freie Partie, London 1851“ öffnet die Unsterbliche Partie als Variante ab der
       Grundstellung. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: „Aktuelle Turniere“.
 - [ ] N2572. **Speichern nur per Abfrage:** Neue Variante aus der Grundstellung, 1. e4 ziehen: oben steht
       „Geändert · nicht gespeichert“ mit dem Knopf „Speichern“; in der Liste „Varianten“ ist noch nichts.
       „Zurück“ (oben, Zurück-Taste oder untere Leiste) fragt „Variante speichern?“ mit Speichern, Nicht
@@ -255,10 +274,12 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Züge … speichern?“ (oder „Nur das Buch öffnen“); „Als Variante speichern“ in der Zugleiste und
       „Einlesen und speichern“ bei PGN sind selbst die Antwort. Eine gespeicherte Variante speichert
       Änderungen weiter von selbst. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Nachfrage bei Karte, Von hier spielen, Abfragen und am Gabel-Knopf einer Abbildung.
 - [ ] N2573. **Bretter in der Karte:** Abb. 2.40 als Variante → „Karte“: Unter „3. Sxe5“ und „4. De2!“ steht je
       ein kleines Brett mit der Stellung am Abzweig und den blauen gepunkteten Pfeilen (Stern am
       Hauptzug, „2“, „3“ …); die Nebenäste beginnen darunter. Ein Tipp aufs Brett springt zu diesem
       Abzweig. Zoomen macht die Bretter größer. Schon umgesetzt, Widerspruch genügt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2571. Eine ausgewertete Partie → Moment „Als Variante“ (oder Gabel in der Auswertung) → in der
       Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
       Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler
@@ -267,85 +288,122 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 ### Neu in 0.3.46: Variationsbrowser, Zurück-Taste (1.11.2026)
 
 - [ ] N2500. Training: Kachel „Varianten“ (noch leer) öffnen; „Neue Variante“ zeigt sieben Kacheln.
+      Vorgeprüft: Abweichung, nur im Text: „Neue Variante“ zeigt heute neun Kacheln (dazu „Ganze Eröffnung“ und „Meisterpartie“); sonst wie beschrieben.
 - [ ] N2501. Abb. 2.40 → Brettschalter „Variante“: Zugleiste mit Gabel „2“ nach 3. Sxe5, Chips „★ 3... d6!“ und „2 3... Sxe4?!“, auf dem Brett zwei blaue gepunktete Pfeile mit Stern und „2“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2502. Dort 3... De7 ziehen: Status „Gespeichert unter Varianten“, Gabel zeigt „3“, De7 in Gold.
+      Vorgeprüft: Abweichung, nur im Text: Seit N2572 steht nach dem Zug „Geändert · nicht gespeichert“, erst „Speichern“ legt die Variante an; danach Gabel „3“ und De7 in Gold wie beschrieben.
 - [ ] N2503. Langer Druck auf einen Zug öffnet das Menü (Zugzeichen, Zur Hauptvariante machen, Kommentar, Ab hier löschen); nach „Ab hier löschen“ holt „Rückgängig“ die Züge zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: langer Druck selbst (geprüft über den Knopf „Menü am Zug“), Zugzeichen.
 - [ ] N2504. „+ Notiz zu diesem Zug“: Text schreiben, App schließen und neu öffnen – der Kommentar ist da, der Zug hat einen goldenen Punkt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Neuladen statt App schließen); nicht geprüft: goldener Punkt.
 - [ ] N2505. Titel antippen: umbenennen, Kommentar zur Variante (erscheint eingeklappt oben), PGN in Lichess als Studie einfügen (Varianten, Kommentare, Zeichen kommen an), Variante löschen mit Rückfrage.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Umbenennen und Löschen; nicht geprüft: Kommentar oben, Einfügen in Lichess.
 - [ ] N2506. Abb. 2.2 mit „Ziehen“ eigene Züge spielen, in „Deine Züge“ „Als Variante speichern“: Variante öffnet am letzten eigenen Zug; an der Abbildung steht danach „1 eigene Variante ›“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (neuer Test).
 - [ ] N2507. Liste: „PGN“ → eine Lichess-PGN mit Varianten einfügen → Variante öffnet mit allen Abzweigen; FEN einfügen öffnet die Stellung.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2508. Neue Variante aus Partie, Fehlerdatenbank, Lernsammlung und „Stellung aufbauen“ ausprobieren (Titel, Kommentare aus Satz bzw. Plan).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2509. Ausgewertete eigene Partie mit Patzer: Gabel im Rückblick → Schalter „Engine-Folgen übernehmen“ → Abzweige „Besser war (Engine)“ und „So wird bestraft (Engine)“ (kursiv mit Chip-Zeichen), einzeln löschbar.
 - [ ] N2510. Partienliste und Auswertung zeigen die Zahl eigener Varianten einer Partie.
 - [ ] N2511. „Von hier spielen“ in einer Variante: Spielen zeigt „Probepartie: zählt nicht“, Partie gegen einen Bot, „Probepartie beenden“ → „Als Variante speichern“ → Züge als Abzweig mit Kommentar; Partienliste, Wertung, Rekorde und Tagesziel unverändert.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Wertung, Rekorde und Tagesziel bleiben unverändert (geprüft nur die Partienliste).
 - [ ] N2512. „Von hier spielen“ aus dem Gabel-Blatt der Auswertung: Farbe wie in der Partie; nach „Verwerfen“ bleibt nichts gespeichert.
 - [ ] N2513. Datensicherung mit Varianten: Rückfrage nennt „Varianten: n“; Einspielen auf einem zweiten Gerät bringt sie mit.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Einspielen einer Sicherung mit Varianten).
 - [ ] N2514. Tour auf beiden neuen Bildschirmen (Kompass oben rechts).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2515. Englisch: beide Bildschirme in englischer Sprache ansehen.
 - [ ] N2516. Abb. 2.40 → „Variante“ → Schalter „Stift“: Gold wählen, d8 und h4 antippen (Pfeil mit „1“), e5 zweimal antippen
       (goldener Rahmen mit „2“ in der Ecke), Rot f6–e4 (rot „1“). Status „Gespeichert unter Varianten“, die blauen Pfeile sind
       weg, solange der Stift an ist.
+      Vorgeprüft: Abweichung, nur im Text: Der Status heißt zuerst „Geändert · nicht gespeichert“, „Gespeichert“ erst nach „Speichern“ (seit N2572); Pfeil, Rahmen, Nummern und Ausblenden der blauen Pfeile wie beschrieben.
 - [ ] N2517. Denselben Pfeil noch einmal setzen nimmt ihn weg, die Nummern rücken nach. Radierer leert die Stellung,
       „Rückgängig“ holt alles zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2518. Legende: Goldzeile beschriften („Druck“), Rot aufklappen und „Rot 1“ beschriften; „Fertig“ – die Legende zeigt
       nur das Beschriftete; App schließen und neu öffnen, alles ist noch da.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Neuladen statt App schließen).
 - [ ] N2519. Eigenen Zug 3... De7 ziehen, „Baum“: Karte „nach 3. Sxe5“ mit Mini-Brett, Pfeilen ★/2/3 und drei Knöpfen
       (Hauptvariante, „7 Züge · 1 Abzweig“, „1 Zug · eigene“), darunter eingerückt „in 3... Sxe4?!“. Tipp auf „3... Sxe4?!“
       springt dorthin.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2520. „Karte“: ganze Variante als Karte, Hauptvariante oben gold, De7 in Gold; mit einem Finger in alle Richtungen
       schieben, mit zwei Fingern zoomen, −/+/„Alles zeigen“/„Zur Stellung“ ausprobieren.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2521. Auf der Karte einen Zug antippen: Die Variante öffnet genau an dieser Stellung; „Zurück“ in der Variante führt
       zur Abbildung (kein zweiter Entwurf).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2522. Karte „Als Liste“: alle Züge, Abzweige eingerückt; mit VoiceOver/TalkBack bedienbar.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für die Liste; nicht geprüft: VoiceOver/TalkBack.
 - [ ] N2523. Titel antippen → „PGN kopieren“ und in Lichess als Studie einfügen: Pfeile und Rahmen erscheinen (Gold als
       Gelb, Grau als Blau), die Texte „Gold 2: …“ und „Legende Gold: …“ stehen im Kommentar. Dieselbe PGN in der App unter
       „Varianten → PGN“ einlesen: genaue Farben, Nummern und Texte kommen zurück.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für das Einlesen in der App; nicht geprüft: Einfügen in Lichess.
 - [ ] N2524. Eine Lichess-Studie mit Pfeilen als PGN einlesen: Pfeile und Felder in Gold/Rot/Grün/Blau sind da; Englisch
       einstellen und Stift, Legende, Baum und Karte ansehen; Tour auf Variante und Karte (Kompass).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Pfeile und Felder; nicht geprüft: Englisch und Tour.
 - [ ] N2560. Varianten → PGN: „1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sxe4 4. De2 Sf6 5. Sc6+“ einlesen, „Analyse“ antippen: oben
       läuft „Analyse … von … Stellungen“, du kannst dabei weiter blättern und ziehen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2561. Nach der Analyse: hinter jedem Zug ein Symbol (4... Sf6 rotes „??“, 5. Sc6+ grüner Stern), am Brett
       dieselbe Marke am Zielfeld, links der Balken mit Zahl, ein grüner Pfeil zeigt den besten Zug der gezeigten Stellung.
+      Vorgeprüft: Abweichung, nur im Text: Statt des grünen Pfeils zeigt seit 0.3.49 ein goldener Pfeil den besseren Zug (N2581); Symbole, Marke und Balken wie beschrieben.
 - [ ] N2562. Die Chips „Symbole“, „Balken“, „Engine-Pfeil“ blenden je ihr Teil aus und ein; App schließen und neu öffnen:
       die Wahl ist gemerkt, die Werte sind noch da (keine neue Analyse).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2563. In der analysierten Variante einen neuen Zug ziehen: nur er wird nachgerechnet („Analyse 1 von 1“), danach
       hat er Symbol und Balken.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2564. Analyse einer langen Variante starten und „Abbrechen“ tippen: Der Knopf ist wieder aus, fertige Stellungen
       behalten ihre Symbole; „Analyse“ noch einmal rechnet nur den Rest.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: zweite Analyse rechnet nur den Rest.
 - [ ] N2565. Analyse starten und die Variante verlassen (etwa ins Buch): später zurück – die Analyse ist im Hintergrund
       fertig geworden.
 - [ ] N2566. Titel → „Als PGN-Datei sichern“ und in Lichess als Studie einfügen: Lichess zeigt die Bewertungen
       (`[%eval]`). Dieselbe Datei in der App einlesen: Symbole und Balken sind sofort da.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für das Einlesen in der App; nicht geprüft: Lichess zeigt die Bewertungen.
 - [ ] N2567. Eine Lichess-Studie mit Engine-Bewertungen als PGN einlesen: Balken sofort; Symbole erst nach „Analyse“.
 - [ ] N2568. „Von hier spielen“, ein paar Züge, dann über die Leiste zu „Spielen“: oben die Karte „Probepartie läuft“
       („zählt nicht · gegen …“); „Weiterspielen“ führt zurück, „Beenden“ bietet „Als Variante speichern“ und „Verwerfen“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2569. Englisch einstellen und Analyse, Chips, ⓘ und die Probekarte ansehen; Tour der Variante (Kompass) zeigt den
       Schritt „Analysis“.
 - [ ] N2525. Varianten → Neue Variante → „Ganze Eröffnung“: Italienische Partie, „Aus der Praxis“ anhaken, Band
       wählen, Vorschau „Buch … · Praxis … Züge“ → Öffnen: Variante öffnet nach 3. Lc4 mit vielen Fortsetzungen; nach
       3... Lc5 stehen auch 4. Sg5 (Übung 8) und 4. b4 (Evans); erster Praxiszug hinter dem Buch mit „Praxis (Lichess)“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2526. Steckbrief (z. B. Spanische Partie) → „Ganze Eröffnung als Variante“; außerdem „Nur Praxis“ (z. B.
       Wiener Partie) ausprobieren.
 - [ ] N2527. Übung 8 (Abb. 2.148): vor dem Lösen kein „Als Variante öffnen“, nach „Lösung zeigen“ schon; die
       Variante steht nach 4. Sg5, dahinter 4... Dxg5. Ebenso nach einer Taktik- oder Repertoire-Aufgabe (mit Lösung).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für Übung 8; nicht geprüft: Taktik- und Repertoire-Aufgabe.
 - [ ] N2528. Variante (etwa aus Abb. 2.40) → „Abfragen“: Seite wählen, „Ab dem Anfang“, falscher Zug zeigt den
       Pfeil, ein Zug aus einem anderen Abzweig gilt nicht als Fehler, Linien nacheinander, Ergebnis am Ende.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2529. Lernsammlung: beim Anlegen (oder Bearbeiten) unter „Notiz“ eine Variante wählen bzw. „Neue Variante
       aus dieser Stellung“; am Eintrag „Varianten abfragen (1)“; in „Abfragen“ nach „Plan zeigen“ „Varianten abfragen“.
       Dasselbe beim Bearbeiten eines Fehlereintrags; „lösen“ nimmt die Verknüpfung wieder weg.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für die Lernsammlung; nicht geprüft: Fehlereintrag und „lösen“.
 - [ ] N2555. Buch › „Dein Weg durchs Buch“ › ein Bündel „Nebenaufgaben“ antippen, dann die
       Zurück-Taste (Android) oder die Zurück-Geste: Nur das Fenster schließt sich, der Lernpfad
       bleibt. Ein zweites Zurück führt zum Buch.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2556. Profil › ein Abzeichen antippen › Zurück-Taste: Das Fenster schließt sich, die App
       bleibt offen. Dasselbe mit „Teilen“ unter einer ausgewerteten Partie und mit „Partie
       einstellen“ auf Spielen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2557. Einen Link `schach-von-grund-auf.com/app/#aufgabe-taktik-` (abgeschnitten) öffnen:
       Es erscheint „Dieser Link ist ungültig oder unvollständig.“ (nicht still das Buch). Ein Link mit
       angehängtem `?fbclid=abc` hinter der Kennung öffnet die Aufgabe normal.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2558. Eine Partie aus dem Profil öffnen › „Neue Partie“: Spielen öffnet, unten ist
       „Spielen“ golden markiert. Training › 30-Minuten-Plan › Partietag › „Zum Spielen“: ebenso.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für die Partie aus dem Profil; nicht geprüft: 30-Minuten-Plan.
 - [ ] N2559. Während einer Tour (Einstellungen › Hilfe › Rundgang) die Zurück-Taste drücken: Die
       Tour endet, die Seite darunter bleibt stehen (früher ging die App zusätzlich zurück).
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 
 ### Neu in 0.3.45: Zeitleiste, Repertoire, Sammlungen bearbeiten, Fehlertest Teil 3 (1.11.2026)
 

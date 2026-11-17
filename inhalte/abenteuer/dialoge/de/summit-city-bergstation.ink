@@ -83,7 +83,7 @@ Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hi
 
 === victor_seite ===
 ~ victorSeiteGegeben = true
-{victorGelacht:Er hat gelacht, mitten in der Partie. Zum ersten Mal.|Du weißt nicht, wer gewonnen hat. Es ist nicht wichtig. Victor sieht leichter aus als vorher.} #sprecher:erzaehler #musik:victor.warm
+{victorGelacht:Er hat gelacht, mitten in der Partie. Zum ersten Mal.|Wer gewonnen hat, ist nicht wichtig. Victor sieht leichter aus als vorher.} #sprecher:erzaehler #musik:victor.warm
 Ein Hale, der lächelt. Ich habe zu lange gewartet, um das zu sehen. #sprecher:ambrose #stimmung:still
 * [Ihm zusehen]
 - Die Sonne kommt unter die Wolken, alles wird rot. #sprecher:erzaehler
@@ -118,7 +118,7 @@ Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprech
 -> END
 
 === victor_alltag ===
-{~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|In der Capital Arena spielen wir gegeneinander. Ich freu mich. Ehrlich.} #sprecher:victor #stimmung:laechelt
+{~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Fund

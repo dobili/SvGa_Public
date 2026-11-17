@@ -35,10 +35,10 @@ Dr. Ngata. Ich spiele jede Nacht per Funk, mit Leuten auf der anderen Seite der 
 === ngata_angebot ===
 {sterneBestanden: -> END}
 Ich habe ein paar Mattbilder gesammelt, für lange Nächte. Willst du sie lösen? #sprecher:ngata #stimmung:laechelt
-+ [Ja, zeig her.]
++ [„Ja, zeig her.“]
     ~ beginneAufgaben("sternwarte.sterne")
     -> END
-+ [Später.]
++ [„Nicht jetzt.“]
     Der Himmel läuft nicht weg. Die Stellungen auch nicht. #sprecher:ngata #stimmung:laechelt
     -> END
 

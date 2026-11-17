@@ -96,7 +96,7 @@ Sonntag ist das letzte Spiel. Bist du so weit? #sprecher:slick #stimmung:nachden
     -> END
 - Am Sonntag regnet es richtig. Es trommelt so laut aufs Blechdach, dass man schreien muss. #sprecher:erzaehler #musik:riverton.clubkampf
 Trotzdem sind alle gekommen, unter Schirmen in drei Reihen. Pops, Mr. Harlan, Mrs. Albescu, Mr. Quinn zwischen zwei Zügen. #sprecher:erzaehler
-Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. Er redet nicht. #sprecher:erzaehler
+Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. Er redet kaum. #sprecher:erzaehler
 Blitz? Drei Minuten. Wie es sich gehört. #sprecher:slick #stimmung:laechelt
 Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose #stimmung:nachdenklich
 * [„Fünfundvierzig Minuten.“]
@@ -106,7 +106,7 @@ Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose #stimmung:nachdenklic
     Gut. Dann eben lang. Soll ja was davon bleiben. #sprecher:slick #stimmung:laechelt
 * [„Blitz. Drei Minuten.“]
     Mutig. Oder dumm. Wir finden es raus. #sprecher:slick #stimmung:froh
-- Er beugt sich vor, und einen Moment ist er wieder der Alte. #sprecher:erzaehler
+- Er beugt sich vor, und einen Moment ist er wieder der Slick vom ersten Tag. #sprecher:erzaehler
 Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick #stimmung:nachdenklich
 ~ beginnePartie("riverton.clubkampf")
 -> END
@@ -143,7 +143,7 @@ Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillo
     Slick legt seinen König nicht um. Er nimmt ihn in die Hand und sieht ihn an. #sprecher:erzaehler #musik:aus #pause:2
 }
 Das war das letzte Spiel in diesem Pavillon. Gut, dass es ein richtiges war. #sprecher:slick #stimmung:ernst
-Applaus für Maple Falls! Na los! Es war umsonst, also klatscht! #sprecher:slick #stimmung:lacht #klang:applaus_regen
+Applaus für Maple Falls! Na los! Der Eintritt war frei, also klatscht! #sprecher:slick #stimmung:lacht #klang:applaus_regen
 Sie klatschen. Es klingt wie noch mehr Regen. #sprecher:erzaehler #klang:fanfare.riverton
 Er steckt dir die Nadel an, ein kleines Achteck aus grünem Blech mit einer Uhr darauf, und hält dich einen Moment an der Schulter. #sprecher:erzaehler
 Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
@@ -153,7 +153,7 @@ Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
 // Kapitel 22: Montag im Pavillon (Stille S33: nur der Konzernton, wo vorher die Uhren klopften).
 {slickAbschiedGesehen:
     Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
-    Dann spielen wir eben auf der Treppe. Die Treppe gehört der Stadt. #sprecher:slick #stimmung:laechelt
+    Die Treppe gehört der Stadt. Die kann keiner verpachten. #sprecher:slick #stimmung:laechelt
     -> slick_alltag_wahl
 }
 // Gutachten K2.8: der Montag als eigener Zustand; erst danach öffnet der Wohnwagen.

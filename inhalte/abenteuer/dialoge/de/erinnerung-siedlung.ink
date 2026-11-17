@@ -125,6 +125,6 @@ Ambrose steht am Fenster und sieht die Straße hinunter, nach Norden. #sprecher:
 - Ja. Gideon hat alles getan, worum ich ihn gebeten habe. #sprecher:ambrose #stimmung:still
 Er hat das Brett nach Maple Falls geschickt. Er hat einen Stein behauen. Er hat einem Fremden drei Tage die Stirn gekühlt. #sprecher:ambrose #stimmung:laechelt
 Hundertsechzig Jahre habe ich an Hale gedacht. Jeden Tag. Und nicht ein einziges Mal an den Schmied. #sprecher:ambrose #stimmung:nachdenklich
-Nicht auf den Falschen gewartet. Das ist ungerecht. Aber nur auf den einen. #sprecher:ambrose #stimmung:friedlich
+Ich habe nicht auf den Falschen gewartet. Nur immer auf den einen. Das ist ungerecht. #sprecher:ambrose #stimmung:friedlich
 Morgen spielt ihr sie zu Ende. Du und der junge Hale. Ich sehe zu. Das ist schöner, als ich dachte. #sprecher:ambrose #stimmung:friedlich
 -> END

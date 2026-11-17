@@ -84,11 +84,11 @@ Sieben. #sprecher:ward #stimmung:neutral
 Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein schwarzer König. Sonst nichts. #sprecher:erzaehler #musik:aus #geraeusch:aus
 * [„Das ist alles?“]
 - Das ist alles, was übrig bleibt, wenn man lange genug spielt. #sprecher:ward #stimmung:nachdenklich
-Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, verliert. Warum? #sprecher:ward #stimmung:nachdenklich
+Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, hat das Nachsehen. Warum? #sprecher:ward #stimmung:nachdenklich
 * [„Weil er weichen muss. Dann kommt der andere vorbei.“]
 * [„Ich weiß es nicht.“]
     Ehrlich. Gut. Wer ziehen muss, muss zur Seite. Und dann kommt der andere vorbei. #sprecher:ward #stimmung:laechelt
-- Opposition. Der zuerst zieht, gibt nach. Wie im Leben, manchmal. #sprecher:ward #stimmung:nachdenklich
+- Opposition. Wer zuerst ziehen muss, gibt nach. Wie im Leben, manchmal. #sprecher:ward #stimmung:nachdenklich
 Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden. Hier nicht. #sprecher:ward #stimmung:nachdenklich
 Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
 Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward #stimmung:neutral #musik:karte
@@ -109,6 +109,7 @@ Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:
 // Kapitel 48, dritter Abend auf dem Weg hinunter: Die Fernpartie ist auch ein Endspiel.
 === abend_fernpartie ===
 ~ fernpartieEndspielGesagt = true
+Genug für heute. Morgen wieder, gleich nach dem Frühstück. #sprecher:ward #stimmung:neutral
 Am dritten Abend, auf dem Weg hinunter, gehen in der Stadt die Lichter an. #sprecher:erzaehler
 * [„Die Fernpartie. Das ist auch ein Endspiel.“]
 - Ein Turm gegen zwei Springer. Und Bauern. Ich habe hundertsechzig Jahre darauf gestarrt. #sprecher:ambrose #stimmung:nachdenklich
@@ -119,7 +120,7 @@ Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
 -> END
 
 === ward_victor_fort ===
-Er ist den Pfad hinauf. Ich bin vierundsechzig. Ich renne keinem mehr nach. Du vielleicht schon. #sprecher:ward #stimmung:laechelt
+Er ist noch nicht zurück. Ich renne keinem nach, du vielleicht schon. #sprecher:ward #stimmung:laechelt
 Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward #stimmung:nachdenklich
 -> END
 
@@ -175,6 +176,12 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenkl
     -> END
 
 === ward_nach_sieg ===
+// Revanche um eine bessere Nadel: nur Wards Satz, nicht noch einmal die ganze Nadelszene mit Juno.
+{clubkampfSummitCityNadel > 0:
+    ~ clubkampfSummitCityNadel = nadelSummitCity
+    Eine bessere Nadel. Bis zum letzten Bauern, wie versprochen. #sprecher:ward #stimmung:laechelt
+    -> END
+}
 ~ clubkampfSummitCityNadel = nadelSummitCity
 {ausgangSummitCityClubkampf == "remis":
     Remis. Bis zum letzten Bauern. #sprecher:ward #stimmung:laechelt
@@ -216,7 +223,7 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
     Gern. Aber diesmal bis zum letzten Bauern. #sprecher:ward #stimmung:laechelt
     ~ beginnePartie("summitCity.clubkampf")
     -> END
-+ [„Bis später.“]
++ [„Bis morgen.“]
     -> END
 
 // ---------------------------------------------------------------- Erinnerung Hastings 1895 (Szene 85)

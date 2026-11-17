@@ -30,7 +30,7 @@ Am Canyonrand hängt eine Frau im Seil und winkt. Unten auf einem Felsvorsprung 
 Juniper. Wir Kletterer spielen hier Drei-Schach. Wer dreimal Schach gibt, gewinnt. #sprecher:juniper #stimmung:laechelt
 Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schluss. #sprecher:juniper #stimmung:laechelt
 Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. Ein seltsames, schönes Spiel. #sprecher:erzaehler #geraeusch:canyonrand
-Aber Ambrose ist still geworden. Er sieht nach Norden. #sprecher:erzaehler
+Aber Ambrose ist still geworden. Er sieht nach Osten, wo die Staubstraße verschwindet. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
@@ -105,11 +105,11 @@ Darunter springt eine Uhr an: fünf Minuten für jede Seite, drei Sekunden je Zu
 
 === greifarm_angebot ===
 + [Sich an den Tisch setzen.]
-    Der Arm zuckt, dann setzt er einen Bauern nach e4. Klack. #sprecher:greifarm #stimmung:neutral
+    Der Arm zuckt, dann setzt er einen Bauern nach e4. Klack. #sprecher:erzaehler
     ~ beginnePartie("wegPinewoodGhost.z1")
     -> END
 + [Lieber nicht.]
-    Der Arm senkt sich wieder. Auf dem Bildschirm steht: „Warte.“ #sprecher:greifarm #stimmung:neutral
+    Der Arm senkt sich wieder. Auf dem Bildschirm steht: „Warte.“ #sprecher:erzaehler
     -> END
 
 === greifarm_ende ===

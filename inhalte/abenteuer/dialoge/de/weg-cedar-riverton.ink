@@ -111,7 +111,7 @@ Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffn
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
 * [„Nicht jetzt.“]
-    Der nächste Zug kommt in einer Stunde. Ich auch. #sprecher:schaffner #stimmung:laechelt
+    Dann nach dem Elfuhrsieben. Ich sitz hier jede Pause. #sprecher:schaffner #stimmung:laechelt
     -> END
 
 === quinn_nach_sieg ===
@@ -198,7 +198,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose #stimmung:nach
 {rosalindGetroffen: -> zugpartie_angebot}
 ~ rosalindGetroffen = true
 Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
-„Marian Shaw. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
+„Marian Shaw. Seit dreiundzwanzig Jahren spiele ich mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
 -> zugpartie_angebot
 
 === zugpartie_angebot ===
@@ -243,7 +243,7 @@ Ein loses Blatt mit einer gezeichneten Stellung. Darunter steht mit Bleistift: �
 === durchlass ===
 {not hatLaterne:
     Ein gemauerter Durchlass unter dem Damm, dahinter stockdunkel. Es tropft. #sprecher:erzaehler
-    Gwen hat gesagt, da wohne was. Ohne Licht gehst du da nicht hinein. #sprecher:erzaehler
+    Auf die Mauer hat jemand mit Kreide geschrieben: „Da wohnt was. G.“ Ohne Licht gehst du da nicht hinein. #sprecher:erzaehler
     -> END
 }
 {thermoskanneGefunden:

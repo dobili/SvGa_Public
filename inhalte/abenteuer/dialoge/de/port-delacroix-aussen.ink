@@ -43,6 +43,7 @@ VAR hatGummistiefel = false
 VAR nadelSummitCity = 0
 VAR angesehenBauzaun = false
 VAR abschiedPortDelacroixGesehen = false
+VAR tiefpunktGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -89,12 +90,12 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 === abschied_mama ===
 ~ abschiedPortDelacroixGesehen = true
 Am Bahnhof steht der Wüstenzug nach Westen. Mama bleibt hier; das Notzelt braucht sie noch zwei Wochen. #sprecher:erzaehler
-Fahr. Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter #stimmung:laechelt
+Fahr. Du bist in sechs Monaten weitergekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter #stimmung:laechelt
 Ich hole dich ein. #sprecher:mutter #stimmung:laechelt
 * [Mama umarmen]
 - Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
-Der Geigenkasten liegt neben dir auf dem Sitz. Der Deckel ist offen. #sprecher:erzaehler
-Ihr redet wenig. Es ist das Schweigen von zwei, die sich gestritten haben und wieder anfangen wollen. #sprecher:erzaehler
+Im Zug liegt der Geigenkasten neben dir auf dem Sitz. Der Deckel ist offen. #sprecher:erzaehler
+Ambrose und du redet wenig. Es ist das Schweigen von zwei, die sich gestritten haben und wieder anfangen wollen. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Bretter sammeln (Besuch 1)
@@ -126,7 +127,7 @@ Sie hat Muscheln dazugelegt. #sprecher:erzaehler
 }
 ~ brettHaus3Gesehen = true
 In der Rue des Facteurs hängt ein Brett an der Wand eines Wohnzimmers wie ein Bild. Ein Junge steigt auf einen Stuhl und hängt es ab. #sprecher:erzaehler
-„Das hat mein Großvater geschnitzt. Nehmt es. An der Wand spielt keiner.“ #sprecher:erzaehler
+„Das hat mein Großvater geschnitzt. Nimm es. An der Wand spielt keiner.“ #sprecher:erzaehler
 -> brett_gezaehlt
 
 === brett_haus4 ===
@@ -187,10 +188,16 @@ Hier warst du schon. Jemand winkt dir aus dem Fenster zu. #sprecher:erzaehler
 === batiste_erstes_treffen ===
 ~ batisteGetroffen = true
 Am Kai liegt ein Boot kieloben auf zwei Böcken. Ein Mann streicht Pech in die Fugen. Auf einem Eimer steht ein Brett. #sprecher:erzaehler
-Du bist das Kind mit dem Rucksack. #sprecher:batiste #stimmung:nachdenklich
+{tiefpunktGesehen:Du bist das Kind mit dem Rucksack.|Neu hier, mit Rucksack. Das sieht man.} #sprecher:batiste #stimmung:nachdenklich
 * [„Ja.“]
-- Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste #stimmung:nachdenklich
+- {tiefpunktGesehen: -> batiste_remy}
+Wer weit gefahren ist, braucht eine Pause. Ich hab eine, gleich hier. #sprecher:batiste #stimmung:laechelt
+-> batiste_setz_dich
+=== batiste_remy ===
+Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste #stimmung:nachdenklich
 Wer so was gemacht hat, wird empfindlich, wenn einer mit Glas an der Jacke kommt. #sprecher:batiste #stimmung:nachdenklich
+-> batiste_setz_dich
+=== batiste_setz_dich ===
 Setz dich. Ohne Uhr. Uhren sind was für Leute, die irgendwohin müssen. #sprecher:batiste #stimmung:laechelt
 -> batiste_angebot
 
@@ -206,8 +213,8 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
 === batiste_nach_sieg ===
 {not batisteKarteGegeben:
     ~ batisteKarteGegeben = true
-    Du gewinnst nicht schön. Aber allein. #sprecher:erzaehler
-    Na also. Jetzt hat es auch keiner gehört. #sprecher:batiste #stimmung:laechelt
+    {tiefpunktGesehen:Du gewinnst nicht schön. Aber allein.|Du gewinnst nicht schön. Aber du gewinnst.} #sprecher:erzaehler
+    {tiefpunktGesehen:Na also. Jetzt hat es auch keiner gehört.|Na also. Ganz ohne Uhr.} #sprecher:batiste #stimmung:laechelt
     Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste #stimmung:laechelt
     // „Kühler Kopf“ hat schon Mr. Quinn geschenkt; Batiste gibt den Bauernkompass (Bauer um Bauer,
     // ohne Uhr; Dokument 11 schlug ihn für Port Delacroix vor).

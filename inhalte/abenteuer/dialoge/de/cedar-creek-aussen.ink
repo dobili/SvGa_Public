@@ -83,7 +83,7 @@ Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
 - not ankunftCedarCreekGesehen: -> ankunft
 - nadelCedarCreek > 0 and not endeAkt1Gesehen and not erzaehlung1858Gesehen: -> steg_vor_archiv
 - nadelCedarCreek > 0 and not endeAkt1Gesehen: -> ende_akt1
-- maeEingeladen and not sternennachtGesehen and nadelCedarCreek == 0: -> sterne_angebot
+- maeEingeladen and not sternennachtGesehen and not nachtImLesesaal and nadelCedarCreek == 0: -> sterne_angebot
 - not gefundenSchluessel: -> fund_schluessel
 - else: -> steg_alltag
 }
@@ -252,7 +252,7 @@ Nimm ihn mit. Vielleicht findest du das Schloss. #sprecher:rosa #stimmung:laeche
 {nadelCedarCreek > 0:
     Der Steg liegt still in der Abendsonne. Der Bus nach Maple Falls wartet an der Haltestelle. #sprecher:erzaehler
 - else:
-    Der Bach glitzert unter dem Steg. Hier sieht man abends bestimmt gut die Sterne. #sprecher:erzaehler
+    Der Bach glitzert unter dem Steg. {sternennachtGesehen:Hier habt ihr elf Sternschnuppen gezählt.|Hier sieht man abends bestimmt gut die Sterne.} #sprecher:erzaehler
 }
 -> END
 

@@ -14,6 +14,10 @@
 // überleben das nicht. Deshalb merkt sich je Gegenstand eine Variable „angesehen…“ (Spielstand,
 // dialogvariablen), ob er schon einmal angesehen wurde.
 // Nichts hier verrät Akt 2 (Bibel, Abschnitt 2.3: Mamas Vergangenheit bleibt verborgen).
+// Dialogprüfung 17.11.2026: Im Haus spricht Ambrose erst, wenn er erwacht ist und die erste Partie
+// besprochen hat (ersteLektionBesprochen, ab da trägt {held} das Brett bei sich). Wer Hutschachtel,
+// Spiegel, Zeitungen oder Pizzakarton vorher ansieht, liest nur den ersten Satz; „angesehen…“ wird
+// erst mit Ambroses Satz gesetzt, damit der nicht verloren geht.
 
 VAR angesehenKartonKueche = false
 VAR angesehenPizzakarton = false
@@ -46,9 +50,13 @@ VAR nadelCedarCreek = 0
 {angesehenPizzakarton:
     Der Pizzakarton liegt immer noch da. Er gehört inzwischen fast zur Einrichtung. #sprecher:erzaehler
 - else:
-    ~ angesehenPizzakarton = true
+    {ersteLektionBesprochen:
+        ~ angesehenPizzakarton = true
+    }
     Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu. #sprecher:erzaehler
-    Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
+    {ersteLektionBesprochen:
+        Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
+    }
 }
 -> END
 
@@ -89,9 +97,13 @@ VAR nadelCedarCreek = 0
 {angesehenHutschachtel:
     Die Feder am Hut wippt, wenn du die Schachtel anstößt. #sprecher:erzaehler
 - else:
-    ~ angesehenHutschachtel = true
+    {ersteLektionBesprochen:
+        ~ angesehenHutschachtel = true
+    }
     Eine runde Hutschachtel mit Samtband. Darin liegt ein Damenhut mit einer kleinen Feder. #sprecher:erzaehler
-    Ein Hut für den Sonntag. Meine Schwester trug so einen zur Kirche. #sprecher:ambrose #stimmung:nachdenklich
+    {ersteLektionBesprochen:
+        Ein Hut für den Sonntag. Meine Schwester trug so einen zur Kirche. #sprecher:ambrose #stimmung:nachdenklich
+    }
 }
 -> END
 
@@ -99,9 +111,13 @@ VAR nadelCedarCreek = 0
 {angesehenSpiegel:
     Im Spiegel nur du und die Kisten. Ambrose schweigt diesmal höflich. #sprecher:erzaehler
 - else:
-    ~ angesehenSpiegel = true
+    {ersteLektionBesprochen:
+        ~ angesehenSpiegel = true
+    }
     Ein alter Spiegel mit einem Sprung quer über das Glas. Darin siehst du dich und die Kisten, sonst niemand. #sprecher:erzaehler
-    Ich habe nachgesehen. Geister haben kein Spiegelbild. Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
+    {ersteLektionBesprochen:
+        Ich habe nachgesehen. Geister haben kein Spiegelbild. Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
+    }
 }
 -> END
 
@@ -109,9 +125,13 @@ VAR nadelCedarCreek = 0
 {angesehenZeitungen1961:
     Unter der Meldung ein Foto: eine junge Frau mit Pokal, sehr ernst und sehr stolz. #sprecher:erzaehler
 - else:
-    ~ angesehenZeitungen1961 = true
+    {ersteLektionBesprochen:
+        ~ angesehenZeitungen1961 = true
+    }
     Ein Stapel Zeitungen von 1961, gelb und brüchig. Ganz oben: „Miss Whitlock gewinnt die Schachmeisterschaft des Kreises“. #sprecher:erzaehler
-    Eine Whitlock, die gewinnt. Endlich. #sprecher:ambrose #stimmung:stolz
+    {ersteLektionBesprochen:
+        Eine Whitlock, die gewinnt. Endlich. #sprecher:ambrose #stimmung:stolz
+    }
 }
 -> END
 
@@ -130,7 +150,9 @@ VAR nadelCedarCreek = 0
     ~ angesehenKisteWhitlock = true
     Eine Kiste aus Holz, nicht aus Pappe. Auf dem Deckel steht in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen“. #sprecher:erzaehler
     Obenauf ein gerahmtes Foto: eine Frau mit weißem Dutt, vor ihr ein Schachbrett. Auf der Rückseite: „Margaret, Sonntag“. #sprecher:erzaehler #klang:holzklacken
-    Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:still
+    {ersteLektionBesprochen:
+        Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:still
+    }
 }
 -> END
 

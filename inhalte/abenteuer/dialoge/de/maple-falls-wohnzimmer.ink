@@ -107,7 +107,8 @@ Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das h
     Schön. Ist alt, oder? Pass auf, dass keine Figur wegkommt. #sprecher:mutter #stimmung:laechelt
 * [„Spielst du Schach?“]
     Ich? Nein. #sprecher:mutter #stimmung:ueberrascht
-    Sie lacht, ein bisschen zu kurz. Ich kann nicht mal diesen Tisch. #sprecher:mutter #stimmung:ueberrascht
+    Sie lacht, ein bisschen zu kurz. #sprecher:erzaehler
+    Ich kann nicht mal diesen Tisch. #sprecher:mutter #stimmung:ueberrascht
 - Deine Mutter, wenn ich das sagen darf, lügt schlecht. #sprecher:ambrose #stimmung:laechelt
 In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. Falls du Leute kennenlernen willst. #sprecher:mutter #stimmung:laechelt
 * [„Vielleicht schau ich mal hin.“]
@@ -158,7 +159,7 @@ Du legst das Foto auf den Küchentisch. Dorthin, wo der Zettel gelegen hat. #spr
 Mama kommt von der Frühschicht. Mantel, Tasche, ob du gegessen hast. Dann sieht sie es. #sprecher:erzaehler
 * [„Ich hab das gefunden.“]
 - Sie setzt sich. Nicht auf den Stuhl, an dem sie steht. Auf den nächsten, als wäre der Weg zu weit. #sprecher:erzaehler #pause:2
-Du warst in Ironwood. Bei Mama. #sprecher:mutter #stimmung:verschlossen
+Du warst in Ironwood. Bei Oma Ruth. #sprecher:mutter #stimmung:verschlossen
 * [„Und bei Big Joe. Er lässt grüßen.“]
 - Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
 Ihm tut es leid. Joe. Dieser sture, alberne … Ihm tut es leid. #sprecher:mutter #stimmung:riss
@@ -193,7 +194,7 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
     -> END
 
 === mutter_alltag ===
-{~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter #stimmung:laechelt
+{~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|{aufbruchGesehen:Dein Zimmer sieht fast bewohnt aus. Fast.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?}|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Abend im Diner

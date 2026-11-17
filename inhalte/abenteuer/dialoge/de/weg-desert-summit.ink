@@ -46,7 +46,7 @@ VAR spurPM4Gezaehlt = false
 === diner_ankunft ===
 {earlGetroffen: -> END}
 ~ earlGetroffen = true
-Drinnen schieben Fernfahrer Könige über Bretter. Ein Mann mit Kappe und Kaffeebecher dreht sich nach dir um. #sprecher:erzaehler
+Durch das Fenster sieht man Fernfahrer Könige über Bretter schieben. Ein Mann mit Kappe und Kaffeebecher lehnt an der Wand und dreht sich nach dir um. #sprecher:erzaehler
 Na, auch auf dem Weg nach oben? Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
 -> earl_regel
 

@@ -27,7 +27,8 @@ import { Abspann } from "./Abspann";
 import { Deckwahl } from "./Deckwahl";
 import { Fensterbank } from "./Fensterbank";
 import { Tagebuchseite } from "./Tagebuchseite";
-import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
+import { Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
+import { Fortsetzungen } from "./Fortsetzungen";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { szeneAus, useOberweltkern } from "./kern";
 import { Kopfleiste } from "./Kopfleiste";
@@ -66,7 +67,7 @@ export function Oberwelt() {
   const { dienste, stand, standRef, welt, weltRef, spiel, meldung, meldungsbild, setzeMeldung } = k;
   const { schreibe, melde, wechsleKarte } = k;
   const partie = usePartiestart(k);
-  const { deckwahl, ergebnis, offenePartie } = partie;
+  const { deckwahl, ergebnis } = partie;
   const runden = useAufgabenrunde(k, partie);
   const { rundenergebnis, offeneRunde, gedaechtnis } = runden;
   const dialoge = useDialogende(k, partie, runden);
@@ -376,28 +377,7 @@ export function Oberwelt() {
           }}
         />
       )}
-      {offeneRunde && (
-        <Fortsetzungskarte
-          text="aufgaben.laeuft"
-          weiter="aufgaben.weiter"
-          abbrechen="aufgaben.abbrechen"
-          beiWeiter={() => void dienste.starteAufgaben(offeneRunde)}
-          beiAbbrechen={runden.brichRundeAb}
-        />
-      )}
-      {offenePartie && (
-        <Fortsetzungskarte
-          text="ergebnis.partieLaeuft"
-          weiter="ergebnis.weiterspielen"
-          abbrechen="ergebnis.aufgeben"
-          beiWeiter={() => {
-            // Kennt die App die Partie nicht mehr (Affentest, 14.11.2026), räumt die Karte auf,
-            // statt einen toten Knopf zu zeigen; die Begegnung lässt sich neu beginnen.
-            if (!dienste.zeigePartie(offenePartie)) partie.gibOffenePartieAuf();
-          }}
-          beiAbbrechen={partie.gibOffenePartieAuf}
-        />
-      )}
+      <Fortsetzungen dienste={dienste} runden={runden} partie={partie} />
     </div>
   );
 }

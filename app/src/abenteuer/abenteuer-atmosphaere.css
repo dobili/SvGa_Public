@@ -1,0 +1,298 @@
+/* Schach-Abenteuer, Teil 2 von abenteuer.css (aufgeteilt nach Regel 4, Dateien unter 400 Zeilen):
+   Abspann, Varianten der Partie (Blindschach, Lebendschach, Vorführung), Pause im Dialog, Ton,
+   Großansicht, Erscheinungen, Fensterbank, Fundbilder und Tagebuchseite. Wird überall direkt nach
+   abenteuer.css geladen, damit die Reihenfolge der Regeln gleich bleibt. */
+
+/* Abspann (Ende von Akt 4): Figuren mit Porträt in einem Raster. */
+.abenteuer-abspann-figuren {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--raster);
+  padding: 0;
+  list-style: none;
+}
+
+.abenteuer-abspann-figuren li {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+/* Blindschach (Variante „blind“, Akt 4, docs/spiel/10, V1): Figuren unsichtbar, Züge bleiben lesbar. */
+.rahmen-blindschach .brett-figur {
+  visibility: hidden;
+}
+
+/*
+ * Pixelrahmen (Entscheidung G2): Mit geladenem Rahmen (Klasse mit-pixelrahmen am Wurzelelement,
+ * Variablen aus anbindung/pixelrahmen.ts) zeichnen die Fenster des Spiels einen Rahmen im
+ * Pixelstil: der Dialog dunkel (fenster), Menüs, Meldungen und die Kartenleiste hell (karte), die
+ * Wahlknöpfe im Dialog als Pixelknopf. Schrift, Knöpfe der App und Kartenknöpfe bleiben, wie sie
+ * sind. Ohne Klasse gilt das Aussehen oben.
+ */
+.mit-pixelrahmen .abenteuer-dialog {
+  border-style: solid;
+  border-width: var(--rahmen-fenster-breite);
+  border-image: var(--rahmen-fenster-bild) var(--rahmen-fenster-schnitt) fill /
+    var(--rahmen-fenster-breite) stretch;
+  border-radius: 0;
+  background: transparent;
+  image-rendering: pixelated;
+}
+
+.mit-pixelrahmen .abenteuer-menue,
+.mit-pixelrahmen .abenteuer-ergebnis,
+.mit-pixelrahmen.abenteuer-kartenleiste {
+  border-style: solid;
+  border-width: var(--rahmen-karte-breite);
+  border-image: var(--rahmen-karte-bild) var(--rahmen-karte-schnitt) fill /
+    var(--rahmen-karte-breite) stretch;
+  border-radius: 0;
+  background: transparent;
+  color: var(--navy);
+  image-rendering: pixelated;
+}
+
+.mit-pixelrahmen .abenteuer-dialog-wahlen button,
+.mit-pixelrahmen .abenteuer-dialog-weiter {
+  border-style: solid;
+  border-width: var(--rahmen-knopf-breite);
+  border-image: var(--rahmen-knopf-bild) var(--rahmen-knopf-schnitt) / var(--rahmen-knopf-breite)
+    stretch;
+  border-radius: 0;
+  image-rendering: pixelated;
+}
+
+/* Sammelkarte der Finch-Jagd im Tagebuch (Runde 6): 16 Kästchen in vier Reihen. */
+.abenteuer-finchkarte {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.abenteuer-finchkarte li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dashed currentColor;
+  padding: 0.3rem;
+  opacity: 0.5;
+}
+
+.abenteuer-finchkarte li.gefunden {
+  border-style: solid;
+  opacity: 1;
+}
+
+.abenteuer-finchkarte span {
+  font-size: 1.6rem;
+}
+
+/* Lebendschach (Runde 6): Bild der Lichtung als Hintergrund der Partieansicht, hell verschleiert. */
+body.abenteuer-mit-kulisse {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 55%), rgb(255 255 255 / 55%)), var(--abenteuer-kulisse);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  image-rendering: pixelated;
+}
+
+/* Vorführung und Gedächtnisstellung (docs/spiel/18): „Brett drehen“ braucht die Geschichte nicht. */
+.abenteuer-vorfuehrung .brettschalter-gruppe {
+  display: none;
+}
+
+/* Pause im Dialog (#pause, T3): „Weiter“ ist gesperrt und blendet nach der Pause wieder ein. */
+.abenteuer-dialog-weiter,
+.abenteuer-dialog-wahlen button {
+  transition: opacity 0.4s ease;
+}
+.abenteuer-dialog-weiter:disabled,
+.abenteuer-dialog-wahlen button:disabled {
+  opacity: 0;
+}
+
+/* Musik und Geräusche im Spielmenü (anbindung/Tonregler.tsx, T1 und T2). */
+.abenteuer-ton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: var(--raster);
+}
+.abenteuer-tonregler {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+.abenteuer-tonregler input[type="range"] {
+  flex: 1;
+}
+.abenteuer-ton-hinweis {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Großansicht eines Bildes über der Dialogzeile (Atmosphäre T7, dialog/Grossansicht.tsx). */
+.abenteuer-grossansicht {
+  margin: 0 0 var(--raster);
+  display: flex;
+  justify-content: center;
+  animation: abenteuer-grossansicht-ein 0.4s ease-out;
+}
+
+.abenteuer-grossansicht img {
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes abenteuer-grossansicht-ein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Erscheinung des Porträts (Atmosphäre T9): #erscheint blendet in zwei Sekunden ein, #geist zeigt
+   die Figur halb durchsichtig (Ambrose im Kapitel 2). */
+.abenteuer-dialog-kopf[data-erscheinung="erscheint"] .abenteuer-dialog-portraet {
+  animation: abenteuer-erscheint 2s ease-in;
+}
+
+.abenteuer-dialog-kopf[data-erscheinung="geist"] .abenteuer-dialog-portraet {
+  opacity: 0.5;
+}
+
+/* Geisterhafte Figur ohne Marke (geist: true in orte.json, regeln/geist.ts): leicht durchsichtig,
+   etwas blasser, wie auf der Karte; nicht in Erinnerungen. */
+.abenteuer-dialog-kopf[data-erscheinung="geisterhaft"] .abenteuer-dialog-portraet {
+  opacity: 0.75;
+  filter: saturate(0.8) brightness(1.05);
+}
+
+@keyframes abenteuer-erscheint {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fensterbank mit den Funden (Atmosphäre T15, oberwelt/Fensterbank.tsx). */
+.abenteuer-fensterbank ul {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.abenteuer-fensterbank li + li {
+  margin-top: calc(var(--raster) * 0.75);
+}
+
+/* Bild eines Fundes (oberwelt/Fundbild.tsx): groß im Fund-Fenster, klein auf der Fensterbank. */
+.abenteuer-fundbild {
+  display: block;
+  max-width: 100%;
+  max-height: 40vh;
+  margin: 0 auto var(--raster);
+  image-rendering: pixelated;
+}
+
+.abenteuer-fundbild-klein {
+  display: inline-block;
+  max-height: calc(var(--raster) * 4);
+  margin: 0 calc(var(--raster) * 0.5) 0 0;
+  vertical-align: middle;
+}
+
+/* Tagebuchseite mit Schreibanimation (Roman Kap. 9, oberwelt/Tagebuchseite.tsx): Handschrift ohne
+   Webschrift, damit das Paket nicht wächst. */
+.abenteuer-handschrift {
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-style: italic;
+}
+
+.abenteuer-tagebuchseite .abenteuer-handschrift {
+  min-height: 3em;
+  font-size: 1.4rem;
+}
+
+.abenteuer-feder {
+  display: inline-block;
+  width: 0.15em;
+  height: 1em;
+  margin-left: 0.05em;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: abenteuer-feder 0.8s steps(2) infinite;
+}
+
+@keyframes abenteuer-feder {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Erinnerung im Dialog (Atmosphäre T10, `#erinnerung`): Sepia-Rahmen wie ein altes Foto, und die
+   Karte dahinter in Sepia, solange die Erinnerung dauert. */
+.abenteuer-dialog.abenteuer-dialog-erinnerung {
+  border: 3px double #8a6a3f;
+  background: rgba(74, 56, 34, 0.95);
+  color: #f3e6cc;
+}
+
+.abenteuer-dialog-erinnerung .abenteuer-dialog-portraet {
+  filter: sepia(0.85);
+}
+
+.abenteuer-welt:has(.abenteuer-dialog-erinnerung) canvas {
+  filter: sepia(0.85) contrast(0.95) brightness(1.05);
+  transition: filter 1s ease;
+}
+
+/* Große Porträts (64 × 64 oder 96 × 96, dialog/Portraet.tsx): 96 Pixel, scharfe Pixel. */
+.abenteuer-dialog-portraet.abenteuer-portraet-gross {
+  width: 96px;
+  height: 96px;
+}
+
+/* Porträtblatt (dialog/Portraet.tsx): ein Feld des Blatts, 96 Pixel, scharfe Pixel. */
+.abenteuer-portraet-blatt {
+  display: block;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
+/* Karten Ambroses im Tiefpunkt (oberwelt/Deckwahl.tsx): grau, mit dem Grund darunter. */
+.abenteuer-karte[data-gesperrt="ja"] {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+.abenteuer-karte-grund {
+  display: block;
+  font-style: italic;
+}
+
+/* Sprechblase eines Statisten im Dialogfenster unten (Wunsch des Autors, 14.11.2026: ein
+   Textfenster für die Geschichte); Ambroses Antwort darunter mit Porträt, abgesetzt. */
+.abenteuer-sprechblase-ambrose {
+  margin-top: var(--raster);
+  padding-top: var(--raster);
+  border-top: 1px solid rgba(201, 162, 39, 0.35);
+}

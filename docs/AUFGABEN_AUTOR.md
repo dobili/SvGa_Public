@@ -1895,11 +1895,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       sie mit dem Standbild. (2) Rettungsboot in Halterungen an der Fähre, 48 × 32 Pixel. (3) Rasthaus
       mit verschneitem Dach, 128 × 144, gleicher Umriss wie das heutige. (4) Schulturnhalle für die
       Hochebene, 160 × 144 (heute eine Scheune mit Schild). (5) Glücksrad für den Jahrmarkt, 48 × 64.
-      (6) Größerer Pavillon in Riverton, 176 × 208 (Form je nach RO36). (7) Alter Bahnhof aus Backstein
+      (6) Größerer Pavillon in Riverton, 176 × 208 (offener Pavillon mit Geländer). (7) Alter Bahnhof aus Backstein
       als Museum in Ironwood, 160 × 144. (8) Breitere Werkskantine für Ironwood, 352 × 224 (heute eine
       1,7-fach vergrößerte Halle, die gröber gepixelt wirkt). Alle Bilder von schräg oben wie die
       übrigen Gebäude; die fertigen Gemini-Aufträge schicke ich dir im Chat.
       Außerdem (umgesetzt, Widerspruch genügt): Die Schleusentore in Lockport sind jetzt
       Fußgängerstege mit Geländer und einem breiten „GESPERRT“-Bock statt des flachen Bretts (R133).
       Deine Rückmeldungssammlung ist gepflegt: 145 von 149 Punkten sind erledigt oder überholt;
-      offen sind nur die Türgröße (RO33) und die Sitzbilder (oben).
+      offen sind nur die Sitzbilder (oben); das Diner in Maple Falls bleibt mit dem Plattenweg wie bestätigt.

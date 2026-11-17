@@ -1855,8 +1855,13 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Eisenwaren in Crossroads und Capital, Diner in Desert Springs, Rasthaus, Kramladen in
       Lockport, Café in Capital (tauscht dafür den Platz mit dem Modeladen), Eisenwaren der Altstadt
       und beide Leuchttürme 1,2- bis 1,25-mal; am Leuchtturm am Seeweg läuft der Weg dafür zwei
-      Reihen tiefer. Noch zu klein, weil der Platz fehlt (wird gerade gelöst): Diner Maple Falls,
-      Waschsalon, Café Riverton, Kramläden in Ironwood und Desert Springs, Polizeiwache der Altstadt.
+      Reihen tiefer. Inzwischen auch umgesetzt: Café Riverton, Waschsalon (die
+      Drechslerei rückt eine Spalte), Kramläden in Ironwood und Desert Springs, Polizeiwache der
+      Altstadt (dafür ersetzt ein Mietshaus das viktorianische Haus ohne Tür); der Laden an der Elm
+      Street in Ironwood ist jetzt das Reihenhaus Nr. 8 aus dem Ortsdokument. Rückfrage: Das Diner in
+      Maple Falls passt mit größerer Tür nur, wenn der Plattenweg zwischen Diner und Schule entfällt,
+      den du in Runde 8 wolltest. Ich habe den Weg behalten und das Diner gelassen (Tür etwas zu
+      niedrig). Weg weg und Diner größer, oder so lassen?
       Regen, Schnee und Zielpfeil sehen jetzt feiner aus (volle Auflösung statt dreifach vergröbert).
 - [ ] RO34. **Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt):** Ein Helfer hat
       alle Innenräume und die meisten Außenkarten von Akt 2 bis 4 nach den neuen Regeln durchgesehen

@@ -163,7 +163,7 @@ Sie ist nicht ganz sauber. Wenn du sie spielst, glänzt deine Nadel weniger. #sp
 Ich sage es dir, weil ich es früher niemandem gesagt habe. #sprecher:ambrose #stimmung:nachdenklich
 * [„Und wenn der andere wirklich keine Zeit hat?“]
 - Dann spielt man nicht mit ihm um die Wette. Man nimmt sich die eigene Zeit und zieht in Ruhe. #sprecher:ambrose #stimmung:nachdenklich
-Das hat mich dreißig Jahre gekostet. Dann war ich tot. #sprecher:ambrose #stimmung:alt
+Das habe ich spät gelernt. Dann war ich tot. #sprecher:ambrose #stimmung:alt
 {nietenkopfGefunden == false:
     -> jh ->
 }

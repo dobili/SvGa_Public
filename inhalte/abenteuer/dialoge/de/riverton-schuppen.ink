@@ -26,7 +26,7 @@ Nimm es. #sprecher:albescu #stimmung:laechelt
 - Fahr damit weit. Und wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht. #sprecher:albescu #stimmung:laechelt
 Dafür brauche ich keine Knie. #sprecher:albescu #stimmung:lacht
 Du schiebst es hinaus in den Regen. Die Klingel funktioniert noch. #sprecher:erzaehler #klang:fahrradklingel
-Eine Dame von Welt. Zu meiner Zeit hätte man für so ein Gefährt einen Kutscher gebraucht. Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
+Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
 Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.“ Darunter, kleiner: „Mrs. A. hat geweint, aber gut.“ #sprecher:erzaehler
 -> END
 

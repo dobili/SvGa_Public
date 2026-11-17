@@ -97,7 +97,7 @@ Ein Mann mit Schiffermütze sitzt auf einem Poller und sieht auf den leeren Kahn
 -> END
 
 === kahnrennen_angebot ===
-Am Kai schwimmen drei Spielzeugkähne aus Holz. Finn und zwei Kinder knien an der Kante. #sprecher:erzaehler
+Am Kai schwimmen drei Spielzeugkähne aus Holz. Ein Junge, Finn, und zwei andere Kinder knien an der Kante. #sprecher:erzaehler
 „Ich bin Schiedsrichter. Wer an der Tafel zwei Kähne mit einem Zug trifft, darf den Startschuss geben.“ #sprecher:erzaehler
 * [An die Kreidetafel]
     ~ beginneAufgaben("lockport.kahnrennen")

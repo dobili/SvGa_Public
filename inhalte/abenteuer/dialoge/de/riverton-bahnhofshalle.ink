@@ -84,9 +84,10 @@ Ein ehrliches Werkzeug. Es zeigt nur, was ohnehin da ist. #sprecher:ambrose #sti
 // Kapitel 19: Pops stellt ihn vor; die große Uhr tickt so laut, dass man es im Bauch spürt.
 ~ harlanGetroffen = true
 Unter der großen Uhr sitzt ein Mann mit Lupenbrille auf einer Bank und sieht auf ein Brett. Er bewegt sich nicht. #sprecher:erzaehler
+Der Mann vom Zeitungsstand ruft zu euch herüber. #sprecher:erzaehler
 Mr. Harlan. Uhrmacher. Zieht die da oben jeden Morgen auf, seit zweiundvierzig Jahren. #sprecher:pops #stimmung:laechelt
 Wenn du mit ihm spielst, bring Zeit mit. Oder nimm ihm welche weg. #sprecher:pops #stimmung:lacht
-Er hat eine Stunde für zwölf Züge gebraucht. Und dann gewonnen. #sprecher:juno #stimmung:ueberrascht
+Gegen den hab ich mal gespielt, bei meiner Cousine. Eine Stunde für zwölf Züge. Und dann hat er gewonnen. #sprecher:juno #stimmung:ueberrascht
 Mr. Harlan hebt den Kopf, sehr langsam. Hinter den Gläsern sind seine Augen riesig. #sprecher:erzaehler
 -> harlan_angebot
 
@@ -111,10 +112,10 @@ Die Unruh tickt für alle gleich. Nur nicht für mich. #sprecher:harlan #stimmun
 
 === harlan_ohne_uhr ===
 ~ harlanOhneUhrGesagt = true
-* [„Ohne Uhr hätten Sie gewonnen.“]
-    Ohne Uhr gewinne ich immer. #sprecher:harlan #stimmung:laechelt
+* [„Mit mehr Zeit hätten Sie gewonnen.“]
+    Mit genug Zeit gewinne ich fast immer. #sprecher:harlan #stimmung:laechelt
     Er lächelt, ein wenig schief. #sprecher:erzaehler
-    Deshalb spielt niemand mehr mit mir. #sprecher:harlan #stimmung:nachdenklich #pause
+    Deshalb spielt niemand mehr ohne Uhr mit mir. #sprecher:harlan #stimmung:nachdenklich #pause
 * [Nicken]
 - -> harlan_noch_eine
 
@@ -194,7 +195,7 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
     Eine Uhr, so groß wie ein Wagenrad. Sie tickt so laut, dass man es im Bauch spürt. #sprecher:erzaehler
     -> END
 }
-Am Samstagabend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
+Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
 Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
 Ich war einmal jünger als du jetzt. Fast. #sprecher:ambrose #stimmung:laechelt
 Er sieht nicht zu den Fenstern. Er sieht hinauf zur Uhr. #sprecher:erzaehler

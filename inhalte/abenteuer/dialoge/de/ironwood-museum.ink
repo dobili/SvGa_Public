@@ -108,7 +108,7 @@ Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzi
 === vitrine_mut ===
 {birdNachgesprochen: -> END}
 ~ birdNachgesprochen = true
-Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, in eine Ecke. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
+Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, an den Rand. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
 Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose #stimmung:nachdenklich
 {umschlagGeoeffnet: Er sieht auf den Umschlag in deiner Hand. #sprecher:erzaehler}
 Ich schon. Ich habe den Mut verloren. Einen Abend lang. #sprecher:ambrose #stimmung:bitter

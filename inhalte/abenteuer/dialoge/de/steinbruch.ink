@@ -22,7 +22,7 @@ Am Fuß der Felswand ist ein Fink aus Kreide gemalt. In einer Ritze darunter ste
 -> END
 
 === graffiti ===
-Ein Wolf aus Sprühfarbe an der Felswand, daneben eine Krone. Jemand war hier, lange bevor {held} kam. #sprecher:erzaehler
+Ein Wolf aus Sprühfarbe an der Felswand, daneben eine Krone. Jemand war hier, lange bevor du kamst. #sprecher:erzaehler
 -> END
 
 === bagger ===

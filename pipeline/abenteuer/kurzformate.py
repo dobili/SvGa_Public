@@ -13,7 +13,6 @@ Fenster aus Sicht des Lesers, der am Zug ist (Bauerneinheiten, Tiefe 12):
 - ``endspiel``, Ziel Sieg: +1,5 bis +8 ohne kurzes Matt (R13a, gewinnbar, nicht geschenkt).
 - ``endspiel``, Ziel Remis: −1,5 bis +0,3 (R13a, haltbar, aber nicht bequem).
 
-Die Bretter einer Simultanvorstellung (partieformen.json) folgen eigenen Regeln und sind ausgenommen.
 Bei „Eröffnung fremd“ (Startstellung ``eroeffnung``) müssen die Züge legal sein; ist der Leser
 nicht am Zug, wird aus Sicht der Seite am Zug geprüft und das Vorzeichen gedreht.
 
@@ -38,7 +37,6 @@ TIEFE = 12
 KURZES_MATT = 3
 # Spielraum der Engine: Dieselbe Stellung schwankt zwischen Läufen um einige Hundertstel.
 TOLERANZ = 0.1
-PARTIEFORMEN = HAUPTORDNER / "inhalte" / "abenteuer" / "partieformen.json"
 # Fenster je Format (unten, oben) aus Sicht des Lesers.
 FENSTER = {
     "stellungsduell": (0.8, 2.5),
@@ -103,8 +101,15 @@ def pruefe_begegnung(begegnung: dict, bewerte) -> Fund | None:
     eroeffnung = begegnung["startstellung"]["art"] == "eroeffnung"
     if grenzen is None and not eroeffnung:
         return None
+    start = begegnung["startstellung"]
+    for zuege in start.get("alternativen", []):
+        fund = pruefe_begegnung(
+            {**begegnung, "startstellung": {"art": "eroeffnung", "zuege": zuege}}, bewerte
+        )
+        if fund:
+            return Fund(fund.kennung, f"Alternative {' '.join(zuege[:4])} …: {fund.text}")
     try:
-        brett = startbrett(begegnung["startstellung"])
+        brett = startbrett(start)
     except ValueError as fehler:
         return Fund(begegnung["kennung"], f"Startstellung nicht spielbar: {fehler}")
     if brett is None or grenzen is None:
@@ -119,16 +124,9 @@ def pruefe_begegnung(begegnung: dict, bewerte) -> Fund | None:
     return None
 
 
-def simultanbretter() -> set[str]:
-    """Begegnungen der Simultanvorstellungen (partieformen.json): eigene Regel, hier nicht geprüft."""
-    daten = json.loads(PARTIEFORMEN.read_text(encoding="utf-8"))
-    return {b for s in daten.get("simultan", []) for b in s["begegnungen"]}
-
-
 def pruefe_alle(begegnungen: list[dict], bewerte) -> list[Fund]:
-    """Alle Funde in der Reihenfolge der Daten; Simultanbretter zählen nicht (eigene Regel)."""
-    ausgenommen = simultanbretter()
-    return [f for b in begegnungen if b["kennung"] not in ausgenommen and (f := pruefe_begegnung(b, bewerte))]
+    """Alle Funde in der Reihenfolge der Daten (auch die Simultanbretter, seit 17.11.2026)."""
+    return [f for b in begegnungen if (f := pruefe_begegnung(b, bewerte))]
 
 
 def main() -> int:

@@ -154,6 +154,39 @@
                 "type": "string",
                 "minLength": 2
               }
+            },
+            "alternativen": {
+              "description": "Weitere Eröffnungen; die App nimmt die, die der Leser in seinen Partien am seltensten hatte (regeln/fremdeEroeffnung.ts)",
+              "type": "array",
+              "maxItems": 8,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 24,
+                "items": {
+                  "type": "string",
+                  "minLength": 2
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "format"],
+          "description": "Stellung aus dem Vorrat Bot gegen Bot (stellungsvorrat.json), passend zur Stärke des Gegners und ohne Wiederholung; der Leser übernimmt die Seite am Zug, der Einstieg zeigt die Zugfolge bis dahin",
+          "properties": {
+            "art": {
+              "const": "vorrat"
+            },
+            "format": {
+              "enum": [
+                "stellungsduell",
+                "vorteil",
+                "endspielSieg",
+                "endspielRemis"
+              ]
             }
           }
         }

@@ -3161,5 +3161,13 @@
   "erzaehlung.skaterJo.vorher": "Jo kickt das Brett auf die Bank und baut schneller auf, als du gucken kannst. Ein paar Züge fliegen hin und her, dann steht es so, und du stehst etwas besser. „Zehn Züge. Dann sehen wir, ob das hält.“",
   "erzaehlung.skaterJo.sieg": "Jo springt aufs Board und dreht eine Runde um die Bank. „Okay, okay. Das war sauber.“",
   "erzaehlung.skaterJo.remis": "„Unentschieden“, sagt Jo und klemmt sich das Board unter den Arm. „Das zählt nicht. Morgen wieder.“",
-  "erzaehlung.skaterJo.niederlage": "Jo grinst. „Der Vorteil ist dir weggerollt. Wie ein Board ohne Bremse.“"
+  "erzaehlung.skaterJo.niederlage": "Jo grinst. „Der Vorteil ist dir weggerollt. Wie ein Board ohne Bremse.“",
+  "erzaehlung.gus.vorher": "Gus spielt, wie er Züge ansagt: knapp und pünktlich. Eine ganze Weile geht es hin und her, dann steht es so, und du stehst ein wenig besser. „Zehn Züge. Dann ist Abfahrt.“",
+  "erzaehlung.gus.sieg": "Gus sieht auf die Bahnhofsuhr. „Pünktlich angekommen.“",
+  "erzaehlung.gus.remis": "„Unentschieden“, sagt Gus. „Wie ein Zug, der auf freier Strecke hält.“",
+  "erzaehlung.gus.niederlage": "Gus tippt an seine Mütze. „Verspätung. Kommt vor.“",
+  "erzaehlung.joggerin.vorher": "Die Joggerin zieht im Laufschritt, ihr Puls piept dazu. Nach einer ganzen Reihe schneller Züge steht es so, und du bist ein bisschen vorn. „Zehn Züge. Halt das Tempo.“",
+  "erzaehlung.joggerin.sieg": "Die Joggerin bleibt stehen, zum ersten Mal. „Ausgebremst. Respekt.“",
+  "erzaehlung.joggerin.remis": "„Gleichstand“, sagt die Joggerin und läuft schon wieder auf der Stelle.",
+  "erzaehlung.joggerin.niederlage": "Die Joggerin grinst. „Auf der Zielgeraden überholt.“"
 }

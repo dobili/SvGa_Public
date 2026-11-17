@@ -161,6 +161,9 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     dialogvariablen: istObjekt(roh.dialogvariablen)
       ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
       : {},
+    vorratGenutzt: liste<unknown>(roh.vorratGenutzt).filter(
+      (k): k is string => typeof k === "string",
+    ),
     spielzeitSekunden: zahl(roh.spielzeitSekunden),
     spielzeitJeOrt: istObjekt(roh.spielzeitJeOrt)
       ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)

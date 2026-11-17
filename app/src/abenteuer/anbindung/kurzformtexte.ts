@@ -23,12 +23,25 @@ export function zieltext(stand: Kurzformstand): string {
   return tSpiel(`huelle.kurzform.ziel.${form.art}`, werte);
 }
 
+/** So viele Halbzüge zeigt der Einstieg höchstens; davor steht „…“ (lange Vorgeschichten aus dem Vorrat). */
+export const VERLAUF_HOECHSTENS = 12;
+
 /**
- * Züge als Text mit Zugnummern ab dem ersten Zug von Weiß, in der Notation der Sprache.
- * Beispiel: ["e4", "c5", "Nf3"] auf Deutsch → „1. e4 c5 2. Sf3“.
+ * Züge als Text mit Zugnummern ab dem ersten Zug von Weiß, in der Notation der Sprache; von einer
+ * langen Folge nur die letzten Halbzüge.
+ * Beispiel: ["e4", "c6", "Nf3"] auf Deutsch → „1. e4 c6 2. Sf3“; 30 Halbzüge → „… 10. … 15... Td8“.
  */
-export function verlaufAlsText(zuege: readonly string[], sprachcode: string): string {
-  return zuege
-    .map((san, i) => `${i % 2 === 0 ? `${i / 2 + 1}. ` : ""}${sanInSprache(san, sprachcode)}`)
-    .join(" ");
+export function verlaufAlsText(
+  zuege: readonly string[],
+  sprachcode: string,
+  hoechstens = VERLAUF_HOECHSTENS,
+): string {
+  const ab = Math.max(0, zuege.length - hoechstens);
+  const teile = zuege.slice(ab).map((san, j) => {
+    const i = ab + j;
+    const nummer = Math.floor(i / 2) + 1;
+    const marke = i % 2 === 0 ? `${nummer}. ` : j === 0 ? `${nummer}... ` : "";
+    return `${marke}${sanInSprache(san, sprachcode)}`;
+  });
+  return `${ab > 0 ? "… " : ""}${teile.join(" ")}`;
 }

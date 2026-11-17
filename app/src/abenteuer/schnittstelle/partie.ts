@@ -62,7 +62,20 @@ export type Startstellung =
    * Eröffnung fremd (R13c): Die Partie beginnt nach diesen Zügen (SAN, englisch, ab der
    * Grundstellung), etwa einer Eröffnung, die der Leser selten spielt.
    */
-  | { readonly art: "eroeffnung"; readonly zuege: readonly string[] };
+  | {
+      readonly art: "eroeffnung";
+      readonly zuege: readonly string[];
+      /** Weitere Eröffnungen; gewählt wird die, die der Leser am seltensten spielte. */
+      readonly alternativen?: readonly (readonly string[])[];
+    }
+  /**
+   * Aus dem Vorrat Bot gegen Bot (stellungsvorrat.json, regeln/vorrat.ts): passend zur Stärke des
+   * Gegners, ohne Wiederholung; der Leser übernimmt die Seite am Zug.
+   */
+  | {
+      readonly art: "vorrat";
+      readonly format: "stellungsduell" | "vorteil" | "endspielSieg" | "endspielRemis";
+    };
 
 /**
  * Alles, was das Spiel der App übergibt, damit sie eine Partie anlegt.
@@ -113,6 +126,8 @@ export interface Partieauftrag {
   readonly kandidaten?: readonly string[];
   /** Buch und Bruch: Linie des Gegners, danach diese Stufe (spiel/vorgabezug.ts). */
   readonly buchbruch?: { readonly linie: readonly string[]; readonly stufe: Stufennummer };
+  /** Vorrat Bot gegen Bot: die Züge bis zur Startstellung, für den erzählten Einstieg. */
+  readonly vorgeschichte?: readonly string[];
   /** Lebendschach: Karte, deren Hintergrundbild hinter dem Brett steht (anbindung/Kulisse.tsx). */
   readonly kulisse?: string;
 }

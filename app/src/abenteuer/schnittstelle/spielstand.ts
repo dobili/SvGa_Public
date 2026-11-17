@@ -195,6 +195,11 @@ export interface Abenteuerstand {
    * (Text tagebuch.eintrag.<name>) und Zeitpunkt (ISO). Fehlt bei älteren Spielständen.
    */
   readonly eintraege?: readonly { readonly name: string; readonly geschrieben: string }[];
+  /**
+   * Schon gespielte Stellungen aus dem Vorrat Bot gegen Bot (regeln/vorrat.ts), damit keine sich
+   * wiederholt, bis ein Format durch ist. Fehlt bei älteren Spielständen.
+   */
+  readonly vorratGenutzt?: readonly string[];
   /** Orte, die der Held schon betreten hat (W2: Schnellreise erst nach dem ersten Fußweg). */
   readonly besuchteOrte: readonly string[];
   readonly fragmente: Fragmente;

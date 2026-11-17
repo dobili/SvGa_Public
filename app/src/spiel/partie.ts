@@ -147,6 +147,11 @@ export interface Partieeinstellung {
      */
     readonly portraet?: string;
     /**
+     * Vorgeschichte (Vorrat Bot gegen Bot, abenteuer/regeln/vorrat.ts): die Züge ab der
+     * Grundstellung bis zur Startstellung, für den erzählten Einstieg; fehlend sonst.
+     */
+    readonly vorgeschichte?: readonly string[];
+    /**
      * Kurze Partieform (Regelwerk R13 bis R13b, abenteuer/regeln/kurzform.ts): Nach `zuege`
      * eigenen Zügen entscheidet die Bewertung der Stellung; fehlend bei ganzen Partien.
      */

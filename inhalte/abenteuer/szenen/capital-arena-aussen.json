@@ -655,6 +655,27 @@
         16,
         43
       ]
+    },
+    {
+      "name": "testteamZoe",
+      "feld": [
+        69,
+        43
+      ]
+    },
+    {
+      "name": "testteamBenji",
+      "feld": [
+        71,
+        43
+      ]
+    },
+    {
+      "name": "testteamImani",
+      "feld": [
+        73,
+        43
+      ]
     }
   ],
   "belebung": [

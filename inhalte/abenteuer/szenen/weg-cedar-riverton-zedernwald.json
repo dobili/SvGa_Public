@@ -2009,6 +2009,18 @@
     {
       "name": "fenwick",
       "feld": [29, 17]
+    },
+    {
+      "name": "testteamZoe",
+      "feld": [131, 16]
+    },
+    {
+      "name": "testteamBenji",
+      "feld": [133, 16]
+    },
+    {
+      "name": "testteamImani",
+      "feld": [135, 16]
     }
   ],
   "belebung": [

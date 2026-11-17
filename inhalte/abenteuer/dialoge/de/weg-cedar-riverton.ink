@@ -8,6 +8,8 @@
 // Einstiege wie in orte.json: fenwick, schaffner, tafel, fund_pfeilspitze, fund_holzspringer,
 // fund_fahrkarte. Den Aufbruch erzählt der Übergang am Steg (cedar-creek-aussen.zedernwald), die
 // Ankunft der Übergang nach Riverton (riverton-aussen.ankunft_zu_fuss).
+// Wegsperre S15 (32_Wegsperren.md): das Testteam von Perfect Move am Ostrand des Zedernwalds,
+// Einstiege testteam_wald (drei Figuren) und testteam_wald_tor (Übergang weiterBahndamm).
 //
 // Runde 11 (13.11.2026): an den Roman angeglichen (roman/akt2_teil1.md, Kapitel 17): die Wanderin
 // am Wegweiser („Bis er angreift“), der Güterzug und Ambroses „Elf Tage, und ich bin nicht
@@ -44,6 +46,17 @@ VAR gueterzugGesehen = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Wegsperre S15: endeAkt1Gesehen setzt cedar-creek-aussen.ink, ankunftRivertonGesehen
+// riverton-aussen.ink, den Ausgang die Hülle (R42); die übrigen setzt diese Datei. testteamStand
+// (1 bis 3, je Akt) lesen auch die Wege 5 und 9 und die Capital Arena.
+VAR endeAkt1Gesehen = false
+VAR ankunftRivertonGesehen = false
+VAR ausgangWegCedarRivertonTestteam = ""
+VAR testteamStand = 0
+VAR testteamWaldGesehen = false
+VAR testteamWaldDurch = false
+VAR testteamWaldSpielt = false
+VAR testteamWaldNiederlagen = 0
 
 // ---------------------------------------------------------------- Mrs. Fenwick
 
@@ -273,4 +286,87 @@ Ein loses Blatt mit einer gezeichneten Stellung. Darunter steht mit Bleistift: �
 Die Laterne leuchtet in den Durchlass. Eine Kröte hüpft davon, das war wohl das, was hier wohnt. #sprecher:erzaehler
 Auf einem Mauervorsprung steht eine verbeulte Thermoskanne mit Namen: „G. Tolliver“. #sprecher:erzaehler
 ~ gibFund("thermoskanneGwen")
+-> END
+
+// ---------------------------------------------------------------- Wegsperre S15: das Testteam
+
+// 32_Wegsperren.md: Zoe, Benji und Imani sammeln für Perfect Move „Datenpunkte“ und lassen {held}
+// erst nach einer Stellung zum Bahndamm. Sieg oder Remis öffnet für immer, die dritte Niederlage
+// auch (Notausgang). Eine Niederlage kostet nichts. Die App beginnt jeden Dialog als neue
+// Geschichte: Niederlagen zählt deshalb eine Variable, kein Besuchszähler.
+// Regel: Kapitel 7, Die zwölf Grundmotive (Bauerngabel, Abb. 7.3: die Startstellung).
+
+// Übergang weiterBahndamm (orte.json, `wenn` mit derselben Bedingung): offen ohne Text, sonst das
+// Gespräch mit der Truppe.
+=== testteam_wald_tor ===
+{testteamWaldDurch or ankunftRivertonGesehen or not endeAkt1Gesehen: -> END}
+-> testteam_wald
+
+=== testteam_wald ===
+{testteamWaldDurch: -> testteam_wald_danach}
+{testteamWaldSpielt:
+    ~ testteamWaldSpielt = false
+    {ausgangWegCedarRivertonTestteam == "niederlage":
+        ~ testteamWaldNiederlagen = testteamWaldNiederlagen + 1
+    }
+}
+{
+- ausgangWegCedarRivertonTestteam == "sieg" or ausgangWegCedarRivertonTestteam == "remis": -> testteam_wald_durch
+- ausgangWegCedarRivertonTestteam == "niederlage": -> testteam_wald_niederlage
+}
+{not testteamWaldGesehen:
+    ~ testteamWaldGesehen = true
+    Quer über dem Weg steht ein Klapptisch. Dahinter drei in weißen Westen, auf jeder ein kleines silbernes Logo. #sprecher:erzaehler
+    Testteam Perfect Move. Wir sammeln Datenpunkte. Wer vorbei will, spielt eine Stellung. #sprecher:zoe #stimmung:laechelt
+    Das Tablet schaut nur zu. Ich spiele selber. Meistens. #sprecher:benji #stimmung:lacht
+}
+Zehn Züge gegen Benji. Wer danach besser steht, hat gewonnen. #sprecher:zoe #stimmung:laechelt
++ [„Eine Stellung.“]
+    -> testteam_wald_partie
++ [„Später.“]
+    Der Wald läuft nicht weg. Wir auch nicht. #sprecher:zoe #stimmung:laechelt
+    -> END
+
+=== testteam_wald_partie ===
+~ testteamWaldSpielt = true
+~ beginnePartie("wegCedarRiverton.testteam")
+-> END
+
+=== testteam_wald_niederlage ===
+Datenpunkt 4113. Danke. #sprecher:zoe #stimmung:laechelt
+{testteamWaldNiederlagen >= 3: -> testteam_wald_genug}
+{not abschiedGesehen:
+    Er schlägt, ohne zu schauen. Lass ihn schlagen, und schau du. #sprecher:ambrose #stimmung:nachdenklich
+- else:
+    Er hat geschlagen, ohne zu schauen. Du auch. #sprecher:erzaehler
+}
+{not wegCedarRivertonTafelBestanden:
+    Am Wegweiser hängt eine Tafel mit drei Aufgaben. Danach siehst du so etwas schneller. #sprecher:erzaehler
+}
++ [„Noch einmal.“]
+    -> testteam_wald_partie
++ [„Nicht jetzt.“]
+    -> END
+
+// Notausgang: Niemand bleibt an der Hauptgeschichte hängen (13_Wegenetz.md, Grundsatz 1).
+=== testteam_wald_genug ===
+Imani klappt das Tablet zu. #sprecher:erzaehler
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. Geh durch. #sprecher:imani #stimmung:nachdenklich
+-> testteam_wald_offen
+
+=== testteam_wald_durch ===
+Benji starrt auf das Brett, dann lacht er und schiebt den Tisch zur Seite. #sprecher:erzaehler
+Das war ich. Nicht das Tablet. Schreib das dazu, Zoe. #sprecher:benji #stimmung:lacht
+-> testteam_wald_offen
+
+=== testteam_wald_offen ===
+~ testteamWaldDurch = true
+{testteamStand < 1:
+    ~ testteamStand = 1
+}
+Auf dem Tablet läuft ein Balken: „ZERO lernt. 4113 von 20000.“ #sprecher:erzaehler
+-> END
+
+=== testteam_wald_danach ===
+{~Wir stehen hier noch bis Freitag. Dann schickt uns die App woandershin.|Zwanzigtausend Partien, dann gibt es den Gutschein.} #sprecher:zoe #stimmung:laechelt
 -> END

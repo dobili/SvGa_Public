@@ -309,6 +309,20 @@ function zustand(st) {
   ]);
 }
 
+/**
+ * In Ruhe ein neuer Anlauf: Jedes Ding darf noch einmal angefasst werden, und jeder Weg mit Dialog,
+ * der in diesem Zustand gesperrt blieb, wird noch einmal versucht.
+ * Warum auch die Wege: Ein Übergang kann eine Wahl enthalten („Mit dem Zug nach Hause fahren“ oder
+ * „Noch bleiben“ am Kanalweg in Riverton, „Eine Stellung.“ oder „Später.“ an den Wegsperren S15
+ * bis S17). Wählt der Zufall einmal „bleiben“, ändert sich nichts am Zustand, und der Weg blieb
+ * bisher für immer gesperrt (Startwert 2 blieb so in Riverton hängen, 17.11.2026).
+ */
+function neueVersuche(st) {
+  for (const n of Object.keys(st.versuche))
+    st.versuche[n] = VERSUCHE_JE_ZUSTAND - 1;
+  st.gesperrt = {};
+}
+
 // ---------------------------------------------------------------- Bewegung
 
 function betrete(welt, st, karte) {
@@ -359,4 +373,5 @@ module.exports = {
   RUHE_TAKT,
   RUHE_NAECHSTES_GEBIET,
   RUHE_ENDE,
+  neueVersuche,
 };

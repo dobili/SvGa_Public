@@ -60,7 +60,7 @@ Am Morgen steht ihr davor. #sprecher:erzaehler
 * [Hinsehen]
 - Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena
 Deines hat noch immer Ketchup am Kinn. #sprecher:erzaehler
-Auf dem Platz stehen Busse. Der graue mit den Rostflecken. Ein Kleinbus mit „RIVETON“ aus Klebeband. #sprecher:erzaehler
+Auf dem Platz stehen Busse. Der graue mit den Rostflecken. Ein Kleinbus mit „RIVERTON“ aus Klebeband. #sprecher:erzaehler
 Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstocher am Rückspiegel. #sprecher:erzaehler
 Sie sind alle gekommen. #sprecher:mutter #stimmung:ueberrascht
 * [Zur Treppe sehen]
@@ -150,7 +150,7 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 // maple-falls-dachboden.epilog). Klang: abschied.treppe, abschied, ambrose.nichtSpaeter.
 ~ abschiedGesehen = true
 Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahnenmasten herum. Du setzt dich auf die Treppe, ganz oben. #sprecher:erzaehler #musik:abschied.treppe
-Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Zwei Könige. Ein Springer. Die Schlussstellung. #sprecher:erzaehler
+Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Die Schlussstellung der Fernpartie, so wie sie im Saloon stand. #sprecher:erzaehler
 Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
 * [„Hast du es gesehen?“]
 - Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. Die Großmeisterin hat mich angesehen, als wüsste sie es. #sprecher:ambrose #stimmung:laechelt
@@ -192,7 +192,7 @@ Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht #musik:am
 
 === abschied_ende ===
 Das Licht verändert sich, wie wenn eine Wolke weiterzieht. Du stehst allein auf der Treppe. #sprecher:erzaehler #pause:3
-Auf der Stufe liegt ein Brett aus altem Holz. Zwei Könige. Ein Springer. Am Rand eingebrannte Buchstaben. Das Holz ist warm von der Sonne. #sprecher:erzaehler
+Auf der Stufe liegt ein Brett aus altem Holz, darauf die Schlussstellung. Am Rand eingebrannte Buchstaben. Das Holz ist warm von der Sonne. #sprecher:erzaehler
 Jemand setzt sich neben dich. Juno, mit zwei Tagebüchern auf dem Schoß. Das obere ist aufgeschlagen, bei der Seite mit dem Glitzerrahmen. #sprecher:erzaehler
 Sie hält dir den Stift hin. Du überlegst lange. Dann schreibst du, in deiner eigenen Schrift: Er ist angekommen. #sprecher:erzaehler #pause:2
 ~ zeigeAbspann()

@@ -38,6 +38,7 @@ VAR ausgangSiliconBayClubkampf = ""
 VAR nadelSiliconBay = 0
 VAR clubkampfSiliconBayBesprochen = false
 VAR clubkampfSiliconBayNadel = 0
+VAR dashKarteGegeben = false
 // Lernkarten aus den Lektionen (RO11, 15.11.2026): Theo gibt nach seiner Reihe
 // (Eröffnungsgrundsätze) den Zielkompass, Nova nach ihrer (Fallen) „Was droht?“. Die hatKarte…
 // setzt die Hülle aus dem Besitz; wer eine Karte schon hat, bekommt keine zweite.
@@ -49,7 +50,7 @@ VAR hatKarteWasDroht = false
 // ---------------------------------------------------------------- Dr. Lin
 
 === lin ===
-{~Auf den Bildschirmbrettern laufen stumme Partien.|Dr. Lin räumt ein einziges Holzbrett auf ihrem Schreibtisch gerade.|Irgendwo summt ein Lüfter, sonst ist es still.} #sprecher:erzaehler
+{linGetroffen:{~Auf den Bildschirmbrettern laufen stumme Partien.|Dr. Lin räumt ein einziges Holzbrett auf ihrem Schreibtisch gerade.|Irgendwo summt ein Lüfter, sonst ist es still.}|Die Glastür der Akademie gleitet zur Seite.} #sprecher:erzaehler
 {
 - not linGetroffen: -> lin_erstes_treffen
 - nadelSiliconBay > clubkampfSiliconBayNadel: -> lin_nach_sieg
@@ -76,7 +77,7 @@ Drei Ziele in der Eröffnung? Welches vergisst man am leichtesten? #sprecher:lin
 * [„Weil man gerade angreift.“]
 - Sie lächelt. #sprecher:erzaehler
 Wer hat dir das beigebracht? #sprecher:lin #stimmung:froh
-* [„Eine Mathelehrerin. Ein Kurier. Ein Kranführer. Und Mama.“]
+* [„Eine Mathelehrerin, eine Bibliothekarin, ein Kurier, ein Kranführer. Und Mama.“]
 - Und ich. #sprecher:ambrose #stimmung:traurig
 Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblich. #sprecher:lin #stimmung:laechelt
 -> END
@@ -92,6 +93,9 @@ Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblic
 === lin_schweigen ===
 ~ schweigenErklaert = true
 Du hast die Reihe bestanden. Morgen früh spielen wir. #sprecher:lin #stimmung:laechelt
+{dashKarteGegeben: -> lin_schweigen_hm}
+-> lin_clubkampf
+=== lin_schweigen_hm ===
 Am Morgen probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler
 Nein. #sprecher:ambrose #stimmung:streng
 * [„Bei Dash hat es …“]
@@ -111,7 +115,7 @@ Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprec
     -> END
 
 === lin_nach_niederlage ===
-Gut gespielt bis zum Mittelspiel. Danach habe ich die Theorie noch einmal nachgespielt. #sprecher:lin #stimmung:laechelt
+Gut gespielt bis zum Mittelspiel. Danach kannte ich die Stellung aus der Theorie, und du nicht. #sprecher:lin #stimmung:laechelt
 Sie spielt wie eine sehr gute Seite in einem sehr guten Buch. Lass sie das Buch zuklappen, {held}. #sprecher:ambrose #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
@@ -156,7 +160,7 @@ Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #
 // ---------------------------------------------------------------- Theo
 
 === theo ===
-{~Theo tippt auf einer Tabelle mit Zahlen.|Auf Theos Bildschirm wandern Kurven nach oben.|Theo murmelt Prozente vor sich hin.} #sprecher:erzaehler
+{theoGetroffen:{~Theo tippt auf einer Tabelle mit Zahlen.|Auf Theos Bildschirm wandern Kurven nach oben.|Theo murmelt Prozente vor sich hin.}|Ein Junge in deinem Alter sitzt vor zwei Bildschirmen.} #sprecher:erzaehler
 {
 - not theoGetroffen: -> theo_erstes_treffen
 - siliconBayAuswertungBestanden and not serverraumOffen: -> theo_serverraum
@@ -180,7 +184,7 @@ Zentrum, Entwicklung, König. Alle drei, jedes Mal. Das hat nicht jeder. #sprech
 
 === theo_erstes_treffen ===
 ~ theoGetroffen = true
-Ein Junge in deinem Alter sieht auf einen zweiten Bildschirm, über den Zahlen laufen. Jetzt dreht er sich um. #sprecher:erzaehler
+Über den zweiten Bildschirm laufen Zahlen. Jetzt dreht er sich um. #sprecher:erzaehler
 Spiel eine. Gegen Stufe sechs. Ich will deine Kurve sehen. #sprecher:theo #stimmung:nachdenklich
 Er heißt Theo. Er meint es nicht unhöflich. Bei jedem deiner Züge zuckt auf seinem Bildschirm eine Linie. #sprecher:erzaehler
 Einundsiebzig Prozent. Genauigkeit. Das ist … menschlich. #sprecher:theo #stimmung:nachdenklich
@@ -229,7 +233,7 @@ Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #spre
 === theo_serverraum ===
 ~ serverraumOffen = true
 Du hast dir die Berichte angesehen. #sprecher:theo #stimmung:nachdenklich
-Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Hier wird alles gefilmt. #sprecher:theo #stimmung:nachdenklich
+Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Wozu auch, hier wird alles gefilmt. #sprecher:theo #stimmung:nachdenklich
 -> END
 
 === theo_alltag ===

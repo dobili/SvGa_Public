@@ -176,7 +176,7 @@ Rote Felstürme, und darüber kreisen Falken. #sprecher:erzaehler
 }
 ~ abschiedSummitGesehen = true
 Am Ortsausgang steht Mama mit dem Auto, Juno sitzt schon hinten. #sprecher:erzaehler
-Acht Nadeln. Acht! Jetzt fehlt nur noch die Meisterschaft. #sprecher:juno #stimmung:froh
+Die Seite für die achte Nadel ist voll. Jetzt fehlt nur noch die Meisterschaft. #sprecher:juno #stimmung:froh
 Bis zur Capital Arena sind es noch ein paar Tage. Über die Geysire, dann nach Crossroads. #sprecher:mutter #stimmung:nachdenklich
 Hinter Summit City wird die Straße flacher. Weit vorn dampft der Boden. #sprecher:erzaehler
 -> END

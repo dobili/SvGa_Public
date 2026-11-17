@@ -68,6 +68,7 @@ VAR angesehenFaehrterminal = false
 // Roman Kapitel 60: König der Hügel; Ambrose: „Wie wir alle.“ Es klingt nicht traurig.
 Die Farben kommen zurück, als ihr den See erreicht. #sprecher:erzaehler
 Der See ist so groß, dass man das andere Ufer nicht sieht. Vor dem Leuchtturm, weiß mit rotem Band, flickt ein Mann ein Netz. #sprecher:erzaehler #musik:leuchtturm
+Abe Lindgren. Ich pass auf den Turm auf, und der Turm passt auf die Schiffe auf. #sprecher:abe #stimmung:laechelt
 König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe #stimmung:laechelt
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe #stimmung:laechelt
 * [Eine Partie spielen]
@@ -203,7 +204,7 @@ Odette Finch. Mein Wohnmobil heißt Gambit, und ich warte hier auf jemanden, der
 
 === odette_hinweis ===
 {finchGefunden() == 0:
-    Sechzehn weiße Figuren aus Buchsbaum, entlang der Wege. Wo ein kleiner Fink sitzt, lohnt sich ein Blick. #sprecher:odette #stimmung:laechelt
+    Sechzehn weiße Figuren aus Buchsbaum, fünfzehn davon liegen an den Wegen. Wo ein kleiner Fink sitzt, lohnt sich ein Blick. #sprecher:odette #stimmung:laechelt
 - else:
     {finchGefunden()} von fünfzehn hast du. Ich verrate dir eine: Sie steckt {finchVersteck()}. #sprecher:odette #stimmung:laechelt
 }
@@ -274,7 +275,7 @@ Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh di
 + [Das Meisterproblem noch einmal versuchen]
     ~ beginnePartie("wegGhostCapital.meisterproblem")
     -> END
-+ [„Später.“]
++ [„Ein andermal.“]
     -> END
 
 === odette_geloest ===

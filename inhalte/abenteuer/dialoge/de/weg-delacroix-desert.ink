@@ -62,10 +62,10 @@ Es ist angenehm. #sprecher:ambrose #stimmung:still
     -> END
 }
 Am Wanderschild „Desert Springs, 4 Meilen“ hängt eine Rätseltafel, das Blech heiß von der Sonne: „Der König steht im Freien. Greif an!“ #sprecher:erzaehler
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDelacroixDesert.tafel")
     -> END
-* [Weitergehen]
++ [Weitergehen]
     -> END
 
 === zurueck_delacroix ===
@@ -85,11 +85,12 @@ Der Pfad führt zurück zum einsamen Bahnhof. Der nächste Zug fährt nach Port 
 // Gutachten M1.7: Ambrose spricht hier wieder (Bibel, Szene 71), ohne Bedingung.
 ~ ambroseSprichtWieder = true
 Die Wände sind rot und gestreift, Schicht über Schicht, als hätte jemand die Zeit aufgeschnitten. #sprecher:erzaehler #musik:aus #geraeusch:canyon
-Eine Eidechse rührt sich nicht. Hoch oben kreist ein Vogel, ohne die Flügel zu bewegen. Er ist noch blass, aber er ist da. #sprecher:erzaehler
+Eine Eidechse rührt sich nicht. Hoch oben kreist ein Vogel, ohne die Flügel zu bewegen. #sprecher:erzaehler
+Ambrose ist noch blass, aber er ist da. #sprecher:erzaehler
 Ich war nie in einer Wüste. #sprecher:ambrose #stimmung:nachdenklich #musik:ambrose.gitarre
 Sie ist so still wie ein Club. Wie ein guter. Einer, in dem man hört, wenn jemand nachdenkt. #sprecher:ambrose #stimmung:laechelt
 -> holloway.holloway_gefaellt ->
-Hinter der nächsten Biegung, mitten im trockenen Bachbett liegt ein Stein, flach wie ein Tisch. Darauf ein Mädchen, zwei Zöpfe, Schrammen an beiden Knien. #sprecher:erzaehler #musik:aus
+Hinter der nächsten Biegung, mitten im trockenen Bachbett, liegt ein Stein, flach wie ein Tisch. Darauf ein Mädchen, zwei Zöpfe, Schrammen an beiden Knien. #sprecher:erzaehler #musik:aus
 Sie spielt gegen niemanden. Sie zieht für Weiß, dreht das Brett um, zieht für Schwarz. Ernst wie ein Chirurg. #sprecher:erzaehler
 Sie hält die weiße Dame einen Atemzug lang in der Luft. Dann stellt sie sie mitten zwischen die schwarzen Figuren. #sprecher:erzaehler #bild:mira_damenopfer
 Oh. #sprecher:ambrose #stimmung:ueberrascht
@@ -147,10 +148,12 @@ Wenn nicht hier, dann nirgends. Du stellst den Geigenkasten auf einen Stein und 
 Ich habe einer Maschine zugesehen. Tausendachthundert Partien in einer Nacht. #sprecher:ambrose #stimmung:still
 Ich habe zugesehen, weil sie nie zweifelt. Weil sie die Gewissheit hat, bevor man die Hand hebt. #sprecher:ambrose #stimmung:nachdenklich
 Du sagst nichts. #sprecher:erzaehler #pause
-Dann hat ein Junge mit einer Trompete dich einen Betrüger genannt. Er hatte recht, und es war meine Schuld. #sprecher:ambrose #stimmung:bitter
+Dann hat ein Junge mit einer Trompete gesagt, dass du schummelst. Er hatte recht, und es war meine Schuld. #sprecher:ambrose #stimmung:bitter
 Ich habe dir einen Zug gegeben, den ich nicht verstand. Ich habe ihn nur wiedererkannt. Wie ein Papagei. #sprecher:ambrose #stimmung:ertappt
 Sechs Tage im Kasten habe ich gehört, wie du nachdenkst. Und ich wusste nicht, was du ziehen wirst. #sprecher:ambrose #stimmung:nachdenklich
-Er hebt den Kopf. Ich wusste es nicht, {held}. Zum ersten Mal. Ich habe mir die Nägel abgekaut, die ich nicht habe. #sprecher:ambrose #stimmung:laechelt
+Er hebt den Kopf. #sprecher:erzaehler
+Ich wusste es nicht, {held}. Zum ersten Mal. #sprecher:ambrose #stimmung:laechelt
+Ich habe mir die Nägel abgekaut, die ich nicht habe. #sprecher:ambrose #stimmung:laechelt
 Das Licht wird röter. #sprecher:erzaehler #pause
 Du hast gefragt: Und ich? Ich schulde dir die Antwort. #sprecher:ambrose #stimmung:nachdenklich
 Die Maschine zweifelt nie. Das ist wahr, und es ist schön, und ich nehme nichts davon zurück. #sprecher:ambrose #stimmung:nachdenklich
@@ -187,7 +190,8 @@ Sie sind aneinander vorbeigefahren. #sprecher:erzaehler
 
 === versoehnung_lektion ===
 // Lektion: das Thema hell, fast heiter (ambrose.heiter). Ambrose ist ab hier wieder voll sichtbar.
-Komm. Er steht auf. Er ist nicht mehr blass. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.heiter
+Komm. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.heiter
+Er steht auf. Er ist nicht mehr blass. #sprecher:erzaehler
 Ich habe dir das Zählen beigebracht, weil du es brauchtest. Was ich wirklich kann, habe ich dir nie gezeigt. #sprecher:ambrose #stimmung:nachdenklich
 Ich hatte Angst, du würdest es so schlecht machen wie ich. Jetzt kannst du zählen. Jetzt zeige ich es dir. #sprecher:ambrose #stimmung:nachdenklich
 Ein Opfer ist kein Geschenk und kein Kunststück. Es ist ein Tausch. Holz gegen Zeit, Raum oder einen König im Freien. #sprecher:ambrose #stimmung:nachdenklich
@@ -245,7 +249,8 @@ Ambrose sagt nichts. Aber du spürst, dass er hinsieht. #sprecher:erzaehler #bil
 ~ nietenAmbroseGesehen = true
 * [„Dreizehn Jahre danach.“]
 - Er hat gelebt. Lange. Er hat weitergebaut, bis hierher, ans Ende von allem. #sprecher:ambrose #stimmung:laechelt #musik:hale.horn #bild:aus
-Er legt die Hand auf das Eisen. Gut so. #sprecher:ambrose #stimmung:still
+Er legt die Hand auf das Eisen. #sprecher:erzaehler
+Gut so. #sprecher:ambrose #stimmung:still
 -> END
 
 // >>> Runde 6 (mittel-4)
@@ -335,7 +340,7 @@ Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
     ~ sternwarteOffen = true
     Die Laterne zeigt den schmalen Pfad zwischen dem Geröll. Oben auf der Felsnase schimmert eine weiße Kuppel. #sprecher:erzaehler
 - not versoehnungGesehen:
-    Geröll liegt quer über dem Pfad nach oben. Allein und mit dem Streit im Kopf will {held} hier nicht klettern. #sprecher:erzaehler
+    Geröll liegt quer über dem Pfad nach oben. Mit dem Streit im Kopf willst du hier nicht klettern. #sprecher:erzaehler
 - else:
     Der Pfad zur Felsnase führt steil zwischen Geröll hinauf, und es wird schon dunkel. Ohne Licht ist das zu gefährlich. #sprecher:erzaehler
 }

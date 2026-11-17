@@ -88,7 +88,8 @@ Die meisten fragen nach dem Gold. #sprecher:pruitt #stimmung:laechelt
     Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:laechelt #klang:metalldetektor
 }
 Ganz hinten, wo der Zaun aufhört und die Wüste anfängt, liegt ein niedriger Stein ohne Namen. Eingeritzt: acht mal acht Vierecke. #sprecher:erzaehler #bild:stein_brett
-Mr. Pruitt nimmt den Hut ab. Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #stimmung:nachdenklich #bild:aus
+Mr. Pruitt nimmt den Hut ab. #sprecher:erzaehler #bild:aus
+Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #stimmung:nachdenklich
 „Ein Reisender aus dem Süden, Februar 1866. Fieber. Führte ein Schachbrett mit sich und bat, es seiner Schwester zu senden. Name unleserlich.“ #sprecher:pruitt #stimmung:nachdenklich
 Der Schmied hat den Stein gemacht. Der Fremde hat ihm in drei Tagen das Spiel beigebracht, zwischen zwei Fieberanfällen. #sprecher:pruitt #stimmung:nachdenklich
 Ambrose steht lange vor dem Stein. #sprecher:erzaehler #pause:3
@@ -155,7 +156,8 @@ In Maple Falls sitzt eine alte Frau auf einer Veranda mit zwei Stühlen. Ich mö
 * [„Mrs. Calloway lernt jetzt Schach. Von Owen.“]
 - Juno hat geschrieben: Sie haben einen Tisch zwischen die Stühle gestellt. #sprecher:erzaehler
 Dann ist es noch besser, als ich dachte. #sprecher:ambrose #stimmung:lachtOhneSpott
-Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose #stimmung:laechelt
+Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. #sprecher:ambrose #stimmung:laechelt
+Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose #stimmung:friedlich
 Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof. #sprecher:erzaehler #teilchen:sternschnuppen #klang:sternschnuppe
 Ich habe mir auch etwas gewünscht. Ich bin tot, mir kann nichts mehr misslingen. #sprecher:ambrose #stimmung:lacht
 Dass du im Finale einen Fehler machst. Einen kleinen, den du merkst. Und dass du danach den besten Zug deines Lebens spielst. #sprecher:ambrose #stimmung:laechelt

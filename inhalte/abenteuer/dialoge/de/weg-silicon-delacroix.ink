@@ -59,7 +59,8 @@ VAR spurenPM = 0
 ~ ruizGetroffen = true
 In der Kombüse rührt ein Mann mit Kochmütze in einem Topf. Auf der Arbeitsplatte steht ein Brett zwischen Zwiebeln. #sprecher:erzaehler
 Ruiz, Schiffskoch. Zwei Tage bis Port Delacroix, und keiner an Bord spielt mit mir. #sprecher:schiffskoch #stimmung:laechelt
-Mama lehnt in der Tür. „Spiel ruhig. Ich hol uns Kaffee.“ #sprecher:erzaehler
+Mama lehnt in der Tür. #sprecher:erzaehler
+Spiel ruhig. Ich hol uns Kaffee. #sprecher:mutter #stimmung:laechelt
 -> ruiz_angebot
 
 === ruiz_angebot ===
@@ -156,7 +157,7 @@ Im Sand am Deich liegt eine Muschel mit einem kleinen, runden Loch, wie für ein
 ~ kapitaenGetroffen = true
 Am Steuer steht ein Mann mit weißem Bart und blauer Mütze. Er nickt zur Wand der Kajüte. #sprecher:erzaehler
 Fall, Amadou Fall. Du willst das Brett sehen. Alle wollen das Brett sehen. #sprecher:kapitaen #stimmung:laechelt
-Mein Vorgänger hat es mir vererbt, mit drei Wörtern: Weiß zieht und gewinnt. Seit dreißig Jahren hat es keiner gelöst. #sprecher:kapitaen #stimmung:nachdenklich
+Mein Vorgänger hat es mir vererbt, mit vier Wörtern: Weiß zieht und gewinnt. Seit dreißig Jahren hat es keiner gelöst. #sprecher:kapitaen #stimmung:nachdenklich
 Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gesteckt. Alle drei falsch. Wer es löst, darf einmal das Horn blasen. #sprecher:kapitaen #stimmung:lacht
 -> kapitaen_angebot
 
@@ -171,7 +172,8 @@ Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gest
 === kapitaen_horn ===
 ~ kapitaensproblemGeloest = true
 Der Kapitän nimmt die drei Zettel vom Rahmen, faltet sie und steckt sie in die Brusttasche. „Dreißig Jahre.“ #sprecher:erzaehler
-Er zeigt auf die Kordel über dem Steuer. Zieh. Kräftig. #sprecher:kapitaen #stimmung:laechelt
+Er zeigt auf die Kordel über dem Steuer. #sprecher:erzaehler
+Zieh. Kräftig. #sprecher:kapitaen #stimmung:laechelt
 Ein tiefer Ton rollt über das Wasser. Auf dem Deich drehen sich Leute um und winken. #sprecher:erzaehler
 ~ gibFund("kapitaensmuetze")
 Die gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie diese. #sprecher:kapitaen #stimmung:laechelt
@@ -215,7 +217,7 @@ Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mam
 === bug ===
 {bugGesehen: -> END}
 ~ bugGesehen = true
-Mama steht viel an der Reling. Ihr spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. Sie gewinnt öfter. #sprecher:erzaehler
+Mama steht viel an der Reling. Ihr beide spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. Sie gewinnt öfter. #sprecher:erzaehler
 Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. Jetzt sagt er die Zugnummer. #sprecher:erzaehler #musik:ambrose.verzerrt
 Zug vierzehn. #sprecher:ambrose #stimmung:nachdenklich
 * [„Was war da?“]
@@ -242,7 +244,7 @@ Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. 
     An der Reling flattert nichts mehr. #sprecher:erzaehler
     -> END
 }
-An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
+An der Reling hat sich ein Blatt Papier verfangen, nass von der Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 ~ seite02Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite02")

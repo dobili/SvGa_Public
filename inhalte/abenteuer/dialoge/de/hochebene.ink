@@ -119,6 +119,11 @@ Zwei Spiele auf demselben Brett. Ich dachte immer, es gäbe nur eins. #sprecher:
 -> END
 
 === annek_alltag ===
+// Vor der Schachstunde nur der Hinweis auf Kira: Die übrigen Sätze setzen voraus, dass Annek schon spielt.
+{not annekSchachGelernt:
+    Kira sitzt an den Felstürmen, bis der Bus kommt. Sie erklärt dir das Spiel, ob du willst oder nicht. #sprecher:annek #stimmung:laechelt
+    -> END
+}
 {~Ich habe meiner Klasse heute das Springerproblem gegeben. Ein Feld nach dem anderen, ohne eins zweimal. Sie hassen mich.|Kira sagt, ich spiele Schach wie Basketball. Ich glaube, das ist ein Kompliment.|Wenn der Bus wieder streikt, rufe ich Joss. Der repariert alles außer schlechter Laune.} #sprecher:annek #stimmung:lacht
 -> END
 
@@ -139,7 +144,11 @@ Ein Mann, der weiß, was er nicht verkauft. Selten. #sprecher:ambrose #stimmung:
 -> END
 
 === joss_alltag ===
-{~Schach? Zu viele Regeln für zu wenig Figuren. Aber Annek hat jetzt ein Brett im Lehrerzimmer. Ich verliere jeden Mittag.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.|Kira hat den Falken im Werkunterricht gemacht. Besser als meiner damals. Sag ihr das nicht.} #sprecher:joss #stimmung:lacht
+{annekSchachGelernt:
+    {~Schach? Zu viele Regeln für zu wenig Figuren. Aber Annek hat jetzt ein Brett im Lehrerzimmer. Ich verliere jeden Mittag.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.|Kira hat den Falken im Werkunterricht gemacht. Besser als meiner damals. Sag ihr das nicht.} #sprecher:joss #stimmung:lacht
+- else:
+    {~Schach? Zu viele Regeln für zu wenig Figuren. Bei Falke und Bison gibt es wenigstens Tiere.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.} #sprecher:joss #stimmung:lacht
+}
 -> END
 
 // ---------------------------------------------------------------- Gegenstände

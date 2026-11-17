@@ -36,8 +36,10 @@ VAR varianteSchach960Gelernt = false
 VAR varianteFalkeUndBisonGelernt = false
 // Kapitel 53 (Roman): Theo bekommt das Tablet zurück (Figur crossroads.theo am Fenster, M3.1).
 VAR theoTabletZurueck = false
+// Aus weg-ironwood-silicon (Glasbrücke): der Ohrstöpsel ist ein Fund, kein Muss.
+VAR ohrstoepselGefunden = false
 // Gutachten M3.9: Der Abend im Kaffeehaus erst, wenn draußen alle gesprochen sind.
-VAR slickGetroffen = false
+VAR slickCrossroadsGetroffen = false
 VAR miraCrossroadsGetroffen = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR coachCrossroadsGetroffen = false
@@ -55,7 +57,7 @@ VAR kaffeehausGesehen = false
 - else:
     {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene #stimmung:laechelt
 }
-{slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
+{slickCrossroadsGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
 ~ oeffneLaden("crossroads.raststaette")
 -> END
 
@@ -78,7 +80,7 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 // ---------------------------------------------------------------- Nova (Szene 93)
 
 === nova ===
-{novaBitteGehoert and slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and not kaffeehausGesehen: -> kaffeehaus}
+{novaBitteGehoert and slickCrossroadsGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and not kaffeehausGesehen: -> kaffeehaus}
 {novaBitteGehoert:
     {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Ich übe jetzt ohne Stimme im Ohr. Es ist erst mal sehr still.} #sprecher:nova #stimmung:nachdenklich
     -> END
@@ -93,8 +95,12 @@ In der hintersten Ecke, an einem Tisch für zwei, sitzt Nova allein. Pullover, z
 Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. Sie hat gekündigt. #sprecher:nova #stimmung:nachdenklich
 Sie hat nicht gefragt, ob es stimmt. Sie hat gefragt, wie es mir geht. Das hat mich seit zwei Jahren keiner gefragt. #sprecher:nova #stimmung:riss
 Ich sage aus. Bei der Meisterschaft. Sie kommt mit. Sie bringt die Berichte. #sprecher:nova #stimmung:nachdenklich
-Du hast noch den einen. Den von der Brücke. #sprecher:nova #stimmung:nachdenklich
-Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
+{ohrstoepselGefunden:
+    Du hast noch den einen. Den von der Brücke. #sprecher:nova #stimmung:nachdenklich
+    Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
+- else:
+    Dr. Lin bringt die Schachtel mit den Empfängern mit. Fünf Mulden sind leer. Eine war meine. #sprecher:nova #stimmung:nachdenklich
+}
 Hilfst du mir? #sprecher:nova #stimmung:nachdenklich
 * [„Ja.“]
     ~ novaHilfeZugesagt = true
@@ -107,7 +113,7 @@ Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium.
 -> kaffeehaus_pruefen
 
 === kaffeehaus_pruefen ===
-{slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
+{slickCrossroadsGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
 -> END
 
 // Kapitel 53, Schluss: erst, wenn {held} draußen alle gesprochen hat.

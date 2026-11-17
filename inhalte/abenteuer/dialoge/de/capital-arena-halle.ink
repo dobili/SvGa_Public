@@ -38,6 +38,8 @@ VAR finaleBesprochen = false
 VAR angesehenBanner = false
 VAR spurenPM = 0
 VAR mappeGezeigt = false
+// Aus cedar-creek-aussen.ink: nur wer Victor dort nach dem Spaß gefragt hat.
+VAR victorCedarCreekGesehen = false
 VAR halbfinaleVorherGesehen = false
 VAR halbfinaleDanachGesehen = false
 VAR ambroseImHalbfinaleGerufen = false
@@ -260,7 +262,7 @@ Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Hall
 Ich hab es gesehen. In Silicon Bay, im Januar. Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor #stimmung:bitter
 In Summit City hatte ich selbst eines in der Tasche. Ich hab es getragen. #sprecher:victor #stimmung:bitter
 * [Victor ansehen]
-- Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht. #sprecher:victor #stimmung:nachdenklich
+- {victorCedarCreekGesehen:Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht.|Ich hab mich jahrelang nicht gefragt, ob mir das Spaß macht. Ich hab ein Jahr für die Frage gebraucht.} #sprecher:victor #stimmung:nachdenklich
 Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
 Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #sprecher:erzaehler #pause:2
 -> END
@@ -327,7 +329,7 @@ Ich weiß es nicht. Bis dorthin stimmt es. Danach ist es dunkel. Die Maschine we
 + [„Zusammen.“]
 - Zusammen. #sprecher:ambrose #stimmung:laechelt #musik:zusammen
 Du fühlst seine Hand auf deiner, kalt und leicht wie Atem. #sprecher:erzaehler
-Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht er da?“ Und Ward, ganz ruhig: „Er hofft.“ #sprecher:erzaehler #pause:2
+Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht {held} da?“ Und Ward, ganz ruhig: „Hoffen.“ #sprecher:erzaehler #pause:2
 -> END
 
 // Roman Kapitel 63, nach dem Sieg: Kade und „Das ist meine unsterbliche Partie. Mit dir.“
@@ -568,7 +570,7 @@ Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambro
 - aussageGesehen:
     Ich habe nichts gewusst. Das ist keine Ausrede. Es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
 - else:
-    Graham Hale. Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
+    Graham Hale. Wir haben uns in Maple Falls gesehen, im Clubraum. Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
     Viel Glück. Nein, ehrlich: viel Glück. #sprecher:grahamHale #stimmung:laechelt
 }
 -> END

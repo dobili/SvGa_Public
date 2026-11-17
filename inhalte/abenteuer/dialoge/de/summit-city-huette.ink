@@ -310,7 +310,7 @@ Worauf wartest du? Ich bin vierundsechzig. Ich renne keinem mehr nach. #sprecher
 === kit ===
 {
 - not wardLektionGesehen:
-    Erst zu Ward. Sie mag es nicht, wenn man an ihr vorbeiläuft. #sprecher:kit #stimmung:nachdenklich
+    Ich bin Kit. Erst zu Ward, sie mag es nicht, wenn man an ihr vorbeiläuft. #sprecher:kit #stimmung:nachdenklich
     -> END
 - not reiheKitBestanden: -> kit_reihe
 - not lernkarteEndspielkompass: -> kit_karte
@@ -356,10 +356,10 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
 === haraldsen ===
 {
 - not wardLektionGesehen:
-    Erst zu Ward, junger Mensch. Dann zu mir. #sprecher:haraldsen #stimmung:laechelt
+    Haraldsen, ich fahre die Seilbahn. Erst zu Ward, junger Mensch, dann zu mir. #sprecher:haraldsen #stimmung:laechelt
     -> END
 - not reiheKitBestanden:
-    Erst Kit. Bauern vor Türmen, das ist die Reihenfolge. Auch am Berg. #sprecher:haraldsen #stimmung:laechelt
+    Haraldsen, ich fahre die Seilbahn. Erst Kit, Bauern vor Türmen. Das ist die Reihenfolge, auch am Berg. #sprecher:haraldsen #stimmung:laechelt
     -> END
 - not reiheHaraldsenBestanden: -> haraldsen_reihe
 - not lernkarteTurmregel: -> haraldsen_karte

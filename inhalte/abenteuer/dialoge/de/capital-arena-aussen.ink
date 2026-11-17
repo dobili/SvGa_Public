@@ -35,6 +35,9 @@ VAR angesehenFahnen = false
 VAR wandererSeitenZurueck = 0
 VAR buchGeschenkt = false
 VAR wandererCapitalGetroffen = false
+// Aus capital-arena-halle.ink und weg-ghost-capital.ink (nur gelesen).
+VAR zugerratenTurm = false
+VAR wandererGetroffen = false
 
 === function ligapunkte() ===
 ~ return nadelMapleFalls + nadelCedarCreek + nadelRiverton + nadelIronwood + nadelSiliconBay + nadelPortDelacroix + nadelDesertSprings + nadelSummitCity
@@ -181,7 +184,8 @@ Das ist es, was schön ist an diesem Spiel. Nicht die Züge. Die waren nie das S
 Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
 - Wofür? #sprecher:ambrose #stimmung:ueberrascht
-* [„Für Was hängt? Für den Turm heute.“]
+* {zugerratenTurm} [„Für Was hängt? Für den Turm heute.“]
+* {not zugerratenTurm} [„Für Was hängt? Für heute.“]
 - Das war das Geringste. Das weiß jeder. #sprecher:ambrose #stimmung:lacht
 -> abschied_verbeugung
 
@@ -233,6 +237,7 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
     Alle dreizehn Blätter sind beim Buchbinder. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer #stimmung:laechelt
 - else:
     ~ wandererCapitalGetroffen = true
+    {not wandererGetroffen: Ein Mann mit gelbem Rucksack sitzt auf den Stufen. Er sammelt alte Blätter mit Stellungen, sagt er, und der Wind hat ihm dreizehn genommen. #sprecher:erzaehler}
     Der Buchbinder ist gleich um die Ecke. Aber ohne die fehlenden Blätter will ich da nicht hinein. #sprecher:wanderer #stimmung:nachdenklich
 }
 -> END

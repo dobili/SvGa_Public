@@ -309,6 +309,7 @@ Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir ein
 -> END
 
 === wanderer_seiten ===
+{not wandererGetroffen: Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. Dann sieht er, was du in der Hand hast. #sprecher:erzaehler}
 ~ wandererGetroffen = true
 ~ wandererSeitenZurueck = buchseiten
 Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht

@@ -375,9 +375,9 @@ In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:ha
 
 === victor_wartet ===
 Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen. #sprecher:victor #stimmung:bitter
-Spanisch, Zug zwölf. Du hast Schwarz und einen Springer weniger. #sprecher:victor #stimmung:kalt
+Spanisch, Zug zwölf. Du hast Schwarz, einen Springer weniger und zwei Bauern mehr. #sprecher:victor #stimmung:kalt
 Das sage ich dir vorher, damit du dich nachher nicht beschwerst. #sprecher:victor #stimmung:bitter
-Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
+Ein Springer gegen zwei Bauern. Das ist schwer, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
 * [„Ich spiele.“]
     -> victor_partie
 * [„Das ist nicht fair.“]
@@ -440,7 +440,7 @@ Als der Raum leer ist, holst du das Brett aus der Tasche und legst es auf einen 
 {ausgangMapleFallsVictor == "niederlage":
     Ambrose zeigt dir zwei Stellen. Genau und ohne ein Wort zu viel. #sprecher:erzaehler
 - else:
-    Du hast eine verlorene Stellung gehalten. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
+    Du hast eine schwere Stellung gehalten, mit einem Springer weniger. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
 }
 * [„Du bist erschrocken. Vorhin.“]
     Bin ich das. #sprecher:ambrose #stimmung:bitter

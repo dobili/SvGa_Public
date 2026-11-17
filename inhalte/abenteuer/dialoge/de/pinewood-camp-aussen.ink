@@ -32,6 +32,8 @@ VAR ausgangPinewoodCampHollis = ""
 VAR kioskGesehen = false
 // Aus weg-crossroads-pinewood.ink: Wer beim Lebendschach im Wald kommandiert hat, kennt Ezra schon.
 VAR lebendschachGesehen = false
+// Aus cedar-creek-aussen.ink: die Sternennacht am Steg ist freiwillig.
+VAR sternennachtGesehen = false
 // Gutachten M3.4: „Es ist still“ (Kapitel 54, Schluss) fällt beim Eintritt ins Camp, nicht am Rangerhaus.
 VAR esIstStillGesagt = false
 // Aus Riverton (riverton-pavillon.ink): Die Nebenquest „Zuschauen“ bleibt nachholbar, auch wenn Slick
@@ -145,8 +147,13 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
     „Da hab ich nicht gewonnen. Da hab ich dir was gezeigt.“ #sprecher:erzaehler
     Ja. Eben. #sprecher:sam #stimmung:laechelt
 }
-Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
-Ich war damals beleidigt, weil ich nur eine Fußnote bin. Erinnerst du dich? #sprecher:ambrose #stimmung:laechelt
+{sternennachtGesehen:
+    Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
+    Ich war damals beleidigt, weil ich nur eine Fußnote bin. Erinnerst du dich? #sprecher:ambrose #stimmung:laechelt
+- else:
+    Sie stehen noch wie früher. Als Junge wollte ich so bekannt werden wie einer von denen. #sprecher:ambrose #stimmung:nachdenklich
+    Geworden bin ich eine Fußnote. Du weißt, wie lang. #sprecher:ambrose #stimmung:laechelt
+}
 * [„Sechs Wörter.“]
 - Sechs Wörter. #sprecher:ambrose #stimmung:lachtOhneSpott
 Vierzig Kinder. In hundert Jahren weiß niemand mehr, wie sie hießen. Und es wird nicht das Geringste ausmachen. #sprecher:ambrose #stimmung:friedlich

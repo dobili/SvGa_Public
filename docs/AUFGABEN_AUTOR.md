@@ -101,6 +101,7 @@ Adresse mit „#abenteuer“ öffnen).
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Karte „Verpasst“ nur mit dieser Zeile.
 - [ ] N2603. Im Rückblick Zug für Zug zu einem Zug mit „?!“ oder „?“ gehen: Unter „Besser war …“ steht die Glühbirnen-
       Zeile mit Kapitel; aufgeklappt gibt es einen eigenen Knopf „Üben“. Bei „gut“ und „sehr gut“ erscheint sie nie.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (an 8. Sc3? „Guter Schlag ausgelassen (Kapitel 1)“ mit eigenem „Üben“; am Theoriezug keine Zeile; neuer Test); nicht geprüft: „?!“.
 - [ ] N2604. Nach mindestens 5 ausgewerteten Partien, in denen in 3 oder mehr derselbe Fehler vorkam, zeigt die Karte
       „Heute“ eine Kachel wie „Drohung stehen gelassen · 3 von 5 Partien · Kapitel 1“. Der Knopf öffnet den Trainer; nach
       dem Üben verschwindet die Kachel bis zur nächsten Partie. (Ältere Partien bekommen die Kürzel im Leerlauf
@@ -149,16 +150,19 @@ Adresse mit „#abenteuer“ öffnen).
       weiterverwendet.
 - [ ] N2588. Auswertung, Zeitleiste: Kacheln „Absichtlicher Fehler der Engine“ erscheinen nur noch, wenn der Zug
       wirklich ein Fehler, Patzer oder verpasster Gewinn war, nicht bei kleinen Ungenauigkeiten.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (nur der echte Patzer der Engine 12... Td8 hat eine Kachel, die zwei Kleinigkeiten nicht).
 - [ ] N2589. Kapitelseite (etwa Kapitel 0), Karte „Dein Fortschritt“: Tipp auf den Ring Abbildungen oder
       Warum-Fragen rollt zu den Abbildungen, Tipp auf den Ring Lernziele öffnet die Checkliste mit der
       aufgeklappten Karte dieses Kapitels, Tipp auf Übungen rollt zu den Übungen.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (geprüft an Kapitel 1).
 - [ ] N2590. Startseite, Karte „Heute“: Wer schon Aufgaben am Brett lösen kann, sieht unter den Vorschlägen
       jetzt auch „Kurzplan“ (etwa 15 Minuten, fertig zusammengestellt); Tipp öffnet die Kurzpläne.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kurzplan unter den Vorschlägen, Tipp öffnet die Kurzpläne; neuer Test).
 - [ ] N2591. Einstellungen › Bedienung, ganz unten „Was zuerst kommt“: Buch / Spielen / Umsehen. Auf „Spielen“
       stellen: Die Karte „Heute“ schlägt nach fälligen Wiederholungen zuerst Partie, Taktikthema und
       Kurzplan vor. Die Startwahl der ersten Tour (Einstellungen › Hilfe › Rundgang) stellt das
       ebenfalls ein.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für „Spielen“: Partie steht vorn, danach Kurzplan; neuer Test. Nicht geprüft: Startwahl der Tour.
 - [ ] N2593. Lernpfad „Dein Weg durchs Buch“: Unter dem Balken stehen jetzt auch „… Warum-Fragen“ und
       „… Lernziele“. In Kapitel 1 eine Warum-Frage richtig beantworten und in der Gesamt-Checkliste ein
       Lernziel von Kapitel 1 abhaken: Beide Zahlen sinken um eins, die Station füllt sich. Golden wird
@@ -182,9 +186,11 @@ Adresse mit „#abenteuer“ öffnen).
       du etwa 250 Punkte schwächer als sonst …“ mit Kapitel und Trainer (Eröffnung: Kapitel 2,
       Repertoire; Mittelspiel: Kapitel 7, Taktik; Endspiel: Kapitel 8, Endspieltrainer). Bei weniger
       Partien oder ausgeglichenen Phasen kommt kein Hinweis.
+      Vorgeprüft: Abweichung. Für die Eröffnung bestanden (zehn gewertete Partien mit schwacher Eröffnung: „Aus deinen Partien“, Kapitel 2, Repertoire-Trainer; neuer Test). Für das Endspiel kann der Hinweis nie kommen und im Blitz für keine Phase: Das Elo-Modell gibt dort auch nach zehn Partien eine zu breite Spanne (Endspiel Schnellschach ±954, Grenze 460). Frage an dich: so lassen (Endspiel nur als Eindruck) oder die Grenze fürs Endspiel lockern?
 - [ ] N2592. Karte „Heute“ › Ziel wählen: Mit einer Wertung um 900 stehen keine Engine-Bots und keine Orden der
       Stufen 6 bis 10 mehr unter den Vorschlägen, wohl aber Bots bis etwa 1200 und Kapitelziele. Ohne
       Wertung zählt der stärkste besiegte Bot.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zehn Wertungspunkte bei 900: Bots bis Stufe 4–5 und „Teil Grundlagen“, keine Engine-Bots, keine Stufe 6 bis 10; neuer Test); nicht geprüft: ohne Wertung.
 
 ### Neu in 0.3.51: Taktiktrainer – mehrere Motive und gleich schnelle Matts (6.11.2026)
 
@@ -252,6 +258,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2580. **Baumansicht:** Nach der Analyse steht links an jedem kleinen Brett der Abzweig-Karten der
       Bewertungsbalken mit Zahl.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (nach der Analyse drei Balken mit Zahl, etwa +1,6, an den Abzweig-Karten; neuer Test).
 - [ ] N2575. Touren (Kompass): Die Tour der Variante beginnt mit dem Titel (Bearbeiten, Löschen), die Tour der
       Liste nennt Stift und Papierkorb, die Touren von Lernsammlung und Fehlerdatenbank sagen, dass ein
       aufgeklappter Eintrag „Bearbeiten“ und „Löschen“ (mit „Rückgängig“) hat.
@@ -284,6 +291,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Variante „Analyse“ einschalten: Die Partiezüge haben sofort ihre Symbole und Werte (aus der
       Auswertung übernommen); gerechnet wird nur, was neu dazukommt (eigene Abzweige). Der Zähler
       „läuft … von …“ zählt nur diese.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Zugarten sofort da; „Analyse“ rechnet nur die 3 neuen Stellungen der Abzweige; neuer Test).
 
 ### Neu in 0.3.46: Variationsbrowser, Zurück-Taste (1.11.2026)
 
@@ -306,10 +314,13 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2508. Neue Variante aus Partie, Fehlerdatenbank, Lernsammlung und „Stellung aufbauen“ ausprobieren (Titel, Kommentare aus Satz bzw. Plan).
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
 - [ ] N2509. Ausgewertete eigene Partie mit Patzer: Gabel im Rückblick → Schalter „Engine-Folgen übernehmen“ → Abzweige „Besser war (Engine)“ und „So wird bestraft (Engine)“ (kursiv mit Chip-Zeichen), einzeln löschbar.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Abzweige „Besser war (Engine)“ an 8. Sc3? und 12. O-O-O??, dazu am Patzer der Engine; neuer Test); nicht geprüft: einzeln löschen.
 - [ ] N2510. Partienliste und Auswertung zeigen die Zahl eigener Varianten einer Partie.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Chip „1 eigene Variante“ in der Auswertung, Marke in der Partienliste; neuer Test).
 - [ ] N2511. „Von hier spielen“ in einer Variante: Spielen zeigt „Probepartie: zählt nicht“, Partie gegen einen Bot, „Probepartie beenden“ → „Als Variante speichern“ → Züge als Abzweig mit Kommentar; Partienliste, Wertung, Rekorde und Tagesziel unverändert.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: Wertung, Rekorde und Tagesziel bleiben unverändert (geprüft nur die Partienliste).
 - [ ] N2512. „Von hier spielen“ aus dem Gabel-Blatt der Auswertung: Farbe wie in der Partie; nach „Verwerfen“ bleibt nichts gespeichert.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Probepartie mit Weiß wie in der Partie; nach „Verwerfen“ keine Variante; neuer Test).
 - [ ] N2513. Datensicherung mit Varianten: Rückfrage nennt „Varianten: n“; Einspielen auf einem zweiten Gerät bringt sie mit.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Einspielen einer Sicherung mit Varianten).
 - [ ] N2514. Tour auf beiden neuen Bildschirmen (Kompass oben rechts).
@@ -361,10 +372,12 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße); nicht geprüft: zweite Analyse rechnet nur den Rest.
 - [ ] N2565. Analyse starten und die Variante verlassen (etwa ins Buch): später zurück – die Analyse ist im Hintergrund
       fertig geworden.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Analyse gestartet, ins Buch gewechselt, später zurück: fertig, mit Zugarten; neuer Test).
 - [ ] N2566. Titel → „Als PGN-Datei sichern“ und in Lichess als Studie einfügen: Lichess zeigt die Bewertungen
       (`[%eval]`). Dieselbe Datei in der App einlesen: Symbole und Balken sind sofort da.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) für das Einlesen in der App; nicht geprüft: Lichess zeigt die Bewertungen.
 - [ ] N2567. Eine Lichess-Studie mit Engine-Bewertungen als PGN einlesen: Balken sofort; Symbole erst nach „Analyse“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (PGN mit „[%eval]“: Balken sofort, Zugarten erst nach „Analyse“; neuer Test).
 - [ ] N2568. „Von hier spielen“, ein paar Züge, dann über die Leiste zu „Spielen“: oben die Karte „Probepartie läuft“
       („zählt nicht · gegen …“); „Weiterspielen“ führt zurück, „Beenden“ bietet „Als Variante speichern“ und „Verwerfen“.
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
@@ -415,6 +428,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2481. Bester Zug ohne „?“: Öffne die Auswertung einer Partie, in der du schon klar
       verloren standest. Züge mit dem Stern „Bester Zug“ tragen nirgends „?!“, „?“ oder „??“ (Zugliste,
       Momente, Zahlen „Deine Züge“), auch wenn die Gewinnchance dabei weiter fällt.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Partie, in der Weiß klar verloren stand und nur beste Züge spielte: kein „?“, „Gut gespielt!“; neuer Test).
 - [ ] N2482. Die Partie in Momenten wischen: In der Auswertung stehen die Momente nebeneinander.
       Wische mit dem Daumen nach links: Die Karten rasten ein, rechts schaut die nächste heraus, oben
       zählt „2 von 7“ usw. mit. Jede Phase beginnt mit einer schmalen Karte „Mittelspiel · Zug … · %“.
@@ -532,14 +546,18 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2440. Karte „Heute“ mitten im Buch: Lies in Kapitel 6 ein paar Abbildungen (Kapitel 0 bis
       5 abgehakt, Übungen offen). Die Übungskachel nennt jetzt Kapitel 5 (das zuletzt gelesene
       fertige Kapitel), nicht mehr Kapitel 0.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Kapitel 0 bis 5 gelesen, Kapitel 6 begonnen: Übungskachel „Kapitel 5“; neuer Test).
 - [ ] N2441. Karte „Heute“ mit eigenem Ziel: Hefte unter „Ziele“ das Ziel „Übungen von Kapitel 3“
       an. Die Übungskachel nennt jetzt Kapitel 3, auch wenn du dort noch nicht fertig gelesen hast.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (angeheftetes Ziel Kapitel 3; neuer Test).
 - [ ] N2442. Karte „Heute“ mit sehr vielen fälligen Karten (über 20): Statt „etwa 134 Minuten“
       steht „Fang mit 20 an, das dauert etwa 14 Minuten“; die Kachel zeigt „200 fällig · 20 in etwa
       14 Min“.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (200 fällige Karten: „200 fällig · 20 in etwa 14 Min“, Vorlesetext „Fang mit 20 an, das dauert etwa 14 Minuten“; neuer Test).
 - [ ] N2443. Karte „Heute“, alles erledigt (Tagesaufgabe gelöst, Kapitel gelesen): Als letzte
       Kachel steht „Partie · Gegen die Engine“; ein Tipp öffnet Spielen. Neulinge vor Kapitel 0
       sehen sie nicht.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (alles erledigt: letzte Kachel „Partie · Gegen die Engine“; neuer Test).
 - [ ] N2444. Zähltrainer: Unter dem Brett steht immer die Seite am Zug, die auf dem rot
       markierten Feld schlagen würde (fünf Aufgaben durchtippen).
 - [ ] N2445. Nachschlagen › Werkzeuge des Buches: Die Bilder zeigen die neue Oberfläche (Leiste
@@ -787,11 +805,13 @@ unter dem Brett, „Ja, aufgeben“) oder gewinnen. Die Engine rechnet danach ei
       vorher?
 - [ ] N2325. **Verlaufskurve:** Finger auf der Kurve halten und fahren zeigt den Zug, Loslassen
       springt dorthin, zwei Finger zoomen: alles wie vor dem Umbau?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (ein Finger zeigt den Zug über der Kurve, Loslassen springt dorthin, zwei Finger zoomen; neuer Test).
 - [ ] N2329. **Nichts verloren:** Zugliste mit Zeichen und „Alle Züge zeigen“, Pfeile zum Blättern,
       Uhren, Bewertungsbalken links am Brett, Drehen, Ruhige Ansicht (blendet die Auswertung aus,
       Ergebnis und „Neue Partie“ bleiben), „Besserer Zug“/„Bestrafung“ abspielen, Nebenzweig,
       „Zurücknehmen“ nach dem Ende (nur in ungewerteten Partien), die Meldung „Gruppenmodus frei“ und während der Rechnung
       „Die Engine wertet die Partie aus …“ mit Balken: alles noch da?
+      Vorgeprüft: Abweichung, nur im Text: „Zurücknehmen“ nach dem Ende gibt es seit 0.3.45 nicht mehr (N2480), „Besserer Zug“/„Bestrafung“ wählt man über die Linienknöpfe (N2599). Zugliste mit Zeichen, Balken, ruhige Ansicht, Nebenzweig und Folgen sind in Tests grün; nicht geprüft: Uhren, Drehen, „Gruppenmodus frei“, Rechenmeldung.
 
 ### Neu in 0.3.38: Buchseite und Lernpfad neu (Arbeitschat, 31.10.2026)
 
@@ -846,6 +866,7 @@ ohne die neuen Karten zu überladen. Profil: Tipp auf „Profil“ unten in der 
 - [ ] N2310. **Verlauf je Phase:** Erst nach einigen ausgewerteten gewerteten Partien: In „Deine
       Wertung“ unter „Nach Phasen“ einen Balken antippen: Die Kurve dieser Phase erscheint mit
       „Spanne …“; ein zweiter Tipp schließt sie.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Balken „Eröffnung“ öffnet die Kurve mit „Spanne …“, zweiter Tipp schließt sie; neuer Test).
 
 ### Neu in 0.3.33: Training und Checkliste neu (Arbeitschat, 31.10.2026)
 
@@ -1001,6 +1022,7 @@ ohne Patzer), je mit Wert, Datum und Knopf „Versuchen“. Ein neuer Rekord ers
       neuen Rekord „richtige Antworten an einem Tag (vorher …)“. Zu oft oder genau richtig?
 - [ ] N2145. **Partie-Rekorde:** Eine gewertete Partie gegen einen Bot gewinnen und auswerten
       lassen. Zählt sie ohne Patzer für „Längste Partie ohne Patzer“ (in Halbzügen)?
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (30 Halbzüge ohne Patzer stehen in „Deine Rekorde“; neuer Test).
 - [ ] N2147. **Abzeichen „Drei Rekorde“:** goldener Stern mit der 3. Gefällt das Bild?
 
 ### Neu in 0.3.21: Kombo und Fundstücke (Arbeitschat, 31.10.2026)

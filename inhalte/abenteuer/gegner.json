@@ -1293,6 +1293,37 @@
       ]
     },
     {
+      "kennung": "ghostTown.victor",
+      "name": "figur.victor.name",
+      "rolle": "story",
+      "temperament": "kuehl",
+      "portraet": "portraets/victor.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 400
+      },
+      "menschlich": true,
+      "gewichte": {
+        "ungenau": 0.8
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Ruy Lopez"],
+        "abweichung": 20
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Ruy Lopez"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
+    },
+    {
       "kennung": "pinewoodCamp.hollis",
       "name": "figur.hollis.name",
       "rolle": "strasse",
@@ -1505,6 +1536,28 @@
           "wert": "positionsspieler"
         }
       ]
+    },
+    {
+      "kennung": "capitalArena.kapuze",
+      "name": "figur.kapuze.name",
+      "rolle": "turnier",
+      "temperament": "ehrgeizig",
+      "portraet": "portraets/kapuze.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 700
+      },
+      "menschlich": true,
+      "gewichte": {
+        "ungenau": 0.6
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Ruy Lopez"],
+        "abweichung": 10
+      },
+      "steckbrief": [{ "art": "stil", "wert": "positionsspieler" }]
     },
     {
       "kennung": "portDelacroix.blaeserSet1",

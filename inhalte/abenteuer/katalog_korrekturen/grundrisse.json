@@ -12242,6 +12242,84 @@
     },
     "nur_pfad": true
   },
+  "spiel/eigene/speisewagen.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 10,
+      "tiefe": 2,
+      "geschosse": 1,
+      "tueren": [
+        {
+          "von": 5,
+          "bis": 6
+        }
+      ],
+      "fenster": {
+        "EG": [
+          {
+            "von": 1,
+            "bis": 4
+          },
+          {
+            "von": 7,
+            "bis": 10
+          }
+        ]
+      },
+      "hinweis": "Diner-Speisewagen mit gewölbtem Blechdach (zwei Lüfter): Doppeltür mittig (Pixel 71 bis 89) mit Trittstufe davor, Fensterband links und rechts der Tür über die ganze Länge; das Bild ist 66 Pixel hoch und wird mit versatz [0, 14] gesetzt",
+      "aufgang": null
+    },
+    "nur_pfad": true
+  },
+  "spiel/eigene/motelzeile.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 14,
+      "tiefe": 3,
+      "geschosse": 1,
+      "tueren": [
+        {
+          "von": 3,
+          "bis": 3
+        },
+        {
+          "von": 6,
+          "bis": 6
+        },
+        {
+          "von": 9,
+          "bis": 9
+        },
+        {
+          "von": 12,
+          "bis": 12
+        }
+      ],
+      "fenster": {
+        "EG": [
+          {
+            "von": 4,
+            "bis": 5
+          },
+          {
+            "von": 7,
+            "bis": 8
+          },
+          {
+            "von": 10,
+            "bis": 11
+          },
+          {
+            "von": 13,
+            "bis": 14
+          }
+        ]
+      },
+      "hinweis": "Motelzeile aus Lehmputz mit Flachdach: vier Zimmer nebeneinander mit bunten Türen (rot, gelb, türkis, violett), rechts jeder Tür ein Fenster, darunter drei Klimageräte; Gehweg vor der Front; Innen je Zimmer ein eigener kleiner Raum",
+      "aufgang": null
+    },
+    "nur_pfad": true
+  },
   "spiel/eigene/wuestenbahnhof.png": {
     "grundriss": {
       "form": "rechteck",

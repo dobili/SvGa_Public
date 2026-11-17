@@ -122,11 +122,12 @@
     },
     {
       "moebel": "sa8Eisenwaren",
-      "feld": [22, 32]
+      "feld": [21, 30],
+      "massstab": 1.25
     },
     {
       "moebel": "sa8LadenD",
-      "feld": [30, 32]
+      "feld": [31, 32]
     },
     {
       "moebel": "rv5Kaffeekiosk",
@@ -150,7 +151,7 @@
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [37, 35]
+      "feld": [34, 28]
     },
     {
       "moebel": "cc5BankZumBach",

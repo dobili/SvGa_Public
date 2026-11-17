@@ -516,6 +516,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
 - [ ] N2495. Datensicherung von einem Gerät mit verdienten Abzeichen auf einem zweiten Gerät (oder
       nach „Alle Daten löschen“) einspielen: Es kommen keine Gratulationen zu alten Ringen oder
       Abzeichen.
+      Vorgeprüft: Abweichung gefunden und behoben. Nach dem Einspielen kam „Neue Stufe erreicht“ zur alten Stufe der Sicherung (die Stufe merkte sich das Gerät, nicht die Sicherung). Seit dieser Fassung vergisst die App nach dem Einspielen die gemerkte Stufe; keine Gratulation zu Ringen, Abzeichen oder Stufe mehr (neuer Test).
 - [ ] N2496. Orden-Probe (Aufgabenseite › Orden testen › ein Ring auf 100 %): Die Gratulation hat
       den Fokus auf „Weiter“ (Tastatur am Rechner: Tab bleibt in der Karte, Esc schließt sie).
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße).
@@ -541,6 +542,7 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (King's English Variation als Schwarz, Knopf „1 Variante“, die App zieht 1. c4).
 - [ ] N2553. Ohne Netz (Flugmodus, App schon installiert): Die Runde aus der Praxis ist trotzdem
       verlängert.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Flugmodus: Old Sicilian aus der Praxis geht über 2... Sc6 hinaus; neuer Test).
 - [ ] N2549. **„Zur Stellung“ an einem Fehler:** In der Auswertung am Moment eines Patzers „Zur
       Stellung“ tippen. Das große Brett zeigt die Stellung nach dem Fehlerzug (der Zug ist in der
       Zugliste markiert); „Merken“ trägt genau diesen Zug in die Fehlerdatenbank ein.
@@ -590,10 +592,12 @@ sind so ausgesucht); angenommen wird jetzt zusätzlich jedes Matt, das genauso s
       Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (zwei Tabs, beide Änderungen bleiben).
 - [ ] N2465. Datensicherung → „Sicherung einspielen“: Die Rückfrage nennt jetzt auch die Zahl der
       Partien.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Rückfrage nennt „Partien: 1“; neuer Test).
 - [ ] N2466. Blitzpartie 3 + 2 bis kurz vor 0:00 laufen lassen und genau beim Ablauf ziehen:
       Die Partie endet auf Zeit, der Zug wird nicht mehr ausgeführt.
 - [ ] N2467. Nach Mitternacht (0–1 Uhr) eine Partie als PGN herunterladen bzw. eine Sicherung
       anlegen: Datei- und PGN-Datum zeigen den heutigen Tag, nicht gestern.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Ortszeit Berlin, 0:30 Uhr: Sicherung „…-2026-11-18.json“, PGN mit Datum 2026.11.18; neuer Test).
 - [ ] N2420. Einstellungen (Zahnrad) › Lizenzen: Neu sind „In onnxruntime-web enthalten:
       protobuf.js, long.js, FlatBuffers, guid-typescript“, „Bibliotheken in der
       WebAssembly-Laufzeit von onnxruntime“, „Schrift Source Serif 4 (Adobe)“, „Häufige
@@ -1170,12 +1174,14 @@ werden deine bisherigen Daten in das neue Format 7 umgewandelt; aus dem, was sch
       Grundmotiven (Räumung zur Hinlenkung, Ablenkung zur Überlastung)?
 - [ ] N1078. **Offline:** Die App einmal online öffnen, dann im Flugmodus den Taktiktrainer und
       „Zusatzaufgaben (Lichess)“ öffnen. Die Themen erscheinen und die Runde läuft.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Flugmodus: Zusatzaufgaben von Lichess, Runde startet; neuer Test).
 
 ### Neu in 0.3.14: Mehr Meisterpartien für „Zug erraten“ (Opus-Arbeitschat, 30.10.2026)
 
 - [ ] N1061. **Berühmte Partien:** Bitte ein paar Kurztexte lesen: Stimmen sie, klingen sie gut?
 - [ ] N1064. **Offline:** Ohne Netz „Berühmte Partien“ und „Aktuelle Turniere“ öffnen: Die Listen
       kommen.
+      Von Claude vorgeprüft am 17.11.: bestanden (Chromium, Handygröße) (Flugmodus: „Berühmte Partien“ und „Aktuelle Turniere“ zeigen ihre Listen; neuer Test).
 
 ### Neu in 0.3.14: Webverweise, Trainer der App neben Lichess (Opus-Arbeitschat, 30.10.2026)
 

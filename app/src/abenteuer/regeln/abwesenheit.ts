@@ -5,8 +5,8 @@
  * Karte, seine Karten sind im Kartenmenü grau („Er ist nicht da.“), und Partiemomente, in denen er
  * spricht, fallen weg.
  *
- * Rolle im Gesamtbild: reine Regeln für weltdaten.ts (Karte), Deckwahl.tsx (Karten) und
- * anbindung/Momentzeile.tsx (Momente); karten.ts und schutzengel.ts fragen dieselbe Bedingung.
+ * Rolle im Gesamtbild: reine Regeln für weltdaten.ts (Karte), Deckwahl.tsx (Karten),
+ * anbindung/Momentzeile.tsx (Momente) und Oberwelt.tsx (Ambroses Kommentar zu Statisten); karten.ts und schutzengel.ts fragen dieselbe Bedingung.
  * Abhängigkeiten: schnittstelle/spielstand.ts (Typ).
  */
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -29,6 +29,21 @@ const AMBROSES_WIRKUNGEN: readonly string[] = [
 /** Ist Ambrose gerade nicht da? Beispiel: tiefpunktGesehen ohne versoehnungGesehen → ja. */
 export function ambroseFehlt(variablen: Abenteuerstand["dialogvariablen"]): boolean {
   return variablen.tiefpunktGesehen === true && variablen.versoehnungGesehen !== true;
+}
+
+/**
+ * Kann Ambrose gerade etwas sagen, etwa einen Kommentar zu einem Statisten (`<sagt>.ambrose`,
+ * Wunsch des Haupt-Chats, 17.11.2026)? Erst nach der ersten Lektion auf dem Dachboden
+ * (ersteLektionBesprochen); vorher ist er noch nicht erwacht. Nach dem Vorwurf (tiefpunktGesehen)
+ * schweigt er, bis er bei der Familie in Port Delacroix wieder spricht (ambroseSprichtWieder,
+ * Story-Bibel Szene 68) oder spätestens bei der Versöhnung (versoehnungGesehen); so halten es auch
+ * die Dialoge (weg-delacroix-desert.ink, port-delacroix-turnhalle.ink).
+ * Beispiel: tiefpunktGesehen ohne ambroseSprichtWieder → nein; danach mit ihm → ja.
+ */
+export function ambroseSprichtJetzt(variablen: Abenteuerstand["dialogvariablen"]): boolean {
+  if (variablen.ersteLektionBesprochen !== true) return false;
+  if (variablen.tiefpunktGesehen !== true) return true;
+  return variablen.ambroseSprichtWieder === true || variablen.versoehnungGesehen === true;
 }
 
 /** Handelt Ambrose in dieser Karte? Beispiel: Mentor-Zug → ja, Abzählen → nein. */

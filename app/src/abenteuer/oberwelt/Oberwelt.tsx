@@ -17,7 +17,7 @@ import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
 import { schutzengelGesperrt } from "../regeln/schutzengel";
-import { ambroseFehlt } from "../regeln/abwesenheit";
+import { ambroseFehlt, ambroseSprichtJetzt } from "../regeln/abwesenheit";
 import { kaufe } from "../regeln/muenzen";
 import { variablenAusBesitz } from "../regeln/dialogvariablen";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
@@ -145,7 +145,10 @@ export function Oberwelt() {
       const schluessel = `${welt.kennung}.${treffer.name}`;
       const besuch = angesprochen.current.get(schluessel) ?? 0;
       angesprochen.current.set(schluessel, besuch + 1);
-      setzeSprechblase(sprechblaseFuer(welt, treffer.name, besuch, stand?.held.name ?? ""));
+      const spricht = stand ? ambroseSprichtJetzt(stand.dialogvariablen) : false;
+      setzeSprechblase(
+        sprechblaseFuer(welt, treffer.name, besuch, stand?.held.name ?? "", spricht),
+      );
       return;
     }
     if (treffer.typ === "figur") {

@@ -180,6 +180,18 @@ export function merkeErsteStufe(stufe: number): void {
   melde();
 }
 
+/**
+ * Nach dem Einspielen einer Datensicherung die gemerkte Stufe vergessen. Warum: Ein neues Gerät
+ * hat beim ersten Start Stufe 1 gemerkt; nach dem Einspielen hätte die Meldung zu einer alten
+ * Stufe gratuliert („Neue Stufe erreicht“, Vortest 17.11.2026, N2495). Ohne Merker merkt die
+ * Meldung die Stufe der eingespielten Daten still wie beim ersten Start (merkeErsteStufe); ein
+ * späterer echter Aufstieg wird wieder gemeldet.
+ */
+export function vergissGefeierteStufe(): void {
+  entferneMerker(MERKER_STUFE);
+  melde();
+}
+
 /** Probe: ein Abzeichen gilt als verdient. Beispiel: probeAbzeichen("brillant"). */
 export function probeAbzeichen(kennung: Abzeichenkennung): void {
   schreibeMerker(MERKER_PROBE, [...stand.probe, kennung].join(TRENNER));

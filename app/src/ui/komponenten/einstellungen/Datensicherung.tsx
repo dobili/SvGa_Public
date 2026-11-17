@@ -6,8 +6,10 @@
  * Konzept 9.4: sanfter Hinweis alle vier Wochen. Vor dem Einspielen fragt die App nach und
  * nennt, was in der Sicherung steckt, denn das Einspielen ersetzt alle Daten auf dem Gerät.
  * Neben der Überschrift steht ein Fragezeichen (Erklärung anfangs eingeklappt).
- * Die Zurück-Taste bricht die Rückfrage vor dem Einspielen ab (app/blattstapel.ts).
- * Abhängigkeiten: app/blattstapel.ts, speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, InfoKnopf, i18n.
+ * Die Zurück-Taste bricht die Rückfrage vor dem Einspielen ab (app/blattstapel.ts). Nach dem
+ * Einspielen vergisst sie die gemerkte Stufe, damit keine Gratulation zu einer alten Stufe kommt.
+ * Abhängigkeiten: app/blattstapel.ts, speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, InfoKnopf, i18n,
+ * fortschritt/abzeichenstand.ts.
  */
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useZurueckSchliesst } from "../../../app/blattstapel";
@@ -26,6 +28,7 @@ import { useSpeicher } from "../../../speicher/speicher";
 import { bieteDateiAn, kannDateiTeilen, teileDatei } from "../bausteine/dateiAnbieten";
 import { MitInfo } from "../bausteine/InfoKnopf";
 import { Knopfsymbol } from "../bausteine/Knopfsymbol";
+import { vergissGefeierteStufe } from "../fortschritt/abzeichenstand";
 import { geraet, istInstalliert } from "../../../app/geraet";
 import { safariHinweisNoetig } from "../../../app/safarihinweis";
 
@@ -172,6 +175,8 @@ export function Datensicherung() {
 
   const ersetze = async (sicherung: Gepruefte) => {
     const ok = await importiere(sicherung.daten);
+    // Keine Gratulation zu alten Stufen der eingespielten Daten (N2495).
+    if (ok) vergissGefeierteStufe();
     melde(t(ok ? "sicherung.eingespielt" : "sicherung.nichtGespeichert"), !ok);
   };
 

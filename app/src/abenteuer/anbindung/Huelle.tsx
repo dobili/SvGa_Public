@@ -12,6 +12,7 @@
  */
 import type { ReactNode } from "react";
 import "../abenteuer.css";
+import "../abenteuer-atmosphaere.css";
 import "../huelle.css";
 import "../spielfarben.css";
 import "../huellenlage.css";

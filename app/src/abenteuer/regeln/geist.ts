@@ -20,7 +20,7 @@ export const GEIST_SCHWEBEN = 1;
 /** Dauer eines halben Auf und Ab in Millisekunden. */
 export const GEIST_SCHWEBEDAUER = 1400;
 
-/** Erscheinung des Porträts im Dialog (data-erscheinung, abenteuer.css). */
+/** Erscheinung des Porträts im Dialog (data-erscheinung, abenteuer-atmosphaere.css). */
 export type Erscheinung = "erscheint" | "geist" | "geisterhaft";
 
 /** Der Kurzname einer Figur aus ihrer Kennung. Beispiel: „mapleFalls.ambrose“ → „ambrose“. */

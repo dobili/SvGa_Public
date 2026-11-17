@@ -148,7 +148,7 @@ function useVollbild(): boolean {
 
 /**
  * Blindschach des Schach-Abenteuers (Variante „blind“ einer Partie): Der Rahmen bekommt eine
- * Klasse, die die Figuren auf dem Brett ausblendet (abenteuer.css). Ohne Spiel immer false.
+ * Klasse, die die Figuren auf dem Brett ausblendet (abenteuer-atmosphaere.css). Ohne Spiel immer false.
  */
 function useBlindschach(): boolean {
   const { ansicht } = useNavigation();

@@ -700,10 +700,10 @@
     {
       "name": "truckerin",
       "typ": "statist",
-      "feld": [40, 20],
+      "feld": [42, 20],
       "eigenschaften": {
-        "von": "40,20",
-        "bis": "40,20",
+        "von": "42,20",
+        "bis": "42,20",
         "tun": "wartet neben ihrem Lastwagen auf Hilfe",
         "wann": "tag",
         "sagt": "statist.wegPinewoodGhost.staubstrasse.truckerin"
@@ -724,10 +724,10 @@
     {
       "name": "motorradfahrer",
       "typ": "statist",
-      "feld": [140, 14],
+      "feld": [140, 12],
       "eigenschaften": {
-        "von": "140,14",
-        "bis": "140,14",
+        "von": "140,12",
+        "bis": "140,12",
         "tun": "trinkt Wasser im Schatten eines Mastes",
         "wann": "tag"
       }

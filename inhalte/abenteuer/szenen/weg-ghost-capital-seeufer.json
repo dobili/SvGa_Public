@@ -94,7 +94,7 @@
     },
     {
       "moebel": "gc7Schirm",
-      "feld": [74, 8]
+      "feld": [74, 9]
     },
     {
       "moebel": "gc7Schirm",
@@ -651,10 +651,10 @@
     {
       "name": "picknickfamilie",
       "typ": "statist",
-      "feld": [54, 21],
+      "feld": [59, 21],
       "eigenschaften": {
-        "von": "54,21",
-        "bis": "54,21",
+        "von": "59,21",
+        "bis": "59,21",
         "tun": "packt einen Korb aus",
         "wann": "tag"
       }

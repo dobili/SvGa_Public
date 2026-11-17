@@ -759,10 +759,10 @@
     {
       "name": "radfahrerin",
       "typ": "statist",
-      "feld": [20, 39],
+      "feld": [19, 31],
       "eigenschaften": {
-        "von": "20,39",
-        "bis": "20,31",
+        "von": "19,31",
+        "bis": "19,24",
         "tun": "schiebt ihr Rennrad bergauf",
         "wann": "tag",
         "sagt": "statist.wegDesertSummit.bergstrasse.radfahrerin"
@@ -771,10 +771,10 @@
     {
       "name": "schaeferin",
       "typ": "statist",
-      "feld": [25, 65],
+      "feld": [20, 60],
       "eigenschaften": {
-        "von": "25,65",
-        "bis": "25,65",
+        "von": "20,60",
+        "bis": "20,60",
         "tun": "treibt ihre Ziegen über den Hang",
         "wann": "tag",
         "sagt": "statist.wegDesertSummit.bergstrasse.schaeferin"
@@ -795,10 +795,10 @@
     {
       "name": "fotograf",
       "typ": "statist",
-      "feld": [20, 10],
+      "feld": [21, 10],
       "eigenschaften": {
-        "von": "20,10",
-        "bis": "20,10",
+        "von": "21,10",
+        "bis": "21,10",
         "tun": "fotografiert die Kehren von oben",
         "wann": "tag"
       }

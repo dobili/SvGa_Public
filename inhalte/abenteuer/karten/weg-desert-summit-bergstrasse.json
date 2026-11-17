@@ -15827,8 +15827,8 @@
      "id": 13,
      "name": "radfahrerin",
      "type": "statist",
-     "x": 320,
-     "y": 624,
+     "x": 304,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15837,12 +15837,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "20,39"
+       "value": "19,31"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "20,31"
+       "value": "19,24"
       },
       {
        "name": "tun",
@@ -15865,8 +15865,8 @@
      "id": 14,
      "name": "schaeferin",
      "type": "statist",
-     "x": 400,
-     "y": 1040,
+     "x": 320,
+     "y": 960,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15875,12 +15875,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "25,65"
+       "value": "20,60"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "25,65"
+       "value": "20,60"
       },
       {
        "name": "tun",
@@ -15941,7 +15941,7 @@
      "id": 16,
      "name": "fotograf",
      "type": "statist",
-     "x": 320,
+     "x": 336,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -15951,12 +15951,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "20,10"
+       "value": "21,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "20,10"
+       "value": "21,10"
       },
       {
        "name": "tun",

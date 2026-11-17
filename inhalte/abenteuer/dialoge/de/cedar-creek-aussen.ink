@@ -367,6 +367,9 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     // Lektorat der Lesefassung, 17.11.2026: nicht mehr „fährt jede Stunde“; in Maple Falls hängt der
     // Zettel „Mr. Kettering fährt nach Cedar Creek nur samstags“, deshalb gehen die beiden zu Fuß.
     Die Haltestelle von Cedar Creek. {teamAngekommen:Das Auswärtsspiel läuft noch.|Morgen ist der Clubkampf.} #sprecher:erzaehler
+    // Lektorat Akt 1, 17.11.2026: Am Freitag steht Mr. Kettering schon hier, obwohl er „nur samstags“
+    // nach Cedar Creek fährt. Er wohnt im Ort; die Fahrt hinüber am Freitag ist seine Leerfahrt.
+    {not teamAngekommen: Mr. Kettering wohnt hier. Heute fährt er den Bus leer nach Maple Falls, morgen früh bringt er das Team. #sprecher:erzaehler}
 }
 + [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler

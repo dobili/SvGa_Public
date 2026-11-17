@@ -150,7 +150,10 @@ Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek? #sprecher:mutter
     Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
 * [„Ich spiele am vierten Brett!“]
     Am vierten Brett. Und Juno sagt, ihr geht schon Freitag. Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
-- Sie sieht dich an, über den Rand ihrer Kaffeetasse. Der Tisch wackelt nicht mehr; der Pizzakarton liegt noch unter dem Bein. #sprecher:erzaehler
+// Lektorat Akt 1, 17.11.2026: der Grund für Freitag und zu Fuß, für jeden Spieler (Roman, Kapitel 10:
+// „in einem Atemzug“; der Bus fährt nur samstags, Zettel an der Haltestelle im Park).
+- Du sagst alles in einem Atemzug: Der Bus fährt erst Samstag früh, Juno kennt den Weg, und die Vorhut schläft immer in der Bibliothek. #sprecher:erzaehler
+Sie sieht dich an, über den Rand ihrer Kaffeetasse. Der Tisch wackelt nicht mehr; der Pizzakarton liegt noch unter dem Bein. #sprecher:erzaehler
 Du hast in vier Wochen mehr geredet als im ganzen letzten Jahr. #sprecher:mutter #stimmung:laechelt
 * [„Zwei Stunden. Am Fluss entlang.“]
 * [„Wir schlafen in der Bibliothek. Es gibt Matten.“]

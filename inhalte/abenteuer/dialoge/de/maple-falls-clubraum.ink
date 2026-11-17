@@ -282,11 +282,16 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
     }
 }
 {ausgangMapleFallsSamRevanche == "" or ausgangMapleFallsSamRevanche == "abgebrochen":
-    Okay. Die Dame bleibt erst mal zu Hause. Revanche? Jetzt? #sprecher:sam #stimmung:laechelt
+    // Lektorat Akt 1, 17.11.2026: keine „Revanche“ beim ersten Mal; {held} hat vorher nie gegen Sam
+    // gespielt (im Roman gewinnt Sam eine erste Partie, die es im Spiel nicht gibt).
+    Okay. Die Dame bleibt erst mal zu Hause. Eine Partie? Jetzt? #sprecher:sam #stimmung:laechelt
 - else:
     {ausgangMapleFallsSamRevanche == "niederlage":Noch mal? Klar! Aber diesmal passt du besser auf deine Figuren auf.|Noch mal! Diesmal mache ich alles richtig. Fast alles.} #sprecher:sam #stimmung:laechelt
 }
-* [„Revanche.“]
+* {not gespieltSamRevanche()} [„Eine Partie.“]
+    ~ beginnePartie("mapleFalls.samRevanche")
+    -> END
+* {gespieltSamRevanche()} [„Revanche.“]
     ~ beginnePartie("mapleFalls.samRevanche")
     -> END
 * [„Gleich.“]

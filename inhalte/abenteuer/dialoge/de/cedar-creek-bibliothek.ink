@@ -105,10 +105,17 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 === okafor_bis_morgen ===
 Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor #stimmung:laechelt
 {maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor #stimmung:laechelt}
-* [„Ich geh noch zum Steg.“]
+// Wer schlafen ginge, bevor Mae eingeladen hat, bekäme die Sternennacht nie angeboten (die Quest
+// beginnt in mae_einladung, und nach der Nacht lädt Mae nicht mehr ein). Deshalb schickt
+// Mrs. Okafor erst zu Mae; schlafen geht man danach.
+{not maeEingeladen: Mae sucht dich übrigens. Es geht um Sterne, glaube ich. #sprecher:okafor #stimmung:laechelt}
+* {not maeEingeladen} [„Ich frag sie.“]
+    Tu das. Sie platzt sonst. #sprecher:okafor #stimmung:laechelt
+    -> END
+* {maeEingeladen} [„Ich geh noch zum Steg.“]
     Geh nur. Am Wasser wird es abends kalt. #sprecher:okafor #stimmung:laechelt
     -> END
-* [„Ich geh schlafen.“]
+* {maeEingeladen} [„Ich geh schlafen.“]
     ~ nachtImLesesaal = true
     Du rollst dich auf einer Matte unter dem langen Tisch ein. Die Uhr im Türmchen tickt. #sprecher:erzaehler #geraeusch:uhr_ticken
     Am Morgen sitzt Mrs. Okafor schon am langen Tisch, eine Tasse in der Hand. #sprecher:erzaehler

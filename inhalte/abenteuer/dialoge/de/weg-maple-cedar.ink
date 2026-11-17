@@ -49,6 +49,7 @@ VAR nadelIronwood = 0
 VAR adaGetroffen = false
 VAR faehrsteinGesehen = false
 VAR tafelGesehen = false
+VAR junoWegErzaehlt = false
 VAR schildCedarGesehen = false
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -56,27 +57,45 @@ VAR schildCedarGesehen = false
 === tafel ===
 {wegMapleCedarTafelBestanden:
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
+    {junoErzaehltNoch(): -> juno_weg}
     -> END
 }
 // Erster Blick: aus der VAR, nicht aus dem Besuchszähler; die App beginnt jeden Dialog als neue
 // Geschichte, „tafel == 1“ galt deshalb immer (python -m pipeline.abenteuer.inkbesuche, 17.11.2026).
-~ temp ersterBlick = not tafelGesehen
-{not tafelGesehen:
-    ~ tafelGesehen = true
-    Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler
-}
+{not tafelGesehen: Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler}
 Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
-{ersterBlick: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+{not tafelGesehen: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+~ tafelGesehen = true
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegMapleCedar.tafel")
     -> END
 * [Weitergehen]
-    {ersterBlick: -> juno_weg}
+    {junoErzaehltNoch(): -> juno_weg}
     -> END
 
+// Nach der Runde an der Tafel (runden.json, „danach“; startet, sobald die Ergebniskarte zu ist):
+// Wer die Aufgaben löst, hört Junos Erzählung hier statt nach „Weitergehen“ (Lektorat Akt 1,
+// 17.11.2026). Eine abgebrochene Runde hat keine Ergebniskarte; dann erzählt Juno beim nächsten
+// Blick auf die Tafel.
+=== tafel_danach ===
+{wegMapleCedarTafelBestanden:
+    Die letzte Magnetfigur klackt aufs Blech. Das Rätsel ist gelöst. #sprecher:erzaehler
+- else:
+    Die Magnetfiguren rutschen zurück an ihren Platz. Das Rätsel wartet. #sprecher:erzaehler
+}
+{junoErzaehltNoch(): -> juno_weg}
+-> END
+
+// Junos Erzählung steht noch aus: genau einmal, und nur auf dem ersten Weg nach Cedar Creek
+// (danach stimmt „noch niemand hat gewonnen“ nicht mehr, und Juno geht nicht mehr mit).
+=== function junoErzaehltNoch() ===
+~ return not junoWegErzaehlt and nadelCedarCreek == 0
+
 // Runde 11 (Dialogprüfung B2, „Fehlt im Spiel“; Roman Kapitel 10): Juno erzählt auf der
-// Landstraße. Läuft einmal, nach dem ersten Blick auf die Tafel.
+// Landstraße. Läuft genau einmal, beim ersten Verlassen der Tafel, gleich auf welchem Weg
+// (Weitergehen, nach der Runde oder beim Blick auf die gelöste Tafel); merkt es in junoWegErzaehlt.
 === juno_weg ===
+~ junoWegErzaehlt = true
 Die Landstraße läuft zwischen Feldern, gerade wie mit dem Lineal gezogen. Der Himmel ist sehr groß. #sprecher:erzaehler
 Meine Schwester Carla war drei Jahre im Team. Dann kam das Auto. Jetzt tut sie, als hätte es sie nie interessiert. #sprecher:juno #stimmung:nachdenklich
 Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno #stimmung:nachdenklich

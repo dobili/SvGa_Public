@@ -199,16 +199,19 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose #stimm
 ~ newYorkBesprochen = true
 Er opferte seine Dame, und ich vergaß zu atmen. Dreihundert Leute, und man hätte eine Nadel fallen hören. #sprecher:ambrose #stimmung:stolz #musik:aus #pause:2
 Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.walzer
-* [„Gestern hast du gesagt, Zählen ist alles.“]
+// Lektorat Akt 1, 17.11.2026: nicht mehr „Gestern hast du gesagt, Zählen ist alles“ (Roman): Den
+// Satz sagt Ambrose im Spiel nie, und „gestern“ stimmt nicht in jedem Verlauf. Seine Frage „Was
+// hängt?“ stellt er in jedem Verlauf (maple-falls-dachboden.ink, nach der ersten Lektion).
+* [„Dieses Zählen habe ich von dir. Was hängt?“]
     Er fährt herum. Er sucht nach einer Antwort und hat keine. #sprecher:erzaehler #pause:2
-    Das habe ich gesagt. #sprecher:ambrose #stimmung:still
+    Das hast du von mir. #sprecher:ambrose #stimmung:still
     ** [„Was stimmt denn nun?“]
         Er sieht auf das Brett aus Licht. Dann auf die Zeitung. Vier zu drei. #sprecher:erzaehler
         Wenn ich das wüsste, säße ich vielleicht nicht in einer Kiste. #sprecher:ambrose #stimmung:bitter
     ** [Nichts sagen]
 * [Nichts sagen]
-    Du denkst an gestern. #sprecher:erzaehler #pause
-    Sieh mich nicht so an. Das habe ich gesagt. #sprecher:ambrose #stimmung:still
+    Du denkst an seine Frage: Was hängt? #sprecher:erzaehler #pause
+    Sieh mich nicht so an. Die Frage ist von mir. #sprecher:ambrose #stimmung:still
 - -> name_im_archiv
 
 // Runde 11 (VC73, Roman Kapitel 12, Schluss): Ambrose nennt {held} zum ersten Mal beim Namen.

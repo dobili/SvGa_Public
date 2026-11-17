@@ -267,3 +267,24 @@ Text ohne die Marken (`#sprecher` usw.); „⏎“ trennt Zeilen.
 | --------------- | ------------------------------------------- | -------------------------------------------------- |
 | `ngata_angebot` | + [Ja, zeig her.] → **+ [„Ja, zeig her.“]** | Gesprochene Wahl in Anführungszeichen wie überall. |
 | `ngata_angebot` | + [Später.] → **+ [„Nicht jetzt.“]**        | „Später“ als Wahl nur in Akt 1.                    |
+
+## Nachtrag (17.11.2026): Antworten auf die Rückfragen und Akt 2
+
+- **Rückfrage 1 (Ohrstöpsel):** Das Spiel bleibt wie angepasst; der Widerspruch im Roman (Kapitel 33,
+  „Vier fehlten … fünfte Mulde“) geht als Befund an den Autor.
+- **Rückfrage 2 (zwei Sol):** Laut Story-Bibel (Abschnitt 27.2) ist die Bergführerin Sol Soledad Reyna,
+  Mitte dreißig; die Kletterin am Canyon (Ortsdokument desert-springs.md) ist eine andere Person. Sie
+  heißt jetzt **Tess Ferris** (texte/de.json `figur.ferris.name`, drei Zeilen in
+  weg-delacroix-desert.ink, Ortsdokument). „Skye“ war schon an die Joggerin vergeben.
+- **Rückfrage 3 (Henri):** Bleibt beim „Sie“: Es passt zu einem älteren, förmlichen Handwerker und ist
+  in allen seinen Zeilen einheitlich.
+- **Rückfrage 4 (Miss Odile):** Bleibt: Die Halle steht auch nach einer Niederlage auf, weil sie
+  ehrt, dass der Held die Partie allein gespielt hat; genau darum ging der Vorwurf.
+- **Akt 2, Muster „einmalige Wahl vor Partie oder Aufgaben“:** In riverton-_, lockport-_, ironwood-*,
+  weg-cedar-riverton und weg-riverton-ironwood standen 23 Wahlblöcke mit `*` vor `beginnePartie` oder
+  `beginneAufgaben` (Gus, Big Joe Clubkampf und Revanche, Mamas Partie, Reihen Hank, Priya, Tamsin,
+  Ray, Siegel und Erinnerung im Museum, drei Aufgaben in Lockport, Harlan, Odum, Slicks Revanche,
+  Slick beobachten, zwei Wegtafeln, Schaffner Quinn, Zugpartie, Brückenbauern). Alle 46 Wahlen dieser
+  Blöcke stehen jetzt auf `+`, dazu „Warum nicht?“ beim Postsack, das sonst beim zweiten Besuch
+  verbraucht war. Texte unverändert. Nebenbei gesehen, nicht geändert: In lockport-aussen.ink steht
+  dreimal „Später“ als Wahl (nach der Regel nur in Akt 1).

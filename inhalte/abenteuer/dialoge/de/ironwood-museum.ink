@@ -44,7 +44,7 @@ Und das dort in der Ecke ist mein Kummer. #sprecher:teague #stimmung:nachdenklic
 Säcke aus grauem Segeltuch, steif vom Alter, jeder mit einem Klumpen Wachs versiegelt. #sprecher:erzaehler
 Post von achtzehnhundertsechsundsechzig. Die Strecke war drei Monate zu, und der Postmeister hatte das Fieber. #sprecher:teague #stimmung:nachdenklich
 Dann kam ein neuer Postmeister, dann eine neue Bahn, dann kam ich. Niemand hat sie je geöffnet. #sprecher:teague #stimmung:nachdenklich
-* [„Warum nicht?“]
++ [„Warum nicht?“]
 - Weil man ein Siegel nicht bricht, mein Kind. Man löst es. #sprecher:teague #stimmung:laechelt
 Ins Wachs sind kleine Figuren in einem Gitter gedrückt. #sprecher:erzaehler #bild:siegel_stellung
 Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack öffnen. Ich bin zu alt für Rätsel. #sprecher:teague #stimmung:laechelt
@@ -53,10 +53,10 @@ Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack ö
 - else:
     Eine Fesselung. Eine Figur, die nicht wegkann, weil hinter ihr etwas Wertvolleres steht. #sprecher:erzaehler
 }
-* [Die Stellung lösen]
++ [Die Stellung lösen]
     ~ beginneAufgaben("ironwood.siegelStellung")
     -> END
-* [Nicht jetzt]
++ [Nicht jetzt]
     -> END
 
 === postsack_offen ===
@@ -97,10 +97,10 @@ In der Vitrine liegt eine vergilbte Zeitung, aufgeschlagen bei einem kleinen ged
 Die habe ich gelesen. In der Nacht nach dem Match. Vier zu drei. #sprecher:ambrose #stimmung:alt
 Ich wollte nie wieder eine Figur anrühren. Auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. #sprecher:ambrose #stimmung:bitter
 Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzigmal. Bis es hell wurde. #sprecher:ambrose #stimmung:nachdenklich
-* [„Zeig sie mir.“]
++ [„Zeig sie mir.“]
     ~ beginneAufgaben("ironwood.erinnerungBird")
     -> END
-* [„Nicht jetzt.“]
++ [„Nicht jetzt.“]
     -> END
 
 // Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat.

@@ -275,7 +275,7 @@ VAR gefundenFinchLaeuferB = false
     -> END
 }
 {seilschaftFertig:
-    Wren winkt von unten, Sol von weit oben. Das Seil ist straff. #sprecher:erzaehler
+    Wren winkt von unten, Tess von weit oben. Das Seil ist straff. #sprecher:erzaehler
     -> END
 }
 {wegDelacroixDesertSeilschaftBestanden: -> seilschaft_ende}
@@ -285,7 +285,7 @@ VAR gefundenFinchLaeuferB = false
 === seilschaft_start ===
 ~ seilschaftBegonnen = true
 Zwei Kletterinnen hängen in der Wand am Felsbogen, eine unten, eine hoch oben. Zwischen ihnen pfeift der Wind. #sprecher:erzaehler
-Wir spielen eine Partie, ein Zug pro Seillänge. Aber ich höre Sol nicht mehr! #sprecher:wren #stimmung:ueberrascht
+Wir spielen eine Partie, ein Zug pro Seillänge. Aber ich höre Tess nicht mehr! #sprecher:wren #stimmung:ueberrascht
 Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu! #sprecher:ferris #stimmung:froh
 -> seilschaft_runde
 
@@ -297,7 +297,7 @@ Schau genau hin. Unten sieht Wren das Brett nicht. #sprecher:ferris #stimmung:na
 === seilschaft_ende ===
 {seilschaftFertig: -> END}
 ~ seilschaftFertig = true
-Das Echo trägt deine Züge durch den Canyon. Unten nickt Wren, oben jubelt Sol. #sprecher:erzaehler
+Das Echo trägt deine Züge durch den Canyon. Unten nickt Wren, oben jubelt Tess. #sprecher:erzaehler
 Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als er wiegt. #sprecher:wren #stimmung:laechelt
 ~ gibFund("karabiner")
 {ambroseSprichtWieder:

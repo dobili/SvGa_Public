@@ -2,7 +2,7 @@
   "karte": "pelikaninsel.dorf",
   "datei": "karten/pelikaninsel-dorf.json",
   "art": "aussen",
-  "beschreibung": "Winter auf der Pelikaninsel: nass und grau, kalter Wind von See, kein Schnee (RO21). Im Norden der Anleger mit einem Querkopf, an dem die Inselfähre längsseits liegt, an zwei Pollern festgemacht. Im Westen das Leuchtfeuer auf einer verschneiten Landzunge zwischen Felsen. Der verschneite Dorfplatz mit zwei Netztrocknern, Kisten und Fässern am Anleger; Ruderboote liegen im Wasser. Fünf Pfahlhäuser im Osten auf Stegen, Pelikane auf den Pfählen. Im Süden ein breites Watt mit Muscheln und Seesternen, ein Fischerboot mit Fischer am Strand.",
+  "beschreibung": "Winter auf der Pelikaninsel: nass und grau, kalter Wind von See, kein Schnee (RO21). Im Norden der Anleger mit einem Querkopf, an dem die Inselfähre längsseits liegt, an zwei Pollern festgemacht. Im Westen das Leuchtfeuer auf einer grünen Landzunge zwischen Felsen. Der Dorfplatz, eine nasse Wiese, mit zwei Netztrocknern, Kisten und Fässern am Anleger; Ruderboote liegen im Wasser. Fünf Pfahlhäuser im Osten auf Stegen, Pelikane auf den Pfählen. Im Süden ein breites Watt mit Muscheln und Seesternen, ein Fischerboot mit Fischer am Strand.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -639,10 +639,10 @@
     {
       "name": "fischerin",
       "typ": "statist",
-      "feld": [20, 28],
+      "feld": [35, 31],
       "eigenschaften": {
-        "von": "20,28",
-        "bis": "20,28",
+        "von": "35,31",
+        "bis": "35,31",
         "tun": "flickt am Steg ein Netz",
         "wann": "tag",
         "sagt": "statist.pelikaninsel.dorf.fischerin"

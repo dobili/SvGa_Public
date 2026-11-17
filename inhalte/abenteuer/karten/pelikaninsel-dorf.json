@@ -6855,8 +6855,8 @@
      "id": 15,
      "name": "fischerin",
      "type": "statist",
-     "x": 320,
-     "y": 448,
+     "x": 560,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -6865,12 +6865,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "20,28"
+       "value": "35,31"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "20,28"
+       "value": "35,31"
       },
       {
        "name": "tun",

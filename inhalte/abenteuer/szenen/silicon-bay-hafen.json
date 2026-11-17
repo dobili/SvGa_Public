@@ -285,6 +285,11 @@
     },
     {
       "moebel": "sb8Kaimauer",
+      "feld": [0, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
       "feld": [1, 31],
       "bauteil_ok": true
     },
@@ -557,6 +562,11 @@
     {
       "moebel": "ca9Treppe",
       "feld": [34, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [0, 5],
       "bauteil_ok": true
     },
     {
@@ -847,6 +857,11 @@
     {
       "moebel": "sb8Kaimauer",
       "feld": [62, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [63, 5],
       "bauteil_ok": true
     },
     {

@@ -957,8 +957,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     0,
     0,
     1,
@@ -15429,7 +15429,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 23,
@@ -15446,8 +15453,8 @@
      "id": 24,
      "name": "ellis",
      "type": "statist",
-     "x": 384,
-     "y": 608,
+     "x": 416,
+     "y": 592,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15456,12 +15463,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "16,38"
+       "value": "16,37"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,38"
+       "value": "40,37"
       },
       {
        "name": "tun",
@@ -15657,8 +15664,8 @@
      "id": 31,
      "name": "kurier",
      "type": "statist",
-     "x": 960,
-     "y": 608,
+     "x": 928,
+     "y": 592,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15677,12 +15684,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "54,38"
+       "value": "54,37"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "68,38"
+       "value": "68,37"
       },
       {
        "name": "sagt",
@@ -15771,7 +15778,7 @@
      "id": 34,
      "name": "rentner",
      "type": "statist",
-     "x": 608,
+     "x": 592,
      "y": 928,
      "width": 16,
      "height": 16,
@@ -15781,7 +15788,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "sitzt neben der Bank am Wasserspiel"
+       "value": "sitzt auf der Bank am Wasserspiel"
       },
       {
        "name": "wann",
@@ -15791,12 +15798,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "38,58"
+       "value": "37,58"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "38,58"
+       "value": "37,58"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
       },
       {
        "name": "sagt",
@@ -15809,8 +15821,8 @@
      "id": 35,
      "name": "hausmeister",
      "type": "statist",
-     "x": 288,
-     "y": 512,
+     "x": 416,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15829,12 +15841,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "14,31"
+       "value": "24,31"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "22,32"
+       "value": "26,31"
       },
       {
        "name": "sagt",
@@ -17758,7 +17770,7 @@
      "name": "sb5LabGlas",
      "type": "moebel",
      "x": 32,
-     "y": 832,
+     "y": 800,
      "width": 128,
      "height": 112,
      "rotation": 0,
@@ -17767,7 +17779,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 936
+       "value": 904
       },
       {
        "name": "kollision",
@@ -19388,7 +19400,7 @@
     },
     {
      "id": 187,
-     "name": "mf9BankLinks",
+     "name": "mf9BankRechts",
      "type": "moebel",
      "x": 480,
      "y": 912,
@@ -19411,7 +19423,7 @@
     },
     {
      "id": 188,
-     "name": "mf9BankRechts",
+     "name": "mf9BankLinks",
      "type": "moebel",
      "x": 592,
      "y": 912,
@@ -20333,7 +20345,7 @@
      "id": 228,
      "name": "cc4Stammbank",
      "type": "moebel",
-     "x": 128,
+     "x": 160,
      "y": 1040,
      "width": 48,
      "height": 16,

@@ -40,20 +40,20 @@
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#rrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
-    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#..............rrrrpp................rrrrpp............................#",
+    "#..............rrrrpp................rrrrpp............................#",
+    "#..............rrrrpp................rrrrpp............................#",
+    "#..............rrrrpp................rrrrpp............................#",
+    "#..............rrrrpp................rrrrpp............................#",
+    "#..............rrrrpp................rrrrpp............................#",
+    "#..............rrrrpp................rrrrpp............................#",
     "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg#",
     "#gppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppg#",
     "#gppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppg#",
@@ -61,7 +61,7 @@
     "#gppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppg#",
     "#gppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppg#",
     "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrppprrrrrrrrrrrrrrrrpprrrrrrrrrrr#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
@@ -533,7 +533,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [56, 19],
+      "feld": [57, 19],
       "vorn": true
     },
     {
@@ -626,6 +626,11 @@
     {
       "moebel": "sa8Gitarrenkoffer",
       "feld": [32, 45]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 48],
+      "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
@@ -892,7 +897,7 @@
     {
       "name": "lieferroboter",
       "typ": "tier",
-      "feld": [40, 22],
+      "feld": [16, 22],
       "eigenschaften": {
         "von": "2,22",
         "bis": "68,22",

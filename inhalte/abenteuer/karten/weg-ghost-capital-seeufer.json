@@ -13830,7 +13830,7 @@
      "id": 15,
      "name": "picknickfamilie",
      "type": "statist",
-     "x": 864,
+     "x": 944,
      "y": 336,
      "width": 16,
      "height": 16,
@@ -13840,12 +13840,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "54,21"
+       "value": "59,21"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "54,21"
+       "value": "59,21"
       },
       {
        "name": "tun",
@@ -14477,7 +14477,7 @@
      "name": "gc7Schirm",
      "type": "moebel",
      "x": 1184,
-     "y": 128,
+     "y": 144,
      "width": 48,
      "height": 64,
      "rotation": 0,
@@ -14486,7 +14486,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 200
       },
       {
        "name": "kollision",

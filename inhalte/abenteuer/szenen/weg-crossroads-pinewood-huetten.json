@@ -2,7 +2,7 @@
   "karte": "wegCrossroadsPinewood.huetten",
   "datei": "karten/weg-crossroads-pinewood-huetten.json",
   "art": "aussen",
-  "beschreibung": "Der Long Ridge Trail durch dichten Nadelwald: Tannen und hohe Kiefern dicht an dicht, Farne und Pilze. Der Erdweg schwingt in weiten Wellen von Ost nach West, ein Bach mäandert von Nord nach Süd, ein Holzsteg führt über ihn. Nördlich des Wegs Gretas Schutzhütte, eine Blockhütte mit Satteldach und gemauertem Kamin, mit Pfad zur Tür und Holzstapel, weiter westlich die Holzfällerhütte, eine Blockhütte mit grünem Dach und Holzstapel, davor auf einer Steinplatte das Kreidezeichen des Springers. Südlich des Wegs die Lichtung mit zwei Feuerstellen: ein Steinring mit Bank und Picknicktisch, daneben ein kleines Lagerfeuer mit Bank. Im Südwesten der Hang mit Felsgruppen und Bärenspuren. Wegweiser am Ostende, eine Tafel am Weg.",
+  "beschreibung": "Der Long Ridge Trail durch dichten Nadelwald: Tannen und hohe Kiefern dicht an dicht, Farne und Pilze. Der Erdweg schwingt in weiten Wellen von Ost nach West, ein Bach mäandert von Nord nach Süd, ein Holzsteg führt über ihn. Nördlich des Wegs Gretas Schutzhütte, eine Blockhütte mit Satteldach und gemauertem Kamin, mit Pfad zur Tür und Holzstapel, weiter westlich die Holzfällerhütte, eine Blockhütte mit grünem Dach und Brennholz an der Wand, davor auf einer Steinplatte das Kreidezeichen des Springers. Südlich des Wegs die Lichtung mit zwei Feuerstellen: ein Steinring mit Bank und Picknicktisch, daneben ein kleines Lagerfeuer mit Bank. Im Südwesten der Hang mit Felsgruppen und Bärenspuren. Wegweiser am Ostende, eine Tafel am Weg.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -76,10 +76,6 @@
       "feld": [42, 14],
       "vorn": true,
       "versatz": [0, 0]
-    },
-    {
-      "moebel": "cc4Holzstapel",
-      "feld": [44, 12]
     },
     {
       "moebel": "wg4Felsgruppe",
@@ -1040,7 +1036,7 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [83, 8]
+      "feld": [79, 8]
     },
     {
       "moebel": "wg4Farn",

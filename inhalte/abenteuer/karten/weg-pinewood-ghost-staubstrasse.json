@@ -13749,7 +13749,7 @@
      "id": 13,
      "name": "truckerin",
      "type": "statist",
-     "x": 640,
+     "x": 672,
      "y": 320,
      "width": 16,
      "height": 16,
@@ -13759,12 +13759,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "40,20"
+       "value": "42,20"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,20"
+       "value": "42,20"
       },
       {
        "name": "tun",
@@ -13826,7 +13826,7 @@
      "name": "motorradfahrer",
      "type": "statist",
      "x": 2240,
-     "y": 224,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13835,12 +13835,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "140,14"
+       "value": "140,12"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "140,14"
+       "value": "140,12"
       },
       {
        "name": "tun",

@@ -19,7 +19,8 @@ VAR turnierheftBekommen = false
 VAR mamaFotoGesehen = false
 
 === oma_ruth ===
-// Kapitel 25 (Roman): Oma Ruth kennt {held}; die Umarmung auf der Schwelle, dann Mamas Thema
+// Kapitel 25 (Roman): Oma Ruth kennt {held}, zuletzt gesehen mit sechs (Mama meidet Ironwood;
+// Entscheidung 17.11.2026, Dialogprüfung Akt 2); die Umarmung auf der Schwelle, dann Mamas Thema
 // (Klangplan S36, `mama`), das am leeren Blatt nach vier Tönen abbricht. Das Heft gibt sie im
 // selben Besuch (oma_ruth_heft); wer früher schon hier war, bekommt es beim nächsten Mal.
 {fotoGefunden and not turnierheftBekommen: -> oma_ruth_heft}
@@ -32,10 +33,10 @@ VAR mamaFotoGesehen = false
 Die Frau in der Tür ist klein und hat Mamas Kinn. #sprecher:erzaehler
 Sie sieht dich an und sagt nichts. #sprecher:erzaehler #pause:2
 Dann zieht sie dich an sich. Sie riecht nach Mamas altem Waschmittel. Dem von früher. #sprecher:erzaehler #musik:mama
-Du bist gewachsen. Seit dem Frühjahr. Das gehört verboten. #sprecher:omaRuth #stimmung:laechelt
+Als du das letzte Mal hier warst, warst du sechs. Und jetzt sieh dich an. Das gehört verboten. #sprecher:omaRuth #stimmung:laechelt
 Sie macht Kakao und stellt Juno Fragen, als wäre Juno die Hauptperson. Juno beantwortet sie alle. #sprecher:erzaehler
 Komm. Ich zeig dir was. Sie wird mir böse sein. Soll sie. #sprecher:omaRuth #stimmung:laechelt
-Ein kleines Zimmer unter dem Dach. Die Tür war immer zu, solange du denken kannst. Poster von Bands, eine gehäkelte Decke. Durchs Fenster sieht man die Schornsteine. #sprecher:erzaehler
+Ein kleines Zimmer unter dem Dach. Von damals weißt du nur noch die steile Treppe, nicht diese Tür. Poster von Bands, eine gehäkelte Decke. Durchs Fenster sieht man die Schornsteine. #sprecher:erzaehler
 An der Wand ein Foto: ein Mädchen, die Hände in den Ärmeln, über einem Brett. „Jugendmeisterschaft des Bundesstaats 2001. Finale. Laura M., Stahlwerker-Club Ironwood.“ #sprecher:erzaehler #bild:foto2001
 ~ gibFund("foto2001")
 Sie sieht so sicher aus. #sprecher:erzaehler #bild:aus #pause

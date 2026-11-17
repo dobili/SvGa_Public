@@ -212,7 +212,11 @@ Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
 * [„Nicht jetzt.“]
-    Okay. Aber verpass es nicht. Die beiden spielen nicht mehr lange hier. #sprecher:tamsin #stimmung:nachdenklich
+    {clubkampfRivertonBesprochen:
+        Okay. Die beiden spielen jetzt überall, wo eine Stufe frei ist. #sprecher:tamsin #stimmung:nachdenklich
+    - else:
+        Okay. Aber verpass es nicht. Die beiden spielen nicht mehr lange hier. #sprecher:tamsin #stimmung:nachdenklich
+    }
     -> END
 
 === tamsin_zuschauen_wieder ===

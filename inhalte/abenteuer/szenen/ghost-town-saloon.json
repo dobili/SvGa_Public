@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts daneben das Klavier, in der Nordostecke die Treppe, die durch die Decke zu den Zimmern oben führt; an ihrem Fuß im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, drei weitere Tische mit Stühlen, zwei Bierfässer am Ende der Theke, vier Barhocker, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street; neben ihr steht Mr. Pruitt und sieht der Fernpartie zu (Szene 100).",
+  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts daneben das Klavier, rechts davon steigt die Treppe an der Nordwand quer nach rechts zur Nordostecke an und führt dort durch die Decke zu den Zimmern oben (Seitentreppe seit 18.11.2026); an ihrem Fuß links im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, drei weitere Tische mit Stühlen, zwei Bierfässer am Ende der Theke, vier Barhocker, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street; neben ihr steht Mr. Pruitt und sieht der Fernpartie zu (Szene 100).",
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -41,8 +41,8 @@
       "feld": [12, 1]
     },
     {
-      "moebel": "gt7Treppe",
-      "feld": [16, 2]
+      "moebel": "treppeNachRechts",
+      "feld": [15, 2]
     },
     {
       "moebel": "gt10TischDunkel",
@@ -151,7 +151,7 @@
     },
     {
       "moebel": "gt10Abzeichen",
-      "feld": [18, 6]
+      "feld": [14, 4]
     }
   ],
   "ausloeser": [
@@ -173,7 +173,7 @@
     },
     {
       "name": "abzeichen",
-      "feld": [18, 6]
+      "feld": [14, 4]
     },
     {
       "name": "klavier",

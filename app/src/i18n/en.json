@@ -5516,5 +5516,8 @@
   "buchbezug.F10.felderEins": "only one free square",
   "buchbezug.F10.felderNull": "no free square",
   "naechster.muster": "In {anzahl} of your last {partien} games this came up: “{kategorie}”. Probably a good fit: {trainer} (chapter {kapitel}).",
-  "buchlook.kurz.muster": "{anzahl} of {partien} games · chapter {kapitel}"
+  "buchlook.kurz.muster": "{anzahl} of {partien} games · chapter {kapitel}",
+  "abenteuer.admin.titel": "Chess Adventure",
+  "abenteuer.admin.erklaerung": "The game for the book. The first time you open it, it is downloaded once (including Maia); after that it also appears under “Play”.",
+  "abenteuer.admin.knopf": "Open game"
 }

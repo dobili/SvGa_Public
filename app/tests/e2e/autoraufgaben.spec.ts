@@ -143,3 +143,13 @@ test("Orden testen: Ring zur Probe voll, Gratulation mit Orden, Profil und Start
     probe.getByRole("button", { name: "Übungen gelöst: auf 100 % setzen", exact: true }),
   ).toBeEnabled();
 });
+
+test("Adminmenü: „Spiel öffnen“ führt zur Startkarte des Schach-Abenteuers (18.11.2026)", async ({
+  page,
+}) => {
+  await oeffneUeberAdresse(page);
+  const karte = page.getByTestId("abenteuer-admin");
+  await expect(karte).toBeVisible();
+  await karte.getByTestId("abenteuer-admin-knopf").click();
+  await expect(page.getByTestId("abenteuer-start")).toBeVisible();
+});

@@ -141,7 +141,13 @@ Er sagte: Geduld, Grace. Die Nacht ist lang, und der Gegner wird müde vor dir. 
 Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor #stimmung:nachdenklich
 * [Weiter nach oben sehen]
 * [Die Augen schließen]
-- Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
+- -> sterne_ende
+
+// Eigener Knoten, damit die Quest „Sternennacht am Steg“ hier endet: Sie beginnt erst mit dem
+// Dazusetzen (Knoten sterne). Wer ablehnt oder vorher schlafen geht, hat keine offene Quest
+// (Chaos-Simulation, 18.11.2026: Vorher begann sie bei Maes Einladung und blieb dann für immer offen).
+=== sterne_ende ===
+Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
 Dex' Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
 // Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).

@@ -33,6 +33,54 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu: Das Spiel ganz durchspielen (18.11.2026, Beta 0.3.56)
+
+- [ ] N2637. **Spielhilfe für deinen Durchgang:** Was seit deinem letzten Spieltest (16.11.) neu ist
+      und worauf du achten sollst, je Akt mit Ort. Am besten von vorn beginnen; ein alter Spielstand
+      darf in der Beta verloren gehen. Starten: drei Sekunden auf „Profil“, oben die Karte
+      „Schach-Abenteuer“, „Spiel öffnen“. Mit Netz lädt „Spiel herunterladen“ jetzt auch Maia: Im Spiel
+      spielen alle Gegner menschlich mit Maia, egal was in den App-Einstellungen steht (ohne Netz
+      startet ein schon geladenes Spiel auch ohne Maia). Lädt alles in einem Zug?
+      **Überall:**
+      · Karte dreifach, Figuren zweifach vergrößert: Figuren kleiner und schärfer. Alle Türen haben
+      Figurgröße (nur das Diner in Maple Falls ist etwas niedrig). Passt die Figur überall durch?
+      · Innenräume sind so groß wie ihr Haus außen (Garage, Hütte, Wohnwagen, Bibliothek, Akademie,
+      Museum, Turnhalle). Wirkt ein Raum zu groß oder zu eng?
+      · Statisten und Tiere sind echte Hindernisse (vorher lief man durch sie hindurch); Figuren
+      sperren nur die Kachel unter ihren Füßen. Bleibst du irgendwo hängen?
+      · Sitzende sitzen sichtbar auf Stuhl oder Bank (Carla, Dash, Slick in Lockport, Akademie);
+      Stehende schauen zum Tresen, Brett oder Gesprächspartner.
+      · Nach einer Partie genügt ein Schritt in den Ausgang. Meldungen wie „Neu im Tagebuch“ kommen
+      erst nach dem Dialog, nacheinander.
+      · Alle Dialoge sind geprüft und lektoriert (über 300 Stellen: erste Treffen, Reihenfolge,
+      Rückbezüge, Ausgänge). Nach dem Abschied spricht Ambrose nicht mehr.
+      · Fünf Straßenbegegnungen sind kurze Partien statt ganzer: ein erzählter Einstieg über dem
+      Brett, dann ein Endspiel oder „Vorteil herausarbeiten in N Zügen“.
+      **Akt 1 (Maple Falls, Cedar Creek):** Die Haustür bleibt zu, bis Ambrose auf dem Dachboden
+      erwacht ist. Juno erzählt auf dem Weg nach Cedar Creek von Carla, auch wenn du die Tafel löst.
+      Sternennacht: Mrs. Okafor schickt dich zuerst zu Mae, so kann man sie nicht mehr verpassen.
+      **Akt 2:** Sperre im Zedernwald (Weg Cedar Creek nach Riverton): Benji vom Testteam von
+      Perfect Move, Vorteil herausarbeiten in 10 Zügen. Pavillon Riverton jetzt offen mit Geländer
+      und Fluss, Eingang über die Stufe. Nach Slicks Abschied nennt Juno das Turnier; eine Quest führt
+      nach Hause zu Mamas Nein, erst dann öffnet der Kanalweg nach Ironwood. Dime am Kanalweg ist
+      kurz. Nach dem Kauf ist die Kantine leer, Big Joe räumt.
+      **Akt 3:** Sperre an der Raststätte vor der Glasbrücke: Imani, Russisch vorgegeben, dann
+      Vorteil in 12 Zügen. Der Schiffskoch auf der Fähre: Endspiel Remis halten. „Es ist Sommer, und
+      du bist fünfzehn“ kommt jetzt auf der Fahrt zum Diner.
+      **Akt 4:** Sperre am Diner vor der Bergstraße: Zoe, Endspiel mit einem Bauern mehr gewinnen;
+      ein Remis zählt hier als Fehlversuch. Kurz sind auch Mags im Hinterzimmer des Diners (Kreide-
+      springer an der Seitenwand, dreimal klopfen) und Sol auf dem Gipfelfelsen in Summit City. Das
+      Drachenfest am Brunnen ist erst am Abend nach Wards Bitte, vorher siehst du die Vorbereitung.
+      Die Kreidenacht im U-Bahnhof der Capital (Kreidespringer neben dem Rollgitter) ist erst nach
+      dem Finale.
+      Bei allen drei Sperren: Nach dem dritten Fehlversuch lassen sie dich durch, Abbruch zählt nicht.
+      Ist dir eine zu schwer, sag welche: Dann senkt Claude zuerst die Stärke, nicht die Versuche.
+      **Schnell hinkommen:** Monatskarte (Pops in Riverton) oder Fernbus an der Kreuzung in
+      Crossroads; im Tagebuch steht die laufende Quest.
+      **Rückmeldung:** „N2637 ok“ oder je Akt eine Notiz, etwa „N2637 Akt 2: Benji zu stark“ oder
+      „N2637 Akt 4: hänge am Brunnen fest“, gern mit Ort und Bildschirmfoto. Fehler im Spiel am
+      schnellsten über Profil › Einstellungen › Fehler melden.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein
@@ -1300,19 +1348,6 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       wird vom Bauern a6 angegriffen …“), Ambrose antwortet in einer Sprechblase, der Fortschritt ist eine Reihe
       kleiner Figuren, am Ende „Das war die Runde. N von M“. Gefällt dir das, ist etwas schwer lesbar? Rückmeldung
       etwa „N2633 ok“.
-- [ ] N2634. **Karten aller Akte nach der Nacharbeit (15.11.2026):** Mit der Monatskarte durch
-      die Orte reisen und je Ort kurz umsehen: Passen Türen innen zu außen (gleiche Seite, gleiche
-      Breite)? Laufen Wege und Straßen am Kartenrand sauber in die Nachbarkarte weiter? Fällt etwas
-      Unlogisches auf? Besonders neu: Zedernpfad (echter Wald), Bahnhofshalle Riverton, Lockport,
-      Crossroads, Ghost Town, Glasbrücke bei Silicon Bay. Schon geprüft (Claude, 15.11.2026): Reisen in
-      alle 12 Städte, alle Übergänge führen auf die richtige Karte, der Held kommt vor der Tür an. Behoben:
-      Nach einer Reise (Monatskarte, Bus, Uhr) steht der Held jetzt sichtbar auf dem Ankunftsfeld, nicht
-      mehr hinter dem Wartehäuschen in Cedar Creek oder der Wartebank in der Bahnhofshalle; ein Test prüft
-      das für jede Reise. Kein Schnee mehr an der Küste (Port Delacroix, Glasbrücke). In Lockport
-      erreichst du nach der Ankunft (zu Fuß wie mit der Monatskarte am Kanalweg) das Südufer mit Gasthaus,
-      Kai, Booten und Pumpe erst über den Steg nach Imogens Tafel: So will es die Geschichte (Herbstwartung),
-      Widerspruch genügt. Rückmeldung je Ort genügt, etwa „N2634 Lockport: Boot schwebt“.
-      Von Claude vorgeprüft am 17.11.: Alle 73 Türübergänge mit Innenraum führen auf die Zielkarte, hoch und quer, mit echter Grafik (Spieltest 17.11.); offen für dich: Eindruck je Ort.
 - [ ] N2635. **Karteneditor am PC (16.11.2026):** Im privaten Repository den Ordner `editor`
       herunterladen (auf GitHub: Code, Download ZIP, dann entpacken) und `editor/index.html` mit
       Doppelklick in Chrome oder Edge öffnen. Links eine Karte wählen, zum Beispiel „Maple Falls –

@@ -46,12 +46,18 @@ VAR bellVorgestellt = false
 Zwischen den dampfenden Becken steht {bellVorgestellt:Bell|eine Rangerin} mit breitem Hut und sieht auf die Uhr. #sprecher:erzaehler
 {not bellVorgestellt:Bell. Rangerin. }In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst du was Verrücktes sehen? #sprecher:bell #stimmung:froh
 ~ bellVorgestellt = true
--> bell_regel
+-> bell_regel_erstmals
 
+// Die Regel allein (als Tunnel): Beim Nachfragen kommt nur sie, ohne Ambrose und Vorführung
+// (Lesefassung 18.11.2026: Sonst lief bei jeder Nachfrage der ganze Auftakt noch einmal).
 === bell_regel ===
 ~ varianteAtomschachGelernt = true
 Atomschach. Wer schlägt, löst eine Explosion aus: Die schlagende Figur und alle Figuren rund um das Feld fliegen vom Brett, eigene auch, nur Bauern nicht. #sprecher:bell #stimmung:laechelt
 Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luft. #sprecher:bell #stimmung:nachdenklich
+->->
+
+=== bell_regel_erstmals ===
+-> bell_regel ->
 {not abschiedGesehen:
     Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
     Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose #stimmung:laechelt
@@ -67,7 +73,8 @@ So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring
 === bell_alltag ===
 {~Der Geysir hält sich an die Uhr. Pünktlicher als jeder Bus.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons? Die gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
 + [„Erklär mir das Atomschach noch einmal.“]
-    -> bell_regel
+    -> bell_regel ->
+    -> END
 + [„Bis bald, Bell.“]
     -> END
 
@@ -81,12 +88,18 @@ Ray Castillo. Sturmjäger. Da hinten braut sich was zusammen. #sprecher:rayCasti
 Castillo? So heißen auch Mira und Tomás in Desert Springs. Du fragst ihn danach. #sprecher:erzaehler
 Du kennst meine Nichte und meinen Neffen? Dann bist du der Grund, warum Mira am Telefon nur noch von Opfern redet. #sprecher:rayCastillo #stimmung:lacht
 Wenn der Sturm kommt, gehen wir in den Keller. Und im Keller spielen wir Entenschach. #sprecher:rayCastillo #stimmung:lacht
--> ray_regel
+-> ray_regel_erstmals
 
+// Die Regel allein (als Tunnel): Beim Nachfragen kommt nur sie, ohne Ambrose und Vorführung
+// (Lesefassung 18.11.2026: Sonst lief bei jeder Nachfrage der ganze Auftakt noch einmal).
 === ray_regel ===
 ~ varianteEntenschachGelernt = true
 Nach jedem Zug setzt du eine Ente auf ein leeres Feld. Die Ente gehört keinem. Keiner darf durch sie hindurch, keiner darf sie schlagen. #sprecher:rayCastillo #stimmung:laechelt
 Wir nennen sie den Twister. Sie steht immer genau da, wo du hinwolltest. #sprecher:rayCastillo #stimmung:lacht
+->->
+
+=== ray_regel_erstmals ===
+-> ray_regel ->
 {not abschiedGesehen:
     Eine Figur, die nur im Weg steht. Ich kannte Menschen dieser Art. #sprecher:ambrose #stimmung:laechelt
 }
@@ -100,7 +113,8 @@ Der Sturm dreht ab. Heute kein Keller, heute keine Ente. Nächstes Mal. #spreche
 === ray_alltag ===
 {~Siehst du die Wolke da? Die ist harmlos. Die daneben nicht.|Grüß Mira von mir. Und sag Tomás, er soll mein Auto reparieren.|Ein Sturm ist wie ein Angriff. Man sieht ihn kommen, wenn man hinschaut.} #sprecher:rayCastillo #stimmung:laechelt
 + [„Erklär mir das Entenschach noch einmal.“]
-    -> ray_regel
+    -> ray_regel ->
+    -> END
 + [„Bis bald, Ray.“]
     -> END
 

@@ -108,5 +108,5 @@ die Einladung tragen weiter Mrs. Okafor („Heute Abend schauen die Kinder am St
 Sternen“) und das Teleskop am Steg.
 
 Ergebnis nach dem Umbau: Startwert 10 (Cedar Creek, 300 Chaos-Schritte) läuft durch; im neuen Lauf
-über die Startwerte 1 bis 60 bisher 36 Läufe, keine Sackgasse. Gesamtsimulation mit den Startwerten
+über die Startwerte 1 bis 60 42 Läufe im Zeitbudget von 2400 s, keine Sackgasse. Gesamtsimulation mit den Startwerten
 1 bis 3: Abspann jeweils erreicht; `ambrose-danach`: 0 Funde.

@@ -7,7 +7,9 @@
  * Bildschirm unter die Größengrenze kommt. Rückrufe aus Phaser und Dialogen kommen außerhalb des
  * Zeichnens; sie lesen Stand und Welt deshalb über Refs (`standRef`, `weltRef`), die `schreibe` und
  * das Laden der Welt sofort fortschreiben.
- * Abhängigkeiten: regeln/quests.ts, regeln/wertung.ts, regeln/karten.ts, oberwelt/weltdaten.ts.
+ * Meldungen warten, solange ein Dialog offen ist (meldungsstau.ts, `dialogOffen`).
+ * Abhängigkeiten: regeln/quests.ts, regeln/wertung.ts, regeln/karten.ts, oberwelt/weltdaten.ts,
+ * oberwelt/meldungsstau.ts.
  */
 import { useEffect, useRef, useState, type RefObject } from "react";
 import type Phaser from "phaser";
@@ -19,6 +21,7 @@ import { mitAppWertung } from "../regeln/wertung";
 import type { Appdienste } from "../schnittstelle/modul";
 import type { Abenteuerstand, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
+import { LEERER_STAU, mitMeldung, nachDialog, ohneGezeigte } from "./meldungsstau";
 import { szeneVon } from "./oberweltspiel";
 import type { Toenung } from "./toenung";
 import { ankunftsort } from "./ankunft";
@@ -40,8 +43,13 @@ export interface Oberweltkern {
   readonly meldung: string | null;
   /** Bild zur Meldung im Zusatzpaket (Fundbild), sonst null. */
   readonly meldungsbild: string | null;
-  /** Zeigt eine Meldung, optional mit Bild; null schließt sie samt Bild. */
+  /**
+   * Zeigt eine Meldung, optional mit Bild; null schließt sie samt Bild. Solange ein Dialog offen
+   * ist, wartet sie und erscheint danach (meldungsstau.ts).
+   */
   readonly setzeMeldung: (text: string | null, bild?: string) => void;
+  /** Sagt dem Kern, ob ein Dialog offen ist; nach dem Dialog erscheinen die wartenden Meldungen. */
+  readonly dialogOffen: (offen: boolean) => void;
   /** Schreibt den Spielstand in die App und merkt ihn hier. */
   readonly schreibe: (neu: Abenteuerstand) => void;
   /** Merkt einen Stand hier, ohne ihn zu schreiben (der Aufrufer schreibt und wartet darauf). */
@@ -144,13 +152,21 @@ export function useOberweltkern(): Oberweltkern {
   const dienste = appdienste();
   const [stand, setzeStand] = useState<Abenteuerstand | null>(() => dienste.liesStand());
   const [geladeneWelt, setzeWelt] = useState<Weltdaten | null>(null);
-  const [meldungsstand, setzeMeldungsstand] = useState<{ text: string; bild?: string } | null>(
-    null,
-  );
-  const setzeMeldung = (text: string | null, bild?: string) =>
-    setzeMeldungsstand(text === null ? null : { text, ...(bild ? { bild } : {}) });
-  const meldung = meldungsstand?.text ?? null;
-  const meldungsbild = meldungsstand?.bild ?? null;
+  const [stau, setzeStau] = useState(LEERER_STAU);
+  // Ob ein Dialog offen ist: als Ref, weil Meldungen aus Rückrufen von Ink kommen, bevor React
+  // den offenen Dialog gezeichnet hat.
+  const imDialog = useRef(false);
+  const setzeMeldung = (text: string | null, bild?: string) => {
+    const offen = imDialog.current;
+    if (text === null) setzeStau((s) => ohneGezeigte(s, offen));
+    else setzeStau((s) => mitMeldung(s, { text, ...(bild ? { bild } : {}) }, offen));
+  };
+  const dialogOffen = (offen: boolean) => {
+    imDialog.current = offen;
+    if (!offen) setzeStau(nachDialog);
+  };
+  const meldung = stau.gezeigt?.text ?? null;
+  const meldungsbild = stau.gezeigt?.bild ?? null;
   const [toenung, setzeToenung] = useState<Toenung | null>(null);
   const spiel = useRef<Phaser.Game | null>(null);
   const standRef = useRef(stand);
@@ -193,6 +209,7 @@ export function useOberweltkern(): Oberweltkern {
     meldung,
     meldungsbild,
     setzeMeldung,
+    dialogOffen,
     schreibe,
     merke,
     melde: (ereignis, w = weltRef.current) => {

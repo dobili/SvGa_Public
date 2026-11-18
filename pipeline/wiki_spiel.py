@@ -64,7 +64,7 @@ WERKZEUGGRUPPEN = (
         re.compile(
             r"^(__init__|abkuerzung|ankunftsfeld|anordnung|ausrichtung|blickrichtung|durchgang|engstelle|"
             r"fahrzeuge|feinmasken_pruefung|figurensperre|gedeck|hoehen|inkbesuche|inkfluss|karten\.py|"
-            r"raumgroesse|sprache|stadtgroesse|tischlage|tuergroesse|tuermessung|uebergae|uebergang|"
+            r"kopfkachel|raumgroesse|sprache|stadtgroesse|tischlage|tuergroesse|tuermessung|uebergae|uebergang|"
             r"varianten|weltpuzzle|zusammenhang|belebung\.py|vorfuehrungen)"
         ),
     ),

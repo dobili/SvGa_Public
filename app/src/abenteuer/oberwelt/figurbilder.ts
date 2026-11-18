@@ -12,6 +12,7 @@
  */
 import Phaser from "phaser";
 import { istGrossbogen } from "./figurbogen";
+import type { Umriss } from "./sitzplatz";
 import type { Richtung } from "./szene";
 import { GROSS_MASSSTAB } from "./weltmassstab";
 
@@ -121,16 +122,22 @@ export function stelleAufKachel(sprite: Phaser.Physics.Arcade.Sprite, kachel: nu
  * Wegsperre S15 stand unter dem Weg und nahm ihm eine seiner zwei Reihen (Befund im Browser,
  * 18.11.2026). Pipeline und Simulation rechnen mit genau einer Kachel (figurensperre.py).
  * Eingaben: Sprite, dessen Punkt (x, y) die Mitte der Fußkachel ist, auch wenn das Bild verschoben
- * ist (figurensitz.ts), und die Kachelgröße. Ohne festen Körper geschieht nichts.
+ * ist (figurensitz.ts), und die Kachelgröße. Ohne festen Körper geschieht nichts. Mit `flaeche`
+ * (relativ zur Mitte der Fußkachel) sperrt die Figur diese Fläche statt der Kachel: Sitzende
+ * sperren auch ihren Sitzpunkt (sitzplatz.ts, sitzsperre).
  * Beispiel: Imani auf (138, 16) sperrt nur (138, 16); der Held geht auf (138, 15) vorbei.
  */
-export function legeFestkoerperAufKachel(sprite: Phaser.GameObjects.Sprite, kachel: number): void {
+export function legeFestkoerperAufKachel(
+  sprite: Phaser.GameObjects.Sprite,
+  kachel: number,
+  flaeche: Umriss = { x: -kachel / 2, y: -kachel / 2, breite: kachel, hoehe: kachel },
+): void {
   const koerper = sprite.body;
   if (!(koerper instanceof Phaser.Physics.Arcade.StaticBody)) return;
   // Größe ohne Zentrieren aufs Bild; der Versatz zählt in Weltpixeln ab der linken oberen
   // Bildecke, reset() legt den Körper danach neu an diese Ecke plus Versatz.
   const ecke = sprite.getTopLeft();
-  koerper.setSize(kachel, kachel, false);
-  koerper.setOffset(sprite.x - kachel / 2 - ecke.x, sprite.y - kachel / 2 - ecke.y);
+  koerper.setSize(flaeche.breite, flaeche.hoehe, false);
+  koerper.setOffset(sprite.x + flaeche.x - ecke.x, sprite.y + flaeche.y - ecke.y);
   koerper.reset();
 }

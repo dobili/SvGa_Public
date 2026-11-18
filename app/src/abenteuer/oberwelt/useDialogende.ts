@@ -150,8 +150,10 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
                 stand.held.name,
               )
             : null;
-        if (still) beiDialogende(still);
-        else setzeDialog({ json, datei, knoten });
+        if (still) return beiDialogende(still);
+        // Meldungen aus dem Dialog (Quest, Fund) warten bis zu seinem Ende (meldungsstau.ts).
+        k.dialogOffen(true);
+        setzeDialog({ json, datei, knoten });
       })
       .catch(() => k.setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
   };
@@ -178,6 +180,7 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   };
   const beiDialogende = (variablen: Dialogvariablen) => {
     setzeDialog(null);
+    k.dialogOffen(false);
     const neu = mitVariablen(variablen);
     if (!neu) return;
     k.schreibe(neu);

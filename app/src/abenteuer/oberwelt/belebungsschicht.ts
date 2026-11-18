@@ -10,7 +10,7 @@
  * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
 import { rahmenzahl, setzeSitzend } from "./figurensitz";
-import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
+import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzmoebel } from "./sitzplatz";
 import { sitzbild } from "./sitzrichtung";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
@@ -138,13 +138,20 @@ export class Belebungsschicht {
       sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
     }
     const sitz = v.sitzt ? sitzlageAuf(this.sitze, v.feld, this.kachel) : null;
-    if (eigen && v.sitzt) setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ);
-    this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre(), sitz?.tiefe);
+    const versatz = eigen && v.sitzt ? setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ) : null;
+    const sperre = this.neueSperre(versatz?.dx, versatz?.dy);
+    this.fuegeHinzu(v, sprite, eigen ? bogen : null, sperre, sitz?.tiefe);
   }
 
-  /** Unsichtbare Fläche von einer Kachel, an der der Held anstößt (Statist oder Tier). */
-  private neueSperre(): Phaser.GameObjects.Rectangle {
-    const sperre = this.szene.add.rectangle(0, 0, this.kachel, this.kachel).setVisible(false);
+  /**
+   * Unsichtbare Fläche von einer Kachel, an der der Held anstößt (Statist oder Tier). Eine
+   * Sitzende, deren Bild um dx, dy aufs Sitzmöbel gerückt ist, sperrt auch ihren Sitzpunkt
+   * (sitzplatz.ts, sitzsperre); der Punkt der Fläche bleibt die Mitte der Fußkachel.
+   */
+  private neueSperre(dx = 0, dy = 0): Phaser.GameObjects.Rectangle {
+    const f = sitzsperre(dx, dy, this.kachel);
+    const sperre = this.szene.add.rectangle(0, 0, f.breite, f.hoehe).setVisible(false);
+    sperre.setOrigin(-f.x / f.breite, -f.y / f.hoehe);
     this.szene.physics.add.existing(sperre, true);
     return sperre;
   }

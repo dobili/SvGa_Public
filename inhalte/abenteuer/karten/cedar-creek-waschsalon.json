@@ -257,9 +257,9 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
     2,
     2,
     0,
@@ -1268,6 +1268,11 @@
    "name": "kennung",
    "type": "string",
    "value": "cedarCreek.waschsalon"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "10,4;11,4;12,4"
   }
  ]
 }

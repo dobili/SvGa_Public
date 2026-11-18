@@ -337,8 +337,9 @@ export function Oberwelt() {
           beiSchliessen={() => dialoge.zeigeVorfuehrung(null)}
         />
       )}
-      {/* Erst nach der Ergebniskarte („Erledigt: …“ lag unter „Gewonnen!“, Spieltest einstieg). */}
-      {meldung && !ergebnis && !rundenergebnis && (
+      {/* Erst nach der Ergebniskarte („Erledigt: …“ lag unter „Gewonnen!“, Spieltest einstieg) und
+          nie über einem Dialog (meldungsstau.ts: Meldungen aus dem Dialog warten bis zum Ende). */}
+      {meldung && !dialog && !ergebnis && !rundenergebnis && (
         <Meldungsleiste
           text={meldung}
           bild={meldungsbild}

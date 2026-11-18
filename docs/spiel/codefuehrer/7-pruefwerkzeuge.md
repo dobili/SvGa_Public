@@ -23,6 +23,9 @@ geben Rückgabewert 1 bei Befunden; viele laufen zusätzlich als Test in `pipeli
   Gesprächspartner.
 - `figurensperre.py`, `engstelle.py`, `feinmasken_pruefung.py`: niemand und nichts versperrt
   den Weg.
+- `python -m pipeline.abenteuer.kopfkachel`: Kacheln über stehenden und sitzenden Figuren, die
+  seit dem 18.11.2026 begehbar sind (Figuren sperren nur ihre Fußkachel), und Bereiche, die dadurch
+  erreichbar wurden.
 - `zusammenhang.py`, `stadtgroesse.py`, `abkuerzung.py`, `varianten.py`, `fahrzeuge.py`.
 
 ## Texte und Dialoge

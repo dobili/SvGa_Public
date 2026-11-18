@@ -6,7 +6,8 @@
  *
  * Nebenbei geprüft: Der Held geht auf der unteren Wegreihe direkt über Benji und Imani vorbei
  * (Figuren sperren nur ihre Fußkachel, oberwelt/figurbilder.ts), und das Dialogfenster hat direkt
- * nach dem Laden des Pakets noch seinen Rahmen (anbindung/pixelrahmen.ts).
+ * nach dem Laden des Pakets noch seinen Rahmen (anbindung/pixelrahmen.ts). „Neu im Tagebuch: Das
+ * Testteam“ erscheint erst nach dem Gespräch, nicht darüber (oberwelt/meldungsstau.ts).
  * Abhängigkeiten: tests/e2e/abenteuer-affe.ts (Spielstand einspielen), Karte des Zedernwalds.
  */
 import { expect, test, type Page } from "@playwright/test";
@@ -110,6 +111,7 @@ test("Wegsperre im Zedernwald: zu mit Gespräch, offen ohne Aufblitzen", async (
   expect(IMANI).toEqual({ x: UEBERGANG.x - 1, y: BENJI.y });
   const dialog = page.getByTestId("abenteuer-dialog");
   const schild = page.getByTestId("abenteuer-ortsschild");
+  const meldung = page.getByTestId("abenteuer-meldung");
 
   // Sperre zu: Am Übergang kommt die Truppe, „Später.“ lässt den Helden auf der Karte.
   await starteMitStand(page, standAmWald({}));
@@ -123,10 +125,19 @@ test("Wegsperre im Zedernwald: zu mit Gespräch, offen ohne Aufblitzen", async (
     await dialog.getByRole("button", { name: "Weiter" }).click();
   }
   await expect(dialog).toContainText("Zehn Züge gegen Benji");
+  // Die Quest hat im Gespräch begonnen; ihre Meldung wartet bis zum Ende (meldungsstau.ts).
+  await expect(meldung).toHaveCount(0);
   await spaeter.click();
   await expect(dialog).toContainText("Der Wald läuft nicht weg.");
   await dialog.getByRole("button", { name: "Weiter" }).click();
   await expect(dialog).toHaveCount(0);
+  // Die Meldung von der Ankunft blieb stehen (unter dem Dialog verborgen); die aus dem Gespräch
+  // folgt nach „Weiter“. Vorher überschrieb die zweite die erste.
+  await expect(meldung).toContainText("Neu im Tagebuch: Der letzte Tisch");
+  await meldung.getByRole("button").click();
+  await expect(meldung).toContainText("Neu im Tagebuch: Das Testteam");
+  await meldung.getByRole("button").click();
+  await expect(meldung).toHaveCount(0);
   await expect(schild).toHaveText("Zedernwald");
   // Der Held steht auf dem Übergangsfeld am Kartenrand und kommt nicht weiter.
   expect(await kachel(page)).toBe(`${UEBERGANG.x},${WEGREIHE}`);

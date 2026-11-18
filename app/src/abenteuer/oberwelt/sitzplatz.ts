@@ -200,6 +200,27 @@ export function sitzlage(
 }
 
 /**
+ * Die Fläche, die eine Sitzende sperrt, relativ zur Mitte ihrer Fußkachel: die Fußkachel und die
+ * kachelgroße Fläche um den Punkt, an den ihr Bild gerückt ist (dx, dy in Kartenpixeln, samt Hub).
+ *
+ * Warum: Das Bild einer Sitzenden rückt bis zu einer Kachel auf ihr Sitzmöbel, meist nach oben.
+ * Sperrte sie nur die Fußkachel, stünde der Held auf der Kachel darüber fast deckungsgleich in ihr
+ * (Befund im Browser, 18.11.2026: Held auf Owen und in Calloway auf der Terrasse, in Abernathy auf
+ * der Parkbank, in Sam am Clubtisch). So bleibt er eine Kachel von ihrem Sitzpunkt weg, wie bei
+ * einer Stehenden, und die Fußkachel bleibt zu, wie Pipeline und Simulation rechnen.
+ * Beispiel: Sam, dx 6, dy −9, Kachel 16 → x −8, y −17, 22 × 25. Ohne Verschiebung (Lily am Boden)
+ * genau die Fußkachel.
+ */
+export function sitzsperre(dx: number, dy: number, kachel: number): Umriss {
+  return {
+    x: Math.min(0, dx) - kachel / 2,
+    y: Math.min(0, dy) - kachel / 2,
+    breite: kachel + Math.abs(dx),
+    hoehe: kachel + Math.abs(dy),
+  };
+}
+
+/**
  * Lage einer Sitzenden auf einem Feld, falls dort ein Sitzmöbel steht; sonst null (dann bleibt
  * alles wie bisher: Kachelmitte, Tiefe der Fußlinie).
  */

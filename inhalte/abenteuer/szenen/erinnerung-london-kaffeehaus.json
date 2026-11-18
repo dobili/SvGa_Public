@@ -235,5 +235,11 @@
       }
     }
   ],
-  "toenung": "sepia"
+  "toenung": "sepia",
+  "sperren": [
+    [2, 8],
+    [1, 7],
+    [2, 7],
+    [1, 8]
+  ]
 }

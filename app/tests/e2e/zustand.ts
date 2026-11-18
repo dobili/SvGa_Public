@@ -74,11 +74,27 @@ export async function setzeDaten(seite: Page, teil: Record<string, unknown>): Pr
   await seite.reload();
 }
 
-/** Liest die gespeicherten Nutzerdaten (für Prüfungen nach einer Bedienung). */
-export function liesDaten(seite: Page): Promise<Record<string, unknown>> {
+/**
+ * Liest die gespeicherten Nutzerdaten (für Prüfungen nach einer Bedienung). Wartet, bis die App
+ * sie einmal geschrieben hat: Gleich nach dem Start liegen sie in WebKit manchmal noch nicht vor
+ * („Cannot read properties of undefined (reading 'spiel')“, CI 18.11.2026), wie bei setzeDaten.
+ */
+export async function liesDaten(seite: Page): Promise<Record<string, unknown>> {
+  let daten: Record<string, unknown> | undefined;
+  await expect
+    .poll(async () => {
+      daten = await liesGespeichert(seite);
+      return daten?.spiel !== undefined;
+    })
+    .toBe(true);
+  return daten ?? {};
+}
+
+/** Die Nutzerdaten, wie sie gerade in IndexedDB stehen; undefined, solange die App nichts schrieb. */
+function liesGespeichert(seite: Page): Promise<Record<string, unknown> | undefined> {
   return seite.evaluate(
     () =>
-      new Promise<Record<string, unknown>>((fertig, fehler) => {
+      new Promise<Record<string, unknown> | undefined>((fertig, fehler) => {
         const anfrage = indexedDB.open("schach-von-grund-auf");
         anfrage.onerror = () => fehler(anfrage.error);
         anfrage.onsuccess = () => {
@@ -86,7 +102,7 @@ export function liesDaten(seite: Page): Promise<Record<string, unknown>> {
           const lesen = db.transaction("nutzerdaten").objectStore("nutzerdaten").get("aktuell");
           lesen.onsuccess = () => {
             db.close();
-            fertig(lesen.result as Record<string, unknown>);
+            fertig(lesen.result as Record<string, unknown> | undefined);
           };
         };
       }),

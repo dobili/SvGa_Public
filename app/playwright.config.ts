@@ -6,6 +6,9 @@
  * PLAYWRIGHT_NUR_CHROMIUM=1; ein vorhandenes Chromium über CHROMIUM_PFAD. Laufen mehrere
  * Arbeitskopien zugleich, bekommt jede mit PLAYWRIGHT_PORT einen eigenen Vorschau-Server (sonst
  * prüft ein Lauf womöglich den Server einer anderen Kopie).
+ * In GitHub Actions teilt PLAYWRIGHT_GRUPPE die Dateien auf: „abenteuer“ nur die Dateien des
+ * Schach-Abenteuers, „ohne-abenteuer“ alle übrigen (pruefen.yml, sechs Jobs; die Abenteuerdateien
+ * sind die langsamsten und lagen mit --shard allein immer im ersten Teil, 18.11.2026).
  */
 import { defineConfig, devices } from "@playwright/test";
 
@@ -19,9 +22,19 @@ const STANDARDPORT = "4173";
 const PORT = process.env.PLAYWRIGHT_PORT ?? STANDARDPORT;
 const ADRESSE = `http://localhost:${PORT}`;
 const chromiumPfad = process.env.CHROMIUM_PFAD;
+/** Die Testdateien des Schach-Abenteuers (abenteuer.spec.ts, abenteuer-*.spec.ts). */
+const ABENTEUERDATEIEN = /[\\/]abenteuer(-[\w-]+)?\.spec\.ts$/;
+const GRUPPE = process.env.PLAYWRIGHT_GRUPPE;
+const gruppenfilter =
+  GRUPPE === "abenteuer"
+    ? { testMatch: ABENTEUERDATEIEN }
+    : GRUPPE === "ohne-abenteuer"
+      ? { testIgnore: ABENTEUERDATEIEN }
+      : {};
 
 export default defineConfig({
   testDir: "tests/e2e",
+  ...gruppenfilter,
   timeout: 60_000,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",

@@ -1236,3 +1236,14 @@ festhängt); Abbruch zählt nicht. Bogen bis zum Seitenwechsel in Akt 4. Konzept
 - **Großes Z in Pixelify Sans** sah aus wie eine 2 („2oe“); die Glyphe ist im Raster der Schrift
   neu gezeichnet (OFL 1.1 erlaubt Änderungen, vermerkt in `docs/LIZENZEN.md`).
 - **Meldungen wie „Neu im Tagebuch“** warten bis nach dem Dialog und kommen nacheinander.
+
+## Maia ist Pflicht im Spiel, Gegner spielen menschlich (Wunsch des Autors, 18.11.2026)
+
+Die Gegner des Abenteuers spielen über die Bots der App: Stufe je Phase, Fehlerarten mit
+Gewichten, Stil, Eröffnung wie Menschen ihrer Stärke, dazu Maia (`partiestart.ts`). Nur Kade
+(ZERO-gestützt) ist absichtlich „nicht menschlich“. Neu: Maia gehört zum Spiel. „Spiel
+herunterladen“ lädt das Maia-Paket mit, wenn es noch nicht auf dem Gerät ist; ein Spielpaket ohne
+Maia gilt als „fehlt“, und im Spiel spielt Maia unabhängig vom Schalter in den App-Einstellungen
+mit (`anbindung/maiapflicht.ts`). In der Schach-App bleibt Maia freiwillig. Der Stellungsvorrat
+(bisher aus Partien Stockfish gegen Stockfish auf Stufen) wird mit den App-Bots neu erzeugt
+(Auftrag an mittel-3).

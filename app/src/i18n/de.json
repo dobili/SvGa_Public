@@ -25,7 +25,7 @@
   "abenteuer.titel": "Schach-Abenteuer",
   "abenteuer.einleitung": "Reise von Stadt zu Stadt. Lerne Schach mit Ambrose, einem alten Meister. Fordere die Schachclubs heraus.",
   "abenteuer.laden": "Spiel herunterladen",
-  "abenteuer.groesse": "Das Spiel muss einmal heruntergeladen werden: etwa {mb} MB. Am besten im WLAN.",
+  "abenteuer.groesse": "Das Spiel muss einmal heruntergeladen werden: etwa {mb} MB, mit Maia für menschlich spielende Gegner. Am besten im WLAN.",
   "abenteuer.groesseUnbekannt": "Das Spiel muss einmal heruntergeladen werden. Das sind viele Daten, am besten im WLAN.",
   "abenteuer.speichertSelbst": "Dein Spiel wird von selbst gespeichert.",
   "abenteuer.laedt": "Lädt … (etwa {mb} MB)",

@@ -25,7 +25,7 @@
   "abenteuer.titel": "Chess Adventure",
   "abenteuer.einleitung": "Travel from town to town. Learn chess with Ambrose, an old master. Challenge the chess clubs.",
   "abenteuer.laden": "Download game",
-  "abenteuer.groesse": "The game has to be downloaded once: about {mb} MB. Best on Wi-Fi.",
+  "abenteuer.groesse": "The game has to be downloaded once: about {mb} MB, including Maia for human-like opponents. Best on Wi-Fi.",
   "abenteuer.groesseUnbekannt": "The game has to be downloaded once. That is a lot of data, best on Wi-Fi.",
   "abenteuer.speichertSelbst": "Your game is saved automatically.",
   "abenteuer.laedt": "Loading … (about {mb} MB)",

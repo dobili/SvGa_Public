@@ -45,8 +45,13 @@
   background: var(--flaeche);
   box-shadow: 0 0 0 1px var(--linie);
   text-align: left;
+  /* min-width 0: Die Kachel darf ihre Rasterspalte nie sprengen. Ersatzhöhe nur für die Höhe
+     (Block-Achse): „contain-intrinsic-size: auto 240px“ galt für beide Achsen, und WebKit maß noch
+     nicht gezeichnete Kacheln dann 240 px breit; bei 150 % Schrift ragte die Seite 66 px über den
+     Rand (N2446, nur Safari). */
+  min-width: 0;
   content-visibility: auto;
-  contain-intrinsic-size: auto 240px;
+  contain-intrinsic-block-size: auto 240px;
 }
 
 .abbildungskachel .brett {

@@ -188,7 +188,7 @@ Gus. Fünfzehn Minuten Pause. Zehn für dich, fünf für mein Sandwich. #spreche
 -> gus_angebot
 
 === gus_angebot ===
-Zehn Minuten und fünf Sekunden je Zug, eine Stellung mit Vorteil für Weiß. Zehn Züge. #sprecher:gus #stimmung:neutral
+Zehn Minuten und fünf Sekunden je Zug, eine Stellung mit Vorteil für Weiß. Sieben Züge. #sprecher:gus #stimmung:neutral
 Fertig? #sprecher:gus #stimmung:laechelt
 + [„Fertig.“]
     {not abschiedGesehen:

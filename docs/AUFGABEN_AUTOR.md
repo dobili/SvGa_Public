@@ -2124,3 +2124,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       gewünscht wären dann je ein Bogen mit und ohne Weste, ein Klapptisch mit Tablet und je ein
       Porträtblatt (neutral, lächelt, lacht, nachdenklich). (5) Benji und Zoe könnten später bei
       jedem Versuch eine neue Stellung aus dem Vorrat bekommen; Imani bleibt bei der festen Eröffnung.
+      Kurze Partien gemessen (18.11.2026 nachts, umgesetzt, Widerspruch genügt): Bots in deiner
+      Stärke 800, 1200 und 1600 gegen Dime, Schiffskoch, Kreideblitz, Kreidenacht 1, Sol, Gus,
+      Joggerin und Hollis, je 45 Kurzpartien. Dime, Schiffskoch, Kreideblitz und Sol: Ziel in 55
+      bis 75 von 100 Fällen erreicht, bleibt so. Kreidenacht 1 (Lucena-Stellung): 77 bis 86, bleibt,
+      weil dort deine Technik entscheidet, nicht der Gegner. Gus, Joggerin und Hollis (Stellung aus
+      dem Vorrat) waren mit 80 bis 91 fast geschenkt; sie geben jetzt 7 statt 10 Züge („Sieben
+      Züge“ in ihren Ansagen), damit sinkt es auf etwa 60 bis 85 (im Mittel 75 statt 85). Ein stärkerer Gegner half dort
+      nicht, und mehr Vorteil verlangen erlaubt das Regelwerk nicht.

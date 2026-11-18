@@ -104,7 +104,7 @@ Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #sti
 -> joggerin_angebot
 
 === joggerin_angebot ===
-Eine Stellung, zehn Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
+Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
 {not abschiedGesehen:
     Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose #stimmung:nachdenklich
 }

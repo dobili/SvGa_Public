@@ -344,7 +344,7 @@
       "farbe": "white",
       "format": {
         "art": "stellungsduell",
-        "zuege": 10,
+        "zuege": 7,
         "mindestvorteil": 1.0
       },
       "startstellung": {
@@ -428,7 +428,7 @@
       "farbe": "white",
       "format": {
         "art": "stellungsduell",
-        "zuege": 10,
+        "zuege": 7,
         "mindestvorteil": 1.0
       },
       "startstellung": {
@@ -794,7 +794,7 @@
       "farbe": "white",
       "format": {
         "art": "stellungsduell",
-        "zuege": 10,
+        "zuege": 7,
         "mindestvorteil": 1.0
       },
       "startstellung": {

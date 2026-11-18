@@ -550,14 +550,14 @@
       "haupt": false,
       "start": {
         "art": "dialog",
-        "knoten": "cedar-creek-bibliothek.mae_einladung"
+        "knoten": "cedar-creek-aussen.sterne"
       },
       "schritte": [
         {
           "text": "quest.sternennacht.schritt1",
           "ereignis": {
             "art": "dialog",
-            "knoten": "cedar-creek-aussen.sterne"
+            "knoten": "cedar-creek-aussen.sterne_ende"
           },
           "wirkungen": [
             {

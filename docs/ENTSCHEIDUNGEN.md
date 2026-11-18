@@ -82,7 +82,7 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
   in der Auswertung folgen.
 - **Schwäche je Phase** (Q15-5, Wunsch des Autors): neue Vorschlagsart „phase“ (Rang 55, auf dem
   Spielweg 13) aus der Phasenschätzung der letzten zehn gewerteten Partien (`training/
-  phasenschwaeche.ts`): erst ab 5 Partien und 150 Punkten Abstand zur Gesamtschätzung, Text mit
+phasenschwaeche.ts`): erst ab 5 Partien und 150 Punkten Abstand zur Gesamtschätzung, Text mit
   „etwa“ und „vermutlich“, dazu Kapitel und Trainer der Phase (2/Repertoire, 7/Taktik,
   8/Endspiel).
 
@@ -239,8 +239,7 @@ unbemerktes Wachstum.
 - **Lernsammlung und Fehlerdatenbank** (Zweig `sammlung-bearbeiten`, Wunsch des Autors): bearbeiten
   mit allen Feldern, löschen mit Rückgängig (`training/eintragspflege.ts`), Kachel
   Fehlerdatenbank oben, Bestätigung mit Sprung nach „Merken“.
-- **„Zur Stellung“ an einem Fehler** zeigt den Fehlerzug selbst (Befund: „Merken“ trug bei
-  12. O-O-O?? den Zug davor ein); das kleine Brett bleibt bei der Stellung davor mit Pfeilen.
+- **„Zur Stellung“ an einem Fehler** zeigt den Fehlerzug selbst (Befund: „Merken“ trug bei 12. O-O-O?? den Zug davor ein); das kleine Brett bleibt bei der Stellung davor mit Pfeilen.
 - **Fehlertest Teil 3** (Zweig `fehlertest-3`): elf Fehler behoben (Links bei offener App über
   hashchange, Bereichswechsel bei Startwahl, Touren, „Los geht's“ und Aufträgen über `useOeffne`,
   Zurück-Taste schließt die Startwahl, klare Meldungen bei vollem Speicher und Maia ohne Netz,
@@ -8076,3 +8075,31 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   `MerkerWahl` als `${schluessel}.${w}` zusammensetzt.
 - **Letzte drei gegenseitige Importe** (nur Typen) in `ui/komponenten/` gelöst
   (`werkzeugwahl/werkzeugwahltyp.ts`, `rueckblick/rueckblicktyp.ts`).
+
+## Spieltest-Punkt N2634 überholt (18.11.2026, mittel-1)
+
+- **N2634** (Karten aller Akte nach der Nacharbeit, 15.11.2026): überholt durch N2637 (Spielhilfe für
+  den ganzen Durchgang). Seitdem sind alle Türen auf Figurgröße umgebaut (RO33), die Innenräume auf
+  die Größe ihrer Häuser gebracht (R065) und der Pavillon in Riverton offen (RO36). Der Eindruck je
+  Ort gehört jetzt in den Durchgang nach N2637. Claudes Vorprüfung vom 17.11. (alle 73
+  Türübergänge mit Innenraum führen auf die Zielkarte) und die Behebungen vom 15.11. (Ankunft
+  sichtbar nach Reisen, kein Schnee an der Küste, Steg in Lockport) bleiben gültig.
+
+## Speichern über mehrere Tabs und Browser-Cache in der CI (18.11.2026, mittel-4)
+
+- **Notstand mischt je oberstem Teil, der Notstand gewinnt** (vom Hauptchat bestätigt): Hat beim
+  Neuladen eines Tabs inzwischen ein anderer Tab geschrieben, gilt dessen Stand, und nur die
+  obersten Teile der Nutzerdaten, die der neu ladende Tab selbst geändert hatte (etwa
+  „variationen“), kommen aus seinem Notstand dazu. Haben beide Tabs denselben obersten Teil
+  geändert, gewinnt der Notstand ganz; ein feineres Mischen innerhalb eines Teils lohnt den Aufwand
+  nicht, weil das nur bei gleichzeitigem Arbeiten in zwei Tabs in derselben Sekunde vorkommt.
+- **Abgeglichenes Schreiben:** Neben dem Stand liegt in IndexedDB eine Schreibmarke. Ein Tab
+  schreibt in einer einzigen Transaktion nur dann blind, wenn die Marke noch die zuletzt von ihm
+  gelesene ist; sonst setzt er seine offenen Änderungen auf den fremden Stand auf.
+- **Notstand mit Seitenkennung:** Der Gerätespeicher gehört allen Tabs gemeinsam; ein Tab verwirft
+  nach dem Schreiben nur seinen eigenen Notstand (Fehler vorher: Tab B löschte den Notstand von
+  Tab A, während A neu lud; Fehlertest „zwei Tabs“ in `varianten.spec.ts`).
+- **CI: Browser und Systempakete im Actions-Cache** (`skripte/ci-systempakete.sh`): Der Schritt
+  „Browser“ brauchte über den Ubuntu-Spiegel bis 6 Minuten und lief einmal in die Grenze von 12
+  Minuten. Browser liegen jetzt je Playwright-Version im Cache, die .deb-Dateien der Systempakete
+  je Runner-Abbild; fehlt der Cache, lädt das Skript übers Netz mit Wiederholungen.

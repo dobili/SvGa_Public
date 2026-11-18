@@ -85,16 +85,54 @@ jobs:
       - name: Fassung für die Leser
         run: npm run build:veroeffentlichung
 
-  # In vier Teilen (Shards) nebeneinander: 826 Tests mit zwei Workern brauchten am Stück 45 bis
-  # 60 Minuten (18.11.2026). Jeder Teil baut selbst und lädt seinen eigenen Bericht hoch; fällt
-  # einer, laufen die anderen zu Ende (fail-fast aus), damit ein Lauf alle Fehler zeigt.
+  # In sechs Jobs nebeneinander: 826 Tests mit zwei Workern brauchten am Stück 45 bis 60 Minuten
+  # (18.11.2026). Mit --shard allein lagen die langsamen Abenteuerdateien immer zusammen im ersten
+  # Teil (19 von 22 Minuten); deshalb je Browser ein Job für das Abenteuer und zwei Hälften für den
+  # Rest (PLAYWRIGHT_GRUPPE in playwright.config.ts). Jeder Job installiert nur seinen Browser,
+  # baut selbst und lädt seinen eigenen Bericht hoch; fail-fast aus, damit ein Lauf alle Fehler zeigt.
   oberflaeche:
-    name: Oberfläche (Playwright ${{ matrix.teil }}/4)
+    name: Oberfläche (${{ matrix.name }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        teil: [1, 2, 3, 4]
+        include:
+          - name: "Chromium, Abenteuer"
+            kennung: chromium-abenteuer
+            browser: chromium
+            projekt: android-chromium
+            gruppe: abenteuer
+            teil: "1/1"
+          - name: "Chromium 1/2"
+            kennung: chromium-1
+            browser: chromium
+            projekt: android-chromium
+            gruppe: ohne-abenteuer
+            teil: "1/2"
+          - name: "Chromium 2/2"
+            kennung: chromium-2
+            browser: chromium
+            projekt: android-chromium
+            gruppe: ohne-abenteuer
+            teil: "2/2"
+          - name: "WebKit, Abenteuer"
+            kennung: webkit-abenteuer
+            browser: webkit
+            projekt: iphone-webkit
+            gruppe: abenteuer
+            teil: "1/1"
+          - name: "WebKit 1/2"
+            kennung: webkit-1
+            browser: webkit
+            projekt: iphone-webkit
+            gruppe: ohne-abenteuer
+            teil: "1/2"
+          - name: "WebKit 2/2"
+            kennung: webkit-2
+            browser: webkit
+            projekt: iphone-webkit
+            gruppe: ohne-abenteuer
+            teil: "2/2"
     defaults:
       run:
         working-directory: app
@@ -107,20 +145,62 @@ jobs:
           cache-dependency-path: app/package-lock.json
       - name: Abhängigkeiten
         run: npm ci
+      # Browser und Systempakete kommen aus dem Actions-Cache: „install --with-deps“ lud sie jedes
+      # Mal über den langsamen Ubuntu-Spiegel (bis 6 Minuten, einmal Abbruch nach 12, Lauf
+      # 44382063747, 18.11.2026). Schlüssel: Playwright-Version, Browser und für die Pakete das
+      # Runner-Abbild (wechselt etwa wöchentlich, dann wird einmal neu geladen).
+      - name: Schlüssel für die Caches
+        id: schluessel
+        run: |
+          echo "playwright=$(node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
+          echo "system=${ImageOS:-unbekannt}" >> "$GITHUB_OUTPUT"
+          echo "abbild=${ImageVersion:-unbekannt}" >> "$GITHUB_OUTPUT"
+      - name: Browser aus dem Cache
+        id: browsercache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}
+      - name: Systempakete aus dem Cache
+        id: paketcache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/systempakete
+          key: systempakete-${{ steps.schluessel.outputs.system }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}-${{ steps.schluessel.outputs.abbild }}
+          # Neues Abbild: zuerst die Pakete des vorigen versuchen (meist dieselben Fassungen).
+          restore-keys: systempakete-${{ steps.schluessel.outputs.system }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}-
       - name: Browser
         # Zeitgrenze: In der Nacht zum 26.10.2026 hing dieser Schritt 21 Minuten; so bricht er ab.
-        # Am 10.11.2026 lief er dreimal in die alte Grenze von 5 Minuten, weil der Ubuntu-Spiegel
-        # einzelne Pakete erst nach 30 Sekunden lieferte; 12 Minuten reichen dafür und fangen ein Hängen ab.
-        timeout-minutes: 12
-        run: npx playwright install --with-deps chromium webkit
+        # Das Skript versucht die Systempakete übers Netz bis zu dreimal mit je 5 Minuten.
+        timeout-minutes: 16
+        run: |
+          if [ "${{ steps.browsercache.outputs.cache-hit }}" != "true" ]; then
+            npx playwright install ${{ matrix.browser }}
+          fi
+          bash skripte/ci-systempakete.sh ${{ matrix.browser }} "${{ runner.temp }}/systempakete"
+      # Gleich speichern, nicht erst am Jobende: dort speichert actions/cache nur bei Erfolg.
+      - name: Browser in den Cache
+        if: steps.browsercache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ steps.browsercache.outputs.cache-primary-key }}
+      - name: Systempakete in den Cache
+        if: steps.paketcache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/systempakete
+          key: ${{ steps.paketcache.outputs.cache-primary-key }}
       - name: Build
         run: npm run build
-      - name: Playwright (Chromium und WebKit in Handygröße)
-        run: npm run test:e2e -- --shard=${{ matrix.teil }}/4
+      - name: Playwright (${{ matrix.name }}, Handygröße)
+        env:
+          PLAYWRIGHT_GRUPPE: ${{ matrix.gruppe }}
+        run: npm run test:e2e -- --project=${{ matrix.projekt }} --shard=${{ matrix.teil }}
       - uses: actions/upload-artifact@v5
         if: always()
         with:
-          name: playwright-bericht-${{ matrix.teil }}
+          name: playwright-bericht-${{ matrix.kennung }}
           path: |
             app/playwright-report
             app/test-results

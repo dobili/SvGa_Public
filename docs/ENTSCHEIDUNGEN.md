@@ -8076,3 +8076,12 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   `MerkerWahl` als `${schluessel}.${w}` zusammensetzt.
 - **Letzte drei gegenseitige Importe** (nur Typen) in `ui/komponenten/` gelöst
   (`werkzeugwahl/werkzeugwahltyp.ts`, `rueckblick/rueckblicktyp.ts`).
+
+## Spieltest-Punkt N2634 überholt (18.11.2026, mittel-1)
+
+- **N2634** (Karten aller Akte nach der Nacharbeit, 15.11.2026): überholt durch N2637 (Spielhilfe für
+  den ganzen Durchgang). Seitdem sind alle Türen auf Figurgröße umgebaut (RO33), die Innenräume auf
+  die Größe ihrer Häuser gebracht (R065) und der Pavillon in Riverton offen (RO36). Der Eindruck je
+  Ort gehört jetzt in den Durchgang nach N2637. Claudes Vorprüfung vom 17.11. (alle 73
+  Türübergänge mit Innenraum führen auf die Zielkarte) und die Behebungen vom 15.11. (Ankunft
+  sichtbar nach Reisen, kein Schnee an der Küste, Steg in Lockport) bleiben gültig.

@@ -58,6 +58,11 @@ function schreibeStand(stand: object): Promise<boolean> {
   });
 }
 
+// Die Tests dieser Datei teilen keinen Zustand (jeder startet seinen eigenen Spielstand); parallel
+// verteilt Playwright sie auf Worker und Shards, statt die ganze Datei in einem Worker abzuarbeiten
+// (eine der längsten Dateien der Oberfläche, CI vom 18.11.2026).
+test.describe.configure({ mode: "parallel" });
+
 test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ page }) => {
   await starteImBrowser(page);
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);

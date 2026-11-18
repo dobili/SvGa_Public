@@ -85,9 +85,16 @@ jobs:
       - name: Fassung für die Leser
         run: npm run build:veroeffentlichung
 
+  # In vier Teilen (Shards) nebeneinander: 826 Tests mit zwei Workern brauchten am Stück 45 bis
+  # 60 Minuten (18.11.2026). Jeder Teil baut selbst und lädt seinen eigenen Bericht hoch; fällt
+  # einer, laufen die anderen zu Ende (fail-fast aus), damit ein Lauf alle Fehler zeigt.
   oberflaeche:
-    name: Oberfläche (Playwright)
+    name: Oberfläche (Playwright ${{ matrix.teil }}/4)
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        teil: [1, 2, 3, 4]
     defaults:
       run:
         working-directory: app
@@ -109,11 +116,11 @@ jobs:
       - name: Build
         run: npm run build
       - name: Playwright (Chromium und WebKit in Handygröße)
-        run: npm run test:e2e
+        run: npm run test:e2e -- --shard=${{ matrix.teil }}/4
       - uses: actions/upload-artifact@v5
         if: always()
         with:
-          name: playwright-bericht
+          name: playwright-bericht-${{ matrix.teil }}
           path: |
             app/playwright-report
             app/test-results

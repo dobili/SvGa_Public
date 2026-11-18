@@ -122,7 +122,13 @@ test("Orden testen: Ring zur Probe voll, Gratulation mit Orden, Profil und Start
   await expect(stueck.locator('[data-ordenkunst="uebungen"]')).toBeAttached();
   await expect(stueck).toContainText("Aus deiner Sammlung");
   await page.screenshot({ path: "test-results/bilder/orden-startanimation.png" });
-  await page.getByTestId("startanimation").click();
+  // Mit Orden läuft die Animation nur 3,5 s; in WebKit (CI) kostet allein das Bildschirmfoto davon
+  // gut eine Sekunde, und der Tipp traf sie beim Ausblenden („not stable“, dann „detached“,
+  // 18.11.2026). Ob der Tipp überspringt, prüft brett.spec.ts (R39); hier zählt, dass sie geht.
+  await page
+    .getByTestId("startanimation")
+    .click({ force: true, timeout: KURZ })
+    .catch(() => undefined);
   await expect(stueck).toHaveCount(0);
   // Probe beenden: der Ring zählt wieder echt (Aufgabenseite neu öffnen, die Animation wegtippen).
   await ladeMitSprung(page, "/app/#aufgaben");

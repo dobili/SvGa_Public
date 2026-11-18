@@ -35,6 +35,7 @@ import { Aufgabenpunkt, Aufgabentext } from "../komponenten/rahmen/Aufgabenpunkt
 import { Kopfzeile } from "../komponenten/rahmen/Kopfzeile";
 import { AbzeichenProbe } from "../komponenten/fortschritt/AbzeichenProbe";
 import { OrdenProbe } from "../komponenten/fortschritt/OrdenProbe";
+import { AbenteuerAdmin } from "../../abenteuer/anbindung/AbenteuerAdmin";
 import { RueckblickProbe } from "../komponenten/rueckblick/RueckblickKarten";
 import { ThemenProbe } from "../komponenten/themen/ThemenProbe";
 import { useDaten } from "../komponenten/bausteine/useDaten";
@@ -216,6 +217,7 @@ function Inhalt({ datei }: { datei: Aufgabendatei }) {
   }, []);
   return (
     <>
+      <AbenteuerAdmin />
       <OrdenProbe />
       <AbzeichenProbe />
       <RueckblickProbe />

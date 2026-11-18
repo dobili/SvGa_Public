@@ -5516,5 +5516,8 @@
   "buchbezug.F10.felderEins": "nur ein freies Feld",
   "buchbezug.F10.felderNull": "kein freies Feld",
   "naechster.muster": "In {anzahl} deiner letzten {partien} Partien kam vor: „{kategorie}“. Dazu passt vermutlich: {trainer} (Kapitel {kapitel}).",
-  "buchlook.kurz.muster": "{anzahl} von {partien} Partien · Kapitel {kapitel}"
+  "buchlook.kurz.muster": "{anzahl} von {partien} Partien · Kapitel {kapitel}",
+  "abenteuer.admin.titel": "Schach-Abenteuer",
+  "abenteuer.admin.erklaerung": "Das Spiel zum Buch. Beim ersten Öffnen wird es einmal heruntergeladen (mit Maia), danach steht es auch auf „Spielen“.",
+  "abenteuer.admin.knopf": "Spiel öffnen"
 }

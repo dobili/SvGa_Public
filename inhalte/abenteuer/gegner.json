@@ -1906,9 +1906,6 @@
         "art": "eingang",
         "versatz": 560
       },
-      "phasenversatz": {
-        "endspiel": -1
-      },
       "gewichte": {
         "falscherAbtausch": 1.5
       },

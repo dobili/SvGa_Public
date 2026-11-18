@@ -85,6 +85,7 @@ npm run dev            # lokal starten
 npm run pruefen        # Typen, Stil, Komponententests (Vitest, auch mit echter Engine)
 npm run test:e2e       # Playwright (Chromium und WebKit)
 npm run build          # Auslieferung nach app/dist/
+WEGSPERRE=S17 WEGSPERRE_E=1200 npx vitest run --config vitest.messung.config.ts src/abenteuer/wegsperren.messung.ts   # Messlauf Wegsperre (S15 bis S17) gegen einen Bot in Lesestärke 800, 1200 oder 1600; Ergebnis nach buch/arbeit/wegsperren/ (nie zwei Läufe zugleich)
 
 # Pipeline (im Hauptordner)
 python -m pipeline.bauen --buch buch/a1 --ziel app/public/daten/de/a1   # alle Kapitel, Glossar, PGN-Entwürfe, Bericht

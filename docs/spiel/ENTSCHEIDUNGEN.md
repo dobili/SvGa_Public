@@ -1224,3 +1224,15 @@ Testteams von Perfect Move (Bezug zu ZERO), mit kurzen Formaten statt ganzer Par
 Remis öffnet dauerhaft, die dritte gewertete Niederlage auch (Notausgang, damit niemand
 festhängt); Abbruch zählt nicht. Bogen bis zum Seitenwechsel in Akt 4. Konzept und Stand:
 `docs/spiel/32_Wegsperren.md`; offene Fragen in RO39.
+
+## Browserprüfung der Wegsperren: Kollision, Rahmen, Schrift, Meldungen (18.11.2026 früh)
+
+- **Kollision stehender Figuren nur auf der Fußkachel:** Bisher sperrte jede Figur auch die
+  Kachel über sich (Körper aufs ganze Bild), das nahm schmalen Wegen eine Reihe. Sitzende sperren
+  Fußkachel und Sitzpunkt, damit der Held nicht in ihnen steht. `kopfkachel` meldet neu begehbare
+  Kacheln je Szene; sechs neu erreichbare Ecken sind mit „sperren“ geschlossen.
+- **Dialograhmen beim ersten Laden** des Pakets fehlte (freigegebene Bildadressen); behoben.
+- **Leerer Dialog** wechselt sofort, ohne dass die Bedienknöpfe kurz verschwinden.
+- **Großes Z in Pixelify Sans** sah aus wie eine 2 („2oe“); die Glyphe ist im Raster der Schrift
+  neu gezeichnet (OFL 1.1 erlaubt Änderungen, vermerkt in `docs/LIZENZEN.md`).
+- **Meldungen wie „Neu im Tagebuch“** warten bis nach dem Dialog und kommen nacheinander.

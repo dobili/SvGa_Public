@@ -9,8 +9,13 @@ Stand: 17.11.2026 nachts, 0:30 Uhr (Haupt-Chat, Schach-Abenteuer): **Wegsperren,
 - Spiel-Wiki (`wiki_spiel.py`, Umschalter im Dashboard); sichtbar erst nach Push auf main.
 - CI übersetzt jetzt alle Ink-Dialoge.
 
-**Nächster Schritt:** Antworten zu RO34 bis RO39 einarbeiten; Wegsperren im Browser ansehen (kein
-e2e-Test führt bis zu einer Sperre); Bildwünsche RO37/RO39 einbauen, sobald geliefert.
+- 18.11. früh: Sperre S15 im Browser geprüft (e2e `abenteuer-wegsperre`); dabei Kollision auf
+  Fußkachel, Dialograhmen beim ersten Laden, Z der Pixelschrift, Meldungsstau nach Dialogen behoben;
+  Prüfung `kopfkachel`.
+
+**Nächster Schritt:** Antworten zu RO34 bis RO39 einarbeiten; S16 und S17 im Browser spielen,
+sitzende Figuren nach der Kollisionsänderung ansehen (Carla, Dash, Akademie, Slick); Bildwünsche
+RO37/RO39 einbauen, sobald geliefert.
 
 Stand: 17.11.2026 früh, 5 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde mit vier Nebenchats abgeschlossen.**
 

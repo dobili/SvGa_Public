@@ -76,7 +76,7 @@ describe("Speicher", () => {
     const datenbank = await import("./datenbank");
     await speicher.lade(JETZT);
     vi.spyOn(console, "error").mockImplementation(() => undefined);
-    const schreiben = vi.spyOn(datenbank, "schreibeRoh");
+    const schreiben = vi.spyOn(datenbank, "schreibeAbgeglichen");
     schreiben.mockRejectedValueOnce(new Error("QuotaExceededError"));
     // Eine Kopie gilt als Änderung; dieselben Daten schreiben nichts (siehe nächster Test).
     expect(await speicher.aendere((d) => ({ ...d }))).toBe(false);
@@ -92,7 +92,7 @@ describe("Speicher", () => {
     await speicher.lade(JETZT);
     vi.spyOn(console, "error").mockImplementation(() => undefined);
     const voll = Object.assign(new Error("voll"), { name: "QuotaExceededError" });
-    vi.spyOn(datenbank, "schreibeRoh").mockRejectedValueOnce(voll);
+    vi.spyOn(datenbank, "schreibeAbgeglichen").mockRejectedValueOnce(voll);
     expect(
       await speicher.aendere((d) => ({
         ...d,
@@ -119,7 +119,7 @@ describe("Speicher", () => {
     const speicher = await import("./speicher");
     const datenbank = await import("./datenbank");
     await speicher.lade(JETZT);
-    const schreiben = vi.spyOn(datenbank, "schreibeRoh");
+    const schreiben = vi.spyOn(datenbank, "schreibeAbgeglichen");
     expect(await speicher.aendere((d) => d)).toBe(true);
     expect(schreiben).not.toHaveBeenCalled();
   });
@@ -134,7 +134,8 @@ describe("Speicher", () => {
     const offen = await openDB(datenbank.DATENBANK);
     const schluessel = await offen.getAllKeys("nutzerdaten");
     offen.close();
-    expect(schluessel).toEqual(["aktuell", `defekt-${JETZT.toISOString()}`]);
+    // Neben dem Stand liegt die Schreibmarke (datenbank.ts).
+    expect(schluessel).toEqual(["aktuell", `defekt-${JETZT.toISOString()}`, "marke"]);
   });
 });
 

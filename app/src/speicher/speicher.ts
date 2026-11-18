@@ -7,17 +7,21 @@
  * Antwort, um dauerhaften Speicher bitten (seit V8, Nutzungsprüfung 25.10.2026, bei jedem Start,
  * solange der Browser ihn nicht gewährt hat), Fehler dem Leser zeigen, ältere Formate umwandeln. Komponenten abonnieren den Stand mit useSpeicher.
  * Ein Schreibvorgang, der beim Verlassen der Seite noch läuft, wird als Notstand gesichert
- * (speicher/notstand.ts) und beim nächsten Laden nachgeholt.
+ * (speicher/notstand.ts) und beim nächsten Laden nachgeholt. Schreibt ein anderer Tab mitten im
+ * eigenen Schreiben, setzt der nächste Schreibvorgang die offenen Änderungen auf dessen Stand.
  * Abhängigkeiten: speicher/datenbank.ts, speicher/format.ts, speicher/notstand.ts, app/merker.ts,
  * React.
  */
 import { useSyncExternalStore } from "react";
 import { entferneMerker, liesMerker } from "../app/merker";
-import { hebeAuf, liesRoh, schreibeRoh } from "./datenbank";
+import { hebeAuf, liesMitMarke, schreibeAbgeglichen, schreibeRoh } from "./datenbank";
 import { leereDaten, wandleUm, type Nutzerdaten } from "./format";
 import { merkerAlsFormat0 } from "./format0";
 import { nimmNotstand, sichereNotstand, verwirfNotstand } from "./notstand";
 import { mitMerkerRekorden } from "./rekordmerker";
+import { alsMeldung, speicherfehlerArt } from "./speicherfehler";
+
+export { speicherfehlerArt } from "./speicherfehler";
 
 /** Was beim Laden oder Speichern schiefging, für den Hinweis an den Leser. */
 export interface Speicherfehler {
@@ -61,23 +65,18 @@ let schreibkette: Promise<void> = Promise.resolve();
 let bestaetigt: unknown = undefined;
 /** Der Stand, den der laufende Schreibvorgang gerade schreibt (undefined: keiner läuft). */
 let inArbeit: unknown = undefined;
+/** Eine Änderung als reine Funktion des Standes (aendere). */
+type Aenderung = (daten: Nutzerdaten) => Nutzerdaten;
+/** Eigene Änderungen, die noch nicht sicher in IndexedDB liegen, in ihrer Reihenfolge. */
+const offeneAenderungen: Aenderung[] = [];
+/** Ein anderer Tab schrieb, während hier noch geschrieben wurde: danach seinen Stand lesen. */
+let fremdVerpasst = false;
+/** Die Schreibmarke des zuletzt gelesenen oder geschriebenen Standes (datenbank.ts). */
+let bekannteMarke: unknown = undefined;
 
 function setze(teil: Partial<Speicherzustand>): void {
   zustand = { ...zustand, ...teil };
   abonnenten.forEach((abonnent) => abonnent());
-}
-
-/**
- * Art eines Fehlers beim Schreiben: „voll“, wenn der Browser den Speicher des Geräts voll meldet
- * (QuotaExceededError), sonst „speichern“.
- * Beispiel: DOMException „QuotaExceededError“ → „voll“; TypeError → „speichern“.
- */
-export function speicherfehlerArt(fehler: unknown): "speichern" | "voll" {
-  return fehler instanceof Error && fehler.name === "QuotaExceededError" ? "voll" : "speichern";
-}
-
-function alsMeldung(fehler: unknown): string {
-  return fehler instanceof Error ? `${fehler.name}: ${fehler.message}` : String(fehler);
 }
 
 /**
@@ -132,7 +131,7 @@ async function ersterStart(jetzt: Date): Promise<Nutzerdaten> {
   const roh = merkerAlsFormat0(liesMerker("einstellungen"), liesMerker("lernstand"));
   const ergebnis = wandleUm(roh, jetzt);
   const daten = ergebnis.ok ? ergebnis.daten : leereDaten(jetzt);
-  await schreibeRoh(daten);
+  bekannteMarke = await schreibeRoh(daten);
   bestaetigt = daten;
   ALTE_MERKER.forEach(entferneMerker);
   return daten;
@@ -143,7 +142,8 @@ async function ersterStart(jetzt: Date): Promise<Nutzerdaten> {
  * Ausgabe: der Stand und ob er aus dem Notstand kommt (dann muss er noch geschrieben werden).
  */
 async function liesMitNotstand(): Promise<{ roh: unknown; gerettet: boolean }> {
-  const gelesen = await liesRoh();
+  const { roh: gelesen, marke } = await liesMitMarke();
+  bekannteMarke = marke;
   const notstand = nimmNotstand(gelesen);
   if (notstand === null) {
     bestaetigt = gelesen;
@@ -172,7 +172,7 @@ async function ladeJetzt(jetzt: Date): Promise<void> {
       // Ein älteres Format, ein neuer Rekord aus den Merkern oder ein Notstand wird sofort
       // gespeichert.
       if (gerettet || ergebnis.vonVersion !== daten.schemaVersion || daten !== ergebnis.daten) {
-        await schreibeRoh(daten);
+        bekannteMarke = await schreibeRoh(daten);
         bestaetigt = daten;
         if (gerettet) meldeAndereTabs();
       }
@@ -226,12 +226,16 @@ let ausstehend = 0;
  * steht ein eigener Schreibvorgang aus, gilt dessen Stand (sonst ginge die eigene Änderung verloren).
  */
 async function uebernimmAusAnderemTab(): Promise<void> {
-  if (ausstehend > 0) return;
+  if (ausstehend > 0) {
+    fremdVerpasst = true;
+    return;
+  }
   try {
-    const roh = await liesRoh();
+    const { roh, marke } = await liesMitMarke();
     const ergebnis = wandleUm(roh, new Date());
     if (ergebnis.ok && ausstehend === 0) {
       bestaetigt = roh;
+      bekannteMarke = marke;
       setze({ daten: ergebnis.daten });
     }
   } catch (fehler) {
@@ -244,10 +248,12 @@ async function uebernimmAusAnderemTab(): Promise<void> {
  *
  * Warum: Lädt der Leser direkt nach einem Zug neu (oder schließt die App), verwirft der Browser
  * den unfertigen Schreibvorgang in IndexedDB; ohne Notstand fehlte der Zug danach (Fehlertest
- * „zwei Tabs“ in varianten.spec.ts, 17.11.2026). Ohne ausstehendes Schreiben geschieht nichts.
+ * „zwei Tabs“ in varianten.spec.ts, 17.11.2026). Maßgeblich sind die offenen Änderungen, nicht
+ * der Zähler: Chromium bricht den Vorgang schon beim Beginn des Neuladens ab, und bis pagehide
+ * stand der Zähler wieder auf null (18.11.2026). Ohne offene Änderung geschieht nichts.
  */
 function sichereBeimVerlassen(): void {
-  if (ausstehend > 0) sichereNotstand(zustand.daten, [bestaetigt, inArbeit]);
+  if (offeneAenderungen.length > 0) sichereNotstand(zustand.daten, [bestaetigt, inArbeit]);
 }
 
 /** Meldet sichereBeimVerlassen einmal je Sitzung an (pagehide; fehlt in Node-Tests). */
@@ -279,6 +285,64 @@ function meldeAndereTabs(): void {
 }
 
 /**
+ * Der Stand, der statt des eigenen geschrieben wird, wenn ein anderer Tab seit dem letzten Lesen
+ * geschrieben hat: dessen Stand mit den eigenen offenen Änderungen darauf (Fehlertest „zwei
+ * Tabs“, 18.11.2026). Synchron, weil er im Schreibvorgang der Datenbank läuft.
+ * Sonderfall: Unlesbare oder neuere fremde Daten → der eigene Stand bleibt.
+ */
+function aufFremdemStand(fremd: unknown, eigen: Nutzerdaten, enthalten: number): unknown {
+  const ergebnis = wandleUm(fremd, new Date());
+  if (!ergebnis.ok) return eigen;
+  return offeneAenderungen.slice(0, enthalten).reduce((d, f) => f(d), ergebnis.daten);
+}
+
+/** Ein Schreibvorgang der Kette: der neueste Stand, abgeglichen mit dem eines anderen Tabs. */
+async function schreibeStand(): Promise<boolean> {
+  try {
+    const enthalten = offeneAenderungen.length;
+    const eigen = zustand.daten;
+    inArbeit = eigen;
+    const { geschrieben, marke } = await schreibeAbgeglichen(bekannteMarke, eigen, (fremd) =>
+      aufFremdemStand(fremd, eigen, enthalten),
+    );
+    bekannteMarke = marke;
+    bestaetigt = geschrieben;
+    offeneAenderungen.splice(0, enthalten);
+    if (geschrieben !== eigen) {
+      const neu = geschrieben as Nutzerdaten;
+      setze({ daten: offeneAenderungen.reduce((d, f) => f(d), neu) });
+    }
+    // Liegt der neueste Stand sicher in IndexedDB, ist ein Notstand überholt.
+    if (ausstehend === 1) verwirfNotstand();
+    meldeAndereTabs();
+    if (zustand.fehler?.art === "speichern" || zustand.fehler?.art === "voll")
+      setze({ fehler: null });
+    return true;
+  } catch (fehler) {
+    console.error("Speichern fehlgeschlagen:", fehler);
+    setze({ fehler: { art: speicherfehlerArt(fehler), meldung: alsMeldung(fehler) } });
+    return false;
+  } finally {
+    inArbeit = undefined;
+    ausstehend -= 1;
+    if (ausstehend === 0 && fremdVerpasst) {
+      fremdVerpasst = false;
+      schreibkette = schreibkette.then(uebernimmAusAnderemTab);
+    }
+  }
+}
+
+/** Übernimmt eine Änderung in den Stand und hängt ihr Schreiben an die Kette. */
+function speichereAenderung(aenderung: Aenderung): Promise<boolean> {
+  offeneAenderungen.push(aenderung);
+  setze({ daten: aenderung(zustand.daten) });
+  ausstehend += 1;
+  const vorgang = schreibkette.then(schreibeStand);
+  schreibkette = vorgang.then(() => undefined);
+  return vorgang;
+}
+
+/**
  * Setzt einen neuen Stand und schreibt ihn sofort.
  *
  * Warum: „Nach jeder Antwort wird gespeichert“ (Konzept 9.4). Ausgabe: true, wenn geschrieben.
@@ -286,30 +350,7 @@ function meldeAndereTabs(): void {
  * der nächste erfolgreiche Schreibvorgang nimmt den Hinweis zurück.
  */
 export function speichere(daten: Nutzerdaten): Promise<boolean> {
-  setze({ daten });
-  ausstehend += 1;
-  const vorgang = schreibkette.then(async () => {
-    try {
-      inArbeit = zustand.daten;
-      await schreibeRoh(inArbeit);
-      bestaetigt = inArbeit;
-      // Liegt der neueste Stand sicher in IndexedDB, ist ein Notstand überholt.
-      if (ausstehend === 1) verwirfNotstand();
-      meldeAndereTabs();
-      if (zustand.fehler?.art === "speichern" || zustand.fehler?.art === "voll")
-        setze({ fehler: null });
-      return true;
-    } catch (fehler) {
-      console.error("Speichern fehlgeschlagen:", fehler);
-      setze({ fehler: { art: speicherfehlerArt(fehler), meldung: alsMeldung(fehler) } });
-      return false;
-    } finally {
-      inArbeit = undefined;
-      ausstehend -= 1;
-    }
-  });
-  schreibkette = vorgang.then(() => undefined);
-  return vorgang;
+  return speichereAenderung(() => daten);
 }
 
 /**
@@ -319,11 +360,11 @@ export function speichere(daten: Nutzerdaten): Promise<boolean> {
  * nicht überschreibt. Gibt die Funktion dieselben Daten zurück (etwa eine schon gesehene
  * Abbildung), wird nichts geschrieben.
  */
-export function aendere(aenderung: (daten: Nutzerdaten) => Nutzerdaten): Promise<boolean> {
-  const anwenden = () => {
-    const neu = aenderung(zustand.daten);
-    return neu === zustand.daten ? Promise.resolve(true) : speichere(neu);
-  };
+export function aendere(aenderung: Aenderung): Promise<boolean> {
+  const anwenden = () =>
+    aenderung(zustand.daten) === zustand.daten
+      ? Promise.resolve(true)
+      : speichereAenderung(aenderung);
   return zustand.geladen ? anwenden() : lade().then(anwenden);
 }
 
@@ -333,6 +374,7 @@ export function aendere(aenderung: (daten: Nutzerdaten) => Nutzerdaten): Promise
  * Sonderfall: Ändert der Leser danach noch etwas, legt das Speichern die Datenbank neu an.
  */
 export function vergiss(jetzt: Date = new Date()): void {
+  offeneAenderungen.length = 0;
   setze({ daten: leereDaten(jetzt), fehler: null });
 }
 

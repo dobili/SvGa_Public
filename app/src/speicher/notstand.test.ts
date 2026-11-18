@@ -46,8 +46,8 @@ async function abgebrochenesSpeichern(verlasse: () => void): Promise<void> {
   await speicher.lade(JETZT);
   expect(await speicher.aendere(mitStrenge("locker"))).toBe(true);
   const schreiben = vi
-    .spyOn(datenbank, "schreibeRoh")
-    .mockReturnValueOnce(new Promise<void>(() => undefined));
+    .spyOn(datenbank, "schreibeAbgeglichen")
+    .mockReturnValueOnce(new Promise<never>(() => undefined));
   void speicher.aendere(mitStrenge("streng"));
   await vi.waitFor(() => expect(schreiben).toHaveBeenCalled());
   verlasse();
@@ -68,7 +68,9 @@ describe("Notstand", () => {
     expect(window.localStorage.getItem("svga.notstand")).toBeNull();
   });
 
-  it("verwirft den Notstand, wenn ein anderer Tab inzwischen geschrieben hat", async () => {
+  it("nimmt nach einem fremden Schreiben dessen Stand und nur die eigenen Teile dazu", async () => {
+    // Fehlertest „zwei Tabs“ (18.11.2026): Tab B schrieb seine Auswertung, während Tab A neu lud;
+    // der Zug in A's Variante ging verloren, weil der Notstand ganz verworfen wurde.
     const { verlasse } = umgebungMitVerlassen();
     await abgebrochenesSpeichern(verlasse);
     const datenbank = await import("./datenbank");
@@ -78,8 +80,31 @@ describe("Notstand", () => {
     const neu = await import("./speicher");
     await neu.lade(JETZT);
     expect(neu.speicherzustand().daten.lernstand).toEqual({ 3: [1] });
-    expect(neu.speicherzustand().daten.einstellungen.strenge).toBe("locker");
+    expect(neu.speicherzustand().daten.einstellungen.strenge).toBe("streng");
+    expect(await datenbank.liesRoh()).toMatchObject({
+      lernstand: { 3: [1] },
+      einstellungen: { strenge: "streng" },
+    });
     expect(window.localStorage.getItem("svga.notstand")).toBeNull();
+  });
+
+  it("verwirft den Notstand, wenn der fremde Stand die eigenen Teile schon enthält", async () => {
+    const { verlasse } = umgebungMitVerlassen();
+    await abgebrochenesSpeichern(verlasse);
+    const datenbank = await import("./datenbank");
+    const fremd = (await datenbank.liesRoh()) as Nutzerdaten;
+    await datenbank.schreibeRoh(mitStrenge("streng")({ ...fremd, lernstand: { 3: [1] } }));
+    const { nimmNotstand } = await import("./notstand");
+    expect(nimmNotstand(await datenbank.liesRoh())).toBeNull();
+  });
+
+  it("lässt den Notstand einer anderen Seite stehen (gemeinsamer Gerätespeicher der Tabs)", async () => {
+    const geraet = frischeUmgebung();
+    const fremd = JSON.stringify({ daten: {}, bekannt: ["x"], geaendert: [], seite: "andere" });
+    geraet.setItem("svga.notstand", fremd);
+    const { verwirfNotstand } = await import("./notstand");
+    verwirfNotstand();
+    expect(geraet.getItem("svga.notstand")).toBe(fremd);
   });
 
   it("legt ohne ausstehendes Schreiben keinen Notstand an", async () => {

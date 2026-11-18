@@ -2099,7 +2099,16 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       mit passender Bewertung kommen in einen Vorrat (160 Stellungen), aus dem eine Begegnung jedes
       Mal eine neue ziehen kann.
       Meine Empfehlungen, so umgesetzt: (1) Stärke der drei vorerst E + 260, 380, 560 (E = deine
-      Stärke); wenn es nervt, zuerst diesen Abstand senken, nicht die drei Versuche. (2) Zoes Satz
+      Stärke); wenn es nervt, zuerst diesen Abstand senken, nicht die drei Versuche. Gemessen am
+      18.11.2026 (Bots in deiner Stärke 800, 1200 und 1600 gegen die drei, je 60 Kurzpartien):
+      Bei Benji und Imani bist du im ersten Versuch in 52 bis 82 von 100 Fällen durch, bis zum
+      zweiten in 77 bis 97; ihre Stärke bleibt. Bei Zoe in 80 bis 98, weil dort schon das Remis
+      reicht und du mit einem Bauern mehr beginnst; gewonnen wird in 42 bis 72 von 100. Zoe spielt
+      jetzt im Endspiel nicht mehr schwächer als sonst (umgesetzt, Widerspruch genügt). Ein Fehler
+      ist behoben: Zoe schlug nach dem Damentausch manchmal die Dame nicht zurück und war im
+      nächsten Zug matt. Falls dir Zoes Sperre zu leicht ist: Dort könnte nur der Sieg öffnen
+      (dann etwa 42 bis 72 von 100 im ersten Versuch); nicht umgesetzt, sag es, wenn du es willst.
+      (2) Zoes Satz
       „Wer rauf zur Meisterschaft will …“ bleibt, als Bild für den Weg zum Turnier (die Straße führt
       erst nach Summit City). (3) „ZERO lernt“ schon in Akt 2 bleibt als Vorahnung; vorgestellt wird
       ZERO erst in Akt 3. (4) Eigene Figurenbögen erst, wenn dir die Truppe im Spiel gefällt;

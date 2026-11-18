@@ -8,6 +8,7 @@ import {
   halbzugAus,
   maiaEingabe,
   maiawerte,
+  vorMaiaBereich,
   wahrscheinlichkeitenAus,
   type Maialaufzeit,
 } from "./maia";
@@ -66,5 +67,22 @@ describe("Maia: Vorbereitung wie maia2.inference", () => {
     expect((await maiawerte(laufzeit, spaeter, 1500, 1500, "blitz"))?.size).toBe(
       eingabe.zuege.length,
     );
+  });
+  it("Endspiel mit Zugnummer 1 (Abbildung 8.2 nach 1. Dxd7) ist keine Eröffnung: Maia rechnet", async () => {
+    // Befund Wegsperre S17 (18.11.2026): Ohne Maia schlug der Gegner die Dame nur in etwa der
+    // Hälfte der Fälle zurück, weil die Zugnummer der Abbildung bei 1 beginnt.
+    const nachDamentausch = "6k1/pp1Q1ppp/1n6/8/4N3/2P5/PP3PPP/6K1 b - - 0 1";
+    expect(halbzugAus(nachDamentausch)).toBe(1);
+    expect(vorMaiaBereich(nachDamentausch)).toBe(false);
+    expect(vorMaiaBereich(ITALIENISCH)).toBe(true);
+    // Grundstellung ohne einen Springer (Vorgabepartie): weiter Eröffnung.
+    expect(vorMaiaBereich("rnbqkb1r/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")).toBe(true);
+    // Späte Zugnummer: nie Eröffnung, auch mit allen Steinen.
+    expect(vorMaiaBereich(ITALIENISCH.replace(" 6 5", " 6 12"))).toBe(false);
+    const laufzeit: Maialaufzeit = {
+      rechne: () => Promise.resolve(new Float32Array(MAIA_ZUEGE.length)),
+    };
+    const karte = await maiawerte(laufzeit, nachDamentausch, 1200, 1200, "rapid");
+    expect(karte?.has("b6d7")).toBe(true);
   });
 });

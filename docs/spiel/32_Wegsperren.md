@@ -21,6 +21,11 @@ Kreidenacht und die kleine Nebenquest „Das Testteam“.
 | S16 | `wegIronwoodSilicon.raststaette`, `weiterGlasbruecke`: `testteamBrueckeDurch oder ankunftSiliconBayGesehen oder nicht einladungGesehen` | Zoe 2,17 und Benji 4,17 über dem Pfad, Imani 3,20 darunter; `einladungGesehen und nicht ankunftSiliconBayGesehen`                         | `wegIronwoodSilicon.testteam`, Imani: Eröffnung fremd (R13c, Russische Verteidigung), dann Vorteil, 12 Züge, 1,0 | E + 380                |
 | S17 | `wegDesertSummit.diner`, `weiterBergstrasse`: `testteamGitterDurch oder ankunftSummitGesehen oder nicht endeAkt3Gesehen`                | Zoe 2,14 und Benji 6,14 über der Straße, Imani 4,18 darunter (auch in der Neon-Fassung); `endeAkt3Gesehen und nicht ankunftSummitGesehen` | `wegDesertSummit.testteam`, Zoe: Endspiel gewinnen (R13a), Abb. 8.2, 15 Züge                                     | E + 560                |
 
+**Stärke gemessen (18.11.2026):** Zoe hat keinen Phasenversatz mehr (im Konzept, Abschnitt 5,
+steht noch „Endspiel −1“); Benji und Imani sind unverändert. Zahlen und der Befund „Dame nicht
+zurückgeschlagen“ (Maia rechnete in Partien aus einer Abbildung erst ab Zug 6, behoben in
+`app/src/engine/maia.ts`) stehen in `auftraege/wegsperren_staerke_18-11.md`.
+
 **Aufstellung (Durchsicht im Browser, 18.11.2026):** Die Truppe steht nicht mehr in einer Reihe
 neben dem Weg, sondern beidseits davon, kurz vor dem Übergang, und schaut zum Weg (`blick` in der
 Szene: wer über dem Weg steht, nach unten, wer darunter steht, nach oben). So liest sich die
@@ -102,11 +107,15 @@ CC0), wie bei allen Figuren ohne Porträtblatt.
 
 **Offene Rückfragen an den Autor:**
 
-1. **Stärke:** E + 260, 380, 560 ist ungeprüft gegen echte Leser. „Vorteil herausarbeiten“ beginnt
-   ausgeglichen; +1,0 in 10 oder 12 Zügen gegen einen Gegner knapp unter Clubchef-Stärke ist
-   schwerer als das alte Stellungsduell mit Startvorteil. Remis (nicht schlechter stehen) öffnet
-   aber schon, und nach drei Niederlagen geht es ohnehin weiter. Empfehlung: so lassen und im
-   Spieltest ansehen; wenn es nervt, zuerst den Versatz senken, nicht den Notausgang.
+1. **Stärke:** E + 260, 380, 560 ist gegen Bots in Lesestärke gemessen (18.11.2026,
+   `auftraege/wegsperren_staerke_18-11.md`, Messlauf `app/src/abenteuer/wegsperren.messung.ts`),
+   nicht gegen echte Leser. Ergebnis: S15 und S16 öffnen im ersten Versuch in etwa der Hälfte bis
+   drei Vierteln der Fälle, bis zum zweiten in vier von fünf oder mehr; die Versätze bleiben. Zoe
+   (S17) hat den Phasenversatz „Endspiel −1“ verloren: Ihre Begegnung ist ein Endspiel, sie
+   spielte also durchweg eine Stufe schwächer als E + 560. S17 bleibt trotzdem die leichteste
+   Sperre, weil dort schon das Remis öffnet und {held} mit etwa +3 beginnt. Wer das ändern will,
+   ändert die Regel (nur der Sieg öffnet), nicht den Versatz. Wenn es nervt, zuerst den Versatz
+   senken, nicht den Notausgang.
 2. **„Wer rauf zur Meisterschaft will“** (Zoe am Viehgitter): Die Straße führt nach Summit City,
    die Meisterschaft ist erst in der Capital Arena. Der Satz steht so im Konzept und ist
    übernommen; Alternative „Wer hier rauf will“.

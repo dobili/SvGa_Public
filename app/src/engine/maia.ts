@@ -13,7 +13,9 @@
  * rechnet eine Laufzeit (onnxruntime-web in der App, engine/maia-web.ts; onnxruntime-node in der
  * Messung, engine/messung/maia-node.testhilfe.ts).
  * Sonderfall: Maia-2 ist ohne die ersten 10 Halbzüge einer Partie trainiert; davor gibt es keine
- * Werte (dort wählen Praxisbuch und Wahlmodell ohne Maia).
+ * Werte (dort wählen Praxisbuch und Wahlmodell ohne Maia). Das gilt nur für Eröffnungsstellungen
+ * (`vorMaiaBereich`): Eine Partie aus einer Abbildung beginnt mit Zugnummer 1, ist aber oft ein
+ * Mittel- oder Endspiel, und dort rechnet Maia vom ersten Zug an.
  * Abhängigkeiten: engine/maia-zuege-daten.ts, engine/wahlmodell-daten.ts (Typ), chessops.
  */
 import { Chess } from "chessops/chess";
@@ -28,6 +30,11 @@ export type Maiamodell = "blitz" | "rapid";
 
 /** Erst ab diesem Halbzug (Training ohne die ersten zehn Halbzüge). */
 export const MAIA_AB_HALBZUG = 10;
+/**
+ * Mit so vielen Steinen gilt eine Stellung vor Halbzug 10 als Eröffnung (vorMaiaBereich): In neun
+ * Halbzügen wird selten mehr als viermal geschlagen.
+ */
+const EROEFFNUNG_AB_STEINEN = 28;
 const EBENEN = 18;
 const FELDER = 64;
 /** Länge der Brett-Eingabe je Stellung. */
@@ -54,6 +61,28 @@ export function halbzugAus(fen: string): number {
   const teile = fen.split(" ");
   const zugnummer = Number(teile[5] ?? 1);
   return (Number.isFinite(zugnummer) ? zugnummer - 1 : 0) * 2 + (teile[1] === "b" ? 1 : 0);
+}
+
+/** Zahl der Steine auf dem Brett laut FEN. Beispiel: Grundstellung → 32. */
+function steineAus(fen: string): number {
+  return (fen.split(" ")[0] ?? "").replace(/[^a-zA-Z]/g, "").length;
+}
+
+/**
+ * Liegt die Stellung in den ersten Zügen einer Partie, für die Maia nicht trainiert ist?
+ *
+ * Warum nicht die Zugnummer allein: Partien aus einer Abbildung des Buches (Stellungsduell,
+ * Endspiel) beginnen mit Zugnummer 1. Ohne Maia wählt das Wahlmodell dort allein, und bei einem
+ * einzigen vernünftigen Zug summieren sich die vielen schlechten Kandidaten: Die Gegnerin der
+ * Wegsperre S17 schlug nach 1. Dxd7 in Abbildung 8.2 die Dame nur in etwa der Hälfte der Fälle
+ * zurück und wurde im nächsten Zug matt (Befund 18.11.2026, mit Maia über 90 %). Eine echte
+ * Eröffnung hat nach weniger als zehn Halbzügen noch fast alle Steine.
+ * Eingabe: FEN. Ausgabe: true vor Halbzug 10 mit mindestens 28 Steinen.
+ * Beispiel: Italienisch nach 4 Zügen (32 Steine) → true; Abbildung 8.2 (17 Steine, Zugnummer 1)
+ * → false. Sonderfall: Vorgabepartie ohne einen Springer (31 Steine) → true.
+ */
+export function vorMaiaBereich(fen: string): boolean {
+  return halbzugAus(fen) < MAIA_AB_HALBZUG && steineAus(fen) >= EROEFFNUNG_AB_STEINEN;
 }
 
 /** Die Klasse einer Wertung. Beispiel: 1050 → 0, 1500 → 5, 2400 → 10. */
@@ -218,8 +247,10 @@ const SPEICHER_GROESSE = 32;
 /**
  * Maia-Wahrscheinlichkeiten der legalen Züge für einen Bot.
  * Eingaben: Laufzeit, Stellung, eigene Wertung und die des Gegners (in der Zeitklasse), Zeitklasse.
- * Ausgabe: Zug → Wahrscheinlichkeit, oder null vor Halbzug 10 und ohne legalen Zug.
- * Beispiel: nach 1. e4 e5 2. Sf3 Sc6 3. Lc4 Sf6 (Halbzug 6) → null; im Mittelspiel eine Karte.
+ * Ausgabe: Zug → Wahrscheinlichkeit, oder null in der Eröffnung vor Halbzug 10 (vorMaiaBereich)
+ * und ohne legalen Zug.
+ * Beispiel: nach 1. e4 e5 2. Sf3 Sc6 3. Lc4 Sf6 (Halbzug 6) → null; im Mittelspiel eine Karte,
+ * auch wenn die Partie dort mit Zugnummer 1 beginnt (Abbildung).
  */
 export async function maiawerte(
   laufzeit: Maialaufzeit,
@@ -228,7 +259,7 @@ export async function maiawerte(
   eloGegner: number,
   tempo: Wahltempo,
 ): Promise<ReadonlyMap<string, number> | null> {
-  if (halbzugAus(fen) < MAIA_AB_HALBZUG) return null;
+  if (vorMaiaBereich(fen)) return null;
   const modell = maiamodellFuer(tempo);
   const selbst = eloKlasse(eloSelbst);
   const gegner = eloKlasse(eloGegner);

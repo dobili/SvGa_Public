@@ -2081,7 +2081,8 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Anfang zwanzig); Story-Bibel und Roman haben noch „Mädchen“. (3) Victors Nachricht im Motel
       lautet im Spiel länger: „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt
       kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“, weil er das Brett nie gesehen hat;
-      im Roman steht die kurze Fassung.- [ ] RO39. **Wegsperren und kurze Partien (17.11.2026 nachts, umgesetzt, Widerspruch genügt):**
+      im Roman steht die kurze Fassung.
+- [ ] RO39. **Wegsperren und kurze Partien (17.11.2026 nachts, umgesetzt, Widerspruch genügt):**
       Deine Idee mit den Jugendlichen ist gebaut: das Testteam von Perfect Move (Zoe 16, Benji 14,
       Imani 15, in Westen mit Firmenlogo, ihr Tablet zeigt „ZERO lernt“). Drei Sperren, je eine zu
       Beginn von Akt 2, 3 und 4, nur bis zur ersten Ankunft in der nächsten Stadt: Benji im

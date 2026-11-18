@@ -145,12 +145,49 @@ jobs:
           cache-dependency-path: app/package-lock.json
       - name: Abhängigkeiten
         run: npm ci
+      # Browser und Systempakete kommen aus dem Actions-Cache: „install --with-deps“ lud sie jedes
+      # Mal über den langsamen Ubuntu-Spiegel (bis 6 Minuten, einmal Abbruch nach 12, Lauf
+      # 44382063747, 18.11.2026). Schlüssel: Playwright-Version, Browser und für die Pakete das
+      # Runner-Abbild (wechselt etwa wöchentlich, dann wird einmal neu geladen).
+      - name: Schlüssel für die Caches
+        id: schluessel
+        run: |
+          echo "playwright=$(node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
+          echo "abbild=${ImageOS:-unbekannt}-${ImageVersion:-unbekannt}" >> "$GITHUB_OUTPUT"
+      - name: Browser aus dem Cache
+        id: browsercache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}
+      - name: Systempakete aus dem Cache
+        id: paketcache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/systempakete
+          key: systempakete-${{ steps.schluessel.outputs.abbild }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}
       - name: Browser
         # Zeitgrenze: In der Nacht zum 26.10.2026 hing dieser Schritt 21 Minuten; so bricht er ab.
-        # Am 10.11.2026 lief er dreimal in die alte Grenze von 5 Minuten, weil der Ubuntu-Spiegel
-        # einzelne Pakete erst nach 30 Sekunden lieferte; 12 Minuten reichen dafür und fangen ein Hängen ab.
-        timeout-minutes: 12
-        run: npx playwright install --with-deps ${{ matrix.browser }}
+        # Das Skript versucht die Systempakete übers Netz bis zu dreimal mit je 4 Minuten.
+        timeout-minutes: 16
+        run: |
+          if [ "${{ steps.browsercache.outputs.cache-hit }}" != "true" ]; then
+            npx playwright install ${{ matrix.browser }}
+          fi
+          bash skripte/ci-systempakete.sh ${{ matrix.browser }} "${{ runner.temp }}/systempakete"
+      # Gleich speichern, nicht erst am Jobende: dort speichert actions/cache nur bei Erfolg.
+      - name: Browser in den Cache
+        if: steps.browsercache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ steps.browsercache.outputs.cache-primary-key }}
+      - name: Systempakete in den Cache
+        if: steps.paketcache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/systempakete
+          key: ${{ steps.paketcache.outputs.cache-primary-key }}
       - name: Build
         run: npm run build
       - name: Playwright (${{ matrix.name }}, Handygröße)

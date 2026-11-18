@@ -3,9 +3,12 @@
  *
  * Warum: Jeder Bildschirm, der Buchdaten braucht, soll Fehler gleich behandeln: sichtbar für den
  * Leser, nie verschluckt (Konzept 12).
- * Abhängigkeiten: React.
+ * Wird die Seite gerade verlassen (Neuladen), endet ein abgebrochener Abruf still: Das ist kein
+ * Ladefehler, sondern das Ende der Seite (seitenende.ts, CI-Wackler in WebKit, 18.11.2026).
+ * Abhängigkeiten: React, seitenende.ts.
  */
 import { useEffect, useState } from "react";
+import { beobachteSeitenende, seiteWirdVerlassen } from "./seitenende";
 
 export type Ladezustand<T> =
   | { readonly art: "laedt" }
@@ -19,10 +22,13 @@ export function useDaten<T>(lade: () => Promise<T>, schluessel: string): Ladezus
     wert: { art: "laedt" },
   });
   useEffect(() => {
+    beobachteSeitenende();
     let aktiv = true;
     lade()
       .then((wert) => aktiv && setzeZustand({ schluessel, wert: { art: "fertig", wert } }))
       .catch((fehler: unknown) => {
+        // Abgebrochen, weil die Seite geht: kein Fehler für den Leser, nichts mehr zu zeigen.
+        if (seiteWirdVerlassen()) return;
         console.error("Laden fehlgeschlagen:", fehler);
         const meldung = fehler instanceof Error ? fehler.message : String(fehler);
         if (aktiv) setzeZustand({ schluessel, wert: { art: "fehler", meldung } });

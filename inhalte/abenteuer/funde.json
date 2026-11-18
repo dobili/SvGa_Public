@@ -249,43 +249,50 @@
       "ort": "wegSummitCrossroads",
       "name": "fund.bisonhaar.name",
       "text": "fund.bisonhaar.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-bisonhaar.webp"
     },
     {
       "kennung": "postkartenMargaret",
       "ort": "desertSprings",
       "name": "fund.postkartenMargaret.name",
-      "text": "fund.postkartenMargaret.text"
+      "text": "fund.postkartenMargaret.text",
+      "bild": "bilder/fund-postkarten-margaret.webp"
     },
     {
       "kennung": "postkarteStaedte",
       "ort": "crossroads",
       "name": "fund.postkarteStaedte.name",
-      "text": "fund.postkarteStaedte.text"
+      "text": "fund.postkarteStaedte.text",
+      "bild": "bilder/fund-postkarte-staedte.webp"
     },
     {
       "kennung": "marshmallowStock",
       "ort": "pinewoodCamp",
       "name": "fund.marshmallowStock.name",
-      "text": "fund.marshmallowStock.text"
+      "text": "fund.marshmallowStock.text",
+      "bild": "bilder/fund-marshmallow-stock.webp"
     },
     {
       "kennung": "falkeAusHolz",
       "ort": "hochebene",
       "name": "fund.falkeAusHolz.name",
-      "text": "fund.falkeAusHolz.text"
+      "text": "fund.falkeAusHolz.text",
+      "bild": "bilder/fund-falke-aus-holz.webp"
     },
     {
       "kennung": "setliste960",
       "ort": "portDelacroix",
       "name": "fund.setliste960.name",
-      "text": "fund.setliste960.text"
+      "text": "fund.setliste960.text",
+      "bild": "bilder/fund-setliste960.webp"
     },
     {
       "kennung": "finchKarte",
       "ort": "wegMapleCedar",
       "name": "fund.finchKarte.name",
-      "text": "fund.finchKarte.text"
+      "text": "fund.finchKarte.text",
+      "bild": "bilder/fund-finch-karte.webp"
     },
     {
       "kennung": "problemheft",
@@ -297,80 +304,93 @@
       "kennung": "seite00",
       "ort": "wegMapleCedar",
       "name": "fund.seite00.name",
-      "text": "fund.seite00.text"
+      "text": "fund.seite00.text",
+      "bild": "bilder/fund-seite00.webp"
     },
     {
       "kennung": "finchBauerA",
       "ort": "wegMapleCedar",
       "name": "fund.finchBauerA.name",
-      "text": "fund.finchBauerA.text"
+      "text": "fund.finchBauerA.text",
+      "bild": "bilder/fund-finch-bauer-a.webp"
     },
     {
       "kennung": "initialen1952",
       "ort": "mapleFalls",
       "name": "fund.initialen1952.name",
-      "text": "fund.initialen1952.text"
+      "text": "fund.initialen1952.text",
+      "bild": "bilder/fund-initialen1952.webp"
     },
     {
       "kennung": "finchSpringerA",
       "ort": "wegCedarRiverton",
       "name": "fund.finchSpringerA.name",
-      "text": "fund.finchSpringerA.text"
+      "text": "fund.finchSpringerA.text",
+      "bild": "bilder/fund-finch-springer-a.webp"
     },
     {
       "kennung": "signalkelle",
       "ort": "wegCedarRiverton",
       "name": "fund.signalkelle.name",
-      "text": "fund.signalkelle.text"
+      "text": "fund.signalkelle.text",
+      "bild": "bilder/fund-signalkelle.webp"
     },
     {
       "kennung": "seite01",
       "ort": "wegCedarRiverton",
       "name": "fund.seite01.name",
-      "text": "fund.seite01.text"
+      "text": "fund.seite01.text",
+      "bild": "bilder/fund-seite01.webp"
     },
     {
       "kennung": "thermoskanneGwen",
       "ort": "wegCedarRiverton",
       "name": "fund.thermoskanneGwen.name",
-      "text": "fund.thermoskanneGwen.text"
+      "text": "fund.thermoskanneGwen.text",
+      "bild": "bilder/fund-thermoskanne-gwen.webp"
     },
     {
       "kennung": "kegelKerbe",
       "ort": "lockport",
       "name": "fund.kegelKerbe.name",
-      "text": "fund.kegelKerbe.text"
+      "text": "fund.kegelKerbe.text",
+      "bild": "bilder/fund-kegel-kerbe.webp"
     },
     {
       "kennung": "karabiner",
       "ort": "wegDelacroixDesert",
       "name": "fund.karabiner.name",
-      "text": "fund.karabiner.text"
+      "text": "fund.karabiner.text",
+      "bild": "bilder/fund-karabiner.webp"
     },
     {
       "kennung": "seite06",
       "ort": "wegDelacroixDesert",
       "name": "fund.seite06.name",
       "text": "fund.seite06.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite06.webp"
     },
     {
       "kennung": "finchLaeuferB",
       "ort": "wegDelacroixDesert",
       "name": "fund.finchLaeuferB.name",
-      "text": "fund.finchLaeuferB.text"
+      "text": "fund.finchLaeuferB.text",
+      "bild": "bilder/fund-finch-laeufer-b.webp"
     },
     {
       "kennung": "finchBauerG",
       "ort": "sternwarte",
       "name": "fund.finchBauerG.name",
-      "text": "fund.finchBauerG.text"
+      "text": "fund.finchBauerG.text",
+      "bild": "bilder/fund-finch-bauer-g.webp"
     },
     {
       "kennung": "kreide3",
       "ort": "wegDesertSummit",
       "name": "fund.kreide3.name",
-      "text": "fund.kreide3.text"
+      "text": "fund.kreide3.text",
+      "bild": "bilder/fund-kreide3.webp"
     },
     {
       "kennung": "finchSpringerB",
@@ -383,32 +403,37 @@
       "ort": "wegDesertSummit",
       "name": "fund.seite08.name",
       "text": "fund.seite08.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite08.webp"
     },
     {
       "kennung": "spurPM4",
       "ort": "wegDesertSummit",
       "name": "fund.spurPM4.name",
-      "text": "fund.spurPM4.text"
+      "text": "fund.spurPM4.text",
+      "bild": "bilder/fund-spur-p-m4.webp"
     },
     {
       "kennung": "seite03",
       "ort": "hochebene",
       "name": "fund.seite03.name",
       "text": "fund.seite03.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite03.webp"
     },
     {
       "kennung": "finchTurmB",
       "ort": "hochebene",
       "name": "fund.finchTurmB.name",
-      "text": "fund.finchTurmB.text"
+      "text": "fund.finchTurmB.text",
+      "bild": "bilder/fund-finch-turm-b.webp"
     },
     {
       "kennung": "diplomKira",
       "ort": "hochebene",
       "name": "fund.diplomKira.name",
-      "text": "fund.diplomKira.text"
+      "text": "fund.diplomKira.text",
+      "bild": "bilder/fund-diplom-kira.webp"
     },
     {
       "kennung": "spurPM6",
@@ -520,154 +545,178 @@
       "kennung": "spurPM5",
       "ort": "wegSummitCrossroads",
       "name": "fund.spurPM5.name",
-      "text": "fund.spurPM5.text"
+      "text": "fund.spurPM5.text",
+      "bild": "bilder/fund-spur-p-m5.webp"
     },
     {
       "kennung": "finchBauerD",
       "ort": "wegSummitCrossroads",
       "name": "fund.finchBauerD.name",
-      "text": "fund.finchBauerD.text"
+      "text": "fund.finchBauerD.text",
+      "bild": "bilder/fund-finch-bauer-d.webp"
     },
     {
       "kennung": "seite09",
       "ort": "wegSummitCrossroads",
       "name": "fund.seite09.name",
       "text": "fund.seite09.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite09.webp"
     },
     {
       "kennung": "rangerabzeichen",
       "ort": "wegSummitCrossroads",
       "name": "fund.rangerabzeichen.name",
-      "text": "fund.rangerabzeichen.text"
+      "text": "fund.rangerabzeichen.text",
+      "bild": "bilder/fund-rangerabzeichen.webp"
     },
     {
       "kennung": "kreide4",
       "ort": "wegCrossroadsPinewood",
       "name": "fund.kreide4.name",
-      "text": "fund.kreide4.text"
+      "text": "fund.kreide4.text",
+      "bild": "bilder/fund-kreide4.webp"
     },
     {
       "kennung": "seite10",
       "ort": "wegCrossroadsPinewood",
       "name": "fund.seite10.name",
       "text": "fund.seite10.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite10.webp"
     },
     {
       "kennung": "finchDame",
       "ort": "wegCrossroadsPinewood",
       "name": "fund.finchDame.name",
-      "text": "fund.finchDame.text"
+      "text": "fund.finchDame.text",
+      "bild": "bilder/fund-finch-dame.webp"
     },
     {
       "kennung": "fotoLebendschach",
       "ort": "wegCrossroadsPinewood",
       "name": "fund.fotoLebendschach.name",
-      "text": "fund.fotoLebendschach.text"
+      "text": "fund.fotoLebendschach.text",
+      "bild": "bilder/fund-foto-lebendschach.webp"
     },
     {
       "kennung": "geheimnisTuerke",
       "ort": "jahrmarkt",
       "name": "fund.geheimnisTuerke.name",
       "text": "fund.geheimnisTuerke.text",
-      "muenzen": 10
+      "muenzen": 10,
+      "bild": "bilder/fund-geheimnis-tuerke.webp"
     },
     {
       "kennung": "seite02",
       "ort": "wegSiliconDelacroix",
       "name": "fund.seite02.name",
       "text": "fund.seite02.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite02.webp"
     },
     {
       "kennung": "finchTurmA",
       "ort": "wegSiliconDelacroix",
       "name": "fund.finchTurmA.name",
-      "text": "fund.finchTurmA.text"
+      "text": "fund.finchTurmA.text",
+      "bild": "bilder/fund-finch-turm-a.webp"
     },
     {
       "kennung": "spurPM3",
       "ort": "wegSiliconDelacroix",
       "name": "fund.spurPM3.name",
-      "text": "fund.spurPM3.text"
+      "text": "fund.spurPM3.text",
+      "bild": "bilder/fund-spur-p-m3.webp"
     },
     {
       "kennung": "kapitaensmuetze",
       "ort": "wegSiliconDelacroix",
       "name": "fund.kapitaensmuetze.name",
       "text": "fund.kapitaensmuetze.text",
-      "extra": "aussehen:kapitaensmuetze"
+      "extra": "aussehen:kapitaensmuetze",
+      "bild": "bilder/fund-kapitaensmuetze.webp"
     },
     {
       "kennung": "seite05",
       "ort": "bayou",
       "name": "fund.seite05.name",
       "text": "fund.seite05.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite05.webp"
     },
     {
       "kennung": "finchBauerC",
       "ort": "bayou",
       "name": "fund.finchBauerC.name",
-      "text": "fund.finchBauerC.text"
+      "text": "fund.finchBauerC.text",
+      "bild": "bilder/fund-finch-bauer-c.webp"
     },
     {
       "kennung": "formularCafeDesExiles",
       "ort": "bayou",
       "name": "fund.formularCafeDesExiles.name",
-      "text": "fund.formularCafeDesExiles.text"
+      "text": "fund.formularCafeDesExiles.text",
+      "bild": "bilder/fund-formular-cafe-des-exiles.webp"
     },
     {
       "kennung": "seite12",
       "ort": "wegGhostCapital",
       "name": "fund.seite12.name",
       "text": "fund.seite12.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite12.webp"
     },
     {
       "kennung": "finchKoenig",
       "ort": "wegGhostCapital",
       "name": "fund.finchKoenig.name",
-      "text": "fund.finchKoenig.text"
+      "text": "fund.finchKoenig.text",
+      "bild": "bilder/fund-finch-koenig.webp"
     },
     {
       "kennung": "finchsBuchsbaum",
       "ort": "wegGhostCapital",
       "name": "fund.finchsBuchsbaum.name",
       "text": "fund.finchsBuchsbaum.text",
-      "extra": "figurensatz:finchs-buchsbaum"
+      "extra": "figurensatz:finchs-buchsbaum",
+      "bild": "bilder/fund-finchs-buchsbaum.webp"
     },
     {
       "kennung": "fotoWeltschachtag",
       "ort": "wegGhostCapital",
       "name": "fund.fotoWeltschachtag.name",
-      "text": "fund.fotoWeltschachtag.text"
+      "text": "fund.fotoWeltschachtag.text",
+      "bild": "bilder/fund-foto-weltschachtag.webp"
     },
     {
       "kennung": "kreide5",
       "ort": "capitalArena",
       "name": "fund.kreide5.name",
-      "text": "fund.kreide5.text"
+      "text": "fund.kreide5.text",
+      "bild": "bilder/fund-kreide5.webp"
     },
     {
       "kennung": "fotoKreidenacht",
       "ort": "capitalArena",
       "name": "fund.fotoKreidenacht.name",
-      "text": "fund.fotoKreidenacht.text"
+      "text": "fund.fotoKreidenacht.text",
+      "bild": "bilder/fund-foto-kreidenacht.webp"
     },
     {
       "kennung": "fotoMappe",
       "ort": "capitalArena",
       "name": "fund.fotoMappe.name",
-      "text": "fund.fotoMappe.text"
+      "text": "fund.fotoMappe.text",
+      "bild": "bilder/fund-foto-mappe.webp"
     },
     {
       "kennung": "buchVonGrundAuf",
       "ort": "capitalArena",
       "name": "fund.buchVonGrundAuf.name",
       "text": "fund.buchVonGrundAuf.text",
-      "extra": "brett:manuskript"
+      "extra": "brett:manuskript",
+      "bild": "bilder/fund-buch-von-grund-auf.webp"
     },
     {
       "kennung": "konservendose",

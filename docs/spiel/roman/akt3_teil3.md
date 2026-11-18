@@ -793,6 +793,7 @@ Ich sah zur Seite. Er stand am Beckenrand und sah hinauf.
 
 Als sie aufgelegt hatte, war da noch eine Nachricht. Ohne Gruß. Zwei Zeilen.
 
+_Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt kein altes Brett mit._
 _Ich glaube dir. Wegen des Bretts._
 
 Und darunter, eine Minute später gesendet:

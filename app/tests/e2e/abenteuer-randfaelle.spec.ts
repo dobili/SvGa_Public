@@ -17,6 +17,11 @@ import { feldDarunter } from "./abenteuer-karte";
 import { oeffneEinstellungen } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
+// Die Tests dieser Datei teilen keinen Zustand (jeder startet seinen eigenen Spielstand); parallel
+// verteilt Playwright sie auf Worker und Shards, statt die ganze Datei in einem Worker abzuarbeiten
+// (eine der längsten Dateien der Oberfläche, CI vom 18.11.2026).
+test.describe.configure({ mode: "parallel" });
+
 /** So lange darf der Gegner für einen Zug rechnen (ms). */
 const ENGINE_FRIST = 30_000;
 

@@ -568,7 +568,7 @@ Ink-Variablen, die über Szenen hinweg gelten, liegen in `Abenteuerstand.dialogv
   - `held`: Name des Helden aus dem Spielstand, nur gelesen.
 - **Von Ink gesetzt:** Merker der Szenen (`…Gesehen`, `…Getroffen`), Zähler wie `ambroseVertrauen`, und die Nachgespräch-Marken `clubkampfBesprochen` (zuletzt gewürdigte Nadel).
 - Die Hülle öffnet nach einer Partie oder Runde keinen Dialog von selbst; das Nachgespräch kommt beim nächsten Ansprechen der Figur.
-- **Wegsperren S15 bis S17** (`32_Wegsperren.md`): je Sperre `testteam<Ort>Gesehen`, `testteam<Ort>Durch` (öffnet den Übergang für immer), `testteam<Ort>Spielt` (eine Partie ist noch nicht gewertet) und `testteam<Ort>Niederlagen` (Zahl; die dritte öffnet) mit `<Ort>` = `Wald`, `Bruecke`, `Gitter`, gesetzt von der Ink-Datei des Wegs. `testteamStand` (0 bis 3, je Akt eine Stufe) lesen auch `capital-arena-aussen` und `capital-arena-ubahnhof`. Niederlagen zählt eine Variable, weil die App jeden Dialog als neue Geschichte beginnt.
+- **Wegsperren S15 bis S17** (`32_Wegsperren.md`): je Sperre `testteam<Ort>Gesehen`, `testteam<Ort>Durch` (öffnet den Übergang für immer), `testteam<Ort>Spielt` (eine Partie ist noch nicht gewertet) und `testteam<Ort>Niederlagen` (Zahl der Fehlversuche, an S17 auch Remis; der dritte öffnet) mit `<Ort>` = `Wald`, `Bruecke`, `Gitter`, gesetzt von der Ink-Datei des Wegs. `testteamStand` (0 bis 3, je Akt eine Stufe) lesen auch `capital-arena-aussen` und `capital-arena-ubahnhof`. Niederlagen zählt eine Variable, weil die App jeden Dialog als neue Geschichte beginnt.
 
 Verzeichnis (Stand Akt 1, aus dem Bericht von mittel-1 vom 08.11.2026; MF = `maple-falls-`, CC = `cedar-creek-`):
 

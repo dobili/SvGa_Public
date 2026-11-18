@@ -103,14 +103,35 @@ Stand, gleiche Partien) und 30 weitere.
 | S17    | 1200 | 6/6/6, 1,09                | 25   | 24    | 11         | 82 %        | 97 %   | 1 %        |
 | S17    | 1600 | 7/7/7, 0,87                | 43   | 16    | 1          | 98 %        | 100 %  | 0 %        |
 
+## Entscheidung, umgesetzt (18.11.2026): S17 öffnet nur mit Sieg
+
+Mit „Sieg oder Remis öffnet“ war S17 fast immer offen (Tabelle oben, 80 bis 98 % im ersten
+Versuch). Das lag am Format, nicht am Versatz: {held} beginnt mit etwa +3, und schon das Remis
+(über −1,5) öffnete; ein höherer Versatz läge über Clubchef Ward. Entschieden und gebaut: An S17
+öffnet nur noch der Sieg („Endspiel gewinnen“ heißt so). Ein Remis zählt als Fehlversuch wie die
+Niederlage, und der dritte Fehlversuch öffnet weiter (Notausgang). S15 und S16 sind unverändert.
+Wo es steckt: `inhalte/abenteuer/dialoge/de/weg-desert-summit.ink` (Knoten `testteam_gitter`,
+`testteam_gitter_fehlversuch`), Satz `erzaehlung.testteamGitter.remis`; Tests in
+`app/src/abenteuer/dialog/wegsperre-s17.test.ts` und `app/tests/e2e/abenteuer-wegsperre-partie.spec.ts`.
+
+Erwartete Quoten für S17 mit der neuen Regel, **gerechnet aus den 60 Partien je Zelle der Tabelle
+„Nachher“, nicht neu gemessen** (die Regel ändert keine Partie, nur ihre Wertung am Übergang; ein
+neuer Lauf mit derselben Saat ergäbe dieselben Partien):
+
+| E    | Sieg von 60 | offen im 1. | bis 2. | Notausgang (drei Fehlversuche) |
+| ---- | ----------- | ----------- | ------ | ------------------------------ |
+| 800  | 26          | 43 %        | 68 %   | 18 %                           |
+| 1200 | 25          | 42 %        | 66 %   | 20 %                           |
+| 1600 | 43          | 72 %        | 92 %   | 2 %                            |
+
+„Bis 2.“ und „Notausgang“ wie oben gerechnet, als wären die Versuche unabhängig; bei 60 Partien
+schwankt eine Quote um etwa ±6 Prozentpunkte. Bei E = 800 und 1200 käme demnach etwa jeder Fünfte
+erst über den Notausgang durch. Das ist mehr als an S15 und S16 (1 bis 11 %) und der Punkt, den ein
+Spieltest mit echten Lesern zuerst prüfen sollte. Stellschraube dafür wäre der Versatz von Zoe.
+
 ## Was bleibt
 
-1. **S17 öffnet weiter fast immer**, bei E = 1600 in 98 %. Das liegt am Format, nicht am Versatz:
-   {held} beginnt mit etwa +3, und schon das Remis (über −1,5) öffnet. Gewonnen wird nur noch in
-   gut vier von zehn Partien (E = 800 und 1200). Wer S17 enger will, lässt dort nur den Sieg
-   öffnen (dann 43 %, 42 %, 72 % im ersten Versuch, etwa 68 %, 66 %, 92 % bis zum zweiten) oder
-   nimmt eine knappere Stellung; ein höherer Versatz läge über Clubchef Ward. Nicht umgesetzt: Es
-   ändert die Regel „Sieg oder Remis öffnet“ und die Dialoge.
+1. **S17 ist jetzt die strengste Sperre** (voriger Abschnitt); gegen echte Leser ist das ungeprüft.
 2. **Die Stufen sind grob (je 300 Elo).** Derselbe Versatz trifft je nach E die Mitte oder den
    Rand einer Stufe: Imani ist bei E = 1600 Stufe 7 mit Häufigkeit 1,31 und damit leichter (82 %)
    als bei E = 1200 mit Stufe 5 und 0,84 (70 %). Ein Versatz lässt sich deshalb nur auf etwa eine

@@ -242,7 +242,7 @@ eigenen Bauern. Mae hatte mir das vor einer Stunde gezeigt.
 
 Mr. Boateng nickte, zog das Paketband ab und stellte eine neue Stellung auf.
 
-„Die alte“, sagte er, „hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos, sie
+„Die alte“, sagte er, „hat mir eine junge Frau gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos, sie
 war gerade angekommen, und sie hat im ganzen Staat Turniere gespielt. Die Männer mochten das
 nicht.“ Er lächelte auf das Brett hinunter. „Sie hat gewartet. Immer. Sie hat einfach gewartet,
 bis einer zu früh gekommen ist.“
@@ -441,7 +441,7 @@ niemanden.“
 | Ambrose am Fluss: Kutschenfahrt nach Norden, der Matrose aus Marseille und die Orange.                    | Erste eigene Erinnerung; bereitet 1866 vor, ohne es zu nennen.    | Dialog an der Fährstelle (1 Minute), nur beim ersten Besuch.                                                 |
 | Die Turmuhr von Cedar Creek schlägt bei Ankunft, im Archiv und beim Clubkampf.                            | Wahrzeichen als Klang; gliedert den Ort.                          | Geräusch, an Szenen gebunden.                                                                                |
 | Mrs. Okafor erkennt das Brett und fragt nicht weiter; „sechs Wörter“ trifft Ambrose.                      | Ihre Art; sein Stolz.                                             | Ein Satz mehr für Ambrose.                                                                                   |
-| Mr. Boateng erzählt, wie das Mädchen aus Lagos spielte: „Sie hat gewartet.“                               | Steckbrief von Mrs. Okafor als Geschichte statt als Zahl.         | Text der Steckbriefzeile.                                                                                    |
+| Mr. Boateng erzählt, wie die junge Frau aus Lagos spielte: „Sie hat gewartet.“                               | Steckbrief von Mrs. Okafor als Geschichte statt als Zahl.         | Text der Steckbriefzeile.                                                                                    |
 | 1858 ausführlich: Saal über dem Kaffeehaus, der Turm, der stille Läuferzug, vierzig Minuten.              | Der Kern von Ambroses Fehler wird ein Bild.                       | Dialog von Szene 19 ausbauen; ein stilles Standbild der Stellung.                                            |
 | „Später“ wird an den ersten Tag zurückgebunden.                                                           | Leitmotiv spürbar.                                                | Wenn {held} am ersten Tag „Später“ gewählt hat, erinnert sich der Dialog daran.                              |
 | Ambrose nennt {held} zum ersten Mal beim Namen.                                                           | Sichtbarer Schritt seines Bogens (Dokument 19, 5.2).              | Bis hierher in allen Dialogen nur „Kind“ oder „Lehrling“.                                                    |

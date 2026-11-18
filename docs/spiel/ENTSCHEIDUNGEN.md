@@ -1250,7 +1250,9 @@ herunterladen“ lädt das Maia-Paket mit, wenn es noch nicht auf dem Gerät ist
 Maia gilt als „fehlt“, und im Spiel spielt Maia unabhängig vom Schalter in den App-Einstellungen
 mit (`anbindung/maiapflicht.ts`). In der Schach-App bleibt Maia freiwillig. Der Stellungsvorrat
 (bisher aus Partien Stockfish gegen Stockfish auf Stufen) wird mit den App-Bots neu erzeugt
-(Auftrag an mittel-3).
+(Auftrag an mittel-3). Ohne Netz startet ein vorhandenes Spiel auch ohne Maia (Empfehlung,
+18.11.2026), damit niemand vor einem gesperrten Spiel steht; mit Netz bietet die Startkarte das
+Laden wieder an.
 
 ## Statisten sind Hindernisse, Übergänge im Stand, kurze Partien zu nach dem Ende (18.11.2026)
 

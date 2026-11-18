@@ -8,7 +8,10 @@ import { ladeSpielMitMaia, mitMaiaPflicht, type Maiazugriff } from "./maiapflich
 const MAIA_BYTES = 96_000_000;
 const SPIEL_BYTES = 40_000_000;
 
-function zugriff(geladen: boolean): Maiazugriff & { lade: ReturnType<typeof vi.fn> } {
+function zugriff(
+  geladen: boolean,
+  online = true,
+): Maiazugriff & { lade: ReturnType<typeof vi.fn> } {
   return {
     geladen: () => Promise.resolve(geladen),
     groesse: () => Promise.resolve(MAIA_BYTES),
@@ -17,6 +20,7 @@ function zugriff(geladen: boolean): Maiazugriff & { lade: ReturnType<typeof vi.f
       return Promise.resolve();
     }),
     melde: () => Promise.resolve(true),
+    online: () => online,
   };
 }
 
@@ -32,6 +36,11 @@ describe("mitMaiaPflicht", () => {
       art: "fehlt",
       bytes: MAIA_BYTES,
     });
+  });
+
+  it("lässt ein vorhandenes Spiel ohne Netz auch ohne Maia gelten", async () => {
+    const spiel = { art: "vorhanden", version: "1", bytes: SPIEL_BYTES } as const;
+    expect(await mitMaiaPflicht(spiel, zugriff(false, false))).toEqual(spiel);
   });
 
   it("zählt beide Größen zusammen, wenn beides fehlt", async () => {

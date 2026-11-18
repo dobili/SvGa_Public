@@ -9,7 +9,9 @@
  * Abhängigkeiten: app/maiapaket.ts (Laden, Prüfen, Größe), paket/paketlader.ts (Spielpaket),
  * schnittstelle/paket.ts (Paketzustand).
  * Sonderfälle: Ohne Cache Storage meldet maiaGeladen „nein“; dann scheitert schon das Spielpaket
- * mit eigenem Fehler. Ohne Netz bleibt die Größe von Maia unbekannt und fehlt in der Anzeige.
+ * mit eigenem Fehler. Ohne Netz und ohne Maia startet ein vorhandenes Spiel trotzdem, nur ohne Maia
+ * (Empfehlung umgesetzt, 18.11.2026: niemand soll vor einem gesperrten Spiel stehen); mit Netz
+ * bietet die Startkarte das Laden wieder an.
  */
 import {
   ladeMaia,
@@ -27,6 +29,8 @@ export interface Maiazugriff {
   readonly groesse: () => Promise<number | undefined>;
   readonly lade: (fortschritt: Ladefortschritt) => Promise<void>;
   readonly melde: () => Promise<unknown>;
+  /** Ist das Gerät gerade online? */
+  readonly online: () => boolean;
 }
 
 /** Der echte Zugriff auf das Maia-Paket der App. */
@@ -35,13 +39,15 @@ export const MAIA_DER_APP: Maiazugriff = {
   groesse: () => maiaverzeichnis().then(paketBytes, () => undefined),
   lade: ladeMaia,
   melde: pruefeMaia,
+  online: () => typeof navigator === "undefined" || navigator.onLine,
 };
 
 /**
  * Zustand des Spielpakets mit Maia als Teil davon.
  * Eingaben: Zustand des Spielpakets allein, Maia-Zugriff. Ausgabe: derselbe Zustand, wenn Maia
  * da ist; sonst „fehlt“ mit der Größe, die noch zu laden ist (Spielpaket, falls es fehlt, plus Maia).
- * Beispiel: Spielpaket vorhanden, Maia fehlt (96 MB) → { art: "fehlt", bytes: 96 MB }.
+ * Beispiel: Spielpaket vorhanden, Maia fehlt (96 MB) → { art: "fehlt", bytes: 96 MB }; dasselbe
+ * ohne Netz → „vorhanden“ (das Spiel läuft dann ohne Maia).
  */
 export async function mitMaiaPflicht(
   spiel: Paketzustand,
@@ -49,6 +55,7 @@ export async function mitMaiaPflicht(
 ): Promise<Paketzustand> {
   if (spiel.art !== "vorhanden" && spiel.art !== "fehlt") return spiel;
   if (await maia.geladen()) return spiel;
+  if (spiel.art === "vorhanden" && !maia.online()) return spiel;
   const maiaBytes = await maia.groesse();
   const spielBytes = spiel.art === "fehlt" ? spiel.bytes : 0;
   if (maiaBytes === undefined || spielBytes === undefined) return { art: "fehlt" };

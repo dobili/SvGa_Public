@@ -6,7 +6,7 @@
  * Modul bekommt das fertige Objekt über `verbinde` und kennt die App sonst nicht. Lebt in der
  * Hülle (AbenteuerAnsicht.tsx) als Hook, weil Navigation und Maia-Stand Hooks sind.
  * Abhängigkeiten: speicher/speicher.ts, speicher/partien.ts, spiel/partie.ts,
- * app/navigationsKontext.ts, einstellungen/maiastand.ts, paket/paketlader.ts,
+ * app/navigationsKontext.ts, einstellungen/maiastand.ts, paket/paketlader.ts, anbindung/maiapflicht.ts,
  * anbindung/partiestart.ts, anbindung/partieergebnis.ts, regeln/gegnerstaerke.ts, daten/laden.ts.
  */
 import { useMemo } from "react";
@@ -16,7 +16,7 @@ import { findePartie, mitLaufender } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
 import { neuePartie } from "../../spiel/partie";
 import { aktuelleWertung } from "../../spiel/wertung";
-import { useMaiaAktiv } from "../../ui/komponenten/einstellungen/maiastand";
+import { useMaiaBereit } from "../../ui/komponenten/einstellungen/maiastand";
 import { neueKennung } from "../../ui/komponenten/spielstart/spielwahl";
 import { auswertungsEngine } from "../../engine/engineDienst";
 import { wertFuer } from "../../engine/fallenurteil";
@@ -27,6 +27,7 @@ import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { sucheKipppunkt, type Bewerter } from "./kipppunkt";
+import { ladeSpielMitMaia, mitMaiaPflicht } from "./maiapflicht";
 import { partieeinstellungAus } from "./partiestart";
 import { partieergebnisAus } from "./partieergebnis";
 import { mitFremderEroeffnung, mitVorratsstellung } from "./vorratsstellung";
@@ -50,7 +51,7 @@ let bekannterPaketzustand: Paketzustand = { art: "fehlt" };
 
 /** Fragt den Paketzustand neu ab und merkt ihn. */
 export async function aktualisierePaketzustand(): Promise<Paketzustand> {
-  bekannterPaketzustand = await paketzustand();
+  bekannterPaketzustand = await mitMaiaPflicht(await paketzustand());
   return bekannterPaketzustand;
 }
 
@@ -126,7 +127,9 @@ function findeAbenteuerpartie(kennung: string) {
 /** Baut die Dienste; stabil, solange Navigation und Maia-Stand gleich bleiben. */
 export function useAppdienste(): Appdienste {
   const { navigiere, zurueck } = useNavigation();
-  const mitMaia = useMaiaAktiv();
+  // Maia ist im Spiel Pflicht (maiapflicht.ts): spielt mit, sobald es geladen ist, ohne den
+  // Schalter der App-Einstellungen.
+  const mitMaia = useMaiaBereit();
   return useMemo<Appdienste>(
     () => ({
       wertung: () => aktuelleWertung(speicherzustand().daten.spiel.wertung),
@@ -180,7 +183,7 @@ export function useAppdienste(): Appdienste {
       },
       paket: () => bekannterPaketzustand,
       ladePaket: async (fortschritt) => {
-        await ladePaket(fortschritt);
+        await ladeSpielMitMaia(ladePaket, fortschritt);
         await aktualisierePaketzustand();
       },
       zurueck,

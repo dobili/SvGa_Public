@@ -42,16 +42,47 @@ Einstieg haben dazu Skater Jo (Akt 1), Mr. Harlan (Akt 2), Buck (Akt 3) und Rang
 
 ## Vorrat Bot gegen Bot (Zusatz des Autors, 17.11.2026)
 
-- **Pipeline:** `python -m pipeline.abenteuer.stellungsvorrat --erzeugen` lässt Stockfish 19 lite
-  (dieselbe Engine wie die App) je Stärkeband mit der Stufe des Bandes gegen sich selbst spielen.
-  Die ersten vier Halbzüge sind zufällig, damit die Partien verschieden werden. Ab Halbzug 16 wird
-  jede Stellung mit Tiefe 12 bewertet, solange ihre Phase noch zu einem gesuchten Format passt.
-  Je Partie kommt höchstens eine Stellung je Format in den Vorrat, mit der Zugfolge bis dahin.
-  `--pruefen` bewertet alles noch einmal und prüft Zugfolge, Phase und Fenster. Die
-  App-Bots mit ihren Fehlerprofilen laufen nur in der App (TypeScript, Maia); deshalb spielt hier
-  die schnelle Engine mit Stufen, wie im Auftrag als Rückfall vorgesehen.
-- **Bänder:** bis 900 (Stufe 0), 900 bis 1200 (3), 1200 bis 1500 (6), 1500 bis 1800 (10), ab 1800
-  (15); je Format bis zu acht Stellungen (Stand siehe `stellungsvorrat.json`).
+- **Partien (seit 18.11.2026, Wunsch des Autors):** Vorgefertigte Bots der App spielen
+  gegeneinander, über denselben Zugweg wie in einer Partie der App: Stufen je Phase, Fehlerarten
+  mit Gewichten der Persönlichkeit, Stil, Maia an (wie `partiestart.ts` mit `mitMaia`) und die
+  Eröffnung aus dem Praxisbuch (`EROEFFNUNG_PRAXIS`, Buchtiefe des Bots) statt vier zufälliger
+  Halbzüge. Messlauf `app/src/abenteuer/vorratspartien.messung.ts` (Node, Stockfish lite,
+  Maia über onnxruntime-node), je Band ein Lauf, etwa 15 bis 30 Sekunden je Partie; die Partien liegen
+  nur lokal in `buch/arbeit/vorratspartien/`. Je Band spielen sechs bis sieben Bots mit
+  mindestens vier Stilen jeder gegen jeden, im Wechsel der Farben (`vorratsbots.ts`).
+- **Auswahl:** `python -m pipeline.abenteuer.stellungsvorrat --aus-partien
+buch/arbeit/vorratspartien` geht die Partien durch: Ab Halbzug 16 wird jede Stellung mit
+  Tiefe 12 bewertet, solange ihre Phase noch zu einem gesuchten Format passt. Je Partie kommt
+  höchstens eine Stellung je Format in den Vorrat, mit der Zugfolge bis dahin und der Herkunft
+  (`herkunft`: Bots, Stile, Halbzug). `--pruefen` bewertet alles noch einmal und prüft Zugfolge,
+  Phase und Fenster. Stand 18.11.2026: 60 Partien je Band, für Band 1 und 2 je 30 mehr (ein
+  „Remis halten“ fehlte), alle 160 Stellungen voll, `--pruefen` und `kurzformate` ohne Funde.
+- **Rückfall:** `--erzeugen` lässt wie bis 17.11.2026 Stockfish 19 lite mit der Stufe des Bandes
+  (Skill Level 0, 3, 6, 10, 15) gegen sich selbst spielen, nach vier zufälligen Halbzügen
+  (`herkunft.quelle` „stockfish“). Nur nehmen, wenn die App-Bots nicht laufen.
+- **Bänder:** bis 900, 900 bis 1200, 1200 bis 1500, 1500 bis 1800, ab 1800; je Format acht
+  Stellungen.
+- **Gegenprobe alt (Stockfish) → neu (App-Bots)** (`python -m pipeline.abenteuer.vorratsvergleich
+ALT NEU`). Hängend: Figur ohne Bauern und Könige, angegriffen und ungedeckt. Figurenmaterial
+  beider Seiten ohne Bauern (Grundstellung 62), Ungleichgewicht in Bauerneinheiten.
+
+| Band  | Stellungen | mit hängender Figur | hängend je Stellung | Figurenmaterial | Ungleichgewicht | Halbzug | Eröffnungen (4 Halbzüge) | 1. e4, d4, Sf3, c4 |
+| ----- | ---------- | ------------------- | ------------------- | --------------- | --------------- | ------- | ------------------------ | ------------------ |
+| band1 | 32 → 32    | 41% → 34%           | 0.44 → 0.50         | 38.4 → 39.3     | 2.1 → 2.9       | 50 → 51 | 15 → 20                  | 16% → 50%          |
+| band2 | 32 → 32    | 28% → 16%           | 0.34 → 0.19         | 39.0 → 40.3     | 2.1 → 2.6       | 51 → 44 | 17 → 20                  | 22% → 59%          |
+| band3 | 32 → 32    | 16% → 22%           | 0.22 → 0.25         | 37.7 → 34.5     | 1.8 → 1.6       | 47 → 45 | 14 → 13                  | 12% → 78%          |
+| band4 | 32 → 32    | 22% → 28%           | 0.22 → 0.41         | 38.4 → 39.5     | 1.1 → 1.4       | 49 → 44 | 11 → 16                  | 12% → 78%          |
+| band5 | 32 → 32    | 28% → 9%            | 0.41 → 0.12         | 38.3 → 41.5     | 1.0 → 1.4       | 40 → 43 | 14 → 11                  | 6% → 91%           |
+| alle  | 160 → 160  | 27% → 22%           | 0.33 → 0.29         | 38.4 → 39.0     | 1.6 → 2.0       | 47 → 45 | 71 → 70                  | 14% → 71%          |
+
+Deutlich anders sind die Eröffnungen: Die alten Stellungen begannen mit zufälligen Zügen
+(häufigste Anfänge `h4 f6`, `b4 Na6`, `e3 Nh6`, `b3 Na6`), die neuen mit dem, was Menschen der
+Stärke spielen (`e4 e5`, `d4 d5`, `e4 c5`, `Nf3 d5`; in Band 1 auch `a3 e5`, wie im Praxisbuch
+für schwache Spieler). Hängende Figuren und Material ändern sich wenig und ohne klare Richtung:
+Die Fenster der Formate (etwa +0,8 bis +2,5) lassen grobe, noch offene Fehler ohnehin nicht zu;
+die Fehler der Bots zeigen sich eher darin, wie eine Stellung entstand (etwa das frühe
+Damenschach 4. De2+ vor `band3.vorteil1`), als in einer offen hängenden Figur im Übernahmepunkt.
+
 - **App:** Startstellung `{ "art": "vorrat", "format": "stellungsduell" | "vorteil" |
 "endspielSieg" | "endspielRemis" }`. Gewählt wird nach der Zielstärke des Gegners, zufällig
   und ohne Wiederholung, bis ein Format im Band durch ist (`vorratGenutzt` im Spielstand,

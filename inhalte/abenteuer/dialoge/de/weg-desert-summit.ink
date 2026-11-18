@@ -48,12 +48,18 @@ VAR spurPM4Gezaehlt = false
 ~ earlGetroffen = true
 Durchs Fenster des Diners sieht man Fernfahrer Könige über Bretter schieben. Draußen an der Wand lehnt ein Mann mit Kappe und Kaffeebecher und dreht sich nach dir um. #sprecher:erzaehler
 Na, auch auf dem Weg nach oben? Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
--> earl_regel
+-> earl_regel_erstmals
 
+// Die Regel allein (als Tunnel): Beim Nachfragen kommt nur sie, ohne Ambrose und Vorführung
+// (Lesefassung 18.11.2026: Sonst lief bei jeder Nachfrage der ganze Auftakt noch einmal).
 === earl_regel ===
 ~ varianteKoenigsrennenGelernt = true
 Das hier ist Königsrennen. Beide Könige laufen bis zur letzten Reihe, und Schach geben ist verboten. #sprecher:earl #stimmung:laechelt
 Wer zuerst ankommt, zahlt nicht. Und wer unterwegs nur schlagen will, zahlt meistens. #sprecher:earl #stimmung:laechelt
+->->
+
+=== earl_regel_erstmals ===
+-> earl_regel ->
 {not abschiedGesehen:
     Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
     Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
@@ -71,7 +77,8 @@ Siehst du? Laufen, nicht schlagen. Wenn du wieder durchfährst, rennst du selbst
 + {neonGefunden and not neonRepariert} [„Ich hab dein K gefunden.“]
     -> earl_k
 + [„Erklär mir das Königsrennen noch einmal.“]
-    -> earl_regel
+    -> earl_regel ->
+    -> END
 + [„Bis bald, Earl.“]
     Gute Fahrt. Und lass den König nicht im Schach stehen. #sprecher:earl #stimmung:laechelt
     -> END
@@ -391,7 +398,9 @@ Ehrlich gespielt. Das schreibe ich auf. Mit der Hand. #sprecher:zoe #stimmung:la
 ~ testteamGitterDurch = true
 ~ testteamStand = 3
 Der blaue Laster da oben. Da drin sind unsere Partien. #sprecher:benji #stimmung:nachdenklich
-In Silicon Bay hat eine gekündigt, Dr. Lin. Der bringen wir unsere Protokolle. #sprecher:imani #stimmung:nachdenklich
+// Lesefassung 18.11.2026: Die Kündigung erfährt {held} erst von Nova an der Raststätte
+// (crossroads-raststaette.ink); hier nur, wohin die Protokolle gehen.
+In Silicon Bay gibt es eine, die zuhört. Dr. Lin. Der bringen wir unsere Protokolle. #sprecher:imani #stimmung:nachdenklich
 -> END
 
 === testteam_gitter_danach ===

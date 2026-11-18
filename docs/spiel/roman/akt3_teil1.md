@@ -454,7 +454,7 @@ Hier also wohnte es.
 
 An der Wand stand ein Rollschrank. In der dritten Schublade lag eine Schachtel aus weißem
 Karton. Darin, in Schaumstoff gebettet, je in einer kleinen Mulde: Ohrstöpsel. Hautfarben. Mit
-einem winzigen Loch an der Seite. Vier fehlten.
+einem winzigen Loch an der Seite. Fünf fehlten.
 
 Ich nahm den von der Glasbrücke aus der Tasche. Er passte in die fünfte Mulde.
 

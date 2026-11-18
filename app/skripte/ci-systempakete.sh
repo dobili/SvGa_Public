@@ -9,14 +9,14 @@
 # Playwright-Version); ist die Ablage gefüllt, installiert dpkg sie ohne Netz in Sekunden.
 # Eingaben: $1 Browser (chromium, webkit), $2 Ordner der Ablage (wird gefüllt, wenn leer).
 # Ausgabe: Systempakete installiert; in der Ablage die .deb-Dateien und „fertig“ als Marke.
-# Sonderfälle: Scheitert die Installation aus der Ablage (anderes Abbild), läuft der Weg übers
-# Netz. Jeder Versuch übers Netz hat eine eigene Zeitgrenze und wird bis zu dreimal wiederholt.
+# Sonderfälle: Nach einem neuen Runner-Abbild kommt die Ablage des vorigen (restore-keys);
+# scheitert die Installation daraus, läuft der Weg übers Netz. Jeder Versuch übers Netz hat eine eigene Zeitgrenze und wird bis zu dreimal wiederholt.
 set -euo pipefail
 
 BROWSER="$1"
 ABLAGE="$2"
 VERSUCHE=3
-ZEITGRENZE_SEKUNDEN=240
+ZEITGRENZE_SEKUNDEN=300
 PAKETE=/var/cache/apt/archives
 
 # Aus der Ablage installieren; gelingt das, ist nichts weiter zu tun.
@@ -54,6 +54,11 @@ for versuch in $(seq 1 "$VERSUCHE"); do
     echo "Ablage gefüllt: $(ls "$ABLAGE" | grep -c '\.deb$' || true) Pakete."
     exit 0
   fi
+  # Die Zeitgrenze beendet nur Playwright; das apt-get darunter läuft unter sudo weiter und hält
+  # die Sperre (Lauf 44390043225: 9 Pakete mit 62 kB/s in 6 Minuten). Hängen kann es nicht, die
+  # Acquire-Zeitgrenzen oben brechen tote Verbindungen ab; also auf sein Ende warten, statt es
+  # mitten im Entpacken abzuschießen.
+  while pgrep -x apt-get >/dev/null; do sleep 5; done
 done
 echo "::error::Systempakete nach $VERSUCHE Versuchen nicht installiert."
 exit 1

@@ -153,7 +153,8 @@ jobs:
         id: schluessel
         run: |
           echo "playwright=$(node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
-          echo "abbild=${ImageOS:-unbekannt}-${ImageVersion:-unbekannt}" >> "$GITHUB_OUTPUT"
+          echo "system=${ImageOS:-unbekannt}" >> "$GITHUB_OUTPUT"
+          echo "abbild=${ImageVersion:-unbekannt}" >> "$GITHUB_OUTPUT"
       - name: Browser aus dem Cache
         id: browsercache
         uses: actions/cache/restore@v4
@@ -165,10 +166,12 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ${{ runner.temp }}/systempakete
-          key: systempakete-${{ steps.schluessel.outputs.abbild }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}
+          key: systempakete-${{ steps.schluessel.outputs.system }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}-${{ steps.schluessel.outputs.abbild }}
+          # Neues Abbild: zuerst die Pakete des vorigen versuchen (meist dieselben Fassungen).
+          restore-keys: systempakete-${{ steps.schluessel.outputs.system }}-${{ matrix.browser }}-${{ steps.schluessel.outputs.playwright }}-
       - name: Browser
         # Zeitgrenze: In der Nacht zum 26.10.2026 hing dieser Schritt 21 Minuten; so bricht er ab.
-        # Das Skript versucht die Systempakete übers Netz bis zu dreimal mit je 4 Minuten.
+        # Das Skript versucht die Systempakete übers Netz bis zu dreimal mit je 5 Minuten.
         timeout-minutes: 16
         run: |
           if [ "${{ steps.browsercache.outputs.cache-hit }}" != "true" ]; then

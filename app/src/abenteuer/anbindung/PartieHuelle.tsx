@@ -90,8 +90,11 @@ function Uhr({
   );
 }
 
-/** Fuß während der Partie: Status und „Aufgeben“ mit einer Nachfrage. */
-function Spielfuss({ s, gegner }: { s: Partiesteuerung; gegner: string }) {
+/**
+ * Fuß während der Partie: Status und „Aufgeben“ mit einer Nachfrage. Während der Wertung einer
+ * kurzen Partieform (`wertet`) schweigt der Status: „Du bist am Zug.“ stimmte dann nicht.
+ */
+function Spielfuss({ s, gegner, wertet }: { s: Partiesteuerung; gegner: string; wertet: boolean }) {
   const [frage, setzeFrage] = useState(false);
   if (frage) {
     return (
@@ -110,9 +113,11 @@ function Spielfuss({ s, gegner }: { s: Partiesteuerung; gegner: string }) {
   }
   return (
     <section className="abenteuer-huelle-fuss">
-      <p role="status" data-testid="partiestatus">
-        {statustext(s, gegner)}
-      </p>
+      {!wertet && (
+        <p role="status" data-testid="partiestatus">
+          {statustext(s, gegner)}
+        </p>
+      )}
       <button
         type="button"
         className="knopf-zweit knopf-aufgeben"
@@ -207,7 +212,9 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
     return zugFelder(stellungen(partie)[gezeigt - 1] ?? "", partie.zuege[gezeigt - 1]?.san ?? "");
   }, [partie, gezeigt]);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
-  const amZug = leserAmZug(partie) && !partie.ende;
+  // Steht die Wertung einer kurzen Form an, ist das Brett zu: kein Zug über die Abmachung hinaus.
+  const wertet = kurz?.gesperrt ?? false;
+  const amZug = leserAmZug(partie) && !partie.ende && !wertet;
   return (
     <>
       {/* Sprechblasen am Brett (docs/spiel/29): oben der Gegner, unten Ambrose oder der Held. */}
@@ -286,7 +293,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
         {partie.ende && anzahl > 0 && (
           <Blaettern stelle={gezeigt} anzahl={anzahl} setze={setzeStelle} />
         )}
-        {partie.ende ? <Weiterknopf /> : <Spielfuss s={s} gegner={gegner} />}
+        {partie.ende ? <Weiterknopf /> : <Spielfuss s={s} gegner={gegner} wertet={wertet} />}
         {!partie.ende && <Testleiste id={partie.id} />}
       </div>
     </>

@@ -1631,6 +1631,11 @@
        "name": "sitzt",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.siliconBay.akademie.schueler1"
       }
      ]
     },
@@ -1669,6 +1674,11 @@
        "name": "sitzt",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.siliconBay.akademie.schueler2"
       }
      ]
     },
@@ -1707,6 +1717,11 @@
        "name": "sitzt",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.siliconBay.akademie.schueler3"
       }
      ]
     },
@@ -1745,6 +1760,11 @@
        "name": "sitzt",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.siliconBay.akademie.schueler4"
       }
      ]
     },

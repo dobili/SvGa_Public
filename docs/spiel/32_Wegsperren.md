@@ -47,6 +47,17 @@ Karte, solange sie nicht gelöst ist), die dritte Niederlage öffnet auch. Niede
 Variable `testteam…Niederlagen`; `testteam…Spielt` sorgt dafür, dass jede Partie genau einmal
 zählt und ein Abbruch nicht. `testteamStand` steigt je Sperre auf 1, 2, 3.
 
+**Im Browser gespielt (18.11.2026):** `app/tests/e2e/abenteuer-wegsperre.spec.ts` geht alle drei
+Sperren und beide Fassungen des Diners ab (Gespräch, gesperrt, offen);
+`abenteuer-wegsperre-partie.spec.ts` spielt die Partien bis zur Wertung, mit Stockfish als Spieler
+(`abenteuer-zugwahl.ts`): S15 auf Sieg, S16 auf Remis und Niederlage, S17 auf Sieg, Remis und als
+dritte Niederlage; geprüft wird die Kette Wertung, Satz „nachher“, Gespräch, Übergang. Zwei Fehler
+sind dabei behoben: Nach der Partie steht {held} auf dem Übergangsfeld, und der Übergang reagierte
+erst nach einem Schritt zurück und wieder vor (`oberwelt/ausloeserebene.ts`, `RUHEBILDER`); während
+der Wertung ließ sich ein weiterer Zug spielen, die Partie lief dann einen Zug länger
+(`anbindung/useKurzform.ts`, `gesperrt`). Das angepeilte Remis bei „Vorteil“ wird oft ein Sieg,
+weil Imani im letzten Zug etwas einstellt; der Test prüft dann die Kette für den wirklichen Ausgang.
+
 **Bogen:** `capital-arena-aussen.testteam` (drei Figuren bei 66,42 · 67,43 · 68,42 direkt neben dem
 Limonadenwagen, `wenn: testteamStand >= 3`), eine bedingte Erzählzeile in
 `capital-arena-ubahnhof.mo_erstes`. Szene 105 ist unberührt. Quest `wegCedarRiverton.testteam`

@@ -1546,6 +1546,11 @@
        "name": "tun",
        "type": "string",
        "value": "Slick sitzt auf der Bank und spielt Blitz gegen sich selbst"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.riverton.bahnhofshalle.slickAufDerBank"
       }
      ]
     },

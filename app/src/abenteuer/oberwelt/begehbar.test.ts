@@ -10,7 +10,7 @@
  * meldet einen 14 Pixel breiten Spalt als gesperrt, obwohl der Held hindurchpasst.
  */
 import { describe, expect, it } from "vitest";
-import { begehbar, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
+import { begehbar, sitzkacheln, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
 
 const KACHEL = 16;
 const KISTE: Sperrangabe = { breite: 16, hoehe: 16, kollision: true };
@@ -75,5 +75,43 @@ describe("Kollisionspinsel (Karteneditor 1.3, Wunsch des Autors, 16.11.2026)", (
   it("übergeht kaputte Angaben", () => {
     expect(frei(karte("x;5", "1;"), 5, 0)).toBe(true);
     expect(frei(karte("x;5", "1;"), 1, 0)).toBe(false);
+  });
+});
+
+describe("Sitzende sperren die Kachel über sich (Angleichung an die Szene, 18.11.2026)", () => {
+  // Schulstuhl 16 × 32 von LimeZu: Die obere Kachel bleibt frei (hohes Möbel), auf der unteren
+  // sitzt die Figur; ihr Bild rückt in der Szene bis zu einer Kachel nach oben.
+  const STUHL: Sperrangabe = { breite: 16, hoehe: 32, kollision: false, art: "stuhl" };
+  /** Karte 3 × 3: Stuhl auf (1, 1) bis (1, 2), darauf eine Figur oder ein Statist auf (1, 2). */
+  function karte(typ: "figur" | "statist", sitzt: boolean, mitStuhl = true): Tiledkarte {
+    const properties = sitzt ? [{ name: "sitzt", value: "rechts" }] : [];
+    const objects = [
+      ...(mitStuhl ? [{ name: "stuhl", type: "moebel", x: 16, y: 16 }] : []),
+      { name: "sam", type: typ, x: 16, y: 32, properties },
+    ];
+    return { width: 3, height: 3, layers: [{ type: "objectgroup", objects }] };
+  }
+  const frei = (k: Tiledkarte, x: number, y: number) =>
+    begehbar(k, sperrkacheln(k, { stuhl: STUHL }, KACHEL))(x, y);
+
+  it("eine sitzende Figur sperrt Fußkachel und die Kachel darüber", () => {
+    expect(frei(karte("figur", true), 1, 2)).toBe(false);
+    expect(frei(karte("figur", true), 1, 1)).toBe(false);
+    expect(frei(karte("figur", true), 1, 0)).toBe(true);
+    expect(sitzkacheln(karte("figur", true), { stuhl: STUHL }, KACHEL)).toEqual(["1,1"]);
+  });
+
+  it("ein sitzender Statist auch, selbst ohne `von` und `bis`", () => {
+    expect(frei(karte("statist", true), 1, 1)).toBe(false);
+  });
+
+  it("wer steht oder am Boden sitzt, sperrt nur seine Kachel", () => {
+    expect(frei(karte("figur", false), 1, 1)).toBe(true);
+    expect(frei(karte("figur", true, false), 1, 1)).toBe(true);
+  });
+
+  it("ohne Figuren (Durchgang eines Übergangs) zählt auch die Sitzkachel nicht", () => {
+    const k = karte("figur", true);
+    expect(sperrkacheln(k, { stuhl: STUHL }, KACHEL, false).has("1,1")).toBe(false);
   });
 });

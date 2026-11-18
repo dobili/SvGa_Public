@@ -476,7 +476,8 @@
         "bis": "5,6",
         "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
         "wann": "tag",
-        "sitzt": "oben"
+        "sitzt": "oben",
+        "sagt": "statist.siliconBay.akademie.schueler1"
       }
     },
     {
@@ -488,7 +489,8 @@
         "bis": "11,6",
         "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
         "wann": "tag",
-        "sitzt": "oben"
+        "sitzt": "oben",
+        "sagt": "statist.siliconBay.akademie.schueler2"
       }
     },
     {
@@ -500,7 +502,8 @@
         "bis": "5,9",
         "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
         "wann": "tag",
-        "sitzt": "oben"
+        "sitzt": "oben",
+        "sagt": "statist.siliconBay.akademie.schueler3"
       }
     },
     {
@@ -512,7 +515,8 @@
         "bis": "11,9",
         "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
         "wann": "tag",
-        "sitzt": "oben"
+        "sitzt": "oben",
+        "sagt": "statist.siliconBay.akademie.schueler4"
       }
     },
     {

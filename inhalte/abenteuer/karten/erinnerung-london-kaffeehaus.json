@@ -731,7 +731,7 @@
      "id": 10,
      "name": "zuschauer",
      "type": "statist",
-     "x": 48,
+     "x": 96,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -741,12 +741,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "3,7"
+       "value": "6,7"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "3,7"
+       "value": "6,7"
       },
       {
        "name": "tun",

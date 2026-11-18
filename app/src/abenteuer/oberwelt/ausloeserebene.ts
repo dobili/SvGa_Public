@@ -126,7 +126,16 @@ export interface Meldezustand {
   readonly startOffen: boolean;
   /** Name des Auslösers, auf dem der Held ankam; solange er darauf steht, meldet die Szene nichts. */
   readonly sperre?: string;
+  /** So viele Bilder stand der Held schon still auf dem Auslöser der Ankunft (bis RUHEBILDER). */
+  readonly ruhe?: number;
 }
+
+/**
+ * Nach so vielen Bildern Stillstand auf dem Auslöser der Ankunft zählt ein Schritt in den
+ * Durchgang wieder (etwa eine Drittelsekunde). Eine gehaltene Taste meldet sich nach einem
+ * Kartenwechsel viel früher zurück; sie schickt den Helden deshalb weiter nicht zurück.
+ */
+export const RUHEBILDER = 20;
 
 /** Zustand direkt nach dem Betreten einer Karte oder dem Versetzen auf derselben Karte. */
 export const MELDE_START: Meldezustand = { letzter: null, startOffen: true };
@@ -144,7 +153,11 @@ export type Meldung = {
  * Ein Bild der Szene: Was meldet sie, wenn der Held jetzt so steht? Gemeldet wird nur bei
  * Änderung; „davor“, „darauf“ und „durch“ sind drei Zustände. „durch“ heißt: Der Held steht auf
  * dem Auslöser, eine Richtung ist gedrückt (`geht`), und sie führt in den Durchgang (siehe
- * Dateikopf). Der Auslöser, auf dem der Held ankommt, zählt erst nach dem Verlassen.
+ * Dateikopf). Der Auslöser, auf dem der Held ankommt, zählt erst nach dem Verlassen, oder wenn
+ * der Held dort RUHEBILDER lang stillstand und dann in den Durchgang geht. Warum die Ausnahme:
+ * Nach einer Partie am gesperrten Übergang (Wegsperren S15 bis S17) steht der Held wieder auf dem
+ * Übergangsfeld; ohne sie reagierte der Übergang nicht, bis man einen Schritt zurück und wieder
+ * vor ging (Befund im Browser, 18.11.2026).
  * Ausgabe: der neue Zustand und `meldung` (fehlt, wenn nichts zu melden ist).
  * Beispiel: Held tritt von unten auf das Türfeld und drückt weiter nach oben → Meldung mit
  * darauf: true und durch: true; läuft er seitlich darüber, bleibt durch false.
@@ -162,11 +175,15 @@ export function meldeschritt(
   const { treffer, darauf } = triffAusloeser(alle, held);
   // Ankunft auf einem Auslöser (enger Steg): Er schweigt, bis der Held ihn verlassen hat.
   const sperre = zustand.startOffen ? darauf?.name : zustand.sperre;
-  if (sperre !== undefined && darauf?.name === sperre) {
-    return { zustand: { letzter: `${sperre}|darauf`, startOffen: false, sperre } };
-  }
   const durch =
     darauf !== null && held.geht === true && (darauf.durchgang ?? []).includes(held.richtung);
+  if (sperre !== undefined && darauf?.name === sperre) {
+    const bisher = zustand.ruhe ?? 0;
+    const ruhe = held.geht === true ? bisher : Math.min(bisher + 1, RUHEBILDER);
+    if (!(durch && bisher >= RUHEBILDER)) {
+      return { zustand: { letzter: `${sperre}|darauf`, startOffen: false, sperre, ruhe } };
+    }
+  }
   const lage = treffer === darauf ? (durch ? "durch" : "darauf") : "davor";
   const name = treffer ? `${treffer.name}|${lage}` : null;
   if (name === zustand.letzter) return { zustand: { letzter: name, startOffen: false } };

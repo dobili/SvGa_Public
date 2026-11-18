@@ -11,6 +11,7 @@
  */
 import { feinsperrenAus, kachelnMitFeinsperre, moebelRechtecke } from "./feinsperren";
 import { geformtAusObjekt } from "./moebelform";
+import { istSitzmoebel } from "./sitzplatz";
 
 /** Angabe eines Möbels aus daten/moebel.json, so weit die Kollision sie braucht. */
 export interface Sperrangabe {
@@ -21,6 +22,8 @@ export interface Sperrangabe {
   readonly maske?: readonly string[];
   /** Feine Maske (Karteneditor 1.6, feinsperren.ts): je Kachel 4 × 4 Zellen, ersetzt `maske`. */
   readonly maske_fein?: readonly string[];
+  /** Art im Möbelkatalog („stuhl“, „bank“ …): Auf Sitzmöbeln rücken Sitzende nach oben. */
+  readonly art?: string;
 }
 
 interface Eigenschaft {
@@ -124,6 +127,42 @@ export function sperreMoebel(
   sperreRechteck(ziel, { x: ort.x, y: ort.y + oben, b: angabe.breite, h: hoehe }, raster);
 }
 
+/**
+ * Die Kacheln über Sitzenden: Eine Figur oder ein Statist mit der Eigenschaft `sitzt` auf einem
+ * Sitzmöbel sperrt auch die Kachel über sich.
+ *
+ * Warum: In der Szene rückt das Bild einer Sitzenden auf ihr Möbel, meist nach oben, und ihr
+ * fester Körper reicht dann bis zu einer Kachel hinauf (sitzplatz.ts, sitzsperre; figurensitz.ts).
+ * Der Held ist 12 Pixel hoch: Ab drei Pixeln kommt er nicht mehr mittig auf die Kachel darüber.
+ * Um wie viel das Bild rückt, hängt vom Bild des Möbels und vom Bogen der Figur ab; beides kennt
+ * diese Rechnung nicht. Sie nimmt deshalb den häufigen Fall an (nach oben) und rechnet lieber eine
+ * Kachel zu viel als zu wenig; wer am Boden sitzt (Lily auf dem Bordstein), sperrt nichts dazu.
+ * Dieselbe Regel in pipeline/abenteuer/figurensperre.py (`sitzkacheln`).
+ * Beispiel: Sam sitzt auf (5, 8) auf dem Schulstuhl → auch (5, 7) ist gesperrt.
+ */
+export function sitzkacheln(
+  karte: Tiledkarte,
+  moebel: Readonly<Record<string, Sperrangabe>>,
+  kachel: number,
+): string[] {
+  const objekte = karte.layers.flatMap((e) => e.objects ?? []);
+  const sitze = objekte.flatMap((o) => {
+    const roh = o.type === "moebel" && o.name ? moebel[o.name] : undefined;
+    if (!roh || !o.name || !istSitzmoebel(o.name, roh.art)) return [];
+    const form = geformtAusObjekt(roh, o.properties);
+    return [{ x: o.x ?? 0, y: o.y ?? 0, b: form.breite, h: form.hoehe }];
+  });
+  return objekte.flatMap((o) => {
+    const sitzt = o.properties?.some((e) => e.name === "sitzt" && typeof e.value === "string");
+    if (!sitzt || !(o.type === "figur" || o.type === "statist")) return [];
+    // Mitte der Fußkachel, wie findeSitz in sitzplatz.ts.
+    const mx = Math.floor((o.x ?? 0) / kachel) * kachel + kachel / 2;
+    const my = Math.floor((o.y ?? 0) / kachel) * kachel + kachel / 2;
+    const aufSitz = sitze.some((r) => mx >= r.x && mx < r.x + r.b && my >= r.y && my < r.y + r.h);
+    return aufSitz ? [`${Math.floor(mx / kachel)},${Math.floor(my / kachel) - 1}`] : [];
+  });
+}
+
 /** Kacheln einer Karteneigenschaft im Format „3,4;5,6“ (pipeline/abenteuer/kollisionspinsel.py). */
 export function pinselkacheln(karte: Tiledkarte, name: "sperren" | "freigeben"): string[] {
   const wert = karte.properties?.find((e) => e.name === name)?.value;
@@ -135,7 +174,8 @@ export function pinselkacheln(karte: Tiledkarte, name: "sperren" | "freigeben"):
  * Alle gesperrten Kacheln einer Karte als „x,y“: Kachelebenen mit Kollision, Möbel mit Kollision
  * (Angabe aus der Möbelliste, am Objekt überschreibbar), die Figuren und Statisten, die an einem
  * Fleck stehen (`von` gleich `bis`; belebungsschicht.ts sperrt sie im Stehen). Wandernde Statisten
- * und Tiere sperren hier nicht: Sie geben den Weg wieder frei.
+ * und Tiere sperren hier nicht: Sie geben den Weg wieder frei. Sitzende auf einem Sitzmöbel sperren
+ * auch die Kachel über sich (`sitzkacheln`).
  * Kollisionspinsel (Karteneditor 1.3, Wunsch des Autors, 16.11.2026): Die Eigenschaft `sperren` der
  * Karte sperrt Kacheln dazu, `freigeben` gibt Wände und Möbel frei, nicht aber Figuren. Der Kartenbau
  * schreibt beides auch in Ebenen und Masken, damit Phaser (szene.ts, moebel.ts) gleich sperrt.
@@ -171,6 +211,7 @@ export function sperrkacheln(
   // Held mittig auf ihr (Pixel 2 bis 14) die Zelle berührte (feinsperren.ts).
   for (const k of kachelnMitFeinsperre(feinsperrenAus(karte.properties))) gesperrt.add(k);
   for (const k of figuren) gesperrt.add(k);
+  if (mitFiguren) for (const k of sitzkacheln(karte, moebel, kachel)) gesperrt.add(k);
   return gesperrt;
 }
 

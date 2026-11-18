@@ -44,6 +44,12 @@ export interface Kurzformstand {
   readonly form: Kurzform;
   readonly rest: number;
   readonly rechnet: boolean;
+  /**
+   * Die Wertung steht an: Das Brett nimmt keinen Zug mehr an. Warum: Wer während der Wertung
+   * (bis 1,5 s) weiterzog, spielte einen Zug mehr als vereinbart, und die Wertung begann von vorn
+   * (Befund im Browser, 18.11.2026). Scheitert die Engine, ist das Brett wieder frei.
+   */
+  readonly gesperrt: boolean;
 }
 
 /**
@@ -68,8 +74,9 @@ export async function werteKurzformAus(
 }
 
 /**
- * Hook der Spielhülle. Null bei ganzen Partien. Rechnet höchstens einmal je Zugstand; ein Fehler
- * der Engine lässt die Partie weiterlaufen und meldet sich in der Konsole (nicht verschluckt).
+ * Hook der Spielhülle. Null bei ganzen Partien. Rechnet höchstens einmal je Zugstand; solange
+ * die Wertung ansteht, ist das Brett gesperrt (`gesperrt`). Ein Fehler der Engine lässt die Partie
+ * weiterlaufen und meldet sich in der Konsole (nicht verschluckt).
  */
 export function useKurzform(
   partie: Partie | null,
@@ -77,6 +84,8 @@ export function useKurzform(
 ): Kurzformstand | null {
   const form = partie?.einstellung.abenteuer?.kurzform ?? null;
   const [rechnet, setzeRechnet] = useState(false);
+  // Zugstand, bei dem die Engine scheiterte: Dort läuft die Partie weiter (Brett wieder frei).
+  const [gescheitert, setzeGescheitert] = useState<string | null>(null);
   const zuletzt = useRef<string | null>(null);
   const faellig = partie !== null && form !== null && wertungFaellig(partie, form);
   const schluessel = partie ? `${partie.id}:${partie.zuege.length}` : null;
@@ -85,11 +94,13 @@ export function useKurzform(
     zuletzt.current = schluessel;
     setzeRechnet(true);
     werteKurzformAus(partie, form, bewerte)
-      .catch((fehler: unknown) =>
-        console.warn("Wertung der kurzen Partieform fehlgeschlagen", fehler),
-      )
+      .catch((fehler: unknown) => {
+        console.warn("Wertung der kurzen Partieform fehlgeschlagen", fehler);
+        setzeGescheitert(schluessel);
+      })
       .finally(() => setzeRechnet(false));
   }, [faellig, partie, form, bewerte, schluessel]);
   if (!partie || !form) return null;
-  return { form, rest: restzuege(partie, form), rechnet };
+  const gesperrt = faellig && gescheitert !== schluessel;
+  return { form, rest: restzuege(partie, form), rechnet, gesperrt };
 }

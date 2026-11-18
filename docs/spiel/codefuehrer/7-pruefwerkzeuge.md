@@ -22,7 +22,9 @@ geben Rückgabewert 1 bei Befunden; viele laufen zusätzlich als Test in `pipeli
 - `python -m pipeline.abenteuer.blickrichtung`: stehende Figuren blicken zu Tresen, Brett oder
   Gesprächspartner.
 - `figurensperre.py`, `engstelle.py`, `feinmasken_pruefung.py`: niemand und nichts versperrt
-  den Weg.
+  den Weg. `figurensperre.py` prüft seit dem 18.11.2026 auch, dass jeder Auslöser, jede Figur und
+  jeder Statist mit Satz erreichbar bleibt, wenn feste Statisten sperren, und rechnet die Kachel
+  über Sitzenden als gesperrt (`sitzkacheln`).
 - `python -m pipeline.abenteuer.kopfkachel`: Kacheln über stehenden und sitzenden Figuren, die
   seit dem 18.11.2026 begehbar sind (Figuren sperren nur ihre Fußkachel), und Bereiche, die dadurch
   erreichbar wurden.

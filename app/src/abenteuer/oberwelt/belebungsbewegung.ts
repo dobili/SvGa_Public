@@ -247,11 +247,44 @@ export function haeltAuf(v: Belebung): boolean {
   return !["fliegen", "schwimmen", "folgen"].includes(v.verhalten);
 }
 
+/** Kante des Heldenkörpers in Kacheln: 12 von 16 Pixeln (szene.ts, figurbilder.ts). */
+export const HELDKOERPER = 0.75;
+/** So viel Überlappung in Kacheln (ein halbes Pixel) gilt noch als bloßes Anstoßen. */
+const ANSTOSS = 1 / 32;
+
+/** Eine Sperrfläche in Kacheln, relativ zur Mitte der Kachel des Statisten (wie `sitzsperre`). */
+export interface Sperrflaeche {
+  readonly x: number;
+  readonly y: number;
+  readonly breite: number;
+  readonly hoehe: number;
+}
+
+/** Die Fläche eines Stehenden: genau seine Kachel. */
+const EINE_KACHEL: Sperrflaeche = { x: -0.5, y: -0.5, breite: 1, hoehe: 1 };
+
 /**
- * Ist die Sperre auf Kachel (x, y) gerade an? Nur, wenn der Held sie nicht berührt: Eine Sperre,
+ * Ist die Sperre auf Kachel (x, y) gerade an? Nur, wenn der Held nicht in ihr steckt: Eine Sperre,
  * die auf dem Helden einschaltet, schöbe ihn weg oder hielte ihn fest. Held in Kacheln (Mitte
- * ganzzahlig); die Flächen überlappen, wenn beide Abstände unter einer Kachel liegen.
+ * ganzzahlig). „In ihr stecken“ heißt: Der Körper des Helden (HELDKOERPER) und die Fläche
+ * überlappen um mehr als ANSTOSS; bloßes Anstoßen zählt nicht.
+ * Warum so genau: Bis zum 18.11.2026 galt „beide Abstände unter einer Kachel“. Der Körper des
+ * Helden ist aber schmaler als eine Kachel; die Sperre ging zwei Pixel vor dem Anstoßen aus, und
+ * der Held lief geradeaus durch jeden Statisten (Befund im Browser: durch den Rentner am
+ * Wasserspiel in Silicon Bay, in die wartende Mutter im Clubraum, durch Anderssen im Londoner
+ * Kaffeehaus). `flaeche`: Sperrfläche einer Sitzenden (sitzplatz.ts, sitzsperre), in Kacheln.
+ * Beispiel: Held auf (5, 5), Statist auf (6, 5) → an; Held zur Hälfte in der Kachel → aus.
  */
-export function sperreAn(held: Feld, x: number, y: number): boolean {
-  return Math.max(Math.abs(held.x - x), Math.abs(held.y - y)) >= 1;
+export function sperreAn(
+  held: Feld,
+  x: number,
+  y: number,
+  flaeche: Sperrflaeche = EINE_KACHEL,
+): boolean {
+  const halb = HELDKOERPER / 2;
+  const links = x + flaeche.x;
+  const oben = y + flaeche.y;
+  const quer = Math.min(held.x + halb, links + flaeche.breite) - Math.max(held.x - halb, links);
+  const laengs = Math.min(held.y + halb, oben + flaeche.hoehe) - Math.max(held.y - halb, oben);
+  return !(quer > ANSTOSS && laengs > ANSTOSS);
 }

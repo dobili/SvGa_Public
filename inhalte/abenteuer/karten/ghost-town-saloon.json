@@ -946,8 +946,8 @@
      "id": 4,
      "name": "abzeichen",
      "type": "ausloeser",
-     "x": 288,
-     "y": 96,
+     "x": 224,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1105,11 +1105,11 @@
     },
     {
      "id": 13,
-     "name": "gt7Treppe",
+     "name": "treppeNachRechts",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 32,
-     "width": 48,
+     "width": 64,
      "height": 64,
      "rotation": 0,
      "visible": true,
@@ -1117,12 +1117,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 88
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -1659,8 +1659,8 @@
      "id": 37,
      "name": "gt10Abzeichen",
      "type": "moebel",
-     "x": 288,
-     "y": 96,
+     "x": 224,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,

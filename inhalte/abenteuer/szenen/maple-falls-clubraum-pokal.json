@@ -939,5 +939,14 @@
   "boeden": {
     "t": "teppichBlau"
   },
-  "zustand_der_karte": "nadelMapleFalls >= 1"
+  "zustand_der_karte": "nadelMapleFalls >= 1",
+  "sperren": [
+    [15, 3],
+    [12, 3],
+    [13, 3],
+    [14, 3],
+    [12, 4],
+    [13, 4],
+    [14, 4]
+  ]
 }

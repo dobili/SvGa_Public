@@ -1074,6 +1074,28 @@
           "sprite": "figuren/schaffner.png",
           "dialog": "weg-cedar-riverton.schaffner",
           "gegner": "wegCedarRiverton.schaffner"
+        },
+        {
+          "kennung": "wegCedarRiverton.testteamZoe",
+          "name": "figur.zoe.name",
+          "sprite": "figuren/statist-36.png",
+          "dialog": "weg-cedar-riverton.testteam_wald",
+          "wenn": "endeAkt1Gesehen und nicht ankunftRivertonGesehen"
+        },
+        {
+          "kennung": "wegCedarRiverton.testteamBenji",
+          "name": "figur.benji.name",
+          "sprite": "figuren/statist-23.png",
+          "dialog": "weg-cedar-riverton.testteam_wald",
+          "wenn": "endeAkt1Gesehen und nicht ankunftRivertonGesehen",
+          "gegner": "wegCedarRiverton.testteam"
+        },
+        {
+          "kennung": "wegCedarRiverton.testteamImani",
+          "name": "figur.imani.name",
+          "sprite": "figuren/statist-22.png",
+          "dialog": "weg-cedar-riverton.testteam_wald",
+          "wenn": "endeAkt1Gesehen und nicht ankunftRivertonGesehen"
         }
       ],
       "ausloeser": [
@@ -1110,7 +1132,9 @@
           "ziel": {
             "karte": "wegCedarRiverton.bahndamm",
             "ausloeser": "zurueckZedernwald"
-          }
+          },
+          "dialog": "weg-cedar-riverton.testteam_wald_tor",
+          "wenn": "testteamWaldDurch oder ankunftRivertonGesehen oder nicht endeAkt1Gesehen"
         },
         {
           "name": "zurueckZedernwald",
@@ -2396,6 +2420,28 @@
           "name": "figur.kiki.name",
           "sprite": "figuren/kiki.png",
           "dialog": "weg-ironwood-silicon.kiki"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.testteamZoe",
+          "name": "figur.zoe.name",
+          "sprite": "figuren/statist-36.png",
+          "dialog": "weg-ironwood-silicon.testteam_bruecke",
+          "wenn": "einladungGesehen und nicht ankunftSiliconBayGesehen"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.testteamBenji",
+          "name": "figur.benji.name",
+          "sprite": "figuren/statist-23.png",
+          "dialog": "weg-ironwood-silicon.testteam_bruecke",
+          "wenn": "einladungGesehen und nicht ankunftSiliconBayGesehen"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.testteamImani",
+          "name": "figur.imani.name",
+          "sprite": "figuren/statist-22.png",
+          "dialog": "weg-ironwood-silicon.testteam_bruecke",
+          "wenn": "einladungGesehen und nicht ankunftSiliconBayGesehen",
+          "gegner": "wegIronwoodSilicon.testteam"
         }
       ],
       "ausloeser": [
@@ -2433,7 +2479,8 @@
           "ziel": {
             "karte": "wegIronwoodSilicon.glasbruecke",
             "ausloeser": "zurueckRaststaette"
-          }
+          },
+          "wenn": "testteamBrueckeDurch oder ankunftSiliconBayGesehen oder nicht einladungGesehen"
         },
         {
           "name": "zurueckRaststaette",
@@ -3644,6 +3691,28 @@
           "name": "figur.ruthKeene.name",
           "sprite": "figuren/ruth-keene.png",
           "dialog": "weg-desert-summit.ruth_keene"
+        },
+        {
+          "kennung": "wegDesertSummit.testteamZoe",
+          "name": "figur.zoe.name",
+          "sprite": "figuren/statist-36.png",
+          "dialog": "weg-desert-summit.testteam_gitter",
+          "wenn": "endeAkt3Gesehen und nicht ankunftSummitGesehen",
+          "gegner": "wegDesertSummit.testteam"
+        },
+        {
+          "kennung": "wegDesertSummit.testteamBenji",
+          "name": "figur.benji.name",
+          "sprite": "figuren/statist-23.png",
+          "dialog": "weg-desert-summit.testteam_gitter",
+          "wenn": "endeAkt3Gesehen und nicht ankunftSummitGesehen"
+        },
+        {
+          "kennung": "wegDesertSummit.testteamImani",
+          "name": "figur.imani.name",
+          "sprite": "figuren/statist-22.png",
+          "dialog": "weg-desert-summit.testteam_gitter",
+          "wenn": "endeAkt3Gesehen und nicht ankunftSummitGesehen"
         }
       ],
       "ausloeser": [
@@ -3680,7 +3749,9 @@
           "ziel": {
             "karte": "wegDesertSummit.bergstrasse",
             "ausloeser": "zurueckDiner"
-          }
+          },
+          "dialog": "weg-desert-summit.testteam_gitter_tor",
+          "wenn": "testteamGitterDurch oder ankunftSummitGesehen oder nicht endeAkt3Gesehen"
         },
         {
           "name": "zurueckDiner",
@@ -5356,6 +5427,27 @@
           "name": "figur.wanderer.name",
           "sprite": "figuren/wanderer.png",
           "dialog": "capital-arena-aussen.wanderer"
+        },
+        {
+          "kennung": "capitalArena.testteamZoe",
+          "name": "figur.zoe.name",
+          "sprite": "figuren/statist-36.png",
+          "dialog": "capital-arena-aussen.testteam",
+          "wenn": "testteamStand >= 3"
+        },
+        {
+          "kennung": "capitalArena.testteamBenji",
+          "name": "figur.benji.name",
+          "sprite": "figuren/statist-23.png",
+          "dialog": "capital-arena-aussen.testteam",
+          "wenn": "testteamStand >= 3"
+        },
+        {
+          "kennung": "capitalArena.testteamImani",
+          "name": "figur.imani.name",
+          "sprite": "figuren/statist-22.png",
+          "dialog": "capital-arena-aussen.testteam",
+          "wenn": "testteamStand >= 3"
         }
       ],
       "ausloeser": [

@@ -1052,6 +1052,8 @@ Wanderin mit Weisheit, Straßengegner mit Uhr: Stellungsduell 3 + 2 (R13, W4), Z
 Juno spielt zuerst und verliert lachend („Ich hab die Zeit gewonnen. Er hatte mehr übrig.“). Sieg:
 10 Münzen und beim ersten Sieg die Karte **Kühler Kopf** (bisher Zeitbonus) (Z3, Z4). Funde F „Pfeilspitze“, F
 „Fahrkarte von 1958“. Etwa 12 Minuten.
+Wegsperre S15 (`32_Wegsperren.md`): Am Ostrand des Zedernwalds steht beim ersten Mal das Testteam von
+Perfect Move (Zoe, Benji, Imani); nach einer Stellung gegen Benji geht es weiter zum Bahndamm.
 
 **28. Ankunft in Riverton** · `akt2.ankunftRiverton` · H `riverton.parkclub`
 Ort `riverton.aussen` (Bahnhof) · Juno, Ambrose. Ereignis: Dialog. Überall Plakate: „Perfect Move
@@ -1701,6 +1703,8 @@ Und gesprächiger.“ Wirkung: überall in der Welt eine freie Übungspartie geg
 Ort `wegIronwoodSilicon.raststaette`, `.glasbruecke` · Juno, Fernfahrerin, Joggerin. Ereignis:
 Rätseltafel (3 Eröffnungsfallen, Münzen), Weisheit, Stellungsduell mit Uhr gegen die Joggerin
 (Abbildung aus Kapitel 2 oder 4, Auswahl im Datenauftrag nach R13), Funde. Etwa 12 Minuten.
+Wegsperre S16 (`32_Wegsperren.md`): Vor der Glasbrücke steht dasselbe Testteam; Imani spielt eine
+fremde Eröffnung und findet danach ihre eigene Zugfolge als „ZERO, Variante 31“.
 
 **53. Glas und Licht** · `akt3.ankunftSiliconBay`
 Ort `siliconBay.aussen` · Juno, Victor, Ambrose. Ereignis: Dialog. Niemand spielt an einem Brett,
@@ -2201,6 +2205,8 @@ spielen „Königsrennen“: Wer zuerst die letzte Reihe erreicht, ohne Schach, 
 die Regel und spielt eine Partie (V, Belohnung Münzen). Ambrose: „Ein Rennen ohne Angriff. Wie
 seltsam. Und doch: Auch hier gewinnt, wer den Weg kennt.“ Buchbezug: Kapitel 8, Königsaktivität im
 Endspiel (der König muss laufen). Etwa 12 Minuten.
+Wegsperre S17 (`32_Wegsperren.md`): Am Viehgitter hinter der Tankstelle sitzen Zoe, Benji und Imani
+ohne Westen und Tablets; nach einem Endspiel gegen Zoe bringen sie ihre Protokolle zu Dr. Lin.
 
 **82. Die Hochebene** · Abzweig `hochebene` · L9 (O5), eigenes Spiel · N begegnung `hochebene.falkeUndBison`
 Ort `hochebene.felsentuerme`, `hochebene.schule` · die Schülerin Kira Vell (13, sie), ihre Tante, die

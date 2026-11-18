@@ -426,5 +426,10 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "rustikal", "modern"]
+  "stil": ["klassisch", "rustikal", "modern"],
+  "sperren": [
+    [17, 3],
+    [15, 3],
+    [16, 3]
+  ]
 }

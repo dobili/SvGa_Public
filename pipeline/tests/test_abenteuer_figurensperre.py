@@ -7,8 +7,8 @@ hält den Helden auf, obwohl Wände und Möbel den Weg freilassen.
 import copy
 import json
 
-from pipeline.abenteuer.figurensperre import pruefe, pruefe_szene, uebergangsnamen
-from pipeline.abenteuer.kartenbau import INHALTE
+from pipeline.abenteuer.figurensperre import pruefe, pruefe_szene, sitzkacheln, uebergangsnamen
+from pipeline.abenteuer.kartenbau import INHALTE, platziere
 from pipeline.abenteuer.moebelliste import lade_moebel
 
 
@@ -26,3 +26,39 @@ def test_figur_auf_uebergang_wird_gemeldet():
     namen = uebergangsnamen()[szene["karte"]]
     befunde = pruefe_szene(szene, lade_moebel(), namen)
     assert any("versuch steht auf weiterCamp" in b for b in befunde)
+
+
+def _szene(datei: str) -> dict:
+    return copy.deepcopy(json.loads((INHALTE / "szenen" / f"{datei}.json").read_text(encoding="utf-8")))
+
+
+def test_statist_im_einzigen_durchlass_wird_gemeldet():
+    """Befund vom 18.11.2026: Der Zuschauer im Londoner Kaffeehaus stand auf (3, 7), dem einzigen
+    Durchlass zur Theke; Kellner und Rückkehr waren nicht mehr zu erreichen."""
+    szene = _szene("erinnerung-london-kaffeehaus")
+    zuschauer = next(b for b in szene["belebung"] if b["name"] == "zuschauer")
+    zuschauer["feld"] = [3, 7]
+    zuschauer["eigenschaften"].update({"von": "3,7", "bis": "3,7"})
+    befunde = pruefe_szene(szene, lade_moebel(), uebergangsnamen()[szene["karte"]])
+    assert any("Weg zu kellner" in b for b in befunde)
+    assert any("Weg zu rueckkehr" in b for b in befunde)
+
+
+def test_sitzende_sperren_das_feld_ueber_sich():
+    """Sam sitzt im Clubraum auf (5, 8) auf dem Schulstuhl: auch (5, 7) ist zu. Lily sitzt in
+    Maple Falls am Boden (Bordstein): Sie sperrt nur ihr Feld."""
+    moebel = lade_moebel()
+    club = _szene("maple-falls-clubraum")
+    gesetzt, _ = platziere(club, moebel)
+    assert sitzkacheln(club, gesetzt, moebel).get((5, 7)) == "sam"
+    aussen = _szene("maple-falls-aussen")
+    gesetzt, _ = platziere(aussen, moebel)
+    assert "lily" not in sitzkacheln(aussen, gesetzt, moebel).values()
+
+
+def test_sitzende_bleibt_von_oben_ansprechbar():
+    """Dash sitzt in Silicon Bay auf der Bank vor Rosies Wagen und ist nur von oben zu erreichen;
+    das Feld über ihm zählt für das Ansprechen (im Browser geprüft), also kein Befund."""
+    szene = _szene("silicon-bay-aussen")
+    befunde = pruefe_szene(szene, lade_moebel(), uebergangsnamen()[szene["karte"]])
+    assert not any("dash" in b for b in befunde)

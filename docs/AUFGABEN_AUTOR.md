@@ -2082,3 +2082,49 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       lautet im Spiel länger: „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt
       kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“, weil er das Brett nie gesehen hat;
       im Roman steht die kurze Fassung.
+- [ ] RO39. **Wegsperren und kurze Partien (17.11.2026 nachts, umgesetzt, Widerspruch genügt):**
+      Deine Idee mit den Jugendlichen ist gebaut: das Testteam von Perfect Move (Zoe 16, Benji 14,
+      Imani 15, in Westen mit Firmenlogo, ihr Tablet zeigt „ZERO lernt“). Drei Sperren, je eine zu
+      Beginn von Akt 2, 3 und 4, nur bis zur ersten Ankunft in der nächsten Stadt: Benji im
+      Zedernwald vor Riverton (Vorteil herausarbeiten, 10 Züge, Stellung Abb. 7.3), Imani an der
+      Raststätte vor der Glasbrücke (fremde Eröffnung, Russisch, dann Vorteil in 12 Zügen), Zoe am
+      Diner vor der Bergstraße (Endspiel gewinnen, Abb. 8.2, 15 Züge). Bei Benji und Imani öffnet
+      Sieg oder Remis für immer, bei Zoe nur der Sieg; ein Fehlversuch kostet nichts, und nach dem
+      dritten lassen sie dich trotzdem durch (Abbruch zählt nicht). Bogen: in Akt 2 stolz, in Akt 3 Zweifel, in Akt 4 ohne Westen auf
+      deiner Seite (am Limonadenwagen vor der Arena und in der Kreidenacht). Dazu eine kleine
+      Nebenquest mit 4 Schritten. Bilder sind vorerst Statisten und Ersatzporträts.
+      Kurze Partien: Fünf Straßenbegegnungen sind jetzt kurz statt ganzer Partien (Dime: Caro-Kann
+      vorgegeben, dann Vorteil; Schiffskoch: Endspiel Remis halten; Kreideblitz: Vorteil; Kreidenacht
+      1 und Sol: Endspiel gewinnen), mit erzähltem Einstieg über dem Brett. Dein Zusatz mit den Bots
+      ist auch gebaut: Engines auf ähnlicher Stufe spielen im Voraus gegeneinander, und Stellungen
+      mit passender Bewertung kommen in einen Vorrat (160 Stellungen), aus dem eine Begegnung jedes
+      Mal eine neue ziehen kann.
+      Meine Empfehlungen, so umgesetzt: (1) Stärke der drei vorerst E + 260, 380, 560 (E = deine
+      Stärke); wenn es nervt, zuerst diesen Abstand senken, nicht die drei Versuche. Gemessen am
+      18.11.2026 (Bots in deiner Stärke 800, 1200 und 1600 gegen die drei, je 60 Kurzpartien):
+      Bei Benji und Imani bist du im ersten Versuch in 52 bis 82 von 100 Fällen durch, bis zum
+      zweiten in 77 bis 97; ihre Stärke bleibt. Zoe spielt jetzt im Endspiel nicht mehr schwächer
+      als sonst. Ein Fehler ist behoben: Zoe schlug nach dem Damentausch manchmal die Dame nicht
+      zurück und war im nächsten Zug matt.
+      Zoes Sperre öffnet nur noch mit Sieg (18.11.2026, schon umgesetzt, Widerspruch genügt):
+      Vorher reichte dort auch das Remis, und weil du mit einem Bauern mehr beginnst, warst du in
+      80 bis 98 von 100 Fällen sofort durch. „Endspiel gewinnen“ heißt jetzt auch gewinnen. Ein
+      Remis zählt als Fehlversuch wie eine Niederlage; nach dem dritten Fehlversuch lassen sie
+      dich weiter durch, damit niemand hängen bleibt. Aus denselben Messpartien gerechnet (nicht
+      neu gemessen): Im ersten Versuch bist du in 43, 42 und 72 von 100 Fällen durch (Stärke 800,
+      1200, 1600), bis zum zweiten in 68, 66 und 92; über die drei Fehlversuche kommen bei 800
+      und 1200 etwa 2 von 10 durch, bei 1600 kaum jemand. Damit ist Zoe die strengste der drei.
+      Neue Sätze: nach einem Remis über dem Brett „Der Bauer ist noch da, aber durch ist er
+      nicht. ‚Unentschieden‘, sagt Zoe. ‚Das reicht hier nicht.‘“; am Viehgitter Zoe: „Gehalten
+      ist nicht gewonnen. Mit einem Bauern mehr reicht mir das nicht.“; Ambrose: „Ein Bauer mehr
+      gewinnt nicht von allein. Du musst ihn führen.“ (nach dem Abschied der Erzähler: „Der Bauer
+      mehr hat nicht von allein gewonnen.“); nach dem dritten Fehlversuch Zoe: „Dreimal ehrlich
+      versucht. Das reicht uns. Geh durch.“ (vorher „Dreimal ehrlich verloren“). Ist dir das zu
+      streng, sag es: Dann senke ich zuerst Zoes Stärke, nicht die drei Versuche.
+      (2) Zoes Satz
+      „Wer rauf zur Meisterschaft will …“ bleibt, als Bild für den Weg zum Turnier (die Straße führt
+      erst nach Summit City). (3) „ZERO lernt“ schon in Akt 2 bleibt als Vorahnung; vorgestellt wird
+      ZERO erst in Akt 3. (4) Eigene Figurenbögen erst, wenn dir die Truppe im Spiel gefällt;
+      gewünscht wären dann je ein Bogen mit und ohne Weste, ein Klapptisch mit Tablet und je ein
+      Porträtblatt (neutral, lächelt, lacht, nachdenklich). (5) Benji und Zoe könnten später bei
+      jedem Versuch eine neue Stellung aus dem Vorrat bekommen; Imani bleibt bei der festen Eröffnung.

@@ -60,6 +60,9 @@ async function geheDurch(page: Page, schritt: () => Promise<void>) {
 test("Durchgehen der ausgewerteten Partie: Brett und Knöpfe bleiben an ihrem Platz", async ({
   page,
 }) => {
+  // Rund 100 Schritte mit je fünf Messungen: lokal in Chromium 24 s, in WebKit unter der Last von
+  // GitHub Actions über der Grenze von 60 s (18.11.2026, ohne fachlichen Fehler). Dreifache Zeit.
+  test.slow();
   await starteImBrowser(page);
   await oeffnePartie(page, "hell");
   await expect(page.getByTestId("linie-partie")).toBeVisible();

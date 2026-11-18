@@ -3507,6 +3507,72 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegCedarRiverton.testteam",
+      "titel": "quest.testteam.titel",
+      "typ": "begegnung",
+      "ort": "wegCedarRiverton",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-cedar-riverton.testteam_wald"
+      },
+      "schritte": [
+        {
+          "text": "quest.testteam.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-cedar-riverton.testteam_wald_offen"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        },
+        {
+          "text": "quest.testteam.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ironwood-silicon.testteam_bruecke_offen"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        },
+        {
+          "text": "quest.testteam.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-desert-summit.testteam_gitter_offen"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        },
+        {
+          "text": "quest.testteam.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-aussen.testteam"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        }
+      ],
+      "klein": true
     }
   ]
 }

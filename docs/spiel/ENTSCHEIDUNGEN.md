@@ -1194,3 +1194,74 @@ Sendung ersetzt nur ihr Wiki. `pipeline/wiki_spiel.py` baut die Seiten des Spiel
 Karteneditor, Entscheidungen, Fortschritt) und dem Code (Begriffe, Codeführer in
 `docs/spiel/codefuehrer/`, Module aus den Dateiköpfen von `app/src/abenteuer/`, Werkzeuge aus
 `pipeline/abenteuer/`). Romantexte (`docs/spiel/roman/`) und Buchbefunde kommen nie hinein.
+
+## Kurze Partieformen und Stellungsvorrat (Wunsch des Autors, 17.11.2026)
+
+Nicht jede Begegnung ist eine ganze Partie. Neue Formate in `begegnungen.json` (Regelwerk R13a bis
+R13c): `endspiel` (gewinnen oder Remis halten), `vorteil` (aus ausgeglichener Stellung mindestens
++1,0 in N Zügen) und die Startstellung `eroeffnung` (fremde Eröffnung, danach ganze Partie oder
+Vorteil). Jede kurze Form endet nach ihren Zügen; die Engine bewertet mit Tiefe 12. Ein erzählter
+Einstieg (`erzaehlung`: vorher, Verlauf, nachher je Ausgang) steht über der Kartenleiste. Eingesetzt
+bei Dime, Schiffskoch, Kreideblitz, Kreidenacht 1 und Sol; drei von sieben ganzen Straßenpartien
+sind jetzt kurz. Zusatz des Autors: Stellungen aus Partien Bot gegen Bot. `stellungsvorrat` lässt
+dafür Stockfish auf ähnlichen Stufen gegeneinander spielen und nimmt Stellungen, deren Bewertung
+zum Format passt (160 Stellungen); die Startstellung `vorrat` zieht daraus ohne Wiederholung. Die
+App-Bots selbst (Fehlerprofile, Maia) laufen nur in der App, deshalb Stockfish auf Stufen.
+Prüfung: `python -m pipeline.abenteuer.kurzformate`.
+
+## Erinnerungen nach dem Abschied (17.11.2026, Widerspruch genügt)
+
+Nach Ambroses Abschied bleiben die Erinnerungen und Fundstücke (Archiv, Museum, Hütte) zugänglich,
+aber ohne seine Stimme: Ein Abschnitt `allein` bietet „Die Partie nachspielen“ oder Weitergehen;
+in den Erinnerungsszenen spricht der junge Ambrose als „die Stimme kommt aus dir“. Geprüft mit
+`ambrose-danach.cjs` (0 Funde bei drei Spielertypen).
+
+## Wegsperren: Testteam von Perfect Move (Idee des Autors, 17.11.2026)
+
+Drei Sperren S15 bis S17 an Übergängen zu Beginn von Akt 2, 3 und 4 (Zedernwald, Raststätte,
+Diner), nur bis zur ersten Ankunft in der nächsten Stadt. Gegner sind drei Jugendliche eines
+Testteams von Perfect Move (Bezug zu ZERO), mit kurzen Formaten statt ganzer Partie. Bei S15 und
+S16 öffnet Sieg oder Remis dauerhaft; bei S17 (Endspiel gewinnen, Start etwa +3) seit 18.11.
+nur der Sieg, ein Remis zählt dort als Fehlversuch. Der dritte gewertete Fehlversuch öffnet
+überall (Notausgang, damit niemand festhängt); Abbruch zählt nicht. Stärke gemessen
+(`docs/spiel/auftraege/wegsperren_staerke_18-11.md`): Versätze 260, 380, 560 bleiben, Zoes
+Abschlag im Endspiel entfällt; Maia schwieg in Partien aus Buchstellungen die ersten Züge
+(Halbzug aus der FEN-Zugnummer), behoben. Bogen bis zum Seitenwechsel in Akt 4. Konzept und Stand:
+`docs/spiel/32_Wegsperren.md`; offene Fragen in RO39.
+
+## Browserprüfung der Wegsperren: Kollision, Rahmen, Schrift, Meldungen (18.11.2026 früh)
+
+- **Kollision stehender Figuren nur auf der Fußkachel:** Bisher sperrte jede Figur auch die
+  Kachel über sich (Körper aufs ganze Bild), das nahm schmalen Wegen eine Reihe. Sitzende sperren
+  Fußkachel und Sitzpunkt, damit der Held nicht in ihnen steht. `kopfkachel` meldet neu begehbare
+  Kacheln je Szene; sechs neu erreichbare Ecken sind mit „sperren“ geschlossen.
+- **Dialograhmen beim ersten Laden** des Pakets fehlte (freigegebene Bildadressen); behoben.
+- **Leerer Dialog** wechselt sofort, ohne dass die Bedienknöpfe kurz verschwinden.
+- **Großes Z in Pixelify Sans** sah aus wie eine 2 („2oe“); die Glyphe ist im Raster der Schrift
+  neu gezeichnet (OFL 1.1 erlaubt Änderungen, vermerkt in `docs/LIZENZEN.md`).
+- **Meldungen wie „Neu im Tagebuch“** warten bis nach dem Dialog und kommen nacheinander.
+
+## Maia ist Pflicht im Spiel, Gegner spielen menschlich (Wunsch des Autors, 18.11.2026)
+
+Die Gegner des Abenteuers spielen über die Bots der App: Stufe je Phase, Fehlerarten mit
+Gewichten, Stil, Eröffnung wie Menschen ihrer Stärke, dazu Maia (`partiestart.ts`). Nur Kade
+(ZERO-gestützt) ist absichtlich „nicht menschlich“. Neu: Maia gehört zum Spiel. „Spiel
+herunterladen“ lädt das Maia-Paket mit, wenn es noch nicht auf dem Gerät ist; ein Spielpaket ohne
+Maia gilt als „fehlt“, und im Spiel spielt Maia unabhängig vom Schalter in den App-Einstellungen
+mit (`anbindung/maiapflicht.ts`). In der Schach-App bleibt Maia freiwillig. Der Stellungsvorrat
+(bisher aus Partien Stockfish gegen Stockfish auf Stufen) wird mit den App-Bots neu erzeugt
+(Auftrag an mittel-3).
+
+## Statisten sind Hindernisse, Übergänge im Stand, kurze Partien zu nach dem Ende (18.11.2026)
+
+Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fable):
+- **Statisten und sperrende Tiere** waren seit dem 10.11. durchlaufbar (Sperre endete zwei Pixel
+  vor dem Anstoßen); jetzt echte Hindernisse. Zwei so versperrte Durchlässe geräumt (Londoner
+  Kaffeehaus, Spielplatz Maple Falls); `figurensperre` prüft dauerhaft, dass Auslöser, Figuren und
+  Statisten mit Satz erreichbar bleiben.
+- **Übergang nach einer Partie** reagierte erst nach Schritt zurück; jetzt zählt der Schritt in
+  den Durchgang nach einer Drittelsekunde Stillstand (alle Übergänge).
+- **Kurze Partie:** Während der Schlusswertung ist das Brett zu (vorher zwei Halbzüge zu viel).
+- **Sitzende auf Möbeln** sperren auch die Kachel darüber.
+- **Slick auf der Bank** (R102) und vier Schüler der Akademie haben je einen Satz (Slick als
+  Selbstgespräch); vorher stumm. Widerspruch genügt.

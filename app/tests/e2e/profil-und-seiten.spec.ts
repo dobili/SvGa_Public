@@ -143,11 +143,21 @@ test("Kapitelseite bei 150 % Schrift: nichts ragt über den Rand (N2446)", async
     .getByRole("button", { name: /Dein Einstieg ins Schachbuch/ })
     .click();
   await expect(page.getByRole("button", { name: "Alle abhaken" })).toBeVisible();
-  const breite = await page.evaluate(() => ({
-    inhalt: document.documentElement.scrollWidth,
-    fenster: window.innerWidth,
-  }));
-  expect(breite.inhalt).toBeLessThanOrEqual(breite.fenster);
+  // Bei einem Fund nennt die Meldung die Elemente, die über den Rand ragen (nur WebKit war
+  // betroffen, 17./18.11.2026, und WebKit läuft nur in GitHub Actions).
+  const breite = await page.evaluate(() => {
+    const fenster = window.innerWidth;
+    const zuBreit = [...document.querySelectorAll("body *")]
+      .filter((e) => e.getBoundingClientRect().right > fenster + 1)
+      .slice(0, 8)
+      .map((e) => {
+        const r = e.getBoundingClientRect();
+        const klasse = typeof e.className === "string" ? e.className : "";
+        return `${e.tagName}.${klasse} rechts ${Math.round(r.right)} „${(e.textContent ?? "").slice(0, 30)}“`;
+      });
+    return { inhalt: document.documentElement.scrollWidth, fenster, zuBreit };
+  });
+  expect(breite.inhalt, breite.zuBreit.join(" | ")).toBeLessThanOrEqual(breite.fenster);
   for (const name of ["Alle abhaken", "Alle zurücksetzen"]) {
     const kasten = await page.getByRole("button", { name }).boundingBox();
     if (kasten) expect(kasten.x + kasten.width).toBeLessThanOrEqual(breite.fenster);

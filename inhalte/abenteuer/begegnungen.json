@@ -1452,6 +1452,87 @@
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
+    },
+    {
+      "kennung": "wegCedarRiverton.testteam",
+      "gegner": "wegCedarRiverton.testteam",
+      "farbe": "white",
+      "format": {
+        "art": "vorteil",
+        "zuege": 10,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "7.3"
+      },
+      "kartenErlaubt": true,
+      "erzaehlung": {
+        "vorher": "erzaehlung.testteamWald.vorher",
+        "verlauf": [
+          "e4",
+          "e5",
+          "Nf3",
+          "Nc6",
+          "Nc3",
+          "Nf6",
+          "Bc4",
+          "Nxe4",
+          "Nxe4",
+          "d5"
+        ],
+        "nachher": {
+          "sieg": "erzaehlung.testteamWald.sieg",
+          "remis": "erzaehlung.testteamWald.remis",
+          "niederlage": "erzaehlung.testteamWald.niederlage"
+        }
+      }
+    },
+    {
+      "kennung": "wegIronwoodSilicon.testteam",
+      "gegner": "wegIronwoodSilicon.testteam",
+      "farbe": "white",
+      "format": {
+        "art": "vorteil",
+        "zuege": 12,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "eroeffnung",
+        "zuege": ["e4", "e5", "Nf3", "Nf6", "Nxe5", "d6", "Nf3", "Nxe4"]
+      },
+      "kartenErlaubt": true,
+      "erzaehlung": {
+        "vorher": "erzaehlung.testteamBruecke.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.testteamBruecke.sieg",
+          "remis": "erzaehlung.testteamBruecke.remis",
+          "niederlage": "erzaehlung.testteamBruecke.niederlage"
+        }
+      }
+    },
+    {
+      "kennung": "wegDesertSummit.testteam",
+      "gegner": "wegDesertSummit.testteam",
+      "farbe": "white",
+      "format": {
+        "art": "endspiel",
+        "zuege": 15,
+        "ziel": "sieg"
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "8.2"
+      },
+      "kartenErlaubt": true,
+      "erzaehlung": {
+        "vorher": "erzaehlung.testteamGitter.vorher",
+        "nachher": {
+          "sieg": "erzaehlung.testteamGitter.sieg",
+          "remis": "erzaehlung.testteamGitter.remis",
+          "niederlage": "erzaehlung.testteamGitter.niederlage"
+        }
+      }
     }
   ]
 }

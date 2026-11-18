@@ -189,10 +189,10 @@
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [3, 7],
+      "feld": [6, 7],
       "eigenschaften": {
-        "von": "3,7",
-        "bis": "3,7",
+        "von": "6,7",
+        "bis": "6,7",
         "tun": "beugt sich über das Brett",
         "wann": "tag"
       }
@@ -235,5 +235,11 @@
       }
     }
   ],
-  "toenung": "sepia"
+  "toenung": "sepia",
+  "sperren": [
+    [2, 8],
+    [1, 7],
+    [2, 7],
+    [1, 8]
+  ]
 }

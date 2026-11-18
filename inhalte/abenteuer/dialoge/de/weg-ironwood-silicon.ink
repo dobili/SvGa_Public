@@ -7,6 +7,8 @@
 // wegIronwoodSilicon.joggerin; immun gegen „Großes Maul“), Funde Werbe-Anstecker und Ohrstöpsel.
 // Einstiege wie in orte.json: kowalczyk, joggerin, zurueck_ironwood, tafel, fund_anstecker,
 // fund_ohrstoepsel. Die Ankunft in Silicon Bay erzählt silicon-bay-aussen.ankunft_zu_fuss.
+// Wegsperre S16 (32_Wegsperren.md): das Testteam am Brückenkopf der Raststätte, Einstieg
+// testteam_bruecke (drei Figuren); der Übergang weiterGlasbruecke springt aus glasbruecke dorthin.
 //
 // Runde 11 (13.11.2026): an den Roman angeglichen (roman/akt3_teil1.md, Kapitel 30): Mrs. Kowalczyk
 // („Erst laden, dann fahren“), die Glasbrücke als Gegenstück zur Eisenbrücke, der Ohrstöpsel in der
@@ -44,6 +46,17 @@ VAR seite04Gefunden = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Wegsperre S16: einladungGesehen setzt ironwood-aussen.ink, ankunftSiliconBayGesehen
+// silicon-bay-aussen.ink, den Ausgang die Hülle (R42), testteamStand auch Weg 2; die übrigen
+// setzt diese Datei.
+VAR einladungGesehen = false
+VAR ankunftSiliconBayGesehen = false
+VAR ausgangWegIronwoodSiliconTestteam = ""
+VAR testteamStand = 0
+VAR testteamBrueckeGesehen = false
+VAR testteamBrueckeDurch = false
+VAR testteamBrueckeSpielt = false
+VAR testteamBrueckeNiederlagen = 0
 
 // ---------------------------------------------------------------- Mrs. Kowalczyk
 
@@ -160,6 +173,9 @@ Du steckst ihn ein. Du hast dir angewöhnt, Dinge einzustecken. #sprecher:erzaeh
 // Kapitel 30: die Glasbrücke als Gegenstück zur Eisenbrücke. Läuft beim Übergang vom Rastplatz
 // auf die Brücke (orte.json, weiterGlasbruecke); ab dem zweiten Mal nur ein Satz.
 === glasbruecke ===
+// Wegsperre S16: Solange die Truppe am Brückenkopf steht und nicht durchgelassen hat, führt der
+// Übergang ins Gespräch mit ihr (orte.json, `wenn` am Übergang mit derselben Bedingung).
+{einladungGesehen and not testteamBrueckeDurch and not ankunftSiliconBayGesehen: -> testteam_bruecke}
 {glasbrueckeGesehen:
     Glas unter den Schuhen. Zwölf Meter tiefer die Autobahn, ein Fluss aus weißen und roten Lichtern. #sprecher:erzaehler
     -> END
@@ -298,3 +314,79 @@ Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint
 }
 -> END
 
+
+// ---------------------------------------------------------------- Wegsperre S16: das Testteam
+
+// 32_Wegsperren.md: dieselbe Truppe wie im Zedernwald, jetzt spielt Imani eine Eröffnung, die
+// {held} nicht kennt (Russische Verteidigung). Regeln wie bei S15: Sieg oder Remis öffnet, die
+// dritte Niederlage auch; Niederlagen zählt eine Variable. Nach dem Durchlassen der Zweifel:
+// Imanis eigene Zugfolge steht als „Variante 31“ unter ZEROs Namen.
+// Regel: Kapitel 2, Die Russische Verteidigung (Petroff), Abb. 2.42: die Startstellung.
+=== testteam_bruecke ===
+{testteamBrueckeDurch: -> testteam_bruecke_danach}
+{testteamBrueckeSpielt:
+    ~ testteamBrueckeSpielt = false
+    {ausgangWegIronwoodSiliconTestteam == "niederlage":
+        ~ testteamBrueckeNiederlagen = testteamBrueckeNiederlagen + 1
+    }
+}
+{
+- ausgangWegIronwoodSiliconTestteam == "sieg" or ausgangWegIronwoodSiliconTestteam == "remis": -> testteam_bruecke_durch
+- ausgangWegIronwoodSiliconTestteam == "niederlage": -> testteam_bruecke_niederlage
+}
+{not testteamBrueckeGesehen:
+    ~ testteamBrueckeGesehen = true
+    Am Brückenkopf, unter den drei Laternen, steht ein Klapptisch. {testteamStand >= 1:Dahinter die drei aus dem Zedernwald, in denselben weißen Westen.|Dahinter drei in weißen Westen, auf jeder ein kleines silbernes Logo.} #sprecher:erzaehler
+    Testfeld Glasbrücke. Zutritt nach einer Stellung. #sprecher:zoe #stimmung:laechelt
+    Ich spiele eine Eröffnung, die du nicht kennst. Das ist die Aufgabe. #sprecher:imani #stimmung:nachdenklich
+}
+Zwölf Züge gegen Imani. Wer danach besser steht, hat gewonnen. #sprecher:zoe #stimmung:laechelt
++ [„Eine Stellung.“]
+    -> testteam_bruecke_partie
++ [„Später.“]
+    Die Brücke ist aus Glas. Sie hält auch noch morgen. #sprecher:zoe #stimmung:laechelt
+    -> END
+
+=== testteam_bruecke_partie ===
+~ testteamBrueckeSpielt = true
+~ beginnePartie("wegIronwoodSilicon.testteam")
+-> END
+
+=== testteam_bruecke_niederlage ===
+Datenpunkt 19870. Danke. #sprecher:zoe #stimmung:laechelt
+{testteamBrueckeNiederlagen >= 3: -> testteam_bruecke_genug}
+{not abschiedGesehen:
+    Fremd ist nur der Name. Die Figuren sind dieselben. #sprecher:ambrose #stimmung:nachdenklich
+- else:
+    Fremd war nur der Name. Die Figuren waren dieselben. #sprecher:erzaehler
+}
+{not wegIronwoodSiliconTafelBestanden:
+    Am Kaffeeautomaten hängt eine Blechtafel mit Aufgaben. Wer sie löst, sieht schneller, was hängt. #sprecher:erzaehler
+}
++ [„Noch einmal.“]
+    -> testteam_bruecke_partie
++ [„Nicht jetzt.“]
+    -> END
+
+=== testteam_bruecke_genug ===
+Zoe sieht auf ihr Tablet und zuckt mit den Schultern. #sprecher:erzaehler
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. Geh durch. #sprecher:zoe #stimmung:nachdenklich
+-> testteam_bruecke_offen
+
+=== testteam_bruecke_durch ===
+Das war meine Variante. Die habe ich mir ausgedacht, im Herbst. #sprecher:imani #stimmung:nachdenklich
+Sie dreht das Tablet um. Dort steht ihre Zugfolge unter „ZERO, Variante 31“. Ohne ihren Namen. #sprecher:erzaehler
+-> testteam_bruecke_offen
+
+=== testteam_bruecke_offen ===
+~ testteamBrueckeDurch = true
+{testteamStand < 2:
+    ~ testteamStand = 2
+}
+Zwanzigtausend sind voll. Hier steht: Datensatz vollständig. Danke für Ihre Teilnahme. #sprecher:zoe #stimmung:nachdenklich
+Mehr steht da nicht. Benji zieht den Reißverschluss seiner Weste auf. #sprecher:erzaehler
+-> END
+
+=== testteam_bruecke_danach ===
+{~Wir warten auf den Bus. Die App schickt uns nirgends mehr hin.|Variante 31. Ich habe nachgezählt. Es sind meine Züge.} #sprecher:imani #stimmung:nachdenklich
+-> END

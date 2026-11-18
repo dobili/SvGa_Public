@@ -2009,6 +2009,21 @@
     {
       "name": "fenwick",
       "feld": [29, 17]
+    },
+    {
+      "name": "testteamZoe",
+      "feld": [137, 13],
+      "blick": "unten"
+    },
+    {
+      "name": "testteamBenji",
+      "feld": [135, 16],
+      "blick": "oben"
+    },
+    {
+      "name": "testteamImani",
+      "feld": [138, 16],
+      "blick": "oben"
     }
   ],
   "belebung": [

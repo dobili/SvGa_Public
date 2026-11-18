@@ -1374,7 +1374,7 @@
     {
       "name": "kinderKreide",
       "typ": "statist",
-      "feld": [54, 32],
+      "feld": [55, 32],
       "eigenschaften": {
         "tun": "malt mit Kreide ein Brett auf den Boden",
         "wann": "tag",

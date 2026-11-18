@@ -28,6 +28,8 @@ const ZIEL = join(INHALTE, "portraets");
 const GROESSE = 128;
 /** Ohne Hintergrund; die Oberfläche legt ihre Farbe dahinter (wie bei den Gegnerbildern der App). */
 const OHNE = 0;
+/** Bogen aus dem Statistenvorrat (figuren/statist-NN.png): dafür gibt es kein Porträt. */
+const STATISTENBOGEN = /^statist-\d+$/;
 const IMMER = 100;
 
 /** Hauttöne aus der Palette des Stils, von hell nach dunkel. */
@@ -197,6 +199,10 @@ const FIGUREN = {
   dolores: ["long10", "schwarz", "h6", "variant08", "6a3d9a", "", "", ""], // Schaustellerin, Mantel mit Sternen
   ike: ["short11", "schwarz", "h6", "variant03", "ffc425", "", "", ""], // Dolores' Sohn, im Schachtürken
   faehrmann: ["short01", "grau", "h4", "variant21", "03396c", "", "variant06", ""], // Fährmann der Inselfähre
+  // Testteam von Perfect Move an den Wegsperren S15 bis S17 (docs/spiel/32_Wegsperren.md): weiße Westen
+  zoe: ["long12", "braun", "h3", "variant12", "ececec", "", "", ""], // 16, Anführerin, redet in Zahlen
+  benji: ["short11", "blond", "h2", "variant12", "ececec", "", "", ""], // 14, zieht zu schnell
+  imani: ["long08", "schwarz", "h8", "variant12", "ececec", "", "", ""], // 15, still, die Stärkste
 };
 
 /** Alle Porträtnamen, die die Spieldaten nennen (gegner.json, orte.json). */
@@ -210,7 +216,9 @@ function namenAusDaten() {
       const profil = gegner.find((g) => g.kennung === figur.gegner);
       namen.add(profil ? name(profil.portraet) : name(figur.sprite));
     }
-  return [...namen].sort();
+  // Figuren, die einen Bogen aus dem Statistenvorrat tragen (Testteam, bis es eigene Bögen gibt),
+  // sprechen unter ihrem eigenen Namen; „statist-NN“ ist kein Porträt.
+  return [...namen].filter((n) => !STATISTENBOGEN.test(n)).sort();
 }
 
 /** Ein Porträt als SVG aus einer Zeile der Tabelle. */

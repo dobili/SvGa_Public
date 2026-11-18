@@ -1838,6 +1838,91 @@
           "wert": "drohungIgnoriert"
         }
       ]
+    },
+    {
+      "kennung": "wegCedarRiverton.testteam",
+      "name": "figur.benji.name",
+      "rolle": "story",
+      "temperament": "frech",
+      "portraet": "portraets/benji.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 260
+      },
+      "gewichte": {
+        "schlagreflex": 1.6,
+        "figurHaengen": 1.3
+      },
+      "stil": "draufgaenger",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "text",
+          "wert": "steckbrief.benji.schnell"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "schlagreflex"
+        }
+      ]
+    },
+    {
+      "kennung": "wegIronwoodSilicon.testteam",
+      "name": "figur.imani.name",
+      "rolle": "story",
+      "temperament": "kuehl",
+      "portraet": "portraets/imani.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 380
+      },
+      "gewichte": {
+        "tempoverlust": 1.4
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "text",
+          "wert": "steckbrief.imani.still"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "tempoverlust"
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.testteam",
+      "name": "figur.zoe.name",
+      "rolle": "story",
+      "temperament": "ehrgeizig",
+      "portraet": "portraets/zoe.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 560
+      },
+      "gewichte": {
+        "falscherAbtausch": 1.5
+      },
+      "stil": "universell",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "text",
+          "wert": "steckbrief.zoe.zahlen"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "falscherAbtausch"
+        }
+      ]
     }
   ]
 }

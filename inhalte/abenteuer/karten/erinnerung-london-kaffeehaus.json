@@ -278,8 +278,8 @@
     0,
     2,
     2,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     0,
@@ -290,8 +290,8 @@
     0,
     2,
     2,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     0,
@@ -731,7 +731,7 @@
      "id": 10,
      "name": "zuschauer",
      "type": "statist",
-     "x": 48,
+     "x": 96,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -741,12 +741,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "3,7"
+       "value": "6,7"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "3,7"
+       "value": "6,7"
       },
       {
        "name": "tun",
@@ -1419,6 +1419,11 @@
    "name": "toenung",
    "type": "string",
    "value": "sepia"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "1,7;2,7;1,8;2,8"
   }
  ]
 }

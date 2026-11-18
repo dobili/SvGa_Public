@@ -44,6 +44,12 @@
 - **Schriften:** Die OFL-Texte in `app/public/lizenzen/` tragen seit 0.2.113 die Copyright-Zeile
   von Adobe aus `adobe-fonts/source-sans` und `adobe-fonts/source-serif`; Fontsource liefert
   dort fälschlich „Google Inc.“.
+- **Pixelify Sans, geändertes Z (seit 18.11.2026):** In der Schrift ist das große Z wie die 2
+  gezeichnet („2oe“ statt „Zoe“ im Namensschild des Schach-Abenteuers). Die Datei in
+  `app/src/abenteuer/schrift/` trägt deshalb ein neu gezeichnetes Z im Raster der Schrift
+  (`pipeline/abenteuer/schriftglyphe.py`, Dauertest dazu); alles andere ist unverändert. Die OFL 1.1
+  erlaubt Änderungen, die Schrift nennt keinen geschützten Namen („Reserved Font Name“), also bleibt
+  der Name; Urheberzeile und Lizenztext bleiben, wie sie sind.
 
 - **SkakNew:** Laut `pipeline/figuren/quelle/SkakNew.tex` (Zeile 25) gilt die LPPL 1.2 oder jede
   spätere Fassung; mitgeliefert wird die aktuelle Fassung 1.3c. Die App enthält nicht die Schrift

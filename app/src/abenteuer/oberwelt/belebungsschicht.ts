@@ -10,7 +10,7 @@
  * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
 import { rahmenzahl, setzeSitzend } from "./figurensitz";
-import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
+import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzmoebel } from "./sitzplatz";
 import { sitzbild } from "./sitzrichtung";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
@@ -21,6 +21,7 @@ import {
   sperreAn,
   steht,
   type Bewegung,
+  type Sperrflaeche,
   type Umgebung,
 } from "./belebungsbewegung";
 import {
@@ -52,6 +53,8 @@ interface Darsteller {
   readonly bogen: string | null;
   /** Unsichtbare Sperrfläche eines Statisten (nur im Stehen an). */
   readonly sperre: Phaser.GameObjects.Rectangle | null;
+  /** Ihre Fläche in Kacheln um die Mitte der Fußkachel, wenn sie größer ist (Sitzende). */
+  readonly flaeche?: Sperrflaeche;
   /** Feste Zeichentiefe einer Sitzenden auf ihrem Möbel (sitzplatz.ts); sonst die Fußlinie. */
   readonly tiefe?: number;
 }
@@ -138,13 +141,20 @@ export class Belebungsschicht {
       sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
     }
     const sitz = v.sitzt ? sitzlageAuf(this.sitze, v.feld, this.kachel) : null;
-    if (eigen && v.sitzt) setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ);
-    this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre(), sitz?.tiefe);
+    const versatz = eigen && v.sitzt ? setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ) : null;
+    const sperre = this.neueSperre(versatz?.dx, versatz?.dy);
+    this.fuegeHinzu(v, sprite, eigen ? bogen : null, sperre, sitz?.tiefe, versatz ?? undefined);
   }
 
-  /** Unsichtbare Fläche von einer Kachel, an der der Held anstößt (Statist oder Tier). */
-  private neueSperre(): Phaser.GameObjects.Rectangle {
-    const sperre = this.szene.add.rectangle(0, 0, this.kachel, this.kachel).setVisible(false);
+  /**
+   * Unsichtbare Fläche von einer Kachel, an der der Held anstößt (Statist oder Tier). Eine
+   * Sitzende, deren Bild um dx, dy aufs Sitzmöbel gerückt ist, sperrt auch ihren Sitzpunkt
+   * (sitzplatz.ts, sitzsperre); der Punkt der Fläche bleibt die Mitte der Fußkachel.
+   */
+  private neueSperre(dx = 0, dy = 0): Phaser.GameObjects.Rectangle {
+    const f = sitzsperre(dx, dy, this.kachel);
+    const sperre = this.szene.add.rectangle(0, 0, f.breite, f.hoehe).setVisible(false);
+    sperre.setOrigin(-f.x / f.breite, -f.y / f.hoehe);
     this.szene.physics.add.existing(sperre, true);
     return sperre;
   }
@@ -177,8 +187,12 @@ export class Belebungsschicht {
     bogen: string | null,
     sperre: Phaser.GameObjects.Rectangle | null,
     tiefe?: number,
+    versatz?: { readonly dx: number; readonly dy: number },
   ): void {
     const b = neueBewegung(v.feld, v.blick);
+    const k = this.kachel;
+    // Fläche der Sitzenden in Kacheln (sitzsperre rechnet in Pixeln), für das Schalten der Sperre.
+    const f = versatz ? sitzsperre(versatz.dx, versatz.dy, k) : null;
     const d: Darsteller = {
       v,
       b,
@@ -186,6 +200,9 @@ export class Belebungsschicht {
       bogen,
       sperre,
       ...(tiefe === undefined ? {} : { tiefe }),
+      ...(f
+        ? { flaeche: { x: f.x / k, y: f.y / k, breite: f.breite / k, hoehe: f.hoehe / k } }
+        : {}),
     };
     this.darsteller.push(d);
     this.zeige(d);
@@ -244,7 +261,8 @@ export class Belebungsschicht {
 
   /**
    * Statisten und Tiere am Boden sperren ihre Kachel, auch im Gehen (Wunsch des Autors,
-   * 10.11.2026), aber nie, solange der Held sie berührt (er läuft nie fest).
+   * 10.11.2026), aber nie, solange der Held in ihrer Fläche steckt (er läuft nie fest); bloßes
+   * Anstoßen schaltet sie nicht aus (belebungsbewegung.ts, sperreAn).
    */
   private schalteSperre(d: Darsteller, held: Feld): void {
     const sperre = d.sperre;
@@ -252,7 +270,7 @@ export class Belebungsschicht {
     if (!sperre || !(koerper instanceof Phaser.Physics.Arcade.StaticBody)) return;
     const x = Math.round(d.b.x);
     const y = Math.round(d.b.y);
-    const an = sperreAn(held, x, y);
+    const an = sperreAn(held, x, y, d.flaeche);
     const mx = x * this.kachel + this.kachel / 2;
     const my = y * this.kachel + this.kachel / 2;
     if (an && (sperre.x !== mx || sperre.y !== my || !koerper.enable)) {

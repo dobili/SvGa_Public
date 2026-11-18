@@ -7,10 +7,12 @@
  * Rolle im Gesamtbild: Ausgelagert aus oberwelt/Oberwelt.tsx (Aufteilen, Schritt 5). Arbeitet auf
  * dem gemeinsamen Kern (kern.ts) und startet Partien und Runden über usePartiestart.ts und
  * useAufgabenrunde.ts.
- * Abhängigkeiten: regeln/dialogvariablen.ts, oberwelt/dialogwirkungen.ts, oberwelt/weltdaten.ts.
+ * Abhängigkeiten: regeln/dialogvariablen.ts, oberwelt/dialogwirkungen.ts, oberwelt/weltdaten.ts,
+ * dialog/stillesende.ts (Übergang ohne Text: kein Fenster).
  */
 import { useRef, useState } from "react";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
+import { stillesEnde } from "../dialog/stillesende";
 import { erfuellt } from "../regeln/bedingung";
 import { variablenAusBesitz, variablenNachDialog } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -125,13 +127,34 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   // Ein Übergang mit Dialog (orte.json `dialog`, `wenn`): der Wechsel folgt nach dem Dialog.
   const uebergang = useRef<{ ziel: Ziel; wenn: string | null } | null>(null);
   const m = useMerker();
-  const oeffneDialog = (verweis: string) => {
+  /**
+   * Öffnet den Dialog. Mit `amUebergang` fragt es Ink zuerst zur Probe (dialog/stillesende.ts):
+   * Sagt der Knoten nichts (offene Wegsperre), folgt gleich das Dialogende mit dem Kartenwechsel,
+   * ohne Fenster.
+   */
+  const oeffneDialog = (verweis: string, amUebergang = false) => {
     const [datei, knoten] = verweis.split(".", 2);
     if (!datei || !knoten) return;
     variablenBeimOeffnen.current = k.standRef.current?.dialogvariablen ?? {};
     zuletztAusInk.current = {};
     ladeDialog(datei)
-      .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
+      .then((geladen) => {
+        const json = JSON.stringify(geladen);
+        const stand = k.standRef.current;
+        const still =
+          amUebergang && stand
+            ? stillesEnde(
+                json,
+                knoten,
+                { ...stand.dialogvariablen, ...variablenAusBesitz(stand) },
+                stand.held.name,
+              )
+            : null;
+        if (still) return beiDialogende(still);
+        // Meldungen aus dem Dialog (Quest, Fund) warten bis zu seinem Ende (meldungsstau.ts).
+        k.dialogOffen(true);
+        setzeDialog({ json, datei, knoten });
+      })
       .catch(() => k.setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
   };
   /** Stand mit den Variablen aus Ink (Hülle gewinnt, regeln/dialogvariablen.ts); null ohne Stand. */
@@ -157,6 +180,7 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   };
   const beiDialogende = (variablen: Dialogvariablen) => {
     setzeDialog(null);
+    k.dialogOffen(false);
     const neu = mitVariablen(variablen);
     if (!neu) return;
     k.schreibe(neu);
@@ -178,10 +202,10 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   };
   return {
     dialog,
-    oeffneDialog,
+    oeffneDialog: (verweis) => oeffneDialog(verweis),
     oeffneUebergang: (verweis, ziel, wenn) => {
       uebergang.current = { ziel, wenn };
-      oeffneDialog(verweis);
+      oeffneDialog(verweis, true);
     },
     // Die Refs (Spielstand, Merker) liest dialogwirkungen erst, wenn Ink eine Funktion aufruft.
     wirkungen: dialogwirkungen({

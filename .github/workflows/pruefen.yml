@@ -22,6 +22,12 @@ concurrency:
 permissions:
   contents: read
 
+# onnxruntime-node (Maia unter Node, Messläufe) lädt beim Installieren auf Linux x64 die
+# CUDA-Bibliotheken von GitHub nach; seit dem 18.11.2026 antwortet die Adresse mit 404, und
+# `npm ci` brach ab. Die App braucht nur die CPU-Laufzeit aus dem npm-Paket.
+env:
+  ONNXRUNTIME_NODE_INSTALL_CUDA: skip
+
 jobs:
   pipeline:
     name: Pipeline

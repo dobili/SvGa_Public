@@ -13,6 +13,7 @@ import {
   sitzlage,
   sitzlageAuf,
   sitzmoebelAus,
+  sitzsperre,
   umrissInWelt,
   type Sitzmoebel,
 } from "./sitzplatz";
@@ -190,5 +191,22 @@ describe("Sitzen am Boden (Lily auf dem Bordstein)", () => {
   it("ohne Sitzmöbel: keine Lage auf einem Möbel, dafür BODENSITZ ohne Verschiebung", () => {
     expect(sitzlageAuf([], { x: 14, y: 24 }, 16)).toBeNull();
     expect(BODENSITZ).toMatchObject({ dx: 0, dy: 0, amBoden: true });
+  });
+});
+
+describe("sitzsperre: was eine Sitzende sperrt", () => {
+  it("Sam (dx 6, dy −9): Fußkachel und Sitzpunkt, 22 × 25 ab der Kachelecke links oben", () => {
+    expect(sitzsperre(6, -9, K)).toEqual({ x: -8, y: -17, breite: 22, hoehe: 25 });
+  });
+  it("nach links unten gerückt: die Fläche wächst nach links und unten", () => {
+    expect(sitzsperre(-4, 3, K)).toEqual({ x: -12, y: -8, breite: 20, hoehe: 19 });
+  });
+  it("am Boden (Lily, keine Verschiebung): genau die Fußkachel", () => {
+    expect(sitzsperre(0, 0, K)).toEqual({ x: -8, y: -8, breite: K, hoehe: K });
+  });
+  it("lässt dem Helden über Sam keinen Platz zum Durchgehen", () => {
+    // Der Körper des Helden ist 12 Pixel hoch; über der Sperre bleiben in der Kopfkachel 7.
+    const frei = K - (-sitzsperre(6, -9, K).y - K / 2);
+    expect(frei).toBeLessThan(K - 4);
   });
 });

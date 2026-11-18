@@ -49,6 +49,10 @@ Pflichtnennung zusätzlich, weil den Abspann nur sieht, wer das Spiel beendet.
 Vor jeder neuen Lieferung (Paket, KI-Bild, Geräusch): Zeile hier, Nennung im Abspann, falls
 Pflicht oder gewünscht, und bei Pflicht auch auf der Lizenzseite.
 
+Pixelify Sans trägt seit dem 18.11.2026 ein neu gezeichnetes großes Z (vorher sah es aus wie die 2,
+„2oe“ statt „Zoe“): `pipeline/abenteuer/schriftglyphe.py`. Die OFL 1.1 erlaubt das, die Schrift
+nennt keinen geschützten Namen; Näheres in `docs/LIZENZEN.md` unter Hinweise.
+
 ## Hinweis zum Repository
 
 Die App steht unter GPL-3.0-or-later und hängt an GPL-Bibliotheken (chessops, Stockfish) und

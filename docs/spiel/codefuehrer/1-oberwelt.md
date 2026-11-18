@@ -11,7 +11,9 @@ Statisten und Tieren, eingebettet in einen React-Rahmen. Der Code liegt in
    Hooks (`useWeltladen`, `usePartiestart`, `useAufgabenrunde`, `useDialogende`, `useBuehne`,
    `useZielhinweis`).
 2. **`kern.ts`** hält den gemeinsamen Kern dieser Hooks: Spielstand, geladene Welt, das laufende
-   Phaser-Spiel, Meldungen, Questereignisse, Kartenwechsel und Tönung.
+   Phaser-Spiel, Meldungen, Questereignisse, Kartenwechsel und Tönung. Meldungen, die in einem
+   offenen Dialog entstehen („Neu im Tagebuch …“, Funde), warten in **`meldungsstau.ts`** und
+   erscheinen nach dem Dialog der Reihe nach.
 3. **`weltdaten.ts`** lädt für eine Karte des Spielstands Spieldaten, Karte und Bilder und deutet
    die Tiled-Objekte über `orte.json` (Auslöser, Figuren, Aktionen, Sprechblasen).
 4. **`oberweltspiel.ts`** startet und beendet das Phaser-Spiel; **`szene.ts`** ist die Szene
@@ -39,11 +41,24 @@ Statisten und Tieren, eingebettet in einen React-Rahmen. Der Code liegt in
 
 - `figurenaufstellung.ts`, `figurbilder.ts`, `figurbogen.ts`, `figurensitz.ts`, `sitzplatz.ts`,
   `sitzrichtung.ts`, `sitzumriss.ts`, `geistfigur.ts`, `figurblende.ts`: Figuren stehen, sitzen,
-  schweben und blenden ein oder aus.
+  schweben und blenden ein oder aus. Eine Figur sperrt genau ihre Fußkachel
+  (`legeFestkoerperAufKachel` in `figurbilder.ts`), nicht die Kachel, in die ihr Kopf ragt.
+  Sitzende (Figuren und Statisten) sperren dazu ihren Sitzpunkt (`sitzsperre` in `sitzplatz.ts`),
+  weil ihr Bild aufs Sitzmöbel rückt und der Held sonst in ihnen stünde. Die Rechnung ohne Phaser
+  (`begehbar.ts`, `sitzkacheln`) und die Pipeline (`figurensperre.py`) nehmen dafür die Kachel über
+  einer Sitzenden auf einem Sitzmöbel als gesperrt (eher eine Kachel zu viel: Wie weit das Bild
+  rückt, hängt von den Bildern ab).
 - `moebel.ts`, `moebelform.ts`, `moebelzuschnitt.ts`: Möbel aus dem Katalog mit Drehung,
   Spiegelung, Maßstab und Zuschnitt aus dem Karteneditor.
 - `belebung.ts`, `belebungsbewegung.ts`, `belebungsschicht.ts`, `tiere.ts`: Statisten und Tiere,
-  einfache Schritte ohne Physik, nur im Sichtbereich.
+  einfache Schritte ohne Physik, nur im Sichtbereich. Ihre Sperrfläche hält den Helden auf und
+  geht nur aus, solange er in ihr steckt (`sperreAn`: Überlappung mit dem 12 Pixel breiten Körper
+  des Helden). Bis zum 18.11.2026 ging sie zwei Pixel vor dem Anstoßen aus, und der Held lief
+  geradeaus durch jeden Statisten; `figurensperre.py` prüft seitdem, dass feste Statisten keinen
+  Auslöser und keine Figur abschneiden.
+- `ausloeserebene.ts`: Der Auslöser, auf dem der Held ankommt, schweigt, bis er ihn verlässt oder
+  dort eine Drittelsekunde stillstand und dann in den Durchgang geht (`RUHEBILDER`). So reagiert
+  ein gesperrter Übergang wieder, wenn der Held nach einer Partie auf ihm steht (Wegsperren).
 
 ## Zustände und Fassungen
 

@@ -7,6 +7,7 @@ import type { Belebung, Tierverhalten } from "./belebung";
 import {
   fluchtziel,
   haeltAuf,
+  HELDKOERPER,
   neueBewegung,
   schritt,
   sperreAn,
@@ -81,10 +82,30 @@ describe("Hindernisse für den Helden", () => {
     expect(haeltAuf(eintrag("tier", "folgen"))).toBe(false);
   });
 
-  it("die Sperre ist aus, solange der Held sie berührt", () => {
+  it("die Sperre ist aus, solange der Held in ihr steckt", () => {
     expect(sperreAn({ x: 5, y: 5 }, 6, 5)).toBe(true);
     expect(sperreAn({ x: 5.4, y: 5.6 }, 6, 6)).toBe(false);
     expect(sperreAn({ x: 5, y: 5 }, 5, 5)).toBe(false);
+  });
+
+  it("die Sperre bleibt an, wenn der Held geradeaus an sie stößt", () => {
+    // Der Körper des Helden ist 12 Pixel breit: Er stößt bei 14 Pixeln Abstand der Mitten an.
+    const anstoss = 0.5 + HELDKOERPER / 2;
+    expect(sperreAn({ x: 6 - anstoss, y: 5 }, 6, 5)).toBe(true);
+    expect(sperreAn({ x: 6, y: 5 + anstoss }, 6, 5)).toBe(true);
+    // Zwei Pixel vor dem Anstoßen ging sie früher aus; dann lief der Held durch den Statisten.
+    expect(sperreAn({ x: 5.05, y: 5 }, 6, 5)).toBe(true);
+    // Erst wer wirklich in der Fläche steckt (etwa nach dem Laden), schaltet sie aus.
+    expect(sperreAn({ x: 5.3, y: 5 }, 6, 5)).toBe(false);
+  });
+
+  it("die Fläche einer Sitzenden reicht bis zu ihrem Sitzpunkt", () => {
+    // Um neun Pixel nach oben gerückt: Die Fläche beginnt neun Pixel über der Fußkachel.
+    const sitzend = { x: -0.5, y: -0.5 - 9 / 16, breite: 1, hoehe: 1 + 9 / 16 };
+    // Der Held steht mittig auf der Kachel darüber: Er steckte in der Fläche, sie bleibt aus.
+    expect(sperreAn({ x: 6, y: 4 }, 6, 5, sitzend)).toBe(false);
+    // Zwei Kacheln darüber berührt er sie nicht.
+    expect(sperreAn({ x: 6, y: 3 }, 6, 5, sitzend)).toBe(true);
   });
 });
 

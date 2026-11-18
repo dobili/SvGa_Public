@@ -47,6 +47,7 @@ const {
   RUHE_NAECHSTES_GEBIET,
   RUHE_ENDE,
   gilt,
+  neueVersuche,
 } = require("./gesamtsimulation-regeln.cjs");
 const { dialog, wendeFolgenAn } = require("./gesamtsimulation-dialoge.cjs");
 const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
@@ -305,9 +306,7 @@ function nachSchritt(st) {
     return true;
   }
   st.ruhe++;
-  if (st.ruhe % RUHE_TAKT === RUHE_NEUER_VERSUCH)
-    for (const n of Object.keys(st.versuche))
-      st.versuche[n] = VERSUCHE_JE_ZUSTAND - 1;
+  if (st.ruhe % RUHE_TAKT === RUHE_NEUER_VERSUCH) neueVersuche(st);
   // Das nächste Gebiet erst, wenn der Spieler im aktuellen angekommen ist.
   const dort =
     FOLGE.indexOf(st.letzterOrt) >= st.phase || st.besucht.has(FOLGE[st.phase]);

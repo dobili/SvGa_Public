@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import {
   MELDE_START,
+  RUHEBILDER,
   liesAusloeser,
   meldeschritt,
   mitDurchgang,
@@ -112,5 +113,31 @@ describe("Auslöser der Karte", () => {
     const weg = meldeschritt(zurueck.zustand, alle, { x: 3, y: 4, richtung: "unten", geht: true });
     const wieder = meldeschritt(weg.zustand, alle, { x: 3, y: 3, richtung: "oben", geht: true });
     expect(wieder.meldung?.durch).toBe(true);
+  });
+
+  it("nach einer Pause auf dem Auslöser der Ankunft zählt der Schritt in den Durchgang", () => {
+    // Wegsperre: Nach der Partie steht der Held wieder auf dem Übergangsfeld am Kartenrand.
+    const alle = mitDurchgang([tuer], gehweg, ["tuer"]);
+    let zustand = MELDE_START;
+    for (let bild = 0; bild < RUHEBILDER; bild++) {
+      const steht = meldeschritt(zustand, alle, { x: 3, y: 3, richtung: "unten", geht: false });
+      expect(steht.meldung).toBeUndefined();
+      zustand = steht.zustand;
+    }
+    // Seitlich gedrückt (kein Durchgang): weiter still.
+    const quer = meldeschritt(zustand, alle, { x: 3, y: 3, richtung: "rechts", geht: true });
+    expect(quer.meldung).toBeUndefined();
+    const hinein = meldeschritt(quer.zustand, alle, { x: 3, y: 3, richtung: "oben", geht: true });
+    expect(hinein.meldung).toEqual({ name: "tuer", typ: "ausloeser", darauf: true, durch: true });
+  });
+
+  it("eine kurze Lücke der gehaltenen Taste reicht dafür nicht", () => {
+    const alle = mitDurchgang([tuer], gehweg, ["tuer"]);
+    let zustand = MELDE_START;
+    for (let bild = 0; bild < RUHEBILDER - 1; bild++) {
+      zustand = meldeschritt(zustand, alle, { x: 3, y: 3, richtung: "oben", geht: false }).zustand;
+    }
+    const hinein = meldeschritt(zustand, alle, { x: 3, y: 3, richtung: "oben", geht: true });
+    expect(hinein.meldung).toBeUndefined();
   });
 });

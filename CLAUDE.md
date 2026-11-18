@@ -85,6 +85,7 @@ npm run dev            # lokal starten
 npm run pruefen        # Typen, Stil, Komponententests (Vitest, auch mit echter Engine)
 npm run test:e2e       # Playwright (Chromium und WebKit)
 npm run build          # Auslieferung nach app/dist/
+WEGSPERRE=S17 WEGSPERRE_E=1200 npx vitest run --config vitest.messung.config.ts src/abenteuer/wegsperren.messung.ts   # Messlauf Wegsperre (S15 bis S17) gegen einen Bot in Lesestärke 800, 1200 oder 1600; Ergebnis nach buch/arbeit/wegsperren/ (nie zwei Läufe zugleich)
 
 # Pipeline (im Hauptordner)
 python -m pipeline.bauen --buch buch/a1 --ziel app/public/daten/de/a1   # alle Kapitel, Glossar, PGN-Entwürfe, Bericht
@@ -114,6 +115,8 @@ python -m pipeline.abenteuer.editorpaket PRIVAT PRIVAT/editor   # Karteneditor-P
 python -m pipeline.abenteuer.editorrueck PRIVAT/editor/rueck/DATEI.json --privat PRIVAT   # Änderungen des Editors zurück in die Szenen, Bericht und Vorschauen nach buch/arbeit/editor/, Kartenbau
 python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude außen (Regel 10.75, R065), Bericht nach docs/spiel/auftraege/rueckmeldung/
 python -m pipeline.abenteuer.blickrichtung   # Blickrichtung stehender Figuren zu Tresen, Brett, Gesprächspartner (R008)
+python -m pipeline.abenteuer.kopfkachel [--alle]   # Kacheln über Figuren, die begehbar wurden (Figuren sperren seit 18.11.2026 nur die Fußkachel): neue Bereiche (Befund), Abkürzungen (Hinweis)
+python -m pipeline.abenteuer.schriftglyphe   # großes Z der Pixelschrift neu zeichnen (sah aus wie die 2); nur nach einem Tausch der Schriftdatei nötig
 ```
 
 ## Arbeitsumgebung (Stand 13.10.2026, abends)

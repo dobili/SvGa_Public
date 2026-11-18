@@ -200,17 +200,23 @@ Quellen der Stellungen (`Startstellung`): `abbildung` (Buchabbildung des Clubkap
   `nachher` je Ausgang), Texte unter `erzaehlung.*` in `inhalte/abenteuer/texte/de.json`. Die
   Spielhülle zeigt den Einstieg vor dem ersten eigenen Zug, das Ziel mit den restlichen Zügen
   während der Partie und den Satz je Ausgang danach.
-- **Vorrat Bot gegen Bot (Wunsch des Autors, 17.11.2026):** Startstellung `vorrat` mit `format`
-  `stellungsduell`, `vorteil`, `endspielSieg` oder `endspielRemis`. Stockfish spielt je
-  Stärkeband (bis 900, 900 bis 1200, 1200 bis 1500, 1500 bis 1800, ab 1800) mit der Stufe des
-  Bandes gegen sich selbst; geprüfte Übernahmepunkte (Fenster wie oben, Phase nach Material:
-  Endspiel bis 26 Punkte ohne Bauern, kein Matt in drei) liegen mit der Zugfolge in
-  `inhalte/abenteuer/stellungsvorrat.json` (`python -m pipeline.abenteuer.stellungsvorrat
---erzeugen`, `--pruefen`). Die App wählt nach der Zielstärke des Gegners, zufällig und ohne
-  Wiederholung, bis ein Format durch ist (`vorratGenutzt` im Spielstand); der Leser übernimmt die
-  Seite am Zug, der Einstieg zeigt die letzten Züge der Vorgeschichte. Erzeugen auf dem Handy
-  entfällt: Schon auf dem Rechner braucht eine Partie mit Prüfung einige Sekunden und nicht jede
-  liefert eine passende Stellung; mit der WebAssembly-Engine auf einem Kern wäre es ein Vielfaches.
+- **Vorrat Bot gegen Bot (Wunsch des Autors, 17.11.2026, seit 18.11.2026 mit App-Bots):**
+  Startstellung `vorrat` mit `format` `stellungsduell`, `vorteil`, `endspielSieg` oder
+  `endspielRemis`. Je Stärkeband (bis 900, 900 bis 1200, 1200 bis 1500, 1500 bis 1800, ab 1800)
+  spielen vorgefertigte Bots der App mit verschiedenen Stilen gegeneinander, über den Zugweg der
+  App: Stufen je Phase, Fehlerarten mit Gewichten, Stil, Maia und Eröffnung aus dem Praxisbuch
+  (`app/src/abenteuer/vorratspartien.messung.ts`, Bots je Band in `vorratsbots.ts`). Damit sehen
+  die Stellungen menschlich aus, mit typischen Fehlern statt der Ungenauigkeiten einer gedrosselten
+  Engine. Geprüfte Übernahmepunkte (Fenster wie oben, Phase nach Material: Endspiel bis 26 Punkte
+  ohne Bauern, kein Matt in drei, höchstens eine Stellung je Partie und Format) liegen mit
+  Zugfolge und Herkunft (Bots, Stile, Halbzug) in `inhalte/abenteuer/stellungsvorrat.json`
+  (`python -m pipeline.abenteuer.stellungsvorrat --aus-partien`, `--pruefen`; Rückfall ohne
+  App-Bots: `--erzeugen` mit Stockfish und Skill Level). Die App wählt nach der Zielstärke des
+  Gegners, zufällig und ohne Wiederholung, bis ein Format durch ist (`vorratGenutzt` im
+  Spielstand); der Leser übernimmt die Seite am Zug, der Einstieg zeigt die letzten Züge der
+  Vorgeschichte. Erzeugen auf dem Handy entfällt: Schon auf dem Rechner braucht eine Partie mit
+  Prüfung einige Sekunden und nicht jede liefert eine passende Stellung; mit der
+  WebAssembly-Engine auf einem Kern wäre es ein Vielfaches.
 - **Kein Wiedereinstieg** (R14, Punkt 1).
 - **Prüfung:** `python -m pipeline.abenteuer.kurzformate` bewertet alle Startstellungen einmal
   mit derselben Engine wie die App (Fenster wie oben, Spielraum 0,1; auch die Simultanbretter).
@@ -562,6 +568,7 @@ Ink-Variablen, die über Szenen hinweg gelten, liegen in `Abenteuerstand.dialogv
   - `held`: Name des Helden aus dem Spielstand, nur gelesen.
 - **Von Ink gesetzt:** Merker der Szenen (`…Gesehen`, `…Getroffen`), Zähler wie `ambroseVertrauen`, und die Nachgespräch-Marken `clubkampfBesprochen` (zuletzt gewürdigte Nadel).
 - Die Hülle öffnet nach einer Partie oder Runde keinen Dialog von selbst; das Nachgespräch kommt beim nächsten Ansprechen der Figur.
+- **Wegsperren S15 bis S17** (`32_Wegsperren.md`): je Sperre `testteam<Ort>Gesehen`, `testteam<Ort>Durch` (öffnet den Übergang für immer), `testteam<Ort>Spielt` (eine Partie ist noch nicht gewertet) und `testteam<Ort>Niederlagen` (Zahl der Fehlversuche, an S17 auch Remis; der dritte öffnet) mit `<Ort>` = `Wald`, `Bruecke`, `Gitter`, gesetzt von der Ink-Datei des Wegs. `testteamStand` (0 bis 3, je Akt eine Stufe) lesen auch `capital-arena-aussen` und `capital-arena-ubahnhof`. Niederlagen zählt eine Variable, weil die App jeden Dialog als neue Geschichte beginnt.
 
 Verzeichnis (Stand Akt 1, aus dem Bericht von mittel-1 vom 08.11.2026; MF = `maple-falls-`, CC = `cedar-creek-`):
 

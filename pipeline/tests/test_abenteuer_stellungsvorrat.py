@@ -50,6 +50,49 @@ def test_eintrag_mit_zugfolge_zur_fen():
     }
 
 
+def test_eintrag_mit_herkunft_und_halbzug():
+    brett = chess.Board()
+    for san in ("d4", "d5"):
+        brett.push_san(san)
+    herkunft = {"quelle": "bots", "weiss": {"bot": "igor", "stil": "taktiker"}}
+    e = vorrat.eintrag("band4", "vorteil", 2, brett, 0.0, herkunft)
+    assert e["herkunft"] == {**herkunft, "halbzug": 2}
+
+
+class FesterBewerter:
+    """Bewertet jede Stellung gleich (ohne Engine), damit nur Phase und Ablauf zählen."""
+
+    def __init__(self, wert: float):
+        self.wert = wert
+        self.aufrufe = 0
+
+    def bester(self, brett, tiefe):
+        self.aufrufe += 1
+        return type("Zug", (), {"wert": self.wert, "matt": None})()
+
+
+ITALIENISCH = ["e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5", "c3", "Nf6", "d3", "d6", "O-O", "O-O"]
+
+
+def test_sammle_aus_zuegen_erst_ab_erstem_halbzug(monkeypatch):
+    monkeypatch.setattr(vorrat, "ERSTER_HALBZUG", 10)
+    bewerter = FesterBewerter(0.1)
+    funde = vorrat.sammle_aus_zuegen(ITALIENISCH, bewerter, {"vorteil", "endspielSieg"})
+    assert list(funde) == ["vorteil"]
+    assert funde["vorteil"].ply() == 10
+    # Danach fehlt nur noch das Endspiel: Im Mittelspiel wird nicht mehr bewertet.
+    assert bewerter.aufrufe == 1
+
+
+def test_lies_partien_je_band(tmp_path):
+    partie = {"weiss": {"bot": "a", "stil": "x"}, "schwarz": {"bot": "b", "stil": "y"}, "zuege": []}
+    (tmp_path / "band2.json").write_text(json.dumps({"band": "band2", "partien": [partie]}))
+    (tmp_path / "band2-60.json").write_text(json.dumps({"band": "band2", "partien": [partie]}))
+    je_band = vorrat.lies_partien(tmp_path)
+    assert len(je_band["band2"]) == 2
+    assert je_band["band1"] == []
+
+
 def test_vorrat_hat_alle_baender_und_formate():
     daten = json.loads(vorrat.VORRAT.read_text(encoding="utf-8"))
     assert [b["kennung"] for b in daten["baender"]] == [b[0] for b in vorrat.BAENDER]

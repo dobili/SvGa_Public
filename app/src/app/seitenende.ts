@@ -3,7 +3,8 @@
  *
  * Warum: Beim Neuladen bricht der Browser laufende Abrufe ab. WebKit meldet das als
  * „TypeError: Load failed“, und Bildschirme protokollierten es als echten Ladefehler, obwohl die
- * Seite schon ging (CI-Wackler „Partie: neu laden“, 18.11.2026). Wer lädt, fragt hier nach und
+ * Seite schon ging (CI-Wackler „Partie: neu laden“, 18.11.2026). Ebenso bricht ein Neuladen die
+ * Anmeldung des Service Workers ab (app/offlineKern.ts). Wer lädt, fragt hier nach und
  * beendet das Laden dann still. Kommt die Seite aus dem Zwischenspeicher des Browsers zurück
  * (pageshow mit persisted), gilt sie wieder als aktiv.
  * Abhängigkeiten: keine.

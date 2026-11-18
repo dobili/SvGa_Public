@@ -9,9 +9,10 @@
  * er nur installiert ist (app/workerbereit.ts, V1, Nutzungsprüfung 25.10.2026). Die App sucht
  * auch beim Zurückkehren aus dem Hintergrund nach Updates, höchstens einmal je Stunde (V3).
  * Aktiv wird ein Update erst nach Tippen auf den Hinweis.
- * Abhängigkeiten: vite-plugin-pwa (registerSW), app/workerbereit.ts.
+ * Abhängigkeiten: vite-plugin-pwa (registerSW), app/workerbereit.ts, app/seitenende.ts.
  */
 import { registerSW } from "virtual:pwa-register";
+import { beobachteSeitenende, seiteWirdVerlassen } from "./seitenende";
 import { updateFaellig, warteAufAktivenWorker } from "./workerbereit";
 
 /** Was die Oberfläche über Offline-Nutzung und Updates weiß. */
@@ -120,6 +121,7 @@ export function starteOffline(): void {
     return;
   }
   setze({ verfuegbar: true });
+  beobachteSeitenende();
   aktualisiere = registerSW({
     immediate: true,
     onNeedRefresh: () => setze({ updateVerfuegbar: true }),
@@ -132,6 +134,9 @@ export function starteOffline(): void {
       void verfolgeFortschritt();
     },
     onRegisterError: (fehler: unknown) => {
+      // Neuladen während der Anmeldung bricht das Laden von workbox-window ab („Failed to fetch
+      // dynamically imported module“, Fehlertest „Zwei Tabs“, 18.11.2026): kein echter Fehler.
+      if (seiteWirdVerlassen()) return;
       console.error("Service Worker konnte nicht angemeldet werden:", fehler);
       setze({ verfuegbar: false });
     },

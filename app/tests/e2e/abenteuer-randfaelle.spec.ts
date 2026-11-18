@@ -362,13 +362,19 @@ test("Schnell zwischen Karten reisen", async ({ page }) => {
   for (let i = 0; i < 6; i++) {
     const ziel = i % 2 === 0 ? "Cedar Creek" : "Maple Falls";
     const knopf = page.getByTestId("abenteuer-reisenknopf");
-    // Eine Meldung bei der Ankunft (neue Aufgabe) liegt über dem Knopf: erst schließen.
+    const reisen = page.getByTestId("abenteuer-reisen");
+    // Eine Meldung bei der Ankunft (neue Aufgabe) liegt über dem Knopf: erst schließen. Der
+    // Klick hat nur 1 Sekunde, damit toPass bald wieder nach einer neuen Meldung sieht. Unter
+    // Last (4 Worker) wirkte ein Klick, meldete aber trotzdem die Zeitüberschreitung; dann ist
+    // das Reisefenster offen und der Knopf ausgeblendet (Kopfleiste ohne Knopf bei offenem
+    // Fenster). Ein offenes Fenster gilt deshalb als Erfolg.
     await expect(async () => {
+      if (await reisen.isVisible()) return;
       const offen = page.getByTestId("abenteuer-meldung");
       if (await offen.isVisible()) await offen.getByRole("button").click();
       await knopf.click({ timeout: 1000 });
     }).toPass({ timeout: 30000 });
-    const reisen = page.getByTestId("abenteuer-reisen");
+    await expect(reisen).toBeVisible();
     const wahl = reisen.getByRole("button", { name: ziel });
     if (await wahl.isVisible().catch(() => false)) await wahl.click();
     else await reisen.getByRole("button").first().click();

@@ -46,10 +46,12 @@ test("axe: Spielen, Partie und Auswertung (Matt nach 2. g4??)", async ({ page })
   await oeffneSpielseite(page, "gegner");
   expect(await schwereVerstoesse(page)).toEqual([]);
   await zurueckZuSpielen(page);
+  // Stufe 10 (volle Engine) findet das Matt 2. … Dh4# immer. Stufe 8 spielt mit menschlichen
+  // Fehlern und übersah es (CI-Lauf 44390043225, 18.11.2026: 2. … f5, Partieende kam nie).
   await spieleFenGegenStufe(
     page,
     "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
-    8,
+    10,
     async () => expect(await schwereVerstoesse(page)).toEqual([]),
   );
   expect(await schwereVerstoesse(page)).toEqual([]);

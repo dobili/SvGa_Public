@@ -5,10 +5,10 @@
  * Leser, nie verschluckt (Konzept 12).
  * Wird die Seite gerade verlassen (Neuladen), endet ein abgebrochener Abruf still: Das ist kein
  * Ladefehler, sondern das Ende der Seite (seitenende.ts, CI-Wackler in WebKit, 18.11.2026).
- * Abhängigkeiten: React, seitenende.ts.
+ * Abhängigkeiten: React, app/seitenende.ts.
  */
 import { useEffect, useState } from "react";
-import { beobachteSeitenende, seiteWirdVerlassen } from "./seitenende";
+import { beobachteSeitenende, seiteWirdVerlassen } from "../../../app/seitenende";
 
 export type Ladezustand<T> =
   | { readonly art: "laedt" }

@@ -1,3 +1,16 @@
+Stand: 18.11.2026, 23 Uhr (Haupt-Chat, Schach-Abenteuer): **CI grün in 13 Minuten, Nachtrunde läuft.**
+
+- Abend: Roman angeglichen (Kap. 33, Boateng, Victor), Maia ohne Netz kein Hindernis, Spiel über das
+  Adminmenü (drei Sekunden auf „Profil“), Spielhilfe N2637, 49 Fundbilder B33–B100 (Gemini 18.11.),
+  neue Gemini-Auftragsdatei `docs/spiel/auftraege/gemini_offen_18-11.html` (G1–G37), Seitentreppe im
+  Saloon Ghost Town, Lesefassung 18.11., Wirtschaft und Chaos ohne Befund, Sternennacht nicht mehr
+  offen, kurze Partien gemessen (Gus, Joggerin, Hollis 7 statt 10 Züge).
+- CI: sechs Jobs, Browser- und Paket-Cache, ~13 Minuten; Speicher über mehrere Tabs ohne
+  Datenverlust (Notstand je Seite, Schreibmarke), alle bekannten Wackler behoben.
+
+**Nächster Schritt:** Fables Spielerdurchlauf (nur Eingaben eines Spielers, Spielzeit je Akt)
+einmischen; Antworten des Autors zu N2637 und RO34–RO39; Drachenschuppen-Frage (zweites grünes Bild).
+
 Stand: 18.11.2026, 17 Uhr (Haupt-Chat, Schach-Abenteuer): **CI ganz grün (Chromium und WebKit).**
 
 - Maia ist Pflicht im Spiel (`anbindung/maiapflicht.ts`), Stellungsvorrat aus Partien der App-Bots.

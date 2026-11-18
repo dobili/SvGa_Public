@@ -345,7 +345,7 @@ Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steck
 }
 {not testteamGitterGesehen:
     ~ testteamGitterGesehen = true
-    Hinter der Tankstelle liegt ein Viehgitter im Asphalt. Daneben sitzen drei um ein Reisebrett. {testteamStand >= 1:Du kennst sie. Die weißen Westen sind weg, die Tablets auch.|Sie tragen keine Westen und keine Tablets.} #sprecher:erzaehler
+    Hinter der Tankstelle liegt ein Viehgitter im Asphalt. Daneben stehen drei und warten auf dich. {testteamStand >= 1:Du kennst sie. Die weißen Westen sind weg, die Tablets auch.|Sie tragen keine Westen und keine Tablets.} #sprecher:erzaehler
     Kein Testteam mehr. Wir prüfen jetzt selber: Wer rauf zur Meisterschaft will, spielt eine Stellung ohne Stöpsel. #sprecher:zoe #stimmung:laechelt
 }
 Ein Endspiel, fünfzehn Züge. Du hast einen Bauern mehr. Zeig, dass er reicht. #sprecher:zoe #stimmung:laechelt

@@ -1247,3 +1247,17 @@ Maia gilt als „fehlt“, und im Spiel spielt Maia unabhängig vom Schalter in 
 mit (`anbindung/maiapflicht.ts`). In der Schach-App bleibt Maia freiwillig. Der Stellungsvorrat
 (bisher aus Partien Stockfish gegen Stockfish auf Stufen) wird mit den App-Bots neu erzeugt
 (Auftrag an mittel-3).
+
+## Statisten sind Hindernisse, Übergänge im Stand, kurze Partien zu nach dem Ende (18.11.2026)
+
+Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fable):
+- **Statisten und sperrende Tiere** waren seit dem 10.11. durchlaufbar (Sperre endete zwei Pixel
+  vor dem Anstoßen); jetzt echte Hindernisse. Zwei so versperrte Durchlässe geräumt (Londoner
+  Kaffeehaus, Spielplatz Maple Falls); `figurensperre` prüft dauerhaft, dass Auslöser, Figuren und
+  Statisten mit Satz erreichbar bleiben.
+- **Übergang nach einer Partie** reagierte erst nach Schritt zurück; jetzt zählt der Schritt in
+  den Durchgang nach einer Drittelsekunde Stillstand (alle Übergänge).
+- **Kurze Partie:** Während der Schlusswertung ist das Brett zu (vorher zwei Halbzüge zu viel).
+- **Sitzende auf Möbeln** sperren auch die Kachel darüber.
+- **Slick auf der Bank** (R102) und vier Schüler der Akademie haben je einen Satz (Slick als
+  Selbstgespräch); vorher stumm. Widerspruch genügt.

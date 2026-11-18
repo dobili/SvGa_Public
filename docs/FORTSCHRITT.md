@@ -1,3 +1,16 @@
+Stand: 18.11.2026, 17 Uhr (Haupt-Chat, Schach-Abenteuer): **CI ganz grün (Chromium und WebKit).**
+
+- Maia ist Pflicht im Spiel (`anbindung/maiapflicht.ts`), Stellungsvorrat aus Partien der App-Bots.
+- Wegsperren: alle drei im Browser geprüft, Partien gespielt, Stärke gemessen; S17 öffnet nur mit
+  Sieg. Maia schwieg in Partien aus Buchstellungen die ersten Züge (Halbzug aus FEN-Zugnummer),
+  behoben. Statisten sind echte Hindernisse, Übergänge nach Partien reagieren sofort.
+- CI: onnxruntime-node ohne CUDA-Nachladen (404 seit 18.11.), Kapitelseite in Safari bei 150 %
+  Schrift (N2446, contain-intrinsic-size), langer Test als langsam markiert. Oberfläche dauert in
+  Actions etwa 45 bis 60 Minuten.
+
+**Nächster Schritt:** Antworten zu RO34 bis RO39; Bildwünsche RO37/RO39; gelegentlich wackelnd in
+WebKit: abenteuer-randfaelle „Partie: neu laden“ („Load failed“), autoraufgaben Startanimation.
+
 Stand: 17.11.2026 nachts, 0:30 Uhr (Haupt-Chat, Schach-Abenteuer): **Wegsperren, kurze Partien, Spieltest 2.**
 
 - Wegsperren S15 bis S17 (Fable, `32_Wegsperren.md`): Testteam von Perfect Move, Notausgang nach

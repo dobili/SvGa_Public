@@ -37,7 +37,8 @@ Teil fertig ist.
 
 - [ ] N2637. **Spielhilfe für deinen Durchgang:** Was seit deinem letzten Spieltest (16.11.) neu ist
       und worauf du achten sollst, je Akt mit Ort. Am besten von vorn beginnen; ein alter Spielstand
-      darf in der Beta verloren gehen. Mit Netz lädt „Spiel herunterladen“ jetzt auch Maia: Im Spiel
+      darf in der Beta verloren gehen. Starten: drei Sekunden auf „Profil“, oben die Karte
+      „Schach-Abenteuer“, „Spiel öffnen“. Mit Netz lädt „Spiel herunterladen“ jetzt auch Maia: Im Spiel
       spielen alle Gegner menschlich mit Maia, egal was in den App-Einstellungen steht (ohne Netz
       startet ein schon geladenes Spiel auch ohne Maia). Lädt alles in einem Zug?
       **Überall:**

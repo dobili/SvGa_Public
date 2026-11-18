@@ -39,7 +39,8 @@ Statisten und Tieren, eingebettet in einen React-Rahmen. Der Code liegt in
 
 - `figurenaufstellung.ts`, `figurbilder.ts`, `figurbogen.ts`, `figurensitz.ts`, `sitzplatz.ts`,
   `sitzrichtung.ts`, `sitzumriss.ts`, `geistfigur.ts`, `figurblende.ts`: Figuren stehen, sitzen,
-  schweben und blenden ein oder aus.
+  schweben und blenden ein oder aus. Eine Figur sperrt genau ihre Fußkachel
+  (`legeFestkoerperAufKachel` in `figurbilder.ts`), nicht die Kachel, in die ihr Kopf ragt.
 - `moebel.ts`, `moebelform.ts`, `moebelzuschnitt.ts`: Möbel aus dem Katalog mit Drehung,
   Spiegelung, Maßstab und Zuschnitt aus dem Karteneditor.
 - `belebung.ts`, `belebungsbewegung.ts`, `belebungsschicht.ts`, `tiere.ts`: Statisten und Tiere,

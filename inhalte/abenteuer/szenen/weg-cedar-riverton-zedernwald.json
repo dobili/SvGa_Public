@@ -2012,15 +2012,18 @@
     },
     {
       "name": "testteamZoe",
-      "feld": [131, 16]
+      "feld": [137, 13],
+      "blick": "unten"
     },
     {
       "name": "testteamBenji",
-      "feld": [133, 16]
+      "feld": [135, 16],
+      "blick": "oben"
     },
     {
       "name": "testteamImani",
-      "feld": [135, 16]
+      "feld": [138, 16],
+      "blick": "oben"
     }
   ],
   "belebung": [

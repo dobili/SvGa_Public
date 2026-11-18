@@ -9,7 +9,7 @@
  * Abhängigkeiten: paket/paketlader.ts.
  */
 import { useEffect, useState, type CSSProperties } from "react";
-import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
+import { beiPaketAenderung, liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
 
 /** Ein Rahmen: Bild im Paket, Schnittbreite im Bild (Pixel), Randbreite auf dem Schirm (CSS-Pixel). */
 export interface Rahmenangabe {
@@ -51,8 +51,16 @@ export function rahmenvariablen(
   return variablen;
 }
 
-/** Einmal geladen für die ganze Sitzung (die Bilder ändern sich nur mit dem Paket). */
+/**
+ * Einmal geladen, bis sich das Paket ändert. Dann gibt der Paketlader alle Bildadressen frei
+ * (paketlader.ts, vergiss): Wer die alten Rahmen behielt, zeichnete Fenster ohne Grund, weiße
+ * Schrift auf der Karte. So war es in jeder Sitzung, in der das Paket erst geladen wurde, weil die
+ * Startkarte die Rahmen schon vorher holt (Befund im Browser, 18.11.2026).
+ */
 let geladen: Promise<Pixelrahmen | null> | null = null;
+beiPaketAenderung(() => {
+  geladen = null;
+});
 
 async function ladeRahmen(): Promise<Pixelrahmen | null> {
   const angaben = await liesPaketJson<Partial<Record<Rahmenart, Rahmenangabe>>>("ui/rahmen.json");
@@ -74,15 +82,23 @@ export function usePixelrahmen(): Pixelrahmen | null {
   const [rahmen, setzeRahmen] = useState<Pixelrahmen | null>(null);
   useEffect(() => {
     let aktiv = true;
-    geladen ??= ladeRahmen().catch((fehler: unknown) => {
-      console.warn("Pixelrahmen nicht geladen:", fehler);
-      return null;
-    });
-    void geladen.then((r) => {
-      if (aktiv) setzeRahmen(r);
-    });
+    const lade = () => {
+      geladen ??= ladeRahmen().catch((fehler: unknown) => {
+        console.warn("Pixelrahmen nicht geladen:", fehler);
+        return null;
+      });
+      const dieser = geladen;
+      void dieser.then((r) => {
+        // Nur der neueste Satz gilt: Die Adressen eines älteren sind schon freigegeben.
+        if (aktiv && dieser === geladen) setzeRahmen(r);
+      });
+    };
+    lade();
+    // Nach einer Paketänderung neu laden (der Merker oben ist dann schon geleert).
+    const abmelden = beiPaketAenderung(lade);
     return () => {
       aktiv = false;
+      abmelden();
     };
   }, []);
   return rahmen;

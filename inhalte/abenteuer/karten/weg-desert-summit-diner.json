@@ -15144,29 +15144,50 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 21,
      "name": "testteamBenji",
-     "type": "figur",
-     "x": 64,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 22,
-     "name": "testteamImani",
      "type": "figur",
      "x": 96,
      "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "testteamImani",
+     "type": "figur",
+     "x": 64,
+     "y": 288,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 23,

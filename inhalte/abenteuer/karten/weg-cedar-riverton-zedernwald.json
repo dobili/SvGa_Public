@@ -12772,34 +12772,55 @@
      "id": 10,
      "name": "testteamZoe",
      "type": "figur",
-     "x": 2096,
-     "y": 256,
+     "x": 2192,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 11,
      "name": "testteamBenji",
-     "type": "figur",
-     "x": 2128,
-     "y": 256,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 12,
-     "name": "testteamImani",
      "type": "figur",
      "x": 2160,
      "y": 256,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "testteamImani",
+     "type": "figur",
+     "x": 2208,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 13,

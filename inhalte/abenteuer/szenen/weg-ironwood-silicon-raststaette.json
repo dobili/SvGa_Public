@@ -1244,15 +1244,18 @@
     },
     {
       "name": "testteamZoe",
-      "feld": [2, 17]
+      "feld": [2, 17],
+      "blick": "unten"
     },
     {
       "name": "testteamBenji",
-      "feld": [4, 17]
+      "feld": [4, 17],
+      "blick": "unten"
     },
     {
       "name": "testteamImani",
-      "feld": [6, 17]
+      "feld": [3, 20],
+      "blick": "oben"
     }
   ],
   "belebung": [

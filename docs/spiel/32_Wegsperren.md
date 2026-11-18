@@ -15,11 +15,19 @@ R42), `orte.json`, `begegnungen.json`, `gegner.json`.
 **Gebaut:** die drei Sperren S15 bis S17, die Auflösung vor der Capital Arena, die Zeile in der
 Kreidenacht und die kleine Nebenquest „Das Testteam“.
 
-| Nr. | Übergang (`wenn` in `orte.json`)                                                                                                        | Figuren (Felder, `wenn`)                                                                                        | Begegnung, Format                                                                                                | Stärke (Rolle `story`) |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| S15 | `wegCedarRiverton.zedernwald`, `weiterBahndamm`: `testteamWaldDurch oder ankunftRivertonGesehen oder nicht endeAkt1Gesehen`             | 131,16 · 133,16 · 135,16 unter dem Weg; `endeAkt1Gesehen und nicht ankunftRivertonGesehen`                      | `wegCedarRiverton.testteam`, Benji: Vorteil herausarbeiten (R13b), Abb. 7.3, 10 Züge, Mindestvorteil 1,0         | E + 260                |
-| S16 | `wegIronwoodSilicon.raststaette`, `weiterGlasbruecke`: `testteamBrueckeDurch oder ankunftSiliconBayGesehen oder nicht einladungGesehen` | 2,17 · 4,17 · 6,17 über der Straße; `einladungGesehen und nicht ankunftSiliconBayGesehen`                       | `wegIronwoodSilicon.testteam`, Imani: Eröffnung fremd (R13c, Russische Verteidigung), dann Vorteil, 12 Züge, 1,0 | E + 380                |
-| S17 | `wegDesertSummit.diner`, `weiterBergstrasse`: `testteamGitterDurch oder ankunftSummitGesehen oder nicht endeAkt3Gesehen`                | 2,14 · 4,14 · 6,14 über der Straße (auch in der Neon-Fassung); `endeAkt3Gesehen und nicht ankunftSummitGesehen` | `wegDesertSummit.testteam`, Zoe: Endspiel gewinnen (R13a), Abb. 8.2, 15 Züge                                     | E + 560                |
+| Nr. | Übergang (`wenn` in `orte.json`)                                                                                                        | Figuren (Felder, `wenn`)                                                                                                                  | Begegnung, Format                                                                                                | Stärke (Rolle `story`) |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| S15 | `wegCedarRiverton.zedernwald`, `weiterBahndamm`: `testteamWaldDurch oder ankunftRivertonGesehen oder nicht endeAkt1Gesehen`             | Zoe 137,13 über dem Weg, Benji 135,16 und Imani 138,16 darunter; `endeAkt1Gesehen und nicht ankunftRivertonGesehen`                       | `wegCedarRiverton.testteam`, Benji: Vorteil herausarbeiten (R13b), Abb. 7.3, 10 Züge, Mindestvorteil 1,0         | E + 260                |
+| S16 | `wegIronwoodSilicon.raststaette`, `weiterGlasbruecke`: `testteamBrueckeDurch oder ankunftSiliconBayGesehen oder nicht einladungGesehen` | Zoe 2,17 und Benji 4,17 über dem Pfad, Imani 3,20 darunter; `einladungGesehen und nicht ankunftSiliconBayGesehen`                         | `wegIronwoodSilicon.testteam`, Imani: Eröffnung fremd (R13c, Russische Verteidigung), dann Vorteil, 12 Züge, 1,0 | E + 380                |
+| S17 | `wegDesertSummit.diner`, `weiterBergstrasse`: `testteamGitterDurch oder ankunftSummitGesehen oder nicht endeAkt3Gesehen`                | Zoe 2,14 und Benji 6,14 über der Straße, Imani 4,18 darunter (auch in der Neon-Fassung); `endeAkt3Gesehen und nicht ankunftSummitGesehen` | `wegDesertSummit.testteam`, Zoe: Endspiel gewinnen (R13a), Abb. 8.2, 15 Züge                                     | E + 560                |
+
+**Aufstellung (Durchsicht im Browser, 18.11.2026):** Die Truppe steht nicht mehr in einer Reihe
+neben dem Weg, sondern beidseits davon, kurz vor dem Übergang, und schaut zum Weg (`blick` in der
+Szene: wer über dem Weg steht, nach unten, wer darunter steht, nach oben). So liest sich die
+Stelle als Durchlass, auch ohne Klapptisch. Vorher schauten im Zedernwald alle drei vom Weg weg,
+an der Raststätte stand Imani im Strandgras, am Diner Benji am Wacholder, und vor der Arena
+standen die drei fünf bis neun Felder neben dem Wagen. Niemand steht auf dem Weg: Zu ist der
+Übergang, nicht die Kachel.
 
 **Stellungen** (Leser mit Weiß am Zug, Karten erlaubt, keine Uhr; Bewertung Stockfish 19 lite,
 Tiefe 12, zum Vergleich 16; `python -m pipeline.abenteuer.kurzformate` meldet 0 Funde):
@@ -39,7 +47,7 @@ Karte, solange sie nicht gelöst ist), die dritte Niederlage öffnet auch. Niede
 Variable `testteam…Niederlagen`; `testteam…Spielt` sorgt dafür, dass jede Partie genau einmal
 zählt und ein Abbruch nicht. `testteamStand` steigt je Sperre auf 1, 2, 3.
 
-**Bogen:** `capital-arena-aussen.testteam` (drei Figuren bei 69,43 · 71,43 · 73,43 neben dem
+**Bogen:** `capital-arena-aussen.testteam` (drei Figuren bei 66,42 · 67,43 · 68,42 direkt neben dem
 Limonadenwagen, `wenn: testteamStand >= 3`), eine bedingte Erzählzeile in
 `capital-arena-ubahnhof.mo_erstes`. Szene 105 ist unberührt. Quest `wegCedarRiverton.testteam`
 (klein, vier Dialogschritte, je 10 Münzen).

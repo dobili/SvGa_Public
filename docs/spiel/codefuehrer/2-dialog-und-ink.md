@@ -18,6 +18,9 @@ mit dem Compiler von inkjs nach JSON. Der Code liegt in `app/src/abenteuer/dialo
    `useDialogfokus.ts` sorgt für Tastatur und Vorleser.
 5. **`oberwelt/dialogwirkungen.ts`** setzt die Wirkungen um: Fund, Karte, Szene, Zustand,
    Steckbrief und Bezahlen sofort, Partie, Runde, Laden und Reise nach dem Dialog.
+6. **`stillesende.ts`** fragt an einem Übergang mit Dialog vorab, ob der Knoten überhaupt etwas
+   sagt. Endet er ohne Zeile, Auswahl und Wirkung (offene Wegsperre), wechselt
+   `oberwelt/useDialogende.ts` die Karte gleich, ohne ein leeres Fenster zu öffnen.
 
 ## Tags
 

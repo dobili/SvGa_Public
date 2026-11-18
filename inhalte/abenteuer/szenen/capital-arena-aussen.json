@@ -658,24 +658,15 @@
     },
     {
       "name": "testteamZoe",
-      "feld": [
-        69,
-        43
-      ]
+      "feld": [66, 42]
     },
     {
       "name": "testteamBenji",
-      "feld": [
-        71,
-        43
-      ]
+      "feld": [67, 43]
     },
     {
       "name": "testteamImani",
-      "feld": [
-        73,
-        43
-      ]
+      "feld": [68, 42]
     }
   ],
   "belebung": [

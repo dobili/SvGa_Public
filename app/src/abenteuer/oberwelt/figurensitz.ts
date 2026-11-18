@@ -4,9 +4,10 @@
  * Variante B, F2) auf das Sitzmöbel verschoben (sitzplatz.ts), damit die Figur auf ihrem Stuhl
  * sitzt statt daneben. Verschoben wird nur das Bild über den Ursprung: Lage, Kachel und Körper bleiben.
  * Rolle im Gesamtbild: Hilfe für figurenaufstellung.ts (Figuren) und belebungsschicht.ts (Statisten).
- * Abhängigkeiten: Phaser, sitzrichtung.ts, sitzplatz.ts (Typ).
+ * Abhängigkeiten: Phaser, figurbilder.ts (fester Körper), sitzrichtung.ts, sitzplatz.ts (Typ).
  */
 import Phaser from "phaser";
+import { legeFestkoerperAufKachel } from "./figurbilder";
 import type { Sitzlage } from "./sitzplatz";
 import { hatSitzbilder, SITZ_HUB, sitzbild } from "./sitzrichtung";
 import type { Richtung } from "./szene";
@@ -39,10 +40,9 @@ export function setzeSitzend(
   const breite = sprite.frame.width * sprite.scaleX;
   const hoehe = sprite.frame.height * sprite.scaleY;
   sprite.setOrigin(sprite.originX - dx / breite, sprite.originY - dy / hoehe);
-  const koerper = (sprite as Phaser.Physics.Arcade.Sprite).body;
+  // Der feste Körper bleibt auf der Fußkachel, auch wenn das Bild aufs Sitzmöbel rückt.
+  const koerper = sprite.body;
   if (koerper instanceof Phaser.Physics.Arcade.StaticBody) {
-    // Der feste Körper hängt an der linken oberen Bildecke: um die Verschiebung zurück.
-    koerper.setOffset(koerper.offset.x - dx, koerper.offset.y - dy);
-    (sprite as Phaser.Physics.Arcade.Sprite).refreshBody();
+    legeFestkoerperAufKachel(sprite, koerper.width);
   }
 }

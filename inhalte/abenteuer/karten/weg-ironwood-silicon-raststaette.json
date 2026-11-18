@@ -13635,7 +13635,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 12,
@@ -13646,18 +13653,32 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 13,
      "name": "testteamImani",
      "type": "figur",
-     "x": 96,
-     "y": 272,
+     "x": 48,
+     "y": 320,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 14,

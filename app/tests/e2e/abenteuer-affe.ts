@@ -44,7 +44,7 @@ export const GRUNDSTAND = {
 };
 
 /** Schreibt einen Spielstand in die Nutzerdaten (IndexedDB der App); läuft im Browser. */
-function schreibeStandImBrowser(stand: object): Promise<boolean> {
+export function schreibeStandImBrowser(stand: object): Promise<boolean> {
   return new Promise<boolean>((fertig, fehler) => {
     const anfrage = indexedDB.open("schach-von-grund-auf");
     anfrage.onerror = () => fehler(anfrage.error);

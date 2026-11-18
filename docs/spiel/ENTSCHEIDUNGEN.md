@@ -1220,9 +1220,13 @@ in den Erinnerungsszenen spricht der junge Ambrose als „die Stimme kommt aus d
 
 Drei Sperren S15 bis S17 an Übergängen zu Beginn von Akt 2, 3 und 4 (Zedernwald, Raststätte,
 Diner), nur bis zur ersten Ankunft in der nächsten Stadt. Gegner sind drei Jugendliche eines
-Testteams von Perfect Move (Bezug zu ZERO), mit kurzen Formaten statt ganzer Partie. Sieg oder
-Remis öffnet dauerhaft, die dritte gewertete Niederlage auch (Notausgang, damit niemand
-festhängt); Abbruch zählt nicht. Bogen bis zum Seitenwechsel in Akt 4. Konzept und Stand:
+Testteams von Perfect Move (Bezug zu ZERO), mit kurzen Formaten statt ganzer Partie. Bei S15 und
+S16 öffnet Sieg oder Remis dauerhaft; bei S17 (Endspiel gewinnen, Start etwa +3) seit 18.11.
+nur der Sieg, ein Remis zählt dort als Fehlversuch. Der dritte gewertete Fehlversuch öffnet
+überall (Notausgang, damit niemand festhängt); Abbruch zählt nicht. Stärke gemessen
+(`docs/spiel/auftraege/wegsperren_staerke_18-11.md`): Versätze 260, 380, 560 bleiben, Zoes
+Abschlag im Endspiel entfällt; Maia schwieg in Partien aus Buchstellungen die ersten Züge
+(Halbzug aus der FEN-Zugnummer), behoben. Bogen bis zum Seitenwechsel in Akt 4. Konzept und Stand:
 `docs/spiel/32_Wegsperren.md`; offene Fragen in RO39.
 
 ## Browserprüfung der Wegsperren: Kollision, Rahmen, Schrift, Meldungen (18.11.2026 früh)

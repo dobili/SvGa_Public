@@ -45,8 +45,14 @@ interface NodeEngine {
 }
 type EngineFabrik = (art: string, beiZeile: (zeile: string) => void) => NodeEngine;
 
-/** Suchtiefe des Spielers: reicht, um Figuren nicht einzustellen, und bleibt schnell. */
+/** Suchtiefe des Spielers: reicht, um Figuren nicht einzustellen, und bleibt meist schnell. */
 const TIEFE = 10;
+/**
+ * Länger rechnet der Spieler an keiner Stellung (ms). Mit allen Zügen als Varianten braucht die
+ * Tiefe sonst in wilden Stellungen (Dame weg, überall Matts) bis zu zwei Minuten; dann gilt, was
+ * bis dahin gefunden ist (Befund vom 18.11.2026: ein Zug kostete 113 Sekunden).
+ */
+const HOECHSTZEIT_MS = 2000;
 /** Mehr Züge hat keine Stellung dieser Tests; Stockfish kürzt auf die Zahl der legalen Züge. */
 const ALLE_VARIANTEN = 120;
 /** Ein Matt zählt als so viele Bauern (das Vorzeichen sagt, für wen). */
@@ -150,7 +156,7 @@ export class Zugwaehler {
     this.engine.processCommand(`setoption name MultiPV value ${ALLE_VARIANTEN}`);
   }
 
-  /** Alle Züge der Stellung mit Wert, der beste zuerst. */
+  /** Alle Züge der Stellung mit Wert, der beste zuerst (Tiefe TIEFE, höchstens HOECHSTZEIT_MS). */
   bewerteAlle(fen: string): Promise<Kandidat[]> {
     return new Promise((fertig) => {
       const funde = new Map<string, number>();
@@ -163,7 +169,7 @@ export class Zugwaehler {
         fertig(liste.sort((a, b) => b.wert - a.wert));
       };
       this.engine.processCommand(`position fen ${fen}`);
-      this.engine.processCommand(`go depth ${TIEFE}`);
+      this.engine.processCommand(`go depth ${TIEFE} movetime ${HOECHSTZEIT_MS}`);
     });
   }
 
@@ -183,7 +189,7 @@ export class Zugwaehler {
     return alle.reduce((a, b) => (abstand(b) < abstand(a) ? b : a)).uci;
   }
 
-  /** Wert der Stellung in Bauern aus Sicht dessen, der am Zug ist (bester Zug, Tiefe TIEFE). */
+  /** Wert der Stellung in Bauern aus Sicht dessen, der am Zug ist (bester Zug, wie `bewerteAlle`). */
   async bewerte(fen: string): Promise<number> {
     const bester = (await this.bewerteAlle(fen))[0];
     if (!bester) throw new Error(`Kein Zug in der Stellung ${fen}`);

@@ -1,6 +1,6 @@
 # 32 Wegsperren durch Schachgegner: das Testteam
 
-Stand: 17.11.2026 (nachts). **Umgesetzt** (Abschnitt 0 nennt, was gebaut ist und wo es vom Konzept
+Stand: 18.11.2026. **Umgesetzt** (Abschnitt 0 nennt, was gebaut ist und wo es vom Konzept
 abweicht; die Abschnitte 1 bis 6 sind das freigegebene Konzept und bleiben zum Nachlesen stehen).
 Idee des Autors: wie die Trainer-Sperren
 in Pokémon versperrt an wenigen Stellen eine Gruppe den Weg und lässt {held} erst nach einer
@@ -21,10 +21,15 @@ Kreidenacht und die kleine Nebenquest „Das Testteam“.
 | S16 | `wegIronwoodSilicon.raststaette`, `weiterGlasbruecke`: `testteamBrueckeDurch oder ankunftSiliconBayGesehen oder nicht einladungGesehen` | Zoe 2,17 und Benji 4,17 über dem Pfad, Imani 3,20 darunter; `einladungGesehen und nicht ankunftSiliconBayGesehen`                         | `wegIronwoodSilicon.testteam`, Imani: Eröffnung fremd (R13c, Russische Verteidigung), dann Vorteil, 12 Züge, 1,0 | E + 380                |
 | S17 | `wegDesertSummit.diner`, `weiterBergstrasse`: `testteamGitterDurch oder ankunftSummitGesehen oder nicht endeAkt3Gesehen`                | Zoe 2,14 und Benji 6,14 über der Straße, Imani 4,18 darunter (auch in der Neon-Fassung); `endeAkt3Gesehen und nicht ankunftSummitGesehen` | `wegDesertSummit.testteam`, Zoe: Endspiel gewinnen (R13a), Abb. 8.2, 15 Züge                                     | E + 560                |
 
+**S17 öffnet nur mit Sieg (Entscheidung vom 18.11.2026):** „Endspiel gewinnen“ heißt so; ein Remis
+bei einem Startvorteil von etwa +3 ist kein Bestehen. Ein Remis zählt dort als Fehlversuch wie die
+Niederlage, damit der Notausgang auch für den gilt, der immer nur Remis hält. S15 und S16 bleiben:
+Dort öffnet auch das Remis.
+
 **Stärke gemessen (18.11.2026):** Zoe hat keinen Phasenversatz mehr (im Konzept, Abschnitt 5,
-steht noch „Endspiel −1“); Benji und Imani sind unverändert. Zahlen und der Befund „Dame nicht
-zurückgeschlagen“ (Maia rechnete in Partien aus einer Abbildung erst ab Zug 6, behoben in
-`app/src/engine/maia.ts`) stehen in `auftraege/wegsperren_staerke_18-11.md`.
+steht noch „Endspiel −1“); Benji und Imani sind unverändert. Alle Zahlen, der Befund „Dame nicht
+zurückgeschlagen“ (behoben in `app/src/engine/maia.ts`) und die Quoten von S17 mit der neuen Regel
+stehen in `auftraege/wegsperren_staerke_18-11.md`.
 
 **Aufstellung (Durchsicht im Browser, 18.11.2026):** Die Truppe steht nicht mehr in einer Reihe
 neben dem Weg, sondern beidseits davon, kurz vor dem Übergang, und schaut zum Weg (`blick` in der
@@ -41,22 +46,29 @@ Tiefe 12, zum Vergleich 16; `python -m pipeline.abenteuer.kurzformate` meldet 0 
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | S15 | Abb. 7.3 (Die zwölf Grundmotive, Bauerngabel): `r1bqkb1r/ppp2ppp/2n5/3pp3/2B1N3/5N2/PPPP1PPP/R1BQK2R w KQkq - 0 6`, Verlauf 1. e4 e5 2. Sf3 Sc6 3. Sc3 Sf6 4. Lc4 Sxe4 5. Sxe4 d5 | −0,09 (−0,16) | Fenster von R13b ist −0,5 bis +0,5; Abb. 2.27 aus dem Konzept (+1,3 bis +2,1) passt dort nicht mehr. 7.3 ist das Thema von Riverton (Doppelangriff, Kapitel 7), und Benji „schlägt alles“. |
 | S16 | Startstellung `eroeffnung`: 1. e4 e5 2. Sf3 Sf6 3. Sxe5 d6 4. Sf3 Sxe4 (die Stellung von Abb. 2.42), `rnbqkb1r/ppp2ppp/3p4/8/4n3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 5`              | +0,36 (+0,39) | Abb. 2.49 aus dem Konzept (+0,7 bis +1,0) liegt über dem Fenster. Die Hauptvariante der Russischen Verteidigung ist „fremd“ und ausgeglichen; {held} muss nur entwickeln.                  |
-| S17 | Abb. 8.2: `6k1/pp1q1ppp/1n6/8/4N3/2P5/PP3PPP/3Q2K1 w - - 0 1`                                                                                                                     | +2,6 bis +3,3 | Wie im Konzept. Mit dem neuen Format „Endspiel gewinnen“ (Fenster +1,5 bis +8) braucht es keine Ausnahme mehr; Sieg ab +3,0 nach 15 Zügen, darunter Remis (öffnet auch).                   |
+| S17 | Abb. 8.2: `6k1/pp1q1ppp/1n6/8/4N3/2P5/PP3PPP/3Q2K1 w - - 0 1`                                                                                                                     | +2,6 bis +3,3 | Wie im Konzept. Mit dem neuen Format „Endspiel gewinnen“ (Fenster +1,5 bis +8) braucht es keine Ausnahme mehr; Sieg ab +3,0 nach 15 Zügen, darunter Remis (öffnet nicht mehr).             |
 
 **Ablauf je Sperre** (Knoten `testteam_wald*`, `testteam_bruecke*`, `testteam_gitter*` in den
 Ink-Dateien der Wege): erstes Treffen, Angebot („Eine Stellung.“ / „Später.“), erzählter Einstieg
 und Ausklang in der Spielhülle (`erzaehlung.testteamWald.*`, `…Bruecke.*`, `…Gitter.*`), danach beim
-nächsten Ansprechen oder am Übergang: Sieg oder Remis öffnet für immer, eine Niederlage kostet
-nichts (ein Satz von Ambrose, ohne ihn ein Erzählsatz, dazu der Hinweis auf die Rätseltafel der
-Karte, solange sie nicht gelöst ist), die dritte Niederlage öffnet auch. Niederlagen zählt die
-Variable `testteam…Niederlagen`; `testteam…Spielt` sorgt dafür, dass jede Partie genau einmal
-zählt und ein Abbruch nicht. `testteamStand` steigt je Sperre auf 1, 2, 3.
+nächsten Ansprechen oder am Übergang: Der Sieg öffnet für immer, an S15 und S16 auch das Remis.
+Ein Fehlversuch (Niederlage, an S17 auch Remis) kostet nichts (ein Satz von Ambrose, ohne ihn ein
+Erzählsatz, dazu der Hinweis auf die Rätseltafel der Karte, solange sie nicht gelöst ist), der
+dritte öffnet auch. Fehlversuche zählt die Variable `testteam…Niederlagen` (der Name ist an allen
+drei Sperren gleich geblieben); `testteam…Spielt` sorgt dafür, dass jede Partie genau einmal zählt
+und ein Abbruch nicht. `testteamStand` steigt je Sperre auf 1, 2, 3. An S17 hat das Remis eigene
+Sätze (Knoten `testteam_gitter_fehlversuch`): Zoe „Gehalten ist nicht gewonnen. Mit einem Bauern
+mehr reicht mir das nicht.“, Ambrose „Ein Bauer mehr gewinnt nicht von allein. Du musst ihn
+führen.“; der Notausgang heißt dort „Dreimal ehrlich versucht.“
 
 **Im Browser gespielt (18.11.2026):** `app/tests/e2e/abenteuer-wegsperre.spec.ts` geht alle drei
 Sperren und beide Fassungen des Diners ab (Gespräch, gesperrt, offen);
 `abenteuer-wegsperre-partie.spec.ts` spielt die Partien bis zur Wertung, mit Stockfish als Spieler
-(`abenteuer-zugwahl.ts`): S15 auf Sieg, S16 auf Remis und Niederlage, S17 auf Sieg, Remis und als
-dritte Niederlage; geprüft wird die Kette Wertung, Satz „nachher“, Gespräch, Übergang. Zwei Fehler
+(`abenteuer-zugwahl.ts`): S15 auf Sieg, S16 auf Remis und Niederlage, S17 auf Sieg, Remis (Sperre
+bleibt zu, der Versuch zählt) und als dritten Fehlversuch; geprüft wird die Kette Wertung, Satz
+„nachher“, Gespräch, Übergang. Im gewöhnlichen Lauf sind es vier der sechs Partien, alle mit
+`WEGSPERREN_ALLE=1`. Jede Verzweigung von S17 mit festem Ausgang prüft
+`app/src/abenteuer/dialog/wegsperre-s17.test.ts` am echten Dialog. Zwei Fehler
 sind dabei behoben: Nach der Partie steht {held} auf dem Übergangsfeld, und der Übergang reagierte
 erst nach einem Schritt zurück und wieder vor (`oberwelt/ausloeserebene.ts`, `RUHEBILDER`); während
 der Wertung ließ sich ein weiterer Zug spielen, die Partie lief dann einen Zug länger
@@ -75,8 +87,8 @@ Limonadenwagen, `wenn: testteamStand >= 3`), eine bedingte Erzählzeile in
 2. **`wenn` am Übergang hat ein drittes Glied** (`oder nicht endeAkt1Gesehen` usw.): Die Sperre ist
    so genau dann zu, wenn die Truppe dasteht. Ohne das Glied wäre ein Übergang zu, an dem niemand
    steht, falls {held} je vor dem Akt dorthin kommt (alter Spielstand, Reise).
-3. **Zählung der Niederlagen** statt „Versuche“: gezählt wird die gewertete Niederlage, nicht der
-   Klick auf „Noch einmal“; ein Abbruch zählt nicht.
+3. **Zählung der Fehlversuche** statt „Versuche“: gezählt wird die gewertete Niederlage (an S17
+   auch das gewertete Remis), nicht der Klick auf „Noch einmal“; ein Abbruch zählt nicht.
 4. **S16:** Der Knoten `glasbruecke` (Erzählung des Übergangs) springt zur Truppe, solange die
    Sperre zu ist; ein eigener Tor-Knoten ist dort nicht nötig.
 5. **Kein Klapptisch auf der Karte:** Der Tisch steht nur im Text (wie der Absperrbock von S12).
@@ -84,7 +96,7 @@ Limonadenwagen, `wenn: testteamStand >= 3`), eine bedingte Erzählzeile in
 6. **Zahlen ohne Leerzeichen** („4113“, „20000“ auf dem Tablet, sonst „Zwanzigtausend“).
 7. **Ink in den Dateien der Wege**, nicht ausgelagert: Der Übergang von S16 kann nur einen Dialog
    haben, und der Sprung dorthin geht nur innerhalb einer Datei. Die drei Dateien bleiben unter
-   400 Zeilen (372, 392, 398); die nächste Ergänzung dort muss auslagern.
+   400 Zeilen (372, 392, 399); die nächste Ergänzung dort muss auslagern.
 8. **Questtexte** nennen die späteren Orte nicht („Ihm noch einmal begegnen“), damit das Tagebuch
    nichts vorwegnimmt.
 
@@ -107,15 +119,10 @@ CC0), wie bei allen Figuren ohne Porträtblatt.
 
 **Offene Rückfragen an den Autor:**
 
-1. **Stärke:** E + 260, 380, 560 ist gegen Bots in Lesestärke gemessen (18.11.2026,
-   `auftraege/wegsperren_staerke_18-11.md`, Messlauf `app/src/abenteuer/wegsperren.messung.ts`),
-   nicht gegen echte Leser. Ergebnis: S15 und S16 öffnen im ersten Versuch in etwa der Hälfte bis
-   drei Vierteln der Fälle, bis zum zweiten in vier von fünf oder mehr; die Versätze bleiben. Zoe
-   (S17) hat den Phasenversatz „Endspiel −1“ verloren: Ihre Begegnung ist ein Endspiel, sie
-   spielte also durchweg eine Stufe schwächer als E + 560. S17 bleibt trotzdem die leichteste
-   Sperre, weil dort schon das Remis öffnet und {held} mit etwa +3 beginnt. Wer das ändern will,
-   ändert die Regel (nur der Sieg öffnet), nicht den Versatz. Wenn es nervt, zuerst den Versatz
-   senken, nicht den Notausgang.
+1. **Stärke:** E + 260, 380, 560 ist gegen Bots in Lesestärke gemessen, nicht gegen echte Leser
+   (`auftraege/wegsperren_staerke_18-11.md`). S15 und S16 öffnen im ersten Versuch in etwa der
+   Hälfte bis drei Vierteln der Fälle; S17 mit „nur Sieg“ in gut vier von zehn (E = 800, 1200)
+   bis sieben von zehn (E = 1600). Wenn es nervt, zuerst den Versatz senken, nicht den Notausgang.
 2. **„Wer rauf zur Meisterschaft will“** (Zoe am Viehgitter): Die Straße führt nach Summit City,
    die Meisterschaft ist erst in der Capital Arena. Der Satz steht so im Konzept und ist
    übernommen; Alternative „Wer hier rauf will“.
@@ -123,15 +130,10 @@ CC0), wie bei allen Figuren ohne Porträtblatt.
    Bibel führt ZERO erst in Akt 3 ein; hier ist es nur ein Name auf einem Balken.
 4. **Eigene Bögen** (Bildwünsche 1 bis 5): erst, wenn die Truppe im Spieltest gefällt?
 
-**Später: Stellungsvorrat statt fester Stellung** (auf `beta` gibt es inzwischen
-`"startstellung": { "art": "vorrat", "format": … }`, eine andere Stellung je Versuch, passend zur
-Stärke; hier noch nicht benutzt, die Sperren haben feste Stellungen wie beauftragt):
-
-- **S15:** sinnvoll. Nach einer Niederlage käme nicht dieselbe Stellung noch einmal. Der erzählte
-  Einstieg („Bauerngabel“) müsste dann allgemeiner werden.
-- **S16:** nein. „Eröffnung fremd“ lebt von der festen Zugfolge; sie bleibt `eroeffnung`.
-- **S17:** sinnvoll (`endspielSieg`), aus demselben Grund wie S15; der Einstieg („ein Bauer mehr,
-  Zoe will die Damen behalten“) müsste zur gezogenen Stellung passen oder allgemeiner werden.
+**Später: Stellungsvorrat statt fester Stellung** (`"startstellung": { "art": "vorrat", … }`, eine
+andere Stellung je Versuch; hier noch nicht benutzt): sinnvoll für S15 und S17 (`endspielSieg`),
+dann müsste der erzählte Einstieg allgemeiner werden; nicht für S16, „Eröffnung fremd“ lebt von der
+festen Zugfolge.
 
 ## 1. Bestand: was es schon gibt
 
@@ -233,11 +235,7 @@ der drei Abbildungen ist bisher in `begegnungen.json` benutzt.
 - **Imani**, 15, sie. Still, die Stärkste, liest das Kleingedruckte. Sie zweifelt zuerst.
 
 Bilder: bis eigene Bögen da sind, der Typ `statist.jugend` aus `25_Figurenprompts.md` (Kapuze,
-Mütze, Handy). Welche Nummer `statist-NN` das im privaten Repository ist, konnte ich hier nicht
-nachsehen. Bildwünsche, falls der Autor eigene Figuren will: (1) Zoe, weiße Weste mit kleinem
-silbernem Logo über dem Kapuzenpulli, Tablet unter dem Arm; (2) Benji, zu große Weste, Rucksack,
-Apfel; (3) Imani, Weste offen, Kopfhörer um den Hals; (4) dieselben drei ohne Weste (Akt 4);
-(5) Klapptisch mit Tablet-Ständer als Möbel; je ein Porträtblatt 2 × 1 (neutral, lächelt).
+Mütze, Handy); die Bildwünsche für eigene Figuren stehen in Abschnitt 0.
 
 **Texte im Entwurf (S15; S16 und S17 gleich gebaut):**
 
@@ -342,7 +340,8 @@ allein.
 2. Nach einer Niederlage sofort neu („Noch einmal“), kein Münzverlust, keine Überheblichkeit.
 3. **Notausgang:** Nach der dritten Niederlage lässt die Truppe durch („Drei Datenpunkte reichen“).
    Grundsatz 1 des Wegenetzes verlangt, dass sich jede Sperre öffnet, wenn die Hauptgeschichte den
-   Weg braucht; ein Kind darf hier nicht hängen bleiben. Remis öffnet ebenfalls.
+   Weg braucht; ein Kind darf hier nicht hängen bleiben. Remis öffnet ebenfalls (seit dem
+   18.11.2026 nur noch an S15 und S16, Abschnitt 0).
 4. Nie auf Rückwegen, nie vor einer Pflichtszene in einer Sackgasse: Hinter {held} liegt jedes Mal
    eine Karte mit Tafel, Fund und Statisten.
 5. Wer die Stadt dahinter schon kennt, sieht die Sperre nie.
@@ -390,19 +389,9 @@ stellungsduell` mit den Werten aus Abschnitt 2, `startstellung: { art: "abbildun
   Verzeichnis der Dialogvariablen in R42, `lesefassung.cjs`. In `13_Wegenetz.md` kommen S15 bis
   S17 in die Tabellen, in die Bibel je ein Satz bei Szene 27, 52 und 81.
 
-## 6. Offene Fragen an den Autor, mit Empfehlung
+## 6. Fragen des Konzepts, alle beantwortet
 
-1. **Drei statt vier Sperren, keine in Akt 1?** Empfehlung: ja. Akt 1 hat genug Tore, und
-   Perfect Move ist dort laut Bibel nur ein Name.
-2. **Notausgang nach drei Niederlagen?** Empfehlung: ja. Ohne ihn kann ein schwacher Leser an der
-   Hauptgeschichte hängen bleiben; „erst nach einem Sieg“ gilt dann für alle anderen.
-3. **Stärke E + 260, 380, 560?** Empfehlung: so beginnen und nach der Balance-Simulation
-   nachstellen. Unsicher bin ich bei S17: Der Abstand zu Ward ist der größte des Spiels.
-4. **S16 auf der Raststätte oder am Deich vor Port Delacroix?** Empfehlung: Raststätte. Am Deich
-   stopfen Leute ein Loch im Damm, und Ambrose wird dort schon still; eine freche Truppe passt
-   nicht. Die Karte der Fähre ist ohnehin ausgenommen.
-5. **Stellung für S17:** Ausnahme vom Fenster +0,8 bis +2,5 für Abbildung 8.2, oder warten, bis
-   „Endspiel gewinnen“ gebaut ist? Empfehlung: Ausnahme, mit `mindestvorteil` 1,5.
-6. **Eigene Figurenbögen oder Statisten-Typ `jugend`?** Empfehlung: zuerst der Statisten-Typ,
-   eigene Bögen erst, wenn die Truppe im Spieltest gefällt.
-7. **Namen Zoe, Benji, Imani** sind frei (in Texten, Dialogen und Bibel nicht vergeben).
+Drei Sperren, keine in Akt 1; Notausgang nach drei Fehlversuchen; Stärke E + 260, 380, 560 (danach
+gemessen, Abschnitt 0); S16 an der Raststätte, nicht am Deich; S17 mit Abbildung 8.2 im Format
+„Endspiel gewinnen“ statt einer Ausnahme vom Fenster; Statisten statt eigener Bögen, bis die Truppe
+im Spieltest gefällt; die Namen Zoe, Benji und Imani waren frei.

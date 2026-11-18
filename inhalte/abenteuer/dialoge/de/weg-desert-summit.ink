@@ -323,8 +323,9 @@ Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steck
 // ---------------------------------------------------------------- Wegsperre S17: das Testteam
 
 // 32_Wegsperren.md: Die drei haben die Seite gewechselt, ohne Westen und Tablets. Am Viehgitter
-// hinter der Tankstelle spielt Zoe ein Endspiel mit {held}. Regeln wie bei S15 und S16: Sieg oder
-// Remis öffnet, die dritte Niederlage auch; Niederlagen zählt eine Variable. Einstiege:
+// hinter der Tankstelle spielt Zoe ein Endspiel mit {held}. Anders als bei S15 und S16 öffnet nur
+// der Sieg (18.11.2026): Ein Remis ist ein Fehlversuch wie die Niederlage, je Ausgang mit eigenem
+// Satz. Der dritte Fehlversuch öffnet auch; testteamGitterNiederlagen zählt beide. Einstiege:
 // testteam_gitter (drei Figuren), testteam_gitter_tor (Übergang weiterBergstrasse).
 // Regel: Kapitel 8, Mehrbauer verwerten (Abb. 8.2: die Startstellung).
 === testteam_gitter_tor ===
@@ -335,13 +336,13 @@ Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steck
 {testteamGitterDurch: -> testteam_gitter_danach}
 {testteamGitterSpielt:
     ~ testteamGitterSpielt = false
-    {ausgangWegDesertSummitTestteam == "niederlage":
+    {ausgangWegDesertSummitTestteam == "niederlage" or ausgangWegDesertSummitTestteam == "remis":
         ~ testteamGitterNiederlagen = testteamGitterNiederlagen + 1
     }
 }
 {
-- ausgangWegDesertSummitTestteam == "sieg" or ausgangWegDesertSummitTestteam == "remis": -> testteam_gitter_durch
-- ausgangWegDesertSummitTestteam == "niederlage": -> testteam_gitter_niederlage
+- ausgangWegDesertSummitTestteam == "sieg": -> testteam_gitter_durch
+- ausgangWegDesertSummitTestteam == "niederlage" or ausgangWegDesertSummitTestteam == "remis": -> testteam_gitter_fehlversuch
 }
 {not testteamGitterGesehen:
     ~ testteamGitterGesehen = true
@@ -360,13 +361,13 @@ Ein Endspiel, fünfzehn Züge. Du hast einen Bauern mehr. Zeig, dass er reicht. 
 ~ beginnePartie("wegDesertSummit.testteam")
 -> END
 
-=== testteam_gitter_niederlage ===
-Das zähle ich nicht mehr. Ich merke es mir nur. #sprecher:zoe #stimmung:laechelt
+=== testteam_gitter_fehlversuch ===
+{ausgangWegDesertSummitTestteam == "remis":Gehalten ist nicht gewonnen. Mit einem Bauern mehr reicht mir das nicht.|Das zähle ich nicht mehr. Ich merke es mir nur.} #sprecher:zoe #stimmung:laechelt
 {testteamGitterNiederlagen >= 3: -> testteam_gitter_genug}
 {not abschiedGesehen:
-    Tausche, was dir schadet, und behalte, was dir nützt. #sprecher:ambrose #stimmung:nachdenklich
+    {ausgangWegDesertSummitTestteam == "remis":Ein Bauer mehr gewinnt nicht von allein. Du musst ihn führen.|Tausche, was dir schadet, und behalte, was dir nützt.} #sprecher:ambrose #stimmung:nachdenklich
 - else:
-    Du hast getauscht, was dir nützte, und behalten, was dir schadete. #sprecher:erzaehler
+    {ausgangWegDesertSummitTestteam == "remis":Der Bauer mehr hat nicht von allein gewonnen.|Du hast getauscht, was dir nützte, und behalten, was dir schadete.} #sprecher:erzaehler
 }
 {not wegDesertSummitTafelBestanden:
     Im Diner hängt neben der Kasse eine Tafel mit drei Endspielen. Danach weißt du eher, was du tauschen darfst. #sprecher:erzaehler
@@ -378,7 +379,7 @@ Das zähle ich nicht mehr. Ich merke es mir nur. #sprecher:zoe #stimmung:laechel
 
 === testteam_gitter_genug ===
 Zoe stellt die Figuren zurück in die Schachtel. #sprecher:erzaehler
-Dreimal ehrlich verloren. Das reicht uns. Geh durch. #sprecher:zoe #stimmung:laechelt
+Dreimal ehrlich versucht. Das reicht uns. Geh durch. #sprecher:zoe #stimmung:laechelt
 -> testteam_gitter_offen
 
 === testteam_gitter_durch ===

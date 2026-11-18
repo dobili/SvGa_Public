@@ -4,7 +4,8 @@
  *
  * Warum: Alle drei Sperren laufen gleich ab (docs/spiel/32_Wegsperren.md, Abschnitt 0): Am
  * Übergang steht das Testteam, eine kurze Partie öffnet. Die Tests unterscheiden sich nur in
- * Karte, Richtung, Sätzen und Variablen; die stehen hier an einer Stelle.
+ * Karte, Richtung, Sätzen, Variablen und darin, ob ein Remis öffnet (S15, S16) oder als
+ * Fehlversuch zählt (S17, „Endspiel gewinnen“); das steht hier an einer Stelle.
  * Abhängigkeiten: abenteuer-affe.ts (Spielstand), abenteuer-karte.ts (Felder aus den Karten).
  * Beispiel: SPERREN.s16 → Raststätte, Übergang „weiterGlasbruecke“ am Westrand, Imani spielt.
  */
@@ -46,10 +47,15 @@ export interface Sperre {
   readonly zuege: number;
   readonly einstieg: string;
   readonly nachher: Readonly<Record<"sieg" | "remis" | "niederlage", string>>;
-  /** Stichworte der Truppe danach: durchgelassen, verloren, dritte Niederlage. */
+  /** Stichworte der Truppe danach: durchgelassen, verloren, dritter Fehlversuch. */
   readonly durch: string;
   readonly verloren: string;
   readonly genug: string;
+  /**
+   * Nur wo ein Remis nicht öffnet (S17): Stichwort der Truppe nach einem Remis. Fehlt es, öffnet
+   * das Remis wie der Sieg (S15, S16).
+   */
+  readonly remisZu?: string;
   /** Zielwert des Spielers für ein Remis (Bauern, aus Sicht des Lesers). */
   readonly remiswert: number;
   /**
@@ -57,6 +63,22 @@ export interface Sperre {
    * (beim Endspiel knapp darüber), darunter verloren.
    */
   readonly schwellen: { readonly sieg: number; readonly remis: number };
+}
+
+/** Ein Ausgang der Partie aus Sicht des Lesers. */
+export type Ausgang = "sieg" | "remis" | "niederlage";
+
+/**
+ * Zählt dieser Ausgang an der Sperre als Fehlversuch (Sperre bleibt zu, Zähler steigt)?
+ * Beispiel: Remis an S16 → nein (öffnet); Remis an S17 → ja (dort öffnet nur der Sieg).
+ */
+export function istFehlversuch(sperre: Sperre, ausgang: Ausgang): boolean {
+  return ausgang === "niederlage" || (ausgang === "remis" && sperre.remisZu !== undefined);
+}
+
+/** Der Satz der Truppe nach einem Fehlversuch mit diesem Ausgang (Remis an S17: eigener Satz). */
+export function fehlversuchssatz(sperre: Sperre, ausgang: Ausgang): string {
+  return ausgang === "remis" && sperre.remisZu ? sperre.remisZu : sperre.verloren;
 }
 
 /** Die drei Sperren und die Neon-Fassung des Diners (dieselbe Sperre auf der zweiten Karte). */
@@ -86,7 +108,8 @@ const S17: Sperre = {
   },
   durch: "Ehrlich gespielt",
   verloren: "Das zähle ich nicht mehr",
-  genug: "Dreimal ehrlich verloren",
+  genug: "Dreimal ehrlich versucht",
+  remisZu: "Gehalten ist nicht gewonnen",
   remiswert: 0,
   schwellen: { sieg: 3, remis: -1.5 },
 };

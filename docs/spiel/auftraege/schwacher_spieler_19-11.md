@@ -63,6 +63,9 @@ Ende von Akt 3 (`node pipeline/abenteuer/aktstand.cjs --akt 4 --ziel /tmp/akt4.j
    Neuladen wieder zur Folge (London, Bus nach Silicon Bay, Oma Ruth, Mamas Foto) oder die Folge
    ist eine Abkürzung mit „Noch nicht“ (Aufbruch nach Ironwood, Heimfahrt aus Riverton) oder ein
    Angebot, das die Weiche wieder anbietet (erstes Treffen, dann Partie oder Runde).
+   Im Browser bestätigt mit der neuen Neuladeprobe (`tests/durchlauf/neuladeprobe.spec.ts`, Stand
+   von `aktstand.cjs --bis finaleBesprochen`): Neuladen bei „Ich muss dir etwas sagen“, danach
+   beginnt der Abschied mit „Der Abend ist lang und golden …“, und der Abspann erscheint.
 2. **Revanche um eine bessere Nadel ohne Reaktion (behoben, alle acht Clubs).** Mira hatte schon
    eine Nadel; der Held verlor die Revanche, und danach kam nur ein Alltagssatz („Im Canyon
    antwortet das Echo …“). Dasselbe galt für Remis und für einen Sieg ohne bessere Nadel, in

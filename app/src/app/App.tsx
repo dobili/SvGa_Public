@@ -304,7 +304,9 @@ function Hauptrahmen() {
     >
       <UpdateHinweis />
       <SicherungsHinweis />
-      <SafariHinweis />
+      {/* Nicht über dem Spiel: Dort schob der Hinweis das Steuerkreuz unter den Bildschirmrand
+          (19.11.2026); er erscheint, sobald man wieder in der App ist. */}
+      {!vollbild && <SafariHinweis />}
       <Speicherhinweis />
       <main className="inhalt">
         <GeschuetzterBildschirm />

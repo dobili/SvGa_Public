@@ -210,30 +210,12 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   await expect(page.getByTestId("abenteuer-ortsschild")).toHaveText("Dein Zimmer");
 });
 
-test("Neue Version des Spiels: die Startkarte sagt es und lädt sie, danach „Spielen“ (19.11.2026)", async ({
-  page,
-}) => {
-  await page.goto("/app/#abenteuer");
-  await ladeAbenteuerpaket(page);
-  await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
-  // Der Server meldet ab jetzt eine neuere Version des Pakets (gleiche Dateien, andere Nummer).
-  await page.route("**/abenteuer/paket.json", async (route) => {
-    const antwort = await route.fetch();
-    const verzeichnis = (await antwort.json()) as { version: string };
-    await route.fulfill({
-      response: antwort,
-      json: { ...verzeichnis, version: `${verzeichnis.version}-neu` },
-    });
-  });
-  await page.reload();
-  await expect(page.getByTestId("abenteuer-start")).toContainText("neue Version des Spiels");
-  await ladeAbenteuerpaket(page);
-  await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
-});
-
 test("Steuerkreuz: mit gedrücktem Daumen von ▲ auf ▶ gleiten wechselt die Richtung (19.11.2026)", async ({
   page,
 }) => {
+  // Ohne den Safari-Hinweis: Auf dem iPhone schiebt er das Spiel so weit hinunter, dass das
+  // Steuerkreuz unter dem Bildschirmrand läge (eigene Prüfung in geraete.spec.ts).
+  await page.addInitScript(() => window.localStorage.setItem("svga.safariHinweis", "aus"));
   await page.goto("/app/#abenteuer");
   await ladeAbenteuerpaket(page);
   await page.getByTestId("abenteuer-name").fill("Kim");

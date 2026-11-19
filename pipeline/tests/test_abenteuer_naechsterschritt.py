@@ -40,3 +40,13 @@ def test_bewertung_an_echten_knoten():
     assert not bewerte(welt, "capital-arena-aussen.arena_ankunft", ohne_name)[0]
     gestartet = Ziel(aufrufe={"summitCity.victorFrei"})
     assert bewerte(welt, "summit-city-bergstation.victor_spielen", gestartet)[0]
+
+
+def test_crossroads_nennt_das_camp():
+    """Nach Crossroads führt der Weg ins Pinewood Camp; ohne laufende Quest sagt es nur Juno.
+
+    Fund im Spieler-Durchlauf (19.11.2026): Die Hauptquest des Camps beginnt erst an den Hütten,
+    der Zielhinweis hat davor nichts zu zeigen, und Darlene nennt nur die Minenstraße.
+    """
+    text = Welt().text_ab("crossroads-aussen.ankunft_crossroads")
+    assert "Pinewood Camp" in text and "Fernwanderweg" in text

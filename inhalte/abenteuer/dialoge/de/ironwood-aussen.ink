@@ -177,6 +177,7 @@ Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmu
 {
 - not gusGetroffen: -> gus_erstes_treffen
 - ausgangIronwoodGus == "" or ausgangIronwoodGus == "abgebrochen": -> gus_angebot
+- ausgangIronwoodGus == "remis": -> gus_nach_remis
 - ausgangIronwoodGus == "niederlage": -> gus_nach_niederlage
 - else: -> gus_nach_sieg
 }
@@ -210,6 +211,17 @@ Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine? Ich nehm mir fün
 
 === gus_nach_niederlage ===
 Pause vorbei, Partie gewonnen. Für mich. Revanche? Die Pause kann ich strecken. Ein bisschen. #sprecher:gus #stimmung:laechelt
++ [„Revanche.“]
+    ~ beginnePartie("ironwood.gus")
+    -> END
++ [„Morgen.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in gus_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== gus_nach_remis ===
+Remis. Für einen Sieg hat die Pause nicht gereicht. Für keinen von uns. #sprecher:gus #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("ironwood.gus")
     -> END

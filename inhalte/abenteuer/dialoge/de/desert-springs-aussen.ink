@@ -53,6 +53,7 @@ Der Pfad führt zurück in den Canyon, zum Felsbogen. #sprecher:erzaehler
 {
 - not buckGetroffen: -> buck_erstes_treffen
 - ausgangDesertSpringsBuck == "" or ausgangDesertSpringsBuck == "abgebrochen": -> buck_angebot
+- ausgangDesertSpringsBuck == "remis": -> buck_nach_remis
 - ausgangDesertSpringsBuck == "niederlage": -> buck_nach_niederlage
 - else: -> buck_nach_sieg
 }
@@ -95,6 +96,17 @@ Schnell und gut. Das gibt's hier draußen selten. Noch eine Runde? #sprecher:buc
 
 === buck_nach_niederlage ===
 Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
++ [„Revanche.“]
+    ~ beginnePartie("desertSprings.buck")
+    -> END
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in buck_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== buck_nach_remis ===
+Unentschieden! Volltanken reicht nicht, du musst auch losfahren. Noch mal? #sprecher:buck #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("desertSprings.buck")
     -> END

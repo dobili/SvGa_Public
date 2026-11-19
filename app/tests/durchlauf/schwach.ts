@@ -8,8 +8,8 @@
  * in docs/spiel/auftraege/spielerdurchlauf_18-11.md, Nachtauftrag 19.11.2026).
  * Wie er verliert, wechselt reihum, damit jede Art einmal im Browser vorkommt:
  * - Partien: schwache Züge bis zum Ende, Aufgeben in der Partie, Neuladen mitten in der Partie
- *   und dann weiterspielen, Neuladen und auf der Fortsetzungskarte aufgeben.
- * - Runden: falsche Züge, Neuladen und „Runde abbrechen“, Neuladen und „Weitermachen“.
+ *   und dann weiterspielen, Zurück-Taste und auf der Fortsetzungskarte aufgeben.
+ * - Runden: falsche Züge, Zurück-Taste und „Runde abbrechen“, Neuladen und weitermachen.
  * Die Versuche je Partie und Runde stehen in DURCHLAUF_ORDNER/<format>/schwach.json, damit
  * Etappen und Neuladen sie nicht vergessen.
  * Abhängigkeiten: lage.ts (Knopf), messung.ts.
@@ -24,17 +24,17 @@ import type { Knopf } from "./lage";
 export const SCHWACH = process.env.DURCHLAUF_SPIELER === "schwach";
 
 /** So verliert der Spieler eine Partie. */
-export type Partieverlust = "schwach" | "aufgeben" | "neuladen" | "neuladenAufgeben";
+export type Partieverlust = "schwach" | "aufgeben" | "neuladen" | "zurueckAufgeben";
 /** So verliert der Spieler eine Runde. */
-export type Rundenverlust = "falsch" | "neuladenAbbrechen" | "neuladenWeiter";
+export type Rundenverlust = "falsch" | "zurueckAbbrechen" | "neuladenWeiter";
 
 const PARTIEARTEN: readonly Partieverlust[] = [
   "schwach",
   "aufgeben",
   "neuladen",
-  "neuladenAufgeben",
+  "zurueckAufgeben",
 ];
-const RUNDENARTEN: readonly Rundenverlust[] = ["falsch", "neuladenAbbrechen", "neuladenWeiter"];
+const RUNDENARTEN: readonly Rundenverlust[] = ["falsch", "zurueckAbbrechen", "neuladenWeiter"];
 
 /**
  * So viele Versuche verliert er je Begegnung (sonst einen). Wegsperre S17: Der dritte Fehlversuch
@@ -217,11 +217,10 @@ export async function brichPartieAb(lauf: Lauf, p: Partieblick): Promise<boolean
     await gibAuf(lauf);
     return true;
   }
-  if ((v.art === "neuladen" || v.art === "neuladenAufgeben") && !v.neugeladen) {
-    lauf.messung.log(`  SCHWACH: lade mitten in ${p.kennung} neu (${v.art})`);
+  if ((v.art === "neuladen" || v.art === "zurueckAufgeben") && !v.neugeladen) {
+    lauf.messung.log(`  SCHWACH: verlasse ${p.kennung} mitten in der Partie (${v.art})`);
     lauf.schwach.neuladen(p.id, v.art === "neuladen" ? "weiter" : "abbrechen");
-    await lauf.seite.reload().catch(() => undefined);
-    await lauf.seite.waitForTimeout(NEULADEN_RUHE_MS);
+    await verlasse(lauf, v.art === "neuladen");
     return true;
   }
   return false;
@@ -231,20 +230,31 @@ export async function brichPartieAb(lauf: Lauf, p: Partieblick): Promise<boolean
 const NEULADEN_RUHE_MS = 2000;
 
 /**
- * Schwacher Spieler: Ab der zweiten Aufgabe lädt er die Seite einmal neu, wenn er das vorhat
- * (danach Weitermachen oder Abbrechen auf der Fortsetzungskarte, schwach.ts). Ausgabe: true, wenn
- * neu geladen wurde (die Runde endet hier für den Aufrufer).
+ * Verlässt Partie oder Runde: Neuladen (die App öffnet sie gleich wieder, Weitermachen) oder die
+ * Zurück-Taste des Handys (zurück in die Welt; dort steht die Fortsetzungskarte mit Abbrechen).
+ * Warum beides: Nach dem Neuladen zeigt die App die Partie oder Runde sofort wieder (Browser,
+ * 19.11.2026); die Fortsetzungskarte erscheint nur, wer zurück in die Welt geht.
+ */
+async function verlasse(lauf: Lauf, neuladen: boolean): Promise<void> {
+  if (neuladen) await lauf.seite.reload().catch(() => undefined);
+  else await lauf.seite.goBack().catch(() => undefined);
+  await lauf.seite.waitForTimeout(NEULADEN_RUHE_MS);
+}
+
+/**
+ * Schwacher Spieler: Ab der zweiten Aufgabe verlässt er die Runde einmal, wenn er das vorhat:
+ * Neuladen und weitermachen, oder Zurück und auf der Fortsetzungskarte abbrechen. Ausgabe: true,
+ * wenn er sie verlassen hat (die Runde endet hier für den Aufrufer).
  */
 export async function ladeRundeNeu(
   lauf: Lauf,
   verlust: { art: string | null; neugeladen: boolean },
   nummer: string | undefined,
 ): Promise<boolean> {
-  const neuladen = verlust.art === "neuladenAbbrechen" || verlust.art === "neuladenWeiter";
-  if (!neuladen || verlust.neugeladen || Number(nummer ?? "0") < 2) return false;
-  lauf.messung.log(`  SCHWACH: lade mitten in der Runde neu (${verlust.art ?? ""})`);
+  const verlassen = verlust.art === "zurueckAbbrechen" || verlust.art === "neuladenWeiter";
+  if (!verlassen || verlust.neugeladen || Number(nummer ?? "0") < 2) return false;
+  lauf.messung.log(`  SCHWACH: verlasse die Runde mitten drin (${verlust.art ?? ""})`);
   lauf.schwach.neuladen(null, verlust.art === "neuladenWeiter" ? "weiter" : "abbrechen");
-  await lauf.seite.reload().catch(() => undefined);
-  await lauf.seite.waitForTimeout(NEULADEN_RUHE_MS);
+  await verlasse(lauf, verlust.art === "neuladenWeiter");
   return true;
 }

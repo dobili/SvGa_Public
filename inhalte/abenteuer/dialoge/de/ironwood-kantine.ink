@@ -54,6 +54,8 @@ VAR hatKarteFaktorenwaage = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert big_joe_nach_revanche auf den Ausgang.
+VAR revancheIronwood = false
 
 // ---------------------------------------------------------------- Big Joe
 
@@ -72,6 +74,7 @@ VAR abschiedGesehen = false
 - not bigJoeGetroffen: -> big_joe_erkennt
 - not briefFuerRuben and not lastkahnFrei: -> big_joe_brief
 - nadelIronwood > clubkampfIronwoodNadel: -> big_joe_nach_sieg
+- revancheIronwood: -> big_joe_nach_revanche
 - kaufGesehen: -> big_joe_nach_kauf
 - ausgangIronwoodMama != "" and ausgangIronwoodMama != "abgebrochen" and not mamaSpielt: -> mama_nach_partie
 - not (reiheHankBestanden and reihePriyaBestanden): -> big_joe_reihe_offen
@@ -162,6 +165,7 @@ Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:la
     -> END
 
 === big_joe_nach_sieg ===
+~ revancheIronwood = false
 // Kapitel 28, Schluss: „Ach, Kumpel“ ohne Musik; Fanfare beim Anstecken der Nadel, dann brüllt die
 // Kantine; „Es war schön … Beides.“ mit ambrose.mama (Gutachten L1.7). Der Mentor-Zug kommt still
 // über die Quest. Der Kauf folgt erst neun Tage später (ironwood-aussen.kauf).
@@ -201,6 +205,7 @@ Big Joe sitzt auf einer Kiste zwischen den Kartons und reißt Klebeband ab. Das 
     In der Garage, Kumpel. Schinken haben wir noch. #sprecher:bigJoe #stimmung:lacht
     -> feier
 + {nadelIronwood < 3} [„Revanche um eine bessere Nadel?“]
+    ~ revancheIronwood = true
     Immer, Kumpel. Komm mit in die Garage, das Stahlbrett steht schon dort. #sprecher:bigJoe #stimmung:laechelt
     ~ beginnePartie("ironwood.clubkampf")
     -> END
@@ -220,6 +225,7 @@ Kumpel, fährst du am Kanal entlang? Bring das Ruben in Lockport. Der Mann hat s
     // ironwood.feier für immer offen.
     -> feier
 + {nadelIronwood > 0 and nadelIronwood < 3} [„Revanche um eine bessere Nadel?“]
+    ~ revancheIronwood = true
     Immer, Kumpel. #sprecher:bigJoe #stimmung:lacht
     ~ beginnePartie("ironwood.clubkampf")
     -> END
@@ -492,3 +498,25 @@ Jetzt Priya. Die rechnet dir Spieße vor, bis dir der Kopf brummt. #sprecher:han
 Statik hält! Jeder Spieß saß. #sprecher:priya #stimmung:froh
 Jetzt fehlt nur noch Big Joe. Um die Nadel spielt er selbst. #sprecher:priya #stimmung:laechelt
 -> END
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht big_joe auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== big_joe_nach_revanche ===
+~ revancheIronwood = false
+{
+- ausgangIronwoodClubkampf == "sieg":
+    Gewonnen, Kumpel. Für eine bessere Nadel hat's nicht gereicht. Sauber gespielt war es trotzdem. #sprecher:bigJoe #stimmung:laechelt
+- ausgangIronwoodClubkampf == "remis":
+    Remis, Kumpel. Wie eine Schicht ohne Unfall. Die Nadel bleibt. #sprecher:bigJoe #stimmung:neutral
+- ausgangIronwoodClubkampf == "niederlage":
+    Diesmal hab ich gewonnen, Kumpel. Deine Nadel behältst du. Die hast du dir verdient. #sprecher:bigJoe #stimmung:laechelt
+- else:
+    -> big_joe
+}
++ {nadelIronwood < 3} [„Noch einmal.“]
+    ~ revancheIronwood = true
+    ~ beginnePartie("ironwood.clubkampf")
+    -> END
++ [„Später.“]
+    -> END

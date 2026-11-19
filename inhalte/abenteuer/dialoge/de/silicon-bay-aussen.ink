@@ -94,6 +94,7 @@ Die Glasbrücke führt zurück zur Raststätte an der Schnellstraße. #sprecher:
 {
 - not dashGetroffen: -> dash_erstes_treffen
 - ausgangSiliconBayDash == "" or ausgangSiliconBayDash == "abgebrochen": -> dash_angebot
+- ausgangSiliconBayDash == "remis": -> dash_nach_remis
 - ausgangSiliconBayDash == "niederlage": -> dash_nach_niederlage
 - else: -> dash_nach_sieg
 }
@@ -124,6 +125,17 @@ Es ist, als spielte man neben einem Radio. Du hast zugehört. #sprecher:erzaehle
 {not abschiedGesehen:
     Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose #stimmung:nachdenklich
 }
++ [„Revanche.“]
+    ~ beginnePartie("siliconBay.dash")
+    -> END
+* [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in dash_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== dash_nach_remis ===
+Remis! Dann zahlt jeder seinen Burrito selbst. Noch eine? #sprecher:dash #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("siliconBay.dash")
     -> END

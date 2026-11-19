@@ -49,6 +49,8 @@ VAR endeAkt1Gesehen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
 VAR einladungGesehen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert coach_nach_revanche auf den Ausgang.
+VAR revancheMapleFalls = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -57,6 +59,7 @@ VAR einladungGesehen = false
 - not clubBeigetreten: -> coach_erstes_treffen
 - not (reiheSamBestanden and reiheJunoBestanden): -> coach_reihe_offen
 - nadelMapleFalls > clubkampfBesprochen: -> coach_nach_sieg
+- revancheMapleFalls: -> coach_nach_revanche
 - nadelMapleFalls > 0 and not kenntHale: -> victor
 - nadelMapleFalls == 0 and ausgangMapleFallsClubkampf == "niederlage": -> coach_nach_niederlage
 - nadelMapleFalls == 0: -> coach_clubkampf
@@ -134,6 +137,7 @@ Innehalten, wenn man gleich weiterspielen will. Das habe ich nie gekonnt. Mach e
 -> END
 
 === coach_nach_sieg ===
+~ revancheMapleFalls = false
 ~ clubkampfBesprochen = nadelMapleFalls
 {ausgangMapleFallsClubkampf == "remis":
     Remis! Das war knapp. #sprecher:coachDelgado #stimmung:ueberrascht
@@ -188,6 +192,7 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
     {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|{coachStand()}} #sprecher:coachDelgado #stimmung:froh
 }
 + {nadelMapleFalls > 0 and nadelMapleFalls < 3} [„Noch eine Partie um die Nadel.“]
+    ~ revancheMapleFalls = true
     -> coach_partie
 + [„Bis morgen, Coach.“]
     -> END
@@ -500,3 +505,25 @@ Jetzt fehlt nur noch der Coach. Die Clubnadel gibt es nur gegen sie. #sprecher:j
 Du hast jedes Mal gezählt. Und nicht einmal genommen, was ich dir hingestellt hab. #sprecher:sam #stimmung:ueberrascht
 Na gut. Juno hat auch noch Aufgaben. Die kann ihre eigene Schrift nicht lesen. #sprecher:sam #stimmung:laechelt
 -> END
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht coach auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== coach_nach_revanche ===
+~ revancheMapleFalls = false
+{
+- ausgangMapleFallsClubkampf == "sieg":
+    Gewonnen! Für eine bessere Nadel hat es diesmal nicht gereicht. Gesehen habe ich es trotzdem. #sprecher:coachDelgado #stimmung:laechelt
+- ausgangMapleFallsClubkampf == "remis":
+    Remis. Deine Nadel bleibt, wie sie ist. Kekse gibt es trotzdem. #sprecher:coachDelgado #stimmung:neutral
+- ausgangMapleFallsClubkampf == "niederlage":
+    Diesmal nicht. Deine Nadel behältst du natürlich. Die nimmt dir keiner. #sprecher:coachDelgado #stimmung:laechelt
+- else:
+    -> coach
+}
++ {nadelMapleFalls < 3} [„Noch einmal.“]
+    ~ revancheMapleFalls = true
+    ~ beginnePartie("mapleFalls.clubkampf")
+    -> END
++ [„Später.“]
+    -> END

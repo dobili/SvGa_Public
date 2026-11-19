@@ -49,6 +49,8 @@ VAR hatKarteWasDroht = false
 // Aus silicon-bay-aussen.ink (hotel_nacht), hier nur gelesen: der Hinweis aufs Hotel nach dem
 // Clubkampf (der Spieler weiß aus dem Dialog, wohin; Wunsch des Autors, 19.11.2026).
 VAR tabletNachtGesehen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert lin_nach_revanche auf den Ausgang.
+VAR revancheSiliconBay = false
 
 // ---------------------------------------------------------------- Dr. Lin
 
@@ -57,6 +59,7 @@ VAR tabletNachtGesehen = false
 {
 - not linGetroffen: -> lin_erstes_treffen
 - nadelSiliconBay > clubkampfSiliconBayNadel: -> lin_nach_sieg
+- revancheSiliconBay: -> lin_nach_revanche
 - clubkampfSiliconBayBesprochen: -> lin_alltag
 - not (reiheTheoBestanden and reiheNovaBestanden): -> lin_reihe_offen
 - not schweigenErklaert: -> lin_schweigen
@@ -127,6 +130,7 @@ Sie spielt wie eine sehr gute Seite in einem sehr guten Buch. Lass sie das Buch 
     -> END
 
 === lin_nach_sieg ===
+~ revancheSiliconBay = false
 ~ clubkampfSiliconBayNadel = nadelSiliconBay
 {clubkampfSiliconBayBesprochen:
     Eine bessere Nadel. Ich schreibe es in mein Heft. Mit Tinte. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
@@ -155,6 +159,7 @@ Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #
 === lin_alltag ===
 {~Ich habe die Spielberichte meiner Klasse noch einmal angesehen. Ich schlafe schlecht.|Komm wieder, wenn du eine neue Eröffnung probieren willst.|Die Bildschirme helfen. Glaube ich.} #sprecher:lin #stimmung:nachdenklich
 + {nadelSiliconBay < 3} [„Revanche um eine bessere Nadel?“]
+    ~ revancheSiliconBay = true
     Gern. Diesmal ohne Theorie. #sprecher:lin #stimmung:laechelt
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
@@ -304,3 +309,25 @@ Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
     Auf der Tür steht „Serverraum – nur Personal“. Sie ist nicht abgeschlossen. Du hast dort unten nichts zu suchen. Noch nicht. #sprecher:erzaehler
 }
 -> END
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht lin auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== lin_nach_revanche ===
+~ revancheSiliconBay = false
+{
+- ausgangSiliconBayClubkampf == "sieg":
+    Ein Sieg, aber keine bessere Nadel. Ich schreibe ihn trotzdem auf. Mit Bleistift. #sprecher:lin #stimmung:laechelt
+- ausgangSiliconBayClubkampf == "remis":
+    Remis. Ein sauberes Ergebnis, aber keine neue Nadel. #sprecher:lin #stimmung:neutral
+- ausgangSiliconBayClubkampf == "niederlage":
+    Diesmal ich. Deine Nadel bleibt dir. Komm wieder, wenn du eine neue Eröffnung probieren willst. #sprecher:lin #stimmung:laechelt
+- else:
+    -> lin
+}
++ {nadelSiliconBay < 3} [„Noch einmal.“]
+    ~ revancheSiliconBay = true
+    ~ beginnePartie("siliconBay.clubkampf")
+    -> END
++ [„Später.“]
+    -> END

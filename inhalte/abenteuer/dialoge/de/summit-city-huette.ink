@@ -55,6 +55,8 @@ VAR lernkartePhasenblick = false
 VAR hatKarteEndspielkompass = false
 VAR hatKarteTurmregel = false
 VAR hatKartePhasenblick = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert ward_nach_revanche auf den Ausgang.
+VAR revancheSummitCity = false
 
 // ---------------------------------------------------------------- Eingang
 
@@ -71,6 +73,7 @@ Im Sessel am Feuer sitzt eine Frau und liest. Sie sieht nicht auf. #sprecher:erz
 {
 - not wardLektionGesehen: -> ward_lektion
 - nadelSummitCity > clubkampfSummitCityNadel: -> ward_nach_sieg
+- revancheSummitCity: -> ward_nach_revanche
 - erinnerungHastingsBestanden and not erinnerungHastingsBesprochen: -> ward_nach_erinnerung
 - not (reiheKitBestanden and reiheHaraldsenBestanden): -> ward_reihe_offen
 - not fernpartieEndspielGesagt: -> abend_fernpartie
@@ -189,6 +192,7 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenkl
     -> END
 
 === ward_nach_sieg ===
+~ revancheSummitCity = false
 // Revanche um eine bessere Nadel: nur Wards Satz, nicht noch einmal die ganze Nadelszene mit Juno.
 {clubkampfSummitCityNadel > 0:
     ~ clubkampfSummitCityNadel = nadelSummitCity
@@ -235,6 +239,7 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 + {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
     -> ward_heft
 + {nadelSummitCity > 0 and nadelSummitCity < 3} [„Revanche um eine bessere Nadel?“]
+    ~ revancheSummitCity = true
     Gern. Aber diesmal bis zum letzten Bauern. #sprecher:ward #stimmung:laechelt
     ~ beginnePartie("summitCity.clubkampf")
     -> END
@@ -493,3 +498,25 @@ Auf dem runden Tisch steht eine Teekanne, noch warm. Daneben ein Brett, auf dem 
 Zwei Könige, ein Feld dazwischen. Sie ist am Zug. #sprecher:erzaehler #musik:aus #pause:2
 Ah. #sprecher:ward #stimmung:ueberrascht
 -> END
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht ward auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== ward_nach_revanche ===
+~ revancheSummitCity = false
+{
+- ausgangSummitCityClubkampf == "sieg":
+    Gewonnen, aber nicht besser als beim letzten Mal. Die Nadel bleibt. #sprecher:ward #stimmung:laechelt
+- ausgangSummitCityClubkampf == "remis":
+    Remis. Am Berg ist das kein schlechtes Ergebnis. Deine Nadel bleibt. #sprecher:ward #stimmung:neutral
+- ausgangSummitCityClubkampf == "niederlage":
+    Diesmal hat der Berg gewonnen. Deine Nadel bleibt dir. #sprecher:ward #stimmung:laechelt
+- else:
+    -> ward
+}
++ {nadelSummitCity < 3} [„Noch einmal.“]
+    ~ revancheSummitCity = true
+    ~ beginnePartie("summitCity.clubkampf")
+    -> END
++ [„Später.“]
+    -> END

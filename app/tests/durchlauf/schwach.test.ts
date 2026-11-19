@@ -22,7 +22,7 @@ describe("schwacher Spieler", () => {
     expect(s.partie("p2", "mapleFalls.rosa#zweite").art).toBeNull();
     expect(s.partie("p3", "mapleFalls.victor").art).toBe("aufgeben");
     expect(s.partie("p4", "riverton.slick").art).toBe("neuladen");
-    expect(s.partie("p5", "riverton.ray").art).toBe("neuladenAufgeben");
+    expect(s.partie("p5", "riverton.ray").art).toBe("zurueckAufgeben");
     // Dieselbe Partie (nach dem Neuladen) behält ihre Entscheidung.
     expect(s.partie("p4", "riverton.slick").art).toBe("neuladen");
   });
@@ -45,12 +45,12 @@ describe("schwacher Spieler", () => {
     const s = new Schwaechling(o, true);
     expect(s.runde("mapleFalls.reiheJuno").art).toBe("falsch");
     s.rundeVorbei();
-    expect(s.runde("mapleFalls.reiheSam").art).toBe("neuladenAbbrechen");
+    expect(s.runde("mapleFalls.reiheSam").art).toBe("zurueckAbbrechen");
     s.neuladen(null, "abbrechen");
     const nachher = new Schwaechling(o, true);
     expect(nachher.runde("mapleFalls.reiheSam")).toEqual({
       kennung: "mapleFalls.reiheSam",
-      art: "neuladenAbbrechen",
+      art: "zurueckAbbrechen",
       neugeladen: true,
     });
     const karte = [knopf("Weitermachen"), knopf("Runde abbrechen")];

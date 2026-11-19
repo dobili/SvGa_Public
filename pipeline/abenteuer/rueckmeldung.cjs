@@ -161,6 +161,23 @@ function greiftAuf(r, knoten, rundenDanach) {
  * knoten, zeilen, besucht }), knoten ({ „datei.knoten“: Text }), rundenDanach ({ Runde: Knoten }).
  * Ausgabe: Liste von Zeilen. Beispiel: „partie mapleFalls.x (sieg): Rückmeldung a.b ohne Bezug“.
  */
+/**
+ * Führt die Rückmeldung in den Zweig eines anderen Ausgangs? Am Namen erkannt: „…_nach_sieg“ bei
+ * Remis oder Niederlage, „…_nach_niederlage“ oder „…_nach_remis“ bei einem Sieg. Warum: Zwölf
+ * Weichen schickten ein Remis in „…_nach_sieg“ mit „Gewonnen“ und Karte; die übrigen Regeln sahen
+ * nur, dass ein Zweig das Ergebnis abfragt (schwacher Spieler im Durchlauf, 19.11.2026).
+ * Fragt einer der besuchten Knoten den Ausgang ausdrücklich ab, ist der Weg gewollt (die Clubs: Remis
+ * bringt auch eine Nadel; Ruiz: beim Endspiel „Remis halten“ ist ein Remis das Ziel).
+ * Ausgabe: der Knoten oder null. Beispiel: remis, besucht „s.sol“, „s.sol_nach_sieg“ → „s.sol_nach_sieg“.
+ */
+function falscherZweig(r, knoten = {}) {
+  const fremd = r.ausgang === "sieg" ? /_nach_(niederlage|remis)$/ : /_nach_sieg$/;
+  if (!["sieg", "remis", "niederlage"].includes(r.ausgang)) return null;
+  const besucht = r.besucht ?? [];
+  if (besucht.some((k) => (knoten[k] ?? "").includes(`== "${r.ausgang}"`))) return null;
+  return besucht.find((k) => fremd.test(k)) ?? null;
+}
+
 function funde(starts, rueckmeldungen, knoten, rundenDanach) {
   const liste = [];
   for (const [schluessel, dateien] of starts) {
@@ -179,6 +196,8 @@ function funde(starts, rueckmeldungen, knoten, rundenDanach) {
       liste.push(`${art} ${kennung} (${schleife.ausgang}): Rückmeldung ${schleife.knoten} startet ohne Wahl neu`);
     for (const ausgang of new Set(eigene.map((r) => r.ausgang))) {
       const je = eigene.filter((r) => r.ausgang === ausgang);
+      const falsch = je.find((r) => falscherZweig(r, knoten));
+      if (falsch) liste.push(`${art} ${kennung} (${ausgang}): Rückmeldung führt in ${falscherZweig(falsch, knoten)}`);
       if (je.some((r) => greiftAuf(r, knoten, rundenDanach))) continue;
       const r = je[0];
       const grund = r.zeilen ? "ohne Bezug auf das Ergebnis" : "ohne Zeile";
@@ -226,6 +245,7 @@ function hauptprogramm(liste) {
 if (require.main === module) hauptprogramm(process.argv.slice(2));
 
 module.exports = {
+  falscherZweig,
   ergebnisvariablen,
   knotenDer,
   ladeInk,

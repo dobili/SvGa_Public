@@ -280,6 +280,9 @@ export async function spielePartie(
     await seite.waitForTimeout(500);
   }
   if (!partie) return null;
+  // Das Ende steht manchmal erst nach dem Bildwechsel im Speicher (Partien mit fester Zugzahl).
+  const zuletzt = (await liesSpeicher(seite)).partie;
+  if (zuletzt?.id === partie.id) partie = zuletzt;
   const eigene = partie.zuege.filter(
     (_, i) => (i % 2 === 0) === (amZug(partie.startFen) === partie.eigeneFarbe),
   );

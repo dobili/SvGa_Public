@@ -118,7 +118,8 @@ test("Deckwahl quer gehalten: Zurück und Spielen erreichbar; Aufgeben vor dem e
   await page.setViewportSize({ width: 568, height: 320 });
   await page.getByTestId("abenteuer-reisebrettknopf").click();
   // Playwright rollt auch versteckte Ränder; ein Finger nur, wenn das Fenster selbst rollt.
-  await expect(page.getByTestId("abenteuer-deckwahl")).toHaveCSS("overflow-y", "auto");
+  // Seit 19.11.2026 rollt nur der Inhalt; die Knöpfe stehen darunter.
+  await expect(page.getByTestId("abenteuer-deckwahl-inhalt")).toHaveCSS("overflow-y", "auto");
   // Der Knopf zum Spielen steht im Bild, ohne dass man rollen muss (Spieler-Durchlauf,
   // 19.11.2026: quer lag er unter dem Rand, im Laden war gar kein Ausgang zu sehen).
   await expect(page.getByTestId("abenteuer-deck-los")).toBeInViewport({ ratio: 0.9 });

@@ -81,6 +81,10 @@ async function nimmAusgang(
     }
     return true;
   }
+  // Hat ein Dialog den Helden inzwischen auf eine andere Karte gesetzt (Ghost Town, Saloon: das
+  // Abzeichen endet draußen), galt die Planung der alten Karte; neu planen, kein Fund.
+  const nachher = (await liesStand(lauf.seite)).position.karte;
+  if (ergebnis === "keinWeg" && nachher !== wissen.kennung) return true;
   if (ergebnis === "keinWeg" && (await nimmSteg(lauf, planer, wissen, name))) return true;
   if (ergebnis === "keinWeg") {
     lauf.messung.fund("unerreichbar", `Übergang ${wissen.kennung}.${name}: kein Weg vom Standort`);

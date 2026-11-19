@@ -10,6 +10,7 @@
  * Beispiel: bedieneFenster(lauf, lage) → true, wenn etwas getippt oder abgewartet wurde.
  */
 import { tippe, tippeKnopf, type Lauf } from "./eingabe";
+import { bedieneGedaechtnis } from "./gedaechtnis";
 import type { Knopf, Lage } from "./lage";
 
 /** Antworten, mit denen ein Spieler aufschiebt oder ablehnt (wie pipeline/abenteuer/lesefassung-spieler.cjs). */
@@ -212,6 +213,23 @@ async function bedieneLaden(
   }
 }
 
+/** So lange lädt die App nach „Jetzt aktualisieren“ höchstens neu (ms). */
+const UPDATE_WARTEN_MS = 4000;
+
+/**
+ * Hinweis „Neue Version“ (ui/komponenten/hinweise/UpdateHinweis.tsx): Ein Mensch tippt „Jetzt
+ * aktualisieren“, die App lädt neu. Im Durchlauf erscheint er nach jedem Neubau der App. Ausgabe:
+ * ob getippt wurde.
+ */
+export async function bedieneUpdate(lauf: Lauf, lage: Lage): Promise<boolean> {
+  const knopf = lage.knoepfe.find((k) => k.text === "Jetzt aktualisieren");
+  if (!knopf) return false;
+  lauf.messung.log("  Hinweis „Neue Version“: tippe „Jetzt aktualisieren“");
+  await tippeKnopf(lauf, knopf);
+  await lauf.seite.waitForTimeout(UPDATE_WARTEN_MS);
+  return true;
+}
+
 /** Der Knopf, mit dem ein Mensch dieses Fenster verlässt. */
 function ausgangsknopf(knoepfe: readonly Knopf[], g: Fenstergedaechtnis): Knopf | undefined {
   const mit = (kennung: string) => knoepfe.find((k) => k.kennung === kennung);
@@ -262,6 +280,7 @@ export async function bedieneFenster(
   }
   const knoepfe = fensterknoepfe(lage);
   const da = (kennung: string) => lage.kennungen.includes(kennung);
+  if (da("abenteuer-gedaechtnis") && (await bedieneGedaechtnis(lauf))) return true;
   if (da("abenteuer-abspann")) lauf.messung.meldeAbspann();
   if (knoepfe.length === 0 && lage.bild === "welt" && da("abenteuer-laden")) {
     // Laden offen, aber kein Knopf im Bild (alle Waren gesperrt, „Schließen“ unter dem Rand).

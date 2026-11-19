@@ -9,7 +9,7 @@
  * Abhängigkeiten: abenteuer-affe.ts (Spielstand), abenteuer-karte.ts (Felder aus den Karten).
  */
 import { expect, test, type Page } from "@playwright/test";
-import { GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
+import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 import { feldVon } from "./abenteuer-karte";
 
 /** So lange hält der Test die Taste: genug für drei Kacheln, zwei mehr als der Weg bis vor den Statisten. */
@@ -22,7 +22,7 @@ function standUnter(feld: { x: number; y: number }, variablen: Record<string, nu
   return {
     ...GRUNDSTAND,
     position: { karte: "riverton.bahnhofshalle", x: feld.x, y: feld.y + ANLAUF, richtung: "oben" },
-    dialogvariablen: variablen,
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, ...variablen },
   };
 }
 

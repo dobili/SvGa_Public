@@ -12,7 +12,7 @@ import { tippe, type Lauf } from "./eingabe";
 import { geheAn, geheDurch } from "./laufen";
 import { feldAus, liesLage, liesSpeicher, liesStand } from "./lage";
 import type { Planer, Ziel } from "./planer";
-import { kartenwissen, type Kartenwissen, type Spieldaten } from "./welt";
+import { kartenwissen, type Ding, type Kartenwissen, type Spieldaten } from "./welt";
 
 /** So lange wartet der Schritt nach einem Kartenwechsel auf die neue Welt (ms). */
 const WELT_FRIST_MS = 40_000;
@@ -160,6 +160,21 @@ async function fasseAn(
 }
 
 /**
+ * Haltestelle (Bus, Zug): herangehen und ansprechen; die Fahrt beginnt im Gespräch. Fährt der Bus
+ * nicht, sperrt der nächste Schritt die Haltestelle (offenerDialog). Ausgabe: ob das Gespräch begann.
+ */
+async function steigeEin(lauf: Lauf, wissen: Kartenwissen, halt: Ding): Promise<boolean> {
+  const ergebnis = await geheAn(lauf, wissen, halt.felder);
+  lauf.messung.log(`Haltestelle ${wissen.kennung}.${halt.name}: ${ergebnis}`);
+  if (ergebnis !== "aktion") return false;
+  if (!(await tippe(lauf, lauf.seite.getByTestId("abenteuer-aktion"), "Aktionsknopf")))
+    return false;
+  await lauf.seite.waitForTimeout(350);
+  offenerDialog = { karte: wissen.kennung, name: halt.name };
+  return true;
+}
+
+/**
  * Ein Schritt in der freien Welt. Ausgabe: false, wenn der Planer kein Ziel mehr hat (der Spieler
  * hängt fest), sonst true.
  */
@@ -202,7 +217,10 @@ export async function weltschritt(lauf: Lauf, daten: Spieldaten, planer: Planer)
   lauf.messung.log(
     `Unterwegs nach ${ziel.karte}${ziel.name ? `.${ziel.name}` : ""} (${ziel.grund})`,
   );
-  const gegangen = await nimmAusgang(lauf, planer, wissen, ausgang.name);
+  const halt = wissen.dinge.find((d) => d.name === ausgang.name && d.regel?.art === "dialog");
+  const gegangen = halt
+    ? await steigeEin(lauf, wissen, halt)
+    : await nimmAusgang(lauf, planer, wissen, ausgang.name);
   // Ein Ziel, zu dem der Weg nicht aufgeht, zählt als Versuch (sonst liefe der Planer im Kreis).
   if (!gegangen) planer.merke(ziel);
   return true;

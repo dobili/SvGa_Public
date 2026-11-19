@@ -5,7 +5,7 @@
  * Tastatur (Pfeile), die die Szene wie das Steuerkreuz behandelt.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
+import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 import { ladeAbenteuerpaket, PAKET_FRIST_MS } from "./abenteuer-paket";
 
 /**
@@ -18,7 +18,7 @@ const DACHBODENSTAND = {
   besuchteOrte: ["mapleFalls"],
   gegenstaende: [],
   muenzen: 0,
-  dialogvariablen: { einleitungGesehen: true, ankunftGesehen: true },
+  dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
 /** Im offenen Dialog immer die erste Wahl, sonst „Weiter“, bis `fertig` gilt. */

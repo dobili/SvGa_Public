@@ -229,16 +229,15 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* Flache Bildschirme (Handy quer): Der Knopf, der das Fenster abschließt („Mit Karten spielen“,
-   „Schließen“ im Laden und beim Reisen), bleibt am unteren Rand des Fensters stehen. Vorher lag er
-   unter dem Bildrand, und nichts zeigte, dass das Fenster rollt: Im Laden waren im Querformat nur
-   die Waren zu sehen, kein Ausgang (Spieler-Durchlauf, 19.11.2026). */
-@media (max-height: 480px) {
-  .abenteuer-menue > .knopf-haupt {
-    position: sticky;
-    bottom: 0;
-    flex-shrink: 0;
-  }
+/* Der Knopf, der das Fenster abschließt („Mit Karten spielen“, „Schließen“ im Laden und beim
+   Reisen), bleibt am unteren Rand des Fensters stehen, wenn das Fenster rollt. Vorher lag er unter
+   dem Bildrand, und nichts zeigte, dass das Fenster rollt: Im Laden waren im Querformat nur die
+   Waren zu sehen, kein Ausgang, und in Darlenes Raststätte mit ihren vierzehn Waren auch im
+   Hochformat (Spieler-Durchlauf, 19.11.2026). */
+.abenteuer-menue > .knopf-haupt {
+  position: sticky;
+  bottom: 0;
+  flex-shrink: 0;
 }
 
 .abenteuer-menue h2 {

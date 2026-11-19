@@ -8,16 +8,18 @@
  * Durchlauf dort nicht weiter, und die Testknöpfe „Bestehen“ sind tabu.
  * Fallenaufgaben zeigen das Brett nur als Bild; dort schlägt der Löser die Antwort in den
  * Trainerdaten der App nach (beantworteFalle).
- * Grenzen: Strukturaufgaben (Felder und Bauern markieren) kann dieser Löser nicht; er gibt dort
- * die Antwort ab, wie sie steht. Rochaderechte werden aus der Grundstellung von König und Turm
+ * Strukturaufgaben (Felder und Bauern markieren, Feldart, Plan) löst struktur.ts.
+ * Grenzen: Rochaderechte werden aus der Grundstellung von König und Turm
  * geraten, ein Schlagen im Vorbeigehen kennt er nicht.
  * Abhängigkeiten: abenteuer-zugwahl.ts (Stockfish), eingabe.ts, lage.ts, messung.ts.
  * Beispiel: „Weiß am Zug“, Springer b5, Dame d5, König e8 → tippt b5 und c7 (Gabel).
  */
 import { readFileSync } from "node:fs";
 import { tippe, tippeKnopf, tippePunkt, type Lauf } from "./eingabe";
+import { bedieneUpdate } from "./fenster";
 import { liesLage, type Knopf, type Lage } from "./lage";
-import { bewerteStellung } from "./partie";
+import { bewerteAufgabe, bewerteStellung } from "./partie";
+import { bedieneStruktur } from "./struktur";
 
 /** Figurennamen der Feldbeschriftung und ihr Buchstabe in der FEN. */
 const FIGUR: Readonly<Record<string, string>> = {
@@ -187,6 +189,7 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
   while (Date.now() < lauf.frist) {
     const lage = await liesLage(seite);
     if (lage.bild !== "aufgaben") break;
+    if (await bedieneUpdate(lauf, lage)) continue;
     const text = await rundentext(lauf);
     const nummer = /Aufgabe (\d+) von (\d+)/.exec(text);
     if (nummer) aufgaben = Number(nummer[2]);
@@ -245,6 +248,11 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
         continue;
       }
     }
+    if (/Schritt \d+ von \d+:/.test(text) && (await bedieneStruktur(lauf))) {
+      // Strukturaufgabe (struktur.ts): Felder antippen, Feldart, Plan.
+      seit = Date.now();
+      continue;
+    }
     if (brettfelder(lage).length === 0 && (await beantworteFalle(lauf, lage, null))) {
       seit = Date.now();
       await seite.waitForTimeout(400);
@@ -299,7 +307,7 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
     if (amZug === unten && fen !== versucht) {
       versucht = fen;
       // Wenige Varianten, dafür tief; kam der beste Zug nicht an, der nächste Kandidat.
-      const alle = (await bewerteStellung(fen, KANDIDATEN)).filter((k) => !/[rbn]$/.test(k.uci));
+      const alle = (await bewerteAufgabe(fen, KANDIDATEN)).filter((k) => !/[rbn]$/.test(k.uci));
       const zug = alle[Math.min(versuche, alle.length - 1)];
       if (zug) {
         lauf.messung.log(`  Aufgabe ${nummer?.[1] ?? "?"}: ${fen} → ${zug.uci}`);

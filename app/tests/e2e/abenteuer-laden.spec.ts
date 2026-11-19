@@ -5,6 +5,7 @@
  */
 import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
+import { EINLEITUNG_GESEHEN } from "./abenteuer-affe";
 import { feldDarunter, feldVon } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
@@ -30,6 +31,7 @@ const STAND = {
   },
   besuchteOrte: ["mapleFalls"],
   muenzen: 50,
+  dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
 function schreibeStand(stand: object): Promise<boolean> {
@@ -188,7 +190,7 @@ test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async 
   // Teil des Dateinamens hinter der Grundkarte (port-delacroix-musikhaus-neu → „neu“).
   const stand = {
     ...STAND,
-    dialogvariablen: { musikhausOffen: true },
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, musikhausOffen: true },
     position: {
       karte: "portDelacroix.musikhaus",
       ...feldVon("port-delacroix-musikhaus-neu", "start"),
@@ -311,12 +313,53 @@ test("Reisebrett: Übungspartie gegen Ambrose von draußen", async ({ page }) =>
   await expect(page.getByTestId("abenteuer-kartenleiste")).toHaveCount(0);
 });
 
+test("Darlenes Raststätte: „Fertig“ steht im Bild, auch bei dreizehn Waren", async ({ page }) => {
+  // Spieler-Durchlauf, 19.11.2026: Im Hochformat lag „Fertig“ unter dem Rand, ein Ausgang war
+  // nicht zu sehen. Der Knopf bleibt deshalb am unteren Rand des Fensters stehen.
+  // Der Held steht hinter der Theke, rechts neben Darlene.
+  const darlene = feldVon("crossroads-raststaette", "darlene");
+  const stand = {
+    ...STAND,
+    position: {
+      karte: "crossroads.raststaette",
+      x: darlene.x + 1,
+      y: darlene.y,
+      richtung: "links",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await ladeAbenteuerpaket(page);
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  // In einem Raum mit Laden erklärt zuerst ein Hinweis die Münzen; er verdeckt den Aktionsknopf.
+  const hinweis = page.getByRole("status").getByRole("button", { name: "Weiter" });
+  const aktion = page.getByTestId("abenteuer-aktion");
+  await expect(hinweis).toBeVisible({ timeout: 30000 });
+  await hinweis.click();
+  await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
+  await aktion.click();
+  const laden = page.getByRole("dialog", { name: "Darlenes Raststätte" });
+  for (let i = 0; i < 20 && !(await laden.isVisible()); i++) {
+    const weiter = page.locator(".abenteuer-dialog-weiter");
+    if (await weiter.isVisible()) await weiter.click();
+    else await page.waitForTimeout(100);
+  }
+  await expect(laden).toBeVisible();
+  // Playwright rollt von selbst; ein Finger sieht nur, was im Bild steht.
+  const fertig = laden.getByRole("button", { name: "Fertig" });
+  await expect(fertig).toBeInViewport({ ratio: 0.9 });
+  await fertig.click();
+  await expect(laden).toHaveCount(0);
+});
+
 test("Reisebrett: nach dem Abschied spielt Juno statt Ambrose", async ({ page }) => {
   // Entscheidung Q21-5: Nach dem Abschied sitzt Ambrose an keinem Brett (regeln/abwesenheit.ts).
   const stand = {
     ...STAND,
     gegenstaende: ["reisebrett"],
-    dialogvariablen: { abschiedGesehen: true },
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, abschiedGesehen: true },
   };
   await starteImBrowser(page);
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);

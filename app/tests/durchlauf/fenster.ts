@@ -107,7 +107,6 @@ export function waehleAntwort(
   wahlen: readonly string[],
 ): number {
   const zahl = (w: string) => g.gewaehlt.get(`${g.signatur}|${frage}|${w}`) ?? 0;
-  const gesamt = (w: string) => g.gewaehlt.get(`immer|${frage}|${w}`) ?? 0;
   const wiederholt = (w: string) =>
     WIEDERHOLUNG.some((a) =>
       w
@@ -115,6 +114,7 @@ export function waehleAntwort(
         .replace(/[„“”"]/g, "")
         .startsWith(a),
     ) && (g.gewaehlt.get(`wiederholt|${frage}|${w}`) ?? 0) > 0;
+  const gesamt = (w: string) => g.gewaehlt.get(`immer|${frage}|${w}`) ?? 0;
   const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) || wiederholt(w) }));
   const echte = vor.filter((v) => !v.auf);
   const neue = echte.filter((v) => v.n === 0 && gesamt(v.w) < GLEICHE_ANTWORT_MAX);
@@ -123,8 +123,8 @@ export function waehleAntwort(
     aufschub ??
     [...vor].sort((a, b) => a.n - b.n)[0] ?? { i: 0, w: wahlen[0] ?? "" };
   g.gewaehlt.set(`${g.signatur}|${frage}|${wahl.w}`, zahl(wahl.w) + 1);
-  g.gewaehlt.set(`immer|${frage}|${wahl.w}`, gesamt(wahl.w) + 1);
   g.gewaehlt.set(`wiederholt|${frage}|${wahl.w}`, 1);
+  g.gewaehlt.set(`immer|${frage}|${wahl.w}`, gesamt(wahl.w) + 1);
   return wahl.i;
 }
 

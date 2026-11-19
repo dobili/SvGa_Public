@@ -23,7 +23,12 @@ import { beendeSpielerDesProzesses } from "../e2e/abenteuer-zugwahl";
 import { spieleRunde } from "./aufgaben";
 import { tabellen } from "./auswertung";
 import { tippe, type Lauf } from "./eingabe";
-import { bedieneFenster, bedieneUpdate, neuesFenstergedaechtnis } from "./fenster";
+import {
+  bedieneFenster,
+  bedieneUpdate,
+  neuesFenstergedaechtnis,
+  vergissWiederholungen,
+} from "./fenster";
 import { liesLage, liesSpeicher, signatur, type Lage } from "./lage";
 import { Messung } from "./messung";
 import { spielePartie } from "./partie";
@@ -244,7 +249,10 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
       if (stand) {
         g.signatur = signatur(stand);
         messung.akt = stand.handlung.akt;
-        if (stand.position.karte !== messung.karte) messung.jetzt.kartenwechsel += 1;
+        if (stand.position.karte !== messung.karte) {
+          messung.jetzt.kartenwechsel += 1;
+          vergissWiederholungen(g);
+        }
         messung.karte = stand.position.karte;
         if (BIS_AKT > 0 && stand.handlung.akt >= BIS_AKT) {
           grund = `Akt ${BIS_AKT} erreicht`;

@@ -20,16 +20,17 @@ import {
 } from "../schnittstelle/spielstand";
 
 /**
- * Wo das Abenteuer beginnt: der Dachboden in Maple Falls, oben an der Treppe, Blick in den Raum.
- * Gleich dem Auslöser „start“ der Karte (Szene maple-falls-dachboden.json); ein Test in
+ * Wo das Abenteuer beginnt: vor dem Haus an der Birch Lane in Maple Falls, Blick zur Haustür.
+ * Gleich dem Auslöser „start“ der Karte (Szene maple-falls-aussen.json); ein Test in
  * pipeline/tests/test_abenteuer_karten.py hält beide gleich, weil Umbauten der Karte die Stelle
- * sonst unbemerkt in ein Möbel legen können. Seit dem Umbau des Treppenlochs durch den Autor
- * (Karteneditor, 16.11.2026) liegt die Öffnung auf (1..2, 7..8); der Start steht davor auf (2, 9).
+ * sonst unbemerkt in ein Möbel legen können. Seit der Einleitung (Wunsch des Autors, 19.11.2026)
+ * läuft hier von selbst die Einleitung (orte.json, Feld „eingang“), danach geht es mit Mama ins
+ * Wohnzimmer und von dort auf den Dachboden; vorher begann das Spiel auf dem Dachboden auf (2, 9).
  */
 export const STARTPOSITION: Weltposition = {
-  karte: "mapleFalls.dachboden",
-  x: 2,
-  y: 9,
+  karte: "mapleFalls.aussen",
+  x: 3,
+  y: 24,
   richtung: "unten",
 };
 
@@ -39,7 +40,7 @@ export const STARTPOSITION: Weltposition = {
  * Eingaben: Zeitpunkt (für Tests fest), Name des Helden, Eingangswertung (Wertung der App oder
  * null, dann 0 bis zur ersten Partie) und ob sie schon fest ist (10 gewertete Partien in der App).
  * Beispiel: leererAbenteuerstand(jetzt, "Kim", 850, true) → Akt 1, Szene „akt1.start“, keine
- * Clubs, keine Karten, Position Dachboden.
+ * Clubs, keine Karten, Position vor dem Haus.
  */
 export function leererAbenteuerstand(
   jetzt: Date,

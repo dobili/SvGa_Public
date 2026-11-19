@@ -98,6 +98,19 @@
           "type": "object",
           "additionalProperties": { "$ref": "#/$defs/licht" }
         },
+        "eingang": {
+          "description": "Dialog, der beim Betreten der Karte von selbst läuft, solange die Bedingung gilt (Einleitung, Wunsch des Autors 19.11.2026). Die Bedingung (Sprache wie bei wenn) muss nach dem Dialog falsch werden, sonst läuft er bei jedem Betreten. Beispiel: mapleFalls.aussen → maple-falls-aussen.einleitung, solange „nicht einleitungGesehen und nicht brettBeruehrt“.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["dialog", "wenn"],
+          "properties": {
+            "dialog": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+\\.[a-z0-9_]+$"
+            },
+            "wenn": { "type": "string", "minLength": 1 }
+          }
+        },
         "zustaende": {
           "description": "Zustände der Karte (Runde 6 und 8): Bedingung (Sprache wie bei wenn) → Tiled-JSON karten/<basis>-<zustand>.json. Der letzte Eintrag, dessen Bedingung gilt, wird geladen, mit dem Hintergrund grafik/karten/<kennung>-<zustand>.png; ohne passenden Eintrag die Grundkarte. Beispiel Musikhaus: musikhausOffen → karten/port-delacroix-musikhaus-neu.json (Zustand „neu“).",
           "type": "object",

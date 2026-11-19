@@ -18,6 +18,7 @@
 // Team war und aufgehört hat; Stufe C steht vor dem Fenster des Clubraums, Stufe D im Clubraum.
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL reise(karte, ausloeser)
 
 VAR nadelRiverton = 0
 VAR einladungGesehen = false
@@ -35,6 +36,10 @@ VAR nadelIronwood = 0
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Einleitung (Wunsch des Autors, 19.11.2026): läuft beim ersten Betreten von selbst (orte.json,
+// Feld „eingang“ der Karte mapleFalls.aussen), solange das Brett noch nicht berührt ist.
+VAR einleitungGesehen = false
+VAR brettBeruehrt = false
 
 === juno ===
 // Alte Spielstände (vor der Schultür, 17.11.2026): Wer schon im Club ist, kennt Juno von dort; das
@@ -333,3 +338,32 @@ Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stim
 Lily schiebt das Plastikpferd über den Gehweg. Es hüpft mal zwei Felder, mal drei. #sprecher:erzaehler
 Hüpft der jetzt gerade oder schief? Zeig's mir nochmal, ja? #sprecher:lily #stimmung:nachdenklich
 -> END
+
+// ---------------------------------------------------------------- Einleitung
+
+=== einleitung ===
+// Spielbeginn nach dem Roman, Kapitel 1 (docs/spiel/roman/akt1_teil1.md) und der Story-Bibel 2.3:
+// Ende August, Mama hat eine neue Stelle im Kreiskrankenhaus, das Haus an der Birch Lane. Wunsch
+// des Autors (19.11.2026): nicht in die Geschichte geworfen werden, sondern mit Mama ankommen und
+// wissen, warum man auf den Dachboden geht. Die Bilder liefert Gemini (Auftrag
+// docs/spiel/auftraege/gemini_einleitung_19-11.html); bis dahin steht nur der Text.
+// Danach gehen beide hinein: Die Reise ins Wohnzimmer verhindert, dass man vor dem Dachboden
+// schon durch die ganze Stadt läuft (Schule, Juno, Weg nach Cedar Creek).
+~ einleitungGesehen = true
+Ende August. Drei Tage Packen, ein langer Tag im Auto. Hinter dem Ortsschild von Maple Falls rauscht irgendwo Wasser. #sprecher:erzaehler #bild:einzug_fahrt #musik:aus
+Birch Lane. Ein altes Holzhaus mit Veranda, davor ein Ahorn, dessen Blätter an den Rändern schon rot sind. Am Bordstein steht der Umzugswagen mit offener Klappe. #sprecher:erzaehler #bild:einzug_haus
+Mama stellt den Motor ab und bleibt einen Moment sitzen, die Hände noch am Lenkrad. #sprecher:erzaehler #bild:aus
+Das ist es. Unser Haus. #sprecher:mutter #stimmung:muede
+Ich weiß, es ist nicht die alte Wohnung. Aber es hat einen Garten. Und einen Dachboden, so groß wie unsere ganze alte Küche. #sprecher:mutter #stimmung:laechelt
+* [„Und eine Schule voller Leute, die ich nicht kenne.“]
+    Die kennst du in einer Woche. Ich fange am Montag im Krankenhaus an, da kenne ich auch keinen. #sprecher:mutter #stimmung:nachdenklich
+* [„Bleiben wir diesmal?“]
+    Diesmal bleiben wir. Das Haus gehört jetzt uns. Die Bank sieht das noch etwas anders, aber uns. #sprecher:mutter #stimmung:laechelt
+- Die Möbelpacker tragen das Sofa hinein, schief, wie alles heute. #sprecher:erzaehler
+Nimm einen Karton, irgendeinen. Wir gehen zusammen rein. #sprecher:mutter #stimmung:muede
+-> einleitung_hinein
+
+=== einleitung_hinein ===
+* [Einen Karton nehmen und mit Mama hineingehen]
+    ~ reise("mapleFalls.wohnzimmer", "haustuer")
+    -> END

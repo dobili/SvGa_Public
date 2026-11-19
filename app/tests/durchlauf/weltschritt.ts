@@ -48,6 +48,12 @@ export async function warteAufWelt(lauf: Lauf, vorher?: string): Promise<void> {
   }
 }
 
+/** Die Karte des letzten Schritts (um eine neue Karte zu bemerken). */
+let letzteKarte = "";
+
+/** Der Übergang, an dem zuletzt ein Dialog aufging (bis klar ist, ob er danach öffnete). */
+let offenerDialog: { karte: string; name: string } | null = null;
+
 /** Geht durch einen Ausgang und meldet, wenn er nicht reagiert. Ausgabe: ob etwas geschah. */
 async function nimmAusgang(
   lauf: Lauf,
@@ -62,8 +68,9 @@ async function nimmAusgang(
     // Karte gewechselt, auf derselben Karte versetzt oder ein Dialog am Übergang (Wegsperre, Bus)?
     await lauf.seite.waitForTimeout(250);
     if ((await liesLage(lauf.seite)).dialog) {
-      // Ob der Übergang nach dem Dialog öffnet, zeigt der nächste Versuch.
-      planer.merkeGesperrt(stand, wissen.kennung, name);
+      // Ob der Übergang nach dem Dialog öffnet, zeigt sich, wenn der Dialog vorbei ist: Der
+      // nächste Schritt sieht nach, ob der Held noch auf dieser Karte steht (offenerDialog).
+      offenerDialog = { karte: wissen.kennung, name };
       return true;
     }
     await warteAufWelt(lauf, stand.position.karte);
@@ -74,6 +81,7 @@ async function nimmAusgang(
     }
     return true;
   }
+  if (ergebnis === "keinWeg" && (await nimmSteg(lauf, planer, wissen, name))) return true;
   if (ergebnis === "keinWeg") {
     lauf.messung.fund("unerreichbar", `Übergang ${wissen.kennung}.${name}: kein Weg vom Standort`);
   } else if (ergebnis === "frist") {
@@ -83,6 +91,37 @@ async function nimmAusgang(
   }
   planer.merkeGesperrt(stand, wissen.kennung, name);
   planer.merkeGesperrt(stand, wissen.kennung, name);
+  return false;
+}
+
+/**
+ * Kein Weg zum Ausgang: Manche Karten haben getrennte Teile, die ein Übergang auf derselben Karte
+ * verbindet (Steg über die Schleuse, Fähre). Der Held nimmt dann den ersten solchen Steg, den er
+ * erreicht; der nächste Schritt plant von der anderen Seite neu. Ausgabe: ob er einen Steg nahm.
+ */
+async function nimmSteg(
+  lauf: Lauf,
+  planer: Planer,
+  wissen: Kartenwissen,
+  ausser: string,
+): Promise<boolean> {
+  const stand = await liesStand(lauf.seite);
+  const zu = planer.gesperrteAusgaenge(stand);
+  const stege = wissen.dinge.filter(
+    (d) =>
+      d.name !== ausser &&
+      d.regel?.art === "uebergang" &&
+      d.regel.ziel?.karte === wissen.kennung &&
+      !zu.has(`${wissen.kennung}.${d.name}`),
+  );
+  for (const steg of stege) {
+    const ergebnis = await geheDurch(lauf, wissen, steg.name);
+    lauf.messung.log(`Steg ${wissen.kennung}.${steg.name}: ${ergebnis}`);
+    if (ergebnis === "keinWeg" || ergebnis === "aufgehalten" || ergebnis === "frist") continue;
+    planer.merkeDurchgang(stand, wissen.kennung, steg.name);
+    await warteAufWelt(lauf);
+    return true;
+  }
   return false;
 }
 
@@ -129,6 +168,22 @@ export async function weltschritt(lauf: Lauf, daten: Spieldaten, planer: Planer)
   const karte = stand.position.karte;
   lauf.messung.akt = stand.handlung.akt;
   lauf.messung.karte = karte;
+  if (karte !== letzteKarte) {
+    // Neue Karte (auch nach einem Dialog am Übergang oder einer Reise): warten, bis die Anzeige
+    // die Ankunftskachel nennt, sonst plant der Schritt mit der Kachel der alten Karte.
+    letzteKarte = karte;
+    const ankunft = `${stand.position.x},${stand.position.y}`;
+    for (let i = 0; i < ANKUNFT_VERSUCHE; i++) {
+      const lage = await liesLage(lauf.seite);
+      if (lage.kachel === ankunft || lage.dialog || lage.bild !== "welt") break;
+      await lauf.seite.waitForTimeout(100);
+    }
+  }
+  if (offenerDialog) {
+    // Nach einem Dialog am Übergang noch auf derselben Karte: Der Übergang blieb zu.
+    if (offenerDialog.karte === karte) planer.merkeGesperrt(stand, karte, offenerDialog.name);
+    offenerDialog = null;
+  }
   const wissen = kartenwissen(daten, karte, stand);
   const ziel = planer.naechstes(stand);
   if (!ziel) return false;

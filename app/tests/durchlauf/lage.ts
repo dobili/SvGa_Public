@@ -126,20 +126,39 @@ function liesLageImBrowser(): Lage {
   };
 }
 
-/** Die Lage des Bildschirms; während eines Seitenwechsels „leer“. */
+/** So lange darf die Seite für eine Antwort brauchen; danach gilt die Frage als unbeantwortet (ms). */
+const ANTWORT_MS = 8000;
+
+/** Der Wert der Frage, oder `ersatz`, wenn die Seite nicht rechtzeitig antwortet. */
+async function mitErsatz<T>(frage: Promise<T>, ersatz: T): Promise<T> {
+  let wecker: NodeJS.Timeout | undefined;
+  const frist = new Promise<T>((fertig) => {
+    wecker = setTimeout(() => fertig(ersatz), ANTWORT_MS);
+  });
+  const wert = await Promise.race([frage, frist]);
+  clearTimeout(wecker);
+  return wert;
+}
+
+const LEERE_LAGE: Lage = {
+  bild: "leer",
+  kennungen: [],
+  dialog: null,
+  knoepfe: [],
+  kachel: "",
+  aktion: null,
+  kreuz: false,
+  fassung: null,
+  breite: 0,
+  hoehe: 0,
+};
+
+/** Die Lage des Bildschirms; während eines Seitenwechsels oder ohne Antwort der Seite „leer“. */
 export async function liesLage(seite: Page): Promise<Lage> {
-  return seite.evaluate(liesLageImBrowser).catch((): Lage => ({
-    bild: "leer",
-    kennungen: [],
-    dialog: null,
-    knoepfe: [],
-    kachel: "",
-    aktion: null,
-    kreuz: false,
-    fassung: null,
-    breite: 0,
-    hoehe: 0,
-  }));
+  return mitErsatz(
+    seite.evaluate(liesLageImBrowser).catch((): Lage => LEERE_LAGE),
+    LEERE_LAGE,
+  );
 }
 
 /** Die laufende oder zuletzt beendete Partie des Abenteuers aus dem Speicher der App. */
@@ -216,9 +235,11 @@ function liesSpeicherImBrowser(): Promise<Speicher> {
 
 /** Spielstand und Partie aus dem Speicher der App (nur lesen). */
 export async function liesSpeicher(seite: Page): Promise<Speicher> {
-  return seite
-    .evaluate(liesSpeicherImBrowser)
-    .catch((): Speicher => ({ stand: null, partie: null }));
+  const leer: Speicher = { stand: null, partie: null };
+  return mitErsatz(
+    seite.evaluate(liesSpeicherImBrowser).catch((): Speicher => leer),
+    leer,
+  );
 }
 
 /** Der Spielstand; wirft, wenn es keinen gibt. */

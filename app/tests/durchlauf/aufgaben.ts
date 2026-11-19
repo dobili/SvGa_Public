@@ -6,12 +6,15 @@
  *
  * Warum: Hauptquests verlangen bestandene Runden (70 Prozent); ohne echten Löser käme der
  * Durchlauf dort nicht weiter, und die Testknöpfe „Bestehen“ sind tabu.
+ * Fallenaufgaben zeigen das Brett nur als Bild; dort schlägt der Löser die Antwort in den
+ * Trainerdaten der App nach (beantworteFalle).
  * Grenzen: Strukturaufgaben (Felder und Bauern markieren) kann dieser Löser nicht; er gibt dort
  * die Antwort ab, wie sie steht. Rochaderechte werden aus der Grundstellung von König und Turm
  * geraten, ein Schlagen im Vorbeigehen kennt er nicht.
  * Abhängigkeiten: abenteuer-zugwahl.ts (Stockfish), eingabe.ts, lage.ts, messung.ts.
  * Beispiel: „Weiß am Zug“, Springer b5, Dame d5, König e8 → tippt b5 und c7 (Gabel).
  */
+import { readFileSync } from "node:fs";
 import { tippe, tippeKnopf, tippePunkt, type Lauf } from "./eingabe";
 import { liesLage, type Knopf, type Lage } from "./lage";
 import { bewerteStellung } from "./partie";
@@ -32,6 +35,8 @@ const STILLSTAND_MS = 90_000;
 /** Näher als so viele Bauern am besten Zug gilt ein angebotenes Schlagen als gut. */
 const FALLENSPIEL = 0.6;
 const FELDER_JE_BRETT = 64;
+/** Trainerdaten der Fallenaufgaben (vom Bau der App erzeugt). */
+const FALLENDATEI = new URL("../../public/daten/de/trainer/falle.json", import.meta.url);
 /** So viele Kandidaten rechnet der Löser je Aufgabe (der beste zuerst). */
 const KANDIDATEN = 3;
 /** Nach so langer Ruhe sieht der Löser unter dem Bildrand nach „Weiter“ (ms). */
@@ -118,15 +123,42 @@ async function tippeZug(lauf: Lauf, felder: readonly Knopf[], uci: string): Prom
   return true;
 }
 
-/** Beantwortet „Nehmen oder nicht?“ (Fallenaufgabe) nach der Bewertung des angebotenen Zugs. */
-async function beantworteFalle(lauf: Lauf, lage: Lage, fen: string): Promise<boolean> {
-  const nehmen = lage.knoepfe.find((k) => / nehmen$/.test(k.text) && !/^Nicht/.test(k.text));
+/** Eine Fallenaufgabe aus den Trainerdaten, so weit hier gebraucht. */
+interface Fallendaten {
+  readonly aufgaben: readonly { readonly angebot: string; readonly antwort: string }[];
+}
+let fallen: Fallendaten | null = null;
+
+/** Deutsche Figurenbuchstaben der Knopfbeschriftung in die Schreibweise der Daten (Sxc7 → Nxc7). */
+function datenzug(zug: string): string {
+  const figur: Readonly<Record<string, string>> = { S: "N", L: "B", T: "R", D: "Q" };
+  return zug.replace(/^[SLTD]/, (b) => figur[b] ?? b);
+}
+
+/**
+ * Beantwortet „Nehmen oder nicht?“ (Fallenaufgabe). Das Brett ist dort nur ein Bild (keine
+ * tippbaren Felder), die Stellung also nicht lesbar; der Löser schlägt die Antwort deshalb zum
+ * angebotenen Zug in den Trainerdaten der App nach (public/daten/de/trainer/falle.json, Lesen zum
+ * Entscheiden). Bei mehreren Aufgaben mit demselben Zug entscheidet die Mehrheit; ist das Brett
+ * doch lesbar, entscheidet die Bewertung des Zugs.
+ */
+async function beantworteFalle(lauf: Lauf, lage: Lage, fen: string | null): Promise<boolean> {
+  const nehmen = lage.knoepfe.find((k) => /^Nehmen: /.test(k.text) || / nehmen$/.test(k.text));
   const lassen = lage.knoepfe.find((k) => /^Nicht nehmen/.test(k.text));
-  if (!nehmen || !lassen) return false;
-  const alle = await bewerteStellung(fen);
-  const ziel = /x([a-h][1-8])/.exec(nehmen.text)?.[1];
-  const zug = alle.find((k) => ziel !== undefined && k.uci.slice(2, 4) === ziel);
-  const gut = zug !== undefined && alle[0] !== undefined && zug.wert >= alle[0].wert - FALLENSPIEL;
+  if (!nehmen || !lassen || nehmen === lassen) return false;
+  const san = /^Nehmen: (\S+)/.exec(nehmen.text)?.[1] ?? "";
+  let gut: boolean;
+  if (fen) {
+    const alle = await bewerteStellung(fen);
+    const ziel = /x([a-h][1-8])/.exec(nehmen.text)?.[1];
+    const zug = alle.find((k) => ziel !== undefined && k.uci.slice(2, 4) === ziel);
+    gut = zug !== undefined && alle[0] !== undefined && zug.wert >= alle[0].wert - FALLENSPIEL;
+  } else {
+    fallen ??= JSON.parse(readFileSync(FALLENDATEI, "utf8")) as Fallendaten;
+    const treffer = fallen.aufgaben.filter((f) => f.angebot === datenzug(san));
+    const falle = treffer.filter((f) => f.antwort === "falle").length;
+    gut = treffer.length > 0 && falle * 2 < treffer.length;
+  }
   lauf.messung.log(`  Falle: ${nehmen.text} → ${gut ? "nehmen" : "nicht nehmen"}`);
   await tippeKnopf(lauf, gut ? nehmen : lassen);
   return true;
@@ -212,6 +244,11 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
         await seite.waitForTimeout(350);
         continue;
       }
+    }
+    if (brettfelder(lage).length === 0 && (await beantworteFalle(lauf, lage, null))) {
+      seit = Date.now();
+      await seite.waitForTimeout(400);
+      continue;
     }
     const felder = brettfelder(lage);
     const blase = lage.knoepfe.find((k) => k.klasse.includes("abenteuer-tischblase"));

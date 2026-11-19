@@ -37,6 +37,13 @@ const FORMAT = process.env.DURCHLAUF_FORMAT === "quer" ? "quer" : "hoch";
 const MS_JE_MINUTE = 60_000;
 const DAUER_MS = Number(process.env.DURCHLAUF_MINUTEN ?? "30") * MS_JE_MINUTE;
 const BIS_AKT = Number(process.env.DURCHLAUF_BIS_AKT ?? "0");
+/** Der Lauf endet, sobald der Held diesen Ort betreten hat (etwa ghostTown nach Pinewood Camp). */
+const BIS_ORT = process.env.DURCHLAUF_BIS_ORT ?? "";
+/**
+ * Der Lauf endet, sobald diese Quest erledigt ist (etwa mapleFalls.epilog); dann spielt er auch
+ * nach dem Abspann weiter, bis zum Epilog.
+ */
+const BIS_QUEST = process.env.DURCHLAUF_BIS_QUEST ?? "";
 const ADRESSE = `http://localhost:${process.env.PLAYWRIGHT_PORT ?? "4183"}`;
 /** Stand der Simulation zu Beginn eines Akts (aktstand.cjs), sonst leer: Spiel von vorn. */
 const STAND_DATEI = process.env.DURCHLAUF_STAND ?? "";
@@ -234,7 +241,17 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
         }
       }
       if (await bedieneFenster(lauf, lage, g)) continue;
-      if (messung.abspann) {
+      // Erst wenn kein Fenster mehr offen ist: Die Quest gilt schon mit dem ersten Satz ihres
+      // Dialogs als erledigt, der Dialog soll aber zu Ende gelesen werden.
+      if (BIS_ORT && stand.besuchteOrte.includes(BIS_ORT)) {
+        grund = `${BIS_ORT} erreicht`;
+        break;
+      }
+      if (BIS_QUEST && stand.quests.some((q) => q.kennung === BIS_QUEST && q.erledigt)) {
+        grund = `${BIS_QUEST} erledigt`;
+        break;
+      }
+      if (messung.abspann && !BIS_QUEST) {
         grund = "Abspann erreicht";
         break;
       }

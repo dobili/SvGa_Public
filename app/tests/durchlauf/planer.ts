@@ -53,6 +53,18 @@ export interface Ziel {
   readonly schluessel: string;
 }
 
+/**
+ * Dinge, die der Spieler nicht anfasst („karte.name“, durch Komma getrennt), etwa
+ * crossroads.aussen.viehgatter, damit der Lauf nicht die Abkürzung über die Alte Minenstraße nimmt,
+ * sondern durch Pinewood Camp geht (Nachtauftrag 19.11.2026).
+ */
+const OHNE = new Set(
+  (process.env.DURCHLAUF_OHNE ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean),
+);
+
 /** So oft folgt der Spieler demselben Hinweis, solange kein Questschritt weitergeht. */
 const VERSUCHE_HINWEIS = 5;
 /** So oft fasst der Spieler beim Umsehen dasselbe Ding im selben Stand der Hauptgeschichte an. */
@@ -264,7 +276,9 @@ export class Planer {
     if (!liste) {
       liste = kartenwissen(this.daten, karte, stand).dinge.filter(
         (d) =>
-          d.figur !== null || (d.regel !== null && ["gegenstand", "dialog"].includes(d.regel.art)),
+          !OHNE.has(`${karte}.${d.name}`) &&
+          (d.figur !== null ||
+            (d.regel !== null && ["gegenstand", "dialog"].includes(d.regel.art))),
       );
       this.dingeMerker.set(karte, liste);
     }

@@ -5,6 +5,7 @@
  */
 import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
+import { EINLEITUNG_GESEHEN } from "./abenteuer-affe";
 import { feldDarunter, feldVon } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
@@ -30,6 +31,7 @@ const STAND = {
   },
   besuchteOrte: ["mapleFalls"],
   muenzen: 50,
+  dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
 function schreibeStand(stand: object): Promise<boolean> {
@@ -188,7 +190,7 @@ test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async 
   // Teil des Dateinamens hinter der Grundkarte (port-delacroix-musikhaus-neu → „neu“).
   const stand = {
     ...STAND,
-    dialogvariablen: { musikhausOffen: true },
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, musikhausOffen: true },
     position: {
       karte: "portDelacroix.musikhaus",
       ...feldVon("port-delacroix-musikhaus-neu", "start"),
@@ -316,7 +318,7 @@ test("Reisebrett: nach dem Abschied spielt Juno statt Ambrose", async ({ page })
   const stand = {
     ...STAND,
     gegenstaende: ["reisebrett"],
-    dialogvariablen: { abschiedGesehen: true },
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, abschiedGesehen: true },
   };
   await starteImBrowser(page);
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);

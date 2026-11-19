@@ -10,7 +10,7 @@
  * Beispiel: SPERREN.s16 → Raststätte, Übergang „weiterGlasbruecke“ am Westrand, Imani spielt.
  */
 import { expect, type Locator, type Page } from "@playwright/test";
-import { GRUNDSTAND } from "./abenteuer-affe";
+import { EINLEITUNG_GESEHEN, GRUNDSTAND } from "./abenteuer-affe";
 import { feldVon } from "./abenteuer-karte";
 
 /** Eine Wegsperre mit allem, was die Tests von ihr wissen müssen. */
@@ -223,7 +223,7 @@ export function standVor(sperre: Sperre, variablen: Record<string, boolean | num
       ...startkachel(sperre),
       richtung: sperre.schritt === 1 ? "rechts" : "links",
     },
-    dialogvariablen: { ...sperre.voraussetzung, ...variablen },
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, ...sperre.voraussetzung, ...variablen },
   };
 }
 

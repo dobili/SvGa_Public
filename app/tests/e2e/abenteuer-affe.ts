@@ -26,6 +26,13 @@ export function zufallMit(startwert: number): () => number {
   };
 }
 
+/**
+ * Einleitung und Ankunft (seit 19.11.2026) gelten als gesehen: Sonst beginnt die Einleitung vor
+ * dem Haus, sobald der Held nach Maple Falls kommt, und im Wohnzimmer die Ankunft (orte.json,
+ * Feld „eingang“). In jeden eingespielten Spielstand, auch wenn er eigene Variablen setzt.
+ */
+export const EINLEITUNG_GESEHEN = { einleitungGesehen: true, ankunftGesehen: true };
+
 /** Ein Spielstand im Park von Maple Falls; die Szenarien ändern Position und Besitz. */
 export const GRUNDSTAND = {
   version: 1,
@@ -41,9 +48,7 @@ export const GRUNDSTAND = {
   besuchteOrte: ["mapleFalls", "cedarCreek"],
   gegenstaende: ["reisebrett", "monatskarte", "lupe"],
   muenzen: 80,
-  // Einleitung und Ankunft (seit 19.11.2026) gelten als gesehen: Sonst beginnt die Einleitung
-  // vor dem Haus, sobald der Held nach Maple Falls reist.
-  dialogvariablen: { einleitungGesehen: true, ankunftGesehen: true },
+  dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
 /** Schreibt einen Spielstand in die Nutzerdaten (IndexedDB der App); läuft im Browser. */

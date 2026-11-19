@@ -22,11 +22,15 @@ import {
 } from "./endspieldrills";
 import { bildplandrills, oppositionszugdrill, quadratzugdrill } from "./endspielzugdrills";
 
-/** Fester Zufall für wiederholbare Tests (lineare Kongruenz). */
+/**
+ * Fester Zufall für wiederholbare Tests (lineare Kongruenz). Exakt modulo 2^31 über Math.imul: als
+ * Gleitkommazahl gerechnet gingen die unteren Bits des Produkts verloren, und die Folge lief nach
+ * etwa 13 000 Werten in einen kurzen Zyklus (Befund in der Gesamtsimulation, 19.11.2026).
+ */
 function saat(start: number): () => number {
   let x = start;
   return () => {
-    x = (x * 1103515245 + 12345) % 2147483648;
+    x = (Math.imul(x, 1103515245) + 12345) & 0x7fffffff;
     return x / 2147483648;
   };
 }

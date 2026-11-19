@@ -9,6 +9,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import {
+  EINLEITUNG_GESEHEN,
   beobachte,
   findeAusweg,
   GRUNDSTAND,
@@ -112,7 +113,11 @@ const BEREICHE: readonly Bereich[] = [
     name: "Gedächtnisstellung",
     stand: {
       ...GRUNDSTAND,
-      dialogvariablen: { versoehnungGesehen: true, seilschaftBegonnen: true },
+      dialogvariablen: {
+        ...EINLEITUNG_GESEHEN,
+        versoehnungGesehen: true,
+        seilschaftBegonnen: true,
+      },
       position: {
         karte: "wegDelacroixDesert.felsbogen",
         ...feldDarunter("weg-delacroix-desert-felsbogen", "ereignisSeilschaft"),

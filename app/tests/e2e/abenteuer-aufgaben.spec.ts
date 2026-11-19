@@ -5,6 +5,7 @@
  * „Das reicht noch nicht“ mit dem Angebot einer leichteren Runde.
  */
 import { expect, test, type Page } from "@playwright/test";
+import { EINLEITUNG_GESEHEN } from "./abenteuer-affe";
 import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
@@ -32,6 +33,7 @@ const STAND = {
     versuch: 1,
     zaehltFuerApp: true,
   },
+  dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
 /** Schreibt den Spielstand in die Nutzerdaten (IndexedDB der App). */

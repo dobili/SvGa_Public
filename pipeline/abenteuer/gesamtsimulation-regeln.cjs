@@ -187,7 +187,8 @@ function neuerStand(startwert) {
     karten: {},
     muenzen: 0,
     staende: [],
-    karte: "mapleFalls.dachboden",
+    // Seit der Einleitung (19.11.2026) wie die App vor dem Haus (regeln/spielstand.ts, STARTPOSITION).
+    karte: "mapleFalls.aussen",
     besucht: new Set(),
     abspann: false,
     partien: {},
@@ -325,6 +326,13 @@ function neueVersuche(st) {
 
 // ---------------------------------------------------------------- Bewegung
 
+/**
+ * Was nach dem Betreten einer Karte noch geschieht; gesamtsimulation-dialoge.cjs trägt hier den
+ * Eingangsdialog ein (orte.json, Feld „eingang“, wie oberwelt/eingang.ts der App). Ein Haken statt
+ * eines Aufrufs, weil die Dialoge dieses Modul laden (sonst ein Kreis).
+ */
+const nachBetreten = [];
+
 function betrete(welt, st, karte) {
   const ort = welt.karteZuOrt[karte];
   if (!ort) {
@@ -341,6 +349,7 @@ function betrete(welt, st, karte) {
     st.vars["besucht" + gross(ort.kennung)] = true;
   }
   melde(welt, st, { art: "ort", karte });
+  for (const f of nachBetreten) f(welt, st, karte);
 }
 
 function ausloeserFuer(ort, karte, name) {
@@ -365,6 +374,7 @@ module.exports = {
   neuerStand,
   zustand,
   betrete,
+  nachBetreten,
   ausloeserFuer,
   melde,
   FOLGE,

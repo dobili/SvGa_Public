@@ -53,6 +53,10 @@ VAR endeAkt3Gesehen = false
 {
 - not ankunftGesehen and not brettBeruehrt: -> ankunft
 - not ankunftGesehen: -> ankunft_kurz
+// Einleitung (19.11.2026): Nach der Ankunft und vor dem Brett erinnert Mama an die Kiste.
+- not brettBeruehrt and not ersteLektionBesprochen:
+    Die Kiste gehört nach oben, zu den anderen Sachen von Mrs. Whitlock. Die Treppe hier rauf, dann die steile zum Dachboden. #sprecher:mutter #stimmung:muede
+    -> END
 - ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen" and not ersteLektionBesprochen:
     Bist du oben fertig? Die Pizza wird kalt, aber ein paar Minuten hat sie noch. #sprecher:mutter #stimmung:laechelt
     -> END
@@ -70,8 +74,8 @@ VAR endeAkt3Gesehen = false
 // Stimmung: fremd, müde, Sommerende. Keine Musik bis zur Pizza; Wasserfall fern.
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Der Umzugswagen ist weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus
-Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler
+Am Abend ist der Umzugswagen weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer
+Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
 Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter #stimmung:laechelt
@@ -82,14 +86,15 @@ Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht 
     Ich auch. #sprecher:mutter #stimmung:bitter #pause
 - Mama fragt nicht, wie es dir geht. Dafür bist du ihr dankbar. #sprecher:erzaehler
 Eins noch. #sprecher:mutter #stimmung:nachdenklich
-Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler
-Stand im Flur. Die Vorbesitzerin. Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter #stimmung:nachdenklich
+Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler #bild:kiste_whitlock
+Stand im Flur. Die Vorbesitzerin. Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter #stimmung:nachdenklich #bild:aus
 Der Dachboden ist noch voll von ihren Sachen. Deshalb war das Haus so günstig. Alles, was oben ist, gehört jetzt uns. #sprecher:mutter #stimmung:nachdenklich
 * [„Und was machen wir damit?“]
     Erst mal nichts. #sprecher:mutter #stimmung:nachdenklich
 * [„Erst Pizza?“]
     Gleich. #sprecher:mutter #stimmung:nachdenklich
 - Bring die hier hoch zu den anderen, ja? Ich kann heute keine Treppe mehr sehen. #sprecher:mutter #stimmung:muede
+Die Treppe hier rauf, und oben gleich die steile weiter zum Dachboden. Ich mach so lange die Pizza warm. #sprecher:mutter #stimmung:laechelt
 Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie Kegel, die aneinanderstoßen. #sprecher:erzaehler #klang:holzklacken #musik:karte
 -> END
 

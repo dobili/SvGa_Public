@@ -41,6 +41,10 @@
           "zustaende": {
             "ersterAbendGesehen": "karten/maple-falls-wohnzimmer-tisch.json",
             "aufbruchGesehen": "karten/maple-falls-wohnzimmer-ausgepackt.json"
+          },
+          "eingang": {
+            "dialog": "maple-falls-wohnzimmer.ankunft",
+            "wenn": "einleitungGesehen und nicht ankunftGesehen"
           }
         },
         {
@@ -49,7 +53,11 @@
           "name": "ort.mapleFalls.aussen",
           "innen": false,
           "musik": "musik/maple-falls.ogg",
-          "geraeusch": "klang/wasserfall.m4a"
+          "geraeusch": "klang/wasserfall.m4a",
+          "eingang": {
+            "dialog": "maple-falls-aussen.einleitung",
+            "wenn": "nicht einleitungGesehen und nicht brettBeruehrt"
+          }
         },
         {
           "kennung": "mapleFalls.clubraum",
@@ -105,6 +113,13 @@
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",
           "dialog": "maple-falls-wohnzimmer.mutter"
+        },
+        {
+          "kennung": "mapleFalls.mutterAussen",
+          "name": "figur.mutter.name",
+          "sprite": "figuren/mutter.png",
+          "dialog": "maple-falls-aussen.einleitung_hinein",
+          "wenn": "nicht einleitungGesehen und nicht brettBeruehrt"
         },
         {
           "kennung": "mapleFalls.coachDelgado",

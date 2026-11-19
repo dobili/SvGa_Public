@@ -24,7 +24,12 @@ INKJS = HAUPTORDNER / "app" / "node_modules" / "inkjs"
 ZEITBUDGET_SEKUNDEN = 300
 LAEUFE = 2
 AKTE = (1, 2, 3, 4)
-ERSTER_DIALOG = "maple-falls-dachboden.dachboden_brett"
+# Seit der Einleitung (19.11.2026): vor dem Haus, dann die Ankunft im Wohnzimmer, dann das Brett.
+ERSTE_DIALOGE = (
+    "maple-falls-aussen.einleitung",
+    "maple-falls-wohnzimmer.ankunft",
+)
+BRETT = "maple-falls-dachboden.dachboden_brett"
 TAGS = re.compile(r"#\s*(sprecher|stimmung|musik|klang|bild|pause|geraeusch|licht|teilchen|erinnerung)\b")
 
 ohne_node = pytest.mark.skipif(
@@ -69,13 +74,15 @@ def test_gleicher_aufruf_gleiche_datei(laeufe: list[Path]):
         assert erste.read_bytes() == zweite.read_bytes(), f"{name} ist nicht wiederholbar"
 
 
-def test_beginnt_auf_dem_dachboden_mit_dem_brett(text: str):
-    """Die erste Karte ist der Dachboden; der erste Dialog aus einer Ortsdatei ist der Fund des Bretts."""
+def test_beginnt_vor_dem_haus_mit_der_einleitung(text: str):
+    """Die erste Karte ist die Hauptstraße vor dem Haus: erst die Einleitung, dann die Ankunft im
+    Wohnzimmer; danach kommt (nach Dingen zum Ansehen) der Fund des Bretts auf dem Dachboden."""
     koepfe = re.findall(r"^#### (\d+) · (.+)\n\n`([\w-]+\.\w+)`", text, re.M)
     assert koepfe, "Die Lesefassung enthält keine Kopfzeilen von Dialogen"
-    assert koepfe[0][:2] == ("1", "Dachboden")
+    assert koepfe[0][:2] == ("1", "Maple Falls, Hauptstraße")
     ortsdialoge = [knoten for _, _, knoten in koepfe if not knoten.startswith("ansehen-")]
-    assert ortsdialoge[0] == ERSTER_DIALOG
+    assert tuple(ortsdialoge[:2]) == ERSTE_DIALOGE
+    assert BRETT in ortsdialoge
 
 
 def test_enthaelt_jeden_akt_bis_zum_abspann(text: str, laeufe: list[Path]):

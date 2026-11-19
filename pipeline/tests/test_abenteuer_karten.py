@@ -243,8 +243,9 @@ def test_doppelter_moebelname_bricht_ab(tmp_path: Path):
         moebelliste.lade_moebel(tmp_path)
 
 
-def test_startposition_der_app_ist_der_start_des_dachbodens():
-    """Die App beginnt ein neues Abenteuer an STARTPOSITION (app/src/abenteuer/regeln/spielstand.ts).
+def test_startposition_der_app_ist_der_start_ihrer_karte():
+    """Die App beginnt ein neues Abenteuer an STARTPOSITION (app/src/abenteuer/regeln/spielstand.ts),
+    seit der Einleitung (19.11.2026) vor dem Haus in Maple Falls, vorher auf dem Dachboden.
     Warum: Nach dem Umbau des Dachbodens in Runde 4 stand der Held dort noch an der alten Stelle;
     die Stelle muss der Auslöser „start“ der Karte sein, mit seiner Blickrichtung."""
     quelle = (HAUPTORDNER / "app/src/abenteuer/regeln/spielstand.ts").read_text(encoding="utf-8")

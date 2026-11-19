@@ -45,7 +45,8 @@ describe("werteEreignisAus mit „Das Brett auf dem Dachboden“", () => {
     );
     expect(betreten.begonnen).toEqual(["mapleFalls.dasBrett"]);
     expect(betreten.stand.quests[0]).toMatchObject({ kennung: "mapleFalls.dasBrett", schritt: 0 });
-    const quest = QUESTS[0];
+    // Seit der Einleitung (19.11.2026) steht „Einzug“ vor dem Brett in quests.json.
+    const quest = QUESTS.find((q) => q.kennung === "mapleFalls.dasBrett");
     const erster = betreten.stand.quests[0];
     if (!quest || !erster) throw new Error("keine Quests");
     expect(naechsterSchritt(quest, erster)).toBe("quest.dasBrett.schritt1");

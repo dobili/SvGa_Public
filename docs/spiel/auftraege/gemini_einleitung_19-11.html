@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gemini Einleitung</title>
+    <style>
+      :root {
+        --grund: #faf7f0;
+        --text: #2b2b38;
+        --karte: #fff;
+        --rand: #d8d0bf;
+        --akzent: #7a4b1c;
+        --pre: #f2eee4;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --grund: #1d1d24;
+          --text: #e8e4da;
+          --karte: #272731;
+          --rand: #44404f;
+          --akzent: #e0b070;
+          --pre: #30303b;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--grund);
+        color: var(--text);
+        font:
+          16px/1.5 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        margin-top: 2em;
+        border-bottom: 2px solid var(--akzent);
+        padding-bottom: 4px;
+      }
+      .auftrag {
+        background: var(--karte);
+        border: 1px solid var(--rand);
+        border-radius: 8px;
+        padding: 12px 14px;
+        margin: 14px 0;
+      }
+      .auftrag h3 {
+        margin: 0 0 6px;
+        font-size: 1.05em;
+      }
+      .nr {
+        background: var(--akzent);
+        color: var(--karte);
+        border-radius: 4px;
+        padding: 1px 7px;
+        margin-right: 4px;
+      }
+      dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 2px 10px;
+        margin: 6px 0;
+        font-size: 0.92em;
+      }
+      dt {
+        font-weight: 600;
+      }
+      dd {
+        margin: 0;
+      }
+      .hinweis {
+        font-size: 0.92em;
+        border-left: 3px solid var(--akzent);
+        padding-left: 8px;
+      }
+      .prompt pre {
+        background: var(--pre);
+        padding: 10px;
+        border-radius: 6px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 0.8em;
+        max-height: 260px;
+        overflow: auto;
+      }
+      button {
+        font: inherit;
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--akzent);
+        background: var(--karte);
+        color: var(--text);
+        cursor: pointer;
+      }
+      button.ok {
+        background: var(--akzent);
+        color: var(--karte);
+      }
+      code {
+        font-size: 0.92em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Gemini-Aufträge: Einleitung des Spiels (19.11.2026)</h1>
+      <p>
+        Das Spiel beginnt jetzt vor dem Haus an der Birch Lane: Ankunft mit
+        Mama, das Haus, dann das leere Wohnzimmer, in dem Mama die Kiste von
+        Mrs. Whitlock auf den Dachboden schickt. Vier Bilder erzählen das mit.
+        Bis sie da sind, zeigt das Spiel an diesen Stellen nur den Text; sobald
+        ein Bild im Paket liegt, erscheint es von selbst über seiner Zeile.
+      </p>
+      <h2>So geht es</h2>
+      <ol>
+        <li>Für jedes Bild einen <b>neuen Chat</b> in Gemini öffnen.</li>
+        <li>
+          Die Stilvorlage anhängen: <code>ki-roh/stilvorlage.png</code> im
+          privaten Repository (dieselbe wie bei den übrigen Großbildern).
+        </li>
+        <li>Auf „Prompt kopieren“ tippen und den Text einfügen.</li>
+        <li>
+          Das Ergebnis nach <code>ki-roh/</code> legen und dem Hauptchat die
+          Nummern E1 bis E4 nennen. Zuschneiden und Ablegen unter
+          <code>spiel/bilder/</code> macht der Hauptchat.
+        </li>
+      </ol>
+      <p>
+        Keines der Bilder enthält Schrift. Wo im Motiv etwas steht (Ortsschild,
+        Kistendeckel), bleibt die Fläche leer.
+      </p>
+      <section class="auftrag" id="n1">
+        <h3>
+          <span class="nr">E1</span> <code>einzug_fahrt</code> Ankunft in Maple
+          Falls
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:einzug_fahrt)</dd>
+          <dt>Ablage</dt>
+          <dd><code>spiel/bilder/einzug-fahrt.webp</code></dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Erste Zeile der Einleitung: „Ende August. Drei Tage Packen, ein
+            langer Tag im Auto. Hinter dem Ortsschild von Maple Falls rauscht
+            irgendwo Wasser.“ (maple-falls-aussen.einleitung)
+          </dd>
+          <dt>Text</dt>
+          <dd>
+            Das Ortsschild bleibt leer; den Namen kennt der Leser aus dem Text.
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: late afternoon at the end of summer, seen from behind a small dusty family car with a roof box, driving on a country road into a small wooded town. A blank green town sign at the roadside (no letters). Maple trees with leaves just turning red at the edges, wooden houses with porches ahead, and in the far background a waterfall spilling down a forested hill, a little mist above it. Warm golden light, long shadows, calm and a bit melancholic.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="n2">
+        <h3>
+          <span class="nr">E2</span> <code>einzug_haus</code> Das Haus an der
+          Birch Lane
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:einzug_haus)</dd>
+          <dt>Ablage</dt>
+          <dd><code>spiel/bilder/einzug-haus.webp</code></dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Zweite Zeile: „Birch Lane. Ein altes Holzhaus mit Veranda, davor ein
+            Ahorn, dessen Blätter an den Rändern schon rot sind. Am Bordstein
+            steht der Umzugswagen mit offener Klappe.“
+          </dd>
+          <dt>Text</dt>
+          <dd>Kein Text am Umzugswagen und am Briefkasten.</dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: an old two-storey wooden house with a covered front porch, white-grey painted planks, a steep roof with a small round attic window under the gable (the attic is important), a big maple tree right next to the house with one branch almost touching a window, leaves red at the edges. On the street in front a plain white moving truck with its back door open and a ramp, cardboard boxes and a sofa standing on the lawn, a small white picket fence with an open gate. Late afternoon light, a woman (seen from behind, small, simple shapes, no face detail) carrying a box towards the porch.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="n3">
+        <h3>
+          <span class="nr">E3</span> <code>einzug_wohnzimmer</code> Das leere
+          Wohnzimmer am Abend
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:einzug_wohnzimmer)</dd>
+          <dt>Ablage</dt>
+          <dd><code>spiel/bilder/einzug-wohnzimmer.webp</code></dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Erste Zeile im Wohnzimmer: „Am Abend ist der Umzugswagen weg.
+            Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht
+            fällt in langen staubigen Streifen.“
+            (maple-falls-wohnzimmer.ankunft)
+          </dd>
+          <dt>Text</dt>
+          <dd>
+            Die Kartons tragen keine Schrift (auf ihnen stehen im Text nur
+            Namen).
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: an almost empty old living room with wooden floorboards and cream walls in the evening: stacks of cardboard boxes, a sofa placed crookedly in front of a tall window, a table still in pieces leaning against the wall, an open pizza box on the floor. Low evening sun falls through the dusty window in long diagonal light stripes with dust in the air; outside the window a maple branch. A wooden staircase leads up at the side wall. Quiet, strange and a little lonely, but warm.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="n4">
+        <h3>
+          <span class="nr">E4</span> <code>kiste_whitlock</code> Die Kiste von
+          Mrs. Whitlock
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:kiste_whitlock)</dd>
+          <dt>Ablage</dt>
+          <dd><code>spiel/bilder/kiste-whitlock.webp</code></dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Zeile: „Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht
+            aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift:
+            „Whitlock – nicht wegwerfen.““
+          </dd>
+          <dt>Text</dt>
+          <dd>
+            Kein Text auf dem Deckel: Die Fläche für die Aufschrift bleibt leer,
+            das Spiel legt „Whitlock – nicht wegwerfen.“ darüber.
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: close view from above of an old wooden box with a hinged lid standing on worn floorboards between modern cardboard moving boxes. Dark varnished wood, brass corners, a small brass latch; on the lid an empty pale paper label glued on, framed by a thin line (blank, for text). A woman&#x27;s foot in a sneaker gently pushes the box from the side. Soft evening light, dust in the air. The box feels old and a little mysterious, not scary.</pre>
+        </div>
+      </section>
+    </main>
+    <script>
+      function kopiere(knopf) {
+        var text = knopf.nextElementSibling.textContent;
+        function fertig() {
+          knopf.textContent = "Kopiert";
+          knopf.classList.add("ok");
+          setTimeout(function () {
+            knopf.textContent = "Prompt kopieren";
+            knopf.classList.remove("ok");
+          }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(fertig, function () {
+            auswahl(knopf);
+          });
+        } else {
+          auswahl(knopf);
+        }
+      }
+      function auswahl(knopf) {
+        var r = document.createRange();
+        r.selectNodeContents(knopf.nextElementSibling);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        try {
+          document.execCommand("copy");
+          knopf.textContent = "Kopiert";
+        } catch (f) {
+          knopf.textContent = "Text markiert";
+        }
+      }
+    </script>
+  </body>
+</html>

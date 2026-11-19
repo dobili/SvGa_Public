@@ -17,6 +17,7 @@ const {
   zufall,
   gilt,
   betrete,
+  nachBetreten,
 } = require("./gesamtsimulation-regeln.cjs");
 
 const MUENZEN_STRASSENSIEG = 10;
@@ -292,5 +293,25 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
   if (nochmal)
     wendeFolgenAn(welt, st, dialog(welt, st, nochmal), null, reiseErlaubt);
 }
+
+/**
+ * Eingangsdialog einer Karte wie in der App (oberwelt/eingang.ts): Gilt beim Betreten die
+ * Bedingung des Feldes „eingang“ (orte.json), läuft der Dialog von selbst, mit seinen Folgen
+ * (die Einleitung reist ins Wohnzimmer, dort läuft dann die Ankunft).
+ */
+function eingangsdialog(welt, st, karte) {
+  const eintrag = welt.karteZuOrt[karte]?.karten.find((k) => k.kennung === karte);
+  const eingang = eintrag?.eingang;
+  if (!eingang || !gilt(st, eingang.wenn)) return;
+  // Zufallsneutral: Die Einleitung kam am 19.11.2026 vor alles andere; verbrauchte sie Zufall,
+  // nähme jeder Startwert danach einen anderen Weg als zuvor, und Läufe vor und nach ihr wären nicht
+  // mehr vergleichbar. Ihre Wahlen ziehen Zufall wie sonst, danach gilt wieder der alte Startwert
+  // (der Leser der Lesefassung wählt selbst und zieht keinen).
+  const saat = st.saat;
+  const folgen = dialog(welt, st, eingang.dialog);
+  if (!st.leser) st.saat = saat;
+  wendeFolgenAn(welt, st, folgen, null, () => true);
+}
+nachBetreten.push(eingangsdialog);
 
 module.exports = { dialog, wendeFolgenAn };

@@ -48,6 +48,7 @@ import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
+import { eingangsdialog } from "./eingang";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
@@ -113,6 +114,9 @@ export function Oberwelt() {
       setzeTreffer(null);
       partie.meldeErgebnis(w);
       runden.meldeRunde(w);
+      // Eingangsdialog der Karte (Einleitung, 19.11.2026): läuft von selbst, solange er gilt.
+      const eingang = eingangsdialog(w.ort, w.kennung, standRef.current?.dialogvariablen ?? {});
+      if (eingang) oeffneDialog(eingang);
     },
   });
 

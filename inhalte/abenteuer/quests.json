@@ -2,6 +2,30 @@
   "schemaVersion": 1,
   "quests": [
     {
+      "kennung": "mapleFalls.einzug",
+      "titel": "quest.einzug.titel",
+      "typ": "haupt",
+      "ort": "mapleFalls",
+      "haupt": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "maple-falls-wohnzimmer.ankunft"
+      },
+      "schritte": [
+        {
+          "text": "quest.einzug.schritt1",
+          "ereignis": {
+            "art": "ort",
+            "karte": "mapleFalls.dachboden"
+          },
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "objekt": "brett"
+          }
+        }
+      ]
+    },
+    {
       "kennung": "mapleFalls.dasBrett",
       "titel": "quest.dasBrett.titel",
       "typ": "haupt",

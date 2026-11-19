@@ -177,7 +177,7 @@ Jetzt! #sprecher:mira #stimmung:bitter
 Mira. #sprecher:tomas #stimmung:nachdenklich
 Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand. #sprecher:erzaehler
 {atmeGesagt and not warumAtmeGefragt: -> warum_atme ->}
-{not abendMotelGesehen: Draußen sinkt die Sonne hinter die Tankstelle. Im Motel „Zur Quelle“ wartet euer Zimmer. #sprecher:erzaehler}
+{not abendMotelGesehen: Draußen ist es längst dunkel. Im Motel „Zur Quelle“ wartet euer Zimmer. #sprecher:erzaehler}
 -> END
 
 = warum_atme

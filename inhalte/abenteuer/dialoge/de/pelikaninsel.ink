@@ -100,7 +100,7 @@ Netze hängen zum Trocknen am Gestell. In einem ist ein Loch, groß wie eine Fau
 === leuchtfeuer_auftrag ===
 ~ leuchtfeuerAuftrag = true
 Das Leuchtfeuer auf der Felsspitze ist dunkel. Im Kasten fehlt die Batterie. #sprecher:erzaehler
-Seit dem Winter ist es aus. Die Batterie gibt es nur drüben in Silicon Bay. #sprecher:delphine #stimmung:nachdenklich
+Seit dem Herbststurm ist es aus. Die Batterie gibt es nur drüben in Silicon Bay. #sprecher:delphine #stimmung:nachdenklich
 -> END
 
 === leuchtfeuer_einsetzen ===

@@ -59,7 +59,7 @@ VAR abschiedGesehen = false
 Das Turnier ist in der Turnhalle der Schule. Unter dem Basketballkorb stehen Klapptische, die Bretter passen nicht zusammen. #sprecher:erzaehler
 Wenn jemand Fremdes hereinkommt, wird es einen Moment leiser. Du bist fremd hier, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
 Aus Silicon Bay. Die waren hier, nach dem Sturm. Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy #stimmung:bitter
-Bildschirme haben sie gebracht. Zwanzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy #stimmung:bitter
+Bildschirme haben sie gebracht, vierzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy #stimmung:bitter
 Er stößt seinen Trompetenkasten mit dem Fuß an. #sprecher:erzaehler
 Hier hilft man mit den Händen. #sprecher:remy #stimmung:bitter
 * [Zum ersten Brett gehen]

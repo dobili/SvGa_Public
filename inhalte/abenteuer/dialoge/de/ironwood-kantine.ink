@@ -62,7 +62,11 @@ VAR abschiedGesehen = false
 // Kauf klappern keine Figuren mehr an den langen Tischen. Das Bild vom Glas bleibt dem ersten Treffen.
 {
 - kaufGesehen:
-    Über der Essensausgabe hängt das weiße Logo. An der Tür steht der Karton mit den Pokalen. #sprecher:erzaehler
+    Über der Essensausgabe hängt das weiße Logo. An der Tür stehen noch drei Kartons, zugeklebt. #sprecher:erzaehler
+// Lektorat 19.11.2026: Vor dem ersten Treffen fällt sein Name nicht, und am Morgen nach der Feier
+// baut er nicht behutsam auf, er hält sich am Kaffee fest.
+- not bigJoeGetroffen or (feierGesehen and not morgenNachFeier):
+    Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren. #sprecher:erzaehler
 - nadelIronwood > clubkampfIronwoodNadel:
     Es riecht nach Kaffee, Eisen und nassen Jacken. #sprecher:erzaehler
 - else:
@@ -105,7 +109,8 @@ Er heißt Big Joe. Er sagt es wie einen Dienstgrad. Kranführer, dreißig Jahre,
 Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe #stimmung:laechelt
 * [„Ja.“]
 - Du hast nie darüber nachgedacht. #sprecher:erzaehler
-Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001. #sprecher:erzaehler
+{pokalregalGesehen:Hinter ihm die Lücke im Regal, das Schildchen darunter: 2001.|Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001.} #sprecher:erzaehler
+~ pokalregalGesehen = true
 Deine Oma wohnt noch in der Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe #stimmung:nachdenklich
 Geh hin. Ruth hat dich nicht mehr gesehen, seit du so klein warst. #sprecher:bigJoe #stimmung:nachdenklich
 Und wenn du deine Mutter siehst: Big Joe lässt grüßen. #sprecher:bigJoe #stimmung:laechelt
@@ -456,7 +461,7 @@ Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya
 
 === pokalregal ===
 {kaufGesehen:
-    Das Regal ist leer. Die Pokale stecken im Karton an der Tür. Nur das Messingschild hängt noch: 2001. #sprecher:erzaehler
+    Das Regal ist leer. Die Pokale sind in Big Joes Lieferwagen. Nur das Messingschild hängt noch: 2001. #sprecher:erzaehler
     -> END
 }
 {pokalregalGesehen:

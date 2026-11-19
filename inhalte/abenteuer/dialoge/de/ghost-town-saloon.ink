@@ -84,7 +84,7 @@ Ja. Knapp. Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor #stimm
 Dreimal nachgerechnet. Und dann habe ich gehofft. #sprecher:ambrose #stimmung:laechelt
 Die letzten Züge kennst du aus einem Zimmer mit Rosen. Der König schlägt die Dame, einen Schritt ins Freie. #sprecher:erzaehler
 Es ist die Stellung, die du an einem Abend im Spätsommer unter einer Decke gefunden hast. Schwarz am Zug. Seit hundertsechzig Jahren. #sprecher:erzaehler #musik:aus #pause:3
-Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an. #sprecher:erzaehler
+{hatHalesSeite:Victor nimmt die Seite vom Tisch. 40. … b5. Er fasst den Bauern an.|Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an.} #sprecher:erzaehler
 Darf ich? #sprecher:victor #stimmung:nachdenklich
 Er fragt nicht dich. #sprecher:erzaehler
 Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss

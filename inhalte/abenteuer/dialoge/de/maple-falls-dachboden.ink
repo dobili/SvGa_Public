@@ -324,7 +324,8 @@ Das war gut. Besser, als ich es erklärt hätte. Ich hätte ihm von Morphy erzä
 // Auslöser auf einer Karte: Ein Zimmer des Helden gibt es bisher nicht; der Hauptchat legt den
 // Kartenpunkt fest (Einstieg maple-falls-dachboden.fensterbank).
 === fensterbank ===
-Auf der Fensterbank steht, was du unterwegs gefunden hast. Das Zimmer erzählt die Reise. #sprecher:erzaehler
+// Lektorat 19.11.2026: Am Einzugstag ist noch nichts gefunden.
+{ersteNachtGesehen:Auf der Fensterbank steht, was du unterwegs gefunden hast. Das Zimmer erzählt die Reise.|Die Fensterbank ist noch leer. Hier ist Platz für alles, was du noch findest.} #sprecher:erzaehler
 ~ zeigeFensterbank()
 -> END
 
@@ -341,7 +342,7 @@ In einem Keller in Silicon Bay unterrichtet eine Frau acht Kinder bei einem Heiz
 Eines davon hatte früher zwei Titel und kommt jetzt jeden Tag. #sprecher:erzaehler
 * [Auf den Dachboden gehen]
 -
-Das Brett steht auf dem Dachboden, auf dem niedrigen Tisch unter dem runden Fenster. Keine Decke darüber. Du staubst es ab. Oft. #sprecher:erzaehler
+Du trägst das Brett hinauf und stellst es auf den niedrigen Tisch unter dem runden Fenster. Keine Decke darüber. #sprecher:erzaehler
 {not (mentorzugFreiGespielt or ambroseImHalbfinaleGerufen): -> epilog_zettel}
 -> epilog_lily
 

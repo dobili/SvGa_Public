@@ -280,7 +280,7 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 // zum Steg eingeladen; Mae erzählt stattdessen, wie sie es versprochen hat.
 {
 - sternennachtGesehen:
-    {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor ist heute müde. Das ist meine Schuld. Und die der Sterne.} #sprecher:mae #stimmung:lacht
+    {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor hat heute dreimal gegähnt. Ich hab mitgezählt.} #sprecher:mae #stimmung:lacht
 - nachtImLesesaal:
     {~Du hast vierzehn Sternschnuppen verpasst! Dex sagt elf. Dex zählt falsch.|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae #stimmung:laechelt
 - else:

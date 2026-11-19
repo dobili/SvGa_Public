@@ -355,7 +355,7 @@ Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. Geh durch. 
 -> testteam_wald_offen
 
 === testteam_wald_durch ===
-Benji starrt auf das Brett, dann lacht er und schiebt den Tisch zur Seite. #sprecher:erzaehler
+Benji schiebt den Tisch zur Seite. #sprecher:erzaehler
 Das war ich. Nicht das Tablet. Schreib das dazu, Zoe. #sprecher:benji #stimmung:lacht
 -> testteam_wald_offen
 
@@ -375,5 +375,6 @@ Auf dem Tablet läuft ein Balken: „ZERO lernt. 4113 von 20000.“ #sprecher:er
 === zugpartie_rueckmeldung ===
 {wegCedarRivertonZugpartieBestanden: -> ereignis_zugpartie}
 Marian sieht auf das Brett und schüttelt langsam den Kopf. #sprecher:erzaehler
-So hängen wir das lieber nicht auf. Earl würde sich freuen. Schau noch einmal drauf, der nächste Güterzug kommt bald. #sprecher:rosalind #stimmung:nachdenklich
+So hängen wir das lieber nicht auf. Earl würde das sofort sehen. #sprecher:rosalind #stimmung:nachdenklich
+Schau noch einmal drauf, der nächste Güterzug kommt bald. #sprecher:rosalind #stimmung:nachdenklich
 -> END

@@ -61,7 +61,7 @@ VAR hatKartePhasenblick = false
 // Beim ersten Betreten (orte.json, Feld „eingang“), nicht erst beim Gespräch mit Ward.
 === eingang ===
 ~ huetteBetreten = true
-Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
+Die Hütte ist aus dunklem Holz. Die Wände sind kahl, im Kamin knistert Feuer. #sprecher:erzaehler
 Im Sessel am Feuer sitzt eine Frau und liest. Sie sieht nicht auf. #sprecher:erzaehler
 -> END
 
@@ -235,7 +235,7 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 + {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
     -> ward_heft
 + {nadelSummitCity > 0 and nadelSummitCity < 3} [„Revanche um eine bessere Nadel?“]
-    Gern. Aber diesmal bis zum letzten Bauern. #sprecher:ward #stimmung:laechelt
+    Gern. Wieder bis zum letzten Bauern. #sprecher:ward #stimmung:laechelt
     ~ beginnePartie("summitCity.clubkampf")
     -> END
 + [„Bis morgen.“]
@@ -476,7 +476,7 @@ An der Wand hängt ein Thermometer. Sonst nichts. Keine Pokale. #sprecher:erzaeh
 -> END
 
 === kaminfeuer ===
-{~Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke.|Auf dem Kaminsims steht eine Teekanne mit Sprung. Darüber ist die Wand leer.|Im Juli brennt hier ein Feuer. Es ist das Einzige, das Ward schmückt.} #sprecher:erzaehler
+{~Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke.|Auf dem Kaminsims liegt ein Stapel Partieformulare, mit einem Stein beschwert.|Im Juli brennt hier ein Feuer. Es ist das Einzige, das Ward schmückt.} #sprecher:erzaehler
 -> END
 
 === foto ===

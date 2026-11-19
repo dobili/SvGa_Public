@@ -148,7 +148,7 @@ Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 // Kapitel 46, Schluss: Mama holt {held} ab; Mamas Thema, Schluss auf dem Endspielmotiv.
 ~ endeAkt3Gesehen = true
 Mama ist da. Sonnenbrand auf der Nase, das blaue Heft unter dem Arm. Es ist dicker geworden. #sprecher:erzaehler #musik:mama.schnee
-Port Delacroix lässt grüßen. Das Dach vom Musikhaus ist drauf. Miss Odile sagt, das nächste Mal hängst du das Schild auf. #sprecher:mutter #stimmung:froh
+Port Delacroix lässt grüßen. Am Musikhaus decken sie das Dach, und Miss Odile sagt, das Schild hängst du auf. #sprecher:mutter #stimmung:froh
 Und danach: Summit City. Großmeisterin Ward. Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:laechelt
 * [„Wer ist das?“]
 - Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter #stimmung:lacht

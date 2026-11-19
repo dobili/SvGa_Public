@@ -95,11 +95,11 @@ Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblic
 
 === lin_schweigen ===
 ~ schweigenErklaert = true
-Du hast die Reihe bestanden. Morgen früh spielen wir. #sprecher:lin #stimmung:laechelt
+Du hast die Reihe bestanden. Heute Abend spielen wir. #sprecher:lin #stimmung:laechelt
 {dashKarteGegeben: -> lin_schweigen_hm}
 -> lin_clubkampf
 === lin_schweigen_hm ===
-Am Morgen probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler
+Am Abend probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler
 Nein. #sprecher:ambrose #stimmung:streng
 * [„Bei Dash hat es …“]
 - Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose #stimmung:streng
@@ -144,7 +144,7 @@ Sie sagt „Sie“. Zu dir. Einmal. #sprecher:erzaehler
 
 // Kapitel 33: Die Tische zeigen den Fehler, nicht die Angst. Danach wirkliche Stille (S48).
 === lin_tisch_aus ===
-{ausgangSiliconBayClubkampf == "remis":Weißt du|Wissen Sie}, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin #stimmung:nachdenklich
+Weißt du, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin #stimmung:nachdenklich
 Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide spiegelt. #sprecher:erzaehler #klang:abschaltton #musik:aus #geraeusch:aus #pause:4
 Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #stimmung:ernst
 * [Schweigen]

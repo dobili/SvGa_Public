@@ -25,6 +25,7 @@ const IM_WOHNZIMMER = {
     ersteLektionBesprochen: true,
     ersterAbendGesehen: true,
     treppeAbendGesehen: true,
+    ersteNachtGesehen: true,
   },
 };
 const WECHSEL = 8;

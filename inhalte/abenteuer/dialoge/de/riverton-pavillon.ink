@@ -26,6 +26,7 @@ VAR tamsinGetroffen = false
 VAR rayGetroffen = false
 VAR zuschauenAngeboten = false
 VAR slickAbschiedGesehen = false
+VAR londonNachgespraechGesehen = false
 VAR reiheTamsinBestanden = false
 VAR reiheRayBestanden = false
 VAR slickBeobachtenBestanden = false
@@ -47,8 +48,15 @@ VAR abschiedGesehen = false
 === slick ===
 // Lektorat Akt 2 (17.11.2026): Nach dem Clubkampf passen Uhren, Formulare und ein Slick, der
 // nebenbei gewinnt, nicht mehr (er hat eben verloren, am Montag sind die Steintische fort).
-{nadelRiverton > clubkampfRivertonNadel or clubkampfRivertonBesprochen:
-    {~Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer.} #sprecher:erzaehler
+// Lektorat 19.11.2026: Vor dem ersten Treffen fällt sein Name nicht; direkt nach dem Clubkampf
+// regnet es noch, keine Limonade im Moment des Siegs.
+{
+- not slickGetroffen or ausgangRivertonClubkampf == "niederlage":
+    Unter dem Dach riecht es nach nassem Holz und Limonade. #sprecher:erzaehler
+- nadelRiverton > clubkampfRivertonNadel and not clubkampfRivertonBesprochen:
+    Der Regen trommelt noch immer aufs Pavillondach. #sprecher:erzaehler
+- nadelRiverton > clubkampfRivertonNadel or clubkampfRivertonBesprochen:
+    Vom Fluss weht ein kühler Wind durchs Geländer. #sprecher:erzaehler
 - else:
     {~Regen trommelt aufs Pavillondach, irgendwo klopft eine Schachuhr.|Slick schiebt eine Figur, ohne hinzusehen, und gewinnt trotzdem.|Unter dem Dach riecht es nach nassem Holz und Limonade.|Vom Fluss weht ein kühler Wind durchs Geländer und blättert in den Partieformularen.} #sprecher:erzaehler
 }
@@ -254,7 +262,7 @@ Hast du nicht von mir. #sprecher:tamsin #stimmung:laechelt
 === tamsin_eli ===
 // Kapitel 19, Schluss: Eli am Bildschirmtisch in der Dämmerung.
 ~ tamsinEliErzaehlt = true
-Draußen wird es dunkel. Die sechs Tische leuchten weiter, weiß und geduldig. An einem sitzt ein Junge, allein. #sprecher:erzaehler #musik:konzern.flaeche
+{londonNachgespraechGesehen:Draußen ist es längst dunkel.|Draußen wird es dunkel.} Die sechs Tische leuchten weiter, weiß und geduldig. An einem sitzt ein Junge, allein. #sprecher:erzaehler #musik:konzern.flaeche
 Das ist Eli. Der war früher hier. Der redet nicht gern. #sprecher:tamsin #stimmung:nachdenklich
 Sie zuckt die Schultern, aber sie sieht nicht weg. #sprecher:erzaehler
 Der Tisch redet auch nicht. Vielleicht deshalb. #sprecher:tamsin #stimmung:nachdenklich
@@ -312,7 +320,7 @@ Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die
 // Lektorat Akt 2 (17.11.2026): „war unsere Endhaltestelle“ und der Weg nach Ironwood erst nach dem
 // letzten Spiel; vorher steht der Pavillon noch, und von Ironwood war keine Rede.
 {nadelRiverton > 0:
-    {~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray #stimmung:nachdenklich
+    {~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|{slickAbschiedGesehen:Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.|Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner, egal wohin.}} #sprecher:ray #stimmung:nachdenklich
 - else:
     Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt. #sprecher:ray #stimmung:nachdenklich
 }

@@ -249,7 +249,7 @@
             "karte": "mapleFalls.aussen",
             "ausloeser": "haustuer"
           },
-          "wenn": "ersteLektionBesprochen",
+          "wenn": "ersteNachtGesehen",
           "dialog": "maple-falls-wohnzimmer.haustuer"
         },
         {

@@ -101,8 +101,15 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
     -> END
 
 === wohnwagen_zu ===
-{rivertonMontagGesehen:
+// Spieler-Durchlauf (19.11.2026): Nach dem Clubkampf schickt die Quest zu Slick, der Wohnwagen
+// öffnet aber erst nach dem Montag im Pavillon (riverton-pavillon.slick_alltag). Die Tür sagt
+// deshalb, wo Slick jetzt ist, statt nur „niemand da“.
+{
+- rivertonMontagGesehen:
     Die Tür des Wohnwagens steht einen Spalt offen. Drinnen brennt Licht. #sprecher:erzaehler
+- nadelRiverton > 0:
+    Ein Wohnwagen am Fluss, ein Kurierrad lehnt daneben. Die Tür ist zu, drinnen ist niemand. #sprecher:erzaehler
+    Slick ist noch drüben im Pavillon. Dort triffst du ihn eher als hier. #sprecher:erzaehler
 - else:
     Ein Wohnwagen am Fluss, ein Kurierrad lehnt daneben. Die Tür ist zu, drinnen ist niemand. #sprecher:erzaehler
 }

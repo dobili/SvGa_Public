@@ -70,6 +70,25 @@ describe("zielangabe", () => {
     });
   });
 
+  it("Riverton nach dem Clubkampf: erst Slick im Pavillon (der Montag), dann der Wohnwagen", () => {
+    // Spieler-Durchlauf (19.11.2026): Die Quest schickte gleich zum Wohnwagen, der bis zum Montag
+    // im Pavillon verschlossen ist; ein Spieler musste das zweite Gespräch mit Slick erraten.
+    const schritte = daten.quests.find((q) => q.kennung === "riverton.parkclub")?.schritte ?? [];
+    const kampf = schritte.findIndex((s) => s.ereignis.art === "partie");
+    const montag = schritte[kampf + 1];
+    const wagen = schritte[kampf + 2];
+    expect(montag?.ereignis).toEqual({ art: "dialog", knoten: "riverton-pavillon.slick_alltag" });
+    expect(montag && zielangabe(montag, daten)).toEqual({
+      karte: "riverton.pavillon",
+      objekt: "slick",
+    });
+    expect(wagen?.ereignis).toEqual({
+      art: "dialog",
+      knoten: "riverton-wohnwagen.slick_abschied",
+    });
+    expect(wagen && zielangabe(wagen, daten)?.karte).toBe("riverton.wohnwagen");
+  });
+
   it("leitet eine Aufgabenrunde auf ihren Steller ab", () => {
     const sam = daten.quests.find((q) => q.kennung === "mapleFalls.viertesBrett")?.schritte[0];
     expect(sam && zielangabe(sam, daten)).toEqual({ ort: "mapleFalls", objekt: "sam" });

@@ -7,7 +7,8 @@ mit diesen Eingaben nicht weiterkommt.
 **Kurz:** Der Lauf kam nicht bis zum Abspann. Durchgehend gespielt ist Akt 1 ganz und Akt 2 bis
 Riverton. Akt 3 und der Anfang von Akt 4 sind in Teilen gespielt, aber von einem Stand aus, den
 die Gesamtsimulation erspielt hat. Der Rest ist nicht gespielt; seine Spielzeit steht unten nur als
-Rechnung. Sieben Funde, vier davon behoben.
+Rechnung. Sieben Funde: vier behoben (1, 5, 6, 7), einer zum größten Teil (2), einer offen (4,
+Bergstation), und einer erwies sich als Fehler des Durchlaufs (3).
 
 ## 1. Wie gespielt wurde
 
@@ -109,11 +110,12 @@ gemessen 89 Minuten zügig; das passt eher zu einem längeren Akt 3 als gerechne
    Browser erlebt. Behebung allgemein: `oberwelt/einschluss.ts` rückt den Helden beim Laden jeder
    Karte aus einer kleinen Nische ohne Weg zu einem Übergang auf die nächste ganz freie Kachel.
    Test: `einschluss.test.ts` (Nische, Gegenproben, alle Ankunfts- und Startfelder aller Karten).
-2. **Zielhinweis zeigt auf der Zielkarte nichts (für Victor behoben, sonst offen).** 34 Schritte
-   von Hauptquests nennen nur einen Dialogknoten mitten im Gespräch; der Hinweis führt dann bis zur
-   Karte und zeigt dort auf nichts. Nach Victor musste man Coach Delgado noch einmal ansprechen,
-   ohne Hinweis. Für `mapleFalls.besserWerden` steht jetzt `ziel` coachDelgado in `quests.json`;
-   die übrigen 31 Schritte sind eine Empfehlung an den Autor.
+2. **Zielhinweis zeigt auf der Zielkarte nichts (behoben bis auf neun Schritte).** 34 Schritte von
+   Hauptquests nannten nur einen Dialogknoten mitten im Gespräch; der Hinweis führte dann bis zur
+   Karte und zeigte dort auf nichts. Nach Victor musste man Coach Delgado noch einmal ansprechen,
+   ohne Hinweis. Jetzt steht in `quests.json` an 26 Schritten ein `ziel` (drei bei
+   `mapleFalls.besserWerden`, 23 weitere), überall dort, wo genau eine Figur oder ein Auslöser der
+   Zielkarte zum Knoten führt. Die neun übrigen stehen in Abschnitt 5a.
 3. **Stillstand in Sams erster Aufgabe (kein Fund des Spiels).** Zweimal blieb der Lauf dort
    stehen. Mit dem berichtigten Skript und frischem Profil (Querformat) trat es nicht mehr auf;
    Ursache war sehr wahrscheinlich ein Fehler des Durchlaufs (ein Griff nach einem Element ohne
@@ -124,11 +126,14 @@ gemessen 89 Minuten zügig; das passt eher zu einem längeren Akt 3 als gerechne
    (die Laufhilfe trifft sie nicht immer). Ein Spieler kann dort oben festsitzen. Empfehlung: den
    Spind eine Kachel versetzen oder seine feine Maske kürzen; nicht umgebaut, weil der Kartenbau
    dafür nötig ist.
-5. **Riverton nach dem Clubkampf: Quest schickt zum verschlossenen Wohnwagen (offen).** Questtext
-   und Zielhinweis sagen „Slick in seinem Wohnwagen besuchen“; die Tür meldet, drinnen sei
-   niemand. Erst ein weiteres Gespräch mit Slick im Pavillon (der Montag) öffnet den Wohnwagen.
-   Der Durchlauf fand das nicht; ein Mensch muss es erraten. Empfehlung: Zielhinweis auf Slick im
-   Pavillon, solange der Montag fehlt, oder ein Satz an der Tür.
+5. **Riverton nach dem Clubkampf: Quest schickte zum verschlossenen Wohnwagen (behoben).**
+   Questtext und Zielhinweis sagten „Slick in seinem Wohnwagen besuchen“; die Tür meldete, drinnen
+   sei niemand. Erst ein weiteres Gespräch mit Slick im Pavillon (der Montag) öffnet den
+   Wohnwagen. Der Durchlauf fand das nicht; ein Mensch musste es erraten. Jetzt hat die Quest
+   `riverton.parkclub` davor einen eigenen Schritt („Am Montag noch einmal zu Slick in den
+   Pavillon gehen.“) mit Zielhinweis auf Slick, und die Tür des Wohnwagens sagt nach dem
+   Clubkampf, dass Slick noch im Pavillon ist. Test: `zielsuche.test.ts`; die Gesamtsimulation
+   läuft damit bis zum Abspann ohne Meldung. Im Browser nicht nachgespielt.
 6. **Querformat, Deckwahl: Knopf zum Spielen unter dem Bildrand (behoben).** Bei 863 × 360 waren
    nur Bedenkzeit und der Rand der Karten zu sehen; das Fenster rollt, zeigt das aber nicht.
 7. **Querformat, Laden: kein Ausgang zu sehen (behoben).** In Patels Kiosk standen nur die Waren im
@@ -138,6 +143,25 @@ gemessen 89 Minuten zügig; das passt eher zu einem längeren Akt 3 als gerechne
    am unteren Rand des Fensters stehen (`abenteuer.css`). Test: die Zeile zur Deckwahl quer in
    `tests/e2e/abenteuer-randfaelle.spec.ts`. Den Laden im Querformat habe ich nach der Behebung
    nicht noch einmal im Browser angesehen.
+
+### 5a. Hauptquest-Schritte ohne `ziel` (Reststand zu Fund 2)
+
+Nicht geraten, weil keine Figur und kein Auslöser eindeutig passt:
+
+| Quest, Schritt               | Knoten                                 | Warum kein `ziel`                                                                                |
+| ---------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `riverton.parkclub`, 2       | `riverton-aussen.ankunft`              | Ankunft: Der Knoten läuft am Übergang vom Bahndamm; der Hinweis zeigt schon auf diesen Übergang. |
+| `summitCity.endspiel`, 1     | `summit-city-aussen.ankunft_summit`    | Ankunft über die Bergstraße, wie oben.                                                           |
+| `crossroads.treffpunkt`, 1   | `crossroads-aussen.ankunft_crossroads` | Ankunft über die Prärie, wie oben.                                                               |
+| `pinewoodCamp.sommercamp`, 1 | `pinewood-camp-aussen.ankunft_camp`    | Ankunft über die Riesenbäume, wie oben.                                                          |
+| `ironwood.clubkampf`, 5      | `ironwood-aussen.kauf`                 | Zwei Figuren führen hin: Victor und Graham Hale.                                                 |
+| `portDelacroix.tiefpunkt`, 1 | `port-delacroix-turnhalle.vorwurf`     | Drei Figuren führen hin: Odile, Remy und Lou (auch im Musikhaus).                                |
+| `ghostTown.fernpartie`, 2    | `erinnerung-siedlung.letzter_brief`    | In der Erinnerung führen Gideon und die Kerze hin; der Weg in die Erinnerung beginnt woanders.   |
+| `ghostTown.fernpartie`, 5    | `ghost-town-aussen.nacht_ambrose`      | Sternenhimmel oder der Weg zur Hauptstadt.                                                       |
+| `mapleFalls.epilog`, 1       | `maple-falls-dachboden.epilog`         | Brett auf dem Dachboden, Brett am Schreibtisch oder Ambrose im Zimmer.                           |
+
+Die Schrittnummern zählen wie im Tagebuch ab 1. Bei den vier Ankünften fehlt nichts; bei den fünf
+anderen entscheidet der Autor, wohin der Hinweis zeigen soll.
 
 Keine Funde in den gespielten Strecken: Dialog ohne Ausgang, Brett nicht bedienbar, Übergang ohne
 Reaktion, Kamera. Die Meldungen „Übergang … unerreichbar“ in den Protokollen (Schule in Maple

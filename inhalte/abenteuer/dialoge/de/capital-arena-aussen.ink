@@ -156,7 +156,10 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 // Roman Kapitel 66: Ambrose sitzt zum fünften Mal auf einer Treppe. Alle drei Wahlen der Bibel
 // kommen nacheinander. Danach Abspann und Reise auf den Dachboden (Epilog in
 // maple-falls-dachboden.epilog). Klang: abschied.treppe, abschied, ambrose.nichtSpaeter.
-~ abschiedGesehen = true
+// abschiedGesehen setzt erst abschied_ende: Die App sichert die Variablen bei jedem neuen Knoten,
+// Abspann und Reise kommen aber erst am Ende des Gesprächs. Wer mitten im Abschied die App schloss,
+// fand danach nur noch „Auf der Treppe … still geworden“, ohne Abspann und Epilog (schwacher
+// Spieler im Spieler-Durchlauf, 19.11.2026). So beginnt der Abschied nach dem Neuladen von vorn.
 Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahnenmasten herum. Du setzt dich auf die Treppe, ganz oben. #sprecher:erzaehler #musik:abschied.treppe
 Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Die Schlussstellung der Fernpartie, so wie sie im Saloon stand. #sprecher:erzaehler
 Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
@@ -208,6 +211,7 @@ Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht #musik:am
 -> abschied_ende
 
 === abschied_ende ===
+~ abschiedGesehen = true
 Das Licht verändert sich, wie wenn eine Wolke weiterzieht. Du stehst allein auf der Treppe. #sprecher:erzaehler #pause:3
 Auf der Stufe liegt ein Brett aus altem Holz, darauf die Schlussstellung. Am Rand eingebrannte Buchstaben. Das Holz ist warm von der Sonne. #sprecher:erzaehler
 Jemand setzt sich neben dich. Juno, mit zwei Tagebüchern auf dem Schoß. Das obere ist aufgeschlagen, bei der Seite mit dem Glitzerrahmen. #sprecher:erzaehler

@@ -82,6 +82,8 @@ export function neuesFenstergedaechtnis(): Fenstergedaechtnis {
   };
 }
 
+/** So lange wartet der schwache Spieler nach dem Neuladen im Gespräch (ms). */
+const NEULADEN_DIALOG_MS = 2000;
 /** So lange darf ein Fenster ohne tippbaren Knopf stehen, bevor es ein Fund ist (ms). */
 const OHNE_AUSGANG_MS = 25_000;
 /** So oft wiederholt der Durchlauf eine nicht bestandene Runde gleich noch einmal. */
@@ -153,6 +155,15 @@ export async function bedieneDialog(lauf: Lauf, lage: Lage, g: Fenstergedaechtni
   const schluessel = `${d.sprecher}|${d.text}`;
   if (schluessel !== g.gezaehlt && d.text) {
     g.gezaehlt = schluessel;
+    if (lauf.schwach.dialogNeuladen()) {
+      // Schwacher Spieler: mitten im Gespräch neu laden (schwach.ts), danach weiter wie ein Mensch.
+      lauf.messung.log(
+        `  SCHWACH: lade mitten im Gespräch neu (${d.sprecher}: ${d.text.slice(0, 60)})`,
+      );
+      await lauf.seite.reload().catch(() => undefined);
+      await lauf.seite.waitForTimeout(NEULADEN_DIALOG_MS);
+      return;
+    }
     lauf.messung.zeile(d.text);
     merke(lauf, g, `${d.sprecher}: ${d.text}`);
   }

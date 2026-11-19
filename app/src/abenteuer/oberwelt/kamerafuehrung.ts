@@ -56,13 +56,33 @@ export class Kamerafuehrung {
     const ziel = zielVersatz(richtung, held, ziele, sicht, this.raender, this.kachel);
     this.voraus = naehere(this.voraus, ziel, deltaMs, richtung !== null);
     this.setzeVersatz();
+    this.protokolliere(richtung !== null);
   }
 
-  /** Folgeversatz = Grundversatz − Vorausversatz, auf ganze Kartenpixel (kein Flimmern). */
+  /**
+   * Messhilfe für tests/e2e/abenteuer-kamera.spec.ts: Legt ein Test `window.__kameraprotokoll` als
+   * Liste an, kommt je Bild Zeit, Kamerastand und Vorausversatz hinein; sonst geschieht nichts.
+   */
+  private protokolliere(laeuft: boolean): void {
+    const protokoll = (globalThis as { __kameraprotokoll?: unknown }).__kameraprotokoll;
+    if (!Array.isArray(protokoll)) return;
+    const k = this.kamera;
+    protokoll.push({ t: performance.now(), x: k.scrollX, y: k.scrollY, laeuft, zoom: k.zoomX });
+  }
+
+  /**
+   * Folgeversatz = Grundversatz − Vorausversatz, auf ganze Bildschirmpixel (kein Flimmern).
+   * Warum nicht auf ganze Kartenpixel: Bei Zoom 3 ist ein Kartenpixel drei Bildschirmpixel; der
+   * Ausschnitt sprang beim Zurücklaufen in 36 Stufen zu je 3 Pixeln (Messung 19.11.2026,
+   * tests/e2e/abenteuer-kamera.spec.ts, „ruckelt“ laut Autor). Phaser rundet die Darstellung bei
+   * ganzzahligem Zoom ohnehin auf Bildschirmpixel (roundPixels), feiner muss es nicht sein.
+   */
   private setzeVersatz(): void {
+    const zoom = this.kamera.zoomX || 1;
+    const aufBildpixel = (wert: number) => Math.round(wert * zoom) / zoom;
     this.kamera.setFollowOffset(
-      Math.round(this.grund.x - this.voraus.x),
-      Math.round(this.grund.y - this.voraus.y),
+      aufBildpixel(this.grund.x - this.voraus.x),
+      aufBildpixel(this.grund.y - this.voraus.y),
     );
   }
 }

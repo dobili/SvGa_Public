@@ -355,3 +355,22 @@
     opacity: 0;
   }
 }
+
+/* Langer Druck im Spiel (Befund des Autors, 19.11.2026): Auf dem Handy markierte der Browser beim
+   Halten einer Pfeiltaste Text und zeigte „Kopieren, Ausschneiden …“. Im ganzen Vollbild des
+   Spiels (Welt, Steuerkreuz, Dialoge, Partien) gibt es keine Textauswahl, kein Menü beim langen
+   Druck (iOS) und kein graues Aufblitzen beim Tippen; Eingabefelder bleiben bearbeitbar. Das
+   Kontextmenü unterdrückt app/App.tsx. */
+.rahmen-vollbild,
+.bildschirm-abenteuer {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:is(.rahmen-vollbild, .bildschirm-abenteuer) :is(input, textarea, [contenteditable="true"]) {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}

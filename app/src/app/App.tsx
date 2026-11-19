@@ -16,7 +16,7 @@
  * Nutzungsprüfung 25.10.2026): Stürzt er ab, bleiben Leiste und Navigation.
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { useAnzeigesatz } from "../ui/komponenten/einstellungen/maiastand";
 import { Ringfeier } from "../ui/komponenten/fortschritt/Ringfeier";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
@@ -127,6 +127,12 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
     case "zusatz":
       return <Zusatzbildschirm kennung={ansicht.kennung} wert={ansicht.wert ?? null} />;
   }
+}
+
+/** Unterdrückt das Kontextmenü außer in Eingabefeldern (Vollbild des Spiels, 19.11.2026). */
+function verhindereMenue(e: MouseEvent<HTMLDivElement>): void {
+  const ziel = e.target as HTMLElement;
+  if (!ziel.closest("input, textarea, [contenteditable='true']")) e.preventDefault();
 }
 
 /**
@@ -301,6 +307,9 @@ function Hauptrahmen() {
       className={["rahmen", vollbild && "rahmen-vollbild", blind && "rahmen-blindschach"]
         .filter(Boolean)
         .join(" ")}
+      // Im Spiel kein Kontextmenü des Browsers beim langen Druck (19.11.2026); Eingabefelder
+      // behalten es (Einfügen beim Namen).
+      onContextMenu={vollbild ? verhindereMenue : undefined}
     >
       <UpdateHinweis />
       <SicherungsHinweis />

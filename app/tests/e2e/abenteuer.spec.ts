@@ -241,4 +241,12 @@ test("Steuerkreuz: mit gedrücktem Daumen von ▼ auf ▶ gleiten wechselt die R
   await expect(unten).not.toHaveAttribute("data-gedrueckt", "ja");
   await page.mouse.up();
   await expect(kreuz.locator('[data-gedrueckt="ja"]')).toHaveCount(0);
+  // Langer Druck (19.11.2026): keine Textauswahl, kein Kontextmenü des Browsers im Spiel.
+  await expect(rechts).toHaveCSS("user-select", "none");
+  const menueVerhindert = await rechts.evaluate((knopf) => {
+    const ereignis = new MouseEvent("contextmenu", { bubbles: true, cancelable: true });
+    knopf.dispatchEvent(ereignis);
+    return ereignis.defaultPrevented;
+  });
+  expect(menueVerhindert).toBe(true);
 });

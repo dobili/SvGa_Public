@@ -167,6 +167,20 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.getByTestId("startanimation")).toHaveCount(0);
   await ergebnis.getByRole("button", { name: "Weiter", exact: true }).click();
   await expect(ergebnis).toHaveCount(0);
+  // Rückmeldung nach dem Ergebnis (Wunsch des Autors, 19.11.2026): Ambrose spricht von selbst,
+  // je nach Ausgang (maple-falls-dachboden.nach_erster_partie). Vorher stand man ohne Reaktion da.
+  const dialog = page.getByTestId("abenteuer-dialog");
+  await expect(dialog).toContainText("Du hast gewonnen", { timeout: 20000 });
+  for (let i = 0; i < 40 && (await dialog.isVisible()); i++) {
+    const wahl = page.locator(".abenteuer-dialog-wahlen button").first();
+    if (await wahl.isVisible()) await wahl.click();
+    else {
+      const weiter = page.locator(".abenteuer-dialog-weiter");
+      if (await weiter.isVisible()) await weiter.click();
+      else await page.waitForTimeout(100);
+    }
+  }
+  await expect(dialog).toHaveCount(0);
 
   // „Meine Partien“ im Tagebuch: die Partie steht in der Liste, „Ansehen“ zeigt sie in der Hülle,
   // „Weiter“ führt zurück in die Welt (ohne neue Ergebniskarte).

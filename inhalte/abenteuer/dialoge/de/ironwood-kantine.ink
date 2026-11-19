@@ -478,3 +478,17 @@ Ein Schachbrett aus Stahl. Die Felder hell geschliffen und dunkel angelassen, di
     Stahl für das Brett, Holz für die Figuren. Ein Mann, der weiß, was hart sein muss und was nicht. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Hank, sonst wie bisher.
+=== hank_reihe_danach ===
+{not reiheHankBestanden: -> hank}
+Alle gefesselt. Keiner ist weggelaufen. #sprecher:hank #stimmung:laechelt
+Jetzt Priya. Die rechnet dir Spieße vor, bis dir der Kopf brummt. #sprecher:hank #stimmung:neutral
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Priya, sonst wie bisher.
+=== priya_reihe_danach ===
+{not reihePriyaBestanden: -> priya}
+Statik hält! Jeder Spieß saß. #sprecher:priya #stimmung:froh
+Jetzt fehlt nur noch Big Joe. Um die Nadel spielt er selbst. #sprecher:priya #stimmung:laechelt
+-> END

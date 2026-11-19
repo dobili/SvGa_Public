@@ -43,7 +43,8 @@ import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
 import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
-import { LUPE, usePartiestart } from "./usePartiestart";
+import { begegnungVon, LUPE, usePartiestart } from "./usePartiestart";
+import { nachErgebnis } from "./nachergebnis";
 import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
@@ -72,6 +73,8 @@ export function Oberwelt() {
   const { rundenergebnis, offeneRunde, gedaechtnis } = runden;
   const dialoge = useDialogende(k, partie, runden);
   const { dialog, oeffneDialog, vorfuehrung, offenerLaden, abspann } = dialoge;
+  // Rückmeldung nach dem Ergebnis: der Dialog, der die Folge gestartet hat (nachergebnis.ts).
+  const rueck = nachErgebnis(k, oeffneDialog);
   const toenung = k.toenung;
   const ortDesHelden = welt?.ort.kennung ?? null;
   const rahmen = useRef<HTMLDivElement>(null);
@@ -253,7 +256,10 @@ export function Oberwelt() {
               deck,
             )
           }
-          beiAbbruch={partie.brichDeckwahlAb}
+          beiAbbruch={() => {
+            partie.brichDeckwahlAb();
+            rueck.vergiss();
+          }}
         />
       )}
       {welt && aktuellerLaden && (
@@ -327,7 +333,10 @@ export function Oberwelt() {
         <Gedaechtnisstellung
           kennung={gedaechtnis}
           ort={ortDesHelden}
-          beiEnde={(bestanden) => runden.beendeGedaechtnis(gedaechtnis, bestanden)}
+          beiEnde={(bestanden) => {
+            runden.beendeGedaechtnis(gedaechtnis, bestanden);
+            rueck.reagiere();
+          }}
         />
       )}
       {vorfuehrung && (
@@ -359,7 +368,9 @@ export function Oberwelt() {
           beiWiedereinstieg={(p) => partie.starteWiedereinstieg(ergebnis, p)}
           beiWeiter={() => {
             partie.schliesseErgebnis();
-            runden.weiterImSimultan(ergebnis);
+            const b = welt.daten.begegnungen.find((x) => x.kennung === begegnungVon(ergebnis));
+            // Rückmeldung sofort, im Simultan erst nach dem letzten Brett (useAufgabenrunde.ts).
+            runden.weiterImSimultan(ergebnis, () => rueck.reagiere(b?.danach));
           }}
         />
       )}
@@ -370,15 +381,18 @@ export function Oberwelt() {
           beiNochmal={runden.starteRunde}
           beiWeiter={() => {
             runden.schliesseRundenergebnis();
-            // Ein Dialog nach der Runde (runden.json `danach`) startet von selbst.
-            const danach = welt?.daten.runden.find(
-              (r) => r.kennung === rundenergebnis.auftrag.runde,
-            );
-            if (danach?.danach) oeffneDialog(danach.danach);
+            // Rückmeldung: runden.json `danach`, sonst der Dialog, der die Runde gestartet hat.
+            const r = welt?.daten.runden.find((x) => x.kennung === rundenergebnis.auftrag.runde);
+            rueck.reagiere(r?.danach);
           }}
         />
       )}
-      <Fortsetzungen dienste={dienste} runden={runden} partie={partie} />
+      <Fortsetzungen
+        dienste={dienste}
+        runden={runden}
+        partie={partie}
+        beiAufgeben={rueck.vergiss}
+      />
     </div>
   );
 }

@@ -128,7 +128,11 @@ Unter dem Brett stehen die Züge: Morphy gegen Bird, London 1858. #sprecher:erza
 // Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat.
 // Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat (Gutachten L1.10).
 === vitrine_mut ===
-{birdNachgesprochen: -> END}
+// Nachgespielt ein zweites Mal (Rückmeldung, Wunsch des Autors, 19.11.2026): ein Satz statt Stille.
+{birdNachgesprochen:
+    Du legst die Zeitung zurück. Den Turm mitten ins Nichts siehst du jetzt schneller. #sprecher:erzaehler
+    -> END
+}
 ~ birdNachgesprochen = true
 Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, an den Rand. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
 {abschiedGesehen: -> END}
@@ -152,4 +156,11 @@ Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 {not abschiedGesehen:
     Hübsch. Aber in meinem Kaffeehaus hätte er nicht gebrannt. #sprecher:ambrose #stimmung:laechelt
 }
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== siegel_rueckmeldung ===
+{siegelStellungBestanden: -> postsack}
+Das Wachs hält noch. #sprecher:erzaehler
+Ein Siegel bricht man nicht, mein Kind. Man löst es, in Ruhe. Versuch es noch einmal. #sprecher:teague #stimmung:laechelt
 -> END

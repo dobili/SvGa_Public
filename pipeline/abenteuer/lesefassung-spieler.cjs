@@ -233,7 +233,7 @@ function schliesse(welt, st, eintrag, folgen) {
  * stand, besucht (Knoten), zweitAb (Index der ersten Antwort, die anders ausfiel als beim ersten
  * Mal mit derselben Auswahl: ein Zweitgespräch; sonst null) }.
  * Beispiel: Der erste Eintrag mit dem Brett ist maple-falls-dachboden.dachboden_brett.
- * Nach einer Partie oder Runde führt der Leser gleich das Nachgespräch (`nachgespraech`).
+ * Nach einer Partie oder Runde öffnet die Simulation selbst die Rückmeldung (wie die App).
  * Sonderfall: Questschritte zwischen zwei Dialogen (Partieausgang, Betreten einer Karte) stehen in
  * `danach` des Dialogs davor, wenn er eine Partie oder Runde auslöste, sonst in `davor` des nächsten.
  */
@@ -246,7 +246,6 @@ function neuerLeser(welt, st) {
   };
   const geschafft = new Set();
   let offen = null;
-  let imNachgespraech = false;
   let letztes = abbild(st);
   const unterwegs = () => {
     const neu = questaenderungen(letztes, abbild(st));
@@ -286,14 +285,6 @@ function neuerLeser(welt, st) {
       merkeRevanche(merker, geschafft, offen, folgen);
       letztes = abbild(st);
       dialoge.push(offen);
-    },
-    // Nach Partie oder Runde gleich noch einmal derselbe Knoten, wie ein Spieler, der am Brett
-    // sitzen bleibt; nur einmal, damit ein Nachgespräch mit neuer Partie keine Kette auslöst.
-    nachgespraech(folgen) {
-      const gespielt = folgen.partie || folgen.runde || folgen.partieform;
-      const knoten = gespielt && !imNachgespraech ? offen.knoten : null;
-      imNachgespraech = Boolean(knoten);
-      return knoten;
     },
   };
   return { dialoge, schliesseAb: () => unterwegs() };

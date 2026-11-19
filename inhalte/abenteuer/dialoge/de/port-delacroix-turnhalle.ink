@@ -373,3 +373,11 @@ Ein Notenheft, aufgequollen vom Hochwasser. Auf dem Umschlag steht in Bleistift:
 ~ angesehenPlakatTurnhalle = true
 Ein handgemaltes Plakat an der Wand: „Wir spielen weiter. Jeden Abend, solange das Licht reicht.“ #sprecher:erzaehler
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Remy, sonst wie bisher.
+=== remy_reihe_danach ===
+{not reiheRemyBestanden: -> remy}
+Remy legt die Trompete weg. #sprecher:erzaehler
+Bauern verstehst du. Ohne Flüstern. Gut. #sprecher:remy #stimmung:nachdenklich
+Lou hat auch Aufgaben. Mit Plänen. Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
+-> END

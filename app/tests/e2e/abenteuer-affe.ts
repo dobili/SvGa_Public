@@ -332,6 +332,9 @@ async function weltFrei(seite: Page): Promise<boolean> {
   return seite.locator(".abenteuer-steuerkreuz").isVisible();
 }
 
+/** Antworten, mit denen ein Spieler einen Dialog aufschiebt (zurück in die Welt). */
+const AUFSCHUB = /Später|Nicht jetzt|Gleich\.|Bis bald|Ein andermal|Noch nicht/;
+
 /**
  * Sucht wie ein vernünftiger Spieler den Weg zurück in die begehbare Welt: Partie aufgeben,
  * Runde zu Ende klicken, Fenster schließen. Wirft, wenn das nicht gelingt; dann ist das Spiel
@@ -374,12 +377,18 @@ export async function findeAusweg(seite: Page, frist = 90_000): Promise<void> {
       }
       if (gedrueckt) break;
     }
-    // Dialog ohne „Weiter“: die erste Wahl nehmen.
+    // Dialog ohne „Weiter“: wer zurück in die Welt will, schiebt auf („Später“, „Nicht jetzt“);
+    // sonst die erste Wahl. Seit der Rückmeldung nach dem Ergebnis (19.11.2026) bietet ein
+    // Dialog nach einem Fehlversuch „Noch einmal“ zuerst an; die erste Wahl drehte dann im Kreis.
     if (!gedrueckt) {
-      const wahl = seite.locator(".abenteuer-dialog-wahlen button").first();
+      const wahlen = seite.locator(".abenteuer-dialog-wahlen button");
+      const aufschub = wahlen.filter({ hasText: AUFSCHUB }).first();
+      const wahl = (await aufschub.isVisible().catch(() => false)) ? aufschub : wahlen.first();
       if (await wahl.isVisible().catch(() => false)) {
+        // Den Text vor dem Klick lesen: Danach ist der Knopf weg, und ohne Frist wartete es ewig.
+        const text = await wahl.innerText({ timeout: 1000 }).catch(() => "");
         await wahl.click({ timeout: 2000 }).catch(() => undefined);
-        versucht.push(`${wo}: erste Wahl`);
+        versucht.push(`${wo}: Wahl ${text}`);
       }
     }
     await seite.waitForTimeout(300);

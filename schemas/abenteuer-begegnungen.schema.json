@@ -504,6 +504,11 @@
             }
           }
         },
+        "danach": {
+          "description": "Ink-Knoten (Datei.Knoten), der nach der Partie von selbst startet, sobald die Ergebniskarte geschlossen ist; fehlt er, öffnet sich der Dialog wieder, der die Partie gestartet hat (oberwelt/nachergebnis.ts, Wunsch des Autors 19.11.2026). Der Knoten verzweigt über die Dialogvariablen nach dem Ausgang",
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
+        },
         "erzaehlung": {
           "$ref": "#/$defs/erzaehlung"
         }

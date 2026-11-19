@@ -355,3 +355,16 @@ Sie muss ihn nehmen, und dann … Es wäre schön. Es wäre so schön. #sprecher
 Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
 Vergib mir. Zähl. #sprecher:ambrose #stimmung:bitter #klang:aha
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Dex, sonst wie bisher.
+=== dex_reihe_danach ===
+{not reiheDexBestanden: -> dex}
+Alle Kurzschlüsse gefunden. Der Roboter schafft das noch nicht. #sprecher:dex #stimmung:laechelt
+Mae wartet mit ihren Mattbildern. Die mit den Namen. #sprecher:dex #stimmung:neutral
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Mae, dann weiter wie bisher (Einladung zum Steg).
+=== mae_reihe_danach ===
+{not reiheMaeBestanden: -> mae}
+Du hast jedes Bild erkannt! Auch das Erstickte! #sprecher:mae #stimmung:froh
+-> mae

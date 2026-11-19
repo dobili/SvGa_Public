@@ -121,11 +121,16 @@ const BEREICHE: readonly Bereich[] = [
     },
     hinein: async (s) => {
       await sprichAn(s, "abenteuer-dialog");
+      // Mit seilschaftBegonnen fragt Ferris erst „Noch einmal hinschauen?“ (seilschaft_nochmal,
+      // Rückmeldung nach dem Ergebnis, 19.11.2026): die erste Wahl, sonst „Weiter“.
       for (let i = 0; i < 20 && !(await s.getByTestId("abenteuer-gedaechtnis").isVisible()); i++) {
-        await s
-          .locator(".abenteuer-dialog-weiter")
-          .click({ timeout: 2000 })
-          .catch(() => undefined);
+        const wahl = s.locator(".abenteuer-dialog-wahlen button").first();
+        if (await wahl.isVisible().catch(() => false)) await wahl.click();
+        else
+          await s
+            .locator(".abenteuer-dialog-weiter")
+            .click({ timeout: 2000 })
+            .catch(() => undefined);
       }
       await expect(s.getByTestId("abenteuer-gedaechtnis")).toBeVisible();
     },

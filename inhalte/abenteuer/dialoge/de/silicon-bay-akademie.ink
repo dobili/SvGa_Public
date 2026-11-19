@@ -46,6 +46,9 @@ VAR lernkarteZielkompass = false
 VAR lernkarteWasDroht = false
 VAR hatKarteZielkompass = false
 VAR hatKarteWasDroht = false
+// Aus silicon-bay-aussen.ink (hotel_nacht), hier nur gelesen: der Hinweis aufs Hotel nach dem
+// Clubkampf (der Spieler weiß aus dem Dialog, wohin; Wunsch des Autors, 19.11.2026).
+VAR tabletNachtGesehen = false
 
 // ---------------------------------------------------------------- Dr. Lin
 
@@ -146,6 +149,7 @@ Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide s
 Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #stimmung:ernst
 * [Schweigen]
 - {ohrempfaengerGefunden:Du hast es versprochen. Aber sie hat deinen Blick gesehen. Und sie ist eine Lehrerin.|Sie sieht dich an, als warte sie auf etwas. Du weißt nicht, worauf.} #sprecher:erzaehler
+{not tabletNachtGesehen: Draußen ist es dunkel geworden. Im Hotel der Akademie wartet dein Zimmer im zwölften Stock. #sprecher:erzaehler}
 -> END
 
 === lin_alltag ===

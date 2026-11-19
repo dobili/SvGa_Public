@@ -47,6 +47,11 @@ VAR miraCrossroadsGetroffen = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR coachCrossroadsGetroffen = false
 VAR kaffeehausGesehen = false
+// Rückmeldung nach einer Partie am Varianten-Tisch (Wunsch des Autors, 19.11.2026): welche Partie
+// der Tisch gestartet hat; die Ausgänge setzt die Hülle (regeln/dialogvariablen.ts).
+VAR tischPartie = ""
+VAR ausgangWegCrossroadsPinewoodBlindschach = ""
+VAR ausgangCrossroadsSchach960 = ""
 
 // ---------------------------------------------------------------- Darlene
 
@@ -153,6 +158,7 @@ Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 // ---------------------------------------------------------------- Varianten-Tisch
 
 === varianten_tisch ===
+{tischPartie != "": -> tisch_nach_partie}
 An einem langen Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
 {not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
@@ -193,14 +199,37 @@ Was du schon kennst: #sprecher:erzaehler
 // Schach960 bleibt bei Mabel im Musikhaus spielbar.
 + {varianteBlindschachGelernt and not abschiedGesehen} [Blindschach gegen Ambrose]
     Zwölf Jahre Briefe, {held}. Ich sehe das Brett mit geschlossenen Augen besser als mit offenen. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "blindschach"
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
 + {varianteSchach960Gelernt and not abschiedGesehen} [Schach960 gegen Ambrose]
     Gemischte Figuren. Mal sehen, ob ein alter Mann noch umlernen kann. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "schach960"
     ~ beginnePartie("crossroads.schach960")
     -> END
 + [Nur schauen]
     -> END
+
+// Nach der Partie am Tisch: Ambrose zum Ausgang, dann ist der Tisch wieder Kulisse. Die Partien
+// gibt es nur vor dem Abschied; der Erzähler steht für den Fall dahinter.
+=== tisch_nach_partie ===
+~ temp blind = tischPartie == "blindschach"
+~ temp ausgang = ausgangCrossroadsSchach960
+{blind:
+    ~ ausgang = ausgangWegCrossroadsPinewoodBlindschach
+}
+~ tischPartie = ""
+{abschiedGesehen:
+    Die Bretter auf dem Tisch stehen wieder still. #sprecher:erzaehler
+    -> END
+}
+{ausgang:
+- "sieg": {blind:Geschlagen, und keiner von uns hat das Brett gesehen. Du hast es im Kopf getragen.|Die Figuren standen fremd, und du hast trotzdem einen Plan gefunden.} #sprecher:ambrose #stimmung:froh
+- "remis": {blind:Remis im Dunkeln. Das ist mehr, als die meisten im Hellen schaffen.|Remis. Ein alter Mann lernt um, ein junger auch.} #sprecher:ambrose #stimmung:laechelt
+- else: {blind:Im Kopf verrutscht eine Figur leicht. Sag dir die Stellung leise vor, nach jedem Zug.|Fremde Grundreihe, fremde Pläne. Sieh zuerst, wo dein König sicher wird.} #sprecher:ambrose #stimmung:nachdenklich
+}
+Der Tisch steht noch da, wenn du wieder magst. #sprecher:ambrose #stimmung:laechelt
+-> END
 
 // ---------------------------------------------------------------- Fund
 

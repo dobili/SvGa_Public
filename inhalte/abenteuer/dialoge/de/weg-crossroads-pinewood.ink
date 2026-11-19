@@ -238,3 +238,9 @@ An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, 
 ~ gibFund("kreide4")
 -> END
 
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== lebendschach_rueckmeldung ===
+{wegCrossroadsPinewoodLebendschachBestanden: -> ereignis_lebendschach}
+Die Weißen stehen ratlos auf dem Rasen, ein Bauer protestiert laut. #sprecher:erzaehler
+Noch nicht gewonnen. Die Kinder wollen gleich noch mal! Sag Bescheid, wenn du wieder kommandierst. #sprecher:ezra #stimmung:lacht
+-> END

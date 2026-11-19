@@ -251,16 +251,17 @@ for (const fall of FAELLE) {
     await foto(page, `${bild}_1_ende_${ausgang}`);
     await page.getByTestId("partie-zurueck-zur-stadt").click();
     await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });
-    await klickeDurch(page);
-    // Der Held steht wieder auf dem Übergangsfeld; die Sperre ist noch zu.
+    // Ergebniskarte, dann die Rückmeldung (oberwelt/nachergebnis.ts, Wunsch des Autors 19.11.2026):
+    // Das Gespräch mit der Truppe öffnet sich von selbst; vorher kam es erst beim nächsten Druck
+    // auf den Übergang. Der Held steht weiter auf dem Übergangsfeld.
+    const gespraech = await klickeDurch(page, "„Nicht jetzt.“");
     expect(await kachel(page)).toBe(uebergangskachel(sperre));
-    expect(await variablen(page)).toMatchObject({ [`${sperre.stamm}Durch`]: false });
+    await foto(page, `${bild}_2_truppe`);
 
     const schild = page.getByTestId("abenteuer-ortsschild");
     const fehlversuch = istFehlversuch(sperre, ausgang);
     const satz = fehlversuchssatz(sperre, ausgang);
     const oeffnet = !fehlversuch || vorher + 1 >= NOTAUSGANG;
-    const gespraech = await druecke(page, sperre, "„Nicht jetzt.“", `${bild}_2_truppe`);
     if (fehlversuch) {
       expect(gespraech).toContain(satz);
       expect(gespraech).not.toContain(sperre.durch);

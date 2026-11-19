@@ -31,6 +31,7 @@
     },
     {
       "kennung": "mapleFalls.ersteLektion",
+      "danach": "maple-falls-dachboden.ambrose",
       "brett": "dachboden",
       "gegner": "mapleFalls.ambrose",
       "farbe": "white",
@@ -844,6 +845,7 @@
     },
     {
       "kennung": "capitalArena.runde1",
+      "danach": "capital-arena-halle.runde1_danach",
       "gegner": "capitalArena.bea",
       "farbe": "zufall",
       "format": {
@@ -866,6 +868,7 @@
     },
     {
       "kennung": "capitalArena.runde2",
+      "danach": "capital-arena-halle.runde2_danach",
       "gegner": "capitalArena.marcus",
       "farbe": "zufall",
       "format": {
@@ -895,6 +898,7 @@
     },
     {
       "kennung": "capitalArena.runde3",
+      "danach": "capital-arena-halle.runde3_danach",
       "gegner": "capitalArena.nova",
       "farbe": "zufall",
       "format": {
@@ -933,6 +937,7 @@
     },
     {
       "kennung": "capitalArena.runde4",
+      "danach": "capital-arena-halle.runde4_danach",
       "gegner": "capitalArena.tobias",
       "farbe": "zufall",
       "format": {
@@ -965,6 +970,7 @@
     },
     {
       "kennung": "capitalArena.halbfinale",
+      "danach": "capital-arena-halle.halbfinale_rueckmeldung",
       "gegner": "capitalArena.kade",
       "farbe": "zufall",
       "format": {
@@ -1069,6 +1075,7 @@
     },
     {
       "kennung": "portDelacroix.schach960Set1",
+      "danach": "port-delacroix-musikhaus.set1_danach",
       "gegner": "portDelacroix.blaeserSet1",
       "farbe": "zufall",
       "format": {
@@ -1087,6 +1094,7 @@
     },
     {
       "kennung": "portDelacroix.schach960Set2",
+      "danach": "port-delacroix-musikhaus.set2_danach",
       "gegner": "portDelacroix.blaeserSet2",
       "farbe": "zufall",
       "format": {
@@ -1105,6 +1113,7 @@
     },
     {
       "kennung": "portDelacroix.schach960Set3",
+      "danach": "port-delacroix-musikhaus.set3_danach",
       "gegner": "portDelacroix.blaeserSet3",
       "farbe": "zufall",
       "format": {

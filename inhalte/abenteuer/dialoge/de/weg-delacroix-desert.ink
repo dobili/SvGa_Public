@@ -295,7 +295,7 @@ VAR gefundenFinchLaeuferB = false
     -> END
 }
 {wegDelacroixDesertSeilschaftBestanden: -> seilschaft_ende}
-{seilschaftBegonnen: -> seilschaft_runde}
+{seilschaftBegonnen: -> seilschaft_nochmal}
 -> seilschaft_start
 
 === seilschaft_start ===
@@ -304,6 +304,17 @@ Zwei Kletterinnen hängen in der Wand am Felsbogen, eine unten, eine hoch oben. 
 Wir spielen eine Partie, ein Zug pro Seillänge. Aber ich höre Tess nicht mehr! #sprecher:wren #stimmung:ueberrascht
 Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu! #sprecher:ferris #stimmung:froh
 -> seilschaft_runde
+
+// Wiederkehr nach der Gedächtnisstellung (Rückmeldung, Wunsch des Autors, 19.11.2026): Vorher
+// begann sie ohne Wahl sofort neu, nach einem Fehlversuch also gleich noch einmal.
+=== seilschaft_nochmal ===
+Wren greift ins Leere. Die Stellung ist unten nicht ganz angekommen. #sprecher:erzaehler
+Noch einmal? Schau oben genau hin, dann ruf sie ihr zu. #sprecher:ferris #stimmung:nachdenklich
++ [Noch einmal hinschauen]
+    -> seilschaft_runde
++ [„Später.“]
+    Wir hängen hier noch eine Weile. Das Seil hält. #sprecher:ferris #stimmung:laechelt
+    -> END
 
 === seilschaft_runde ===
 Schau genau hin. Unten sieht Wren das Brett nicht. #sprecher:ferris #stimmung:nachdenklich

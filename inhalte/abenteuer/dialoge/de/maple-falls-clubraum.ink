@@ -486,3 +486,17 @@ In deiner eigenen Schrift, ohne Glitzer. #sprecher:erzaehler #klang:tagebuch
 === victor_weg ===
 Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult. Ausgeschaltet. #sprecher:erzaehler
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Juno, sonst wie bisher.
+=== juno_reihe_danach ===
+{not reiheJunoBestanden: -> juno}
+Alles richtig! Sogar mein Matt in eins. Das bekommt einen Stern mit Glitzer. #sprecher:juno #stimmung:froh
+Jetzt fehlt nur noch der Coach. Die Clubnadel gibt es nur gegen sie. #sprecher:juno #stimmung:laechelt
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Sam, sonst wie bisher.
+=== sam_reihe_danach ===
+{not reiheSamBestanden: -> sam}
+Du hast jedes Mal gezählt. Und nicht einmal genommen, was ich dir hingestellt hab. #sprecher:sam #stimmung:ueberrascht
+Na gut. Juno hat auch noch Aufgaben. Die kann ihre eigene Schrift nicht lesen. #sprecher:sam #stimmung:laechelt
+-> END

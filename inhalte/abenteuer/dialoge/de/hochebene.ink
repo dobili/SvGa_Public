@@ -214,7 +214,7 @@ VAR ambroseSprichtWieder = false
     Kira hat ihr Diplom an die Tribüne geklebt. Mit Falke und Bison. #sprecher:erzaehler
     -> END
 - diplomBestanden: -> diplom_ende
-- diplomBegonnen: -> diplom_runde
+- diplomBegonnen: -> diplom_nochmal
 }
 -> diplom_start
 
@@ -224,6 +224,17 @@ Heute ist Diplomtag. Und ich bin selbst noch Anfängerin. Willst du Prüfer sein
 Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann. Nicht die schwerste. #sprecher:annek #stimmung:nachdenklich
 Die Diplome hab ich gemalt! Mit Falke und Bison. #sprecher:kira #stimmung:laechelt
 -> diplom_runde
+
+// Wiederkehr nach der Runde (Rückmeldung, Wunsch des Autors, 19.11.2026): Vorher startete die Runde
+// ohne Wahl sofort neu, nach einem Fehlversuch also gleich noch einmal.
+=== diplom_nochmal ===
+Ein Kind ist an seiner Aufgabe hängen geblieben. Vielleicht war sie doch zu schwer. #sprecher:annek #stimmung:nachdenklich
+Such noch einmal aus. Nicht die schwerste, weißt du noch? #sprecher:annek #stimmung:laechelt
++ [Noch einmal prüfen]
+    -> diplom_runde
++ [„Später.“]
+    Die Kinder warten. Sie spielen so lange Falke und Bison. #sprecher:kira #stimmung:lacht
+    -> END
 
 === diplom_runde ===
 ~ beginneAufgaben("hochebene.diplom")

@@ -20,8 +20,10 @@ export function Fortsetzungen(props: {
   readonly dienste: Appdienste;
   readonly runden: Runden;
   readonly partie: Partien;
+  /** Aufgegeben: Die Rückmeldung nach dem Ergebnis entfällt (nachergebnis.ts, vergiss). */
+  readonly beiAufgeben: () => void;
 }) {
-  const { dienste, runden, partie } = props;
+  const { dienste, runden, partie, beiAufgeben } = props;
   const { offeneRunde } = runden;
   const { offenePartie } = partie;
   return (
@@ -32,7 +34,10 @@ export function Fortsetzungen(props: {
           weiter="aufgaben.weiter"
           abbrechen="aufgaben.abbrechen"
           beiWeiter={() => void dienste.starteAufgaben(offeneRunde)}
-          beiAbbrechen={runden.brichRundeAb}
+          beiAbbrechen={() => {
+            runden.brichRundeAb();
+            beiAufgeben();
+          }}
         />
       )}
       {offenePartie && (
@@ -45,7 +50,10 @@ export function Fortsetzungen(props: {
             // statt einen toten Knopf zu zeigen; die Begegnung lässt sich neu beginnen.
             if (!dienste.zeigePartie(offenePartie)) partie.gibOffenePartieAuf();
           }}
-          beiAbbrechen={partie.gibOffenePartieAuf}
+          beiAbbrechen={() => {
+            partie.gibOffenePartieAuf();
+            beiAufgeben();
+          }}
         />
       )}
     </>

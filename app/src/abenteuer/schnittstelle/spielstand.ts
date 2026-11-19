@@ -212,6 +212,13 @@ export interface Abenteuerstand {
   readonly laufendeAufgaben: Aufgabenauftrag | null;
   /** Offene Ergebniskarte nach Partie oder Runde (R6); fehlt oder null: keine. */
   readonly ergebniskarte?: Ergebniskarte | null;
+  /**
+   * Rückmeldung nach dem Ergebnis (Wunsch des Autors, 19.11.2026): der Dialog („datei.knoten“),
+   * der die laufende Partie, Runde, das Simultan oder die Gedächtnisstellung gestartet hat. Nach
+   * der Ergebniskarte öffnet die Oberwelt ihn wieder (oberwelt/nachergebnis.ts); fehlt oder null:
+   * keiner.
+   */
+  readonly nachErgebnis?: string | null;
   /** Ergebnis der zuletzt beendeten Runde, bis die Oberwelt es ausgewertet hat. */
   readonly aufgabenergebnis: Aufgabenergebnis | null;
   /**

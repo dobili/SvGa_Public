@@ -390,3 +390,10 @@ Mehr steht da nicht. Benji zieht den Reißverschluss seiner Weste auf. #sprecher
 === testteam_bruecke_danach ===
 {~Wir warten auf den Bus. Die App schickt uns nirgends mehr hin.|Variante 31. Ich habe nachgezählt. Es sind meine Züge.} #sprecher:imani #stimmung:nachdenklich
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== stream_rueckmeldung ===
+{wegIronwoodSiliconStreamBestanden: -> ereignis_stream}
+Und … der Chat schreibt „F“. Eine Falle hat dich erwischt. #sprecher:kiki #stimmung:lacht
+Wärm dich noch mal auf, dann gehen wir live. Ich bin hier, bis der Akku leer ist. #sprecher:kiki #stimmung:laechelt
+-> END

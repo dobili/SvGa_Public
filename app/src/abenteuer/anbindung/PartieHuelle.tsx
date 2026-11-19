@@ -42,6 +42,7 @@ import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
 import { BrettfreieZeile, Tischblase, TischblasenRahmen } from "./Tischblase";
 import { Tischgespraech } from "./Tischgespraech";
+import { Zeithinweis } from "./Zeithinweis";
 import { useBegegnung } from "./useBegegnung";
 import { useSchutzengel } from "./useSchutzengel";
 import { useStaerkewechsel } from "./useStaerkewechsel";
@@ -227,6 +228,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
         jetztMs={s.jetztMs}
         gegnerkennung={begegnung?.gegner ?? null}
       />
+      {/* Ambroses Zeit-Hinweise in Partien mit Uhr (19.11.2026). */}
+      <Zeithinweis partie={partie} />
       {engel.halt && !partie.ende && (
         <Schutzengelzeile
           grund={engel.halt}

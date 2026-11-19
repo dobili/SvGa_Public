@@ -173,6 +173,7 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     spielzeitJeOrt: istObjekt(roh.spielzeitJeOrt)
       ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
       : {},
+    ...(typeof roh.verfolgteQuest === "string" ? { verfolgteQuest: roh.verfolgteQuest } : {}),
   };
 }
 

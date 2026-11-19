@@ -5,8 +5,8 @@
  *
  * Warum: Ein Kind wusste an mehreren Stellen nicht, wohin (Mama in der Küche außerhalb des Bildes,
  * die Schule 45 Kacheln weiter). Gute Einsteigerspiele zeigen das Ziel im Bild, dezent, ohne den
- * Weg vorzulaufen. Welches Feld das Ziel ist, sagt oberwelt/zielsuche.ts; abschalten lässt sich der
- * Hinweis im Spielmenü (anbindung/Zielhinweiswahl.tsx).
+ * Weg vorzulaufen. Welches Feld das Ziel ist, sagt oberwelt/zielsuche.ts; seit dem 19.11.2026 gibt
+ * es den Hinweis nur für die Quest, die im Tagebuch verfolgt wird (Tagebuch.tsx).
  * Rolle im Gesamtbild: Hilfe für oberwelt/szene.ts; zeichnet mit Phaser-Grafik, keine Bilder.
  * Die Kamera vergrößert (Variante B, weltmassstab.ts): gerechnet wird in Kartenpixeln der
  * sichtbaren Fläche (worldView), der feste Pfeil wird mit kameraregie.ts/festerPunkt gesetzt.

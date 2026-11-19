@@ -9,7 +9,15 @@ import { describe, expect, it } from "vitest";
 import type { Spieldaten } from "../daten/laden";
 import { leererAbenteuerstand } from "../regeln/spielstand";
 import type { Abenteuerstand, Queststand } from "../schnittstelle/spielstand";
-import { kartenbildAus, wegweiser, zielangabe, zielangaben, type Kartenbild } from "./zielsuche";
+import {
+  kartenbildAus,
+  verfolgtesZiel,
+  wegweiser,
+  zielangabe,
+  zielangaben,
+  zielkarte,
+  type Kartenbild,
+} from "./zielsuche";
 
 const INHALTE = new URL("../../../../inhalte/abenteuer/", import.meta.url);
 const lies = <T>(pfad: string): T => JSON.parse(readFileSync(new URL(pfad, INHALTE), "utf8")) as T;
@@ -154,5 +162,57 @@ describe("Felder ziel in quests.json", () => {
       }
     }
     expect(fehlend).toEqual([]);
+  });
+});
+
+describe("verfolgtesZiel (Pfeil nur auf Wunsch, 19.11.2026)", () => {
+  const mitVerfolgung = (quests: Queststand[], verfolgt: string | null): Abenteuerstand => ({
+    ...stand(quests),
+    verfolgteQuest: verfolgt,
+  });
+
+  it("ohne verfolgte Quest gibt es kein Ziel, auch wenn Quests laufen", () => {
+    expect(verfolgtesZiel(mitVerfolgung([quest("mapleFalls.ersterAbend")], null), daten)).toBe(
+      null,
+    );
+  });
+
+  it("zeigt nur auf die verfolgte Quest, nicht auf die erste laufende", () => {
+    const s = mitVerfolgung(
+      [quest("mapleFalls.dasBrett"), quest("mapleFalls.ersterAbend")],
+      "mapleFalls.ersterAbend",
+    );
+    expect(verfolgtesZiel(s, daten)).toEqual({ karte: "mapleFalls.wohnzimmer", objekt: "mutter" });
+  });
+
+  it("folgt dem nächsten Schritt derselben Quest und endet, wenn sie erledigt ist", () => {
+    const brett = (schritt: number) =>
+      mitVerfolgung([quest("mapleFalls.dasBrett", schritt)], "mapleFalls.dasBrett");
+    const daten2 = daten.quests.find((q) => q.kennung === "mapleFalls.dasBrett")?.schritte ?? [];
+    const zweiter = daten2[1];
+    expect(verfolgtesZiel(brett(1), daten)).toEqual(zweiter && zielangabe(zweiter, daten));
+    const erledigt = mitVerfolgung(
+      [{ ...quest("mapleFalls.dasBrett"), erledigt: true }],
+      "mapleFalls.dasBrett",
+    );
+    expect(verfolgtesZiel(erledigt, daten)).toBe(null);
+  });
+
+  it("Befund des Autors: auf dem Dachboden zeigt der Pfeil aufs Brett, nie auf den Spiegel", () => {
+    const spiegel = MAPLE.find((k) => k.kennung === "mapleFalls.dachboden")?.objekte.get("spiegel");
+    const brett = verfolgtesZiel(
+      mitVerfolgung([quest("mapleFalls.dasBrett")], "mapleFalls.dasBrett"),
+      daten,
+    );
+    const zurMutter = verfolgtesZiel(
+      mitVerfolgung([quest("mapleFalls.ersterAbend")], "mapleFalls.ersterAbend"),
+      daten,
+    );
+    if (!brett || !zurMutter) throw new Error("Ziel fehlt");
+    expect(zielkarte(brett, MAPLE)).toBe("mapleFalls.dachboden");
+    expect(wegweiser("mapleFalls.dachboden", brett, MAPLE)).toEqual({ x: 7, y: 6 });
+    // Zur Mutter: der Ausgang über die Treppe (1, 8), nicht der Spiegel (1, 3).
+    expect(wegweiser("mapleFalls.dachboden", zurMutter, MAPLE)).toEqual({ x: 1, y: 8 });
+    expect(wegweiser("mapleFalls.dachboden", zurMutter, MAPLE)).not.toEqual(spiegel);
   });
 });

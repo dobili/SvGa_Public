@@ -232,4 +232,10 @@ export interface Abenteuerstand {
   readonly spielzeitSekunden: number;
   /** Spielzeit je Ort in Sekunden (Vorschlag V7), um die Richtwerte R39/R40 nachzumessen. */
   readonly spielzeitJeOrt: Readonly<Record<string, number>>;
+  /**
+   * Die Quest, zu deren Ziel der Pfeil zeigt (Kennung), sonst keine. Wunsch des Autors (19.11.2026):
+   * Pfeile nur auf Wunsch, angetippt im Tagebuch; der Pfeil folgt den Schritten dieser Quest, bis
+   * sie erledigt ist. Im Spielstand, damit er ein Neuladen übersteht. Fehlt in älteren Ständen.
+   */
+  readonly verfolgteQuest?: string | null;
 }

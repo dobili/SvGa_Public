@@ -104,7 +104,8 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 -> END
 
 // Ablauf nach dem Roman (Kapitel 10 bis 15): Der Clubkampf ist am Samstag, nach der Nacht im
-// Lesesaal. Wer nicht zum Steg geht, kann hier gleich schlafen gehen, damit nichts hängen bleibt.
+// Lesesaal. Geschlafen wird erst nach der Sternennacht (cedar-creek-aussen.sterne_ende): Sie ist
+// nicht zu verpassen (19.11.2026); wer schlafen will, schickt Mrs. Okafor erst zum Steg.
 === okafor_bis_morgen ===
 Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor #stimmung:laechelt
 {maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor #stimmung:laechelt}
@@ -119,9 +120,7 @@ Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #spreche
     Geh nur. Am Wasser wird es abends kalt. #sprecher:okafor #stimmung:laechelt
     -> END
 * {maeEingeladen} [„Ich geh schlafen.“]
-    ~ nachtImLesesaal = true
-    Du rollst dich auf einer Matte unter dem langen Tisch ein. Die Uhr im Türmchen tickt. #sprecher:erzaehler #geraeusch:uhr_ticken
-    Am Morgen sitzt Mrs. Okafor schon am langen Tisch, eine Tasse in der Hand. #sprecher:erzaehler
+    Erst die Sterne. Mae redet seit Tagen von nichts anderem, und ich habe Tee gekocht. Die Matten laufen nicht weg. #sprecher:okafor #stimmung:laechelt
     -> END
 
 === okafor_clubkampf ===

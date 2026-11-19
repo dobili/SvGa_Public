@@ -340,3 +340,24 @@ Am Geländer zum Fluss steht eine kleine Tafel unter einem Holzdach, darauf eine
 ~ limonadenglasGesehen = true
 Auf dem Geländer stehen Limonadengläser in einer Reihe, jedes mit einem Zettel: „Slick gegen Ray“, „Tamsin gegen Slick“, „Slick gegen alle“. #sprecher:erzaehler
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Ray, sonst wie bisher.
+=== ray_reihe_danach ===
+{not reiheRayBestanden: -> ray}
+Jede Aufgabe gelöst. Du hättest kommen sollen, als der Pavillon noch voll war. #sprecher:ray #stimmung:laechelt
+Slick spielt um die Nadel. Er wartet schon auf dich. #sprecher:ray #stimmung:nachdenklich
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Tamsin, dann weiter wie bisher.
+=== tamsin_reihe_danach ===
+{not reiheTamsinBestanden: -> tamsin}
+Du warst schneller als ich. Ich war erst bei dreihundertzwölf. #sprecher:tamsin #stimmung:lacht
+Ray hat auch noch Aufgaben für dich. #sprecher:tamsin #stimmung:laechelt
+-> tamsin
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden Tamsins Zettel (oder ein Satz, wenn er schon gegeben ist), sonst wie bisher.
+=== zuschauen_danach ===
+{not slickBeobachtenBestanden: -> tamsin}
+{not tamsinZettelGegeben: -> tamsin_zettel}
+Hast du's gesehen? Er guckt nur nach vorn. #sprecher:tamsin #stimmung:nachdenklich
+-> END

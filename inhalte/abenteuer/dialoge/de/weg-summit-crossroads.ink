@@ -280,3 +280,9 @@ An der Klappe des Sturmkellers hat sich ein loses Blatt verfangen. Darauf eine g
 {~Das Windrad quietscht bei jeder Drehung, wie eine alte Tür.|Das Windrad steht still. Ray sagt, dann kommt der Sturm.|Unter dem Windrad liegt ein Eimer voll Wasser, frisch gepumpt.} #sprecher:erzaehler
 -> END
 
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== geysirblitz_rueckmeldung ===
+{wegSummitCrossroadsGeysirblitzBestanden: -> ereignis_geysirblitz}
+Das Wasser war schneller. Kein Abzeichen diesmal. #sprecher:bell #stimmung:laechelt
+Der nächste Ausbruch kommt bestimmt. Dann versuchen wir es noch einmal. #sprecher:bell #stimmung:laechelt
+-> END

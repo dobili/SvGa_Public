@@ -70,6 +70,21 @@ function ladeWelt() {
       lade("begegnungen.json").begegnungen.map((b) => b.kennung),
     ),
     rolle: rollenJeBegegnung(),
+    // Rückmeldung nach der Runde (runden.json `danach`, gesamtsimulation-dialoge.cjs).
+    rundenDanach: Object.fromEntries(
+      lade("runden.json")
+        .runden.filter((r) => r.danach)
+        .map((r) => [r.kennung, r.danach]),
+    ),
+    // Bretter je Simultan (partieformen.json): Die App setzt den Ausgang jedes Bretts.
+    simultanBretter: Object.fromEntries(
+      lade("partieformen.json").simultan.map((x) => [x.kennung, x.begegnungen]),
+    ),
+    begegnungDanach: Object.fromEntries(
+      lade("begegnungen.json")
+        .begegnungen.filter((b) => b.danach)
+        .map((b) => [b.kennung, b.danach]),
+    ),
     fundmuenzen: Object.fromEntries(
       lade("funde.json").funde.map((f) => [f.kennung, f.muenzen || 0]),
     ),

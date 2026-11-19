@@ -19,6 +19,7 @@ import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { dialogwirkungen, type Nachdialogmerker } from "./dialogwirkungen";
 import type { Oberweltkern } from "./kern";
+import { mitGemerktemDialog } from "./nachergebnis";
 import type { Runden } from "./useAufgabenrunde";
 import type { Partien } from "./usePartiestart";
 import { ladeDialog } from "./weltdaten";
@@ -126,6 +127,8 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   const zuletztAusInk = useRef<Abenteuerstand["dialogvariablen"]>({});
   // Ein Übergang mit Dialog (orte.json `dialog`, `wenn`): der Wechsel folgt nach dem Dialog.
   const uebergang = useRef<{ ziel: Ziel; wenn: string | null } | null>(null);
+  // Der zuletzt geöffnete Dialog („datei.knoten“), für die Rückmeldung nach dem Ergebnis.
+  const geoeffnet = useRef<string | null>(null);
   const m = useMerker();
   /**
    * Öffnet den Dialog. Mit `amUebergang` fragt es Ink zuerst zur Probe (dialog/stillesende.ts):
@@ -135,6 +138,7 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   const oeffneDialog = (verweis: string, amUebergang = false) => {
     const [datei, knoten] = verweis.split(".", 2);
     if (!datei || !knoten) return;
+    geoeffnet.current = verweis;
     variablenBeimOeffnen.current = k.standRef.current?.dialogvariablen ?? {};
     zuletztAusInk.current = {};
     ladeDialog(datei)
@@ -181,8 +185,13 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   const beiDialogende = (variablen: Dialogvariablen) => {
     setzeDialog(null);
     k.dialogOffen(false);
-    const neu = mitVariablen(variablen);
-    if (!neu) return;
+    const ohneDialog = mitVariablen(variablen);
+    if (!ohneDialog) return;
+    // Startet der Dialog eine Folge, öffnet er sich nach dem Ergebnis wieder (nachergebnis.ts).
+    const folgeStartet = Boolean(
+      m.auftrag.current || m.runde.current || m.simultan.current || m.gedaechtnis.current,
+    );
+    const neu = mitGemerktemDialog(ohneDialog, geoeffnet.current, folgeStartet);
     k.schreibe(neu);
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);

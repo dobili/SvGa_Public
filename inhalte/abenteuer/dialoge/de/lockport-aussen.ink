@@ -195,3 +195,24 @@ Die Belle legt gleich ab. 5 Münzen die Fahrt. Wohin? #sprecher:ruben #stimmung:
 * [Hierbleiben]
     Die Belle wartet nicht ewig. Aber heute schon. #sprecher:ruben #stimmung:laechelt
     -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== kahnrennen_rueckmeldung ===
+{lockportKahnrennenBestanden: -> kai}
+Daneben. Die Kähne schwimmen noch kreuz und quer. #sprecher:ruben #stimmung:laechelt
+Noch einmal an die Tafel, wenn du magst. Die Kinder warten auf den Startschuss. #sprecher:ruben #stimmung:laechelt
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== tafel_rueckmeldung ===
+{lockportTafelSchleuseBestanden: -> tafel_schleuse}
+Nur eins von zweien im Blick. Für den Steg reicht das nicht. #sprecher:imogen #stimmung:nachdenklich
+Die Tafel hängt noch. Ich auch. #sprecher:imogen #stimmung:nachdenklich
+-> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== taue_rueckmeldung ===
+{lockportTaueBestanden: -> henriks_boot}
+Ein Tau rutscht, das Boot kippt fast. Gerade noch gehalten. #sprecher:erzaehler
+Sieh dir die Knoten noch einmal an, bevor du das nächste löst. #sprecher:erzaehler
+-> END

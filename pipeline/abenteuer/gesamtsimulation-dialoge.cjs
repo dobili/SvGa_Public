@@ -3,9 +3,14 @@
 // geschieht (Partie, Runde, Partieform, Laden, Reise, Übergang) wie in oberwelt/useDialogende.ts.
 //
 // Haken für Werkzeuge, die mitlesen (lesefassung.cjs): Steht im Stand ein Leser (`st.leser`),
-// bekommt er jeden Dialogbeginn, jede Zeile mit ihren Tags und jedes Dialogende, darf die Wahl
-// treffen und nach Partie oder Runde gleich das Nachgespräch führen (`nachgespraech`). Ohne Leser
-// (Gesamtsimulation, Chaos-Prüfung) bleibt alles wie bisher, auch der Zufall.
+// bekommt er jeden Dialogbeginn, jede Zeile mit ihren Tags und jedes Dialogende und darf die Wahl
+// treffen. Ohne Leser (Gesamtsimulation, Chaos-Prüfung) bleibt alles wie bisher, auch der Zufall.
+//
+// Rückmeldung nach dem Ergebnis (Wunsch des Autors, 19.11.2026; wie oberwelt/nachergebnis.ts):
+// Nach Partie, Runde, Simultan oder Gedächtnisstellung öffnet sich der Dialog wieder, der sie
+// gestartet hat (zuerst `danach` aus runden.json oder begegnungen.json). Nicht nach einer abgebrochenen
+// Partie und nicht, wenn der Dialog eine Reise auslöste. Jede Rückmeldung steht in
+// `st.rueckmeldungen` (Prüfwerkzeug rueckmeldung.cjs).
 "use strict";
 const { Story } = require(require("./gesamtsimulation-regeln.cjs").APP);
 const {
@@ -25,6 +30,8 @@ const MUENZEN_RUNDE = 10;
 const MUENZEN_WIEDERHOLT = 2;
 const AUSGAENGE = ["abgebrochen", "niederlage", "remis", "sieg"];
 const WAHLEN_JE_DIALOG = 60;
+/** So viele Rückmeldungen nacheinander (eine neue Partie aus der Rückmeldung zählt weiter). */
+const RUECKMELDUNGEN_HINTEREINANDER = 2;
 
 // ---------------------------------------------------------------- Dialoge
 
@@ -92,7 +99,7 @@ function dialog(welt, st, knoten) {
   }
   const s = geschichte(welt, st, datei);
   s.ResetState();
-  st.folgen = { huelle: {} };
+  st.folgen = { huelle: {}, knoten, zeilen: 0, wahlen: 0 };
   // Nur Variablen, die es in dieser Datei gibt: Ink wirft sonst bei jeder fremden Variable einen
   // Fehler, und das Fangen kostete die meiste Rechenzeit der Simulation (Profil, 14.11.2026).
   const bekannt = s.variablesState._globalVariables;
@@ -112,9 +119,12 @@ function dialog(welt, st, knoten) {
   }
   st.leser?.beginn(knoten, s);
   const abbruch = spieleAb(welt, st, s, datei, knoten);
+  st.folgen.besucht = [];
   for (const kk of welt.knoten[datei])
-    if (s.state.VisitCountAtPathString(kk) > 0)
+    if (s.state.VisitCountAtPathString(kk) > 0) {
       st.gesehen.add(datei + "." + kk);
+      st.folgen.besucht.push(datei + "." + kk);
+    }
   // Neu geladen mitten im Dialog (Chaos-Spieler): Was nach dem Dialog geschehen sollte, ist weg;
   // was sofort wirkt (Funde, Karten, Bezahlen, Quests), steht schon im Stand, und die Ink-Variablen
   // so, wie sie beim zuletzt gemeldeten Knoten waren (useDialogende.ts, sichereVariablen).
@@ -177,6 +187,7 @@ function spieleAb(welt, st, s, datei, knoten) {
     for (let wahlen = 0; wahlen <= WAHLEN_JE_DIALOG; wahlen++) {
       while (s.canContinue) {
         const text = s.Continue();
+        if (text.trim()) st.folgen.zeilen += 1;
         st.leser?.zeile(text, s.currentTags);
         meldeNeue();
         // Nur, solange noch etwas folgt: Nach der letzten Zeile endet der Dialog in der App sofort,
@@ -185,6 +196,7 @@ function spieleAb(welt, st, s, datei, knoten) {
         if (a) return a;
       }
       if (!s.currentChoices.length) return null;
+      st.folgen.wahlen += 1;
       s.ChooseChoiceIndex(waehle(st, s.currentChoices));
     }
   } catch (e) {
@@ -220,11 +232,12 @@ function spielePartie(welt, st, b) {
   }
   if (a !== "abgebrochen")
     melde(welt, st, { art: "partie", begegnung: b, ausgang: [a] });
+  return a;
 }
 
 function spieleRunde(welt, st, r) {
   const n = (st.runden[r] = (st.runden[r] || 0) + 1);
-  if (st.chaos ? !st.chaos.bestanden(r) : n < 2) return;
+  if (st.chaos ? !st.chaos.bestanden(r) : n < 2) return "nicht bestanden";
   const teile = r.split("."),
     name = teile.pop();
   if (!st.rundeBezahlt?.has(r)) verdiene(st, MUENZEN_RUNDE, "runde");
@@ -232,6 +245,7 @@ function spieleRunde(welt, st, r) {
   st.vars[name + "Bestanden"] = true;
   st.vars[teile.join("") + gross(name) + "Bestanden"] = true;
   melde(welt, st, { art: "aufgaben", runde: r });
+  return "bestanden";
 }
 
 /**
@@ -241,13 +255,18 @@ function spieleRunde(welt, st, r) {
  */
 function spielePartieform(welt, st, k) {
   const n = (st.runden[k] = (st.runden[k] || 0) + 1);
-  if (st.chaos ? !st.chaos.bestanden(k) : n < 2) return;
+  const bestanden = !(st.chaos ? !st.chaos.bestanden(k) : n < 2);
+  // Simultan: Die App setzt nach jedem Brett dessen Ausgang (ausgang…); hier alle auf einmal.
+  for (const b of welt.simultanBretter[k] || [])
+    st.vars["ausgang" + variablenname(b)] = bestanden ? "sieg" : "niederlage";
+  if (!bestanden) return "nicht bestanden";
   const teile = k.split("."),
     name = teile.pop();
   st.vars[name + "Bestanden"] = true;
   st.vars[teile.join("") + gross(name) + "Bestanden"] = true;
   st.vars[name + "Punkte"] = 1;
   melde(welt, st, { art: "aufgaben", runde: k });
+  return "bestanden";
 }
 
 /**
@@ -272,7 +291,7 @@ function kaufeEin(st, laden) {
 }
 
 /** Folgen nach dem Dialog wie beiDialogende: Laden, Reise, Übergang, Runde, Partie, Abspann. */
-function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
+function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt, tiefe = 0) {
   // Nach dem Neuladen ist der Dialog weg: kein Übergang, keine Partie, kein Laden.
   if (f.neugeladen) return;
   if (f.abspann) st.abspann = true;
@@ -284,14 +303,43 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
       if (w.art === "gegenstand") st.besitz.add(w.kennung);
   let ziel = f.reise && reiseErlaubt(f.reise.karte) ? f.reise : null;
   if (uebergang && gilt(st, uebergang.wenn)) ziel = uebergang.ziel;
-  if (f.runde) spieleRunde(welt, st, f.runde);
-  if (f.partieform) spielePartieform(welt, st, f.partieform);
-  if (f.partie) spielePartie(welt, st, f.partie);
+  const ergebnis = spieleFolge(welt, st, f);
   if (ziel) betrete(welt, st, ziel.karte);
-  // Leser: Wer gerade gespielt hat, spricht den Gegner gleich noch einmal an (derselbe Knoten).
-  const nochmal = ziel ? null : st.leser?.nachgespraech(f);
-  if (nochmal)
-    wendeFolgenAn(welt, st, dialog(welt, st, nochmal), null, reiseErlaubt);
+  const nachher = ziel || !ergebnis ? null : rueckmeldeknoten(welt, f, ergebnis);
+  if (!nachher || tiefe >= RUECKMELDUNGEN_HINTEREINANDER) return;
+  const r = dialog(welt, st, nachher);
+  (st.rueckmeldungen = st.rueckmeldungen || []).push({
+    ...ergebnis,
+    knoten: nachher,
+    zeilen: r.zeilen || 0,
+    besucht: r.besucht || [],
+    // Startet die Rückmeldung selbst ohne Wahl eine neue Folge? (Schleife, rueckmeldung.cjs)
+    neustartOhneWahl: Boolean((r.partie || r.runde || r.partieform) && !r.wahlen),
+  });
+  wendeFolgenAn(welt, st, r, null, reiseErlaubt, tiefe + 1);
+}
+
+/** Runde, Partieform oder Partie aus den Folgen; Rückgabe { art, kennung, ausgang } oder null. */
+function spieleFolge(welt, st, f) {
+  if (f.runde) return { art: "runde", kennung: f.runde, ausgang: spieleRunde(welt, st, f.runde) };
+  if (f.partieform) {
+    const ausgang = spielePartieform(welt, st, f.partieform);
+    return { art: "partieform", kennung: f.partieform, ausgang };
+  }
+  if (f.partie) return { art: "partie", kennung: f.partie, ausgang: spielePartie(welt, st, f.partie) };
+  return null;
+}
+
+/** Der Knoten der Rückmeldung: `danach` aus den Daten, sonst der Dialog, der begann; nicht nach Abbruch. */
+function rueckmeldeknoten(welt, f, ergebnis) {
+  if (ergebnis.ausgang === "abgebrochen") return null;
+  const danach =
+    ergebnis.art === "runde"
+      ? welt.rundenDanach[ergebnis.kennung]
+      : ergebnis.art === "partie"
+        ? welt.begegnungDanach[ergebnis.kennung]
+        : null;
+  return danach || f.knoten || null;
 }
 
 /**

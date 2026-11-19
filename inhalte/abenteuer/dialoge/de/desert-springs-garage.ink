@@ -59,6 +59,9 @@ VAR hatKarteTaktikspuernase = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Aus desert-springs-aussen.ink (abend_motel), hier nur gelesen: der Hinweis aufs Motel nach dem
+// Clubkampf (Wunsch des Autors, 19.11.2026).
+VAR abendMotelGesehen = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -174,6 +177,7 @@ Jetzt! #sprecher:mira #stimmung:bitter
 Mira. #sprecher:tomas #stimmung:nachdenklich
 Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand. #sprecher:erzaehler
 {atmeGesagt and not warumAtmeGefragt: -> warum_atme ->}
+{not abendMotelGesehen: Draußen sinkt die Sonne hinter die Tankstelle. Im Motel „Zur Quelle“ wartet euer Zimmer. #sprecher:erzaehler}
 -> END
 
 = warum_atme
@@ -413,3 +417,10 @@ Jetzt ist die Partie fertig. #sprecher:dot #stimmung:nachdenklich
 === dot_alltag ===
 {~Heute kam ein Brief aus Reykjavík. Mein Gegner hat endlich gezogen. Nach vier Monaten.|Briefe sind wie Züge, Liebes. Man schickt sie los und wartet.|Willst du ein Zimmer? Für Schachspieler die Hälfte.} #sprecher:dot #stimmung:laechelt
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Dot, dann weiter wie bisher.
+=== dot_reihe_danach ===
+{not reiheDotBestanden: -> dot}
+Jeder Zug saß. Wie ein Brief, der ankommt, Liebes. #sprecher:dot #stimmung:laechelt
+Mira wartet auf ihren Clubkampf. Aber vorher noch etwas anderes. #sprecher:dot #stimmung:nachdenklich
+-> dot

@@ -165,3 +165,42 @@ Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 un
 Über dir ein Loch im Dach, so groß wie ein Tisch. Ein Lichtstreifen fällt auf die Dielen, mitten in eine Pfütze. #sprecher:erzaehler
 {ambroseSprichtWieder and not abschiedGesehen: Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern}
 -> END
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== set1_danach ===
+{ausgangPortDelacroixSchach960Set1:
+- "sieg": -> blaeser
+- "remis":
+    Remis. Die Band nickt im Takt. #sprecher:blaeser #stimmung:laechelt
+    -> blaeser
+- else:
+    Das Set geht an mich. Die Band spielt trotzdem weiter. #sprecher:blaeser #stimmung:lacht
+    Noch einmal? Ich würfle dir eine neue Grundreihe. #sprecher:blaeser #stimmung:laechelt
+}
+-> END
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== set2_danach ===
+{ausgangPortDelacroixSchach960Set2:
+- "sieg": -> blaeser
+- "remis":
+    Remis. Die Band nickt im Takt. #sprecher:blaeser #stimmung:laechelt
+    -> blaeser
+- else:
+    Das Set geht an mich. Die Band spielt trotzdem weiter. #sprecher:blaeser #stimmung:lacht
+    Noch einmal? Ich würfle dir eine neue Grundreihe. #sprecher:blaeser #stimmung:laechelt
+}
+-> END
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== set3_danach ===
+{ausgangPortDelacroixSchach960Set3:
+- "sieg": -> blaeser
+- "remis":
+    Remis. Die Band nickt im Takt. #sprecher:blaeser #stimmung:laechelt
+    -> blaeser
+- else:
+    Das Set geht an mich. Die Band spielt trotzdem weiter. #sprecher:blaeser #stimmung:lacht
+    Noch einmal? Ich würfle dir eine neue Grundreihe. #sprecher:blaeser #stimmung:laechelt
+}
+-> END

@@ -42,7 +42,11 @@ export interface Runden {
   readonly beendeGedaechtnis: (kennung: string, bestanden: boolean) => void;
   readonly starteSimultan: (kennung: string) => void;
   /** Nach der Ergebniskarte im Simultan: das nächste Brett oder die Gesamtwertung. */
-  readonly weiterImSimultan: (e: Partieergebnis) => void;
+  /**
+   * Nach einer Partie: im Simultan das nächste Brett; `beiEnde` ohne Simultan sofort, im Simultan
+   * nach dem letzten Brett (Rückmeldung, nachergebnis.ts).
+   */
+  readonly weiterImSimultan: (e: Partieergebnis, beiEnde: () => void) => void;
 }
 
 /** Das Simultan aus partieformen.json, oder null. */
@@ -104,9 +108,12 @@ function simultan(k: Oberweltkern, partie: Partien) {
         if (auftrag) partie.startePartie(auftrag, []);
       });
     },
-    weiter: (e: Partieergebnis) => {
+    weiter: (e: Partieergebnis, beiEnde: () => void) => {
       const laeuft = laufendesSimultan(k.standRef.current?.dialogvariablen ?? {});
-      if (!laeuft) return;
+      if (!laeuft) {
+        beiEnde();
+        return;
+      }
       void simultanEintrag(laeuft).then((eintrag) => {
         const aktuell = k.standRef.current;
         const welt = k.weltRef.current;
@@ -120,6 +127,7 @@ function simultan(k: Oberweltkern, partie: Partien) {
         if (r.ende) {
           const werte = { punkte: r.ende.punkte, bretter: eintrag.begegnungen.length };
           k.setzeMeldung(tSpiel("oberwelt.simultan.ende", werte));
+          beiEnde();
         }
       });
     },

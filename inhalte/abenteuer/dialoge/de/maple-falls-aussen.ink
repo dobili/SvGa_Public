@@ -332,6 +332,13 @@ Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stim
 - {not abschiedGesehen: Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still}
 -> END
 
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): nicht bestanden ein Satz von Lily; bestanden wie bisher (lily_danke).
+=== lily_lektion_danach ===
+{springerLilyBestanden: -> lily}
+Lily schiebt das Plastikpferd über den Gehweg. Es hüpft mal zwei Felder, mal drei. #sprecher:erzaehler
+Hüpft der jetzt gerade oder schief? Zeig's mir nochmal, ja? #sprecher:lily #stimmung:nachdenklich
+-> END
+
 // ---------------------------------------------------------------- Einleitung
 
 === einleitung ===

@@ -275,3 +275,10 @@ Neben dem weißen Messwagen liegt eine Mappe im Gras. Auf dem Deckel: „Hochwas
 ~ spurenPM = spurenPM + 1
 ~ gibFund("spurPM3")
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== kapitaen_rueckmeldung ===
+{kapitaensproblemBestanden: -> ereignis_kapitaen}
+Der Zettel stimmt nicht ganz. Das Horn bleibt stumm. #sprecher:kapitaen #stimmung:nachdenklich
+Schau dir die drei Zettel noch einmal an. Das Brett hängt fest, es wartet. #sprecher:kapitaen #stimmung:lacht
+-> END

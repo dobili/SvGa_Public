@@ -172,7 +172,6 @@ function neuerBeobachter(welt, st) {
   const texte = lade(path.join("texte", "de.json"));
   const gefiltert = appFiltertMomente();
   let offen = null;
-  let imNachgespraech = false;
   const fund = (art, wo, text) =>
     b.funde.set([art, wo, text].join("|"), { art, wo, text });
   st.chaos = entscheidungen((begegnung) => {
@@ -205,16 +204,6 @@ function neuerBeobachter(welt, st) {
       return naechsteAntwort(zaehler, offen.datei, antworten);
     },
     ende() {},
-    // Nach Partie oder Runde gleich noch einmal derselbe Knoten (das Nachgespräch), nur einmal.
-    nachgespraech(folgen) {
-      const gespielt = folgen.partie || folgen.runde || folgen.partieform;
-      const knoten =
-        gespielt && !imNachgespraech
-          ? offen.datei + "." + offen.einstieg
-          : null;
-      imNachgespraech = Boolean(knoten);
-      return knoten;
-    },
   };
   b.neues = () => b.zeilen.size + b.funde.size;
   b.spieleMomente = () => {

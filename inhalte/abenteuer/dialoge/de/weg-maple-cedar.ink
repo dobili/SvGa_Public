@@ -501,3 +501,10 @@ Sie hebt nur die Hand und läuft weiter. Zum Reden braucht sie den Atem nicht me
 Von der Joggerin ist heute nichts zu sehen. #sprecher:erzaehler
 Am Apfelstand hängt ein Zeitungsausschnitt. Vielleicht weiß Ada mehr. #sprecher:erzaehler
 -> END
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026).
+=== flohmarkt_rueckmeldung ===
+{wegMapleCedarFinchFallenBestanden: -> ereignis_flohmarkt}
+Eine hat dich erwischt. Sieht eben aus wie Patt. #sprecher:odette #stimmung:lacht
+Komm wieder, wenn du sie noch einmal sehen willst. Ich bin den ganzen Samstag hier. #sprecher:odette #stimmung:laechelt
+-> END

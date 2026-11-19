@@ -310,3 +310,20 @@ Ins Geländer hat jemand Buchstaben geritzt: „M. W. + E. C. 1952“. #sprecher
     Den Stamm muss jemand mit Seil und Flaschenzug wegziehen. Vielleicht braucht in Cedar Creek jemand Holz. #sprecher:erzaehler
     -> END
 }
+
+// Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): Rätsel gelöst oder nicht.
+=== parkbank_danach ===
+{parkbankRaetselBestanden:
+    Drei Stellungen, dreimal matt in einem Zug. Du klappst das grüne Brett zu. #sprecher:erzaehler
+    {not abschiedGesehen:
+        Gut gezählt. Der Herr bei den Enten sucht sein Brett. Bring es ihm. #sprecher:ambrose #stimmung:laechelt
+    - else:
+        Mr. Abernathy sitzt bei den Enten. Er sucht sein Brett bestimmt schon. #sprecher:erzaehler
+    }
+- else:
+    Bei einer Stellung entwischt der König noch. Der Zettel bleibt auf der Bank liegen. #sprecher:erzaehler
+    {not abschiedGesehen:
+        Sieh nach, wohin der König noch kann. Dann versuch es noch einmal. #sprecher:ambrose #stimmung:nachdenklich
+    }
+}
+-> END

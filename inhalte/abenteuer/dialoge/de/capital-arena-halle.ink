@@ -346,7 +346,7 @@ Ich hab ihn nicht gesehen. Ich hab seit dem Frühjahr kein Brett mehr angeguckt.
 Ambrose steht neben dem Brett. #sprecher:erzaehler
 Du hast mich nicht gerufen. #sprecher:ambrose #stimmung:froh
 Dann weiß ich jetzt, dass du mich nicht gebraucht hast. Das ist auch ein schöner Tag. #sprecher:ambrose #stimmung:froh
--> END
+-> halbfinale_zum_gang
 
 === halbfinale_mit_dir ===
 {zugerratenTurm:Ambrose sieht auf den geschlagenen Turm neben der Uhr.|Ambrose sieht auf das Brett, auf den Zug, den ihr zusammen gemacht habt.} #sprecher:erzaehler #musik:mit.dir
@@ -355,6 +355,12 @@ Er hebt die Hand, die auf deiner gelegen hat. Sie ist fast durchsichtig. #sprech
 Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pause:2
 * [„Sie war nicht makellos.“]
 - Sie war das Schönste, was ich je gespielt habe. Und ich habe nur einen Zug gemacht. Und den nicht einmal allein. #sprecher:ambrose #stimmung:lacht
+-> halbfinale_zum_gang
+
+// Wohin danach (Wunsch des Autors, 19.11.2026): Victor wartet im Gang hinter der Halle
+// (vor_dem_finale); wer schon dort ist, hört den Satz nicht.
+=== halbfinale_zum_gang ===
+{not vorDemFinaleGesehen: Die Turnierleiterin ruft das Finale aus. Victor wartet im Gang hinter der Halle. #sprecher:erzaehler}
 -> END
 
 // ---------------------------------------------------------------- Victor: vor dem Finale und Finale
@@ -454,6 +460,8 @@ Wie soll ich das denn aufschreiben? #sprecher:juno #stimmung:froh
 Neben ihr ist ein hellerer Fleck vor der Wand, schmal, hochgeschlossen. Er sieht Victor nach. #sprecher:erzaehler
 {ausgangCapitalArenaFinale == "sieg":Du kannst ihn nicht hören. Aber du siehst seine Lippen: Er läuft zum Telegrafenamt.|Du kannst ihn nicht hören. Aber du siehst, dass er lächelt.} #sprecher:erzaehler #pause:2
 Die Siegerehrung vergisst du. Es gibt einen Pokal, der zu groß ist, und Hände, viele. #sprecher:erzaehler
+// Wohin danach (Wunsch des Autors, 19.11.2026): der Abschied auf der Treppe vor der Arena.
+Als die Halle leer wird, gehst du hinaus auf die Treppe vor der Arena. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Die Gegner der Vorrunde
@@ -604,3 +612,40 @@ Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 ~ angesehenBanner = true
 Über den Tribünen hängt ein langes Banner: „Landesmeisterschaft“. An einer Ecke hat sich die Naht gelöst und flattert. #sprecher:erzaehler
 -> END
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== runde1_danach ===
+-> ergebnis_eintragen("Runde eins", ausgangCapitalArenaRunde1)
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== runde2_danach ===
+-> ergebnis_eintragen("Runde zwei", ausgangCapitalArenaRunde2)
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== runde3_danach ===
+-> ergebnis_eintragen("Runde drei", ausgangCapitalArenaRunde3)
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== runde4_danach ===
+-> ergebnis_eintragen("Runde vier", ausgangCapitalArenaRunde4)
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026): nach dem
+// Sieg gleich die Szene mit Kade (halbfinale_danach), sonst ein Satz und weiter wie bisher.
+=== halbfinale_rueckmeldung ===
+{ausgangCapitalArenaHalbfinale == "sieg" and not halbfinaleDanachGesehen: -> halbfinale_danach}
+{ausgangCapitalArenaHalbfinale:
+- "sieg": Halbfinale gewonnen. Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:laechelt
+- "remis": Halbfinale remis. Für das Finale reicht das nicht. #sprecher:turnierleiterin #stimmung:neutral
+- else: Das Halbfinale ist verloren. #sprecher:turnierleiterin #stimmung:neutral
+}
+-> turnierleiterin
+
+// Gemeinsame Ansage der Turnierrunden (runde1_danach bis runde4_danach): das Ergebnis eintragen,
+// dann weiter wie beim Ansprechen der Turnierleiterin.
+=== ergebnis_eintragen(runde, ausgang) ===
+{ausgang:
+- "sieg": {runde}: Sieg für dich. Ich trage es ein. #sprecher:turnierleiterin #stimmung:neutral
+- "remis": {runde}: Remis. Ein halber Punkt für jeden. #sprecher:turnierleiterin #stimmung:neutral
+- else: {runde}: verloren. Die Vorrunde ist noch nicht vorbei, jeder Punkt zählt. #sprecher:turnierleiterin #stimmung:neutral
+}
+-> turnierleiterin

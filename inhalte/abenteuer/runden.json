@@ -3,6 +3,7 @@
   "runden": [
     {
       "kennung": "mapleFalls.reiheSam",
+      "danach": "maple-falls-clubraum.sam_reihe_danach",
       "ort": "mapleFalls",
       "steller": "mapleFalls.sam",
       "reihe": true,
@@ -11,6 +12,7 @@
     },
     {
       "kennung": "mapleFalls.reiheJuno",
+      "danach": "maple-falls-clubraum.juno_reihe_danach",
       "ort": "mapleFalls",
       "steller": "mapleFalls.juno",
       "reihe": true,
@@ -28,6 +30,7 @@
     },
     {
       "kennung": "mapleFalls.parkbankRaetsel",
+      "danach": "maple-falls-park.parkbank_danach",
       "ort": "mapleFalls",
       "steller": "mapleFalls.abernathy",
       "reihe": false,
@@ -37,6 +40,7 @@
     },
     {
       "kennung": "mapleFalls.springerLily",
+      "danach": "maple-falls-aussen.lily_lektion_danach",
       "ort": "mapleFalls",
       "steller": "mapleFalls.lily",
       "reihe": false,
@@ -47,6 +51,7 @@
     },
     {
       "kennung": "cedarCreek.reiheDex",
+      "danach": "cedar-creek-bibliothek.dex_reihe_danach",
       "ort": "cedarCreek",
       "steller": "cedarCreek.dex",
       "reihe": true,
@@ -55,6 +60,7 @@
     },
     {
       "kennung": "cedarCreek.reiheMae",
+      "danach": "cedar-creek-bibliothek.mae_reihe_danach",
       "ort": "cedarCreek",
       "steller": "cedarCreek.mae",
       "reihe": true,
@@ -107,6 +113,7 @@
     },
     {
       "kennung": "riverton.reiheTamsin",
+      "danach": "riverton-pavillon.tamsin_reihe_danach",
       "ort": "riverton",
       "steller": "riverton.tamsin",
       "reihe": true,
@@ -115,6 +122,7 @@
     },
     {
       "kennung": "riverton.reiheRay",
+      "danach": "riverton-pavillon.ray_reihe_danach",
       "ort": "riverton",
       "steller": "riverton.ray",
       "reihe": true,
@@ -123,6 +131,7 @@
     },
     {
       "kennung": "riverton.slickBeobachten",
+      "danach": "riverton-pavillon.zuschauen_danach",
       "ort": "riverton",
       "steller": "riverton.tamsin",
       "reihe": false,
@@ -164,6 +173,7 @@
     },
     {
       "kennung": "ironwood.reiheHank",
+      "danach": "ironwood-kantine.hank_reihe_danach",
       "ort": "ironwood",
       "steller": "ironwood.hank",
       "reihe": true,
@@ -172,6 +182,7 @@
     },
     {
       "kennung": "ironwood.reihePriya",
+      "danach": "ironwood-kantine.priya_reihe_danach",
       "ort": "ironwood",
       "steller": "ironwood.priya",
       "reihe": true,
@@ -180,6 +191,7 @@
     },
     {
       "kennung": "ironwood.siegelStellung",
+      "danach": "ironwood-museum.siegel_rueckmeldung",
       "ort": "ironwood",
       "steller": "ironwood.teague",
       "reihe": false,
@@ -247,6 +259,7 @@
     },
     {
       "kennung": "portDelacroix.reiheRemy",
+      "danach": "port-delacroix-turnhalle.remy_reihe_danach",
       "ort": "portDelacroix",
       "steller": "portDelacroix.remy",
       "reihe": true,
@@ -304,6 +317,7 @@
     },
     {
       "kennung": "desertSprings.reiheDot",
+      "danach": "desert-springs-garage.dot_reihe_danach",
       "ort": "desertSprings",
       "steller": "desertSprings.dot",
       "reihe": true,
@@ -396,6 +410,7 @@
     },
     {
       "kennung": "wegMapleCedar.finchFallen",
+      "danach": "weg-maple-cedar.flohmarkt_rueckmeldung",
       "ort": "wegMapleCedar",
       "steller": "wegMapleCedar.odette",
       "reihe": false,
@@ -405,6 +420,7 @@
     },
     {
       "kennung": "wegCedarRiverton.zugpartie",
+      "danach": "weg-cedar-riverton.zugpartie_rueckmeldung",
       "ort": "wegCedarRiverton",
       "steller": "wegCedarRiverton.rosalind",
       "reihe": false,
@@ -414,6 +430,7 @@
     },
     {
       "kennung": "lockport.tafelSchleuse",
+      "danach": "lockport-aussen.tafel_rueckmeldung",
       "ort": "lockport",
       "steller": "lockport.imogen",
       "reihe": false,
@@ -423,6 +440,7 @@
     },
     {
       "kennung": "lockport.kahnrennen",
+      "danach": "lockport-aussen.kahnrennen_rueckmeldung",
       "ort": "lockport",
       "steller": "lockport.ruben",
       "reihe": false,
@@ -432,6 +450,7 @@
     },
     {
       "kennung": "lockport.taue",
+      "danach": "lockport-aussen.taue_rueckmeldung",
       "ort": "lockport",
       "steller": "lockport.henrik",
       "reihe": false,
@@ -486,6 +505,7 @@
     },
     {
       "kennung": "wegIronwoodSilicon.stream",
+      "danach": "weg-ironwood-silicon.stream_rueckmeldung",
       "ort": "wegIronwoodSilicon",
       "steller": "wegIronwoodSilicon.kiki",
       "reihe": false,
@@ -495,6 +515,7 @@
     },
     {
       "kennung": "wegSummitCrossroads.geysirblitz",
+      "danach": "weg-summit-crossroads.geysirblitz_rueckmeldung",
       "ort": "wegSummitCrossroads",
       "steller": "wegSummitCrossroads.bell",
       "reihe": false,
@@ -504,6 +525,7 @@
     },
     {
       "kennung": "wegCrossroadsPinewood.lebendschach",
+      "danach": "weg-crossroads-pinewood.lebendschach_rueckmeldung",
       "ort": "wegCrossroadsPinewood",
       "steller": "wegCrossroadsPinewood.ezra",
       "reihe": false,
@@ -514,6 +536,7 @@
     },
     {
       "kennung": "wegSiliconDelacroix.kapitaensproblem",
+      "danach": "weg-silicon-delacroix.kapitaen_rueckmeldung",
       "ort": "wegSiliconDelacroix",
       "steller": "wegSiliconDelacroix.kapitaen",
       "reihe": false,

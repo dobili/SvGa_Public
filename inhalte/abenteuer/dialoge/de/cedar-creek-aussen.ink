@@ -104,18 +104,21 @@ Mrs. Okafor hat eine Thermoskanne dabei. #sprecher:erzaehler
 Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 * [Dazusetzen]
     -> sterne
+// Nicht zu verpassen (19.11.2026): Die Nacht im Lesesaal beginnt erst nach den Sternen (sterne_ende).
+// Wer müde ist, wird von Mae überredet; vorher ging die Szene hier verloren, in der Simulation in
+// neun von zwölf Läufen.
 * [„Ich bin zu müde. Ein andermal.“]
-    Okay. Morgen erzähle ich dir alles. Jede einzelne Sternschnuppe. #sprecher:mae #stimmung:laechelt
-    ~ nachtImLesesaal = true
-    Du gehst früh hinüber in den Lesesaal. Durch das Fenster hörst du die anderen am Steg lachen. #sprecher:erzaehler
-    -> END
+    Nur ein paar Minuten! Die erste kommt bestimmt gleich. #sprecher:mae #stimmung:froh
+    Juno rückt auf der Decke zur Seite und klopft neben sich. #sprecher:erzaehler
+    -> sterne
 
 === sterne ===
 // Runde 11 (VC77 bis VC81, Roman Kapitel 14): weit, warm, zärtlich. Keine Erklärung der
 // Spielwirkung; die Müdigkeit zeigt sich erst am Morgen am Brett. Ambroses Erinnerung nur, wenn
 // die Hand auf dem Brett liegt (sterne_ambrose). Klang: Stille S20 bis zur ersten Sternschnuppe,
 // dann das Nachtstück.
-~ sternennachtGesehen = true
+// sternennachtGesehen erst am Ende (sterne_ende): Wer mitten in der Nacht abbricht, bekommt die
+// Sternennacht am Steg wieder angeboten, sonst bliebe die Quest offen (19.11.2026).
 Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen
 Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
 Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher:erzaehler
@@ -143,10 +146,11 @@ Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor 
 * [Die Augen schließen]
 - -> sterne_ende
 
-// Eigener Knoten, damit die Quest „Sternennacht am Steg“ hier endet: Sie beginnt erst mit dem
-// Dazusetzen (Knoten sterne). Wer ablehnt oder vorher schlafen geht, hat keine offene Quest
-// (Chaos-Simulation, 18.11.2026: Vorher begann sie bei Maes Einladung und blieb dann für immer offen).
+// Eigener Knoten, damit die Quest „Sternennacht am Steg“ erst hier endet (sie beginnt bei Maes
+// Einladung): Wer mitten in der Nacht abbricht, bekommt sie am Steg wieder angeboten. Ablehnen geht
+// nicht mehr (sterne_angebot, okafor_bis_morgen; 19.11.2026), deshalb bleibt sie nie offen.
 === sterne_ende ===
+~ sternennachtGesehen = true
 Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
 Dex' Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")

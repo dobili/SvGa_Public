@@ -110,3 +110,13 @@ Sternen“) und das Teleskop am Steg.
 Ergebnis nach dem Umbau: Startwert 10 (Cedar Creek, 300 Chaos-Schritte) läuft durch; im neuen Lauf
 über die Startwerte 1 bis 60 42 Läufe im Zeitbudget von 2400 s, keine Sackgasse. Gesamtsimulation mit den Startwerten
 1 bis 3: Abspann jeweils erreicht; `ambrose-danach`: 0 Funde.
+
+**Nachtrag 19.11.2026 (zurückgebaut und anders gelöst):** Mit der Quest erst ab dem Dazusetzen
+verpasste die Gesamtsimulation die Sternennacht in neun von zwölf Läufen, und echte Spieler verloren
+die Erinnerung im Tagebuch (die Einladung stand dort nicht mehr). Außerdem blieb die Quest offen, wer
+mitten in der Nacht abbrach. Jetzt: Die Quest beginnt wieder bei Maes Einladung („Am Abend zum Steg
+kommen …“) und endet mit `sterne_ende`; dort erst wird `sternennachtGesehen` gesetzt (nach einem
+Abbruch bietet der Steg die Nacht wieder an). Ablehnen geht nicht mehr: Bei „Ich bin zu müde“
+überredet Mae, bei „Ich geh schlafen“ schickt Mrs. Okafor erst zum Steg; die Nacht im Lesesaal setzt
+nur noch `sterne_ende`. Gesamtsimulation mit den Startwerten 1 bis 12: Sternennacht jedes Mal
+erledigt, Abspann jedes Mal erreicht. Empfehlung, gleich umgesetzt, Widerspruch genügt.

@@ -105,6 +105,7 @@ Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()
 }
 Am Tisch der Turnierleitung stehen Dr. Lin mit einer Mappe und ein Mädchen in einem zu großen Pullover. #sprecher:erzaehler
 Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. Einmal. #sprecher:erzaehler #pause
+Die Turnierleiterin hebt eine Liste über den Kopf. Wer spielt, meldet sich bei ihr, die erste Runde beginnt gleich. #sprecher:erzaehler
 ~ gibFund("teilnehmerausweis")
 * [Den Teilnehmerausweis anstecken]
 - Heute ist Ruhe am Brett. Und heute spielt man ehrlich. Es ist lange her, dass ich das von einem Turnier sagen konnte. #sprecher:ambrose #stimmung:froh

@@ -252,6 +252,7 @@ Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile #sti
 ~ gibKarte("schutzengel")
 Sie legt die Hand auf den Geigenkasten an deiner Seite. #sprecher:erzaehler
 Behalt ihn. Er hat lange keine Geige getragen, jetzt hat er wieder was zu tun. #sprecher:odile #stimmung:laechelt
+Und wenn du aus der Wüste zurückkommst, hängen wir zusammen das Schild am Musikhaus auf. #sprecher:odile #stimmung:laechelt
 Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 -> END
 

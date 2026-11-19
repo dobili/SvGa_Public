@@ -210,3 +210,16 @@
     margin: 0;
   }
 }
+
+/* Umwandlung in der Spielhülle: Die Auswahl der App (Brettbereich, Umwandlung.tsx) nahm die helle
+   Fläche der App, die Schrift aber das Weiß der Hülle; Titel und Figurennamen waren unsichtbar
+   (Spieler-Durchlauf quer, 19.11.2026). Hier in den Farben des Spiels. */
+.abenteuer-huelle .umwandlung,
+.abenteuer-huelle .umwandlung .chip {
+  background: var(--spiel-creme);
+  color: var(--spiel-navy);
+}
+
+.abenteuer-huelle .umwandlung .chip {
+  border-color: var(--spiel-gold-tief);
+}

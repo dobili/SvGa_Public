@@ -4,6 +4,7 @@
  * den restlichen Zügen und nach dem Ende den Satz je Ausgang.
  */
 import { expect, test } from "@playwright/test";
+import { EINLEITUNG_GESEHEN } from "./abenteuer-affe";
 import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
@@ -26,6 +27,7 @@ const STAND = {
   },
   besuchteOrte: ["mapleFalls"],
   karten: [],
+  dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
 function schreibeStand(stand: object): Promise<boolean> {

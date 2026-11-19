@@ -14,6 +14,7 @@
  * Die Werte stehen in der Ausgabe (Zeilen „Bildrate:“).
  */
 import { expect, test, type Page } from "@playwright/test";
+import { EINLEITUNG_GESEHEN } from "./abenteuer-affe";
 import { feldVon } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 
@@ -45,6 +46,7 @@ function stand(karte: (typeof KARTEN)[number]) {
     position: { karte: karte.kennung, ...feldVon(karte.datei, "start"), richtung: "unten" },
     besuchteOrte: ["mapleFalls", karte.ort],
     muenzen: 0,
+    dialogvariablen: EINLEITUNG_GESEHEN,
   };
 }
 

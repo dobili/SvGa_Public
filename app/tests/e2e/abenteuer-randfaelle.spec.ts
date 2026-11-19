@@ -7,6 +7,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import {
+  EINLEITUNG_GESEHEN,
   beobachte,
   findeAusweg,
   GRUNDSTAND,
@@ -215,7 +216,11 @@ test("Dialog: neu laden mitten im Gespräch, danach geht die Quest weiter", asyn
       richtung: "oben",
     },
     gegenstaende: [...GRUNDSTAND.gegenstaende, "limo"],
-    dialogvariablen: { joGetroffen: true, ausgangMapleFallsSkaterJo: "sieg" },
+    dialogvariablen: {
+      ...EINLEITUNG_GESEHEN,
+      joGetroffen: true,
+      ausgangMapleFallsSkaterJo: "sieg",
+    },
   };
   await starteMitStand(page, stand);
   await page.getByTestId("abenteuer-aktion").click();

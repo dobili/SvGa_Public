@@ -195,7 +195,21 @@ async function bedieneLaden(
     return;
   }
   const zu = knoepfe.find((k) => k.klasse.includes("knopf-haupt"));
-  if (zu) await tippeKnopf(lauf, zu);
+  if (zu) {
+    await tippeKnopf(lauf, zu);
+    return;
+  }
+  // „Schließen“ liegt außerhalb des Bildes (Querformat): hinrollen wie ein Mensch und festhalten.
+  const unten = lauf.seite.locator("[data-testid='abenteuer-laden'] > .knopf-haupt");
+  await lauf.seite
+    .screenshot({ path: `${lauf.messung.ordner}/bilder/laden-ohne-schliessen.png` })
+    .catch(() => undefined);
+  if (await tippe(lauf, unten, "Laden „Schließen“ (gerollt)")) {
+    lauf.messung.fund(
+      "rollen",
+      "Laden: der Knopf zum Schließen liegt außerhalb des Bildes, erst nach Rollen tippbar",
+    );
+  }
 }
 
 /** Der Knopf, mit dem ein Mensch dieses Fenster verlässt. */
@@ -249,6 +263,11 @@ export async function bedieneFenster(
   const knoepfe = fensterknoepfe(lage);
   const da = (kennung: string) => lage.kennungen.includes(kennung);
   if (da("abenteuer-abspann")) lauf.messung.meldeAbspann();
+  if (knoepfe.length === 0 && lage.bild === "welt" && da("abenteuer-laden")) {
+    // Laden offen, aber kein Knopf im Bild (alle Waren gesperrt, „Schließen“ unter dem Rand).
+    await bedieneLaden(lauf, knoepfe, g);
+    return true;
+  }
   if (knoepfe.length === 0) {
     // Fenster ohne Knopf: Gedächtnisstellung beim Einprägen, ladende Welt.
     const offen = ["abenteuer-gedaechtnis", "abenteuer-vorfuehrung", "abenteuer-deckwahl"].find(da);
@@ -269,6 +288,21 @@ export async function bedieneFenster(
   if (da("abenteuer-laden") && knoepfe.some((k) => k.fenster === "abenteuer-laden")) {
     await bedieneLaden(lauf, knoepfe, g);
     return true;
+  }
+  if (da("abenteuer-deckwahl") && !knoepfe.some((k) => k.kennung === "abenteuer-deck-los")) {
+    // „Los“ liegt außerhalb des Bildes (Querformat): hinrollen wie ein Mensch und festhalten.
+    const los = lauf.seite.getByTestId("abenteuer-deck-los");
+    await lauf.seite
+      .screenshot({ path: `${lauf.messung.ordner}/bilder/deckwahl-ohne-los.png` })
+      .catch(() => undefined);
+    if (await tippe(lauf, los, "Deckwahl „Los“ (gerollt)")) {
+      lauf.messung.fund(
+        "rollen",
+        `Deckwahl: „Los“ liegt bei ${lage.breite}×${lage.hoehe} außerhalb des Bildes, erst nach Rollen tippbar`,
+      );
+      await lauf.seite.waitForTimeout(300);
+      return true;
+    }
   }
   const knopf = ausgangsknopf(knoepfe, g);
   if (!knopf) {

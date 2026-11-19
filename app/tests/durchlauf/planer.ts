@@ -85,6 +85,8 @@ export class Planer {
   private readonly gesperrt = new Map<string, Set<string>>();
   private grenze = VERSUCHE_UMSEHEN;
   private letzteHaupt = "";
+  private dingeSig = "";
+  private readonly dingeMerker = new Map<string, Ding[]>();
 
   constructor(private readonly daten: Spieldaten) {
     this.bilder = daten.orte.flatMap((ort) =>
@@ -152,15 +154,27 @@ export class Planer {
   }
 
   /** Ziele aus dem Zielhinweis des Spiels und dem Beginn der nächsten Hauptquest. */
-  private hinweise(stand: Abenteuerstand): Ziel[] {
+  private hinweise(stand: Abenteuerstand, art: "haupt" | "rest"): Ziel[] {
     const sig = questsignatur(stand);
     const daten = this.daten as unknown as Parameters<typeof zielangaben>[1];
-    const angaben: { a: Zielangabe; grund: string }[] = zielangaben(stand, daten).map((a) => ({
-      a,
-      grund: "Zielhinweis",
-    }));
-    const naechste = this.naechsteHauptquest(stand);
-    if (naechste) angaben.push(naechste);
+    type Schritt = Parameters<typeof zielangabe>[0];
+    // Laufende Quests wie im Spiel: Hauptquests zuerst, die zuletzt angenommene vorn.
+    const laufend = stand.quests
+      .filter((q) => !q.erledigt)
+      .map((q) => ({ q, d: this.daten.quests.find((x) => x.kennung === q.kennung) }))
+      .sort((x, y) => y.q.angenommen.localeCompare(x.q.angenommen));
+    const angaben: { a: Zielangabe; grund: string }[] = [];
+    for (const { q, d } of laufend) {
+      const schritt = d?.schritte[q.schritt] as Schritt | undefined;
+      const a =
+        schritt && (d?.haupt === true) === (art === "haupt") ? zielangabe(schritt, daten) : null;
+      if (a) angaben.push({ a, grund: art === "haupt" ? "Zielhinweis" : "Zielhinweis Nebenquest" });
+    }
+    if (art === "haupt" && laufend.length === 0) {
+      // Lücke zwischen zwei Quests: das Ziel aus „Was jetzt?“ (wie im Spiel).
+      angaben.push(...zielangaben(stand, daten).map((a) => ({ a, grund: "Zielhinweis" })));
+    }
+    if (art === "rest") angaben.push(...this.naechsteHauptquests(stand));
     return angaben.flatMap(({ a, grund }) => {
       const karte = zielkarte(a, this.bilder);
       if (!karte) return [];
@@ -191,14 +205,8 @@ export class Planer {
       const knoten = schritt?.ereignis.art === "dialog" ? schritt.ereignis.knoten : undefined;
       if (!knoten) continue;
       for (const e of einstiegeZu(this.daten, knoten)) {
-        const bild = this.bilder.find(
-          (b) =>
-            (e.karte ? b.kennung === e.karte : b.kennung.startsWith(`${e.ort}.`)) &&
-            b.objekte.has(e.name) &&
-            (b.kennung === karte || !ziele.some((z) => z.name === e.name)),
-        );
-        const passt = this.bilder.find((b) => b.kennung === karte && b.objekte.has(e.name));
-        const wahl = passt ?? bild;
+        // Nur Einstiege auf dieser Karte: Der Knoten des Schritts gehört zu ihr.
+        const wahl = this.bilder.find((b) => b.kennung === karte && b.objekte.has(e.name));
         if (wahl && !ziele.some((z) => z.karte === wahl.kennung && z.name === e.name)) {
           ziele.push({ karte: wahl.kennung, name: e.name });
         }
@@ -212,7 +220,7 @@ export class Planer {
    * der Gebiete am weitesten vorn liegt, aber nicht hinter dem Beginn der zuletzt begonnenen
    * (der Epilog beginnt wieder in Maple Falls und kommt deshalb zuletzt).
    */
-  private naechsteHauptquest(stand: Abenteuerstand): { a: Zielangabe; grund: string } | null {
+  private naechsteHauptquests(stand: Abenteuerstand): { a: Zielangabe; grund: string }[] {
     const daten = this.daten as unknown as Parameters<typeof zielangaben>[1];
     const rang = (q: Spieldaten["quests"][number]) => {
       const schritt = { text: "", ereignis: q.start } as Parameters<typeof zielangabe>[0];
@@ -228,17 +236,32 @@ export class Planer {
     // Eine Quest, die in der Datei hinter einer offenen Quest eines späteren Gebiets steht,
     // kommt erst nach ihr (der Epilog in Maple Falls nach der Meisterschaft).
     const wartet = (h: (typeof offen)[number]) => offen.some((o) => o.i > h.i && o.nr < h.nr);
-    const reihe = offen.filter((h) => !wartet(h)).sort((x, y) => x.i - y.i || x.nr - y.nr);
-    const wahl = reihe[0] ?? offen[0];
-    return wahl?.a ? { a: wahl.a, grund: `Beginn von ${wahl.q.kennung}` } : null;
+    // Alle offenen Anfänge, die wartenden zuletzt: Ist der erste gerade nicht erreichbar (Juno
+    // schickt erst nach Hause, bevor es nach Ironwood geht), kommt der nächste an die Reihe.
+    const ordnung = (x: (typeof offen)[number], y: (typeof offen)[number]) =>
+      Number(wartet(x)) - Number(wartet(y)) || x.i - y.i || x.nr - y.nr;
+    return [...offen]
+      .sort(ordnung)
+      .flatMap((h) => (h.a ? [{ a: h.a, grund: `Beginn von ${h.q.kennung}` }] : []));
   }
 
   /** Dinge einer Karte, die der Spieler anfassen kann (keine Übergänge, kein Start). */
   private dinge(karte: string, stand: Abenteuerstand): Ding[] {
-    return kartenwissen(this.daten, karte, stand).dinge.filter(
-      (d) =>
-        d.figur !== null || (d.regel !== null && ["gegenstand", "dialog"].includes(d.regel.art)),
-    );
+    // Gemerkt je Stand: Das Umsehen fragt viele Karten ab, und jede kostet eine Kollisionsrechnung.
+    const sig = signatur(stand);
+    if (sig !== this.dingeSig) {
+      this.dingeSig = sig;
+      this.dingeMerker.clear();
+    }
+    let liste = this.dingeMerker.get(karte);
+    if (!liste) {
+      liste = kartenwissen(this.daten, karte, stand).dinge.filter(
+        (d) =>
+          d.figur !== null || (d.regel !== null && ["gegenstand", "dialog"].includes(d.regel.art)),
+      );
+      this.dingeMerker.set(karte, liste);
+    }
+    return liste;
   }
 
   /** Karten in der Reihenfolge der Entfernung (über offene Ausgänge) im erlaubten Gebiet. */
@@ -261,9 +284,12 @@ export class Planer {
   }
 
   /** Das nächste Ziel beim Umsehen: ein Ding auf der nächsten Karte, auf der noch etwas offen ist. */
-  private umsehen(stand: Abenteuerstand, weit: boolean): Ziel | null {
+  private umsehen(stand: Abenteuerstand, weite: "ort" | "nah" | "weit"): Ziel | null {
     const haupt = hauptsignatur(this.daten, stand);
-    for (const karte of this.kartenInDerNaehe(stand, weit)) {
+    const hier = findeKarte(this.daten, stand.position.karte)?.ort.kennung;
+    const imOrt = (karte: string) => findeKarte(this.daten, karte)?.ort.kennung === hier;
+    const karten = this.kartenInDerNaehe(stand, weite === "weit");
+    for (const karte of weite === "ort" ? karten.filter(imOrt) : karten) {
       const betreten = `um|${haupt}|${karte}|`;
       if (karte !== stand.position.karte && this.frei(betreten, 1)) {
         return { karte, name: null, grund: "Umsehen: Karte betreten", schluessel: betreten };
@@ -291,12 +317,19 @@ export class Planer {
     }
     // Die Karte, auf der der Held steht, gilt als betreten.
     this.versuche.set(`um|${haupt}|${stand.position.karte}|`, 1);
-    for (const z of this.hinweise(stand)) {
-      if (!this.frei(z.schluessel, VERSUCHE_HINWEIS)) continue;
-      if (z.karte === stand.position.karte || this.weg(stand, z.karte)) return z;
-    }
+    const erreichbar = (z: Ziel) =>
+      this.frei(z.schluessel, VERSUCHE_HINWEIS) &&
+      (z.karte === stand.position.karte || this.weg(stand, z.karte) !== null);
+    const hauptziel = this.hinweise(stand, "haupt").find(erreichbar);
+    if (hauptziel) return hauptziel;
+    // Der Hinweis der Hauptquest führt gerade nicht weiter (Tür zu, schon alles versucht): erst
+    // im Ort umsehen, wie ein Mensch es täte, bevor es zu Nebenquests und fernen Anfängen geht.
+    const imOrt = this.umsehen(stand, "ort");
+    if (imOrt) return imOrt;
+    const nebenziel = this.hinweise(stand, "rest").find(erreichbar);
+    if (nebenziel) return nebenziel;
     for (; this.grenze <= VERSUCHE_HOECHSTENS; this.grenze++) {
-      const ziel = this.umsehen(stand, false) ?? this.umsehen(stand, true);
+      const ziel = this.umsehen(stand, "nah") ?? this.umsehen(stand, "weit");
       if (ziel) return ziel;
     }
     return null;

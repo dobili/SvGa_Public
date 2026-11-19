@@ -42,6 +42,14 @@ const ADRESSE = `http://localhost:${process.env.PLAYWRIGHT_PORT ?? "4183"}`;
 const STAND_DATEI = process.env.DURCHLAUF_STAND ?? "";
 /** So lange wartet der Durchlauf auf die Nutzerdaten der App, um den Stand einzuspielen (ms). */
 const STAND_FRIST_MS = 30_000;
+/** So oft schreibt der Lauf ein Lebenszeichen, mit so vielen Knöpfen (ms). */
+const PULS_MS = 60_000;
+const PULS_KNOEPFE = 12;
+/** Nach so vielen Lesungen ohne Antwort des Speichers lädt der Lauf die Seite neu. */
+const OHNE_SPEICHER_NEULADEN = 3;
+/** So lange wartet ein Griff nach einem Element und ein Seitenwechsel höchstens (ms). */
+const GRIFF_FRIST_MS = 5000;
+const SEITEN_FRIST_MS = 60_000;
 /** Name des Helden im Durchlauf. */
 const HELDNAME = "Kim";
 /** So lange darf das Grundpaket laden (ms). */
@@ -114,6 +122,9 @@ async function spieleStandEin(seite: Page, daten: Spieldaten, messung: Messung):
     if ((await liesSpeicher(seite)).stand) return;
     const stand = standAus(daten, STAND_DATEI);
     if (await seite.evaluate(schreibeStandImBrowser, stand).catch(() => false)) {
+      // Neu laden, bevor die App weiterschreibt: Sonst überschriebe sie den Stand mit dem, den
+      // sie beim Start im Kopf hatte (ohne Abenteuer), und das Spiel begänne von vorn.
+      await seite.reload();
       messung.log(
         `=== Simulierter Aktbeginn eingespielt: Akt ${stand.handlung.akt}, ${stand.position.karte} ===`,
       );
@@ -149,6 +160,10 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
     serviceWorkers: "allow",
     ...(pfad ? { executablePath: pfad } : {}),
   });
+  // Ohne Frist wartete jeder Griff nach einem Element endlos (etwa nach dem Steuerkreuz, während
+  // ein Fenster offen ist): Der Lauf stand dann minutenlang still (18. und 19.11.2026).
+  kontext.setDefaultTimeout(GRIFF_FRIST_MS);
+  kontext.setDefaultNavigationTimeout(SEITEN_FRIST_MS);
   const seite = kontext.pages()[0] ?? (await kontext.newPage());
   seite.on("pageerror", (e) => messung.fund("ausnahme", e.message.slice(0, 300)));
   const lauf: Lauf = {
@@ -171,12 +186,21 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
   let fremdSeit = 0;
   let grund = "Zeit um";
   let takt = Date.now();
+  let puls = Date.now();
+  let ohneSpeicher = 0;
   let fotos = 0;
   while (Date.now() < ende) {
     const lage = await liesLage(seite);
     const jetzt = Date.now();
     messung.jetzt.echtMs += jetzt - takt;
     takt = jetzt;
+    if (jetzt - puls > PULS_MS) {
+      // Lebenszeichen: Was liegt auf dem Bildschirm? (Hilft, wenn der Lauf still steht.)
+      puls = jetzt;
+      const knoepfe = lage.knoepfe.map((k) => k.text.slice(0, 24)).slice(0, PULS_KNOEPFE);
+      messung.log(`Puls: Bild ${lage.bild}, Kachel ${lage.kachel}, Knöpfe: ${knoepfe.join(" | ")}`);
+      if (lage.bild !== "welt") await foto(seite, ordner, "puls");
+    }
     if (lage.bild === "partie") {
       await mitFrist(spielePartie(lauf, g), "Partie");
     } else if (lage.bild === "aufgaben") {
@@ -186,6 +210,18 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
     } else if (lage.bild === "welt") {
       fremdSeit = 0;
       const stand = (await liesSpeicher(seite)).stand;
+      if (!stand) {
+        // Welt da, aber der Speicher antwortet nicht: melden und neu laden wie ein Mensch.
+        ohneSpeicher += 1;
+        if (ohneSpeicher === OHNE_SPEICHER_NEULADEN) {
+          messung.fund("speicher", "Der Speicher der App antwortet nicht; Seite neu geladen");
+          await seite.reload().catch(() => undefined);
+          ohneSpeicher = 0;
+        }
+        await seite.waitForTimeout(500);
+        continue;
+      }
+      ohneSpeicher = 0;
       if (stand) {
         g.signatur = signatur(stand);
         messung.akt = stand.handlung.akt;

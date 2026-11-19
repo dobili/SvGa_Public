@@ -36,9 +36,19 @@ export const KACHEL = 16;
 
 const INHALTE = new URL("../../../inhalte/abenteuer/", import.meta.url);
 
-/** Liest eine JSON-Datei aus inhalte/abenteuer. */
+/** Schon gelesene Dateien: Die Wegsuche über viele Karten läse sonst jede Karte immer wieder. */
+const gelesen = new Map<string, unknown>();
+
+/**
+ * Liest eine JSON-Datei aus inhalte/abenteuer (einmal je Lauf; die Daten ändern sich nicht).
+ * Warum gemerkt: Ohne das brauchte ein einziger Schritt zu einem fernen Ziel Minuten (jede
+ * Wegsuche las über hundert Karten neu, Befund vom 18.11.2026).
+ */
 export function lies<T>(pfad: string): T {
-  return JSON.parse(readFileSync(new URL(pfad, INHALTE), "utf8")) as T;
+  if (!gelesen.has(pfad)) {
+    gelesen.set(pfad, JSON.parse(readFileSync(new URL(pfad, INHALTE), "utf8")));
+  }
+  return gelesen.get(pfad) as T;
 }
 
 /** Ein Auslöser aus orte.json. */
@@ -257,6 +267,17 @@ export interface Ausgang {
  * Beispiel: Dachboden → [{ name: "treppe", nach: "mapleFalls.zimmer" }].
  */
 export function ausgaengeVon(daten: Spieldaten, kennung: string): Ausgang[] {
+  const bekannt = ausgangsmerker.get(kennung);
+  if (bekannt) return bekannt;
+  const liste = berechneAusgaenge(daten, kennung);
+  ausgangsmerker.set(kennung, liste);
+  return liste;
+}
+
+/** Gemerkte Ausgänge je Karte (sie hängen nur von den Daten ab). */
+const ausgangsmerker = new Map<string, Ausgang[]>();
+
+function berechneAusgaenge(daten: Spieldaten, kennung: string): Ausgang[] {
   const fund = findeKarte(daten, kennung);
   if (!fund) return [];
   const dateien = [fund.karte.datei, ...Object.values(fund.karte.zustaende ?? {})];

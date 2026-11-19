@@ -27,6 +27,8 @@ const STEHT_MS = 1100;
 /** Frist für ein gerades Stück je Kachel und als Zuschlag (ms). */
 const MS_JE_KACHEL = 420;
 const ZUSCHLAG_MS = 2500;
+/** So viel länger als die Frist im Browser wartet der Durchlauf auf dessen Antwort (ms). */
+const NOTFALL_MS = 5000;
 /** So oft plant der Durchlauf auf einer Strecke um, bevor er aufgibt. */
 const MAX_UMWEGE = 12;
 /** So lange drückt der Held zum Umdrehen (ms). */
@@ -82,9 +84,13 @@ function warteAufKachelImBrowser(a: {
       else if (!a.erlaubt.includes(kachel)) grund = "abseits";
       else if (jetzt - seit > a.stehtMs) grund = "steht";
       else if (jetzt - beginn > a.fristMs) grund = "frist";
-      if (grund) fertig({ grund, kachel });
-      else requestAnimationFrame(takt);
+      if (!grund) return;
+      clearInterval(uhr);
+      fertig({ grund, kachel });
     };
+    // Mit einer Uhr statt Bild für Bild: Zeichnet der Browser gerade keine Bilder (Last, Seite
+    // im Hintergrund), käme sonst nie eine Antwort, und der Durchlauf hinge (18.11.2026).
+    const uhr = setInterval(takt, 16);
     takt();
   });
 }
@@ -98,14 +104,20 @@ async function halteBis(
 ): Promise<Halt> {
   const beginn = Date.now();
   if (!(await halteRichtung(lauf, richtung))) return "fenster";
-  const ergebnis = await lauf.seite
+  const fristMs = erlaubt.length * MS_JE_KACHEL + ZUSCHLAG_MS;
+  const warten = lauf.seite
     .evaluate(warteAufKachelImBrowser, {
       ziel: `${ziel.x},${ziel.y}`,
       erlaubt: erlaubt.map((k) => `${k.x},${k.y}`),
       stehtMs: STEHT_MS,
-      fristMs: erlaubt.length * MS_JE_KACHEL + ZUSCHLAG_MS,
+      fristMs,
     })
     .catch(() => ({ grund: "fenster", kachel: "" }));
+  // Antwortet die Seite gar nicht (eingefroren), endet das Stück trotzdem nach der Frist.
+  const notfall = new Promise<{ grund: string; kachel: string }>((fertig) => {
+    setTimeout(() => fertig({ grund: "frist", kachel: "" }), fristMs + NOTFALL_MS);
+  });
+  const ergebnis = await Promise.race([warten, notfall]);
   await lasseRichtung(lauf);
   // Die Wartezeit vor einem Hindernis ist keine Laufzeit.
   const gewartet = ergebnis.grund === "steht" ? STEHT_MS : 0;
@@ -123,6 +135,37 @@ function geradesStueck(weg: readonly Kachelort[]): { richtung: Richtung; kacheln
     kacheln.push(weg[i] as Kachelort);
   }
   return { richtung, kacheln };
+}
+
+/** Die beiden Richtungen quer zu einer Laufrichtung. */
+const QUER: Readonly<Record<Richtung, readonly Richtung[]>> = {
+  oben: ["links", "rechts"],
+  unten: ["links", "rechts"],
+  links: ["unten", "oben"],
+  rechts: ["unten", "oben"],
+};
+/** So lange drückt der Held beim Rütteln quer (ms). */
+const RUETTELN_MS = 130;
+
+/**
+ * Rütteln an einer Engstelle: ein kurzes Stück quer, dann wieder in die Laufrichtung. Manche
+ * Durchlässe sind nur wenige Pixel breit (Geländer, Bänke); ein Mensch kommt dort durch, wenn er
+ * etwas versetzt anläuft. Ausgabe: ob der Held danach auf der nächsten Kachel steht.
+ */
+async function ruettle(lauf: Lauf, hier: Kachelort, richtung: Richtung): Promise<boolean> {
+  const vor = { x: hier.x + VERSATZ[richtung].x, y: hier.y + VERSATZ[richtung].y };
+  for (const quer of QUER[richtung]) {
+    if (!(await halteRichtung(lauf, quer))) return false;
+    await lauf.seite.waitForTimeout(RUETTELN_MS);
+    await lasseRichtung(lauf);
+    const stand = feldAus((await liesLage(lauf.seite)).kachel);
+    if (!stand || stand.x !== hier.x || stand.y !== hier.y) return false;
+    if ((await halteBis(lauf, richtung, vor, [hier, vor])) === "ziel") {
+      lauf.messung.log(`Engstelle vor ${vor.x},${vor.y}: mit Rütteln (${quer}) durchgekommen`);
+      return true;
+    }
+  }
+  return false;
 }
 
 /** Wie ein Gang endete. */
@@ -201,8 +244,13 @@ export async function geheZu(
       umweg--;
       continue;
     }
-    // Aufgehalten: die Kachel vor dem Helden sperren und neu planen.
+    // Aufgehalten: erst rütteln wie ein Mensch (ein Stück quer, dann wieder vor), dann die Kachel
+    // vor dem Helden sperren und neu planen.
     const jetzt = feldAus((await liesLage(lauf.seite)).kachel);
+    if (jetzt && halt === "steht" && (await ruettle(lauf, jetzt, richtung))) {
+      umweg--;
+      continue;
+    }
     if (jetzt) {
       const vor = `${jetzt.x + VERSATZ[richtung].x},${jetzt.y + VERSATZ[richtung].y}`;
       gesperrt.add(vor);
@@ -274,14 +322,18 @@ function warteAufWechselImBrowser(a: { kachel: string; fristMs: number }): Promi
     const bild = document.querySelector(".abenteuer-welt canvas");
     const takt = () => {
       const kachel = document.querySelector("[data-testid='abenteuer-kachel']")?.textContent ?? "";
-      if (document.querySelector("[data-testid='abenteuer-dialog']")) return fertig("fenster");
+      let grund: string | null = null;
+      if (document.querySelector("[data-testid='abenteuer-dialog']")) grund = "fenster";
       // Die neue Karte lädt: Das Steuerkreuz verschwindet, dann wechselt das Bild.
-      if (document.querySelector(".abenteuer-welt canvas") !== bild) return fertig("karte");
-      if (document.querySelector(".abenteuer-steuerkreuz") === null) return fertig("karte");
-      if (kachel !== a.kachel) return fertig("versetzt");
-      if (performance.now() - beginn > a.fristMs) return fertig("frist");
-      requestAnimationFrame(takt);
+      else if (document.querySelector(".abenteuer-welt canvas") !== bild) grund = "karte";
+      else if (document.querySelector(".abenteuer-steuerkreuz") === null) grund = "karte";
+      else if (kachel !== a.kachel) grund = "versetzt";
+      else if (performance.now() - beginn > a.fristMs) grund = "frist";
+      if (!grund) return;
+      clearInterval(uhr);
+      fertig(grund);
     };
+    const uhr = setInterval(takt, 16);
     takt();
   });
 }

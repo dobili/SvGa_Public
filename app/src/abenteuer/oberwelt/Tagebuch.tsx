@@ -9,8 +9,11 @@
  * „Ansehen“ zum Nachspielen in der Hülle; der Rückruf sichert vorher die Position des Helden.
  * „Gegner“ (N2621): was der Leser über Gegner weiß, die freigeschalteten Steckbriefzeilen je
  * Gegner und „vorbereitet“ für analysierte (oberwelt/steckbrieftext.ts, gegnerakten).
+ * Zielpfeil auf Wunsch (Wunsch des Autors, 19.11.2026): Jede laufende Aufgabe mit einem Ziel auf
+ * der Karte hat ein kleines goldenes Dreieck wie der Hinweis in der Welt. Antippen verfolgt sie (der
+ * Pfeil zeigt auf ihr Ziel), noch einmal Antippen hört auf (regeln/verfolgung.ts).
  * Abhängigkeiten: regeln/quests.ts, texte/texte.ts, app/blattstapel.ts, anbindung/meinePartien.ts,
- * speicher/speicher.ts (Partien der App).
+ * speicher/speicher.ts (Partien der App), regeln/verfolgung.ts, oberwelt/zielsuche.ts.
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { useSpeicher } from "../../speicher/speicher";
@@ -25,23 +28,30 @@ import { FinchKarte } from "./FinchKarte";
 import { EigeneSeiten } from "./Tagebuchseite";
 import { gegnerakten } from "./steckbrieftext";
 import { wasJetzt } from "./wasjetzt";
+import { verfolgteLaufendeQuest } from "../regeln/verfolgung";
+import { zielangabe } from "./zielsuche";
+import "../tagebuch.css";
 
 export function Tagebuch({
   stand,
   daten,
   beiSchliessen,
   beiPartie,
+  beiZielpfeil,
 }: {
   readonly stand: Abenteuerstand;
   readonly daten: Spieldaten;
   readonly beiSchliessen: () => void;
   /** Öffnet eine beendete Partie zum Nachspielen (Id der Partie in der App). */
   readonly beiPartie: (id: string) => void;
+  /** Symbol einer Quest angetippt: verfolgen oder aufhören (regeln/verfolgung.ts). */
+  readonly beiZielpfeil: (kennung: string) => void;
 }) {
   useZurueckSchliesst(true, beiSchliessen);
   const laufend = stand.quests.filter((q) => !q.erledigt);
   const erledigt = stand.quests.filter((q) => q.erledigt);
   const questdaten = (kennung: string) => daten.quests.find((q) => q.kennung === kennung);
+  const verfolgt = verfolgteLaufendeQuest(stand);
   return (
     <section
       className="abenteuer-menue abenteuer-tagebuch"
@@ -56,9 +66,20 @@ export function Tagebuch({
         {laufend.map((q) => {
           const quest = questdaten(q.kennung);
           const schritt = quest ? naechsterSchritt(quest, q) : null;
+          const datenSchritt = quest?.schritte[q.schritt];
+          const hatZiel = datenSchritt ? zielangabe(datenSchritt, daten) !== null : false;
+          const titel = tSpiel(quest?.titel ?? q.kennung);
           return (
             <li key={q.kennung}>
-              <strong>{tSpiel(quest?.titel ?? q.kennung)}</strong>
+              {hatZiel && (
+                <Zielpfeilknopf
+                  titel={titel}
+                  an={verfolgt === q.kennung}
+                  kennung={q.kennung}
+                  beiKlick={() => beiZielpfeil(q.kennung)}
+                />
+              )}
+              <strong>{titel}</strong>
               {schritt && <span> – {tSpiel(schritt)}</span>}
             </li>
           );
@@ -248,5 +269,37 @@ function MeinePartien({ beiPartie }: { beiPartie: (id: string) => void }) {
         </ul>
       )}
     </>
+  );
+}
+
+/**
+ * Das Symbol einer laufenden Aufgabe: goldenes Dreieck (wie der Hinweis über dem Ziel in der Welt,
+ * oberwelt/zielmarker.ts). Gedrückt zeigt der Pfeil auf dem Spielfeld zu ihrem Ziel.
+ */
+function Zielpfeilknopf({
+  titel,
+  an,
+  kennung,
+  beiKlick,
+}: {
+  readonly titel: string;
+  readonly an: boolean;
+  readonly kennung: string;
+  readonly beiKlick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className="abenteuer-zielpfeilknopf"
+      aria-pressed={an}
+      aria-label={tSpiel("tagebuch.zielpfeil", { titel })}
+      title={tSpiel(an ? "tagebuch.zielpfeilAus" : "tagebuch.zielpfeilAn")}
+      data-testid={`abenteuer-zielpfeil-${kennung}`}
+      onClick={beiKlick}
+    >
+      <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+        <polygon points="1,2 11,2 6,11" />
+      </svg>
+    </button>
   );
 }

@@ -34,7 +34,6 @@ import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { useAktton } from "../paket/aktton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
 import { Steuerkreuzwahl } from "./Steuerkreuzwahl";
-import { Zielhinweiswahl } from "./Zielhinweiswahl";
 import { Tonregler } from "./Tonregler";
 import { Ladestand } from "./Ladestand";
 import { groessentext, mbText } from "./groesse";
@@ -209,7 +208,6 @@ function Spielmenue({
         </>
       )}
       <Steuerkreuzwahl />
-      <Zielhinweiswahl />
       <Tonregler />
       <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
         {t("abenteuer.paketLoeschen")}

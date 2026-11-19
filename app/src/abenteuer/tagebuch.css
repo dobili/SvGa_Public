@@ -1,0 +1,37 @@
+/*
+ * Clubtagebuch, Ergänzungen zur Menükarte (abenteuer.css): der Zielpfeil auf Wunsch je laufender
+ * Aufgabe. Gehört zu oberwelt/Tagebuch.tsx; Farben aus spielfarben.css.
+ */
+
+/* Zielpfeil auf Wunsch im Tagebuch (Wunsch des Autors, 19.11.2026): kleines Dreieck vor jeder
+   laufenden Aufgabe mit Ziel; gedrückt (aria-pressed) golden gefüllt, sonst nur umrandet. Das
+   Tippfeld ist groß genug für den Daumen, das Zeichen klein wie der Hinweis in der Welt. */
+.abenteuer-zielpfeilknopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--raster) * 4);
+  min-height: calc(var(--raster) * 4);
+  margin-right: calc(var(--raster) * 0.5);
+  padding: 0;
+  border: 1px solid var(--spiel-gold-tief);
+  border-radius: var(--raster);
+  background: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.abenteuer-zielpfeilknopf svg polygon {
+  fill: transparent;
+  stroke: var(--spiel-gold-tief);
+  stroke-width: 1.2;
+}
+
+.abenteuer-zielpfeilknopf[aria-pressed="true"] {
+  background: var(--spiel-gold-tief);
+}
+
+.abenteuer-zielpfeilknopf[aria-pressed="true"] svg polygon {
+  fill: var(--spiel-gold);
+  stroke: var(--spiel-gold);
+}

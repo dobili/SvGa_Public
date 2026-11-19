@@ -9,10 +9,14 @@
  * Questtexte allein reichen nicht.
  * Rolle im Gesamtbild: Reine Funktionen ohne Phaser und React; oberwelt/useZielhinweis.ts lädt die
  * Karten und gibt das Feld an die Szene (oberwelt/zielmarker.ts zeichnet es).
- * Abhängigkeiten: daten/laden.ts (Typen), schnittstelle/spielstand.ts, oberwelt/wasjetzt.ts.
+ * Seit dem 19.11.2026 zeigt der Pfeil nur auf das Ziel der verfolgten Quest (verfolgtesZiel);
+ * zielangaben bleibt für den Planer des Spieler-Durchlaufs (tests/durchlauf/planer.ts).
+ * Abhängigkeiten: daten/laden.ts (Typen), schnittstelle/spielstand.ts, oberwelt/wasjetzt.ts,
+ * regeln/verfolgung.ts.
  */
 import type { Questdaten, Spieldaten } from "../daten/laden";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import { verfolgteLaufendeQuest } from "../regeln/verfolgung";
 import { wasJetzt } from "./wasjetzt";
 
 /** Kantenlänge einer Kachel der Tiled-Karten in Pixeln. */
@@ -118,6 +122,20 @@ export function zielangaben(stand: Abenteuerstand, daten: Spieldaten): Zielangab
   const luecke = wasJetzt(stand.dialogvariablen);
   const ziel = luecke ? LUECKENZIELE[luecke] : undefined;
   return ziel ? [ziel] : [];
+}
+
+/**
+ * Die Zielangabe der verfolgten Quest (regeln/verfolgung.ts): ihr laufender Schritt, oder null,
+ * wenn nichts verfolgt wird, die Quest erledigt ist oder der Schritt kein Ziel hat. Der Pfeil zeigt
+ * seit dem 19.11.2026 nur noch hierhin (Wunsch des Autors: Pfeile nur auf Wunsch).
+ * Beispiel: verfolgt „mapleFalls.ersterAbend“ im ersten Schritt → { karte: „mapleFalls.wohnzimmer“,
+ * objekt: „mutter“ }.
+ */
+export function verfolgtesZiel(stand: Abenteuerstand, daten: Spieldaten): Zielangabe | null {
+  const kennung = verfolgteLaufendeQuest(stand);
+  const q = stand.quests.find((x) => x.kennung === kennung && !x.erledigt);
+  const schritt = q ? daten.quests.find((d) => d.kennung === q.kennung)?.schritte[q.schritt] : null;
+  return schritt ? zielangabe(schritt, daten) : null;
 }
 
 /** Rohe Tiled-Objekte einer Karte (alle Objektebenen). */

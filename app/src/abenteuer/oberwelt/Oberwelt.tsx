@@ -50,6 +50,7 @@ import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
 import { eingangsdialog } from "./eingang";
+import { schalteVerfolgung } from "../regeln/verfolgung";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
@@ -309,6 +310,7 @@ export function Oberwelt() {
           stand={stand}
           daten={welt.daten}
           beiSchliessen={() => setzeTagebuch(false)}
+          beiZielpfeil={(kennung) => schreibe(schalteVerfolgung(stand, kennung))}
           // Position sichern wie vor einer Partie, dann die alte Partie in der Hülle zeigen.
           beiPartie={(id) => {
             const mitPosition = { ...stand, position: k.position(stand) };

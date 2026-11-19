@@ -37,14 +37,23 @@ function useErklaerungen(k: Oberweltkern, frei: boolean): void {
  * nach gut zwei Sekunden aus (abenteuer.css); jede neue Karte zeigt es neu.
  */
 export function Orientierung({ k, frei }: { readonly k: Oberweltkern; readonly frei: boolean }) {
-  useZielhinweis(k);
+  const ziel = useZielhinweis(k);
   useErklaerungen(k, frei);
   const welt = k.welt;
   const name = welt?.ort.karten.find((x) => x.kennung === welt.kennung)?.name;
-  if (!welt || !name) return null;
+  // Verstecktes Feld für Oberflächentests: wohin der Pfeil gerade zeigt („x,y“) oder „aus“.
+  const zielfeld = (
+    <span hidden data-testid="abenteuer-zielpfeil-feld">
+      {ziel ? `${ziel.x},${ziel.y}` : "aus"}
+    </span>
+  );
+  if (!welt || !name) return zielfeld;
   return (
-    <p key={welt.kennung} className="abenteuer-ortsschild" data-testid="abenteuer-ortsschild">
-      {tSpiel(name)}
-    </p>
+    <>
+      {zielfeld}
+      <p key={welt.kennung} className="abenteuer-ortsschild" data-testid="abenteuer-ortsschild">
+        {tSpiel(name)}
+      </p>
+    </>
   );
 }

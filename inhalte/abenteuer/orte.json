@@ -43,8 +43,8 @@
             "aufbruchGesehen": "karten/maple-falls-wohnzimmer-ausgepackt.json"
           },
           "eingang": {
-            "dialog": "maple-falls-wohnzimmer.ankunft",
-            "wenn": "einleitungGesehen und nicht ankunftGesehen"
+            "dialog": "maple-falls-wohnzimmer.eingang",
+            "wenn": "(einleitungGesehen und nicht ankunftGesehen) oder (ersteLektionBesprochen und nicht ersterAbendGesehen und nicht treppeAbendGesehen)"
           }
         },
         {
@@ -4028,6 +4028,10 @@
           "kennung": "summitCity.huette",
           "datei": "karten/summit-city-huette.json",
           "name": "ort.summitCity.huette",
+          "eingang": {
+            "dialog": "summit-city-huette.eingang",
+            "wenn": "nicht huetteBetreten"
+          },
           "innen": true,
           "musik": "musik/summit-city.m4a"
         },
@@ -4423,6 +4427,10 @@
           "kennung": "crossroads.raststaette",
           "datei": "karten/crossroads-raststaette.json",
           "name": "ort.crossroads.raststaette",
+          "eingang": {
+            "dialog": "crossroads-raststaette.eingang",
+            "wenn": "nicht raststaetteBetreten"
+          },
           "innen": true,
           "musik": "musik/crossroads.m4a"
         }

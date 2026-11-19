@@ -30,6 +30,9 @@ VAR nadelMapleFalls = 0
 // maple-falls-park.ink, dinerAbendGesehen diese Datei.
 VAR joGetroffen = false
 VAR dinerAbendGesehen = false
+// Eingang des Wohnzimmers (19.11.2026, Wunsch des Autors): Das Knarren der Treppe gehört zum
+// Herunterkommen, nicht ins Gespräch mit Mama. treppeAbendGesehen setzt treppe_abend.
+VAR treppeAbendGesehen = false
 // Akt 2, Szene 38 (Roman, Kapitel 23): nadelRiverton setzt die Hülle, verbotGesehen setzt diese
 // Datei oder, wer ohne Heimweg nach Ironwood geht, ironwood-aussen.ankunft_zu_fuss (Anruf).
 VAR nadelRiverton = 0
@@ -68,6 +71,23 @@ VAR endeAkt3Gesehen = false
 - joGetroffen and not dinerAbendGesehen: -> diner_einladung
 - else: -> mutter_alltag
 }
+
+// Eingangsdialog des Wohnzimmers (orte.json, Feld „eingang“): beim ersten Betreten die Ankunft, am
+// Abend nach der ersten Lektion das Herunterkommen über die Treppe.
+=== eingang ===
+{
+- not ankunftGesehen: -> ankunft
+- else: -> treppe_abend
+}
+
+// Wunsch des Autors (19.11.2026): Das Bild hält an, wenn {held} am Abend herunterkommt; das Knarren
+// der neunten Stufe und wo Mama ist, stehen hier statt im Gespräch mit ihr (erster_abend).
+=== treppe_abend ===
+~ treppeAbendGesehen = true
+Du kommst mit dem alten Brett die Treppe herunter. Auf der neunten Stufe knarrt es. #sprecher:erzaehler #klang:knarren
+Die hat schon geknarrt, als das Haus neu war. #sprecher:ambrose #stimmung:laechelt
+Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt an einem Tisch. #sprecher:erzaehler
+-> END
 
 === ankunft ===
 // Szene 1 nach dem Roman, Kapitel 1, und der Dialogprüfung (docs/spiel/22, VM1 bis VM6).
@@ -115,9 +135,8 @@ Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie K
 // sich ohne Worte; „Weiß steht besser“ (Entscheidung 13.11.2026, roman/akt1_befunde.md, 7).
 // Klang: Bei Mamas Satz setzt die Musik zwei Sekunden aus. Porträt „ertappt“ fehlt noch als Tag.
 ~ ersterAbendGesehen = true
-Du kommst mit dem alten Brett die Treppe herunter. Auf der neunten Stufe knarrt es. #sprecher:erzaehler #klang:knarren
-Die hat schon geknarrt, als das Haus neu war. #sprecher:ambrose #stimmung:laechelt
-Mama sitzt auf dem Boden und schraubt den Tisch zusammen. Ihr Blick fällt auf das Brett. Sie sieht nicht dich an, sondern die Stellung. #sprecher:erzaehler #pause:2
+// Das Herunterkommen über die knarrende Treppe steht seit dem 19.11.2026 in treppe_abend (Eingang).
+Du stellst dich mit dem Brett neben sie. Mama schraubt weiter am Tisch. Ihr Blick fällt auf das Brett. Sie sieht nicht dich an, sondern die Stellung. #sprecher:erzaehler #pause:2
 Weiß steht besser. #sprecher:mutter #stimmung:nachdenklich #pause:2 #musik:aus
 Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler #musik:karte
 Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das her? #sprecher:mutter #stimmung:ertappt

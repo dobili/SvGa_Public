@@ -1,7 +1,7 @@
 /**
  * Tests des Eingangsdialogs (oberwelt/eingang.ts) mit den echten Orten aus inhalte/abenteuer:
- * Einleitung vor dem Haus und Ankunft im Wohnzimmer laufen genau einmal, alte Spielstände (Brett
- * schon berührt) bekommen sie nicht nachgereicht.
+ * Einleitung vor dem Haus, Ankunft im Wohnzimmer und die knarrende Treppe am ersten Abend laufen
+ * genau einmal, alte Spielstände (Brett schon berührt) bekommen die Einleitung nicht nachgereicht.
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
@@ -26,10 +26,20 @@ describe("eingangsdialog", () => {
   it("nach der Einleitung läuft im Wohnzimmer die Ankunft, danach nichts mehr", () => {
     expect(eingangsdialog(mapleFalls, "mapleFalls.aussen", { einleitungGesehen: true })).toBeNull();
     expect(eingangsdialog(mapleFalls, "mapleFalls.wohnzimmer", { einleitungGesehen: true })).toBe(
-      "maple-falls-wohnzimmer.ankunft",
+      "maple-falls-wohnzimmer.eingang",
     );
     const danach = { einleitungGesehen: true, ankunftGesehen: true };
     expect(eingangsdialog(mapleFalls, "mapleFalls.wohnzimmer", danach)).toBeNull();
+  });
+
+  it("am Abend nach der ersten Lektion knarrt die Treppe beim Herunterkommen, einmal", () => {
+    // Wunsch des Autors (19.11.2026): das Knarren beim Betreten, nicht im Gespräch mit Mama.
+    const abend = { einleitungGesehen: true, ankunftGesehen: true, ersteLektionBesprochen: true };
+    expect(eingangsdialog(mapleFalls, "mapleFalls.wohnzimmer", abend)).toBe(
+      "maple-falls-wohnzimmer.eingang",
+    );
+    const gehoert = { ...abend, treppeAbendGesehen: true };
+    expect(eingangsdialog(mapleFalls, "mapleFalls.wohnzimmer", gehoert)).toBeNull();
   });
 
   it("alte Spielstände (Brett schon berührt) bekommen keine Einleitung", () => {

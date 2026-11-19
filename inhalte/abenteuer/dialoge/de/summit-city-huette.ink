@@ -42,6 +42,8 @@ VAR studieAngeboten = false
 VAR studieDabei = false
 VAR wardStudieGesehen = false
 VAR wardMuede = false
+// Eingang der Hütte (19.11.2026): die Hütte beim ersten Betreten, nicht erst im Gespräch mit Ward.
+VAR huetteBetreten = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
@@ -53,6 +55,15 @@ VAR lernkartePhasenblick = false
 VAR hatKarteEndspielkompass = false
 VAR hatKarteTurmregel = false
 VAR hatKartePhasenblick = false
+
+// ---------------------------------------------------------------- Eingang
+
+// Beim ersten Betreten (orte.json, Feld „eingang“), nicht erst beim Gespräch mit Ward.
+=== eingang ===
+~ huetteBetreten = true
+Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
+Im Sessel am Feuer sitzt eine Frau und liest. Sie sieht nicht auf. #sprecher:erzaehler
+-> END
 
 // ---------------------------------------------------------------- Ward
 
@@ -74,7 +85,6 @@ VAR hatKartePhasenblick = false
 
 === ward_lektion ===
 ~ wardLektionGesehen = true
-Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
 Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
 Sie betrachtet dich, wie man eine Stellung betrachtet. #sprecher:erzaehler
 Sieben. #sprecher:ward #stimmung:neutral

@@ -4,6 +4,7 @@ import { wertungInZeitklasse } from "../../engine/zeitklassenabstand";
 import { erwartung } from "../../spiel/wertung";
 import {
   abzugDerUhr,
+  GEWICHT_DER_KLASSE,
   schnellschachAus,
   schrittInKlasse,
   wertungsklasse,
@@ -63,21 +64,43 @@ describe("Elo-Schritt in der Klasse, zurück auf Schnellschach", () => {
     }
   });
 
-  it("Clubchef 1 in Maple Falls (A 800, Z 1020): Blitz fast wie Schnellschach", () => {
-    expect(schrittInKlasse(800, 1020, 0, K, "blitz", 0)).toBeCloseTo(794.08, 1);
+  it("Clubchef 1 in Maple Falls (A 800, Z 1020): Blitz zählt halb", () => {
+    expect(schrittInKlasse(800, 1020, 0, K, "blitz", 0)).toBeCloseTo(797.04, 1);
     expect(schrittInKlasse(800, 1020, 0, K, "rapid", 0)).toBeCloseTo(795.6, 1);
-    expect(schrittInKlasse(800, 1020, 1, K, "blitz", 0)).toBeCloseTo(817.2, 1);
+    expect(schrittInKlasse(800, 1020, 1, K, "blitz", 0)).toBeCloseTo(808.6, 1);
     expect(schrittInKlasse(800, 1020, 1, K, "rapid", 0)).toBeCloseTo(815.6, 1);
   });
 
-  it("gleich starke Gegner bei 1000: Blitz-Schritte sind etwas größer (gestauchte Blitz-Skala)", () => {
-    expect(schrittInKlasse(1000, 1000, 0, K, "blitz", 0)).toBeCloseTo(987.21, 1);
-    expect(schrittInKlasse(1000, 1000, 1, K, "blitz", 0)).toBeCloseTo(1012.79, 1);
+  it("geblitzte Niederlage senkt A weniger, geblitzter Sieg bringt weniger als in Schnellschach", () => {
+    for (const [a, z] of [
+      [600, 600],
+      [1000, 1000],
+      [1500, 1700],
+      [2000, 1800],
+    ] as const) {
+      const vorher = a;
+      const niederlage = {
+        blitz: schrittInKlasse(a, z, 0, K, "blitz", 0),
+        schnell: schrittInKlasse(a, z, 0, K, "rapid", 0),
+      };
+      const sieg = {
+        blitz: schrittInKlasse(a, z, 1, K, "blitz", 0),
+        schnell: schrittInKlasse(a, z, 1, K, "rapid", 0),
+      };
+      expect(vorher - niederlage.blitz).toBeLessThan(vorher - niederlage.schnell);
+      expect(sieg.blitz - vorher).toBeLessThan(sieg.schnell - vorher);
+    }
   });
 
-  it("A 1500 gegen Z 1700: Blitz und Schnellschach fast gleich", () => {
-    expect(schrittInKlasse(1500, 1700, 1, K, "blitz", 0)).toBeCloseTo(1515.1, 1);
-    expect(schrittInKlasse(1500, 1700, 0, K, "blitz", 0)).toBeCloseTo(1495.69, 1);
+  it("gleich starke Gegner bei 1000: Niederlage 993,6, Sieg 1006,4 (Schnellschach 990 und 1010)", () => {
+    expect(schrittInKlasse(1000, 1000, 0, K, "blitz", 0)).toBeCloseTo(993.6, 1);
+    expect(schrittInKlasse(1000, 1000, 1, K, "blitz", 0)).toBeCloseTo(1006.4, 1);
+  });
+
+  it("Klassisch zählt voll (Gewicht 1)", () => {
+    expect(GEWICHT_DER_KLASSE.classical).toBe(1);
+    expect(GEWICHT_DER_KLASSE.rapid).toBe(1);
+    expect(GEWICHT_DER_KLASSE.blitz).toBe(0.5);
   });
 
   it("ein Abzug der Uhr macht den Bot schwächer: ein Sieg bringt dann weniger", () => {

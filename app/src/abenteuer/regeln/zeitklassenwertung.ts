@@ -17,19 +17,19 @@
  * 2. A und die Zielstärke Z des Gegners in dieser Klasse: A_k = wertungInZeitklasse(A),
  *    Z_k = zahlInZeitklasse(Z) + uhrAbzug (die Gegnerzahl je Zeitklasse wie in der App; der
  *    Bot spielt in der App wie ein Mensch dieser Klasse, engine/wahlkorrektur.ts).
- * 3. Elo-Schritt in der Klasse: A_k' = A_k + K · (Ergebnis − Erwartung(A_k, Z_k)).
+ * 3. Elo-Schritt in der Klasse: A_k' = A_k + K · Gewicht · (Ergebnis − Erwartung(A_k, Z_k)),
+ *    Gewicht 0,5 für Blitz, sonst 1 (Entscheidung des Autors, 19.11.2026, GEWICHT_DER_KLASSE).
  * 4. Zurück auf Schnellschach mit derselben Abstandsrechnung: A' = die Schnellschach-Zahl, deren
  *    Klassenzahl A_k' ist.
- * Folge (gerechnet mit den Lichess-Abständen, K = 20; in Klammern der bisherige Schritt):
- * Clubchef 1 in Maple Falls (A = 800, Z = 1020): Niederlage im Blitz → 794,1 (795,6), Sieg →
- * 817,2 (815,6). A = 1000 gegen Z = 1000: Niederlage 987,2 (990), Sieg 1012,8 (1010).
- * A = 1500 gegen Z = 1700: Sieg 1515,1 (1515,2), Niederlage 1495,7 (1495,2). Weil Spieler und
- * Gegner um denselben Abstand verschoben werden, bleibt die Erwartung fast gleich; die
- * Blitz-Skala ist bei Einsteigern aber gestaucht (1000 → 882, 1290 → 1121), deshalb ist ein
- * Schritt von K Blitz-Punkten dort bis zu ein Viertel mehr Schnellschach-Punkte. Eine geblitzte
- * Niederlage senkt A also nicht weniger als eine bedachte, so wie sie in der App die
- * Blitz-Wertung genauso senkt. Soll Blitz für A weniger zählen, braucht es ein eigenes Gewicht
- * (Vorschlag: docs/spiel/auftraege/rueckmeldung/zeitwertung_app_vorschlag.md, Teil Spiel).
+ * Warum das Gewicht: Ohne es zählte eine Blitzpartie für A so viel wie eine Schnellschachpartie,
+ * bei Einsteigern sogar etwas mehr. Spieler und Gegner werden um denselben Abstand verschoben, die
+ * Erwartung bleibt fast gleich, und die Blitz-Skala ist dort gestaucht (1000 → 882, 1290 → 1121),
+ * ein Blitz-Punkt ist also bis zu ein Viertel mehr Schnellschach-Punkte. Der Autor wollte, dass
+ * eine geblitzte Niederlage A weniger senkt und ein geblitzter Sieg nicht mehr bringt als nötig.
+ * Folge (Lichess-Abstände, K = 20; in Klammern der Schritt in Schnellschach):
+ * Clubchef 1 in Maple Falls (A = 800, Z = 1020): Niederlage im Blitz → 797,0 (795,6), Sieg →
+ * 808,6 (815,6). A = 1000 gegen Z = 1000: Niederlage 993,6 (990), Sieg 1006,4 (1010).
+ * A = 1500 gegen Z = 1700: Sieg 1507,6 (1515,2), Niederlage 1497,8 (1495,2).
  * Abhängigkeiten: spiel/elomodell.ts, spiel/wertung.ts (erwartung), engine/zeitklassenabstand.ts,
  * engine/botstaerke.ts, engine/stufen.ts (Typ), regeln/zeitwertung.ts.
  */
@@ -50,6 +50,15 @@ const TEMPO_DER_KLASSE: Readonly<Record<Zeitwertungsklasse, Wertungstempo>> = {
 };
 /** Schritte der Umkehrung (die Abstandskurve ist flach; 8 genügen auf 0,01 Elo). */
 const UMKEHR_SCHRITTE = 8;
+/**
+ * Gewicht von K je Zeitklasse (Entscheidung des Autors, 19.11.2026): Eine Blitzpartie zählt für A
+ * halb, wie beim Weltschachbund, wo Blitz die Zahl für lange Partien nicht berührt.
+ */
+export const GEWICHT_DER_KLASSE: Readonly<Record<Wertungstempo, number>> = {
+  blitz: 0.5,
+  rapid: 1,
+  classical: 1,
+};
 const MS_JE_SEKUNDE = 1000;
 
 /** Uhr einer Begegnung im Spielstand (Sekunden und Zuschlag, wie schnittstelle/partie.ts). */
@@ -124,7 +133,8 @@ export function schrittInKlasse(
   if (tempo === "rapid" && abzug === 0) return a + k * (ergebnis - erwartung(a, z));
   const aKlasse = wertungInZeitklasse(a, tempo);
   const zKlasse = zahlInZeitklasse(z, tempo) + abzug;
-  const neu = aKlasse + k * (ergebnis - erwartung(aKlasse, zKlasse));
+  const gewichtet = k * GEWICHT_DER_KLASSE[tempo];
+  const neu = aKlasse + gewichtet * (ergebnis - erwartung(aKlasse, zKlasse));
   return schnellschachAus(neu, tempo);
 }
 

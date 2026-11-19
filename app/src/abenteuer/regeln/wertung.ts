@@ -10,7 +10,8 @@
  * Zeitklassen (Wunsch des Autors, 19.11.2026): A steht auf dem Schnellschach-Maßstab. Bei
  * Begegnungen mit Zeitwahl rechnet der Schritt wie die App in der Zeitklasse der Partie (Blitz,
  * auch nach der genutzten Zeit herabgestuft) und hebt das Ergebnis zurück
- * (regeln/zeitklassenwertung.ts); ohne Uhr und ohne Zeitwahl bleibt alles wie bisher.
+ * (regeln/zeitklassenwertung.ts); eine Blitzpartie zählt dabei halb (Entscheidung des Autors,
+ * 19.11.2026). Ohne Uhr und ohne Zeitwahl bleibt alles wie bisher.
  * Sonderfälle: A sinkt nie unter 100; abgebrochene Partien und Partien mit mittlerer oder starker
  * Karte zählen nicht (R38); bis zehn Partien gezählt sind, ist E = A (R3).
  */

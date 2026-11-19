@@ -18,7 +18,9 @@ Blitz 3 + 2), wird wie in der App gewertet. A bleibt eine Zahl auf dem Schnellsc
      `engine/botstaerke.ts`)
    - Das ist dieselbe Gegnerzahl je Zeitklasse wie in der App. Der Bot spielt dort in Blitz wie ein
      Mensch dieser Blitz-Zahl.
-3. **Elo-Schritt in der Klasse:** A_k' = A_k + K · (Ergebnis − Erwartung(A_k, Z_k)).
+3. **Elo-Schritt in der Klasse:** A_k' = A_k + K · Gewicht · (Ergebnis − Erwartung(A_k, Z_k)).
+   Das Gewicht ist 0,5 für Blitz, sonst 1 (Entscheidung des Autors, 19.11.2026,
+   `GEWICHT_DER_KLASSE`).
 4. **Zurück auf Schnellschach:** mit derselben Abstandsrechnung, als Umkehrung von
    `wertungInZeitklasse` (`schnellschachAus`).
 5. **Begegnungen ohne Zeitwahl bleiben, wie sie sind**, auch mit fester Uhr.
@@ -39,42 +41,31 @@ Blitz 3 + 2), wird wie in der App gewertet. A bleibt eine Zahl auf dem Schnellsc
 
 ### Zahlen aus der Story
 
-K = 20; in Klammern der bisherige Schritt (Schnellschach):
+K = 20; Blitz zählt halb. In Klammern der Schritt in Schnellschach und dahinter der Schritt in
+Blitz ohne Gewicht (die reine App-Regel):
 
-| Partie                                    | Blitz-Niederlage | Blitz-Sieg      |
-| ----------------------------------------- | ---------------- | --------------- |
-| Clubchef 1 in Maple Falls (A 800, Z 1020) | 794,1 (795,6)    | 817,2 (815,6)   |
-| Gleich starker Gegner (A 1000, Z 1000)    | 987,2 (990)      | 1012,8 (1010)   |
-| A 1500 gegen Z 1700                       | 1495,7 (1495,2)  | 1515,1 (1515,2) |
+| Partie                                    | Blitz-Niederlage        | Blitz-Sieg              |
+| ----------------------------------------- | ----------------------- | ----------------------- |
+| Clubchef 1 in Maple Falls (A 800, Z 1020) | 797,0 (795,6; 794,1)    | 808,6 (815,6; 817,2)    |
+| Gleich starker Gegner (A 1000, Z 1000)    | 993,6 (990; 987,2)      | 1006,4 (1010; 1012,8)   |
+| A 1500 gegen Z 1700                       | 1497,8 (1495,2; 1495,7) | 1507,6 (1515,2; 1515,1) |
 
-### Befund: Die App-Regel lässt Blitz nicht weniger zählen
+### Warum das Gewicht (Befund und Entscheidung)
 
 - **Zur Frage nach dem Maßstab des Bots:**
   - Seine feste Zahl Z steht auf dem Schnellschach-Maßstab.
   - In der App spielt er in Blitz wie ein Mensch der Blitz-Zahl Z_k. Das Wahlmodell ist nach der
     Wertung in der Zeitklasse geeicht (`engine/wahlkorrektur.ts`), er wird mit der Uhr also
     „menschlich langsamer“.
-- **Folge:** Spieler und Gegner werden um denselben Abstand verschoben, die Erwartung bleibt fast
-  gleich.
-- **Bei Einsteigern ist die Blitz-Skala gestaucht** (Schnellschach 1000 → Blitz 882, 1290 → 1121).
-  Ein Schritt von K Blitz-Punkten ist dort beim Zurückrechnen bis zu einem Viertel mehr
-  Schnellschach-Punkte.
-- **Ergebnis:** Eine geblitzte Niederlage senkt A etwas mehr als eine bedachte, und ein geblitzter
-  Sieg bringt etwas mehr. Das entspricht der App, wo eine Blitz-Partie die Blitz-Wertung genauso
-  bewegt.
-- **Abweichung von der früheren Nachricht:** Der Wunsch „geblitzte Niederlage senkt A weniger,
-  geblitzter Sieg bringt nicht mehr als nötig“ aus dieser Nachricht ergibt sich so nicht. Weil die
-  spätere Anweisung „genau wie in der App“ galt, ist die App-Regel eingebaut.
-
-### Option (nicht eingebaut): Gewicht für schnellere Klassen
-
-Soll Blitz für A ausdrücklich weniger zählen (wie beim Weltschachbund, wo Blitz die
-Langschach-Zahl nicht berührt), wäre die einfachste saubere Regel ein Gewicht auf K:
-
-- Blitz zählt mit K × 0,5 und wird mit derselben Rechnung zurückgehoben.
-- Eine geblitzte Niederlage gegen den Clubchef 1 kostete dann etwa 3 statt 6 Punkte.
-- Ein geblitzter Sieg brächte etwa 9 statt 17.
-- Beides ist eine Änderung an einer Zeile in `schrittInKlasse` (Faktor je Klasse) mit Tests.
+- **Folge der reinen App-Regel:** Spieler und Gegner werden um denselben Abstand verschoben, die
+  Erwartung bleibt fast gleich. Bei Einsteigern ist die Blitz-Skala gestaucht (Schnellschach 1000
+  → Blitz 882, 1290 → 1121); ein Schritt von K Blitz-Punkten ist dort beim Zurückrechnen bis zu
+  einem Viertel mehr Schnellschach-Punkte. Eine geblitzte Partie bewegte A also gleich viel oder
+  etwas mehr als eine bedachte.
+- **Entscheidung des Autors (19.11.2026):** Blitz zählt für A halb, wie beim Weltschachbund, wo
+  Blitz die Zahl für lange Partien nicht berührt. Damit senkt eine geblitzte Niederlage A weniger,
+  und ein geblitzter Sieg bringt weniger als ein bedachter. Eingebaut als `GEWICHT_DER_KLASSE` in
+  `schrittInKlasse`, mit Tests.
 
 ### Klassisch
 
@@ -116,7 +107,7 @@ belegt, nicht geschätzt.
 
 ### Die Funktion
 
-Für die App gilt dieselbe Rechnung, als Option beschrieben. Eine herabgestufte Partie zählt in
+Für die App gilt dieselbe Rechnung, als Option beschrieben (dort nichts eingebaut). Eine herabgestufte Partie zählt in
 der Kette der schnelleren Klasse, mit der Gegnerzahl in dieser Klasse (`zahlInZeitklasse`). Ein
 Gewicht wie in Teil A wäre auch in der App möglich, würde aber die Ketten je Zeitklasse verwässern;
 dort ist es weniger nötig, weil jede Klasse ihre eigene Zahl hat.

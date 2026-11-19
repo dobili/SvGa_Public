@@ -41,6 +41,9 @@ export const GRUNDSTAND = {
   besuchteOrte: ["mapleFalls", "cedarCreek"],
   gegenstaende: ["reisebrett", "monatskarte", "lupe"],
   muenzen: 80,
+  // Einleitung und Ankunft (seit 19.11.2026) gelten als gesehen: Sonst beginnt die Einleitung
+  // vor dem Haus, sobald der Held nach Maple Falls reist.
+  dialogvariablen: { einleitungGesehen: true, ankunftGesehen: true },
 };
 
 /** Schreibt einen Spielstand in die Nutzerdaten (IndexedDB der App); läuft im Browser. */

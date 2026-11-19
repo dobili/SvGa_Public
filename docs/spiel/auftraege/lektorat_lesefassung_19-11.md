@@ -148,10 +148,11 @@ einer Revanche, Gus, Joggerin und Sol nach einem Remis. Hier kam noch dazu:
   Das ist kein Textfehler: Die Figur gehört auf die Kantinenkarte. Das ist Kartenbau.
 - **Juno an zwei Orten (Akt 1).** Nach dem Aufbruch heißt es „Juno wartet am Park“. Sie steht aber
   weiter im Clubraum und an der Haltestelle (orte.json ohne `wenn`). Auch das ist Kartenbelegung.
-- **Zeithinweise im Clubkampf.** Ambrose sagt in Silicon Bay „Am Brett eines Clubs schweigt man.“
-  und vor Miras Clubkampf „Dann kommentiere ich. Aber du entscheidest.“ Die Hinweise kommen im
-  Clubkampf trotzdem, und der Oberflächentest prüft sie genau dort. Ob sie dort bleiben, ist eine
-  Entscheidung über die Funktion. Hier ist nur das Halbfinale ausgenommen.
+- **Zeithinweise im Clubkampf** (Entscheidung des Hauptchats, 19.11.2026): Die Hinweise bleiben
+  im Clubkampf, denn dort wählt man die Zeit. Ambroses Satz in silicon-bay-akademie passt jetzt
+  dazu. Vorher: „Am Brett eines Clubs schweigt man. Im Park redet man.“ Nachher: „Am Brett eines
+  Clubs flüstert man nur, über die Uhr, nie über Züge. Im Park redet man.“ Seine Zeile danach mit
+  drei Sätzen ist geteilt. Das Halbfinale bleibt ausgenommen.
 - **„mein Lehrling“ in Akt 4** (zuSchnell.1, geblitzt.1): Die Story-Bibel lässt Ambrose „du“ sagen,
   weil er „Lehrling“ meint. Der Lektor von Akt 4 hält es dort für einen Rückfall. Die Stelle ist
   unverändert, auch weil der Oberflächentest den Satz prüft.

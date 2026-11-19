@@ -52,6 +52,7 @@ VAR abschiedGesehen = false
 - lupeGeschenkt and nadelIronwood > 0: -> harlan_spaeter
 - ausgangRivertonHarlan == "" or ausgangRivertonHarlan == "abgebrochen": -> harlan_angebot
 - siegeRivertonHarlan >= 3 and not lupeGeschenkt: -> harlan_lupe
+- ausgangRivertonHarlan == "remis": -> harlan_nach_remis
 - ausgangRivertonHarlan == "niederlage": -> harlan_nach_niederlage
 - else: -> harlan_nach_sieg
 }
@@ -135,6 +136,17 @@ Die Unruh tickt für alle gleich. Nur nicht für mich. #sprecher:harlan #stimmun
 
 === harlan_nach_niederlage ===
 Langsam ist auch eine Geschwindigkeit. Noch einmal? #sprecher:harlan #stimmung:laechelt
++ [„Noch einmal.“]
+    ~ beginnePartie("riverton.harlan")
+    -> END
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in harlan_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== harlan_nach_remis ===
+Unentschieden. Der Zug ist pünktlich, aber nicht schneller. Noch einmal? #sprecher:harlan #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.harlan")
     -> END

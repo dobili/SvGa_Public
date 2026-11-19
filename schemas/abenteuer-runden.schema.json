@@ -82,6 +82,12 @@
           "properties": {
             "partie": { "type": "string", "pattern": "^[a-z0-9-]+$" },
             "abZug": { "type": "integer", "minimum": 1, "maximum": 200 },
+            "bisZug": {
+              "description": "Letzter zu erratender Zug der Seite (Zugnummer der Partie); ohne Angabe bis zum Ende der Partie. Beispiel: Werkstatt-Flashback, die Unsterbliche von Zug 1 bis Zug 11 (Story-Bibel, Szene 66)",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200
+            },
             "seite": { "enum": ["white", "black"] }
           }
         }

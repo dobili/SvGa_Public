@@ -71,6 +71,7 @@ Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten 
 {
 - not solGetroffen: -> sol_erstes_treffen
 - ausgangSummitCitySol == "" or ausgangSummitCitySol == "abgebrochen": -> sol_angebot
+- ausgangSummitCitySol == "remis": -> sol_nach_remis
 - ausgangSummitCitySol == "niederlage": -> sol_nach_niederlage
 - else: -> sol_nach_sieg
 }
@@ -111,6 +112,17 @@ Noch eine? Die Sonne hält noch eine Weile. #sprecher:sol #stimmung:laechelt
 
 === sol_nach_niederlage ===
 Gewitter. Ich hab dich gewarnt. Noch mal, bevor es regnet? #sprecher:sol #stimmung:lacht
++ [„Revanche.“]
+    ~ beginnePartie("summitCity.sol")
+    -> END
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in sol_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== sol_nach_remis ===
+Remis. Der Bauer ist nicht oben angekommen. Noch mal, bevor es regnet? #sprecher:sol #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("summitCity.sol")
     -> END

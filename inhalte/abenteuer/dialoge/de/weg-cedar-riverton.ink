@@ -97,6 +97,7 @@ Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen:
 {
 - not quinnGetroffen: -> quinn_erstes_treffen
 - ausgangWegCedarRivertonSchaffner == "" or ausgangWegCedarRivertonSchaffner == "abgebrochen": -> quinn_angebot
+- ausgangWegCedarRivertonSchaffner == "remis": -> quinn_nach_remis
 - ausgangWegCedarRivertonSchaffner == "niederlage": -> quinn_nach_niederlage
 - else: -> quinn_nach_sieg
 }
@@ -166,6 +167,17 @@ Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner #stimmung
 {not abschiedGesehen:
     Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
 }
++ [„Revanche.“]
+    ~ beginnePartie("wegCedarRiverton.schaffner")
+    -> END
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in quinn_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== quinn_nach_remis ===
+Pünktlich, aber nicht vorn. Remis. Noch einmal? #sprecher:schaffner #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END

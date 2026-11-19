@@ -27,6 +27,22 @@ describe("Erinnerungen", () => {
     }
   });
 
+  it("der Werkstatt-Flashback rät nur den Anfang der Unsterblichen, Zug 1 bis 11 (Szene 66)", () => {
+    const aufgabe = erinnerungsaufgabe(
+      PARTIEN,
+      { partie: "klassik-unsterbliche", abZug: 1, bisZug: 11, seite: "white" },
+      "de",
+    );
+    // 11 Züge von Weiß, dazwischen 10 von Schwarz; der letzte geratene Zug ist 11. Tg1.
+    expect(aufgabe?.linie.length).toBe(21);
+    expect(aufgabe?.linie.at(-1)).toBe("Rg1");
+    const werkstatt = runden.runden.find((r) => r.kennung === "portDelacroix.flashbackWerkstatt");
+    expect(werkstatt && "erinnerung" in werkstatt ? werkstatt.erinnerung : null).toMatchObject({
+      abZug: 1,
+      bisZug: 11,
+    });
+  });
+
   it("unbekannte Partie oder zu später Zug ergibt nichts", () => {
     expect(
       erinnerungsaufgabe(PARTIEN, { partie: "gibt-es-nicht", abZug: 1, seite: "white" }, "de"),

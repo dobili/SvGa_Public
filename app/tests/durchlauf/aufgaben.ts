@@ -17,8 +17,9 @@
 import { readFileSync } from "node:fs";
 import { tippe, tippeKnopf, tippePunkt, type Lauf } from "./eingabe";
 import { bedieneUpdate } from "./fenster";
-import { liesLage, type Knopf, type Lage } from "./lage";
+import { liesLage, liesSpeicher, type Knopf, type Lage } from "./lage";
 import { bewerteAufgabe, bewerteStellung } from "./partie";
+import { ladeRundeNeu, schwaechsterZug } from "./schwach";
 import { bedieneStruktur } from "./struktur";
 
 /** Figurennamen der Feldbeschriftung und ihr Buchstabe in der FEN. */
@@ -166,12 +167,36 @@ async function beantworteFalle(lauf: Lauf, lage: Lage, fen: string | null): Prom
   return true;
 }
 
+/** Knöpfe eines ratlosen Spielers; „nur Lösung“: gleich die Lösung (schwacher Spieler). */
+const RATLOS = /Ich komme nicht drauf|Lösung|Prüfen|aufgeben|Ambrose fragen|Hinweis/i;
+const LOESUNG = /Ich komme nicht drauf|Lösung/i;
+
+/**
+ * Ratlos: einen Hilfeknopf im Bild tippen; liegt keiner im Bild, zu „Ich komme nicht drauf“
+ * hinrollen wie ein Mensch (nach „Ambrose fragen“ wird die Hilfe länger und schiebt den Knopf
+ * unter den Bildrand; Beobachtung im Protokoll). Ausgabe: ob etwas getippt wurde.
+ */
+async function werdeRatlos(lauf: Lauf, lage: Lage, nurLoesung: boolean): Promise<boolean> {
+  const ratlos = lage.knoepfe.find((k) => (nurLoesung ? LOESUNG : RATLOS).test(k.text));
+  if (ratlos) {
+    lauf.messung.log(`  Aufgabe: ratlos, tippe „${ratlos.text}“`);
+    await tippeKnopf(lauf, ratlos);
+    return true;
+  }
+  const unten = lauf.seite
+    .getByTestId("abenteuer-aufgaben")
+    .getByRole("button", { name: /Ich komme nicht drauf/ });
+  if (!(await tippe(lauf, unten, "„Ich komme nicht drauf“ (gerollt)"))) return false;
+  lauf.messung.log("  Aufgabe: „Ich komme nicht drauf“ lag unter dem Bildrand, hingerollt");
+  return true;
+}
+
 /**
  * Spielt die offene Aufgabenrunde bis zum Ende und tippt „Weiter“ zurück in die Welt. Zählt die
- * Runde in der Messung. Sonderfall: Tut sich länger nichts, tippt der Löser „Ich komme nicht
+ * Runde in der Messung. Ausgabe: true, wenn das Ergebnis der Runde zu sehen war. Sonderfall: Tut sich länger nichts, tippt der Löser „Ich komme nicht
  * drauf“; steht die Runde ganz, ist das ein Fund.
  */
-export async function spieleRunde(lauf: Lauf): Promise<void> {
+export async function spieleRunde(lauf: Lauf): Promise<boolean> {
   const seite = lauf.seite;
   const beginn = Date.now();
   let letzterText = "";
@@ -186,6 +211,17 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
   let puls = Date.now();
   let letzteFen = "";
   let fenSeit = Date.now();
+  let vorbei = false;
+  // Schwacher Spieler (schwach.ts): beim ersten Versuch falsch ziehen oder neu laden.
+  const kennung =
+    (await liesSpeicher(seite)).stand?.laufendeAufgaben?.kennung ?? lauf.messung.karte;
+  const verlust = lauf.schwach.runde(kennung);
+  if (verlust.art) lauf.messung.log(`  SCHWACH: Runde ${kennung} verlieren (${verlust.art})`);
+  if (verlust.neugeladen && lauf.schwach.offenNachNeuladen()) {
+    // Die App zeigte nach dem Neuladen gleich wieder die Runde, keine Fortsetzungskarte.
+    lauf.messung.log(`  Nach dem Neuladen gleich wieder in der Runde (statt Fortsetzungskarte)`);
+    lauf.schwach.erledigeNeuladen();
+  }
   while (Date.now() < lauf.frist) {
     const lage = await liesLage(seite);
     if (lage.bild !== "aufgaben") break;
@@ -195,6 +231,8 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
     if (nummer) aufgaben = Number(nummer[2]);
     const ergebnis = /(\d+) von (\d+) Aufgaben richtig/.exec(text);
     if (ergebnis) richtig = Number(ergebnis[1]);
+    if (ergebnis) vorbei = true;
+    if (await ladeRundeNeu(lauf, verlust, nummer?.[1])) return false;
     // Stillstand misst sich an Aufgabe und Stellung, nicht am Text (Sprechblasen tippen sich ein).
     const abdruck = `${nummer?.[1] ?? ""}|${brettfelder(lage)
       .map((k) => k.text)
@@ -308,7 +346,8 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
       versucht = fen;
       // Wenige Varianten, dafür tief; kam der beste Zug nicht an, der nächste Kandidat.
       const alle = (await bewerteAufgabe(fen, KANDIDATEN)).filter((k) => !/[rbn]$/.test(k.uci));
-      const zug = alle[Math.min(versuche, alle.length - 1)];
+      const falsch = verlust.art ? schwaechsterZug(await bewerteStellung(fen)) : undefined;
+      const zug = falsch ? { uci: falsch } : alle[Math.min(versuche, alle.length - 1)];
       if (zug) {
         lauf.messung.log(`  Aufgabe ${nummer?.[1] ?? "?"}: ${fen} → ${zug.uci}`);
         await tippeZug(lauf, felder, zug.uci);
@@ -317,22 +356,21 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
         continue;
       }
     }
+    // Schwacher Spieler: nach dem falschen Zug gleich „Ich komme nicht drauf“.
+    const aufgeben = verlust.art !== null && versucht === fen && Date.now() - seit > NOCHMAL_MS;
     // Der Zug kam nicht an (nichts hat sich getan): noch einmal versuchen.
-    if (Date.now() - seit > NOCHMAL_MS && versuche < NOCHMAL_HOECHSTENS && versucht === fen) {
+    const nochmal = Date.now() - seit > NOCHMAL_MS && versuche < NOCHMAL_HOECHSTENS;
+    if (!aufgeben && nochmal && versucht === fen) {
       versuche += 1;
       versucht = "";
       continue;
     }
-    if (Date.now() - seit > RATLOS_MS && Date.now() - ratlosSeit > RATLOS_MS) {
+    if (aufgeben || (Date.now() - seit > RATLOS_MS && Date.now() - ratlosSeit > RATLOS_MS)) {
       versuche = 0;
       ratlosSeit = Date.now();
-      const ratlos = lage.knoepfe.find((k) =>
-        /Ich komme nicht drauf|Lösung|Prüfen|aufgeben|Ambrose fragen|Hinweis/i.test(k.text),
-      );
-      if (ratlos) {
-        lauf.messung.log(`  Aufgabe: ratlos, tippe „${ratlos.text}“`);
-        await tippeKnopf(lauf, ratlos);
+      if (await werdeRatlos(lauf, lage, aufgeben)) {
         versucht = "";
+        seit = Date.now();
       }
     }
     if (Date.now() - seit > STILLSTAND_MS) {
@@ -347,6 +385,7 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
     }
     await seite.waitForTimeout(250);
   }
+  if (vorbei) lauf.schwach.rundeVorbei();
   lauf.messung.jetzt.runden.push({
     kennung: lauf.messung.karte,
     aufgaben,
@@ -355,4 +394,5 @@ export async function spieleRunde(lauf: Lauf): Promise<void> {
   });
   lauf.messung.log(`RUNDE auf ${lauf.messung.karte}: ${richtig} von ${aufgaben} richtig`);
   lauf.messung.sichere();
+  return vorbei;
 }

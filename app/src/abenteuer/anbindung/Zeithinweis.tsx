@@ -8,7 +8,7 @@
  * nie über dem Brett). Nach jedem Zug des Helden merkt sich die Zeile seine Restzeit; daraus
  * folgen die Bedenkzeit je Zug und mit regeln/zeithinweis.ts der Hinweis. Gemessen wird nur in
  * dieser Sitzung (nach dem Neuladen beginnt die Messung neu, ohne Speicher).
- * Ambrose schweigt, wo er nicht da ist (wie im Tischgespräch: regeln/schutzengel.ts,
+ * Nur in ganzen Partien, nicht in kurzen Formen (Stellungsduell). Ambrose schweigt, wo er nicht da ist (wie im Tischgespräch: regeln/schutzengel.ts,
  * schutzengelGesperrt), vor der ersten Clubnadel, gegen sich selbst am Reisebrett und in Zeitnot
  * unter 30 Sekunden (dann spricht schon das Tischgespräch). Am Ende einer Schnellschach-Partie
  * mit Zeitwahl, die nach der genutzten Zeit als Blitz zählt, sagt er das einmal
@@ -169,8 +169,11 @@ export function Zeithinweis({ partie }: { readonly partie: Partie }) {
   const messung = useRef<Messung | null>(null);
   const variablen = stand?.dialogvariablen ?? {};
   const begegnung = partie.einstellung.abenteuer?.kennung ?? "";
+  // Nur ganze Partien: In einer kurzen Form (zehn Züge bis zur Wertung) käme der Hinweis
+  // frühestens mit dem letzten Zug und gleich danach der Ausklang (Test, 19.11.2026).
   const aktiv =
     partie.einstellung.uhr !== null &&
+    !partie.einstellung.abenteuer?.kurzform &&
     begegnung !== UEBUNGSPARTIE_AMBROSE &&
     zeithinweiseFreigeschaltet(variablen) &&
     !schutzengelGesperrt(variablen, begegnung);

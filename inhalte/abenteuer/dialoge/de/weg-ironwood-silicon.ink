@@ -92,6 +92,7 @@ Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang 
 {
 - not joggerinGetroffen: -> joggerin_erstes_treffen
 - ausgangWegIronwoodSiliconJoggerin == "" or ausgangWegIronwoodSiliconJoggerin == "abgebrochen": -> joggerin_angebot
+- ausgangWegIronwoodSiliconJoggerin == "remis": -> joggerin_nach_remis
 - ausgangWegIronwoodSiliconJoggerin == "niederlage": -> joggerin_nach_niederlage
 - else: -> joggerin_nach_sieg
 }
@@ -120,6 +121,17 @@ Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmun
 {not abschiedGesehen:
     Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose #stimmung:nachdenklich
 }
++ [„Noch einmal.“]
+    ~ beginnePartie("wegIronwoodSilicon.joggerin")
+    -> END
+* [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in joggerin_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== joggerin_nach_remis ===
+Remis. Gleicher Puls, gleiche Zeit. Noch eine Runde? #sprecher:joggerin #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END

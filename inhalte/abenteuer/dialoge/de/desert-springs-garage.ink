@@ -62,6 +62,8 @@ VAR abschiedGesehen = false
 // Aus desert-springs-aussen.ink (abend_motel), hier nur gelesen: der Hinweis aufs Motel nach dem
 // Clubkampf (Wunsch des Autors, 19.11.2026).
 VAR abendMotelGesehen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert mira_nach_revanche auf den Ausgang.
+VAR revancheDesertSprings = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -80,6 +82,7 @@ VAR abendMotelGesehen = false
 {
 - not versoehnungGesehen: -> garage_wartet
 - nadelDesertSprings > clubkampfDesertSpringsNadel: -> mira_nach_sieg
+- revancheDesertSprings: -> mira_nach_revanche
 - ausgangDesertSpringsErinnerung1858 != "" and ausgangDesertSpringsErinnerung1858 != "abgebrochen" and not erinnerung1858Besprochen: -> mira_nach_erinnerung
 - not (reiheTomasBestanden and reiheDotBestanden): -> mira_reihe_offen
 - nadelDesertSprings == 0 and not briefGelesen: -> mira_wartet_brief
@@ -156,6 +159,11 @@ Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand v
 
 === mira_nach_niederlage ===
 Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Sie opfert früh, und du nimmst zu spät. Nimm, was sie gibt, und gib es nicht zurück. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Noch mal.“]
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
@@ -163,6 +171,7 @@ Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
     -> END
 
 === mira_nach_sieg ===
+~ revancheDesertSprings = false
 // Kapitel 46: Fanfare, dann Miras „Noch mal. Jetzt.“ ohne Musik (S61).
 ~ clubkampfDesertSpringsNadel = nadelDesertSprings
 {ausgangDesertSpringsClubkampf == "remis":
@@ -191,6 +200,7 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira #stimmung:laechelt
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
+    ~ revancheDesertSprings = true
     Jetzt. #sprecher:mira #stimmung:ernst
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
@@ -424,3 +434,25 @@ Jetzt ist die Partie fertig. #sprecher:dot #stimmung:nachdenklich
 Jeder Zug saß. Wie ein Brief, der ankommt, Liebes. #sprecher:dot #stimmung:laechelt
 Mira wartet auf ihren Clubkampf. Aber vorher noch etwas anderes. #sprecher:dot #stimmung:nachdenklich
 -> dot
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht mira auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== mira_nach_revanche ===
+~ revancheDesertSprings = false
+{
+- ausgangDesertSpringsClubkampf == "sieg":
+    Gewonnen. Aber keine bessere Nadel. Ha! #sprecher:mira #stimmung:laechelt
+- ausgangDesertSpringsClubkampf == "remis":
+    Remis. Langweilig. Deine Nadel bleibt. #sprecher:mira #stimmung:neutral
+- ausgangDesertSpringsClubkampf == "niederlage":
+    Ich hab gewonnen! Deine Nadel darfst du behalten. #sprecher:mira #stimmung:laechelt
+- else:
+    -> mira
+}
++ {nadelDesertSprings < 3} [„Noch einmal.“]
+    ~ revancheDesertSprings = true
+    ~ beginnePartie("desertSprings.clubkampf")
+    -> END
++ [„Später.“]
+    -> END

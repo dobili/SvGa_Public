@@ -196,7 +196,8 @@
 
 /* Sprechblasen am Brett (docs/spiel/29_Tischgespraech.md, anbindung/Tischblase.tsx): oben der
    Gegner oder wer die Aufgabe stellt, unten Ambrose oder der Held. Sie liegen über dem Kopf und
-   dem Fuß der Hülle, nie auf dem Brett, und verschieben nichts; Tipp blendet sie aus. */
+   dem Fuß der Hülle, nie auf dem Brett (passt eine dort nicht, rückt sie per anbindung/brettfrei.ts
+   auf die andere Seite des Bretts), und verschieben nichts; Tipp blendet sie aus. */
 .abenteuer-tischblase {
   position: fixed;
   z-index: 20;

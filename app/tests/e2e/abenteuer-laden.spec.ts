@@ -318,8 +318,10 @@ test("Darlenes Raststätte: „Fertig“ steht im Bild, auch bei dreizehn Waren"
   // nicht zu sehen. Der Knopf bleibt deshalb am unteren Rand des Fensters stehen.
   // Der Held steht hinter der Theke, rechts neben Darlene.
   const darlene = feldVon("crossroads-raststaette", "darlene");
+  // Die Raststätte schon einmal betreten: Ihr Eingangsdialog (19.11.2026) gehört nicht zu diesem Test.
   const stand = {
     ...STAND,
+    dialogvariablen: { ...EINLEITUNG_GESEHEN, raststaetteBetreten: true },
     position: {
       karte: "crossroads.raststaette",
       x: darlene.x + 1,

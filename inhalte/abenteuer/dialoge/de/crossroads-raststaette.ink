@@ -52,6 +52,17 @@ VAR kaffeehausGesehen = false
 VAR tischPartie = ""
 VAR ausgangWegCrossroadsPinewoodBlindschach = ""
 VAR ausgangCrossroadsSchach960 = ""
+// Eingang der Raststätte (19.11.2026): beim ersten Betreten statt beim ersten Gespräch mit Darlene.
+VAR raststaetteBetreten = false
+
+// ---------------------------------------------------------------- Eingang
+
+// Beim ersten Betreten (orte.json, Feld „eingang“), nicht erst beim Gespräch mit Darlene.
+=== eingang ===
+~ raststaetteBetreten = true
+Drinnen ist es laut und warm. An der Wand ein großes Brett aus Kork, darauf an Nägeln kleine Tafeln: Königsrennen, Atomschach, Falke und Bison, Der Drache. #sprecher:erzaehler #bild:korkwand
+Hinter der Theke schenkt eine Frau Kaffee ein, ohne hinzusehen. #sprecher:erzaehler #bild:aus
+-> END
 
 // ---------------------------------------------------------------- Darlene
 
@@ -59,7 +70,6 @@ VAR ausgangCrossroadsSchach960 = ""
 {novaBitteGehoert and not lieferungFuerDolores: -> darlene_lieferung}
 {not darleneGetroffen:
     ~ darleneGetroffen = true
-    Drinnen ist es laut und warm. An der Wand ein großes Brett aus Kork, darauf an Nägeln kleine Tafeln: Königsrennen, Atomschach, Falke und Bison, Der Drache. #sprecher:erzaehler #bild:korkwand
     Hinter der Theke Darlene. Sechzig, mit den Händen von einer, die vierzig Jahre Kaffee eingeschenkt hat. #sprecher:erzaehler #bild:aus
     Der Varianten-Tisch. Jeder, der hier durchkommt, bringt ein Spiel mit. Ich heb sie auf. Du hast auch welche mitgebracht, hör ich. #sprecher:darlene #stimmung:froh
 - else:

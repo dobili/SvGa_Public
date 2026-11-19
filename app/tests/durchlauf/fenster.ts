@@ -82,6 +82,20 @@ const RUNDE_WIEDERHOLEN = 2;
 /** So viele gelesene Texte bleiben für Prüfungen im Gedächtnis. */
 const GELESEN_MAX = 60;
 
+/** Antworten, die eine Partie oder Runde noch einmal starten. */
+const WIEDERHOLUNG = /^„?(Noch (eine|einmal|mal|ein)|Nochmal|Revanche|Gleich noch)/i;
+
+/**
+ * Schlüssel einer gewählten Antwort. Warum Wiederholungen ohne Spielstand: Jede Partie ändert den
+ * Stand; mit ihm im Schlüssel war „Noch eine Partie.“ nach jedem Sieg wieder neu, und der Lauf
+ * spielte endlos gegen Mr. Batiste (19.11.2026, seit der Rückmeldung nach dem Ergebnis).
+ */
+function antwortschluessel(g: Fenstergedaechtnis, frage: string, antwort: string): string {
+  return WIEDERHOLUNG.test(antwort)
+    ? `wiederholung|${frage}|${antwort}`
+    : `${g.signatur}|${frage}|${antwort}`;
+}
+
 /**
  * Welche Antwort ein neugieriger Spieler nimmt: die am seltensten gewählte, die nicht aufschiebt;
  * sind alle solchen schon einmal gewählt, die aufschiebende (so endet jede Fragerunde).
@@ -91,7 +105,7 @@ export function waehleAntwort(
   frage: string,
   wahlen: readonly string[],
 ): number {
-  const zahl = (w: string) => g.gewaehlt.get(`${g.signatur}|${frage}|${w}`) ?? 0;
+  const zahl = (w: string) => g.gewaehlt.get(antwortschluessel(g, frage, w)) ?? 0;
   const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) }));
   const echte = vor.filter((v) => !v.auf);
   const neue = echte.filter((v) => v.n === 0);
@@ -99,7 +113,7 @@ export function waehleAntwort(
   const wahl = neue[0] ??
     aufschub ??
     [...vor].sort((a, b) => a.n - b.n)[0] ?? { i: 0, w: wahlen[0] ?? "" };
-  g.gewaehlt.set(`${g.signatur}|${frage}|${wahl.w}`, zahl(wahl.w) + 1);
+  g.gewaehlt.set(antwortschluessel(g, frage, wahl.w), zahl(wahl.w) + 1);
   return wahl.i;
 }
 
@@ -323,7 +337,10 @@ export async function bedieneFenster(
       return true;
     }
   }
-  const knopf = ausgangsknopf(knoepfe, g);
+  // Nach dem Neuladen des schwachen Spielers (schwach.ts): Weitermachen oder Abbrechen.
+  const fortsetzung = lauf.schwach.fortsetzung(knoepfe);
+  if (fortsetzung) lauf.messung.log(`  SCHWACH: Fortsetzungskarte „${fortsetzung.text}“`);
+  const knopf = fortsetzung ?? ausgangsknopf(knoepfe, g);
   if (!knopf) {
     await warteOderMelde(lauf, g, `Fenster ${oben.fenster ?? "?"}`);
     return true;

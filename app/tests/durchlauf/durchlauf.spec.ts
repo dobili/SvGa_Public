@@ -28,6 +28,8 @@ import { liesLage, liesSpeicher, signatur, type Lage } from "./lage";
 import { Messung } from "./messung";
 import { spielePartie } from "./partie";
 import { Planer } from "./planer";
+import { Rueckmeldungsbeobachter } from "./rueckmeldung";
+import { Schwaechling } from "./schwach";
 import { standAus } from "./simstand";
 import { ladeSpieldaten, type Spieldaten } from "./welt";
 import { weltschritt } from "./weltschritt";
@@ -173,10 +175,12 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
     tasten: process.env.DURCHLAUF_EINGABE === "tasten",
     frist: Date.now() + DAUER_MS,
     gehalten: null,
+    schwach: new Schwaechling(ordner),
   };
   const daten = ladeSpieldaten();
   const planer = new Planer(daten);
   const g = neuesFenstergedaechtnis();
+  const rueck = new Rueckmeldungsbeobachter();
   if (STAND_DATEI) await spieleStandEin(seite, daten, messung);
   await seite.goto("/app/#abenteuer");
   messung.log(
@@ -203,9 +207,16 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
     }
     if (await bedieneUpdate(lauf, lage)) continue;
     if (lage.bild === "partie") {
-      await mitFrist(spielePartie(lauf, g), "Partie");
+      rueck.vorher((await liesSpeicher(seite)).stand?.nachErgebnis);
+      const partie = await mitFrist(spielePartie(lauf, g), "Partie");
+      const beendet = partie !== null && partie.ausgang !== "offen";
+      rueck.nachher(`Partie ${partie?.kennung ?? "?"} (${partie?.ausgang ?? "?"})`, beendet);
     } else if (lage.bild === "aufgaben") {
-      await mitFrist(spieleRunde(lauf), "Aufgabenrunde");
+      rueck.vorher((await liesSpeicher(seite)).stand?.nachErgebnis);
+      rueck.nachher(
+        `Runde auf ${messung.karte}`,
+        await mitFrist(spieleRunde(lauf), "Aufgabenrunde"),
+      );
     } else if (lage.bild === "start") {
       await bedieneStart(lauf, lage);
     } else if (lage.bild === "welt") {
@@ -233,7 +244,9 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
           break;
         }
       }
-      if (await bedieneFenster(lauf, lage, g)) continue;
+      const fenster = await bedieneFenster(lauf, lage, g);
+      rueck.welt(lauf, lage, !fenster);
+      if (fenster) continue;
       if (messung.abspann) {
         grund = "Abspann erreicht";
         break;

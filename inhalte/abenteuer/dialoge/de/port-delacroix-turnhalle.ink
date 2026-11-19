@@ -51,6 +51,8 @@ VAR hatKartePlanfinder = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Aus port-delacroix-musikhaus.ink: Das Schild hängt, das Musikhaus ist eröffnet. Hier nur gelesen.
+VAR musikhausOffen = false
 
 // ---------------------------------------------------------------- Der Vorwurf
 
@@ -288,6 +290,11 @@ Erst zu Miss Odile. Sie hat dein Brett. #sprecher:remy #stimmung:bitter
 -> END
 
 === remy_versoehnt ===
+// Nach der Eröffnung (musikhausOffen) redet Remy nicht mehr von ihr (Ansprechprobe, 19.11.2026).
+{musikhausOffen:
+    {~Das Stück zur Eröffnung ist fertig. Fast. Ich spiele es jeden Dienstag ein bisschen anders.|Du hast das Schild gerade aufgehängt. Ich habe nachgemessen. Gerade genug.|Drinnen klingt die Trompete besser als in der Turnhalle. Das Holz singt mit.} #sprecher:remy #stimmung:laechelt
+    -> END
+}
 {~Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.|Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist. Der Sturm hat meine Trompete auch fast genommen.|Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.} #sprecher:remy #stimmung:laechelt
 -> END
 
@@ -341,6 +348,10 @@ Findest du in meinen Stellungen auch einen? Mit Läufern. Läufer sind wichtig f
     -> END
 
 === lou_alltag ===
+{musikhausOffen:
+    {~Mein Muschelregal steht neben dem Klavier. Die Muscheln hören jetzt jeden Tag Musik.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern. Jetzt sogar durch einen ganzen Saal.|Im Musikhaus habe ich einen eigenen Tisch. Mit einem Brett aus der Stadt. Das hast du gebracht.} #sprecher:lou #stimmung:laechelt
+    -> END
+}
 {~Diese Muschel hat elf Rillen. Die hier zwölf. Das ist ein Plan, glaube ich.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern.|Wenn das Musikhaus fertig ist, kriege ich ein Regal für meine Muscheln.} #sprecher:lou #stimmung:laechelt
 -> END
 

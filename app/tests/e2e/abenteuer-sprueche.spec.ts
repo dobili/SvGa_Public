@@ -4,7 +4,7 @@
  * läuft die Uhr, der Spruch ist spielbar, Jo antwortet, und Ambrose erklärt beim ersten Spruch,
  * wo Sprüche hingehören. Die Karte ist danach verbraucht.
  */
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
@@ -28,6 +28,16 @@ const STAND = {
   besuchteOrte: ["mapleFalls"],
   karten: [{ kennung: "grossesMaul", anzahl: 1, erhalten: "2026-11-08T05:00:00.000Z" }],
 };
+
+/** Schneidet die Blase mit dieser Testkennung das Brett der Spielhülle? */
+async function schneidetBrett(page: Page, testid: string): Promise<boolean> {
+  const blase = await page.getByTestId(testid).boundingBox();
+  const brett = await page.locator(".abenteuer-huelle .brett").first().boundingBox();
+  if (!blase || !brett) return false;
+  const waagerecht = blase.x < brett.x + brett.width && brett.x < blase.x + blase.width;
+  const senkrecht = blase.y < brett.y + brett.height && brett.y < blase.y + blase.height;
+  return waagerecht && senkrecht;
+}
 
 function schreibeStand(stand: object): Promise<boolean> {
   return new Promise<boolean>((fertig, fehler) => {
@@ -91,6 +101,10 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   await expect(page.getByTestId("abenteuer-spruch-held")).toBeVisible();
   await expect(page.getByTestId("abenteuer-spruch-antwort")).toBeVisible();
   await expect(page.getByTestId("abenteuer-spruch-held")).toHaveAttribute("data-lage", "unten");
+  // Keine Blase auf dem Brett (Wunsch des Autors, 19.11.2026).
+  for (const kennung of ["abenteuer-spruch-held", "abenteuer-spruch-antwort"]) {
+    expect(await schneidetBrett(page, kennung), kennung).toBe(false);
+  }
   await page.getByTestId("abenteuer-spruch-held").click();
   await expect(page.getByTestId("abenteuer-spruch-erklaerung")).toContainText("im Park redet man");
   await expect(page.locator(".abenteuer-karte-meldung")).toContainText("Ein frecher Satz");

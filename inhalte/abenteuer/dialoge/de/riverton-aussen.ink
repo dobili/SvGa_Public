@@ -66,6 +66,7 @@ Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. Aus zwei Fenstern k
 Hier bin ich geboren. Also fast. Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
 An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler
 Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose #stimmung:laechelt
+Meine Cousine sagt, der echte Club spielt im Parkpavillon am Fluss. Der Chef heißt Slick, und er redet schneller, als er zieht. #sprecher:juno #stimmung:froh
 -> END
 
 // ---------------------------------------------------------------- Übergänge

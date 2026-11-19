@@ -258,6 +258,19 @@ test("Steuerkreuz: mit gedrücktem Daumen von ▼ auf ▶ gleiten wechselt die R
   await expect(unten).not.toHaveAttribute("data-gedrueckt", "ja");
   await page.mouse.up();
   await expect(kreuz.locator('[data-gedrueckt="ja"]')).toHaveCount(0);
+  // Langer Druck (19.11.2026): keine Textauswahl, kein Kontextmenü des Browsers im Spiel.
+  // WebKit kennt nur die Form mit Präfix und meldet „user-select“ als „auto“.
+  const auswahl = await rechts.evaluate((knopf) => {
+    const stil = getComputedStyle(knopf);
+    return stil.getPropertyValue("-webkit-user-select") || stil.getPropertyValue("user-select");
+  });
+  expect(auswahl).toBe("none");
+  const menueVerhindert = await rechts.evaluate((knopf) => {
+    const ereignis = new MouseEvent("contextmenu", { bubbles: true, cancelable: true });
+    knopf.dispatchEvent(ereignis);
+    return ereignis.defaultPrevented;
+  });
+  expect(menueVerhindert).toBe(true);
 });
 
 test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachboden (19.11.2026)", async ({

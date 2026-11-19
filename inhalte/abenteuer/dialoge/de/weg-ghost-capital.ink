@@ -335,7 +335,7 @@ Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir ein
 ~ wandererSeitenZurueck = buchseiten
 Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
 {buchseiten >= 13:
-    Alle dreizehn. Jetzt lasse ich sie binden. Komm mich in Capital besuchen. #sprecher:wanderer #stimmung:laechelt
+    Alle dreizehn. Jetzt lasse ich sie binden. Komm mich auf dem Vorplatz der Capital Arena besuchen. #sprecher:wanderer #stimmung:laechelt
 - else:
     {buchseiten} von dreizehn. Der Rest liegt noch irgendwo zwischen hier und Maple Falls. #sprecher:wanderer #stimmung:laechelt
 }

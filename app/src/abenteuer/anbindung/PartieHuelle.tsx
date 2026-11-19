@@ -40,7 +40,7 @@ import { Erzaehlvorhang, Kurzformzeile, Nachwort } from "./Kurzformzeile";
 import { endgrund, gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
-import { Tischblase, TischblasenRahmen } from "./Tischblase";
+import { BrettfreieZeile, Tischblase, TischblasenRahmen } from "./Tischblase";
 import { Tischgespraech } from "./Tischgespraech";
 import { useBegegnung } from "./useBegegnung";
 import { useSchutzengel } from "./useSchutzengel";
@@ -236,9 +236,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
         />
       )}
       {raten.zeile && (
-        <p className="abenteuer-moment" role="status" data-testid="abenteuer-zugerraten">
-          {tSpiel(raten.zeile)}
-        </p>
+        <BrettfreieZeile testid="abenteuer-zugerraten">{tSpiel(raten.zeile)}</BrettfreieZeile>
       )}
       <div className="abenteuer-partie-brett">
         <Brettbereich

@@ -10,7 +10,8 @@
  * Tipp. Der Kopf der Hülle zeigt das Porträt in der Stimmung der oberen Zeile (useKopfstimmung).
  * Abhängigkeiten: anbindung/tischblasen.ts, dialog/Portraet.tsx, texte/texte.ts.
  */
-import { useEffect, useMemo, useReducer, type ReactNode } from "react";
+import { useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
+import { useBrettfrei } from "./brettfrei";
 import { Portraet } from "../dialog/Portraet";
 import { tSpiel } from "../texte/texte";
 import {
@@ -50,6 +51,9 @@ export function TischblasenRahmen({ children }: { readonly children: ReactNode }
 
 /** Eine gezeigte Zeile: Porträt, Name, Text; Tipp oder Lesedauer blendet sie aus. */
 function Zeile({ zeile, beiEnde }: { readonly zeile: Blasenzeile; readonly beiEnde: () => void }) {
+  // Nie auf dem Brett (Wunsch des Autors, 19.11.2026): sonst ober- oder unterhalb.
+  const verweis = useRef<HTMLButtonElement>(null);
+  useBrettfrei(verweis, zeile.lage);
   useEffect(() => {
     const uhr = window.setTimeout(beiEnde, lesedauer(zeile.text));
     return () => window.clearTimeout(uhr);
@@ -58,6 +62,7 @@ function Zeile({ zeile, beiEnde }: { readonly zeile: Blasenzeile; readonly beiEn
   }, [zeile.schluessel]);
   return (
     <button
+      ref={verweis}
       type="button"
       className="abenteuer-tischblase"
       data-lage={zeile.lage}
@@ -87,5 +92,22 @@ export function Tischblase({ lage }: { readonly lage: Lage }) {
       zeile={zeile}
       beiEnde={() => steuerung.schliesse(lage, zeile.schluessel)}
     />
+  );
+}
+
+/** Eine Hinweiszeile oben am Rand (etwa beim Zugerraten), ebenfalls nie auf dem Brett. */
+export function BrettfreieZeile({
+  testid,
+  children,
+}: {
+  readonly testid: string;
+  readonly children: ReactNode;
+}) {
+  const verweis = useRef<HTMLParagraphElement>(null);
+  useBrettfrei(verweis, "oben");
+  return (
+    <p ref={verweis} className="abenteuer-moment" role="status" data-testid={testid}>
+      {children}
+    </p>
   );
 }

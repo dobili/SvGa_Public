@@ -204,6 +204,7 @@ Zweite Frage: Hat er einen Zug, der alles hält? Den suchst du. Für ihn. So gr�
 - Dann hoffst du. Und spielst es. Und siehst ihm ins Gesicht. #sprecher:ambrose #stimmung:lachtOhneSpott
 Das ist der Teil, den keine Maschine kann. Sie muss nie hoffen. Arme Maschine. #sprecher:ambrose #stimmung:laechelt
 Ihr übt, bis das Licht fort ist. #sprecher:erzaehler
+Morgen früh wartet Tomás in der Garage, sagt Mira. Mit Aufgaben. Er hat ihr verboten, sie dir vorher zu zeigen. #sprecher:erzaehler
 Im Geigenkasten liegt eine Karte, die du seit Port Delacroix nicht angefasst hast. #sprecher:erzaehler
 {nietenCanyonGefunden:
     Als ihr absteigt, im letzten Grau, bleibt ihr an der Brücke unter dem Felsbogen stehen. J. H. auf jeder Niete, am Pfeiler die Platte: 1879. #sprecher:erzaehler

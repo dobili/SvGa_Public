@@ -150,6 +150,7 @@ Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts g
 {hatHalesSeite:Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Dann gibt er sie dir zurück.|Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch.} #sprecher:erzaehler
 Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor #stimmung:nachdenklich
 In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
+Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als Häuser. #sprecher:pruitt #stimmung:laechelt
 ~ gibFund("schlussstellungFernpartie")
 -> END
 

@@ -39,6 +39,7 @@ Neben dem Rollgitter hat jemand einen Springer auf das Pflaster gemalt, mit Krei
 
 === kreide_raetsel ===
 Unter der Stellung steht: „Zwei Fliegen, eine Klappe. Der Zug ist das Wort.“ #sprecher:erzaehler
+Ein Kreidepfeil zeigt auf das Gitter vor der Treppe zum alten U-Bahnhof. #sprecher:erzaehler
 + [Die Stellung lösen]
     ~ beginneAufgaben("capitalArena.kreideraetsel")
     -> END

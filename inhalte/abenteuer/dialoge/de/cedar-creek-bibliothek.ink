@@ -40,6 +40,8 @@ VAR clubkampfZaehlGesagt = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert okafor_nach_revanche auf den Ausgang.
+VAR revancheCedarCreek = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -48,6 +50,7 @@ VAR abschiedGesehen = false
 - not okaforGetroffen: -> okafor_erstes_treffen
 - not (reiheDexBestanden and reiheMaeBestanden): -> okafor_reihe_offen
 - nadelCedarCreek > clubkampfCedarCreekBesprochen: -> okafor_nach_sieg
+- revancheCedarCreek: -> okafor_nach_revanche
 - nadelCedarCreek == 0 and ausgangCedarCreekClubkampf == "niederlage": -> okafor_nach_niederlage
 - nadelCedarCreek == 0 and not nachtImLesesaal: -> okafor_bis_morgen
 - nadelCedarCreek == 0: -> okafor_clubkampf
@@ -144,6 +147,7 @@ Setz dich. #sprecher:okafor #stimmung:laechelt
 -> END
 
 === okafor_nach_sieg ===
+~ revancheCedarCreek = false
 // Runde 11 (VC91, VC92, Roman Kapitel 15): Ambrose schweigt nach der Partie („Er sagt nichts.
 // Aber er ist da.“); die Karte Mentor-Zug vergibt die Quest ohne Kommentar; zum Steg schickt Juno.
 // Klang: Stille S24 (zwölf Uhrschläge), dann die Fanfare.
@@ -174,6 +178,11 @@ Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmu
 
 === okafor_nach_niederlage ===
 Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Sie wartet, bis du ungeduldig wirst. Werde es nicht, dann wartet sie umsonst. #sprecher:ambrose #stimmung:nachdenklich
+}
 * [„Noch einmal.“]
     -> okafor_partie
 * [„Nicht jetzt.“]
@@ -192,6 +201,7 @@ Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimm
     {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor #stimmung:laechelt
 }
 + {nadelCedarCreek > 0 and nadelCedarCreek < 3} [„Noch eine Partie um die Nadel.“]
+    ~ revancheCedarCreek = true
     -> okafor_partie
 + [„Bis bald, Mrs. Okafor.“]
     -> END
@@ -367,3 +377,25 @@ Mae wartet mit ihren Mattbildern. Die mit den Namen. #sprecher:dex #stimmung:neu
 {not reiheMaeBestanden: -> mae}
 Du hast jedes Bild erkannt! Auch das Erstickte! #sprecher:mae #stimmung:froh
 -> mae
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht okafor auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== okafor_nach_revanche ===
+~ revancheCedarCreek = false
+{
+- ausgangCedarCreekClubkampf == "sieg":
+    Gewonnen. Die Nadel bleibt dieselbe; die Partie kommt trotzdem in den Ordner. #sprecher:okafor #stimmung:laechelt
+- ausgangCedarCreekClubkampf == "remis":
+    Remis. Geduld ist auch ein Ergebnis. Deine Nadel bleibt. #sprecher:okafor #stimmung:neutral
+- ausgangCedarCreekClubkampf == "niederlage":
+    Diesmal nicht. Deine Nadel bleibt dir. Wir haben Zeit. #sprecher:okafor #stimmung:laechelt
+- else:
+    -> okafor
+}
++ {nadelCedarCreek < 3} [„Noch einmal.“]
+    ~ revancheCedarCreek = true
+    ~ beginnePartie("cedarCreek.clubkampf")
+    -> END
++ [„Später.“]
+    -> END

@@ -24,7 +24,7 @@ const minuten = Number(process.env.DURCHLAUF_MINUTEN ?? "30");
 
 export default defineConfig({
   testDir: "tests/durchlauf",
-  testMatch: "durchlauf.spec.ts",
+  testMatch: ["durchlauf.spec.ts", "ansprechprobe.spec.ts"],
   timeout: (minuten + ZUSCHLAG_MINUTEN) * MS_JE_MINUTE,
   workers: 1,
   retries: 0,

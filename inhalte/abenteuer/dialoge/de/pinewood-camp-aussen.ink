@@ -195,6 +195,7 @@ Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in 
 {
 - not hollisGetroffen: -> hollis_erstes_treffen
 - ausgangPinewoodCampHollis == "" or ausgangPinewoodCampHollis == "abgebrochen": -> hollis_angebot
+- ausgangPinewoodCampHollis == "remis": -> hollis_nach_remis
 - ausgangPinewoodCampHollis == "niederlage": -> hollis_nach_niederlage
 - else: -> hollis_nach_sieg
 }
@@ -231,6 +232,17 @@ Noch eine? Die Sonne steht noch über den Wipfeln. #sprecher:hollis #stimmung:la
 
 === hollis_nach_niederlage ===
 Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis #stimmung:laechelt
++ [„Revanche.“]
+    ~ beginnePartie("pinewoodCamp.hollis")
+    -> END
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in hollis_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== hollis_nach_remis ===
+Remis. Diesmal hat der Wald keinen von uns gewinnen lassen. Noch einmal? #sprecher:hollis #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END

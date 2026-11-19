@@ -55,6 +55,8 @@ VAR abschiedGesehen = false
 - not ruizGetroffen: -> ruiz_erstes_treffen
 - ausgangWegSiliconDelacroixSchiffskoch == "" or ausgangWegSiliconDelacroixSchiffskoch == "abgebrochen": -> ruiz_angebot
 - ausgangWegSiliconDelacroixSchiffskoch == "niederlage": -> ruiz_nach_niederlage
+// „Remis halten“ (Regelwerk R13a): Ein Remis nach den Regeln (Patt, Wiederholung) ist das Ziel.
+- ausgangWegSiliconDelacroixSchiffskoch == "remis": -> ruiz_nach_sieg
 - else: -> ruiz_nach_sieg
 }
 

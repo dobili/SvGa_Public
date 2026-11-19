@@ -2180,8 +2180,8 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Ghost Town, „Im Saloon nach Ambroses letztem Brief suchen“ → die Kerze in der Erinnerung
       (das Zimmer über dem Laden). Die Kerze startet die Szene; Gideon führt nur zu ihr. Der
       Hinweis zeigt damit in Ghost Town auf den Laden und dessen Treppe, nicht auf den Saloon. Der
-      Questtext nennt aber den Saloon: Wenn du willst, ändere ich den Text in „Im Laden nach
-      Ambroses letztem Brief suchen“.
+      Questtext nannte aber den Saloon; er heißt jetzt „Im Zimmer über dem Laden nach Ambroses
+      letztem Brief suchen.“ (schon umgesetzt, Widerspruch genügt).
       Ghost Town, „In der Nacht die Sterne über Ghost Town ansehen“ → der Sternenhimmel. So sagt
       es der Questtext; der Weg zum Bus startet dieselbe Szene, wäre als Ziel aber irreführend.
       Epilog, „Das alte Brett wartet auf deinem Schreibtisch“ → das Brett auf dem Schreibtisch in

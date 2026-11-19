@@ -143,6 +143,8 @@ Du siehst zu Ambrose. Er nickt. #sprecher:erzaehler #pause
 Wie ist er? Der Zug. Ist er gut? #sprecher:victor #stimmung:laechelt
 Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
 Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprecher:ambrose #stimmung:lacht
+Victor steckt das Buch ein. #sprecher:erzaehler
+Gehen wir runter zur Hütte? Ward wartet mit deiner Partie, und ich will zusehen. #sprecher:victor #stimmung:laechelt
 -> END
 
 === victor_alltag ===

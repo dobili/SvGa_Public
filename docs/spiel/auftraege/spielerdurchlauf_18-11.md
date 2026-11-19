@@ -7,8 +7,8 @@ mit diesen Eingaben nicht weiterkommt.
 **Kurz:** Der Lauf kam nicht bis zum Abspann. Durchgehend gespielt ist Akt 1 ganz und Akt 2 bis
 Riverton. Akt 3 und der Anfang von Akt 4 sind in Teilen gespielt, aber von einem Stand aus, den
 die Gesamtsimulation erspielt hat. Der Rest ist nicht gespielt; seine Spielzeit steht unten nur als
-Rechnung. Sieben Funde: vier behoben (1, 5, 6, 7), einer zum größten Teil (2), einer offen (4,
-Bergstation), und einer erwies sich als Fehler des Durchlaufs (3).
+Rechnung. Sieben Funde: fünf behoben (1, 2, 5, 6, 7), einer offen (4, Bergstation), und einer erwies sich
+als Fehler des Durchlaufs (3).
 
 ## 1. Wie gespielt wurde
 
@@ -110,12 +110,12 @@ gemessen 89 Minuten zügig; das passt eher zu einem längeren Akt 3 als gerechne
    Browser erlebt. Behebung allgemein: `oberwelt/einschluss.ts` rückt den Helden beim Laden jeder
    Karte aus einer kleinen Nische ohne Weg zu einem Übergang auf die nächste ganz freie Kachel.
    Test: `einschluss.test.ts` (Nische, Gegenproben, alle Ankunfts- und Startfelder aller Karten).
-2. **Zielhinweis zeigt auf der Zielkarte nichts (behoben bis auf neun Schritte).** 34 Schritte von
-   Hauptquests nannten nur einen Dialogknoten mitten im Gespräch; der Hinweis führte dann bis zur
-   Karte und zeigte dort auf nichts. Nach Victor musste man Coach Delgado noch einmal ansprechen,
-   ohne Hinweis. Jetzt steht in `quests.json` an 26 Schritten ein `ziel` (drei bei
-   `mapleFalls.besserWerden`, 23 weitere), überall dort, wo genau eine Figur oder ein Auslöser der
-   Zielkarte zum Knoten führt. Die neun übrigen stehen in Abschnitt 5a.
+2. **Zielhinweis zeigt auf der Zielkarte nichts (behoben).** 34 Schritte von Hauptquests nannten
+   nur einen Dialogknoten mitten im Gespräch; der Hinweis führte dann bis zur Karte und zeigte
+   dort auf nichts. Nach Victor musste man Coach Delgado noch einmal ansprechen, ohne Hinweis.
+   Jetzt steht in `quests.json` an 31 Schritten ein `ziel`: drei bei `mapleFalls.besserWerden`,
+   23 weitere, wo genau eine Figur oder ein Auslöser der Zielkarte zum Knoten führt, und fünf, bei
+   denen mehrere in Frage kamen (Abschnitt 5a, als RO40 beim Autor). Vier Ankünfte brauchen keins.
 3. **Stillstand in Sams erster Aufgabe (kein Fund des Spiels).** Zweimal blieb der Lauf dort
    stehen. Mit dem berichtigten Skript und frischem Profil (Querformat) trat es nicht mehr auf;
    Ursache war sehr wahrscheinlich ein Fehler des Durchlaufs (ein Griff nach einem Element ohne
@@ -144,24 +144,23 @@ gemessen 89 Minuten zügig; das passt eher zu einem längeren Akt 3 als gerechne
    `tests/e2e/abenteuer-randfaelle.spec.ts`. Den Laden im Querformat habe ich nach der Behebung
    nicht noch einmal im Browser angesehen.
 
-### 5a. Hauptquest-Schritte ohne `ziel` (Reststand zu Fund 2)
+### 5a. Hauptquest-Schritte mit mehreren möglichen Zielen (zu Fund 2)
 
-Nicht geraten, weil keine Figur und kein Auslöser eindeutig passt:
+Bei fünf Schritten führen mehrere Figuren oder Auslöser zum Knoten. Entschieden nach dem Maßstab
+„wen muss der Spieler in diesem Schritt ansprechen, und was sagt der Questtext“; der Autor kann
+widersprechen (RO40 in `docs/AUFGABEN_AUTOR.md`).
 
-| Quest, Schritt               | Knoten                                 | Warum kein `ziel`                                                                                |
-| ---------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `riverton.parkclub`, 2       | `riverton-aussen.ankunft`              | Ankunft: Der Knoten läuft am Übergang vom Bahndamm; der Hinweis zeigt schon auf diesen Übergang. |
-| `summitCity.endspiel`, 1     | `summit-city-aussen.ankunft_summit`    | Ankunft über die Bergstraße, wie oben.                                                           |
-| `crossroads.treffpunkt`, 1   | `crossroads-aussen.ankunft_crossroads` | Ankunft über die Prärie, wie oben.                                                               |
-| `pinewoodCamp.sommercamp`, 1 | `pinewood-camp-aussen.ankunft_camp`    | Ankunft über die Riesenbäume, wie oben.                                                          |
-| `ironwood.clubkampf`, 5      | `ironwood-aussen.kauf`                 | Zwei Figuren führen hin: Victor und Graham Hale.                                                 |
-| `portDelacroix.tiefpunkt`, 1 | `port-delacroix-turnhalle.vorwurf`     | Drei Figuren führen hin: Odile, Remy und Lou (auch im Musikhaus).                                |
-| `ghostTown.fernpartie`, 2    | `erinnerung-siedlung.letzter_brief`    | In der Erinnerung führen Gideon und die Kerze hin; der Weg in die Erinnerung beginnt woanders.   |
-| `ghostTown.fernpartie`, 5    | `ghost-town-aussen.nacht_ambrose`      | Sternenhimmel oder der Weg zur Hauptstadt.                                                       |
-| `mapleFalls.epilog`, 1       | `maple-falls-dachboden.epilog`         | Brett auf dem Dachboden, Brett am Schreibtisch oder Ambrose im Zimmer.                           |
+| Quest, Schritt               | Knoten                              | Gewähltes Ziel                       | Warum                                                                                                                                |
+| ---------------------------- | ----------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `ironwood.clubkampf`, 5      | `ironwood-aussen.kauf`              | Graham Hale am Werkstor              | Er ist der Käufer; Victor ist das Ziel des nächsten Schritts.                                                                        |
+| `portDelacroix.tiefpunkt`, 1 | `port-delacroix-turnhalle.vorwurf`  | Miss Odile in der Turnhalle          | Sie leitet den Club; Remy und Lou sind die Ziele ihrer Aufgaben danach.                                                              |
+| `ghostTown.fernpartie`, 2    | `erinnerung-siedlung.letzter_brief` | Kerze in der Erinnerung              | Die Kerze startet die Szene, Gideon führt nur zu ihr. Der Hinweis zeigt in Ghost Town auf den Laden; der Questtext nennt den Saloon. |
+| `ghostTown.fernpartie`, 5    | `ghost-town-aussen.nacht_ambrose`   | Sternenhimmel                        | So sagt es der Questtext.                                                                                                            |
+| `mapleFalls.epilog`, 1       | `maple-falls-dachboden.epilog`      | Brett auf dem Schreibtisch im Zimmer | So sagt es der Questtext; auf dem Dachboden steht kein Brett mehr.                                                                   |
 
-Die Schrittnummern zählen wie im Tagebuch ab 1. Bei den vier Ankünften fehlt nichts; bei den fünf
-anderen entscheidet der Autor, wohin der Hinweis zeigen soll.
+Ohne `ziel` bleiben vier Ankünfte (`riverton.parkclub` 2, `summitCity.endspiel` 1,
+`crossroads.treffpunkt` 1, `pinewoodCamp.sommercamp` 1): Der Knoten läuft am Übergang in den Ort,
+und der Hinweis zeigt schon auf diesen Übergang. Die Schrittnummern zählen wie im Tagebuch ab 1.
 
 Keine Funde in den gespielten Strecken: Dialog ohne Ausgang, Brett nicht bedienbar, Übergang ohne
 Reaktion, Kamera. Die Meldungen „Übergang … unerreichbar“ in den Protokollen (Schule in Maple

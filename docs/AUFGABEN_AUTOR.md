@@ -2167,3 +2167,24 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       dem Vorrat) waren mit 80 bis 91 fast geschenkt; sie geben jetzt 7 statt 10 Züge („Sieben
       Züge“ in ihren Ansagen), damit sinkt es auf etwa 60 bis 85 (im Mittel 75 statt 85). Ein stärkerer Gegner half dort
       nicht, und mehr Vorteil verlangen erlaubt das Regelwerk nicht.
+- [ ] RO40. **Zielhinweis bei fünf Schritten der Hauptgeschichte (19.11.2026, umgesetzt,
+      Widerspruch genügt):** Beim Durchspielen mit echten Eingaben zeigte der Zielhinweis bei
+      vielen Schritten nur bis zur Karte und dort auf nichts; man musste erraten, wen man
+      ansprechen soll. Wo nur eine Figur in Frage kam, zeigt er jetzt auf sie. Bei fünf Schritten
+      gab es mehrere Möglichkeiten; dort habe ich so entschieden:
+      Ironwood, „Zum Werkstor gehen“ (der Kauf des Clubs) → Graham Hale. Er ist der Käufer, die
+      Szene gehört ihm; Victor steht daneben und ist gleich danach das Ziel für die Einladung, so
+      führt der Hinweis nacheinander zu beiden.
+      Port Delacroix, „In der Turnhalle mit dem Club reden“ (der Vorwurf) → Miss Odile. Sie leitet
+      den Club; Remy und Lou starten dasselbe Gespräch, sind aber danach die Ziele ihrer Aufgaben.
+      Ghost Town, „Im Saloon nach Ambroses letztem Brief suchen“ → die Kerze in der Erinnerung
+      (das Zimmer über dem Laden). Die Kerze startet die Szene; Gideon führt nur zu ihr. Der
+      Hinweis zeigt damit in Ghost Town auf den Laden und dessen Treppe, nicht auf den Saloon. Der
+      Questtext nennt aber den Saloon: Wenn du willst, ändere ich den Text in „Im Laden nach
+      Ambroses letztem Brief suchen“.
+      Ghost Town, „In der Nacht die Sterne über Ghost Town ansehen“ → der Sternenhimmel. So sagt
+      es der Questtext; der Weg zum Bus startet dieselbe Szene, wäre als Ziel aber irreführend.
+      Epilog, „Das alte Brett wartet auf deinem Schreibtisch“ → das Brett auf dem Schreibtisch in
+      deinem Zimmer. So sagt es der Questtext; auf dem Dachboden steht seit dem ersten Abend kein
+      Brett mehr.
+      Schon umgesetzt in inhalte/abenteuer/quests.json, Widerspruch genügt.

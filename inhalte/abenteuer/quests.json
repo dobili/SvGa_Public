@@ -1069,7 +1069,11 @@
               "akt": 2,
               "szene": "akt2.ironwoodVerkauft"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "ironwood.aussen",
+            "objekt": "grahamHale"
+          }
         },
         {
           "text": "quest.clubkampf.schritt6",
@@ -1567,7 +1571,11 @@
               "akt": 3,
               "szene": "akt3.tiefpunkt"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "portDelacroix.turnhalle",
+            "objekt": "odile"
+          }
         },
         {
           "text": "quest.tiefpunkt.schritt2",
@@ -2035,7 +2043,11 @@
               "akt": 4,
               "szene": "akt4.flashbackKerze"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "erinnerungSiedlung.huette",
+            "objekt": "kerze"
+          }
         },
         {
           "text": "quest.fernpartie.schritt3",
@@ -2075,7 +2087,11 @@
               "akt": 4,
               "szene": "akt4.ambroseSagtEs"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "ghostTown.aussen",
+            "objekt": "sternenhimmel"
+          }
         }
       ]
     },
@@ -2250,7 +2266,11 @@
               "akt": 5,
               "szene": "akt5.postGame"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.zimmer",
+            "objekt": "brettSchreibtisch"
+          }
         }
       ]
     },

@@ -250,18 +250,28 @@ export async function kachel(seite: Page): Promise<string> {
   return (await seite.getByTestId("abenteuer-kachel").textContent()) ?? "";
 }
 
-/** Geht Kachel für Kachel bis zur letzten Kachel vor dem Übergang. */
+/** Knopf des Steuerkreuzes zur Taste der Sperre. */
+const KREUZKNOPF: Readonly<Record<Sperre["taste"], string>> = {
+  ArrowLeft: "Nach links",
+  ArrowRight: "Nach rechts",
+};
+
+/**
+ * Geht Kachel für Kachel bis zur letzten Kachel vor dem Übergang: je Schritt ein Tipp auf das
+ * Steuerkreuz, der den Helden genau eine Kachel weit trägt (szene.ts, Tippschritt).
+ * Warum Tipps statt gehaltener Taste: Unter Last (vier Worker) kam die Abfrage der Kachel zu spät,
+ * der Held lief mit der gehaltenen Taste über die Randkachel auf den Übergang, das Gespräch der
+ * Truppe öffnete sich zu früh, und der nächste Schritt wartete vergeblich (4 von 8 Läufen,
+ * 19.11.2026).
+ */
 export async function geheZumRand(seite: Page, sperre: Sperre): Promise<void> {
   const rand = randkachel(sperre);
+  const knopf = seite.getByRole("button", { name: KREUZKNOPF[sperre.taste] });
   for (let i = 0; i < MAX_SCHRITTE && (await kachel(seite)) !== rand; i++) {
     const vorher = await kachel(seite);
-    await seite.keyboard.down(sperre.taste);
-    try {
-      await expect.poll(() => kachel(seite), { timeout: 3000, intervals: [20] }).not.toBe(vorher);
-    } finally {
-      await seite.keyboard.up(sperre.taste);
-    }
-    // Der Held beendet den angefangenen Schritt; erst danach zählt die Kachel.
+    await knopf.click();
+    await expect.poll(() => kachel(seite), { timeout: 5000 }).not.toBe(vorher);
+    // Der Tippschritt endet in der Mitte der Kachel; erst danach zählt sie.
     await seite.waitForTimeout(150);
   }
   await expect.poll(() => kachel(seite), { timeout: 2000 }).toBe(rand);

@@ -1,3 +1,19 @@
+Stand: 19.11.2026, 16:30 Uhr (Haupt-Chat, Schach-Abenteuer): **Beta mit allen Wünschen vom 19.11., CI grün.**
+
+- Langes Drücken ohne Textauswahl, Sprechblasen nie auf dem Brett (`anbindung/brettfrei.ts`),
+  Wegweiser in Dialogen (`naechsterschritt`), Einleitung mit Mama (E1–E4 bei Gemini offen),
+  Reaktion nach jeder Partie und jedem Rätsel (`rueckmeldung.cjs`), Zielpfeil nur auf Wunsch im
+  Tagebuch, Erzählungen zur richtigen Zeit (`erzaehlzeit`), Kamera ohne Ruckeln, Zeitwertung im
+  Spiel mit halber Blitzwertung und Ambroses Zeithinweisen (App nur Vorschlag:
+  `docs/spiel/auftraege/rueckmeldung/zeitwertung_app_vorschlag.md`), Sternennacht nicht mehr zu
+  verpassen, Zufall der Simulation exakt. Fables Spielerdurchlauf bis zum Abspann (12–17 h).
+- Testpunkte N2638–N2644.
+
+**Nächster Schritt (Nacht 19./20.11., Autor 14 h weg):** mittel-1 Pinewood Camp und Epilog im
+Browser, mittel-2 Querformat Akt 2–4, mittel-3 Niederlagen und Notausgänge im Browser, Henris
+Werkstatt, Musikhaus; mittel-4 Haustür Maple Falls, Wackler unter Last. Lieferungen mischen, Gate,
+Beta.
+
 Stand: 18.11.2026, 23 Uhr (Haupt-Chat, Schach-Abenteuer): **CI grün in 13 Minuten, Nachtrunde läuft.**
 
 - Abend: Roman angeglichen (Kap. 33, Boateng, Victor), Maia ohne Netz kein Hindernis, Spiel über das

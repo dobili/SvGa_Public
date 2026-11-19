@@ -81,6 +81,16 @@ Teil fertig ist.
       „N2637 Akt 4: hänge am Brunnen fest“, gern mit Ort und Bildschirmfoto. Fehler im Spiel am
       schnellsten über Profil › Einstellungen › Fehler melden.
 
+- [ ] N2638. **Deine Anmerkungen vom 19.11. (Beta):** Bitte beim Durchspielen nebenbei prüfen.
+      1. Lange auf die Pfeiltasten drücken: Es wird kein Text mehr markiert, und kein Menü mit
+         Kopieren oder Ausschneiden erscheint.
+      2. Während einer Partie oder eines Rätsels liegt keine Sprechblase mehr auf dem Brett.
+         Ambrose und der Gegner sprechen ober- oder unterhalb. Ist dort zu wenig Platz, rückt die
+         Blase direkt über oder unter das Brett, und eine sehr lange Blase lässt sich rollen.
+      3. Nach jedem Questschritt sagt eine Figur im Dialog, wohin es als Nächstes geht, zum Beispiel
+         Juno in Riverton: Slick spielt im Parkpavillon. Neun Stellen hatten das vorher nicht.
+      **Rückmeldung:** „N2638 ok“ oder die Nummer mit Notiz, etwa „N2638.2: Blase verdeckt die Uhr“.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein

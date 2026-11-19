@@ -178,6 +178,7 @@ Hier warst du schon. Jemand winkt dir aus dem Fenster zu. #sprecher:erzaehler
 {
 - not batisteGetroffen: -> batiste_erstes_treffen
 - ausgangPortDelacroixBatiste == "" or ausgangPortDelacroixBatiste == "abgebrochen": -> batiste_angebot
+- ausgangPortDelacroixBatiste == "remis": -> batiste_nach_remis
 - ausgangPortDelacroixBatiste == "niederlage": -> batiste_nach_niederlage
 - else: -> batiste_nach_sieg
 }
@@ -230,6 +231,17 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
 
 === batiste_nach_niederlage ===
 Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste #stimmung:laechelt
++ [„Noch einmal.“]
+    ~ beginnePartie("portDelacroix.batiste")
+    -> END
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in batiste_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== batiste_nach_remis ===
+Gleich. Das Wasser steht still. Noch einmal? #sprecher:batiste #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END

@@ -37,6 +37,8 @@ VAR angesehenLaptop = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Aus port-delacroix-musikhaus.ink: Das Schild hängt, das Musikhaus ist eröffnet. Hier nur gelesen.
+VAR musikhausOffen = false
 
 // ---------------------------------------------------------------- Henri
 
@@ -99,6 +101,11 @@ Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 -> END
 
 === henri_alltag ===
+// Nach der Eröffnung (musikhausOffen) steht sein Klavier schon im Musikhaus (Ansprechprobe, 19.11.2026).
+{musikhausOffen:
+    {~Mein altes Klavier steht jetzt im Musikhaus. Es klingt immer noch wie ein Gewitter, aber ein freundliches.|Das Dach hält. Ich gehe abends hin und höre zu, wie die Figuren klappern.|Céleste macht Musik mit dem Laptop. Ich verstehe es nicht, aber es hat Takt.} #sprecher:henri #stimmung:laechelt
+    -> END
+}
 {~Das Dach ist fast dicht. Die Klaviere danken es uns.|Für das Musikhaus stifte ich ein Klavier. Das alte da hinten, es klingt wie ein Gewitter.|Céleste macht Musik mit dem Laptop. Ich verstehe es nicht, aber es hat Takt.} #sprecher:henri #stimmung:laechelt
 -> END
 

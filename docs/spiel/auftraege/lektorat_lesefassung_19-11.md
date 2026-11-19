@@ -117,28 +117,32 @@ Arten: D Doppelung, Z Zeit und Ort, V Vorwissen, T Ton, A Anrede, R Regel „hö
 | A   | hochebene.pferd, weg-pinewood-ghost.greifarm_ende       | „schaut {held} an“, „vor {held} hin“ (sonst überall du)                                               | „schaut dich an“, „vor dich hin“                                                                         |
 | Z   | quest.geysirblitz.schritt2, quest.studie.schritt1       | „mein Abzeichen“; „Haraldsens Mantel“ (er trägt Uniform)                                              | „das Abzeichen“; „Haraldsens Uniform“                                                                    |
 
-## Nicht hier geändert, an den Hauptchat
+## Nach dem Mischen der Revanche-Zweige von mittel-3
 
-- **Revanchen und Ergebnisreaktionen.** Diese Stellen liegen im Bereich der Revanche- und
-  Remis-Zweige von mittel-3. Damit nichts doppelt gebaut wird und keine Konflikte entstehen,
-  bleiben sie dort:
-  - Akt 1:
-    - coach_alltag und okafor_alltag nach einer Revanche ohne bessere Nadel
-    - okafor_nadel: zwölf Glockenschläge bei jeder besseren Nadel
-    - jo_nach_sieg: „Okay, okay“ und „Limo geht auf mich“, obwohl Jo pleite ist
-  - Akt 2:
-    - big_joe_nach_sieg spielt nach einer Revanche die ganze Kantinenszene noch einmal
-    - slick_alltag spielt den Montag noch einmal
-    - joggerin_nach_sieg und gus_nach_sieg: Ein Remis klingt wie ein Sieg
-  - Akt 3:
-    - mira_nach_sieg spielt nach einer Revanche die Erstsieg-Szene noch einmal
-    - buck_nach_sieg mit seinem Konterspruch
-  - Akt 4:
-    - sol_nach_sieg nach einem Remis
-    - Ward nach einer Revanche ohne Reaktion
-    - Kreidenacht: keine Reaktion nach Runde 1 und 2
-    - Mabel nach Set 2, dazu „Noch einmal?“ ohne Wahl
-    - greta_nach_partie geht nicht auf das Ergebnis ein
+mittel-3 hat Reaktionen für Revanchen ohne bessere Nadel und für Remis in kurzen Partien gebaut.
+Damit sind diese Funde erledigt: coach_alltag und okafor_alltag nach einer Revanche, Ward nach
+einer Revanche, Gus, Joggerin und Sol nach einem Remis. Hier kam noch dazu:
+
+| Art | Stelle                                  | Vorher                                                                                            | Nachher                                                                                                          |
+| --- | --------------------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| D,Z | cedar-creek-bibliothek.okafor_nach_sieg | Eine Revanche mit besserer Nadel spielt die zwölf Glockenschläge und Maes Namensfrage noch einmal | „Sie reicht dir die bessere Nadel über das Brett.“, „Du bist wiedergekommen. Das gefällt mir mehr als der Sieg.“ |
+| D,Z | ironwood-kantine.big_joe_nach_sieg      | ganze Kantinenszene mit Mama in der ersten Reihe noch einmal                                      | „Big Joe steckt dir die bessere Nadel an.“, „Eine bessere Nadel, Kumpel. …“                                      |
+| D   | desert-springs-garage.mira_nach_sieg    | „Noch mal. Jetzt.“ und die Kaktus-Übergabe noch einmal                                            | „Mira wirft dir die bessere Nadel zu.“, „Schon wieder. Morgen opfere ich früher.“                                |
+| D   | weg-ironwood-silicon.joggerin_nach_sieg | „Du hast mich ausgebremst. Respekt.“ (die Erzählung sagt es gerade)                               | „Mein Puls sagt Pause. Dein Brett sagt Sieg.“                                                                    |
+
+## Offen, an den Hauptchat
+
+- **Noch ohne Ergebnisreaktion:**
+  - Kreidenacht nach Runde 1 und 2 (kein `danach`)
+  - Mabel nach Set 2, dazu „Noch einmal?“ ohne Wahl
+  - greta_nach_partie
+  - jo_nach_sieg („Limo geht auf mich“, obwohl Jo pleite ist)
+  - buck_nach_sieg (sein Konterspruch)
+  - slick_alltag spielt nach einer verlorenen Revanche vor dem Wohnwagen den Montag noch einmal
+- **„Später.“ als Antwort:** In den acht neuen Revanche-Knoten stand „Später.“ als Wahl. Die
+  Dialogprüfung hält das Wort für Akt 1 frei (22_Dialogpruefung, Punkt 3). Hier geändert in
+  „Nicht jetzt.“. Die älteren Stellen (testteam, diplom, seilschaft, ambrose_wartet) bleiben,
+  wie sie waren.
 - **Mama in Ironwood (Karte).** Die Figur `ironwood.mama` steht auf der Karte „Mamas altes Zimmer“,
   ihr Dialog `mama_ankunft` erzählt aber Fahrt und Kantine („Du bleibst im Wagen“, Hank ist da).
   Das ist kein Textfehler: Die Figur gehört auf die Kantinenkarte. Das ist Kartenbau.

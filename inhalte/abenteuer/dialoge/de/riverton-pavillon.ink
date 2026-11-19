@@ -42,6 +42,8 @@ VAR moldeGefuehlt = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert slick_nach_revanche auf den Ausgang.
+VAR revancheRiverton = false
 
 // ---------------------------------------------------------------- Slick
 
@@ -63,6 +65,7 @@ VAR abschiedGesehen = false
 {
 - not slickGetroffen: -> slick_erstes_treffen
 - nadelRiverton > clubkampfRivertonNadel: -> slick_nach_sieg
+- revancheRiverton: -> slick_nach_revanche
 - clubkampfRivertonBesprochen: -> slick_alltag
 - not (reiheTamsinBestanden and reiheRayBestanden): -> slick_reihe_offen
 - nadelRiverton == 0 and ausgangRivertonClubkampf == "niederlage": -> slick_nach_niederlage
@@ -139,6 +142,11 @@ Jedes Mal. Vierzehn Jahre lang. #sprecher:slick #stimmung:nachdenklich
 === slick_nach_niederlage ===
 Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
 Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Er spielt schnell, damit du schnell spielst. Spiel langsam, dann ist er mit seiner Eile allein. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.clubkampf")
     -> END
@@ -146,6 +154,7 @@ Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillo
     -> END
 
 === slick_nach_sieg ===
+~ revancheRiverton = false
 // Kapitel 22: Slick nimmt den König in die Hand; Applaus wie Regen, dann die Fanfare; die Nadel
 // als grünes Achteck mit Uhr; „Lang spielen. Ich.“
 ~ clubkampfRivertonNadel = nadelRiverton
@@ -187,6 +196,7 @@ Dann spielen wir eben auf der Treppe unter der alten Steinbrücke. Da hat man ei
 
 === slick_alltag_wahl ===
 + {nadelRiverton < 3} [„Revanche um eine bessere Nadel?“]
+    ~ revancheRiverton = true
     Unter der Brücke? Immer. #sprecher:slick #stimmung:laechelt
     ~ beginnePartie("riverton.clubkampf")
     -> END
@@ -369,3 +379,25 @@ Ray hat auch noch Aufgaben für dich. #sprecher:tamsin #stimmung:laechelt
 {not tamsinZettelGegeben: -> tamsin_zettel}
 Hast du's gesehen? Er guckt nur nach vorn. #sprecher:tamsin #stimmung:nachdenklich
 -> END
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht slick auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== slick_nach_revanche ===
+~ revancheRiverton = false
+{
+- ausgangRivertonClubkampf == "sieg":
+    Sieg, aber keine bessere Nadel. Unter der Brücke zählt trotzdem jeder Sieg. #sprecher:slick #stimmung:laechelt
+- ausgangRivertonClubkampf == "remis":
+    Remis. Die Treppe hat zugesehen und nichts gesagt. Deine Nadel bleibt. #sprecher:slick #stimmung:neutral
+- ausgangRivertonClubkampf == "niederlage":
+    Heute ich. Deine Nadel bleibt, wo sie ist. Komm wieder, wenn du willst. #sprecher:slick #stimmung:laechelt
+- else:
+    -> slick
+}
++ {nadelRiverton < 3} [„Noch einmal.“]
+    ~ revancheRiverton = true
+    ~ beginnePartie("riverton.clubkampf")
+    -> END
++ [„Nicht jetzt.“]
+    -> END

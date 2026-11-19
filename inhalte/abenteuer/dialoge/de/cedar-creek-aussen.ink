@@ -280,6 +280,7 @@ Nimm ihn mit. Vielleicht findest du das Schloss. #sprecher:rosa #stimmung:laeche
 - not ankunftCedarCreekGesehen: -> ankunft
 - not rosaGetroffen: -> rosa_erstes_treffen
 - ausgangCedarCreekRosaDuell == "" or ausgangCedarCreekRosaDuell == "abgebrochen": -> rosa_angebot
+- ausgangCedarCreekRosaDuell == "remis": -> rosa_nach_remis
 - ausgangCedarCreekRosaDuell == "niederlage": -> rosa_nach_niederlage
 - else: -> rosa_nach_sieg
 }
@@ -317,6 +318,16 @@ Nicht gezappelt. Gut. Noch eine Runde, während die Fische schlafen? #sprecher:r
 === rosa_nach_niederlage ===
 Gezappelt. Der Vorteil ist weggeschwommen. Noch mal? #sprecher:rosa #stimmung:laechelt
 Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa #stimmung:laechelt
++ [„Revanche.“]
+    -> rosa_duell
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in rosa_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== rosa_nach_remis ===
+Gehalten, aber nicht ausgebaut. Remis. Noch mal? #sprecher:rosa #stimmung:laechelt
 + [„Revanche.“]
     -> rosa_duell
 + [„Nicht jetzt.“]

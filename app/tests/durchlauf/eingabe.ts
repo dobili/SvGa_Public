@@ -13,6 +13,7 @@
 import type { CDPSession, Locator, Page } from "@playwright/test";
 import type { Knopf } from "./lage";
 import type { Messung } from "./messung";
+import type { Schwaechling } from "./schwach";
 
 /** Eine Laufrichtung. */
 export type Richtung = "oben" | "unten" | "links" | "rechts";
@@ -42,6 +43,8 @@ export interface Lauf {
   readonly frist: number;
   /** Gerade gehaltene Richtung (für das Loslassen). */
   gehalten: Richtung | null;
+  /** Gedächtnis des schwachen Spielers (schwach.ts); ohne DURCHLAUF_SPIELER=schwach spielt er normal. */
+  readonly schwach: Schwaechling;
 }
 
 /** So lange darf ein Knopf verdeckt sein, bevor das ein Fund ist (ms). */

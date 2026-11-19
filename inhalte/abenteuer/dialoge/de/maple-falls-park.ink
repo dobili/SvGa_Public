@@ -135,6 +135,7 @@ Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zett
 - limoGefragt and hatLimo and not limoGebracht: -> jo_limo_gebracht
 - ausgangMapleFallsSkaterJo == "" or ausgangMapleFallsSkaterJo == "abgebrochen": -> jo_angebot
 - not limoGefragt: -> jo_limo
+- ausgangMapleFallsSkaterJo == "remis": -> jo_nach_remis
 - ausgangMapleFallsSkaterJo == "niederlage": -> jo_nach_niederlage
 - else: -> jo_nach_sieg
 }
@@ -177,6 +178,16 @@ Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 {not abschiedGesehen:
     Du hast vergessen zu fragen, was hängt. #sprecher:ambrose #stimmung:nachdenklich
 }
++ [„Revanche.“]
+    -> jo_duell
++ [„Gleich.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in jo_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== jo_nach_remis ===
+Unentschieden! Das zählt nicht. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Revanche.“]
     -> jo_duell
 + [„Gleich.“]

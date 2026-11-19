@@ -18,6 +18,7 @@ import { tippe, type Lauf } from "./eingabe";
 import { bedieneDialog, bedieneUpdate, type Fenstergedaechtnis } from "./fenster";
 import { liesLage, liesSpeicher, type Partielage } from "./lage";
 import type { Partiemessung } from "./messung";
+import { brichPartieAb, gibAuf, schwaechsterZug } from "./schwach";
 
 /** So viel schlechter als der beste Zug darf ein gewählter Zug sein (Bauern). */
 const SPIELRAUM = 0.5;
@@ -132,6 +133,12 @@ async function waehleZug(fen: string): Promise<string> {
     return (nah[1 + Math.floor(zufall() * (nah.length - 1))] ?? bester).uci;
   }
   return bester.uci;
+}
+
+/** Der schwächste Zug der Stellung (schwacher Spieler, schwach.ts); ohne Bewertung der beste. */
+async function schwacherZug(fen: string): Promise<string> {
+  const alle = (await bewerteStellung(fen)).filter((k) => !/[rbn]$/.test(k.uci));
+  return schwaechsterZug(alle) ?? (await waehleZug(fen));
 }
 
 /** Tippt einen Zug (UCI) mit dem Finger auf dem Brett der Hülle; false, wenn ein Feld fehlt. */
@@ -251,11 +258,13 @@ export async function spielePartie(
         "partie",
         `Partie ${p.kennung}: ${MAX_HALBZUEGE} Halbzüge ohne Ende, gebe auf`,
       );
-      await tippe(lauf, seite.getByTestId("abenteuer-partie-aufgeben"), "Aufgeben");
-      await tippe(lauf, seite.getByRole("button", { name: "Ja, aufgeben" }), "Ja, aufgeben");
+      await gibAuf(lauf);
       continue;
     }
-    const uci = await waehleZug(fen);
+    // Schwacher Spieler (schwach.ts): aufgeben oder neu laden, sonst der schwächste Zug.
+    if (await brichPartieAb(lauf, p)) continue;
+    const schwach = lauf.schwach.partie(p.id, p.kennung).art !== null;
+    const uci = schwach ? await schwacherZug(fen) : await waehleZug(fen);
     const getippt = await tippeZug(lauf, uci);
     if (getippt && (await warteAufZug(lauf, p.id, p.zuege.length))) {
       fehlzuege = 0;
@@ -271,6 +280,9 @@ export async function spielePartie(
     await seite.waitForTimeout(500);
   }
   if (!partie) return null;
+  // Das Ende steht manchmal erst nach dem Bildwechsel im Speicher (Partien mit fester Zugzahl).
+  const zuletzt = (await liesSpeicher(seite)).partie;
+  if (zuletzt?.id === partie.id) partie = zuletzt;
   const eigene = partie.zuege.filter(
     (_, i) => (i % 2 === 0) === (amZug(partie.startFen) === partie.eigeneFarbe),
   );

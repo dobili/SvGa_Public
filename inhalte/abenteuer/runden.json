@@ -294,6 +294,7 @@
       "erinnerung": {
         "partie": "klassik-unsterbliche",
         "abZug": 1,
+        "bisZug": 11,
         "seite": "white"
       },
       "danach": "port-delacroix-werkstatt.werkbank_nach_flashback"

@@ -139,6 +139,7 @@ Heute hab ich am Gatter einen Bauern geschlagen. Am Fluss hat es mir leidgetan. 
 {
 - not niaGetroffen: -> nia_erstes_treffen
 - ausgangWegMapleCedarNia == "" or ausgangWegMapleCedarNia == "abgebrochen": -> nia_angebot
+- ausgangWegMapleCedarNia == "remis": -> nia_nach_remis
 - ausgangWegMapleCedarNia == "niederlage": -> nia_nach_niederlage
 - else: -> nia_nach_sieg
 }
@@ -184,6 +185,16 @@ Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia #stimmu
 === nia_nach_niederlage ===
 Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia #stimmung:lacht
 {faehrsteinGesehen and not abschiedGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
++ [„Revanche.“]
+    -> nia_duell
++ [„Nicht jetzt.“]
+    -> END
+
+// Remis im Stellungsduell oder Endspiel (Regelwerk R13, R13a): Vorteil unter dem Mindest-
+// vorteil. Vorher ging es in nia_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
+// Spieler-Durchlauf, 19.11.2026).
+=== nia_nach_remis ===
+Unentschieden! Keiner trägt das Board. Noch eine Runde? #sprecher:nia #stimmung:laechelt
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]

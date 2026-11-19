@@ -49,11 +49,13 @@ export interface Aufgabenauftrag {
   /**
    * Erinnerung Ambroses (docs/spiel/08, F1; Entscheidung C3): statt Motivaufgaben eine
    * Klassikerpartie aus inhalte/zusatzpartien/klassiker.json Zug für Zug erraten, ab `abZug` mit
-   * der Seite `seite`. Beispiel: Paulsen gegen Morphy, New York 1857, ab Zug 13 mit Schwarz.
+   * der Seite `seite`, bis `bisZug` (ohne Angabe bis zum Ende der Partie). Beispiel: Paulsen gegen
+   * Morphy, New York 1857, ab Zug 13 mit Schwarz.
    */
   readonly erinnerung?: {
     readonly partie: string;
     readonly abZug: number;
+    readonly bisZug?: number;
     readonly seite: "white" | "black";
   };
 }

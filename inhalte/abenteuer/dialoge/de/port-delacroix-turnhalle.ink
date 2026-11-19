@@ -51,6 +51,10 @@ VAR hatKartePlanfinder = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Aus port-delacroix-musikhaus.ink: Das Schild hängt, das Musikhaus ist eröffnet. Hier nur gelesen.
+VAR musikhausOffen = false
+// Läuft eine Revanche um eine bessere Nadel? Dann reagiert odile_nach_revanche auf den Ausgang.
+VAR revanchePortDelacroix = false
 
 // ---------------------------------------------------------------- Der Vorwurf
 
@@ -126,6 +130,7 @@ Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #s
 - not tiefpunktGesehen: -> vorwurf
 - portDelacroixSimultanBestanden and not simultanGedankt: -> odile_nach_simultan
 - nadelPortDelacroix > clubkampfPortDelacroixNadel: -> odile_nach_partie
+- revanchePortDelacroix: -> odile_nach_revanche
 - ausgangPortDelacroixClubkampf == "niederlage" and not odileHandGegeben: -> odile_nach_partie
 - not brettersammelnBegonnen: -> odile_bretter
 - bretterGesammelt >= 4 and not leimAuftrag: -> odile_leim
@@ -183,6 +188,9 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 
 === odile_clubkampf_wahl ===
 + [„Ich bin bereit.“]
+    // Erst hier gilt die Revanche als begonnen: Wer vorher „Noch nicht.“ sagt, bekommt danach
+    // keine Reaktion auf eine alte Partie.
+    ~ revanchePortDelacroix = nadelPortDelacroix > 0
     ~ beginnePartie("portDelacroix.clubkampf")
     -> END
 + [„Noch nicht.“]
@@ -190,6 +198,7 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
     -> END
 
 === odile_nach_partie ===
+~ revanchePortDelacroix = false
 ~ clubkampfPortDelacroixNadel = nadelPortDelacroix
 {
 - ausgangPortDelacroixClubkampf == "sieg" and not odileHandGegeben:
@@ -288,6 +297,11 @@ Erst zu Miss Odile. Sie hat dein Brett. #sprecher:remy #stimmung:bitter
 -> END
 
 === remy_versoehnt ===
+// Nach der Eröffnung (musikhausOffen) redet Remy nicht mehr von ihr (Ansprechprobe, 19.11.2026).
+{musikhausOffen:
+    {~Das Stück zur Eröffnung ist fertig. Fast. Ich spiele es jeden Dienstag ein bisschen anders.|Du hast das Schild gerade aufgehängt. Ich habe nachgemessen. Gerade genug.|Drinnen klingt die Trompete besser als in der Turnhalle. Das Holz singt mit.} #sprecher:remy #stimmung:laechelt
+    -> END
+}
 {~Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.|Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist. Der Sturm hat meine Trompete auch fast genommen.|Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.} #sprecher:remy #stimmung:laechelt
 -> END
 
@@ -341,6 +355,10 @@ Findest du in meinen Stellungen auch einen? Mit Läufern. Läufer sind wichtig f
     -> END
 
 === lou_alltag ===
+{musikhausOffen:
+    {~Mein Muschelregal steht neben dem Klavier. Die Muscheln hören jetzt jeden Tag Musik.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern. Jetzt sogar durch einen ganzen Saal.|Im Musikhaus habe ich einen eigenen Tisch. Mit einem Brett aus der Stadt. Das hast du gebracht.} #sprecher:lou #stimmung:laechelt
+    -> END
+}
 {~Diese Muschel hat elf Rillen. Die hier zwölf. Das ist ein Plan, glaube ich.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern.|Wenn das Musikhaus fertig ist, kriege ich ein Regal für meine Muscheln.} #sprecher:lou #stimmung:laechelt
 -> END
 
@@ -381,3 +399,25 @@ Remy legt die Trompete weg. #sprecher:erzaehler
 Bauern verstehst du. Ohne Flüstern. Gut. #sprecher:remy #stimmung:nachdenklich
 Lou hat auch Aufgaben. Mit Plänen. Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
 -> END
+
+// Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
+// Spieler, 19.11.2026): Vorher folgte nur ein Alltagssatz, jetzt geht odile auf den Ausgang ein.
+// Abgebrochen: keine Reaktion, weiter wie sonst.
+=== odile_nach_revanche ===
+~ revanchePortDelacroix = false
+{
+- ausgangPortDelacroixClubkampf == "sieg":
+    Gewonnen, aber die Nadel bleibt dieselbe. Der Takt stimmte trotzdem. #sprecher:odile #stimmung:laechelt
+- ausgangPortDelacroixClubkampf == "remis":
+    Remis. Zwei Stimmen, ein Akkord. Deine Nadel bleibt. #sprecher:odile #stimmung:neutral
+- ausgangPortDelacroixClubkampf == "niederlage":
+    Diesmal nicht. Deine Nadel bleibt. Hör auf den Takt, dann kommt die nächste. #sprecher:odile #stimmung:laechelt
+- else:
+    -> odile
+}
++ {nadelPortDelacroix < 3} [„Noch einmal.“]
+    ~ revanchePortDelacroix = true
+    ~ beginnePartie("portDelacroix.clubkampf")
+    -> END
++ [„Nicht jetzt.“]
+    -> END

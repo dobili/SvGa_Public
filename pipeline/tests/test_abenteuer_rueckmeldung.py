@@ -69,6 +69,19 @@ def test_alltag_nach_der_runde_ist_keine_reaktion():
 
 
 @ohne_node
+def test_falscher_zweig_nach_dem_ausgang():
+    # Wie Sol vor dem 19.11.2026: Remis landete in sol_nach_sieg.
+    remis = '{ausgang:"remis", besucht:["s.sol","s.sol_nach_sieg"]}'
+    assert auswertung(f"r.falscherZweig({remis})") == "s.sol_nach_sieg"
+    sieg = '{ausgang:"sieg", besucht:["s.sol","s.sol_nach_sieg"]}'
+    assert auswertung(f"r.falscherZweig({sieg})") is None
+    # Ein Clubknoten, der das Remis selbst abfragt, ist richtig.
+    club = '{ausgang:"remis", besucht:["g.mira","g.mira_nach_sieg"]}'
+    knoten = '{"g.mira_nach_sieg": "{ausgangX == \\"remis\\": Remis.}"}'
+    assert auswertung(f"r.falscherZweig({club}, {knoten})") is None
+
+
+@ohne_node
 def test_funde_aus_beispieldaten():
     starts = 'new Map([["runde|o.reiheA", new Set(["d"])], ["partie|o.b", new Set(["d"])]])'
     rueck = (

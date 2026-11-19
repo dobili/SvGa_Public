@@ -78,8 +78,9 @@ Ende von Akt 3 (`node pipeline/abenteuer/aktstand.cjs --akt 4 --ziel /tmp/akt4.j
 Fehler des Durchlaufs, die der schwache Spieler aufdeckte (behoben):
 
 - Seit der Rückmeldung nach dem Ergebnis fragt Mr. Batiste nach einem Sieg „Noch eine Partie.“;
-  der Durchlauf zählte diese Antwort je Spielstand und spielte endlos gegen ihn. Wiederholungen
-  („Noch eine Partie“, „Noch einmal“, „Revanche“) zählen jetzt ohne Spielstand.
+  der Durchlauf zählte diese Antwort je Spielstand und spielte endlos gegen ihn. Behoben ist das
+  mit der Lösung von mittel-1 auf `beta` (Wiederholungen wählt er je Frage nur einmal); meine
+  gleichwertige Fassung ist beim Zusammenführen entfallen.
 - Nach „Ambrose fragen“ wird die Hilfe länger, und „Ich komme nicht drauf“ liegt im Hochformat
   unter dem Bildrand. Der Durchlauf sah nur das Bild und zog zehn Minuten lang falsche Züge; jetzt
   rollt er hin wie ein Mensch. Für einen Menschen ist das kein Hindernis (Rollen), aber eine

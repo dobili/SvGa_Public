@@ -35,6 +35,13 @@ const AUFSCHUB = [
   "doch nicht",
 ];
 const NUR_GANZ = ["nein", "gehen", "hinausgehen"];
+/**
+ * Antworten, die dieselbe Partie gleich noch einmal starten. Nachtauftrag 19.11.2026: Nach jedem Sieg
+ * gegen Rangerin Hollis war der Spielstand neu, die Zählung je Stand begann von vorn, und der
+ * Durchlauf nahm zwanzigmal „Noch eine.“. Jetzt nimmt er solche Antworten auf dieselbe Frage nur
+ * einmal im ganzen Lauf.
+ */
+const WIEDERHOLUNG = ["noch eine", "noch einmal", "noch mal", "revanche"];
 
 /** Schiebt die Antwort auf oder lehnt sie ab? Beispiel: „Nicht jetzt.“ → true. */
 export function schiebtAuf(antwort: string): boolean {
@@ -82,20 +89,6 @@ const RUNDE_WIEDERHOLEN = 2;
 /** So viele gelesene Texte bleiben für Prüfungen im Gedächtnis. */
 const GELESEN_MAX = 60;
 
-/** Antworten, die eine Partie oder Runde noch einmal starten. */
-const WIEDERHOLUNG = /^„?(Noch (eine|einmal|mal|ein)|Nochmal|Revanche|Gleich noch)/i;
-
-/**
- * Schlüssel einer gewählten Antwort. Warum Wiederholungen ohne Spielstand: Jede Partie ändert den
- * Stand; mit ihm im Schlüssel war „Noch eine Partie.“ nach jedem Sieg wieder neu, und der Lauf
- * spielte endlos gegen Mr. Batiste (19.11.2026, seit der Rückmeldung nach dem Ergebnis).
- */
-function antwortschluessel(g: Fenstergedaechtnis, frage: string, antwort: string): string {
-  return WIEDERHOLUNG.test(antwort)
-    ? `wiederholung|${frage}|${antwort}`
-    : `${g.signatur}|${frage}|${antwort}`;
-}
-
 /**
  * Welche Antwort ein neugieriger Spieler nimmt: die am seltensten gewählte, die nicht aufschiebt;
  * sind alle solchen schon einmal gewählt, die aufschiebende (so endet jede Fragerunde).
@@ -105,15 +98,23 @@ export function waehleAntwort(
   frage: string,
   wahlen: readonly string[],
 ): number {
-  const zahl = (w: string) => g.gewaehlt.get(antwortschluessel(g, frage, w)) ?? 0;
-  const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) }));
+  const zahl = (w: string) => g.gewaehlt.get(`${g.signatur}|${frage}|${w}`) ?? 0;
+  const wiederholt = (w: string) =>
+    WIEDERHOLUNG.some((a) =>
+      w
+        .toLowerCase()
+        .replace(/[„“”"]/g, "")
+        .startsWith(a),
+    ) && (g.gewaehlt.get(`wiederholt|${frage}|${w}`) ?? 0) > 0;
+  const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) || wiederholt(w) }));
   const echte = vor.filter((v) => !v.auf);
   const neue = echte.filter((v) => v.n === 0);
   const aufschub = vor.find((v) => v.auf);
   const wahl = neue[0] ??
     aufschub ??
     [...vor].sort((a, b) => a.n - b.n)[0] ?? { i: 0, w: wahlen[0] ?? "" };
-  g.gewaehlt.set(antwortschluessel(g, frage, wahl.w), zahl(wahl.w) + 1);
+  g.gewaehlt.set(`${g.signatur}|${frage}|${wahl.w}`, zahl(wahl.w) + 1);
+  g.gewaehlt.set(`wiederholt|${frage}|${wahl.w}`, 1);
   return wahl.i;
 }
 

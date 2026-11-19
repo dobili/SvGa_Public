@@ -14,6 +14,9 @@
 // Aufruf aus dem Hauptordner:
 //   node pipeline/abenteuer/aktstand.cjs --akt 2 --ziel DATEI.json [--startwert 1] [--sekunden 120]
 // --akt: 2, 3 oder 4 (der Stand zu Beginn dieses Akts).
+// --bis VARIABLE (statt --akt, 19.11.2026): der Stand, sobald diese Dialogvariable wahr ist, etwa
+//   novaBitteGehoert (Crossroads vor Pinewood Camp) oder finaleBesprochen (vor dem Abschied). Im
+//   Stand steht dann der Akt, in dem die Simulation gerade spielt.
 // Ausgabe: JSON mit Variablen, Besitz, Karten, Münzen, Queststand, Karte, besuchten Orten, Runden
 // und Partien der Simulation. Rückgabewert 1, wenn der Aktbeginn im Zeitbudget nicht erreicht wird.
 "use strict";
@@ -31,6 +34,13 @@ const AKTENDE = {
   4: "endeAkt3Gesehen",
 };
 
+/** Der Akt, in dem die Simulation steht: der letzte, dessen Endvariable schon wahr ist, plus eins. */
+function aktAus(st) {
+  let akt = 1;
+  for (const [nr, variable] of Object.entries(AKTENDE)) if (st.vars[variable] === true) akt = Number(nr);
+  return akt;
+}
+
 /** Liest --name wert aus der Befehlszeile. */
 function wert(liste, name, vorgabe) {
   const i = liste.indexOf(name);
@@ -38,12 +48,13 @@ function wert(liste, name, vorgabe) {
 }
 
 function hauptprogramm(liste) {
-  const akt = Number(wert(liste, "--akt", "2"));
+  const bis = wert(liste, "--bis", "");
+  const akt = Number(wert(liste, "--akt", bis ? "0" : "2"));
   const ziel = wert(liste, "--ziel", "");
-  const variable = AKTENDE[akt];
+  const variable = bis || AKTENDE[akt];
   if (!variable || !ziel) {
     console.error(
-      "Aufruf: node pipeline/abenteuer/aktstand.cjs --akt 2|3|4 --ziel DATEI.json",
+      "Aufruf: node pipeline/abenteuer/aktstand.cjs --akt 2|3|4 | --bis VARIABLE --ziel DATEI.json",
     );
     process.exitCode = 1;
     return;
@@ -59,12 +70,12 @@ function hauptprogramm(liste) {
     (s) => s.vars[variable] === true,
   );
   if (!erreicht) {
-    console.error(`Akt ${akt} nicht erreicht (${variable} steht nicht).`);
+    console.error(`Nicht erreicht: ${variable} steht nicht.`);
     process.exitCode = 1;
     return;
   }
   const stand = {
-    akt,
+    akt: akt || aktAus(st),
     vars: st.vars,
     besitz: [...st.besitz],
     karten: st.karten,
@@ -77,7 +88,7 @@ function hauptprogramm(liste) {
   };
   fs.writeFileSync(ziel, JSON.stringify(stand, null, 1));
   console.log(
-    `Akt ${akt}: Stand auf ${st.karte}, ${st.staende.length} Quests, ${st.muenzen} Münzen → ${ziel}`,
+    `${bis ? `Bis ${bis}` : `Akt ${akt}`}: Stand auf ${st.karte}, ${st.staende.length} Quests, ${st.muenzen} Münzen → ${ziel}`,
   );
 }
 

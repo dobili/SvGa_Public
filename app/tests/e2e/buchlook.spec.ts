@@ -93,8 +93,11 @@ for (const schema of ["dunkel", "hell"] as const) {
     await expect(karte.getByTestId("wochenziel-stand")).toHaveText("3 von 4 Tagen");
     await expect(karte.getByTestId("heute-vorschlag")).toBeVisible();
     const kapitel = page.locator(".kapitelliste");
-    const oben = (await kapitel.boundingBox())?.y ?? HANDY.height;
-    expect(oben).toBeLessThan(HANDY.height / 2);
+    // Auf die fertige Lage warten: Unter Last (vier Worker) war die Liste einmal beim ersten
+    // Messen noch nicht in der oberen Hälfte, weil die Seite noch aufbaute (19.11.2026).
+    await expect
+      .poll(async () => (await kapitel.boundingBox())?.y ?? HANDY.height, { timeout: 5000 })
+      .toBeLessThan(HANDY.height / 2);
     await page.screenshot({ path: `test-results/bilder/buch-heute-${schema}.png` });
     // „Zuletzt“ steht nach einem Tipp ins Nummernfeld bereit (nichts fällt weg).
     await page.getByLabel("Abbildung öffnen").click();

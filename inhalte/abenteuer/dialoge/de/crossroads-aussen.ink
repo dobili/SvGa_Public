@@ -46,6 +46,9 @@ Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nicht
 An der Ecke eine Raststätte, ein silberner Speisewagen, lang und niedrig: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
 Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus
 Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter #stimmung:laechelt
+// Nachtauftrag 19.11.2026 (Spieler-Durchlauf): Kein Dialog nannte das Camp; Darlene schickt später
+// über die Minenstraße direkt nach Ghost Town. Juno nennt Pinewood Camp und den Weg dorthin.
+Mae hat geschrieben: Sie und Dex sind im Pinewood Camp, den Fernwanderweg hoch in den Wald. Da müssen wir vorbei! #sprecher:juno #stimmung:froh
 -> END
 
 // ---------------------------------------------------------------- Slick

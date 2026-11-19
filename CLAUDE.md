@@ -123,7 +123,7 @@ python -m pipeline.abenteuer.durchlass [--hinweise] [SZENE …]   # pixelgenaue 
 python -m pipeline.abenteuer.schriftglyphe   # großes Z der Pixelschrift neu zeichnen (sah aus wie die 2); nur nach einem Tausch der Schriftdatei nötig
 (cd app && DURCHLAUF_ORDNER=/tmp/durchlauf DURCHLAUF_MINUTEN=30 CHROMIUM_PFAD=… npx playwright test --config playwright.durchlauf.config.ts)   # Spieler-Durchlauf: das Spiel nur mit Spielereingaben spielen, je Akt messen (nach npm run build; Etappen über das Profil im Ordner; DURCHLAUF_FORMAT=quer, DURCHLAUF_STAND=DATEI für einen Aktbeginn, DURCHLAUF_SPIELER=schwach verliert jede Partie und Runde beim ersten Versuch, S17 bis zum Notausgang; nie in CI)
 (cd app && PROBE_STAND=DATEI.json PROBE_KARTE=portDelacroix.musikhaus PROBE_VARIABLEN='{"musikhausOffen":true}' CHROMIUM_PFAD=… npx playwright test --config playwright.durchlauf.config.ts ansprechprobe)   # Ansprechprobe: auf einer Karte jede Figur und jeden Dialog-Auslöser aufsuchen, Aktionsknopf prüfen (nach npm run build)
-node pipeline/abenteuer/aktstand.cjs --akt 2|3|4 --ziel DATEI.json   # Stand der Gesamtsimulation zu Beginn eines Akts, für den Spieler-Durchlauf (DURCHLAUF_STAND)
+node pipeline/abenteuer/aktstand.cjs --akt 2|3|4 --ziel DATEI.json   # Stand der Gesamtsimulation zu Beginn eines Akts (oder --bis VARIABLE: sobald sie gesetzt ist), für den Spieler-Durchlauf (DURCHLAUF_STAND; dazu DURCHLAUF_OHNE=ort.karte.ding,…, DURCHLAUF_BIS_ORT, DURCHLAUF_BIS_QUEST)
 ```
 
 ## Arbeitsumgebung (Stand 13.10.2026, abends)

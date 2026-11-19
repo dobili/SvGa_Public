@@ -289,7 +289,13 @@ export default defineConfig({
     }),
   ],
   test: {
-    include: ["src/**/*.test.ts", "src/**/*.test.tsx", "worker/**/*.test.ts"],
+    include: [
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx",
+      "worker/**/*.test.ts",
+      // Auswertung des Spieler-Durchlaufs (reine Rechnung; der Durchlauf selbst läuft mit Playwright).
+      "tests/durchlauf/**/*.test.ts",
+    ],
     environment: "node",
   },
 });

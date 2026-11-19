@@ -117,6 +117,8 @@ python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude auß
 python -m pipeline.abenteuer.blickrichtung   # Blickrichtung stehender Figuren zu Tresen, Brett, Gesprächspartner (R008)
 python -m pipeline.abenteuer.kopfkachel [--alle]   # Kacheln über Figuren, die begehbar wurden (Figuren sperren seit 18.11.2026 nur die Fußkachel): neue Bereiche (Befund), Abkürzungen (Hinweis)
 python -m pipeline.abenteuer.schriftglyphe   # großes Z der Pixelschrift neu zeichnen (sah aus wie die 2); nur nach einem Tausch der Schriftdatei nötig
+(cd app && DURCHLAUF_ORDNER=/tmp/durchlauf DURCHLAUF_MINUTEN=30 CHROMIUM_PFAD=… npx playwright test --config playwright.durchlauf.config.ts)   # Spieler-Durchlauf: das Spiel nur mit Spielereingaben spielen, je Akt messen (nach npm run build; Etappen über das Profil im Ordner; DURCHLAUF_FORMAT=quer, DURCHLAUF_STAND=DATEI für einen Aktbeginn; nie in CI)
+node pipeline/abenteuer/aktstand.cjs --akt 2|3|4 --ziel DATEI.json   # Stand der Gesamtsimulation zu Beginn eines Akts, für den Spieler-Durchlauf (DURCHLAUF_STAND)
 ```
 
 ## Arbeitsumgebung (Stand 13.10.2026, abends)

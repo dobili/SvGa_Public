@@ -6,9 +6,13 @@
  * Rolle im Gesamtbild: Ausgelagert aus oberwelt/Oberwelt.tsx (Aufteilen, Schritt 6). Arbeitet auf
  * dem gemeinsamen Kern (kern.ts); was beim Betreten noch geschehen soll (Ergebnisse melden, die auf
  * die Welt gewartet haben), gibt die Oberwelt als `beiWelt` mit.
- * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts.
+ * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts,
+ * oberwelt/einschluss.ts (Schutz vor dem Einschluss beim Laden).
  */
+import { liesPaketJson } from "../paket/paketlader";
 import { klangorte } from "../ton/klangquelle";
+import type { Sperrangabe, Tiledkarte } from "./begehbar";
+import { ausEinschluss } from "./einschluss";
 import { istTeilchenart } from "./teilchen";
 import { tonregie } from "../ton/tonregie";
 import { ladeNachbarmusikVorab } from "../ton/vorabladen";
@@ -52,9 +56,22 @@ function merkeBesuch(k: Oberweltkern, w: Weltdaten): void {
 }
 
 /** Startet Phaser für eine geladene Welt. */
-function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abenteuerstand) {
+function starteSpiel(
+  k: Oberweltkern,
+  a: Weltanschluss,
+  w: Weltdaten,
+  stand: Abenteuerstand,
+  moebel: Readonly<Record<string, Sperrangabe>>,
+) {
   const rahmen = a.rahmen.current;
   if (!rahmen) return;
+  const uebergaenge = w.ort.ausloeser
+    .filter((x) => x.art === "uebergang" && (!x.karte || x.karte === w.kennung))
+    .map((x) => x.name);
+  // Schutz vor dem Einschluss (einschluss.ts): Eine neue Fassung der Karte kann den Helden in
+  // einer Nische einsperren (Clubraum nach Victor); dann rückt er auf das nächste freie Feld.
+  const frei = ausEinschluss(w.karte as Tiledkarte, moebel, uebergaenge, stand.position, KACHEL);
+  const start = frei ? { ...stand.position, ...frei } : stand.position;
   const eintrag = w.ort.karten.find((x) => x.kennung === w.kennung);
   // Licht aus orte.json (T6) vor der Tönung der Szene.
   const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen, eintrag);
@@ -85,11 +102,9 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     laterne: stand.gegenstaende.includes(LATERNE),
     winter: w.winter,
     kachelsatz: KACHELSATZ,
-    start: stand.position,
+    start,
     // Übergänge dieser Karte: Sie wechseln erst beim Gehen in den Durchgang (R060).
-    uebergaenge: w.ort.ausloeser
-      .filter((x) => x.art === "uebergang" && (!x.karte || x.karte === w.kennung))
-      .map((x) => x.name),
+    uebergaenge,
     // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
     tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
     melder: {
@@ -146,15 +161,19 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     document.addEventListener("visibilitychange", beiSichtwechsel);
     // Zustände der Karte dürfen auch nach Besitz fragen (hatLaterne, Runde 8).
     const variablen = { ...stand.dialogvariablen, ...variablenAusBesitz(stand) };
-    ladeWelt(karte, stand.held.variante, variablen)
-      .then((w) => {
+    // Möbelliste für den Schutz vor dem Einschluss; fehlt sie, zählen nur die Wände.
+    const moebelliste = liesPaketJson<{ moebel: Record<string, Sperrangabe> }>("daten/moebel.json")
+      .then((d) => d.moebel)
+      .catch(() => ({}));
+    Promise.all([ladeWelt(karte, stand.held.variante, variablen), moebelliste])
+      .then(([w, moebel]) => {
         if (!aktiv || !a.rahmen.current) return;
         k.setzeWelt(w);
         merkeBesuch(k, w);
         // Karte betreten (Quests), dann Ergebnisse, die auf die Welt gewartet haben.
         k.melde({ art: "ort", karte: w.kennung }, w);
         a.beiWelt(w);
-        starteSpiel(k, a, w, stand);
+        starteSpiel(k, a, w, stand, moebel);
       })
       .catch((f: unknown) => setzeFehler(fehlertext(f)));
     return () => {

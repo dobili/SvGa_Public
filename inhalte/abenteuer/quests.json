@@ -177,7 +177,11 @@
               "akt": 1,
               "szene": "akt1.victorTrifft"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "objekt": "coachDelgado"
+          }
         },
         {
           "text": "quest.besserWerden.schritt2",
@@ -185,6 +189,10 @@
             "art": "partie",
             "begegnung": "mapleFalls.victor",
             "ausgang": ["sieg", "remis", "niederlage"]
+          },
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "objekt": "coachDelgado"
           }
         },
         {
@@ -192,6 +200,10 @@
           "ereignis": {
             "art": "dialog",
             "knoten": "maple-falls-clubraum.victor_ambrose"
+          },
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "objekt": "coachDelgado"
           }
         },
         {

@@ -10,6 +10,7 @@
 import { GRUNDSTELLUNG } from "../anbindung/partiestart";
 import { vorgabeFen } from "../regeln/karten";
 import { zaehltFuerA } from "../regeln/wertung";
+import { abzugDerUhr } from "../regeln/zeitklassenwertung";
 import { spruecheErlaubt } from "../regeln/zeitkarten";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Partieauftrag } from "../schnittstelle/partie";
@@ -83,6 +84,13 @@ export function partiestart(
       zielElo: auftrag.staerke.zielElo,
       zaehlt: zaehltFuerA(auftrag),
       zustand: sichtbarerZustand(auftrag),
+      // Zeitwahl (19.11.2026): A zählt dann je Zeitklasse (regeln/zeitklassenwertung.ts).
+      ...(auftrag.zeitwahl === true
+        ? {
+            zeitwahl: true,
+            uhrAbzug: abzugDerUhr(true, auftrag.uhr, auftrag.staerke.stufenJePhase),
+          }
+        : {}),
     },
     partiekarten: {
       deck: [

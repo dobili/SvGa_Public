@@ -88,6 +88,11 @@ async function nimmAusgang(
     lauf.messung.fund("uebergang", `Übergang ${wissen.kennung}.${name} reagiert nicht`);
   } else {
     lauf.messung.log(`Übergang ${wissen.kennung}.${name}: unterwegs aufgehalten`);
+    // Aufgehalten heißt meist: Ein Statist oder Roboter läuft denselben Weg voraus (Silicon Bay,
+    // Altstadt, Reihe 22: Feuerwehrmann und Lieferroboter). Ein zweiter Versuch später, wie ein
+    // Mensch, der wartet und es noch einmal probiert; erst dann gilt der Ausgang als gesperrt.
+    planer.merkeGesperrt(stand, wissen.kennung, name);
+    return false;
   }
   planer.merkeGesperrt(stand, wissen.kennung, name);
   planer.merkeGesperrt(stand, wissen.kennung, name);

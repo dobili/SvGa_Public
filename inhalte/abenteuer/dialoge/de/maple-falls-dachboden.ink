@@ -365,7 +365,10 @@ Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas
 * [„Schau nicht auf alles. Stell eine Frage.“]
 - Welche? #sprecher:lily #stimmung:nachdenklich
 * [Lächeln]
-- Was hängt? #sprecher:held #stimmung:laechelt #musik:schlussklang #pause:4
+// Spieler-Durchlauf 19.11.2026: „#sprecher:held“ zeigte im Dialog den Schlüssel „figur.held.name“
+// statt eines Namens ({held} hat weder Namenseintrag noch Porträt). Der Satz bleibt der letzte des
+// Spiels, als gesprochene Zeile ohne Namensfeld.
+- „Was hängt?“ #sprecher:erzaehler #musik:schlussklang #pause:4
 ~ epilogGesehen = true
 ~ setzeSzene("akt5.postGame")
 -> END

@@ -107,19 +107,23 @@ Aufgabe.
 Summe von Akt 1 mal dem Verhältnis der Wortzahlen der Lesefassung der Gesamtsimulation (Akt 1:
 17 253 Wörter, Akt 2: 16 942) ergibt 139 Minuten zügig und 203 gründlich.
 
-| Akt  | zügig (min)          | gründlich (min)       | Art der Zahl                                     |
-| ---- | -------------------- | --------------------- | ------------------------------------------------ |
-| 1    | 142                  | 207                   | aus Messung geschätzt                            |
-| 2    | 139                  | 203                   | gerechnet                                        |
-| 3    | 253                  | 360                   | aus Messung geschätzt (Strecke A)                |
-| 4    | 198                  | 255                   | aus Messung geschätzt (Strecke A), ohne Pinewood |
-| alle | 732 (gut 12 Stunden) | 1025 (gut 17 Stunden) | Summe                                            |
+| Akt  | zügig (min)            | gründlich (min)   | Art der Zahl                                    |
+| ---- | ---------------------- | ----------------- | ----------------------------------------------- |
+| 1    | 142                    | 207               | aus Messung geschätzt                           |
+| 2    | 139                    | 203               | gerechnet                                       |
+| 3    | 253                    | 360               | aus Messung geschätzt (Strecke A)               |
+| 4    | 234                    | 306               | aus Messung geschätzt (Strecke A), mit Pinewood |
+| 5    | 3                      | 4                 | aus Messung geschätzt (Epilog)                  |
+| alle | 771 (knapp 13 Stunden) | 1080 (18 Stunden) | Summe                                           |
 
 Die frühere Rechnung nur aus Wortzahlen (651 und 950 Minuten) lag für Akt 3 und 4 zu niedrig: Dort
 kosten die Partien mehr als das Lesen (in Akt 4 allein sechs Turnierpartien mit 30 bis 82
 Halbzügen). Zu hoch sind die Zahlen, soweit Nebenpartien mehrfach gespielt wurden; zu niedrig,
-soweit ein Leser länger als 15 Sekunden je Zug braucht, Partien verliert und wiederholt und
-Pinewood Camp besucht.
+soweit ein Leser länger als 15 Sekunden je Zug braucht, Partien verliert und wiederholt.
+
+Nachtrag (19.11.2026): Pinewood Camp (36 Minuten zügig, 51 gründlich) und der Epilog nach dem
+Abspann (3 und 4 Minuten) sind nachgemessen und oben eingerechnet; Lauf und Funde in
+`spielerdurchlauf_pinewood_epilog_19-11.md`.
 
 ## 5. Funde
 

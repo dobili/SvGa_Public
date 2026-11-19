@@ -81,6 +81,10 @@ async function nimmAusgang(
     }
     return true;
   }
+  // Hat ein Dialog den Helden inzwischen auf eine andere Karte gesetzt (Ghost Town, Saloon: das
+  // Abzeichen endet draußen), galt die Planung der alten Karte; neu planen, kein Fund.
+  const nachher = (await liesStand(lauf.seite)).position.karte;
+  if (ergebnis === "keinWeg" && nachher !== wissen.kennung) return true;
   if (ergebnis === "keinWeg" && (await nimmSteg(lauf, planer, wissen, name))) return true;
   if (ergebnis === "keinWeg") {
     lauf.messung.fund("unerreichbar", `Übergang ${wissen.kennung}.${name}: kein Weg vom Standort`);
@@ -88,6 +92,11 @@ async function nimmAusgang(
     lauf.messung.fund("uebergang", `Übergang ${wissen.kennung}.${name} reagiert nicht`);
   } else {
     lauf.messung.log(`Übergang ${wissen.kennung}.${name}: unterwegs aufgehalten`);
+    // Aufgehalten heißt meist: Ein Statist oder Roboter läuft denselben Weg voraus (Silicon Bay,
+    // Altstadt, Reihe 22: Feuerwehrmann und Lieferroboter). Ein zweiter Versuch später, wie ein
+    // Mensch, der wartet und es noch einmal probiert; erst dann gilt der Ausgang als gesperrt.
+    planer.merkeGesperrt(stand, wissen.kennung, name);
+    return false;
   }
   planer.merkeGesperrt(stand, wissen.kennung, name);
   planer.merkeGesperrt(stand, wissen.kennung, name);

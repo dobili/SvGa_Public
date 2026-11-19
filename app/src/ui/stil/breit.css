@@ -151,6 +151,24 @@
   .brettbereich .brett-mit-leiste {
     max-width: none;
   }
+
+  /* Umwandlung quer: über der Mitte des Bretts statt darunter. Die Brettspalte füllt die Höhe,
+     unter dem Brett lag die Auswahl außerhalb des Bildes; wer einen Bauern auf die letzte Reihe
+     zog, sah nichts geschehen (Spieler-Durchlauf quer, Akt 4, Kits Runde, 19.11.2026). */
+  .brettbereich {
+    position: relative;
+  }
+
+  .brettbereich > .umwandlung {
+    position: absolute;
+    top: calc(var(--brett-seite) / 2);
+    left: 50%;
+    z-index: 5;
+    justify-content: center;
+    width: max-content;
+    max-width: calc(100% - var(--raster) * 4);
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* Breites Querformat: Die Textspalte neben dem Brett ist breit genug für zwei Befundspalten

@@ -298,7 +298,34 @@ function berechneAusgaenge(daten: Spieldaten, kennung: string): Ausgang[] {
       ...(r.dialog ? { dialog: r.dialog } : {}),
     });
   }
-  return ausgaenge;
+  return [...ausgaenge, ...haltestellen(daten, kennung, namen)];
+}
+
+/** So beginnen die Kennungen der Wege zwischen den Städten („wegIronwoodSilicon“). */
+const WEG_VORSILBE = "weg";
+
+/**
+ * Haltestellen: Dialogauslöser dieser Karte, an denen ein Übergang einer anderen Karte ankommt
+ * (der Bus von Ironwood zur Raststätte). Die Fahrt beginnt im Gespräch; der Rückweg verrät das Ziel.
+ */
+function haltestellen(daten: Spieldaten, kennung: string, namen: ReadonlySet<string>): Ausgang[] {
+  const ort = findeKarte(daten, kennung)?.ort;
+  if (!ort) return [];
+  const halte: Ausgang[] = [];
+  for (const fremd of daten.orte) {
+    for (const r of fremd.ausloeser) {
+      const an = r.art === "uebergang" ? r.ziel : undefined;
+      if (!an || an.karte !== kennung || !namen.has(an.ausloeser)) continue;
+      const hier = regelFuer(ort, kennung, an.ausloeser);
+      const von = r.karte ?? fremd.karten[0]?.kennung;
+      // Nur Fahrten auf einen Weg: Zwischen den Städten fährt der Spieler nicht, er läuft
+      // (sonst pendelt der Planer mit den Stadtbussen, deren Gespräch mehrere Ziele anbietet).
+      if (!fremd.kennung.startsWith(WEG_VORSILBE)) continue;
+      if (hier?.art !== "dialog" || !hier.dialog || !von || von === kennung) continue;
+      halte.push({ von: kennung, name: an.ausloeser, nach: von, dialog: hier.dialog });
+    }
+  }
+  return halte;
 }
 
 /**

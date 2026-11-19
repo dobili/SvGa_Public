@@ -41,12 +41,11 @@ import {
   type Sperre,
 } from "./abenteuer-wegsperren";
 import {
-  beendeSpielerDesProzesses,
   BESTER_ZUG,
   liesPartieImBrowser,
   SCHLECHTESTER_ZUG,
   schnellerZug,
-  spielerDesProzesses,
+  testMitSpieler,
   stellungNach,
   tippeZug,
   type Partiestand,
@@ -207,92 +206,88 @@ function erwarteterAusgang(sperre: Sperre, wert: number): Ausgang | null {
 
 test.use(FOTO_MASSSTAB);
 
-// Die Engine des Spielers hält den Prozess offen, bis sie freigegeben ist.
-test.afterAll(() => beendeSpielerDesProzesses());
-
 for (const fall of FAELLE) {
   const { sperre, ziel } = fall;
   const vorher = fall.niederlagen ?? 0;
   const zusatz = vorher > 0 ? ` (nach ${vorher} Fehlversuchen)` : "";
-  test(`Partie an der Wegsperre ${sperre.nr}, Ziel ${ziel}${zusatz}`, async ({
-    page,
-    browserName,
-  }) => {
-    test.skip(browserName !== "chromium", "Laufen mit gehaltener Taste nur in Chromium");
-    test.skip(fall.nurVollstaendig === true && !ALLE_PARTIEN, "nur mit WEGSPERREN_ALLE=1");
-    test.slow();
-    const spieler = spielerDesProzesses();
-    await starteMitStand(
-      page,
-      standVor(sperre, vorher > 0 ? { [`${sperre.stamm}Niederlagen`]: vorher } : {}),
-    );
-    const bild = `partie_${dateiname(sperre)}_${ziel}`;
-    await beginnePartie(page, sperre);
-    const ende = await spielePartie(page, spieler, sperre, fall.zielwert);
-    const ausgang = ausgangAus(ende);
-    test.info().annotations.push({
-      type: "Partie",
-      description: `Ziel ${ziel}, Ausgang ${ausgang}, Ende ${ende.ende}: ${ende.zuege.join(" ")}`,
-    });
-    if (ziel === "niederlage") expect(ausgang).toBe("niederlage");
-    // Die Wertung beendet die Partie nach genau den vereinbarten Zügen (oder vorher ein Matt).
-    if (ende.ende === "ziel" || ende.ende === "zielRemis") {
-      expect(ende.zuege).toHaveLength(2 * sperre.zuege);
-      // Gegenprobe: Die eigene Engine bewertet die Schlussstellung; liegt ihr Wert klar neben den
-      // Schwellen, muss der Ausgang der Hülle dazu passen.
-      const wert = await spieler.bewerte(stellungNach(ende));
-      test.info().annotations.push({ type: "Schlusswert", description: `${wert} Bauern` });
-      const erwartet = erwarteterAusgang(sperre, wert);
-      if (erwartet) expect(ausgang, `Wertung bei ${wert} Bauern`).toBe(erwartet);
-    }
-    // Der Satz „nachher“ passt zum Ausgang, der Zähler ist weg.
-    await expect(page.getByTestId("abenteuer-nachwort")).toContainText(sperre.nachher[ausgang]);
-    await expect(page.getByTestId("abenteuer-kurzform")).toBeHidden();
-    await foto(page, `${bild}_1_ende_${ausgang}`);
-    await page.getByTestId("partie-zurueck-zur-stadt").click();
-    await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });
-    // Ergebniskarte, dann die Rückmeldung (oberwelt/nachergebnis.ts, Wunsch des Autors 19.11.2026):
-    // Das Gespräch mit der Truppe öffnet sich von selbst; vorher kam es erst beim nächsten Druck
-    // auf den Übergang. Der Held steht weiter auf dem Übergangsfeld.
-    const gespraech = await klickeDurch(page, "„Nicht jetzt.“");
-    expect(await kachel(page)).toBe(uebergangskachel(sperre));
-    await foto(page, `${bild}_2_truppe`);
+  testMitSpieler(
+    `Partie an der Wegsperre ${sperre.nr}, Ziel ${ziel}${zusatz}`,
+    async ({ page, browserName, spieler }) => {
+      test.skip(browserName !== "chromium", "Laufen mit gehaltener Taste nur in Chromium");
+      test.skip(fall.nurVollstaendig === true && !ALLE_PARTIEN, "nur mit WEGSPERREN_ALLE=1");
+      test.slow();
+      await starteMitStand(
+        page,
+        standVor(sperre, vorher > 0 ? { [`${sperre.stamm}Niederlagen`]: vorher } : {}),
+      );
+      const bild = `partie_${dateiname(sperre)}_${ziel}`;
+      await beginnePartie(page, sperre);
+      const ende = await spielePartie(page, spieler, sperre, fall.zielwert);
+      const ausgang = ausgangAus(ende);
+      test.info().annotations.push({
+        type: "Partie",
+        description: `Ziel ${ziel}, Ausgang ${ausgang}, Ende ${ende.ende}: ${ende.zuege.join(" ")}`,
+      });
+      if (ziel === "niederlage") expect(ausgang).toBe("niederlage");
+      // Die Wertung beendet die Partie nach genau den vereinbarten Zügen (oder vorher ein Matt).
+      if (ende.ende === "ziel" || ende.ende === "zielRemis") {
+        expect(ende.zuege).toHaveLength(2 * sperre.zuege);
+        // Gegenprobe: Die eigene Engine bewertet die Schlussstellung; liegt ihr Wert klar neben den
+        // Schwellen, muss der Ausgang der Hülle dazu passen.
+        const wert = await spieler.bewerte(stellungNach(ende));
+        test.info().annotations.push({ type: "Schlusswert", description: `${wert} Bauern` });
+        const erwartet = erwarteterAusgang(sperre, wert);
+        if (erwartet) expect(ausgang, `Wertung bei ${wert} Bauern`).toBe(erwartet);
+      }
+      // Der Satz „nachher“ passt zum Ausgang, der Zähler ist weg.
+      await expect(page.getByTestId("abenteuer-nachwort")).toContainText(sperre.nachher[ausgang]);
+      await expect(page.getByTestId("abenteuer-kurzform")).toBeHidden();
+      await foto(page, `${bild}_1_ende_${ausgang}`);
+      await page.getByTestId("partie-zurueck-zur-stadt").click();
+      await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });
+      // Ergebniskarte, dann die Rückmeldung (oberwelt/nachergebnis.ts, Wunsch des Autors 19.11.2026):
+      // Das Gespräch mit der Truppe öffnet sich von selbst; vorher kam es erst beim nächsten Druck
+      // auf den Übergang. Der Held steht weiter auf dem Übergangsfeld.
+      const gespraech = await klickeDurch(page, "„Nicht jetzt.“");
+      expect(await kachel(page)).toBe(uebergangskachel(sperre));
+      await foto(page, `${bild}_2_truppe`);
 
-    const schild = page.getByTestId("abenteuer-ortsschild");
-    const fehlversuch = istFehlversuch(sperre, ausgang);
-    const satz = fehlversuchssatz(sperre, ausgang);
-    const oeffnet = !fehlversuch || vorher + 1 >= NOTAUSGANG;
-    if (fehlversuch) {
-      expect(gespraech).toContain(satz);
-      expect(gespraech).not.toContain(sperre.durch);
-      if (oeffnet) expect(gespraech).toContain(sperre.genug);
-    } else {
-      expect(gespraech).toContain(sperre.durch);
-    }
-    await expect
-      .poll(() => variablen(page))
-      .toMatchObject({
-        [`${sperre.stamm}Durch`]: oeffnet,
-        [`${sperre.stamm}Niederlagen`]: vorher + (fehlversuch ? 1 : 0),
-        [`${sperre.stamm}Spielt`]: false,
-      });
-    if (!oeffnet) {
-      // Noch einmal an den Übergang: dasselbe Gespräch, der Fehlversuch zählt nicht doppelt.
-      await expect(schild).toHaveText(sperre.schild);
-      expect(await druecke(page, sperre, "„Nicht jetzt.“")).toContain(satz);
-      await expect(schild).toHaveText(sperre.schild);
-      expect(await variablen(page)).toMatchObject({
-        [`${sperre.stamm}Durch`]: false,
-        [`${sperre.stamm}Niederlagen`]: vorher + 1,
-      });
-      return;
-    }
-    // Offen: Der nächste Schritt in den Durchgang wechselt die Karte, die Truppe kommt nicht mehr.
-    if ((await schild.textContent()) !== sperre.zielschild) {
-      const danach = await druecke(page, sperre);
-      expect(danach).not.toContain(satz);
-      expect(danach).not.toContain(sperre.durch);
-    }
-    await expect(schild).toHaveText(sperre.zielschild, { timeout: 15000 });
-  });
+      const schild = page.getByTestId("abenteuer-ortsschild");
+      const fehlversuch = istFehlversuch(sperre, ausgang);
+      const satz = fehlversuchssatz(sperre, ausgang);
+      const oeffnet = !fehlversuch || vorher + 1 >= NOTAUSGANG;
+      if (fehlversuch) {
+        expect(gespraech).toContain(satz);
+        expect(gespraech).not.toContain(sperre.durch);
+        if (oeffnet) expect(gespraech).toContain(sperre.genug);
+      } else {
+        expect(gespraech).toContain(sperre.durch);
+      }
+      await expect
+        .poll(() => variablen(page))
+        .toMatchObject({
+          [`${sperre.stamm}Durch`]: oeffnet,
+          [`${sperre.stamm}Niederlagen`]: vorher + (fehlversuch ? 1 : 0),
+          [`${sperre.stamm}Spielt`]: false,
+        });
+      if (!oeffnet) {
+        // Noch einmal an den Übergang: dasselbe Gespräch, der Fehlversuch zählt nicht doppelt.
+        await expect(schild).toHaveText(sperre.schild);
+        expect(await druecke(page, sperre, "„Nicht jetzt.“")).toContain(satz);
+        await expect(schild).toHaveText(sperre.schild);
+        expect(await variablen(page)).toMatchObject({
+          [`${sperre.stamm}Durch`]: false,
+          [`${sperre.stamm}Niederlagen`]: vorher + 1,
+        });
+        return;
+      }
+      // Offen: Der nächste Schritt in den Durchgang wechselt die Karte, die Truppe kommt nicht mehr.
+      if ((await schild.textContent()) !== sperre.zielschild) {
+        const danach = await druecke(page, sperre);
+        expect(danach).not.toContain(satz);
+        expect(danach).not.toContain(sperre.durch);
+      }
+      await expect(schild).toHaveText(sperre.zielschild, { timeout: 15000 });
+    },
+  );
 }

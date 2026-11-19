@@ -16,7 +16,7 @@ import { Chess } from "chessops/chess";
 import { makeFen, parseFen } from "chessops/fen";
 import { parseSan } from "chessops/san";
 import { makeSquare } from "chessops/util";
-import type { Page } from "@playwright/test";
+import { test as basis, type Page } from "@playwright/test";
 
 /** Zielwerte für „spiele den besten Zug“ und „spiele den schlechtesten Zug“. */
 export const BESTER_ZUG = Number.POSITIVE_INFINITY;
@@ -210,11 +210,31 @@ export function spielerDesProzesses(): Zugwaehler {
   return gemeinsamer;
 }
 
-/** Gibt den Spieler des Prozesses frei (in `test.afterAll`), falls einer gestartet wurde. */
+/** Gibt den Spieler des Prozesses frei, falls einer gestartet wurde (Durchlauf: in test.afterAll). */
 export function beendeSpielerDesProzesses(): void {
   gemeinsamer?.beende();
   gemeinsamer = null;
 }
+
+/**
+ * `test` mit dem Spieler als Fixture je Worker: Er startet beim ersten Test, der ihn braucht, und
+ * endet erst mit dem Worker.
+ * Warum: Je Prozess lässt sich die Engine nur einmal laden. Beendete eine Testdatei den Spieler in
+ * ihrem `afterAll`, scheiterte die nächste im selben Worker („stockfish.wasm“ nicht gefunden;
+ * Wegsperren und Zeit-Hinweis im vollen Lauf, 19.11.2026).
+ * Beispiel: testMitSpieler("…", async ({ page, spieler }) => { … spieler.waehle(fen, 0) … }).
+ */
+export const testMitSpieler = basis.extend<object, { spieler: Zugwaehler }>({
+  spieler: [
+    // Playwright verlangt hier die Zerlegung, auch wenn das Fixture nichts braucht.
+    // eslint-disable-next-line no-empty-pattern
+    async ({}, benutze) => {
+      await benutze(spielerDesProzesses());
+      beendeSpielerDesProzesses();
+    },
+    { scope: "worker" },
+  ],
+});
 
 /**
  * Tippt einen Zug in UCI-Schreibweise auf dem Brett der Spielhülle: Startfeld, Zielfeld, bei

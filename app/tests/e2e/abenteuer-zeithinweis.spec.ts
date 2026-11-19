@@ -16,13 +16,7 @@
 import { expect, test } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 import { feldDarunter } from "./abenteuer-karte";
-import {
-  beendeSpielerDesProzesses,
-  liesPartieImBrowser,
-  spielerDesProzesses,
-  stellungNach,
-  tippeZug,
-} from "./abenteuer-zugwahl";
+import { liesPartieImBrowser, testMitSpieler, stellungNach, tippeZug } from "./abenteuer-zugwahl";
 
 /** Im Clubraum vor Coach Delgado, bereit für den Clubkampf, mit der Nadel von Cedar Creek. */
 const STAND = {
@@ -49,41 +43,41 @@ const ZUEGE = 20;
 const AUSGEGLICHEN = 0;
 const ENGINE_FRIST = 45_000;
 
-test.afterAll(() => beendeSpielerDesProzesses());
-
-test("Ambrose: „Lass dir Zeit“, wenn der Held mit 10 + 5 im Sekundentakt zieht", async ({
-  page,
-  browserName,
-}) => {
-  test.skip(browserName !== "chromium", "Spieler mit Stockfish nur einmal je Prozess");
-  test.slow();
-  const spieler = spielerDesProzesses();
-  await starteMitStand(page, STAND);
-  await page.getByTestId("abenteuer-aktion").click();
-  const deckwahl = page.getByTestId("abenteuer-deckwahl");
-  for (let i = 0; i < 40 && !(await deckwahl.isVisible()); i++) {
-    const weiter = page.locator(".abenteuer-dialog-weiter");
-    const wahl = page.locator(".abenteuer-dialog-wahlen button").first();
-    if (await wahl.isVisible()) await wahl.click();
-    else if (await weiter.isVisible()) await weiter.click();
-    else await page.waitForTimeout(100);
-  }
-  await page.getByTestId("abenteuer-zeit-schnell").click();
-  await page.getByTestId("abenteuer-deck-los").click();
-  const hinweis = page.getByTestId("abenteuer-zeithinweis");
-  for (let zug = 0; zug < ZUEGE; zug++) {
-    await expect(page.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {
-      timeout: ENGINE_FRIST,
-    });
-    const stand = await page.evaluate(liesPartieImBrowser);
-    if (!stand || stand.ende !== null) break;
-    await tippeZug(page, await spieler.waehle(stellungNach(stand), AUSGEGLICHEN));
-    // Die Zeile steht einige Sekunden in der Blase; kurz nach dem Zug nachsehen.
-    const da = await hinweis
-      .waitFor({ timeout: 1500 })
-      .then(() => true)
-      .catch(() => false);
-    if (da) break;
-  }
-  await expect(hinweis).toContainText(ZU_SCHNELL);
-});
+testMitSpieler(
+  "Ambrose: „Lass dir Zeit“, wenn der Held mit 10 + 5 im Sekundentakt zieht",
+  async ({ page, browserName, spieler }) => {
+    test.skip(
+      browserName !== "chromium",
+      "Spieler mit Stockfish, wie die Wegsperren nur in Chromium",
+    );
+    test.slow();
+    await starteMitStand(page, STAND);
+    await page.getByTestId("abenteuer-aktion").click();
+    const deckwahl = page.getByTestId("abenteuer-deckwahl");
+    for (let i = 0; i < 40 && !(await deckwahl.isVisible()); i++) {
+      const weiter = page.locator(".abenteuer-dialog-weiter");
+      const wahl = page.locator(".abenteuer-dialog-wahlen button").first();
+      if (await wahl.isVisible()) await wahl.click();
+      else if (await weiter.isVisible()) await weiter.click();
+      else await page.waitForTimeout(100);
+    }
+    await page.getByTestId("abenteuer-zeit-schnell").click();
+    await page.getByTestId("abenteuer-deck-los").click();
+    const hinweis = page.getByTestId("abenteuer-zeithinweis");
+    for (let zug = 0; zug < ZUEGE; zug++) {
+      await expect(page.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {
+        timeout: ENGINE_FRIST,
+      });
+      const stand = await page.evaluate(liesPartieImBrowser);
+      if (!stand || stand.ende !== null) break;
+      await tippeZug(page, await spieler.waehle(stellungNach(stand), AUSGEGLICHEN));
+      // Die Zeile steht einige Sekunden in der Blase; kurz nach dem Zug nachsehen.
+      const da = await hinweis
+        .waitFor({ timeout: 1500 })
+        .then(() => true)
+        .catch(() => false);
+      if (da) break;
+    }
+    await expect(hinweis).toContainText(ZU_SCHNELL);
+  },
+);

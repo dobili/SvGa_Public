@@ -11,7 +11,12 @@ test.use({ serviceWorkers: "block" });
 
 test("Neue Version des Spiels: die Startkarte sagt es und lädt sie, danach „Spielen“ (19.11.2026)", async ({
   page,
+  browserName,
 }) => {
+  // In WebKit (Playwright) überlebt der Cache-Speicher bei gesperrtem Service Worker das Neuladen
+  // nicht (Lauf 44483921732: danach fehlten Paket und Maia); mit Service Worker sieht page.route
+  // dort den Abruf nicht. Die Regel prüfen maiapflicht.test.ts und dieser Test in Chromium.
+  test.skip(browserName === "webkit", "Cache-Speicher und page.route in WebKit nicht nachstellbar");
   await page.goto("/app/#abenteuer");
   await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });

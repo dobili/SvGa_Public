@@ -1615,7 +1615,7 @@
      "id": 24,
      "name": "iwSpind",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 256,
      "width": 32,
      "height": 32,
@@ -1769,7 +1769,7 @@
      "name": "sc16Gelaender",
      "type": "moebel",
      "x": 84,
-     "y": 68,
+     "y": 64,
      "width": 48,
      "height": 16,
      "rotation": 0,
@@ -1778,7 +1778,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 76
+       "value": 72
       },
       {
        "name": "kollision",
@@ -1792,7 +1792,7 @@
      "name": "sc16Gelaender",
      "type": "moebel",
      "x": 132,
-     "y": 68,
+     "y": 64,
      "width": 48,
      "height": 16,
      "rotation": 0,
@@ -1801,7 +1801,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 76
+       "value": 72
       },
       {
        "name": "kollision",
@@ -1815,7 +1815,7 @@
      "name": "sc16Gelaender",
      "type": "moebel",
      "x": 180,
-     "y": 68,
+     "y": 64,
      "width": 48,
      "height": 16,
      "rotation": 0,
@@ -1824,7 +1824,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 76
+       "value": 72
       },
       {
        "name": "kollision",
@@ -2138,6 +2138,11 @@
    "name": "kennung",
    "type": "string",
    "value": "summitCity.bergstation"
+  },
+  {
+   "name": "sperren_fein",
+   "type": "string",
+   "value": "6,5,........########"
   }
  ]
 }

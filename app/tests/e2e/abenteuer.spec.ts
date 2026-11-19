@@ -210,7 +210,7 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   await expect(page.getByTestId("abenteuer-ortsschild")).toHaveText("Dein Zimmer");
 });
 
-test("Steuerkreuz: mit gedrücktem Daumen von ▲ auf ▶ gleiten wechselt die Richtung (19.11.2026)", async ({
+test("Steuerkreuz: mit gedrücktem Daumen von ▼ auf ▶ gleiten wechselt die Richtung (19.11.2026)", async ({
   page,
 }) => {
   // Ohne den Safari-Hinweis: Auf dem iPhone schiebt er das Spiel so weit hinunter, dass das
@@ -222,21 +222,23 @@ test("Steuerkreuz: mit gedrücktem Daumen von ▲ auf ▶ gleiten wechselt die R
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   const kreuz = page.locator(".abenteuer-steuerkreuz");
-  const oben = kreuz.locator('[data-richtung="oben"]');
+  // ▼ statt ▲: Oben liegt die Luke; der Wechsel in das Zimmer überdeckte im CI-Lauf 44487375007
+  // das Kreuz, bevor der Finger ▶ erreichte. Unten ist Wand, der Held bleibt auf dem Dachboden.
+  const unten = kreuz.locator('[data-richtung="unten"]');
   const rechts = kreuz.locator('[data-richtung="rechts"]');
-  const mitte = async (ort: typeof oben) => {
+  const mitte = async (ort: typeof unten) => {
     const box = await ort.boundingBox();
     if (!box) throw new Error("Taste ohne Lage");
     return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
   };
-  const a = await mitte(oben);
+  const a = await mitte(unten);
   const b = await mitte(rechts);
   await page.mouse.move(a.x, a.y);
   await page.mouse.down();
-  await expect(oben).toHaveAttribute("data-gedrueckt", "ja");
+  await expect(unten).toHaveAttribute("data-gedrueckt", "ja");
   await page.mouse.move(b.x, b.y, { steps: 5 });
   await expect(rechts).toHaveAttribute("data-gedrueckt", "ja");
-  await expect(oben).not.toHaveAttribute("data-gedrueckt", "ja");
+  await expect(unten).not.toHaveAttribute("data-gedrueckt", "ja");
   await page.mouse.up();
   await expect(kreuz.locator('[data-gedrueckt="ja"]')).toHaveCount(0);
 });

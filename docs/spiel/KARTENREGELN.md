@@ -1379,3 +1379,11 @@ vergrößert, bis ihre Tür groß genug war. Prüfung: `python -m pipeline.abent
   (Diner, Waschsalon: 29 × 17, nötig 1,29). Sie bleiben vorerst Hinweis: Das Diner und die Villa
   Whitlock haben Eingänge (`tuer` im Katalog rechnet seit 17.11.2026 den Maßstab ein), und 1,16 bzw. 1,29 sprengt
   die Häuserzeile. Rückfrage an den Autor (AUFGABEN_AUTOR RO33).
+- **Durchlässe (19.11.2026):** Was für Türen gilt, gilt für jeden Durchlass zwischen begehbaren
+  Bereichen: mindestens eine Kachel (16 px) frei, nicht nur die 12 px des Körpers. Eine Lücke von
+  genau Körperbreite trifft ein Spieler mit Steuerkreuz oder Wischen kaum (Spieler-Durchlauf vom
+  18.11.2026, Bergstation Summit City: Spind und Gondelbucht ließen 12 px, der Held kam in drei
+  von vier Versuchen nicht zur Seilbahn zurück). Prüfung: `python -m pipeline.abenteuer.durchlass
+[--hinweise]` rechnet mit derselben Kollision wie die App (Raster, feine Masken und Felder,
+  Figuren, stehende Statisten, das Feld über Sitzenden). Befund: Ein Ziel ist nur durch so eine
+  Lücke erreichbar. Hinweis: eine leere Nische dahinter (Sackgasse, in die man sich hineinzwängt).

@@ -39,6 +39,9 @@ ANKOMMEN = re.compile(
 
 # Angesehen und passend: „datei:knoten:Anfang der Zeile“ → Grund.
 GEPRUEFT: dict[str, str] = {
+    "capital-arena-halle:finale_lauf:Als die Halle leer wird, gehst du hinaus auf die Treppe": (
+        "Erzählter Szenenwechsel nach dem Finale (Rückmeldung, mittel-3)."
+    ),
     "capital-arena-aussen:wanderer:Ein Mann mit gelbem Rucksack sitzt auf den Stufen": "Er sitzt dort.",
     "capital-arena-halle:pause_nach_runde2:Juno sitzt auf der untersten Stufe": "Juno sitzt dort.",
     "capital-arena-halle:halbfinale_danach:Du gehst um den Tisch": "Bewegung im Gespräch.",

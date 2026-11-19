@@ -103,6 +103,42 @@ Teil fertig ist.
       offen ist. Alte Spielstände bekommen die Einleitung nicht nachgereicht.
       **Rückmeldung:** „N2639 ok“ oder eine Notiz, etwa „N2639: lieber selbst ins Haus gehen“.
 
+- [ ] N2640. **Reaktion nach jeder Partie und jedem Rätsel:** Nach der Ergebniskarte öffnet sich
+      jetzt von selbst das Gespräch mit dem, der die Partie oder das Rätsel angeboten hat, etwa
+      Ambrose nach der ersten Partie auf dem Dachboden („Du hast gewonnen …“). Wo der Ort danach
+      wechselt, sagt das Gespräch, wohin. Bitte beim Durchspielen darauf achten, ob eine Reaktion
+      fehlt oder nicht zum Ergebnis passt.
+      **Rückmeldung:** „N2640 ok“ oder Ort und Notiz.
+
+- [ ] N2641. **Zielpfeil nur auf Wunsch:** Ohne Zutun erscheint kein Pfeil mehr. Im Tagebuch steht
+      vor jeder laufenden Aufgabe mit Ziel ein kleines goldenes Dreieck. Antippen zeigt den Pfeil
+      zum Ziel (etwa zu Mama), nochmal antippen blendet ihn aus. Geht die Aufgabe einen Schritt
+      weiter, wandert der Pfeil mit; ist sie erledigt, verschwindet er. Der Fehler mit dem Pfeil
+      auf dem Spiegel ist behoben. Entscheidung von mittel-2 (Pfeil wandert mit), Widerspruch
+      genügt.
+      **Rückmeldung:** „N2641 ok“ oder eine Notiz.
+
+- [ ] N2642. **Erzählungen zur richtigen Zeit:** Kommst du nach der ersten Lektion mit dem Brett
+      die Treppe herunter, hält das Spiel kurz an: Die neunte Stufe knarrt, und unten sitzt Mama
+      zwischen den Kartons. Das Gespräch mit ihr beginnt danach ohne die Treppe. Ebenso beim ersten
+      Betreten von Darlenes Raststätte und Wards Hütte.
+      **Rückmeldung:** „N2642 ok“ oder Stellen, an denen noch etwas zur falschen Zeit erzählt wird.
+
+- [ ] N2643. **Bildausschnitt und Blitzwertung:** Auf großen Karten eilt der Ausschnitt beim Laufen
+      etwas voraus und gleitet beim Stehenbleiben zurück, jetzt ohne Ruckeln (vorher Sprünge von
+      drei Bildschirmpixeln). Wirkt es noch unruhig, schalte ich das Vorauseilen ganz ab. Eine
+      Partie mit Zeitwahl, die du durchrauschst oder als Blitz spielst, zählt im Spiel nur halb
+      (Niederlage gegen Clubchef 1 kostet 3 statt 4½ Punkte). Ambrose sagt dir ab dem 10. Zug
+      höchstens zweimal je Partie, wenn du viel zu schnell oder zu langsam spielst (erst nach der
+      ersten Clubnadel).
+      **Rückmeldung:** „N2643 ok“ oder „N2643: Kamera lieber fest“.
+
+- [ ] N2644. **Sternennacht in Cedar Creek:** Die Einladung von Mae steht wieder im Tagebuch, und
+      die Nacht lässt sich nicht mehr ablehnen (Mae überredet dich zu ein paar Minuten). Bricht man
+      mittendrin ab, bietet der Steg sie wieder an. Vorher konnte man sie leicht verpassen.
+      Entscheidung von mittel-3, Widerspruch genügt.
+      **Rückmeldung:** „N2644 ok“ oder eine Notiz.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein

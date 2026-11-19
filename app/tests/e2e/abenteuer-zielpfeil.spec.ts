@@ -26,6 +26,8 @@ const STAND = {
     brettBeruehrt: true,
     ambroseErwachtGesehen: true,
     ersteLektionBesprochen: true,
+    // Die Treppe am Abend (Eingang des Wohnzimmers, erzaehlzeit) ist schon erzählt.
+    treppeAbendGesehen: true,
   },
 };
 

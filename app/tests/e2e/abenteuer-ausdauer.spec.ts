@@ -7,7 +7,7 @@
  * jede mit der Testhilfe „Bestehen“ gelöst), dann Kartenwechsel über „Reisen“ zwischen sieben
  * Städten (Vorgabe 200). Vorher spricht der Held im Park von Maple Falls 30-mal den Kiosk an
  * (Dialoge); nach jeder Ankunft spricht er an, was vor ihm steht, und
- * alle 20 Wechsel spielt er eine Übungspartie an (Königsbauer, dann aufgeben; Vorgabe 10). Gemessen
+ * alle 20 Wechsel spielt er eine Übungspartie an (drei Randbauernzüge außerhalb des Eröffnungsbuchs, dann aufgeben; Vorgabe 10). Gemessen
  * wird mit den Messfühlern (abenteuer-ausdauer-messfuehler.ts) nach dem Einspielen und dann alle
  * 20 Wechsel.
  *
@@ -22,9 +22,23 @@
  * die Messreihe als JSON. Bericht: docs/spiel/auftraege/ausdauer_19-11.md.
  */
 import { writeFileSync } from "node:fs";
-import { expect, test, type Page } from "@playwright/test";
-import { EINLEITUNG_GESEHEN, GRUNDSTAND, beobachte, starteMitStand } from "./abenteuer-affe";
+import { expect, test } from "@playwright/test";
+import { EINLEITUNG_GESEHEN, GRUNDSTAND, beobachte } from "./abenteuer-affe";
+import {
+  raeumeAuf,
+  reise,
+  spielePartie,
+  sprichAn,
+  starteMitTon,
+} from "./abenteuer-ausdauer-ablauf";
 import { feldDarunter } from "./abenteuer-karte";
+import {
+  fundeMitBild,
+  hauslauf,
+  hausschritt,
+  siehFensterbankAn,
+  type Hausweg,
+} from "./abenteuer-ausdauer-haus";
 import {
   miss,
   oeffneMessung,
@@ -37,15 +51,15 @@ const KARTEN = Number(process.env.AUSDAUER_KARTEN ?? "200");
 const PARTIEN = Number(process.env.AUSDAUER_PARTIEN ?? "10");
 const AUFGABEN = Number(process.env.AUSDAUER_AUFGABEN ?? "25");
 const DIALOGE = Number(process.env.AUSDAUER_DIALOGE ?? "30");
+const TUEREN = Number(process.env.AUSDAUER_TUEREN ?? "120");
+/** Im Haus: messen je so viele Durchgänge, Basis nach dem ersten Takt. */
+const HAUSTAKT = 24;
 /** Messen und eine Partie spielen je so viele Kartenwechsel. */
 const TAKT = 20;
 /** Kartenwechsel zum Einspielen (Zwischenspeicher, Schriften, erste Texturen), bevor die Basis gilt. */
 const EINSPIELEN = 10;
 const MINUTEN = 50;
 const MS_JE_MINUTE = 60_000;
-const ENGINE_FRIST = 30_000;
-/** So viele Klicks darf das Aufräumen bis zur freien Welt brauchen (lange Runde: 25 × 3). */
-const AUFRAEUMEN_HOECHSTENS = 200;
 
 /** Grenzen des Wachstums von der Basis bis zum Ende. */
 const GRENZE = {
@@ -96,130 +110,6 @@ const STAND = {
   dialogvariablen: EINLEITUNG_GESEHEN,
 };
 
-/** Schaltet den Ton der App in den Einstellungen an; läuft im Browser. */
-function schalteTonAn(): Promise<boolean> {
-  return new Promise<boolean>((fertig, fehler) => {
-    const anfrage = indexedDB.open("schach-von-grund-auf");
-    anfrage.onerror = () => fehler(anfrage.error);
-    anfrage.onsuccess = () => {
-      const db = anfrage.result;
-      const bereich = db.transaction("nutzerdaten", "readwrite").objectStore("nutzerdaten");
-      const lesen = bereich.get("aktuell");
-      lesen.onsuccess = () => {
-        const alt = lesen.result as Record<string, unknown> | undefined;
-        if (!alt) {
-          db.close();
-          fertig(false);
-          return;
-        }
-        const einstellungen = { ...(alt.einstellungen as object), ton: "an" };
-        const schreiben = bereich.put({ ...alt, einstellungen }, "aktuell");
-        schreiben.onsuccess = () => {
-          db.close();
-          fertig(true);
-        };
-        schreiben.onerror = () => fehler(schreiben.error);
-      };
-    };
-  });
-}
-
-/** Klickt sichtbare Knöpfe weg, bis die Welt frei ist; Ausgabe: 1, wenn dabei ein Dialog lief. */
-async function raeumeAuf(seite: Page): Promise<number> {
-  let dialoge = 0;
-  for (let i = 0; i < AUFRAEUMEN_HOECHSTENS; i++) {
-    if (await weltFrei(seite)) return dialoge;
-    // Ein Gespräch zählt einmal, auch wenn es zwischen den Zeilen kurz zugeht.
-    if (
-      await seite
-        .getByTestId("abenteuer-dialog")
-        .isVisible()
-        .catch(() => false)
-    )
-      dialoge = 1;
-    const kandidaten = [
-      seite.getByRole("button", { name: "Bestehen" }),
-      seite.locator(".abenteuer-dialog-wahlen button").first(),
-      seite.locator(".abenteuer-dialog-weiter"),
-      seite.getByRole("button", { name: /^(Weiter|Auswerten|Nächste Aufgabe|Zurück in die Welt)/ }),
-      seite.getByTestId("abenteuer-meldung").getByRole("button"),
-      // Laden, Reisen und andere Fenster: schließen wie ein Spieler.
-      seite.getByRole("button", { name: /^(Schließen|Zurück|Weiterspielen|Fertig)$/ }),
-    ];
-    let gedrueckt = false;
-    for (const k of kandidaten) {
-      const letzter = k.last();
-      if (!(await letzter.isVisible().catch(() => false))) continue;
-      gedrueckt = await letzter.click({ timeout: 1500 }).then(
-        () => true,
-        () => false,
-      );
-      if (gedrueckt) break;
-    }
-    await seite.waitForTimeout(gedrueckt ? 120 : 150);
-  }
-  return dialoge;
-}
-
-/** Die Welt ist frei: Steuerkreuz da, kein Fenster, keine Meldung darüber. */
-async function weltFrei(seite: Page): Promise<boolean> {
-  return seite.evaluate(
-    () =>
-      document.querySelector(".abenteuer-steuerkreuz button") !== null &&
-      document.querySelector(
-        "[data-testid='abenteuer-dialog'], .abenteuer-menue, [data-testid='abenteuer-meldung'], .abenteuer-ergebnis, [data-testid='abenteuer-aufgaben'], [data-testid='partie']",
-      ) === null,
-  );
-}
-
-/** Reist in die nächste Stadt der Liste; Ausgabe: ob die Karte wechselte. */
-async function reise(seite: Page, nummer: number): Promise<boolean> {
-  const knopf = seite.getByTestId("abenteuer-reisenknopf");
-  if (!(await knopf.isVisible().catch(() => false))) return false;
-  await knopf.click();
-  const ziele = seite.getByTestId("abenteuer-reisen").locator(".abenteuer-karte");
-  await expect(ziele.first()).toBeVisible();
-  const anzahl = await ziele.count();
-  await ziele.nth(nummer % anzahl).click();
-  await expect(seite.getByTestId("abenteuer-reisen")).toHaveCount(0);
-  await expect(seite.locator(".abenteuer-welt canvas")).toHaveCount(1, { timeout: 20000 });
-  await seite.waitForTimeout(400);
-  return true;
-}
-
-/** Spricht an, was vor dem Helden steht, falls etwas da ist; Ausgabe: Zahl der Dialoge. */
-async function sprichAn(seite: Page): Promise<number> {
-  const aktion = seite.getByTestId("abenteuer-aktion");
-  if (!(await aktion.isVisible().catch(() => false))) return 0;
-  await aktion.click().catch(() => undefined);
-  await seite.waitForTimeout(300);
-  return raeumeAuf(seite);
-}
-
-/** Übungspartie: Königsbauer ziehen, auf die Antwort warten, aufgeben, zurück in die Welt. */
-async function spielePartie(seite: Page): Promise<boolean> {
-  const brett = seite.getByTestId("abenteuer-reisebrettknopf");
-  if (!(await brett.isVisible().catch(() => false))) return false;
-  await brett.click();
-  await seite.getByTestId("abenteuer-deck-los").click();
-  await expect(seite.getByTestId("partie")).toBeVisible({ timeout: 30000 });
-  await expect(seite.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {
-    timeout: ENGINE_FRIST,
-  });
-  const weiss = await seite.getByRole("button", { name: /^e2, Bauer \(Weiß\)/ }).isVisible();
-  const von = weiss ? "e2" : "e7";
-  await seite.getByRole("button", { name: new RegExp(`^${von}, Bauer`) }).click();
-  await seite.getByRole("button", { name: weiss ? "e4" : "e5", exact: true }).click();
-  await expect(seite.getByTestId("partiestatus")).toHaveText("Du bist am Zug.", {
-    timeout: ENGINE_FRIST,
-  });
-  await seite.getByTestId("abenteuer-partie-aufgeben").click();
-  await seite.getByRole("button", { name: "Ja, aufgeben" }).click();
-  await seite.getByTestId("partie-zurueck-zur-stadt").click();
-  await raeumeAuf(seite);
-  return true;
-}
-
 /** Wachstum von der Basis bis zum Ende, das eine Grenze überschreitet (leer: in Ordnung). */
 function ueberschritten(basis: Messpunkt, ende: Messpunkt): string[] {
   const funde: string[] = [];
@@ -261,16 +151,7 @@ test("Ausdauer: lange Sitzung ohne Neuladen wächst nicht", async ({ page, brows
     console.log(`Ausdauer: ${zeile(p)}`);
   };
 
-  await starteMitStand(page, STAND);
-  // Ton an (wie beim Autor), sonst lädt keine Musik; eine Berührung entsperrt ihn wie am Handy.
-  await expect.poll(() => page.evaluate(schalteTonAn)).toBe(true);
-  await page.reload();
-  await page.goto("/app/#abenteuer");
-  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });
-  await page
-    .getByTestId("abenteuer-welt")
-    .click({ position: { x: 5, y: 5 } })
-    .catch(() => undefined);
+  await starteMitTon(page, STAND);
   await merke("Start", 0);
   await page
     .getByRole("button", { name: "Weitermachen" })
@@ -305,6 +186,80 @@ test("Ausdauer: lange Sitzung ohne Neuladen wächst nicht", async ({ page, brows
   if (ziel) writeFileSync(ziel, JSON.stringify({ wechsel, dialoge, partien, reihe }, null, 2));
 
   const ende = reihe[reihe.length - 1];
+  expect(basis, "Basis gemessen").not.toBeNull();
+  if (basis && ende) expect(ueberschritten(basis, ende)).toEqual([]);
+  expect(funde).toEqual([]);
+});
+
+/** Zählt im Browser die Bilder, die als Großansicht (#bild) oder als Fundbild erschienen. */
+function zaehleGrossbilder(): void {
+  const gesehen = new Set<string>();
+  (window as unknown as { __grossbilder: Set<string> }).__grossbilder = gesehen;
+  new MutationObserver(() => {
+    const bilder = ".abenteuer-grossansicht img, [data-testid='abenteuer-fundbild']";
+    for (const bild of document.querySelectorAll(bilder)) {
+      gesehen.add(bild.getAttribute("src") ?? "");
+    }
+  }).observe(document, { subtree: true, childList: true, attributes: true });
+}
+
+/**
+ * Innenräume: Einleitung vor dem Haus und Ankunft im Wohnzimmer (Dialoge mit Großansicht #bild),
+ * dann immer wieder Haustür, Treppe ins Zimmer (dort die Fensterbank mit 30 Fundbildern ansehen),
+ * Treppe zum Dachboden und zurück (Vorgabe 120
+ * Durchgänge, AUSDAUER_TUEREN). Gleiche Grenzen wie oben, Basis nach 24 Durchgängen.
+ */
+test("Ausdauer: Türen und Treppen im Haus wachsen nicht", async ({ page, browserName }) => {
+  test.skip(!process.env.ABENTEUER_AUSDAUER, "nur mit ABENTEUER_AUSDAUER=1");
+  test.skip(browserName !== "chromium", "Messung über CDP gibt es nur in Chromium");
+  test.setTimeout(MINUTEN * MS_JE_MINUTE);
+  const funde = beobachte(page);
+  await page.addInitScript(zaehlerSkript);
+  await page.addInitScript(zaehleGrossbilder);
+  const cdp = await oeffneMessung(page);
+  const reihe: Messpunkt[] = [];
+  const merke = async (schritt: string, wechsel: number) => {
+    const p = await miss(page, cdp, schritt, wechsel);
+    reihe.push(p);
+    console.log(`Ausdauer Haus: ${zeile(p)}`);
+  };
+  // Vor dem Haus, Einleitung noch nicht gesehen: Sie läuft sofort, die Ankunft beim Eintreten.
+  await starteMitTon(page, {
+    ...GRUNDSTAND,
+    position: { karte: "mapleFalls.aussen", x: 3, y: 24, richtung: "unten" },
+    dialogvariablen: {},
+    // Funde mit Bild: Die Fensterbank im Zimmer zeigt sie bei jedem Besuch (T15).
+    funde: fundeMitBild(30),
+  });
+  await merke("Start", 0);
+  let dialoge = await raeumeAuf(page);
+  const lauf = hauslauf(page, cdp);
+  const weg: Hausweg = { glied: 0 };
+  let wechsel = 0;
+  let basis: Messpunkt | null = null;
+  let fensterbank = 0;
+  for (let i = 0; wechsel < TUEREN && i < TUEREN * 2; i++) {
+    if (await siehFensterbankAn(lauf)) {
+      fensterbank += 1;
+      dialoge += await raeumeAuf(page);
+    }
+    if (await hausschritt(lauf, weg)) wechsel += 1;
+    dialoge += await raeumeAuf(page);
+    if (wechsel > 0 && wechsel % HAUSTAKT === 0 && reihe.at(-1)?.kartenwechsel !== wechsel) {
+      await merke(`Durchgänge ${wechsel}`, wechsel);
+      basis ??= reihe.at(-1) ?? null;
+    }
+  }
+  await merke("Ende", wechsel);
+  const bilder = await page.evaluate(
+    () => (window as unknown as { __grossbilder: Set<string> }).__grossbilder.size,
+  );
+  console.log(
+    `Ausdauer Haus: ${wechsel} Durchgänge, ${dialoge} Dialoge, ${fensterbank}× Fensterbank, ` +
+      `${bilder} verschiedene Bilder`,
+  );
+  const ende = reihe.at(-1);
+  expect(wechsel, "Durchgänge").toBeGreaterThanOrEqual(TUEREN);
   expect(basis, "Basis gemessen").not.toBeNull();
   if (basis && ende) expect(ueberschritten(basis, ende)).toEqual([]);
   expect(funde).toEqual([]);

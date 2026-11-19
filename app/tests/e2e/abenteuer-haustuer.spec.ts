@@ -30,8 +30,12 @@ const IM_WOHNZIMMER = {
 const WECHSEL = 8;
 const FRIST_MS = 5000;
 
+/** Karte des Helden im gespeicherten Spielstand. */
 async function karte(seite: Page): Promise<string> {
-  return (await seite.evaluate(liesSpeicherImBrowser)).abenteuer?.position?.karte ?? "";
+  const stand = (await seite.evaluate(liesSpeicherImBrowser)).abenteuer as {
+    position?: { karte?: string };
+  } | null;
+  return stand?.position?.karte ?? "";
 }
 
 /** Ein Druck in Richtung Tür: Taste kurz halten oder einmal auf das Steuerkreuz tippen. */

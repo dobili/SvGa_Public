@@ -242,7 +242,12 @@ test("Steuerkreuz: mit gedrücktem Daumen von ▼ auf ▶ gleiten wechselt die R
   await page.mouse.up();
   await expect(kreuz.locator('[data-gedrueckt="ja"]')).toHaveCount(0);
   // Langer Druck (19.11.2026): keine Textauswahl, kein Kontextmenü des Browsers im Spiel.
-  await expect(rechts).toHaveCSS("user-select", "none");
+  // WebKit kennt nur die Form mit Präfix und meldet „user-select“ als „auto“.
+  const auswahl = await rechts.evaluate((knopf) => {
+    const stil = getComputedStyle(knopf);
+    return stil.getPropertyValue("-webkit-user-select") || stil.getPropertyValue("user-select");
+  });
+  expect(auswahl).toBe("none");
   const menueVerhindert = await rechts.evaluate((knopf) => {
     const ereignis = new MouseEvent("contextmenu", { bubbles: true, cancelable: true });
     knopf.dispatchEvent(ereignis);

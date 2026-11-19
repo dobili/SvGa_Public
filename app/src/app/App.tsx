@@ -309,7 +309,9 @@ function Hauptrahmen() {
       <main className="inhalt">
         <GeschuetzterBildschirm />
       </main>
-      <AufgabenRueckweg />
+      {/* Im Spiel nicht: Es hat den Rückweg im eigenen Menü, und der Knopf lag über dem
+          Steuerkreuz (Befund des Autors, 19.11.2026). */}
+      {!vollbild && <AufgabenRueckweg />}
       {/* Im Schach-Abenteuer (Zusatzansicht mit „vollbild“ und seine Partien) tritt die
           Oberfläche der App zurück (Entscheidung D1 des Autors, 07.11.2026). */}
       {!vollbild && <Leiste />}

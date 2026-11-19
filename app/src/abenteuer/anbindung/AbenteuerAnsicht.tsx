@@ -37,6 +37,7 @@ import { Steuerkreuzwahl } from "./Steuerkreuzwahl";
 import { Zielhinweiswahl } from "./Zielhinweiswahl";
 import { Tonregler } from "./Tonregler";
 import { Ladestand } from "./Ladestand";
+import { groessentext, mbText } from "./groesse";
 
 /** Der geladene Baustein, einmal je Seite. */
 let modulVorrat: Promise<Abenteuermodul> | null = null;
@@ -44,14 +45,6 @@ let modulVorrat: Promise<Abenteuermodul> | null = null;
 function ladeModul(): Promise<Abenteuermodul> {
   modulVorrat ??= import("../modul/abenteuer").then((m) => m.modul);
   return modulVorrat;
-}
-
-const BYTES_JE_MB = 1024 * 1024;
-
-/** Größe für die Anzeige: ganze Megabyte, unter einem Megabyte „unter 1“. */
-function mbText(bytes: number): string {
-  const mb = bytes / BYTES_JE_MB;
-  return mb < 1 ? t("abenteuer.unterEinemMb") : mb.toFixed(0);
 }
 
 /** Längster Name des Helden (passt in die Dialogzeile). */
@@ -111,10 +104,7 @@ function Startkarte({
       {/* Kurze Sätze und die Größe vor dem Laden (Spieltest „einstieg“, R9). */}
       {zustand.art === "fehlt" && (
         <p>
-          {zustand.bytes
-            ? t("abenteuer.groesse", { mb: mbText(zustand.bytes) })
-            : t("abenteuer.groesseUnbekannt")}{" "}
-          {t("abenteuer.speichertSelbst")}
+          {groessentext(zustand)} {t("abenteuer.speichertSelbst")}
         </p>
       )}
       {zustand.art === "fehler" && (
@@ -326,6 +316,16 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
         setzeZustand({ art: "fehler", grund: online ? "unbekannt" : "ohneNetz" });
       });
   };
+
+  // Neue Version des Spiels auf dem Server (Wunsch des Autors, 19.11.2026): mit Spielstand gleich
+  // laden; danach führt der Weg wie gewohnt in die Welt. Ohne Netz bleibt das alte Paket.
+  const aktualisiert = useRef(false);
+  useEffect(() => {
+    if (zustand.art !== "fehlt" || !zustand.neuerStand || !stand || aktualisiert.current) return;
+    aktualisiert.current = true;
+    lade();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [zustand, stand]);
 
   const starte = () => {
     if (!stand) {

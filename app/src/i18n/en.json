@@ -5519,5 +5519,6 @@
   "buchlook.kurz.muster": "{anzahl} of {partien} games · chapter {kapitel}",
   "abenteuer.admin.titel": "Chess Adventure",
   "abenteuer.admin.erklaerung": "The game for the book. The first time you open it, it is downloaded once (including Maia); after that it also appears under “Play”.",
-  "abenteuer.admin.knopf": "Open game"
+  "abenteuer.admin.knopf": "Open game",
+  "abenteuer.neuerStand": "There is a new version of the game. It is being downloaded now; your progress is kept."
 }

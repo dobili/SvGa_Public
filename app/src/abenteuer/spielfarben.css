@@ -113,7 +113,7 @@
 
 :is(.bildschirm-abenteuer, .abenteuer-huelle)
   :is(.knopf-haupt, .knopf-zweit, .knopf-gefahr, .knopf-link):active:not(:disabled),
-.abenteuer-steuerkreuz button:active,
+.abenteuer-steuerkreuz button[data-gedrueckt="ja"],
 .abenteuer-aktion:active,
 .abenteuer-tagebuchknopf:active,
 .abenteuer-menueknopf:active {
@@ -145,7 +145,7 @@
   padding: 0;
 }
 
-.abenteuer-steuerkreuz button:active,
+.abenteuer-steuerkreuz button[data-gedrueckt="ja"],
 .abenteuer-aktion:active {
   --knopf-grund: var(--spiel-gold);
   --knopf-schrift: var(--spiel-navy);

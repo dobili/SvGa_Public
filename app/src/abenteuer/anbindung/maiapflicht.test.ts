@@ -51,9 +51,9 @@ describe("mitMaiaPflicht", () => {
     });
   });
 
-  it("lässt veraltet und Fehler unverändert", async () => {
-    const veraltet = { art: "veraltet", version: "1", neu: "2" } as const;
-    expect(await mitMaiaPflicht(veraltet, zugriff(false))).toEqual(veraltet);
+  it("lässt einen Fehler unverändert", async () => {
+    const fehler = { art: "fehler", grund: "unbekannt" } as const;
+    expect(await mitMaiaPflicht(fehler, zugriff(false))).toEqual(fehler);
   });
 });
 
@@ -81,5 +81,17 @@ describe("ladeSpielMitMaia", () => {
       maia,
     );
     expect(maia.lade).not.toHaveBeenCalled();
+  });
+});
+
+describe("neue Version des Spiels", () => {
+  const alt = { art: "veraltet", version: "1", neu: "2" } as const;
+
+  it("lädt mit Netz die neue Version (fehlt mit neuerStand)", async () => {
+    expect(await mitMaiaPflicht(alt, zugriff(true))).toEqual({ art: "fehlt", neuerStand: true });
+  });
+
+  it("spielt ohne Netz die alte Fassung weiter", async () => {
+    expect(await mitMaiaPflicht(alt, zugriff(true, false))).toEqual(alt);
   });
 });

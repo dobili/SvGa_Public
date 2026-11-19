@@ -5519,5 +5519,6 @@
   "buchlook.kurz.muster": "{anzahl} von {partien} Partien · Kapitel {kapitel}",
   "abenteuer.admin.titel": "Schach-Abenteuer",
   "abenteuer.admin.erklaerung": "Das Spiel zum Buch. Beim ersten Öffnen wird es einmal heruntergeladen (mit Maia), danach steht es auch auf „Spielen“.",
-  "abenteuer.admin.knopf": "Spiel öffnen"
+  "abenteuer.admin.knopf": "Spiel öffnen",
+  "abenteuer.neuerStand": "Es gibt eine neue Version des Spiels. Sie wird jetzt geladen; dein Spielstand bleibt erhalten."
 }

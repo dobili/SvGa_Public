@@ -209,3 +209,52 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   // Das Ortsschild nennt die neue Karte (Spieltest „einstieg“, R1).
   await expect(page.getByTestId("abenteuer-ortsschild")).toHaveText("Dein Zimmer");
 });
+
+test("Neue Version des Spiels: die Startkarte sagt es und lädt sie, danach „Spielen“ (19.11.2026)", async ({
+  page,
+}) => {
+  await page.goto("/app/#abenteuer");
+  await ladeAbenteuerpaket(page);
+  await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
+  // Der Server meldet ab jetzt eine neuere Version des Pakets (gleiche Dateien, andere Nummer).
+  await page.route("**/abenteuer/paket.json", async (route) => {
+    const antwort = await route.fetch();
+    const verzeichnis = (await antwort.json()) as { version: string };
+    await route.fulfill({
+      response: antwort,
+      json: { ...verzeichnis, version: `${verzeichnis.version}-neu` },
+    });
+  });
+  await page.reload();
+  await expect(page.getByTestId("abenteuer-start")).toContainText("neue Version des Spiels");
+  await ladeAbenteuerpaket(page);
+  await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
+});
+
+test("Steuerkreuz: mit gedrücktem Daumen von ▲ auf ▶ gleiten wechselt die Richtung (19.11.2026)", async ({
+  page,
+}) => {
+  await page.goto("/app/#abenteuer");
+  await ladeAbenteuerpaket(page);
+  await page.getByTestId("abenteuer-name").fill("Kim");
+  await page.getByTestId("abenteuer-spielen").click();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  const kreuz = page.locator(".abenteuer-steuerkreuz");
+  const oben = kreuz.locator('[data-richtung="oben"]');
+  const rechts = kreuz.locator('[data-richtung="rechts"]');
+  const mitte = async (ort: typeof oben) => {
+    const box = await ort.boundingBox();
+    if (!box) throw new Error("Taste ohne Lage");
+    return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+  };
+  const a = await mitte(oben);
+  const b = await mitte(rechts);
+  await page.mouse.move(a.x, a.y);
+  await page.mouse.down();
+  await expect(oben).toHaveAttribute("data-gedrueckt", "ja");
+  await page.mouse.move(b.x, b.y, { steps: 5 });
+  await expect(rechts).toHaveAttribute("data-gedrueckt", "ja");
+  await expect(oben).not.toHaveAttribute("data-gedrueckt", "ja");
+  await page.mouse.up();
+  await expect(kreuz.locator('[data-gedrueckt="ja"]')).toHaveCount(0);
+});

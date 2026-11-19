@@ -47,12 +47,15 @@ export const MAIA_DER_APP: Maiazugriff = {
  * Eingaben: Zustand des Spielpakets allein, Maia-Zugriff. Ausgabe: derselbe Zustand, wenn Maia
  * da ist; sonst „fehlt“ mit der Größe, die noch zu laden ist (Spielpaket, falls es fehlt, plus Maia).
  * Beispiel: Spielpaket vorhanden, Maia fehlt (96 MB) → { art: "fehlt", bytes: 96 MB }; dasselbe
- * ohne Netz → „vorhanden“ (das Spiel läuft dann ohne Maia).
+ * ohne Netz → „vorhanden“ (das Spiel läuft dann ohne Maia). Eine neue Version auf dem Server
+ * („veraltet“) gilt mit Netz als „fehlt“ mit `neuerStand`: Die Ansicht lädt sie dann gleich, der
+ * Spielstand bleibt; ohne Netz spielt man die alte Fassung weiter.
  */
 export async function mitMaiaPflicht(
   spiel: Paketzustand,
   maia: Maiazugriff = MAIA_DER_APP,
 ): Promise<Paketzustand> {
+  if (spiel.art === "veraltet") return maia.online() ? { art: "fehlt", neuerStand: true } : spiel;
   if (spiel.art !== "vorhanden" && spiel.art !== "fehlt") return spiel;
   if (await maia.geladen()) return spiel;
   if (spiel.art === "vorhanden" && !maia.online()) return spiel;

@@ -56,8 +56,12 @@ export interface Paketverzeichnis {
 
 /** Zustand des Pakets auf dem Gerät, für die Anzeige in den Einstellungen und auf der Startkarte. */
 export type Paketzustand =
-  /** Fehlt; `bytes` ist die Größe des Grundpakets auf dem Server, wenn er antwortete. */
-  | { readonly art: "fehlt"; readonly bytes?: number }
+  /**
+   * Fehlt; `bytes` ist die Größe des Grundpakets auf dem Server, wenn er antwortete. `neuerStand`:
+   * Ein älteres Paket ist da, auf dem Server liegt eine neue Version (wird geladen, der Spielstand
+   * bleibt; anbindung/maiapflicht.ts).
+   */
+  | { readonly art: "fehlt"; readonly bytes?: number; readonly neuerStand?: boolean }
   | { readonly art: "laedt"; readonly geladen: number; readonly gesamt: number }
   | { readonly art: "vorhanden"; readonly version: string; readonly bytes: number }
   /** Vorhanden, aber eine neuere Version liegt auf dem Server. */

@@ -91,6 +91,18 @@ Teil fertig ist.
          Juno in Riverton: Slick spielt im Parkpavillon. Neun Stellen hatten das vorher nicht.
       **Rückmeldung:** „N2638 ok“ oder die Nummer mit Notiz, etwa „N2638.2: Blase verdeckt die Uhr“.
 
+- [ ] N2639. **Neue Einleitung (dein Wunsch vom 19.11.):** Ein neues Spiel beginnen (Admin-Menü ›
+      Spiel öffnen › neues Spiel). Der Held steht mit Mama vor dem Haus an der Birch Lane. Bilder
+      der Fahrt und des Hauses (bis die Gemini-Bilder E1 bis E4 da sind, nur Text), Mama spricht,
+      du nimmst einen Karton und gehst mit ihr hinein. Im Wohnzimmer folgt am Abend die Ankunft
+      mit der Kiste von Mrs. Whitlock; Mama sagt, wo die Treppe zum Dachboden ist. Im Tagebuch
+      steht die neue Quest „Einzug an der Birch Lane“, und auf dem Dachboden beginnt wie bisher
+      „Das Brett“. Sprichst du Mama vorher noch einmal an, erinnert sie an die Kiste.
+      Entscheidung von mittel-2, schon umgesetzt, Widerspruch genügt: Vom Haus ins Wohnzimmer
+      geht es mit einer Wahl statt zu Fuß, damit vor dem Dachboden nicht schon die ganze Stadt
+      offen ist. Alte Spielstände bekommen die Einleitung nicht nachgereicht.
+      **Rückmeldung:** „N2639 ok“ oder eine Notiz, etwa „N2639: lieber selbst ins Haus gehen“.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein

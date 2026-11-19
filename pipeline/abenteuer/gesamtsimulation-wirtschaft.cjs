@@ -41,11 +41,15 @@ const AKT = {
 };
 const akt = (ort) => AKT[ort] || 4;
 
-/** Zufall mit festem Startwert (lineare Kongruenz), je Spieler und Durchlauf neu. */
+/**
+ * Zufall mit festem Startwert (lineare Kongruenz), je Spieler und Durchlauf neu. Exakt modulo 2^31
+ * über Math.imul wie naechsteSaat in gesamtsimulation-regeln.cjs: als Gleitkommazahl gerechnet lief
+ * die Folge schon nach etwa 13 000 Werten in einen kurzen Zyklus (Befund vom 19.11.2026).
+ */
 function zufallMit(saat) {
   let s = saat;
   return () => {
-    s = (s * 1103515245 + 12345) % 2147483648;
+    s = (Math.imul(s, 1103515245) + 12345) & 0x7fffffff;
     return s / 2147483648;
   };
 }

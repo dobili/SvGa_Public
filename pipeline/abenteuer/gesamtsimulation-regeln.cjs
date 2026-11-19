@@ -205,10 +205,28 @@ function neuerStand(startwert) {
   };
 }
 
-/** Wiederholbarer Zufall für die Wahlen (lineare Kongruenz). */
+const LCG_FAKTOR = 1103515245;
+const LCG_SUMMAND = 12345;
+const LCG_MODUL = 2147483648; // 2^31
+const LCG_MASKE = 0x7fffffff;
+
+/**
+ * Der nächste Wert der linearen Kongruenz, exakt modulo 2^31.
+ * Warum Math.imul: `saat * 1103515245` liegt weit über 2^53; als Gleitkommazahl gerechnet gingen
+ * die unteren Bits verloren, und die Folge lief schon nach etwa 13 000 Werten in einen Zyklus von
+ * 10 466 (Startwert 3). Mit dem gleichmäßigen Takt der Simulation (neue Versuche alle 150 Schritte)
+ * traf Miss Odile in Port Delacroix dann immer dieselben Werte, und der Clubkampf kam nie (Befund
+ * vom 19.11.2026). Math.imul rechnet die unteren 32 Bit genau; die Maske nimmt davon 31.
+ * Beispiel: naechsteSaat(3) → 3310558080 & 0x7fffffff = 1163074432.
+ */
+function naechsteSaat(saat) {
+  return (Math.imul(saat, LCG_FAKTOR) + LCG_SUMMAND) & LCG_MASKE;
+}
+
+/** Wiederholbarer Zufall für die Wahlen (lineare Kongruenz, siehe naechsteSaat). */
 function zufall(st) {
-  st.saat = (st.saat * 1103515245 + 12345) % 2147483648;
-  return st.saat / 2147483648;
+  st.saat = naechsteSaat(st.saat);
+  return st.saat / LCG_MODUL;
 }
 
 function passt(e, x) {
@@ -366,6 +384,7 @@ module.exports = {
   besitzvariablen,
   verdiene,
   zufall,
+  naechsteSaat,
   gilt,
   MUENZEN_ERSTE_NADEL,
   ladeWelt,

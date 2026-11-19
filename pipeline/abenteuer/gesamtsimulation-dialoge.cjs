@@ -300,7 +300,9 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
  * (die Einleitung reist ins Wohnzimmer, dort läuft dann die Ankunft).
  */
 function eingangsdialog(welt, st, karte) {
-  const eintrag = welt.karteZuOrt[karte]?.karten.find((k) => k.kennung === karte);
+  const eintrag = welt.karteZuOrt[karte]?.karten.find(
+    (k) => k.kennung === karte,
+  );
   const eingang = eintrag?.eingang;
   if (!eingang || !gilt(st, eingang.wenn)) return;
   // Zufallsneutral: Die Einleitung kam am 19.11.2026 vor alles andere; verbrauchte sie Zufall,

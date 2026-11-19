@@ -23,7 +23,7 @@ import { beendeSpielerDesProzesses } from "../e2e/abenteuer-zugwahl";
 import { spieleRunde } from "./aufgaben";
 import { tabellen } from "./auswertung";
 import { tippe, type Lauf } from "./eingabe";
-import { bedieneFenster, neuesFenstergedaechtnis } from "./fenster";
+import { bedieneFenster, bedieneUpdate, neuesFenstergedaechtnis } from "./fenster";
 import { liesLage, liesSpeicher, signatur, type Lage } from "./lage";
 import { Messung } from "./messung";
 import { spielePartie } from "./partie";
@@ -201,6 +201,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
       messung.log(`Puls: Bild ${lage.bild}, Kachel ${lage.kachel}, Knöpfe: ${knoepfe.join(" | ")}`);
       if (lage.bild !== "welt") await foto(seite, ordner, "puls");
     }
+    if (await bedieneUpdate(lauf, lage)) continue;
     if (lage.bild === "partie") {
       await mitFrist(spielePartie(lauf, g), "Partie");
     } else if (lage.bild === "aufgaben") {

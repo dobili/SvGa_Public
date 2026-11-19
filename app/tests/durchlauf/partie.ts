@@ -15,7 +15,7 @@ import { Chess } from "chessops/chess";
 import { parseFen } from "chessops/fen";
 import { spielerDesProzesses, stellungNach } from "../e2e/abenteuer-zugwahl";
 import { tippe, type Lauf } from "./eingabe";
-import { bedieneDialog, type Fenstergedaechtnis } from "./fenster";
+import { bedieneDialog, bedieneUpdate, type Fenstergedaechtnis } from "./fenster";
 import { liesLage, liesSpeicher, type Partielage } from "./lage";
 import type { Partiemessung } from "./messung";
 
@@ -76,6 +76,50 @@ export async function bewerteStellung(
   const ergebnis = await Promise.race([spielerDesProzesses().bewerteAlle(fen), frist]);
   clearTimeout(wecker);
   return ergebnis;
+}
+
+/** Tiefe und Rechenzeit für Aufgaben: tiefer als in Partien, damit Opfer mit Matt gefunden werden. */
+const AUFGABEN_TIEFE = 16;
+const AUFGABEN_MS = 7000;
+
+/**
+ * Die besten Züge einer Aufgabenstellung, gründlicher gerechnet als in Partien (wenige Varianten,
+ * größere Tiefe, mehr Zeit). Warum eigens: Laufen zwei Browser zugleich, kommt Stockfish in den
+ * zwei Sekunden der Partiezüge nicht tief genug; ein Damenopfer mit Matt in drei blieb ungesehen
+ * (Garage in Desert Springs, 19.11.2026). Ausgabe wie bewerteStellung; leer bei regelwidriger
+ * Stellung oder ohne Antwort.
+ */
+export async function bewerteAufgabe(
+  fen: string,
+  varianten: number,
+): Promise<{ uci: string; wert: number }[]> {
+  const aufbau = parseFen(fen);
+  if (aufbau.isErr || Chess.fromSetup(aufbau.value).isErr) return [];
+  const spieler = spielerDesProzesses() as unknown as {
+    engine: Engine;
+    beiZeile: (zeile: string) => void;
+  };
+  if (varianten !== eingestellt) {
+    spieler.engine.processCommand(`setoption name MultiPV value ${varianten}`);
+    eingestellt = varianten;
+  }
+  return new Promise((fertig) => {
+    const funde = new Map<string, number>();
+    const wecker = setTimeout(() => fertig([]), AUFGABEN_MS + ENGINE_FRIST_MS);
+    spieler.beiZeile = (zeile) => {
+      const zug = / pv (\S+)/.exec(zeile)?.[1];
+      const wert = /score (cp|mate) (-?\d+)/.exec(zeile);
+      if (zeile.startsWith("info") && zug && wert) {
+        const zahl = Number(wert[2]);
+        funde.set(zug, wert[1] === "cp" ? zahl / 100 : Math.sign(zahl) * 100);
+      }
+      if (!zeile.startsWith("bestmove")) return;
+      clearTimeout(wecker);
+      fertig([...funde].map(([uci, w]) => ({ uci, wert: w })).sort((x, y) => y.wert - x.wert));
+    };
+    spieler.engine.processCommand(`position fen ${fen}`);
+    spieler.engine.processCommand(`go depth ${AUFGABEN_TIEFE} movetime ${AUFGABEN_MS}`);
+  });
 }
 
 /** Wählt den Zug des Spielers für die Stellung (UCI). */
@@ -146,6 +190,7 @@ export async function spielePartie(
   while (Date.now() < lauf.frist) {
     const lage = await liesLage(seite);
     if (lage.bild !== "partie") break;
+    if (await bedieneUpdate(lauf, lage)) continue;
     const p = (await liesSpeicher(seite)).partie;
     if (p) partie = p;
     const abdruck = `${p?.id ?? ""}|${p?.zuege.length ?? 0}|${p?.ende ?? ""}|${lage.dialog?.text ?? ""}|${lage.kennungen.length}`;

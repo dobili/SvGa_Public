@@ -155,7 +155,10 @@ export class Planer {
 
   /** Ziele aus dem Zielhinweis des Spiels und dem Beginn der nächsten Hauptquest. */
   private hinweise(stand: Abenteuerstand, art: "haupt" | "rest"): Ziel[] {
-    const sig = questsignatur(stand);
+    // Versuche zählen je Queststand und je Ort, an dem der Held steht: Ein Fehlversuch in
+    // Riverton soll den Weg von Ironwood aus nicht verbrauchen.
+    const hier = findeKarte(this.daten, stand.position.karte)?.ort.kennung ?? "";
+    const sig = `${questsignatur(stand)}|${hier}`;
     const daten = this.daten as unknown as Parameters<typeof zielangaben>[1];
     type Schritt = Parameters<typeof zielangabe>[0];
     // Laufende Quests wie im Spiel: Hauptquests zuerst, die zuletzt angenommene vorn.
@@ -163,7 +166,10 @@ export class Planer {
       .filter((q) => !q.erledigt)
       .map((q) => ({ q, d: this.daten.quests.find((x) => x.kennung === q.kennung) }))
       .sort((x, y) => y.q.angenommen.localeCompare(x.q.angenommen));
-    const angaben: { a: Zielangabe; grund: string }[] = [];
+    // Beim Rest zuerst der Beginn der nächsten Hauptquest (die Geschichte geht weiter), dann die
+    // Nebenquests: Sonst lief der Spieler nach jedem Aktende für Nebenquests weit zurück.
+    const angaben: { a: Zielangabe; grund: string }[] =
+      art === "rest" ? this.naechsteHauptquests(stand) : [];
     for (const { q, d } of laufend) {
       const schritt = d?.schritte[q.schritt] as Schritt | undefined;
       const a =
@@ -174,7 +180,6 @@ export class Planer {
       // Lücke zwischen zwei Quests: das Ziel aus „Was jetzt?“ (wie im Spiel).
       angaben.push(...zielangaben(stand, daten).map((a) => ({ a, grund: "Zielhinweis" })));
     }
-    if (art === "rest") angaben.push(...this.naechsteHauptquests(stand));
     return angaben.flatMap(({ a, grund }) => {
       const karte = zielkarte(a, this.bilder);
       if (!karte) return [];
@@ -227,15 +232,17 @@ export class Planer {
       const a = zielangabe(schritt, daten);
       const karte = a ? zielkarte(a, this.bilder) : null;
       const ort = karte ? findeKarte(this.daten, karte)?.ort.kennung : undefined;
-      const i = FOLGE.indexOf(ort ?? q.ort);
+      // Beginnt die Quest auf einem Weg (Raststätte, Diner), zählt das Gebiet der Quest.
+      const i = Math.max(FOLGE.indexOf(ort ?? q.ort), FOLGE.indexOf(q.ort));
       return { a, i: i < 0 ? FOLGE.length : i };
     };
     const begonnen = new Set(stand.quests.map((q) => q.kennung));
     const haupt = this.daten.quests.filter((q) => q.haupt).map((q, nr) => ({ q, nr, ...rang(q) }));
     const offen = haupt.filter((h) => !begonnen.has(h.q.kennung) && h.a);
-    // Eine Quest, die in der Datei hinter einer offenen Quest eines späteren Gebiets steht,
-    // kommt erst nach ihr (der Epilog in Maple Falls nach der Meisterschaft).
-    const wartet = (h: (typeof offen)[number]) => offen.some((o) => o.i > h.i && o.nr < h.nr);
+    // Eine Quest, die hinter dem am weitesten gekommenen Beginn anfängt, kommt zuletzt (der
+    // Epilog in Maple Falls nach der Meisterschaft); alle anderen in der Reihenfolge der Gebiete.
+    const weit = Math.max(-1, ...haupt.filter((h) => begonnen.has(h.q.kennung)).map((h) => h.i));
+    const wartet = (h: (typeof offen)[number]) => h.i < weit;
     // Alle offenen Anfänge, die wartenden zuletzt: Ist der erste gerade nicht erreichbar (Juno
     // schickt erst nach Hause, bevor es nach Ironwood geht), kommt der nächste an die Reihe.
     const ordnung = (x: (typeof offen)[number], y: (typeof offen)[number]) =>

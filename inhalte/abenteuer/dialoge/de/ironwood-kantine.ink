@@ -158,6 +158,11 @@ Um die Nadel, Kumpel? Auf meinem Stahlbrett. #sprecher:bigJoe #stimmung:laechelt
 
 === big_joe_nach_niederlage ===
 Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Er hält fest, was er hat. Gib ihm etwas, das er nicht halten kann. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Noch eine.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END

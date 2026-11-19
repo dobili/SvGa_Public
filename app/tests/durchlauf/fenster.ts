@@ -341,6 +341,9 @@ export async function bedieneFenster(
   // Nach dem Neuladen des schwachen Spielers (schwach.ts): Weitermachen oder Abbrechen.
   const fortsetzung = lauf.schwach.fortsetzung(knoepfe);
   if (fortsetzung) lauf.messung.log(`  SCHWACH: Fortsetzungskarte „${fortsetzung.text}“`);
+  // Nach dem Abbruch bietet die Figur die Runde oder Partie wieder an; die Antwort zum Start gilt
+  // wieder als neu (sonst wählte der Durchlauf nur noch „Nicht jetzt“, Kit in Summit City).
+  if (fortsetzung && /abbrechen|aufgeben/i.test(fortsetzung.text)) g.gewaehlt.clear();
   const knopf = fortsetzung ?? ausgangsknopf(knoepfe, g);
   if (!knopf) {
     await warteOderMelde(lauf, g, `Fenster ${oben.fenster ?? "?"}`);

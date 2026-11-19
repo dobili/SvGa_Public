@@ -159,6 +159,11 @@ Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand v
 
 === mira_nach_niederlage ===
 Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Sie opfert früh, und du nimmst zu spät. Nimm, was sie gibt, und gib es nicht zurück. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Noch mal.“]
     ~ beginnePartie("desertSprings.clubkampf")
     -> END

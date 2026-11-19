@@ -72,8 +72,15 @@ Ende von Akt 3 (`node pipeline/abenteuer/aktstand.cjs --akt 4 --ziel /tmp/akt4.j
    Weiche einer Begegnung, die remis enden kann und die Niederlage abfragt, fragt auch das Remis
    ab). `rueckmeldung.cjs` hatte das durchgelassen, weil es nur prüft, dass ein Zweig den Ausgang
    abfragt, nicht, ob es der richtige ist.
-3. **Musikhaus-Sätze nach der Eröffnung** (Abschnitt 1).
-4. **Werkstatt-Flashback zu lang** (Abschnitt 1).
+3. **Ambrose schwieg nach dem verlorenen Clubkampf (behoben, sechs Clubs).** Im Browser sprach
+   nach den Niederlagen in Maple Falls und Cedar Creek nur der Clubchef; Ambroses Satz in Maple
+   Falls kam erst nach dem Sieg. Jetzt sagt Ambrose in Maple Falls, Cedar Creek, Riverton,
+   Ironwood, Desert Springs und Summit City nach dem verlorenen Clubkampf einen Satz zur Partie
+   (Silicon Bay hatte schon einen; in Port Delacroix schweigt er nach der Geschichte). Nach dem
+   Abschied schweigt er. Dabei gefunden: Sein Satz in Silicon Bay hatte keine Bedingung und wäre
+   auch nach dem Abschied gekommen. Test: zweiter Teil von `dialog/revanche.test.ts`.
+4. **Musikhaus-Sätze nach der Eröffnung** (Abschnitt 1).
+5. **Werkstatt-Flashback zu lang** (Abschnitt 1).
 
 Fehler des Durchlaufs, die der schwache Spieler aufdeckte (behoben):
 
@@ -92,4 +99,49 @@ Fehler des Durchlaufs, die der schwache Spieler aufdeckte (behoben):
 
 ## 4. Im Browser gesehen
 
-Wird nach den Läufen ergänzt.
+Zwei Strecken im Hochformat (Pixel 7), Chromium, gebauter Stand, schwacher Spieler:
+
+- **Strecke 1** vom neuen Spiel: Akt 1 ganz, dann Akt 2 (läuft weiter).
+- **Strecke 4** ab dem simulierten Stand am Ende von Akt 3 (Desert Springs): Wüste, Wegsperre S17,
+  Summit City.
+
+Was jeweils geschah (Auszug; jede Zeile ein erster Versuch, der zweite gewann oder bestand):
+
+| Begegnung                           | Wie verloren                           | Danach (erste Zeile der Rückmeldung)                                                                                     |
+| ----------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Erste Lektion (Ambrose)             | schwache Züge, matt                    | Ambrose: „Verloren. Gut. Jetzt weißt du, was du lernen willst.“                                                          |
+| Clubkampf Maple Falls               | aufgegeben nach vier Zügen             | Coach Delgado: „Das war nichts für heute. …“ (Ambrose: siehe Fund 3)                                                     |
+| Victor (Maple Falls)                | neu geladen mitten in der Partie, matt | Szene mit Victor, Graham Hale und Juno ganz                                                                              |
+| Skater Jo, Rosa                     | Zurück-Taste, „Partie aufgeben“        | keine Rückmeldung (gewollt), Angebot beim nächsten Ansprechen                                                            |
+| Nia (Landstraße)                    | aufgegeben                             | Nia: „Board tragen! War nur Spaß. Noch eine Runde?“                                                                      |
+| Clubkampf Cedar Creek               | schwache Züge, matt                    | Mrs. Okafor: „Diesmal nicht. Aber du hast lange gehalten. …“                                                             |
+| Wegsperre S15 (Zedernwald)          | verloren, dann remis                   | Zoe: „Datenpunkt 4113. Danke.“, nach dem Remis lässt Benji durch                                                         |
+| Clubkampf Riverton                  | aufgegeben                             | Slick (Fund 3: Ambrose ergänzt)                                                                                          |
+| Mama (Ironwood)                     | neu geladen, matt                      | „Ihr habt zu Ende gespielt. Mama hat gewonnen. …“                                                                        |
+| Batiste, Buck                       | schwache Züge, neu geladen             | Batiste: „Junge Leute reden. …“, Buck: „Zu langsam an der Zapfsäule! …“                                                  |
+| Clubkampf Desert Springs (Revanche) | aufgegeben                             | nur Alltagssatz (Fund 1, behoben)                                                                                        |
+| Wegsperre S17 (Diner)               | dreimal matt                           | Zoe: „Das zähle ich nicht mehr. …“, beim dritten Mal „Dreimal ehrlich versucht. Das reicht uns. Geh durch.“ (Notausgang) |
+| Sol (Summit City)                   | Bauer verloren, remis                  | „Gewonnen, und keine Sekunde Panik.“ (Fund 2, behoben)                                                                   |
+| Victor (Bergstation)                | schwache Züge, matt                    | „Wer gewonnen hat, ist nicht wichtig. Victor sieht leichter aus als vorher.“                                             |
+| Clubkampf Summit City               | schwache Züge, matt                    | Großmeisterin Ward: „Verloren. Und? Hast du gesehen, wo?“                                                                |
+
+Runden: Sam, Juno, Lily, Dex, Mae, Tamsin, Ray, Hank, die Tafeln an der Landstraße und am Diner,
+Kit: jeweils erst 0 Punkte, abgebrochen oder neu geladen, dann bestanden. Nach jeder bestandenen
+Runde kam die Reaktion der Figur.
+
+Wiedereinstieg und Neuladen:
+
+- Neuladen mitten in einer Partie: Die App öffnet die Partie sofort wieder (keine
+  Fortsetzungskarte); weiterspielen geht.
+- Neuladen mitten in einer Runde: Die App öffnet die Runde wieder und macht bei der nächsten
+  offenen Aufgabe weiter (Zwischenstand, R5).
+- Zurück-Taste mitten in Partie oder Runde: In der Welt steht die Fortsetzungskarte; „Partie
+  aufgeben und in der Stadt bleiben“ und „Runde abbrechen“ beenden ohne Rückmeldung, die Figur
+  bietet beim nächsten Ansprechen wieder an.
+- Nach jeder Niederlage ging es weiter; Strecke 1 kam mit allen Verlusten durch Akt 1 in Akt 2.
+
+Fehler des Durchlaufs (kein Spielfund): „Übergang unerreichbar“ an der Bergstraße (alte Kachel
+nach dem Kartenwechsel, wie schon am 18.11.), „kein Aktionsknopf“ am Flohmarkt (der Held stand
+nach dem Gespräch noch auf dem Auslöser, der erst nach einem Schritt herunter wieder zählt), und
+nach einem Abbruch wählte er bei Kit nur noch „Nicht jetzt“ (behoben: Nach dem Abbruch gelten die
+Antworten wieder als neu).

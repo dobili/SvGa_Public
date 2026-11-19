@@ -98,3 +98,42 @@ describe.each(KLUBS)("Revanche in %s", (datei, ort, chef, wahlknoten, niederlage
     expect(g.variablen[schalter]).toBe(false);
   });
 });
+
+/** Clubs, in denen Ambrose nach dem verlorenen Clubkampf spricht (Port Delacroix: er schweigt). */
+const MIT_AMBROSE = [
+  ["maple-falls-clubraum", "coach"],
+  ["cedar-creek-bibliothek", "okafor"],
+  ["riverton-pavillon", "slick"],
+  ["ironwood-kantine", "big_joe"],
+  ["silicon-bay-akademie", "lin"],
+  ["desert-springs-garage", "mira"],
+  ["summit-city-huette", "ward"],
+] as const;
+
+describe.each(MIT_AMBROSE)("Ambrose nach dem verlorenen Clubkampf in %s", (datei, chef) => {
+  const roh = readFileSync(new URL(`${datei}.ink`, ORDNER), "utf8");
+  const quelle = new Compiler(roh, new CompilerOptions(null, [], true)).Compile().ToJson() ?? "";
+
+  /** Sprecher der Zeilen im Knoten `<chef>_nach_niederlage`. */
+  function sprecher(variablen: Dialogvariablen): string[] {
+    const g = new Geschichte(
+      quelle,
+      new Proxy<Wirkungen>({} as Wirkungen, { get: () => () => {} }),
+      variablen,
+      "Kim",
+    );
+    g.starte(`${chef}_nach_niederlage`);
+    const liste: string[] = [];
+    for (let i = 0; i < MAX_SCHRITTE; i++) {
+      const schritt = g.weiter();
+      if (schritt.art !== "zeile") break;
+      liste.push(schritt.zeile.tags.sprecher ?? "");
+    }
+    return liste;
+  }
+
+  it("spricht, solange er da ist, und schweigt nach dem Abschied", () => {
+    expect(sprecher({})).toContain("ambrose");
+    expect(sprecher({ abschiedGesehen: true })).not.toContain("ambrose");
+  });
+});

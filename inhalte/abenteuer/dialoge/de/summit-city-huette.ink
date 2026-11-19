@@ -184,6 +184,11 @@ Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
 Verloren. Und? Hast du gesehen, wo? #sprecher:ward #stimmung:nachdenklich
 Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenklich
 {wardMuede: Und spiel jetzt, solange ich müde bin. Haraldsens Studie hat mich die Nacht gekostet. #sprecher:ward #stimmung:laechelt}
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Er hat recht. Such die Stelle. Sie liegt meistens früher, als man denkt. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Ich weiß es.“]
     ~ wardMuede = false
     ~ beginnePartie("summitCity.clubkampf")

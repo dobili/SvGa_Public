@@ -178,6 +178,11 @@ Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmu
 
 === okafor_nach_niederlage ===
 Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Sie wartet, bis du ungeduldig wirst. Werde es nicht, dann wartet sie umsonst. #sprecher:ambrose #stimmung:nachdenklich
+}
 * [„Noch einmal.“]
     -> okafor_partie
 * [„Nicht jetzt.“]

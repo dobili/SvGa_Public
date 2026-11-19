@@ -134,6 +134,11 @@ Jedes Mal. Vierzehn Jahre lang. #sprecher:slick #stimmung:nachdenklich
 === slick_nach_niederlage ===
 Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
 Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Er spielt schnell, damit du schnell spielst. Spiel langsam, dann ist er mit seiner Eile allein. #sprecher:ambrose #stimmung:nachdenklich
+}
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.clubkampf")
     -> END

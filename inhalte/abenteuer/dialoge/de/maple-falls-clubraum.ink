@@ -51,6 +51,8 @@ VAR nadelIronwood = 0
 VAR einladungGesehen = false
 // Läuft eine Revanche um eine bessere Nadel? Dann reagiert coach_nach_revanche auf den Ausgang.
 VAR revancheMapleFalls = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied spricht Ambrose nicht mehr. Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -163,6 +165,11 @@ Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler #klang:fa
 === coach_nach_niederlage ===
 Das war nichts für heute. Aber du hast in der Eröffnung gut gekämpft. #sprecher:coachDelgado #stimmung:laechelt
 Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
+// Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
+// sprach nur der Clubchef). Nach dem Abschied schweigt er.
+{not abschiedGesehen:
+    Der Coach hat recht mit der Eröffnung. Danach hast du aufgehört zu zählen. Erst zählen, dann noch einmal. #sprecher:ambrose #stimmung:nachdenklich
+}
 * [„Noch einmal.“]
     -> coach_partie
 * [„Nicht jetzt.“]

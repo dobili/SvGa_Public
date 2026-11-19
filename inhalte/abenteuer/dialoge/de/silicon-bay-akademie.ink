@@ -51,6 +51,8 @@ VAR hatKarteWasDroht = false
 VAR tabletNachtGesehen = false
 // Läuft eine Revanche um eine bessere Nadel? Dann reagiert lin_nach_revanche auf den Ausgang.
 VAR revancheSiliconBay = false
+// Aus capital-arena-aussen.ink: Nach dem Abschied spricht Ambrose nicht mehr. Hier nur gelesen.
+VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Dr. Lin
 
@@ -122,7 +124,10 @@ Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprec
 
 === lin_nach_niederlage ===
 Gut gespielt bis zum Mittelspiel. Danach kannte ich die Stellung aus der Theorie, und du nicht. #sprecher:lin #stimmung:laechelt
-Sie spielt wie eine sehr gute Seite in einem sehr guten Buch. Lass sie das Buch zuklappen, {held}. #sprecher:ambrose #stimmung:laechelt
+// Nach dem Abschied schweigt Ambrose (Entscheidung Q21-5); vorher fehlte die Bedingung.
+{not abschiedGesehen:
+    Sie spielt wie eine sehr gute Seite in einem sehr guten Buch. Lass sie das Buch zuklappen, {held}. #sprecher:ambrose #stimmung:laechelt
+}
 + [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END

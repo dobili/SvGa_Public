@@ -112,137 +112,143 @@ export function Deckwahl({
       aria-label={tSpiel("deck.titel")}
       data-testid="abenteuer-deckwahl"
     >
-      <h2>{tSpiel("deck.titel")}</h2>
-      {steckbrief.zeilen.length > 0 && (
-        <div className="abenteuer-steckbrief" data-testid="abenteuer-lupe">
-          <h3>{steckbrief.titel}</h3>
-          <ul>
-            {steckbrief.zeilen.map((zeile) => (
-              <li key={zeile}>{zeile}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {zeitwahl && (
-        <>
-          <h3>{tSpiel("deck.zeit")}</h3>
-          <div className="abenteuer-deck" role="radiogroup" aria-label={tSpiel("deck.zeit")}>
-            {KLASSEN.map((k) => (
+      {/* Nur der Inhalt rollt, die Knöpfe stehen darunter (Querformat, 19.11.2026): Der am Rand
+          feststehende Hauptknopf verdeckte sonst die Bedenkzeit-Knöpfe. */}
+      <div className="abenteuer-menue-inhalt" data-testid="abenteuer-deckwahl-inhalt">
+        <h2>{tSpiel("deck.titel")}</h2>
+        {steckbrief.zeilen.length > 0 && (
+          <div className="abenteuer-steckbrief" data-testid="abenteuer-lupe">
+            <h3>{steckbrief.titel}</h3>
+            <ul>
+              {steckbrief.zeilen.map((zeile) => (
+                <li key={zeile}>{zeile}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {zeitwahl && (
+          <>
+            <h3>{tSpiel("deck.zeit")}</h3>
+            <div className="abenteuer-deck" role="radiogroup" aria-label={tSpiel("deck.zeit")}>
+              {KLASSEN.map((k) => (
+                <button
+                  key={k}
+                  type="button"
+                  role="radio"
+                  className="abenteuer-karte"
+                  aria-checked={zeit === k}
+                  data-testid={`abenteuer-zeit-${k}`}
+                  onClick={() => setzeZeit(k)}
+                >
+                  {tSpiel(`deck.zeit.${k}`)}
+                </button>
+              ))}
+            </div>
+            {ZEITKLASSEN[zeit] && <p>{tSpiel("deck.zeitHinweis")}</p>}
+          </>
+        )}
+        {mitKarten && <p>{tSpiel("deck.hinweis", { max: groesse })}</p>}
+        {!mitKarten ? null : waehlbar.length === 0 ? (
+          <p>{tSpiel("deck.keine")}</p>
+        ) : (
+          <Kartenfaecher
+            beschriftung={tSpiel("deck.titel")}
+            karten={waehlbar.flatMap((k) => {
+              const sorte = alleSorten.find((s) => s.kennung === k.kennung);
+              if (!sorte) return [];
+              const gewaehlt = deck.includes(k.kennung);
+              const fehlt = gesperrt(k.kennung);
+              const geht = gewaehlt || deckErlaubt(deck, k.kennung, alleSorten, groesse);
+              return [
+                {
+                  kennung: k.kennung,
+                  karte: (
+                    <Spielkarte
+                      sorte={sorte}
+                      ansicht={fehlt || !geht ? "gedaempft" : "hell"}
+                      beschriftung={deckbeschriftung(sorte, gewaehlt, fehlt)}
+                      testid={`abenteuer-deckkarte-${k.kennung}`}
+                      gewaehlt={gewaehlt}
+                      gesperrt={fehlt}
+                      deaktiviert={fehlt || !geht}
+                      beiTipp={() => schalte(k.kennung)}
+                      zusatz={
+                        <>
+                          {k.anzahl > 1 && (
+                            <small className="abenteuer-spielkarte-anzahl">× {k.anzahl}</small>
+                          )}
+                          {fehlt && (
+                            <small className="abenteuer-karte-grund">
+                              {tSpiel("deck.ambroseFehlt")}
+                            </small>
+                          )}
+                        </>
+                      }
+                    />
+                  ),
+                },
+              ];
+            })}
+          />
+        )}
+        {deck.map((kennung) => (
+          <p key={kennung} className="abenteuer-karte-erklaerung">
+            {tSpiel(`karte.${kennung}.erklaerung`)}
+          </p>
+        ))}
+        {mitVorgabe && <p>{tSpiel("deck.vorgabeHinweis")}</p>}
+        {freieKarten.length > 0 && (
+          <p data-testid="abenteuer-freie-karten">
+            {tSpiel("deck.frei", {
+              karten: freieKarten
+                .map((k) => tSpiel(alleSorten.find((s) => s.kennung === k)?.name ?? k))
+                .join(", "),
+            })}
+          </p>
+        )}
+        {mitFarbwahl && (
+          <div className="abenteuer-deck" role="radiogroup" aria-label={tSpiel("deck.farbe")}>
+            {(["white", "black"] as const).map((f) => (
               <button
-                key={k}
+                key={f}
                 type="button"
                 role="radio"
                 className="abenteuer-karte"
-                aria-checked={zeit === k}
-                data-testid={`abenteuer-zeit-${k}`}
-                onClick={() => setzeZeit(k)}
+                aria-checked={farbe === f}
+                data-testid={`abenteuer-farbe-${f}`}
+                onClick={() => setzeFarbe(f)}
               >
-                {tSpiel(`deck.zeit.${k}`)}
+                {tSpiel(`deck.farbe.${f}`)}
               </button>
             ))}
           </div>
-          {ZEITKLASSEN[zeit] && <p>{tSpiel("deck.zeitHinweis")}</p>}
-        </>
-      )}
-      {mitKarten && <p>{tSpiel("deck.hinweis", { max: groesse })}</p>}
-      {!mitKarten ? null : waehlbar.length === 0 ? (
-        <p>{tSpiel("deck.keine")}</p>
-      ) : (
-        <Kartenfaecher
-          beschriftung={tSpiel("deck.titel")}
-          karten={waehlbar.flatMap((k) => {
-            const sorte = alleSorten.find((s) => s.kennung === k.kennung);
-            if (!sorte) return [];
-            const gewaehlt = deck.includes(k.kennung);
-            const fehlt = gesperrt(k.kennung);
-            const geht = gewaehlt || deckErlaubt(deck, k.kennung, alleSorten, groesse);
-            return [
-              {
-                kennung: k.kennung,
-                karte: (
-                  <Spielkarte
-                    sorte={sorte}
-                    ansicht={fehlt || !geht ? "gedaempft" : "hell"}
-                    beschriftung={deckbeschriftung(sorte, gewaehlt, fehlt)}
-                    testid={`abenteuer-deckkarte-${k.kennung}`}
-                    gewaehlt={gewaehlt}
-                    gesperrt={fehlt}
-                    deaktiviert={fehlt || !geht}
-                    beiTipp={() => schalte(k.kennung)}
-                    zusatz={
-                      <>
-                        {k.anzahl > 1 && (
-                          <small className="abenteuer-spielkarte-anzahl">× {k.anzahl}</small>
-                        )}
-                        {fehlt && (
-                          <small className="abenteuer-karte-grund">
-                            {tSpiel("deck.ambroseFehlt")}
-                          </small>
-                        )}
-                      </>
-                    }
-                  />
-                ),
-              },
-            ];
-          })}
-        />
-      )}
-      {deck.map((kennung) => (
-        <p key={kennung} className="abenteuer-karte-erklaerung">
-          {tSpiel(`karte.${kennung}.erklaerung`)}
-        </p>
-      ))}
-      {mitVorgabe && <p>{tSpiel("deck.vorgabeHinweis")}</p>}
-      {freieKarten.length > 0 && (
-        <p data-testid="abenteuer-freie-karten">
-          {tSpiel("deck.frei", {
-            karten: freieKarten
-              .map((k) => tSpiel(alleSorten.find((s) => s.kennung === k)?.name ?? k))
-              .join(", "),
-          })}
-        </p>
-      )}
-      {mitFarbwahl && (
-        <div className="abenteuer-deck" role="radiogroup" aria-label={tSpiel("deck.farbe")}>
-          {(["white", "black"] as const).map((f) => (
-            <button
-              key={f}
-              type="button"
-              role="radio"
-              className="abenteuer-karte"
-              aria-checked={farbe === f}
-              data-testid={`abenteuer-farbe-${f}`}
-              onClick={() => setzeFarbe(f)}
-            >
-              {tSpiel(`deck.farbe.${f}`)}
-            </button>
-          ))}
-        </div>
-      )}
-      <button
-        type="button"
-        className="knopf-haupt"
-        data-testid="abenteuer-deck-los"
-        onClick={() => beiWahl(deck, zeit, mitFarbwahl ? farbe : null)}
-      >
-        {deck.length === 0
-          ? tSpiel("deck.ohne")
-          : deck.length === 1
-            ? tSpiel("deck.losEine")
-            : tSpiel("deck.los", { anzahl: deck.length })}
-      </button>
-      {/* Ein sichtbarer Rückweg (Affentest 14.11.2026): Wer „Übungspartie“ aus Versehen tippte,
+        )}
+      </div>
+      <div className="abenteuer-menue-fuss">
+        <button
+          type="button"
+          className="knopf-haupt"
+          data-testid="abenteuer-deck-los"
+          onClick={() => beiWahl(deck, zeit, mitFarbwahl ? farbe : null)}
+        >
+          {deck.length === 0
+            ? tSpiel("deck.ohne")
+            : deck.length === 1
+              ? tSpiel("deck.losEine")
+              : tSpiel("deck.los", { anzahl: deck.length })}
+        </button>
+        {/* Ein sichtbarer Rückweg (Affentest 14.11.2026): Wer „Übungspartie“ aus Versehen tippte,
           kam bisher nur über die Zurück-Taste heraus, die es in der installierten App auf dem
           iPhone nicht gibt. */}
-      <button
-        type="button"
-        className="knopf-zweit"
-        data-testid="abenteuer-deck-zurueck"
-        onClick={beiAbbruch}
-      >
-        {tSpiel("faecher.zurueck")}
-      </button>
+        <button
+          type="button"
+          className="knopf-zweit"
+          data-testid="abenteuer-deck-zurueck"
+          onClick={beiAbbruch}
+        >
+          {tSpiel("faecher.zurueck")}
+        </button>
+      </div>
     </section>
   );
 }

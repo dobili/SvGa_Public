@@ -6,6 +6,10 @@
  * die Höhe, die Auswahl der Figur stand unter dem Brett außerhalb des Bildes, und in der
  * Spielhülle war ihre Schrift weiß auf Weiß. Jetzt liegt sie über der Mitte des Bretts, in den
  * Farben des Spiels, und lässt sich antippen.
+ *
+ * Deckwahl: Der am unteren Rand feststehende Knopf „Ohne Karten spielen“ lag quer über den
+ * Bedenkzeit-Knöpfen. Jetzt rollt nur der Inhalt, die Knöpfe stehen darunter; in keiner Rolllage
+ * überdecken sie einen Knopf des Inhalts.
  */
 import { devices, expect, test, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
@@ -57,6 +61,32 @@ async function ganzImBild(seite: Page, auswahl: string): Promise<boolean> {
   }, auswahl);
 }
 
+/**
+ * Knöpfe des Rollbereichs der Deckwahl, deren sichtbarer Teil einen Knopf im Fuß schneidet
+ * (Bedenkzeit, Karten). Sichtbar heißt: innerhalb des Rollbereichs.
+ */
+async function ueberdeckt(seite: Page): Promise<string[]> {
+  return seite.evaluate(() => {
+    const inhalt = document.querySelector("[data-testid='abenteuer-deckwahl-inhalt']");
+    const fuss = [...document.querySelectorAll(".abenteuer-menue-fuss > button")];
+    if (!inhalt) return ["kein Rollbereich"];
+    const rahmen = inhalt.getBoundingClientRect();
+    const funde: string[] = [];
+    for (const k of inhalt.querySelectorAll("button")) {
+      const r = k.getBoundingClientRect();
+      const oben = Math.max(r.top, rahmen.top);
+      const unten = Math.min(r.bottom, rahmen.bottom);
+      if (unten <= oben) continue;
+      for (const f of fuss) {
+        const q = f.getBoundingClientRect();
+        const schneidet = q.left < r.right && q.right > r.left && q.top < unten && q.bottom > oben;
+        if (schneidet) funde.push(`${k.textContent ?? ""} unter ${f.textContent ?? ""}`);
+      }
+    }
+    return funde;
+  });
+}
+
 for (const geraet of ["iPhone 15 landscape", "Pixel 7 landscape"] as const) {
   test.describe(geraet, () => {
     test.use(quer(geraet));
@@ -87,6 +117,27 @@ for (const geraet of ["iPhone 15 landscape", "Pixel 7 landscape"] as const) {
       await dame.click();
       await expect(wahl).toHaveCount(0);
       await expect(page.getByText("Richtig!")).toBeVisible({ timeout: 10000 });
+    });
+
+    test("Deckwahl: feste Knöpfe überdecken keine Bedenkzeit, auch nicht beim Rollen", async ({
+      page,
+    }) => {
+      await starteMitStand(page, { ...GRUNDSTAND, dialogvariablen: EINLEITUNG_GESEHEN });
+      // Der Hinweis zu den ersten Münzen kann über dem Knopf liegen: wegtippen wie ein Spieler.
+      const hinweis = page.getByTestId("abenteuer-meldung").getByRole("button", { name: "Weiter" });
+      await expect(page.getByTestId("abenteuer-reisebrettknopf")).toBeVisible({ timeout: 20000 });
+      if (await hinweis.isVisible()) await hinweis.click();
+      await page.getByTestId("abenteuer-reisebrettknopf").click();
+      const inhalt = page.getByTestId("abenteuer-deckwahl-inhalt");
+      await expect(page.getByTestId("abenteuer-zeit-schnell")).toBeVisible();
+      for (const lage of ["oben", "mitte", "unten"] as const) {
+        await inhalt.evaluate((e, l) => {
+          e.scrollTop = l === "oben" ? 0 : l === "mitte" ? e.scrollHeight / 2 : e.scrollHeight;
+        }, lage);
+        expect(await ueberdeckt(page), lage).toEqual([]);
+      }
+      await expect(page.getByTestId("abenteuer-deck-los")).toBeInViewport({ ratio: 0.9 });
+      await expect(page.getByTestId("abenteuer-deck-zurueck")).toBeInViewport({ ratio: 0.9 });
     });
   });
 }

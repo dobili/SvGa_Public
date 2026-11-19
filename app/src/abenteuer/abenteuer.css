@@ -240,6 +240,46 @@
   flex-shrink: 0;
 }
 
+/* Fenster mit eigenem Rollbereich (Deckwahl): Nur der Inhalt rollt, die Knöpfe im Fuß stehen
+   darunter und verdecken nichts. Vorher stand „Ohne Karten spielen“ fest am unteren Rand über dem
+   rollenden Inhalt und lag quer anfangs über den Bedenkzeit-Knöpfen (Spieler-Durchlauf quer,
+   19.11.2026). Quer stehen die Knöpfe nebeneinander, damit dem Inhalt Höhe bleibt. */
+.abenteuer-menue:has(> .abenteuer-menue-inhalt) {
+  overflow: hidden;
+}
+
+.abenteuer-menue-inhalt {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--raster);
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.abenteuer-menue-fuss {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--raster);
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .abenteuer-menue-fuss {
+    flex-direction: row;
+  }
+
+  .abenteuer-menue-fuss > * {
+    flex: 1 1 0;
+  }
+
+  /* Quer fehlt Höhe: Das Fenster beginnt oben statt unter der Münzanzeige. */
+  .abenteuer-menue:has(> .abenteuer-menue-inhalt) {
+    inset-block-start: calc(var(--raster) * 2);
+    max-height: calc(100dvh - var(--raster) * 4);
+  }
+}
+
 .abenteuer-menue h2 {
   margin: 0;
   font-size: var(--groesse-gross);

@@ -64,7 +64,11 @@ VAR revancheIronwood = false
 // Kauf klappern keine Figuren mehr an den langen Tischen. Das Bild vom Glas bleibt dem ersten Treffen.
 {
 - kaufGesehen:
-    Über der Essensausgabe hängt das weiße Logo. An der Tür steht der Karton mit den Pokalen. #sprecher:erzaehler
+    Über der Essensausgabe hängt das weiße Logo. An der Tür stehen noch drei Kartons, zugeklebt. #sprecher:erzaehler
+// Lektorat 19.11.2026: Vor dem ersten Treffen fällt sein Name nicht, und am Morgen nach der Feier
+// baut er nicht behutsam auf, er hält sich am Kaffee fest.
+- not bigJoeGetroffen or (feierGesehen and not morgenNachFeier):
+    Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren. #sprecher:erzaehler
 - nadelIronwood > clubkampfIronwoodNadel:
     Es riecht nach Kaffee, Eisen und nassen Jacken. #sprecher:erzaehler
 - else:
@@ -108,7 +112,8 @@ Er heißt Big Joe. Er sagt es wie einen Dienstgrad. Kranführer, dreißig Jahre,
 Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe #stimmung:laechelt
 * [„Ja.“]
 - Du hast nie darüber nachgedacht. #sprecher:erzaehler
-Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001. #sprecher:erzaehler
+{pokalregalGesehen:Hinter ihm die Lücke im Regal, das Schildchen darunter: 2001.|Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001.} #sprecher:erzaehler
+~ pokalregalGesehen = true
 Deine Oma wohnt noch in der Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe #stimmung:nachdenklich
 Geh hin. Ruth hat dich nicht mehr gesehen, seit du so klein warst. #sprecher:bigJoe #stimmung:nachdenklich
 Und wenn du deine Mutter siehst: Big Joe lässt grüßen. #sprecher:bigJoe #stimmung:laechelt
@@ -174,6 +179,14 @@ Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:la
 // Kapitel 28, Schluss: „Ach, Kumpel“ ohne Musik; Fanfare beim Anstecken der Nadel, dann brüllt die
 // Kantine; „Es war schön … Beides.“ mit ambrose.mama (Gutachten L1.7). Der Mentor-Zug kommt still
 // über die Quest. Der Kauf folgt erst neun Tage später (ironwood-aussen.kauf).
+// Lektorat 19.11.2026: Eine Revanche, die eine bessere Nadel bringt, spielt nicht die ganze Szene
+// des ersten Siegs noch einmal (Glocken, Kantine, „Noch mal. Jetzt.“).
+{clubkampfIronwoodNadel > 0:
+    ~ clubkampfIronwoodNadel = nadelIronwood
+    Big Joe steckt dir die bessere Nadel an. #sprecher:erzaehler #klang:fanfare
+    Eine bessere Nadel, Kumpel. {kaufGesehen:In der Garage zählt sie genauso.|Auf meinem Stahlbrett zählt jede.} #sprecher:bigJoe #stimmung:froh
+    -> END
+}
 ~ clubkampfIronwoodNadel = nadelIronwood
 {ausgangIronwoodClubkampf == "remis":
     Remis. Ehrlich verdient, Kumpel. #sprecher:bigJoe #stimmung:laechelt
@@ -467,7 +480,7 @@ Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya
 
 === pokalregal ===
 {kaufGesehen:
-    Das Regal ist leer. Die Pokale stecken im Karton an der Tür. Nur das Messingschild hängt noch: 2001. #sprecher:erzaehler
+    Das Regal ist leer. Die Pokale sind in Big Joes Lieferwagen. Nur das Messingschild hängt noch: 2001. #sprecher:erzaehler
     -> END
 }
 {pokalregalGesehen:
@@ -523,5 +536,5 @@ Jetzt fehlt nur noch Big Joe. Um die Nadel spielt er selbst. #sprecher:priya #st
     ~ revancheIronwood = true
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END

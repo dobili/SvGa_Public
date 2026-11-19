@@ -33,6 +33,7 @@ VAR nadelCedarCreek = 0
 VAR endeAkt1Gesehen = false
 VAR aufbruchRivertonGesehen = false
 VAR gefundenSchluessel = false
+VAR okaforGetroffen = false
 VAR nachtImLesesaal = false
 VAR schildCedarGesehen = false
 VAR teamAngekommen = false
@@ -121,7 +122,6 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 // Sternennacht am Steg wieder angeboten, sonst bliebe die Quest offen (19.11.2026).
 Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen
 Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
-Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher:erzaehler
 Die da ist Kassiopeia. Sieht aus wie ein W. Und das ist der Große Wagen, und das … #sprecher:mae #stimmung:laechelt
 Mae. Du musst nicht alles benennen. #sprecher:dex #stimmung:laechelt
 Doch. Sonst weiß man nicht, was man sieht. #sprecher:mae #stimmung:laechelt
@@ -151,7 +151,8 @@ Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor 
 // nicht mehr (sterne_angebot, okafor_bis_morgen; 19.11.2026), deshalb bleibt sie nie offen.
 === sterne_ende ===
 ~ sternennachtGesehen = true
-Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
+Mrs. Okafor hatte gesagt, eine halbe Stunde. Sie bleibt bis nach Mitternacht. #sprecher:erzaehler
+Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
 Dex' Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
 // Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
@@ -223,6 +224,8 @@ Meine Cousine. Aus Riverton. Die haben da einen Club im Park, schon immer. Der w
 Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #bild:fotoRiverton #musik:aus #klang:konzern #pause:2
 Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler
 Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
+// Lektorat 19.11.2026: Die Heimfahrt ist erzählt; danach steht {held} in Maple Falls, nicht am Steg.
+~ reise("mapleFalls.park", "bushaltestelle")
 -> END
 
 === fehler_am_steg ===
@@ -244,7 +247,7 @@ Und du hast heute eine Frau geschlagen, gegen die ich nicht sicher wäre. #sprec
 Sie stehen noch wie früher. Alles andere hat sich verändert: Lichter ohne Flamme, Wagen ohne Pferde. #sprecher:ambrose #stimmung:still
 Wo ich geboren bin, saß ich nachts am Kai. Mein Vater baute Klaviere und lieferte sie flussauf aus. Er kam spät. #sprecher:ambrose #stimmung:nachdenklich
 Ich sah hinauf und dachte, ich würde einmal so bekannt wie einer von denen. Einer mit Namen. #sprecher:ambrose #stimmung:nachdenklich
-Eine Fußnote. Sechs Wörter. #sprecher:ambrose #stimmung:still #pause:2
+{okaforGetroffen:Eine Fußnote. Sechs Wörter.|Kein Stern trägt meinen Namen. Nicht einmal eine Zeitung.} #sprecher:ambrose #stimmung:still #pause:2
 Antworten kannst du ihm nicht, nicht vor den anderen. #sprecher:erzaehler
 * [Die Hand auf dem Brett lassen]
 * [Nach oben sehen]
@@ -284,7 +287,7 @@ Nimm ihn mit. Vielleicht findest du das Schloss. #sprecher:rosa #stimmung:laeche
 
 === rosa_erstes_treffen ===
 ~ rosaGetroffen = true
-Am Ende des Stegs sitzt eine Frau mit Angel. Neben ihr ein Brett mit Magnetfiguren. #sprecher:erzaehler
+{gefundenSchluessel:Die Frau mit der Angel dreht sich jetzt doch um. Neben ihr ein Brett mit Magnetfiguren.|Am Ende des Stegs sitzt eine Frau mit Angel. Neben ihr ein Brett mit Magnetfiguren.} #sprecher:erzaehler
 Ruhig, ruhig. Der Fisch merkt, wenn du zappelst. #sprecher:rosa #stimmung:laechelt
 Der Gegner auch. Ich bin Rosa. #sprecher:rosa #stimmung:laechelt
 -> rosa_angebot
@@ -555,7 +558,7 @@ Dann ziehst du ja nie! #sprecher:ivy #stimmung:lacht
     Beide zeigen auf sich. Dann aufeinander. Dann wieder auf sich. #sprecher:erzaehler
 * [Leise vorbeigehen]
     Als du vorbeigehst, verstummen sie und sehen dir nach. #sprecher:erzaehler
-- Zwei Könige und kein Brett. Daraus wird nie ein Ende. #sprecher:ambrose #stimmung:lacht
+- Zwei Türme und kein Brett. Daraus wird nie ein Ende. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === zwillinge_b ===

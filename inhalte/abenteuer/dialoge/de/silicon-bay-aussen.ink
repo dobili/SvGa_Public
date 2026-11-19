@@ -268,7 +268,7 @@ Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #spre
 === faehre ===
 {nadelSiliconBay > 0:
     Am Kai liegt die Küstenfähre nach Süden. Zwei Tage bis nach Port Delacroix. #sprecher:erzaehler
-    {not bugGesehen: Mama steht schon an der Gangway, die Tasche über der Schulter. Das Notzelt in Port Delacroix braucht Hände, und sie hat zwei. #sprecher:erzaehler}
+    {not bugGesehen: Mama ist mit dem Nachtbus gekommen und steht an der Gangway, die Tasche über der Schulter. Das Notzelt in Port Delacroix braucht Hände, und sie hat zwei. #sprecher:erzaehler}
     {not abschiedGesehen:
         Port Delacroix. Ich kenne diesen Namen. Ich kenne ihn sehr gut. #sprecher:ambrose #stimmung:traurig
     }
@@ -294,7 +294,7 @@ Heute ist nicht Sonntag. Unter der Woche fahr ich nur Leute, die man hier kennt.
 // ---------------------------------------------------------------- Ansehen (Runde 6)
 
 === infosaeule ===
-{~Die Infosäule zeigt einen Stadtplan, der sich dreht, sobald man hinsieht: „Sie sind hier.“|Auf der Infosäule läuft die Wettervorhersage: klar, kalt, Empfang ausgezeichnet.|Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schlägt sie drei Cafés vor.} #sprecher:erzaehler
+{~Die Infosäule zeigt einen Stadtplan, der sich dreht, sobald man hinsieht: „Sie sind hier.“|Auf der Infosäule läuft die Wettervorhersage: klar, mild, Empfang ausgezeichnet.|Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schlägt sie drei Cafés vor.} #sprecher:erzaehler
 -> END
 
 === werbetafel ===

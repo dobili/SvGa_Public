@@ -130,7 +130,7 @@ Unter dem Brett stehen die Züge: Morphy gegen Bird, London 1858. #sprecher:erza
 === vitrine_mut ===
 // Nachgespielt ein zweites Mal (Rückmeldung, Wunsch des Autors, 19.11.2026): ein Satz statt Stille.
 {birdNachgesprochen:
-    Du legst die Zeitung zurück. Den Turm mitten ins Nichts siehst du jetzt schneller. #sprecher:erzaehler
+    Du siehst noch einmal durch das Glas der Vitrine. Den Turm mitten ins Nichts siehst du jetzt schneller. #sprecher:erzaehler
     -> END
 }
 ~ birdNachgesprochen = true
@@ -162,5 +162,5 @@ Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 === siegel_rueckmeldung ===
 {siegelStellungBestanden: -> postsack}
 Das Wachs hält noch. #sprecher:erzaehler
-Ein Siegel bricht man nicht, mein Kind. Man löst es, in Ruhe. Versuch es noch einmal. #sprecher:teague #stimmung:laechelt
+Nimm dir Zeit, mein Kind. Das Siegel hat hundertsechzig Jahre gewartet, es wartet auch noch einen Versuch. #sprecher:teague #stimmung:laechelt
 -> END

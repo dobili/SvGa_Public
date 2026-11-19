@@ -108,9 +108,9 @@ Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, Wei
 ~ hausbootErledigt = true
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr; dann erzählt die Szene.
 {
-- abschiedGesehen and ausgangBayouHausboot == "sieg": Diesmal gewinnt Weiß. Du hättest es ihm gern gezeigt. #sprecher:erzaehler
+- abschiedGesehen and ausgangBayouHausboot == "sieg": Weiß gewinnt. Du hättest es ihm gern gezeigt. #sprecher:erzaehler
 - abschiedGesehen and ausgangBayouHausboot == "remis": Remis. Das hätte er damals wohl unterschrieben. #sprecher:erzaehler
-- abschiedGesehen: Wieder verloren. Schön war es trotzdem, sie noch einmal zu spielen. #sprecher:erzaehler
+- abschiedGesehen: Verloren. Schön war es trotzdem, seine Partie zu Ende zu spielen. #sprecher:erzaehler
 - ausgangBayouHausboot == "sieg": Diesmal nicht. Diesmal nicht! #sprecher:ambrose #stimmung:froh
 - ausgangBayouHausboot == "remis": Remis. Das hätte ich damals unterschrieben. #sprecher:ambrose #stimmung:laechelt
 - else: Wieder verloren. Und weißt du was? Es ist trotzdem schön, sie noch einmal gespielt zu haben. #sprecher:ambrose #stimmung:laechelt

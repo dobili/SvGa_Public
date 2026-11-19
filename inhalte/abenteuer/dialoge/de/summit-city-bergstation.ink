@@ -21,6 +21,8 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
+VAR nadelSummitCity = 0
+VAR wardLaurieGesagt = false
 VAR held = "Du"
 VAR victorGelacht = false
 VAR victorKriseGesehen = false
@@ -143,12 +145,17 @@ Du siehst zu Ambrose. Er nickt. #sprecher:erzaehler #pause
 Wie ist er? Der Zug. Ist er gut? #sprecher:victor #stimmung:laechelt
 Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
 Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprecher:ambrose #stimmung:lacht
-Victor steckt das Buch ein. #sprecher:erzaehler
+Victor löst das Blatt heraus und gibt es dir. Dann steckt er das Buch ein. #sprecher:erzaehler
 Gehen wir runter zur Hütte? Ward wartet mit deiner Partie, und ich will zusehen. #sprecher:victor #stimmung:laechelt
 -> END
 
 === victor_alltag ===
-{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":
+// Lektorat 19.11.2026: Nach dem Weg zur Hütte sitzt Victor dort am Kamin (ward_laurie); hier oben
+// ist er nur kurz, bis zum Clubkampf.
+{
+- wardLaurieGesagt and nadelSummitCity == 0:
+    Ich bin nur kurz rauf, wegen der Aussicht. Unten wartet Ward mit deiner Partie. #sprecher:victor #stimmung:laechelt
+- ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":
     {~Hier oben ist kein Netz. Ich komme immer noch her.|Mein Vater fährt jetzt manchmal mit hoch. Er sagt nichts. Das ist schön.} #sprecher:victor #stimmung:laechelt
 - else:
     {~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt

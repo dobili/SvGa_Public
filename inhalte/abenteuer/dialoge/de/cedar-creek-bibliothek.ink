@@ -151,6 +151,14 @@ Setz dich. #sprecher:okafor #stimmung:laechelt
 // Runde 11 (VC91, VC92, Roman Kapitel 15): Ambrose schweigt nach der Partie („Er sagt nichts.
 // Aber er ist da.“); die Karte Mentor-Zug vergibt die Quest ohne Kommentar; zum Steg schickt Juno.
 // Klang: Stille S24 (zwölf Uhrschläge), dann die Fanfare.
+// Lektorat 19.11.2026: Eine Revanche, die eine bessere Nadel bringt, spielt nicht die ganze Szene
+// des ersten Siegs noch einmal (Glocken, Kantine, „Noch mal. Jetzt.“).
+{clubkampfCedarCreekBesprochen > 0:
+    ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
+    Sie reicht dir die bessere Nadel über das Brett. #sprecher:erzaehler #klang:fanfare
+    Du bist wiedergekommen. Das gefällt mir mehr als der Sieg. #sprecher:okafor #stimmung:laechelt
+    -> END
+}
 ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
 {ausgangCedarCreekClubkampf == "remis":
     Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor #stimmung:laechelt
@@ -290,7 +298,7 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 // zum Steg eingeladen; Mae erzählt stattdessen, wie sie es versprochen hat.
 {
 - sternennachtGesehen:
-    {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor ist heute müde. Das ist meine Schuld. Und die der Sterne.} #sprecher:mae #stimmung:lacht
+    {~Ich hab vierzehn Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.|Mrs. Okafor hat heute dreimal gegähnt. Ich hab mitgezählt.} #sprecher:mae #stimmung:lacht
 - nachtImLesesaal:
     {~Du hast vierzehn Sternschnuppen verpasst! Dex sagt elf. Dex zählt falsch.|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae #stimmung:laechelt
 - else:
@@ -397,5 +405,5 @@ Du hast jedes Bild erkannt! Auch das Erstickte! #sprecher:mae #stimmung:froh
     ~ revancheCedarCreek = true
     ~ beginnePartie("cedarCreek.clubkampf")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END

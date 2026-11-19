@@ -81,6 +81,14 @@ const OHNE_AUSGANG_MS = 25_000;
 const RUNDE_WIEDERHOLEN = 2;
 /** So viele gelesene Texte bleiben für Prüfungen im Gedächtnis. */
 const GELESEN_MAX = 60;
+/**
+ * So oft nimmt der Spieler dieselbe Antwort auf dieselbe Frage über alle Spielstände hinweg, bevor
+ * sie nicht mehr als neu gilt. Warum: Revanchen („Noch eine?“ → „Spielen“) ändern nach jedem Sieg
+ * den Stand; je Stand gezählt, galt „Spielen“ immer wieder als neu, und der Querformat-Durchlauf
+ * ab Akt 2 spielte 45 Minuten lang gegen Rosa und Dime (19.11.2026). Ein Mensch hört nach ein, zwei
+ * Revanchen auf.
+ */
+const GLEICHE_ANTWORT_MAX = 2;
 
 /**
  * Welche Antwort ein neugieriger Spieler nimmt: die am seltensten gewählte, die nicht aufschiebt;
@@ -92,15 +100,28 @@ export function waehleAntwort(
   wahlen: readonly string[],
 ): number {
   const zahl = (w: string) => g.gewaehlt.get(`${g.signatur}|${frage}|${w}`) ?? 0;
+  const gesamt = (w: string) => g.gewaehlt.get(`immer|${frage}|${w}`) ?? 0;
   const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) }));
   const echte = vor.filter((v) => !v.auf);
-  const neue = echte.filter((v) => v.n === 0);
+  const neue = echte.filter((v) => v.n === 0 && gesamt(v.w) < GLEICHE_ANTWORT_MAX);
   const aufschub = vor.find((v) => v.auf);
   const wahl = neue[0] ??
     aufschub ??
     [...vor].sort((a, b) => a.n - b.n)[0] ?? { i: 0, w: wahlen[0] ?? "" };
   g.gewaehlt.set(`${g.signatur}|${frage}|${wahl.w}`, zahl(wahl.w) + 1);
+  g.gewaehlt.set(`immer|${frage}|${wahl.w}`, gesamt(wahl.w) + 1);
   return wahl.i;
+}
+
+/**
+ * Nach einem Kartenwechsel zählen gleiche Antworten wieder von vorn (GLEICHE_ANTWORT_MAX): Eine
+ * Revanche-Schleife bleibt auf einer Karte; wer weiterzieht und wiederkommt (etwa zum Clubkampf
+ * nach einer Niederlage), soll dieselbe Antwort wieder geben dürfen.
+ */
+export function vergissWiederholungen(g: Fenstergedaechtnis): void {
+  for (const schluessel of [...g.gewaehlt.keys()]) {
+    if (schluessel.startsWith("immer|")) g.gewaehlt.delete(schluessel);
+  }
 }
 
 /** Merkt einen gelesenen Text für Protokoll und Prüfungen. */

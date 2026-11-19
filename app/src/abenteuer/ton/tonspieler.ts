@@ -12,9 +12,11 @@
  * Dialogende, Kartenwechsel); derselbe Wunsch startet das Stück nicht neu, denn die Regie wiederholt
  * ihn bei jeder Dialogzeile (ton/tonregie.ts `spiele`). Leise Geräusche hebt klang/pegel.json an.
  * Abhängigkeiten: Browser-Schnittstelle AudioContext, ton/tonplan.ts (Dateinamen),
- * ton/tonangaben.ts (Tabellen einmalig und Anhebung).
+ * ton/tonangaben.ts (Tabellen einmalig und Anhebung), ton/puffervorrat.ts (Budget der dekodierten
+ * Puffer: Ohne Grenze wuchs der Speicher in langen Sitzungen mit jeder Karte).
  */
 import { motivFuer } from "./motive";
+import { Puffervorrat } from "./puffervorrat";
 import { spieleMotiv } from "./motivspieler";
 import { ladeTonangaben, stammVon, weicheAnhebung, type Tonangaben } from "./tonangaben";
 import { dateienFuer } from "./tonplan";
@@ -48,7 +50,8 @@ interface Geladen {
 const NAEHE_S = 0.3;
 
 export class Tonspieler {
-  private readonly puffer = new Map<string, Promise<Geladen | null>>();
+  /** Dekodierte Puffer mit Budget (ton/puffervorrat.ts). */
+  private readonly puffer = new Puffervorrat<Geladen | null>((g) => g?.puffer ?? null);
   /** Schlüssel, zu denen es noch keine Datei gab (Ton lädt im Hintergrund nach, paket/aktton.ts). */
   private readonly fehlend = new Set<string>();
   private angaben: Promise<Tonangaben> | null = null;
@@ -140,6 +143,11 @@ export class Tonspieler {
     quelle.start();
   }
 
+  /** Belegter Speicher der dekodierten Puffer (Bytes), für Messungen. */
+  pufferBytes(): number {
+    return this.puffer.belegt();
+  }
+
   /** Blendet alles aus (Abenteuer verlassen). */
   stoppeAlles(): void {
     for (const spur of ["musik", "geraeusch", "quelle"] as const) {
@@ -192,10 +200,10 @@ export class Tonspieler {
   /** Der dekodierte Puffer zu einer Angabe: erste Datei, die es gibt (m4a vor ogg), sonst null. */
   private holePuffer(ordner: Ordner, angabe: string): Promise<Geladen | null> {
     const schluessel = `${ordner}:${angabe}`;
-    let versprechen = this.puffer.get(schluessel);
+    let versprechen = this.puffer.hole(schluessel);
     if (!versprechen) {
       versprechen = this.ladeErste(dateienFuer(ordner, angabe));
-      this.puffer.set(schluessel, versprechen);
+      this.puffer.lege(schluessel, versprechen);
       void versprechen.then((geladen) => {
         if (!geladen) this.fehlend.add(schluessel);
       });
@@ -208,7 +216,7 @@ export class Tonspieler {
    * nächste Wunsch sie neu, statt still zu bleiben, bis die Seite neu lädt.
    */
   vergissFehlende(): void {
-    for (const schluessel of this.fehlend) this.puffer.delete(schluessel);
+    for (const schluessel of this.fehlend) this.puffer.vergiss(schluessel);
     this.fehlend.clear();
   }
 

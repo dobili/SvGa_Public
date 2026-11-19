@@ -104,5 +104,21 @@ export function partieergebnisAus(
     genauigkeit: null,
     geschaetzteStaerke: null,
     beendet: jetzt.toISOString(),
+    ...uhrbilanzAus(partie),
   };
+}
+
+/**
+ * Der Uhrstand am Ende aus Sicht des Lesers (nur mit Uhr, die lief): eigene Züge, ob er anfing,
+ * Restzeit. Beispiel: Weiß, 39 Halbzüge, 6:10 übrig → { eigeneZuege: 20, begann: true, 370 000 }.
+ */
+export function uhrbilanzAus(partie: Partie): {
+  uhrbilanz?: NonNullable<Partieergebnis["uhrbilanz"]>;
+} {
+  const uhr = partie.uhr;
+  if (!partie.einstellung.uhr || !uhr || uhr.seitMs === 0) return {};
+  const farbe = partie.einstellung.eigeneFarbe;
+  const eigeneZuege = partie.zuege.filter((z) => z.von === "leser").length;
+  const begann = partie.zuege[0]?.von === "leser";
+  return { uhrbilanz: { eigeneZuege, begann, restMs: uhr.restMs[farbe] } };
 }

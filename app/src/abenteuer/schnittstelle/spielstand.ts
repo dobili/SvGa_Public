@@ -175,6 +175,10 @@ export interface Abenteuerstand {
     readonly zaehlt: boolean;
     /** Sichtbarer Zustand des Gegners (R8, R9): Textschlüssel von Name und Grund; null ohne. */
     readonly zustand: { readonly gegner: string; readonly grund: string } | null;
+    /** Begegnung mit Zeitwahl (19.11.2026): dann zählt A je Zeitklasse (regeln/zeitklassenwertung.ts). */
+    readonly zeitwahl?: boolean;
+    /** Abzug der Uhr für den Bot in Elo, beim Start gerechnet (engine/botstaerke.ts). */
+    readonly uhrAbzug?: number;
   } | null;
   /** Name und Figurvariante des Helden (nur Vorname oder Spitzname, bleibt lokal). */
   readonly held: { readonly name: string; readonly variante: number };

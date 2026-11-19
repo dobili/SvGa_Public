@@ -122,6 +122,10 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
                 grund: text(roh.laufendeWertung.zustand.grund),
               }
             : null,
+          ...(roh.laufendeWertung.zeitwahl === true ? { zeitwahl: true } : {}),
+          ...(typeof roh.laufendeWertung.uhrAbzug === "number"
+            ? { uhrAbzug: roh.laufendeWertung.uhrAbzug }
+            : {}),
         }
       : null,
     held: { name: text(roh.held.name), variante: zahl(roh.held.variante) },

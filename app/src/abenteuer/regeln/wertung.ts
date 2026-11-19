@@ -7,14 +7,19 @@
  * `nachStoryPartie` im Rückweg (regeln/rueckweg.ts). Die Elo-Formel ist die der App
  * (spiel/wertung.ts: Erwartung, K = 32 in den ersten zehn Partien, dann 20).
  * Beispiel: A = 800, Sieg gegen Z = 1020 (Erwartung 0,22) → A = 800 + 32 · 0,78 = 825.
+ * Zeitklassen (Wunsch des Autors, 19.11.2026): A steht auf dem Schnellschach-Maßstab. Bei
+ * Begegnungen mit Zeitwahl rechnet der Schritt wie die App in der Zeitklasse der Partie (Blitz,
+ * auch nach der genutzten Zeit herabgestuft) und hebt das Ergebnis zurück
+ * (regeln/zeitklassenwertung.ts); ohne Uhr und ohne Zeitwahl bleibt alles wie bisher.
  * Sonderfälle: A sinkt nie unter 100; abgebrochene Partien und Partien mit mittlerer oder starker
  * Karte zählen nicht (R38); bis zehn Partien gezählt sind, ist E = A (R3).
  */
-import { K_ANFANG, K_DANACH, erwartung } from "../../spiel/wertung";
+import { K_ANFANG, K_DANACH } from "../../spiel/wertung";
 import type { Kartenspiel } from "../schnittstelle/karten";
 import type { Ausgang, Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { EINGANG_PARTIEN } from "./spielstand";
+import { schrittInKlasse, wertungsklasse, type Zeitlage } from "./zeitklassenwertung";
 
 /** Unter diesen Wert fällt A nie (R2). */
 export const A_MIN = 100;
@@ -73,15 +78,15 @@ export function nachStoryPartie(
   zielElo: number,
   ausgang: Ausgang,
   gespielteKarten: readonly Kartenspiel[],
+  zeit: Zeitlage | null = null,
 ): Abenteuerstand {
   const s = punkte(ausgang);
   if (s === null || gespielteKarten.some((k) => k.frei !== true && k.stufe !== "leicht"))
     return stand;
   const k = stand.wertungPartien < PARTIEN_MIT_GROSSEM_K ? K_ANFANG : K_DANACH;
-  const wertung = Math.max(
-    A_MIN,
-    Math.round(stand.wertung + k * (s - erwartung(stand.wertung, zielElo))),
-  );
+  const tempo = zeit ? wertungsklasse(zeit) : "rapid";
+  const schritt = schrittInKlasse(stand.wertung, zielElo, s, k, tempo, zeit?.abzug ?? 0);
+  const wertung = Math.max(A_MIN, Math.round(schritt));
   const eingangLaeuft = stand.eingangPartien < EINGANG_PARTIEN;
   return {
     ...stand,

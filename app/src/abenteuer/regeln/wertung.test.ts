@@ -68,4 +68,14 @@ describe("Abenteuerwertung", () => {
     // 110 gegen 100 verloren: Erwartung 0,51, Schritt −16 → unter 100, also die Grenze.
     expect(nachStoryPartie({ ...stand, wertung: 110 }, 100, "niederlage", []).wertung).toBe(100);
   });
+  it("Zeitwahl Blitz (19.11.2026): Schritt in der Blitz-Klasse, zurück auf Schnellschach", () => {
+    const stand = { ...leererAbenteuerstand(JETZT, "Kim", 1000, true), wertungPartien: 10 };
+    const blitz = { zeitwahl: true, uhr: { sekunden: 180, zuschlag: 2 }, bilanz: null, abzug: 0 };
+    // K = 20 nach zehn Partien; gleich starker Gegner: Schnellschach −10, Blitz −13.
+    expect(nachStoryPartie(stand, 1000, "niederlage", []).wertung).toBe(990);
+    expect(nachStoryPartie(stand, 1000, "niederlage", [], blitz).wertung).toBe(987);
+    // Ohne Zeitwahl zählt eine Uhr nicht: wie bisher.
+    const fest = { ...blitz, zeitwahl: false };
+    expect(nachStoryPartie(stand, 1000, "niederlage", [], fest).wertung).toBe(990);
+  });
 });

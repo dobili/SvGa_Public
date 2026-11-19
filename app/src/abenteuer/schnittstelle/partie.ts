@@ -196,6 +196,15 @@ export interface Partieergebnis {
   readonly geschaetzteStaerke: number | null;
   /** Zeitpunkt des Endes (ISO). */
   readonly beendet: string;
+  /**
+   * Uhrstand am Ende aus Sicht des Lesers, nur mit Uhr (19.11.2026, für die Wertung nach der
+   * genutzten Zeit, regeln/zeitklassenwertung.ts).
+   */
+  readonly uhrbilanz?: {
+    readonly eigeneZuege: number;
+    readonly begann: boolean;
+    readonly restMs: number;
+  };
 }
 
 /** Stufe der Clubnadel (Entscheidung C6); Regeln in Dokument 02, Abschnitt 2.7 und Entscheidung B2. */

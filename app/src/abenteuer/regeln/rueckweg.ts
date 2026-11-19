@@ -80,7 +80,20 @@ export function standNachPartie(
   // Abenteuerwertung (R2, R38): nur Partien, die beim Start als zählend vermerkt wurden.
   const laufend = stand.laufendeWertung;
   const gewertet = laufend?.zaehlt
-    ? nachStoryPartie(stand, laufend.zielElo, ergebnis.ausgang, ergebnis.gespielteKarten)
+    ? nachStoryPartie(
+        stand,
+        laufend.zielElo,
+        ergebnis.ausgang,
+        ergebnis.gespielteKarten,
+        laufend.zeitwahl
+          ? {
+              zeitwahl: true,
+              uhr: stand.partiekarten?.uhr ?? null,
+              bilanz: ergebnis.uhrbilanz ?? null,
+              abzug: laufend.uhrAbzug ?? 0,
+            }
+          : null,
+      )
     : stand;
   return {
     begegnung,

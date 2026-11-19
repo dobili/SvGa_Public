@@ -122,6 +122,15 @@ button {
   cursor: pointer;
 }
 
+/* Eingabefelder am Touch-Gerät nie unter 16 px: Safari am iPhone vergrößert sonst beim Antippen
+   die ganze Seite und bleibt so, etwa bei kleiner Schrift aus den Einstellungen (iOS-Durchsicht,
+   20.11.2026). Mit Maus und Tastatur bleibt alles wie gewählt. */
+@media (pointer: coarse) {
+  :where(input:not([type="range"], [type="checkbox"], [type="radio"]), textarea, select) {
+    font-size: max(16px, 1em);
+  }
+}
+
 /* Aufklappzeilen ohne eigenen Stil sind 44 Pixel hoch (DS8): Der Text allein war nur 23 Pixel
    hoch und schwer zu treffen. :where hält die Regel schwächer als die eigenen Stile. */
 :where(summary) {

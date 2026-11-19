@@ -41,6 +41,8 @@ const RUNDENARTEN: readonly Rundenverlust[] = ["falsch", "zurueckAbbrechen", "ne
  * öffnet die Sperre (Notausgang, dialog/wegsperre-s17.test.ts); ein vierter wäre nie nötig.
  */
 const VERLUSTE: Readonly<Record<string, number>> = { "wegDesertSummit.testteam": 3 };
+/** Nach so vielen neuen Dialogzeilen lädt er mitten im Gespräch neu. */
+const DIALOG_NEULADEN_ALLE = 40;
 /** Nach so vielen eigenen Zügen gibt er auf oder lädt neu. */
 export const EIGENE_ZUEGE_VOR_ABBRUCH = 4;
 
@@ -128,6 +130,22 @@ export class Schwaechling {
   rundeVorbei(): void {
     this.buch.runde = null;
     this.sichere();
+  }
+
+  /** Gezählte Dialogzeilen seit dem letzten Neuladen im Gespräch. */
+  private dialogzeilen = 0;
+
+  /**
+   * Soll der Spieler jetzt mitten im Gespräch neu laden? Ja bei jeder DIALOG_NEULADEN_ALLE-ten
+   * neuen Zeile, nur beim schwachen Spieler. Warum: Wer die App mitten im Gespräch schließt, darf
+   * nichts doppelt bekommen und nichts verlieren; das prüft sonst niemand im Browser.
+   */
+  dialogNeuladen(): boolean {
+    if (!this.an) return false;
+    this.dialogzeilen += 1;
+    if (this.dialogzeilen < DIALOG_NEULADEN_ALLE) return false;
+    this.dialogzeilen = 0;
+    return true;
   }
 
   /** Steht nach einem Neuladen noch eine Wahl auf der Fortsetzungskarte aus? */

@@ -14,11 +14,15 @@
  * des Nachladens („lädt“, „vollständig“) zeigt anbindung/Ladestand.tsx; „vollständig“ heißt:
  * Grundpaket und Geräusche des laufenden Akts liegen auf dem Gerät, das Spiel geht ohne Netz
  * (Musik, die noch nie lief, bleibt dann still).
- * Abhängigkeiten: paket/paketlader.ts.
+ * Seit dem 20.11.2026 lädt hier auch Maia (anbindung/maiapflicht.ts), nach den Geräuschen: Der
+ * erste Start wartete vorher auf alle 92 MB Maia. „Vollständig“ heißt jetzt: Grundpaket,
+ * Geräusche des Akts und Maia liegen auf dem Gerät.
+ * Abhängigkeiten: paket/paketlader.ts, anbindung/maiapflicht.ts.
  */
 import { useEffect, useSyncExternalStore } from "react";
-import { beiPaketAenderung, fehlendeDateien, ladeNach } from "./paketlader";
+import { beiPaketAenderung, fehlendeDateien, ladeNach, paketDa } from "./paketlader";
 import type { Ladefortschritt, Paketverzeichnis } from "../schnittstelle/paket";
+import { ladeMaiaImHintergrund, MAIA_DER_APP, type Maiazugriff } from "../anbindung/maiapflicht";
 
 /** Erster Akt, dessen Ton nachgeladen wird (seit 15.11.2026 auch Akt 1). */
 export const ERSTER_NACHLADEAKT = 1;
@@ -60,7 +64,10 @@ export function istMusik(datei: { readonly pfad: string }): boolean {
   return datei.pfad.startsWith("musik/");
 }
 
-/** Was im Hintergrund zu einem Akt gehört: Grundpaket und Geräusche des Akts, keine Musik. */
+/**
+ * Was im Hintergrund zu einem Akt gehört: Grundpaket, Großbilder (ohne Akt, Feld hintergrund) und
+ * Geräusche des Akts, keine Musik.
+ */
 function zumAkt(akt: number): (datei: Paketverzeichnis["dateien"][number]) => boolean {
   return (d) => (d.akt === undefined || d.akt === akt) && !istMusik(d);
 }
@@ -80,13 +87,14 @@ export function ladeAktton(akt: number, fortschritt: Ladefortschritt = STILL): P
   if (akt < ERSTER_NACHLADEAKT) return Promise.resolve(true);
   let vorgang = laufend.get(akt);
   if (!vorgang) {
-    vorgang = ladeNach((d) => d.akt === akt && !istMusik(d), fortschritt).catch(
-      (fehler: unknown) => {
-        // Ohne Netz bleibt der Ton aus; beim nächsten Betreten des Akts ein neuer Versuch.
-        console.warn(`Ton von Akt ${akt} nicht geladen`, fehler);
-        return false;
-      },
-    );
+    vorgang = ladeNach(
+      (d) => (d.akt === akt || d.hintergrund === true) && !istMusik(d),
+      fortschritt,
+    ).catch((fehler: unknown) => {
+      // Ohne Netz bleibt der Ton aus; beim nächsten Betreten des Akts ein neuer Versuch.
+      console.warn(`Ton von Akt ${akt} nicht geladen`, fehler);
+      return false;
+    });
     const dieser = vorgang;
     laufend.set(akt, dieser);
     void dieser.then((ok) => {
@@ -97,39 +105,58 @@ export function ladeAktton(akt: number, fortschritt: Ladefortschritt = STILL): P
 }
 
 /**
- * Lädt den Ton des Akts im Hintergrund mit Stand für die Anzeige und prüft danach, ob das Spiel
- * vollständig auf dem Gerät liegt. Ohne geladenes Paket bleibt der Stand „ruht“.
- * Beispiel: erstes Spielen, Akt 1 → „lädt 0 … 100 %“, dann „vollständig“ (frisch).
+ * Lädt den Ton des Akts und danach Maia im Hintergrund, mit Stand für die Anzeige, und prüft
+ * danach, ob das Spiel vollständig auf dem Gerät liegt. Ohne geladenes Paket bleibt der Stand
+ * „ruht“. Beispiel: erstes Spielen, Akt 1 → „lädt 0 … 100 %“ (Geräusche und Maia zusammen),
+ * dann „vollständig“ (frisch).
  */
-export async function ladeTonImHintergrund(akt: number): Promise<void> {
+export async function ladeTonImHintergrund(
+  akt: number,
+  maia: Maiazugriff = MAIA_DER_APP,
+): Promise<void> {
   // Nur der jüngste Lauf schreibt den Stand (ein neues Paket startet einen neuen Lauf).
   const dieser = ++laeufe;
   const setze = (neu: Tonladestand) => {
     if (dieser === laeufe) setzeStand(neu);
   };
   const fehlend = await fehlendeDateien(zumAkt(akt));
-  const frisch = fehlend.length > 0;
-  if (frisch) setze({ art: "laedt", geladen: 0, gesamt: 1 });
-  const ok = await ladeAktton(akt, (geladen, gesamt) => {
-    if (frisch) setze({ art: "laedt", geladen, gesamt });
+  // Ohne Paket (Startkarte vor dem ersten Laden) lädt auch Maia nicht.
+  if (!(await paketDa())) return;
+  const fehltMaia = maia.online() && !(await maia.geladen());
+  const maiaBytes = fehltMaia ? ((await maia.groesse()) ?? 0) : 0;
+  const tonBytes = fehlend.reduce((summe, d) => summe + d.bytes, 0);
+  const frisch = fehlend.length > 0 || fehltMaia;
+  let tonGeladen = 0;
+  const melde = (maiaGeladen: number) => {
+    if (frisch) {
+      const gesamt = Math.max(1, tonBytes + maiaBytes);
+      setze({ art: "laedt", geladen: tonGeladen + maiaGeladen, gesamt });
+    }
+  };
+  melde(0);
+  const ok = await ladeAktton(akt, (geladen) => {
+    tonGeladen = Math.min(geladen, tonBytes);
+    melde(0);
   });
+  const maiaOk = await ladeMaiaImHintergrund(melde, maia);
   if (!ok) {
     setze(frisch ? { art: "unvollstaendig" } : { art: "ruht" });
     return;
   }
   const rest = await fehlendeDateien(zumAkt(akt));
-  setze(rest.length === 0 ? { art: "vollstaendig", frisch } : { art: "unvollstaendig" });
+  const voll = rest.length === 0 && (maiaOk || !maia.online());
+  setze(voll ? { art: "vollstaendig", frisch } : { art: "unvollstaendig" });
 }
 
 /** Lädt den Ton aller Akte samt aller Musik (Wunsch im Spielmenü). */
 export async function ladeAlleAkte(fortschritt: Ladefortschritt): Promise<boolean> {
-  const ok = await ladeNach((d) => d.akt !== undefined, fortschritt);
+  const ok = await ladeNach((d) => d.akt !== undefined || d.hintergrund === true, fortschritt);
   return ok;
 }
 
 /** Bytes des Tons aller Akte, der noch nicht auf dem Gerät liegt. */
 export async function fehlendeAktbytes(): Promise<number> {
-  const fehlend = await fehlendeDateien((d) => d.akt !== undefined);
+  const fehlend = await fehlendeDateien((d) => d.akt !== undefined || d.hintergrund === true);
   return fehlend.reduce((summe, d) => summe + d.bytes, 0);
 }
 

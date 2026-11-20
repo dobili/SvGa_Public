@@ -41,6 +41,12 @@ export interface Paketdatei {
    * Feld, gehört die Datei zum Grundpaket. Ein Paket von vorher trägt es nur ab Akt 2.
    */
   readonly akt?: number;
+  /**
+   * Lädt nach dem Start im Hintergrund mit dem Ton des laufenden Akts, gehört aber zu keinem Akt
+   * (seit 20.11.2026: Großbilder der Dialoge, bilder/). Warum: 3,3 MB weniger vor der ersten Karte
+   * (Auftrag „Größe und Startzeit“); bis sie da sind, holt der Paketlader ein Bild aus dem Netz.
+   */
+  readonly hintergrund?: boolean;
 }
 
 /** Die Verzeichnisdatei des Pakets, beim Build erzeugt (skripte/baue-abenteuerpaket.mjs, später). */

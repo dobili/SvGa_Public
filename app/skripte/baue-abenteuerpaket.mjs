@@ -137,6 +137,7 @@ async function kopiereTon(ordner) {
  * Bilder der Großansicht im Dialog (Atmosphäre T7, `#bild:kennung`) und Fundbilder: WebP aus dem
  * privaten Ordner bilder/, Gruppe grafik; dazu PNG und JPG, die der Autor selbst hochlädt (seit
  * 20.11.2026, skripte/grossbilder.mjs). Ohne Ordner nichts; die Dialogzeile erscheint dann ohne Bild.
+ * Sie laden nach dem Start im Hintergrund (Feld hintergrund, Auftrag „Größe und Startzeit“, 20.11.2026).
  */
 async function kopiereBilder() {
   const quelle = join(PRIVAT, "bilder");
@@ -144,7 +145,14 @@ async function kopiereBilder() {
   const alle = await readdir(quelle);
   const namen = alle.filter((d) => d.endsWith(".webp"));
   for (const name of namen.sort()) {
-    await schreibe(`bilder/${name}`, await readFile(join(quelle, name)), "grafik");
+    await schreibe(
+      `bilder/${name}`,
+      await readFile(join(quelle, name)),
+      "grafik",
+      1,
+      undefined,
+      true,
+    );
   }
   // Vom Autor hochgeladen (PNG, JPG mit dem Namen aus dem Auftrag): ins Format des Spiels,
   // außer es gibt schon ein zugeschnittenes WebP gleichen Namens (skripte/grossbilder.mjs).
@@ -153,7 +161,7 @@ async function kopiereBilder() {
     const name = basename(datei, extname(datei));
     if (namen.includes(`${name}.webp`)) continue;
     const webp = await alsGrossbild(await readFile(join(quelle, datei)), name);
-    await schreibe(`bilder/${name}.webp`, webp, "grafik");
+    await schreibe(`bilder/${name}.webp`, webp, "grafik", 1, undefined, true);
   }
 }
 
@@ -189,7 +197,14 @@ async function schreibeGrafik(pfad, platzhalter) {
  * Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. PNG kommt als verlustfreies WebP
  * ins Paket (skripte/paketbilder.mjs); der Paketlader setzt die Endung beim Lesen um.
  */
-async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = undefined) {
+async function schreibe(
+  quellpfad,
+  inhalt,
+  gruppe,
+  staffel = 1,
+  akt = undefined,
+  hintergrund = false,
+) {
   const bild = typeof inhalt !== "string" && wirdWebp(quellpfad);
   const pfad = bild ? webpPfad(quellpfad) : quellpfad;
   const voll = join(ZIEL, pfad);
@@ -210,6 +225,8 @@ async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = undefined)
     staffel,
     // Nur Ton trägt den Akt (auch Akt 1); alles ohne „akt“ gehört zum Grundpaket.
     ...(akt !== undefined ? { akt } : {}),
+    // Großbilder laden nach dem Start mit (paket/aktton.ts, Feld hintergrund in schnittstelle/paket.ts).
+    ...(hintergrund ? { hintergrund } : {}),
   });
 }
 

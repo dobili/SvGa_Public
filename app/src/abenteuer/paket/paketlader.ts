@@ -98,6 +98,11 @@ function geladenesVerzeichnis(): Promise<GeladenesPaket | null> {
   return gemerktesPaket;
 }
 
+/** Liegt ein vollständig geladenes Paket auf dem Gerät? (Ohne Paket lädt nichts nach.) */
+export async function paketDa(): Promise<boolean> {
+  return (await geladenesVerzeichnis()) !== null;
+}
+
 /**
  * Der Pfad einer Datei im Paket: PNG der Quellen liegt dort als WebP. Ein Paket aus der Zeit
  * davor (nur der PNG-Name im Verzeichnis) behält den alten Namen, bis es erneuert ist.
@@ -218,8 +223,9 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   const verzeichnis = await verzeichnisVomServer();
   const speicher = await caches.open(cachename(verzeichnis.version));
   let geladen = 0;
-  // Ton gehört nicht dazu: Das Spiel startet ohne ihn, paket/aktton.ts lädt ihn im Hintergrund.
-  const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined);
+  // Ton und Großbilder gehören nicht dazu: Das Spiel startet ohne sie, paket/aktton.ts lädt sie
+  // im Hintergrund.
+  const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined && !d.hintergrund);
   await jeGleichzeitig(grundpaket, GLEICHZEITIG, (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       geladen += bytes;

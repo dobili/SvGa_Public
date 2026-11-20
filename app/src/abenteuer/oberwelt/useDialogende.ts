@@ -191,7 +191,9 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     const folgeStartet = Boolean(
       m.auftrag.current || m.runde.current || m.simultan.current || m.gedaechtnis.current,
     );
-    const neu = mitGemerktemDialog(ohneDialog, geoeffnet.current, folgeStartet);
+    // Das Gespräch ist zu Ende: Eine offene Rückmeldung gilt als gelesen (nachergebnis.ts).
+    const gelesen = { ...ohneDialog, rueckmeldungOffen: null };
+    const neu = mitGemerktemDialog(gelesen, geoeffnet.current, folgeStartet);
     k.schreibe(neu);
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);

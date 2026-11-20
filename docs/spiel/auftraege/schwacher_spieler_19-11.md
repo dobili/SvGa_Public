@@ -158,6 +158,16 @@ Wiedereinstieg und Neuladen:
   bietet beim nächsten Ansprechen wieder an.
 - Nach jeder Niederlage ging es weiter; Strecke 1 kam mit allen Verlusten durch Akt 1 in Akt 2.
 
+Neuladen mitten im Gespräch (bisher 22 Fälle in drei Strecken): Außer dem Abschied (Fund 1)
+begann jede Szene beim nächsten Ansprechen wieder oder war reine Kulisse; nichts kam doppelt
+(keine Meldung „Gefunden“ oder „Neu im Tagebuch“ zweimal). Dazu ein behobener Fall: Lud man
+mitten in einer Rückmeldung nach dem Ergebnis neu (Victor in Silicon Bay nach der Auswertung, „Das
+ist falsch.“), ging sie danach nicht wieder auf; sie kam erst, wenn man die Figur ansprach, und
+kein Zielhinweis zeigte dorthin. Jetzt merkt der Spielstand die offene Rückmeldung
+(`rueckmeldungOffen`) bis zum Ende des Gesprächs, und die Oberwelt öffnet sie nach dem Neuladen
+wieder (`oberwelt/nachergebnis.ts`, `useOffeneRueckmeldung`). Test: `nachergebnis.test.ts` und im
+Browser `tests/e2e/abenteuer.spec.ts` (Neuladen in Ambroses Rückmeldung nach der ersten Lektion).
+
 Halbfinale: Nach Ambroses Moment („Dieser Zug, Kim.“) nahm das Brett Dd1–f3 dreimal nicht an,
 und der Durchlauf meldete „Zug kommt nicht an“. Das ist das gewollte Zugerraten (Story-Bibel,
 Szene 106): beliebig viele Versuche, nach drei Fehlversuchen ein Hinweis. Danach fand er den Zug

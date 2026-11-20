@@ -44,7 +44,7 @@ import { useAufgabenrunde } from "./useAufgabenrunde";
 import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
 import { begegnungVon, LUPE, usePartiestart } from "./usePartiestart";
-import { nachErgebnis } from "./nachergebnis";
+import { nachErgebnis, useOffeneRueckmeldung } from "./nachergebnis";
 import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
@@ -125,8 +125,7 @@ export function Oberwelt() {
   });
 
   // Solange ein Fenster offen ist, steht der Held, und die Kopfleiste öffnet kein zweites
-  // (Affentest 14.11.2026: „Übungspartie“ und „Reisen“ lagen über „Weitermachen“ und öffneten
-  // die Deckwahl neben der Fortsetzungskarte; mit offenem Reisefenster lief der Held weiter).
+  // (Affentest 14.11.2026: Deckwahl neben der Fortsetzungskarte, Held lief bei offenen Reisen).
   const fensterOffen =
     dialog !== null ||
     partie.ergebnis !== null ||
@@ -142,6 +141,7 @@ export function Oberwelt() {
   useEffect(() => {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
   }, [spiel, fensterOffen, welt]);
+  useOffeneRueckmeldung(k, oeffneDialog, welt !== null && !fensterOffen);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     szeneAus(spiel)?.setzeRichtung(richtung, gedrueckt);

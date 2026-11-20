@@ -223,6 +223,12 @@ export interface Abenteuerstand {
    * keiner.
    */
   readonly nachErgebnis?: string | null;
+  /**
+   * Die Rückmeldung, die gerade offen ist (geöffnet, aber nicht zu Ende gelesen). Lädt der Spieler
+   * mitten darin neu, öffnet die Oberwelt sie wieder (oberwelt/nachergebnis.ts); fehlt oder null:
+   * keine.
+   */
+  readonly rueckmeldungOffen?: string | null;
   /** Ergebnis der zuletzt beendeten Runde, bis die Oberwelt es ausgewertet hat. */
   readonly aufgabenergebnis: Aufgabenergebnis | null;
   /**

@@ -16,6 +16,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN } from "./abenteuer-affe";
 import { feldVon } from "./abenteuer-karte";
+import { ohneMaiaImHintergrund } from "./abenteuer-paket";
 import { starteImBrowser } from "./hilfen";
 
 const KARTEN = [
@@ -127,6 +128,7 @@ for (const karte of KARTEN) {
       await page.goto("/app/#abenteuer");
       const laden = page.getByTestId("abenteuer-laden");
       await expect(laden).toBeVisible({ timeout: 30000 });
+      await ohneMaiaImHintergrund(page);
       await laden.click();
       await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 120000 });
       await page.waitForTimeout(3000);

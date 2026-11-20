@@ -407,6 +407,9 @@
 
 .abenteuer-namensfeld input {
   font: inherit;
+  /* Unter 16 px vergrößert Safari am iPhone beim Antippen die ganze Seite und bleibt so; mit
+     kleiner Schrift in den Einstellungen wäre das Feld darunter (iOS-Durchsicht, 20.11.2026). */
+  font-size: max(16px, 1em);
   padding: 0.5rem 0.7rem;
   border: 1px solid var(--akzent);
   border-radius: 0.5rem;

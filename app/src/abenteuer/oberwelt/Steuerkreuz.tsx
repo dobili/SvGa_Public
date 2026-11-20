@@ -84,6 +84,9 @@ export function Steuerkreuz({
         onPointerMove={bewege}
         onPointerUp={ende}
         onPointerCancel={ende}
+        // Verliert das Kreuz den Finger ohne Loslassen (Safari bei Systemgesten), bleibt der Held
+        // sonst in Bewegung.
+        onLostPointerCapture={ende}
       >
         {KREUZ.map(([richtung, zeichen], i) =>
           richtung ? (

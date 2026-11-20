@@ -64,12 +64,15 @@ export function tonErzeuger(): AudioContext | null {
 }
 
 /**
- * Weckt den Tonerzeuger; aufzurufen bei einer Berührung des Lesers (Vorgabe von Safari).
+ * Weckt den Tonerzeuger; aufzurufen bei einer Berührung des Lesers (Vorgabe von Safari). Schon
+ * laufender Ton bleibt unberührt, deshalb darf jede Berührung rufen.
  * Sonderfall: Ohne Web Audio (alte Browser, Tests) geschieht nichts.
  */
 export function entsperreTon(): void {
   const ctx = holeErzeuger();
-  if (ctx && ctx.state === "suspended") {
+  // Safari kennt außer „suspended“ auch „interrupted“ (Anruf, App gewechselt, Bildschirm aus):
+  // Auch dann weckt erst die nächste Berührung den Ton wieder.
+  if (ctx && ctx.state !== "running" && ctx.state !== "closed") {
     ctx.resume().catch((fehler: unknown) => {
       // Kein Ton ist kein Fehler für den Leser; für die Fehlersuche in der Konsole vermerken.
       console.warn("Ton nicht verfügbar:", fehler);

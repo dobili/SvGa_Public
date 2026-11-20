@@ -353,7 +353,7 @@ Ein weißer Bauer aus Buchsbaum. Unter dem Fuß ist ein Feld eingebrannt. #sprec
 {nadelCedarCreek >= 1:
     -> END
 - else:
-    Eine Zeder liegt quer über dem Pfad, der Sturm hat sie umgeworfen. Darüber kommst du nicht. #sprecher:erzaehler
+    Eine Zeder liegt quer über dem Pfad, ein Sturm hat sie umgeworfen. Darüber kommst du nicht. #sprecher:erzaehler
     Hinter dem Stamm sieht man schon den Park von Maple Falls. #sprecher:erzaehler
     -> END
 }

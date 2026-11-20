@@ -107,7 +107,7 @@ Manche Bücher stehen fünfzig Jahre im Regal, bis jemand sie braucht. Das ist k
 -> END
 
 === okoro_alltag ===
-{~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|Unten im Keller stehen Kisten von der Bahn. Pläne, Rechnungen, ein Sextant.|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro #stimmung:laechelt
+{~Eine Fahrkarte von 1923, ein Kochbuch ohne Umschlag. Alles hat seinen Preis, nur nicht die Geschichten.|{briefGelesen:Der Sextant aus dem Keller steht jetzt im Schaufenster.|Unten im Keller stehen Kisten von der Bahn. Pläne, Rechnungen, ein Sextant.}|Lies langsam. Bücher laufen nicht weg.} #sprecher:okoro #stimmung:laechelt
 -> okoro_laden
 
 === okoro_laden ===

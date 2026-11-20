@@ -165,7 +165,7 @@ Setz dich. #sprecher:okafor #stimmung:laechelt
     -> okafor_nadel
 }
 Sie legt die Hände in den Schoß und sieht dich über die Brille an. #sprecher:erzaehler
-Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor #stimmung:laechelt
+{clubkampfBauerGesehen and not clubkampfBauerAbgelehnt:Den Bauern wolltest du. Danach hast du hingesehen, und das zählt.|Das war keine Falle wert. Du hast sie alle gesehen.} #sprecher:okafor #stimmung:laechelt
 * [„Nicht alle.“]
 * [Nicken]
 - Genug. #sprecher:okafor #stimmung:laechelt
@@ -176,12 +176,14 @@ Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor #stimmung:l
 // Lektorat der Lesefassung, 17.11.2026: Der Erzählsatz stand in Mrs. Okafors Sprechzeile.
 Sie reicht dir die Nadel über das Brett. #sprecher:erzaehler #klang:fanfare
 {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #stimmung:laechelt
-{teamAngekommen and nadelCedarCreek == 1: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
+{teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
 Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
 * [Nicken]
 * [Die Nadel ansehen]
 - Ambrose sagt nichts. Aber er ist da. #sprecher:erzaehler #pause:2
-{nadelCedarCreek == 1: Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt}
+// Lektorat 19.11.2026: Bronze ist 1; bei Silber und Gold fehlte Junos Hinweis auf den Steg.
+Der Bus fährt um sieben. Geh nur zum Steg. #sprecher:juno #stimmung:laechelt
+Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt
 -> END
 
 === okafor_nach_niederlage ===
@@ -363,8 +365,10 @@ Was glaubst du denn, warum er dort steht? #sprecher:okafor #stimmung:nachdenklic
 {clubkampfZaehlGesagt: -> END}
 ~ clubkampfZaehlGesagt = true
 Lass mich. #sprecher:ambrose #stimmung:nachdenklich #musik:ambrose.lassMich
-Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose #stimmung:ueberrascht
-Sie muss ihn nehmen, und dann … Es wäre schön. Es wäre so schön. #sprecher:ambrose #stimmung:ueberrascht
+Nur dieses eine Mal. Ich sehe es. #sprecher:ambrose #stimmung:ueberrascht
+Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose #stimmung:ueberrascht
+Sie muss ihn nehmen, und dann … #sprecher:ambrose #stimmung:ueberrascht
+Es wäre schön. Es wäre so schön. #sprecher:ambrose #stimmung:ueberrascht
 {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
 // Gutachten K1.4: Die Frage des Helden ist der Wendepunkt; sie fällt immer.
 * [„Stimmt es?“]

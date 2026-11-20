@@ -73,10 +73,12 @@ VAR ersterTagSpaeter = false
     Das alte Brett. Die Figuren stehen noch so, wie du sie verlassen hast. #sprecher:erzaehler
     -> ambrose
 }
+// Lektorat 19.11.2026: Nach „Lieber nicht“ zurück zur Wahl, ohne die Einleitung noch einmal.
+- (wahl)
 * [Die Decke wegziehen] -> brett_beruehren
 * [Lieber nicht anfassen]
     Du lässt die Decke liegen. Aber irgendetwas an der Form darunter lässt dich nicht los. #sprecher:erzaehler
-    -> dachboden_brett
+    -> wahl
 
 === brett_beruehren ===
 ~ brettBeruehrt = true
@@ -91,7 +93,8 @@ Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng #ersche
 * [Den König fallen lassen und wegrennen]
     Der König kullert über die Dielen. Hinter dir ein Seufzen, wie von jemandem, der lange geschwiegen hat. #sprecher:erzaehler
     Lauf nur. Das Brett wartet. Darin ist es geübt. #sprecher:ambrose #stimmung:bitter
-    -> dachboden_brett
+    // Lektorat 19.11.2026: Weggerannt ist weggerannt; den König hebt {held} beim nächsten Mal auf.
+    -> END
 
 === ambrose_erwacht ===
 ~ ambroseErwachtGesehen = true
@@ -290,7 +293,7 @@ Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:
     Weil der Bauer nichts zu verlieren hat. Das ist bei Menschen ebenso. #sprecher:ambrose #stimmung:laechelt
 * [„Ein Buchhalter gewinnt auch.“]
     Gewiss. Aber er erzählt hinterher niemandem davon. #sprecher:ambrose #stimmung:lacht
-    Der Bauer zuerst. Er hat am wenigsten zu verlieren. Das ist bei Menschen ebenso. #sprecher:ambrose #stimmung:nachdenklich
+    Der Bauer zuerst. Er hat am wenigsten zu verlieren. #sprecher:ambrose #stimmung:nachdenklich
 - -> END
 
 === abend_nach_juno ===
@@ -347,7 +350,7 @@ Du trägst das Brett hinauf und stellst es auf den niedrigen Tisch unter dem run
 -> epilog_lily
 
 === epilog_zettel ===
-Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, steiler Schrift. #sprecher:erzaehler #pause:2
+Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, schräger Schrift. #sprecher:erzaehler #pause:2
 „Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“ #sprecher:erzaehler #pause:3
 * [Den Zettel einstecken]
 - -> epilog_lily

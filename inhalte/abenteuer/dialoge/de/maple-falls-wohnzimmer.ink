@@ -183,9 +183,9 @@ Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek? #sprecher:mutter
 Sie sieht dich an, über den Rand ihrer Kaffeetasse. Der Tisch wackelt nicht mehr; der Pizzakarton liegt noch unter dem Bein. #sprecher:erzaehler
 Du hast in vier Wochen mehr geredet als im ganzen letzten Jahr. #sprecher:mutter #stimmung:laechelt
 * [„Zwei Stunden. Am Fluss entlang.“]
-* [„Wir schlafen in der Bibliothek. Es gibt Matten.“]
+* [„Es gibt sogar Matten.“]
 - Sie sieht auf das Brett. Sie will etwas sagen und sagt es nicht. #sprecher:erzaehler #pause:2
-Mit Juno. Am Fluss. Gut. #sprecher:mutter #stimmung:laechelt
+Mit Juno. Gut. #sprecher:mutter #stimmung:laechelt
 Sie drückt dir eine Tüte in die Hand, belegte Brote, als hätte sie es die ganze Zeit gewusst. #sprecher:erzaehler
 Brett nicht verlieren. #sprecher:mutter #stimmung:froh
 * [„Woher weißt du, dass ich es mitnehme?“]
@@ -333,7 +333,7 @@ Deine Mutter war schneller. Ich sage es nur, damit du es weißt. #sprecher:ambro
 * [Den Kopf schütteln, ganz leicht]
     Schon gut. Ich schweige. Gentlemen schweigen über Damen. #sprecher:ambrose #stimmung:lacht
 * [„Pst.“]
-    Mama sieht auf. „Was?“ Du zeigst auf die Pommes. #sprecher:erzaehler
+    Mama sieht auf. „Was?“ Du zeigst auf die Musikbox. #sprecher:erzaehler
 - Die Pommes kommen. Hector bleibt am Tisch stehen, das Geschirrtuch über der Schulter. #sprecher:erzaehler
 Gestern saß hier einer. Anzug, zwei Telefone, kein Lächeln. #sprecher:hector #stimmung:nachdenklich
 Hat Kaffee bestellt und nur auf Zahlen geguckt. Wollte wissen, wem das Schulgebäude gehört. #sprecher:hector #stimmung:nachdenklich
@@ -375,8 +375,8 @@ Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose #stim
 Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Sie hat nur gesagt: nicht zum Turnier.“]
 * [Den Zettel umdrehen]
-    Sie hat nicht gesagt, dass du nicht hindarfst. #sprecher:erzaehler
-- Nicht zum Turnier, hat sie gesagt. Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
+    Du drehst ihn um. Nein zum Zettel, denkst du. Nein zum Turnier. #sprecher:erzaehler
+- Nicht zum Turnier, sagst du. Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
 Er klingt nicht tadelnd. Er klingt neugierig. Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
 Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
 Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh

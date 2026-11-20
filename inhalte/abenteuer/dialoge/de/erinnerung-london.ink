@@ -84,11 +84,19 @@ Zeitungen an Holzstangen. Kaffee in dicken Tassen. Männer mit Backenbärten üb
 // ---------------------------------------------------------------- Kaffeehaus
 
 === kellner ===
+{londonSchlussGesehen:
+    Der kleine Herr ist ohne Hut hinaus. Den Kaffee hat er nicht bezahlt. #sprecher:kellner #stimmung:laechelt
+    -> END
+}
 Ein Kellner mit weißer Schürze balanciert ein Tablett mit Tassen zwischen den Tischen. #sprecher:erzaehler
-{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Herr Anderssen ist aus Breslau. Er spielt, als hätte er keine Angst vor nichts.} #sprecher:kellner #stimmung:laechelt
+{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Der große Herr in der Mitte ist Lehrer, sagt man. Er spielt, als hätte er vor nichts Angst.} #sprecher:kellner #stimmung:laechelt
 -> END
 
 === zeitungsleser ===
+{londonSchlussGesehen:
+    Der Herr senkt die Zeitung zum ersten Mal. Verloren hat der andere, und der lacht. #sprecher:zeitungsleser #stimmung:bitter
+    -> END
+}
 Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht auf. #sprecher:erzaehler
 {~Das Turnier? Dummes Zeug. Ich lese den Börsenbericht.|Der Deutsche am Tisch in der Mitte verliert gleich alles. Sehen Sie nur, er gibt seine Figuren weg.|Junger Mann, Sie stehen in meinem Licht.} #sprecher:zeitungsleser #stimmung:bitter
 -> END

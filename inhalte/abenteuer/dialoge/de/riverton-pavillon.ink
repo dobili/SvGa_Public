@@ -19,6 +19,8 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+VAR slickNiederlageGesehen = false
+VAR odumMomentGesehen = false
 VAR held = "Du"
 VAR rivertonMontagGesehen = false
 VAR slickGetroffen = false
@@ -134,14 +136,20 @@ Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst d
 // Gutachten K2.10: Mr. Odums Satz als geführter Moment, mit der stehenden Hand (Partiemoment
 // schachGegeben in begegnungen.json).
 === clubkampf_odum ===
+// Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
+{odumMomentGesehen: -> END}
+~ odumMomentGesehen = true
 Slicks Hand bleibt in der Luft stehen, über dem Brett. #sprecher:erzaehler #pause:2
 Mr. Odum hat das immer gesagt. Marcus, du rennst nach vorn, und hinter dir brennt das Haus. #sprecher:slick #stimmung:nachdenklich
 Jedes Mal. Vierzehn Jahre lang. #sprecher:slick #stimmung:nachdenklich
 -> END
 
 === slick_nach_niederlage ===
-Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
-Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
+// Lektorat 19.11.2026: Der Applaus gehört zum Sonntag, nicht zu jedem späteren Ansprechen.
+{not slickNiederlageGesehen: Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler}
+~ slickNiederlageGesehen = true
+Gut gekämpft. Aber Riverton bleibt bei mir. #sprecher:slick #stimmung:laechelt
+Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -362,7 +370,7 @@ Auf dem Geländer stehen Limonadengläser in einer Reihe, jedes mit einem Zettel
 // Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Ray, sonst wie bisher.
 === ray_reihe_danach ===
 {not reiheRayBestanden: -> ray}
-Jede Aufgabe gelöst. Du hättest kommen sollen, als der Pavillon noch voll war. #sprecher:ray #stimmung:laechelt
+Jede Aufgabe gelöst. Mr. Odum hätte dir einen Dosenpokal gebaut. #sprecher:ray #stimmung:laechelt
 Slick spielt um die Nadel. Er wartet schon auf dich. #sprecher:ray #stimmung:nachdenklich
 -> END
 

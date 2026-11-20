@@ -93,8 +93,8 @@ Mein Vater hätte ihn sehr gemocht. #sprecher:ambrose #stimmung:still
 - -> tuer
 
 = tuer
-Eine Tür schlägt. Ein Mädchen, fünfzehn vielleicht, ein Skateboard unter dem Arm, Kopfhörer um den Hals. #sprecher:erzaehler #musik:celeste
-Papa, hast du mein Ladekabel … Oh. Besuch. Schach? Das ist doch was für alte Leute. #sprecher:celeste #stimmung:ueberrascht
+Am Laptop zieht das Mädchen die Kopfhörer herunter. Fünfzehn vielleicht, ein Skateboard lehnt an ihrem Stuhl. #sprecher:erzaehler #musik:celeste
+Papa, wo ist mein Ladekabel … Schach? Das ist doch was für alte Leute. #sprecher:celeste #stimmung:ueberrascht
 {abschiedGesehen: -> END}
 Für sehr alte. #sprecher:ambrose #stimmung:lacht
 Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler

@@ -170,7 +170,7 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
 }
 {sternennachtGesehen:
     Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
-    Ich war damals beleidigt, weil ich nur eine Fußnote bin. Erinnerst du dich? #sprecher:ambrose #stimmung:laechelt
+    Ich war damals beleidigt, weil kein Stern meinen Namen trägt. Erinnerst du dich? #sprecher:ambrose #stimmung:laechelt
 - else:
     Sie stehen noch wie früher. Als Junge wollte ich so bekannt werden wie einer von denen. #sprecher:ambrose #stimmung:nachdenklich
     Geworden bin ich eine Fußnote. Du weißt, wie lang. #sprecher:ambrose #stimmung:laechelt
@@ -213,7 +213,7 @@ Eine Stellung, du hast Weiß. Keine Uhr. Der Wald hat Zeit, wir auch. #sprecher:
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END
 + [„Nicht jetzt.“]
-    Ich bin hier. Meistens. Wenn kein Bär im Camp ist. #sprecher:hollis #stimmung:lacht
+    Ich bin hier, meistens. Wenn kein Bär im Camp ist. #sprecher:hollis #stimmung:lacht
     -> END
 
 === hollis_nach_sieg ===

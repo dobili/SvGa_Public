@@ -21,6 +21,7 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR sturmMomentGesehen = false
 VAR held = "Du"
 VAR miraSteinGesehen = false
 VAR versoehnungGesehen = false
@@ -135,9 +136,14 @@ Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira #stimmung:laeche
 // in jeder Partie gegen Mira.
 
 === clubkampf_sturm ===
+// Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
+{sturmMomentGesehen: -> END}
+~ sturmMomentGesehen = true
 Es ist wie ein Sturm. Aber du warst schon in einem, in einem Pavillon im Regen. Im Sturm zählt man. #sprecher:erzaehler
-Prüf es für sie. So gründlich, als wärst du sie. Angreifer, Verteidiger. #sprecher:ambrose #stimmung:nachdenklich
-Sie opfert, weil es schön ist. Nicht immer, weil es geht. Ich erkenne es. #sprecher:ambrose #stimmung:alt
+Prüf es für sie. So gründlich, als wärst du sie. #sprecher:ambrose #stimmung:nachdenklich
+Angreifer, Verteidiger. #sprecher:ambrose #stimmung:nachdenklich
+Sie opfert, weil es schön ist. Nicht immer, weil es geht. #sprecher:ambrose #stimmung:alt
+Ich erkenne es. #sprecher:ambrose #stimmung:alt
 -> END
 
 === clubkampf_atme ===
@@ -149,8 +155,9 @@ Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand v
 * [„Mira. Atme.“]
     ~ atmeGesagt = true
     Sie starrt dich an. #sprecher:erzaehler #musik:atme
-    * * [„Weißt du noch, was du gestern gesagt hast?“]
-    - - „Er hat richtig geopfert und dann Angst gekriegt. Dein Läufer war nicht richtig. Aber die Stellung ist noch nicht verloren. Guck hin. Zähl.“ #sprecher:erzaehler
+    * * [„Weißt du noch, was du über das Opfer gesagt hast?“]
+    - - „Er hat richtig geopfert und dann Angst gekriegt. Du hast es selbst gesagt.“ #sprecher:erzaehler
+    „Deine Stellung ist noch nicht verloren. Guck hin und zähl.“ #sprecher:erzaehler
     In der Garage ist es still. Tomás hat den Schraubenschlüssel sinken lassen. #sprecher:erzaehler
     Mira zieht die Hand zurück und setzt sich auf ihre Finger. Sie sieht hin, lange, die Zunge zwischen den Zähnen. #sprecher:erzaehler #musik:mira.held
 * [Schweigen]
@@ -410,7 +417,7 @@ Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem L
     ~ beginnePartie("desertSprings.dotFernpartie")
     -> END
 + [„Nicht jetzt.“]
-    Vierzig Jahre hat sie gewartet. Die Stellung auch. #sprecher:dot #stimmung:nachdenklich
+    Die Stellung wartet seit Jahren. Auf einen Tag mehr kommt es nicht an. #sprecher:dot #stimmung:nachdenklich
     -> END
 
 === dot_nach_fernpartie ===
@@ -423,7 +430,7 @@ Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem L
 - "remis":
     Remis. Das ist gerecht. Wir hätten uns nie geeinigt, wer besser war. #sprecher:dot #stimmung:laechelt
 - else:
-    Ich hab gewonnen. Ich sag das nicht gern. Sie hätte bis zum Schluss gekämpft, so wie du. #sprecher:dot #stimmung:nachdenklich
+    Ich hab gewonnen, und ich sag das nicht gern. Sie hätte bis zum Schluss gekämpft, so wie du. #sprecher:dot #stimmung:nachdenklich
 }
 Sie zieht einen Faden von der Nadel im Nordosten zu einer leeren Postkarte und knotet ihn fest. #sprecher:erzaehler
 Jetzt ist die Partie fertig. #sprecher:dot #stimmung:nachdenklich

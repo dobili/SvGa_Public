@@ -210,7 +210,8 @@ Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine? Ich nehm mir fün
     -> END
 
 === gus_nach_niederlage ===
-Pause vorbei, Partie gewonnen. Für mich. Revanche? Die Pause kann ich strecken. Ein bisschen. #sprecher:gus #stimmung:laechelt
+Pause vorbei, Partie gewonnen. Für mich. #sprecher:gus #stimmung:laechelt
+Revanche? Die Pause kann ich strecken. #sprecher:gus #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("ironwood.gus")
     -> END
@@ -221,7 +222,7 @@ Pause vorbei, Partie gewonnen. Für mich. Revanche? Die Pause kann ich strecken.
 // vorteil. Vorher ging es in gus_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === gus_nach_remis ===
-Remis. Für einen Sieg hat die Pause nicht gereicht. Für keinen von uns. #sprecher:gus #stimmung:laechelt
+Remis. Für einen Sieg hat die Pause keinem von uns gereicht. #sprecher:gus #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("ironwood.gus")
     -> END

@@ -125,6 +125,9 @@ Die Unruh tickt für alle gleich. Nur nicht für mich. #sprecher:harlan #stimmun
     Er lächelt, ein wenig schief. #sprecher:erzaehler
     Deshalb spielt niemand mehr ohne Uhr mit mir. #sprecher:harlan #stimmung:nachdenklich #pause
 * [Nicken]
+    // Lektorat 19.11.2026: Der Satz trägt die nächste Wahl („Ohne Uhr, wenn Sie wollen.“).
+    Du nickst. Er lächelt, ein wenig schief. #sprecher:erzaehler
+    Deshalb spielt niemand mehr ohne Uhr mit mir. #sprecher:harlan #stimmung:nachdenklich #pause
 - -> harlan_noch_eine
 
 === harlan_noch_eine ===
@@ -223,7 +226,7 @@ Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläf
 Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
 // Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; die Uhr führt allein nach London.
 {abschiedGesehen: -> schlag}
-Ich war einmal jünger als du jetzt. Fast. #sprecher:ambrose #stimmung:laechelt
+Ich war auch einmal jung. Das ist lange her. #sprecher:ambrose #stimmung:laechelt
 Er sieht nicht zu den Fenstern. Er sieht hinauf zur Uhr. #sprecher:erzaehler
 Mein Vater baute Klaviere. Für das Holz fuhr er nach London, einmal im Jahr. Als ich zwanzig war, nahm er mich mit. #sprecher:ambrose #stimmung:nachdenklich
 Ich sollte lernen, wie man Fichte prüft. Man klopft darauf und hört zu. Ich habe nichts gehört. Ich dachte an etwas anderes. #sprecher:ambrose #stimmung:laechelt

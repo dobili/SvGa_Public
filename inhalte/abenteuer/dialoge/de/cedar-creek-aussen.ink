@@ -19,6 +19,7 @@ EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
+VAR ausgangCedarCreekClubkampf = ""
 VAR held = "Du"
 VAR clubkampfZaehlGesagt = false
 VAR erzaehlung1858Gesehen = false
@@ -198,7 +199,7 @@ Das Wort liegt zwischen euch auf dem Steg. #sprecher:erzaehler
     -- -> ende_akt1_lachen
 * [„Ich bin nicht gut genug. Noch nicht.“]
     Nein. Noch nicht. #sprecher:ambrose #stimmung:nachdenklich #pause:2
-    ** [„Aber ich werde besser. Dann spielen wir sie jetzt.“]
+    ** [„Aber ich werde besser. Und dann spielen wir sie.“]
         ~ ambroseVertrauen = ambroseVertrauen + 1
         Du weißt nicht, was du da sagst. #sprecher:ambrose #stimmung:ueberrascht
         -> ende_akt1_lachen
@@ -229,15 +230,17 @@ Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 -> END
 
 === fehler_am_steg ===
-Ich hätte dich die Partie gekostet. #sprecher:ambrose #stimmung:bitter
+// Lektorat 19.11.2026: Ohne den Moment „Lass mich“ (Partie früher gewonnen) spricht Ambrose nur von
+// dem, was er gesehen hat; nach einem Remis hat {held} niemanden geschlagen.
+{clubkampfZaehlGesagt:Ich hätte dich die Partie gekostet.|Ich habe heute ein Loch in ihrer Königsstellung gesehen. Ich habe geschwiegen.} #sprecher:ambrose #stimmung:bitter
 * [„Hast du aber nicht.“]
 * [„Ich hab gezählt. Wie du es mir beigebracht hast.“]
 - {clubkampfZaehlGesagt:Weil du gefragt hast. Ich hätte nicht gefragt. Ich habe nie gefragt.|Weil du gezählt hast. Ich hätte nicht gezählt. Ich habe nie gezählt.} #sprecher:ambrose #stimmung:nachdenklich
-Ein Loch in einer Königsstellung, und ich bin wieder siebenundzwanzig und will, dass die Treppe klatscht. #sprecher:ambrose #stimmung:bitter
+{clubkampfZaehlGesagt:Ein Loch in einer Königsstellung, und ich bin wieder siebenundzwanzig und will, dass die Treppe klatscht.|Früher hätte ich den Turm hineingeworfen, damit die Treppe klatscht.} #sprecher:ambrose #stimmung:bitter
 Du spielst nicht schön, {ambroseNenntNamen:{held}|Lehrling}. Ich sage das ohne Bosheit. #sprecher:ambrose #stimmung:nachdenklich
 Du spielst wie jemand, der ein Haus abschließt, bevor er geht. Erst die Fenster, dann die Tür. #sprecher:ambrose #stimmung:laechelt
 Zu meiner Zeit hätte ich so jemanden nicht einmal gegrüßt. #sprecher:ambrose #stimmung:laechelt
-Und du hast heute eine Frau geschlagen, gegen die ich nicht sicher wäre. #sprecher:ambrose #stimmung:stolz
+{ausgangCedarCreekClubkampf == "remis":Und du hast heute gegen eine Frau gehalten, gegen die ich nicht sicher wäre.|Und du hast heute eine Frau geschlagen, gegen die ich nicht sicher wäre.} #sprecher:ambrose #stimmung:stolz
 ->->
 
 // Runde 11 (Roman, Kapitel 14): Ambrose in der Sternennacht, nur mit dem Brett. Bereitet Port
@@ -401,6 +404,8 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     // nach Cedar Creek fährt. Er wohnt im Ort; die Fahrt hinüber am Freitag ist seine Leerfahrt.
     {not teamAngekommen: Mr. Kettering wohnt hier. Heute fährt er den Bus leer nach Maple Falls, morgen früh bringt er das Team. #sprecher:erzaehler}
 }
+// Lektorat 19.11.2026: Nach dem Gespräch mit Kettering zurück zu den Wahlen, ohne die Einleitung.
+- (wahl)
 + [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
     ~ reise("mapleFalls.park", "bushaltestelle")
@@ -513,18 +518,18 @@ Einunddreißig Jahre fahr ich diese Strecke. Jede Kurve hat einen Namen. Die mei
     Die Witwe. Nach der sieht man den Wasserfall. #sprecher:kettering #stimmung:laechelt
 + [„Wird es nicht langweilig?“]
     Die Kurven sind dieselben. Die Leute nicht. #sprecher:kettering #stimmung:laechelt
-- -> bus_zurueck
+- -> bus_zurueck.wahl
 
 === kettering_b ===
 Die Linie wird geprüft, haben sie gesagt. Was es da zu prüfen gibt, weiß ich nicht. #sprecher:kettering #stimmung:nachdenklich
 Er faltet die Zeitung zusammen. #sprecher:erzaehler
 Ich fahr sie jedenfalls, solange sie mich lassen. #sprecher:kettering #stimmung:nachdenklich
--> bus_zurueck
+-> bus_zurueck.wahl
 
 === kettering_c ===
 An der Haltestelle hängt ein neuer Fahrplan. Die Spalten sind kürzer als früher. #sprecher:erzaehler
 Mr. Kettering sieht hinüber und sagt nichts. Er nickt dir zu und lässt den Motor an. #sprecher:erzaehler
--> bus_zurueck
+-> bus_zurueck.wahl
 
 === kettering_d ===
 Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doch.“ #sprecher:erzaehler
@@ -532,7 +537,7 @@ Einunddreißig Jahre. Und ein paar Monate. Wer zählt mit? #sprecher:kettering #
 {not abschiedGesehen:
     Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
 }
--> bus_zurueck
+-> bus_zurueck.wahl
 
 // ================================================================ Runde 11: Roman, Kapitel 11
 // Kleine Geschichte der Zwillinge Ivy und Jonah Pell (Dokument 20, Cedar Creek), draußen auf der

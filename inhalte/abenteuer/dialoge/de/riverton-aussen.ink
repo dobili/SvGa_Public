@@ -95,7 +95,7 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 -> END
 
 === kanalweg_heim ===
-* [Mit dem Zug nach Hause fahren]
+* [Zum Bahnhof und mit dem Zug nach Hause]
     ~ reise("mapleFalls.wohnzimmer", "haustuer")
     -> END
 * [Noch bleiben]

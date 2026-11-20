@@ -60,6 +60,9 @@ VAR testteamBrueckeNiederlagen = 0
 
 // ---------------------------------------------------------------- Mrs. Kowalczyk
 
+VAR tiefpunktGesehen = false
+VAR ambroseSprichtWieder = false
+VAR versoehnungGesehen = false
 === kowalczyk ===
 {kowalczykGetroffen:
     {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk #stimmung:laechelt
@@ -106,7 +109,7 @@ Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #sti
 
 === joggerin_angebot ===
 Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los.“]
@@ -118,7 +121,7 @@ Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmun
 
 === joggerin_nach_niederlage ===
 Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmung:lacht
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Noch einmal.“]
@@ -222,7 +225,7 @@ Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschl
 
 === stream_angebot ===
 Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. Machst du mit? #sprecher:kiki #stimmung:laechelt
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Ich spiele mit.“]
@@ -236,7 +239,7 @@ Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. Mach
 // Partie mit Kandidatenwahl (mittel-2): Nach 1.e4 e5 2.Lc4 Sc6 3.Dh5 wählt der Chat zwischen g6, De7
 // und Sf6. Sf6 ist der Fehler: Dxf7 ist matt (Kapitel 4, Fallenkabinett).
 Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los geht's.“]
@@ -255,7 +258,7 @@ Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt 
 }
 Der Chat jubelt. Dann friert das Bild auf dem Laptop ein. Am Funkmast neben der Brücke blinkt eine rote Leuchte: „Testfeld Signal“. #sprecher:erzaehler
 Das ist jedes Mal so, wenn die da testen. Perfect Move sponsert mich. Ich frage lieber nicht, was sie testen. #sprecher:kiki #stimmung:still
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose #stimmung:nachdenklich
 }
 Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #stimmung:froh
@@ -275,7 +278,7 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
 }
 An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. #sprecher:erzaehler
 Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose #stimmung:laechelt
 }
 ~ kreide2Gefunden = true
@@ -301,7 +304,7 @@ Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß i
     -> END
 }
 Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
 }
 ~ seite04Gefunden = true
@@ -313,14 +316,14 @@ Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine g
 
 === schild_smart_city ===
 Am Fuß der Rampe steht ein Schild: „Ab hier: Smart City. Bitte Sensoren nicht verdecken.“ #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
 === werbetafel_zero ===
 Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint die Schrift: „ZERO. Nie wieder Fehler.“ #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #stimmung:nachdenklich #pause
     Ich kannte keinen Spieler, der das versprechen konnte. Nicht einmal Morphy. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -367,7 +370,7 @@ Zwölf Züge gegen Imani. Wer danach besser steht, hat gewonnen. #sprecher:zoe #
 === testteam_bruecke_niederlage ===
 Datenpunkt 19870. Danke. #sprecher:zoe #stimmung:laechelt
 {testteamBrueckeNiederlagen >= 3: -> testteam_bruecke_genug}
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Fremd ist nur der Name. Die Figuren sind dieselben. #sprecher:ambrose #stimmung:nachdenklich
 - else:
     Fremd war nur der Name. Die Figuren waren dieselben. #sprecher:erzaehler
@@ -409,3 +412,8 @@ Mehr steht da nicht. Benji zieht den Reißverschluss seiner Weste auf. #sprecher
 Und … der Chat schreibt „F“. Eine Falle hat dich erwischt. #sprecher:kiki #stimmung:lacht
 Wärm dich noch mal auf, dann gehen wir live. Ich bin hier, bis der Akku leer ist. #sprecher:kiki #stimmung:laechelt
 -> END
+
+// Lektorat 19.11.2026: Zwischen Tiefpunkt (Port Delacroix) und Céleste schweigt Ambrose auch hier;
+// wer in dieser Zeit zurückkommt, hörte ihn sonst (wie regeln/abwesenheit.ts, ambroseSprichtJetzt).
+=== function ambroseSchweigt() ===
+~ return tiefpunktGesehen and not ambroseSprichtWieder and not versoehnungGesehen

@@ -71,7 +71,7 @@ So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring
 -> END
 
 === bell_alltag ===
-{~Der Geysir hält sich an die Uhr. Pünktlicher als jeder Bus.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons? Die gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
+{~Der Geysir hält sich an die Uhr. Ich stelle meine danach.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons? Die gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
 + [„Erklär mir das Atomschach noch einmal.“]
     -> bell_regel ->
     -> END

@@ -19,6 +19,9 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL gibKarte(kennung)
 
+VAR mamaMomentGesehen = false
+VAR schraubstockGesehen = false
+VAR stimmtEsGesehen = false
 VAR held = "Du"
 VAR bigJoeGetroffen = false
 // L3 „Post für den Kapitän“ (14_Akt2_Leben_teil1, 4.3): Big Joe gibt nach Szene 39 einmal den
@@ -162,7 +165,7 @@ Um die Nadel, Kumpel? Auf meinem Stahlbrett. #sprecher:bigJoe #stimmung:laechelt
     -> END
 
 === big_joe_nach_niederlage ===
-Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:laechelt
+Festgehalten, Kumpel. Noch eine? #sprecher:bigJoe #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -259,7 +262,7 @@ Bleibst du? Wird spät. #sprecher:bigJoe #stimmung:laechelt
     -> feier
 * [„Ich gehe lieber früh.“]
     ~ feierAbgelehnt = true
-    Kluger Mensch. Morgen ist auch noch ein Tag. #sprecher:bigJoe #stimmung:laechelt
+    Morgen ist auch noch ein Tag, Kumpel. Der Schinken hält. #sprecher:bigJoe #stimmung:laechelt
     -> END
 
 === feier ===
@@ -355,33 +358,45 @@ Schmieröl ist im Schrank. #sprecher:bigJoe #stimmung:lacht
 -> END
 
 === mama_moment_angriff ===
+// Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
+{mamaMomentGesehen: -> END}
+~ mamaMomentGesehen = true
 // Gutachten L1.1: Das Bild von 2001 und „Ich hab ihn gesehen“ fallen in der Partie, unabhängig vom
 // Ausgang; als Einblendung, nicht als Aussage über die Stellung der Engine.
 Ihre Figuren rücken vor, eine nach der anderen, schön und entschlossen, auf deinen König zu. #sprecher:erzaehler
-Im dreißigsten Zug siehst du es. Ihre Dame, weit vorn. Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm will. Und dein Läufer, in der Ecke. #sprecher:erzaehler #musik:aus #bild:schraege
+Ein paar Züge später siehst du es. Ihre Dame, weit vorn. Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm will. Und dein Läufer, in der Ecke. #sprecher:erzaehler #musik:aus #bild:schraege
 Dir wird kalt. Nicht genau dieselbe Stellung. Aber dasselbe Bild. #sprecher:erzaehler #pause:2
 * [„Ambrose.“]
 - Ich sehe es. #sprecher:ambrose #stimmung:ueberrascht
 * [„Was mache ich?“]
 - Er schweigt. Der Ofen bullert. #sprecher:erzaehler #pause:2
-Du spielst Schach. Mit deiner Mutter. Sie ist nicht hergekommen, um geschont zu werden. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
-Mama hat den Turm schon berührt. Dann hält sie inne. #sprecher:erzaehler
+Du spielst Schach. Mit deiner Mutter. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
+Sie ist nicht hergekommen, um geschont zu werden. #sprecher:ambrose #stimmung:nachdenklich
+Mamas Hand schwebt schon über dem Turm. Dann hält sie inne. #sprecher:erzaehler
 Sie sieht nicht auf ihren Angriff. Ihr Blick geht die Schräge entlang, Feld für Feld, bis in deine Ecke. #sprecher:erzaehler #pause:3
-Big Joe hat die Augen zugemacht. Mama nimmt die Hand vom Turm. #sprecher:erzaehler
-Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen. #sprecher:mutter #musik:mama.vollstaendig #stimmung:hatIhnGesehen
+Big Joe hat die Augen zugemacht. Mama zieht die Hand zurück. #sprecher:erzaehler
+Ich hab ihn gesehen. Den Läufer. #sprecher:mutter #stimmung:hatIhnGesehen #musik:mama.vollstaendig
+Diesmal hab ich ihn gesehen. #sprecher:mutter #stimmung:hatIhnGesehen
 Sie hält sich mit beiden Händen an der Tischkante fest. Big Joes Augen sind nass, und es ist ihm vollkommen gleichgültig. #sprecher:erzaehler
 -> END
 
 === clubkampf_schraubstock ===
+// Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
+{schraubstockGesehen: -> END}
+~ schraubstockGesehen = true
 Er stellt eine Figur hin, und sie bleibt dort. Dann die nächste daneben. Jede hält eine von deinen fest. #sprecher:erzaehler
 Was dranhängt, kann nicht weg. #sprecher:bigJoe #stimmung:nachdenklich
-Das ist auch Schach. Kein Funken. Kein einziger. Und doch steht alles genau, wo es stehen muss. #sprecher:ambrose #stimmung:laechelt #pause
+Das ist auch Schach. Kein Funken. Kein einziger. #sprecher:ambrose #stimmung:laechelt
+Und doch steht alles genau, wo es stehen muss. #sprecher:ambrose #stimmung:laechelt #pause
 Der Brückenbauer hätte ihn gemocht. #sprecher:ambrose #stimmung:still #pause
 -> END
 
 === clubkampf_stimmt_es ===
+// Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
+{stimmtEsGesehen: -> END}
+~ stimmtEsGesehen = true
 // Gutachten L1.5: die Wahlen hintereinander, damit „Dann spiel es.“ immer fällt.
-Big Joe reibt sich das Gesicht mit beiden Händen. Als er sie wegnimmt, braucht er einen Moment, bis er das Brett wiederfindet. #sprecher:erzaehler
+{feierGesehen:Big Joe reibt sich das Gesicht mit beiden Händen. Als er sie wegnimmt, braucht er einen Moment, bis er das Brett wiederfindet.|Big Joe reibt sich das Gesicht mit beiden Händen. Dann sieht er lange aufs Brett.} #sprecher:erzaehler
 Grundreihe. Immer. #sprecher:erzaehler
 Stimmt es? #sprecher:ambrose #stimmung:nachdenklich #musik:aus #pause:2
 Diesmal fragt er. Nicht du. #sprecher:erzaehler

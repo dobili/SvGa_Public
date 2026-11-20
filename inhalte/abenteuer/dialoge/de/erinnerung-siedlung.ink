@@ -61,7 +61,7 @@ Der 38. Zug. Meine Dame muss zurück zum König. #sprecher:ambrose #stimmung:jun
 * [38. Td8+]
     Dann schlägt der Springer von c6 den Turm. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
 * [38. Dxc6]
-    Zu gierig. Der Springer von a5 schlägt die Dame zurück. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
+    Zu gierig, der Springer von a5 schlägt zurück. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
 - Sein Springer kommt herüber. 38… Sc4. #sprecher:erzaehler
 Und jetzt? #sprecher:gideon #stimmung:nachdenklich
 -> zug39
@@ -88,7 +88,7 @@ Der 40. Zug. Mein letzter. #sprecher:ambrose #stimmung:jung #pause
     ~ kerzeRichtig = kerzeRichtig + 1
     Der König schlägt zurück. #sprecher:ambrose #stimmung:jung
 * [40. Kh1]
-    Der König in die Ecke? Nein. Der König schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
+    Der König in die Ecke? Nein, er schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
 * [40. Kg1]
     Dann bleibt die Dame stehen. Der König schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
 - Der König? Der schlägt doch nicht. Der versteckt sich. #sprecher:gideon #stimmung:ueberrascht

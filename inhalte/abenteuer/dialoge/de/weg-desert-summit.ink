@@ -91,7 +91,7 @@ Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #s
 {not abschiedGesehen:
     Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
 }
-Der Fensterplatz gehört ab heute dir. Für dich jedenfalls. #sprecher:earl #stimmung:laechelt
+Der Fensterplatz gehört ab heute dir. #sprecher:earl #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel

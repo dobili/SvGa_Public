@@ -146,7 +146,7 @@ Innehalten, wenn man gleich weiterspielen will. Das habe ich nie gekonnt. Mach e
 ~ clubkampfBesprochen = nadelMapleFalls
 {ausgangMapleFallsClubkampf == "remis":
     Remis! Das war knapp. #sprecher:coachDelgado #stimmung:ueberrascht
-    Die Bronzenadel hast du. Noch einmal, wenn du willst? #sprecher:coachDelgado #stimmung:laechelt
+    Die Bronzenadel hast du. Um eine bessere spielen wir, wann du willst. #sprecher:coachDelgado #stimmung:laechelt
 - else:
     Sie legt ihren König um. Sanft, mit einem Finger. #sprecher:erzaehler #pause #musik:aus
     Abpfiff! Gute Partie! Du hast gezählt, als ich nicht gezählt habe. #sprecher:coachDelgado #stimmung:froh #klang:pfiff_finger

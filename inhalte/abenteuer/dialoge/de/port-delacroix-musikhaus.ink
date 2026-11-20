@@ -91,7 +91,7 @@ Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf ve
 Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser #stimmung:neutral
 {not abschiedGesehen:
     Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose #stimmung:nachdenklich
-    Als Kind hätte ich das Unsinn gefunden. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
+    Als Kind hätte ich das Unsinn gefunden. Mein Vater baute Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
     Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
 }
 -> blaeser_set1

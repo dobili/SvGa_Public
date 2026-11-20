@@ -61,6 +61,7 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
     Wie freundlich. Es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 * [„Wie sieht es aus?“]
     Klein, grün, mit Magnetfiguren. Daneben liegt ein Zettel mit Aufgaben, die ich nicht lösen kann. #sprecher:abernathy #stimmung:laechelt
+    Und es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 - {not abschiedGesehen: Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt}
 -> END
 

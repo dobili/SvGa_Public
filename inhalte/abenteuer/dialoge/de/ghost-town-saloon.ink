@@ -118,7 +118,9 @@ Diese Partie gehört euch. Kein Wort von mir. #sprecher:ambrose #stimmung:laeche
 
 === fernpartie_wie_er ===
 Seine Springer decken einander, jagen deinen Turm fort, und sobald er fort ist, rückt ein Bauer nach. Eine Brücke aus zwei Pferden. #sprecher:erzaehler
-Er spielt wie er. Genau wie er. Nichts Überflüssiges. #sprecher:ambrose #stimmung:still
+Ambrose hat versprochen zu schweigen. Jetzt flüstert er doch, mehr zu sich als zu dir. #sprecher:erzaehler
+Er spielt wie er. Genau wie er. #sprecher:ambrose #stimmung:still
+Nichts Überflüssiges. #sprecher:ambrose #stimmung:still
 -> END
 
 === fernpartie_zaehlen ===

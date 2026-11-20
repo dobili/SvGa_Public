@@ -63,7 +63,7 @@ Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Gr
 Sie lässt dich mitspielen. Nach sechs Zügen weißt du nicht mehr, wo dein Läufer steht. #sprecher:erzaehler #musik:blindschach
 // Nach dem Abschied (abschiedGesehen) sieht Ambrose nicht mehr für {held}: {held} findet den Läufer selbst.
 {abschiedGesehen:
-    Du schließt die Augen. c4. Dort steht er, seit dem dritten Zug. #sprecher:erzaehler
+    Du schließt die Augen und spielst die Züge im Kopf zurück. c4. #sprecher:erzaehler
     -> ansage
 }
 c4. Er steht auf c4. Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt

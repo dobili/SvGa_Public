@@ -27,7 +27,10 @@ VAR abschiedGesehen = false
 // (Klangplan S36, `mama`), das am leeren Blatt nach vier Tönen abbricht. Das Heft gibt sie im
 // selben Besuch (oma_ruth_heft); wer früher schon hier war, bekommt es beim nächsten Mal.
 {fotoGefunden and not turnierheftBekommen: -> oma_ruth_heft}
-{fotoGefunden and not mamaFotoGesehen: -> oma_ruth_heft.heimfahrt}
+{fotoGefunden and not mamaFotoGesehen:
+    Der Abendbus fährt gleich. Zeig ihr das Foto. #sprecher:omaRuth #stimmung:laechelt
+    -> oma_ruth_heft.heimfahrt
+}
 {fotoGefunden:
     {~Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat.|Ich hab ihr Zimmer so gelassen, falls sie mal wieder schlafen will.|Du bist schon wieder gewachsen. Das gehört verboten.} #sprecher:omaRuth #stimmung:laechelt
     -> END

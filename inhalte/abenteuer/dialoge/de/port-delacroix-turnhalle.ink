@@ -28,6 +28,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 
+VAR batisteGetroffen = false
 VAR leimAuftrag = false
 VAR tiefpunktGesehen = false
 VAR ambroseSprichtWieder = false
@@ -250,7 +251,7 @@ Spielst du ein Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dollar
 // Schutzengel (Szene 69).
 ~ simultanGedankt = true
 Jedes Kind legt einen Dollar in die Blechdose. Am dritten Brett verliert Remy knapp, legt seinen Dollar hinein und bleibt sitzen. #sprecher:erzaehler
-Ich hab dich beobachtet. Die ganze Woche. Mit dem Karren. Bei Batiste. #sprecher:remy #stimmung:still
+{batisteGetroffen:Ich hab dich beobachtet, die ganze Woche. Mit dem Karren, bei Batiste.|Ich hab dich beobachtet, die ganze Woche. Mit dem Karren.} #sprecher:remy #stimmung:still
 Du redest mit dem Brett. Ich weiß nicht, warum. Aber du spielst allein. #sprecher:remy #stimmung:nachdenklich
 Tut mir leid. Die mit dem Glas haben uns Bildschirme gebracht, als wir Decken gebraucht haben. #sprecher:remy #stimmung:nachdenklich
 * [„Du hattest nicht ganz unrecht. Den Zug fand ich nicht.“]
@@ -285,7 +286,7 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
     ~ beginneAufgaben("portDelacroix.reiheRemy")
     -> END
 + [„Nicht jetzt.“]
-    Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Flüstern. #sprecher:remy #stimmung:bitter
+    Dann nicht. Ich übe solange Tonleitern. #sprecher:remy #stimmung:bitter
     -> END
 
 === remy_erst_odile ===
@@ -411,7 +412,7 @@ Lou hat auch Aufgaben. Mit Plänen. Hör ihr zu, sie redet schnell. #sprecher:re
 - ausgangPortDelacroixClubkampf == "remis":
     Remis. Zwei Stimmen, ein Akkord. Deine Nadel bleibt. #sprecher:odile #stimmung:neutral
 - ausgangPortDelacroixClubkampf == "niederlage":
-    Diesmal nicht. Deine Nadel bleibt. Hör auf den Takt, dann kommt die nächste. #sprecher:odile #stimmung:laechelt
+    Diesmal nicht. Hör auf den Takt, dann kommt die nächste Nadel. #sprecher:odile #stimmung:laechelt
 - else:
     -> odile
 }

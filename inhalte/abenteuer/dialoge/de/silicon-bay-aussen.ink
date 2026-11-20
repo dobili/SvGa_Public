@@ -43,6 +43,9 @@ VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Ankunft
 
+VAR tiefpunktGesehen = false
+VAR ambroseSprichtWieder = false
+VAR versoehnungGesehen = false
 === ankunft_zu_fuss ===
 {ankunftSiliconBayGesehen:
     Die Glasbrücke endet am Campus von Silicon Bay. Kein Baum, kein Vogel, nur Glas. #sprecher:erzaehler
@@ -116,13 +119,13 @@ Tick, tack. Spielen wir? #sprecher:dash #stimmung:laechelt #musik:rosie
     ~ beginnePartie("siliconBay.dash")
     -> END
 * [„Nach dem Essen.“]
-    Denkst du noch oder verlierst du schon? Ich bin hier. #sprecher:dash #stimmung:laechelt
+    Iss schnell. Ich bin hier. #sprecher:dash #stimmung:laechelt
     -> END
 
 === dash_nach_niederlage ===
 Burrito für mich! Denkst du noch oder verlierst du schon? #sprecher:dash #stimmung:lacht #musik:rosie
 Es ist, als spielte man neben einem Radio. Du hast zugehört. #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Revanche.“]
@@ -182,7 +185,7 @@ Das kann man nicht messen. #sprecher:victor #stimmung:nachdenklich
 
 === rosie ===
 {rosieGetroffen:
-    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|Pass auf dich auf in der Akademie.} #sprecher:rosie #stimmung:laechelt #musik:rosie
+    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|{nadelSiliconBay > 0:Glas an der Jacke, und trotzdem hungrig?|Pass auf dich auf in der Akademie.}} #sprecher:rosie #stimmung:laechelt #musik:rosie
     -> rosie_laden
 }
 ~ rosieGetroffen = true
@@ -201,7 +204,7 @@ Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie #
 === hotel ===
 {
 - nadelSiliconBay == 0:
-    Das Hotel der Akademie. Dein Zimmer ist im zwölften Stock. Schlafen kannst du nach dem Turnier. #sprecher:erzaehler
+    Das Hotel der Akademie. Dein Zimmer ist im zwölften Stock. Schlafen kannst du nach der Partie gegen Dr. Lin. #sprecher:erzaehler
     -> END
 - tabletNachtGesehen:
     Im Hotelzimmer liegt das Tablet neben dem Brett. Der Bildschirm ist dunkel. #sprecher:erzaehler
@@ -269,11 +272,11 @@ Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #spre
 {nadelSiliconBay > 0:
     Am Kai liegt die Küstenfähre nach Süden. Zwei Tage bis nach Port Delacroix. #sprecher:erzaehler
     {not bugGesehen: Mama ist mit dem Nachtbus gekommen und steht an der Gangway, die Tasche über der Schulter. Das Notzelt in Port Delacroix braucht Hände, und sie hat zwei. #sprecher:erzaehler}
-    {not abschiedGesehen:
+    {not bugGesehen and not abschiedGesehen and not ambroseSchweigt():
         Port Delacroix. Ich kenne diesen Namen. Ich kenne ihn sehr gut. #sprecher:ambrose #stimmung:traurig
     }
 - else:
-    Am Kai liegt eine Fähre nach Süden. „Erst das Turnier“, steht auf deinem Zettel. #sprecher:erzaehler
+    Am Kai liegt eine Fähre nach Süden. „Erst die Clubnadel“, steht auf deinem Zettel. #sprecher:erzaehler
     Erst die Akademie, {held}. Dann die Reise. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
@@ -299,13 +302,13 @@ Heute ist nicht Sonntag. Unter der Woche fahr ich nur Leute, die man hier kennt.
 
 === werbetafel ===
 Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie wieder Fehler.“ #sprecher:erzaehler
-{abschiedGesehen: -> END}
+{abschiedGesehen or ambroseSchweigt(): -> END}
 {tabletNachtGesehen: Ambrose sieht lange hin. Er sagt nichts dazu. #sprecher:erzaehler|Nie wieder Fehler. Das ist ein großes Versprechen. #sprecher:ambrose #stimmung:nachdenklich}
 -> END
 
 === netze ===
 An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etwas. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
@@ -332,8 +335,12 @@ Der Eisenwarenladen riecht nach Öl und Holz. Hinter der Theke sortiert ein alte
 „Das Leuchtfeuer? Das hat seit Jahren keiner mehr gewartet. Die Leute auf dem Campus wissen nicht mal, dass es da draußen steht.“ #sprecher:erzaehler
 ~ batterieErhalten = true
 Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für genau so einen Tag aufgehoben. Nimm sie.“ #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein Licht für die Insel. Manche Züge macht man für andere. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
+// Lektorat 19.11.2026: Zwischen Tiefpunkt (Port Delacroix) und Céleste schweigt Ambrose auch hier;
+// wer in dieser Zeit zurückkommt, hörte ihn sonst (wie regeln/abwesenheit.ts, ambroseSprichtJetzt).
+=== function ambroseSchweigt() ===
+~ return tiefpunktGesehen and not ambroseSprichtWieder and not versoehnungGesehen

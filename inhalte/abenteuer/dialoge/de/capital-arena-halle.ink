@@ -100,7 +100,7 @@ VAR pauseNachRunde2Gesehen = false
     Das Turnier ist gespielt. Die Tafel bleibt bis morgen hängen. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 - else:
-    Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:neutral
+    {vorDemFinaleGesehen:Das Finale spielst du auf der Bühne. Victor sitzt schon im Lichtkreis.|Das Finale spielst du auf der Bühne. Victor wartet im Gang.} #sprecher:turnierleiterin #stimmung:neutral
     -> END
 }
 
@@ -316,7 +316,9 @@ Dann erfahre ich, dass du mich nicht gebraucht hast. Das wäre auch ein schöner
 === halbfinale_turm ===
 {zugerratenTurm:Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König.|Du siehst etwas. Keine Rettung. Da ist ein Zug. Er sieht falsch aus, und dahinter ist sein König.} #sprecher:erzaehler #musik:aus
 Du zählst Angreifer und Verteidiger. Dann suchst du den stillen Zug für ihn. Gibt es einen? Es ist zu tief. #sprecher:erzaehler
-+ [„Ambrose.“]
+// Lektorat 19.11.2026: „Ein einziges Mal. Heute.“ In der Wiederholungspartie ruft man ihn nicht noch einmal.
+{ambroseImHalbfinaleGerufen: Ambrose steht hinter dir. Einmal hast du ihn gerufen. Diesmal zählst du allein. #sprecher:erzaehler}
++ {not ambroseImHalbfinaleGerufen} [„Ambrose.“]
     ~ ambroseImHalbfinaleGerufen = true
     -> halbfinale_zusammen
 + [Allein prüfen]

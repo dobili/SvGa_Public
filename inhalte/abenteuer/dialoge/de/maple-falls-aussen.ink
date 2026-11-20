@@ -20,6 +20,7 @@
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL reise(karte, ausloeser)
 
+VAR junoAnDerSchultuer = false
 VAR nadelRiverton = 0
 VAR einladungGesehen = false
 VAR ausgangMapleFallsErsteLektion = ""
@@ -80,7 +81,7 @@ Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
     Ich auch nicht. Ich verliere meistens. Es stört mich nicht. #sprecher:juno #stimmung:laechelt
 - Sie klopft auf das Heft. #sprecher:erzaehler
 Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
-Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno #stimmung:laechelt
+{junoAnDerSchultuer:Raum 12 im Erdgeschoss. Komm, ich bring dich hin.|Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede.} #sprecher:juno #stimmung:laechelt
 {not abschiedGesehen:
     Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
 }
@@ -94,6 +95,7 @@ Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno #stimmung
 === schultuer ===
 {junoGetroffen or clubBeigetreten: -> END}
 Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle nebenan. Du drehst dich um. #sprecher:erzaehler
+~ junoAnDerSchultuer = true
 -> juno_trifft
 
 === juno_zum_club ===

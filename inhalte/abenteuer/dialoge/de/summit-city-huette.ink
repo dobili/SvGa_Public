@@ -103,7 +103,7 @@ Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein sc
 Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, hat das Nachsehen. Warum? #sprecher:ward #stimmung:nachdenklich
 * [„Weil er weichen muss. Dann kommt der andere vorbei.“]
 * [„Ich weiß es nicht.“]
-    Ehrlich. Gut. Wer ziehen muss, muss zur Seite. Und dann kommt der andere vorbei. #sprecher:ward #stimmung:laechelt
+    Ehrlich ist gut. Schau, wer hier zuerst zur Seite muss. #sprecher:ward #stimmung:laechelt
 - Opposition. Wer zuerst ziehen muss, gibt nach. Wie im Leben, manchmal. #sprecher:ward #stimmung:nachdenklich
 Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden. Hier nicht. #sprecher:ward #stimmung:nachdenklich
 Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
@@ -136,7 +136,7 @@ Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
 -> END
 
 === ward_victor_fort ===
-Er ist noch nicht zurück. Ich renne keinem nach, du vielleicht schon. #sprecher:ward #stimmung:laechelt
+Er ist noch nicht zurück. Du weißt, wohin er gelaufen ist. #sprecher:ward #stimmung:laechelt
 Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward #stimmung:nachdenklich
 -> END
 
@@ -302,15 +302,21 @@ Die meisten Leute reden mit sich selbst, wenn sie Schach lernen. Du hörst dabei
 
 = zettel
 Zwischen den Seiten steckt ein Zettel in fremder Schrift. Züge aus einer alten Fernpartie, vier Paare. Ward weiß nicht, woher er kommt. #sprecher:erzaehler
-{abschiedGesehen:
-    Du kennst die Züge. Es ist seine Partie gegen Hale. #sprecher:erzaehler #pause
+{
+- abschiedGesehen:
+    Du kennst die Züge. Es ist Ambroses Partie gegen Hale. #sprecher:erzaehler #pause
+// Lektorat 19.11.2026: Wer das Heft erst später spielt („Ein andermal.“), kennt b5 schon, und das
+// Drachenfest ist vorbei.
+- victorSeiteGegeben:
+    Die vier Züge vor b5. Meine Partie gegen Hale. #sprecher:ambrose #stimmung:nachdenklich #pause
 - else:
     Das ist meine Partie gegen Hale. #sprecher:ambrose #stimmung:ueberrascht #pause
 }
 * [Hinaussehen]
-- Unten im Tal steigt ein Feuerwerk auf, grün, in der Form von etwas mit Flügeln. #sprecher:erzaehler
-{not abschiedGesehen:
-    Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
+- {victorKriseGesehen:Unten im Tal hängen noch die Laternen vom Fest.|Unten im Tal steigt ein Feuerwerk auf, grün, in der Form von etwas mit Flügeln.} #sprecher:erzaehler
+{not abschiedGesehen and not victorKriseGesehen:
+    Ein Drache auf dem Brett. Dame und Springer in einer Figur. #sprecher:ambrose #stimmung:lacht
+    Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 
@@ -381,7 +387,7 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
     ~ beginneAufgaben("summitCity.reiheKit")
     -> END
 + [„Nicht jetzt.“]
-    Der Bauer wartet. Er ist geduldig. Ich nicht. #sprecher:kit #stimmung:lacht
+    Der Bauer wartet geduldig. Ich nicht. #sprecher:kit #stimmung:lacht
     -> END
 
 === kit_alltag ===
@@ -421,7 +427,7 @@ Die Brücke hast du gebaut. Und bist hinübergekommen. #sprecher:haraldsen #stim
 // Ward nicht kennt, hält sie eine Nacht wach. Haraldsen bietet sie an; der Held entscheidet.
 === haraldsen_studie ===
 {studieAngeboten:
-    Die Studie steckt noch in meinem Mantel. Sie wird nicht jünger. Ich auch nicht. #sprecher:haraldsen #stimmung:laechelt
+    Die Studie steckt noch in meiner Brusttasche. Sie wird nicht jünger, ich auch nicht. #sprecher:haraldsen #stimmung:laechelt
 - else:
     ~ studieAngeboten = true
     Haraldsen klopft auf die Brusttasche seiner Uniform. Es knistert. #sprecher:erzaehler
@@ -432,7 +438,7 @@ Die Brücke hast du gebaut. Und bist hinübergekommen. #sprecher:haraldsen #stim
 + [„Ich bring sie ihr.“]
     -> haraldsen_studie_mit
 + [„Lieber nicht.“]
-    Recht so. Man weckt keine Großmeisterin. Auch nicht mit Papier. #sprecher:haraldsen #stimmung:laechelt
+    Recht so. Man weckt keine Großmeisterin, auch nicht mit Papier. #sprecher:haraldsen #stimmung:laechelt
     -> END
 
 === haraldsen_studie_mit ===

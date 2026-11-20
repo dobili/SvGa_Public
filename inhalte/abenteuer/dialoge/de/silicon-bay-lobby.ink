@@ -32,6 +32,9 @@ VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Victor
 
+VAR tiefpunktGesehen = false
+VAR ambroseSprichtWieder = false
+VAR versoehnungGesehen = false
 === victor ===
 {
 - not victorLobbyGetroffen: -> victor_erstes_treffen
@@ -102,7 +105,7 @@ Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victo
 ~ roboterGetroffen = true
 Ein Roboter mit freundlichem Bildschirmgesicht rollt heran. #sprecher:erzaehler
 Willkommen bei Perfect Move. Wir machen Menschen besser. Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
@@ -121,7 +124,7 @@ Daneben eine Zeichnung, braun vom Alter, lauter Dreiecke. Du erkennst sie, bevor
 Auf einem Pult ein Notizbuch. Schachzüge in zwei Spalten, jeder Buchstabe wie mit dem Lineal gezogen. #sprecher:erzaehler
 Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. #sprecher:erzaehler #musik:aus #geraeusch:aus
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: gleich weiter mit Victor.
-{abschiedGesehen: -> seite_fehlt}
+{abschiedGesehen or ambroseSchweigt(): -> seite_fehlt}
 * [Warten]
 - Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
 Das sind meine Züge. Die linke Spalte. Jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
@@ -131,7 +134,7 @@ Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:tra
 
 = seite_fehlt
 Mein Vater sagt, die Seite war schon immer weg. #sprecher:victor #stimmung:nachdenklich
-{not abschiedGesehen:Victor hat Ambrose nicht gehört. }Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
+{(not abschiedGesehen and not ambroseSchweigt()):Victor hat Ambrose nicht gehört. }Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
 * [„Wer hat das geschrieben?“]
     -> vitrine_victor
 
@@ -146,9 +149,13 @@ Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. 
 === vitrine_foto ===
 ~ notizbuchseiteFotografiert = true
 {tabletNachtGesehen:Du machst ein Foto für Juno.|Juno macht ein Foto.} Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
     Er hat sie aufgehoben. Meine Züge. In einem Buch. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 
+// Lektorat 19.11.2026: Zwischen Tiefpunkt (Port Delacroix) und Céleste schweigt Ambrose auch hier;
+// wer in dieser Zeit zurückkommt, hörte ihn sonst (wie regeln/abwesenheit.ts, ambroseSprichtJetzt).
+=== function ambroseSchweigt() ===
+~ return tiefpunktGesehen and not ambroseSprichtWieder and not versoehnungGesehen

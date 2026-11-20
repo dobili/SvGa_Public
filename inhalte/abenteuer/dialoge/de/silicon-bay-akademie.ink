@@ -249,7 +249,7 @@ Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #spre
 === theo_serverraum ===
 ~ serverraumOffen = true
 Du hast dir die Berichte angesehen. #sprecher:theo #stimmung:nachdenklich
-Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Wozu auch, hier wird alles gefilmt. #sprecher:theo #stimmung:nachdenklich
+Die Rohdaten liegen unten im Serverraum. Da schließt keiner ab, hier wird ja alles gefilmt. #sprecher:theo #stimmung:nachdenklich
 -> END
 
 === theo_alltag ===
@@ -328,7 +328,7 @@ Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
 - ausgangSiliconBayClubkampf == "remis":
     Remis. Ein sauberes Ergebnis, aber keine neue Nadel. #sprecher:lin #stimmung:neutral
 - ausgangSiliconBayClubkampf == "niederlage":
-    Diesmal ich. Deine Nadel bleibt dir. Komm wieder, wenn du eine neue Eröffnung probieren willst. #sprecher:lin #stimmung:laechelt
+    Diesmal ich. Komm wieder, wenn du eine neue Eröffnung probieren willst. #sprecher:lin #stimmung:laechelt
 - else:
     -> lin
 }

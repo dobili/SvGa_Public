@@ -77,7 +77,7 @@ Ich will einmal verlieren dürfen. Einfach so. Ohne dass jemand nachrechnet. Ohn
     -> victor_angebot
 
 === victor_angebot ===
-Ich bleib hier. Hier oben ruft keiner an. Kein Netz. #sprecher:victor #stimmung:nachdenklich
+Ich bleib hier. Hier oben ruft keiner an, kein Netz. #sprecher:victor #stimmung:nachdenklich
 + [Junos Reisebrett aus der Jacke holen]
     -> victor_spielen
 + [„Gleich.“]
@@ -196,7 +196,7 @@ Am Seil gleitet eine Gondel hinunter und taucht ins Weiß, als ginge sie unter. 
 Das ist schlecht. Warum hab ich das gemacht? #sprecher:victor #stimmung:ueberrascht
 + [„Weiß ich nicht. Wie fühlt es sich an?“]
 - Er denkt nach, ernsthaft, mit schiefem Kopf. #sprecher:erzaehler
-Komisch. Luftig. #sprecher:victor #stimmung:lacht
+Komisch. Luftig. #sprecher:victor #stimmung:laechelt
 -> END
 
 // Gutachten M2.9: Victors erstes Lachen bei einer Gabel in der freien Partie (Merkmal gabel).
@@ -204,6 +204,7 @@ Komisch. Luftig. #sprecher:victor #stimmung:lacht
 {victorGelacht: -> END}
 ~ victorGelacht = true
 Victor starrt auf das Brett. Und dann lacht er. #sprecher:erzaehler #musik:aus
-Eine Gabel. Eine ganz gewöhnliche Gabel! Ich hab die nicht gesehen! #sprecher:victor #stimmung:lacht
+Eine Gabel. Eine ganz gewöhnliche Gabel! #sprecher:victor #stimmung:lacht
+Ich hab die nicht gesehen! #sprecher:victor #stimmung:lacht
 Das ist so dumm. Das ist so schön dumm. #sprecher:victor #stimmung:lacht
 -> END

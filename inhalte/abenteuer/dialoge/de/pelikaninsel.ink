@@ -27,7 +27,8 @@ VAR finchBauerHGezaehlt = false
     -> END
 }
 ~ delphineGetroffen = true
-Delphine. Ich fische hier, seit ich laufen kann. Empfang gibt es keinen, das Internet kommt nicht über das Wasser. Uns fehlt nichts. #sprecher:delphine #stimmung:laechelt
+{leuchtfeuerAuftrag:Ich bin übrigens Delphine.|Delphine.} Ich fische hier, seit ich laufen kann. #sprecher:delphine #stimmung:laechelt
+Empfang gibt es keinen, das Internet kommt nicht über das Wasser. Uns fehlt nichts. #sprecher:delphine #stimmung:laechelt
 -> END
 
 === old_pete ===

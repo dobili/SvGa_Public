@@ -157,6 +157,88 @@ einer Revanche, Gus, Joggerin und Sol nach einem Remis. Hier kam noch dazu:
   weil er „Lehrling“ meint. Der Lektor von Akt 4 hält es dort für einen Rückfall. Die Stelle ist
   unverändert, auch weil der Oberflächentest den Satz prüft.
 
+## Zweiter Durchgang (20.11.2026): Startwert 3, nicht gewählte Antworten, nie erreichte Dialoge
+
+Startwert 3 erreicht dieselben Dialoge wie 1 und 2. Nur 25 Einstiege kommen in keiner Lesefassung
+vor, meist Momente während einer Partie. Deshalb lasen vier Lektoren die Zweige der nicht gewählten
+Antworten (Akt 1: 159 Stellen, Akt 2: 87, Akt 3: 57, Akt 4: 75), ein fünfter die 25 Einstiege.
+
+### Behoben
+
+| Art | Stelle                                                                            | Vorher                                                                                                                                                           | Nachher                                                                                                               |
+| --- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| V   | Ambrose in Silicon Bay, auf der Glasbrücke und auf der Fähre (vier Dateien)       | sprach, wenn man zwischen Tiefpunkt und Céleste zurückkam                                                                                                        | schweigt dort wie in Port Delacroix (`ambroseSchweigt()` in jeder Datei, wie regeln/abwesenheit.ts)                   |
+| V   | cedar-creek-bibliothek.okafor_nadel                                               | Pfiff des Coachs und Junos „Geh nur zum Steg“ nur bei Bronze                                                                                                     | bei jeder ersten Nadel                                                                                                |
+| V   | cedar-creek-aussen.fehler_am_steg                                                 | „Ich hätte dich die Partie gekostet“ auch ohne den Moment „Lass mich“; „geschlagen“ nach Remis                                                                   | ohne Moment: „Ich habe heute ein Loch in ihrer Königsstellung gesehen. Ich habe geschwiegen.“; nach Remis „gehalten“  |
+| D   | Momente Stimmt es, Schraubstock, Odum, Sturm, Mamas Läufer                        | in jeder Revanche wieder                                                                                                                                         | einmal (je eine VAR)                                                                                                  |
+| D,V | Halbfinale: Ambrose rufen                                                         | in der Wiederholungspartie ein zweites Mal („Ein einziges Mal. Heute.“)                                                                                          | nur einmal; danach „Einmal hast du ihn gerufen. Diesmal zählst du allein.“                                            |
+| V   | Okafor nach dem Bauern-Moment                                                     | „Du hast sie alle gesehen.“, auch wenn man den Bauern wollte                                                                                                     | „Den Bauern wolltest du. Danach hast du hingesehen, und das zählt.“                                                   |
+| Z,R | Mira, Moment „Atme“                                                               | „was du gestern gesagt hast“ (keine Nacht dazwischen); „Dein Läufer“ in jeder Partie; fünf Sätze                                                                 | „was du über das Opfer gesagt hast“; zwei Zeilen ohne Läufer                                                          |
+| Z   | Victor, Moment „Luftig“                                                           | lacht vor seinem ersten Lachen                                                                                                                                   | lächelt                                                                                                               |
+| Z   | London, Kellner und Zeitungsleser nach dem Schlussbild                            | „Leise bitte, sie spielen“                                                                                                                                       | eigene Zeilen nach der Partie; „Herr Anderssen ist aus Breslau“ → „Der große Herr in der Mitte ist Lehrer, sagt man.“ |
+| Z   | Mama, Moment am Läufer                                                            | „Im dreißigsten Zug“ (kommt ab Zug 28); „hat den Turm schon berührt“ und zieht ihn nicht (berührt, geführt)                                                      | „Ein paar Züge später“; „Mamas Hand schwebt schon über dem Turm“                                                      |
+| Z   | Schultür in Maple Falls                                                           | „Nach der Schule, Raum 12“, dann steht man sofort in Raum 12                                                                                                     | „Raum 12 im Erdgeschoss. Komm, ich bring dich hin.“                                                                   |
+| T   | Ghost Town, Fernpartie                                                            | Ambrose spricht nach „Kein Wort von mir“                                                                                                                         | Erzählzeile davor: „Jetzt flüstert er doch, mehr zu sich als zu dir.“                                                 |
+| D   | Big Joe nach der Niederlage                                                       | „Was dranhängt, kann nicht weg“ direkt nach dem Moment                                                                                                           | „Festgehalten, Kumpel.“                                                                                               |
+| D   | Kettering → Bushaltestelle                                                        | Einleitung der Haltestelle zweimal im selben Gespräch                                                                                                            | zurück zu den Wahlen                                                                                                  |
+| D,Z | Dachboden: „Lieber nicht anfassen“, „wegrennen“                                   | Einleitung sofort noch einmal; nach dem Wegrennen sofort „Du gehst zurück und hebst ihn auf“                                                                     | zurück zur Wahl; Wegrennen beendet das Gespräch                                                                       |
+| V   | Bibliothekar (Park)                                                               | Ambrose „Ein Mann, der Stellungen aufhebt“ ohne Stellung                                                                                                         | Abernathy erwähnt die Stellung                                                                                        |
+| Z   | Akt 1 Ende, Steg                                                                  | „Dann spielen wir sie jetzt.“ nach „Noch nicht.“                                                                                                                 | „Und dann spielen wir sie.“                                                                                           |
+| Z   | Diner-Abend                                                                       | zeigt auf die Pommes, bevor sie kommen                                                                                                                           | auf die Musikbox                                                                                                      |
+| D   | Aufbruch, Mama                                                                    | „Am Fluss“ ohne Fluss; Matten doppelt                                                                                                                            | „Es gibt sogar Matten.“, „Mit Juno. Gut.“                                                                             |
+| T   | Coach nach Bronze                                                                 | „Noch einmal, wenn du willst?“ ohne Wahl                                                                                                                         | „Um eine bessere spielen wir, wann du willst.“                                                                        |
+| D,V | Dime                                                                              | stellte sich nach „Nicht jetzt“ neu vor                                                                                                                          | „Da bist du ja wieder. Die Uhr steht noch.“                                                                           |
+| D   | Slick nach Niederlage                                                             | Applaus vom Sonntag bei jedem Ansprechen                                                                                                                         | einmal                                                                                                                |
+| V   | Mama, „Den Zettel umdrehen“                                                       | „Sie hat nicht gesagt, dass du nicht hindarfst.“; Ambrose zitiert „Turnier“                                                                                      | „Nein zum Zettel, denkst du. Nein zum Turnier.“; „Nicht zum Turnier, sagst du.“                                       |
+| D   | Harlan, Antwort „Nicken“                                                          | sein Satz fehlte, die nächste Wahl antwortete ins Leere                                                                                                          | Satz in beiden Zweigen                                                                                                |
+| D   | Oma Ruth, „Noch bleiben“                                                          | Wahlen ohne Zeile davor                                                                                                                                          | „Der Abendbus fährt gleich. Zeig ihr das Foto.“                                                                       |
+| Z   | Ambrose an der Bahnhofsuhr                                                        | „Ich war einmal jünger als du jetzt“ (er war zwanzig)                                                                                                            | „Ich war auch einmal jung. Das ist lange her.“                                                                        |
+| Z,D | Ray, Big Joe (Feier abgelehnt), „Kluger Mensch“, Treidelpfad-Zug                  | voller Pavillon; Müdigkeit ohne Feier; Gus' Satz; Zug am Treidelpfad                                                                                             | eigene Zeilen; „Zum Bahnhof und mit dem Zug nach Hause“                                                               |
+| Z,V | Ward: Heft „Ein andermal.“                                                        | später: Ambrose überrascht von b5, Feuerwerk Wochen zu spät                                                                                                      | eigene Zeilen nach Victors Seite und nach dem Fest                                                                    |
+| Z   | Turnierleiterin nach „Gleich.“ vor dem Finale                                     | „Victor wartet im Gang“, er sitzt schon auf der Bühne                                                                                                            | „Victor sitzt schon im Lichtkreis.“                                                                                   |
+| Z   | Epilog-Zettel                                                                     | „steile Schrift“ (Margarets)                                                                                                                                     | „schräge Schrift“ (Ambroses)                                                                                          |
+| D   | Kreidenacht, Bell, Ward, Greta, Mo, Fußnote am Lagerfeuer                         | doppelte Sätze und Beschreibungen                                                                                                                                | eigene Zeilen                                                                                                         |
+| Z   | Silicon Bay: „nach dem Turnier“, Rosie, Dash, Okoro, Delphine, Céleste, Remy, Dot | Turnier, das es nicht gibt; Akademie-Sätze nach der Nadel; Delphine spricht vor der Vorstellung; Céleste kommt herein, obwohl sie da sitzt; Batiste ohne Treffen | passende Zeilen                                                                                                       |
+| R   | rund 25 Zeilen mit drei oder mehr Sätzen                                          |                                                                                                                                                                  | geteilt oder gekürzt                                                                                                  |
+
+### Offen, an den Hauptchat
+
+Muster „Nach ‚Nicht jetzt‘ spielt die Szene beim nächsten Ansprechen ganz von vorn“. Die App beginnt
+jeden Dialog neu, deshalb braucht jede Stelle eine eigene VAR. Nicht mehr umgesetzt:
+
+- London: Telegraf nach „Noch bleiben“ und der Läuferzug am Schachtisch
+- Bahnhofsuhr in Riverton
+- Big Joes Clubkampf-Ansage
+- Nova in Runde 3
+- Victors Taschen vor dem Finale
+- Seilbahn-Wärter
+- Mabels Lob nach Set 1
+- Miss Odiles Hallenszene
+- Victors Speicherstift
+- Célestes Angebot
+- Miras Clubkampf
+- Werkbank-Erinnerung („zum ersten Mal seit fünf Tagen“)
+
+Weitere Stellen:
+
+- Juno spricht nach ihrer Abreise an der Raststätte
+- Mama auf späteren Überfahrten (Ruiz, Delfin)
+- „Netze“ in Silicon Bay bei jedem Besuch
+- Lin nach abgebrochener Revanche
+- Mo „jeden Donnerstag“ in derselben Nacht
+- Junos Rad im Alltag
+
+Zur Entscheidung:
+
+- Bus von Cedar Creek nach Maple Falls schon am Freitag, die Vorhut schläft doch in der Bibliothek
+- In Akt 1 gibt es noch etwa 265 kurze Sprechzeilen mit drei Sätzen („Noch mal?“). Sollen sie auch geteilt werden?
+- Ghost Town „Ich weiß.“ übergeht die Wahl
+
+Kartenbau:
+
+- Mama wartet nach abgebrochener Einleitung nicht draußen; Bedingung der Figur `mapleFalls.mutterAussen`
+- Die Wege testteam_tor öffnen sich durch dieselbe Bedingung wie der Dialog
+
 ## Nur durch die Simulation, kein Textfehler
 
 Mehrere Abende mit Ambrose hintereinander, doppelte Gespräche beim zweiten Ansprechen,

@@ -17,6 +17,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR dimeGetroffen = false
 VAR wegRivertonIronwoodTafelBestanden = false
 VAR daleGetroffen = false
 VAR zahnradGefunden = false
@@ -265,6 +266,12 @@ Das Wort ist „Td8“. #sprecher:erzaehler
 {ausgangWegRivertonIronwoodDime != "":
     -> nach_der_partie
 }
+// Lektorat 19.11.2026: Nach „Nicht jetzt“ stellt er sich nicht noch einmal vor.
+{dimeGetroffen:
+    Da bist du ja wieder. Die Uhr steht noch. #sprecher:dime #stimmung:laechelt
+    -> spielen
+}
+~ dimeGetroffen = true
 „Td8“? Richtig. Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. Fast nie. #sprecher:dime #stimmung:lacht
 {gefundenSpurPM1:
     Über dem Kanal surrt die Drohne und dreht sich zum Tisch. #sprecher:erzaehler

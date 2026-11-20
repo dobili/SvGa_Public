@@ -37,7 +37,7 @@ Eine Frau mit Kreide an den Fingern steht auf einer Bank und klatscht in die Hä
 Mo. Willkommen in der Nacht der Kreidespringer. Drei Runden Blitz, drei Minuten, zwei Sekunden Zuschlag. Gewinnen ist schön, mitspielen ist Pflicht. #sprecher:mo #stimmung:laechelt
 Alle sind hier: die von der Brücke, von der Raststätte, aus dem Diner, aus den Wäldern. #sprecher:mo #stimmung:laechelt
 {testteamStand >= 3:
-    Am hinteren Tisch sitzen drei, die du kennst. Ohne Westen, ohne Tablets. Benji verliert gerade und lacht. #sprecher:erzaehler
+    Am hinteren Tisch sitzen Zoe, Imani und Benji. Benji verliert gerade und lacht. #sprecher:erzaehler
 }
 -> mo_runde1
 
@@ -87,7 +87,7 @@ Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo 
 -> END
 
 === ereignis_kreidenacht ===
-Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapuzen und Kreide an den Ärmeln. #sprecher:erzaehler
+{moGetroffen:An den drei Tischen ticken die Uhren.|Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapuzen und Kreide an den Ärmeln.} #sprecher:erzaehler
 -> mo
 
 === ausgang ===

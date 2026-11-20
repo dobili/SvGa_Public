@@ -150,7 +150,46 @@ Beobachtung für den Autor (kein Fehler im Code):
 - Der Weg führt also über die Nebenquest „Der Brief“, deren Pfeil im Tagebuch eigens steht.
 - Wer nur dem Hauptpfeil folgt, wird einmal weitergeschickt.
 
-## 5. Grenzen
+## 5. Folgeaufträge (20.11.2026, spät)
+
+### Hauptpfeil, der nur weiterschickt
+
+- Questschritte tragen jetzt optional `umwege` in quests.json, je mit Bedingung und Ziel.
+  Solange die Bedingung gilt, zeigt der Pfeil auf das Ziel des Umwegs (`zielsuche.ts`, Schema).
+- Das Werkzeug `pipeline/abenteuer/pfeilziel.cjs` spielt mit der Gesamtsimulation:
+  - Bei jedem neuen Schritt einer Hauptquest spricht es das Pfeilziel mit genau diesem Stand an,
+    sechsmal mit anderen Wahlen und je bis zu dreimal hintereinander.
+  - Es meldet, wenn kein Gespräch den Schritt voranbringt.
+  - Bei einem Umweg zählt, dass das Gespräch die Bedingung aufhebt oder etwas dafür startet.
+- Gefunden und behoben:
+
+| Schritt                     | Pfeil zeigte auf | sagte                                          | jetzt                                            |
+| --------------------------- | ---------------- | ---------------------------------------------- | ------------------------------------------------ |
+| Desert Springs, Clubkampf   | Mira             | „Dot sagt, du sollst erst zu Mr. Okoro.“       | Umweg Mr. Okoro, bis `briefGelesen`              |
+| Port Delacroix, Remys Reihe | Remy             | „Erst zu Miss Odile. Sie hat dein Brett.“      | Umweg Miss Odile, bis `brettersammelnBegonnen`   |
+| Cedar Creek, Clubkampf      | Mrs. Okafor      | „Gespielt wird morgen, wenn dein Team da ist.“ | Umweg Steg, bis `nachtImLesesaal`                |
+| Capital Arena, Halbfinale   | Kade             | „Er ist nicht da.“                             | Ziel Turnierleiterin, die das Halbfinale beginnt |
+
+- Danach meldet das Werkzeug 0 Funde.
+- Tests:
+  - `zielsuche.test.ts`
+  - `zielpfeil.test.ts`: Jedes Umwegziel liegt auf seiner Karte und ist erreichbar.
+  - `test_abenteuer_pfeilziel.py`: ganzer Lauf mit `ABENTEUER_SIMULATION=1`.
+
+### Statist im Bergladen
+
+- Ursache: Die Ladenhilfe lief weg. Der Held traf sie nicht mehr, und mit dem Treffer schloss sich
+  die Sprechblase. Der gescheiterte Gesamtlauf nutzte noch einen Build ohne `hoertZu` (mittel-4).
+- Für einen stehenden Statisten behebt `hoertZu` das schon.
+- Neu: Ging der Statist beim Ansprechen schon, bleibt er jetzt auch stehen; auf der Flucht nicht
+  (`belebungsbewegung.ts`).
+- Belege:
+  - Der Komponententest schlägt ohne die Änderung fehl.
+  - `abenteuer-statist-langsam.spec.ts` prüft mit gedrosselter CPU und schützt vor Rückfällen;
+    den gehenden Fall erzwingt er nicht verlässlich.
+- Bildwunsch: Porträts für Owen Fisk und Ivy (nimmt der Hauptchat auf).
+
+## 6. Grenzen
 
 - Der Doppeltipp auf eine Antwort selbst ist nicht nachgebaut. Antworten tippt der eilige Spieler
   einzeln.

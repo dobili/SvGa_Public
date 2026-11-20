@@ -199,7 +199,7 @@ test("Vorführung im Bergladen: der Kunde zeigt das Schäfermatt Zug für Zug", 
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
   await aktion.click();
-  await expect(page.getByTestId("abenteuer-sprechblase")).toContainText("Soll ich ihn dir zeigen?");
+  await expect(page.getByTestId("abenteuer-sprechblase")).toContainText("Soll ich es dir zeigen?");
   await page.getByTestId("abenteuer-vorfuehrung-zeigen").click();
   const vorfuehrung = page.getByTestId("abenteuer-vorfuehrung");
   await expect(vorfuehrung).toContainText("Das Schäfermatt");

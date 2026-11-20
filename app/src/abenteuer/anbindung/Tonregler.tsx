@@ -16,6 +16,7 @@ import { Ladestandzeile } from "./Ladestand";
 const SCHRITT = 10;
 const HOECHSTENS = 100;
 
+/** Regler für Musik und Geräusche, Stummschalter und „Geräusche als Text“ im Spielmenü (T1, T2). */
 export function Tonregler() {
   const { ton, abenteuerton } = useEinstellungen();
   const setze = (teil: Partial<typeof abenteuerton>) =>

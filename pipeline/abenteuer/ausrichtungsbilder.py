@@ -125,6 +125,7 @@ def uebersichten(alle: dict[str, dict], ziel: Path, privat: Path, auswahl: str =
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.uebergaenge import szenen
 
     ziel, privat = Path(argumente[0]), Path(argumente[1])

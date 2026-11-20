@@ -109,6 +109,7 @@ def pruefe_kontrast(
 
 
 def hexfarbe(rgb: tuple[int, ...]) -> str:
+    """RGB als „#RRGGBB“ für die Stildatei der App. Beispiel: (240, 217, 181) → „#F0D9B5“."""
     return "#{:02X}{:02X}{:02X}".format(*rgb[:3])
 
 
@@ -145,6 +146,7 @@ def lade_vorhandene(ziel: Path) -> tuple[Image.Image | None, dict, dict[str, Ima
 
 
 def farbe_aus_hex(text: str) -> tuple[int, int, int]:
+    """„#RRGGBB“ als RGB, Gegenstück zu ``hexfarbe``."""
     return int(text[1:3], 16), int(text[3:5], 16), int(text[5:7], 16)
 
 
@@ -188,6 +190,7 @@ def baue(
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     teile = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     teile.add_argument("brettbild", help="Brettbild oder „-“")
     teile.add_argument("figurenblatt", help="Figurenblatt auf grünem Grund oder „-“")

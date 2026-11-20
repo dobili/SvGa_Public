@@ -338,6 +338,7 @@ def _bogen(kacheln: list, spalten: int):
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.moebelliste import lade_moebel
 
     privat = Path(argumente[0])

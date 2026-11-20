@@ -115,6 +115,7 @@ def liste() -> tuple[list[dict], list[str]]:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     eintraege, befunde = liste()
     if "--json" in sys.argv[1:]:
         print(json.dumps(eintraege, ensure_ascii=False, indent=2))

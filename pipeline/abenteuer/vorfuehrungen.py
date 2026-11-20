@@ -83,6 +83,7 @@ def pruefe_alles(inhalte: Path = INHALTE) -> list[str]:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     befunde = pruefe_alles()
     for b in befunde:
         print(f"  - {b}")

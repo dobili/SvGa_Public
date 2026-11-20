@@ -8,6 +8,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { wendeSchriftgroesseAn } from "./app/schriftgroesse";
+import { beachteSeitenabschied } from "./app/seitenabschied";
 import "@fontsource/source-sans-3/latin-400.css";
 import "@fontsource/source-sans-3/latin-400-italic.css";
 import "@fontsource/source-sans-3/latin-600.css";
@@ -71,6 +72,8 @@ starteOffline();
 void lade();
 // Meldungen, die ohne Netz liegen blieben, jetzt und bei jeder neuen Verbindung senden (V9).
 starteNachsenden();
+// Beim Neuladen lehnt Safari offene Versprechen mit „Context is stopped“ ab (app/seitenabschied.ts).
+beachteSeitenabschied();
 
 /** Zeichnet die App in #wurzel. */
 function zeichneApp(): void {

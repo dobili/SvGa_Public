@@ -2250,7 +2250,7 @@
           "text": "quest.meisterschaft.schritt7",
           "ereignis": {
             "art": "dialog",
-            "knoten": "capital-arena-aussen.abschied"
+            "knoten": "capital-arena-aussen.abschied_ende"
           },
           "wirkungen": [
             {

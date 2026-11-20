@@ -2397,3 +2397,13 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       umstellen, nach einer kurzen Hörprobe (zwei, drei Ausschnitte AAC gegen Opus, liegt dann im
       privaten Repository unter hoerprobe/). Andernfalls bleibt AAC.
       **Antwort:** „RO41: iOS 18.1, Opus ja“ oder „RO41: AAC lassen“.
+
+- [ ] RO42. **Spiel für Leser sichtbar machen? (20.11.2026, erst beim Schritt nach main)**
+      In der Fassung für Leser ist das Spiel bisher nur über die Adresse …/app/#abenteuer zu
+      erreichen; Admin-Menü und Testknöpfe fehlen dort (geprüft). Leser finden es also nicht von
+      selbst. Empfehlung: verborgen lassen, bis Sensibilitätslesung, Lizenzen der Bilder und Musik
+      und Datenschutz geklärt sind; danach eine Karte „Schach-Abenteuer“ auf der Seite „Spielen“,
+      auch ohne geladenes Paket. Die Testleiste („Gewinnen“, „Bestehen“ …) erscheint seit heute
+      nur auf Geräten, auf denen du die Aufgabenseite geöffnet hast (umgesetzt, Widerspruch
+      genügt); auf einem neuen Gerät einmal drei Sekunden auf „Profil“.
+      **Antwort:** „RO42 ok, verborgen“ oder „RO42: sichtbar ab …“.

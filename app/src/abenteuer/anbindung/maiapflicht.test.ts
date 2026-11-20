@@ -2,8 +2,14 @@
  * Tests für maiapflicht.ts: „Spiel laden“ zählt Maia mit (Wunsch des Autors, 18.11.2026); seit
  * dem 20.11.2026 lädt Maia im Hintergrund, das vorhandene Spiel startet ohne zu warten.
  */
-import { describe, expect, it, vi } from "vitest";
-import { ladeMaiaImHintergrund, mitMaiaPflicht, type Maiazugriff } from "./maiapflicht";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import {
+  ladeMaiaImHintergrund,
+  maiaImHintergrundAus,
+  mitMaiaPflicht,
+  TESTSCHALTER_OHNE_MAIA,
+  type Maiazugriff,
+} from "./maiapflicht";
 
 const MAIA_BYTES = 96_000_000;
 const SPIEL_BYTES = 40_000_000;
@@ -95,5 +101,21 @@ describe("neue Version des Spiels", () => {
 
   it("spielt ohne Netz die alte Fassung weiter", async () => {
     expect(await mitMaiaPflicht(alt, zugriff(true, false))).toEqual(alt);
+  });
+});
+
+describe("maiaImHintergrundAus (Testschalter der Oberflächentests)", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("ist ohne Fenster und ohne Schalter aus, nur mit true an", () => {
+    expect(maiaImHintergrundAus()).toBe(false);
+    vi.stubGlobal("window", {});
+    expect(maiaImHintergrundAus()).toBe(false);
+    vi.stubGlobal("window", { [TESTSCHALTER_OHNE_MAIA]: "ja" });
+    expect(maiaImHintergrundAus()).toBe(false);
+    vi.stubGlobal("window", { [TESTSCHALTER_OHNE_MAIA]: true });
+    expect(maiaImHintergrundAus()).toBe(true);
   });
 });

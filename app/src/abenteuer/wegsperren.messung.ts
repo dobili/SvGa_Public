@@ -61,10 +61,19 @@ const saatAb = Number(process.env.WEGSPERRE_SAAT_AB ?? 0);
 const ohneMaia = process.env.WEGSPERRE_OHNE_MAIA === "1";
 const zusatz = process.env.WEGSPERRE_NAME ? `-${process.env.WEGSPERRE_NAME}` : "";
 const ordner = process.env.WEGSPERRE_ZIEL ?? join(WURZEL, "buch", "arbeit", "wegsperren");
+/** Umgebungswert WEGSPERRE_<name> oder leer. */
+function hilfe(name: string): string {
+  return process.env[`WEGSPERRE_${name}`] ?? "";
+}
+
 const probe: Probe = {
   ...(process.env.WEGSPERRE_VERSATZ ? { versatz: Number(process.env.WEGSPERRE_VERSATZ) } : {}),
   ...(process.env.WEGSPERRE_ENDSPIEL ? { endspiel: Number(process.env.WEGSPERRE_ENDSPIEL) } : {}),
   ...(process.env.WEGSPERRE_ZUEGE ? { zuege: Number(process.env.WEGSPERRE_ZUEGE) } : {}),
+  // Hilfen wie im Spiel (Zustände R8, R9 und eine Vorgabe-Karte, etwa g1 für die Springervorgabe).
+  ...(hilfe("ABGELENKT") ? { abgelenkt: Number(hilfe("ABGELENKT")) } : {}),
+  ...(hilfe("UEBERHEBLICH") ? { ueberheblich: Number(hilfe("UEBERHEBLICH")) } : {}),
+  ...(hilfe("VORGABE") ? { vorgabe: hilfe("VORGABE") } : {}),
 };
 
 describe(`Begegnung ${sperre} gegen Lesestärke ${lesestaerke}`, () => {

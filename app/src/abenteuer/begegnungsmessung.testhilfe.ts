@@ -40,8 +40,9 @@ import {
 import { phaseVon } from "../spiel/phasen";
 import type { Color } from "chessops";
 import { ausgangAus } from "./anbindung/partieergebnis";
-import { partieeinstellungAus } from "./anbindung/partiestart";
+import { GRUNDSTELLUNG, partieeinstellungAus } from "./anbindung/partiestart";
 import { gerechneteStaerke } from "./regeln/gegnerstaerke";
+import { vorgabeFen } from "./regeln/karten";
 import { ausgangNachWert, wertungFaellig, type Kurzform } from "./regeln/kurzform";
 import { bandZu, type Stellungsvorrat } from "./regeln/vorrat";
 import type { Gegnerprofil } from "./schnittstelle/gegnerprofil";
@@ -106,6 +107,10 @@ export interface Probe {
   readonly endspiel?: number;
   /** Zahl der eigenen Züge des Formats statt der aus begegnungen.json. */
   readonly zuege?: number;
+  /** Hilfen wie im Spiel: Faktor „abgelenkt“ (R8), „überheblich“ (R9), Vorgabe-Feld (Karte). */
+  readonly abgelenkt?: number;
+  readonly ueberheblich?: number;
+  readonly vorgabe?: string;
 }
 
 /** Liest eine JSON-Datei aus inhalte/abenteuer (Messläufe laufen in Node, ohne Paket). */
@@ -195,6 +200,16 @@ function mitZuegen(format: Partieformat, zuege: number | undefined): Partieforma
   return { ...format, zuege };
 }
 
+/** Startstellung mit Vorgabe wie oberwelt/partiestart.ts (Figur des Gegners auf `feld` fehlt). */
+function mitVorgabe(stellung: Startstellung, farbe: Color, feld?: string): Startstellung {
+  if (!feld) return stellung;
+  const fen =
+    stellung.art === "fen" ? stellung.fen : stellung.art === "grundstellung" ? GRUNDSTELLUNG : null;
+  const neu = fen ? vorgabeFen(fen, feld, farbe === "white" ? "black" : "white") : null;
+  if (!neu) throw new Error(`Vorgabe ${feld} in dieser Startstellung nicht möglich`);
+  return { art: "fen", fen: neu };
+}
+
 /** Die Begegnung aus begegnungen.json. */
 export function begegnungDer(kennung: string): Begegnung {
   const begegnung = lies<{ begegnungen: Begegnung[] }>(
@@ -216,7 +231,12 @@ export function einstellungDer(
 ): { einstellung: Partieeinstellung; start: string } {
   const begegnung = begegnungDer(kennung);
   const profil = profilDer(begegnung.gegner, probe);
-  const zustand = { haeufigkeitsfaktor: 1, grund: null, analysiert: false, ueberheblich: 1 };
+  const zustand = {
+    haeufigkeitsfaktor: probe.abgelenkt ?? 1,
+    grund: null,
+    analysiert: false,
+    ueberheblich: probe.ueberheblich ?? 1,
+  };
   const staerke = gerechneteStaerke(profil, zustand, {
     aktuell: lesestaerke,
     eingang: lesestaerke,
@@ -233,7 +253,7 @@ export function einstellungDer(
     staerke,
     farbe,
     format: mitZuegen(begegnung.format, probe.zuege),
-    startstellung: start.stellung,
+    startstellung: mitVorgabe(start.stellung, farbe, probe.vorgabe),
     deck: { karten: [] },
     kartenErlaubt: true,
     zaehltFuerApp: false,

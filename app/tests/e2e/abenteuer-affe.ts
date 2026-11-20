@@ -143,9 +143,14 @@ export function beobachte(seite: Page): string[] {
 /**
  * App starten, Spielstand einspielen, Abenteuerpaket laden und in die Welt gehen.
  * Mit `weitermachen` stellt die App nach dem Neuladen den letzten Bildschirm wieder her, wie
- * bei echten Lesern (svga.stapel).
+ * bei echten Lesern (svga.stapel). Mit `mitMaia` lädt Maia wie im echten Spiel im Hintergrund
+ * (sonst abgeschaltet, abenteuer-paket.ts).
  */
-export async function starteMitStand(seite: Page, stand: object): Promise<void> {
+export async function starteMitStand(
+  seite: Page,
+  stand: object,
+  { mitMaia = false }: { readonly mitMaia?: boolean } = {},
+): Promise<void> {
   await starteImBrowser(seite, { weitermachen: true });
   await expect.poll(() => seite.evaluate(schreibeStandImBrowser, stand)).toBe(true);
   await seite.reload();
@@ -153,7 +158,7 @@ export async function starteMitStand(seite: Page, stand: object): Promise<void> 
   const laden = seite.getByTestId("abenteuer-start").getByTestId("abenteuer-laden");
   const welt = seite.locator(".abenteuer-welt canvas");
   await expect(laden.or(welt)).toBeVisible({ timeout: 20000 });
-  if (await laden.isVisible()) await ladeAbenteuerpaket(seite, laden);
+  if (await laden.isVisible()) await ladeAbenteuerpaket(seite, laden, { mitMaia });
   await expect(welt).toBeVisible({ timeout: 40000 });
   await seite.waitForTimeout(500);
 }

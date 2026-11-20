@@ -1572,9 +1572,8 @@
       "ort": "siliconBay",
       "haupt": false,
       "start": {
-        "art": "ort",
-        "karte": "siliconBay.lobby",
-        "ausloeser": "vitrineHale"
+        "art": "dialog",
+        "knoten": "silicon-bay-lobby.vitrine_erstmals"
       },
       "schritte": [
         {

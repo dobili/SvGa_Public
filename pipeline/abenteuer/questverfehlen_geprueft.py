@@ -32,6 +32,12 @@ AUSNAHMEN: dict[str, str] = {
     "Hauptquest ansprechen (summitCity.endspiel, Schritt 6), bevor Summit City sich öffnet und es zum "
     "Grab geht. Verloren ist sie nur für den, der zweimal „Nicht jetzt“ sagt (Entscheidung des "
     "Hauptchats: Bergstation).",
+    "siliconBay.fehlendeSeite:2": (
+        "Die Quest beginnt nur in silicon-bay-lobby.vitrine_erstmals, und dorthin führt die Vitrine nur, "
+        "solange victorSeiteGegeben fehlt (sonst vitrine_spaet, 20.11.2026). Victors Seite "
+        "(summit-city-bergstation.victor_seite) folgt als Rückmeldung auf die Partie summitCity.victorFrei, "
+        "Schritt 6 der Hauptquest summitCity.endspiel; erst danach kommt das Grab (grabGesehen)."
+    ),
 }
 
 # Echte Befunde, die eine Entscheidung zu Karten oder Dialogen brauchen (an den Hauptchat gemeldet,
@@ -41,6 +47,4 @@ GEMELDET: dict[str, str] = {
     "siliconBay.spielberichte:start": "Victor verlässt Silicon Bay mit endeAkt3Gesehen; wer Theo vorher "
     "nicht besiegt und Victor nicht gefragt hat, bekommt die Spielberichte nie. Bewusst so gelassen "
     "(Entscheidung des Hauptchats, 20.11.2026): ein verpasstes Angebot, im Tagebuch hängt nichts.",
-    "siliconBay.fehlendeSeite:2": "Victor gibt die Seite nur an der Bergstation (bis grabGesehen); wer das "
-    "Foto in der Vitrine (Schritt 1) erst danach ansieht, bleibt bei Schritt 2 hängen. Übernimmt mittel-1.",
 }

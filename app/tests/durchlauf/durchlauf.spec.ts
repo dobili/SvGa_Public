@@ -33,6 +33,7 @@ import { liesLage, liesSpeicher, signatur, type Lage } from "./lage";
 import { Messung } from "./messung";
 import { spielePartie } from "./partie";
 import { Planer } from "./planer";
+import { Randpruefung } from "./randpruefung";
 import { Rueckmeldungsbeobachter } from "./rueckmeldung";
 import { Schwaechling } from "./schwach";
 import { standAus } from "./simstand";
@@ -205,6 +206,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
   let puls = Date.now();
   let ohneSpeicher = 0;
   let fotos = 0;
+  const rand = new Randpruefung(ordner);
   while (Date.now() < ende) {
     const lage = await liesLage(seite);
     const jetzt = Date.now();
@@ -218,6 +220,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
       if (lage.bild !== "welt") await foto(seite, ordner, "puls");
     }
     if (await bedieneUpdate(lauf, lage)) continue;
+    await rand.pruefe(lauf, lage);
     if (lage.bild === "partie") {
       rueck.vorher((await liesSpeicher(seite)).stand?.nachErgebnis);
       const partie = await mitFrist(spielePartie(lauf, g), "Partie");
@@ -276,6 +279,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
         grund = "Abspann erreicht";
         break;
       }
+      await rand.besichtige(lauf, lage);
       if (!(await mitFrist(weltschritt(lauf, daten, planer), "Welt"))) {
         messung.fund("festgefahren", `Kein Ziel mehr: Stand ${JSON.stringify(stand?.handlung)}`);
         await foto(seite, ordner, `festgefahren-${Date.now()}`);

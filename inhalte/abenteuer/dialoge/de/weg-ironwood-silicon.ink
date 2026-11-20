@@ -118,7 +118,7 @@ Drei Minuten, plus zwei Sekunden je Zug. Mein Puls bleibt oben. #sprecher:jogger
 === joggerin_angebot ===
 Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
 {(not abschiedGesehen and not ambroseSchweigt()):
-    Sie läuft schnell und denkt schnell. Lass sie laufen, {held}, denk du. #sprecher:ambrose #stimmung:nachdenklich
+    Sie zieht im Laufschritt, {held}. Du darfst gehen. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")

@@ -229,7 +229,7 @@ Er steckt dir das Zahnrad an die Jacke, neben die anderen Nadeln. #sprecher:erza
 Die Kantine brüllt. #sprecher:erzaehler
 {not abschiedGesehen:
     Auf dem Weg hinaus, im Lärm, sagt Ambrose etwas. Du verstehst es fast nicht. #sprecher:erzaehler #pause
-    Es war schön. Und es hat gestimmt – beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
+    Es war schön, und es hat gestimmt. Beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
 }
 -> END
 

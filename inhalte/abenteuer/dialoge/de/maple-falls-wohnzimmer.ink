@@ -102,7 +102,7 @@ Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
-Hörst du das? Der Wasserfall – Daher der Name. #sprecher:mutter #stimmung:laechelt
+Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter #stimmung:laechelt
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter #stimmung:nachdenklich
 * [„Es ist ziemlich groß.“]
     Groß. Und alt. #sprecher:mutter #stimmung:nachdenklich
@@ -264,9 +264,9 @@ Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter #stimmu
 {
 // Lektorat 19.11.2026: Nach der Meisterschaft spricht Mama nicht mehr davor.
 - abschiedGesehen:
-    {~Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Im Werk hängt dein Foto aus der Arena. Joe hat einen Rahmen aus Stahl gebaut.|Ich bin stolz auf dich, weißt du das? Nicht wegen des Pokals.} #sprecher:mutter #stimmung:froh
+    {~Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Joe hat dein Foto aus der Arena in einen Rahmen aus Stahl gesteckt. Es hängt jetzt im Werk.|Ich bin stolz auf dich, weißt du das? Nicht wegen des Pokals.} #sprecher:mutter #stimmung:froh
 - endeAkt3Gesehen:
-    {~Ich hab im Werk erzählt, dass du gegen eine Großmeisterin spielst. Die halbe Schicht weiß es jetzt.|Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Grundreihe, und dann spiel, wie du willst. Ich bin stolz auf dich, weißt du das?} #sprecher:mutter #stimmung:froh
+    {~Ich hab auf Station erzählt, dass du gegen eine Großmeisterin spielst. Die halbe Nachtschicht weiß es jetzt.|Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Grundreihe, und dann spiel, wie du willst. Ich bin stolz auf dich, weißt du das?} #sprecher:mutter #stimmung:froh
 - tiefpunktGesehen:
     {~Was die in Port Delacroix gesagt haben, glaube ich keine Sekunde. Ich kenne deine Züge.|Ruf an, wenn du angekommen bist, egal wie spät. Ich hab das Telefon in der Kitteltasche.|Wer dir das noch mal vorwirft, kriegt es mit mir zu tun. Und mit Joe.} #sprecher:mutter #stimmung:nachdenklich
 - einladungGesehen:

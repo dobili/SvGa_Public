@@ -140,7 +140,7 @@ Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. 
 {abschiedGesehen or ambroseSchweigt(): -> seite_fehlt}
 * [Warten]
 - Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
-Das sind meine Züge. Die linke Spalte – jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
+Das sind meine Züge. Die linke Spalte, jeder einzelne. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
 Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. #sprecher:ambrose #stimmung:still
 Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
 Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:traurig

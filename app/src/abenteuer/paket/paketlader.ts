@@ -28,7 +28,13 @@ import {
   type Paketzustand,
 } from "../schnittstelle/paket";
 import { Spielfehler } from "../schnittstelle/spielfehler";
-import { jeGleichzeitig, mitZeitlimit, pruefsumme } from "./ladehilfen";
+import {
+  gleichzeitigFuer,
+  jeGleichzeitig,
+  mitZeitlimit,
+  protokollVon,
+  pruefsumme,
+} from "./ladehilfen";
 
 const CACHE_PRAEFIX = "abenteuer-";
 
@@ -205,13 +211,10 @@ async function ladeDatei(
   await speicher.put(adresse(datei.pfad), new Response(blob, { headers: { "content-type": typ } }));
 }
 
-/**
- * So viele Dateien lädt das Paket gleichzeitig. Warum: Das Paket hat rund 2000 kleine Dateien
- * (Möbel, Porträts); einzeln nacheinander kostete jede eine ganze Netzrunde, das Laden dauerte
- * dadurch auf dem Handy Minuten (Prüfung nach dem großen Merge, 10.11.2026). Sechs entspricht den
- * gleichzeitigen Verbindungen eines Browsers je Server unter HTTP/1.1.
- */
-const GLEICHZEITIG = 6;
+/** Gleichzeitige Abrufe nach dem Protokoll von paket.json (ladehilfen.ts, gleichzeitigFuer). */
+function gleichzeitig(): number {
+  return gleichzeitigFuer(protokollVon(adresse(VERZEICHNIS_DATEI)));
+}
 
 /**
  * Lädt das Paket der aktuellen Version (nur Fehlendes), legt zuletzt das Verzeichnis ab (das
@@ -226,7 +229,7 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   // Ton und Großbilder gehören nicht dazu: Das Spiel startet ohne sie, paket/aktton.ts lädt sie
   // im Hintergrund.
   const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined && !d.hintergrund);
-  await jeGleichzeitig(grundpaket, GLEICHZEITIG, (datei) =>
+  await jeGleichzeitig(grundpaket, gleichzeitig(), (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       geladen += bytes;
       fortschritt(Math.min(geladen, verzeichnis.bytes), verzeichnis.bytes);
@@ -258,7 +261,7 @@ export async function ladeNach(
   const gesamt = auswahl.reduce((summe, d) => summe + d.bytes, 0);
   const speicher = await caches.open(geladen.name);
   let bisher = 0;
-  await jeGleichzeitig(auswahl, GLEICHZEITIG, (datei) =>
+  await jeGleichzeitig(auswahl, gleichzeitig(), (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       bisher += bytes;
       fortschritt(Math.min(bisher, gesamt), gesamt);

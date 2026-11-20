@@ -217,7 +217,7 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
     Hier lag die Seite. Zwischen den Wurzeln ist nichts mehr. #sprecher:erzaehler
     -> END
 }
-Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeichneten Stellung. #sprecher:erzaehler
+Zwischen den Wurzeln eines Mammutbaums steckt eine lose Seite mit einer gezeichneten Stellung. #sprecher:erzaehler
 {not abschiedGesehen:
     Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose #stimmung:nachdenklich
 }

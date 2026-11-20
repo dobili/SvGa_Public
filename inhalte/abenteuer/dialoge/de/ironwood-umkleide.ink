@@ -33,7 +33,7 @@ Du hältst die Laterne in das klemmende Schließfach. Hinten, unter einem alten 
 - abschiedGesehen:
     -> END
 - holzspringerGefunden and holzlaeuferGefunden:
-    Der letzte. Jetzt ist der Satz vollständig. #sprecher:ambrose #stimmung:stolz
+    Springer, Läufer, Turm. Jetzt sind sie beisammen. #sprecher:ambrose #stimmung:stolz
 - else:
     Noch einer aus demselben Holz. Irgendwo liegen die anderen. #sprecher:ambrose #stimmung:nachdenklich
 }

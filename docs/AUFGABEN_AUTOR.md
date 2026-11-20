@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 6.11.2026, Version 0.3.54 (Fehler mit Buchbezug vollständig, 7.11.2026).
+Stand: 17.11.2026, Version 0.3.55 (Das Buch ist erschienen: Shops und ISBN auf der Startseite).
 **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.54“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.3.55“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,12 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.3.55: Das Buch ist erschienen (17.11.2026)
+
+- [ ] N2607. Startseite schach-von-grund-auf.com öffnen: Unter „Das Buch erhältst du“ stehen jetzt die Knöpfe „bei Thalia“
+      und „bei Amazon“; beide öffnen die Seite des Buches im jeweiligen Shop. Darunter steht „In jeder Buchhandlung
+      bestellbar: ISBN 978-3-9824715-8-7.“ Stimmt die ISBN, und fehlt ein Shop (etwa der Verlag selbst)?
 
 ### Neu: Das Spiel ganz durchspielen – so gehst du vor (Beta 0.3.56, Stand 20.11.2026)
 
@@ -274,6 +280,22 @@ Profil › Einstellungen › Fehler melden.
       sichtbare Schrift, wie auf deinem Foto vom 20.11.), Ort und Ziel in der Spielhülle stehen
       hell auf Dunkelblau. Ist überall alles lesbar?
       **Rückmeldung:** „N2661 ok“ oder Ort und Notiz.
+
+- [ ] N2663. **Gespräche quer:** Handy quer halten und mit jemandem sprechen. Das Gespräch steht
+      rechts als Spalte in voller Höhe, gegenüber dem Steuerkreuz; Held und Gesprächspartner
+      stehen links im Bild. Langer Text und viele Antworten lassen sich mit dem Finger rollen,
+      alle Antworten sind erreichbar. Ein Großbild steht daneben in der freien Fläche.
+      **Rückmeldung:** „N2663 ok“ oder Ort und Notiz.
+
+- [ ] N2664. **Tagebuch, Laden und Abspann quer:** Das Tagebuch nutzt quer die volle Höhe und rollt
+      mit dem Finger. Im Laden und im Abspann rollt nur der Inhalt, „Fertig“ und „Schließen“
+      stehen darunter und verdecken nichts.
+      **Rückmeldung:** „N2664 ok“ oder eine Notiz.
+
+- [ ] N2665. **Bretter quer:** In Partie, Aufgabenrunde, Vorführung und Gedächtnisstellung ist das
+      Brett quer ganz zu sehen, kein Steuerkreuz liegt darüber. Vor „Ans Brett“ ist das Ziel ganz
+      lesbar.
+      **Rückmeldung:** „N2665 ok“ oder Ort und Notiz.
 
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
@@ -2391,3 +2413,13 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       umstellen, nach einer kurzen Hörprobe (zwei, drei Ausschnitte AAC gegen Opus, liegt dann im
       privaten Repository unter hoerprobe/). Andernfalls bleibt AAC.
       **Antwort:** „RO41: iOS 18.1, Opus ja“ oder „RO41: AAC lassen“.
+
+- [ ] RO42. **Spiel für Leser sichtbar machen? (20.11.2026, erst beim Schritt nach main)**
+      In der Fassung für Leser ist das Spiel bisher nur über die Adresse …/app/#abenteuer zu
+      erreichen; Admin-Menü und Testknöpfe fehlen dort (geprüft). Leser finden es also nicht von
+      selbst. Empfehlung: verborgen lassen, bis Sensibilitätslesung, Lizenzen der Bilder und Musik
+      und Datenschutz geklärt sind; danach eine Karte „Schach-Abenteuer“ auf der Seite „Spielen“,
+      auch ohne geladenes Paket. Die Testleiste („Gewinnen“, „Bestehen“ …) erscheint seit heute
+      nur auf Geräten, auf denen du die Aufgabenseite geöffnet hast (umgesetzt, Widerspruch
+      genügt); auf einem neuen Gerät einmal drei Sekunden auf „Profil“.
+      **Antwort:** „RO42 ok, verborgen“ oder „RO42: sichtbar ab …“.

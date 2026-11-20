@@ -12,7 +12,16 @@ test("Startseite: Buch, Shops, Installationsteil, Fußzeile; „Im Browser verwe
   await page.goto("/");
   await expect(page).toHaveTitle(/Schach von Grund auf/);
   await expect(page.getByRole("heading", { name: "Das Buch", exact: true })).toBeVisible();
-  await expect(page.getByTestId("shops")).toContainText("im Buchhandel");
+  // Das Buch ist erschienen (17.11.2026): Shops als Links, ISBN für die Buchhandlung.
+  await expect(page.getByRole("link", { name: "bei Thalia" })).toHaveAttribute(
+    "href",
+    /thalia\.de\/shop\/home\/artikeldetails\/A1082446964/,
+  );
+  await expect(page.getByRole("link", { name: "bei Amazon" })).toHaveAttribute(
+    "href",
+    /amazon\.de\/.*\/dp\/3982471583/,
+  );
+  await expect(page.getByTestId("shops")).toContainText("ISBN 978-3-9824715-8-7");
   await expect(page.getByTestId("installationsteil")).toContainText("Die App zum Buch");
   const vorschau = page.locator('meta[property="og:image"]');
   await expect(vorschau).toHaveAttribute("content", /cover-teilen\.jpg$/);

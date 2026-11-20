@@ -11,6 +11,7 @@ Die Versionsnotizen stehen in `versionsnotizen_entwurf.md`.
 ## A Befunde
 
 Grundlage: Stand `uebergabe/innenraeume` nach dem Merge mit beta (20.11.2026, Version 0.3.56).
+Seitdem ist dort auch main eingemischt (Commit „Das Buch ist erschienen“), siehe A5.
 Gebaut habe ich beide Fassungen:
 
 - `npm run build`: die Fassung des Autors, wie main und beta heute bauen;
@@ -46,7 +47,8 @@ Gebaut habe ich beide Fassungen:
   ist erst für 1.0 vorgesehen, und der Autor testet auf main mit der Aufgabenseite.
 - Kommt das Spiel so auf main, sieht jeder, der `/app/#abenteuer` öffnet, die Testleiste.
 - Das schadet niemandem: Wer sie nutzt, gewinnt nur das eigene Spiel. Es wirkt aber unfertig.
-- Siehe Frage F2.
+- Siehe Frage F2. Seit dem 20.11.2026 umgesetzt: Die Testleiste zeigt nur noch das Gerät des
+  Autors.
 
 ### A4 Spielpaket: liegt in beiden Fassungen bereit
 
@@ -73,7 +75,11 @@ Gebaut habe ich beide Fassungen:
 - main hat einen Commit, der beta fehlt: `7bae5b35` vom 17.11.2026, „Startseite: Das Buch ist
   erschienen – Thalia, Amazon und ISBN, Version 0.3.55“.
 - Ein Ersetzen von main durch beta nähme die Links zum erschienenen Buch zurück. Deshalb main
-  zuerst nach beta mergen.
+  zuerst nach beta mergen. **Erledigt auf `uebergabe/innenraeume` (20.11.2026):**
+  - Version und Lockfile wie beta (0.3.56).
+  - Startseite und Texte wie main.
+  - In AUFGABEN_AUTOR steht N2607 jetzt vor dem Abschnitt zum Spiel.
+  - In FORTSCHRITT steht der Stand vom 17.11. jetzt bei seinem Datum.
 - Geprüft per `git merge-tree`: Konflikte nur in `app/package.json` und `app/package-lock.json`
   (Versionsnummer) sowie in `docs/AUFGABEN_AUTOR.md` und `docs/FORTSCHRITT.md`.
   - Startseite (`app/index.html`, CSS) und Texte (`de.json`, `en.json`) gehen ohne Konflikt durch.
@@ -96,8 +102,10 @@ In dieser Reihenfolge. **(Autor)** heißt: nur der Autor kann es tun.
 
 - **B1 Freigabe:** Der Autor hat durchgespielt und gibt frei (**Autor**). Offene Punkte aus seinem
   Durchspielen sind erledigt oder bewusst verschoben.
-- **B2 Entscheidungen F1 und F2** unten sind getroffen und umgesetzt.
-- **B3 main nach beta mergen:** `git fetch origin main beta`, dann auf einem Zweig von beta
+- **B2 Entscheidungen F1 und F2:** F2 ist umgesetzt. F1 („verborgen lassen“) hat der Autor
+  bestätigt oder geändert.
+- **B3 main nach beta mergen:** Auf `uebergabe/innenraeume` schon geschehen (20.11.2026). Bei
+  einem neuen Commit auf main wiederholen: `git fetch origin main beta`, dann auf einem Zweig von beta
   `git merge origin/main`.
   - Konflikte in Version und docs von Hand lösen. Die Startseite muss „Das Buch ist erschienen“
     mit Thalia, Amazon und ISBN zeigen.
@@ -144,7 +152,8 @@ In dieser Reihenfolge. **(Autor)** heißt: nur der Autor kann es tun.
 
 ## Fragen an Hauptchat und Autor
 
-- **F1 Sichtbar oder verborgen?** Soll das Spiel mit dem Schritt nach main für Leser sichtbar sein
+- **F1 Sichtbar oder verborgen?** Entscheidung des Hauptchats (20.11.2026): verborgen lassen; geht
+  als Rückfrage mit dieser Empfehlung an den Autor. Soll das Spiel mit dem Schritt nach main für Leser sichtbar sein
   oder weiter nur über `#abenteuer` und das Adminmenü erreichbar?
   - **Empfehlung: verborgen lassen**, bis die offenen Punkte zur Veröffentlichung in
     `31_Veroeffentlichung.md` geklärt sind: Sensibilitätslesung J6, Lizenzen L4 und L5, Prüfung
@@ -152,11 +161,12 @@ In dieser Reihenfolge. **(Autor)** heißt: nur der Autor kann es tun.
   - Danach eine Karte auf „Spielen“ auch ohne Paket („Schach-Abenteuer: das Spiel zum Buch,
     einmal 216 MB laden“). Das ist ein kleiner Schritt in `Abenteuerkarte.tsx`.
   - Noch nicht umgesetzt, weil es die Veröffentlichung betrifft (Regel 9, Ausnahme).
-- **F2 Testleiste auf main:** Bis 1.0 baut main die Fassung des Autors (A3).
-  - **Empfehlung:** Die Testleiste nur zeigen, wenn auf diesem Gerät die Aufgabenseite geöffnet
-    wurde, mit einem Merker im Gerät wie beim Adminmenü. Dann sieht der Autor sie auf main und
-    beta, Leser auf main nie.
-  - Kleiner Eingriff in `testende.ts`; die Oberflächentests müssten den Merker setzen.
-  - Die andere Möglichkeit: main auf `build:veroeffentlichung` stellen. Dann verliert der Autor
-    die Aufgabenseite auf main und testet nur noch auf beta.
-  - Noch nicht umgesetzt; Hauptchat bitte entscheiden.
+- **F2 Testleiste auf main:** **Umgesetzt** (Entscheidung des Hauptchats, 20.11.2026).
+  - Die Testleiste und „Bestehen“ und „Verfehlen“ erscheinen in der Fassung des Autors nur auf
+    einem Gerät, auf dem die Aufgabenseite einmal geöffnet wurde. Das merkt sich das Gerät im
+    Gerätespeicher unter `svga.autorgeraet` (`app/src/autor/autorgeraet.ts`, `testknoepfeAn` in
+    `abenteuer/anbindung/testende.ts`).
+  - Leser auf main sehen sie nie. Der Autor sieht sie nach einmal drei Sekunden auf „Profil“, auf
+    main wie auf beta. „Alle Daten löschen“ entfernt den Merker mit.
+  - Die Oberflächentests setzen den Merker in `ladeAbenteuerpaket` (`alsAutorgeraet`).
+  - Rückbau: `testknoepfeAn` wieder auf `!__VEROEFFENTLICHUNG__`.

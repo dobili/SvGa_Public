@@ -92,6 +92,22 @@
     order: 0;
   }
 
+  /* Erzählter Einstieg quer knapper: Mit Text, Zugfolge und „Ans Brett“ füllte er die Spalte, und
+     die letzte Zeile des Ziels darunter lag unter dem Rand (iPhone 15 quer, Wegsperre S15: Ziel
+     bis 370 bei Spaltenende 335; Spieler-Durchlauf quer, 20.11.2026). Kleinere Schrift und
+     engere Abstände; der Knopf bleibt so hoch, dass er sich gut antippen lässt. */
+  .abenteuer-partie-seite > .abenteuer-erzaehlung {
+    gap: calc(var(--raster) / 2);
+    padding: calc(var(--raster) / 2) var(--raster);
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .abenteuer-partie-seite > .abenteuer-erzaehlung > .knopf-haupt {
+    min-height: 44px;
+    padding-block: 0;
+  }
+
   /* Quer ist die Spalte knapp: Die Leiste rückt enger an die (größeren) Karten (RO15). */
   .abenteuer-partie-seite .abenteuer-kartenleiste {
     padding-block: calc(var(--raster) / 2);

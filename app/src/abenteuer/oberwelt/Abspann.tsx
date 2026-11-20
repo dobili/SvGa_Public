@@ -9,6 +9,7 @@
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import type { Spieldaten } from "../daten/laden";
+import { figurenDerWelt } from "./abspannfiguren";
 import { Portraet } from "../dialog/Portraet";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
@@ -33,19 +34,6 @@ const MITWIRKENDE = [
   "abspann.mitwirkende.geraeusche",
 ] as const;
 
-/** Alle Figuren der Welt, je Name einmal, in der Reihenfolge der Orte. */
-function figurenDerWelt(daten: Spieldaten): { kennung: string; name: string }[] {
-  const gesehen = new Set<string>();
-  return daten.orte
-    .flatMap((o) => o.figuren)
-    .flatMap((f) => {
-      const kurz = f.kennung.split(".").at(-1) ?? f.kennung;
-      if (gesehen.has(kurz)) return [];
-      gesehen.add(kurz);
-      return [{ kennung: kurz, name: f.name }];
-    });
-}
-
 export function Abspann({
   stand,
   daten,
@@ -63,25 +51,30 @@ export function Abspann({
       aria-label={tSpiel("abspann.titel")}
       data-testid="abenteuer-abspann"
     >
-      <h2>{tSpiel("abspann.titel")}</h2>
-      <p>{tSpiel("abspann.held", { name: stand.held.name })}</p>
-      <ul className="abenteuer-abspann-figuren">
-        {figurenDerWelt(daten).map((f) => (
-          <li key={f.kennung}>
-            <Portraet sprecher={f.kennung} stimmung={null} />
-            <span>{tSpiel(f.name)}</span>
-          </li>
-        ))}
-      </ul>
-      <h3>{tSpiel("abspann.mitwirkendeTitel")}</h3>
-      <ul>
-        {MITWIRKENDE.map((k) => (
-          <li key={k}>{tSpiel(k)}</li>
-        ))}
-      </ul>
-      <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
-        {tSpiel("abspann.schliessen")}
-      </button>
+      {/* Wie im Laden: Nur der Inhalt rollt, „Schließen“ steht im Fuß und verdeckt keine Zeile. */}
+      <div className="abenteuer-menue-inhalt">
+        <h2>{tSpiel("abspann.titel")}</h2>
+        <p>{tSpiel("abspann.held", { name: stand.held.name })}</p>
+        <ul className="abenteuer-abspann-figuren">
+          {figurenDerWelt(daten).map((f) => (
+            <li key={f.kennung}>
+              <Portraet sprecher={f.kennung} stimmung={null} />
+              <span>{tSpiel(f.name)}</span>
+            </li>
+          ))}
+        </ul>
+        <h3>{tSpiel("abspann.mitwirkendeTitel")}</h3>
+        <ul>
+          {MITWIRKENDE.map((k) => (
+            <li key={k}>{tSpiel(k)}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="abenteuer-menue-fuss">
+        <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
+          {tSpiel("abspann.schliessen")}
+        </button>
+      </div>
     </section>
   );
 }

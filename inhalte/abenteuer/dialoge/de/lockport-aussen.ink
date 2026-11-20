@@ -48,7 +48,8 @@ Imogen Rourke, Schleusenwärterin. Erst das Wasser, dann das Boot. #sprecher:imo
 -> tafel_angebot
 
 === tafel_angebot ===
-Der Steg ist zu, Herbstwartung. Wer zwei Dinge zugleich im Blick hat, darf mit mir hinüber. Hier ist die Tafel. #sprecher:imogen #stimmung:nachdenklich
+Der Steg ist zu, Herbstwartung. Wer zwei Dinge zugleich im Blick hat, darf mit mir hinüber. #sprecher:imogen #stimmung:nachdenklich
+Hier ist die Tafel. #sprecher:imogen #stimmung:nachdenklich
 + [Die Tafel lösen]
     ~ beginneAufgaben("lockport.tafelSchleuse")
     -> END
@@ -85,7 +86,8 @@ Das Geländer des Stegs liegt abgeschraubt auf der Mauer. Ein Schild: „Herbstw
 {rubenGetroffen: -> kai_auswahl}
 ~ rubenGetroffen = true
 Ein Mann mit Schiffermütze sitzt auf einem Poller und sieht auf den leeren Kahn. #sprecher:erzaehler
-Ruben Castellano. Kapitän der Ashford Belle. Ein Kahn ohne Fracht ist ein Haus ohne Leute. #sprecher:ruben #stimmung:laechelt
+Ruben Castellano. Kapitän der Ashford Belle. #sprecher:ruben #stimmung:laechelt
+Ein Kahn ohne Fracht ist ein Haus ohne Leute. #sprecher:ruben #stimmung:laechelt
 -> kai_auswahl
 
 === kai_auswahl ===
@@ -95,7 +97,8 @@ Ruben Castellano. Kapitän der Ashford Belle. Ein Kahn ohne Fracht ist ein Haus 
 {lastkahnFrei:
     Die Belle hat wieder zu tun. Riverton, Lockport, Ironwood, wie früher. #sprecher:ruben #stimmung:laechelt
   - else:
-    Zwei Ziele, ein Schuss. So legt man an. So gabelt man auch. #sprecher:ruben #stimmung:laechelt
+    Zwei Ziele, ein Schuss. So legt man an. #sprecher:ruben #stimmung:laechelt
+    So gabelt man auch. #sprecher:ruben #stimmung:laechelt
 }
 -> END
 

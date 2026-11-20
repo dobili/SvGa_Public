@@ -32,7 +32,8 @@ VAR abschiedGesehen = false
 }
 ~ ngataGetroffen = true
 Am Schreibtisch sitzt eine Frau mit Kopfhörern. Aus dem Funkgerät kommen Zahlen und Buchstaben. #sprecher:erzaehler
-Dr. Ngata. Ich spiele jede Nacht per Funk, mit Leuten auf der anderen Seite der Erde. Ihre Sterne sind andere, die Züge sind dieselben. #sprecher:ngata #stimmung:laechelt
+Dr. Ngata. Ich spiele jede Nacht per Funk, mit Leuten auf der anderen Seite der Erde. #sprecher:ngata #stimmung:laechelt
+Ihre Sterne sind andere, die Züge sind dieselben. #sprecher:ngata #stimmung:laechelt
 -> ngata_angebot
 
 === ngata_angebot ===
@@ -47,12 +48,14 @@ Ich habe ein paar Mattbilder gesammelt, für lange Nächte. Willst du sie lösen
 
 === lucia ===
 {luciaGetroffen:
-    Siehst du ihn? Zwei Sterne nach oben, einer zur Seite. Ein L. #sprecher:lucia #stimmung:laechelt
+    Siehst du ihn? Zwei Sterne nach oben, einer zur Seite. #sprecher:lucia #stimmung:laechelt
+    Ein L. #sprecher:lucia #stimmung:laechelt
     -> END
 }
 ~ luciaGetroffen = true
 Ein Mädchen mit Bleistift hinter dem Ohr zeichnet Linien auf eine Sternkarte. #sprecher:erzaehler
-Lucía. Ich habe ein Sternbild gefunden, das noch keiner kennt. Ich nenne es Springer. Es springt über den ganzen Himmel. #sprecher:lucia #stimmung:laechelt
+Lucía. Ich habe ein Sternbild gefunden, das noch keiner kennt. #sprecher:lucia #stimmung:laechelt
+Ich nenne es Springer. Es springt über den ganzen Himmel. #sprecher:lucia #stimmung:laechelt
 -> END
 
 === teleskop ===
@@ -72,7 +75,8 @@ Von der Bank sieht man tief hinunter in den Canyon. Der Pfad unten ist nur noch 
 -> END
 
 === antennenmast ===
-Ein alter Antennenmast, festgebunden mit Draht. Er summt leise im Wind. Von hier geht Dr. Ngatas Funk um die Welt. #sprecher:erzaehler
+Ein alter Antennenmast, festgebunden mit Draht. Er summt leise im Wind. #sprecher:erzaehler
+Von hier geht Dr. Ngatas Funk um die Welt. #sprecher:erzaehler
 -> END
 
 === finch_bauer_g ===

@@ -53,7 +53,9 @@ VAR tiefpunktGesehen = false
     -> END
 }
 ~ ankunftPortDelacroixGesehen = true
-Diese Luft. Salz und Holz. Und Teer. Und etwas Süßes, das fault: die Magnolien. Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
+Diese Luft. Salz und Holz. #sprecher:ambrose #stimmung:fern
+Und Teer. Und etwas Süßes, das fault: die Magnolien. #sprecher:ambrose #stimmung:fern
+Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
 * [„Du bist hier geboren.“]
 - Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose #stimmung:bitter
 Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler
@@ -67,7 +69,8 @@ Ich habe unter der Empore gesessen und gewartet, bis er fertig war. #sprecher:am
 * [Warten]
 - Er macht einen Schritt darauf zu. Dann noch einen. #sprecher:erzaehler
 Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzlich schnell, als könne sie sich nicht entscheiden. #sprecher:erzaehler #musik:karte
-Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. Wir sehen uns heute Abend. #sprecher:mutter #stimmung:ernst
+Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. #sprecher:mutter #stimmung:ernst
+Wir sehen uns heute Abend. #sprecher:mutter #stimmung:ernst
 -> END
 
 === deich ===
@@ -124,7 +127,8 @@ Sie hat Muscheln dazugelegt. #sprecher:erzaehler
 }
 ~ brettHaus3Gesehen = true
 In der Rue des Facteurs hängt ein Brett an der Wand eines Wohnzimmers wie ein Bild. Ein Junge steigt auf einen Stuhl und hängt es ab. #sprecher:erzaehler
-„Das hat mein Großvater geschnitzt. Nimm es. An der Wand spielt keiner.“ #sprecher:erzaehler
+„Das hat mein Großvater geschnitzt. Nimm es.“ #sprecher:erzaehler
+„An der Wand spielt keiner.“ #sprecher:erzaehler
 -> brett_gezaehlt
 
 === brett_haus4 ===
@@ -155,11 +159,14 @@ Und es ist, wie wenn ein Zahn fehlt. #sprecher:erzaehler
 === bretter_vollstaendig ===
 In der Turnhalle sortiert Miss Odile, was du gebracht hast. Was nicht zusammenpasst, legt sie auch zusammen. #sprecher:erzaehler #musik:odile
 Sie singt dabei leise, etwas auf Französisch, das klingt, als wäre es sehr alt. #sprecher:erzaehler
-Remy stimmt am anderen Ende seine Trompete. Er sieht auf den Karren. Dann sieht er weg. #sprecher:erzaehler
+Remy stimmt am anderen Ende seine Trompete. Er sieht auf den Karren. #sprecher:erzaehler
+Dann sieht er weg. #sprecher:erzaehler
 * [Zum Zelt gehen]
 - Am Abend liegt an deinem Platz im Zelt eine Postkarte. Vorn eine Brücke im Regen. #sprecher:erzaehler #musik:riverton.postkarte
-„Maple Falls! Wir spielen jetzt unter der alten Steinbrücke. Dach haben wir, Wände nicht. Tamsin sagt, das zählt als Pavillon.“ #sprecher:erzaehler
-„Elf Kinder letzten Samstag. Der Stein liegt in der Mitte. Bring den Springer mal vorbei, er fehlt uns. – S.“ #sprecher:erzaehler
+„Maple Falls! Wir spielen jetzt unter der alten Steinbrücke.“ #sprecher:erzaehler
+„Dach haben wir, Wände nicht. Tamsin sagt, das zählt als Pavillon.“ #sprecher:erzaehler
+„Elf Kinder letzten Samstag. Der Stein liegt in der Mitte.“ #sprecher:erzaehler
+„Bring den Springer mal vorbei, er fehlt uns. – S.“ #sprecher:erzaehler
 Du liest sie dreimal. #sprecher:erzaehler
 {ausgangPortDelacroixBatiste == "sieg": Dann baust du auf Junos Reisebrett die Stellung von Batiste auf und spielst sie allein durch, bis du verstehst, was du getan hast. #sprecher:erzaehler}
 -> END
@@ -185,18 +192,21 @@ Hier warst du schon. Jemand winkt dir aus dem Fenster zu. #sprecher:erzaehler
 
 === batiste_erstes_treffen ===
 ~ batisteGetroffen = true
-Am Kai liegt ein Boot kieloben auf zwei Böcken. Ein Mann streicht Pech in die Fugen. Auf einem Eimer steht ein Brett. #sprecher:erzaehler
+Am Kai liegt ein Boot kieloben auf zwei Böcken. Ein Mann streicht Pech in die Fugen. #sprecher:erzaehler
+Auf einem Eimer steht ein Brett. #sprecher:erzaehler
 {tiefpunktGesehen:Du bist das Kind mit dem Rucksack.|Neu hier, mit Rucksack. Das sieht man.} #sprecher:batiste #stimmung:nachdenklich
 * [„Ja.“]
 - {tiefpunktGesehen: -> batiste_remy}
 Wer weit gefahren ist, braucht eine Pause. Ich hab eine, gleich hier. #sprecher:batiste #stimmung:laechelt
 -> batiste_setz_dich
 === batiste_remy ===
-Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste #stimmung:nachdenklich
+Hm. Remy ist ein guter Junge. #sprecher:batiste #stimmung:nachdenklich
+Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste #stimmung:nachdenklich
 Wer so was gemacht hat, wird empfindlich, wenn einer mit Glas an der Jacke kommt. #sprecher:batiste #stimmung:nachdenklich
 -> batiste_setz_dich
 === batiste_setz_dich ===
-Setz dich. Ohne Uhr. Uhren sind was für Leute, die irgendwohin müssen. #sprecher:batiste #stimmung:laechelt
+Setz dich. Ohne Uhr. #sprecher:batiste #stimmung:laechelt
+Uhren sind was für Leute, die irgendwohin müssen. #sprecher:batiste #stimmung:laechelt
 -> batiste_angebot
 
 === batiste_angebot ===
@@ -213,7 +223,8 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     ~ batisteKarteGegeben = true
     {tiefpunktGesehen:Du gewinnst nicht schön. Aber allein.|Du gewinnst nicht schön. Aber du gewinnst.} #sprecher:erzaehler
     {tiefpunktGesehen:Na also. Jetzt hat es auch keiner gehört.|Na also. Ganz ohne Uhr.} #sprecher:batiste #stimmung:laechelt
-    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste #stimmung:laechelt
+    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. #sprecher:batiste #stimmung:laechelt
+    Auch du nicht, eine Weile. #sprecher:batiste #stimmung:laechelt
     // „Kühler Kopf“ hat schon Mr. Quinn geschenkt; Batiste gibt den Bauernkompass (Bauer um Bauer,
     // ohne Uhr; Dokument 11 schlug ihn für Port Delacroix vor).
     Er schiebt dir zwei Karten über das Brett. Eine für einen zweiten Versuch, eine mit einem Bauern und einer Kompassnadel. #sprecher:erzaehler
@@ -221,7 +232,8 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     ~ gibKarte("zweiteChance")
     ~ gibKarte("bauernkompass")
 - else:
-    Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste #stimmung:laechelt
+    Gut gespielt. Keine Worte, nur Züge. #sprecher:batiste #stimmung:laechelt
+    So mag ich das. #sprecher:batiste #stimmung:laechelt
 }
 + [„Noch eine Partie.“]
     ~ beginnePartie("portDelacroix.batiste")
@@ -230,7 +242,8 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     -> END
 
 === batiste_nach_niederlage ===
-Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste #stimmung:laechelt
+Junge Leute reden. Das Wasser hört nicht zu. #sprecher:batiste #stimmung:laechelt
+Noch einmal? #sprecher:batiste #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
@@ -241,7 +254,8 @@ Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste #st
 // vorteil. Vorher ging es in batiste_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === batiste_nach_remis ===
-Gleich. Das Wasser steht still. Noch einmal? #sprecher:batiste #stimmung:laechelt
+Gleich. Das Wasser steht still. #sprecher:batiste #stimmung:laechelt
+Noch einmal? #sprecher:batiste #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
@@ -257,7 +271,8 @@ Gleich. Das Wasser steht still. Noch einmal? #sprecher:batiste #stimmung:laechel
 }
 ~ arceneauxGetroffen = true
 Vor der Turnhalle steht ein Gebäckstand, Puderzucker überall. Eine alte Dame wischt sich die Hände an der Schürze ab. #sprecher:erzaehler
-Arceneaux. Wer hilft, bekommt Gebäck. Wer nicht hilft, bekommt auch Gebäck, aber mit schlechtem Gewissen. #sprecher:arceneaux #stimmung:lacht
+Arceneaux. Wer hilft, bekommt Gebäck. #sprecher:arceneaux #stimmung:lacht
+Wer nicht hilft, bekommt auch Gebäck, aber mit schlechtem Gewissen. #sprecher:arceneaux #stimmung:lacht
 Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux #stimmung:laechelt
 -> arceneaux_laden
 

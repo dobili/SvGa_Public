@@ -70,7 +70,8 @@ VAR abschiedGesehen = false
     Der Tisch wackelt nur noch, wenn man sich darauf stützt. Das ist jetzt eben so. #sprecher:erzaehler
 - else:
     ~ angesehenTischPizzakarton = true
-    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. Fast nicht. #sprecher:erzaehler
+    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. #sprecher:erzaehler
+    Fast nicht. #sprecher:erzaehler
     {not abschiedGesehen:
         Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
     }
@@ -86,7 +87,8 @@ VAR abschiedGesehen = false
     Neben dem Kreidebrett ist ein L gemalt, dann noch eins und noch eins, bis zur Ecke. Weiß, schwarz, weiß, schwarz. #sprecher:erzaehler
     {not angesehenKreidebrett and not abschiedGesehen:
         ~ angesehenKreidebrett = true
-        Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
+        Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. #sprecher:ambrose #stimmung:lacht
+        Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
     }
 - angesehenKreidebrett:
     Das Plastikpferd liegt noch auf dem Kreidebrett. Es wartet. #sprecher:erzaehler
@@ -121,7 +123,8 @@ VAR abschiedGesehen = false
     }
     Ein alter Spiegel mit einem Sprung quer über das Glas. Darin siehst du dich und die Kisten, sonst niemand. #sprecher:erzaehler
     {ersteLektionBesprochen and not abschiedGesehen:
-        Ich habe nachgesehen. Geister haben kein Spiegelbild. Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
+        Ich habe nachgesehen. Geister haben kein Spiegelbild. #sprecher:ambrose #stimmung:lacht
+        Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
     }
 }
 -> END
@@ -149,7 +152,8 @@ VAR abschiedGesehen = false
     {ersteLektionBesprochen:
         Dieselbe steile Schrift wie auf dem Fingerzeig. Du drehst die Karte in der Tasche um und vergleichst. #sprecher:erzaehler
     - else:
-        Die Kiste steht bei den anderen. „Bettwäsche“, „Briefe 1970–1989“, „Weihnachten“. Alles in derselben steilen Schrift. #sprecher:erzaehler
+        Die Kiste steht bei den anderen. „Bettwäsche“, „Briefe 1970–1989“, „Weihnachten“. #sprecher:erzaehler
+        Alles in derselben steilen Schrift. #sprecher:erzaehler
     }
 - else:
     ~ angesehenKisteWhitlock = true
@@ -201,7 +205,8 @@ VAR abschiedGesehen = false
 === bildschirm_pult ===
 {
 - nadelCedarCreek > 0:
-    Jemand hat den Bildschirm wieder eingeschaltet. Die Figuren ziehen von selbst. Niemand sieht hin. Fast niemand. #sprecher:erzaehler
+    Jemand hat den Bildschirm wieder eingeschaltet. Die Figuren ziehen von selbst. #sprecher:erzaehler
+    Niemand sieht hin. Fast niemand. #sprecher:erzaehler
 - angesehenBildschirmPult:
     Coach Delgado hat ein Handtuch über den Bildschirm gehängt. Es rutscht immer wieder herunter. #sprecher:erzaehler
 - else:

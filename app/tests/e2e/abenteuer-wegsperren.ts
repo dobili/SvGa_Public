@@ -94,7 +94,8 @@ const S17: Sperre = {
   voraussetzung: { endeAkt3Gesehen: true },
   stamm: "testteamGitter",
   erste: "Viehgitter",
-  angebot: "Ein Endspiel, fünfzehn Züge",
+  // Seit dem Teilen der Zeilen (zwei Sätze je Zeile, 20.11.2026) steht die letzte Zeile bei der Wahl.
+  angebot: "Zeig, dass er reicht",
   spaeter: "Das Gitter liegt morgen auch noch hier.",
   meldungen: ["Neu im Tagebuch: Die Wahrheit des Endspiels"],
   schild: "Diner an der Wüstenstraße",

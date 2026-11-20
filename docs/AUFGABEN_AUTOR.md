@@ -180,6 +180,16 @@ Teil fertig ist.
          (das gilt auch in der App).
       **Rückmeldung:** „N2646 ok“ oder Nummer mit Notiz.
 
+- [ ] N2647. **Schneller Start des Spiels (20.11.):** Neues Spiel laden (Admin-Menü › Spiel
+      öffnen). Die Welt erscheint jetzt nach wenigen Sekunden, Maia (92 MB) und die Geräusche
+      laden im Hintergrund weiter; „Spiel geladen“ steht erst da, wenn alles da ist, danach geht
+      es auch offline. Bitte am Handy über Mobilfunk grob die Sekunden bis zur Welt stoppen
+      (gemessen im Test: vorher 95 s, jetzt 11 s bei 10 Mbit/s). Eine Partie, die beginnt, bevor
+      Maia fertig ist, spielt einmal ohne Maia (bei normalem Netz ist Maia vor der ersten Partie
+      auf dem Dachboden fertig). Wenn dir das nicht recht ist: „N2647: erste Partie wartet auf
+      Maia“.
+      **Rückmeldung:** „N2647 ok, 6 s“ oder eine Notiz.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein
@@ -2287,3 +2297,12 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       deinem Zimmer. So sagt es der Questtext; auf dem Dachboden steht seit dem ersten Abend kein
       Brett mehr.
       Schon umgesetzt in inhalte/abenteuer/quests.json, Widerspruch genügt.
+
+- [ ] RO41. **Welche iOS-Version hat dein iPhone? (20.11.2026, Frage für eine Einsparung)**
+      Musik und Geräusche des Spiels sind etwa 110 MB groß (AAC). Im Format Opus wären sie
+      20 bis 40 % kleiner, bei gleicher Hörqualität. Das iPhone spielt Opus im Spiel aber erst ab
+      iOS 17.4 ab; auf älteren Geräten bliebe es stumm. Deshalb ist noch nichts umgestellt.
+      Empfehlung: Wenn dein iPhone (und die der Testleser) iOS 17.4 oder neuer hat, auf Opus
+      umstellen, nach einer kurzen Hörprobe (zwei, drei Ausschnitte AAC gegen Opus, liegt dann im
+      privaten Repository unter hoerprobe/). Andernfalls bleibt AAC.
+      **Antwort:** „RO41: iOS 18.1, Opus ja“ oder „RO41: AAC lassen“.

@@ -34,7 +34,8 @@ VAR abschiedGesehen = false
 }
 ~ theronGetroffen = true
 Am Bootssteg liegt ein flaches Luftboot mit einem riesigen Propeller. Ein Mann mit Sonnenbrille winkt. #sprecher:erzaehler
-Theron. Ich fahre Leute durch den Bayou. Morgens, wenn der Nebel liegt, spielen wir Nebelschach. #sprecher:theron #stimmung:laechelt
+Theron. Ich fahre Leute durch den Bayou. #sprecher:theron #stimmung:laechelt
+Morgens, wenn der Nebel liegt, spielen wir Nebelschach. #sprecher:theron #stimmung:laechelt
 Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel. #sprecher:theron #stimmung:neutral
 {not abschiedGesehen:
     Wie im Leben: Man sieht nie das ganze Brett. Aber man zieht trotzdem. #sprecher:ambrose #stimmung:friedlich
@@ -72,7 +73,8 @@ Das Luftboot bringt dich zurück zum Kai von Port Delacroix. #sprecher:erzaehler
 === pepe_erstes ===
 ~ pepeGetroffen = true
 Auf dem Deck des Hausboots sitzt ein alter Mann neben einer verbeulten Blechkiste. Er hält ein Streichholz in der Hand. #sprecher:erzaehler
-Thibodeaux. Pépé sagen alle. Die Kiste kommt ins Feuer, heute Abend. Keiner liest das mehr. #sprecher:pepe #stimmung:bitter
+Thibodeaux. Pépé sagen alle. #sprecher:pepe #stimmung:bitter
+Die Kiste kommt ins Feuer, heute Abend. Keiner liest das mehr. #sprecher:pepe #stimmung:bitter
 -> pepe_kiste
 
 === pepe_kiste ===
@@ -87,10 +89,12 @@ Partieformulare aus dem Café des Exilés, 1852. Mein Urgroßvater hat da Kaffee
 ~ hausbootFormularGesehen = true
 Vergilbte Blätter, sauber in Spalten geschrieben. Auf einem bleibt dein Blick hängen: dieselbe schräge Schrift wie in den Notizen im Brett. #sprecher:erzaehler
 {abschiedGesehen:
-    Es ist Ambroses Schrift. Eine Partie gegen einen Hafenarbeiter. Von ihr hat er nie erzählt. #sprecher:erzaehler
+    Es ist Ambroses Schrift. Eine Partie gegen einen Hafenarbeiter. #sprecher:erzaehler
+    Von ihr hat er nie erzählt. #sprecher:erzaehler
 - else:
     Warte. Zeig mir das Blatt. #sprecher:ambrose #stimmung:fern
-    Das ist meine Schrift. Ich habe gegen einen Hafenarbeiter verloren, damals. Ich habe es niemandem erzählt. #sprecher:ambrose #stimmung:fern
+    Das ist meine Schrift. Ich habe gegen einen Hafenarbeiter verloren, damals. #sprecher:ambrose #stimmung:fern
+    Ich habe es niemandem erzählt. #sprecher:ambrose #stimmung:fern
 }
 Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, Weiß ist am Zug. #sprecher:erzaehler
 -> pepe_angebot
@@ -113,10 +117,12 @@ Nach dem 20. Zug hört das Formular auf. Den Rest hat keiner aufgeschrieben, Wei
 - abschiedGesehen: Verloren. Schön war es trotzdem, seine Partie zu Ende zu spielen. #sprecher:erzaehler
 - ausgangBayouHausboot == "sieg": Diesmal nicht. Diesmal nicht! #sprecher:ambrose #stimmung:froh
 - ausgangBayouHausboot == "remis": Remis. Das hätte ich damals unterschrieben. #sprecher:ambrose #stimmung:laechelt
-- else: Wieder verloren. Und weißt du was? Es ist trotzdem schön, sie noch einmal gespielt zu haben. #sprecher:ambrose #stimmung:laechelt
+- else: Wieder verloren. Und weißt du was? #sprecher:ambrose #stimmung:laechelt
+Es ist trotzdem schön, sie noch einmal gespielt zu haben. #sprecher:ambrose #stimmung:laechelt
 }
 Pépé steckt das Streichholz zurück in die Schachtel. #sprecher:erzaehler
-Gut. Dann brennt heute nichts. Die Kiste bringe ich ins Musikhaus, da gehört sie hin. Das eine Blatt behältst du. #sprecher:pepe #stimmung:laechelt
+Gut. Dann brennt heute nichts. #sprecher:pepe #stimmung:laechelt
+Die Kiste bringe ich ins Musikhaus, da gehört sie hin. Das eine Blatt behältst du. #sprecher:pepe #stimmung:laechelt
 ~ gibFund("formularCafeDesExiles")
 -> END
 

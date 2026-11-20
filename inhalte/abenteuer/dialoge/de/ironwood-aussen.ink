@@ -58,7 +58,8 @@ VAR abschiedGesehen = false
 // (maple-falls-wohnzimmer.nicht_ironwood); sonst kommt es hier als Anruf, trocken und ohne Pause.
 // Ironwood ist grau, wie Dinge grau sind, die gearbeitet haben. Klang: tiefes Thema mit Blech und
 // einem langsamen Schlag, dazu das Fauchen des Hochofens in Abständen; Lichtwechsel orange.
-Ironwood ist grau. Nicht hässlich. Grau, wie Dinge grau sind, die gearbeitet haben. #sprecher:erzaehler #musik:ironwood
+Ironwood ist grau. Nicht hässlich. #sprecher:erzaehler #musik:ironwood
+Grau, wie Dinge grau sind, die gearbeitet haben. #sprecher:erzaehler
 Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengeländern. #sprecher:erzaehler
 Über den Hallen leuchtet der Himmel orange auf. Einen Atemzug später kommt das Geräusch, ein tiefes Fauchen. #sprecher:erzaehler #klang:hochofen #licht:ironwood
 {verbotGesehen:
@@ -75,9 +76,11 @@ Nein. #sprecher:mutter #stimmung:verschlossen
 Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 * [„Warum?“]
 * [Nichts sagen]
-- Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
+- Frag nicht. Bitte. #sprecher:mutter #stimmung:verschlossen
+Nicht heute. #sprecher:mutter #stimmung:verschlossen
 Sie hat schon aufgelegt. #sprecher:erzaehler
-Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
+Deine Mutter hat Angst. Vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
+Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
 Wir gucken nur. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
 Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
 -> END
@@ -141,11 +144,15 @@ Und warum du danach so lange auf ein Geländer gestarrt hast. #sprecher:erzaehle
 * [„In dem Brett wohnt jemand.“]
 - Sie lacht nicht. Sie blättert im Tagebuch weit zurück, bis in den September, und dreht es zu dir um. #sprecher:erzaehler
 In rosa Tinte, zwischen einer verlorenen Partie und einem Sticker: „{held} redet mit dem Brett. Nicht fragen. Noch nicht.“ #sprecher:erzaehler #bild:tagebuch_september
-Ich hab gewartet. Wie heißt er? Ist er nett? Kann er mich sehen? Findet er meine Züge schlimm? #sprecher:juno #stimmung:froh #bild:aus
+Ich hab gewartet. Wie heißt er? #sprecher:juno #stimmung:froh #bild:aus
+Ist er nett? Kann er mich sehen? #sprecher:juno #stimmung:froh
+Findet er meine Züge schlimm? #sprecher:juno #stimmung:froh
 Sag ihr, dass ihr Turm in Cedar Creek einen ehrenvollen Tod gestorben ist. #sprecher:ambrose #stimmung:lachtOhneSpott
 Sie strahlt eine Woche lang. #sprecher:erzaehler
-Jetzt ist Januar. An der Haltestelle an der Schnellstraße liegt der Schnee fest. Der Bus nach Silicon Bay hat den Motor an. #sprecher:erzaehler #geraeusch:schnee_schritte
-Ich hab Nachtschicht. Die ganze Woche. Sonst käme ich mit. Juno, du passt auf. #sprecher:mutter #stimmung:nachdenklich
+Jetzt ist Januar. An der Haltestelle an der Schnellstraße liegt der Schnee fest. #sprecher:erzaehler #geraeusch:schnee_schritte
+Der Bus nach Silicon Bay hat den Motor an. #sprecher:erzaehler
+Ich hab Nachtschicht. Die ganze Woche. #sprecher:mutter #stimmung:nachdenklich
+Sonst käme ich mit. Juno, du passt auf. #sprecher:mutter #stimmung:nachdenklich
 Ich passe immer auf. #sprecher:juno #stimmung:laechelt
 Du verlierst deine Mütze, wenn du sie aufhast. #sprecher:mutter #stimmung:lacht
 Aber ich merke es. #sprecher:juno #stimmung:laechelt
@@ -155,8 +162,10 @@ Ich hab mal ein Turnier in so einem Glaskasten gespielt. Man friert darin, und m
 Juno drückt dir eine kleine Holzkiste mit Stickern in die Hand. Auf dem Deckel in rosa Buchstaben: „Clubtagebuch, Außenstelle.“ #sprecher:erzaehler #bild:reisebrett
 Darin ein Brett zum Aufklappen, mit Magnetfiguren. #sprecher:erzaehler #bild:aus
 Ich kann nur bis Mittwoch mit. Dann ist Schule. #sprecher:juno #stimmung:nachdenklich
-Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. Oder mit mir, wenn ich anrufe. #sprecher:juno #stimmung:froh
-Ein Brett für die Tasche. Meines ist schwerer. Und gesprächiger. #sprecher:ambrose #stimmung:laechelt
+Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. #sprecher:juno #stimmung:froh
+Oder mit mir, wenn ich anrufe. #sprecher:juno #stimmung:froh
+Ein Brett für die Tasche. Meines ist schwerer. #sprecher:ambrose #stimmung:laechelt
+Und gesprächiger. #sprecher:ambrose #stimmung:laechelt
 Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmung:froh
 -> bus_silicon_bay_einsteigen
 
@@ -167,7 +176,8 @@ Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmu
     -> END
 * [Noch nicht]
     {not abschiedGesehen:
-        Silicon Bay. Wir fahren, wenn du bereit bist. Nicht früher. #sprecher:ambrose #stimmung:laechelt
+        Silicon Bay. Wir fahren, wenn du bereit bist. #sprecher:ambrose #stimmung:laechelt
+        Nicht früher. #sprecher:ambrose #stimmung:laechelt
     }
     -> END
 
@@ -185,7 +195,8 @@ Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmu
 === gus_erstes_treffen ===
 ~ gusGetroffen = true
 Am Güterbahnhof sitzt ein Rangierer auf einer umgedrehten Kabeltrommel, vor sich ein Brett und eine Uhr. #sprecher:erzaehler
-Gus. Fünfzehn Minuten Pause. Zehn für dich, fünf für mein Sandwich. #sprecher:gus #stimmung:laechelt
+Gus. Fünfzehn Minuten Pause. #sprecher:gus #stimmung:laechelt
+Zehn für dich, fünf für mein Sandwich. #sprecher:gus #stimmung:laechelt
 -> gus_angebot
 
 === gus_angebot ===
@@ -202,7 +213,8 @@ Fertig? #sprecher:gus #stimmung:laechelt
     -> END
 
 === gus_nach_sieg ===
-Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine? Ich nehm mir fünf Minuten von morgen. #sprecher:gus #stimmung:laechelt
+Pause vorbei, Partie verloren. Guter Tag für dich. #sprecher:gus #stimmung:laechelt
+Noch eine? Ich nehm mir fünf Minuten von morgen. #sprecher:gus #stimmung:laechelt
 + [„Noch eine, jetzt.“]
     ~ beginnePartie("ironwood.gus")
     -> END
@@ -210,7 +222,8 @@ Pause vorbei, Partie verloren. Guter Tag für dich. Noch eine? Ich nehm mir fün
     -> END
 
 === gus_nach_niederlage ===
-Pause vorbei, Partie gewonnen. Für mich. Revanche? Die Pause kann ich strecken. Ein bisschen. #sprecher:gus #stimmung:laechelt
+Pause vorbei, Partie gewonnen. Für mich. #sprecher:gus #stimmung:laechelt
+Revanche? Die Pause kann ich strecken. #sprecher:gus #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("ironwood.gus")
     -> END
@@ -221,7 +234,7 @@ Pause vorbei, Partie gewonnen. Für mich. Revanche? Die Pause kann ich strecken.
 // vorteil. Vorher ging es in gus_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === gus_nach_remis ===
-Remis. Für einen Sieg hat die Pause nicht gereicht. Für keinen von uns. #sprecher:gus #stimmung:laechelt
+Remis. Für einen Sieg hat die Pause keinem von uns gereicht. #sprecher:gus #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("ironwood.gus")
     -> END
@@ -237,12 +250,15 @@ Remis. Für einen Sieg hat die Pause nicht gereicht. Für keinen von uns. #sprec
 }
 ~ ednaGetroffen = true
 Hinter einem Verkaufsfenster voller Schrauben, Laternen und Fahrradketten sitzt eine alte Dame mit Lesebrille. #sprecher:erzaehler
-Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
+Edna. Eisenwaren. #sprecher:edna #stimmung:stolz
+Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
 {
 - hatFahrrad and hatLaterne:
-    Rad und Laterne hast du schon, sehe ich. Gute Wahl. Schrauben brauchst du immer. #sprecher:edna #stimmung:laechelt
+    Rad und Laterne hast du schon, sehe ich. Gute Wahl. #sprecher:edna #stimmung:laechelt
+    Schrauben brauchst du immer. #sprecher:edna #stimmung:laechelt
 - hatFahrrad:
-    Ein Rad hast du schon. Aber eine Laterne für dunkle Ecken? Die Umkleide im Werk ist finster. #sprecher:edna #stimmung:neutral
+    Ein Rad hast du schon. Aber eine Laterne für dunkle Ecken? #sprecher:edna #stimmung:neutral
+    Die Umkleide im Werk ist finster. #sprecher:edna #stimmung:neutral
 - else:
     Im Fenster steht ein Rad für alle, die keins haben. Und Laternen für dunkle Ecken. #sprecher:edna #stimmung:neutral
 }
@@ -270,7 +286,8 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
 {
 - nadelIronwood > 0 and not kaufGesehen: -> kauf
 - kaufGesehen:
-    Graham Hale telefoniert am Werkstor. „Ja, unterschrieben. Ja, ab Montag.“ #sprecher:erzaehler
+    Graham Hale telefoniert am Werkstor. #sprecher:erzaehler
+    „Ja, unterschrieben. Ja, ab Montag.“ #sprecher:erzaehler
     -> END
 - else:
     // Steht erst nach der Nadel am Werkstor (orte.json, wenn; Gutachten L1.3).
@@ -281,17 +298,21 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
 // Kapitel 29 (Roman): kein Thema, nur Wind und fernes Werk; unter Graham Hales Rede der glatte
 // Konzernton. Big Joe kommt heraus: Stille, nur das Klirren der Pokale.
 ~ kaufGesehen = true
-Es dauert neun Tage. Dann ruft Big Joe an. Nicht dich. Mama. Sie hört nur zu und nimmt den Mantel. #sprecher:erzaehler #musik:aus
+Es dauert neun Tage. Dann ruft Big Joe an. #sprecher:erzaehler #musik:aus
+Nicht dich. Mama. #sprecher:erzaehler
+Sie hört nur zu und nimmt den Mantel. #sprecher:erzaehler
 Am Werkstor hängt ein neues Schild, weiß und glänzend: „Perfect Move Trainingszentrum Ironwood. Eröffnung im Januar.“ #sprecher:erzaehler #musik:aus #bild:schild_werkstor
 Darunter, kleiner: „In den Räumen der ehemaligen Werkskantine.“ #sprecher:erzaehler #bild:aus
 Der Club bleibt selbstverständlich. An den neuen Tischen, zu denselben Zeiten, kostenlos. #sprecher:grahamHale #stimmung:laechelt #klang:konzern
 Mit einem Trainer, der nie müde wird. #sprecher:grahamHale #stimmung:laechelt
-Er glaubt es. Das ist das Schlimme. Er hält es wirklich für ein Geschenk. #sprecher:erzaehler
+Er glaubt es. Das ist das Schlimme. #sprecher:erzaehler
+Er hält es wirklich für ein Geschenk. #sprecher:erzaehler
 Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pokale heraus und klirren bei jedem Schritt. #sprecher:erzaehler #geraeusch:pokale
 Er sieht Graham Hale nicht an. Hinter ihm tragen Hank und Priya das Stahlbrett, zu zweit. #sprecher:erzaehler
 Neben seinem Vater steht Victor, in Weiß, das Tablet unter dem Arm. Er sieht Big Joe nach, den großen Händen, die den Karton halten, als wäre er aus Glas. #sprecher:erzaehler
 Vater. Vielleicht … #sprecher:victor #stimmung:nachdenklich #pause
-Graham Hale dreht sich zu ihm um. Freundlich. Fragend. #sprecher:erzaehler
+Graham Hale dreht sich zu ihm um. Freundlich. #sprecher:erzaehler
+Fragend. #sprecher:erzaehler
 Nichts. #sprecher:victor #stimmung:bitter
 {mamaSpielt:
     Mama geht über den Platz, an dem schwarzen Wagen vorbei, und nimmt Big Joe den Karton ab. Zusammen heben sie ihn in den Lieferwagen. #sprecher:erzaehler
@@ -303,21 +324,25 @@ Es beginnt zu schneien. Die ersten Flocken des Jahres bleiben auf dem Schild lie
 // Kapitel 29, Ende von Akt 2: Victors Thema zum ersten Mal unsicher; bei „J. H.“ Ambroses und
 // Victors Thema gleichzeitig. Ambrose legt diesmal die Hand auf die Niete (Kapitel 24 nur darüber).
 ~ einladungGesehen = true
-An der alten Stahlbrücke hinter dem Werkstor. Victor kommt allein, ohne Tablet. Er weiß nicht, wohin mit den Händen. #sprecher:erzaehler #musik:victor.unsicher
+An der alten Stahlbrücke hinter dem Werkstor. Victor kommt allein, ohne Tablet. #sprecher:erzaehler #musik:victor.unsicher
+Er weiß nicht, wohin mit den Händen. #sprecher:erzaehler
 {held}. #sprecher:victor #stimmung:nachdenklich
 Du hast vier. #sprecher:victor #stimmung:nachdenklich
 * [„Ja.“]
 - Gegen Big Joe habe ich einmal gespielt. Bei einem Schaukampf. #sprecher:victor #stimmung:nachdenklich
-Er hat mir danach einen Kakao ausgegeben. Ich wusste nicht, was ich damit machen soll. Ich trinke keinen Kakao. #sprecher:victor #stimmung:nachdenklich
+Er hat mir danach einen Kakao ausgegeben. Ich wusste nicht, was ich damit machen soll. #sprecher:victor #stimmung:nachdenklich
+Ich trinke keinen Kakao. #sprecher:victor #stimmung:nachdenklich
 Er hält dir eine Karte hin, weiß, mit silberner Schrift: „Jugendturnier der Perfect Move Akademie. Silicon Bay.“ #sprecher:erzaehler #bild:einladung_silber
 Komm. Dann siehst du, wogegen du spielst. #sprecher:victor #stimmung:nachdenklich
-Er geht nicht. Er sieht auf das Geländer zwischen euch. Mehr als drei Sekunden. #sprecher:erzaehler #bild:aus #pause:3
+Er geht nicht. Er sieht auf das Geländer zwischen euch. #sprecher:erzaehler #bild:aus
+Mehr als drei Sekunden. #sprecher:erzaehler #pause:3
 Und vielleicht sagst du mir dann, ob ich auf der richtigen Seite stehe. #sprecher:victor #stimmung:muede
 Er steigt in den Bus an der Schnellstraße, ohne sich umzusehen. Die Rücklichter werden kleiner im Schneetreiben. #sprecher:erzaehler
 Ein Hale, der fragt. Das ist neu. #sprecher:ambrose #stimmung:ueberrascht
 Auf dem ersten Pfosten des Geländers, klein und sauber: J. H. #sprecher:erzaehler
 Ambrose legt die Hand darauf. Diesmal lässt er sie dort. #sprecher:erzaehler #musik:ambrose.victor
-Er hat überall unterschrieben. Auf jeder Niete. Was für ein unerträglicher, gewissenhafter Mensch. #sprecher:ambrose #stimmung:riss
+Er hat überall unterschrieben. Auf jeder Niete. #sprecher:ambrose #stimmung:riss
+Was für ein unerträglicher, gewissenhafter Mensch. #sprecher:ambrose #stimmung:riss
 {umschlagGeoeffnet:
     Seine Stimme bricht. #sprecher:erzaehler #pause:2
     Und er hat mir geschrieben. #sprecher:ambrose #stimmung:riss

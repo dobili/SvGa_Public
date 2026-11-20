@@ -23,6 +23,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR ankunftPortDelacroixGesehen = false
 VAR bugGesehen = false
 VAR tiefpunktGesehen = false
 VAR ausgangWegSiliconDelacroixSchiffskoch = ""
@@ -50,6 +51,8 @@ VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Mr. Ruiz, der Schiffskoch
 
+VAR ambroseSprichtWieder = false
+VAR versoehnungGesehen = false
 === schiffskoch ===
 {
 - not ruizGetroffen: -> ruiz_erstes_treffen
@@ -64,8 +67,9 @@ VAR abschiedGesehen = false
 ~ ruizGetroffen = true
 In der Kombüse rührt ein Mann mit Kochmütze in einem Topf. Auf der Arbeitsplatte steht ein Brett zwischen Zwiebeln. #sprecher:erzaehler
 Ruiz, Schiffskoch. Zwei Tage bis Port Delacroix, und keiner an Bord spielt mit mir. #sprecher:schiffskoch #stimmung:laechelt
-Mama lehnt in der Tür. #sprecher:erzaehler
-Spiel ruhig. Ich hol uns Kaffee. #sprecher:mutter #stimmung:laechelt
+// Lektorat 20.11.2026: Nach der Ankunft bleibt Mama im Notzelt; auf späteren Fahrten ist sie nicht an Bord.
+{not ankunftPortDelacroixGesehen: Mama lehnt in der Tür. #sprecher:erzaehler}
+{not ankunftPortDelacroixGesehen: Spiel ruhig. Ich hol uns Kaffee. #sprecher:mutter #stimmung:laechelt}
 -> ruiz_angebot
 
 === ruiz_angebot ===
@@ -86,7 +90,8 @@ Du spielst, wie ich koche: nicht zu schnell, nicht zu langsam. Noch eine? #sprec
     -> END
 
 === ruiz_nach_niederlage ===
-Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffskoch #stimmung:lacht
+Angebrannt. Passiert. #sprecher:schiffskoch #stimmung:lacht
+Noch einmal, solange das Meer ruhig ist? #sprecher:schiffskoch #stimmung:lacht
 + [„Revanche.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
@@ -102,7 +107,8 @@ Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffs
 }
 ~ guidryGetroffen = true
 Am Deich stapeln Männer und Frauen in Gummistiefeln Sandsäcke. Einer richtet sich auf, die Hand im Kreuz. #sprecher:erzaehler
-Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. Hinterher ist man immer klüger. #sprecher:guidry #stimmung:nachdenklich
+Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. #sprecher:guidry #stimmung:nachdenklich
+Hinterher ist man immer klüger. #sprecher:guidry #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
@@ -161,9 +167,11 @@ Im Sand am Deich liegt eine Muschel mit einem kleinen, runden Loch, wie für ein
 === kapitaen_erstes ===
 ~ kapitaenGetroffen = true
 Am Steuer steht ein Mann mit weißem Bart und blauer Mütze. Er nickt zur Wand der Kajüte. #sprecher:erzaehler
-Fall, Amadou Fall. Du willst das Brett sehen. Alle wollen das Brett sehen. #sprecher:kapitaen #stimmung:laechelt
+Fall, Amadou Fall. Du willst das Brett sehen. #sprecher:kapitaen #stimmung:laechelt
+Alle wollen das Brett sehen. #sprecher:kapitaen #stimmung:laechelt
 Mein Vorgänger hat es mir vererbt, mit vier Wörtern: Weiß zieht und gewinnt. Seit dreißig Jahren hat es keiner gelöst. #sprecher:kapitaen #stimmung:nachdenklich
-Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gesteckt. Alle drei falsch. Wer es löst, darf einmal das Horn blasen. #sprecher:kapitaen #stimmung:lacht
+Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gesteckt. Alle drei falsch. #sprecher:kapitaen #stimmung:lacht
+Wer es löst, darf einmal das Horn blasen. #sprecher:kapitaen #stimmung:lacht
 -> kapitaen_angebot
 
 === kapitaen_angebot ===
@@ -209,12 +217,16 @@ Auf dem Achterdeck stehen Container mit der Aufschrift „Hochwasserhilfe“. Ei
 
 === delfin ===
 {angesehenDelfin:
-    Das Wasser ist ruhig. {not abschiedGesehen:Am Bug steht Ambrose und sieht nach vorn.} #sprecher:erzaehler
+    Das Wasser ist ruhig. {(not abschiedGesehen and not ambroseSchweigt()):Am Bug steht Ambrose und sieht nach vorn.} #sprecher:erzaehler
     -> END
 }
 ~ angesehenDelfin = true
-Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind. #sprecher:erzaehler #klang:delfin
-{bugGesehen and not abschiedGesehen: Du drehst dich nach Ambrose um. Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste. #sprecher:erzaehler}
+Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. #sprecher:erzaehler #klang:delfin
+{not ankunftPortDelacroixGesehen: Mama schreit auf wie ein Kind. #sprecher:erzaehler}
+{bugGesehen and (not abschiedGesehen and not ambroseSchweigt()):
+    Du drehst dich nach Ambrose um. Er hat es nicht gesehen. #sprecher:erzaehler
+    Er sieht nach vorn, auf die Küste. #sprecher:erzaehler
+}
 -> END
 
 // Gutachten L3.5: Ambrose am Bug als Pflichtereignis beim Übergang auf den Deich (orte.json,
@@ -222,8 +234,10 @@ Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mam
 === bug ===
 {bugGesehen: -> END}
 ~ bugGesehen = true
-Mama steht viel an der Reling. Ihr beide spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. Sie gewinnt öfter. #sprecher:erzaehler
-Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. Jetzt sagt er die Zugnummer. #sprecher:erzaehler #musik:ambrose.verzerrt
+Mama steht viel an der Reling. Ihr beide spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. #sprecher:erzaehler
+Sie gewinnt öfter. #sprecher:erzaehler
+Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. #sprecher:erzaehler #musik:ambrose.verzerrt
+Jetzt sagt er die Zugnummer. #sprecher:erzaehler
 Zug vierzehn. #sprecher:ambrose #stimmung:nachdenklich
 * [„Was war da?“]
 - Der Läufer. Es gab einen besseren. #sprecher:ambrose #stimmung:nachdenklich
@@ -284,3 +298,8 @@ Neben dem weißen Messwagen liegt eine Mappe im Gras. Auf dem Deckel: „Hochwas
 Der Zettel stimmt nicht ganz. Das Horn bleibt stumm. #sprecher:kapitaen #stimmung:nachdenklich
 Schau dir die drei Zettel noch einmal an. Das Brett hängt fest, es wartet. #sprecher:kapitaen #stimmung:lacht
 -> END
+
+// Lektorat 19.11.2026: Zwischen Tiefpunkt (Port Delacroix) und Céleste schweigt Ambrose auch hier;
+// wer in dieser Zeit zurückkommt, hörte ihn sonst (wie regeln/abwesenheit.ts, ambroseSprichtJetzt).
+=== function ambroseSchweigt() ===
+~ return tiefpunktGesehen and not ambroseSprichtWieder and not versoehnungGesehen

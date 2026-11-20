@@ -59,7 +59,8 @@ Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luf
 === bell_regel_erstmals ===
 -> bell_regel ->
 {not abschiedGesehen:
-    Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
+    Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. #sprecher:ambrose #stimmung:lachtOhneSpott
+    Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
     Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose #stimmung:laechelt
 }
 -> bell_angebot
@@ -71,7 +72,7 @@ So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring
 -> END
 
 === bell_alltag ===
-{~Der Geysir hält sich an die Uhr. Pünktlicher als jeder Bus.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons? Die gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
+{~Der Geysir hält sich an die Uhr. Ich stelle meine danach.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons? Die gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
 + [„Erklär mir das Atomschach noch einmal.“]
     -> bell_regel ->
     -> END
@@ -84,8 +85,10 @@ So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring
 {rayCastilloGetroffen: -> ray_alltag}
 ~ rayCastilloGetroffen = true
 Am Rand der Weizenfelder steht ein verbeulter Wagen voller Antennen. Ein Mann sieht durch ein Fernglas zum Horizont. #sprecher:erzaehler
-Ray Castillo. Sturmjäger. Da hinten braut sich was zusammen. #sprecher:rayCastillo #stimmung:laechelt
-Castillo? So heißen auch Mira und Tomás in Desert Springs. Du fragst ihn danach. #sprecher:erzaehler
+Ray Castillo. Sturmjäger. #sprecher:rayCastillo #stimmung:laechelt
+Da hinten braut sich was zusammen. #sprecher:rayCastillo #stimmung:laechelt
+Castillo? So heißen auch Mira und Tomás in Desert Springs. #sprecher:erzaehler
+Du fragst ihn danach. #sprecher:erzaehler
 Du kennst meine Nichte und meinen Neffen? Dann bist du der Grund, warum Mira am Telefon nur noch von Opfern redet. #sprecher:rayCastillo #stimmung:lacht
 Wenn der Sturm kommt, gehen wir in den Keller. Und im Keller spielen wir Entenschach. #sprecher:rayCastillo #stimmung:lacht
 -> ray_regel_erstmals
@@ -94,7 +97,8 @@ Wenn der Sturm kommt, gehen wir in den Keller. Und im Keller spielen wir Entensc
 // (Lesefassung 18.11.2026: Sonst lief bei jeder Nachfrage der ganze Auftakt noch einmal).
 === ray_regel ===
 ~ varianteEntenschachGelernt = true
-Nach jedem Zug setzt du eine Ente auf ein leeres Feld. Die Ente gehört keinem. Keiner darf durch sie hindurch, keiner darf sie schlagen. #sprecher:rayCastillo #stimmung:laechelt
+Nach jedem Zug setzt du eine Ente auf ein leeres Feld. Die Ente gehört keinem. #sprecher:rayCastillo #stimmung:laechelt
+Keiner darf durch sie hindurch, keiner darf sie schlagen. #sprecher:rayCastillo #stimmung:laechelt
 Wir nennen sie den Twister. Sie steht immer genau da, wo du hinwolltest. #sprecher:rayCastillo #stimmung:lacht
 ->->
 
@@ -107,7 +111,8 @@ Wir nennen sie den Twister. Sie steht immer genau da, wo du hinwolltest. #sprech
 
 === ray_angebot ===
 // VARIANTE-FEHLT: Entenschach (L6). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Der Sturm dreht ab. Heute kein Keller, heute keine Ente. Nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
+Der Sturm dreht ab. Heute kein Keller, heute keine Ente. #sprecher:rayCastillo #stimmung:nachdenklich
+Nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
 -> END
 
 === ray_alltag ===
@@ -127,7 +132,8 @@ Der Sturm dreht ab. Heute kein Keller, heute keine Ente. Nächstes Mal. #spreche
 }
 Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, bevor der Geysir kommt.“ #sprecher:erzaehler
 {not abschiedGesehen:
-    Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. Nicht raten. #sprecher:ambrose #stimmung:nachdenklich
+    Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. #sprecher:ambrose #stimmung:nachdenklich
+    Nicht raten. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegSummitCrossroads.tafel")
@@ -142,10 +148,12 @@ Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, be
     Die Bisons grasen jetzt neben dem Steg. Einer hebt den Kopf und kaut weiter. #sprecher:erzaehler
     -> END
 }
-Mitten auf dem Steg stehen drei Bisons. Sie sehen dich an. Sie gehen nicht weg. #sprecher:erzaehler
+Mitten auf dem Steg stehen drei Bisons. Sie sehen dich an. #sprecher:erzaehler
+Sie gehen nicht weg. #sprecher:erzaehler
 + [Warten]
     ~ bisonsGewartet = true
-    Du wartest. Niemand hupt. Juno malt einen Bison ins Tagebuch, mit Glitzer. #sprecher:erzaehler #geraeusch:praerie
+    Du wartest. Niemand hupt. #sprecher:erzaehler #geraeusch:praerie
+    Juno malt einen Bison ins Tagebuch, mit Glitzer. #sprecher:erzaehler
     Nach vierzig Minuten trotten die Bisons zur Seite. #sprecher:erzaehler
     {not abschiedGesehen:
         Geduld. Die schwerste Figur auf jedem Brett. #sprecher:ambrose #stimmung:nachdenklich
@@ -197,11 +205,13 @@ Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bret
     ~ bellVorgestellt = true
     Ich bin Bell, die Rangerin hier. Du kommst genau richtig. #sprecher:bell #stimmung:froh
 }
-Der Geysirblitz! Old Patience bricht alle neun Minuten aus. Bis dahin löst ihr so viele Aufgaben, wie ihr schafft. #sprecher:bell #stimmung:froh
+Der Geysirblitz! Old Patience bricht alle neun Minuten aus. #sprecher:bell #stimmung:froh
+Bis dahin löst ihr so viele Aufgaben, wie ihr schafft. #sprecher:bell #stimmung:froh
 -> geysirblitz_angebot
 
 === geysirblitz_angebot ===
-Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen. Machst du mit? #sprecher:bell #stimmung:laechelt
+Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen. #sprecher:bell #stimmung:laechelt
+Machst du mit? #sprecher:bell #stimmung:laechelt
 {not abschiedGesehen:
     Im Endspiel zählt jedes Tempo, {held}, und hier zählt die Natur mit. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -254,7 +264,8 @@ Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Mov
     Unter dem Steg ist nur noch warmer Sinter. #sprecher:erzaehler
     -> END
 }
-Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der Bohlen, liegt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der Bohlen, liegt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
+Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ finchBauerDGefunden = true
 ~ finchFiguren = finchFiguren + 1
 ~ gibFund("finchBauerD")

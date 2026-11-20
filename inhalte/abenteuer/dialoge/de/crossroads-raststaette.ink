@@ -71,7 +71,8 @@ Hinter der Theke schenkt eine Frau Kaffee ein, ohne hinzusehen. #sprecher:erzaeh
 {not darleneGetroffen:
     ~ darleneGetroffen = true
     Die Frau hinter der Theke stellt die Kanne ab. Darlene, sechzig, Hände wie gegerbtes Leder. #sprecher:erzaehler #bild:aus
-    Der Varianten-Tisch. Jeder, der hier durchkommt, bringt ein Spiel mit. Ich heb sie auf. Du hast auch welche mitgebracht, hör ich. #sprecher:darlene #stimmung:froh
+    Der Varianten-Tisch. Jeder, der hier durchkommt, bringt ein Spiel mit. #sprecher:darlene #stimmung:froh
+    Ich heb sie auf. Du hast auch welche mitgebracht, hör ich. #sprecher:darlene #stimmung:froh
 - else:
     {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene #stimmung:laechelt
 }
@@ -90,8 +91,10 @@ Hinter der Theke schenkt eine Frau Kaffee ein, ohne hinzusehen. #sprecher:erzaeh
     Ich bin Darlene. Du hast mit Nova geredet, dann kann ich dir was anvertrauen. #sprecher:darlene #stimmung:laechelt
 }
 Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen. #sprecher:erzaehler
-Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene #stimmung:laechelt
-Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Das Mädchen mit dem Tagebuch sagt, ihr wollt nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene #stimmung:laechelt
+Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. #sprecher:darlene #stimmung:laechelt
+Glühbirnen für ihre Lichterketten. #sprecher:darlene #stimmung:laechelt
+Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. #sprecher:darlene #stimmung:laechelt
+Das Mädchen mit dem Tagebuch sagt, ihr wollt nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene #stimmung:laechelt
 {not abschiedGesehen:
     Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose #stimmung:laechelt
 }
@@ -111,25 +114,32 @@ Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Das Mäd
 // Kapitel 53 (Roman): Nova ohne weiße Jacke, Ärmel über den Händen; alles tritt zurück, nur ihre
 // Stimme. Der Ohrstöpsel von der Glasbrücke wird zum Beweis.
 ~ novaBitteGehoert = true
-In der hintersten Ecke, an einem Tisch für zwei, sitzt Nova allein. Pullover, zu groß, die Ärmel über den Händen. Ein Kakao, den sie nicht angerührt hat. #sprecher:erzaehler #musik:aus
-Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. Sie hat gekündigt. #sprecher:nova #stimmung:nachdenklich
-Sie hat nicht gefragt, ob es stimmt. Sie hat gefragt, wie es mir geht. Das hat mich seit zwei Jahren keiner gefragt. #sprecher:nova #stimmung:riss
-Ich sage aus. Bei der Meisterschaft. Sie kommt mit. Sie bringt die Berichte. #sprecher:nova #stimmung:nachdenklich
+In der hintersten Ecke, an einem Tisch für zwei, sitzt Nova allein. Pullover, zu groß, die Ärmel über den Händen. #sprecher:erzaehler #musik:aus
+Ein Kakao, den sie nicht angerührt hat. #sprecher:erzaehler
+Dr. Lin hat angerufen. Sie hat die Berichte gefunden. #sprecher:nova #stimmung:nachdenklich
+Alle. Sie hat gekündigt. #sprecher:nova #stimmung:nachdenklich
+Sie hat nicht gefragt, ob es stimmt. Sie hat gefragt, wie es mir geht. #sprecher:nova #stimmung:riss
+Das hat mich seit zwei Jahren keiner gefragt. #sprecher:nova #stimmung:riss
+Ich sage aus. Bei der Meisterschaft. #sprecher:nova #stimmung:nachdenklich
+Sie kommt mit. Sie bringt die Berichte. #sprecher:nova #stimmung:nachdenklich
 {ohrstoepselGefunden:
     Du hast noch den einen. Den von der Brücke. #sprecher:nova #stimmung:nachdenklich
     Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
 - else:
-    Dr. Lin bringt die Schachtel mit den Empfängern mit. Fünf Mulden sind leer. Eine war meine. #sprecher:nova #stimmung:nachdenklich
+    Dr. Lin bringt die Schachtel mit den Empfängern mit. Fünf Mulden sind leer. #sprecher:nova #stimmung:nachdenklich
+    Eine war meine. #sprecher:nova #stimmung:nachdenklich
 }
 Hilfst du mir? #sprecher:nova #stimmung:nachdenklich
 * [„Ja.“]
     ~ novaHilfeZugesagt = true
 - Sie nickt und zieht den Kakao zu sich. #sprecher:erzaehler
-Ich hab Angst. Nicht vor denen. Davor, was ich bin, wenn ich es nicht mehr im Ohr habe. Vielleicht bin ich schlecht. #sprecher:nova #stimmung:bitter
+Ich hab Angst. Nicht vor denen. #sprecher:nova #stimmung:bitter
+Davor, was ich bin, wenn ich es nicht mehr im Ohr habe. Vielleicht bin ich schlecht. #sprecher:nova #stimmung:bitter
 * [„Vierundsiebzig Prozent.“]
 - „Ich hab deine Trainingspartien gesehen. Du bist besser als ich.“ #sprecher:erzaehler
 „Im Training hattest du es nie. Das waren deine.“ #sprecher:erzaehler #pause
-Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium. Es dauert länger, und es geht nicht wieder aus. #sprecher:erzaehler #bild:nova_laechelt
+Sie starrt dich an. Dann geht etwas über ihr Gesicht. #sprecher:erzaehler #bild:nova_laechelt
+Kein Lächeln vom Podium. Es dauert länger, und es geht nicht wieder aus. #sprecher:erzaehler
 -> kaffeehaus_pruefen
 
 === kaffeehaus_pruefen ===
@@ -140,9 +150,12 @@ Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium.
 === kaffeehaus ===
 ~ kaffeehausGesehen = true
 Es wird ein langer Abend, an einem Tisch aus vier Tischen, zwischen Menschen aus acht Städten. Du kennst jeden. #sprecher:erzaehler #musik:crossroads #geraeusch:kaffeehaus
-Du weißt, wie jeder von ihnen spielt. Was jeder übersieht. Was jeder kann, das du nie können wirst. #sprecher:erzaehler
+Du weißt, wie jeder von ihnen spielt. Was jeder übersieht. #sprecher:erzaehler
+Was jeder kann, das du nie können wirst. #sprecher:erzaehler
 {not abschiedGesehen:
-    Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines. So hat es geklungen. #sprecher:ambrose #stimmung:still
+    Weißt du, was das ist? Ein Kaffeehaus. #sprecher:ambrose #stimmung:still
+    Es sieht nicht so aus. Aber es ist eines. #sprecher:ambrose #stimmung:still
+    So hat es geklungen. #sprecher:ambrose #stimmung:still
 }
 -> END
 
@@ -161,7 +174,8 @@ Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo #stimmung:ueberrascht
 * [„Es sagt nicht, warum man Angst hatte.“]
 - Er tippt etwas ein. Dann hört er auf zu tippen. #sprecher:erzaehler #klang:tippen_hoert_auf
 Das kann man nicht messen. #sprecher:theo #stimmung:nachdenklich
-Dr. Lin hat gekündigt. Sie macht einen Club auf. In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt. #sprecher:theo #stimmung:nachdenklich
+Dr. Lin hat gekündigt. Sie macht einen Club auf. #sprecher:theo #stimmung:nachdenklich
+In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt. #sprecher:theo #stimmung:nachdenklich
 Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 -> END
 
@@ -250,6 +264,7 @@ Der Tisch steht noch da, wenn du wieder magst. #sprecher:ambrose #stimmung:laech
 }
 ~ postkarteGefunden = true
 Neben den Regalen steht ein Drehständer mit Postkarten. Auf einer sind alle Städte zugleich: Maple Falls, die Brücke von Cedar Creek, der Pavillon, die Werkhallen, die Glasbrücke, das Musikhaus, der Canyon, die Seilbahn. #sprecher:erzaehler
-Wir waren überall! Die kommt ins Tagebuch. Ganz hinten, auf die letzte Seite. #sprecher:juno #stimmung:froh
+Wir waren überall! Die kommt ins Tagebuch. #sprecher:juno #stimmung:froh
+Ganz hinten, auf die letzte Seite. #sprecher:juno #stimmung:froh
 ~ gibFund("postkarteStaedte")
 -> END

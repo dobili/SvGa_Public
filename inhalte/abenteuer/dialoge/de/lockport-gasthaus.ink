@@ -38,7 +38,8 @@ Mein Ruderboot muss für den Winter an Land. Aber es hängt an vier Tauen, und w
     -> END
 
 === henrik_tipp ===
-Siehst du den Kegel in der Mitte? Der hält alle anderen. Fällt der, fallen sie alle. #sprecher:henrik #stimmung:laechelt
+Siehst du den Kegel in der Mitte? Der hält alle anderen. #sprecher:henrik #stimmung:laechelt
+Fällt der, fallen sie alle. #sprecher:henrik #stimmung:laechelt
 Das Boot liegt am Kai neben dem Bootsschuppen. #sprecher:henrik #stimmung:laechelt
 -> END
 

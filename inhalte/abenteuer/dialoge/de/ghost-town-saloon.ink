@@ -59,7 +59,8 @@ Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #st
 ~ victorSaloonGetroffen = true
 Am Morgen fegt Mr. Pruitt den Saloon, bis in die Ecken, als käme Besuch. Er rückt einen Tisch unter das Loch im Dach, wo die Sonne in einer schrägen Säule fällt. #sprecher:erzaehler #klang:besen
 Ich hab hier dreißig Jahre nach Gold gesucht. Ich glaub, ich hab die ganze Zeit auf was anderes gewartet. #sprecher:pruitt #stimmung:nachdenklich
-Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. A. W. 1857. Daneben Junos Tagebuch mit acht eingeklebten Zetteln aus sieben Städten. #sprecher:erzaehler #bild:tagebuch_zettel
+Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. #sprecher:erzaehler #bild:tagebuch_zettel
+A. W. 1857. Daneben Junos Tagebuch mit acht eingeklebten Zetteln aus sieben Städten. #sprecher:erzaehler
 {briefGelesen:
     Und Hales Brief mit dem gebrochenen Siegel, auf der Rückseite vier Züge in senkrechter Schrift. #sprecher:erzaehler
 }
@@ -74,27 +75,38 @@ Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. A. W. 1857. Daneben 
 Wer baut auf? #sprecher:victor #stimmung:nachdenklich #bild:aus
 + [„Wir beide.“]
 - Von vorn, Zug um Zug, wie man eine Geschichte vorliest. Du ziehst für Weiß, Victor für Schwarz. #sprecher:erzaehler #musik:fernpartie
-Der Bauer, der sich im vierten Zug anbietet. Mein Gambit. Er hat es angenommen. Ich war so erleichtert. #sprecher:ambrose #stimmung:froh
-Der Springer im sechsundzwanzigsten. Hier habe ich drei Wochen nachgedacht. Über einen Springerzug. Ich. Drei Wochen. #sprecher:ambrose #stimmung:lachtOhneSpott
-Dann der fünfunddreißigste. Ein Läufer schlägt den Bauern vor dem König. Gleich darauf ein Springer. #sprecher:erzaehler
+Der Bauer, der sich im vierten Zug anbietet. Mein Gambit. #sprecher:ambrose #stimmung:froh
+Er hat es angenommen. Ich war so erleichtert. #sprecher:ambrose #stimmung:froh
+Der Springer im sechsundzwanzigsten. Hier habe ich drei Wochen nachgedacht. #sprecher:ambrose #stimmung:lachtOhneSpott
+Über einen Springerzug. Ich. #sprecher:ambrose #stimmung:lachtOhneSpott
+Drei Wochen. #sprecher:ambrose #stimmung:lachtOhneSpott
+Dann der fünfunddreißigste. Ein Läufer schlägt den Bauern vor dem König. #sprecher:erzaehler
+Gleich darauf ein Springer. #sprecher:erzaehler
 Zwei. Er opfert zwei Figuren hintereinander. #sprecher:victor #stimmung:ueberrascht
 + [„Stimmt es?“]
 - Er rechnet, mit schiefem Kopf, lange. #sprecher:erzaehler
-Ja. Knapp. Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor #stimmung:laechelt
+Ja. Knapp. #sprecher:victor #stimmung:laechelt
+Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor #stimmung:laechelt
 Dreimal nachgerechnet. Und dann habe ich gehofft. #sprecher:ambrose #stimmung:laechelt
 Die letzten Züge kennst du aus einem Zimmer mit Rosen. Der König schlägt die Dame, einen Schritt ins Freie. #sprecher:erzaehler
-Es ist die Stellung, die du an einem Abend im Spätsommer unter einer Decke gefunden hast. Schwarz am Zug. Seit hundertsechzig Jahren. #sprecher:erzaehler #musik:aus #pause:3
+Es ist die Stellung, die du an einem Abend im Spätsommer unter einer Decke gefunden hast. Schwarz am Zug. #sprecher:erzaehler #musik:aus
+Seit hundertsechzig Jahren. #sprecher:erzaehler #pause:3
 {hatHalesSeite:Victor nimmt die Seite vom Tisch. 40. … b5. Er fasst den Bauern an.|Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an.} #sprecher:erzaehler
 Darf ich? #sprecher:victor #stimmung:nachdenklich
 Er fragt nicht dich. #sprecher:erzaehler
 Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
-Victor schiebt den Bauern vor. Ein Feld. Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
-So. So. Da ist er. #sprecher:ambrose #stimmung:friedlich
+Victor schiebt den Bauern vor. Ein Feld. #sprecher:erzaehler #klang:holz_zug #musik:b5
+Holz auf Holz. #sprecher:erzaehler #pause:3
+So. So. #sprecher:ambrose #stimmung:friedlich
+Da ist er. #sprecher:ambrose #stimmung:friedlich
 ~ fernpartieAufgebaut = true
-Diese Partie gehört euch. Keine Karten. Kein Wort von mir. Die nächsten Züge sind deine. #sprecher:ambrose #stimmung:laechelt
+Diese Partie gehört euch. Keine Karten. #sprecher:ambrose #stimmung:laechelt
+Kein Wort von mir. Die nächsten Züge sind deine. #sprecher:ambrose #stimmung:laechelt
 + [„Ich spiele für dich.“]
-- Nein. Du spielst für dich, mit meinen Figuren. Das ist ein Unterschied, und er ist mir wichtig. #sprecher:ambrose #stimmung:nachdenklich
-Ein Turm gegen zwei Springer. Du stehst besser. Aber zwei Springer sind wie zwei Hunde, die ein Schaf nicht aus den Augen lassen. #sprecher:erzaehler #musik:aus
+- Nein. Du spielst für dich, mit meinen Figuren. #sprecher:ambrose #stimmung:nachdenklich
+Das ist ein Unterschied, und er ist mir wichtig. #sprecher:ambrose #stimmung:nachdenklich
+Ein Turm gegen zwei Springer. Du stehst besser. #sprecher:erzaehler #musik:aus
+Aber zwei Springer sind wie zwei Hunde, die ein Schaf nicht aus den Augen lassen. #sprecher:erzaehler
 + [Den ersten Zug machen]
     ~ beginnePartie("ghostTown.fernpartie")
     -> END
@@ -118,11 +130,14 @@ Diese Partie gehört euch. Kein Wort von mir. #sprecher:ambrose #stimmung:laeche
 
 === fernpartie_wie_er ===
 Seine Springer decken einander, jagen deinen Turm fort, und sobald er fort ist, rückt ein Bauer nach. Eine Brücke aus zwei Pferden. #sprecher:erzaehler
-Er spielt wie er. Genau wie er. Nichts Überflüssiges. #sprecher:ambrose #stimmung:still
+Ambrose hat versprochen zu schweigen. Jetzt flüstert er doch, mehr zu sich als zu dir. #sprecher:erzaehler
+Er spielt wie er. Genau wie er. #sprecher:ambrose #stimmung:still
+Nichts Überflüssiges. #sprecher:ambrose #stimmung:still
 -> END
 
 === fernpartie_zaehlen ===
-Es gibt vielleicht einen Weg. Er ist schmal. Du zählst. Dreimal. #sprecher:erzaehler
+Es gibt vielleicht einen Weg. Er ist schmal. #sprecher:erzaehler
+Du zählst. Dreimal. #sprecher:erzaehler
 Du weißt es nicht. #sprecher:erzaehler #pause:2
 -> END
 
@@ -137,17 +152,26 @@ Du weißt es nicht. #sprecher:erzaehler #pause:2
     Mehr ist nicht mehr zu wollen. Remis? #sprecher:victor #stimmung:laechelt
     -> verzaehlt ->
 }
-Ambrose steht neben dem Tisch und sieht auf das ganze Brett. Er weint. Es läuft ihm über das Gesicht, und er lächelt dabei. #sprecher:erzaehler #stimmung:weintUndLaechelt #musik:aus #pause:3
+Ambrose steht neben dem Tisch und sieht auf das ganze Brett. Er weint. #sprecher:erzaehler #stimmung:weintUndLaechelt #musik:aus
+Es läuft ihm über das Gesicht, und er lächelt dabei. #sprecher:erzaehler #stimmung:weintUndLaechelt #pause:3
 Hundertsechzig Jahre. Und sie ist schön. #sprecher:ambrose #stimmung:weintUndLaechelt
 Sie ist zu Ende. Jemand hat sie zu Ende gespielt. #sprecher:ambrose #stimmung:nachdenklich
 Ein Kind, das zählt und hofft, und ein Hale. #sprecher:ambrose #stimmung:laechelt
 Ich wollte eine Partie ohne Makel. Mein ganzes Leben, und danach noch einmal so lang. #sprecher:ambrose #stimmung:nachdenklich
-Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose #stimmung:laechelt
+Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. #sprecher:ambrose #stimmung:laechelt
+Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose #stimmung:laechelt
 Er wischt sich über die Augen. #sprecher:erzaehler #pause:2
 Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.schluss
 {ausgangGhostTownFernpartie == "sieg": Gewonnen. Ich habe es nie gebraucht, und es freut mich trotzdem wie einen Jungen am Kai. #sprecher:ambrose #stimmung:froh}
-Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor #stimmung:laechelt
-{hatHalesSeite:Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Dann gibt er sie dir zurück.|Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch.} #sprecher:erzaehler
+Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. #sprecher:victor #stimmung:laechelt
+Nur daran. #sprecher:victor #stimmung:laechelt
+{hatHalesSeite:
+    Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
+    Dann gibt er sie dir zurück. #sprecher:erzaehler
+- else:
+    Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
+    Er legt sie zurück in sein Buch. #sprecher:erzaehler
+}
 Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor #stimmung:nachdenklich
 In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als Häuser. #sprecher:pruitt #stimmung:laechelt
@@ -187,7 +211,8 @@ Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als 
     -> END
 }
 ~ abzeichenGefunden = true
-In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne auf die Theke gestellt. Du kannst nicht schlafen. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
+In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne auf die Theke gestellt. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
+Du kannst nicht schlafen. #sprecher:erzaehler
 {hatLaterne:
     Du leuchtest mit deiner Laterne hinter den Tresen. Zwischen Flaschen liegt ein Abzeichen aus Messing: ein Pferd und die Zahl 1866. #sprecher:erzaehler
 - else:
@@ -196,7 +221,8 @@ In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne au
 ~ gibFund("postreiterabzeichen")
 Er hat meinen Brief getragen. #sprecher:ambrose #stimmung:fern #pause
 Durch die Schwingtür siehst du gegenüber den Laden. Hinten darin führt eine Treppe hinauf zu dem Zimmer. #sprecher:erzaehler
-Dreihundertzwölf Rosen. Auf einer Wand. Ich bin nie über die andere hinausgekommen. #sprecher:ambrose #stimmung:still #bild:aus
+Dreihundertzwölf Rosen. Auf einer Wand. #sprecher:ambrose #stimmung:still #bild:aus
+Ich bin nie über die andere hinausgekommen. #sprecher:ambrose #stimmung:still
 Der Mond scheint durch ihn hindurch. #sprecher:erzaehler
 Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal. #sprecher:ambrose #stimmung:friedlich
 -> END
@@ -204,7 +230,8 @@ Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal. #sprecher:ambro
 // ---------------------------------------------------------------- Ansehen (Runde 6)
 
 === klavier ===
-Du drückst eine Taste. Nichts. Die nächste klingt schief und viel zu laut im leeren Saloon. #sprecher:erzaehler
+Du drückst eine Taste. Nichts. #sprecher:erzaehler
+Die nächste klingt schief und viel zu laut im leeren Saloon. #sprecher:erzaehler
 {not abschiedGesehen:
     Ein Klavier verstimmt sich in der Hitze. Und in der Stille. #sprecher:ambrose #stimmung:nachdenklich
 }

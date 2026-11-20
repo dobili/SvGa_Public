@@ -18,20 +18,25 @@ VAR abschiedGesehen = false
 }
 ~ fahrradErhalten = true
 Drinnen riecht es nach Gummi und Staub. Unter einer Plane steht ein Fahrrad, grün, die Klingel mit einem Schmetterling. #sprecher:erzaehler #musik:riverton.gitarre
-Meins. Er hat es mir zur Hochzeit gebaut. Dreißig Jahre bin ich damit jeden Tag zur Werkstatt gefahren. #sprecher:albescu #stimmung:nachdenklich
+Meins. Er hat es mir zur Hochzeit gebaut. #sprecher:albescu #stimmung:nachdenklich
+Dreißig Jahre bin ich damit jeden Tag zur Werkstatt gefahren. #sprecher:albescu #stimmung:nachdenklich
 Sie legt die Hand auf den Lenker. Staub bleibt an ihren Fingern. #sprecher:erzaehler
 Meine Knie machen das nicht mehr. #sprecher:albescu #stimmung:bitter
 Nimm es. #sprecher:albescu #stimmung:laechelt
 * [„Das kann ich nicht …“]
-    Es soll fahren. Nicht stehen. Ein Rad, das steht, ist ein Gestell. #sprecher:albescu #stimmung:laechelt
+    Es soll fahren. Nicht stehen. #sprecher:albescu #stimmung:laechelt
+    Ein Rad, das steht, ist ein Gestell. #sprecher:albescu #stimmung:laechelt
 * [Den Lenker anfassen]
-    Siehst du. Es soll fahren. Nicht stehen. #sprecher:albescu #stimmung:froh
+    Siehst du. Es soll fahren. #sprecher:albescu #stimmung:froh
+    Nicht stehen. #sprecher:albescu #stimmung:froh
 - Fahr damit weit. Und wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht. #sprecher:albescu #stimmung:laechelt
 Dafür brauche ich keine Knie. #sprecher:albescu #stimmung:lacht
 Du schiebst es hinaus in den Regen. Die Klingel funktioniert noch. #sprecher:erzaehler #klang:fahrradklingel
 {not abschiedGesehen:
-    Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
+    Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. #sprecher:ambrose #stimmung:lacht
+    Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
 }
-Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.“ Darunter, kleiner: „Mrs. A. hat geweint, aber gut.“ #sprecher:erzaehler
+Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.“ #sprecher:erzaehler
+Darunter, kleiner: „Mrs. A. hat geweint, aber gut.“ #sprecher:erzaehler
 -> END
 

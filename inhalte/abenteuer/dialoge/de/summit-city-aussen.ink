@@ -20,6 +20,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
 EXTERNAL gibFund(kennung)
 
+VAR victorBergstationGesprochen = false
 VAR held = "Du"
 VAR ankunftSummitGesehen = false
 VAR solGetroffen = false
@@ -55,10 +56,12 @@ Murmeltiere. Die warnen sich. #sprecher:mutter #stimmung:laechelt
 * [„Wovor?“]
 - Vor uns. #sprecher:mutter #stimmung:lacht
 An der Seilbahnstation glänzt ein Plakat: „Landesmeisterschaft der Jugend. Präsentiert von Perfect Move.“ Acht Gesichter. #sprecher:erzaehler
-Das zweite ist Nova. Das vierte Victor. Das achte bist du. #sprecher:erzaehler
+Das zweite ist Nova. Das vierte Victor. #sprecher:erzaehler
+Das achte bist du. #sprecher:erzaehler
 Das ist von meinem Foto! Da hast du Ketchup am Kinn! #sprecher:juno #stimmung:froh
 * [Zum Hotel sehen]
-- Vor dem Hotel steht Victor, in Weiß. Ein Mann im grauen Anzug beugt sich zu ihm und sagt ihm etwas ins Ohr. Victor nickt. #sprecher:erzaehler
+- Vor dem Hotel steht Victor, in Weiß. Ein Mann im grauen Anzug beugt sich zu ihm und sagt ihm etwas ins Ohr. #sprecher:erzaehler
+Victor nickt. #sprecher:erzaehler
 * [„Der Trainer, der kein Mensch ist.“]
 - Der dort ist ein Mensch. Aber ich glaube, er ist nur der Bote. #sprecher:ambrose #stimmung:nachdenklich
 Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt unten. #sprecher:erzaehler
@@ -79,12 +82,14 @@ Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten 
 === sol_erstes_treffen ===
 ~ solGetroffen = true
 Auf dem Gipfelfelsen sitzt eine Frau mit Kletterseil über der Schulter. Vor ihr ein Brett und eine Uhr. #sprecher:erzaehler
-Sol. Bergführerin. Wer hier oben ankommt, spielt eine Partie gegen mich. #sprecher:sol #stimmung:laechelt
+Sol. Bergführerin. #sprecher:sol #stimmung:laechelt
+Wer hier oben ankommt, spielt eine Partie gegen mich. #sprecher:sol #stimmung:laechelt
 Mit Uhr. Das Wetter schlägt schneller um, als man denkt. #sprecher:sol #stimmung:nachdenklich
 -> sol_angebot
 
 === sol_angebot ===
-Drei Minuten, zwei Sekunden Zuschlag. Ein Endspiel, du hast Weiß. Bevor die Wolken kommen? #sprecher:sol #stimmung:laechelt
+Drei Minuten, zwei Sekunden Zuschlag. Ein Endspiel, du hast Weiß. #sprecher:sol #stimmung:laechelt
+Bevor die Wolken kommen? #sprecher:sol #stimmung:laechelt
 + [„Los.“]
     {not abschiedGesehen:
         Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose #stimmung:laechelt
@@ -111,7 +116,8 @@ Noch eine? Die Sonne hält noch eine Weile. #sprecher:sol #stimmung:laechelt
     -> END
 
 === sol_nach_niederlage ===
-Gewitter. Ich hab dich gewarnt. Noch mal, bevor es regnet? #sprecher:sol #stimmung:lacht
+Gewitter. Ich hab dich gewarnt. #sprecher:sol #stimmung:lacht
+Noch mal, bevor es regnet? #sprecher:sol #stimmung:lacht
 + [„Revanche.“]
     ~ beginnePartie("summitCity.sol")
     -> END
@@ -122,7 +128,8 @@ Gewitter. Ich hab dich gewarnt. Noch mal, bevor es regnet? #sprecher:sol #stimmu
 // vorteil. Vorher ging es in sol_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === sol_nach_remis ===
-Remis. Der Bauer ist nicht oben angekommen. Noch mal, bevor es regnet? #sprecher:sol #stimmung:laechelt
+Remis. Der Bauer ist nicht oben angekommen. #sprecher:sol #stimmung:laechelt
+Noch mal, bevor es regnet? #sprecher:sol #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("summitCity.sol")
     -> END
@@ -133,8 +140,12 @@ Remis. Der Bauer ist nicht oben angekommen. Noch mal, bevor es regnet? #sprecher
 
 === seilbahn ===
 {
+// Lektorat 20.11.2026: „eben“ nur, bis {held} oben bei Victor war.
+- victorKriseGesehen and not victorSeiteGegeben and victorBergstationGesprochen:
+    Oben an der Bergstation sitzt Victor noch am Geländer. #sprecher:erzaehler
 - victorKriseGesehen and not victorSeiteGegeben:
-    Der Wärter an der Talstation zeigt nach oben. „Ein Junge ist eben den Pfad hinaufgerannt. Nicht hinunter. Allein.“ #sprecher:erzaehler
+    Der Wärter an der Talstation zeigt nach oben: „Ein Junge ist eben den Pfad hinaufgerannt.“ #sprecher:erzaehler
+    „Nicht hinunter. Allein.“ #sprecher:erzaehler
 - else:
     Die Gondel schaukelt bergauf, über Tannen und Murmeltierbauten, bis über die Wolken. #sprecher:erzaehler
 }

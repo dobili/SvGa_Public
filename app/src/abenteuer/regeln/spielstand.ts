@@ -113,25 +113,67 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     wertung: zahl(roh.wertung) || zahl(roh.eingangswertung) || A_START,
     appWertungZuletzt: typeof roh.appWertungZuletzt === "number" ? roh.appWertungZuletzt : null,
     wertungPartien: zahl(roh.wertungPartien),
-    laufendeWertung: istObjekt(roh.laufendeWertung)
-      ? {
-          zielElo: zahl(roh.laufendeWertung.zielElo),
-          zaehlt: roh.laufendeWertung.zaehlt === true,
-          zustand: istObjekt(roh.laufendeWertung.zustand)
-            ? {
-                gegner: text(roh.laufendeWertung.zustand.gegner),
-                grund: text(roh.laufendeWertung.zustand.grund),
-              }
-            : null,
-          ...(roh.laufendeWertung.zeitwahl === true ? { zeitwahl: true } : {}),
-          ...(typeof roh.laufendeWertung.uhrAbzug === "number"
-            ? { uhrAbzug: roh.laufendeWertung.uhrAbzug }
-            : {}),
-        }
-      : null,
+    laufendeWertung: laufendeWertungAus(roh.laufendeWertung),
     held: { name: text(roh.held.name), variante: zahl(roh.held.variante) },
     handlung,
     position: position ?? STARTPOSITION,
+    ...listenAus(roh),
+    laufendePartie: typeof roh.laufendePartie === "string" ? roh.laufendePartie : null,
+    partiekarten: partiekartenAus(roh.partiekarten),
+    ...aufgabenAus(roh),
+    runden: liste(roh.runden),
+    ...ergebniskarteAus(roh.ergebniskarte),
+    ...(typeof roh.nachErgebnis === "string" ? { nachErgebnis: roh.nachErgebnis } : {}),
+    dialogvariablen: istObjekt(roh.dialogvariablen)
+      ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
+      : {},
+    vorratGenutzt: liste<unknown>(roh.vorratGenutzt).filter(
+      (k): k is string => typeof k === "string",
+    ),
+    spielzeitSekunden: zahl(roh.spielzeitSekunden),
+    spielzeitJeOrt: istObjekt(roh.spielzeitJeOrt)
+      ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
+      : {},
+    ...(typeof roh.verfolgteQuest === "string" ? { verfolgteQuest: roh.verfolgteQuest } : {}),
+  };
+}
+
+/** Die Wertung der laufenden Partie (R8, R9), oder null. */
+function laufendeWertungAus(w: unknown): Abenteuerstand["laufendeWertung"] {
+  if (!istObjekt(w)) return null;
+  return {
+    zielElo: zahl(w.zielElo),
+    zaehlt: w.zaehlt === true,
+    zustand: istObjekt(w.zustand)
+      ? {
+          gegner: text(w.zustand.gegner),
+          grund: text(w.zustand.grund),
+        }
+      : null,
+    ...(w.zeitwahl === true ? { zeitwahl: true } : {}),
+    ...(typeof w.uhrAbzug === "number" ? { uhrAbzug: w.uhrAbzug } : {}),
+  };
+}
+
+/** Felder des Spielstands, die listenAus füllt (Listen, Münzen, Fragmente). */
+type Listenfelder = Pick<
+  Abenteuerstand,
+  | "clubs"
+  | "quests"
+  | "figuren"
+  | "karten"
+  | "muenzen"
+  | "gegenstaende"
+  | "besuchteOrte"
+  | "funde"
+  | "eintraege"
+  | "fragmente"
+  | "protokoll"
+>;
+
+/** Die Listen des Spielstands; fehlende werden leer, fremde Einträge fallen weg. */
+function listenAus(roh: Roh): Listenfelder {
+  return {
     clubs: liste(roh.clubs),
     quests: liste(roh.quests),
     figuren: liste(roh.figuren),
@@ -147,8 +189,14 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     ),
     fragmente: { gefunden: liste(istObjekt(roh.fragmente) ? roh.fragmente.gefunden : []) },
     protokoll: liste(roh.protokoll),
-    laufendePartie: typeof roh.laufendePartie === "string" ? roh.laufendePartie : null,
-    partiekarten: partiekartenAus(roh.partiekarten),
+  };
+}
+
+/** Laufende Aufgabenrunde, ihr Ergebnis und ihr Zwischenstand (R30 bis R32), grob geprüft. */
+function aufgabenAus(
+  roh: Roh,
+): Pick<Abenteuerstand, "laufendeAufgaben" | "aufgabenergebnis" | "aufgabenzwischenstand"> {
+  return {
     laufendeAufgaben: istObjekt(roh.laufendeAufgaben)
       ? (roh.laufendeAufgaben as unknown as Aufgabenauftrag)
       : null,
@@ -161,20 +209,6 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       Array.isArray(roh.aufgabenzwischenstand.ergebnisse)
         ? (roh.aufgabenzwischenstand as unknown as Aufgabenergebnis)
         : null,
-    runden: liste(roh.runden),
-    ...ergebniskarteAus(roh.ergebniskarte),
-    ...(typeof roh.nachErgebnis === "string" ? { nachErgebnis: roh.nachErgebnis } : {}),
-    dialogvariablen: istObjekt(roh.dialogvariablen)
-      ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
-      : {},
-    vorratGenutzt: liste<unknown>(roh.vorratGenutzt).filter(
-      (k): k is string => typeof k === "string",
-    ),
-    spielzeitSekunden: zahl(roh.spielzeitSekunden),
-    spielzeitJeOrt: istObjekt(roh.spielzeitJeOrt)
-      ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
-      : {},
-    ...(typeof roh.verfolgteQuest === "string" ? { verfolgteQuest: roh.verfolgteQuest } : {}),
   };
 }
 

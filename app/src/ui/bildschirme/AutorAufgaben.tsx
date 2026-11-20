@@ -12,6 +12,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
+import { merkeAutorgeraet } from "../../autor/autorgeraet";
 import { APP_VERSION } from "../../app/version";
 import {
   abhakstandAus,
@@ -254,6 +255,8 @@ function Inhalt({ datei }: { datei: Aufgabendatei }) {
  */
 export function AutorAufgaben() {
   const daten = useDaten(ladeAufgabendatei, "autor-aufgaben");
+  // Ab jetzt zeigt dieses Gerät die Testhilfen des Spiels (autor/autorgeraet.ts).
+  useEffect(merkeAutorgeraet, []);
   return (
     <div className="bildschirm bildschirm-autor" data-testid="autor-aufgaben">
       <Kopfzeile titel={t("autor.titel")} zurueckText={t("abbildung.zurueck")} />

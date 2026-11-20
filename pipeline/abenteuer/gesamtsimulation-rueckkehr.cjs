@@ -210,4 +210,5 @@ function nachholen(welt, st, frist, h) {
   return geholt;
 }
 
-module.exports = { nachbarorte, nebenorte, rueckkehr, nachholen, fundort };
+// hin, bleibe, bereit: auch für den Aufschieber (questverfehlen-aufschieber.cjs).
+module.exports = { nachbarorte, nebenorte, rueckkehr, nachholen, fundort, hin, bleibe, bereit };

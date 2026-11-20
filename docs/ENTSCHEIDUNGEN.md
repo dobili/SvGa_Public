@@ -4,6 +4,14 @@ Protokoll aller Entscheidungen mit Datum und Begründung. Die Entscheidungen bis
 stehen ausführlich im Pflichtenheft (Abschnitt „Entscheidungen vom 13.10.2026“) und im
 technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 
+## 17.11.2026 – Version 0.3.55: Das Buch ist erschienen
+
+- **Startseite:** Die Platzhalter „ISBN folgt“ und „Links folgen“ sind ersetzt durch Links zu Thalia
+  und Amazon (vom Autor genannt) und die ISBN 978-3-9824715-8-7 (aus der ISBN-10 3982471583 im
+  Amazon-Link, Prüfziffer nachgerechnet) für die Buchhandlung; dazu `book:isbn` für die Vorschau
+  beim Teilen. Die App-Updates aus `uebernahme-welle2` (App weitergeben) bleiben getrennt, bis der
+  Autor die Entscheidungsseite beantwortet hat; sie werden dort zu 0.3.56.
+
 ## 7.11.2026 – Version 0.3.54: Fehler mit Buchbezug vollständig
 
 - **Findezeilen F1–F10** (Glühbirne) auf den Karten der Zeitleiste und im Rückblick Zug für Zug

@@ -94,6 +94,8 @@ Stand: 17.11.2026 früh, 5 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde mit 
 sobald geliefert; CI-Lauf nach jedem Sammelpush abwarten (Lauf dauert 30–45 Minuten, Zwischenstände
 auf dem lokalen Zweig „zwischen“ sammeln und nur auf beta sichern).
 
+Stand: 17.11.2026 · **Version 0.3.55** (main): Das Buch ist erschienen – Startseite mit Links zu Thalia und Amazon und ISBN 978-3-9824715-8-7 (N2607). Arbeitszweig `uebernahme-welle2` (App weitergeben, aufgeräumte Testliste) wird damit 0.3.56 und wartet weiter auf die Antworten der Entscheidungsseite (https://claude.ai/artifact/CgWka8t1tVwXLbTioXTfrK).
+
 Stand: 16.11.2026 nachts, 23 Uhr (Haupt-Chat, Schach-Abenteuer): **Variante B, Kartendurchsicht Akt 2–4, Runde mit Nebenchats.**
 
 - Variante B (7d63cd28): Kamera zoomt 3 auf volles Bild, PixelLab-Figuren 2/3 in der Welt

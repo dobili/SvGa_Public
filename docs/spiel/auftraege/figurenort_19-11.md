@@ -52,16 +52,32 @@ je Datei. Er merkt sie sich jetzt je Gesprächsbeginn (Figur oder Eingang), in
    Kartenfassung mit dieser Variable lässt sie weg.
 
 Gegenprobe auf dem Stand vor der Änderung: Das Werkzeug meldet Mamas Kantine sowie Juno an der
-Haltestelle und im Clubraum. Stand jetzt: 9 Kandidaten, alle angesehen.
+Haltestelle und im Clubraum. Stand jetzt: 7 Kandidaten, alle angesehen.
+
+## Nachtrag (20.11.2026, zweites Lektorat von mittel-1)
+
+- **Mama vor dem Haus nach abgebrochener Einleitung:** Die Einleitung setzt `einleitungGesehen`
+  schon in ihrer ersten Zeile, die App sichert die Variablen bei jedem Knoten. Brach man danach ab,
+  verschwand Mama draußen (`wenn: nicht einleitungGesehen …`), bevor man mit ihr hineingegangen
+  war. Jetzt gilt `nicht ankunftGesehen und nicht brettBeruehrt`: Sie wartet vor dem Haus, bis die
+  Ankunft im Wohnzimmer gelaufen ist, und ihr Gespräch (`einleitung_hinein`) führt mit ihr hinein.
+- **Juno in der Capital Arena nach dem Abschied:** Mit beta kam `abschied_ende`, in dem Juno neben
+  {held} auf der Treppe sitzt; danach reisen beide nach Hause. Die Figur stand weiter vor der Arena,
+  während Juno auch in Maple Falls steht. Jetzt gilt `wenn: nicht abschiedGesehen`. Victor und
+  Graham Hale nennt der neue Abschied nicht mehr; ihre Einträge in `GEPRUEFT` sind entfernt.
+- **Juno an der Raststätte und Mama auf der Fähre:** Beide sind dort keine Figuren in `orte.json`,
+  sie sprechen nur im Dialog. Das gehört ins Lektorat; mittel-1 hat es im Dialog behoben.
+- **Wegsperren S15 bis S17 (`testteam_*_tor`):** kein Fehler im Spiel. Der Dialog endet sofort,
+  sobald der Weg offen ist, deshalb taucht er in der Lesefassung nicht auf (Rückmeldung von
+  mittel-1). Die Übergänge haben dieselbe Bedingung wie der Kopf ihres Dialogs; die Figuren stehen
+  von der Sperre bis zur Ankunft.
 
 ## Angesehen und passend
 
 - **Tessa, die Joggerin:** „Am Steg steht ihre Wasserflasche“ meint ihr Laufziel am Flussweg, nicht
   den Ort des Gesprächs (Landstraße, Zedernpfad).
 - **Beim Aufbruch:** Mama bleibt zu Hause. Der Coach ruft nur an und kommt am Samstag mit dem Bus.
-  Mama vor dem Haus steht nur vor der Einleitung.
-- **Ambroses Abschied in der Capital Arena:** Victor und Graham Hale gehen über den Vorplatz. Sie
-  stehen in der Halle, ihr Text nach dem Finale passt dazu.
+  Mama vor dem Haus wartet nur bis zur Ankunft im Wohnzimmer.
 - **Highway in Desert Springs:** Dot leiht Mama das Auto und bleibt in ihrer Garage.
 - **Bus nach Silicon Bay:** Mama verabschiedet {held} und bleibt. In der Kantine steht sie nach dem
   Kauf nur noch, bis sie die Lernkarte gegeben hat.

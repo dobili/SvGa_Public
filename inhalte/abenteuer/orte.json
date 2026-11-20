@@ -119,7 +119,7 @@
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",
           "dialog": "maple-falls-aussen.einleitung_hinein",
-          "wenn": "nicht einleitungGesehen und nicht brettBeruehrt"
+          "wenn": "nicht ankunftGesehen und nicht brettBeruehrt"
         },
         {
           "kennung": "mapleFalls.coachDelgado",
@@ -5381,7 +5381,8 @@
           "kennung": "capitalArena.juno",
           "name": "figur.juno.name",
           "sprite": "figuren/juno.png",
-          "dialog": "capital-arena-aussen.juno"
+          "dialog": "capital-arena-aussen.juno",
+          "wenn": "nicht abschiedGesehen"
         },
         {
           "kennung": "capitalArena.turnierleiterin",

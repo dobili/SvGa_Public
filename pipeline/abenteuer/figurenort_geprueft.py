@@ -18,17 +18,10 @@ GEPRUEFT: dict[str, str] = {
         "Nur {held} und Juno brechen auf; Mama bleibt zu Hause (Story-Bibel, Szene 13)."
     ),
     "abschied:mapleFalls.mutterAussen:maple-falls-wohnzimmer.aufbruch": (
-        "Steht nur vor der Einleitung (wenn: nicht einleitungGesehen und nicht brettBeruehrt)."
+        "Wartet nur bis zur Ankunft im Wohnzimmer (wenn: nicht ankunftGesehen und nicht brettBeruehrt)."
     ),
     "abschied:mapleFalls.coachDelgado:maple-falls-wohnzimmer.aufbruch": (
         "Der Coach ruft nur an; er fährt erst am Samstag mit dem Team im Bus (Story-Bibel, Szene 13)."
-    ),
-    "abschied:capitalArena.grahamHale:capital-arena-aussen.abschied": (
-        "Er geht in Ambroses Abschied über den Vorplatz; er steht in der Halle, nicht draußen, und "
-        "sein Text nach dem Finale passt dazu."
-    ),
-    "abschied:capitalArena.victor:capital-arena-aussen.abschied": (
-        "Wie Graham Hale: Er geht über den Vorplatz und steht in der Halle; danach bietet er die Revanche an."
     ),
     "abschied:desertSprings.dot:desert-springs-aussen.highway": (
         "Dot leiht Mama ihr Auto und bleibt selbst in ihrer Garage."

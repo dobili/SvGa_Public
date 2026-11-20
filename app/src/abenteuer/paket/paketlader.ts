@@ -254,6 +254,15 @@ export async function haltePaketdateiVor(name: string): Promise<boolean> {
   );
 }
 
+/** Status für „Datei fehlt, der Server lieferte die Startseite“ (wie 404). */
+const KEINE_DATEI = 404;
+
+/** Ist die Antwort die Startseite statt der Datei (HTML für eine Datei, die kein HTML ist)? */
+export function alsStartseite(pfad: string, antwort: Response): boolean {
+  const art = antwort.headers.get("content-type") ?? "";
+  return art.startsWith("text/html") && !/\.html?$/.test(pfad);
+}
+
 /**
  * Liest eine Datei des Pakets: aus dem geladenen Cache. Fehlt sie dort, aber steht sie im
  * Verzeichnis (Musik, die erst beim Abspielen lädt), kommt sie geprüft in den Cache und von dort.
@@ -279,6 +288,11 @@ export async function liesPaketdatei(name: string): Promise<Response> {
   }
   const antwort = await fetch(adresse(pfad));
   if (!antwort.ok) throw new Spielfehler("fehler.paket.datei", { pfad, status: antwort.status });
+  // Fehlt eine Datei, liefert der Server statt 404 oft die Startseite (HTML, Status 200). Ein
+  // Porträt ohne Bild zeigte dann ein kaputtes Bild (Abspann: Owen Fisk, Ivy; 20.11.2026).
+  if (alsStartseite(pfad, antwort)) {
+    throw new Spielfehler("fehler.paket.datei", { pfad, status: KEINE_DATEI });
+  }
   return antwort;
 }
 

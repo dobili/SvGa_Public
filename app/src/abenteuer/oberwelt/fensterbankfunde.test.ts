@@ -1,7 +1,7 @@
 /** Tests für fensterbankfunde.ts: Funde in der Reihenfolge des Findens (T15). */
 import { describe, expect, it } from "vitest";
 import type { Funddaten } from "../daten/laden";
-import { fensterbankfunde } from "./fensterbankfunde";
+import { bildDesFundes, fensterbankfunde } from "./fensterbankfunde";
 
 const FUNDE = [
   { kennung: "a", ort: "mapleFalls", name: "fund.a.name", text: "fund.a.text" },
@@ -22,5 +22,15 @@ describe("Fensterbank", () => {
     const mitBild = [{ ...FUNDE[0], bild: "bilder/fund-a.webp" }] as Funddaten[];
     const liste = fensterbankfunde([{ kennung: "a", gefunden: "2026-11-13T10:00:00Z" }], mitBild);
     expect(liste[0]?.bild).toBe("bilder/fund-a.webp");
+  });
+});
+
+describe("bildDesFundes", () => {
+  it("nimmt das Bild aus funde.json, sonst den Namen nach der Regel der Lieferungen", () => {
+    expect(bildDesFundes({ kennung: "schluessel", bild: "bilder/fund-schluessel.webp" })).toBe(
+      "bilder/fund-schluessel.webp",
+    );
+    expect(bildDesFundes({ kennung: "finchBauerB" })).toBe("bilder/fund-finch-bauer-b.webp");
+    expect(bildDesFundes({ kennung: "spurPM1" })).toBe("bilder/fund-spur-p-m1.webp");
   });
 });

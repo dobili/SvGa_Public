@@ -54,6 +54,11 @@ function cacheNachbau() {
     speicher,
     caches: {
       keys: () => Promise.resolve([...speicher.keys()]),
+      // Wie im Browser: sucht in allen Caches (paketlader.ts, uebernimmAusAlterFassung).
+      match: (adresse: string) => {
+        const tabelle = [...speicher.values()].find((t) => t.has(adresse));
+        return Promise.resolve(tabelle ? new Response(tabelle.get(adresse)) : undefined);
+      },
       open: (name: string) => Promise.resolve(oeffne(name)),
       delete: (name: string) => Promise.resolve(speicher.delete(name)),
     },

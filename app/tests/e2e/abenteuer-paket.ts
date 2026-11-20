@@ -30,4 +30,22 @@ export async function ladeAbenteuerpaket(seite: Page, knopf?: Locator): Promise<
   // Aus dem Cache kann das Laden schon vorbei sein, bevor der Balken zu sehen ist.
   await balken.waitFor({ state: "visible", timeout: BEGINN_MS }).catch(() => undefined);
   await expect(balken).toHaveCount(0, { timeout: PAKET_FRIST_MS });
+  await warteAufHintergrund(seite);
+}
+
+/**
+ * Wartet, bis Geräusche, Großbilder und Maia im Hintergrund geladen sind (paket/aktton.ts schreibt
+ * den Stand an das Wurzelelement). Warum (WebKit-Läufe vom 20.11.2026): Seit Maia nach dem Start im
+ * Hintergrund lädt, liefen in jedem Test 92 MB Laden, Prüfsumme und Cache-Schreiben mit. Wer dann
+ * neu lud, brach offene Cache-Vorgänge ab; WebKit meldet das als „Cache API operation failed: Context
+ * is stopped“ der alten Seite, und das Spiel lief zäh. Die Tests prüfen das Spiel, nicht das
+ * Nachladen; wie vor der Änderung beginnen sie erst, wenn alles da ist.
+ * Sonderfall: Ohne Netz zu Maia endet das Laden mit „unvollstaendig“; auch das ist ein Ende.
+ */
+export async function warteAufHintergrund(seite: Page): Promise<void> {
+  await expect
+    .poll(() => seite.evaluate(() => document.documentElement.dataset.abenteuerTon ?? ""), {
+      timeout: PAKET_FRIST_MS,
+    })
+    .toMatch(/^(vollstaendig|unvollstaendig)$/);
 }

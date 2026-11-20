@@ -125,6 +125,20 @@ test("Belohnung: die Münzkiste am Flussweg, die Anzeige zählt hoch und blendet
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
   const muenzen = page.getByTestId("abenteuer-muenzen");
   await expect(muenzen).toHaveAttribute("data-sichtbar", "nein", { timeout: 30000 });
+  // Was die Anzeige zeigt, schreibt die Seite selbst mit: In WebKit dauert das Weiterklicken länger
+  // als die drei Sekunden, die sie stehen bleibt (Lauf 44763516857).
+  await muenzen.evaluate((anzeige) => {
+    const merker = window as unknown as { muenzverlauf: string[] };
+    merker.muenzverlauf = [];
+    const merke = () =>
+      merker.muenzverlauf.push(`${anzeige.getAttribute("data-sichtbar")}:${anzeige.textContent}`);
+    new MutationObserver(merke).observe(anzeige, {
+      attributes: true,
+      childList: true,
+      characterData: true,
+      subtree: true,
+    });
+  });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 10000 });
   await aktion.click();
@@ -137,9 +151,12 @@ test("Belohnung: die Münzkiste am Flussweg, die Anzeige zählt hoch und blendet
     await page.waitForTimeout(150);
   }
   await expect(dialog).toHaveCount(0);
-  await expect(muenzen).toHaveAttribute("data-sichtbar", "ja");
-  await expect(muenzen).toHaveText("65 Münzen");
+  // Sie erschien und stand am Ende auf 65, danach blendet sie aus.
+  await expect
+    .poll(() => page.evaluate(() => (window as unknown as { muenzverlauf: string[] }).muenzverlauf))
+    .toContain("ja:65 Münzen");
   await expect(muenzen).toHaveAttribute("data-sichtbar", "nein", { timeout: 10000 });
+  await expect(muenzen).toHaveText("65 Münzen");
 });
 
 test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der nächste", async ({

@@ -117,34 +117,19 @@ Leitlinien, die sich daraus ergaben:
 | `erzaehlung.joggerin.vorher` | Die Joggerin zieht im Laufschritt, ihr Puls piept dazu. Nach einer ganzen Reihe schneller Züge steht es so, und du bist ein bisschen vorn. „Sieben Züge. Halt das Tempo.“ | Die Joggerin zieht im Laufschritt, ihre Pulsuhr piept dazu. Nach einer ganzen Reihe schneller Züge steht es so, und du bist ein bisschen vorn. „Sieben Züge. Halt das Tempo.“ | Der Puls selbst piept nicht |
 | `abspann.mitwirkende.phaser` | Phaser, die Welt zum Laufen | Phaser, mit dem die Welt läuft | „die Welt zum Laufen“ ist unvollständig |
 
-## Offene Fragen (nicht geändert)
+## Entscheidungen zu den offenen Fragen (umgesetzt, Widerspruch genügt)
 
-Rückfragen an den Autor, bei denen eine Änderung die Geschichte oder Regeln berühren würde:
-
-- Ungenutzte Schlüssel: quest.mamasFinale.schritt1, quest.tiefpunkt.schritt5 und quest.seilschaft.schritt2 kommen in quests.json nicht vor. Absicht (Reserve) oder Reste? Wenn Reste: löschen.
-- Anrede im Tagebuch: Die Questschritte sind fast durchweg unpersönlich (Infinitiv). Die Rückblicke (rueckblick.quest.*) stehen aber in der Ich-Form, und der Ortsname ort.mapleFalls.zimmer lautet „Dein Zimmer“. Vorschlag: Questschritte unpersönlich lassen (so umgesetzt); den Titel „Ich will besser werden“ als Ausruf des Helden stehen lassen?
-- quest.testteam.schritt2 („Die App schickt das Testteam woandershin. Ihm noch einmal begegnen.“) sagt nicht, wo: Das Treffen ist an der Raststätte an der Schnellstraße nach Silicon Bay (Ziel wegIronwoodSilicon.raststaette, Knoten testteam_bruecke_offen), Schritt 3 am Diner an der Wüstenstraße. Soll der Ort genannt werden, oder bleibt das Wiedersehen eine Überraschung?
-- quest.schach960.schritt1 sagt „im Musikhaus“, Mabel sitzt laut Szene aber draußen auf einer Kiste auf dem Platz neben dem Musikhaus (Ziel portDelacroix.aussen, blaeser). Auch der Figurenname heißt „Bläserin im Musikhaus“. Lieber „vor dem Musikhaus“?
-- Begriff „Karte“: quest.flohmarkt.schritt2 nennt „die Karte der Finch-Jagd“ (Kärtchen mit sechzehn Kästchen). „Karte“ heißen sonst die Hilfekarten (z. B. „ohne Karten“ in Port Delacroix). Doppeldeutig; anderes Wort wie „Sammelkarte“ oder „Kärtchen“? Dann müsste auch der Dialog flohmarkt_karte mitziehen.
-- Ortsname: ort.hochebene.felsentuerme heißt „Felsentürme“, Dialoge und quest.falkeUndBison.schritt1 sagen „Felstürme“. Eine Form wählen.
-- quest.tafelSchleuse.titel „Der Steg am Untertor“ weicht von den übrigen Tafel-Titeln („Die Tafel am …“) ab, der Schritt spricht von Imogens Tafel. Absicht oder „Die Tafel am Untertor“?
-- quest.clubkampf.schritt6 „zur Bushaltestelle an der Brücke“: Der Dialog einladung beginnt „An der alten Stahlbrücke hinter dem Werkstor“, der Bus fährt „an der Schnellstraße“. Passt die Ortsangabe so, oder besser „zur alten Stahlbrücke hinter dem Werkstor“?
-- Ambrose und Zahlen in den Erklärungen (sie stehen mit „Ambrose:“ davor im Kartenblick und in der Deckwahl): karte.schutzengel.erklaerung („Fünf Züge lang“), karte.fluestern.erklaerung („drei gute Züge“, „zwei oder drei Kandidaten“), karte.klaresFluestern.erklaerung („zwei gute Züge“, „zwei Kandidaten“), karte.zielkompass.erklaerung („alle drei Ziele“), karte.warnsignale.erklaerung („die sieben Warnsignale“, Buchbegriff), karte.auszeit.erklaerung („Eine Minute mehr“), karte.langeAuszeit.erklaerung („Drei Minuten mehr“). Das sind Spielregeln, deshalb nicht geändert. Sollen sie trotzdem ohne Zahlen auskommen (dann ginge die genaue Wirkung verloren), oder stehen die Erklärungen außerhalb der Regel?
-- karte.langeAuszeit.zeile.1 („Drei Minuten. Zeit für einen guten Gedanken.“) spricht der Held, nicht Ambrose; deshalb nicht geändert.
-- Knöpfe über etwa 25 Zeichen: ergebnis.aufgeben („Partie aufgeben und in der Stadt bleiben“, 39) und aufgaben.nochEinmal („Noch eine Runde, eine Stufe leichter“, 36). Kürzer ginge „Aufgeben und bleiben“ bzw. „Noch einmal, leichter“, verliert aber Inhalt. Auf dem Handy prüfen, ob sie umbrechen.
-- karte.erkennungsbild.erklaerung: „welches Bild aus der Tabelle“ setzt voraus, dass der Spieler die Tabelle (Buch, Kapitel 9?) kennt. Im Spiel ohne Buch unklar; vielleicht „welches bekannte Endspielbild“?
-- steckbrief.zoe.zahlen: „Im Endspiel behält sie die Damen zu lange.“ Gemeint ist wohl, dass sie den Damentausch scheut, also gar nicht ins Endspiel kommt. Vorschlag „Tauscht die Damen zu spät.“?
-- moment.victor.haengt: Der letzte Satz „Du kennst eine, die ist die Polizei.“ ist ohne Zusammenhang schwer verständlich. Gewollt?
-- zugerraten.hinweis.turm „Wohin kann der Turm, wo er scheinbar nicht hindarf?“ holpert; etwa „Wohin kann der Turm, obwohl es verboten aussieht?“ Ist die Rochade gemeint? Dann bleibt der Hinweis absichtlich vage.
-- karte.mentorzug.name schreibt „Mentor-Zug“ mit Bindestrich, alle anderen Namen zusammen (Fingerzeig, Bauernvorgabe). „Mentorzug“ wäre einheitlich; nicht geändert, weil der Name im Spiel und in den Dokumenten fest ist.
-- Lose Seiten: Zwei Textmuster (seite00/01/02/04/09/10: „Ein loses Blatt mit einer gezeichneten Stellung … hat es“, seite03/05/06/07/08/11/12: „Eine lose Seite voller Schachdiagramme … hat sie“). Der Name heißt immer „Lose Seite“. Ist es eine Stellung je Seite oder viele? Dann einheitlich „Eine lose Seite mit …“ und „hat sie“.
-- Kreidespringer: kreide1 heißt „Kreidespringer unter der Brücke“, kreide3 „Kreidespringer am Diner“, kreide2/4 „Kreidespringer K2/K4“. Tragen K1 und K3 in der Welt auch eine Nummer? Dann einheitlich „Kreidespringer K1“ und „K3“.
-- fund.finchKarte.name „Karte der Finch-Jagd“: „Karte“ heißen in UI und Laden die Hilfskarten für Partien. Wäre „Plan der Finch-Jagd“ oder „Finchs Suchplan“ eindeutiger?
-- fund.nietenCanyonbruecke: Name sagt „an der Canyonbrücke“, der Text „Unter dem Felsbogen“ (Ort heißt Felsbogen). Gibt es dort eine Brücke? Sonst Name „Nieten J. H. am Felsbogen“.
-- tagebuch.titel „Clubtagebuch“ gegen Knopf und Hinweise „Tagebuch“: gewollt?
-- Fundtexte mischen Ich-Form (Teilnehmerausweis, Rangerabzeichen, Lebendschach, Schachtürke, Foto „Die Mappe“) und neutrale Beschreibung; das Tagebuch ist Ich-Form, passt also. fund.gefunden spricht dagegen mit „du“ (Meldung). Nur zur Kenntnis.
-- fund.holzturm „Der letzte; jetzt ist der Satz vollständig.“: Gefunden werden nur Springer, Läufer, Turm aus Holz. Ist ein „ganzer Satz“ (fund.holzlaeufer) damit wirklich vollständig? Vielleicht „jetzt sind es drei“ o. ä.
-- fund.glasfunke „in einem Kaffeehaus hätte er nicht gebrannt“: Bezug für Leser ohne Kontext unklar (Erinnerung London?). Absicht?
+| Frage | Entscheidung | Grund |
+| --- | --- | --- |
+| Unbenutzte Questschlüssel `quest.mamasFinale.schritt1`, `quest.tiefpunkt.schritt5`, `quest.seilschaft.schritt2` | gelöscht | Kein Verweis in Quests, Code, Tests oder Ink (grep). |
+| „Felsentürme“ oder „Felstürme“ | „Felstürme“ (`ort.hochebene.felsentuerme`) | Richtiges Deutsch und so in allen Dialogen; die interne Kennung bleibt. |
+| Knöpfe über 25 Zeichen | „Aufgeben und hierbleiben“ (vorher „Partie aufgeben und in der Stadt bleiben“), „Noch eine Runde, leichter“ (vorher „Noch eine Runde, eine Stufe leichter“) | Eine Zeile auf dem Handy; Durchlauf und Affentest erkennen den neuen Text. |
+| Zahlen in den Erklärungen der Karten | bleiben | Es sind Regeln der Karte, nicht Ambrose im Gespräch. |
+| Lose Blätter: „Blatt mit gezeichneter Stellung“ oder „Seite voller Diagramme“ | Beides bleibt als Inhalt, das Ding heißt überall „lose Seite“ (Funde 00, 01, 02, 04, 09, 10 und die Ink-Zeilen dazu) | Es sind die Seiten des Wanderers (Quest „Die verlorenen Seiten“); manche zeigen eine Stellung, manche mehrere. „Ein Blatt Papier“ bleibt als erster Anblick. |
+| Nieten: Canyonbrücke oder Felsbogen | Beides stimmt: Die Brücke von 1879 steht unter dem Felsbogen (weg-delacroix-desert.ink). Text jetzt „An der Brücke unter dem Felsbogen.“ | Name und Text widersprachen sich nur scheinbar. |
+| Holzsatz „vollständig“ mit drei Figuren | Fundtext ohne „der letzte“ („Aus demselben hellen Holz wie Springer und Läufer.“); Ambrose sagt, wenn alle drei da sind: „Springer, Läufer, Turm. Jetzt sind sie beisammen.“ | Der Satz „Waldholz“ hat drei Fundstücke; der Fundtext stand unabhängig von der Reihenfolge da und konnte beim ersten Fund falsch sein. |
+| Mabel im oder vor dem Musikhaus | „am Musikhaus“ (Questschritt, Zeile in der Raststätte von Crossroads) | Mabel steht auf der Karte portDelacroix.aussen an der Ruine (Ziel der Quest), nicht drinnen. |
+| „Karte der Finch-Jagd“ | „Plan der Finch-Jagd“ (Fundname, Fundtext, Questschritt, Odettes Zeile) | „Karte“ heißt im Spiel die Hilfskarte. |
 
 ## Prüfungen
 

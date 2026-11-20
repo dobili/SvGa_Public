@@ -311,7 +311,7 @@ Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:la
 ~ flohmarktKarteErhalten = true
 Odette klatscht in die Hände. #sprecher:erzaehler
 Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe. #sprecher:odette #stimmung:froh
-Sie gibt dir eine Karte mit sechzehn leeren Kästchen. #sprecher:erzaehler
+Sie gibt dir einen Plan mit sechzehn leeren Kästchen. #sprecher:erzaehler
 Sechzehn weiße Figuren aus Buchsbaum. Fünfzehn liegen versteckt an den Wegen, unter jeder steht ihr Feld. #sprecher:odette #stimmung:laechelt
 Den König behalte ich, bis du alle hast. #sprecher:odette #stimmung:laechelt
 ~ gibFund("finchKarte")
@@ -336,7 +336,7 @@ Wir sehen uns wieder. Ich fahre weiter, als du denkst. #sprecher:odette #stimmun
 Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
 // Runde 11: Kein Buchverweis (Entscheidung vom 10.11.2026, Befund in 22_Dialogpruefung.md); ein
 // loses Blatt mit einer Stellung. Die Sammlung „buchseiten“ bleibt als Zähler bestehen.
-Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Weiß zieht“ darunter geschrieben. #sprecher:erzaehler
+Eine lose Seite mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Weiß zieht“ darunter geschrieben. #sprecher:erzaehler
 ~ seite00Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite00")

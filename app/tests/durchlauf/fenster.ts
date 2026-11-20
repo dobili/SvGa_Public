@@ -120,7 +120,9 @@ export function waehleAntwort(
   const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) || wiederholt(w) }));
   const echte = vor.filter((v) => !v.auf);
   const neue = echte.filter((v) => v.n === 0 && gesamt(v.w) < GLEICHE_ANTWORT_MAX);
-  const aufschub = vor.find((v) => v.auf);
+  // Ein echter Aufschub („Nicht jetzt.“) geht vor einer schon gewählten Wiederholung; sonst nahm
+  // der Lauf bei Ruiz nach jedem Sieg wieder „Noch eine.“ (149 Partien, 20.11.2026).
+  const aufschub = vor.find((v) => schiebtAuf(v.w)) ?? vor.find((v) => v.auf);
   const wahl = neue[0] ??
     aufschub ??
     [...vor].sort((a, b) => a.n - b.n)[0] ?? { i: 0, w: wahlen[0] ?? "" };

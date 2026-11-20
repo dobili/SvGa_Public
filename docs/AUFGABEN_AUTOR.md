@@ -257,6 +257,15 @@ Profil › Einstellungen › Fehler melden.
 
 ### Neu: Das Spiel ganz durchspielen – iPhone, Querformat, Dunkelmodus und Ton
 
+- [ ] N2667. **Haus des Helden, Figur vor dem Haus:** Aus der Haustür treten und auf der Veranda
+      und den Stufen hin und her gehen. Die Figur muss immer vor dem Haus zu sehen sein, nie
+      dahinter (vorher lag das Haus über ihr). Bitte auch an anderen Häusern mit Veranda kurz vor
+      der Tür stehen.
+- [ ] N2668. **Zäune in Maple Falls:** Die braunen Holztore im dunklen Eisenzaun vor den Häusern
+      (Held, Nachbarn, Platz unten rechts) sind weg; dort ist jetzt ein offener Durchgang mit
+      Pfosten. Am Bahndamm (Weg Cedar Creek–Riverton, Süden) ebenso. Ein passendes Eisentor gibt es
+      im Grafiksatz nicht; es steht als Gemini-Wunsch unten (RO44). Passt der offene Durchgang so
+      lange?
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2438,3 +2447,13 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       durch sie wie bisher, und es fällt kaum auf; auf Wunsch werden sie größer gezeichnet
       (Kartenarbeit). Schon so umgesetzt, Widerspruch genügt.
       **Antwort:** „RO43 ok“ oder „RO43: größer zeichnen“.
+
+- [ ] RO44. **Bildwünsche für Gemini und PixelLab (20.11.2026, abends)**
+      1. Gartentor für den dunklen Eisenzaun in Maple Falls: zwei Kacheln breit (32 × 16 Pixel),
+         Stäbe wie der Zaun, zwei schmale Pfosten außen, einmal geschlossen und einmal offen
+         (Flügel nach innen geklappt). Damit bekommen die vier Pforten wieder ein Tor.
+      2. Wahlweise ein Tor für den hellen Lattenzaun (Weg Riverton–Ironwood), gleiche Maße,
+         geschlossen und offen; bis dahin bleibt dort das Hoftor.
+      3. Porträts für Owen Fisk und Ivy (PixelLab, wie die anderen Porträts): Sie fehlen und
+         bleiben im Abspann bisher leer.
+      **Antwort:** Bilder hochladen oder „RO44: 2 nicht nötig“.

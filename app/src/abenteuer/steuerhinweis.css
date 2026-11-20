@@ -1,0 +1,50 @@
+/*
+ * Einmalige Hinweise zur Steuerung (Erstspieler-Durchgang, 20.11.2026): eine Zeile oben in der
+ * Mitte, unter dem Ortsschild, und der einmalige Puls des Tagebuchknopfs. Gehört zu
+ * oberwelt/Steuerhinweis.tsx; Farben aus spielfarben.css, Maße aus bedienung.css.
+ */
+
+/* Unter dem Ortsschild, damit beide zugleich lesbar sind; weg von Kreuz, Aktionsknopf und Leiste,
+   damit kein Tipp auf die Bedienung auf der Zeile landet. Tippen schließt sie. */
+.abenteuer-steuerhinweis {
+  position: absolute;
+  z-index: 2;
+  top: calc(env(safe-area-inset-top) + var(--raster) * 5 + var(--leistenknopf) * 2);
+  left: 50%;
+  width: max-content;
+  max-width: min(28rem, calc(100% - var(--raster) * 4));
+  margin: 0;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  transform: translateX(-50%);
+  border: 0;
+  background: rgb(22 37 61 / 90%);
+  box-shadow: 0 0 0 var(--spiel-pixel) var(--spiel-gold);
+  color: var(--spiel-creme);
+  font: inherit;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Der Tagebuchknopf leuchtet dreimal golden auf, solange der Hinweis auf ihn zeigt. */
+.abenteuer-tagebuchknopf-puls {
+  animation: abenteuer-tagebuchpuls 0.9s ease-in-out 3;
+}
+
+@keyframes abenteuer-tagebuchpuls {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--spiel-gold);
+  }
+
+  50% {
+    box-shadow: 0 0 0 calc(var(--spiel-pixel) * 3) var(--spiel-gold);
+  }
+}
+
+/* Ohne Bewegung: ein fester goldener Rand statt des Pulses. */
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-tagebuchknopf-puls {
+    animation: none;
+    box-shadow: 0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-gold);
+  }
+}

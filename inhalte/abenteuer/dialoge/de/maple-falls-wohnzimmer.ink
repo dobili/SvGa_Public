@@ -175,7 +175,7 @@ Das ist jetzt eben so. #sprecher:mutter #stimmung:froh
     Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
 * [Nichts sagen, nur nicken]
     Mama lacht. Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
-- In der Nacht, als das Haus still ist, kannst du nicht schlafen. Das Brett zieht dich noch einmal nach oben. #sprecher:erzaehler
+- In der Nacht, als das Haus still ist, kannst du nicht schlafen. Das Brett wartet oben in deinem Zimmer. #sprecher:erzaehler
 -> END
 
 === aufbruch ===

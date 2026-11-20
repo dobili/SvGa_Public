@@ -119,6 +119,28 @@
             "karte": "mapleFalls.wohnzimmer",
             "objekt": "mutter"
           }
+        },
+        {
+          "text": "quest.ersterAbend.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-dachboden.erste_nacht"
+          },
+          "ziel": {
+            "karte": "mapleFalls.zimmer",
+            "objekt": "brettSchreibtisch"
+          }
+        },
+        {
+          "text": "quest.ersterAbend.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-clubraum.coach_erstes_treffen"
+          },
+          "ziel": {
+            "karte": "mapleFalls.clubraum",
+            "objekt": "coachDelgado"
+          }
         }
       ]
     },

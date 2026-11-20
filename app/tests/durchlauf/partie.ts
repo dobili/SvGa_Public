@@ -124,9 +124,13 @@ export async function bewerteAufgabe(
 }
 
 /** Wählt den Zug des Spielers für die Stellung (UCI). */
-async function waehleZug(fen: string): Promise<string> {
-  const alle = (await bewerteStellung(fen)).filter((k) => !/[rbn]$/.test(k.uci));
+async function waehleZug(fen: string, ohne: ReadonlySet<string> = new Set()): Promise<string> {
+  const alle = (await bewerteStellung(fen)).filter(
+    (k) => !/[rbn]$/.test(k.uci) && !ohne.has(k.uci),
+  );
   const bester = alle[0];
+  // Alle Kandidaten schon abgelehnt (Zugerraten): wieder von vorn, der Hinweis hilft dann.
+  if (!bester && ohne.size > 0) return waehleZug(fen);
   if (!bester) throw new Error(`Kein Zug in der Stellung ${fen}`);
   const nah = alle.filter((k) => k.wert >= bester.wert - SPIELRAUM);
   if (nah.length > 1 && zufall() < ANTEIL_ZWEITBESTER) {
@@ -193,6 +197,9 @@ export async function spielePartie(
   let letzteAenderung = Date.now();
   let letzterStand = "";
   let fehlzuege = 0;
+  // Zugerraten im Halbfinale (anbindung/useZugerraten.ts): Das Spiel nimmt nur den gesuchten Zug
+  // an. Abgelehnte Züge merkt sich der Spieler je Stellung und probiert den nächsten Kandidaten.
+  const abgelehnt = new Map<string, Set<string>>();
   let partie: Partielage | null = null;
   while (Date.now() < lauf.frist) {
     const lage = await liesLage(seite);
@@ -264,10 +271,21 @@ export async function spielePartie(
     // Schwacher Spieler (schwach.ts): aufgeben oder neu laden, sonst der schwächste Zug.
     if (await brichPartieAb(lauf, p)) continue;
     const schwach = lauf.schwach.partie(p.id, p.kennung).art !== null;
-    const uci = schwach ? await schwacherZug(fen) : await waehleZug(fen);
+    const ohne = abgelehnt.get(fen) ?? new Set<string>();
+    const uci = schwach && ohne.size === 0 ? await schwacherZug(fen) : await waehleZug(fen, ohne);
     const getippt = await tippeZug(lauf, uci);
     if (getippt && (await warteAufZug(lauf, p.id, p.zuege.length))) {
       fehlzuege = 0;
+      continue;
+    }
+    abgelehnt.set(fen, ohne.add(uci));
+    if (
+      await seite
+        .getByTestId("abenteuer-zugerraten")
+        .isVisible()
+        .catch(() => false)
+    ) {
+      lauf.messung.log(`  Zugerraten: ${uci} ist nicht der gesuchte Zug, nächster Kandidat`);
       continue;
     }
     fehlzuege += 1;

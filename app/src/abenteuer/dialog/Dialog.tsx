@@ -149,6 +149,11 @@ export function Dialog({
     beiEnde(geschichte.variablen());
   });
 
+  // Jede neue Zeile beginnt oben: Quer rollt die Seitenspalte (querformat.css), und nach dem
+  // Rollen zu den Antworten stand die nächste Zeile sonst halb außerhalb.
+  useEffect(() => {
+    fenster.current?.scrollTo?.({ top: 0 });
+  }, [schritt]);
   // Neue Wahlen kurz gesperrt: Ein Doppeltipp auf „Weiter“ wählt sonst ungelesen (wahlschutz.ts).
   const geschuetzt = useWahlschutz(schritt, schritt.art === "wahl", wartet);
   // Fokus auf „Weiter“ oder die erste Wahl, je Schritt und nach einer Pause (Tastatur, Vorleser).

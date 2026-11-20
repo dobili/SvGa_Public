@@ -8,6 +8,13 @@ import { expect, type Locator, type Page } from "@playwright/test";
 const VERSUCH_MS = 1500;
 /** So lange darf eine Zeile der Startkarte brauchen, bis ihr Wert wählbar ist (ms). */
 const ZEILE_WARTEN_MS = 20_000;
+/**
+ * So lange darf der Start der App bis zur Überschrift „Buch“ dauern (ms). Warum länger als die
+ * üblichen 5 s: Unter Last (parallel lädt ein anderer Test 92 MB Maia, abenteuer-hintergrund.spec.ts)
+ * kam die Überschrift im Gesamtlauf am 20.11.2026 zu spät, obwohl die App fehlerfrei startete.
+ * Geprüft wird weiter dasselbe: Startseite, Link, Adresse, Überschrift.
+ */
+const APPSTART_MS = 20_000;
 
 /**
  * Alles, was gerade als Werkzeug gewählt ist: Bündel in der Leiste und Symbole am Brett (seit
@@ -119,10 +126,12 @@ export async function starteImBrowser(
     });
   }
   await seite.goto("/");
-  await expect(seite.getByRole("heading", { name: "Schach von Grund auf" })).toBeVisible();
+  await expect(seite.getByRole("heading", { name: "Schach von Grund auf" })).toBeVisible({
+    timeout: APPSTART_MS,
+  });
   await seite.getByRole("link", { name: "Im Browser verwenden" }).click();
-  await expect(seite).toHaveURL(/\/app\/$/);
-  await expect(seite.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await expect(seite).toHaveURL(/\/app\/$/, { timeout: APPSTART_MS });
+  await expect(seite.getByRole("heading", { name: "Buch" })).toBeVisible({ timeout: APPSTART_MS });
 }
 
 /** Tippt eine Abbildungsnummer ins Nummernfeld und öffnet sie. */

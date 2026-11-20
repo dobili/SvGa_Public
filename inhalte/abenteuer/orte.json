@@ -1854,7 +1854,7 @@
           "name": "figur.bigJoe.name",
           "sprite": "figuren/big-joe.png",
           "dialog": "ironwood-kantine.big_joe",
-          "wenn": "nicht endeAkt3Gesehen",
+          "wenn": "nicht endeAkt3Gesehen oder (mamaSpielt und nicht feierGesehen)",
           "gegner": "ironwood.bigJoe"
         },
         {

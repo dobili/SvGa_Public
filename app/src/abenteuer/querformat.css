@@ -1,0 +1,113 @@
+/*
+ * Querformat: Texte als Seitenspalte (Wunsch des Autors, 20.11.2026).
+ *
+ * Warum: Quer lag der Dialog als Streifen unten über die ganze Breite. Bei langem Text und vielen
+ * Antworten war er höher als das Bild, und auf dem iPhone ließ er sich nicht rollen. Quer ist an
+ * den Seiten Platz: Gegenüber dem Steuerkreuz (links) stehen nur Aktionsknopf und Knopfspalte,
+ * und die sind während eines Gesprächs nicht da. Dort steht jetzt das Dialogfenster als Spalte in
+ * voller Höhe. Der Text steht oben, die Antworten und „Weiter“ unten. Wird es zu lang, rollt die
+ * Spalte, auch mit dem Finger auf iOS. Die Welt bleibt links daneben sichtbar, und die Kamera
+ * rückt den Helden in die Mitte der freien Fläche (textspalte.ts). Ein Großbild (#bild) steht groß
+ * in der freien Fläche, der Text in der Spalte daneben.
+ * Gilt auch für geführte Momente in der Partie: Dort liegt das Brett quer links, die Spalte
+ * rechts daneben.
+ * Hochformat bleibt unverändert (Bedingung wie bedienung.css und kamera.ts, bedienungQuer).
+ * Abhängigkeiten: abenteuer.css (Grundform des Dialogs), bedienung.css (Bedienung quer),
+ * oberwelt/textspalte.ts (Kamera).
+ */
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .bildschirm-abenteuer,
+  .abenteuer-momentdialog {
+    /* Breite der Spalte: gut 40 % der Breite, lesbar schmal, auf großen Geräten höchstens 24rem. */
+    --textspalte: min(24rem, max(15rem, 40vw));
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) {
+    top: calc(env(safe-area-inset-top) + var(--raster));
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+    left: auto;
+    right: calc(env(safe-area-inset-right) + var(--raster));
+    display: flex;
+    flex-direction: column;
+    gap: var(--raster);
+    width: var(--textspalte);
+    max-height: none;
+    overflow-y: auto;
+    /* Rollen mit dem Finger, auch wenn die Welt darunter keine Gesten annimmt (touch-action:
+       none an Welt und Steuerkreuz); am Ende der Spalte rollt nichts anderes mit. */
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-dialog-kopf {
+    flex: none;
+    margin: 0;
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-dialog-text {
+    flex: none;
+    min-height: 0;
+  }
+
+  /* Antworten und „Weiter“ unten in der Spalte, über die ganze Breite. */
+  .abenteuer-dialog:not(.abenteuer-sprechblase)
+    > :is(.abenteuer-dialog-wahlen, .abenteuer-dialog-weiter) {
+    flex: none;
+    width: 100%;
+    margin: auto 0 0;
+  }
+
+  /* Großbild: groß in der freien Fläche neben der Spalte statt klein über dem Text. */
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-grossansicht {
+    position: fixed;
+    top: calc(env(safe-area-inset-top) + var(--raster));
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+    left: calc(env(safe-area-inset-left) + var(--raster));
+    right: calc(env(safe-area-inset-right) + var(--textspalte) + var(--raster) * 3);
+    align-items: center;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-grossansicht img {
+    max-height: 100%;
+  }
+
+  /* Menü und Münzen rücken links neben die Spalte, solange ein Dialog offen ist. */
+  .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) > .abenteuer-menueknopf {
+    right: calc(env(safe-area-inset-right) + var(--textspalte) + var(--raster) * 2);
+  }
+
+  .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) .abenteuer-muenzen {
+    right: calc(
+      env(safe-area-inset-right) + var(--textspalte) + var(--leistenknopf) + var(--raster) * 4
+    );
+  }
+
+  /* Der Ladestand („Geräusche werden geladen … 76 %“) lag oben unter dem Menü, das im Gespräch
+     links neben der Spalte steht (Durchlauf quer, 20.11.2026): unten in die Mitte der freien
+     Fläche, dort ist im Gespräch nichts (kein Steuerkreuz). */
+  .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) .abenteuer-ladestand {
+    top: auto;
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+    left: calc((100% - var(--textspalte) - var(--raster) * 2) / 2);
+    max-width: calc(100% - var(--textspalte) - var(--raster) * 4);
+  }
+
+  /* Tagebuch: quer in voller Höhe statt erst unter der Kopfzeile (dort stehen quer keine Knöpfe),
+     „Schließen“ flacher. Vorher waren von gut 800 Pixeln Inhalt nur 170 zu sehen (Durchlauf quer,
+     20.11.2026). Das Fenster rollt wie bisher. */
+  .bildschirm-abenteuer .abenteuer-tagebuch {
+    top: calc(env(safe-area-inset-top) + var(--raster));
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+    max-height: none;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+  }
+
+  .bildschirm-abenteuer .abenteuer-tagebuch > .knopf-haupt {
+    min-height: 40px;
+  }
+}

@@ -117,6 +117,8 @@ node pipeline/abenteuer/rueckmeldung.cjs [--startwerte 1,2,3]   # Rückmeldung n
 python -m pipeline.wiki --zeigen   # Seiten beider Wikis im Dashboard (Paket D): „app“ (Schach-App) und „spiel“ (Schach-Abenteuer, pipeline/wiki_spiel.py aus docs/spiel/, Codeführer in docs/spiel/codefuehrer/); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 python -m pipeline.abenteuer.editorpaket PRIVAT PRIVAT/editor   # Karteneditor-Paket (Seite + daten.js mit Szenen, Bildern, Kacheln) fürs private Repo; Anleitung docs/spiel/KARTENEDITOR.md
 python -m pipeline.abenteuer.editorrueck PRIVAT/editor/rueck/DATEI.json --privat PRIVAT   # Änderungen des Editors zurück in die Szenen, Bericht und Vorschauen nach buch/arbeit/editor/, Kartenbau
+python -m pipeline.abenteuer.proportionen [--alle] [--messen PRIVAT] [--innenfaktor 1.33]   # Möbel im Maß der Figur: Bildhöhe je Art gegen die Figur (20 px), Befunde mit vorgeschlagenem Maßstab; nur melden (Lösung wählt der Autor); Ausnahmen mit Grund im Werkzeug
+python -m pipeline.abenteuer.proportionsvergleich PRIVAT ZIEL   # Vergleichsseite Figurengröße für den Autor (Varianten A bis D an 8 Stellen, Zahlen); enthält Paketbilder, nie ins öffentliche Repo
 python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude außen (Regel 10.75, R065), Bericht nach docs/spiel/auftraege/rueckmeldung/
 python -m pipeline.abenteuer.blickrichtung   # Blickrichtung stehender Figuren zu Tresen, Brett, Gesprächspartner (R008)
 python -m pipeline.abenteuer.kopfkachel [--alle]   # Kacheln über Figuren, die begehbar wurden (Figuren sperren seit 18.11.2026 nur die Fußkachel): neue Bereiche (Befund), Abkürzungen (Hinweis)

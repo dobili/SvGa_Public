@@ -9,6 +9,7 @@
  */
 import type Phaser from "phaser";
 import { kameragrenzen, verdeckteRaender, type Raender } from "./kamera";
+import { textspalteVerdeckt } from "./textspalte";
 
 /**
  * Setzt Vergrößerung, Grenzen und Folgeversatz der Kamera für eine Welt der Größe `breite` ×
@@ -26,7 +27,10 @@ export function richteKameraEin(
 ): Raender {
   kamera.setZoom(zoom);
   const { sichtBreite, sichtHoehe } = sichtflaeche(kamera);
-  const raender = verdeckteRaender(sichtBreite, sichtHoehe, zoom);
+  const bedienung = verdeckteRaender(sichtBreite, sichtHoehe, zoom);
+  // Quer im Gespräch verdeckt die Textspalte rechts mehr als die Knopfspalte (textspalte.ts).
+  const spalte = Math.round(textspalteVerdeckt() / zoom);
+  const raender = { ...bedienung, rechts: Math.max(bedienung.rechts, spalte) };
   const g = kameragrenzen(breite, hoehe, sichtBreite, sichtHoehe, raender);
   kamera.setBounds(g.x, g.y, g.breite, g.hoehe);
   // Phaser zielt auf (Held − Versatz): Ist unten mehr verdeckt als oben, legt ein negativer

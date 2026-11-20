@@ -1,0 +1,136 @@
+# Lektorat der Spieltexte außerhalb der Dialoge (20.11.2026)
+
+Auftrag des Haupt-Chats: alle Texte in `inhalte/abenteuer/texte/de.json` außer Dialogen lesen (Quests, Tagebuch, Meldungen, Karten und Wirkungen, Hinweise, Läden, Funde, Menü, Ergebniskarte, „Was bisher geschah“, Steuerhinweise) und auf Stimmigkeit mit den Dialogen, einheitliche Begriffe, einen Ton, Tippfehler und Länge fürs Handy prüfen. Nach Regel 9 direkt umgesetzt; hier jede Änderung mit vorher und nachher.
+
+Leitlinien, die sich daraus ergaben:
+
+- Questschritte sind kurze Anweisungen ohne „ich“ und „du“ („Gegen Mira um die Clubnadel spielen.“).
+- Clubkämpfe heißen „um die Clubnadel spielen“, nicht „gewinnen“: Auch ein Remis bringt eine Nadel.
+- Das Tagebuch spricht in der Ich-Form, Hinweise und Erklärungen sprechen den Spieler mit „du“ an.
+- Zeilen von Ambrose nennen keine Zahlen; die genauen Regeln stehen in den Erklärungen der Karten.
+- Gleiche Dinge heißen gleich: die Finch-Figuren „Finchs Bauer (A)“ bis „Finchs Dame“, Kreidespringer K1 bis K5, „Sprechen“ wie auf dem Aktionsknopf.
+
+## Quests (Titel und Schritte)
+
+| Schlüssel | vorher | nachher | Grund |
+| --- | --- | --- | --- |
+| `quest.einzug.schritt1` | Die Kiste von Mrs. Whitlock auf den Dachboden bringen. Die Treppe geht vom Wohnzimmer nach oben, von dort die steile Treppe weiter zum Dachboden. | Die Kiste von Mrs. Whitlock auf den Dachboden bringen: vom Wohnzimmer die Treppe hinauf, dann die steile Treppe weiter. | Mit 145 Zeichen zu lang fürs Handy; Wegangabe bleibt vollständig (Mama: „Die Treppe hier rauf, und oben gleich die steile weiter“). |
+| `quest.ersterAbend.schritt2` | Schlafen gehen: die Treppe hinauf in dein Zimmer. Das Brett steht jetzt auf deinem Schreibtisch. | Schlafen gehen: die Treppe hinauf ins Zimmer. Das Brett steht jetzt auf dem Schreibtisch. | Anrede einheitlich: Questschritte sprechen den Helden sonst nicht mit „du/dein“ an. |
+| `quest.ersterAbend.schritt3` | Am Morgen zur Schule, die Straße hinunter, und dort das Schachteam suchen. | Am Morgen die Straße hinunter zur Schule gehen und dort das Schachteam suchen. | Verb fehlte („zur Schule, …“); Infinitivstil wie die übrigen Schritte. |
+| `quest.viertesBrett.schritt4` | Gegen Coach Delgado die Clubnadel gewinnen. | Gegen Coach Delgado um die Clubnadel spielen. | Der Schritt gilt auch bei Remis (Bronzenadel, coach_nach_sieg); „gewinnen“ stimmt nicht. Einheitlich mit Cedar Creek, Riverton, Ironwood, Silicon Bay. |
+| `quest.viertesBrett.schritt5` | Beim Coach meinen Platz im Team abholen. | Bei Coach Delgado den Platz im Team abholen. | „meinen“ mischt die Ich-Form in die sonst unpersönlichen Schritte; voller Name wie im Schritt davor. |
+| `quest.besserWerden.schritt1` | Wer ist der Junge mit dem Tablet? | Den Jungen mit dem Tablet ansprechen. | Frage statt Handlungsanweisung; alle anderen Schritte stehen im Infinitiv. |
+| `quest.lilysSpringer.schritt1` | Lily zeigen, wie der Springer zieht und zwei auf einmal angreift. | Lily zeigen, wie der Springer zieht und mit einer Gabel zwei Figuren zugleich angreift. | Schachbegriff „Gabel“, den der Dialog selbst einführt; „zwei auf einmal“ ist umgangssprachlich ohne Bezugswort. |
+| `quest.lilysSpringer.schritt2` | Hören, was Lily dazu sagt. | Zuhören, was Lily dazu sagt. | Einheitlich mit „Zuhören, was …“ in den übrigen Schritten. |
+| `quest.sternennacht.schritt1` | Am Abend zum Steg kommen und mit Mae Sternschnuppen schauen. | Am Abend zum Steg kommen und mit Mae Sternschnuppen beobachten. | „Sternschnuppen schauen“ ist umgangssprachlich. |
+| `quest.mamasFinale.schritt2` | Das Haus in der Elm Street besuchen. | Oma Ruth in der Elm Street besuchen, Nummer zehn, das Eckhaus mit dem grünen Geländer. | Nennt, wen man besucht und welches Haus (so beschreibt es Big Joe in big_joe_erkennt); „das Haus in der Elm Street“ allein ist unklar. |
+| `quest.mamasFinale.schritt3` | Mama zeigen, was ich gefunden habe. | Mama zu Hause das Foto aus Oma Ruths Haus zeigen. | „was ich gefunden habe“ mischt die Ich-Form ein; der Dialog (mama_foto) zeigt das Foto von 2001. |
+| `quest.spielberichte.schritt1` | Die Spielberichte auswerten, die Victor mir gegeben hat. | Die Spielberichte auf Victors Speicherstift auswerten. | „mir“ mischt die Ich-Form ein; Speicherstift wie im Dialog victor_berichte. |
+| `quest.tiefpunkt.schritt4` | Den Clubkampf gegen Miss Odile gewinnen, ohne Karten. | Gegen Miss Odile um die Clubnadel spielen, ohne Karten. | Schritt gilt auch bei Remis; einheitliche Formel für den Clubkampf. |
+| `quest.wiederaufbau.schritt2` | Die Benefiz-Simultan in der Turnhalle spielen. | Das Benefiz-Simultan in der Turnhalle spielen. | Falsches Geschlecht: „das Simultan“ wie in Schritt 3 und in den Dialogen. |
+| `quest.versoehnung.schritt5` | Den Clubkampf gegen Mira gewinnen. | Gegen Mira um die Clubnadel spielen. | Schritt gilt auch bei Remis; einheitliche Formel für den Clubkampf. |
+| `quest.versoehnung.schritt7` | Zum Bahnhof gehen, wenn ich abreisen will. | Zum Bahnhof gehen, wenn die Reise weitergehen soll. | „wenn ich abreisen will“ mischt die Ich-Form ein. |
+| `quest.summitEndspiel.schritt7` | Den Clubkampf gegen Ward gewinnen. | Gegen Ward um die Clubnadel spielen. | Schritt gilt auch bei Remis; einheitliche Formel für den Clubkampf. |
+| `quest.dotsPartie.schritt1` | Margarets Partie gegen Dot ab dem 31. Zug zu Ende spielen. | Margarets Fernpartie gegen Dot nach dem 31. Zug zu Ende spielen. | Dialog: Stellung „nach dem einunddreißigsten Zug“; gleiche Formel wie in der Hausboot-Quest („nach dem 20. Zug“). |
+| `quest.fernpartie.schritt1` | In Ghost Town umsehen. Mr. Pruitt kennt ein Grab. | Sich in Ghost Town umsehen. Mr. Pruitt kennt ein Grab. | Reflexivpronomen fehlte. |
+| `quest.epilog.schritt1` | Das alte Brett wartet auf deinem Schreibtisch. | Zum alten Brett auf dem Schreibtisch gehen. | Keine Handlungsanweisung und „deinem“ statt der unpersönlichen Form. |
+| `quest.meisterschaft.schritt2` | In der Vorrunde mindestens 2 von 4 Punkten holen. | In der Vorrunde mindestens zwei von vier Punkten holen. | Kleine Zahlen im Fließtext ausschreiben. |
+| `quest.meisterschaft.schritt7` | Nach der Siegerehrung auf die Treppe vor der Arena setzen. | Sich nach der Siegerehrung auf die Treppe vor der Arena setzen. | Reflexivpronomen fehlte. |
+| `quest.studie.schritt1` | Ward die Studie aus Haraldsens Uniform bringen. | Ward Haraldsens Studie in die Hütte bringen. | „aus Haraldsens Uniform“ wirkt verrutscht: Haraldsen gibt den Zettel selbst (haraldsen_studie_mit); Ziel ist Ward in der Hütte. |
+| `quest.funkschach.schritt1` | Im Funkturnier der Fernfahrer mitspielen, Gegnerin ist Mama Bear. | Im Funkturnier der Fernfahrer gegen Mama Bear spielen. | Kürzer und ohne angehängten Satzteil. |
+| `quest.bauerndiplom.schritt1` | Beim Diplomtag prüfen: den drei Kindern ihre Aufgaben stellen. | Am Diplomtag den drei Kindern ihre Prüfungsaufgaben stellen. | Doppelpunkt-Konstruktion „prüfen: … stellen“ holpert. |
+| `quest.gespenstTankstelle.schritt1` | An den Tisch setzen und gegen den Greifarm Z-1 spielen. | Sich an den Tisch setzen und gegen den Greifarm Z-1 spielen. | Reflexivpronomen fehlte. |
+| `quest.kisteImHausboot.schritt1` | In Pépés Blechkiste blättern, bevor sie brennt. | In den alten Partieformularen aus Pépés Blechkiste blättern, bevor sie brennen. | Verbrannt werden die Formulare, nicht die Kiste (pepe_kiste: „bevor sie brennen“); in einer Kiste blättert man nicht. |
+
+## Karten, Deckwahl, Ergebnis, Hülle, Steckbriefe
+
+| Schlüssel | vorher | nachher | Grund |
+| --- | --- | --- | --- |
+| `ergebnis.kipppunkt` | Ambrose: „Hier ist es passiert, in Zug {zug}. Noch einmal von hier?“ | Ambrose: „Hier ist es passiert. Noch einmal von hier?“ | Ambrose nennt keine Zahlen; die Zugnummer steht schon auf dem Knopf „Noch einmal von Zug {zug}“ |
+| `karte.schutzengel.spruch` | Ich passe auf. Fünf Züge lang. | Ich passe auf. Eine Weile lang. | Ambrose nennt keine Zahlen; die Dauer steht in der Erklärung |
+| `karte.schutzengel.zeile.2` | Fünf Züge lang bin ich bei dir. | Eine Weile bin ich bei dir. | Ambrose nennt keine Zahlen |
+| `karte.fluestern.spruch` | Drei Wege. Einer ist deiner. | Ein paar Wege. Einer ist deiner. | Ambrose nennt keine Zahlen; die Anzahl steht in der Erklärung |
+| `karte.fluestern.zeile.1` | Hör gut zu. Drei Wege. | Hör gut zu. Ich zeige dir Wege. | Ambrose nennt keine Zahlen |
+| `karte.fluestern.zeile.3` | Drei Ideen. Welche ist deine? | Ein paar Ideen. Welche ist deine? | Ambrose nennt keine Zahlen |
+| `karte.klaresFluestern.spruch` | Zwei Wege. Beide sind gut. Einer ist besser. | Beide Wege sind gut. Einer ist besser. | Ambrose nennt keine Zahlen; „beide“ trägt die Aussage weiter |
+| `karte.klaresFluestern.zeile.1` | Zwei Wege. Wähle klug. | Ein Weg hier, einer dort. Wähle klug. | Ambrose nennt keine Zahlen |
+| `karte.klaresFluestern.zeile.2` | Nur zwei. Vergleiche sie. | Nur diese beiden. Vergleiche sie. | Ambrose nennt keine Zahlen |
+| `karte.klaresFluestern.zeile.3` | Ich flüstere nur zweimal. | Diesmal flüstere ich sparsam. | Ambrose nennt keine Zahlen („zweimal“) |
+| `karte.klaresFluestern.zeile.4` | Zwei gute Züge. Welcher passt zu deinem Plan? | Beide sind gut. Welcher passt zu deinem Plan? | Ambrose nennt keine Zahlen |
+| `karte.springervorgabe.spruch` | Ohne Springer. So spielte man gegen mich, als ich zehn war. | Ohne Springer. So spielte man gegen mich, als ich ein Knabe war. | Ambrose nennt keine Zahlen (Alter); „Knabe“ als sein altes Wort |
+| `karte.langeAuszeit.spruch` | Drei Minuten. Genug für einen Tee und einen guten Gedanken. | Genug Zeit für einen Tee und einen guten Gedanken. | Spruch in Ambroses Stimme ohne Zahl; die Minuten stehen in der Erklärung |
+| `karte.taktikspuernase.spruch` | Schach, Schlag, Drohung: Wer zuerst sie prüft, findet die Kombination. | Schach, Schlag, Drohung: Wer sie zuerst prüft, findet die Kombination. | Wortstellung („Wer zuerst sie prüft“ klingt verdreht) |
+| `karte.turmregel.spruch` | Ein Turm hinter dem Freibauern ist wie ein Wind im Rücken. | Ein Turm hinter dem Freibauern ist wie Wind im Rücken. | überflüssiger Artikel |
+| `karte.schmeichelei.spruch` | Ein Lob zur rechten Zeit, und der Gegner hält sich für unbesiegbar. | Ein Lob zur rechten Zeit, und der Gegner hält sich für unschlagbar. | einheitlich mit Erklärung und Wirkung („unschlagbar“) |
+| `karte.fingerzeig.erklaerung` | Ich zeige dir die Figur, die jetzt arbeiten will, den Zug findest du selbst. Ohne Karte fragst du: Welche meiner Figuren steht am schlechtesten, welche kann am meisten tun? | Ich zeige dir die Figur, die jetzt arbeiten will. Den Zug findest du selbst. Ohne Karte fragst du: Welche meiner Figuren steht am schlechtesten, welche kann am meisten tun? | Kommasatz getrennt, liest sich klarer |
+| `karte.springervorgabe.erklaerung` | Dein Gegner beginnt ohne einen Springer. Lerne mit diesem Vorteil umzugehen: vereinfachen, tauschen, den Vorteil nach Hause bringen. | Dein Gegner beginnt ohne einen Springer. Lerne, mit diesem Vorteil umzugehen: vereinfachen, tauschen, den Gewinn nach Hause bringen. | Komma vor der Infinitivgruppe, „Vorteil“ nicht zweimal |
+| `karte.schwacheFelder.erklaerung` | Ich nenne dir die Felder, die kein Bauer mehr kontrollieren kann, deine Löcher und die Vorposten deiner Figuren. Ohne Karte fragst du: Welche Felder sind für immer frei? | Ich nenne dir die Felder, die kein Bauer mehr kontrollieren kann, deine Löcher und die Vorposten deiner Figuren. Ohne Karte fragst du: Welche Felder deckt kein Bauer mehr? | „für immer frei“ klingt nach leeren Feldern; so passt es zum Namen und zu Zeile 1 |
+| `karte.opposition.erklaerung` | Ich zeige dir, ob die Könige in Opposition stehen, wer sie hat und welche Züge sie nehmen. Ohne Karte zählst du die Felder zwischen den Königen selbst. | Ich zeige dir, ob die Könige in Opposition stehen, wer sie hat und mit welchen Zügen man sie nimmt. Ohne Karte zählst du die Felder zwischen den Königen selbst. | „welche Züge sie nehmen“ ist mehrdeutig (sie = Könige oder Opposition) |
+| `karte.elementarmatt.erklaerung` | Ich zeige dir, wie du mit dem Material auf dem Brett mattsetzt, und welche Fehler zum Patt führen. Ohne Karte denkst du an die Regel: erst der König, dann die Figur. | Ich zeige dir, wie du mit dem Material auf dem Brett mattsetzt und welche Fehler zum Patt führen. Ohne Karte denkst du an die Regel: erst der König, dann die Figur. | überflüssiges Komma vor „und“ |
+| `steckbrief.fleck.ruhig` | Blinder Fleck: übersieht stille Züge | Blinder Fleck: übersieht ruhige Züge | Fachwort wie in der App und in der Taktikspürnase („ruhiger Zug“) |
+| `deck.vorgabeHinweis` | Vorgabe: Der Gegner beginnt ohne eine Figur. | Vorgabe: Der Gegner beginnt mit weniger Material. | Bei der Bauernvorgabe fehlt ein Bauer, keine Figur |
+| `deck.losEine` | Mit 1 Karte spielen | Mit einer Karte spielen | Zahlwort statt Ziffer im Fließtext des Knopfs |
+| `deck.zeit.blitz` | Blitz 3 + 2 | Blitzschach 3 + 2 | gleich gebaut wie „Schnellschach 10 + 5“ |
+| `deck.hinweis` | Tippe eine Karte an, dann hilft sie dir in der Partie. Bis zu {max} Karten. Im Clubkampf gibt es die Goldnadel nur ohne Karten. | Tippe die Karten an, die dir in der Partie helfen sollen. Bis zu {max} Karten. Im Clubkampf gibt es die Goldnadel nur ohne Karten. | „Tippe eine Karte an, dann hilft sie dir“ klingt, als wirke sie sofort; hier wird das Deck gewählt |
+| `deck.frei` | Dazu liegt frei im Deck, ohne Kosten und ohne Folge für die Nadel: {karten} | Dazu kommen ohne Kosten und ohne Folge für die Nadel: {karten} | „liegt frei im Deck“ holpert; Satz passt so auch zu mehreren Karten |
+
+## Funde, Tagebuch, Oberwelt, Rückblick, Hinweise, Abspann, Erzählungen
+
+| Schlüssel | vorher | nachher | Grund |
+| --- | --- | --- | --- |
+| `hinweis.aktion` | Stehst du vor etwas, erscheint der Aktionsknopf. Tipp darauf zum Ansehen oder Reden. | Stehst du vor etwas, erscheint der Aktionsknopf. Tipp darauf zum Ansehen oder Sprechen. | Gleiches Wort wie der Aktionsknopf („Sprechen“) |
+| `tagebuch.keineGegner` | Über deine Gegner weißt du noch nichts. Wer zuhört, erfährt ihre Schwächen. | Über meine Gegner weiß ich noch nichts. Wer zuhört, erfährt ihre Schwächen. | Tagebuch spricht sonst in der Ich-Form |
+| `oberwelt.vorfuehrung.frage` | Soll ich ihn dir zeigen? | Soll ich es dir zeigen? | „ihn“ passt nicht zu jeder Vorführung (etwa Finchs Falle) und nicht zum Knopf „Zeig es mir“ |
+| `rueckblick.quest.ironwood.turnier` | Mama wollte erst nicht, dass ich nach Ironwood gehe. Ich bin über den Kanalweg trotzdem hingekommen. | Mama wollte erst nicht, dass ich nach Ironwood gehe. Ich bin trotzdem über den Kanalweg hingekommen. | Wortstellung, liest sich glatter |
+| `rueckblick.akt2` | In Riverton und Ironwood habe ich die dritte und die vierte Nadel gewonnen, und beide Clubs hat sich danach Perfect Move geholt. In Ironwood hat Mama zum ersten Mal seit Jahren wieder gespielt, gegen mich. Victor hat uns nach Silicon Bay eingeladen. | In Riverton und Ironwood habe ich die dritte und die vierte Nadel gewonnen, und danach hat sich Perfect Move beide Clubs geholt. In Ironwood hat Mama zum ersten Mal seit Jahren wieder gespielt, gegen mich. Victor hat uns nach Silicon Bay eingeladen. | Satzbau: Subjekt vor Objekt, eindeutiger |
+| `fund.halesBrief.text` | Im Keller des Antiquariats, 1866. Kommen Sie nach Norden. Ich warte. | Im Keller des Antiquariats, 1866. „Kommen Sie nach Norden. Ich warte.“ | Briefzitat in Anführungszeichen, sonst unklar, wer spricht |
+| `fund.muschelMitLoch.text` | Im Sand am Deich. Lou sagt: Die bringt Glück. Steht fest. | Im Sand am Deich. Lou sagt: „Die bringt Glück. Steht fest.“ | Wörtliche Rede in Anführungszeichen wie in den anderen Funden |
+| `fund.muschelCoral.name` | Muschel mit Loch | Corals Muschel | Zwei verschiedene Funde hießen gleich („Muschel mit Loch“, auch Lou am Deich); im Tagebuch nicht zu unterscheiden |
+| `fund.finchDame.text` | Aus der Astgabel eines Mammutbaums am Weg nach Pinewood, neben einem Fink aus Blech. Unter dem Fuß ist ein Feld eingebrannt. | Aus der Astgabel eines Mammutbaums am Weg nach Pinewood, neben einem Finkenzeichen aus Blech. Unter dem Fuß ist ein Feld eingebrannt. | Grammatik (schwaches Nomen: „einem Finken“) und gleiches Wort wie bei den anderen Figuren |
+| `fund.finchTurmA.text` | Ein weißer Turm aus Buchsbaum, unten ist ein Feld eingebrannt. Gefunden im Kasten der Rettungsringe auf der Fähre. | Ein weißer Turm aus Buchsbaum, im Kasten der Rettungsringe auf der Fähre. Unter dem Fuß ist ein Feld eingebrannt. | Gleiche Formel wie bei den übrigen Finch-Figuren |
+| `fund.finchBauerC.text` | Ein weißer Bauer aus Buchsbaum, unten ist ein Feld eingebrannt. Gefunden in einer Reuse am Steg im Bayou. | Ein weißer Bauer aus Buchsbaum, in einer Reuse am Steg im Bayou. Unter dem Fuß ist ein Feld eingebrannt. | Gleiche Formel wie bei den übrigen Finch-Figuren |
+| `fund.finchLaeuferA.text` | Ein weißer Läufer aus Buchsbaum, unter dem Fuß ist ein Feld eingebrannt. Daneben ein kleiner Fink aus Blech. | Ein weißer Läufer aus Buchsbaum. Unter dem Fuß ist ein Feld eingebrannt. Daneben ein kleiner Fink aus Blech. | Gleiche Formel wie bei den übrigen Finch-Figuren, kein Komma-Anschluss |
+| `fund.finchBauerA.name` | Finchs Bauer A | Finchs Bauer (A) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerB.name` | Weißer Bauer aus Buchsbaum (B) | Finchs Bauer (B) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerC.name` | Finchs Bauer | Finchs Bauer (C) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerD.name` | Weißer Bauer aus Buchsbaum (D) | Finchs Bauer (D) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerE.name` | Weißer Bauer aus Buchsbaum (E) | Finchs Bauer (E) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerF.name` | Weißer Bauer aus Buchsbaum (F) | Finchs Bauer (F) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerG.name` | Weißer Bauer aus Buchsbaum (G) | Finchs Bauer (G) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchBauerH.name` | Weißer Bauer aus Buchsbaum (H) | Finchs Bauer (H) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchSpringerA.name` | Finchs Springer A | Finchs Springer (A) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchSpringerB.name` | Weißer Springer aus Buchsbaum | Finchs Springer (B) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchLaeuferA.name` | Läufer aus Buchsbaum | Finchs Läufer (A) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchLaeuferB.name` | Weißer Läufer aus Buchsbaum | Finchs Läufer (B) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchTurmA.name` | Finchs Turm | Finchs Turm (A) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchTurmB.name` | Weißer Turm aus Buchsbaum | Finchs Turm (B) | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchDame.name` | Weiße Dame aus Buchsbaum | Finchs Dame | Einheitliche Namen der sechzehn Finch-Figuren (bisher vier Muster: „Finchs Bauer A“, „Weißer Bauer aus Buchsbaum (G)“, „Läufer aus Buchsbaum“, „Finchs Turm“); passt zu „Finchs König“, kürzer für die Liste |
+| `fund.finchKarte.text` | Eine Karte mit sechzehn leeren Kästchen von Odette Finch. Sechzehn weiße Figuren aus Buchsbaum liegen an den Wegen, jede mit ihrem Feld unter dem Fuß. | Eine Karte von Odette Finch mit sechzehn leeren Kästchen. Sechzehn weiße Figuren aus Buchsbaum liegen an den Wegen, jede mit ihrem Feld unter dem Fuß. | Bezug klarer: die Karte ist von Odette Finch, nicht die Kästchen |
+| `fund.finchsBuchsbaum.text` | Der ganze Satz aus Buchsbaum, sechzehn Weiße und sechzehn Schwarze, für das gelöste Meisterproblem. | Der ganze Satz aus Buchsbaum, sechzehn weiße und sechzehn schwarze Figuren, für das gelöste Meisterproblem. | Klarer; „Weiße/Schwarze“ allein klingt nach Spielern |
+| `fund.kreide5.name` | Kreidespringer, Capital | Kreidespringer K5 | Wie „Kreidespringer K2“ und „K4“; der Text nennt den Treffpunkt K5 |
+| `fund.spurPM5.name` | Spur: Kühlung für Rechenzentrum Summit | Abgelehnter Antrag | Zu lang für eine Zeile (38 Zeichen); der Text erklärt den Rest |
+| `fund.spurPM2.name` | Spur: Testfeld Signal | Schild „Testfeld Signal“ | Andere Spuren heißen nach dem Ding (Frachtbrief, Typenschild, Mappe), nicht „Spur: …“ |
+| `fund.zeitungsausschnitt.name` | Zeitungsausschnitt Schachspalte | Ausschnitt der Schachspalte | Fehlende Verbindung zwischen den zwei Nomen |
+| `fund.pavillonspringer.text` | Ein Geschenk von Slick. Man sieht die Kratzer der Ungeduld vieler Partien. | Ein Geschenk von Slick. Die Kratzer stammen aus vielen ungeduldigen Partien. | Genitivkette schwer lesbar |
+| `erzaehlung.testteamWald.vorher` | Benji zieht, bevor du die Hand vom Stein hast. Er schlägt deinen Bauern auf e4, du schlägst seinen Springer, und schon steht sein Damenbauer zwischen deinem Läufer und deinem Springer. Eine Gabel. Du bist am Zug und hast zehn Züge. | Benji zieht, bevor du die Hand von der Figur hast. Er schlägt deinen Bauern auf e4, du schlägst seinen Springer, und schon steht sein Damenbauer zwischen deinem Läufer und deinem Springer. Eine Gabel. Du bist am Zug und hast zehn Züge. | Schachbegriff: Figur, nicht Stein (Stein ist Dame/Mühle) |
+| `erzaehlung.testteamGitter.vorher` | Ihr liefert euch ein zähes Spiel. Türme und Läufer sind längst getauscht. Nach gut dreißig Zügen hast du einen Bauern mehr, und Zoe will die Damen behalten. Du bist am Zug und hast fünfzehn Züge. | Ihr liefert euch ein zähes Spiel. Türme und Läufer sind längst abgetauscht. Nach gut dreißig Zügen hast du einen Bauern mehr, und Zoe will die Damen behalten. Du bist am Zug und hast fünfzehn Züge. | Schachbegriff: abtauschen |
+| `erzaehlung.joggerin.vorher` | Die Joggerin zieht im Laufschritt, ihr Puls piept dazu. Nach einer ganzen Reihe schneller Züge steht es so, und du bist ein bisschen vorn. „Sieben Züge. Halt das Tempo.“ | Die Joggerin zieht im Laufschritt, ihre Pulsuhr piept dazu. Nach einer ganzen Reihe schneller Züge steht es so, und du bist ein bisschen vorn. „Sieben Züge. Halt das Tempo.“ | Der Puls selbst piept nicht |
+| `abspann.mitwirkende.phaser` | Phaser, die Welt zum Laufen | Phaser, mit dem die Welt läuft | „die Welt zum Laufen“ ist unvollständig |
+
+## Entscheidungen zu den offenen Fragen (umgesetzt, Widerspruch genügt)
+
+| Frage | Entscheidung | Grund |
+| --- | --- | --- |
+| Unbenutzte Questschlüssel `quest.mamasFinale.schritt1`, `quest.tiefpunkt.schritt5`, `quest.seilschaft.schritt2` | gelöscht | Kein Verweis in Quests, Code, Tests oder Ink (grep). |
+| „Felsentürme“ oder „Felstürme“ | „Felstürme“ (`ort.hochebene.felsentuerme`) | Richtiges Deutsch und so in allen Dialogen; die interne Kennung bleibt. |
+| Knöpfe über 25 Zeichen | „Aufgeben und hierbleiben“ (vorher „Partie aufgeben und in der Stadt bleiben“), „Noch eine Runde, leichter“ (vorher „Noch eine Runde, eine Stufe leichter“) | Eine Zeile auf dem Handy; Durchlauf und Affentest erkennen den neuen Text. |
+| Zahlen in den Erklärungen der Karten | bleiben | Es sind Regeln der Karte, nicht Ambrose im Gespräch. |
+| Lose Blätter: „Blatt mit gezeichneter Stellung“ oder „Seite voller Diagramme“ | Beides bleibt als Inhalt, das Ding heißt überall „lose Seite“ (Funde 00, 01, 02, 04, 09, 10 und die Ink-Zeilen dazu) | Es sind die Seiten des Wanderers (Quest „Die verlorenen Seiten“); manche zeigen eine Stellung, manche mehrere. „Ein Blatt Papier“ bleibt als erster Anblick. |
+| Nieten: Canyonbrücke oder Felsbogen | Beides stimmt: Die Brücke von 1879 steht unter dem Felsbogen (weg-delacroix-desert.ink). Text jetzt „An der Brücke unter dem Felsbogen.“ | Name und Text widersprachen sich nur scheinbar. |
+| Holzsatz „vollständig“ mit drei Figuren | Fundtext ohne „der letzte“ („Aus demselben hellen Holz wie Springer und Läufer.“); Ambrose sagt, wenn alle drei da sind: „Springer, Läufer, Turm. Jetzt sind sie beisammen.“ | Der Satz „Waldholz“ hat drei Fundstücke; der Fundtext stand unabhängig von der Reihenfolge da und konnte beim ersten Fund falsch sein. |
+| Mabel im oder vor dem Musikhaus | „am Musikhaus“ (Questschritt, Zeile in der Raststätte von Crossroads) | Mabel steht auf der Karte portDelacroix.aussen an der Ruine (Ziel der Quest), nicht drinnen. |
+| „Karte der Finch-Jagd“ | „Plan der Finch-Jagd“ (Fundname, Fundtext, Questschritt, Odettes Zeile) | „Karte“ heißt im Spiel die Hilfskarte. |
+
+## Prüfungen
+
+Sprachprüfung, Gate wie üblich und die Oberflächentests des Abenteuers in Chromium (darunter `abenteuer.spec.ts` und `abenteuer-laden.spec.ts`, die Texte der Deckwahl und der Vorführung prüfen).

@@ -63,7 +63,7 @@ describe("schwacher Spieler", () => {
     const s = new Schwaechling(ordner(), true);
     s.partie("p1", "mapleFalls.rosa");
     s.neuladen("p1", "weiter");
-    const karte = [knopf("Weiterspielen"), knopf("Partie aufgeben und in der Stadt bleiben")];
+    const karte = [knopf("Weiterspielen"), knopf("Aufgeben und hierbleiben")];
     expect(s.fortsetzung(karte)?.text).toBe("Weiterspielen");
     expect(s.partie("p1", "mapleFalls.rosa").neugeladen).toBe(true);
   });

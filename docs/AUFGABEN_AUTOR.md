@@ -160,9 +160,13 @@ Profil › Einstellungen › Fehler melden.
       abgeschlossenen Akt in zwei, drei Sätzen zusammen und erzählt den laufenden Akt Satz für
       Satz nach den erledigten Hauptquests, in der Stimme des Tagebuchs („ich“) und nur mit dem,
       was du schon gespielt hast. Ein Akt gilt erst mit seiner letzten Hauptquest als
-      abgeschlossen. Wird gerade fertig (mittel-1); fehlt er noch, kommt er mit der nächsten Beta.
-      Liest es sich richtig, verrät es nichts zu früh?
+      abgeschlossen. Liest es sich richtig, verrät es nichts zu früh?
       **Rückmeldung:** „N2652 ok“ oder Akt und Notiz.
+
+- [ ] N2662. **Schnell tippen:** Im Gespräch zweimal schnell auf „Weiter“ tippen. Erscheint gerade
+      eine Wahl, wird sie nicht aus Versehen mitgewählt (neue Antworten sind einen Moment
+      gesperrt). „Neu im Tagebuch“ wartet, bis kein Fenster mehr offen ist.
+      **Rückmeldung:** „N2662 ok“ oder Ort und Notiz.
 
 ### Neu: Das Spiel ganz durchspielen – Akt 1 (Maple Falls, Cedar Creek)
 
@@ -2393,3 +2397,13 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       umstellen, nach einer kurzen Hörprobe (zwei, drei Ausschnitte AAC gegen Opus, liegt dann im
       privaten Repository unter hoerprobe/). Andernfalls bleibt AAC.
       **Antwort:** „RO41: iOS 18.1, Opus ja“ oder „RO41: AAC lassen“.
+
+- [ ] RO42. **Spiel für Leser sichtbar machen? (20.11.2026, erst beim Schritt nach main)**
+      In der Fassung für Leser ist das Spiel bisher nur über die Adresse …/app/#abenteuer zu
+      erreichen; Admin-Menü und Testknöpfe fehlen dort (geprüft). Leser finden es also nicht von
+      selbst. Empfehlung: verborgen lassen, bis Sensibilitätslesung, Lizenzen der Bilder und Musik
+      und Datenschutz geklärt sind; danach eine Karte „Schach-Abenteuer“ auf der Seite „Spielen“,
+      auch ohne geladenes Paket. Die Testleiste („Gewinnen“, „Bestehen“ …) erscheint seit heute
+      nur auf Geräten, auf denen du die Aufgabenseite geöffnet hast (umgesetzt, Widerspruch
+      genügt); auf einem neuen Gerät einmal drei Sekunden auf „Profil“.
+      **Antwort:** „RO42 ok, verborgen“ oder „RO42: sichtbar ab …“.

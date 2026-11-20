@@ -139,7 +139,7 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   // Ambrose hat den Fingerzeig gegeben: Deckwahl vor der Partie, die Karte ins Deck.
   await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible({ timeout: 10000 });
   await page.getByRole("button", { name: "Fingerzeig" }).click();
-  await page.getByRole("button", { name: "Mit 1 Karte spielen" }).click();
+  await page.getByRole("button", { name: "Mit einer Karte spielen" }).click();
   await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
   await expect(page.getByTestId("abenteuer-kartenleiste")).toBeVisible();
   // Spielhülle (docs/spiel/18): Kopf mit dem Gegner, Status in der Sprache der Geschichte, keine

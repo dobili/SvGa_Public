@@ -81,8 +81,7 @@ Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
 - Wir brauchen ein viertes Brett, und ich brauche jemanden zum Reden. Spielst du Schach? #sprecher:juno #stimmung:laechelt
 Sag ja. #sprecher:juno #stimmung:laechelt
 * [„Ein bisschen.“]
-    Ein bisschen reicht! Ich spiele auch nur ein bisschen. #sprecher:juno #stimmung:froh
-    Ich verliere meistens. #sprecher:juno #stimmung:froh
+    Ein bisschen reicht! Ich spiele auch nur ein bisschen – ich verliere meistens. #sprecher:juno #stimmung:froh
 * [„Ich kann kaum Schach.“]
     Ich auch nicht. Ich verliere meistens. #sprecher:juno #stimmung:laechelt
     Es stört mich nicht. #sprecher:juno #stimmung:laechelt
@@ -107,8 +106,7 @@ Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle n
 -> juno_trifft
 
 === juno_zum_club ===
-Raum 12, Erdgeschoss! Coach Delgado beißt nicht. #sprecher:juno #stimmung:lacht
-Meistens. #sprecher:juno #stimmung:lacht
+Raum 12, Erdgeschoss! Coach Delgado beißt nicht – meistens. #sprecher:juno #stimmung:lacht
 -> END
 
 // Lektorat Akt 2 (17.11.2026): Juno reist mit; zu Hause redet sie über den Stand der Reise.
@@ -133,7 +131,7 @@ Meistens. #sprecher:juno #stimmung:lacht
 {nadelMapleFalls > 0:
     {~Die Clubnadel steht schon im Tagebuch. Mit Glitzer, wie versprochen.|{junoStand()}}  #sprecher:juno #stimmung:froh
 - else:
-    {~Ich hab meinen Turm verloren. Schon wieder. Er war so jung.|Das Clubtagebuch hat jetzt eine Seite für dich. Noch leer. Noch!|Sam gibt an, aber er meint es nicht so. Meistens.} #sprecher:juno #stimmung:lacht
+    {~Ich hab meinen Turm verloren, schon wieder. Er war so jung.|Das Clubtagebuch hat jetzt eine Seite für dich. Noch leer, noch!|Sam gibt an, aber er meint es nicht so. Meistens.} #sprecher:juno #stimmung:lacht
 }
 -> END
 
@@ -148,8 +146,7 @@ Meistens. #sprecher:juno #stimmung:lacht
 === lily_fragt ===
 // Szene 8 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM43 bis VM47).
 ~ lilyGetroffen = true
-Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe. #sprecher:erzaehler
-Darauf ein Plastikpferd. #sprecher:erzaehler
+Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe – darauf ein Plastikpferd. #sprecher:erzaehler
 Kannst du Schach? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily #stimmung:nachdenklich
 Der Pferd hüpft doch einfach irgendwohin, oder? #sprecher:lily #stimmung:nachdenklich
 * [„Ich zeig es dir.“]
@@ -201,7 +198,7 @@ Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #spre
 -> END
 
 === lily_alltag ===
-{~Ich hab meinem Cousin eine Gabel gezeigt. Mit dem Springer! Er war sauer.|Der Springer ist mein Lieblingstier. Das ist er wirklich.} #sprecher:lily #stimmung:froh
+{~Ich hab meinem Cousin eine Gabel mit dem Springer gezeigt! Er war sauer.|Der Springer ist mein Lieblingstier. Das ist er wirklich.} #sprecher:lily #stimmung:froh
 -> END
 
 // ---------------------------------------------------------------- Mrs. Calloway
@@ -249,7 +246,7 @@ Du kommst zu spät zur Schule, Kind. #sprecher:calloway #stimmung:froh
 ->->
 
 === calloway_a_wieder ===
-{~Margaret sagt, man hat Zeit. Sie hat recht. Man hat immer mehr, als man denkt.|Zwei Kisten auf einmal, höchstens. Merk dir das.|Sonntags kommt die Post spät hier. Margaret wartet trotzdem am Fenster.} #sprecher:calloway #stimmung:laechelt
+{~Margaret sagt, man hat Zeit, und sie hat recht. Man hat immer mehr, als man denkt.|Zwei Kisten auf einmal, höchstens. Merk dir das.|Sonntags kommt die Post spät hier. Margaret wartet trotzdem am Fenster.} #sprecher:calloway #stimmung:laechelt
 -> END
 
 // Stufe B (nach der Clubnadel): Auf dem leeren Stuhl liegt ein Kartenspiel.
@@ -319,8 +316,7 @@ Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem F
     Du bist Junos neues viertes Brett? Viel Glück. #sprecher:carla #stimmung:laechelt
     Sie redet, bis du umfällst. #sprecher:carla #stimmung:laechelt
 - else:
-    Du bist aus dem Whitlock-Haus, oder? Meine Schwester Juno sucht ein viertes Brett fürs Schachteam. #sprecher:carla #stimmung:laechelt
-    Sie findet dich. #sprecher:carla #stimmung:laechelt
+    Du bist aus dem Whitlock-Haus, oder? Meine Schwester Juno sucht ein viertes Brett fürs Schachteam – sie findet dich. #sprecher:carla #stimmung:laechelt
 }
 * [„Spielst du auch Schach?“]
     Hab ich mal. Jetzt hab ich fast ein Auto. #sprecher:carla #stimmung:laechelt
@@ -363,8 +359,7 @@ Erst zählen, dann schlagen. #sprecher:carla #stimmung:laechelt
 Sie sieht dich und zuckt die Schultern. #sprecher:erzaehler
 Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stimmung:laechelt
 * [„Schön, dass du da bist.“]
-    Sag Juno nichts. Sonst steht es morgen im Tagebuch. #sprecher:carla #stimmung:laechelt
-    Mit Glitzer. #sprecher:carla #stimmung:laechelt
+    Sag Juno nichts. Sonst steht es morgen im Tagebuch, mit Glitzer. #sprecher:carla #stimmung:laechelt
 * [„Der Radiergummi hat schon zwei Partien gewonnen.“]
     Drei. Heute Morgen noch eine. #sprecher:carla #stimmung:froh
 - {not abschiedGesehen: Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still}

@@ -52,8 +52,7 @@ VAR baeumeGesehen = false
 // Züge sagen; Ambroses Thema ohne Begleitung.
 ~ gretaGetroffen = true
 ~ varianteBlindschachGelernt = true
-An einer Hütte aus Stämmen sitzen Wanderer mit staubigen Stiefeln. Sie haben kein Brett. #sprecher:erzaehler #musik:aus
-Aber sie spielen. #sprecher:erzaehler
+An einer Hütte aus Stämmen sitzen Wanderer mit staubigen Stiefeln. Sie haben kein Brett, aber sie spielen. #sprecher:erzaehler #musik:aus
 Springer f3. #sprecher:greta #stimmung:nachdenklich
 d5. #sprecher:erzaehler
 Ein Mann sagt es, ohne die Augen zu öffnen. #sprecher:erzaehler
@@ -73,8 +72,7 @@ c4. Er steht auf c4. #sprecher:ambrose #stimmung:laechelt
 Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt
 Er hat die Augen geschlossen, die Hände auf dem Rücken. Sein Gesicht ist so ruhig, wie du es noch nie gesehen hast. #sprecher:erzaehler #musik:ambrose.still
 Zwölf Jahre habe ich Partien in Briefen gespielt. Ich bin mit der Stellung aufgestanden und mit ihr zu Bett gegangen. #sprecher:ambrose #stimmung:friedlich
-Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung. #sprecher:ambrose #stimmung:nachdenklich
-Im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
+Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung, im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
 * [„Das klingt furchtbar.“]
 - Es war furchtbar. Aber es ist auch ein Zuhause. #sprecher:ambrose #stimmung:nachdenklich
 Dieses Sehen ohne Augen. #sprecher:ambrose #stimmung:nachdenklich
@@ -112,7 +110,7 @@ Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
     -> END
 
 === greta_nach_partie ===
-{~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta #stimmung:laechelt
+{~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher, fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta #stimmung:laechelt
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
     {not abschiedGesehen:
         Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
@@ -122,8 +120,7 @@ Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
 + [„Ich wandere weiter.“]
-    Gute Wanderung. Die Bären sind satt um diese Zeit. #sprecher:greta #stimmung:lacht
-    Meistens. #sprecher:greta #stimmung:lacht
+    Gute Wanderung. Die Bären sind satt um diese Zeit – meistens. #sprecher:greta #stimmung:lacht
     -> END
 
 // ---------------------------------------------------------------- Rätseltafel

@@ -59,8 +59,7 @@ Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luf
 === bell_regel_erstmals ===
 -> bell_regel ->
 {not abschiedGesehen:
-    Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. #sprecher:ambrose #stimmung:lachtOhneSpott
-    Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
+    Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte, etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
     Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose #stimmung:laechelt
 }
 -> bell_angebot
@@ -72,7 +71,7 @@ So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring
 -> END
 
 === bell_alltag ===
-{~Der Geysir hält sich an die Uhr. Ich stelle meine danach.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons? Die gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
+{~Der Geysir hält sich an die Uhr. Ich stelle meine danach.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
 + [„Erklär mir das Atomschach noch einmal.“]
     -> bell_regel ->
     -> END
@@ -111,12 +110,11 @@ Wir nennen sie den Twister. Sie steht immer genau da, wo du hinwolltest. #sprech
 
 === ray_angebot ===
 // VARIANTE-FEHLT: Entenschach (L6). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Der Sturm dreht ab. Heute kein Keller, heute keine Ente. #sprecher:rayCastillo #stimmung:nachdenklich
-Nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
+Der Sturm dreht ab. Heute kein Keller, heute keine Ente, nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
 -> END
 
 === ray_alltag ===
-{~Siehst du die Wolke da? Die ist harmlos. Die daneben nicht.|Grüß Mira von mir. Und sag Tomás, er soll mein Auto reparieren.|Ein Sturm ist wie ein Angriff. Man sieht ihn kommen, wenn man hinschaut.} #sprecher:rayCastillo #stimmung:laechelt
+{~Siehst du die Wolke da? Die ist harmlos, die daneben nicht.|Grüß Mira von mir. Und sag Tomás, er soll mein Auto reparieren.|Ein Sturm ist wie ein Angriff. Man sieht ihn kommen, wenn man hinschaut.} #sprecher:rayCastillo #stimmung:laechelt
 + [„Erklär mir das Entenschach noch einmal.“]
     -> ray_regel ->
     -> END
@@ -132,8 +130,7 @@ Nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
 }
 Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, bevor der Geysir kommt.“ #sprecher:erzaehler
 {not abschiedGesehen:
-    Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. #sprecher:ambrose #stimmung:nachdenklich
-    Nicht raten. #sprecher:ambrose #stimmung:nachdenklich
+    Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}, nicht raten. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegSummitCrossroads.tafel")
@@ -210,8 +207,7 @@ Bis dahin löst ihr so viele Aufgaben, wie ihr schafft. #sprecher:bell #stimmung
 -> geysirblitz_angebot
 
 === geysirblitz_angebot ===
-Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen. #sprecher:bell #stimmung:laechelt
-Machst du mit? #sprecher:bell #stimmung:laechelt
+Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen – machst du mit? #sprecher:bell #stimmung:laechelt
 {not abschiedGesehen:
     Im Endspiel zählt jedes Tempo, {held}, und hier zählt die Natur mit. #sprecher:ambrose #stimmung:nachdenklich
 }

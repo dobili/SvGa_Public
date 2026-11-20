@@ -27,8 +27,7 @@ Nimm es. #sprecher:albescu #stimmung:laechelt
     Es soll fahren. Nicht stehen. #sprecher:albescu #stimmung:laechelt
     Ein Rad, das steht, ist ein Gestell. #sprecher:albescu #stimmung:laechelt
 * [Den Lenker anfassen]
-    Siehst du. Es soll fahren. #sprecher:albescu #stimmung:froh
-    Nicht stehen. #sprecher:albescu #stimmung:froh
+    Siehst du. Es soll fahren, nicht stehen. #sprecher:albescu #stimmung:froh
 - Fahr damit weit. Und wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht. #sprecher:albescu #stimmung:laechelt
 Dafür brauche ich keine Knie. #sprecher:albescu #stimmung:lacht
 Du schiebst es hinaus in den Regen. Die Klingel funktioniert noch. #sprecher:erzaehler #klang:fahrradklingel

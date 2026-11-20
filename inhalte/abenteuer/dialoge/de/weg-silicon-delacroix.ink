@@ -102,7 +102,7 @@ Noch einmal, solange das Meer ruhig ist? #sprecher:schiffskoch #stimmung:lacht
 
 === guidry ===
 {guidryGetroffen:
-    {~Jeder Sandsack zählt. Jeder Bauer auch.|Die Stadt steht wieder auf. Langsam. Aber sie steht.} #sprecher:guidry #stimmung:nachdenklich
+    {~Jeder Sandsack zählt. Jeder Bauer auch.|Die Stadt steht wieder auf, langsam. Aber sie steht.} #sprecher:guidry #stimmung:nachdenklich
     -> END
 }
 ~ guidryGetroffen = true
@@ -193,7 +193,7 @@ Die Mütze gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie 
 -> END
 
 === kapitaen_danach ===
-{~Das Horn hört man bis Port Delacroix. Jetzt wissen alle, dass jemand das Brett gelöst hat.|Mein Vorgänger hätte gelacht. Er hat immer gesagt, die Lösung sitzt irgendwann an Bord.|Neue Zettel? Nein. Ich hänge nur noch das Brett auf. Und deinen Namen daneben.} #sprecher:kapitaen #stimmung:laechelt
+{~Das Horn hört man bis Port Delacroix. Jetzt wissen alle, dass jemand das Brett gelöst hat.|Mein Vorgänger hätte gelacht. Er hat immer gesagt, die Lösung sitzt irgendwann an Bord.|Neue Zettel gibt es nicht. Ich hänge nur noch das Brett auf und deinen Namen daneben.} #sprecher:kapitaen #stimmung:laechelt
 -> END
 
 === ereignis_kapitaen ===
@@ -234,8 +234,7 @@ Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. #sp
 === bug ===
 {bugGesehen: -> END}
 ~ bugGesehen = true
-Mama steht viel an der Reling. Ihr beide spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. #sprecher:erzaehler
-Sie gewinnt öfter. #sprecher:erzaehler
+Mama steht viel an der Reling. Ihr beide spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht – sie gewinnt öfter. #sprecher:erzaehler
 Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. #sprecher:erzaehler #musik:ambrose.verzerrt
 Jetzt sagt er die Zugnummer. #sprecher:erzaehler
 Zug vierzehn. #sprecher:ambrose #stimmung:nachdenklich

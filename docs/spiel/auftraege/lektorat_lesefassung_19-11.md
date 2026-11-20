@@ -300,6 +300,27 @@ Beispiel, Coach Delgado:
   - Die Musik wechselt erst mit der neuen Szene im Clubraum zu „Herzklopfen“, wie vorher.
   - Junos Satz kommt in zwei Zeilen, der Sprechername steht auf beiden.
 
+### Zufallszeilen und Rhythmus (20.11.2026)
+
+- **Zufallszeilen `{~a|b|c}`:** Alle 87 Varianten mit mehr als zwei Sätzen sind auf höchstens zwei
+  Sätze gekürzt, in derselben Zeile, meist mit Komma statt Punkt. Beispiel: „Ich hab vierzehn
+  Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.“ → „… Dex sagt elf, aber Dex zählt
+  falsch.“
+- **Rhythmus:** Gelesen habe ich in der neuen Lesefassung (Startwert 1) die drei Stellen mit den
+  meisten kurzen Zeilen hintereinander: die Erinnerung von 1866 im Zimmer über dem Laden, Mira nach
+  dem Clubkampf und Victors Abgang im Clubraum. Dort sind die kurzen Zeilen gewollt (Frage,
+  Antwort, Schweigen). Ein Muster kam aber vom Teilen: Eine Zeile mit drei Sätzen wurde zu zwei
+  Sätzen und einem kurzen Rest („Mit der Dame.“, „Fast nie.“, „Meistens.“), der ein „Weiter“
+  kostet.
+- **197 solche Reste** hängen wieder an der Zeile davor, ohne dritten Satz: Der Punkt davor wird
+  zum Komma oder Gedankenstrich. Beispiele: „Der 39. Zug. Jetzt gebe ich Schach, mit der Dame.“
+  und „Coach Delgado beißt nicht – meistens.“ Das gilt nur für Paare, die durch das Teilen
+  entstanden sind (Vergleich mit dem Stand vor dem Teilen). Kurze Zeilen des Autors bleiben, etwa
+  „Nein.“ und „Nicht Ironwood.“ am Telefon.
+- **Behoben:** Zwei Initialen hatte das Teilen auseinandergerissen: „Unterschrift: A.“ / „W.“ und
+  „Auf jedem Kopf: J.“ / „H.“. Beide stehen wieder zusammen. Ambroses „Über einen Springerzug.
+  Ich. Drei Wochen.“ heißt jetzt „Über einen Springerzug, drei Wochen. Ich!“
+
 ## Nur durch die Simulation, kein Textfehler
 
 Mehrere Abende mit Ambrose hintereinander, doppelte Gespräche beim zweiten Ansprechen,

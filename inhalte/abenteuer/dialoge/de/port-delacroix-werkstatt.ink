@@ -143,8 +143,7 @@ Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 Céleste sieht auf den Hocker. Du hast den Geigenkasten aufgemacht, ohne es zu merken. #sprecher:erzaehler
 Das sieht cool aus. Das ist ja richtig alt. #sprecher:celeste #stimmung:ueberrascht
 Darf ich? #sprecher:celeste #stimmung:ueberrascht
-Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. #sprecher:erzaehler
-Und die Hände. #sprecher:erzaehler
+Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn, und die Hände. #sprecher:erzaehler
 * [„Kannst du es?“]
 - Ich weiß, wie die Dinger ziehen. Ungefähr. #sprecher:celeste #stimmung:laechelt
 Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste #stimmung:laechelt
@@ -193,7 +192,7 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 -> END
 
 === celeste_alltag ===
-{~Céleste ist skaten. Auf ihrem Laptop klebt ein Zettel: „Bin weg. Pferde rumschieben war okay.“|Céleste hört Musik und wippt mit dem Fuß. Sie hebt kurz den Daumen.} #sprecher:erzaehler
+{~Céleste ist skaten. Auf ihrem Laptop klebt ein Zettel: „Bin weg, Pferde rumschieben war okay.“|Céleste hört Musik und wippt mit dem Fuß. Sie hebt kurz den Daumen.} #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Werkbank und Flashback

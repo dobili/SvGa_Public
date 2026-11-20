@@ -146,8 +146,7 @@ Gut gespielt bis zum Mittelspiel. Danach kannte ich die Stellung aus der Theorie
 ~ revancheSiliconBay = false
 ~ clubkampfSiliconBayNadel = nadelSiliconBay
 {clubkampfSiliconBayBesprochen:
-    Eine bessere Nadel. Ich schreibe es in mein Heft. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
-    Mit Tinte. #sprecher:lin #stimmung:froh
+    Eine bessere Nadel. Ich schreibe es in mein Heft, mit Tinte. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
     -> END
 }
 ~ clubkampfSiliconBayBesprochen = true
@@ -222,8 +221,7 @@ Das ist … menschlich. #sprecher:theo #stimmung:nachdenklich
 - Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. #sprecher:theo #stimmung:nachdenklich
 Nova im Turnier achtundneunzig. #sprecher:theo #stimmung:nachdenklich
 Er runzelt die Stirn über der letzten Zahl. Nur kurz. #sprecher:erzaehler
-Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren. #sprecher:theo #stimmung:nachdenklich
-Hier. #sprecher:theo #stimmung:nachdenklich
+Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren – hier. #sprecher:theo #stimmung:nachdenklich
 -> theo_tablet
 
 // Kapitel 32: Theos Geschenk. ZERO spielt gegen sich selbst, Ambrose kann nicht wegsehen.
@@ -231,8 +229,7 @@ Hier. #sprecher:theo #stimmung:nachdenklich
 ~ zeroTabletGeschenkt = true
 ~ gibFund("zeroTablet")
 Er hält dir ein Tablet hin. Weiß, dünn, mit dem Zeichen des Konzerns. #sprecher:erzaehler
-Geschenkt. Da ist ZERO drauf. #sprecher:theo #stimmung:laechelt
-Die volle Fassung. #sprecher:theo #stimmung:laechelt
+Geschenkt. Da ist ZERO drauf, die volle Fassung. #sprecher:theo #stimmung:laechelt
 Damit trainierst du in einer Woche mehr als in einem Jahr. #sprecher:theo #stimmung:laechelt
 * [„Was ist ZERO?“]
 - Theo sieht dich an, als hättest du gefragt, was Wasser ist. #sprecher:erzaehler
@@ -272,7 +269,7 @@ Die Rohdaten liegen unten im Serverraum. Da schließt keiner ab, hier wird ja al
 -> END
 
 === theo_alltag ===
-{~Du hast deine Genauigkeit gesteigert. Zwei Prozent. Nicht schlecht für einen Menschen.|Ich glaube Zahlen. Aber ich glaube auch dir. Komisch, oder?|ZERO hat heute wieder gewonnen. Gegen sich selbst. Ist das ein Sieg?} #sprecher:theo #stimmung:laechelt
+{~Du hast deine Genauigkeit um zwei Prozent gesteigert. Nicht schlecht für einen Menschen.|Ich glaube Zahlen, aber ich glaube auch dir. Komisch, oder?|ZERO hat heute wieder gegen sich selbst gewonnen. Ist das ein Sieg?} #sprecher:theo #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Nova
@@ -327,7 +324,7 @@ Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
 -> END
 
 === nova_alltag ===
-{~Ein Foto? Nein? Gut. Ich mag Fotos eigentlich nicht.|Du spielst, als würde es dir Spaß machen. Wie machst du das?|Ich muss gleich zu einem Termin. Ich hab immer einen Termin.} #sprecher:nova #stimmung:nachdenklich
+{~Kein Foto? Gut, ich mag Fotos eigentlich nicht.|Du spielst, als würde es dir Spaß machen. Wie machst du das?|Ich muss gleich zu einem Termin. Ich hab immer einen Termin.} #sprecher:nova #stimmung:nachdenklich
 -> END
 
 // ---------------------------------------------------------------- Serverraum-Tür

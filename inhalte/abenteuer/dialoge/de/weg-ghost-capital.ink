@@ -66,7 +66,7 @@ VAR angesehenFaehrterminal = false
 
 === abe ===
 {abeGetroffen:
-    {~Bei Sturm suchen die Kapitäne das Licht. Bei dir ist es die Mitte.|Der Turm ist hundert Jahre alt. Die Stufen auch. Ich zähle sie jeden Tag.|Viel Glück in der Arena. Bring den König in den Hafen.} #sprecher:abe #stimmung:laechelt
+    {~Bei Sturm suchen die Kapitäne das Licht. Bei dir ist es die Mitte.|Der Turm ist hundert Jahre alt, die Stufen auch. Ich zähle sie jeden Tag.|Viel Glück in der Arena. Bring den König in den Hafen.} #sprecher:abe #stimmung:laechelt
     -> END
 }
 ~ abeGetroffen = true
@@ -164,8 +164,7 @@ An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst d
     -> END
 
 === weltschachtag_nochmal ===
-Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen. #sprecher:abe #stimmung:laechelt
-Noch eine Runde? #sprecher:abe #stimmung:laechelt
+Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen, noch eine Runde? #sprecher:abe #stimmung:laechelt
 -> weltschachtag_angebot
 
 === weltschachtag_abschluss ===
@@ -336,16 +335,14 @@ Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris 
 === wanderer_erstes ===
 ~ wandererGetroffen = true
 Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. #sprecher:erzaehler
-Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir eines genommen. #sprecher:wanderer #stimmung:nachdenklich
-Dreizehn fehlen mir. #sprecher:wanderer #stimmung:nachdenklich
+Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir eines genommen – dreizehn fehlen mir. #sprecher:wanderer #stimmung:nachdenklich
 -> END
 
 === wanderer_seiten ===
 {not wandererGetroffen: Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. Dann sieht er, was du in der Hand hast. #sprecher:erzaehler}
 ~ wandererGetroffen = true
 ~ wandererSeitenZurueck = buchseiten
-Du hast meine Seiten! Warte, ich streiche sie glatt. #sprecher:wanderer #stimmung:ueberrascht
-Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
+Du hast meine Seiten! Warte, ich streiche sie glatt, jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
 {buchseiten >= 13:
     Alle dreizehn. Jetzt lasse ich sie binden. #sprecher:wanderer #stimmung:laechelt
     Komm mich auf dem Vorplatz der Capital Arena besuchen. #sprecher:wanderer #stimmung:laechelt

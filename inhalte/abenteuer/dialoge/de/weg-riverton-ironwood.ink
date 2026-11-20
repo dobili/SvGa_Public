@@ -74,15 +74,13 @@ Keiner hat ihn gefragt. Er meint vermutlich auch sich selbst. #sprecher:erzaehle
 }
 ~ noorGetroffen = true
 An einer langen Mauer steht eine junge Frau auf einer Leiter. Auf ihrem Eimer steht „Noor“. #sprecher:erzaehler #geraeusch:spruehdose
-Auf der Mauer wachsen schwarze Umrisse. Ein Turm. #sprecher:erzaehler
-Ein halber Springer. #sprecher:erzaehler
+Auf der Mauer wachsen schwarze Umrisse. Ein Turm, ein halber Springer. #sprecher:erzaehler
 Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor #stimmung:nachdenklich
 * [„Was wird es?“]
 - Weiß ich, wenn es fertig ist. #sprecher:noor #stimmung:laechelt
 Sie schüttelt eine Dose. Es klackert. #sprecher:erzaehler
 Mein Opa hat da drin gearbeitet. #sprecher:noor #stimmung:nachdenklich
-Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank. #sprecher:noor #stimmung:nachdenklich
-Vielleicht. #sprecher:noor #stimmung:nachdenklich
+Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank – vielleicht. #sprecher:noor #stimmung:nachdenklich
 -> END
 
 = noor_farbe
@@ -126,8 +124,7 @@ Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 
 === fund_nietenkopf ===
 {nietenkopfGefunden:
-    Am Geländer sitzen die Nieten in langen Reihen. Auf jedem Kopf: J. #sprecher:erzaehler
-    H. #sprecher:erzaehler
+    Am Geländer sitzen die Nieten in langen Reihen. Auf jedem Kopf: J. H. #sprecher:erzaehler
     -> END
 }
 -> jh ->
@@ -137,13 +134,11 @@ Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 // Tunnel, weil es nach dem Zeitnot-Trick oder am Geländer zuerst kommen kann.
 === jh ===
 ~ nietenkopfGefunden = true
-Hier ist was eingeschlagen! In die Dinger. #sprecher:juno #stimmung:ueberrascht
-Die runden. #sprecher:juno #stimmung:ueberrascht
+Hier ist was eingeschlagen! In die Dinger, die runden. #sprecher:juno #stimmung:ueberrascht
 Auf einem Nietenkopf am Fuß eines Pfostens stehen zwei Buchstaben. Klein, sauber, ins heiße Eisen gestempelt. #sprecher:erzaehler #bild:nietenkopf_jh
 J. H. #sprecher:erzaehler #klang:hale
 Auf dem nächsten auch. Und auf dem übernächsten. #sprecher:erzaehler
-Der Erbauer. Der hat überall unterschrieben. #sprecher:juno #stimmung:lacht
-Eitel! #sprecher:juno #stimmung:lacht
+Der Erbauer. Der hat überall unterschrieben – Eitel! #sprecher:juno #stimmung:lacht
 ~ gibFund("nietenkopf")
 // Nach dem Abschied (abschiedGesehen) steht Ambrose nicht mehr am Geländer; {held} kennt den Namen.
 {abschiedGesehen:

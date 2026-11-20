@@ -51,8 +51,7 @@ VAR finchTurmBGezaehlt = false
 ~ kiraGetroffen = true
 ~ varianteFalkeUndBisonGelernt = true
 Am Fuß der Felstürme steht ein flacher Steintisch. Ein Mädchen mit Schulrucksack und Basketball unter dem Arm stellt Figuren auf ein abgegriffenes Brett. #sprecher:erzaehler
-Die kennst du nicht. Das hier ist fast Schach. #sprecher:kira #stimmung:froh
-Nur besser. #sprecher:kira #stimmung:froh
+Die kennst du nicht. Das hier ist fast Schach, nur besser. #sprecher:kira #stimmung:froh
 Ich bin Kira. Der Bus fährt in einer halben Stunde, das reicht für eine Erklärung. #sprecher:kira #stimmung:laechelt
 * [„Was sind das für Figuren?“]
 - Sie hebt zwei Figuren hoch, die nicht in dein Schachspiel gehören: einen Vogel mit eckigen Flügeln und ein breites Tier mit gesenktem Kopf. #sprecher:erzaehler
@@ -89,7 +88,7 @@ Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
 -> END
 
 === kira_alltag ===
-{~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden. Oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig. Mit Uhr. Ich hab eine.} #sprecher:kira #stimmung:laechelt
+{~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig, mit Uhr. Ich hab eine.} #sprecher:kira #stimmung:laechelt
 + [„Erklär mir die Regeln noch einmal.“]
     Falke: Läufer oder Springer. Bison: Turm oder Springer. #sprecher:kira #stimmung:laechelt
     Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira #stimmung:laechelt
@@ -109,8 +108,7 @@ Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
 === annek_erstes_treffen ===
 ~ annekGetroffen = true
 Vor der Schule wirft eine Frau in Trainingsjacke Körbe. Sie trifft dreimal hintereinander und tut so, als wäre das normal. #sprecher:erzaehler
-Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. #sprecher:annek #stimmung:laechelt
-Suchst du jemanden? #sprecher:annek #stimmung:laechelt
+Annek Vell. Mathematik und Sport, und dienstags Busaufsicht – suchst du jemanden? #sprecher:annek #stimmung:laechelt
 {kiraGetroffen:
     -> annek_schach
 - else:
@@ -141,7 +139,7 @@ Nach einer Viertelstunde spielt sie ihre erste Partie. Sie verliert, lacht und b
     Kira sitzt an den Felstürmen, bis der Bus kommt. Sie erklärt dir das Spiel, ob du willst oder nicht. #sprecher:annek #stimmung:laechelt
     -> END
 }
-{~Ich habe meiner Klasse heute das Springerproblem gegeben. Ein Feld nach dem anderen, ohne eins zweimal. Sie hassen mich.|Kira sagt, ich spiele Schach wie Basketball. Ich glaube, das ist ein Kompliment.|Wenn der Bus wieder streikt, rufe ich Joss. Der repariert alles außer schlechter Laune.} #sprecher:annek #stimmung:lacht
+{~Ich habe meiner Klasse heute das Springerproblem gegeben, jedes Feld genau einmal. Sie hassen mich.|Kira sagt, ich spiele Schach wie Basketball. Ich glaube, das ist ein Kompliment.|Wenn der Bus wieder streikt, rufe ich Joss. Der repariert alles außer schlechter Laune.} #sprecher:annek #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Joss in der Werkstatt
@@ -167,9 +165,9 @@ Hier oben ist alles Staub. #sprecher:joss #stimmung:lacht
 
 === joss_alltag ===
 {annekSchachGelernt:
-    {~Schach? Zu viele Regeln für zu wenig Figuren. Aber Annek hat jetzt ein Brett im Lehrerzimmer. Ich verliere jeden Mittag.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.|Kira hat den Falken im Werkunterricht gemacht. Besser als meiner damals. Sag ihr das nicht.} #sprecher:joss #stimmung:lacht
+    {~Schach hat zu viele Regeln für zu wenig Figuren. Aber Annek hat jetzt ein Brett im Lehrerzimmer, und ich verliere jeden Mittag.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.|Kira hat den Falken im Werkunterricht gemacht, besser als meiner damals. Sag ihr das nicht.} #sprecher:joss #stimmung:lacht
 - else:
-    {~Schach? Zu viele Regeln für zu wenig Figuren. Bei Falke und Bison gibt es wenigstens Tiere.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.} #sprecher:joss #stimmung:lacht
+    {~Schach hat zu viele Regeln für zu wenig Figuren. Bei Falke und Bison gibt es wenigstens Tiere.|Der Bus braucht einen neuen Anlasser. Der Anlasser braucht ein Wunder.} #sprecher:joss #stimmung:lacht
 }
 -> END
 
@@ -235,8 +233,7 @@ VAR ambroseSprichtWieder = false
 ~ diplomBegonnen = true
 Heute ist Diplomtag. Und ich bin selbst noch Anfängerin. #sprecher:annek #stimmung:laechelt
 Willst du Prüfer sein? #sprecher:annek #stimmung:laechelt
-Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann. #sprecher:annek #stimmung:nachdenklich
-Nicht die schwerste. #sprecher:annek #stimmung:nachdenklich
+Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann, nicht die schwerste. #sprecher:annek #stimmung:nachdenklich
 Die Diplome hab ich gemalt! Mit Falke und Bison. #sprecher:kira #stimmung:laechelt
 -> diplom_runde
 

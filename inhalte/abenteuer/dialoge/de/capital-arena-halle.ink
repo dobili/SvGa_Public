@@ -200,12 +200,10 @@ Juno sitzt auf der untersten Stufe der Tribüne, auf jedem Knie ein Tagebuch. #s
     Falls eins verloren geht. #sprecher:juno #stimmung:froh
 - halbzeit > 1:
     Anderthalb. Dir fehlt ein halber Punkt. #sprecher:juno #stimmung:laechelt
-    Ein halber! Ich hab nachgerechnet. #sprecher:juno #stimmung:laechelt
-    Zweimal. #sprecher:juno #stimmung:laechelt
+    Ein halber! Ich hab nachgerechnet – zweimal. #sprecher:juno #stimmung:laechelt
 - halbzeit >= 1:
     Halbzeit. Einer fehlt dir noch. #sprecher:juno #stimmung:nachdenklich
-    Das ist alles noch drin. Ich hab nachgerechnet. #sprecher:juno #stimmung:nachdenklich
-    Zweimal. #sprecher:juno #stimmung:nachdenklich
+    Das ist alles noch drin. Ich hab nachgerechnet – zweimal. #sprecher:juno #stimmung:nachdenklich
 - halbzeit > 0:
     Ein halber Punkt. Anderthalb fehlen noch. #sprecher:juno #stimmung:nachdenklich
     Zwei Runden hast du dafür. #sprecher:juno #stimmung:nachdenklich
@@ -306,8 +304,7 @@ In Summit City hatte ich selbst eines in der Tasche. Ich hab es getragen. #sprec
 - {victorCedarCreekGesehen:Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht.|Ich hab mich jahrelang nicht gefragt, ob mir das Spaß macht. Ich hab ein Jahr für die Frage gebraucht.} #sprecher:victor #stimmung:nachdenklich
 Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. #sprecher:erzaehler
 Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
-Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. #sprecher:erzaehler
-Sie stehen auch. #sprecher:erzaehler #pause:2
+Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern – sie stehen auch. #sprecher:erzaehler #pause:2
 -> END
 
 // ---------------------------------------------------------------- Halbfinale (Szene 106)
@@ -381,11 +378,9 @@ Gibt es einen? Es ist zu tief. #sprecher:erzaehler
 === halbfinale_zusammen ===
 Er ist sofort da, so nah, dass du die Kälte spürst. #sprecher:erzaehler #musik:ambrose.suchend
 {zugerratenTurm:
-    Ich sehe es. Der Turm, {held}. #sprecher:ambrose #stimmung:ueberrascht
-    Der Turm. #sprecher:ambrose #stimmung:ueberrascht
+    Ich sehe es. Der Turm, {held}, der Turm. #sprecher:ambrose #stimmung:ueberrascht
 - else:
-    Ich sehe es. Dieser Zug, {held}. #sprecher:ambrose #stimmung:ueberrascht
-    Dieser Zug. #sprecher:ambrose #stimmung:ueberrascht
+    Ich sehe es. Dieser Zug, {held} – dieser Zug. #sprecher:ambrose #stimmung:ueberrascht
 }
 + [„Stimmt es?“]
 - Er rechnet und kommt an dieselbe Stelle wie du, an den stillen Zug für ihn. Dahinter ist es dunkel. #sprecher:erzaehler
@@ -568,8 +563,7 @@ Als die Halle leer wird, gehst du hinaus auf die Treppe vor der Arena. #sprecher
 === marcus ===
 {gespielt(ausgangCapitalArenaRunde2):
     {ausgangCapitalArenaRunde2 == "niederlage":
-        Eine Gabel, drei Züge vorher angekündigt. Nicht laut. #sprecher:marcus #stimmung:laechelt
-        Aber angekündigt. #sprecher:marcus #stimmung:laechelt
+        Eine Gabel, drei Züge vorher angekündigt. Nicht laut, aber angekündigt. #sprecher:marcus #stimmung:laechelt
     - else:
         Dieser stille Zug. Den hab ich nicht kommen sehen. #sprecher:marcus #stimmung:ueberrascht
         Den sieht keiner kommen. #sprecher:marcus #stimmung:ueberrascht
@@ -657,8 +651,7 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
     Ich habe gekündigt, bevor wir hergefahren sind. Der Club ist in einem Keller. #sprecher:lin #stimmung:nachdenklich
     Ein Heizlüfter, kein einziger Bildschirm. #sprecher:lin #stimmung:nachdenklich
 - else:
-    Wir haben eine Mappe dabei. Nach der Vorrunde. #sprecher:lin #stimmung:neutral
-    Dann reden wir. #sprecher:lin #stimmung:neutral
+    Wir haben eine Mappe dabei. Nach der Vorrunde, dann reden wir. #sprecher:lin #stimmung:neutral
 }
 -> END
 
@@ -667,8 +660,7 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 Du legst Dr. Lin deine eigene Mappe hin: die Drohne, der Funkmast, der Messwagen, die Server, der Geysirantrag, der Greifarm. #sprecher:erzaehler
 Das hier kenne ich. Woher hast du das? #sprecher:lin #stimmung:ueberrascht
 Sie blättert lange. #sprecher:erzaehler
-Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach. #sprecher:lin #stimmung:nachdenklich
-Danke. #sprecher:lin #stimmung:nachdenklich
+Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach – Danke. #sprecher:lin #stimmung:nachdenklich
 ~ gibFund("fotoMappe")
 {not abschiedGesehen:
     Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambrose #stimmung:laechelt
@@ -683,8 +675,7 @@ Danke. #sprecher:lin #stimmung:nachdenklich
     Mein Sohn spielt im Finale. Für sich. #sprecher:grahamHale #stimmung:nachdenklich
     Das hätte ich ihm früher erlauben sollen. #sprecher:grahamHale #stimmung:nachdenklich
 - aussageGesehen:
-    Ich habe nichts gewusst. Das ist keine Ausrede. #sprecher:grahamHale #stimmung:bitter
-    Es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
+    Ich habe nichts gewusst. Das ist keine Ausrede – es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
 - else:
     Graham Hale. Wir haben uns in Maple Falls gesehen, im Clubraum. #sprecher:grahamHale #stimmung:laechelt
     Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt

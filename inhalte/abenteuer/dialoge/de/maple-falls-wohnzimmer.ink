@@ -102,8 +102,7 @@ Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
-Hörst du das? Der Wasserfall. #sprecher:mutter #stimmung:laechelt
-Daher der Name. #sprecher:mutter #stimmung:laechelt
+Hörst du das? Der Wasserfall – Daher der Name. #sprecher:mutter #stimmung:laechelt
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter #stimmung:nachdenklich
 * [„Es ist ziemlich groß.“]
     Groß. Und alt. #sprecher:mutter #stimmung:nachdenklich
@@ -188,8 +187,7 @@ Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek? #sprecher:mutter
 * [„Juno und ich gehen Freitag schon. Zu Fuß.“]
     Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
 * [„Ich spiele am vierten Brett!“]
-    Am vierten Brett. Und Juno sagt, ihr geht schon Freitag. #sprecher:mutter #stimmung:ueberrascht
-    Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
+    Am vierten Brett. Und Juno sagt, ihr geht schon Freitag – zu Fuß. #sprecher:mutter #stimmung:ueberrascht
 // Lektorat Akt 1, 17.11.2026: der Grund für Freitag und zu Fuß, für jeden Spieler (Roman, Kapitel 10:
 // „in einem Atemzug“; der Bus fährt nur samstags, Zettel an der Haltestelle im Park).
 - Du sagst alles in einem Atemzug: Der Bus fährt erst Samstag früh, Juno kennt den Weg, und die Vorhut schläft immer in der Bibliothek. #sprecher:erzaehler
@@ -268,18 +266,18 @@ Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter #stimmu
 - abschiedGesehen:
     {~Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Im Werk hängt dein Foto aus der Arena. Joe hat einen Rahmen aus Stahl gebaut.|Ich bin stolz auf dich, weißt du das? Nicht wegen des Pokals.} #sprecher:mutter #stimmung:froh
 - endeAkt3Gesehen:
-    {~Ich hab im Werk erzählt, dass du gegen eine Großmeisterin spielst. Die halbe Schicht weiß es jetzt.|Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Grundreihe. Und dann spiel, wie du willst. Ich bin stolz auf dich, weißt du das?} #sprecher:mutter #stimmung:froh
+    {~Ich hab im Werk erzählt, dass du gegen eine Großmeisterin spielst. Die halbe Schicht weiß es jetzt.|Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Grundreihe, und dann spiel, wie du willst. Ich bin stolz auf dich, weißt du das?} #sprecher:mutter #stimmung:froh
 - tiefpunktGesehen:
-    {~Was die in Port Delacroix gesagt haben, glaube ich keine Sekunde. Ich kenne deine Züge.|Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Wer dir das noch mal vorwirft, kriegt es mit mir zu tun. Und mit Joe.} #sprecher:mutter #stimmung:nachdenklich
+    {~Was die in Port Delacroix gesagt haben, glaube ich keine Sekunde. Ich kenne deine Züge.|Ruf an, wenn du angekommen bist, egal wie spät. Ich hab das Telefon in der Kitteltasche.|Wer dir das noch mal vorwirft, kriegt es mit mir zu tun. Und mit Joe.} #sprecher:mutter #stimmung:nachdenklich
 - einladungGesehen:
-    {~Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Juno hat versprochen, dass du isst. Ich glaube ihr nicht immer.|Nachtschicht. Aber wenn du anrufst, gehe ich ran. Immer.} #sprecher:mutter #stimmung:laechelt
+    {~Ruf an, wenn du angekommen bist, egal wie spät. Ich hab das Telefon in der Kitteltasche.|Juno hat versprochen, dass du isst. Ich glaube ihr nicht immer.|Nachtschicht. Aber wenn du anrufst, gehe ich ran, immer.} #sprecher:mutter #stimmung:laechelt
 - mamaSpielt:
     {~Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Das blaue Heft liegt auf dem Küchentisch. Schreib rein, wenn du gespielt hast.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
 - endeAkt1Gesehen:
     {verbotGesehen:
-        {~Ironwood nicht. Ich weiß, dass du fragen willst. Bitte nicht.|Riverton ist in Ordnung. Ruf an, wenn der Zug Verspätung hat.|Ich hab gleich Nachtschicht. Schließ ab, wenn du gehst.} #sprecher:mutter #stimmung:nachdenklich
+        {~Ironwood nicht. Ich weiß, dass du fragen willst, bitte nicht.|Riverton ist in Ordnung. Ruf an, wenn der Zug Verspätung hat.|Ich hab gleich Nachtschicht. Schließ ab, wenn du gehst.} #sprecher:mutter #stimmung:nachdenklich
     - else:
-        {~Riverton, ja? Mit dem Zug zurück, vor dem Dunkelwerden.|Du läufst jetzt durch Wälder bis nach Riverton. Ich sag dazu nichts. Fast nichts.|Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.} #sprecher:mutter #stimmung:nachdenklich
+        {~Riverton, ja? Mit dem Zug zurück, vor dem Dunkelwerden.|Du läufst jetzt durch Wälder bis nach Riverton. Ich sag dazu nichts, fast nichts.|Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.} #sprecher:mutter #stimmung:nachdenklich
     }
 // Lektorat 20.11.2026: Am Einzugsabend fängt Mama noch nicht an, und Mrs. Calloway kennt man nicht.
 - not ersteNachtGesehen:
@@ -335,8 +333,7 @@ Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter #stimmu
 Ich hab heute frei. Und der Herd ist immer noch nicht angeschlossen. #sprecher:mutter #stimmung:laechelt
 Diner? Ich lade dich ein. #sprecher:mutter #stimmung:froh
 * [„Pommes?“]
-    Pommes. Und vielleicht sogar ein Salat. #sprecher:mutter #stimmung:lacht
-    Vielleicht. #sprecher:mutter #stimmung:lacht
+    Pommes. Und vielleicht sogar ein Salat – vielleicht. #sprecher:mutter #stimmung:lacht
 * [„Gern.“]
 - -> diner_abend
 
@@ -403,12 +400,9 @@ Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 * [„Warum?“]
 - Sie legt den Zettel hin, mit der Schrift nach unten. #sprecher:erzaehler
 Du fährst nach Riverton, du läufst durch Wälder, ich sage zu allem Ja. Dieses eine Mal sage ich Nein. #sprecher:mutter #stimmung:bitter
-Frag nicht. Bitte. #sprecher:mutter #stimmung:verschlossen
-Nicht heute. #sprecher:mutter #stimmung:verschlossen
-Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter. #sprecher:erzaehler #klang:wagen
-Nachtschicht. #sprecher:erzaehler
-Deine Mutter hat Angst. Vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich #musik:mapleFalls.klavier
-Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
+Frag nicht. Bitte, nicht heute. #sprecher:mutter #stimmung:verschlossen
+Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter – Nachtschicht. #sprecher:erzaehler #klang:wagen
+Deine Mutter hat Angst. Vor einer Stadt, das ist selten. #sprecher:ambrose #stimmung:nachdenklich #musik:mapleFalls.klavier
 Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Sie hat nur gesagt: nicht zum Turnier.“]
 * [Den Zettel umdrehen]

@@ -62,7 +62,7 @@ VAR testteamWaldNiederlagen = 0
 
 === fenwick ===
 {fenwickGetroffen:
-    {~Immer den Gleisen nach. Der Wald hat Zeit. Du auch.|Zähl zuerst, wer verteidigt. Dann greif an.|Grüß Riverton von mir. Und nehmt einen Schirm mit.} #sprecher:fenwick #stimmung:laechelt
+    {~Immer den Gleisen nach. Der Wald hat Zeit, du auch.|Zähl zuerst, wer verteidigt. Dann greif an.|Grüß Riverton von mir. Und nehmt einen Schirm mit.} #sprecher:fenwick #stimmung:laechelt
     -> END
 }
 ~ fenwickGetroffen = true
@@ -107,8 +107,7 @@ Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen:
 ~ quinnGetroffen = true
 {not gueterzugGesehen: -> gueterzug ->}
 An einer Bude neben den Gleisen sitzt ein Mann in Uniform. Auf einer Kiste ein Brett und eine Uhr mit zwei Zifferblättern. #sprecher:erzaehler
-Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben. #sprecher:schaffner #stimmung:laechelt
-Wer will? #sprecher:schaffner #stimmung:laechelt
+Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben, wer will? #sprecher:schaffner #stimmung:laechelt
 Ich! #sprecher:juno #stimmung:froh
 Juno spielt, als würde das Haus brennen. Sie verliert einen Läufer, einen Turm, und wirft vor Lachen den König selbst um. #sprecher:erzaehler
 Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
@@ -172,8 +171,7 @@ Ihr habt keinen. #sprecher:erzaehler
 -> END
 
 === quinn_nach_niederlage ===
-Verspätung. Das passiert den Besten. #sprecher:schaffner #stimmung:laechelt
-Noch einmal? #sprecher:schaffner #stimmung:laechelt
+Verspätung. Das passiert den Besten, noch einmal? #sprecher:schaffner #stimmung:laechelt
 {not abschiedGesehen:
     Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -187,8 +185,7 @@ Noch einmal? #sprecher:schaffner #stimmung:laechelt
 // vorteil. Vorher ging es in quinn_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === quinn_nach_remis ===
-Pünktlich, aber nicht vorn. Remis. #sprecher:schaffner #stimmung:laechelt
-Noch einmal? #sprecher:schaffner #stimmung:laechelt
+Pünktlich, aber nicht vorn. Remis, noch einmal? #sprecher:schaffner #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -344,8 +341,7 @@ Auf einem Mauervorsprung steht eine verbeulte Thermoskanne mit Namen: „G. Toll
     Quer über dem Weg steht ein Klapptisch. Dahinter drei in weißen Westen, auf jeder ein kleines silbernes Logo. #sprecher:erzaehler
     Testteam Perfect Move. Wir sammeln Datenpunkte. #sprecher:zoe #stimmung:laechelt
     Wer vorbei will, spielt eine Stellung. #sprecher:zoe #stimmung:laechelt
-    Das Tablet schaut nur zu. Ich spiele selber. #sprecher:benji #stimmung:lacht
-    Meistens. #sprecher:benji #stimmung:lacht
+    Das Tablet schaut nur zu. Ich spiele selber – meistens. #sprecher:benji #stimmung:lacht
 }
 Zehn Züge gegen Benji. Wer danach besser steht, hat gewonnen. #sprecher:zoe #stimmung:laechelt
 + [„Eine Stellung.“]
@@ -378,8 +374,7 @@ Datenpunkt 4113. Danke. #sprecher:zoe #stimmung:laechelt
 // Notausgang: Niemand bleibt an der Hauptgeschichte hängen (13_Wegenetz.md, Grundsatz 1).
 === testteam_wald_genug ===
 Imani klappt das Tablet zu. #sprecher:erzaehler
-Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. #sprecher:imani #stimmung:nachdenklich
-Geh durch. #sprecher:imani #stimmung:nachdenklich
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht, geh durch. #sprecher:imani #stimmung:nachdenklich
 -> testteam_wald_offen
 
 === testteam_wald_durch ===

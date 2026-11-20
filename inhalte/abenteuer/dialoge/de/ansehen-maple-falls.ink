@@ -70,8 +70,7 @@ VAR abschiedGesehen = false
     Der Tisch wackelt nur noch, wenn man sich darauf stützt. Das ist jetzt eben so. #sprecher:erzaehler
 - else:
     ~ angesehenTischPizzakarton = true
-    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. #sprecher:erzaehler
-    Fast nicht. #sprecher:erzaehler
+    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr, fast nicht. #sprecher:erzaehler
     {not abschiedGesehen:
         Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
     }

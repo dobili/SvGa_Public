@@ -36,7 +36,7 @@ BILDHOEHEN = INHALTE / "katalog_korrekturen" / "bildhoehen.json"
 # Figur auf der Karte (Kartenpixel): außen 20; innen derzeit gleich (``--innenfaktor`` zum Durchspielen
 # einer größeren Figur in Innenräumen, etwa 1,33).
 FIGUR_AUSSEN = 20.0
-INNEN_FIGURFAKTOR = 1.0
+INNEN_FIGURFAKTOR = 4 / 3  # wie app/src/abenteuer/oberwelt/weltmassstab.ts (Autor, 20.11.2026)
 # Ab dieser Deckkraft (0 bis 255) zählt ein Bildpunkt zur Höhe.
 DECKEND_AB = 40
 
@@ -45,14 +45,14 @@ BAENDER: dict[str, tuple[float, float]] = {
     "tuer": (0.85, 1.3),  # Tür 1,1 bis 1,25; LimeZu zeichnet Innentüren knapp (Rahmen in der Wand)
     "bank": (0.6, 1.0),  # Lehne 0,45 bis 0,6, dazu die Sitzfläche von oben
     "stuhl": (0.7, 1.0),  # Lehne 0,5 bis 0,6, dazu die Sitzfläche von oben
-    "tisch": (0.55, 1.05),  # Platte 0,4 bis 0,5, dazu die Platte von oben; Beistelltische kleiner
+    "tisch": (0.5, 1.05),  # Platte 0,4 bis 0,5, dazu die Platte von oben; Beistelltische kleiner
     "theke": (0.9, 1.3),  # Tresen 0,55 bis 0,65, dazu die Arbeitsfläche
     "bett": (0.9, 1.7),  # liegt: Höhe 0,3, dazu die ganze Liegefläche von oben
     # 0,9 bis 1,2 hoch nach Vorgabe; Archiv-, Wand- und Kleiderschränke bis unter die Decke
     # (2,5 m bei 1,6 m Figur), Anrichten und Kommoden niedrig: dazu die Oberseite.
     "regal": (0.7, 2.0),
     "buecherregal": (0.7, 2.0),
-    "schrank": (0.7, 2.0),
+    "schrank": (0.65, 2.0),
     "lampe": (1.5, 3.2),  # nur Straßenlaternen (außen, LAMPENMAST): 1,6 bis 2,2, echte Masten 4 bis 5 m
 }
 # Blickrichtungen, in denen die Bildhöhe die Höhe des Dings ist (von vorn oder von hinten).
@@ -68,6 +68,8 @@ LAMPENMAST = 48
 # Bis zu dieser Kataloghöhe (Kartenpixel) ist ein Sitz ohne Lehne und eine Tür eine Bodentür in der
 # unteren Wand, die die Draufsicht nur von oben zeigt (ungeprüft).
 EINE_KACHEL = 16
+
+INNENTUER = "Innentür von LimeZu, knapp gezeichnet; kleiner als die Figur innen (Rückfrage an den Autor)"
 
 # Katalogeinträge mit Grund, die vom Band abweichen dürfen.
 AUSNAHMEN: dict[str, str] = {
@@ -92,6 +94,13 @@ AUSNAHMEN: dict[str, str] = {
     "wzArbeitsplatte": "Küchenzeile an der Wand: Bild zeigt Platte und Front, die Wand trägt die Höhe",
     "mf5Buffet": "Küchenzeile an der Wand: Bild zeigt Platte und Front, die Wand trägt die Höhe",
     "rv8Wandbord": "Wandbord, hängt an der Wand und steht nicht auf dem Boden",
+    # Innentüren von LimeZu (21 px) sind seit Figur innen × 4/3 (26⅔ px) kleiner als die Figur. Der
+    # Autor hat die größere Figur gewählt (20.11.2026); neue Türbilder wären Kartenarbeit, Rückfrage
+    # in docs/AUFGABEN_AUTOR.md. Durchgänge bleiben eine Kachel breit (Körper 12 px).
+    "cc4Kellertuer": INNENTUER,
+    "wzTuer": INNENTUER,
+    "mf2Haustuer": INNENTUER,
+    "sb5Tuer": INNENTUER,
 }
 
 

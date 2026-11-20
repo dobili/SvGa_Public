@@ -2273,11 +2273,15 @@
     },
     {
       "moebel": "wc11BahnsteigbankHinten",
-      "feld": [48, 9]
+      "feld": [48, 9],
+      "versatz": [10, 13],
+      "massstab": 0.6
     },
     {
       "moebel": "wc11BahnsteigbankHinten",
-      "feld": [51, 9]
+      "feld": [51, 9],
+      "versatz": [10, 13],
+      "massstab": 0.6
     },
     {
       "moebel": "wc14Stellwerk",

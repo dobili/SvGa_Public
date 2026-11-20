@@ -96,11 +96,15 @@
     {
       "moebel": "mfBank",
       "feld": [3, 11],
-      "id": "bank"
+      "id": "bank",
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [1, 11]
+      "feld": [1, 11],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mf4Abfalleimer",
@@ -112,7 +116,9 @@
     },
     {
       "moebel": "mf11BankHintenBraun",
-      "feld": [17, 11]
+      "feld": [17, 11],
+      "versatz": [11, 14],
+      "massstab": 0.55
     },
     {
       "moebel": "mf4Abfalleimer",
@@ -200,7 +206,8 @@
     {
       "moebel": "mf3BrettKlein",
       "auf": "bank",
-      "versatz": [6, 10]
+      "versatz": [4, 4],
+      "massstab": 0.75
     },
     {
       "moebel": "mf2Blumenbeet",

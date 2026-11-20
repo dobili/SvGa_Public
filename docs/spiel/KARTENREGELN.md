@@ -1379,6 +1379,13 @@ vergrößert, bis ihre Tür groß genug war. Prüfung: `python -m pipeline.abent
   (Diner, Waschsalon: 29 × 17, nötig 1,29). Sie bleiben vorerst Hinweis: Das Diner und die Villa
   Whitlock haben Eingänge (`tuer` im Katalog rechnet seit 17.11.2026 den Maßstab ein), und 1,16 bzw. 1,29 sprengt
   die Häuserzeile. Rückfrage an den Autor (AUFGABEN_AUTOR RO33).
+- **Innenräume (20.11.2026, Entscheidung des Autors):** Auf Karten mit `innen` zeichnet die App
+  alle PixelLab-Figuren 4/3-mal so groß (`INNEN_FIGURFAKTOR` in
+  `app/src/abenteuer/oberwelt/weltmassstab.ts`), den Helden also 26⅔ Kartenpixel hoch. Grund: Die
+  Möbel innen stammen aus LimeZu Modern Interiors und sind für größere Figuren gezeichnet. Nur das
+  Bild wächst; Körper (12 px), Fußkachel und damit Durchlass, Kopfkachel und Figurensperre bleiben.
+  Auch mit 16 px Körper bleibt jedes Ziel erreichbar. Diese Türregel gilt weiter für Außenkarten;
+  LimeZu-Innentüren (21 px) sind jetzt kleiner als die Figur (Rückfrage an den Autor).
 - **Durchlässe (19.11.2026):** Was für Türen gilt, gilt für jeden Durchlass zwischen begehbaren
   Bereichen: mindestens eine Kachel (16 px) frei, nicht nur die 12 px des Körpers. Eine Lücke von
   genau Körperbreite trifft ein Spieler mit Steuerkreuz oder Wischen kaum (Spieler-Durchlauf vom
@@ -1387,3 +1394,17 @@ vergrößert, bis ihre Tür groß genug war. Prüfung: `python -m pipeline.abent
 [--hinweise]` rechnet mit derselben Kollision wie die App (Raster, feine Masken und Felder,
   Figuren, stehende Statisten, das Feld über Sitzenden). Befund: Ein Ziel ist nur durch so eine
   Lücke erreichbar. Hinweis: eine leere Nische dahinter (Sackgasse, in die man sich hineinzwängt).
+
+### 10.93 Möbel im Maß der Figur (20.11.2026)
+
+Anlass: Der Autor sah im Karteneditor eine Parkbank, deren Lehne Kettering bis an die Schultern
+reichte; innen waren Stühle so hoch wie der Held. Entscheidung des Autors (Vergleichsseite,
+20.11.2026): innen die Figur × 4/3 (10.92), außen jedes zu große Möbel auf den Maßstab der Figur.
+Regel: Die Bildhöhe eines gesetzten Möbels liegt im Band seiner Art, gemessen an der Figur (außen 20,
+innen 26⅔ Kartenpixel). Bänder, Ausnahmen und Begründung stehen in
+`pipeline/abenteuer/proportionen.py`; Prüfung `python -m pipeline.abenteuer.proportionen`, Dauertest
+in `pipeline/tests/test_abenteuer_proportionen.py`. Zu große Möbel bekommen einen `massstab` je
+Platzierung, unten mittig ausgerichtet (`versatz`), und was `auf` ihnen liegt, denselben Maßstab
+(Spieltische mit Brett und Uhr den größten Maßstab im Band, damit beides Platz hat). Gebäude und
+Türen bleiben. Bildhöhen neuer Katalogeinträge: `--messen PRIVAT`.
+

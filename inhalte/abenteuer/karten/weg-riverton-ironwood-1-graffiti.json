@@ -22487,10 +22487,10 @@
      "id": 86,
      "name": "mfBank",
      "type": "moebel",
-     "x": 192,
-     "y": 592,
-     "width": 32,
-     "height": 32,
+     "x": 196,
+     "y": 600,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -22503,6 +22503,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -22717,10 +22727,10 @@
      "id": 96,
      "name": "cc7Picknicktisch",
      "type": "moebel",
-     "x": 112,
-     "y": 992,
-     "width": 32,
-     "height": 32,
+     "x": 117,
+     "y": 1002,
+     "width": 22,
+     "height": 22,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -22733,6 +22743,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.7
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#./#."
       }
      ]
     },
@@ -25500,10 +25520,10 @@
      "id": 217,
      "name": "cc7Picknicktisch",
      "type": "moebel",
-     "x": 208,
-     "y": 1136,
-     "width": 32,
-     "height": 32,
+     "x": 213,
+     "y": 1146,
+     "width": 22,
+     "height": 22,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -25516,6 +25536,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.7
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#./#."
       }
      ]
     },
@@ -27639,10 +27669,10 @@
      "id": 310,
      "name": "mfBank",
      "type": "moebel",
-     "x": 224,
-     "y": 2624,
-     "width": 32,
-     "height": 32,
+     "x": 228,
+     "y": 2632,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -27655,6 +27685,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },

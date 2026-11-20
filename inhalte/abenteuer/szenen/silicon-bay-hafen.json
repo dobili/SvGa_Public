@@ -212,11 +212,15 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [30, 27]
+      "feld": [30, 27],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [38, 27]
+      "feld": [38, 27],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "cc5Poller",
@@ -919,11 +923,15 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [22, 27]
+      "feld": [22, 27],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [14, 27]
+      "feld": [14, 27],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "sa8Angelladen",

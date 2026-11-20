@@ -427,7 +427,9 @@
     },
     {
       "moebel": "cc11BahnsteigbankHinten",
-      "feld": [16, 5]
+      "feld": [16, 5],
+      "versatz": [10, 13],
+      "massstab": 0.6
     },
     {
       "moebel": "cc4Fahrplan",
@@ -530,11 +532,15 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [24, 28]
+      "feld": [24, 28],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [36, 32]
+      "feld": [36, 32],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "cc7Fussbruecke",

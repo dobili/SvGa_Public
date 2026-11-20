@@ -266,6 +266,28 @@ Profil › Einstellungen › Fehler melden.
       Pfosten. Am Bahndamm (Weg Cedar Creek–Riverton, Süden) ebenso. Ein passendes Eisentor gibt es
       im Grafiksatz nicht; es steht als Gemini-Wunsch unten (RO44). Passt der offene Durchgang so
       lange?
+- [ ] N2669. **Erste Nacht im Zimmer (geführter Weg):** Die Nacht beginnt mit dem Helden im Bett.
+      Nach „Bist du wach?“ steht er von selbst auf und geht zu Ambrose ans Fenster; erst dann geht
+      „Weiter“. Vor dem Einschlafen liegt er wieder im Bett, am Morgen steht er daneben. Passt das
+      Tempo, und liegt die Figur gut im Bett?
+- [ ] N2670. **Einleitung mit Mama und Möbelwagen:** Mama geht zur Haustür, der Held folgt ihr, erst
+      dann geht es ins Wohnzimmer (kein Hineinbeamen mehr). Am Bordstein steht der Umzugswagen,
+      bis ihr im Haus angekommen seid.
+- [ ] N2671. **Figuren kommen sichtbar herüber:** Wo jemand „herüberkommt“, geht die Figur jetzt
+      selbst dorthin: Victor zu Nova und Mama vor dem Finale in der Arena, Teague im Museum, Dr. Lin
+      in der Akademie, Mama zum Fenster im Wohnzimmer. Während des Wegs ist „Weiter“ gesperrt.
+      Einmal mitten im Weg neu laden: Der Held steht danach am Ziel.
+- [ ] N2672. **Steuerkreuz wischen:** Finger auf ▶ halten und ohne Loslassen zu ▼ und weiter zu ◀
+      wischen. Der Held läuft ohne Halt und wechselt die Richtung, auch in den Lücken zwischen den
+      Pfeilen. Erst Loslassen hält ihn an.
+- [ ] N2673. **Kleine Symbolknöpfe:** Unter dem Steuerkreuz steht eine Reihe kleiner Knöpfe: ☰ Menü
+      außen, daneben 📖 Tagebuch, ♞ Übungspartie und 🎫 Reisen. Quer steht die Reihe links unter dem
+      Kreuz, rechts nur der Aktionsknopf. Im Gespräch stehen 📖 und ☰ oben rechts. Das Schild
+      „Tagebuch“ oben links ist weg. Lassen sich alle gut treffen, und sind sie groß genug?
+- [ ] N2674. **Hinweise nicht über dem Helden:** Im Park ganz nach oben an den Rand laufen: Hinweise
+      wie „Mit dem Steuerkreuz gehst du“ und Meldungen wie „Neu im Tagebuch“ stehen dann unten über
+      dem Kreuz. Steht der Held weiter unten, stehen sie oben. Sie verdecken weder den Helden noch
+      die Knöpfe. Bitte hoch und quer prüfen.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

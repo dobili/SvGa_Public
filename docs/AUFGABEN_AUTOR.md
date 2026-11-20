@@ -39,15 +39,49 @@ Teil fertig ist.
       und „bei Amazon“; beide öffnen die Seite des Buches im jeweiligen Shop. Darunter steht „In jeder Buchhandlung
       bestellbar: ISBN 978-3-9824715-8-7.“ Stimmt die ISBN, und fehlt ein Shop (etwa der Verlag selbst)?
 
-### Neu: Das Spiel ganz durchspielen (18.11.2026, Beta 0.3.56)
+### Neu: Das Spiel ganz durchspielen – so gehst du vor (Beta 0.3.56, Stand 20.11.2026)
 
-- [ ] N2637. **Spielhilfe für deinen Durchgang:** Was seit deinem letzten Spieltest (16.11.) neu ist
-      und worauf du achten sollst, je Akt mit Ort. Am besten von vorn beginnen; ein alter Spielstand
-      darf in der Beta verloren gehen. Starten: drei Sekunden auf „Profil“, oben die Karte
-      „Schach-Abenteuer“, „Spiel öffnen“. Mit Netz lädt „Spiel herunterladen“ jetzt auch Maia: Im Spiel
-      spielen alle Gegner menschlich mit Maia, egal was in den App-Einstellungen steht (ohne Netz
-      startet ein schon geladenes Spiel auch ohne Maia). Lädt alles in einem Zug?
-      **Überall:**
+Diese Abschnitte sind deine Spielhilfe für den ganzen Durchgang: Was seit deinem letzten
+Spieltest (16.11.) neu ist und worauf du achten sollst. Zuerst das, was überall gilt, dann je Akt
+eine Liste „Darauf achten“, am Ende iPhone, Querformat, Dunkelmodus und Ton.
+
+**Starten:** drei Sekunden auf „Profil“, oben die Karte „Schach-Abenteuer“, „Spiel öffnen“, dann
+„neues Spiel“. Am besten von vorn beginnen; ein alter Spielstand darf in der Beta verloren gehen.
+
+**Schnell hinkommen:** Monatskarte (Pops in Riverton) oder Fernbus an der Kreuzung in Crossroads.
+Im Tagebuch steht die laufende Quest.
+
+**Rückmeldung:** mit der Nummer, etwa „N2643 ok“, „N2648: Hinweis kam zweimal“ oder bei Punkten
+mit Unterpunkten „N2646.5: Henri spricht noch von der Eröffnung“, gern mit Ort und
+Bildschirmfoto. Du musst nicht alles auf einmal schicken. Fehler im Spiel am schnellsten über
+Profil › Einstellungen › Fehler melden.
+
+- [ ] N2647. **Schneller Start des Spiels:** Neues Spiel laden (Admin-Menü › Spiel öffnen). Die
+      Welt erscheint nach wenigen Sekunden, Maia (92 MB) und die Geräusche laden im Hintergrund
+      weiter; „Spiel geladen“ steht erst da, wenn alles da ist, danach geht es auch offline. Im
+      Spiel spielen alle Gegner menschlich mit Maia, egal was in den App-Einstellungen steht (ohne
+      Netz startet ein schon geladenes Spiel auch ohne Maia). Bitte am Handy über Mobilfunk grob
+      die Sekunden bis zur Welt stoppen (im Test: vorher 95 s, jetzt 11 s bei 10 Mbit/s). Eine
+      Partie, die beginnt, bevor Maia fertig ist, spielt einmal ohne Maia (gemessen: höchstens
+      etwas leichter, nie schwerer; bei normalem Netz ist Maia vor der ersten Partie auf dem
+      Dachboden fertig). Wenn dir das nicht recht ist: „N2647: erste Partie wartet auf Maia“.
+      **Rückmeldung:** „N2647 ok, 6 s“ oder eine Notiz.
+
+- [ ] N2648. **Hinweise zur Steuerung beim ersten Gebrauch:** Im neuen Spiel erscheint je eine
+      kurze Zeile, wenn du etwas zum ersten Mal brauchst: zum Steuerkreuz („Mit dem Steuerkreuz
+      gehst du“), zum Aktionsknopf, sobald du vor etwas stehst, zum Tagebuch mit dem Pfeil und zum
+      Menü (Ton, Steuerkreuz, Speichern von selbst). Antippen schließt die Zeile; jede kommt nur
+      einmal, auch nach Neuladen. Kommen sie zur richtigen Zeit, sind sie zu viel oder fehlt einer?
+      **Rückmeldung:** „N2648 ok“ oder eine Notiz.
+
+- [ ] N2649. **Tagebuchpuls:** Beim Hinweis zum Tagebuch pulsiert der Tagebuchknopf, bis du ihn
+      öffnest. Mit „Bewegung reduzieren“ im Handy bleibt er ruhig. Fällt er auf, ohne zu stören?
+      **Rückmeldung:** „N2649 ok“ oder eine Notiz.
+
+### Neu: Das Spiel ganz durchspielen – überall im Spiel
+
+- [ ] N2637. **Was überall gilt (Spielhilfe, Teil 1):** Die Hinweise je Akt stehen jetzt in den
+      Abschnitten Akt 1 bis Akt 4 darunter (N2654 bis N2658).
       · Karte dreifach, Figuren zweifach vergrößert: Figuren kleiner und schärfer. Alle Türen haben
       Figurgröße (nur das Diner in Maple Falls ist etwas niedrig). Passt die Figur überall durch?
       · Innenräume sind so groß wie ihr Haus außen (Garage, Hütte, Wohnwagen, Bibliothek, Akademie,
@@ -62,73 +96,31 @@ Teil fertig ist.
       Rückbezüge, Ausgänge). Nach dem Abschied spricht Ambrose nicht mehr.
       · Fünf Straßenbegegnungen sind kurze Partien statt ganzer: ein erzählter Einstieg über dem
       Brett, dann ein Endspiel oder „Vorteil herausarbeiten in N Zügen“.
-      **Akt 1 (Maple Falls, Cedar Creek):** Die Haustür bleibt zu, bis Ambrose auf dem Dachboden
-      erwacht ist. Juno erzählt auf dem Weg nach Cedar Creek von Carla, auch wenn du die Tafel löst.
-      Sternennacht: Mrs. Okafor schickt dich zuerst zu Mae, so kann man sie nicht mehr verpassen.
-      **Akt 2:** Sperre im Zedernwald (Weg Cedar Creek nach Riverton): Benji vom Testteam von
-      Perfect Move, Vorteil herausarbeiten in 10 Zügen. Pavillon Riverton jetzt offen mit Geländer
-      und Fluss, Eingang über die Stufe. Nach Slicks Abschied nennt Juno das Turnier; eine Quest führt
-      nach Hause zu Mamas Nein, erst dann öffnet der Kanalweg nach Ironwood. Dime am Kanalweg ist
-      kurz. Nach dem Kauf ist die Kantine leer, Big Joe räumt.
-      **Akt 3:** Sperre an der Raststätte vor der Glasbrücke: Imani, Russisch vorgegeben, dann
-      Vorteil in 12 Zügen. Der Schiffskoch auf der Fähre: Endspiel Remis halten. „Es ist Sommer, und
-      du bist fünfzehn“ kommt jetzt auf der Fahrt zum Diner.
-      **Akt 4:** Sperre am Diner vor der Bergstraße: Zoe, Endspiel mit einem Bauern mehr gewinnen;
-      ein Remis zählt hier als Fehlversuch. Kurz sind auch Mags im Hinterzimmer des Diners (Kreide-
-      springer an der Seitenwand, dreimal klopfen) und Sol auf dem Gipfelfelsen in Summit City. Das
-      Drachenfest am Brunnen ist erst am Abend nach Wards Bitte, vorher siehst du die Vorbereitung.
-      Die Kreidenacht im U-Bahnhof der Capital (Kreidespringer neben dem Rollgitter) ist erst nach
-      dem Finale.
-      Bei allen drei Sperren: Nach dem dritten Fehlversuch lassen sie dich durch, Abbruch zählt nicht.
-      Ist dir eine zu schwer, sag welche: Dann senkt Claude zuerst die Stärke, nicht die Versuche.
-      **Schnell hinkommen:** Monatskarte (Pops in Riverton) oder Fernbus an der Kreuzung in
-      Crossroads; im Tagebuch steht die laufende Quest.
-      **Rückmeldung:** „N2637 ok“ oder je Akt eine Notiz, etwa „N2637 Akt 2: Benji zu stark“ oder
-      „N2637 Akt 4: hänge am Brunnen fest“, gern mit Ort und Bildschirmfoto. Fehler im Spiel am
-      schnellsten über Profil › Einstellungen › Fehler melden.
+      · Bei allen drei Wegsperren (Akt 2 bis 4): Nach dem dritten Fehlversuch lassen sie dich
+      durch, Abbruch zählt nicht. Ist dir eine zu schwer, sag welche: Dann senkt Claude zuerst die
+      Stärke, nicht die Versuche.
+      **Rückmeldung:** „N2637 ok“ oder eine Notiz, etwa „N2637: hänge im Museum fest“.
 
-- [ ] N2638. **Deine Anmerkungen vom 19.11. (Beta):** Bitte beim Durchspielen nebenbei prüfen.
-      1. Lange auf die Pfeiltasten drücken: Es wird kein Text mehr markiert, und kein Menü mit
-         Kopieren oder Ausschneiden erscheint.
-      2. Während einer Partie oder eines Rätsels liegt keine Sprechblase mehr auf dem Brett.
-         Ambrose und der Gegner sprechen ober- oder unterhalb. Ist dort zu wenig Platz, rückt die
-         Blase direkt über oder unter das Brett, und eine sehr lange Blase lässt sich rollen.
-      3. Nach jedem Questschritt sagt eine Figur im Dialog, wohin es als Nächstes geht, zum Beispiel
-         Juno in Riverton: Slick spielt im Parkpavillon. Neun Stellen hatten das vorher nicht.
+- [ ] N2638. **Deine Anmerkungen vom 19.11. (Beta):** 1. Lange auf die Pfeiltasten drücken: Es wird kein Text mehr markiert, und kein Menü mit
+      Kopieren oder Ausschneiden erscheint. 2. Während einer Partie oder eines Rätsels liegt keine Sprechblase mehr auf dem Brett.
+      Ambrose und der Gegner sprechen ober- oder unterhalb. Ist dort zu wenig Platz, rückt die
+      Blase direkt über oder unter das Brett, und eine sehr lange Blase lässt sich rollen. 3. Nach jedem Questschritt sagt eine Figur im Dialog, wohin es als Nächstes geht, zum Beispiel
+      Juno in Riverton: Slick spielt im Parkpavillon. Neun Stellen hatten das vorher nicht.
       **Rückmeldung:** „N2638 ok“ oder die Nummer mit Notiz, etwa „N2638.2: Blase verdeckt die Uhr“.
 
-- [ ] N2639. **Neue Einleitung (dein Wunsch vom 19.11.):** Ein neues Spiel beginnen (Admin-Menü ›
-      Spiel öffnen › neues Spiel). Der Held steht mit Mama vor dem Haus an der Birch Lane. Bilder
-      der Fahrt und des Hauses (bis die Gemini-Bilder E1 bis E4 da sind, nur Text), Mama spricht,
-      du nimmst einen Karton und gehst mit ihr hinein. Im Wohnzimmer folgt am Abend die Ankunft
-      mit der Kiste von Mrs. Whitlock; Mama sagt, wo die Treppe zum Dachboden ist. Im Tagebuch
-      steht die neue Quest „Einzug an der Birch Lane“, und auf dem Dachboden beginnt wie bisher
-      „Das Brett“. Sprichst du Mama vorher noch einmal an, erinnert sie an die Kiste.
-      Entscheidung von mittel-2, schon umgesetzt, Widerspruch genügt: Vom Haus ins Wohnzimmer
-      geht es mit einer Wahl statt zu Fuß, damit vor dem Dachboden nicht schon die ganze Stadt
-      offen ist. Alte Spielstände bekommen die Einleitung nicht nachgereicht.
-      **Rückmeldung:** „N2639 ok“ oder eine Notiz, etwa „N2639: lieber selbst ins Haus gehen“.
-
 - [ ] N2640. **Reaktion nach jeder Partie und jedem Rätsel:** Nach der Ergebniskarte öffnet sich
-      jetzt von selbst das Gespräch mit dem, der die Partie oder das Rätsel angeboten hat, etwa
-      Ambrose nach der ersten Partie auf dem Dachboden („Du hast gewonnen …“). Wo der Ort danach
-      wechselt, sagt das Gespräch, wohin. Bitte beim Durchspielen darauf achten, ob eine Reaktion
-      fehlt oder nicht zum Ergebnis passt.
+      von selbst das Gespräch mit dem, der die Partie oder das Rätsel angeboten hat, etwa Ambrose
+      nach der ersten Partie auf dem Dachboden („Du hast gewonnen …“). Wo der Ort danach wechselt,
+      sagt das Gespräch, wohin. Fehlt eine Reaktion, oder passt sie nicht zum Ergebnis?
       **Rückmeldung:** „N2640 ok“ oder Ort und Notiz.
 
-- [ ] N2641. **Zielpfeil nur auf Wunsch:** Ohne Zutun erscheint kein Pfeil mehr. Im Tagebuch steht
-      vor jeder laufenden Aufgabe mit Ziel ein kleines goldenes Dreieck. Antippen zeigt den Pfeil
-      zum Ziel (etwa zu Mama), nochmal antippen blendet ihn aus. Geht die Aufgabe einen Schritt
+- [ ] N2641. **Zielpfeil nur auf Wunsch:** Ohne Zutun erscheint kein Pfeil. Im Tagebuch steht vor
+      jeder laufenden Aufgabe mit Ziel ein kleines goldenes Dreieck. Antippen zeigt den Pfeil zum
+      Ziel (etwa zu Mama), nochmal antippen blendet ihn aus. Geht die Aufgabe einen Schritt
       weiter, wandert der Pfeil mit; ist sie erledigt, verschwindet er. Der Fehler mit dem Pfeil
       auf dem Spiegel ist behoben. Entscheidung von mittel-2 (Pfeil wandert mit), Widerspruch
       genügt.
       **Rückmeldung:** „N2641 ok“ oder eine Notiz.
-
-- [ ] N2642. **Erzählungen zur richtigen Zeit:** Kommst du nach der ersten Lektion mit dem Brett
-      die Treppe herunter, hält das Spiel kurz an: Die neunte Stufe knarrt, und unten sitzt Mama
-      zwischen den Kartons. Das Gespräch mit ihr beginnt danach ohne die Treppe. Ebenso beim ersten
-      Betreten von Darlenes Raststätte und Wards Hütte.
-      **Rückmeldung:** „N2642 ok“ oder Stellen, an denen noch etwas zur falschen Zeit erzählt wird.
 
 - [ ] N2643. **Bildausschnitt und Blitzwertung:** Auf großen Karten eilt der Ausschnitt beim Laufen
       etwas voraus und gleitet beim Stehenbleiben zurück, jetzt ohne Ruckeln (vorher Sprünge von
@@ -139,62 +131,151 @@ Teil fertig ist.
       ersten Clubnadel).
       **Rückmeldung:** „N2643 ok“ oder „N2643: Kamera lieber fest“.
 
+- [ ] N2646. **Was in der Nacht zum 20.11. dazukam (nebenbei, mit Akt):** 1. Akt 1: Die Haustür öffnet erst nach der ersten Nacht (vorher hieß es draußen „Guten
+      Morgen“). 2. Überall: Rund 95 Textstellen im Lektorat geglättet: keine Namen vor der ersten Begegnung,
+      keine doppelten Vorstellungen, Zeit und Ort stimmig (etwa Mira, Lin, Turnierleiterin),
+      Henri siezt nicht mehr. 3. Überall: Nach verlorenem Clubkampf sagt auch Ambrose etwas; nach einer Revanche reagiert
+      der Clubchef auf den Ausgang; ein Remis in kurzen Partien zählt nicht mehr als Sieg (Sol
+      gab nach Remis die Karte „Kühler Kopf“). 4. Akt 4: Neuladen mitten im Abschied von Ambrose: Der Abschied beginnt von vorn, der Abspann
+      kommt (vorher war das Spielende verloren). 5. Akt 3: Henris Werkstatt: Zugerraten der Unsterblichen Partie nur bis Zug 11. Im eröffneten
+      Musikhaus sprechen Remy, Lou und Henri nicht mehr von der kommenden Eröffnung. 6. Akt 4: Nach Crossroads nennt Juno das Pinewood Camp. 7. Ton im Speicher höchstens 160 MB (vorher wuchs er über lange Sitzungen bis 4 GB, am Handy
+      hätte das den Tab beendet). 8. Quer: Umwandlungsauswahl in Kits Runde im Bild, Deckwahl ohne verdeckte Knöpfe. 9. Mit der Tastatur: Leertaste geht in allen Fenstern, Umwandlung hat den Fokus auf der Dame
+      (das gilt auch in der App).
+      **Rückmeldung:** „N2646 ok“ oder Nummer mit Notiz.
+
+- [ ] N2650. **Münzen nur, wenn sich etwas ändert:** Oben läuft nicht mehr dauernd „0 Münzen“ mit.
+      Die Anzeige erscheint nur, wenn sich die Zahl ändert, zählt beim Bekommen hoch und beim
+      Ausgeben herunter und blendet nach drei Sekunden aus. Im Laden bleibt sie stehen, solange du
+      einkaufst. Wie viele Münzen du hast, steht oben im Tagebuch unter dem Titel. Zum Ausprobieren:
+      die Münzkiste am Flussweg, dann ein Einkauf bei Pops.
+      **Rückmeldung:** „N2650 ok“ oder eine Notiz.
+
+- [ ] N2651. **Willkommen zurück nach einer Pause:** Spielst du nach mehr als einem Tag weiter,
+      kommt einmal je Sitzung „Willkommen zurück!“ mit der Aufgabe und ihrem nächsten Schritt (die
+      verfolgte Quest, sonst die zuletzt angenommene Hauptquest). Am Anfang von Akt 2 nennt Juno in
+      Riverton jetzt die Nadeln. Prüfen kannst du es, wenn du ohnehin einen Tag Pause machst.
+      **Rückmeldung:** „N2651 ok“ oder eine Notiz.
+
+- [ ] N2652. **„Was bisher geschah“ im Tagebuch:** Ein eigener Abschnitt im Tagebuch fasst jeden
+      abgeschlossenen Akt in zwei, drei Sätzen zusammen und erzählt den laufenden Akt Satz für
+      Satz nach den erledigten Hauptquests, in der Stimme des Tagebuchs („ich“) und nur mit dem,
+      was du schon gespielt hast. Ein Akt gilt erst mit seiner letzten Hauptquest als
+      abgeschlossen. Wird gerade fertig (mittel-1); fehlt er noch, kommt er mit der nächsten Beta.
+      Liest es sich richtig, verrät es nichts zu früh?
+      **Rückmeldung:** „N2652 ok“ oder Akt und Notiz.
+
+### Neu: Das Spiel ganz durchspielen – Akt 1 (Maple Falls, Cedar Creek)
+
+- [ ] N2639. **Neue Einleitung (dein Wunsch vom 19.11.):** Ein neues Spiel beginnen (Admin-Menü ›
+      Spiel öffnen › neues Spiel). Der Held steht mit Mama vor dem Haus an der Birch Lane. Bilder
+      der Fahrt und des Hauses (bis die Gemini-Bilder E1 bis E4 da sind, nur Text), Mama spricht,
+      du nimmst einen Karton und gehst mit ihr hinein. Im Wohnzimmer folgt am Abend die Ankunft
+      mit der Kiste von Mrs. Whitlock; Mama sagt, wo die Treppe zum Dachboden ist. Im Tagebuch
+      steht die neue Quest „Einzug an der Birch Lane“, und auf dem Dachboden beginnt wie bisher
+      „Das Brett“. Sprichst du Mama vorher noch einmal an, erinnert sie an die Kiste. Bricht man
+      die Einleitung ab, wartet Mama vor dem Haus, bis ihr zusammen hineingegangen seid.
+      Entscheidung von mittel-2, schon umgesetzt, Widerspruch genügt: Vom Haus ins Wohnzimmer
+      geht es mit einer Wahl statt zu Fuß, damit vor dem Dachboden nicht schon die ganze Stadt
+      offen ist. Alte Spielstände bekommen die Einleitung nicht nachgereicht.
+      **Rückmeldung:** „N2639 ok“ oder eine Notiz, etwa „N2639: lieber selbst ins Haus gehen“.
+
+- [ ] N2642. **Erzählungen zur richtigen Zeit:** Kommst du nach der ersten Lektion mit dem Brett
+      die Treppe herunter, hält das Spiel kurz an: Die neunte Stufe knarrt, und unten sitzt Mama
+      zwischen den Kartons. Das Gespräch mit ihr beginnt danach ohne die Treppe. Ebenso beim ersten
+      Betreten von Darlenes Raststätte (Akt 3) und Wards Hütte (Akt 4).
+      **Rückmeldung:** „N2642 ok“ oder Stellen, an denen noch etwas zur falschen Zeit erzählt wird.
+
+- [ ] N2653. **Schlafen gehen und zur Schule:** Nach dem ersten Abend läuft die Quest „Ein Abend
+      im neuen Haus“ weiter: „Schlafen gehen“ (die Treppe hinauf in dein Zimmer, das Brett steht
+      jetzt auf deinem Schreibtisch) und am Morgen „Zur Schule“ (die Straße hinunter, das
+      Schachteam suchen). Der Dachboden erzählt den Morgen, Mama nennt Schule und Schachteam und
+      Coach Delgado. Weißt du nach der ersten Nacht immer, wohin?
+      **Rückmeldung:** „N2653 ok“ oder eine Notiz.
+
+- [ ] N2654. **Akt 1, worauf achten (früher Teil von N2637):** Die Haustür bleibt zu, bis Ambrose
+      auf dem Dachboden erwacht ist. Juno erzählt auf dem Weg nach Cedar Creek von Carla, auch wenn
+      du die Tafel löst. Sternennacht: Mrs. Okafor schickt dich zuerst zu Mae, so kann man sie nicht
+      mehr verpassen. Nach dem Aufbruch steht Juno nicht mehr im Clubraum und an der Haltestelle;
+      nach dem Ende von Akt 1 ist sie wieder zu Hause.
+      **Rückmeldung:** „N2654 ok“ oder eine Notiz.
+
 - [ ] N2644. **Sternennacht in Cedar Creek:** Die Einladung von Mae steht wieder im Tagebuch, und
       die Nacht lässt sich nicht mehr ablehnen (Mae überredet dich zu ein paar Minuten). Bricht man
       mittendrin ab, bietet der Steg sie wieder an. Vorher konnte man sie leicht verpassen.
       Entscheidung von mittel-3, Widerspruch genügt.
       **Rückmeldung:** „N2644 ok“ oder eine Notiz.
 
-- [ ] N2645. **Am iPhone (nur mit echtem Gerät prüfbar, mittel-2, 20.11.):**
-      1. Ton an, Spiel neu öffnen, als Allererstes mit dem Steuerkreuz laufen: Erklingt die Musik
-         nach dem ersten Loslassen?
-      2. Während Musik läuft kurz eine andere App öffnen oder anrufen lassen, zurück, einmal
-         tippen: Kommt die Musik wieder?
-      3. Im Dialog schnell zweimal auf „Weiter“, im Laden zweimal auf eine Ware: Die Seite darf
-         sich nicht vergrößern.
-      4. Hochkant in einer Partie: Liegen Partiemoment und obere Sprechblase ganz unter der
-         Statusleiste (nicht hinter Notch oder Dynamic Island)?
-      5. Quer, Handy in beide Richtungen gedreht: Steuerkreuz, Aktionsknopf, Blasen und Knöpfe
-         frei von der Kamera-Aussparung?
-      6. Im Browser (nicht als App): Bleibt das Steuerkreuz im Bild, wenn Safari die Leiste ein-
-         und ausblendet?
-      7. Daumen auf ▼, auf ▶ gleiten, dann vom Rand ins Kontrollzentrum wischen: Bleibt der Held
-         danach stehen?
-      8. Langer Druck auf Steuerkreuz und Dialogtext: kein Markieren, kein Kopiermenü, keine Lupe.
-      9. Name des Helden eingeben: Springt die Seite größer? Verdeckt die Tastatur das Feld?
-      10. Quer in der Partie: Porträts oben und in den Blasen scharf und richtig gesetzt?
+### Neu: Das Spiel ganz durchspielen – Akt 2 (Riverton, Ironwood)
+
+- [ ] N2655. **Akt 2, worauf achten (früher Teil von N2637):** Sperre im Zedernwald (Weg Cedar
+      Creek nach Riverton): Benji vom Testteam von Perfect Move, Vorteil herausarbeiten in 10
+      Zügen. Pavillon Riverton jetzt offen mit Geländer und Fluss, Eingang über die Stufe. Nach
+      Slicks Abschied nennt Juno das Turnier; eine Quest führt nach Hause zu Mamas Nein, erst dann
+      öffnet der Kanalweg nach Ironwood. Dime am Kanalweg ist kurz. In Ironwood steht Mama in der
+      Kantine beim Stahlbrett neben Big Joes Clubtisch (nicht mehr in ihrem alten Zimmer); ihre
+      Ankunft läuft beim Betreten der Kantine. Nach dem Kauf ist die Kantine leer, Big Joe räumt.
+      **Rückmeldung:** „N2655 ok“ oder eine Notiz, etwa „N2655: Benji zu stark“.
+
+### Neu: Das Spiel ganz durchspielen – Akt 3 (Silicon Bay, Port Delacroix, Desert Springs)
+
+- [ ] N2656. **Akt 3, worauf achten (früher Teil von N2637):** Sperre an der Raststätte vor der
+      Glasbrücke: Imani, Russisch vorgegeben, dann Vorteil in 12 Zügen. Der Schiffskoch auf der
+      Fähre: Endspiel Remis halten. „Es ist Sommer, und du bist fünfzehn“ kommt jetzt auf der Fahrt
+      zum Diner.
+      **Rückmeldung:** „N2656 ok“ oder eine Notiz.
+
+- [ ] N2657. **Schwierigkeit ab Akt 3 strenger:** Gemessen über alle Clubchefs mit Lesern von 800,
+      1200 und 1600 Punkten: Akt 1 und 2 passten, ab Akt 3 waren die Gegner zu leicht (Miss Odile,
+      Mira und Ward so leicht wie Club 3 und 4, das Halbfinale leichter als Victor in Akt 4). Jetzt
+      wird es bis zum Finale stetig schwerer: Odile und Mira spielen das Endspiel nicht mehr
+      schwächer, Ward und Kade (Halbfinale) spielen ein stärkeres Mittelspiel; Wards schwache
+      Eröffnung bleibt. Ein Leser mit 800 schafft Ward und das Finale mit Hilfen trotzdem: gemessen
+      im dritten Versuch 35 Prozent bei Ward (Springervorgabe, Ward nach der Studiennacht) und 22
+      Prozent im Finale. Das Finale bleibt bei deiner Wertung + 700 (die Werte der Bronze-Liga, die
+      Ligen kommen erst mit Staffel 2). Schon umgesetzt, Widerspruch genügt.
+      **Rückmeldung:** „N2657 ok“ oder eine Notiz, etwa „N2657: Mira zu schwer“.
+
+### Neu: Das Spiel ganz durchspielen – Akt 4 (Summit City bis Capital Arena)
+
+- [ ] N2658. **Akt 4, worauf achten (früher Teil von N2637):** Sperre am Diner vor der Bergstraße:
+      Zoe, Endspiel mit einem Bauern mehr gewinnen; ein Remis zählt hier als Fehlversuch. Kurz sind
+      auch Mags im Hinterzimmer des Diners (Kreidespringer an der Seitenwand, dreimal klopfen) und
+      Sol auf dem Gipfelfelsen in Summit City. Das Drachenfest am Brunnen ist erst am Abend nach
+      Wards Bitte, vorher siehst du die Vorbereitung. Die Kreidenacht im U-Bahnhof der Capital
+      (Kreidespringer neben dem Rollgitter) ist erst nach dem Finale. Nach dem Abschied sitzt Juno
+      mit dir auf der Treppe und fährt mit nach Hause; vor der Arena steht sie danach nicht mehr.
+      **Rückmeldung:** „N2658 ok“ oder eine Notiz, etwa „N2658: hänge am Brunnen fest“.
+
+- [ ] N2659. **Abspann ohne doppelte Namen:** Im Abspann steht jede Figur nur einmal (vorher stand
+      „Mama“ dreimal in der Liste und acht Figuren doppelt). Fehlt jemand, oder steht noch jemand
+      doppelt?
+      **Rückmeldung:** „N2659 ok“ oder Namen.
+
+### Neu: Das Spiel ganz durchspielen – iPhone, Querformat, Dunkelmodus und Ton
+
+- [ ] N2645. **Am iPhone (nur mit echtem Gerät prüfbar, mittel-2, 20.11.):** 1. Ton an, Spiel neu öffnen, als Allererstes mit dem Steuerkreuz laufen: Erklingt die Musik
+      nach dem ersten Loslassen? 2. Während Musik läuft kurz eine andere App öffnen oder anrufen lassen, zurück, einmal
+      tippen: Kommt die Musik wieder? 3. Im Dialog schnell zweimal auf „Weiter“, im Laden zweimal auf eine Ware: Die Seite darf
+      sich nicht vergrößern. 4. Hochkant in einer Partie: Liegen Partiemoment und obere Sprechblase ganz unter der
+      Statusleiste (nicht hinter Notch oder Dynamic Island)? 5. Quer, Handy in beide Richtungen gedreht: Steuerkreuz, Aktionsknopf, Blasen und Knöpfe
+      frei von der Kamera-Aussparung? 6. Im Browser (nicht als App): Bleibt das Steuerkreuz im Bild, wenn Safari die Leiste ein-
+      und ausblendet? 7. Daumen auf ▼, auf ▶ gleiten, dann vom Rand ins Kontrollzentrum wischen: Bleibt der Held
+      danach stehen? 8. Langer Druck auf Steuerkreuz und Dialogtext: kein Markieren, kein Kopiermenü, keine Lupe. 9. Name des Helden eingeben: Springt die Seite größer? Verdeckt die Tastatur das Feld? 10. Quer in der Partie: Porträts oben und in den Blasen scharf und richtig gesetzt?
       **Rückmeldung:** „N2645 ok“ oder die Nummern, die nicht passen, etwa „N2645.4: Blase hinter
       der Insel“.
 
-- [ ] N2646. **Was in der Nacht zum 20.11. dazukam (beim Durchspielen nebenbei):**
-      1. Die Haustür öffnet erst nach der ersten Nacht (vorher hieß es draußen „Guten Morgen“).
-      2. Rund 95 Textstellen im Lektorat geglättet: keine Namen vor der ersten Begegnung, keine
-         doppelten Vorstellungen, Zeit und Ort stimmig (etwa Mira, Lin, Turnierleiterin), Henri
-         siezt nicht mehr.
-      3. Nach verlorenem Clubkampf sagt auch Ambrose etwas; nach einer Revanche reagiert der
-         Clubchef auf den Ausgang; ein Remis in kurzen Partien zählt nicht mehr als Sieg (Sol gab
-         nach Remis die Karte „Kühler Kopf“).
-      4. Neuladen mitten im Abschied von Ambrose: Der Abschied beginnt von vorn, der Abspann kommt
-         (vorher war das Spielende verloren).
-      5. Henris Werkstatt: Zugerraten der Unsterblichen Partie nur bis Zug 11. Im eröffneten
-         Musikhaus sprechen Remy, Lou und Henri nicht mehr von der kommenden Eröffnung.
-      6. Nach Crossroads nennt Juno das Pinewood Camp.
-      7. Ton im Speicher höchstens 160 MB (vorher wuchs er über lange Sitzungen bis 4 GB, am Handy
-         hätte das den Tab beendet).
-      8. Quer: Umwandlungsauswahl in Kits Runde im Bild, Deckwahl ohne verdeckte Knöpfe.
-      9. Mit der Tastatur: Leertaste geht in allen Fenstern, Umwandlung hat den Fokus auf der Dame
-         (das gilt auch in der App).
-      **Rückmeldung:** „N2646 ok“ oder Nummer mit Notiz.
+- [ ] N2660. **Deckwahl quer:** Vor einer Partie mit Karten steht im Querformat die Bedenkzeit
+      ganz im Bild. Nur der Inhalt rollt, die Knöpfe („Ohne Karten spielen“ und Start) stehen
+      darunter nebeneinander und verdecken keine Bedenkzeit-Knöpfe mehr. Die Lupe steht in einer
+      Zeile, die Karten sind ohne Rollen zu sehen. Der Hinweis „Neue Version“ liegt über dem Spiel
+      und schiebt das Steuerkreuz nicht mehr unter den Rand.
+      **Rückmeldung:** „N2660 ok“ oder eine Notiz.
 
-- [ ] N2647. **Schneller Start des Spiels (20.11.):** Neues Spiel laden (Admin-Menü › Spiel
-      öffnen). Die Welt erscheint jetzt nach wenigen Sekunden, Maia (92 MB) und die Geräusche
-      laden im Hintergrund weiter; „Spiel geladen“ steht erst da, wenn alles da ist, danach geht
-      es auch offline. Bitte am Handy über Mobilfunk grob die Sekunden bis zur Welt stoppen
-      (gemessen im Test: vorher 95 s, jetzt 11 s bei 10 Mbit/s). Eine Partie, die beginnt, bevor
-      Maia fertig ist, spielt einmal ohne Maia (bei normalem Netz ist Maia vor der ersten Partie
-      auf dem Dachboden fertig). Wenn dir das nicht recht ist: „N2647: erste Partie wartet auf
-      Maia“.
-      **Rückmeldung:** „N2647 ok, 6 s“ oder eine Notiz.
+- [ ] N2661. **Dunkelmodus:** Handy auf dunkel stellen und spielen. Menü, Tagebuch, Deckwahl,
+      Laden, Kartenknöpfe und Namensfeld bleiben hell mit dunkler Schrift (vorher Knöpfe ohne
+      sichtbare Schrift, wie auf deinem Foto vom 20.11.), Ort und Ziel in der Spielhülle stehen
+      hell auf Dunkelblau. Ist überall alles lesbar?
+      **Rückmeldung:** „N2661 ok“ oder Ort und Notiz.
 
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 

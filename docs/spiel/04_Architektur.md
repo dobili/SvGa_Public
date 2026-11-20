@@ -65,13 +65,15 @@ Der Einwand des Autors ist richtig: Wenn jeder Clubchef nur 150 über der aktuel
 - **Eingangswertung** E: die Wertung des Lesers zu Beginn des Abenteuers. Sie ist erst fest, wenn genug gewertete Partien vorliegen (Wunsch des Autors, 07.11.2026): Hat die App schon mindestens 10 gewertete Partien, ist E die Wertung beim Start. Sonst läuft E in den ersten 10 Partien (gewertete Partien der App plus Story-Partien aus der Grundstellung) mit der aktuellen Wertung mit und wird danach eingefroren; der Spielstand hält `eingangswertung` und die Zahl der gezählten Partien. Clubchefs vor dem Einfrieren rechnen mit dem vorläufigen E; das betrifft höchstens Club 1 und 2.
 - **Aktuelle Wertung** A: die laufende Wertung der App; sie steigt, wenn der Leser besser wird.
 
-| Gegner                        | Zielstärke                                 | Beispiel bei E = 800                       |
-| ----------------------------- | ------------------------------------------ | ------------------------------------------ |
-| Straßengegner                 | A − 100 bis A ± 0 (fair, kurz)             | 700 bis 800, steigt mit dem Leser          |
-| Clubmitglied                  | A ± 0                                      | 800                                        |
-| Clubchef n (1–8)              | E + 160 + 60 · n                           | Club 1: 1020 · Club 4: 1200 · Club 8: 1440 |
-| Landesmeisterschaft           | E + 650 bis E + 750, Finale Victor E + 800 | 1450 bis 1600                              |
-| Post-Game (zweiter Durchlauf) | alles + 300                                |                                            |
+| Gegner                        | Zielstärke                                | Beispiel bei E = 800                       |
+| ----------------------------- | ----------------------------------------- | ------------------------------------------ |
+| Straßengegner                 | A − 100 bis A ± 0 (fair, kurz)            | 700 bis 800, steigt mit dem Leser          |
+| Clubmitglied                  | A ± 0                                     | 800                                        |
+| Clubchef n (1–8)              | E + 160 + 60 · n                          | Club 1: 1020 · Club 4: 1200 · Club 8: 1440 |
+| Landesmeisterschaft           | Halbfinale E + 650, Finale Victor E + 700 | 1450 bis 1500                              |
+| Post-Game (zweiter Durchlauf) | alles + 300                               |                                            |
+
+Landesmeisterschaft: Es gelten die Werte der Bronze-Liga aus dem Regelwerk (R22), denn die Liga gibt es erst mit Staffel 2 (`handlung.liga` bleibt bis dahin leer). Halbfinale gegen Kade E + 650, Finale gegen Victor E + 700, beide in `inhalte/abenteuer/gegner.json`. Früher stand hier E + 650 bis E + 750 und das Finale bei E + 800; das sind die Werte der Silber-Liga. Warum Bronze genügt (Messung vom 20.11.2026, `auftraege/schwierigkeitskurve_20-11.md`): Ohne Karten holen Leser mit 800, 1200 und 1600 gegen Victor bei E + 700 nur noch 3 Prozent der Punkte, weniger als gegen jeden Clubchef. Das Finale ist damit schon die schwerste Partie, im Finale sind keine Karten erlaubt (R28), und ein Aufschlag auf E + 800 schlösse schwache Leser aus. Silber und Gold (E + 800, E + 900) bleiben für die Ligen in Staffel 2.
 
 Die Lücke zwischen Leser und Clubchef wächst also von +220 (Club 1) auf +640 (Club 8). Geschlossen wird sie durch drei Dinge, und genau das ist das Spiel: (1) echtes Lernen (die Aufgabenreihen und die App-Trainer; 300 bis 500 Punkte in 15 bis 20 Stunden sind für Einsteiger realistisch), (2) Vorbereitung über die Story (Zustand „abgelenkt“, Faktor 1,3 bis 1,5 auf die Fehlerhäufigkeit entspricht grob 100 bis 200 Punkten), (3) Karten und Vorgaben (Springervorgabe entspricht grob 300 Punkten, Bauer f7 etwa 100 bis 150, Fingerzeig und Flüstern je nach Stellung). Wer alles ohne Karten schafft, hat sich die Goldnadel verdient; wer die Karten nutzt, bekommt Silber oder Bronze und einen Grund, später wiederzukommen. Die Zahlen stehen in einer Datei (`gegnerstaerke.ts`, Schritt 8) und werden nach den ersten Testpartien des Autors angepasst.
 

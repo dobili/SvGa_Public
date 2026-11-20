@@ -11,7 +11,7 @@
  * Abhängigkeiten: ton/tonplan.ts, ton/tonspieler.ts, ton/untertitel.ts, app/ton.ts (Tonerzeuger),
  * paket/paketlader.ts (Dateien).
  */
-import { tonErzeuger } from "../../app/ton";
+import { istGestoppterTon, mitTon, verwirfTonerzeuger } from "../../app/ton";
 import { beiTonladestand, tonladestand } from "../paket/aktton";
 import { liesPaketdatei } from "../paket/paketlader";
 import {
@@ -46,9 +46,11 @@ export interface Spielwerk {
 /**
  * Ein Ton, der nicht spielt, ist kein Fehler für den Leser: Safari wirft etwa „Context is stopped“,
  * wenn der Tonerzeuger beim Seitenwechsel oder im Hintergrund angehalten ist. Vermerkt für die
- * Fehlersuche, statt als unbehandelte Ausnahme die Seite zu stören (Affentest in WebKit).
+ * Fehlersuche, statt als unbehandelte Ausnahme die Seite zu stören (Affentest in WebKit). Ist der
+ * Erzeuger gestoppt, wird er samt Spieler verworfen; der nächste Ton legt beide neu an.
  */
 function tonfehler(fehler: unknown): void {
+  if (istGestoppterTon(fehler)) verwirfSpielwerk();
   console.warn("Ton nicht gespielt:", fehler);
 }
 
@@ -79,7 +81,7 @@ export class Tonregie {
     if (e.untertitel && !this.untertitelAn) this.gemeldet = {};
     if (!e.untertitel) leereUntertitel();
     this.untertitelAn = e.untertitel;
-    this.werk()?.setzePegel(p.musik, p.geraeusche);
+    this.mitWerk((w) => w.setzePegel(p.musik, p.geraeusche));
     this.spiele();
   }
 
@@ -109,7 +111,7 @@ export class Tonregie {
     for (const befehl of befehleAus(tags)) {
       if (befehl.art === "klang") {
         if (this.untertitelAn) this.melde("klang", befehl.kennung);
-        if (this.laut) void this.werk()?.spieleEinmal(befehl.kennung).catch(tonfehler);
+        if (this.laut) this.mitWerk((w) => void w.spieleEinmal(befehl.kennung).catch(tonfehler));
       } else this.lage = wende(this.lage, befehl);
     }
     this.spiele();
@@ -123,7 +125,7 @@ export class Tonregie {
 
   /** Der Ton ist nachgeladen (paket/aktton.ts): Was eben fehlte, jetzt spielen. */
   nachgeladen(): void {
-    this.werk()?.vergissFehlende?.();
+    this.mitWerk((w) => w.vergissFehlende?.());
     this.spiele();
   }
 
@@ -134,7 +136,7 @@ export class Tonregie {
     this.nah = KEINE_NAEHE;
     this.gemeldet = {};
     leereUntertitel();
-    this.werk()?.stoppeAlles();
+    this.mitWerk((w) => w.stoppeAlles());
   }
 
   /** Was gerade klingen soll (für Tests und die Anzeige). */
@@ -159,14 +161,30 @@ export class Tonregie {
 
   private spiele(): void {
     this.meldeAenderungen();
+    const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
+    this.mitWerk((werk) => {
+      void werk.spieleSchleife("musik", s.musik).catch(tonfehler);
+      void werk.spieleSchleife("geraeusch", s.geraeusch).catch(tonfehler);
+      // Die Quelle schweigt im Dialog mit eigener Musik nicht: Sie gehört zum Ort, nicht zur Szene.
+      void werk.spieleSchleife("quelle", this.laut ? this.nah.musik : null).catch(tonfehler);
+      werk.setzeNaehe(this.laut && this.nah.musik ? this.nah.anteil : 0);
+    });
+  }
+
+  /**
+   * Arbeit am Spieler, wenn es einen gibt. Ist der Tonerzeuger gestoppt (WebKit beim Neuladen:
+   * „Context is stopped“), wird er verworfen und der Ton fällt diesmal aus; andere Fehler gehen
+   * weiter an den Aufrufer (keine verschluckten Fehler).
+   */
+  private mitWerk(arbeit: (werk: Spielwerk) => void): void {
     const werk = this.werk();
     if (!werk) return;
-    const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
-    void werk.spieleSchleife("musik", s.musik).catch(tonfehler);
-    void werk.spieleSchleife("geraeusch", s.geraeusch).catch(tonfehler);
-    // Die Quelle schweigt im Dialog mit eigener Musik nicht: Sie gehört zum Ort, nicht zur Szene.
-    void werk.spieleSchleife("quelle", this.laut ? this.nah.musik : null).catch(tonfehler);
-    werk.setzeNaehe(this.laut && this.nah.musik ? this.nah.anteil : 0);
+    try {
+      arbeit(werk);
+    } catch (fehler: unknown) {
+      if (!istGestoppterTon(fehler)) throw fehler;
+      tonfehler(fehler);
+    }
   }
 }
 
@@ -176,15 +194,25 @@ const ausDemPaket: Laden = (pfad) =>
     .then((antwort) => (antwort.ok ? antwort.arrayBuffer() : null))
     .catch(() => null);
 
-let spieler: Tonspieler | null = null;
+let spieler: { readonly werk: Tonspieler; readonly ctx: AudioContext } | null = null;
 
-/** Der Spieler über dem gemeinsamen Tonerzeuger; null ohne Web Audio. */
+/**
+ * Der Spieler über dem gemeinsamen Tonerzeuger; null ohne Web Audio oder bei gestopptem Erzeuger.
+ * Wechselt der Erzeuger (der alte war gestoppt), entsteht ein neuer Spieler.
+ */
 function spielwerk(): Spielwerk | null {
-  if (spieler) return spieler;
-  const ctx = tonErzeuger();
-  if (!ctx) return null;
-  spieler = new Tonspieler(ctx, ausDemPaket);
-  return spieler;
+  return (
+    mitTon((ctx) => {
+      if (spieler?.ctx !== ctx) spieler = { werk: new Tonspieler(ctx, ausDemPaket), ctx };
+      return spieler.werk;
+    }) ?? null
+  );
+}
+
+/** Vergisst Spieler und Tonerzeuger, nachdem der Browser den Erzeuger gestoppt hat. */
+function verwirfSpielwerk(): void {
+  if (spieler) verwirfTonerzeuger();
+  spieler = null;
 }
 
 /** Die eine Tonregie des Abenteuers. */

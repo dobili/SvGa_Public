@@ -16,44 +16,22 @@
  * Aufrufer nennen weiter den Namen der Quelle („moebel/sofa.png“), `paketpfad` setzt ihn um.
  * Musik lädt erst beim Abspielen (Auftrag „Leistung“, 16.11.2026): `liesPaketdatei` holt eine
  * fehlende Datei des Verzeichnisses geprüft in den Cache, `haltePaketdateiVor` tut es ohne Lesen.
+ * Adressen stehen in paketadresse.ts, das geprüfte Laden einer Datei in dateiladen.ts (aufgeteilt am
+ * 20.11.2026, Regel 4).
  * Abhängigkeiten: schnittstelle/paket.ts, app/sprachpaket.ts (Code-Baustein nachladen).
  */
 import { ladeSprachpaket } from "../../app/sprachpaket";
 import { PAKET_ABENTEUER } from "../../sw/dateiliste";
 import {
-  PAKET_PFAD,
   VERZEICHNIS_DATEI,
   type Ladefortschritt,
   type Paketverzeichnis,
   type Paketzustand,
 } from "../schnittstelle/paket";
 import { Spielfehler } from "../schnittstelle/spielfehler";
-import {
-  gleichzeitigFuer,
-  jeGleichzeitig,
-  mitZeitlimit,
-  protokollVon,
-  pruefsumme,
-} from "./ladehilfen";
-
-const CACHE_PRAEFIX = "abenteuer-";
-
-function basis(): string {
-  return `${import.meta.env.BASE_URL}${PAKET_PFAD}`;
-}
-
-function adresse(pfad: string): string {
-  return new URL(`${basis()}${pfad}`, window.location.href).href;
-}
-
-function cachename(version: string): string {
-  return `${CACHE_PRAEFIX}${version}`;
-}
-
-/** Gibt es Cache Storage (alte Browser und manche Testläufe nicht)? */
-function mitCache(): boolean {
-  return typeof window !== "undefined" && "caches" in window;
-}
+import { ladeDatei } from "./dateiladen";
+import { gleichzeitigFuer, jeGleichzeitig, mitZeitlimit, protokollVon } from "./ladehilfen";
+import { adresse, cachename, CACHE_PRAEFIX, mitCache } from "./paketadresse";
 
 /** Das Verzeichnis vom Server (immer frisch, damit eine neue Version erkannt wird). */
 async function verzeichnisVomServer(): Promise<Paketverzeichnis> {
@@ -155,60 +133,6 @@ export async function paketzustand(): Promise<Paketzustand> {
     // Ohne Netz oder bei hängendem Netz bleibt das vorhandene Paket gültig (Sinn des Caches).
   }
   return { art: "vorhanden", version, bytes };
-}
-
-/**
- * Übernimmt eine Datei aus einer älteren Fassung des Pakets, wenn sie dort gleich ist (gleiche
- * Prüfsumme). Warum: Jede neue Fassung (etwa vier neue Bilder vom Autor, 20.11.2026) bekommt einen
- * eigenen Cache; ohne Übernahme lud das Handy jedes Mal das ganze Paket neu (rund 16 MB), jetzt nur
- * die geänderten Dateien. Ausgabe: true, wenn übernommen; eine geänderte Datei lädt dann neu.
- */
-export async function uebernimmAusAlterFassung(
-  speicher: Cache,
-  datei: Paketdatei,
-): Promise<boolean> {
-  const alt = await caches.match(adresse(datei.pfad));
-  if (!alt) return false;
-  const bytes = await alt.arrayBuffer();
-  if ((await pruefsumme(bytes)) !== datei.sha256) return false;
-  const typ = alt.headers.get("content-type") ?? "application/octet-stream";
-  await speicher.put(
-    adresse(datei.pfad),
-    new Response(bytes, { headers: { "content-type": typ } }),
-  );
-  return true;
-}
-
-/** Lädt eine Datei mit Fortschritt, prüft sie und legt sie in den Cache. */
-async function ladeDatei(
-  speicher: Cache,
-  datei: Paketdatei,
-  weiter: (bytes: number) => void,
-): Promise<void> {
-  if (
-    (await speicher.match(adresse(datei.pfad))) ||
-    (await uebernimmAusAlterFassung(speicher, datei))
-  ) {
-    weiter(datei.bytes);
-    return;
-  }
-  const antwort = await fetch(adresse(datei.pfad), { cache: "no-cache" });
-  if (!antwort.ok || !antwort.body)
-    throw new Spielfehler("fehler.paket.laden", { pfad: datei.pfad, status: antwort.status });
-  const teile: Uint8Array<ArrayBuffer>[] = [];
-  const leser = antwort.body.getReader();
-  for (;;) {
-    const { done, value } = await leser.read();
-    if (done) break;
-    teile.push(value);
-    weiter(value.byteLength);
-  }
-  const blob = new Blob(teile);
-  if ((await pruefsumme(await blob.arrayBuffer())) !== datei.sha256) {
-    throw new Spielfehler("fehler.paket.pruefsumme", { pfad: datei.pfad });
-  }
-  const typ = antwort.headers.get("content-type") ?? "application/octet-stream";
-  await speicher.put(adresse(datei.pfad), new Response(blob, { headers: { "content-type": typ } }));
 }
 
 /** Gleichzeitige Abrufe nach dem Protokoll von paket.json (ladehilfen.ts, gleichzeitigFuer). */

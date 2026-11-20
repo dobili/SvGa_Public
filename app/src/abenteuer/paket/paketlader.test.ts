@@ -5,7 +5,8 @@
  * übernimmt unveränderte Dateien aus der alten (20.11.2026).
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { paketdateiAlsAdresse, paketpfad, uebernimmAusAlterFassung } from "./paketlader";
+import { uebernimmAusAlterFassung } from "./dateiladen";
+import { paketdateiAlsAdresse, paketpfad } from "./paketlader";
 
 describe("Abenteuerpaket: Pfad im Paket", () => {
   it("setzt PNG der Quellen auf WebP um, anderes bleibt", () => {

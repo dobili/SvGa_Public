@@ -155,6 +155,11 @@ it("jeder Questschritt hat ein Ziel, das der Pfeil von überall findet", () => {
       const wo = `${q.kennung}#${i}`;
       if (AUSNAHMEN[wo]) return;
       funde.push(...pruefeSchritt(s, bilder).map((f) => `${wo}: ${f}`));
+      // Jeder Umweg (quests.json `umwege`) braucht ein Ziel, das der Pfeil genauso findet.
+      for (const u of s.umwege ?? []) {
+        const umweg = { ...s, umwege: [], ziel: u.ziel };
+        funde.push(...pruefeSchritt(umweg, bilder).map((f) => `${wo} (Umweg ${u.wenn}): ${f}`));
+      }
     });
   }
   expect(schritte).toBeGreaterThan(150);

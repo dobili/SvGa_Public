@@ -90,6 +90,11 @@
       "id": "ereignis16"
     },
     {
+      "moebel": "ds6KisteBriefe",
+      "feld": [11, 9],
+      "massstab": 0.5
+    },
+    {
       "moebel": "n9Kuppelspalt",
       "feld": [7, 1],
       "an_wand": true,

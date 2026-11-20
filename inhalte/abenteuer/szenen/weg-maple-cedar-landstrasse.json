@@ -1990,7 +1990,13 @@
     },
     {
       "moebel": "mf8FlohmarktTischA",
-      "feld": [89, 23]
+      "feld": [89, 23],
+      "id": "flohmarktTischA"
+    },
+    {
+      "moebel": "mf12FahrradKopfueber",
+      "auf": "flohmarktTischA",
+      "versatz": [2, 3]
     },
     {
       "moebel": "mf8FlohmarktTischB",

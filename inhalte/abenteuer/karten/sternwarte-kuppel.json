@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 23,
+ "nextobjectid": 24,
  "layers": [
   {
    "id": 1,
@@ -1023,6 +1023,39 @@
     },
     {
      "id": 22,
+     "name": "ds6KisteBriefe",
+     "type": "moebel",
+     "x": 176,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.5
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
+      }
+     ]
+    },
+    {
+     "id": 23,
      "name": "n9Kuppelspalt",
      "type": "moebel",
      "x": 112,

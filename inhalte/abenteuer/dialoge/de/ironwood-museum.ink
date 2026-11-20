@@ -171,5 +171,5 @@ Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 === siegel_rueckmeldung ===
 {siegelStellungBestanden: -> postsack}
 Das Wachs hält noch. #sprecher:erzaehler
-Nimm dir Zeit, mein Kind. Das Siegel hat hundertsechzig Jahre gewartet, es wartet auch noch einen Versuch. #sprecher:teague #stimmung:laechelt
+Nimm dir Zeit, mein Kind. Das Siegel hat so lange gewartet, es wartet auch noch einen Versuch. #sprecher:teague #stimmung:laechelt
 -> END

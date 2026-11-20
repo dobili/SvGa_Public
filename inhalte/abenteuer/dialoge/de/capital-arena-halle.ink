@@ -525,7 +525,7 @@ Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 - else:
     Du legst deinen König um. Victor sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
     Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
-    Du hast mich gezwungen, gut zu spielen. Danke. #sprecher:victor #stimmung:lacht
+    Du hast mich gezwungen, gut zu spielen, {held}. Danke. #sprecher:victor #stimmung:lacht
 }
 * {ausgangCapitalArenaFinale == "sieg"} [„Nein. Nur bis zum sechsten Zug. Ich hab gehofft.“]
 * {ausgangCapitalArenaFinale != "sieg"} [„Jeden Zug.“]

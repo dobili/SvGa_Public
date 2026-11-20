@@ -281,6 +281,22 @@ Profil › Einstellungen › Fehler melden.
       hell auf Dunkelblau. Ist überall alles lesbar?
       **Rückmeldung:** „N2661 ok“ oder Ort und Notiz.
 
+- [ ] N2663. **Gespräche quer:** Handy quer halten und mit jemandem sprechen. Das Gespräch steht
+      rechts als Spalte in voller Höhe, gegenüber dem Steuerkreuz; Held und Gesprächspartner
+      stehen links im Bild. Langer Text und viele Antworten lassen sich mit dem Finger rollen,
+      alle Antworten sind erreichbar. Ein Großbild steht daneben in der freien Fläche.
+      **Rückmeldung:** „N2663 ok“ oder Ort und Notiz.
+
+- [ ] N2664. **Tagebuch, Laden und Abspann quer:** Das Tagebuch nutzt quer die volle Höhe und rollt
+      mit dem Finger. Im Laden und im Abspann rollt nur der Inhalt, „Fertig“ und „Schließen“
+      stehen darunter und verdecken nichts.
+      **Rückmeldung:** „N2664 ok“ oder eine Notiz.
+
+- [ ] N2665. **Bretter quer:** In Partie, Aufgabenrunde, Vorführung und Gedächtnisstellung ist das
+      Brett quer ganz zu sehen, kein Steuerkreuz liegt darüber. Vor „Ans Brett“ ist das Ziel ganz
+      lesbar.
+      **Rückmeldung:** „N2665 ok“ oder Ort und Notiz.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein

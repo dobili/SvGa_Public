@@ -162,9 +162,12 @@ test("Belohnung: die Münzkiste am Flussweg, die Anzeige zählt hoch und blendet
 test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der nächste", async ({
   page,
 }) => {
-  // Runde 7: Statisten mit `sagt` sind ansprechbar (Dokument 16, Abschnitt 3.1).
+  // Runde 7: Statisten mit `sagt` sind ansprechbar (Dokument 16, Abschnitt 3.1). Die Erklärung
+  // der Münzen gilt als gezeigt: Sie kam sonst nach der ersten Blase, und ein Tipp auf „Sprechen“
+  // genau dann brachte in CI einmal keine Blase (Chromium, 20.11.2026; offen gemeldet).
   const stand = {
     ...STAND,
+    dialogvariablen: { ...STAND.dialogvariablen, muenzenErklaert: true },
     position: {
       karte: "summitCity.bergladen",
       ...feldDarunter("summit-city-bergladen", "ladenhilfe"),
@@ -191,6 +194,7 @@ test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der n
   // bringt den nächsten Satz (Wunsch des Autors, 14.11.2026: ein Textfenster für die Geschichte).
   await blase.getByRole("button", { name: "Weiter" }).click();
   await expect(blase).toHaveCount(0);
+  await expect(aktion).toHaveText("Sprechen");
   await aktion.click();
   await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe.2"));
   await blase.getByRole("button", { name: "Weiter" }).click();

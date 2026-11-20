@@ -187,40 +187,7 @@
     transform: translateX(-50%);
   }
 
-  /* Dialog: Porträt links, Text in der Mitte, Wahlen und „Weiter“ rechts in einer Spalte. */
-  .abenteuer-dialog:not(.abenteuer-sprechblase) {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) minmax(11rem, 34%);
-    align-items: end;
-    column-gap: calc(var(--raster) * 2);
-  }
-
-  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-grossansicht {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-dialog-kopf {
-    grid-column: 1;
-    grid-row: 2;
-    flex-direction: column;
-    margin: 0;
-    text-align: center;
-  }
-
-  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-dialog-text {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: center;
-  }
-
-  .abenteuer-dialog:not(.abenteuer-sprechblase)
-    > :is(.abenteuer-dialog-wahlen, .abenteuer-dialog-weiter) {
-    grid-column: 3;
-    grid-row: 2;
-    width: 100%;
-    margin: 0;
-  }
+  /* Der Dialog steht quer als Seitenspalte (querformat.css). */
 }
 
 /* Im Dialog wandert die Leiste nach oben links: unten spricht der Dialog (beide Formate). */

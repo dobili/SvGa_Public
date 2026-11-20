@@ -34,12 +34,16 @@ function geloesteUebungen(kapitel: readonly number[]) {
  */
 async function schliesseFeiern(seite: Page): Promise<void> {
   const feiern = [seite.getByTestId("ringfeier"), seite.getByTestId("abzeichenmeldung")];
+  // Fertig erst, wenn keine Feier steht und die Hauptleiste wieder da ist: Unter Last kam eine
+  // Gratulation erst nach der Frist und verdeckte „Profil“ (ganzes e2e, 20.11.2026).
+  const leiste = seite.getByRole("navigation", { name: "Hauptbereiche" });
   for (let i = 0; i < HOECHSTENS_FEIERN; i++) {
     await seite.waitForTimeout(FEIER_FRIST_MS);
     const offen = (await Promise.all(feiern.map((f) => f.count()))).findIndex((n) => n > 0);
-    if (offen < 0) return;
-    await feiern[offen]?.getByRole("button", { name: "Weiter" }).first().click();
+    if (offen < 0 && (await leiste.isVisible())) return;
+    if (offen >= 0) await feiern[offen]?.getByRole("button", { name: "Weiter" }).first().click();
   }
+  await expect(leiste).toBeVisible();
 }
 
 test("Sicherung: Rückfrage nennt die Partien, auf dem zweiten Gerät keine alten Gratulationen (N2465, N2495)", async ({

@@ -30,6 +30,7 @@ import { Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
 import { Fortsetzungen } from "./Fortsetzungen";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { szeneAus, useOberweltkern } from "./kern";
+import { useTextspalte } from "./textspalte";
 import { Kopfleiste } from "./Kopfleiste";
 import { Laden } from "./Laden";
 import { Reisen } from "./Reisen";
@@ -121,6 +122,7 @@ export function Oberwelt() {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
   }, [spiel, fensterOffen, welt]);
   useOffeneRueckmeldung(k, oeffneDialog, welt !== null && !fensterOffen);
+  useTextspalte(dialog !== null, () => szeneAus(spiel)?.passeKameraAn());
   // Einmalige Hinweise zur Steuerung (Erstspieler-Durchgang 20.11.2026, useSteuerhinweis.ts).
   const hinweis = useSteuerhinweis(k, {
     frei: welt !== null && !fensterOffen && meldung === null,
@@ -178,7 +180,9 @@ export function Oberwelt() {
         <p className="fehlertext abenteuer-ergebnis">{tSpiel("oberwelt.fehler", { fehler })}</p>
       )}
       {!welt && !fehler && <p className="lade abenteuer-ergebnis">{tSpiel("oberwelt.laedt")}</p>}
-      {welt && !dialog && (
+      {/* Nicht über Brettfenstern: Quer ragte das Kreuz in Vorführung und Gedächtnisstellung über
+          den Rand des Fensters (20.11.2026); laufen kann der Held dort ohnehin nicht. */}
+      {welt && !dialog && !vorfuehrung && !gedaechtnis && (
         <Steuerkreuz
           beiRichtung={beiRichtung}
           aktion={aktionFuer(welt, treffer)}

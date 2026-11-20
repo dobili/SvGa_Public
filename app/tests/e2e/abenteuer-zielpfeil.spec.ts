@@ -1,8 +1,9 @@
 /**
  * Zielpfeil nur auf Wunsch (Wunsch des Autors, 19.11.2026): Ohne Wahl zeigt kein Pfeil. Im Tagebuch
  * hat jede laufende Aufgabe ein Symbol; Antippen zeigt den Pfeil zu ihrem Ziel (hier zu Mama),
- * noch einmal Antippen schaltet ihn ab. Erreicht der Held das Ziel und ist die Aufgabe erledigt,
- * verschwindet der Pfeil. Wohin er zeigt, steht in einem versteckten Feld (Orientierung.tsx), weil
+ * noch einmal Antippen schaltet ihn ab. Erreicht der Held das Ziel, folgt der Pfeil dem nächsten
+ * Schritt (seit 20.11.2026 hat „Ein Abend im neuen Haus“ die Schritte „Schlafen gehen“ und „Zur
+ * Schule“, Erstspieler-Durchgang: vorher stand der Zielhinweis bis zum Coach leer). Wohin er zeigt, steht in einem versteckten Feld (Orientierung.tsx), weil
  * die Welt ein Phaser-Canvas ist.
  */
 import { expect, test, type Page } from "@playwright/test";
@@ -55,7 +56,7 @@ async function klickeDurch(seite: Page): Promise<void> {
   }
 }
 
-test("Zielpfeil auf Wunsch: aus, im Tagebuch an, zum Ziel, nach dem Ziel wieder aus", async ({
+test("Zielpfeil auf Wunsch: aus, im Tagebuch an, zum Ziel, danach zum nächsten Schritt", async ({
   page,
 }) => {
   test.slow();
@@ -86,7 +87,8 @@ test("Zielpfeil auf Wunsch: aus, im Tagebuch an, zum Ziel, nach dem Ziel wieder 
   await page.getByRole("button", { name: "Schließen" }).click();
   await expect.poll(() => zielfeld(page), { timeout: 10000 }).toBe("16,7");
 
-  // Zu Mama gehen und sie ansprechen: Der Abend erledigt die Aufgabe, der Pfeil verschwindet.
+  // Zu Mama gehen und sie ansprechen: Der Abend erledigt den Schritt, der Pfeil zeigt danach auf
+  // die Treppe nach oben (1, 4), zum Brett auf dem Schreibtisch.
   await page.keyboard.down("ArrowRight");
   await expect.poll(() => kachel(page), { timeout: 5000, intervals: [50] }).toBe("15,7");
   await page.keyboard.up("ArrowRight");
@@ -95,7 +97,10 @@ test("Zielpfeil auf Wunsch: aus, im Tagebuch an, zum Ziel, nach dem Ziel wieder 
   await aktion.click();
   await expect(page.getByTestId("abenteuer-dialog")).toBeVisible({ timeout: 10000 });
   await klickeDurch(page);
-  await expect.poll(() => zielfeld(page), { timeout: 10000 }).toBe("aus");
+  await expect.poll(() => zielfeld(page), { timeout: 10000 }).toBe("1,4");
   await page.getByTestId("abenteuer-tagebuchknopf").click();
-  await expect(page.getByTestId(`abenteuer-zielpfeil-${QUEST}`)).toHaveCount(0);
+  await expect(page.getByTestId(`abenteuer-zielpfeil-${QUEST}`)).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
 });

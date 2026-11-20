@@ -18,6 +18,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { chromium, devices, test, type Page } from "@playwright/test";
+import type { Abenteuerstand } from "../../src/abenteuer/schnittstelle/spielstand";
 import { schreibeStandImBrowser } from "../e2e/abenteuer-affe";
 import { beendeSpielerDesProzesses } from "../e2e/abenteuer-zugwahl";
 import { spieleRunde } from "./aufgaben";
@@ -34,9 +35,11 @@ import { Messung } from "./messung";
 import { spielePartie } from "./partie";
 import { Planer } from "./planer";
 import { Rueckmeldungsbeobachter } from "./rueckmeldung";
+import { blaettereTagebuch, dreheUm, Eiliger } from "./eilig";
 import { Schwaechling } from "./schwach";
 import { standAus } from "./simstand";
 import { ladeSpieldaten, type Spieldaten } from "./welt";
+import { holeWachfunde, installiereWache } from "./wache";
 import { weltschritt } from "./weltschritt";
 
 const ORDNER = process.env.DURCHLAUF_ORDNER ?? "";
@@ -154,6 +157,22 @@ async function foto(seite: Page, ordner: string, name: string): Promise<void> {
   await seite.screenshot({ path: join(ordner, "bilder", `${name}.png`) }).catch(() => undefined);
 }
 
+/**
+ * Die Hast des eiligen Spielers (eilig.ts) in der freien Welt: gleich wieder zurück durch den
+ * Eingang (`zurueckNach`), oder Tagebuch auf und zu. Ausgabe: ob er etwas davon getan hat.
+ */
+async function eileWeiter(
+  lauf: Lauf,
+  daten: Spieldaten,
+  stand: Abenteuerstand,
+  zurueckNach: string,
+): Promise<boolean> {
+  if (!lauf.eilig.an) return false;
+  if (zurueckNach && (await dreheUm(lauf, daten, stand, zurueckNach))) return true;
+  if (!lauf.eilig.tagebuchJetzt()) return false;
+  return blaettereTagebuch(lauf, lauf.messung.jetzt.kartenwechsel % 2 === 0);
+}
+
 test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
   test.skip(ORDNER === "", "nur mit DURCHLAUF_ORDNER");
   const ordner = join(ORDNER, FORMAT);
@@ -179,6 +198,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
   kontext.setDefaultTimeout(GRIFF_FRIST_MS);
   kontext.setDefaultNavigationTimeout(SEITEN_FRIST_MS);
   const seite = kontext.pages()[0] ?? (await kontext.newPage());
+  await installiereWache(seite);
   seite.on("pageerror", (e) => messung.fund("ausnahme", e.message.slice(0, 300)));
   const lauf: Lauf = {
     seite,
@@ -188,6 +208,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
     frist: Date.now() + DAUER_MS,
     gehalten: null,
     schwach: new Schwaechling(ordner),
+    eilig: new Eiliger(),
   };
   const daten = ladeSpieldaten();
   const planer = new Planer(daten);
@@ -205,6 +226,8 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
   let puls = Date.now();
   let ohneSpeicher = 0;
   let fotos = 0;
+  /** Eiliger Spieler: die Karte, in die er gleich zurückläuft (leer: keine). */
+  let umdrehenNach = "";
   while (Date.now() < ende) {
     const lage = await liesLage(seite);
     const jetzt = Date.now();
@@ -217,6 +240,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
       messung.log(`Puls: Bild ${lage.bild}, Kachel ${lage.kachel}, Knöpfe: ${knoepfe.join(" | ")}`);
       if (lage.bild !== "welt") await foto(seite, ordner, "puls");
     }
+    await holeWachfunde(lauf);
     if (await bedieneUpdate(lauf, lage)) continue;
     if (lage.bild === "partie") {
       rueck.vorher((await liesSpeicher(seite)).stand?.nachErgebnis);
@@ -251,6 +275,7 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
         messung.akt = stand.handlung.akt;
         if (stand.position.karte !== messung.karte) {
           messung.jetzt.kartenwechsel += 1;
+          if (lauf.eilig.drehtUm(stand.position.karte)) umdrehenNach = messung.karte;
           vergissWiederholungen(g);
         }
         messung.karte = stand.position.karte;
@@ -275,6 +300,10 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
       if (messung.abspann && !BIS_QUEST) {
         grund = "Abspann erreicht";
         break;
+      }
+      if (await eileWeiter(lauf, daten, stand, umdrehenNach)) {
+        umdrehenNach = "";
+        continue;
       }
       if (!(await mitFrist(weltschritt(lauf, daten, planer), "Welt"))) {
         messung.fund("festgefahren", `Kein Ziel mehr: Stand ${JSON.stringify(stand?.handlung)}`);

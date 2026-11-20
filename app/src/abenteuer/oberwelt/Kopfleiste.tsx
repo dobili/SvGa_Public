@@ -52,6 +52,8 @@ export function Kopfleiste(props: {
   /** Im Laden bleibt die Münzanzeige stehen (Wunsch des Autors, 20.11.2026). */
   readonly imLaden: boolean;
   readonly beiTagebuch: () => void;
+  /** Der Tagebuchknopf pulsiert einmal (Hinweis zur Steuerung, Steuerhinweis.tsx). */
+  readonly tagebuchPuls?: boolean;
   /** Rückruf fürs Reisebrett, oder null, wenn der Knopf fehlt. */
   readonly beiReisebrett: (() => void) | null;
   /** Rückruf für die Monatskarte, oder null, wenn der Knopf fehlt. */
@@ -64,6 +66,7 @@ export function Kopfleiste(props: {
           zeichen="📖"
           text={tSpiel("tagebuch.knopf")}
           testid="abenteuer-tagebuchknopf"
+          zusatz={props.tagebuchPuls ? "abenteuer-tagebuchknopf-puls" : ""}
           beiKlick={props.beiTagebuch}
         />
         {props.beiReisebrett && (

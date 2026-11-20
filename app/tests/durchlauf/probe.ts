@@ -16,6 +16,7 @@ import { starteMitStand } from "../e2e/abenteuer-affe";
 import type { Lauf } from "./eingabe";
 import { liesLage } from "./lage";
 import { Messung } from "./messung";
+import { Eiliger } from "./eilig";
 import { Schwaechling } from "./schwach";
 import { standAus } from "./simstand";
 import { ladeSpieldaten, type Spieldaten } from "./welt";
@@ -62,6 +63,7 @@ export async function starteProbe(name: string): Promise<Probe> {
     frist: Date.now() + PROBE_MS,
     gehalten: null,
     schwach: new Schwaechling(ordner),
+    eilig: new Eiliger(),
   };
   return { lauf, daten, ordner, browser };
 }

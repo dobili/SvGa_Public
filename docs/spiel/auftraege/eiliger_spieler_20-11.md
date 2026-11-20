@@ -96,7 +96,61 @@ Verlorene Rückmeldungen meldet wie bisher `rueckmeldung.ts`.
       während Build, Oberflächentests, Simulation und zwei Durchläufe zugleich liefen.
   - Den Zielpfeil im Tagebuch prüft der schwache Spieler nicht; das tut der eilige Spieler.
 
-## 4. Grenzen
+## 4. Akt 3 und 4 (zweiter Auftrag, 20.11.2026 abends)
+
+Der eilige Spieler lief ab dem simulierten Beginn von Akt 3 (aktstand.cjs) bis Akt 4, dann ab dem
+Beginn von Akt 4 bis zum Abspann, je hochkant und quer.
+
+| Strecke        | Dauer            | Partien | Hast                            | Rückmeldungen      |
+| -------------- | ---------------- | ------- | ------------------------------- | ------------------ |
+| Akt 3 hochkant | 49 min           | 21      | 89, davon 3 Mal Laden sofort zu | 34, keine verloren |
+| Akt 3 quer     | 3 Etappen, s. u. | 25      | 240 (viele im Kreis)            | 36, keine verloren |
+| Akt 4 hochkant | 41 min           | 24      | 69, davon 5 Mal Laden sofort zu | 23, keine verloren |
+| Akt 4 quer     | 38 min           | 23      | 71, davon 5 Mal Laden sofort zu | 22, keine verloren |
+
+Revanchen (6 bis 7 je Strecke) und Erinnerungen (Siedlung, Hütte) liefen ohne Fund.
+
+Spielfehler, behoben:
+
+- **Meldung unter dem Abspann:** Am Ende von Akt 4 lag eine Meldung unter dem Abspann, ihr
+  „Weiter“ war verdeckt (beide Formate).
+  - Korrektur: Der Abspann zählt zu den offenen Fenstern, die Meldung wartet (`Oberwelt.tsx`).
+  - Prüfung: Die Wache kennt den Abspann jetzt.
+- **Kaputte Porträts:** Owen Fisk und Ivy zeigten im Abspann kaputte Bilder.
+  - Ursache: Für eine fehlende Paketdatei liefert der Server die Startseite (HTML, Status 200).
+  - Korrektur: `liesPaketdatei` behandelt das jetzt wie 404.
+  - Tests: `startseite.test.ts` und `abenteuer-quertext.spec.ts`; der zweite schlug vorher mit
+    einem kaputten Porträt fehl.
+  - Offen: Owen Fisk und Ivy haben kein Porträt im Paket. Das ist eine Lücke im Bildmaterial
+    (Meldung an den Hauptchat).
+
+Fehler im Durchlauf, behoben mit Tests (`planer.test.ts`):
+
+- **Pendeln zwischen Felsbogen und Desert Springs (162-mal).**
+  - Erste Ursache: Die Kreiserkennung zählte je vollständigem Stand, und Übergangsdialoge und
+    Zielpfeile ändern ihn bei jedem Durchgang. Jetzt zählt zusätzlich ein grober Zähler je
+    Queststand (Schwelle 20).
+  - Zweite Ursache: Der Planer zog den Beginn des Epilogs der laufenden Nebenquest „Der Brief“
+    vor. Auf diese Nebenquest wartet der Clubkampf gegen Mira. Spätere Anfänge stehen jetzt
+    hinter den Nebenquests.
+- **Zugerraten im Halbfinale:**
+  - Das Spiel nimmt dort nur den gesuchten Zug an, das ist gewollt.
+  - Der Durchlauf tippte immer wieder seinen eigenen Zug; die Partie stand 120 s.
+  - Jetzt probiert er je Stellung die übrigen Kandidaten.
+- **Fehlalarme der Prüfwerkzeuge:**
+  - Die Randprüfung kannte kein waagerechtes Rollen. Der Kartenfächer der Kartenwahl zeigt
+    absichtlich 3¼ Karten.
+  - Die Wache meldete Bretter, die die Seite am Rundenende aus dem Bild rollt; jetzt nur noch
+    Bretter, die sich durch Rollen nicht ins Bild holen lassen.
+
+Beobachtung für den Autor (kein Fehler im Code):
+
+- In Desert Springs zeigt der Zielpfeil der Hauptquest auf Mira. Mira sagt dann „Dot sagt, du
+  sollst erst zu Mr. Okoro.“
+- Der Weg führt also über die Nebenquest „Der Brief“, deren Pfeil im Tagebuch eigens steht.
+- Wer nur dem Hauptpfeil folgt, wird einmal weitergeschickt.
+
+## 5. Grenzen
 
 - Der Doppeltipp auf eine Antwort selbst ist nicht nachgebaut. Antworten tippt der eilige Spieler
   einzeln.

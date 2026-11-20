@@ -327,7 +327,7 @@ const AUSWEGE: readonly (RegExp | string)[] = [
   "abenteuer-deck-zurueck",
   /^Ja, aufgeben$/,
   "abenteuer-partie-aufgeben",
-  /^Partie aufgeben und in der Stadt bleiben$/,
+  /^Aufgeben und hierbleiben$/,
   /^Abbrechen|^Runde abbrechen|aufhören/i,
   /^Weiter$/,
   /^Fertig$/,

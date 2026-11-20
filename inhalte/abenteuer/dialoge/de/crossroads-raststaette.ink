@@ -214,7 +214,7 @@ Was du schon kennst: #sprecher:erzaehler
     Blindschach, von Greta an der Hütte. Eine Frau sagt ihre Züge an und sieht dabei an die Decke. #sprecher:erzaehler
 }
 {varianteSchach960Gelernt:
-    Schach960, von Mabel im Musikhaus. Jemand würfelt die Grundreihe aus und stöhnt. #sprecher:erzaehler
+    Schach960, von Mabel am Musikhaus. Jemand würfelt die Grundreihe aus und stöhnt. #sprecher:erzaehler
 }
 // Der Tisch ist Kulisse: Die Sätze zeigen, was dort gespielt wird, ohne ein Versprechen an den
 // Spieler („Kommt bald“). Spielbar sind bisher nur Blindschach und Schach960 bei ihren Figuren.

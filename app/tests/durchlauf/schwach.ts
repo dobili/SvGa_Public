@@ -180,7 +180,7 @@ export class Schwaechling {
    */
   fortsetzung(knoepfe: readonly Knopf[]): Knopf | undefined {
     const wahl = this.buch.nachNeuladen;
-    const abbrechen = knoepfe.find((k) => /^(Runde abbrechen|Partie aufgeben)/.test(k.text));
+    const abbrechen = knoepfe.find((k) => /^(Runde abbrechen|Aufgeben)/.test(k.text));
     if (!wahl || !abbrechen) return undefined;
     this.buch.nachNeuladen = null;
     if (wahl === "abbrechen") this.buch.runde = null;

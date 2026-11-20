@@ -324,7 +324,7 @@ Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß i
     Hier lag die Seite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
 }
-Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
+Unter der Rätseltafel klemmt eine lose Seite, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 {(not abschiedGesehen and not ambroseSchweigt()):
     Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
 }

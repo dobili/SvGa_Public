@@ -96,7 +96,9 @@
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [40, 28]
+      "feld": [40, 28],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "lp8Schuppen",

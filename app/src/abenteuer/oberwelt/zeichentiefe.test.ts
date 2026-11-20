@@ -31,6 +31,23 @@ describe("zeichentiefe", () => {
     const maske = ["....", "###.", "###.", "....", "...."];
     expect(zeichentiefe(moebel(maske, 80), KACHEL)).toBe(100 + 3 * KACHEL - 8);
   });
+  it("gilt auch mit Maßstab: Villa des Helden (1,1) liegt nicht über ihm vor der Haustür", () => {
+    // Wie mf4VillaWhitlock in maple-falls-aussen: 229 px hoch, Reihe 9 die letzte ganz gesperrte.
+    const maske = [
+      ".........",
+      ...Array<string>(9).fill("#########"),
+      "##.######",
+      "##.######",
+      "#...#####",
+      "#...#####",
+      ".........",
+    ];
+    const villa = { ...moebel(maske, 229), form: { drehung: 0, spiegeln: false, massstab: 1.1 } };
+    const tiefe = zeichentiefe(villa, KACHEL);
+    expect(tiefe).toBe(100 + 10 * KACHEL - 8);
+    // Der Held auf dem Ankunftsfeld unter der Tür (Maskenreihe 12) steht davor.
+    expect(100 + 12 * KACHEL + 8).toBeGreaterThan(tiefe);
+  });
   it("bleibt ohne jede Sperre in der Maske bei der Bildunterkante", () => {
     expect(zeichentiefe(moebel(["..", ".."], 32), KACHEL)).toBe(100 + 32 - 8);
   });

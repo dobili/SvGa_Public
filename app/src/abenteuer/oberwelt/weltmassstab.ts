@@ -27,3 +27,26 @@ export const FIGUR_SCHIRMPIXEL = 2;
  * auf dem Schirm 64 Pixel; der Held (30 px hoch) ist so hoch wie 20 Kartenpixel.
  */
 export const GROSS_MASSSTAB = FIGUR_SCHIRMPIXEL / ZOOM;
+
+/**
+ * Faktor auf den Maßstab der PixelLab-Figuren in Innenräumen: 4/3 (Entscheidung des Autors auf der
+ * Vergleichsseite, 20.11.2026: „innen 1,33“, für alle PixelLab-Figuren). Die Möbel innen stammen aus
+ * LimeZu Modern Interiors und sind für größere Figuren gezeichnet; bei 20 Kartenpixeln waren Stühle so
+ * hoch wie der Held. Mit 4/3 ist er 26⅔ Kartenpixel hoch, ein Figurenpixel wird 2⅔ Bildschirmpixel
+ * (aus dem Original 32 × 32 nur verkleinert, bis 1,5 wird nichts vergrößert). Außen bleiben die
+ * Figuren, wie sie sind: Dort passen sie zu den Türen (Regel 10.92), zu große Möbel außen bekommen
+ * einen Maßstab (pipeline/abenteuer/proportionen.py). Nur das Bild wächst, der Körper bleibt die
+ * Fußkachel (figurbilder.ts, stelleAufKachel).
+ */
+export const INNEN_FIGURFAKTOR = 4 / 3;
+
+/** Rahmenbreite der PixelLab-Bögen (32 × 32); schmalere Rahmen sind alte LimeZu-Bögen (16 × 32). */
+export const PIXELLAB_RAHMEN = 32;
+
+/**
+ * Zeichenmaßstab einer Figur aus Rahmenbreite und Faktor der Karte (ohne Phaser, testbar).
+ * Beispiel: PixelLab innen (32, 4/3) → 8/9; PixelLab außen (32, 1) → 2/3; LimeZu (16, 4/3) → 1.
+ */
+export function figurzeichenmassstab(rahmenbreite: number, faktor: number): number {
+  return rahmenbreite >= PIXELLAB_RAHMEN ? GROSS_MASSSTAB * faktor : 1;
+}

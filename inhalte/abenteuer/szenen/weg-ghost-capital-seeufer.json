@@ -118,7 +118,9 @@
     },
     {
       "moebel": "gc7Picknicktisch",
-      "feld": [60, 20]
+      "feld": [60, 20],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "gc7Fels",

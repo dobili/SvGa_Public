@@ -28017,10 +28017,10 @@
      "id": 534,
      "name": "wc11BahnsteigbankHinten",
      "type": "moebel",
-     "x": 768,
-     "y": 144,
-     "width": 48,
-     "height": 32,
+     "x": 778,
+     "y": 157,
+     "width": 29,
+     "height": 19,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -28033,6 +28033,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.6
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "##/.."
       }
      ]
     },
@@ -28040,10 +28050,10 @@
      "id": 535,
      "name": "wc11BahnsteigbankHinten",
      "type": "moebel",
-     "x": 816,
-     "y": 144,
-     "width": 48,
-     "height": 32,
+     "x": 826,
+     "y": 157,
+     "width": 29,
+     "height": 19,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -28056,6 +28066,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.6
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "##/.."
       }
      ]
     },

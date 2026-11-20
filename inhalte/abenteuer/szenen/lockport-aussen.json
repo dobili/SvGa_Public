@@ -246,7 +246,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [30, 37]
+      "feld": [30, 37],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "ld5WaescheBunt",

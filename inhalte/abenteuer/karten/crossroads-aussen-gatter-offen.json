@@ -10756,10 +10756,10 @@
      "id": 64,
      "name": "cr9PicknicktischLang",
      "type": "moebel",
-     "x": 448,
-     "y": 448,
-     "width": 48,
-     "height": 48,
+     "x": 456,
+     "y": 465,
+     "width": 31,
+     "height": 31,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -10772,6 +10772,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.65
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "##/##"
       }
      ]
     },
@@ -10779,10 +10789,10 @@
      "id": 65,
      "name": "cr9PicknicktischLang",
      "type": "moebel",
-     "x": 448,
-     "y": 512,
-     "width": 48,
-     "height": 48,
+     "x": 456,
+     "y": 529,
+     "width": 31,
+     "height": 31,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -10795,6 +10805,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.65
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "##/##"
       }
      ]
     },
@@ -10802,10 +10822,10 @@
      "id": 66,
      "name": "cr9PicknicktischLang",
      "type": "moebel",
-     "x": 448,
-     "y": 640,
-     "width": 48,
-     "height": 48,
+     "x": 456,
+     "y": 657,
+     "width": 31,
+     "height": 31,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -10818,6 +10838,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.65
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "##/##"
       }
      ]
     },

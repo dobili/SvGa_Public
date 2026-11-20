@@ -692,19 +692,27 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [8, 36]
+      "feld": [8, 36],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [20, 36]
+      "feld": [20, 36],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [33, 36]
+      "feld": [33, 36],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [45, 36]
+      "feld": [45, 36],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "caKisten",
@@ -1114,17 +1122,21 @@
     {
       "moebel": "rvPicknicktisch",
       "feld": [50, 47],
-      "id": "schachtisch"
+      "id": "schachtisch",
+      "versatz": [3, 6],
+      "massstab": 0.8
     },
     {
       "moebel": "rv5Brett",
       "auf": "schachtisch",
-      "versatz": [0, -4]
+      "versatz": [0, -3],
+      "massstab": 0.8
     },
     {
       "moebel": "rv16Schachuhr",
       "auf": "schachtisch",
-      "versatz": [-11, -6]
+      "versatz": [-9, -5],
+      "massstab": 0.8
     },
     {
       "moebel": "sb8Kreidespringer",
@@ -1162,7 +1174,9 @@
     {
       "moebel": "rvPicknicktisch",
       "feld": [53, 47],
-      "id": "liste"
+      "id": "liste",
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "rv9Bildschirmtisch",

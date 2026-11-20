@@ -15944,10 +15944,10 @@
      "id": 164,
      "name": "mfBank",
      "type": "moebel",
-     "x": 128,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 132,
+     "y": 584,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -15960,6 +15960,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -15967,10 +15977,10 @@
      "id": 165,
      "name": "mfBank",
      "type": "moebel",
-     "x": 320,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 324,
+     "y": 584,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -15983,6 +15993,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -15990,10 +16010,10 @@
      "id": 166,
      "name": "mfBank",
      "type": "moebel",
-     "x": 528,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 532,
+     "y": 584,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16006,6 +16026,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -16013,10 +16043,10 @@
      "id": 167,
      "name": "mfBank",
      "type": "moebel",
-     "x": 720,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 724,
+     "y": 584,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16029,6 +16059,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -17886,10 +17926,10 @@
      "id": 248,
      "name": "rvPicknicktisch",
      "type": "moebel",
-     "x": 800,
-     "y": 752,
-     "width": 32,
-     "height": 32,
+     "x": 803,
+     "y": 758,
+     "width": 26,
+     "height": 26,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17902,6 +17942,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.8
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##"
       }
      ]
     },
@@ -17909,10 +17959,10 @@
      "id": 249,
      "name": "rv5Brett",
      "type": "moebel",
-     "x": 810,
-     "y": 758,
-     "width": 12,
-     "height": 9,
+     "x": 811,
+     "y": 763,
+     "width": 10,
+     "height": 7,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17925,6 +17975,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.8
       }
      ]
     },
@@ -17932,10 +17987,10 @@
      "id": 250,
      "name": "rv16Schachuhr",
      "type": "moebel",
-     "x": 801,
-     "y": 759,
-     "width": 8,
-     "height": 6,
+     "x": 804,
+     "y": 763,
+     "width": 6,
+     "height": 5,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17948,6 +18003,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.8
       }
      ]
     },
@@ -18139,10 +18199,10 @@
      "id": 259,
      "name": "rvPicknicktisch",
      "type": "moebel",
-     "x": 848,
-     "y": 752,
-     "width": 32,
-     "height": 32,
+     "x": 853,
+     "y": 762,
+     "width": 22,
+     "height": 22,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -18155,6 +18215,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.7
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#./#."
       }
      ]
     },

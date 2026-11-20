@@ -499,7 +499,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [12, 37]
+      "feld": [12, 37],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "ca7Muelleimer",
@@ -539,7 +541,9 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [7, 62]
+      "feld": [7, 62],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "wg4Laubbaum",
@@ -1128,7 +1132,9 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [13, 71]
+      "feld": [13, 71],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -1575,7 +1581,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [14, 164]
+      "feld": [14, 164],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "wr5Pappel",

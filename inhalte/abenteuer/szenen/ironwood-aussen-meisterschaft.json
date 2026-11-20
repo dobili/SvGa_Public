@@ -244,11 +244,15 @@
     },
     {
       "moebel": "mf2BankLang",
-      "feld": [65, 44]
+      "feld": [65, 44],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [30, 46]
+      "feld": [30, 46],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "wg4Wildblumen",
@@ -348,7 +352,9 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [47, 55]
+      "feld": [47, 55],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "iw5Schuppen",

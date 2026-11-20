@@ -880,13 +880,16 @@
     {
       "moebel": "mf9Rundtisch",
       "feld": [18, 24],
-      "id": "brett"
+      "id": "brett",
+      "versatz": [6, 11],
+      "massstab": 0.65
     },
     {
       "moebel": "mf2SchachbrettFiguren",
       "feld": [0, 0],
       "auf": "brett",
-      "versatz": [0, 5]
+      "versatz": [0, 3],
+      "massstab": 0.65
     },
     {
       "moebel": "fzDeckhausGemini",
@@ -923,13 +926,16 @@
     {
       "moebel": "mf9Rundtisch",
       "feld": [17, 64],
-      "id": "kapitaenstisch"
+      "id": "kapitaenstisch",
+      "versatz": [6, 11],
+      "massstab": 0.65
     },
     {
       "moebel": "mf2SchachbrettFiguren",
       "feld": [0, 0],
       "auf": "kapitaenstisch",
-      "versatz": [0, 5]
+      "versatz": [0, 3],
+      "massstab": 0.65
     },
     {
       "moebel": "pd7Finkenzeichen",
@@ -938,27 +944,39 @@
     },
     {
       "moebel": "fz9Bank",
-      "feld": [9, 42]
+      "feld": [9, 42],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "fz9Bank",
-      "feld": [17, 42]
+      "feld": [17, 42],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "fz9Bank",
-      "feld": [12, 47]
+      "feld": [12, 47],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "fz9Bank",
-      "feld": [8, 52]
+      "feld": [8, 52],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "fz9Bank",
-      "feld": [16, 52]
+      "feld": [16, 52],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "fz9Bank",
-      "feld": [12, 57]
+      "feld": [12, 57],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "sd6Liegestuhl",
@@ -1014,7 +1032,9 @@
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [14, 38]
+      "feld": [14, 38],
+      "versatz": [6, 11],
+      "massstab": 0.65
     },
     {
       "moebel": "sd6Liegestuhl",
@@ -1038,7 +1058,9 @@
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [19, 55]
+      "feld": [19, 55],
+      "versatz": [6, 11],
+      "massstab": 0.65
     },
     {
       "moebel": "gc7Schirm",
@@ -1046,7 +1068,9 @@
     },
     {
       "moebel": "fz9Bank",
-      "feld": [12, 65]
+      "feld": [12, 65],
+      "versatz": [6, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "wg6Faesser",

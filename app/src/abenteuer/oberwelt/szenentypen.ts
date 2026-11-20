@@ -63,6 +63,8 @@ export interface Szenendaten {
   readonly uebergaenge?: readonly string[];
   readonly melder: Melder;
   readonly tempofaktor?: number; // Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1)
+  /** Faktor auf die Größe der Figuren (Innenräume: INNEN_FIGURFAKTOR, weltmassstab.ts; sonst 1). */
+  readonly figurfaktor?: number;
   /** Bögen der Statisten und Tiere (belebungsschicht.ts), Pfad im Paket → Adresse. */
   readonly belebungsbilder?: Belebungsbilder;
   readonly stunde?: number; // Stunde für die Statisten (`wann`); sonst die Uhr des Geräts

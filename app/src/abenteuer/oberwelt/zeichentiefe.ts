@@ -12,13 +12,18 @@ import type { Moebel } from "./moebel";
  * eine ganz gesperrte Reihe, zählt deshalb die Reihe darunter als Unterkante (die Figur steht dort
  * vor der Fassade). Ohne ganz gesperrte Reihe zählt die letzte Reihe mit einer Sperre: Ganz freie
  * Reihen darunter (Stufen vor dem Seiteneingang der Bibliothek in Cedar Creek) liegen vor dem Bild.
- * Ohne Maske, mit Form oder ohne jede Sperre bleibt die Bildunterkante.
+ * Ohne Maske oder ohne jede Sperre bleibt die Bildunterkante.
+ * Auch mit Form (Maßstab, Drehung, Zuschnitt aus dem Karteneditor): `angabe` ist dann schon geformt,
+ * die Maske liegt im Kachelraster des geformten Bildes (moebelform.ts, Maske am Kartenobjekt).
+ * Warum (Notiz des Autors, 20.11.2026, Foto): Die Villen in Maple Falls stehen mit Maßstab 1,1; für
+ * sie galt bisher immer die Bildunterkante, und das Haus des Helden lag über ihm, wenn er vor der
+ * Haustür stand.
  * Beispiel: Whitlock-Haus 13 Reihen, Reihe 9 ganz gesperrt → Tiefe y + 10 · 16 − 8.
  */
 export function zeichentiefe(m: Moebel, kachel: number): number {
   const unten = m.y + m.angabe.hoehe - kachel / 2;
   const maske = m.angabe.maske;
-  if (!maske || m.form) return unten;
+  if (!maske) return unten;
   const letzte = (passt: (zeile: string) => boolean) =>
     maske.reduce((gefunden, zeile, reihe) => (passt(zeile) ? reihe : gefunden), -1);
   const letzteVolle = letzte((zeile) => zeile.length > 0 && !zeile.includes("."));

@@ -27,7 +27,7 @@ import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { sucheKipppunkt, type Bewerter } from "./kipppunkt";
-import { ladeSpielMitMaia, mitMaiaPflicht } from "./maiapflicht";
+import { mitMaiaPflicht } from "./maiapflicht";
 import { partieeinstellungAus } from "./partiestart";
 import { partieergebnisAus } from "./partieergebnis";
 import { mitFremderEroeffnung, mitVorratsstellung } from "./vorratsstellung";
@@ -183,7 +183,7 @@ export function useAppdienste(): Appdienste {
       },
       paket: () => bekannterPaketzustand,
       ladePaket: async (fortschritt) => {
-        await ladeSpielMitMaia(ladePaket, fortschritt);
+        await ladePaket(fortschritt);
         await aktualisierePaketzustand();
       },
       zurueck,

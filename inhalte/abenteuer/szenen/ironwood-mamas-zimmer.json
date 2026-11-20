@@ -162,10 +162,6 @@
       "name": "omaRuth",
       "feld": [5, 7],
       "blick": "links"
-    },
-    {
-      "name": "mama",
-      "feld": [11, 6]
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],

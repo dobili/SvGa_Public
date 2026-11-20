@@ -835,6 +835,11 @@
     {
       "name": "priya",
       "feld": [17, 8]
+    },
+    {
+      "name": "mama",
+      "feld": [29, 8],
+      "blick": "rechts"
     }
   ],
   "belebung": [

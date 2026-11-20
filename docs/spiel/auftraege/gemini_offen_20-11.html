@@ -110,82 +110,227 @@
   </head>
   <body>
     <main>
-      <h1>Gemini-Aufträge, offen (Stand 18.11.2026)</h1>
+      <h1>Gemini-Aufträge, offen (Stand 20.11.2026)</h1>
       <p>
-        Alle Bilder, die nach der Lieferung vom 18.11. (B33 bis B100) noch
-        fehlen, dazu die offenen Gebäudewünsche aus RO37 und RO39. Oben das
-        Dringendste. Die Nummern G1, G2 … gelten nur für diese Datei; in
-        Klammern steht die frühere Nummer.
+        Alle Bilder, die im Spiel noch fehlen, in einer Datei: die Einleitung
+        (E1 bis E4), zwei neue Großbilder (N1, N2), die offenen Fundbilder und
+        Kartenbilder der Liste vom 18.11. (gleiche Nummern G…) und die
+        freiwilligen Nachlieferungen. Erledigtes steht nicht mehr hier. Ein
+        Prüfwerkzeug gleicht die Liste mit dem Spiel ab
+        (pipeline/abenteuer/bildpruefung.py).
       </p>
       <h2>So geht es</h2>
       <ol>
         <li>Für jedes Bild einen <b>neuen Chat</b> in Gemini öffnen.</li>
         <li>
           Die Stilvorlage anhängen: <code>ki-roh/stilvorlage.png</code> im
-          privaten Repository (dieselbe wie bisher). Beim Rasthaus zusätzlich
-          das heutige Bild, siehe Hinweis dort.
+          privaten Repository.
         </li>
         <li>Auf „Prompt kopieren“ tippen und den Text einfügen.</li>
         <li>
-          Das Ergebnis als Bildschirmfoto oder Download nach
-          <code>ki-roh/</code> legen und dem Hauptchat sagen, welche Nummern es
-          sind. Zuschneiden, Verkleinern und Ablegen macht der Hauptchat.
+          <b>Neu, Großbilder und Fundbilder (E, N, G1 bis G28):</b> das Ergebnis
+          direkt im privaten Repository nach
+          <code>spiel/bilder/</code> hochladen, mit dem Dateinamen bei „Ablage“
+          (PNG oder JPG, Größe egal). Zuschneiden und Verkleinern macht der Bau
+          der App; mit dem nächsten Stand der App ist das Bild im Spiel, und das
+          Handy lädt nur das neue Bild nach.
+        </li>
+        <li>
+          <b
+            >Kartenbilder (G8 bis G10, G29) und Nachlieferungen (G30 bis G37)</b
+          >
+          wie bisher nach <code>ki-roh/</code> legen und dem Hauptchat die
+          Nummern sagen: Kartenbilder werden aus dem Magenta ausgeschnitten,
+          Nachlieferungen ersetzen schon vorhandene Bilder.
         </li>
       </ol>
       <p>
-        <b>Fundbilder</b> haben Pergamentgrund und zeigen einen Gegenstand groß.
-        <b>Kartenbilder</b> stehen auf Magenta und werden später ausgeschnitten.
-        Kein Bild enthält Schrift; Text legt das Spiel darüber.
-      </p>
-      <p>
-        <b>Neu bei den Finch-Figuren:</b> Bauern, Türme, Springer und Läufer aus
-        Buchsbaum sahen bisher gleich aus. Jede neue Figur trägt deshalb vorn am
-        Fuß groß den Buchstaben ihrer Linie aus der Grundstellung eingeschnitzt
-        (Bauer B → „b“, Springer B → „g“, Läufer A → „c“ usw.). Das ist die
-        einzige Ausnahme von „keine Buchstaben“. Gerät ein Buchstabe schief oder
-        falsch, einfach neu erzeugen. Ganz unten stehen freiwillige
-        Nachlieferungen für die schon gelieferten Finch-Figuren, damit alle
-        gleich aussehen.
-      </p>
-      <p>
-        <b>Schon erledigt aus RO37:</b> Rettungsboot (17.11.), Glücksrad
-        (17.11.), Turnhalle Hochebene (17.11.), größerer Pavillon in Riverton
-        (Achteck mit Geländer, 15.11.). Die Sitzbilder sind ein Auftrag für
-        PixelLab, nicht für Gemini, und stehen deshalb nicht hier.
+        Kein Bild enthält Schrift; wo im Motiv etwas steht, bleibt die Fläche
+        leer. Einzige Ausnahme: der eingeschnitzte Buchstabe am Fuß der
+        Finch-Figuren.
       </p>
       <h2>Inhalt</h2>
       <ul>
-        <li>
-          <a href="#g0"
-            >Dringend: Akt 1 und Akt 2 (Hauptweg, Vertikalschnitt)</a
-          >
-          (7)
-        </li>
-        <li><a href="#g1">Dringend: Kartenbilder Akt 2</a> (3)</li>
-        <li>
-          <a href="#g2"
-            >Mittel: übrige Fundbilder in Staffel 1 (Nebenorte bei Ironwood und
-            Maple Falls)</a
-          >
-          (2)
-        </li>
-        <li>
-          <a href="#g3"
-            >Mittel: Fundbilder in Staffel 2, in der Reihenfolge der Reise</a
-          >
-          (16)
-        </li>
-        <li><a href="#g4">Später: Winter</a> (1)</li>
-        <li>
-          <a href="#g5"
-            >Freiwillig: Finch-Figuren nachliefern, damit alle einen Buchstaben
-            tragen</a
-          >
-          (8)
-        </li>
+        <li><a href="#k1">Dringend: Einleitung</a> (4)</li>
+        <li><a href="#k2">Dringend: Akt 1 und Akt 2, Fundbilder</a> (7)</li>
+        <li><a href="#k3">Dringend: Kartenbilder Akt 2</a> (3)</li>
+        <li><a href="#k4">Großbilder Akt 2 und 3</a> (2)</li>
+        <li><a href="#k5">Mittel: Fundbilder Staffel 1 und 2</a> (18)</li>
+        <li><a href="#k6">Später: Winter</a> (1)</li>
+        <li><a href="#k7">Freiwillig: Finch-Figuren nachliefern</a> (8)</li>
       </ul>
-      <h2 id="g0">Dringend: Akt 1 und Akt 2 (Hauptweg, Vertikalschnitt)</h2>
-      <section class="auftrag" id="n1">
+      <h2 id="k1">Dringend: Einleitung</h2>
+      <section class="auftrag" id="e1">
+        <h3>
+          <span class="nr">E1</span> <code>einzug_fahrt</code> Ankunft in Maple
+          Falls
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:einzug_fahrt)</dd>
+          <dt>Ablage</dt>
+          <dd>
+            <code>spiel/bilder/einzug-fahrt.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Erste Zeile der Einleitung: „Ende August. Drei Tage Packen, ein
+            langer Tag im Auto. Hinter dem Ortsschild von Maple Falls rauscht
+            irgendwo Wasser.“ (maple-falls-aussen.einleitung)
+          </dd>
+          <dt>Text</dt>
+          <dd>
+            Das Ortsschild bleibt leer; den Namen kennt der Leser aus dem Text.
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: late afternoon at the end of summer, seen from behind a small dusty family car with a roof box, driving on a country road into a small wooded town. A blank green town sign at the roadside (no letters). Maple trees with leaves just turning red at the edges, wooden houses with porches ahead, and in the far background a waterfall spilling down a forested hill, a little mist above it. Warm golden light, long shadows, calm and a bit melancholic.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="e2">
+        <h3>
+          <span class="nr">E2</span> <code>einzug_haus</code> Das Haus an der
+          Birch Lane
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:einzug_haus)</dd>
+          <dt>Ablage</dt>
+          <dd>
+            <code>spiel/bilder/einzug-haus.png</code> (direkt dorthin hochladen,
+            Name genau so; JPG geht auch)
+          </dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Zweite Zeile: „Birch Lane. Ein altes Holzhaus mit Veranda, davor ein
+            Ahorn, dessen Blätter an den Rändern schon rot sind. Am Bordstein
+            steht der Umzugswagen mit offener Klappe.“
+          </dd>
+          <dt>Text</dt>
+          <dd>Kein Text am Umzugswagen und am Briefkasten.</dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: an old two-storey wooden house with a covered front porch, white-grey painted planks, a steep roof with a small round attic window under the gable (the attic is important), a big maple tree right next to the house with one branch almost touching a window, leaves red at the edges. On the street in front a plain white moving truck with its back door open and a ramp, cardboard boxes and a sofa standing on the lawn, a small white picket fence with an open gate. Late afternoon light, a woman (seen from behind, small, simple shapes, no face detail) carrying a box towards the porch.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="e3">
+        <h3>
+          <span class="nr">E3</span> <code>einzug_wohnzimmer</code> Das leere
+          Wohnzimmer am Abend
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:einzug_wohnzimmer)</dd>
+          <dt>Ablage</dt>
+          <dd>
+            <code>spiel/bilder/einzug-wohnzimmer.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Erste Zeile im Wohnzimmer: „Am Abend ist der Umzugswagen weg.
+            Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht
+            fällt in langen staubigen Streifen.“
+            (maple-falls-wohnzimmer.ankunft)
+          </dd>
+          <dt>Text</dt>
+          <dd>
+            Die Kartons tragen keine Schrift (auf ihnen stehen im Text nur
+            Namen).
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: an almost empty old living room with wooden floorboards and cream walls in the evening: stacks of cardboard boxes, a sofa placed crookedly in front of a tall window, a table still in pieces leaning against the wall, an open pizza box on the floor. Low evening sun falls through the dusty window in long diagonal light stripes with dust in the air; outside the window a maple branch. A wooden staircase leads up at the side wall. Quiet, strange and a little lonely, but warm.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="e4">
+        <h3>
+          <span class="nr">E4</span> <code>kiste_whitlock</code> Die Kiste von
+          Mrs. Whitlock
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:kiste_whitlock)</dd>
+          <dt>Ablage</dt>
+          <dd>
+            <code>spiel/bilder/kiste-whitlock.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Zeile: „Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht
+            aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift:
+            „Whitlock – nicht wegwerfen.““
+          </dd>
+          <dt>Text</dt>
+          <dd>
+            Kein Text auf dem Deckel: Die Fläche für die Aufschrift bleibt leer,
+            das Spiel legt „Whitlock – nicht wegwerfen.“ darüber.
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: close view from above of an old wooden box with a hinged lid standing on worn floorboards between modern cardboard moving boxes. Dark varnished wood, brass corners, a small brass latch; on the lid an empty pale paper label glued on, framed by a thin line (blank, for text). A woman&#x27;s foot in a sneaker gently pushes the box from the side. Soft evening light, dust in the air. The box feels old and a little mysterious, not scary.</pre>
+        </div>
+      </section>
+      <h2 id="k2">Dringend: Akt 1 und Akt 2, Fundbilder (G1 bis G7)</h2>
+      <section class="auftrag" id="g1">
         <h3>
           <span class="nr">G1</span> <code>problemheft</code> Problemheft von
           Odette Finch
@@ -196,7 +341,10 @@
           <dt>Ort</dt>
           <dd>wegMapleCedar (Flohmarkt an der Landstraße)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-problemheft.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-problemheft.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -217,7 +365,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a slim, slightly bent paperback booklet of chess puzzles, faded green cover with a small drawing of a finch and a chessboard corner, held by one staple, lying slightly open so that three small chess diagrams (8x8 grids with a few dark and light pieces) are visible on the inner page; a tiny round price sticker on the corner left blank.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n2">
+      <section class="auftrag" id="g2">
         <h3>
           <span class="nr">G2</span> <code>konservendose</code> Konservendose
           mit Zettel
@@ -228,7 +376,10 @@ OBJECT: a slim, slightly bent paperback booklet of chess puzzles, faded green co
           <dt>Ort</dt>
           <dd>wegRivertonIronwood (Kanalweg)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-konservendose.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-konservendose.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -249,7 +400,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: an empty, slightly rusty tin can with its round lid bent open, a rolled-up piece of lined paper sticking out of it, tied with a bit of string; a few drops of canal water on the tin. The paper stays blank.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n3">
+      <section class="auftrag" id="g3">
         <h3>
           <span class="nr">G3</span> <code>kreide1</code> Kreidespringer unter
           der Brücke
@@ -260,7 +411,10 @@ OBJECT: an empty, slightly rusty tin can with its round lid bent open, a rolled-
           <dt>Ort</dt>
           <dd>wegRivertonIronwood (Brückenfuß)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-kreide1.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-kreide1.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -281,7 +435,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a square piece of old grey stone bridge wall seen straight on, with a simple white chalk drawing of a chess knight head (horse head silhouette) on it, drawn with a few bold lines, a stub of white chalk lying at the bottom edge.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n4">
+      <section class="auftrag" id="g4">
         <h3>
           <span class="nr">G4</span> <code>finchLaeuferA</code> Läufer aus
           Buchsbaum
@@ -292,7 +446,10 @@ OBJECT: a square piece of old grey stone bridge wall seen straight on, with a si
           <dt>Ort</dt>
           <dd>wegRivertonIronwood</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-finch-laeufer-a.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-finch-laeufer-a.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -316,7 +473,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess bishop carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;c&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;c&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet lying on its side.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n5">
+      <section class="auftrag" id="g5">
         <h3>
           <span class="nr">G5</span> <code>seite07</code> Lose Seite (Kanal)
         </h3>
@@ -326,7 +483,10 @@ OBJECT: a white chess bishop carved from pale boxwood, about 3 times as tall as 
           <dt>Ort</dt>
           <dd>wegRivertonIronwood (Kanalufer)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-seite07.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-seite07.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -347,7 +507,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a single loose, slightly crumpled notebook page lying between two wet grey canal stones, showing one hand-drawn chess diagram (an 8x8 grid with a few dark and light pieces drawn as simple symbols) and blank lines below; one corner is damp and darker.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n6">
+      <section class="auftrag" id="g6">
         <h3><span class="nr">G6</span> <code>spurPM1</code> Foto der Drohne</h3>
         <dl>
           <dt>Art</dt>
@@ -355,7 +515,10 @@ OBJECT: a single loose, slightly crumpled notebook page lying between two wet gr
           <dt>Ort</dt>
           <dd>wegRivertonIronwood (Kanal)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-spur-p-m1.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-spur-p-m1.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -376,7 +539,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a square instant photo with a white border, showing a small white quadcopter drone with four rotors hovering over a canal under a stone bridge, a blank coloured rectangle on its side where a logo would be; the photo is a bit blurry at the edges.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n7">
+      <section class="auftrag" id="g7">
         <h3><span class="nr">G7</span> <code>foto2001</code> Foto von 2001</h3>
         <dl>
           <dt>Art</dt>
@@ -384,7 +547,10 @@ OBJECT: a square instant photo with a white border, showing a small white quadco
           <dt>Ort</dt>
           <dd>ironwood (Mamas altes Zimmer)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-foto2001.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-foto2001.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -409,8 +575,8 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a slightly faded colour photo with a white border and a bent corner: a girl of about twelve with long dark hair, hands pulled into the sleeves of her big sweater, leaning over a chessboard on a table in a school gym, looking calm and sure of herself; seen from the side, face small and simple. Warm yellowish tint of an old photo.</pre>
         </div>
       </section>
-      <h2 id="g1">Dringend: Kartenbilder Akt 2</h2>
-      <section class="auftrag" id="n8">
+      <h2 id="k3">Dringend: Kartenbilder Akt 2 (G8 bis G10, über ki-roh)</h2>
+      <section class="auftrag" id="g8">
         <h3>
           <span class="nr">G8</span> <code>kantineBreit</code> Breitere
           Werkskantine
@@ -447,7 +613,7 @@ BUILDINGS: every building is seen from the front and from above at the same time
 OBJECT (22 tiles wide, 14 tiles tall): BUILDING: a long, low factory canteen of a steel works town, red-brown brick walls, a wide flat roof with a shallow ridge, grey roof sheets, two short metal chimneys and a ventilation box on the roof; in the front wall a row of six tall factory windows with small panes, a wide double glass door in the middle with a short concrete step and a blank sign board above it; a small canopy over the door. Sturdy, plain, a bit worn, 1950s industrial style.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n9">
+      <section class="auftrag" id="g9">
         <h3>
           <span class="nr">G9</span> <code>bahnhofMuseum</code> Alter Bahnhof
           aus Backstein (Museum)
@@ -484,7 +650,7 @@ BUILDINGS: every building is seen from the front and from above at the same time
 OBJECT (10 tiles wide, 9 tiles tall): BUILDING: a small old railway station from around 1900, now a town museum: dark red brick walls with lighter brick bands, a steep slate roof with a small clock gable in the middle (round clock face without numbers), a short chimney; arched windows, a wooden double door with an arched top in the middle, a blank sign board above the door, two old lamp posts beside the door and a narrow wooden bench along the front wall.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n10">
+      <section class="auftrag" id="g10">
         <h3>
           <span class="nr">G10</span> <code>klapptischTablet</code> Klapptisch
           des Testteams
@@ -519,11 +685,80 @@ STYLE REFERENCE: The attached image is a style reference only. Its large middle 
 OBJECT (2 tiles wide, 2 tiles tall): a light grey folding camping table with thin metal legs; on it a chessboard (8x8 squares) on the left half and a black tablet computer on a small stand on the right half, its screen glowing blue with a simple rising line chart (no text, no numbers); a small orange water bottle beside the tablet.</pre>
         </div>
       </section>
-      <h2 id="g2">
-        Mittel: übrige Fundbilder in Staffel 1 (Nebenorte bei Ironwood und Maple
-        Falls)
-      </h2>
-      <section class="auftrag" id="n11">
+      <h2 id="k4">Großbilder Akt 2 und 3 (neu)</h2>
+      <section class="auftrag" id="xN2">
+        <h3><span class="nr">N2</span> <code>schraege</code> Die Schräge</h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:schraege)</dd>
+          <dt>Ablage</dt>
+          <dd>
+            <code>spiel/bilder/schraege.png</code> (direkt dorthin hochladen,
+            Name genau so; JPG geht auch)
+          </dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Werkskantine Ironwood, Partie mit Mama, 30. Zug: „Ihre Dame, weit
+            vorn. Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm
+            will. Und dein Läufer, in der Ecke.“ (ironwood-kantine)
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: close-up of a wooden chessboard on a canteen table, seen low from the player's side so that one long diagonal runs from the near corner to the far side of the board. On that diagonal: a dark queen far advanced, and behind her, on the same diagonal, an empty square that a dark rook is about to reach (the rook stands a few squares to the side). A light-coloured bishop stands trapped in the near corner. The diagonal is gently brighter, as if a cold light falls along it; everything else on the board is a little darker and out of focus. A mug and a folded paper napkin at the edge of the table, blurred. Tense, quiet, cold.</pre>
+        </div>
+      </section>
+      <section class="auftrag" id="xN1">
+        <h3>
+          <span class="nr">N1</span> <code>nova_laechelt</code> Nova lächelt
+        </h3>
+        <dl>
+          <dt>Art</dt>
+          <dd>Großbild im Dialog (#bild:nova_laechelt)</dd>
+          <dt>Ablage</dt>
+          <dd>
+            <code>spiel/bilder/nova-laechelt.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
+          <dt>Größe</dt>
+          <dd>1024 × 768 (intern 256 × 192)</dd>
+          <dt>Wo</dt>
+          <dd>
+            Raststätte Crossroads, Akt 3: „Sie starrt dich an. Dann geht etwas
+            über ihr Gesicht. Kein Lächeln vom Podium.“ (crossroads-raststaette)
+          </dd>
+        </dl>
+        <div class="prompt">
+          <button type="button" onclick="kopiere(this)">Prompt kopieren</button>
+          <pre>
+Pixel art illustration for a cozy chess adventure game, shown full-screen in a dialogue like an illustration in a picture book.
+
+FORMAT: one single image in landscape 4:3. NOT a sprite sheet, NOT a grid of objects, NO magenta background. The scene fills the whole image from edge to edge.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 256x192 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+SCENE: evening in a quiet roadside diner at a crossroads, warm lamp light, rain-dark window behind. Seen from across a small table, from the player's side: a 16-year-old girl with light skin, blue eyes and long light-brown hair, wearing a light jacket with a white scarf, holding a mug of cocoa with both hands. On the table next to the mug lies a tiny wireless earbud beside a wooden chess knight. Her face shows a slow, genuine, slightly shy smile, not a smile for the camera; her shoulders relax. Only her at the table, the diner behind her soft and empty. Calm, tender, a little tired.</pre>
+        </div>
+      </section>
+      <h2 id="k5">Mittel: Fundbilder Staffel 1 und 2 (G11 bis G28)</h2>
+      <section class="auftrag" id="g11">
         <h3>
           <span class="nr">G11</span> <code>finchBauerF</code> Weißer Bauer aus
           Buchsbaum (F)
@@ -534,7 +769,10 @@ OBJECT (2 tiles wide, 2 tiles tall): a light grey folding camping table with thi
           <dt>Ort</dt>
           <dd>steinbruch</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-finch-bauer-f.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-finch-bauer-f.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -558,7 +796,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;f&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;f&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet, and a small white chalk finch drawn on a grey stone behind it.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n12">
+      <section class="auftrag" id="g12">
         <h3>
           <span class="nr">G12</span> <code>kuerbisschleife</code> Blaue
           Schleife vom Kürbiswiegen
@@ -569,7 +807,10 @@ OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wi
           <dt>Ort</dt>
           <dd>kuerbishof</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-kuerbisschleife.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-kuerbisschleife.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -590,10 +831,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a blue prize ribbon rosette with pleated round blue rim, a plain round centre button left blank, two short blue ribbon tails with notched ends, lying on a bit of straw beside a small orange pumpkin stem.</pre>
         </div>
       </section>
-      <h2 id="g3">
-        Mittel: Fundbilder in Staffel 2, in der Reihenfolge der Reise
-      </h2>
-      <section class="auftrag" id="n13">
+      <section class="auftrag" id="g13">
         <h3>
           <span class="nr">G13</span> <code>finchBauerB</code> Weißer Bauer aus
           Buchsbaum (B)
@@ -604,7 +842,10 @@ OBJECT: a blue prize ribbon rosette with pleated round blue rim, a plain round c
           <dt>Ort</dt>
           <dd>wegIronwoodSilicon (Raststätte)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-finch-bauer-b.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-finch-bauer-b.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -628,7 +869,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;b&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;b&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet, and a few green leaves from a flower tub.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n14">
+      <section class="auftrag" id="g14">
         <h3>
           <span class="nr">G14</span> <code>kreide2</code> Kreidespringer K2
         </h3>
@@ -638,7 +879,10 @@ OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wi
           <dt>Ort</dt>
           <dd>wegIronwoodSilicon (Container hinter der Raststätte)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-kreide2.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-kreide2.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -659,7 +903,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a square section of a corrugated steel shipping container wall (rust red, vertical ridges) with a simple white chalk drawing of a chess knight head on it, and a blank chalk scribble area below it; a chalk stub lies at the bottom edge.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n15">
+      <section class="auftrag" id="g15">
         <h3>
           <span class="nr">G15</span> <code>seite04</code> Lose Seite
           (Rätseltafel)
@@ -670,7 +914,10 @@ OBJECT: a square section of a corrugated steel shipping container wall (rust red
           <dt>Ort</dt>
           <dd>wegIronwoodSilicon (Rastplatz)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-seite04.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-seite04.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -691,7 +938,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a single loose notebook page, a bit wind-blown, with one hand-drawn chess diagram (8x8 grid, a few dark and light pieces as simple symbols) and blank lines below, one leg of a wooden puzzle board stand at the edge of the picture.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n16">
+      <section class="auftrag" id="g16">
         <h3>
           <span class="nr">G16</span> <code>spurPM2</code> Spur: Testfeld Signal
         </h3>
@@ -701,7 +948,10 @@ OBJECT: a single loose notebook page, a bit wind-blown, with one hand-drawn ches
           <dt>Ort</dt>
           <dd>wegIronwoodSilicon (Funkmast an der Glasbrücke)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-spur-p-m2.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-spur-p-m2.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -722,7 +972,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a small rectangular metal sign plate screwed to a grey steel pole, the plate left blank, with a simple radio wave symbol (three curved arcs) in the corner and a small red warning light on top of the pole, glowing.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n17">
+      <section class="auftrag" id="g17">
         <h3><span class="nr">G17</span> <code>fotoLive</code> Foto „Live“</h3>
         <dl>
           <dt>Art</dt>
@@ -730,7 +980,10 @@ OBJECT: a small rectangular metal sign plate screwed to a grey steel pole, the p
           <dt>Ort</dt>
           <dd>wegIronwoodSilicon (Glasbrücke)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-foto-live.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-foto-live.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -751,7 +1004,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a square instant photo with a white border: a cheerful young woman with pink hair sits at a chessboard on a glass bridge, a big round ring light behind her, a small red recording dot glowing in the corner of the photo; a blank space on the white border where a signature would go.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n18">
+      <section class="auftrag" id="g18">
         <h3>
           <span class="nr">G18</span> <code>finchBauerH</code> Weißer Bauer aus
           Buchsbaum (H)
@@ -762,7 +1015,10 @@ OBJECT: a square instant photo with a white border: a cheerful young woman with 
           <dt>Ort</dt>
           <dd>pelikaninsel</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-finch-bauer-h.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-finch-bauer-h.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -786,7 +1042,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;h&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;h&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet, on a little sand.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n19">
+      <section class="auftrag" id="g19">
         <h3>
           <span class="nr">G19</span> <code>treibholzTurm</code> Treibholz-Turm
         </h3>
@@ -796,7 +1052,10 @@ OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wi
           <dt>Ort</dt>
           <dd>pelikaninsel (Old Pete)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-treibholz-turm.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-treibholz-turm.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -817,7 +1076,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a hand-carved chess rook made from grey-silver weathered driftwood, uneven and knotty, with four rough battlements at the top, a few knife marks visible, a little sand at its foot.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n20">
+      <section class="auftrag" id="g20">
         <h3>
           <span class="nr">G20</span> <code>muschelCoral</code> Muschel mit Loch
         </h3>
@@ -827,7 +1086,10 @@ OBJECT: a hand-carved chess rook made from grey-silver weathered driftwood, unev
           <dt>Ort</dt>
           <dd>pelikaninsel (Coral, Watt)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-muschel-coral.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-muschel-coral.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -848,7 +1110,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a coral-pink scallop seashell with ribbed lines, one small round hole worn through near the top, so that the parchment background shows through the hole; a few wet sand grains on it.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n21">
+      <section class="auftrag" id="g21">
         <h3>
           <span class="nr">G21</span> <code>finchSpringerB</code> Weißer
           Springer aus Buchsbaum
@@ -859,7 +1121,10 @@ OBJECT: a coral-pink scallop seashell with ribbed lines, one small round hole wo
           <dt>Ort</dt>
           <dd>wegDesertSummit (Blumenkasten am Motel)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-finch-springer-b.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-finch-springer-b.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -883,7 +1148,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess knight carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;g&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;g&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet, and a dry desert flower from a flower box.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n22">
+      <section class="auftrag" id="g22">
         <h3>
           <span class="nr">G22</span> <code>logbuch1866</code> Logbuch der Mine
           von 1866
@@ -894,7 +1159,10 @@ OBJECT: a white chess knight carved from pale boxwood, about 3 times as tall as 
           <dt>Ort</dt>
           <dd>goldmine (Kammer der Bergleute)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-logbuch1866.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-logbuch1866.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -915,7 +1183,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: an old thick logbook bound in cracked brown leather, lying open: yellowed pages with rows of faded grey lines suggesting handwriting (no readable text), a small candle stump with a drop of wax beside it.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n23">
+      <section class="auftrag" id="g23">
         <h3>
           <span class="nr">G23</span> <code>grubenlampe1866</code> Grubenlampe
           von 1866
@@ -926,7 +1194,10 @@ OBJECT: an old thick logbook bound in cracked brown leather, lying open: yellowe
           <dt>Ort</dt>
           <dd>goldmine</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-grubenlampe1866.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-grubenlampe1866.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -947,7 +1218,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: an old brass miner&#x27;s oil lamp with a hook on top, a round reservoir and a short spout with a small warm yellow flame burning, dents and dark patina on the brass.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n24">
+      <section class="auftrag" id="g24">
         <h3><span class="nr">G24</span> <code>goldkorn</code> Goldkorn</h3>
         <dl>
           <dt>Art</dt>
@@ -955,7 +1226,10 @@ OBJECT: an old brass miner&#x27;s oil lamp with a hook on top, a round reservoir
           <dt>Ort</dt>
           <dd>goldmine (Ende des Stollens)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-goldkorn.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-goldkorn.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -976,7 +1250,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a small irregular gold nugget, about the size of a chess pawn, shining with two bright yellow highlights, lying on a dark grey piece of quartz rock.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n25">
+      <section class="auftrag" id="g25">
         <h3>
           <span class="nr">G25</span> <code>finchBauerE</code> Weißer Bauer aus
           Buchsbaum (E)
@@ -987,7 +1261,10 @@ OBJECT: a small irregular gold nugget, about the size of a chess pawn, shining w
           <dt>Ort</dt>
           <dd>wegPinewoodGhost (Aussicht am Canyonrand)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-finch-bauer-e.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-finch-bauer-e.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -1011,7 +1288,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;e&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;e&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet, on red canyon dust.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n26">
+      <section class="auftrag" id="g26">
         <h3>
           <span class="nr">G26</span> <code>spurPM6</code> Typenschild Z-1
         </h3>
@@ -1021,7 +1298,10 @@ OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wi
           <dt>Ort</dt>
           <dd>wegPinewoodGhost (alte Tankstelle)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-spur-p-m6.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-spur-p-m6.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -1042,7 +1322,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a small rectangular brushed-steel type plate with four rivets in the corners, the engraved area left blank, slightly scratched, a little oil stain at one edge.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n27">
+      <section class="auftrag" id="g27">
         <h3>
           <span class="nr">G27</span> <code>seite11</code> Lose Seite
           (Werkstatt)
@@ -1053,7 +1333,10 @@ OBJECT: a small rectangular brushed-steel type plate with four rivets in the cor
           <dt>Ort</dt>
           <dd>wegPinewoodGhost (Ölwechsel-Graben)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-seite11.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-seite11.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -1074,7 +1357,7 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a single loose notebook page with one hand-drawn chess diagram (8x8 grid, a few dark and light pieces as simple symbols), a few dark oil spots and a greasy fingerprint on it.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n28">
+      <section class="auftrag" id="g28">
         <h3>
           <span class="nr">G28</span> <code>bauerZ1</code> Bauer aus Metall
         </h3>
@@ -1084,7 +1367,10 @@ OBJECT: a single loose notebook page with one hand-drawn chess diagram (8x8 grid
           <dt>Ort</dt>
           <dd>wegPinewoodGhost (Greifarm Z-1)</dd>
           <dt>Ablage</dt>
-          <dd><code>spiel/bilder/fund-bauer-z1.webp</code></dd>
+          <dd>
+            <code>spiel/bilder/fund-bauer-z1.png</code> (direkt dorthin
+            hochladen, Name genau so; JPG geht auch)
+          </dd>
           <dt>Größe</dt>
           <dd>512 × 512 (intern 128 × 128)</dd>
         </dl>
@@ -1105,8 +1391,8 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a heavy chess pawn turned from dull grey steel, cold blue-grey highlights, a thin machined ring around its middle and a small round magnet plate on the bottom.</pre>
         </div>
       </section>
-      <h2 id="g4">Später: Winter</h2>
-      <section class="auftrag" id="n29">
+      <h2 id="k6">Später: Winter (G29, über ki-roh)</h2>
+      <section class="auftrag" id="g29">
         <h3>
           <span class="nr">G29</span> <code>rasthausSchnee</code> Rasthaus mit
           verschneitem Dach
@@ -1144,11 +1430,10 @@ BUILDINGS: every building is seen from the front and from above at the same time
 OBJECT (8 tiles wide, 9 tiles tall): BUILDING: exactly the same roadside rest house as in the SECOND attached image (same outline, same size, same door and windows, same colours of the walls), but in winter: thick white snow on the whole roof with a soft rounded edge hanging over the gutter, small icicles along the roof edge, snow on the window sills and on the chimney top, warm yellow light in the windows.</pre>
         </div>
       </section>
-      <h2 id="g5">
-        Freiwillig: Finch-Figuren nachliefern, damit alle einen Buchstaben
-        tragen
+      <h2 id="k7">
+        Freiwillig: Finch-Figuren nachliefern (G30 bis G37, über ki-roh)
       </h2>
-      <section class="auftrag" id="n30">
+      <section class="auftrag" id="g30">
         <h3>
           <span class="nr">G30</span> <code>finchBauerA</code> Finchs Bauer A
           (Nachlieferung)
@@ -1183,7 +1468,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;a&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;a&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n31">
+      <section class="auftrag" id="g31">
         <h3>
           <span class="nr">G31</span> <code>finchBauerC</code> Weißer Bauer aus
           Buchsbaum (C, Nachlieferung)
@@ -1218,7 +1503,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;c&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;c&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n32">
+      <section class="auftrag" id="g32">
         <h3>
           <span class="nr">G32</span> <code>finchBauerD</code> Weißer Bauer aus
           Buchsbaum (D, Nachlieferung)
@@ -1253,7 +1538,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;d&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;d&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n33">
+      <section class="auftrag" id="g33">
         <h3>
           <span class="nr">G33</span> <code>finchBauerG</code> Weißer Bauer aus
           Buchsbaum (G, Nachlieferung)
@@ -1288,7 +1573,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess pawn carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;g&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;g&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n34">
+      <section class="auftrag" id="g34">
         <h3>
           <span class="nr">G34</span> <code>finchSpringerA</code> Finchs
           Springer A (Nachlieferung)
@@ -1323,7 +1608,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess knight carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;b&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;b&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n35">
+      <section class="auftrag" id="g35">
         <h3>
           <span class="nr">G35</span> <code>finchLaeuferB</code> Weißer Läufer
           aus Buchsbaum (Nachlieferung)
@@ -1358,7 +1643,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess bishop carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;f&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;f&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n36">
+      <section class="auftrag" id="g36">
         <h3>
           <span class="nr">G36</span> <code>finchTurmA</code> Finchs Turm
           (Nachlieferung)
@@ -1393,7 +1678,7 @@ RULES: No text, no numbers, no logos anywhere in the image, with ONE exception: 
 OBJECT: a white chess rook carved from pale boxwood, about 3 times as tall as wide, standing upright, slightly worn and old. A tiny finch is carved into the side of the round base. On the FRONT of the round base, big and clearly readable, one single lowercase letter &quot;a&quot; is carved deep into the wood and burnt dark brown, as large as the base allows (about one third of the base height). The letter &quot;a&quot; must be the only letter in the image. Next to the piece lies a small finch cut from thin tin sheet.</pre>
         </div>
       </section>
-      <section class="auftrag" id="n37">
+      <section class="auftrag" id="g37">
         <h3>
           <span class="nr">G37</span> <code>finchTurmB</code> Weißer Turm aus
           Buchsbaum (Nachlieferung)

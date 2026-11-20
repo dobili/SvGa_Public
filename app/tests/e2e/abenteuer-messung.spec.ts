@@ -9,6 +9,10 @@
  *   Downloadgröße beim Start;
  * - Warmstart: Seite neu laden bis zur ersten Karte (alles aus dem Cache).
  * Der Ton der App ist an, damit die Musik der Karte wirklich verlangt wird.
+ * Mit ABENTEUER_DROSSEL_MBIT=10 (Auftrag „Größe und Startzeit“, 20.11.2026) drosselt Chromium das
+ * Netz wie Mobilfunk (Bandbreite in Mbit/s, 40 ms Laufzeit). Die Vorschau komprimiert nicht; der
+ * Server der App liefert JSON gzip-komprimiert, gedrosselt gemessen ist also eher zu langsam.
+ * Die Zeile „Gruppen:“ nennt die Bytes bis zur Karte je Paketgruppe.
  * Aufruf: ABENTEUER_MESSUNG=1 CHROMIUM_PFAD=… PLAYWRIGHT_NUR_CHROMIUM=1 npx playwright test
  * abenteuer-messung --trace off; die Werte stehen in der Ausgabe (Zeile „Messung:“).
  */
@@ -64,27 +68,70 @@ function schreibeStand(stand: object): Promise<boolean> {
   });
 }
 
+const KB = 1024;
+/** Laufzeit der gedrosselten Leitung (Mobilfunk) in Millisekunden. */
+const LAUFZEIT_MS = 40;
+const BIT_JE_BYTE = 8;
+const MILLION = 1_000_000;
+
+/** Drosselt das Netz der Seite wie Mobilfunk, wenn ABENTEUER_DROSSEL_MBIT gesetzt ist. */
+async function drossle(seite: Page, kontext: BrowserContext): Promise<void> {
+  const mbit = Number(process.env.ABENTEUER_DROSSEL_MBIT ?? 0);
+  if (!mbit) return;
+  const cdp = await kontext.newCDPSession(seite);
+  const bytesJeSekunde = (mbit * MILLION) / BIT_JE_BYTE;
+  await cdp.send("Network.enable");
+  await cdp.send("Network.emulateNetworkConditions", {
+    offline: false,
+    latency: LAUFZEIT_MS,
+    downloadThroughput: bytesJeSekunde,
+    uploadThroughput: bytesJeSekunde,
+  });
+}
+
 /**
  * Zählt die Dateien des Pakets, die unter /abenteuer/ angefragt wurden, mit ihrer Größe laut
  * paket.json (die Größenangaben des Browsers fehlen bei Abrufen des Service Workers oft).
  */
-function zaehler(kontext: BrowserContext): { bytes: () => number; anzahl: () => number } {
-  const groessen = new Map<string, number>(
-    (
-      JSON.parse(
-        readFileSync(new URL("../../public/abenteuer/paket.json", import.meta.url), "utf8"),
-      ) as {
-        dateien: { pfad: string; bytes: number }[];
-      }
-    ).dateien.map((d) => [d.pfad, d.bytes]),
-  );
+function zaehler(kontext: BrowserContext): {
+  bytes: () => number;
+  anzahl: () => number;
+  gruppen: () => string;
+} {
+  const dateien = (
+    JSON.parse(
+      readFileSync(new URL("../../public/abenteuer/paket.json", import.meta.url), "utf8"),
+    ) as { dateien: { pfad: string; bytes: number; gruppe: string; akt?: number }[] }
+  ).dateien;
+  const groessen = new Map<string, number>(dateien.map((d) => [d.pfad, d.bytes]));
+  const gruppeVon = new Map(dateien.map((d) => [d.pfad, `${d.gruppe}${d.akt ?? ""}`]));
   const gesehen = new Set<string>();
+  // Erste und letzte fertige Datei je Gruppe (ms seit Beginn der Zählung): zeigt, was parallel lud.
+  const beginn = Date.now();
+  const zeiten = new Map<string, [number, number]>();
   kontext.on("requestfinished", (anfrage) => {
     const pfad = new URL(anfrage.url()).pathname.split("/abenteuer/")[1];
-    if (pfad && groessen.has(pfad)) gesehen.add(pfad);
+    if (!pfad || !groessen.has(pfad)) return;
+    gesehen.add(pfad);
+    const g = gruppeVon.get(pfad) ?? "?";
+    const jetzt = Date.now() - beginn;
+    zeiten.set(g, [zeiten.get(g)?.[0] ?? jetzt, jetzt]);
   });
   const bytes = () => [...gesehen].reduce((s, p) => s + (groessen.get(p) ?? 0), 0);
-  return { bytes, anzahl: () => gesehen.size };
+  const gruppen = () => {
+    const summe = new Map<string, number>();
+    for (const p of gesehen) {
+      const g = gruppeVon.get(p) ?? "?";
+      summe.set(g, (summe.get(g) ?? 0) + (groessen.get(p) ?? 0));
+    }
+    return [...summe]
+      .map(([g, b]) => {
+        const [von, bis] = zeiten.get(g) ?? [0, 0];
+        return `${g} ${Math.round(b / KB)} KB (${von}–${bis} ms)`;
+      })
+      .join(", ");
+  };
+  return { bytes, anzahl: () => gesehen.size, gruppen };
 }
 
 /** Wartet, bis `still_ms` lang keine neuen Bytes kommen (Hintergrundladen fertig). */
@@ -97,8 +144,6 @@ async function warteAufRuhe(seite: Page, bytes: () => number, stillMs = 4000): P
   }
 }
 
-const KB = 1024;
-
 test("Messung: Startzeit und Downloadgröße", async ({ page, context }) => {
   test.skip(!process.env.ABENTEUER_MESSUNG, "nur mit ABENTEUER_MESSUNG=1");
   test.setTimeout(600_000);
@@ -106,15 +151,19 @@ test("Messung: Startzeit und Downloadgröße", async ({ page, context }) => {
   await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
+  const zaehlbeginn = Date.now();
   const z = zaehler(context);
   const knopf = page.getByTestId("abenteuer-laden");
   await expect(knopf).toBeVisible({ timeout: 30000 });
+  await drossle(page, context);
   const vorher = z.bytes();
   const beginn = Date.now();
   await knopf.click();
   await expect(page.getByTestId("abenteuer-aktion")).toBeVisible({ timeout: 300000 });
   const bisKarte = Date.now() - beginn;
+  const versatz = beginn - zaehlbeginn;
   const bytesKarte = z.bytes() - vorher;
+  const gruppenKarte = z.gruppen();
   // Eine Berührung entsperrt den Ton (wie am Handy), dann lädt die Musik der Karte.
   await page.getByTestId("abenteuer-welt").click({ position: { x: 5, y: 5 } });
   await warteAufRuhe(page, z.bytes);
@@ -128,5 +177,8 @@ test("Messung: Startzeit und Downloadgröße", async ({ page, context }) => {
     `Messung: Kaltstart bis Karte ${bisKarte} ms, ${Math.round(bytesKarte / KB)} KB; ` +
       `Download beim Start ${Math.round(bytesStart / KB)} KB (${z.anzahl()} Anfragen); ` +
       `Warmstart bis Karte ${warm} ms`,
+  );
+  console.log(
+    `Gruppen bis Karte (Zeiten ab Seitenaufruf, Klick bei ${versatz} ms): ${gruppenKarte}`,
   );
 });

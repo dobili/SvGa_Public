@@ -15,3 +15,16 @@ export function fensterbankfunde(
 ): Funddaten[] {
   return gefunden.flatMap((g) => funde.filter((f) => f.kennung === g.kennung).slice(0, 1));
 }
+
+/**
+ * Das Bild eines Fundes: das Feld `bild` aus funde.json, sonst der Name nach der Regel der
+ * Lieferungen, „bilder/fund-<kennung>.webp“. Warum: Ein Bild, das der Autor hochlädt (Paketbau,
+ * skripte/grossbilder.mjs), soll sofort im Spiel erscheinen, auch bevor jemand funde.json ergänzt
+ * (20.11.2026). Fehlt die Datei, zeigt Fundbild.tsx nichts, wie bisher.
+ * Beispiel: { kennung: "finchBauerB" } → „bilder/fund-finch-bauer-b.webp“.
+ */
+export function bildDesFundes(fund: Pick<Funddaten, "kennung" | "bild">): string {
+  if (fund.bild) return fund.bild;
+  const name = fund.kennung.replace(/[A-Z]/g, (b) => `-${b.toLowerCase()}`).replace(/_/g, "-");
+  return `bilder/fund-${name}.webp`;
+}

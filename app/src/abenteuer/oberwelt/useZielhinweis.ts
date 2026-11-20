@@ -13,17 +13,18 @@
  * Rolle im Gesamtbild: Bindeglied zwischen Spielstand (verfolgte Quest), den Tiled-Karten des
  * Ortes (aus dem Paket, gemerkt) und der Szene (szene.ts, setzeZiel). Die Regeln stehen in
  * zielsuche.ts, das Zeichnen in zielmarker.ts, das Symbol im Tagebuch in Tagebuch.tsx.
- * Abhängigkeiten: kern.ts, zielsuche.ts, weltdaten.ts, daten/laden.ts, paket/paketlader.ts.
+ * Abhängigkeiten: kern.ts, zielsuche.ts, zielwege.ts, weltdaten.ts, daten/laden.ts, paket/paketlader.ts.
  */
 import { useEffect, useState } from "react";
 import { findeKarte, type Ortdaten } from "../daten/laden";
 import { liesPaketJson } from "../paket/paketlader";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { szeneAus, type Oberweltkern } from "./kern";
-import { ausloeserFuer, type Weltdaten } from "./weltdaten";
+import type { Weltdaten } from "./weltdaten";
 import { verfolgteLaufendeQuest } from "../regeln/verfolgung";
 import { kartenbildAus, verfolgtesZiel, wegweiser, zielkarte, type Feld } from "./zielsuche";
 import type { Kartenbild } from "./zielsuche";
+import { ausgangsziel, ortsstufen } from "./zielwege";
 
 /** So oft und so lange wartet der Hinweis auf die Szene, die gerade hochfährt. */
 const VERSUCHE = 25;
@@ -49,31 +50,35 @@ async function kartenbilderDesOrtes(ort: Ortdaten, w: Weltdaten): Promise<Karten
       const pfade = [k.datei, ...Object.values(k.zustaende ?? {})];
       const fassungen =
         k.kennung === w.kennung ? [w.karte] : await Promise.all(pfade.map(liesKarte));
-      return kartenbildAus(k.kennung, fassungen, (name) => {
-        const a = ausloeserFuer(ort, k.kennung, name);
-        return a?.art === "uebergang" && a.ziel ? a.ziel.karte : null;
-      });
+      return kartenbildAus(k.kennung, fassungen, (name) =>
+        ausgangsziel(w.daten, ort, k.kennung, name),
+      );
     }),
   );
 }
 
 /**
- * Das Feld des Hinweises auf der Karte der Welt, oder null. Geladen werden der Ort der Welt und
- * der Ort des Ziels. Ziel ist der laufende Schritt der verfolgten Quest.
+ * Das Feld des Hinweises auf der Karte der Welt, oder null. Geladen werden alle Orte auf dem Weg
+ * vom Ort der Welt zum Ort des Ziels, ohne Ausgang dann auch ihre Nachbarorte (zielwege.ts,
+ * ortsstufen; seit 20.11.2026, vorher nur die beiden Enden, sodass ein Weg dazwischen fehlte). Ziel ist der laufende Schritt der verfolgten Quest.
  * Beispiel: im Zimmer, verfolgt „Mama ist in der Küche“ → Feld des Auslösers „treppeUnten“.
  */
 export async function zielfeld(w: Weltdaten, stand: Abenteuerstand): Promise<Feld | null> {
   const angabe = verfolgtesZiel(stand, w.daten);
   if (!angabe) return null;
-  const orte = new Set<string>([w.ort.kennung]);
   const ort =
     angabe.ort ?? (angabe.karte ? findeKarte(w.daten, angabe.karte)?.ort.kennung : undefined);
-  if (ort) orte.add(ort);
-  const listen = await Promise.all(
-    w.daten.orte.filter((o) => orte.has(o.kennung)).map((o) => kartenbilderDesOrtes(o, w)),
-  );
-  const bilder = listen.flat();
-  return zielkarte(angabe, bilder) !== null ? wegweiser(w.kennung, angabe, bilder) : null;
+  const stufen = ort ? ortsstufen(w.daten, w.ort.kennung, ort) : [[w.ort.kennung]];
+  for (const orte of stufen) {
+    const listen = await Promise.all(
+      w.daten.orte.filter((o) => orte.includes(o.kennung)).map((o) => kartenbilderDesOrtes(o, w)),
+    );
+    const bilder = listen.flat();
+    if (zielkarte(angabe, bilder) === null) continue;
+    const feld = wegweiser(w.kennung, angabe, bilder);
+    if (feld) return feld;
+  }
+  return null;
 }
 
 /** Zähler der Rechnungen: Nur die jüngste darf ihr Feld der Szene geben. */

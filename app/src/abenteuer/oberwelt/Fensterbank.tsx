@@ -11,7 +11,7 @@ import { useZurueckSchliesst } from "../../app/blattstapel";
 import type { Funddaten } from "../daten/laden";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
-import { fensterbankfunde } from "./fensterbankfunde";
+import { bildDesFundes, fensterbankfunde } from "./fensterbankfunde";
 import { Fundbild } from "./Fundbild";
 
 /** Die Ansicht der Fensterbank; „Weiter“ oder Zurück schließt sie. */
@@ -38,7 +38,7 @@ export function Fensterbank({
         <ul>
           {liste.map((f) => (
             <li key={f.kennung}>
-              <Fundbild bild={f.bild ?? null} klein />
+              <Fundbild bild={bildDesFundes(f)} klein />
               <strong>{tSpiel(f.name)}</strong> {tSpiel(f.text)}
             </li>
           ))}

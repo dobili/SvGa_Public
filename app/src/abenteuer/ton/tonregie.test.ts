@@ -94,3 +94,35 @@ describe("Tonregie", () => {
     warnung.mockRestore();
   });
 });
+
+describe("gestoppter Tonerzeuger (WebKit beim Neuladen, Lauf 44657454880)", () => {
+  /** Ein Spieler, dessen synchrone Aufrufe mit dem gegebenen Fehler scheitern. */
+  function scheiterndesWerk(fehler: Error): Spielwerk {
+    const wirf = () => {
+      throw fehler;
+    };
+    return {
+      setzePegel: wirf,
+      setzeNaehe: wirf,
+      stoppeAlles: wirf,
+      spieleSchleife: () => Promise.resolve(),
+      spieleEinmal: () => Promise.resolve(),
+    };
+  }
+
+  it("„Context is stopped“ stört die Seite nicht, wird aber vermerkt", () => {
+    const warnung = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    const regie = new Tonregie(() =>
+      scheiterndesWerk(new DOMException("Context is stopped", "InvalidStateError")),
+    );
+    expect(() => regie.stelleEin(STANDARD_ABENTEUERTON, true)).not.toThrow();
+    expect(() => regie.verlassen()).not.toThrow();
+    expect(warnung).toHaveBeenCalled();
+    warnung.mockRestore();
+  });
+
+  it("andere Fehler gehen weiter (nichts verschluckt)", () => {
+    const regie = new Tonregie(() => scheiterndesWerk(new TypeError("kaputt")));
+    expect(() => regie.stelleEin(STANDARD_ABENTEUERTON, true)).toThrow("kaputt");
+  });
+});

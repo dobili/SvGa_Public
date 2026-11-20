@@ -292,7 +292,7 @@ Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es
 }
 Zwischen den Schottersteinen neben dem Bahnsteig flattert ein Blatt Papier. #sprecher:erzaehler
 // Kein Buchverweis (Entscheidung vom 10.11.2026): ein loses Blatt mit einer Stellung.
-Ein loses Blatt mit einer gezeichneten Stellung. Darunter steht mit Bleistift: „Schwarz zieht und gewinnt.“ #sprecher:erzaehler
+Eine lose Seite mit einer gezeichneten Stellung. Darunter steht mit Bleistift: „Schwarz zieht und gewinnt.“ #sprecher:erzaehler
 ~ seite01Gefunden = true
 ~ buchseiten = buchseiten + 1
 ~ gibFund("seite01")

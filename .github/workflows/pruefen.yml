@@ -90,6 +90,9 @@ jobs:
   # Teil (19 von 22 Minuten); deshalb je Browser ein Job für das Abenteuer und zwei Hälften für den
   # Rest (PLAYWRIGHT_GRUPPE in playwright.config.ts). Jeder Job installiert nur seinen Browser,
   # baut selbst und lädt seinen eigenen Bericht hoch; fail-fast aus, damit ein Lauf alle Fehler zeigt.
+  # Das Abenteuer in Chromium in zwei Hälften (20.11.2026): Auch ohne Maia im Hintergrund brauchten
+  # seine 95 Tests 37,5 Minuten Testzeit, mit zwei Workern 19,5 Minuten am Stück (Lauf
+  # 44782657320); WebKit überspringt mehr und blieb bei 10 Minuten.
   oberflaeche:
     name: Oberfläche (${{ matrix.name }})
     runs-on: ubuntu-latest
@@ -97,12 +100,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Chromium, Abenteuer"
-            kennung: chromium-abenteuer
+          - name: "Chromium, Abenteuer 1/2"
+            kennung: chromium-abenteuer-1
             browser: chromium
             projekt: android-chromium
             gruppe: abenteuer
-            teil: "1/1"
+            teil: "1/2"
+          - name: "Chromium, Abenteuer 2/2"
+            kennung: chromium-abenteuer-2
+            browser: chromium
+            projekt: android-chromium
+            gruppe: abenteuer
+            teil: "2/2"
           - name: "Chromium 1/2"
             kennung: chromium-1
             browser: chromium

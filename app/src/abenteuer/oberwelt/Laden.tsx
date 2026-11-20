@@ -39,30 +39,36 @@ export function Laden({
       aria-label={tSpiel(laden.name)}
       data-testid="abenteuer-laden"
     >
-      <h2>{tSpiel(laden.name)}</h2>
-      <p data-testid="abenteuer-laden-muenzen">
-        {tSpiel("laden.muenzen", { anzahl: stand.muenzen })}
-      </p>
-      <div className="abenteuer-deck">
-        {laden.angebot.map((ware) => {
-          const hindernis = kaufhindernis(stand, ware, alleSorten);
-          return (
-            <button
-              key={`${ware.art}-${ware.kennung}`}
-              type="button"
-              className="abenteuer-karte"
-              disabled={hindernis !== null}
-              onClick={() => beiKauf(ware)}
-            >
-              {tSpiel("laden.ware", { name: name(ware), preis: ware.preis })}
-              {hindernis === "schonDa" && ` · ${tSpiel("laden.schonDa")}`}
-            </button>
-          );
-        })}
+      {/* Nur der Inhalt rollt, „Fertig“ steht im Fuß darunter und verdeckt keine Ware
+          (quer lag der stehende Knopf über einer Reihe, Spieler-Durchlauf 20.11.2026). */}
+      <div className="abenteuer-menue-inhalt">
+        <h2>{tSpiel(laden.name)}</h2>
+        <p data-testid="abenteuer-laden-muenzen">
+          {tSpiel("laden.muenzen", { anzahl: stand.muenzen })}
+        </p>
+        <div className="abenteuer-deck">
+          {laden.angebot.map((ware) => {
+            const hindernis = kaufhindernis(stand, ware, alleSorten);
+            return (
+              <button
+                key={`${ware.art}-${ware.kennung}`}
+                type="button"
+                className="abenteuer-karte"
+                disabled={hindernis !== null}
+                onClick={() => beiKauf(ware)}
+              >
+                {tSpiel("laden.ware", { name: name(ware), preis: ware.preis })}
+                {hindernis === "schonDa" && ` · ${tSpiel("laden.schonDa")}`}
+              </button>
+            );
+          })}
+        </div>
       </div>
-      <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
-        {tSpiel("laden.schliessen")}
-      </button>
+      <div className="abenteuer-menue-fuss">
+        <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
+          {tSpiel("laden.schliessen")}
+        </button>
+      </div>
     </section>
   );
 }

@@ -154,9 +154,13 @@ Profil › Einstellungen › Fehler melden.
       abgeschlossenen Akt in zwei, drei Sätzen zusammen und erzählt den laufenden Akt Satz für
       Satz nach den erledigten Hauptquests, in der Stimme des Tagebuchs („ich“) und nur mit dem,
       was du schon gespielt hast. Ein Akt gilt erst mit seiner letzten Hauptquest als
-      abgeschlossen. Wird gerade fertig (mittel-1); fehlt er noch, kommt er mit der nächsten Beta.
-      Liest es sich richtig, verrät es nichts zu früh?
+      abgeschlossen. Liest es sich richtig, verrät es nichts zu früh?
       **Rückmeldung:** „N2652 ok“ oder Akt und Notiz.
+
+- [ ] N2662. **Schnell tippen:** Im Gespräch zweimal schnell auf „Weiter“ tippen. Erscheint gerade
+      eine Wahl, wird sie nicht aus Versehen mitgewählt (neue Antworten sind einen Moment
+      gesperrt). „Neu im Tagebuch“ wartet, bis kein Fenster mehr offen ist.
+      **Rückmeldung:** „N2662 ok“ oder Ort und Notiz.
 
 ### Neu: Das Spiel ganz durchspielen – Akt 1 (Maple Falls, Cedar Creek)
 

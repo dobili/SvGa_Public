@@ -81,7 +81,8 @@ export function waehleAntwort(
   // der Lauf bei Ruiz nach jedem Sieg wieder „Noch eine.“ (149 Partien, 20.11.2026).
   // Eine schon gewählte Wiederholung erst, wenn es nichts anderes gibt: Sonst nahm der Lauf bei
   // Nia nach einem einzigen „Ich muss weiter.“ wieder endlos „Noch eine.“ (20.11.2026).
-  const aufschub = vor.find((v) => schiebtAuf(v.w)) ?? echte[0];
+  const selten = [...echte].sort((a, b) => a.n - b.n || gesamt(a.w) - gesamt(b.w))[0];
+  const aufschub = vor.find((v) => schiebtAuf(v.w)) ?? selten;
   const wahl = neue[0] ?? aufschub ?? vor[0] ?? { i: 0, w: wahlen[0] ?? "" };
   merkeWahl(g, frage, wahl.w);
   return wahl.i;

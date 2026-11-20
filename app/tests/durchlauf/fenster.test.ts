@@ -44,4 +44,12 @@ describe("Antwortwahl", () => {
     // Auch die Alternative ist schon gewählt: trotzdem nicht zurück zur Wiederholung.
     expect(waehleAntwort(g, frage, wahlen)).toBe(1);
   });
+
+  it("wechselt ohne Aufschub zwischen den Antworten statt immer die erste zu nehmen (Bus)", () => {
+    const g = neuesFenstergedaechtnis();
+    const frage = "Der Bus fährt gleich.";
+    const wahlen = ["Mit dem Fahrer reden", "Zur Haltestelle sehen"];
+    const gewaehlt = Array.from({ length: 4 }, () => waehleAntwort(g, frage, wahlen));
+    expect(gewaehlt).toEqual([0, 1, 0, 1]);
+  });
 });

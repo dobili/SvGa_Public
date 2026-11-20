@@ -9,6 +9,7 @@
  * Abhängigkeiten: eingabe.ts, lage.ts, messung.ts.
  * Beispiel: bedieneFenster(lauf, lage) → true, wenn etwas getippt oder abgewartet wurde.
  */
+import { hastigTippen, ladenZu } from "./eilig";
 import { tippe, tippeKnopf, type Lauf } from "./eingabe";
 import { bedieneGedaechtnis } from "./gedaechtnis";
 import type { Knopf, Lage } from "./lage";
@@ -171,7 +172,7 @@ export async function bedieneDialog(lauf: Lauf, lage: Lage, g: Fenstergedaechtni
   }
   const seite = lauf.seite;
   if (d.wahlen.length > 0) {
-    const i = waehleAntwort(g, d.text, d.wahlen);
+    const i = lauf.eilig.antwort(d.text, d.wahlen) ?? waehleAntwort(g, d.text, d.wahlen);
     lauf.messung.jetzt.wahlen += 1;
     for (const w of d.wahlen) lauf.messung.jetzt.dialogwoerter += w.trim().split(/\s+/).length;
     lauf.messung.log(`  Antwort: ${d.wahlen[i] ?? ""} (von ${d.wahlen.length})`);
@@ -182,6 +183,8 @@ export async function bedieneDialog(lauf: Lauf, lage: Lage, g: Fenstergedaechtni
   }
   if (d.weiter) {
     const knopf = seite.locator(".abenteuer-dialog-weiter").last();
+    // Eiliger Spieler (eilig.ts): sofort weiter, jedes zweite Mal doppelt, ohne zu warten.
+    if (lauf.eilig.an && (await hastigTippen(lauf, knopf, lauf.eilig.doppelt()))) return;
     const getippt =
       (await tippe(lauf, knopf, "Dialog „Weiter“")) ||
       (await tippe(lauf, seite.locator(".abenteuer-dialog-text[data-weiter='ja']"), "Dialogtext"));
@@ -231,6 +234,8 @@ async function bedieneLaden(
   knoepfe: readonly Knopf[],
   g: Fenstergedaechtnis,
 ): Promise<void> {
+  const zuEilig = lauf.eilig.brichLadenAb(lauf.messung.karte) ? ladenZu(knoepfe) : undefined;
+  if (zuEilig) return void (await tippeKnopf(lauf, zuEilig));
   // Jede Ware höchstens einmal je Lauf: Karten ließen sich sonst kaufen, bis die Münzen weg sind.
   const waren = knoepfe.filter(
     (k) => k.klasse.includes("abenteuer-karte") && !g.gewaehlt.has(`laden|${k.text}`),

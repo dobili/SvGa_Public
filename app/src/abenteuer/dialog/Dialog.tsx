@@ -24,6 +24,7 @@ import { Portraet } from "./Portraet";
 import { erscheinungDesPortraets } from "../regeln/geist";
 import { useDialogfokus } from "./useDialogfokus";
 import { useGeistsprecher } from "./useGeistsprecher";
+import { useWahlschutz } from "./wahlschutz";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
 
 const ERZAEHLER = "erzaehler";
@@ -148,8 +149,10 @@ export function Dialog({
     beiEnde(geschichte.variablen());
   });
 
+  // Neue Wahlen kurz gesperrt: Ein Doppeltipp auf „Weiter“ wählt sonst ungelesen (wahlschutz.ts).
+  const geschuetzt = useWahlschutz(schritt, schritt.art === "wahl", wartet);
   // Fokus auf „Weiter“ oder die erste Wahl, je Schritt und nach einer Pause (Tastatur, Vorleser).
-  useDialogfokus(fenster, schritt, letzteZeile, wartet);
+  useDialogfokus(fenster, schritt, letzteZeile, wartet || geschuetzt);
 
   if (schritt.art === "ende") return null;
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;
@@ -193,7 +196,12 @@ export function Dialog({
       {schritt.art === "wahl" ? (
         <div className="abenteuer-dialog-wahlen">
           {schritt.wahlen.map((wahl, i) => (
-            <button key={wahl} type="button" disabled={wartet} onClick={() => waehle(i)}>
+            <button
+              key={wahl}
+              type="button"
+              disabled={wartet || geschuetzt}
+              onClick={() => waehle(i)}
+            >
               {wahl}
             </button>
           ))}

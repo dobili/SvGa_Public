@@ -23,7 +23,8 @@ Vorgehen je Start und Schritt:
    - Sonst prüft das Werkzeug, wer die sperrenden Variablen setzt (Ink ``~ x = …``, Wirkungen der
      Quests). Setzt nur der Auslöser selbst oder ein späterer Schritt derselben Quest die
      Variable, folgt die Sperre aus der Quest selbst („folgt“).
-   - Alles andere ist ein Befund. Er wird behoben oder in ``AUSNAHMEN`` begründet.
+   - Alles andere ist ein Befund. Er wird behoben, in ``AUSNAHMEN`` begründet oder, wenn er eine
+     Entscheidung zu Karten oder Dialogen braucht, in ``GEMELDET`` festgehalten (Stufe „gemeldet“).
 
 Grenzen: Bedingungen innerhalb von Ink (``{nicht x: …}``) zählen nicht; ob ein Setzer zeitlich vor
 dem offenen Schritt laufen kann, entscheidet die Prüfung nicht (darum der Befund mit Setzern zum
@@ -42,9 +43,9 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from pipeline.abenteuer.bedingung import variablen
 from pipeline.abenteuer.inkfluss import erreichbar, lies
-from pipeline.abenteuer.questverfehlen_geprueft import AUSNAHMEN
+from pipeline.abenteuer.questsperren import sperrmengen
+from pipeline.abenteuer.questverfehlen_geprueft import AUSNAHMEN, GEMELDET
 
 DATEN = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer"
 DIALOGE = DATEN / "dialoge" / "de"
@@ -55,7 +56,7 @@ VERNEINT = re.compile(r"\bnicht\s+(\w+)|\b(\w+)\s*==\s*(?:falsch|false|0)\b")
 
 @dataclass
 class Kandidat:
-    """Ein Objekt, das den Auslöser öffnen kann, mit seinen Sperren (Variable → Herkunft).
+    """Ein Objekt, das den Auslöser öffnen kann, mit seinen Sperren (Sperrmenge „a+b“ → Herkunft).
 
     ``karte`` und ``objekt`` nennen das Objekt für den Aufschieber (leer bei Eingängen, Wegen, Reisen).
     """
@@ -87,6 +88,11 @@ class Befund:
 def verneinte(wenn: str | None) -> set[str]:
     """Variablen, die eine Bedingung verneint verlangt. Beispiel: „a und nicht b“ → {"b"}."""
     return {a or b for a, b in VERNEINT.findall(wenn or "")}
+
+
+def sperren_von(wenn: str | None, herkunft: str) -> dict[str, str]:
+    """Sperrmengen einer Bedingung (questsperren.py) als „a+b“ → Herkunft."""
+    return {"+".join(sorted(m)): herkunft for m in sperrmengen(wenn)}
 
 
 class Welt:
@@ -167,12 +173,12 @@ def fassungssperren(welt: Welt, karte: str, name: str) -> dict[str, str]:
     grund, fassungen = welt.objekte.get(karte, (set(), []))
     if name not in grund:
         return {}
-    return {
-        v: f"Zustandskarte „{wenn}“ von {karte} ohne {name}"
-        for wenn, objekte in fassungen
-        if name not in objekte
-        for v in variablen(wenn) - verneinte(wenn)
-    }
+    sperren: dict[str, str] = {}
+    for wenn, objekte in fassungen:
+        if name not in objekte:
+            # Das Objekt fehlt, solange die Fassung gilt: Es steht nur da, wenn „nicht (wenn)“ gilt.
+            sperren |= sperren_von(f"nicht ({wenn})", f"Zustandskarte „{wenn}“ von {karte} ohne {name}")
+    return sperren
 
 
 def _karten_mit(welt: Welt, ort: dict, name: str, karte: str | None) -> list[str]:
@@ -196,7 +202,7 @@ def kandidaten(welt: Welt, ziele: set[str], gegner: str | None = None) -> list[K
                 continue
             name = f["kennung"].split(".", 1)[1]
             for karte in _karten_mit(welt, ort, name, None) or [ort["karten"][0]["kennung"]]:
-                sperren = {v: f"wenn der Figur „{f['wenn']}“" for v in verneinte(f.get("wenn"))}
+                sperren = sperren_von(f.get("wenn"), f"wenn der Figur „{f.get('wenn')}“")
                 sperren |= fassungssperren(welt, karte, name)
                 liste.append(Kandidat(f"Figur {f['kennung']} auf {karte}", sperren, karte, name))
         for a in ort["ausloeser"]:
@@ -204,13 +210,13 @@ def kandidaten(welt: Welt, ziele: set[str], gegner: str | None = None) -> list[K
                 for karte in _karten_mit(welt, ort, a["name"], a.get("karte")):
                     # Ein Übergang mit Dialog prüft `wenn` erst nach dem Dialog (der Dialog läuft immer).
                     wenn = None if a["art"] == "uebergang" else a.get("wenn")
-                    sperren = {v: f"wenn des Auslösers „{wenn}“" for v in verneinte(wenn)}
+                    sperren = sperren_von(wenn, f"wenn des Auslösers „{wenn}“")
                     sperren |= fassungssperren(welt, karte, a["name"])
                     liste.append(Kandidat(f"Auslöser {a['name']} auf {karte}", sperren, karte, a["name"]))
         for k in ort["karten"]:
             e = k.get("eingang")
             if e and trifft(e["dialog"]):
-                sperren = {v: f"Eingang „{e.get('wenn')}“ (einmalig)" for v in verneinte(e.get("wenn"))}
+                sperren = sperren_von(e.get("wenn"), f"Eingang „{e.get('wenn')}“ (einmalig)")
                 liste.append(Kandidat(f"Eingang von {k['kennung']}", sperren))
     return liste
 
@@ -220,7 +226,7 @@ def zugaenge(welt: Welt, karte: str) -> list[Kandidat]:
     liste = [
         Kandidat(
             f"Übergang {a['name']} in {ort['kennung']}",
-            {v: f"wenn des Übergangs „{a['wenn']}“" for v in verneinte(a.get("wenn"))},
+            sperren_von(a.get("wenn"), f"wenn des Übergangs „{a.get('wenn')}“"),
         )
         for ort in welt.orte
         for a in ort["ausloeser"]
@@ -267,20 +273,26 @@ def bewerte(welt: Welt, quest: dict, ab: int, ereignis: dict) -> Befund:
     if frei:
         return Befund(quest["kennung"], stelle, "sicher", frei[0].beschreibung)
     eigene = eigene_stellen(welt, quest, ab)
-    folgt = [k for k in liste if all(welt.setzer.get(v) and welt.setzer[v] <= eigene for v in k.sperren)]
+    # Eine Sperrmenge folgt aus der Quest, wenn eine ihrer Variablen nur von der Quest gesetzt wird.
+    eigen = lambda menge: any(welt.setzer.get(v) and welt.setzer[v] <= eigene for v in menge.split("+"))  # noqa: E731
+    folgt = [k for k in liste if all(eigen(m) for m in k.sperren)]
     if folgt:
         return Befund(quest["kennung"], stelle, "folgt", folgt[0].beschreibung)
     teile = [
         f"{k.beschreibung}: "
         + "; ".join(
-            f"{v} ({herkunft}; gesetzt in {', '.join(sorted(welt.setzer.get(v, {'—'}))[:3])})"
-            for v, herkunft in k.sperren.items()
+            f"{m} ({herkunft}; gesetzt in "
+            + "; ".join(f"{v}: {', '.join(sorted(welt.setzer.get(v, {'—'}))[:3])}" for v in m.split("+"))
+            + ")"
+            for m, herkunft in k.sperren.items()
         )
         for k in liste[:3]
     ]
     befund = Befund(quest["kennung"], stelle, "befund", " | ".join(teile))
     if befund.schluessel in AUSNAHMEN:
         befund.stufe, befund.text = "ausnahme", AUSNAHMEN[befund.schluessel]
+    elif befund.schluessel in GEMELDET:
+        befund.stufe, befund.text = "gemeldet", GEMELDET[befund.schluessel]
     return befund
 
 
@@ -315,11 +327,12 @@ def main() -> int:
     befunde = pruefe()
     alle = "--alle" in sys.argv
     for b in befunde:
-        if alle or b.stufe in ("befund", "ohne"):
+        if alle or b.stufe in ("befund", "ohne", "gemeldet"):
             print(b)
     offen = [b for b in befunde if b.stufe in ("befund", "ohne")]
     zaehlung = {
-        s: sum(b.stufe == s for b in befunde) for s in ("sicher", "folgt", "ausnahme", "befund", "ohne")
+        s: sum(b.stufe == s for b in befunde)
+        for s in ("sicher", "folgt", "ausnahme", "gemeldet", "befund", "ohne")
     }
     print(f"{len(offen)} Befunde; " + ", ".join(f"{s} {n}" for s, n in zaehlung.items()))
     return 1 if offen else 0

@@ -57,9 +57,23 @@ keine
 - Drei Fundbilder haben das Format einer Szene (1024 × 768) statt 512 × 512; sie stammen aus der
   ersten Lieferung. Die Fensterbank zeigt sie trotzdem (das Bild passt sich ein). Ob sie neu
   geliefert werden, entscheidet der Autor; das Werkzeug meldet sie, bis sie quadratisch sind.
-- In `ki-roh/` des privaten Repositorys liegen 22 unbenannte Gemini-Bilder vom 16.11., die kein
-  Werkzeug benutzt. Sie sind älter als die Liste G1 bis G37 (18.11.) und gehören nicht zu den
-  offenen Aufträgen; vermutlich Verworfenes oder Vorstufen.
+- In `ki-roh/` des privaten Repositorys liegen 39 unbenannte Gemini-Bilder (meist vom 16.11.), die
+  kein Werkzeug benutzt (vorher hier zu niedrig mit 22 angegeben). Durchgesehen am 20.11. gegen
+  E1 bis E4, N1, N2 und G1 bis G37: keines passt sauber zu einem offenen Auftrag.
+  - 17 Porträts auf Grün (meist doppelt: Mädchen mit Strohhut, Junge in blauer Jacke, Mann mit
+    Schürze, Mann in Uniform, Mann mit wildem grauem Haar, ältere Frau mit Napfkuchenform, Mädchen
+    mit Zöpfen, Mann mit oranger Mütze, Junge mit Stern-T-Shirt);
+  - 7 Bauteile auf Grün oder Magenta (Treppen, Geländerbögen, Pavillon, Dachreihe);
+  - 15 Szenen, die es im Spiel schon unter anderem Namen gibt oder Vorstufen davon sind (etwa
+    Postkarten mit Wasserfall, Dosenpokal, Korkwand, Briefkiste, Ortsschild in der Wüste), dazu
+    eine Kartenbox in Handschuhen, eine Werkstatt mit Kanne und ein Diner von oben.
+    Der Blechkasten mit Papieren (Nr. 36) ist eine größere Fassung von `fund-formular1857`, nicht die
+    Konservendose mit Zettel aus G2. Die Liste mit Nummern liegt nur lokal (buch/arbeit/bilder_20-11/).
+- Die drei Fundbilder im Szenenformat lassen sich ohne Verlust quadratisch machen: oben und unten
+  mit dem eigenen, gleichmäßigen Grund auf 1024 × 1024 auffüllen, dann genau halbieren
+  (Schlüssel auf seinem 8-Pixel-Raster mit nächstem Nachbarn). Motiv ganz drin, Rand mindestens
+  56 Pixel, keine Naht. Die fertigen Dateien liegen lokal bereit; ins private Paket legt sie der
+  Hauptchat (dieser Helfer schreibt dort nicht).
 - Neu seit heute: Ein PNG oder JPG mit dem Namen aus der Ablage direkt in `spiel/bilder/`
   hochladen genügt. Der Paketbau macht daraus das Format des Spiels
   (`app/skripte/grossbilder.mjs`, Szene 1024 × 768 auf dem Raster 256 × 192, Fundbild 512 × 512

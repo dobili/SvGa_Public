@@ -24,6 +24,7 @@ VAR reiheTheoBestanden = false
 VAR siliconBayAuswertungBestanden = false
 VAR victorFalschGesagt = false
 VAR notizbuchseiteFotografiert = false
+VAR victorSeiteGegeben = false
 VAR roboterGetroffen = false
 VAR tabletNachtGesehen = false
 VAR linGetroffen = false
@@ -126,10 +127,31 @@ Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
 // ---------------------------------------------------------------- Vitrine der Hales (Szene 57)
 
 === vitrine ===
-{notizbuchseiteFotografiert:
+// Quests verfehlen (mittel-2, 20.11.2026, Befund c): Die Quest „Die fehlende Seite“ begann beim
+// Berühren der Vitrine, ihr zweiter Schritt wartet auf Victors Seite an der Bergstation. Wer die
+// Vitrine erst danach sah, blieb hängen. Jetzt beginnt sie in vitrine_erstmals (quests.json), und wer
+// erst nach der Bergstation kommt, erkennt die Schrift und braucht die Quest nicht mehr.
+{
+- notizbuchseiteFotografiert and victorSeiteGegeben:
+    Die Vitrine „Hale – Ingenieure seit 1850“. Die Seite, die hier fehlt, kennst du jetzt. #sprecher:erzaehler
+    -> END
+- notizbuchseiteFotografiert:
     Die Vitrine „Hale – Ingenieure seit 1850“. Das Notizbuch liegt aufgeschlagen, die Seite fehlt noch immer. #sprecher:erzaehler
     -> END
+- victorSeiteGegeben: -> vitrine_spaet
 }
+-> vitrine_erstmals
+
+=== vitrine_spaet ===
+Die Vitrine „Hale – Ingenieure seit 1850“. Auf einem Pult liegt ein Notizbuch, Schachzüge in zwei Spalten. #sprecher:erzaehler
+Die rechte Seite ist herausgerissen. Du kennst die Schrift: Die Seite lag an der Bergstation in Victors Buch. #sprecher:erzaehler
+{(not abschiedGesehen and not ambroseSchweigt()):
+    Meine Züge links, seine Antwort fehlt. Wir wissen beide, wo sie ist. #sprecher:ambrose #stimmung:still
+}
+~ notizbuchseiteFotografiert = true
+-> END
+
+=== vitrine_erstmals ===
 Victor kommt dazu und stellt sich neben dich vor das Glas. #sprecher:erzaehler
 Hale. Ingenieure seit 1850. Von der Brücke zum Algorithmus. #sprecher:victor #stimmung:stolz
 Victor sagt es auf, weil es zur Führung gehört. Hinter dem Glas liegt ein Rechenschieber aus Elfenbein. #sprecher:erzaehler

@@ -61,8 +61,7 @@ Wer zuerst ankommt, zahlt nicht. Und wer unterwegs nur schlagen will, zahlt meis
 === earl_regel_erstmals ===
 -> earl_regel ->
 {not abschiedGesehen:
-    Ein Rennen ohne Angriff. Wie seltsam. #sprecher:ambrose #stimmung:nachdenklich
-    Und doch. #sprecher:ambrose #stimmung:nachdenklich
+    Ein Rennen ohne Angriff. Wie seltsam, und doch. #sprecher:ambrose #stimmung:nachdenklich
     Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. #sprecher:ambrose #stimmung:nachdenklich
     Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -195,8 +194,7 @@ VAR wegDesertSummitTafelVersucht = false
 ~ funkschachBegonnen = true
 Im Fenster des Diners steht ein altes CB-Funkgerät. Aus dem Lautsprecher kommen Buchstaben und Zahlen: „Echo vier, Echo zwei.“ #sprecher:erzaehler
 {not earlGetroffen:Ein Mann mit Kappe stellt seinen Kaffeebecher ab.|Earl stellt seinen Kaffeebecher ab.} #sprecher:erzaehler
-Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer. #sprecher:earl #stimmung:laechelt
-Willst du einspringen? #sprecher:earl #stimmung:laechelt
+Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer – willst du einspringen? #sprecher:earl #stimmung:laechelt
 -> funkschach_partie
 
 === funkschach_partie ===

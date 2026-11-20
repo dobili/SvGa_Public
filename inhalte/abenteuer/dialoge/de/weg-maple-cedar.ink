@@ -69,8 +69,7 @@ VAR abschiedGesehen = false
 {not tafelGesehen: Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler}
 Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
 {not tafelGesehen:
-    Das macht Mr. Pratt. Jeden Monat ein neues. #sprecher:juno #stimmung:froh
-    Niemand weiß, warum. #sprecher:juno #stimmung:froh
+    Das macht Mr. Pratt. Jeden Monat ein neues – niemand weiß, warum. #sprecher:juno #stimmung:froh
 }
 ~ tafelGesehen = true
 * [Die Aufgaben lösen]
@@ -171,8 +170,7 @@ Sonst trägst du mein Board bis Cedar Creek. #sprecher:nia #stimmung:lacht
 * [„Abgemacht.“]
     -> nia_duell
 * [„Nicht jetzt.“]
-    Ich bin schnell. Du nicht. #sprecher:nia #stimmung:laechelt
-    Bis gleich. #sprecher:nia #stimmung:laechelt
+    Ich bin schnell. Du nicht, bis gleich. #sprecher:nia #stimmung:laechelt
     -> END
 
 === nia_duell ===
@@ -183,8 +181,7 @@ Nia stellt die Figuren auf ihr Board, so schnell, dass du kaum hinsiehst. #sprec
 -> END
 
 === nia_nach_sieg ===
-Okay, okay. Du bist schneller, als du aussiehst. #sprecher:nia #stimmung:ueberrascht
-Noch mal? #sprecher:nia #stimmung:ueberrascht
+Okay, okay. Du bist schneller, als du aussiehst, noch mal? #sprecher:nia #stimmung:ueberrascht
 {faehrsteinGesehen and not abschiedGesehen: Schnell war sie. Du warst da. #sprecher:ambrose #stimmung:laechelt}
 + [„Noch eine.“]
     -> nia_duell
@@ -193,9 +190,8 @@ Noch mal? #sprecher:nia #stimmung:ueberrascht
     -> END
 
 === nia_nach_niederlage ===
-Board tragen! War nur Spaß. #sprecher:nia #stimmung:lacht
-Noch eine Runde? #sprecher:nia #stimmung:lacht
-{faehrsteinGesehen and not abschiedGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
+Board tragen! War nur Spaß, noch eine Runde? #sprecher:nia #stimmung:lacht
+{faehrsteinGesehen and not abschiedGesehen: Drei Minuten. So lange brauchte ein Gentleman, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]
@@ -205,8 +201,7 @@ Noch eine Runde? #sprecher:nia #stimmung:lacht
 // vorteil. Vorher ging es in nia_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === nia_nach_remis ===
-Unentschieden! Keiner trägt das Board. #sprecher:nia #stimmung:laechelt
-Noch eine Runde? #sprecher:nia #stimmung:laechelt
+Unentschieden! Keiner trägt das Board, noch eine Runde? #sprecher:nia #stimmung:laechelt
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]
@@ -304,7 +299,7 @@ Aber erst stelle ich dir eine Falle. #sprecher:odette #stimmung:laechelt
 Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. #sprecher:odette #stimmung:laechelt
 Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:lacht
 // Dialogprüfung, 17.11.2026: Auf dem ersten Weg schweigt Ambrose bis zur Fährstelle.
-{faehrsteinGesehen and not abschiedGesehen: Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
+{faehrsteinGesehen and not abschiedGesehen: Solche Aufgaben standen früher in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
 * [Die Fallen lösen]
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END
@@ -447,8 +442,7 @@ Drei Krähen, zwei Vogelscheuchen. Wer gewinnt? #sprecher:ada #stimmung:laechelt
 - Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler #klang:kasse_muenzen
 Diese Woche fehlen wieder sechs. Ich frag nicht, wer. #sprecher:ada #stimmung:nachdenklich
 Ich schreib bloß einen Zettel. #sprecher:ada #stimmung:nachdenklich
-Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. #sprecher:erzaehler
-Das ist alles. #sprecher:erzaehler
+Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad, das ist alles. #sprecher:erzaehler
 Otis. Redet mit den Kühen. #sprecher:ada #stimmung:laechelt
 Gatter zu, wenn ihr geht. #sprecher:ada #stimmung:neutral
 -> END
@@ -473,8 +467,7 @@ Es ist das Erste, was er seit dem Aufbruch sagt. #sprecher:erzaehler #pause:2
 Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
 Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
 Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab. #sprecher:silas #stimmung:nachdenklich
-Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. #sprecher:silas #stimmung:laechelt
-Helle und dunkle. #sprecher:silas #stimmung:laechelt
+Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln – helle und dunkle. #sprecher:silas #stimmung:laechelt
 * [Die Hand auf den Stein legen]
     Der Stein ist warm von der Sonne. #sprecher:erzaehler
 * [„Beißen die Fische heute?“]

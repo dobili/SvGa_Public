@@ -73,7 +73,7 @@ Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fü
 Mama geht ein wenig schneller. #sprecher:erzaehler
 // Wer das Camp erst nach dem Abschied besucht, sieht nur die Spuren; Ambroses Satz entfällt.
 {abschiedGesehen: ->->}
-{held}. Die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
+{held}, die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
 * [„Was heißt das?“]
 - Ich weiß es nicht genau. Seit der Bergstation. #sprecher:ambrose #stimmung:nachdenklich
 Seit dieser Zug gekommen ist. #sprecher:ambrose #stimmung:nachdenklich
@@ -103,7 +103,7 @@ Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laeche
 -> END
 
 === ezra_alltag ===
-{~Kanus nur mit Weste! Auch du, {held}!|Am Kiosk gibt's Limo und Marshmallows. Die Marshmallows sind für heute Abend.|Lou hat gestern im Räuberschach die Dame im ersten Zug verschenkt. Absichtlich. Genial.} #sprecher:ezra #stimmung:laechelt
+{~Kanus nur mit Weste! Auch du, {held}!|Am Kiosk gibt's Limo und Marshmallows. Die Marshmallows sind für heute Abend.|Lou hat gestern im Räuberschach die Dame im ersten Zug verschenkt, absichtlich. Genial.} #sprecher:ezra #stimmung:laechelt
 + [„Erklär mir die Regeln vom Lagerfeuer noch einmal.“]
     -> ezra_regeln
 + [„Bis nachher.“]
@@ -266,8 +266,7 @@ Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis #stim
 // vorteil. Vorher ging es in hollis_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === hollis_nach_remis ===
-Remis. Diesmal hat der Wald keinen von uns gewinnen lassen. #sprecher:hollis #stimmung:laechelt
-Noch einmal? #sprecher:hollis #stimmung:laechelt
+Remis. Diesmal hat der Wald keinen von uns gewinnen lassen, noch einmal? #sprecher:hollis #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END
@@ -277,16 +276,16 @@ Noch einmal? #sprecher:hollis #stimmung:laechelt
 // ---------------------------------------------------------------- Die Kinder
 
 === dex ===
-{~Ich hab Mae dreimal geschlagen. Im Räuberschach. Da ist Verlieren Gewinnen, also hat sie gewonnen. Glaube ich.|Bea ist Maes große Schwester. Die spielt bei der Meisterschaft! Gegen dich vielleicht!|Wusstest du, dass Kanus umkippen? Ich jetzt schon.} #sprecher:dex #stimmung:lacht
+{~Ich hab Mae im Räuberschach dreimal geschlagen. Da ist Verlieren Gewinnen, also hat sie gewonnen, glaube ich.|Bea ist Maes große Schwester. Die spielt bei der Meisterschaft, vielleicht gegen dich!|Wusstest du, dass Kanus umkippen? Ich jetzt schon.} #sprecher:dex #stimmung:lacht
 -> END
 
 === mae ===
-{~Bea ist meine Schwester. Sie spielt bei der Meisterschaft. Sie spielt immer auf Remis. Du brauchst Geduld.|Heute Nacht sieht man die Milchstraße. In der Stadt sieht man die nie.|Sterne sind wie Figuren. Man muss wissen, wo sie stehen.} #sprecher:mae #stimmung:laechelt
+{~Bea ist meine Schwester und spielt bei der Meisterschaft immer auf Remis. Du brauchst Geduld.|Heute Nacht sieht man die Milchstraße. In der Stadt sieht man die nie.|Sterne sind wie Figuren. Man muss wissen, wo sie stehen.} #sprecher:mae #stimmung:laechelt
 -> END
 
 === tamsin ===
 {zuschauenAngeboten and not slickBeobachtenBestanden: -> tamsin_zuschauen_nachholen}
-{~In Riverton regnet es jetzt bestimmt. Hier regnet es nie. Doch, gestern.|Slick hat gesagt, du bist jetzt berühmt. Bist du berühmt?|Ich hab Ezra im Tandem einen Turm gegeben. Er hat ihn sofort verloren.} #sprecher:tamsin #stimmung:lacht
+{~In Riverton regnet es jetzt bestimmt, hier nie. Doch, gestern.|Slick hat gesagt, du bist jetzt berühmt. Bist du berühmt?|Ich hab Ezra im Tandem einen Turm gegeben. Er hat ihn sofort verloren.} #sprecher:tamsin #stimmung:lacht
 -> END
 
 === tamsin_zuschauen_nachholen ===
@@ -300,7 +299,7 @@ Willst du sie sehen? Achte darauf, was Slick nicht sieht. #sprecher:tamsin #stim
     -> END
 
 === lou ===
-{~Das Musikhaus ist fertig! Also fast. Das Dach ist neu. Miss Odile spielt jeden Abend.|Hier ist es so still. Zu Hause hört man immer irgendwo Musik.|Räuberschach ist wie Jazz. Man gibt alles her und gewinnt trotzdem.} #sprecher:lou #stimmung:laechelt
+{~Das Musikhaus ist fast fertig, das Dach ist neu! Miss Odile spielt jeden Abend.|Hier ist es so still. Zu Hause hört man immer irgendwo Musik.|Räuberschach ist wie Jazz. Man gibt alles her und gewinnt trotzdem.} #sprecher:lou #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Kiosk und Wege

@@ -43,8 +43,7 @@ Mister? #sprecher:gideon #stimmung:ueberrascht
 In der Tür steht ein großer Mann mit Lederschurz und Armen wie Balken. Er trägt eine Schüssel, als wäre sie aus Glas. #sprecher:erzaehler
 Gideon. Stell es hin. #sprecher:ambrose #stimmung:jung
 Setz dich. Sieh her. #sprecher:ambrose #stimmung:jung
-Ich zeige dir, wie die Partie hierhergekommen ist. Nur die letzten Züge. #sprecher:ambrose #stimmung:jung
-Rate mit. #sprecher:ambrose #stimmung:jung
+Ich zeige dir, wie die Partie hierhergekommen ist. Nur die letzten Züge – rate mit. #sprecher:ambrose #stimmung:jung
 -> zug37
 
 === zug37 ===
@@ -76,8 +75,7 @@ Und jetzt? #sprecher:gideon #stimmung:nachdenklich
 -> zug39
 
 === zug39 ===
-Der 39. Zug. Jetzt gebe ich Schach. #sprecher:ambrose #stimmung:jung
-Mit der Dame. #sprecher:ambrose #stimmung:jung
+Der 39. Zug. Jetzt gebe ich Schach, mit der Dame. #sprecher:ambrose #stimmung:jung
 * [39. Dg3+]
     ~ kerzeRichtig = kerzeRichtig + 1
     Ja. Mit Schach. #sprecher:ambrose #stimmung:jung
@@ -117,8 +115,7 @@ Zweimal muss ich absetzen. #sprecher:erzaehler
 „40. König schlägt g3.“ #sprecher:erzaehler #pause
 Darunter wollte ich schreiben, dass ich ihm verziehen habe. Irgendwann um den zwanzigsten Zug, ohne es zu merken. #sprecher:ambrose #stimmung:jung
 Die Hand tut es nicht mehr. #sprecher:ambrose #stimmung:jung
-Gib den Brief dem Postreiter. Er soll ihn nach Norden bringen. #sprecher:ambrose #stimmung:jung
-Dort wartet jemand. #sprecher:ambrose #stimmung:jung
+Gib den Brief dem Postreiter. Er soll ihn nach Norden bringen, dort wartet jemand. #sprecher:ambrose #stimmung:jung
 Wer? #sprecher:gideon #stimmung:ueberrascht
 Ein unerträglicher Mann. Der beste Gegner, den ich hatte. #sprecher:ambrose #stimmung:jung
 Und das Brett, Mister? Wem soll ich es geben? #sprecher:gideon #stimmung:traurig
@@ -138,8 +135,7 @@ Sie geht aus. #sprecher:erzaehler #pause:2
     Die Kerze brennt noch. Du gehst zurück in die Nacht von Ghost Town. #sprecher:erzaehler #erinnerung:aus
     -> END
 }
-Mondlicht. Die Farben kehren zurück, und deine Hände sind deine. #sprecher:erzaehler #erinnerung:aus
-Sie sind nass. #sprecher:erzaehler
+Mondlicht. Die Farben kehren zurück, und deine Hände sind deine – sie sind nass. #sprecher:erzaehler #erinnerung:aus
 Ambrose steht am Fenster und sieht die Straße hinunter, nach Norden. #sprecher:erzaehler
 * [„Er ist angekommen. Hale hat es aufgeschrieben.“]
 - Ja. Gideon hat alles getan, worum ich ihn gebeten habe. #sprecher:ambrose #stimmung:still
@@ -147,8 +143,7 @@ Er hat das Brett nach Maple Falls geschickt. Er hat einen Stein behauen. #sprech
 Er hat einem Fremden drei Tage die Stirn gekühlt. #sprecher:ambrose #stimmung:laechelt
 Hundertsechzig Jahre habe ich an Hale gedacht. Jeden Tag. #sprecher:ambrose #stimmung:nachdenklich
 Und nicht ein einziges Mal an den Schmied. #sprecher:ambrose #stimmung:nachdenklich
-Ich habe nicht auf den Falschen gewartet. Nur immer auf den einen. #sprecher:ambrose #stimmung:friedlich
-Das ist ungerecht. #sprecher:ambrose #stimmung:friedlich
+Ich habe nicht auf den Falschen gewartet. Nur immer auf den einen, das ist ungerecht. #sprecher:ambrose #stimmung:friedlich
 Morgen spielt ihr sie zu Ende. Du und der junge Hale. #sprecher:ambrose #stimmung:friedlich
 Ich sehe zu. Das ist schöner, als ich dachte. #sprecher:ambrose #stimmung:friedlich
 -> END

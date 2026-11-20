@@ -53,8 +53,7 @@ Mein Vater hält heute drei Reden. Ich muss bei allen klatschen. #sprecher:victo
 -> END
 
 === victor_warten ===
-Warst du schon bei Theo? Er misst alle. #sprecher:victor #stimmung:nachdenklich
-Mich auch. #sprecher:victor #stimmung:nachdenklich
+Warst du schon bei Theo? Er misst alle – mich auch. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_berichte ===
@@ -99,13 +98,12 @@ Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 - Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. #sprecher:erzaehler
 Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
-Sag meinem Vater nichts. Noch nicht. #sprecher:victor #stimmung:muede
-Ich muss nachdenken. #sprecher:victor #stimmung:muede
+Sag meinem Vater nichts. Noch nicht – ich muss nachdenken. #sprecher:victor #stimmung:muede
 Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_alltag ===
-{~Mein Vater hat gefragt, ob du gut bist. Ich hab „ja“ gesagt. Er hat nichts mehr gefragt.|Ich hab dir bei Dash zugesehen. Du lachst beim Spielen. Das hab ich nie gemessen.|Pass auf Nova auf. Sie hat keine Wahl, glaube ich.} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat gefragt, ob du gut bist, und ich hab „ja“ gesagt. Er hat nichts mehr gefragt.|Ich hab dir bei Dash zugesehen, du lachst beim Spielen. Das hab ich nie gemessen.|Pass auf Nova auf. Sie hat keine Wahl, glaube ich.} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Empfangsroboter
@@ -142,8 +140,7 @@ Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. 
 {abschiedGesehen or ambroseSchweigt(): -> seite_fehlt}
 * [Warten]
 - Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
-Das sind meine Züge. Die linke Spalte. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
-Jeden einzelnen. #sprecher:ambrose #stimmung:still
+Das sind meine Züge. Die linke Spalte – jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
 Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. #sprecher:ambrose #stimmung:still
 Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
 Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:traurig
@@ -168,8 +165,7 @@ Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. 
 {tabletNachtGesehen:Du machst ein Foto für Juno.|Juno macht ein Foto.} Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
 {(not abschiedGesehen and not ambroseSchweigt()):
     Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
-    Er hat sie aufgehoben. Meine Züge. #sprecher:ambrose #stimmung:lacht
-    In einem Buch. #sprecher:ambrose #stimmung:lacht
+    Er hat sie aufgehoben. Meine Züge – in einem Buch. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 

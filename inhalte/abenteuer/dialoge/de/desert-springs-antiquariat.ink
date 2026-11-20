@@ -91,8 +91,7 @@ Du liest laut, bei einer Glühbirne, für jemanden, der hundertsechzig Jahre gew
 „Wir spielen die letzten Züge an einem Brett, von Angesicht zu Angesicht. Ich lasse ein Zimmer richten.“ #sprecher:erzaehler
 „Ich warte. J.“ #sprecher:erzaehler
 „Hale“ #sprecher:erzaehler #pause:5
-Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts. #sprecher:erzaehler #bild:aus
-Das ist schlimmer. #sprecher:erzaehler #pause:3
+Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts, das ist schlimmer. #sprecher:erzaehler #bild:aus #pause:3
 Er hat gewartet. #sprecher:ambrose #stimmung:riss #musik:ambrose.hale
 Er hat wirklich gewartet. Er hat ein Zimmer richten lassen. #sprecher:ambrose #stimmung:ueberrascht
 Mut. Er schreibt, es war Mut. #sprecher:ambrose #stimmung:ueberrascht

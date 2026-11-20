@@ -250,8 +250,7 @@ Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
 ~ tamsinGetroffen = true
 Ein Mädchen mit Schachuhr unter dem Arm zählt laut rückwärts, während Slick zieht. #sprecher:erzaehler
 Fünf, vier, drei, zwei – Gabel! Siehst du? #sprecher:tamsin #stimmung:froh
-Nicht nachdenken. Gucken. #sprecher:tamsin #stimmung:laechelt
-Ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
+Nicht nachdenken. Gucken – ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
 -> tamsin_reihe
 
 === tamsin_reihe ===
@@ -326,8 +325,7 @@ Der Tisch redet auch nicht. Vielleicht deshalb. #sprecher:tamsin #stimmung:nachd
 === ray_erstes_treffen ===
 ~ rayGetroffen = true
 Ein älterer Herr mit Busfahrermütze stellt geduldig die Figuren auf. #sprecher:erzaehler
-Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt. #sprecher:ray #stimmung:laechelt
-Beides mit Fahrplan. #sprecher:ray #stimmung:laechelt
+Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt, beides mit Fahrplan. #sprecher:ray #stimmung:laechelt
 {reiheTamsinBestanden: -> ray_reihe}
 -> ray_erst_tamsin
 
@@ -346,8 +344,7 @@ Also fährst du zu der anderen. #sprecher:ray #stimmung:laechelt
 ~ moldeGefuehlt = true
 Er legt seine große Hand auf den Stein. #sprecher:erzaehler
 Hier hab ich neunundsechzig gegen Odum verloren. Und zweiundsiebzig. #sprecher:ray #stimmung:laechelt
-Und jedes Jahr danach. Der Stein ist hier dünner als da drüben. #sprecher:ray #stimmung:laechelt
-Fühl mal. #sprecher:ray #stimmung:laechelt
+Und jedes Jahr danach. Der Stein ist hier dünner als da drüben – Fühl mal. #sprecher:ray #stimmung:laechelt
 * [Die Hand auf den Stein legen]
 * [Nicken]
     Du nickst. Dann legst du die Hand doch hin. #sprecher:erzaehler
@@ -427,8 +424,7 @@ Hast du's gesehen? Er guckt nur nach vorn. #sprecher:tamsin #stimmung:nachdenkli
 - ausgangRivertonClubkampf == "sieg":
     Sieg, aber keine bessere Nadel. Unter der Brücke zählt trotzdem jeder Sieg. #sprecher:slick #stimmung:laechelt
 - ausgangRivertonClubkampf == "remis":
-    Remis. Die Treppe hat zugesehen und nichts gesagt. #sprecher:slick #stimmung:neutral
-    Deine Nadel bleibt. #sprecher:slick #stimmung:neutral
+    Remis. Die Treppe hat zugesehen und nichts gesagt – deine Nadel bleibt. #sprecher:slick #stimmung:neutral
 - ausgangRivertonClubkampf == "niederlage":
     Heute ich. Deine Nadel bleibt, wo sie ist. #sprecher:slick #stimmung:laechelt
     Komm wieder, wenn du willst. #sprecher:slick #stimmung:laechelt

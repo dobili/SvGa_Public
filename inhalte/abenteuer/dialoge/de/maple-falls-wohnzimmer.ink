@@ -97,11 +97,10 @@ Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt a
 // Stimmung: fremd, müde, Sommerende. Keine Musik bis zur Pizza; Wasserfall fern.
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Am Abend ist der Umzugswagen weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer
-Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler
+// Erstspieler-Durchgang 20.11.2026: kürzer bis zum ersten Schritt; Sofa und Rauschen erzählt schon die Einleitung.
+Am Abend ist der Umzugswagen weg. Kartons überall, das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
-Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
 Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter #stimmung:laechelt
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter #stimmung:nachdenklich
 * [„Es ist ziemlich groß.“]

@@ -61,6 +61,8 @@ VAR abeGetroffen = false
 VAR abeVorgestellt = false
 VAR linseGefunden = false
 VAR angesehenFaehrterminal = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegGhostCapitalTafelVersucht = false
 
 // ---------------------------------------------------------------- Abe am Leuchtturm
 
@@ -94,6 +96,9 @@ Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet hab
     Auf der Tafel am Steg hat jemand mit Kreide einen Leuchtturm gemalt. Darunter: „Gelöst“. #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegGhostCapitalTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Am Steg hängt eine Tafel mit drei Diagrammen: „Im Endspiel ist der König eine Figur. Bring ihn nach vorn!“ #sprecher:erzaehler
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegGhostCapital.tafel")

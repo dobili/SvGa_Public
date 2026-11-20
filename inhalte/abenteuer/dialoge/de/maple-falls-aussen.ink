@@ -370,7 +370,13 @@ Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stim
 {springerLilyBestanden: -> lily}
 Lily schiebt das Plastikpferd über den Gehweg. Es hüpft mal zwei Felder, mal drei. #sprecher:erzaehler
 Hüpft der jetzt gerade oder schief? Zeig's mir nochmal, ja? #sprecher:lily #stimmung:nachdenklich
--> END
+// Vorher endete das Gespräch mit der Frage, ohne Wahl (rueckmeldung.cjs, 19.11.2026).
++ [„Noch einmal.“]
+    ~ beginneAufgaben("mapleFalls.springerLily")
+    -> END
++ [„Nicht jetzt.“]
+    Okay. Ich üb so lange mit dem Pferd. #sprecher:lily #stimmung:laechelt
+    -> END
 
 // ---------------------------------------------------------------- Einleitung
 

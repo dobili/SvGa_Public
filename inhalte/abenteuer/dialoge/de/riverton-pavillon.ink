@@ -205,6 +205,13 @@ Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
     Die Treppe gehört der Stadt. Die kann keiner verpachten. #sprecher:slick #stimmung:laechelt
     -> slick_alltag_wahl
 }
+// Den Montag gibt es einmal; danach sitzt Slick auf der Treppe (Lektorat mittel-1, 19.11.2026: nach
+// einer verlorenen Revanche spielte er den Montag noch einmal).
+{rivertonMontagGesehen:
+    Slick hat die Steinplatte mit der Mulde auf den Knien und nickt dir zu. #sprecher:erzaehler
+    Der Wohnwagen ist offen. Komm rein, wenn du magst. #sprecher:slick #stimmung:laechelt
+    -> slick_alltag_wahl
+}
 // Gutachten K2.8: der Montag als eigener Zustand; erst danach öffnet der Wohnwagen.
 ~ rivertonMontagGesehen = true
 Am Montag, nach der Schule, fahrt ihr noch einmal hin. Juno hat gesagt, man müsse es sehen. #sprecher:erzaehler #musik:aus

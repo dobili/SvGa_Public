@@ -129,17 +129,42 @@ Zum Start nötig sind jetzt 13,4 MB gespeichert, über die Leitung etwa 5,5 MB. 
      - Vorher bitte die iOS-Version des Autors erfragen und eine Hörprobe am Handy machen.
    - Wirkung: Der Start wird dadurch nicht schneller (Ton lädt schon im Hintergrund), nur das
      Datenvolumen über das ganze Spiel.
-2. **Weniger Anfragen.**
-   - Das Grundpaket sind rund 900 Dateien, viele davon kleiner als 2 KB (Figuren, Porträts, Grafik).
-   - `paket/paketlader.ts` lädt je 6 zugleich. Das war für HTTP/1.1 gedacht, die Live-Seite spricht
-     HTTP/2.
-   - Bei einer Laufzeit im Mobilfunk von 60 bis 100 ms sind allein das 9 bis 15 s Wartezeit.
-   - Abhilfe:
-     - `GLEICHZEITIG` für HTTP/2 auf 16 bis 24 erhöhen. Das geht schnell, lässt sich aber
-       lokal nicht messen, weil die Vorschau HTTP/1.1 spricht.
-     - Oder kleine Dateien je Ordner zu Bögen beziehungsweise einer Sammeldatei bündeln; das ist
-       größer.
-   - Empfehlung: zuerst die Zahl erhöhen und am Handy messen.
+2. **Weniger Anfragen.** Umgesetzt am 20.11. nach Rückmeldung des Hauptchats (siehe unten).
+
+## Nachtrag: parallele Abrufe und Hörprobe (20.11.2026)
+
+- **Parallele Abrufe.** `paket/paketlader.ts` lädt jetzt 16 Dateien zugleich, wenn `paket.json`
+  über HTTP/2 oder HTTP/3 kam. Unter HTTP/1.1 bleibt es bei 6.
+  - Das Protokoll liest `ladehilfen.ts` aus Resource Timing (`nextHopProtocol`); Tests stehen in
+    `ladehilfen.test.ts`.
+  - Lokal spricht die Vorschau HTTP/1.1 und bleibt bei 6 (gedrosselt 9,9 s). Wirken kann die
+    Änderung erst auf der Live-Seite, darum der Messpunkt am Handy.
+- **Hörprobe AAC gegen Opus.** Erzeugt wird sie mit
+  `python -m pipeline.abenteuer.ton.codecprobe PRIVAT PRIVAT/hoerprobe`.
+  - Inhalt:
+    - drei Musikausschnitte zu je 20 s (Maple Falls, Ambrose Cello, Abspann): AAC 80k gegen Opus
+      64k und 48k;
+    - Flussrauschen 15 s in Stereo: AAC 64k gegen Opus 40k und 32k.
+  - Die Seite spielt über Web Audio wie das Spiel und meldet, wenn ein Gerät Opus nicht dekodiert.
+    Ein Blindmodus mischt die Namen.
+  - Die Probe ist streng gegen Opus: Opus entsteht aus dem AAC des Spiels, also mit einem zweiten
+    verlustbehafteten Schritt.
+  - Opus läuft mit begrenzter variabler Bitrate. Frei überschoss es bei dieser Musik das Ziel um
+    35 %, Opus 64k war dann so groß wie AAC 80k.
+  - Größen:
+
+    | Fassung | im Vergleich zu AAC |
+    | --- | ---: |
+    | Opus 64k | −18 % |
+    | Opus 48k | −37 % |
+    | Opus 40k (Geräusch) | −40 % |
+    | Opus 32k (Geräusch) | −52 % |
+
+  - Spektral gemessen (gemitteltes Spektrum in Terzbändern ab 50 Hz):
+    - Musik: im Mittel 0,15 bis 0,33 dB Abweichung bei 64k, 0,18 bis 0,48 dB bei 48k. Die größten
+      Abweichungen liegen um 62 Hz (bis 3,7 dB); Handylautsprecher geben das kaum wieder.
+    - Flussrauschen: im Mittel 2 dB; das muss das Ohr entscheiden.
+    - Die Bandbreite bleibt gleich (Musik 9 bis 15 kHz wie bei AAC).
 
 ## Für den Hauptchat
 

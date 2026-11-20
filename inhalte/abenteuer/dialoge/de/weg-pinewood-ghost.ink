@@ -46,6 +46,9 @@ Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. E
     Auf der Tafel am Canyonrand steht in Kreide: „Gelöst. Echo!“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegPinewoodGhostTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 An einem Pfosten am Canyonrand hängt eine Tafel mit drei Diagrammen: „Ein Schach mit Folgen. Findest du es?“ #sprecher:erzaehler
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegPinewoodGhost.tafel")
@@ -72,6 +75,8 @@ VAR z1Gesehen = false
 VAR gefundenSpurPM6 = false
 VAR gefundenSeite11 = false
 VAR gefundenFinchBauerE = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegPinewoodGhostTafelVersucht = false
 
 // ---------------------------------------------------------------- Ereignis: Das Gespenst der Tankstelle (Dokument 15, 2.12)
 // Akt 4. Draußen die verlassene Tankstelle, drinnen der Greifarm Z-1 (Innenraum wegPinewoodGhost.tankstelle).

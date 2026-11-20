@@ -46,6 +46,8 @@ describe("Rückmeldung nach dem Ergebnis", () => {
     nachErgebnis(k, oeffne).reagiere();
     expect(oeffne).toHaveBeenCalledWith(LEKTION);
     expect(geschrieben.at(-1)?.nachErgebnis).toBeNull();
+    // Bis zum Ende des Gesprächs gilt sie als offen (Neuladen mitten darin öffnet sie wieder).
+    expect(geschrieben.at(-1)?.rueckmeldungOffen).toBe(LEKTION);
   });
 
   it("vergiss öffnet nichts", () => {

@@ -166,8 +166,18 @@ Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er 
     Hast du das gesehen? Das hat sie von … #sprecher:ambrose #stimmung:froh
     Er bricht ab. Er lächelt über sich selbst. #sprecher:erzaehler
 }
-Okay. Das war nicht so schlecht. #sprecher:celeste #stimmung:laechelt
-Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
+// Je nach Ausgang (vorher derselbe Satz, auch wenn Céleste gewann; rueckmeldung.cjs, 19.11.2026).
+{ausgangPortDelacroixCeleste:
+- "niederlage":
+    Ich hab gewonnen? Echt jetzt? #sprecher:celeste #stimmung:ueberrascht
+    Mit den Pferden? Dann geh ich skaten, solange ich vorne liege. #sprecher:celeste #stimmung:ueberrascht
+- "remis":
+    Unentschieden. Klingt fair. #sprecher:celeste #stimmung:laechelt
+    Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
+- else:
+    Okay. Das war nicht so schlecht. #sprecher:celeste #stimmung:laechelt
+    Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
+}
 // Nach dem Abschied (abschiedGesehen) endet die Szene mit Céleste; Ambroses Gespräch entfällt.
 {abschiedGesehen:
     Draußen rattert das Skateboard über das Pflaster, kleiner werdend. #sprecher:erzaehler

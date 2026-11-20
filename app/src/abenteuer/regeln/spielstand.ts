@@ -164,6 +164,9 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     runden: liste(roh.runden),
     ...ergebniskarteAus(roh.ergebniskarte),
     ...(typeof roh.nachErgebnis === "string" ? { nachErgebnis: roh.nachErgebnis } : {}),
+    ...(typeof roh.rueckmeldungOffen === "string"
+      ? { rueckmeldungOffen: roh.rueckmeldungOffen }
+      : {}),
     dialogvariablen: istObjekt(roh.dialogvariablen)
       ? (roh.dialogvariablen as Abenteuerstand["dialogvariablen"])
       : {},

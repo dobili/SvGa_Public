@@ -73,7 +73,7 @@ Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fü
 Mama geht ein wenig schneller. #sprecher:erzaehler
 // Wer das Camp erst nach dem Abschied besucht, sieht nur die Spuren; Ambroses Satz entfällt.
 {abschiedGesehen: ->->}
-{held}. Die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
+{held}, die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
 * [„Was heißt das?“]
 - Ich weiß es nicht genau. Seit der Bergstation. #sprecher:ambrose #stimmung:nachdenklich
 Seit dieser Zug gekommen ist. #sprecher:ambrose #stimmung:nachdenklich

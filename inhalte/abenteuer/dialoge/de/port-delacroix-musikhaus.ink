@@ -184,21 +184,43 @@ Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 un
 - else:
     Das Set geht an mich. Die Band spielt trotzdem weiter. #sprecher:blaeser #stimmung:lacht
     Noch einmal? Ich würfle dir eine neue Grundreihe. #sprecher:blaeser #stimmung:laechelt
+    -> set1_nochmal
 }
 -> END
+
+// Die Frage braucht eine Antwort (vorher endete das Gespräch ohne Wahl; Lektorat mittel-1).
+=== set1_nochmal ===
++ [„Noch einmal.“]
+    ~ beginnePartie("portDelacroix.schach960Set1")
+    -> END
++ [„Nicht jetzt.“]
+    Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser #stimmung:lacht
+    -> END
 
 // Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
 === set2_danach ===
 {ausgangPortDelacroixSchach960Set2:
-- "sieg": -> blaeser
+- "sieg":
+    Zweites Set an dich! Die Band spielt einen Tusch, nur für dich. #sprecher:blaeser #stimmung:froh
+    -> blaeser
 - "remis":
     Remis. Die Band nickt im Takt. #sprecher:blaeser #stimmung:laechelt
     -> blaeser
 - else:
     Das Set geht an mich. Die Band spielt trotzdem weiter. #sprecher:blaeser #stimmung:lacht
     Noch einmal? Ich würfle dir eine neue Grundreihe. #sprecher:blaeser #stimmung:laechelt
+    -> set2_nochmal
 }
 -> END
+
+// Die Frage braucht eine Antwort (vorher endete das Gespräch ohne Wahl; Lektorat mittel-1).
+=== set2_nochmal ===
++ [„Noch einmal.“]
+    ~ beginnePartie("portDelacroix.schach960Set2")
+    -> END
++ [„Nicht jetzt.“]
+    Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser #stimmung:lacht
+    -> END
 
 // Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
 === set3_danach ===
@@ -210,5 +232,15 @@ Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 un
 - else:
     Das Set geht an mich. Die Band spielt trotzdem weiter. #sprecher:blaeser #stimmung:lacht
     Noch einmal? Ich würfle dir eine neue Grundreihe. #sprecher:blaeser #stimmung:laechelt
+    -> set3_nochmal
 }
 -> END
+
+// Die Frage braucht eine Antwort (vorher endete das Gespräch ohne Wahl; Lektorat mittel-1).
+=== set3_nochmal ===
++ [„Noch einmal.“]
+    ~ beginnePartie("portDelacroix.schach960Set3")
+    -> END
++ [„Nicht jetzt.“]
+    Die Band spielt noch bis Mitternacht. Ich auch. #sprecher:blaeser #stimmung:lacht
+    -> END

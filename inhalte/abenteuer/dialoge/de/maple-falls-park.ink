@@ -80,7 +80,8 @@ Mein Brett! Und du hast die Aufgaben gelöst? #sprecher:abernathy #stimmung:froh
 Wunderbar. #sprecher:abernathy #stimmung:froh
 Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
 Die Stellung auf dem Brett stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
-Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy #stimmung:nachdenklich
+Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. #sprecher:abernathy #stimmung:nachdenklich
+W. #sprecher:abernathy #stimmung:nachdenklich
 So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben – Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
 // Nach dem Abschied (abschiedGesehen) erkennt {held} die Züge selbst; Ambrose spricht nicht mehr.
 {abschiedGesehen:
@@ -170,7 +171,10 @@ Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:
 -> END
 
 === jo_nach_sieg ===
-Okay, okay. Limo geht auf mich, noch eine? #sprecher:skaterJo #stimmung:laechelt
+// Jo ist pleite (deshalb holt der Held die Limo); Lektorat mittel-1, 19.11.2026.
+Okay, okay. Du hast gewonnen. #sprecher:skaterJo #stimmung:laechelt
+Limo kann ich dir keine ausgeben, ich bin pleite. Aber ich sag's jedem im Park. #sprecher:skaterJo #stimmung:laechelt
+Noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Noch eine.“]
     -> jo_duell
 + [„Gleich.“]

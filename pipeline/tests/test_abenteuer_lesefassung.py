@@ -25,9 +25,11 @@ ZEITBUDGET_SEKUNDEN = 300
 LAEUFE = 2
 AKTE = (1, 2, 3, 4)
 # Seit der Einleitung (19.11.2026): vor dem Haus, dann die Ankunft im Wohnzimmer, dann das Brett.
+# Die Ankunft läuft seit der Erzählzeit-Prüfung (19.11.2026) als Eingang des Wohnzimmers, der zu
+# „ankunft“ verzweigt; die Lesefassung nennt den Eingangsknoten.
 ERSTE_DIALOGE = (
     "maple-falls-aussen.einleitung",
-    "maple-falls-wohnzimmer.ankunft",
+    "maple-falls-wohnzimmer.eingang",
 )
 BRETT = "maple-falls-dachboden.dachboden_brett"
 TAGS = re.compile(r"#\s*(sprecher|stimmung|musik|klang|bild|pause|geraeusch|licht|teilchen|erinnerung)\b")

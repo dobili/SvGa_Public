@@ -5,12 +5,11 @@ Der Autor wählt, ob Möbel kleiner werden oder die Figur (innen) größer. Bevo
 geändert wird, zeigt diese Seite jede Variante an denselben Stellen in der echten Vergrößerung des
 Spiels (Kartenpixel mal 3) und zählt, was sie berührt.
 
-Varianten (Auftrag des Haupt-Chats):
-- Ist: wie heute.
-- A: Möbel innen × 0,75 (Wände, Böden, Figuren bleiben); gezählt: wie viel Boden frei wird.
-- B: ganzer Innenraum × 0,75 (wie C, aber jede Kachel kleiner, Einzelheiten gehen verloren).
-- C: Figuren innen × FIGURFAKTOR_C (alle, auch Statisten), Möbel und Räume bleiben.
-- D: außen nur die zu großen Möbel aus demselben Paket verkleinern (Maßstab aus proportionen.py).
+Varianten (Entscheidung des Autors, 20.11.2026: kleinere Möbel oder Räume innen fallen weg):
+- Innen: Figuren größer, × gemessener Faktor (Paketfigur durch unsere), × 1,25 und × 1,33, in sieben
+  Räumen; dazu, wo Gänge oder Türen für die breitere Figur zu eng würden (durchlass.py).
+- Außen: jedes zu große Möbel auf den vorgeschlagenen Maßstab (proportionen.py), ganze Karte und
+  Ausschnitt vorher und nachher, mit freiem Boden und Deckung durch Möbel.
 
 Bilder: aus den Kartenvorschauen der Pipeline (kartenbild.zeichne, belebungsvorschau), also mit den
 Figuren aus ``spiel/figuren-neu`` (PixelLab), wenn das private Paket sie hat; sonst mit den alten
@@ -32,28 +31,37 @@ from PIL import Image
 from pipeline.abenteuer import belebungsvorschau, durchlass, proportionen
 from pipeline.abenteuer.kartenbau import INHALTE, K, platziere, raster, sperrfelder
 from pipeline.abenteuer.kartenbild import zeichne
+from pipeline.abenteuer.kartentiled import GESPERRT
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.proportionsseite import schreibe_seite
 
 ZOOM = 3  # Bildschirmpixel je Kartenpixel im Spiel (weltmassstab.ts)
-FIGURFAKTOR_C = 4 / 3  # 1 / 0,75
-RAUMFAKTOR = 0.75
+INNEN_FAKTOREN = (1.25, 4 / 3)  # dazu der gemessene Faktor (Paketfigur durch unsere)
 FENSTER = (8, 11)  # sichtbare Kacheln um die Stelle (Hochformat zeigt 8 × 15)
-FREI = {".", ",", "_"}  # Bodenzeichen im Raster (kartentiled), grob
+KOERPER = 12  # Körper der Figur in Kartenpixeln (durchlass.py)
+# Möbelarten, die zum Raum gehören und nie verkleinert werden.
+RAUMTEILE = {"teppich", "boden", "boden_teil", "fenster", "bild", "treppe", "tuer", "markierung"}
+ZELLE = 4  # Zellengröße von durchlass.py
 
-# Stellen der Seite: Name, Szene, Feld des Helden (x, y).
-STELLEN = [
-    ("Parkbank (Bild des Autors)", "maple-falls-park", (5, 12)),
-    ("Picknicktisch bei Kettering", "cedar-creek-aussen", (38, 29)),
+# Innenräume: Name, Szene, Feld des Helden (x, y) oder None (freie Mitte).
+INNEN = [
     ("Wohnzimmer", "maple-falls-wohnzimmer-tisch", (12, 7)),
+    ("Dachboden", "maple-falls-dachboden", None),
     ("Clubraum", "maple-falls-clubraum", (9, 8)),
+    ("Waschsalon", "cedar-creek-waschsalon", (6, 8)),
     ("Diner", "maple-falls-diner", (3, 8)),
     ("Kantine Ironwood", "ironwood-kantine", (16, 11)),
-    ("Waschsalon", "cedar-creek-waschsalon", (6, 8)),
-    ("Hauptstraße mit Türen", "maple-falls-aussen", (20, 12)),
+    ("Wards Hütte", "summit-city-huette", None),
 ]
-# Möbelarten, die in Variante A nicht kleiner werden (gehören zum Raum).
-RAUMTEILE = {"teppich", "boden", "boden_teil", "fenster", "bild", "treppe", "tuer", "markierung"}
+# Außenkarten: Name, Szene, Stelle für den Ausschnitt in Spielvergrößerung.
+AUSSEN = [
+    ("Maple Falls, Park (Bank des Autors)", "maple-falls-park", (5, 12)),
+    ("Maple Falls, Hauptstraße", "maple-falls-aussen", (20, 12)),
+    ("Cedar Creek (Picknicktisch bei Kettering)", "cedar-creek-aussen", (38, 29)),
+    ("Riverton", "riverton-aussen", (50, 48)),
+    ("Desert Springs (Akt 3)", "desert-springs-aussen", (30, 32)),
+    ("Summit City (Akt 4)", "summit-city-aussen", (40, 40)),
+]
 
 
 def lade_szene(name: str) -> dict:
@@ -132,7 +140,7 @@ def moebel_mal(szene: dict, faktor: float, nur: set[str] | None = None) -> dict:
 def freier_boden(szene: dict) -> tuple[int, int]:
     """(freie Bodenfelder, alle Bodenfelder) nach Kollision der Möbel (kartenbau.sperrfelder)."""
     zeilen = raster(szene)
-    boden = {(x, y) for y, z in enumerate(zeilen) for x, c in enumerate(z) if c in FREI}
+    boden = {(x, y) for y, z in enumerate(zeilen) for x, c in enumerate(z) if c not in GESPERRT}
     gesetzt, _ = platziere(szene, lade_moebel())
     belegt = set().union(*(sperrfelder(s) for s in gesetzt)) if gesetzt else set()
     return len(boden - belegt), len(boden)
@@ -221,51 +229,147 @@ def befunde_zusammen(innenfaktor: float, aussenfigur: float = proportionen.FIGUR
         proportionen.FIGUR_AUSSEN = alt
 
 
+def mitte(szene: dict) -> tuple[int, int]:
+    """Ein freies Bodenfeld nahe der Mitte (für Räume ohne vorgegebene Stelle)."""
+    zeilen = raster(szene)
+    gesetzt, _ = platziere(szene, lade_moebel())
+    belegt = set().union(*(sperrfelder(s) for s in gesetzt)) if gesetzt else set()
+    mx, my = len(zeilen[0]) // 2, len(zeilen) // 2
+    frei = [
+        (x, y)
+        for y, z in enumerate(zeilen)
+        for x, c in enumerate(z)
+        if c not in GESPERRT and (x, y) not in belegt
+    ]
+    return min(frei, key=lambda f: (f[0] - mx) ** 2 + (f[1] - my) ** 2)
+
+
+def deckung(szene: dict, privat: Path) -> float:
+    """Anteil der Kartenfläche, den Möbel bedecken (deckende Pixel mal Maßstab², ohne Raumteile)."""
+    from pipeline.abenteuer.kartenbild import moebelbild
+
+    katalog = lade_moebel()
+    zeilen = raster(szene)
+    flaeche = len(zeilen) * len(zeilen[0]) * K * K
+    summe = 0.0
+    for objekt in szene.get("objekte", []):
+        angabe = katalog.get(objekt.get("moebel"))
+        if not angabe or angabe.get("art") in RAUMTEILE | {"gebaeude", "haus", "boden_teil", "bordstein"}:
+            continue
+        try:
+            alpha = moebelbild(privat, angabe).getchannel("A")
+        except FileNotFoundError:
+            continue
+        summe += sum(alpha.histogram()[proportionen.DECKEND_AB + 1 :]) * float(objekt.get("massstab", 1)) ** 2
+    return summe / flaeche
+
+
+def verkleinert_aussen(szene: dict, vorschlaege: dict[str, float]) -> tuple[dict, int]:
+    """Szene mit jedem zu großen Möbel auf seinen vorgeschlagenen Maßstab; dazu die Zahl der Stellen."""
+    neu = copy.deepcopy(szene)
+    zahl = 0
+    for nummer, objekt in enumerate(neu.get("objekte", [])):
+        faktor = vorschlaege.get(objekt.get("moebel"))
+        if faktor is None or objekt.get("drehung", 0) % 180:
+            continue
+        kleiner = moebel_mal({"objekte": [objekt]}, faktor, {objekt["moebel"]})["objekte"][0]
+        neu["objekte"][nummer] = kleiner
+        zahl += 1
+        for anderes in neu["objekte"]:  # was darauf liegt, mit
+            if anderes.get("auf") and anderes.get("auf") == objekt.get("id"):
+                anderes["massstab"] = round(float(anderes.get("massstab", 1)) * faktor, 3)
+    return neu, zahl
+
+
+def speichere(ziel: Path, bild: Image.Image, name: str) -> str:
+    datei = f"bilder/{name}.png"
+    bild.convert("RGB").save(ziel / datei, optimize=True)
+    return datei
+
+
+def innenraeume(ziel: Path, privat: Path, faktoren: list[float]) -> list[dict]:
+    """Je Raum: heute und jede größere Figur, Ausschnitt in Spielvergrößerung."""
+    ergebnis = []
+    for nummer, (titel, name, feld) in enumerate(INNEN):
+        szene = lade_szene(name)
+        feld = feld or mitte(szene)
+        bilder = {"heute": speichere(ziel, ausschnitt(vorschau(szene, privat, feld), feld), f"i{nummer}-1")}
+        for faktor in faktoren:
+            bild = ausschnitt(vorschau(szene, privat, feld, faktor), feld)
+            bilder[f"Figur × {faktor:.2f}"] = speichere(ziel, bild, f"i{nummer}-{faktor:.2f}")
+        ergebnis.append({"titel": titel, "szene": name, "bilder": bilder})
+        print(titel)
+    return ergebnis
+
+
+def aussenkarten(ziel: Path, privat: Path, vorschlaege: dict[str, float]) -> list[dict]:
+    """Je Außenkarte: ganze Karte und Ausschnitt vorher/nachher, freier Boden und Deckung."""
+    ergebnis = []
+    for nummer, (titel, name, feld) in enumerate(AUSSEN):
+        szene = lade_szene(name)
+        klein, zahl = verkleinert_aussen(szene, vorschlaege)
+        vorher_bild, nachher_bild = vorschau(szene, privat, feld), vorschau(klein, privat, feld)
+        halb = (
+            vorher_bild.width // 2,
+            vorher_bild.height // 2,
+        )  # vorschau ist doppelt: 1 Pixel je Kartenpixel
+        bilder = {
+            "karte vorher": speichere(
+                ziel, vorher_bild.resize(halb, Image.NEAREST), f"a{nummer}-karte-vorher"
+            ),
+            "karte nachher": speichere(
+                ziel, nachher_bild.resize(halb, Image.NEAREST), f"a{nummer}-karte-nachher"
+            ),
+            "Ausschnitt vorher": speichere(ziel, ausschnitt(vorher_bild, feld), f"a{nummer}-vorher"),
+            "Ausschnitt nachher": speichere(ziel, ausschnitt(nachher_bild, feld), f"a{nummer}-nachher"),
+        }
+        frei_v, boden = freier_boden(szene)
+        frei_n, _ = freier_boden(klein)
+        ergebnis.append(
+            {
+                "titel": titel,
+                "szene": name,
+                "bilder": bilder,
+                "stellen": zahl,
+                "boden": boden,
+                "frei_vorher": frei_v,
+                "frei_nachher": frei_n,
+                "deckung_vorher": deckung(szene, privat),
+                "deckung_nachher": deckung(klein, privat),
+            }
+        )
+        print(titel, zahl)
+    return ergebnis
+
+
 def main() -> int:
     privat, ziel = Path(sys.argv[1]), Path(sys.argv[2])
     (ziel / "bilder").mkdir(parents=True, exist_ok=True)
-    daten = {"figuren": figurhoehen(privat), "stellen": [], "boden": []}
+    figuren = figurhoehen(privat)
+    held = figuren["held"] if figuren["pixellab"] else proportionen.FIGUR_AUSSEN
+    gemessen = round(figuren["limezu_median"] / held, 2)
+    faktoren = sorted({gemessen, *INNEN_FAKTOREN})
     befunde = befunde_zusammen(1)
-    aussen_d = {
-        b.moebel: b.vorschlag
-        for b in befunde
-        if b.verhaeltnis > b.band[1]
-        and any(lade_szene(s.split()[0]).get("art") == "aussen" for s in b.stellen)
+    # Zu groß sind die Möbel überall gleich (Figur 20 px); verkleinert wird nur auf den Außenkarten.
+    aussen = [b for b in befunde if b.verhaeltnis > b.band[1]]
+    daten = {
+        "figuren": figuren,
+        "gemessen": gemessen,
+        "faktoren": faktoren,
+        "innen": innenraeume(ziel, privat, faktoren),
+        "aussen": aussenkarten(ziel, privat, {b.moebel: b.vorschlag for b in aussen}),
+        "aussen_befunde": aussen,
+        "innen_rest": {
+            f: [
+                b
+                for b in befunde_zusammen(f)
+                if b.verhaeltnis > b.band[1]
+                and any(lade_szene(s.split()[0]).get("art") == "innen" for s in b.stellen)
+            ]
+            for f in faktoren
+        },
+        "durchlass": {f: durchlass_befunde(-(-round(KOERPER * f) // ZELLE)) for f in faktoren},
     }
-    for nummer, (titel, name, feld) in enumerate(STELLEN):
-        szene = lade_szene(name)
-        innen = szene.get("art") == "innen"
-        bilder = {"ist": ausschnitt(vorschau(szene, privat, feld), feld)}
-        if innen:
-            bilder["A"] = ausschnitt(vorschau(moebel_mal(szene, RAUMFAKTOR), privat, feld), feld)
-            gross = vorschau(szene, privat, feld, FIGURFAKTOR_C)
-            bilder["C"] = ausschnitt(gross, feld)
-            bilder["B"] = ausschnitt(gross, feld, RAUMFAKTOR)
-            vorher, alle = freier_boden(szene)
-            nachher, _ = freier_boden(moebel_mal(szene, RAUMFAKTOR))
-            daten["boden"].append({"stelle": titel, "vorher": vorher, "nachher": nachher, "alle": alle})
-        else:
-            d = moebel_mal(szene, 1, set())  # Kopie
-            for objekt in d.get("objekte", []):
-                if objekt.get("moebel") in aussen_d:
-                    objekt.update(
-                        moebel_mal({"objekte": [objekt]}, aussen_d[objekt["moebel"]], {objekt["moebel"]})[
-                            "objekte"
-                        ][0]
-                    )
-            bilder["D"] = ausschnitt(vorschau(d, privat, feld), feld)
-        dateien = {}
-        for variante, bild in bilder.items():
-            datei = f"bilder/{nummer:02d}-{variante}.png"
-            bild.convert("RGB").save(ziel / datei, optimize=True)
-            dateien[variante] = datei
-        daten["stellen"].append({"titel": titel, "szene": name, "innen": innen, "bilder": dateien})
-        print(f"{titel}: {', '.join(dateien)}")
-    daten["befunde_ist"] = befunde
-    daten["befunde_c"] = befunde_zusammen(FIGURFAKTOR_C)
-    daten["aussen_d"] = aussen_d
-    daten["durchlass_12"] = durchlass_befunde(durchlass.HELD)
-    daten["durchlass_16"] = durchlass_befunde(durchlass.HELD + 1)
     daten["fehlt"] = sorted(FEHLT)
     schreibe_seite(ziel, daten, privat)
     groesse = sum(p.stat().st_size for p in ziel.rglob("*") if p.is_file())

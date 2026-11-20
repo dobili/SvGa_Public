@@ -8,16 +8,15 @@
  * - useWeltladen.ts: Welt laden, Phaser starten, Spielzeit sichern;
  * - usePartiestart.ts: Deckwahl, Partiestart, Rückweg, Kipppunkt und Wiedereinstieg (R14, R15);
  * - useAufgabenrunde.ts: Aufgabenrunden (R30 bis R32), Gedächtnisstellung und Simultan;
- * - useDialogende.ts: Dialoge öffnen und ausführen, was sie angestoßen haben.
- * Hier bleiben Auslöser und Aktionsknopf: Ein Übergang wechselt die Karte (oder öffnet erst seinen
- * Dialog), Gegenstand und Figur öffnen ihren Ink-Dialog, ein Statist spricht in einer Blase.
+ * - useDialogende.ts: Dialoge öffnen und ausführen, was sie angestoßen haben;
+ * - useAusloeser.ts: Auslöser und Aktionsknopf (Übergang, Figur, Gegenstand, Statist in der Blase).
  * Abhängigkeiten: Hooks oben, Steuerkreuz.tsx, Tagebuch.tsx, weltdaten.ts, dialog/Dialog.tsx.
  */
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
 import { schutzengelGesperrt } from "../regeln/schutzengel";
-import { ambroseNichtDa, ambroseSprichtJetzt } from "../regeln/abwesenheit";
+import { ambroseNichtDa } from "../regeln/abwesenheit";
 import { kaufe } from "../regeln/muenzen";
 import { variablenAusBesitz } from "../regeln/dialogvariablen";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
@@ -35,12 +34,13 @@ import { Kopfleiste } from "./Kopfleiste";
 import { Laden } from "./Laden";
 import { Reisen } from "./Reisen";
 import { reiseziele } from "./reiseziele";
-import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
+import { Sprechblase } from "./Sprechblase";
 import { deckwahlsteckbrief } from "./steckbrieftext";
 import { Steuerkreuz } from "./Steuerkreuz";
-import type { Ausloesertreffer, Richtung } from "./szene";
+import type { Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
+import { useAusloeser } from "./useAusloeser";
 import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
 import { begegnungVon, LUPE, usePartiestart } from "./usePartiestart";
@@ -52,7 +52,7 @@ import { Orientierung } from "./Orientierung";
 import { eingangsdialog } from "./eingang";
 import { schalteVerfolgung } from "../regeln/verfolgung";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
-import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
+import { aktionFuer, type Weltdaten } from "./weltdaten";
 
 /** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose, ohne ihn gegen Juno. */
 const REISEBRETT = "reisebrett";
@@ -67,8 +67,8 @@ function ladenDaten(w: Weltdaten, kennung: string) {
 export function Oberwelt() {
   const k = useOberweltkern();
   const buehne = useBuehne(k);
-  const { dienste, stand, standRef, welt, weltRef, spiel, meldung, meldungsbild, setzeMeldung } = k;
-  const { schreibe, melde, wechsleKarte } = k;
+  const { dienste, stand, standRef, welt, spiel, meldung, meldungsbild, setzeMeldung } = k;
+  const { schreibe, wechsleKarte } = k;
   const partie = usePartiestart(k);
   const { deckwahl, ergebnis } = partie;
   const runden = useAufgabenrunde(k, partie);
@@ -81,41 +81,18 @@ export function Oberwelt() {
   const ortDesHelden = welt?.ort.kennung ?? null;
   const rahmen = useRef<HTMLDivElement>(null);
   const kachelanzeige = useRef<HTMLSpanElement>(null);
-  const [treffer, setzeTreffer] = useState<Ausloesertreffer | null>(null);
-  // Sprechblase eines Statisten und wie oft jeder schon angesprochen wurde (nur in dieser Sitzung).
-  const [sprechblase, setzeSprechblase] = useState<SprechblasenInhalt | null>(null);
-  const angesprochen = useRef(new Map<string, number>());
   const [tagebuch, setzeTagebuch] = useState(false);
   const [reisen, setzeReisen] = useState(false);
-  /** Ein Auslöser der Karte (aus Phaser): Übergänge sofort, alles andere als Quest-Ereignis. */
-  const beiTreffer = (t: Ausloesertreffer | null) => {
-    setzeTreffer(t);
-    if (!t) setzeSprechblase(null);
-    const w = weltRef.current;
-    const aktuell = standRef.current;
-    if (!t || !w || !aktuell) return;
-    const a = ausloeserFuer(w.ort, w.kennung, t.name);
-    // Ein Übergang wechselt erst, wenn der Held in den Durchgang geht (R060), nicht beim Betreten.
-    if (t.typ === "ausloeser" && a?.art === "uebergang" && !t.durch) return;
-    if (t.typ === "ausloeser" && a?.art === "uebergang" && a.dialog && a.ziel) {
-      dialoge.oeffneUebergang(a.dialog, a.ziel, a.wenn ?? null);
-      return;
-    }
-    if (t.typ === "ausloeser" && a?.art === "uebergang") {
-      // Ein Übergang ohne Ziel (etwa die Landstraße nach Cedar Creek) ist noch nicht gebaut.
-      if (a.ziel) wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
-      else setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte: a.name }));
-      return;
-    }
-    melde({ art: "ort", karte: aktuell.position.karte, ausloeser: t.name }, w);
-  };
+  // Auslöser, Aktionsknopf und Sprechblase der Statisten (useAusloeser.ts).
+  const ausl = useAusloeser(k, dialoge);
+  const { treffer, sprechblase } = ausl;
 
   const fehler = useWeltladen(k, {
     rahmen,
     kachelanzeige,
-    beiTreffer,
+    beiTreffer: ausl.beiTreffer,
     beiWelt: (w) => {
-      setzeTreffer(null);
+      ausl.setzeTreffer(null);
       partie.meldeErgebnis(w);
       runden.meldeRunde(w);
       // Eingangsdialog der Karte (Einleitung, 19.11.2026): läuft von selbst, solange er gilt.
@@ -145,28 +122,6 @@ export function Oberwelt() {
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     szeneAus(spiel)?.setzeRichtung(richtung, gedrueckt);
-  };
-
-  /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
-  const beiAktion = () => {
-    if (!welt || !treffer) return;
-    if (treffer.typ === "statist") {
-      const schluessel = `${welt.kennung}.${treffer.name}`;
-      const besuch = angesprochen.current.get(schluessel) ?? 0;
-      angesprochen.current.set(schluessel, besuch + 1);
-      const spricht = stand ? ambroseSprichtJetzt(stand.dialogvariablen) : false;
-      setzeSprechblase(
-        sprechblaseFuer(welt, treffer.name, besuch, stand?.held.name ?? "", spricht),
-      );
-      return;
-    }
-    if (treffer.typ === "figur") {
-      const figur = figurZu(welt.ort, treffer.name);
-      if (figur) oeffneDialog(figur.dialog);
-      return;
-    }
-    const a = ausloeserFuer(welt.ort, welt.kennung, treffer.name);
-    if (a?.dialog) oeffneDialog(a.dialog);
   };
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
@@ -213,7 +168,7 @@ export function Oberwelt() {
         <Steuerkreuz
           beiRichtung={beiRichtung}
           aktion={aktionFuer(welt, treffer)}
-          beiAktion={beiAktion}
+          beiAktion={ausl.beiAktion}
         />
       )}
       {dialog && (
@@ -328,9 +283,9 @@ export function Oberwelt() {
             zeigen: tSpiel("oberwelt.vorfuehrung.zeigen"),
             ambrose: tSpiel("figur.ambrose.name"),
           }}
-          beiSchliessen={() => setzeSprechblase(null)}
+          beiSchliessen={ausl.schliesseSprechblase}
           beiZeigen={(kennung) => {
-            setzeSprechblase(null);
+            ausl.schliesseSprechblase();
             dialoge.zeigeVorfuehrung(kennung);
           }}
         />

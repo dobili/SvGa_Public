@@ -38,6 +38,30 @@
   --spiel-pixelschrift: "Pixelify Sans", var(--schrift-titel);
   /* Breite eines Pixels im Rahmen der Knöpfe (wie knopf.svg: Ecken um einen Pixel gestuft). */
   --spiel-pixel: 3px;
+  /* Helle Fläche, leise Schrift und Linien der Spielfenster (die hellen Werte der App, fest). */
+  --spiel-weiss: #ffffff;
+  --spiel-text-leise: #4a5568;
+  --spiel-linie: #e4dccb;
+  --spiel-linie-stark: #c9bfa8;
+}
+
+/*
+ * Helle Spielfenster bleiben hell, auch im Dunkelmodus des Geräts (Foto des Autors, 20.11.2026:
+ * leere Knöpfe). Menü, Tagebuch, Deckwahl, Laden, Kartenknöpfe und Namensfeld nehmen die Fläche
+ * der App (--flaeche), schreiben aber fest in Navy; im Dunkelmodus wurde die Fläche dunkelblau, die
+ * Zeitwahl der Deckwahl stand mit 1,1:1 auf ihrem Grund, Hinweise und Namensfeld unter 4,5:1.
+ * Das Spiel hat eine eigene, helle Farbwelt; hier gelten deshalb die hellen Werte der App fest.
+ * Geprüft hell und dunkel in tests/e2e/abenteuer-zugang.spec.ts.
+ */
+:is(.bildschirm-abenteuer, .abenteuer-huelle)
+  :is(.abenteuer-menue, .abenteuer-karte, .abenteuer-namensfeld) {
+  --flaeche: var(--spiel-weiss);
+  --grund: var(--spiel-creme);
+  --text: var(--spiel-navy);
+  --text-leise: var(--spiel-text-leise);
+  --linie: var(--spiel-linie);
+  --linie-stark: var(--spiel-linie-stark);
+  color-scheme: light;
 }
 
 /* Überschriften in Pixelschrift; Fließtext bleibt in der Schrift der App. */

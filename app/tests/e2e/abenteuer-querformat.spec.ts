@@ -10,13 +10,23 @@
  * Deckwahl: Der am unteren Rand feststehende Knopf „Ohne Karten spielen“ lag quer über den
  * Bedenkzeit-Knöpfen. Jetzt rollt nur der Inhalt, die Knöpfe stehen darunter; in keiner Rolllage
  * überdecken sie einen Knopf des Inhalts.
+ *
+ * Drei Beobachtungen aus dem Spieler-Durchlauf quer vom 20.11.2026 (Abschnitt 9): Eine Meldung
+ * wartet, bis die Deckwahl zu ist; im Laden steht „Fertig“ im Fuß unter dem rollenden Inhalt statt
+ * über einer Reihe Waren (der Abspann hat denselben Aufbau); vor „Ans Brett“ steht das Ziel der
+ * kurzen Partie ganz im Bild.
  */
-import { devices, expect, test, type Page } from "@playwright/test";
+import { devices, expect, test, type Locator, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
+import { feldDarunter } from "./abenteuer-karte";
+import { geheZumRand, klickeDurch, SPERREN, standVor } from "./abenteuer-wegsperren";
 
 /** Kits Runde (Umwandlung und Endspiel), Aufgabe 1: Schwarz setzt mit Td1+ und c2xd1=D matt. */
 /** Wartezeit nach dem Aufbau des Bretts und nach der Antwort des Gegners. */
 const AUFBAU_MS = 2500;
+/** Höchstens so viele Schritte durch ein Gespräch, kurze Pause, wenn gerade nichts zu tippen ist. */
+const MAX_DIALOGSCHRITTE = 30;
+const KURZ_MS = 100;
 
 const STAND = {
   ...GRUNDSTAND,
@@ -65,10 +75,13 @@ async function ganzImBild(seite: Page, auswahl: string): Promise<boolean> {
  * Knöpfe des Rollbereichs der Deckwahl, deren sichtbarer Teil einen Knopf im Fuß schneidet
  * (Bedenkzeit, Karten). Sichtbar heißt: innerhalb des Rollbereichs.
  */
-async function ueberdeckt(seite: Page): Promise<string[]> {
-  return seite.evaluate(() => {
-    const inhalt = document.querySelector("[data-testid='abenteuer-deckwahl-inhalt']");
-    const fuss = [...document.querySelectorAll(".abenteuer-menue-fuss > button")];
+async function ueberdeckt(
+  seite: Page,
+  fenster = "[data-testid='abenteuer-deckwahl']",
+): Promise<string[]> {
+  return seite.evaluate((f) => {
+    const inhalt = document.querySelector(`${f} .abenteuer-menue-inhalt`);
+    const fuss = [...document.querySelectorAll(`${f} .abenteuer-menue-fuss > button`)];
     if (!inhalt) return ["kein Rollbereich"];
     const rahmen = inhalt.getBoundingClientRect();
     const funde: string[] = [];
@@ -84,7 +97,30 @@ async function ueberdeckt(seite: Page): Promise<string[]> {
       }
     }
     return funde;
-  });
+  }, fenster);
+}
+
+/** Rollt den Inhalt eines Fensters nach oben, in die Mitte und nach unten und prüft je die Lage. */
+async function inJederRolllage(seite: Page, fenster: string): Promise<void> {
+  const inhalt = seite.locator(`${fenster} .abenteuer-menue-inhalt`);
+  for (const lage of ["oben", "mitte", "unten"] as const) {
+    await inhalt.evaluate((e, l) => {
+      e.scrollTop = l === "oben" ? 0 : l === "mitte" ? e.scrollHeight / 2 : e.scrollHeight;
+    }, lage);
+    expect(await ueberdeckt(seite, fenster), lage).toEqual([]);
+  }
+}
+
+/** Blättert ein Gespräch weiter, bis `ziel` erscheint (Antworten: jeweils die erste). */
+async function blaettereBis(seite: Page, ziel: Locator): Promise<void> {
+  for (let i = 0; i < MAX_DIALOGSCHRITTE && !(await ziel.isVisible()); i++) {
+    const weiter = seite.locator(".abenteuer-dialog-weiter");
+    const wahl = seite.locator(".abenteuer-dialog-wahlen button").first();
+    if (await wahl.isVisible()) await wahl.click();
+    else if (await weiter.isVisible()) await weiter.click();
+    else await seite.waitForTimeout(KURZ_MS);
+  }
+  await expect(ziel).toBeVisible();
 }
 
 for (const geraet of ["iPhone 15 landscape", "Pixel 7 landscape"] as const) {
@@ -142,6 +178,69 @@ for (const geraet of ["iPhone 15 landscape", "Pixel 7 landscape"] as const) {
       expect(ueberschrift?.height ?? 0).toBeLessThanOrEqual(1);
       await expect(page.getByTestId("abenteuer-deck-los")).toBeInViewport({ ratio: 0.9 });
       await expect(page.getByTestId("abenteuer-deck-zurueck")).toBeInViewport({ ratio: 0.9 });
+    });
+
+    test("Meldung wartet, bis die Deckwahl zu ist", async ({ page }) => {
+      await starteMitStand(page, { ...GRUNDSTAND, dialogvariablen: EINLEITUNG_GESEHEN });
+      const meldung = page.getByTestId("abenteuer-meldung");
+      // Die Erklärung der Münzen kommt als Meldung, sobald die Welt frei ist.
+      await expect(meldung).toBeVisible({ timeout: 20000 });
+      // Die Deckwahl öffnet, während die Meldung noch steht (wie nach einem Dialog mit Partie);
+      // die Meldung liegt quer über dem Knopf, deshalb der Klick direkt am Knopf.
+      await page.getByTestId("abenteuer-reisebrettknopf").dispatchEvent("click");
+      await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible();
+      await expect(meldung).toHaveCount(0);
+      // Nach der Deckwahl steht sie wieder da, „Weiter“ ganz im Bild.
+      await page.getByTestId("abenteuer-deck-zurueck").click();
+      await expect(meldung.getByRole("button", { name: "Weiter" })).toBeInViewport();
+    });
+
+    test("Laden: „Fertig“ steht unter den Waren, in jeder Rolllage", async ({ page }) => {
+      const kiosk = feldDarunter("maple-falls-park", "kiosk");
+      const position = { karte: "mapleFalls.park", ...kiosk, richtung: "oben" };
+      await starteMitStand(page, {
+        ...GRUNDSTAND,
+        muenzen: 200,
+        position,
+        dialogvariablen: EINLEITUNG_GESEHEN,
+      });
+      const meldung = page.getByTestId("abenteuer-meldung").getByRole("button", { name: "Weiter" });
+      await expect(page.getByTestId("abenteuer-aktion")).toBeVisible({ timeout: 20000 });
+      if (await meldung.isVisible()) await meldung.click();
+      await page.getByTestId("abenteuer-aktion").click();
+      const fenster = "[data-testid='abenteuer-laden']";
+      await blaettereBis(page, page.locator(fenster));
+      await inJederRolllage(page, fenster);
+      await expect(page.getByRole("button", { name: "Fertig" })).toBeInViewport();
+    });
+
+    test("Einstieg der Wegsperre S15: das Ziel steht vor „Ans Brett“ ganz im Bild", async ({
+      page,
+    }) => {
+      const sperre = SPERREN.s15;
+      await starteMitStand(page, standVor(sperre));
+      await geheZumRand(page, sperre);
+      await page.keyboard.down(sperre.taste);
+      await expect(page.getByTestId("abenteuer-dialog")).toContainText(sperre.erste, {
+        timeout: 15000,
+      });
+      await page.keyboard.up(sperre.taste);
+      const los = page.getByTestId("abenteuer-deck-los");
+      await klickeDurch(page, "„Eine Stellung.“", los);
+      await los.click();
+      await expect(page.getByTestId("abenteuer-erzaehlung")).toBeVisible({ timeout: 30000 });
+      // Ganz im Bild der Spalte (sie rollt; vorher lag die letzte Zeile des Ziels darunter).
+      const lage = await page.evaluate(() => {
+        const ziel = document.querySelector("[data-testid='abenteuer-kurzform']");
+        const spalte = document.querySelector(".abenteuer-partie-seite");
+        return {
+          ziel: ziel?.getBoundingClientRect().bottom ?? 0,
+          spalte: spalte?.getBoundingClientRect().bottom ?? 0,
+        };
+      });
+      expect(lage.ziel).toBeGreaterThan(0);
+      expect(lage.ziel).toBeLessThanOrEqual(lage.spalte);
+      await expect(page.getByTestId("abenteuer-erzaehlung-weiter")).toBeInViewport();
     });
   });
 }

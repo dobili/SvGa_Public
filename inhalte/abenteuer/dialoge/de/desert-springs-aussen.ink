@@ -179,7 +179,7 @@ Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:laechelt
 * [„Wer ist das?“]
 - Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter #stimmung:lacht
 Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter #stimmung:nachdenklich
-Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit hundertsechzig Jahren auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
+Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit Generationen auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
 Schwarz am Zug. #sprecher:erzaehler #pause:3
 -> END
 

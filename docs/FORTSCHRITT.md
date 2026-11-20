@@ -1,3 +1,19 @@
+Stand: 20.11.2026, 15 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde und Vormittag auf beta.**
+
+- Nacht 19./20.11.: Pinewood und Epilog im Browser, Querformat Akt 2–4, schwacher Spieler mit
+  Niederlagen und Neuladen (Abschied, offene Rückmeldung, Revanche, Remis in kurzen Formen behoben),
+  Ausdauer (Ton-Speicher bis 160 MB statt 4 GB, Phaser-Hörer), Start 95 s → 11 s (Maia im
+  Hintergrund), Zugänglichkeit (Leertaste, Umwandlungsfokus), offline, iPhone-Fallen, Zielpfeil
+  über mehrere Orte, Kartenbelegung (`figurenort`), Lektorat in drei Durchgängen, zwei Sätze je
+  Zeile, Stimmen der Hauptfiguren, Roman angeglichen, Codepflege mit Dauerprüfung.
+- Testpunkte N2638–N2647, Rückfrage RO41 (iOS-Version für Opus, Hörprobe im privaten Repo).
+- Gate prüft pytest jetzt auch ohne Pillow (wie Actions).
+
+**Offen / läuft:** WebKit „Context is stopped“ beim Neuladen (mittel-2 sucht die Quelle);
+Münzanzeige nur bei Änderung und leere Knöpfe im Dunkelmodus (mittel-2); Textfenster und Zoom
+im Querformat (mittel-3); Schwierigkeitskurve (mittel-4); Erstspieler-Durchgang der ersten
+45 Minuten (mittel-1).
+
 Stand: 19.11.2026, 16:30 Uhr (Haupt-Chat, Schach-Abenteuer): **Beta mit allen Wünschen vom 19.11., CI grün.**
 
 - Langes Drücken ohne Textauswahl, Sprechblasen nie auf dem Brett (`anbindung/brettfrei.ts`),

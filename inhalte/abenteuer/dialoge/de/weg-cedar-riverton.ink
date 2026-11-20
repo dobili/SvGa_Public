@@ -115,7 +115,7 @@ An einer Bude neben den Gleisen sitzt ein Mann in Uniform. Auf einer Kiste ein B
 Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben, wer will? #sprecher:schaffner #stimmung:laechelt
 Ich! #sprecher:juno #stimmung:froh
 Juno spielt, als würde das Haus brennen. Sie verliert einen Läufer, einen Turm, und wirft vor Lachen den König selbst um. #sprecher:erzaehler
-Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
+Ich hab die Zeit gewonnen. Mein Läufer ist trotzdem beleidigt. #sprecher:juno #stimmung:froh
 -> quinn_angebot
 
 // Kapitel 17: Der Güterzug, lange bevor man ihn sieht; Ambroses erste Andeutung von 1866.

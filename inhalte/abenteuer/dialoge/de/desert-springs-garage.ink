@@ -274,7 +274,7 @@ Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde – du zä
     ~ beginnePartie("desertSprings.erinnerung1858")
     -> END
 + [„Ein andermal.“]
-    Ich habe hundertsechzig Jahre gewartet. Ein Abend mehr schadet nicht. #sprecher:ambrose #stimmung:laechelt
+    Ich habe lange genug gewartet. Ein Abend mehr schadet nicht. #sprecher:ambrose #stimmung:laechelt
     -> END
 
 === mira_nach_erinnerung ===

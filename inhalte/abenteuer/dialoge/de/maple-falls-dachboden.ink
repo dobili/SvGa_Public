@@ -292,6 +292,10 @@ Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen
 - Er. #sprecher:ambrose #stimmung:still #pause:3
 Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht besser. #sprecher:erzaehler
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #geraeusch:aus
+// Erstspieler-Durchgang 20.11.2026: Der Morgen war nicht erzählt; draußen hieß es plötzlich „Guten
+// Morgen“, und keine Quest nannte das nächste Ziel. Jetzt der Morgen und der Weg zur Schule.
+Am Morgen steht Mama schon in der Tür, den Autoschlüssel in der Hand. #sprecher:erzaehler #licht:tag
+Die Schule ist die Straße runter. Und frag nach dem Schachteam, ja? #sprecher:mutter #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Abende auf dem Dachboden

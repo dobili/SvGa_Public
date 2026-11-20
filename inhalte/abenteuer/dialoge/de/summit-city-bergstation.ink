@@ -152,7 +152,7 @@ Was sagt er? #sprecher:victor #stimmung:ueberrascht #pause:2
 Wegen des Bretts. #sprecher:victor #stimmung:nachdenklich
 Du siehst zu Ambrose. Er nickt. #sprecher:erzaehler #pause
 * [„Er sagt, dein Vorfahr war gewissenhaft und unerträglich.“]
-- Und dass er hundertsechzig Jahre auf diesen Zug gewartet hat. #sprecher:erzaehler
+- Und dass er ein Leben und länger auf diesen Zug gewartet hat. #sprecher:erzaehler
 Wie ist er? Der Zug. #sprecher:victor #stimmung:laechelt
 Ist er gut? #sprecher:victor #stimmung:laechelt
 Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh

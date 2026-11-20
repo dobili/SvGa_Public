@@ -46,7 +46,7 @@ Und das dort in der Ecke ist mein Kummer. #sprecher:teague #stimmung:nachdenklic
 }
 Säcke aus grauem Segeltuch, steif vom Alter, jeder mit einem Klumpen Wachs versiegelt. #sprecher:erzaehler
 {not teagueGetroffen:
-    Ein sehr alter Mann in einer Weste kommt herüber. Er hütet das Museum. #sprecher:erzaehler
+    Ein sehr alter Mann in einer Weste kommt herüber. Er hütet das Museum. #sprecher:erzaehler #gehe:teague>held
 }
 Post von achtzehnhundertsechsundsechzig. Die Strecke war drei Monate zu, und der Postmeister hatte das Fieber. #sprecher:teague #stimmung:nachdenklich
 Dann kam ein neuer Postmeister, dann eine neue Bahn, dann kam ich. Niemand hat sie je geöffnet. #sprecher:teague #stimmung:nachdenklich

@@ -242,7 +242,7 @@ Du. Es ging ja. #sprecher:mutter #stimmung:nachdenklich
 - Zwei. Es waren zwei. #sprecher:mutter #stimmung:lachtOhneSpott
 Ich hab mich so erschrocken. #sprecher:mutter #stimmung:lachtOhneSpott
 Du legst das blaue Heft neben das Foto, aufgeschlagen auf der letzten Seite. Mama sieht auf die leere Stelle. #sprecher:erzaehler #bild:blaues_heft
-Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke. #sprecher:erzaehler #bild:aus #pause:2
+Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke. #sprecher:erzaehler #bild:aus #pause:2 #gehe:mutter>14,3
 Gut. Eine Partie. #sprecher:mutter #stimmung:denktNach
 In Ironwood. Ich will den Raum sehen. #sprecher:mutter #stimmung:laechelt
 Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter #stimmung:laechelt

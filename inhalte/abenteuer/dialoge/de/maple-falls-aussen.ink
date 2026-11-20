@@ -407,6 +407,10 @@ Nimm einen Karton, irgendeinen. Wir gehen zusammen rein. #sprecher:mutter #stimm
 -> einleitung_hinein
 
 === einleitung_hinein ===
+// Geführte Wege (Wunsch des Autors, 20.11.2026): Beide gehen sichtbar zur Haustür, statt ins Haus
+// gebeamt zu werden; Mama zuerst, {held} folgt ihr (#gehe, oberwelt/gefuehrterweg.ts).
 * [Einen Karton nehmen und mit Mama hineingehen]
+    Mama geht voraus und hält die Haustür auf. #sprecher:erzaehler #gehe:mutterAussen>haustuer
+    Du nimmst den obersten Karton und folgst ihr. #sprecher:erzaehler #gehe:held>mutterAussen
     ~ reise("mapleFalls.wohnzimmer", "haustuer")
     -> END

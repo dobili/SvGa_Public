@@ -23,23 +23,23 @@ import {
 import { OHNE_RAENDER, type Raender } from "./kamera";
 import { Kamerafuehrung } from "./kamerafuehrung";
 import { ZOOM } from "./weltmassstab";
-import { kachelVon, tippschrittBeimLoslassen, zielErreicht, type Tippschritt } from "./tippschritt";
+import { kachelVon, tippschrittBeimLoslassen, type Tippschritt } from "./tippschritt";
+import { rueckeZurMitte, tippRichtung } from "./heldlauf";
 import { Zielmarker, type Zielfeld } from "./zielmarker";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import {
   erzeugeLaufanimationen,
   ladeFigurbogen,
-  fussUrsprungY,
   laufname,
   standbild,
   stelleAufKachel,
 } from "./figurbilder";
 import { ladeMoebelbilder, rahmenJeTextur, richteMoebelrahmenEin, stelleMoebelAuf } from "./moebel";
-import { querziel } from "./laufhilfe";
 import { stelleFigurenAuf } from "./figurenaufstellung";
 import { sitzmoebelAus } from "./sitzplatz";
 import { sichtbarMesser } from "./sitzumriss";
-import { erscheinungsfeld, lasseGeistErscheinen } from "./geistfigur";
+import { erscheineAlsGeist } from "./geisterscheinung";
+import type { Fuehrungszugang, Heldfuehrung } from "./fuehrungsschicht";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt, pfeiltasten } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
@@ -69,8 +69,6 @@ const AUSLOESER_EBENE = "ausloeser";
 
 /** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
 const HINTERGRUND_TIEFE = -1;
-/** Höchstens so viele Kachelpixel je Bild rückt die Laufhilfe den Helden zur Kachelmitte. */
-const MITTENSCHRITT = 1;
 /** Schlüssel des Heldenbogens im Format von LimeZu. */
 const HELDFIGUR = "heldfigur";
 
@@ -106,6 +104,7 @@ export class Oberweltszene extends Phaser.Scene {
   /** Ränder unter festen Bedienelementen in Spielpixeln (kamera.ts, kameraregie.ts). */
   private verdeckt: Raender = OHNE_RAENDER;
   private kamerafuehrung: Kamerafuehrung | null = null; // vorausschauend (kameravoraus.ts)
+  private fuehrung: Heldfuehrung | null = null; // geführter Weg aus dem Dialog (fuehrungsschicht.ts)
 
   constructor(private readonly daten: Szenendaten) {
     super("oberwelt");
@@ -236,12 +235,7 @@ export class Oberweltszene extends Phaser.Scene {
    * Dachboden über dem Brett). Ohne geladenen Bogen der Figur oder wenn sie schon da ist: nichts.
    */
   erscheine(name: string): void {
-    const schluessel = `figur:${name}`;
-    const held = this.held;
-    if (!held || this.children.getByName(name) || !this.textures.exists(schluessel)) return;
-    const mitte = erscheinungsfeld(held, this.blick, KACHEL);
-    const bild = { schluessel, nummer: standbild("unten") };
-    lasseGeistErscheinen(this, name, bild, mitte, (s) => fussUrsprungY(s, KACHEL));
+    if (this.held) erscheineAlsGeist(this, name, this.held, this.blick, KACHEL);
   }
 
   /** Neue Tönung, etwa nach `setzeToenung` in einem Dialog (null: keine). */
@@ -273,11 +267,31 @@ export class Oberweltszene extends Phaser.Scene {
   position(): Weltposition {
     // Vor create() (Verlassen während des Hochfahrens) gilt die Startposition weiter.
     if (!this.held) return { ...this.daten.start, richtung: this.blick };
+    // Mitten in einem geführten Weg zählt schon das Ziel: Nach dem Neuladen steht er dort.
+    const ziel = this.fuehrung?.ziel;
+    if (ziel) return { karte: "", ...ziel, richtung: this.blick };
     return {
       karte: "",
       x: Math.floor(this.held.x / KACHEL),
       y: Math.floor(this.held.y / KACHEL),
       richtung: this.blick,
+    };
+  }
+
+  /** Zugang für geführte Wege und Versetzen aus dem Dialog (`#gehe`, `#stelle`), oder null. */
+  fuehrungszugang(): Fuehrungszugang | null {
+    const held = this.held;
+    if (!held) return null;
+    const blicke = (b: Richtung) => ((this.blick = b), this.zeigeHeld(null));
+    const setzeFuehrung = (f: Heldfuehrung | null) => (this.fuehrung = f);
+    return {
+      szene: this,
+      held,
+      kachel: KACHEL,
+      frei: this.frei,
+      ausloeser: this.ausloeser,
+      setzeFuehrung,
+      blicke,
     };
   }
 
@@ -296,11 +310,13 @@ export class Oberweltszene extends Phaser.Scene {
     const heldfeld: Feld = { x: this.held.x / KACHEL - 0.5, y: this.held.y / KACHEL - 0.5 };
     const blick = { heldBlick: this.blick, heldGeht: this.geht }; // wen er ansieht, bleibt stehen
     this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei, blick);
-    const gewuenscht = this.gewuenschteRichtung() ?? this.tippRichtung();
+    const gewuenscht = this.gewuenschteRichtung() ?? this.tippschritt();
     // Der Held kommt mit Blick vom Durchgang weg an; die Gegenrichtung führte zurück hinein.
     const zurueck = gewuenscht === gegenrichtung(this.daten.start.richtung);
     this.pause = pausenschritt(this.pause, delta, gewuenscht !== null, zurueck);
-    const richtung = this.laufen && this.pause === 0 ? gewuenscht : null;
+    const gefuehrt = this.fuehrung?.richtung(this.held, delta); // undefined: keine Führung
+    const frei = this.laufen && this.pause === 0 ? gewuenscht : null;
+    const richtung = gefuehrt === undefined ? frei : gefuehrt;
     this.geht = richtung !== null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);
@@ -308,46 +324,27 @@ export class Oberweltszene extends Phaser.Scene {
     if (richtung) {
       this.blick = richtung;
       const tempo = TEMPO * (this.daten.tempofaktor ?? 1);
-      this.rueckeZurMitte(richtung);
+      rueckeZurMitte(this.held, richtung, KACHEL, this.zellfrei);
       if (richtung === "links") koerper.setVelocityX(-tempo);
       if (richtung === "rechts") koerper.setVelocityX(tempo);
       if (richtung === "oben") koerper.setVelocityY(-tempo);
       if (richtung === "unten") koerper.setVelocityY(tempo);
     }
-    this.held.setDepth(this.held.y);
+    if (this.held.rotation === 0) this.held.setDepth(this.held.y); // liegend: fuehrungsschicht.ts
     this.kamerafuehrung?.schritt(delta, richtung, { x: this.held.x, y: this.held.y });
     this.toenungsschicht?.folge(this.held.x, this.held.y);
-    this.meldeAusloeser();
-    this.meldeKachel();
+    // Während eines geführten Wegs löst der Held nichts aus (keine Tür, kein Gespräch).
+    if (!this.fuehrung) this.meldeAusloeser();
+    if (!this.fuehrung) this.meldeKachel();
     this.zielmarker?.aktualisiere();
   }
 
-  /** Richtung des laufenden Tippschritts; am Ziel (oder an einer Wand) endet er genau dort. */
-  private tippRichtung(): Richtung | null {
-    const tipp = this.tipp;
-    const held = this.held;
-    if (!tipp || !held) return null;
-    const koerper = held.body as Phaser.Physics.Arcade.Body;
-    const seite = { oben: "up", unten: "down", links: "left", rechts: "right" } as const;
-    const steht = koerper.blocked[seite[tipp.richtung]];
-    if (!zielErreicht(tipp, held) && !steht) return tipp.richtung;
-    if (!steht) held.setPosition(tipp.ziel.x, tipp.ziel.y);
-    this.tipp = null;
-    return null;
-  }
-
-  /**
-   * Laufhilfe: Beim Gehen rückt der Held quer zur Richtung sanft zur Mitte seiner Kachel, damit er
-   * an Ecken von Möbeln und Wänden nicht hängen bleibt (auf dem Handy trifft man selten genau);
-   * vor einer schmalen Lücke neben der Mitte bis zu 4 Pixel daneben (laufhilfe.ts, Editor 1.6).
-   */
-  private rueckeZurMitte(richtung: Richtung): void {
-    const held = this.held;
-    if (!held) return;
-    const quer = richtung === "oben" || richtung === "unten" ? "x" : "y";
-    const koerper = (held.body as Phaser.Physics.Arcade.Body).center;
-    const abstand = querziel(koerper, richtung, KACHEL, this.zellfrei) - koerper[quer];
-    held[quer] += Math.sign(abstand) * Math.min(Math.abs(abstand), MITTENSCHRITT);
+  /** Richtung des laufenden Tippschritts (heldlauf.ts); beendet ihn am Ziel. */
+  private tippschritt(): Richtung | null {
+    if (!this.held) return null;
+    const { richtung, tipp } = tippRichtung(this.held, this.tipp);
+    this.tipp = tipp;
+    return richtung;
   }
 
   /** Bild des Helden: Laufanimation in Bewegung, sonst Standbild der Blickrichtung. */

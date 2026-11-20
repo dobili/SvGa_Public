@@ -263,7 +263,9 @@ Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht
 === erste_nacht ===
 ~ ersteNachtGesehen = true
 ~ setzeSzene("akt1.ersteNacht")
-Nacht. Das Haus ist still, nur du nicht. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
+// Geführte Wege (Wunsch des Autors, 20.11.2026): Die Nacht beginnt im Bett; erst nach den ersten
+// Fragen steht {held} auf und geht zu Ambrose ans Fenster (#stelle, #gehe; oberwelt/gefuehrterweg.ts).
+Nacht. Das Haus ist still, nur du nicht. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank #stelle:held>13,8>liegt
 Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler
 Du hast die Laterne vom Dachboden geholt. Das Brett steht auf dem Schreibtisch unter deinem Fenster. #sprecher:erzaehler #klang:knarren
 Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler
@@ -272,6 +274,7 @@ Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erz
 * [„Kannst du auch nicht schlafen?“]
     Ich schlafe überhaupt nicht. Das ist eine der Unannehmlichkeiten. #sprecher:ambrose #stimmung:laechelt
 - Er steht am Fenster, kaum zu sehen, ein hellerer Fleck vor der Scheibe. #sprecher:erzaehler
+Du schlägst die Decke zurück und tappst barfuß zu ihm hinüber. #sprecher:erzaehler #gehe:held>ambrose
 Was ist das für ein Licht dort drüben? Es brennt ohne Flamme. #sprecher:ambrose #stimmung:ueberrascht
 * [„Eine Straßenlaterne.“]
 - Und das Summen? #sprecher:ambrose #stimmung:ueberrascht
@@ -290,6 +293,7 @@ Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen
 {warum:Sie ist nicht zu Ende. Ich spiele sie gegen einen, der mir noch einen Zug schuldet.|Ich. Und einer, der mir noch einen Zug schuldet.} #sprecher:ambrose #stimmung:still
 * [„Und wer ist am Zug?“]
 - Er. #sprecher:ambrose #stimmung:still #pause:3
+Irgendwann liegst du wieder im Bett. #sprecher:erzaehler #stelle:held>13,8>liegt
 Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht besser. #sprecher:erzaehler
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #geraeusch:aus
 // Erstspieler-Durchgang 20.11.2026: Der Morgen war nicht erzählt; draußen hieß es plötzlich „Guten

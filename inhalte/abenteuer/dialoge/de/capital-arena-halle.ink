@@ -295,7 +295,7 @@ Ich nenne einen Namen, weil er auf den Verträgen steht: Mr. Dorrance, Vertrieb.
 Graham Hale steht bei den Sponsoren, ein Telefon in der Hand und eines am Ohr, und hat beide vergessen. Sein Gesicht ist grau. #sprecher:erzaehler
 Das wusste ich nicht. Ich habe die Engine gebaut. #sprecher:grahamHale #stimmung:ueberrascht
 Für das Training. Ich habe nie … #sprecher:grahamHale #stimmung:ueberrascht
-Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Halle, und stellt sich neben Nova. #sprecher:erzaehler #musik:victor.warm
+Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Halle, und stellt sich neben Nova. #sprecher:erzaehler #musik:victor.warm #gehe:victor>nova
 Nicht vor sie. Neben sie. #sprecher:erzaehler
 Ich hab es gesehen. In Silicon Bay, im Januar. #sprecher:victor #stimmung:bitter
 Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor #stimmung:bitter
@@ -469,7 +469,7 @@ Probier's. Es ist luftig. #sprecher:victor #stimmung:laechelt
 -> vor_dem_finale_mama
 
 === vor_dem_finale_mama ===
-Mama kommt den Gang herunter und setzt sich neben dich auf den Boden. #sprecher:erzaehler #musik:mama.ruhig
+Mama kommt den Gang herunter und setzt sich neben dich auf den Boden. #sprecher:erzaehler #musik:mama.ruhig #gehe:mama>held
 Ich hatte auch mal so ein Finale. Fünfundzwanzig Jahre dachte ich, das Wichtigste daran war das Verlieren. #sprecher:mutter #stimmung:nachdenklich
 Ich hab das Formular wieder angeguckt. Nicht Zug dreiunddreißig. #sprecher:mutter #stimmung:laechelt
 Die anderen zweiunddreißig. Die waren richtig gut. #sprecher:mutter #stimmung:laechelt

@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#16253D" />
     <meta name="description" content="{{startseite.meta}}" />
     <meta property="og:type" content="book" />
+    <meta property="book:isbn" content="9783982471587" />
     <meta property="og:title" content="{{app.titel}}" />
     <meta property="og:description" content="{{startseite.meta}}" />
     <meta property="og:image" content="https://schach-von-grund-auf.com/cover-teilen.jpg" />
@@ -81,10 +82,22 @@
         <section class="karte" aria-labelledby="shops-titel" data-testid="shops">
           <h2 id="shops-titel" class="karte-titel">{{startseite.shops.titel}}</h2>
           <ul class="shops">
-            <li><span class="shop shop-folgt">{{startseite.shops.buchhandel}}</span></li>
-            <li><span class="shop shop-folgt">{{startseite.shops.online}}</span></li>
+            <li>
+              <a class="shop" href="https://www.thalia.de/shop/home/artikeldetails/A1082446964"
+                >{{startseite.shops.thalia}}</a
+              >
+            </li>
+            <li>
+              <a
+                class="shop"
+                href="https://www.amazon.de/Schach-von-Grund-auf-strategischen/dp/3982471583/"
+                >{{startseite.shops.amazon}}</a
+              >
+            </li>
           </ul>
-          <p class="hinweis">{{startseite.shops.hinweis}}</p>
+          <p class="hinweis">
+            {{startseite.shops.buchhandel}} <span class="isbn">978-3-9824715-8-7</span>
+          </p>
         </section>
         <section class="karte" aria-labelledby="training-titel" data-testid="training-karte">
           <h2 id="training-titel" class="karte-titel">{{training.uebersicht.titel}}</h2>

@@ -43,6 +43,11 @@ const ZUEGE = 20;
 const AUSGEGLICHEN = 0;
 const ENGINE_FRIST = 45_000;
 
+// Mit ZEITHINWEIS_QUER=1 einmal quer (Pixel 7 quer); der Lauf mit Engine ist zu lang für jede Größe.
+if (process.env.ZEITHINWEIS_QUER === "1") {
+  test.use({ viewport: { width: 863, height: 360 }, isMobile: true, hasTouch: true });
+}
+
 testMitSpieler(
   "Ambrose: „Lass dir Zeit“, wenn der Held mit 10 + 5 im Sekundentakt zieht",
   async ({ page, browserName, spieler }) => {
@@ -79,5 +84,20 @@ testMitSpieler(
       if (da) break;
     }
     await expect(hinweis).toContainText(ZU_SCHNELL);
+    // Ganz im Bild und nicht auf dem Brett, auch quer (ZEITHINWEIS_QUER=1, 20.11.2026).
+    const lage = await page.evaluate(() => {
+      const b = document.querySelector("[data-testid='abenteuer-zeithinweis']");
+      const brett = document.querySelector(".brett");
+      const r = b?.getBoundingClientRect();
+      const q = brett?.getBoundingClientRect();
+      if (!r || !q) return { imBild: false, aufBrett: true };
+      const imBild = r.top >= 0 && r.left >= 0 && r.bottom <= innerHeight && r.right <= innerWidth;
+      const aufBrett = r.left < q.right && r.right > q.left && r.top < q.bottom && r.bottom > q.top;
+      return { imBild, aufBrett };
+    });
+    expect(lage).toEqual({ imBild: true, aufBrett: false });
+    if (process.env.QUER_FOTOS) {
+      await page.screenshot({ path: `${process.env.QUER_FOTOS}/zeithinweis.jpg`, type: "jpeg" });
+    }
   },
 );

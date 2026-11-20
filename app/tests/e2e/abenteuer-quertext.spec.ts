@@ -5,22 +5,17 @@
  * Menü und Steuerkreuz überdecken die Spalte nicht. Ein Großbild steht in der freien Fläche
  * daneben. Geprüft auf iPhone 15 quer (734 × 343), Pixel 7 quer (863 × 360) und einem großen
  * iPhone als Web-App (932 × 430).
+ * Die Bretter quer prüft abenteuer-querbretter.spec.ts.
  * Mit QUER_FOTOS=ORDNER legt der Test kleine Fotos jeder Lage ab (für den Bericht).
  */
-import { devices, expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
+import { foto, GERAETE, imBild, rechteck, wischeHoch, WISCHVERSUCHE } from "./abenteuer-quer";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 
-const FOTOS = process.env.QUER_FOTOS ?? "";
 /** Wahlen blenden nach der Schutzzeit ein (dialog/wahlschutz.ts, 0,4 s Übergang). */
 const EINBLENDEN_MS = 900;
 /** So viele lange Antworten hängt der Rolltest an. */
 const LANGE_ANTWORTEN = 6;
-/** So weit wischt der Finger im Rolltest nach oben (CSS-Pixel), in so vielen Schritten. */
-const WISCHWEG = 220;
-const WISCHSCHRITTE = 8;
-/** So oft wischt er höchstens. */
-const WISCHVERSUCHE = 6;
-
 /** Mama im Wohnzimmer, nach der ersten Lektion: ihr erster Abend hat Porträt und Wahlen. */
 const MAMA = {
   ...GRUNDSTAND,
@@ -34,51 +29,6 @@ const MAMA = {
   },
 };
 
-const GERAETE = [
-  { name: "iPhone 15 quer", ...geraet("iPhone 15 landscape") },
-  { name: "Pixel 7 quer", ...geraet("Pixel 7 landscape") },
-  {
-    name: "großes iPhone als Web-App",
-    ...geraet("iPhone 15 landscape"),
-    viewport: { width: 932, height: 430 },
-  },
-];
-
-/** Gerät quer: nur Fenster, Maßstab, Touch und Kennung (der Browser bleibt der des Projekts). */
-function geraet(name: "iPhone 15 landscape" | "Pixel 7 landscape") {
-  const d = devices[name];
-  return {
-    viewport: d.viewport,
-    deviceScaleFactor: d.deviceScaleFactor,
-    isMobile: d.isMobile,
-    hasTouch: d.hasTouch,
-    userAgent: d.userAgent,
-  };
-}
-
-/** Rechteck eines Elements (das letzte sichtbare zur Auswahl) oder null. */
-async function rechteck(seite: Page, auswahl: string) {
-  return seite.evaluate((s) => {
-    const e = [...document.querySelectorAll(s)].pop();
-    if (!e) return null;
-    const r = e.getBoundingClientRect();
-    return { oben: r.top, unten: r.bottom, links: r.left, rechts: r.right, breite: r.width };
-  }, auswahl);
-}
-
-/** Ganz im Bild? */
-async function imBild(seite: Page, auswahl: string): Promise<boolean> {
-  const r = await rechteck(seite, auswahl);
-  const { width, height } = seite.viewportSize() ?? { width: 0, height: 0 };
-  return !!r && r.oben >= 0 && r.links >= 0 && r.unten <= height && r.rechts <= width;
-}
-
-async function foto(seite: Page, name: string, geraetname: string): Promise<void> {
-  if (!FOTOS) return;
-  const datei = `${FOTOS}/${geraetname.replace(/\W+/g, "-")}-${name}.jpg`;
-  await seite.screenshot({ path: datei, type: "jpeg", quality: 55, scale: "css" });
-}
-
 /** Mamas Gespräch öffnen und „Weiter“ tippen, bis Wahlen da sind. */
 async function oeffneMamaBisWahl(seite: Page): Promise<void> {
   await starteMitStand(seite, MAMA);
@@ -91,22 +41,6 @@ async function oeffneMamaBisWahl(seite: Page): Promise<void> {
   }
   await expect(wahl).toBeEnabled();
   await seite.waitForTimeout(EINBLENDEN_MS);
-}
-
-/** Wischt mit einem Finger über die Mitte des Elements nach oben (CDP, nur Chromium). */
-async function wischeHoch(seite: Page, auswahl: string): Promise<void> {
-  const r = await rechteck(seite, auswahl);
-  if (!r) throw new Error(`${auswahl} fehlt`);
-  const x = Math.round(r.links + r.breite / 2);
-  const start = Math.round(r.unten - 40);
-  const cdp = await seite.context().newCDPSession(seite);
-  const punkt = (y: number) => [{ x, y, id: 1 }];
-  await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: punkt(start) });
-  for (let i = 1; i <= WISCHSCHRITTE; i++) {
-    const y = start - Math.round((WISCHWEG * i) / WISCHSCHRITTE);
-    await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: punkt(y) });
-  }
-  await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
 }
 
 for (const g of GERAETE) {
@@ -209,20 +143,6 @@ for (const g of GERAETE) {
         ratio: 1,
       });
       await foto(page, "grossbild", g.name);
-    });
-
-    test("Brett der Übungspartie ganz im Bild", async ({ page }) => {
-      test.slow();
-      await starteMitStand(page, { ...GRUNDSTAND, dialogvariablen: EINLEITUNG_GESEHEN });
-      const hinweis = page.getByTestId("abenteuer-meldung").getByRole("button", { name: "Weiter" });
-      await expect(page.getByTestId("abenteuer-reisebrettknopf")).toBeVisible({ timeout: 20000 });
-      if (await hinweis.isVisible()) await hinweis.click();
-      await page.getByTestId("abenteuer-reisebrettknopf").click();
-      await page.getByTestId("abenteuer-deck-los").click();
-      await expect(page.locator(".brett").first()).toBeVisible({ timeout: 20000 });
-      await page.waitForTimeout(EINBLENDEN_MS);
-      expect(await imBild(page, ".brett")).toBe(true);
-      await foto(page, "partie", g.name);
     });
 
     test("Tagebuch in voller Höhe, rollt mit dem Finger, „Schließen“ im Bild", async ({ page }) => {

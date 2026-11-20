@@ -180,7 +180,9 @@ export function Oberwelt() {
         <p className="fehlertext abenteuer-ergebnis">{tSpiel("oberwelt.fehler", { fehler })}</p>
       )}
       {!welt && !fehler && <p className="lade abenteuer-ergebnis">{tSpiel("oberwelt.laedt")}</p>}
-      {welt && !dialog && (
+      {/* Nicht über Brettfenstern: Quer ragte das Kreuz in Vorführung und Gedächtnisstellung über
+          den Rand des Fensters (20.11.2026); laufen kann der Held dort ohnehin nicht. */}
+      {welt && !dialog && !vorfuehrung && !gedaechtnis && (
         <Steuerkreuz
           beiRichtung={beiRichtung}
           aktion={aktionFuer(welt, treffer)}

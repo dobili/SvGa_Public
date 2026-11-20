@@ -173,6 +173,14 @@ Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
 === mira_nach_sieg ===
 ~ revancheDesertSprings = false
 // Kapitel 46: Fanfare, dann Miras „Noch mal. Jetzt.“ ohne Musik (S61).
+// Lektorat 19.11.2026: Eine Revanche, die eine bessere Nadel bringt, spielt nicht die ganze Szene
+// des ersten Siegs noch einmal (Glocken, Kantine, „Noch mal. Jetzt.“).
+{clubkampfDesertSpringsNadel > 0:
+    ~ clubkampfDesertSpringsNadel = nadelDesertSprings
+    Mira wirft dir die bessere Nadel zu. #sprecher:erzaehler #klang:fanfare
+    Schon wieder. Morgen opfere ich früher. #sprecher:mira #stimmung:bitter
+    -> END
+}
 ~ clubkampfDesertSpringsNadel = nadelDesertSprings
 {ausgangDesertSpringsClubkampf == "remis":
     Remis. Langweilig. Aber gut gespielt. #sprecher:mira #stimmung:laechelt
@@ -186,7 +194,7 @@ Jetzt! #sprecher:mira #stimmung:bitter
 Mira. #sprecher:tomas #stimmung:nachdenklich
 Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand. #sprecher:erzaehler
 {atmeGesagt and not warumAtmeGefragt: -> warum_atme ->}
-{not abendMotelGesehen: Draußen sinkt die Sonne hinter die Tankstelle. Im Motel „Zur Quelle“ wartet euer Zimmer. #sprecher:erzaehler}
+{not abendMotelGesehen: Draußen ist es längst dunkel. Im Motel „Zur Quelle“ wartet euer Zimmer. #sprecher:erzaehler}
 -> END
 
 = warum_atme
@@ -454,5 +462,5 @@ Mira wartet auf ihren Clubkampf. Aber vorher noch etwas anderes. #sprecher:dot #
     ~ revancheDesertSprings = true
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END

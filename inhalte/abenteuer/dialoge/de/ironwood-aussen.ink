@@ -136,7 +136,7 @@ Zu Fuß ist es ein halber Tag. #sprecher:erzaehler
 // danach (Schnellstraße, Raststätte, Glasbrücke) steht in weg-ironwood-silicon.ink.
 // Klang: Mamas Thema warm mit Schnee (mama.schnee).
 ~ abfahrtSiliconGesehen = true
-Im Dezember, auf der Treppe vor der Schule, fragt Juno zum dritten Mal, was Victor auf der Brücke wollte. #sprecher:erzaehler #musik:mama.schnee
+Im Dezember, auf der Treppe vor der Schule, fragt Juno zum dritten Mal, was auf der Brücke noch war. #sprecher:erzaehler #musik:mama.schnee
 Und warum du danach so lange auf ein Geländer gestarrt hast. #sprecher:erzaehler
 * [„In dem Brett wohnt jemand.“]
 - Sie lacht nicht. Sie blättert im Tagebuch weit zurück, bis in den September, und dreht es zu dir um. #sprecher:erzaehler
@@ -307,7 +307,7 @@ An der alten Stahlbrücke hinter dem Werkstor. Victor kommt allein, ohne Tablet.
 {held}. #sprecher:victor #stimmung:nachdenklich
 Du hast vier. #sprecher:victor #stimmung:nachdenklich
 * [„Ja.“]
-- Gegen den habe ich einmal gespielt. Kowalski. Bei einem Schaukampf. #sprecher:victor #stimmung:nachdenklich
+- Gegen Big Joe habe ich einmal gespielt. Bei einem Schaukampf. #sprecher:victor #stimmung:nachdenklich
 Er hat mir danach einen Kakao ausgegeben. Ich wusste nicht, was ich damit machen soll. Ich trinke keinen Kakao. #sprecher:victor #stimmung:nachdenklich
 Er hält dir eine Karte hin, weiß, mit silberner Schrift: „Jugendturnier der Perfect Move Akademie. Silicon Bay.“ #sprecher:erzaehler #bild:einladung_silber
 Komm. Dann siehst du, wogegen du spielst. #sprecher:victor #stimmung:nachdenklich
@@ -341,7 +341,7 @@ Im Fenster von Ednas Laden: Schrauben in Gläsern, drei Laternen, eine Fahrradke
     -> END
 }
 ~ kreidebrettGesehen = true
-Auf dem Gehweg haben Kinder ein Schachbrett mit Kreide gemalt. Ein richtiges, acht mal acht. #sprecher:erzaehler
+Eins der Kreidebretter ist frisch gemalt, die Figuren sind Kieselsteine. #sprecher:erzaehler
 Die h-Linie ist breiter als die a-Linie. Aber es sind acht. #sprecher:juno #stimmung:laechelt
 {not abschiedGesehen:
     Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten genug. #sprecher:ambrose #stimmung:laechelt

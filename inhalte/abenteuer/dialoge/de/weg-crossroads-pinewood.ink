@@ -189,7 +189,8 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
 -> END
 
 === lebendschach_danach ===
-{~Die Kinder fragen, wann du wieder kommandierst.|Der Feldherr ist wieder gesund. Er sagt, du warst zu streng mit den Bauern.|Das Sommerfest wird groß. Komm, wenn du kannst.} #sprecher:ezra #stimmung:laechelt
+// Lektorat 19.11.2026: Ezra ist inzwischen im Camp; auf der Lichtung erzählen die Kinder.
+{~Auf der Lichtung üben ein paar Kinder. Eins ruft: „Wann kommandierst du wieder?“|Der Feldherr der Weißen ist wieder gesund und ruft: „Du warst zu streng mit den Bauern!“|An der Lichtung hängt ein Pappschild: „Sommerfest! Lebendschach für alle.“} #sprecher:erzaehler
 -> END
 
 === seite10 ===

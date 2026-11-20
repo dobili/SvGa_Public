@@ -5,9 +5,31 @@
  * oft gleich in den nächsten Auslöser oder gegen ein Möbel. Nach jedem Kartenwechsel (und nach
  * dem Versetzen auf derselben Karte) bleibt der Held deshalb kurz stehen: bis die Zeit um ist
  * oder die Taste einmal losgelassen wurde, je nachdem, was zuerst kommt.
- * Rolle im Gesamtbild: reine Logik für oberwelt/szene.ts (getestet in eingabepause.test.ts).
+ * Rolle im Gesamtbild: reine Logik für oberwelt/szene.ts (getestet in eingabepause.test.ts),
+ * dazu die Pfeiltasten der Szene ohne abgefangene Leertaste (pfeiltasten).
  * Beispiel: Rest 350 ms, Bild nach 16 ms mit gehaltener Taste → Rest 334 ms, der Held steht.
  */
+
+import type Phaser from "phaser";
+
+/** Tastencodes, die die Szene nicht braucht und deshalb nicht abfängt (Leertaste, Umschalttaste). */
+const LEERTASTE = 32;
+const UMSCHALTTASTE = 16;
+
+/**
+ * Die Pfeiltasten der Szene. createCursorKeys fängt auch Leertaste und Umschalttaste im ganzen
+ * Dokument ab; die Szene braucht sie nicht, und so löste die Leertaste in keinem Fenster
+ * (Tagebuch, Gespräch) einen Knopf aus (Prüfung „zugang“, 19.11.2026). Die Pfeiltasten bleiben
+ * gefangen, damit die Seite beim Laufen nicht scrollt. Ohne Tastatur: null.
+ */
+export function pfeiltasten(
+  tastatur: Phaser.Input.Keyboard.KeyboardPlugin | null | undefined,
+): Phaser.Types.Input.Keyboard.CursorKeys | null {
+  if (!tastatur) return null;
+  const tasten = tastatur.createCursorKeys();
+  tastatur.removeCapture([LEERTASTE, UMSCHALTTASTE]);
+  return tasten;
+}
 
 /** Dauer der Pause in Millisekunden (spürbar, aber kürzer als ein bewusster Tastendruck). */
 export const EINGABEPAUSE_MS = 350;

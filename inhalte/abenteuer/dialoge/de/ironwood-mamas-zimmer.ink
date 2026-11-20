@@ -86,6 +86,12 @@ Ich war das nie. Ich habe meine Niederlagen nicht aufgeschrieben. Ich habe sie a
     -> END
 
 === medaille ===
+// Lektorat 19.11.2026: Vor der Begrüßung führt Oma Ruth erst herein (oma_ruth); vorher wäre die
+// Beschreibung danach doppelt und die Führung ins Zimmer falsch.
+{not fotoGefunden:
+    Oma Ruth steht noch an der Tür und wartet. Erst einmal hallo sagen. #sprecher:erzaehler
+    -> END
+}
 {medailleGesehen:
     Die Silbermedaille dreht sich langsam am Band, wenn du vorbeigehst. #sprecher:erzaehler
     -> END
@@ -98,6 +104,10 @@ An der Wand hängt eine Medaille an einem blauen Band. Silber. #sprecher:erzaehl
 -> END
 
 === partieformular ===
+{not fotoGefunden:
+    Oma Ruth steht noch an der Tür und wartet. Erst einmal hallo sagen. #sprecher:erzaehler
+    -> END
+}
 {partieformular2001Gesehen:
     Unter dem Glas der Kreis um den dreiunddreißigsten Zug. #sprecher:erzaehler
     -> END

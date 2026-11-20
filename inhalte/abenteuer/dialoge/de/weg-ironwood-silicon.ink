@@ -139,7 +139,7 @@ Remis. Gleicher Puls, gleiche Zeit. Noch eine Runde? #sprecher:joggerin #stimmun
     -> END
 
 === joggerin_nach_sieg ===
-{~Du hast mich ausgebremst. Respekt.|Nächstes Mal lauf ich vorher weniger.|Meine Uhr sagt, ich soll mich ausruhen. Deine sagt, du hast gewonnen.} #sprecher:joggerin #stimmung:laechelt
+{~Mein Puls sagt Pause. Dein Brett sagt Sieg.|Nächstes Mal lauf ich vorher weniger.|Meine Uhr sagt, ich soll mich ausruhen. Deine sagt, du hast gewonnen.} #sprecher:joggerin #stimmung:laechelt
 + [„Noch eine Runde?“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END

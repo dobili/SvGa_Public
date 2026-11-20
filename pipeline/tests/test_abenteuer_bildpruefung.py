@@ -3,9 +3,13 @@ der Großansicht (#bild) und der Fundbilder, mit erfundenen Dialogen und Bildern
 
 from pathlib import Path
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.bildpruefung import bericht, dateiname, pruefe
+# Pillow fehlt im Pipeline-Lauf der CI (nur pipeline/requirements.txt); wie die übrigen Bildtests
+# dann übersprungen (Lauf 44657454880 brach sonst beim Sammeln ab).
+Image = pytest.importorskip("PIL.Image")
+
+from pipeline.abenteuer.bildpruefung import bericht, dateiname, pruefe  # noqa: E402
 
 
 def lege_bild(ordner: Path, name: str, mass: tuple[int, int]) -> None:

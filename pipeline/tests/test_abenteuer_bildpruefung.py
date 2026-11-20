@@ -5,9 +5,7 @@ from pathlib import Path
 
 import pytest
 
-# Pillow fehlt im Pipeline-Lauf der CI (nur pipeline/requirements.txt); wie die übrigen Bildtests
-# dann übersprungen (Lauf 44657454880 brach sonst beim Sammeln ab).
-Image = pytest.importorskip("PIL.Image")
+Image = pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
 
 from pipeline.abenteuer.bildpruefung import bericht, dateiname, pruefe  # noqa: E402
 

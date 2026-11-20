@@ -43,6 +43,8 @@ const RUNDENARTEN: readonly Rundenverlust[] = ["falsch", "zurueckAbbrechen", "ne
 const VERLUSTE: Readonly<Record<string, number>> = { "wegDesertSummit.testteam": 3 };
 /** Nach so vielen neuen Dialogzeilen lädt er mitten im Gespräch neu. */
 const DIALOG_NEULADEN_ALLE = 40;
+/** Nach einem Neuladen im Gespräch so viele Zeilen mehr bis zum nächsten. */
+const DIALOG_NEULADEN_PAUSE = 160;
 /** Nach so vielen eigenen Zügen gibt er auf oder lädt neu. */
 export const EIGENE_ZUEGE_VOR_ABBRUCH = 4;
 
@@ -144,7 +146,9 @@ export class Schwaechling {
     if (!this.an) return false;
     this.dialogzeilen += 1;
     if (this.dialogzeilen < DIALOG_NEULADEN_ALLE) return false;
-    this.dialogzeilen = 0;
+    // Danach länger warten: Eine Szene mit mehr als 40 Zeilen (die Kerze in Ghost Town) wurde
+    // sonst bei jedem Anlauf wieder unterbrochen und nie fertig (Durchlauf, 20.11.2026).
+    this.dialogzeilen = -DIALOG_NEULADEN_PAUSE;
     return true;
   }
 

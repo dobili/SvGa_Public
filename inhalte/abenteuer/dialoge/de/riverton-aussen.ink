@@ -38,6 +38,7 @@ VAR schuppenOffen = false
 VAR fahrradErhalten = false
 VAR holzlaeuferGefunden = false
 VAR nadelRiverton = 0
+VAR nadelCedarCreek = 0
 VAR clubkampfRivertonBesprochen = false
 // verbotGesehen setzt maple-falls-wohnzimmer.nicht_ironwood (Lektorat Akt 2).
 VAR verbotGesehen = false
@@ -68,6 +69,12 @@ Hier bin ich geboren. Also fast. #sprecher:juno #stimmung:froh
 Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
 An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler
 Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose #stimmung:laechelt
+// Wiedereinstieg (20.11.2026): Wer nach einer Pause mit Akt 2 beginnt, hört hier, worum es geht.
+{nadelCedarCreek > 0:
+    Zwei Nadeln haben wir schon. Die dritte hängt hier irgendwo im Regen. #sprecher:juno #stimmung:froh
+- else:
+    Hier gibt es die nächste Nadel. Diesmal holen wir sie. #sprecher:juno #stimmung:froh
+}
 Meine Cousine sagt, der echte Club spielt im Parkpavillon am Fluss. Der Chef heißt Slick, und er redet schneller, als er zieht. #sprecher:juno #stimmung:froh
 -> END
 

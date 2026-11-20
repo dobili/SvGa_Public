@@ -138,6 +138,7 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
       : {},
     ...(typeof roh.verfolgteQuest === "string" ? { verfolgteQuest: roh.verfolgteQuest } : {}),
+    ...(typeof roh.zuletztGespielt === "string" ? { zuletztGespielt: roh.zuletztGespielt } : {}),
   };
 }
 

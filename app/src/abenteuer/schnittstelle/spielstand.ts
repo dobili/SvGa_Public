@@ -251,4 +251,10 @@ export interface Abenteuerstand {
    * sie erledigt ist. Im Spielstand, damit er ein Neuladen übersteht. Fehlt in älteren Ständen.
    */
   readonly verfolgteQuest?: string | null;
+  /**
+   * Wann zuletzt gespielt wurde (ISO), gesetzt beim Sichern der Sitzung (Kartenwechsel, App in den
+   * Hintergrund). Daraus die Erinnerung nach einer Pause (regeln/wiedereinstieg.ts, 20.11.2026).
+   * Fehlt in älteren Ständen.
+   */
+  readonly zuletztGespielt?: string;
 }

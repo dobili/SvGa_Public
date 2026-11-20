@@ -7,6 +7,10 @@
  * Dashboard von Cloudflare eingetragen, nie im Repository) nach `app/inhalte-privat/quelle/`.
  * Ohne Schlüssel oder schon vorhandenen Ordner passiert nichts: Der Paketbau nimmt dann die
  * eigenen Platzhalter, die App baut wie bisher.
+ * Ausnahme main (Vorbereitung des Schritts nach main, 20.11.2026): Beim Bau der Leser-App bei
+ * Cloudflare (WORKERS_CI_BRANCH=main) bricht ein fehlender oder falscher Schlüssel den Bau ab.
+ * Sonst ginge das Spiel still mit Platzhaltergrafik an echte Leser; so bleibt die alte Fassung
+ * online, und das Protokoll von Cloudflare nennt den Grund.
  * Aufruf: Teil von `npm run vorbereiten`, vor dem Paketbau.
  */
 import { execFileSync } from "node:child_process";
@@ -17,6 +21,17 @@ import { fileURLToPath } from "node:url";
 const HIER = dirname(fileURLToPath(import.meta.url));
 const ZIEL = resolve(HIER, "../inhalte-privat/quelle");
 const REPOSITORY = "github.com/dobili/schach-abenteuer-inhalte";
+/** Baut Cloudflare gerade die Leser-App (Zweig main)? */
+const LESER_APP = process.env.WORKERS_CI_BRANCH === "main";
+
+/** Ohne Grafik weiter (Platzhalter), außer beim Bau der Leser-App: dort Abbruch. */
+function ohneGrafik(grund) {
+  if (LESER_APP) {
+    console.error(`Privatgrafik: ${grund}. Die Leser-App (main) baut nicht mit Platzhaltern.`);
+    process.exit(1);
+  }
+  console.log(`Privatgrafik: ${grund}, das Spiel nutzt die Platzhalter.`);
+}
 
 function hole() {
   if (existsSync(ZIEL)) {
@@ -25,7 +40,7 @@ function hole() {
   }
   const schluessel = process.env.GRAFIK_TOKEN;
   if (!schluessel) {
-    console.log("Privatgrafik: kein GRAFIK_TOKEN, das Spiel nutzt die Platzhalter.");
+    ohneGrafik("kein GRAFIK_TOKEN");
     return;
   }
   try {
@@ -37,7 +52,7 @@ function hole() {
     console.log("Privatgrafik: geholt.");
   } catch {
     // Den Fehlertext nicht ausgeben: Er enthielte die Adresse mit dem Schlüssel.
-    console.warn("Privatgrafik: Holen fehlgeschlagen, das Spiel nutzt die Platzhalter.");
+    ohneGrafik("Holen fehlgeschlagen");
   }
 }
 

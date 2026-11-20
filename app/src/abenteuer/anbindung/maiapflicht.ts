@@ -68,6 +68,23 @@ export async function mitMaiaPflicht(
   return { art: "fehlt", bytes: spiel.bytes + maiaBytes };
 }
 
+/** Name des Testschalters am Fenster (tests/e2e/abenteuer-paket.ts setzt ihn per addInitScript). */
+export const TESTSCHALTER_OHNE_MAIA = "__abenteuerOhneMaia";
+
+/**
+ * Ist das Nachladen von Maia im Hintergrund abgeschaltet? Nur Oberflächentests schalten es ab.
+ * Warum (Auftrag 20.11.2026): Seit Maia nach dem Start nachlädt, wartete jeder Abenteuertest auf
+ * 92 MB Laden, Prüfen und Cache-Schreiben; der Job „Chromium, Abenteuer“ brauchte 26 statt etwa
+ * 11 Minuten. Die meisten Tests prüfen das Spiel, nicht das Nachladen; eine Partie ohne Maia
+ * spielt der Bot wie im echten Spiel vor dem Ende des Ladens (useMaiaBereit in dienste.ts).
+ * Gezielte Tests (abenteuer-hintergrund.spec.ts) laden Maia wie im echten Spiel.
+ * Sonderfall: Im echten Spiel setzt niemand den Schalter; ohne Fenster (Vitest) ist er aus.
+ */
+export function maiaImHintergrundAus(): boolean {
+  if (typeof window === "undefined") return false;
+  return Reflect.get(window, TESTSCHALTER_OHNE_MAIA) === true;
+}
+
 /** Der laufende Ladevorgang von Maia, damit es nicht doppelt lädt. */
 let maiaVorgang: Promise<boolean> | null = null;
 

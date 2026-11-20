@@ -7,7 +7,7 @@ import { describe, expect, it } from "vitest";
 import { LEERER_STAU, mitMeldung, nachDialog, ohneGezeigte, type Meldung } from "./meldungsstau";
 
 const TESTTEAM: Meldung = { text: "Neu im Tagebuch: Das Testteam" };
-const FUND: Meldung = { text: "Gefunden: Läufer aus Buchsbaum", bild: "funde/laeufer.png" };
+const FUND: Meldung = { text: "Gefunden: Finchs Läufer (A)", bild: "funde/laeufer.png" };
 const ERLEDIGT: Meldung = { text: "Erledigt: Das Brett auf dem Dachboden" };
 
 describe("mitMeldung", () => {

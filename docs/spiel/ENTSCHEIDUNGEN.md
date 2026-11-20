@@ -4,6 +4,18 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 20.11.2026 – Finale mit E+700 (Bronze), Schwierigkeitskurve ab Akt 3 strenger
+
+- **Befund (mittel-4, Messung 15 Begegnungen × E800/1200/1600):** Ab Akt 3 war die Kurve flach,
+  weil Odile, Mira (Endspiel −1), Ward (Eröffnung) und Kade Phasenversätze trugen, die die
+  Steckbriefe nicht stützen. Korrigiert nur in `inhalte/abenteuer/gegner.json`; danach Odile 8 %,
+  Mira 10 %, Ward 2 %, Halbfinale 5 %, Finale 3 % für einen 1200er ohne Karten.
+- **Finale:** In der Architektur stand E+800 (Silber, R22), im Spiel E+700. Die Liga kommt erst
+  mit Staffel 2; es gilt Bronze (Halbfinale +650, Finale +700). Empfehlung umgesetzt: +700 bleibt,
+  Architektur angeglichen. Widerspruch des Autors genügt.
+- **Schwache Leser (800):** mit den Hilfen des Spiels gemessen 35 % bei Ward, 22,5 % im Finale je
+  Versuch; mit „überheblich“ wachsend kein Feststecken. Keine Stellschraube geändert.
+
 ## 10.11.2026 – Spielhülle: Funktionen der App nur aufs Nötigste gespiegelt
 
 - **Wunsch des Autors** (Chat 10.11.2026, nach dem ersten Spielen): Partie, Aufgaben und Trainer

@@ -110,7 +110,9 @@ describe("Kipppunkt nach der Partie", () => {
     );
 
   it("ist mit Ambrose sein Satz", () => {
-    expect(zeichne(kipppunkt, false)).toContain("Ambrose: „Hier ist es passiert, in Zug 13.");
+    expect(zeichne(kipppunkt, false)).toContain(
+      "Ambrose: „Hier ist es passiert. Noch einmal von hier?",
+    );
     expect(zeichne("suche", false)).toContain("Ambrose sieht sich die Partie an");
   });
 

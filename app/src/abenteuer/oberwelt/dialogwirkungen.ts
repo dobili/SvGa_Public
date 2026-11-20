@@ -87,7 +87,7 @@ function setzeToenung(k: Wirkungskontext, name: string): void {
 
 /**
  * Die Wirkungen eines Dialogs für die Geschichte (dialog/geschichte.ts).
- * Beispiel: gibFund("finchLaeuferA") schreibt den Fund und zeigt „Gefunden: Läufer aus Buchsbaum“.
+ * Beispiel: gibFund("finchLaeuferA") schreibt den Fund und zeigt „Gefunden: Finchs Läufer (A)“.
  */
 export function dialogwirkungen(k: Wirkungskontext): Wirkungen {
   const m = k.merker;

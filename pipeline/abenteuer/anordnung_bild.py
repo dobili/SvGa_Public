@@ -129,8 +129,10 @@ def flaeche(stueck: dict, angabe: dict) -> Flaeche:
 
 
 def mitte(f: Flaeche) -> tuple[float, float]:
+    """Mittelpunkt einer Fläche (x0, y0, x1, y1)."""
     return ((f[0] + f[2]) / 2, (f[1] + f[3]) / 2)
 
 
 def ueberlappen(a: Flaeche, b: Flaeche) -> bool:
+    """Überdecken sich zwei Flächen echt (Berühren zählt nicht)?"""
     return a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]

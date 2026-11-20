@@ -293,6 +293,7 @@ def abschnitt(gezaehlt: int, befunde: list[Befund]) -> str:
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     ort = argumente[argumente.index("--ort") + 1] if "--ort" in argumente else None
     gezaehlt, befunde = pruefe(ort)
     if "--bericht" in argumente:

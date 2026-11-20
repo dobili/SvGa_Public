@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { weiterText } from "./abenteuerkartentext";
 import { beiPaketAenderung, paketzustand } from "../paket/paketlader";
 
+/** Karte „Schach-Abenteuer“ auf „Spielen“; nur sichtbar mit Paket oder Spielstand (Wunsch des Autors, 8.11.2026, Dateikopf). */
 export function Abenteuerkarte() {
   const { navigiere } = useNavigation();
   const stand = useAbenteuerstand();
@@ -52,7 +53,8 @@ function useInstalliert(): boolean {
         .then((z) => {
           if (aktiv) setzeInstalliert(z.art === "vorhanden" || z.art === "veraltet");
         })
-        .catch(() => undefined);
+        // Ohne Antwort bleibt die Karte bei „nicht installiert“; der Grund steht in der Konsole.
+        .catch((fehler: unknown) => console.warn("Abenteuer: Paketzustand nicht lesbar", fehler));
     };
     pruefe();
     const ende = beiPaketAenderung(pruefe);

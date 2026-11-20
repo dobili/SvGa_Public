@@ -297,6 +297,7 @@ def pruefe_anordnung(szene: dict, mit_bildern: bool | None = None) -> list[str]:
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     ort = argumente[argumente.index("--ort") + 1] if "--ort" in argumente else None
     anzahl = 0
     for pfad in sorted((INHALTE / "szenen").glob("*.json")):

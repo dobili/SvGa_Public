@@ -12,6 +12,7 @@ import { sprache, t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { beiAnsage, letzteAnsage, type Ansage } from "../../spiel/ansage";
 
+/** Zeigt den angesagten Gegnerzug in der Notation des Lesers, bevor er aufs Brett kommt (Funkschach, Weg 7). */
 export function Funkansage({ partiekennung }: { readonly partiekennung: string }) {
   const [ansage, setzeAnsage] = useState<Ansage | null>(() => letzteAnsage());
   useEffect(() => {

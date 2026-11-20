@@ -282,6 +282,7 @@ def schreibe(masken: dict[str, list[str]], ordner: Path = ORDNER) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.anordnung_bild import privat as privat_paket
 
     teil = argparse.ArgumentParser(description=__doc__.splitlines()[0])

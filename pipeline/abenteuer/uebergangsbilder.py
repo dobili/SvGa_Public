@@ -351,6 +351,7 @@ def pruefe_alle(
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.ankunftsfeld import ankunftsbefunde
     from pipeline.abenteuer.moebelliste import lade_moebel
     from pipeline.abenteuer.uebergaenge import szenen, uebergaenge

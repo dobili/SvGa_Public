@@ -22,6 +22,7 @@ import { erinnerungsaufgabe } from "./erinnerung";
 import { Raetseltest } from "./Testleiste";
 import { useRaetselgespraech } from "./useRaetselgespraech";
 
+/** Erinnerung Ambroses als Zugerraten-Runde; Ergebnis „richtig“ ab der Hälfte getroffener Züge (wie im Trainer, Dateikopf). */
 export function ErinnerungsRunde({
   erinnerung,
   steller,

@@ -48,6 +48,7 @@ function mitWahlen(geschichte: Geschichte, s: Dialogschritt): Dialogschritt {
   return wahlen.length > 0 ? { art: "wahl", wahlen } : s;
 }
 
+/** Das Dialogfenster einer Ink-Geschichte; gibt am Ende die Variablen für den Spielstand zurück (Ablauf im Dateikopf). */
 export function Dialog({
   json,
   knoten,

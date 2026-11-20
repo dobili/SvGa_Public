@@ -39,11 +39,18 @@ Jetzt:
   Spielstand. Regeln in `regeln/wiedereinstieg.ts` mit Tests; alte Spielstände ohne Zeitstempel
   bekommen keine Meldung.
 
-## Noch offen für Code (Vorschlag, nicht umgesetzt)
+## „Was bisher geschah“ im Tagebuch (umgesetzt, Regel 9)
 
-- Ein „Was bisher geschah“ je Akt (zwei, drei Sätze) im Tagebuch wäre die nächste Stufe; die
-  Szenen (`setzeSzene`) und Romankapitel gäben die Sätze her. Erst sinnvoll, wenn der Autor das
-  möchte, weil es neue Texte für jeden Akt braucht.
+- Neuer Abschnitt im Tagebuch zwischen den Aufgaben und den Zahlen (`oberwelt/WasBisherGeschah.tsx`,
+  Regeln in `regeln/rueckblick.ts` mit Tests, Oberflächentest `abenteuer-rueckblick.spec.ts`).
+- Je abgeschlossenem Akt zwei, drei Sätze (`rueckblick.akt1` bis `akt4`); für den laufenden Akt je
+  erledigter Hauptquest ein, zwei Sätze (`rueckblick.quest.<Kennung>`), in der Reihenfolge der
+  Erledigung.
+- Ein Akt gilt als abgeschlossen, wenn seine letzte Hauptquest erledigt ist (Cedar Creek Clubkampf,
+  Ironwood Clubkampf, Wieder zusammen, Landesmeisterschaft). Aus späteren Akten erscheint nichts.
+- Stimme: das Tagebuch des Helden („ich“, ohne Geschlecht), ohne Juno als Erzählerin, nach den
+  Kernsätzen der Story-Bibel und nur mit dem, was gespielt ist. Die Texte gelten als abgesegnet,
+  bis der Autor sie gelesen hat.
 
 ## Prüfungen
 

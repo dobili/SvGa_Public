@@ -145,9 +145,8 @@ Im Spiel schließen das Lernen, die Vorbereitung und die Karten die Lücke (Arch
 - **1200, ab Akt 3:** 0 bis 5 % ohne Hilfen, mit Karte und Vorbereitung etwa 20 bis 30 %. Das heißt
   kämpfen, mit mehreren Versuchen oder nach echtem Lernen.
 - **800:** In der Messung kommt der Leser mit 800 gegen späte Gegner etwas besser weg als die
-  anderen Lesestärken (Odile 25 %, Mira 20 %). Ward ist ohne Hilfen bei 0 %. Mit Springervorgabe,
-  „abgelenkt“ und zwei, drei Niederlagen (Faktor bis 1,6 auf h) liegt er grob bei 20 bis 30 % je
-  Versuch und steckt nicht fest. Das ist eine Schätzung aus den Elo-Gewichten, nicht gemessen.
+  anderen Lesestärken (Odile 25 %, Mira 20 %). Ward ist ohne Hilfen bei 0 %. Mit Hilfen ist das
+  gemessen, siehe den Nachtrag unten.
 
 ## Halbe Blitzwertung
 
@@ -175,7 +174,31 @@ Gemessen wurden drei Begegnungen mit dem Gegner ohne Maia, mit denselben Saaten,
 - Für die erste Partie heißt das: Lädt Maia noch, ist der Gegner höchstens etwas leichter, nie
   deutlich stärker. Das ist unkritisch, die erste Partie soll ohnehin einladen.
 
-## Nebenbefund für den Autor
+## Finale bei E + 700 (Nachtrag)
 
-Architektur, Abschnitt 4, nennt für das Finale gegen Victor E + 800. In `gegner.json` steht
-E + 700. Gemessen sind es bei +700 bereits 3 %. Ich habe es so gelassen.
+Die Architektur (Abschnitt 4) nannte für das Finale E + 800. Das sind die Werte der Silber-Liga
+aus R22. Die Liga gibt es aber erst mit Staffel 2, und `gegner.json` nutzt die Bronze-Werte:
+Halbfinale E + 650, Finale E + 700. Bei E + 700 holen Leser ohne Karten nur noch 3 %; das Finale
+ist damit schon die schwerste Partie. Es bleibt bei E + 700 (Empfehlung des Hauptchats nach Regel
+9). Die Architektur ist angeglichen und nennt den Grund, die Beispieltabelle im Regelwerk ist als
+Silber gekennzeichnet.
+
+## Nachtrag: Leser mit 800 mit Hilfen, gemessen
+
+Gemessen wurde mit den Hilfen, die das Spiel einem schwachen Leser anbietet, je 20 Partien bei
+E = 800, als dritter Versuch nach zwei Niederlagen (überheblich, R9: 1 + 0,15 · 2 = 1,3). Der
+Messlauf kennt dafür `WEGSPERRE_VORGABE`, `WEGSPERRE_ABGELENKT` und `WEGSPERRE_UEBERHEBLICH`. Die
+Vorgabe wirkt wie die Karte in `oberwelt/partiestart.ts`: Der Springer auf g1 des Gegners fehlt.
+In den Partien zieht der Gegner nur noch den b-Springer.
+
+| Begegnung | Hilfen                                                         | Gegner               | S/R/N  | Punkte |
+| --------- | -------------------------------------------------------------- | -------------------- | ------ | ------ |
+| Ward      | Springervorgabe, abgelenkt 1,4 (Studiennacht), überheblich 1,3 | Stufen 4/6/6, h 2,08 | 5/4/11 | 35 %   |
+| Finale    | nur überheblich 1,3 (keine Karten, R28; kein Zustand)          | Stufen 5/5/5, h 1,3  | 4/1/15 | 22,5 % |
+
+Ohne Hilfen waren es bei Ward und im Finale je 0 bis 10 %. Beide liegen mit Hilfen über der
+Grenze von 15 %. Bei 20 Partien schwankt eine Quote um etwa ±10 Punkte. Mit 35 % je Versuch
+gelingt Ward in drei weiteren Versuchen zu etwa 70 %, das Finale mit 22,5 % zu etwa 50 %. Mit jeder
+weiteren Niederlage wächst die Überheblichkeit bis 1,6, die Chance steigt also weiter. Ein Leser
+mit 800 steckt nicht fest. Deshalb ist keine Stellschraube geändert, eine Messung „nachher“
+entfällt.

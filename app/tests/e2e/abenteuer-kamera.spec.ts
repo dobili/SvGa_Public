@@ -13,6 +13,7 @@
  */
 import { expect, test } from "@playwright/test";
 import { feldVon } from "./abenteuer-karte";
+import { ohneMaiaImHintergrund } from "./abenteuer-paket";
 import { starteImBrowser } from "./hilfen";
 
 const LAUF_MS = 3000;
@@ -112,6 +113,7 @@ test("Kamera: Vorauseilen und Zurücklaufen gleichmäßig", async ({ page }) => 
   await page.goto("/app/#abenteuer");
   const laden = page.getByTestId("abenteuer-laden");
   await expect(laden).toBeVisible({ timeout: 30000 });
+  await ohneMaiaImHintergrund(page);
   await laden.click();
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 120000 });
   await page.waitForTimeout(3000);

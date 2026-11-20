@@ -29,6 +29,21 @@ const MAMA = {
   },
 };
 
+/** Liegt die letzte lange Antwort ganz im sichtbaren Teil der rollenden Spalte? */
+async function ganzInDerSpalte(seite: Page): Promise<boolean> {
+  return seite.evaluate(() => {
+    const spalte = document.querySelector(".abenteuer-dialog");
+    const knopf = [
+      ...document.querySelectorAll(".abenteuer-dialog-wahlen button[data-lang]"),
+    ].pop();
+    if (!spalte || !knopf) return false;
+    const s = spalte.getBoundingClientRect();
+    const k = knopf.getBoundingClientRect();
+    const innen = s.top + spalte.clientTop;
+    return k.top >= innen && k.bottom <= innen + spalte.clientHeight && k.bottom <= innerHeight;
+  });
+}
+
 /** Mamas Gespräch öffnen und „Weiter“ tippen, bis Wahlen da sind. */
 async function oeffneMamaBisWahl(seite: Page): Promise<void> {
   await starteMitStand(seite, MAMA);
@@ -101,7 +116,9 @@ for (const g of GERAETE) {
       // Mit dem Finger nach oben wischen, bis die letzte Antwort ganz zu sehen ist.
       const letzte = page.locator(".abenteuer-dialog-wahlen button[data-lang]").last();
       for (let i = 0; i < WISCHVERSUCHE; i++) {
-        if (await imBild(page, ".abenteuer-dialog-wahlen button[data-lang]:last-child")) break;
+        // Ganz im sichtbaren Teil der Spalte, nicht nur im Bild: Unter dem Rand der Spalte ist
+        // die Antwort im Bild, aber abgeschnitten (WebKit, großes iPhone, 20.11.2026).
+        if (await ganzInDerSpalte(page)) break;
         await wischeHoch(page, ".abenteuer-dialog");
       }
       expect(await page.locator(".abenteuer-dialog").evaluate((e) => e.scrollTop)).toBeGreaterThan(

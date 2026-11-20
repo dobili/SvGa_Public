@@ -156,7 +156,15 @@ Die Ausnahmen sind Sperren, die die Reihenfolge der Geschichte ausschließt; die
 
 ## Läufe
 
-**Aufschieber** (Stand 20.11.2026, 20:15; 46 von 91 Quests, der Rest läuft weiter):
+**Aufschieber, alle 91 Quests** (Stand 20.11.2026, nachts, nach allen Behebungen):
+
+- Die letzten 44 Quests liefen mit den neuen Daten: 43 ok, davon 39 „aufgeschoben und nachgeholt“.
+- Darunter jetzt auch `cedarCreek.archivOrdnen` ok.
+- Einziger Fund: `siliconBay.spielberichte` nie begonnen, wer Victor in Silicon Bay nie fragt.
+  Das bleibt bewusst so (gemeldet, nichts hängt im Tagebuch).
+- Damit wird keine Haupt- oder Nebenquest mehr begonnen und dann unerreichbar.
+
+Vorläufiger Stand nach den ersten 46 Quests (20:15):
 
 | Ergebnis | Anzahl |
 | --- | --- |

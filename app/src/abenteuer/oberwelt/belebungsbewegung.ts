@@ -30,6 +30,8 @@ export interface Bewegung {
   gefolgt: number;
   /** Sekunden, die ein Statist schon wartet, weil der Held ihm im Weg steht. */
   wartet: number;
+  /** Sekunden, die ein stehender Statist schon dem Helden zuhört (er spricht ihn an). */
+  hoertZu: number;
 }
 
 /** Was ein Schritt von der Welt wissen muss. */
@@ -40,6 +42,9 @@ export interface Umgebung {
   readonly frei: (x: number, y: number) => boolean;
   /** Zufallszahl in [0, 1). */
   readonly zufall: () => number;
+  /** Blick des Helden und ob er gerade geht (fehlt: niemand wird angesprochen). */
+  readonly heldBlick?: Richtung;
+  readonly heldGeht?: boolean;
 }
 
 /** Werte eines Verhaltens: Tempo in Kacheln je Sekunde, Pausen in Sekunden, Scheu in Kacheln. */
@@ -94,6 +99,7 @@ export function neueBewegung(feld: Feld, blick: Richtung = "unten"): Bewegung {
     flieht: false,
     gefolgt: 0,
     wartet: 0,
+    hoertZu: 0,
   };
 }
 
@@ -151,6 +157,37 @@ function heldImWeg(b: Bewegung, u: Umgebung): boolean {
   );
 }
 
+/** So lange bleibt ein angesprochener Statist höchstens stehen (s); danach geht er doch weiter. */
+const ZUHOEREN_HOECHSTENS = 60;
+
+/**
+ * Spricht der Held diesen stehenden Statisten gerade an? Er steht still auf derselben Kachel oder
+ * blickt auf die Kachel des Statisten (wie die Auslöser: eigene Kachel und die davor).
+ */
+function angesprochen(b: Bewegung, u: Umgebung): boolean {
+  if (!u.heldBlick || u.heldGeht !== false) return false;
+  const held = { x: Math.round(u.held.x), y: Math.round(u.held.y) };
+  const vor = VOR[u.heldBlick];
+  const statist = { x: Math.round(b.x), y: Math.round(b.y) };
+  const davor = held.x + vor.x === statist.x && held.y + vor.y === statist.y;
+  return davor || (held.x === statist.x && held.y === statist.y);
+}
+
+/**
+ * Ein stehender Statist geht nicht los, solange der Held ihn anspricht (Wunsch nach dem Befund vom
+ * 20.11.2026: Die Ladenhilfe im Bergladen lief alle paar Sekunden weg; ein Tipp auf „Sprechen“ ging
+ * dann ins Leere, und ihre Sprechblase schloss sich mitten im Satz). Geht der Held oder hört der
+ * Statist schon ZUHOEREN_HOECHSTENS zu, läuft er weiter: Er versperrt nie auf Dauer den Weg.
+ */
+function hoertZu(b: Bewegung, v: Belebung, dt: number, u: Umgebung): boolean {
+  if (v.typ !== "statist" || !angesprochen(b, u)) {
+    b.hoertZu = 0;
+    return false;
+  }
+  b.hoertZu += dt;
+  return b.hoertZu < ZUHOEREN_HOECHSTENS;
+}
+
 /** Rückt auf das Ziel zu, erst waagerecht, dann senkrecht; true, wenn es angekommen ist. */
 function geheZu(b: Bewegung, ziel: Feld, weite: number): boolean {
   const achse = Math.abs(ziel.x - b.x) > ANGEKOMMEN ? "x" : "y";
@@ -201,6 +238,7 @@ export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void
   if (v.typ === "tier" && v.verhalten === "folgen") folge(b, u);
   else scheue(b, v, g, u);
   if (!b.ziel) {
+    if (hoertZu(b, v, dt, u)) return;
     b.pause -= dt;
     if (b.pause > 0 || g.tempo === 0) return;
     b.ziel =

@@ -221,11 +221,16 @@ export class Belebungsschicht {
   }
 
   /** Ein Bild weiter: bewegt, was nah am Bildausschnitt ist, und schaltet die Sperren. */
-  aktualisiere(deltaMs: number, held: Feld, frei: Umgebung["frei"]): void {
+  aktualisiere(
+    deltaMs: number,
+    held: Feld,
+    frei: Umgebung["frei"],
+    blick?: Pick<Umgebung, "heldBlick" | "heldGeht">,
+  ): void {
     const dt = Math.min(deltaMs / MS_JE_S, LAENGSTER_SCHRITT);
     const sicht = this.szene.cameras.main.worldView;
     const k = this.kachel;
-    const umgebung: Umgebung = { held, frei, zufall: Math.random };
+    const umgebung: Umgebung = { held, frei, zufall: Math.random, ...blick };
     for (const d of this.darsteller) {
       const px = d.b.x * k;
       const py = d.b.y * k;

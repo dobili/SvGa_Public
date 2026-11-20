@@ -50,6 +50,33 @@ describe("Statisten", () => {
     expect(b.pause).toBeGreaterThan(0);
   });
 
+  it("bleiben stehen, solange der Held sie still ansieht, und gehen weiter, wenn er geht", () => {
+    const v = eintrag("statist");
+    const b = neueBewegung(v.feld);
+    // Der Held steht links davor und blickt nach rechts auf den Statisten (Befund 20.11.2026).
+    const ansehen: Umgebung = { ...umgebung({ x: 4, y: 5 }), heldBlick: "rechts", heldGeht: false };
+    laufe(b, v, 30, ansehen);
+    expect(b.x).toBeCloseTo(5);
+    expect(steht(b)).toBe(true);
+    laufe(b, v, 2.2, { ...ansehen, heldGeht: true });
+    expect(b.x).toBeCloseTo(8);
+  });
+
+  it("hören höchstens eine Minute zu, dann geht der Laufweg weiter", () => {
+    const v = eintrag("statist");
+    const b = neueBewegung(v.feld);
+    const ansehen: Umgebung = { ...umgebung({ x: 4, y: 5 }), heldBlick: "rechts", heldGeht: false };
+    laufe(b, v, 65, ansehen);
+    expect(b.x).toBeGreaterThan(5);
+  });
+
+  it("gehen weiter, wenn der Held woandershin blickt", () => {
+    const v = eintrag("statist");
+    const b = neueBewegung(v.feld);
+    laufe(b, v, 2.2, { ...umgebung({ x: 4, y: 5 }), heldBlick: "links", heldGeht: false });
+    expect(b.x).toBeCloseTo(8);
+  });
+
   it("warten, wenn der Held im Weg steht", () => {
     const v = eintrag("statist");
     const b = neueBewegung(v.feld);

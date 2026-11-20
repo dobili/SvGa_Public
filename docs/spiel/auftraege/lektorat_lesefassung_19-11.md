@@ -410,6 +410,42 @@ Nicht umgesetzt, zur Entscheidung des Hauptchats:
 - Weitere Vorschläge stehen in den Berichten, etwa „hundertsechzig Jahre“ (11-mal) und Victors
   „keiner rechnet nach“. Sie folgen in einem eigenen Durchgang.
 
+### Stimmen, dritter Teil (20.11.2026, Empfehlungen des Hauptchats)
+
+- **Wards Porträt:** Bis zur erzählten Stelle ihres ersten Lächelns zeigt sie das Porträt nicht
+  mehr lächelnd. Das sind 21 Zeilen in ward, ward_lektion, ward_reihe_offen, ward_victor_fort,
+  ward_clubkampf, ward_laurie, ward_nach_niederlage, ward_bleib und ward_heft, dazu die Zeilen vor
+  dem Lächeln in ward_nach_sieg und ward_nach_erinnerung. Sie stehen jetzt auf `neutral`. Danach
+  darf sie lächeln.
+- **Namen:**
+  - Mama sagt {held} an drei Stellen:
+    - in der Beichte: „{held}. Du warst in Ironwood, bei Oma Ruth.“
+    - beim Abschied nach Port Delacroix: „Fahr, {held}. …“
+    - nach dem Finale: „Ich bin so stolz auf dich, {held}.“
+  - Victor sagt {held} an drei Stellen:
+    - in Riverton kalt: „{held}.“
+    - in Ironwood
+    - nach dem Finale: „Du hast mich gezwungen, gut zu spielen, {held}. Danke.“
+  - Dazu kommt sein „Glückwunsch, {held}“ am Brett.
+- **Ambroses Zugnotation 1866:** bleibt, wie entschieden.
+- **„hundertsechzig Jahre“:** von 14 Stellen auf 4. Es bleibt bei:
+  - „Ich bin seit hundertsechzig Jahren tot.“ (Dachboden)
+  - dem Museum
+  - „Seit hundertsechzig Jahren.“ in Ghost Town
+  - „Das Beste seit hundertsechzig Jahren.“ (Finale)
+
+  Die übrigen sind umformuliert („lange genug“, „seit damals“, „seit New York“, „seit
+  Ewigkeiten“, „ein Leben und länger“).
+
+- **Victor am Brett:** „keiner rechnet nach / schreibt auf“ von fünf auf zwei Stellen, zwei
+  Beteuerungen weniger („Wirklich.“, „Ernsthaft.“).
+- **Weitere Vorschläge der Lektoren:**
+  - Mira ohne „Okay“ (Célestes Zeichen) und mit weniger Echo
+  - Juno mit Haustier-Figuren („Mein Läufer ist trotzdem beleidigt.“), weniger „Das kommt ins
+    Tagebuch“ und ohne Doppelung bei den Kreidebrettern
+  - Ambrose: „Ein Zug, ein Brief. Jahrelang.“ statt „Über ein Jahr“ (Zeitlinie)
+  - Ward: „Seit ich hier oben wohne“ statt der vierten Jahreszahl
+
 ## Nur durch die Simulation, kein Textfehler
 
 Mehrere Abende mit Ambrose hintereinander, doppelte Gespräche beim zweiten Ansprechen,

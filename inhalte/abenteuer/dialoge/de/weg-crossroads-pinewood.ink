@@ -74,7 +74,7 @@ c4. Er steht auf c4. #sprecher:ambrose #stimmung:laechelt
 Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt
 Er hat die Augen geschlossen, die Hände auf dem Rücken. Sein Gesicht ist so ruhig, wie du es noch nie gesehen hast. #sprecher:erzaehler #musik:ambrose.still
 Zwölf Jahre habe ich Partien in Briefen gespielt. Ich bin mit der Stellung aufgestanden und mit ihr zu Bett gegangen. #sprecher:ambrose #stimmung:friedlich
-Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung, im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
+Und danach hatte ich nichts anderes mehr. Eine einzige Stellung, im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
 * [„Das klingt furchtbar.“]
 - Es war furchtbar. Aber es ist auch ein Zuhause. #sprecher:ambrose #stimmung:nachdenklich
 Dieses Sehen ohne Augen. #sprecher:ambrose #stimmung:nachdenklich
@@ -122,7 +122,7 @@ Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
 }
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
     {not abschiedGesehen:
-        Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
+        Verloren gegen einen, der seit Ewigkeiten kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
     }
 }
 + {not abschiedGesehen} [Noch eine Partie blind]

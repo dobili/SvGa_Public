@@ -147,7 +147,7 @@ An der Bushaltestelle hing ein Plakat, das nicht hierher gehörte. Es war das ei
 weit und breit. Ein Kind, das in einen Bildschirm lächelte. _Perfect Move – Schach für die
 Zukunft. Bald auch in deiner Stadt._
 
-„Ein Plakat, das droht“, sagte Ambrose. „Wie reizend.“
+„Ein Plakat, das droht“, sagte Ambrose. „Und es lächelt dabei.“
 
 Auf der Bibliothekstreppe saßen zwei Kinder, ein Mädchen und ein Junge, die genau gleich
 aussahen, und stritten.
@@ -441,7 +441,7 @@ niemanden.“
 | Ambrose am Fluss: Kutschenfahrt nach Norden, der Matrose aus Marseille und die Orange.                    | Erste eigene Erinnerung; bereitet 1866 vor, ohne es zu nennen.    | Dialog an der Fährstelle (1 Minute), nur beim ersten Besuch.                                                 |
 | Die Turmuhr von Cedar Creek schlägt bei Ankunft, im Archiv und beim Clubkampf.                            | Wahrzeichen als Klang; gliedert den Ort.                          | Geräusch, an Szenen gebunden.                                                                                |
 | Mrs. Okafor erkennt das Brett und fragt nicht weiter; „sechs Wörter“ trifft Ambrose.                      | Ihre Art; sein Stolz.                                             | Ein Satz mehr für Ambrose.                                                                                   |
-| Mr. Boateng erzählt, wie die junge Frau aus Lagos spielte: „Sie hat gewartet.“                               | Steckbrief von Mrs. Okafor als Geschichte statt als Zahl.         | Text der Steckbriefzeile.                                                                                    |
+| Mr. Boateng erzählt, wie die junge Frau aus Lagos spielte: „Sie hat gewartet.“                            | Steckbrief von Mrs. Okafor als Geschichte statt als Zahl.         | Text der Steckbriefzeile.                                                                                    |
 | 1858 ausführlich: Saal über dem Kaffeehaus, der Turm, der stille Läuferzug, vierzig Minuten.              | Der Kern von Ambroses Fehler wird ein Bild.                       | Dialog von Szene 19 ausbauen; ein stilles Standbild der Stellung.                                            |
 | „Später“ wird an den ersten Tag zurückgebunden.                                                           | Leitmotiv spürbar.                                                | Wenn {held} am ersten Tag „Später“ gewählt hat, erinnert sich der Dialog daran.                              |
 | Ambrose nennt {held} zum ersten Mal beim Namen.                                                           | Sichtbarer Schritt seines Bogens (Dokument 19, 5.2).              | Bis hierher in allen Dialogen nur „Kind“ oder „Lehrling“.                                                    |

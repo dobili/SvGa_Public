@@ -316,7 +316,7 @@ und sein Gesicht war so ruhig, wie ich es noch nie gesehen hatte.
 „Ich habe zwölf Jahre lang Partien in Briefen gespielt“, sagte er. „Ein Zug, und dann Tage,
 Wochen. Ich hatte ein Brett, aber ich habe es nicht gebraucht. Ich bin mit der Stellung
 aufgestanden und mit ihr zu Bett gegangen. Ich habe sie beim Rasieren gesehen, im Kaffeehaus,
-auf der Straße. Sie war immer da.“ Er öffnete die Augen. „Und danach, hundertsechzig Jahre
+auf der Straße. Sie war immer da.“ Er öffnete die Augen. „Und danach, all die Jahre
 lang, hatte ich gar nichts anderes mehr. Eine einzige Stellung. Im Dunkeln.“
 
 „Das klingt furchtbar.“

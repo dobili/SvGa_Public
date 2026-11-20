@@ -148,7 +148,7 @@ weit gewesen.
 Lange sagte sie nichts. Der Kühlschrank summte. Draußen rauschte der Wasserfall, den ich
 inzwischen manchmal vergaß.
 
-„Du warst in Ironwood“, sagte sie.
+„{held}. Du warst in Ironwood“, sagte sie.
 
 „Ja.“
 
@@ -260,7 +260,7 @@ Sie griff an. Natürlich griff sie an. Ihre Figuren rückten vor, eine nach der 
 und entschlossen, auf meinen König zu, und ich verteidigte mich, wie Mrs. Okafor es mir
 beigebracht hatte, und zählte, wie Coach Delgado es wollte.
 
-Im dreißigsten Zug sah ich es.
+Ein paar Züge später sah ich es.
 
 Ihre Dame, weit vorn. Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm wollte. Und mein Läufer, in der Ecke, wo er seit zwanzig Zügen stand und nichts tat.
 
@@ -279,7 +279,7 @@ Er schwieg. Der Ofen bullerte.
 „Du spielst Schach“, sagte er. „Mit deiner Mutter. Sie ist nicht hergekommen, um geschont zu
 werden.“
 
-Mama hob die Hand. Sie hatte den Turm schon berührt.
+Mama hob die Hand. Sie schwebte schon über dem Turm.
 
 Und dann hielt sie inne.
 
@@ -292,7 +292,7 @@ Ich sah, wie sie ihn fand.
 In der Kantine war es so still, dass man das Werk draußen hörte. Big Joe hatte die Augen
 zugemacht.
 
-Mama nahm die Hand vom Turm.
+Mama zog die Hand zurück.
 
 Sie zog die Dame. Ein Feld zur Seite. Aus der Schräge heraus.
 

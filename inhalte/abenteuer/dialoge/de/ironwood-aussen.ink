@@ -65,7 +65,7 @@ Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengelä
 {verbotGesehen:
     Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler
     Die können hier zählen. #sprecher:juno #stimmung:laechelt
-    Wir gucken nur. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
+    Ich zähl die Kreidebretter. Elf! Ironwood ist ein Brett. #sprecher:juno #stimmung:laechelt
     -> END
 }
 ~ verbotGesehen = true

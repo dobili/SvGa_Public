@@ -415,7 +415,7 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno #stimmung:laec
     -> END
 
 === juno_club_alltag ===
-{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Das kommt ins Tagebuch.|Ich hab gegen den Coach eine Figur gewonnen und dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno #stimmung:laechelt
+{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Ich hab das Datum unterstrichen.|Ich hab gegen den Coach eine Figur gewonnen und dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Victor
@@ -522,7 +522,7 @@ Als der Raum leer ist, holst du das Brett aus der Tasche und legst es auf einen 
     Bin ich das. #sprecher:ambrose #stimmung:bitter
     * * [„Hale.“]
         Er steht mit dem Rücken zu dir. Die alte Stellung liegt zwischen euch. #sprecher:erzaehler
-        Schwarz ist am Zug, seit hundertsechzig Jahren. #sprecher:erzaehler #pause
+        Schwarz ist am Zug, seit damals. #sprecher:erzaehler #pause
         Ein Name. Es gibt viele Hales. #sprecher:ambrose #stimmung:traurig
         Du weißt, dass er lügt. Er lügt nicht besser als Mama. #sprecher:erzaehler
 * [Nichts fragen]

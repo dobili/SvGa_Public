@@ -211,7 +211,7 @@ Züge und die Frage, wer zuerst da ist.
 „Die Fernpartie“, sagte ich am dritten Abend auf dem Weg hinunter. „Das ist auch ein
 Endspiel.“
 
-„Ein Turm gegen zwei Springer“, sagte Ambrose. „Und Bauern. Ich habe hundertsechzig Jahre
+„Ein Turm gegen zwei Springer“, sagte Ambrose. „Und Bauern. Ich habe seit New York
 darauf gestarrt.“
 
 „Kannst du es gewinnen?“
@@ -603,7 +603,7 @@ Bretts. Ich meine es so.“
 Ich sah zu Ambrose. Er nickte.
 
 „Er sagt“, sagte ich, „dein Ur-ur-ur-Großvater war ein gewissenhafter, unerträglicher
-Mensch. Und dass er hundertsechzig Jahre auf diesen Zug gewartet hat.“
+Mensch. Und dass er ein Leben und länger auf diesen Zug gewartet hat.“
 
 Victor sah auf das Blatt in meiner Hand.
 

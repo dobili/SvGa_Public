@@ -249,6 +249,7 @@
   "hinweis.aktion": "Stehst du vor etwas, erscheint der Aktionsknopf. Tipp darauf zum Ansehen oder Reden.",
   "hinweis.tagebuch": "Im Tagebuch 📖 stehen deine Aufgaben. Tipp dort auf den Pfeil, dann zeigt er dir den Weg.",
   "hinweis.menue": "Im Menü ☰ stellst du Ton und Steuerkreuz ein. Gespeichert wird von selbst.",
+  "wiedereinstieg.meldung": "Willkommen zurück! {titel}: {schritt}",
   "ort.wegMapleCedar.name": "Landstraße nach Cedar Creek",
   "ort.wegMapleCedar.landstrasse": "Landstraße",
   "ort.wegMapleCedar.flussweg": "Flussweg",

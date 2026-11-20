@@ -304,11 +304,11 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
         grund = "Abspann erreicht";
         break;
       }
-      await rand.besichtige(lauf, lage);
       if (await eileWeiter(lauf, daten, stand, umdrehenNach)) {
         umdrehenNach = "";
         continue;
       }
+      await rand.besichtige(lauf, lage);
       if (!(await mitFrist(weltschritt(lauf, daten, planer), "Welt"))) {
         messung.fund("festgefahren", `Kein Ziel mehr: Stand ${JSON.stringify(stand?.handlung)}`);
         await foto(seite, ordner, `festgefahren-${Date.now()}`);

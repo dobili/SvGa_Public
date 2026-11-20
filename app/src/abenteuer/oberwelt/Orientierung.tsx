@@ -9,12 +9,14 @@
  * Rolle im Gesamtbild: Teil von oberwelt/Oberwelt.tsx (ausgelagert, Größengrenze). Die Erklärung
  * kommt als gewöhnliche Meldung, erst wenn kein Fenster offen ist und keine andere Meldung steht;
  * ob sie schon kam, merkt sich der Spielstand (Dialogvariablen, erklaerungen.ts).
- * Abhängigkeiten: kern.ts, useZielhinweis.ts, erklaerungen.ts, texte/texte.ts.
+ * Seit dem 20.11.2026 auch die Erinnerung nach einer Pause (useWiedereinstieg.ts).
+ * Abhängigkeiten: kern.ts, useZielhinweis.ts, useWiedereinstieg.ts, erklaerungen.ts, texte/texte.ts.
  */
 import { useEffect } from "react";
 import { tSpiel } from "../texte/texte";
 import { faelligeErklaerung } from "./erklaerungen";
 import type { Oberweltkern } from "./kern";
+import { useWiedereinstieg } from "./useWiedereinstieg";
 import { useZielhinweis } from "./useZielhinweis";
 
 /** Zeigt eine fällige Erklärung als Meldung, sobald die Welt frei ist, und hakt sie ab. */
@@ -39,6 +41,7 @@ function useErklaerungen(k: Oberweltkern, frei: boolean): void {
 export function Orientierung({ k, frei }: { readonly k: Oberweltkern; readonly frei: boolean }) {
   const ziel = useZielhinweis(k);
   useErklaerungen(k, frei);
+  useWiedereinstieg(k, frei);
   const welt = k.welt;
   const name = welt?.ort.karten.find((x) => x.kennung === welt.kennung)?.name;
   // Verstecktes Feld für Oberflächentests: wohin der Pfeil gerade zeigt („x,y“) oder „aus“.

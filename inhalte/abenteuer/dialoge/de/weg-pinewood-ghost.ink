@@ -30,7 +30,8 @@ VAR finchBauerEGezaehlt = false
 }
 ~ juniperGetroffen = true
 Am Canyonrand hängt eine Frau im Seil und winkt. Unten auf einem Felsvorsprung steht ein Brett. #sprecher:erzaehler
-Juniper. Wir Kletterer spielen hier Drei-Schach. Wer dreimal Schach gibt, gewinnt. #sprecher:juniper #stimmung:laechelt
+Juniper. Wir Kletterer spielen hier Drei-Schach. #sprecher:juniper #stimmung:laechelt
+Wer dreimal Schach gibt, gewinnt. #sprecher:juniper #stimmung:laechelt
 Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schluss. #sprecher:juniper #stimmung:laechelt
 Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. Ein seltsames, schönes Spiel. #sprecher:erzaehler #geraeusch:canyonrand
 {not abschiedGesehen:
@@ -89,7 +90,8 @@ VAR wegPinewoodGhostTafelVersucht = false
 }
 ~ tankstelleGesehen = true
 Eine verlassene Tankstelle, die Zapfsäulen voller Staub. Auf dem Dach glänzt ein nagelneues Solarpaneel. #sprecher:erzaehler
-Von drinnen kommt ein Geräusch: klack. Pause. Klack. #sprecher:erzaehler
+Von drinnen kommt ein Geräusch: klack. Pause. #sprecher:erzaehler
+Klack. #sprecher:erzaehler
 Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #sprecher:erzaehler
 {ambroseSprichtWieder:
     {not abschiedGesehen:

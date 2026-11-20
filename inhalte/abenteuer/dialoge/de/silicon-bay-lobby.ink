@@ -17,6 +17,7 @@
 
 EXTERNAL beginneAufgaben(runde)
 
+VAR speicherstiftErhalten = false
 VAR held = "Du"
 VAR victorLobbyGetroffen = false
 VAR reiheTheoBestanden = false
@@ -32,6 +33,9 @@ VAR abschiedGesehen = false
 
 // ---------------------------------------------------------------- Victor
 
+VAR tiefpunktGesehen = false
+VAR ambroseSprichtWieder = false
+VAR versoehnungGesehen = false
 === victor ===
 {
 - not victorLobbyGetroffen: -> victor_erstes_treffen
@@ -49,15 +53,25 @@ Mein Vater hält heute drei Reden. Ich muss bei allen klatschen. #sprecher:victo
 -> END
 
 === victor_warten ===
-Warst du schon bei Theo? Er misst alle. Mich auch. #sprecher:victor #stimmung:nachdenklich
+Warst du schon bei Theo? Er misst alle. #sprecher:victor #stimmung:nachdenklich
+Mich auch. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_berichte ===
+// Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
+{speicherstiftErhalten:
+    Victor sieht auf den Speicherstift in deiner Hand. #sprecher:erzaehler
+    Hast du sie dir angesehen? #sprecher:victor #stimmung:nachdenklich
+    -> wahl
+}
+~ speicherstiftErhalten = true
 Victor steht vor dir, als hätte er schon eine Weile gewartet. Dann hält er dir einen Speicherstift hin. #sprecher:erzaehler
-Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. Schau sie dir an. #sprecher:victor #stimmung:nachdenklich
+Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. #sprecher:victor #stimmung:nachdenklich
+Schau sie dir an. #sprecher:victor #stimmung:nachdenklich
 * [„Warum?“]
 - Weil ich sie mir angeschaut habe. Und ich will, dass jemand anders auch. #sprecher:victor #stimmung:nachdenklich
 Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
+- (wahl)
 + [Die Partien auswerten]
     ~ beginneAufgaben("siliconBay.auswertung")
     -> END
@@ -82,9 +96,11 @@ Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprec
 Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 * [Schlafen gehen]
-- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. #sprecher:erzaehler
+Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
-Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
+Sag meinem Vater nichts. Noch nicht. #sprecher:victor #stimmung:muede
+Ich muss nachdenken. #sprecher:victor #stimmung:muede
 Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victor #stimmung:nachdenklich
 -> END
 
@@ -101,9 +117,11 @@ Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victo
 }
 ~ roboterGetroffen = true
 Ein Roboter mit freundlichem Bildschirmgesicht rollt heran. #sprecher:erzaehler
-Willkommen bei Perfect Move. Wir machen Menschen besser. Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
-{not abschiedGesehen:
-    Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
+Willkommen bei Perfect Move. Wir machen Menschen besser. #sprecher:empfangsroboter #stimmung:laechelt
+Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
+{(not abschiedGesehen and not ambroseSchweigt()):
+    Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. #sprecher:ambrose #stimmung:laechelt
+    Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -121,17 +139,19 @@ Daneben eine Zeichnung, braun vom Alter, lauter Dreiecke. Du erkennst sie, bevor
 Auf einem Pult ein Notizbuch. Schachzüge in zwei Spalten, jeder Buchstabe wie mit dem Lineal gezogen. #sprecher:erzaehler
 Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. #sprecher:erzaehler #musik:aus #geraeusch:aus
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: gleich weiter mit Victor.
-{abschiedGesehen: -> seite_fehlt}
+{abschiedGesehen or ambroseSchweigt(): -> seite_fehlt}
 * [Warten]
 - Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
-Das sind meine Züge. Die linke Spalte. Jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
-Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
+Das sind meine Züge. Die linke Spalte. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
+Jeden einzelnen. #sprecher:ambrose #stimmung:still
+Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. #sprecher:ambrose #stimmung:still
+Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
 Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:traurig
 -> seite_fehlt
 
 = seite_fehlt
 Mein Vater sagt, die Seite war schon immer weg. #sprecher:victor #stimmung:nachdenklich
-{not abschiedGesehen:Victor hat Ambrose nicht gehört. }Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
+{(not abschiedGesehen and not ambroseSchweigt()):Victor hat Ambrose nicht gehört. }Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
 * [„Wer hat das geschrieben?“]
     -> vitrine_victor
 
@@ -146,9 +166,14 @@ Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. 
 === vitrine_foto ===
 ~ notizbuchseiteFotografiert = true
 {tabletNachtGesehen:Du machst ein Foto für Juno.|Juno macht ein Foto.} Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
-    Er hat sie aufgehoben. Meine Züge. In einem Buch. #sprecher:ambrose #stimmung:lacht
+    Er hat sie aufgehoben. Meine Züge. #sprecher:ambrose #stimmung:lacht
+    In einem Buch. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 
+// Lektorat 19.11.2026: Zwischen Tiefpunkt (Port Delacroix) und Céleste schweigt Ambrose auch hier;
+// wer in dieser Zeit zurückkommt, hörte ihn sonst (wie regeln/abwesenheit.ts, ambroseSprichtJetzt).
+=== function ambroseSchweigt() ===
+~ return tiefpunktGesehen and not ambroseSprichtWieder and not versoehnungGesehen

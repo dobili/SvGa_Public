@@ -30,11 +30,13 @@ VAR abschiedGesehen = false
 === dunmore_a ===
 Späne auf dem Boden, Harz in der Luft. Ein Mann mit Schürze dreht ein Stück Ahorn auf der Drechselbank. #sprecher:erzaehler
 Auf dem Regal steht ein Figurensatz aus hellem und dunklem Holz. Ein Springer fehlt. #sprecher:erzaehler
-Für den Club. Alles fertig bis auf das Pferd. Die Mähne will nicht. #sprecher:dunmore #stimmung:nachdenklich
+Für den Club. Alles fertig bis auf das Pferd. #sprecher:dunmore #stimmung:nachdenklich
+Die Mähne will nicht. #sprecher:dunmore #stimmung:nachdenklich
 * [„Darf ich zusehen?“]
     Zusehen ist frei. Reden kostet einen Span. #sprecher:dunmore #stimmung:laechelt
 * [„Warum ist der Springer so schwer?“]
-    Alles andere ist rund. Das Pferd hat einen Kopf. Köpfe sind schwer. #sprecher:dunmore #stimmung:laechelt
+    Alles andere ist rund. Das Pferd hat einen Kopf. #sprecher:dunmore #stimmung:laechelt
+    Köpfe sind schwer. #sprecher:dunmore #stimmung:laechelt
 - {not abschiedGesehen: Ein Handwerker, der an einem Springer verzweifelt. Willkommen im Schach, Sir. #sprecher:ambrose #stimmung:lacht}
 -> END
 
@@ -55,6 +57,8 @@ Ich sage: Er schaut dahin, wo er hinwill. #sprecher:dunmore #stimmung:laechelt
 
 === dunmore_d ===
 Auf der Werkbank steht ein zweiter Satz, halb fertig. Die Springer sind diesmal zuerst gemacht. #sprecher:erzaehler
-Für jemanden weiter flussab. Einer, dem sie den Pavillon genommen haben. Er spielt jetzt unter einer Brücke. #sprecher:dunmore #stimmung:nachdenklich
-Dach hat er, sagt er. Wände nicht. Figuren braucht er trotzdem. #sprecher:dunmore #stimmung:nachdenklich
+Für jemanden weiter flussab. Einer, dem sie den Pavillon genommen haben. #sprecher:dunmore #stimmung:nachdenklich
+Er spielt jetzt unter einer Brücke. #sprecher:dunmore #stimmung:nachdenklich
+Dach hat er, sagt er. Wände nicht. #sprecher:dunmore #stimmung:nachdenklich
+Figuren braucht er trotzdem. #sprecher:dunmore #stimmung:nachdenklich
 -> END

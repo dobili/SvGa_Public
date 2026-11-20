@@ -67,11 +67,15 @@ Maple Falls! #sprecher:slick #stimmung:froh
 Hast du den Springer? #sprecher:tamsin #stimmung:neutral
 * [Den Springer aus Stein hervorholen]
 - Slick dreht ihn in den Fingern. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
-Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. In einer Garage in der Wüste. #sprecher:slick #stimmung:laechelt
+Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. #sprecher:slick #stimmung:laechelt
+In einer Garage in der Wüste. #sprecher:slick #stimmung:laechelt
 Ich hab es an die Brücke gehängt. Unter den Bogen, wo der Stein liegt. #sprecher:slick #stimmung:laechelt
-Ich hab seit März wieder angefangen. Mit den Dosen. Meine sind schief. Tamsin hat einen gekriegt. Bester Verlierer. #sprecher:slick #stimmung:laechelt
+Ich hab seit März wieder angefangen. Mit den Dosen. #sprecher:slick #stimmung:laechelt
+Meine sind schief. Tamsin hat einen gekriegt. #sprecher:slick #stimmung:laechelt
+Bester Verlierer. #sprecher:slick #stimmung:laechelt
 Ich hab nur einmal verloren! #sprecher:tamsin #stimmung:bitter
-Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. Der gehört auf den Stein. #sprecher:slick #stimmung:lacht
+Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. #sprecher:slick #stimmung:lacht
+Der gehört auf den Stein. #sprecher:slick #stimmung:lacht
 Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
 -> END
 
@@ -84,7 +88,8 @@ Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
 }
 ~ miraCrossroadsGetroffen = true
 Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
-Du. Noch mal. Jetzt. #sprecher:mira #stimmung:ernst
+Du. Noch mal. #sprecher:mira #stimmung:ernst
+Jetzt. #sprecher:mira #stimmung:ernst
 * [„Nach dem Essen.“]
 - {atmeGesagt:Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft.|Ich hab geübt. Jeden Tag im Canyon. Ich bin schneller geworden.} #sprecher:mira #stimmung:laechelt
 Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler #musik:crossroads
@@ -100,13 +105,18 @@ Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler 
 // Kapitel 53 (Roman): Big Joe hebt {held} hoch; der Club spielt jetzt in seiner Garage.
 ~ bigJoeCrossroadsGetroffen = true
 Kumpel! #sprecher:bigJoe #stimmung:froh
-Big Joe braucht eine Weile, bis er ausgestiegen ist. Dann hebt er dich hoch. Einfach so, mit dem Rucksack. #sprecher:erzaehler
-Acht! Hab ich gehört! Die Ward! Die hat mich neunzehnachtundachtzig in sechzig Zügen zerlegt. #sprecher:bigJoe #stimmung:lacht
-Wir fahren zur Meisterschaft. Die ganze Schicht. Den Bus hab ich geliehen. Geliehen ist ein großes Wort. #sprecher:bigJoe #stimmung:lacht
+Big Joe braucht eine Weile, bis er ausgestiegen ist. Dann hebt er dich hoch. #sprecher:erzaehler
+Einfach so, mit dem Rucksack. #sprecher:erzaehler
+Acht! Hab ich gehört! #sprecher:bigJoe #stimmung:lacht
+Die Ward! Die hat mich neunzehnachtundachtzig in sechzig Zügen zerlegt. #sprecher:bigJoe #stimmung:lacht
+Wir fahren zur Meisterschaft. Die ganze Schicht. #sprecher:bigJoe #stimmung:lacht
+Den Bus hab ich geliehen. Geliehen ist ein großes Wort. #sprecher:bigJoe #stimmung:lacht
 * [„Wo spielt ihr jetzt?“]
 - Sein Gesicht wird einen Moment lang ernst. #sprecher:erzaehler
-In meiner Garage. Zwölf Mann, ein Heizstrahler. Die Tische in der Kantine leuchten, hab ich gehört. Es geht keiner hin. #sprecher:bigJoe #stimmung:nachdenklich
-Das Stahlbrett steht auf der Werkbank. Und daneben der Pokal von zweitausendeins. Deine Mutter hat gesagt, er soll stehen, wo man ihn sieht. #sprecher:bigJoe #stimmung:laechelt
+In meiner Garage. Zwölf Mann, ein Heizstrahler. #sprecher:bigJoe #stimmung:nachdenklich
+Die Tische in der Kantine leuchten, hab ich gehört. Es geht keiner hin. #sprecher:bigJoe #stimmung:nachdenklich
+Das Stahlbrett steht auf der Werkbank. Und daneben der Pokal von zweitausendeins. #sprecher:bigJoe #stimmung:laechelt
+Deine Mutter hat gesagt, er soll stehen, wo man ihn sieht. #sprecher:bigJoe #stimmung:laechelt
 Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #sprecher:erzaehler
 -> END
 
@@ -133,10 +143,14 @@ Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #s
     -> END
 }
 ~ coachCrossroadsGetroffen = true
-Vor dem Speisewagen pfeift jemand. Auf zwei Fingern. Du kennst den Pfiff. #sprecher:erzaehler #klang:pfiff
-Coach Delgado zählt neben einem Schulbus Köpfe. Sam, zwei Jüngere. Und eine Siebzehnjährige mit Fahrrad auf dem Dachträger, die so tut, als gehöre sie nicht dazu. #sprecher:erzaehler
-Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal. Sie hat es dreimal gesagt. #sprecher:juno #stimmung:froh
-Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado #stimmung:lacht
+Vor dem Speisewagen pfeift jemand. Auf zwei Fingern. #sprecher:erzaehler #klang:pfiff
+Du kennst den Pfiff. #sprecher:erzaehler
+Coach Delgado zählt neben einem Schulbus Köpfe. Sam, zwei Jüngere. #sprecher:erzaehler
+Und eine Siebzehnjährige mit Fahrrad auf dem Dachträger, die so tut, als gehöre sie nicht dazu. #sprecher:erzaehler
+Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal. #sprecher:juno #stimmung:froh
+Sie hat es dreimal gesagt. #sprecher:juno #stimmung:froh
+Viertes Brett! Du stehst auf einem Plakat! #sprecher:coachDelgado #stimmung:lacht
+Mit Ketchup! #sprecher:coachDelgado #stimmung:lacht
 * [„Was ist mit dem Bildschirm im Clubraum?“]
 - Sie wird nicht verlegen. Sie sieht dich gerade an. #sprecher:erzaehler
 Ich hab unterschrieben. Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. #sprecher:coachDelgado #stimmung:nachdenklich
@@ -144,7 +158,8 @@ Wir hatten kein Geld für die Liga. Die haben die Busse bezahlt, die Bretter und
 Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. #sprecher:coachDelgado #stimmung:bitter
 Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado #stimmung:laechelt
 Der Bildschirm steht im Flur und zeigt den Vertretungsplan. Das Beste, was er je gezeigt hat. #sprecher:coachDelgado #stimmung:lachtOhneSpott
-Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut darin. #sprecher:coachDelgado #stimmung:lacht
+Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. #sprecher:coachDelgado #stimmung:lacht
+Er ist erschreckend gut darin. #sprecher:coachDelgado #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Wegweiser und Wege
@@ -154,7 +169,8 @@ Ein Wegweiser mit Schildern in alle Richtungen: Maple Falls, Cedar Creek, Rivert
 Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“. #sprecher:erzaehler
 {novaBitteGehoert:
     {not abschiedGesehen:
-        Acht Städte. Und in jeder habe ich etwas gelernt. Oder verlernt. #sprecher:ambrose #stimmung:friedlich
+        Acht Städte. Und in jeder habe ich etwas gelernt. #sprecher:ambrose #stimmung:friedlich
+        Oder verlernt. #sprecher:ambrose #stimmung:friedlich
     }
 }
 -> END
@@ -174,14 +190,16 @@ Ein Wanderweg führt nach Norden in den Wald. Ein Schild: „Fernwanderweg – P
 
 === viehgatter ===
 {gatterschluessel: -> viehgatter_offen}
-Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf dem Asphalt. Am Gatter hängt ein Schild: „Privatweg. Schlüssel bei Darlene.“ #sprecher:erzaehler
+Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf dem Asphalt. #sprecher:erzaehler
+Am Gatter hängt ein Schild: „Privatweg. Schlüssel bei Darlene.“ #sprecher:erzaehler
 {not abschiedGesehen:
     Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
 === viehgatter_offen ===
-Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über die Hügel nach Ghost Town. Die Rinder machen widerwillig Platz. #sprecher:erzaehler
+Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über die Hügel nach Ghost Town. #sprecher:erzaehler
+Die Rinder machen widerwillig Platz. #sprecher:erzaehler
 + [Die Minenstraße nach Ghost Town nehmen]
     ~ reise("ghostTown.aussen", "wegPinewood")
     -> END
@@ -222,6 +240,7 @@ Die Fahrerin lehnt sich aus dem Fenster: „Wohin? Ich fahre überallhin, wo es 
     ~ reise("summitCity.aussen", "wegCrossroads")
     -> END
 + [Hierbleiben]
-    „Ich fahre in zehn Minuten. Oder in zwanzig. Kommt drauf an, wann der Kaffee alle ist.“ #sprecher:erzaehler
+    „Ich fahre in zehn Minuten. Oder in zwanzig.“ #sprecher:erzaehler
+    „Kommt drauf an, wann der Kaffee alle ist.“ #sprecher:erzaehler
     -> END
 

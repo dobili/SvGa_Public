@@ -22,6 +22,9 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+VAR odileClubkampfEingeleitet = false
+VAR werkstattGoldGesehen = false
+VAR celesteAngebotGesehen = false
 VAR leimAuftrag = false
 VAR odileHandGegeben = false
 VAR tiefpunktGesehen = false
@@ -68,9 +71,11 @@ Ein Klavier hat zweihundertdreißig Saiten, dein Spiel nur vierundsechzig Felder
 Durch ein Loch im Dach, über das eine Plane gespannt ist, fällt blaues Licht. Die Werkbank steht an derselben Stelle. #sprecher:erzaehler
 Das hier wird dich interessieren, wenn du Schach magst. #sprecher:henri #stimmung:laechelt
 Ein ovales Foto, sehr alt, braun. Ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. #sprecher:erzaehler
-Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem. #sprecher:henri #stimmung:nachdenklich
+Ein Vorfahr. Keiner weiß mehr, wer. #sprecher:henri #stimmung:nachdenklich
+Ein Bruder von irgendwem. #sprecher:henri #stimmung:nachdenklich
 Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen. #sprecher:henri #stimmung:nachdenklich
-Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. Ich fand, er sieht nett aus. #sprecher:henri #stimmung:laechelt
+Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. #sprecher:henri #stimmung:laechelt
+Ich fand, er sieht nett aus. #sprecher:henri #stimmung:laechelt
 * [Das Foto ansehen]
 -
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: {held} erkennt ihn selbst, dann
@@ -83,18 +88,23 @@ Der Deckel des Geigenkastens ist zu. Du hast ihn nicht angerührt. #sprecher:erz
 Das bin ich. #sprecher:ambrose #stimmung:still #musik:ambrose.verstimmt
 * [Hinsehen]
 - Du siehst ihn, zum ersten Mal seit sechs Tagen: schmal, hochgeschlossen, blasser als früher. #sprecher:erzaehler
-Ich erinnere mich an den Tag. Man musste eine Minute lang nicht atmen. Ich habe an einen Zug gedacht. #sprecher:ambrose #stimmung:nachdenklich
+Ich erinnere mich an den Tag. Man musste eine Minute lang nicht atmen. #sprecher:ambrose #stimmung:nachdenklich
+Ich habe an einen Zug gedacht. #sprecher:ambrose #stimmung:nachdenklich
 Henri hört ihn nicht. Er leimt. #sprecher:erzaehler
-Keiner weiß mehr, wer. Ein Spieler. Sie haben nicht gern von mir gesprochen. #sprecher:ambrose #stimmung:traurig
+Keiner weiß mehr, wer. Ein Spieler. #sprecher:ambrose #stimmung:traurig
+Sie haben nicht gern von mir gesprochen. #sprecher:ambrose #stimmung:traurig
 * [„Ambrose …“]
-- Nein. Lass. Sechs Generationen. Sie haben weitergemacht. Jede Saite muss stimmen. #sprecher:ambrose #stimmung:bitter
+- Nein. Lass. #sprecher:ambrose #stimmung:bitter
+Sechs Generationen. Sie haben weitergemacht. #sprecher:ambrose #stimmung:bitter
+Jede Saite muss stimmen. #sprecher:ambrose #stimmung:bitter
 Mein Vater hätte ihn sehr gemocht. #sprecher:ambrose #stimmung:still
 * [Nichts sagen]
 - -> tuer
 
 = tuer
-Eine Tür schlägt. Ein Mädchen, fünfzehn vielleicht, ein Skateboard unter dem Arm, Kopfhörer um den Hals. #sprecher:erzaehler #musik:celeste
-Papa, hast du mein Ladekabel … Oh. Besuch. Schach? Das ist doch was für alte Leute. #sprecher:celeste #stimmung:ueberrascht
+Am Laptop zieht das Mädchen die Kopfhörer herunter. Fünfzehn vielleicht, ein Skateboard lehnt an ihrem Stuhl. #sprecher:erzaehler #musik:celeste
+Papa, wo ist mein Ladekabel … Schach? #sprecher:celeste #stimmung:ueberrascht
+Das ist doch was für alte Leute. #sprecher:celeste #stimmung:ueberrascht
 {abschiedGesehen: -> END}
 Für sehr alte. #sprecher:ambrose #stimmung:lacht
 Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
@@ -124,13 +134,24 @@ Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 }
 
 === celeste_angebot ===
+// Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
+{celesteAngebotGesehen:
+    Céleste hat den Hocker schon an die Werkbank gezogen. #sprecher:erzaehler
+    -> wahl
+}
+~ celesteAngebotGesehen = true
 Céleste sieht auf den Hocker. Du hast den Geigenkasten aufgemacht, ohne es zu merken. #sprecher:erzaehler
-Das sieht cool aus. Das ist ja richtig alt. Darf ich? #sprecher:celeste #stimmung:ueberrascht
-Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. Und die Hände. #sprecher:erzaehler
+Das sieht cool aus. Das ist ja richtig alt. #sprecher:celeste #stimmung:ueberrascht
+Darf ich? #sprecher:celeste #stimmung:ueberrascht
+Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. #sprecher:erzaehler
+Und die Hände. #sprecher:erzaehler
 * [„Kannst du es?“]
-- Ich weiß, wie die Dinger ziehen. Ungefähr. Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste #stimmung:laechelt
-Aber mit Uhr. Zehn Minuten für jeden. Mein Stück auf dem Laptop läuft noch zwanzig, dann muss ich los. #sprecher:celeste #stimmung:lacht
+- Ich weiß, wie die Dinger ziehen. Ungefähr. #sprecher:celeste #stimmung:laechelt
+Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste #stimmung:laechelt
+Aber mit Uhr. Zehn Minuten für jeden. #sprecher:celeste #stimmung:lacht
+Mein Stück auf dem Laptop läuft noch zwanzig, dann muss ich los. #sprecher:celeste #stimmung:lacht
 Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er hat genickt. #sprecher:erzaehler
+- (wahl)
 + [„Okay. Eine Partie.“]
     ~ beginnePartie("portDelacroix.celeste")
     -> END
@@ -149,11 +170,14 @@ Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er 
 // Je nach Ausgang (vorher derselbe Satz, auch wenn Céleste gewann; rueckmeldung.cjs, 19.11.2026).
 {ausgangPortDelacroixCeleste:
 - "niederlage":
-    Ich hab gewonnen? Echt jetzt? Mit den Pferden? Dann geh ich skaten, solange ich vorne liege. #sprecher:celeste #stimmung:ueberrascht
+    Ich hab gewonnen? Echt jetzt? #sprecher:celeste #stimmung:ueberrascht
+    Mit den Pferden? Dann geh ich skaten, solange ich vorne liege. #sprecher:celeste #stimmung:ueberrascht
 - "remis":
-    Unentschieden. Klingt fair. Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
+    Unentschieden. Klingt fair. #sprecher:celeste #stimmung:laechelt
+    Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
 - else:
-    Okay. Das war nicht so schlecht. Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
+    Okay. Das war nicht so schlecht. #sprecher:celeste #stimmung:laechelt
+    Aber ich geh jetzt skaten. #sprecher:celeste #stimmung:laechelt
 }
 // Nach dem Abschied (abschiedGesehen) endet die Szene mit Céleste; Ambroses Gespräch entfällt.
 {abschiedGesehen:
@@ -162,16 +186,19 @@ Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er 
 }
 Draußen rattert das Skateboard über das Pflaster, kleiner werdend. Ambrose sieht ihr nach. #sprecher:erzaehler
 * [Warten]
-- Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat. Auf diesem Brett. #sprecher:ambrose #stimmung:froh
+- Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat. #sprecher:ambrose #stimmung:froh
+Auf diesem Brett. #sprecher:ambrose #stimmung:froh
 Ich wollte, dass alles, was ich war, Schach ist. Eine Fußnote, sechs Wörter, und ich war beleidigt. #sprecher:ambrose #stimmung:nachdenklich
 Und hier hängt mein Gesicht an der Wand, keiner weiß, wem es gehört, und sie bauen Klaviere und sind glücklich. #sprecher:ambrose #stimmung:nachdenklich
 * [„Macht dir das nichts aus?“]
-- Doch. Ein wenig. Aber weniger, als ich dachte. #sprecher:ambrose #stimmung:lacht
+- Doch. Ein wenig. #sprecher:ambrose #stimmung:lacht
+Aber weniger, als ich dachte. #sprecher:ambrose #stimmung:lacht
 Er sieht dich an, richtig, zum ersten Mal seit einer weißen, flackernden Nacht. #sprecher:erzaehler
 Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren. #sprecher:ambrose #stimmung:laechelt #pause
 Mit dir. #sprecher:ambrose #stimmung:froh #musik:ambrose.held
 * [Nichts sagen können]
-- Ich schulde dir eine Antwort. Auf eine Frage. Ich habe sie noch nicht. #sprecher:ambrose #stimmung:nachdenklich
+- Ich schulde dir eine Antwort. Auf eine Frage. #sprecher:ambrose #stimmung:nachdenklich
+Ich habe sie noch nicht. #sprecher:ambrose #stimmung:nachdenklich
 Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
@@ -184,7 +211,8 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 === werkbank ===
 {
 - not leimAuftrag:
-    Eine alte Werkbank voller Späne. Henri arbeitet hier. Du hast keinen Grund, sie anzufassen. #sprecher:erzaehler
+    Eine alte Werkbank voller Späne. Henri arbeitet hier. #sprecher:erzaehler
+    Du hast keinen Grund, sie anzufassen. #sprecher:erzaehler
     -> END
 - flashbackWerkstattBestanden and not claireErzaehlt: -> werkbank_nach_flashback
 - flashbackWerkstattBestanden:
@@ -195,15 +223,27 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 
 === werkbank_flashback ===
 Über der Tür hängt ein Schild, neuer als die anderen, die Buchstaben alt: „Whitlock-Duval. Facteurs de pianos depuis 1826.“ #sprecher:erzaehler
-Frisch gehobeltes Holz. Leim, warm. Etwas Harziges. Ein Geruch, den du kennst, ohne ihn zu kennen. #sprecher:erzaehler
+Frisch gehobeltes Holz. Leim, warm. #sprecher:erzaehler
+Etwas Harziges. Ein Geruch, den du kennst, ohne ihn zu kennen. #sprecher:erzaehler
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr; die Werkstatt erinnert sich allein.
 {abschiedGesehen: -> golden}
-{fotoAmbroseGesehen:Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn.|Im Geigenkasten unter deinem Arm bewegt sich nichts. Du hörst ihn, zum ersten Mal seit fünf Tagen.} #sprecher:erzaehler
+// Lektorat 20.11.2026: Nach „Zurück in die Gegenwart“ nicht noch einmal „Hier war es“; „zum ersten
+// Mal seit fünf Tagen“ nur, wenn er vorher nicht im Clubkampf („Spiel deine Partie.“) sprach.
+{werkstattGoldGesehen: -> golden_wieder}
+~ werkstattGoldGesehen = true
+{fotoAmbroseGesehen or odileClubkampfEingeleitet:Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn.|Im Geigenkasten unter deinem Arm bewegt sich nichts. Du hörst ihn, zum ersten Mal seit fünf Tagen.} #sprecher:erzaehler
 Hier. Hier war es. #sprecher:ambrose #stimmung:fern #musik:ambrose.verstimmt
 -> golden
 
 = golden
 {abschiedGesehen:Die Werkstatt wird golden.|Mehr nicht. Aber die Werkstatt wird golden.} #sprecher:erzaehler
+-> gold_wahl
+
+= golden_wieder
+Die Werkstatt wird wieder golden. #sprecher:erzaehler
+-> gold_wahl
+
+= gold_wahl
 + [Mitgehen]
     -> werkstatt_1840
 + [Zurück in die Gegenwart]
@@ -212,20 +252,26 @@ Hier. Hier war es. #sprecher:ambrose #stimmung:fern #musik:ambrose.verstimmt
 
 // Erinnerung 1840: das Brett aus Abfallholz, die Figuren aus Tastenholz.
 === werkstatt_1840 ===
-Du bist klein. Der Boden ist nah. Um dich liegen Späne, helle Locken, knöcheltief. #sprecher:erzaehler #musik:stimmton
+Du bist klein. Der Boden ist nah. #sprecher:erzaehler #musik:stimmton
+Um dich liegen Späne, helle Locken, knöcheltief. #sprecher:erzaehler
 „Fegen, Ambrose. Nicht spielen.“ Ein Mann schlägt eine Saite an, lauscht, dreht an etwas, schlägt wieder an. #sprecher:erzaehler
 * [„Papa. Was machst du da?“]
-- „Ich suche den Ton. Er ist da drin. Man muss ihm nur helfen.“ #sprecher:erzaehler
+- „Ich suche den Ton. Er ist da drin.“ #sprecher:erzaehler
+„Man muss ihm nur helfen.“ #sprecher:erzaehler
 Du stellst Klötzchen aus Tastenholz auf die Werkbank. Er legt das Werkzeug hin und ritzt acht mal acht Linien in ein Abfallbrett. #sprecher:erzaehler
-Das größte ist der König. Das gerade der Turm. Das schiefe, beim Sägen verrutscht, ist das Pferd. #sprecher:erzaehler
-„Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede Taste, jede Figur muss ihren Platz kennen. Dann klingt es.“ #sprecher:erzaehler
+Das größte ist der König. Das gerade der Turm. #sprecher:erzaehler
+Das schiefe, beim Sägen verrutscht, ist das Pferd. #sprecher:erzaehler
+„Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede Taste, jede Figur muss ihren Platz kennen.“ #sprecher:erzaehler
+„Dann klingt es.“ #sprecher:erzaehler
 * [Die Späne fliegen auf]
     -> werkstatt_1852
 
 // Erinnerung 1852: das neue Brett, noch ohne die Buchstaben am Rand; Claire auf dem Schemel.
 === werkstatt_1852 ===
-Du bist groß. Die Stiefel aus London drücken. Der Mann an der Werkbank hat graues Haar. #sprecher:erzaehler #musik:ambrose.vierhaendig
-Auf einem Schemel sitzt ein Mädchen von vielleicht acht Jahren, in einem Kleid mit Leimflecken. „Zeig es noch mal. Das mit dem Turm.“ #sprecher:erzaehler
+Du bist groß. Die Stiefel aus London drücken. #sprecher:erzaehler #musik:ambrose.vierhaendig
+Der Mann an der Werkbank hat graues Haar. #sprecher:erzaehler
+Auf einem Schemel sitzt ein Mädchen von vielleicht acht Jahren, in einem Kleid mit Leimflecken. #sprecher:erzaehler
+„Zeig es noch mal. Das mit dem Turm.“ #sprecher:erzaehler
 Auf der Werkbank steht ein Brett, helles Holz und dunkles, die Ecken noch scharf. Der Rand ist glatt und leer. #sprecher:erzaehler
 + [Die Partie vorspielen]
     ~ beginneAufgaben("portDelacroix.flashbackWerkstatt")
@@ -241,12 +287,14 @@ Auf der Werkbank steht ein Brett, helles Holz und dunkles, die Ecken noch scharf
 {claireErzaehlt: -> END}
 ~ claireErzaehlt = true
 „Er lässt ihn stehen? Den ganzen Läufer? Das ist doch Verschwendung.“ – „Das ist Musik, Papa.“ #sprecher:erzaehler #musik:ambrose.vierhaendig
-Bei jedem Opfer klatscht Claire. Sie versteht nichts davon. Sie klatscht, weil du so strahlst. #sprecher:erzaehler
+Bei jedem Opfer klatscht Claire. Sie versteht nichts davon. #sprecher:erzaehler
+Sie klatscht, weil du so strahlst. #sprecher:erzaehler
 * [Claire zusehen]
 - „Wenn ich groß bin, will ich das Brett haben.“ #sprecher:erzaehler
 „Es ist meines. Ich habe es gerade erst gebaut.“ #sprecher:erzaehler
 „Dann eben, wenn du tot bist.“ #sprecher:erzaehler #pause
-„Claire!“, sagt dein Vater. Du lachst. Du bist einundzwanzig, und du hast alle Zeit der Welt. #sprecher:erzaehler
+„Claire!“, sagt dein Vater. Du lachst. #sprecher:erzaehler
+Du bist einundzwanzig, und du hast alle Zeit der Welt. #sprecher:erzaehler
 * [„Abgemacht. Aber du musst darauf aufpassen.“]
 - „Ich pass immer auf“, sagt Claire. #sprecher:erzaehler
 Das Gold verblasst. Du stehst in der Werkstatt, dein Gesicht ist nass, und du weißt nicht, ob es deine Tränen sind. #sprecher:erzaehler #musik:aus
@@ -255,8 +303,10 @@ Das Gold verblasst. Du stehst in der Werkstatt, dein Gesicht ist nass, und du we
     Claire hat aufgepasst. Das Brett steht heute im Norden, in einer Stadt mit einem Wasserfall. #sprecher:erzaehler
     -> END
 }
-Claire. Sie hat nach Norden geheiratet. In eine Stadt mit einem Wasserfall. Sie hat das Brett geerbt. #sprecher:ambrose #stimmung:still
-Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
+Claire. Sie hat nach Norden geheiratet. #sprecher:ambrose #stimmung:still
+In eine Stadt mit einem Wasserfall. Sie hat das Brett geerbt. #sprecher:ambrose #stimmung:still
+Sie hat aufgepasst. Und ihre Tochter. #sprecher:ambrose #stimmung:still
+Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
 * [Warten]
 - Deshalb bist du hier. #sprecher:ambrose #stimmung:still #pause:2
 {ambroseSprichtWieder:Dann ist er lange still.|Dann schweigt er wieder. Mehr hatte er für diesen Tag nicht.} #sprecher:erzaehler

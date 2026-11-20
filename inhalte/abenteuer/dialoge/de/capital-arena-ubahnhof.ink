@@ -34,10 +34,11 @@ VAR testteamStand = 0
 === mo_erstes ===
 ~ moGetroffen = true
 Eine Frau mit Kreide an den Fingern steht auf einer Bank und klatscht in die Hände. #sprecher:erzaehler
-Mo. Willkommen in der Nacht der Kreidespringer. Drei Runden Blitz, drei Minuten, zwei Sekunden Zuschlag. Gewinnen ist schön, mitspielen ist Pflicht. #sprecher:mo #stimmung:laechelt
+Mo. Willkommen in der Nacht der Kreidespringer. #sprecher:mo #stimmung:laechelt
+Drei Runden Blitz, drei Minuten, zwei Sekunden Zuschlag. Gewinnen ist schön, mitspielen ist Pflicht. #sprecher:mo #stimmung:laechelt
 Alle sind hier: die von der Brücke, von der Raststätte, aus dem Diner, aus den Wäldern. #sprecher:mo #stimmung:laechelt
 {testteamStand >= 3:
-    Am hinteren Tisch sitzen drei, die du kennst. Ohne Westen, ohne Tablets. Benji verliert gerade und lacht. #sprecher:erzaehler
+    Am hinteren Tisch sitzen Zoe, Imani und Benji. Benji verliert gerade und lacht. #sprecher:erzaehler
 }
 -> mo_runde1
 
@@ -52,11 +53,16 @@ Runde eins. Dime wartet schon, mit einem Endspiel, und Dime wartet nicht gern. #
 === mo_runde2 ===
 // Rückmeldung zu Runde eins (Lektorat mittel-1, 19.11.2026: vorher gleich das nächste Angebot).
 {ausgangCapitalArenaKreidenacht1:
-- "sieg": Gegen Dime gewonnen! Das passiert hier unten nicht oft. #sprecher:mo #stimmung:froh
-- "remis": Remis gegen Dime. Hier unten zählt ein halber Punkt wie ein ganzer Handschlag. #sprecher:mo #stimmung:laechelt
-- "niederlage": Dime hat die Runde. Macht nichts. Mitspielen ist Pflicht, gewinnen nicht. #sprecher:mo #stimmung:laechelt
+- "sieg":
+    Gegen Dime gewonnen! Das passiert hier unten nicht oft. #sprecher:mo #stimmung:froh
+- "remis":
+    Remis gegen Dime. Hier unten zählt ein halber Punkt wie ein ganzer Handschlag. #sprecher:mo #stimmung:laechelt
+- "niederlage":
+    Dime hat die Runde. Macht nichts. #sprecher:mo #stimmung:laechelt
+    Mitspielen ist Pflicht, gewinnen nicht. #sprecher:mo #stimmung:laechelt
 }
-Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, warum. #sprecher:mo #stimmung:lacht
+Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. #sprecher:mo #stimmung:lacht
+Ich würde nicht fragen, warum. #sprecher:mo #stimmung:lacht
 + [Runde zwei spielen]
     ~ beginnePartie("capitalArena.kreidenacht2")
     -> END
@@ -66,11 +72,15 @@ Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, 
 === mo_runde3 ===
 // Rückmeldung zu Runde zwei (Lektorat mittel-1, 19.11.2026).
 {ausgangCapitalArenaKreidenacht2:
-- "sieg": Mama Bear gratuliert dir. Mit ihrer eigenen Uhr in der Hand, das macht sie sonst nie. #sprecher:mo #stimmung:froh
-- "remis": Remis gegen Mama Bear. Ihre Uhr hat es dir nicht übel genommen. #sprecher:mo #stimmung:laechelt
-- "niederlage": Mama Bear nimmt den Punkt mit. Sie sagt, das liegt an der Uhr. #sprecher:mo #stimmung:lacht
+- "sieg":
+    Mama Bear gratuliert dir. Mit ihrer eigenen Uhr in der Hand, das macht sie sonst nie. #sprecher:mo #stimmung:froh
+- "remis":
+    Remis gegen Mama Bear. Ihre Uhr hat es dir nicht übel genommen. #sprecher:mo #stimmung:laechelt
+- "niederlage":
+    Mama Bear nimmt den Punkt mit. Sie sagt, das liegt an der Uhr. #sprecher:mo #stimmung:lacht
 }
-Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine Uhr läuft schon. #sprecher:mo #stimmung:nachdenklich
+Runde drei. Da hinten sitzt einer mit Kapuze. #sprecher:mo #stimmung:nachdenklich
+Hat kein Wort gesagt, aber seine Uhr läuft schon. #sprecher:mo #stimmung:nachdenklich
 + [Runde drei spielen]
     ~ beginnePartie("capitalArena.kreidenacht3")
     -> END
@@ -85,26 +95,29 @@ Nach dem letzten Zug zieht dein Gegner die Kapuze vom Kopf. Es ist Victor. #spre
 - "remis": Er hält dir die Hand hin, bevor die Uhr ganz steht. #sprecher:erzaehler
 - "niederlage": Er hat gewonnen und sieht aus, als hätte er etwas geschenkt bekommen. #sprecher:erzaehler
 }
-Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. Hier spiele ich nur. #sprecher:victor #stimmung:nachdenklich
+Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. #sprecher:victor #stimmung:nachdenklich
+Hier spiele ich nur. #sprecher:victor #stimmung:nachdenklich
 Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:victor #stimmung:laechelt
-Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo #stimmung:laechelt
+Hier, ein Stück Kreide. Für die nächste Wand. #sprecher:mo #stimmung:laechelt
+Und für die Uhr. #sprecher:mo #stimmung:laechelt
 ~ gibKarte("sanduhr")
 ~ gibFund("fotoKreidenacht")
 {not abschiedGesehen:
-    Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. So war es im Kaffeehaus auch. #sprecher:ambrose #stimmung:friedlich
+    Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. #sprecher:ambrose #stimmung:friedlich
+    So war es im Kaffeehaus auch. #sprecher:ambrose #stimmung:friedlich
 }
 -> END
 
 === mo_danach ===
 {abschiedGesehen:
-    {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor kommt jetzt jeden Donnerstag. Er sagt, wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
+    {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor sagt, er kommt wieder. Wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 - else:
     {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 }
 -> END
 
 === ereignis_kreidenacht ===
-Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapuzen und Kreide an den Ärmeln. #sprecher:erzaehler
+{moGetroffen:An den drei Tischen ticken die Uhren.|Drei Klapptische, drei Bretter, drei Uhren. Um die Tische stehen Leute mit Kapuzen und Kreide an den Ärmeln.} #sprecher:erzaehler
 -> mo
 
 === ausgang ===

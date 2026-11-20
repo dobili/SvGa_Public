@@ -17,6 +17,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR dimeGetroffen = false
 VAR wegRivertonIronwoodTafelBestanden = false
 VAR daleGetroffen = false
 VAR zahnradGefunden = false
@@ -75,13 +76,15 @@ Keiner hat ihn gefragt. Er meint vermutlich auch sich selbst. #sprecher:erzaehle
 }
 ~ noorGetroffen = true
 An einer langen Mauer steht eine junge Frau auf einer Leiter. Auf ihrem Eimer steht „Noor“. #sprecher:erzaehler #geraeusch:spruehdose
-Auf der Mauer wachsen schwarze Umrisse. Ein Turm. Ein halber Springer. #sprecher:erzaehler
+Auf der Mauer wachsen schwarze Umrisse. Ein Turm. #sprecher:erzaehler
+Ein halber Springer. #sprecher:erzaehler
 Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor #stimmung:nachdenklich
 * [„Was wird es?“]
 - Weiß ich, wenn es fertig ist. #sprecher:noor #stimmung:laechelt
 Sie schüttelt eine Dose. Es klackert. #sprecher:erzaehler
 Mein Opa hat da drin gearbeitet. #sprecher:noor #stimmung:nachdenklich
-Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank. Vielleicht. #sprecher:noor #stimmung:nachdenklich
+Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank. #sprecher:noor #stimmung:nachdenklich
+Vielleicht. #sprecher:noor #stimmung:nachdenklich
 -> END
 
 = noor_farbe
@@ -117,7 +120,8 @@ An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was fest
     -> END
 }
 ~ zahnradGefunden = true
-Eine Fabrik aus rotem Stein, und niemand ist darin. Fenster ohne Glas. Aus dem Schornstein wächst ein Baum. #sprecher:erzaehler
+Eine Fabrik aus rotem Stein, und niemand ist darin. Fenster ohne Glas. #sprecher:erzaehler
+Aus dem Schornstein wächst ein Baum. #sprecher:erzaehler
 Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 ~ gibFund("zahnrad")
 {not abschiedGesehen:
@@ -127,7 +131,8 @@ Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 
 === fund_nietenkopf ===
 {nietenkopfGefunden:
-    Am Geländer sitzen die Nieten in langen Reihen. Auf jedem Kopf: J. H. #sprecher:erzaehler
+    Am Geländer sitzen die Nieten in langen Reihen. Auf jedem Kopf: J. #sprecher:erzaehler
+    H. #sprecher:erzaehler
     -> END
 }
 -> jh ->
@@ -137,18 +142,22 @@ Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 // Tunnel, weil es nach dem Zeitnot-Trick oder am Geländer zuerst kommen kann.
 === jh ===
 ~ nietenkopfGefunden = true
-Hier ist was eingeschlagen! In die Dinger. Die runden. #sprecher:juno #stimmung:ueberrascht
+Hier ist was eingeschlagen! In die Dinger. #sprecher:juno #stimmung:ueberrascht
+Die runden. #sprecher:juno #stimmung:ueberrascht
 Auf einem Nietenkopf am Fuß eines Pfostens stehen zwei Buchstaben. Klein, sauber, ins heiße Eisen gestempelt. #sprecher:erzaehler #bild:nietenkopf_jh
 J. H. #sprecher:erzaehler #klang:hale
 Auf dem nächsten auch. Und auf dem übernächsten. #sprecher:erzaehler
-Der Erbauer. Der hat überall unterschrieben. Eitel! #sprecher:juno #stimmung:lacht
+Der Erbauer. Der hat überall unterschrieben. #sprecher:juno #stimmung:lacht
+Eitel! #sprecher:juno #stimmung:lacht
 ~ gibFund("nietenkopf")
 // Nach dem Abschied (abschiedGesehen) steht Ambrose nicht mehr am Geländer; {held} kennt den Namen.
 {abschiedGesehen:
-    J. H. Du weißt inzwischen, wessen Brücke das ist. #sprecher:erzaehler #bild:aus
+    J. H. #sprecher:erzaehler #bild:aus
+    Du weißt inzwischen, wessen Brücke das ist. #sprecher:erzaehler
     ->->
 }
-Ambrose sieht auf die Buchstaben. Sein Gesicht ist leer. Wie ein Zimmer, aus dem gerade jemand hinausgegangen ist. #sprecher:erzaehler #bild:aus
+Ambrose sieht auf die Buchstaben. Sein Gesicht ist leer. #sprecher:erzaehler #bild:aus
+Wie ein Zimmer, aus dem gerade jemand hinausgegangen ist. #sprecher:erzaehler
 * [„Ambrose?“]
 - Ein Brückenbauer. Es gibt viele. #sprecher:ambrose #stimmung:still
 * [„Du sagtest, er war Brückenbauer. Aus dem Norden.“]
@@ -180,7 +189,8 @@ Wer baut so etwas? #sprecher:juno #stimmung:ueberrascht
 - Du weißt nicht, warum du das sagst. Ambrose ist sehr still. #sprecher:erzaehler #pause
 Dann redet er von etwas ganz anderem, ein wenig zu schnell. #sprecher:erzaehler
 Im Kaffeehaus gab es einen Trick. Man tat, als brenne die Kerze des Gegners schon herunter. #sprecher:ambrose #stimmung:laechelt
-Man sah darauf. Man seufzte. Er glaubte es, und er eilte. #sprecher:ambrose #stimmung:laechelt
+Man sah darauf. Man seufzte. #sprecher:ambrose #stimmung:laechelt
+Er glaubte es, und er eilte. #sprecher:ambrose #stimmung:laechelt
 * [„Ist das nicht Schummeln?“]
 - Es ist Theater. Der Gegner sieht dieselbe Kerze wie du. #sprecher:ambrose #stimmung:laechelt
 Er hält dir eine Karte hin. Eine Sanduhr darauf, fast leer. #sprecher:erzaehler
@@ -211,7 +221,8 @@ Eine Bank am Schilf. Über dem Wasser stehen Libellen in der Luft, als hätten s
     -> END
 }
 Am Rastanleger treibt eine Konservendose mit Deckel. Darin steckt ein trockener Zettel. #sprecher:erzaehler
-„Wer das findet: komm nach Lockport. Ich hab schon 41 Flaschen. Finn“ #sprecher:erzaehler
+„Wer das findet: komm nach Lockport. Ich hab schon 41 Flaschen.“ #sprecher:erzaehler
+„Finn“ #sprecher:erzaehler
 ~ gibFund("konservendose")
 -> END
 
@@ -222,7 +233,8 @@ Ein Häuschen mit vernagelter Tür. Auf dem Schild steht „Brückenwärter. Bit
 -> END
 
 === aussicht_tal ===
-Tief unten liegt der Kanal wie ein Strich. Am Ende des Tals stehen Schornsteine im Dunst. Aus einem kommt Rauch. #sprecher:erzaehler
+Tief unten liegt der Kanal wie ein Strich. Am Ende des Tals stehen Schornsteine im Dunst. #sprecher:erzaehler
+Aus einem kommt Rauch. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ereignis „Die Brückenbauern“
@@ -234,7 +246,9 @@ Tief unten liegt der Kanal wie ein Strich. Am Ende des Tals stehen Schornsteine 
     -> kreidespringer_geloest
 }
 Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #sprecher:erzaehler
-„Weiß: König g1, Turm d1. Schwarz: König g8, Bauern f7, g7 und h7. Weiß am Zug. Ein Zug, und es ist vorbei. Der Zug ist das Wort.“ #sprecher:erzaehler
+„Weiß: König g1, Turm d1. Schwarz: König g8, Bauern f7, g7 und h7.“ #sprecher:erzaehler
+„Weiß am Zug. Ein Zug, und es ist vorbei.“ #sprecher:erzaehler
+„Der Zug ist das Wort.“ #sprecher:erzaehler
 -> raten
 
 = raten
@@ -270,13 +284,22 @@ Das Wort ist „Td8“. #sprecher:erzaehler
 {ausgangWegRivertonIronwoodDime != "":
     -> nach_der_partie
 }
-„Td8“? Richtig. Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. Fast nie. #sprecher:dime #stimmung:lacht
+// Lektorat 19.11.2026: Nach „Nicht jetzt“ stellt er sich nicht noch einmal vor.
+{dimeGetroffen:
+    Da bist du ja wieder. Die Uhr steht noch. #sprecher:dime #stimmung:laechelt
+    -> spielen
+}
+~ dimeGetroffen = true
+„Td8“? Richtig. #sprecher:dime #stimmung:lacht
+Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. #sprecher:dime #stimmung:lacht
+Fast nie. #sprecher:dime #stimmung:lacht
 {gefundenSpurPM1:
     Über dem Kanal surrt die Drohne und dreht sich zum Tisch. #sprecher:erzaehler
 - else:
     Über dem Kanal surrt etwas. Eine kleine Drohne steht in der Luft und dreht sich zum Tisch. #sprecher:erzaehler
 }
-Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime #stimmung:nachdenklich
+Die da? Seit zwei Wochen. #sprecher:dime #stimmung:nachdenklich
+Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime #stimmung:nachdenklich
 -> spielen
 
 = spielen
@@ -291,7 +314,8 @@ Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime 
 = nach_der_partie
 {ausgangWegRivertonIronwoodDime:
 - "sieg":
-    Zehn Cent? Ach was, sagen wir zwanzig. Ich übertreibe immer, das ist mein Stil. #sprecher:dime #stimmung:lacht
+    Zehn Cent? Ach was, sagen wir zwanzig. #sprecher:dime #stimmung:lacht
+    Ich übertreibe immer, das ist mein Stil. #sprecher:dime #stimmung:lacht
 - "remis":
     Fünf Cent für jeden. Ich schreib's an. #sprecher:dime #stimmung:laechelt
 - else:

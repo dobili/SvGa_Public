@@ -148,13 +148,157 @@ einer Revanche, Gus, Joggerin und Sol nach einem Remis. Hier kam noch dazu:
   Das ist kein Textfehler: Die Figur gehört auf die Kantinenkarte. Das ist Kartenbau.
 - **Juno an zwei Orten (Akt 1).** Nach dem Aufbruch heißt es „Juno wartet am Park“. Sie steht aber
   weiter im Clubraum und an der Haltestelle (orte.json ohne `wenn`). Auch das ist Kartenbelegung.
-- **Zeithinweise im Clubkampf.** Ambrose sagt in Silicon Bay „Am Brett eines Clubs schweigt man.“
-  und vor Miras Clubkampf „Dann kommentiere ich. Aber du entscheidest.“ Die Hinweise kommen im
-  Clubkampf trotzdem, und der Oberflächentest prüft sie genau dort. Ob sie dort bleiben, ist eine
-  Entscheidung über die Funktion. Hier ist nur das Halbfinale ausgenommen.
+- **Zeithinweise im Clubkampf** (Entscheidung des Hauptchats, 19.11.2026): Die Hinweise bleiben
+  im Clubkampf, denn dort wählt man die Zeit. Ambroses Satz in silicon-bay-akademie passt jetzt
+  dazu. Vorher: „Am Brett eines Clubs schweigt man. Im Park redet man.“ Nachher: „Am Brett eines
+  Clubs flüstert man nur, über die Uhr, nie über Züge. Im Park redet man.“ Seine Zeile danach mit
+  drei Sätzen ist geteilt. Das Halbfinale bleibt ausgenommen.
 - **„mein Lehrling“ in Akt 4** (zuSchnell.1, geblitzt.1): Die Story-Bibel lässt Ambrose „du“ sagen,
   weil er „Lehrling“ meint. Der Lektor von Akt 4 hält es dort für einen Rückfall. Die Stelle ist
   unverändert, auch weil der Oberflächentest den Satz prüft.
+
+## Zweiter Durchgang (20.11.2026): Startwert 3, nicht gewählte Antworten, nie erreichte Dialoge
+
+Startwert 3 erreicht dieselben Dialoge wie 1 und 2. Nur 25 Einstiege kommen in keiner Lesefassung
+vor, meist Momente während einer Partie. Deshalb lasen vier Lektoren die Zweige der nicht gewählten
+Antworten (Akt 1: 159 Stellen, Akt 2: 87, Akt 3: 57, Akt 4: 75), ein fünfter die 25 Einstiege.
+
+### Behoben
+
+| Art | Stelle                                                                            | Vorher                                                                                                                                                           | Nachher                                                                                                               |
+| --- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| V   | Ambrose in Silicon Bay, auf der Glasbrücke und auf der Fähre (vier Dateien)       | sprach, wenn man zwischen Tiefpunkt und Céleste zurückkam                                                                                                        | schweigt dort wie in Port Delacroix (`ambroseSchweigt()` in jeder Datei, wie regeln/abwesenheit.ts)                   |
+| V   | cedar-creek-bibliothek.okafor_nadel                                               | Pfiff des Coachs und Junos „Geh nur zum Steg“ nur bei Bronze                                                                                                     | bei jeder ersten Nadel                                                                                                |
+| V   | cedar-creek-aussen.fehler_am_steg                                                 | „Ich hätte dich die Partie gekostet“ auch ohne den Moment „Lass mich“; „geschlagen“ nach Remis                                                                   | ohne Moment: „Ich habe heute ein Loch in ihrer Königsstellung gesehen. Ich habe geschwiegen.“; nach Remis „gehalten“  |
+| D   | Momente Stimmt es, Schraubstock, Odum, Sturm, Mamas Läufer                        | in jeder Revanche wieder                                                                                                                                         | einmal (je eine VAR)                                                                                                  |
+| D,V | Halbfinale: Ambrose rufen                                                         | in der Wiederholungspartie ein zweites Mal („Ein einziges Mal. Heute.“)                                                                                          | nur einmal; danach „Einmal hast du ihn gerufen. Diesmal zählst du allein.“                                            |
+| V   | Okafor nach dem Bauern-Moment                                                     | „Du hast sie alle gesehen.“, auch wenn man den Bauern wollte                                                                                                     | „Den Bauern wolltest du. Danach hast du hingesehen, und das zählt.“                                                   |
+| Z,R | Mira, Moment „Atme“                                                               | „was du gestern gesagt hast“ (keine Nacht dazwischen); „Dein Läufer“ in jeder Partie; fünf Sätze                                                                 | „was du über das Opfer gesagt hast“; zwei Zeilen ohne Läufer                                                          |
+| Z   | Victor, Moment „Luftig“                                                           | lacht vor seinem ersten Lachen                                                                                                                                   | lächelt                                                                                                               |
+| Z   | London, Kellner und Zeitungsleser nach dem Schlussbild                            | „Leise bitte, sie spielen“                                                                                                                                       | eigene Zeilen nach der Partie; „Herr Anderssen ist aus Breslau“ → „Der große Herr in der Mitte ist Lehrer, sagt man.“ |
+| Z   | Mama, Moment am Läufer                                                            | „Im dreißigsten Zug“ (kommt ab Zug 28); „hat den Turm schon berührt“ und zieht ihn nicht (berührt, geführt)                                                      | „Ein paar Züge später“; „Mamas Hand schwebt schon über dem Turm“                                                      |
+| Z   | Schultür in Maple Falls                                                           | „Nach der Schule, Raum 12“, dann steht man sofort in Raum 12                                                                                                     | „Raum 12 im Erdgeschoss. Komm, ich bring dich hin.“                                                                   |
+| T   | Ghost Town, Fernpartie                                                            | Ambrose spricht nach „Kein Wort von mir“                                                                                                                         | Erzählzeile davor: „Jetzt flüstert er doch, mehr zu sich als zu dir.“                                                 |
+| D   | Big Joe nach der Niederlage                                                       | „Was dranhängt, kann nicht weg“ direkt nach dem Moment                                                                                                           | „Festgehalten, Kumpel.“                                                                                               |
+| D   | Kettering → Bushaltestelle                                                        | Einleitung der Haltestelle zweimal im selben Gespräch                                                                                                            | zurück zu den Wahlen                                                                                                  |
+| D,Z | Dachboden: „Lieber nicht anfassen“, „wegrennen“                                   | Einleitung sofort noch einmal; nach dem Wegrennen sofort „Du gehst zurück und hebst ihn auf“                                                                     | zurück zur Wahl; Wegrennen beendet das Gespräch                                                                       |
+| V   | Bibliothekar (Park)                                                               | Ambrose „Ein Mann, der Stellungen aufhebt“ ohne Stellung                                                                                                         | Abernathy erwähnt die Stellung                                                                                        |
+| Z   | Akt 1 Ende, Steg                                                                  | „Dann spielen wir sie jetzt.“ nach „Noch nicht.“                                                                                                                 | „Und dann spielen wir sie.“                                                                                           |
+| Z   | Diner-Abend                                                                       | zeigt auf die Pommes, bevor sie kommen                                                                                                                           | auf die Musikbox                                                                                                      |
+| D   | Aufbruch, Mama                                                                    | „Am Fluss“ ohne Fluss; Matten doppelt                                                                                                                            | „Es gibt sogar Matten.“, „Mit Juno. Gut.“                                                                             |
+| T   | Coach nach Bronze                                                                 | „Noch einmal, wenn du willst?“ ohne Wahl                                                                                                                         | „Um eine bessere spielen wir, wann du willst.“                                                                        |
+| D,V | Dime                                                                              | stellte sich nach „Nicht jetzt“ neu vor                                                                                                                          | „Da bist du ja wieder. Die Uhr steht noch.“                                                                           |
+| D   | Slick nach Niederlage                                                             | Applaus vom Sonntag bei jedem Ansprechen                                                                                                                         | einmal                                                                                                                |
+| V   | Mama, „Den Zettel umdrehen“                                                       | „Sie hat nicht gesagt, dass du nicht hindarfst.“; Ambrose zitiert „Turnier“                                                                                      | „Nein zum Zettel, denkst du. Nein zum Turnier.“; „Nicht zum Turnier, sagst du.“                                       |
+| D   | Harlan, Antwort „Nicken“                                                          | sein Satz fehlte, die nächste Wahl antwortete ins Leere                                                                                                          | Satz in beiden Zweigen                                                                                                |
+| D   | Oma Ruth, „Noch bleiben“                                                          | Wahlen ohne Zeile davor                                                                                                                                          | „Der Abendbus fährt gleich. Zeig ihr das Foto.“                                                                       |
+| Z   | Ambrose an der Bahnhofsuhr                                                        | „Ich war einmal jünger als du jetzt“ (er war zwanzig)                                                                                                            | „Ich war auch einmal jung. Das ist lange her.“                                                                        |
+| Z,D | Ray, Big Joe (Feier abgelehnt), „Kluger Mensch“, Treidelpfad-Zug                  | voller Pavillon; Müdigkeit ohne Feier; Gus' Satz; Zug am Treidelpfad                                                                                             | eigene Zeilen; „Zum Bahnhof und mit dem Zug nach Hause“                                                               |
+| Z,V | Ward: Heft „Ein andermal.“                                                        | später: Ambrose überrascht von b5, Feuerwerk Wochen zu spät                                                                                                      | eigene Zeilen nach Victors Seite und nach dem Fest                                                                    |
+| Z   | Turnierleiterin nach „Gleich.“ vor dem Finale                                     | „Victor wartet im Gang“, er sitzt schon auf der Bühne                                                                                                            | „Victor sitzt schon im Lichtkreis.“                                                                                   |
+| Z   | Epilog-Zettel                                                                     | „steile Schrift“ (Margarets)                                                                                                                                     | „schräge Schrift“ (Ambroses)                                                                                          |
+| D   | Kreidenacht, Bell, Ward, Greta, Mo, Fußnote am Lagerfeuer                         | doppelte Sätze und Beschreibungen                                                                                                                                | eigene Zeilen                                                                                                         |
+| Z   | Silicon Bay: „nach dem Turnier“, Rosie, Dash, Okoro, Delphine, Céleste, Remy, Dot | Turnier, das es nicht gibt; Akademie-Sätze nach der Nadel; Delphine spricht vor der Vorstellung; Céleste kommt herein, obwohl sie da sitzt; Batiste ohne Treffen | passende Zeilen                                                                                                       |
+| R   | rund 25 Zeilen mit drei oder mehr Sätzen                                          |                                                                                                                                                                  | geteilt oder gekürzt                                                                                                  |
+
+### Nachgezogen (20.11.2026, dritter Teil)
+
+Muster „Nach ‚Nicht jetzt‘ spielt die Szene beim nächsten Ansprechen ganz von vorn“: Die App
+beginnt jeden Dialog neu, deshalb hat jede Stelle eine eigene VAR bekommen. Beim zweiten Mal kommt
+eine kurze Zeile, dann gleich die Wahl:
+
+- London (Läuferzug am Schachtisch, Telegraf nach „Noch bleiben“)
+- Bahnhofsuhr in Riverton
+- Big Joes Clubkampf-Ansage („Zum ersten Mal sieht sie dir zu“)
+- Nova in Runde 3
+- Victors Taschen vor dem Finale
+- Seilbahn-Wärter („eben“)
+- Mabels Lob nach Set 1
+- Miss Odiles Hallenszene
+- Victors Speicherstift
+- Célestes Angebot
+- Miras Clubkampf
+
+Weitere Stellen:
+
+- Juno spricht nach ihrer Abreise an der Raststätte nicht mehr (die Funde als Gedanke von {held}).
+- Mama ist auf späteren Überfahrten nicht an Bord.
+- „Netze“: Ambroses „Zum ersten Mal riecht etwas“ nur beim ersten Besuch.
+- Lin nach abgebrochener Revanche ohne zweite Einleitungszeile.
+- Mo: „Victor sagt, er kommt wieder.“ statt „jeden Donnerstag“ in derselben Nacht.
+- Junos Rad im Alltag.
+- Akt 1:
+  - Hector („drei Wochen“ nur nach der Frage)
+  - erste Nacht („Warum darf niemand …“)
+  - Quinns Karte
+  - Güterzug „Wohin?“
+  - Carla („Gewonnen“ nicht nach Remis)
+  - Mamas Alltag vor der ersten Nacht
+  - „Lehrling“ am Flohmarkt
+  - Lily
+
+### Entscheidungen und Rest (20.11.2026, nach Rückmeldung des Hauptchats)
+
+- **Werkbank-Erinnerung** (port-delacroix-werkstatt.werkbank_flashback): „zum ersten Mal seit
+  fünf Tagen“ steht jetzt nur noch, wenn Ambrose vorher nicht im Clubkampf sprach. Nach „Zurück in
+  die Gegenwart“ kommt beim nächsten Mal nur „Die Werkstatt wird wieder golden.“ und dann die Wahl.
+- **Bus Cedar Creek → Maple Falls am Freitag:** Die Story-Bibel (Ablauf Akt 1) sagt: Die beiden
+  gehen am Freitag zu Fuß voraus und übernachten im Lesesaal, der Bus „bleibt für die Rückfahrt“.
+  Deshalb ist die Wahl „Nach Maple Falls fahren“ erst nach der Nacht im Lesesaal (oder nach dem
+  Ende von Akt 1) da. Vorher steht dort: „Heute fährt er ohne dich. Ihr seid die Vorhut.“
+- **Ghost Town, „Ich weiß.“:** Die Erzählung sagte danach „Bleib, sagst du trotzdem“ und überging
+  die Wahl. Jetzt: „Ihr seht beide auf die leere Straße. Keiner sagt das andere Wort.“ Ambroses
+  Antwort danach hängt an der Wahl: Bei „Bleib.“ bleibt „Ich bin froh, dass du es gesagt hast“,
+  sonst „Du hast mich nicht gebeten zu bleiben. Das ist das Freundlichste, was du tun konntest.“
+- **Kartenbau (mittel-4):** Mama vor dem Haus nach abgebrochener Einleitung, Mama in Ironwood in
+  der Kantine, Juno nach dem Aufbruch und nach dem Abschied, alles in figurenort_19-11.md. Der
+  Punkt „testteam_tor“ war kein Fehler, nur ein Artefakt der Simulation (der Dialog endet sofort,
+  wenn der Weg offen ist).
+
+### Zwei Sätze je Zeile in Akt 1 (Story-Bibel 5.1)
+
+Die Regel lautet: „Höchstens zwei Sätze je Zeile und etwa 140 Zeichen“. Eine Ausnahme für kurze
+Sätze kennt sie nicht. Deshalb sind in den Akt-1-Dateien alle 207 Sprechzeilen mit drei oder mehr
+Sätzen mechanisch geteilt. Betroffen sind maple-falls-_, ansehen-maple-falls, weg-maple-cedar,
+kuerbishof, cedar-creek-_ und weg-cedar-riverton.
+
+So wurde geteilt:
+
+- Satzgrenze ist ein Punkt, Ausrufe- oder Fragezeichen oder „…“ vor einem großen Anfangsbuchstaben,
+  außer nach Abkürzungen wie Mr., Mrs. oder Dr.
+- Je zwei Sätze bilden eine Zeile.
+- Sprecher und Stimmung stehen auf jeder neuen Zeile.
+- Musik, Klang und Bild stehen auf der ersten Zeile, die Pause auf der letzten.
+- Ausgelassen sind Erzählzeilen, Wahlen, Zeilen mit Bedingungen in geschweiften Klammern und
+  Zeilen mit Rede in Anführungszeichen. Sie kommen beim nächsten Lektorat dran, von Hand.
+
+Beispiel, Coach Delgado:
+
+- Vorher: „Zwei Partien hintereinander? Nicht in meinem Club. Fünf Minuten Pause, Fenster auf,
+  Wasser trinken.“
+- Nachher: „Zwei Partien hintereinander? Nicht in meinem Club.“ / „Fünf Minuten Pause, Fenster
+  auf, Wasser trinken.“
+
+### Zwei Sätze je Zeile in Akt 2 bis 4 und die Sonderfälle (20.11.2026)
+
+- **Sprechzeilen in Akt 2 bis 4:** 548 Zeilen, nach denselben Regeln wie in Akt 1.
+- **Erzählzeilen in allen Akten:** 252 Zeilen, nach denselben Regeln.
+- **Rede in „…“:** 35 Zeilen mechanisch. Geteilt wird nur an Satzgrenzen außerhalb der
+  Anführung; ganz zitierte Reden werden je zwei Sätze neu in „…“ gesetzt. Dazu 14 von Hand,
+  etwa Victors Nachrichten, der Seilbahn-Wärter, Hale am Telefon und Junos Tagebuch. In
+  weg-maple-cedar wandert der Klang der Turmuhr dabei auf die Zeile mit der Uhr.
+- **Bedingungen:** 18 Zeilen der Form `{Bedingung:A|B}` oder `{Bedingung: A}` sind jetzt Blöcke
+  mit geteilten Zeilen.
+- **Bewusst nicht geteilt:**
+  - rund 33 Schilder, Zettel und Inschriften („Betreten verboten. Musik erlaubt.“): Das ist ein
+    Schild und gehört auf eine Zeile.
+  - 76 Zufallszeilen `{~a|b|c}`: Ein Zweig über mehrere Zeilen bräuchte Mehrzeilen-Folgen, die die
+    Prüfwerkzeuge (inkfluss) nicht sicher lesen. Diese Zeilen haben meist drei kurze Sätze.
+- **Stichprobe im Browser** (Spielversion nach `npm run build`, Chromium, „Geräusche als Text“ an):
+  Coach Delgados Pause vor dem Clubkampf, sechs geteilte Zeilen.
+  - Die Trillerpfeife kommt genau mit „Zwei Partien hintereinander? Nicht in meinem Club.“.
+  - Die Musik wechselt erst mit der neuen Szene im Clubraum zu „Herzklopfen“, wie vorher.
+  - Junos Satz kommt in zwei Zeilen, der Sprechername steht auf beiden.
 
 ## Nur durch die Simulation, kein Textfehler
 

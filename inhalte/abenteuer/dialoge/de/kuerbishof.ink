@@ -19,7 +19,8 @@ VAR held = "Du"
 }
 ~ waltGetroffen = true
 Ein Mann mit Strohhut wischt sich die Hände an der Latzhose ab. #sprecher:erzaehler
-Walt Miller. Das Tor ist meistens zu, wegen der Kühe. Wer es aufbekommt, ist hier willkommen. #sprecher:walt #stimmung:laechelt
+Walt Miller. Das Tor ist meistens zu, wegen der Kühe. #sprecher:walt #stimmung:laechelt
+Wer es aufbekommt, ist hier willkommen. #sprecher:walt #stimmung:laechelt
 -> END
 
 === clover ===
@@ -34,7 +35,8 @@ Ich bin Clover. Den Irrgarten im Mais hab ich selbst geschnitten, wie jedes Jahr
 
 === clover_irrgarten ===
 {irrgartenBestanden: -> END}
-An jeder Kreuzung hängt eine Stellung. Wer das Matt findet, weiß den Weg. Traust du dich? #sprecher:clover #stimmung:laechelt
+An jeder Kreuzung hängt eine Stellung. Wer das Matt findet, weiß den Weg. #sprecher:clover #stimmung:laechelt
+Traust du dich? #sprecher:clover #stimmung:laechelt
 + [Ja, rein in den Mais.]
     ~ beginneAufgaben("kuerbishof.irrgarten")
     -> END
@@ -44,7 +46,8 @@ An jeder Kreuzung hängt eine Stellung. Wer das Matt findet, weiß den Weg. Trau
 
 === oma_miller ===
 {omaGetroffen:
-    Früher kamen zum Herbstfest die Leute mit Pferdewagen. Heute mit dem Auto. Der Kuchen ist derselbe. #sprecher:omaMiller #stimmung:laechelt
+    Früher kamen zum Herbstfest die Leute mit Pferdewagen. Heute mit dem Auto. #sprecher:omaMiller #stimmung:laechelt
+    Der Kuchen ist derselbe. #sprecher:omaMiller #stimmung:laechelt
     -> END
 }
 ~ omaGetroffen = true
@@ -64,13 +67,16 @@ Die Vogelscheuche trägt ein Schild um den Hals: „Morphy“. Die Krähen sitze
     Die Waage am Hofladen ist frei. Die blaue Schleife hängt jetzt bei dir. #sprecher:erzaehler
     -> END
 }
-Drei Kürbisse liegen neben der Waage. Welcher ist am schwersten? Wer richtig rät, bekommt eine Schleife. #sprecher:omaMiller #stimmung:laechelt
+Drei Kürbisse liegen neben der Waage. Welcher ist am schwersten? #sprecher:omaMiller #stimmung:laechelt
+Wer richtig rät, bekommt eine Schleife. #sprecher:omaMiller #stimmung:laechelt
 + [Der große, helle.]
-    Groß ist nicht schwer. Der ist innen fast hohl. Versuch es nächstes Mal wieder. #sprecher:omaMiller #stimmung:laechelt
+    Groß ist nicht schwer. Der ist innen fast hohl. #sprecher:omaMiller #stimmung:laechelt
+    Versuch es nächstes Mal wieder. #sprecher:omaMiller #stimmung:laechelt
     -> END
 + [Der kleine, dunkle.]
     ~ waageGeraten = true
-    Richtig! Klein, aber dicht. Wie ein Bauer kurz vor der Umwandlung. #sprecher:omaMiller #stimmung:laechelt
+    Richtig! Klein, aber dicht. #sprecher:omaMiller #stimmung:laechelt
+    Wie ein Bauer kurz vor der Umwandlung. #sprecher:omaMiller #stimmung:laechelt
     ~ gibFund("kuerbisschleife")
     -> END
 + [Der längliche.]

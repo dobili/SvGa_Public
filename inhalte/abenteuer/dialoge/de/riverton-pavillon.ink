@@ -19,6 +19,8 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+VAR slickNiederlageGesehen = false
+VAR odumMomentGesehen = false
 VAR held = "Du"
 VAR rivertonMontagGesehen = false
 VAR slickGetroffen = false
@@ -77,22 +79,29 @@ VAR revancheRiverton = false
 ~ slickGetroffen = true
 Steintische mit eingelassenen Brettern, glatt gespielt von sehr vielen Händen. An jedem schlagen zwei Leute auf die Uhren. #sprecher:erzaehler
 Mittendrin einer mit Kuriertasche, ein Bein über der Bank. Er spielt, ohne hinzusehen, und redet dabei. #sprecher:erzaehler
-Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. Schade um deinen Turm. #sprecher:slick #stimmung:froh
+Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. #sprecher:slick #stimmung:froh
+Schade um deinen Turm. #sprecher:slick #stimmung:froh
 Er schlägt auf die Uhr. Dann sieht er euch. #sprecher:erzaehler
 Kundschaft! #sprecher:slick #stimmung:lacht
-Slick. Eigentlich Marcus, aber so nennt mich keiner. Nicht mal meine Mutter. #sprecher:slick #stimmung:laechelt
+Slick. Eigentlich Marcus, aber so nennt mich keiner. #sprecher:slick #stimmung:laechelt
+Nicht mal meine Mutter. #sprecher:slick #stimmung:laechelt
 * [„Wir sind aus Maple Falls.“]
 * [Auf die Nadeln zeigen]
-- Maple Falls! Zwei Nadeln, schau an. Die von der Delgado und die von der alten Okafor. #sprecher:slick #stimmung:laechelt
-Die Okafor hat mich mal vierzig Züge lang warten lassen. Vierzig. Ich bin dabei gealtert. #sprecher:slick #stimmung:lacht
-Das hier ist der Parkclub. Seit 1953. Mr. Odum hat ihn gehabt, vierzig Jahre. Im Frühjahr hat er ihn mir gegeben, und dann ist er … #sprecher:slick #stimmung:nachdenklich #musik:aus #pause:2
+- Maple Falls! Zwei Nadeln, schau an. #sprecher:slick #stimmung:laechelt
+Die von der Delgado und die von der alten Okafor. #sprecher:slick #stimmung:laechelt
+Die Okafor hat mich mal vierzig Züge lang warten lassen. Vierzig. #sprecher:slick #stimmung:lacht
+Ich bin dabei gealtert. #sprecher:slick #stimmung:lacht
+Das hier ist der Parkclub. Seit 1953. Mr. Odum hat ihn gehabt, vierzig Jahre. #sprecher:slick #stimmung:nachdenklich #musik:aus
+Im Frühjahr hat er ihn mir gegeben, und dann ist er … #sprecher:slick #stimmung:nachdenklich #pause:2
 Na ja. Dann eben ich. #sprecher:slick #stimmung:bitter
 * [„Was passiert mit dem Pavillon?“]
 * [Hinaus auf die Wiese sehen]
-- Der Stadtrat hat die Wiese verpachtet. Den Pavillon auch. Trainingszentrum soll das werden. #sprecher:slick #stimmung:bitter #musik:karte
+- Der Stadtrat hat die Wiese verpachtet. Den Pavillon auch. #sprecher:slick #stimmung:bitter #musik:karte
+Trainingszentrum soll das werden. #sprecher:slick #stimmung:bitter
 Sie haben uns den Pavillon gelassen. Bis Sonntag. #sprecher:slick #stimmung:bitter
 Sonntag ist das letzte Spiel. Wer spielt es? #sprecher:tamsin #stimmung:nachdenklich
-Na, wer wohl. Wenn schon Schluss, dann mit Gästen. Vorher fragen dich Tamsin und Ray ab. #sprecher:slick #stimmung:laechelt
+Na, wer wohl. Wenn schon Schluss, dann mit Gästen. #sprecher:slick #stimmung:laechelt
+Vorher fragen dich Tamsin und Ray ab. #sprecher:slick #stimmung:laechelt
 Ambrose steht nicht neben dir. Er steht am Rand des Pavillons, wo das Dach aufhört, und sieht hinaus auf die Tische. #sprecher:erzaehler
 -> END
 
@@ -100,7 +109,8 @@ Ambrose steht nicht neben dir. Er steht am Rand des Pavillons, wo das Dach aufh�
 {not reiheTamsinBestanden:
     Erst Tamsin, dann Ray. Tamsin zählt die Sekunden, Ray die Haltestellen. #sprecher:slick #stimmung:laechelt
 - else:
-    Tamsin hast du geschafft. Jetzt Ray. Er ist langsam, aber er erwischt jeden. #sprecher:slick #stimmung:laechelt
+    Tamsin hast du geschafft. Jetzt Ray. #sprecher:slick #stimmung:laechelt
+    Er ist langsam, aber er erwischt jeden. #sprecher:slick #stimmung:laechelt
 }
 -> END
 
@@ -116,16 +126,20 @@ Sonntag ist das letzte Spiel. Bist du so weit? #sprecher:slick #stimmung:nachden
     -> END
 - Am Sonntag regnet es richtig. Es trommelt so laut aufs Blechdach, dass man schreien muss. #sprecher:erzaehler #musik:riverton.clubkampf
 Trotzdem sind alle gekommen, unter Schirmen in drei Reihen. Pops, Mr. Harlan, Mrs. Albescu, Mr. Quinn zwischen zwei Zügen. #sprecher:erzaehler
-Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. Er redet kaum. #sprecher:erzaehler
-Blitz? Drei Minuten. Wie es sich gehört. #sprecher:slick #stimmung:laechelt
+Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. #sprecher:erzaehler
+Er redet kaum. #sprecher:erzaehler
+Blitz? Drei Minuten. #sprecher:slick #stimmung:laechelt
+Wie es sich gehört. #sprecher:slick #stimmung:laechelt
 Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose #stimmung:nachdenklich
 * [„Fünfundvierzig Minuten.“]
     Ein Murmeln geht durch die Schirme. Tamsin verdreht die Augen. #sprecher:erzaehler
     Slick grinst, schief, mit einem Mundwinkel. #sprecher:erzaehler
     Die Okafor hat dich verdorben. #sprecher:slick #stimmung:lacht
-    Gut. Dann eben lang. Soll ja was davon bleiben. #sprecher:slick #stimmung:laechelt
+    Gut. Dann eben lang. #sprecher:slick #stimmung:laechelt
+    Soll ja was davon bleiben. #sprecher:slick #stimmung:laechelt
 * [„Blitz. Drei Minuten.“]
-    Mutig. Oder dumm. Wir finden es raus. #sprecher:slick #stimmung:froh
+    Mutig. Oder dumm. #sprecher:slick #stimmung:froh
+    Wir finden es raus. #sprecher:slick #stimmung:froh
 - Er beugt sich vor, und einen Moment ist er wieder der Slick vom ersten Tag. #sprecher:erzaehler
 Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick #stimmung:nachdenklich
 ~ beginnePartie("riverton.clubkampf")
@@ -134,14 +148,20 @@ Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst d
 // Gutachten K2.10: Mr. Odums Satz als geführter Moment, mit der stehenden Hand (Partiemoment
 // schachGegeben in begegnungen.json).
 === clubkampf_odum ===
+// Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
+{odumMomentGesehen: -> END}
+~ odumMomentGesehen = true
 Slicks Hand bleibt in der Luft stehen, über dem Brett. #sprecher:erzaehler #pause:2
 Mr. Odum hat das immer gesagt. Marcus, du rennst nach vorn, und hinter dir brennt das Haus. #sprecher:slick #stimmung:nachdenklich
 Jedes Mal. Vierzehn Jahre lang. #sprecher:slick #stimmung:nachdenklich
 -> END
 
 === slick_nach_niederlage ===
-Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
-Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
+// Lektorat 19.11.2026: Der Applaus gehört zum Sonntag, nicht zu jedem späteren Ansprechen.
+{not slickNiederlageGesehen: Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler}
+~ slickNiederlageGesehen = true
+Gut gekämpft. Aber Riverton bleibt bei mir. #sprecher:slick #stimmung:laechelt
+Noch einmal, solange es den Pavillon gibt? #sprecher:slick #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -164,15 +184,18 @@ Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillo
 }
 ~ clubkampfRivertonBesprochen = true
 {ausgangRivertonClubkampf == "remis":
-    Remis. Das ist fair. Wir wussten es beide. #sprecher:slick #stimmung:laechelt
+    Remis. Das ist fair. #sprecher:slick #stimmung:laechelt
+    Wir wussten es beide. #sprecher:slick #stimmung:laechelt
 - else:
     Slick legt seinen König nicht um. Er nimmt ihn in die Hand und sieht ihn an. #sprecher:erzaehler #musik:aus #pause:2
 }
 Das war das letzte Spiel in diesem Pavillon. Gut, dass es ein richtiges war. #sprecher:slick #stimmung:ernst
-Applaus für Maple Falls! Na los! Der Eintritt war frei, also klatscht! #sprecher:slick #stimmung:lacht #klang:applaus_regen
+Applaus für Maple Falls! Na los! #sprecher:slick #stimmung:lacht #klang:applaus_regen
+Der Eintritt war frei, also klatscht! #sprecher:slick #stimmung:lacht
 Sie klatschen. Es klingt wie noch mehr Regen. #sprecher:erzaehler #klang:fanfare.riverton
 Er steckt dir die Nadel an, ein kleines Achteck aus grünem Blech mit einer Uhr darauf, und hält dich einen Moment an der Schulter. #sprecher:erzaehler
-Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
+Lang spielen. Ich. #sprecher:slick #stimmung:laechelt
+Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
 -> END
 
 === slick_alltag ===
@@ -192,13 +215,15 @@ Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick #stimmung:laechelt
 // Gutachten K2.8: der Montag als eigener Zustand; erst danach öffnet der Wohnwagen.
 ~ rivertonMontagGesehen = true
 Am Montag, nach der Schule, fahrt ihr noch einmal hin. Juno hat gesagt, man müsse es sehen. #sprecher:erzaehler #musik:aus
-Im Pavillon stehen Bildschirmtische. Vier Stück, im Kreis, weiß. Die Steintische sind weg. #sprecher:erzaehler #musik:konzern.flaeche
+Im Pavillon stehen Bildschirmtische. Vier Stück, im Kreis, weiß. #sprecher:erzaehler #musik:konzern.flaeche
+Die Steintische sind weg. #sprecher:erzaehler
 Auf dem Boden sieht man noch, wo sie standen: vier helle Flecken im Holz. #sprecher:erzaehler #pause:2
 Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kuriertasche. Ohne das Reden sieht er jünger aus. #sprecher:erzaehler
 Die haben sie mir gelassen. Einer von den Arbeitern hat weggeguckt. #sprecher:slick #stimmung:laechelt
 * [Warten]
 - Er zieht den Riemen fest. #sprecher:erzaehler
-Dann spielen wir eben auf der Treppe unter der alten Steinbrücke. Da hat man ein Dach. Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
+Dann spielen wir eben auf der Treppe unter der alten Steinbrücke. Da hat man ein Dach. #sprecher:slick #stimmung:laechelt
+Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
 -> slick_alltag_wahl
 
 === slick_alltag_wahl ===
@@ -225,7 +250,8 @@ Dann spielen wir eben auf der Treppe unter der alten Steinbrücke. Da hat man ei
 ~ tamsinGetroffen = true
 Ein Mädchen mit Schachuhr unter dem Arm zählt laut rückwärts, während Slick zieht. #sprecher:erzaehler
 Fünf, vier, drei, zwei – Gabel! Siehst du? #sprecher:tamsin #stimmung:froh
-Nicht nachdenken. Gucken. Ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
+Nicht nachdenken. Gucken. #sprecher:tamsin #stimmung:laechelt
+Ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
 -> tamsin_reihe
 
 === tamsin_reihe ===
@@ -249,7 +275,8 @@ Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin
     {clubkampfRivertonBesprochen:
         Okay. Die beiden spielen jetzt überall, wo eine Stufe frei ist. #sprecher:tamsin #stimmung:nachdenklich
     - else:
-        Okay. Aber verpass es nicht. Die beiden spielen nicht mehr lange hier. #sprecher:tamsin #stimmung:nachdenklich
+        Okay. Aber verpass es nicht. #sprecher:tamsin #stimmung:nachdenklich
+        Die beiden spielen nicht mehr lange hier. #sprecher:tamsin #stimmung:nachdenklich
     }
     -> END
 
@@ -280,7 +307,8 @@ Hast du nicht von mir. #sprecher:tamsin #stimmung:laechelt
 // Kapitel 19, Schluss: Eli am Bildschirmtisch in der Dämmerung.
 ~ tamsinEliErzaehlt = true
 {londonNachgespraechGesehen:Draußen ist es längst dunkel.|Draußen wird es dunkel.} Die sechs Tische leuchten weiter, weiß und geduldig. An einem sitzt ein Junge, allein. #sprecher:erzaehler #musik:konzern.flaeche
-Das ist Eli. Der war früher hier. Der redet nicht gern. #sprecher:tamsin #stimmung:nachdenklich
+Das ist Eli. Der war früher hier. #sprecher:tamsin #stimmung:nachdenklich
+Der redet nicht gern. #sprecher:tamsin #stimmung:nachdenklich
 Sie zuckt die Schultern, aber sie sieht nicht weg. #sprecher:erzaehler
 Der Tisch redet auch nicht. Vielleicht deshalb. #sprecher:tamsin #stimmung:nachdenklich
 -> END
@@ -298,7 +326,8 @@ Der Tisch redet auch nicht. Vielleicht deshalb. #sprecher:tamsin #stimmung:nachd
 === ray_erstes_treffen ===
 ~ rayGetroffen = true
 Ein älterer Herr mit Busfahrermütze stellt geduldig die Figuren auf. #sprecher:erzaehler
-Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt. Beides mit Fahrplan. #sprecher:ray #stimmung:laechelt
+Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt. #sprecher:ray #stimmung:laechelt
+Beides mit Fahrplan. #sprecher:ray #stimmung:laechelt
 {reiheTamsinBestanden: -> ray_reihe}
 -> ray_erst_tamsin
 
@@ -308,7 +337,8 @@ Erst Tamsin, dann ich. Ein Bus fährt seine Haltestellen auch der Reihe nach an.
 
 === ray_reihe ===
 // Kapitel 19: die Mulde im Stein (Neu gegenüber der Story-Bibel); kehrt in Kapitel 22 wieder.
-Zwei Haltestellen, ein Bus. Der Gegner kann nur an einer aussteigen. Also fährst du zu der anderen. #sprecher:ray #stimmung:laechelt
+Zwei Haltestellen, ein Bus. Der Gegner kann nur an einer aussteigen. #sprecher:ray #stimmung:laechelt
+Also fährst du zu der anderen. #sprecher:ray #stimmung:laechelt
 {not moldeGefuehlt: -> ray_mulde}
 -> ray_reihe_wahl
 
@@ -316,7 +346,8 @@ Zwei Haltestellen, ein Bus. Der Gegner kann nur an einer aussteigen. Also fährs
 ~ moldeGefuehlt = true
 Er legt seine große Hand auf den Stein. #sprecher:erzaehler
 Hier hab ich neunundsechzig gegen Odum verloren. Und zweiundsiebzig. #sprecher:ray #stimmung:laechelt
-Und jedes Jahr danach. Der Stein ist hier dünner als da drüben. Fühl mal. #sprecher:ray #stimmung:laechelt
+Und jedes Jahr danach. Der Stein ist hier dünner als da drüben. #sprecher:ray #stimmung:laechelt
+Fühl mal. #sprecher:ray #stimmung:laechelt
 * [Die Hand auf den Stein legen]
 * [Nicken]
     Du nickst. Dann legst du die Hand doch hin. #sprecher:erzaehler
@@ -369,7 +400,7 @@ Auf dem Geländer stehen Limonadengläser in einer Reihe, jedes mit einem Zettel
 // Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Ray, sonst wie bisher.
 === ray_reihe_danach ===
 {not reiheRayBestanden: -> ray}
-Jede Aufgabe gelöst. Du hättest kommen sollen, als der Pavillon noch voll war. #sprecher:ray #stimmung:laechelt
+Jede Aufgabe gelöst. Mr. Odum hätte dir einen Dosenpokal gebaut. #sprecher:ray #stimmung:laechelt
 Slick spielt um die Nadel. Er wartet schon auf dich. #sprecher:ray #stimmung:nachdenklich
 -> END
 
@@ -396,9 +427,11 @@ Hast du's gesehen? Er guckt nur nach vorn. #sprecher:tamsin #stimmung:nachdenkli
 - ausgangRivertonClubkampf == "sieg":
     Sieg, aber keine bessere Nadel. Unter der Brücke zählt trotzdem jeder Sieg. #sprecher:slick #stimmung:laechelt
 - ausgangRivertonClubkampf == "remis":
-    Remis. Die Treppe hat zugesehen und nichts gesagt. Deine Nadel bleibt. #sprecher:slick #stimmung:neutral
+    Remis. Die Treppe hat zugesehen und nichts gesagt. #sprecher:slick #stimmung:neutral
+    Deine Nadel bleibt. #sprecher:slick #stimmung:neutral
 - ausgangRivertonClubkampf == "niederlage":
-    Heute ich. Deine Nadel bleibt, wo sie ist. Komm wieder, wenn du willst. #sprecher:slick #stimmung:laechelt
+    Heute ich. Deine Nadel bleibt, wo sie ist. #sprecher:slick #stimmung:laechelt
+    Komm wieder, wenn du willst. #sprecher:slick #stimmung:laechelt
 - else:
     -> slick
 }

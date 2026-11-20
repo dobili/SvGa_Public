@@ -54,26 +54,32 @@ VAR wegCrossroadsPinewoodTafelVersucht = false
 // Züge sagen; Ambroses Thema ohne Begleitung.
 ~ gretaGetroffen = true
 ~ varianteBlindschachGelernt = true
-An einer Hütte aus Stämmen sitzen Wanderer mit staubigen Stiefeln. Sie haben kein Brett. Aber sie spielen. #sprecher:erzaehler #musik:aus
+An einer Hütte aus Stämmen sitzen Wanderer mit staubigen Stiefeln. Sie haben kein Brett. #sprecher:erzaehler #musik:aus
+Aber sie spielen. #sprecher:erzaehler
 Springer f3. #sprecher:greta #stimmung:nachdenklich
 d5. #sprecher:erzaehler
 Ein Mann sagt es, ohne die Augen zu öffnen. #sprecher:erzaehler
 Wo ist das Brett? #sprecher:juno #stimmung:ueberrascht
 Wer drei Wochen läuft, trägt kein Holz, das er nicht braucht. Das Brett ist da drin. #sprecher:greta #stimmung:laechelt
 Sie tippt sich an die Stirn. #sprecher:erzaehler
-Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Greta. Ich mach hier den Kaffee. #sprecher:greta #stimmung:laechelt
+Am ersten Tag sieht man nichts. Am dritten die Mitte. #sprecher:greta #stimmung:laechelt
+Nach einer Woche alles. Greta. #sprecher:greta #stimmung:laechelt
+Ich mach hier den Kaffee. #sprecher:greta #stimmung:laechelt
 Sie lässt dich mitspielen. Nach sechs Zügen weißt du nicht mehr, wo dein Läufer steht. #sprecher:erzaehler #musik:blindschach
 // Nach dem Abschied (abschiedGesehen) sieht Ambrose nicht mehr für {held}: {held} findet den Läufer selbst.
 {abschiedGesehen:
-    Du schließt die Augen. c4. Dort steht er, seit dem dritten Zug. #sprecher:erzaehler
+    Du schließt die Augen und spielst die Züge im Kopf zurück. c4. #sprecher:erzaehler
     -> ansage
 }
-c4. Er steht auf c4. Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt
+c4. Er steht auf c4. #sprecher:ambrose #stimmung:laechelt
+Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose #stimmung:laechelt
 Er hat die Augen geschlossen, die Hände auf dem Rücken. Sein Gesicht ist so ruhig, wie du es noch nie gesehen hast. #sprecher:erzaehler #musik:ambrose.still
 Zwölf Jahre habe ich Partien in Briefen gespielt. Ich bin mit der Stellung aufgestanden und mit ihr zu Bett gegangen. #sprecher:ambrose #stimmung:friedlich
-Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung. Im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
+Und danach, hundertsechzig Jahre lang, hatte ich nichts anderes mehr. Eine einzige Stellung. #sprecher:ambrose #stimmung:nachdenklich
+Im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich
 * [„Das klingt furchtbar.“]
-- Es war furchtbar. Aber es ist auch ein Zuhause. Dieses Sehen ohne Augen. #sprecher:ambrose #stimmung:nachdenklich
+- Es war furchtbar. Aber es ist auch ein Zuhause. #sprecher:ambrose #stimmung:nachdenklich
+Dieses Sehen ohne Augen. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe nicht gewusst, dass man es üben kann. Auf einem Wanderweg, zum Vergnügen. #sprecher:ambrose #stimmung:laechelt
 Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose #stimmung:laechelt
 -> ansage
@@ -83,7 +89,8 @@ Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose #stimmung:laechelt
 - Greta macht die Augen auf. #sprecher:erzaehler
 Der steht doch gar nicht … #sprecher:greta #stimmung:ueberrascht
 Ihre Lippen bewegen sich. #sprecher:erzaehler
-Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta #stimmung:laechelt
+Doch. Der steht da. #sprecher:greta #stimmung:laechelt
+Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta #stimmung:laechelt
 {abschiedGesehen: -> greta_angebot}
 * [„Ich hab einen Freund. Der sieht für mich.“]
 - Dann halt ihn fest. Solche findet man nicht oft. #sprecher:greta #stimmung:laechelt
@@ -96,7 +103,8 @@ Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #s
     Greta schenkt Kaffee ein. Die Wanderer sagen ihre Züge an, und du hörst mit geschlossenen Augen zu. #sprecher:erzaehler
     -> END
 }
-Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
+Dein Freund spielt doch, oder? Setzt euch auf die Bank. #sprecher:greta #stimmung:laechelt
+Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
 + [Blindschach gegen Ambrose]
     Die Figuren verschwinden. Nur die Züge bleiben. #sprecher:erzaehler
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
@@ -110,7 +118,9 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
 {ausgangWegCrossroadsPinewoodBlindschach:
 - "sieg": Gewonnen, blind! Die Wanderer da reden nur noch von dir. #sprecher:greta #stimmung:froh
 - "remis": Remis, blind. Das schaffen hier nicht viele. #sprecher:greta #stimmung:laechelt
-- else: Verloren, aber du hast bis zum Ende angesagt. Das zählt mehr als der Punkt. Suppe? #sprecher:greta #stimmung:laechelt
+- else:
+    Verloren, aber du hast bis zum Ende angesagt. Das zählt mehr als der Punkt. #sprecher:greta #stimmung:laechelt
+    Suppe? #sprecher:greta #stimmung:laechelt
 }
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
     {not abschiedGesehen:
@@ -121,7 +131,8 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
     -> END
 + [„Ich wandere weiter.“]
-    Gute Wanderung. Die Bären sind satt um diese Zeit. Meistens. #sprecher:greta #stimmung:lacht
+    Gute Wanderung. Die Bären sind satt um diese Zeit. #sprecher:greta #stimmung:lacht
+    Meistens. #sprecher:greta #stimmung:lacht
     -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -136,7 +147,8 @@ Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich 
 {wegCrossroadsPinewoodTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 An der Hüttenwand hängt eine Schiefertafel: „Drei Stellungen. Erst rechnen, dann ziehen. Wie beim Wandern.“ #sprecher:erzaehler
 {not abschiedGesehen:
-    Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {held}. #sprecher:ambrose #stimmung:nachdenklich
+    Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? #sprecher:ambrose #stimmung:nachdenklich
+    Rechne es zu Ende, {held}. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCrossroadsPinewood.tafel")
@@ -224,7 +236,8 @@ Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeichn
     In der Astgabel sitzt nur noch Moos. #sprecher:erzaehler
     -> END
 }
-In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fink aus Blech. Darunter steckt eine weiße Dame aus Buchsbaum. Unter ihrem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fink aus Blech. Darunter steckt eine weiße Dame aus Buchsbaum. #sprecher:erzaehler
+Unter ihrem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 {not abschiedGesehen:
     Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose #stimmung:laechelt
 }
@@ -253,5 +266,6 @@ An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, 
 === lebendschach_rueckmeldung ===
 {wegCrossroadsPinewoodLebendschachBestanden: -> ereignis_lebendschach}
 Die Weißen stehen ratlos auf dem Rasen, ein Bauer protestiert laut. #sprecher:erzaehler
-Noch nicht gewonnen. Die Kinder wollen gleich noch mal! Sag Bescheid, wenn du wieder kommandierst. #sprecher:ezra #stimmung:lacht
+Noch nicht gewonnen. Die Kinder wollen gleich noch mal! #sprecher:ezra #stimmung:lacht
+Sag Bescheid, wenn du wieder kommandierst. #sprecher:ezra #stimmung:lacht
 -> END

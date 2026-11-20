@@ -78,7 +78,8 @@ Vor dem Leuchtturm, weiß mit rotem Band, flickt {abeVorgestellt:Abe|ein Mann} e
     ~ abeVorgestellt = true
     Abe Lindgren. Ich pass auf den Turm auf, und der Turm passt auf die Schiffe auf. #sprecher:abe #stimmung:laechelt
 }
-König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe #stimmung:laechelt
+König der Hügel. Kennst du das? #sprecher:abe #stimmung:laechelt
+Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe #stimmung:laechelt
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe #stimmung:laechelt
 * [Eine Partie spielen]
 - Dein König läuft los, sobald er kann. Das hast du inzwischen gelernt. #sprecher:erzaehler
@@ -116,7 +117,8 @@ Im Wärterhaus liegt eine alte Linse aus dickem Glas, so groß wie ein Teller. #
     ~ abeVorgestellt = true
     Ein Mann mit Netznadel steht in der Tür. Abe Lindgren, ich pass hier auf den Turm auf. #sprecher:abe #stimmung:laechelt
 }
-Die hat hundert Schiffe heimgebracht. Nimm sie mit. Ich hab eine neue. #sprecher:abe #stimmung:laechelt
+Die hat hundert Schiffe heimgebracht. Nimm sie mit. #sprecher:abe #stimmung:laechelt
+Ich hab eine neue. #sprecher:abe #stimmung:laechelt
 ~ gibFund("leuchtturmlinse")
 -> END
 
@@ -129,7 +131,8 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 === weiter_leuchtturm ===
 ~ capitalZugang = fernpartieGespielt and novaBitteGehoert
 {not capitalZugang:
-    Der Wachmann schiebt einen Absperrbock vor den Uferweg. „Heute nur für Gemeldete. Morgen vielleicht.“ #sprecher:erzaehler
+    Der Wachmann schiebt einen Absperrbock vor den Uferweg. #sprecher:erzaehler
+    „Heute nur für Gemeldete. Morgen vielleicht.“ #sprecher:erzaehler
     Du denkst an Ghost Town. Und an Nova. #sprecher:erzaehler
 }
 -> END
@@ -166,13 +169,15 @@ An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst d
     -> END
 
 === weltschachtag_nochmal ===
-Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen. Noch eine Runde? #sprecher:abe #stimmung:laechelt
+Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen. #sprecher:abe #stimmung:laechelt
+Noch eine Runde? #sprecher:abe #stimmung:laechelt
 -> weltschachtag_angebot
 
 === weltschachtag_abschluss ===
 ~ weltschachtagErledigt = true
 Fünf Bretter, fünf Hände über dem Tisch. Alle klatschen, auch die, die verloren haben. #sprecher:erzaehler
-Und jetzt die Partie gegen die Welt. Ich spiele gegen alle hier, jeder stimmt über den nächsten Zug ab. Du darfst einmal vorschlagen. #sprecher:abe #stimmung:laechelt
+Und jetzt die Partie gegen die Welt. Ich spiele gegen alle hier, jeder stimmt über den nächsten Zug ab. #sprecher:abe #stimmung:laechelt
+Du darfst einmal vorschlagen. #sprecher:abe #stimmung:laechelt
 + [Den Springer ins Zentrum vorschlagen]
     -> weltschachtag_funk
 + [Die Rochade vorschlagen]
@@ -180,8 +185,10 @@ Und jetzt die Partie gegen die Welt. Ich spiele gegen alle hier, jeder stimmt ü
 
 === weltschachtag_funk ===
 ~ abeFunkpartie = true
-Das Publikum hebt die Hände. Dein Zug gewinnt die Abstimmung. Abe kratzt sich am Kopf und lächelt. #sprecher:erzaehler
-Gut gestimmt. Das geht ins Logbuch. Und ein Foto für dich, damit du den Tag nicht vergisst. #sprecher:abe #stimmung:laechelt
+Das Publikum hebt die Hände. Dein Zug gewinnt die Abstimmung. #sprecher:erzaehler
+Abe kratzt sich am Kopf und lächelt. #sprecher:erzaehler
+Gut gestimmt. Das geht ins Logbuch. #sprecher:abe #stimmung:laechelt
+Und ein Foto für dich, damit du den Tag nicht vergisst. #sprecher:abe #stimmung:laechelt
 ~ gibFund("fotoWeltschachtag")
 {not abschiedGesehen:
     So viele Menschen an einem Brett. So war es früher in den Cafés. #sprecher:ambrose #stimmung:friedlich
@@ -284,7 +291,8 @@ Odette Finch. Mein Wohnmobil heißt Gambit, und ich warte hier auf jemanden, der
 === odette_koenig ===
 ~ finchKoenigErhalten = true
 Alle fünfzehn! Du bist schneller als die letzten drei zusammen. #sprecher:odette #stimmung:ueberrascht
-Hier ist der weiße König. Den hatte ich die ganze Zeit in der Tasche. Jetzt stelle ich Schwarz auf. #sprecher:odette #stimmung:laechelt
+Hier ist der weiße König. Den hatte ich die ganze Zeit in der Tasche. #sprecher:odette #stimmung:laechelt
+Jetzt stelle ich Schwarz auf. #sprecher:odette #stimmung:laechelt
 ~ gibFund("finchKoenig")
 Weiß zieht und gewinnt. Finchs letzte Falle, und die älteste. #sprecher:odette #stimmung:nachdenklich
 + [Das Meisterproblem lösen]
@@ -295,7 +303,8 @@ Weiß zieht und gewinnt. Finchs letzte Falle, und die älteste. #sprecher:odette
     -> END
 
 === odette_nochmal ===
-Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh dir meine Dame an. #sprecher:odette #stimmung:laechelt
+Noch einmal? Weiß zieht und gewinnt. #sprecher:odette #stimmung:laechelt
+Sieh dir den Springer an, und dann sieh dir meine Dame an. #sprecher:odette #stimmung:laechelt
 + [Das Meisterproblem noch einmal versuchen]
     ~ beginnePartie("wegGhostCapital.meisterproblem")
     -> END
@@ -304,7 +313,8 @@ Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh di
 
 === odette_geloest ===
 ~ finchErledigt = true
-Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn Schwarze. #sprecher:odette #stimmung:laechelt
+Gelöst! Dann gehört der Satz dir. #sprecher:odette #stimmung:laechelt
+Finchs Buchsbaum, sechzehn Weiße, sechzehn Schwarze. #sprecher:odette #stimmung:laechelt
 ~ gibFund("finchsBuchsbaum")
 Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette #stimmung:laechelt
 ~ zeigeVorfuehrung("finchFalle")
@@ -331,16 +341,19 @@ Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris 
 === wanderer_erstes ===
 ~ wandererGetroffen = true
 Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. #sprecher:erzaehler
-Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir eines genommen. Dreizehn fehlen mir. #sprecher:wanderer #stimmung:nachdenklich
+Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir eines genommen. #sprecher:wanderer #stimmung:nachdenklich
+Dreizehn fehlen mir. #sprecher:wanderer #stimmung:nachdenklich
 -> END
 
 === wanderer_seiten ===
 {not wandererGetroffen: Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. Dann sieht er, was du in der Hand hast. #sprecher:erzaehler}
 ~ wandererGetroffen = true
 ~ wandererSeitenZurueck = buchseiten
-Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
+Du hast meine Seiten! Warte, ich streiche sie glatt. #sprecher:wanderer #stimmung:ueberrascht
+Jede einzelne. #sprecher:wanderer #stimmung:ueberrascht
 {buchseiten >= 13:
-    Alle dreizehn. Jetzt lasse ich sie binden. Komm mich auf dem Vorplatz der Capital Arena besuchen. #sprecher:wanderer #stimmung:laechelt
+    Alle dreizehn. Jetzt lasse ich sie binden. #sprecher:wanderer #stimmung:laechelt
+    Komm mich auf dem Vorplatz der Capital Arena besuchen. #sprecher:wanderer #stimmung:laechelt
 - else:
     {buchseiten} von dreizehn. Der Rest liegt noch irgendwo zwischen hier und Maple Falls. #sprecher:wanderer #stimmung:laechelt
 }

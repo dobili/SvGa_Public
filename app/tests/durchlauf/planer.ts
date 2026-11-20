@@ -199,14 +199,18 @@ export class Planer {
       .sort((x, y) => y.q.angenommen.localeCompare(x.q.angenommen));
     // Beim Rest zuerst der Beginn der nächsten Hauptquest (die Geschichte geht weiter), dann die
     // Nebenquests: Sonst lief der Spieler nach jedem Aktende für Nebenquests weit zurück.
-    const angaben: { a: Zielangabe; grund: string }[] =
-      art === "rest" ? this.naechsteHauptquests(stand) : [];
+    // Anfänge, die in der Geschichte erst später dran sind (der Epilog in Maple Falls), kommen
+    // nach den laufenden Nebenquests: Sonst lief der Spieler zum Epilog, während die Hauptquest
+    // auf eine Nebenquest wartete (Mira auf den Brief von Mr. Okoro, 20.11.2026).
+    const anfaenge = art === "rest" ? this.naechsteHauptquests(stand) : [];
+    const angaben: { a: Zielangabe; grund: string }[] = anfaenge.filter((h) => !h.spaeter);
     for (const { q, d } of laufend) {
       const schritt = d?.schritte[q.schritt] as Schritt | undefined;
       const a =
         schritt && (d?.haupt === true) === (art === "haupt") ? zielangabe(schritt, daten) : null;
       if (a) angaben.push({ a, grund: art === "haupt" ? "Zielhinweis" : "Zielhinweis Nebenquest" });
     }
+    angaben.push(...anfaenge.filter((h) => h.spaeter));
     if (art === "haupt" && laufend.length === 0) {
       // Lücke zwischen zwei Quests: das Ziel aus „Was jetzt?“ (wie im Spiel).
       angaben.push(...zielangaben(stand, daten).map((a) => ({ a, grund: "Zielhinweis" })));
@@ -256,7 +260,9 @@ export class Planer {
    * der Gebiete am weitesten vorn liegt, aber nicht hinter dem Beginn der zuletzt begonnenen
    * (der Epilog beginnt wieder in Maple Falls und kommt deshalb zuletzt).
    */
-  private naechsteHauptquests(stand: Abenteuerstand): { a: Zielangabe; grund: string }[] {
+  private naechsteHauptquests(
+    stand: Abenteuerstand,
+  ): { a: Zielangabe; grund: string; spaeter: boolean }[] {
     const daten = this.daten as unknown as Parameters<typeof zielangaben>[1];
     const rang = (q: Spieldaten["quests"][number]) => {
       const schritt = { text: "", ereignis: q.start } as Parameters<typeof zielangabe>[0];
@@ -280,7 +286,9 @@ export class Planer {
       Number(wartet(x)) - Number(wartet(y)) || x.i - y.i || x.nr - y.nr;
     return [...offen]
       .sort(ordnung)
-      .flatMap((h) => (h.a ? [{ a: h.a, grund: `Beginn von ${h.q.kennung}` }] : []));
+      .flatMap((h) =>
+        h.a ? [{ a: h.a, grund: `Beginn von ${h.q.kennung}`, spaeter: wartet(h) }] : [],
+      );
   }
 
   /** Dinge einer Karte, die der Spieler anfassen kann (keine Übergänge, kein Start). */

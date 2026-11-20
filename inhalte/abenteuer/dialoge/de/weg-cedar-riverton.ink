@@ -57,6 +57,8 @@ VAR testteamWaldGesehen = false
 VAR testteamWaldDurch = false
 VAR testteamWaldSpielt = false
 VAR testteamWaldNiederlagen = 0
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegCedarRivertonTafelVersucht = false
 
 // ---------------------------------------------------------------- Mrs. Fenwick
 
@@ -82,6 +84,9 @@ Das weiß jeder. Bis er angreift. #sprecher:fenwick #stimmung:laechelt
     Auf der Tafel am Wegweiser steht in Kreide: „Gelöst! Gute Reise.“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegCedarRivertonTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
 {not abschiedGesehen:
     Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose #stimmung:nachdenklich

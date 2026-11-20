@@ -9,7 +9,7 @@ Statisten und Tieren, eingebettet in einen React-Rahmen. Der Code liegt in
 1. **`Oberwelt.tsx`** ist der React-Rahmen: Steuerkreuz, Kopfleiste, Dialogfenster, Tagebuch,
    Meldungen, Ergebniskarten und der Rückweg aus Partie und Aufgabenrunde. Die Logik steckt in
    Hooks (`useWeltladen`, `usePartiestart`, `useAufgabenrunde`, `useDialogende`, `useBuehne`,
-   `useZielhinweis`).
+   `useZielhinweis`, `useAusloeser` für Auslöser, Aktionsknopf und Sprechblasen der Statisten).
 2. **`kern.ts`** hält den gemeinsamen Kern dieser Hooks: Spielstand, geladene Welt, das laufende
    Phaser-Spiel, Meldungen, Questereignisse, Kartenwechsel und Tönung. Meldungen, die in einem
    offenen Dialog entstehen („Neu im Tagebuch …“, Funde), warten in **`meldungsstau.ts`** und

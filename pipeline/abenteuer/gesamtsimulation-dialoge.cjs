@@ -188,6 +188,8 @@ function spieleAb(welt, st, s, datei, knoten) {
       while (s.canContinue) {
         const text = s.Continue();
         if (text.trim()) st.folgen.zeilen += 1;
+        // Endet das Gespräch mit einer Frage ohne Wahl? (rueckmeldung.cjs: „Noch einmal?“ ohne Wahl)
+        if (text.trim()) st.folgen.offeneFrage = text.trim().endsWith("?") ? text.trim() : "";
         st.leser?.zeile(text, s.currentTags);
         meldeNeue();
         // Nur, solange noch etwas folgt: Nach der letzten Zeile endet der Dialog in der App sofort,
@@ -197,6 +199,7 @@ function spieleAb(welt, st, s, datei, knoten) {
       }
       if (!s.currentChoices.length) return null;
       st.folgen.wahlen += 1;
+      st.folgen.offeneFrage = "";
       s.ChooseChoiceIndex(waehle(st, s.currentChoices));
     }
   } catch (e) {
@@ -235,8 +238,17 @@ function spielePartie(welt, st, b) {
   return a;
 }
 
+/** Wie die App (regeln/dialogvariablen.ts): Nach jeder gespielten Runde gilt sie als versucht. */
+function setzeVersucht(st, k) {
+  const teile = k.split(".");
+  const name = teile[teile.length - 1];
+  st.vars[name + "Versucht"] = true;
+  st.vars[teile.slice(0, -1).join("") + gross(name) + "Versucht"] = true;
+}
+
 function spieleRunde(welt, st, r) {
   const n = (st.runden[r] = (st.runden[r] || 0) + 1);
+  setzeVersucht(st, r);
   if (st.chaos ? !st.chaos.bestanden(r) : n < 2) return "nicht bestanden";
   const teile = r.split("."),
     name = teile.pop();
@@ -256,6 +268,7 @@ function spieleRunde(welt, st, r) {
 function spielePartieform(welt, st, k) {
   const n = (st.runden[k] = (st.runden[k] || 0) + 1);
   const bestanden = !(st.chaos ? !st.chaos.bestanden(k) : n < 2);
+  setzeVersucht(st, k);
   // Simultan: Die App setzt nach jedem Brett dessen Ausgang (ausgang…); hier alle auf einmal.
   for (const b of welt.simultanBretter[k] || [])
     st.vars["ausgang" + variablenname(b)] = bestanden ? "sieg" : "niederlage";
@@ -315,6 +328,8 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt, tiefe = 0) {
     besucht: r.besucht || [],
     // Startet die Rückmeldung selbst ohne Wahl eine neue Folge? (Schleife, rueckmeldung.cjs)
     neustartOhneWahl: Boolean((r.partie || r.runde || r.partieform) && !r.wahlen),
+    // Die letzte Zeile, wenn sie eine Frage ist und keine Wahl mehr folgte (sonst leer).
+    offeneFrage: r.offeneFrage || "",
   });
   wendeFolgenAn(welt, st, r, null, reiseErlaubt, tiefe + 1);
 }

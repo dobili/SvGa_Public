@@ -370,6 +370,7 @@
     },
     {
       "kennung": "summitCity.erinnerungHastings",
+      "danach": "summit-city-huette.hastings_danach",
       "ort": "summitCity",
       "steller": "summitCity.ward",
       "reihe": false,

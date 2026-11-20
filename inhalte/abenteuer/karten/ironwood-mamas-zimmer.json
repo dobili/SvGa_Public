@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 29,
  "layers": [
   {
    "id": 1,
@@ -679,17 +679,6 @@
     },
     {
      "id": 6,
-     "name": "mama",
-     "type": "figur",
-     "x": 176,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 7,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 64,
@@ -712,7 +701,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 7,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 64,
@@ -735,7 +724,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 8,
      "name": "mf8KuehlschrankWeiss",
      "type": "moebel",
      "x": 16,
@@ -758,7 +747,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 9,
      "name": "mf8Herd",
      "type": "moebel",
      "x": 32,
@@ -781,7 +770,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 10,
      "name": "iw8Theke4",
      "type": "moebel",
      "x": 48,
@@ -804,7 +793,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 11,
      "name": "mf5Spuele",
      "type": "moebel",
      "x": 64,
@@ -827,7 +816,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "wzFenster",
      "type": "moebel",
      "x": 64,
@@ -850,7 +839,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 13,
      "name": "mf3Rundtisch",
      "type": "moebel",
      "x": 48,
@@ -873,7 +862,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 56,
@@ -896,7 +885,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 56,
@@ -919,7 +908,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 96,
@@ -942,7 +931,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "mf8Sideboard",
      "type": "moebel",
      "x": 16,
@@ -965,7 +954,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 18,
      "name": "mf7Obstkorb",
      "type": "moebel",
      "x": 56,
@@ -988,7 +977,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 19,
      "name": "wzFenster",
      "type": "moebel",
      "x": 128,
@@ -1011,7 +1000,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "iw5BettLila",
      "type": "moebel",
      "x": 128,
@@ -1034,7 +1023,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "iw8Partieformular",
      "type": "moebel",
      "x": 160,
@@ -1057,7 +1046,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 176,
@@ -1080,7 +1069,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "mf14SchreibtischLeer",
      "type": "moebel",
      "x": 176,
@@ -1103,7 +1092,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 184,
@@ -1126,7 +1115,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 192,
@@ -1149,7 +1138,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "mf7TeppichRund",
      "type": "moebel",
      "x": 144,
@@ -1172,7 +1161,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 128,
@@ -1195,7 +1184,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "iw17Garderobenschrank",
      "type": "moebel",
      "x": 16,

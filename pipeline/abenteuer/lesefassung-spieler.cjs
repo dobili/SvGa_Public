@@ -160,14 +160,16 @@ function entscheidungen(geschafft, schreibe) {
  * ein Spieler, der beim zweiten Gespräch die andere Frage stellt oder beim Rätsel die nächste Lösung
  * versucht). Aufschieben kommt erst, wenn nichts Inhaltliches da ist, eine Revanche gegen einen
  * schon besiegten Gegner (`revanchen`, gelernt in `merkeRevanche`) erst ganz zuletzt.
- * Eingaben: `merker` ({ zaehler, revanchen, erstwahl }), `datei`, `antworten` (Texte).
+ * Eingaben: `merker` ({ zaehler, revanchen, erstwahl }), `datei`, `antworten` (Texte), `beginn`
+ * (Startknoten des Gesprächs: Revanchen gelten je Figur oder Eingang, nicht je Datei; sonst mied der
+ * Leser nach Mamas Partie in der Kantine auch Big Joes „Ich bin bereit.“, 20.11.2026).
  * Ausgabe: { index, erste }; `erste` sagt, ob diese Auswahl bisher immer so beantwortet wurde.
  * Beispiel: „Abgemacht.“ und „Ein andermal.“ (Skaterin Jo) → „Abgemacht.“; nach dem Sieg
  * „Revanche.“ und „Bis bald.“ → einmal „Revanche.“, danach „Bis bald.“.
  */
-function naechsteAntwort(merker, datei, antworten) {
+function naechsteAntwort(merker, datei, antworten, beginn = datei) {
   const alle = antworten.map((text, index) => ({ text, index }));
-  const neu = alle.filter((a) => !merker.revanchen.has(datei + "\n" + a.text));
+  const neu = alle.filter((a) => !merker.revanchen.has(beginn + "\n" + a.text));
   const inhaltlich = neu.filter((a) => !schiebtAuf(a.text));
   const moeglich = [inhaltlich, neu, alle].find((klasse) => klasse.length);
   const schluessel = datei + "\n" + antworten.join("\n");
@@ -180,7 +182,7 @@ function naechsteAntwort(merker, datei, antworten) {
 
 /**
  * Lernt Revanchen: Führte die letzte Antwort eines Dialogs in eine Partie oder Runde, die schon
- * (oft genug) gewonnen oder bestanden ist, gilt diese Antwort in dieser Datei künftig als Revanche.
+ * (oft genug) gewonnen oder bestanden ist, gilt diese Antwort in Gesprächen mit demselben Startknoten künftig als Revanche.
  * Warum: Ein Spieler gewinnt den Clubkampf einmal; die Simulation nähme „Revanche um eine bessere
  * Nadel?“ sonst bei jedem Gespräch, und die Lesefassung bestünde aus Wiederholungspartien.
  */
@@ -193,7 +195,7 @@ function merkeRevanche(merker, geschafft, dialog, folgen) {
     folgen.partieform && "runde:" + folgen.partieform,
   ].filter(Boolean);
   if (ziele.length && ziele.every((z) => geschafft.has(z)))
-    merker.revanchen.add(dialog.knoten.split(".")[0] + "\n" + wahl.wahl);
+    merker.revanchen.add(dialog.knoten + "\n" + wahl.wahl);
 }
 
 /** Ein neuer, noch leerer Eintrag der Mitschrift für den Dialog ab `knoten`. */
@@ -270,7 +272,12 @@ function neuerLeser(welt, st) {
     },
     waehle(antworten) {
       const datei = offen.knoten.split(".")[0];
-      const { index, erste } = naechsteAntwort(merker, datei, antworten);
+      const { index, erste } = naechsteAntwort(
+        merker,
+        datei,
+        antworten,
+        offen.knoten,
+      );
       // Kehrt dieselbe Auswahl im selben Dialog wieder (Schleife), ist die nächste Antwort normal.
       const schluessel = antworten.join("\n");
       if (!erste && !offen.auswahlen.has(schluessel) && offen.zweitAb === null)

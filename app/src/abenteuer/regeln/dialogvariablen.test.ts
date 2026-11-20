@@ -47,12 +47,18 @@ describe("Dialogvariablen aus Ergebnissen", () => {
     expect(variablenNachRunde("mapleFalls.reiheSam", true)).toEqual({
       reiheSamBestanden: true,
       mapleFallsReiheSamBestanden: true,
+      reiheSamVersucht: true,
+      mapleFallsReiheSamVersucht: true,
     });
     expect(variablenNachRunde("wegMapleCedar.tafel", true)).toMatchObject({
       wegMapleCedarTafelBestanden: true,
     });
     expect(variablenNachFund("schluessel")).toEqual({ gefundenSchluessel: true });
-    expect(variablenNachRunde("mapleFalls.reiheSam", false)).toEqual({});
+    // Auch ohne Bestehen gilt die Runde als versucht (Rätseltafeln reagieren auf den Fehlversuch).
+    expect(variablenNachRunde("wegMapleCedar.tafel", false)).toEqual({
+      tafelVersucht: true,
+      wegMapleCedarTafelVersucht: true,
+    });
   });
 
   it("merkt den ersten Besuch eines Ortes", () => {

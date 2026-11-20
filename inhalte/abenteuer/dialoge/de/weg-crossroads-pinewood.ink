@@ -37,6 +37,8 @@ VAR abschiedGesehen = false
 // Kapitel 54 (Roman): Ambrose sieht die Stellung der Fernpartie nicht mehr im Dunkeln.
 VAR esIstStillGesagt = false
 VAR baeumeGesehen = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegCrossroadsPinewoodTafelVersucht = false
 
 // ---------------------------------------------------------------- Greta und das Blindschach
 
@@ -112,7 +114,14 @@ Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
     -> END
 
 === greta_nach_partie ===
-{~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta #stimmung:laechelt
+// Je nach Ausgang (Lektorat mittel-1, 19.11.2026: vorher Zufallssätze, auch nach einer Niederlage).
+{ausgangWegCrossroadsPinewoodBlindschach:
+- "sieg": Gewonnen, blind! Die Wanderer da reden nur noch von dir. #sprecher:greta #stimmung:froh
+- "remis": Remis, blind. Das schaffen hier nicht viele. #sprecher:greta #stimmung:laechelt
+- else:
+    Verloren, aber du hast bis zum Ende angesagt. Das zählt mehr als der Punkt. #sprecher:greta #stimmung:laechelt
+    Suppe? #sprecher:greta #stimmung:laechelt
+}
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
     {not abschiedGesehen:
         Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
@@ -133,6 +142,9 @@ Ihr sagt die Züge, ich schreib mit. #sprecher:greta #stimmung:laechelt
     An der Hüttenwand steht mit Kohle: „Gelöst. Weiter so, Wanderer.“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegCrossroadsPinewoodTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 An der Hüttenwand hängt eine Schiefertafel: „Drei Stellungen. Erst rechnen, dann ziehen. Wie beim Wandern.“ #sprecher:erzaehler
 {not abschiedGesehen:
     Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? #sprecher:ambrose #stimmung:nachdenklich

@@ -191,7 +191,7 @@ Okay, okay. Du bist schneller, als du aussiehst, noch mal? #sprecher:nia #stimmu
 
 === nia_nach_niederlage ===
 Board tragen! War nur Spaß, noch eine Runde? #sprecher:nia #stimmung:lacht
-{faehrsteinGesehen and not abschiedGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
+{faehrsteinGesehen and not abschiedGesehen: Drei Minuten. So lange brauchte ein Gentleman, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]
@@ -299,7 +299,7 @@ Aber erst stelle ich dir eine Falle. #sprecher:odette #stimmung:laechelt
 Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. #sprecher:odette #stimmung:laechelt
 Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:lacht
 // Dialogprüfung, 17.11.2026: Auf dem ersten Weg schweigt Ambrose bis zur Fährstelle.
-{faehrsteinGesehen and not abschiedGesehen: Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
+{faehrsteinGesehen and not abschiedGesehen: Solche Aufgaben standen früher in den Zeitungen. Schön und gemein. #sprecher:ambrose #stimmung:laechelt}
 * [Die Fallen lösen]
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END

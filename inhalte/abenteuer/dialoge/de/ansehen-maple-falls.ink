@@ -58,7 +58,7 @@ VAR abschiedGesehen = false
     }
     {ersteLektionBesprochen:Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu.|Ein Pizzakarton auf dem Boden, noch zu. Es riecht schon nach Käse.} #sprecher:erzaehler
     {ersteLektionBesprochen and not abschiedGesehen:
-        Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
+        Im Kaffeehaus aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
 -> END

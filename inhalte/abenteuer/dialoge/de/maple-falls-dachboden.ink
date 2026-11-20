@@ -240,7 +240,7 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
 - not clubBeigetreten: Die Schule, Kind. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose #stimmung:laechelt
 - not (reiheSamBestanden and reiheJunoBestanden): Erst die Stellungen, die deine Mitspieler dir vorlegen. Wer das Rätsel scheut, scheut auch den Gegner. #sprecher:ambrose #stimmung:nachdenklich
 - nadelMapleFalls == 0: Die Trainerin wartet. #sprecher:ambrose #stimmung:laechelt
-- not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
+- not kenntHale: Eine Nadel am Kragen. Früher gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
 - endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus. #sprecher:ambrose #stimmung:laechelt
 - else: Cedar Creek? Den Namen habe ich nie gehört. #sprecher:ambrose #stimmung:lacht
 Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht

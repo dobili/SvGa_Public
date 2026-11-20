@@ -321,6 +321,42 @@ Beispiel, Coach Delgado:
   „Auf jedem Kopf: J.“ / „H.“. Beide stehen wieder zusammen. Ambroses „Über einen Springerzug.
   Ich. Drei Wochen.“ heißt jetzt „Über einen Springerzug, drei Wochen. Ich!“
 
+### Stimmen der Hauptfiguren (20.11.2026, erster Teil)
+
+Die drei Lektoren für die Stimmen (Ambrose; Mama, Juno, Victor; Mira, Odile, Ward) brachen am
+Nutzungslimit ab, bevor sie etwas meldeten. Dieser erste Teil ist deshalb eine Zählung der
+wiederkehrenden Wendungen je Figur, über alle Ink-Dateien.
+
+- **Ambrose, „Zu meiner Zeit …“: 13-mal.** Die Dialogprüfung hatte die Formel schon als
+  wiederkehrende Pointe angemerkt. Sie bleibt an vier Stellen, wo sie trägt:
+  - am Steg („nicht einmal gegrüßt“)
+  - bei der Postkutsche in Desert Springs
+  - nach dem Clubkampf gegen Pratt („nicht aufgeschrieben“)
+  - beim Drachen in der Hütte
+- Die übrigen neun sind umformuliert, in seiner Art und ohne Zahlen:
+
+| Stelle                                    | Vorher                                                      | Nachher                                          |
+| ----------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------ |
+| ansehen-maple-falls (Pizzakarton)         | Zu meiner Zeit aß man von Tellern.                          | Im Kaffeehaus aß man von Tellern.                |
+| cedar-creek-aussen (Kettering)            | Zu meiner Zeit hätte er Postkutschen gefahren.              | Er hätte auch Postkutschen gefahren.             |
+| hochebene (Diplome)                       | Zu meiner Zeit hätte man das für Unordnung gehalten.        | In meiner Schule hätte man das für Unordnung …   |
+| ironwood-umkleide (Edna)                  | Zu meiner Zeit hätte eine Kerze genügt.                     | Mir hätte eine Kerze genügt.                     |
+| maple-falls-clubraum (gehaltene Stellung) | Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. | Damit stand man früher in der Zeitung.           |
+| maple-falls-dachboden (Nadel)             | Zu meiner Zeit gab es dafür Wein …                          | Früher gab es dafür Wein …                       |
+| riverton-schuppen (Fahrrad)               | Zu meiner Zeit hätte man dafür einen Kutscher gebraucht.    | Dafür brauchte man einst einen Kutscher.         |
+| weg-maple-cedar (Fährstein)               | Zu meiner Zeit brauchte ein Gentleman so lange …            | So lange brauchte ein Gentleman …                |
+| weg-maple-cedar (Flohmarkt)               | Solche Aufgaben standen zu meiner Zeit in den Zeitungen.    | Solche Aufgaben standen früher in den Zeitungen. |
+
+- **Bewusst gelassen:** Diese Wendungen sind Eigenheiten der Figur, keine Abnutzung:
+  - Victors „Mein Vater sagt“ (6-mal): Der Vater spricht durch ihn, bis Akt 4.
+  - Junos „Glitzer“ (7-mal)
+  - Big Joes „Kumpel“
+  - Ambroses „Ich weiß es nicht.“ (7-mal): Es sind seine Momente der Unsicherheit, jedes Mal
+    mit eigener Fortsetzung.
+  - Miras „Jetzt.“ und „Noch mal.“
+- **Offen:** Der Abgleich Satz für Satz mit den Profilen der Story-Bibel (Register, Anrede, Akt)
+  folgt, sobald die Lektoren wieder laufen können.
+
 ## Nur durch die Simulation, kein Textfehler
 
 Mehrere Abende mit Ambrose hintereinander, doppelte Gespräche beim zweiten Ansprechen,

@@ -557,7 +557,7 @@ Mr. Kettering sieht hinüber und sagt nichts. Er nickt dir zu und lässt den Mot
 Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doch.“ #sprecher:erzaehler
 Einunddreißig Jahre. Und ein paar Monate, wer zählt mit? #sprecher:kettering #stimmung:laechelt
 {not abschiedGesehen:
-    Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
+    Ein Mann, der seine Strecke nicht hergibt. Er hätte auch Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
 }
 -> bus_zurueck.wahl
 

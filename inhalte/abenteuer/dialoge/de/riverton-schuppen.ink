@@ -32,7 +32,7 @@ Nimm es. #sprecher:albescu #stimmung:laechelt
 Dafür brauche ich keine Knie. #sprecher:albescu #stimmung:lacht
 Du schiebst es hinaus in den Regen. Die Klingel funktioniert noch. #sprecher:erzaehler #klang:fahrradklingel
 {not abschiedGesehen:
-    Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. #sprecher:ambrose #stimmung:lacht
+    Ein Gefährt mit Klingel und Schmetterling. Dafür brauchte man einst einen Kutscher. #sprecher:ambrose #stimmung:lacht
     Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
 }
 Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.“ #sprecher:erzaehler

@@ -22,7 +22,7 @@ VAR abschiedGesehen = false
     Ein Schließfach ohne Namen, die Tür klemmt. Dahinter ist es stockdunkel. #sprecher:erzaehler
     Ohne Licht siehst du nichts. #sprecher:erzaehler
     {not abschiedGesehen:
-        Edna verkauft Laternen, sagte man. Zu meiner Zeit hätte eine Kerze genügt. #sprecher:ambrose #stimmung:laechelt
+        Edna verkauft Laternen, sagte man. Mir hätte eine Kerze genügt. #sprecher:ambrose #stimmung:laechelt
     }
     -> END
 }

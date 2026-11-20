@@ -516,7 +516,7 @@ Als der Raum leer ist, holst du das Brett aus der Tasche und legst es auf einen 
 {ausgangMapleFallsVictor == "niederlage":
     Ambrose zeigt dir zwei Stellen. Genau und ohne ein Wort zu viel. #sprecher:erzaehler
 - else:
-    Du hast eine schwere Stellung gehalten, mit einem Springer weniger. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
+    Du hast eine schwere Stellung gehalten, mit einem Springer weniger. Damit stand man früher in der Zeitung. #sprecher:ambrose #stimmung:stolz
 }
 * [„Du bist erschrocken. Vorhin.“]
     Bin ich das. #sprecher:ambrose #stimmung:bitter

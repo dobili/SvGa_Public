@@ -260,7 +260,7 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira #stimmung:laechelt
 ~ gibFund("diplomKira")
 {ambroseSprichtWieder:
     {not abschiedGesehen:
-        Drei Diplome, und die Lehrerin lernt mit. Zu meiner Zeit hätte man das für Unordnung gehalten. #sprecher:ambrose #stimmung:lacht
+        Drei Diplome, und die Lehrerin lernt mit. In meiner Schule hätte man das für Unordnung gehalten. #sprecher:ambrose #stimmung:lacht
     }
 }
 -> END

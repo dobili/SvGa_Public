@@ -40,7 +40,7 @@ import { stelleFigurenAuf } from "./figurenaufstellung";
 import { sitzmoebelAus } from "./sitzplatz";
 import { sichtbarMesser } from "./sitzumriss";
 import { erscheinungsfeld, lasseGeistErscheinen } from "./geistfigur";
-import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
+import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt, pfeiltasten } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
 import { zeigeTeilchen } from "./teilchen";
@@ -195,7 +195,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
     zeigeTeilchen(this, this.daten.winter ? "schnee" : (this.daten.teilchen ?? null), true);
-    this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
+    this.tasten = pfeiltasten(this.input.keyboard);
   }
 
   /**

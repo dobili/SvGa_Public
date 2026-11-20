@@ -74,6 +74,12 @@ const VERSUCHE_HOECHSTENS = 4;
 
 /** So oft durch denselben Ausgang im selben Stand gilt als im Kreis laufen. */
 const KREIS_AB = 8;
+/**
+ * So oft durch denselben Ausgang, ohne dass ein Questschritt weitergeht, gilt auch dann als Kreis,
+ * wenn sich der übrige Stand ändert. Höher als KREIS_AB, damit Umsehen im Ort (rein, raus) nicht
+ * schon eine gewöhnliche Tür sperrt.
+ */
+const KREIS_GROB_AB = 20;
 
 /** Der Stand der Hauptgeschichte: Schritte der Hauptquests, Akt und Szene. */
 function hauptsignatur(daten: Spieldaten, stand: Abenteuerstand): string {
@@ -95,6 +101,8 @@ export class Planer {
   private readonly bilder: Kartenbild[];
   private readonly versuche = new Map<string, number>();
   private readonly gesperrt = new Map<string, Set<string>>();
+  /** Im Kreis gelaufene Ausgänge je Queststand (merkeDurchgang, grob). */
+  private readonly kreise = new Map<string, Set<string>>();
   private grenze = VERSUCHE_UMSEHEN;
   private letzteHaupt = "";
   private dingeSig = "";
@@ -141,13 +149,24 @@ export class Planer {
     const schluessel = `durch|${sig}|${karte}.${name}`;
     const zahl = (this.versuche.get(schluessel) ?? 0) + 1;
     this.versuche.set(schluessel, zahl);
-    if (zahl < KREIS_AB) return;
-    this.gesperrt.set(sig, (this.gesperrt.get(sig) ?? new Set<string>()).add(`${karte}.${name}`));
+    if (zahl >= KREIS_AB) {
+      this.gesperrt.set(sig, (this.gesperrt.get(sig) ?? new Set<string>()).add(`${karte}.${name}`));
+    }
+    // Grob, je Queststand: Übergangsdialoge und Zielpfeile ändern den vollen Stand bei jedem
+    // Durchgang; so pendelte der eilige Spieler 162-mal zwischen Felsbogen und Desert Springs.
+    const grob = questsignatur(stand);
+    const grobSchluessel = `kreis|${grob}|${karte}.${name}`;
+    const grobZahl = (this.versuche.get(grobSchluessel) ?? 0) + 1;
+    this.versuche.set(grobSchluessel, grobZahl);
+    if (grobZahl < KREIS_GROB_AB) return;
+    this.kreise.set(grob, (this.kreise.get(grob) ?? new Set<string>()).add(`${karte}.${name}`));
   }
 
-  /** Die in diesem Stand gesperrten Ausgänge. */
+  /** Die in diesem Stand gesperrten Ausgänge (auch die im Queststand als Kreis erkannten). */
   gesperrteAusgaenge(stand: Abenteuerstand): ReadonlySet<string> {
-    return this.gesperrt.get(signatur(stand)) ?? new Set();
+    const fein = this.gesperrt.get(signatur(stand)) ?? new Set<string>();
+    const grob = this.kreise.get(questsignatur(stand));
+    return grob ? new Set([...fein, ...grob]) : fein;
   }
 
   /** Der Weg über Karten zum Ziel (Liste der Ausgänge) oder null. */

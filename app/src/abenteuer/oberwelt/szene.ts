@@ -294,7 +294,8 @@ export class Oberweltszene extends Phaser.Scene {
   override update(_zeit: number, delta: number): void {
     if (!this.held) return;
     const heldfeld: Feld = { x: this.held.x / KACHEL - 0.5, y: this.held.y / KACHEL - 0.5 };
-    this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei);
+    const blick = { heldBlick: this.blick, heldGeht: this.geht }; // wen er ansieht, bleibt stehen
+    this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei, blick);
     const gewuenscht = this.gewuenschteRichtung() ?? this.tippRichtung();
     // Der Held kommt mit Blick vom Durchgang weg an; die Gegenrichtung führte zurück hinein.
     const zurueck = gewuenscht === gegenrichtung(this.daten.start.richtung);

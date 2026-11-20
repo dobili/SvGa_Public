@@ -1,5 +1,9 @@
 """Tests der Vergleichsseite zur Figurengröße (proportionsvergleich.py, proportionsseite.py)."""
 
+import pytest
+
+pytest.importorskip("PIL.Image")  # die Seite zeichnet Bilder; ohne Pillow (Actions) übersprungen
+
 from pipeline.abenteuer.proportionsseite import sicht
 from pipeline.abenteuer.proportionsvergleich import freier_boden, lade_szene, moebel_mal
 

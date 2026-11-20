@@ -145,7 +145,21 @@ class Welt:
                 for w in s.get("wirkungen", []):
                     if w.get("variable"):
                         setzer.setdefault(w["variable"], set()).add(f"{q['kennung']}:{i}")
+        # Die Hülle setzt nach jeder Runde und Partie Variablen (regeln/dialogvariablen.ts).
+        for kennung, namen in self._rundenvariablen().items():
+            for name in namen:
+                setzer.setdefault(name, set()).add(f"runde:{kennung}")
         return setzer
+
+    def _rundenvariablen(self) -> dict[str, set[str]]:
+        """Je Runde die Variablen, die ihr Bestehen setzt: Kurz- und Langform (``reiheTamsinBestanden``)."""
+        runden = json.loads((self.daten / "runden.json").read_text(encoding="utf-8"))["runden"]
+        ergebnis: dict[str, set[str]] = {}
+        for r in runden:
+            *ort, name = r["kennung"].split(".")
+            gross = name[0].upper() + name[1:]
+            ergebnis[r["kennung"]] = {f"{name}Bestanden", f"{''.join(ort)}{gross}Bestanden"}
+        return ergebnis
 
     def erreicht(self, einstieg: str, ziel: str) -> bool:
         """Erreicht der Einstieg „datei.knoten“ den Knoten „datei.knoten“ im Fluss derselben Datei?"""
@@ -256,6 +270,8 @@ def eigene_stellen(welt: Welt, quest: dict, ab: int) -> set[str]:
     stellen = {f"{quest['kennung']}:{i}" for i in range(max(ab, 1), len(quest["schritte"]) + 1)}
     for e in ereignisse:
         stellen |= ziele_von(welt, e)[0]
+        if e["art"] == "aufgaben":
+            stellen.add(f"runde:{e['runde']}")
     return stellen
 
 

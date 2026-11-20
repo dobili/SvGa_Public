@@ -19,6 +19,7 @@
 // ambrose.hale.grundton.
 
 EXTERNAL beginnePartie(begegnung)
+EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR nadelSummitCity = 0
@@ -40,12 +41,31 @@ VAR pfeifeGefunden = false
 VAR notizbuchseiteFotografiert = false
 VAR einladungGesehen = false
 VAR ausgangCapitalArenaFinale = ""
+// Spielberichte aus Silicon Bay (Quest siliconBay.spielberichte), die Victor dort mitgab.
+VAR speicherstiftErhalten = false
+VAR siliconBayAuswertungBestanden = false
 
 // ---------------------------------------------------------------- Victor
 
 === victor ===
 {
 - not victorKriseGesehen: -> victor_vorher
+// Quests verfehlen (20.11.2026): Wer die Auswertung in Silicon Bay aufgeschoben hat, kann sie hier
+// nachholen; nach dem Ende von Akt 3 steht Victor nicht mehr in der Lobby.
+- speicherstiftErhalten and not siliconBayAuswertungBestanden: -> victor_berichte_spaeter
+}
+-> victor_weiter
+
+=== victor_berichte_spaeter ===
+Du hast meine Spielberichte noch. Schau sie dir an, bevor alles andere kommt. #sprecher:victor #stimmung:nachdenklich
++ [Die Partien auswerten]
+    ~ beginneAufgaben("siliconBay.auswertung")
+    -> END
++ [„Nicht jetzt.“]
+    -> victor_weiter
+
+=== victor_weiter ===
+{
 - victorSeiteGegeben: -> victor_alltag
 - ausgangSummitCityVictorFrei == "sieg" or ausgangSummitCityVictorFrei == "remis" or ausgangSummitCityVictorFrei == "niederlage": -> victor_seite
 - victorBergstationGesprochen: -> victor_angebot

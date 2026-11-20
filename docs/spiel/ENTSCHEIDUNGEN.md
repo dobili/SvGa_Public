@@ -1279,3 +1279,13 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
 - **Sitzende auf Möbeln** sperren auch die Kachel darüber.
 - **Slick auf der Bank** (R102) und vier Schüler der Akademie haben je einen Satz (Slick als
   Selbstgespräch); vorher stumm. Widerspruch genügt.
+
+### Figurengröße (Entscheidung des Autors, 20.11.2026, Vergleichsseite Fassung 2)
+
+- **Innen:** Alle PixelLab-Figuren (Held, Personen, Statisten) werden ×1,33 gezeichnet. Die Möbel
+  bleiben, wie sie sind; die Räume neu zu gestalten wäre zu viel Aufwand. Bis ×1,5 wird die
+  Vorlage nur verkleinert, also bleibt die Figur scharf. Wäre eine trotzdem matschig, wird sie in
+  PixelLab neu erstellt.
+- **Außen:** Die Gegenstände kommen auf den Maßstab der jetzigen Figur (alle fünf Vorschaukarten
+  bejaht, deshalb auf allen Außenkarten). Gebäude und Türen bleiben.
+- Umsetzung: mittel-1.

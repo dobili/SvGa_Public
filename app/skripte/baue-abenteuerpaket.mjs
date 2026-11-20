@@ -11,7 +11,7 @@ import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
-import { dirname, join, resolve } from "node:path";
+import { basename, dirname, extname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
 import { schreibeMoebel } from "./abenteuerpaket-moebel.mjs";
@@ -24,6 +24,7 @@ import {
 import { baueFigurenbogen } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
+import { alsGrossbild, HOCHGELADEN } from "./grossbilder.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -38,6 +39,8 @@ const QUELLE = resolve(HIER, "../../inhalte/abenteuer");
  */
 const PRIVAT =
   [
+    // Nur zum Ausprobieren (etwa mit Probebildern): ein anderer Ordner im Aufbau von spiel/.
+    process.env.ABENTEUER_PRIVAT ? resolve(process.env.ABENTEUER_PRIVAT) : "",
     resolve(HIER, "../inhalte-privat/abenteuer"),
     // Zugeschnittene Bilder aus dem privaten Repository (skripte/hole-privatgrafik.mjs).
     resolve(HIER, "../inhalte-privat/quelle/spiel"),
@@ -131,15 +134,34 @@ async function kopiereTon(ordner) {
 }
 
 /**
- * Bilder der Großansicht im Dialog (Atmosphäre T7, `#bild:kennung`): WebP aus dem privaten Ordner
- * bilder/, Gruppe grafik. Ohne Ordner nichts; die Dialogzeile erscheint dann ohne Bild.
+ * Bilder der Großansicht im Dialog (Atmosphäre T7, `#bild:kennung`) und Fundbilder: WebP aus dem
+ * privaten Ordner bilder/, Gruppe grafik; dazu PNG und JPG, die der Autor selbst hochlädt (seit
+ * 20.11.2026, skripte/grossbilder.mjs). Ohne Ordner nichts; die Dialogzeile erscheint dann ohne Bild.
+ * Sie laden nach dem Start im Hintergrund (Feld hintergrund, Auftrag „Größe und Startzeit“, 20.11.2026).
  */
 async function kopiereBilder() {
   const quelle = join(PRIVAT, "bilder");
   if (!existsSync(quelle)) return;
-  const namen = (await readdir(quelle)).filter((d) => d.endsWith(".webp"));
+  const alle = await readdir(quelle);
+  const namen = alle.filter((d) => d.endsWith(".webp"));
   for (const name of namen.sort()) {
-    await schreibe(`bilder/${name}`, await readFile(join(quelle, name)), "grafik");
+    await schreibe(
+      `bilder/${name}`,
+      await readFile(join(quelle, name)),
+      "grafik",
+      1,
+      undefined,
+      true,
+    );
+  }
+  // Vom Autor hochgeladen (PNG, JPG mit dem Namen aus dem Auftrag): ins Format des Spiels,
+  // außer es gibt schon ein zugeschnittenes WebP gleichen Namens (skripte/grossbilder.mjs).
+  const hochgeladen = alle.filter((d) => HOCHGELADEN.includes(extname(d).toLowerCase()));
+  for (const datei of hochgeladen.sort()) {
+    const name = basename(datei, extname(datei));
+    if (namen.includes(`${name}.webp`)) continue;
+    const webp = await alsGrossbild(await readFile(join(quelle, datei)), name);
+    await schreibe(`bilder/${name}.webp`, webp, "grafik", 1, undefined, true);
   }
 }
 
@@ -175,7 +197,14 @@ async function schreibeGrafik(pfad, platzhalter) {
  * Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. PNG kommt als verlustfreies WebP
  * ins Paket (skripte/paketbilder.mjs); der Paketlader setzt die Endung beim Lesen um.
  */
-async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = undefined) {
+async function schreibe(
+  quellpfad,
+  inhalt,
+  gruppe,
+  staffel = 1,
+  akt = undefined,
+  hintergrund = false,
+) {
   const bild = typeof inhalt !== "string" && wirdWebp(quellpfad);
   const pfad = bild ? webpPfad(quellpfad) : quellpfad;
   const voll = join(ZIEL, pfad);
@@ -196,6 +225,8 @@ async function schreibe(quellpfad, inhalt, gruppe, staffel = 1, akt = undefined)
     staffel,
     // Nur Ton trägt den Akt (auch Akt 1); alles ohne „akt“ gehört zum Grundpaket.
     ...(akt !== undefined ? { akt } : {}),
+    // Großbilder laden nach dem Start mit (paket/aktton.ts, Feld hintergrund in schnittstelle/paket.ts).
+    ...(hintergrund ? { hintergrund } : {}),
   });
 }
 

@@ -98,6 +98,11 @@ function geladenesVerzeichnis(): Promise<GeladenesPaket | null> {
   return gemerktesPaket;
 }
 
+/** Liegt ein vollständig geladenes Paket auf dem Gerät? (Ohne Paket lädt nichts nach.) */
+export async function paketDa(): Promise<boolean> {
+  return (await geladenesVerzeichnis()) !== null;
+}
+
 /**
  * Der Pfad einer Datei im Paket: PNG der Quellen liegt dort als WebP. Ein Paket aus der Zeit
  * davor (nur der PNG-Name im Verzeichnis) behält den alten Namen, bis es erneuert ist.
@@ -146,13 +151,38 @@ export async function paketzustand(): Promise<Paketzustand> {
   return { art: "vorhanden", version, bytes };
 }
 
+/**
+ * Übernimmt eine Datei aus einer älteren Fassung des Pakets, wenn sie dort gleich ist (gleiche
+ * Prüfsumme). Warum: Jede neue Fassung (etwa vier neue Bilder vom Autor, 20.11.2026) bekommt einen
+ * eigenen Cache; ohne Übernahme lud das Handy jedes Mal das ganze Paket neu (rund 16 MB), jetzt nur
+ * die geänderten Dateien. Ausgabe: true, wenn übernommen; eine geänderte Datei lädt dann neu.
+ */
+export async function uebernimmAusAlterFassung(
+  speicher: Cache,
+  datei: Paketdatei,
+): Promise<boolean> {
+  const alt = await caches.match(adresse(datei.pfad));
+  if (!alt) return false;
+  const bytes = await alt.arrayBuffer();
+  if ((await pruefsumme(bytes)) !== datei.sha256) return false;
+  const typ = alt.headers.get("content-type") ?? "application/octet-stream";
+  await speicher.put(
+    adresse(datei.pfad),
+    new Response(bytes, { headers: { "content-type": typ } }),
+  );
+  return true;
+}
+
 /** Lädt eine Datei mit Fortschritt, prüft sie und legt sie in den Cache. */
 async function ladeDatei(
   speicher: Cache,
   datei: Paketdatei,
   weiter: (bytes: number) => void,
 ): Promise<void> {
-  if (await speicher.match(adresse(datei.pfad))) {
+  if (
+    (await speicher.match(adresse(datei.pfad))) ||
+    (await uebernimmAusAlterFassung(speicher, datei))
+  ) {
     weiter(datei.bytes);
     return;
   }
@@ -193,8 +223,9 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   const verzeichnis = await verzeichnisVomServer();
   const speicher = await caches.open(cachename(verzeichnis.version));
   let geladen = 0;
-  // Ton gehört nicht dazu: Das Spiel startet ohne ihn, paket/aktton.ts lädt ihn im Hintergrund.
-  const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined);
+  // Ton und Großbilder gehören nicht dazu: Das Spiel startet ohne sie, paket/aktton.ts lädt sie
+  // im Hintergrund.
+  const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined && !d.hintergrund);
   await jeGleichzeitig(grundpaket, GLEICHZEITIG, (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       geladen += bytes;

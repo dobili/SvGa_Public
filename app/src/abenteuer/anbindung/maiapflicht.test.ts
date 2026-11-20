@@ -1,9 +1,9 @@
 /**
- * Tests für maiapflicht.ts: Das Spielpaket gilt nur mit Maia als vorhanden, und „Spiel laden“
- * lädt Maia mit, wenn es fehlt (Wunsch des Autors, 18.11.2026).
+ * Tests für maiapflicht.ts: „Spiel laden“ zählt Maia mit (Wunsch des Autors, 18.11.2026); seit
+ * dem 20.11.2026 lädt Maia im Hintergrund, das vorhandene Spiel startet ohne zu warten.
  */
 import { describe, expect, it, vi } from "vitest";
-import { ladeSpielMitMaia, mitMaiaPflicht, type Maiazugriff } from "./maiapflicht";
+import { ladeMaiaImHintergrund, mitMaiaPflicht, type Maiazugriff } from "./maiapflicht";
 
 const MAIA_BYTES = 96_000_000;
 const SPIEL_BYTES = 40_000_000;
@@ -30,12 +30,9 @@ describe("mitMaiaPflicht", () => {
     expect(await mitMaiaPflicht(spiel, zugriff(true))).toEqual(spiel);
   });
 
-  it("meldet „fehlt“ mit der Größe von Maia, wenn nur Maia fehlt", async () => {
+  it("startet ein vorhandenes Spiel, auch wenn Maia noch fehlt (lädt im Hintergrund)", async () => {
     const spiel = { art: "vorhanden", version: "1", bytes: SPIEL_BYTES } as const;
-    expect(await mitMaiaPflicht(spiel, zugriff(false))).toEqual({
-      art: "fehlt",
-      bytes: MAIA_BYTES,
-    });
+    expect(await mitMaiaPflicht(spiel, zugriff(false))).toEqual(spiel);
   });
 
   it("lässt ein vorhandenes Spiel ohne Netz auch ohne Maia gelten", async () => {
@@ -57,30 +54,35 @@ describe("mitMaiaPflicht", () => {
   });
 });
 
-describe("ladeSpielMitMaia", () => {
-  it("lädt Maia nach dem Spielpaket, mit gemeinsamem Fortschritt", async () => {
+describe("ladeMaiaImHintergrund", () => {
+  it("lädt Maia, wenn es fehlt, und meldet den Fortschritt", async () => {
     const maia = zugriff(false);
-    const meldungen: [number, number][] = [];
-    await ladeSpielMitMaia(
-      (f) => {
-        f(SPIEL_BYTES, SPIEL_BYTES);
-        return Promise.resolve();
-      },
-      (g, t) => meldungen.push([g, t]),
-      maia,
-    );
+    const meldungen: number[] = [];
+    expect(await ladeMaiaImHintergrund((g) => meldungen.push(g), maia)).toBe(true);
     expect(maia.lade).toHaveBeenCalledOnce();
-    expect(meldungen.at(-1)).toEqual([SPIEL_BYTES + MAIA_BYTES, SPIEL_BYTES + MAIA_BYTES]);
+    expect(meldungen.at(-1)).toBe(MAIA_BYTES);
   });
 
   it("lädt Maia nicht doppelt, wenn es schon da ist", async () => {
     const maia = zugriff(true);
-    await ladeSpielMitMaia(
-      () => Promise.resolve(),
-      () => undefined,
-      maia,
-    );
+    expect(await ladeMaiaImHintergrund(() => undefined, maia)).toBe(true);
     expect(maia.lade).not.toHaveBeenCalled();
+  });
+
+  it("lädt bei zwei Aufrufen zugleich nur einmal", async () => {
+    const maia = zugriff(false);
+    await Promise.all([
+      ladeMaiaImHintergrund(() => undefined, maia),
+      ladeMaiaImHintergrund(() => undefined, maia),
+    ]);
+    expect(maia.lade).toHaveBeenCalledOnce();
+  });
+
+  it("ergibt false ohne Netz und bei Netzfehlern, ohne zu werfen", async () => {
+    expect(await ladeMaiaImHintergrund(() => undefined, zugriff(false, false))).toBe(false);
+    const kaputt = { ...zugriff(false), lade: vi.fn(() => Promise.reject(new Error("Netz"))) };
+    vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    expect(await ladeMaiaImHintergrund(() => undefined, kaputt)).toBe(false);
   });
 });
 

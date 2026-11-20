@@ -11164,10 +11164,10 @@
      "id": 25,
      "name": "mfBank",
      "type": "moebel",
-     "x": 416,
-     "y": 144,
-     "width": 32,
-     "height": 32,
+     "x": 420,
+     "y": 152,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -11180,6 +11180,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },

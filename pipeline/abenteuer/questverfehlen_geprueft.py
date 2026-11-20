@@ -27,18 +27,24 @@ AUSNAHMEN: dict[str, str] = {
     "ironwood.mamasFinale:3": "Mama geht erst mit kaufGesehen (ohne mamaSpielt). Den Kauf gibt es "
     "erst nach dem Clubkampf (nadelIronwood > 0, ironwood-aussen.victor), und Big Joe bietet den "
     "Clubkampf erst an, wenn Mama gespielt hat (big_joe_wartet bis mamaSpielt), also nach Schritt 3.",
+    "siliconBay.spielberichte:1": "Die Auswertung bietet Victor in der Lobby an und, seit dem 20.11.2026, "
+    "an der Bergstation (victor_berichte_spaeter) vor allem anderen. Dort muss {held} ihn für die "
+    "Hauptquest ansprechen (summitCity.endspiel, Schritt 6), bevor Summit City sich öffnet und es zum "
+    "Grab geht. Verloren ist sie nur für den, der zweimal „Nicht jetzt“ sagt (Entscheidung des "
+    "Hauptchats: Bergstation).",
+    "siliconBay.fehlendeSeite:2": (
+        "Die Quest beginnt nur in silicon-bay-lobby.vitrine_erstmals, und dorthin führt die Vitrine nur, "
+        "solange victorSeiteGegeben fehlt (sonst vitrine_spaet, 20.11.2026). Victors Seite "
+        "(summit-city-bergstation.victor_seite) folgt als Rückmeldung auf die Partie summitCity.victorFrei, "
+        "Schritt 6 der Hauptquest summitCity.endspiel; erst danach kommt das Grab (grabGesehen)."
+    ),
 }
 
 # Echte Befunde, die eine Entscheidung zu Karten oder Dialogen brauchen (an den Hauptchat gemeldet,
 # 20.11.2026, Bericht docs/spiel/auftraege/quests_verfehlen_20-11.md). Sie bleiben sichtbar
 # („gemeldet“), bis sie behoben sind; dann schlägt test_ausnahmen_sind_noch_noetig an.
 GEMELDET: dict[str, str] = {
-    "riverton.zuschauen:start": "Tamsin fehlt im geräumten Pavillon (Zustandskarte slickAbschiedGesehen); "
-    "wer vorher nicht mit ihr gesprochen hat, bekommt das Zuschauen nie angeboten.",
     "siliconBay.spielberichte:start": "Victor verlässt Silicon Bay mit endeAkt3Gesehen; wer Theo vorher "
-    "nicht besiegt und Victor nicht gefragt hat, bekommt die Spielberichte nie.",
-    "siliconBay.spielberichte:1": "Wer die Auswertung bei Victor ablehnt, kann sie nach dem Ende von Akt 3 "
-    "nicht mehr spielen; die Quest bleibt für immer offen.",
-    "siliconBay.fehlendeSeite:2": "Victor gibt die Seite nur an der Bergstation (bis grabGesehen); wer das "
-    "Foto in der Vitrine (Schritt 1) erst danach ansieht, bleibt bei Schritt 2 hängen.",
+    "nicht besiegt und Victor nicht gefragt hat, bekommt die Spielberichte nie. Bewusst so gelassen "
+    "(Entscheidung des Hauptchats, 20.11.2026): ein verpasstes Angebot, im Tagebuch hängt nichts.",
 }

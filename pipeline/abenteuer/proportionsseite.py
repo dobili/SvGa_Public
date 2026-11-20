@@ -5,8 +5,11 @@ die Zahlen dazu und eine Empfehlung. Rolle: nur Darstellung; gerechnet wird in
 proportionsvergleich.py. Abhängigkeiten: Pillow (Galerie der Möbel), proportionen.py.
 """
 
+import base64
 import collections
 import html
+import io
+import json
 from pathlib import Path
 
 from PIL import Image
@@ -16,7 +19,7 @@ from pipeline.abenteuer.kartenbild import moebelbild
 from pipeline.abenteuer.moebelliste import lade_moebel
 
 ZOOM = 3
-GALERIE = 10  # so viele Möbel zeigt die Galerie (die häufigsten)
+GALERIE = 8  # so viele Möbel zeigt die Galerie (die häufigsten)
 SICHT = (8, 15)  # Kacheln im Hochformat bei ZOOM 3 (KARTENREGELN 7a)
 
 STIL = """
@@ -26,34 +29,40 @@ STIL = """
 body{margin:0;padding:16px;background:var(--grund);color:var(--text);font:16px/1.5 system-ui,sans-serif}
 main{max-width:760px;margin:0 auto}h1{font-size:1.4rem}h2{font-size:1.15rem;margin-top:2rem}
 .reihe{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
-figure{margin:0;flex:0 0 auto}figure img{display:block;width:160px;image-rendering:pixelated;
+figure{margin:0;flex:0 0 auto}figure.breit img{width:340px}figure.echt img{width:auto}
+figure img{display:block;width:160px;image-rendering:pixelated;
 border:1px solid var(--rand)}figcaption{font-size:.8rem;color:var(--leise)}
 table{border-collapse:collapse;width:100%;font-size:.85rem}td,th{border-bottom:1px solid var(--rand);
 padding:4px;text-align:left;vertical-align:top}.hinweis{background:var(--feld);border-left:4px solid
 var(--akzent);padding:8px 12px}
+form{background:var(--feld);border:1px solid var(--rand);padding:12px;border-radius:8px}
+fieldset{border:0;padding:0;margin:0 0 10px}legend{font-weight:600}label{margin-right:12px;white-space:nowrap}
+textarea{width:100%;box-sizing:border-box;min-height:3.5em;background:var(--grund);color:var(--text);
+border:1px solid var(--rand)}
+button{font:inherit;padding:8px 14px;border-radius:6px;border:1px solid var(--akzent);
+background:var(--akzent);color:var(--grund)}#ergebnis{font-size:.85rem;color:var(--leise)}
 """
 
-NAMEN = {
-    "ist": "heute",
-    "A": "A: Möbel × 0,75",
-    "B": "B: Raum × 0,75",
-    "C": "C: Figuren × 1,33",
-    "D": "D: zu große Möbel kleiner",
-}
+
+def uri(bild: Image.Image) -> str:
+    """Bild als data-URI (PNG mit Palette), damit die Seite eine einzige Datei bleibt."""
+    puffer = io.BytesIO()
+    bild.convert("RGB").quantize(256, method=Image.Quantize.FASTOCTREE).save(puffer, "PNG", optimize=True)
+    return "data:image/png;base64," + base64.b64encode(puffer.getvalue()).decode()
 
 
 def _e(text: object) -> str:
     return html.escape(str(text))
 
 
-def galerie(ziel: Path, privat: Path, befunde: list) -> str:
+def galerie(privat: Path, befunde: list) -> str:
     """Die häufigsten zu großen Möbel: Original, verkleinert (Nächster Nachbar, geglättet), mit Held."""
     katalog = lade_moebel()
     held = belebungsvorschau.figurbild(privat, "figuren/held-0.png", 3, belebungsvorschau.rgba)
     zu_gross = [b for b in befunde if b.verhaeltnis > b.band[1]]
     zu_gross.sort(key=lambda b: -len(b.stellen))
     teile = []
-    for nummer, befund in enumerate(zu_gross[:GALERIE]):
+    for befund in zu_gross[:GALERIE]:
         try:
             bild = moebelbild(privat, katalog[befund.moebel]["quelle"]).convert("RGBA")
         except FileNotFoundError:
@@ -71,8 +80,7 @@ def galerie(ziel: Path, privat: Path, befunde: list) -> str:
             buehne.alpha_composite(fassung, (0, buehne.height - fassung.height))
             if held is not None:
                 buehne.alpha_composite(held, (fassung.width + 2, buehne.height - held.height))
-            datei = f"bilder/moebel-{nummer:02d}-{name}.png"
-            buehne.resize((buehne.width * ZOOM, buehne.height * ZOOM), Image.NEAREST).save(ziel / datei)
+            datei = uri(buehne.resize((buehne.width * ZOOM, buehne.height * ZOOM), Image.NEAREST))
             zellen.append(f'<figure><img src="{datei}" alt=""><figcaption>{_e(name)}</figcaption></figure>')
         teile.append(
             f"<h3>{_e(befund.moebel)} ({_e(befund.art)}): {befund.verhaeltnis:.2f} der Figur, "
@@ -112,13 +120,122 @@ def sicht(faktor: float) -> str:
     return f"{SICHT[0] / faktor:.1f} × {SICHT[1] / faktor:.1f}"
 
 
+def _reihe(bilder: dict[str, str], breit: bool = False, echt: bool = False) -> str:
+    klasse = ' class="breit"' if breit else ' class="echt"' if echt else ""
+    zellen = "".join(
+        f'<figure{klasse}><img src="{d}" alt=""><figcaption>{_e(n)}</figcaption></figure>'
+        for n, d in bilder.items()
+    )
+    return f'<div class="reihe">{zellen}</div>'
+
+
+def schirmpixel(faktor: float) -> str:
+    """Bildschirmpixel je Figurenpixel (PixelLab, 2/3 · ZOOM 3 · Faktor). Beispiel: 1,25 → „2,5“."""
+    return f"{2 * faktor:.2f}".rstrip("0").rstrip(".").replace(".", ",")
+
+
+def _komma(zahl: float) -> str:
+    return f"{zahl:.2f}".replace(".", ",")
+
+
+def _innen(daten: dict) -> str:
+    faktoren = daten["faktoren"]
+    zeilen = "".join(
+        f"<tr><td>× {_komma(f)}</td><td>{schirmpixel(f)}{' (scharf)' if 2 * f == int(2 * f) else ''}</td>"
+        f"<td>{len(daten['innen_rest'][f])}</td><td>{len(daten['durchlass'][f])}</td></tr>"
+        for f in faktoren
+    )
+    gesichter = _reihe(
+        {f"× {_komma(f)} · {schirmpixel(f)} px": d for f, d in daten["gesichter"].items()}, echt=True
+    )
+    raeume = "".join(f"<h3>{_e(r['titel'])}</h3>{_reihe(r['bilder'])}" for r in daten["innen"])
+    eng = sorted({b for f in faktoren for b in daten["durchlass"][f]})
+    liste = "".join(f"<li>{_e(b)}</li>" for b in eng) or "<li>keine: kein Gang und keine Tür wird zu eng</li>"
+    return (
+        "<table><tr><th>Figur</th><th>Bildschirmpixel je Figurenpixel</th><th>Möbel innen noch zu groß</th>"
+        "<th>zu enge Stellen</th></tr><tr><td>heute</td><td>2 (scharf)</td><td>–</td><td>–</td></tr>"
+        f"{zeilen}</table>"
+        "<p>Alles bis × 1,5 ist eine Verkleinerung des PixelLab-Originals (32 × 32, 30 Pixel hoch); "
+        "nichts wird vergrößert. Ganzzahlig (scharf) sind nur 2 (heute) und 3 (× 1,5).</p>"
+        f"<h3>Kopf des Helden wie im Spiel, vierfach vergrößert</h3>{gesichter}"
+        f"<p>Zu enge Gänge oder Türen:</p><ul>{liste}</ul>{raeume}"
+    )
+
+
+def _aussen(daten: dict) -> str:
+    teile = []
+    for karte in daten["aussen"]:
+        anteil_v, anteil_n = karte["frei_vorher"] / karte["boden"], karte["frei_nachher"] / karte["boden"]
+        leer = karte["deckung_vorher"] - karte["deckung_nachher"]
+        urteil = "Verkleinern: ja." if leer < LEER_MERKLICH else "Wird merklich leerer: ansehen."
+        teile.append(
+            f"<h3>{_e(karte['titel'])}</h3><p>{karte['stellen']} Möbel verkleinert. Freier Boden "
+            f"{anteil_v:.1%} → {anteil_n:.1%}; von Möbeln bedeckt {karte['deckung_vorher']:.1%} → "
+            f"{karte['deckung_nachher']:.1%} (−{leer:.1%} der Fläche). {urteil}</p>"
+            + _reihe({k: v for k, v in karte["bilder"].items() if k.startswith("Ausschnitt")})
+            + _reihe({k: v for k, v in karte["bilder"].items() if k.startswith("karte")}, breit=True)
+        )
+    return "".join(teile)
+
+
+LEER_MERKLICH = 0.02  # ab so viel weniger bedeckter Fläche gilt eine Karte als merklich leerer
+
+
+def empfehlung_innen(daten: dict) -> tuple[float | None, str]:
+    """Kleinster Faktor, bei dem innen kein Möbel mehr zu groß ist und kein Gang zu eng wird."""
+    passend = [f for f in daten["faktoren"] if not daten["innen_rest"][f] and not daten["durchlass"][f]]
+    if not passend:
+        return None, "Kein gezeigter Faktor reicht; siehe Tabelle."
+    f = min(passend)
+    rest = len(daten["innen_rest"][daten["gemessen"]])
+    return f, (
+        f"Figur × {_komma(f)}: der kleinste Faktor, bei dem innen kein Möbel mehr zu groß ist "
+        "und kein Gang zu "
+        f"eng wird. Beim gemessenen Faktor {_komma(daten['gemessen'])} bleiben {rest} Möbel zu groß. "
+        "× 1,5 wäre pixelgenau scharf, die Figuren stünden dann aber höher als die Türen."
+    )
+
+
+def _formular(daten: dict, empfohlen: float | None) -> str:
+    innen = "".join(
+        f'<label><input type="radio" name="innen" value="{w}"{" checked" if w == v else ""}> {w}</label>'
+        for w, v in [("keine", None)]
+        + [(_komma(f), _komma(empfohlen) if empfohlen else None) for f in daten["faktoren"]]
+    )
+    aussen = "".join(
+        f"<fieldset><legend>{_e(k['titel'])}</legend>"
+        + "".join(
+            f'<label><input type="radio" name="a{i}" value="{w}"'
+            f"{' checked' if w == 'ja' else ''}> {w}</label>"
+            for w in ("ja", "nein", "unsicher")
+        )
+        + "</fieldset>"
+        for i, k in enumerate(daten["aussen"])
+    )
+    namen = [k["titel"] for k in daten["aussen"]]
+    return f"""<form id="wahl" onsubmit="return false"><fieldset><legend>Innen: Figur größer</legend>{innen}
+</fieldset><p><b>Außen: zu große Möbel verkleinern?</b></p>{aussen}<fieldset><legend>Notiz</legend>
+<textarea id="notiz"></textarea></fieldset><button type="button" id="kopieren">Auswahl kopieren</button>
+<p id="ergebnis"></p></form>
+<script>
+const NAMEN = {json.dumps(namen, ensure_ascii=False)};
+document.getElementById("kopieren").addEventListener("click", async () => {{
+  const wahl = (n) => (document.querySelector(`input[name="${{n}}"]:checked`) || {{}}).value || "?";
+  const aussen = NAMEN.map((t, i) => `${{t}} ${{wahl("a" + i)}}`).join(", ");
+  const notiz = document.getElementById("notiz").value.trim();
+  const text = `Figurengröße: innen ${{wahl("innen")}}; außen ${{aussen}}`
+    + (notiz ? `; Notiz: ${{notiz}}` : "");
+  const feld = document.getElementById("ergebnis");
+  try {{ await navigator.clipboard.writeText(text); feld.textContent = "Kopiert: " + text; }}
+  catch (e) {{ feld.textContent = text; }}
+}});
+</script>"""
+
+
 def schreibe_seite(ziel: Path, daten: dict, privat: Path) -> None:
-    """Schreibt ZIEL/index.html aus den Daten von proportionsvergleich.main."""
+    """Schreibt ZIEL/index.html (eine Datei, Bilder eingebettet) aus den Daten von proportionsvergleich."""
     f = daten["figuren"]
-    # Ohne PixelLab-Figuren misst der Lauf den alten LimeZu-Helden (22); im Spiel gilt PixelLab mit
-    # 20 Kartenpixeln (weltmassstab.ts, 30 Figurenpixel mal 2/3).
     held = f["held"] if f["pixellab"] else proportionen.FIGUR_AUSSEN
-    verhaeltnis = f["limezu_median"] / held if f["limezu_median"] and held else 0
     zusatz = "" if f["pixellab"] else " (PixelLab im Spiel; in diesem Lauf fehlen die Bögen)"
     warnung = (
         ""
@@ -134,52 +251,33 @@ def schreibe_seite(ziel: Path, daten: dict, privat: Path) -> None:
             f'<p class="hinweis">{len(daten["fehlt"])} Möbelbilder fehlen im privaten Paket dieses '
             "Laufs und sind leer gezeichnet; mit dem aktuellen Paket neu bauen.</p>"
         )
-    stellen = []
-    for s in daten["stellen"]:
-        zellen = "".join(
-            f'<figure><img src="{d}" alt=""><figcaption>{_e(NAMEN[v])}</figcaption></figure>'
-            for v, d in s["bilder"].items()
-        )
-        stellen.append(f'<h3>{_e(s["titel"])}</h3><div class="reihe">{zellen}</div>')
-    boden = "".join(
-        f"<tr><td>{_e(b['stelle'])}</td><td>{b['vorher']} von {b['alle']}</td><td>{b['nachher']} "
-        f"(+{b['nachher'] - b['vorher']})</td></tr>"
-        for b in daten["boden"]
-    )
-    d12, d16 = daten["durchlass_12"], daten["durchlass_16"]
-    eng = "".join(f"<li>{_e(b)}</li>" for b in d16 if b not in d12)
-    gross_ist = [b for b in daten["befunde_ist"] if b.verhaeltnis > b.band[1]]
-    gross_c = [b for b in daten["befunde_c"] if b.verhaeltnis > b.band[1]]
+    aussen = daten["aussen"]
+    leerste = max(aussen, key=lambda k: k["deckung_vorher"] - k["deckung_nachher"]) if aussen else None
+    hoechstens = (leerste["deckung_vorher"] - leerste["deckung_nachher"]) if leerste else 0
+    empfohlen, text_innen = empfehlung_innen(daten)
     seite = f"""<!doctype html><html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Figurengröße</title>
 <style>{STIL}</style></head><body><main>
-<h1>Figurengröße: Varianten zur Wahl</h1>{warnung}
+<h1>Figurengröße: innen größere Figur, außen kleinere Möbel</h1>{warnung}
+<h2>Empfehlung</h2>
+<p><b>Innen:</b> {text_innen}</p>
+<p><b>Außen:</b> auf allen gezeigten Karten verkleinern: höchstens {hoechstens:.1%} der Fläche leerer
+({_e(leerste["titel"]) if leerste else "–"}), keine merklich (über {LEER_MERKLICH:.0%}).</p>
+<h2>Deine Wahl</h2>{_formular(daten, empfohlen)}
 <h2>Messung</h2>
 <p>Figuren des Grafiksatzes (LimeZu, {f["limezu_anzahl"]} gemessen): Median {f["limezu_median"]} Pixel hoch.
 Unser Held auf der Karte: {held:g} Kartenpixel{zusatz}.
-Verhältnis {verhaeltnis:.2f}.</p>
-<p>{_e(verteilung(daten["befunde_ist"]))} Mit Figur innen × 1,33 (Variante C) bleiben
-{len(gross_c)} statt {len(gross_ist)} Möbel zu groß (die übrigen stehen außen: Variante D).</p>
-<h2>Die Stellen</h2><p>Jedes Bild ist ein Ausschnitt von 8 × 11 Kacheln in der Vergrößerung des Spiels.
-B ist C verkleinert: dieselbe Anordnung, aber jede Kachel kleiner als außen.</p>
-{"".join(stellen)}
-<h2>Variante A: Wie viel Boden frei wird</h2>
-<table><tr><th>Raum</th><th>frei heute</th><th>frei mit Möbeln × 0,75</th></tr>{boden}</table>
-<h2>Variante C: Durchgänge</h2>
-<p>Bleibt der Körper 12 Pixel (nur das Bild wächst), ändert sich nichts. Wächst der Körper mit auf 16 Pixel,
-werden diese Ziele nur noch durch eine zu enge Lücke erreichbar ({len(eng)}). Regel 10.92 verlangt
-schon heute 16 Pixel freie Durchlässe; deshalb passt auch ein breiterer Körper:</p>
-<ul>{eng or "<li>keine</li>"}</ul>
-<h2>Ganze Welt größer (Figur und Türen mit)</h2>
-<table><tr><th>Faktor</th><th>sichtbare Kacheln (hoch)</th></tr>
-<tr><td>1 (heute)</td><td>{sicht(1)}</td></tr><tr><td>1,15</td><td>{sicht(1.15)}</td></tr>
-<tr><td>1,25</td><td>{sicht(1.25)}</td></tr><tr><td>1,35</td><td>{sicht(1.35)}</td></tr></table>
-<p>Ein Zoom von 3 × 1,15 ist nicht ganzzahlig: Jeder Pixel der Karte wird mal 3, mal 4
-Bildschirmpixel breit.</p>
-<h2>Zu große Möbel im Einzelnen</h2>{galerie(ziel, privat, daten["befunde_ist"])}
-<h2>Alle Befunde heute</h2>{tabelle_befunde(daten["befunde_ist"])}
+Gemessener Faktor: <b>{_komma(daten["gemessen"])}</b>.</p>
+<h2>Innen: Figur größer</h2>
+<p>Ausschnitte von 6 × 8 Kacheln in der Vergrößerung des Spiels. Alle Figuren wachsen (Held, Figuren,
+Statisten); Möbel, Wände und Türen bleiben.</p>
+{_innen(daten)}
+<h2>Außen: zu große Möbel kleiner</h2>
+<p>Jedes Möbel, das für unsere Figur zu groß ist, auf seinen Maßstab aus dem Messwerkzeug
+({len(daten["aussen_befunde"])} Möbelarten). Erst der Ausschnitt im Spiel, darunter die ganze Karte
+(halbe Größe).</p>
+{_aussen(daten)}
+<h2>Zu große Möbel im Einzelnen</h2>{galerie(privat, daten["aussen_befunde"])}
+<h2>Alle Befunde</h2>{tabelle_befunde(daten["aussen_befunde"])}
 </main></body></html>"""
     (ziel / "index.html").write_text(seite, encoding="utf-8")
-
-
-__all__ = ["schreibe_seite", "proportionen"]

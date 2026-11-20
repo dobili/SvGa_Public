@@ -803,15 +803,21 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [14, 51]
+      "feld": [14, 51],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [32, 51]
+      "feld": [32, 51],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [44, 51]
+      "feld": [44, 51],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "wg4Busch",

@@ -14614,10 +14614,10 @@
      "id": 43,
      "name": "gc7Picknicktisch",
      "type": "moebel",
-     "x": 960,
-     "y": 320,
-     "width": 32,
-     "height": 32,
+     "x": 965,
+     "y": 330,
+     "width": 22,
+     "height": 22,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -14630,6 +14630,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.7
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#./#."
       }
      ]
     },

@@ -149,6 +149,32 @@ function wirke(st, wirkungen) {
   }
 }
 
+/**
+ * Schon eingetreten (wie schonEingetreten in regeln/quests.ts): Runde bestanden oder Partie mit
+ * passendem Ausgang, ablesbar an den Variablen `<ort><Name>Bestanden` und `ausgang<Begegnung>`.
+ */
+function schonEingetreten(st, e) {
+  if (e.art === "aufgaben") {
+    const teile = e.runde.split(".");
+    const name = teile.pop();
+    return Boolean(st.vars[teile.join("") + gross(name) + "Bestanden"]);
+  }
+  if (e.art === "partie")
+    return e.ausgang.includes(st.vars["ausgang" + variablenname(e.begegnung)]);
+  return false;
+}
+
+/** Rückt über Schritte vor, deren Ereignis schon eingetreten ist (außer dem gemeldeten). */
+function holeNach(st, q, s, x) {
+  while (!s.fertig) {
+    const e = q.schritte[s.i].ereignis;
+    if (passt(e, x) || !schonEingetreten(st, e)) return;
+    wirke(st, q.schritte[s.i].wirkungen);
+    s.i++;
+    s.fertig = s.i >= q.schritte.length;
+  }
+}
+
 /** Ein Ereignis der Welt: Schritte laufender Quests, dann neue Quests (wie regeln/quests.ts). */
 function melde(welt, st, x) {
   for (const s of st.staende) {
@@ -158,6 +184,7 @@ function melde(welt, st, x) {
     wirke(st, q.schritte[s.i].wirkungen);
     s.i++;
     s.fertig = s.i >= q.schritte.length;
+    holeNach(st, q, s, x);
   }
   for (const q of welt.quests) {
     if (st.staende.some((s) => s.k === q.kennung) || !passt(q.start, x))
@@ -168,7 +195,9 @@ function melde(welt, st, x) {
       )
     )
       continue;
-    st.staende.push({ k: q.kennung, i: 0, fertig: false });
+    const neu = { k: q.kennung, i: 0, fertig: false };
+    st.staende.push(neu);
+    holeNach(st, q, neu, x);
   }
 }
 

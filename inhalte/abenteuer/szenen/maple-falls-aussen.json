@@ -80,7 +80,9 @@
     },
     {
       "moebel": "mf4Gartenbank",
-      "feld": [14, 7]
+      "feld": [14, 7],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mf4Busch",
@@ -476,7 +478,9 @@
     {
       "moebel": "mfBank",
       "feld": [55, 22],
-      "vorn": true
+      "vorn": true,
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfMuelltonne",
@@ -658,7 +662,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [50, 32]
+      "feld": [50, 32],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mf4Abfalleimer",
@@ -844,7 +850,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [54, 32]
+      "feld": [54, 32],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "pd6HausGruen",

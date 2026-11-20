@@ -257,6 +257,13 @@ Profil › Einstellungen › Fehler melden.
 
 ### Neu: Das Spiel ganz durchspielen – iPhone, Querformat, Dunkelmodus und Ton
 
+- [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
+      Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
+      Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
+      Tischen und Theken, und sind die Gesichter scharf genug? Eine Figur, die matschig wirkt, bitte
+      nennen, dann wird sie in PixelLab neu erstellt. Außen sind Parkbänke, Picknicktische und der
+      Rundtisch auf der Fähre kleiner (39 Karten): Passt die Bank im Park jetzt zu Abernathy, der
+      Picknicktisch in Cedar Creek zu Kettering?
 - [ ] N2645. **Am iPhone (nur mit echtem Gerät prüfbar, mittel-2, 20.11.):** 1. Ton an, Spiel neu öffnen, als Allererstes mit dem Steuerkreuz laufen: Erklingt die Musik
       nach dem ersten Loslassen? 2. Während Musik läuft kurz eine andere App öffnen oder anrufen lassen, zurück, einmal
       tippen: Kommt die Musik wieder? 3. Im Dialog schnell zweimal auf „Weiter“, im Laden zweimal auf eine Ware: Die Seite darf
@@ -2423,3 +2430,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       nur auf Geräten, auf denen du die Aufgabenseite geöffnet hast (umgesetzt, Widerspruch
       genügt); auf einem neuen Gerät einmal drei Sekunden auf „Profil“.
       **Antwort:** „RO42 ok, verborgen“ oder „RO42: sichtbar ab …“.
+
+- [ ] RO43. **Vier Innentüren kleiner als die größere Figur (20.11.2026)**
+      Mit der Figur ×1,33 innen sind vier Wandtüren aus dem Grafiksatz niedriger als die Figur
+      (21 statt 27 Pixel): die Tür oben im Wohnzimmer, die Kellertür im Archiv von Cedar Creek, die
+      Haustür im Gasthaus und die Tür im Serverraum von Silicon Bay. Empfehlung: so lassen, man geht
+      durch sie wie bisher, und es fällt kaum auf; auf Wunsch werden sie größer gezeichnet
+      (Kartenarbeit). Schon so umgesetzt, Widerspruch genügt.
+      **Antwort:** „RO43 ok“ oder „RO43: größer zeichnen“.

@@ -765,11 +765,15 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [30, 31]
+      "feld": [30, 31],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [34, 31]
+      "feld": [34, 31],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusKlein",

@@ -8817,10 +8817,10 @@
      "id": 49,
      "name": "mfBank",
      "type": "moebel",
-     "x": 480,
-     "y": 432,
-     "width": 32,
-     "height": 32,
+     "x": 484,
+     "y": 440,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -8833,6 +8833,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -8840,10 +8850,10 @@
      "id": 50,
      "name": "mfBank",
      "type": "moebel",
-     "x": 608,
-     "y": 432,
-     "width": 32,
-     "height": 32,
+     "x": 612,
+     "y": 440,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -8856,6 +8866,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -12198,10 +12218,10 @@
      "id": 196,
      "name": "mfBank",
      "type": "moebel",
-     "x": 352,
-     "y": 432,
-     "width": 32,
-     "height": 32,
+     "x": 356,
+     "y": 440,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12214,6 +12234,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -12221,10 +12251,10 @@
      "id": 197,
      "name": "mfBank",
      "type": "moebel",
-     "x": 224,
-     "y": 432,
-     "width": 32,
-     "height": 32,
+     "x": 228,
+     "y": 440,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12237,6 +12267,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },

@@ -333,15 +333,21 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [20, 16]
+      "feld": [20, 16],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [20, 60]
+      "feld": [20, 60],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [22, 60]
+      "feld": [22, 60],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "cr8InfotafelDach",
@@ -349,11 +355,15 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [16, 156]
+      "feld": [16, 156],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [9, 160]
+      "feld": [9, 160],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "cc4Nadelbaum",

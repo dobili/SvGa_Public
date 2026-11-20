@@ -17,6 +17,8 @@ EXTERNAL beginneAufgaben(runde)
 VAR held = "Du"
 VAR okaforGetroffen = false
 VAR archivGeordnet = false
+// Gesetzt auch in cedar-creek-archiv.ordnen; mit ihr bietet der Karton das Ordnen nach der Nadel an.
+VAR ordnenAngeboten = false
 VAR erzaehlung1858Gesehen = false
 VAR dexGetroffen = false
 VAR maeGetroffen = false
@@ -54,8 +56,16 @@ VAR revancheCedarCreek = false
 - nadelCedarCreek == 0 and ausgangCedarCreekClubkampf == "niederlage": -> okafor_nach_niederlage
 - nadelCedarCreek == 0 and not nachtImLesesaal: -> okafor_bis_morgen
 - nadelCedarCreek == 0: -> okafor_clubkampf
+// Quests verfehlen (20.11.2026): Wer vor der Nadel nie im Archiv war, bekam das Ordnen nie
+// angeboten (cedarCreek.archivOrdnen). Einmal nach der Nadel bittet Mrs. Okafor darum.
+- not archivGeordnet and not ordnenAngeboten: -> okafor_archiv_bitte
 - else: -> okafor_alltag
 }
+
+=== okafor_archiv_bitte ===
+~ ordnenAngeboten = true
+Eine Bitte noch. Unten im Archiv stehen die nassen Kartons, und allein schaffe ich die nicht. #sprecher:okafor #stimmung:nachdenklich
+-> END
 
 === okafor_erstes_treffen ===
 // Runde 11 (VC33 bis VC39, Roman Kapitel 11): Mrs. Okafor auf der Leiter, ihre Kennfrage an Juno,

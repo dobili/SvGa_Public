@@ -73,11 +73,15 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [39, 7]
+      "feld": [39, 7],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mfBank",
-      "feld": [93, 8]
+      "feld": [93, 8],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "mf4Wegweiser",

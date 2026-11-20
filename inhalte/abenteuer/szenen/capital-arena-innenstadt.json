@@ -499,14 +499,24 @@
       "feld": [
         30,
         50
-      ]
+      ],
+      "versatz": [
+        6,
+        8
+      ],
+      "massstab": 0.75
     },
     {
       "moebel": "ca7Bank",
       "feld": [
         46,
         50
-      ]
+      ],
+      "versatz": [
+        6,
+        8
+      ],
+      "massstab": 0.75
     },
     {
       "moebel": "ca7Baum",

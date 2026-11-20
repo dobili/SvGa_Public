@@ -50,6 +50,60 @@ export function passtEreignis(erwartet: Questereignis, ereignis: Questereignis):
   }
 }
 
+/**
+ * Ist das Ereignis eines Schritts schon früher eingetreten? Nur für Runden und Partien, deren
+ * Ergebnis der Spielstand festhält (stand.runden, Dialogvariable `ausgang<Begegnung>`).
+ * Warum (Auftrag „Quests verfehlen“, 20.11.2026): Quests laufen streng der Reihe nach. Wer in
+ * Riverton zuerst Tamsins Aufgabenreihe löst und dann erst Slick anspricht (Schritt 3 von
+ * „riverton.parkclub“), hätte Schritt 4 (die Reihe) für immer verpasst: Tamsin bietet sie danach
+ * nicht mehr an. Jetzt zählt der Schritt, sobald die Quest bei ihm ankommt.
+ * Beispiel: Runde riverton.reiheTamsin bestanden → Schritt „aufgaben riverton.reiheTamsin“ ist erfüllt.
+ */
+export function schonEingetreten(erwartet: Questereignis, stand: Abenteuerstand): boolean {
+  if (erwartet.art === "aufgaben") {
+    return stand.runden.some((r) => r.kennung === erwartet.runde && r.bestanden);
+  }
+  if (erwartet.art === "partie") {
+    const name = erwartet.begegnung
+      .split(".")
+      .map((t) => t.charAt(0).toUpperCase() + t.slice(1))
+      .join("");
+    const ausgang = stand.dialogvariablen[`ausgang${name}`];
+    return typeof ausgang === "string" && erwartet.ausgang.some((a) => a === ausgang);
+  }
+  return false;
+}
+
+/**
+ * Rückt einen Queststand über alle Schritte vor, deren Ereignis schon eingetreten ist (außer dem
+ * gerade gemeldeten: Eine Quest, die dasselbe Ereignis zweimal will, braucht es zweimal).
+ * Ausgabe: neuer Stand der Quest und die Wirkungen der übersprungenen Schritte.
+ */
+function holeEingetreteneNach(
+  quest: Questdaten,
+  qs: Queststand,
+  stand: Abenteuerstand,
+  ereignis: Questereignis,
+  iso: string,
+): { readonly qs: Queststand; readonly wirkungen: readonly Questwirkung[] } {
+  let jetzt = qs;
+  const wirkungen: Questwirkung[] = [];
+  for (let schritt = quest.schritte[jetzt.schritt]; schritt && !jetzt.erledigt;) {
+    if (passtEreignis(schritt.ereignis, ereignis) || !schonEingetreten(schritt.ereignis, stand))
+      break;
+    wirkungen.push(...(schritt.wirkungen ?? []));
+    const fertig = jetzt.schritt + 1 >= quest.schritte.length;
+    jetzt = {
+      ...jetzt,
+      schritt: fertig ? jetzt.schritt : jetzt.schritt + 1,
+      erledigt: fertig,
+      erledigtAm: fertig ? iso : null,
+    };
+    schritt = fertig ? undefined : quest.schritte[jetzt.schritt];
+  }
+  return { qs: jetzt, wirkungen };
+}
+
 /** Sind alle Voraussetzungen einer Quest erledigt? */
 function voraussetzungenErfuellt(quest: Questdaten, staende: readonly Queststand[]): boolean {
   return (quest.voraussetzung ?? []).every((v) =>
@@ -80,26 +134,33 @@ export function werteEreignisAus(
     if (!schritt || !passtEreignis(schritt.ereignis, ereignis)) return qs;
     wirkungen.push(...(schritt.wirkungen ?? []));
     const fertig = qs.schritt + 1 >= quest.schritte.length;
-    (fertig ? erledigt : fortgeschritten).push(qs.kennung);
-    return {
+    const weiter = {
       ...qs,
       schritt: fertig ? qs.schritt : qs.schritt + 1,
       erledigt: fertig,
       erledigtAm: fertig ? iso : null,
     };
+    const nach = holeEingetreteneNach(quest, weiter, stand, ereignis, iso);
+    wirkungen.push(...nach.wirkungen);
+    (nach.qs.erledigt ? erledigt : fortgeschritten).push(qs.kennung);
+    return nach.qs;
   });
   for (const quest of quests) {
     const bekannt = staende.some((s) => s.kennung === quest.kennung);
     if (bekannt || !passtEreignis(quest.start, ereignis)) continue;
     if (!voraussetzungenErfuellt(quest, staende)) continue;
-    staende.push({
+    const neu = {
       kennung: quest.kennung,
       schritt: 0,
       erledigt: false,
       angenommen: iso,
       erledigtAm: null,
-    });
+    };
+    const nach = holeEingetreteneNach(quest, neu, stand, ereignis, iso);
+    wirkungen.push(...nach.wirkungen);
+    staende.push(nach.qs);
     begonnen.push(quest.kennung);
+    if (nach.qs.erledigt) erledigt.push(quest.kennung);
   }
   return { stand: { ...stand, quests: staende }, wirkungen, begonnen, erledigt, fortgeschritten };
 }

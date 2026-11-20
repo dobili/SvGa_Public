@@ -54,6 +54,14 @@ const WERTUNG_TIEFE = 12;
 /** Eigene Saat für die Farbe bei „zufall“, unabhängig von Eröffnung und Leser. */
 const FARBSAAT_FAKTOR = 7919;
 const HALB = 0.5;
+/**
+ * Ganze Partien (Clubkampf, Story, Turnier) laufen bis zum Ende nach den Regeln, höchstens so viele
+ * Halbzüge; danach entscheidet die Bewertung wie ein Schiedsrichter: ab ENTSCHIEDEN Bauern Sieg
+ * oder Niederlage, sonst Remis (Schwierigkeitskurve, 20.11.2026; Bots finden ein gewonnenes
+ * Endspiel nicht immer zum Matt, die App kennt kein Remisangebot).
+ */
+const HALBZUEGE_GANZ = 200;
+const ENTSCHIEDEN = 3;
 
 /**
  * Leser je Lesestärke: drei vorgefertigte Bots mit gemessener Stärke nahe E (mit Maia,
@@ -253,7 +261,7 @@ function zugprofil(e: Partieeinstellung, maia: Zugprofil["maia"], saat: number):
     verlauf: { tagesform: tagesform(`wegsperre-${saat}`) },
     restMs: null,
     tempo: wahltempo(e.uhr),
-    ...(e.maia ? { maia } : {}),
+    ...(e.maia && maia ? { maia } : {}),
   };
 }
 
@@ -303,11 +311,28 @@ function patzerDer(lauf: Partie): string[] {
   );
 }
 
-/** Spielt eine Partie der Begegnung bis zur Wertung oder zum Ende nach den Regeln. */
+/** Ist die Partie fertig zum Werten: kurze Form nach ihren Zügen, ganze Partie an der Grenze. */
+function fertig(lauf: Partie, form: Kurzform | null): boolean {
+  if (lauf.ende !== null) return true;
+  return form ? wertungFaellig(lauf, form) : lauf.zuege.length >= HALBZUEGE_GANZ;
+}
+
+/** Ausgang aus der Schlussbewertung: kurze Form nach ihrer Regel, ganze Partie nach ENTSCHIEDEN. */
+function ausgangAusWert(form: Kurzform | null, wert: number): Messpartie["ausgang"] {
+  if (form) return ausgangNachWert(form, wert);
+  if (wert >= ENTSCHIEDEN) return "sieg";
+  return wert <= -ENTSCHIEDEN ? "niederlage" : "remis";
+}
+
+/**
+ * Spielt eine Partie der Begegnung bis zur Wertung oder zum Ende nach den Regeln. `form` null:
+ * ganze Partie (höchstens HALBZUEGE_GANZ Halbzüge). `maia` undefined: Gegner ohne Maia (wie die
+ * erste Partie, solange Maia im Hintergrund noch lädt).
+ */
 export async function spiele(
   engine: EngineDienst,
   vorgabe: { einstellung: Partieeinstellung; start: string },
-  form: Kurzform,
+  form: Kurzform | null,
   leserBot: string,
   maia: Zugprofil["maia"],
   saat: number,
@@ -319,7 +344,7 @@ export async function spiele(
   const leser = spieler(`@${leserBot}*`);
   let lauf = neuePartie(einstellung, `messung-${saat}`, new Date().toISOString());
   if (!lauf) throw new Error("Startstellung nicht spielbar");
-  while (lauf.ende === null && !wertungFaellig(lauf, form)) {
+  while (!fertig(lauf, form)) {
     const weiter = await halbzug(engine, lauf, leser, gegner, letzte, zufall, saat);
     if (!weiter) throw new Error(`Kein Zug in ${stellungen(lauf).at(-1)}`);
     lauf = weiter;
@@ -327,7 +352,7 @@ export async function spiele(
   const farbe = einstellung.eigeneFarbe;
   const wert =
     lauf.ende === null ? await bewerte(engine, stellungen(lauf).at(-1) ?? "", farbe) : null;
-  const ausgang = wert !== null ? ausgangNachWert(form, wert) : ausgangAus(lauf);
+  const ausgang = wert !== null ? ausgangAusWert(form, wert) : ausgangAus(lauf);
   if (ausgang === "abgebrochen") throw new Error("Partie ohne Ende");
   const ende = lauf.ende?.art ?? "wertung";
   const zuege = lauf.zuege.map((z) => z.san);

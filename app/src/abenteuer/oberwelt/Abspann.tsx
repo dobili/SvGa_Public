@@ -9,6 +9,7 @@
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import type { Spieldaten } from "../daten/laden";
+import { figurenDerWelt } from "./abspannfiguren";
 import { Portraet } from "../dialog/Portraet";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
@@ -32,19 +33,6 @@ const MITWIRKENDE = [
   "abspann.mitwirkende.musik",
   "abspann.mitwirkende.geraeusche",
 ] as const;
-
-/** Alle Figuren der Welt, je Name einmal, in der Reihenfolge der Orte. */
-function figurenDerWelt(daten: Spieldaten): { kennung: string; name: string }[] {
-  const gesehen = new Set<string>();
-  return daten.orte
-    .flatMap((o) => o.figuren)
-    .flatMap((f) => {
-      const kurz = f.kennung.split(".").at(-1) ?? f.kennung;
-      if (gesehen.has(kurz)) return [];
-      gesehen.add(kurz);
-      return [{ kennung: kurz, name: f.name }];
-    });
-}
 
 export function Abspann({
   stand,

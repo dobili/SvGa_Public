@@ -254,13 +254,26 @@ function anfangsstapel(): Stapel {
   return gesicherterStapel() ?? neuerStapel("buch");
 }
 
+/**
+ * Ereignisse, bei denen eine Berührung den Tonerzeuger weckt. Safari am iPhone gibt Web Audio nur
+ * bei einer echten Nutzergeste frei, und dazu zählt das Ende der Berührung (touchend, click), nicht
+ * immer ihr Beginn (pointerdown). Das Steuerkreuz des Spiels unterdrückt mit preventDefault den
+ * Klick; war es die erste Berührung, blieb der Ton sonst stumm (iOS-Durchsicht, 20.11.2026).
+ */
+const ENTSPERR_EREIGNISSE = ["pointerdown", "pointerup", "touchend", "click", "keydown"] as const;
+
 /** Bei eingeschaltetem Ton weckt jede Berührung den Tonerzeuger (iPhone spielt sonst nichts). */
 function useTonEntsperren() {
   const an = useEinstellungen().ton === "an";
   useEffect(() => {
     if (!an) return;
-    document.addEventListener("pointerdown", entsperreTon);
-    return () => document.removeEventListener("pointerdown", entsperreTon);
+    const optionen = { capture: true, passive: true } as const;
+    for (const art of ENTSPERR_EREIGNISSE) document.addEventListener(art, entsperreTon, optionen);
+    return () => {
+      for (const art of ENTSPERR_EREIGNISSE) {
+        document.removeEventListener(art, entsperreTon, optionen);
+      }
+    };
   }, [an]);
 }
 

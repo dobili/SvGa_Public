@@ -156,9 +156,11 @@
 .abenteuer-moment {
   position: fixed;
   z-index: 20;
-  top: calc(var(--raster) * 1.5);
-  left: calc(var(--raster) * 1.5);
-  right: calc(var(--raster) * 1.5);
+  /* Mit den sicheren Rändern: Unter Notch und Dynamic Island lag die Zeile sonst unter der
+     Statusleiste, quer an der Seite der Kamera (iOS-Durchsicht, 20.11.2026). */
+  top: calc(env(safe-area-inset-top) + var(--raster) * 1.5);
+  left: calc(env(safe-area-inset-left) + var(--raster) * 1.5);
+  right: calc(env(safe-area-inset-right) + var(--raster) * 1.5);
   display: flex;
   gap: var(--raster);
   align-items: center;
@@ -201,8 +203,8 @@
 .abenteuer-tischblase {
   position: fixed;
   z-index: 20;
-  left: calc(var(--raster) * 1.5);
-  right: calc(var(--raster) * 1.5);
+  left: calc(env(safe-area-inset-left) + var(--raster) * 1.5);
+  right: calc(env(safe-area-inset-right) + var(--raster) * 1.5);
   display: flex;
   gap: var(--raster);
   align-items: center;

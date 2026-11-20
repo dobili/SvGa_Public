@@ -369,6 +369,15 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Doppeltipp-Zoom (iOS-Durchsicht, 20.11.2026): Safari vergrößert beim schnellen zweiten Tipp auf
+   einen Knopf die Seite, etwa beim Durchklicken von „Weiter“ im Dialog oder beim Ziehen auf dem
+   Brett. „manipulation“ erlaubt Rollen und Zwei-Finger-Zoom, aber keinen Doppeltipp-Zoom. :where
+   hält die Regel schwach, damit Steuerkreuz und Welt (touch-action: none) ihren Wert behalten. */
+:where(.rahmen-vollbild, .bildschirm-abenteuer),
+:where(.rahmen-vollbild, .bildschirm-abenteuer) :where(button, [role="button"], a, label) {
+  touch-action: manipulation;
+}
+
 :is(.rahmen-vollbild, .bildschirm-abenteuer) :is(input, textarea, [contenteditable="true"]) {
   -webkit-user-select: text;
   user-select: text;

@@ -139,6 +139,47 @@ Teil fertig ist.
       Entscheidung von mittel-3, Widerspruch genügt.
       **Rückmeldung:** „N2644 ok“ oder eine Notiz.
 
+- [ ] N2645. **Am iPhone (nur mit echtem Gerät prüfbar, mittel-2, 20.11.):**
+      1. Ton an, Spiel neu öffnen, als Allererstes mit dem Steuerkreuz laufen: Erklingt die Musik
+         nach dem ersten Loslassen?
+      2. Während Musik läuft kurz eine andere App öffnen oder anrufen lassen, zurück, einmal
+         tippen: Kommt die Musik wieder?
+      3. Im Dialog schnell zweimal auf „Weiter“, im Laden zweimal auf eine Ware: Die Seite darf
+         sich nicht vergrößern.
+      4. Hochkant in einer Partie: Liegen Partiemoment und obere Sprechblase ganz unter der
+         Statusleiste (nicht hinter Notch oder Dynamic Island)?
+      5. Quer, Handy in beide Richtungen gedreht: Steuerkreuz, Aktionsknopf, Blasen und Knöpfe
+         frei von der Kamera-Aussparung?
+      6. Im Browser (nicht als App): Bleibt das Steuerkreuz im Bild, wenn Safari die Leiste ein-
+         und ausblendet?
+      7. Daumen auf ▼, auf ▶ gleiten, dann vom Rand ins Kontrollzentrum wischen: Bleibt der Held
+         danach stehen?
+      8. Langer Druck auf Steuerkreuz und Dialogtext: kein Markieren, kein Kopiermenü, keine Lupe.
+      9. Name des Helden eingeben: Springt die Seite größer? Verdeckt die Tastatur das Feld?
+      10. Quer in der Partie: Porträts oben und in den Blasen scharf und richtig gesetzt?
+      **Rückmeldung:** „N2645 ok“ oder die Nummern, die nicht passen, etwa „N2645.4: Blase hinter
+      der Insel“.
+
+- [ ] N2646. **Was in der Nacht zum 20.11. dazukam (beim Durchspielen nebenbei):**
+      1. Die Haustür öffnet erst nach der ersten Nacht (vorher hieß es draußen „Guten Morgen“).
+      2. Rund 95 Textstellen im Lektorat geglättet: keine Namen vor der ersten Begegnung, keine
+         doppelten Vorstellungen, Zeit und Ort stimmig (etwa Mira, Lin, Turnierleiterin), Henri
+         siezt nicht mehr.
+      3. Nach verlorenem Clubkampf sagt auch Ambrose etwas; nach einer Revanche reagiert der
+         Clubchef auf den Ausgang; ein Remis in kurzen Partien zählt nicht mehr als Sieg (Sol gab
+         nach Remis die Karte „Kühler Kopf“).
+      4. Neuladen mitten im Abschied von Ambrose: Der Abschied beginnt von vorn, der Abspann kommt
+         (vorher war das Spielende verloren).
+      5. Henris Werkstatt: Zugerraten der Unsterblichen Partie nur bis Zug 11. Im eröffneten
+         Musikhaus sprechen Remy, Lou und Henri nicht mehr von der kommenden Eröffnung.
+      6. Nach Crossroads nennt Juno das Pinewood Camp.
+      7. Ton im Speicher höchstens 160 MB (vorher wuchs er über lange Sitzungen bis 4 GB, am Handy
+         hätte das den Tab beendet).
+      8. Quer: Umwandlungsauswahl in Kits Runde im Bild, Deckwahl ohne verdeckte Knöpfe.
+      9. Mit der Tastatur: Leertaste geht in allen Fenstern, Umwandlung hat den Fokus auf der Dame
+         (das gilt auch in der App).
+      **Rückmeldung:** „N2646 ok“ oder Nummer mit Notiz.
+
 ### Neu in 0.3.55: Schach-Abenteuer, technischer Prototyp (7.11.2026)
 
 Das Spiel ist noch kein Spiel, sondern der Durchstich: Zusatzpaket laden, ein Raum, laufen, ein

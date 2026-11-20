@@ -14,8 +14,13 @@
  * Schließen der Ergebniskarte, useAufgabenrunde.ts nach Simultan und Gedächtnisstellung. Die
  * Gesamtsimulation macht dasselbe (pipeline/abenteuer/gesamtsimulation-dialoge.cjs), das
  * Prüfwerkzeug pipeline/abenteuer/rueckmeldung.cjs prüft jede Rückmeldung.
- * Abhängigkeiten: schnittstelle/spielstand.ts, kern.ts.
+ * Neuladen mitten in der Rückmeldung (schwacher Spieler im Spieler-Durchlauf, 19.11.2026): Der
+ * Spielstand merkt die geöffnete Rückmeldung (`rueckmeldungOffen`) bis zum Ende des Gesprächs
+ * (useDialogende.ts); nach dem Neuladen öffnet die Oberwelt sie wieder (useOffeneRueckmeldung).
+ * Vorher war sie danach fort, etwa Victors „Das ist falsch.“ nach der Auswertung in Silicon Bay.
+ * Abhängigkeiten: React, schnittstelle/spielstand.ts, kern.ts.
  */
+import { useEffect, useRef } from "react";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import type { Oberweltkern } from "./kern";
 
@@ -46,7 +51,10 @@ export function mitGemerktemDialog(
 
 /** Die Rückmeldung der Oberwelt: zeigen (und vergessen) oder nur vergessen. */
 export interface NachErgebnis {
-  /** Öffnet den Dialog der Rückmeldung (`danach` geht vor) und vergisst den gemerkten Dialog. */
+  /**
+   * Öffnet den Dialog der Rückmeldung (`danach` geht vor), vergisst den gemerkten Dialog und merkt
+   * die Rückmeldung als offen, bis das Gespräch endet.
+   */
   readonly reagiere: (danach?: string) => void;
   /** Vergisst den gemerkten Dialog (Abbruch: Deckwahl, offene Partie oder Runde aufgegeben). */
   readonly vergiss: () => void;
@@ -66,9 +74,31 @@ export function nachErgebnis(
       const aktuell = k.standRef.current;
       if (!aktuell) return;
       const verweis = rueckmeldedialog(aktuell, danach);
-      vergiss();
+      k.schreibe({ ...aktuell, nachErgebnis: null, rueckmeldungOffen: verweis });
       if (verweis) oeffneDialog(verweis);
     },
     vergiss,
   };
+}
+
+/**
+ * Nach dem Neuladen: Steht im Spielstand eine offene Rückmeldung, öffnet die Oberwelt sie einmal,
+ * sobald die Welt da ist und kein Fenster offen ist. `bereit` sagt das; geprüft wird nur beim
+ * ersten Mal, damit eine im laufenden Spiel geöffnete Rückmeldung nicht zweimal kommt.
+ * Beispiel: Neuladen in Victors „Das ist falsch.“ → nach dem Laden spricht Victor wieder.
+ */
+export function useOffeneRueckmeldung(
+  k: Oberweltkern,
+  oeffneDialog: (verweis: string) => void,
+  bereit: boolean,
+): void {
+  const geprueft = useRef(false);
+  useEffect(() => {
+    if (!bereit || geprueft.current) return;
+    geprueft.current = true;
+    const verweis = k.standRef.current?.rueckmeldungOffen;
+    if (verweis) oeffneDialog(verweis);
+    // Nur beim ersten Mal, wenn die Welt bereit ist; k und oeffneDialog sind je Zeichnen neu.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bereit]);
 }

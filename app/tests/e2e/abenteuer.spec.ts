@@ -195,6 +195,11 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   // je nach Ausgang (maple-falls-dachboden.nach_erster_partie). Vorher stand man ohne Reaktion da.
   const dialog = page.getByTestId("abenteuer-dialog");
   await expect(dialog).toContainText("Du hast gewonnen", { timeout: 20000 });
+  // Neuladen mitten in der Rückmeldung (schwacher Spieler im Spieler-Durchlauf, 19.11.2026): Sie
+  // geht danach wieder auf, statt verloren zu sein (oberwelt/nachergebnis.ts, rueckmeldungOffen).
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await expect(dialog).toContainText("Du hast gewonnen", { timeout: 30000 });
   for (let i = 0; i < 40 && (await dialog.isVisible()); i++) {
     const wahl = page.locator(".abenteuer-dialog-wahlen button").first();
     if (await wahl.isVisible()) await wahl.click();

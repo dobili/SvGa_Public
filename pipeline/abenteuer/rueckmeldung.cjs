@@ -51,7 +51,13 @@ function ergebnisvariablen(art, kennung) {
   }
   const kurz = teile[teile.length - 1];
   const ort = teile.slice(0, -1).join("");
-  return [kurz + "Bestanden", ort + gross(kurz) + "Bestanden", kurz + "Punkte"];
+  return [
+    kurz + "Bestanden",
+    ort + gross(kurz) + "Bestanden",
+    kurz + "Punkte",
+    kurz + "Versucht",
+    ort + gross(kurz) + "Versucht",
+  ];
 }
 
 /** Knoten einer Ink-Datei mit ihrem Text: { "datei.knoten": text }. */
@@ -96,6 +102,8 @@ function passtZumAusgang(bedingung, variablen, ausgang) {
   const v = variablen.find((x) => new RegExp(`\\b${x}\\b`).test(bedingung));
   if (!v) return false;
   const verneint = new RegExp(`\\bnot\\s+${v}\\b`).test(bedingung);
+  // „…Versucht“ gilt nach jeder gespielten Runde, bestanden oder nicht.
+  if (v.endsWith("Versucht")) return !verneint;
   if (ausgang === "bestanden") return !verneint;
   if (ausgang === "nicht bestanden") return verneint;
   if (v.startsWith("siege")) return ausgang === "sieg" && !verneint;
@@ -108,16 +116,91 @@ function passtZumAusgang(bedingung, variablen, ausgang) {
  * Bedingung in einen besuchten Knoten führt. Reine Weiterleitungen anderswohin zählen nicht
  * (Befund: „dex“ fragt reiheDexBestanden ab, führt nach der Runde aber in den Alltag).
  */
-function reagiert(text, datei, besucht, variablen, ausgang) {
+function reagiert(text, datei, besucht, variablen, ausgang, knoten = {}) {
   if (kaskade(text, datei, besucht, variablen)) return true;
-  for (const zeile of (text || "").split("\n")) {
+  const zeilen = (text || "").split("\n");
+  for (let i = 0; i < zeilen.length; i++) {
+    const zeile = zeilen[i];
     if (!fragtAb(zeile, variablen)) continue;
+    if (SCHALTER.test(zeile)) {
+      if (istFallunterscheidung(zeilen, i) ? fallHatText(zeilen, i, ausgang) : passtZumAusgang(zeile, variablen, ausgang))
+        return true;
+      continue;
+    }
     const w = WEITERLEITUNG.exec(zeile);
     if (!w) return true;
-    if (besucht.includes(`${datei}.${w[2]}`) && passtZumAusgang(w[1], variablen, ausgang))
+    const ziel = `${datei}.${w[2]}`;
+    if (besucht.includes(ziel) && passtZumAusgang(w[1], variablen, ausgang) && !istWeiche(knoten[ziel]))
       return true;
   }
   return false;
+}
+
+/**
+ * Eine Frage nach einer neuen Partie oder Runde. Endet die Rückmeldung damit, ohne dass eine Wahl
+ * folgt, kann der Spieler nicht antworten (Mabel nach einem verlorenen Set, Lektorat 19.11.2026).
+ */
+const NOCH_EINMAL = /noch (ein|mal)|revanche|nochmal/i;
+
+/** Kopf einer Fallunterscheidung über eine Variable: „{ausgangX:“ allein auf der Zeile. */
+const SCHALTER = /^\s*\{\s*[A-Za-z]\w*\s*:\s*$/;
+/** Ein Fall darin: „- "sieg": …“ oder „- else: …“ (Rest der Zeile in Gruppe 2). */
+const FALL = /^\s*-\s*(?:"([^"]*)"|else)\s*:(.*)$/;
+
+/**
+ * Folgt auf „{X:“ eine Fallunterscheidung („- "sieg": …“) oder ein einfacher Bedingungsblock (Text
+ * direkt)? Beim Bedingungsblock zählt die Bedingung: „{tafelBestanden:“ reagiert nur auf „bestanden“.
+ */
+function istFallunterscheidung(zeilen, i) {
+  const naechste = zeilen.slice(i + 1).find((z) => z.trim() && !/^\s*\/\//.test(z)) ?? "";
+  return FALL.test(naechste);
+}
+
+/** Ist eine Zeile gesprochener Text (keine Weiterleitung, Zuweisung, Wahl, Anmerkung)? */
+function istText(zeile) {
+  const z = zeile.trim();
+  return z !== "" && !/^(->|~|\/\/|\+|\*|\})/.test(z);
+}
+
+/**
+ * Hat der Fall zum Ausgang in der Fallunterscheidung ab Zeile i gesprochenen Text? Warum: Mabels
+ * „{ausgang…Set2:“ führte bei „sieg“ nur „-> blaeser“ ins Angebot von Set 3; die Kopfzeile allein
+ * zählte als Reaktion (Lektorat mittel-1, 19.11.2026). Beispiel: Fall „remis“ mit „Remis. …“ → ja.
+ */
+function fallHatText(zeilen, i, ausgang) {
+  let getroffen = false;
+  let aktiv = false;
+  for (let j = i + 1; j < zeilen.length; j++) {
+    const z = zeilen[j];
+    if (/^\s*\}\s*$/.test(z)) break;
+    const fall = FALL.exec(z);
+    if (fall) {
+      aktiv = !getroffen && (fall[1] === undefined || fall[1] === ausgang);
+      getroffen = getroffen || aktiv;
+      if (aktiv && istText(fall[2])) return true;
+      continue;
+    }
+    if (aktiv && istText(z)) return true;
+  }
+  return false;
+}
+
+/**
+ * Fragt eine Bedingung einen echten Ausgang ab, nicht nur „noch nicht gespielt“ („== ""“,
+ * „abgebrochen“)? Warum: In der Kreidenacht prüfte die Weiche „ausgang1 == "" or … "abgebrochen"“
+ * und führte danach ins Angebot der nächsten Runde; das zählte als Kaskade, obwohl niemand auf
+ * Runde 1 einging (Lektorat mittel-1, 19.11.2026). Beispiel: „not reiheDexBestanden“ → ja.
+ */
+function fragtNachAusgang(bedingung, variablen) {
+  if (!fragtAb(bedingung, variablen)) return false;
+  const ohneLeer = bedingung.replace(/\w+\s*==\s*"(abgebrochen)?"/g, "");
+  return fragtAb(ohneLeer, variablen);
+}
+
+/** Ist der Knoten eine Weiche (beginnt mit einem Block aus Zweigen)? Dann ist er keine Reaktion. */
+function istWeiche(text) {
+  const ohne = (text || "").split("\n").filter((z) => z.trim() && !/^\s*\/\//.test(z));
+  return /^\{\s*$/.test(ohne[0] ?? "") && /^\s*-\s/.test(ohne[1] ?? "");
 }
 
 /** Ziele, die keine Reaktion sind, auch wenn ein Zweig sie erreicht: Alltag, Warten, Rat. */
@@ -139,10 +222,22 @@ function kaskade(text, datei, besucht, variablen) {
     .map((z) => ZWEIG.exec(z));
   return zweige.some((z, i) => {
     const davor = zweige[i - 1];
-    if (!z || !davor || !fragtAb(davor[1], variablen)) return false;
+    if (!z || !davor || !fragtNachAusgang(davor[1], variablen)) return false;
     const genommen = (ziel) => besucht.includes(`${datei}.${ziel}`);
-    return !genommen(davor[2]) && genommen(z[2]) && !KEINE_REAKTION.test(z[2]);
+    return (
+      !genommen(davor[2]) && genommen(z[2]) && !KEINE_REAKTION.test(z[2]) && !fortschritt(davor[2], z[2])
+    );
   });
+}
+
+/**
+ * Zwei Ziele derselben Reihe („blaeser_set2“, „blaeser_set3“; „mo_runde1“, „mo_runde2“): Die
+ * Weiche geht zum nächsten Angebot weiter, das ist keine Reaktion auf das Ergebnis (Mabel nach
+ * Set 2, Kreidenacht; Lektorat mittel-1, 19.11.2026).
+ */
+function fortschritt(davor, ziel) {
+  const stamm = (k) => /^(.*?)(\d+)$/.exec(k)?.[1] ?? null;
+  return stamm(davor) !== null && stamm(davor) === stamm(ziel);
 }
 
 /** Greift eine Rückmeldung das Ergebnis auf? Ja mit Zeilen und einem reagierenden Knoten. */
@@ -151,7 +246,7 @@ function greiftAuf(r, knoten, rundenDanach) {
   if (rundenDanach[r.kennung] === r.knoten) return true;
   const variablen = ergebnisvariablen(r.art, r.kennung);
   return r.besucht.some((k) =>
-    reagiert(knoten[k], k.split(".")[0], r.besucht, variablen, r.ausgang),
+    reagiert(knoten[k], k.split(".")[0], r.besucht, variablen, r.ausgang, knoten),
   );
 }
 
@@ -196,6 +291,8 @@ function funde(starts, rueckmeldungen, knoten, rundenDanach) {
       liste.push(`${art} ${kennung} (${schleife.ausgang}): Rückmeldung ${schleife.knoten} startet ohne Wahl neu`);
     for (const ausgang of new Set(eigene.map((r) => r.ausgang))) {
       const je = eigene.filter((r) => r.ausgang === ausgang);
+      const frage = je.find((r) => NOCH_EINMAL.test(r.offeneFrage || ""));
+      if (frage) liste.push(`${art} ${kennung} (${ausgang}): Rückmeldung endet mit „${frage.offeneFrage}“ ohne Wahl`);
       const falsch = je.find((r) => falscherZweig(r, knoten));
       if (falsch) liste.push(`${art} ${kennung} (${ausgang}): Rückmeldung führt in ${falscherZweig(falsch, knoten)}`);
       if (je.some((r) => greiftAuf(r, knoten, rundenDanach))) continue;
@@ -246,6 +343,10 @@ if (require.main === module) hauptprogramm(process.argv.slice(2));
 
 module.exports = {
   falscherZweig,
+  fortschritt,
+  fallHatText,
+  fragtNachAusgang,
+  istWeiche,
   ergebnisvariablen,
   knotenDer,
   ladeInk,

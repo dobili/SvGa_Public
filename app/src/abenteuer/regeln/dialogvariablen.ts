@@ -48,16 +48,20 @@ export function variablenNachPartie(
 }
 
 /**
- * Variablen zu einer bestandenen Runde: Kurzform `reiheSamBestanden` (wie in Akt 1) und Langform
+ * Variablen zu einer gespielten Runde: Kurzform `reiheSamBestanden` (wie in Akt 1) und Langform
  * mit Ort `wegMapleCedarTafelBestanden`, weil Kurzformen über Orte hinweg gleich sein können
- * (jede Rätseltafel heißt „tafel“). Nicht bestanden ändert nichts.
+ * (jede Rätseltafel heißt „tafel“). Dazu immer `…Versucht` (Kurz- und Langform), auch ohne
+ * Bestehen. Warum: Nach einem Fehlversuch konnte der Dialog ihn nicht von einem ersten Besuch
+ * unterscheiden; die Rätseltafeln boten sich wortgleich neu an (Rückmeldung, 19.11.2026).
+ * Beispiel: („wegMapleCedar.tafel“, false) → { tafelVersucht, wegMapleCedarTafelVersucht }.
  */
 export function variablenNachRunde(runde: string, bestanden: boolean): Variablen {
-  if (!bestanden) return {};
   const teile = runde.split(".");
   const name = teile.pop() ?? runde;
   const ort = teile.join("");
-  return { [`${name}Bestanden`]: true, [`${ort}${grossAnfang(name)}Bestanden`]: true };
+  const versucht = { [`${name}Versucht`]: true, [`${ort}${grossAnfang(name)}Versucht`]: true };
+  if (!bestanden) return versucht;
+  return { ...versucht, [`${name}Bestanden`]: true, [`${ort}${grossAnfang(name)}Bestanden`]: true };
 }
 
 /**

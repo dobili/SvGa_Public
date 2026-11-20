@@ -44,6 +44,8 @@ VAR kreideTreffpunkte = 0
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegRivertonIronwoodTafelVersucht = false
 
 // ---------------------------------------------------------------- Mr. Dale
 
@@ -97,6 +99,9 @@ Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor #stimmung
     Unter dem Fahrplan steht in Kreide: „Gelöst. Der Bus kommt trotzdem nicht.“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegRivertonIronwoodTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
 {not abschiedGesehen:
     Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose #stimmung:laechelt

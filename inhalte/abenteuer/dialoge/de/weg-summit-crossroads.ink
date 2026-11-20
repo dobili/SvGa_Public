@@ -37,6 +37,8 @@ VAR seite09Gefunden = false
 VAR abschiedGesehen = false
 // Bell stellt sich beim ersten Auftritt vor, wo immer der ist (Lektorat Akt 4, Frage 4).
 VAR bellVorgestellt = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegSummitCrossroadsTafelVersucht = false
 
 // ---------------------------------------------------------------- Rangerin Bell und das Atomschach
 
@@ -130,6 +132,9 @@ Nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
     Auf der Tafel am Steg steht: „Gelöst. Erst zählen, dann schlagen.“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegSummitCrossroadsTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, bevor der Geysir kommt.“ #sprecher:erzaehler
 {not abschiedGesehen:
     Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. #sprecher:ambrose #stimmung:nachdenklich

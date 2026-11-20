@@ -58,6 +58,8 @@ VAR testteamBrueckeGesehen = false
 VAR testteamBrueckeDurch = false
 VAR testteamBrueckeSpielt = false
 VAR testteamBrueckeNiederlagen = 0
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegIronwoodSiliconTafelVersucht = false
 
 // ---------------------------------------------------------------- Mrs. Kowalczyk
 
@@ -84,6 +86,9 @@ Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprech
     Auf der Tafel am Automaten steht in Filzstift: „Gelöst. Kaffee ist trotzdem kaputt.“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegIronwoodSiliconTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang von Maple Falls: „Wer hier hängt, verliert.“ #sprecher:erzaehler
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegIronwoodSilicon.tafel")

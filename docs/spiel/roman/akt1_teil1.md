@@ -7,7 +7,25 @@ Staunen. Spannung 2.
 
 ## Kapitel 1: Nicht wegwerfen
 
-_Szene 1 (Ankunft). Wohnzimmer. Stimmung: fremd, müde, Sommerende._
+_Szene 1 (Ankunft). Vor dem Haus, dann Wohnzimmer. Stimmung: fremd, müde, Sommerende._
+
+Ende August. Drei Tage Packen, ein langer Tag im Auto. Hinter dem Ortsschild von Maple Falls
+rauschte irgendwo Wasser, und ich drückte die Stirn an die Scheibe, um zu sehen, woher.
+
+Die Birch Lane war eine Straße mit alten Holzhäusern, und unseres hatte eine Veranda und davor
+einen Ahorn, dessen Blätter an den Rändern schon rot waren. Am Bordstein stand der Umzugswagen mit
+offener Klappe. Mama stellte den Motor ab und blieb einen Moment sitzen, die Hände noch am Lenkrad.
+
+„Das ist es“, sagte sie. „Unser Haus.“ Und nach einer Weile: „Ich weiß, es ist nicht die alte
+Wohnung. Aber es hat einen Garten. Und einen Dachboden, so groß wie unsere ganze alte Küche.“
+
+„Bleiben wir diesmal?“, fragte ich.
+
+„Diesmal bleiben wir. Das Haus gehört jetzt uns.“ Sie lächelte schief. „Die Bank sieht das noch
+etwas anders.“
+
+Die Möbelpacker trugen das Sofa hinein, schief, wie alles an diesem Tag. Mama stieg aus und
+drückte mir einen Karton in die Arme, irgendeinen. „Wir gehen zusammen rein.“
 
 Das Haus roch nach jemand anderem.
 
@@ -15,7 +33,7 @@ Nicht schlecht. Nach Holz und nach Äpfeln, die lange in einer Schale gelegen ha
 einem Waschmittel, das wir nie benutzt hatten. Aber es war nicht unser Geruch, und ich stand im
 Flur mit einem Karton auf dem Arm und wusste nicht, wohin damit.
 
-„Wohnzimmer“, sagte Mama von draußen. „Alles, wo nur ein Name draufsteht, ins Wohnzimmer.“
+„Wohnzimmer“, sagte Mama hinter mir. „Alles, wo nur ein Name draufsteht, ins Wohnzimmer.“
 
 Auf meinem Karton stand nur mein Name. Auf den meisten stand nur ein Name, ihrer oder meiner. Wir hatten in drei Tagen gepackt, und am dritten Tag hatte Mama aufgehört aufzuschreiben, was drin war.
 

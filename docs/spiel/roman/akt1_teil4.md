@@ -88,7 +88,7 @@ dagegen.
 lange genug gucken.“
 
 Mrs. Okafor saß auf einem Klappstuhl am Ende des Stegs, eine Decke über den Knien, und passte
-auf. Sie hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden gewesen.
+auf. Sie hatte gesagt, eine halbe Stunde.
 
 Der Bach lief unter den Brettern durch, schwarz und leise. Über den Zedern kam der Himmel
 heraus, mehr Sterne, als ich je gesehen hatte. In der Stadt, in der ich früher gewohnt hatte,
@@ -135,7 +135,7 @@ beigebracht. In Lagos. Es war zu heiß im Haus. Er sagte: Geduld, Grace. Die Nac
 der Gegner wird müde vor dir.“ Sie sah hinauf. „Ich habe sechzig Jahre lang geglaubt, das sei
 ein Rat fürs Schach.“
 
-Sie blieb bis nach Mitternacht. Wir sahen elf Sternschnuppen. Dex’ Lampe ging endgültig aus,
+Aus der halben Stunde wurde eine Nacht: Sie blieb bis nach Mitternacht. Wir sahen elf Sternschnuppen. Dex’ Lampe ging endgültig aus,
 und niemand vermisste sie.
 
 Am Morgen lag Nebel auf dem Bach. Ich war früh wach, früher als die anderen, und ging hinunter

@@ -496,7 +496,7 @@ Ich hatte am Morgen etwas ausprobiert. Vor dem Spiegel. Ein Gesicht, ein _Hm_.
 
 „Bei Dash hat es …“
 
-„Am Brett eines Clubs schweigt man. Im Park redet man.“ Er war streng wie am ersten Tag.
+„Am Brett eines Clubs flüstert man nur, über die Uhr, nie über Züge. Im Park redet man.“ Er war streng wie am ersten Tag.
 „Im Park spielt man um eine Limonade. Im Club um die Ehre des anderen. Wer ihn dort stört,
 nimmt ihm nicht die Zeit. Er nimmt ihm die Partie weg. Und die gehört euch beiden.“
 

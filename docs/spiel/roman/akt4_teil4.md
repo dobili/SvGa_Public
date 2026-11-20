@@ -860,7 +860,7 @@ Bis zum Ende?“
 
 „Ich hab gehofft.“
 
-Er starrte mich an. Dann lachte er noch mehr.
+Er starrte mich an. Dann lachte er noch mehr. „Du hast mich gezwungen, gut zu spielen, {held}. Danke.“
 
 „Das muss ich …“ Er drehte sich um. Er riss das Formular vom Tisch, das mit den Zügen, auf dem
 er jede Zeile mitgeschrieben hatte. „Das muss er sehen. Das muss er sofort sehen!“

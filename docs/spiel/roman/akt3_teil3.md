@@ -17,7 +17,7 @@ Erst verschwanden die Bäume. Dann das Gras. Dann blieb nur noch Erde in der Far
 Ziegeln, und Büsche, die aussahen, als hätte jemand sie aus Draht gebogen, und ein Himmel, der
 so blau war, dass es wehtat.
 
-Mama war in Port Delacroix geblieben. Das Notzelt brauchte sie noch zwei Wochen. „Fahr“,
+Mama war in Port Delacroix geblieben. Das Notzelt brauchte sie noch zwei Wochen. „Fahr, {held}“,
 hatte sie gesagt. „Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren.
 Ich hole dich ein.“
 

@@ -11,48 +11,9 @@
  */
 import { hastigTippen, ladenZu } from "./eilig";
 import { tippe, tippeKnopf, type Lauf } from "./eingabe";
+import { schiebtAuf, wiederholtePartie } from "./antworten";
 import { bedieneGedaechtnis } from "./gedaechtnis";
 import type { Knopf, Lage } from "./lage";
-
-/** Antworten, mit denen ein Spieler aufschiebt oder ablehnt (wie pipeline/abenteuer/lesefassung-spieler.cjs). */
-const AUFSCHUB = [
-  "nicht jetzt",
-  "gleich",
-  "noch nicht",
-  "später",
-  "ein andermal",
-  "noch einen moment",
-  "nach dem essen",
-  "lieber nicht",
-  "morgen",
-  "bis morgen",
-  "bis später",
-  "ich bin zu müde",
-  "vielleicht später",
-  "weitergehen",
-  "liegen lassen",
-  "nichts fragen",
-  "nicht hinsehen",
-  "doch nicht",
-];
-const NUR_GANZ = ["nein", "gehen", "hinausgehen"];
-/**
- * Antworten, die dieselbe Partie gleich noch einmal starten. Nachtauftrag 19.11.2026: Nach jedem Sieg
- * gegen Rangerin Hollis war der Spielstand neu, die Zählung je Stand begann von vorn, und der
- * Durchlauf nahm zwanzigmal „Noch eine.“. Jetzt nimmt er solche Antworten auf dieselbe Frage nur
- * einmal im ganzen Lauf.
- */
-const WIEDERHOLUNG = ["noch eine", "noch einmal", "noch mal", "revanche"];
-
-/** Schiebt die Antwort auf oder lehnt sie ab? Beispiel: „Nicht jetzt.“ → true. */
-export function schiebtAuf(antwort: string): boolean {
-  const kern = antwort
-    .toLowerCase()
-    .replace(/[„“”"]/g, "")
-    .replace(/[.!?…]+$/, "")
-    .trim();
-  return NUR_GANZ.includes(kern) || AUFSCHUB.some((a) => kern.startsWith(a));
-}
 
 /** Was der Durchlauf sich über Fenster merkt. */
 export interface Fenstergedaechtnis {
@@ -111,12 +72,7 @@ export function waehleAntwort(
 ): number {
   const zahl = (w: string) => g.gewaehlt.get(`${g.signatur}|${frage}|${w}`) ?? 0;
   const wiederholt = (w: string) =>
-    WIEDERHOLUNG.some((a) =>
-      w
-        .toLowerCase()
-        .replace(/[„“”"]/g, "")
-        .startsWith(a),
-    ) && (g.gewaehlt.get(`wiederholt|${frage}|${w}`) ?? 0) > 0;
+    wiederholtePartie(w) && (g.gewaehlt.get(`wiederholt|${frage}|${w}`) ?? 0) > 0;
   const gesamt = (w: string) => g.gewaehlt.get(`immer|${frage}|${w}`) ?? 0;
   const vor = wahlen.map((w, i) => ({ i, w, n: zahl(w), auf: schiebtAuf(w) || wiederholt(w) }));
   const echte = vor.filter((v) => !v.auf);
@@ -127,10 +83,17 @@ export function waehleAntwort(
   const wahl = neue[0] ??
     aufschub ??
     [...vor].sort((a, b) => a.n - b.n)[0] ?? { i: 0, w: wahlen[0] ?? "" };
-  g.gewaehlt.set(`${g.signatur}|${frage}|${wahl.w}`, zahl(wahl.w) + 1);
-  g.gewaehlt.set(`wiederholt|${frage}|${wahl.w}`, 1);
-  g.gewaehlt.set(`immer|${frage}|${wahl.w}`, gesamt(wahl.w) + 1);
+  merkeWahl(g, frage, wahl.w);
   return wahl.i;
+}
+
+/** Vermerkt eine gewählte Antwort (auch die des eiligen Spielers, sonst gälte sie ewig als neu). */
+export function merkeWahl(g: Fenstergedaechtnis, frage: string, w: string): void {
+  const plus = (schluessel: string) =>
+    g.gewaehlt.set(schluessel, (g.gewaehlt.get(schluessel) ?? 0) + 1);
+  plus(`${g.signatur}|${frage}|${w}`);
+  plus(`immer|${frage}|${w}`);
+  g.gewaehlt.set(`wiederholt|${frage}|${w}`, 1);
 }
 
 /**
@@ -172,7 +135,9 @@ export async function bedieneDialog(lauf: Lauf, lage: Lage, g: Fenstergedaechtni
   }
   const seite = lauf.seite;
   if (d.wahlen.length > 0) {
-    const i = lauf.eilig.antwort(d.text, d.wahlen) ?? waehleAntwort(g, d.text, d.wahlen);
+    const eilig = lauf.eilig.antwort(d.text, d.wahlen);
+    if (eilig !== null) merkeWahl(g, d.text, d.wahlen[eilig] ?? "");
+    const i = eilig ?? waehleAntwort(g, d.text, d.wahlen);
     lauf.messung.jetzt.wahlen += 1;
     for (const w of d.wahlen) lauf.messung.jetzt.dialogwoerter += w.trim().split(/\s+/).length;
     lauf.messung.log(`  Antwort: ${d.wahlen[i] ?? ""} (von ${d.wahlen.length})`);

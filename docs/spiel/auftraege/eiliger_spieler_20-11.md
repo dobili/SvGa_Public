@@ -53,11 +53,31 @@ Verlorene Rückmeldungen meldet wie bisher `rueckmeldung.ts`.
     durch die Tür.
   - 23 Rückmeldungen nach Ergebnis, keine verloren.
   - Keine doppelten Dialoge, keine hängende Pause.
-  - Der Lauf begann noch ohne die Korrekturen. Ein zweiter Lauf mit Korrekturen läuft zur
-    Bestätigung (Ergebnis in der Meldung an den Hauptchat).
+  - Der Lauf begann noch ohne die Korrekturen.
   - Akt 1 hat keinen Laden auf dem Weg. Das Abbrechen eines Ladens kam deshalb nicht vor; es gehört
     in eine eilige Strecke über Akt 2.
-- **Schwacher Spieler, quer, Akt 1 und 2**: siehe Meldung an den Hauptchat.
+- **Eiliger Spieler, Bestätigung mit Korrekturen**: Ergebnis in der Meldung an den Hauptchat.
+  Unterwegs hing der Lauf zweimal an Fehlern des Durchlaufs, nicht des Spiels:
+  - Endlose Revanche gegen Nia: Die erste Antwort des Eiligen stand nicht im Antwortgedächtnis,
+    danach galt „Noch eine.“ wieder als neu. Jetzt vermerkt `merkeWahl` (fenster.ts) auch seine
+    Antworten; Test in `fenster.test.ts`. Die Einordnung der Antworten steht jetzt in
+    `antworten.ts` (Größengrenze von fenster.ts).
+  - 26 Minuten „Jetzt aktualisieren“ ohne Wirkung. Das begann 15:52, kurz nach einem Neubau von
+    `app/dist` mitten im Lauf. Mit demselben Profil und einer echten neuen Fassung lädt der Knopf
+    sofort neu (geprüft im Hochformat mit dem neuen Stil). Wahrscheinlich hat der Lauf einen halb
+    gebauten Stand erwischt; bei Lesern kommt das nicht vor. Nicht behoben. Regel für Läufe:
+    `dist` nicht neu bauen, solange ein Durchlauf läuft.
+- **Schwacher Spieler, quer, Akt 1 und 2** (Start bis Akt 3): 1 Stunde 43 Minuten.
+  - 28 Partien: 12 Niederlagen, 14 Siege, 2 verlassen.
+  - 59 Schwächen: 15 Mal Partie oder Runde verlassen, 9 Mal mitten im Gespräch neu geladen,
+    7 Fortsetzungskarten, 3 Mal aufgegeben, dazu falsche Züge und abgebrochene Runden.
+  - 40 Rückmeldungen nach Ergebnis, keine verloren.
+  - Die neue Einleitung mit Mama und die Erzählzeilen (Treppe am Abend) liefen ohne Fund.
+  - Funde:
+    - Steuerkreuz unter dem Rand durch den Hinweis „Neue Version“ (behoben, siehe Abschnitt 2).
+    - „Haustür reagiert nicht“: Last, nicht das Spiel. Die Karte wechselte kurz nach der Frist,
+      während Build, Oberflächentests, Simulation und zwei Durchläufe zugleich liefen.
+  - Den Zielpfeil im Tagebuch prüft der schwache Spieler nicht; das tut der eilige Spieler.
 
 ## 4. Grenzen
 

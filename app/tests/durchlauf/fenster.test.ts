@@ -4,7 +4,8 @@
  * Warum: Bei Mr. Ruiz auf der Fähre spielte der Lauf sonst 149 Partien hintereinander (20.11.2026).
  */
 import { describe, expect, it } from "vitest";
-import { neuesFenstergedaechtnis, waehleAntwort } from "./fenster";
+import { Eiliger } from "./eilig";
+import { merkeWahl, neuesFenstergedaechtnis, waehleAntwort } from "./fenster";
 
 describe("Antwortwahl", () => {
   it("nimmt die Wiederholung einmal, danach den Aufschub", () => {
@@ -15,6 +16,22 @@ describe("Antwortwahl", () => {
     // Der Spielstand hat sich durch die Partie geändert; die Wiederholung zählt trotzdem als gewählt.
     g.signatur = "nach der Partie";
     expect(waehleAntwort(g, frage, wahlen)).toBe(1);
+    expect(waehleAntwort(g, frage, wahlen)).toBe(1);
+  });
+
+  it("nach den ersten Antworten des eiligen Spielers schiebt er auf (Nia, 20.11.2026)", () => {
+    // Die erste Antwort des Eiligen stand nicht im Gedächtnis; danach galt „Noch eine.“ als neu,
+    // und der Lauf spielte endlos gegen Nia.
+    const g = neuesFenstergedaechtnis();
+    const eilig = new Eiliger(true);
+    const frage = "Okay, okay. Du bist schneller, als du aussiehst, noch mal?";
+    const wahlen = ["„Noch eine.“", "„Gleich.“"];
+    for (let i = 0; i < 2; i++) {
+      const wahl = eilig.antwort(frage, wahlen);
+      expect(wahl).toBe(0);
+      merkeWahl(g, frage, wahlen[wahl ?? 0] ?? "");
+    }
+    expect(eilig.antwort(frage, wahlen)).toBeNull();
     expect(waehleAntwort(g, frage, wahlen)).toBe(1);
   });
 });

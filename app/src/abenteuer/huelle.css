@@ -9,7 +9,9 @@
   gap: 0;
   min-height: 100dvh;
   background: var(--navy);
-  color: var(--flaeche);
+  /* Fest Creme statt der Fläche der App: Im Dunkelmodus des Geräts ist --flaeche dunkelblau, Ort im
+     Kopf und Ziel unter dem Brett standen dann dunkel auf Navy (Prüfung dunkel, 20.11.2026). */
+  color: var(--spiel-creme);
 }
 
 .abenteuer-huelle-kopf {

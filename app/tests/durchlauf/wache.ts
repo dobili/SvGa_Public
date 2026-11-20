@@ -44,6 +44,7 @@ const FENSTER = [
   "abenteuer-gedaechtnis",
   "abenteuer-ergebnis",
   "abenteuer-rundenergebnis",
+  "abenteuer-abspann",
 ];
 
 /** Läuft im Browser (addInitScript): legt window.__wache an und beobachtet die Seite. */

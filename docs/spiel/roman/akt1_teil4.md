@@ -363,7 +363,7 @@ fehlte nur noch seine Antwort. Ein Zug.“
 
 Das Wort lag zwischen uns auf dem Steg.
 
-Ich sah auf das Brett. Auf die Figuren, die seit hundertsechzig Jahren warteten. Schwarz am
+Ich sah auf das Brett. Auf die Figuren, die seit damals warteten. Schwarz am
 Zug.
 
 „Dann spielen wir sie eben jetzt“, sagte ich.

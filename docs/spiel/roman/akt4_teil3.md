@@ -316,7 +316,7 @@ Nachricht seines Todes._“
 „Gideon hat alles getan, worum ich ihn gebeten habe“, sagte Ambrose. „Er hat das Brett
 verpackt und nach Maple Falls geschickt, mit den Figuren festgebunden. Er hat einen Stein
 behauen. Er hat einem Fremden drei Tage lang die Stirn gekühlt und dabei Springerzüge
-gelernt.“ Er drehte sich um. „Ich habe hundertsechzig Jahre lang an Hale gedacht. An jedem
+gelernt.“ Er drehte sich um. „Ich habe mein Leben lang und länger an Hale gedacht. An jedem
 einzelnen Tag. Und nicht ein einziges Mal an den Schmied.“
 
 Er sah auf die Tapete.

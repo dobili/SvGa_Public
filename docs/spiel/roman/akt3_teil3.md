@@ -180,7 +180,7 @@ Du hast Angst, dass es nicht stimmt. Und dann spielst du trotzdem.“
 
 Seine Stimme brach.
 
-„Das ist schöner. Ich habe hundertsechzig Jahre gebraucht, um es zu sehen, und dann musste
+„Das ist schöner. Ich habe ein Leben und länger gebraucht, um es zu sehen, und dann musste
 ich es erst hören, durch einen Deckel. Ein Opfer, das jemand spielt, der weiß, dass es
 stimmt, ist eine Rechnung. Ein Opfer, das jemand spielt, der hofft, dass es stimmt, und es
 geprüft hat, so gut er kann, und dem dabei das Herz schlägt, das ist …“ Er suchte. „Das ist
@@ -431,7 +431,7 @@ Ich brach das Wachs.
 Der Brief war kurz. Zwölf Zeilen. Senkrecht, gerade, jede gleich lang.
 
 Ich las ihn laut. Im Keller eines Bahnhofs ohne Gleise, bei einer Glühbirne, für jemanden,
-der hundertsechzig Jahre darauf gewartet hatte.
+der so lange darauf gewartet hatte.
 
 _Whitlock,_
 
@@ -619,7 +619,7 @@ hätte.“
 
 „Du hast gedacht, du hast dich verrechnet.“
 
-„Ich habe hundertsechzig Jahre lang gedacht, ich hätte mich verrechnet.“ Er starrte auf das
+„Ich habe mein ganzes Totsein lang gedacht, ich hätte mich verrechnet.“ Er starrte auf das
 Brett. „Ich habe geglaubt, mein Fehler sei der Mut gewesen. Zu schön, zu wenig richtig. Und
 dabei war er richtig. Mein Fehler kam danach. Als ich aufhörte, daran zu glauben.“
 
@@ -842,7 +842,7 @@ Ein Endspiel.
 
 Im Kofferraum, im Geigenkasten, lag ein Brett aus altem Holz. Und in meiner Jackentasche, auf
 Junos Reisebrett, festgehalten von kleinen Magneten, stand eine Stellung, die seit
-hundertsechzig Jahren auf einen einzigen Zug wartete.
+Generationen auf einen einzigen Zug wartete.
 
 Ein Endspiel.
 

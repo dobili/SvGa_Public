@@ -38,3 +38,5 @@ Teilen der Zeilen, keine Zwei-Satz-Regel.
   will, entscheidet beim nächsten Romandurchgang.
 - **Mamas „Ich bin so stolz auf dich, {held}“** nach dem Finale steht nicht im Roman. Er erzählt
   die Szene aus Victors Lauf zum Vater, und dort gibt es keinen Platz dafür.
+
+- **Nachtrag (20.11.2026): „hundertsechzig Jahre“ im Roman** von 17 auf 5 Stellen in der Erzählung (Dachboden „seit hundertsechzig Jahren tot“, „Schwarz war seit hundertsechzig Jahren am Zug“, Museum, Ghost Town, Finale), dazu eine Tabellenzeile in den Notizen. Die übrigen sind umformuliert („seit damals“, „ein Leben und länger“, „seit New York“, „all die Jahre“, „Generationen“, „lange genug“).

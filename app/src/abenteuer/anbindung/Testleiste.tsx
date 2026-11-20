@@ -19,7 +19,8 @@ const KNOEPFE: readonly { ausgang: Testausgang; text: string }[] = [
 
 /** Die Testleiste einer laufenden Partie; `id` ist die Id der Partie in der App. */
 export function Testleiste({ id }: { readonly id: string }) {
-  if (!testknoepfeAn()) return null;
+  // Die feste Bauzeit-Zahl zuerst: Nur so lässt der Bundler die Leiste in der Leserfassung weg.
+  if (__VEROEFFENTLICHUNG__ || !testknoepfeAn()) return null;
   return (
     <section className="abenteuer-huelle-test" aria-label="Testhilfe des Autors">
       <span>Test:</span>
@@ -46,7 +47,8 @@ export function Testleiste({ id }: { readonly id: string }) {
  * Sonderfall: In der Veröffentlichung zeichnet die Zeile nichts.
  */
 export function Raetseltest({ beiWahl }: { readonly beiWahl: (bestanden: boolean) => void }) {
-  if (!testknoepfeAn()) return null;
+  // Die feste Bauzeit-Zahl zuerst: Nur so lässt der Bundler die Leiste in der Leserfassung weg.
+  if (__VEROEFFENTLICHUNG__ || !testknoepfeAn()) return null;
   return (
     <section className="abenteuer-huelle-test" aria-label="Testhilfe des Autors">
       <span>Test:</span>

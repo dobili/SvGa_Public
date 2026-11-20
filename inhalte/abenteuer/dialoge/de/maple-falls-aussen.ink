@@ -354,11 +354,13 @@ Ende August. Drei Tage Packen, ein langer Tag im Auto. Hinter dem Ortsschild von
 Birch Lane. Ein altes Holzhaus mit Veranda, davor ein Ahorn, dessen Blätter an den Rändern schon rot sind. Am Bordstein steht der Umzugswagen mit offener Klappe. #sprecher:erzaehler #bild:einzug_haus
 Mama stellt den Motor ab und bleibt einen Moment sitzen, die Hände noch am Lenkrad. #sprecher:erzaehler #bild:aus
 Das ist es. Unser Haus. #sprecher:mutter #stimmung:muede
-Ich weiß, es ist nicht die alte Wohnung. Aber es hat einen Garten. Und einen Dachboden, so groß wie unsere ganze alte Küche. #sprecher:mutter #stimmung:laechelt
+Ich weiß, es ist nicht die alte Wohnung. Aber es hat einen Garten. #sprecher:mutter #stimmung:laechelt
+Und einen Dachboden, so groß wie unsere ganze alte Küche. #sprecher:mutter #stimmung:laechelt
 * [„Und eine Schule voller Leute, die ich nicht kenne.“]
     Die kennst du in einer Woche. Ich fange am Montag im Krankenhaus an, da kenne ich auch keinen. #sprecher:mutter #stimmung:nachdenklich
 * [„Bleiben wir diesmal?“]
-    Diesmal bleiben wir. Das Haus gehört jetzt uns. Die Bank sieht das noch etwas anders, aber uns. #sprecher:mutter #stimmung:laechelt
+    Diesmal bleiben wir. Das Haus gehört jetzt uns. #sprecher:mutter #stimmung:laechelt
+Die Bank sieht das noch etwas anders. #sprecher:mutter #stimmung:laechelt
 - Die Möbelpacker tragen das Sofa hinein, schief, wie alles heute. #sprecher:erzaehler
 Nimm einen Karton, irgendeinen. Wir gehen zusammen rein. #sprecher:mutter #stimmung:muede
 -> einleitung_hinein

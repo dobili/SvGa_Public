@@ -138,7 +138,7 @@ Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht
 Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
 Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. Ich hab sie gemacht. #sprecher:juno #stimmung:froh
 Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. Sie kommt dir vor wie etwas, das fertig ist. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck
-Er wartet am Ende des Gehsteigs, wo die Bretter aufhören. #sprecher:erzaehler
+Ambrose wartet am Ende des Gehsteigs, wo die Bretter aufhören. #sprecher:erzaehler
 Setz dich. #sprecher:ambrose #stimmung:nachdenklich
 Du setzt dich auf die Kante. Der Staub ist noch warm vom Tag. #sprecher:erzaehler
 Ich muss dir etwas sagen. Ich glaube, du weißt es schon. #sprecher:ambrose #stimmung:still
@@ -161,17 +161,20 @@ Noch eine Partie. Deine. Gegen ihn. In der großen Halle, vor allen Leuten. Dann
 * [„Ich weiß.“]
     Natürlich weißt du es. Vielleicht seit dem Felsbogen. #sprecher:ambrose #stimmung:laechelt #musik:aus #pause:4
     Du weißt, dass er gehen muss. Bleib, sagst du trotzdem. Du wolltest es nur einmal sagen. #sprecher:erzaehler
-- Ich könnte bleiben. In deinem Zimmer auf der Fensterbank, in einem Geigenkasten. Ich könnte deine Partien kommentieren, bis du mich nicht mehr hören willst. #sprecher:ambrose #stimmung:laechelt #musik:nachtstueck
-Ein Geist, der bleibt, wird ein Möbelstück, {held}. Etwas, um das man herumgeht. Ich war lange genug ein Brett. #sprecher:ambrose #stimmung:nachdenklich
+- Ich könnte bleiben, in deinem Zimmer auf der Fensterbank, in einem Geigenkasten. #sprecher:ambrose #stimmung:laechelt #musik:nachtstueck
+Ich könnte deine Partien kommentieren, bis du mich nicht mehr hören willst. #sprecher:ambrose #stimmung:laechelt
+Ein Geist, der bleibt, wird ein Möbelstück, {held}. Etwas, um das man herumgeht. #sprecher:ambrose #stimmung:nachdenklich
+Ich war lange genug ein Brett. #sprecher:ambrose #stimmung:nachdenklich
 In Maple Falls sitzt eine alte Frau auf einer Veranda mit zwei Stühlen. Ich möchte nicht der sein, wegen dem du einen leeren Stuhl hinstellst. #sprecher:ambrose #stimmung:nachdenklich
 * [„Mrs. Calloway lernt jetzt Schach. Von Owen.“]
-- Juno hat geschrieben: Sie haben einen Tisch zwischen die Stühle gestellt. #sprecher:erzaehler
+- Owen hat dir geschrieben: Sie haben einen Tisch zwischen die Stühle gestellt. #sprecher:erzaehler
 Dann ist es noch besser, als ich dachte. #sprecher:ambrose #stimmung:lachtOhneSpott
 Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. #sprecher:ambrose #stimmung:laechelt
 Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose #stimmung:friedlich
 Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof. #sprecher:erzaehler #teilchen:sternschnuppen #klang:sternschnuppe
 Ich habe mir auch etwas gewünscht. Ich bin tot, mir kann nichts mehr misslingen. #sprecher:ambrose #stimmung:lacht
-Dass du im Finale einen Fehler machst. Einen kleinen, den du merkst. Und dass du danach den besten Zug deines Lebens spielst. #sprecher:ambrose #stimmung:laechelt
+Dass du im Finale einen Fehler machst, einen kleinen, den du merkst. #sprecher:ambrose #stimmung:laechelt
+Und dass du danach den besten Zug deines Lebens spielst. #sprecher:ambrose #stimmung:laechelt
 * [„Das ist ein gemeiner Wunsch.“]
 - Es ist der schönste, den ich habe. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.held.gespraech
 -> END

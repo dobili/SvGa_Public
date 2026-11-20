@@ -122,7 +122,7 @@ Darunter springt eine Uhr an: fünf Minuten für jede Seite, drei Sekunden je Zu
 === greifarm_ende ===
 {z1Fertig: -> END}
 ~ z1Fertig = true
-Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauern aus Metall vor {held} hin. #sprecher:erzaehler
+Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauern aus Metall vor dich hin. #sprecher:erzaehler
 „Danke für die Partie.“ #sprecher:greifarm #stimmung:neutral
 ~ gibFund("bauerZ1")
 {ambroseSprichtWieder:

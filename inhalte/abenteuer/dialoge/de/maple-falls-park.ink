@@ -84,7 +84,7 @@ So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die
     A. W. Du erkennst die Züge. So beginnt seine Partie gegen Hale. #sprecher:erzaehler
     -> END
 }
-Auf dem Heimweg ist Ambrose lange still. #sprecher:erzaehler #pause
+Ihr geht ein Stück am Teich entlang. Ambrose ist lange still. #sprecher:erzaehler #pause
 Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #stimmung:still #pause
 * [„Kennst du die Stellung?“]
     Ob ich sie kenne. Es ist meine. Der Anfang. Vier Züge, und im vierten mein Gambit. #sprecher:ambrose #stimmung:still #pause
@@ -266,7 +266,7 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 }
 {limoGefragt and not limoGebracht and not hatLimo:
     Schickt dich Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel #stimmung:laechelt
-    Du bist nicht der Erste, der für sie Limo holt. Aber die meisten kommen nicht wieder. #sprecher:patel #stimmung:laechelt
+    Jo hat schon viele zum Limoholen geschickt. Aber die meisten kommen nicht wieder. #sprecher:patel #stimmung:laechelt
 }
 ~ oeffneLaden("mapleFalls.kiosk")
 -> END
@@ -334,7 +334,7 @@ Ins Geländer hat jemand Buchstaben geritzt: „M. W. + E. C. 1952“. #sprecher
 - else:
     Bei einer Stellung entwischt der König noch. Der Zettel bleibt auf der Bank liegen. #sprecher:erzaehler
     {not abschiedGesehen:
-        Sieh nach, wohin der König noch kann. Dann versuch es noch einmal. #sprecher:ambrose #stimmung:nachdenklich
+        Einer entwischt dir noch. Zähl seine Felder, eins nach dem anderen. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
 -> END

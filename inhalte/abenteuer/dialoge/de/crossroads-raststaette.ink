@@ -70,7 +70,7 @@ Hinter der Theke schenkt eine Frau Kaffee ein, ohne hinzusehen. #sprecher:erzaeh
 {novaBitteGehoert and not lieferungFuerDolores: -> darlene_lieferung}
 {not darleneGetroffen:
     ~ darleneGetroffen = true
-    Hinter der Theke Darlene. Sechzig, mit den Händen von einer, die vierzig Jahre Kaffee eingeschenkt hat. #sprecher:erzaehler #bild:aus
+    Die Frau hinter der Theke stellt die Kanne ab. Darlene, sechzig, Hände wie gegerbtes Leder. #sprecher:erzaehler #bild:aus
     Der Varianten-Tisch. Jeder, der hier durchkommt, bringt ein Spiel mit. Ich heb sie auf. Du hast auch welche mitgebracht, hör ich. #sprecher:darlene #stimmung:froh
 - else:
     {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene #stimmung:laechelt

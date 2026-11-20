@@ -17,6 +17,7 @@ EXTERNAL setzeSzene(kennung)
 EXTERNAL schreibeTagebuch(name)
 EXTERNAL gibKarte(kennung)
 
+VAR angesehenBrettOhneDame = false
 VAR ausgangMapleFallsErsteLektion = ""
 VAR held = "Du"
 VAR ambroseVertrauen = 0
@@ -83,8 +84,10 @@ Kreisliga spielt man zu viert. Wer die Clubnadel holt, spielt mit. Die Nadel hol
     Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado #stimmung:neutral
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
 Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. Das ist Sam. #sprecher:erzaehler
-Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler
-Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #sprecher:ambrose #stimmung:lacht
+// Lektorat 19.11.2026: Wer das Brett schon angesehen hat (ansehen-maple-falls), liest es nicht zweimal.
+{angesehenBrettOhneDame:Der Radiergummi steht noch auf d8. #sprecher:erzaehler}
+{not angesehenBrettOhneDame:Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler}
+{not angesehenBrettOhneDame:Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #sprecher:ambrose #stimmung:lacht}
 ~ setzeSzene("akt1.ersterSchultag")
 -> END
 
@@ -215,7 +218,7 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
 Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt #stimmung:nachdenklich
 Dann geht er wieder. #sprecher:erzaehler
-Auf dem Heimweg sagt Ambrose lange nichts. Ahornblätter auf dem Gehweg. Die Laternen gehen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus
+Ambrose sagt lange nichts. Draußen vor dem Fenster gehen die Laternen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus
 Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ich habe sie aber nicht verloren.“]
     Nein. Du hast gezählt, bis nichts mehr übrig war. Buchhaltung, Zug um Zug. #sprecher:ambrose #stimmung:nachdenklich
@@ -223,7 +226,7 @@ Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
     Eine, über die man noch in hundert Jahren spricht. Über diese spricht man morgen. #sprecher:ambrose #stimmung:nachdenklich
 - Zu meiner Zeit hätte man so etwas nicht aufgeschrieben. #sprecher:ambrose #stimmung:streng
 * [„Bist du enttäuscht?“]
-- Er bleibt unter einer Laterne stehen. Man sieht fast durch ihn hindurch. #sprecher:erzaehler #pause
+- Das Laternenlicht fällt durch das Fenster auf das Brett. Man sieht fast durch ihn hindurch. #sprecher:erzaehler #pause
 Nein. #sprecher:ambrose #stimmung:still #pause:3
 Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
 ->->
@@ -349,9 +352,9 @@ Juno schreibt es ins Tagebuch. Mit Glitzer. #sprecher:erzaehler
 - nadelMapleFalls == 0:
     {~Der Coach sagt, ich ziehe zu schnell. Ich sag: Die anderen ziehen zu langsam!|Die Pokale da sind von 1994. Wird Zeit für einen neuen!} #sprecher:sam #stimmung:laechelt
 - samVersoehnt:
-    {~Dame raus, Zug sechs. Ich arbeite dran.|Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|{endeAkt1Gesehen:In Cedar Creek spielen sie in einer Bibliothek. Ich hab die ganze Zeit geflüstert. Ich!|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?}} #sprecher:sam #stimmung:laechelt
+    {~Dame raus, Zug sechs. Ich arbeite dran.|Den Coach geknackt, Respekt. Ich hab drei Jahre gebraucht.|{endeAkt1Gesehen:In Cedar Creek spielen sie in einer Bibliothek. Ich hab die ganze Zeit geflüstert. Ich!|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?}} #sprecher:sam #stimmung:laechelt
 - else:
-    {~Du hast den Coach geknackt? Respekt. Ich hab drei Jahre gebraucht.|{endeAkt1Gesehen:In Cedar Creek spielen sie in einer Bibliothek. Ich hab die ganze Zeit geflüstert. Ich!|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?}} #sprecher:sam #stimmung:laechelt
+    {~Den Coach geknackt, Respekt. Ich hab drei Jahre gebraucht.|{endeAkt1Gesehen:In Cedar Creek spielen sie in einer Bibliothek. Ich hab die ganze Zeit geflüstert. Ich!|Cedar Creek hat eine Bibliothek als Club. Was spielen die da, leise?}} #sprecher:sam #stimmung:laechelt
 }
 -> END
 
@@ -414,7 +417,7 @@ In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:ha
 Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen. #sprecher:victor #stimmung:bitter
 Spanisch, Zug zwölf. Du hast Schwarz, einen Springer weniger und zwei Bauern mehr. #sprecher:victor #stimmung:kalt
 Das sage ich dir vorher, damit du dich nachher nicht beschwerst. #sprecher:victor #stimmung:bitter
-Ein Springer gegen zwei Bauern. Das ist schwer, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
+Ein Springer … gegen zwei Bauern. Spiel, Kind. Frag mich jetzt nichts. #sprecher:ambrose #stimmung:still
 * [„Ich spiele.“]
     -> victor_partie
 * [„Das ist nicht fair.“]
@@ -510,7 +513,7 @@ Jetzt fehlt nur noch der Coach. Die Clubnadel gibt es nur gegen sie. #sprecher:j
 === sam_reihe_danach ===
 {not reiheSamBestanden: -> sam}
 Du hast jedes Mal gezählt. Und nicht einmal genommen, was ich dir hingestellt hab. #sprecher:sam #stimmung:ueberrascht
-Na gut. Juno hat auch noch Aufgaben. Die kann ihre eigene Schrift nicht lesen. #sprecher:sam #stimmung:laechelt
+Na gut. Juno hat auch noch Aufgaben. Mit Glitzer, wahrscheinlich. #sprecher:sam #stimmung:laechelt
 -> END
 
 // Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
@@ -532,5 +535,5 @@ Na gut. Juno hat auch noch Aufgaben. Die kann ihre eigene Schrift nicht lesen. #
     ~ revancheMapleFalls = true
     ~ beginnePartie("mapleFalls.clubkampf")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END

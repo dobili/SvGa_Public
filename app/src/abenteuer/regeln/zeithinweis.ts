@@ -136,6 +136,20 @@ export function zeithinweiseFreigeschaltet(
   );
 }
 
+/** Das Halbfinale: Ambrose verspricht, nur zu kommen, wenn {held} ihn ruft. */
+const HALBFINALE = "capitalArena.halbfinale";
+
+/**
+ * Schweigt Ambrose hier von sich aus? Im Halbfinale sagt er vorher: „Wenn du mich rufst, komme
+ * ich. Wenn nicht, schaue ich zu.“ (capital-arena-halle) und danach „Du hast mich nicht
+ * gerufen“; ein ungefragter Zeit-Hinweis käme gegen sein eigenes Wort (Lektorat, 19.11.2026).
+ * Eingabe: Kennung der Begegnung, auch mit „#…“-Zusatz.
+ * Beispiel: „capitalArena.halbfinale“ → true; „ironwood.clubkampf“ → false.
+ */
+export function ambroseSchweigtAmBrett(begegnung: string): boolean {
+  return (begegnung.split("#")[0] ?? "") === HALBFINALE;
+}
+
 /** So viele Sätze gibt es je Art (Texte `tisch.ambrose.<art>.<1 bis 4>` in texte/de.json). */
 export const ZEITHINWEIS_SAETZE = 4;
 

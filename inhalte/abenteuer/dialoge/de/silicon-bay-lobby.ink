@@ -85,7 +85,7 @@ Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 - Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
-Theo hat Schlüssel für jede Tür in der Akademie, auch für den Serverraum. Frag ihn. #sprecher:victor #stimmung:nachdenklich
+Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_alltag ===

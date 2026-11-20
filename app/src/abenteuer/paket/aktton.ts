@@ -45,6 +45,9 @@ let laeufe = 0;
 
 function setzeStand(neu: Tonladestand): void {
   stand = neu;
+  // Von außen lesbar (Oberflächentests warten darauf, Fehlersuche am Gerät): „ruht“, „laedt“,
+  // „vollstaendig“ oder „unvollstaendig“ am Wurzelelement.
+  if (typeof document !== "undefined") document.documentElement.dataset.abenteuerTon = neu.art;
   for (const b of beobachter) b();
 }
 

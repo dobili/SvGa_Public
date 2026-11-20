@@ -5,17 +5,17 @@
  * Rolle im Gesamtbild: Teil von oberwelt/Oberwelt.tsx, ausgelagert, damit der Bildschirm lesbar
  * bleibt. In Erinnerungen (Ambroses Zeit) zeigt die Oberwelt sie nicht (F3). Welche Knöpfe
  * erscheinen, entscheidet die Oberwelt; hier nur Anzeige. Seit docs/spiel/30 (Bedienung mit dem
- * Daumen) liegen die Knöpfe nicht mehr oben, sondern in einer Leiste über dem Steuerkreuz
- * (Hochformat) oder als runde Knöpfe rechts über dem Aktionsknopf (Querformat); die Lage regelt
- * bedienung.css. Jeder Knopf trägt ein Zeichen für die runde Form und seinen Namen; quer zeigt
- * er nur das Zeichen, der Name bleibt sein zugänglicher Name. Die Münzen stehen oben, aber nur,
+ * Daumen) liegen die Knöpfe nicht mehr oben; seit 20.11.2026 (Wunsch des Autors) sind sie kleine
+ * Symbolknöpfe in einer Reihe unter dem Steuerkreuz, neben dem Menü ☰; die Lage regelt
+ * bedienung.css. Jeder Knopf zeigt nur sein Zeichen; der Name bleibt sein zugänglicher Name
+ * (aria-label) und steht als verborgener Text im Knopf. Die Münzen stehen oben, aber nur,
  * wenn sich ihre Zahl ändert, und im Laden (Muenzanzeige.tsx, Wunsch des Autors, 20.11.2026).
  * Abhängigkeiten: texte/texte.ts, oberwelt/Muenzanzeige.tsx.
  */
 import { tSpiel } from "../texte/texte";
 import { Muenzanzeige } from "./Muenzanzeige";
 
-/** Ein Knopf der Leiste: Zeichen (für die runde Form im Querformat) und Name. */
+/** Ein Knopf der Leiste: Zeichen (sichtbar) und Name (zugänglicher Name). */
 function Leistenknopf({
   zeichen,
   text,

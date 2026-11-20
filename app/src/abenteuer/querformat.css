@@ -75,14 +75,16 @@
     max-height: 100%;
   }
 
-  /* Menü und Münzen rücken links neben die Spalte, solange ein Dialog offen ist. */
+  /* Menü, Tagebuch (bedienung.css) und Münzen rücken links neben die Spalte, solange ein Dialog
+     offen ist. */
   .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) > .abenteuer-menueknopf {
     right: calc(env(safe-area-inset-right) + var(--textspalte) + var(--raster) * 2);
   }
 
   .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) .abenteuer-muenzen {
     right: calc(
-      env(safe-area-inset-right) + var(--textspalte) + var(--leistenknopf) + var(--raster) * 4
+      env(safe-area-inset-right) + var(--textspalte) + var(--leistenknopf) * 2 + var(--raster) * 5 +
+        var(--spiel-pixel) * 4
     );
   }
 

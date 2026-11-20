@@ -140,8 +140,7 @@ export class Oberweltszene extends Phaser.Scene {
     const feste: Phaser.Tilemaps.TilemapLayer[] = [];
     for (const name of EBENEN) {
       const ebene = karte.createLayer(name, kacheln);
-      // Phaser 4 kann Ebenen auch auf der Grafikkarte zeichnen (TilemapGPULayer); die Kollision
-      // braucht die gewöhnliche Ebene, die createLayer ohne weitere Angabe liefert.
+      // Die Kollision braucht die gewöhnliche Ebene (createLayer), nicht TilemapGPULayer.
       if (!(ebene instanceof Phaser.Tilemaps.TilemapLayer)) continue;
       ebene.setCollisionByProperty({ kollision: true });
       if (this.daten.hintergrund) ebene.setVisible(false);
@@ -169,7 +168,8 @@ export class Oberweltszene extends Phaser.Scene {
     for (const ebene of feste) this.physics.add.collider(held, ebene);
     this.physics.world.setBounds(0, 0, karte.widthInPixels, karte.heightInPixels);
     const kamera = this.cameras.main;
-    this.kamerafuehrung = new Kamerafuehrung(kamera, KACHEL, () => this.ausloeser);
+    const { melder } = this.daten;
+    this.kamerafuehrung = new Kamerafuehrung(kamera, KACHEL, () => this.ausloeser, melder);
     this.verdeckt = this.kamerafuehrung.richteEin(karte.widthInPixels, karte.heightInPixels, ZOOM);
     kamera.startFollow(held, true).setRoundPixels(true);
     this.zielmarker = new Zielmarker(this, KACHEL, () => this.verdeckt);

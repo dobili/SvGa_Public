@@ -9,6 +9,7 @@
  */
 import type { Weltposition } from "../schnittstelle/spielstand";
 import type { Belebungsbilder } from "./belebungsschicht";
+import type { Heldhaelfte } from "./heldhaelfte";
 import type { Moebel } from "./moebel";
 import type { Teilchenart } from "./teilchen";
 import type { Toenung } from "./toenung";
@@ -33,6 +34,8 @@ export interface Melder {
   readonly beiAusloeser: (treffer: Ausloesertreffer | null) => void;
   /** Der Held hat eine neue Kachel erreicht (für Anzeige und Oberflächentests), nur bei Änderung. */
   readonly beiKachel?: (x: number, y: number) => void;
+  /** Der Held wechselt die Bildhälfte (heldhaelfte.ts): Hinweise an den anderen Rand legen. */
+  readonly beiHeldhaelfte?: (haelfte: Heldhaelfte) => void;
 }
 
 /** Was die Szene zum Aufbau braucht. */

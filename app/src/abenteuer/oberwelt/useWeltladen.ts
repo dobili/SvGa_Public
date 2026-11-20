@@ -116,6 +116,8 @@ function starteSpiel(
         if (a.kachelanzeige.current) a.kachelanzeige.current.textContent = `${x},${y}`;
         tonregie.heldBei(x, y);
       },
+      // An der Welt: Hinweise und Meldungen legen sich an den Rand fern vom Helden (CSS).
+      beiHeldhaelfte: (h) => a.kachelanzeige.current?.parentElement?.setAttribute("data-held", h),
     },
   });
 }

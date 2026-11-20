@@ -62,6 +62,16 @@ Die Ausnahmen sind Sperren, die die Reihenfolge der Geschichte ausschließt; die
 
 ### Behoben
 
+- **Reihenfolgefalle in der Hauptquest von Riverton** (`riverton.parkclub`, Schritt 4):
+  - Gefunden mit dem Aufschieber. Quests laufen streng der Reihe nach. Wer in Riverton zuerst
+    Tamsins Aufgabenreihe löste und erst danach Slick ansprach (Schritt 3), blieb für immer bei
+    Schritt 4 hängen, denn Tamsin bietet die Reihe danach nicht mehr an.
+  - Behebung (`app/src/abenteuer/regeln/quests.ts`, `schonEingetreten`): Kommt eine Quest bei
+    einem Schritt an, dessen Runde schon bestanden oder dessen Partie schon mit passendem Ausgang
+    gespielt ist, zählt der Schritt sofort, mit seinen Wirkungen.
+  - Das gilt für alle Quests, ebenso in der Gesamtsimulation (`melde`).
+  - Gegenprobe: Aufschieber „ok (aufgeschoben und nachgeholt)“. Tests in
+    `questsnachholen.test.ts`.
 - **Feier in Ironwood** (`ironwood.feier`):
   - Fehler: Wer Big Joes Einladung ablehnte und Akt 3 beendete, fand Big Joe nicht mehr. Die
     Nebenquest blieb für immer offen.
@@ -97,6 +107,14 @@ Die Ausnahmen sind Sperren, die die Reihenfolge der Geschichte ausschließt; die
      ein Ort- oder Fundereignis statt des Knotens. Das ist eine Dialog- und Datenänderung im
      Bereich von mittel-1.
 
+4. **Archiv ordnen** (`cedarCreek.archivOrdnen`, Start; gefunden mit dem Aufschieber):
+   - Fehler: Okafor bietet das Ordnen nur an, solange die Clubnadel von Cedar Creek fehlt
+     (cedar-creek-archiv: `nadelCedarCreek == 0 oder ordnenAngeboten`). Wer zuerst den Clubkampf
+     gewinnt, bekommt die Nebenquest nie. Es ist ein verpasstes Angebot; im Tagebuch hängt nichts.
+   - Vorschlag: Okafor bietet das Ordnen nach der Nadel einmal in der Bibliothek an. Die
+     Bedingung im Karton zu lockern hieße, dass das Ordnen jedes Mal die Erzählung von 1858
+     verdrängt.
+
 ## Weitere Fallgruppen
 
 - **Gegenstände und Läden:**
@@ -106,11 +124,36 @@ Die Ausnahmen sind Sperren, die die Reihenfolge der Geschichte ausschließt; die
 - **„Nicht jetzt“:** Einmalige Eingänge mit verneinter Bedingung prüft die statische Prüfung mit.
   Bedingungen innerhalb von Ink (`{nicht x: …}`) sieht sie nicht; die deckt der Aufschieber ab.
 
-## Aufschieber
-
-Gezielte Läufe für die Quests mit Befunden und der vorläufige Lauf über Akt 1 sind im Abschnitt
-„Läufe“ unten eingetragen.
-
 ## Läufe
 
-(wird ergänzt)
+**Aufschieber** (Stand 20.11.2026, 20:15; 46 von 91 Quests, der Rest läuft weiter):
+
+| Ergebnis | Anzahl |
+| --- | --- |
+| ok, von der Geschichte gebraucht | 26 |
+| ok, aufgeschoben und nachgeholt | 18 |
+| verfehlt | 2 |
+
+- **Die zwei Verfehlten:**
+  - `riverton.parkclub` ist behoben, siehe oben.
+  - `cedarCreek.archivOrdnen` ist gemeldet, siehe Befund 4.
+- **Gezielt geprüft:** Mamas Finale, der Clubkampf und die Feier in Ironwood, die Fernpartie und
+  das Endspiel in Summit City sind alle ok. `siliconBay.spielberichte` wurde nie begonnen; das
+  bestätigt die statische Prüfung.
+- **Grenze:**
+  - Für Tamsins Zuschauen und die fehlende Seite zeigt der Aufschieber „ok“. Er fasst Victor an,
+    sobald die Hauptquest ihn braucht, und spielt den späten Fall deshalb nicht nach. Die
+    statischen Befunde bleiben gemeldet.
+  - Innerhalb von Ink geschlossene Angebote wie bei Befund 4 findet nur der Aufschieber.
+
+**Eiliger Spieler** (`DURCHLAUF_SPIELER=eilig`, Stand zu Beginn von Akt 2 aus `aktstand.cjs`, 45
+Minuten):
+
+- Er spielte bis zur Raststätte vor Silicon Bay, also durch ganz Akt 2. Dabei:
+  - 9 Partien und 8 Runden;
+  - Einkäufe im Laden;
+  - doppeltes Tippen, die jeweils erste Antwort und Umdrehen nach Kartenwechseln.
+- Offen blieben danach nur die Sammelstränge, die bis Akt 4 laufen, die nächsten Schritte der
+  Hauptgeschichte und der Schuppen in Riverton. Der Schuppen bleibt erreichbar: Die Sperre am
+  Fahrrad setzt nur die Quest selbst, und Riverton erreicht man mit der Monatskarte.
+- Kein Fund der Wache in Akt 2.

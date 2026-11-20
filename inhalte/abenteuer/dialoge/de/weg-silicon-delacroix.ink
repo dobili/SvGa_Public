@@ -47,6 +47,8 @@ VAR spurenPM = 0
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegSiliconDelacroixTafelVersucht = false
 
 // ---------------------------------------------------------------- Mr. Ruiz, der Schiffskoch
 
@@ -112,6 +114,9 @@ Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es grö�
     Auf der Tafel im Salon hat jemand mit Kreide eine Möwe gemalt. Darunter: „Gelöst“. #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegSiliconDelacroixTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Im Salon der Fähre hängt eine Tafel mit drei Diagrammen: „Wer die Bauern versteht, versteht das Spiel.“ #sprecher:erzaehler
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegSiliconDelacroix.tafel")

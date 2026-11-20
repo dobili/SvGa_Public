@@ -81,8 +81,9 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
 === buck_nach_sieg ===
 {not buckKarteGegeben:
     ~ buckKarteGegeben = true
-    Mitten in der Partie hast du einen guten Zug gefunden und gesagt: „Na, das wird teuer.“ Buck hat sofort gezogen, zu schnell. #sprecher:erzaehler
-    Na, jetzt willst du's aber wissen! Hier, die Karte hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
+    // Auf den Sieg statt auf einen erfundenen Moment der Partie (Lektorat mittel-1, 19.11.2026).
+    Buck starrt auf das Brett, dann haut er auf die Motorhaube, dass es scheppert. #sprecher:erzaehler
+    Gewonnen! An meiner eigenen Zapfsäule! Hier, die Karte hab ich mal einem Lkw-Fahrer abgewonnen. Großes Maul. Wer so gegen mich spielt, darf auch mal angeben. #sprecher:buck #stimmung:lacht
     {versoehnungGesehen and not abschiedGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }

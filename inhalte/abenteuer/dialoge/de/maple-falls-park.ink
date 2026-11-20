@@ -163,7 +163,8 @@ Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:
 -> END
 
 === jo_nach_sieg ===
-Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
+// Jo ist pleite (deshalb holt der Held die Limo); Lektorat mittel-1, 19.11.2026.
+Okay, okay. Du hast gewonnen. Limo kann ich dir keine ausgeben, ich bin pleite. Aber ich sag's jedem im Park. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Noch eine.“]
     -> jo_duell
 + [„Gleich.“]

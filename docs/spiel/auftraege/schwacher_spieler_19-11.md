@@ -178,3 +178,42 @@ nach dem Kartenwechsel, wie schon am 18.11.), „kein Aktionsknopf“ am Flohmar
 nach dem Gespräch noch auf dem Auslöser, der erst nach einem Schritt herunter wieder zählt), und
 nach einem Abbruch wählte er bei Kit nur noch „Nicht jetzt“ (behoben: Nach dem Abbruch gelten die
 Antworten wieder als neu).
+
+## 5. Nachtrag 20.11.2026: Reaktionen aus dem Lektorat von mittel-1
+
+mittel-1 fand beim Lesen der Lesefassung Stellen, an denen nach einer Partie oder Runde keine
+Reaktion auf das Ergebnis kam, die `rueckmeldung.cjs` aber nicht meldete. Behoben:
+
+- Kreidenacht: Mo sagt vor Runde zwei und drei etwas zur vorigen Runde, und bei Victors Kapuze
+  geht die Erzählung auf die dritte Runde ein.
+- Mabel: Nach dem Sieg in Set 2 ein eigener Satz; nach einem verlorenen Set folgt auf „Noch
+  einmal?“ jetzt die Wahl „Noch einmal.“ oder „Nicht jetzt.“ (vorher Ende ohne Wahl).
+- Greta: Ihr erster Satz hängt am Ausgang (vorher Zufallssätze, auch nach einer Niederlage).
+- Jo: Er ist pleite und gibt nach seiner Niederlage keine Limo mehr aus.
+- Buck: Er reagiert auf den Sieg statt auf einen Moment der Partie, den es nicht gab.
+- Slick: Den Montag im Pavillon gibt es einmal; danach sitzt er auf der Treppe.
+
+Warum das Werkzeug sie nicht fand, und was jetzt gilt:
+
+1. Eine „Kaskade“ (der Zweig nach einer nicht genommenen Ausgangsabfrage) zählte auch dann, wenn
+   die Abfrage nur „noch nicht gespielt“ war (`== ""`, `"abgebrochen"`), und auch, wenn sie nur
+   zum nächsten Angebot weiterging (`mo_runde1` → `mo_runde2`, `blaeser_set2` → `blaeser_set3`).
+   Beides zählt nicht mehr.
+2. Die Kopfzeile einer Fallunterscheidung (`{ausgang…Set2:`) zählte allein als Reaktion. Jetzt
+   muss der Fall zum Ausgang Text haben; ein einfacher Bedingungsblock zählt nur, wenn seine
+   Bedingung zum Ausgang passt.
+3. Eine passende Weiterleitung zählte auch, wenn sie nur in eine Weiche führte. Jetzt nicht mehr.
+4. Neu: Endet eine Rückmeldung mit einer Frage nach einer neuen Partie oder Runde („Noch einmal?“)
+   ohne Wahl, ist das ein Fund (die Simulation liefert dafür die letzte Zeile).
+
+Damit fand das Werkzeug weitere Stellen, alle behoben:
+
+- Céleste nach ihrem Sieg
+- die Lore in der Goldmine und zehn Rätseltafeln an den Wegen nach einem Fehlversuch
+- Lilys „Zeig's mir nochmal, ja?“ ohne Wahl
+- Hastings 1895 ohne Bestehen (neue Rückmeldung `hastings_danach`)
+
+Damit Tafeln einen Fehlversuch erkennen, setzt die App nach jeder gespielten Runde
+`<name>Versucht` und `<ort><Name>Versucht`, auch ohne Bestehen (`regeln/dialogvariablen.ts`, in der
+Gesamtsimulation ebenso). Stand: 0 Funde. Jo, Buck und Greta waren Textfragen, die kein Werkzeug
+erkennt.

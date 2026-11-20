@@ -16,6 +16,8 @@ VAR ambroseSprichtWieder = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR lorenVersucht = false
 
 // Sperre S11: Laterne und Pruitts Geschichte (nach dem Grab). Der Dialog setzt goldmineOffen, die Hülle
 // prüft danach `wenn` am Übergang goldmine in Ghost Town.
@@ -57,7 +59,11 @@ Daneben steht eine alte Grubenlampe. #sprecher:erzaehler
     Die Lore steht wieder auf ihrem Gleis. Turm hinter den Freibauern, sagt Pruitt immer. #sprecher:erzaehler
     -> END
 }
-Eine Lore auf dem Gleis. Mr. Pruitt hat Kreidestriche auf die Schwellen gemalt: lauter kleine Endspiele. #sprecher:erzaehler
+{lorenVersucht:
+    Die Lore steht noch schief auf dem Gleis. Ein paar Kreidestriche hast du verwischt, gelöst sind die Endspiele nicht. #sprecher:erzaehler
+- else:
+    Eine Lore auf dem Gleis. Mr. Pruitt hat Kreidestriche auf die Schwellen gemalt: lauter kleine Endspiele. #sprecher:erzaehler
+}
 + [Die Endspiele lösen.]
     ~ beginneAufgaben("goldmine.loren")
     -> END

@@ -45,6 +45,8 @@ def test_ergebnisvariablen():
         "reiheDexBestanden",
         "cedarCreekReiheDexBestanden",
         "reiheDexPunkte",
+        "reiheDexVersucht",
+        "cedarCreekReiheDexVersucht",
     ]
 
 
@@ -79,6 +81,22 @@ def test_falscher_zweig_nach_dem_ausgang():
     club = '{ausgang:"remis", besucht:["g.mira","g.mira_nach_sieg"]}'
     knoten = '{"g.mira_nach_sieg": "{ausgangX == \\"remis\\": Remis.}"}'
     assert auswertung(f"r.falscherZweig({club}, {knoten})") is None
+
+
+@ohne_node
+def test_nachschaerfung_lektorat():
+    # Kreidenacht: „noch nicht gespielt“ ist keine Ausgangsabfrage, die nächste Runde keine Reaktion.
+    assert not auswertung('r.fragtNachAusgang(\'a1 == "" or a1 == "abgebrochen"\', ["a1"])')
+    assert auswertung('r.fragtNachAusgang(\'a1 == "niederlage"\', ["a1"])')
+    assert auswertung('r.fortschritt("mo_runde1", "mo_runde2")')
+    assert not auswertung('r.fortschritt("rosa_nach_niederlage", "rosa_nach_sieg")')
+    # Mabel: „- "sieg": -> blaeser“ ist kein Text, der Remis-Fall schon.
+    mabel = '["{a:", "- \\"sieg\\": -> blaeser", "- \\"remis\\":", "    Remis.", "}"]'
+    assert not auswertung(f'r.fallHatText({mabel}, 0, "sieg")')
+    assert auswertung(f'r.fallHatText({mabel}, 0, "remis")')
+    # Eine Weiche ist keine Reaktion.
+    assert auswertung('r.istWeiche("{\\n- a: -> b\\n- else: -> c\\n}")')
+    assert not auswertung('r.istWeiche("Gut gespielt.")')
 
 
 @ohne_node

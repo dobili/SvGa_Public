@@ -101,6 +101,9 @@ Der Fensterplatz gehört ab heute dir. Für dich jedenfalls. #sprecher:earl #sti
     Auf der Tafel neben der Kasse steht mit Kreide: „Gelöst. Kaffee geht aufs Haus.“ #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegDesertSummitTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Neben der Kasse hängt eine Tafel: „Drei Endspiele. Wer alle löst, kriegt den Kaffee umsonst.“ #sprecher:erzaehler
 {not abschiedGesehen:
     Nur Könige und Bauern. So wenig Holz, und kein Zug ist leicht. #sprecher:ambrose #stimmung:nachdenklich
@@ -165,6 +168,8 @@ VAR testteamGitterGesehen = false
 VAR testteamGitterDurch = false
 VAR testteamGitterSpielt = false
 VAR testteamGitterNiederlagen = 0
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegDesertSummitTafelVersucht = false
 
 // ---------------------------------------------------------------- Ereignis: Schach über Funk (Dokument 15, 2.8)
 // Akt 4. Das CB-Funkgerät im Fenster des Diners. Partie nach Gehör gegen Mama Bear (Begegnung

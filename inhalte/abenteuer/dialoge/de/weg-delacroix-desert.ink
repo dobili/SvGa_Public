@@ -64,6 +64,9 @@ Es ist angenehm. #sprecher:ambrose #stimmung:still
     Auf dem Wanderschild hat jemand mit Kreide einen kleinen Kaktus gemalt. Darunter: „Gelöst“. #sprecher:erzaehler
     -> END
 }
+// Nach einem Fehlversuch (Rückmeldung nach dem Ergebnis, 19.11.2026; vorher bot sich die Tafel
+// wortgleich neu an).
+{wegDelacroixDesertTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Am Wanderschild „Desert Springs, 4 Meilen“ hängt eine Rätseltafel, das Blech heiß von der Sonne: „Der König steht im Freien. Greif an!“ #sprecher:erzaehler
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDelacroixDesert.tafel")
@@ -279,6 +282,8 @@ VAR seilschaftFertig = false
 VAR wegDelacroixDesertSeilschaftBestanden = false
 VAR gefundenSeite06 = false
 VAR gefundenFinchLaeuferB = false
+// Setzt die Hülle nach jeder gespielten Runde, auch ohne Bestehen (regeln/dialogvariablen.ts).
+VAR wegDelacroixDesertTafelVersucht = false
 
 // ---------------------------------------------------------------- Ereignis: Die Seilschaft (Dokument 15, 2.7)
 // Erst nach der Versöhnung (Akt 3, bei der Rückkehr). Vorher liegen nur Seile, Rucksäcke und ein Kreidebeutel

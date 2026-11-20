@@ -525,3 +525,15 @@ Ah. #sprecher:ward #stimmung:ueberrascht
     -> END
 + [„Nicht jetzt.“]
     -> END
+
+// Rückmeldung nach der Erinnerung Hastings 1895 (runden.json „danach“): Bestanden führt zu Ward wie
+// bisher; nicht bestanden sagt sie etwas dazu (vorher kam nur ihr Alltag, rueckmeldung.cjs).
+=== hastings_danach ===
+{erinnerungHastingsBestanden: -> ward}
+Steinitz hätte auch nicht jeden Zug gefunden. Nicht beim ersten Mal. #sprecher:ward #stimmung:laechelt
++ [„Noch einmal.“]
+    ~ beginneAufgaben("summitCity.erinnerungHastings")
+    -> END
++ [„Nicht jetzt.“]
+    Das Heft wartet. Es kann das gut. #sprecher:ward #stimmung:laechelt
+    -> END

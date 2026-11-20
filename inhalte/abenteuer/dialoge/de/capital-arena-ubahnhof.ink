@@ -50,6 +50,12 @@ Runde eins. Dime wartet schon, mit einem Endspiel, und Dime wartet nicht gern. #
     -> END
 
 === mo_runde2 ===
+// Rückmeldung zu Runde eins (Lektorat mittel-1, 19.11.2026: vorher gleich das nächste Angebot).
+{ausgangCapitalArenaKreidenacht1:
+- "sieg": Gegen Dime gewonnen! Das passiert hier unten nicht oft. #sprecher:mo #stimmung:froh
+- "remis": Remis gegen Dime. Hier unten zählt ein halber Punkt wie ein ganzer Handschlag. #sprecher:mo #stimmung:laechelt
+- "niederlage": Dime hat die Runde. Macht nichts. Mitspielen ist Pflicht, gewinnen nicht. #sprecher:mo #stimmung:laechelt
+}
 Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, warum. #sprecher:mo #stimmung:lacht
 + [Runde zwei spielen]
     ~ beginnePartie("capitalArena.kreidenacht2")
@@ -58,6 +64,12 @@ Runde zwei. Mama Bear hat ihre eigene Uhr mitgebracht. Ich würde nicht fragen, 
     -> END
 
 === mo_runde3 ===
+// Rückmeldung zu Runde zwei (Lektorat mittel-1, 19.11.2026).
+{ausgangCapitalArenaKreidenacht2:
+- "sieg": Mama Bear gratuliert dir. Mit ihrer eigenen Uhr in der Hand, das macht sie sonst nie. #sprecher:mo #stimmung:froh
+- "remis": Remis gegen Mama Bear. Ihre Uhr hat es dir nicht übel genommen. #sprecher:mo #stimmung:laechelt
+- "niederlage": Mama Bear nimmt den Punkt mit. Sie sagt, das liegt an der Uhr. #sprecher:mo #stimmung:lacht
+}
 Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine Uhr läuft schon. #sprecher:mo #stimmung:nachdenklich
 + [Runde drei spielen]
     ~ beginnePartie("capitalArena.kreidenacht3")
@@ -68,6 +80,11 @@ Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine U
 === mo_victor ===
 ~ kreidenachtErledigt = true
 Nach dem letzten Zug zieht dein Gegner die Kapuze vom Kopf. Es ist Victor. #sprecher:erzaehler
+{ausgangCapitalArenaKreidenacht3:
+- "sieg": Er hat verloren und lächelt dabei. #sprecher:erzaehler
+- "remis": Er hält dir die Hand hin, bevor die Uhr ganz steht. #sprecher:erzaehler
+- "niederlage": Er hat gewonnen und sieht aus, als hätte er etwas geschenkt bekommen. #sprecher:erzaehler
+}
 Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. Hier spiele ich nur. #sprecher:victor #stimmung:nachdenklich
 Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:victor #stimmung:laechelt
 Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo #stimmung:laechelt

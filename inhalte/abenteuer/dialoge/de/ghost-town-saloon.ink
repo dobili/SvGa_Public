@@ -78,8 +78,7 @@ Wer baut auf? #sprecher:victor #stimmung:nachdenklich #bild:aus
 Der Bauer, der sich im vierten Zug anbietet. Mein Gambit. #sprecher:ambrose #stimmung:froh
 Er hat es angenommen. Ich war so erleichtert. #sprecher:ambrose #stimmung:froh
 Der Springer im sechsundzwanzigsten. Hier habe ich drei Wochen nachgedacht. #sprecher:ambrose #stimmung:lachtOhneSpott
-Über einen Springerzug. Ich. #sprecher:ambrose #stimmung:lachtOhneSpott
-Drei Wochen. #sprecher:ambrose #stimmung:lachtOhneSpott
+Über einen Springerzug, drei Wochen. Ich! #sprecher:ambrose #stimmung:lachtOhneSpott
 Dann der fünfunddreißigste. Ein Läufer schlägt den Bauern vor dem König. #sprecher:erzaehler
 Gleich darauf ein Springer. #sprecher:erzaehler
 Zwei. Er opfert zwei Figuren hintereinander. #sprecher:victor #stimmung:ueberrascht
@@ -95,8 +94,7 @@ Seit hundertsechzig Jahren. #sprecher:erzaehler #pause:3
 Darf ich? #sprecher:victor #stimmung:nachdenklich
 Er fragt nicht dich. #sprecher:erzaehler
 Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
-Victor schiebt den Bauern vor. Ein Feld. #sprecher:erzaehler #klang:holz_zug #musik:b5
-Holz auf Holz. #sprecher:erzaehler #pause:3
+Victor schiebt den Bauern vor. Ein Feld – Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
 So. So. #sprecher:ambrose #stimmung:friedlich
 Da ist er. #sprecher:ambrose #stimmung:friedlich
 ~ fernpartieAufgebaut = true
@@ -163,8 +161,7 @@ Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose #stimmung:laechelt
 Er wischt sich über die Augen. #sprecher:erzaehler #pause:2
 Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.schluss
 {ausgangGhostTownFernpartie == "sieg": Gewonnen. Ich habe es nie gebraucht, und es freut mich trotzdem wie einen Jungen am Kai. #sprecher:ambrose #stimmung:froh}
-Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. #sprecher:victor #stimmung:laechelt
-Nur daran. #sprecher:victor #stimmung:laechelt
+Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht, nur daran. #sprecher:victor #stimmung:laechelt
 {hatHalesSeite:
     Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
     Dann gibt er sie dir zurück. #sprecher:erzaehler
@@ -185,7 +182,7 @@ Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als 
 ->->
 
 === victor_alltag ===
-{~Mein Vater hat angerufen. Ich bin nicht rangegangen. Morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":Das Finale war die zweitschönste Partie. Die schönste stand hier.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.}} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat angerufen. Ich bin nicht rangegangen, morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":Das Finale war die zweitschönste Partie. Die schönste stand hier.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.}} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Brett und Abzeichen

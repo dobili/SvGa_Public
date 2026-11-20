@@ -25,7 +25,7 @@ VAR finchBauerEGezaehlt = false
 
 === juniper ===
 {juniperGetroffen:
-    {~Drei Schachs, drei Echos. Dann ist die Partie vorbei.|Das Seil hält. Das Brett auch.|Hinter der Staubstraße liegt Ghost Town. Niemand wohnt da. Fast niemand.} #sprecher:juniper #stimmung:laechelt
+    {~Drei Schachs, drei Echos. Dann ist die Partie vorbei.|Das Seil hält. Das Brett auch.|Hinter der Staubstraße liegt Ghost Town. Niemand wohnt da, fast niemand.} #sprecher:juniper #stimmung:laechelt
     -> END
 }
 ~ juniperGetroffen = true
@@ -90,8 +90,7 @@ VAR wegPinewoodGhostTafelVersucht = false
 }
 ~ tankstelleGesehen = true
 Eine verlassene Tankstelle, die Zapfsäulen voller Staub. Auf dem Dach glänzt ein nagelneues Solarpaneel. #sprecher:erzaehler
-Von drinnen kommt ein Geräusch: klack. Pause. #sprecher:erzaehler
-Klack. #sprecher:erzaehler
+Von drinnen kommt ein Geräusch: klack. Pause – klack. #sprecher:erzaehler
 Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #sprecher:erzaehler
 {ambroseSprichtWieder:
     {not abschiedGesehen:

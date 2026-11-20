@@ -38,8 +38,7 @@ VAR abschiedGesehen = false
 ~ fotoGefunden = true
 Die Frau in der Tür ist klein und hat Mamas Kinn. #sprecher:erzaehler
 Sie sieht dich an und sagt nichts. #sprecher:erzaehler #pause:2
-Dann zieht sie dich an sich. Sie riecht nach Mamas altem Waschmittel. #sprecher:erzaehler #musik:mama
-Dem von früher. #sprecher:erzaehler
+Dann zieht sie dich an sich. Sie riecht nach Mamas altem Waschmittel, dem von früher. #sprecher:erzaehler #musik:mama
 Als du das letzte Mal hier warst, warst du sechs. Und jetzt sieh dich an. #sprecher:omaRuth #stimmung:laechelt
 Das gehört verboten. #sprecher:omaRuth #stimmung:laechelt
 Sie macht Kakao und stellt Juno Fragen, als wäre Juno die Hauptperson. Juno beantwortet sie alle. #sprecher:erzaehler
@@ -113,8 +112,7 @@ Was sonst. #sprecher:ambrose #stimmung:laechelt
 ~ medailleGesehen = true
 An der Wand hängt eine Medaille an einem blauen Band. Silber. #sprecher:erzaehler
 {not abschiedGesehen:
-    Silber. Eine Niederlage, die man aufhängt. #sprecher:ambrose #stimmung:laechelt
-    Mutig. #sprecher:ambrose #stimmung:laechelt
+    Silber. Eine Niederlage, die man aufhängt, ist eine mutige. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -128,7 +126,6 @@ An der Wand hängt eine Medaille an einem blauen Band. Silber. #sprecher:erzaehl
     -> END
 }
 ~ partieformular2001Gesehen = true
-Unter Glas ein Partieformular. Züge in zwei Spalten, in einer Schrift, die du kennst. #sprecher:erzaehler #bild:partieformular2001
-Nur runder, jünger. #sprecher:erzaehler
+Unter Glas ein Partieformular. Züge in zwei Spalten, in einer Schrift, die du kennst, nur runder, jünger. #sprecher:erzaehler #bild:partieformular2001
 Um den dreiunddreißigsten Zug ist ein Kreis. So fest gedrückt, dass das Papier fast durch ist. #sprecher:erzaehler
 -> END

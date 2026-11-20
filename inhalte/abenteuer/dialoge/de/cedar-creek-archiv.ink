@@ -241,8 +241,7 @@ Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt
     Er fährt herum. Er sucht nach einer Antwort und hat keine. #sprecher:erzaehler #pause:2
     Das hast du von mir. #sprecher:ambrose #stimmung:still
     ** [„Was stimmt denn nun?“]
-        Er sieht auf das Brett aus Licht. Dann auf die Zeitung. #sprecher:erzaehler
-        Vier zu drei. #sprecher:erzaehler
+        Er sieht auf das Brett aus Licht. Dann auf die Zeitung – vier zu drei. #sprecher:erzaehler
         Wenn ich das wüsste, säße ich vielleicht nicht in einer Kiste. #sprecher:ambrose #stimmung:bitter
     ** [Nichts sagen]
 * [Nichts sagen]

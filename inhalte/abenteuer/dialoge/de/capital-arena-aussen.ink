@@ -75,12 +75,11 @@ Sie sind alle gekommen. #sprecher:mutter #stimmung:ueberrascht
 - Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. #sprecher:erzaehler
 Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
 Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. #sprecher:erzaehler
-Miss Odile, Remy, Lou. Mira auf Tomás' Schultern. #sprecher:erzaehler
-Dot mit Lockenwicklern. #sprecher:erzaehler
+Miss Odile, Remy, Lou. Mira auf Tomás' Schultern – Dot mit Lockenwicklern. #sprecher:erzaehler
 Ward steht ein wenig abseits und betrachtet alles, als wäre es eine Stellung. #sprecher:erzaehler
 Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht. #sprecher:erzaehler #pause
 Das kommt ins Tagebuch. Ich hab zwei dabei. #sprecher:juno #stimmung:froh
-Das kommt alles ins Tagebuch. #sprecher:juno #stimmung:froh
+Eins für die Nadeln, eins für die Gesichter. #sprecher:juno #stimmung:froh
 -> END
 
 === weg_ghost ===
@@ -110,8 +109,7 @@ Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()
     Bronze-Liga. Du bist dabei, und alles andere ist mir vollkommen egal. #sprecher:juno #stimmung:froh
 }
 Am Tisch der Turnierleitung stehen Dr. Lin mit einer Mappe und ein Mädchen in einem zu großen Pullover. #sprecher:erzaehler
-Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. #sprecher:erzaehler
-Einmal. #sprecher:erzaehler #pause
+Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt – einmal. #sprecher:erzaehler #pause
 Die Turnierleiterin hebt eine Liste über den Kopf. Wer spielt, meldet sich bei ihr, die erste Runde beginnt gleich. #sprecher:erzaehler
 ~ gibFund("teilnehmerausweis")
 * [Den Teilnehmerausweis anstecken]
@@ -139,10 +137,9 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 === juno ===
 {
 - finaleGespielt():
-    Ich hab alles ins Tagebuch geschrieben. Mit Glitzer. #sprecher:juno #stimmung:froh
-    Diesmal ganz viel. #sprecher:juno #stimmung:froh
+    Ich hab alles ins Tagebuch geschrieben. Mit Glitzer, diesmal ganz viel. #sprecher:juno #stimmung:froh
 - else:
-    {~Ich zähle deine Punkte. Laut. Damit es alle hören.|Slick hat mir ein Autogramm gegeben. Auf die Hand.|Wenn du gewinnst, hüpfe ich. Wenn nicht, hüpfe ich auch.} #sprecher:juno #stimmung:froh
+    {~Ich zähle deine Punkte, und zwar laut. Damit es alle hören.|Slick hat mir ein Autogramm gegeben. Auf die Hand.|Wenn du gewinnst, hüpfe ich. Wenn nicht, hüpfe ich auch.} #sprecher:juno #stimmung:froh
 }
 -> END
 
@@ -201,8 +198,7 @@ Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose #sti
 Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh
 * [Zuhören]
 - Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":Einen Jungen, der vor Freude rennt, weil er verloren hat.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.} #sprecher:ambrose #stimmung:laechelt
-Menschen, die kämpfen. Die Fehler machen. #sprecher:ambrose #stimmung:laechelt
-Und wachsen. #sprecher:ambrose #stimmung:laechelt #pause:2
+Menschen, die kämpfen. Die Fehler machen, und wachsen. #sprecher:ambrose #stimmung:laechelt #pause:2
 Das ist es, was schön ist an diesem Spiel. Nicht die Züge. #sprecher:ambrose #stimmung:laechelt
 Die waren nie das Schöne. #sprecher:ambrose #stimmung:laechelt
 Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht

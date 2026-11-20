@@ -129,8 +129,7 @@ Und sag mir: Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still #
 * [Nicken]
 - Er schließt die Augen. #sprecher:erzaehler
 Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
-Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. #sprecher:ambrose #stimmung:laechelt #klang:karte
-Ein Fingerzeig. #sprecher:ambrose #stimmung:laechelt
+Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will, ein Fingerzeig. #sprecher:ambrose #stimmung:laechelt #klang:karte
 // Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
 // Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest. Der Fingerzeig
 // kommt vor der Partie (Entscheidung 13.11.2026); der Roman erzählt ihn danach.
@@ -149,8 +148,7 @@ Ich möchte sehen, wie du denkst. #sprecher:ambrose #stimmung:laechelt
 -> END
 
 === ambrose_wartet ===
-Nun? Die Figuren stehen, und ich habe Zeit. #sprecher:ambrose #stimmung:laechelt
-Zu viel davon. #sprecher:ambrose #stimmung:laechelt
+Nun? Die Figuren stehen, und ich habe Zeit – zu viel davon. #sprecher:ambrose #stimmung:laechelt
 * [„Lass uns spielen.“]
     -> partie_beginnt
 // „Später“ am ersten Tag: eine der drei Stellen des Leitmotivs in Akt 1 (Archiv, Steg).
@@ -221,7 +219,7 @@ Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du l
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Das sagen viele. Wir werden sehen. #sprecher:ambrose #stimmung:laechelt
 * [„Das klingt langweilig.“]
-    Langweilig ist ein verlorener Turm. Fragen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
+    Langweilig ist ein verlorener Turm. Fragen dauert einen Atemzug. #sprecher:ambrose #stimmung:streng
 // Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
 // sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
 - Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler
@@ -242,13 +240,13 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
 - not clubBeigetreten: Die Schule, Kind. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose #stimmung:laechelt
 - not (reiheSamBestanden and reiheJunoBestanden): Erst die Stellungen, die deine Mitspieler dir vorlegen. Wer das Rätsel scheut, scheut auch den Gegner. #sprecher:ambrose #stimmung:nachdenklich
 - nadelMapleFalls == 0: Die Trainerin wartet. #sprecher:ambrose #stimmung:laechelt
-- not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
+- not kenntHale: Eine Nadel am Kragen. Früher gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
 - endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus. #sprecher:ambrose #stimmung:laechelt
 - else: Cedar Creek? Den Namen habe ich nie gehört. #sprecher:ambrose #stimmung:lacht
 Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht
 }
 + [„Erzähl mir von früher.“]
-    {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff. Ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.} #sprecher:ambrose #stimmung:laechelt
+    {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff, ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen, nie.} #sprecher:ambrose #stimmung:laechelt
     -> END
 + [„Bis morgen.“]
     Geh nur. #sprecher:ambrose #stimmung:laechelt
@@ -284,8 +282,7 @@ Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen
     Lach nur. Ich bin seit hundertsechzig Jahren tot. #sprecher:ambrose #stimmung:lacht
     Mir darf einiges entgangen sein. #sprecher:ambrose #stimmung:lacht
 * [„Ein Kasten, der das Essen kalt hält.“]
-    Ein Eiskeller in der Küche. Herrje. #sprecher:ambrose #stimmung:lacht
-    Ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
+    Ein Eiskeller in der Küche. Herrje – ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
 - Unter dem Fenster liegt die alte Stellung. Niemand hat sie angerührt. #sprecher:erzaehler #klang:auto_nacht
 * [„Wer hat diese Partie gespielt?“]
 * (warum) [„Warum darf niemand die Figuren anrühren?“]

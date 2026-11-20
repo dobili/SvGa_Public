@@ -46,12 +46,72 @@ const FILTERGUETE = 3;
 const STILLE = 0.001;
 
 let erzeuger: AudioContext | null = null;
+/** Meldungen gestoppter oder geschlossener Erzeuger: WebKit, Chrome und Firefox. */
+const GESTOPPT = /context is (stopped|closed)|has been closed|after close|is closed/i;
+/** Die Seite wird gerade verlassen (pagehide): kein neuer Ton, WebKit stoppt den Erzeuger. */
+let seiteGeht = false;
+
+/**
+ * Hat der Browser den Tonerzeuger gestoppt oder geschlossen? WebKit wirft dann bei jedem neuen
+ * Knoten oder Start „InvalidStateError: Context is stopped“ (beim Neuladen, Entladen, im
+ * Hintergrund), auch solange `state` noch „running“ sagt.
+ * Beispiel: new DOMException("Context is stopped", "InvalidStateError") → true; ein TypeError oder
+ * ein InvalidStateError „cannot call start more than once“ → false.
+ */
+export function istGestoppterTon(fehler: unknown): boolean {
+  if (!(fehler instanceof Error) && !(fehler instanceof DOMException)) return false;
+  // Nur dieser Grund: Ein InvalidStateError aus einem Programmierfehler (etwa start() zweimal)
+  // soll weiter auffallen.
+  return fehler.name === "InvalidStateError" && GESTOPPT.test(fehler.message);
+}
+
+/**
+ * Vergisst den Tonerzeuger (gestoppt oder geschlossen); der nächste Wunsch legt einen neuen an.
+ * Warum: Ein gestoppter AudioContext wird nie wieder brauchbar (WebKit-Lauf 44657454880, „Context
+ * is stopped“ nach dem Neuladen mitten im Gespräch).
+ */
+export function verwirfTonerzeuger(): void {
+  erzeuger = null;
+}
 
 function holeErzeuger(): AudioContext | null {
-  if (erzeuger) return erzeuger;
+  if (seiteGeht) return null;
+  if (erzeuger && erzeuger.state !== "closed") return erzeuger;
   if (typeof window === "undefined" || typeof window.AudioContext !== "function") return null;
   erzeuger = new window.AudioContext();
   return erzeuger;
+}
+
+/**
+ * Führt Arbeit am Tonerzeuger aus. Ist er gestoppt, wird er verworfen (der Ton fällt diesmal aus,
+ * vermerkt in der Konsole); jeder andere Fehler geht weiter an den Aufrufer.
+ * Ausgabe: das Ergebnis der Arbeit, ohne Erzeuger oder bei gestopptem Erzeuger undefined.
+ */
+export function mitTon<T>(arbeit: (ctx: AudioContext) => T): T | undefined {
+  const ctx = holeErzeuger();
+  if (!ctx) return undefined;
+  try {
+    return arbeit(ctx);
+  } catch (fehler: unknown) {
+    if (!istGestoppterTon(fehler)) throw fehler;
+    console.warn("Tonerzeuger gestoppt, wird beim nächsten Ton neu angelegt:", fehler);
+    if (erzeuger === ctx) verwirfTonerzeuger();
+    return undefined;
+  }
+}
+
+// Beim Verlassen der Seite (Neuladen, anderer Tab im iPhone-Safari) stoppt WebKit den Erzeuger;
+// danach soll nichts mehr an ihm arbeiten. Kommt die Seite aus dem Zwischenspeicher zurück
+// (pageshow mit persisted), gibt es beim nächsten Tipp einen neuen.
+if (typeof window !== "undefined") {
+  window.addEventListener("pagehide", () => {
+    seiteGeht = true;
+  });
+  window.addEventListener("pageshow", (ereignis: PageTransitionEvent) => {
+    if (!ereignis.persisted) return;
+    seiteGeht = false;
+    verwirfTonerzeuger();
+  });
 }
 
 /**
@@ -69,15 +129,17 @@ export function tonErzeuger(): AudioContext | null {
  * Sonderfall: Ohne Web Audio (alte Browser, Tests) geschieht nichts.
  */
 export function entsperreTon(): void {
-  const ctx = holeErzeuger();
-  // Safari kennt außer „suspended“ auch „interrupted“ (Anruf, App gewechselt, Bildschirm aus):
-  // Auch dann weckt erst die nächste Berührung den Ton wieder.
-  if (ctx && ctx.state !== "running" && ctx.state !== "closed") {
+  mitTon((ctx) => {
+    // Safari kennt außer „suspended“ auch „interrupted“ (Anruf, App gewechselt, Bildschirm aus):
+    // Auch dann weckt erst die nächste Berührung den Ton wieder.
+    if (ctx.state === "running" || ctx.state === "closed") return;
     ctx.resume().catch((fehler: unknown) => {
-      // Kein Ton ist kein Fehler für den Leser; für die Fehlersuche in der Konsole vermerken.
+      // Gestoppt: verwerfen, die nächste Berührung legt einen neuen an. Sonst nur vermerken:
+      // Kein Ton ist kein Fehler für den Leser.
+      if (istGestoppterTon(fehler) && erzeuger === ctx) verwirfTonerzeuger();
       console.warn("Ton nicht verfügbar:", fehler);
     });
-  }
+  });
 }
 
 /** Ein Rauschpuffer der gegebenen Länge (weißes Rauschen, ein Kanal). */
@@ -96,22 +158,23 @@ function rauschen(ctx: AudioContext, dauer: number): AudioBuffer {
  * still.
  */
 export function spieleZugton(art: Zugton): void {
-  const ctx = holeErzeuger();
-  if (!ctx || ctx.state !== "running") return;
-  const { frequenz, dauer, lautstaerke } = KLANG[art];
-  const quelle = ctx.createBufferSource();
-  quelle.buffer = rauschen(ctx, dauer);
-  const filter = ctx.createBiquadFilter();
-  filter.type = "bandpass";
-  filter.frequency.value = frequenz;
-  filter.Q.value = FILTERGUETE;
-  const lautstaerkeRegler = ctx.createGain();
-  const jetzt = ctx.currentTime;
-  lautstaerkeRegler.gain.setValueAtTime(lautstaerke, jetzt);
-  lautstaerkeRegler.gain.exponentialRampToValueAtTime(STILLE, jetzt + dauer);
-  quelle.connect(filter).connect(lautstaerkeRegler).connect(ctx.destination);
-  quelle.start(jetzt);
-  quelle.stop(jetzt + dauer);
+  mitTon((ctx) => {
+    if (ctx.state !== "running") return;
+    const { frequenz, dauer, lautstaerke } = KLANG[art];
+    const quelle = ctx.createBufferSource();
+    quelle.buffer = rauschen(ctx, dauer);
+    const filter = ctx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.frequency.value = frequenz;
+    filter.Q.value = FILTERGUETE;
+    const lautstaerkeRegler = ctx.createGain();
+    const jetzt = ctx.currentTime;
+    lautstaerkeRegler.gain.setValueAtTime(lautstaerke, jetzt);
+    lautstaerkeRegler.gain.exponentialRampToValueAtTime(STILLE, jetzt + dauer);
+    quelle.connect(filter).connect(lautstaerkeRegler).connect(ctx.destination);
+    quelle.start(jetzt);
+    quelle.stop(jetzt + dauer);
+  });
 }
 
 /**
@@ -121,20 +184,21 @@ export function spieleZugton(art: Zugton): void {
  * Sonderfall: Ohne Web Audio oder vor der ersten Berührung bleibt es still.
  */
 export function spieleKlang(art: Klangton): void {
-  const ctx = holeErzeuger();
-  if (!ctx || ctx.state !== "running") return;
-  const { frequenzen, dauer, lautstaerke } = TONFOLGE[art];
-  frequenzen.forEach((frequenz, i) => {
-    const beginn = ctx.currentTime + KLANG_VERSATZ + i * dauer;
-    const quelle = ctx.createOscillator();
-    quelle.type = "sine";
-    quelle.frequency.value = frequenz;
-    const regler = ctx.createGain();
-    regler.gain.setValueAtTime(lautstaerke, beginn);
-    regler.gain.exponentialRampToValueAtTime(STILLE, beginn + dauer);
-    quelle.connect(regler).connect(ctx.destination);
-    quelle.start(beginn);
-    quelle.stop(beginn + dauer);
+  mitTon((ctx) => {
+    if (ctx.state !== "running") return;
+    const { frequenzen, dauer, lautstaerke } = TONFOLGE[art];
+    frequenzen.forEach((frequenz, i) => {
+      const beginn = ctx.currentTime + KLANG_VERSATZ + i * dauer;
+      const quelle = ctx.createOscillator();
+      quelle.type = "sine";
+      quelle.frequency.value = frequenz;
+      const regler = ctx.createGain();
+      regler.gain.setValueAtTime(lautstaerke, beginn);
+      regler.gain.exponentialRampToValueAtTime(STILLE, beginn + dauer);
+      quelle.connect(regler).connect(ctx.destination);
+      quelle.start(beginn);
+      quelle.stop(beginn + dauer);
+    });
   });
 }
 
@@ -159,16 +223,17 @@ const HALBTOENE_JE_OKTAVE = 12;
  * still.
  */
 export function spieleKomboton(halbtoene: number): void {
-  const ctx = holeErzeuger();
-  if (!ctx || ctx.state !== "running") return;
-  const beginn = ctx.currentTime + KLANG_VERSATZ;
-  const quelle = ctx.createOscillator();
-  quelle.type = "sine";
-  quelle.frequency.value = KOMBO_GRUNDTON * 2 ** (halbtoene / HALBTOENE_JE_OKTAVE);
-  const regler = ctx.createGain();
-  regler.gain.setValueAtTime(KOMBO_LAUTSTAERKE, beginn);
-  regler.gain.exponentialRampToValueAtTime(STILLE, beginn + KOMBO_DAUER);
-  quelle.connect(regler).connect(ctx.destination);
-  quelle.start(beginn);
-  quelle.stop(beginn + KOMBO_DAUER);
+  mitTon((ctx) => {
+    if (ctx.state !== "running") return;
+    const beginn = ctx.currentTime + KLANG_VERSATZ;
+    const quelle = ctx.createOscillator();
+    quelle.type = "sine";
+    quelle.frequency.value = KOMBO_GRUNDTON * 2 ** (halbtoene / HALBTOENE_JE_OKTAVE);
+    const regler = ctx.createGain();
+    regler.gain.setValueAtTime(KOMBO_LAUTSTAERKE, beginn);
+    regler.gain.exponentialRampToValueAtTime(STILLE, beginn + KOMBO_DAUER);
+    quelle.connect(regler).connect(ctx.destination);
+    quelle.start(beginn);
+    quelle.stop(beginn + KOMBO_DAUER);
+  });
 }

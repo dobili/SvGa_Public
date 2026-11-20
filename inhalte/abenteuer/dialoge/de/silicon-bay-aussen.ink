@@ -145,8 +145,7 @@ Es ist, als spielte man neben einem Radio. Du hast zugehört. #sprecher:erzaehle
 // vorteil. Vorher ging es in dash_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === dash_nach_remis ===
-Remis! Dann zahlt jeder seinen Burrito selbst. #sprecher:dash #stimmung:laechelt
-Noch eine? #sprecher:dash #stimmung:laechelt
+Remis! Dann zahlt jeder seinen Burrito selbst, noch eine? #sprecher:dash #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
@@ -196,7 +195,7 @@ Das kann man nicht messen. #sprecher:victor #stimmung:nachdenklich
 
 === rosie ===
 {rosieGetroffen:
-    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|{nadelSiliconBay > 0:Glas an der Jacke, und trotzdem hungrig?|Pass auf dich auf in der Akademie.}} #sprecher:rosie #stimmung:laechelt #musik:rosie
+    {~Kein Burrito? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|{nadelSiliconBay > 0:Glas an der Jacke, und trotzdem hungrig?|Pass auf dich auf in der Akademie.}} #sprecher:rosie #stimmung:laechelt #musik:rosie
     -> rosie_laden
 }
 ~ rosieGetroffen = true
@@ -239,8 +238,7 @@ Das Licht geht durch ihn hindurch. #sprecher:erzaehler
 Sehr. #sprecher:ambrose #stimmung:gebannt
 Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
 Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte. #sprecher:ambrose #stimmung:gebannt
-Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit fällt heraus. #sprecher:ambrose #stimmung:gebannt
-Wie Späne. #sprecher:ambrose #stimmung:gebannt
+Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit fällt heraus, wie Späne. #sprecher:ambrose #stimmung:gebannt
 * {ausgangIronwoodClubkampf != "remis"} [„In Ironwood hast du gesagt, meine Partie war schön.“]
     -> hotel_nacht_frage
 * {ausgangIronwoodClubkampf == "remis"} [„In Ironwood hast du gesagt, das Schöne holen wir nach.“]
@@ -286,7 +284,7 @@ Pass auf ihn auf. #sprecher:juno #stimmung:nachdenklich
 Du erzählst mir immer, was er sagt. #sprecher:juno #stimmung:nachdenklich
 Seit gestern erzählst du nichts. #sprecher:juno #stimmung:bitter
 Sie schlägt das Tagebuch auf, hält den Stift darüber und klappt es wieder zu. #sprecher:erzaehler
-Er klingt komisch, wenn du nichts erzählst. #sprecher:juno #stimmung:bitter
+Du klingst komisch, wenn du nichts erzählst. #sprecher:juno #stimmung:bitter
 * [Ihr nachsehen]
 - Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
 Du stehst da mit einem Brett im Rucksack, einem Reisebrett in der Jackentasche und einem Tablet unter dem Arm. #sprecher:erzaehler

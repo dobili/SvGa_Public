@@ -300,6 +300,116 @@ Beispiel, Coach Delgado:
   - Die Musik wechselt erst mit der neuen Szene im Clubraum zu „Herzklopfen“, wie vorher.
   - Junos Satz kommt in zwei Zeilen, der Sprechername steht auf beiden.
 
+### Zufallszeilen und Rhythmus (20.11.2026)
+
+- **Zufallszeilen `{~a|b|c}`:** Alle 87 Varianten mit mehr als zwei Sätzen sind auf höchstens zwei
+  Sätze gekürzt, in derselben Zeile, meist mit Komma statt Punkt. Beispiel: „Ich hab vierzehn
+  Sternschnuppen gezählt! Dex sagt elf. Dex zählt falsch.“ → „… Dex sagt elf, aber Dex zählt
+  falsch.“
+- **Rhythmus:** Gelesen habe ich in der neuen Lesefassung (Startwert 1) die drei Stellen mit den
+  meisten kurzen Zeilen hintereinander: die Erinnerung von 1866 im Zimmer über dem Laden, Mira nach
+  dem Clubkampf und Victors Abgang im Clubraum. Dort sind die kurzen Zeilen gewollt (Frage,
+  Antwort, Schweigen). Ein Muster kam aber vom Teilen: Eine Zeile mit drei Sätzen wurde zu zwei
+  Sätzen und einem kurzen Rest („Mit der Dame.“, „Fast nie.“, „Meistens.“), der ein „Weiter“
+  kostet.
+- **197 solche Reste** hängen wieder an der Zeile davor, ohne dritten Satz: Der Punkt davor wird
+  zum Komma oder Gedankenstrich. Beispiele: „Der 39. Zug. Jetzt gebe ich Schach, mit der Dame.“
+  und „Coach Delgado beißt nicht – meistens.“ Das gilt nur für Paare, die durch das Teilen
+  entstanden sind (Vergleich mit dem Stand vor dem Teilen). Kurze Zeilen des Autors bleiben, etwa
+  „Nein.“ und „Nicht Ironwood.“ am Telefon.
+- **Behoben:** Zwei Initialen hatte das Teilen auseinandergerissen: „Unterschrift: A.“ / „W.“ und
+  „Auf jedem Kopf: J.“ / „H.“. Beide stehen wieder zusammen. Ambroses „Über einen Springerzug.
+  Ich. Drei Wochen.“ heißt jetzt „Über einen Springerzug, drei Wochen. Ich!“
+
+### Stimmen der Hauptfiguren (20.11.2026, erster Teil)
+
+Die drei Lektoren für die Stimmen (Ambrose; Mama, Juno, Victor; Mira, Odile, Ward) brachen am
+Nutzungslimit ab, bevor sie etwas meldeten. Dieser erste Teil ist deshalb eine Zählung der
+wiederkehrenden Wendungen je Figur, über alle Ink-Dateien.
+
+- **Ambrose, „Zu meiner Zeit …“: 13-mal.** Die Dialogprüfung hatte die Formel schon als
+  wiederkehrende Pointe angemerkt. Sie bleibt an vier Stellen, wo sie trägt:
+  - am Steg („nicht einmal gegrüßt“)
+  - bei der Postkutsche in Desert Springs
+  - nach dem Clubkampf gegen Pratt („nicht aufgeschrieben“)
+  - beim Drachen in der Hütte
+- Die übrigen neun sind umformuliert, in seiner Art und ohne Zahlen:
+
+| Stelle                                    | Vorher                                                      | Nachher                                          |
+| ----------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------ |
+| ansehen-maple-falls (Pizzakarton)         | Zu meiner Zeit aß man von Tellern.                          | Im Kaffeehaus aß man von Tellern.                |
+| cedar-creek-aussen (Kettering)            | Zu meiner Zeit hätte er Postkutschen gefahren.              | Er hätte auch Postkutschen gefahren.             |
+| hochebene (Diplome)                       | Zu meiner Zeit hätte man das für Unordnung gehalten.        | In meiner Schule hätte man das für Unordnung …   |
+| ironwood-umkleide (Edna)                  | Zu meiner Zeit hätte eine Kerze genügt.                     | Mir hätte eine Kerze genügt.                     |
+| maple-falls-clubraum (gehaltene Stellung) | Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. | Damit stand man früher in der Zeitung.           |
+| maple-falls-dachboden (Nadel)             | Zu meiner Zeit gab es dafür Wein …                          | Früher gab es dafür Wein …                       |
+| riverton-schuppen (Fahrrad)               | Zu meiner Zeit hätte man dafür einen Kutscher gebraucht.    | Dafür brauchte man einst einen Kutscher.         |
+| weg-maple-cedar (Fährstein)               | Zu meiner Zeit brauchte ein Gentleman so lange …            | So lange brauchte ein Gentleman …                |
+| weg-maple-cedar (Flohmarkt)               | Solche Aufgaben standen zu meiner Zeit in den Zeitungen.    | Solche Aufgaben standen früher in den Zeitungen. |
+
+- **Bewusst gelassen:** Diese Wendungen sind Eigenheiten der Figur, keine Abnutzung:
+  - Victors „Mein Vater sagt“ (6-mal): Der Vater spricht durch ihn, bis Akt 4.
+  - Junos „Glitzer“ (7-mal)
+  - Big Joes „Kumpel“
+  - Ambroses „Ich weiß es nicht.“ (7-mal): Es sind seine Momente der Unsicherheit, jedes Mal
+    mit eigener Fortsetzung.
+  - Miras „Jetzt.“ und „Noch mal.“
+- **Offen:** Der Abgleich Satz für Satz mit den Profilen der Story-Bibel (Register, Anrede, Akt)
+  folgt, sobald die Lektoren wieder laufen können.
+
+### Stimmen der Hauptfiguren (20.11.2026, zweiter Teil)
+
+Drei Lektoren haben gemeldet, nachdem das Nutzungslimit zurückgesetzt war: Ambrose; Mama, Juno und
+Victor; Mira, Odile und Ward. Umgesetzt ist, was gegen das Profil der Story-Bibel klingt:
+
+| Figur   | Vorher                                                                     | Nachher                                                                                            | Warum                                                 |
+| ------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Ambrose | Ein Plakat, das droht. Wie reizend.                                        | Ein Plakat, das droht. Und es lächelt dabei.                                                       | Sarkasmus (5.1)                                       |
+| Ambrose | Das Tablet von dem Jungen …                                                | Die Glasschachtel von dem Jungen …                                                                 | moderne Dinge umschreibt er (5.3, Regel 4)            |
+| Ambrose | Ein Auto. …                                                                | Eine Kutsche ohne Pferde. …                                                                        | ebenso                                                |
+| Ambrose | … mit Geysiren kühlen will, braucht sehr viele Rechner.                    | … braucht sehr viele davon („Rechenmaschinen“)                                                     | ebenso                                                |
+| Ambrose | Ein Tier, das niemandem ausweicht. Respekt.                                | … Das nenne ich Haltung.                                                                           | heutige Umgangssprache                                |
+| Ambrose | Fragen dauert drei Sekunden.                                               | Fragen dauert einen Atemzug.                                                                       | keine Zahlen (Regel 5)                                |
+| Ambrose | … die er 1858 nie riskiert hätte.                                          | … die er im Match damals nie riskiert hätte.                                                       | Jahreszahl in Ziffern                                 |
+| Ambrose | „Ein Zug, Kind.“, „Frag mich ein andermal, Kind.“, „Heb es gut auf, Kind.“ | vor dem Archiv „Lehrling“ bzw. „Kind“, danach {held}                                               | Name ab dem Archiv (5.2), „Lehrling“ fehlte fast ganz |
+| Ambrose | Formel „Er X, nimm ihm X“ an vier Stellen                                  | eigene Bilder („Eile ist sein Pferd. Steig nicht mit auf.“ usw.)                                   | überstrapaziert (9-mal)                               |
+| Ambrose | So war es früher in den Cafés.                                             | So war es früher am Kai, an den Fässern.                                                           | Fremdwort, Kaffeehaus zu oft (13-mal)                 |
+| Ambrose | Was hängt …? Zählen, {held}, nicht raten. (Akt 4)                          | Die Ranger fragen, was ich dich auf dem Dachboden gefragt habe. Du brauchst mich dafür nicht mehr. | in Akt 4 lässt er urteilen (27.1)                     |
+| Mama    | Ich hab im Werk erzählt …                                                  | Ich hab auf Station erzählt … die halbe Nachtschicht …                                             | sie arbeitet im Krankenhaus                           |
+| Mama    | … das Verlieren sei das Wichtigste daran.                                  | Fünfundzwanzig Jahre dachte ich, das Wichtigste daran war das Verlieren.                           | zu schriftlich für sie                                |
+| Juno    | Das kommt alles ins Tagebuch. (direkt nach „Das kommt ins Tagebuch“)       | Eins für die Nadeln, eins für die Gesichter.                                                       | Doppelung                                             |
+| Juno    | Er klingt komisch, wenn du nichts erzählst.                                | Du klingst komisch, wenn du nichts erzählst.                                                       | sie hört Ambrose nicht                                |
+| Juno    | … überall unterschrieben – Eitel!                                          | … – Angeber!                                                                                       | Ambroses Wort, nicht ihres                            |
+| Victor  | Glückwunsch, Freund. Ehrlich.                                              | Glückwunsch, {held}. Ehrlich.                                                                      | Wort mit Geschlecht für {held}; er sagt den Namen     |
+| Victor  | Ich will einmal verlieren dürfen. Aber nicht heute. (am Brett)             | Den hätte ich früher nie verziehen.                                                                | sagt seinen Kernsatz als Spruch auf                   |
+| Victor  | Ich hab gelacht, merkst du?                                                | gestrichen                                                                                         | das Lachen sieht man                                  |
+| Victor  | Remis. Mit einem Springer weniger. Hm.                                     | Remis. Mit einem Springer mehr. Hm.                                                                | falsche Sicht                                         |
+| Victor  | Der Coach sagt …                                                           | Mein Trainer sagt …                                                                                | „Coach“ ist Delgado                                   |
+| Mira    | Du hast mich geschlagen. Noch mal. Jetzt. (am Brett)                       | Du warst schneller. Das mag ich nicht.                                                             | nimmt den großen Moment vorweg                        |
+| Mira    | Gute Partie. Du hast mutig gespielt.                                       | Gewonnen. Dein Angriff war trotzdem schön.                                                         | klang nach Trainer                                    |
+| Mira    | Nicht traurig sein. Rechnen.                                               | Nicht traurig sein. Opfer was.                                                                     | die Lehre kommt erst im Clubkampf                     |
+| Odile   | … jetzt hat er wieder was zu tun.                                          | … jetzt hat er wieder eine Aufgabe.                                                                | Register                                              |
+| Odile   | Diesmal nicht. Hör auf den Takt, dann kommt die nächste Nadel.             | Diesmal hatte ich den Takt. Deine Nadel bleibt, wie sie ist.                                       | Schablone, „nächste“ Nadel gibt es nicht              |
+| Ward    | Diesmal hat der Berg gewonnen. Deine Nadel bleibt dir.                     | Diesmal ich. Hast du gesehen, wo?                                                                  | Sols Bild; Schablone wie Okafor                       |
+| Ward    | Remis. Am Berg ist das kein schlechtes Ergebnis …                          | Remis. Mehr gab die Stellung nicht her, die Nadel bleibt.                                          | sie lobt nicht                                        |
+| Ward    | Und spiel jetzt, solange ich müde bin.                                     | Aber warte nicht zu lange. … das hält nicht ewig.                                                  | Widerspruch zu „nicht vorher“                         |
+
+Dazu habe ich einen Fehler aus meinem eigenen Anhängen behoben: Nach dem Gedankenstrich standen
+Adjektive und Verben groß („– Sonderbar.“, „– Mutig.“, „– Danke.“). Jetzt stehen sie klein oder
+die Zeile ist neu gebaut. Ambroses Schlüsselsatz lautet wieder „Es war schön, und es hat gestimmt.
+Beides.“
+
+Nicht umgesetzt, zur Entscheidung des Hauptchats:
+
+- Wards Porträt lächelt schon vor ihrem erzählten „ersten Lächeln“ (28-mal `laechelt`). Das sind
+  Tags, keine Texte.
+- Mama sagt den Namen von {held} nie, Victor nur einmal. Die Bibel sieht beides vor. Weitere
+  Namensnennungen an Höhepunkten wären eine inhaltliche Setzung.
+- Ambroses Zugnotation in der Erinnerung von 1866 („37. Txd7“) bleibt. Die Züge sind dort die
+  Antworten der Aufgabe.
+- Weitere Vorschläge stehen in den Berichten, etwa „hundertsechzig Jahre“ (11-mal) und Victors
+  „keiner rechnet nach“. Sie folgen in einem eigenen Durchgang.
+
 ## Nur durch die Simulation, kein Textfehler
 
 Mehrere Abende mit Ambrose hintereinander, doppelte Gespräche beim zweiten Ansprechen,

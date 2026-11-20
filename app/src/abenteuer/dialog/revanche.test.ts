@@ -24,9 +24,15 @@ const KLUBS = [
   ["riverton-pavillon", "Riverton", "slick", "slick_alltag_wahl", "Heute ich."],
   ["ironwood-kantine", "Ironwood", "big_joe", "big_joe_alltag", "Diesmal hab ich gewonnen"],
   ["silicon-bay-akademie", "SiliconBay", "lin", "lin_alltag", "Diesmal ich."],
-  ["port-delacroix-turnhalle", "PortDelacroix", "odile", "odile_alltag", "Diesmal nicht."],
+  [
+    "port-delacroix-turnhalle",
+    "PortDelacroix",
+    "odile",
+    "odile_alltag",
+    "Diesmal hatte ich den Takt.",
+  ],
   ["desert-springs-garage", "DesertSprings", "mira", "mira_alltag", "Ich hab gewonnen!"],
-  ["summit-city-huette", "SummitCity", "ward", "ward_alltag", "Diesmal hat der Berg"],
+  ["summit-city-huette", "SummitCity", "ward", "ward_alltag", "Diesmal ich. Hast du gesehen"],
 ] as const;
 
 // Bei Miss Odile folgt nach der Revanche noch die Frage, ob man bereit ist.

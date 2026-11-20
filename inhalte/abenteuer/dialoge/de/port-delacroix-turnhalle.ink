@@ -102,8 +102,7 @@ Die ganze Halle sieht dich an. Am Rand steht Mama im Kittel aus dem Notzelt, ein
 Du ziehst das Brett heraus. Altes Holz, dunkle Ecken. #sprecher:erzaehler
 * [„Es ist nur ein Brett.“]
 - Dann rede ich auch mit meinem. #sprecher:remy #stimmung:bitter
-Du schummelst. Wie die mit ihren Bildschirmen. #sprecher:remy #stimmung:bitter
-Nur altmodischer. #sprecher:remy #stimmung:bitter
+Du schummelst. Wie die mit ihren Bildschirmen, nur altmodischer. #sprecher:remy #stimmung:bitter
 Du hast den Zug nicht verstanden. Du hast ihn gespielt, weil man ihn dir gesagt hat. #sprecher:erzaehler
 Achtundneunzig Prozent. #sprecher:erzaehler
 * [„Ambrose. Sag etwas.“]
@@ -153,12 +152,10 @@ Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #s
 ~ brettersammelnBegonnen = true
 Die Frau mit dem weißen Haar heißt Miss Odile. Sie ist Musiklehrerin und leitet den Club seit dreißig Jahren. #sprecher:erzaehler
 Sie legt dein Brett in einen leeren Geigenkasten und schließt den Deckel. #sprecher:erzaehler
-Da liegt es trocken. Hol es, wenn du es brauchst. #sprecher:odile #stimmung:nachdenklich
-Nicht vorher. #sprecher:odile #stimmung:nachdenklich
+Da liegt es trocken. Hol es, wenn du es brauchst, nicht vorher. #sprecher:odile #stimmung:nachdenklich
 * [Nicken]
 - Sie gibt dir einen Handkarren. #sprecher:erzaehler
-Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines. #sprecher:odile #stimmung:nachdenklich
-Geh fragen. #sprecher:odile #stimmung:nachdenklich
+Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines, geh fragen. #sprecher:odile #stimmung:nachdenklich
 {reiheRemyBestanden and reiheLouBestanden:Remy und Lou hast du hinter dir. Wenn du um die Nadel spielen willst: Ich bin hier.|Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich.} #sprecher:odile #stimmung:laechelt
 -> END
 
@@ -288,7 +285,7 @@ Miss Odile drückt dir eine Karte in die Hand: ein kleiner Engel mit einem Schil
 Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile #stimmung:laechelt
 ~ gibKarte("schutzengel")
 Sie legt die Hand auf den Geigenkasten an deiner Seite. #sprecher:erzaehler
-Behalt ihn. Er hat lange keine Geige getragen, jetzt hat er wieder was zu tun. #sprecher:odile #stimmung:laechelt
+Behalt ihn. Er hat lange keine Geige getragen, jetzt hat er wieder eine Aufgabe. #sprecher:odile #stimmung:laechelt
 Und wenn du aus der Wüste zurückkommst, hängen wir zusammen das Schild am Musikhaus auf. #sprecher:odile #stimmung:laechelt
 Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 -> END
@@ -308,8 +305,7 @@ Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 
 === remy_reihe ===
 Remy poliert seine Trompete und sieht dich nicht an. #sprecher:erzaehler
-Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. #sprecher:remy #stimmung:bitter
-Ohne Flüstern. #sprecher:remy #stimmung:bitter
+Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst, ohne Flüstern. #sprecher:remy #stimmung:bitter
 + [„Gib mir deine Aufgaben.“]
     ~ beginneAufgaben("portDelacroix.reiheRemy")
     -> END
@@ -322,16 +318,16 @@ Remy zeigt mit dem Kinn zum Schiedsrichtertisch. #sprecher:erzaehler
 Erst zu Miss Odile. Sie hat dein Brett. #sprecher:remy #stimmung:bitter
 -> END
 === remy_alltag ===
-{~Tonleitern. Jeden Tag. Auch ohne Dach.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett. Zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
+{~Tonleitern, jeden Tag. Auch ohne Dach.|Meine Großmutter sagt, ich soll netter sein. Ich bin nett, zu Leuten, die ich kenne.|Perfect Move wollte uns Bildschirme schenken. Wir wollten ein Dach.} #sprecher:remy #stimmung:nachdenklich
 -> END
 
 === remy_versoehnt ===
 // Nach der Eröffnung (musikhausOffen) redet Remy nicht mehr von ihr (Ansprechprobe, 19.11.2026).
 {musikhausOffen:
-    {~Das Stück zur Eröffnung ist fertig. Fast. Ich spiele es jeden Dienstag ein bisschen anders.|Du hast das Schild gerade aufgehängt. Ich habe nachgemessen. Gerade genug.|Drinnen klingt die Trompete besser als in der Turnhalle. Das Holz singt mit.} #sprecher:remy #stimmung:laechelt
+    {~Das Stück zur Eröffnung ist fast fertig. Ich spiele es jeden Dienstag ein bisschen anders.|Du hast das Schild gerade aufgehängt, ich habe nachgemessen. Gerade genug.|Drinnen klingt die Trompete besser als in der Turnhalle. Das Holz singt mit.} #sprecher:remy #stimmung:laechelt
     -> END
 }
-{~Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.|Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist. Der Sturm hat meine Trompete auch fast genommen.|Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.} #sprecher:remy #stimmung:laechelt
+{~Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.|Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist, der Sturm hat meine Trompete auch fast genommen.|Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.} #sprecher:remy #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Lou
@@ -387,10 +383,10 @@ Läufer sind wichtig für Pläne. #sprecher:lou #stimmung:laechelt
 
 === lou_alltag ===
 {musikhausOffen:
-    {~Mein Muschelregal steht neben dem Klavier. Die Muscheln hören jetzt jeden Tag Musik.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern. Jetzt sogar durch einen ganzen Saal.|Im Musikhaus habe ich einen eigenen Tisch. Mit einem Brett aus der Stadt. Das hast du gebracht.} #sprecher:lou #stimmung:laechelt
+    {~Mein Muschelregal steht neben dem Klavier. Die Muscheln hören jetzt jeden Tag Musik.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern, jetzt sogar durch einen ganzen Saal.|Im Musikhaus habe ich einen eigenen Tisch mit einem Brett aus der Stadt. Das hast du gebracht.} #sprecher:lou #stimmung:laechelt
     -> END
 }
-{~Diese Muschel hat elf Rillen. Die hier zwölf. Das ist ein Plan, glaube ich.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern.|Wenn das Musikhaus fertig ist, kriege ich ein Regal für meine Muscheln.} #sprecher:lou #stimmung:laechelt
+{~Diese Muschel hat elf Rillen, die hier zwölf. Das ist ein Plan, glaube ich.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern.|Wenn das Musikhaus fertig ist, kriege ich ein Regal für meine Muscheln.} #sprecher:lou #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)
@@ -427,8 +423,7 @@ Ein handgemaltes Plakat an der Wand: „Wir spielen weiter. Jeden Abend, solange
 === remy_reihe_danach ===
 {not reiheRemyBestanden: -> remy}
 Remy legt die Trompete weg. #sprecher:erzaehler
-Bauern verstehst du. Ohne Flüstern. #sprecher:remy #stimmung:nachdenklich
-Gut. #sprecher:remy #stimmung:nachdenklich
+Bauern verstehst du. Ohne Flüstern – gut. #sprecher:remy #stimmung:nachdenklich
 Lou hat auch Aufgaben. Mit Plänen. #sprecher:remy #stimmung:neutral
 Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
 -> END
@@ -442,10 +437,9 @@ Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
 - ausgangPortDelacroixClubkampf == "sieg":
     Gewonnen, aber die Nadel bleibt dieselbe. Der Takt stimmte trotzdem. #sprecher:odile #stimmung:laechelt
 - ausgangPortDelacroixClubkampf == "remis":
-    Remis. Zwei Stimmen, ein Akkord. #sprecher:odile #stimmung:neutral
-    Deine Nadel bleibt. #sprecher:odile #stimmung:neutral
+    Remis. Zwei Stimmen, ein Akkord – deine Nadel bleibt. #sprecher:odile #stimmung:neutral
 - ausgangPortDelacroixClubkampf == "niederlage":
-    Diesmal nicht. Hör auf den Takt, dann kommt die nächste Nadel. #sprecher:odile #stimmung:laechelt
+    Diesmal hatte ich den Takt. Deine Nadel bleibt, wie sie ist. #sprecher:odile #stimmung:laechelt
 - else:
     -> odile
 }

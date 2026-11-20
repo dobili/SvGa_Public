@@ -254,8 +254,7 @@ Noch einmal? #sprecher:batiste #stimmung:laechelt
 // vorteil. Vorher ging es in batiste_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === batiste_nach_remis ===
-Gleich. Das Wasser steht still. #sprecher:batiste #stimmung:laechelt
-Noch einmal? #sprecher:batiste #stimmung:laechelt
+Gleich. Das Wasser steht still, noch einmal? #sprecher:batiste #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END

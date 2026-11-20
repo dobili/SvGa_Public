@@ -295,7 +295,7 @@ Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #ge
 // Erstspieler-Durchgang 20.11.2026: Der Morgen war nicht erzählt; draußen hieß es plötzlich „Guten
 // Morgen“, und keine Quest nannte das nächste Ziel. Jetzt der Morgen und der Weg zur Schule.
 Am Morgen steht Mama schon in der Tür, den Autoschlüssel in der Hand. #sprecher:erzaehler #licht:tag
-Die Schule ist die Straße runter. Und frag nach dem Schachteam, ja? #sprecher:mutter #stimmung:laechelt
+Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, ja? #sprecher:mutter #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Abende auf dem Dachboden

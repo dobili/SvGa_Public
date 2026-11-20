@@ -1038,9 +1038,6 @@
         "art": "eingang",
         "versatz": 520
       },
-      "phasenversatz": {
-        "endspiel": -1
-      },
       "gewichte": {
         "koenigsschild": 1.6,
         "tempoverlust": 1.2
@@ -1100,9 +1097,6 @@
         "art": "eingang",
         "versatz": 580
       },
-      "phasenversatz": {
-        "endspiel": -1
-      },
       "gewichte": {
         "falscherAbtausch": 1.6,
         "drohungIgnoriert": 1.2
@@ -1145,6 +1139,7 @@
       },
       "phasenversatz": {
         "eroeffnung": -1,
+        "mittelspiel": 1,
         "endspiel": 1
       },
       "gewichte": {
@@ -1484,6 +1479,9 @@
       "staerke": {
         "art": "eingang",
         "versatz": 650
+      },
+      "phasenversatz": {
+        "mittelspiel": 1
       },
       "menschlich": false,
       "gewichte": {

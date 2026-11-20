@@ -58,6 +58,7 @@ const sperre = process.env.WEGSPERRE ?? "S15";
 const lesestaerke = Number(process.env.WEGSPERRE_E ?? 1200);
 const partienZahl = Number(process.env.WEGSPERRE_PARTIEN ?? STANDARD_PARTIEN);
 const saatAb = Number(process.env.WEGSPERRE_SAAT_AB ?? 0);
+const ohneMaia = process.env.WEGSPERRE_OHNE_MAIA === "1";
 const zusatz = process.env.WEGSPERRE_NAME ? `-${process.env.WEGSPERRE_NAME}` : "";
 const ordner = process.env.WEGSPERRE_ZIEL ?? join(WURZEL, "buch", "arbeit", "wegsperren");
 const probe: Probe = {
@@ -74,7 +75,8 @@ describe(`Begegnung ${sperre} gegen Lesestärke ${lesestaerke}`, () => {
   afterAll(() => engine.beendeEngine());
 
   it(`${partienZahl} Partien`, async () => {
-    const maia = { laufzeit: maiaNode() };
+    // WEGSPERRE_OHNE_MAIA=1: Gegner ohne Maia, wie die erste Partie, solange Maia noch lädt.
+    const maia = ohneMaia ? undefined : { laufzeit: maiaNode() };
     const datei = join(ordner, `${sperre}-E${lesestaerke}${zusatz}.json`);
     const alt = existsSync(datei)
       ? (JSON.parse(readFileSync(datei, "utf8")) as { partien: Messpartie[] }).partien
@@ -84,8 +86,8 @@ describe(`Begegnung ${sperre} gegen Lesestärke ${lesestaerke}`, () => {
       const saat = saatAb + n + 1;
       const leser = bots[(saat - 1) % bots.length] ?? "";
       const vorgabe = einstellungDer(kennung, lesestaerke, saat, probe);
-      const form = vorgabe.einstellung.abenteuer?.kurzform;
-      if (!form) throw new Error("Die Begegnung hat kein kurzes Format");
+      // Ohne kurzes Format: ganze Partie (Clubkampf, Story, Turnier), siehe begegnungsmessung.
+      const form = vorgabe.einstellung.abenteuer?.kurzform ?? null;
       const partie = await spiele(engine, vorgabe, form, leser, maia, saat);
       partien = [...partien.filter((p) => p.saat !== saat), partie];
       mkdirSync(ordner, { recursive: true });

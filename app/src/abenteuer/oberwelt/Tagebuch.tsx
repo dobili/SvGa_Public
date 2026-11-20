@@ -12,6 +12,8 @@
  * Zielpfeil auf Wunsch (Wunsch des Autors, 19.11.2026): Jede laufende Aufgabe mit einem Ziel auf
  * der Karte hat ein kleines goldenes Dreieck wie der Hinweis in der Welt. Antippen verfolgt sie (der
  * Pfeil zeigt auf ihr Ziel), noch einmal Antippen hört auf (regeln/verfolgung.ts).
+ * Münzen stehen oben unter dem Titel (Wunsch des Autors, 20.11.2026): In der Welt erscheint ihre
+ * Anzeige nur noch, wenn sich die Zahl ändert (oberwelt/Muenzanzeige.tsx).
  * Abhängigkeiten: regeln/quests.ts, texte/texte.ts, app/blattstapel.ts, anbindung/meinePartien.ts,
  * speicher/speicher.ts (Partien der App), regeln/verfolgung.ts, oberwelt/zielsuche.ts.
  */
@@ -60,6 +62,13 @@ export function Tagebuch({
       data-testid="abenteuer-tagebuch"
     >
       <h2>{tSpiel("tagebuch.titel")}</h2>
+      {/* Münzen oben im Tagebuch: Die Anzeige in der Welt erscheint nur noch bei Änderungen
+          (Muenzanzeige.tsx, Wunsch des Autors, 20.11.2026); hier steht die Zahl immer. */}
+      <p className="abenteuer-tagebuch-muenzen" data-testid="abenteuer-tagebuch-muenzen">
+        <strong>{tSpiel("laden.muenzen", { anzahl: stand.muenzen })}</strong>
+        <br />
+        <span className="hinweis">{tSpiel("tagebuch.muenzenErklaerung")}</span>
+      </p>
       <h3>{tSpiel("tagebuch.laufend")}</h3>
       {laufend.length === 0 && <Leerlauf variablen={stand.dialogvariablen} />}
       <ul>
@@ -100,11 +109,6 @@ export function Tagebuch({
         {tSpiel("tagebuch.wertung", { wertung: stand.wertung })}
         <br />
         {tSpiel("tagebuch.wertungErklaerung")}
-      </p>
-      <p className="hinweis">
-        {tSpiel("laden.muenzen", { anzahl: stand.muenzen })}
-        <br />
-        {tSpiel("tagebuch.muenzenErklaerung")}
       </p>
       <h3>{tSpiel("tagebuch.nadeln")}</h3>
       {stand.clubs.filter((c) => c.nadel).length === 0 ? (

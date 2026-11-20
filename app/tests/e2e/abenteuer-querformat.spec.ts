@@ -136,6 +136,10 @@ for (const geraet of ["iPhone 15 landscape", "Pixel 7 landscape"] as const) {
         }, lage);
         expect(await ueberdeckt(page), lage).toEqual([]);
       }
+      // Die Überschrift „Bedenkzeit“ kostet quer keine Zeile (Spieler-Durchlauf quer, 20.11.2026:
+      // Mit Lupe und Überschriften war von den Karten ohne Rollen nichts zu sehen).
+      const ueberschrift = await inhalt.locator(":scope > h3").first().boundingBox();
+      expect(ueberschrift?.height ?? 0).toBeLessThanOrEqual(1);
       await expect(page.getByTestId("abenteuer-deck-los")).toBeInViewport({ ratio: 0.9 });
       await expect(page.getByTestId("abenteuer-deck-zurueck")).toBeInViewport({ ratio: 0.9 });
     });

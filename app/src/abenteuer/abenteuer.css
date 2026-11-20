@@ -167,6 +167,15 @@
   position: relative;
 }
 
+/* Der Hinweis „Neue Version“ steht sonst über der Seite und schiebt sie nach unten: Im Abenteuer
+   rutschte damit der untere Rand samt Steuerkreuz aus dem Bild (quer lag „Nach unten“ 21 Pixel
+   unter dem Rand, Spieler-Durchlauf 20.11.2026). Über dem Spiel liegt der Hinweis deshalb obenauf
+   und verschiebt nichts. */
+body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
+  position: fixed;
+  inset: 0 0 auto;
+}
+
 /* Startkarte und Meldungen in der Ansicht. */
 .abenteuer-start {
   display: flex;
@@ -240,6 +249,20 @@
   flex-shrink: 0;
 }
 
+/* Unter und über dem stehenden Knopf schien der rollende Inhalt durch (im Tagebuch quer eine halbe
+   Zeile unter „Schließen“, Spieler-Durchlauf 20.11.2026): Zwei Schatten in der Farbe des Fensters
+   decken den Streifen ab. Die ersten fünf Schatten sind der Pixelrahmen aus spielfarben.css. */
+.bildschirm-abenteuer .abenteuer-menue > .knopf-haupt {
+  box-shadow:
+    0 calc(var(--spiel-pixel) * -1) 0 0 var(--knopf-rand),
+    0 var(--spiel-pixel) 0 0 var(--knopf-rand),
+    calc(var(--spiel-pixel) * -1) 0 0 0 var(--knopf-rand),
+    var(--spiel-pixel) 0 0 0 var(--knopf-rand),
+    inset 0 calc(var(--spiel-pixel) * -1) 0 0 var(--knopf-kante),
+    0 calc(var(--raster) * 3) 0 0 var(--spiel-creme),
+    0 calc(var(--raster) * -1) 0 0 var(--spiel-creme);
+}
+
 /* Fenster mit eigenem Rollbereich (Deckwahl): Nur der Inhalt rollt, die Knöpfe im Fuß stehen
    darunter und verdecken nichts. Vorher stand „Ohne Karten spielen“ fest am unteren Rand über dem
    rollenden Inhalt und lag quer anfangs über den Bedenkzeit-Knöpfen (Spieler-Durchlauf quer,
@@ -271,6 +294,37 @@
 
   .abenteuer-menue-fuss > * {
     flex: 1 1 0;
+  }
+
+  /* Quer steht der Steckbrief der Lupe in einer Zeile neben seiner Überschrift: Mit ihm
+     untereinander füllten Titel, Lupe und Hinweis das ganze Fenster, und von den Karten war ohne
+     Rollen nichts zu sehen (Spieler-Durchlauf quer, 20.11.2026). */
+  .abenteuer-menue-inhalt > .abenteuer-steckbrief {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: calc(var(--raster) * 2);
+  }
+
+  .abenteuer-menue-inhalt > .abenteuer-steckbrief :is(h3, ul) {
+    margin: 0;
+  }
+
+  .abenteuer-menue-inhalt > .abenteuer-steckbrief ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: calc(var(--raster) * 4);
+  }
+
+  /* Die Überschriften über Bedenkzeit und Farbe kosten quer je eine Zeile; die Knöpfe darunter
+     sagen dasselbe („Ohne Uhr“, „Blitz 3 + 2“). Sie bleiben für Vorleseprogramme da. */
+  .abenteuer-menue-inhalt > h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   /* Quer fehlt Höhe: Das Fenster beginnt oben statt unter der Münzanzeige. */
@@ -330,6 +384,11 @@
 .abenteuer-tagebuch {
   max-height: calc(100% - var(--raster) * 12);
   overflow-y: auto;
+}
+
+/* Münzen oben im Tagebuch (Wunsch des Autors, 20.11.2026). */
+.abenteuer-tagebuch-muenzen {
+  margin: 0;
 }
 
 .abenteuer-tagebuch h3 {
@@ -448,4 +507,21 @@
   z-index: 3;
   display: flex;
   align-items: center;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s;
+}
+
+/* Nur beim Ändern der Zahl und im Laden zu sehen (Muenzanzeige.tsx, Wunsch des Autors, 20.11.2026);
+   sonst ausgeblendet, damit „0 Münzen“ nicht dauerhaft mitläuft. */
+.abenteuer-muenzen[data-sichtbar="nein"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-muenzen {
+    transition: none;
+  }
 }

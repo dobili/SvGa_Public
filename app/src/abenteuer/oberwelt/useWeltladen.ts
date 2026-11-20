@@ -117,7 +117,7 @@ function starteSpiel(
   });
 }
 
-/** Beim Verlassen einer Karte: Position und Spielzeit (gesamt und je Ort) sichern. */
+/** Beim Verlassen einer Karte: Position, Spielzeit (gesamt und je Ort) und Zeitpunkt sichern. */
 function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number): void {
   const szene = szeneAus(k.spiel);
   const aktuell = k.dienste.liesStand();
@@ -129,6 +129,8 @@ function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number): void 
     ...aktuell,
     position,
     spielzeitSekunden: aktuell.spielzeitSekunden + sekunden,
+    // Für die Erinnerung nach einer Pause (regeln/wiedereinstieg.ts).
+    zuletztGespielt: new Date().toISOString(),
     spielzeitJeOrt: {
       ...aktuell.spielzeitJeOrt,
       [ort]: (aktuell.spielzeitJeOrt[ort] ?? 0) + sekunden,

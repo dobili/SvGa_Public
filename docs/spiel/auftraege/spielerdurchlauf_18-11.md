@@ -13,6 +13,13 @@ das Querformat über Akt 1 hinaus. Acht Funde: sechs behoben (1, 2, 5, 6, 7, 8),
 anderen Sitzung behoben und im Browser bestätigt (4, Bergstation), einer erwies sich als Fehler
 des Durchlaufs (3).
 
+**Nachtrag Etappe 6 (20.11.2026):** Das Querformat (863 × 360) ist jetzt in allen vier Akten
+gespielt, aber nicht an einem Stück bis zum Abspann: Strecke E (durchgehend ab neuem Spiel) kam
+bis Desert Springs in Akt 3, Strecke F (ab simuliertem Stand) von Ironwood bis in die Hütte von
+Summit City, Strecke G (ab simuliertem Stand) von Desert Springs bis zum Abspann. Strecke A hat
+im Hochformat nach dem Abspann auch den Epilog gespielt. Zwei neue Funde (9 und 10), beide
+behoben. Einzelheiten in Abschnitt 9.
+
 ## 1. Wie gespielt wurde
 
 - Werkzeug: `app/tests/durchlauf/` mit eigener Einstellung `app/playwright.durchlauf.config.ts`
@@ -242,3 +249,92 @@ DURCHLAUF_ORDNER=/tmp/durchlauf DURCHLAUF_MINUTEN=30 CHROMIUM_PFAD=… \
 ```
 
 Im Ordner liegen danach je Format `messung.json`, `protokoll.log`, `auswertung.md` und Bilder.
+
+## 9. Etappe 6 (20.11.2026): Querformat und Epilog
+
+Stand des Spiels: beta `1f7d960b`. Alle Strecken dieser Etappe im Querformat 863 × 360 (Pixel 7
+quer), bis auf den Epilog.
+
+### 9.1 Gespielt
+
+| Strecke                 | Format | Beginn                         | Gespielt bis                                                                                                                                             | Ende der Strecke |
+| ----------------------- | ------ | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| A (Fortsetzung)         | hoch   | Profil nach dem Abspann        | Epilog in Maple Falls („Ein Jahr später“, Lily), Quest `mapleFalls.epilog` erledigt                                                                      | Epilog erledigt  |
+| E, durchgehend          | quer   | neues Spiel                    | Akt 1 und 2 ganz (Clubkämpfe Maple Falls, Cedar Creek, Riverton, Ironwood; S15, S16), Akt 3: Silicon Bay, Fähre, Port Delacroix, Desert Springs (Garage) | Zeit             |
+| F, ab simuliertem Stand | quer   | Ironwood, Ende von Akt 2       | S16, Akt 3 ganz (Strukturaufgaben 5 von 5, Gedächtnisstellung 7 von 7, drei Clubkämpfe, S17), Akt 4 bis zur Hütte in Summit City                         | Zeit             |
+| G, ab simuliertem Stand | quer   | Desert Springs, Ende von Akt 3 | S17, Summit City ganz, Crossroads, Alte Minenstraße, Ghost Town, Seeufer, Capital Arena (sechs Turnierpartien), Abspann                                  | Abspann erreicht |
+
+Damit ist Strecke A im Hochformat an einem Stück gespielt: neues Spiel, Abspann, Epilog. Im
+Querformat fehlt das Stück an einem Stück: Der Abspann ist nur ab simuliertem Stand erreicht, und
+Pinewood Camp und der Epilog sind quer nicht gespielt. Pinewood Camp und den Epilog ab simuliertem
+Stand hat der Nachtauftrag vom 19.11. im Hochformat gespielt
+(`spielerdurchlauf_pinewood_epilog_19-11.md`); die Beobachtungen zum Musikhaus und zu Henris
+Werkstatt hat er geklärt (`schwacher_spieler_19-11.md`: Musikhaus war ein Fehler des Durchlaufs,
+Henris Aufgabe ein Spielfehler, behoben).
+
+Gemessen (quer; Laufen aus Kacheln gerechnet wie in Abschnitt 3):
+
+| Strecke | Akt                        | Kacheln | Laufen (min) | Kartenwechsel | Dialogzeilen | Wörter | Partien | Halbzüge (eigene) | Runden (Aufgaben) |
+| ------- | -------------------------- | ------- | ------------ | ------------- | ------------ | ------ | ------- | ----------------- | ----------------- |
+| E       | 1, ganz, mit 40 Partien Jo | 3504    | 16,7         | 54            | 1341         | 22 301 | 85      | 1255 (654)        | 10 (38)           |
+| E       | 2, ganz                    | 1162    | 5,5          | 19            | 522          | 6907   | 5       | 212 (107)         | 7 (37)            |
+| E       | 3, bis Desert Springs      | 3651    | 17,4         | 32            | 876          | 12 022 | 12      | 331 (169)         | 10 (41)           |
+| F       | 2, Rest ab Ironwood        | 1805    | 8,6          | 8             | 116          | 1473   | 3       | 73 (36)           | 0                 |
+| F       | 3, ganz                    | 7448    | 35,5         | 54            | 1187         | 16 989 | 25      | 763 (384)         | 12 (51)           |
+| G       | 4, bis Abspann             | 2858    | 13,6         | 37            | 940          | 12 111 | 19      | 624 (315)         | 4 (14)            |
+
+Akt 1 der Strecke E taugt nicht als Maß: Der Durchlauf spielte 40 Partien in Folge gegen Jo im
+Park (Fehler des Durchlaufs, behoben: Er nahm die schon gespielte Revanche statt „Gleich.“). Akt 2
+der Strecke E ist der erste ganze Akt 2 ohne Irrwege: 103 Minuten zügig, 158 gründlich nach den
+Annahmen aus Abschnitt 4 (gerechnet waren 139 und 203). Die Spielzeit hängt nicht vom Format ab;
+die Summen in Abschnitt 4 habe ich deshalb nicht geändert.
+
+### 9.2 Randprüfung
+
+Neu im Durchlauf (`tests/durchlauf/randpruefung.ts`): Jedes Fenster, das in einem Abschnitt zum
+ersten Mal erscheint, wird fotografiert und darauf geprüft, ob ein Knopf außerhalb des Bildes
+liegt oder verdeckt ist und ob er sich durch Rollen erreichen lässt. Einmal je Abschnitt öffnet
+der Durchlauf dazu Tagebuch, Reisebrett, Reisen und Spielmenü und schließt sie mit der
+Zurück-Taste. Die Bilder liegen im Ordner des Laufs unter `quer/bilder/fenster-…png`.
+
+Im Querformat gesehen und ohne festen Befund: Dialog mit und ohne Antworten, Meldung, Deckwahl
+(mit Lupe, Bedenkzeit, Karten), Partie mit und ohne Kurzform und Erzählung, Ergebniskarte,
+Aufgabenrunde, Zugerraten, Strukturaufgaben, Gedächtnisstellung, Rundenergebnis, Laden (Kiosk,
+Antiquariat, Bergladen, Fanshop), Tagebuch, Spielmenü, Turnierpartien, Abspann. Nicht gesehen: das
+Fenster „Reisen“ (der Knopf erschien in den gespielten Ständen nicht).
+
+### 9.3 Funde
+
+9. **Abspann nennt Figuren mehrfach (behoben).** Im Abspann stand „Mama“ dreimal, einmal mit einem
+   zerbrochenen Bild; acht Figuren standen doppelt oder dreifach (Coach Delgado, Juno, Carla,
+   Mr. Pratt, Ivy, Jonah, Tessa). Die Liste zählte nach der Kennung der Figur statt nach dem
+   Namen. Jetzt steht jeder Name einmal, mit dem Porträt der Kennung, die zum Namen gehört
+   (`oberwelt/abspannfiguren.ts`, Test `Abspann.test.ts`). Der Fund hängt nicht am Format.
+10. **Hinweis „Neue Version verfügbar“ schiebt das Spiel aus dem Bild (behoben).** Der Hinweis
+    stand über der Seite und drückte das Abenteuer um seine Höhe (60 Pixel) nach unten. Im
+    Querformat lag „Nach unten“ des Steuerkreuzes damit ganz unter dem Rand (gemessen: Oberkante
+    bei 359 von 360 Pixeln). Jetzt liegt der Hinweis über dem Spiel und verschiebt nichts
+    (`abenteuer.css`). Geprüft, indem die neue Regel in den alten Stand eingespielt wurde:
+    Oberkante danach bei 299. Einen frischen Start mit Hinweis und neuer Regel habe ich nicht
+    gesehen; bis zur nächsten Größenänderung blieb im Versuch unten ein weißer Streifen stehen.
+
+Kleinere Änderungen für das Querformat (`abenteuer.css`):
+
+- Deckwahl: Der Steckbrief der Lupe steht quer in einer Zeile neben seiner Überschrift, und die
+  Überschriften „Bedenkzeit“ und „Farbe“ kosten quer keine Zeile mehr (für Vorleseprogramme
+  bleiben sie). Vorher war mit Lupe und Bedenkzeit von den Karten ohne Rollen nichts zu sehen.
+  Test: Zeile in `tests/e2e/abenteuer-querformat.spec.ts`.
+- Der stehende Knopf eines Fensters („Schließen“ im Tagebuch, „Fertig“ im Laden) deckt jetzt den
+  Streifen über und unter sich ab; vorher schien dort eine halbe Zeile des rollenden Inhalts durch.
+
+Beobachtungen ohne Änderung:
+
+- Quer liegt die Deckwahl über der Meldungsleiste: „Weiter“ einer Meldung („Neu im Tagebuch“) ist
+  erst nach der Deckwahl zu erreichen.
+- Im Laden und im Abspann liegt der stehende Knopf quer über einer Reihe des Inhalts; man erreicht
+  alles durch Rollen.
+- Vor „Ans Brett“ ist quer die letzte Zeile des Ziels angeschnitten, und „Aufgeben“ liegt weiter
+  unten in der rollenden Spalte; nach „Ans Brett“ steht alles im Bild.
+- Nach jedem Neubau meldete der Durchlauf einmal „Spielpaket lädt nicht in 300 s“: Zwei Browser
+  luden zugleich das Paket mit den echten Grafiken (122 MB) vom lokalen Server. Mit dem
+  öffentlichen Paket (10 MB) nicht geprüft.

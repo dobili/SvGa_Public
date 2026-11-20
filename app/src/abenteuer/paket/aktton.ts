@@ -22,7 +22,12 @@
 import { useEffect, useSyncExternalStore } from "react";
 import { beiPaketAenderung, fehlendeDateien, ladeNach, paketDa } from "./paketlader";
 import type { Ladefortschritt, Paketverzeichnis } from "../schnittstelle/paket";
-import { ladeMaiaImHintergrund, MAIA_DER_APP, type Maiazugriff } from "../anbindung/maiapflicht";
+import {
+  ladeMaiaImHintergrund,
+  MAIA_DER_APP,
+  maiaImHintergrundAus,
+  type Maiazugriff,
+} from "../anbindung/maiapflicht";
 
 /** Erster Akt, dessen Ton nachgeladen wird (seit 15.11.2026 auch Akt 1). */
 export const ERSTER_NACHLADEAKT = 1;
@@ -125,7 +130,9 @@ export async function ladeTonImHintergrund(
   const fehlend = await fehlendeDateien(zumAkt(akt));
   // Ohne Paket (Startkarte vor dem ersten Laden) lädt auch Maia nicht.
   if (!(await paketDa())) return;
-  const fehltMaia = maia.online() && !(await maia.geladen());
+  // Oberflächentests schalten Maia hier ab (maiaImHintergrundAus); das Spiel lädt es immer.
+  const mitMaia = !maiaImHintergrundAus();
+  const fehltMaia = mitMaia && maia.online() && !(await maia.geladen());
   const maiaBytes = fehltMaia ? ((await maia.groesse()) ?? 0) : 0;
   const tonBytes = fehlend.reduce((summe, d) => summe + d.bytes, 0);
   const frisch = fehlend.length > 0 || fehltMaia;
@@ -141,7 +148,7 @@ export async function ladeTonImHintergrund(
     tonGeladen = Math.min(geladen, tonBytes);
     melde(0);
   });
-  const maiaOk = await ladeMaiaImHintergrund(melde, maia);
+  const maiaOk = mitMaia ? await ladeMaiaImHintergrund(melde, maia) : true;
   if (!ok) {
     setze(frisch ? { art: "unvollstaendig" } : { art: "ruht" });
     return;

@@ -22,7 +22,6 @@ Aufruf: ``python -m pipeline.abenteuer.proportionsvergleich PRIVAT ZIEL`` schrei
 import contextlib
 import copy
 import json
-import statistics
 import sys
 from pathlib import Path
 
@@ -33,6 +32,7 @@ from pipeline.abenteuer.kartenbau import INHALTE, K, platziere, raster, sperrfel
 from pipeline.abenteuer.kartenbild import zeichne
 from pipeline.abenteuer.kartentiled import GESPERRT
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.proportionsfiguren import figurhoehen, gesicht
 from pipeline.abenteuer.proportionsseite import schreibe_seite, uri
 
 ZOOM = 3  # Bildschirmpixel je Kartenpixel im Spiel (weltmassstab.ts)
@@ -41,7 +41,6 @@ ZOOM = 3  # Bildschirmpixel je Kartenpixel im Spiel (weltmassstab.ts)
 INNEN_FAKTOREN = (1.25, 4 / 3, 1.5)
 FENSTER = (6, 8)  # Ausschnitt in Kacheln (das Spiel zeigt hoch 8 × 15); klein, damit die Seite leicht bleibt
 ANSICHT_KARTE = 4  # ganze Karte: ein Bildpunkt je vier Pixel der Vorschau (halbe Kartengröße)
-GESICHT_ZOOM = 4  # Lupe auf das Gesicht des Helden
 KOERPER = 12  # Körper der Figur in Kartenpixeln (durchlass.py)
 # Möbelarten, die zum Raum gehören und nie verkleinert werden.
 RAUMTEILE = {"teppich", "boden", "boden_teil", "fenster", "bild", "treppe", "tuer", "markierung"}
@@ -69,29 +68,6 @@ AUSSEN = [
 
 def lade_szene(name: str) -> dict:
     return json.loads((INHALTE / "szenen" / f"{name}.json").read_text())
-
-
-def figurhoehen(privat: Path) -> dict:
-    """Gemessene Figurhöhen: Median der LimeZu-Figuren und unser Held (Kartenpixel)."""
-    limezu = []
-    ordner = privat / "modern-interiors" / "2_Characters" / "Old" / "Single_Characters_Legacy" / "16x16"
-    for datei in sorted(ordner.glob("*idle*16x16.png")):
-        bild = Image.open(datei).convert("RGBA")
-        if bild.height != 2 * K:
-            continue
-        rahmen = [bild.crop((i * K, 0, (i + 1) * K, 2 * K)).getbbox() for i in range(min(4, bild.width // K))]
-        hoehen = [r[3] - r[1] for r in rahmen if r]
-        if hoehen:
-            limezu.append(max(hoehen))
-    held = belebungsvorschau.figurbild(privat, "figuren/held-0.png", 3, belebungsvorschau.rgba)
-    umriss = held.getbbox() if held else None
-    pixellab = (privat / "spiel" / "figuren-neu").exists()
-    return {
-        "limezu_median": statistics.median(limezu) if limezu else None,
-        "limezu_anzahl": len(limezu),
-        "held": (umriss[3] - umriss[1]) if umriss else None,
-        "pixellab": pixellab,
-    }
 
 
 @contextlib.contextmanager
@@ -293,27 +269,6 @@ def speichere(ziel: Path, bild: Image.Image, name: str) -> str:
     """Bild als data-URI (proportionsseite.uri); ziel und name bleiben für eine Fassung mit Dateien."""
     del ziel, name
     return uri(bild)
-
-
-def gesicht(privat: Path, faktor: float) -> Image.Image | None:
-    """Kopf des Helden so, wie das Spiel ihn zeichnet (nächster Nachbar aus dem Original, ZOOM 3),
-    dann GESICHT_ZOOM-fach vergrößert. Beispiel: Faktor 1,5 → 3 Bildschirmpixel je Figurenpixel."""
-    neu = privat / "spiel" / "figuren-neu" / "held-0" / "rotations" / "south.png"
-    if neu.exists():
-        bild, schirm = Image.open(neu).convert("RGBA"), 2 * faktor  # PixelLab: 2/3 · ZOOM 3 · Faktor
-    else:
-        alt = privat / "spiel" / "figuren" / "held-0.png"
-        if not alt.exists():
-            return None
-        bild, schirm = Image.open(alt).convert("RGBA").crop((3 * K, 0, 4 * K, 2 * K)), ZOOM * faktor
-    umriss = bild.getbbox()
-    if not umriss:
-        return None
-    kopf = bild.crop((umriss[0], umriss[1], umriss[2], umriss[1] + (umriss[3] - umriss[1]) * 3 // 5))
-    grund = Image.new("RGBA", kopf.size, (232, 222, 200, 255))
-    grund.alpha_composite(kopf)
-    am_schirm = grund.resize((round(kopf.width * schirm), round(kopf.height * schirm)), Image.NEAREST)
-    return am_schirm.resize((am_schirm.width * GESICHT_ZOOM, am_schirm.height * GESICHT_ZOOM), Image.NEAREST)
 
 
 def innenraeume(ziel: Path, privat: Path, faktoren: list[float]) -> list[dict]:

@@ -71,8 +71,7 @@ Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. #sprecher:slick 
 In einer Garage in der Wüste. #sprecher:slick #stimmung:laechelt
 Ich hab es an die Brücke gehängt. Unter den Bogen, wo der Stein liegt. #sprecher:slick #stimmung:laechelt
 Ich hab seit März wieder angefangen. Mit den Dosen. #sprecher:slick #stimmung:laechelt
-Meine sind schief. Tamsin hat einen gekriegt. #sprecher:slick #stimmung:laechelt
-Bester Verlierer. #sprecher:slick #stimmung:laechelt
+Meine sind schief. Tamsin hat einen gekriegt – Bester Verlierer. #sprecher:slick #stimmung:laechelt
 Ich hab nur einmal verloren! #sprecher:tamsin #stimmung:bitter
 Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. #sprecher:slick #stimmung:lacht
 Der gehört auf den Stein. #sprecher:slick #stimmung:lacht
@@ -83,7 +82,7 @@ Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
 
 === mira ===
 {miraCrossroadsGetroffen:
-    {~Noch mal. Jetzt.|{atmeGesagt:Atmen ist langweilig. Aber es hilft.|Im Canyon ist es still. Hier redet jeder.}|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
+    {~Noch mal. Jetzt.|{atmeGesagt:Atmen ist langweilig. Aber es hilft.|Im Canyon ist es still. Hier redet jeder.}|Die Frau vom Pfarrer spielt an zwei Brettern gegen mich. Gleichzeitig.} #sprecher:mira #stimmung:neutral
     -> END
 }
 ~ miraCrossroadsGetroffen = true
@@ -169,8 +168,7 @@ Ein Wegweiser mit Schildern in alle Richtungen: Maple Falls, Cedar Creek, Rivert
 Ganz oben, neu angeschraubt: „Capital Arena – Landesmeisterschaft“. #sprecher:erzaehler
 {novaBitteGehoert:
     {not abschiedGesehen:
-        Acht Städte. Und in jeder habe ich etwas gelernt. #sprecher:ambrose #stimmung:friedlich
-        Oder verlernt. #sprecher:ambrose #stimmung:friedlich
+        Acht Städte. Und in jeder habe ich etwas gelernt, oder verlernt. #sprecher:ambrose #stimmung:friedlich
     }
 }
 -> END

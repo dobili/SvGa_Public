@@ -58,7 +58,7 @@ VAR abschiedGesehen = false
     }
     {ersteLektionBesprochen:Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu.|Ein Pizzakarton auf dem Boden, noch zu. Es riecht schon nach Käse.} #sprecher:erzaehler
     {ersteLektionBesprochen and not abschiedGesehen:
-        Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
+        Im Kaffeehaus aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
 -> END
@@ -70,8 +70,7 @@ VAR abschiedGesehen = false
     Der Tisch wackelt nur noch, wenn man sich darauf stützt. Das ist jetzt eben so. #sprecher:erzaehler
 - else:
     ~ angesehenTischPizzakarton = true
-    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. #sprecher:erzaehler
-    Fast nicht. #sprecher:erzaehler
+    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr, fast nicht. #sprecher:erzaehler
     {not abschiedGesehen:
         Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
     }

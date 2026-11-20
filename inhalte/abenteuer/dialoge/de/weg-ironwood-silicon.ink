@@ -68,14 +68,13 @@ VAR ambroseSprichtWieder = false
 VAR versoehnungGesehen = false
 === kowalczyk ===
 {kowalczykGetroffen:
-    {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk #stimmung:laechelt
+    {~In Silicon Bay parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk #stimmung:laechelt
     -> END
 }
 ~ kowalczykGetroffen = true
 Eine Fernfahrerin mit Armen wie Big Joe steht am Kaffeeautomaten und nickt zur Blechtafel mit den Fallen hinüber. #sprecher:erzaehler
 Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk #stimmung:neutral
-Ich fahr seit dreißig Jahren. Erst laden, dann fahren. #sprecher:kowalczyk #stimmung:laechelt
-Ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
+Ich fahr seit dreißig Jahren. Erst laden, dann fahren – ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
 Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprecher:erzaehler
 -> END
 
@@ -119,8 +118,7 @@ Drei Minuten, plus zwei Sekunden je Zug. Mein Puls bleibt oben. #sprecher:jogger
 === joggerin_angebot ===
 Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
 {(not abschiedGesehen and not ambroseSchweigt()):
-    Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. #sprecher:ambrose #stimmung:nachdenklich
-    Denk du. #sprecher:ambrose #stimmung:nachdenklich
+    Sie läuft schnell und denkt schnell. Lass sie laufen, {held}, denk du. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
@@ -144,8 +142,7 @@ Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmun
 // vorteil. Vorher ging es in joggerin_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === joggerin_nach_remis ===
-Remis. Gleicher Puls, gleiche Zeit. #sprecher:joggerin #stimmung:laechelt
-Noch eine Runde? #sprecher:joggerin #stimmung:laechelt
+Remis. Gleicher Puls, gleiche Zeit, noch eine Runde? #sprecher:joggerin #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
@@ -190,8 +187,7 @@ Auf dem Boden glänzt ein Anstecker: „ZERO – Spiel wie die Zukunft.“ #spre
     Auf dem Glas ist nichts mehr. Unter dir fließen die Lichter der Autobahn. #sprecher:erzaehler
     -> END
 }
-In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. #sprecher:erzaehler
-Ein Ohrstöpsel. #sprecher:erzaehler
+In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein, ein Ohrstöpsel. #sprecher:erzaehler
 Er ist schwerer, als er sein sollte. An einer Seite ist ein winziges Loch, darin glänzt etwas Metallenes. #sprecher:erzaehler
 {tabletNachtGesehen:
     Hat jemand verloren, denkst du. #sprecher:erzaehler
@@ -246,8 +242,7 @@ Drei Vorschläge, einer davon ist Unsinn. #sprecher:kiki #stimmung:laechelt
 -> stream_angebot
 
 === stream_angebot ===
-Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. #sprecher:kiki #stimmung:laechelt
-Machst du mit? #sprecher:kiki #stimmung:laechelt
+Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live – machst du mit? #sprecher:kiki #stimmung:laechelt
 {(not abschiedGesehen and not ambroseSchweigt()):
     Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -264,8 +259,7 @@ Machst du mit? #sprecher:kiki #stimmung:laechelt
 Aufgewärmt? Jetzt live. #sprecher:kiki #stimmung:froh
 Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
 {(not abschiedGesehen and not ambroseSchweigt()):
-    Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. #sprecher:ambrose #stimmung:nachdenklich
-    Für sie. #sprecher:ambrose #stimmung:nachdenklich
+    Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich, für sie. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los geht's.“]
     ~ beginnePartie("wegIronwoodSilicon.stream")
@@ -413,8 +407,7 @@ Datenpunkt 19870. Danke. #sprecher:zoe #stimmung:laechelt
 
 === testteam_bruecke_genug ===
 Zoe sieht auf ihr Tablet und zuckt mit den Schultern. #sprecher:erzaehler
-Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. #sprecher:zoe #stimmung:nachdenklich
-Geh durch. #sprecher:zoe #stimmung:nachdenklich
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht, geh durch. #sprecher:zoe #stimmung:nachdenklich
 -> testteam_bruecke_offen
 
 === testteam_bruecke_durch ===

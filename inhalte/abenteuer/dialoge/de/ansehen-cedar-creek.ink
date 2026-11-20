@@ -135,8 +135,7 @@ VAR abschiedGesehen = false
     ~ angesehenAutomat = true
     Ein Automat für Waschpulver und Kaugummi. Eine Kugel Kaugummi kostet eine Münze. #sprecher:erzaehler
     {not abschiedGesehen:
-        Eine Münze, eine Kugel. Kein Dank, kein Wort. #sprecher:ambrose #stimmung:nachdenklich
-        Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
+        Eine Münze, eine Kugel. Kein Dank, kein Wort – Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
 -> END

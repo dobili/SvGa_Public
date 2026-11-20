@@ -168,9 +168,9 @@ Gehen wir runter zur Hütte? Ward wartet mit deiner Partie, und ich will zusehen
 - wardLaurieGesagt and nadelSummitCity == 0:
     Ich bin nur kurz rauf, wegen der Aussicht. Unten wartet Ward mit deiner Partie. #sprecher:victor #stimmung:laechelt
 - ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":
-    {~Hier oben ist kein Netz. Ich komme immer noch her.|Mein Vater fährt jetzt manchmal mit hoch. Er sagt nichts. Das ist schön.} #sprecher:victor #stimmung:laechelt
+    {~Hier oben ist kein Netz. Ich komme immer noch her.|Mein Vater fährt jetzt manchmal mit hoch und sagt nichts. Das ist schön.} #sprecher:victor #stimmung:laechelt
 - else:
-    {~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
+    {~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück, vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
 }
 -> END
 

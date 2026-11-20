@@ -48,8 +48,7 @@ Ich habe ein paar Mattbilder gesammelt, für lange Nächte. Willst du sie lösen
 
 === lucia ===
 {luciaGetroffen:
-    Siehst du ihn? Zwei Sterne nach oben, einer zur Seite. #sprecher:lucia #stimmung:laechelt
-    Ein L. #sprecher:lucia #stimmung:laechelt
+    Siehst du ihn? Zwei Sterne nach oben, einer zur Seite, ein L. #sprecher:lucia #stimmung:laechelt
     -> END
 }
 ~ luciaGetroffen = true

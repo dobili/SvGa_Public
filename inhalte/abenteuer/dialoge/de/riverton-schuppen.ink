@@ -27,13 +27,12 @@ Nimm es. #sprecher:albescu #stimmung:laechelt
     Es soll fahren. Nicht stehen. #sprecher:albescu #stimmung:laechelt
     Ein Rad, das steht, ist ein Gestell. #sprecher:albescu #stimmung:laechelt
 * [Den Lenker anfassen]
-    Siehst du. Es soll fahren. #sprecher:albescu #stimmung:froh
-    Nicht stehen. #sprecher:albescu #stimmung:froh
+    Siehst du. Es soll fahren, nicht stehen. #sprecher:albescu #stimmung:froh
 - Fahr damit weit. Und wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht. #sprecher:albescu #stimmung:laechelt
 Dafür brauche ich keine Knie. #sprecher:albescu #stimmung:lacht
 Du schiebst es hinaus in den Regen. Die Klingel funktioniert noch. #sprecher:erzaehler #klang:fahrradklingel
 {not abschiedGesehen:
-    Ein Gefährt mit Klingel und Schmetterling. Zu meiner Zeit hätte man dafür einen Kutscher gebraucht. #sprecher:ambrose #stimmung:lacht
+    Ein Gefährt mit Klingel und Schmetterling. Dafür brauchte man einst einen Kutscher. #sprecher:ambrose #stimmung:lacht
     Und ein zweites Pferd für den Kutscher. #sprecher:ambrose #stimmung:lacht
 }
 Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.“ #sprecher:erzaehler

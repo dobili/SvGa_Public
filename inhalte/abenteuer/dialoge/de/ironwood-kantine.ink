@@ -144,7 +144,7 @@ Du weißt es nicht. #sprecher:erzaehler
 
 // Gutachten L1.3: Der Clubkampf kommt erst nach Mamas Partie (Roman, Kapitel 27 vor 28).
 === big_joe_wartet ===
-{~Hank und Priya hast du geschafft. Mich noch nicht. Aber nicht heute, Kumpel.|Das Stahlbrett wartet. Ich weiß nur noch nicht, worauf.|Am Tisch am Fenster ist ein Platz frei. Den stell ich keinem hin.} #sprecher:bigJoe #stimmung:laechelt
+{~Hank und Priya hast du geschafft, mich noch nicht. Aber nicht heute, Kumpel.|Das Stahlbrett wartet. Ich weiß nur noch nicht, worauf.|Am Tisch am Fenster ist ein Platz frei. Den stell ich keinem hin.} #sprecher:bigJoe #stimmung:laechelt
 -> END
 
 === big_joe_clubkampf ===
@@ -157,8 +157,7 @@ Du weißt es nicht. #sprecher:erzaehler
 Big Joe hat Ringe unter den Augen wie Kohlestriche. Er hält sich an seinem Kaffee fest. #sprecher:erzaehler #musik:aus
 Kumpel, ich hab drei Stunden geschlafen. Wenn ich heute verliere, liegt es an deiner Mutter und am Schinken. #sprecher:bigJoe #stimmung:muede
 * [„Sie können es verschieben.“]
-    Verschieben! Hier wird nicht verschoben. #sprecher:bigJoe #stimmung:lacht
-    Hier wird geschichtet. #sprecher:bigJoe #stimmung:lacht
+    Verschieben! Hier wird nicht verschoben, hier wird geschichtet. #sprecher:bigJoe #stimmung:lacht
 * [Nicken]
 - -> brett
 
@@ -230,8 +229,7 @@ Er steckt dir das Zahnrad an die Jacke, neben die anderen Nadeln. #sprecher:erza
 Die Kantine brüllt. #sprecher:erzaehler
 {not abschiedGesehen:
     Auf dem Weg hinaus, im Lärm, sagt Ambrose etwas. Du verstehst es fast nicht. #sprecher:erzaehler #pause
-    Es war schön. Und es hat gestimmt. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
-    Beides. #sprecher:ambrose #stimmung:still
+    Es war schön. Und es hat gestimmt – beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
 }
 -> END
 
@@ -240,7 +238,7 @@ Die Kantine brüllt. #sprecher:erzaehler
 // Das Stahlbrett steht seit dem Kauf in seiner Garage (ironwood-aussen.kauf).
 === big_joe_nach_kauf ===
 Big Joe sitzt auf einer Kiste zwischen den Kartons und reißt Klebeband ab. Das Geräusch hallt durch den leeren Raum. #sprecher:erzaehler
-{~Die Garage ist eng, Kumpel. Aber sie gehört uns. Hier hole ich nur noch, was uns gehört.|Dreißig Jahre, Kumpel. Und die Kisten sind in zwei Stunden gepackt.|Laurie hat gesagt, sie hilft beim Streichen. Die Garage kriegt Grün. Wie das Geländer bei Ruth.} #sprecher:bigJoe #stimmung:nachdenklich
+{~Die Garage ist eng, Kumpel, aber sie gehört uns. Hier hole ich nur noch, was uns gehört.|Dreißig Jahre, Kumpel. Und die Kisten sind in zwei Stunden gepackt.|Laurie hat gesagt, sie hilft beim Streichen. Die Garage kriegt Grün, wie das Geländer bei Ruth.} #sprecher:bigJoe #stimmung:nachdenklich
 + {mamaSpielt and not feierGesehen} [„Wird noch gefeiert?“]
     // Wer die Feier abgelehnt hat, kann sie nachholen (Nebenquest ironwood.feier), jetzt in der Garage.
     In der Garage, Kumpel. Schinken haben wir noch. #sprecher:bigJoe #stimmung:lacht
@@ -333,8 +331,7 @@ Was sie und Oma Ruth an der Tür sagen, weißt du nicht. Du bleibst im Wagen. #s
 Manche Dinge gehören einem nicht. #sprecher:erzaehler
 In der Kantine bullert der Ofen. Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. #sprecher:erzaehler #musik:aus
 Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler
-Big Joe steht auf. Er sagt nichts. #sprecher:erzaehler
-Sie sagt nichts. #sprecher:erzaehler
+Big Joe steht auf. Er sagt nichts, sie sagt nichts. #sprecher:erzaehler
 Sie geht durch den ganzen langen Raum. Er kommt ihr drei Schritte entgegen und hält sie fest, als könnte sie zerbrechen. #sprecher:erzaehler #pause:2
 Laurie. #sprecher:bigJoe #stimmung:ueberrascht
 Du hättest noch mal klingeln können. #sprecher:mutter #stimmung:bitter
@@ -347,8 +344,7 @@ Ich weiß. Jetzt. #sprecher:bigJoe #stimmung:nachdenklich #musik:karte
 Am Stahlbrett. Mama hat Weiß. #sprecher:erzaehler
 Sie sieht die Figuren an, eine nach der anderen, als müsste sie sich an ihre Namen erinnern. #sprecher:erzaehler
 + [„Ich bin bereit.“]
-    Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder. #sprecher:erzaehler
-    Dann der daneben. #sprecher:erzaehler
+    Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder, dann der daneben. #sprecher:erzaehler
     Damengambit. Hat sie von mir. #sprecher:bigJoe #stimmung:froh
     ~ beginnePartie("ironwood.mama")
     -> END
@@ -399,8 +395,7 @@ Schmieröl ist im Schrank. #sprecher:bigJoe #stimmung:lacht
 Ihre Figuren rücken vor, eine nach der anderen, schön und entschlossen, auf deinen König zu. #sprecher:erzaehler
 Ein paar Züge später siehst du es. Ihre Dame, weit vorn. #sprecher:erzaehler #musik:aus #bild:schraege
 Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm will. Und dein Läufer, in der Ecke. #sprecher:erzaehler
-Dir wird kalt. Nicht genau dieselbe Stellung. #sprecher:erzaehler
-Aber dasselbe Bild. #sprecher:erzaehler #pause:2
+Dir wird kalt. Nicht genau dieselbe Stellung, aber dasselbe Bild. #sprecher:erzaehler #pause:2
 * [„Ambrose.“]
 - Ich sehe es. #sprecher:ambrose #stimmung:ueberrascht
 * [„Was mache ich?“]
@@ -422,8 +417,7 @@ Sie hält sich mit beiden Händen an der Tischkante fest. Big Joes Augen sind na
 Er stellt eine Figur hin, und sie bleibt dort. Dann die nächste daneben. #sprecher:erzaehler
 Jede hält eine von deinen fest. #sprecher:erzaehler
 Was dranhängt, kann nicht weg. #sprecher:bigJoe #stimmung:nachdenklich
-Das ist auch Schach. Kein Funken. #sprecher:ambrose #stimmung:laechelt
-Kein einziger. #sprecher:ambrose #stimmung:laechelt
+Das ist auch Schach. Kein Funken, kein einziger. #sprecher:ambrose #stimmung:laechelt
 Und doch steht alles genau, wo es stehen muss. #sprecher:ambrose #stimmung:laechelt #pause
 Der Brückenbauer hätte ihn gemocht. #sprecher:ambrose #stimmung:still #pause
 -> END
@@ -469,7 +463,7 @@ Wer nur die Figuren zählt, versteht das nie. #sprecher:mutter #stimmung:nachden
 -> END
 
 === mama_alltag ===
-{~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
+{~Grundreihe, immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Hank und Priya
@@ -490,7 +484,7 @@ Wer nur die Figuren zählt, versteht das nie. #sprecher:mutter #stimmung:nachden
     -> hank_reihe
 - not reiheHankBestanden: -> hank_reihe
 - else:
-    {~Gut gemacht. Mehr sag ich nicht.|Nachtschicht. Danach Schach. Danach schlafen. Meistens.} #sprecher:hank #stimmung:laechelt
+    {~Gut gemacht. Mehr sag ich nicht.|Nachtschicht, danach Schach, danach schlafen. Meistens.} #sprecher:hank #stimmung:laechelt
     -> END
 }
 
@@ -583,8 +577,7 @@ Jetzt fehlt nur noch Big Joe. Um die Nadel spielt er selbst. #sprecher:priya #st
     Gewonnen, Kumpel. Für eine bessere Nadel hat's nicht gereicht. #sprecher:bigJoe #stimmung:laechelt
     Sauber gespielt war es trotzdem. #sprecher:bigJoe #stimmung:laechelt
 - ausgangIronwoodClubkampf == "remis":
-    Remis, Kumpel. Wie eine Schicht ohne Unfall. #sprecher:bigJoe #stimmung:neutral
-    Die Nadel bleibt. #sprecher:bigJoe #stimmung:neutral
+    Remis, Kumpel. Wie eine Schicht ohne Unfall, die Nadel bleibt. #sprecher:bigJoe #stimmung:neutral
 - ausgangIronwoodClubkampf == "niederlage":
     Diesmal hab ich gewonnen, Kumpel. Deine Nadel behältst du. #sprecher:bigJoe #stimmung:laechelt
     Die hast du dir verdient. #sprecher:bigJoe #stimmung:laechelt

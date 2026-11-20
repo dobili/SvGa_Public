@@ -35,8 +35,7 @@ Die Mähne will nicht. #sprecher:dunmore #stimmung:nachdenklich
 * [„Darf ich zusehen?“]
     Zusehen ist frei. Reden kostet einen Span. #sprecher:dunmore #stimmung:laechelt
 * [„Warum ist der Springer so schwer?“]
-    Alles andere ist rund. Das Pferd hat einen Kopf. #sprecher:dunmore #stimmung:laechelt
-    Köpfe sind schwer. #sprecher:dunmore #stimmung:laechelt
+    Alles andere ist rund. Das Pferd hat einen Kopf – Köpfe sind schwer. #sprecher:dunmore #stimmung:laechelt
 - {not abschiedGesehen: Ein Handwerker, der an einem Springer verzweifelt. Willkommen im Schach, Sir. #sprecher:ambrose #stimmung:lacht}
 -> END
 

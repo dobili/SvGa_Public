@@ -105,7 +105,7 @@ Das Mädchen mit dem Tagebuch sagt, ihr wollt nach Ghost Town. Das ist der kürz
 === nova ===
 {novaBitteGehoert and slickCrossroadsGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and not kaffeehausGesehen: -> kaffeehaus}
 {novaBitteGehoert:
-    {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Ich übe jetzt ohne Stimme im Ohr. Es ist erst mal sehr still.} #sprecher:nova #stimmung:nachdenklich
+    {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger, alles.|Ich hab Angst. Aber eine gute Angst, glaube ich.|Ich übe jetzt ohne Stimme im Ohr. Es ist erst mal sehr still.} #sprecher:nova #stimmung:nachdenklich
     -> END
 }
 -> nova_bitte
@@ -126,8 +126,7 @@ Sie kommt mit. Sie bringt die Berichte. #sprecher:nova #stimmung:nachdenklich
     Du hast noch den einen. Den von der Brücke. #sprecher:nova #stimmung:nachdenklich
     Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
 - else:
-    Dr. Lin bringt die Schachtel mit den Empfängern mit. Fünf Mulden sind leer. #sprecher:nova #stimmung:nachdenklich
-    Eine war meine. #sprecher:nova #stimmung:nachdenklich
+    Dr. Lin bringt die Schachtel mit den Empfängern mit. Fünf Mulden sind leer, eine war meine. #sprecher:nova #stimmung:nachdenklich
 }
 Hilfst du mir? #sprecher:nova #stimmung:nachdenklich
 * [„Ja.“]

@@ -73,8 +73,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. #sprecher:buck
 Na, traust du dich? #sprecher:buck #stimmung:laechelt
 + [„Klar.“]
     {versoehnungGesehen and not abschiedGesehen:
-        Er redet so schnell, wie er zieht. Lass ihn reden. #sprecher:ambrose #stimmung:laechelt
-        Du denkst. #sprecher:ambrose #stimmung:laechelt
+        Er redet so schnell, wie er zieht. Lass ihn reden – du denkst. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -92,8 +91,7 @@ Na, traust du dich? #sprecher:buck #stimmung:laechelt
     {versoehnungGesehen and not abschiedGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
-Schnell und gut. Das gibt's hier draußen selten. #sprecher:buck #stimmung:laechelt
-Noch eine Runde? #sprecher:buck #stimmung:laechelt
+Schnell und gut. Das gibt's hier draußen selten, noch eine Runde? #sprecher:buck #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -113,8 +111,7 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 // vorteil. Vorher ging es in buck_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === buck_nach_remis ===
-Unentschieden! Volltanken reicht nicht, du musst auch losfahren. #sprecher:buck #stimmung:laechelt
-Noch mal? #sprecher:buck #stimmung:laechelt
+Unentschieden! Volltanken reicht nicht, du musst auch losfahren, noch mal? #sprecher:buck #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("desertSprings.buck")
     -> END

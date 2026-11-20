@@ -66,6 +66,7 @@ GRAUSCHATTEN = (167, 151, 150, 255)
 
 
 def kachel(privat: Path, boegen: dict, angabe: dict, feld: list[int]) -> Image.Image:
+    """Eine Kachel (16 × 16) aus dem Bogen der Angabe am Feld (Spalte, Zeile)."""
     bogen = Image.open(privat / boegen[angabe["bogen"]]).convert("RGBA")
     return bogen.crop((feld[0] * K, feld[1] * K, (feld[0] + 1) * K, (feld[1] + 1) * K))
 

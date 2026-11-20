@@ -98,10 +98,6 @@ export function paketpfad(pfad: string, pfade: ReadonlySet<string> | null = null
   return !pfade.has(webp) && pfade.has(pfad) ? pfad : webp;
 }
 
-/**
- * Der Zustand des Pakets für die Startkarte: fehlt, vorhanden oder veraltet (nur mit Netz
- * erkennbar; ohne Netz gilt ein vorhandenes Paket als aktuell).
- */
 /** So lange wartet die Startkarte höchstens auf den Server; danach gilt das vorhandene Paket. */
 const SERVER_ZEITLIMIT_MS = 3000;
 
@@ -122,6 +118,10 @@ async function fehltMitGroesse(): Promise<Paketzustand> {
   }
 }
 
+/**
+ * Zustand des Pakets für die Startkarte: vorhanden, veraltet (neue Version auf dem Server) oder
+ * fehlt mit Größe. Ohne Netz gilt ein vorhandenes Paket als aktuell.
+ */
 export async function paketzustand(): Promise<Paketzustand> {
   const geladen = await geladenesVerzeichnis();
   if (!geladen) return fehltMitGroesse();
@@ -338,6 +338,7 @@ function melde(): void {
   for (const b of beobachter) b();
 }
 
+/** Meldet jede Änderung am Paket (geladen, neue Version, gelöscht); Ausgabe: Abmelden. */
 export function beiPaketAenderung(b: () => void): () => void {
   beobachter.add(b);
   return () => beobachter.delete(b);

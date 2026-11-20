@@ -70,6 +70,7 @@ async function ladeBlatt(pfad: string): Promise<Bild | null> {
 async function ladeBogenOderSvg(pfad: string): Promise<Bild | null> {
   const bogen = await paketdateiAlsAdresseOderNull(pfad.replace(/\.svg$/, ".png"));
   if (bogen) return { art: "bogen", adresse: bogen };
+  // Ohne SVG gibt es kein Porträt (gewollter Rückfall: nicht jede Figur hat eins, etwa der Held).
   const svg = await paketdateiAlsAdresse(pfad).catch(() => null);
   return svg ? { art: "svg", adresse: svg } : null;
 }
@@ -109,6 +110,7 @@ function Blattbild({
   );
 }
 
+/** Porträt der sprechenden Figur in ihrer Stimmung; das erste vorhandene Bild der Suchreihe im Dateikopf gilt. */
 export function Portraet({
   sprecher,
   stimmung,

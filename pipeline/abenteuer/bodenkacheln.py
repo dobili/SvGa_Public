@@ -102,6 +102,7 @@ def katalogtext(materialien: dict) -> str:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     materialien = json.loads(MATERIALIEN.read_text(encoding="utf-8"))
     ZIEL.write_text(katalogtext(materialien), encoding="utf-8")
     print(f"{ZIEL}: {len(katalog(materialien))} Kacheln")

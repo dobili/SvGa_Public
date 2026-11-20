@@ -65,6 +65,7 @@ def regel_fuer(liste: list[dict], karte: str, name: str) -> dict | None:
 
 
 def felder(szene: dict, name: str) -> list[tuple[int, int]]:
+    """Felder aller Auslöser dieses Namens in der Szene."""
     return [tuple(a["feld"]) for a in szene.get("ausloeser", []) if a["name"] == name]
 
 
@@ -85,6 +86,7 @@ def rand(szene: dict, feld: tuple[int, int]) -> str | None:
 
 
 def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
+    """Prüft die Übergänge aller Szenen gegen orte.json; Ausgabe: Befunde als Sätze."""
     befunde = []
     for karte, szene in alle.items():
         namen = {a["name"] for a in szene.get("ausloeser", [])}
@@ -133,6 +135,7 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.ankunftsfeld import ankunftsbefunde
     from pipeline.abenteuer.durchgang import pruefe_durchgaenge, tueren_ohne_angabe
     from pipeline.abenteuer.durchgangsrichtung import pruefe_richtungen

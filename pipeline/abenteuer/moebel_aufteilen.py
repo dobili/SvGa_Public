@@ -56,6 +56,7 @@ def aufteilen(alt: dict[str, dict]) -> dict[str, dict[str, dict]]:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     if not ALT.exists():
         print(f"{ALT} fehlt: schon aufgeteilt?", file=sys.stderr)
         return 1

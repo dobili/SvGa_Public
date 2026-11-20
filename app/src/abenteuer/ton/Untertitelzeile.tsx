@@ -12,6 +12,7 @@ import { aktuelleUntertitel, beiUntertitel } from "./untertitel";
 import { untertiteltext } from "./untertiteltext";
 import "./untertitel.css";
 
+/** Zeile „Geräusche als Text“: zeigt kurz, was zu hören ist, für Leser ohne Ton und Vorleser. */
 export function Untertitelzeile() {
   const zeilen = useSyncExternalStore(beiUntertitel, aktuelleUntertitel);
   const texte = zeilen.flatMap((z) => {

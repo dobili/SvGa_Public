@@ -90,6 +90,7 @@ def pruefe_szene(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.kartenbau import INHALTE, lade, platziere
     from pipeline.abenteuer.moebelliste import lade_moebel
 

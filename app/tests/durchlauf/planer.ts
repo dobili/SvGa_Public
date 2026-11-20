@@ -74,6 +74,12 @@ const VERSUCHE_HOECHSTENS = 4;
 
 /** So oft durch denselben Ausgang im selben Stand gilt als im Kreis laufen. */
 const KREIS_AB = 8;
+/**
+ * So oft durch denselben Ausgang, ohne dass ein Questschritt weitergeht, gilt auch dann als Kreis,
+ * wenn sich der übrige Stand ändert. Höher als KREIS_AB, damit Umsehen im Ort (rein, raus) nicht
+ * schon eine gewöhnliche Tür sperrt.
+ */
+const KREIS_GROB_AB = 20;
 
 /** Der Stand der Hauptgeschichte: Schritte der Hauptquests, Akt und Szene. */
 function hauptsignatur(daten: Spieldaten, stand: Abenteuerstand): string {
@@ -95,6 +101,8 @@ export class Planer {
   private readonly bilder: Kartenbild[];
   private readonly versuche = new Map<string, number>();
   private readonly gesperrt = new Map<string, Set<string>>();
+  /** Im Kreis gelaufene Ausgänge je Queststand (merkeDurchgang, grob). */
+  private readonly kreise = new Map<string, Set<string>>();
   private grenze = VERSUCHE_UMSEHEN;
   private letzteHaupt = "";
   private dingeSig = "";
@@ -141,13 +149,24 @@ export class Planer {
     const schluessel = `durch|${sig}|${karte}.${name}`;
     const zahl = (this.versuche.get(schluessel) ?? 0) + 1;
     this.versuche.set(schluessel, zahl);
-    if (zahl < KREIS_AB) return;
-    this.gesperrt.set(sig, (this.gesperrt.get(sig) ?? new Set<string>()).add(`${karte}.${name}`));
+    if (zahl >= KREIS_AB) {
+      this.gesperrt.set(sig, (this.gesperrt.get(sig) ?? new Set<string>()).add(`${karte}.${name}`));
+    }
+    // Grob, je Queststand: Übergangsdialoge und Zielpfeile ändern den vollen Stand bei jedem
+    // Durchgang; so pendelte der eilige Spieler 162-mal zwischen Felsbogen und Desert Springs.
+    const grob = questsignatur(stand);
+    const grobSchluessel = `kreis|${grob}|${karte}.${name}`;
+    const grobZahl = (this.versuche.get(grobSchluessel) ?? 0) + 1;
+    this.versuche.set(grobSchluessel, grobZahl);
+    if (grobZahl < KREIS_GROB_AB) return;
+    this.kreise.set(grob, (this.kreise.get(grob) ?? new Set<string>()).add(`${karte}.${name}`));
   }
 
-  /** Die in diesem Stand gesperrten Ausgänge. */
+  /** Die in diesem Stand gesperrten Ausgänge (auch die im Queststand als Kreis erkannten). */
   gesperrteAusgaenge(stand: Abenteuerstand): ReadonlySet<string> {
-    return this.gesperrt.get(signatur(stand)) ?? new Set();
+    const fein = this.gesperrt.get(signatur(stand)) ?? new Set<string>();
+    const grob = this.kreise.get(questsignatur(stand));
+    return grob ? new Set([...fein, ...grob]) : fein;
   }
 
   /** Der Weg über Karten zum Ziel (Liste der Ausgänge) oder null. */
@@ -180,14 +199,18 @@ export class Planer {
       .sort((x, y) => y.q.angenommen.localeCompare(x.q.angenommen));
     // Beim Rest zuerst der Beginn der nächsten Hauptquest (die Geschichte geht weiter), dann die
     // Nebenquests: Sonst lief der Spieler nach jedem Aktende für Nebenquests weit zurück.
-    const angaben: { a: Zielangabe; grund: string }[] =
-      art === "rest" ? this.naechsteHauptquests(stand) : [];
+    // Anfänge, die in der Geschichte erst später dran sind (der Epilog in Maple Falls), kommen
+    // nach den laufenden Nebenquests: Sonst lief der Spieler zum Epilog, während die Hauptquest
+    // auf eine Nebenquest wartete (Mira auf den Brief von Mr. Okoro, 20.11.2026).
+    const anfaenge = art === "rest" ? this.naechsteHauptquests(stand) : [];
+    const angaben: { a: Zielangabe; grund: string }[] = anfaenge.filter((h) => !h.spaeter);
     for (const { q, d } of laufend) {
       const schritt = d?.schritte[q.schritt] as Schritt | undefined;
       const a =
         schritt && (d?.haupt === true) === (art === "haupt") ? zielangabe(schritt, daten) : null;
       if (a) angaben.push({ a, grund: art === "haupt" ? "Zielhinweis" : "Zielhinweis Nebenquest" });
     }
+    angaben.push(...anfaenge.filter((h) => h.spaeter));
     if (art === "haupt" && laufend.length === 0) {
       // Lücke zwischen zwei Quests: das Ziel aus „Was jetzt?“ (wie im Spiel).
       angaben.push(...zielangaben(stand, daten).map((a) => ({ a, grund: "Zielhinweis" })));
@@ -237,7 +260,9 @@ export class Planer {
    * der Gebiete am weitesten vorn liegt, aber nicht hinter dem Beginn der zuletzt begonnenen
    * (der Epilog beginnt wieder in Maple Falls und kommt deshalb zuletzt).
    */
-  private naechsteHauptquests(stand: Abenteuerstand): { a: Zielangabe; grund: string }[] {
+  private naechsteHauptquests(
+    stand: Abenteuerstand,
+  ): { a: Zielangabe; grund: string; spaeter: boolean }[] {
     const daten = this.daten as unknown as Parameters<typeof zielangaben>[1];
     const rang = (q: Spieldaten["quests"][number]) => {
       const schritt = { text: "", ereignis: q.start } as Parameters<typeof zielangabe>[0];
@@ -261,7 +286,9 @@ export class Planer {
       Number(wartet(x)) - Number(wartet(y)) || x.i - y.i || x.nr - y.nr;
     return [...offen]
       .sort(ordnung)
-      .flatMap((h) => (h.a ? [{ a: h.a, grund: `Beginn von ${h.q.kennung}` }] : []));
+      .flatMap((h) =>
+        h.a ? [{ a: h.a, grund: `Beginn von ${h.q.kennung}`, spaeter: wartet(h) }] : [],
+      );
   }
 
   /** Dinge einer Karte, die der Spieler anfassen kann (keine Übergänge, kein Start). */

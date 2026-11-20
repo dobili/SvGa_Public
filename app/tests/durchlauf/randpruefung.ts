@@ -68,8 +68,12 @@ function pruefeImBrowser(): Befund {
   const rollt = (e: Element): boolean => {
     if (seiteRollt) return true;
     for (let p = e.parentElement; p; p = p.parentElement) {
-      const o = getComputedStyle(p).overflowY;
-      if ((o === "auto" || o === "scroll") && p.scrollHeight > p.clientHeight + 1) return true;
+      const stil = getComputedStyle(p);
+      const rollend = (o: string) => o === "auto" || o === "scroll";
+      if (rollend(stil.overflowY) && p.scrollHeight > p.clientHeight + 1) return true;
+      // Auch waagerecht: Der Kartenfächer der Kartenwahl zeigt 3¼ Karten und rollt zur Seite
+      // (spielkarte.css); seine übrigen Karten galten sonst als „außerhalb“ (Durchlauf, 20.11.2026).
+      if (rollend(stil.overflowX) && p.scrollWidth > p.clientWidth + 1) return true;
     }
     return false;
   };

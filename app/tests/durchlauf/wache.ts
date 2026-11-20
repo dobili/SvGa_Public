@@ -13,7 +13,8 @@
  *   Spieler dazwischen den Aktionsknopf, das Steuerkreuz oder eine Taste gedrückt hat.
  * - meldungUeberFenster: die Meldungsleiste über einem offenen Fenster (Tagebuch, Laden, …).
  * - haengendePause: „Weiter“ bleibt länger gesperrt als die längste Pause des Spiels.
- * - brettAngeschnitten: ein Schachbrett ragt über den Bildrand (Wunsch des Autors, 20.11.2026:
+ * - brettAngeschnitten: ein Schachbrett ragt über den Bildrand, und kein Rollen holt es herein
+ *   (Wunsch des Autors, 20.11.2026:
  *   Bei Partien und Rätseln muss das Brett quer immer ganz zu sehen sein).
  * Abhängigkeiten: Testkennungen der Oberwelt (Dialog, Meldung, Fenster), messung.ts.
  * Beispiel: installiereWache(seite) beim Start, holeWachfunde(lauf) in jedem Takt.
@@ -43,6 +44,7 @@ const FENSTER = [
   "abenteuer-gedaechtnis",
   "abenteuer-ergebnis",
   "abenteuer-rundenergebnis",
+  "abenteuer-abspann",
 ];
 
 /** Läuft im Browser (addInitScript): legt window.__wache an und beobachtet die Seite. */
@@ -65,6 +67,20 @@ function wacheImBrowser(a: { fenster: string[]; pauseMax: number; wieder: number
   /** Kleiner gilt nicht als Brett (Vorschaubilder im Tagebuch). */
   const BRETT_MIN = 120;
   const alle2 = (auswahl: string) => [...document.querySelectorAll(auswahl)].filter(sichtbar);
+  /**
+   * Lässt sich das Element durch Rollen ganz ins Bild holen (die Seite oder ein Vorfahr rollt)?
+   * Am Ende einer Runde rollt die Seite zu „Weiter“; Brett und Lösungsbretter liegen dann oben
+   * oder unten außerhalb und sind trotzdem erreichbar (Durchlauf eilig, Akt 3, 20.11.2026).
+   */
+  const erreichbarDurchRollen = (e: Element): boolean => {
+    const seite = document.scrollingElement;
+    if (seite && seite.scrollHeight > innerHeight + 1) return true;
+    for (let v = e.parentElement; v; v = v.parentElement) {
+      const y = getComputedStyle(v).overflowY;
+      if ((y === "auto" || y === "scroll") && v.scrollHeight > v.clientHeight + 1) return true;
+    }
+    return false;
+  };
   const alle = (k: string) =>
     [...document.querySelectorAll(`[data-testid='${k}']`)].filter(sichtbar);
   let letzteAktion = 0;
@@ -131,7 +147,7 @@ function wacheImBrowser(a: { fenster: string[]; pauseMax: number; wieder: number
     }
     for (const brett of alle2(".brett")) {
       const r = brett.getBoundingClientRect();
-      if (r.width < BRETT_MIN || r.height < BRETT_MIN) continue;
+      if (r.width < BRETT_MIN || r.height < BRETT_MIN || erreichbarDurchRollen(brett)) continue;
       const rand = 1;
       const aussen =
         r.top < -rand ||

@@ -117,7 +117,10 @@ export function Oberwelt() {
     partie.deckwahl !== null ||
     vorfuehrung !== null ||
     gedaechtnis !== null ||
-    offenerLaden !== null;
+    offenerLaden !== null ||
+    // Auch der Abspann: Eine Meldung lag sonst unter ihm, ihr „Weiter“ verdeckt (eiliger Spieler,
+    // Akt 4, 20.11.2026); sie wartet jetzt, bis er zu ist.
+    abspann;
   useEffect(() => {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
   }, [spiel, fensterOffen, welt]);

@@ -80,6 +80,17 @@ for (const g of GERAETE) {
       expect((spalte?.unten ?? 0) - (spalte?.oben ?? 0)).toBeGreaterThan(g.viewport.height * 0.9);
       // Porträt und Wahlen im Bild, jede Wahl ganz.
       expect(await imBild(page, ".abenteuer-dialog-kopf")).toBe(true);
+      // Kein kaputtes Porträt: Fehlt das Bild im Paket, steht keins da (paketlader.ts,
+      // alsStartseite; vorher zeigte der Kopf ein kaputtes Bild).
+      const kaputt = await page
+        .locator("img.abenteuer-dialog-portraet")
+        .evaluateAll(
+          (bilder) =>
+            bilder.filter(
+              (b) => (b as HTMLImageElement).complete && !(b as HTMLImageElement).naturalWidth,
+            ).length,
+        );
+      expect(kaputt).toBe(0);
       const wahlen = page.locator(".abenteuer-dialog-wahlen button");
       for (let i = 0; i < (await wahlen.count()); i++) {
         await expect(wahlen.nth(i)).toBeInViewport({ ratio: 1 });

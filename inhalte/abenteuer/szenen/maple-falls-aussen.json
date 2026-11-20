@@ -865,38 +865,6 @@
       "feld": [3, 3]
     },
     {
-      "moebel": "mf10TorOffen1",
-      "feld": [3, 23]
-    },
-    {
-      "moebel": "mf10TorOffen2",
-      "feld": [4, 23]
-    },
-    {
-      "moebel": "mf10TorOffen1",
-      "feld": [13, 23]
-    },
-    {
-      "moebel": "mf10TorOffen2",
-      "feld": [14, 23]
-    },
-    {
-      "moebel": "mf10TorOffen1",
-      "feld": [23, 23]
-    },
-    {
-      "moebel": "mf10TorOffen2",
-      "feld": [24, 23]
-    },
-    {
-      "moebel": "mf10TorOffen1",
-      "feld": [54, 31]
-    },
-    {
-      "moebel": "mf10TorOffen2",
-      "feld": [55, 31]
-    },
-    {
       "moebel": "mf4Rutsche",
       "feld": [50, 36]
     },

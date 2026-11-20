@@ -72,7 +72,9 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   await page.goto("/app/#abenteuer");
   await ladeAbenteuerpaket(page);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
-  await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("50 Münzen", { timeout: 30000 });
+  // Münzen oben nur bei Änderungen und im Laden (Wunsch des Autors, 20.11.2026): beim Start aus.
+  const muenzen = page.getByTestId("abenteuer-muenzen");
+  await expect(muenzen).toHaveAttribute("data-sichtbar", "nein", { timeout: 30000 });
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 10000 });
   await aktion.click();
@@ -87,12 +89,57 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   }
   await expect(laden).toBeVisible();
   await expect(page.getByTestId("abenteuer-laden-muenzen")).toHaveText("Deine Münzen: 50");
+  // Im Laden steht die Zahl oben, solange man einkauft.
+  await expect(muenzen).toHaveAttribute("data-sichtbar", "ja");
+  await expect(muenzen).toHaveText("50 Münzen");
   await laden.getByRole("button", { name: /Zweite Chance/ }).click();
   await expect(page.getByTestId("abenteuer-laden-muenzen")).toHaveText("Deine Münzen: 30");
   // Flüstern kostet 40: jetzt zu teuer.
   await expect(laden.getByRole("button", { name: /Flüstern/ })).toBeDisabled();
+  // Beim Ausgeben zählt sie herunter und meldet die neue Zahl für Vorleser.
+  await expect(muenzen).toHaveText("30 Münzen");
+  await expect(page.getByTestId("abenteuer-muenzen-ansage")).toHaveText("30 Münzen");
   await laden.getByRole("button", { name: "Fertig" }).click();
-  await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("30 Münzen");
+  // Nach dem Laden blendet sie nach ein paar Sekunden aus; die Zahl steht im Tagebuch.
+  await expect(muenzen).toHaveAttribute("data-sichtbar", "nein", { timeout: 10000 });
+  await page.getByTestId("abenteuer-tagebuchknopf").click();
+  await expect(page.getByTestId("abenteuer-tagebuch-muenzen")).toContainText("Deine Münzen: 30");
+});
+
+test("Belohnung: die Münzkiste am Flussweg, die Anzeige zählt hoch und blendet aus", async ({
+  page,
+}) => {
+  const stand = {
+    ...STAND,
+    position: {
+      karte: "wegMapleCedar.flussweg",
+      ...feldDarunter("weg-maple-cedar-flussweg", "fundMuenzen"),
+      richtung: "oben",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await ladeAbenteuerpaket(page);
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  const muenzen = page.getByTestId("abenteuer-muenzen");
+  await expect(muenzen).toHaveAttribute("data-sichtbar", "nein", { timeout: 30000 });
+  const aktion = page.getByTestId("abenteuer-aktion");
+  await expect(aktion).toBeVisible({ timeout: 10000 });
+  await aktion.click();
+  // Die Kiste gibt 15 Münzen (funde.json, muenzenFlussweg): 50 → 65, gutgeschrieben am Ende des
+  // Gesprächs.
+  const dialog = page.getByTestId("abenteuer-dialog");
+  await expect(dialog).toBeVisible({ timeout: 20000 });
+  for (let i = 0; i < 20 && (await dialog.isVisible()); i++) {
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(150);
+  }
+  await expect(dialog).toHaveCount(0);
+  await expect(muenzen).toHaveAttribute("data-sichtbar", "ja");
+  await expect(muenzen).toHaveText("65 Münzen");
+  await expect(muenzen).toHaveAttribute("data-sichtbar", "nein", { timeout: 10000 });
 });
 
 test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der nächste", async ({

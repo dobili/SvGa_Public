@@ -156,6 +156,7 @@ export function Oberwelt() {
       {!welt?.erinnerung && (
         <Kopfleiste
           muenzen={stand.muenzen}
+          imLaden={aktuellerLaden !== undefined}
           beiTagebuch={() => {
             hinweis.benutzt("tagebuch");
             setzeTagebuch(true);

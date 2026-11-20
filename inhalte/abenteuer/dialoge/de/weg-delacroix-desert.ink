@@ -196,7 +196,7 @@ Per Brief, weil er im Norden Brücken baute und ich im Süden saß. #sprecher:am
 Ein Zug, ein Brief. Über ein Jahr. #sprecher:ambrose #stimmung:laechelt
 Es war die beste Partie meines Lebens. #sprecher:ambrose #stimmung:laechelt
 Ich habe gespielt wie er, gewissenhaft. Und er ein wenig wie ich. #sprecher:ambrose #stimmung:alt
-Er hat Dinge riskiert, die er 1858 nie riskiert hätte. #sprecher:ambrose #stimmung:alt
+Er hat Dinge riskiert, die er im Match damals nie riskiert hätte. #sprecher:ambrose #stimmung:alt
 * [„Und dann?“]
 - Dann wurde es ein Endspiel. Und Winter. #sprecher:ambrose #stimmung:nachdenklich
 Sein neununddreißigster Zug kam nicht. Vier Wochen. #sprecher:ambrose #stimmung:nachdenklich

@@ -75,7 +75,7 @@ Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:jun
 Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“ #sprecher:erzaehler
 Darauf ein Kind, das in einen Bildschirm lächelt. Es ist das einzige Glänzende weit und breit. #sprecher:erzaehler
 {abschiedGesehen: -> END}
-Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
+Ein Plakat, das droht. Und es lächelt dabei. #sprecher:ambrose #stimmung:streng
 * [„Das ist die Firma von Victors Vater.“]
     So. Dann hat die Drohung einen Namen. #sprecher:ambrose #stimmung:nachdenklich
 * [„Vielleicht ist das gar nicht so schlecht.“]
@@ -508,7 +508,7 @@ Dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff_finger
 Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado #stimmung:laechelt
 Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #sprecher:sam #stimmung:laechelt
 * {sternennachtGesehen} [„Wir haben elf Sternschnuppen gesehen.“]
-    Elf? Und ich hab geschlafen – Typisch. #sprecher:sam #stimmung:ueberrascht
+    Elf? Und ich hab geschlafen – typisch. #sprecher:sam #stimmung:ueberrascht
 * [„Wir haben auf Matten geschlafen. Zwischen den Regalen.“]
     Zwischen Büchern? Da wär ich nie eingeschlafen. #sprecher:sam #stimmung:lacht
     Doch. Wär ich. #sprecher:sam #stimmung:lacht

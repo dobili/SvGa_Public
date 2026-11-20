@@ -219,7 +219,7 @@ Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du l
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Das sagen viele. Wir werden sehen. #sprecher:ambrose #stimmung:laechelt
 * [„Das klingt langweilig.“]
-    Langweilig ist ein verlorener Turm. Fragen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
+    Langweilig ist ein verlorener Turm. Fragen dauert einen Atemzug. #sprecher:ambrose #stimmung:streng
 // Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
 // sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
 - Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler

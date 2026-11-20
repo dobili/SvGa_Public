@@ -195,7 +195,7 @@ Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
 Verloren. Und? #sprecher:ward #stimmung:nachdenklich
 Hast du gesehen, wo? #sprecher:ward #stimmung:nachdenklich
 Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenklich
-{wardMuede: Und spiel jetzt, solange ich müde bin. Haraldsens Studie hat mich die Nacht gekostet. #sprecher:ward #stimmung:laechelt}
+{wardMuede: Aber warte nicht zu lange. Haraldsens Studie hat mich die Nacht gekostet, das hält nicht ewig. #sprecher:ward #stimmung:laechelt}
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -402,7 +402,7 @@ Ich renne keinem mehr nach. #sprecher:ward #stimmung:nachdenklich
 ~ lernkarteEndspielkompass = true
 Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
 {hatKarteEndspielkompass:
-    Die Karte wollte ich dir geben. Du hast sie schon – Typisch. #sprecher:kit #stimmung:laechelt
+    Die Karte wollte ich dir geben. Du hast sie schon – typisch. #sprecher:kit #stimmung:laechelt
 - else:
     Sie gibt dir eine Karte aus der Jackentasche, die Ecken vom Wetter rund: ein König mit einer Kompassnadel. #sprecher:erzaehler
     König raus, Freibauer zählen, Opposition. Wie beim Aufstieg: erst schauen, dann gehen. #sprecher:kit #stimmung:laechelt
@@ -564,9 +564,9 @@ Ah. #sprecher:ward #stimmung:ueberrascht
 - ausgangSummitCityClubkampf == "sieg":
     Gewonnen, aber nicht besser als beim letzten Mal. Die Nadel bleibt. #sprecher:ward #stimmung:laechelt
 - ausgangSummitCityClubkampf == "remis":
-    Remis. Am Berg ist das kein schlechtes Ergebnis – deine Nadel bleibt. #sprecher:ward #stimmung:neutral
+    Remis. Mehr gab die Stellung nicht her, die Nadel bleibt. #sprecher:ward #stimmung:neutral
 - ausgangSummitCityClubkampf == "niederlage":
-    Diesmal hat der Berg gewonnen. Deine Nadel bleibt dir. #sprecher:ward #stimmung:laechelt
+    Diesmal ich. Hast du gesehen, wo? #sprecher:ward #stimmung:laechelt
 - else:
     -> ward
 }

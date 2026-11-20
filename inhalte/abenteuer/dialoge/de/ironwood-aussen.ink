@@ -308,7 +308,7 @@ Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pok
 Er sieht Graham Hale nicht an. Hinter ihm tragen Hank und Priya das Stahlbrett, zu zweit. #sprecher:erzaehler
 Neben seinem Vater steht Victor, in Weiß, das Tablet unter dem Arm. Er sieht Big Joe nach, den großen Händen, die den Karton halten, als wäre er aus Glas. #sprecher:erzaehler
 Vater. Vielleicht … #sprecher:victor #stimmung:nachdenklich #pause
-Graham Hale dreht sich zu ihm um. Freundlich – Fragend. #sprecher:erzaehler
+Graham Hale dreht sich zu ihm um. Freundlich – fragend. #sprecher:erzaehler
 Nichts. #sprecher:victor #stimmung:bitter
 {mamaSpielt:
     Mama geht über den Platz, an dem schwarzen Wagen vorbei, und nimmt Big Joe den Karton ab. Zusammen heben sie ihn in den Lieferwagen. #sprecher:erzaehler

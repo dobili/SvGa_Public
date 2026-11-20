@@ -496,7 +496,7 @@ Mira wartet auf ihren Clubkampf. Aber vorher noch etwas anderes. #sprecher:dot #
 ~ revancheDesertSprings = false
 {
 - ausgangDesertSpringsClubkampf == "sieg":
-    Gewonnen. Aber keine bessere Nadel – Ha! #sprecher:mira #stimmung:laechelt
+    Gewonnen. Aber keine bessere Nadel – ha! #sprecher:mira #stimmung:laechelt
 - ausgangDesertSpringsClubkampf == "remis":
     Remis. Langweilig – deine Nadel bleibt. #sprecher:mira #stimmung:neutral
 - ausgangDesertSpringsClubkampf == "niederlage":

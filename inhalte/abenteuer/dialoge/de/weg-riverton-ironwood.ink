@@ -143,7 +143,7 @@ Hier ist was eingeschlagen! In die Dinger, die runden. #sprecher:juno #stimmung:
 Auf einem Nietenkopf am Fuß eines Pfostens stehen zwei Buchstaben. Klein, sauber, ins heiße Eisen gestempelt. #sprecher:erzaehler #bild:nietenkopf_jh
 J. H. #sprecher:erzaehler #klang:hale
 Auf dem nächsten auch. Und auf dem übernächsten. #sprecher:erzaehler
-Der Erbauer. Der hat überall unterschrieben – Eitel! #sprecher:juno #stimmung:lacht
+Der Erbauer. Der hat überall unterschrieben – Angeber! #sprecher:juno #stimmung:lacht
 ~ gibFund("nietenkopf")
 // Nach dem Abschied (abschiedGesehen) steht Ambrose nicht mehr am Geländer; {held} kennt den Namen.
 {abschiedGesehen:

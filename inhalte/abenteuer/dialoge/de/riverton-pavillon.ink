@@ -130,7 +130,7 @@ Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt
 Er redet kaum. #sprecher:erzaehler
 Blitz? Drei Minuten. #sprecher:slick #stimmung:laechelt
 Wie es sich gehört. #sprecher:slick #stimmung:laechelt
-Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose #stimmung:nachdenklich
+Eile ist sein Pferd. Steig nicht mit auf. #sprecher:ambrose #stimmung:nachdenklich
 * [„Fünfundvierzig Minuten.“]
     Ein Murmeln geht durch die Schirme. Tamsin verdreht die Augen. #sprecher:erzaehler
     Slick grinst, schief, mit einem Mundwinkel. #sprecher:erzaehler
@@ -344,7 +344,7 @@ Also fährst du zu der anderen. #sprecher:ray #stimmung:laechelt
 ~ moldeGefuehlt = true
 Er legt seine große Hand auf den Stein. #sprecher:erzaehler
 Hier hab ich neunundsechzig gegen Odum verloren. Und zweiundsiebzig. #sprecher:ray #stimmung:laechelt
-Und jedes Jahr danach. Der Stein ist hier dünner als da drüben – Fühl mal. #sprecher:ray #stimmung:laechelt
+Und jedes Jahr danach. Der Stein ist hier dünner als da drüben – fühl mal. #sprecher:ray #stimmung:laechelt
 * [Die Hand auf den Stein legen]
 * [Nicken]
     Du nickst. Dann legst du die Hand doch hin. #sprecher:erzaehler

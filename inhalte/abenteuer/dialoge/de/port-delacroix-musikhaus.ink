@@ -100,7 +100,7 @@ Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #spreche
 -> blaeser_set1
 
 === blaeser_set1 ===
-Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan – Locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
+Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan – locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
 Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden dazu für jeden Zug. #sprecher:blaeser #stimmung:lacht
 Dann spielt die Band das nächste. #sprecher:blaeser #stimmung:lacht
 + [„Spielen wir.“]

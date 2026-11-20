@@ -54,10 +54,19 @@ Verlorene Rückmeldungen meldet wie bisher `rueckmeldung.ts`.
   - 23 Rückmeldungen nach Ergebnis, keine verloren.
   - Keine doppelten Dialoge, keine hängende Pause.
   - Der Lauf begann noch ohne die Korrekturen.
-  - Akt 1 hat keinen Laden auf dem Weg. Das Abbrechen eines Ladens kam deshalb nicht vor; es gehört
-    in eine eilige Strecke über Akt 2.
-- **Eiliger Spieler, Bestätigung mit Korrekturen**: Ergebnis in der Meldung an den Hauptchat.
-  Unterwegs hing der Lauf zweimal an Fehlern des Durchlaufs, nicht des Spiels:
+  - Den Kiosk im Park besuchte dieser Lauf nicht.
+- **Eiliger Spieler, Bestätigung mit Korrekturen** (eigenes Profil, Start bis Akt 2, in fünf
+  Etappen wegen der Korrekturen am Durchlauf):
+  - 0 Funde.
+  - 75 Hast-Aktionen: 67 Mal Tagebuch auf und zu (36 Mal mit Zielpfeil), 8 Mal sofort zurück
+    durch die Tür.
+  - 134 Partien, die meisten davon in den Schleifen gegen Nia (siehe unten).
+  - 141 Rückmeldungen nach Ergebnis, keine verloren.
+  - Im Kiosk hat er gekauft statt abzubrechen. „Schließen“ lag im Hochformat unter den Waren,
+    außerhalb des Bildes; der Abbruch verfiel. Jetzt rollt er hin (`schliesseLaden` in eilig.ts).
+    Im Browser noch nicht bestätigt; das zeigt die nächste eilige Strecke.
+  - Unterwegs hing der Lauf mehrmals an Fehlern des Durchlaufs, nicht des Spiels (folgende
+    Punkte).
   - Endlose Revanche gegen Nia, zwei Ursachen:
     - Die erste Antwort des Eiligen stand nicht im Antwortgedächtnis, danach galt „Noch eine.“
       wieder als neu. Jetzt vermerkt `merkeWahl` (fenster.ts) auch seine Antworten.
@@ -65,7 +74,10 @@ Verlorene Rückmeldungen meldet wie bisher `rueckmeldung.ts`.
       nahm `waehleAntwort` als Ersatz wieder die Wiederholung, endlos. Jetzt kommt eine gewählte
       Wiederholung nur noch in Frage, wenn es nichts anderes gibt; „ich muss weiter“ zählt als
       Aufschub.
-    - Tests in `fenster.test.ts`, beide schlagen ohne die Korrektur fehl. Die Einordnung der
+    - Die zweite Korrektur nahm danach am Bus in Cedar Creek immer „Mit dem Busfahrer reden“.
+      Jetzt nimmt `waehleAntwort` ohne Aufschub die am seltensten gewählte Antwort; „noch
+      bleiben“ zählt als Aufschub.
+    - Tests in `fenster.test.ts`, alle drei schlagen ohne die jeweilige Korrektur fehl. Die Einordnung der
       Antworten steht jetzt in `antworten.ts` (Größengrenze von fenster.ts).
   - 26 Minuten „Jetzt aktualisieren“ ohne Wirkung. Das begann 15:52, kurz nach einem Neubau von
     `app/dist` mitten im Lauf. Mit demselben Profil und einer echten neuen Fassung lädt der Knopf

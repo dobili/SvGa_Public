@@ -9,7 +9,7 @@
  * Abhängigkeiten: eingabe.ts, lage.ts, messung.ts.
  * Beispiel: bedieneFenster(lauf, lage) → true, wenn etwas getippt oder abgewartet wurde.
  */
-import { hastigTippen, ladenZu } from "./eilig";
+import { hastigTippen, schliesseLaden } from "./eilig";
 import { tippe, tippeKnopf, type Lauf } from "./eingabe";
 import { schiebtAuf, wiederholtePartie } from "./antworten";
 import { bedieneGedaechtnis } from "./gedaechtnis";
@@ -200,8 +200,8 @@ async function bedieneLaden(
   knoepfe: readonly Knopf[],
   g: Fenstergedaechtnis,
 ): Promise<void> {
-  const zuEilig = lauf.eilig.brichLadenAb(lauf.messung.karte) ? ladenZu(knoepfe) : undefined;
-  if (zuEilig) return void (await tippeKnopf(lauf, zuEilig));
+  if (lauf.eilig.brichLadenAb(lauf.messung.karte))
+    return void (await schliesseLaden(lauf, knoepfe));
   // Jede Ware höchstens einmal je Lauf: Karten ließen sich sonst kaufen, bis die Münzen weg sind.
   const waren = knoepfe.filter(
     (k) => k.klasse.includes("abenteuer-karte") && !g.gewaehlt.has(`laden|${k.text}`),

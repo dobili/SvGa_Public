@@ -15,8 +15,8 @@ Bilder: aus den Kartenvorschauen der Pipeline (kartenbild.zeichne, belebungsvors
 Figuren aus ``spiel/figuren-neu`` (PixelLab), wenn das private Paket sie hat; sonst mit den alten
 LimeZu-Bögen (die Seite sagt dann, dass die Figuren nicht stimmen).
 
-Aufruf: ``python -m pipeline.abenteuer.proportionsvergleich PRIVAT ZIEL`` schreibt ``ZIEL/index.html``
-und die Bilder; Seite und Text: proportionsseite.py.
+Aufruf: ``python -m pipeline.abenteuer.proportionsvergleich PRIVAT ZIEL`` schreibt eine einzige Datei
+``ZIEL/index.html`` (Bilder eingebettet, unter 2 MB); Seite und Text: proportionsseite.py.
 """
 
 import contextlib
@@ -33,11 +33,15 @@ from pipeline.abenteuer.kartenbau import INHALTE, K, platziere, raster, sperrfel
 from pipeline.abenteuer.kartenbild import zeichne
 from pipeline.abenteuer.kartentiled import GESPERRT
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.proportionsseite import schreibe_seite
+from pipeline.abenteuer.proportionsseite import schreibe_seite, uri
 
 ZOOM = 3  # Bildschirmpixel je Kartenpixel im Spiel (weltmassstab.ts)
-INNEN_FAKTOREN = (1.25, 4 / 3)  # dazu der gemessene Faktor (Paketfigur durch unsere)
-FENSTER = (8, 11)  # sichtbare Kacheln um die Stelle (Hochformat zeigt 8 × 15)
+# Dazu der gemessene Faktor (Paketfigur durch unsere). 1,5 ist die Originalgröße der PixelLab-Figur
+# (heute mit 2/3 gezeichnet): Ein Figurenpixel wird genau drei Bildschirmpixel.
+INNEN_FAKTOREN = (1.25, 4 / 3, 1.5)
+FENSTER = (6, 8)  # Ausschnitt in Kacheln (das Spiel zeigt hoch 8 × 15); klein, damit die Seite leicht bleibt
+ANSICHT_KARTE = 4  # ganze Karte: ein Bildpunkt je vier Pixel der Vorschau (halbe Kartengröße)
+GESICHT_ZOOM = 4  # Lupe auf das Gesicht des Helden
 KOERPER = 12  # Körper der Figur in Kartenpixeln (durchlass.py)
 # Möbelarten, die zum Raum gehören und nie verkleinert werden.
 RAUMTEILE = {"teppich", "boden", "boden_teil", "fenster", "bild", "treppe", "tuer", "markierung"}
@@ -60,7 +64,6 @@ AUSSEN = [
     ("Cedar Creek (Picknicktisch bei Kettering)", "cedar-creek-aussen", (38, 29)),
     ("Riverton", "riverton-aussen", (50, 48)),
     ("Desert Springs (Akt 3)", "desert-springs-aussen", (30, 32)),
-    ("Summit City (Akt 4)", "summit-city-aussen", (40, 40)),
 ]
 
 
@@ -93,20 +96,25 @@ def figurhoehen(privat: Path) -> dict:
 
 @contextlib.contextmanager
 def figuren_mal(faktor: float):
-    """Zeichnet alle Figuren der Vorschau ``faktor``-mal so groß (Füße bleiben unten mittig)."""
-    alt = belebungsvorschau.figurbild
+    """Zeichnet alle Figuren der Vorschau ``faktor``-mal so groß (Füße bleiben unten mittig).
+
+    PixelLab-Figuren werden aus dem Original neu verkleinert (2/3 mal Faktor, bei 1,5 also gar nicht);
+    alte LimeZu-Bögen (16 breit) mit dem Faktor vergrößert.
+    """
+    alt, alt_massstab = belebungsvorschau.figurbild, belebungsvorschau.PIXELLAB_MASSSTAB
 
     def gross(*args, **kwargs):
         bild = alt(*args, **kwargs)
-        if bild is None or faktor == 1:
+        if bild is None or faktor == 1 or bild.width >= 2 * K:
             return bild
         return bild.resize((round(bild.width * faktor), round(bild.height * faktor)), Image.NEAREST)
 
     belebungsvorschau.figurbild = gross
+    belebungsvorschau.PIXELLAB_MASSSTAB = min(1.0, alt_massstab * faktor)
     try:
         yield
     finally:
-        belebungsvorschau.figurbild = alt
+        belebungsvorschau.figurbild, belebungsvorschau.PIXELLAB_MASSSTAB = alt, alt_massstab
 
 
 def moebel_mal(szene: dict, faktor: float, nur: set[str] | None = None) -> dict:
@@ -282,9 +290,30 @@ def verkleinert_aussen(szene: dict, vorschlaege: dict[str, float]) -> tuple[dict
 
 
 def speichere(ziel: Path, bild: Image.Image, name: str) -> str:
-    datei = f"bilder/{name}.png"
-    bild.convert("RGB").save(ziel / datei, optimize=True)
-    return datei
+    """Bild als data-URI (proportionsseite.uri); ziel und name bleiben für eine Fassung mit Dateien."""
+    del ziel, name
+    return uri(bild)
+
+
+def gesicht(privat: Path, faktor: float) -> Image.Image | None:
+    """Kopf des Helden so, wie das Spiel ihn zeichnet (nächster Nachbar aus dem Original, ZOOM 3),
+    dann GESICHT_ZOOM-fach vergrößert. Beispiel: Faktor 1,5 → 3 Bildschirmpixel je Figurenpixel."""
+    neu = privat / "spiel" / "figuren-neu" / "held-0" / "rotations" / "south.png"
+    if neu.exists():
+        bild, schirm = Image.open(neu).convert("RGBA"), 2 * faktor  # PixelLab: 2/3 · ZOOM 3 · Faktor
+    else:
+        alt = privat / "spiel" / "figuren" / "held-0.png"
+        if not alt.exists():
+            return None
+        bild, schirm = Image.open(alt).convert("RGBA").crop((3 * K, 0, 4 * K, 2 * K)), ZOOM * faktor
+    umriss = bild.getbbox()
+    if not umriss:
+        return None
+    kopf = bild.crop((umriss[0], umriss[1], umriss[2], umriss[1] + (umriss[3] - umriss[1]) * 3 // 5))
+    grund = Image.new("RGBA", kopf.size, (232, 222, 200, 255))
+    grund.alpha_composite(kopf)
+    am_schirm = grund.resize((round(kopf.width * schirm), round(kopf.height * schirm)), Image.NEAREST)
+    return am_schirm.resize((am_schirm.width * GESICHT_ZOOM, am_schirm.height * GESICHT_ZOOM), Image.NEAREST)
 
 
 def innenraeume(ziel: Path, privat: Path, faktoren: list[float]) -> list[dict]:
@@ -296,7 +325,7 @@ def innenraeume(ziel: Path, privat: Path, faktoren: list[float]) -> list[dict]:
         bilder = {"heute": speichere(ziel, ausschnitt(vorschau(szene, privat, feld), feld), f"i{nummer}-1")}
         for faktor in faktoren:
             bild = ausschnitt(vorschau(szene, privat, feld, faktor), feld)
-            bilder[f"Figur × {faktor:.2f}"] = speichere(ziel, bild, f"i{nummer}-{faktor:.2f}")
+            bilder[f"× {faktor:.2f}".replace(".", ",")] = speichere(ziel, bild, f"i{nummer}-{faktor:.2f}")
         ergebnis.append({"titel": titel, "szene": name, "bilder": bilder})
         print(titel)
     return ergebnis
@@ -309,10 +338,7 @@ def aussenkarten(ziel: Path, privat: Path, vorschlaege: dict[str, float]) -> lis
         szene = lade_szene(name)
         klein, zahl = verkleinert_aussen(szene, vorschlaege)
         vorher_bild, nachher_bild = vorschau(szene, privat, feld), vorschau(klein, privat, feld)
-        halb = (
-            vorher_bild.width // 2,
-            vorher_bild.height // 2,
-        )  # vorschau ist doppelt: 1 Pixel je Kartenpixel
+        halb = (vorher_bild.width // ANSICHT_KARTE, vorher_bild.height // ANSICHT_KARTE)
         bilder = {
             "karte vorher": speichere(
                 ziel, vorher_bild.resize(halb, Image.NEAREST), f"a{nummer}-karte-vorher"
@@ -344,7 +370,7 @@ def aussenkarten(ziel: Path, privat: Path, vorschlaege: dict[str, float]) -> lis
 
 def main() -> int:
     privat, ziel = Path(sys.argv[1]), Path(sys.argv[2])
-    (ziel / "bilder").mkdir(parents=True, exist_ok=True)
+    ziel.mkdir(parents=True, exist_ok=True)
     figuren = figurhoehen(privat)
     held = figuren["held"] if figuren["pixellab"] else proportionen.FIGUR_AUSSEN
     gemessen = round(figuren["limezu_median"] / held, 2)
@@ -371,8 +397,9 @@ def main() -> int:
         "durchlass": {f: durchlass_befunde(-(-round(KOERPER * f) // ZELLE)) for f in faktoren},
     }
     daten["fehlt"] = sorted(FEHLT)
+    daten["gesichter"] = {f: speichere(ziel, g, "") for f in [1, *faktoren] if (g := gesicht(privat, f))}
     schreibe_seite(ziel, daten, privat)
-    groesse = sum(p.stat().st_size for p in ziel.rglob("*") if p.is_file())
+    groesse = (ziel / "index.html").stat().st_size
     print(f"{ziel / 'index.html'}: {groesse // 1024} KB")
     return 0
 

@@ -34,4 +34,14 @@ describe("Antwortwahl", () => {
     expect(eilig.antwort(frage, wahlen)).toBeNull();
     expect(waehleAntwort(g, frage, wahlen)).toBe(1);
   });
+
+  it("nimmt nach einer gewählten Alternative nicht wieder die Wiederholung (Nia, 20.11.2026)", () => {
+    const g = neuesFenstergedaechtnis();
+    const frage = "Okay, okay. Du bist schneller, als du aussiehst, noch mal?";
+    const wahlen = ["„Noch eine.“", "„Weiterspielen wäre schön.“"];
+    expect(waehleAntwort(g, frage, wahlen)).toBe(0);
+    expect(waehleAntwort(g, frage, wahlen)).toBe(1);
+    // Auch die Alternative ist schon gewählt: trotzdem nicht zurück zur Wiederholung.
+    expect(waehleAntwort(g, frage, wahlen)).toBe(1);
+  });
 });

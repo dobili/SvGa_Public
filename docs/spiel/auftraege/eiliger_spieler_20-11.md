@@ -58,10 +58,15 @@ Verlorene Rückmeldungen meldet wie bisher `rueckmeldung.ts`.
     in eine eilige Strecke über Akt 2.
 - **Eiliger Spieler, Bestätigung mit Korrekturen**: Ergebnis in der Meldung an den Hauptchat.
   Unterwegs hing der Lauf zweimal an Fehlern des Durchlaufs, nicht des Spiels:
-  - Endlose Revanche gegen Nia: Die erste Antwort des Eiligen stand nicht im Antwortgedächtnis,
-    danach galt „Noch eine.“ wieder als neu. Jetzt vermerkt `merkeWahl` (fenster.ts) auch seine
-    Antworten; Test in `fenster.test.ts`. Die Einordnung der Antworten steht jetzt in
-    `antworten.ts` (Größengrenze von fenster.ts).
+  - Endlose Revanche gegen Nia, zwei Ursachen:
+    - Die erste Antwort des Eiligen stand nicht im Antwortgedächtnis, danach galt „Noch eine.“
+      wieder als neu. Jetzt vermerkt `merkeWahl` (fenster.ts) auch seine Antworten.
+    - War die Alternative („Ich muss weiter.“) einmal gewählt und gab es keinen echten Aufschub,
+      nahm `waehleAntwort` als Ersatz wieder die Wiederholung, endlos. Jetzt kommt eine gewählte
+      Wiederholung nur noch in Frage, wenn es nichts anderes gibt; „ich muss weiter“ zählt als
+      Aufschub.
+    - Tests in `fenster.test.ts`, beide schlagen ohne die Korrektur fehl. Die Einordnung der
+      Antworten steht jetzt in `antworten.ts` (Größengrenze von fenster.ts).
   - 26 Minuten „Jetzt aktualisieren“ ohne Wirkung. Das begann 15:52, kurz nach einem Neubau von
     `app/dist` mitten im Lauf. Mit demselben Profil und einer echten neuen Fassung lädt der Knopf
     sofort neu (geprüft im Hochformat mit dem neuen Stil). Wahrscheinlich hat der Lauf einen halb

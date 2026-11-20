@@ -27,6 +27,7 @@ const AUFSCHUB = [
   "nichts fragen",
   "nicht hinsehen",
   "doch nicht",
+  "ich muss weiter",
 ];
 const NUR_GANZ = ["nein", "gehen", "hinausgehen"];
 /**

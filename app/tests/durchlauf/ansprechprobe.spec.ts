@@ -1,5 +1,6 @@
 /**
  * Ansprechprobe des Spieler-Durchlaufs: auf einer Karte jede Figur und jeden Auslöser mit Dialog
+ * (auch Gegenstände)
  * aufsuchen und nachsehen, ob der Aktionsknopf erscheint. Gespielt mit dem Finger wie im
  * Durchlauf (laufen.ts), ab einem simulierten Stand (aktstand.cjs, simstand.ts).
  *
@@ -29,11 +30,15 @@ test("Ansprechprobe einer Karte", async () => {
   const wissen = kartenwissen(daten, KARTE, await liesStand(seite));
   const ohne: string[] = [];
   for (const ding of wissen.dinge) {
-    if (!ding.figur && ding.regel?.art !== "dialog") continue;
+    // Auch Gegenstände mit Dialog (Pizzakarton im Wohnzimmer, Erstspieler-Durchgang 20.11.2026).
+    if (!ding.figur && !ding.regel?.dialog) continue;
     const ergebnis = await geheAn(lauf, wissen, ding.felder);
     let text = "";
     if (ergebnis === "aktion") {
       await tippe(lauf, seite.getByTestId("abenteuer-aktion"), "Aktionsknopf");
+      text = await schliesseDialog(lauf);
+    } else if (ergebnis === "fenster") {
+      // Beim Betreten ausgelöst (Haustür am Abend): schließen, sonst bleibt der Rest der Karte zu.
       text = await schliesseDialog(lauf);
     } else {
       ohne.push(`${ding.name}: ${ergebnis}`);

@@ -49,6 +49,8 @@ import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
+import { Steuerhinweiszeile } from "./Steuerhinweis";
+import { useSteuerhinweis } from "./useSteuerhinweis";
 import { eingangsdialog } from "./eingang";
 import { schalteVerfolgung } from "../regeln/verfolgung";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
@@ -119,8 +121,15 @@ export function Oberwelt() {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
   }, [spiel, fensterOffen, welt]);
   useOffeneRueckmeldung(k, oeffneDialog, welt !== null && !fensterOffen);
+  // Einmalige Hinweise zur Steuerung (Erstspieler-Durchgang 20.11.2026, useSteuerhinweis.ts).
+  const hinweis = useSteuerhinweis(k, {
+    frei: welt !== null && !fensterOffen && meldung === null,
+    erinnerung: welt?.erinnerung === true,
+    aktionSichtbar: welt !== null && aktionFuer(welt, treffer) !== null,
+  });
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
+    if (gedrueckt) hinweis.benutzt("steuerkreuz");
     szeneAus(spiel)?.setzeRichtung(richtung, gedrueckt);
   };
 
@@ -147,7 +156,11 @@ export function Oberwelt() {
       {!welt?.erinnerung && (
         <Kopfleiste
           muenzen={stand.muenzen}
-          beiTagebuch={() => setzeTagebuch(true)}
+          beiTagebuch={() => {
+            hinweis.benutzt("tagebuch");
+            setzeTagebuch(true);
+          }}
+          tagebuchPuls={hinweis.aktiv === "tagebuch"}
           beiReisebrett={
             welt && stand.gegenstaende.includes(REISEBRETT) && !fensterOffen
               ? partie.starteUebungspartie
@@ -168,9 +181,13 @@ export function Oberwelt() {
         <Steuerkreuz
           beiRichtung={beiRichtung}
           aktion={aktionFuer(welt, treffer)}
-          beiAktion={ausl.beiAktion}
+          beiAktion={() => {
+            hinweis.benutzt("aktion");
+            ausl.beiAktion();
+          }}
         />
       )}
+      <Steuerhinweiszeile steuerung={hinweis} />
       {dialog && (
         <Dialog
           key={`${dialog.datei}.${dialog.knoten}`}

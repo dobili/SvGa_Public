@@ -117,6 +117,22 @@ export function ladenZu(knoepfe: readonly Knopf[]): Knopf | undefined {
 }
 
 /**
+ * Laden gleich wieder zu, ohne zu kaufen. Liegt „Schließen“ unter dem Rand (viele Waren im
+ * Hochformat), rollt er hin; sonst verfiele der Abbruch, und er kaufte doch (Kiosk, 20.11.2026).
+ */
+export async function schliesseLaden(lauf: Lauf, knoepfe: readonly Knopf[]): Promise<void> {
+  lauf.messung.log("  EILIG: Laden gleich wieder zu");
+  const zu = ladenZu(knoepfe);
+  if (zu) await tippePunkt(lauf, zu.x, zu.y);
+  else
+    await tippe(
+      lauf,
+      lauf.seite.locator("[data-testid='abenteuer-laden'] > .knopf-haupt"),
+      "Laden „Schließen“",
+    );
+}
+
+/**
  * Tagebuch auf und gleich wieder zu; jedes zweite Mal tippt er vorher den ersten Zielpfeil an
  * (Verfolgen an oder aus). Ausgabe: ob das Tagebuch aufging.
  */

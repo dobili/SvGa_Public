@@ -1,9 +1,13 @@
 // Prüft die Fassung für die Leser (AP 17, gebaut mit VEROEFFENTLICHUNG=1): Die Aufgabenseite
-// des Autors darf nicht in dist/ stehen. Englisch bleibt seit 0.2.116 drin (Entscheidung V1).
+// des Autors und die Testhilfen des Schach-Abenteuers dürfen nicht in dist/ stehen. Englisch
+// bleibt seit 0.2.116 drin (Entscheidung V1).
 //
-// Warum: Die Aufgabenseite ist nur für den Autor gedacht. Der Bundler lässt sie über
-// die feste Zahl __VEROEFFENTLICHUNG__ weg; diese Prüfung stellt sicher, dass das auch so bleibt
-// (etwa wenn ein neuer Bildschirm die Aufgabenseite direkt einbindet).
+// Warum: Die Aufgabenseite (mit der Karte „Schach-Abenteuer“ zum Öffnen des Spiels) und die
+// Testleiste im Spiel („Gewinnen“, „Remis“, „Verlieren“, bei Rätseln „Bestehen“, „Verfehlen“;
+// anbindung/Testleiste.tsx) sind nur für den Autor gedacht. Der Bundler lässt sie über die feste
+// Zahl __VEROEFFENTLICHUNG__ weg; diese Prüfung stellt sicher, dass das auch so bleibt (etwa wenn
+// ein neuer Bildschirm die Aufgabenseite direkt einbindet oder eine Testhilfe ohne Schalter
+// dazukommt). Im Browser prüft dasselbe tests/e2e/abenteuer-leserfassung.spec.ts (LESERFASSUNG=1).
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,6 +18,9 @@ const DIST = resolve(HIER, "../dist");
 /** Kennzeichen, die nur in der Aufgabenseite vorkommen. */
 const VERBOTEN = [
   { name: "Aufgabenseite des Autors", text: "Was noch zu tun ist (für den Autor)" },
+  { name: "Spielkarte der Aufgabenseite", text: "abenteuer-admin-knopf" },
+  { name: "Testleiste des Spiels", text: "Testhilfe des Autors" },
+  { name: "Testknöpfe des Spiels", text: "abenteuer-test-" },
 ];
 
 /** Alle Dateien unterhalb eines Ordners. */
@@ -39,7 +46,7 @@ async function main() {
     console.error(`Fassung für die Leser enthält noch:\n${funde.join("\n")}`);
     process.exit(1);
   }
-  console.log("Fassung für die Leser: ohne Aufgabenseite.");
+  console.log("Fassung für die Leser: ohne Aufgabenseite und ohne Testhilfen des Spiels.");
 }
 
 await main();

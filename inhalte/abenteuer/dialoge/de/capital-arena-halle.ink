@@ -470,7 +470,7 @@ Probier's. Es ist luftig. #sprecher:victor #stimmung:laechelt
 
 === vor_dem_finale_mama ===
 Mama kommt den Gang herunter und setzt sich neben dich auf den Boden. #sprecher:erzaehler #musik:mama.ruhig
-Ich hatte auch mal so ein Finale. Ich hab fünfundzwanzig Jahre gedacht, das Verlieren sei das Wichtigste daran. #sprecher:mutter #stimmung:nachdenklich
+Ich hatte auch mal so ein Finale. Fünfundzwanzig Jahre dachte ich, das Wichtigste daran war das Verlieren. #sprecher:mutter #stimmung:nachdenklich
 Ich hab das Formular wieder angeguckt. Nicht Zug dreiunddreißig. #sprecher:mutter #stimmung:laechelt
 Die anderen zweiunddreißig. Die waren richtig gut. #sprecher:mutter #stimmung:laechelt
 * [Mama ansehen]
@@ -660,7 +660,7 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 Du legst Dr. Lin deine eigene Mappe hin: die Drohne, der Funkmast, der Messwagen, die Server, der Geysirantrag, der Greifarm. #sprecher:erzaehler
 Das hier kenne ich. Woher hast du das? #sprecher:lin #stimmung:ueberrascht
 Sie blättert lange. #sprecher:erzaehler
-Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach – Danke. #sprecher:lin #stimmung:nachdenklich
+Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach – danke. #sprecher:lin #stimmung:nachdenklich
 ~ gibFund("fotoMappe")
 {not abschiedGesehen:
     Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambrose #stimmung:laechelt

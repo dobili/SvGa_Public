@@ -16,6 +16,7 @@ EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
 EXTERNAL gibFund(kennung)
 
+VAR ambroseNenntNamen = false
 VAR held = "Du"
 VAR abernathyGetroffen = false
 VAR parkbankBrettGefunden = false
@@ -82,7 +83,7 @@ Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
 Die Stellung auf dem Brett stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
 Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. #sprecher:abernathy #stimmung:nachdenklich
 W. #sprecher:abernathy #stimmung:nachdenklich
-So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben – Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
+So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben – behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
 // Nach dem Abschied (abschiedGesehen) erkennt {held} die Züge selbst; Ambrose spricht nicht mehr.
 {abschiedGesehen:
     A. W. #sprecher:erzaehler
@@ -95,7 +96,7 @@ Er hat das abgeschrieben. Mit Bleistift – auf einen Zettel. #sprecher:ambrose 
     Ob ich sie kenne. Es ist meine. #sprecher:ambrose #stimmung:still
     Der Anfang. Vier Züge, und im vierten mein Gambit. #sprecher:ambrose #stimmung:still #pause
 * [„Was für eine Partie?“]
-    Eine alte. Frag mich ein andermal, Kind. #sprecher:ambrose #stimmung:still
+    Eine alte. Frag mich ein andermal, {ambroseNenntNamen:{held}|Kind}. #sprecher:ambrose #stimmung:still
 - Ich bin gerührt. Und beleidigt. #sprecher:ambrose #stimmung:lacht
 Es fehlt ein Bauer. #sprecher:ambrose #stimmung:lacht
 -> END
@@ -123,7 +124,7 @@ Es fehlt ein Bauer. #sprecher:ambrose #stimmung:lacht
 Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zettel mit drei kleinen Diagrammen. #sprecher:erzaehler
 „Weiß zieht und setzt in einem Zug matt.“ #sprecher:erzaehler
 {not abschiedGesehen:
-    Ein Zug, Kind. Sieh nach, wohin der König noch kann. #sprecher:ambrose #stimmung:nachdenklich
+    Ein Zug, {ambroseNenntNamen:{held}|Lehrling}. Sieh nach, wohin der König noch kann. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> parkbank_raetsel
 

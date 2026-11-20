@@ -73,7 +73,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. #sprecher:buck
 Na, traust du dich? #sprecher:buck #stimmung:laechelt
 + [„Klar.“]
     {versoehnungGesehen and not abschiedGesehen:
-        Er redet so schnell, wie er zieht. Lass ihn reden – du denkst. #sprecher:ambrose #stimmung:laechelt
+        Er redet so schnell, wie er zieht. Ein Plappermaul hat selten Zeit zum Nachsehen. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -149,7 +149,7 @@ Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. #sprecher:erzaehl
 Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch.“ #sprecher:erzaehler
 „Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler
 Der letzte Satz gefällt dir nicht. #sprecher:erzaehler #pause
-Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
+Die Glasschachtel von dem Jungen mit den Zahlen. Sie liegt in deinem Rucksack. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
 Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich
 Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 * [„Sicher?“]
@@ -211,7 +211,7 @@ Juno hat dir eine Seite im Tagebuch geschenkt, leer, mit einem Rahmen aus Glitze
 Am Ende der Hauptstraße beginnt der Highway. Mama klimpert mit einem Autoschlüssel. #sprecher:erzaehler
 Dot leiht uns ihr Auto. Drei Wochen Urlaub, und wir sehen mehr als vom Zug aus. #sprecher:mutter #stimmung:laechelt
 Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #stimmung:froh
-Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
+Eine Kutsche ohne Pferde. Zu meiner Zeit nahm man die Postkutsche, und die nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
 * [Weiterfahren]
 - Ambrose ist leichter seit dem Canyon. Er lobt einen Bauern, der einfach ein Feld vorrückt. #sprecher:erzaehler
 Hässlich. Und vollkommen richtig. #sprecher:ambrose #stimmung:lacht

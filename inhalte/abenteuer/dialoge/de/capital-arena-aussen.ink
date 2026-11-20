@@ -79,7 +79,7 @@ Miss Odile, Remy, Lou. Mira auf Tomás' Schultern – Dot mit Lockenwicklern. #s
 Ward steht ein wenig abseits und betrachtet alles, als wäre es eine Stellung. #sprecher:erzaehler
 Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht. #sprecher:erzaehler #pause
 Das kommt ins Tagebuch. Ich hab zwei dabei. #sprecher:juno #stimmung:froh
-Das kommt alles ins Tagebuch. #sprecher:juno #stimmung:froh
+Eins für die Nadeln, eins für die Gesichter. #sprecher:juno #stimmung:froh
 -> END
 
 === weg_ghost ===

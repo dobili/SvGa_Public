@@ -190,7 +190,7 @@ Gut gestimmt. Das geht ins Logbuch. #sprecher:abe #stimmung:laechelt
 Und ein Foto für dich, damit du den Tag nicht vergisst. #sprecher:abe #stimmung:laechelt
 ~ gibFund("fotoWeltschachtag")
 {not abschiedGesehen:
-    So viele Menschen an einem Brett. So war es früher in den Cafés. #sprecher:ambrose #stimmung:friedlich
+    So viele Menschen an einem Brett. So war es früher am Kai, an den Fässern. #sprecher:ambrose #stimmung:friedlich
 }
 -> END
 

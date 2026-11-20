@@ -226,7 +226,7 @@ Darunter, ganz klein: „Dreimal klopfen.“ #sprecher:erzaehler
 ~ gibFund("kreide3")
 {ambroseSprichtWieder:
     {not abschiedGesehen:
-        Ein Club ohne Haus. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt
+        Kein Dach, kein Tresen, und doch ein Club. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt
         Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose #stimmung:laechelt
     }
 }

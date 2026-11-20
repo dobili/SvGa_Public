@@ -229,7 +229,7 @@ Der Highschools. Die hat noch nie verloren. #sprecher:juno #stimmung:ueberrascht
 Neben dem Podium steht Victor, im selben Weiß, die Hände auf dem Rücken. Auf seiner Jacke steht sein Name. #sprecher:erzaehler
 Ins Mikrofon sagt er drei Sätze. Es sind die Sätze seines Vaters. #sprecher:erzaehler
 Dann kommt er herüber, nicht schnell. #sprecher:erzaehler
-Du. #sprecher:victor #stimmung:kalt
+{held}. #sprecher:victor #stimmung:kalt
 Er sieht auf deine Jacke. #sprecher:erzaehler
 Zwei. #sprecher:victor #stimmung:bitter
 * [„Zwei.“]

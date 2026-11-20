@@ -135,7 +135,7 @@ Der Sturm dreht ab. Heute kein Keller, heute keine Ente, nächstes Mal. #spreche
 {wegSummitCrossroadsTafelVersucht: Auf der Tafel stehen noch deine Striche vom letzten Versuch. Ganz gelöst ist sie nicht. #sprecher:erzaehler}
 Am Holzsteg hängt eine Tafel der Ranger: „Vorher zählen. Drei Stellungen, bevor der Geysir kommt.“ #sprecher:erzaehler
 {not abschiedGesehen:
-    Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}, nicht raten. #sprecher:ambrose #stimmung:nachdenklich
+    Die Ranger fragen, was ich dich auf dem Dachboden gefragt habe. Du brauchst mich dafür nicht mehr. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegSummitCrossroads.tafel")
@@ -173,7 +173,7 @@ Sie gehen nicht weg. #sprecher:erzaehler
 ~ bisonhaarGefunden = true
 Am Zaun hängt ein dickes Büschel braunes Fell. #sprecher:erzaehler
 {not abschiedGesehen:
-    Ein Tier, das niemandem ausweicht. Respekt. #sprecher:ambrose #stimmung:laechelt
+    Ein Tier, das niemandem ausweicht. Das nenne ich Haltung. #sprecher:ambrose #stimmung:laechelt
 }
 ~ gibFund("bisonhaar")
 -> END
@@ -253,7 +253,7 @@ Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Mov
 }
 Über meine Leiche. Und über die der Bisons. #sprecher:bell #stimmung:bitter
 {not abschiedGesehen:
-    Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose #stimmung:laechelt
+    Wer Rechenmaschinen mit Geysiren kühlen will, braucht sehr viele davon. #sprecher:ambrose #stimmung:laechelt
 }
 ~ spurPM5Gefunden = true
 ~ spurenPM = spurenPM + 1

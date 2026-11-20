@@ -284,7 +284,7 @@ Pass auf ihn auf. #sprecher:juno #stimmung:nachdenklich
 Du erzählst mir immer, was er sagt. #sprecher:juno #stimmung:nachdenklich
 Seit gestern erzählst du nichts. #sprecher:juno #stimmung:bitter
 Sie schlägt das Tagebuch auf, hält den Stift darüber und klappt es wieder zu. #sprecher:erzaehler
-Er klingt komisch, wenn du nichts erzählst. #sprecher:juno #stimmung:bitter
+Du klingst komisch, wenn du nichts erzählst. #sprecher:juno #stimmung:bitter
 * [Ihr nachsehen]
 - Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
 Du stehst da mit einem Brett im Rucksack, einem Reisebrett in der Jackentasche und einem Tablet unter dem Arm. #sprecher:erzaehler

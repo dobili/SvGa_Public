@@ -221,7 +221,7 @@ Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 // Gutachten K1.11: Vor dem Fluss schweigt Ambrose (Roman Kapitel 10); die Handschrift erkennt er
 // erst beim Entziffern im Waschsalon.
 {faehrsteinGesehen and not abschiedGesehen:
-    Heb es gut auf, Kind. #sprecher:ambrose #stimmung:traurig
+    Heb es gut auf, {ambroseNenntNamen:{held}|Kind}. #sprecher:ambrose #stimmung:traurig
 - else:
     Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2
 }

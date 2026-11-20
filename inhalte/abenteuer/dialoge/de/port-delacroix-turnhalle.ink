@@ -285,7 +285,7 @@ Miss Odile drückt dir eine Karte in die Hand: ein kleiner Engel mit einem Schil
 Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile #stimmung:laechelt
 ~ gibKarte("schutzengel")
 Sie legt die Hand auf den Geigenkasten an deiner Seite. #sprecher:erzaehler
-Behalt ihn. Er hat lange keine Geige getragen, jetzt hat er wieder was zu tun. #sprecher:odile #stimmung:laechelt
+Behalt ihn. Er hat lange keine Geige getragen, jetzt hat er wieder eine Aufgabe. #sprecher:odile #stimmung:laechelt
 Und wenn du aus der Wüste zurückkommst, hängen wir zusammen das Schild am Musikhaus auf. #sprecher:odile #stimmung:laechelt
 Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 -> END
@@ -439,7 +439,7 @@ Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
 - ausgangPortDelacroixClubkampf == "remis":
     Remis. Zwei Stimmen, ein Akkord – deine Nadel bleibt. #sprecher:odile #stimmung:neutral
 - ausgangPortDelacroixClubkampf == "niederlage":
-    Diesmal nicht. Hör auf den Takt, dann kommt die nächste Nadel. #sprecher:odile #stimmung:laechelt
+    Diesmal hatte ich den Takt. Deine Nadel bleibt, wie sie ist. #sprecher:odile #stimmung:laechelt
 - else:
     -> odile
 }

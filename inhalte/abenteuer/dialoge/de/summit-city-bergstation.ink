@@ -55,7 +55,7 @@ VAR ausgangCapitalArenaFinale = ""
 === victor_vorher ===
 Victor steht draußen am Geländer der Plattform und hört etwas über einen Ohrstöpsel. Als er dich sieht, nimmt er ihn heraus. #sprecher:erzaehler
 Nicht jetzt. Ich hab Vorbereitung. #sprecher:victor #stimmung:bitter
-Der Coach sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #sprecher:victor #stimmung:bitter
+Mein Trainer sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #sprecher:victor #stimmung:bitter
 -> END
 
 === victor_bergstation ===

@@ -112,7 +112,7 @@ Was sonst. #sprecher:ambrose #stimmung:laechelt
 ~ medailleGesehen = true
 An der Wand hängt eine Medaille an einem blauen Band. Silber. #sprecher:erzaehler
 {not abschiedGesehen:
-    Silber. Eine Niederlage, die man aufhängt – Mutig. #sprecher:ambrose #stimmung:laechelt
+    Silber. Eine Niederlage, die man aufhängt, ist eine mutige. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 

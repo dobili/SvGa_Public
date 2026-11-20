@@ -25,7 +25,7 @@ VAR abschiedGesehen = false
 
 === teague ===
 {teagueGetroffen:
-    {~Die Standuhr stelle ich jeden Tag. Sie geht jeden Tag nach.|Joe spielt immer das Damengambit. Seit vierzig Jahren. Sag ihm nicht, dass ich das verraten habe.|Ein Siegel bricht man nicht. Man löst es.} #sprecher:teague #stimmung:laechelt
+    {~Die Standuhr stelle ich jeden Tag. Sie geht jeden Tag nach.|Joe spielt seit vierzig Jahren das Damengambit. Sag ihm nicht, dass ich das verraten habe.|Ein Siegel bricht man nicht. Man löst es.} #sprecher:teague #stimmung:laechelt
     -> END
 }
 ~ teagueGetroffen = true
@@ -111,8 +111,7 @@ Vielleicht findest du, was hineingehört. #sprecher:teague #stimmung:nachdenklic
 }
 In der Vitrine liegt eine vergilbte Zeitung, aufgeschlagen bei einem kleinen gedruckten Schachbrett. #sprecher:erzaehler
 {abschiedGesehen: -> allein}
-Die habe ich gelesen. In der Nacht nach dem Match. #sprecher:ambrose #stimmung:alt
-Vier zu drei. #sprecher:ambrose #stimmung:alt
+Die habe ich gelesen. In der Nacht nach dem Match – vier zu drei. #sprecher:ambrose #stimmung:alt
 Ich wollte nie wieder eine Figur anrühren. Auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. #sprecher:ambrose #stimmung:bitter
 Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. #sprecher:ambrose #stimmung:nachdenklich
 Zwanzigmal. Bis es hell wurde. #sprecher:ambrose #stimmung:nachdenklich
@@ -147,8 +146,7 @@ Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
 Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. #sprecher:ambrose #stimmung:nachdenklich
 Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose #stimmung:nachdenklich
 {umschlagGeoeffnet: Er sieht auf den Umschlag in deiner Hand. #sprecher:erzaehler}
-Ich schon. Ich habe den Mut verloren. #sprecher:ambrose #stimmung:bitter
-Einen Abend lang. #sprecher:ambrose #stimmung:bitter
+Ich schon. Ich habe den Mut verloren – einen Abend lang. #sprecher:ambrose #stimmung:bitter
 * [„Nur einen?“]
 - Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Wenn ich ehrlich bin. #sprecher:ambrose #stimmung:still
@@ -173,5 +171,5 @@ Mr. Teague nickt: „Nimm ihn, er gehört niemandem.“ #sprecher:erzaehler
 === siegel_rueckmeldung ===
 {siegelStellungBestanden: -> postsack}
 Das Wachs hält noch. #sprecher:erzaehler
-Nimm dir Zeit, mein Kind. Das Siegel hat hundertsechzig Jahre gewartet, es wartet auch noch einen Versuch. #sprecher:teague #stimmung:laechelt
+Nimm dir Zeit, mein Kind. Das Siegel hat so lange gewartet, es wartet auch noch einen Versuch. #sprecher:teague #stimmung:laechelt
 -> END

@@ -127,7 +127,7 @@ Die Kiste bringe ich ins Musikhaus, da gehört sie hin. Das eine Blatt behältst
 -> END
 
 === pepe_danach ===
-{~Die Kiste steht jetzt im Musikhaus. Henri hat sie neben das Klavier gestellt.|Mein Urgroßvater hätte dir einen Kaffee ausgegeben. Ich hab nur Wasser. Viel Wasser.|Hörst du die Frösche? Die spielen auch, nur ohne Brett.} #sprecher:pepe #stimmung:laechelt
+{~Die Kiste steht jetzt im Musikhaus. Henri hat sie neben das Klavier gestellt.|Mein Urgroßvater hätte dir einen Kaffee ausgegeben. Ich hab nur Wasser, aber viel davon.|Hörst du die Frösche? Die spielen auch, nur ohne Brett.} #sprecher:pepe #stimmung:laechelt
 -> END
 
 === ereignis_hausboot ===

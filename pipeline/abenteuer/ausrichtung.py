@@ -132,6 +132,7 @@ def pruefe_stellen(szene: dict, anlage: list[Teil], achse: str) -> list[Befund]:
 
 
 def wasserzeichen_der(szene: dict) -> set[str]:
+    """Wasserzeichen der Szene (zusammenhang.py), spät geladen, um einen Importkreis zu vermeiden."""
     from pipeline.abenteuer.zusammenhang import wasserzeichen
 
     return wasserzeichen(szene)
@@ -359,6 +360,7 @@ def pruefe_alle(alle: dict[str, dict], moebel: dict, ort: str | None = None) -> 
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.katalogausrichtung import pruefe_katalog
     from pipeline.abenteuer.moebelliste import lade_moebel
     from pipeline.abenteuer.uebergaenge import szenen

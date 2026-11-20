@@ -362,6 +362,7 @@ BERICHTSTITEL = "Raumgröße (R065) und Blickrichtung (R008), Prüfwerkzeuge vom
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     ort = argumente[argumente.index("--ort") + 1] if "--ort" in argumente else None
     raeume = miss(ort)
     if "--bericht" in argumente:

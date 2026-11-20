@@ -19,6 +19,7 @@ import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
 const KLASSE = "abenteuer-mit-kulisse";
 const VARIABLE = "--abenteuer-kulisse";
 
+/** Setzt für die Dauer der Partie das Bild der Karte als Hintergrund (Lebendschach, Weg 9); ohne Karte nichts. */
 export function Kulisse({ karte }: { readonly karte: string | null }) {
   useEffect(() => {
     if (!karte) return undefined;

@@ -125,6 +125,7 @@ function gefahrenradar(fen: string, eigene: Partie["einstellung"]["eigeneFarbe"]
   return warnsignale(stellung.wert, eigene).markierungen.filter((m) => m.farbe === "rot");
 }
 
+/** Die Spielkarten des Decks als Knöpfe in der Partie, jede einmal je Partie (Regelwerk R23, R24; Wirkungen im Dateikopf). */
 export function KartenleisteAnzeige({
   partiekennung,
   steuerung,
@@ -147,7 +148,8 @@ export function KartenleisteAnzeige({
         setzeSorten(d.karten);
         setzeGegnerliste(d.gegner);
       })
-      .catch(() => undefined);
+      // Ohne Spieldaten bleibt die Leiste ohne Kartensorten und Gegnernamen; die Partie läuft.
+      .catch((fehler: unknown) => console.warn("Kartenleiste: Spieldaten nicht geladen", fehler));
     return () => {
       aktiv = false;
     };

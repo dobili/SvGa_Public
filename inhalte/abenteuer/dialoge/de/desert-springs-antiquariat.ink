@@ -82,7 +82,7 @@ Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose #stimmung:ueberrascht
 ~ briefGelesen = true
 Du brichst das Wachs. #sprecher:erzaehler #klang:siegel #musik:aus
 Zwölf Zeilen. Senkrecht, gerade, jede gleich lang. #sprecher:erzaehler #bild:hales_brief
-Du liest laut, bei einer Glühbirne, für jemanden, der hundertsechzig Jahre gewartet hat. #sprecher:erzaehler
+Du liest laut, bei einer Glühbirne, für jemanden, der sehr lange gewartet hat. #sprecher:erzaehler
 „Whitlock, mein neununddreißigster Zug ist seit Dienstag unterwegs zu Ihnen. Sie werden zurückschlagen müssen.“ #sprecher:erzaehler
 „Danach stehen wir in einem Endspiel, und ich weiß nicht, wie es ausgeht. Ich weiß es zum ersten Mal nicht, und es gefällt mir.“ #sprecher:erzaehler
 „Ich habe Ihnen 1859 ein Wort geschrieben, für das ich mich seither schäme. Ich hielt Ihr Spiel für Leichtsinn.“ #sprecher:erzaehler
@@ -91,8 +91,7 @@ Du liest laut, bei einer Glühbirne, für jemanden, der hundertsechzig Jahre gew
 „Wir spielen die letzten Züge an einem Brett, von Angesicht zu Angesicht. Ich lasse ein Zimmer richten.“ #sprecher:erzaehler
 „Ich warte. J.“ #sprecher:erzaehler
 „Hale“ #sprecher:erzaehler #pause:5
-Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts. #sprecher:erzaehler #bild:aus
-Das ist schlimmer. #sprecher:erzaehler #pause:3
+Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts, das ist schlimmer. #sprecher:erzaehler #bild:aus #pause:3
 Er hat gewartet. #sprecher:ambrose #stimmung:riss #musik:ambrose.hale
 Er hat wirklich gewartet. Er hat ein Zimmer richten lassen. #sprecher:ambrose #stimmung:ueberrascht
 Mut. Er schreibt, es war Mut. #sprecher:ambrose #stimmung:ueberrascht

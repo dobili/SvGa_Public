@@ -66,6 +66,7 @@ def gebaeude_der_innenkarten(
 
 
 def tuerbilder(seite: Seite) -> list[tuple[dict, dict]]:
+    """Die Möbel einer Seite, die Türen sind, mit ihrer Angabe."""
     return [(s, a) for s, a, art in seite.moebel if art == "tuer"]
 
 

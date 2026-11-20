@@ -98,19 +98,16 @@ Sieben. #sprecher:ward #stimmung:neutral
 * [„Ein Läufer, der nicht ging. Dann vierzig Züge Endspiel.“]
 - Vierzig Züge. Dann hast du schon einmal gesehen, wie es aussieht. #sprecher:ward #stimmung:nachdenklich
 Setz dich. #sprecher:ward #stimmung:nachdenklich
-Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein schwarzer König. #sprecher:erzaehler #musik:aus #geraeusch:aus
-Sonst nichts. #sprecher:erzaehler
+Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein schwarzer König, sonst nichts. #sprecher:erzaehler #musik:aus #geraeusch:aus
 * [„Das ist alles?“]
 - Das ist alles, was übrig bleibt, wenn man lange genug spielt. #sprecher:ward #stimmung:nachdenklich
-Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, hat das Nachsehen. #sprecher:ward #stimmung:nachdenklich
-Warum? #sprecher:ward #stimmung:nachdenklich
+Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, hat das Nachsehen – warum? #sprecher:ward #stimmung:nachdenklich
 * [„Weil er weichen muss. Dann kommt der andere vorbei.“]
 * [„Ich weiß es nicht.“]
-    Ehrlich ist gut. Schau, wer hier zuerst zur Seite muss. #sprecher:ward #stimmung:laechelt
+    Ehrlich ist gut. Schau, wer hier zuerst zur Seite muss. #sprecher:ward #stimmung:neutral
 - Opposition. Wer zuerst ziehen muss, gibt nach. #sprecher:ward #stimmung:nachdenklich
 Wie im Leben, manchmal. #sprecher:ward #stimmung:nachdenklich
-Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden. #sprecher:ward #stimmung:nachdenklich
-Hier nicht. #sprecher:ward #stimmung:nachdenklich
+Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden, hier nicht. #sprecher:ward #stimmung:nachdenklich
 Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
 Erst Kit, dann Haraldsen. Bauern, dann Türme. #sprecher:ward #stimmung:neutral #musik:karte
 Dann sehen wir weiter. #sprecher:ward #stimmung:neutral
@@ -122,8 +119,7 @@ Dann sehen wir weiter. #sprecher:ward #stimmung:neutral
     Kit zuerst. Bauernendspiele. #sprecher:ward #stimmung:nachdenklich
     Wer die nicht kann, braucht keine Türme. #sprecher:ward #stimmung:nachdenklich
 - else:
-    Jetzt Haraldsen. Er erklärt Türme, als wären es Seilbahnen. #sprecher:ward #stimmung:laechelt
-    Hör trotzdem zu. #sprecher:ward #stimmung:laechelt
+    Jetzt Haraldsen. Er erklärt Türme, als wären es Seilbahnen – hör trotzdem zu. #sprecher:ward #stimmung:neutral
 }
 + {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
     -> ward_heft
@@ -137,7 +133,7 @@ Genug für heute. Morgen wieder, gleich nach dem Frühstück. #sprecher:ward #st
 Am dritten Abend, auf dem Weg hinunter, gehen in der Stadt die Lichter an. #sprecher:erzaehler
 * [„Die Fernpartie. Das ist auch ein Endspiel.“]
 - Ein Turm gegen zwei Springer. Und Bauern. #sprecher:ambrose #stimmung:nachdenklich
-Ich habe hundertsechzig Jahre darauf gestarrt. #sprecher:ambrose #stimmung:nachdenklich
+Ich habe seit New York darauf gestarrt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Kannst du es gewinnen?“]
 - Er antwortet nicht gleich. #sprecher:erzaehler #pause:2
 Ich weiß es nicht. Ich konnte Angriffe. #sprecher:ambrose #stimmung:bitter
@@ -146,7 +142,7 @@ Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
 -> END
 
 === ward_victor_fort ===
-Er ist noch nicht zurück. Du weißt, wohin er gelaufen ist. #sprecher:ward #stimmung:laechelt
+Er ist noch nicht zurück. Du weißt, wohin er gelaufen ist. #sprecher:ward #stimmung:neutral
 Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward #stimmung:nachdenklich
 -> END
 
@@ -156,8 +152,8 @@ Du musst nicht gewinnen. Ein Remis genügt für die Nadel. #sprecher:ward #stimm
 Ich vereinfache. Ich tausche, was sich tauschen lässt. #sprecher:ward #stimmung:nachdenklich
 Die meisten wollen im Mittelspiel gewinnen, weil sie das Ende fürchten. #sprecher:ward #stimmung:nachdenklich
 {wardMuede:
-    Ich habe heute Nacht nicht geschlafen. Das ist kein Grund, schlechter zu spielen. #sprecher:ward #stimmung:laechelt
-    Aber vielleicht wird es einer. #sprecher:ward #stimmung:laechelt
+    Ich habe heute Nacht nicht geschlafen. Das ist kein Grund, schlechter zu spielen. #sprecher:ward #stimmung:neutral
+    Aber vielleicht wird es einer. #sprecher:ward #stimmung:neutral
 }
 Was willst du? #sprecher:ward #stimmung:nachdenklich
 + [„Das Ende.“]
@@ -166,7 +162,7 @@ Was willst du? #sprecher:ward #stimmung:nachdenklich
     ~ beginnePartie("summitCity.clubkampf")
     -> END
 + [„Noch nicht.“]
-    Das Feuer brennt noch eine Weile. #sprecher:ward #stimmung:laechelt
+    Das Feuer brennt noch eine Weile. #sprecher:ward #stimmung:neutral
     -> END
 
 // Kapitel 52, vor der Partie: Mama kommt zum ersten Mal den Pfad herauf.
@@ -199,7 +195,7 @@ Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
 Verloren. Und? #sprecher:ward #stimmung:nachdenklich
 Hast du gesehen, wo? #sprecher:ward #stimmung:nachdenklich
 Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenklich
-{wardMuede: Und spiel jetzt, solange ich müde bin. Haraldsens Studie hat mich die Nacht gekostet. #sprecher:ward #stimmung:laechelt}
+{wardMuede: Aber warte nicht zu lange. Haraldsens Studie hat mich die Nacht gekostet, das hält nicht ewig. #sprecher:ward #stimmung:neutral}
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -218,17 +214,17 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward #stimmung:nachdenkl
 // Revanche um eine bessere Nadel: nur Wards Satz, nicht noch einmal die ganze Nadelszene mit Juno.
 {clubkampfSummitCityNadel > 0:
     ~ clubkampfSummitCityNadel = nadelSummitCity
-    Eine bessere Nadel. Bis zum letzten Bauern, wie versprochen. #sprecher:ward #stimmung:laechelt
+    Eine bessere Nadel. Bis zum letzten Bauern, wie versprochen. #sprecher:ward #stimmung:neutral
     -> END
 }
 ~ clubkampfSummitCityNadel = nadelSummitCity
 {ausgangSummitCityClubkampf == "remis":
-    Remis. Bis zum letzten Bauern. #sprecher:ward #stimmung:laechelt
+    Remis. Bis zum letzten Bauern. #sprecher:ward #stimmung:neutral
     Sie nimmt den Silbergipfel vom Kaminsims. Ein Remis genügt. #sprecher:erzaehler
     -> ward_nadel
 }
 Sie spielt es zu Ende, jeden Zug, bis zum letzten Bauern. Dann lehnt sie sich zurück und sieht dich lange an. #sprecher:erzaehler
-Du hast mich besiegt. Gut. #sprecher:ward #stimmung:laechelt #pause
+Du hast mich besiegt. Gut. #sprecher:ward #stimmung:neutral #pause
 Sie nimmt den Silbergipfel vom Kaminsims. Sie gibt ihn dir nicht. #sprecher:erzaehler
 Jetzt zeig mir, wie. #sprecher:ward #stimmung:nachdenklich
 * [„Was?“]
@@ -261,7 +257,7 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === ward_alltag ===
-{~Ein Endspiel ist eine Wahrheit. Man kann sie nicht wegreden.|Tee? Die Kanne hat einen Sprung. Sie hält trotzdem seit vierzig Jahren.|Ich habe einmal sieben Stunden um einen halben Punkt gespielt. Es hat sich gelohnt.} #sprecher:ward #stimmung:laechelt
+{~Ein Endspiel ist eine Wahrheit. Man kann sie nicht wegreden.|Tee? Die Kanne hat einen Sprung und hält trotzdem seit vierzig Jahren.|Ich habe einmal sieben Stunden um einen halben Punkt gespielt. Es hat sich gelohnt.} #sprecher:ward #stimmung:laechelt
 + {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
     -> ward_heft
 + {nadelSummitCity > 0 and nadelSummitCity < 3} [„Revanche um eine bessere Nadel?“]
@@ -279,35 +275,35 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 // noch eine Weiterleitung hierher ohne Verweis, ist am 16.11.2026 entfallen.)
 === ward_bleib ===
 ~ wardBleibGesehen = true
-Bleib. Unten ist heute das Drachenfest. #sprecher:ward #stimmung:laechelt
-Die halbe Stadt spielt mit einer Figur, die es nicht gibt. #sprecher:ward #stimmung:laechelt
-Big Joe hat mich angerufen. Da komme ein Kind, das zählt, bevor es schlägt, und trotzdem opfert. #sprecher:ward #stimmung:laechelt
-Das Kind sei von Laurie. #sprecher:ward #stimmung:laechelt
+Bleib. Unten ist heute das Drachenfest. #sprecher:ward #stimmung:neutral
+Die halbe Stadt spielt mit einer Figur, die es nicht gibt. #sprecher:ward #stimmung:neutral
+Big Joe hat mich angerufen. Da komme ein Kind, das zählt, bevor es schlägt, und trotzdem opfert. #sprecher:ward #stimmung:neutral
+Das Kind sei von Laurie. #sprecher:ward #stimmung:neutral
 Ich habe sie in neunzehn Zügen geschlagen. Sie war die Beste, die ich in dem Jahr gesehen hatte. #sprecher:ward #stimmung:nachdenklich
 Ich habe es ihr nicht gesagt. #sprecher:ward #stimmung:nachdenklich
 * [„Sie ist unten. In der Stadt.“]
-- Ich weiß. Sie steckt die Hände noch immer in die Ärmel. #sprecher:ward #stimmung:laechelt
-Ich werde es ihr sagen, bevor ihr fahrt. #sprecher:ward #stimmung:laechelt
+- Ich weiß. Sie steckt die Hände noch immer in die Ärmel. #sprecher:ward #stimmung:neutral
+Ich werde es ihr sagen, bevor ihr fahrt. #sprecher:ward #stimmung:neutral
 Es ist dreißig Jahre zu spät. Aber man macht manche Züge trotzdem noch. #sprecher:ward #stimmung:nachdenklich
 -> ward_heft
 
 === ward_heft ===
 Sie holt ein dünnes Heft aus dem Regal, mit einem Umschlag aus Packpapier. #sprecher:erzaehler #musik:hastings
-Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und alle sagten, er sei fertig. #sprecher:ward #stimmung:laechelt
-Rate. Du hast Weiß. #sprecher:ward #stimmung:laechelt
+Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und alle sagten, er sei fertig. #sprecher:ward #stimmung:neutral
+Rate. Du hast Weiß. #sprecher:ward #stimmung:neutral
 + [Die Partie spielen]
     ~ beginneAufgaben("summitCity.erinnerungHastings")
     -> END
 + [„Ein andermal.“]
-    Das Heft wartet seit fünfzig Jahren. Es wartet auch noch eine Woche. #sprecher:ward #stimmung:laechelt
+    Das Heft wartet seit fünfzig Jahren. Es wartet auch noch eine Woche. #sprecher:ward #stimmung:neutral
     -> END
 
 === ward_nach_erinnerung ===
 ~ erinnerungHastingsBesprochen = true
 Ein Turm, der hängt und hängt und nicht geschlagen werden darf, weil dahinter jedes Mal etwas Schlimmeres wartet. #sprecher:erzaehler
 * [„Das ist kein Endspiel.“]
-- Nein. Das ist ein Angriff, wie ihn sich ein Endspieler ausdenkt. #sprecher:ward #stimmung:laechelt
-Er war neunundfünfzig. #sprecher:ward #stimmung:laechelt
+- Nein. Das ist ein Angriff, wie ihn sich ein Endspieler ausdenkt. #sprecher:ward #stimmung:neutral
+Er war neunundfünfzig. #sprecher:ward #stimmung:neutral
 {not lernkartePhasenblick:
     ~ lernkartePhasenblick = true
     Er wusste in jedem Zug, in welchem Teil der Partie er war, und was der von ihm wollte. Die meisten wissen es erst hinterher. #sprecher:ward #stimmung:nachdenklich
@@ -361,16 +357,13 @@ In die Hütte lässt Ward ihn nicht. #sprecher:erzaehler
 Hier drin sind Spieler und ein Feuer. Sie sind keines von beiden. #sprecher:ward #stimmung:bitter
 Du sitzt am Clubtisch. Victor legt nichts auf den Tisch. #sprecher:erzaehler
 Seine rechte Hand hat er in der Jackentasche. #sprecher:erzaehler
-Nach dreißig Zügen hat er einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt. #sprecher:erzaehler
-Die Brücke. #sprecher:erzaehler
+Nach dreißig Zügen hat er einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt, die Brücke. #sprecher:erzaehler
 * [Zusehen]
 - Er zieht nicht. Er hält die Schulter schief, als horche er auf etwas. #sprecher:erzaehler #klang:geraet_summen
-Es summt. Kurz. #sprecher:erzaehler
-Dann zwei lange. #sprecher:erzaehler
+Es summt. Kurz, dann zwei lange. #sprecher:erzaehler
 Victor zieht den Turm. Nicht auf die vierte Reihe. #sprecher:erzaehler
 Ward zieht ihren König ein Feld. Die Brücke ist nicht mehr zu bauen. #sprecher:erzaehler
-Zug um Zug rinnt es ihm durch die Finger. Ward stellt sich nur immer dorthin, wo er vorbeiwill. #sprecher:erzaehler
-Opposition. #sprecher:erzaehler
+Zug um Zug rinnt es ihm durch die Finger. Ward stellt sich nur immer dorthin, wo er vorbeiwill – Opposition. #sprecher:erzaehler
 Nach siebzig Zügen hat er verloren. Ein gewonnenes Endspiel, mit einem Bauern mehr. #sprecher:erzaehler
 Sein Telefon klingelt. Auf dem Bildschirm steht „Vater“. #sprecher:erzaehler #klang:telefon
 Er sieht darauf, drei Sekunden, vier. Er drückt es weg. #sprecher:erzaehler
@@ -380,8 +373,7 @@ Es hat gesagt, plus zwei Komma eins. Die ganze Zeit. #sprecher:victor #stimmung:
 Ich hab doch gemacht, was es gesagt hat. #sprecher:victor #stimmung:muede
 Er steht auf. Der Stuhl bleibt stehen. #sprecher:erzaehler
 Er ist zu gut erzogen, um einen Stuhl umzuwerfen. #sprecher:erzaehler
-Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Aufwärts. #sprecher:erzaehler
-Nicht hinunter. #sprecher:erzaehler #pause:2
+Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Aufwärts, nicht hinunter. #sprecher:erzaehler #pause:2
 Ward hebt den schwarzen König auf und stellt ihn zurück. #sprecher:erzaehler #pause
 Er spielt, als wäre er nicht da. #sprecher:ward #stimmung:nachdenklich
 * [„Er hat die Brücke gesehen. Er wusste es.“]
@@ -410,8 +402,7 @@ Ich renne keinem mehr nach. #sprecher:ward #stimmung:nachdenklich
 ~ lernkarteEndspielkompass = true
 Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
 {hatKarteEndspielkompass:
-    Die Karte wollte ich dir geben. Du hast sie schon. #sprecher:kit #stimmung:laechelt
-    Typisch. #sprecher:kit #stimmung:laechelt
+    Die Karte wollte ich dir geben. Du hast sie schon – typisch. #sprecher:kit #stimmung:laechelt
 - else:
     Sie gibt dir eine Karte aus der Jackentasche, die Ecken vom Wetter rund: ein König mit einer Kompassnadel. #sprecher:erzaehler
     König raus, Freibauer zählen, Opposition. Wie beim Aufstieg: erst schauen, dann gehen. #sprecher:kit #stimmung:laechelt
@@ -428,8 +419,7 @@ Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
 }
 Der Bauer läuft, der König rennt. Wer ist schneller? #sprecher:kit #stimmung:laechelt
 Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit #stimmung:laechelt
-Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. #sprecher:kit #stimmung:laechelt
-Aber gemein. #sprecher:kit #stimmung:laechelt
+Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein, aber gemein. #sprecher:kit #stimmung:laechelt
 + [„Zeig her.“]
     ~ beginneAufgaben("summitCity.reiheKit")
     -> END
@@ -506,15 +496,14 @@ Sie weiß es sowieso. #sprecher:haraldsen #stimmung:lacht
 ~ studieDabei = false
 Nach dem Abendessen legst du Ward den Zettel neben die Teekanne. #sprecher:erzaehler
 Sie faltet ihn auseinander und liest. Ihr Gesicht wird ganz glatt. #sprecher:erzaehler
-Haraldsen. Dreißig Jahre trägt er das mit sich herum. #sprecher:ward #stimmung:laechelt
+Haraldsen. Seit ich hier oben wohne, trägt er das mit sich herum. #sprecher:ward #stimmung:laechelt
 Und jetzt schickt er ein Kind. #sprecher:ward #stimmung:laechelt
 Das hält nicht. Das kann gar nicht halten. #sprecher:ward #stimmung:nachdenklich
 * [„Gute Nacht.“]
 - Sie hört dich nicht mehr. Sie stellt die Figuren auf, ohne hinzusehen. #sprecher:erzaehler
 Am Morgen sitzt sie noch genauso da. Das Feuer ist heruntergebrannt. #sprecher:erzaehler
 Auf dem Tisch stehen drei Tassen Tee, alle kalt. #sprecher:erzaehler
-Es hält. Mit einem stillen Königszug. #sprecher:ward #stimmung:lacht
-Dieser alte Seilbahnschaffner. #sprecher:ward #stimmung:lacht
+Es hält. Mit einem stillen Königszug – dieser alte Seilbahnschaffner. #sprecher:ward #stimmung:lacht
 ~ setzeZustand("summitCity.ward", 1.4, "zustand.studieNacht")
 ~ wardMuede = true
 -> END
@@ -529,8 +518,7 @@ Dieser alte Seilbahnschaffner. #sprecher:ward #stimmung:lacht
 Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. #sprecher:haraldsen #stimmung:laechelt
 Er schiebt, und er hält, beides zugleich. #sprecher:haraldsen #stimmung:laechelt
 Und eine Stellung, die nenne ich die Brücke. Die baust du, dann kommst du hinüber. #sprecher:haraldsen #stimmung:laechelt
-Philidor, Lucena. Klingen wie Gipfel. #sprecher:haraldsen #stimmung:laechelt
-Sind auch welche. #sprecher:haraldsen #stimmung:laechelt
+Philidor, Lucena. Klingen wie Gipfel – sind auch welche. #sprecher:haraldsen #stimmung:laechelt
 + [„Ich bin bereit.“]
     ~ beginneAufgaben("summitCity.reiheHaraldsen")
     -> END
@@ -545,8 +533,7 @@ Sind auch welche. #sprecher:haraldsen #stimmung:laechelt
 // ---------------------------------------------------------------- Gegenstände
 
 === pokal ===
-An der Wand hängt ein Thermometer. Sonst nichts. #sprecher:erzaehler
-Keine Pokale. #sprecher:erzaehler
+An der Wand hängt ein Thermometer. Sonst nichts, keine Pokale. #sprecher:erzaehler
 -> END
 
 === kaminfeuer ===
@@ -577,10 +564,9 @@ Ah. #sprecher:ward #stimmung:ueberrascht
 - ausgangSummitCityClubkampf == "sieg":
     Gewonnen, aber nicht besser als beim letzten Mal. Die Nadel bleibt. #sprecher:ward #stimmung:laechelt
 - ausgangSummitCityClubkampf == "remis":
-    Remis. Am Berg ist das kein schlechtes Ergebnis. #sprecher:ward #stimmung:neutral
-    Deine Nadel bleibt. #sprecher:ward #stimmung:neutral
+    Remis. Mehr gab die Stellung nicht her, die Nadel bleibt. #sprecher:ward #stimmung:neutral
 - ausgangSummitCityClubkampf == "niederlage":
-    Diesmal hat der Berg gewonnen. Deine Nadel bleibt dir. #sprecher:ward #stimmung:laechelt
+    Diesmal ich. Hast du gesehen, wo? #sprecher:ward #stimmung:laechelt
 - else:
     -> ward
 }

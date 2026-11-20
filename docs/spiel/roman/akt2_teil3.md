@@ -249,7 +249,7 @@ Die Frau, die die Tür aufmachte, war klein und hatte Mamas Kinn.
 
 Sie sah mich an und sagte nichts. Dann zog sie mich an sich, und ich stand auf der Schwelle eines Hauses, in dem ich seit dem Umzug nicht mehr gewesen war, in den Armen meiner Großmutter, und sie roch nach Mamas Waschmittel. Dem alten. Dem von früher.
 
-„Du bist gewachsen“, sagte Oma Ruth in meine Schulter. „Seit dem Frühjahr. Das gehört verboten.“
+„Als du das letzte Mal hier warst, warst du sechs“, sagte Oma Ruth in meine Schulter. „Und jetzt sieh dich an. Das gehört verboten.“
 
 Sie machte Kakao. Sie stellte Juno Fragen, als wäre Juno die Hauptperson, und Juno
 beantwortete sie alle. Dann wischte sie sich die Hände an der Schürze ab und sagte: „Komm. Ich

@@ -174,7 +174,7 @@ verloren.“
 
 Victor hatte mich gesehen. Er kam herüber, nicht schnell. Auf seiner Jacke stand sein Name.
 
-„Du“, sagte er. Es war keine Begrüßung, aber auch keine Beleidigung. Er sah auf meine Jacke.
+„{held}“, sagte er, als läse er es ab. Es war keine Begrüßung, aber auch keine Beleidigung. Er sah auf meine Jacke.
 „Zwei.“
 
 „Zwei.“

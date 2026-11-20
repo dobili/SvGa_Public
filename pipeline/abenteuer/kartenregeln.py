@@ -53,6 +53,7 @@ def _wasser_vorn(zeilen: list[str], felder: list[tuple[int, int]]) -> bool:
 
 
 def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Prüft eine Szene gegen die Kartenregeln (KARTENREGELN.md); Ausgabe: Befunde, leer wenn alles passt."""
     befunde: list[str] = []
     zustaende = set(szene.get("zustand", STANDARD_ZUSTAND))
     stile = set(szene.get("stil", []))

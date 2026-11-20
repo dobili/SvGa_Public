@@ -76,6 +76,7 @@ def pruefe(pfade: list[Path]) -> dict[str, tuple[set[Feld], list[str]]]:
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     pfade = [Path(a) for a in argv] or sorted(SZENEN.glob("*.json"))
     ergebnis = pruefe(pfade)
     for name, (offen, wer) in sorted(ergebnis.items()):

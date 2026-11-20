@@ -16,6 +16,7 @@ import { istTurmzug } from "../regeln/zugerraten";
 import { Momentdialog } from "./Momentdialog";
 import { gesuchterZug } from "./useZugerraten";
 
+/** Öffnet den Moment vor dem Zugerraten erst, wenn der Held am Zug ist und der gesuchte Zug feststeht (Story-Bibel 34.3). */
 export function Zugerratenmoment({
   verweis,
   s,

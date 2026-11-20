@@ -545,7 +545,7 @@ Ambrose stand daneben. Er sah auf das Brett. Auf den Turm, der geschlagen neben 
 Auf den Springer, der Matt gab.
 
 „Achtzehnhundertachtundfünfzig“, sagte er. „Ein Saal über einem Kaffeehaus. Ein Turm, mitten
-in seine Stellung. Ich habe hundertsechzig Jahre lang gedacht, das sei der Zug gewesen, der
+in seine Stellung. Ich habe seitdem jeden Tag gedacht, das sei der Zug gewesen, der
 mich alles gekostet hat.“
 
 Er hob die Hand, die auf meiner gelegen hatte, und sah sie an. Sie war fast durchsichtig.
@@ -860,7 +860,7 @@ Bis zum Ende?“
 
 „Ich hab gehofft.“
 
-Er starrte mich an. Dann lachte er noch mehr.
+Er starrte mich an. Dann lachte er noch mehr. „Du hast mich gezwungen, gut zu spielen, {held}. Danke.“
 
 „Das muss ich …“ Er drehte sich um. Er riss das Formular vom Tisch, das mit den Zügen, auf dem
 er jede Zeile mitgeschrieben hatte. „Das muss er sehen. Das muss er sofort sehen!“
@@ -1032,7 +1032,7 @@ aussah.
 
 „Ich werde dich vermissen“, sagte ich.
 
-„Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. Ich möchte wenigstens
+„Das hoffe ich doch. Ich war lange genug eine Fußnote. Ich möchte wenigstens
 einem Menschen fehlen.“ Er stand auf. Er stand vor mir, auf der Treppe, hochgeschlossen und
 gerade, eine Hand auf dem Rücken. „Und ich dich. Wo immer man das tut, wohin ich gehe.“
 

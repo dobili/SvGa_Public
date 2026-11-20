@@ -270,6 +270,7 @@ def geaenderte_objekte(eintrag: dict) -> set[int]:
 
 
 def main(argumente: list[str] | None = None) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     teiler = argparse.ArgumentParser(description="Änderungen des Karteneditors zurückschreiben")
     teiler.add_argument("datei", type=Path)
     teiler.add_argument("--szenen", type=Path, default=INHALTE / "szenen")

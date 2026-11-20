@@ -100,8 +100,7 @@ Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #spreche
 -> blaeser_set1
 
 === blaeser_set1 ===
-Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. #sprecher:blaeser #stimmung:laechelt
-Locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
+Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan – locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
 Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden dazu für jeden Zug. #sprecher:blaeser #stimmung:lacht
 Dann spielt die Band das nächste. #sprecher:blaeser #stimmung:lacht
 + [„Spielen wir.“]
@@ -151,7 +150,7 @@ Sie gibt dir ein zerknittertes Blatt: neben jedem Lied eine Nummer zwischen 0 un
 -> END
 
 === blaeser_alltag ===
-{~Heute steht der König auf b1. Gestern auf g1. Morgen? Wer weiß.|Auswendig lernen ist wie Noten ablesen. Schön, aber noch keine Musik.|Remy will Schach960 mit der Trompete ansagen. Ich hab Nein gesagt.} #sprecher:blaeser #stimmung:laechelt
+{~Heute steht der König auf b1, gestern auf g1. Wer weiß, wo er morgen steht.|Auswendig lernen ist wie Noten ablesen. Schön, aber noch keine Musik.|Remy will Schach960 mit der Trompete ansagen. Ich hab Nein gesagt.} #sprecher:blaeser #stimmung:laechelt
 + [„Noch ein Set?“]
     Immer. #sprecher:blaeser #stimmung:laechelt
     ~ beginnePartie("portDelacroix.schach960Set3")

@@ -187,7 +187,7 @@ Dann geht die Tür auf. #sprecher:erzaehler
     Dafür brauche ich keine Knie. Nur Zeit. #sprecher:albescu #stimmung:laechelt
 - else:
     {fahrradErhalten:
-        {~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Öl die Kette, wenn es geregnet hat. Hier regnet es immer.} #sprecher:albescu #stimmung:laechelt
+        {~Fährt es gut? Die Bremsen hab ich frisch eingestellt, im Kopf.|Öl die Kette, wenn es geregnet hat. Hier regnet es immer.} #sprecher:albescu #stimmung:laechelt
     - else:
         Der Schuppen ist offen. Geh nur hinein, hinten unter der Plane steht etwas für dich. #sprecher:albescu #stimmung:laechelt
     }
@@ -208,8 +208,7 @@ Dann geht die Tür auf. #sprecher:erzaehler
 }
 ~ novaGesehen = true
 Auf dem Podium steht ein Mädchen in einer weißen Jacke mit dem Zeichen des Konzerns und lächelt in die Kameras. #sprecher:erzaehler
-Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner. #sprecher:nova #stimmung:froh
-Keine schlechten Tage. #sprecher:nova #stimmung:froh
+Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner, keine schlechten Tage. #sprecher:nova #stimmung:froh
 Der Tisch ist immer bereit, immer geduldig, immer genau so stark, wie du ihn brauchst. #sprecher:nova #stimmung:froh
 Dann gehen die roten Lichter an den Kameras aus. Ihr Lächeln fällt herunter wie etwas, das man loslässt. #sprecher:erzaehler #pause:2
 Kann ich jetzt kurz sitzen? #sprecher:nova #stimmung:nachdenklich
@@ -230,7 +229,7 @@ Der Highschools. Die hat noch nie verloren. #sprecher:juno #stimmung:ueberrascht
 Neben dem Podium steht Victor, im selben Weiß, die Hände auf dem Rücken. Auf seiner Jacke steht sein Name. #sprecher:erzaehler
 Ins Mikrofon sagt er drei Sätze. Es sind die Sätze seines Vaters. #sprecher:erzaehler
 Dann kommt er herüber, nicht schnell. #sprecher:erzaehler
-Du. #sprecher:victor #stimmung:kalt
+{held}. #sprecher:victor #stimmung:kalt
 Er sieht auf deine Jacke. #sprecher:erzaehler
 Zwei. #sprecher:victor #stimmung:bitter
 * [„Zwei.“]
@@ -288,8 +287,7 @@ Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:er
 ~ eliGesehen = true
 {
 - endeAkt3Gesehen:
-    Eli spielt heute unter der Brücke, an einem Klappbrett. Gestern saß er am Tisch. #sprecher:erzaehler
-    Beides ist recht. #sprecher:erzaehler
+    Eli spielt heute unter der Brücke, an einem Klappbrett. Gestern saß er am Tisch, beides ist recht. #sprecher:erzaehler
 - nadelIronwood > 0:
     Eli sitzt am Rand unter der Brücke und schaut den anderen zu. Er sagt nichts. #sprecher:erzaehler
     Er geht auch nicht. #sprecher:erzaehler

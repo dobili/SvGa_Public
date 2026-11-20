@@ -285,6 +285,7 @@ def baue_tiere(privat: Path) -> None:
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     nur_tiere = "--nur-tiere" in argv
     argv = [a for a in argv if a != "--nur-tiere"]
     if len(argv) != 1:

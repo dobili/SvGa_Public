@@ -75,7 +75,7 @@ Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:jun
 Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“ #sprecher:erzaehler
 Darauf ein Kind, das in einen Bildschirm lächelt. Es ist das einzige Glänzende weit und breit. #sprecher:erzaehler
 {abschiedGesehen: -> END}
-Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
+Ein Plakat, das droht. Und es lächelt dabei. #sprecher:ambrose #stimmung:streng
 * [„Das ist die Firma von Victors Vater.“]
     So. Dann hat die Drohung einen Namen. #sprecher:ambrose #stimmung:nachdenklich
 * [„Vielleicht ist das gar nicht so schlecht.“]
@@ -182,8 +182,7 @@ Eine. Von Anfang bis Ende richtig und von Anfang bis Ende schön. #sprecher:ambr
 Ich habe mein ganzes Leben geglaubt, man müsse wählen. Hale hat richtig gespielt und ich schön. #sprecher:ambrose #stimmung:nachdenklich
 * [Zuhören]
 - Er hat gewonnen. Und ich habe mir gesagt, dass es das wert war. #sprecher:ambrose #stimmung:bitter #pause
-Ich hatte sie fast. Die eine Partie. #sprecher:ambrose #stimmung:nachdenklich
-Auf diesem Brett. #sprecher:ambrose #stimmung:nachdenklich
+Ich hatte sie fast. Die eine Partie – auf diesem Brett. #sprecher:ambrose #stimmung:nachdenklich
 * [„Die Fernpartie.“]
 * [Auf das Brett sehen]
 - Gegen ihn. Per Brief. #sprecher:ambrose #stimmung:nachdenklich
@@ -330,8 +329,7 @@ Noch eine Runde, während die Fische schlafen? #sprecher:rosa #stimmung:laechelt
     -> END
 
 === rosa_nach_niederlage ===
-Gezappelt. Der Vorteil ist weggeschwommen. #sprecher:rosa #stimmung:laechelt
-Noch mal? #sprecher:rosa #stimmung:laechelt
+Gezappelt. Der Vorteil ist weggeschwommen, noch mal? #sprecher:rosa #stimmung:laechelt
 Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa #stimmung:laechelt
 + [„Revanche.“]
     -> rosa_duell
@@ -342,8 +340,7 @@ Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa #stimmung:laechelt
 // vorteil. Vorher ging es in rosa_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === rosa_nach_remis ===
-Gehalten, aber nicht ausgebaut. Remis. #sprecher:rosa #stimmung:laechelt
-Noch mal? #sprecher:rosa #stimmung:laechelt
+Gehalten, aber nicht ausgebaut. Remis, noch mal? #sprecher:rosa #stimmung:laechelt
 + [„Revanche.“]
     -> rosa_duell
 + [„Nicht jetzt.“]
@@ -394,8 +391,7 @@ Langsam, Zug um Zug, gegen etwas, das nie zögert. #sprecher:erzaehler
 
 === victor_weg ===
 Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler #musik:victor
-Er hält den Kopf wie er. Ein wenig schief. #sprecher:ambrose #stimmung:nachdenklich
-Wenn er rechnet. #sprecher:ambrose #stimmung:nachdenklich
+Er hält den Kopf wie er. Ein wenig schief – wenn er rechnet. #sprecher:ambrose #stimmung:nachdenklich
 * [„Wie wer?“]
     Keine Antwort. #sprecher:erzaehler #pause:2
 * [Nichts sagen]
@@ -510,11 +506,9 @@ Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzae
 Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus. #sprecher:erzaehler #klang:bus
 Dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff_finger
 Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado #stimmung:laechelt
-Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer. #sprecher:sam #stimmung:laechelt
-Der ist hart. #sprecher:sam #stimmung:laechelt
+Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #sprecher:sam #stimmung:laechelt
 * {sternennachtGesehen} [„Wir haben elf Sternschnuppen gesehen.“]
-    Elf? Und ich hab geschlafen. #sprecher:sam #stimmung:ueberrascht
-    Typisch. #sprecher:sam #stimmung:ueberrascht
+    Elf? Und ich hab geschlafen – typisch. #sprecher:sam #stimmung:ueberrascht
 * [„Wir haben auf Matten geschlafen. Zwischen den Regalen.“]
     Zwischen Büchern? Da wär ich nie eingeschlafen. #sprecher:sam #stimmung:lacht
     Doch. Wär ich. #sprecher:sam #stimmung:lacht
@@ -561,10 +555,9 @@ Mr. Kettering sieht hinüber und sagt nichts. Er nickt dir zu und lässt den Mot
 
 === kettering_d ===
 Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doch.“ #sprecher:erzaehler
-Einunddreißig Jahre. Und ein paar Monate. #sprecher:kettering #stimmung:laechelt
-Wer zählt mit? #sprecher:kettering #stimmung:laechelt
+Einunddreißig Jahre. Und ein paar Monate, wer zählt mit? #sprecher:kettering #stimmung:laechelt
 {not abschiedGesehen:
-    Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
+    Ein Mann, der seine Strecke nicht hergibt. Er hätte auch Postkutschen gefahren. #sprecher:ambrose #stimmung:laechelt
 }
 -> bus_zurueck.wahl
 
@@ -598,8 +591,7 @@ Dann ziehst du ja nie! #sprecher:ivy #stimmung:lacht
 
 === zwillinge_b ===
 Die Zwillinge sitzen wieder auf der Treppe. Zwischen ihnen liegt jetzt ein Zettel mit Strichen. #sprecher:erzaehler
-Miss Ashby zählt mit. Sie ist die Schiedsrichterin. #sprecher:ivy #stimmung:laechelt
-Sie guckt immer. #sprecher:ivy #stimmung:laechelt
+Miss Ashby zählt mit. Sie ist die Schiedsrichterin – sie guckt immer. #sprecher:ivy #stimmung:laechelt
 Dreizehn zu zwölf. Für mich. #sprecher:jonah #stimmung:laechelt
 Für mich! #sprecher:ivy #stimmung:bitter
 -> END

@@ -207,6 +207,7 @@ def rendere(privat: Path, bilder: Path, szenen: list[dict]) -> dict[str, tuple[i
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     orte = None
     if "--orte" in argv:
         i = argv.index("--orte")

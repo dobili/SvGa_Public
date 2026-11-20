@@ -55,7 +55,7 @@ VAR ausgangCapitalArenaFinale = ""
 === victor_vorher ===
 Victor steht draußen am Geländer der Plattform und hört etwas über einen Ohrstöpsel. Als er dich sieht, nimmt er ihn heraus. #sprecher:erzaehler
 Nicht jetzt. Ich hab Vorbereitung. #sprecher:victor #stimmung:bitter
-Der Coach sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #sprecher:victor #stimmung:bitter
+Mein Trainer sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #sprecher:victor #stimmung:bitter
 -> END
 
 === victor_bergstation ===
@@ -152,7 +152,7 @@ Was sagt er? #sprecher:victor #stimmung:ueberrascht #pause:2
 Wegen des Bretts. #sprecher:victor #stimmung:nachdenklich
 Du siehst zu Ambrose. Er nickt. #sprecher:erzaehler #pause
 * [„Er sagt, dein Vorfahr war gewissenhaft und unerträglich.“]
-- Und dass er hundertsechzig Jahre auf diesen Zug gewartet hat. #sprecher:erzaehler
+- Und dass er ein Leben und länger auf diesen Zug gewartet hat. #sprecher:erzaehler
 Wie ist er? Der Zug. #sprecher:victor #stimmung:laechelt
 Ist er gut? #sprecher:victor #stimmung:laechelt
 Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
@@ -168,9 +168,9 @@ Gehen wir runter zur Hütte? Ward wartet mit deiner Partie, und ich will zusehen
 - wardLaurieGesagt and nadelSummitCity == 0:
     Ich bin nur kurz rauf, wegen der Aussicht. Unten wartet Ward mit deiner Partie. #sprecher:victor #stimmung:laechelt
 - ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":
-    {~Hier oben ist kein Netz. Ich komme immer noch her.|Mein Vater fährt jetzt manchmal mit hoch. Er sagt nichts. Das ist schön.} #sprecher:victor #stimmung:laechelt
+    {~Hier oben ist kein Netz. Ich komme immer noch her.|Mein Vater fährt jetzt manchmal mit hoch und sagt nichts. Das ist schön.} #sprecher:victor #stimmung:laechelt
 - else:
-    {~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück. Vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
+    {~Hier oben ist kein Netz. Ich komme jetzt öfter her.|Mein Vater hat dreimal angerufen. Ich ruf morgen zurück, vielleicht.|Wenn wir beide durchkommen, spielen wir in der Arena gegeneinander. Ich freu mich drauf.} #sprecher:victor #stimmung:laechelt
 }
 -> END
 

@@ -65,7 +65,7 @@ Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengelä
 {verbotGesehen:
     Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler
     Die können hier zählen. #sprecher:juno #stimmung:laechelt
-    Wir gucken nur. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
+    Ich zähl die Kreidebretter. Elf! Ironwood ist ein Brett. #sprecher:juno #stimmung:laechelt
     -> END
 }
 ~ verbotGesehen = true
@@ -79,8 +79,7 @@ Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 - Frag nicht. Bitte. #sprecher:mutter #stimmung:verschlossen
 Nicht heute. #sprecher:mutter #stimmung:verschlossen
 Sie hat schon aufgelegt. #sprecher:erzaehler
-Deine Mutter hat Angst. Vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
-Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
+Deine Mutter hat Angst. Vor einer Stadt, das ist selten. #sprecher:ambrose #stimmung:nachdenklich
 Wir gucken nur. Gucken ist kein Turnier. #sprecher:juno #stimmung:laechelt
 Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
 -> END
@@ -164,8 +163,7 @@ Darin ein Brett zum Aufklappen, mit Magnetfiguren. #sprecher:erzaehler #bild:aus
 Ich kann nur bis Mittwoch mit. Dann ist Schule. #sprecher:juno #stimmung:nachdenklich
 Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. #sprecher:juno #stimmung:froh
 Oder mit mir, wenn ich anrufe. #sprecher:juno #stimmung:froh
-Ein Brett für die Tasche. Meines ist schwerer. #sprecher:ambrose #stimmung:laechelt
-Und gesprächiger. #sprecher:ambrose #stimmung:laechelt
+Ein Brett für die Tasche. Meines ist schwerer, und gesprächiger. #sprecher:ambrose #stimmung:laechelt
 Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmung:froh
 -> bus_silicon_bay_einsteigen
 
@@ -176,8 +174,7 @@ Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmu
     -> END
 * [Noch nicht]
     {not abschiedGesehen:
-        Silicon Bay. Wir fahren, wenn du bereit bist. #sprecher:ambrose #stimmung:laechelt
-        Nicht früher. #sprecher:ambrose #stimmung:laechelt
+        Silicon Bay. Wir fahren, wenn du bereit bist, nicht früher. #sprecher:ambrose #stimmung:laechelt
     }
     -> END
 
@@ -311,8 +308,7 @@ Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pok
 Er sieht Graham Hale nicht an. Hinter ihm tragen Hank und Priya das Stahlbrett, zu zweit. #sprecher:erzaehler
 Neben seinem Vater steht Victor, in Weiß, das Tablet unter dem Arm. Er sieht Big Joe nach, den großen Händen, die den Karton halten, als wäre er aus Glas. #sprecher:erzaehler
 Vater. Vielleicht … #sprecher:victor #stimmung:nachdenklich #pause
-Graham Hale dreht sich zu ihm um. Freundlich. #sprecher:erzaehler
-Fragend. #sprecher:erzaehler
+Graham Hale dreht sich zu ihm um. Freundlich – fragend. #sprecher:erzaehler
 Nichts. #sprecher:victor #stimmung:bitter
 {mamaSpielt:
     Mama geht über den Platz, an dem schwarzen Wagen vorbei, und nimmt Big Joe den Karton ab. Zusammen heben sie ihn in den Lieferwagen. #sprecher:erzaehler

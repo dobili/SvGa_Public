@@ -87,14 +87,12 @@ Die Nadel holt man gegen mich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Was muss ich tun?“]
     Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado #stimmung:neutral
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
-Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. #sprecher:erzaehler
-Das ist Sam. #sprecher:erzaehler
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen, das ist Sam. #sprecher:erzaehler
 // Lektorat 19.11.2026: Wer das Brett schon angesehen hat (ansehen-maple-falls), liest es nicht zweimal.
 {angesehenBrettOhneDame:Der Radiergummi steht noch auf d8. #sprecher:erzaehler}
 {not angesehenBrettOhneDame:Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler}
 {not angesehenBrettOhneDame:
-    Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. #sprecher:ambrose #stimmung:lacht
-    Aber nicht oft. #sprecher:ambrose #stimmung:lacht
+    Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen, aber nicht oft. #sprecher:ambrose #stimmung:lacht
 }
 ~ setzeSzene("akt1.ersterSchultag")
 -> END
@@ -184,8 +182,7 @@ Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler #klang:fa
 
 === coach_nach_niederlage ===
 Das war nichts für heute. Aber du hast in der Eröffnung gut gekämpft. #sprecher:coachDelgado #stimmung:laechelt
-Noch einmal? Ich habe Zeit. #sprecher:coachDelgado #stimmung:laechelt
-Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
+Noch einmal? Ich habe Zeit, und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -216,9 +213,9 @@ Und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 
 === coach_alltag ===
 {nadelMapleFalls < 3:
-    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|{coachStand()}} #sprecher:coachDelgado #stimmung:laechelt
+    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe, sag Bescheid.|{coachStand()}} #sprecher:coachDelgado #stimmung:laechelt
 - else:
-    {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|{coachStand()}} #sprecher:coachDelgado #stimmung:froh
+    {~Goldnadel, ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|{coachStand()}} #sprecher:coachDelgado #stimmung:froh
 }
 + {nadelMapleFalls > 0 and nadelMapleFalls < 3} [„Noch eine Partie um die Nadel.“]
     ~ revancheMapleFalls = true
@@ -334,8 +331,7 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
     ~ lernkarteAbzaehlen = true
     Sam schiebt dir eine Karte über den Tisch. Darauf zwei Hände, die Figuren abzählen. #sprecher:erzaehler
     {hatKarteAbzaehlen:
-        Ach, die hast du schon. Dann zähl weiter. #sprecher:sam #stimmung:laechelt
-        Ich versuch's auch. #sprecher:sam #stimmung:laechelt
+        Ach, die hast du schon. Dann zähl weiter – ich versuch's auch. #sprecher:sam #stimmung:laechelt
     - else:
         Hat mir der Coach mal gegeben. Ich hab sie nie benutzt. #sprecher:sam #stimmung:laechelt
         Du zählst ja sowieso. #sprecher:sam #stimmung:laechelt
@@ -352,8 +348,7 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
         Noch mal? Klar! #sprecher:sam #stimmung:laechelt
         Aber diesmal passt du besser auf deine Figuren auf. #sprecher:sam #stimmung:laechelt
     - else:
-        Noch mal! Diesmal mache ich alles richtig. #sprecher:sam #stimmung:laechelt
-        Fast alles. #sprecher:sam #stimmung:laechelt
+        Noch mal! Diesmal mache ich alles richtig, fast alles. #sprecher:sam #stimmung:laechelt
     }
 }
 * {not gespieltSamRevanche()} [„Eine Partie.“]
@@ -420,7 +415,7 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno #stimmung:laec
     -> END
 
 === juno_club_alltag ===
-{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Das kommt ins Tagebuch.|Ich hab gegen den Coach eine Figur gewonnen. Dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno #stimmung:laechelt
+{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Ich hab das Datum unterstrichen.|Ich hab gegen den Coach eine Figur gewonnen und dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Victor
@@ -521,13 +516,13 @@ Als der Raum leer ist, holst du das Brett aus der Tasche und legst es auf einen 
 {ausgangMapleFallsVictor == "niederlage":
     Ambrose zeigt dir zwei Stellen. Genau und ohne ein Wort zu viel. #sprecher:erzaehler
 - else:
-    Du hast eine schwere Stellung gehalten, mit einem Springer weniger. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
+    Du hast eine schwere Stellung gehalten, mit einem Springer weniger. Damit stand man früher in der Zeitung. #sprecher:ambrose #stimmung:stolz
 }
 * [„Du bist erschrocken. Vorhin.“]
     Bin ich das. #sprecher:ambrose #stimmung:bitter
     * * [„Hale.“]
         Er steht mit dem Rücken zu dir. Die alte Stellung liegt zwischen euch. #sprecher:erzaehler
-        Schwarz ist am Zug, seit hundertsechzig Jahren. #sprecher:erzaehler #pause
+        Schwarz ist am Zug, seit damals. #sprecher:erzaehler #pause
         Ein Name. Es gibt viele Hales. #sprecher:ambrose #stimmung:traurig
         Du weißt, dass er lügt. Er lügt nicht besser als Mama. #sprecher:erzaehler
 * [Nichts fragen]
@@ -541,8 +536,7 @@ In deiner eigenen Schrift, ohne Glitzer. #sprecher:erzaehler #klang:tagebuch
 -> END
 
 === victor_weg ===
-Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult. #sprecher:erzaehler
-Ausgeschaltet. #sprecher:erzaehler
+Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult – ausgeschaltet. #sprecher:erzaehler
 -> END
 
 // Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Juno, sonst wie bisher.
@@ -557,8 +551,7 @@ Jetzt fehlt nur noch der Coach. Die Clubnadel gibt es nur gegen sie. #sprecher:j
 === sam_reihe_danach ===
 {not reiheSamBestanden: -> sam}
 Du hast jedes Mal gezählt. Und nicht einmal genommen, was ich dir hingestellt hab. #sprecher:sam #stimmung:ueberrascht
-Na gut. Juno hat auch noch Aufgaben. #sprecher:sam #stimmung:laechelt
-Mit Glitzer, wahrscheinlich. #sprecher:sam #stimmung:laechelt
+Na gut. Juno hat auch noch Aufgaben, mit Glitzer, wahrscheinlich. #sprecher:sam #stimmung:laechelt
 -> END
 
 // Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem

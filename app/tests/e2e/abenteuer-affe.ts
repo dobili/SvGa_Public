@@ -14,6 +14,9 @@ import { starteImBrowser } from "./hilfen";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
 import { lagebild, offeneFenster, tippbarerText } from "./abenteuer-lage";
 
+/** So viele Zeilen des Stapels nennt ein Fund im Protokoll. */
+const STAPELZEILEN = 6;
+
 /** Zufallszahlen mit festem Startwert (mulberry32), damit ein Fund sich wiederholen lässt. */
 export function zufallMit(startwert: number): () => number {
   let a = startwert >>> 0;
@@ -119,7 +122,13 @@ export function liesSpeicherImBrowser(): Promise<{
 /** Sammelt Ausnahmen und Konsolenfehler der Seite (auch über Neuladen hinweg). */
 export function beobachte(seite: Page): string[] {
   const funde: string[] = [];
-  seite.on("pageerror", (e) => funde.push(`Ausnahme: ${e.message}`));
+  // Mit den ersten Stapelzeilen, damit ein Fund im CI-Protokoll seine Stelle nennt (WebKit
+  // „Context is stopped“, Lauf 44750802847, stand ohne Stelle da).
+  seite.on("pageerror", (e) => {
+    const stelle = (e.stack ?? "").split("\n").slice(0, STAPELZEILEN).join(" | ");
+    funde.push(`Ausnahme: ${e.message}`);
+    if (stelle) console.log(`Ausnahme im Browser: ${e.message} @ ${stelle}`);
+  });
   seite.on("console", (m) => {
     if (m.type() !== "error") return;
     const text = m.text();

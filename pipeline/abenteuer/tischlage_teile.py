@@ -107,10 +107,12 @@ def _deckend_im_bild(
 
 
 def mitte(r: Rechteck) -> tuple[float, float]:
+    """Mittelpunkt eines Rechtecks (x0, y0, x1, y1)."""
     return (r[0] + r[2]) / 2, (r[1] + r[3]) / 2
 
 
 def vereinige(rechtecke: list[Rechteck]) -> Rechteck:
+    """Kleinstes Rechteck, das alle umfasst."""
     return (
         min(r[0] for r in rechtecke),
         min(r[1] for r in rechtecke),

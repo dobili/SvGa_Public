@@ -41,7 +41,7 @@ VAR abschiedGesehen = false
 
 === zeitungsjunge ===
 {zeitungsjungeGesehen:
-    {~Extra! Die Weltausstellung im Glaspalast! Ein Penny, Sir!|Schachturnier in London, die besten Spieler der Welt! Lesen Sie alles darüber!} #sprecher:zeitungsjunge #stimmung:laechelt
+    {~Extra, die Weltausstellung im Glaspalast! Ein Penny, Sir!|Schachturnier in London, die besten Spieler der Welt! Lesen Sie alles darüber!} #sprecher:zeitungsjunge #stimmung:laechelt
     -> END
 }
 ~ zeitungsjungeGesehen = true
@@ -69,8 +69,7 @@ Eine Droschke wartet am Straßenrand, das Pferd schnaubt in der kalten Luft. Der
 }
 ~ londonKaffeehausGesehen = true
 Du stehst in einer Straße. Alles ist braun und golden, wie eine alte Fotografie, in die jemand hineingegangen ist. #sprecher:erzaehler
-Du siehst auf Hände hinunter, die nicht deine sind. Schmal, mit Tintenflecken. #sprecher:erzaehler
-Die Stiefel drücken. #sprecher:erzaehler #pause
+Du siehst auf Hände hinunter, die nicht deine sind. Schmal, mit Tintenflecken, die Stiefel drücken. #sprecher:erzaehler #pause
 {not abschiedGesehen:
     Der Strand. So heißt die Straße. #sprecher:ambrose #stimmung:jung
     Dort, das Haus mit dem Schild. Geh hinein. #sprecher:ambrose #stimmung:jung
@@ -103,7 +102,7 @@ Ein Kellner mit weißer Schürze balanciert ein Tablett mit Tassen zwischen den 
     -> END
 }
 Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht auf. #sprecher:erzaehler
-{~Das Turnier? Dummes Zeug. Ich lese den Börsenbericht.|Der Deutsche am Tisch in der Mitte verliert gleich alles. Sehen Sie nur, er gibt seine Figuren weg.|Junger Mann, Sie stehen in meinem Licht.} #sprecher:zeitungsleser #stimmung:bitter
+{~Das Turnier ist dummes Zeug. Ich lese den Börsenbericht.|Der Deutsche am Tisch in der Mitte verliert gleich alles. Sehen Sie nur, er gibt seine Figuren weg.|Junger Mann, Sie stehen in meinem Licht.} #sprecher:zeitungsleser #stimmung:bitter
 -> END
 
 === schachtisch ===
@@ -139,8 +138,7 @@ Schwarz schlägt einen Turm. Einfach so, einen ganzen Turm. #sprecher:erzaehler 
 {abschiedGesehen:
     Weiß hat einen Turm weniger, und der zweite Turm hängt auch. #sprecher:erzaehler
 - else:
-    Jetzt. Halt. #sprecher:ambrose #stimmung:jung
-    Schau hin. #sprecher:ambrose #stimmung:jung
+    Jetzt. Halt – schau hin. #sprecher:ambrose #stimmung:jung
     Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose #stimmung:jung
 }
 -> schachtisch_wahl

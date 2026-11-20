@@ -258,6 +258,7 @@ def bericht(moebel: dict) -> str:
 
 
 def main(argumente: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.moebelliste import lade_moebel
 
     moebel, anzahl, ohne = lade_moebel(), 0, set()

@@ -73,8 +73,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. #sprecher:buck
 Na, traust du dich? #sprecher:buck #stimmung:laechelt
 + [„Klar.“]
     {versoehnungGesehen and not abschiedGesehen:
-        Er redet so schnell, wie er zieht. Lass ihn reden. #sprecher:ambrose #stimmung:laechelt
-        Du denkst. #sprecher:ambrose #stimmung:laechelt
+        Er redet so schnell, wie er zieht. Ein Plappermaul hat selten Zeit zum Nachsehen. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -92,8 +91,7 @@ Na, traust du dich? #sprecher:buck #stimmung:laechelt
     {versoehnungGesehen and not abschiedGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
-Schnell und gut. Das gibt's hier draußen selten. #sprecher:buck #stimmung:laechelt
-Noch eine Runde? #sprecher:buck #stimmung:laechelt
+Schnell und gut. Das gibt's hier draußen selten, noch eine Runde? #sprecher:buck #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -113,8 +111,7 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 // vorteil. Vorher ging es in buck_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === buck_nach_remis ===
-Unentschieden! Volltanken reicht nicht, du musst auch losfahren. #sprecher:buck #stimmung:laechelt
-Noch mal? #sprecher:buck #stimmung:laechelt
+Unentschieden! Volltanken reicht nicht, du musst auch losfahren, noch mal? #sprecher:buck #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -152,7 +149,7 @@ Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. #sprecher:erzaehl
 Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch.“ #sprecher:erzaehler
 „Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler
 Der letzte Satz gefällt dir nicht. #sprecher:erzaehler #pause
-Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
+Die Glasschachtel von dem Jungen mit den Zahlen. Sie liegt in deinem Rucksack. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
 Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich
 Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 * [„Sicher?“]
@@ -182,7 +179,7 @@ Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:laechelt
 * [„Wer ist das?“]
 - Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter #stimmung:lacht
 Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter #stimmung:nachdenklich
-Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit hundertsechzig Jahren auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
+Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit Generationen auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
 Schwarz am Zug. #sprecher:erzaehler #pause:3
 -> END
 
@@ -214,7 +211,7 @@ Juno hat dir eine Seite im Tagebuch geschenkt, leer, mit einem Rahmen aus Glitze
 Am Ende der Hauptstraße beginnt der Highway. Mama klimpert mit einem Autoschlüssel. #sprecher:erzaehler
 Dot leiht uns ihr Auto. Drei Wochen Urlaub, und wir sehen mehr als vom Zug aus. #sprecher:mutter #stimmung:laechelt
 Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #stimmung:froh
-Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
+Eine Kutsche ohne Pferde. Zu meiner Zeit nahm man die Postkutsche, und die nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
 * [Weiterfahren]
 - Ambrose ist leichter seit dem Canyon. Er lobt einen Bauern, der einfach ein Feld vorrückt. #sprecher:erzaehler
 Hässlich. Und vollkommen richtig. #sprecher:ambrose #stimmung:lacht

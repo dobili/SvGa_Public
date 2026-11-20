@@ -108,6 +108,7 @@ export interface Probe {
   readonly zuege?: number;
 }
 
+/** Liest eine JSON-Datei aus inhalte/abenteuer (Messläufe laufen in Node, ohne Paket). */
 export function lies<T>(pfad: string): T {
   return JSON.parse(readFileSync(join(WURZEL, pfad), "utf8")) as T;
 }

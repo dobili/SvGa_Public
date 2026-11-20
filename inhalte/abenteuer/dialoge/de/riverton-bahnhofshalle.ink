@@ -106,8 +106,7 @@ Mr. Harlan hebt den Kopf, sehr langsam. Hinter den Gläsern sind seine Augen rie
 === harlan_angebot ===
 Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan #stimmung:laechelt
 Er sieht hinauf zur großen Uhr. #sprecher:erzaehler
-Eile ist der Feind der Feder. Und der Unruh. #sprecher:harlan #stimmung:laechelt
-Aber bitte. #sprecher:harlan #stimmung:laechelt
+Eile ist der Feind der Feder. Und der Unruh, aber bitte. #sprecher:harlan #stimmung:laechelt
 {not abschiedGesehen:
     Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose #stimmung:laechelt
 }
@@ -156,8 +155,7 @@ Langsam ist auch eine Geschwindigkeit. Noch einmal? #sprecher:harlan #stimmung:l
 // vorteil. Vorher ging es in harlan_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === harlan_nach_remis ===
-Unentschieden. Der Zug ist pünktlich, aber nicht schneller. #sprecher:harlan #stimmung:laechelt
-Noch einmal? #sprecher:harlan #stimmung:laechelt
+Unentschieden. Der Zug ist pünktlich, aber nicht schneller, noch einmal? #sprecher:harlan #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.harlan")
     -> END
@@ -172,16 +170,15 @@ Noch einmal? #sprecher:harlan #stimmung:laechelt
 - popsGetroffen:
     // Lektorat Akt 2 (17.11.2026): Slicks zwei Limos nur vor dem letzten Spiel.
     {nadelRiverton == 0:
-        {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.|Slick kauft jeden Morgen eine Limo. Heute zwei. Er ist nervös.} #sprecher:pops #stimmung:laechelt
+        {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser, noch.|Slick kauft jeden Morgen eine Limo, heute zwei. Er ist nervös.} #sprecher:pops #stimmung:laechelt
     - else:
-        {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.} #sprecher:pops #stimmung:laechelt
+        {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser, noch.} #sprecher:pops #stimmung:laechelt
     }
     -> pops_laden
 }
 ~ popsGetroffen = true
 Ein runder, freundlicher Mann hinter einem Zeitungsstand. Neben den Zeitungen hängt eine Reihe Taschenschachspiele, in allen Farben. #sprecher:erzaehler
-Pops. Zeitungen, Limo, Taschenschach. #sprecher:pops #stimmung:laechelt
-Seit dreißig Jahren. #sprecher:pops #stimmung:laechelt
+Pops. Zeitungen, Limo, Taschenschach – seit dreißig Jahren. #sprecher:pops #stimmung:laechelt
 Ein Kiosk ist eine Bibliothek, die man essen kann. Schau dich um. #sprecher:pops #stimmung:laechelt
 Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops #stimmung:laechelt
 -> pops_laden

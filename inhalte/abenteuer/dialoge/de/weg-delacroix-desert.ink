@@ -108,8 +108,7 @@ Ein Springer, ein Läufer, und der schwarze König liegt um. #sprecher:erzaehler
 -> mira_spricht
 
 = mira_ambrose
-Sie spielt wie ich mit zwanzig. Nur besser. #sprecher:ambrose #stimmung:froh
-Viel besser. #sprecher:ambrose #stimmung:froh
+Sie spielt wie ich mit zwanzig. Nur besser, viel besser. #sprecher:ambrose #stimmung:froh
 Sie zögert nicht. Aber sie rechnet. #sprecher:ambrose #stimmung:ueberrascht
 Sie rechnet, und sie zögert nicht, und … #sprecher:ambrose #stimmung:ueberrascht
 Er hört auf. Er hat gemerkt, wie er klingt. #sprecher:erzaehler
@@ -130,8 +129,7 @@ Wer bist du? #sprecher:mira #stimmung:nachdenklich
 - Sie denkt darüber nach. Es scheint ihr als Antwort zu genügen. #sprecher:erzaehler
 Im Canyon antwortet das Echo. Am Brett nicht. #sprecher:mira #stimmung:nachdenklich
 Deshalb mag ich das Brett. #sprecher:mira #stimmung:nachdenklich
-Ich bin Mira. Komm morgen in die Garage. #sprecher:mira #stimmung:laechelt
-Am Motel. #sprecher:mira #stimmung:laechelt
+Ich bin Mira. Komm morgen in die Garage, am Motel. #sprecher:mira #stimmung:laechelt
 Wenn du gut bist, spielen wir. Wenn nicht, auch, aber kürzer. #sprecher:mira #stimmung:laechelt
 Sie springt vom Stein und läuft barfuß über den heißen Sand davon, das Brett unter dem Arm. #sprecher:erzaehler
 -> END
@@ -157,8 +155,7 @@ Sie springt vom Stein und läuft barfuß über den heißen Sand davon, das Brett
 ~ versoehnungGesehen = true
 ~ ambroseSprichtWieder = true
 Wo der Canyon sich öffnet, steht ein Bogen aus Fels. Ein Tor ohne Mauer, so hoch wie ein Haus. #sprecher:erzaehler #licht:abend #musik:aus
-Das Licht kommt flach und färbt alles: den Fels, den Sand, deine Hände. Kupfer. #sprecher:erzaehler
-Dann Gold. #sprecher:erzaehler
+Das Licht kommt flach und färbt alles: den Fels, den Sand, deine Hände. Kupfer, dann Gold. #sprecher:erzaehler
 Wenn nicht hier, dann nirgends. Du stellst den Geigenkasten auf einen Stein und nimmst das Brett heraus. #sprecher:erzaehler
 * [„Setz dich.“]
 - Er sieht dich an. Dann setzt er sich, dir gegenüber, auf den Fels. #sprecher:erzaehler
@@ -167,8 +164,7 @@ Ich habe einer Maschine zugesehen. Tausendachthundert Partien in einer Nacht. #s
 Ich habe zugesehen, weil sie nie zweifelt. Weil sie die Gewissheit hat, bevor man die Hand hebt. #sprecher:ambrose #stimmung:nachdenklich
 Du sagst nichts. #sprecher:erzaehler #pause
 Dann hat ein Junge mit einer Trompete gesagt, dass du schummelst. Er hatte recht, und es war meine Schuld. #sprecher:ambrose #stimmung:bitter
-Ich habe dir einen Zug gegeben, den ich nicht verstand. Ich habe ihn nur wiedererkannt. #sprecher:ambrose #stimmung:ertappt
-Wie ein Papagei. #sprecher:ambrose #stimmung:ertappt
+Ich habe dir einen Zug gegeben, den ich nicht verstand. Ich habe ihn nur wiedererkannt, wie ein Papagei. #sprecher:ambrose #stimmung:ertappt
 Sechs Tage im Kasten habe ich gehört, wie du nachdenkst. Und ich wusste nicht, was du ziehen wirst. #sprecher:ambrose #stimmung:nachdenklich
 Er hebt den Kopf. #sprecher:erzaehler
 Ich wusste es nicht, {held}. Zum ersten Mal. #sprecher:ambrose #stimmung:laechelt
@@ -197,10 +193,10 @@ Die Sonne berührt den Rand der Welt. #sprecher:erzaehler #licht:nacht
 = erzaehlung_1866
 Er hatte Ja gesagt. Zur Revanche. #sprecher:ambrose #stimmung:nachdenklich #erinnerung
 Per Brief, weil er im Norden Brücken baute und ich im Süden saß. #sprecher:ambrose #stimmung:nachdenklich
-Ein Zug, ein Brief. Über ein Jahr. #sprecher:ambrose #stimmung:laechelt
+Ein Zug, ein Brief. Jahrelang. #sprecher:ambrose #stimmung:laechelt
 Es war die beste Partie meines Lebens. #sprecher:ambrose #stimmung:laechelt
 Ich habe gespielt wie er, gewissenhaft. Und er ein wenig wie ich. #sprecher:ambrose #stimmung:alt
-Er hat Dinge riskiert, die er 1858 nie riskiert hätte. #sprecher:ambrose #stimmung:alt
+Er hat Dinge riskiert, die er im Match damals nie riskiert hätte. #sprecher:ambrose #stimmung:alt
 * [„Und dann?“]
 - Dann wurde es ein Endspiel. Und Winter. #sprecher:ambrose #stimmung:nachdenklich
 Sein neununddreißigster Zug kam nicht. Vier Wochen. #sprecher:ambrose #stimmung:nachdenklich
@@ -232,8 +228,7 @@ Für ihn. So gründlich, als wärst du er. #sprecher:ambrose #stimmung:nachdenkl
 * [„Und wenn ich ihn nicht finde?“]
 - Dann hoffst du. Und spielst es. #sprecher:ambrose #stimmung:lachtOhneSpott
 Und siehst ihm ins Gesicht. #sprecher:ambrose #stimmung:lachtOhneSpott
-Das ist der Teil, den keine Maschine kann. Sie muss nie hoffen. #sprecher:ambrose #stimmung:laechelt
-Arme Maschine. #sprecher:ambrose #stimmung:laechelt
+Das ist der Teil, den keine Maschine kann. Sie muss nie hoffen, arme Maschine. #sprecher:ambrose #stimmung:laechelt
 Ihr übt, bis das Licht fort ist. #sprecher:erzaehler
 Morgen in die Garage am Motel, hat Mira gesagt. Wenn du gut bist, spielt ihr. #sprecher:erzaehler
 Im Geigenkasten liegt eine Karte, die du seit Port Delacroix nicht angefasst hast. #sprecher:erzaehler

@@ -53,10 +53,8 @@ Die liegen da, weil ich keins löse. Ich kauf sie trotzdem jede Woche. #sprecher
 - -> END
 
 === hector_b ===
-An der Wand hinter der Theke hängt ein Papierset in einem Rahmen. Mit einem Pfeil darauf. #sprecher:erzaehler
-In deiner Schrift. #sprecher:erzaehler
-Das erste, das hier einer gelöst hat. Am ersten Abend. #sprecher:hector #stimmung:froh
-Ich zeig's jedem. #sprecher:hector #stimmung:froh
+An der Wand hinter der Theke hängt ein Papierset in einem Rahmen. Mit einem Pfeil darauf – in deiner Schrift. #sprecher:erzaehler
+Das erste, das hier einer gelöst hat. Am ersten Abend – ich zeig's jedem. #sprecher:hector #stimmung:froh
 Die meisten nicken nur. Aber ich weiß, was es heißt. #sprecher:hector #stimmung:laechelt
 * [„Was heißt es denn?“]
     Dass es geht. Jemand sitzt da und sieht es. #sprecher:hector #stimmung:laechelt
@@ -75,8 +73,7 @@ Ich hab erst die Dame gezogen, dann gemerkt, das ist falsch, dann den Turm. Und 
 Matt. #sprecher:hector #stimmung:laechelt
 * [„Glückwunsch, Hector.“]
 * (dauer) [„Wie lange hat es gedauert?“]
-    Drei Wochen. Und eine Nacht. #sprecher:hector #stimmung:lacht
-    Und zwei Kaffee. #sprecher:hector #stimmung:lacht
+    Drei Wochen. Und eine Nacht, und zwei Kaffee. #sprecher:hector #stimmung:lacht
 - Ein Gast kommt herein. Hector dreht sich zu ihm um. #sprecher:erzaehler
 Hast du's gehört? Ich hab eins gelöst. #sprecher:hector #stimmung:froh
 Selbst! Matt in zwei! #sprecher:hector #stimmung:froh

@@ -179,6 +179,11 @@ export async function warteAufOffline(seite: Page): Promise<void> {
     timeout: 30_000,
   });
   await seite.getByRole("button", { name: "Buch" }).click();
+  // Erst weiter, wenn das Buch wirklich da ist: Die App merkt sich den Bildschirm (svga.stapel) und
+  // stellt ihn mit „weitermachen“ beim nächsten Öffnen wieder her. Navigierte der Test sofort weiter,
+  // war der Klick manchmal noch nicht verarbeitet; dann kam beim nächsten Start „Über die App“
+  // statt „Buch“ (Ausfall in abenteuer-offline.spec.ts, 20.11.2026).
+  await expect(seite.getByRole("heading", { name: "Buch" })).toBeVisible();
 }
 
 /** Bündel je Werkzeug, das nur als Reiter in einem Bündel steht (werkzeugordnung.ts). */

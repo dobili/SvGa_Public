@@ -13,7 +13,8 @@
  * der Karte hat ein kleines goldenes Dreieck wie der Hinweis in der Welt. Antippen verfolgt sie (der
  * Pfeil zeigt auf ihr Ziel), noch einmal Antippen hört auf (regeln/verfolgung.ts).
  * Abhängigkeiten: regeln/quests.ts, texte/texte.ts, app/blattstapel.ts, anbindung/meinePartien.ts,
- * speicher/speicher.ts (Partien der App), regeln/verfolgung.ts, oberwelt/zielsuche.ts.
+ * speicher/speicher.ts (Partien der App), regeln/verfolgung.ts, oberwelt/zielsuche.ts,
+ * oberwelt/WasBisherGeschah.tsx („Was bisher geschah“ je Akt, 20.11.2026).
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { useSpeicher } from "../../speicher/speicher";
@@ -30,6 +31,7 @@ import { gegnerakten } from "./steckbrieftext";
 import { wasJetzt } from "./wasjetzt";
 import { verfolgteLaufendeQuest } from "../regeln/verfolgung";
 import { zielangabe } from "./zielsuche";
+import { WasBisherGeschah } from "./WasBisherGeschah";
 import "../tagebuch.css";
 
 export function Tagebuch({
@@ -95,6 +97,8 @@ export function Tagebuch({
           </ul>
         </>
       )}
+      {/* Was bisher geschah, je Akt (regeln/rueckblick.ts, 20.11.2026). */}
+      <WasBisherGeschah stand={stand} />
       {/* Je ein Satz, was die Zahlen bedeuten (Spieltest „einstieg“, R9). */}
       <p className="hinweis">
         {tSpiel("tagebuch.wertung", { wertung: stand.wertung })}

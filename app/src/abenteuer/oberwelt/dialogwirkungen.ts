@@ -18,6 +18,7 @@ import { wendeWirkungenAn } from "../regeln/quests";
 import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
+import { bildDesFundes } from "./fensterbankfunde";
 import { auftragFuer } from "./auftraege";
 import { aktuelleToenung, toenungsvariable, type Toenung } from "./toenung";
 import type { Weltdaten } from "./weltdaten";
@@ -69,7 +70,7 @@ function gibFund(k: Wirkungskontext, kennung: string): void {
     tSpiel(fund?.extra ? "fund.gefundenExtra" : "fund.gefunden", {
       name: tSpiel(fund?.name ?? kennung),
     }),
-    fund?.bild,
+    fund ? bildDesFundes(fund) : undefined,
   );
 }
 

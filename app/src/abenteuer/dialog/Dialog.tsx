@@ -59,6 +59,7 @@ export function Dialog({
   beiKnoten,
   beiEnde,
   beiZeile,
+  buehneWartet = false,
 }: {
   readonly json: string;
   readonly knoten: string;
@@ -73,6 +74,8 @@ export function Dialog({
   readonly beiEnde: (variablen: Dialogvariablen) => void;
   /** Jede neue Zeile mit ihren Tags (Bühnenanweisungen der Oberwelt, T6 und T9). */
   readonly beiZeile?: (tags: Readonly<Record<string, string>>) => void;
+  /** Ein geführter Weg läuft (`#gehe`, oberwelt/useBuehne.ts): „Weiter“ und Wahlen warten. */
+  readonly buehneWartet?: boolean;
 }) {
   // Die Geschichte lebt, solange der Dialog offen ist; die Oberwelt baut den Dialog je Knoten neu
   // auf (key), deshalb genügt das einmalige Anlegen hier.
@@ -88,7 +91,8 @@ export function Dialog({
   // Pause (#pause, #pause:3): „Weiter“ ist so lange gesperrt. Gesetzt wird sie mit der Zeile (in
   // weiter), aufgehoben von der Uhr; jede neue Zeile startet sie neu.
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
-  const [wartet, setzeWartet] = useState(() => (letzteZeile ? dauerVon(letzteZeile) > 0 : false));
+  const [pausiert, setzeWartet] = useState(() => (letzteZeile ? dauerVon(letzteZeile) > 0 : false));
+  const wartet = pausiert || buehneWartet;
   const [erinnerung, setzeErinnerung] = useState(() =>
     letzteZeile ? erinnerungNach(false, letzteZeile) : false,
   );

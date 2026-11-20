@@ -210,6 +210,7 @@ export function Oberwelt() {
             dialoge.beiDialogende(variablen);
           }}
           beiZeile={buehne.zeile}
+          buehneWartet={buehne.laeuft}
         />
       )}
       {deckwahl && welt && (

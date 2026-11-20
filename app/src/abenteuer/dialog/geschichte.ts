@@ -57,13 +57,26 @@ export type Dialogschritt =
   | { readonly art: "wahl"; readonly wahlen: readonly string[] }
   | { readonly art: "ende" };
 
-/** Tags „name:wert“ als Objekt; ein Tag ohne Doppelpunkt („pause“) bekommt den Wert „ja“. */
+/** Tags, die mehrmals in einer Zeile stehen dürfen; ihre Werte werden mit „;“ verbunden. */
+const MEHRFACHE_TAGS = new Set(["gehe"]);
+
+/**
+ * Tags „name:wert“ als Objekt; ein Tag ohne Doppelpunkt („pause“) bekommt den Wert „ja“. Sonst
+ * gilt der letzte Wert; nur `gehe` (geführte Wege, oberwelt/gefuehrterweg.ts) sammelt alle:
+ * `#gehe:held>haustuer #gehe:mutterAussen>haustuer` → „held>haustuer;mutterAussen>haustuer“.
+ */
 export function tagsAus(tags: readonly string[] | null): Readonly<Record<string, string>> {
   const ergebnis: Record<string, string> = {};
   for (const tag of tags ?? []) {
     const trenner = tag.indexOf(":");
-    if (trenner < 0) ergebnis[tag.trim()] = "ja";
-    else ergebnis[tag.slice(0, trenner).trim()] = tag.slice(trenner + 1).trim();
+    if (trenner < 0) {
+      ergebnis[tag.trim()] = "ja";
+      continue;
+    }
+    const name = tag.slice(0, trenner).trim();
+    const wert = tag.slice(trenner + 1).trim();
+    const alt = ergebnis[name];
+    ergebnis[name] = MEHRFACHE_TAGS.has(name) && alt ? `${alt};${wert}` : wert;
   }
   return ergebnis;
 }

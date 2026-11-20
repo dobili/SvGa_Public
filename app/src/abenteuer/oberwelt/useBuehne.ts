@@ -4,10 +4,13 @@
  *
  * Rolle im Gesamtbild: Oberwelt.tsx gibt `zeile` und `ende` an den Dialog weiter. Die Anweisungen
  * liest buehne.ts, das Blenden der Figuren macht figurblende.ts, das Licht die Tönungsschicht der
- * Szene (mit zwei Sekunden Umblenden).
- * Abhängigkeiten: kern.ts, buehne.ts, figurblende.ts.
+ * Szene (mit zwei Sekunden Umblenden). Geführte Wege (`#gehe`, `#stelle`, gefuehrterweg.ts) gehen
+ * an die Szene; solange einer läuft, meldet `laeuft` dem Dialog, dass er warten soll.
+ * Abhängigkeiten: kern.ts, buehne.ts, figurblende.ts, gefuehrterweg.ts, fuehrungsschicht.ts.
  */
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { fuehre, stehAuf, stelle } from "./fuehrungsschicht";
+import { stellauftrag, wegauftraege } from "./gefuehrterweg";
 import { buehnenanweisung } from "./buehne";
 import { blendeFigur } from "./figurblende";
 import { szeneAus, type Oberweltkern } from "./kern";
@@ -19,6 +22,8 @@ export interface Buehne {
   readonly zeile: (tags: Readonly<Record<string, string>>) => void;
   /** Der Dialog ist zu Ende: Licht der Karte zurück. */
   readonly ende: () => void;
+  /** Läuft gerade ein geführter Weg? Dann wartet der Dialog („Weiter“ und Wahlen gesperrt). */
+  readonly laeuft: boolean;
 }
 
 /** Die Bühnenregie für den Kern der Oberwelt. Eingabe: Kern. Ausgabe: Rückrufe für den Dialog. */
@@ -26,7 +31,24 @@ export function useBuehne(k: Oberweltkern): Buehne {
   // Hat der Dialog das Licht verändert? Nur dann wird es am Ende zurückgestellt.
   const lichtGeaendert = useRef(false);
   const teilchenGeaendert = useRef(false);
+  const [laeuft, setzeLaeuft] = useState(false);
+  /** Versetzen sofort, dann alle Wege der Zeile zugleich; der Dialog wartet auf den letzten. */
+  const gehe = (tags: Readonly<Record<string, string>>) => {
+    const zugang = szeneAus(k.spiel)?.fuehrungszugang();
+    const versetzen = stellauftrag(tags.stelle);
+    if (zugang && versetzen) stelle(zugang, versetzen);
+    const wege = wegauftraege(tags.gehe);
+    if (!zugang || wege.length === 0) return;
+    setzeLaeuft(true);
+    const fertig = Promise.all(wege.map((w) => fuehre(zugang, w)));
+    // Gleich sichern: Die Szene nennt mitten im Weg schon das Ziel als Position. Wer jetzt neu
+    // lädt, steht danach dort (ein Neuladen sichert die Sitzung nicht zuverlässig, useWeltladen.ts).
+    const aktuell = k.standRef.current;
+    if (aktuell) k.schreibe({ ...aktuell, position: k.position(aktuell) });
+    void fertig.then(() => setzeLaeuft(false));
+  };
   return {
+    laeuft,
     zeile: (tags) => {
       const szene = szeneAus(k.spiel);
       if (!szene) return;
@@ -43,9 +65,12 @@ export function useBuehne(k: Oberweltkern): Buehne {
       // `#erscheint` mit Sprecher, der nicht auf der Karte steht: Er erscheint im Bild (R8,
       // Spieltest einstieg: Ambrose blieb auf dem Dachboden unsichtbar, als der Text ihn zeigte).
       if (tags.erscheint && tags.sprecher) szene.erscheine(tags.sprecher);
+      gehe(tags);
     },
     ende: () => {
       const szene = szeneAus(k.spiel);
+      const zugang = szene?.fuehrungszugang();
+      if (zugang) stehAuf(zugang);
       if (teilchenGeaendert.current && szene) zeigeKartenteilchen(szene);
       teilchenGeaendert.current = false;
       if (!lichtGeaendert.current) return;

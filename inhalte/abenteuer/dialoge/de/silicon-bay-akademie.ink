@@ -73,7 +73,7 @@ VAR abschiedGesehen = false
 ~ linGetroffen = true
 Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. #sprecher:erzaehler
 Es riecht nach nichts. #sprecher:erzaehler
-Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler
+Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler #gehe:lin>held
 Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. #sprecher:lin #stimmung:froh
 Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
 * [„Vier. Fünf bald.“]

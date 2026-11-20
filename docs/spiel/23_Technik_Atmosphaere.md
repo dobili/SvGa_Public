@@ -109,6 +109,27 @@ Karten und Kartenzeichner bleiben unberührt; alles hier ist Technik in der App 
   des Besuchs, nicht im Spielstand).
 - **Dateien:** `dialog/Portraet.tsx`, `oberwelt/szene.ts` (Figuren), Wirkung aus der Oberwelt.
 
+### T11 Geführte Wege (fertig, 20.11.2026)
+
+Figuren, auch der Held, gehen einen Weg, den der Dialog vorgibt; der Spieler greift nicht ein.
+
+- `#gehe:<wer>><ziel>`: Ziel ist eine Figur der Karte (der Weg endet neben ihr, mit Blick auf sie),
+  ein Auslöser der Karte (etwa `haustuer`) oder ein Feld `x,y`. `wer` ist `held` oder der Name einer
+  Figur auf der Karte. Mehrere `#gehe` in einer Zeile laufen zugleich.
+- `#stelle:<wer>><x,y>>liegt`: sofort dorthin, liegend (im Bett); ohne `>liegt` stehend.
+- Die Zeile wartet, bis alle angekommen sind: „Weiter“ und die Wahlen sind so lange gesperrt.
+  Kamera, Laufanimation und Kollision laufen wie beim Spieler; der Weg folgt den Kacheln (kürzester
+  Weg um Wände, Möbel und andere Figuren).
+- Neuladen mitten im Weg: Der Spielstand hat schon das Ziel als Position, der Held steht danach dort.
+  Andere Figuren stehen nach dem Neuladen wieder an ihrem Platz auf der Karte (nichts im Spielstand).
+- Am Ende des Dialogs steht ein liegender Held neben dem Bett auf.
+- Warum `>` und nicht `->`: Ink liest `->` auch in einem Tag als Sprung.
+- **Beispiele:** erste Nacht im Zimmer (Bett, dann zu Ambrose ans Fenster), Einleitung (Mama geht zur
+  Haustür, der Held folgt), Victor zu Nova und Mama zum Helden in der Arena, Teague im Museum,
+  Dr. Lin in der Akademie, Mama zum Fenster im Wohnzimmer.
+- **Dateien:** `oberwelt/gefuehrterweg.ts` (Tags, Wegsuche), `oberwelt/fuehrungsschicht.ts`
+  (Szene), `oberwelt/useBuehne.ts` (Dialog wartet), Test `tests/e2e/abenteuer-gefuehrt.spec.ts`.
+
 ### T4 Porträtfassungen (nur Format)
 
 - `#stimmung:<fassung>` mit den neuen Fassungen `ertappt`, `riss`, `alt`, `lachtOhneSpott`,

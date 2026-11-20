@@ -4,8 +4,10 @@
  * oberwelt/Steuerhinweis.tsx; Farben aus spielfarben.css, Maße aus bedienung.css.
  */
 
-/* Unter dem Ortsschild, damit beide zugleich lesbar sind; weg von Kreuz, Aktionsknopf und Leiste,
-   damit kein Tipp auf die Bedienung auf der Zeile landet. Tippen schließt sie. */
+/* Steht der Held unten im Bild: oben unter dem Ortsschild, damit beide zugleich lesbar sind; weg
+   von Kreuz, Aktionsknopf und Knöpfen, damit kein Tipp auf die Bedienung auf der Zeile landet.
+   Tippen schließt sie. Steht er oben (data-held, heldhaelfte.ts), liegt sie unten über dem Kreuz
+   (Wunsch des Autors, 20.11.2026: „Kurze Infotexte verdecken den Helden“). */
 .abenteuer-steuerhinweis {
   position: absolute;
   z-index: 2;
@@ -23,6 +25,25 @@
   font: inherit;
   text-align: center;
   white-space: normal;
+}
+
+.abenteuer-welt[data-held="oben"] .abenteuer-steuerhinweis {
+  top: auto;
+  bottom: var(--ueber-kreuz);
+}
+
+/* Quer steht der Held meist in der Bildmitte: oben ganz an den Rand (über dem Ortsschild), unten
+   zwischen Kreuz und Aktionsknopf, über der Knopfreihe. */
+@media (orientation: landscape) and (max-height: 600px) {
+  .abenteuer-steuerhinweis {
+    top: calc(env(safe-area-inset-top) + var(--raster));
+    max-width: min(28rem, var(--zwischen-den-daumen));
+  }
+
+  .abenteuer-welt[data-held="oben"] .abenteuer-steuerhinweis {
+    top: auto;
+    bottom: calc(var(--daumen-unten) + var(--leistenknopf) + var(--raster));
+  }
 }
 
 /* Der Tagebuchknopf leuchtet dreimal golden auf, solange der Hinweis auf ihn zeigt. */

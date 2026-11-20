@@ -127,7 +127,8 @@ export function beobachte(seite: Page): string[] {
   seite.on("pageerror", (e) => {
     const stelle = (e.stack ?? "").split("\n").slice(0, STAPELZEILEN).join(" | ");
     funde.push(`Ausnahme: ${e.message}`);
-    if (stelle) console.log(`Ausnahme im Browser: ${e.message} @ ${stelle}`);
+    // WebKit liefert für Ablehnungen des Browsers oft keinen Stapel; dann wenigstens der Name.
+    console.log(`Ausnahme im Browser: ${e.name}: ${e.message} @ ${stelle || "ohne Stapel"}`);
   });
   seite.on("console", (m) => {
     if (m.type() !== "error") return;

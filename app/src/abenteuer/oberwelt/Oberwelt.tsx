@@ -156,6 +156,7 @@ export function Oberwelt() {
       {!welt?.erinnerung && (
         <Kopfleiste
           muenzen={stand.muenzen}
+          imLaden={aktuellerLaden !== undefined}
           beiTagebuch={() => {
             hinweis.benutzt("tagebuch");
             setzeTagebuch(true);
@@ -325,8 +326,10 @@ export function Oberwelt() {
         />
       )}
       {/* Erst nach der Ergebniskarte („Erledigt: …“ lag unter „Gewonnen!“, Spieltest einstieg) und
-          nie über einem Dialog (meldungsstau.ts: Meldungen aus dem Dialog warten bis zum Ende). */}
-      {meldung && !dialog && !ergebnis && !rundenergebnis && (
+          nie über einem Dialog (meldungsstau.ts: Meldungen aus dem Dialog warten bis zum Ende) oder
+          einem anderen Fenster („Neu im Tagebuch“ lag über der Kartenwahl vor Jos Partie, eiliger
+          Spieler im Durchlauf, 20.11.2026): Sie wartet, bis die Welt wieder frei ist. */}
+      {meldung && !fensterOffen && (
         <Meldungsleiste
           text={meldung}
           bild={meldungsbild}

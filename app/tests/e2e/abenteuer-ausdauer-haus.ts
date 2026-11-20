@@ -9,6 +9,7 @@
  * des Durchlaufs braucht es hier nicht; an ihrer Stelle stehen stille Platzhalter.
  */
 import type { CDPSession, Page } from "@playwright/test";
+import { Eiliger } from "../durchlauf/eilig";
 import type { Lauf } from "../durchlauf/eingabe";
 import { liesStand } from "../durchlauf/lage";
 import { geheAn, geheDurch } from "../durchlauf/laufen";
@@ -74,6 +75,7 @@ export function hauslauf(seite: Page, cdp: CDPSession): Lauf {
     frist: Number.MAX_SAFE_INTEGER,
     gehalten: null,
     schwach: stillerPlatzhalter() as Lauf["schwach"],
+    eilig: new Eiliger(false),
   };
 }
 

@@ -532,6 +532,15 @@ a.knopf-zweit {
   font-weight: 600;
 }
 
+/* Im Spiel (Vollbild) liegt der Hinweis über dem Bild, statt es nach unten zu schieben: Im
+   Querformat rutschte das Steuerkreuz sonst unter den Bildschirmrand (schwacher Spieler im
+   Durchlauf, Cedar Creek, 20.11.2026; derselbe Grund wie beim Safari-Hinweis in App.tsx). */
+.rahmen-vollbild .update-hinweis {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
 .update-hinweis button {
   min-height: var(--tippflaeche);
   padding: 0 calc(var(--raster) * 2);

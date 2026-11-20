@@ -53,7 +53,8 @@ GEPRUEFT: dict[str, str] = {
     "crossroads-aussen:slick:Auf den Stufen vor dem Speisewagen sitzt jemand": "Er sitzt dort.",
     "crossroads-aussen:slick:Er sieht dich und springt von den Stufen": "Bewegung im Gespräch.",
     "erinnerung-siedlung:letzter_brief:Stiefel auf der Treppe": "Gideon geht in der Erinnerung.",
-    "ironwood-kantine:mama_ankunft:Ihr fahrt am Samstag": "Erzählte Fahrt als eigene Szene (Reise).",
+    "ironwood-kantine:mama_ankunft:Ihr fahrt am Samstag": "Erzählte Fahrt; läuft seit 20.11.2026 als "
+    "Eingang der Kantine (orte.json); die Figur erscheint erst danach.",
     "maple-falls-aussen:lily_lektion:Du setzt den Springer auf ihr Brett": "Bewegung im Gespräch.",
     "maple-falls-dachboden:abend_nach_sam:Abend. Durch das offene Fenster": "Erzählte Abendszene.",
     "maple-falls-dachboden:epilog_lily:An einem Nachmittag im Oktober": "Epilog, eigene Szene.",

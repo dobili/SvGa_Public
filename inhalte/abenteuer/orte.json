@@ -147,6 +147,7 @@
           "name": "figur.juno.name",
           "sprite": "figuren/juno.png",
           "dialog": "maple-falls-aussen.juno",
+          "wenn": "nicht aufbruchGesehen oder endeAkt1Gesehen",
           "gegner": "mapleFalls.juno"
         },
         {
@@ -213,7 +214,7 @@
           "name": "figur.juno.name",
           "sprite": "figuren/juno.png",
           "dialog": "maple-falls-clubraum.juno",
-          "wenn": "clubBeigetreten"
+          "wenn": "clubBeigetreten und (nicht aufbruchGesehen oder endeAkt1Gesehen)"
         }
       ],
       "ausloeser": [
@@ -1819,6 +1820,10 @@
           "musik": "musik/ironwood.kantine.m4a",
           "zustaende": {
             "kaufGesehen": "karten/ironwood-kantine-logo.json"
+          },
+          "eingang": {
+            "dialog": "ironwood-kantine.mama_ankunft",
+            "wenn": "mamaFotoGesehen und nicht mamaInKantine"
           }
         },
         {
@@ -1898,7 +1903,7 @@
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",
           "dialog": "ironwood-kantine.mama",
-          "wenn": "nicht kaufGesehen oder (mamaSpielt und nicht lernkarteFaktorenwaage)",
+          "wenn": "mamaInKantine und (nicht kaufGesehen oder (mamaSpielt und nicht lernkarteFaktorenwaage))",
           "gegner": "ironwood.mama"
         },
         {

@@ -25,6 +25,8 @@
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL reise(karte, ausloeser)
 
+VAR londonTelegrafGesehen = false
+VAR londonHaltGesehen = false
 VAR held = "Du"
 VAR flashbackLondonBestanden = false
 VAR londonKaffeehausGesehen = false
@@ -67,14 +69,17 @@ Eine Droschke wartet am Straßenrand, das Pferd schnaubt in der kalten Luft. Der
 }
 ~ londonKaffeehausGesehen = true
 Du stehst in einer Straße. Alles ist braun und golden, wie eine alte Fotografie, in die jemand hineingegangen ist. #sprecher:erzaehler
-Du siehst auf Hände hinunter, die nicht deine sind. Schmal, mit Tintenflecken. Die Stiefel drücken. #sprecher:erzaehler #pause
+Du siehst auf Hände hinunter, die nicht deine sind. Schmal, mit Tintenflecken. #sprecher:erzaehler
+Die Stiefel drücken. #sprecher:erzaehler #pause
 {not abschiedGesehen:
-    Der Strand. So heißt die Straße. Dort, das Haus mit dem Schild. Geh hinein. #sprecher:ambrose #stimmung:jung
+    Der Strand. So heißt die Straße. #sprecher:ambrose #stimmung:jung
+    Dort, das Haus mit dem Schild. Geh hinein. #sprecher:ambrose #stimmung:jung
     Die Stimme kommt aus dir. #sprecher:erzaehler
 }
 * [Hineingehen]
 - Die Tür ist schwer. Dahinter ist es warm und voll, viele Stimmen, die alle halblaut sprechen. #sprecher:erzaehler #musik:ambrose.london #geraeusch:kaffeehaus
-Zeitungen an Holzstangen. Kaffee in dicken Tassen. Männer mit Backenbärten über Brettern, und hinter ihnen Zuschauer, drei Reihen tief. #sprecher:erzaehler
+Zeitungen an Holzstangen. Kaffee in dicken Tassen. #sprecher:erzaehler
+Männer mit Backenbärten über Brettern, und hinter ihnen Zuschauer, drei Reihen tief. #sprecher:erzaehler
 {not abschiedGesehen:
     Ich bin damals hineingegangen, weil es regnete. Mein Vater sagte, ich solle nicht lange bleiben. #sprecher:ambrose #stimmung:jung
     Ich bin lange geblieben. #sprecher:ambrose #stimmung:jung
@@ -84,11 +89,19 @@ Zeitungen an Holzstangen. Kaffee in dicken Tassen. Männer mit Backenbärten üb
 // ---------------------------------------------------------------- Kaffeehaus
 
 === kellner ===
+{londonSchlussGesehen:
+    Der kleine Herr ist ohne Hut hinaus. Den Kaffee hat er nicht bezahlt. #sprecher:kellner #stimmung:laechelt
+    -> END
+}
 Ein Kellner mit weißer Schürze balanciert ein Tablett mit Tassen zwischen den Tischen. #sprecher:erzaehler
-{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Herr Anderssen ist aus Breslau. Er spielt, als hätte er keine Angst vor nichts.} #sprecher:kellner #stimmung:laechelt
+{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Der große Herr in der Mitte ist Lehrer, sagt man. Er spielt, als hätte er vor nichts Angst.} #sprecher:kellner #stimmung:laechelt
 -> END
 
 === zeitungsleser ===
+{londonSchlussGesehen:
+    Der Herr senkt die Zeitung zum ersten Mal. Verloren hat der andere, und der lacht. #sprecher:zeitungsleser #stimmung:bitter
+    -> END
+}
 Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht auf. #sprecher:erzaehler
 {~Das Turnier? Dummes Zeug. Ich lese den Börsenbericht.|Der Deutsche am Tisch in der Mitte verliert gleich alles. Sehen Sie nur, er gibt seine Figuren weg.|Junger Mann, Sie stehen in meinem Licht.} #sprecher:zeitungsleser #stimmung:bitter
 -> END
@@ -97,32 +110,47 @@ Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht 
 // Lektorat Akt 2 (17.11.2026): Aufgebaut wird erst, wenn das Schlussbild an der Uhr erzählt ist;
 // sonst stünden die Figuren schon wieder, bevor das Matt fällt.
 {flashbackLondonBestanden and londonSchlussGesehen:
-    Am Tisch in der Mitte stellen sie die Figuren wieder auf. Niemand redet. Alle wissen, was sie gesehen haben. #sprecher:erzaehler
+    Am Tisch in der Mitte stellen sie die Figuren wieder auf. Niemand redet. #sprecher:erzaehler
+    Alle wissen, was sie gesehen haben. #sprecher:erzaehler
     -> END
 }
 {flashbackLondonBestanden:
     Am Tisch in der Mitte rührt sich niemand. Nur die große Uhr an der Wand tickt. #sprecher:erzaehler
     -> END
 }
-In der Mitte ein Tisch, um den es still ist. Zwei Männer. Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler
+// Lektorat 20.11.2026: Nach „Noch einen Moment warten“ zieht Anderssen den Läufer nicht noch einmal.
+{londonHaltGesehen:
+    Am Tisch in der Mitte hängt der zweite weiße Turm noch immer. Alle warten auf den großen Mann. #sprecher:erzaehler
+    -> schachtisch_wahl
+}
+In der Mitte ein Tisch, um den es still ist. Zwei Männer. #sprecher:erzaehler
+Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler
 {not abschiedGesehen:
-    Anderssen. Aus Breslau. Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
-    Der andere heißt Kieseritzky. In Paris gibt er Unterricht, fünf Franc die Stunde. Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
+    Anderssen. Aus Breslau. #sprecher:ambrose #stimmung:jung
+    Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
+    Der andere heißt Kieseritzky. In Paris gibt er Unterricht, fünf Franc die Stunde. #sprecher:ambrose #stimmung:jung
+    Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
 }
 Es sieht aus wie ein Unfall. Weiß hat schon einen Läufer hergegeben, die schwarze Dame steht tief in der weißen Stellung und frisst. #sprecher:erzaehler
 * [Hinsehen]
-- Der große Mann zieht einen Läufer. Mitten hinein, tief ins schwarze Lager. Ein Raunen. #sprecher:erzaehler
+- Der große Mann zieht einen Läufer. Mitten hinein, tief ins schwarze Lager. #sprecher:erzaehler
+Ein Raunen. #sprecher:erzaehler
 Schwarz schlägt einen Turm. Einfach so, einen ganzen Turm. #sprecher:erzaehler #pause:2
 {abschiedGesehen:
     Weiß hat einen Turm weniger, und der zweite Turm hängt auch. #sprecher:erzaehler
 - else:
-    Jetzt. Halt. Schau hin. #sprecher:ambrose #stimmung:jung
+    Jetzt. Halt. #sprecher:ambrose #stimmung:jung
+    Schau hin. #sprecher:ambrose #stimmung:jung
     Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose #stimmung:jung
 }
+-> schachtisch_wahl
+
+=== schachtisch_wahl ===
 * [Zusehen und mitraten]
     ~ beginneAufgaben("riverton.flashbackLondon")
     -> END
 * [Noch einen Moment warten]
+    ~ londonHaltGesehen = true
     Die Uhr an der Wand tickt. Die Partie wartet nicht ewig, aber eine Weile. #sprecher:erzaehler
     -> END
 
@@ -136,6 +164,11 @@ Eine große Uhr an der Wand des Kaffeehauses. Ihr Ticken klingt genau wie das de
     }
     -> rueckkehr_wahl
 }
+// Lektorat 20.11.2026: Kieseritzky läuft nur einmal hinaus (nach „Noch bleiben“ zurück zur Uhr).
+{londonTelegrafGesehen:
+    Die Tür des Kaffeehauses schwingt noch nach. Kieseritzky ist längst um die Ecke. #sprecher:erzaehler
+    -> rueckkehr_wahl
+}
 {londonSchlussGesehen: -> rueckkehr_telegraf}
 ~ londonSchlussGesehen = true
 Der große Mann zieht seinen König ein Feld nach vorn, als träte er einem Besucher entgegen. #sprecher:erzaehler
@@ -146,14 +179,17 @@ Niemand sagt etwas. #sprecher:erzaehler
 - -> rueckkehr_telegraf
 
 === rueckkehr_telegraf ===
+~ londonTelegrafGesehen = true
 Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht. #sprecher:erzaehler #klang:lachen_kieseritzky
 Er schüttelt dem anderen die Hand mit beiden Händen, ruft etwas auf Französisch und läuft zur Tür, ohne Hut. #sprecher:erzaehler #musik:london.lauf
 {abschiedGesehen:
     Er läuft zum Telegrafenamt, um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:erzaehler #pause:2
 - else:
     Ambroses Stimme ist wieder die alte. Sie zittert. #sprecher:erzaehler #pause
-    Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose #stimmung:laechelt
-    Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose #stimmung:nachdenklich
+    Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. #sprecher:ambrose #stimmung:laechelt
+    Weil sie so schön war. #sprecher:ambrose #stimmung:laechelt
+    Ich stand dort, wo du jetzt stehst. Ich war zwanzig. #sprecher:ambrose #stimmung:nachdenklich
+    Und ich dachte: Das. Das will ich. #sprecher:ambrose #stimmung:nachdenklich
     Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #stimmung:laechelt #pause:2
 }
 -> rueckkehr_wahl

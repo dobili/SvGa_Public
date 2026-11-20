@@ -56,17 +56,21 @@ Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwisc
 Auf der Nachbarbank klopft ein sehr alter Mann seine Taschen ab. Neben ihm eine Thermoskanne. #sprecher:erzaehler
 Ich hatte doch … nein, das ist meine Brille. Das Brett, das Brett! #sprecher:abernathy #stimmung:ueberrascht
 Abernathy, sehr erfreut. Früher Bibliothekar, heute Sucher von Dingen. #sprecher:abernathy #stimmung:laechelt
-Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprecher:abernathy #stimmung:nachdenklich
+Mein Reisebrett. Ich habe es auf einer Bank vergessen. #sprecher:abernathy #stimmung:nachdenklich
+Aber auf welcher? #sprecher:abernathy #stimmung:nachdenklich
 * [„Ich suche es für Sie.“]
-    Wie freundlich. Es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
+    Wie freundlich. Es steht eine Stellung darauf. #sprecher:abernathy #stimmung:laechelt
+    Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 * [„Wie sieht es aus?“]
     Klein, grün, mit Magnetfiguren. Daneben liegt ein Zettel mit Aufgaben, die ich nicht lösen kann. #sprecher:abernathy #stimmung:laechelt
+    Und es steht eine Stellung darauf. Bitte nichts verschieben. #sprecher:abernathy #stimmung:laechelt
 - {not abschiedGesehen: Ein Mann, der Stellungen aufhebt. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt}
 -> END
 
 === bibliothekar_wartet ===
 {parkbankBrettGefunden:
-    Ah, du hast es gesehen? Und den Zettel? Weiß setzt in einem Zug matt, so heißt es. Dreimal. #sprecher:abernathy #stimmung:ueberrascht
+    Ah, du hast es gesehen? Und den Zettel? #sprecher:abernathy #stimmung:ueberrascht
+    Weiß setzt in einem Zug matt, so heißt es. Dreimal. #sprecher:abernathy #stimmung:ueberrascht
 - else:
     Eine Bank, ein grünes Brett. Weiter weiß ich leider auch nicht. #sprecher:abernathy #stimmung:nachdenklich
 }
@@ -74,23 +78,30 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
 
 === bibliothekar_brief ===
 ~ abernathyBrief = true
-Mein Brett! Und du hast die Aufgaben gelöst? Wunderbar. #sprecher:abernathy #stimmung:froh
+Mein Brett! Und du hast die Aufgaben gelöst? #sprecher:abernathy #stimmung:froh
+Wunderbar. #sprecher:abernathy #stimmung:froh
 Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
 Die Stellung auf dem Brett stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy #stimmung:nachdenklich
-Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy #stimmung:nachdenklich
-So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
+Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. #sprecher:abernathy #stimmung:nachdenklich
+W. #sprecher:abernathy #stimmung:nachdenklich
+So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. #sprecher:abernathy #stimmung:laechelt
+Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
 // Nach dem Abschied (abschiedGesehen) erkennt {held} die Züge selbst; Ambrose spricht nicht mehr.
 {abschiedGesehen:
-    A. W. Du erkennst die Züge. So beginnt seine Partie gegen Hale. #sprecher:erzaehler
+    A. W. #sprecher:erzaehler
+    Du erkennst die Züge. So beginnt seine Partie gegen Hale. #sprecher:erzaehler
     -> END
 }
 Ihr geht ein Stück am Teich entlang. Ambrose ist lange still. #sprecher:erzaehler #pause
-Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #stimmung:still #pause
+Er hat das abgeschrieben. Mit Bleistift. #sprecher:ambrose #stimmung:still
+Auf einen Zettel. #sprecher:ambrose #stimmung:still #pause
 * [„Kennst du die Stellung?“]
-    Ob ich sie kenne. Es ist meine. Der Anfang. Vier Züge, und im vierten mein Gambit. #sprecher:ambrose #stimmung:still #pause
+    Ob ich sie kenne. Es ist meine. #sprecher:ambrose #stimmung:still
+    Der Anfang. Vier Züge, und im vierten mein Gambit. #sprecher:ambrose #stimmung:still #pause
 * [„Was für eine Partie?“]
     Eine alte. Frag mich ein andermal, Kind. #sprecher:ambrose #stimmung:still
-- Ich bin gerührt. Und beleidigt. Es fehlt ein Bauer. #sprecher:ambrose #stimmung:lacht
+- Ich bin gerührt. Und beleidigt. #sprecher:ambrose #stimmung:lacht
+Es fehlt ein Bauer. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === bibliothekar_alltag ===
@@ -148,7 +159,8 @@ Jo. Ich spiele um Limo. #sprecher:skaterJo #stimmung:laechelt
 -> jo_angebot
 
 === jo_angebot ===
-Fünf Minuten. Eine Partie. Ich spiel nicht von vorn, dauert zu lang. #sprecher:skaterJo #stimmung:laechelt
+Fünf Minuten. Eine Partie. #sprecher:skaterJo #stimmung:laechelt
+Ich spiel nicht von vorn, dauert zu lang. #sprecher:skaterJo #stimmung:laechelt
 Du stehst besser. Wer verliert, holt Limo. #sprecher:skaterJo #stimmung:laechelt
 * [„Abgemacht.“]
     -> jo_duell
@@ -163,7 +175,8 @@ Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:
 -> END
 
 === jo_nach_sieg ===
-Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
+Okay, okay. Limo geht auf mich. #sprecher:skaterJo #stimmung:laechelt
+Noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Noch eine.“]
     -> jo_duell
 + [„Gleich.“]
@@ -187,7 +200,8 @@ Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo #stimmung:laechelt
 // vorteil. Vorher ging es in jo_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === jo_nach_remis ===
-Unentschieden! Das zählt nicht. Noch eine? #sprecher:skaterJo #stimmung:laechelt
+Unentschieden! Das zählt nicht. #sprecher:skaterJo #stimmung:laechelt
+Noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Revanche.“]
     -> jo_duell
 + [„Gleich.“]
@@ -203,7 +217,8 @@ Unentschieden! Das zählt nicht. Noch eine? #sprecher:skaterJo #stimmung:laechel
 {ausgangMapleFallsSkaterJo == "niederlage":
     Wer verliert, holt Limo. So ist das hier. #sprecher:skaterJo #stimmung:laechelt
 - else:
-    Limo geht eigentlich auf mich. Aber ich bin pleite. Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo #stimmung:laechelt
+    Limo geht eigentlich auf mich. Aber ich bin pleite. #sprecher:skaterJo #stimmung:laechelt
+    Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo #stimmung:laechelt
 }
 Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:skaterJo #stimmung:laechelt
 + [„Ich hol eine.“]
@@ -216,7 +231,8 @@ Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:sk
 ~ limoGebracht = true
 Du reichst Jo die kalte Zitronenlimo. Sie trinkt die halbe Flasche in einem Zug, setzt sich auf die Kante und lässt die Beine baumeln. #sprecher:erzaehler
 {ausgangMapleFallsSkaterJo == "niederlage":
-    Ich greif immer an. Rückwärts zieh ich nicht gern. Ist so. #sprecher:skaterJo #stimmung:laechelt #pause
+    Ich greif immer an. Rückwärts zieh ich nicht gern. #sprecher:skaterJo #stimmung:laechelt
+    Ist so. #sprecher:skaterJo #stimmung:laechelt #pause
     Auf dem Board auch nicht. #sprecher:skaterJo #stimmung:laechelt
 - else:
     Danke. Du hast mich ja schon geschlagen, also verrat ich nicht mehr viel. #sprecher:skaterJo #stimmung:laechelt
@@ -265,7 +281,8 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
     Münzen gibt es hier fürs Gewinnen. Bei mir wirst du sie wieder los. #sprecher:patel #stimmung:lacht
 }
 {limoGefragt and not limoGebracht and not hatLimo:
-    Schickt dich Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel #stimmung:laechelt
+    Schickt dich Jo? Die mit dem zerkratzten Brett? #sprecher:patel #stimmung:laechelt
+    Die trinkt nur Zitrone. #sprecher:patel #stimmung:laechelt
     Jo hat schon viele zum Limoholen geschickt. Aber die meisten kommen nicht wieder. #sprecher:patel #stimmung:laechelt
 }
 ~ oeffneLaden("mapleFalls.kiosk")
@@ -327,7 +344,8 @@ Ins Geländer hat jemand Buchstaben geritzt: „M. W. + E. C. 1952“. #sprecher
 {parkbankRaetselBestanden:
     Drei Stellungen, dreimal matt in einem Zug. Du klappst das grüne Brett zu. #sprecher:erzaehler
     {not abschiedGesehen:
-        Gut gezählt. Der Herr bei den Enten sucht sein Brett. Bring es ihm. #sprecher:ambrose #stimmung:laechelt
+        Gut gezählt. Der Herr bei den Enten sucht sein Brett. #sprecher:ambrose #stimmung:laechelt
+        Bring es ihm. #sprecher:ambrose #stimmung:laechelt
     - else:
         Mr. Abernathy sitzt bei den Enten. Er sucht sein Brett bestimmt schon. #sprecher:erzaehler
     }

@@ -53,7 +53,8 @@ Dann kam ein neuer Postmeister, dann eine neue Bahn, dann kam ich. Niemand hat s
 + [„Warum nicht?“]
 - Weil man ein Siegel nicht bricht, mein Kind. Man löst es. #sprecher:teague #stimmung:laechelt
 Ins Wachs sind kleine Figuren in einem Gitter gedrückt. #sprecher:erzaehler #bild:siegel_stellung
-Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack öffnen. Ich bin zu alt für Rätsel. #sprecher:teague #stimmung:laechelt
+Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack öffnen. #sprecher:teague #stimmung:laechelt
+Ich bin zu alt für Rätsel. #sprecher:teague #stimmung:laechelt
 {hankGetroffen:
     Eine Fesselung. Hank hat sie dir gezeigt: „Gefesselt. Nicht bewegen. Wie ich nach der Nachtschicht.“ #sprecher:erzaehler
 - else:
@@ -70,17 +71,20 @@ Der alte Postmeister war ein Schachnarr. Wer die Aufgabe löst, darf den Sack ö
 // nicht füllen. Danach Ambroses Thema auf dem Cello (`ambrose.cello`).
 ~ umschlagGeoeffnet = true
 Mr. Teague bricht das Wachs mit dem Daumennagel. Es zerfällt zu Krümeln. #sprecher:erzaehler #klang:wachs
-Briefe, gebündelt mit Schnur. Rechnungen. Eine Postkarte mit einem Dampfschiff. #sprecher:erzaehler
+Briefe, gebündelt mit Schnur. Rechnungen. #sprecher:erzaehler
+Eine Postkarte mit einem Dampfschiff. #sprecher:erzaehler
 Zuunterst ein Umschlag aus dickem, gelblichem Papier. Die Schrift ist klein und senkrecht, wie mit dem Lineal gezogen. #sprecher:erzaehler #bild:umschlag_hale
 „An Mr. A. Whitlock, Esq., New Orleans, Louisiana.“ #sprecher:erzaehler
 In der Ecke, noch kleiner: „J. Hale.“ #sprecher:erzaehler #geraeusch:aus #musik:aus
 Die Klappe ist offen. Der Umschlag ist leer. #sprecher:erzaehler
-Sonderbar. Der Brief muss herausgefallen sein. Es gab damals eine Verordnung, bei Fieber … #sprecher:teague #stimmung:ueberrascht
+Sonderbar. Der Brief muss herausgefallen sein. #sprecher:teague #stimmung:ueberrascht
+Es gab damals eine Verordnung, bei Fieber … #sprecher:teague #stimmung:ueberrascht
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr: gleich weiter mit Mr. Teague.
 {abschiedGesehen: -> umschlag_leer}
 Ambrose steht so still, wie du ihn noch nie gesehen hast. #sprecher:erzaehler #pause:5
 Er hat mir geschrieben. #sprecher:ambrose #stimmung:still #musik:ambrose.cello
-Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs. #sprecher:ambrose #stimmung:nachdenklich #pause
+Nachdem ich … Achtzehnhundertsechsundsechzig. #sprecher:ambrose #stimmung:nachdenklich
+Im Winter. Da war ich schon unterwegs. #sprecher:ambrose #stimmung:nachdenklich #pause
 Er hat geschrieben, und ich war schon unterwegs. #sprecher:ambrose #stimmung:bitter
 * [„Was stand drin?“]
 - Ich weiß es nicht. #sprecher:ambrose #stimmung:nachdenklich
@@ -93,7 +97,8 @@ Mr. Teague sieht dich über die Brille an. #sprecher:erzaehler #bild:aus
 Du kennst den Namen. #sprecher:teague #stimmung:ueberrascht
 * [„Ein bisschen.“]
 - Er nickt langsam. #sprecher:erzaehler
-Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was hineingehört. #sprecher:teague #stimmung:nachdenklich
+Nimm ihn mit. Ein leerer Umschlag gehört niemandem. #sprecher:teague #stimmung:nachdenklich
+Vielleicht findest du, was hineingehört. #sprecher:teague #stimmung:nachdenklich
 ~ gibFund("umschlag")
 -> END
 
@@ -106,9 +111,11 @@ Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was 
 }
 In der Vitrine liegt eine vergilbte Zeitung, aufgeschlagen bei einem kleinen gedruckten Schachbrett. #sprecher:erzaehler
 {abschiedGesehen: -> allein}
-Die habe ich gelesen. In der Nacht nach dem Match. Vier zu drei. #sprecher:ambrose #stimmung:alt
+Die habe ich gelesen. In der Nacht nach dem Match. #sprecher:ambrose #stimmung:alt
+Vier zu drei. #sprecher:ambrose #stimmung:alt
 Ich wollte nie wieder eine Figur anrühren. Auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. #sprecher:ambrose #stimmung:bitter
-Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzigmal. Bis es hell wurde. #sprecher:ambrose #stimmung:nachdenklich
+Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. #sprecher:ambrose #stimmung:nachdenklich
+Zwanzigmal. Bis es hell wurde. #sprecher:ambrose #stimmung:nachdenklich
 + [„Zeig sie mir.“]
     ~ beginneAufgaben("ironwood.erinnerungBird")
     -> END
@@ -134,14 +141,18 @@ Unter dem Brett stehen die Züge: Morphy gegen Bird, London 1858. #sprecher:erza
     -> END
 }
 ~ birdNachgesprochen = true
-Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, an den Rand. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
+Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, an den Rand. #sprecher:erzaehler
+Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
 {abschiedGesehen: -> END}
-Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose #stimmung:nachdenklich
+Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. #sprecher:ambrose #stimmung:nachdenklich
+Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose #stimmung:nachdenklich
 {umschlagGeoeffnet: Er sieht auf den Umschlag in deiner Hand. #sprecher:erzaehler}
-Ich schon. Ich habe den Mut verloren. Einen Abend lang. #sprecher:ambrose #stimmung:bitter
+Ich schon. Ich habe den Mut verloren. #sprecher:ambrose #stimmung:bitter
+Einen Abend lang. #sprecher:ambrose #stimmung:bitter
 * [„Nur einen?“]
 - Er antwortet nicht gleich. #sprecher:erzaehler #pause
-Nein. Wenn ich ehrlich bin. Länger. #sprecher:ambrose #stimmung:still
+Nein. Wenn ich ehrlich bin. #sprecher:ambrose #stimmung:still
+Länger. #sprecher:ambrose #stimmung:still
 -> END
 
 === fund_glasfunke ===

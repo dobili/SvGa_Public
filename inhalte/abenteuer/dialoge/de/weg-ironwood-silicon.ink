@@ -24,6 +24,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR tabletNachtGesehen = false
 VAR held = "Du"
 VAR glasbrueckeGesehen = false
 VAR buchseiten = 0
@@ -60,6 +61,9 @@ VAR testteamBrueckeNiederlagen = 0
 
 // ---------------------------------------------------------------- Mrs. Kowalczyk
 
+VAR tiefpunktGesehen = false
+VAR ambroseSprichtWieder = false
+VAR versoehnungGesehen = false
 === kowalczyk ===
 {kowalczykGetroffen:
     {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk #stimmung:laechelt
@@ -68,7 +72,8 @@ VAR testteamBrueckeNiederlagen = 0
 ~ kowalczykGetroffen = true
 Eine Fernfahrerin mit Armen wie Big Joe steht am Kaffeeautomaten und nickt zur Blechtafel mit den Fallen hinüber. #sprecher:erzaehler
 Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk #stimmung:neutral
-Ich fahr seit dreißig Jahren. Erst laden, dann fahren. Ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
+Ich fahr seit dreißig Jahren. Erst laden, dann fahren. #sprecher:kowalczyk #stimmung:laechelt
+Ist dasselbe. #sprecher:kowalczyk #stimmung:laechelt
 Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprecher:erzaehler
 -> END
 
@@ -100,14 +105,17 @@ Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang 
 === joggerin_erstes_treffen ===
 ~ joggerinGetroffen = true
 Auf der Glasbrücke läuft eine Frau auf der Stelle. Ihre Uhr piept ohne Pause, ihr Blick fällt auf das Brett unter deinem Arm. #sprecher:erzaehler
-Schach? Klar. Drei Minuten, plus zwei Sekunden je Zug. Mein Puls bleibt oben. #sprecher:joggerin #stimmung:laechelt
-Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #stimmung:lacht
+Schach? Klar. #sprecher:joggerin #stimmung:laechelt
+Drei Minuten, plus zwei Sekunden je Zug. Mein Puls bleibt oben. #sprecher:joggerin #stimmung:laechelt
+// Lektorat 20.11.2026: Nach der Abreise (tabletNachtGesehen) ist Juno nicht mehr dabei.
+{not tabletNachtGesehen: Sie ist schneller. Du bist schlauer, vielleicht. #sprecher:juno #stimmung:lacht}
 -> joggerin_angebot
 
 === joggerin_angebot ===
 Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmung:laechelt
-{not abschiedGesehen:
-    Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose #stimmung:nachdenklich
+{(not abschiedGesehen and not ambroseSchweigt()):
+    Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. #sprecher:ambrose #stimmung:nachdenklich
+    Denk du. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
@@ -118,7 +126,7 @@ Eine Stellung, sieben Züge, die Uhr läuft. Bereit? #sprecher:joggerin #stimmun
 
 === joggerin_nach_niederlage ===
 Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmung:lacht
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Noch einmal.“]
@@ -131,7 +139,8 @@ Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmun
 // vorteil. Vorher ging es in joggerin_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === joggerin_nach_remis ===
-Remis. Gleicher Puls, gleiche Zeit. Noch eine Runde? #sprecher:joggerin #stimmung:laechelt
+Remis. Gleicher Puls, gleiche Zeit. #sprecher:joggerin #stimmung:laechelt
+Noch eine Runde? #sprecher:joggerin #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
@@ -162,7 +171,11 @@ An der Raststätte wartet der Bus zurück nach Ironwood. Der Fahrer winkt. #spre
 ~ ansteckerGefunden = true
 ~ gibFund("anstecker")
 Auf dem Boden glänzt ein Anstecker: „ZERO – Spiel wie die Zukunft.“ #sprecher:erzaehler
-Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
+{tabletNachtGesehen:
+    Gratis. Natürlich, denkst du. #sprecher:erzaehler
+- else:
+    Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
+}
 -> END
 
 === fund_ohrstoepsel ===
@@ -172,9 +185,14 @@ Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
     Auf dem Glas ist nichts mehr. Unter dir fließen die Lichter der Autobahn. #sprecher:erzaehler
     -> END
 }
-In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. Ein Ohrstöpsel. #sprecher:erzaehler
+In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. #sprecher:erzaehler
+Ein Ohrstöpsel. #sprecher:erzaehler
 Er ist schwerer, als er sein sollte. An einer Seite ist ein winziges Loch, darin glänzt etwas Metallenes. #sprecher:erzaehler
-Hat jemand verloren. #sprecher:juno #stimmung:nachdenklich
+{tabletNachtGesehen:
+    Hat jemand verloren, denkst du. #sprecher:erzaehler
+- else:
+    Hat jemand verloren. #sprecher:juno #stimmung:nachdenklich
+}
 ~ gibFund("ohrstoepsel")
 ~ ohrstoepselGefunden = true
 ~ spurenPM = spurenPM + 1
@@ -193,7 +211,8 @@ Du steckst ihn ein. Du hast dir angewöhnt, Dinge einzustecken. #sprecher:erzaeh
     -> END
 }
 ~ glasbrueckeGesehen = true
-Die Brücke ist aus Glas. Der Boden, das Geländer, alles. Zwölf Meter tiefer fließen die Lichter der Autobahn. #sprecher:erzaehler
+Die Brücke ist aus Glas. Der Boden, das Geländer, alles. #sprecher:erzaehler
+Zwölf Meter tiefer fließen die Lichter der Autobahn. #sprecher:erzaehler
 Juno geht auf Zehenspitzen und hält sich an dir fest. #sprecher:erzaehler
 Woher weißt du, dass das trägt? #sprecher:juno #stimmung:ueberrascht
 * [„Das trägt.“]
@@ -217,12 +236,14 @@ Woher weißt du, dass das trägt? #sprecher:juno #stimmung:ueberrascht
 ~ streamGesehen = true
 Auf der Aussichtsplattform steht ein Ringlicht, daneben ein Klapptisch mit Laptop. Eine junge Frau mit grüner Mütze spricht in eine Kamera. #sprecher:erzaehler
 Achtzigtausend Leute schauen zu, und da kommt jemand über die Brücke! #sprecher:kiki #stimmung:froh
-Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschläge, einer davon ist Unsinn. #sprecher:kiki #stimmung:laechelt
+Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. #sprecher:kiki #stimmung:laechelt
+Drei Vorschläge, einer davon ist Unsinn. #sprecher:kiki #stimmung:laechelt
 -> stream_angebot
 
 === stream_angebot ===
-Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. Machst du mit? #sprecher:kiki #stimmung:laechelt
-{not abschiedGesehen:
+Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. #sprecher:kiki #stimmung:laechelt
+Machst du mit? #sprecher:kiki #stimmung:laechelt
+{(not abschiedGesehen and not ambroseSchweigt()):
     Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Ich spiele mit.“]
@@ -235,9 +256,11 @@ Der Chat liebt Fallen. Erst ein paar zum Aufwärmen, dann spielen wir live. Mach
 === stream_partie ===
 // Partie mit Kandidatenwahl (mittel-2): Nach 1.e4 e5 2.Lc4 Sc6 3.Dh5 wählt der Chat zwischen g6, De7
 // und Sf6. Sf6 ist der Fehler: Dxf7 ist matt (Kapitel 4, Fallenkabinett).
-Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
-{not abschiedGesehen:
-    Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose #stimmung:nachdenklich
+Aufgewärmt? Jetzt live. #sprecher:kiki #stimmung:froh
+Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
+{(not abschiedGesehen and not ambroseSchweigt()):
+    Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. #sprecher:ambrose #stimmung:nachdenklich
+    Für sie. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Los geht's.“]
     ~ beginnePartie("wegIronwoodSilicon.stream")
@@ -253,9 +276,11 @@ Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt 
 - else:
     Gut gespielt! Der Chat war heute auf meiner Seite. #sprecher:kiki #stimmung:froh
 }
-Der Chat jubelt. Dann friert das Bild auf dem Laptop ein. Am Funkmast neben der Brücke blinkt eine rote Leuchte: „Testfeld Signal“. #sprecher:erzaehler
-Das ist jedes Mal so, wenn die da testen. Perfect Move sponsert mich. Ich frage lieber nicht, was sie testen. #sprecher:kiki #stimmung:still
-{not abschiedGesehen:
+Der Chat jubelt. Dann friert das Bild auf dem Laptop ein. #sprecher:erzaehler
+Am Funkmast neben der Brücke blinkt eine rote Leuchte: „Testfeld Signal“. #sprecher:erzaehler
+Das ist jedes Mal so, wenn die da testen. Perfect Move sponsert mich. #sprecher:kiki #stimmung:still
+Ich frage lieber nicht, was sie testen. #sprecher:kiki #stimmung:still
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose #stimmung:nachdenklich
 }
 Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #stimmung:froh
@@ -275,7 +300,7 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
 }
 An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. #sprecher:erzaehler
 Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose #stimmung:laechelt
 }
 ~ kreide2Gefunden = true
@@ -301,7 +326,7 @@ Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß i
     -> END
 }
 Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose #stimmung:nachdenklich
 }
 ~ seite04Gefunden = true
@@ -313,14 +338,15 @@ Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine g
 
 === schild_smart_city ===
 Am Fuß der Rampe steht ein Schild: „Ab hier: Smart City. Bitte Sensoren nicht verdecken.“ #sprecher:erzaehler
-{not abschiedGesehen:
-    Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose #stimmung:nachdenklich
+{(not abschiedGesehen and not ambroseSchweigt()):
+    Welche Sensoren? Ich sehe nur Glas. #sprecher:ambrose #stimmung:nachdenklich
+    Schönes Glas, das gebe ich zu. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> END
 
 === werbetafel_zero ===
 Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint die Schrift: „ZERO. Nie wieder Fehler.“ #sprecher:erzaehler
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Ein König aus Glas, der sich dreht. Nie wieder Fehler. #sprecher:ambrose #stimmung:nachdenklich #pause
     Ich kannte keinen Spieler, der das versprechen konnte. Nicht einmal Morphy. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -367,7 +393,7 @@ Zwölf Züge gegen Imani. Wer danach besser steht, hat gewonnen. #sprecher:zoe #
 === testteam_bruecke_niederlage ===
 Datenpunkt 19870. Danke. #sprecher:zoe #stimmung:laechelt
 {testteamBrueckeNiederlagen >= 3: -> testteam_bruecke_genug}
-{not abschiedGesehen:
+{(not abschiedGesehen and not ambroseSchweigt()):
     Fremd ist nur der Name. Die Figuren sind dieselben. #sprecher:ambrose #stimmung:nachdenklich
 - else:
     Fremd war nur der Name. Die Figuren waren dieselben. #sprecher:erzaehler
@@ -382,12 +408,14 @@ Datenpunkt 19870. Danke. #sprecher:zoe #stimmung:laechelt
 
 === testteam_bruecke_genug ===
 Zoe sieht auf ihr Tablet und zuckt mit den Schultern. #sprecher:erzaehler
-Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. Geh durch. #sprecher:zoe #stimmung:nachdenklich
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. #sprecher:zoe #stimmung:nachdenklich
+Geh durch. #sprecher:zoe #stimmung:nachdenklich
 -> testteam_bruecke_offen
 
 === testteam_bruecke_durch ===
 Das war meine Variante. Die habe ich mir ausgedacht, im Herbst. #sprecher:imani #stimmung:nachdenklich
-Sie dreht das Tablet um. Dort steht ihre Zugfolge unter „ZERO, Variante 31“. Ohne ihren Namen. #sprecher:erzaehler
+Sie dreht das Tablet um. Dort steht ihre Zugfolge unter „ZERO, Variante 31“. #sprecher:erzaehler
+Ohne ihren Namen. #sprecher:erzaehler
 -> testteam_bruecke_offen
 
 === testteam_bruecke_offen ===
@@ -395,7 +423,8 @@ Sie dreht das Tablet um. Dort steht ihre Zugfolge unter „ZERO, Variante 31“.
 {testteamStand < 2:
     ~ testteamStand = 2
 }
-Zwanzigtausend sind voll. Hier steht: Datensatz vollständig. Danke für Ihre Teilnahme. #sprecher:zoe #stimmung:nachdenklich
+Zwanzigtausend sind voll. Hier steht: Datensatz vollständig. #sprecher:zoe #stimmung:nachdenklich
+Danke für Ihre Teilnahme. #sprecher:zoe #stimmung:nachdenklich
 Mehr steht da nicht. Benji zieht den Reißverschluss seiner Weste auf. #sprecher:erzaehler
 -> END
 
@@ -409,3 +438,8 @@ Mehr steht da nicht. Benji zieht den Reißverschluss seiner Weste auf. #sprecher
 Und … der Chat schreibt „F“. Eine Falle hat dich erwischt. #sprecher:kiki #stimmung:lacht
 Wärm dich noch mal auf, dann gehen wir live. Ich bin hier, bis der Akku leer ist. #sprecher:kiki #stimmung:laechelt
 -> END
+
+// Lektorat 19.11.2026: Zwischen Tiefpunkt (Port Delacroix) und Céleste schweigt Ambrose auch hier;
+// wer in dieser Zeit zurückkommt, hörte ihn sonst (wie regeln/abwesenheit.ts, ambroseSprichtJetzt).
+=== function ambroseSchweigt() ===
+~ return tiefpunktGesehen and not ambroseSprichtWieder and not versoehnungGesehen

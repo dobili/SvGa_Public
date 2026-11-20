@@ -55,7 +55,6 @@ GEPRUEFT: dict[str, str] = {
     "erinnerung-siedlung:letzter_brief:Stiefel auf der Treppe": "Gideon geht in der Erinnerung.",
     "ironwood-kantine:mama_ankunft:Ihr fahrt am Samstag": "Erzählte Fahrt als eigene Szene (Reise).",
     "maple-falls-aussen:lily_lektion:Du setzt den Springer auf ihr Brett": "Bewegung im Gespräch.",
-    "maple-falls-dachboden:abend_nach_sam:Abend. Durch das offene Fenster": "Erzählte Abendszene.",
     "maple-falls-dachboden:epilog_lily:An einem Nachmittag im Oktober": "Epilog, eigene Szene.",
     "maple-falls-dachboden:epilog_lily:- Lily klettert auf den Schaukelstuhl": "Lily im Raum.",
     "port-delacroix-turnhalle:vorwurf_ende:Draußen auf den Stufen setzt Mama sich": "Erzählter "
@@ -70,6 +69,10 @@ GEPRUEFT: dict[str, str] = {
     "hinauf („Komm. Ich zeig dir was.“).",
     "maple-falls-wohnzimmer:diner_abend:Es riecht nach Zwiebeln und Kaffee": "Mama lädt ins Diner ein; "
     "die Szene spielt dort.",
+    "maple-falls-dachboden:abend_nach_sam:Ihr geht Sams Stellungen": "Teil der erzählten Abendszene "
+    "(Zeile geteilt, Story-Bibel 5.1).",
+    "silicon-bay-akademie:lin_erstes_treffen:Es riecht nach nichts": "Stimmung im Raum, in dem man schon "
+    "steht (Zeile geteilt, Story-Bibel 5.1).",
     "maple-falls-park:bibliothekar_brief:Ihr geht ein Stück am Teich entlang": "Bewegung im Gespräch, "
     "im Park (Lektorat 19.11.2026: vorher „Auf dem Heimweg“, aber {held} blieb im Park).",
 }

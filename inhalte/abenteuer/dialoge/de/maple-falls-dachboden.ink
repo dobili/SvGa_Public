@@ -73,34 +73,43 @@ VAR ersterTagSpaeter = false
     Das alte Brett. Die Figuren stehen noch so, wie du sie verlassen hast. #sprecher:erzaehler
     -> ambrose
 }
+// Lektorat 19.11.2026: Nach „Lieber nicht“ zurück zur Wahl, ohne die Einleitung noch einmal.
+- (wahl)
 * [Die Decke wegziehen] -> brett_beruehren
 * [Lieber nicht anfassen]
     Du lässt die Decke liegen. Aber irgendetwas an der Form darunter lässt dich nicht los. #sprecher:erzaehler
-    -> dachboden_brett
+    -> wahl
 
 === brett_beruehren ===
 ~ brettBeruehrt = true
-Ein Schachbrett. Altes Holz, dunkel an den Ecken. Am Rand eingebrannt, ganz klein: A. W. 1857. #sprecher:erzaehler
+Ein Schachbrett. Altes Holz, dunkel an den Ecken. #sprecher:erzaehler
+Am Rand eingebrannt, ganz klein: A. W. 1857. #sprecher:erzaehler
 Die Figuren stehen mitten in einer Partie. Ein Turm weit vorn, zwei Springer dicht beieinander, eine Handvoll Bauern. #sprecher:erzaehler
 Du hebst den weißen König an. Er ist schwerer, als du dachtest. #sprecher:erzaehler #pause #klang:koenig_heben
-Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #pause:2 #klang:glocke_hell
+Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. #sprecher:erzaehler #klang:glocke_hell
+Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #pause:2
 Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng #erscheint #geist #musik:ambrose
 * [„Wer … wer ist da?“]
-    Ein Meister. Einst. Jetzt offenbar ein Mieter in einer Kiste. #sprecher:ambrose #stimmung:bitter
+    Ein Meister. Einst. #sprecher:ambrose #stimmung:bitter
+    Jetzt offenbar ein Mieter in einer Kiste. #sprecher:ambrose #stimmung:bitter
     -> ambrose_erwacht
 * [Den König fallen lassen und wegrennen]
     Der König kullert über die Dielen. Hinter dir ein Seufzen, wie von jemandem, der lange geschwiegen hat. #sprecher:erzaehler
-    Lauf nur. Das Brett wartet. Darin ist es geübt. #sprecher:ambrose #stimmung:bitter
-    -> dachboden_brett
+    Lauf nur. Das Brett wartet. #sprecher:ambrose #stimmung:bitter
+    Darin ist es geübt. #sprecher:ambrose #stimmung:bitter
+    // Lektorat 19.11.2026: Weggerannt ist weggerannt; den König hebt {held} beim nächsten Mal auf.
+    -> END
 
 === ambrose_erwacht ===
 ~ ambroseErwachtGesehen = true
 Über dem Brett steht jemand, halb durchsichtig wie ein Bild in einer dunklen Fensterscheibe. Ein schmaler Mann in einem langen Rock. #sprecher:erzaehler
-Ein Kind. Bei allen Heiligen. Ein Kind hält meinen König. #sprecher:ambrose #stimmung:streng #pause
+Ein Kind. Bei allen Heiligen. #sprecher:ambrose #stimmung:streng
+Ein Kind hält meinen König. #sprecher:ambrose #stimmung:streng #pause
 Wie lange habe ich hier gelegen? #sprecher:ambrose #stimmung:still
 * [„Ich weiß nicht. Wir sind heute eingezogen.“]
 - Heute. #sprecher:ambrose #stimmung:ueberrascht #pause
-Ambrose Whitlock, zu Diensten. Schachmeister aus New Orleans. Verzeih den Ton, ich habe lange mit niemandem gesprochen. #sprecher:ambrose #stimmung:stolz
+Ambrose Whitlock, zu Diensten. Schachmeister aus New Orleans. #sprecher:ambrose #stimmung:stolz
+Verzeih den Ton, ich habe lange mit niemandem gesprochen. #sprecher:ambrose #stimmung:stolz
 Whitlock. Wie auf der Kiste. #sprecher:erzaehler
 * [„Ich bin {held}.“]
 - Das habe ich mir gedacht. Der Name steht dort unten auf jedem zweiten Karton. #sprecher:ambrose #stimmung:laechelt
@@ -115,16 +124,19 @@ Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose #stimmung:laech
 
 === erste_lektion ===
 // Gekürzt nach dem Spieltest „einstieg“ (R3, 15.11.2026): Das Nicken ist jetzt eine Wahl.
-Stell ihn zurück. Sachte. Und sag mir: Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still #pause
+Stell ihn zurück. Sachte. #sprecher:ambrose #stimmung:still
+Und sag mir: Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still #pause
 * [Nicken]
 - Er schließt die Augen. #sprecher:erzaehler
 Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
-Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. Ein Fingerzeig. #sprecher:ambrose #stimmung:laechelt #klang:karte
+Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. #sprecher:ambrose #stimmung:laechelt #klang:karte
+Ein Fingerzeig. #sprecher:ambrose #stimmung:laechelt
 // Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
 // Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest. Der Fingerzeig
 // kommt vor der Partie (Entscheidung 13.11.2026); der Roman erzählt ihn danach.
 Er macht eine Bewegung mit zwei Fingern. Auf der anderen Hälfte des Tisches liegt ein zweites Brett, aus demselben Licht wie er. #sprecher:erzaehler
-Die alte Stellung rührt niemand an. Wir spielen daneben, du gegen mich. Ich möchte sehen, wie du denkst. #sprecher:ambrose #stimmung:laechelt
+Die alte Stellung rührt niemand an. Wir spielen daneben, du gegen mich. #sprecher:ambrose #stimmung:laechelt
+Ich möchte sehen, wie du denkst. #sprecher:ambrose #stimmung:laechelt
 * [„Jetzt?“]
     Ich habe lange genug gewartet. Länger, als du dir vorstellen kannst. #sprecher:ambrose #stimmung:bitter
     -> partie_beginnt
@@ -137,7 +149,8 @@ Die alte Stellung rührt niemand an. Wir spielen daneben, du gegen mich. Ich mö
 -> END
 
 === ambrose_wartet ===
-Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #stimmung:laechelt
+Nun? Die Figuren stehen, und ich habe Zeit. #sprecher:ambrose #stimmung:laechelt
+Zu viel davon. #sprecher:ambrose #stimmung:laechelt
 * [„Lass uns spielen.“]
     -> partie_beginnt
 // „Später“ am ersten Tag: eine der drei Stellen des Leitmotivs in Akt 1 (Archiv, Steg).
@@ -174,9 +187,12 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
 // Szene 3 nach dem Roman, Kapitel 3, und der Dialogprüfung (VM15 bis VM19).
 ~ ersteLektionBesprochen = true
 {ausgangMapleFallsErsteLektion:
-- "sieg": Du hast gewonnen. Glück ist der Anfang jeder Begabung. Der Rest ist Arbeit. #sprecher:ambrose #stimmung:stolz
-- "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose #stimmung:laechelt
-- else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose #stimmung:laechelt
+- "sieg": Du hast gewonnen. Glück ist der Anfang jeder Begabung. #sprecher:ambrose #stimmung:stolz
+Der Rest ist Arbeit. #sprecher:ambrose #stimmung:stolz
+- "remis": Remis. Weder du noch ich. #sprecher:ambrose #stimmung:laechelt
+Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose #stimmung:laechelt
+- else: Verloren. Gut. #sprecher:ambrose #stimmung:laechelt
+Jetzt weißt du, was du lernen willst. #sprecher:ambrose #stimmung:laechelt
 }
 // Nach Länge der Partie (Spieltest „einstieg“, R2): zuegeMapleFallsErsteLektion setzt die Hülle
 // (Züge des Helden, regeln/dialogvariablen.ts); 0 heißt unbekannt und gilt als lange Partie.
@@ -186,17 +202,20 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose #st
     Das ging schnell. Trotzdem dämmert es draußen schon, und durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
     {ausgangMapleFallsErsteLektion == "sieg":So schnell war ich lange nicht matt. Ich habe vergessen zu fragen: Was hängt?|So schnell kann es gehen. Eine Frage, und es wäre anders gekommen: Was hängt?} #sprecher:ambrose #stimmung:nachdenklich
 - else:
-    Draußen dämmert es. Ihr habt lange gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Draußen dämmert es. Ihr habt lange gespielt. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Durch das Fenster zirpen Grillen. #sprecher:erzaehler
     Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
 }
-Der Fingerzeig bleibt dir. Die Figur zeige ich. Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
+Der Fingerzeig bleibt dir. Die Figur zeige ich. #sprecher:ambrose #stimmung:laechelt
+Den Zug findest du selbst. #sprecher:ambrose #stimmung:laechelt
 * {not kurz} [„Was hängt? Das hast du mich gefragt.“]
     Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose #stimmung:nachdenklich
 * {kurz} [„Was heißt das: Was hängt?“]
     Die wichtigste Frage am Brett. Ich stelle sie vor jedem Zug. #sprecher:ambrose #stimmung:nachdenklich
 * [„Kannst du mir nicht jeden Zug zeigen?“]
     Dann spielte ich und nicht du. Merk dir lieber eine Frage: Was hängt? #sprecher:ambrose #stimmung:streng
-- Eine Figur hängt, wenn man sie schlagen kann und niemand zurückschlägt. Geh sie durch. Deine zuerst. Dann meine. #sprecher:ambrose #stimmung:nachdenklich
+- Eine Figur hängt, wenn man sie schlagen kann und niemand zurückschlägt. Geh sie durch. #sprecher:ambrose #stimmung:nachdenklich
+Deine zuerst. Dann meine. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du lernst es billiger. #sprecher:ambrose #stimmung:laechelt
 * [„Was hängt. Verstanden.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
@@ -205,14 +224,16 @@ Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du l
     Langweilig ist ein verlorener Turm. Fragen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
 // Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
 // sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
-- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
+- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler
+Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
 * [„Wer hat hier gewohnt? Vor uns?“]
 * [„Wer hat das geschrieben?“]
 - Ambrose sieht zum Fenster. Draußen ist der Ahorn schwarz geworden vor dem Himmel. #sprecher:erzaehler #pause:3
 Jemand, der dieses Brett sechzig Jahre lang abgestaubt hat. Und nie einen Zug darauf gemacht. #sprecher:ambrose #stimmung:still #pause
 Ich habe ihr nie danken können. Sie hat mich nicht gehört. #sprecher:ambrose #stimmung:still
 Er sagt es leichthin. Aber er sieht dich nicht an dabei. #sprecher:erzaehler
-Nimm das Brett mit, Kind. Wo es ist, bin ich. Weiter komme ich nicht. #sprecher:ambrose #stimmung:nachdenklich #pause
+Nimm das Brett mit, Kind. Wo es ist, bin ich. #sprecher:ambrose #stimmung:nachdenklich
+Weiter komme ich nicht. #sprecher:ambrose #stimmung:nachdenklich #pause
 Ich habe es versucht. #sprecher:ambrose #stimmung:still
 -> END
 
@@ -223,7 +244,8 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
 - nadelMapleFalls == 0: Die Trainerin wartet. #sprecher:ambrose #stimmung:laechelt
 - not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
 - endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus. #sprecher:ambrose #stimmung:laechelt
-- else: Cedar Creek? Den Namen habe ich nie gehört. Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht
+- else: Cedar Creek? Den Namen habe ich nie gehört. #sprecher:ambrose #stimmung:lacht
+Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht
 }
 + [„Erzähl mir von früher.“]
     {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff. Ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.} #sprecher:ambrose #stimmung:laechelt
@@ -243,7 +265,8 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
 === erste_nacht ===
 ~ ersteNachtGesehen = true
 ~ setzeSzene("akt1.ersteNacht")
-Nacht. Das Haus ist still, nur du nicht. Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
+Nacht. Das Haus ist still, nur du nicht. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
+Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler
 Du hast die Laterne vom Dachboden geholt. Das Brett steht auf dem Schreibtisch unter deinem Fenster. #sprecher:erzaehler #klang:knarren
 Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler
 * [„Bist du wach?“]
@@ -258,14 +281,16 @@ Was ist das für ein Licht dort drüben? Es brennt ohne Flamme. #sprecher:ambros
 - Aha. #sprecher:ambrose #stimmung:nachdenklich #pause
 Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen. #sprecher:erzaehler
 * [Leise lachen]
-    Lach nur. Ich bin seit hundertsechzig Jahren tot. Mir darf einiges entgangen sein. #sprecher:ambrose #stimmung:lacht
+    Lach nur. Ich bin seit hundertsechzig Jahren tot. #sprecher:ambrose #stimmung:lacht
+    Mir darf einiges entgangen sein. #sprecher:ambrose #stimmung:lacht
 * [„Ein Kasten, der das Essen kalt hält.“]
-    Ein Eiskeller in der Küche. Herrje. Ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
+    Ein Eiskeller in der Küche. Herrje. #sprecher:ambrose #stimmung:lacht
+    Ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
 - Unter dem Fenster liegt die alte Stellung. Niemand hat sie angerührt. #sprecher:erzaehler #klang:auto_nacht
 * [„Wer hat diese Partie gespielt?“]
-* [„Warum darf niemand die Figuren anrühren?“]
+* (warum) [„Warum darf niemand die Figuren anrühren?“]
 - Lange kommt keine Antwort. Der Wasserfall rauscht. #sprecher:erzaehler #pause:3
-Ich. Und einer, der mir noch einen Zug schuldet. #sprecher:ambrose #stimmung:still
+{warum:Sie ist nicht zu Ende. Ich spiele sie gegen einen, der mir noch einen Zug schuldet.|Ich. Und einer, der mir noch einen Zug schuldet.} #sprecher:ambrose #stimmung:still
 * [„Und wer ist am Zug?“]
 - Er. #sprecher:ambrose #stimmung:still #pause:3
 Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht besser. #sprecher:erzaehler
@@ -281,7 +306,8 @@ Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #ge
 
 === abend_nach_sam ===
 ~ abendSamGesehen = true
-Abend. Durch das offene Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Durch das offene Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler
 Ambrose geht am Fenster auf und ab. Bei jemandem, durch den man hindurchsehen kann, lenkt das sehr ab. #sprecher:erzaehler
 Du zählst richtig. Aber du zählst wie ein Buchhalter. #sprecher:ambrose #stimmung:streng
 Es geht nicht nur darum, wie viele. Es geht darum, wer zuerst schlägt und was er dabei aufs Spiel setzt. #sprecher:ambrose #stimmung:nachdenklich
@@ -290,16 +316,19 @@ Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:
     Weil der Bauer nichts zu verlieren hat. Das ist bei Menschen ebenso. #sprecher:ambrose #stimmung:laechelt
 * [„Ein Buchhalter gewinnt auch.“]
     Gewiss. Aber er erzählt hinterher niemandem davon. #sprecher:ambrose #stimmung:lacht
-    Der Bauer zuerst. Er hat am wenigsten zu verlieren. Das ist bei Menschen ebenso. #sprecher:ambrose #stimmung:nachdenklich
+    Der Bauer zuerst. Er hat am wenigsten zu verlieren. #sprecher:ambrose #stimmung:nachdenklich
 - -> END
 
 === abend_nach_juno ===
 ~ abendJunoGesehen = true
-Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Neben guten Zügen klebt ein Stern. #sprecher:erzaehler
 Es gibt wenige Sterne. Es stört sie nicht. #sprecher:erzaehler
-Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. Wer aufschreibt, kann zurückblättern. #sprecher:ambrose #stimmung:laechelt
+Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. #sprecher:ambrose #stimmung:laechelt
+Wer aufschreibt, kann zurückblättern. #sprecher:ambrose #stimmung:laechelt
 * [„Und du? Hast du deine Partien aufgeschrieben?“]
-    Jede. Auf Zettel, die nach Kaffee und Kerzenwachs rochen. Ich habe sie alle verloren. #sprecher:ambrose #stimmung:still
+    Jede. Auf Zettel, die nach Kaffee und Kerzenwachs rochen. #sprecher:ambrose #stimmung:still
+    Ich habe sie alle verloren. #sprecher:ambrose #stimmung:still
     Bis auf eine. Die steht hier unter dem Fenster. #sprecher:ambrose #stimmung:still
 * [„Sie kann ihre eigene Schrift nicht lesen.“]
     Dann bist du ihre Brille. Auch eine Aufgabe. #sprecher:ambrose #stimmung:lacht
@@ -314,7 +343,8 @@ Du hast es ihm erklärt, nicht ich. Wie hast du es gesagt? #sprecher:ambrose #st
 * [„Ich hab erzählt, wie es mir ging.“]
     Vor zwei Wochen wusstest du es selbst nicht. Deshalb hat er dir zugehört. #sprecher:ambrose #stimmung:laechelt
 - Er schweigt einen Moment. Dann klingt er beinahe verlegen. #sprecher:erzaehler
-Das war gut. Besser, als ich es erklärt hätte. Ich hätte ihm von Morphy erzählt, und er wäre eingeschlafen. #sprecher:ambrose #stimmung:lacht
+Das war gut. Besser, als ich es erklärt hätte. #sprecher:ambrose #stimmung:lacht
+Ich hätte ihm von Morphy erzählt, und er wäre eingeschlafen. #sprecher:ambrose #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Fensterbank (T15)
@@ -336,7 +366,8 @@ Das war gut. Besser, als ich es erklärt hätte. Ich hätte ihm von Morphy erzä
 // Danach Post-Game (Szene 110). Klang: mapleFalls.herbst, schlussklang.
 === epilog ===
 // epilogGesehen erst am Ende (epilog_lily): Wer den Epilog abbricht, kann ihn noch einmal beginnen.
-Im Herbst werden die Ahornbäume an der Birch Lane wieder rot. Erst an den Rändern. Du hörst den Wasserfall noch immer. #sprecher:erzaehler #musik:mapleFalls.herbst
+Im Herbst werden die Ahornbäume an der Birch Lane wieder rot. Erst an den Rändern. #sprecher:erzaehler #musik:mapleFalls.herbst
+Du hörst den Wasserfall noch immer. #sprecher:erzaehler
 Auf Mrs. Calloways Veranda verliert sie jeden Nachmittag gegen einen Achtjährigen. In Raum zwölf bringt Carla den Neuen das Zählen bei. #sprecher:erzaehler
 In einem Keller in Silicon Bay unterrichtet eine Frau acht Kinder bei einem Heizlüfter. #sprecher:erzaehler
 Eines davon hatte früher zwei Titel und kommt jetzt jeden Tag. #sprecher:erzaehler
@@ -347,8 +378,9 @@ Du trägst das Brett hinauf und stellst es auf den niedrigen Tisch unter dem run
 -> epilog_lily
 
 === epilog_zettel ===
-Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, steiler Schrift. #sprecher:erzaehler #pause:2
-„Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“ #sprecher:erzaehler #pause:3
+Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, schräger Schrift. #sprecher:erzaehler #pause:2
+„Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A.“ #sprecher:erzaehler
+„W.“ #sprecher:erzaehler #pause:3
 * [Den Zettel einstecken]
 - -> epilog_lily
 
@@ -360,7 +392,8 @@ An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte
 Du räumst die Schlussstellung ab, Figur für Figur, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
 Der weiße König ist schwer, unten mit Blei ausgegossen, und das Kreuz auf seiner Krone ist ein bisschen schief. #sprecher:erzaehler
 * [„Setz dich. Du hast Weiß.“]
-- Lily klettert auf den Schaukelstuhl. Er knarrt. Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler
+- Lily klettert auf den Schaukelstuhl. Er knarrt. #sprecher:erzaehler
+Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler
 Und jetzt? #sprecher:lily #stimmung:nachdenklich
 Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas, das sich entschieden hat, nicht zu fallen. #sprecher:erzaehler
 * [„Schau nicht auf alles. Stell eine Frage.“]

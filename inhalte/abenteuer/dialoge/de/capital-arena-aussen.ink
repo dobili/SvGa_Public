@@ -67,15 +67,20 @@ Am Morgen steht ihr davor. #sprecher:erzaehler
 * [Hinsehen]
 - Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena
 Deines hat noch immer Ketchup am Kinn. #sprecher:erzaehler
-Auf dem Platz stehen Busse. Der graue mit den Rostflecken. Ein Kleinbus mit „RIVERTON“ aus Klebeband. #sprecher:erzaehler
+Auf dem Platz stehen Busse. Der graue mit den Rostflecken. #sprecher:erzaehler
+Ein Kleinbus mit „RIVERTON“ aus Klebeband. #sprecher:erzaehler
 Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstocher am Rückspiegel. #sprecher:erzaehler
 Sie sind alle gekommen. #sprecher:mutter #stimmung:ueberrascht
 * [Zur Treppe sehen]
-- Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
-Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. Miss Odile, Remy, Lou. Mira auf Tomás' Schultern. Dot mit Lockenwicklern. #sprecher:erzaehler
+- Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. #sprecher:erzaehler
+Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
+Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. #sprecher:erzaehler
+Miss Odile, Remy, Lou. Mira auf Tomás' Schultern. #sprecher:erzaehler
+Dot mit Lockenwicklern. #sprecher:erzaehler
 Ward steht ein wenig abseits und betrachtet alles, als wäre es eine Stellung. #sprecher:erzaehler
 Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht. #sprecher:erzaehler #pause
-Das kommt ins Tagebuch. Ich hab zwei dabei. Das kommt alles ins Tagebuch. #sprecher:juno #stimmung:froh
+Das kommt ins Tagebuch. Ich hab zwei dabei. #sprecher:juno #stimmung:froh
+Das kommt alles ins Tagebuch. #sprecher:juno #stimmung:froh
 -> END
 
 === weg_ghost ===
@@ -93,7 +98,8 @@ Der Weg führt zurück zum Leuchtturm und weiter nach Ghost Town. #sprecher:erza
 
 === arena_ankunft ===
 ~ arenaGesehen = true
-Drinnen ist es kühl und hallt. Tribünen im Kreis, Scheinwerfer, Tische in langen Reihen. An den Wänden laufen Partien, die niemand spielt. #sprecher:erzaehler #musik:aus
+Drinnen ist es kühl und hallt. Tribünen im Kreis, Scheinwerfer, Tische in langen Reihen. #sprecher:erzaehler #musik:aus
+An den Wänden laufen Partien, die niemand spielt. #sprecher:erzaehler
 Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()}. #sprecher:juno #stimmung:neutral
 {
 - ligapunkte() >= 22:
@@ -104,11 +110,13 @@ Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()
     Bronze-Liga. Du bist dabei, und alles andere ist mir vollkommen egal. #sprecher:juno #stimmung:froh
 }
 Am Tisch der Turnierleitung stehen Dr. Lin mit einer Mappe und ein Mädchen in einem zu großen Pullover. #sprecher:erzaehler
-Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. Einmal. #sprecher:erzaehler #pause
+Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. #sprecher:erzaehler
+Einmal. #sprecher:erzaehler #pause
 Die Turnierleiterin hebt eine Liste über den Kopf. Wer spielt, meldet sich bei ihr, die erste Runde beginnt gleich. #sprecher:erzaehler
 ~ gibFund("teilnehmerausweis")
 * [Den Teilnehmerausweis anstecken]
-- Heute ist Ruhe am Brett. Und heute spielt man ehrlich. Es ist lange her, dass ich das von einem Turnier sagen konnte. #sprecher:ambrose #stimmung:froh
+- Heute ist Ruhe am Brett. Und heute spielt man ehrlich. #sprecher:ambrose #stimmung:froh
+Es ist lange her, dass ich das von einem Turnier sagen konnte. #sprecher:ambrose #stimmung:froh
 * [„Warst du je auf so einem?“]
 - Dreihundert Leute in einem Saal in New York. Ich fand es gewaltig. #sprecher:ambrose #stimmung:laechelt
 Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung:lacht
@@ -121,7 +129,8 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 - finaleGespielt():
     Ich bin so stolz auf dich. {ausgangCapitalArenaFinale == "sieg":Nicht wegen des Titels. }Wegen allem. #sprecher:mutter #stimmung:froh
 - arenaGesehen:
-    Ich hab Kaffee für alle. Und Brötchen. Und ein Pflaster, falls du dich am Brett stößt. #sprecher:mutter #stimmung:laechelt
+    Ich hab Kaffee für alle. Und Brötchen. #sprecher:mutter #stimmung:laechelt
+    Und ein Pflaster, falls du dich am Brett stößt. #sprecher:mutter #stimmung:laechelt
 - else:
     Geh ruhig rein. Ich warte hier mit Juno auf die anderen. #sprecher:mutter #stimmung:laechelt
 }
@@ -130,7 +139,8 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 === juno ===
 {
 - finaleGespielt():
-    Ich hab alles ins Tagebuch geschrieben. Mit Glitzer. Diesmal ganz viel. #sprecher:juno #stimmung:froh
+    Ich hab alles ins Tagebuch geschrieben. Mit Glitzer. #sprecher:juno #stimmung:froh
+    Diesmal ganz viel. #sprecher:juno #stimmung:froh
 - else:
     {~Ich zähle deine Punkte. Laut. Damit es alle hören.|Slick hat mir ein Autogramm gegeben. Auf die Hand.|Wenn du gewinnst, hüpfe ich. Wenn nicht, hüpfe ich auch.} #sprecher:juno #stimmung:froh
 }
@@ -160,14 +170,17 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 // Abspann und Reise kommen aber erst am Ende des Gesprächs. Wer mitten im Abschied die App schloss,
 // fand danach nur noch „Auf der Treppe … still geworden“, ohne Abspann und Epilog (schwacher
 // Spieler im Spieler-Durchlauf, 19.11.2026). So beginnt der Abschied nach dem Neuladen von vorn.
-Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahnenmasten herum. Du setzt dich auf die Treppe, ganz oben. #sprecher:erzaehler #musik:abschied.treppe
+Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahnenmasten herum. #sprecher:erzaehler #musik:abschied.treppe
+Du setzt dich auf die Treppe, ganz oben. #sprecher:erzaehler
 Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Die Schlussstellung der Fernpartie, so wie sie im Saloon stand. #sprecher:erzaehler
 Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
 * [„Hast du es gesehen?“]
-- Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. Die Großmeisterin hat mich angesehen, als wüsste sie es. #sprecher:ambrose #stimmung:laechelt
+- Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. #sprecher:ambrose #stimmung:laechelt
+Die Großmeisterin hat mich angesehen, als wüsste sie es. #sprecher:ambrose #stimmung:laechelt
 Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich nicht zu wünschen gewagt. #sprecher:ambrose #stimmung:laechelt
 * [„War es richtig?“]
-- Ich weiß es nicht. Ich habe es nicht nachgerechnet. Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
+- Ich weiß es nicht. Ich habe es nicht nachgerechnet. #sprecher:ambrose #stimmung:lacht
+Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
 Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine Ecke. Graham Hale hat keinen Stift in der Hand. #sprecher:erzaehler
 -> abschied_rede
 
@@ -184,11 +197,14 @@ Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambros
 }
 Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose #stimmung:nachdenklich
 * [„Tut mir leid.“]
-- Sei still. Ich bin noch nicht fertig. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh #musik:abschied
+- Sei still. Ich bin noch nicht fertig. #sprecher:ambrose #stimmung:froh #musik:abschied
+Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh
 * [Zuhören]
 - Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":Einen Jungen, der vor Freude rennt, weil er verloren hat.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.} #sprecher:ambrose #stimmung:laechelt
-Menschen, die kämpfen. Die Fehler machen. Und wachsen. #sprecher:ambrose #stimmung:laechelt #pause:2
-Das ist es, was schön ist an diesem Spiel. Nicht die Züge. Die waren nie das Schöne. #sprecher:ambrose #stimmung:laechelt
+Menschen, die kämpfen. Die Fehler machen. #sprecher:ambrose #stimmung:laechelt
+Und wachsen. #sprecher:ambrose #stimmung:laechelt #pause:2
+Das ist es, was schön ist an diesem Spiel. Nicht die Züge. #sprecher:ambrose #stimmung:laechelt
+Die waren nie das Schöne. #sprecher:ambrose #stimmung:laechelt
 Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
 - Wofür? #sprecher:ambrose #stimmung:ueberrascht
@@ -200,7 +216,8 @@ Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffe
 === abschied_verbeugung ===
 Die Sonne steht tief. Er ist jetzt so durchsichtig, dass du nicht mehr sicher bist, ob du ihn siehst. #sprecher:erzaehler
 * [„Ich werde dich vermissen.“]
-- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose #stimmung:laechelt
+- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. #sprecher:ambrose #stimmung:laechelt
+Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose #stimmung:laechelt
 Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose #stimmung:nachdenklich
 Er steht auf und macht eine kleine, steife Verbeugung. Wie am ersten Tag. #sprecher:erzaehler
 Ambrose Whitlock, zu Diensten. Es war mir eine Ehre, {held}. #sprecher:ambrose #stimmung:laechelt
@@ -213,9 +230,12 @@ Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht #musik:am
 === abschied_ende ===
 ~ abschiedGesehen = true
 Das Licht verändert sich, wie wenn eine Wolke weiterzieht. Du stehst allein auf der Treppe. #sprecher:erzaehler #pause:3
-Auf der Stufe liegt ein Brett aus altem Holz, darauf die Schlussstellung. Am Rand eingebrannte Buchstaben. Das Holz ist warm von der Sonne. #sprecher:erzaehler
-Jemand setzt sich neben dich. Juno, mit zwei Tagebüchern auf dem Schoß. Das obere ist aufgeschlagen, bei der Seite mit dem Glitzerrahmen. #sprecher:erzaehler
-Sie hält dir den Stift hin. Du überlegst lange. Dann schreibst du, in deiner eigenen Schrift: Er ist angekommen. #sprecher:erzaehler #pause:2
+Auf der Stufe liegt ein Brett aus altem Holz, darauf die Schlussstellung. Am Rand eingebrannte Buchstaben. #sprecher:erzaehler
+Das Holz ist warm von der Sonne. #sprecher:erzaehler
+Jemand setzt sich neben dich. Juno, mit zwei Tagebüchern auf dem Schoß. #sprecher:erzaehler
+Das obere ist aufgeschlagen, bei der Seite mit dem Glitzerrahmen. #sprecher:erzaehler
+Sie hält dir den Stift hin. Du überlegst lange. #sprecher:erzaehler
+Dann schreibst du, in deiner eigenen Schrift: Er ist angekommen. #sprecher:erzaehler #pause:2
 ~ zeigeAbspann()
 ~ reise("mapleFalls.dachboden", "treppe")
 -> END

@@ -19,6 +19,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(laden)
 
+VAR finaleTischGesehen = false
+VAR novaHandGesehen = false
 VAR held = "Du"
 VAR zugerratenTurm = false
 VAR arenaGesehen = false
@@ -100,7 +102,7 @@ VAR pauseNachRunde2Gesehen = false
     Das Turnier ist gespielt. Die Tafel bleibt bis morgen hängen. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 - else:
-    Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:neutral
+    {vorDemFinaleGesehen:Das Finale spielst du auf der Bühne. Victor sitzt schon im Lichtkreis.|Das Finale spielst du auf der Bühne. Victor wartet im Gang.} #sprecher:turnierleiterin #stimmung:neutral
     -> END
 }
 
@@ -112,7 +114,8 @@ VAR pauseNachRunde2Gesehen = false
 {
 - not gespielt(ausgangCapitalArenaRunde1) or (alleGespielt() and ausgangCapitalArenaRunde1 != "sieg"):
     Runde 1 gegen Bea Lindqvist. #sprecher:turnierleiterin #stimmung:neutral #musik:arena.vorrunde
-    Bea ist Maes große Schwester. Sie hat bei Mrs. Okafor gelernt. Sie wartet und will ein Remis von jedem, der ungeduldig wird. #sprecher:erzaehler
+    Bea ist Maes große Schwester. Sie hat bei Mrs. Okafor gelernt. #sprecher:erzaehler
+    Sie wartet und will ein Remis von jedem, der ungeduldig wird. #sprecher:erzaehler
     -> runde1_spielen
 - not gespielt(ausgangCapitalArenaRunde2) or (alleGespielt() and ausgangCapitalArenaRunde2 != "sieg"):
     Runde 2 gegen Marcus Oyelaran. #sprecher:turnierleiterin #stimmung:neutral #musik:arena.vorrunde
@@ -123,7 +126,8 @@ VAR pauseNachRunde2Gesehen = false
     -> runde3_vorher
 - else:
     Runde 4 gegen Tobias Wren, mit fester Uhr: fünf Minuten und drei Sekunden je Zug. #sprecher:turnierleiterin #stimmung:neutral
-    Er spielt, als würde das Haus brennen. Du lässt die Uhr eine Figur sein. Sie ist nicht der König. #sprecher:erzaehler
+    Er spielt, als würde das Haus brennen. Du lässt die Uhr eine Figur sein. #sprecher:erzaehler
+    Sie ist nicht der König. #sprecher:erzaehler
     -> runde4_spielen
 }
 
@@ -151,6 +155,12 @@ VAR pauseNachRunde2Gesehen = false
     Noch mal. Jetzt weiß ich, wie ich anfange. #sprecher:nova #stimmung:laechelt
     -> runde3_spielen
 }
+// Lektorat 20.11.2026: Nach „Noch einen Moment.“ zittert ihre Hand nicht noch einmal zum ersten Mal.
+{novaHandGesehen:
+    Nova sitzt noch an Tisch eins. Ihre Hände liegen flach neben der Uhr. #sprecher:erzaehler
+    -> runde3_spielen
+}
+~ novaHandGesehen = true
 Sie sitzt schon da, im zu großen Pullover, die Haare zurückgebunden, sodass man beide Ohren sieht. Das soll man bemerken. #sprecher:erzaehler
 Neben der Uhr liegt etwas Kleines, Hautfarbenes, offen, wo jeder es sehen kann. Am Rand steht ein Mann mit einem Prüfgerät. #sprecher:erzaehler
 Nova gibt dir die Hand. Ihre zittert so, dass du es bis in den Ellbogen spürst. #sprecher:erzaehler
@@ -186,26 +196,41 @@ Die Turnierleiterin ruft eine Pause aus. Sofort wird die Halle laut, wie eine Kl
 Juno sitzt auf der untersten Stufe der Tribüne, auf jedem Knie ein Tagebuch. #sprecher:erzaehler
 {
 - halbzeit >= 2:
-    Zwei aus zwei. Ich schreib es in beide. Falls eins verloren geht. #sprecher:juno #stimmung:froh
+    Zwei aus zwei. Ich schreib es in beide. #sprecher:juno #stimmung:froh
+    Falls eins verloren geht. #sprecher:juno #stimmung:froh
 - halbzeit > 1:
-    Anderthalb. Dir fehlt ein halber Punkt. Ein halber! Ich hab nachgerechnet. Zweimal. #sprecher:juno #stimmung:laechelt
+    Anderthalb. Dir fehlt ein halber Punkt. #sprecher:juno #stimmung:laechelt
+    Ein halber! Ich hab nachgerechnet. #sprecher:juno #stimmung:laechelt
+    Zweimal. #sprecher:juno #stimmung:laechelt
 - halbzeit >= 1:
-    Halbzeit. Einer fehlt dir noch. Das ist alles noch drin. Ich hab nachgerechnet. Zweimal. #sprecher:juno #stimmung:nachdenklich
+    Halbzeit. Einer fehlt dir noch. #sprecher:juno #stimmung:nachdenklich
+    Das ist alles noch drin. Ich hab nachgerechnet. #sprecher:juno #stimmung:nachdenklich
+    Zweimal. #sprecher:juno #stimmung:nachdenklich
 - halbzeit > 0:
-    Ein halber Punkt. Anderthalb fehlen noch. Zwei Runden hast du dafür. #sprecher:juno #stimmung:nachdenklich
+    Ein halber Punkt. Anderthalb fehlen noch. #sprecher:juno #stimmung:nachdenklich
+    Zwei Runden hast du dafür. #sprecher:juno #stimmung:nachdenklich
 - else:
-    Noch zwei Runden. Zwei Punkte brauchst du. Das geht genau auf. Ich schreib es trotzdem nur mit Bleistift. #sprecher:juno #stimmung:nachdenklich
+    Noch zwei Runden. Zwei Punkte brauchst du. #sprecher:juno #stimmung:nachdenklich
+    Das geht genau auf. Ich schreib es trotzdem nur mit Bleistift. #sprecher:juno #stimmung:nachdenklich
 }
 Über ihr winkt Slick mit beiden Armen. Tamsin hält ihm von hinten den Mund zu. #sprecher:erzaehler
-Victor kommt von den Tischen am anderen Ende. Seine Runde ist längst vorbei. Er hält dir eine Wasserflasche hin. #sprecher:erzaehler
+Victor kommt von den Tischen am anderen Ende. Seine Runde ist längst vorbei. #sprecher:erzaehler
+Er hält dir eine Wasserflasche hin. #sprecher:erzaehler
 Trink. Mein Vater sagt, Wasser zwischen zwei Runden bringt zwölf Elo. #sprecher:victor #stimmung:laechelt
 Er hat es nachgemessen. Leider stimmt es. #sprecher:victor #stimmung:lacht
 * [Trinken]
 - Victor sieht zu Tisch eins. Dort steht schon ein Schild: Sinclair. #sprecher:erzaehler
-Spiel gut gegen sie. Richtig gut. Sie hat es verdient, dass heute jemand gut gegen sie spielt. #sprecher:victor #stimmung:nachdenklich
+Spiel gut gegen sie. Richtig gut. #sprecher:victor #stimmung:nachdenklich
+Sie hat es verdient, dass heute jemand gut gegen sie spielt. #sprecher:victor #stimmung:nachdenklich
 Er geht, bevor du fragen kannst, was er meint. #sprecher:erzaehler
 Ambrose steht an der Bande und sieht zu, wie die Schiedsrichter die Uhren stellen. #sprecher:erzaehler
-{halbzeit >= 2:Geduld gegen Bea, ein stiller Zug gegen Marcus. Du hast nichts Neues gespielt, {held}. Du hast dich erinnert.|Geduld gegen Bea, ein stiller Zug gegen Marcus. Das sind keine Ergebnisse, {held}. Das sind Gewohnheiten. Die hast du noch.} #sprecher:ambrose #stimmung:laechelt
+{halbzeit >= 2:
+    Geduld gegen Bea, ein stiller Zug gegen Marcus. Du hast nichts Neues gespielt, {held}. #sprecher:ambrose #stimmung:laechelt
+    Du hast dich erinnert. #sprecher:ambrose #stimmung:laechelt
+- else:
+    Geduld gegen Bea, ein stiller Zug gegen Marcus. Das sind keine Ergebnisse, {held}. #sprecher:ambrose #stimmung:laechelt
+    Das sind Gewohnheiten. Die hast du noch. #sprecher:ambrose #stimmung:laechelt
+}
 Das ist im Turnier am schwersten. Sich erinnern, wenn alle laut sind. #sprecher:ambrose #stimmung:nachdenklich
 -> vorrunde_naechste
 
@@ -214,8 +239,10 @@ Das ist im Turnier am schwersten. Sich erinnern, wenn alle laut sind. #sprecher:
 Die Turnierleiterin schreibt deinen Namen an die Tafel, ganz oben. #sprecher:erzaehler
 {punktetext()} von 4 Punkten. Du stehst im Halbfinale. Gratuliere. #sprecher:turnierleiterin #stimmung:laechelt
 Du stehst auf. Deine Beine sind aus Watte. #sprecher:erzaehler
-Halbfinale. Gegen einen, der Kade Sterling heißt. Der ist von denen. Er hat alle vier gewonnen, keine länger als eine Stunde. #sprecher:juno #stimmung:nachdenklich
-An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf ganz gerade. Seine Haare fallen ihm über die Ohren. #sprecher:erzaehler
+Halbfinale. Gegen einen, der Kade Sterling heißt. #sprecher:juno #stimmung:nachdenklich
+Der ist von denen. Er hat alle vier gewonnen, keine länger als eine Stunde. #sprecher:juno #stimmung:nachdenklich
+An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf ganz gerade. #sprecher:erzaehler
+Seine Haare fallen ihm über die Ohren. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Die Aussage (Szene 105)
@@ -235,14 +262,17 @@ An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf gan
 // Roman Kapitel 62: Nova spricht allein, Dr. Lin legt die Mappe hin, die Bildschirme gehen aus
 // (abschaltton, das Konzernmotiv kehrt nicht wieder), Victor stellt sich neben Nova, acht Clubs stehen.
 ~ aussageGesehen = true
-Die Scheinwerfer gehen an. Die Turnierleiterin klopft an das Mikrofon. Es wird nicht sofort still. Dann wird es still. #sprecher:erzaehler #musik:aus #klang:scheinwerfer
+Die Scheinwerfer gehen an. Die Turnierleiterin klopft an das Mikrofon. #sprecher:erzaehler #musik:aus #klang:scheinwerfer
+Es wird nicht sofort still. Dann wird es still. #sprecher:erzaehler
 Die Turnierleitung hat eine Erklärung entgegengenommen. Die Betroffene möchte selbst sprechen. #sprecher:turnierleiterin #stimmung:nachdenklich
-Nova geht nach vorn. Allein. Dr. Lin bleibt zwei Schritte hinter ihr. Novas Knie zittern, und sie drückt sie durch. #sprecher:erzaehler
+Nova geht nach vorn. Allein. #sprecher:erzaehler
+Dr. Lin bleibt zwei Schritte hinter ihr. Novas Knie zittern, und sie drückt sie durch. #sprecher:erzaehler
 {novaHilfeZugesagt: Du stehst in der ersten Reihe, wie versprochen. Sie sucht dich und findet dich. #sprecher:erzaehler}
 Ich bin sechzehn. Seit zwei Jahren habe ich in jedem Turnier ein Gerät im Ohr getragen, das mir Züge angesagt hat. #sprecher:nova #stimmung:ernst
 * [Zuhören]
 - In der Halle hält jemand die Luft an. Dann viele. #sprecher:erzaehler #pause:2
-Es stand in meinem Vertrag. Nicht so. Aber es stand drin. Ich hätte Nein sagen können. #sprecher:nova #stimmung:nachdenklich
+Es stand in meinem Vertrag. Nicht so. #sprecher:nova #stimmung:nachdenklich
+Aber es stand drin. Ich hätte Nein sagen können. #sprecher:nova #stimmung:nachdenklich
 Ich war vierzehn. Ich wollte gewinnen, dann wollte ich nicht mehr, und dann habe ich mich nicht mehr getraut. #sprecher:nova #stimmung:bitter
 Ich gebe die Titel zurück. Heute habe ich eine Partie ohne gespielt. #sprecher:nova #stimmung:nachdenklich
 Es ist das einzige Ergebnis der letzten zwei Jahre, das mir gehört. #sprecher:nova #stimmung:laechelt #pause:2
@@ -252,7 +282,8 @@ Es ist das einzige Ergebnis der letzten zwei Jahre, das mir gehört. #sprecher:n
 
 === aussage_lin ===
 Dr. Lin legt die Mappe auf den Tisch und eine Schachtel aus weißem Karton daneben, mit Mulden aus Schaumstoff. #sprecher:erzaehler
-Vierundsiebzig Prozent im Training. Achtundneunzig im Turnier. Bei vier Spielern, über zwei Jahre. #sprecher:lin #stimmung:nachdenklich
+Vierundsiebzig Prozent im Training. Achtundneunzig im Turnier. #sprecher:lin #stimmung:nachdenklich
+Bei vier Spielern, über zwei Jahre. #sprecher:lin #stimmung:nachdenklich
 Ich habe ihre Spielberichte unterschrieben. Ich habe sie nie so genau angesehen, wie ich es von jedem Schüler verlangt hätte. #sprecher:lin #stimmung:bitter
 Das ist mein Fehler, und er ist nicht klein. Die Kinder haben getan, was Erwachsene von ihnen verlangt haben. #sprecher:lin #stimmung:bitter
 * [Dr. Lin ansehen]
@@ -264,14 +295,19 @@ Ich nenne einen Namen, weil er auf den Verträgen steht: Mr. Dorrance, Vertrieb.
 
 === aussage_victor ===
 Graham Hale steht bei den Sponsoren, ein Telefon in der Hand und eines am Ohr, und hat beide vergessen. Sein Gesicht ist grau. #sprecher:erzaehler
-Das wusste ich nicht. Ich habe die Engine gebaut. Für das Training. Ich habe nie … #sprecher:grahamHale #stimmung:ueberrascht
-Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Halle, und stellt sich neben Nova. Nicht vor sie. Neben sie. #sprecher:erzaehler #musik:victor.warm
-Ich hab es gesehen. In Silicon Bay, im Januar. Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor #stimmung:bitter
+Das wusste ich nicht. Ich habe die Engine gebaut. #sprecher:grahamHale #stimmung:ueberrascht
+Für das Training. Ich habe nie … #sprecher:grahamHale #stimmung:ueberrascht
+Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Halle, und stellt sich neben Nova. #sprecher:erzaehler #musik:victor.warm
+Nicht vor sie. Neben sie. #sprecher:erzaehler
+Ich hab es gesehen. In Silicon Bay, im Januar. #sprecher:victor #stimmung:bitter
+Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor #stimmung:bitter
 In Summit City hatte ich selbst eines in der Tasche. Ich hab es getragen. #sprecher:victor #stimmung:bitter
 * [Victor ansehen]
 - {victorCedarCreekGesehen:Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht.|Ich hab mich jahrelang nicht gefragt, ob mir das Spaß macht. Ich hab ein Jahr für die Frage gebraucht.} #sprecher:victor #stimmung:nachdenklich
-Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
-Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #sprecher:erzaehler #pause:2
+Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. #sprecher:erzaehler
+Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
+Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. #sprecher:erzaehler
+Sie stehen auch. #sprecher:erzaehler #pause:2
 -> END
 
 // ---------------------------------------------------------------- Halbfinale (Szene 106)
@@ -279,9 +315,11 @@ Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #spr
 === halbfinale_angebot ===
 {
 - ausgangCapitalArenaHalbfinale == "remis":
-    Remis. Im Halbfinale braucht es einen Sieger. Ihr spielt noch einmal. #sprecher:turnierleiterin #stimmung:neutral
+    Remis. Im Halbfinale braucht es einen Sieger. #sprecher:turnierleiterin #stimmung:neutral
+    Ihr spielt noch einmal. #sprecher:turnierleiterin #stimmung:neutral
 - ausgangCapitalArenaHalbfinale == "niederlage":
-    Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. Noch einmal gegen Kade? #sprecher:turnierleiterin #stimmung:nachdenklich
+    Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. #sprecher:turnierleiterin #stimmung:nachdenklich
+    Noch einmal gegen Kade? #sprecher:turnierleiterin #stimmung:nachdenklich
 - not halbfinaleVorherGesehen:
     -> halbfinale_vorher
 }
@@ -290,13 +328,17 @@ Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #spr
 // Roman Kapitel 63, vor der Partie: Kade ist nicht da; die vierte Karte mit goldenem Rand.
 === halbfinale_vorher ===
 ~ halbfinaleVorherGesehen = true
-Kade Sterling gibt dir die Hand, ohne dich anzusehen. Er ist nicht unfreundlich. Er ist nicht da. #sprecher:erzaehler
+Kade Sterling gibt dir die Hand, ohne dich anzusehen. Er ist nicht unfreundlich. #sprecher:erzaehler
+Er ist nicht da. #sprecher:erzaehler
 Am Rand schwenkt der Funkprüfer sein Gerät, sieht auf die Anzeige und schüttelt den Kopf. #sprecher:erzaehler
 Er sucht an den Ohren. Seit das Mädchen ausgesagt hat, wissen die anderen, dass dort gesucht wird. #sprecher:ambrose #stimmung:nachdenklich
 Neben deinen Karten liegt eine vierte, die du nicht hingelegt hast. „Mentor-Zug“, mit einem goldenen Rand. #sprecher:erzaehler
-Ein einziges Mal. Heute. Wenn du mich rufst, komme ich. Wenn nicht, schaue ich zu. Beides ist mir recht. #sprecher:ambrose #stimmung:laechelt
+Ein einziges Mal. Heute. #sprecher:ambrose #stimmung:laechelt
+Wenn du mich rufst, komme ich. Wenn nicht, schaue ich zu. #sprecher:ambrose #stimmung:laechelt
+Beides ist mir recht. #sprecher:ambrose #stimmung:laechelt
 * [„Was passiert, wenn ich sie spiele?“]
-- Dann spielen wir einen Zug zusammen. Nicht ich für dich. Wir. #sprecher:ambrose #stimmung:laechelt
+- Dann spielen wir einen Zug zusammen. Nicht ich für dich. #sprecher:ambrose #stimmung:laechelt
+Wir. #sprecher:ambrose #stimmung:laechelt
 * [„Und wenn nicht?“]
 - Er lächelt. #sprecher:erzaehler
 Dann erfahre ich, dass du mich nicht gebraucht hast. Das wäre auch ein schöner Tag. #sprecher:ambrose #stimmung:froh
@@ -314,25 +356,47 @@ Dann erfahre ich, dass du mich nicht gebraucht hast. Das wäre auch ein schöner
 // sucht den besten Engine-Zug der echten Partie; nur wenn es ein Turmzug ist (zugerratenTurm, setzt
 // die Hülle), erzählen die Zeilen den Turm wie im Roman, sonst ohne Figur.
 === halbfinale_turm ===
-{zugerratenTurm:Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König.|Du siehst etwas. Keine Rettung. Da ist ein Zug. Er sieht falsch aus, und dahinter ist sein König.} #sprecher:erzaehler #musik:aus
-Du zählst Angreifer und Verteidiger. Dann suchst du den stillen Zug für ihn. Gibt es einen? Es ist zu tief. #sprecher:erzaehler
-+ [„Ambrose.“]
+{zugerratenTurm:
+    Du siehst etwas. Keine Rettung. #sprecher:erzaehler #musik:aus
+    Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König. #sprecher:erzaehler
+- else:
+    Du siehst etwas. Keine Rettung. #sprecher:erzaehler #musik:aus
+    Da ist ein Zug. Er sieht falsch aus, und dahinter ist sein König. #sprecher:erzaehler
+}
+Du zählst Angreifer und Verteidiger. Dann suchst du den stillen Zug für ihn. #sprecher:erzaehler
+Gibt es einen? Es ist zu tief. #sprecher:erzaehler
+// Lektorat 19.11.2026: „Ein einziges Mal. Heute.“ In der Wiederholungspartie ruft man ihn nicht noch einmal.
+{ambroseImHalbfinaleGerufen:
+    Ambrose steht hinter dir. Einmal hast du ihn gerufen. #sprecher:erzaehler
+    Diesmal zählst du allein. #sprecher:erzaehler
+}
++ {not ambroseImHalbfinaleGerufen} [„Ambrose.“]
     ~ ambroseImHalbfinaleGerufen = true
     -> halbfinale_zusammen
 + [Allein prüfen]
-    Du prüfst, so gut du kannst. Dann hoffst du. Und siehst ihm ins Gesicht. #sprecher:erzaehler #musik:held.allein
+    Du prüfst, so gut du kannst. Dann hoffst du. #sprecher:erzaehler #musik:held.allein
+    Und siehst ihm ins Gesicht. #sprecher:erzaehler
     -> END
 
 === halbfinale_zusammen ===
 Er ist sofort da, so nah, dass du die Kälte spürst. #sprecher:erzaehler #musik:ambrose.suchend
-{zugerratenTurm:Ich sehe es. Der Turm, {held}. Der Turm.|Ich sehe es. Dieser Zug, {held}. Dieser Zug.} #sprecher:ambrose #stimmung:ueberrascht
+{zugerratenTurm:
+    Ich sehe es. Der Turm, {held}. #sprecher:ambrose #stimmung:ueberrascht
+    Der Turm. #sprecher:ambrose #stimmung:ueberrascht
+- else:
+    Ich sehe es. Dieser Zug, {held}. #sprecher:ambrose #stimmung:ueberrascht
+    Dieser Zug. #sprecher:ambrose #stimmung:ueberrascht
+}
 + [„Stimmt es?“]
 - Er rechnet und kommt an dieselbe Stelle wie du, an den stillen Zug für ihn. Dahinter ist es dunkel. #sprecher:erzaehler
-Ich weiß es nicht. Bis dorthin stimmt es. Danach ist es dunkel. Die Maschine weiß es. Ich nicht. Du nicht. #sprecher:ambrose #stimmung:lacht
+Ich weiß es nicht. Bis dorthin stimmt es. #sprecher:ambrose #stimmung:lacht
+Danach ist es dunkel. Die Maschine weiß es. #sprecher:ambrose #stimmung:lacht
+Ich nicht. Du nicht. #sprecher:ambrose #stimmung:lacht
 + [„Was machen wir?“]
 - Was hast du in der Wüste gelernt? #sprecher:ambrose #stimmung:nachdenklich
 + [„Prüfen, so gut man kann. Dann hoffen.“]
-- Die Maschine hat kein Gesicht. Noch nicht. Sieh auf den Mann mit dem Gerät. #sprecher:ambrose #stimmung:nachdenklich
+- Die Maschine hat kein Gesicht. Noch nicht. #sprecher:ambrose #stimmung:nachdenklich
+Sieh auf den Mann mit dem Gerät. #sprecher:ambrose #stimmung:nachdenklich
 + [„Zusammen.“]
 - Zusammen. #sprecher:ambrose #stimmung:laechelt #musik:zusammen
 Du fühlst seine Hand auf deiner, kalt und leicht wie Atem. #sprecher:erzaehler
@@ -344,7 +408,8 @@ Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht {held} da?�
 ~ halbfinaleDanachGesehen = true
 Kade sitzt da, einen Schuh ausgezogen, und sieht auf seinen König. Das Gerät hat er zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh. #sprecher:erzaehler
 Du gehst um den Tisch und hältst ihm die Hand hin. Er nimmt sie. #sprecher:erzaehler
-Ich hab ihn nicht gesehen. Ich hab seit dem Frühjahr kein Brett mehr angeguckt. Ich war mal richtig gut. In der achten Klasse. #sprecher:kade #stimmung:bitter
+Ich hab ihn nicht gesehen. Ich hab seit dem Frühjahr kein Brett mehr angeguckt. #sprecher:kade #stimmung:bitter
+Ich war mal richtig gut. In der achten Klasse. #sprecher:kade #stimmung:bitter
 * [„Dann bist du es noch. Frag Nova.“]
 - {ambroseImHalbfinaleGerufen or mentorzugFreiGespielt: -> halbfinale_mit_dir}
 Ambrose steht neben dem Brett. #sprecher:erzaehler
@@ -358,7 +423,8 @@ Ich habe nur zugesehen. Es war ein schöner Tag. #sprecher:ambrose #stimmung:fro
 Er hebt die Hand, die auf deiner gelegen hat. Sie ist fast durchsichtig. #sprecher:erzaehler
 Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pause:2
 * [„Sie war nicht makellos.“]
-- Sie war das Schönste, was ich je gespielt habe. Und ich habe nur einen Zug gemacht. Und den nicht einmal allein. #sprecher:ambrose #stimmung:lacht
+- Sie war das Schönste, was ich je gespielt habe. Und ich habe nur einen Zug gemacht. #sprecher:ambrose #stimmung:lacht
+Und den nicht einmal allein. #sprecher:ambrose #stimmung:lacht
 -> halbfinale_zum_gang
 
 // Wohin danach (Wunsch des Autors, 19.11.2026): Victor wartet im Gang hinter der Halle
@@ -378,7 +444,8 @@ Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pa
 - ausgangCapitalArenaFinale == "" or ausgangCapitalArenaFinale == "abgebrochen": -> finale_angebot
 - not finaleBesprochen: -> nach_dem_finale
 - else:
-    Revanche? Jederzeit. Aber nicht heute. Heute feiern wir. #sprecher:victor #stimmung:froh
+    Revanche? Jederzeit. #sprecher:victor #stimmung:froh
+    Aber nicht heute. Heute feiern wir. #sprecher:victor #stimmung:froh
     -> END
 }
 
@@ -388,16 +455,20 @@ Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pa
 ~ vorDemFinaleGesehen = true
 Hinter der Halle ist ein langer, kahler Gang mit Neonlicht und einem Getränkeautomaten. #sprecher:erzaehler #musik:aus #geraeusch:gang
 Du sitzt auf dem Boden und wartest, dass deine Hände aufhören zu zittern. #sprecher:erzaehler
-Am anderen Ende stehen Graham Hale und Victor. Der Gang trägt jedes Wort. Graham hält kein Telefon in der Hand. #sprecher:erzaehler
-Acht Jahre habe ich jede Partie nachgerechnet. Ich bin kein Spieler. Ich bin Ingenieur. Ich kann messen. #sprecher:grahamHale #stimmung:nachdenklich
+Am anderen Ende stehen Graham Hale und Victor. Der Gang trägt jedes Wort. #sprecher:erzaehler
+Graham hält kein Telefon in der Hand. #sprecher:erzaehler
+Acht Jahre habe ich jede Partie nachgerechnet. Ich bin kein Spieler. #sprecher:grahamHale #stimmung:nachdenklich
+Ich bin Ingenieur. Ich kann messen. #sprecher:grahamHale #stimmung:nachdenklich
 * [Weghören wollen]
 - Du hast mit sieben gegen mich gewonnen. Am nächsten Morgen habe ich gedacht, ich halte dich auf. #sprecher:grahamHale #stimmung:bitter
-Ich wollte nur noch eine. Mit dir. Ich hab acht Jahre lang jeden Abend gedacht, heute fragt er. #sprecher:victor #stimmung:bitter
+Ich wollte nur noch eine. Mit dir. #sprecher:victor #stimmung:bitter
+Ich hab acht Jahre lang jeden Abend gedacht, heute fragt er. #sprecher:victor #stimmung:bitter
 * [Nicht hinsehen]
 - Es ist lange still. #sprecher:erzaehler #pause:2
 Ich habe gerechnet und vergessen, wofür. Entschuldige, Victor. #sprecher:grahamHale #stimmung:nachdenklich #musik:hale.victor
 Du hörst, wie zwei Menschen einander festhalten, ungeschickt, wie Leute, die es lange nicht getan haben. #sprecher:erzaehler
-Ich spiel heute für mich. Und gegen meinen besten Gegner. Du darfst zugucken. Aber du darfst nichts aufschreiben. #sprecher:victor #stimmung:laechelt
+Ich spiel heute für mich. Und gegen meinen besten Gegner. #sprecher:victor #stimmung:laechelt
+Du darfst zugucken. Aber du darfst nichts aufschreiben. #sprecher:victor #stimmung:laechelt
 Ich weiß nicht, ob ich das kann. #sprecher:grahamHale #stimmung:nachdenklich
 Probier's. Es ist luftig. #sprecher:victor #stimmung:laechelt
 -> vor_dem_finale_mama
@@ -405,7 +476,8 @@ Probier's. Es ist luftig. #sprecher:victor #stimmung:laechelt
 === vor_dem_finale_mama ===
 Mama kommt den Gang herunter und setzt sich neben dich auf den Boden. #sprecher:erzaehler #musik:mama.ruhig
 Ich hatte auch mal so ein Finale. Ich hab fünfundzwanzig Jahre gedacht, das Verlieren sei das Wichtigste daran. #sprecher:mutter #stimmung:nachdenklich
-Ich hab das Formular wieder angeguckt. Nicht Zug dreiunddreißig. Die anderen zweiunddreißig. Die waren richtig gut. #sprecher:mutter #stimmung:laechelt
+Ich hab das Formular wieder angeguckt. Nicht Zug dreiunddreißig. #sprecher:mutter #stimmung:laechelt
+Die anderen zweiunddreißig. Die waren richtig gut. #sprecher:mutter #stimmung:laechelt
 * [Mama ansehen]
 - Spiel deine Partie. Ich hab meine verloren, und es war trotzdem schön, dass ich sie gespielt hab. #sprecher:mutter #stimmung:laechelt
 Und guck auf die Grundreihe. #sprecher:mutter #stimmung:laechelt
@@ -415,17 +487,26 @@ Und guck auf die Grundreihe. #sprecher:mutter #stimmung:laechelt
 Ambrose steht am Getränkeautomaten, als versuche er ein letztes Mal, etwas zu verstehen. #sprecher:erzaehler #musik:ambrose.scherzo
 * [„Man wirft Geld hinein, und es fällt etwas heraus.“]
 - Das habe ich begriffen. Ich frage mich nur, wer darin sitzt. #sprecher:ambrose #stimmung:lacht
-Ich sage heute nichts. Kein Wort, nicht vorher, nicht währenddessen. Keine Karten. Das Brett gehört euch. #sprecher:ambrose #stimmung:laechelt
+Ich sage heute nichts. Kein Wort, nicht vorher, nicht währenddessen. #sprecher:ambrose #stimmung:laechelt
+Keine Karten. Das Brett gehört euch. #sprecher:ambrose #stimmung:laechelt
 Ich stehe hinten, bei der Großmeisterin. Sie dreht jedes Mal den Kopf, wenn ich neben ihr stehe. #sprecher:ambrose #stimmung:froh
-Ich will sehen, was du tust, wenn niemand neben dir steht. Nicht zu wissen, was du ziehst. Das Beste seit hundertsechzig Jahren. #sprecher:ambrose #stimmung:laechelt
+Ich will sehen, was du tust, wenn niemand neben dir steht. Nicht zu wissen, was du ziehst. #sprecher:ambrose #stimmung:laechelt
+Das Beste seit hundertsechzig Jahren. #sprecher:ambrose #stimmung:laechelt
 Aus der Halle kommt ein Gong. Deine Hände zittern nicht mehr. #sprecher:erzaehler #klang:gong #pause:2
 * [Aufstehen]
 - -> finale_angebot
 
 === finale_angebot ===
 // Roman Kapitel 65: ein Tisch im Lichtkreis; keine Karten, keine Hilfen, Ambrose nicht im Bild.
-Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
-Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
+// Lektorat 20.11.2026: Nach „Gleich.“ dreht Victor die Taschen nicht ein zweites Mal um.
+{
+- finaleTischGesehen:
+    Victor sitzt im Lichtkreis und wartet. Die Taschen hängen noch nach außen. #sprecher:erzaehler #musik:aus
+- else:
+    ~ finaleTischGesehen = true
+    Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
+    Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
+}
 Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 + [„Ich bin bereit.“]
     Seine Hand ist trocken und warm. #sprecher:erzaehler
@@ -438,14 +519,17 @@ Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 ~ finaleBesprochen = true
 {
 - ausgangCapitalArenaFinale == "sieg":
-    Victor legt seinen König mit einem Finger um. Die Halle ist still. Sie weiß noch nicht, was sie gesehen hat. #sprecher:erzaehler
+    Victor legt seinen König mit einem Finger um. Die Halle ist still. #sprecher:erzaehler
+    Sie weiß noch nicht, was sie gesehen hat. #sprecher:erzaehler
     Dann fängt er an zu lachen, das helle Lachen von der Bergstation. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
     Hast du es gesehen? Bis zum Ende? #sprecher:victor #stimmung:lacht
 - ausgangCapitalArenaFinale == "remis":
-    Remis. Victor sieht auf das Brett und fängt an zu lachen. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Remis. Victor sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
+    Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
     Hast du gesehen, wie wir gespielt haben? #sprecher:victor #stimmung:lacht
 - else:
-    Du legst deinen König um. Victor sieht auf das Brett und fängt an zu lachen. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Du legst deinen König um. Victor sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
+    Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
     Du hast mich gezwungen, gut zu spielen. Danke. #sprecher:victor #stimmung:lacht
 }
 * {ausgangCapitalArenaFinale == "sieg"} [„Nein. Nur bis zum sechsten Zug. Ich hab gehofft.“]
@@ -455,7 +539,8 @@ Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 // Victors Lauf zum Vater, bei jedem Ausgang (Story-Bibel, Szene 108); Musik victor.lauf.
 === finale_lauf ===
 Er reißt das Formular vom Tisch und rennt. Von der Bühne, durch den Mittelgang, das Blatt hoch über dem Kopf wie eine Fahne. #sprecher:erzaehler #musik:victor.lauf
-Vater! Guck dir an, wie wir gespielt haben! Das ist die schönste Partie, die ich je … #sprecher:victor #stimmung:lacht
+Vater! Guck dir an, wie wir gespielt haben! #sprecher:victor #stimmung:lacht
+Das ist die schönste Partie, die ich je … #sprecher:victor #stimmung:lacht
 Der Rest geht unter. Ein Pfiff auf zwei Fingern, eine Trompete, Big Joe brüllt etwas mit „Kumpel“, Mira schreit: „Noch mal! Jetzt!“ #sprecher:erzaehler
 Juno rennt in dich hinein. Sie hat beide Tagebücher verloren und merkt es nicht. #sprecher:erzaehler
 Wie soll ich das denn aufschreiben? #sprecher:juno #stimmung:froh
@@ -472,18 +557,22 @@ Als die Halle leer wird, gehst du hinaus auf die Treppe vor der Arena. #sprecher
 
 === bea ===
 {gespielt(ausgangCapitalArenaRunde1):
-    Gut gespielt. Meine kleine Schwester Mae hat gesagt, du gibst nie auf. Stimmt. #sprecher:bea #stimmung:laechelt
+    Gut gespielt. Meine kleine Schwester Mae hat gesagt, du gibst nie auf. #sprecher:bea #stimmung:laechelt
+    Stimmt. #sprecher:bea #stimmung:laechelt
 - else:
-    Bea Lindqvist. Ich spiele auf Remis, bis du einen Fehler machst. Meistens machst du einen. #sprecher:bea #stimmung:laechelt
+    Bea Lindqvist. Ich spiele auf Remis, bis du einen Fehler machst. #sprecher:bea #stimmung:laechelt
+    Meistens machst du einen. #sprecher:bea #stimmung:laechelt
 }
 -> END
 
 === marcus ===
 {gespielt(ausgangCapitalArenaRunde2):
     {ausgangCapitalArenaRunde2 == "niederlage":
-        Eine Gabel, drei Züge vorher angekündigt. Nicht laut. Aber angekündigt. #sprecher:marcus #stimmung:laechelt
+        Eine Gabel, drei Züge vorher angekündigt. Nicht laut. #sprecher:marcus #stimmung:laechelt
+        Aber angekündigt. #sprecher:marcus #stimmung:laechelt
     - else:
-        Dieser stille Zug. Den hab ich nicht kommen sehen. Den sieht keiner kommen. #sprecher:marcus #stimmung:ueberrascht
+        Dieser stille Zug. Den hab ich nicht kommen sehen. #sprecher:marcus #stimmung:ueberrascht
+        Den sieht keiner kommen. #sprecher:marcus #stimmung:ueberrascht
     }
 - else:
     Marcus. Ich sehe jede Gabel. #sprecher:marcus #stimmung:laechelt
@@ -496,9 +585,11 @@ Als die Halle leer wird, gehst du hinaus auf die Treppe vor der Arena. #sprecher
 - gespielt(ausgangCapitalArenaRunde3) and not novaNachPartieGesehen:
     -> nova_nach_partie
 - aussageGesehen and novaHilfeZugesagt:
-    Du hast in der ersten Reihe gestanden. Das vergesse ich nicht. Jetzt bin ich frei. #sprecher:nova #stimmung:froh
+    Du hast in der ersten Reihe gestanden. Das vergesse ich nicht. #sprecher:nova #stimmung:froh
+    Jetzt bin ich frei. #sprecher:nova #stimmung:froh
 - aussageGesehen:
-    Ich hab es gesagt. Alles. Jetzt bin ich frei. Und ein bisschen müde. #sprecher:nova #stimmung:laechelt
+    Ich hab es gesagt. Alles. #sprecher:nova #stimmung:laechelt
+    Jetzt bin ich frei. Und ein bisschen müde. #sprecher:nova #stimmung:laechelt
 - gespielt(ausgangCapitalArenaRunde3):
     Ich hab es keine Sekunde gewusst. Die ganze Partie nicht. #sprecher:nova #stimmung:froh
 - else:
@@ -531,7 +622,8 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 === tobias ===
 {gespielt(ausgangCapitalArenaRunde4):
     {ausgangCapitalArenaRunde4 == "niederlage":
-        Fünf Minuten. Siehst du, eine Ewigkeit. Nur nicht für dich. #sprecher:tobias #stimmung:lacht
+        Fünf Minuten. Siehst du, eine Ewigkeit. #sprecher:tobias #stimmung:lacht
+        Nur nicht für dich. #sprecher:tobias #stimmung:lacht
     - else:
         Du hast mich auf meiner eigenen Uhr erwischt. Respekt. #sprecher:tobias #stimmung:laechelt
     }
@@ -545,9 +637,11 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 {
 - ausgangCapitalArenaHalbfinale == "sieg" and not halbfinaleDanachGesehen: -> halbfinale_danach
 - ausgangCapitalArenaHalbfinale == "sieg":
-    Kade sitzt bei Nova. Sie stellt ihm eine Stellung auf. Er sieht hin. #sprecher:erzaehler
+    Kade sitzt bei Nova. Sie stellt ihm eine Stellung auf. #sprecher:erzaehler
+    Er sieht hin. #sprecher:erzaehler
 - vorrundeGeschafft:
-    Kade Sterling sieht auf einen Punkt über deiner Schulter. Er ist nicht unfreundlich. Er ist nicht da. #sprecher:erzaehler
+    Kade Sterling sieht auf einen Punkt über deiner Schulter. Er ist nicht unfreundlich. #sprecher:erzaehler
+    Er ist nicht da. #sprecher:erzaehler
 - else:
     Ein Junge in Weiß sitzt am Rand, beide Hände auf dem Tisch. Er hält den Kopf ganz gerade. #sprecher:erzaehler
 }
@@ -560,9 +654,11 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 // zusätzliche Sätze und ein Album-Foto, ohne die Haupthandlung zu ändern.
 {aussageGesehen and spurenPM >= 6 and not mappeGezeigt: -> lin_mappe}
 {aussageGesehen:
-    Ich habe gekündigt, bevor wir hergefahren sind. Der Club ist in einem Keller. Ein Heizlüfter, kein einziger Bildschirm. #sprecher:lin #stimmung:nachdenklich
+    Ich habe gekündigt, bevor wir hergefahren sind. Der Club ist in einem Keller. #sprecher:lin #stimmung:nachdenklich
+    Ein Heizlüfter, kein einziger Bildschirm. #sprecher:lin #stimmung:nachdenklich
 - else:
-    Wir haben eine Mappe dabei. Nach der Vorrunde. Dann reden wir. #sprecher:lin #stimmung:neutral
+    Wir haben eine Mappe dabei. Nach der Vorrunde. #sprecher:lin #stimmung:neutral
+    Dann reden wir. #sprecher:lin #stimmung:neutral
 }
 -> END
 
@@ -571,7 +667,8 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 Du legst Dr. Lin deine eigene Mappe hin: die Drohne, der Funkmast, der Messwagen, die Server, der Geysirantrag, der Greifarm. #sprecher:erzaehler
 Das hier kenne ich. Woher hast du das? #sprecher:lin #stimmung:ueberrascht
 Sie blättert lange. #sprecher:erzaehler
-Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach. Danke. #sprecher:lin #stimmung:nachdenklich
+Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach. #sprecher:lin #stimmung:nachdenklich
+Danke. #sprecher:lin #stimmung:nachdenklich
 ~ gibFund("fotoMappe")
 {not abschiedGesehen:
     Sechs Spuren. Du hast hingesehen, wo andere vorbeigegangen sind. #sprecher:ambrose #stimmung:laechelt
@@ -583,11 +680,14 @@ Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach. Da
 - finaleBesprochen:
     Mein Sohn hat für sich gespielt. Und ich habe zum ersten Mal einfach nur zugesehen. #sprecher:grahamHale #stimmung:laechelt
 - vorDemFinaleGesehen:
-    Mein Sohn spielt im Finale. Für sich. Das hätte ich ihm früher erlauben sollen. #sprecher:grahamHale #stimmung:nachdenklich
+    Mein Sohn spielt im Finale. Für sich. #sprecher:grahamHale #stimmung:nachdenklich
+    Das hätte ich ihm früher erlauben sollen. #sprecher:grahamHale #stimmung:nachdenklich
 - aussageGesehen:
-    Ich habe nichts gewusst. Das ist keine Ausrede. Es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
+    Ich habe nichts gewusst. Das ist keine Ausrede. #sprecher:grahamHale #stimmung:bitter
+    Es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
 - else:
-    Graham Hale. Wir haben uns in Maple Falls gesehen, im Clubraum. Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
+    Graham Hale. Wir haben uns in Maple Falls gesehen, im Clubraum. #sprecher:grahamHale #stimmung:laechelt
+    Ich sponsere dieses Turnier. #sprecher:grahamHale #stimmung:laechelt
     Viel Glück. Nein, ehrlich: viel Glück. #sprecher:grahamHale #stimmung:laechelt
 }
 -> END
@@ -638,7 +738,8 @@ Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 === halbfinale_rueckmeldung ===
 {ausgangCapitalArenaHalbfinale == "sieg" and not halbfinaleDanachGesehen: -> halbfinale_danach}
 {ausgangCapitalArenaHalbfinale:
-- "sieg": Halbfinale gewonnen. Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:laechelt
+- "sieg": Halbfinale gewonnen. Das Finale spielst du auf der Bühne. #sprecher:turnierleiterin #stimmung:laechelt
+Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:laechelt
 - "remis": Halbfinale remis. Für das Finale reicht das nicht. #sprecher:turnierleiterin #stimmung:neutral
 - else: Das Halbfinale ist verloren. #sprecher:turnierleiterin #stimmung:neutral
 }

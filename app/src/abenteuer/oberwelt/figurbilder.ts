@@ -14,7 +14,7 @@ import Phaser from "phaser";
 import { istGrossbogen } from "./figurbogen";
 import type { Umriss } from "./sitzplatz";
 import type { Richtung } from "./szene";
-import { GROSS_MASSSTAB } from "./weltmassstab";
+import { figurzeichenmassstab } from "./weltmassstab";
 
 /** Rahmen einer Figur von LimeZu. */
 export const FIGUR_BREITE = 16;
@@ -74,12 +74,23 @@ function fusszeile(sprite: Phaser.GameObjects.Sprite): number {
   return width >= GROSS_RAHMEN ? height - GROSS_FUSSRAND : height;
 }
 
+/** Schlüssel in der Registry des Spiels: Faktor auf den Maßstab der Figuren dieser Karte. */
+export const FIGURFAKTOR = "figurfaktor";
+
+/** Faktor der Karte, auf der die Figur steht (Innenräume größer, weltmassstab.ts); sonst 1. */
+function figurfaktor(sprite: Phaser.GameObjects.Sprite): number {
+  const wert: unknown = sprite.scene?.registry?.get(FIGURFAKTOR);
+  return typeof wert === "number" && wert > 0 ? wert : 1;
+}
+
 /**
  * Maßstab, mit dem eine Figur gezeichnet wird: PixelLab-Bögen 2/3 (zwei Bildschirmpixel je
- * Figurenpixel bei ZOOM 3, Variante B in weltmassstab.ts), LimeZu-Figuren 1.
+ * Figurenpixel bei ZOOM 3, Variante B in weltmassstab.ts), LimeZu-Figuren 1; PixelLab-Figuren in
+ * Innenräumen mal INNEN_FIGURFAKTOR (die Szene legt den Faktor in die Registry).
+ * Beispiel: Held (PixelLab) außen 2/3, innen 2/3 × 4/3 = 8/9; eine LimeZu-Figur bleibt 1.
  */
 export function figurmassstab(sprite: Phaser.GameObjects.Sprite): number {
-  return sprite.frame.width >= GROSS_RAHMEN ? GROSS_MASSSTAB : 1;
+  return figurzeichenmassstab(sprite.frame.width, figurfaktor(sprite));
 }
 
 /**

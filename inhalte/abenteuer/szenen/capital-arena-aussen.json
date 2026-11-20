@@ -298,14 +298,24 @@
       "feld": [
         21,
         44
-      ]
+      ],
+      "versatz": [
+        6,
+        8
+      ],
+      "massstab": 0.75
     },
     {
       "moebel": "ca7Bank",
       "feld": [
         54,
         44
-      ]
+      ],
+      "versatz": [
+        6,
+        8
+      ],
+      "massstab": 0.75
     },
     {
       "moebel": "ca7Laterne",

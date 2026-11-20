@@ -25,6 +25,7 @@ import { beendeOberwelt, starteOberwelt } from "./oberweltspiel";
 import { KACHEL, type Ausloesertreffer } from "./szene";
 import { aktuelleToenung } from "./toenung";
 import { KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
+import { INNEN_FIGURFAKTOR } from "./weltmassstab";
 
 /** Gegenstand für den Lichtkreis auf dunklen Karten (Sperren S4, S9, S11, S14). */
 const LATERNE = "laterne";
@@ -107,6 +108,8 @@ function starteSpiel(
     uebergaenge,
     // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
     tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
+    // Figuren innen größer (Wunsch des Autors, 20.11.2026; weltmassstab.ts).
+    figurfaktor: w.innen ? INNEN_FIGURFAKTOR : 1,
     melder: {
       beiAusloeser: a.beiTreffer,
       beiKachel: (x, y) => {

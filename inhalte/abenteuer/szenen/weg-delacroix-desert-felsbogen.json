@@ -588,7 +588,9 @@
     {
       "moebel": "mfBank",
       "feld": [80, 22],
-      "id": "bankAussicht"
+      "id": "bankAussicht",
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6SteinFlach",

@@ -16447,10 +16447,10 @@
      "id": 178,
      "name": "mfBank",
      "type": "moebel",
-     "x": 224,
-     "y": 816,
-     "width": 32,
-     "height": 32,
+     "x": 228,
+     "y": 824,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16463,6 +16463,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -16470,10 +16480,10 @@
      "id": 179,
      "name": "mfBank",
      "type": "moebel",
-     "x": 512,
-     "y": 816,
-     "width": 32,
-     "height": 32,
+     "x": 516,
+     "y": 824,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16486,6 +16496,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },
@@ -16493,10 +16513,10 @@
      "id": 180,
      "name": "mfBank",
      "type": "moebel",
-     "x": 704,
-     "y": 816,
-     "width": 32,
-     "height": 32,
+     "x": 708,
+     "y": 824,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16509,6 +16529,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../#."
       }
      ]
     },

@@ -86,7 +86,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [26, 9]
+      "feld": [26, 9],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "wg4ZaunBottomLeft",

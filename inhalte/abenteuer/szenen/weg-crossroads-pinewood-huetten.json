@@ -56,7 +56,9 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [55, 23]
+      "feld": [55, 23],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "cp7Feuerstelle",
@@ -64,7 +66,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [59, 22]
+      "feld": [59, 22],
+      "versatz": [4, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "ld14BlockhuetteGruen",
@@ -1112,7 +1116,9 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [63, 26]
+      "feld": [63, 26],
+      "versatz": [4, 8],
+      "massstab": 0.75
     }
   ],
   "ausloeser": [

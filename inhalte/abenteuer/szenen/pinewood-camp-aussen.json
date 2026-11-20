@@ -153,11 +153,15 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [26, 28]
+      "feld": [26, 28],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [32, 28]
+      "feld": [32, 28],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "gcFaehrhausHolz",
@@ -389,7 +393,9 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [23, 21]
+      "feld": [23, 21],
+      "versatz": [5, 10],
+      "massstab": 0.7
     }
   ],
   "ausloeser": [

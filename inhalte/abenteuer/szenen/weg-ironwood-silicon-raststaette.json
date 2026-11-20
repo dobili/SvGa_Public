@@ -1147,19 +1147,27 @@
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [148, 21]
+      "feld": [148, 21],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [152, 21]
+      "feld": [152, 21],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [148, 24]
+      "feld": [148, 24],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [152, 24]
+      "feld": [152, 24],
+      "versatz": [5, 10],
+      "massstab": 0.7
     },
     {
       "moebel": "ws5Muell",

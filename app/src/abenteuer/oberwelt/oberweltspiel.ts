@@ -8,6 +8,7 @@
  * bleibt, wo er ist.
  * Abhängigkeiten: phaser, szene.ts (Kamera über kameraregie.ts).
  */
+import { FIGURFAKTOR } from "./figurbilder";
 import Phaser from "phaser";
 import { raeumePhaserNachlassAuf } from "./phaserNachlass";
 import { Oberweltszene, type Szenendaten } from "./szene";
@@ -57,6 +58,8 @@ export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser
     input: { keyboard: { capture: [] } },
     audio: { noAudio: true },
   });
+  // Faktor der Figuren dieser Karte (innen größer, weltmassstab.ts); figurbilder.ts liest ihn.
+  spiel.registry.set(FIGURFAKTOR, daten.figurfaktor ?? 1);
   // Phaser lässt beim Beenden einen Sichtbarkeitshörer am Dokument zurück (je Karte einen).
   raeumePhaserNachlassAuf(spiel);
   // Drehen des Geräts: Das Spiel folgt der Größe des Elements (ohne Beobachter in alten Browsern

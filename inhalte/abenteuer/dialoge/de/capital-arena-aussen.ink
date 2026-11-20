@@ -125,7 +125,7 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
 === mama ===
 {
 - finaleGespielt():
-    Ich bin so stolz auf dich. {ausgangCapitalArenaFinale == "sieg":Nicht wegen des Titels. }Wegen allem. #sprecher:mutter #stimmung:froh
+    Ich bin so stolz auf dich, {held}. {ausgangCapitalArenaFinale == "sieg":Nicht wegen des Titels. }Wegen allem. #sprecher:mutter #stimmung:froh
 - arenaGesehen:
     Ich hab Kaffee für alle. Und Brötchen. #sprecher:mutter #stimmung:laechelt
     Und ein Pflaster, falls du dich am Brett stößt. #sprecher:mutter #stimmung:laechelt
@@ -212,7 +212,7 @@ Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffe
 === abschied_verbeugung ===
 Die Sonne steht tief. Er ist jetzt so durchsichtig, dass du nicht mehr sicher bist, ob du ihn siehst. #sprecher:erzaehler
 * [„Ich werde dich vermissen.“]
-- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. #sprecher:ambrose #stimmung:laechelt
+- Das hoffe ich doch. Ich war lange genug eine Fußnote. #sprecher:ambrose #stimmung:laechelt
 Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose #stimmung:laechelt
 Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose #stimmung:nachdenklich
 Er steht auf und macht eine kleine, steife Verbeugung. Wie am ersten Tag. #sprecher:erzaehler

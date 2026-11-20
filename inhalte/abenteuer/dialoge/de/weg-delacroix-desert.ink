@@ -193,7 +193,7 @@ Die Sonne berührt den Rand der Welt. #sprecher:erzaehler #licht:nacht
 = erzaehlung_1866
 Er hatte Ja gesagt. Zur Revanche. #sprecher:ambrose #stimmung:nachdenklich #erinnerung
 Per Brief, weil er im Norden Brücken baute und ich im Süden saß. #sprecher:ambrose #stimmung:nachdenklich
-Ein Zug, ein Brief. Über ein Jahr. #sprecher:ambrose #stimmung:laechelt
+Ein Zug, ein Brief. Jahrelang. #sprecher:ambrose #stimmung:laechelt
 Es war die beste Partie meines Lebens. #sprecher:ambrose #stimmung:laechelt
 Ich habe gespielt wie er, gewissenhaft. Und er ein wenig wie ich. #sprecher:ambrose #stimmung:alt
 Er hat Dinge riskiert, die er im Match damals nie riskiert hätte. #sprecher:ambrose #stimmung:alt

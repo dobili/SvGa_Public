@@ -215,7 +215,7 @@ Dann sieht sie es. #sprecher:erzaehler
 * [„Ich hab das gefunden.“]
 - Sie setzt sich. Nicht auf den Stuhl, an dem sie steht. #sprecher:erzaehler
 Auf den nächsten, als wäre der Weg zu weit. #sprecher:erzaehler #pause:2
-Du warst in Ironwood. Bei Oma Ruth. #sprecher:mutter #stimmung:verschlossen
+{held}. Du warst in Ironwood, bei Oma Ruth. #sprecher:mutter #stimmung:verschlossen
 * [„Und bei Big Joe. Er lässt grüßen.“]
 - Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
 Ihm tut es leid. Joe. #sprecher:mutter #stimmung:riss

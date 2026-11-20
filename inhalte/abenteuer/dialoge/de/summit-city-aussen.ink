@@ -20,6 +20,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
 EXTERNAL gibFund(kennung)
 
+VAR victorBergstationGesprochen = false
 VAR held = "Du"
 VAR ankunftSummitGesehen = false
 VAR solGetroffen = false
@@ -133,6 +134,9 @@ Remis. Der Bauer ist nicht oben angekommen. Noch mal, bevor es regnet? #sprecher
 
 === seilbahn ===
 {
+// Lektorat 20.11.2026: „eben“ nur, bis {held} oben bei Victor war.
+- victorKriseGesehen and not victorSeiteGegeben and victorBergstationGesprochen:
+    Oben an der Bergstation sitzt Victor noch am Geländer. #sprecher:erzaehler
 - victorKriseGesehen and not victorSeiteGegeben:
     Der Wärter an der Talstation zeigt nach oben. „Ein Junge ist eben den Pfad hinaufgerannt. Nicht hinunter. Allein.“ #sprecher:erzaehler
 - else:

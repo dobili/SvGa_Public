@@ -67,7 +67,8 @@ VAR testteamWaldNiederlagen = 0
 }
 ~ fenwickGetroffen = true
 An einem Wegweiser steht eine Frau mit Rucksack und Stock und isst einen Apfel. #sprecher:erzaehler
-Riverton? Immer den Gleisen nach. Und merkt euch eins, wenn ihr dort spielen wollt. #sprecher:fenwick #stimmung:laechelt
+Riverton? Immer den Gleisen nach. #sprecher:fenwick #stimmung:laechelt
+Und merkt euch eins, wenn ihr dort spielen wollt. #sprecher:fenwick #stimmung:laechelt
 Sie zeigt mit dem Apfel auf euch. #sprecher:erzaehler
 Wer angreift, soll zuerst zählen, wer verteidigt. #sprecher:fenwick #stimmung:nachdenklich
 Das wissen wir. #sprecher:juno #stimmung:laechelt
@@ -106,7 +107,8 @@ Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen:
 ~ quinnGetroffen = true
 {not gueterzugGesehen: -> gueterzug ->}
 An einer Bude neben den Gleisen sitzt ein Mann in Uniform. Auf einer Kiste ein Brett und eine Uhr mit zwei Zifferblättern. #sprecher:erzaehler
-Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben. Wer will? #sprecher:schaffner #stimmung:laechelt
+Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben. #sprecher:schaffner #stimmung:laechelt
+Wer will? #sprecher:schaffner #stimmung:laechelt
 Ich! #sprecher:juno #stimmung:froh
 Juno spielt, als würde das Haus brennen. Sie verliert einen Läufer, einen Turm, und wirft vor Lachen den König selbst um. #sprecher:erzaehler
 Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
@@ -119,16 +121,19 @@ Erst singt die Schiene. Dann zittert der Boden. Dann rattert ein Güterzug vorbe
 {abschiedGesehen: ->->}
 So schnell. #sprecher:ambrose #stimmung:ueberrascht #pause:2
 Er klingt nicht beeindruckt. Er klingt müde. #sprecher:erzaehler
-Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin nicht angekommen. #sprecher:ambrose #stimmung:traurig
+Ich habe elf Tage gebraucht. Von New Orleans bis … nun. #sprecher:ambrose #stimmung:traurig
+Elf Tage, und ich bin nicht angekommen. #sprecher:ambrose #stimmung:traurig
 * [Warten, ob er weiterspricht]
 * [„Wohin?“]
+    Er antwortet nicht. Der letzte Wagen ist längst vorbei. #sprecher:erzaehler
 - ->->
 
 === quinn_angebot ===
 Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffner #stimmung:laechelt
 + [„Abgemacht.“]
     {not abschiedGesehen:
-        Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose #stimmung:nachdenklich
+        Ruhig. Die Uhr ist auch eine Figur. #sprecher:ambrose #stimmung:nachdenklich
+        Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose #stimmung:nachdenklich
     }
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -138,7 +143,8 @@ Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffn
 
 === quinn_nach_sieg ===
 {not quinnKarteGegeben: -> quinn_karte}
-Pünktlich gewonnen. Das sehe ich gern. Noch eine, bevor die Pause um ist? #sprecher:schaffner #stimmung:laechelt
+Pünktlich gewonnen. Das sehe ich gern. #sprecher:schaffner #stimmung:laechelt
+Noch eine, bevor die Pause um ist? #sprecher:schaffner #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -153,17 +159,20 @@ Er gibt dir die Hand. #sprecher:erzaehler
 Quinn. Seit neunzehn Jahren auf der Strecke. #sprecher:schaffner #stimmung:laechelt
 Aus der Brusttasche zieht er eine Karte: ein Kopf, über dem eine kleine Wolke hängt. #sprecher:erzaehler
 ~ gibKarte("kuehlerKopf")
-Die hat mir mal einer dagelassen. Alter Herr mit einer Thermoskanne. Ich hab nie verstanden, wofür sie gut ist. #sprecher:schaffner #stimmung:nachdenklich
-Die Schrift auf der Rückseite ist steil und altmodisch. #sprecher:erzaehler
+Die hat mir mal einer dagelassen. Alter Herr mit einer Thermoskanne. #sprecher:schaffner #stimmung:nachdenklich
+Ich hab nie verstanden, wofür sie gut ist. #sprecher:schaffner #stimmung:nachdenklich
 * [Die Karte umdrehen]
+    Die Schrift auf der Rückseite ist steil und altmodisch. #sprecher:erzaehler
 * [Einstecken]
+    Beim Einstecken siehst du die Rückseite: dieselbe steile, altmodische Schrift. #sprecher:erzaehler
 - In der Ferne stehen drei Brücken über einem breiten Fluss. Der Himmel darüber hängt grau und schwer. #sprecher:erzaehler #klang:donner_fern
 Riverton. Nehmt einen Schirm. #sprecher:schaffner #stimmung:laechelt
 Ihr habt keinen. #sprecher:erzaehler
 -> END
 
 === quinn_nach_niederlage ===
-Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner #stimmung:laechelt
+Verspätung. Das passiert den Besten. #sprecher:schaffner #stimmung:laechelt
+Noch einmal? #sprecher:schaffner #stimmung:laechelt
 {not abschiedGesehen:
     Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -177,7 +186,8 @@ Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner #stimmung
 // vorteil. Vorher ging es in quinn_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === quinn_nach_remis ===
-Pünktlich, aber nicht vorn. Remis. Noch einmal? #sprecher:schaffner #stimmung:laechelt
+Pünktlich, aber nicht vorn. Remis. #sprecher:schaffner #stimmung:laechelt
+Noch einmal? #sprecher:schaffner #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -239,7 +249,8 @@ Im Schotter steckt eine vergilbte Pappkarte: „Riverton, einfache Fahrt, 1958�
 {rosalindGetroffen: -> zugpartie_angebot}
 ~ rosalindGetroffen = true
 Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
-Marian Shaw. Seit dreiundzwanzig Jahren spiele ich mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt. #sprecher:rosalind #stimmung:nachdenklich
+Marian Shaw. Seit dreiundzwanzig Jahren spiele ich mit Earl, dem Lokführer vom Güterzug. #sprecher:rosalind #stimmung:nachdenklich
+Ein Zug pro Vorbeifahrt. #sprecher:rosalind #stimmung:nachdenklich
 -> zugpartie_angebot
 
 === zugpartie_angebot ===
@@ -329,8 +340,10 @@ Auf einem Mauervorsprung steht eine verbeulte Thermoskanne mit Namen: „G. Toll
 {not testteamWaldGesehen:
     ~ testteamWaldGesehen = true
     Quer über dem Weg steht ein Klapptisch. Dahinter drei in weißen Westen, auf jeder ein kleines silbernes Logo. #sprecher:erzaehler
-    Testteam Perfect Move. Wir sammeln Datenpunkte. Wer vorbei will, spielt eine Stellung. #sprecher:zoe #stimmung:laechelt
-    Das Tablet schaut nur zu. Ich spiele selber. Meistens. #sprecher:benji #stimmung:lacht
+    Testteam Perfect Move. Wir sammeln Datenpunkte. #sprecher:zoe #stimmung:laechelt
+    Wer vorbei will, spielt eine Stellung. #sprecher:zoe #stimmung:laechelt
+    Das Tablet schaut nur zu. Ich spiele selber. #sprecher:benji #stimmung:lacht
+    Meistens. #sprecher:benji #stimmung:lacht
 }
 Zehn Züge gegen Benji. Wer danach besser steht, hat gewonnen. #sprecher:zoe #stimmung:laechelt
 + [„Eine Stellung.“]
@@ -363,12 +376,14 @@ Datenpunkt 4113. Danke. #sprecher:zoe #stimmung:laechelt
 // Notausgang: Niemand bleibt an der Hauptgeschichte hängen (13_Wegenetz.md, Grundsatz 1).
 === testteam_wald_genug ===
 Imani klappt das Tablet zu. #sprecher:erzaehler
-Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. Geh durch. #sprecher:imani #stimmung:nachdenklich
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht. #sprecher:imani #stimmung:nachdenklich
+Geh durch. #sprecher:imani #stimmung:nachdenklich
 -> testteam_wald_offen
 
 === testteam_wald_durch ===
 Benji schiebt den Tisch zur Seite. #sprecher:erzaehler
-Das war ich. Nicht das Tablet. Schreib das dazu, Zoe. #sprecher:benji #stimmung:lacht
+Das war ich. Nicht das Tablet. #sprecher:benji #stimmung:lacht
+Schreib das dazu, Zoe. #sprecher:benji #stimmung:lacht
 -> testteam_wald_offen
 
 === testteam_wald_offen ===

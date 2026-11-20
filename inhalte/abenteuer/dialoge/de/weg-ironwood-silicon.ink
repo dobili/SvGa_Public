@@ -24,6 +24,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR tabletNachtGesehen = false
 VAR held = "Du"
 VAR glasbrueckeGesehen = false
 VAR buchseiten = 0
@@ -104,7 +105,8 @@ Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang 
 ~ joggerinGetroffen = true
 Auf der Glasbrücke läuft eine Frau auf der Stelle. Ihre Uhr piept ohne Pause, ihr Blick fällt auf das Brett unter deinem Arm. #sprecher:erzaehler
 Schach? Klar. Drei Minuten, plus zwei Sekunden je Zug. Mein Puls bleibt oben. #sprecher:joggerin #stimmung:laechelt
-Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno #stimmung:lacht
+// Lektorat 20.11.2026: Nach der Abreise (tabletNachtGesehen) ist Juno nicht mehr dabei.
+{not tabletNachtGesehen: Sie ist schneller. Du bist schlauer, vielleicht. #sprecher:juno #stimmung:lacht}
 -> joggerin_angebot
 
 === joggerin_angebot ===
@@ -165,7 +167,11 @@ An der Raststätte wartet der Bus zurück nach Ironwood. Der Fahrer winkt. #spre
 ~ ansteckerGefunden = true
 ~ gibFund("anstecker")
 Auf dem Boden glänzt ein Anstecker: „ZERO – Spiel wie die Zukunft.“ #sprecher:erzaehler
-Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
+{tabletNachtGesehen:
+    Gratis. Natürlich, denkst du. #sprecher:erzaehler
+- else:
+    Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
+}
 -> END
 
 === fund_ohrstoepsel ===
@@ -177,7 +183,11 @@ Gratis. Natürlich. #sprecher:juno #stimmung:laechelt
 }
 In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. Ein Ohrstöpsel. #sprecher:erzaehler
 Er ist schwerer, als er sein sollte. An einer Seite ist ein winziges Loch, darin glänzt etwas Metallenes. #sprecher:erzaehler
-Hat jemand verloren. #sprecher:juno #stimmung:nachdenklich
+{tabletNachtGesehen:
+    Hat jemand verloren, denkst du. #sprecher:erzaehler
+- else:
+    Hat jemand verloren. #sprecher:juno #stimmung:nachdenklich
+}
 ~ gibFund("ohrstoepsel")
 ~ ohrstoepselGefunden = true
 ~ spurenPM = spurenPM + 1

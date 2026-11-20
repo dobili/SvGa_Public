@@ -156,11 +156,12 @@ Er setzt sich neben dich, die Füße im Staub. Das vierte Mal. Du hast mitgezäh
 Noch eine Partie. Deine. Gegen ihn. In der großen Halle, vor allen Leuten. Dann ist es gut. #sprecher:ambrose #stimmung:friedlich
 * [„Und dann gehst du.“]
 - Ja. #sprecher:ambrose #stimmung:nachdenklich #pause
-* [„Bleib.“]
+* (bleib) [„Bleib.“]
     Du sagst es wie jemand, der fünf ist. Er lacht nicht. #sprecher:erzaehler #musik:aus #pause:4
 * [„Ich weiß.“]
     Natürlich weißt du es. Vielleicht seit dem Felsbogen. #sprecher:ambrose #stimmung:laechelt #musik:aus #pause:4
-    Du weißt, dass er gehen muss. Bleib, sagst du trotzdem. Du wolltest es nur einmal sagen. #sprecher:erzaehler
+    // Lektorat 20.11.2026: Die Wahl „Ich weiß.“ gilt; vorher sagte {held} hier trotzdem „Bleib“.
+    Ihr seht beide auf die leere Straße. Keiner sagt das andere Wort. #sprecher:erzaehler
 - Ich könnte bleiben, in deinem Zimmer auf der Fensterbank, in einem Geigenkasten. #sprecher:ambrose #stimmung:laechelt #musik:nachtstueck
 Ich könnte deine Partien kommentieren, bis du mich nicht mehr hören willst. #sprecher:ambrose #stimmung:laechelt
 Ein Geist, der bleibt, wird ein Möbelstück, {held}. Etwas, um das man herumgeht. #sprecher:ambrose #stimmung:nachdenklich
@@ -169,8 +170,8 @@ In Maple Falls sitzt eine alte Frau auf einer Veranda mit zwei Stühlen. Ich mö
 * [„Mrs. Calloway lernt jetzt Schach. Von Owen.“]
 - Owen hat dir geschrieben: Sie haben einen Tisch zwischen die Stühle gestellt. #sprecher:erzaehler
 Dann ist es noch besser, als ich dachte. #sprecher:ambrose #stimmung:lachtOhneSpott
-Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. #sprecher:ambrose #stimmung:laechelt
-Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose #stimmung:friedlich
+{bleib:Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben.|Du hast mich nicht gebeten zu bleiben. Das ist das Freundlichste, was du tun konntest.} #sprecher:ambrose #stimmung:laechelt
+{bleib:Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden.|Ich war sehr gut im Gehen. Du machst es mir leicht.} #sprecher:ambrose #stimmung:friedlich
 Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof. #sprecher:erzaehler #teilchen:sternschnuppen #klang:sternschnuppe
 Ich habe mir auch etwas gewünscht. Ich bin tot, mir kann nichts mehr misslingen. #sprecher:ambrose #stimmung:lacht
 Dass du im Finale einen Fehler machst, einen kleinen, den du merkst. #sprecher:ambrose #stimmung:laechelt

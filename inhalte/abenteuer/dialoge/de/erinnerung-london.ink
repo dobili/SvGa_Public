@@ -25,6 +25,8 @@
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL reise(karte, ausloeser)
 
+VAR londonTelegrafGesehen = false
+VAR londonHaltGesehen = false
 VAR held = "Du"
 VAR flashbackLondonBestanden = false
 VAR londonKaffeehausGesehen = false
@@ -112,6 +114,11 @@ Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht 
     Am Tisch in der Mitte rührt sich niemand. Nur die große Uhr an der Wand tickt. #sprecher:erzaehler
     -> END
 }
+// Lektorat 20.11.2026: Nach „Noch einen Moment warten“ zieht Anderssen den Läufer nicht noch einmal.
+{londonHaltGesehen:
+    Am Tisch in der Mitte hängt der zweite weiße Turm noch immer. Alle warten auf den großen Mann. #sprecher:erzaehler
+    -> schachtisch_wahl
+}
 In der Mitte ein Tisch, um den es still ist. Zwei Männer. Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler
 {not abschiedGesehen:
     Anderssen. Aus Breslau. Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
@@ -127,10 +134,14 @@ Schwarz schlägt einen Turm. Einfach so, einen ganzen Turm. #sprecher:erzaehler 
     Jetzt. Halt. Schau hin. #sprecher:ambrose #stimmung:jung
     Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan? #sprecher:ambrose #stimmung:jung
 }
+-> schachtisch_wahl
+
+=== schachtisch_wahl ===
 * [Zusehen und mitraten]
     ~ beginneAufgaben("riverton.flashbackLondon")
     -> END
 * [Noch einen Moment warten]
+    ~ londonHaltGesehen = true
     Die Uhr an der Wand tickt. Die Partie wartet nicht ewig, aber eine Weile. #sprecher:erzaehler
     -> END
 
@@ -144,6 +155,11 @@ Eine große Uhr an der Wand des Kaffeehauses. Ihr Ticken klingt genau wie das de
     }
     -> rueckkehr_wahl
 }
+// Lektorat 20.11.2026: Kieseritzky läuft nur einmal hinaus (nach „Noch bleiben“ zurück zur Uhr).
+{londonTelegrafGesehen:
+    Die Tür des Kaffeehauses schwingt noch nach. Kieseritzky ist längst um die Ecke. #sprecher:erzaehler
+    -> rueckkehr_wahl
+}
 {londonSchlussGesehen: -> rueckkehr_telegraf}
 ~ londonSchlussGesehen = true
 Der große Mann zieht seinen König ein Feld nach vorn, als träte er einem Besucher entgegen. #sprecher:erzaehler
@@ -154,6 +170,7 @@ Niemand sagt etwas. #sprecher:erzaehler
 - -> rueckkehr_telegraf
 
 === rueckkehr_telegraf ===
+~ londonTelegrafGesehen = true
 Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht. #sprecher:erzaehler #klang:lachen_kieseritzky
 Er schüttelt dem anderen die Hand mit beiden Händen, ruft etwas auf Französisch und läuft zur Tür, ohne Hut. #sprecher:erzaehler #musik:london.lauf
 {abschiedGesehen:

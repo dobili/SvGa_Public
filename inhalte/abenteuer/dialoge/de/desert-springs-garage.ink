@@ -21,6 +21,7 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR miraClubkampfEingeleitet = false
 VAR sturmMomentGesehen = false
 VAR held = "Du"
 VAR miraSteinGesehen = false
@@ -116,12 +117,19 @@ Morgen Abend spielen wir. Heute geh ich noch in den Canyon. Dot sagt, du sollst 
 
 === mira_clubkampf ===
 // Kapitel 46 (Roman): ganz Desert Springs in der Garage; Nadel als Kupferkaktus mit Blüte.
+// Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
+{miraClubkampfEingeleitet:
+    Die Garage ist noch voll. Mira sitzt schon und wippt mit den Füßen. #sprecher:erzaehler
+    -> wahl
+}
+~ miraClubkampfEingeleitet = true
 Ganz Desert Springs passt in die Garage. Buck mit Zahnstocher, Dot mit Lockenwicklern, Mr. Okoro mit einem Buch, falls es langweilig wird. #sprecher:erzaehler
 Die Nadel liegt auf einem Ölkanister. Ein kleiner Kaktus aus Kupfer, mit einer einzigen Blüte. #sprecher:erzaehler #bild:nadel_kaktus
 Karten? #sprecher:tomas #stimmung:ueberrascht #bild:aus
 Nur, wenn du willst. Dann kommentiere ich. Aber du entscheidest. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe gelernt, was geschieht, wenn es andersherum läuft. #sprecher:ambrose #stimmung:still
 Mira setzt sich. Ihre Füße reichen nicht bis zum Boden. #sprecher:erzaehler
+- (wahl)
 Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira #stimmung:laechelt
 + [„Ich will sehen, ob es stimmt.“]
     Sie grinst. Zum ersten Mal sieht sie aus wie zehn. #sprecher:erzaehler #musik:desertSprings.clubkampf

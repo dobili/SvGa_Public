@@ -24,6 +24,7 @@ EXTERNAL gibKarte(kennung)
 EXTERNAL oeffneLaden(laden)
 EXTERNAL setzeToenung(name)
 
+VAR angesehenNetze = false
 VAR held = "Du"
 VAR ausgangSiliconBayDash = ""
 VAR nadelSiliconBay = 0
@@ -308,9 +309,11 @@ Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie 
 
 === netze ===
 An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
-{(not abschiedGesehen and not ambroseSchweigt()):
+// Lektorat 20.11.2026: „Zum ersten Mal“ nur beim ersten Besuch.
+{not angesehenNetze and not abschiedGesehen and not ambroseSchweigt():
     Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etwas. #sprecher:ambrose #stimmung:laechelt
 }
+~ angesehenNetze = true
 -> END
 
 // ---------------------------------------------------------------- Altstadt: Eisenwarenladen (Batterie)

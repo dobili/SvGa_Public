@@ -23,6 +23,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR ankunftPortDelacroixGesehen = false
 VAR bugGesehen = false
 VAR tiefpunktGesehen = false
 VAR ausgangWegSiliconDelacroixSchiffskoch = ""
@@ -66,8 +67,9 @@ VAR versoehnungGesehen = false
 ~ ruizGetroffen = true
 In der Kombüse rührt ein Mann mit Kochmütze in einem Topf. Auf der Arbeitsplatte steht ein Brett zwischen Zwiebeln. #sprecher:erzaehler
 Ruiz, Schiffskoch. Zwei Tage bis Port Delacroix, und keiner an Bord spielt mit mir. #sprecher:schiffskoch #stimmung:laechelt
-Mama lehnt in der Tür. #sprecher:erzaehler
-Spiel ruhig. Ich hol uns Kaffee. #sprecher:mutter #stimmung:laechelt
+// Lektorat 20.11.2026: Nach der Ankunft bleibt Mama im Notzelt; auf späteren Fahrten ist sie nicht an Bord.
+{not ankunftPortDelacroixGesehen: Mama lehnt in der Tür. #sprecher:erzaehler}
+{not ankunftPortDelacroixGesehen: Spiel ruhig. Ich hol uns Kaffee. #sprecher:mutter #stimmung:laechelt}
 -> ruiz_angebot
 
 === ruiz_angebot ===
@@ -215,7 +217,8 @@ Auf dem Achterdeck stehen Container mit der Aufschrift „Hochwasserhilfe“. Ei
     -> END
 }
 ~ angesehenDelfin = true
-Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind. #sprecher:erzaehler #klang:delfin
+Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. #sprecher:erzaehler #klang:delfin
+{not ankunftPortDelacroixGesehen: Mama schreit auf wie ein Kind. #sprecher:erzaehler}
 {bugGesehen and (not abschiedGesehen and not ambroseSchweigt()): Du drehst dich nach Ambrose um. Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste. #sprecher:erzaehler}
 -> END
 

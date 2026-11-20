@@ -329,8 +329,9 @@ Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
     Remis. Ein sauberes Ergebnis, aber keine neue Nadel. #sprecher:lin #stimmung:neutral
 - ausgangSiliconBayClubkampf == "niederlage":
     Diesmal ich. Komm wieder, wenn du eine neue Eröffnung probieren willst. #sprecher:lin #stimmung:laechelt
+// Lektorat 20.11.2026: Nach einer abgebrochenen Revanche nicht noch eine Einleitungszeile.
 - else:
-    -> lin
+    -> lin_alltag
 }
 + {nadelSiliconBay < 3} [„Noch einmal.“]
     ~ revancheSiliconBay = true

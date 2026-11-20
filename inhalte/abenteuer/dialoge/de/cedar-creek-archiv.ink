@@ -65,11 +65,13 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose #st
 ~ ordnenAngeboten = true
 Eine Wendeltreppe hinunter. Es riecht nach Büchern, die nass geworden sind. #sprecher:erzaehler
 Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
-Da bin ich. Links das neunzehnte Jahrhundert, rechts das zwanzigste. Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
+Da bin ich. Links das neunzehnte Jahrhundert, rechts das zwanzigste. #sprecher:okafor #stimmung:laechelt
+Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
 * [Anfangen]
     -> ordnen_wahl
 * [Nicht jetzt]
-    Kein Problem. Die Pfütze läuft nicht weg. Leider. #sprecher:okafor #stimmung:lacht
+    Kein Problem. Die Pfütze läuft nicht weg. #sprecher:okafor #stimmung:lacht
+    Leider. #sprecher:okafor #stimmung:lacht
     -> END
 
 === ordnen_wahl ===
@@ -93,7 +95,8 @@ Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1
 ~ archivGeordnet = true
 Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #sprecher:okafor #stimmung:nachdenklich
 Ich habe den Kalender gelesen und nie in den Karton daneben geschaut. #sprecher:okafor #stimmung:bitter
-Ich muss nach oben. Prudence schließt sonst die Kasse falsch ab. Du findest dich zurecht. #sprecher:okafor #stimmung:laechelt
+Ich muss nach oben. Prudence schließt sonst die Kasse falsch ab. #sprecher:okafor #stimmung:laechelt
+Du findest dich zurecht. #sprecher:okafor #stimmung:laechelt
 Ihre Schritte auf der Wendeltreppe. Dann nichts mehr. #sprecher:erzaehler #pause:2
 * [Den Karton öffnen]
     -> karton_1858
@@ -121,14 +124,18 @@ Er steht neben dem Tisch, im Lichtkegel. Zum ersten Mal sieht er alt aus. #sprec
 * [„Ambrose.“]
 - Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
 Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose #stimmung:nachdenklich #musik:ambrose.erinnerung
-Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. Das war das Unglück. #sprecher:ambrose #stimmung:bitter
+Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. #sprecher:ambrose #stimmung:bitter
+Das war das Unglück. #sprecher:ambrose #stimmung:bitter
 * [„Und der andere?“]
 * [Warten]
 - Er beginnt, auf und ab zu gehen. Drei Schritte, die Wand, drei Schritte zurück. #sprecher:erzaehler
 Ein Ingenieur, Brückenbauer aus dem Norden. Er spielte, wie man eine Brücke baut. #sprecher:ambrose #stimmung:nachdenklich
-Jeder Stein auf den anderen. Nichts Überflüssiges, nichts Schönes. Ich fand ihn unerträglich. #sprecher:ambrose #stimmung:bitter
-In der siebten stand ich auf Gewinn. Ein Kind hätte sie gewonnen. Einen Bauern nehmen und nach Hause gehen. #sprecher:ambrose #stimmung:nachdenklich
-Aber ich sah ein Opfer. Einen Turm, mitten in seine Stellung. Ich wusste nicht einmal, ob es stimmte. #sprecher:ambrose #stimmung:nachdenklich
+Jeder Stein auf den anderen. Nichts Überflüssiges, nichts Schönes. #sprecher:ambrose #stimmung:bitter
+Ich fand ihn unerträglich. #sprecher:ambrose #stimmung:bitter
+In der siebten stand ich auf Gewinn. Ein Kind hätte sie gewonnen. #sprecher:ambrose #stimmung:nachdenklich
+Einen Bauern nehmen und nach Hause gehen. #sprecher:ambrose #stimmung:nachdenklich
+Aber ich sah ein Opfer. Einen Turm, mitten in seine Stellung. #sprecher:ambrose #stimmung:nachdenklich
+Ich wusste nicht einmal, ob es stimmte. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe es gespielt, weil die Leute auf der Treppe standen. Sie sollten in hundert Jahren noch davon reden. #sprecher:ambrose #stimmung:bitter
 * [„Hat es gestimmt?“]
 * [Warten]
@@ -137,14 +144,17 @@ Ich habe es gespielt, weil die Leute auf der Treppe standen. Sie sollten in hund
 === erzaehlung_1858_nein ===
 Nein. #sprecher:ambrose #stimmung:bitter #pause:3
 Das Wort bleibt im Raum. #sprecher:erzaehler
-Es gab eine Verteidigung. Einen einzigen stillen Zug. Er brauchte vierzig Minuten. #sprecher:ambrose #stimmung:nachdenklich
+Es gab eine Verteidigung. Einen einzigen stillen Zug. #sprecher:ambrose #stimmung:nachdenklich
+Er brauchte vierzig Minuten. #sprecher:ambrose #stimmung:nachdenklich
 Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose #stimmung:bitter #bild:stellung1858
-Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
+Bemerkenswert unnötig. Er hatte recht. #sprecher:ambrose #stimmung:bitter
+Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
 * {ausgangMapleFallsVictor == "niederlage"} [„Das ist wie bei mir gegen Victor.“]
     Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose #stimmung:nachdenklich
     Ich hatte eine gewonnene und habe sie verschenkt. #sprecher:ambrose #stimmung:bitter
 * [Nichts sagen]
-- Ich habe Revanche verlangt. Im Jahr darauf, in einem langen Brief. Er schrieb zurück. Ein Wort. #sprecher:ambrose #stimmung:bitter
+- Ich habe Revanche verlangt. Im Jahr darauf, in einem langen Brief. #sprecher:ambrose #stimmung:bitter
+Er schrieb zurück. Ein Wort. #sprecher:ambrose #stimmung:bitter
 * [„Welches?“]
 * [Warten]
 - Später. #sprecher:ambrose #stimmung:bitter #klang:spaeter #musik:aus #geraeusch:aus #pause:2
@@ -187,7 +197,8 @@ Ambrose macht ein Geräusch, das du von ihm nicht kennst. #sprecher:erzaehler
 Ich war dort. Ich stand in der dritten Reihe. #sprecher:ambrose #stimmung:stolz #musik:ambrose.walzer
 Ein Junge aus meiner Stadt spielte gegen einen Meister aus dem Westen, Paulsen. Der Junge hieß Morphy. #sprecher:ambrose #stimmung:laechelt
 Er saß da, als ginge ihn das alles nichts an, und sah aus dem Fenster. #sprecher:ambrose #stimmung:laechelt
-Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose #stimmung:laechelt
+Setz dich. Du spielst seine Züge. #sprecher:ambrose #stimmung:laechelt
+Ich sage dir nichts. #sprecher:ambrose #stimmung:laechelt
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.erinnerungNewYork")
     -> END
@@ -219,7 +230,8 @@ Darin steht eine Partie, Zug für Zug: Paulsen gegen Morphy. #sprecher:erzaehler
     -> END
 }
 Er opferte seine Dame, und ich vergaß zu atmen. Dreihundert Leute, und man hätte eine Nadel fallen hören. #sprecher:ambrose #stimmung:stolz #musik:aus #pause:2
-Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.walzer
+Siehst du? Das. #sprecher:ambrose #stimmung:laechelt #musik:ambrose.walzer
+Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt
 // Lektorat Akt 1, 17.11.2026: nicht mehr „Gestern hast du gesagt, Zählen ist alles“ (Roman): Den
 // Satz sagt Ambrose im Spiel nie, und „gestern“ stimmt nicht in jedem Verlauf. Seine Frage „Was
 // hängt?“ stellt er in jedem Verlauf (maple-falls-dachboden.ink, nach der ersten Lektion).

@@ -13,6 +13,7 @@
 EXTERNAL gibFund(kennung)
 EXTERNAL beginnePartie(begegnung)
 
+VAR set1GelobtGesehen = false
 VAR ambroseSprichtWieder = false
 VAR simultanGedankt = false
 VAR nadelDesertSprings = 0
@@ -107,7 +108,9 @@ Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden d
     -> END
 
 === blaeser_set2 ===
-{ausgangPortDelacroixSchach960Set1 == "sieg":
+// Lektorat 20.11.2026: Das Lob nur einmal, nicht nach jedem „Nicht jetzt.“ wieder.
+{ausgangPortDelacroixSchach960Set1 == "sieg" and not set1GelobtGesehen:
+    ~ set1GelobtGesehen = true
     Nicht schlecht! Du hast nicht gesucht, was du kennst. Du hast gespielt, was da stand. #sprecher:blaeser #stimmung:laechelt
 }
 Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #stimmung:laechelt

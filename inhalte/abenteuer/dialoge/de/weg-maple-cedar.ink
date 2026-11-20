@@ -24,6 +24,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR ambroseNenntNamen = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
 VAR held = "Du"
@@ -100,10 +101,12 @@ Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ort
 === juno_weg ===
 ~ junoWegErzaehlt = true
 Die Landstraße läuft zwischen Feldern, gerade wie mit dem Lineal gezogen. Der Himmel ist sehr groß. #sprecher:erzaehler
-Meine Schwester Carla war drei Jahre im Team. Dann kam das Auto. Jetzt tut sie, als hätte es sie nie interessiert. #sprecher:juno #stimmung:nachdenklich
+Meine Schwester Carla war drei Jahre im Team. Dann kam das Auto. #sprecher:juno #stimmung:nachdenklich
+Jetzt tut sie, als hätte es sie nie interessiert. #sprecher:juno #stimmung:nachdenklich
 Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno #stimmung:nachdenklich
 * [„Niemand?“]
-    Der Coach einmal. Vor drei Jahren. Sie redet heute noch davon. #sprecher:juno #stimmung:froh
+    Der Coach einmal. Vor drei Jahren. #sprecher:juno #stimmung:froh
+    Sie redet heute noch davon. #sprecher:juno #stimmung:froh
 * [Zum Himmel sehen]
     Du siehst immer wieder hinauf. In der Stadt hattest du nie so viel Himmel. #sprecher:erzaehler
 - -> END
@@ -120,7 +123,8 @@ Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno #sti
 
 === wanderer_erstes ===
 Ein Mann mit Rucksack und Wanderstock sitzt am Wegrand. Aus der Tasche schaut ein Taschenschach. #sprecher:erzaehler
-Nach Cedar Creek? Zwei Stunden. Ich spiele unterwegs eine Partie im Kopf. #sprecher:wanderer #stimmung:laechelt
+Nach Cedar Creek? Zwei Stunden. #sprecher:wanderer #stimmung:laechelt
+Ich spiele unterwegs eine Partie im Kopf. #sprecher:wanderer #stimmung:laechelt
 Bei der Brücke bin ich meistens matt. #sprecher:wanderer #stimmung:lacht
 -> END
 
@@ -157,13 +161,15 @@ Ein Mädchen mit Skateboard unter dem Arm versperrt halb den Weg. Auf dem Board 
 -> nia_angebot
 
 === nia_angebot ===
-Blitz. Drei Minuten. Du kriegst Weiß und die bessere Stellung, ich bin nett. #sprecher:nia #stimmung:laechelt
+Blitz. Drei Minuten. #sprecher:nia #stimmung:laechelt
+Du kriegst Weiß und die bessere Stellung, ich bin nett. #sprecher:nia #stimmung:laechelt
 Zehn Züge. Hältst du deinen Vorteil, darfst du vorbei. #sprecher:nia #stimmung:neutral
 Sonst trägst du mein Board bis Cedar Creek. #sprecher:nia #stimmung:lacht
 * [„Abgemacht.“]
     -> nia_duell
 * [„Nicht jetzt.“]
-    Ich bin schnell. Du nicht. Bis gleich. #sprecher:nia #stimmung:laechelt
+    Ich bin schnell. Du nicht. #sprecher:nia #stimmung:laechelt
+    Bis gleich. #sprecher:nia #stimmung:laechelt
     -> END
 
 === nia_duell ===
@@ -174,7 +180,8 @@ Nia stellt die Figuren auf ihr Board, so schnell, dass du kaum hinsiehst. #sprec
 -> END
 
 === nia_nach_sieg ===
-Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia #stimmung:ueberrascht
+Okay, okay. Du bist schneller, als du aussiehst. #sprecher:nia #stimmung:ueberrascht
+Noch mal? #sprecher:nia #stimmung:ueberrascht
 {faehrsteinGesehen and not abschiedGesehen: Schnell war sie. Du warst da. #sprecher:ambrose #stimmung:laechelt}
 + [„Noch eine.“]
     -> nia_duell
@@ -183,7 +190,8 @@ Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia #stimmu
     -> END
 
 === nia_nach_niederlage ===
-Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia #stimmung:lacht
+Board tragen! War nur Spaß. #sprecher:nia #stimmung:lacht
+Noch eine Runde? #sprecher:nia #stimmung:lacht
 {faehrsteinGesehen and not abschiedGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
 + [„Revanche.“]
     -> nia_duell
@@ -194,7 +202,8 @@ Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia #stimmung:lacht
 // vorteil. Vorher ging es in nia_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === nia_nach_remis ===
-Unentschieden! Keiner trägt das Board. Noch eine Runde? #sprecher:nia #stimmung:laechelt
+Unentschieden! Keiner trägt das Board. #sprecher:nia #stimmung:laechelt
+Noch eine Runde? #sprecher:nia #stimmung:laechelt
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]
@@ -283,7 +292,8 @@ Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäum
 {odetteGetroffen: -> flohmarkt_angebot}
 ~ odetteGetroffen = true
 Auf den Tischen liegen Lampen, Kisten und ein Fahrrad ohne Kette. Vor dem Wohnmobil sitzt eine alte Dame und lacht. #sprecher:erzaehler
-Odette Finch. Problemhefte, fünfzig Cent das Stück. Aber erst stelle ich dir eine Falle. #sprecher:odette #stimmung:laechelt
+Odette Finch. Problemhefte, fünfzig Cent das Stück. #sprecher:odette #stimmung:laechelt
+Aber erst stelle ich dir eine Falle. #sprecher:odette #stimmung:laechelt
 -> flohmarkt_angebot
 
 === flohmarkt_angebot ===
@@ -303,11 +313,12 @@ Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:la
 Odette klatscht in die Hände. #sprecher:erzaehler
 Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe. #sprecher:odette #stimmung:froh
 Sie gibt dir eine Karte mit sechzehn leeren Kästchen. #sprecher:erzaehler
-Sechzehn weiße Figuren aus Buchsbaum. Fünfzehn liegen versteckt an den Wegen, unter jeder steht ihr Feld. Den König behalte ich, bis du alle hast. #sprecher:odette #stimmung:laechelt
+Sechzehn weiße Figuren aus Buchsbaum. Fünfzehn liegen versteckt an den Wegen, unter jeder steht ihr Feld. #sprecher:odette #stimmung:laechelt
+Den König behalte ich, bis du alle hast. #sprecher:odette #stimmung:laechelt
 ~ gibFund("finchKarte")
 Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft nimmst du mit, drei Aufgaben für unterwegs. #sprecher:odette #stimmung:laechelt
 ~ gibFund("problemheft")
-{faehrsteinGesehen and not abschiedGesehen: Fünfzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht}
+{faehrsteinGesehen and not abschiedGesehen: Fünfzehn Figuren. Das wird ein langer Spaziergang, {ambroseNenntNamen:{held}|Lehrling}. Ein schöner. #sprecher:ambrose #stimmung:lacht}
 -> END
 
 === flohmarkt_spaeter ===
@@ -430,7 +441,8 @@ Drei Krähen, zwei Vogelscheuchen. Wer gewinnt? #sprecher:ada #stimmung:laechelt
 * [„Die Vogelscheuchen. Die laufen nicht weg.“]
     Weglaufen tun sie nicht. Aber es sind drei gegen zwei. #sprecher:ada #stimmung:laechelt
 - Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler #klang:kasse_muenzen
-Diese Woche fehlen wieder sechs. Ich frag nicht, wer. Ich schreib bloß einen Zettel. #sprecher:ada #stimmung:nachdenklich
+Diese Woche fehlen wieder sechs. Ich frag nicht, wer. #sprecher:ada #stimmung:nachdenklich
+Ich schreib bloß einen Zettel. #sprecher:ada #stimmung:nachdenklich
 Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist alles. #sprecher:erzaehler
 Otis. Redet mit den Kühen. #sprecher:ada #stimmung:laechelt
 Gatter zu, wenn ihr geht. #sprecher:ada #stimmung:neutral
@@ -438,7 +450,8 @@ Gatter zu, wenn ihr geht. #sprecher:ada #stimmung:neutral
 
 === ada_alltag ===
 {
-- nadelRiverton > 0: Die Kasse stimmt. Ich lass den Zettel trotzdem hängen. Man weiß ja nie. #sprecher:ada #stimmung:laechelt
+- nadelRiverton > 0: Die Kasse stimmt. Ich lass den Zettel trotzdem hängen. #sprecher:ada #stimmung:laechelt
+Man weiß ja nie. #sprecher:ada #stimmung:laechelt
 - nadelCedarCreek > 0: Der Zettel hängt. Mal sehen, wer ihn liest. #sprecher:ada #stimmung:nachdenklich
 - else: Drei Krähen, zwei Vogelscheuchen. Ich sag ja: Die Krähen gewinnen. #sprecher:ada #stimmung:laechelt
 }
@@ -455,7 +468,8 @@ Es ist das Erste, was er seit dem Aufbruch sagt. #sprecher:erzaehler #pause:2
 Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
 Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
 Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab. #sprecher:silas #stimmung:nachdenklich
-Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. Helle und dunkle. #sprecher:silas #stimmung:laechelt
+Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. #sprecher:silas #stimmung:laechelt
+Helle und dunkle. #sprecher:silas #stimmung:laechelt
 * [Die Hand auf den Stein legen]
     Der Stein ist warm von der Sonne. #sprecher:erzaehler
 * [„Beißen die Fische heute?“]
@@ -467,7 +481,8 @@ Am Fluss kann man wenigstens denken. #sprecher:ambrose #stimmung:nachdenklich
     Er antwortet nicht gleich. #sprecher:erzaehler #pause:2
     Nach Norden. Es ist lange her. #sprecher:ambrose #stimmung:bitter
 * [Nichts sagen]
-- Auf so etwas habe ich auch gespielt. An einem Kai, auf einem Fass, mit Knöpfen. Ich war neun. #sprecher:ambrose #stimmung:laechelt
+- Auf so etwas habe ich auch gespielt. An einem Kai, auf einem Fass, mit Knöpfen. #sprecher:ambrose #stimmung:laechelt
+Ich war neun. #sprecher:ambrose #stimmung:laechelt
 Ich verlor gegen einen Matrosen aus Marseille und weinte. Er schenkte mir eine Orange. #sprecher:ambrose #stimmung:laechelt
 Daran habe ich seit … Ich wusste nicht, dass ich das noch weiß. #sprecher:ambrose #stimmung:lacht
 Juno hat nichts gehört. Sie fotografiert den Stein für das Tagebuch. #sprecher:erzaehler
@@ -496,7 +511,8 @@ Und weg ist sie. #sprecher:erzaehler
 
 === tessa_b ===
 Die Joggerin kommt dir am Fluss entgegen, diesmal ohne Keuchen. #sprecher:erzaehler
-Bis zum Steg! Ganz! Morgen weiter! #sprecher:joggerin #stimmung:froh
+Bis zum Steg! Ganz! #sprecher:joggerin #stimmung:froh
+Morgen weiter! #sprecher:joggerin #stimmung:froh
 Am Steg steht ihre Wasserflasche, wie ein Merkzeichen. #sprecher:erzaehler
 -> END
 
@@ -504,7 +520,8 @@ Am Steg steht ihre Wasserflasche, wie ein Merkzeichen. #sprecher:erzaehler
 Unter den Zedern läuft dir jemand entgegen, gleichmäßig, ohne Hast. Die Joggerin. #sprecher:erzaehler
 Sie hebt nur die Hand und läuft weiter. Zum Reden braucht sie den Atem nicht mehr. #sprecher:erzaehler
 {not abschiedGesehen:
-    Die ganze Strecke. Wer hätte das gedacht? Sie vermutlich nicht. #sprecher:ambrose #stimmung:laechelt
+    Die ganze Strecke. Wer hätte das gedacht? #sprecher:ambrose #stimmung:laechelt
+    Sie vermutlich nicht. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 

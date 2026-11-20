@@ -201,43 +201,83 @@ Antworten (Akt 1: 159 Stellen, Akt 2: 87, Akt 3: 57, Akt 4: 75), ein fünfter di
 | Z   | Silicon Bay: „nach dem Turnier“, Rosie, Dash, Okoro, Delphine, Céleste, Remy, Dot | Turnier, das es nicht gibt; Akademie-Sätze nach der Nadel; Delphine spricht vor der Vorstellung; Céleste kommt herein, obwohl sie da sitzt; Batiste ohne Treffen | passende Zeilen                                                                                                       |
 | R   | rund 25 Zeilen mit drei oder mehr Sätzen                                          |                                                                                                                                                                  | geteilt oder gekürzt                                                                                                  |
 
-### Offen, an den Hauptchat
+### Nachgezogen (20.11.2026, dritter Teil)
 
-Muster „Nach ‚Nicht jetzt‘ spielt die Szene beim nächsten Ansprechen ganz von vorn“. Die App beginnt
-jeden Dialog neu, deshalb braucht jede Stelle eine eigene VAR. Nicht mehr umgesetzt:
+Muster „Nach ‚Nicht jetzt‘ spielt die Szene beim nächsten Ansprechen ganz von vorn“: Die App
+beginnt jeden Dialog neu, deshalb hat jede Stelle eine eigene VAR bekommen. Beim zweiten Mal kommt
+eine kurze Zeile, dann gleich die Wahl:
 
-- London: Telegraf nach „Noch bleiben“ und der Läuferzug am Schachtisch
+- London (Läuferzug am Schachtisch, Telegraf nach „Noch bleiben“)
 - Bahnhofsuhr in Riverton
-- Big Joes Clubkampf-Ansage
+- Big Joes Clubkampf-Ansage („Zum ersten Mal sieht sie dir zu“)
 - Nova in Runde 3
 - Victors Taschen vor dem Finale
-- Seilbahn-Wärter
+- Seilbahn-Wärter („eben“)
 - Mabels Lob nach Set 1
 - Miss Odiles Hallenszene
 - Victors Speicherstift
 - Célestes Angebot
 - Miras Clubkampf
-- Werkbank-Erinnerung („zum ersten Mal seit fünf Tagen“)
 
 Weitere Stellen:
 
-- Juno spricht nach ihrer Abreise an der Raststätte
-- Mama auf späteren Überfahrten (Ruiz, Delfin)
-- „Netze“ in Silicon Bay bei jedem Besuch
-- Lin nach abgebrochener Revanche
-- Mo „jeden Donnerstag“ in derselben Nacht
-- Junos Rad im Alltag
+- Juno spricht nach ihrer Abreise an der Raststätte nicht mehr (die Funde als Gedanke von {held}).
+- Mama ist auf späteren Überfahrten nicht an Bord.
+- „Netze“: Ambroses „Zum ersten Mal riecht etwas“ nur beim ersten Besuch.
+- Lin nach abgebrochener Revanche ohne zweite Einleitungszeile.
+- Mo: „Victor sagt, er kommt wieder.“ statt „jeden Donnerstag“ in derselben Nacht.
+- Junos Rad im Alltag.
+- Akt 1:
+  - Hector („drei Wochen“ nur nach der Frage)
+  - erste Nacht („Warum darf niemand …“)
+  - Quinns Karte
+  - Güterzug „Wohin?“
+  - Carla („Gewonnen“ nicht nach Remis)
+  - Mamas Alltag vor der ersten Nacht
+  - „Lehrling“ am Flohmarkt
+  - Lily
 
-Zur Entscheidung:
+### Entscheidungen und Rest (20.11.2026, nach Rückmeldung des Hauptchats)
 
-- Bus von Cedar Creek nach Maple Falls schon am Freitag, die Vorhut schläft doch in der Bibliothek
-- In Akt 1 gibt es noch etwa 265 kurze Sprechzeilen mit drei Sätzen („Noch mal?“). Sollen sie auch geteilt werden?
-- Ghost Town „Ich weiß.“ übergeht die Wahl
+- **Werkbank-Erinnerung** (port-delacroix-werkstatt.werkbank_flashback): „zum ersten Mal seit
+  fünf Tagen“ steht jetzt nur noch, wenn Ambrose vorher nicht im Clubkampf sprach. Nach „Zurück in
+  die Gegenwart“ kommt beim nächsten Mal nur „Die Werkstatt wird wieder golden.“ und dann die Wahl.
+- **Bus Cedar Creek → Maple Falls am Freitag:** Die Story-Bibel (Ablauf Akt 1) sagt: Die beiden
+  gehen am Freitag zu Fuß voraus und übernachten im Lesesaal, der Bus „bleibt für die Rückfahrt“.
+  Deshalb ist die Wahl „Nach Maple Falls fahren“ erst nach der Nacht im Lesesaal (oder nach dem
+  Ende von Akt 1) da. Vorher steht dort: „Heute fährt er ohne dich. Ihr seid die Vorhut.“
+- **Ghost Town, „Ich weiß.“:** Die Erzählung sagte danach „Bleib, sagst du trotzdem“ und überging
+  die Wahl. Jetzt: „Ihr seht beide auf die leere Straße. Keiner sagt das andere Wort.“ Ambroses
+  Antwort danach hängt an der Wahl: Bei „Bleib.“ bleibt „Ich bin froh, dass du es gesagt hast“,
+  sonst „Du hast mich nicht gebeten zu bleiben. Das ist das Freundlichste, was du tun konntest.“
+- **Kartenbau (mittel-4):** Mama vor dem Haus nach abgebrochener Einleitung, Mama in Ironwood in
+  der Kantine, Juno nach dem Aufbruch und nach dem Abschied, alles in figurenort_19-11.md. Der
+  Punkt „testteam_tor“ war kein Fehler, nur ein Artefakt der Simulation (der Dialog endet sofort,
+  wenn der Weg offen ist).
 
-Kartenbau:
+### Zwei Sätze je Zeile in Akt 1 (Story-Bibel 5.1)
 
-- Mama wartet nach abgebrochener Einleitung nicht draußen; Bedingung der Figur `mapleFalls.mutterAussen`
-- Die Wege testteam_tor öffnen sich durch dieselbe Bedingung wie der Dialog
+Die Regel lautet: „Höchstens zwei Sätze je Zeile und etwa 140 Zeichen“. Eine Ausnahme für kurze
+Sätze kennt sie nicht. Deshalb sind in den Akt-1-Dateien alle 207 Sprechzeilen mit drei oder mehr
+Sätzen mechanisch geteilt. Betroffen sind maple-falls-_, ansehen-maple-falls, weg-maple-cedar,
+kuerbishof, cedar-creek-_ und weg-cedar-riverton.
+
+So wurde geteilt:
+
+- Satzgrenze ist ein Punkt, Ausrufe- oder Fragezeichen oder „…“ vor einem großen Anfangsbuchstaben,
+  außer nach Abkürzungen wie Mr., Mrs. oder Dr.
+- Je zwei Sätze bilden eine Zeile.
+- Sprecher und Stimmung stehen auf jeder neuen Zeile.
+- Musik, Klang und Bild stehen auf der ersten Zeile, die Pause auf der letzten.
+- Ausgelassen sind Erzählzeilen, Wahlen, Zeilen mit Bedingungen in geschweiften Klammern und
+  Zeilen mit Rede in Anführungszeichen. Sie kommen beim nächsten Lektorat dran, von Hand.
+
+Beispiel, Coach Delgado:
+
+- Vorher: „Zwei Partien hintereinander? Nicht in meinem Club. Fünf Minuten Pause, Fenster auf,
+  Wasser trinken.“
+- Nachher: „Zwei Partien hintereinander? Nicht in meinem Club.“ / „Fünf Minuten Pause, Fenster
+  auf, Wasser trinken.“
 
 ## Nur durch die Simulation, kein Textfehler
 

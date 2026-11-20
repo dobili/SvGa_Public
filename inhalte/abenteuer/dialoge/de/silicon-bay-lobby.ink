@@ -17,6 +17,7 @@
 
 EXTERNAL beginneAufgaben(runde)
 
+VAR speicherstiftErhalten = false
 VAR held = "Du"
 VAR victorLobbyGetroffen = false
 VAR reiheTheoBestanden = false
@@ -56,11 +57,19 @@ Warst du schon bei Theo? Er misst alle. Mich auch. #sprecher:victor #stimmung:na
 -> END
 
 === victor_berichte ===
+// Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
+{speicherstiftErhalten:
+    Victor sieht auf den Speicherstift in deiner Hand. #sprecher:erzaehler
+    Hast du sie dir angesehen? #sprecher:victor #stimmung:nachdenklich
+    -> wahl
+}
+~ speicherstiftErhalten = true
 Victor steht vor dir, als hätte er schon eine Weile gewartet. Dann hält er dir einen Speicherstift hin. #sprecher:erzaehler
 Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. Schau sie dir an. #sprecher:victor #stimmung:nachdenklich
 * [„Warum?“]
 - Weil ich sie mir angeschaut habe. Und ich will, dass jemand anders auch. #sprecher:victor #stimmung:nachdenklich
 Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
+- (wahl)
 + [Die Partien auswerten]
     ~ beginneAufgaben("siliconBay.auswertung")
     -> END

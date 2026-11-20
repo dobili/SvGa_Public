@@ -28,6 +28,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 
+VAR odileClubkampfEingeleitet = false
 VAR batisteGetroffen = false
 VAR leimAuftrag = false
 VAR tiefpunktGesehen = false
@@ -176,6 +177,12 @@ Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
     Noch einmal? Gut. Ich spiele wieder langsam. #sprecher:odile #stimmung:laechelt
     -> odile_clubkampf_wahl
 }
+// Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
+{odileClubkampfEingeleitet:
+    Miss Odile stellt die Figuren wieder auf. Der Geigenkasten steht geschlossen auf dem Schiedsrichtertisch. #sprecher:erzaehler
+    -> odile_clubkampf_wahl
+}
+~ odileClubkampfEingeleitet = true
 Die Turnhalle ist voll. Sie sind alle gekommen, um zu sehen, wer da in einen Rucksack flüstert. #sprecher:erzaehler #musik:aus
 Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten. #sprecher:erzaehler
 Miss Odile setzt sich dir gegenüber, in einem Kleid mit kleinen Notenschlüsseln. #sprecher:erzaehler

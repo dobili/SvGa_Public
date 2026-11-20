@@ -75,7 +75,8 @@ Darf ich? #sprecher:okafor #stimmung:laechelt
 * [Ihr das Brett geben]
 * [Nicken]
 - Sie hält es ins Licht der grünen Lampe und fährt mit dem Daumen über den Rand. #sprecher:erzaehler
-A. W. Achtzehnhundertsiebenundfünfzig. #sprecher:okafor #stimmung:nachdenklich
+A. W. #sprecher:okafor #stimmung:nachdenklich
+Achtzehnhundertsiebenundfünfzig. #sprecher:okafor #stimmung:nachdenklich
 Whitlock. #sprecher:okafor #stimmung:ueberrascht #musik:aus #pause:3
 * [„Sie kennen den Namen?“]
 * [Still bleiben]
@@ -91,15 +92,19 @@ Sechs Wörter. #sprecher:ambrose #stimmung:bitter #pause
 Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 {teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach. Oder gleich, wenn du mir tragen hilfst.|Nach dem Spiel morgen gehen wir hinunter und sehen nach. Oder heute schon, wenn du mir tragen hilfst.} #sprecher:okafor #stimmung:laechelt
 * [„Ich helfe tragen.“]
-    Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor #stimmung:nachdenklich
+    Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. #sprecher:okafor #stimmung:nachdenklich
+    Ich komme gleich nach. #sprecher:okafor #stimmung:nachdenklich
 * [„Erst will ich spielen.“]
-    Erst Dex, dann Mae. Eins nach dem anderen. Der Keller wartet. #sprecher:okafor #stimmung:laechelt
+    Erst Dex, dann Mae. Eins nach dem anderen. #sprecher:okafor #stimmung:laechelt
+    Der Keller wartet. #sprecher:okafor #stimmung:laechelt
 - -> END
 
 === okafor_reihe_offen ===
 {
-- not reiheDexBestanden: Fang bei Dex an. Dann Mae. Eins nach dem anderen. #sprecher:okafor #stimmung:neutral
-- else: Dex hast du geschafft. Jetzt Mae. Sie kennt mehr Mattbilder als ich. #sprecher:okafor #stimmung:laechelt
+- not reiheDexBestanden: Fang bei Dex an. Dann Mae. #sprecher:okafor #stimmung:neutral
+Eins nach dem anderen. #sprecher:okafor #stimmung:neutral
+- else: Dex hast du geschafft. Jetzt Mae. #sprecher:okafor #stimmung:laechelt
+Sie kennt mehr Mattbilder als ich. #sprecher:okafor #stimmung:laechelt
 }
 {not archivGeordnet:
     Und unten im Keller warten die nassen Kartons, wenn du magst. #sprecher:okafor #stimmung:laechelt
@@ -123,7 +128,8 @@ Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #spreche
     Geh nur. Am Wasser wird es abends kalt. #sprecher:okafor #stimmung:laechelt
     -> END
 * {maeEingeladen} [„Ich geh schlafen.“]
-    Erst die Sterne. Mae redet seit Tagen von nichts anderem, und ich habe Tee gekocht. Die Matten laufen nicht weg. #sprecher:okafor #stimmung:laechelt
+    Erst die Sterne. Mae redet seit Tagen von nichts anderem, und ich habe Tee gekocht. #sprecher:okafor #stimmung:laechelt
+    Die Matten laufen nicht weg. #sprecher:okafor #stimmung:laechelt
     -> END
 
 === okafor_clubkampf ===
@@ -161,7 +167,8 @@ Setz dich. #sprecher:okafor #stimmung:laechelt
 }
 ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
 {ausgangCedarCreekClubkampf == "remis":
-    Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor #stimmung:laechelt
+    Remis. Das war knapp. #sprecher:okafor #stimmung:laechelt
+    Die Bronzenadel gehört dir. #sprecher:okafor #stimmung:laechelt
     -> okafor_nadel
 }
 Sie legt die Hände in den Schoß und sieht dich über die Brille an. #sprecher:erzaehler
@@ -187,7 +194,8 @@ Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt
 -> END
 
 === okafor_nach_niederlage ===
-Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor #stimmung:laechelt
+Diesmal nicht. Aber du hast lange gehalten. #sprecher:okafor #stimmung:laechelt
+Noch einmal? #sprecher:okafor #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -231,11 +239,13 @@ Ein Junge sitzt zwischen Kabeln und einem halb gebauten Roboter. Daneben ein Bre
 Dex. Halt mal. #sprecher:dex #stimmung:neutral
 Er drückt dir eine Zange in die Hand. #sprecher:erzaehler
 Fast fertig. Es ist immer fast fertig. #sprecher:dex #stimmung:nachdenklich
-Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. Alles ist tot. #sprecher:dex #stimmung:nachdenklich
+Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. #sprecher:dex #stimmung:nachdenklich
+Alles ist tot. #sprecher:dex #stimmung:nachdenklich
 -> dex_reihe
 
 === dex_reihe ===
-Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex #stimmung:laechelt
+Siehst du? Kurzschluss. #sprecher:dex #stimmung:laechelt
+Matt in eins. Such. #sprecher:dex #stimmung:laechelt
 * [„Her damit.“]
     ~ beginneAufgaben("cedarCreek.reiheDex")
     -> END
@@ -261,14 +271,16 @@ Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex #stimmung:laechelt
 === mae_erstes_treffen ===
 ~ maeGetroffen = true
 Ein Mädchen mit Teleskop-Anstecker und einem Heft voller Zeichnungen winkt dir zu. #sprecher:erzaehler
-Ich bin Mae! Ich kenne alle Mattbilder. Alle mit Namen. #sprecher:mae #stimmung:froh
+Ich bin Mae! Ich kenne alle Mattbilder. #sprecher:mae #stimmung:froh
+Alle mit Namen. #sprecher:mae #stimmung:froh
 Anastasia! Das ist ein Matt mit Namen. #sprecher:mae #stimmung:laechelt
 Das klingt wie eine Prinzessin, ist aber gemein. #sprecher:mae #stimmung:lacht
 {reiheDexBestanden: -> mae_reihe}
 -> mae_erst_dex
 
 === mae_erst_dex ===
-Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae #stimmung:laechelt
+Erst Dex, dann ich. Meine sind schwerer. #sprecher:mae #stimmung:laechelt
+Matt in zwei! #sprecher:mae #stimmung:laechelt
 -> END
 
 === mae_reihe ===
@@ -282,12 +294,14 @@ Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END
 * [„Gleich.“]
-    Ich warte. Ich zähle so lange Sterne. Im Kopf. #sprecher:mae #stimmung:laechelt
+    Ich warte. Ich zähle so lange Sterne. #sprecher:mae #stimmung:laechelt
+    Im Kopf. #sprecher:mae #stimmung:laechelt
     -> END
 
 === mae_einladung ===
 ~ maeEingeladen = true
-Heute Nacht kommen Sternschnuppen! Ganz viele. Wir schauen am Steg. #sprecher:mae #stimmung:froh
+Heute Nacht kommen Sternschnuppen! Ganz viele. #sprecher:mae #stimmung:froh
+Wir schauen am Steg. #sprecher:mae #stimmung:froh
 Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #stimmung:laechelt
 * [„Klingt toll.“]
     Super! Wenn es dunkel wird, am Steg. #sprecher:mae #stimmung:laechelt
@@ -328,7 +342,8 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 Am Tresen hängt eine Strichliste in Miss Ashbys Schrift: Ivy 14, Jonah 14. #sprecher:erzaehler
 Die Zwillinge spielen am langen Tisch. Leise. Keiner sagt, wer gewinnt. #sprecher:erzaehler
 {not abschiedGesehen:
-    Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+    Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. #sprecher:ambrose #stimmung:lacht
+    Und die langweiligste. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 
@@ -399,9 +414,11 @@ Du hast jedes Bild erkannt! Auch das Erstickte! #sprecher:mae #stimmung:froh
 - ausgangCedarCreekClubkampf == "sieg":
     Gewonnen. Die Nadel bleibt dieselbe; die Partie kommt trotzdem in den Ordner. #sprecher:okafor #stimmung:laechelt
 - ausgangCedarCreekClubkampf == "remis":
-    Remis. Geduld ist auch ein Ergebnis. Deine Nadel bleibt. #sprecher:okafor #stimmung:neutral
+    Remis. Geduld ist auch ein Ergebnis. #sprecher:okafor #stimmung:neutral
+    Deine Nadel bleibt. #sprecher:okafor #stimmung:neutral
 - ausgangCedarCreekClubkampf == "niederlage":
-    Diesmal nicht. Deine Nadel bleibt dir. Wir haben Zeit. #sprecher:okafor #stimmung:laechelt
+    Diesmal nicht. Deine Nadel bleibt dir. #sprecher:okafor #stimmung:laechelt
+    Wir haben Zeit. #sprecher:okafor #stimmung:laechelt
 - else:
     -> okafor
 }

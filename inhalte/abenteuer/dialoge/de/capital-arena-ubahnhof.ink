@@ -80,7 +80,7 @@ Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo 
 
 === mo_danach ===
 {abschiedGesehen:
-    {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor kommt jetzt jeden Donnerstag. Er sagt, wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
+    {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor sagt, er kommt wieder. Wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 - else:
     {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 }

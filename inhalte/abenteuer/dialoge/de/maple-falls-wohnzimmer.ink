@@ -101,7 +101,8 @@ Am Abend ist der Umzugswagen weg. Kartons, ein Sofa schief vor dem Fenster, sons
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
-Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter #stimmung:laechelt
+Hörst du das? Der Wasserfall. #sprecher:mutter #stimmung:laechelt
+Daher der Name. #sprecher:mutter #stimmung:laechelt
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter #stimmung:nachdenklich
 * [„Es ist ziemlich groß.“]
     Groß. Und alt. #sprecher:mutter #stimmung:nachdenklich
@@ -110,8 +111,10 @@ Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht 
 - Mama fragt nicht, wie es dir geht. Dafür bist du ihr dankbar. #sprecher:erzaehler
 Eins noch. #sprecher:mutter #stimmung:nachdenklich
 Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler #bild:kiste_whitlock
-Stand im Flur. Die Vorbesitzerin. Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter #stimmung:nachdenklich #bild:aus
-Der Dachboden ist noch voll von ihren Sachen. Deshalb war das Haus so günstig. Alles, was oben ist, gehört jetzt uns. #sprecher:mutter #stimmung:nachdenklich
+Stand im Flur. Die Vorbesitzerin. #sprecher:mutter #stimmung:nachdenklich #bild:aus
+Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter #stimmung:nachdenklich
+Der Dachboden ist noch voll von ihren Sachen. Deshalb war das Haus so günstig. #sprecher:mutter #stimmung:nachdenklich
+Alles, was oben ist, gehört jetzt uns. #sprecher:mutter #stimmung:nachdenklich
 * [„Und was machen wir damit?“]
     Erst mal nichts. #sprecher:mutter #stimmung:nachdenklich
 * [„Erst Pizza?“]
@@ -128,8 +131,10 @@ Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie K
 // seit die Haustür bis dahin zu bleibt), beginnt gleich mit dem Abend. Sonst fragte Mama „Warst du
 // schon auf dem Dachboden?“, und erst danach kam {held} mit dem Brett die Treppe herunter.
 {not ersteLektionBesprochen:
-    Da bist du ja. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter #stimmung:muede
-    Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #stimmung:laechelt
+    Da bist du ja. Warst du schon auf dem Dachboden? #sprecher:mutter #stimmung:muede
+    Staubig, oder? #sprecher:mutter #stimmung:muede
+    Hörst du das Rauschen? Der Wasserfall. #sprecher:mutter #stimmung:laechelt
+    Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #stimmung:laechelt
 }
 -> mutter
 
@@ -142,20 +147,24 @@ Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie K
 Du stellst dich mit dem Brett neben sie. Mama schraubt weiter am Tisch. Ihr Blick fällt auf das Brett. Sie sieht nicht dich an, sondern die Stellung. #sprecher:erzaehler #pause:2
 Weiß steht besser. #sprecher:mutter #stimmung:nachdenklich #pause:2 #musik:aus
 Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler #musik:karte
-Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das her? #sprecher:mutter #stimmung:ertappt
+Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. #sprecher:mutter #stimmung:ertappt
+Wo hast du das her? #sprecher:mutter #stimmung:ertappt
 * [„Vom Dachboden.“]
-    Schön. Ist alt, oder? Pass auf, dass keine Figur wegkommt. #sprecher:mutter #stimmung:laechelt
+    Schön. Ist alt, oder? #sprecher:mutter #stimmung:laechelt
+    Pass auf, dass keine Figur wegkommt. #sprecher:mutter #stimmung:laechelt
 * [„Spielst du Schach?“]
     Ich? Nein. #sprecher:mutter #stimmung:ueberrascht
     Sie lacht, ein bisschen zu kurz. #sprecher:erzaehler
     Ich kann nicht mal diesen Tisch. #sprecher:mutter #stimmung:ueberrascht
 - Deine Mutter, wenn ich das sagen darf, lügt schlecht. #sprecher:ambrose #stimmung:laechelt
-In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. Falls du Leute kennenlernen willst. #sprecher:mutter #stimmung:laechelt
+In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. #sprecher:mutter #stimmung:laechelt
+Falls du Leute kennenlernen willst. #sprecher:mutter #stimmung:laechelt
 * [„Vielleicht schau ich mal hin.“]
     Mach das. #sprecher:mutter #stimmung:froh
 * [„Schach ist doch nur für Streber.“]
     Dann eben nicht. Halt mal das Tischbein. #sprecher:mutter #stimmung:nachdenklich
-- Ein Schachteam. Wie vornehm diese Zeit ist. Morgen gehen wir hin. #sprecher:ambrose #stimmung:laechelt
+- Ein Schachteam. Wie vornehm diese Zeit ist. #sprecher:ambrose #stimmung:laechelt
+Morgen gehen wir hin. #sprecher:ambrose #stimmung:laechelt
 // Roman, Kapitel 4 (neu): Der Tisch wackelt, ein Pizzakarton kommt unter das Bein. Wärme ohne
 // Worte; das Wohnzimmer bekommt dafür eine Zustandsfassung (Karten, eigener Auftrag). Danach der
 // Hinweis auf die Nacht auf dem Dachboden (maple-falls-dachboden.erste_nacht).
@@ -176,7 +185,8 @@ Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek? #sprecher:mutter
 * [„Juno und ich gehen Freitag schon. Zu Fuß.“]
     Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
 * [„Ich spiele am vierten Brett!“]
-    Am vierten Brett. Und Juno sagt, ihr geht schon Freitag. Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
+    Am vierten Brett. Und Juno sagt, ihr geht schon Freitag. #sprecher:mutter #stimmung:ueberrascht
+    Zu Fuß. #sprecher:mutter #stimmung:ueberrascht
 // Lektorat Akt 1, 17.11.2026: der Grund für Freitag und zu Fuß, für jeden Spieler (Roman, Kapitel 10:
 // „in einem Atemzug“; der Bus fährt nur samstags, Zettel an der Haltestelle im Park).
 - Du sagst alles in einem Atemzug: Der Bus fährt erst Samstag früh, Juno kennt den Weg, und die Vorhut schläft immer in der Bibliothek. #sprecher:erzaehler
@@ -205,27 +215,35 @@ Mama kommt von der Frühschicht. Mantel, Tasche, ob du gegessen hast. Dann sieht
 Du warst in Ironwood. Bei Oma Ruth. #sprecher:mutter #stimmung:verschlossen
 * [„Und bei Big Joe. Er lässt grüßen.“]
 - Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
-Ihm tut es leid. Joe. Dieser sture, alberne … Ihm tut es leid. #sprecher:mutter #stimmung:riss
+Ihm tut es leid. Joe. #sprecher:mutter #stimmung:riss
+Dieser sture, alberne … Ihm tut es leid. #sprecher:mutter #stimmung:riss
 Sie nimmt das Foto. Das Mädchen mit den Händen in den Ärmeln. #sprecher:erzaehler #pause:2
-Ich war siebzehn. Ich war gut, weißt du. Ich sage das nicht, um anzugeben. #sprecher:mutter #stimmung:erzaehlt
+Ich war siebzehn. Ich war gut, weißt du. #sprecher:mutter #stimmung:erzaehlt
+Ich sage das nicht, um anzugeben. #sprecher:mutter #stimmung:erzaehlt
 Im Finale stand ich auf Gewinn. Joe stand hinten an der Wand und hat sich nicht getraut zu atmen. #sprecher:mutter #stimmung:nachdenklich
-Zug dreiunddreißig. Ich sehe nur meinen Angriff. Ich ziehe den Turm vor, hinter meine Dame, auf dieselbe Schräge. #sprecher:mutter #stimmung:nachdenklich
+Zug dreiunddreißig. Ich sehe nur meinen Angriff. #sprecher:mutter #stimmung:nachdenklich
+Ich ziehe den Turm vor, hinter meine Dame, auf dieselbe Schräge. #sprecher:mutter #stimmung:nachdenklich
 Und ganz hinten, am anderen Ende des Brettes, steht sein Läufer und sieht die Schräge entlang. Seit zwanzig Zügen. #sprecher:mutter #stimmung:nachdenklich
-Die Dame muss weg, und der Turm dahinter fällt. Ein Spieß. Das Einfachste, was es gibt. #sprecher:mutter #stimmung:bitter
+Die Dame muss weg, und der Turm dahinter fällt. Ein Spieß. #sprecher:mutter #stimmung:bitter
+Das Einfachste, was es gibt. #sprecher:mutter #stimmung:bitter
 Ich hab den Läufer nicht gesehen. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #stimmung:bitter #musik:mama #pause:2
 „Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!“ Sie hat es mit dreizehn ins blaue Heft geschrieben. #sprecher:erzaehler
 Alle haben gesagt, das passiert. Das passiert jedem. #sprecher:mutter #stimmung:bitter
-Joe hat es gesagt, meine Mutter, der Gegner sogar. Ein netter Junge. Er hat sich entschuldigt. #sprecher:mutter #stimmung:nachdenklich
+Joe hat es gesagt, meine Mutter, der Gegner sogar. Ein netter Junge. #sprecher:mutter #stimmung:nachdenklich
+Er hat sich entschuldigt. #sprecher:mutter #stimmung:nachdenklich
 Ich wollte nicht, dass es jedem passiert. Ich wollte, dass es mir nicht passiert. #sprecher:mutter #stimmung:bitter #musik:aus
-Ich hab die Figuren in den Keller getragen. Schule, Ausbildung. Du. Es ging ja. #sprecher:mutter #stimmung:nachdenklich
+Ich hab die Figuren in den Keller getragen. Schule, Ausbildung. #sprecher:mutter #stimmung:nachdenklich
+Du. Es ging ja. #sprecher:mutter #stimmung:nachdenklich
 * [„Du hast gesagt: Weiß steht besser.“]
 - Sie sieht dich an. #sprecher:erzaehler
 * [„Am ersten Abend. Drei Sekunden.“]
-- Zwei. Es waren zwei. Ich hab mich so erschrocken. #sprecher:mutter #stimmung:lachtOhneSpott
+- Zwei. Es waren zwei. #sprecher:mutter #stimmung:lachtOhneSpott
+Ich hab mich so erschrocken. #sprecher:mutter #stimmung:lachtOhneSpott
 Du legst das blaue Heft neben das Foto, aufgeschlagen auf der letzten Seite. Mama sieht auf die leere Stelle. #sprecher:erzaehler #bild:blaues_heft
 Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke. #sprecher:erzaehler #bild:aus #pause:2
 Gut. Eine Partie. #sprecher:mutter #stimmung:denktNach
-In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter #stimmung:laechelt
+In Ironwood. Ich will den Raum sehen. #sprecher:mutter #stimmung:laechelt
+Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter #stimmung:laechelt
 -> mama_fahrt
 
 === mama_fahrt ===
@@ -258,6 +276,9 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
     - else:
         {~Riverton, ja? Mit dem Zug zurück, vor dem Dunkelwerden.|Du läufst jetzt durch Wälder bis nach Riverton. Ich sag dazu nichts. Fast nichts.|Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.} #sprecher:mutter #stimmung:nachdenklich
     }
+// Lektorat 20.11.2026: Am Einzugsabend fängt Mama noch nicht an, und Mrs. Calloway kennt man nicht.
+- not ersteNachtGesehen:
+    Geh schlafen, Spatz. Morgen sieht alles weniger nach Kartons aus. #sprecher:mutter #stimmung:muede
 - else:
     {~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|{aufbruchGesehen:Dein Zimmer sieht fast bewohnt aus. Fast.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?}|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter #stimmung:laechelt
 }
@@ -286,7 +307,8 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
 {brettBeruehrt:
     Du hast die Hand schon an der Klinke. Aber oben auf dem Dachboden steht das Brett, und es lässt dich nicht los. #sprecher:erzaehler
 - else:
-    Die Stadt läuft nicht weg. Heute ist Umzug. Sieh dich lieber erst auf dem Dachboden um, da oben steht noch alles voll. #sprecher:mutter #stimmung:muede
+    Die Stadt läuft nicht weg. Heute ist Umzug. #sprecher:mutter #stimmung:muede
+    Sieh dich lieber erst auf dem Dachboden um, da oben steht noch alles voll. #sprecher:mutter #stimmung:muede
 }
 -> END
 
@@ -308,7 +330,8 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
 Ich hab heute frei. Und der Herd ist immer noch nicht angeschlossen. #sprecher:mutter #stimmung:laechelt
 Diner? Ich lade dich ein. #sprecher:mutter #stimmung:froh
 * [„Pommes?“]
-    Pommes. Und vielleicht sogar ein Salat. Vielleicht. #sprecher:mutter #stimmung:lacht
+    Pommes. Und vielleicht sogar ein Salat. #sprecher:mutter #stimmung:lacht
+    Vielleicht. #sprecher:mutter #stimmung:lacht
 * [„Gern.“]
 - -> diner_abend
 
@@ -318,7 +341,8 @@ Es riecht nach Zwiebeln und Kaffee. Aus der Musikbox kommt leise ein altes Lied.
 Bestellung läuft! #sprecher:hector #stimmung:froh
 {hectorGetroffen:Hector ruft es in die Küche, obwohl außer ihm niemand in der Küche ist.|Er ruft es in die Küche, obwohl außer ihm niemand in der Küche ist. Auf seiner Schürze steht „Hector“.} #sprecher:erzaehler
 Er legt euch Papiersets hin. Darauf ein Schachbrett: „Rätsel der Woche: Weiß zieht und setzt in einem Zug matt.“ #sprecher:erzaehler
-Nimm zwei. Ist schwer diese Woche. Ich krieg's nicht raus. #sprecher:hector #stimmung:nachdenklich
+Nimm zwei. Ist schwer diese Woche. #sprecher:hector #stimmung:nachdenklich
+Ich krieg's nicht raus. #sprecher:hector #stimmung:nachdenklich
 * [Das Rätsel ansehen]
 * [Erst Pommes bestellen]
     Pommes kommen. Das Rätsel läuft nicht weg. #sprecher:hector #stimmung:laechelt
@@ -328,10 +352,12 @@ Mama sieht zu. Sie sagt nichts. #sprecher:erzaehler
 Aber ihr Finger bewegt sich, einen Zentimeter über dem Papier, auf ein Feld. Eine halbe Sekunde vor deinem Stift. #sprecher:erzaehler #pause:3
 Du tust, als hättest du es nicht gesehen. Dann zeichnest du den Pfeil ein. #sprecher:erzaehler
 Hector hält das Set ins Licht wie einen Geldschein. #sprecher:erzaehler
-Matt in eins! Am ersten Abend! Das kommt an die Wand. #sprecher:hector #stimmung:froh
+Matt in eins! Am ersten Abend! #sprecher:hector #stimmung:froh
+Das kommt an die Wand. #sprecher:hector #stimmung:froh
 Deine Mutter war schneller. Ich sage es nur, damit du es weißt. #sprecher:ambrose #stimmung:laechelt
 * [Den Kopf schütteln, ganz leicht]
-    Schon gut. Ich schweige. Gentlemen schweigen über Damen. #sprecher:ambrose #stimmung:lacht
+    Schon gut. Ich schweige. #sprecher:ambrose #stimmung:lacht
+    Gentlemen schweigen über Damen. #sprecher:ambrose #stimmung:lacht
 * [„Pst.“]
     Mama sieht auf. „Was?“ Du zeigst auf die Musikbox. #sprecher:erzaehler
 - Die Pommes kommen. Hector bleibt am Tisch stehen, das Geschirrtuch über der Schulter. #sprecher:erzaehler
@@ -341,7 +367,8 @@ Hab gesagt: der Schule. #sprecher:hector #stimmung:lacht
 Dann lacht er nicht mehr. Die Musikbox setzt für einen Takt aus. #sprecher:erzaehler #pause #musik:aus
 Hat er nicht komisch gefunden. #sprecher:hector #stimmung:laechelt #musik:diner
 * [„Wer war das?“]
-    Keine Ahnung. Hat nicht mal Trinkgeld gegeben. Kaffee schwarz, ohne alles. #sprecher:hector #stimmung:bitter
+    Keine Ahnung. Hat nicht mal Trinkgeld gegeben. #sprecher:hector #stimmung:bitter
+    Kaffee schwarz, ohne alles. #sprecher:hector #stimmung:bitter
 * [Nichts sagen]
 - Gibt es hier Ketchup? #sprecher:mutter #stimmung:laechelt
 Draußen ist es dunkel geworden. Hinter dem Fenster die Hauptstraße, die einzige Ampel, dahinter schwarze Bäume. #sprecher:erzaehler
@@ -369,9 +396,11 @@ Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 * [„Warum?“]
 - Sie legt den Zettel hin, mit der Schrift nach unten. #sprecher:erzaehler
 Du fährst nach Riverton, du läufst durch Wälder, ich sage zu allem Ja. Dieses eine Mal sage ich Nein. #sprecher:mutter #stimmung:bitter
-Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
+Frag nicht. Bitte. #sprecher:mutter #stimmung:verschlossen
+Nicht heute. #sprecher:mutter #stimmung:verschlossen
 Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter. Nachtschicht. #sprecher:erzaehler #klang:wagen
-Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose #stimmung:nachdenklich #musik:mapleFalls.klavier
+Deine Mutter hat Angst. Vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich #musik:mapleFalls.klavier
+Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
 Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Sie hat nur gesagt: nicht zum Turnier.“]
 * [Den Zettel umdrehen]

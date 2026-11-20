@@ -86,7 +86,8 @@ VAR abschiedGesehen = false
     Neben dem Kreidebrett ist ein L gemalt, dann noch eins und noch eins, bis zur Ecke. Weiß, schwarz, weiß, schwarz. #sprecher:erzaehler
     {not angesehenKreidebrett and not abschiedGesehen:
         ~ angesehenKreidebrett = true
-        Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
+        Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. #sprecher:ambrose #stimmung:lacht
+        Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
     }
 - angesehenKreidebrett:
     Das Plastikpferd liegt noch auf dem Kreidebrett. Es wartet. #sprecher:erzaehler
@@ -121,7 +122,8 @@ VAR abschiedGesehen = false
     }
     Ein alter Spiegel mit einem Sprung quer über das Glas. Darin siehst du dich und die Kisten, sonst niemand. #sprecher:erzaehler
     {ersteLektionBesprochen and not abschiedGesehen:
-        Ich habe nachgesehen. Geister haben kein Spiegelbild. Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
+        Ich habe nachgesehen. Geister haben kein Spiegelbild. #sprecher:ambrose #stimmung:lacht
+        Schade, ich war ein ansehnlicher Mann. #sprecher:ambrose #stimmung:lacht
     }
 }
 -> END

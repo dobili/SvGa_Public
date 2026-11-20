@@ -19,6 +19,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(laden)
 
+VAR finaleTischGesehen = false
+VAR novaHandGesehen = false
 VAR held = "Du"
 VAR zugerratenTurm = false
 VAR arenaGesehen = false
@@ -151,6 +153,12 @@ VAR pauseNachRunde2Gesehen = false
     Noch mal. Jetzt weiß ich, wie ich anfange. #sprecher:nova #stimmung:laechelt
     -> runde3_spielen
 }
+// Lektorat 20.11.2026: Nach „Noch einen Moment.“ zittert ihre Hand nicht noch einmal zum ersten Mal.
+{novaHandGesehen:
+    Nova sitzt noch an Tisch eins. Ihre Hände liegen flach neben der Uhr. #sprecher:erzaehler
+    -> runde3_spielen
+}
+~ novaHandGesehen = true
 Sie sitzt schon da, im zu großen Pullover, die Haare zurückgebunden, sodass man beide Ohren sieht. Das soll man bemerken. #sprecher:erzaehler
 Neben der Uhr liegt etwas Kleines, Hautfarbenes, offen, wo jeder es sehen kann. Am Rand steht ein Mann mit einem Prüfgerät. #sprecher:erzaehler
 Nova gibt dir die Hand. Ihre zittert so, dass du es bis in den Ellbogen spürst. #sprecher:erzaehler
@@ -426,8 +434,15 @@ Aus der Halle kommt ein Gong. Deine Hände zittern nicht mehr. #sprecher:erzaehl
 
 === finale_angebot ===
 // Roman Kapitel 65: ein Tisch im Lichtkreis; keine Karten, keine Hilfen, Ambrose nicht im Bild.
-Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
-Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
+// Lektorat 20.11.2026: Nach „Gleich.“ dreht Victor die Taschen nicht ein zweites Mal um.
+{
+- finaleTischGesehen:
+    Victor sitzt im Lichtkreis und wartet. Die Taschen hängen noch nach außen. #sprecher:erzaehler #musik:aus
+- else:
+    ~ finaleTischGesehen = true
+    Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
+    Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
+}
 Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 + [„Ich bin bereit.“]
     Seine Hand ist trocken und warm. #sprecher:erzaehler

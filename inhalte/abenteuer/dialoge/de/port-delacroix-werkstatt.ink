@@ -22,6 +22,9 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+VAR odileClubkampfEingeleitet = false
+VAR werkstattGoldGesehen = false
+VAR celesteAngebotGesehen = false
 VAR leimAuftrag = false
 VAR odileHandGegeben = false
 VAR tiefpunktGesehen = false
@@ -124,6 +127,12 @@ Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 }
 
 === celeste_angebot ===
+// Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
+{celesteAngebotGesehen:
+    Céleste hat den Hocker schon an die Werkbank gezogen. #sprecher:erzaehler
+    -> wahl
+}
+~ celesteAngebotGesehen = true
 Céleste sieht auf den Hocker. Du hast den Geigenkasten aufgemacht, ohne es zu merken. #sprecher:erzaehler
 Das sieht cool aus. Das ist ja richtig alt. Darf ich? #sprecher:celeste #stimmung:ueberrascht
 Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. Und die Hände. #sprecher:erzaehler
@@ -131,6 +140,7 @@ Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein
 - Ich weiß, wie die Dinger ziehen. Ungefähr. Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste #stimmung:laechelt
 Aber mit Uhr. Zehn Minuten für jeden. Mein Stück auf dem Laptop läuft noch zwanzig, dann muss ich los. #sprecher:celeste #stimmung:lacht
 Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er hat genickt. #sprecher:erzaehler
+- (wahl)
 + [„Okay. Eine Partie.“]
     ~ beginnePartie("portDelacroix.celeste")
     -> END
@@ -190,12 +200,23 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 Frisch gehobeltes Holz. Leim, warm. Etwas Harziges. Ein Geruch, den du kennst, ohne ihn zu kennen. #sprecher:erzaehler
 // Nach dem Abschied (abschiedGesehen) spricht Ambrose nicht mehr; die Werkstatt erinnert sich allein.
 {abschiedGesehen: -> golden}
-{fotoAmbroseGesehen:Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn.|Im Geigenkasten unter deinem Arm bewegt sich nichts. Du hörst ihn, zum ersten Mal seit fünf Tagen.} #sprecher:erzaehler
+// Lektorat 20.11.2026: Nach „Zurück in die Gegenwart“ nicht noch einmal „Hier war es“; „zum ersten
+// Mal seit fünf Tagen“ nur, wenn er vorher nicht im Clubkampf („Spiel deine Partie.“) sprach.
+{werkstattGoldGesehen: -> golden_wieder}
+~ werkstattGoldGesehen = true
+{fotoAmbroseGesehen or odileClubkampfEingeleitet:Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn.|Im Geigenkasten unter deinem Arm bewegt sich nichts. Du hörst ihn, zum ersten Mal seit fünf Tagen.} #sprecher:erzaehler
 Hier. Hier war es. #sprecher:ambrose #stimmung:fern #musik:ambrose.verstimmt
 -> golden
 
 = golden
 {abschiedGesehen:Die Werkstatt wird golden.|Mehr nicht. Aber die Werkstatt wird golden.} #sprecher:erzaehler
+-> gold_wahl
+
+= golden_wieder
+Die Werkstatt wird wieder golden. #sprecher:erzaehler
+-> gold_wahl
+
+= gold_wahl
 + [Mitgehen]
     -> werkstatt_1840
 + [Zurück in die Gegenwart]

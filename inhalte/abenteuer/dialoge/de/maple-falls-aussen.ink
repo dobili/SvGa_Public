@@ -20,6 +20,9 @@
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL reise(karte, ausloeser)
 
+VAR ankunftIronwoodGesehen = false
+VAR verbotGesehen = false
+VAR ausgangMapleFallsClubkampf = ""
 VAR junoAnDerSchultuer = false
 VAR nadelRiverton = 0
 VAR einladungGesehen = false
@@ -67,20 +70,25 @@ Morgen! Ich erklär dir morgen alles! #sprecher:juno #stimmung:froh
 ~ junoGetroffen = true
 An der Bushaltestelle steht ein Mädchen mit zwei Zöpfen und einem Heft, das ein Gummiband zusammenhält. Ihr ganzes Gesicht geht auf. #sprecher:erzaehler
 Du bist das Kind aus dem Whitlock-Haus! #sprecher:juno #stimmung:froh
-Juno Martínez. Zwei Häuser weiter, das gelbe. Alle reden über euch. #sprecher:juno #stimmung:laechelt
+Juno Martínez. Zwei Häuser weiter, das gelbe. #sprecher:juno #stimmung:laechelt
+Alle reden über euch. #sprecher:juno #stimmung:laechelt
 Mrs. Whitlock hatte siebzehn Katzen, sagt man. Es waren drei. #sprecher:juno #stimmung:lacht
 Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
 * [„Ich hab es auf dem Dachboden gefunden.“]
     Ein echtes altes Schachbrett? Das ist ja wie im Film! #sprecher:juno #stimmung:ueberrascht
 * [„Das ist nur ein altes Brett.“]
     Nur? Das ist ein Zeichen! #sprecher:juno #stimmung:laechelt
-- Wir brauchen ein viertes Brett, und ich brauche jemanden zum Reden. Spielst du Schach? Sag ja. #sprecher:juno #stimmung:laechelt
+- Wir brauchen ein viertes Brett, und ich brauche jemanden zum Reden. Spielst du Schach? #sprecher:juno #stimmung:laechelt
+Sag ja. #sprecher:juno #stimmung:laechelt
 * [„Ein bisschen.“]
-    Ein bisschen reicht! Ich spiele auch nur ein bisschen. Ich verliere meistens. #sprecher:juno #stimmung:froh
+    Ein bisschen reicht! Ich spiele auch nur ein bisschen. #sprecher:juno #stimmung:froh
+    Ich verliere meistens. #sprecher:juno #stimmung:froh
 * [„Ich kann kaum Schach.“]
-    Ich auch nicht. Ich verliere meistens. Es stört mich nicht. #sprecher:juno #stimmung:laechelt
+    Ich auch nicht. Ich verliere meistens. #sprecher:juno #stimmung:laechelt
+    Es stört mich nicht. #sprecher:juno #stimmung:laechelt
 - Sie klopft auf das Heft. #sprecher:erzaehler
-Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
+Das ist das Clubtagebuch. Da kommt alles rein. #sprecher:juno #stimmung:laechelt
+Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
 {junoAnDerSchultuer:Raum 12 im Erdgeschoss. Komm, ich bring dich hin.|Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede.} #sprecher:juno #stimmung:laechelt
 {not abschiedGesehen:
     Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose #stimmung:laechelt
@@ -99,7 +107,8 @@ Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle n
 -> juno_trifft
 
 === juno_zum_club ===
-Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stimmung:lacht
+Raum 12, Erdgeschoss! Coach Delgado beißt nicht. #sprecher:juno #stimmung:lacht
+Meistens. #sprecher:juno #stimmung:lacht
 -> END
 
 // Lektorat Akt 2 (17.11.2026): Juno reist mit; zu Hause redet sie über den Stand der Reise.
@@ -109,6 +118,9 @@ Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno #stim
     ~ return "Silicon Bay! Ich hab im Tagebuch schon eine Seite freigemacht. Mit Glitzerrand."
 - nadelIronwood > 0:
     ~ return "Vier Nadeln im Tagebuch. Und ein Foto von deiner Mama. Mit Glitzer, diesmal ja."
+// Lektorat 20.11.2026: Junos „Ich warte. Das Rad auch.“ (aufbruch_ironwood) greift sie hier auf.
+- verbotGesehen and not ankunftIronwoodGesehen:
+    ~ return "Das Rad steht noch vor deiner Tür. Zug bis Riverton, dann am Kanal entlang."
 - nadelRiverton > 0:
     ~ return "Riverton hat im Tagebuch sieben Seiten. Eine davon ist nur Regen."
 - endeAkt1Gesehen:
@@ -159,8 +171,10 @@ Zeigst du mir jetzt das Pferd? Den Springer, meine ich. #sprecher:lily #stimmung
 Erklär es ihr. #sprecher:ambrose #stimmung:laechelt
 * [„Du kannst das besser.“]
     Sie hört mich nicht. Und selbst wenn. #sprecher:ambrose #stimmung:nachdenklich
+    Lehre es ihr. Dann weißt du, ob du es kannst. #sprecher:ambrose #stimmung:laechelt
 * [Neben sie auf den Bordstein setzen]
-- Lehre es ihr. Dann weißt du, ob du es kannst. #sprecher:ambrose #stimmung:laechelt
+    Gut so. Dann weißt du gleich, ob du es kannst. #sprecher:ambrose #stimmung:laechelt
+-
 -> erklaeren
 
 = erklaeren
@@ -177,7 +191,8 @@ Noch mal! Zeig mir, wo er zwei erwischt! #sprecher:lily #stimmung:froh
 
 === lily_danke ===
 ~ lilyGeholfen = true
-Ein L! Immer auf die andere Farbe! Und zwei auf einmal, das ist die Gabel! #sprecher:lily #stimmung:froh #klang:aha
+Ein L! Immer auf die andere Farbe! #sprecher:lily #stimmung:froh #klang:aha
+Und zwei auf einmal, das ist die Gabel! #sprecher:lily #stimmung:froh
 Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #sprecher:erzaehler
 {not abschiedGesehen:
     Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
@@ -209,13 +224,16 @@ Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler
 === calloway_a ===
 ~ callowayGetroffen = true
 Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. Auf dem zweiten sitzt niemand. #sprecher:erzaehler #musik:aus
-Du bist {held}. Ich bin Eunice Calloway. Ich wohne hier seit vierundsechzig. #sprecher:calloway #stimmung:laechelt
-Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. Das ist schlecht für den Rücken. #sprecher:calloway #stimmung:nachdenklich
+Du bist {held}. Ich bin Eunice Calloway. #sprecher:calloway #stimmung:laechelt
+Ich wohne hier seit vierundsechzig. #sprecher:calloway #stimmung:laechelt
+Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. #sprecher:calloway #stimmung:nachdenklich
+Das ist schlecht für den Rücken. #sprecher:calloway #stimmung:nachdenklich
 * [„Guten Morgen, Mrs. Calloway.“]
 * [„Es waren nur ein paar Kisten.“]
     Einundzwanzig. Ich habe gezählt. #sprecher:calloway #stimmung:laechelt
 - Margaret trägt nie mehr als eine. Sie sagt, man hat Zeit. #sprecher:calloway #stimmung:laechelt
-Jeden Sonntag spielt sie Schach. Gegen Leute, die sie nie gesehen hat. Per Post. Ein Zug, eine Briefmarke. #sprecher:calloway #stimmung:laechelt
+Jeden Sonntag spielt sie Schach. Gegen Leute, die sie nie gesehen hat. #sprecher:calloway #stimmung:laechelt
+Per Post. Ein Zug, eine Briefmarke. #sprecher:calloway #stimmung:laechelt
 Sie sagt „spielt“. Nicht „spielte“. #sprecher:erzaehler #pause
 Die Kisten auf dem Dachboden hat nie jemand aufgemacht. Nicht mal sie. #sprecher:calloway #stimmung:nachdenklich
 Dann blinzelt sie, als käme sie von weit her zurück, und lächelt. #sprecher:erzaehler
@@ -267,7 +285,8 @@ Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #s
 * [„Wer hat ihm das beigebracht?“]
     {lilyGeholfen:Lily von nebenan. Und die sagt, sie hat es von dir.|Lily von nebenan. Die weiß alles über Pferde.} #sprecher:calloway #stimmung:froh
 - Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway #stimmung:laechelt
-Margaret hätte gelacht. Sie hat oft gelacht. Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
+Margaret hätte gelacht. Sie hat oft gelacht. #sprecher:calloway #stimmung:laechelt
+Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
 {not abschiedGesehen:
     Das wusste ich nicht. #sprecher:ambrose #stimmung:still
 }
@@ -300,13 +319,14 @@ Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem F
 === carla_b ===
 Das Fahrrad steht fertig am Zaun. Carla schiebt es gerade auf die Straße. #sprecher:erzaehler
 Und? Wie war der Clubkampf? #sprecher:carla #stimmung:laechelt
-* [„Gewonnen. Gegen den Coach.“]
+* {ausgangMapleFallsClubkampf != "remis"} [„Gewonnen. Gegen den Coach.“]
     Echt? Gegen Delgado? #sprecher:carla #stimmung:ueberrascht
 * [„Knapp.“]
     Gegen Delgado ist es immer knapp. #sprecher:carla #stimmung:laechelt
 - Italienisch, oder? Läufer nach c4, und dann wartet sie nur auf ihren Angriff. #sprecher:carla #stimmung:nachdenklich
 Sie merkt, was sie gesagt hat, und steigt auf das Rad. #sprecher:erzaehler
-Sie kennt die Eröffnung. Und die Trainerin. Man vergisst nicht, was man geliebt hat. #sprecher:ambrose #stimmung:nachdenklich
+Sie kennt die Eröffnung. Und die Trainerin. #sprecher:ambrose #stimmung:nachdenklich
+Man vergisst nicht, was man geliebt hat. #sprecher:ambrose #stimmung:nachdenklich
 -> END
 
 // Stufe C (nach Akt 1): Sie steht von außen am Fenster des Clubraums und schaut zu. Sie geht,
@@ -324,11 +344,13 @@ Vor dem Fenster des Clubraums steht Carla und sieht hinein. Drinnen spielen zwei
 // das Zählen bei. Gehört dann in den Clubraum.
 === carla_d ===
 Carla sitzt am Brett mit dem Radiergummi. Vor ihr zwei Kinder aus der Sechsten. #sprecher:erzaehler
-Wer greift an? Wer verteidigt? Erst zählen, dann schlagen. #sprecher:carla #stimmung:laechelt
+Wer greift an? Wer verteidigt? #sprecher:carla #stimmung:laechelt
+Erst zählen, dann schlagen. #sprecher:carla #stimmung:laechelt
 Sie sieht dich und zuckt die Schultern. #sprecher:erzaehler
 Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stimmung:laechelt
 * [„Schön, dass du da bist.“]
-    Sag Juno nichts. Sonst steht es morgen im Tagebuch. Mit Glitzer. #sprecher:carla #stimmung:laechelt
+    Sag Juno nichts. Sonst steht es morgen im Tagebuch. #sprecher:carla #stimmung:laechelt
+    Mit Glitzer. #sprecher:carla #stimmung:laechelt
 * [„Der Radiergummi hat schon zwei Partien gewonnen.“]
     Drei. Heute Morgen noch eine. #sprecher:carla #stimmung:froh
 - {not abschiedGesehen: Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still}

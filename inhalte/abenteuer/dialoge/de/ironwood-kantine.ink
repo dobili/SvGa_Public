@@ -19,6 +19,7 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL gibKarte(kennung)
 
+VAR clubkampfIronwoodAngesagt = false
 VAR mamaMomentGesehen = false
 VAR schraubstockGesehen = false
 VAR stimmtEsGesehen = false
@@ -153,9 +154,16 @@ Kumpel, ich hab drei Stunden geschlafen. Wenn ich heute verliere, liegt es an de
 - -> brett
 
 = brett
-Die Nadel liegt auf dem Stahlbrett. Ein kleines Zahnrad aus dunklem Metall, mit einem Turm in der Mitte. #sprecher:erzaehler
-Mama sitzt in der ersten Reihe. Zum ersten Mal sieht sie dir zu. Sie beugt sich vor und sagt zwei Wörter, so leise, dass nur du sie hörst. #sprecher:erzaehler
-Grundreihe. Immer. #sprecher:mutter #stimmung:nachdenklich
+// Lektorat 20.11.2026: Nach „Noch nicht.“ sieht Mama nicht noch einmal „zum ersten Mal“ zu.
+{
+- clubkampfIronwoodAngesagt:
+    Mama sitzt noch in der ersten Reihe. Die Nadel liegt auf dem Stahlbrett. #sprecher:erzaehler
+- else:
+    ~ clubkampfIronwoodAngesagt = true
+    Die Nadel liegt auf dem Stahlbrett. Ein kleines Zahnrad aus dunklem Metall, mit einem Turm in der Mitte. #sprecher:erzaehler
+    Mama sitzt in der ersten Reihe. Zum ersten Mal sieht sie dir zu. Sie beugt sich vor und sagt zwei Wörter, so leise, dass nur du sie hörst. #sprecher:erzaehler
+    Grundreihe. Immer. #sprecher:mutter #stimmung:nachdenklich
+}
 Um die Nadel, Kumpel? Auf meinem Stahlbrett. #sprecher:bigJoe #stimmung:laechelt
 + [„Ich bin bereit.“]
     ~ beginnePartie("ironwood.clubkampf")

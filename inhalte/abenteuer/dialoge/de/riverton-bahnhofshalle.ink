@@ -23,6 +23,7 @@ EXTERNAL gibFund(kennung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
 
+VAR uhrAngebotGesehen = false
 VAR held = "Du"
 VAR harlanGetroffen = false
 VAR ausgangRivertonHarlan = ""
@@ -222,6 +223,8 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
     Eine Uhr, so groß wie ein Wagenrad. Sie tickt so laut, dass man es im Bauch spürt. #sprecher:erzaehler
     -> END
 }
+// Lektorat 20.11.2026: Nach „Nicht jetzt“ nicht noch einmal Zug, Juno, Klavierbauer und neun Schläge.
+{uhrAngebotGesehen: -> uhr_wieder}
 Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
 Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
 // Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; die Uhr führt allein nach London.
@@ -235,6 +238,7 @@ Ich sollte lernen, wie man Fichte prüft. Man klopft darauf und hört zu. Ich ha
 - -> schlag
 
 = schlag
+~ uhrAngebotGesehen = true
 Die Uhr schlägt. Neunmal. Mit jedem Schlag wird die Halle heller, und der Hall wird zu Hufen auf Pflaster. #sprecher:erzaehler #klang:uhr_hufschlag #musik:aus
 {not abschiedGesehen:
     Komm. Ich zeige es dir. #sprecher:ambrose #stimmung:laechelt
@@ -246,6 +250,17 @@ Die Uhr schlägt. Neunmal. Mit jedem Schlag wird die Halle heller, und der Hall 
     {not abschiedGesehen:
         Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. Es wartet auch noch eine Stunde. #sprecher:ambrose #stimmung:laechelt
     }
+    -> END
+
+=== uhr_wieder ===
+Juno schläft noch auf der Bank. Die Uhr tickt laut in der leeren Halle. #sprecher:erzaehler
+{not abschiedGesehen:
+    Das Kaffeehaus wartet noch. Komm. #sprecher:ambrose #stimmung:laechelt
+}
+* [Mitgehen]
+    ~ reise("erinnerungLondon.strand", "ankunft")
+    -> END
+* [„Nicht jetzt.“]
     -> END
 
 // Kapitel 21, Schluss: der Gedanke, der Ambrose in Akt 3 trägt. Wer alles sieht, muss nicht hoffen.

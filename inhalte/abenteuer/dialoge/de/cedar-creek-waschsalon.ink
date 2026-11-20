@@ -74,10 +74,12 @@ Die Figuren zittern leicht, weil die Maschine läuft. Weiß am Zug, Matt in zwei
 // Danach steht die Geschichte als Steckbriefzeile von Mrs. Okafor im Clubtagebuch.
 ~ boatengLagos = true
 Mr. Boateng nickt, zieht das Paketband ab und stellt eine neue Stellung auf. #sprecher:erzaehler
-Die alte hat mir eine junge Frau gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng #stimmung:nachdenklich
+Die alte hat mir eine junge Frau gezeigt. Vor fünfzig Jahren. #sprecher:boateng #stimmung:nachdenklich
+Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng #stimmung:nachdenklich
 Die Männer mochten das nicht. #sprecher:boateng #stimmung:bitter
 Er lächelt auf das Brett hinunter. #sprecher:erzaehler
-Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #stimmung:froh
+Sie hat gewartet. Immer. #sprecher:boateng #stimmung:froh
+Bis einer zu früh gekommen ist. #sprecher:boateng #stimmung:froh
 * [„Was ist aus ihr geworden?“]
     Er streicht das Paketband glatt. #sprecher:erzaehler #pause:2
 * [Nichts fragen]

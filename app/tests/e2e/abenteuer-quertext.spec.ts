@@ -224,5 +224,21 @@ for (const g of GERAETE) {
       expect(await imBild(page, ".brett")).toBe(true);
       await foto(page, "partie", g.name);
     });
+
+    test("Tagebuch in voller Höhe, rollt mit dem Finger, „Schließen“ im Bild", async ({ page }) => {
+      test.slow();
+      await starteMitStand(page, MAMA);
+      await page.getByTestId("abenteuer-tagebuchknopf").click({ timeout: 15000 });
+      const buch = page.getByTestId("abenteuer-tagebuch");
+      await expect(buch).toBeVisible();
+      const r = await rechteck(page, "[data-testid='abenteuer-tagebuch']");
+      // Nicht erst unter der Kopfzeile: Fast die ganze Höhe gehört dem Tagebuch.
+      expect((r?.unten ?? 0) - (r?.oben ?? 0)).toBeGreaterThan(g.viewport.height * 0.85);
+      expect(await imBild(page, "[data-testid='abenteuer-tagebuch']")).toBe(true);
+      await expect(buch.locator(":scope > .knopf-haupt")).toBeInViewport({ ratio: 1 });
+      await wischeHoch(page, "[data-testid='abenteuer-tagebuch']");
+      expect(await buch.evaluate((e) => e.scrollTop)).toBeGreaterThan(0);
+      await foto(page, "tagebuch", g.name);
+    });
   });
 }

@@ -85,4 +85,29 @@
       env(safe-area-inset-right) + var(--textspalte) + var(--leistenknopf) + var(--raster) * 4
     );
   }
+
+  /* Der Ladestand („Geräusche werden geladen … 76 %“) lag oben unter dem Menü, das im Gespräch
+     links neben der Spalte steht (Durchlauf quer, 20.11.2026): unten in die Mitte der freien
+     Fläche, dort ist im Gespräch nichts (kein Steuerkreuz). */
+  .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) .abenteuer-ladestand {
+    top: auto;
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+    left: calc((100% - var(--textspalte) - var(--raster) * 2) / 2);
+    max-width: calc(100% - var(--textspalte) - var(--raster) * 4);
+  }
+
+  /* Tagebuch: quer in voller Höhe statt erst unter der Kopfzeile (dort stehen quer keine Knöpfe),
+     „Schließen“ flacher. Vorher waren von gut 800 Pixeln Inhalt nur 170 zu sehen (Durchlauf quer,
+     20.11.2026). Das Fenster rollt wie bisher. */
+  .bildschirm-abenteuer .abenteuer-tagebuch {
+    top: calc(env(safe-area-inset-top) + var(--raster));
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+    max-height: none;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+  }
+
+  .bildschirm-abenteuer .abenteuer-tagebuch > .knopf-haupt {
+    min-height: 40px;
+  }
 }

@@ -70,31 +70,12 @@ export function standNachPartie(
       ? variablenNachNadel(ort.kennung, clubs.find((c) => c.kennung === ort.kennung)?.nadel ?? null)
       : {}),
   };
-  // Münzen (G1): Sieg gegen einen Straßengegner, erste Nadel eines Clubs.
-  const rolle = daten.gegner.find((g) => g.kennung === b?.gegner)?.rolle;
-  const ersteNadel = ort && nadel && !stand.clubs.find((c) => c.kennung === ort.kennung)?.nadel;
-  const verdient =
-    (rolle === "strasse" && ergebnis.ausgang === "sieg" && b
-      ? strassensiegMuenzen(stand.protokoll, b.gegner, ergebnis.beendet)
-      : 0) + (ersteNadel ? MUENZEN.ersteNadel : 0);
-  // Abenteuerwertung (R2, R38): nur Partien, die beim Start als zählend vermerkt wurden.
-  const laufend = stand.laufendeWertung;
-  const gewertet = laufend?.zaehlt
-    ? nachStoryPartie(
-        stand,
-        laufend.zielElo,
-        ergebnis.ausgang,
-        ergebnis.gespielteKarten,
-        laufend.zeitwahl
-          ? {
-              zeitwahl: true,
-              uhr: stand.partiekarten?.uhr ?? null,
-              bilanz: ergebnis.uhrbilanz ?? null,
-              abzug: laufend.uhrAbzug ?? 0,
-            }
-          : null,
-      )
-    : stand;
+  const ersteNadel =
+    ort !== undefined &&
+    nadel !== null &&
+    !stand.clubs.find((c) => c.kennung === ort.kennung)?.nadel;
+  const verdient = verdienteMuenzen(stand, ergebnis, daten, b?.gegner, ersteNadel);
+  const gewertet = gewerteterStand(stand, ergebnis);
   return {
     begegnung,
     nadel,
@@ -171,4 +152,48 @@ export function standNachRunde(
       aufgabenergebnis: null,
     },
   };
+}
+
+/**
+ * Münzen für eine beendete Partie (G1): Sieg gegen einen Straßengegner (weniger bei Wiederholung,
+ * strassensiegMuenzen) und die erste Nadel eines Clubs. Beispiel: erster Sieg gegen Dash → Münzen
+ * des Straßensiegs.
+ */
+function verdienteMuenzen(
+  stand: Abenteuerstand,
+  ergebnis: Partieergebnis,
+  daten: Spieldaten,
+  gegner: string | undefined,
+  ersteNadel: boolean,
+): number {
+  const rolle = daten.gegner.find((g) => g.kennung === gegner)?.rolle;
+  const strasse =
+    rolle === "strasse" && ergebnis.ausgang === "sieg" && gegner
+      ? strassensiegMuenzen(stand.protokoll, gegner, ergebnis.beendet)
+      : 0;
+  return strasse + (ersteNadel ? MUENZEN.ersteNadel : 0);
+}
+
+/**
+ * Der Stand nach der Abenteuerwertung (R2, R38): nur Partien, die beim Start als zählend vermerkt
+ * wurden; sonst unverändert. Mit Zeitwahl zählen Uhr und Abzug mit.
+ */
+function gewerteterStand(stand: Abenteuerstand, ergebnis: Partieergebnis): Abenteuerstand {
+  const laufend = stand.laufendeWertung;
+  return laufend?.zaehlt
+    ? nachStoryPartie(
+        stand,
+        laufend.zielElo,
+        ergebnis.ausgang,
+        ergebnis.gespielteKarten,
+        laufend.zeitwahl
+          ? {
+              zeitwahl: true,
+              uhr: stand.partiekarten?.uhr ?? null,
+              bilanz: ergebnis.uhrbilanz ?? null,
+              abzug: laufend.uhrAbzug ?? 0,
+            }
+          : null,
+      )
+    : stand;
 }

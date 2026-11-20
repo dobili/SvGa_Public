@@ -70,7 +70,8 @@ Ich dachte, der gehört mir. #sprecher:juno #stimmung:ueberrascht
 Was glaubst du denn, warum er dort stand? #sprecher:okafor #stimmung:nachdenklich
 * [Juno anstoßen]
 * [Nichts sagen]
-- Dann sieht sie dich an. Dann deinen Rucksack, aus dem eine Ecke des Bretts ragt. Sie sagt lange nichts. #sprecher:erzaehler #pause:2
+- Dann sieht sie dich an. Dann deinen Rucksack, aus dem eine Ecke des Bretts ragt. #sprecher:erzaehler
+Sie sagt lange nichts. #sprecher:erzaehler #pause:2
 Darf ich? #sprecher:okafor #stimmung:laechelt
 * [Ihr das Brett geben]
 * [Nicken]
@@ -86,7 +87,8 @@ Woher hast du das? #sprecher:okafor #stimmung:ueberrascht
 * [„Vom Dachboden. Wir sind in das Haus gezogen.“]
 * [„Es lag in einer Kiste.“]
 - Aha. #sprecher:okafor #stimmung:nachdenklich #musik:karte
-Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab und putzt sie. Sie fragt nicht weiter. #sprecher:erzaehler
+Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab und putzt sie. #sprecher:erzaehler
+Sie fragt nicht weiter. #sprecher:erzaehler
 Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor #stimmung:laechelt
 Sechs Wörter. #sprecher:ambrose #stimmung:bitter #pause
 Eine Fußnote. #sprecher:ambrose #stimmung:bitter
@@ -139,7 +141,10 @@ Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #spreche
 In der Bibliothek flüstert man auch beim Schach. Der lange Tisch ist geräumt bis auf ein Brett. #sprecher:erzaehler
 Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem Springer. #sprecher:erzaehler
 {teamAngekommen: Außerhalb des Lichtkreises sitzen sie alle. Der Coach hält die Pfeife in der Faust, damit sie nicht pfeift. #sprecher:erzaehler}
-{sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor #stimmung:laechelt}
+{sternennachtGesehen:
+    Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. #sprecher:okafor #stimmung:laechelt
+    Ich beschwere mich nicht. #sprecher:okafor #stimmung:laechelt
+}
 Setz dich. #sprecher:okafor #stimmung:laechelt
 * [„Ich bin bereit.“]
     Die Uhr im Türmchen tickt. Man hört sie durch die Decke. #sprecher:erzaehler
@@ -183,7 +188,10 @@ Sie legt die Hände in den Schoß und sieht dich über die Brille an. #sprecher:
 // Lektorat der Lesefassung, 17.11.2026: Der Erzählsatz stand in Mrs. Okafors Sprechzeile.
 Sie reicht dir die Nadel über das Brett. #sprecher:erzaehler #klang:fanfare
 {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #stimmung:laechelt
-{teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
+{teamAngekommen:
+    Coach Delgado pfeift. In der Bibliothek. #sprecher:erzaehler #klang:pfiff
+    Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler
+}
 Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
 * [Nicken]
 * [Die Nadel ansehen]
@@ -340,7 +348,8 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae #sti
 
 === zwillinge_c ===
 Am Tresen hängt eine Strichliste in Miss Ashbys Schrift: Ivy 14, Jonah 14. #sprecher:erzaehler
-Die Zwillinge spielen am langen Tisch. Leise. Keiner sagt, wer gewinnt. #sprecher:erzaehler
+Die Zwillinge spielen am langen Tisch. Leise. #sprecher:erzaehler
+Keiner sagt, wer gewinnt. #sprecher:erzaehler
 {not abschiedGesehen:
     Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. #sprecher:ambrose #stimmung:lacht
     Und die langweiligste. #sprecher:ambrose #stimmung:lacht
@@ -365,11 +374,13 @@ Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy #stimmung:bitter
 === clubkampf_bauer ===
 {clubkampfBauerGesehen: -> END}
 ~ clubkampfBauerGesehen = true
-Ein Bauer steht vor ihrem König. Niemand passt auf ihn auf. Du zählst zweimal: kein Verteidiger. #sprecher:erzaehler #musik:aus
+Ein Bauer steht vor ihrem König. Niemand passt auf ihn auf. #sprecher:erzaehler #musik:aus
+Du zählst zweimal: kein Verteidiger. #sprecher:erzaehler
 Was glaubst du denn, warum er dort steht? #sprecher:okafor #stimmung:nachdenklich #pause:2
 * [Die Hand zurückziehen]
     ~ clubkampfBauerAbgelehnt = true
-    Du siehst noch einmal hin. Nicht auf den Bauern. Auf deinen König, hinter seinen drei Bauern. #sprecher:erzaehler
+    Du siehst noch einmal hin. Nicht auf den Bauern. #sprecher:erzaehler
+    Auf deinen König, hinter seinen drei Bauern. #sprecher:erzaehler
     Grundreihe. Der König, der keine Luft kriegt. #sprecher:erzaehler
     Geduld. Wo hast du die her? #sprecher:okafor #stimmung:froh #musik:karte
 * [Den Bauern trotzdem nehmen wollen]

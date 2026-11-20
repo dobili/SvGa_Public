@@ -82,10 +82,12 @@ VAR ersterTagSpaeter = false
 
 === brett_beruehren ===
 ~ brettBeruehrt = true
-Ein Schachbrett. Altes Holz, dunkel an den Ecken. Am Rand eingebrannt, ganz klein: A. W. 1857. #sprecher:erzaehler
+Ein Schachbrett. Altes Holz, dunkel an den Ecken. #sprecher:erzaehler
+Am Rand eingebrannt, ganz klein: A. W. 1857. #sprecher:erzaehler
 Die Figuren stehen mitten in einer Partie. Ein Turm weit vorn, zwei Springer dicht beieinander, eine Handvoll Bauern. #sprecher:erzaehler
 Du hebst den weißen König an. Er ist schwerer, als du dachtest. #sprecher:erzaehler #pause #klang:koenig_heben
-Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #pause:2 #klang:glocke_hell
+Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. #sprecher:erzaehler #klang:glocke_hell
+Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #pause:2
 Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng #erscheint #geist #musik:ambrose
 * [„Wer … wer ist da?“]
     Ein Meister. Einst. #sprecher:ambrose #stimmung:bitter
@@ -200,7 +202,8 @@ Jetzt weißt du, was du lernen willst. #sprecher:ambrose #stimmung:laechelt
     Das ging schnell. Trotzdem dämmert es draußen schon, und durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
     {ausgangMapleFallsErsteLektion == "sieg":So schnell war ich lange nicht matt. Ich habe vergessen zu fragen: Was hängt?|So schnell kann es gehen. Eine Frage, und es wäre anders gekommen: Was hängt?} #sprecher:ambrose #stimmung:nachdenklich
 - else:
-    Draußen dämmert es. Ihr habt lange gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Draußen dämmert es. Ihr habt lange gespielt. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Durch das Fenster zirpen Grillen. #sprecher:erzaehler
     Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
 }
 Der Fingerzeig bleibt dir. Die Figur zeige ich. #sprecher:ambrose #stimmung:laechelt
@@ -221,7 +224,8 @@ Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du l
     Langweilig ist ein verlorener Turm. Fragen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
 // Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
 // sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
-- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
+- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler
+Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
 * [„Wer hat hier gewohnt? Vor uns?“]
 * [„Wer hat das geschrieben?“]
 - Ambrose sieht zum Fenster. Draußen ist der Ahorn schwarz geworden vor dem Himmel. #sprecher:erzaehler #pause:3
@@ -261,7 +265,8 @@ Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht
 === erste_nacht ===
 ~ ersteNachtGesehen = true
 ~ setzeSzene("akt1.ersteNacht")
-Nacht. Das Haus ist still, nur du nicht. Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
+Nacht. Das Haus ist still, nur du nicht. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
+Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler
 Du hast die Laterne vom Dachboden geholt. Das Brett steht auf dem Schreibtisch unter deinem Fenster. #sprecher:erzaehler #klang:knarren
 Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler
 * [„Bist du wach?“]
@@ -301,7 +306,8 @@ Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #ge
 
 === abend_nach_sam ===
 ~ abendSamGesehen = true
-Abend. Durch das offene Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Durch das offene Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler
 Ambrose geht am Fenster auf und ab. Bei jemandem, durch den man hindurchsehen kann, lenkt das sehr ab. #sprecher:erzaehler
 Du zählst richtig. Aber du zählst wie ein Buchhalter. #sprecher:ambrose #stimmung:streng
 Es geht nicht nur darum, wie viele. Es geht darum, wer zuerst schlägt und was er dabei aufs Spiel setzt. #sprecher:ambrose #stimmung:nachdenklich
@@ -315,7 +321,8 @@ Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:
 
 === abend_nach_juno ===
 ~ abendJunoGesehen = true
-Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Neben guten Zügen klebt ein Stern. #sprecher:erzaehler
 Es gibt wenige Sterne. Es stört sie nicht. #sprecher:erzaehler
 Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. #sprecher:ambrose #stimmung:laechelt
 Wer aufschreibt, kann zurückblättern. #sprecher:ambrose #stimmung:laechelt
@@ -359,7 +366,8 @@ Ich hätte ihm von Morphy erzählt, und er wäre eingeschlafen. #sprecher:ambros
 // Danach Post-Game (Szene 110). Klang: mapleFalls.herbst, schlussklang.
 === epilog ===
 // epilogGesehen erst am Ende (epilog_lily): Wer den Epilog abbricht, kann ihn noch einmal beginnen.
-Im Herbst werden die Ahornbäume an der Birch Lane wieder rot. Erst an den Rändern. Du hörst den Wasserfall noch immer. #sprecher:erzaehler #musik:mapleFalls.herbst
+Im Herbst werden die Ahornbäume an der Birch Lane wieder rot. Erst an den Rändern. #sprecher:erzaehler #musik:mapleFalls.herbst
+Du hörst den Wasserfall noch immer. #sprecher:erzaehler
 Auf Mrs. Calloways Veranda verliert sie jeden Nachmittag gegen einen Achtjährigen. In Raum zwölf bringt Carla den Neuen das Zählen bei. #sprecher:erzaehler
 In einem Keller in Silicon Bay unterrichtet eine Frau acht Kinder bei einem Heizlüfter. #sprecher:erzaehler
 Eines davon hatte früher zwei Titel und kommt jetzt jeden Tag. #sprecher:erzaehler
@@ -371,7 +379,8 @@ Du trägst das Brett hinauf und stellst es auf den niedrigen Tisch unter dem run
 
 === epilog_zettel ===
 Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, schräger Schrift. #sprecher:erzaehler #pause:2
-„Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“ #sprecher:erzaehler #pause:3
+„Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A.“ #sprecher:erzaehler
+„W.“ #sprecher:erzaehler #pause:3
 * [Den Zettel einstecken]
 - -> epilog_lily
 
@@ -383,7 +392,8 @@ An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte
 Du räumst die Schlussstellung ab, Figur für Figur, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
 Der weiße König ist schwer, unten mit Blei ausgegossen, und das Kreuz auf seiner Krone ist ein bisschen schief. #sprecher:erzaehler
 * [„Setz dich. Du hast Weiß.“]
-- Lily klettert auf den Schaukelstuhl. Er knarrt. Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler
+- Lily klettert auf den Schaukelstuhl. Er knarrt. #sprecher:erzaehler
+Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler
 Und jetzt? #sprecher:lily #stimmung:nachdenklich
 Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas, das sich entschieden hat, nicht zu fallen. #sprecher:erzaehler
 * [„Schau nicht auf alles. Stell eine Frage.“]

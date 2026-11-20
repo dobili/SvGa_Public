@@ -71,11 +71,14 @@ VAR abschiedGesehen = false
 
 === lin_erstes_treffen ===
 ~ linGetroffen = true
-Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. Es riecht nach nichts. #sprecher:erzaehler
+Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. #sprecher:erzaehler
+Es riecht nach nichts. #sprecher:erzaehler
 Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler
-Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
+Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. #sprecher:lin #stimmung:froh
+Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
 * [„Vier. Fünf bald.“]
-- Ich bringe hier Kindern Schach bei. Vierzig im Jahr. Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin #stimmung:laechelt
+- Ich bringe hier Kindern Schach bei. Vierzig im Jahr. #sprecher:lin #stimmung:laechelt
+Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin #stimmung:laechelt
 Die Bildschirme zeigen jedem sofort den Fehler. Kein Kind muss warten, bis ich Zeit habe. #sprecher:lin #stimmung:laechelt
 Sie zögert. #sprecher:erzaehler #pause
 Glaube ich. #sprecher:lin #stimmung:nachdenklich
@@ -92,9 +95,11 @@ Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblic
 
 === lin_reihe_offen ===
 {not reiheTheoBestanden:
-    Theo zuerst. Er misst alles. Lass dich nicht verunsichern. #sprecher:lin #stimmung:laechelt
+    Theo zuerst. Er misst alles. #sprecher:lin #stimmung:laechelt
+    Lass dich nicht verunsichern. #sprecher:lin #stimmung:laechelt
 - else:
-    Theo ist zufrieden. Jetzt Nova. Sie kennt jede Falle. #sprecher:lin #stimmung:laechelt
+    Theo ist zufrieden. Jetzt Nova. #sprecher:lin #stimmung:laechelt
+    Sie kennt jede Falle. #sprecher:lin #stimmung:laechelt
 }
 -> END
 
@@ -116,7 +121,8 @@ Du lässt es. #sprecher:erzaehler
 -> lin_clubkampf
 
 === lin_clubkampf ===
-Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprecher:lin #stimmung:laechelt
+Bereit? Ich spiele, was die Theorie sagt. #sprecher:lin #stimmung:laechelt
+Mal sehen, was du dagegen hast. #sprecher:lin #stimmung:laechelt
 + [„Ich bin bereit.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
@@ -140,22 +146,26 @@ Gut gespielt bis zum Mittelspiel. Danach kannte ich die Stellung aus der Theorie
 ~ revancheSiliconBay = false
 ~ clubkampfSiliconBayNadel = nadelSiliconBay
 {clubkampfSiliconBayBesprochen:
-    Eine bessere Nadel. Ich schreibe es in mein Heft. Mit Tinte. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
+    Eine bessere Nadel. Ich schreibe es in mein Heft. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
+    Mit Tinte. #sprecher:lin #stimmung:froh
     -> END
 }
 ~ clubkampfSiliconBayBesprochen = true
 {ausgangSiliconBayClubkampf == "remis":
-    Remis. Ehrlich erkämpft. Die Nadel gehört dir. #sprecher:lin #stimmung:laechelt #klang:fanfare.gedaempft
+    Remis. Ehrlich erkämpft. #sprecher:lin #stimmung:laechelt #klang:fanfare.gedaempft
+    Die Nadel gehört dir. #sprecher:lin #stimmung:laechelt
     -> lin_tisch_aus
 }
 Dr. Lin sitzt lange still. Dann nimmt sie die Nadel aus der Kitteltasche: klares Glas, darin ein einzelner Bauer. #sprecher:erzaehler #klang:fanfare.gedaempft
 Ich habe Sie nichts gelehrt. Sie mich. #sprecher:lin #stimmung:laechelt
-Sie sagt „Sie“. Zu dir. Einmal. #sprecher:erzaehler
+Sie sagt „Sie“. Zu dir. #sprecher:erzaehler
+Einmal. #sprecher:erzaehler
 -> lin_tisch_aus
 
 // Kapitel 33: Die Tische zeigen den Fehler, nicht die Angst. Danach wirkliche Stille (S48).
 === lin_tisch_aus ===
-Weißt du, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin #stimmung:nachdenklich
+Weißt du, was die Tische nicht zeigen? Wo der Fehler war, ja. #sprecher:lin #stimmung:nachdenklich
+Nicht, warum man Angst hatte. #sprecher:lin #stimmung:nachdenklich
 Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide spiegelt. #sprecher:erzaehler #klang:abschaltton #musik:aus #geraeusch:aus #pause:4
 Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #stimmung:ernst
 * [Schweigen]
@@ -188,7 +198,8 @@ Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #
 
 === theo_karte ===
 ~ lernkarteZielkompass = true
-Zentrum, Entwicklung, König. Alle drei, jedes Mal. Das hat nicht jeder. #sprecher:theo #stimmung:nachdenklich
+Zentrum, Entwicklung, König. Alle drei, jedes Mal. #sprecher:theo #stimmung:nachdenklich
+Das hat nicht jeder. #sprecher:theo #stimmung:nachdenklich
 {hatKarteZielkompass:
     Er hält dir eine Karte hin und sieht dann, dass du sie schon hast. Er nickt, als hätte er das erwartet. #sprecher:erzaehler
 - else:
@@ -201,13 +212,18 @@ Zentrum, Entwicklung, König. Alle drei, jedes Mal. Das hat nicht jeder. #sprech
 === theo_erstes_treffen ===
 ~ theoGetroffen = true
 Über den zweiten Bildschirm laufen Zahlen. Jetzt dreht er sich um. #sprecher:erzaehler
-Spiel eine. Gegen Stufe sechs. Ich will deine Kurve sehen. #sprecher:theo #stimmung:nachdenklich
-Er heißt Theo. Er meint es nicht unhöflich. Bei jedem deiner Züge zuckt auf seinem Bildschirm eine Linie. #sprecher:erzaehler
-Einundsiebzig Prozent. Genauigkeit. Das ist … menschlich. #sprecher:theo #stimmung:nachdenklich
+Spiel eine. Gegen Stufe sechs. #sprecher:theo #stimmung:nachdenklich
+Ich will deine Kurve sehen. #sprecher:theo #stimmung:nachdenklich
+Er heißt Theo. Er meint es nicht unhöflich. #sprecher:erzaehler
+Bei jedem deiner Züge zuckt auf seinem Bildschirm eine Linie. #sprecher:erzaehler
+Einundsiebzig Prozent. Genauigkeit. #sprecher:theo #stimmung:nachdenklich
+Das ist … menschlich. #sprecher:theo #stimmung:nachdenklich
 * [„Ist das gut?“]
-- Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. Nova im Turnier achtundneunzig. #sprecher:theo #stimmung:nachdenklich
+- Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. #sprecher:theo #stimmung:nachdenklich
+Nova im Turnier achtundneunzig. #sprecher:theo #stimmung:nachdenklich
 Er runzelt die Stirn über der letzten Zahl. Nur kurz. #sprecher:erzaehler
-Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren. Hier. #sprecher:theo #stimmung:nachdenklich
+Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren. #sprecher:theo #stimmung:nachdenklich
+Hier. #sprecher:theo #stimmung:nachdenklich
 -> theo_tablet
 
 // Kapitel 32: Theos Geschenk. ZERO spielt gegen sich selbst, Ambrose kann nicht wegsehen.
@@ -215,7 +231,8 @@ Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren
 ~ zeroTabletGeschenkt = true
 ~ gibFund("zeroTablet")
 Er hält dir ein Tablet hin. Weiß, dünn, mit dem Zeichen des Konzerns. #sprecher:erzaehler
-Geschenkt. Da ist ZERO drauf. Die volle Fassung. #sprecher:theo #stimmung:laechelt
+Geschenkt. Da ist ZERO drauf. #sprecher:theo #stimmung:laechelt
+Die volle Fassung. #sprecher:theo #stimmung:laechelt
 Damit trainierst du in einer Woche mehr als in einem Jahr. #sprecher:theo #stimmung:laechelt
 * [„Was ist ZERO?“]
 - Theo sieht dich an, als hättest du gefragt, was Wasser ist. #sprecher:erzaehler
@@ -226,8 +243,10 @@ Ambrose steht über das Tablet gebeugt. So hast du ihn noch nie stehen sehen. #s
 Noch einmal. #sprecher:ambrose #stimmung:gebannt #musik:ambrose.gebannt
 * [Noch einmal tippen]
 - Eine andere Partie. Ein Opfer in der Mitte, ein Turm, der stehen bleibt, und alles fällt ineinander wie ein Uhrwerk. #sprecher:erzaehler
-Kein einziger Fehler. Nicht einer. Hast du das gesehen? #sprecher:ambrose #stimmung:gebannt
-Der Turm. Sie hat ihn hängen lassen, sieben Züge lang, und sie wusste. Sie wusste es einfach. #sprecher:ambrose #stimmung:gebannt
+Kein einziger Fehler. Nicht einer. #sprecher:ambrose #stimmung:gebannt
+Hast du das gesehen? #sprecher:ambrose #stimmung:gebannt
+Der Turm. Sie hat ihn hängen lassen, sieben Züge lang, und sie wusste. #sprecher:ambrose #stimmung:gebannt
+Sie wusste es einfach. #sprecher:ambrose #stimmung:gebannt
 * [„Ambrose.“]
 - Noch einmal. #sprecher:ambrose #stimmung:gebannt #pause:2
 Neben dir ist es still geworden. #sprecher:erzaehler
@@ -271,7 +290,8 @@ Die Rohdaten liegen unten im Serverraum. Da schließt keiner ab, hier wird ja al
 === nova_erstes_treffen ===
 ~ novaGetroffen = true
 Neben dem Ringlicht hockt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
-Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus. #sprecher:erzaehler #pause
+Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. #sprecher:erzaehler
+Es geht an und wieder aus. #sprecher:erzaehler #pause
 -> END
 
 === nova_erst_theo ===
@@ -279,7 +299,8 @@ Erst Theo. Er braucht seine Zahlen, sonst wird er nervös. #sprecher:nova #stimm
 -> END
 
 === nova_reihe ===
-Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #sprecher:nova #stimmung:laechelt
+Fallen. Ich kenne jede. #sprecher:nova #stimmung:laechelt
+Die Frage ist, ob du sie siehst, bevor du reinfällst. #sprecher:nova #stimmung:laechelt
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheNova")
     -> END
@@ -290,10 +311,12 @@ Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #
 ~ lernkarteWasDroht = true
 Du bist in keine reingefallen. Die meisten fragen erst hinterher, was ich vorhatte. #sprecher:nova #stimmung:laechelt
 {hatKarteWasDroht:
-    Die Karte hast du ja schon. Gut. Dann frag weiter vorher. #sprecher:nova #stimmung:laechelt
+    Die Karte hast du ja schon. Gut. #sprecher:nova #stimmung:laechelt
+    Dann frag weiter vorher. #sprecher:nova #stimmung:laechelt
 - else:
     Sie zieht eine Karte aus der Kameratasche, ein roter Pfeil darauf. #sprecher:erzaehler
-    Frag vor jedem Zug, was der andere will. Ich mach das auch. Nicht nur am Brett. #sprecher:nova #stimmung:nachdenklich
+    Frag vor jedem Zug, was der andere will. Ich mach das auch. #sprecher:nova #stimmung:nachdenklich
+    Nicht nur am Brett. #sprecher:nova #stimmung:nachdenklich
     ~ gibKarte("wasDroht")
 }
 -> END
@@ -313,7 +336,8 @@ Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
 {serverraumOffen:
     Die Tür zum Serverraum steht einen Spalt offen. Kalte Luft weht heraus. #sprecher:erzaehler
 - else:
-    Auf der Tür steht „Serverraum – nur Personal“. Sie ist nicht abgeschlossen. Du hast dort unten nichts zu suchen. Noch nicht. #sprecher:erzaehler
+    Auf der Tür steht „Serverraum – nur Personal“. Sie ist nicht abgeschlossen. #sprecher:erzaehler
+    Du hast dort unten nichts zu suchen. Noch nicht. #sprecher:erzaehler
 }
 -> END
 
@@ -324,7 +348,8 @@ Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
 ~ revancheSiliconBay = false
 {
 - ausgangSiliconBayClubkampf == "sieg":
-    Ein Sieg, aber keine bessere Nadel. Ich schreibe ihn trotzdem auf. Mit Bleistift. #sprecher:lin #stimmung:laechelt
+    Ein Sieg, aber keine bessere Nadel. Ich schreibe ihn trotzdem auf. #sprecher:lin #stimmung:laechelt
+    Mit Bleistift. #sprecher:lin #stimmung:laechelt
 - ausgangSiliconBayClubkampf == "remis":
     Remis. Ein sauberes Ergebnis, aber keine neue Nadel. #sprecher:lin #stimmung:neutral
 - ausgangSiliconBayClubkampf == "niederlage":

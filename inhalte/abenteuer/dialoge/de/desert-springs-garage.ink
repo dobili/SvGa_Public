@@ -74,7 +74,8 @@ VAR revancheDesertSprings = false
 - not miraSteinGesehen:
     Mira ist im Canyon, auf ihrem Stein. Ohne sie fängt hier nichts an. #sprecher:tomas #stimmung:neutral
 - else:
-    Warst du schon am Felsbogen, wenn die Sonne untergeht? Das sieht hier jeder einmal. Dann reden wir. #sprecher:tomas #stimmung:laechelt
+    Warst du schon am Felsbogen, wenn die Sonne untergeht? Das sieht hier jeder einmal. #sprecher:tomas #stimmung:laechelt
+    Dann reden wir. #sprecher:tomas #stimmung:laechelt
 }
 -> END
 
@@ -97,22 +98,26 @@ VAR revancheDesertSprings = false
 === mira_reihe_offen ===
 {not miraGarageGesehen: -> mira_weil_ich_kann ->}
 {not reiheTomasBestanden:
-    Erst Tomás, dann Dot, dann ich. Tomás ist langsam. Aber er hat recht. #sprecher:mira #stimmung:neutral
+    Erst Tomás, dann Dot, dann ich. Tomás ist langsam. #sprecher:mira #stimmung:neutral
+    Aber er hat recht. #sprecher:mira #stimmung:neutral
 - else:
-    Jetzt Dot. Sie spielt seit fünfzig Jahren per Post. Sie hat Zeit. #sprecher:mira #stimmung:laechelt
+    Jetzt Dot. Sie spielt seit fünfzig Jahren per Post. #sprecher:mira #stimmung:laechelt
+    Sie hat Zeit. #sprecher:mira #stimmung:laechelt
 }
 -> END
 
 === mira_weil_ich_kann ===
 ~ miraGarageGesehen = true
-Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. Sie setzt sich an einen Tisch und sieht dich an. #sprecher:erzaehler #musik:mira
+Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. #sprecher:erzaehler #musik:mira
+Sie setzt sich an einen Tisch und sieht dich an. #sprecher:erzaehler
 Ich opfere den Läufer. #sprecher:mira #stimmung:ernst
 * [„Wir haben noch nicht angefangen.“]
 - Ich sag's dir nur. Weil ich kann. #sprecher:mira #stimmung:laechelt
 ->->
 
 === mira_wartet_brief ===
-Morgen Abend spielen wir. Heute geh ich noch in den Canyon. Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira #stimmung:neutral
+Morgen Abend spielen wir. Heute geh ich noch in den Canyon. #sprecher:mira #stimmung:neutral
+Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira #stimmung:neutral
 -> END
 
 === mira_clubkampf ===
@@ -126,7 +131,8 @@ Morgen Abend spielen wir. Heute geh ich noch in den Canyon. Dot sagt, du sollst 
 Ganz Desert Springs passt in die Garage. Buck mit Zahnstocher, Dot mit Lockenwicklern, Mr. Okoro mit einem Buch, falls es langweilig wird. #sprecher:erzaehler
 Die Nadel liegt auf einem Ölkanister. Ein kleiner Kaktus aus Kupfer, mit einer einzigen Blüte. #sprecher:erzaehler #bild:nadel_kaktus
 Karten? #sprecher:tomas #stimmung:ueberrascht #bild:aus
-Nur, wenn du willst. Dann kommentiere ich. Aber du entscheidest. #sprecher:ambrose #stimmung:nachdenklich
+Nur, wenn du willst. Dann kommentiere ich. #sprecher:ambrose #stimmung:nachdenklich
+Aber du entscheidest. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe gelernt, was geschieht, wenn es andersherum läuft. #sprecher:ambrose #stimmung:still
 Mira setzt sich. Ihre Füße reichen nicht bis zum Boden. #sprecher:erzaehler
 - (wahl)
@@ -147,7 +153,8 @@ Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira #stimmung:laeche
 // Lektorat 19.11.2026: Der Moment kommt einmal, nicht in jeder Revanche wieder.
 {sturmMomentGesehen: -> END}
 ~ sturmMomentGesehen = true
-Es ist wie ein Sturm. Aber du warst schon in einem, in einem Pavillon im Regen. Im Sturm zählt man. #sprecher:erzaehler
+Es ist wie ein Sturm. Aber du warst schon in einem, in einem Pavillon im Regen. #sprecher:erzaehler
+Im Sturm zählt man. #sprecher:erzaehler
 Prüf es für sie. So gründlich, als wärst du sie. #sprecher:ambrose #stimmung:nachdenklich
 Angreifer, Verteidiger. #sprecher:ambrose #stimmung:nachdenklich
 Sie opfert, weil es schön ist. Nicht immer, weil es geht. #sprecher:ambrose #stimmung:alt
@@ -159,7 +166,8 @@ Ich erkenne es. #sprecher:ambrose #stimmung:alt
 // gegen {held} ab Zug 14 (begegnungen.json): Mira greift dann nach einem schnellen Schach.
 {atmeMomentGesehen: -> END}
 ~ atmeMomentGesehen = true
-Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand von jemandem, unter dem der Boden weggebrochen ist. #sprecher:erzaehler #musik:aus
+Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. #sprecher:erzaehler #musik:aus
+Die Hand von jemandem, unter dem der Boden weggebrochen ist. #sprecher:erzaehler
 * [„Mira. Atme.“]
     ~ atmeGesagt = true
     Sie starrt dich an. #sprecher:erzaehler #musik:atme
@@ -173,7 +181,8 @@ Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand v
 - -> END
 
 === mira_nach_niederlage ===
-Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
+Ich hab gewonnen. Noch mal. #sprecher:mira #stimmung:laechelt
+Jetzt. #sprecher:mira #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:
@@ -198,7 +207,8 @@ Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira #stimmung:laechelt
 }
 ~ clubkampfDesertSpringsNadel = nadelDesertSprings
 {ausgangDesertSpringsClubkampf == "remis":
-    Remis. Langweilig. Aber gut gespielt. #sprecher:mira #stimmung:laechelt
+    Remis. Langweilig. #sprecher:mira #stimmung:laechelt
+    Aber gut gespielt. #sprecher:mira #stimmung:laechelt
 - else:
     Am Ende gibt sie dir die Hand. Ihre ist klebrig. #sprecher:erzaehler #klang:fanfare
     Du hast mich geschlagen. #sprecher:mira #stimmung:ueberrascht
@@ -214,9 +224,11 @@ Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in 
 
 = warum_atme
 ~ warumAtmeGefragt = true
-Du hast gesagt: Atme. Warum? Ich hätte verloren. Schneller. #sprecher:mira #stimmung:nachdenklich
+Du hast gesagt: Atme. Warum? #sprecher:mira #stimmung:nachdenklich
+Ich hätte verloren. Schneller. #sprecher:mira #stimmung:nachdenklich
 * [„Weil mir jemand erzählt hat, was sonst passiert.“]
-- Sie versteht es nicht. Sie wird es verstehen. In zehn Jahren, oder in hundertsechzig. #sprecher:erzaehler
+- Sie versteht es nicht. Sie wird es verstehen. #sprecher:erzaehler
+In zehn Jahren, oder in hundertsechzig. #sprecher:erzaehler
 Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. #sprecher:erzaehler
 ->->
 
@@ -239,19 +251,26 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
     Die Stellung von 1858 liegt noch auf dem Clubtisch, zwischen Zündkerze und Keksdose. #sprecher:erzaehler
     -> mira_erinnerung_wahl
 }
-Abend in der Garage. Grillen, ein Radio aus dem Motel. Mira hockt auf einem Reifenstapel, isst Kekse und tut, als höre sie nicht zu. #sprecher:erzaehler #geraeusch:garage
+Abend in der Garage. Grillen, ein Radio aus dem Motel. #sprecher:erzaehler #geraeusch:garage
+Mira hockt auf einem Reifenstapel, isst Kekse und tut, als höre sie nicht zu. #sprecher:erzaehler
 Die Partie von 1858 habe ich niemandem gezeigt. Man hat nur das Ergebnis gedruckt. #sprecher:ambrose #stimmung:alt
 * [„Er hat geschrieben, es war Mut.“]
 - Er war höflich. #sprecher:ambrose #stimmung:nachdenklich
 * [„Er war nie höflich. Er war unerträglich.“]
 - Das sitzt. Auf dem Clubtisch, zwischen einer Zündkerze und einer Keksdose, liegt die Stellung. #sprecher:erzaehler #musik:ambrose.stolpert #erinnerung #bild:stellung1858
-Weiß steht gut. Der Bauer, den man nehmen und nach Hause gehen konnte. Und daneben die offene Linie. #sprecher:erzaehler
-Da. Dorthin der Turm. Jetzt du, für Schwarz. Such, was er gesucht hat. #sprecher:ambrose #stimmung:nachdenklich
-Du weißt, dass es ihn gibt: den stillen Zug. Den Läufer, ein Feld zurück. Er deckt alles. #sprecher:erzaehler
+Weiß steht gut. Der Bauer, den man nehmen und nach Hause gehen konnte. #sprecher:erzaehler
+Und daneben die offene Linie. #sprecher:erzaehler
+Da. Dorthin der Turm. #sprecher:ambrose #stimmung:nachdenklich
+Jetzt du, für Schwarz. Such, was er gesucht hat. #sprecher:ambrose #stimmung:nachdenklich
+Du weißt, dass es ihn gibt: den stillen Zug. Den Läufer, ein Feld zurück. #sprecher:erzaehler
+Er deckt alles. #sprecher:erzaehler
 Bemerkenswert unnötig. #sprecher:ambrose #stimmung:still
-Er zeigt dir, was er danach spielte. Ein Schach, das nichts bringt. Ein Rückzug. Ein zweites Schach. #sprecher:erzaehler #klang:figuren_kippen
-Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. Ich wollte nur noch, dass es vorbei ist. #sprecher:ambrose #stimmung:bitter #pause:2 #bild:aus #erinnerung:aus
-Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zählst. #sprecher:erzaehler
+Er zeigt dir, was er danach spielte. Ein Schach, das nichts bringt. #sprecher:erzaehler #klang:figuren_kippen
+Ein Rückzug. Ein zweites Schach. #sprecher:erzaehler
+Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. #sprecher:ambrose #stimmung:bitter #bild:aus #erinnerung:aus
+Ich wollte nur noch, dass es vorbei ist. #sprecher:ambrose #stimmung:bitter #pause:2
+Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. #sprecher:erzaehler
+Du zählst. #sprecher:erzaehler
 -> mira_erinnerung_wahl
 === mira_erinnerung_wahl ===
 ~ erinnerung1858Gesehen = true
@@ -268,29 +287,38 @@ Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zähls
 // dann sein Thema rein (ambrose.rein), zum ersten Mal ohne den fremden Ton.
 ~ erinnerung1858Besprochen = true
 {ausgangDesertSpringsErinnerung1858 == "niederlage":
-    Du zählst noch einmal nach. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
+    Du zählst noch einmal nach. Springer, Läufer, die Dame, ein Bauer. #sprecher:erzaehler
+    Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
 - else:
-    Du hast mehr Angreifer am König. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
+    Du hast mehr Angreifer am König. Springer, Läufer, die Dame, ein Bauer. #sprecher:erzaehler
+    Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
 }
 Das Opfer war richtig! #sprecher:mira #stimmung:ueberrascht #musik:mira
 Mira ist vom Reifenstapel gesprungen, den Mund voll Keks. Das Brett aus Licht sieht sie nicht, aber du hast die Stellung daneben mitgebaut. #sprecher:erzaehler
-Der Turm ist richtig da! Der Läufer geht zurück, na und? Dann kommt die Dame rüber, und der Bauer läuft, und er kann nicht mehr alles decken. #sprecher:mira #stimmung:laechelt
-Das gewinnt. Nicht gleich. Aber das gewinnt. #sprecher:mira #stimmung:laechelt
+Der Turm ist richtig da! Der Läufer geht zurück, na und? #sprecher:mira #stimmung:laechelt
+Dann kommt die Dame rüber, und der Bauer läuft, und er kann nicht mehr alles decken. #sprecher:mira #stimmung:laechelt
+Das gewinnt. Nicht gleich. #sprecher:mira #stimmung:laechelt
+Aber das gewinnt. #sprecher:mira #stimmung:laechelt
 Wer hat das gespielt? #sprecher:mira #stimmung:ueberrascht
 * [„Ein Bekannter.“]
-- Der hat aber danach gezögert. Das hier ist Quatsch. Das ist Angst. #sprecher:mira #stimmung:nachdenklich
+- Der hat aber danach gezögert. Das hier ist Quatsch. #sprecher:mira #stimmung:nachdenklich
+Das ist Angst. #sprecher:mira #stimmung:nachdenklich
 Er hat richtig geopfert und dann Angst gekriegt. Sag ihm das. #sprecher:mira #stimmung:nachdenklich
 Ambrose sitzt auf einem Ölkanister. Zum dritten Mal in seinem Tod. #sprecher:erzaehler #musik:aus
 Es hat gestimmt. Es hat die ganze Zeit gestimmt. #sprecher:ambrose #stimmung:still
 Ich hätte das Match gewonnen. Wenn ich nach seinem Läuferzug einmal durchgeatmet und gezählt hätte. #sprecher:ambrose #stimmung:bitter
-Ich habe geglaubt, mein Fehler sei der Mut gewesen. Mein Fehler kam danach. Als ich aufhörte, daran zu glauben. #sprecher:ambrose #stimmung:nachdenklich
-Er beginnt zu lachen. Das Lachen vom Steg, nur lauter. Er lacht, bis er sich die Seiten hält, die er nicht hat. #sprecher:erzaehler #stimmung:lachtOhneSpott #pause:6
-Hundertsechzig Jahre, und ein Kind mit Keksen sagt es mir. Im Vorbeigehen. In einer Garage. #sprecher:ambrose #stimmung:lachtOhneSpott
+Ich habe geglaubt, mein Fehler sei der Mut gewesen. Mein Fehler kam danach. #sprecher:ambrose #stimmung:nachdenklich
+Als ich aufhörte, daran zu glauben. #sprecher:ambrose #stimmung:nachdenklich
+Er beginnt zu lachen. Das Lachen vom Steg, nur lauter. #sprecher:erzaehler #stimmung:lachtOhneSpott
+Er lacht, bis er sich die Seiten hält, die er nicht hat. #sprecher:erzaehler #stimmung:lachtOhneSpott #pause:6
+Hundertsechzig Jahre, und ein Kind mit Keksen sagt es mir. Im Vorbeigehen. #sprecher:ambrose #stimmung:lachtOhneSpott
+In einer Garage. #sprecher:ambrose #stimmung:lachtOhneSpott
 * [„Sie hat dich nicht mal gesehen.“]
 - Das macht es schlimmer! #sprecher:ambrose #stimmung:lacht
 Mira sieht herüber, ob ihr verrückt geworden seid, und entscheidet, dass es sie nichts angeht. #sprecher:erzaehler #musik:ambrose.rein
 Als es still ist, sagt er noch etwas. #sprecher:erzaehler
-Hale hat es gewusst. Deshalb hat er „unnötig“ gesagt, nicht „falsch“. Er war immer genau mit Worten. #sprecher:ambrose #stimmung:nachdenklich
+Hale hat es gewusst. Deshalb hat er „unnötig“ gesagt, nicht „falsch“. #sprecher:ambrose #stimmung:nachdenklich
+Er war immer genau mit Worten. #sprecher:ambrose #stimmung:nachdenklich
 Er wusste, dass er eine verlorene Partie gewonnen hatte, weil der andere die Nerven verlor. Das hätte mich auch nicht schlafen lassen. #sprecher:ambrose #stimmung:still
 -> END
 
@@ -313,14 +341,16 @@ Gut. Jetzt weißt du, wie es aussieht, wenn sie opfert. #sprecher:tomas #stimmun
     Und die Karte hast du auch schon. Dann bin ich ja überflüssig. #sprecher:tomas #stimmung:lacht
 - else:
     Er wischt sich die Hände an einem Lappen ab und zieht eine Karte hinter dem Ölkanister hervor. #sprecher:erzaehler
-    Erst jedes Schach, jeder Schlag, jede Drohung. Wie beim Motor: erst die Zündkerzen. Dann der Rest. #sprecher:tomas #stimmung:laechelt
+    Erst jedes Schach, jeder Schlag, jede Drohung. Wie beim Motor: erst die Zündkerzen. #sprecher:tomas #stimmung:laechelt
+    Dann der Rest. #sprecher:tomas #stimmung:laechelt
     ~ gibKarte("taktikspuernase")
 }
 -> END
 
 === tomas_reihe ===
 {not tomasGetroffen: -> tomas_erstes_treffen ->}
-Sie opfert. Immer. Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht, bist du in zwölf Zügen fertig. #sprecher:tomas #stimmung:nachdenklich
+Sie opfert. Immer. #sprecher:tomas #stimmung:nachdenklich
+Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht, bist du in zwölf Zügen fertig. #sprecher:tomas #stimmung:nachdenklich
 + [„Zeig her.“]
     ~ beginneAufgaben("desertSprings.reiheTomas")
     -> END
@@ -335,9 +365,11 @@ Mira ist im Canyon. Die kommt, wenn es dunkel wird. #sprecher:tomas #stimmung:ne
 Er rollt heraus, einen Schraubenschlüssel in der Hand. #sprecher:erzaehler
 Ich bin Tomás. Der Bruder, der Club und die Aufsicht. #sprecher:tomas #stimmung:laechelt
 Auf dem Regal über der Werkbank glänzt ein Pokal. Aus einer Limonadendose, aufgeschnitten, gebogen, mit Draht. #sprecher:erzaehler #bild:dosenpokal
-Den hat sie selbst gemacht. Mit sechs. In der Zeitung war ein Typ aus Riverton mit einem ganzen Regal davon. #sprecher:tomas #stimmung:laechelt
+Den hat sie selbst gemacht. Mit sechs. #sprecher:tomas #stimmung:laechelt
+In der Zeitung war ein Typ aus Riverton mit einem ganzen Regal davon. #sprecher:tomas #stimmung:laechelt
 Sie hat gesagt: Wenn der das darf, darf sie das auch. #sprecher:tomas #stimmung:lacht
-Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen neuen.“ Du machst ein Foto. Du weißt, wem du es schickst. #sprecher:erzaehler #bild:aus
+Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen neuen.“ Du machst ein Foto. #sprecher:erzaehler #bild:aus
+Du weißt, wem du es schickst. #sprecher:erzaehler
 ->->
 
 === tomas_alltag ===
@@ -373,23 +405,28 @@ Erst Tomás, Liebes. Ich bin danach dran. #sprecher:dot #stimmung:laechelt
 ~ margaretErzaehlt = true
 Dot ist siebzig und trägt am Nachmittag Lockenwickler. Hinter der Motel-Theke hängt eine Weltkarte voller Nadeln. #sprecher:erzaehler #geraeusch:motel
 Von jeder Nadel läuft ein Faden zu einer Postkarte. #sprecher:erzaehler #bild:weltkarte_nadeln
-Fernschach. Fünfzig Jahre. Einer in Reykjavík braucht vier Monate für einen Zug, der fährt zur See. #sprecher:dot #stimmung:laechelt
+Fernschach. Fünfzig Jahre. #sprecher:dot #stimmung:laechelt
+Einer in Reykjavík braucht vier Monate für einen Zug, der fährt zur See. #sprecher:dot #stimmung:laechelt
 Eine in Kapstadt schummelt, glaube ich. Aber charmant. #sprecher:dot #stimmung:lacht
 Sie tippt auf eine Nadel im Nordosten. Daran hängt kein Faden mehr. #sprecher:erzaehler #bild:aus
-Hier hatte ich eine, vierzig Jahre lang. Margaret. Aus einem Kaff mit einem Wasserfall. Ich hab sie nie gesehen. #sprecher:dot #stimmung:nachdenklich #musik:mapleFalls
-Im letzten Brief schrieb sie, sie räumt jetzt auf. Dann kam nichts mehr. Wir waren im einunddreißigsten Zug. #sprecher:dot #stimmung:bitter
+Hier hatte ich eine, vierzig Jahre lang. Margaret. #sprecher:dot #stimmung:nachdenklich #musik:mapleFalls
+Aus einem Kaff mit einem Wasserfall. Ich hab sie nie gesehen. #sprecher:dot #stimmung:nachdenklich
+Im letzten Brief schrieb sie, sie räumt jetzt auf. Dann kam nichts mehr. #sprecher:dot #stimmung:bitter
+Wir waren im einunddreißigsten Zug. #sprecher:dot #stimmung:bitter
 Ich stand besser. Ich sag das nicht gern, wenn jemand nicht mehr widersprechen kann. #sprecher:dot #stimmung:nachdenklich
 * [„Sie hat ein Brett abgestaubt. Sechzig Jahre lang.“]
 - Dot sieht dich an. #sprecher:erzaehler
 Du kommst aus dem Kaff. #sprecher:dot #stimmung:ueberrascht
 * [„Ich wohne in ihrem Haus.“]
-- Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. Oben ein Wasserfall. #sprecher:erzaehler #bild:postkarten_wasserfall
+- Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. #sprecher:erzaehler #bild:postkarten_wasserfall
+Oben ein Wasserfall. #sprecher:erzaehler
 Dann weißt du vielleicht, was sie gezogen hätte. #sprecher:dot #stimmung:nachdenklich #bild:aus
 ~ gibFund("postkartenMargaret")
 {abschiedGesehen:
     Vierzig Jahre, Zug um Zug, mit der Post. #sprecher:erzaehler #musik:desertSprings
 - else:
-    An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings
+    An meinem Tisch. Vierzig Jahre. #sprecher:ambrose #stimmung:riss #musik:desertSprings
+    Mit dieser Frau. #sprecher:ambrose #stimmung:riss
 }
 ->->
 
@@ -417,7 +454,8 @@ Kisten voller Briefe. Frag ihn. #sprecher:dot #stimmung:laechelt
 // Nebenaufgabe: Margarets Partie zu Ende spielen (Dot steht besser, Turm auf der siebten Reihe).
 === dot_fernpartie ===
 Dot legt ein kleines Steckbrett auf die Theke. Die Stellung nach dem einunddreißigsten Zug, seit Jahren unverändert. #sprecher:erzaehler
-Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem Lager. Spielst du für sie weiter, Liebes? #sprecher:dot #stimmung:nachdenklich
+Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem Lager. #sprecher:dot #stimmung:nachdenklich
+Spielst du für sie weiter, Liebes? #sprecher:dot #stimmung:nachdenklich
 + [„Ich spiele für Margaret.“]
     {not abschiedGesehen:
         Sie hat nie schnell gezogen. Lass dir Zeit. #sprecher:ambrose #stimmung:nachdenklich
@@ -436,14 +474,16 @@ Margaret hatte Schwarz. Mein Turm steht auf der siebten Reihe, mitten in ihrem L
     Du hast mich geschlagen. Mit ihren Figuren. #sprecher:dot #stimmung:froh
     Sie hätte gelacht, glaube ich. Sie hat nie gelacht, wenn sie verloren hat. #sprecher:dot #stimmung:laechelt
 - "remis":
-    Remis. Das ist gerecht. Wir hätten uns nie geeinigt, wer besser war. #sprecher:dot #stimmung:laechelt
+    Remis. Das ist gerecht. #sprecher:dot #stimmung:laechelt
+    Wir hätten uns nie geeinigt, wer besser war. #sprecher:dot #stimmung:laechelt
 - else:
     Ich hab gewonnen, und ich sag das nicht gern. Sie hätte bis zum Schluss gekämpft, so wie du. #sprecher:dot #stimmung:nachdenklich
 }
 Sie zieht einen Faden von der Nadel im Nordosten zu einer leeren Postkarte und knotet ihn fest. #sprecher:erzaehler
 Jetzt ist die Partie fertig. #sprecher:dot #stimmung:nachdenklich
 {not abschiedGesehen:
-    An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. Jetzt weiß ich, wofür. #sprecher:ambrose #stimmung:still
+    An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. #sprecher:ambrose #stimmung:still
+    Jetzt weiß ich, wofür. #sprecher:ambrose #stimmung:still
 }
 -> END
 
@@ -465,9 +505,11 @@ Mira wartet auf ihren Clubkampf. Aber vorher noch etwas anderes. #sprecher:dot #
 ~ revancheDesertSprings = false
 {
 - ausgangDesertSpringsClubkampf == "sieg":
-    Gewonnen. Aber keine bessere Nadel. Ha! #sprecher:mira #stimmung:laechelt
+    Gewonnen. Aber keine bessere Nadel. #sprecher:mira #stimmung:laechelt
+    Ha! #sprecher:mira #stimmung:laechelt
 - ausgangDesertSpringsClubkampf == "remis":
-    Remis. Langweilig. Deine Nadel bleibt. #sprecher:mira #stimmung:neutral
+    Remis. Langweilig. #sprecher:mira #stimmung:neutral
+    Deine Nadel bleibt. #sprecher:mira #stimmung:neutral
 - ausgangDesertSpringsClubkampf == "niederlage":
     Ich hab gewonnen! Deine Nadel darfst du behalten. #sprecher:mira #stimmung:laechelt
 - else:

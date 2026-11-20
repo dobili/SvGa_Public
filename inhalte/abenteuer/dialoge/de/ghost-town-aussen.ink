@@ -33,12 +33,15 @@ VAR seeErreichtGesehen = false
 ~ ankunftGhostTownGesehen = true
 Mit jedem Kilometer wird alles blasser. Das Rot der Erde, das Grün der Büsche, das Blau am Himmel. #sprecher:erzaehler #musik:aus #geraeusch:ghosttown
 Guck mal. Es sieht aus wie ein altes Foto. #sprecher:juno #stimmung:ueberrascht
-Die Stadt kommt ohne Schild. Häuser aus Brettern, die das Wetter silbern gemacht hat. Ein Saloon mit einem Balkon, der an einer Seite herunterhängt. #sprecher:erzaehler
-Es ist niemand da. Seit hundert Jahren. Der Wind schiebt einen Busch über die Straße. #sprecher:erzaehler
+Die Stadt kommt ohne Schild. Häuser aus Brettern, die das Wetter silbern gemacht hat. #sprecher:erzaehler
+Ein Saloon mit einem Balkon, der an einer Seite herunterhängt. #sprecher:erzaehler
+Es ist niemand da. Seit hundert Jahren. #sprecher:erzaehler
+Der Wind schiebt einen Busch über die Straße. #sprecher:erzaehler
 {abschiedGesehen: -> END}
 Hier. #sprecher:ambrose #stimmung:fern
 Er steht mitten auf der Straße und dreht sich langsam um sich selbst. #sprecher:erzaehler
-Der Laden. Das war der Laden. Darüber war ein Zimmer. Es hatte eine Tapete mit Rosen. #sprecher:ambrose #stimmung:nachdenklich
+Der Laden. Das war der Laden. #sprecher:ambrose #stimmung:nachdenklich
+Darüber war ein Zimmer. Es hatte eine Tapete mit Rosen. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe die Rosen gezählt, als ich nicht schlafen konnte. #sprecher:ambrose #stimmung:still
 -> END
 
@@ -72,9 +75,11 @@ Die Staubstraße führt zurück zum Canyon und weiter zum Camp. #sprecher:erzaeh
 ~ pruittGetroffen = true
 Etwas piept. Hinter dem Saloon kommt ein alter Mann mit Strohhut hervor und schwenkt ein Gerät an einer Stange über den Boden. #sprecher:erzaehler #klang:metalldetektor
 Hufnagel. Der dreiundvierzigste diese Woche. #sprecher:pruitt #stimmung:laechelt
-Besuch! Ich hab seit April keinen gehabt. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:froh
+Besuch! Ich hab seit April keinen gehabt. #sprecher:pruitt #stimmung:froh
+Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #stimmung:froh
 Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei Jahren. Ein Opernhaus, das nie fertig wurde. #sprecher:pruitt #stimmung:nachdenklich
-Achtzehnhundertdreiundsiebzig ging der Letzte. Ein Schmied. Er ließ die Tür offen, weil es nichts mehr zu stehlen gab. #sprecher:pruitt #stimmung:nachdenklich
+Achtzehnhundertdreiundsiebzig ging der Letzte. Ein Schmied. #sprecher:pruitt #stimmung:nachdenklich
+Er ließ die Tür offen, weil es nichts mehr zu stehlen gab. #sprecher:pruitt #stimmung:nachdenklich
 * [„Und der Friedhof?“]
 - Er sieht dich an. Sehr helle Augen unter dem Hut. #sprecher:erzaehler
 Die meisten fragen nach dem Gold. #sprecher:pruitt #stimmung:laechelt
@@ -101,13 +106,16 @@ Die meisten fragen nach dem Gold. #sprecher:pruitt #stimmung:laechelt
 Ganz hinten, wo der Zaun aufhört und die Wüste anfängt, liegt ein niedriger Stein ohne Namen. Eingeritzt: acht mal acht Vierecke. #sprecher:erzaehler #bild:stein_brett
 Mr. Pruitt nimmt den Hut ab. #sprecher:erzaehler #bild:aus
 Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #stimmung:nachdenklich
-„Ein Reisender aus dem Süden, Februar 1866. Fieber. Führte ein Schachbrett mit sich und bat, es seiner Schwester zu senden. Name unleserlich.“ #sprecher:pruitt #stimmung:nachdenklich
+„Ein Reisender aus dem Süden, Februar 1866. Fieber. Führte ein Schachbrett mit sich und bat, es seiner Schwester zu senden.“ #sprecher:pruitt #stimmung:nachdenklich
+„Name unleserlich.“ #sprecher:pruitt #stimmung:nachdenklich
 Der Schmied hat den Stein gemacht. Der Fremde hat ihm in drei Tagen das Spiel beigebracht, zwischen zwei Fieberanfällen. #sprecher:pruitt #stimmung:nachdenklich
 Ambrose steht lange vor dem Stein. #sprecher:erzaehler #pause:3
 Hier bin ich angekommen. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.angekommen
 Nur nicht dort, wo ich wollte. #sprecher:ambrose #stimmung:friedlich
 Er kniet nieder und legt die Hand auf den Stein. Sie geht nicht hindurch. #sprecher:erzaehler
-Ein Schmied. Er hieß Gideon. Er hat jeden Springerzug laut mitgezählt. Eins, zwei, und eins. Ich habe ihn ganz vergessen. #sprecher:ambrose #stimmung:lachtOhneSpott
+Ein Schmied. Er hieß Gideon. #sprecher:ambrose #stimmung:lachtOhneSpott
+Er hat jeden Springerzug laut mitgezählt. Eins, zwei, und eins. #sprecher:ambrose #stimmung:lachtOhneSpott
+Ich habe ihn ganz vergessen. #sprecher:ambrose #stimmung:lachtOhneSpott
 Ist er hier? Ist das seiner? #sprecher:juno #stimmung:ueberrascht
 * [Nicken]
 - Juno pflückt eine kleine gelbe Blume, die einzige weit und breit, und legt sie auf den Stein. Auf e4. #sprecher:erzaehler #bild:blume_e4
@@ -136,8 +144,10 @@ Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht
 // Thema als Gegenstimme; bei „Bleib“ ein gehaltener Ton (S74). Er sitzt zum vierten Mal.
 ~ ambroseSagtEsGesehen = true
 Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
-Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. Ich hab sie gemacht. #sprecher:juno #stimmung:froh
-Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. Sie kommt dir vor wie etwas, das fertig ist. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck
+Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. #sprecher:juno #stimmung:froh
+Ich hab sie gemacht. #sprecher:juno #stimmung:froh
+Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck
+Sie kommt dir vor wie etwas, das fertig ist. #sprecher:erzaehler
 Ambrose wartet am Ende des Gehsteigs, wo die Bretter aufhören. #sprecher:erzaehler
 Setz dich. #sprecher:ambrose #stimmung:nachdenklich
 Du setzt dich auf die Kante. Der Staub ist noch warm vom Tag. #sprecher:erzaehler
@@ -152,8 +162,11 @@ Er betrachtet seine Hand. Sie ist durchsichtiger als sonst. #sprecher:erzaehler
 Ich könnte, glaube ich, ein paar Schritte weiter gehen, als das Brett liegt. Ich habe es nicht versucht. #sprecher:ambrose #stimmung:nachdenklich
 * [„Warum nicht?“]
 - Weil ich nicht weiß, ob ich dann zurückkäme. Und es gibt noch etwas, das ich sehen will. #sprecher:ambrose #stimmung:nachdenklich
-Er setzt sich neben dich, die Füße im Staub. Das vierte Mal. Du hast mitgezählt. #sprecher:erzaehler
-Noch eine Partie. Deine. Gegen ihn. In der großen Halle, vor allen Leuten. Dann ist es gut. #sprecher:ambrose #stimmung:friedlich
+Er setzt sich neben dich, die Füße im Staub. Das vierte Mal. #sprecher:erzaehler
+Du hast mitgezählt. #sprecher:erzaehler
+Noch eine Partie. Deine. #sprecher:ambrose #stimmung:friedlich
+Gegen ihn. In der großen Halle, vor allen Leuten. #sprecher:ambrose #stimmung:friedlich
+Dann ist es gut. #sprecher:ambrose #stimmung:friedlich
 * [„Und dann gehst du.“]
 - Ja. #sprecher:ambrose #stimmung:nachdenklich #pause
 * (bleib) [„Bleib.“]

@@ -148,7 +148,8 @@ Meistens. #sprecher:juno #stimmung:lacht
 === lily_fragt ===
 // Szene 8 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM43 bis VM47).
 ~ lilyGetroffen = true
-Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe. Darauf ein Plastikpferd. #sprecher:erzaehler
+Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe. #sprecher:erzaehler
+Darauf ein Plastikpferd. #sprecher:erzaehler
 Kannst du Schach? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily #stimmung:nachdenklich
 Der Pferd hüpft doch einfach irgendwohin, oder? #sprecher:lily #stimmung:nachdenklich
 * [„Ich zeig es dir.“]
@@ -223,7 +224,8 @@ Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler
 
 === calloway_a ===
 ~ callowayGetroffen = true
-Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. Auf dem zweiten sitzt niemand. #sprecher:erzaehler #musik:aus
+Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. #sprecher:erzaehler #musik:aus
+Auf dem zweiten sitzt niemand. #sprecher:erzaehler
 Du bist {held}. Ich bin Eunice Calloway. #sprecher:calloway #stimmung:laechelt
 Ich wohne hier seit vierundsechzig. #sprecher:calloway #stimmung:laechelt
 Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. #sprecher:calloway #stimmung:nachdenklich
@@ -278,10 +280,16 @@ Sie sagt „hat“. Nicht mehr „spielt“. #sprecher:erzaehler #pause
 // Stufe D (nach Akt 2): ein kleiner Tisch zwischen den Stühlen, darauf ein Schachbrett. Sie lernt
 // es von Owen. Endet warm.
 === calloway_d ===
-Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen erklärt. Mrs. Calloway runzelt die Stirn. #sprecher:erzaehler
+Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen erklärt. #sprecher:erzaehler
+Mrs. Calloway runzelt die Stirn. #sprecher:erzaehler
 Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway #stimmung:nachdenklich
 * [„Das stimmt. Immer.“]
-    {lilyGeholfen:Dann hat er es von Lily. Und Lily hat es von dir. So geht das hier.|Dann hat er es von Lily von nebenan. Die weiß alles über Pferde.} #sprecher:calloway #stimmung:froh
+    {lilyGeholfen:
+        Dann hat er es von Lily. Und Lily hat es von dir. #sprecher:calloway #stimmung:froh
+        So geht das hier. #sprecher:calloway #stimmung:froh
+    - else:
+        Dann hat er es von Lily von nebenan. Die weiß alles über Pferde. #sprecher:calloway #stimmung:froh
+    }
 * [„Wer hat ihm das beigebracht?“]
     {lilyGeholfen:Lily von nebenan. Und die sagt, sie hat es von dir.|Lily von nebenan. Die weiß alles über Pferde.} #sprecher:calloway #stimmung:froh
 - Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway #stimmung:laechelt
@@ -307,7 +315,13 @@ Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
 // Stufe A (Ankunft): Sie repariert ein Fahrrad am Zaun und winkt ab, wenn es um Schach geht.
 === carla_a ===
 Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem Fahrrad. #sprecher:erzaehler
-{junoGetroffen:Du bist Junos neues viertes Brett? Viel Glück. Sie redet, bis du umfällst.|Du bist aus dem Whitlock-Haus, oder? Meine Schwester Juno sucht ein viertes Brett fürs Schachteam. Sie findet dich.} #sprecher:carla #stimmung:laechelt
+{junoGetroffen:
+    Du bist Junos neues viertes Brett? Viel Glück. #sprecher:carla #stimmung:laechelt
+    Sie redet, bis du umfällst. #sprecher:carla #stimmung:laechelt
+- else:
+    Du bist aus dem Whitlock-Haus, oder? Meine Schwester Juno sucht ein viertes Brett fürs Schachteam. #sprecher:carla #stimmung:laechelt
+    Sie findet dich. #sprecher:carla #stimmung:laechelt
+}
 * [„Spielst du auch Schach?“]
     Hab ich mal. Jetzt hab ich fast ein Auto. #sprecher:carla #stimmung:laechelt
 * {junoGetroffen} [„Juno sagt, du warst gut.“]
@@ -374,8 +388,10 @@ Hüpft der jetzt gerade oder schief? Zeig's mir nochmal, ja? #sprecher:lily #sti
 // Danach gehen beide hinein: Die Reise ins Wohnzimmer verhindert, dass man vor dem Dachboden
 // schon durch die ganze Stadt läuft (Schule, Juno, Weg nach Cedar Creek).
 ~ einleitungGesehen = true
-Ende August. Drei Tage Packen, ein langer Tag im Auto. Hinter dem Ortsschild von Maple Falls rauscht irgendwo Wasser. #sprecher:erzaehler #bild:einzug_fahrt #musik:aus
-Birch Lane. Ein altes Holzhaus mit Veranda, davor ein Ahorn, dessen Blätter an den Rändern schon rot sind. Am Bordstein steht der Umzugswagen mit offener Klappe. #sprecher:erzaehler #bild:einzug_haus
+Ende August. Drei Tage Packen, ein langer Tag im Auto. #sprecher:erzaehler #bild:einzug_fahrt #musik:aus
+Hinter dem Ortsschild von Maple Falls rauscht irgendwo Wasser. #sprecher:erzaehler
+Birch Lane. Ein altes Holzhaus mit Veranda, davor ein Ahorn, dessen Blätter an den Rändern schon rot sind. #sprecher:erzaehler #bild:einzug_haus
+Am Bordstein steht der Umzugswagen mit offener Klappe. #sprecher:erzaehler
 Mama stellt den Motor ab und bleibt einen Moment sitzen, die Hände noch am Lenkrad. #sprecher:erzaehler #bild:aus
 Das ist es. Unser Haus. #sprecher:mutter #stimmung:muede
 Ich weiß, es ist nicht die alte Wohnung. Aber es hat einen Garten. #sprecher:mutter #stimmung:laechelt

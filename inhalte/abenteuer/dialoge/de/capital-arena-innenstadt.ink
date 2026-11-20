@@ -49,12 +49,15 @@ Ein Kreidepfeil zeigt auf das Gitter vor der Treppe zum alten U-Bahnhof. #sprech
 === ubahn ===
 ~ ubahnOffen = kreideraetselBestanden and ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen"
 {kreideraetselBestanden and not ubahnOffen:
-    Du sagst den Zug durch das Gitter. Von unten lacht jemand: „Richtig. Aber die Kreidenacht ist nach der Meisterschaft. Dann bist du dabei.“ #sprecher:erzaehler
+    Du sagst den Zug durch das Gitter. Von unten lacht jemand: „Richtig.“ #sprecher:erzaehler
+    „Aber die Kreidenacht ist nach der Meisterschaft. Dann bist du dabei.“ #sprecher:erzaehler
     -> END
 }
 {ubahnOffen:
-    Du sagst den Zug durch das Gitter. Eine Hand zieht die Kette ab, und das Gitter rollt nach oben. „Willkommen bei den Kreidespringern.“ #sprecher:erzaehler
+    Du sagst den Zug durch das Gitter. Eine Hand zieht die Kette ab, und das Gitter rollt nach oben. #sprecher:erzaehler
+    „Willkommen bei den Kreidespringern.“ #sprecher:erzaehler
 - else:
-    Das Rollgitter ist zu, mit Kette und Schloss. Von unten hört man Uhren klicken. Ohne Losungswort kommst du nicht hinein. #sprecher:erzaehler
+    Das Rollgitter ist zu, mit Kette und Schloss. Von unten hört man Uhren klicken. #sprecher:erzaehler
+    Ohne Losungswort kommst du nicht hinein. #sprecher:erzaehler
 }
 -> END

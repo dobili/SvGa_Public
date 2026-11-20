@@ -61,15 +61,18 @@ Wer zuerst ankommt, zahlt nicht. Und wer unterwegs nur schlagen will, zahlt meis
 === earl_regel_erstmals ===
 -> earl_regel ->
 {not abschiedGesehen:
-    Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose #stimmung:nachdenklich
-    Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
+    Ein Rennen ohne Angriff. Wie seltsam. #sprecher:ambrose #stimmung:nachdenklich
+    Und doch. #sprecher:ambrose #stimmung:nachdenklich
+    Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. #sprecher:ambrose #stimmung:nachdenklich
+    Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose #stimmung:nachdenklich
 }
 -> earl_angebot
 
 === earl_angebot ===
 // VARIANTE-FEHLT: Königsrennen (L8). Bis es gebaut ist, nur die Regel und eine Vertröstung.
 Am Fenstertisch rennen zwei Fahrer los. Der eine schiebt seinen König stur nach vorn, der andere schlägt unterwegs einen Läufer und zahlt den Kaffee. #sprecher:erzaehler
-Siehst du? Laufen, nicht schlagen. Wenn du wieder durchfährst, rennst du selbst. #sprecher:earl #stimmung:laechelt
+Siehst du? Laufen, nicht schlagen. #sprecher:earl #stimmung:laechelt
+Wenn du wieder durchfährst, rennst du selbst. #sprecher:earl #stimmung:laechelt
 -> END
 
 === earl_alltag ===
@@ -89,7 +92,8 @@ Earl dreht das gebogene Glasrohr in der Hand. Dann holt er eine Leiter aus dem L
 Ich hab gesagt, nimm's mit. Und du bringst es mir zurück. #sprecher:earl #stimmung:froh
 Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #sprecher:erzaehler
 {not abschiedGesehen:
-    Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
+    Seit neunundachtzig. Und niemand hat es vermisst. #sprecher:ambrose #stimmung:nachdenklich
+    Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
 }
 Der Fensterplatz gehört ab heute dir. #sprecher:earl #stimmung:laechelt
 -> END
@@ -123,7 +127,8 @@ Hinter dem Diner, zwischen leeren Kisten, liegt ein gebogenes Glasrohr in Form e
 {not earlGetroffen:
     Aus der Hintertür sieht ein Mann mit Kappe und Kaffeebecher heraus. #sprecher:erzaehler
 }
-Das K von King's Diner. Ist seit neunundachtzig kaputt. Nimm's mit, wir haben uns dran gewöhnt. #sprecher:earl #stimmung:laechelt
+Das K von King's Diner. Ist seit neunundachtzig kaputt. #sprecher:earl #stimmung:laechelt
+Nimm's mit, wir haben uns dran gewöhnt. #sprecher:earl #stimmung:laechelt
 ~ gibFund("neonK")
 -> END
 
@@ -185,7 +190,8 @@ VAR testteamGitterNiederlagen = 0
 ~ funkschachBegonnen = true
 Im Fenster des Diners steht ein altes CB-Funkgerät. Aus dem Lautsprecher kommen Buchstaben und Zahlen: „Echo vier, Echo zwei.“ #sprecher:erzaehler
 {not earlGetroffen:Ein Mann mit Kappe stellt seinen Kaffeebecher ab.|Earl stellt seinen Kaffeebecher ab.} #sprecher:erzaehler
-Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer. Willst du einspringen? #sprecher:earl #stimmung:laechelt
+Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen. Heute fehlt einer. #sprecher:earl #stimmung:laechelt
+Willst du einspringen? #sprecher:earl #stimmung:laechelt
 -> funkschach_partie
 
 === funkschach_partie ===
@@ -198,7 +204,8 @@ Hier Mama Bear, Pause oben in der Haltebucht. Ich sag dir meine Züge an, du hö
 {funkschachFertig: -> END}
 ~ funkschachFertig = true
 Gut gespielt, {held} Junior. Ab heute ist das dein Funkname. #sprecher:mamaBear #stimmung:laechelt
-Sag mal, du kommst doch rum. Ich fahre seit drei Wochen versiegelte Kisten von Perfect Move in die Berge. Sie summen. Kisten summen nicht. #sprecher:mamaBear #stimmung:nachdenklich
+Sag mal, du kommst doch rum. Ich fahre seit drei Wochen versiegelte Kisten von Perfect Move in die Berge. #sprecher:mamaBear #stimmung:nachdenklich
+Sie summen. Kisten summen nicht. #sprecher:mamaBear #stimmung:nachdenklich
 Mein Laster steht oben in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn du vorbeikommst. #sprecher:mamaBear #stimmung:nachdenklich
 -> END
 
@@ -216,7 +223,8 @@ Darunter, ganz klein: „Dreimal klopfen.“ #sprecher:erzaehler
 ~ gibFund("kreide3")
 {ambroseSprichtWieder:
     {not abschiedGesehen:
-        Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose #stimmung:laechelt
+        Ein Club ohne Haus. Das gefällt mir. #sprecher:ambrose #stimmung:laechelt
+        Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose #stimmung:laechelt
     }
 }
 -> END
@@ -249,7 +257,8 @@ Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme. #s
     ~ hinterzimmerOffen = true
     Du klopfst dreimal. Von drinnen ruft jemand: „Rein mit dir, aber leise.“ #sprecher:erzaehler
 - else:
-    Eine schmale Tür an der Seite des Diners. Sie ist zu. Auf der Klinke liegt etwas Kreidestaub. #sprecher:erzaehler
+    Eine schmale Tür an der Seite des Diners. Sie ist zu. #sprecher:erzaehler
+    Auf der Klinke liegt etwas Kreidestaub. #sprecher:erzaehler
 }
 -> END
 
@@ -268,7 +277,8 @@ Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme. #s
 }
 ~ magsGetroffen = true
 Kein Bildschirm, keine Uhr an der Wand. Nur Bretter, Kreide und Kaffee. #sprecher:erzaehler
-Mags. Ich fahre Kühlwagen und spiele Blitz aus der Mitte heraus. Drei Minuten, zwei Sekunden dazu. Mitspielen musst du. #sprecher:mags #stimmung:laechelt
+Mags. Ich fahre Kühlwagen und spiele Blitz aus der Mitte heraus. #sprecher:mags #stimmung:laechelt
+Drei Minuten, zwei Sekunden dazu. Mitspielen musst du. #sprecher:mags #stimmung:laechelt
 -> mags_angebot
 
 === mags_angebot ===
@@ -357,7 +367,8 @@ Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steck
     Hinter der Tankstelle liegt ein Viehgitter im Asphalt. Daneben stehen drei und warten auf dich. {testteamStand >= 1:Du kennst sie. Die weißen Westen sind weg, die Tablets auch.|Sie tragen keine Westen und keine Tablets.} #sprecher:erzaehler
     Kein Testteam mehr. Wir prüfen jetzt selber: Wer rauf zur Meisterschaft will, spielt eine Stellung ohne Stöpsel. #sprecher:zoe #stimmung:laechelt
 }
-Ein Endspiel, fünfzehn Züge. Du hast einen Bauern mehr. Zeig, dass er reicht. #sprecher:zoe #stimmung:laechelt
+Ein Endspiel, fünfzehn Züge. Du hast einen Bauern mehr. #sprecher:zoe #stimmung:laechelt
+Zeig, dass er reicht. #sprecher:zoe #stimmung:laechelt
 + [„Eine Stellung.“]
     -> testteam_gitter_partie
 + [„Später.“]
@@ -387,12 +398,14 @@ Ein Endspiel, fünfzehn Züge. Du hast einen Bauern mehr. Zeig, dass er reicht. 
 
 === testteam_gitter_genug ===
 Zoe stellt die Figuren zurück in die Schachtel. #sprecher:erzaehler
-Dreimal ehrlich versucht. Das reicht uns. Geh durch. #sprecher:zoe #stimmung:laechelt
+Dreimal ehrlich versucht. Das reicht uns. #sprecher:zoe #stimmung:laechelt
+Geh durch. #sprecher:zoe #stimmung:laechelt
 -> testteam_gitter_offen
 
 === testteam_gitter_durch ===
 Zoe gibt dir über dem Brett die Hand. #sprecher:erzaehler
-Ehrlich gespielt. Das schreibe ich auf. Mit der Hand. #sprecher:zoe #stimmung:laechelt
+Ehrlich gespielt. Das schreibe ich auf. #sprecher:zoe #stimmung:laechelt
+Mit der Hand. #sprecher:zoe #stimmung:laechelt
 -> testteam_gitter_offen
 
 === testteam_gitter_offen ===
@@ -401,7 +414,8 @@ Ehrlich gespielt. Das schreibe ich auf. Mit der Hand. #sprecher:zoe #stimmung:la
 Der blaue Laster da oben. Da drin sind unsere Partien. #sprecher:benji #stimmung:nachdenklich
 // Lesefassung 18.11.2026: Die Kündigung erfährt {held} erst von Nova an der Raststätte
 // (crossroads-raststaette.ink); hier nur, wohin die Protokolle gehen.
-In Silicon Bay gibt es eine, die zuhört. Dr. Lin. Der bringen wir unsere Protokolle. #sprecher:imani #stimmung:nachdenklich
+In Silicon Bay gibt es eine, die zuhört. Dr. Lin. #sprecher:imani #stimmung:nachdenklich
+Der bringen wir unsere Protokolle. #sprecher:imani #stimmung:nachdenklich
 -> END
 
 === testteam_gitter_danach ===

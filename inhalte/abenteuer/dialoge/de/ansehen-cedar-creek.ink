@@ -41,7 +41,8 @@ VAR abschiedGesehen = false
     ~ angesehenGlobus = true
     Ein alter Globus mit vergilbten Meeren. Manche Länder darauf gibt es heute nicht mehr. #sprecher:erzaehler
     {not abschiedGesehen:
-        Ich suche New Orleans. Da. Es ist noch da. #sprecher:ambrose #stimmung:froh
+        Ich suche New Orleans. Da. #sprecher:ambrose #stimmung:froh
+        Es ist noch da. #sprecher:ambrose #stimmung:froh
     }
 }
 -> END
@@ -53,7 +54,8 @@ VAR abschiedGesehen = false
     ~ angesehenSchildFluestern = true
     Ein Schild am Tresen: „Bitte flüstern“. #sprecher:erzaehler
     {not abschiedGesehen:
-        Flüstern. Das kann ich. Mich hörst ohnehin nur du. #sprecher:ambrose #stimmung:laechelt
+        Flüstern. Das kann ich. #sprecher:ambrose #stimmung:laechelt
+        Mich hörst ohnehin nur du. #sprecher:ambrose #stimmung:laechelt
     }
 }
 -> END
@@ -133,7 +135,8 @@ VAR abschiedGesehen = false
     ~ angesehenAutomat = true
     Ein Automat für Waschpulver und Kaugummi. Eine Kugel Kaugummi kostet eine Münze. #sprecher:erzaehler
     {not abschiedGesehen:
-        Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
+        Eine Münze, eine Kugel. Kein Dank, kein Wort. #sprecher:ambrose #stimmung:nachdenklich
+        Sonderbar. #sprecher:ambrose #stimmung:nachdenklich
     }
 }
 -> END

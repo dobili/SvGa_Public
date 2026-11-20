@@ -50,7 +50,8 @@ Das dauert noch, bis zum Frühjahr. Komm wieder, wenn du aus der Wüste zurück 
 
 === schild_aufhaengen ===
 ~ musikhausOffen = true
-Das Dach ist neu. Im Saal stehen Tische, auf jedem eines der Bretter aus der Stadt. In der Ecke glänzt Henris Klavier. #sprecher:erzaehler
+Das Dach ist neu. Im Saal stehen Tische, auf jedem eines der Bretter aus der Stadt. #sprecher:erzaehler
+In der Ecke glänzt Henris Klavier. #sprecher:erzaehler
 Miss Odile, Remy, Lou und Henri warten unter der Tür. Jemand reicht dir eine Leiter. #sprecher:erzaehler
 Du hängst das Schild über die Tür: „Maison de Musique. Club d'Échecs, depuis 1889.“ #sprecher:erzaehler #pause
 Remy spielt drei Töne auf der Trompete. Alle klatschen. #sprecher:erzaehler
@@ -84,7 +85,8 @@ Seit 1889. Und wieder. #sprecher:odile #stimmung:froh
 ~ blaeserGetroffen = true
 ~ varianteSchach960Gelernt = true
 Eine Bläserin putzt ihre Posaune und lacht dich an. #sprecher:erzaehler
-Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jedes Mal anders. #sprecher:blaeser #stimmung:froh
+Mabel. Posaune, zweite Reihe, und dienstags Schach. #sprecher:blaeser #stimmung:froh
+Bei uns stehen die Figuren jedes Mal anders. #sprecher:blaeser #stimmung:froh
 Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser #stimmung:laechelt
 Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:blaeser #stimmung:laechelt
 * [„Und die Rochade?“]
@@ -98,8 +100,10 @@ Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #spreche
 -> blaeser_set1
 
 === blaeser_set1 ===
-Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. Locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
-Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden dazu für jeden Zug. Dann spielt die Band das nächste. #sprecher:blaeser #stimmung:lacht
+Erstes Set. Ich würfle die Grundreihe aus, du suchst dir einen Plan. #sprecher:blaeser #stimmung:laechelt
+Locker, zum Warmspielen. #sprecher:blaeser #stimmung:laechelt
+Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden dazu für jeden Zug. #sprecher:blaeser #stimmung:lacht
+Dann spielt die Band das nächste. #sprecher:blaeser #stimmung:lacht
 + [„Spielen wir.“]
     ~ beginnePartie("portDelacroix.schach960Set1")
     -> END
@@ -111,7 +115,8 @@ Ein Set dauert ein Stück. Zehn Minuten auf der Uhr für jeden, fünf Sekunden d
 // Lektorat 20.11.2026: Das Lob nur einmal, nicht nach jedem „Nicht jetzt.“ wieder.
 {ausgangPortDelacroixSchach960Set1 == "sieg" and not set1GelobtGesehen:
     ~ set1GelobtGesehen = true
-    Nicht schlecht! Du hast nicht gesucht, was du kennst. Du hast gespielt, was da stand. #sprecher:blaeser #stimmung:laechelt
+    Nicht schlecht! Du hast nicht gesucht, was du kennst. #sprecher:blaeser #stimmung:laechelt
+    Du hast gespielt, was da stand. #sprecher:blaeser #stimmung:laechelt
 }
 Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #stimmung:laechelt
 + [„Gern.“]
@@ -122,7 +127,8 @@ Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser #
 
 === blaeser_set3 ===
 Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser #stimmung:laechelt
-Und schneller. Fünf Minuten, drei Sekunden je Zug. Eine Jam-Session wartet auf niemanden. #sprecher:blaeser #stimmung:lacht
+Und schneller. Fünf Minuten, drei Sekunden je Zug. #sprecher:blaeser #stimmung:lacht
+Eine Jam-Session wartet auf niemanden. #sprecher:blaeser #stimmung:lacht
 {not abschiedGesehen:
     Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose #stimmung:nachdenklich
 }

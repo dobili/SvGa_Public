@@ -117,7 +117,8 @@ Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
 // Kapitel 17: Der Güterzug, lange bevor man ihn sieht; Ambroses erste Andeutung von 1866.
 === gueterzug ===
 ~ gueterzugGesehen = true
-Erst singt die Schiene. Dann zittert der Boden. Dann rattert ein Güterzug vorbei, vierzig Wagen. Du zählst sie. #sprecher:erzaehler #klang:gueterzug
+Erst singt die Schiene. Dann zittert der Boden. #sprecher:erzaehler #klang:gueterzug
+Dann rattert ein Güterzug vorbei, vierzig Wagen. Du zählst sie. #sprecher:erzaehler
 {abschiedGesehen: ->->}
 So schnell. #sprecher:ambrose #stimmung:ueberrascht #pause:2
 Er klingt nicht beeindruckt. Er klingt müde. #sprecher:erzaehler
@@ -276,7 +277,8 @@ Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es
 -> END
 
 === zugpartie_danach ===
-„Earl hat geantwortet. Er sagt, das war nicht mein Zug. Er kennt mich zu gut.“ #sprecher:erzaehler
+„Earl hat geantwortet. Er sagt, das war nicht mein Zug.“ #sprecher:erzaehler
+„Er kennt mich zu gut.“ #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Buchseite und Durchlass S14

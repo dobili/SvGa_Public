@@ -97,7 +97,8 @@ Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt a
 // Stimmung: fremd, müde, Sommerende. Keine Musik bis zur Pizza; Wasserfall fern.
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Am Abend ist der Umzugswagen weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer
+Am Abend ist der Umzugswagen weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer
+Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
@@ -110,7 +111,8 @@ Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht 
     Ich auch. #sprecher:mutter #stimmung:bitter #pause
 - Mama fragt nicht, wie es dir geht. Dafür bist du ihr dankbar. #sprecher:erzaehler
 Eins noch. #sprecher:mutter #stimmung:nachdenklich
-Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler #bild:kiste_whitlock
+Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. #sprecher:erzaehler #bild:kiste_whitlock
+Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler
 Stand im Flur. Die Vorbesitzerin. #sprecher:mutter #stimmung:nachdenklich #bild:aus
 Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter #stimmung:nachdenklich
 Der Dachboden ist noch voll von ihren Sachen. Deshalb war das Haus so günstig. #sprecher:mutter #stimmung:nachdenklich
@@ -144,7 +146,8 @@ Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie K
 // Klang: Bei Mamas Satz setzt die Musik zwei Sekunden aus. Porträt „ertappt“ fehlt noch als Tag.
 ~ ersterAbendGesehen = true
 // Das Herunterkommen über die knarrende Treppe steht seit dem 19.11.2026 in treppe_abend (Eingang).
-Du stellst dich mit dem Brett neben sie. Mama schraubt weiter am Tisch. Ihr Blick fällt auf das Brett. Sie sieht nicht dich an, sondern die Stellung. #sprecher:erzaehler #pause:2
+Du stellst dich mit dem Brett neben sie. Mama schraubt weiter am Tisch. #sprecher:erzaehler
+Ihr Blick fällt auf das Brett. Sie sieht nicht dich an, sondern die Stellung. #sprecher:erzaehler #pause:2
 Weiß steht besser. #sprecher:mutter #stimmung:nachdenklich #pause:2 #musik:aus
 Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler #musik:karte
 Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. #sprecher:mutter #stimmung:ertappt
@@ -209,9 +212,11 @@ Brett nicht verlieren. #sprecher:mutter #stimmung:froh
 // vier Töne, abgebrochen (Klangplan `mama`). Porträt „erzählt“, dann „denkt nach“.
 ~ mamaFotoGesehen = true
 Du legst das Foto auf den Küchentisch. Dorthin, wo der Zettel gelegen hat. #sprecher:erzaehler #musik:aus #geraeusch:kuehlschrank
-Mama kommt von der Frühschicht. Mantel, Tasche, ob du gegessen hast. Dann sieht sie es. #sprecher:erzaehler
+Mama kommt von der Frühschicht. Mantel, Tasche, ob du gegessen hast. #sprecher:erzaehler
+Dann sieht sie es. #sprecher:erzaehler
 * [„Ich hab das gefunden.“]
-- Sie setzt sich. Nicht auf den Stuhl, an dem sie steht. Auf den nächsten, als wäre der Weg zu weit. #sprecher:erzaehler #pause:2
+- Sie setzt sich. Nicht auf den Stuhl, an dem sie steht. #sprecher:erzaehler
+Auf den nächsten, als wäre der Weg zu weit. #sprecher:erzaehler #pause:2
 Du warst in Ironwood. Bei Oma Ruth. #sprecher:mutter #stimmung:verschlossen
 * [„Und bei Big Joe. Er lässt grüßen.“]
 - Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
@@ -347,7 +352,8 @@ Ich krieg's nicht raus. #sprecher:hector #stimmung:nachdenklich
 * [Erst Pommes bestellen]
     Pommes kommen. Das Rätsel läuft nicht weg. #sprecher:hector #stimmung:laechelt
 - Neben der Kasse liegt ein Stapel Sets, mindestens zwanzig. Auf keinem ist etwas eingezeichnet. #sprecher:erzaehler
-Du suchst. Was hängt? Wohin kann die Dame? #sprecher:erzaehler #pause
+Du suchst. Was hängt? #sprecher:erzaehler
+Wohin kann die Dame? #sprecher:erzaehler #pause
 Mama sieht zu. Sie sagt nichts. #sprecher:erzaehler
 Aber ihr Finger bewegt sich, einen Zentimeter über dem Papier, auf ein Feld. Eine halbe Sekunde vor deinem Stift. #sprecher:erzaehler #pause:3
 Du tust, als hättest du es nicht gesehen. Dann zeichnest du den Pfeil ein. #sprecher:erzaehler
@@ -386,7 +392,8 @@ Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler #m
 ~ verbotGesehen = true
 ~ setzeSzene("akt2.verbot")
 // Spieltest 2 (17.11.2026): Juno hat den Zettel in Riverton schon angekündigt (riverton-wohnwagen.turnier_nachricht), deshalb liegt er hier nur noch da.
-Der Zettel von Coach Delgado liegt auf dem Küchentisch, wie Juno gesagt hat. Schief kopiert: „Freundschaftsturnier beim Stahlwerker-Club Ironwood. Vier Bretter. Wir fahren!!!“ #sprecher:erzaehler #bild:zettel_ironwood #musik:aus #geraeusch:kuehlschrank
+Der Zettel von Coach Delgado liegt auf dem Küchentisch, wie Juno gesagt hat. #sprecher:erzaehler #musik:aus #geraeusch:kuehlschrank
+Schief kopiert: „Freundschaftsturnier beim Stahlwerker-Club Ironwood. Vier Bretter. Wir fahren!!!“ #sprecher:erzaehler #bild:zettel_ironwood
 Unten ist eine Zeile frei für die Unterschrift. Du legst ihn neben Mamas Tasse. #sprecher:erzaehler #bild:aus
 Mama liest ihn im Stehen, den Mantel schon an, die Schlüssel in der Hand. Ihre Augen halten an. #sprecher:erzaehler
 Nein. #sprecher:mutter #stimmung:verschlossen
@@ -398,15 +405,18 @@ Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 Du fährst nach Riverton, du läufst durch Wälder, ich sage zu allem Ja. Dieses eine Mal sage ich Nein. #sprecher:mutter #stimmung:bitter
 Frag nicht. Bitte. #sprecher:mutter #stimmung:verschlossen
 Nicht heute. #sprecher:mutter #stimmung:verschlossen
-Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter. Nachtschicht. #sprecher:erzaehler #klang:wagen
+Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter. #sprecher:erzaehler #klang:wagen
+Nachtschicht. #sprecher:erzaehler
 Deine Mutter hat Angst. Vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich #musik:mapleFalls.klavier
 Das ist selten. #sprecher:ambrose #stimmung:nachdenklich
 Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Sie hat nur gesagt: nicht zum Turnier.“]
 * [Den Zettel umdrehen]
-    Du drehst ihn um. Nein zum Zettel, denkst du. Nein zum Turnier. #sprecher:erzaehler
+    Du drehst ihn um. Nein zum Zettel, denkst du. #sprecher:erzaehler
+    Nein zum Turnier. #sprecher:erzaehler
 - Nicht zum Turnier, sagst du. Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
-Er klingt nicht tadelnd. Er klingt neugierig. Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
+Er klingt nicht tadelnd. Er klingt neugierig. #sprecher:erzaehler
+Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
 Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
 Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
 // Spieltest 2 (17.11.2026): Der Held steht noch in Maple Falls; die Reise bringt ihn an den Anfang des Kanalwegs.

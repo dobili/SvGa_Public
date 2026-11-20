@@ -68,7 +68,10 @@ VAR abschiedGesehen = false
 // Geschichte, „tafel == 1“ galt deshalb immer (python -m pipeline.abenteuer.inkbesuche, 17.11.2026).
 {not tafelGesehen: Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler}
 Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
-{not tafelGesehen: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
+{not tafelGesehen:
+    Das macht Mr. Pratt. Jeden Monat ein neues. #sprecher:juno #stimmung:froh
+    Niemand weiß, warum. #sprecher:juno #stimmung:froh
+}
 ~ tafelGesehen = true
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegMapleCedar.tafel")
@@ -254,7 +257,8 @@ Zwischen zwei Steinen am Ufer klemmt eine kleine Holzkiste. Darin klimpern Münz
 // VC19, VC20: Gründungsjahr statt Witz; die Uhr spricht. Am Ende des Flusswegs stehen die Zedern.
 ~ schildCedarGesehen = true
 Die Zedern stehen so dicht, dass die Schritte auf den Nadeln kein Geräusch mehr machen. Selbst Juno redet leiser. #sprecher:erzaehler
-Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäumen, schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr4 #musik:aus #pause:3
+Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ #sprecher:erzaehler
+Dahinter, zwischen den Bäumen, schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr4
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Gatter S1 (Kürbishof)
@@ -443,7 +447,8 @@ Drei Krähen, zwei Vogelscheuchen. Wer gewinnt? #sprecher:ada #stimmung:laechelt
 - Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler #klang:kasse_muenzen
 Diese Woche fehlen wieder sechs. Ich frag nicht, wer. #sprecher:ada #stimmung:nachdenklich
 Ich schreib bloß einen Zettel. #sprecher:ada #stimmung:nachdenklich
-Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist alles. #sprecher:erzaehler
+Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. #sprecher:erzaehler
+Das ist alles. #sprecher:erzaehler
 Otis. Redet mit den Kühen. #sprecher:ada #stimmung:laechelt
 Gatter zu, wenn ihr geht. #sprecher:ada #stimmung:neutral
 -> END

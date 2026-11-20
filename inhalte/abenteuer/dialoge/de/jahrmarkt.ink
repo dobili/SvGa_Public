@@ -32,7 +32,8 @@ VAR abschiedGesehen = false
 === dolores_erstes_treffen ===
 ~ doloresGetroffen = true
 Vor einem Holzkasten mit einem Brett darauf sitzt eine Puppe mit Turban. Daneben steht eine Frau in einem Mantel voller Sterne. #sprecher:erzaehler
-Dolores, Schaustellerin. Das hier ist der Schachtürke. Er hat noch nie verloren. #sprecher:dolores #stimmung:froh
+Dolores, Schaustellerin. Das hier ist der Schachtürke. #sprecher:dolores #stimmung:froh
+Er hat noch nie verloren. #sprecher:dolores #stimmung:froh
 Den ersten hat Wolfgang von Kempelen gebaut, 1770. Er hat gegen Napoleon gespielt und gegen Benjamin Franklin. #sprecher:dolores #stimmung:laechelt
 -> schachautomat_raten
 
@@ -50,7 +51,8 @@ Wer errät, wie er funktioniert, bekommt eine Münze. Also? #sprecher:dolores #s
 === schachautomat_geloest ===
 ~ tuerkeGeheimnisGeloest = true
 Aus dem Kasten klopft es dreimal. Eine Klappe geht auf, und ein Junge mit Taschenlampe grinst heraus. #sprecher:erzaehler
-Erwischt! Ich bin Ike. Das hat diese Woche noch niemand erraten. Hier, deine Münze. #sprecher:ike #stimmung:froh
+Erwischt! Ich bin Ike. #sprecher:ike #stimmung:froh
+Das hat diese Woche noch niemand erraten. Hier, deine Münze. #sprecher:ike #stimmung:froh
 {not abschiedGesehen:
     In Kempelens Kiste saß auch ein Mensch. Ein guter Spieler, der sich klein machen konnte. #sprecher:ambrose #stimmung:laechelt
 }
@@ -63,7 +65,8 @@ Erwischt! Ich bin Ike. Das hat diese Woche noch niemand erraten. Hier, deine Mü
 
 === dolores_lieferung ===
 ~ lieferungAbgegeben = true
-Darlenes Kiste! Endlich Glühbirnen. Die halbe Lichterkette war dunkel. #sprecher:dolores #stimmung:froh
+Darlenes Kiste! Endlich Glühbirnen. #sprecher:dolores #stimmung:froh
+Die halbe Lichterkette war dunkel. #sprecher:dolores #stimmung:froh
 Sag Darlene, die Zuckerwatte geht aufs Haus. Und für dich ist auch was drin. #sprecher:dolores #stimmung:laechelt
 -> END
 

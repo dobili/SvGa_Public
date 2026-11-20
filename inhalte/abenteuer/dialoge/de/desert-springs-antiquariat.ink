@@ -32,9 +32,11 @@ VAR kisteGesehen = false
 
 === okoro_erstes_treffen ===
 ~ okoroGetroffen = true
-Bücher bis unter die Decke, in Stapeln auf dem Boden, zwischen denen schmale Wege führen. Hier wird nichts nass. Hier hält sich alles. #sprecher:erzaehler #geraeusch:antiquariat
+Bücher bis unter die Decke, in Stapeln auf dem Boden, zwischen denen schmale Wege führen. Hier wird nichts nass. #sprecher:erzaehler #geraeusch:antiquariat
+Hier hält sich alles. #sprecher:erzaehler
 Hinter einem Schreibtisch, der einmal ein Fahrkartenschalter war, klebt ein Mann einen Buchrücken. #sprecher:erzaehler
-Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemandem gehört. #sprecher:okoro #stimmung:laechelt
+Okoro. Bücher, Karten, alte Fahrpläne. #sprecher:okoro #stimmung:laechelt
+Was hier liegt, hat schon einmal jemandem gehört. #sprecher:okoro #stimmung:laechelt
 -> okoro_laden
 
 === okoro_kiste ===
@@ -45,18 +47,22 @@ Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemand
 // Kapitel 44 (Roman): sieben Kisten im Keller, Ambroses eigene Briefe nach Jahren gebündelt,
 // das Siegel mit einer Fesselung wie in Ironwood.
 ~ okoroGetroffen = true
-Dot hat dich geschickt? Der Kram von dem Brückenbauer liegt im Keller. Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #stimmung:nachdenklich #geraeusch:antiquariat
-Pläne, Rechnungen, ein Sextant. Ich wollte es immer durchsehen. Dann kam immer ein Buch dazwischen. #sprecher:okoro #stimmung:laechelt
+Dot hat dich geschickt? Der Kram von dem Brückenbauer liegt im Keller. #sprecher:okoro #stimmung:nachdenklich #geraeusch:antiquariat
+Mein Vorgänger hat ihn mit dem Gebäude von der Bahn übernommen. #sprecher:okoro #stimmung:nachdenklich
+Pläne, Rechnungen, ein Sextant. Ich wollte es immer durchsehen. #sprecher:okoro #stimmung:laechelt
+Dann kam immer ein Buch dazwischen. #sprecher:okoro #stimmung:laechelt
 {gefundenUmschlag:
     Du legst den Umschlag aus Ironwood auf den Schalter. Mr. Okoro sieht ihn lange an. #sprecher:erzaehler
 }
 Die Treppe hinunter und dann links. #sprecher:okoro #stimmung:neutral
 Sieben Kisten. In der vierten Briefe, gebündelt mit Schnur, jedes Bündel ein Jahr. 1863. 1864. 1865. #sprecher:erzaehler #bild:briefbuendel
-Die Schrift darauf ist schräg und ungeduldig. Meine. Er hat sie aufgehoben. Jeden. #sprecher:ambrose #stimmung:still #bild:aus
+Die Schrift darauf ist schräg und ungeduldig. Meine. #sprecher:ambrose #stimmung:still #bild:aus
+Er hat sie aufgehoben. Jeden. #sprecher:ambrose #stimmung:still
 Unter dem Bündel 1866 liegt ein einzelnes Blatt, zweimal gefaltet, mit Wachs verschlossen. Ins Wachs ist eine Stellung gedrückt. #sprecher:erzaehler
 Wieder eine Fesselung. Eine andere, schwerer. #sprecher:erzaehler
 Wer mit der Post spielte, drückte dem anderen eine Stellung aufs Siegel. Wer sie nicht löste, hatte den Brief nicht verdient. #sprecher:ambrose #stimmung:nachdenklich
-Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer hinaus. Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose #stimmung:ueberrascht
+Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer hinaus. #sprecher:ambrose #stimmung:ueberrascht
+Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose #stimmung:ueberrascht
 * [„Ein Fehler.“]
 - Sein einziger, soweit ich weiß. #sprecher:ambrose #stimmung:lachtOhneSpott
 ~ kisteGesehen = true
@@ -75,18 +81,22 @@ Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer h
 // mindestens fünf Sekunden Stille; dann ambrose.hale (Kanon, am Schluss einstimmig).
 ~ briefGelesen = true
 Du brichst das Wachs. #sprecher:erzaehler #klang:siegel #musik:aus
-Zwölf Zeilen. Senkrecht, gerade, jede gleich lang. Du liest laut, bei einer Glühbirne, für jemanden, der hundertsechzig Jahre gewartet hat. #sprecher:erzaehler #bild:hales_brief
+Zwölf Zeilen. Senkrecht, gerade, jede gleich lang. #sprecher:erzaehler #bild:hales_brief
+Du liest laut, bei einer Glühbirne, für jemanden, der hundertsechzig Jahre gewartet hat. #sprecher:erzaehler
 „Whitlock, mein neununddreißigster Zug ist seit Dienstag unterwegs zu Ihnen. Sie werden zurückschlagen müssen.“ #sprecher:erzaehler
 „Danach stehen wir in einem Endspiel, und ich weiß nicht, wie es ausgeht. Ich weiß es zum ersten Mal nicht, und es gefällt mir.“ #sprecher:erzaehler
 „Ich habe Ihnen 1859 ein Wort geschrieben, für das ich mich seither schäme. Ich hielt Ihr Spiel für Leichtsinn.“ #sprecher:erzaehler
 „Ich habe sieben Jahre und diese Partie gebraucht, um zu begreifen, dass es Mut war. Und dass ich davon zu wenig habe.“ #sprecher:erzaehler
 „Ein Endspiel spielt man nicht mit der Post. Kommen Sie nach Norden.“ #sprecher:erzaehler
 „Wir spielen die letzten Züge an einem Brett, von Angesicht zu Angesicht. Ich lasse ein Zimmer richten.“ #sprecher:erzaehler
-„Ich warte. J. Hale“ #sprecher:erzaehler #pause:5
-Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts. Das ist schlimmer. #sprecher:erzaehler #bild:aus #pause:3
+„Ich warte. J.“ #sprecher:erzaehler
+„Hale“ #sprecher:erzaehler #pause:5
+Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts. #sprecher:erzaehler #bild:aus
+Das ist schlimmer. #sprecher:erzaehler #pause:3
 Er hat gewartet. #sprecher:ambrose #stimmung:riss #musik:ambrose.hale
 Er hat wirklich gewartet. Er hat ein Zimmer richten lassen. #sprecher:ambrose #stimmung:ueberrascht
-Mut. Er schreibt, es war Mut. Der Mann, der es „bemerkenswert unnötig“ genannt hat. #sprecher:ambrose #stimmung:ueberrascht
+Mut. Er schreibt, es war Mut. #sprecher:ambrose #stimmung:ueberrascht
+Der Mann, der es „bemerkenswert unnötig“ genannt hat. #sprecher:ambrose #stimmung:ueberrascht
 * [„Er hat sich geschämt.“]
 - Sieben Jahre lang. Und ich habe ihn sieben Jahre lang gehasst, für ein einziges Wort. #sprecher:ambrose #stimmung:bitter
 Wir waren zwei Dickköpfe, {held}. Zwei Dickköpfe, und zwischen uns ein Land und ein Postmeister mit Fieber. #sprecher:ambrose #stimmung:lachtOhneSpott
@@ -94,16 +104,20 @@ Er hat auf mich gewartet und ich auf ihn. Und jeder hat gedacht, der andere schw
 * [„Wie Big Joe und Mama.“]
 - Wie die halbe Welt, fürchte ich. #sprecher:ambrose #stimmung:laechelt
 Auf der Rückseite stehen vier Züge, sauber untereinander. #sprecher:erzaehler
-Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. Damit wir dieselbe Stellung aufbauen, wenn ich ankomme. #sprecher:ambrose #stimmung:nachdenklich
-Zwei Umschläge am selben Dienstag. Der mit dem Zug kam an. Der mit der Einladung blieb leer in einem Postsack liegen. #sprecher:ambrose #stimmung:bitter
+Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. #sprecher:ambrose #stimmung:nachdenklich
+Damit wir dieselbe Stellung aufbauen, wenn ich ankomme. #sprecher:ambrose #stimmung:nachdenklich
+Zwei Umschläge am selben Dienstag. Der mit dem Zug kam an. #sprecher:ambrose #stimmung:bitter
+Der mit der Einladung blieb leer in einem Postsack liegen. #sprecher:ambrose #stimmung:bitter
 Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie geöffnet. #sprecher:ambrose #stimmung:still
-Seine Antwort auf meinen letzten Zug hat er nie abgeschickt. An wen auch. Sie steht auf der Seite, die fehlt. #sprecher:ambrose #stimmung:still
+Seine Antwort auf meinen letzten Zug hat er nie abgeschickt. An wen auch. #sprecher:ambrose #stimmung:still
+Sie steht auf der Seite, die fehlt. #sprecher:ambrose #stimmung:still
 {gefundenUmschlag:
     Du faltest den Brief und legst ihn in den Umschlag aus Ironwood. Er passt genau. #sprecher:erzaehler
 }
 ~ gibFund("halesBrief")
 Oben sieht Mr. Okoro dein Gesicht und fragt nichts. #sprecher:erzaehler
-Manche Bücher stehen fünfzig Jahre im Regal, bis jemand sie braucht. Das ist kein Unglück. Das ist ein Antiquariat. #sprecher:okoro #stimmung:laechelt
+Manche Bücher stehen fünfzig Jahre im Regal, bis jemand sie braucht. Das ist kein Unglück. #sprecher:okoro #stimmung:laechelt
+Das ist ein Antiquariat. #sprecher:okoro #stimmung:laechelt
 -> END
 
 === okoro_alltag ===

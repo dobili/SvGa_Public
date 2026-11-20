@@ -62,8 +62,10 @@ Der Feldweg neben den Gleisen endet an einem Bahnhof aus rotem Backstein. Es beg
 // Kapitel 18: laut, nass, lebendig. Musik und Regen kommen von der Karte (riverton, regen).
 ~ ankunftRivertonGesehen = true
 Riverton riecht nach Regen auf Stein. Backstein, rot und rußig, Feuerleitern, Schornsteine, aus denen nichts mehr kommt. #sprecher:erzaehler
-Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. Aus zwei Fenstern kommen zwei Musiken und streiten sich. #sprecher:erzaehler
-Hier bin ich geboren. Also fast. Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
+Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. #sprecher:erzaehler
+Aus zwei Fenstern kommen zwei Musiken und streiten sich. #sprecher:erzaehler
+Hier bin ich geboren. Also fast. #sprecher:juno #stimmung:froh
+Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
 An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler
 Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose #stimmung:laechelt
 Meine Cousine sagt, der echte Club spielt im Parkpavillon am Fluss. Der Chef heißt Slick, und er redet schneller, als er zieht. #sprecher:juno #stimmung:froh
@@ -86,7 +88,8 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 {nadelRiverton > 0:
     Der Treidelpfad am Kanal führt nach Ironwood. Zu Fuß ist es weit, mit dem Rad geht es schneller. #sprecher:erzaehler
     {not abschiedGesehen:
-        Ironwood. Dort riecht die Luft nach Eisen, sagt man. Gehen wir. #sprecher:ambrose #stimmung:laechelt
+        Ironwood. Dort riecht die Luft nach Eisen, sagt man. #sprecher:ambrose #stimmung:laechelt
+        Gehen wir. #sprecher:ambrose #stimmung:laechelt
     }
 - else:
     Ein Treidelpfad führt am Kanal entlang Richtung Ironwood. #sprecher:erzaehler
@@ -147,7 +150,8 @@ Man tippt eine Zahl ein, und nach drei Tagen kommt ein Karton. #sprecher:albescu
 Im Schuppen hinten steht noch alles, wie mein Mann es gelassen hat. Ich komm nicht hinein. #sprecher:albescu #stimmung:bitter
 * [„Warum nicht?“]
 * [Zuhören]
-- Der Schlüssel. Er hatte ihn immer an der Angelweste. Vor zwei Jahren kommt er vom Bach bei Cedar Creek, und der Schlüssel ist weg. #sprecher:albescu #stimmung:nachdenklich
+- Der Schlüssel. Er hatte ihn immer an der Angelweste. #sprecher:albescu #stimmung:nachdenklich
+Vor zwei Jahren kommt er vom Bach bei Cedar Creek, und der Schlüssel ist weg. #sprecher:albescu #stimmung:nachdenklich
 Er hat den ganzen Sommer gesucht. Dann hat er gesagt, wir lassen ein neues Schloss machen. #sprecher:albescu #stimmung:nachdenklich
 Sie fegt ein Blatt beiseite. #sprecher:erzaehler
 Wir sind nicht mehr dazu gekommen. #sprecher:albescu #stimmung:bitter #pause:2
@@ -161,10 +165,13 @@ Wir sind nicht mehr dazu gekommen. #sprecher:albescu #stimmung:bitter #pause:2
 === albescu_schluessel ===
 ~ schuppenOffen = true
 Der Schlüssel aus dem Schilf. Du hast ihn vergessen, wie man Dinge vergisst, die nichts wiegen. #sprecher:erzaehler
-Du hältst ihn ihr hin. Sie sieht ihn an. Sie nimmt ihn nicht gleich. #sprecher:erzaehler #pause:2
-Das ist seiner. Der runde Griff. Ich erkenn ihn sofort. #sprecher:albescu #stimmung:froh
+Du hältst ihn ihr hin. Sie sieht ihn an. #sprecher:erzaehler
+Sie nimmt ihn nicht gleich. #sprecher:erzaehler #pause:2
+Das ist seiner. Der runde Griff. #sprecher:albescu #stimmung:froh
+Ich erkenn ihn sofort. #sprecher:albescu #stimmung:froh
 Sie lacht, und gleichzeitig wischt sie sich mit dem Handrücken über die Augen. #sprecher:erzaehler
-Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännchen in ihrer Schürze. Dann geht die Tür auf. #sprecher:erzaehler #klang:schloss
+Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännchen in ihrer Schürze. #sprecher:erzaehler #klang:schloss
+Dann geht die Tür auf. #sprecher:erzaehler
 -> END
 
 === albescu_alltag ===
@@ -195,19 +202,22 @@ Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännc
 {
 - not ankunftRivertonGesehen: -> ankunft
 - novaGesehen:
-    Nova sitzt auf der Kante des Podiums. Die Kameras sind weg. Sie sieht nicht auf. #sprecher:erzaehler
+    Nova sitzt auf der Kante des Podiums. Die Kameras sind weg. #sprecher:erzaehler
+    Sie sieht nicht auf. #sprecher:erzaehler
     -> END
 }
 ~ novaGesehen = true
 Auf dem Podium steht ein Mädchen in einer weißen Jacke mit dem Zeichen des Konzerns und lächelt in die Kameras. #sprecher:erzaehler
-Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner. Keine schlechten Tage. #sprecher:nova #stimmung:froh
+Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner. #sprecher:nova #stimmung:froh
+Keine schlechten Tage. #sprecher:nova #stimmung:froh
 Der Tisch ist immer bereit, immer geduldig, immer genau so stark, wie du ihn brauchst. #sprecher:nova #stimmung:froh
 Dann gehen die roten Lichter an den Kameras aus. Ihr Lächeln fällt herunter wie etwas, das man loslässt. #sprecher:erzaehler #pause:2
 Kann ich jetzt kurz sitzen? #sprecher:nova #stimmung:nachdenklich
 * [Juno ansehen]
 * [Weiter zusehen]
 - Sie fragt niemanden. Sie setzt sich auf die Kante des Podiums, in den Regen. #sprecher:erzaehler
-Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #sprecher:juno #stimmung:ueberrascht
+Nova Sinclair. Landesmeisterin. #sprecher:juno #stimmung:ueberrascht
+Der Highschools. Die hat noch nie verloren. #sprecher:juno #stimmung:ueberrascht
 -> END
 
 === victor ===
@@ -251,11 +261,13 @@ Victor steht unter dem Banner und tippt auf ein Tablet. Einmal sieht er zum Pavi
 }
 ~ bildschirmtischeGesehen = true
 Auf der Wiese stehen sechs Tische in einer Reihe, weiß, mit Bildschirmen, die im Regen leuchten. Über jedem ein kleines Dach aus Glas. #sprecher:erzaehler #musik:konzern.flaeche
-Auf einem läuft eine Partie. Niemand sitzt davor. Die Figuren ziehen von selbst, wie Wasser einen Hang hinunter. #sprecher:erzaehler
+Auf einem läuft eine Partie. Niemand sitzt davor. #sprecher:erzaehler
+Die Figuren ziehen von selbst, wie Wasser einen Hang hinunter. #sprecher:erzaehler
 * [„Ambrose?“]
     Er dreht sich nicht um. #sprecher:erzaehler
 * [Hinsehen]
-- Sie hat nicht gezögert. Kein einziges Mal. Achtundzwanzig Züge. Und in keinem … #sprecher:ambrose #stimmung:fern #pause:2
+- Sie hat nicht gezögert. Kein einziges Mal. #sprecher:ambrose #stimmung:fern
+Achtundzwanzig Züge. Und in keinem … #sprecher:ambrose #stimmung:fern #pause:2
 Eine Rechenmaschine, die nie zweifelt, ist kein Spieler. Das ist ein Rechenschieber mit Beleuchtung. #sprecher:ambrose #stimmung:bitter
 Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:erzaehler
 -> END
@@ -276,11 +288,14 @@ Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:er
 ~ eliGesehen = true
 {
 - endeAkt3Gesehen:
-    Eli spielt heute unter der Brücke, an einem Klappbrett. Gestern saß er am Tisch. Beides ist recht. #sprecher:erzaehler
+    Eli spielt heute unter der Brücke, an einem Klappbrett. Gestern saß er am Tisch. #sprecher:erzaehler
+    Beides ist recht. #sprecher:erzaehler
 - nadelIronwood > 0:
-    Eli sitzt am Rand unter der Brücke und schaut den anderen zu. Er sagt nichts. Er geht auch nicht. #sprecher:erzaehler
+    Eli sitzt am Rand unter der Brücke und schaut den anderen zu. Er sagt nichts. #sprecher:erzaehler
+    Er geht auch nicht. #sprecher:erzaehler
 - nadelRiverton > 0:
-    Eli sitzt wieder am leuchtenden Tisch. Neben dem Bildschirm steht eine Dose Limonade. Tamsin hat sie hingestellt. #sprecher:erzaehler
+    Eli sitzt wieder am leuchtenden Tisch. Neben dem Bildschirm steht eine Dose Limonade. #sprecher:erzaehler
+    Tamsin hat sie hingestellt. #sprecher:erzaehler
 - else:
     An einem Tisch sitzt jetzt ein Junge, kleiner als Tamsin, allein. Der Bildschirm wirft Licht auf sein Gesicht. #sprecher:erzaehler
     Er sieht nicht auf. Der Tisch wartet geduldig, bis er zieht. #sprecher:erzaehler

@@ -26,18 +26,22 @@ VAR slickAbschiedGesehen = false
 
 === slick_abschied ===
 ~ slickAbschiedGesehen = true
-Drinnen ist es eng und warm. In der Ecke lehnt seine Kuriertasche. Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler #musik:riverton.wohnwagen
+Drinnen ist es eng und warm. In der Ecke lehnt seine Kuriertasche. #sprecher:erzaehler #musik:riverton.wohnwagen
+Auf einem Brett über dem Bett stehen Pokale. #sprecher:erzaehler
 Sie sind aus Limonadendosen, aufgeschnitten, gebogen, mit Draht. „Parkmeister 2019.“ „Bester Verlierer 2017.“ #sprecher:erzaehler
-Der Alte hat die gebaut. Jedes Jahr einen. Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick #stimmung:nachdenklich
+Der Alte hat die gebaut. Jedes Jahr einen. #sprecher:slick #stimmung:nachdenklich
+Richtige Pokale kosten Geld, hat er gesagt, und Dosen hab ich genug getrunken. #sprecher:slick #stimmung:nachdenklich
 Er setzt sich aufs Bett und sieht hinauf zu den Dosen. #sprecher:erzaehler
 Ich hab seit März keinen neuen. #sprecher:slick #stimmung:bitter #pause:2
 * [Nichts sagen]
 * [Juno ansehen]
-- Ich bin ein Großmaul. Weiß ich. Ich dachte, wenn ich laut genug bin, hören die im Rathaus, dass da noch jemand ist. #sprecher:slick #stimmung:bitter
+- Ich bin ein Großmaul. Weiß ich. #sprecher:slick #stimmung:bitter
+Ich dachte, wenn ich laut genug bin, hören die im Rathaus, dass da noch jemand ist. #sprecher:slick #stimmung:bitter
 Er reibt sich das Gesicht. #sprecher:erzaehler
 Haben sie nicht. #sprecher:slick #stimmung:bitter
 Er hält dir einen weißen Springer aus Stein hin. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
-Aus dem letzten Satz. Nimm ihn mit. Stell ihn irgendwo hin, wo gespielt wird. #sprecher:slick #stimmung:nachdenklich
+Aus dem letzten Satz. Nimm ihn mit. #sprecher:slick #stimmung:nachdenklich
+Stell ihn irgendwo hin, wo gespielt wird. #sprecher:slick #stimmung:nachdenklich
 * [Den Springer nehmen]
 - ~ gibFund("pavillonspringer")
 // Gutachten K2.3: kein Spruch-Tutorial an der stillsten Stelle. Die Grübelfalle gibt nach dem Roman
@@ -65,14 +69,16 @@ Und ein Mann mit Dosenpokalen kann keines von beiden ganz. Was heißt das? #spre
 * [„Ich weiß es nicht.“]
     Er nickt nicht. Er sieht wieder hinauf zum Park, wo es leuchtet. #sprecher:erzaehler
 * [Den Springer in der Hand drehen]
-    Du siehst auf die Stelle, wo die Mähne fehlt. Er wartet. Dann sieht er wieder zum Park. #sprecher:erzaehler
+    Du siehst auf die Stelle, wo die Mähne fehlt. Er wartet. #sprecher:erzaehler
+    Dann sieht er wieder zum Park. #sprecher:erzaehler
 - -> turnier_nachricht
 
 // Lektorat Akt 2 (17.11.2026): der Anlass für Ironwood. Juno liest die Nachricht des Coachs; den
 // Zettel zeigt {held} zu Hause Mama (maple-falls-wohnzimmer.nicht_ironwood, Quest ironwood.turnier).
 === turnier_nachricht ===
 Juno sieht auf ihr Telefon. Das Licht vom Bildschirm macht ihr Gesicht blau. #sprecher:erzaehler #pause
-Coach Delgado hat geschrieben. Freundschaftsturnier in Ironwood, beim Stahlwerker-Club. Vier Bretter. Drei Ausrufezeichen. #sprecher:juno #stimmung:ueberrascht
+Coach Delgado hat geschrieben. Freundschaftsturnier in Ironwood, beim Stahlwerker-Club. #sprecher:juno #stimmung:ueberrascht
+Vier Bretter. Drei Ausrufezeichen. #sprecher:juno #stimmung:ueberrascht
 Der Zettel liegt bei dir zu Hause. Deine Mama muss unterschreiben. #sprecher:juno #stimmung:laechelt
 Vier Bretter. Dann brauchen sie dich. #sprecher:ambrose #stimmung:nachdenklich
 -> heimfahrt

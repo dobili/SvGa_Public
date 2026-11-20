@@ -24,8 +24,10 @@ VAR angesehenHintertuer = false
     Die Schublade ist zu. Tausend grüne Lichter blinken, ohne Takt. #sprecher:erzaehler
     -> END
 }
-Kalt wie in einem Kühlschrank. Schränke aus Metall in langen Reihen, tausend grüne Lichter, ohne Takt. Hier also wohnt es. #sprecher:erzaehler
-In der dritten Schublade eines Rollschranks liegt eine weiße Schachtel. Darin, je in einer Mulde: Ohrstöpsel. Fünf Mulden sind leer. #sprecher:erzaehler
+Kalt wie in einem Kühlschrank. Schränke aus Metall in langen Reihen, tausend grüne Lichter, ohne Takt. #sprecher:erzaehler
+Hier also wohnt es. #sprecher:erzaehler
+In der dritten Schublade eines Rollschranks liegt eine weiße Schachtel. Darin, je in einer Mulde: Ohrstöpsel. #sprecher:erzaehler
+Fünf Mulden sind leer. #sprecher:erzaehler
 {ohrstoepselGefunden:
     Der Stöpsel von der Glasbrücke passt genau in eine davon. Vier bleiben leer. #sprecher:erzaehler #pause:2
 - else:
@@ -42,17 +44,23 @@ Bitte. Noch nicht. #sprecher:nova #stimmung:ernst
 // Nova erzählt vom Vertrag. Gutachten L2.3: Der Held antwortet mit einer Handlung, nicht mit
 // Worten; das Schweigen gilt als Versprechen (Auflösung in Akt 4).
 === schummelgeraete_nova ===
-Es steht in meinem Vertrag. Nicht so. Da steht: technische Assistenz zur Leistungsoptimierung. #sprecher:nova #stimmung:bitter
-Ich war vierzehn. Meine Eltern haben unterschrieben. Sie dachten, es geht um Trainingspläne. #sprecher:nova #stimmung:bitter
+Es steht in meinem Vertrag. Nicht so. #sprecher:nova #stimmung:bitter
+Da steht: technische Assistenz zur Leistungsoptimierung. #sprecher:nova #stimmung:bitter
+Ich war vierzehn. Meine Eltern haben unterschrieben. #sprecher:nova #stimmung:bitter
+Sie dachten, es geht um Trainingspläne. #sprecher:nova #stimmung:bitter
 * [„Und Dr. Lin?“]
-- Weiß nichts. Sie würde kündigen. Dann hätten vierzig Kinder keinen Raum. #sprecher:nova #stimmung:nachdenklich
+- Weiß nichts. Sie würde kündigen. #sprecher:nova #stimmung:nachdenklich
+Dann hätten vierzig Kinder keinen Raum. #sprecher:nova #stimmung:nachdenklich
 Nova zieht die Ärmel über die Hände. #sprecher:erzaehler
-Ich war gut, weißt du. Vorher. Ich war richtig gut. #sprecher:nova #stimmung:bitter
+Ich war gut, weißt du. Vorher. #sprecher:nova #stimmung:bitter
+Ich war richtig gut. #sprecher:nova #stimmung:bitter
 Ich weiß nicht mehr, wie gut. Ich weiß nicht mehr, welche von den Zügen meine sind. #sprecher:nova #stimmung:ernst #pause:2
 Du denkst an ein Mädchen auf einem Foto, das die Hände in den Ärmeln hat. #sprecher:erzaehler
 * [Nova ansehen]
-- Wenn das rauskommt, bin ich die Schuldige. Nicht die. Die haben Anwälte. Ich hab ein Gesicht. #sprecher:nova #stimmung:bitter
-Gib mir Zeit. Ich finde einen Weg. Aber nicht mit einer Schachtel aus einer Schublade. #sprecher:nova #stimmung:nachdenklich
+- Wenn das rauskommt, bin ich die Schuldige. Nicht die. #sprecher:nova #stimmung:bitter
+Die haben Anwälte. Ich hab ein Gesicht. #sprecher:nova #stimmung:bitter
+Gib mir Zeit. Ich finde einen Weg. #sprecher:nova #stimmung:nachdenklich
+Aber nicht mit einer Schachtel aus einer Schublade. #sprecher:nova #stimmung:nachdenklich
 * [Die Schachtel zurücklegen]
 - ~ novaVersprechen = true
 {ohrstoepselGefunden:Du legst die Schachtel zurück. Den Stöpsel von der Glasbrücke behältst du.|Du legst die Schachtel zurück. Einen Stöpsel behältst du.} #sprecher:erzaehler #pause:2

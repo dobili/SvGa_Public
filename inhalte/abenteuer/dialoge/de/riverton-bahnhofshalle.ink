@@ -65,7 +65,8 @@ VAR abschiedGesehen = false
     Mr. Harlan sieht von seinem Brett auf. #sprecher:erzaehler
     Setz dich. Hier tickt nichts. #sprecher:harlan #stimmung:laechelt
 - else:
-    Auf der Bank unter der Uhr spielt Tamsin gegen Mr. Harlan. Ohne Uhr. Sie zählt nicht. #sprecher:erzaehler
+    Auf der Bank unter der Uhr spielt Tamsin gegen Mr. Harlan. Ohne Uhr. #sprecher:erzaehler
+    Sie zählt nicht. #sprecher:erzaehler
     Sie ist die Erste seit Jahren, die wartet, bis ich ziehe. #sprecher:harlan #stimmung:laechelt
 }
 + [„Eine Partie, Mr. Harlan?“]
@@ -80,8 +81,10 @@ VAR abschiedGesehen = false
 // Kapitel 19: eine kleine Lupe aus Messing, kein Gerät; Ambrose lobt die Ehrlichkeit, nicht den Nutzen.
 ~ lupeGeschenkt = true
 Er greift in die Westentasche und legt dir etwas in die Hand. Eine kleine Lupe aus Messing, zum Aufklappen, blank gerieben. #sprecher:erzaehler
-Fünfzig Jahre an Uhrwerken. Man sieht damit nicht die Zahnräder. Man sieht, wo es hakt. #sprecher:harlan #stimmung:nachdenklich
-Bei mir: Ich denke zu lange. Du darfst das wissen. Die meisten wollen es nicht wissen, sie wollen nur schneller sein. #sprecher:harlan #stimmung:nachdenklich
+Fünfzig Jahre an Uhrwerken. Man sieht damit nicht die Zahnräder. #sprecher:harlan #stimmung:nachdenklich
+Man sieht, wo es hakt. #sprecher:harlan #stimmung:nachdenklich
+Bei mir: Ich denke zu lange. Du darfst das wissen. #sprecher:harlan #stimmung:nachdenklich
+Die meisten wollen es nicht wissen, sie wollen nur schneller sein. #sprecher:harlan #stimmung:nachdenklich
 {not abschiedGesehen:
     Ein ehrliches Werkzeug. Es zeigt nur, was ohnehin da ist. #sprecher:ambrose #stimmung:laechelt
 }
@@ -92,16 +95,19 @@ Bei mir: Ich denke zu lange. Du darfst das wissen. Die meisten wollen es nicht w
 ~ harlanGetroffen = true
 Unter der großen Uhr sitzt ein Mann mit Lupenbrille auf einer Bank und sieht auf ein Brett. Er bewegt sich nicht. #sprecher:erzaehler
 Der Mann vom Zeitungsstand ruft zu euch herüber. #sprecher:erzaehler
-Mr. Harlan. Uhrmacher. Zieht die da oben jeden Morgen auf, seit zweiundvierzig Jahren. #sprecher:pops #stimmung:laechelt
+Mr. Harlan. Uhrmacher. #sprecher:pops #stimmung:laechelt
+Zieht die da oben jeden Morgen auf, seit zweiundvierzig Jahren. #sprecher:pops #stimmung:laechelt
 Wenn du mit ihm spielst, bring Zeit mit. Oder nimm ihm welche weg. #sprecher:pops #stimmung:lacht
-Gegen den hab ich mal gespielt, bei meiner Cousine. Eine Stunde für zwölf Züge. Und dann hat er gewonnen. #sprecher:juno #stimmung:ueberrascht
+Gegen den hab ich mal gespielt, bei meiner Cousine. Eine Stunde für zwölf Züge. #sprecher:juno #stimmung:ueberrascht
+Und dann hat er gewonnen. #sprecher:juno #stimmung:ueberrascht
 Mr. Harlan hebt den Kopf, sehr langsam. Hinter den Gläsern sind seine Augen riesig. #sprecher:erzaehler
 -> harlan_angebot
 
 === harlan_angebot ===
 Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan #stimmung:laechelt
 Er sieht hinauf zur großen Uhr. #sprecher:erzaehler
-Eile ist der Feind der Feder. Und der Unruh. Aber bitte. #sprecher:harlan #stimmung:laechelt
+Eile ist der Feind der Feder. Und der Unruh. #sprecher:harlan #stimmung:laechelt
+Aber bitte. #sprecher:harlan #stimmung:laechelt
 {not abschiedGesehen:
     Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose #stimmung:laechelt
 }
@@ -150,7 +156,8 @@ Langsam ist auch eine Geschwindigkeit. Noch einmal? #sprecher:harlan #stimmung:l
 // vorteil. Vorher ging es in harlan_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === harlan_nach_remis ===
-Unentschieden. Der Zug ist pünktlich, aber nicht schneller. Noch einmal? #sprecher:harlan #stimmung:laechelt
+Unentschieden. Der Zug ist pünktlich, aber nicht schneller. #sprecher:harlan #stimmung:laechelt
+Noch einmal? #sprecher:harlan #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.harlan")
     -> END
@@ -173,8 +180,10 @@ Unentschieden. Der Zug ist pünktlich, aber nicht schneller. Noch einmal? #sprec
 }
 ~ popsGetroffen = true
 Ein runder, freundlicher Mann hinter einem Zeitungsstand. Neben den Zeitungen hängt eine Reihe Taschenschachspiele, in allen Farben. #sprecher:erzaehler
-Pops. Zeitungen, Limo, Taschenschach. Seit dreißig Jahren. #sprecher:pops #stimmung:laechelt
-Ein Kiosk ist eine Bibliothek, die man essen kann. Schau dich um. Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops #stimmung:laechelt
+Pops. Zeitungen, Limo, Taschenschach. #sprecher:pops #stimmung:laechelt
+Seit dreißig Jahren. #sprecher:pops #stimmung:laechelt
+Ein Kiosk ist eine Bibliothek, die man essen kann. Schau dich um. #sprecher:pops #stimmung:laechelt
+Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops #stimmung:laechelt
 -> pops_laden
 
 // Kapitel 19: Pops erzählt von Mr. Odum, ohne dass man fragt (etwa eine Minute; Musik riverton.pops).
@@ -225,21 +234,25 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 }
 // Lektorat 20.11.2026: Nach „Nicht jetzt“ nicht noch einmal Zug, Juno, Klavierbauer und neun Schläge.
 {uhrAngebotGesehen: -> uhr_wieder}
-Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
+Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. #sprecher:erzaehler
+Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
 Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
 // Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; die Uhr führt allein nach London.
 {abschiedGesehen: -> schlag}
 Ich war auch einmal jung. Das ist lange her. #sprecher:ambrose #stimmung:laechelt
 Er sieht nicht zu den Fenstern. Er sieht hinauf zur Uhr. #sprecher:erzaehler
-Mein Vater baute Klaviere. Für das Holz fuhr er nach London, einmal im Jahr. Als ich zwanzig war, nahm er mich mit. #sprecher:ambrose #stimmung:nachdenklich
-Ich sollte lernen, wie man Fichte prüft. Man klopft darauf und hört zu. Ich habe nichts gehört. Ich dachte an etwas anderes. #sprecher:ambrose #stimmung:laechelt
+Mein Vater baute Klaviere. Für das Holz fuhr er nach London, einmal im Jahr. #sprecher:ambrose #stimmung:nachdenklich
+Als ich zwanzig war, nahm er mich mit. #sprecher:ambrose #stimmung:nachdenklich
+Ich sollte lernen, wie man Fichte prüft. Man klopft darauf und hört zu. #sprecher:ambrose #stimmung:laechelt
+Ich habe nichts gehört. Ich dachte an etwas anderes. #sprecher:ambrose #stimmung:laechelt
 * [„Woran?“]
 * [Zuhören]
 - -> schlag
 
 = schlag
 ~ uhrAngebotGesehen = true
-Die Uhr schlägt. Neunmal. Mit jedem Schlag wird die Halle heller, und der Hall wird zu Hufen auf Pflaster. #sprecher:erzaehler #klang:uhr_hufschlag #musik:aus
+Die Uhr schlägt. Neunmal. #sprecher:erzaehler #klang:uhr_hufschlag #musik:aus
+Mit jedem Schlag wird die Halle heller, und der Hall wird zu Hufen auf Pflaster. #sprecher:erzaehler
 {not abschiedGesehen:
     Komm. Ich zeige es dir. #sprecher:ambrose #stimmung:laechelt
 }
@@ -267,13 +280,15 @@ Juno schläft noch auf der Bank. Die Uhr tickt laut in der leeren Halle. #sprech
 // Musik ambrose.zweifel (Ambroses Kopf mit dem Konzernton). Juno merkt es und schreibt nichts auf.
 === london_nachgespraech ===
 ~ londonNachgespraechGesehen = true
-Du sitzt wieder auf der Bank unter der Uhr. Juno schläft. Deine Hände sind deine. #sprecher:erzaehler
+Du sitzt wieder auf der Bank unter der Uhr. Juno schläft. #sprecher:erzaehler
+Deine Hände sind deine. #sprecher:erzaehler
 {abschiedGesehen: -> END}
 Sie nennen sie die Unsterbliche. Heute noch, nehme ich an. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ja.“]
 * [Nicken]
 - Er ist lange still. Draußen, hinter den Fenstern, leuchten die Tische. #sprecher:erzaehler #pause:2
-Diese Maschinen. Sie würden das nie spielen. Zwei Türme und die Dame. Sie würden ausrechnen, dass es anders sicherer ist. #sprecher:ambrose #stimmung:nachdenklich
+Diese Maschinen. Sie würden das nie spielen. #sprecher:ambrose #stimmung:nachdenklich
+Zwei Türme und die Dame. Sie würden ausrechnen, dass es anders sicherer ist. #sprecher:ambrose #stimmung:nachdenklich
 Oder doch? #sprecher:ambrose #stimmung:fern #musik:ambrose.zweifel #pause:2
 Wenn sie alles sehen, jeden Zug bis zum Ende, dann sehen sie auch das. Dann wissen sie, dass es stimmt, bevor sie die Hand heben. #sprecher:ambrose #stimmung:nachdenklich
 Sie müssten nicht hoffen. #sprecher:ambrose #stimmung:nachdenklich
@@ -328,6 +343,7 @@ Willst du es versuchen? Für Elias. #sprecher:pops #stimmung:laechelt
 Auf der Bank neben {harlanGetroffen:Mr. Harlan|dem Mann mit der Lupenbrille} liegt eine graue Taubenfeder. Er schiebt sie dir hin, ohne aufzusehen. #sprecher:erzaehler
 ~ gibFund("taubenfeder")
 {not abschiedGesehen:
-    Eine Feder. Damit schrieb man früher Partien auf. Ich auch. #sprecher:ambrose #stimmung:laechelt
+    Eine Feder. Damit schrieb man früher Partien auf. #sprecher:ambrose #stimmung:laechelt
+    Ich auch. #sprecher:ambrose #stimmung:laechelt
 }
 -> END

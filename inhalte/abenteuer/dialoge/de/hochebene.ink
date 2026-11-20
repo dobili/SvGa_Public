@@ -51,14 +51,16 @@ VAR finchTurmBGezaehlt = false
 ~ kiraGetroffen = true
 ~ varianteFalkeUndBisonGelernt = true
 Am Fuß der Felstürme steht ein flacher Steintisch. Ein Mädchen mit Schulrucksack und Basketball unter dem Arm stellt Figuren auf ein abgegriffenes Brett. #sprecher:erzaehler
-Die kennst du nicht. Das hier ist fast Schach. Nur besser. #sprecher:kira #stimmung:froh
+Die kennst du nicht. Das hier ist fast Schach. #sprecher:kira #stimmung:froh
+Nur besser. #sprecher:kira #stimmung:froh
 Ich bin Kira. Der Bus fährt in einer halben Stunde, das reicht für eine Erklärung. #sprecher:kira #stimmung:laechelt
 * [„Was sind das für Figuren?“]
 - Sie hebt zwei Figuren hoch, die nicht in dein Schachspiel gehören: einen Vogel mit eckigen Flügeln und ein breites Tier mit gesenktem Kopf. #sprecher:erzaehler
 Der Falke zieht wie ein Läufer oder springt wie ein Springer. Der Bison zieht wie ein Turm oder springt wie ein Springer. #sprecher:kira #stimmung:neutral
 Man setzt sie ein, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Dann landen sie auf dem Feld, das frei wird. #sprecher:kira #stimmung:neutral
 Bei uns heißt das Spiel einfach Falke und Bison. Meine Urgroßmutter hat die zwei geschnitzt, in einem Winter, als die Straße zugeschneit war und dem Schulschach zwei Figuren fehlten. #sprecher:kira #stimmung:laechelt
-Den Falken, weil über den Felstürmen immer einer kreist. Den Bison, weil ihr Bruder so stur war. Sagt jedenfalls meine Oma. #sprecher:kira #stimmung:lacht
+Den Falken, weil über den Felstürmen immer einer kreist. Den Bison, weil ihr Bruder so stur war. #sprecher:kira #stimmung:lacht
+Sagt jedenfalls meine Oma. #sprecher:kira #stimmung:lacht
 -> kira_vorfuehren
 
 === kira_vorfuehren ===
@@ -66,11 +68,14 @@ Kira zeigt es dir an einer kurzen Partie. Du ziehst vorsichtig, sie zieht schnel
 Sie schlägt dich in vierzehn Zügen. Der Falke kommt aus einer Richtung, mit der du nicht rechnest, und dann aus einer anderen. #sprecher:erzaehler
 Das passiert allen beim ersten Mal. Mein Cousin hat ein Jahr gebraucht. #sprecher:kira #stimmung:laechelt
 {not abschiedGesehen:
-    Ich würde dir gern erklären, wie man dagegen spielt. Aber ich weiß es nicht. Ich sehe diese Figuren zum ersten Mal. #sprecher:ambrose #stimmung:froh
-    Ich habe gelernt, dass man Spiele nicht erklärt. Man lernt sie. Spiel noch eine. #sprecher:ambrose #stimmung:froh
+    Ich würde dir gern erklären, wie man dagegen spielt. Aber ich weiß es nicht. #sprecher:ambrose #stimmung:froh
+    Ich sehe diese Figuren zum ersten Mal. #sprecher:ambrose #stimmung:froh
+    Ich habe gelernt, dass man Spiele nicht erklärt. Man lernt sie. #sprecher:ambrose #stimmung:froh
+    Spiel noch eine. #sprecher:ambrose #stimmung:froh
 }
 // VARIANTE-FEHLT: Falke und Bison (L9). Bis es gebaut ist, nur die Regel, die Vorführung und eine Vertröstung.
-Der Bus! Eine richtige Partie, wenn du wiederkommst. Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn Jahren. #sprecher:kira #stimmung:ueberrascht
+Der Bus! Eine richtige Partie, wenn du wiederkommst. #sprecher:kira #stimmung:ueberrascht
+Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn Jahren. #sprecher:kira #stimmung:ueberrascht
 -> END
 
 === kira_geschenk ===
@@ -78,14 +83,16 @@ Der Bus! Eine richtige Partie, wenn du wiederkommst. Und frag meine Tante in der
 Kira kommt vom Bus gerannt. #sprecher:erzaehler
 Tante Annek hat erzählt, dass du ihr Schach beigebracht hast. Sie hat beim Abendessen nur noch von Springern geredet. #sprecher:kira #stimmung:lacht
 Sie drückt dir einen Falken in die Hand, aus hellem Holz, kleiner als die auf dem Tisch. Die Flügel sind noch nicht ganz fertig. #sprecher:erzaehler
-Werkstück. Den hab ich verschnitten. Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
+Werkstück. Den hab ich verschnitten. #sprecher:kira #stimmung:laechelt
+Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
 ~ gibFund("falkeAusHolz")
 -> END
 
 === kira_alltag ===
 {~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden. Oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig. Mit Uhr. Ich hab eine.} #sprecher:kira #stimmung:laechelt
 + [„Erklär mir die Regeln noch einmal.“]
-    Falke: Läufer oder Springer. Bison: Turm oder Springer. Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira #stimmung:laechelt
+    Falke: Läufer oder Springer. Bison: Turm oder Springer. #sprecher:kira #stimmung:laechelt
+    Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira #stimmung:laechelt
     -> END
 + [„Bis bald, Kira.“]
     -> END
@@ -102,7 +109,8 @@ Werkstück. Den hab ich verschnitten. Aber er zieht trotzdem. #sprecher:kira #st
 === annek_erstes_treffen ===
 ~ annekGetroffen = true
 Vor der Schule wirft eine Frau in Trainingsjacke Körbe. Sie trifft dreimal hintereinander und tut so, als wäre das normal. #sprecher:erzaehler
-Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. Suchst du jemanden? #sprecher:annek #stimmung:laechelt
+Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. #sprecher:annek #stimmung:laechelt
+Suchst du jemanden? #sprecher:annek #stimmung:laechelt
 {kiraGetroffen:
     -> annek_schach
 - else:
@@ -112,12 +120,14 @@ Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. Suchst du jemanden?
 
 === annek_schach ===
 ~ annekSchachGelernt = true
-Kira hat dich also schon verlieren lassen. Gut. Dann bist du dran. #sprecher:annek #stimmung:lacht
+Kira hat dich also schon verlieren lassen. Gut. #sprecher:annek #stimmung:lacht
+Dann bist du dran. #sprecher:annek #stimmung:lacht
 Ich wollte immer Schach lernen. Aber jeder, der es mir erklären wollte, hat nach fünf Minuten von Eröffnungen geredet. #sprecher:annek #stimmung:nachdenklich
 Ihr setzt euch vor die alte Scheune, über deren Tor „Turnhalle“ steht. Du stellst die Figuren auf und erklärst, eine nach der anderen. #sprecher:erzaehler
 * [Mit dem Springer anfangen]
 - Annek nimmt den Springer in die Hand und lässt ihn über die Bauern hüpfen. #sprecher:erzaehler
-Euer Springer springt wie unser Falke. Nur feiger. Er darf danach nicht weiterfliegen. #sprecher:annek #stimmung:lacht
+Euer Springer springt wie unser Falke. Nur feiger. #sprecher:annek #stimmung:lacht
+Er darf danach nicht weiterfliegen. #sprecher:annek #stimmung:lacht
 Und der Turm ist ein Bison, der das Springen verlernt hat. Armes Tier. #sprecher:annek #stimmung:lacht
 Nach einer Viertelstunde spielt sie ihre erste Partie. Sie verliert, lacht und baut sofort neu auf. #sprecher:erzaehler
 {not abschiedGesehen:
@@ -142,11 +152,14 @@ Nach einer Viertelstunde spielt sie ihre erste Partie. Sie verliert, lacht und b
 Neben der Schule steht eine offene Werkstatt. Unter dem Schulbus schauen zwei Stiefel hervor. #sprecher:erzaehler
 Moment! #sprecher:joss #stimmung:ueberrascht
 Ein Mann rollt auf einem Brett hervor, Öl an der Stirn. #sprecher:erzaehler
-Joss Vell. Ich halte den Bus am Leben, die Traktoren und die Heizung der Schule. Alles, was älter ist als ich. #sprecher:joss #stimmung:laechelt
+Joss Vell. Ich halte den Bus am Leben, die Traktoren und die Heizung der Schule. #sprecher:joss #stimmung:laechelt
+Alles, was älter ist als ich. #sprecher:joss #stimmung:laechelt
 * [Zuhören]
-- Letztes Jahr war einer von Perfect Move hier. Anzug, neue Schuhe. Er wollte eine App aus Falke und Bison machen. Mit Bewertung nach jedem Zug. #sprecher:joss #stimmung:nachdenklich
+- Letztes Jahr war einer von Perfect Move hier. Anzug, neue Schuhe. #sprecher:joss #stimmung:nachdenklich
+Er wollte eine App aus Falke und Bison machen. Mit Bewertung nach jedem Zug. #sprecher:joss #stimmung:nachdenklich
 Ich hab ihm gesagt: Bei uns sagt dir nach jedem Zug die Großtante, was du falsch gemacht hast. Das reicht. #sprecher:joss #stimmung:lacht
-Er hat nicht gelacht. Seine Schuhe waren danach auch nicht mehr neu. Hier oben ist alles Staub. #sprecher:joss #stimmung:lacht
+Er hat nicht gelacht. Seine Schuhe waren danach auch nicht mehr neu. #sprecher:joss #stimmung:lacht
+Hier oben ist alles Staub. #sprecher:joss #stimmung:lacht
 {not abschiedGesehen:
     Ein Mann, der weiß, was er nicht verkauft. Selten. #sprecher:ambrose #stimmung:laechelt
 }
@@ -220,8 +233,10 @@ VAR ambroseSprichtWieder = false
 
 === diplom_start ===
 ~ diplomBegonnen = true
-Heute ist Diplomtag. Und ich bin selbst noch Anfängerin. Willst du Prüfer sein? #sprecher:annek #stimmung:laechelt
-Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann. Nicht die schwerste. #sprecher:annek #stimmung:nachdenklich
+Heute ist Diplomtag. Und ich bin selbst noch Anfängerin. #sprecher:annek #stimmung:laechelt
+Willst du Prüfer sein? #sprecher:annek #stimmung:laechelt
+Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann. #sprecher:annek #stimmung:nachdenklich
+Nicht die schwerste. #sprecher:annek #stimmung:nachdenklich
 Die Diplome hab ich gemalt! Mit Falke und Bison. #sprecher:kira #stimmung:laechelt
 -> diplom_runde
 
@@ -278,7 +293,8 @@ Auf der Kiste mit den Sportgeräten ist ein Fink aus Kreide gemalt. Zwischen den
 -> END
 
 === pferd ===
-Am Zaun steht ein braunes Pferd und frisst Heu. Es schaut dich an, als würde es gleich über den Zaun springen. Tut es aber nicht. #sprecher:erzaehler
+Am Zaun steht ein braunes Pferd und frisst Heu. Es schaut dich an, als würde es gleich über den Zaun springen. #sprecher:erzaehler
+Tut es aber nicht. #sprecher:erzaehler
 -> END
 
 === schild_schule ===

@@ -61,16 +61,20 @@ Der Pfad führt zurück in den Canyon, zum Felsbogen. #sprecher:erzaehler
 === buck_erstes_treffen ===
 ~ buckGetroffen = true
 An der Tankstelle steht ein Brett auf der Motorhaube eines Pick-ups. Daneben lehnt ein Mann mit Zahnstocher. #sprecher:erzaehler #klang:zapfsaeule
-Das Schild am Ortseingang? Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck #stimmung:lacht
+Das Schild am Ortseingang? Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. #sprecher:buck #stimmung:lacht
+Aber seine Frau spielt für zwei. #sprecher:buck #stimmung:lacht
 Er spuckt den Zahnstocher aus. #sprecher:erzaehler
-Buck. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck #stimmung:laechelt
+Buck. Hier draußen fährt keiner langsam. #sprecher:buck #stimmung:laechelt
+Auch nicht am Brett. #sprecher:buck #stimmung:laechelt
 -> buck_angebot
 
 === buck_angebot ===
-Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du dich? #sprecher:buck #stimmung:laechelt
+Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. #sprecher:buck #stimmung:laechelt
+Na, traust du dich? #sprecher:buck #stimmung:laechelt
 + [„Klar.“]
     {versoehnungGesehen and not abschiedGesehen:
-        Er redet so schnell, wie er zieht. Lass ihn reden. Du denkst. #sprecher:ambrose #stimmung:laechelt
+        Er redet so schnell, wie er zieht. Lass ihn reden. #sprecher:ambrose #stimmung:laechelt
+        Du denkst. #sprecher:ambrose #stimmung:laechelt
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -86,7 +90,8 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
     {versoehnungGesehen and not abschiedGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
-Schnell und gut. Das gibt's hier draußen selten. Noch eine Runde? #sprecher:buck #stimmung:laechelt
+Schnell und gut. Das gibt's hier draußen selten. #sprecher:buck #stimmung:laechelt
+Noch eine Runde? #sprecher:buck #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -106,7 +111,8 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 // vorteil. Vorher ging es in buck_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === buck_nach_remis ===
-Unentschieden! Volltanken reicht nicht, du musst auch losfahren. Noch mal? #sprecher:buck #stimmung:laechelt
+Unentschieden! Volltanken reicht nicht, du musst auch losfahren. #sprecher:buck #stimmung:laechelt
+Noch mal? #sprecher:buck #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -129,20 +135,27 @@ Unentschieden! Volltanken reicht nicht, du musst auch losfahren. Noch mal? #spre
 ~ abendMotelGesehen = true
 In der Nacht sitzt du am Rand des Schwimmbeckens, die Füße zwischen den Kakteen. Die Sterne gehen bis auf den Boden hinunter. #sprecher:erzaehler #licht:nacht #teilchen:sternschnuppen #musik:motel.nacht
 Das Telefon summt. Juno. #sprecher:erzaehler #klang:handy
-Sieben! Ich hab's nachgezählt. Blatt, Buch, Achteck, Zahnrad, Glas, Lyra, Kaktus. Der Kaktus kriegt Glitzer. #sprecher:juno #stimmung:froh
+Sieben! Ich hab's nachgezählt. #sprecher:juno #stimmung:froh
+Blatt, Buch, Achteck, Zahnrad, Glas, Lyra, Kaktus. Der Kaktus kriegt Glitzer. #sprecher:juno #stimmung:froh
 Wie geht es ihm? #sprecher:juno #stimmung:nachdenklich
 Er steht am Beckenrand und sieht hinauf. #sprecher:erzaehler
 * [„Er hat gelacht. Eine Viertelstunde lang.“]
 - Worüber? #sprecher:juno #stimmung:ueberrascht
 * [„Über sich.“]
-- Oh. Oh, das ist gut. Das schreib ich auf. #sprecher:juno #stimmung:laechelt
-Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. „Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt kein altes Brett mit. Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
-Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch. Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler #musik:victor.maschine
+- Oh. Oh, das ist gut. #sprecher:juno #stimmung:laechelt
+Das schreib ich auf. #sprecher:juno #stimmung:laechelt
+Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. #sprecher:erzaehler
+„Port Delacroix hat sich herumgesprochen. Wer schummelt, schleppt kein altes Brett mit.“ #sprecher:erzaehler
+„Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
+Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch.“ #sprecher:erzaehler
+„Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler
 Der letzte Satz gefällt dir nicht. #sprecher:erzaehler #pause
-Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
+Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
+Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich
 Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 * [„Sicher?“]
-- Nein. Aber ich hoffe es. Und ich habe es geprüft, so gut ich kann. #sprecher:ambrose #stimmung:lachtOhneSpott
+- Nein. Aber ich hoffe es. #sprecher:ambrose #stimmung:lachtOhneSpott
+Und ich habe es geprüft, so gut ich kann. #sprecher:ambrose #stimmung:lachtOhneSpott
 -> END
 
 // ---------------------------------------------------------------- Bahnhof und Ende von Akt 3
@@ -159,9 +172,11 @@ Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
 === bahnhof_ende ===
 // Kapitel 46, Schluss: Mama holt {held} ab; Mamas Thema, Schluss auf dem Endspielmotiv.
 ~ endeAkt3Gesehen = true
-Mama ist da. Sonnenbrand auf der Nase, das blaue Heft unter dem Arm. Es ist dicker geworden. #sprecher:erzaehler #musik:mama.schnee
+Mama ist da. Sonnenbrand auf der Nase, das blaue Heft unter dem Arm. #sprecher:erzaehler #musik:mama.schnee
+Es ist dicker geworden. #sprecher:erzaehler
 Port Delacroix lässt grüßen. Am Musikhaus decken sie das Dach, und Miss Odile sagt, das Schild hängst du auf. #sprecher:mutter #stimmung:froh
-Und danach: Summit City. Großmeisterin Ward. Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:laechelt
+Und danach: Summit City. Großmeisterin Ward. #sprecher:mutter #stimmung:laechelt
+Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:laechelt
 * [„Wer ist das?“]
 - Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter #stimmung:lacht
 Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter #stimmung:nachdenklich
@@ -200,6 +215,8 @@ Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #sti
 Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
 * [Weiterfahren]
 - Ambrose ist leichter seit dem Canyon. Er lobt einen Bauern, der einfach ein Feld vorrückt. #sprecher:erzaehler
-Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
-Die Straße flimmert. Nach einer Stunde taucht ein Diner auf, über der Tür ein Neonschild: „ING'S DINER“. Das K fehlt. Mama hält zum Tanken. #sprecher:erzaehler
+Hässlich. Und vollkommen richtig. #sprecher:ambrose #stimmung:lacht
+Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
+Die Straße flimmert. Nach einer Stunde taucht ein Diner auf, über der Tür ein Neonschild: „ING'S DINER“. #sprecher:erzaehler
+Das K fehlt. Mama hält zum Tanken. #sprecher:erzaehler
 -> END

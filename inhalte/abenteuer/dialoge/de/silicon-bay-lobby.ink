@@ -53,7 +53,8 @@ Mein Vater hält heute drei Reden. Ich muss bei allen klatschen. #sprecher:victo
 -> END
 
 === victor_warten ===
-Warst du schon bei Theo? Er misst alle. Mich auch. #sprecher:victor #stimmung:nachdenklich
+Warst du schon bei Theo? Er misst alle. #sprecher:victor #stimmung:nachdenklich
+Mich auch. #sprecher:victor #stimmung:nachdenklich
 -> END
 
 === victor_berichte ===
@@ -65,7 +66,8 @@ Warst du schon bei Theo? Er misst alle. Mich auch. #sprecher:victor #stimmung:na
 }
 ~ speicherstiftErhalten = true
 Victor steht vor dir, als hätte er schon eine Weile gewartet. Dann hält er dir einen Speicherstift hin. #sprecher:erzaehler
-Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. Schau sie dir an. #sprecher:victor #stimmung:nachdenklich
+Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. #sprecher:victor #stimmung:nachdenklich
+Schau sie dir an. #sprecher:victor #stimmung:nachdenklich
 * [„Warum?“]
 - Weil ich sie mir angeschaut habe. Und ich will, dass jemand anders auch. #sprecher:victor #stimmung:nachdenklich
 Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
@@ -94,9 +96,11 @@ Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprec
 Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 * [Schlafen gehen]
-- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. #sprecher:erzaehler
+Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
-Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
+Sag meinem Vater nichts. Noch nicht. #sprecher:victor #stimmung:muede
+Ich muss nachdenken. #sprecher:victor #stimmung:muede
 Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victor #stimmung:nachdenklich
 -> END
 
@@ -113,9 +117,11 @@ Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victo
 }
 ~ roboterGetroffen = true
 Ein Roboter mit freundlichem Bildschirmgesicht rollt heran. #sprecher:erzaehler
-Willkommen bei Perfect Move. Wir machen Menschen besser. Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
+Willkommen bei Perfect Move. Wir machen Menschen besser. #sprecher:empfangsroboter #stimmung:laechelt
+Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
 {(not abschiedGesehen and not ambroseSchweigt()):
-    Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
+    Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. #sprecher:ambrose #stimmung:laechelt
+    Glaube mir, ich weiß das. #sprecher:ambrose #stimmung:laechelt
 }
 -> END
 
@@ -136,8 +142,10 @@ Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. 
 {abschiedGesehen or ambroseSchweigt(): -> seite_fehlt}
 * [Warten]
 - Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
-Das sind meine Züge. Die linke Spalte. Jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
-Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
+Das sind meine Züge. Die linke Spalte. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
+Jeden einzelnen. #sprecher:ambrose #stimmung:still
+Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. #sprecher:ambrose #stimmung:still
+Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
 Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:traurig
 -> seite_fehlt
 
@@ -160,7 +168,8 @@ Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. 
 {tabletNachtGesehen:Du machst ein Foto für Juno.|Juno macht ein Foto.} Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
 {(not abschiedGesehen and not ambroseSchweigt()):
     Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
-    Er hat sie aufgehoben. Meine Züge. In einem Buch. #sprecher:ambrose #stimmung:lacht
+    Er hat sie aufgehoben. Meine Züge. #sprecher:ambrose #stimmung:lacht
+    In einem Buch. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 

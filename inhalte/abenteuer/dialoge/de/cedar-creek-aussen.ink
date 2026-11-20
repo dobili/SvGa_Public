@@ -176,7 +176,8 @@ Du setzt dich ans Ende der Bretter und legst das Brett neben dich, ohne Handtuch
 - Was ich will. #sprecher:ambrose #stimmung:nachdenklich
 Ein Fisch springt. Die Ringe laufen auseinander. #sprecher:erzaehler #pause:2
 Eine Partie ohne Makel. #sprecher:ambrose #stimmung:nachdenklich #musik:ambrose
-Er sagt es einfach so. Nicht stolz. Wie man etwas zugibt. #sprecher:erzaehler
+Er sagt es einfach so. Nicht stolz. #sprecher:erzaehler
+Wie man etwas zugibt. #sprecher:erzaehler
 Eine. Von Anfang bis Ende richtig und von Anfang bis Ende schön. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe mein ganzes Leben geglaubt, man müsse wählen. Hale hat richtig gespielt und ich schön. #sprecher:ambrose #stimmung:nachdenklich
 * [Zuhören]
@@ -209,7 +210,8 @@ Das Wort liegt zwischen euch auf dem Steg. #sprecher:erzaehler
 
 // Gutachten K1.2: Das Lachen ohne Spott fällt in jedem Zweig.
 === ende_akt1_lachen ===
-Ambrose lacht. Zum ersten Mal ohne Spott. Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler #musik:aus #pause:4
+Ambrose lacht. Zum ersten Mal ohne Spott. #sprecher:erzaehler #musik:aus
+Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler #pause:4
 Ein Kind. Bei allen Heiligen. #sprecher:ambrose #stimmung:lacht
 Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
 -> ende_akt1_bus
@@ -227,7 +229,8 @@ Vorn rechnet der Coach etwas auf einem Spielbericht. Keine Schachaufgabe: Zahlen
 Ihr Handy summt. Ihr Gesicht verändert sich. #sprecher:erzaehler #klang:handy
 Meine Cousine. Aus Riverton. #sprecher:juno #stimmung:laechelt
 Die haben da einen Club im Park, schon immer. Der wird neu aufgestellt. #sprecher:juno #stimmung:laechelt
-Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #bild:fotoRiverton #musik:aus #klang:konzern #pause:2
+Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. #sprecher:erzaehler #bild:fotoRiverton #musik:aus #klang:konzern
+Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #pause:2
 Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler
 Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 // Lektorat 19.11.2026: Die Heimfahrt ist erzählt; danach steht {held} in Maple Falls, nicht am Steg.
@@ -360,8 +363,10 @@ Noch mal? #sprecher:rosa #stimmung:laechelt
 // der Riss ist eine gemessene Stille von drei Sekunden (#pause:3). Victor durchgehend kalt; die
 // Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede). Klang: Stillen
 // S18 und S19 (21_Klangplan.md), Victors Thema beim Gehen.
-An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. Das Plakat hängt über ihm. #sprecher:erzaehler #musik:aus
-Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler #klang:tablet
+An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. #sprecher:erzaehler #musik:aus
+Das Plakat hängt über ihm. #sprecher:erzaehler
+Er zieht. Das Programm antwortet sofort. #sprecher:erzaehler #klang:tablet
+Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler
 * [„Spielst du gegen das Ding?“]
     Ich trainiere. Mein Vater ist im Rathaus. #sprecher:victor #stimmung:kalt
     Der Bezirk hat drei Bibliotheken. Er will alle drei. #sprecher:victor #stimmung:kalt
@@ -369,7 +374,8 @@ Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel
 * [Leise weitergehen]
     Er sieht nicht auf. Klick. #sprecher:erzaehler #klang:tablet
     -> END
-- Auf dem Brett geht es sehr schnell und sehr genau. Er verliert. Langsam, Zug um Zug, gegen etwas, das nie zögert. #sprecher:erzaehler
+- Auf dem Brett geht es sehr schnell und sehr genau. Er verliert. #sprecher:erzaehler
+Langsam, Zug um Zug, gegen etwas, das nie zögert. #sprecher:erzaehler
 * [„Gewinnst du manchmal?“]
     Remis. Einmal im Monat. #sprecher:victor #stimmung:kalt
     Mein Vater sagt, ein Remis gegen Schwächere ist eine Niederlage. Gegen das hier ist es ein Erfolg. #sprecher:victor #stimmung:bitter
@@ -380,7 +386,8 @@ Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel
     ~ victorCedarCreekGesehen = true
     Seine Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #geraeusch:aus #pause:3
     Das ist keine Frage, die man beim Training stellt. #sprecher:victor #stimmung:muede
-    Er zieht. Das Programm antwortet. Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler #klang:tablet
+    Er zieht. Das Programm antwortet. #sprecher:erzaehler #klang:tablet
+    Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler
     -> victor_weg
 * [Gehen]
     -> END
@@ -479,7 +486,8 @@ Wir müssen hin. Bevor es weg ist. #sprecher:juno #stimmung:ueberrascht
 * [„Was weg ist?“]
     Weiß ich nicht. Das, was vorher da war. #sprecher:juno #stimmung:nachdenklich
 * [Nicken]
-- Coach Delgado kann nicht mit. Sitzung im Schulamt. Als sie das sagte, sah sie zum Bildschirm auf ihrem Pult. #sprecher:erzaehler
+- Coach Delgado kann nicht mit. Sitzung im Schulamt. #sprecher:erzaehler
+Als sie das sagte, sah sie zum Bildschirm auf ihrem Pult. #sprecher:erzaehler
 Auf dem Handy eine Nachricht von Mama: „Riverton. Mit dem Zug zurück, vor dem Dunkelwerden.“ #sprecher:erzaehler
 Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzaehler
 * [„Dann los. Zu Fuß durch den Wald.“]
@@ -581,7 +589,8 @@ Die Zwillinge sitzen noch auf der Treppe. Jetzt hat jeder einen Turm in der Faus
 Diesmal guck ich die ganze Zeit. #sprecher:jonah #stimmung:nachdenklich
 Dann ziehst du ja nie! #sprecher:ivy #stimmung:lacht
 * [„Wer hat denn gewonnen?“]
-    Beide zeigen auf sich. Dann aufeinander. Dann wieder auf sich. #sprecher:erzaehler
+    Beide zeigen auf sich. Dann aufeinander. #sprecher:erzaehler
+    Dann wieder auf sich. #sprecher:erzaehler
 * [Leise vorbeigehen]
     Als du vorbeigehst, verstummen sie und sehen dir nach. #sprecher:erzaehler
 - Zwei Türme und kein Brett. Daraus wird nie ein Ende. #sprecher:ambrose #stimmung:lacht

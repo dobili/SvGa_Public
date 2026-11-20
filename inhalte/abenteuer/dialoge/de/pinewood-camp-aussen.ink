@@ -60,22 +60,27 @@ VAR abschiedGesehen = false
 Das Camp liegt an einem See zwischen den Bäumen. Zelte im Halbkreis, ein Steg, Kanus kieloben. #sprecher:erzaehler #musik:pinewood #geraeusch:camp
 Ein Schild aus einem halben Baumstamm: „Pinewood Camp. Schach, Schwimmen, Schlafen. In dieser Reihenfolge.“ #sprecher:erzaehler #bild:schild_camp
 Vierzig Kinder aus dem ganzen Staat. Ein Drittel davon kennst du. #sprecher:erzaehler #bild:aus
-Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. Mae hat ihr Teleskop dabei. Lou hat Muscheln im Haar und einen Plan. #sprecher:erzaehler
-Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt. Ich brauch ein zweites Tagebuch. #sprecher:juno #stimmung:froh
+Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. #sprecher:erzaehler
+Mae hat ihr Teleskop dabei. Lou hat Muscheln im Haar und einen Plan. #sprecher:erzaehler
+Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt. #sprecher:juno #stimmung:froh
+Ich brauch ein zweites Tagebuch. #sprecher:juno #stimmung:froh
 -> END
 
 // Kapitel 54, Schluss (Roman): erstes Zeichen des Abschieds, ohne das Wort; am Waldrand vor dem Camp.
 === es_ist_still ===
 ~ esIstStillGesagt = true
-Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fünf Zehen. Mama geht ein wenig schneller. #sprecher:erzaehler #bild:baerenspuren
+Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fünf Zehen. #sprecher:erzaehler #bild:baerenspuren
+Mama geht ein wenig schneller. #sprecher:erzaehler
 // Wer das Camp erst nach dem Abschied besucht, sieht nur die Spuren; Ambroses Satz entfällt.
 {abschiedGesehen: ->->}
 {held}. Die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #stimmung:nachdenklich #bild:aus
 * [„Was heißt das?“]
-- Ich weiß es nicht genau. Seit der Bergstation. Seit dieser Zug gekommen ist. #sprecher:ambrose #stimmung:nachdenklich
+- Ich weiß es nicht genau. Seit der Bergstation. #sprecher:ambrose #stimmung:nachdenklich
+Seit dieser Zug gekommen ist. #sprecher:ambrose #stimmung:nachdenklich
 Wenn ich die Augen schließe, ist da nichts mehr. Das erste Mal seit achtzehnhundertsechsundsechzig ist es still. #sprecher:ambrose #stimmung:friedlich
 Du bleibst stehen. #sprecher:erzaehler #pause:2
-Geh weiter. Es ist gut. Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:ambrose #stimmung:friedlich
+Geh weiter. Es ist gut. #sprecher:ambrose #stimmung:friedlich
+Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:ambrose #stimmung:friedlich
 ->->
 
 // ---------------------------------------------------------------- Ezra
@@ -91,8 +96,10 @@ Ein junger Mann mit Pfeife um den Hals und Klemmbrett unter dem Arm kommt angela
 ~ varianteRaeuberschachGelernt = true
 ~ varianteTandemGelernt = true
 Ezra hat eine Gitarre, auf der zwei Saiten fehlen. #sprecher:erzaehler
-Tandem! Zwei gegen zwei! Was dein Partner schlägt, kriegst du in die Hand und darfst es einsetzen! Wer redet, wird gekitzelt! #sprecher:ezra #stimmung:lacht
-Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laechelt
+Tandem! Zwei gegen zwei! #sprecher:ezra #stimmung:lacht
+Was dein Partner schlägt, kriegst du in die Hand und darfst es einsetzen! Wer redet, wird gekitzelt! #sprecher:ezra #stimmung:lacht
+Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. #sprecher:ezra #stimmung:laechelt
+Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laechelt
 -> END
 
 === ezra_alltag ===
@@ -126,7 +133,12 @@ Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figur
 {not ezraGetroffen:
     ~ ezraGetroffen = true
     // Lektorat 19.11.2026: Vom Lebendschach auf der Lichtung kennt man ihn schon.
-    {lebendschachGesehen:Ezra, der Betreuer von der Lichtung, ruft über das Feuer: „Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“|Ein junger Mann mit Gitarre ruft über das Feuer: „Ich bin Ezra! Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“} #sprecher:erzaehler
+    {lebendschachGesehen:
+        Ezra, der Betreuer von der Lichtung, ruft über das Feuer: „Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“ #sprecher:erzaehler
+    - else:
+        Ein junger Mann mit Gitarre ruft über das Feuer: „Ich bin Ezra! Tandem: Was dein Partner schlägt, darfst du einsetzen.“ #sprecher:erzaehler
+        „Wer redet, wird gekitzelt!“ #sprecher:erzaehler
+    }
 }
 Springer! Ich brauch einen Springer! #sprecher:dex #stimmung:lacht
 Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. #sprecher:erzaehler
@@ -137,11 +149,13 @@ Er wird gekitzelt. #sprecher:erzaehler
 Das ist kein Schach. #sprecher:ambrose #stimmung:ueberrascht
 * [„Nein.“]
 - Es ist Wahnsinn. Figuren fallen vom Himmel. #sprecher:ambrose #stimmung:lachtOhneSpott
-Ich hätte gern mitgespielt. Mit zwanzig. Ich wäre unerträglich gewesen. #sprecher:ambrose #stimmung:lacht
+Ich hätte gern mitgespielt. Mit zwanzig. #sprecher:ambrose #stimmung:lacht
+Ich wäre unerträglich gewesen. #sprecher:ambrose #stimmung:lacht
 -> raeuberschach
 
 = raeuberschach
-Dann Räuberschach gegen Lou. Alles ist verkehrt herum. Du stellst deine Dame hin und flehst, dass jemand sie nimmt. #sprecher:erzaehler #musik:held.rueckwaerts
+Dann Räuberschach gegen Lou. Alles ist verkehrt herum. #sprecher:erzaehler #musik:held.rueckwaerts
+Du stellst deine Dame hin und flehst, dass jemand sie nimmt. #sprecher:erzaehler
 Lou gewinnt. Sie hatte einen Plan. #sprecher:erzaehler
 {not abschiedGesehen:
     Ein Spiel, bei dem man alles hergibt, und am Ende hat der gewonnen, dem nichts bleibt. #sprecher:ambrose #stimmung:still #pause:2
@@ -159,7 +173,9 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
 {not stockGefunden:
     ~ stockGefunden = true
     Sam reicht dir einen Stock, vom Feuer geschwärzt, mit Kerben in der Rinde. #sprecher:erzaehler
-    Für jeden Sieg eine. Tradition. Du hast acht. Und eine für die Sache mit der Chefin. Die erste. Im Clubraum. #sprecher:sam #stimmung:laechelt
+    Für jeden Sieg eine. Tradition. #sprecher:sam #stimmung:laechelt
+    Du hast acht. Und eine für die Sache mit der Chefin. #sprecher:sam #stimmung:laechelt
+    Die erste. Im Clubraum. #sprecher:sam #stimmung:laechelt
     ~ gibFund("marshmallowStock")
     „Da hab ich nicht gewonnen. Da hab ich dir was gezeigt.“ #sprecher:erzaehler
     Ja. Eben. #sprecher:sam #stimmung:laechelt
@@ -169,7 +185,8 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
     -> stern
 }
 {sternennachtGesehen:
-    Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
+    Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. #sprecher:ambrose #stimmung:nachdenklich
+    An einem anderen Steg. #sprecher:ambrose #stimmung:nachdenklich
     Ich war damals beleidigt, weil kein Stern meinen Namen trägt. Erinnerst du dich? #sprecher:ambrose #stimmung:laechelt
 - else:
     Sie stehen noch wie früher. Als Junge wollte ich so bekannt werden wie einer von denen. #sprecher:ambrose #stimmung:nachdenklich
@@ -177,8 +194,10 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
 }
 * [„Sechs Wörter.“]
 - Sechs Wörter. #sprecher:ambrose #stimmung:lachtOhneSpott
-Vierzig Kinder. In hundert Jahren weiß niemand mehr, wie sie hießen. Und es wird nicht das Geringste ausmachen. #sprecher:ambrose #stimmung:friedlich
-Sie haben heute Abend gespielt. Das war es. Das war immer alles. #sprecher:ambrose #stimmung:friedlich #pause:2
+Vierzig Kinder. In hundert Jahren weiß niemand mehr, wie sie hießen. #sprecher:ambrose #stimmung:friedlich
+Und es wird nicht das Geringste ausmachen. #sprecher:ambrose #stimmung:friedlich
+Sie haben heute Abend gespielt. Das war es. #sprecher:ambrose #stimmung:friedlich
+Das war immer alles. #sprecher:ambrose #stimmung:friedlich #pause:2
 -> stern
 
 = stern
@@ -203,12 +222,15 @@ Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in 
 
 === hollis_erstes_treffen ===
 ~ hollisGetroffen = true
-Unter einem der Riesenbäume sitzt eine Rangerin, ein Fernglas um den Hals. Das Brett steht auf einer Wurzel. Über euch arbeitet ein Specht. #sprecher:erzaehler
-Hollis. Ich spiele nur draußen. Drinnen kann ich nicht denken. #sprecher:hollis #stimmung:laechelt
+Unter einem der Riesenbäume sitzt eine Rangerin, ein Fernglas um den Hals. Das Brett steht auf einer Wurzel. #sprecher:erzaehler
+Über euch arbeitet ein Specht. #sprecher:erzaehler
+Hollis. Ich spiele nur draußen. #sprecher:hollis #stimmung:laechelt
+Drinnen kann ich nicht denken. #sprecher:hollis #stimmung:laechelt
 -> hollis_angebot
 
 === hollis_angebot ===
-Eine Stellung, du hast Weiß. Keine Uhr. Der Wald hat Zeit, wir auch. #sprecher:hollis #stimmung:laechelt
+Eine Stellung, du hast Weiß. Keine Uhr. #sprecher:hollis #stimmung:laechelt
+Der Wald hat Zeit, wir auch. #sprecher:hollis #stimmung:laechelt
 + [„Gern.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END
@@ -221,7 +243,8 @@ Eine Stellung, du hast Weiß. Keine Uhr. Der Wald hat Zeit, wir auch. #sprecher:
     ~ hollisKarteGegeben = true
     Gut gespielt. Ruhig, wie ein Baum, der wächst. #sprecher:hollis #stimmung:froh
     Eine Partie, die für nichts zählt, nur für den Wald. Du merkst, wie gut dir das tut. #sprecher:erzaehler
-    Hier. Jeder verdient im Wald eine zweite Chance. Auch auf dem Brett. #sprecher:hollis #stimmung:laechelt
+    Hier. Jeder verdient im Wald eine zweite Chance. #sprecher:hollis #stimmung:laechelt
+    Auch auf dem Brett. #sprecher:hollis #stimmung:laechelt
     ~ gibKarte("zweiteChance")
 }
 Noch eine? Die Sonne steht noch über den Wipfeln. #sprecher:hollis #stimmung:laechelt
@@ -243,7 +266,8 @@ Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis #stim
 // vorteil. Vorher ging es in hollis_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === hollis_nach_remis ===
-Remis. Diesmal hat der Wald keinen von uns gewinnen lassen. Noch einmal? #sprecher:hollis #stimmung:laechelt
+Remis. Diesmal hat der Wald keinen von uns gewinnen lassen. #sprecher:hollis #stimmung:laechelt
+Noch einmal? #sprecher:hollis #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END

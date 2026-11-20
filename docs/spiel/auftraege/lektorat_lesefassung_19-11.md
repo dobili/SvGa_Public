@@ -279,6 +279,27 @@ Beispiel, Coach Delgado:
 - Nachher: „Zwei Partien hintereinander? Nicht in meinem Club.“ / „Fünf Minuten Pause, Fenster
   auf, Wasser trinken.“
 
+### Zwei Sätze je Zeile in Akt 2 bis 4 und die Sonderfälle (20.11.2026)
+
+- **Sprechzeilen in Akt 2 bis 4:** 548 Zeilen, nach denselben Regeln wie in Akt 1.
+- **Erzählzeilen in allen Akten:** 252 Zeilen, nach denselben Regeln.
+- **Rede in „…“:** 35 Zeilen mechanisch. Geteilt wird nur an Satzgrenzen außerhalb der
+  Anführung; ganz zitierte Reden werden je zwei Sätze neu in „…“ gesetzt. Dazu 14 von Hand,
+  etwa Victors Nachrichten, der Seilbahn-Wärter, Hale am Telefon und Junos Tagebuch. In
+  weg-maple-cedar wandert der Klang der Turmuhr dabei auf die Zeile mit der Uhr.
+- **Bedingungen:** 18 Zeilen der Form `{Bedingung:A|B}` oder `{Bedingung: A}` sind jetzt Blöcke
+  mit geteilten Zeilen.
+- **Bewusst nicht geteilt:**
+  - rund 33 Schilder, Zettel und Inschriften („Betreten verboten. Musik erlaubt.“): Das ist ein
+    Schild und gehört auf eine Zeile.
+  - 76 Zufallszeilen `{~a|b|c}`: Ein Zweig über mehrere Zeilen bräuchte Mehrzeilen-Folgen, die die
+    Prüfwerkzeuge (inkfluss) nicht sicher lesen. Diese Zeilen haben meist drei kurze Sätze.
+- **Stichprobe im Browser** (Spielversion nach `npm run build`, Chromium, „Geräusche als Text“ an):
+  Coach Delgados Pause vor dem Clubkampf, sechs geteilte Zeilen.
+  - Die Trillerpfeife kommt genau mit „Zwei Partien hintereinander? Nicht in meinem Club.“.
+  - Die Musik wechselt erst mit der neuen Szene im Clubraum zu „Herzklopfen“, wie vorher.
+  - Junos Satz kommt in zwei Zeilen, der Sprechername steht auf beiden.
+
 ## Nur durch die Simulation, kein Textfehler
 
 Mehrere Abende mit Ambrose hintereinander, doppelte Gespräche beim zweiten Ansprechen,

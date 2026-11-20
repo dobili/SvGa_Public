@@ -72,7 +72,8 @@ VAR abschiedGesehen = false
 === coach_erstes_treffen ===
 // Szene 5, zweiter Teil, nach dem Roman, Kapitel 5, und der Dialogprüfung (VM30 bis VM33).
 ~ clubBeigetreten = true
-Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler #klang:schulglocke #musik:mapleFalls.club
+Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. #sprecher:erzaehler #klang:schulglocke #musik:mapleFalls.club
+Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler
 Aufstellung! Juno, wen bringst du mir da? #sprecher:coachDelgado #stimmung:laechelt #klang:klatschen
 Ein viertes Brett, Coach. #sprecher:juno #stimmung:froh
 Na, das wollen wir sehen. Delgado. #sprecher:coachDelgado #stimmung:laechelt
@@ -86,11 +87,15 @@ Die Nadel holt man gegen mich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Was muss ich tun?“]
     Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado #stimmung:neutral
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
-Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. Das ist Sam. #sprecher:erzaehler
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. #sprecher:erzaehler
+Das ist Sam. #sprecher:erzaehler
 // Lektorat 19.11.2026: Wer das Brett schon angesehen hat (ansehen-maple-falls), liest es nicht zweimal.
 {angesehenBrettOhneDame:Der Radiergummi steht noch auf d8. #sprecher:erzaehler}
 {not angesehenBrettOhneDame:Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler}
-{not angesehenBrettOhneDame:Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #sprecher:ambrose #stimmung:lacht}
+{not angesehenBrettOhneDame:
+    Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. #sprecher:ambrose #stimmung:lacht
+    Aber nicht oft. #sprecher:ambrose #stimmung:lacht
+}
 ~ setzeSzene("akt1.ersterSchultag")
 -> END
 
@@ -110,7 +115,8 @@ Sie hat die Aufgaben selbst aufgeschrieben. #sprecher:coachDelgado #stimmung:lae
 {gespieltSamRevanche() and ausgangMapleFallsClubkampf == "" and not pauseVorClubkampfGesehen: -> pause_vor_clubkampf}
 // Szene 11 nach dem Roman, Kapitel 8, und der Dialogprüfung (VM57 bis VM60). Stimmung:
 // Herzklopfen, das erste echte. Klang: Clubkampf-Thema mit Schlagwerk; die Pfeife liegt auf dem Pult.
-Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. Die Pfeife liegt auf dem Pult. #sprecher:erzaehler #musik:mapleFalls.clubkampf
+Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. #sprecher:erzaehler #musik:mapleFalls.clubkampf
+Die Pfeife liegt auf dem Pult. #sprecher:erzaehler
 Die Aufgaben sind erledigt. Dann ist es so weit: du gegen mich, um die Clubnadel. #sprecher:coachDelgado #stimmung:nachdenklich
 Eine Partie. Ich spiele, wie ich spiele, ich schenke dir nichts. #sprecher:coachDelgado #stimmung:nachdenklich
 Wenn du verlierst, kommst du wieder, so oft du willst. #sprecher:coachDelgado #stimmung:nachdenklich
@@ -342,7 +348,13 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam #s
     Okay. Die Dame bleibt erst mal zu Hause. #sprecher:sam #stimmung:laechelt
     Eine Partie? Jetzt? #sprecher:sam #stimmung:laechelt
 - else:
-    {ausgangMapleFallsSamRevanche == "niederlage":Noch mal? Klar! Aber diesmal passt du besser auf deine Figuren auf.|Noch mal! Diesmal mache ich alles richtig. Fast alles.} #sprecher:sam #stimmung:laechelt
+    {ausgangMapleFallsSamRevanche == "niederlage":
+        Noch mal? Klar! #sprecher:sam #stimmung:laechelt
+        Aber diesmal passt du besser auf deine Figuren auf. #sprecher:sam #stimmung:laechelt
+    - else:
+        Noch mal! Diesmal mache ich alles richtig. #sprecher:sam #stimmung:laechelt
+        Fast alles. #sprecher:sam #stimmung:laechelt
+    }
 }
 * {not gespieltSamRevanche()} [„Eine Partie.“]
     ~ beginnePartie("mapleFalls.samRevanche")
@@ -434,7 +446,8 @@ Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. #spr
 Schach für die Zukunft. #sprecher:grahamHale #stimmung:laechelt
 Was kostet das? #sprecher:coachDelgado #stimmung:nachdenklich
 Für Pilotschulen zunächst nichts. #sprecher:grahamHale #stimmung:laechelt
-Am Fenster steht ein Junge, ein Tablet unter dem Arm. Er hat sich nicht gesetzt. Er sieht auf deine Nadel. #sprecher:erzaehler
+Am Fenster steht ein Junge, ein Tablet unter dem Arm. Er hat sich nicht gesetzt. #sprecher:erzaehler
+Er sieht auf deine Nadel. #sprecher:erzaehler
 Victor Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt #musik:victor
 In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:hale #pause:3
 -> victor_wartet
@@ -513,7 +526,8 @@ Als der Raum leer ist, holst du das Brett aus der Tasche und legst es auf einen 
 * [„Du bist erschrocken. Vorhin.“]
     Bin ich das. #sprecher:ambrose #stimmung:bitter
     * * [„Hale.“]
-        Er steht mit dem Rücken zu dir. Die alte Stellung liegt zwischen euch. Schwarz ist am Zug, seit hundertsechzig Jahren. #sprecher:erzaehler #pause
+        Er steht mit dem Rücken zu dir. Die alte Stellung liegt zwischen euch. #sprecher:erzaehler
+        Schwarz ist am Zug, seit hundertsechzig Jahren. #sprecher:erzaehler #pause
         Ein Name. Es gibt viele Hales. #sprecher:ambrose #stimmung:traurig
         Du weißt, dass er lügt. Er lügt nicht besser als Mama. #sprecher:erzaehler
 * [Nichts fragen]
@@ -527,7 +541,8 @@ In deiner eigenen Schrift, ohne Glitzer. #sprecher:erzaehler #klang:tagebuch
 -> END
 
 === victor_weg ===
-Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult. Ausgeschaltet. #sprecher:erzaehler
+Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult. #sprecher:erzaehler
+Ausgeschaltet. #sprecher:erzaehler
 -> END
 
 // Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Juno, sonst wie bisher.

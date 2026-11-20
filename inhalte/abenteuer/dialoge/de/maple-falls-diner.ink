@@ -31,7 +31,13 @@ VAR abschiedGesehen = false
 
 === hector_a ===
 {hectorGetroffen:
-    {dinerAbendGesehen:Neue Woche, neues Rätsel. Ich krieg's nicht raus. Aber seit deinem Pfeil weiß ich, dass es geht.|Rätsel der Woche. Ich krieg's nicht raus. Elfte Woche in Folge.} #sprecher:hector #stimmung:nachdenklich
+    {dinerAbendGesehen:
+        Neue Woche, neues Rätsel. Ich krieg's nicht raus. #sprecher:hector #stimmung:nachdenklich
+        Aber seit deinem Pfeil weiß ich, dass es geht. #sprecher:hector #stimmung:nachdenklich
+    - else:
+        Rätsel der Woche. Ich krieg's nicht raus. #sprecher:hector #stimmung:nachdenklich
+        Elfte Woche in Folge. #sprecher:hector #stimmung:nachdenklich
+    }
     -> END
 }
 ~ hectorGetroffen = true
@@ -47,7 +53,8 @@ Die liegen da, weil ich keins löse. Ich kauf sie trotzdem jede Woche. #sprecher
 - -> END
 
 === hector_b ===
-An der Wand hinter der Theke hängt ein Papierset in einem Rahmen. Mit einem Pfeil darauf. In deiner Schrift. #sprecher:erzaehler
+An der Wand hinter der Theke hängt ein Papierset in einem Rahmen. Mit einem Pfeil darauf. #sprecher:erzaehler
+In deiner Schrift. #sprecher:erzaehler
 Das erste, das hier einer gelöst hat. Am ersten Abend. #sprecher:hector #stimmung:froh
 Ich zeig's jedem. #sprecher:hector #stimmung:froh
 Die meisten nicken nur. Aber ich weiß, was es heißt. #sprecher:hector #stimmung:laechelt

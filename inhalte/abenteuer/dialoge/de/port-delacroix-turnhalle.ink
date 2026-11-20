@@ -64,19 +64,22 @@ VAR revanchePortDelacroix = false
 ~ tiefpunktGesehen = true
 Das Turnier ist in der Turnhalle der Schule. Unter dem Basketballkorb stehen Klapptische, die Bretter passen nicht zusammen. #sprecher:erzaehler
 Wenn jemand Fremdes hereinkommt, wird es einen Moment leiser. Du bist fremd hier, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
-Aus Silicon Bay. Die waren hier, nach dem Sturm. Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy #stimmung:bitter
+Aus Silicon Bay. Die waren hier, nach dem Sturm. #sprecher:remy #stimmung:bitter
+Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy #stimmung:bitter
 Bildschirme haben sie gebracht, vierzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy #stimmung:bitter
 Er stößt seinen Trompetenkasten mit dem Fuß an. #sprecher:erzaehler
 Hier hilft man mit den Händen. #sprecher:remy #stimmung:bitter
 * [Zum ersten Brett gehen]
 - Die erste Runde gewinnst du, die zweite endet remis. In der dritten sitzt dir Remy gegenüber. #sprecher:erzaehler
 Er baut eine Mauer aus Bauern. Nach fünfunddreißig Zügen stehst du sehr viel schlechter. #sprecher:erzaehler #musik:remy.mauer
-Du zählst. Es hilft nicht. Es hängt nichts, es gibt nur diese Mauer, und sie kommt näher. #sprecher:erzaehler
+Du zählst. Es hilft nicht. #sprecher:erzaehler
+Es hängt nichts, es gibt nur diese Mauer, und sie kommt näher. #sprecher:erzaehler
 * [„Ambrose. Bitte.“]
 - Eine Pause. Dann seine Stimme, flach, schnell, als läse er etwas ab. #sprecher:erzaehler #pause:2
 König nach h1. #sprecher:ambrose #stimmung:nachdenklich #musik:zero
 * [„Was?“]
-- König. Eine Ecke weiter. Jetzt. #sprecher:ambrose #stimmung:nachdenklich
+- König. Eine Ecke weiter. #sprecher:ambrose #stimmung:nachdenklich
+Jetzt. #sprecher:ambrose #stimmung:nachdenklich
 Dein König scheint sicher zu stehen. Ihn zu bewegen ergibt für dich keinen Sinn. #sprecher:erzaehler
 * [„Warum?“]
 - Spiel es. #sprecher:ambrose #stimmung:nachdenklich
@@ -87,8 +90,10 @@ Seit dem Dachboden hast du keinen Zug gespielt, den du nicht verstehst. Du spiel
 Sechs Züge später steht dein König nicht mehr auf der Linie, auf die alles zielt. Dein Turm geht durch Remys Mauer. #sprecher:erzaehler
 Er verliert in zwölf Zügen. Er begreift es in dreien. #sprecher:erzaehler
 Er steht auf. Der Stuhl fällt um. #sprecher:erzaehler #klang:stuhl_faellt #musik:aus #geraeusch:aus #pause:3
-Das ist unmöglich. Den Zug findet keiner. König in die Ecke, ohne Grund. #sprecher:remy #stimmung:wuetend
-Du hast dich runtergebeugt. Du hast in deinen Rucksack geflüstert. Was ist da drin? #sprecher:remy #stimmung:bitter
+Das ist unmöglich. Den Zug findet keiner. #sprecher:remy #stimmung:wuetend
+König in die Ecke, ohne Grund. #sprecher:remy #stimmung:wuetend
+Du hast dich runtergebeugt. Du hast in deinen Rucksack geflüstert. #sprecher:remy #stimmung:bitter
+Was ist da drin? #sprecher:remy #stimmung:bitter
 * [Den Rucksack aufmachen]
     -> vorwurf_brett
 
@@ -97,8 +102,10 @@ Die ganze Halle sieht dich an. Am Rand steht Mama im Kittel aus dem Notzelt, ein
 Du ziehst das Brett heraus. Altes Holz, dunkle Ecken. #sprecher:erzaehler
 * [„Es ist nur ein Brett.“]
 - Dann rede ich auch mit meinem. #sprecher:remy #stimmung:bitter
-Du schummelst. Wie die mit ihren Bildschirmen. Nur altmodischer. #sprecher:remy #stimmung:bitter
-Du hast den Zug nicht verstanden. Du hast ihn gespielt, weil man ihn dir gesagt hat. Achtundneunzig Prozent. #sprecher:erzaehler
+Du schummelst. Wie die mit ihren Bildschirmen. #sprecher:remy #stimmung:bitter
+Nur altmodischer. #sprecher:remy #stimmung:bitter
+Du hast den Zug nicht verstanden. Du hast ihn gespielt, weil man ihn dir gesagt hat. #sprecher:erzaehler
+Achtundneunzig Prozent. #sprecher:erzaehler
 * [„Ambrose. Sag etwas.“]
 - Er sieht nicht Remy an und nicht dich. Er sieht auf den König in der Ecke. #sprecher:erzaehler
 Er hat nicht ganz unrecht. #sprecher:ambrose #stimmung:still #pause:4
@@ -118,8 +125,10 @@ Am Schiedsrichtertisch sitzt eine Frau mit weißem Haar. Du legst das Brett vor 
 * [„Ich gebe die Partie auf. Die gegen ihn.“]
 - * [„Schreiben Sie null. Das Brett bleibt, solange ich spiele.“]
 - Sie sieht dich lange an. Sie hat sehr ruhige Hände. #sprecher:erzaehler
-Das Wasser hat das Haus genommen, nicht die Musik. Setz dich, Kind. Wir fangen neu an. #sprecher:odile #stimmung:laechelt
-Draußen auf den Stufen setzt Mama sich neben dich. Sie fragt nichts. Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
+Das Wasser hat das Haus genommen, nicht die Musik. Setz dich, Kind. #sprecher:odile #stimmung:laechelt
+Wir fangen neu an. #sprecher:odile #stimmung:laechelt
+Draußen auf den Stufen setzt Mama sich neben dich. Sie fragt nichts. #sprecher:erzaehler
+Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
 Ich weiß, wie sich das anfühlt. Wenn eine ganze Halle dich ansieht. #sprecher:mutter #stimmung:nachdenklich
 Fast. #sprecher:mutter #stimmung:laechelt #pause
 Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #sprecher:erzaehler
@@ -144,10 +153,12 @@ Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #s
 ~ brettersammelnBegonnen = true
 Die Frau mit dem weißen Haar heißt Miss Odile. Sie ist Musiklehrerin und leitet den Club seit dreißig Jahren. #sprecher:erzaehler
 Sie legt dein Brett in einen leeren Geigenkasten und schließt den Deckel. #sprecher:erzaehler
-Da liegt es trocken. Hol es, wenn du es brauchst. Nicht vorher. #sprecher:odile #stimmung:nachdenklich
+Da liegt es trocken. Hol es, wenn du es brauchst. #sprecher:odile #stimmung:nachdenklich
+Nicht vorher. #sprecher:odile #stimmung:nachdenklich
 * [Nicken]
 - Sie gibt dir einen Handkarren. #sprecher:erzaehler
-Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines. Geh fragen. #sprecher:odile #stimmung:nachdenklich
+Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines. #sprecher:odile #stimmung:nachdenklich
+Geh fragen. #sprecher:odile #stimmung:nachdenklich
 {reiheRemyBestanden and reiheLouBestanden:Remy und Lou hast du hinter dir. Wenn du um die Nadel spielen willst: Ich bin hier.|Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich.} #sprecher:odile #stimmung:laechelt
 -> END
 
@@ -174,7 +185,8 @@ Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
 
 === odile_clubkampf ===
 {nadelPortDelacroix > 0:
-    Noch einmal? Gut. Ich spiele wieder langsam. #sprecher:odile #stimmung:laechelt
+    Noch einmal? Gut. #sprecher:odile #stimmung:laechelt
+    Ich spiele wieder langsam. #sprecher:odile #stimmung:laechelt
     -> odile_clubkampf_wahl
 }
 // Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
@@ -186,10 +198,12 @@ Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
 Die Turnhalle ist voll. Sie sind alle gekommen, um zu sehen, wer da in einen Rucksack flüstert. #sprecher:erzaehler #musik:aus
 Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten. #sprecher:erzaehler
 Miss Odile setzt sich dir gegenüber, in einem Kleid mit kleinen Notenschlüsseln. #sprecher:erzaehler
-Ein Plan ist kein Sprint. Ich spiele langsam. Du wirst denken, es passiert nichts. #sprecher:odile #stimmung:laechelt
+Ein Plan ist kein Sprint. Ich spiele langsam. #sprecher:odile #stimmung:laechelt
+Du wirst denken, es passiert nichts. #sprecher:odile #stimmung:laechelt
 Es passiert die ganze Zeit etwas. Hör auf die Bauern. #sprecher:odile #stimmung:laechelt
 * [Die Hände auf den Tisch legen]
-- Bevor ihr anfangt, hörst du ihn. Aus dem Kasten, drei Meter entfernt. Drei Wörter. #sprecher:erzaehler
+- Bevor ihr anfangt, hörst du ihn. Aus dem Kasten, drei Meter entfernt. #sprecher:erzaehler
+Drei Wörter. #sprecher:erzaehler
 Spiel deine Partie. #sprecher:ambrose #stimmung:still
 Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzaehler
 -> odile_clubkampf_wahl
@@ -210,9 +224,11 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 ~ clubkampfPortDelacroixNadel = nadelPortDelacroix
 {
 - ausgangPortDelacroixClubkampf == "sieg" and not odileHandGegeben:
-    Ein Plan. Dein erster. Er war hässlich und langsam, und er gehört dir. #sprecher:erzaehler
+    Ein Plan. Dein erster. #sprecher:erzaehler
+    Er war hässlich und langsam, und er gehört dir. #sprecher:erzaehler
     Miss Odile sieht es an. Sie nickt, im Takt von etwas, das nur sie hört. #sprecher:erzaehler #musik:held.vollstaendig
-    Der Königsflügel. Immer mein Königsflügel. Mein Mann hat mir das vierzig Jahre lang gesagt. #sprecher:odile #stimmung:lacht
+    Der Königsflügel. Immer mein Königsflügel. #sprecher:odile #stimmung:lacht
+    Mein Mann hat mir das vierzig Jahre lang gesagt. #sprecher:odile #stimmung:lacht
 - ausgangPortDelacroixClubkampf == "sieg":
     Miss Odile legt ihren König um und lächelt. #sprecher:erzaehler
 - ausgangPortDelacroixClubkampf == "remis":
@@ -231,13 +247,16 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 // Kapitel 39: Sie steht auf, und die ganze Halle steht mit ihr. Remy nickt einmal.
 === odile_hand ===
 ~ odileHandGegeben = true
-Sie steht auf. Sie ist nicht groß. Aber als sie steht, steht die ganze Halle mit ihr. #sprecher:erzaehler
+Sie steht auf. Sie ist nicht groß. #sprecher:erzaehler
+Aber als sie steht, steht die ganze Halle mit ihr. #sprecher:erzaehler
 Das war deine Partie. Jeder hier hat es gesehen. #sprecher:odile #stimmung:laechelt
 Niemand klatscht. Aber Gesichter, die dich vor einer Woche nicht angesehen haben, sehen dich an. #sprecher:erzaehler
-Remy steht an der Wand, die Trompete unter dem Arm. Er sagt nichts. Er nickt. Einmal. #sprecher:erzaehler #pause
+Remy steht an der Wand, die Trompete unter dem Arm. Er sagt nichts. #sprecher:erzaehler
+Er nickt. Einmal. #sprecher:erzaehler #pause
 {nadelPortDelacroix > 0: Die Nadel ist eine kleine Lyra aus Messing, grün angelaufen, wo das Salzwasser war. Miss Odile steckt sie dir an, neben das Glas. #sprecher:erzaehler}
 * [Zum Schiedsrichtertisch gehen]
-- Du legst die Hand auf den Geigenkasten. Du öffnest ihn nicht. Noch nicht. #sprecher:erzaehler
+- Du legst die Hand auf den Geigenkasten. Du öffnest ihn nicht. #sprecher:erzaehler
+Noch nicht. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Benefiz-Simultan (Besuch 2)
@@ -259,7 +278,8 @@ Spielst du ein Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dollar
 ~ simultanGedankt = true
 Jedes Kind legt einen Dollar in die Blechdose. Am dritten Brett verliert Remy knapp, legt seinen Dollar hinein und bleibt sitzen. #sprecher:erzaehler
 {batisteGetroffen:Ich hab dich beobachtet, die ganze Woche. Mit dem Karren, bei Batiste.|Ich hab dich beobachtet, die ganze Woche. Mit dem Karren.} #sprecher:remy #stimmung:still
-Du redest mit dem Brett. Ich weiß nicht, warum. Aber du spielst allein. #sprecher:remy #stimmung:nachdenklich
+Du redest mit dem Brett. Ich weiß nicht, warum. #sprecher:remy #stimmung:nachdenklich
+Aber du spielst allein. #sprecher:remy #stimmung:nachdenklich
 Tut mir leid. Die mit dem Glas haben uns Bildschirme gebracht, als wir Decken gebraucht haben. #sprecher:remy #stimmung:nachdenklich
 * [„Du hattest nicht ganz unrecht. Den Zug fand ich nicht.“]
 - Remy sieht dich lange an. Dann nimmt er die Trompete aus dem Kasten und spielt das Schnelle. #sprecher:erzaehler #musik:odile.tanz
@@ -288,7 +308,8 @@ Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 
 === remy_reihe ===
 Remy poliert seine Trompete und sieht dich nicht an. #sprecher:erzaehler
-Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Flüstern. #sprecher:remy #stimmung:bitter
+Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. #sprecher:remy #stimmung:bitter
+Ohne Flüstern. #sprecher:remy #stimmung:bitter
 + [„Gib mir deine Aufgaben.“]
     ~ beginneAufgaben("portDelacroix.reiheRemy")
     -> END
@@ -333,7 +354,8 @@ Du hast in jeder Stellung einen gefunden. Einen Plan, meine ich. #sprecher:lou #
     Die Karte hast du schon? Dann leg ich sie zu den Muscheln. #sprecher:lou #stimmung:laechelt
 - else:
     Aus der Eierschachtel, zwischen zwei Muscheln, zieht sie eine Karte: ein Brett mit einem Pfeil zu einem Flügel. #sprecher:erzaehler
-    Erst fragen, wo. Dann wie. Die ist für dich. Ich hab den Plan ja schon im Kopf. #sprecher:lou #stimmung:laechelt
+    Erst fragen, wo. Dann wie. #sprecher:lou #stimmung:laechelt
+    Die ist für dich. Ich hab den Plan ja schon im Kopf. #sprecher:lou #stimmung:laechelt
     ~ gibKarte("planfinder")
 }
 -> END
@@ -354,7 +376,8 @@ So ist die Reihenfolge. Remy hat sie erfunden. #sprecher:lou #stimmung:laechelt
     Lou. Ich sammle Muscheln und Pläne. #sprecher:lou #stimmung:laechelt
 }
 Ich hab einen Plan. Er ist noch nicht fertig, aber er ist gut. #sprecher:lou #stimmung:laechelt
-Findest du in meinen Stellungen auch einen? Mit Läufern. Läufer sind wichtig für Pläne. #sprecher:lou #stimmung:laechelt
+Findest du in meinen Stellungen auch einen? Mit Läufern. #sprecher:lou #stimmung:laechelt
+Läufer sind wichtig für Pläne. #sprecher:lou #stimmung:laechelt
 + [„Zeig her.“]
     ~ beginneAufgaben("portDelacroix.reiheLou")
     -> END
@@ -404,8 +427,10 @@ Ein handgemaltes Plakat an der Wand: „Wir spielen weiter. Jeden Abend, solange
 === remy_reihe_danach ===
 {not reiheRemyBestanden: -> remy}
 Remy legt die Trompete weg. #sprecher:erzaehler
-Bauern verstehst du. Ohne Flüstern. Gut. #sprecher:remy #stimmung:nachdenklich
-Lou hat auch Aufgaben. Mit Plänen. Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
+Bauern verstehst du. Ohne Flüstern. #sprecher:remy #stimmung:nachdenklich
+Gut. #sprecher:remy #stimmung:nachdenklich
+Lou hat auch Aufgaben. Mit Plänen. #sprecher:remy #stimmung:neutral
+Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
 -> END
 
 // Revanche um eine bessere Nadel, die keine bessere Nadel brachte (Spieler-Durchlauf mit schwachem
@@ -417,7 +442,8 @@ Lou hat auch Aufgaben. Mit Plänen. Hör ihr zu, sie redet schnell. #sprecher:re
 - ausgangPortDelacroixClubkampf == "sieg":
     Gewonnen, aber die Nadel bleibt dieselbe. Der Takt stimmte trotzdem. #sprecher:odile #stimmung:laechelt
 - ausgangPortDelacroixClubkampf == "remis":
-    Remis. Zwei Stimmen, ein Akkord. Deine Nadel bleibt. #sprecher:odile #stimmung:neutral
+    Remis. Zwei Stimmen, ein Akkord. #sprecher:odile #stimmung:neutral
+    Deine Nadel bleibt. #sprecher:odile #stimmung:neutral
 - ausgangPortDelacroixClubkampf == "niederlage":
     Diesmal nicht. Hör auf den Takt, dann kommt die nächste Nadel. #sprecher:odile #stimmung:laechelt
 - else:

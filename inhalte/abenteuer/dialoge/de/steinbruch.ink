@@ -26,6 +26,7 @@ Ein Wolf aus Sprühfarbe an der Felswand, daneben eine Krone. Jemand war hier, l
 -> END
 
 === bagger ===
-Ein alter Bagger, die Schaufel im Schotter. Seit Jahren hat ihn niemand bewegt. Auf dem Sitz liegt ein Vogelnest. #sprecher:erzaehler
+Ein alter Bagger, die Schaufel im Schotter. Seit Jahren hat ihn niemand bewegt. #sprecher:erzaehler
+Auf dem Sitz liegt ein Vogelnest. #sprecher:erzaehler
 -> END
 // <<< Runde 6 (mittel-4)

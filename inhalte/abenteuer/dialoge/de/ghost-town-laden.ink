@@ -18,13 +18,16 @@ VAR kerzeGesehen = false
 === treppe ===
 {
 - kerzeGesehen:
-    Oben ist das Zimmer leer. In der Ecke hängt der Fetzen Rosentapete. Du lässt ihn hängen. #sprecher:erzaehler
+    Oben ist das Zimmer leer. In der Ecke hängt der Fetzen Rosentapete. #sprecher:erzaehler
+    Du lässt ihn hängen. #sprecher:erzaehler
     -> END
 - not abzeichenGefunden:
-    Die Treppe knarrt, aber sie hält. Oben ein leeres Zimmer, ein Bettgestell aus Eisen, Staub. Du gehst wieder hinunter. #sprecher:erzaehler
+    Die Treppe knarrt, aber sie hält. Oben ein leeres Zimmer, ein Bettgestell aus Eisen, Staub. #sprecher:erzaehler
+    Du gehst wieder hinunter. #sprecher:erzaehler
     -> END
 }
 Die Stufen halten. Oben fällt Mondlicht durch ein Fenster ohne Glas auf ein Bettgestell aus Eisen. #sprecher:erzaehler #licht:nacht
-In einer Ecke hängt ein Fetzen Tapete, groß wie deine Hand. Rosen. Du legst die Hand darauf. #sprecher:erzaehler #bild:tapete_rosen
+In einer Ecke hängt ein Fetzen Tapete, groß wie deine Hand. Rosen. #sprecher:erzaehler #bild:tapete_rosen
+Du legst die Hand darauf. #sprecher:erzaehler
 Hier war es. #sprecher:ambrose #stimmung:still #bild:aus
 -> END

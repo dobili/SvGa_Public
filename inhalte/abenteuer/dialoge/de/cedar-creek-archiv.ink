@@ -86,7 +86,8 @@ Sie liest die Jahreszahlen vor. „1972.“ #sprecher:erzaehler
 * [Liegen lassen]
 - Die sind verloren. Man kann nicht alles retten. #sprecher:okafor #stimmung:bitter
 Sie sagt es ruhig. Aber sie hebt trotzdem jede einzelne auf. #sprecher:erzaehler #pause:2
-Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1859“. Er ist trocken geblieben. #sprecher:erzaehler
+Der letzte Karton steht ganz hinten auf einem Regal. Auf ihm steht „1850 bis 1859“. #sprecher:erzaehler
+Er ist trocken geblieben. #sprecher:erzaehler
 * [Vorsichtig auf den Tisch stellen]
 * [Unter die Lampe tragen]
 - -> ordnen_fertig
@@ -162,7 +163,8 @@ Er schrieb zurück. Ein Wort. #sprecher:ambrose #stimmung:bitter
 * {kenntHale} [„Hale wie Victor?“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Hale wie viele. #sprecher:ambrose #stimmung:nachdenklich
-    Aber er sieht dich an dabei. Er weiß es nicht. Und er hat Angst, es zu wissen. #sprecher:erzaehler
+    Aber er sieht dich an dabei. Er weiß es nicht. #sprecher:erzaehler
+    Und er hat Angst, es zu wissen. #sprecher:erzaehler
 * [Schweigen]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Er sieht dich an. Er sagt nichts mehr. #sprecher:erzaehler
@@ -239,7 +241,8 @@ Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt
     Er fährt herum. Er sucht nach einer Antwort und hat keine. #sprecher:erzaehler #pause:2
     Das hast du von mir. #sprecher:ambrose #stimmung:still
     ** [„Was stimmt denn nun?“]
-        Er sieht auf das Brett aus Licht. Dann auf die Zeitung. Vier zu drei. #sprecher:erzaehler
+        Er sieht auf das Brett aus Licht. Dann auf die Zeitung. #sprecher:erzaehler
+        Vier zu drei. #sprecher:erzaehler
         Wenn ich das wüsste, säße ich vielleicht nicht in einer Kiste. #sprecher:ambrose #stimmung:bitter
     ** [Nichts sagen]
 * [Nichts sagen]
@@ -251,10 +254,12 @@ Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #stimmung:laechelt
 === name_im_archiv ===
 {ambroseNenntNamen: -> END}
 ~ ambroseNenntNamen = true
-Über dir schlägt die Uhr. Sieben Mal. Du legst die Zeitung zurück, das Programm obenauf. #sprecher:erzaehler #klang:turmuhr7 #musik:aus
+Über dir schlägt die Uhr. Sieben Mal. #sprecher:erzaehler #klang:turmuhr7 #musik:aus
+Du legst die Zeitung zurück, das Programm obenauf. #sprecher:erzaehler
 Als du den Deckel schließen willst, sagt er: #sprecher:erzaehler
 {held}. #sprecher:ambrose #stimmung:nachdenklich #pause:2
-Er hat dich noch nie beim Namen genannt. Immer nur „Kind“. Oder „Lehrling“. #sprecher:erzaehler
+Er hat dich noch nie beim Namen genannt. Immer nur „Kind“. #sprecher:erzaehler
+Oder „Lehrling“. #sprecher:erzaehler
 * [„Ja?“]
 * [Den Deckel offen lassen]
 - Ich habe das noch niemandem erzählt. #sprecher:ambrose #stimmung:nachdenklich

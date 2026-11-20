@@ -88,7 +88,8 @@ So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. #sprecher:
 Behalt die Abschrift. #sprecher:abernathy #stimmung:laechelt
 // Nach dem Abschied (abschiedGesehen) erkennt {held} die Züge selbst; Ambrose spricht nicht mehr.
 {abschiedGesehen:
-    A. W. Du erkennst die Züge. So beginnt seine Partie gegen Hale. #sprecher:erzaehler
+    A. W. #sprecher:erzaehler
+    Du erkennst die Züge. So beginnt seine Partie gegen Hale. #sprecher:erzaehler
     -> END
 }
 Ihr geht ein Stück am Teich entlang. Ambrose ist lange still. #sprecher:erzaehler #pause

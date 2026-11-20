@@ -1,6 +1,7 @@
 /** Tests der Zeit-Hinweise Ambroses (Wunsch des Autors, 19.11.2026). */
 import { describe, expect, it } from "vitest";
 import {
+  ambroseSchweigtAmBrett,
   erwarteteZuege,
   genutztAusRestzeiten,
   zeithinweis,
@@ -104,5 +105,14 @@ describe("echte Wahl", () => {
     // Schwarzer König a8, weißer König c7 und Turm b1: nur Ka7 ist legal.
     const einzig = "k7/2K5/8/8/8/8/8/1R6 b - - 0 1";
     expect(echteWahl(einzig, null, "Ka7")).toBe(false);
+  });
+});
+
+describe("ambroseSchweigtAmBrett", () => {
+  it("schweigt im Halbfinale, sonst nicht", () => {
+    expect(ambroseSchweigtAmBrett("capitalArena.halbfinale")).toBe(true);
+    expect(ambroseSchweigtAmBrett("capitalArena.halbfinale#revanche")).toBe(true);
+    expect(ambroseSchweigtAmBrett("ironwood.clubkampf")).toBe(false);
+    expect(ambroseSchweigtAmBrett("capitalArena.runde1")).toBe(false);
   });
 });

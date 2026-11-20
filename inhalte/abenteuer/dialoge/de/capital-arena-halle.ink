@@ -95,6 +95,10 @@ VAR pauseNachRunde2Gesehen = false
     Das Halbfinale beginnt gleich. Vorher möchte Dr. Lin am Pressetisch etwas sagen. #sprecher:turnierleiterin #stimmung:neutral
     -> END
 - ausgangCapitalArenaHalbfinale != "sieg": -> halbfinale_angebot
+// Lektorat 19.11.2026: Nach dem Finale kündigt sie es nicht mehr an.
+- gespielt(ausgangCapitalArenaFinale):
+    Das Turnier ist gespielt. Die Tafel bleibt bis morgen hängen. #sprecher:turnierleiterin #stimmung:laechelt
+    -> END
 - else:
     Das Finale spielst du auf der Bühne. Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:neutral
     -> END
@@ -222,7 +226,7 @@ An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf gan
     Am Pressetisch schreiben Reporter. Einer fotografiert die Turniertafel. #sprecher:erzaehler
     -> END
 - not vorrundeGeschafft:
-    Am Pressetisch sitzen Dr. Lin und Nova mit einer Mappe. Sie warten auf das Ende der Vorrunde. #sprecher:erzaehler
+    Am Pressetisch sitzt Dr. Lin mit einer Mappe. Sie wartet auf das Ende der Vorrunde. #sprecher:erzaehler
     -> END
 }
 -> aussage
@@ -338,14 +342,14 @@ Ein Raunen geht durch die Halle. Slick, irgendwo oben: „Was macht {held} da?�
 // Roman Kapitel 63, nach dem Sieg: Kade und „Das ist meine unsterbliche Partie. Mit dir.“
 === halbfinale_danach ===
 ~ halbfinaleDanachGesehen = true
-Kade sitzt da, einen Schuh ausgezogen, und sieht auf seinen König. Er hat es zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh. #sprecher:erzaehler
+Kade sitzt da, einen Schuh ausgezogen, und sieht auf seinen König. Das Gerät hat er zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh. #sprecher:erzaehler
 Du gehst um den Tisch und hältst ihm die Hand hin. Er nimmt sie. #sprecher:erzaehler
 Ich hab ihn nicht gesehen. Ich hab seit dem Frühjahr kein Brett mehr angeguckt. Ich war mal richtig gut. In der achten Klasse. #sprecher:kade #stimmung:bitter
 * [„Dann bist du es noch. Frag Nova.“]
 - {ambroseImHalbfinaleGerufen or mentorzugFreiGespielt: -> halbfinale_mit_dir}
 Ambrose steht neben dem Brett. #sprecher:erzaehler
 Du hast mich nicht gerufen. #sprecher:ambrose #stimmung:froh
-Dann weiß ich jetzt, dass du mich nicht gebraucht hast. Das ist auch ein schöner Tag. #sprecher:ambrose #stimmung:froh
+Ich habe nur zugesehen. Es war ein schöner Tag. #sprecher:ambrose #stimmung:froh
 -> halbfinale_zum_gang
 
 === halbfinale_mit_dir ===
@@ -646,6 +650,6 @@ Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 {ausgang:
 - "sieg": {runde}: Sieg für dich. Ich trage es ein. #sprecher:turnierleiterin #stimmung:neutral
 - "remis": {runde}: Remis. Ein halber Punkt für jeden. #sprecher:turnierleiterin #stimmung:neutral
-- else: {runde}: verloren. Die Vorrunde ist noch nicht vorbei, jeder Punkt zählt. #sprecher:turnierleiterin #stimmung:neutral
+- else: {runde}: verloren. {alleGespielt():Ich trage es ein.|Die Vorrunde ist noch nicht vorbei, jeder Punkt zählt.} #sprecher:turnierleiterin #stimmung:neutral
 }
 -> turnierleiterin

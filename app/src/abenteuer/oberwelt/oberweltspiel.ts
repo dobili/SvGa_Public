@@ -9,6 +9,7 @@
  * Abhängigkeiten: phaser, szene.ts (Kamera über kameraregie.ts).
  */
 import Phaser from "phaser";
+import { raeumePhaserNachlassAuf } from "./phaserNachlass";
 import { Oberweltszene, type Szenendaten } from "./szene";
 
 /**
@@ -56,6 +57,8 @@ export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser
     input: { keyboard: { capture: [] } },
     audio: { noAudio: true },
   });
+  // Phaser lässt beim Beenden einen Sichtbarkeitshörer am Dokument zurück (je Karte einen).
+  raeumePhaserNachlassAuf(spiel);
   // Drehen des Geräts: Das Spiel folgt der Größe des Elements (ohne Beobachter in alten Browsern
   // bleibt die Größe vom Start).
   if (typeof ResizeObserver !== "undefined") {

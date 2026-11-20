@@ -259,7 +259,7 @@ Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäum
     }
     ~ gatterOffenGesehen = true
     Das Gatter steht einen Spalt offen. Dahinter winkt ein Mann mit Strohhut. #sprecher:erzaehler
-    „Du bist das Kind von der Tafel. Mr. Pratt hat es erzählt. Komm rein. Gatter zu.“ #sprecher:erzaehler
+    „Du hast die Tafel gelöst, oder? Komm rein, Gatter zu.“ #sprecher:erzaehler
     -> END
 - else:
     Das Gatter ist zu. Am Pfosten ein Zettel: „Kühe ausgebüxt. Bin suchen. W. Miller.“ #sprecher:erzaehler
@@ -275,7 +275,7 @@ Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäum
 === ereignis_flohmarkt ===
 {nadelMapleFalls < 1:
     Das Wohnmobil „Gambit“ parkt in der Einfahrt, die Tür ist zu. Auf den Tischen liegen Decken über den Kisten. #sprecher:erzaehler
-    Am Aufsteller steht: „Flohmarkt am Samstag.“ #sprecher:erzaehler
+    Am Aufsteller steht: „Flohmarkt am Wochenende.“ #sprecher:erzaehler
     -> END
 }
 {flohmarktKarteErhalten: -> flohmarkt_spaeter}
@@ -295,7 +295,7 @@ Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette #stimmung:la
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END
 * [Nicht jetzt]
-    Ich bin den ganzen Samstag hier. Die Fallen laufen nicht weg. #sprecher:odette #stimmung:laechelt
+    Ich bin das ganze Wochenende hier. Die Fallen laufen nicht weg. #sprecher:odette #stimmung:laechelt
     -> END
 
 === flohmarkt_karte ===
@@ -517,5 +517,5 @@ Am Apfelstand hängt ein Zeitungsausschnitt. Vielleicht weiß Ada mehr. #spreche
 === flohmarkt_rueckmeldung ===
 {wegMapleCedarFinchFallenBestanden: -> ereignis_flohmarkt}
 Eine hat dich erwischt. Sieht eben aus wie Patt. #sprecher:odette #stimmung:lacht
-Komm wieder, wenn du sie noch einmal sehen willst. Ich bin den ganzen Samstag hier. #sprecher:odette #stimmung:laechelt
+Komm wieder, wenn du sie noch einmal sehen willst. Ich bin das ganze Wochenende hier. #sprecher:odette #stimmung:laechelt
 -> END

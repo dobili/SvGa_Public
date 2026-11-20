@@ -59,14 +59,14 @@ VAR musikhausOffen = false
 Ein Mann mit Sägemehl in den Augenbrauen kommt dir entgegen. Er lacht viel und arbeitet dabei weiter. #sprecher:erzaehler
 Henri Whitlock-Duval. {leimAuftrag:Leim für den Club? Natürlich für den Club. Umsonst.|Klavierbauer, seit sechs Generationen.} #sprecher:henri #stimmung:laechelt
 Meine Großmutter hat im Musikhaus Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri #stimmung:laechelt
-Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri #stimmung:lacht
+Ein Klavier hat zweihundertdreißig Saiten, dein Spiel nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri #stimmung:lacht
 -> END
 
 === henri_foto ===
 ~ fotoAmbroseGesehen = true
 ~ henriGetroffen = true
 Durch ein Loch im Dach, über das eine Plane gespannt ist, fällt blaues Licht. Die Werkbank steht an derselben Stelle. #sprecher:erzaehler
-Das hier wird Sie interessieren, wenn Sie Schach mögen. #sprecher:henri #stimmung:laechelt
+Das hier wird dich interessieren, wenn du Schach magst. #sprecher:henri #stimmung:laechelt
 Ein ovales Foto, sehr alt, braun. Ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. #sprecher:erzaehler
 Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem. #sprecher:henri #stimmung:nachdenklich
 Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen. #sprecher:henri #stimmung:nachdenklich
@@ -251,7 +251,7 @@ Claire. Sie hat nach Norden geheiratet. In eine Stadt mit einem Wasserfall. Sie 
 Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
 * [Warten]
 - Deshalb bist du hier. #sprecher:ambrose #stimmung:still #pause:2
-{ambroseSprichtWieder:Dann ist er lange still.|Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er hat ihn längst verbraucht.} #sprecher:erzaehler
+{ambroseSprichtWieder:Dann ist er lange still.|Dann schweigt er wieder. Mehr hatte er für diesen Tag nicht.} #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)

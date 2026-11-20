@@ -224,7 +224,9 @@ einem Sieg.
 - Die Monatskarte (Reisen) benutzt er nicht; er läuft alle Wege.
 - Statisten spricht er nicht an.
 - Er spielt stärker als ein Leser mit 1200 und verliert nie; Niederlagen, Wiedereinstieg und
-  Notausgänge kamen deshalb nicht vor.
+  Notausgänge kamen deshalb nicht vor. Nachtrag 19.11.2026: Mit `DURCHLAUF_SPIELER=schwach`
+  verliert er jeden ersten Versuch, lädt neu, bricht ab und spielt S17 bis zum Notausgang
+  (Bericht `schwacher_spieler_19-11.md`).
 - Die simulierten Stände kennen keine Funde, Steckbriefe und Wertung; Nebenquests der Simulation
   standen dort offen und lenkten den Planer zeitweise ab.
 

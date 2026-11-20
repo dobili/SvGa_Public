@@ -125,7 +125,8 @@ Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Er
 Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem
 {not ezraGetroffen:
     ~ ezraGetroffen = true
-    Ein junger Mann mit Gitarre ruft über das Feuer: „Ich bin Ezra! Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“ #sprecher:erzaehler
+    // Lektorat 19.11.2026: Vom Lebendschach auf der Lichtung kennt man ihn schon.
+    {lebendschachGesehen:Ezra, der Betreuer von der Lichtung, ruft über das Feuer: „Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“|Ein junger Mann mit Gitarre ruft über das Feuer: „Ich bin Ezra! Tandem: Was dein Partner schlägt, darfst du einsetzen. Wer redet, wird gekitzelt!“} #sprecher:erzaehler
 }
 Springer! Ich brauch einen Springer! #sprecher:dex #stimmung:lacht
 Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. #sprecher:erzaehler

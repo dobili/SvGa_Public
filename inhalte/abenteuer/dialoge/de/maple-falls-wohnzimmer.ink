@@ -21,6 +21,7 @@ VAR held = "Du"
 VAR brettBeruehrt = false
 VAR ankunftGesehen = false
 VAR ersterAbendGesehen = false
+VAR ersteNachtGesehen = false
 VAR aufbruchGesehen = false
 VAR kenntHale = false
 VAR ausgangMapleFallsErsteLektion = ""
@@ -30,6 +31,7 @@ VAR nadelMapleFalls = 0
 // maple-falls-park.ink, dinerAbendGesehen diese Datei.
 VAR joGetroffen = false
 VAR dinerAbendGesehen = false
+VAR hectorGetroffen = false
 // Eingang des Wohnzimmers (19.11.2026, Wunsch des Autors): Das Knarren der Treppe gehört zum
 // Herunterkommen, nicht ins Gespräch mit Mama. treppeAbendGesehen setzt treppe_abend.
 VAR treppeAbendGesehen = false
@@ -51,6 +53,7 @@ VAR mamaSpielt = false
 VAR einladungGesehen = false
 VAR tiefpunktGesehen = false
 VAR endeAkt3Gesehen = false
+VAR abschiedGesehen = false
 
 === mutter ===
 {
@@ -238,12 +241,15 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
 // Akt 4 Stolz, Akt 3 Nähe am Telefon (nach dem Vorwurf: sie glaubt {held}), nach Ironwood das
 // Taschenschach, Akt 2 Sorge und das Verbot, Akt 1 der Einzug.
 {
+// Lektorat 19.11.2026: Nach der Meisterschaft spricht Mama nicht mehr davor.
+- abschiedGesehen:
+    {~Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Im Werk hängt dein Foto aus der Arena. Joe hat einen Rahmen aus Stahl gebaut.|Ich bin stolz auf dich, weißt du das? Nicht wegen des Pokals.} #sprecher:mutter #stimmung:froh
 - endeAkt3Gesehen:
     {~Ich hab im Werk erzählt, dass du gegen eine Großmeisterin spielst. Die halbe Schicht weiß es jetzt.|Dein Partieformular hängt am Kühlschrank. Neben meinem von damals.|Grundreihe. Und dann spiel, wie du willst. Ich bin stolz auf dich, weißt du das?} #sprecher:mutter #stimmung:froh
 - tiefpunktGesehen:
     {~Was die in Port Delacroix gesagt haben, glaube ich keine Sekunde. Ich kenne deine Züge.|Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Wer dir das noch mal vorwirft, kriegt es mit mir zu tun. Und mit Joe.} #sprecher:mutter #stimmung:nachdenklich
 - einladungGesehen:
-    {~Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Juno schreibt mir jeden Abend, ob du gegessen hast. Ich glaube ihr nicht immer.|Nachtschicht. Aber wenn du anrufst, gehe ich ran. Immer.} #sprecher:mutter #stimmung:laechelt
+    {~Ruf an, wenn du angekommen bist. Egal wie spät. Ich hab das Telefon in der Kitteltasche.|Juno hat versprochen, dass du isst. Ich glaube ihr nicht immer.|Nachtschicht. Aber wenn du anrufst, gehe ich ran. Immer.} #sprecher:mutter #stimmung:laechelt
 - mamaSpielt:
     {~Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Das blaue Heft liegt auf dem Küchentisch. Schreib rein, wenn du gespielt hast.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter #stimmung:laechelt
 - endeAkt1Gesehen:
@@ -266,7 +272,17 @@ In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spül
 // dem Dachboden liegt (Dialogprüfung 17.11.2026). Danach kommt hier keine Zeile, die Tür geht
 // einfach auf. Ambrose spricht in diesem Knoten nie: Vorher ist er nicht erwacht oder nicht dabei.
 === haustuer ===
-{ersteLektionBesprochen: -> END}
+// Lektorat 19.11.2026: Die Tür bleibt bis nach der ersten Nacht zu; vorher stimmten draußen
+// Tageszeit (Guten Morgen, Schule) und Reihenfolge (Mama erzählt vom Schachteam) nicht.
+{ersteNachtGesehen: -> END}
+{
+- ersterAbendGesehen:
+    Draußen ist es dunkel. Oben in deinem Zimmer wartet das Brett. #sprecher:erzaehler
+    -> END
+- ersteLektionBesprochen:
+    Unten wartet Mama mit der Pizza. Die Stadt läuft nicht weg. #sprecher:erzaehler
+    -> END
+}
 {brettBeruehrt:
     Du hast die Hand schon an der Klinke. Aber oben auf dem Dachboden steht das Brett, und es lässt dich nicht los. #sprecher:erzaehler
 - else:
@@ -300,7 +316,7 @@ Diner? Ich lade dich ein. #sprecher:mutter #stimmung:froh
 Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #musik:diner #geraeusch:diner_kueche #klang:tuerglocke
 Es riecht nach Zwiebeln und Kaffee. Aus der Musikbox kommt leise ein altes Lied. #sprecher:erzaehler
 Bestellung läuft! #sprecher:hector #stimmung:froh
-Er ruft es in die Küche, obwohl außer ihm niemand in der Küche ist. Auf seiner Schürze steht „Hector“. #sprecher:erzaehler
+{hectorGetroffen:Hector ruft es in die Küche, obwohl außer ihm niemand in der Küche ist.|Er ruft es in die Küche, obwohl außer ihm niemand in der Küche ist. Auf seiner Schürze steht „Hector“.} #sprecher:erzaehler
 Er legt euch Papiersets hin. Darauf ein Schachbrett: „Rätsel der Woche: Weiß zieht und setzt in einem Zug matt.“ #sprecher:erzaehler
 Nimm zwei. Ist schwer diese Woche. Ich krieg's nicht raus. #sprecher:hector #stimmung:nachdenklich
 * [Das Rätsel ansehen]

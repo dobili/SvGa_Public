@@ -22,6 +22,7 @@ import { UEBUNGSPARTIE_AMBROSE } from "../regeln/abwesenheit";
 import { schutzengelGesperrt } from "../regeln/schutzengel";
 import {
   genutztAusRestzeiten,
+  ambroseSchweigtAmBrett,
   zeithinweis,
   zeithinweiseFreigeschaltet,
   zeithinweisSatz,
@@ -115,8 +116,9 @@ const MS_JE_SEKUNDE = 1000;
 /**
  * Der Satz am Ende einer Schnellschach-Partie mit Zeitwahl, die nach der genutzten Zeit als Blitz
  * zählt (regeln/zeitklassenwertung.ts), sonst null.
- * Beispiel: 10 + 5, 25 Züge mit je 4 Sekunden → „Im Schnitt 4 Sekunden je Zug. Für Schnellschach
- * ist das sehr flott.“ (oder der andere Satz, je nach Partie).
+ * Beispiel: 10 + 5, 25 Züge mit je 4 Sekunden → „Du bist gezogen, als brenne das Kaffeehaus. Die
+ * Uhr hätte dir mehr geschenkt.“ (oder der andere Satz, je nach Partie; Ambrose nennt keine Zahlen,
+ * Story-Bibel 5.3, Regel 5).
  */
 function geblitztText(partie: Partie): string | null {
   const uhr = partie.einstellung.uhr;
@@ -176,7 +178,8 @@ export function Zeithinweis({ partie }: { readonly partie: Partie }) {
     !partie.einstellung.abenteuer?.kurzform &&
     begegnung !== UEBUNGSPARTIE_AMBROSE &&
     zeithinweiseFreigeschaltet(variablen) &&
-    !schutzengelGesperrt(variablen, begegnung);
+    !schutzengelGesperrt(variablen, begegnung) &&
+    !ambroseSchweigtAmBrett(begegnung);
   const zuege = eigeneZuege(partie);
   useEffect(() => {
     const rest = restDesHelden(partie);

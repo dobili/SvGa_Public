@@ -278,7 +278,7 @@ Auf der Kiste mit den Sportgeräten ist ein Fink aus Kreide gemalt. Zwischen den
 -> END
 
 === pferd ===
-Am Zaun steht ein braunes Pferd und frisst Heu. Es schaut {held} an, als würde es gleich über den Zaun springen. Tut es aber nicht. #sprecher:erzaehler
+Am Zaun steht ein braunes Pferd und frisst Heu. Es schaut dich an, als würde es gleich über den Zaun springen. Tut es aber nicht. #sprecher:erzaehler
 -> END
 
 === schild_schule ===

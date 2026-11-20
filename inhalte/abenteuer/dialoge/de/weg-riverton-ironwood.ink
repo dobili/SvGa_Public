@@ -286,11 +286,11 @@ Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime 
 = nach_der_partie
 {ausgangWegRivertonIronwoodDime:
 - "sieg":
-    Gewonnen hast du. Zehn Cent? Sagen wir zwanzig. Ich übertreibe immer, das ist mein Stil. #sprecher:dime #stimmung:lacht
+    Zehn Cent? Ach was, sagen wir zwanzig. Ich übertreibe immer, das ist mein Stil. #sprecher:dime #stimmung:lacht
 - "remis":
-    Remis. Fünf Cent für jeden. Ich schreib's an. #sprecher:dime #stimmung:laechelt
+    Fünf Cent für jeden. Ich schreib's an. #sprecher:dime #stimmung:laechelt
 - else:
-    Gewonnen hab ich. Aber du hast gespielt, und das zählt hier. Wer spielt, kennt den nächsten Springer. #sprecher:dime #stimmung:laechelt
+    Aber du hast gespielt, und das zählt hier. Wer spielt, kennt den nächsten Springer. #sprecher:dime #stimmung:laechelt
 }
 Noch eine? #sprecher:dime #stimmung:laechelt
 -> spielen

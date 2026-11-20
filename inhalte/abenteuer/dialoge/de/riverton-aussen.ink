@@ -118,7 +118,7 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 
 === schuppen_zu ===
 {schuppenOffen:
-    Die Schuppentür quietscht in den Angeln. Drinnen riecht es nach Staub und Öl. #sprecher:erzaehler
+    Die Schuppentür quietscht in den Angeln. #sprecher:erzaehler
 - else:
     Ein Holzschuppen hinter der geschlossenen Werkstatt. Ein rostiges Vorhängeschloss hält die Tür zu. #sprecher:erzaehler
 }

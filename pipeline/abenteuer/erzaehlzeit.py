@@ -71,6 +71,8 @@ GEPRUEFT: dict[str, str] = {
     "hinauf („Komm. Ich zeig dir was.“).",
     "maple-falls-wohnzimmer:diner_abend:Es riecht nach Zwiebeln und Kaffee": "Mama lädt ins Diner ein; "
     "die Szene spielt dort.",
+    "maple-falls-park:bibliothekar_brief:Ihr geht ein Stück am Teich entlang": "Bewegung im Gespräch, "
+    "im Park (Lektorat 19.11.2026: vorher „Auf dem Heimweg“, aber {held} blieb im Park).",
 }
 
 

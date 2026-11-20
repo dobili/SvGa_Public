@@ -47,7 +47,7 @@ VAR spurPM4Gezaehlt = false
 {earlGetroffen: -> END}
 ~ earlGetroffen = true
 Durchs Fenster des Diners sieht man Fernfahrer Könige über Bretter schieben. Draußen an der Wand lehnt ein Mann mit Kappe und Kaffeebecher und dreht sich nach dir um. #sprecher:erzaehler
-Na, auch auf dem Weg nach oben? Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
+{neonGefunden or funkschachBegonnen:Wir kennen uns ja schon. Ich bin Earl, ich fahr seit dreißig Jahren diese Straße.|Na, auch auf dem Weg nach oben? Ich bin Earl, ich fahr seit dreißig Jahren diese Straße.} #sprecher:earl #stimmung:froh
 -> earl_regel_erstmals
 
 // Die Regel allein (als Tunnel): Beim Nachfragen kommt nur sie, ohne Ambrose und Vorführung
@@ -91,7 +91,7 @@ Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #s
 {not abschiedGesehen:
     Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose #stimmung:nachdenklich
 }
-Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl #stimmung:laechelt
+Der Fensterplatz gehört ab heute dir. Für dich jedenfalls. #sprecher:earl #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -190,7 +190,7 @@ Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen.
 
 === funkschach_partie ===
 Hier Mama Bear, Pause oben in der Haltebucht. Ich sag dir meine Züge an, du hörst gut hin. #sprecher:mamaBear #stimmung:laechelt
-Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setzt er für Mama Bear aufs Brett. #sprecher:erzaehler
+{earlGetroffen:Earl|Der Mann mit der Kappe} stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setzt er für Mama Bear aufs Brett. #sprecher:erzaehler
 ~ beginnePartie("wegDesertSummit.funkschach")
 -> END
 
@@ -285,7 +285,8 @@ Mags. Ich fahre Kühlwagen und spiele Blitz aus der Mitte heraus. Drei Minuten, 
     -> END
 }
 ~ ruthGetroffen = true
-Ruth Keene. Am Funk heiße ich Mama Bear. Hier hinten darf ich einfach Ruth sein. #sprecher:ruthKeene #stimmung:laechelt
+{funkschachFertig:Ruth Keene, am Funk Mama Bear. Den Laster lass ich oben stehen, für Earls Kaffee lauf ich runter.|Ruth Keene. Am Funk heiße ich Mama Bear.} #sprecher:ruthKeene #stimmung:laechelt
+Hier hinten darf ich einfach Ruth sein. #sprecher:ruthKeene #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Ansehen
@@ -299,7 +300,7 @@ Das Neonschild des Starlight Motels summt. „VACANCY“, und das V flackert. #s
 -> END
 
 === aussicht ===
-Von der Rastbank sieht man nach Westen die ersten Berge, blau im Dunst. Dort oben liegt Summit City. #sprecher:erzaehler
+Von der Rastbank sieht man nach Norden die ersten Berge, blau im Dunst. Dort oben liegt Summit City. #sprecher:erzaehler
 -> END
 
 === aussicht_berg ===

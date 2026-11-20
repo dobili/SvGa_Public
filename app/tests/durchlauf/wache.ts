@@ -13,6 +13,8 @@
  *   Spieler dazwischen den Aktionsknopf, das Steuerkreuz oder eine Taste gedrückt hat.
  * - meldungUeberFenster: die Meldungsleiste über einem offenen Fenster (Tagebuch, Laden, …).
  * - haengendePause: „Weiter“ bleibt länger gesperrt als die längste Pause des Spiels.
+ * - brettAngeschnitten: ein Schachbrett ragt über den Bildrand (Wunsch des Autors, 20.11.2026:
+ *   Bei Partien und Rätseln muss das Brett quer immer ganz zu sehen sein).
  * Abhängigkeiten: Testkennungen der Oberwelt (Dialog, Meldung, Fenster), messung.ts.
  * Beispiel: installiereWache(seite) beim Start, holeWachfunde(lauf) in jedem Takt.
  */
@@ -60,6 +62,9 @@ function wacheImBrowser(a: { fenster: string[]; pauseMax: number; wieder: number
     const r = (e as HTMLElement).getBoundingClientRect();
     return r.width > 1 && r.height > 1;
   };
+  /** Kleiner gilt nicht als Brett (Vorschaubilder im Tagebuch). */
+  const BRETT_MIN = 120;
+  const alle2 = (auswahl: string) => [...document.querySelectorAll(auswahl)].filter(sichtbar);
   const alle = (k: string) =>
     [...document.querySelectorAll(`[data-testid='${k}']`)].filter(sichtbar);
   let letzteAktion = 0;
@@ -123,6 +128,22 @@ function wacheImBrowser(a: { fenster: string[]; pauseMax: number; wieder: number
     } else if (!dialog && offen) {
       offen = false;
       zuletzt = { zeile: ersteZeile, zu: jetzt };
+    }
+    for (const brett of alle2(".brett")) {
+      const r = brett.getBoundingClientRect();
+      if (r.width < BRETT_MIN || r.height < BRETT_MIN) continue;
+      const rand = 1;
+      const aussen =
+        r.top < -rand ||
+        r.left < -rand ||
+        r.bottom > innerHeight + rand ||
+        r.right > innerWidth + rand;
+      if (aussen) {
+        melde(
+          "brettAngeschnitten",
+          `Brett ${Math.round(r.width)}×${Math.round(r.height)} bei ${Math.round(r.left)},${Math.round(r.top)} im Bild ${innerWidth}×${innerHeight}`,
+        );
+      }
     }
     const gesperrt = dialog?.querySelector(".abenteuer-dialog-weiter[data-pause='ja']");
     if (!gesperrt || !dialog) pause = { text: "", seit: 0 };

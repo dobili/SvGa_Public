@@ -24,6 +24,7 @@ import "../abenteuer.css";
 import "../abenteuer-atmosphaere.css";
 import "../spielfarben.css";
 import "../bedienung.css";
+import "../querformat.css";
 import { useEinstellungen } from "../../app/einstellungen";
 import { usePixelrahmen } from "./pixelrahmen";
 import { loeschePaket } from "../paket/paketlader";

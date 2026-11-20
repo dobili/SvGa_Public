@@ -30,6 +30,7 @@ import { Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
 import { Fortsetzungen } from "./Fortsetzungen";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { szeneAus, useOberweltkern } from "./kern";
+import { useTextspalte } from "./textspalte";
 import { Kopfleiste } from "./Kopfleiste";
 import { Laden } from "./Laden";
 import { Reisen } from "./Reisen";
@@ -121,6 +122,7 @@ export function Oberwelt() {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
   }, [spiel, fensterOffen, welt]);
   useOffeneRueckmeldung(k, oeffneDialog, welt !== null && !fensterOffen);
+  useTextspalte(dialog !== null, () => szeneAus(spiel)?.passeKameraAn());
   // Einmalige Hinweise zur Steuerung (Erstspieler-Durchgang 20.11.2026, useSteuerhinweis.ts).
   const hinweis = useSteuerhinweis(k, {
     frei: welt !== null && !fensterOffen && meldung === null,

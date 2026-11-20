@@ -147,6 +147,7 @@ export function Oberwelt() {
       {!welt?.erinnerung && (
         <Kopfleiste
           muenzen={stand.muenzen}
+          imLaden={aktuellerLaden !== undefined}
           beiTagebuch={() => setzeTagebuch(true)}
           beiReisebrett={
             welt && stand.gegenstaende.includes(REISEBRETT) && !fensterOffen

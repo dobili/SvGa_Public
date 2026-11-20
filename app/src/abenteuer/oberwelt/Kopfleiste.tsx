@@ -8,10 +8,12 @@
  * Daumen) liegen die Knöpfe nicht mehr oben, sondern in einer Leiste über dem Steuerkreuz
  * (Hochformat) oder als runde Knöpfe rechts über dem Aktionsknopf (Querformat); die Lage regelt
  * bedienung.css. Jeder Knopf trägt ein Zeichen für die runde Form und seinen Namen; quer zeigt
- * er nur das Zeichen, der Name bleibt sein zugänglicher Name. Die Münzen bleiben oben (nur lesen).
- * Abhängigkeiten: texte/texte.ts.
+ * er nur das Zeichen, der Name bleibt sein zugänglicher Name. Die Münzen stehen oben, aber nur,
+ * wenn sich ihre Zahl ändert, und im Laden (Muenzanzeige.tsx, Wunsch des Autors, 20.11.2026).
+ * Abhängigkeiten: texte/texte.ts, oberwelt/Muenzanzeige.tsx.
  */
 import { tSpiel } from "../texte/texte";
+import { Muenzanzeige } from "./Muenzanzeige";
 
 /** Ein Knopf der Leiste: Zeichen (für die runde Form im Querformat) und Name. */
 function Leistenknopf({
@@ -47,6 +49,8 @@ function Leistenknopf({
 
 export function Kopfleiste(props: {
   readonly muenzen: number;
+  /** Im Laden bleibt die Münzanzeige stehen (Wunsch des Autors, 20.11.2026). */
+  readonly imLaden: boolean;
   readonly beiTagebuch: () => void;
   /** Rückruf fürs Reisebrett, oder null, wenn der Knopf fehlt. */
   readonly beiReisebrett: (() => void) | null;
@@ -81,9 +85,7 @@ export function Kopfleiste(props: {
           />
         )}
       </nav>
-      <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
-        {tSpiel("laden.muenzenKurz", { anzahl: props.muenzen })}
-      </span>
+      <Muenzanzeige muenzen={props.muenzen} immer={props.imLaden} />
     </>
   );
 }

@@ -8,6 +8,7 @@
  * Abhängigkeiten: planer.ts, laufen.ts, eingabe.ts, lage.ts, welt.ts.
  * Beispiel: weltschritt(lauf, daten, planer) im Zimmer mit Ziel Mama → geht durch „treppeUnten“.
  */
+import { hastigTippen } from "./eilig";
 import { tippe, type Lauf } from "./eingabe";
 import { geheAn, geheDurch } from "./laufen";
 import { feldAus, liesLage, liesSpeicher, liesStand } from "./lage";
@@ -154,7 +155,10 @@ async function fasseAn(
   const ergebnis = await geheAn(lauf, wissen, ding.felder);
   lauf.messung.log(`An ${wissen.kennung}.${ding.name} (${ziel.grund}): ${ergebnis}`);
   if (ergebnis === "aktion") {
-    const getippt = await tippe(lauf, lauf.seite.getByTestId("abenteuer-aktion"), "Aktionsknopf");
+    const aktion = lauf.seite.getByTestId("abenteuer-aktion");
+    // Eiliger Spieler (eilig.ts): Aktionsknopf doppelt, der zweite Tipp landet im neuen Fenster.
+    if (lauf.eilig.an) return void (await hastigTippen(lauf, aktion, true));
+    const getippt = await tippe(lauf, aktion, "Aktionsknopf");
     if (getippt) await lauf.seite.waitForTimeout(350);
     return;
   }

@@ -4,12 +4,12 @@
  *
  * Rolle im Gesamtbild: gehört zur Hülle der Partie (PartieHuelle.tsx), zur Aufgabenrunde, zur
  * Erinnerung und zur Gedächtnisstellung und erscheint nur, solange
- * nicht für die Leser gebaut wird. Die Texte stehen hier fest auf Deutsch, weil die Leiste nie
+ * nicht für die Leser gebaut wird, und nur auf dem Gerät des Autors (testknoepfeAn). Die Texte stehen hier fest auf Deutsch, weil die Leiste nie
  * ausgeliefert und nie übersetzt wird.
  * Abhängigkeiten: testende.ts, ui/komponenten/partie/botzug.ts.
  */
 import { aendereNeueste } from "../../ui/komponenten/partie/botzug";
-import { mitTestende, TESTKNOEPFE_AN, type Testausgang } from "./testende";
+import { mitTestende, testknoepfeAn, type Testausgang } from "./testende";
 
 const KNOEPFE: readonly { ausgang: Testausgang; text: string }[] = [
   { ausgang: "sieg", text: "Gewinnen" },
@@ -19,7 +19,7 @@ const KNOEPFE: readonly { ausgang: Testausgang; text: string }[] = [
 
 /** Die Testleiste einer laufenden Partie; `id` ist die Id der Partie in der App. */
 export function Testleiste({ id }: { readonly id: string }) {
-  if (!TESTKNOEPFE_AN) return null;
+  if (!testknoepfeAn()) return null;
   return (
     <section className="abenteuer-huelle-test" aria-label="Testhilfe des Autors">
       <span>Test:</span>
@@ -46,7 +46,7 @@ export function Testleiste({ id }: { readonly id: string }) {
  * Sonderfall: In der Veröffentlichung zeichnet die Zeile nichts.
  */
 export function Raetseltest({ beiWahl }: { readonly beiWahl: (bestanden: boolean) => void }) {
-  if (!TESTKNOEPFE_AN) return null;
+  if (!testknoepfeAn()) return null;
   return (
     <section className="abenteuer-huelle-test" aria-label="Testhilfe des Autors">
       <span>Test:</span>

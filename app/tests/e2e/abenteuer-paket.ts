@@ -34,11 +34,26 @@ export async function ohneMaiaImHintergrund(seite: Page): Promise<void> {
   await seite.evaluate(setze, TESTSCHALTER_OHNE_MAIA);
 }
 
+/** Wie MERKER_AUTORGERAET in autor/autorgeraet.ts, mit der Vorsilbe aus app/merker.ts. */
+const MERKER_AUTORGERAET = "svga.autorgeraet";
+
+/**
+ * Gibt sich als Gerät des Autors aus (als hätte es die Aufgabenseite geöffnet), damit das Spiel
+ * seine Testleiste zeigt (abenteuer/anbindung/testende.ts, seit 20.11.2026 nur dort). Gilt für alle
+ * Seiten des Tests, auch nach Neuladen.
+ */
+export async function alsAutorgeraet(seite: Page): Promise<void> {
+  const setze = (name: string) => window.localStorage.setItem(name, "ja");
+  await seite.context().addInitScript(setze, MERKER_AUTORGERAET);
+  await seite.evaluate(setze, MERKER_AUTORGERAET);
+}
+
 /**
  * Tippt „Spiel herunterladen“ und wartet, bis das Laden vorbei ist (der Fortschrittsbalken ist
  * weg: danach erscheint „Spielen“, die Welt oder eine Fehlermeldung, je nach Test). Verlängert
  * die Zeit des Tests um die Paketfrist. Eingabe: Seite und optional der Knopf (Vorgabe: der
- * Knopf „abenteuer-laden“). Ohne `mitMaia` lädt Maia nicht im Hintergrund (ohneMaiaImHintergrund);
+ * Knopf „abenteuer-laden“). Das Gerät gilt als Gerät des Autors (alsAutorgeraet, für die
+ * Testleiste). Ohne `mitMaia` lädt Maia nicht im Hintergrund (ohneMaiaImHintergrund);
  * mit `mitMaia` wie im echten Spiel, und der Test wartet auch darauf.
  */
 export async function ladeAbenteuerpaket(
@@ -48,6 +63,7 @@ export async function ladeAbenteuerpaket(
 ): Promise<void> {
   test.info().setTimeout(test.info().timeout + PAKET_FRIST_MS);
   if (!mitMaia) await ohneMaiaImHintergrund(seite);
+  await alsAutorgeraet(seite);
   await (knopf ?? seite.getByTestId("abenteuer-laden")).click();
   const balken = seite.locator(".abenteuer-fortschritt");
   // Aus dem Cache kann das Laden schon vorbei sein, bevor der Balken zu sehen ist.

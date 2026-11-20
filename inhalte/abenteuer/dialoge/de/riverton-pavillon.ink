@@ -265,13 +265,22 @@ Meine Aufgaben sind Springer, die auf zwei Figuren gleichzeitig zeigen. Du finde
 === tamsin_zuschauen ===
 // Kapitel 19: Zuschauen bei Slick gegen Ray; Tamsins Zettel mit Slicks Eröffnungen.
 ~ zuschauenAngeboten = true
-Willst du was sehen? Slick und Ray spielen gleich Blitz. #sprecher:tamsin #stimmung:laechelt
+// Quests verfehlen (20.11.2026): Im geräumten Pavillon (nach slickAbschiedGesehen) steht Tamsin noch,
+// bis das Zuschauen bestanden ist; Slick und Ray sind fort, sie hat die Partie mitgeschrieben.
+{slickAbschiedGesehen:
+    Ich hab Slick und Ray mitgeschrieben, bevor die Bildschirme kamen. Die ganze Blitzpartie. #sprecher:tamsin #stimmung:froh
+- else:
+    Willst du was sehen? Slick und Ray spielen gleich Blitz. #sprecher:tamsin #stimmung:laechelt
+}
 Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin #stimmung:nachdenklich
 + [„Ich schau zu.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
 + [„Nicht jetzt.“]
-    {clubkampfRivertonBesprochen:
+    {
+    - slickAbschiedGesehen:
+        Okay. Der Zettel bleibt in meiner Tasche. #sprecher:tamsin #stimmung:laechelt
+    - clubkampfRivertonBesprochen:
         Okay. Die beiden spielen jetzt überall, wo eine Stufe frei ist. #sprecher:tamsin #stimmung:nachdenklich
     - else:
         Okay. Aber verpass es nicht. #sprecher:tamsin #stimmung:nachdenklich
@@ -280,7 +289,7 @@ Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin
     -> END
 
 === tamsin_zuschauen_wieder ===
-Zuschauen? Slick und Ray spielen schon wieder. #sprecher:tamsin #stimmung:laechelt
+{slickAbschiedGesehen:Der Zettel mit Slick und Ray? Willst du ihn sehen?|Zuschauen? Slick und Ray spielen schon wieder.} #sprecher:tamsin #stimmung:laechelt
 + [„Ja.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END

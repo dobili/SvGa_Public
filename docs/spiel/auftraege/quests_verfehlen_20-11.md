@@ -81,7 +81,37 @@ Die Ausnahmen sind Sperren, die die Reihenfolge der Geschichte ausschließt; die
   - Seine Dialoge bieten die Feier in jedem späteren Zustand an („Wird noch gefeiert?“).
   - Big Joe steht in Akt 4 ohnehin auch in Crossroads; `figurenort` meldet nichts.
 
-### Gemeldet (Entscheidung zu Karten oder Dialogen nötig)
+### Nach der Entscheidung des Hauptchats umgesetzt (20.11.2026, abends)
+
+- **a) Tamsin im geräumten Pavillon:**
+  - Szene `inhalte/abenteuer/szenen/riverton-pavillon-perfect-move.json`: Figur `tamsin` auf Feld
+    (9, 19), Blick nach rechts, wie in der Grundszene. Neu gebaut mit
+    `python -m pipeline.abenteuer.kartenbau`, Ergebnis „in Ordnung“. Die Karte
+    `karten/riverton-pavillon-perfect-move.json` ist neu erzeugt.
+  - In `orte.json` steht für `riverton.tamsin` jetzt `wenn: nicht slickAbschiedGesehen oder nicht
+    slickBeobachtenBestanden`: Nach dem Zuschauen geht sie.
+  - Neue Zeilen (riverton-pavillon.ink): Im geräumten Pavillon hat Tamsin die Partie
+    mitgeschrieben, statt dass Slick und Ray spielen; „Nicht jetzt.“ heißt dort: „Okay. Der
+    Zettel bleibt in meiner Tasche.“
+- **b) Victor an der Bergstation** (summit-city-bergstation.ink, Knoten `victor_berichte_spaeter`):
+  - Solange die Spielberichte laufen (`speicherstiftErhalten` und nicht bestanden), sagt er vor
+    allem anderen: „Du hast meine Spielberichte noch. Schau sie dir an, bevor alles andere
+    kommt.“
+  - Dazu die Wahl „Die Partien auswerten“ oder „Nicht jetzt.“; danach geht das Gespräch normal
+    weiter.
+- **c) Fehlende Seite:** übernimmt mittel-1.
+- **d) Archiv ordnen:** Nach der Nadel bittet Mrs. Okafor in der Bibliothek einmal: „Eine Bitte
+  noch. Unten im Archiv stehen die nassen Kartons, und allein schaffe ich die nicht.“
+  (cedar-creek-bibliothek.ink, `okafor_archiv_bitte`, setzt `ordnenAngeboten`). Danach bietet der
+  Karton im Archiv das Ordnen an.
+- **Prüfung:** Die Prüfung kennt jetzt auch die Variablen, die die Hülle nach Runden setzt
+  (`…Bestanden`). Stand:
+  - 0 Befunde;
+  - 9 Ausnahmen, neu die Spielberichte: angeboten in der Lobby und an der Bergstation;
+  - 2 gemeldet: der nie gefragte Start der Spielberichte, bewusst so gelassen, und die fehlende
+    Seite bei mittel-1.
+
+### Gemeldet (Entscheidung zu Karten oder Dialogen nötig; Stand vor der Entscheidung)
 
 1. **Zuschauen bei Tamsin** (`riverton.zuschauen`, Start):
    - Fehler: Der geräumte Pavillon (Zustandskarte bei `slickAbschiedGesehen`) hat keine Tamsin.

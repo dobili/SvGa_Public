@@ -1267,6 +1267,7 @@
           "name": "figur.tamsin.name",
           "sprite": "figuren/tamsin.png",
           "dialog": "riverton-pavillon.tamsin",
+          "wenn": "nicht slickAbschiedGesehen oder nicht slickBeobachtenBestanden",
           "gegner": "riverton.tamsin"
         },
         {

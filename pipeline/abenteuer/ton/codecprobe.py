@@ -159,6 +159,7 @@ def baue(privat: Path, ziel: Path) -> dict[str, int]:
 
 
 def main() -> None:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     teile = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     teile.add_argument("privat", type=Path, help="Pfad zu schach-abenteuer-inhalte")
     teile.add_argument("ziel", type=Path, help="Ordner für Seite und Ausschnitte")

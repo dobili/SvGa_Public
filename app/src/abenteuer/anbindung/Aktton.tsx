@@ -24,6 +24,7 @@ function mb(bytes: number): string {
   return Math.max(0.1, bytes / BYTES_JE_MB).toFixed(1);
 }
 
+/** Knopf „Ton aller Akte laden“ im Spielmenü mit Größe und Fortschritt; für alle, die vor dem Spielen offline gehen wollen. */
 export function Aktton() {
   const [stand, setzeStand] = useState<Stand>({ art: "pruefe" });
   useEffect(() => {

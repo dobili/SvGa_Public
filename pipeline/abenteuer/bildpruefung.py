@@ -76,6 +76,7 @@ def kurzpfad(datei: Path) -> str:
 
 
 def merke(lage: Bildlage, name: str, fundstelle: str) -> None:
+    """Merkt eine Fundstelle für ein benutztes Bild, jede nur einmal."""
     lage.benutzt.setdefault(name, [])
     if fundstelle not in lage.benutzt[name]:
         lage.benutzt[name].append(fundstelle)
@@ -162,6 +163,7 @@ def pruefe(privat: Path, dialoge: Path = DIALOGE, datenordner: tuple[Path, ...] 
 
 
 def main() -> None:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     teile = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     teile.add_argument("--privat", type=Path, required=True, help="Pfad zu schach-abenteuer-inhalte")
     teile.add_argument("--bericht", type=Path, help="Markdown-Bericht hierhin schreiben")

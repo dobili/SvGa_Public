@@ -57,10 +57,12 @@ BAUTEIL = ("modular", "_left", "_right", "_top", "_bottom", "_part", "_half", "_
 
 
 def lade(pfad: Path) -> dict:
+    """Liest eine JSON-Datei (Szene, Möbelliste)."""
     return json.loads(pfad.read_text(encoding="utf-8"))
 
 
 def raster(szene: dict) -> list[str]:
+    """Die Zeilen des Rasters, rechts mit leeren Feldern auf gleiche Breite gebracht."""
     zeilen = szene["raster"]
     breite = max(len(z) for z in zeilen)
     return [z.ljust(breite, LEER) for z in zeilen]
@@ -350,6 +352,7 @@ def hinweise(pfad: Path) -> list[str]:
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     fehler = 0
     for name in sys.argv[1:]:
         befunde = baue(Path(name))

@@ -236,6 +236,7 @@ def masken(zellen: int = ZELLEN) -> dict[str, list[str]]:
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     if "--masken" in argv:
         print(json.dumps(masken(), ensure_ascii=False, indent=2))
         return 0

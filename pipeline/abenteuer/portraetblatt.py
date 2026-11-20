@@ -32,11 +32,13 @@ TREFFERANTEIL = 0.8
 
 
 def ist_gruen(p: tuple[int, ...]) -> bool:
+    """Gehört das Pixel zum grünen Grund des Gemini-Blatts?"""
     r, g, b = p[:3]
     return g >= GRUEN_MIN and g - max(r, b) >= GRUEN_ABSTAND
 
 
 def ist_dunkel(p: tuple[int, ...]) -> bool:
+    """Ist das Pixel fast schwarz (Trennlinie zwischen den Feldern)?"""
     return max(p[:3]) <= DUNKEL_MAX
 
 
@@ -165,6 +167,7 @@ def schneide(eingabe: Image.Image, raster: tuple[int, int] = RASTER) -> Image.Im
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     raster = RASTER
     if "--raster" in argv:
         i = argv.index("--raster")

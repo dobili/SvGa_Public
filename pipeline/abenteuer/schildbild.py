@@ -184,6 +184,7 @@ def alle_bilder() -> dict[str, Image.Image]:
 
 
 def main(argv: list[str]) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     if not argv:
         print(__doc__)
         return 1

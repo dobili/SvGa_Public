@@ -265,6 +265,7 @@ def schreibe_paket(daten: dict, ziel: Path) -> Path:
 
 
 def main(argumente: list[str] | None = None) -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     teiler = argparse.ArgumentParser(description="Paket des Karteneditors bauen")
     teiler.add_argument("privat", type=Path, help="Klon des privaten Repositorys")
     teiler.add_argument("ziel", type=Path, help="Zielordner, üblich PRIVAT/editor")

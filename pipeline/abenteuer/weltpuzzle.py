@@ -327,6 +327,7 @@ def pruefe(alle: dict[str, dict], liste: list[dict], orte: list[str] | None = No
 
 
 def main() -> int:
+    """Befehlszeile; Aufruf und Zweck im Dateikopf."""
     from pipeline.abenteuer.uebergaenge import szenen, uebergaenge
 
     eingabe = argparse.ArgumentParser(description=__doc__.split("\n")[0])

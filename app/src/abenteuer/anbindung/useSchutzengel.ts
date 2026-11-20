@@ -68,7 +68,13 @@ export function useSchutzengel(s: Partiesteuerung, partie: Partie) {
   const [halt, setzeHalt] = useState<Schutzgrund | null>(null);
   const [prueft, setzePrueft] = useState(false);
   useEffect(() => {
-    if (wacht && amZug) void besterWert(s.fen).catch(() => null);
+    // Nur vorrechnen, damit die Prüfung beim Zug schnell ist; scheitert es, rechnet der Zug selbst
+    // neu und meldet dort.
+    if (wacht && amZug) {
+      void besterWert(s.fen).catch((fehler: unknown) =>
+        console.warn("Schutzengel: Vorrechnen fehlgeschlagen", fehler),
+      );
+    }
   }, [wacht, amZug, s.fen]);
   const spieleLeser = (san: string) => {
     if (prueft) return;

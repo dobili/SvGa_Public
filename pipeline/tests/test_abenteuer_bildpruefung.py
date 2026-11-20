@@ -3,9 +3,11 @@ der Großansicht (#bild) und der Fundbilder, mit erfundenen Dialogen und Bildern
 
 from pathlib import Path
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.bildpruefung import bericht, dateiname, pruefe
+Image = pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
+
+from pipeline.abenteuer.bildpruefung import bericht, dateiname, pruefe  # noqa: E402
 
 
 def lege_bild(ordner: Path, name: str, mass: tuple[int, int]) -> None:

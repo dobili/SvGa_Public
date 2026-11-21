@@ -8,7 +8,8 @@ Schlüssel: „Prüfung:Figur:Datei.Knoten“ (Prüfung „liegen“, „kommt�
   lässt sie sitzen). An den Hauptchat gemeldet; bis die Szene geändert ist, steht er hier.
 
 Neue Kandidaten erst ansehen, dann beheben (``#stelle``, ``#gehe``, Text oder Karte) oder hier mit
-Grund eintragen. Stand 20.11.2026 (mittel-4).
+Grund eintragen. Stand 20.11.2026 (mittel-4). Die elf Kartenbefunde vom 20.11. sind behoben: Die Figuren
+sitzen in den Szenen (Stuhl, Sessel, Klapphocker oder am Boden); zwei Sätze passen jetzt zur Karte.
 """
 
 GEPRUEFT: dict[str, str] = {
@@ -42,16 +43,4 @@ GEPRUEFT: dict[str, str] = {
     ),
 }
 
-GEMELDET: dict[str, str] = {
-    "sitzt:juno:capital-arena-halle.pause_nach_runde2": "Juno sitzt auf der Tribünenstufe; Karte: steht.",
-    "sitzt:jonahDrinnen:cedar-creek-bibliothek.zwillinge_d": "Jonah sitzt am Brett; Karte: steht.",
-    "sitzt:dex:cedar-creek-bibliothek.zwillinge_d": "Dex sitzt Jonah gegenüber; Karte: steht.",
-    "sitzt:zwillingeDrinnen:cedar-creek-bibliothek.zwillinge_d": "Ivy sitzt daneben; Karte: steht.",
-    "sitzt:mira:crossroads-aussen.mira": "Mira sitzt im Schneidersitz auf einem Tisch; Karte: steht.",
-    "sitzt:mama:ironwood-kantine.big_joe_clubkampf": "Mama sitzt in der ersten Reihe; Karte: steht.",
-    "sitzt:bigJoe:ironwood-kantine.big_joe_nach_kauf": "Big Joe sitzt auf einer Kiste; Karte: steht.",
-    "sitzt:albescu:riverton-aussen.albescu_alltag": "Mrs. Albescu sitzt auf einem Hocker; Karte: steht.",
-    "sitzt:nova:riverton-aussen.nova": "Nova sitzt auf der Kante des Podiums; Karte: steht.",
-    "sitzt:theo:silicon-bay-akademie.theo": "Theo sitzt vor zwei Bildschirmen; Karte: steht.",
-    "sitzt:ward:summit-city-huette.ward_lektion": "Ward sitzt im Sessel am Feuer; Karte: steht.",
-}
+GEMELDET: dict[str, str] = {}

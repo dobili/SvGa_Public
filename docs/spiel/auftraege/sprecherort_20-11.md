@@ -111,23 +111,27 @@ geführten Wege versorgt.
 - Juno nach dem Abschied steht nicht auf der Außenkarte.
 - Odile am Brett, siehe oben.
 
-**Kartenbefunde, gemeldet (11):** Der Text lässt diese Figuren sitzen, auf der Karte stehen sie.
+**Kartenbefunde (11), behoben am 20.11. abends:** Der Text ließ diese Figuren sitzen, auf der Karte
+standen sie. Wo ein Sitzmöbel passt, sitzen sie jetzt in der Szene; sonst passt der Satz zur Karte.
+`GEMELDET` ist leer.
 
-| Figur           | Karte, Gespräch                          | Text                                  |
-| --------------- | ---------------------------------------- | ------------------------------------- |
-| Juno            | Capital Arena, Halle, Pause nach Runde 2 | sitzt auf der untersten Tribünenstufe |
-| Jonah, Dex, Ivy | Cedar Creek, Bibliothek, `zwillinge_d`   | Jonah und Dex am Brett, Ivy daneben   |
-| Mira            | Crossroads, außen                        | im Schneidersitz auf einem Tisch      |
-| Mama            | Ironwood, Kantine, Clubkampf             | in der ersten Reihe                   |
-| Big Joe         | Ironwood, Kantine, nach dem Kauf         | auf einer Kiste                       |
-| Mrs. Albescu    | Riverton, außen                          | auf einem Hocker vor der Werkstatt    |
-| Nova            | Riverton, außen                          | auf der Kante des Podiums             |
-| Theo            | Silicon Bay, Akademie                    | vor zwei Bildschirmen                 |
-| Ward            | Summit City, Hütte                       | im Sessel am Feuer                    |
+| Figur        | Karte                    | Jetzt                                                                       |
+| ------------ | ------------------------ | --------------------------------------------------------------------------- |
+| Juno         | Capital Arena, Halle     | sitzt am Boden (unterste Tribünenstufe), Blick links                        |
+| Jonah        | Cedar Creek, Bibliothek  | sitzt am Brett (Stuhl am Tisch, Feld 9,9), vorher daneben stehend           |
+| Dex          | Cedar Creek, Bibliothek  | sitzt Jonah gegenüber auf einem neuen Stuhl an der Tischseite (8,6)         |
+| Ivy          | Cedar Creek, Bibliothek  | sitzt auf dem Stuhl am Nachbartisch (11,9); auf (10,9) war sie eingesperrt  |
+| Mira         | Crossroads, außen        | sitzt am Boden; Satz: „im Schneidersitz auf der Bordsteinkante“ statt Tisch |
+| Mama         | Ironwood, Kantine        | sitzt auf einem neuen Stuhl (29,7) in der ersten Reihe                      |
+| Big Joe      | Ironwood, Kantine (Logo) | sitzt auf einem neuen Stuhl (33,5); Satz: „auf einem Stuhl“ statt Kiste     |
+| Mrs. Albescu | Riverton, außen (5)      | sitzt auf einem Klapphocker vor der Werkstatt                               |
+| Nova         | Riverton, außen (5)      | sitzt am Boden (Kante des Podiums)                                          |
+| Theo         | Silicon Bay, Akademie    | sitzt auf dem Stuhl vor dem Bildschirmtisch (9,6)                           |
+| Ward         | Summit City, Hütte       | sitzt im Ohrensessel am Feuer (10,6)                                        |
 
-Behebbar mit `sitzt` an der Figur der Szene (und einem Sitzmöbel), oder mit einem kleinen Satz,
-der das Stehen erzählt. Die Szenen gehören zum Teil anderen Helfern (Figurengröße, Tore); deshalb
-gemeldet statt geändert.
+Klapphocker nur draußen: In der Kantine löste ein Hocker die Thekenregel 10.83 aus (Hocker im Raum
+heißt Bar), deshalb dort Stühle. Szenen und Karten liegen im öffentlichen Repository; das private
+Paket ist nicht betroffen.
 
 **Grenzen:** Die Muster kennen nur die gängigen Wendungen. Wer „hockt“, „lehnt“ oder „wartet am
 Fenster“ schreibt, fällt nicht auf. Die Figur erkennt das Werkzeug an ihrem Namen im Text; „sie“

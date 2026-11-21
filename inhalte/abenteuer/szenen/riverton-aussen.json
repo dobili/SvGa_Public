@@ -1255,6 +1255,10 @@
       "moebel": "rv14Fahrradschuppen",
       "feld": [15, 48],
       "versatz": [0, 8]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [13, 54]
     }
   ],
   "ausloeser": [
@@ -1330,11 +1334,13 @@
   "figuren": [
     {
       "name": "albescu",
-      "feld": [13, 54]
+      "feld": [13, 54],
+      "sitzt": "unten"
     },
     {
       "name": "nova",
-      "feld": [28, 19]
+      "feld": [28, 19],
+      "sitzt": "unten"
     },
     {
       "name": "victor",

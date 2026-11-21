@@ -237,7 +237,7 @@ Die Kantine brüllt. #sprecher:erzaehler
 // fort (orte.json, wenn); Big Joe holt die letzten Kisten, bis er in Akt 4 nach Crossroads fährt.
 // Das Stahlbrett steht seit dem Kauf in seiner Garage (ironwood-aussen.kauf).
 === big_joe_nach_kauf ===
-Big Joe sitzt auf einer Kiste zwischen den Kartons und reißt Klebeband ab. Das Geräusch hallt durch den leeren Raum. #sprecher:erzaehler
+Big Joe sitzt auf einem Stuhl zwischen den Kartons und reißt Klebeband ab. Das Geräusch hallt durch den leeren Raum. #sprecher:erzaehler
 {~Die Garage ist eng, Kumpel, aber sie gehört uns. Hier hole ich nur noch, was uns gehört.|Dreißig Jahre, Kumpel. Und die Kisten sind in zwei Stunden gepackt.|Laurie hat gesagt, sie hilft beim Streichen. Die Garage kriegt Grün, wie das Geländer bei Ruth.} #sprecher:bigJoe #stimmung:nachdenklich
 + {mamaSpielt and not feierGesehen} [„Wird noch gefeiert?“]
     // Wer die Feier abgelehnt hat, kann sie nachholen (Nebenquest ironwood.feier), jetzt in der Garage.

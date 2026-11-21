@@ -219,6 +219,11 @@
       "versatz": [0, -5]
     },
     {
+      "moebel": "rv9Figurentruhe",
+      "feld": [20, 5],
+      "versatz": [0, 2]
+    },
+    {
       "moebel": "cr7Hocker",
       "feld": [15, 7],
       "vorn": true,

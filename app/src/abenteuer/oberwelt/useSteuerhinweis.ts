@@ -15,6 +15,16 @@ import { faelligerHinweis, hakeAb, type Hinweislage, type Steuerhinweis } from "
 /** So lange bleibt eine Zeile stehen, wenn niemand sie wegtippt. */
 const DAUER_MS = 9000;
 
+/**
+ * Messhilfe für tests/e2e/abenteuer-hinweislage.spec.ts: Setzt ein Test
+ * `window.__steuerhinweisDauerMs`, steht die Zeile so lange. Unter Last (vier Testläufe zugleich)
+ * war sie nach 9 s schon wieder weg, bevor der Test ihre Lage messen konnte (Gate, 21.11.2026).
+ */
+function dauerMs(): number {
+  const wert = (globalThis as { __steuerhinweisDauerMs?: unknown }).__steuerhinweisDauerMs;
+  return typeof wert === "number" ? wert : DAUER_MS;
+}
+
 /** Der gezeigte Hinweis und wie die Oberwelt ihn beendet. */
 export interface Hinweissteuerung {
   readonly aktiv: Steuerhinweis | null;
@@ -41,7 +51,7 @@ export function useSteuerhinweis(k: Oberweltkern, lage: Hinweislage): Hinweisste
   };
   useEffect(() => {
     if (aktiv === null) return;
-    const uhr = window.setTimeout(() => beende(aktiv), DAUER_MS);
+    const uhr = window.setTimeout(() => beende(aktiv), dauerMs());
     return () => window.clearTimeout(uhr);
     // Die Uhr läuft je gezeigtem Hinweis neu; beende liest den Stand über die Ref.
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -24,10 +24,14 @@ const FORMATE = [
   { name: "hoch", viewport: { width: 390, height: 844 } },
   { name: "quer", viewport: { width: 844, height: 390 } },
 ];
-/** Mitten im Park und am oberen Kartenrand (die Kamera hält dort an, der Held steht oben). */
+/**
+ * Mitten im Park und am oberen Kartenrand (die Kamera hält dort an, der Held steht oben im Bild):
+ * Maple Falls außen (32,3) ist die oberste begehbare Kachel unter der Mauer, zwischen Baum und Zaun.
+ * Nicht der Park: Dort reicht die Felsmauer bis Reihe 5, (25,3) war eine Wandkachel.
+ */
 const LAGEN = [
   { name: "Mitte", position: { karte: "mapleFalls.park", x: 25, y: 14, richtung: "oben" } },
-  { name: "oberer Rand", position: { karte: "mapleFalls.park", x: 25, y: 3, richtung: "unten" } },
+  { name: "oberer Rand", position: { karte: "mapleFalls.aussen", x: 32, y: 3, richtung: "unten" } },
 ];
 const TEXTE = [
   {
@@ -81,6 +85,8 @@ for (const format of FORMATE) {
           await page.addInitScript(() => {
             window.localStorage.setItem("svga.safariHinweis", "aus");
             (window as { __kameraprotokoll?: unknown[] }).__kameraprotokoll = [];
+            // Die Zeile schließt sich sonst nach 9 s; unter Last kam die Messung zu spät.
+            (window as { __steuerhinweisDauerMs?: number }).__steuerhinweisDauerMs = 600_000;
           });
           await starteMitStand(page, {
             ...GRUNDSTAND,

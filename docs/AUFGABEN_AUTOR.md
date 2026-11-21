@@ -288,6 +288,12 @@ Profil › Einstellungen › Fehler melden.
       wie „Mit dem Steuerkreuz gehst du“ und Meldungen wie „Neu im Tagebuch“ stehen dann unten über
       dem Kreuz. Steht der Held weiter unten, stehen sie oben. Sie verdecken weder den Helden noch
       die Knöpfe. Bitte hoch und quer prüfen.
+- [ ] N2675. **Figuren sitzen, wo der Text es sagt:** Riverton außen: Mrs. Albescu sitzt vor der
+      Werkstatt auf einem Klapphocker, Nova auf der Kante des Podiums. Cedar Creek, Bibliothek: Jonah
+      und Dex sitzen sich am Brett gegenüber, Ivy am Nachbartisch. Ironwood, Kantine: Mama sitzt
+      beim Clubkampf auf einem Stuhl, nach dem Kauf auch Big Joe. Summit City, Hütte: Ward im
+      Ohrensessel am Feuer. Silicon Bay, Akademie: Theo am Bildschirmtisch. Arena, Halle: Juno in
+      der Pause nach Runde 2 am Boden. Sieht das natürlich aus, lassen sich alle ansprechen?
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2479,3 +2485,14 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       3. Porträts für Owen Fisk und Ivy (PixelLab, wie die anderen Porträts): Sie fehlen und
          bleiben im Abspann bisher leer.
       **Antwort:** Bilder hochladen oder „RO44: 2 nicht nötig“.
+
+- [ ] RO45. **Mira und Big Joe sitzen jetzt anders als im Roman (21.11.2026)**
+      Im Spiel saßen elf Figuren laut Text, standen aber auf der Karte; neun sitzen jetzt dort, wo
+      der Text es sagt. Bei zweien passte der Text nicht zur Karte, deshalb ist der Satz im Spiel
+      geändert: Mira in Crossroads sitzt „im Schneidersitz auf der Bordsteinkante“ statt „auf einem
+      Tisch“ (dort steht kein Tisch; im Roman, Akt 4, Teil 2, sitzt sie auf einem Tisch). Big Joe
+      in der Kantine sitzt nach dem Kauf „auf einem Stuhl zwischen den Kartons“ statt „auf einer
+      Kiste“ (eine Kiste zum Sitzen gibt es im Grafiksatz nicht). Empfehlung: so lassen und den
+      Roman an beiden Stellen angleichen. Schon so umgesetzt, Widerspruch genügt. Alternative: ein
+      Tisch unter Mira beziehungsweise eine eigens gezeichnete Kiste für Big Joe.
+      **Antwort:** „RO45 ok“ oder „RO45: Tisch/Kiste“.

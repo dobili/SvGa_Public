@@ -294,6 +294,13 @@ Profil › Einstellungen › Fehler melden.
       beim Clubkampf auf einem Stuhl, nach dem Kauf auch Big Joe. Summit City, Hütte: Ward im
       Ohrensessel am Feuer. Silicon Bay, Akademie: Theo am Bildschirmtisch. Arena, Halle: Juno in
       der Pause nach Runde 2 am Boden. Sieht das natürlich aus, lassen sich alle ansprechen?
+- [ ] N2676. **Rennen draußen:** Draußen (etwa vor dem Haus in Maple Falls) einen Pfeil gedrückt
+      halten und den Finger ohne Loslassen weit über den Rand des Steuerkreuzes nach außen ziehen:
+      Der Held rennt fast doppelt so schnell; zurück nach innen geht er wieder. In einem Haus bleibt
+      er beim Gehen, auf dem Fahrrad gilt das Fahrradtempo. Am Rechner rennt er mit gehaltener
+      Umschalttaste. Ab Akt 2 erklärt beim ersten Mal draußen ein Hinweis das Rennen. Bis deine
+      Rennbilder da sind, laufen die Gehbilder schneller. Ist das Tempo gut, und ist der Abstand
+      zum Losrennen gut zu treffen?
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

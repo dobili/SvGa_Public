@@ -1,23 +1,26 @@
 {
-  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen. Der Reiher ist ein Gemini-Bild des Autors, zu Reihen gelegt mit bildwuensche/reiher_reihen.py (mittel-1). Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen). Reh und Hirsch kommen aus Gemini als Einzelbilder von Seite, hinten und vorn (Schnitt „ansichten“, Runde 9, mittel-3); der Wapiti nimmt den Hirsch. Roboter (Liefer-, Saug-, Schneeräumroboter) zeigen den Lieferroboter von Perfect Move aus Gemini; der Kehrroboter der Altstadt von Silicon Bay hat eigene Gemini-Ansichten (17.11.2026, Auftrag 12). Pferd (braun), Schimmel (grau), Kojote und Fuchs kommen ebenfalls aus Gemini (Teil 2, 10.11.2026, Schnitt „ansichten“) und lösen Esel und Hund als Ersatz ab; die Bilder „grast“ und „sitzt“ stehen als Möbel bereit (allgemein.json, tier12…).",
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen. Der Reiher ist ein Gemini-Bild des Autors, zu Reihen gelegt mit bildwuensche/reiher_reihen.py (mittel-1). Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen). Reh und Hirsch kommen aus Gemini als Einzelbilder von Seite, hinten und vorn (Schnitt „ansichten“, Runde 9, mittel-3); der Wapiti nimmt den Hirsch. Roboter (Liefer-, Saug-, Schneeräumroboter) zeigen den Lieferroboter von Perfect Move aus Gemini; der Kehrroboter der Altstadt von Silicon Bay hat eigene Gemini-Ansichten (17.11.2026, Auftrag 12). Pferd (braun), Schimmel (grau), Kojote und Fuchs kommen ebenfalls aus Gemini (Teil 2, 10.11.2026, Schnitt „ansichten“) und lösen Esel und Hund als Ersatz ab; die Bilder „grast“ und „sitzt“ stehen als Möbel bereit (allgemein.json, tier12…). massstab: Zielhöhe neben den Figuren (Erwachsener außen 20 Spielpixel, Kind 14) durch die gemessene Höhe im Bogen, aus pipeline/abenteuer/tierplan.py (21.11.2026; vorher waren alle Tiere etwa doppelt so groß wie neben den PixelLab-Figuren richtig).",
   "arten": {
     "taube": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png",
       "breite": 16,
       "hoehe": 16,
-      "schnitt": "streifen"
+      "schnitt": "streifen",
+      "massstab": 0.35
     },
     "kraehe": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Crow_idle_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "richtungen"
+      "schnitt": "richtungen",
+      "massstab": 0.4
     },
     "moewe": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Beach_Seagull_Complete_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.3
     },
     "drohne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Drone_1_Flying_16x16.png",
@@ -29,131 +32,150 @@
       "quelle": "modern-farm/Animals/Chickens_and_Roosters/Chicken_Brown_16x16.png",
       "breite": 16,
       "hoehe": 16,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.5
     },
     "ente": {
       "quelle": "modern-farm/Animals/Ducks/Duck_Green_Head_16x16.png",
       "breite": 32,
       "hoehe": 32,
       "schnitt": "reihen",
-      "massstab": 0.6
+      "massstab": 0.3
     },
     "gans": {
       "quelle": "modern-farm/Animals/Ducks/Duck_White_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.5
     },
     "hase": {
       "quelle": "modern-farm/Animals/Rabbits/Rabbit_Brown_Dark_Ears_16x16.png",
       "breite": 32,
       "hoehe": 32,
       "schnitt": "reihen",
-      "massstab": 0.6
+      "massstab": 0.3
     },
     "schwein": {
       "quelle": "modern-farm/Animals/Pigs/Pig_Pink_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.45
     },
     "ziege": {
       "quelle": "modern-farm/Animals/Goats/Goat_Brown_16x16.png",
       "breite": 32,
       "hoehe": 48,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.4
     },
     "schaf": {
       "quelle": "modern-farm/Animals/Sheeps/Sheep_2_White_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.5
     },
     "bison": {
       "quelle": "spiel/eigene/bison_klein_rechts.png",
       "breite": 64,
       "hoehe": 48,
-      "schnitt": "standbild"
+      "schnitt": "standbild",
+      "massstab": 0.55
     },
     "kuh": {
       "quelle": "modern-farm/Animals/Cows/Cow_16x16.png",
       "breite": 48,
       "hoehe": 48,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.4
     },
     "esel": {
       "quelle": "modern-farm/Animals/Donkeys/Donkey_16x16.png",
       "breite": 48,
       "hoehe": 48,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.35
     },
     "hund": {
       "quelle": "modern-farm/Animals/Dogs/Dog_Labrador_Brown_16x16.png",
       "breite": 48,
       "hoehe": 32,
-      "schnitt": "baender"
+      "schnitt": "baender",
+      "massstab": 0.35
     },
     "katze": {
       "quelle": "modern-farm/Animals/Cats/Cat_Hugo.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "fest:0:192"
+      "schnitt": "fest:0:192",
+      "massstab": 0.35
     },
     "reiher": {
       "quelle": "spiel/eigene/reiher_reihen.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.5
     },
     "reh": {
       "quelle": "spiel/eigene/reh_{}_v2.png",
       "breite": 32,
       "hoehe": 28,
-      "schnitt": "ansichten"
+      "schnitt": "ansichten",
+      "massstab": 0.5
     },
     "hirsch": {
       "quelle": "spiel/eigene/hirsch_{}.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "ansichten"
+      "schnitt": "ansichten",
+      "massstab": 0.65
     },
     "lieferroboter": {
       "quelle": "spiel/eigene/lieferroboter_{}.png",
       "breite": 16,
       "hoehe": 24,
       "schnitt": "ansichten",
-      "ansichten": ["rechts", "oben", "unten"]
+      "ansichten": ["rechts", "oben", "unten"],
+      "massstab": 0.6
     },
     "kehrroboter": {
       "quelle": "spiel/eigene/kehrroboter_{}.png",
       "breite": 24,
       "hoehe": 20,
       "schnitt": "ansichten",
-      "ansichten": ["rechts", "oben", "unten"]
+      "ansichten": ["rechts", "oben", "unten"],
+      "massstab": 0.9
     },
     "pferd": {
       "quelle": "spiel/eigene/pferd_braun_{}_v2.png",
       "breite": 48,
       "hoehe": 50,
-      "schnitt": "ansichten"
+      "schnitt": "ansichten",
+      "massstab": 0.45
     },
     "schimmel": {
       "quelle": "spiel/eigene/pferd_grau_{}_v2.png",
       "breite": 48,
       "hoehe": 50,
-      "schnitt": "ansichten"
+      "schnitt": "ansichten",
+      "massstab": 0.45
     },
     "kojote": {
       "quelle": "spiel/eigene/kojote_{}_v2.png",
       "breite": 32,
       "hoehe": 25,
-      "schnitt": "ansichten"
+      "schnitt": "ansichten",
+      "massstab": 0.45
     },
     "fuchs": {
       "quelle": "spiel/eigene/fuchs_{}_v2.png",
       "breite": 32,
       "hoehe": 20,
-      "schnitt": "ansichten"
+      "schnitt": "ansichten",
+      "massstab": 0.4
     }
   },
   "staemme": {

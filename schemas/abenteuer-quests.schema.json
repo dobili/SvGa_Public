@@ -183,19 +183,33 @@
           "type": "array",
           "items": { "$ref": "#/$defs/wirkung" }
         },
-        "ziel": {
-          "description": "Wohin der Zielhinweis auf der Karte zeigt (Spieltest einstieg, R1): Karte und Objektname der Tiled-Karte (Auslöser oder Figur). Fehlt es, leitet die App das Ziel aus dem Ereignis ab (Ort, Steller der Runde, Gegner, Dialog).",
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["karte", "objekt"],
-          "properties": {
-            "karte": {
-              "type": "string",
-              "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
-            },
-            "objekt": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
+        "ziel": { "$ref": "#/$defs/zielort" },
+        "umwege": {
+          "description": "Umwege des Zielhinweises (20.11.2026): Solange eine Bedingung gilt (Dialogvariablen, regeln/bedingung.ts), zeigt der Pfeil auf ihr Ziel statt auf das des Schritts. Beispiel: Der Clubkampf gegen Mira wartet auf den Brief von Mr. Okoro; solange er nicht gelesen ist, zeigt der Pfeil auf Mr. Okoro. Der erste passende Umweg gilt. Prüfwerkzeug: pipeline/abenteuer/pfeilziel.cjs.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["wenn", "ziel"],
+            "properties": {
+              "wenn": { "type": "string", "minLength": 1 },
+              "ziel": { "$ref": "#/$defs/zielort" }
+            }
           }
         }
+      }
+    },
+    "zielort": {
+      "description": "Wohin der Zielhinweis auf der Karte zeigt (Spieltest einstieg, R1): Karte und Objektname der Tiled-Karte (Auslöser oder Figur). Fehlt es, leitet die App das Ziel aus dem Ereignis ab (Ort, Steller der Runde, Gegner, Dialog).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["karte", "objekt"],
+      "properties": {
+        "karte": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+        },
+        "objekt": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" }
       }
     },
     "quest": {

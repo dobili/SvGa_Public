@@ -97,6 +97,32 @@ describe("zielangabe", () => {
     expect(wagen && zielangabe(wagen, daten)?.karte).toBe("riverton.wohnwagen");
   });
 
+  it("Umweg: der Clubkampf gegen Mira zeigt erst auf Mr. Okoro, bis der Brief gelesen ist", () => {
+    // Mira sagte nur „Dot sagt, du sollst erst zu Mr. Okoro.“ (eiliger Spieler, 20.11.2026).
+    const schritte = daten.quests.find((q) => q.kennung === "desertSprings.versoehnung")?.schritte;
+    const kampf = schritte?.find((s) => s.ereignis.art === "partie");
+    expect(kampf && zielangabe(kampf, daten, { briefGelesen: false })).toEqual({
+      karte: "desertSprings.antiquariat",
+      objekt: "okoro",
+    });
+    expect(kampf && zielangabe(kampf, daten, { briefGelesen: true })).toEqual({
+      ort: "desertSprings",
+      objekt: "mira",
+    });
+  });
+
+  it("Umweg über den Stand: zielangaben gibt die Dialogvariablen weiter", () => {
+    const schritte = daten.quests.find((q) => q.kennung === "portDelacroix.tiefpunkt")?.schritte;
+    const reihe = schritte?.findIndex((s) => s.ereignis.art === "aufgaben") ?? -1;
+    const vorher = zielangaben(stand([quest("portDelacroix.tiefpunkt", reihe)]), daten);
+    expect(vorher[0]).toEqual({ karte: "portDelacroix.turnhalle", objekt: "odile" });
+    const nachher = zielangaben(
+      stand([quest("portDelacroix.tiefpunkt", reihe)], { brettersammelnBegonnen: true }),
+      daten,
+    );
+    expect(nachher[0]).toEqual({ ort: "portDelacroix", objekt: "remy" });
+  });
+
   it("leitet eine Aufgabenrunde auf ihren Steller ab", () => {
     const sam = daten.quests.find((q) => q.kennung === "mapleFalls.viertesBrett")?.schritte[0];
     expect(sam && zielangabe(sam, daten)).toEqual({ ort: "mapleFalls", objekt: "sam" });

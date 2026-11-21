@@ -207,7 +207,9 @@ export class Planer {
     for (const { q, d } of laufend) {
       const schritt = d?.schritte[q.schritt] as Schritt | undefined;
       const a =
-        schritt && (d?.haupt === true) === (art === "haupt") ? zielangabe(schritt, daten) : null;
+        schritt && (d?.haupt === true) === (art === "haupt")
+          ? zielangabe(schritt, daten, stand.dialogvariablen)
+          : null;
       if (a) angaben.push({ a, grund: art === "haupt" ? "Zielhinweis" : "Zielhinweis Nebenquest" });
     }
     angaben.push(...anfaenge.filter((h) => h.spaeter));

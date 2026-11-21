@@ -1,3 +1,19 @@
+Stand: 21.11.2026, 3 Uhr (Haupt-Chat, Schach-Abenteuer): **Abendwünsche vom 20.11. auf beta, Gate grün.**
+
+- Figurengröße nach Wahl des Autors: innen alle PixelLab-Figuren ×4/3, außen Möbel im Maß der Figur
+  (125 Stellen, 39 Karten); Regel 10.93, `proportionen` mit Dauertest (mittel-1).
+- Geführte Wege aus Ink (`#gehe`, `#stelle`): erste Nacht aus dem Bett, Einleitung mit Mama, fünf
+  weitere Stellen; Prüfung `sprecherort`, elf sitzende Figuren, Möbelwagen (mittel-4).
+- Steuerkreuz beim Wischen, Symbolknöpfe unter dem Kreuz, Hinweise fern vom Helden (mittel-1).
+- Tiefenordnung vor Gebäuden (`tiefenordnung`), Zauntore (`zauntor`), drei genannte Gegenstände
+  ergänzt (mittel-2); Hauptpfeil mit `umwege` und Prüfung `pfeilziel`, Statist bleibt beim Ansprechen
+  stehen, Eiliger Spieler Akt 3–4 (mittel-3); Quests verfehlen: 0 Befunde.
+- Testpunkte N2666–N2675, Rückfragen RO43–RO45 (kleine Innentüren, Bildwünsche, Mira/Big Joe).
+- Editorpaket im privaten Repo nach jeder Szenenänderung neu gebaut.
+
+**Nächster Schritt:** Rückmeldungen des Autors einarbeiten; Bilder aus RO44 einbauen, wenn sie kommen.
+Nichts nach `main`, bis der Autor durchgespielt hat.
+
 Stand: 20.11.2026, 15 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde und Vormittag auf beta.**
 
 - Nacht 19./20.11.: Pinewood und Epilog im Browser, Querformat Akt 2–4, schwacher Spieler mit

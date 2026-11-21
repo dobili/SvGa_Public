@@ -20,8 +20,15 @@ Daumenzonen:
 
 - **Oberwelt:** Steuerkreuz unten, Aktionsknopf („Sprechen“, „Ansehen“) daneben. In den
   Einstellungen des Spiels gibt es „Steuerkreuz rechts“ (Vorgabe, Einhand mit rechts) und
-  „Steuerkreuz links“; der Aktionsknopf liegt jeweils auf der anderen Seite. Menü, Tagebuch und
-  Reisen rücken von oben nach unten in eine schmale Leiste über dem Steuerkreuz.
+  „Steuerkreuz links“; der Aktionsknopf liegt jeweils auf der anderen Seite. Menü ☰, Tagebuch 📖,
+  Übungspartie ♞ und Reisen 🎫 stehen als kleine Symbolknöpfe (44 px, nur Zeichen, Name als
+  zugänglicher Name) in einer Reihe unter dem Steuerkreuz, das Menü außen (Wunsch des Autors,
+  20.11.2026). Im Dialog stehen Tagebuch und Menü oben rechts.
+- **Steuerkreuz beim Wischen:** Solange ein Finger auf dem Kreuz liegt, zählt die Richtung, deren
+  Taste ihm am nächsten ist, auch in den Lücken und in der Mitte; kleiner toter Kern, Hysterese
+  auf der Diagonale, erst Loslassen beendet die Bewegung (steuerrichtung.ts, 20.11.2026).
+- **Kurze Hinweise** (Steuerhinweis, Meldungen) liegen am Rand fern vom Helden: steht er in der
+  oberen Bildhälfte, unten über dem Kreuz, sonst oben (heldhaelfte.ts, 20.11.2026).
 - **Dialog:** Fenster unten (wie schon), Antwortwahlen als große Knöpfe am unteren Rand, „Weiter“
   ganz unten auf der Seite des Aktionsknopfs. Antippen des Textfensters geht auch weiter.
 - **Partie und Rätsel:** Kopf mit Porträt oben, Brett in der Mitte, darunter Sprechblase,
@@ -31,8 +38,9 @@ Daumenzonen:
 ## 3. Querformat
 
 - **Oberwelt:** Die Welt füllt den Bildschirm. Das Steuerkreuz liegt links unten, halb
-  durchsichtig, über der Welt. Rechts unten liegt der Aktionsknopf, darüber Menü, Tagebuch und
-  Reisen als runde Knöpfe in einer Spalte.
+  durchsichtig, über der Welt, darunter dieselbe Reihe Symbolknöpfe wie hochkant (Menü am linken
+  Rand). Rechts unten liegt der Aktionsknopf. Hinweise stehen ganz oben oder unten zwischen Kreuz
+  und Aktionsknopf.
 - **Dialog:** Porträt links, Textfenster unten über zwei Drittel der Breite; Wahlen und „Weiter“
   rechts in einer Spalte, im Daumenbereich der rechten Hand.
 - **Partie:** Brett links in voller Höhe. Rechts eine Spalte: oben Porträt mit Name und Uhr des

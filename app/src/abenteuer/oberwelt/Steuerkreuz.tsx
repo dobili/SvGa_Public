@@ -5,13 +5,15 @@
  * React, damit sie wie die übrige App aussehen und groß genug für Daumen sind (48 px). Tastatur
  * (Pfeile, WASD) behandelt die Szene selbst.
  * Wischen zwischen den Richtungen (Wunsch des Autors, 19.11.2026): Das Kreuz verfolgt den Finger
- * als Ganzes, nicht jede Taste für sich. Gleitet der Daumen gedrückt auf eine andere Pfeiltaste,
- * springt die Richtung um; in der Lücke oder außerhalb ruht die Figur, bis der Finger wieder auf
- * einer Taste liegt; Loslassen hält an.
- * Abhängigkeiten: keine.
+ * als Ganzes, nicht jede Taste für sich. Seit dem 20.11.2026 (Wunsch des Autors: „zwischen zwei
+ * Pfeilen gar keine Reaktion“) zählt dabei die Taste, die dem Finger am nächsten ist, auch in den
+ * Lücken, in der Mitte und außerhalb des Kreuzes (steuerrichtung.ts, mit totem Kern und Hysterese);
+ * erst Loslassen hält an. Gilt hoch und quer und für beide Seiten des Kreuzes.
+ * Abhängigkeiten: steuerrichtung.ts.
  */
 import { useRef, useState, type PointerEvent } from "react";
 import { tSpiel } from "../texte/texte";
+import { richtungZu } from "./steuerrichtung";
 import type { Richtung } from "./szene";
 
 const KREUZ: readonly (readonly [Richtung | null, string])[] = [
@@ -26,10 +28,10 @@ const KREUZ: readonly (readonly [Richtung | null, string])[] = [
   [null, ""],
 ];
 
-/** Die Richtung der Taste unter einem Punkt des Bildschirms, oder null (Lücke, außerhalb). */
-function richtungAn(x: number, y: number): Richtung | null {
-  const taste = document.elementFromPoint(x, y)?.closest<HTMLElement>("[data-richtung]");
-  return (taste?.dataset["richtung"] as Richtung | undefined) ?? null;
+/** Mitte des Kreuzes (Bildschirmkoordinaten) aus seinem Rechteck. */
+function mitteVon(kreuz: HTMLElement): { readonly x: number; readonly y: number } {
+  const r = kreuz.getBoundingClientRect();
+  return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
 }
 
 /**
@@ -60,15 +62,20 @@ export function Steuerkreuz({
     aktivRef.current = neu;
     setzeAktiv(neu);
   };
+  /** Die Richtung, deren Taste dem Finger am nächsten ist (steuerrichtung.ts). */
+  const richtungAn = (e: PointerEvent<HTMLDivElement>) => {
+    const mitte = mitteVon(e.currentTarget);
+    return richtungZu(e.clientX - mitte.x, e.clientY - mitte.y, aktivRef.current);
+  };
   const beginne = (e: PointerEvent<HTMLDivElement>) => {
     if (finger.current !== null) return;
     e.preventDefault();
     finger.current = e.pointerId;
     e.currentTarget.setPointerCapture(e.pointerId);
-    wechsle(richtungAn(e.clientX, e.clientY));
+    wechsle(richtungAn(e));
   };
   const bewege = (e: PointerEvent<HTMLDivElement>) => {
-    if (e.pointerId === finger.current) wechsle(richtungAn(e.clientX, e.clientY));
+    if (e.pointerId === finger.current) wechsle(richtungAn(e));
   };
   const ende = (e: PointerEvent<HTMLDivElement>) => {
     if (e.pointerId !== finger.current) return;

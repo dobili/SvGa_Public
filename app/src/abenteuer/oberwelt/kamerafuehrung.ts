@@ -6,10 +6,13 @@
  * (aktueller Versatz) und die Umrechnung auf Phaser. Phaser zielt auf „Held − Folgeversatz“; der
  * Grundversatz legt den Helden in die Mitte der freien Fläche, der Vorausversatz schiebt das Ziel
  * in Laufrichtung. An den Kartengrenzen hält Phaser die Kamera an (setBounds).
- * Abhängigkeiten: Phaser (Typen), kamera.ts, kameraregie.ts, kameravoraus.ts.
+ * Nebenbei meldet sie, in welcher Bildhälfte der Held steht (heldhaelfte.ts), damit kurze Hinweise
+ * ihn nicht verdecken (Wunsch des Autors, 20.11.2026).
+ * Abhängigkeiten: Phaser (Typen), kamera.ts, kameraregie.ts, kameravoraus.ts, heldhaelfte.ts.
  */
 import type Phaser from "phaser";
 import type { Ausloeser } from "./ausloeserebene";
+import { heldhaelfte, type Heldhaelfte } from "./heldhaelfte";
 import type { Raender } from "./kamera";
 import { richteKameraEin, sichtflaeche } from "./kameraregie";
 import {
@@ -19,16 +22,19 @@ import {
   type Laufrichtung,
   type Versatz,
 } from "./kameravoraus";
+import type { Melder } from "./szenentypen";
 
 export class Kamerafuehrung {
   private grund: Versatz = OHNE_VERSATZ;
   private voraus: Versatz = OHNE_VERSATZ;
   private raender: Raender | null = null;
+  private haelfte: Heldhaelfte | null = null;
 
   constructor(
     private readonly kamera: Phaser.Cameras.Scene2D.Camera,
     private readonly kachel: number,
     private readonly ausloeser: () => readonly Ausloeser[],
+    private readonly melder?: Melder,
   ) {}
 
   /** Kamera für eine Welt einrichten (auch nach dem Drehen); Ausgabe: die verdeckten Ränder. */
@@ -56,18 +62,43 @@ export class Kamerafuehrung {
     const ziel = zielVersatz(richtung, held, ziele, sicht, this.raender, this.kachel);
     this.voraus = naehere(this.voraus, ziel, deltaMs, richtung !== null);
     this.setzeVersatz();
-    this.protokolliere(richtung !== null);
+    const lage = this.aufDemBild(held);
+    this.meldeHaelfte(lage.y);
+    this.protokolliere(richtung !== null, lage);
+  }
+
+  /**
+   * Der Held als Anteil des Bildes (0 bis 1, links oben 0): wie Phasers Sichtfenster
+   * (worldView) aus Bildlage, Zoom und Ursprung der Kamera, ohne auf das nächste Bild zu warten.
+   * Beispiel: Held genau in der Bildmitte → { x: 0.5, y: 0.5 }.
+   */
+  private aufDemBild(held: Versatz): Versatz {
+    const k = this.kamera;
+    const zoom = k.zoomX || 1;
+    const links = k.scrollX + (k.width - k.width / zoom) * k.originX;
+    const oben = k.scrollY + (k.height - k.height / zoom) * k.originY;
+    return { x: ((held.x - links) * zoom) / k.width, y: ((held.y - oben) * zoom) / k.height };
+  }
+
+  /** Meldet die Bildhälfte des Helden nach oben, nur bei Änderung. */
+  private meldeHaelfte(anteilY: number): void {
+    const neu = heldhaelfte(anteilY, this.haelfte);
+    if (neu === this.haelfte) return;
+    this.haelfte = neu;
+    this.melder?.beiHeldhaelfte?.(neu);
   }
 
   /**
    * Messhilfe für tests/e2e/abenteuer-kamera.spec.ts: Legt ein Test `window.__kameraprotokoll` als
-   * Liste an, kommt je Bild Zeit, Kamerastand und Vorausversatz hinein; sonst geschieht nichts.
+   * Liste an, kommt je Bild Zeit, Kamerastand und der Held als Anteil des Bildes hinein (für
+   * tests/e2e/abenteuer-hinweislage.spec.ts); sonst geschieht nichts.
    */
-  private protokolliere(laeuft: boolean): void {
+  private protokolliere(laeuft: boolean, held: Versatz): void {
     const protokoll = (globalThis as { __kameraprotokoll?: unknown }).__kameraprotokoll;
     if (!Array.isArray(protokoll)) return;
     const k = this.kamera;
-    protokoll.push({ t: performance.now(), x: k.scrollX, y: k.scrollY, laeuft, zoom: k.zoomX });
+    const eintrag = { t: performance.now(), x: k.scrollX, y: k.scrollY, laeuft, zoom: k.zoomX };
+    protokoll.push({ ...eintrag, heldX: held.x, heldY: held.y });
   }
 
   /**

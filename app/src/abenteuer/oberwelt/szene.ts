@@ -5,10 +5,8 @@
  * React (oberwelt/Oberwelt.tsx). Die Schnittstelle nach oben ist der `Melder` (Held steht auf
  * einem Auslöser, Held hat ihn verlassen, Position beim Verlassen); nach unten `setzeRichtung`
  * (Steuerkreuz) und `laufenErlaubt` (Dialog offen → stehen bleiben).
- * Kacheln sind 16 px (inhalte/abenteuer/README.md), gezeichnet mit Faktor ZOOM (Architektur,
- * Abschnitt 10: DS-Look statt Game Boy); die Kamera vergrößert, PixelLab-Figuren stehen mit 2/3
- * in der Welt (Variante B, weltmassstab.ts). Kollision kommt aus der Kacheleigenschaft `kollision`
- * des Kachelsatzes; Auslöser aus der Objektebene `ausloeser` (Name = Bedeutung in orte.json).
+ * Kacheln 16 px (inhalte/abenteuer/README.md), Faktor ZOOM (Architektur 10), PixelLab-Figuren mit
+ * 2/3 (weltmassstab.ts). Kollision: Kacheleigenschaft `kollision`; Auslöser: Objektebene `ausloeser`.
  * Abhängigkeiten: phaser (MIT, docs/spiel/LIZENZEN.md), schnittstelle/spielstand.ts (Weltposition).
  */
 import Phaser from "phaser";
@@ -31,6 +29,7 @@ import {
   erzeugeLaufanimationen,
   ladeFigurbogen,
   laufname,
+  rennname,
   standbild,
   stelleAufKachel,
 } from "./figurbilder";
@@ -55,9 +54,8 @@ export type { Ausloesertreffer, Melder, Szenendaten } from "./szenentypen";
 
 export type Richtung = Weltposition["richtung"];
 
-/** Kachelgröße der Karten in Pixeln. */
+/** Kachelgröße der Karten in Pixeln; Laufgeschwindigkeit des Helden in Kachelpixeln je Sekunde. */
 export const KACHEL = 16;
-/** Laufgeschwindigkeit des Helden in Kachelpixeln je Sekunde. */
 const TEMPO = 56;
 /** Bild je Blickrichtung im Spritesheet des Helden (grafik/held.png: unten, links, rechts, oben). */
 const BILD_JE_RICHTUNG: Readonly<Record<Richtung, number>> = {
@@ -360,8 +358,8 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung) held.setFrame(BILD_JE_RICHTUNG[richtung]);
       return;
     }
-    held.anims.timeScale = this.gangart.faktor(); // bis zur Rennreihe: Laufbilder schneller
-    if (richtung) held.anims.play(laufname(HELDFIGUR, richtung), true);
+    const bildname = this.gangart.rennt() ? rennname : laufname; // ohne Rennreihe: Gehbilder schneller
+    if (richtung) held.anims.play(bildname(HELDFIGUR, richtung), true);
     else if (held.anims.isPlaying) held.anims.stop();
     if (!richtung) held.setFrame(standbild(this.blick));
   }

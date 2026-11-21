@@ -19,18 +19,22 @@ Einteilung: Kopfanteil ab 0,44 chibi, unter 0,40 realistisch, dazwischen Grenzfa
 nach Augenschein darf die Zahl überstimmen (mit Grund in GEMESSEN).
 
 Aufruf: python -m pipeline.abenteuer.figurstil PRIVAT/spiel/figuren-neu ZIEL [--limezu PRIVAT/spiel/figuren]
-Schreibt ZIEL/kontaktbogen.html (Bilder eingebettet: nur lokal, buch/arbeit/), ZIEL/tabelle.md und
-für ungemessene Figuren ZIEL/lineal_<name>.png. Abhängigkeiten: Pillow.
+Schreibt ZIEL/kontaktbogen.html (Bilder eingebettet: nur lokal, buch/arbeit/), ZIEL/tabelle.md, für
+ungemessene Figuren ZIEL/lineal_<name>.png und den Neubau-Plan im Stil des Coachs (figurstil_plan.py:
+ZIEL/plan.html und plan.md). Abhängigkeiten: Pillow, figurstil_plan.py.
 """
 
 import argparse
 import base64
 import colorsys
 import io
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
 from PIL import Image, ImageDraw
+
+from pipeline.abenteuer import figurstil_plan
 
 CHIBI_AB = 0.44
 REALISTISCH_UNTER = 0.40
@@ -39,6 +43,7 @@ DUNKEL = 70  # Helligkeit, unter der ein Randpixel als Kontur zählt
 LINEAL_ZOOM = 14
 BOGEN_ZOOM = 4
 LIMEZU_RAHMEN = (16, 32)
+SCHATTEN = (0x4F, 0x4F, 0x4E)  # Bodenschatten des PixelLab-Exports (skripte/figurenbogen.mjs)
 LIMEZU_SUED = 3  # Standbild „unten“ in der Ordnung von LimeZu (rechts, oben, links, unten)
 
 # Rollen nach docs/spiel/25_Figurenprompts.md: Hauptfiguren haben ein Porträtblatt 3×2.
@@ -98,6 +103,9 @@ class Messung:
     saettigung: float
     rolle: str
     grund: str | None = None
+    farben: int = 0  # verschiedene Farben der Figur (Farbtiefe, Schattierung)
+    hoehe: int = 0  # gezeichnete Höhe in Pixeln, ohne Bodenschatten
+    prompt: str = ""  # PixelLab-Beschreibung aus metadata.json
 
 
 def kopfanteil(scheitel: int, kinn: int, sohle: int) -> float:
@@ -143,15 +151,37 @@ def farbwerte(bild: Image.Image) -> tuple[float, float]:
     return (dunkel / rand if rand else 0.0, sum(saettigung) / len(saettigung) if saettigung else 0.0)
 
 
+def farbzahl_und_hoehe(bild: Image.Image) -> tuple[int, int]:
+    """Zahl der Farben und gezeichnete Höhe; der graue Bodenschatten des Exports zählt nicht."""
+    px = bild.load()
+    farben, zeilen = set(), set()
+    for y in range(bild.height):
+        for x in range(bild.width):
+            r, g, b, a = px[x, y]
+            if a > DECKKRAFT and (r, g, b) != SCHATTEN:
+                farben.add((r, g, b))
+                zeilen.add(y)
+    return len(farben), (max(zeilen) - min(zeilen) + 1) if zeilen else 0
+
+
 def miss(name: str, bild: Image.Image) -> Messung:
     """Messung einer Figur aus GEMESSEN und dem Bild; ungemessen: Kopfanteil None."""
     kontur, saettigung = farbwerte(bild)
+    farben, hoehe = farbzahl_und_hoehe(bild)
     if name not in GEMESSEN:
-        return Messung(name, None, "ungemessen", kontur, saettigung, rolle(name))
+        return Messung(name, None, "ungemessen", kontur, saettigung, rolle(name), None, farben, hoehe)
     scheitel, kinn, sohle, urteil = GEMESSEN[name]
     anteil = kopfanteil(scheitel, kinn, sohle)
     stufe = urteil.split(":")[0] if urteil else einteilung(anteil)
-    return Messung(name, anteil, stufe, kontur, saettigung, rolle(name), urteil)
+    return Messung(name, anteil, stufe, kontur, saettigung, rolle(name), urteil, farben, hoehe)
+
+
+def lies_prompt(pfad: Path) -> str:
+    """Die PixelLab-Beschreibung aus metadata.json (erster Zustand), sonst leer."""
+    if not pfad.exists():
+        return ""
+    zustaende = json.loads(pfad.read_text(encoding="utf-8")).get("states", [])
+    return zustaende[0].get("character", {}).get("prompt", "") if zustaende else ""
 
 
 def lineal(bild: Image.Image, name: str) -> Image.Image:
@@ -233,6 +263,7 @@ def lauf(figuren: Path, ziel: Path, limezu: Path | None) -> list[Messung]:
         bild = Image.open(ordner / "rotations" / "south.png").convert("RGBA")
         bilder[ordner.name] = bild
         messung = miss(ordner.name, bild)
+        messung.prompt = lies_prompt(ordner / "metadata.json")
         messungen.append(messung)
         if messung.kopfanteil is None:
             lineal(bild, ordner.name).save(ziel / f"lineal_{ordner.name}.png")
@@ -250,6 +281,8 @@ def lauf(figuren: Path, ziel: Path, limezu: Path | None) -> list[Messung]:
         gruppen.append(("LimeZu-Bögen ohne PixelLab-Fassung (Altbestand, nicht vermessen)", kacheln))
     (ziel / "kontaktbogen.html").write_text(seite(gruppen), encoding="utf-8")
     (ziel / "tabelle.md").write_text(tabelle(messungen), encoding="utf-8")
+    alte_namen = {p.stem for p in limezu.glob("*.png")} - set(bilder) if limezu else set()
+    figurstil_plan.schreibe(messungen, bilder, alte_namen, ziel)
     return messungen
 
 

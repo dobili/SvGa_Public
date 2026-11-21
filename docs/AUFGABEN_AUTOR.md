@@ -2496,3 +2496,27 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Roman an beiden Stellen angleichen. Schon so umgesetzt, Widerspruch genügt. Alternative: ein
       Tisch unter Mira beziehungsweise eine eigens gezeichnete Kiste für Big Joe.
       **Antwort:** „RO45 ok“ oder „RO45: Tisch/Kiste“.
+
+- [ ] RO46. **Alle Figuren im Stil des Coachs neu erstellen (21.11.2026)**
+      Gemessen: Von 37 PixelLab-Figuren sind 32 chibi wie Coach und Held (Kopf etwa die Hälfte der
+      Höhe). Ambrose, der junge Ambrose, Carla (Dutt, Jeansjacke) und Jo (Kapuze) sind realistisch
+      gebaut (Kopf etwa ein Drittel), Victor im Pullover liegt dazwischen. Grund: PixelLab streut
+      bei Wörtern wie „thin“, „slim“ oder „long coat“. Dazu laufen noch 119 Figuren mit den alten
+      LimeZu-Bildern (79 benannte Figuren und 40 Statistenbögen). Der Plan mit Kontaktbogen und
+      fertigen Prompts im Stil des Coachs (Kopfanteil 0,45 bis 0,50) liegt dir als HTML-Seite im
+      Chat vor; ein neues Werkzeug misst jede neue Figur nach.
+      Reihenfolge: 1. Hauptfiguren, die anders aussehen (junger Ambrose, Victor im Pullover);
+      2. Hauptfiguren mit alten Bildern (27, nach Akt); 3. Carla und Jo; 4. Nebenfiguren mit alten
+      Bildern (52); 5. wahlweise die 25 Figuren, die schon nah am Coach sind (mit dem Helden);
+      6. Statisten als 17 Typen (Passanten, Dienst, Stadt, Draußen, Erinnerungen); 7. Ambrose.
+      Aufwand ohne Stufe 5: 101 Bögen, etwa 636 Generierungen; mit Stufe 5: 126 und etwa 793.
+      Je Figur Pflicht: Stehen in 4 Richtungen und Laufen 4 × 6; Sitzen nur für 23 Figuren in den
+      gebrauchten Richtungen (links und rechts spiegelbar). Liegen und den Geist macht die App.
+      Größe: Heute sind Held und Erwachsene fast gleich groß (30 gegen 30 bis 31 Pixel). Damit
+      Erwachsene sichtbar größer sind, Ziel: Erwachsene 30 bis 31, Alte 29 bis 30, Jugendliche
+      und der Held 27 bis 28, Kinder 21 bis 23. Clover (12 Jahre) ist heute wie eine Erwachsene
+      gezeichnet.
+      Empfehlung: so vorgehen, mit Stufe 5, damit Held, Sam, Victor und Juno die neue Größe
+      bekommen; Ambrose ebenfalls chibi wie alle, den Geisterschimmer legt die App darüber.
+      Für die Statisten-Typen passt der Hauptchat die App an, sobald die ersten Bögen kommen.
+      **Antwort:** „RO46 ok“ oder „RO46: ohne Stufe 5“ / „RO46: Ambrose bleibt anders“.

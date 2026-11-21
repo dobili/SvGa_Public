@@ -116,7 +116,13 @@ Figuren, auch der Held, gehen einen Weg, den der Dialog vorgibt; der Spieler gre
 - `#gehe:<wer>><ziel>`: Ziel ist eine Figur der Karte (der Weg endet neben ihr, mit Blick auf sie),
   ein Auslöser der Karte (etwa `haustuer`) oder ein Feld `x,y`. `wer` ist `held` oder der Name einer
   Figur auf der Karte. Mehrere `#gehe` in einer Zeile laufen zugleich.
-- `#stelle:<wer>><x,y>>liegt`: sofort dorthin, liegend (im Bett); ohne `>liegt` stehend.
+- `#gehe:<wer>><ziel>>rennt` (21.11.2026): Die Figur rennt, doppelt so schnell und mit der
+  Rennanimation (Reihe 6 des Figurenbogens, sonst die Laufbilder mit höherer Bildrate). Gilt für
+  andere Figuren; der Held geht auch dann in seinem Tempo. Eine Sitzende steht dazu auf.
+- `#stelle:<wer>><x,y>>liegt`: sofort dorthin, liegend (im Bett); ohne `>liegt` stehend. Liegend
+  zeigt die Figur ihr Liegebild aus dem Bogen (Kopf zur Seite des Betts), sonst das gekippte
+  Standbild. `#stelle` vor `#gehe` in derselben Zeile: erst versetzen, dann losgehen (Kira kommt
+  vom Bus gerannt).
 - Die Zeile wartet, bis alle angekommen sind: „Weiter“ und die Wahlen sind so lange gesperrt.
   Kamera, Laufanimation und Kollision laufen wie beim Spieler; der Weg folgt den Kacheln (kürzester
   Weg um Wände, Möbel und andere Figuren).
@@ -126,9 +132,14 @@ Figuren, auch der Held, gehen einen Weg, den der Dialog vorgibt; der Spieler gre
 - Warum `>` und nicht `->`: Ink liest `->` auch in einem Tag als Sprung.
 - **Beispiele:** erste Nacht im Zimmer (Bett, dann zu Ambrose ans Fenster), Einleitung (Mama geht zur
   Haustür, der Held folgt), Victor zu Nova und Mama zum Helden in der Arena, Teague im Museum,
-  Dr. Lin in der Akademie, Mama zum Fenster im Wohnzimmer.
+  Dr. Lin in der Akademie, Mama zum Fenster im Wohnzimmer. Rennen: Victor durch den Mittelgang und Juno in den
+  Helden hinein (Arena, Finale), Kira vom Bus (Hochebene), Tessa an der Landstraße (heran und
+  wieder weg). Nicht in der Hütte von Summit City: Dort rennt Victor draußen, unsichtbar.
+- **Statisten** mit `"verhalten": "rennen"` in den Eigenschaften rennen auch (bisher nur Tiere):
+  Kinder zwischen den Fahnenmasten vor der Arena (`kindA`, `kindB`).
 - **Dateien:** `oberwelt/gefuehrterweg.ts` (Tags, Wegsuche), `oberwelt/fuehrungsschicht.ts`
-  (Szene), `oberwelt/useBuehne.ts` (Dialog wartet), Test `tests/e2e/abenteuer-gefuehrt.spec.ts`.
+  (Szene), `oberwelt/useBuehne.ts` (Dialog wartet), Tests `tests/e2e/abenteuer-gefuehrt.spec.ts`
+  und `tests/e2e/abenteuer-rennen.spec.ts`.
 
 ### T4 Porträtfassungen (nur Format)
 

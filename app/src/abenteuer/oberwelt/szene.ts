@@ -37,6 +37,7 @@ import {
 import { ladeMoebelbilder, rahmenJeTextur, richteMoebelrahmenEin, stelleMoebelAuf } from "./moebel";
 import { stelleFigurenAuf } from "./figurenaufstellung";
 import { sitzmoebelAus } from "./sitzplatz";
+import { LIEGT } from "./sitzrichtung";
 import { sichtbarMesser } from "./sitzumriss";
 import { erscheineAlsGeist } from "./geisterscheinung";
 import type { Fuehrungszugang, Heldfuehrung } from "./fuehrungsschicht";
@@ -293,6 +294,7 @@ export class Oberweltszene extends Phaser.Scene {
       kachel: KACHEL,
       frei: this.frei,
       ausloeser: this.ausloeser,
+      moebel: this.daten.moebel ?? [],
       setzeFuehrung,
       blicke,
     };
@@ -333,7 +335,7 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung === "oben") koerper.setVelocityY(-tempo);
       if (richtung === "unten") koerper.setVelocityY(tempo);
     }
-    if (this.held.rotation === 0) this.held.setDepth(this.held.y); // liegend: fuehrungsschicht.ts
+    if (!this.held.getData(LIEGT)) this.held.setDepth(this.held.y); // liegend: fuehrungsschicht.ts
     this.kamerafuehrung?.schritt(delta, richtung, { x: this.held.x, y: this.held.y });
     this.toenungsschicht?.folge(this.held.x, this.held.y);
     // Während eines geführten Wegs löst der Held nichts aus (keine Tür, kein Gespräch).
@@ -353,7 +355,7 @@ export class Oberweltszene extends Phaser.Scene {
   /** Bild des Helden: Laufanimation in Bewegung, sonst Standbild der Blickrichtung. */
   private zeigeHeld(richtung: Richtung | null): void {
     const held = this.held;
-    if (!held) return;
+    if (!held || held.getData(LIEGT)) return; // liegend: Liegebild (fuehrungsschicht.ts)
     if (!this.daten.heldfigur) {
       if (richtung) held.setFrame(BILD_JE_RICHTUNG[richtung]);
       return;

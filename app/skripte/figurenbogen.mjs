@@ -25,12 +25,22 @@
  *   bekommt der Bogen eine dritte Reihe mit vier Sitzbildern ab Rahmen 48 (erstes Bild je
  *   Richtung, Ordnung wie die Standbilder; fehlende gespiegelt oder das Standbild). Die App
  *   erkennt die Reihe an der Bogenhöhe (oberwelt/sitzrichtung.ts).
- * Abhängigkeiten: sharp.
+ * - Zustände aus PixelLab („New State“, skripte/figurenzustaende.mjs, 21.11.2026): Sitzen auf dem
+ *   Stuhl ersetzt die dritte Reihe (Rahmen 48 bis 51), Sitzen am Boden ist die vierte (72 bis 75),
+ *   Liegen die fünfte (96 Kopf rechts, 97 Kopf links). Der Bogen reicht bis zur letzten vorhandenen
+ *   Reihe; eine Lücke davor füllt der heutige Ersatz: Stuhl = Standbild ERSATZHUB Pixel höher,
+ *   Boden = Standbild, Liegen = Standbild gedreht. Ohne Liegereihe kippt die App das Standbild
+ *   (fuehrungsschicht.ts).
+ * - Rennen (Animation „Running“, `animations/Running/<richtung>/`, 21.11.2026): sechste Reihe ab
+ *   Rahmen 120, sechs Bilder je Richtung wie die Gehreihe. Ohne sie rennt die App mit den
+ *   Gehbildern bei höherer Bildrate (figurbilder.ts, rennname).
+ * Abhängigkeiten: sharp, figurenzustaende.mjs.
  */
 import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
+import { ZUSTAENDE, zustandsrahmen } from "./figurenzustaende.mjs";
 
 export const RAHMEN = 32;
 const SPALTEN = 24;
@@ -150,7 +160,29 @@ export function aufFusszeile(richtungen) {
     still: schiebe(r.still),
     lauf: r.lauf ? r.lauf.map(schiebe) : r.lauf,
     sitz: schiebe(r.sitz),
+    renn: r.renn ? r.renn.map(schiebe) : r.renn,
   }));
+}
+
+/**
+ * Dreht einen 32er-Rahmen um eine Vierteldrehung, im Uhrzeigersinn (Kopf nach rechts) oder
+ * dagegen (Kopf nach links): Ersatz für ein fehlendes Liegebild vor einer Rennreihe.
+ */
+export function gedreht(rahmen, imUhrzeigersinn) {
+  const aus = Buffer.alloc(rahmen.length);
+  for (let y = 0; y < RAHMEN; y++) {
+    for (let x = 0; x < RAHMEN; x++) {
+      const zx = imUhrzeigersinn ? RAHMEN - 1 - y : y;
+      const zy = imUhrzeigersinn ? x : RAHMEN - 1 - x;
+      rahmen.copy(
+        aus,
+        (zy * RAHMEN + zx) * KANAELE,
+        (y * RAHMEN + x) * KANAELE,
+        (y * RAHMEN + x + 1) * KANAELE,
+      );
+    }
+  }
+  return aus;
 }
 
 /** Spiegelt einen 32er-Rahmen waagerecht. */
@@ -168,13 +200,19 @@ export function gespiegelt(rahmen) {
 
 /** Namen des Laufordners im Export (PixelLab nennt ihn je nach Fassung so oder so). */
 const LAUFORDNER = ["Walk", "Walking"];
+/** Namen des Rennordners im Export (Animation „Running“, Auftrag des Haupt-Chats, 21.11.2026). */
+const RENNORDNER = ["Running", "Run"];
 /** Name des Sitzordners im Export (Doc 24). */
 const SITZORDNER = "Sitting";
 const SITZREIHE = 2;
+/** Ersatz für ein fehlendes Stuhlbild vor einer vorhandenen späteren Reihe (wie SITZ_HUB der App). */
+const ERSATZHUB = 6;
+/** Index der Richtung Süd in RICHTUNGEN (Standbild für Maßstab und Ersatz). */
+const SUED = 3;
 
-/** Die Laufbilder einer Richtung (bis zu sechs), oder null. */
-async function laufbilder(ordner, richtung, leinwand) {
-  const pfad = LAUFORDNER.map((n) => join(ordner, "animations", n, richtung)).find(existsSync);
+/** Die Lauf- oder Rennbilder einer Richtung (bis zu sechs, Ordner nach `ordnernamen`), oder null. */
+async function laufbilder(ordner, richtung, leinwand, ordnernamen = LAUFORDNER) {
+  const pfad = ordnernamen.map((n) => join(ordner, "animations", n, richtung)).find(existsSync);
   if (!pfad) return null;
   const namen = (await readdir(pfad)).filter((n) => n.endsWith(".png")).sort();
   if (namen.length === 0) return null;
@@ -220,9 +258,11 @@ async function sammle(ordner) {
       still: await standbild(ordner, name, leinwand),
       lauf: await laufbilder(ordner, name, leinwand),
       sitz: await sitzbild(ordner, name, leinwand),
+      renn: await laufbilder(ordner, name, leinwand, RENNORDNER),
     };
   }
   const mitSitz = RICHTUNGEN.some(({ name }) => roheDaten[name].sitz);
+  const mitRennen = RICHTUNGEN.some(({ name }) => roheDaten[name].renn);
   return RICHTUNGEN.map(({ name, spiegel }) => {
     const eigen = roheDaten[name];
     const partner = spiegel ? roheDaten[spiegel] : null;
@@ -232,8 +272,34 @@ async function sammle(ordner) {
     const sitz = mitSitz
       ? (eigen.sitz ?? (partner?.sitz ? gespiegelt(partner.sitz) : null) ?? still)
       : null;
-    return { still, lauf: lauf ?? (still ? Array(LAUFBILDER).fill(still) : null), sitz };
+    const gehen = lauf ?? (still ? Array(LAUFBILDER).fill(still) : null);
+    // Fehlt eine Rennrichtung, rennt die Figur dort mit den Laufbildern (wie die App ohne Reihe).
+    const renn = mitRennen ? (eigen.renn ?? partner?.renn?.map(gespiegelt) ?? gehen) : null;
+    return { still, lauf: gehen, sitz, renn };
   });
+}
+
+/**
+ * Die Reihen 3 bis 6 (Stuhl, Boden, Liegen, Rennen): Rahmen oder null. Der Stuhl kommt aus dem
+ * Zustand, sonst aus der Sitting-Animation (sammle). Lücken vor einer späteren Reihe füllt der
+ * Ersatz aus dem Dateikopf; nach der letzten vorhandenen Reihe endet der Bogen.
+ */
+async function zustandsreihen(ordner, richtungen) {
+  const reihen = [];
+  for (const zustand of ZUSTAENDE) {
+    reihen.push(await zustandsrahmen(ordner, zustand, richtungen[SUED]?.still, gespiegelt));
+  }
+  if (!reihen[0] && richtungen.some((r) => r.sitz)) reihen[0] = richtungen.map((r) => r.sitz);
+  if (richtungen.some((r) => r.renn)) reihen.push(richtungen.flatMap((r) => r.renn ?? []));
+  const letzte = reihen.findLastIndex((r) => r);
+  const still = (i) => richtungen[i]?.still ?? null;
+  const sued = still(SUED);
+  const ersatz = [
+    richtungen.map((_, i) => (still(i) ? verschoben(still(i), -ERSATZHUB) : null)),
+    richtungen.map((_, i) => still(i)),
+    sued ? [gedreht(sued, true), gedreht(sued, false)] : [],
+  ];
+  return reihen.slice(0, letzte + 1).map((r, i) => r ?? ersatz[i]);
 }
 
 /**
@@ -244,7 +310,8 @@ export async function baueFigurenbogen(ordner) {
   const richtungen = aufFusszeile(await sammle(ordner));
   if (richtungen.every((r) => !r.still)) return null;
   const leer = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
-  const reihen = richtungen.some((r) => r.sitz) ? SITZREIHE + 1 : SITZREIHE;
+  const zusatz = await zustandsreihen(ordner, richtungen);
+  const reihen = SITZREIHE + zusatz.length;
   const bogen = Buffer.alloc(SPALTEN * RAHMEN * reihen * RAHMEN * KANAELE);
   richtungen.forEach((r, i) => {
     lege(bogen, r.still ?? leer, i, 0);
@@ -252,8 +319,10 @@ export async function baueFigurenbogen(ordner) {
       const nummer = SPALTEN + i * LAUFBILDER + j;
       lege(bogen, rahmen, nummer % SPALTEN, Math.floor(nummer / SPALTEN));
     });
-    if (r.sitz) lege(bogen, r.sitz, i, SITZREIHE);
   });
+  zusatz.forEach((reihe, z) =>
+    reihe.forEach((rahmen, i) => lege(bogen, rahmen ?? leer, i, SITZREIHE + z)),
+  );
   return sharp(bogen, {
     raw: { width: SPALTEN * RAHMEN, height: reihen * RAHMEN, channels: KANAELE },
   })

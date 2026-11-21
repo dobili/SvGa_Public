@@ -8,7 +8,7 @@
  */
 import type Phaser from "phaser";
 import type { Ausloeser } from "./ausloeserebene";
-import { standbild, stelleAufKachel } from "./figurbilder";
+import { erzeugeLaufanimationen, standbild, stelleAufKachel } from "./figurbilder";
 import { setzeSitzend } from "./figurensitz";
 import { zeigeAlsGeist } from "./geistfigur";
 import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
@@ -44,6 +44,8 @@ export function stelleFigurenAuf(
       eigenes ? standbild(a.blick ?? "unten") : platzhalterUnten,
     ) as Phaser.Physics.Arcade.Sprite;
     figur.setName(a.name);
+    // Lauf- und Rennanimation für geführte Wege (fuehrungsschicht.ts, `#gehe`).
+    if (eigenes) erzeugeLaufanimationen(szene, `figur:${a.name}`);
     if (eigenes) stelleAufKachel(figur, kachel);
     const sitz = a.sitzt ? sitzlageAuf(sitze, a, kachel) : null;
     // Ohne Sitzmöbel sitzt die Figur am Boden (BODENSITZ, sitzplatz.ts).

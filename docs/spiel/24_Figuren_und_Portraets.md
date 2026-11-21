@@ -66,12 +66,40 @@ Für Ambrose: Figur farbig erzeugen (natürliche, blasse Haut), das Geisterhafte
    und Kleidung aus der Vorlage; Einzelporträts nehmen ein Feld des fertigen Blatts als Vorlage. Zweite Probe (14.11.2026):
    gelungen; im selben Chat hält Gemini den feinen Stil, wenn das erste Bild fein war. Je Figur ein
    eigener Chat. Keine Schrift auf Kleidung verlangen (Gemini malt sonst Zeichensalat).
-6. Figuren, die irgendwo sitzen (Schachspieler, Leser, Gäste; Wunsch des Autors R020):
-   zusätzlich „Template motion“ → Sitting für dieselben vier Richtungen. Im Export heißt der
-   Ordner `animations/Sitting/<richtung>/` (`frame_000.png` …); der Paketbau nimmt je Richtung das
-   erste Bild und legt die vier Sitzbilder als dritte Reihe in den Bogen (ab Rahmen 48, Ordnung
-   rechts, oben, links, unten). Ohne Sitzbilder zeigt die App das Standbild der Richtung sechs
-   Pixel höher, sodass die Figur hinter dem Tisch zu sitzen scheint.
+6. Sitzen und Liegen (berichtigt am 21.11.2026 nach den Proben des Autors): „Template motion →
+   Sitting“ gibt es in PixelLab nicht. Stattdessen „New State“: eine Fassung derselben Figur mit
+   eigenen Ansichten in acht Richtungen (`<ordner>/rotations/<richtung>.png`, 32 × 32). Diese
+   Beschreibungen haben funktioniert:
+   - Stuhl: „Sitting on an invisible chair, eyes open, hands on lap“. Ohne „eyes open“ döst die
+     Figur.
+   - Boden: „sitting down cross-legged on the floor“ (Juno auf der Tribüne, Nova an der
+     Podiumskante, Mira auf dem Bordstein).
+   - Liegen: „Sleeping, lying on the side in an invisible bed“. Brauchbar sind nur Ost und West
+     (seitlich im Profil); Süd steht mit geschlossenen Augen, Nord steht auf dem Kopf.
+
+   Ablage: Jeden Zustand als eigenes ZIP herunterladen und in `spiel/figuren-neu/<kennung>/zustaende/`
+   entpacken, in einen Ordner mit festem Namen: `sitzstuhl`, `sitzboden` oder `schlaf`. Die Namen
+   bei PixelLab werden abgeschnitten („Sitting on a invisib“), deshalb zählt der Ordnername. Wird
+   eine ganze Gruppe in einem ZIP exportiert, erkennt der Paketbau die Zustände ersatzweise an
+   Wörtern im Namen oder in der Beschreibung (chair, cross-legged/floor, sleep/lying).
+
+   Der Paketbau (`app/skripte/figurenzustaende.mjs`) verkleinert die Zustände auf die Kopfbreite
+   des Standbilds (PixelLab zeichnet sie etwa ein Fünftel größer) und legt sie in den Bogen:
+   - Reihe 3 (ab Rahmen 48): Stuhl, rechts, oben, links, unten.
+   - Reihe 4 (ab Rahmen 72): Boden, ebenso.
+   - Reihe 5 (Rahmen 96 und 97): Liegen, Kopf rechts (West) und Kopf links (Ost).
+
+   Welches Bild die App zeigt: Sitzt die Figur auf einem Sitzmöbel, das Stuhlbild; ohne Sitzmöbel
+   das Bodenbild. Im Bett (`#stelle … >liegt`) das Liegebild mit dem Kopf zur Seite des Betts
+   (`KopfRechts`/`KopfWest` im Katalognamen; ohne Angabe Kopf rechts). Fehlt ein Zustand, gilt der
+   bisherige Ersatz: Standbild sechs Pixel höher auf dem Stuhl, Standbild am Boden, im Bett das
+   gekippte Standbild. Ein alter Export mit `animations/Sitting/` füllt Reihe 3 weiterhin.
+
+7. Rennen (Nachtrag 21.11.2026): Animation „Running“ für die vier Richtungen, wie das Gehen. Im
+   Export `animations/Running/<richtung>/`; der Paketbau legt sie als Reihe 6 in den Bogen (ab
+   Rahmen 120, sechs Bilder je Richtung). Ohne sie rennt die Figur mit den Gehbildern bei höherer
+   Bildrate. Brauchen: der Held (draußen), Victor, Juno, Kira, die Joggerin und die rennenden
+   Kinder vor der Arena; die volle Liste schreibt `python -m pipeline.abenteuer.figurenzustaende`.
 
 ## Kosten
 

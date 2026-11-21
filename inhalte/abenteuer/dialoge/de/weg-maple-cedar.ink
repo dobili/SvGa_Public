@@ -502,9 +502,9 @@ Der Stein mit dem eingeritzten Brett. Man fühlt die Linien eher, als man sie si
 }
 
 === tessa_a ===
-Eine Frau läuft vorbei, rot im Gesicht. Am Gatter bleibt sie stehen und keucht. #sprecher:erzaehler
+Eine Frau läuft vorbei, rot im Gesicht. Am Gatter bleibt sie stehen und keucht. #sprecher:erzaehler #stelle:tessa>62,13 #gehe:tessa>54,13>rennt
 Noch – drei Kilometer! Halbe – Strecke! #sprecher:joggerin #stimmung:laechelt
-Und weg ist sie. #sprecher:erzaehler
+Und weg ist sie. #sprecher:erzaehler #gehe:tessa>46,13>rennt
 -> END
 
 === tessa_b ===

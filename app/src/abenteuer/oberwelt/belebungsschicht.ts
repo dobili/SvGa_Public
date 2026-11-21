@@ -9,9 +9,8 @@
  * Bildausschnitts steht.
  * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
-import { rahmenzahl, setzeSitzend } from "./figurensitz";
+import { setzeSitzend } from "./figurensitz";
 import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzmoebel } from "./sitzplatz";
-import { sitzbild } from "./sitzrichtung";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
 import {
@@ -26,6 +25,7 @@ import {
 } from "./belebungsbewegung";
 import {
   erzeugeLaufanimationen,
+  rennname,
   fussUrsprungY,
   ladeFigurbogen,
   laufname,
@@ -254,13 +254,13 @@ export class Belebungsschicht {
     const fliegt = d.v.verhalten === "fliegen" && !steht(d.b);
     d.sprite.setDepth(fliegt ? FLUGTIEFE : (d.tiefe ?? d.sprite.y));
     if (!d.bogen) return;
-    if (!steht(d.b)) d.sprite.anims.play(laufname(d.bogen, d.b.richtung), true);
+    // Statisten mit Verhalten „rennen“ (Kinder zwischen den Fahnen) rennen auch im Bild.
+    const gang = d.v.verhalten === "rennen" ? rennname : laufname;
+    if (!steht(d.b)) d.sprite.anims.play(gang(d.bogen, d.b.richtung), true);
     else {
       if (d.sprite.anims.isPlaying) d.sprite.anims.stop();
-      // Wer sitzt, behält sein Sitzbild (figurensitz.ts), sonst das Standbild der Richtung.
-      d.sprite.setFrame(
-        d.v.sitzt ? sitzbild(rahmenzahl(d.sprite), d.v.sitzt) : standbild(d.b.richtung),
-      );
+      // Wer sitzt, behält sein Sitzbild (Stuhl oder Boden, figurensitz.ts), sonst das Standbild.
+      if (!d.v.sitzt) d.sprite.setFrame(standbild(d.b.richtung));
     }
   }
 

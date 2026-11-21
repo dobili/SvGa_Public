@@ -31,6 +31,8 @@ export type Wegziel = { readonly feld: Feld } | { readonly name: string };
 export interface Wegauftrag {
   readonly wer: string;
   readonly ziel: Wegziel;
+  /** `#gehe:wer>ziel>rennt`: schneller, mit der Rennanimation (21.11.2026). */
+  readonly rennt?: boolean;
 }
 
 /** Ein Versetzen aus einem `#stelle`-Tag. */
@@ -56,6 +58,9 @@ const NACHBARN: readonly { readonly d: Feld; readonly blick: Blick }[] = [
   { d: { x: 0, y: -1 }, blick: "oben" },
 ];
 
+/** Dritter Teil eines `#gehe`: Die Figur rennt. */
+const RENNT = "rennt";
+
 /** Liest „3,21“ als Feld, sonst null. */
 function feldAus(text: string): Feld | null {
   const treffer = FELD.exec(text.trim());
@@ -63,16 +68,18 @@ function feldAus(text: string): Feld | null {
 }
 
 /**
- * Die Wege eines `#gehe`-Werts. Beispiel: „held>ambrose;mutter>3,21“ → zwei Aufträge.
+ * Die Wege eines `#gehe`-Werts. Beispiel: „held>ambrose;mutter>3,21“ → zwei Aufträge;
+ * „juno>held>rennt“ → Juno rennt zum Helden.
  * Sonderfall: Teile ohne `>` oder ohne Ziel werden übergangen.
  */
 export function wegauftraege(wert: string | undefined): Wegauftrag[] {
   if (!wert) return [];
   return wert.split(WEGTRENNER).flatMap((teil) => {
-    const [wer, ziel] = teil.split(PFEIL).map((s) => s.trim());
+    const [wer, ziel, gangart] = teil.split(PFEIL).map((s) => s.trim());
     if (!wer || !ziel) return [];
     const feld = feldAus(ziel);
-    return [{ wer, ziel: feld ? { feld } : { name: ziel } }];
+    const rennt = gangart === RENNT ? { rennt: true } : {};
+    return [{ wer, ziel: feld ? { feld } : { name: ziel }, ...rennt }];
   });
 }
 

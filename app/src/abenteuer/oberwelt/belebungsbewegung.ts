@@ -82,7 +82,9 @@ const ANGEKOMMEN = 0.02;
 
 /** Die Gangart eines Statisten oder Tiers. */
 export function gangartVon(b: Pick<Belebung, "typ" | "verhalten">): Gangart {
-  return b.typ === "statist" ? GANGARTEN.statist : GANGARTEN[b.verhalten];
+  // Statisten gehen, außer sie rennen (Kinder zwischen den Fahnenmasten, 21.11.2026).
+  if (b.typ === "statist") return b.verhalten === "rennen" ? GANGARTEN.rennen : GANGARTEN.statist;
+  return GANGARTEN[b.verhalten];
 }
 
 /**

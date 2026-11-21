@@ -40,6 +40,7 @@ import { sitzmoebelAus } from "./sitzplatz";
 import { sichtbarMesser } from "./sitzumriss";
 import { erscheineAlsGeist } from "./geisterscheinung";
 import type { Fuehrungszugang, Heldfuehrung } from "./fuehrungsschicht";
+import { Gangartsteuerung } from "./gangart";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt, pfeiltasten } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
@@ -87,6 +88,7 @@ export class Oberweltszene extends Phaser.Scene {
   /** Zuletzt gemeldete Kachel des Helden („x,y“), damit beiKachel nur bei Änderung feuert. */
   private letzteKachel: string | null = null;
   private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
+  gangart = new Gangartsteuerung(false); // Rennen draußen (gangart.ts), Oberwelt setzt das Kreuz
   /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
   private belebung: Belebung[] = [];
   private belebungsschicht: Belebungsschicht | null = null;
@@ -195,6 +197,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.setzeToenung(this.daten.toenung ?? null);
     zeigeTeilchen(this, this.daten.winter ? "schnee" : (this.daten.teilchen ?? null), true);
     this.tasten = pfeiltasten(this.input.keyboard);
+    this.gangart = new Gangartsteuerung(this.daten.rennenErlaubt === true, this.input.keyboard);
   }
 
   /**
@@ -323,7 +326,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.zeigeHeld(richtung);
     if (richtung) {
       this.blick = richtung;
-      const tempo = TEMPO * (this.daten.tempofaktor ?? 1);
+      const tempo = TEMPO * (this.daten.tempofaktor ?? 1) * this.gangart.faktor();
       rueckeZurMitte(this.held, richtung, KACHEL, this.zellfrei);
       if (richtung === "links") koerper.setVelocityX(-tempo);
       if (richtung === "rechts") koerper.setVelocityX(tempo);
@@ -355,6 +358,7 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung) held.setFrame(BILD_JE_RICHTUNG[richtung]);
       return;
     }
+    held.anims.timeScale = this.gangart.faktor(); // bis zur Rennreihe: Laufbilder schneller
     if (richtung) held.anims.play(laufname(HELDFIGUR, richtung), true);
     else if (held.anims.isPlaying) held.anims.stop();
     if (!richtung) held.setFrame(standbild(this.blick));
@@ -382,8 +386,7 @@ export class Oberweltszene extends Phaser.Scene {
         typ: "statist" as const,
       })),
     ];
-    // Die Regel (nur bei Änderung, „davor“ und „darauf“ getrennt, Startauslöser erst nach dem
-    // Verlassen) steht in ausloeserebene.ts, damit der Lauftest über alle Übergänge sie mitprüft.
+    // Regel in ausloeserebene.ts (nur bei Änderung, davor/darauf getrennt), dort mitgeprüft.
     const held = { ...this.position(), geht: this.geht };
     const schritt = meldeschritt(this.meldezustand, alle, held);
     this.meldezustand = schritt.zustand;

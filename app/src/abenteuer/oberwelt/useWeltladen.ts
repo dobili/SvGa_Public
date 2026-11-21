@@ -108,6 +108,8 @@ function starteSpiel(
     uebergaenge,
     // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
     tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
+    // Rennen draußen zu Fuß (Wunsch des Autors, 21.11.2026; gangart.ts).
+    rennenErlaubt: !w.innen && !stand.gegenstaende.includes(FAHRRAD),
     // Figuren innen größer (Wunsch des Autors, 20.11.2026; weltmassstab.ts).
     figurfaktor: w.innen ? INNEN_FIGURFAKTOR : 1,
     melder: {

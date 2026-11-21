@@ -65,6 +65,8 @@ export interface Szenendaten {
   /** Namen der Auslöser, die Übergänge sind: Sie lösen erst beim Gehen in den Durchgang aus. */
   readonly uebergaenge?: readonly string[];
   readonly melder: Melder;
+  /** Rennen erlaubt (draußen, nicht auf dem Fahrrad; gangart.ts). */
+  readonly rennenErlaubt?: boolean;
   readonly tempofaktor?: number; // Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1)
   /** Faktor auf die Größe der Figuren (Innenräume: INNEN_FIGURFAKTOR, weltmassstab.ts; sonst 1). */
   readonly figurfaktor?: number;

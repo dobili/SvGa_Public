@@ -301,6 +301,15 @@ Profil › Einstellungen › Fehler melden.
       Umschalttaste. Ab Akt 2 erklärt beim ersten Mal draußen ein Hinweis das Rennen. Bis deine
       Rennbilder da sind, laufen die Gehbilder schneller. Ist das Tempo gut, und ist der Abstand
       zum Losrennen gut zu treffen?
+- [ ] N2677. **Figuren rennen in der Geschichte:** Arena-Finale nach Sieg oder Niederlage: Victor
+      rennt durch den Mittelgang zum Ausgang, Juno rennt zum Helden. Hochebene: Kira kommt beim
+      Falken-Geschenk von links herangerannt. Landstraße Maple Falls–Cedar Creek: Die Joggerin Tessa
+      rennt heran, keucht am Gatter und rennt weiter. Vor der Arena rennen zwei Kinder zwischen den
+      Fahnenmasten. Bis deine Rennbilder da sind, laufen die Gehbilder schneller.
+- [ ] N2678. **Sitzen und Liegen mit eigenen Bildern:** Sobald du die Zustände aus PixelLab abgelegt
+      hast (Ordner zustaende/sitzstuhl, sitzboden, schlaf je Figur): Der Held liegt nachts im Bett
+      (Kopf zum Kissen), Figuren auf Stühlen sitzen richtig, Juno, Lily, Mira und Nova sitzen im
+      Schneidersitz am Boden. Ohne Zustand gilt der bisherige Ersatz.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2527,3 +2536,9 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       bekommen; Ambrose ebenfalls chibi wie alle, den Geisterschimmer legt die App darüber.
       Für die Statisten-Typen passt der Hauptchat die App an, sobald die ersten Bögen kommen.
       **Antwort:** „RO46 ok“ oder „RO46: ohne Stufe 5“ / „RO46: Ambrose bleibt anders“.
+
+- [ ] RO47. **Kira „kommt vom Bus gerannt“, aber auf der Hochebene steht kein Bus (21.11.2026)**
+      Im Spiel verschwindet Kira kurz von ihrem Steintisch und rennt von links heran.
+      Empfehlung: so lassen, der Bus ist im Text nur erwähnt. Schon so umgesetzt, Widerspruch
+      genügt. Alternative: einen Bus an den Weg zur Schule stellen.
+      **Antwort:** „RO47 ok“ oder „RO47: Bus“.

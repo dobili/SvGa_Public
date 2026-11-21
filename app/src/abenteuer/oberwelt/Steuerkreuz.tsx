@@ -9,10 +9,13 @@
  * Pfeilen gar keine Reaktion“) zählt dabei die Taste, die dem Finger am nächsten ist, auch in den
  * Lücken, in der Mitte und außerhalb des Kreuzes (steuerrichtung.ts, mit totem Kern und Hysterese);
  * erst Loslassen hält an. Gilt hoch und quer und für beide Seiten des Kreuzes.
- * Abhängigkeiten: steuerrichtung.ts.
+ * Rennen (Wunsch des Autors, 21.11.2026): Zieht der Finger weit über den Rand hinaus nach außen,
+ * meldet das Kreuz „rennen“ (gangart.ts); zurück nach innen oder Loslassen heißt wieder gehen.
+ * Abhängigkeiten: steuerrichtung.ts, gangart.ts.
  */
 import { useRef, useState, type PointerEvent } from "react";
 import { tSpiel } from "../texte/texte";
+import { gangartZu, type Gangart } from "./gangart";
 import { richtungZu } from "./steuerrichtung";
 import type { Richtung } from "./szene";
 
@@ -41,10 +44,13 @@ function mitteVon(kreuz: HTMLElement): { readonly x: number; readonly y: number 
  */
 export function Steuerkreuz({
   beiRichtung,
+  beiGangart,
   aktion,
   beiAktion,
 }: {
   readonly beiRichtung: (richtung: Richtung, gedrueckt: boolean) => void;
+  /** Rennen an oder aus (Finger weit draußen); fehlt der Rückruf, gibt es kein Rennen. */
+  readonly beiGangart?: (rennen: boolean) => void;
   /** Text des Aktionsknopfs oder null, wenn gerade nichts zu tun ist. */
   readonly aktion: string | null;
   readonly beiAktion: () => void;
@@ -52,6 +58,22 @@ export function Steuerkreuz({
   const finger = useRef<number | null>(null);
   const [aktiv, setzeAktiv] = useState<Richtung | null>(null);
   const aktivRef = useRef<Richtung | null>(null);
+  const gangartRef = useRef<Gangart>("gehen");
+  const [gangart, setzeGangart] = useState<Gangart>("gehen");
+
+  /** Setzt die Gangart und meldet nur Wechsel. */
+  const wechsleGangart = (neu: Gangart) => {
+    if (gangartRef.current === neu) return;
+    gangartRef.current = neu;
+    setzeGangart(neu);
+    beiGangart?.(neu === "rennen");
+  };
+  /** Richtung und Gangart aus der Lage des Fingers. */
+  const folge = (e: PointerEvent<HTMLDivElement>) => {
+    const mitte = mitteVon(e.currentTarget);
+    wechsleGangart(gangartZu(e.clientX - mitte.x, e.clientY - mitte.y, gangartRef.current));
+    wechsle(richtungZu(e.clientX - mitte.x, e.clientY - mitte.y, aktivRef.current));
+  };
 
   /** Setzt die gedrückte Richtung; meldet Loslassen der alten und Druck der neuen. */
   const wechsle = (neu: Richtung | null) => {
@@ -62,30 +84,27 @@ export function Steuerkreuz({
     aktivRef.current = neu;
     setzeAktiv(neu);
   };
-  /** Die Richtung, deren Taste dem Finger am nächsten ist (steuerrichtung.ts). */
-  const richtungAn = (e: PointerEvent<HTMLDivElement>) => {
-    const mitte = mitteVon(e.currentTarget);
-    return richtungZu(e.clientX - mitte.x, e.clientY - mitte.y, aktivRef.current);
-  };
   const beginne = (e: PointerEvent<HTMLDivElement>) => {
     if (finger.current !== null) return;
     e.preventDefault();
     finger.current = e.pointerId;
     e.currentTarget.setPointerCapture(e.pointerId);
-    wechsle(richtungAn(e));
+    folge(e);
   };
   const bewege = (e: PointerEvent<HTMLDivElement>) => {
-    if (e.pointerId === finger.current) wechsle(richtungAn(e));
+    if (e.pointerId === finger.current) folge(e);
   };
   const ende = (e: PointerEvent<HTMLDivElement>) => {
     if (e.pointerId !== finger.current) return;
     finger.current = null;
+    wechsleGangart("gehen");
     wechsle(null);
   };
   return (
     <>
       <div
         className="abenteuer-steuerkreuz"
+        data-gangart={gangart}
         aria-label={tSpiel("oberwelt.steuerkreuz")}
         onPointerDown={beginne}
         onPointerMove={bewege}

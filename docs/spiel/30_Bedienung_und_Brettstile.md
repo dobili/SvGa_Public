@@ -27,6 +27,11 @@ Daumenzonen:
 - **Steuerkreuz beim Wischen:** Solange ein Finger auf dem Kreuz liegt, zählt die Richtung, deren
   Taste ihm am nächsten ist, auch in den Lücken und in der Mitte; kleiner toter Kern, Hysterese
   auf der Diagonale, erst Loslassen beendet die Bewegung (steuerrichtung.ts, 20.11.2026).
+- **Rennen draußen** (Wunsch des Autors, 21.11.2026): Zieht der Finger auf dem Kreuz weit über den
+  Rand nach außen (ab 1,4-fachem Tastenabstand, zurück unter 1,25-fach), rennt der Held 1,8-mal so
+  schnell; Tastatur: Umschalttaste. Nur auf Außenkarten und nicht auf dem Fahrrad (gangart.ts).
+  Bis Rennbilder im Bogen liegen (Reihe 6, ab Rahmen 120), laufen die Gehbilder schneller. Ein
+  Steuerhinweis „Zieh weiter nach außen, dann rennst du.“ kommt ab Akt 2 beim ersten Mal draußen.
 - **Kurze Hinweise** (Steuerhinweis, Meldungen) liegen am Rand fern vom Helden: steht er in der
   oberen Bildhälfte, unten über dem Kreuz, sonst oben (heldhaelfte.ts, 20.11.2026).
 - **Dialog:** Fenster unten (wie schon), Antwortwahlen als große Knöpfe am unteren Rand, „Weiter“

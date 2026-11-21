@@ -44,6 +44,15 @@ describe("faelligerHinweis", () => {
     expect(folge(mitQuest, { ...FREI, erinnerung: true })).toEqual(["steuerkreuz"]);
   });
 
+  it("erklärt das Rennen zuletzt, erst ab Akt 2 und nur draußen (21.11.2026)", () => {
+    const mitQuest = { ...LEER, quests: [QUEST] };
+    const akt2 = { ...mitQuest, handlung: { ...mitQuest.handlung, akt: 2 } };
+    const draussen = { ...FREI, draussen: true };
+    expect(folge(akt2, draussen)).toEqual(["steuerkreuz", "tagebuch", "menue", "rennen"]);
+    expect(folge(mitQuest, draussen)).toEqual(["steuerkreuz", "tagebuch", "menue"]);
+    expect(folge(akt2, FREI)).toEqual(["steuerkreuz", "tagebuch", "menue"]);
+  });
+
   it("merkt sich jeden Hinweis in einer Dialogvariablen", () => {
     expect(hinweisvariable("tagebuch")).toBe("hinweisTagebuch");
     expect(hakeAb(LEER, "menue").dialogvariablen["hinweisMenue"]).toBe(true);

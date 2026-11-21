@@ -12,8 +12,11 @@
  */
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 
-/** Die vier Hinweise, in der Reihenfolge, in der ein neuer Spieler ihnen begegnet. */
-export type Steuerhinweis = "steuerkreuz" | "aktion" | "tagebuch" | "menue";
+/** Die Hinweise, in der Reihenfolge, in der ein neuer Spieler ihnen begegnet. */
+export type Steuerhinweis = "steuerkreuz" | "aktion" | "tagebuch" | "menue" | "rennen";
+
+/** Ab diesem Akt kommt der Hinweis zum Rennen (nach Akt 1, Wunsch des Autors, 21.11.2026). */
+const RENNEN_AB_AKT = 2;
 
 /** Dialogvariable, die einen Hinweis abhakt. Beispiel: „hinweisSteuerkreuz“. */
 export function hinweisvariable(hinweis: Steuerhinweis): string {
@@ -28,6 +31,8 @@ export interface Hinweislage {
   readonly erinnerung: boolean;
   /** Der Aktionsknopf ist gerade zu sehen. */
   readonly aktionSichtbar: boolean;
+  /** Eine Außenkarte: Dort kann der Held rennen (gangart.ts). Fehlt: wie innen. */
+  readonly draussen?: boolean;
 }
 
 /** Ob der Hinweis schon kam. */
@@ -41,7 +46,8 @@ function gesehen(stand: Abenteuerstand, hinweis: Steuerhinweis): boolean {
  * - Aktionsknopf: sobald er zum ersten Mal erscheint;
  * - Tagebuch: sobald die erste Quest im Tagebuch steht (nach der Meldung „Neu im Tagebuch“),
  *   nicht in Erinnerungen;
- * - Menü: danach einmal, ebenfalls nicht in Erinnerungen.
+ * - Menü: danach einmal, ebenfalls nicht in Erinnerungen;
+ * - Rennen: danach, ab Akt 2, beim ersten Mal draußen (gangart.ts).
  * Beispiel: neuer Spielstand, Einleitung vorbei → „steuerkreuz“; danach am Karton → „aktion“.
  * Sonderfall: Ein alter Spielstand mit Quests bekommt die Hinweise der Reihe nach einmal.
  */
@@ -52,6 +58,8 @@ export function faelligerHinweis(stand: Abenteuerstand, lage: Hinweislage): Steu
   if (lage.erinnerung || stand.quests.length === 0) return null;
   if (!gesehen(stand, "tagebuch")) return "tagebuch";
   if (!gesehen(stand, "menue")) return "menue";
+  const rennen = lage.draussen === true && stand.handlung.akt >= RENNEN_AB_AKT;
+  if (rennen && !gesehen(stand, "rennen")) return "rennen";
   return null;
 }
 

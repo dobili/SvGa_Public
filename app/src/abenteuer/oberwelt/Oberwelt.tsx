@@ -131,6 +131,7 @@ export function Oberwelt() {
     frei: welt !== null && !fensterOffen && meldung === null,
     erinnerung: welt?.erinnerung === true,
     aktionSichtbar: welt !== null && aktionFuer(welt, treffer) !== null,
+    draussen: welt !== null && !welt.innen,
   });
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
@@ -188,6 +189,10 @@ export function Oberwelt() {
       {welt && !dialog && !vorfuehrung && !gedaechtnis && (
         <Steuerkreuz
           beiRichtung={beiRichtung}
+          beiGangart={(rennen) => {
+            if (rennen) hinweis.benutzt("rennen");
+            szeneAus(spiel)?.gangart.setzeKreuz(rennen);
+          }}
           aktion={aktionFuer(welt, treffer)}
           beiAktion={() => {
             hinweis.benutzt("aktion");

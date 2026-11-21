@@ -94,6 +94,11 @@
       "zu": "schach1"
     },
     {
+      "moebel": "wzStuhlRechts",
+      "feld": [8, 6],
+      "zu": "schach1"
+    },
+    {
       "moebel": "cc4StuhlVorn",
       "feld": [11, 6],
       "zu": "schach2"
@@ -298,7 +303,7 @@
     {
       "name": "dex",
       "feld": [8, 7],
-      "blick": "rechts"
+      "sitzt": "rechts"
     },
     {
       "name": "mae",
@@ -307,13 +312,13 @@
     },
     {
       "name": "zwillingeDrinnen",
-      "feld": [8, 10],
-      "blick": "links"
+      "feld": [11, 9],
+      "sitzt": "oben"
     },
     {
       "name": "jonahDrinnen",
-      "feld": [9, 10],
-      "blick": "rechts"
+      "feld": [9, 9],
+      "sitzt": "oben"
     }
   ],
   "belebung": [

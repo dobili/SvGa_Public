@@ -796,6 +796,10 @@
       "moebel": "cc5Fussmatte",
       "feld": [17, 17],
       "versatz": [0, 19]
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [29, 7]
     }
   ],
   "ausloeser": [
@@ -839,7 +843,7 @@
     {
       "name": "mama",
       "feld": [29, 8],
-      "blick": "rechts"
+      "sitzt": "rechts"
     }
   ],
   "belebung": [

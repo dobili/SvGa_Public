@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 281,
+ "nextobjectid": 282,
  "layers": [
   {
    "id": 1,
@@ -12356,7 +12356,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 17,
@@ -12367,7 +12374,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 18,
@@ -18768,6 +18782,29 @@
        "name": "massstab",
        "type": "float",
        "value": 0.7
+      }
+     ]
+    },
+    {
+     "id": 281,
+     "name": "ri8Klapphocker",
+     "type": "moebel",
+     "x": 208,
+     "y": 864,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

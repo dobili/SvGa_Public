@@ -86,7 +86,7 @@ Du nickst. Der Springer gehört auf den Stein. #sprecher:erzaehler
     -> END
 }
 ~ miraCrossroadsGetroffen = true
-Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
+Mira sitzt im Schneidersitz auf der Bordsteinkante und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
 Du. Noch mal. #sprecher:mira #stimmung:ernst
 Jetzt. #sprecher:mira #stimmung:ernst
 * [„Nach dem Essen.“]

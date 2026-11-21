@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 91,
+ "nextobjectid": 92,
  "layers": [
   {
    "id": 1,
@@ -2293,7 +2293,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 7,
@@ -4230,6 +4237,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "cc4StuhlVorn",
+     "type": "moebel",
+     "x": 528,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
       },
       {
        "name": "kollision",

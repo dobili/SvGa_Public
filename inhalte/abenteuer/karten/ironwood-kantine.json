@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 177,
+ "nextobjectid": 178,
  "layers": [
   {
    "id": 1,
@@ -2329,7 +2329,7 @@
      "visible": true,
      "properties": [
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "rechts"
       }
@@ -6248,6 +6248,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 177,
+     "name": "wzStuhlRechts",
+     "type": "moebel",
+     "x": 464,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

@@ -411,7 +411,7 @@
     {
       "name": "juno",
       "feld": [19, 18],
-      "blick": "links"
+      "sitzt": "links"
     }
   ],
   "belebung": [

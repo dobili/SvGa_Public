@@ -1051,7 +1051,7 @@
     {
       "name": "mira",
       "feld": [34, 27],
-      "blick": "rechts"
+      "sitzt": "rechts"
     }
   ],
   "belebung": [

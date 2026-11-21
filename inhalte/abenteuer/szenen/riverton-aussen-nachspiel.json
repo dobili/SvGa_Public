@@ -1290,6 +1290,10 @@
       "auf": "nachspieltisch5",
       "versatz": [0, -3],
       "massstab": 0.7
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [13, 54]
     }
   ],
   "ausloeser": [
@@ -1365,11 +1369,13 @@
   "figuren": [
     {
       "name": "albescu",
-      "feld": [13, 54]
+      "feld": [13, 54],
+      "sitzt": "unten"
     },
     {
       "name": "nova",
-      "feld": [28, 19]
+      "feld": [28, 19],
+      "sitzt": "unten"
     },
     {
       "name": "victor",

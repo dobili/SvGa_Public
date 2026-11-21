@@ -444,7 +444,8 @@
   "figuren": [
     {
       "name": "theo",
-      "feld": [8, 3]
+      "feld": [9, 6],
+      "sitzt": "oben"
     },
     {
       "name": "lin",

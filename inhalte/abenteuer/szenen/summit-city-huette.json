@@ -167,8 +167,8 @@
   "figuren": [
     {
       "name": "ward",
-      "feld": [9, 7],
-      "blick": "oben"
+      "feld": [10, 6],
+      "sitzt": "links"
     },
     {
       "name": "kit",

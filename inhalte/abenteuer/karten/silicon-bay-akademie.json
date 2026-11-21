@@ -1532,12 +1532,19 @@
      "id": 6,
      "name": "theo",
      "type": "figur",
-     "x": 128,
-     "y": 48,
+     "x": 144,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 7,

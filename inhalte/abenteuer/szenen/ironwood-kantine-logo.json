@@ -389,6 +389,10 @@
     {
       "moebel": "cc4KartonHoch",
       "feld": [31, 15]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [33, 5]
     }
   ],
   "ausloeser": [
@@ -419,7 +423,8 @@
   "figuren": [
     {
       "name": "bigJoe",
-      "feld": [33, 6]
+      "feld": [33, 6],
+      "sitzt": "unten"
     },
     {
       "name": "hank",

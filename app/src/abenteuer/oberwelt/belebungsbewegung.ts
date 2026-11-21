@@ -239,8 +239,11 @@ export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void
   const g = gangartVon(v);
   if (v.typ === "tier" && v.verhalten === "folgen") folge(b, u);
   else scheue(b, v, g, u);
+  // Auch mitten im Gehen: Lief ein Statist beim Ansprechen schon, ging er weiter, und seine
+  // Sprechblase schloss sich mitten im Satz (Statist im Bergladen, 20.11.2026; auf langsamen
+  // Geräten öfter, weil ein Bild dort weiter rückt). Auf der Flucht hört niemand zu.
+  if (!b.flieht && hoertZu(b, v, dt, u)) return;
   if (!b.ziel) {
-    if (hoertZu(b, v, dt, u)) return;
     b.pause -= dt;
     if (b.pause > 0 || g.tempo === 0) return;
     b.ziel =

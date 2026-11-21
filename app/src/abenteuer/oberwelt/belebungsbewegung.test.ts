@@ -70,6 +70,26 @@ describe("Statisten", () => {
     expect(b.x).toBeGreaterThan(5);
   });
 
+  it("bleiben auch mitten im Gehen stehen, wenn der Held sie anspricht", () => {
+    // Befund Statist im Bergladen (20.11.2026): Lief die Ladenhilfe beim Ansprechen schon, ging
+    // sie weiter, und ihre Sprechblase schloss sich mitten im Satz (auf langsamen Geräten öfter).
+    const v = eintrag("statist");
+    const b = neueBewegung(v.feld);
+    laufe(b, v, 0.3, umgebung({ x: 20, y: 20 }));
+    expect(steht(b)).toBe(false);
+    const x = b.x;
+    const ansehen: Umgebung = {
+      ...umgebung({ x: Math.round(x) - 1, y: 5 }),
+      heldBlick: "rechts",
+      heldGeht: false,
+    };
+    laufe(b, v, 30, ansehen);
+    expect(b.x).toBeCloseTo(x);
+    // Danach geht der Laufweg weiter, wenn der Held geht.
+    laufe(b, v, 3, { ...ansehen, heldGeht: true });
+    expect(b.x).toBeGreaterThan(x);
+  });
+
   it("gehen weiter, wenn der Held woandershin blickt", () => {
     const v = eintrag("statist");
     const b = neueBewegung(v.feld);

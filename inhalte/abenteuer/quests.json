@@ -533,6 +533,15 @@
               "art": "karte",
               "karte": "mentorzug"
             }
+          ],
+          "umwege": [
+            {
+              "wenn": "nicht nachtImLesesaal",
+              "ziel": {
+                "karte": "cedarCreek.aussen",
+                "objekt": "steg"
+              }
+            }
           ]
         },
         {
@@ -1667,7 +1676,16 @@
           "ereignis": {
             "art": "aufgaben",
             "runde": "portDelacroix.reiheRemy"
-          }
+          },
+          "umwege": [
+            {
+              "wenn": "nicht brettersammelnBegonnen",
+              "ziel": {
+                "karte": "portDelacroix.turnhalle",
+                "objekt": "odile"
+              }
+            }
+          ]
         },
         {
           "text": "quest.tiefpunkt.schritt3",
@@ -1936,6 +1954,15 @@
             {
               "art": "karte",
               "karte": "mentorzug"
+            }
+          ],
+          "umwege": [
+            {
+              "wenn": "nicht briefGelesen",
+              "ziel": {
+                "karte": "desertSprings.antiquariat",
+                "objekt": "okoro"
+              }
             }
           ]
         },
@@ -2308,7 +2335,11 @@
               "akt": 4,
               "szene": "akt4.halbfinale"
             }
-          ]
+          ],
+          "ziel": {
+            "karte": "capitalArena.halle",
+            "objekt": "turnierleiterin"
+          }
         },
         {
           "text": "quest.meisterschaft.schritt5",

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 61,
+ "nextobjectid": 62,
  "layers": [
   {
    "id": 1,
@@ -1948,11 +1948,11 @@
     },
     {
      "id": 51,
-     "name": "cr7Hocker",
+     "name": "rv9Figurentruhe",
      "type": "moebel",
-     "x": 241,
-     "y": 95,
-     "width": 16,
+     "x": 320,
+     "y": 82,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1960,12 +1960,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 119
+       "value": 106
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -1974,29 +1974,6 @@
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 241,
-     "y": 70,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 94
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 53,
-     "name": "cr7Hocker",
-     "type": "moebel",
-     "x": 264,
      "y": 95,
      "width": 16,
      "height": 32,
@@ -2012,6 +1989,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "cr7Hocker",
+     "type": "moebel",
+     "x": 241,
+     "y": 70,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 94
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     },
@@ -2020,6 +2020,29 @@
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 264,
+     "y": 95,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 119
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "cr7Hocker",
+     "type": "moebel",
+     "x": 264,
      "y": 70,
      "width": 16,
      "height": 32,
@@ -2039,7 +2062,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 56,
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 287,
@@ -2062,7 +2085,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 287,
@@ -2085,7 +2108,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 58,
      "name": "ld5Rundtisch",
      "type": "moebel",
      "x": 320,
@@ -2108,7 +2131,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 59,
      "name": "rv8GlastuerSued",
      "type": "moebel",
      "x": 192,
@@ -2131,7 +2154,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 60,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 192,
@@ -2154,7 +2177,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 208,

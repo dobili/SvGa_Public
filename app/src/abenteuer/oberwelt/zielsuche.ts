@@ -16,6 +16,7 @@
  */
 import type { Questdaten, Spieldaten } from "../daten/laden";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import { erfuellt } from "../regeln/bedingung";
 import { verfolgteLaufendeQuest } from "../regeln/verfolgung";
 import { wasJetzt } from "./wasjetzt";
 
@@ -81,12 +82,21 @@ function dialogangabe(knoten: string, daten: Spieldaten): Zielangabe | null {
 }
 
 /**
- * Die Zielangabe eines Questschritts: das Feld `ziel` der Questdaten, sonst aus dem Ereignis
- * abgeleitet (Ort und Auslöser, Steller der Runde, Gegner der Begegnung, Dialogknoten).
+ * Die Zielangabe eines Questschritts: ein passender Umweg (`umwege`, erste Bedingung, die für die
+ * Dialogvariablen gilt), sonst das Feld `ziel` der Questdaten, sonst aus dem Ereignis abgeleitet
+ * (Ort und Auslöser, Steller der Runde, Gegner der Begegnung, Dialogknoten).
+ * Warum Umwege: Der Clubkampf gegen Mira wartet auf den Brief von Mr. Okoro; der Pfeil zeigte auf
+ * Mira, und sie schickte einen nur weiter (20.11.2026, pipeline/abenteuer/pfeilziel.cjs).
  * Beispiel: Schritt „Aufgabenrunde mapleFalls.reiheSam“ → { ort: "mapleFalls", objekt: "sam" }.
- * Sonderfall: Nichts ableitbar → null (dann kein Hinweis).
+ * Sonderfall: Nichts ableitbar → null (dann kein Hinweis). Ohne Variablen gelten keine Umwege.
  */
-export function zielangabe(schritt: Schritt, daten: Spieldaten): Zielangabe | null {
+export function zielangabe(
+  schritt: Schritt,
+  daten: Spieldaten,
+  variablen: Readonly<Record<string, unknown>> = {},
+): Zielangabe | null {
+  const umweg = (schritt.umwege ?? []).find((u) => erfuellt(u.wenn, variablen));
+  if (umweg) return umweg.ziel;
   if (schritt.ziel) return schritt.ziel;
   const e = schritt.ereignis;
   if (e.art === "ort") return { karte: e.karte, ...(e.ausloeser ? { objekt: e.ausloeser } : {}) };
@@ -115,7 +125,7 @@ export function zielangaben(stand: Abenteuerstand, daten: Spieldaten): Zielangab
     });
   const angaben = laufend.flatMap(({ q, d }) => {
     const schritt = d?.schritte[q.schritt];
-    const angabe = schritt ? zielangabe(schritt, daten) : null;
+    const angabe = schritt ? zielangabe(schritt, daten, stand.dialogvariablen) : null;
     return angabe ? [angabe] : [];
   });
   if (laufend.length > 0) return angaben;
@@ -135,7 +145,7 @@ export function verfolgtesZiel(stand: Abenteuerstand, daten: Spieldaten): Zielan
   const kennung = verfolgteLaufendeQuest(stand);
   const q = stand.quests.find((x) => x.kennung === kennung && !x.erledigt);
   const schritt = q ? daten.quests.find((d) => d.kennung === q.kennung)?.schritte[q.schritt] : null;
-  return schritt ? zielangabe(schritt, daten) : null;
+  return schritt ? zielangabe(schritt, daten, stand.dialogvariablen) : null;
 }
 
 /** Rohe Tiled-Objekte einer Karte (alle Objektebenen). */

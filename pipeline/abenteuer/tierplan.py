@@ -9,8 +9,9 @@ Falke als Krähe) oder nichts (Eidechse). Dazu sollen die Größen stimmen: Ein 
 Regeln:
 
 - Zielhöhe (``zielhoehe``): echte Scheitelhöhe im Verhältnis zu 1,75 m = 20 Spielpixel, kleine Tiere
-  im Chibi-Stil bis 60 % größer, große bis 10 % kleiner, mindestens 4 Spielpixel (eine Maus bleibt
-  sichtbar).
+  im Chibi-Stil bis 60 % größer, große bis 10 % kleiner (``grundhoehe``). Dazu ein Zuschlag nach
+  Größe (``zuschlag``, nach Prüfung im Spiel: bei 0,3 bis 0,4 verloren kleine Tiere ihre Form):
+  unter 10 Spielpixeln × 1,5, darüber gleitend weniger, ab 16 nichts; mindestens 5.
 - PixelLab-Tiere werden wie die Figuren mit 2/3 gezeichnet (gleiche Pixeldichte): Das Tier ist in
   der Zeichnung Zielhöhe × 1,5 hoch. Die Leinwand (``leinwand``) ist die kleinste übliche Größe, in
   die Höhe und Länge passen; sie wird nur aufgefüllt, die Größe kommt aus der Zeichnung.
@@ -39,7 +40,14 @@ DIALOGE = WURZEL / "inhalte/abenteuer/dialoge/de"
 ERWACHSENER_M = 1.75
 ERWACHSENER_PX = 20  # Spielpixel außen (30 bis 31 px im Bogen × 2/3)
 KIND_PX = 14
-MINDESTHOEHE = 4
+MINDESTHOEHE = 5
+GRUND_MINDEST = 4  # vor dem Zuschlag: eine Maus bleibt sichtbar (4 × 1,5 = 6)
+ZUSCHLAG_KLEIN_BIS = 10  # darunter × 1,5
+ZUSCHLAG_KLEIN = 1.5
+ZUSCHLAG_KLEIN_HOECHSTENS = 13  # so groß wie ein Tier, das mit 10 beginnt
+ZUSCHLAG_MITTEL_BIS = 11  # 10 und 11 × 1,3
+ZUSCHLAG_MITTEL = 1.3
+ZUSCHLAG_ENDE = 16  # ab hier kein Zuschlag mehr (Pferd, Kuh, Bison, Hirsch bleiben)
 CHIBI_KLEIN = 0.6  # bis 60 % größer für kleine Tiere
 CHIBI_GROSS = 0.1  # bis 10 % kleiner für sehr große
 GRENZE_M = 1.2  # darunter wird vergrößert, darüber verkleinert
@@ -87,15 +95,42 @@ def chibi(hoehe_m: float) -> float:
     return 1 - CHIBI_GROSS * min(1.0, (hoehe_m - GRENZE_M) / 0.8)
 
 
+def _gerundet(wert: float) -> int:
+    """Kaufmännisch gerundet (10,5 → 11; Pythons round rundet auf gerade Zahlen)."""
+    return int(wert + 0.5)
+
+
+def zuschlag(grund: int) -> int:
+    """Chibi-Zuschlag nach Größe (Hauptchat nach Prüfung im Spiel, 21.11.2026): unter 10 Spielpixeln
+    × 1,5 (höchstens 13, mindestens 5), 10 und 11 × 1,3, von 12 bis 15 gleitend auf × 1, ab 16 nichts.
+
+    Warum gleitend statt „10 bis 14 × 1,3“: sonst überholen mittlere Tiere größere (Reh 18 gegen
+    Pony 15, Schaf 17 so hoch wie die Kuh). Beispiel: Hund 10 → 13, Katze 7 → 11, Reh 14 → 16.
+    """
+    if grund < ZUSCHLAG_KLEIN_BIS:
+        return max(MINDESTHOEHE, min(ZUSCHLAG_KLEIN_HOECHSTENS, _gerundet(grund * ZUSCHLAG_KLEIN)))
+    if grund <= ZUSCHLAG_MITTEL_BIS:
+        return _gerundet(grund * ZUSCHLAG_MITTEL)
+    if grund < ZUSCHLAG_ENDE:
+        anteil = (grund - ZUSCHLAG_MITTEL_BIS) / (ZUSCHLAG_ENDE - ZUSCHLAG_MITTEL_BIS)
+        return _gerundet(grund * (ZUSCHLAG_MITTEL - (ZUSCHLAG_MITTEL - 1) * anteil))
+    return grund
+
+
+def grundhoehe(art: Art) -> int:
+    """Höhe vor dem Zuschlag: echte Größe im Maß der Figuren mit dem Chibi-Faktor."""
+    return max(GRUND_MINDEST, round(art.hoehe / ERWACHSENER_M * ERWACHSENER_PX * chibi(art.hoehe)))
+
+
 def zielhoehe(art: Art) -> int:
-    """Zielhöhe in Spielpixeln. Beispiel: Pferd 2,1 m → 22, Hund 0,7 m → 10, Maus → 4."""
-    roh = art.hoehe / ERWACHSENER_M * ERWACHSENER_PX * chibi(art.hoehe)
-    return max(MINDESTHOEHE, round(roh))
+    """Zielhöhe in Spielpixeln. Beispiel: Pferd 2,1 m → 22, Hund 0,7 m → 13, Maus → 6."""
+    return zuschlag(grundhoehe(art))
 
 
 def ziellaenge(art: Art) -> int:
-    """Länge in Spielpixeln im selben Maß (für die Leinwand)."""
-    return max(MINDESTHOEHE, round(art.laenge / ERWACHSENER_M * ERWACHSENER_PX * chibi(art.hoehe)))
+    """Länge in Spielpixeln im selben Maß (für die Leinwand), mit demselben Zuschlag wie die Höhe."""
+    roh = art.laenge / ERWACHSENER_M * ERWACHSENER_PX * chibi(art.hoehe)
+    return max(MINDESTHOEHE, round(roh * zielhoehe(art) / grundhoehe(art)))
 
 
 def leinwand(art: Art) -> int:
@@ -178,11 +213,12 @@ def vorrang(art: str, stellen: int) -> int:
 
 
 def massstab_vorschlag(art_name: str) -> float | None:
-    """Maßstab für einen bleibenden Bogen: Zielhöhe / gemessene Höhe, auf 0,05 gerundet."""
+    """Maßstab für einen bleibenden Bogen: Zielhöhe / gemessene Höhe, auf 0,05 gerundet, höchstens 1."""
     ziel_art = ARTEN.get(GLEICH_WIE.get(art_name, art_name))
     if not ziel_art or art_name not in GEMESSEN:
         return None
-    return round(zielhoehe(ziel_art) / GEMESSEN[art_name] * 20) / 20
+    # Nur verkleinern: Ein vergrößertes LimeZu-Bild würde unscharf (die Drohne bleibt 1).
+    return min(1.0, round(zielhoehe(ziel_art) / GEMESSEN[art_name] * 20) / 20)
 
 
 def main() -> int:

@@ -28,12 +28,21 @@ def test_massstaebe_in_tierarten_folgen_der_zielhoehe():
 
 
 def test_zielhoehen_im_verhaeltnis_zu_den_figuren():
-    """Pferd und Kuh etwa wie ein Erwachsener, Hund bis zur Hüfte, Maus nicht unter 4."""
+    """Pferd und Kuh etwa wie ein Erwachsener, Hund über dem Knie, kleine Tiere mit Zuschlag."""
     assert 18 <= tp.zielhoehe(ARTEN["pferd"]) <= 24
     assert 15 <= tp.zielhoehe(ARTEN["kuh"]) <= 20
-    assert 8 <= tp.zielhoehe(ARTEN["hund"]) <= 11
-    assert tp.zielhoehe(ARTEN["maus"]) == tp.MINDESTHOEHE
+    assert tp.zielhoehe(ARTEN["hund"]) == 13
+    assert tp.zielhoehe(ARTEN["katze"]) in (10, 11)
+    assert tp.zielhoehe(ARTEN["hase"]) == 9
+    assert tp.zielhoehe(ARTEN["maus"]) == 6
     assert tp.zielhoehe(ARTEN["ente"]) < tp.KIND_PX
+
+
+def test_zuschlag_kehrt_die_reihenfolge_nicht_um():
+    """Ein größeres Tier wird durch den Zuschlag nie kleiner als ein kleineres (Reh nicht über Pony)."""
+    werte = [tp.zuschlag(z) for z in range(1, 30)]
+    assert werte == sorted(werte)
+    assert tp.zuschlag(14) <= tp.zuschlag(15) <= tp.zielhoehe(ARTEN["kuh"])
 
 
 def test_leinwand_reicht_fuer_die_zeichnung():

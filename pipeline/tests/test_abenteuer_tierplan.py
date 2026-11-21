@@ -8,8 +8,9 @@ prüfen Regeln und Daten ohne Bilder.
 
 import json
 
+import pytest
+
 from pipeline.abenteuer import tierplan as tp
-from pipeline.abenteuer import tierplan_seite as ts
 from pipeline.abenteuer.tierplan_daten import ARTEN, GESCHICHTE
 
 
@@ -57,6 +58,7 @@ def test_jedes_tier_der_belebung_hat_eine_art():
 
 def test_daten_sind_vollstaendig():
     """Jede Art hat einen gültigen Typ und eine Animation; Geschichte nennt nur bekannte Arten."""
+    ts = pytest.importorskip("pipeline.abenteuer.tierplan_seite")  # zeichnet mit Pillow
     assert set(GESCHICHTE) <= set(ARTEN)
     for art in ARTEN.values():
         assert art.typ in ("quadruped", "custom")

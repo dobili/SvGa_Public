@@ -9,9 +9,10 @@ import os
 from pathlib import Path
 
 import pytest
-from PIL import Image
 
-from pipeline.abenteuer import figurstil as f
+Image = pytest.importorskip("PIL.Image")  # misst Bilder; ohne Pillow (Actions) übersprungen
+
+from pipeline.abenteuer import figurstil as f  # noqa: E402
 
 
 def test_einteilung_nach_kopfanteil():

@@ -121,6 +121,7 @@ python -m pipeline.abenteuer.editorpaket PRIVAT PRIVAT/editor   # Karteneditor-P
 python -m pipeline.abenteuer.editorrueck PRIVAT/editor/rueck/DATEI.json --privat PRIVAT   # Änderungen des Editors zurück in die Szenen, Bericht und Vorschauen nach buch/arbeit/editor/, Kartenbau
 python -m pipeline.abenteuer.proportionen [--alle] [--messen PRIVAT]   # Möbel im Maß der Figur (Regel 10.93): Bildhöhe je Art gegen die Figur (außen 20, innen 26⅔ px), Befunde mit vorgeschlagenem Maßstab; Dauertest „0 Befunde“, Ausnahmen mit Grund im Werkzeug
 python -m pipeline.abenteuer.proportionsvergleich PRIVAT ZIEL   # Vergleichsseite Figurengröße für den Autor (Varianten A bis D an 8 Stellen, Zahlen); enthält Paketbilder, nie ins öffentliche Repo
+python -m pipeline.abenteuer.figurstil PRIVAT/spiel/figuren-neu buch/arbeit/figurstil [--limezu PRIVAT/spiel/figuren]   # Figurstil chibi oder realistisch (Kopfanteil von Hand in GEMESSEN, Kontur, Sättigung): Kontaktbogen, Tabelle, Lineal-Bild für neue Figuren; Ziel ab 0,44 (chibi wie der Held)
 python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude außen (Regel 10.75, R065), Bericht nach docs/spiel/auftraege/rueckmeldung/
 python -m pipeline.abenteuer.blickrichtung   # Blickrichtung stehender Figuren zu Tresen, Brett, Gesprächspartner (R008)
 python -m pipeline.abenteuer.kopfkachel [--alle]   # Kacheln über Figuren, die begehbar wurden (Figuren sperren seit 18.11.2026 nur die Fußkachel): neue Bereiche (Befund), Abkürzungen (Hinweis)

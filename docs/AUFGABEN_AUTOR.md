@@ -310,6 +310,12 @@ Profil › Einstellungen › Fehler melden.
       hast (Ordner zustaende/sitzstuhl, sitzboden, schlaf je Figur): Der Held liegt nachts im Bett
       (Kopf zum Kissen), Figuren auf Stühlen sitzen richtig, Juno, Lily, Mira und Nova sitzen im
       Schneidersitz am Boden. Ohne Zustand gilt der bisherige Ersatz.
+- [ ] N2679. **Tiere im Größenverhältnis zu den Figuren:** Alle Tiere waren zwei- bis dreimal zu
+      groß (ein Pferd mehr als doppelt so hoch wie der Held). Jetzt stimmen die Größen, kleine und
+      mittlere Tiere sind etwas vergrößert, damit sie ihre Form behalten: Der Hund vor dem Haus
+      reicht dem Helden fast bis zur Hüfte, Katze, Enten und Krähen etwa bis zur halben Höhe,
+      Tauben kleiner; Pferd, Kuh, Bison und Hirsch sind so groß wie Erwachsene. Wirkt das stimmig,
+      und ist jedes Tier gut zu erkennen?
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2542,3 +2548,13 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Empfehlung: so lassen, der Bus ist im Text nur erwähnt. Schon so umgesetzt, Widerspruch
       genügt. Alternative: einen Bus an den Weg zur Schule stellen.
       **Antwort:** „RO47 ok“ oder „RO47: Bus“.
+
+- [ ] RO48. **Tiere in PixelLab (21.11.2026)**
+      Von 406 Tierstellen zeigen 99 ein Ersatztier (Falke als Krähe, Eichhörnchen als Hase,
+      Roadrunner als Huhn) und 61 gar nichts (Eidechse, Ratten, Fledermäuse, Alligator, Frosch …).
+      Empfehlung: die passenden LimeZu-Tiere behalten und 38 Arten in PixelLab neu machen, zuerst
+      die acht mit Rolle in der Geschichte (Eidechse, Falke, Specht, Pelikan, Libelle, Murmeltier,
+      Alligator Bernard, Delfin), zusammen 198 Generierungen. Vierbeiner als „Quadruped“, alles
+      andere als „Custom“, v3. Die Seite mit Skizze, Prompt, Typ und Animationen je Art liegt dir im
+      Chat vor. Die App lädt PixelLab-Tiere, sobald die ersten da sind.
+      **Antwort:** „RO48 ok“ oder „RO48: nur Vorrang 1“.

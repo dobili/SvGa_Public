@@ -34,7 +34,8 @@ export function setzeSitzend(
   lage?: Sitzlage | null,
 ): { readonly dx: number; readonly dy: number } {
   const rahmen = rahmenzahl(sprite);
-  sprite.setFrame(sitzbild(rahmen, richtung));
+  // Am Boden der Schneidersitz aus der Bodenreihe, wenn der Bogen sie hat (sitzrichtung.ts).
+  sprite.setFrame(sitzbild(rahmen, richtung, lage?.amBoden));
   // Alles in Kartenpixeln; der Hub zählt in Figurenpixeln, also mal Maßstab (PixelLab 2/3).
   // Am Boden (BODENSITZ, Lily auf dem Bordstein) gibt es keine Sitzfläche, also keinen Hub.
   const hub = hatSitzbilder(rahmen) || lage?.amBoden ? 0 : SITZ_HUB * sprite.scaleY;

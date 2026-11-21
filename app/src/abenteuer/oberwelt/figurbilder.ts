@@ -27,6 +27,10 @@ const LAUFBILDER = 6;
 const BILDRATE = 10;
 /** Erstes Laufbild im Bogen (zweite Reihe, 24 Rahmen breit). */
 const LAUF_BEGINN = 24;
+/** Erstes Rennbild (sechste Reihe, PixelLab „Running“, skripte/figurenbogen.mjs, 21.11.2026). */
+export const RENN_BEGINN = 120;
+/** Bilder je Sekunde beim Rennen; ohne Rennreihe laufen die Gehbilder so schnell. */
+const RENN_BILDRATE = 16;
 
 /** Reihenfolge der Richtungen bei LimeZu. */
 const REIHENFOLGE: readonly Richtung[] = ["rechts", "oben", "links", "unten"];
@@ -50,21 +54,60 @@ export function ladeFigurbogen(szene: Phaser.Scene, schluessel: string, adresse:
   });
 }
 
-/** Legt die vier Laufanimationen eines Bogens an (einmal je Schlüssel). */
+/** Name der Rennanimation eines Bildes in einer Richtung (Rennen, 21.11.2026). */
+export function rennname(schluessel: string, richtung: Richtung): string {
+  return `${schluessel}:renn:${richtung}`;
+}
+
+/** Hat ein Bogen mit so vielen Rahmen eine Rennreihe (sechs Bilder je Richtung)? */
+export function hatRennbilder(rahmen: number): boolean {
+  return rahmen >= RENN_BEGINN + REIHENFOLGE.length * LAUFBILDER;
+}
+
+/** Eine Animation über sechs Rahmen ab `beginn`, endlos, falls es sie noch nicht gibt. */
+function animation(
+  szene: Phaser.Scene,
+  schluessel: string,
+  name: string,
+  beginn: number,
+  rate: number,
+): void {
+  if (szene.anims.exists(name)) return;
+  szene.anims.create({
+    key: name,
+    frames: szene.anims.generateFrameNumbers(schluessel, {
+      start: beginn,
+      end: beginn + LAUFBILDER - 1,
+    }),
+    frameRate: rate,
+    repeat: -1,
+  });
+}
+
+/**
+ * Legt die vier Lauf- und die vier Rennanimationen eines Bogens an (einmal je Schlüssel). Ohne
+ * Rennreihe rennt die Figur mit den Gehbildern bei RENN_BILDRATE.
+ */
 export function erzeugeLaufanimationen(szene: Phaser.Scene, schluessel: string): void {
+  const rahmen = szene.textures.exists(schluessel)
+    ? szene.textures.get(schluessel).frameTotal - 1
+    : 0;
+  const rennreihe = hatRennbilder(rahmen) ? RENN_BEGINN : LAUF_BEGINN;
   REIHENFOLGE.forEach((richtung, i) => {
-    const name = laufname(schluessel, richtung);
-    if (szene.anims.exists(name)) return;
-    const beginn = LAUF_BEGINN + i * LAUFBILDER;
-    szene.anims.create({
-      key: name,
-      frames: szene.anims.generateFrameNumbers(schluessel, {
-        start: beginn,
-        end: beginn + LAUFBILDER - 1,
-      }),
-      frameRate: BILDRATE,
-      repeat: -1,
-    });
+    animation(
+      szene,
+      schluessel,
+      laufname(schluessel, richtung),
+      LAUF_BEGINN + i * LAUFBILDER,
+      BILDRATE,
+    );
+    animation(
+      szene,
+      schluessel,
+      rennname(schluessel, richtung),
+      rennreihe + i * LAUFBILDER,
+      RENN_BILDRATE,
+    );
   });
 }
 

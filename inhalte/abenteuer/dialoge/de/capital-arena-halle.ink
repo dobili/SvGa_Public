@@ -533,11 +533,11 @@ Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 
 // Victors Lauf zum Vater, bei jedem Ausgang (Story-Bibel, Szene 108); Musik victor.lauf.
 === finale_lauf ===
-Er reißt das Formular vom Tisch und rennt. Von der Bühne, durch den Mittelgang, das Blatt hoch über dem Kopf wie eine Fahne. #sprecher:erzaehler #musik:victor.lauf
+Er reißt das Formular vom Tisch und rennt. Von der Bühne, durch den Mittelgang, das Blatt hoch über dem Kopf wie eine Fahne. #sprecher:erzaehler #musik:victor.lauf #gehe:victor>halleAusgang>rennt
 Vater! Guck dir an, wie wir gespielt haben! #sprecher:victor #stimmung:lacht
 Das ist die schönste Partie, die ich je … #sprecher:victor #stimmung:lacht
 Der Rest geht unter. Ein Pfiff auf zwei Fingern, eine Trompete, Big Joe brüllt etwas mit „Kumpel“, Mira schreit: „Noch mal! Jetzt!“ #sprecher:erzaehler
-Juno rennt in dich hinein. Sie hat beide Tagebücher verloren und merkt es nicht. #sprecher:erzaehler
+Juno rennt in dich hinein. Sie hat beide Tagebücher verloren und merkt es nicht. #sprecher:erzaehler #gehe:juno>held>rennt
 Wie soll ich das denn aufschreiben? #sprecher:juno #stimmung:froh
 * [Über ihre Schulter sehen]
 - Ganz hinten an der Wand steht Ward und hat den Kopf zur Seite gedreht, als stünde jemand neben ihr. #sprecher:erzaehler

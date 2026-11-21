@@ -681,6 +681,30 @@
   ],
   "belebung": [
     {
+      "name": "kindA",
+      "typ": "statist",
+      "feld": [32, 40],
+      "eigenschaften": {
+        "von": "31,40",
+        "bis": "45,40",
+        "tun": "rennt zwischen den Fahnenmasten herum",
+        "verhalten": "rennen",
+        "bild": "statist-02"
+      }
+    },
+    {
+      "name": "kindB",
+      "typ": "statist",
+      "feld": [44, 41],
+      "eigenschaften": {
+        "von": "31,41",
+        "bis": "45,41",
+        "tun": "rennt hinter kindA her, zwischen den Fahnenmasten",
+        "verhalten": "rennen",
+        "bild": "statist-05"
+      }
+    },
+    {
       "name": "fans",
       "typ": "statist",
       "feld": [

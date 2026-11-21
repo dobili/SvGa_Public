@@ -122,6 +122,7 @@ python -m pipeline.abenteuer.proportionen [--alle] [--messen PRIVAT]   # Möbel 
 python -m pipeline.abenteuer.proportionsvergleich PRIVAT ZIEL   # Vergleichsseite Figurengröße für den Autor (Varianten A bis D an 8 Stellen, Zahlen); enthält Paketbilder, nie ins öffentliche Repo
 python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude außen (Regel 10.75, R065), Bericht nach docs/spiel/auftraege/rueckmeldung/
 python -m pipeline.abenteuer.blickrichtung   # Blickrichtung stehender Figuren zu Tresen, Brett, Gesprächspartner (R008)
+python -m pipeline.abenteuer.figurenzustaende [--privat PRIVAT]   # welche Figur welche PixelLab-Zustände braucht (Stuhl, Boden, Liegen) aus Szenen und Ink; Liste und Seite mit Vorschaubildern nach buch/arbeit/zustaende/ (Ablage der Zustände: docs/spiel/24_Figuren_und_Portraets.md, Punkt 6)
 python -m pipeline.abenteuer.kopfkachel [--alle]   # Kacheln über Figuren, die begehbar wurden (Figuren sperren seit 18.11.2026 nur die Fußkachel): neue Bereiche (Befund), Abkürzungen (Hinweis)
 python -m pipeline.abenteuer.durchlass [--hinweise] [SZENE …]   # pixelgenaue Durchlässe (Regel 10.92): Ziele, die nur durch eine Lücke von Körperbreite (12 px) erreichbar sind; leere Nischen als Hinweis
 python -m pipeline.abenteuer.schriftglyphe   # großes Z der Pixelschrift neu zeichnen (sah aus wie die 2); nur nach einem Tausch der Schriftdatei nötig

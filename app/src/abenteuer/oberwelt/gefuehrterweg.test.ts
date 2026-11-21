@@ -18,6 +18,13 @@ describe("Tags", () => {
     ]);
   });
 
+  it("lesen „rennt“ als dritten Teil eines Wegs (21.11.2026)", () => {
+    expect(wegauftraege("juno>held>rennt;victor>halleAusgang")).toEqual([
+      { wer: "juno", ziel: { name: "held" }, rennt: true },
+      { wer: "victor", ziel: { name: "halleAusgang" } },
+    ]);
+  });
+
   it("übergehen kaputte Teile und lesen #stelle mit Haltung", () => {
     expect(wegauftraege("held;>ambrose;held>")).toEqual([]);
     expect(stellauftrag("held>13,8>liegt")).toEqual({

@@ -79,7 +79,7 @@ Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn J
 
 === kira_geschenk ===
 ~ falkeGeschenkt = true
-Kira kommt vom Bus gerannt. #sprecher:erzaehler
+Kira kommt vom Bus gerannt. #sprecher:erzaehler #stelle:kira>34,15 #gehe:kira>held>rennt
 Tante Annek hat erzählt, dass du ihr Schach beigebracht hast. Sie hat beim Abendessen nur noch von Springern geredet. #sprecher:kira #stimmung:lacht
 Sie drückt dir einen Falken in die Hand, aus hellem Holz, kleiner als die auf dem Tisch. Die Flügel sind noch nicht ganz fertig. #sprecher:erzaehler
 Werkstück. Den hab ich verschnitten. #sprecher:kira #stimmung:laechelt

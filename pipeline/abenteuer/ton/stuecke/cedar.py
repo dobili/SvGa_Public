@@ -1,34 +1,72 @@
-"""Cedar Creek: das Ortsthema in d-Moll und seine Fassungen (Klangplan A2, Akt 1).
+"""Cedar Creek: das einprägsame Ortsthema in d-Moll und seine Fassungen (Klangplan A0; Akt 1).
 
-Warum: Cedar Creek ist still und forschend; das Thema ist eine Umkehrung von Ambroses Kopf in langen
-Noten (1 – 3 – 2 – 4 – 5, Klangplan A1, „Ortsthemen“). Klavier allein mit langen Pausen, kein
-Schlagzeug (Ortsblatt „Nicht hier“); den Puls gibt höchstens die Turmuhr. Am Steg (Kapitel 16)
-klingen Ambroses Kopf und das Thema von Cedar Creek zum ersten Mal zusammen.
+Warum: Cedar Creek ist still und forschend, und einprägsam geht auch ruhig (Probestück vom
+22.11.2026, vom Autor freigegeben):
+
+- Kopf (2 Takte): D F E G | A A F. Die Umkehrung von Ambroses Kopf (1 – 3 – 2 – 4 – 5, Leitmotiv
+  A1), dann die Quinte zweimal als Kennzeichen (Tonwiederholung), fallend auf F.
+- Form A A' B A' offen wie Maple Falls; im B-Teil schweigt die rechte Hand, die linke antwortet tief.
+- Klavier allein, die Turmuhr als Puls, kein Schlagwerk sonst (Ortsblatt „Nicht hier“).
+- Drei Spuren je Fassung: grund (linke Hand, Turmuhr), melodie, zusatz (Cello als Farbe).
+- Der Clubkampf ist die Steigerung des Kampfthemas von Akt 1 (maple.py) in d-Moll: Klavier und
+  Kontrabass treiben, die Turmuhr tickt, kein Schlagzeug; Zusatzspur sind die Streicher.
+- Am Steg (Kapitel 16) klingen Ambroses Kopf und das Thema von Cedar Creek zum ersten Mal zusammen.
+
+Teilnamen ``vor``, ``a``, ``atem``, ``a2``, ``b`` und ``FORM`` bleiben für spätere Akte
+(akt2_wege) erhalten.
 """
 
 from pipeline.abenteuer.ton.satzplan import Satz, Stimme, Teil
+from pipeline.abenteuer.ton.stuecke.maple import (
+    GEGEN_ANHEBUNG,
+    KAMPF_FORM,
+    KAMPF_MELODIE,
+    KAMPF_TEILE,
+    mit_spuren,
+)
 
 TONART = "d"
 MELODIE_OKTAVE = 1
 
-A = Teil(
-    "i | i | iv | V | VI | i | V | i",
-    "1:2 3:2 | 2:3 r:1 | 4:2 5:2 | 5:3 r:1 | 6:2 5:1 4:1 | 3:3 r:1 | 2:2 #7,:2 | 1:4",
-)
-A2 = Teil(
-    "i | i | iv | i | iv | i | V | V",
-    "1:2 3:2 | 5:3 r:1 | 6:2 5:1 4:1 | 3:3 r:1 | 4:2 3:1 2:1 | 1:2 r:2 | 2:3 r:1 | #7,:4",
-)
+KOPF = "1:1 3:1 2:1 4:1 | 5:1 5:1 3:2"
+A = Teil("i | i | iv | V", f"{KOPF} | 1:1 3:1 2:1 4:1 | 6:1 5:1 2:2")
+A2 = Teil("i | i | iv V | i", f"{KOPF} | 4:1 3:1 2:1 #7,:1 | 1:4")
+A_OFFEN = Teil("i | i | iv | V V7", f"{KOPF} | 4:1 3:1 2:1 #7,:1 | 2:2 #7,:1 2:1")
+# B: Die linke Hand antwortet tief (als Melodie des Teils), endet auf der Dominante.
 B = Teil(
-    "III | VII | VI | III | iv | i | V | i",
-    "5:2 6:1 5:1 | 4:2 3:2 | 6:3 r:1 | 5:4 | 4:2 6:2 | 5:2 3:2 | 2:2 4:1 2:1 | 1:4",
+    "VI | III | iv | V | VI | III | iv | V",
+    "3:2 2:2 | 1:2 7,:2 | 1:2 3:2 | 2:4 | 6,:2 1:2 | 3:2 1:2 | 2:3 3:1 | #7,:4",
 )
 VOR = Teil("i | i")
 ATEM = Teil("i | VI")
-# Ambroses Kopf in d-Moll (A – F – Gis – E), lang, als Gegenstimme am Steg.
-AMBROSE_STEG = "r:4 | 5:2 3:2 | #4:2 2:2 | r:4 | 5:2 3:2 | #4:3 2:1 | 2:4 | r:4"
-TEILE = {"vor": VOR, "a": A, "atem": ATEM, "a2": A2, "b": B}
+# Farbe (Cello, Zusatzspur): lange Töne unter A, im B-Teil eine eigene Linie.
+FARBE = {
+    "a": "5,:4 | 3,:4 | 4,:4 | 5,:4",
+    "a2": "5,:4 | 3,:4 | 4,:2 5,:2 | 1:4",
+    "b": "1:4 | 5,:4 | 6,:4 | 5,:4 | 3,:4 | 5,:4 | 6,:4 | 5,:4",
+    "a3": "5,:4 | 3,:4 | 4,:4 | 5,:2 #7,,:2",
+}
+
+
+def _mit(teil: Teil, **linien: str) -> Teil:
+    """Ein Teil mit weiteren eigenen Linien."""
+    return Teil(teil.akkorde, teil.melodie, {**teil.linien, **linien})
+
+
+TEILE = {
+    "vor": VOR,
+    "a": _mit(A, farbe=FARBE["a"]),
+    "atem": ATEM,
+    "a2": _mit(A2, farbe=FARBE["a2"]),
+    "b": _mit(B, farbe=FARBE["b"]),
+    "a3": _mit(A_OFFEN, farbe=FARBE["a3"]),
+}
+# Form des Ortsthemas und die alte Form für spätere Akte.
+ORTSFORM = ("a", "a2", "b", "a3")
 FORM = ("vor", "a", "atem", "a2", "b")
+MELODIE_TEILE = frozenset({"a", "a2", "a3"})
+# Ambroses Kopf in d-Moll (A – F – Gis – E) als Gegenstimme am Steg, vier Takte zu A.
+AMBROSE_STEG = "5:2 3:2 | #4:2 2:2 | 5:2 3:2 | #4:3 2:1"
 
 
 def nur(*teile: str) -> frozenset[str]:
@@ -36,71 +74,121 @@ def nur(*teile: str) -> frozenset[str]:
     return frozenset(teile)
 
 
-def _klavier_allein(hall: float, staerke: int) -> tuple[Stimme, ...]:
-    """Rechte Hand singt, linke Hand wiegt in Vierteln (Klavier allein)."""
-    return (
-        Stimme("klavier", "melodie", 0.8, 0.1, hall, MELODIE_OKTAVE, staerke + 6, nur("a", "a2", "b")),
-        Stimme("klavier", "wiegen", 0.7, -0.1, hall, -1, staerke - 12),
+def _cedar(
+    kennung: str,
+    titel: str,
+    tempo: float,
+    spuren: tuple[tuple[Stimme, ...], tuple[Stimme, ...], tuple[Stimme, ...]],
+    text: str,
+    pegel_db: float = 0.0,
+) -> Satz:
+    """Eine Fassung des Themas in drei Spuren (Zusatz: Cello als Farbe)."""
+    stimmen, gruppen = mit_spuren(*spuren)
+    return Satz(
+        kennung,
+        titel,
+        TONART,
+        tempo,
+        4,
+        TEILE,
+        ORTSFORM,
+        stimmen,
+        pegel_db=pegel_db,
+        spuren=gruppen,
+        zusatz="farbe",
+        beschreibung=text,
     )
 
 
-CEDAR_CREEK = Satz(
+def _klavier(staerke: int, hall: float) -> tuple[Stimme, ...]:
+    """Rechte Hand singt in A, linke Hand antwortet tief in B (lauter, A0.6)."""
+    return (
+        Stimme("klavier", "melodie", 0.8, 0.1, hall, MELODIE_OKTAVE, staerke, MELODIE_TEILE),
+        Stimme("klavier", "melodie", 0.7 * GEGEN_ANHEBUNG, -0.05, hall, 0, staerke - 4, nur("b")),
+    )
+
+
+def _cello(staerke: int, lautstaerke: float = 0.5) -> tuple[Stimme, ...]:
+    """Das Cello als Farbe (Zusatzspur, Mono)."""
+    return (Stimme("cello", "noten", lautstaerke, 0.0, 0.35, 1, staerke, kennung="farbe"),)
+
+
+CEDAR_CREEK = _cedar(
     "cedarCreek",
     "Cedar Creek",
-    TONART,
-    63,
-    4,
-    TEILE,
-    FORM,
-    _klavier_allein(0.35, 46),
-    beschreibung="Still, forschend: Klavier allein, das Thema kehrt Ambroses Kopf um.",
+    66,
+    (
+        (
+            Stimme("klavier", "wiegen", 0.6, -0.1, 0.35, -1, 36),
+            Stimme("schlagwerk", "uhr", 0.35, -0.35, 0.3, staerke=50),
+        ),
+        _klavier(54, 0.35),
+        _cello(40),
+    ),
+    "Still und einprägsam: Klavier allein, die Turmuhr als Puls; das Cello als Farbe.",
 )
 
-CEDAR_CREEK_BIBLIOTHEK = Satz(
+CEDAR_CREEK_NACHT = _cedar(
+    "cedarCreek.nacht",
+    "Cedar Creek, Nacht",
+    60,
+    (
+        (Stimme("klavier", "harfe", 0.45, -0.15, 0.5, -1, 32),),
+        _klavier(44, 0.5),
+        _cello(34, 0.4),
+    ),
+    "Nacht: dieselbe Melodie langsam, gebrochene Akkorde, viel Raum, keine Uhr.",
+)
+
+CEDAR_CREEK_BIBLIOTHEK = _cedar(
     "cedarCreek.bibliothek",
     "Cedar Creek, Bibliothek",
-    TONART,
     63,
-    4,
-    TEILE,
-    FORM,
-    _klavier_allein(0.55, 38),
+    ((Stimme("klavier", "wiegen", 0.55, -0.1, 0.55, -1, 32),), _klavier(46, 0.55), _cello(36, 0.4)),
+    "Gedämpft, feierlich: dasselbe Klavier mit Hall wie in einem hohen Raum, leiser.",
     pegel_db=-4.0,
-    beschreibung="Gedämpft, feierlich: dasselbe Klavier, leiser, mit Hall wie in einem hohen Raum.",
 )
 
-CEDAR_CREEK_ARCHIV = Satz(
+CEDAR_CREEK_ARCHIV = _cedar(
     "cedarCreek.archiv",
     "Cedar Creek, Archiv",
-    TONART,
-    56,
-    4,
-    TEILE,
-    FORM,
-    (*_klavier_allein(0.4, 42), Stimme("cello", "bass_grund", 0.7, 0.0, 0.4, 1, 44)),
-    beschreibung="Feierlich, ein einzelner Lichtkegel: Klavier von Cedar Creek, darunter tiefes Cello.",
+    60,
+    (
+        (
+            Stimme("klavier", "wiegen", 0.55, -0.1, 0.4, -1, 34),
+            Stimme("cello", "bass_grund", 0.6, 0.0, 0.4, 1, 42),
+        ),
+        _klavier(48, 0.4),
+        _cello(40, 0.55),
+    ),
+    "Feierlich, ein einzelner Lichtkegel: Klavier, darunter tiefes Cello.",
 )
 
-# Clubkampf: der Anfang des Themas in Bruchstücken, gezupfter Bass, die Turmuhr tickt.
-KAMPF = Teil(
-    "i | iv | V | i | i | iv | VI | V", "1:2 3:2 | r:4 | 2:3 r:1 | r:4 | 1:2 3:2 | 4:2 5:2 | 6:3 r:1 | #7,:4"
+# Clubkampf: Steigerung des Kampfthemas von Akt 1, in d-Moll, ohne Schlagzeug; die Uhr tickt.
+_KAMPF_STIMMEN, _KAMPF_SPUREN = mit_spuren(
+    (
+        Stimme("kontrabass_pizz", "bass_laufend", 0.85, 0.0, 0.1, 1, 72),
+        Stimme("klavier", "stoss", 0.6, -0.2, 0.15, staerke=60),
+        Stimme("schlagwerk", "uhr", 0.5, 0.35, 0.2, staerke=62),
+    ),
+    (
+        Stimme("klavier", "melodie", 0.8, 0.15, 0.2, MELODIE_OKTAVE, 70, KAMPF_MELODIE),
+        Stimme("cello", "melodie", 0.75 * GEGEN_ANHEBUNG, 0.1, 0.2, 1, 66, nur("b")),
+    ),
+    (Stimme("violinen", "melodie", 0.6, 0.0, 0.2, MELODIE_OKTAVE, 64),),
 )
-
 CEDAR_CREEK_CLUBKAMPF = Satz(
     "cedarCreek.clubkampf",
     "Cedar Creek, Clubkampf",
     TONART,
-    72,
+    138,
     4,
-    {"k": KAMPF, "ruhe": Teil("i | VI | iv | V")},
-    ("k", "ruhe", "k", "ruhe"),
-    (
-        Stimme("klavier", "melodie", 0.75, 0.15, 0.3, MELODIE_OKTAVE, 48, nur("k")),
-        Stimme("klavier", "halten", 0.6, -0.15, 0.3, 0, 34),
-        Stimme("kontrabass_pizz", "bass_wechsel", 0.8, 0.0, 0.2, 1, 56),
-        Stimme("schlagwerk", "uhr", 0.5, 0.35, 0.3, staerke=60),
-    ),
-    beschreibung="Still gespannt: Klavier und gezupfter Kontrabass, sparsam, kein Schlagwerk außer der Uhr.",
+    KAMPF_TEILE,
+    KAMPF_FORM,
+    _KAMPF_STIMMEN,
+    spuren=_KAMPF_SPUREN,
+    zusatz="steigerung",
+    beschreibung="Steigerung des Kampfthemas: Klavier und Bass treiben, die Turmuhr tickt, Streicher dazu.",
 )
 
 CEDAR_CREEK_STEG = Satz(
@@ -112,17 +200,27 @@ CEDAR_CREEK_STEG = Satz(
     {
         "vor": VOR,
         "a": A,
-        "a2": Teil(A2.akkorde, A2.melodie, {"ambrose": AMBROSE_STEG}),
+        "a2": _mit(A2, ambrose=AMBROSE_STEG),
         "b": B,
-        "a3": Teil(A.akkorde, A.melodie, {"ambrose": AMBROSE_STEG}),
+        "a3": _mit(A_OFFEN, ambrose=AMBROSE_STEG),
     },
-    ("vor", "a", "a2", "b", "a3"),
+    # Ohne Vorspiel: Als Schleife setzte das leise Vorspiel die Naht 10 LU herab (A0.6).
+    ("a", "a2", "b", "a3"),
     (
-        *_klavier_allein(0.35, 44),
-        Stimme("klavier_alt", "noten", 0.75, -0.3, 0.45, 1, 50, nur("a2", "a3"), "ambrose"),
+        Stimme("klavier", "melodie", 0.8, 0.1, 0.35, MELODIE_OKTAVE, 50, nur("a", "a2", "a3")),
+        Stimme("klavier", "melodie", 0.7 * GEGEN_ANHEBUNG, -0.05, 0.35, 0, 46, nur("b")),
+        Stimme("klavier", "wiegen", 0.6, -0.1, 0.35, -1, 34),
+        Stimme("klavier_alt", "noten", 0.6, -0.3, 0.45, 1, 50, nur("a2", "a3"), "ambrose"),
         Stimme("cello", "bass_grund", 0.6, 0.05, 0.35, 1, 42, nur("a2", "b", "a3")),
     ),
-    beschreibung="Leise, entschlossen: Klavier von Cedar Creek und Ambroses Kopf zum ersten Mal zusammen.",
+    beschreibung="Leise, entschlossen: das Thema von Cedar Creek und Ambroses Kopf zum ersten Mal zusammen.",
 )
 
-STUECKE = (CEDAR_CREEK, CEDAR_CREEK_BIBLIOTHEK, CEDAR_CREEK_ARCHIV, CEDAR_CREEK_CLUBKAMPF, CEDAR_CREEK_STEG)
+STUECKE = (
+    CEDAR_CREEK,
+    CEDAR_CREEK_NACHT,
+    CEDAR_CREEK_BIBLIOTHEK,
+    CEDAR_CREEK_ARCHIV,
+    CEDAR_CREEK_CLUBKAMPF,
+    CEDAR_CREEK_STEG,
+)

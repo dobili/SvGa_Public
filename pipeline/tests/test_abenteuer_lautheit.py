@@ -57,3 +57,19 @@ def test_probestueck_haelt_a06():
     for datei in sorted(PROBE.glob("*.m4a")):
         m = L.miss(L.lies(datei), datei.name, L.ist_kampf(datei.name), datei.name not in EINMAL)
         assert m.verstoesse == [], f"{datei.name}: {m.verstoesse}"
+
+
+MUSIK = PRIVAT / "spiel" / "musik"
+
+
+@pytest.mark.skipif(not (MUSIK / "spuren.json").exists(), reason="Musik mit Spuren liegt nicht vor")
+def test_erneuerte_musik_haelt_a06():
+    """Dauertest über spiel/musik: jedes Stück aus spuren.json und seine volle Mischung (A0.6)."""
+    import json
+
+    from pipeline.abenteuer.ton.lautheitspruefung import pruefe
+
+    staemme = json.loads((MUSIK / "spuren.json").read_text(encoding="utf-8"))
+    dateien = [d for s in staemme for d in MUSIK.rglob(f"{s}.m4a")]
+    for m in pruefe(dateien):
+        assert m.verstoesse == [], f"{m.name}: {m.verstoesse}"

@@ -12,6 +12,12 @@ Stücke, die nicht als Schleife laufen (Satzplan ``schleife=False``: Erinnerung,
 Abspann …). Der Paketbau übernimmt die Liste als ``musik/einmal.json``; der Tonspieler spielt diese
 Stücke einmal und bleibt danach still (``app/src/abenteuer/ton/tonspieler.ts``).
 
+Seit dem 22.11.2026 (Klangplan A0, A0.1, A0.6):
+- Schleifen werden gleichmäßig laut gebaut (``gleichmaessig``: Verdichter, −18 LUFS, Begrenzer).
+- Stücke mit ``Satz.spuren`` bekommen ihre Spuren daneben (``<stamm>.grund.m4a`` …, die Zusatzspur
+  mono) und eine ``spiel/musik/spuren.json`` mit Spuren, Art der Zusatzspur und Länge in
+  Abtastwerten; die volle Mischung bleibt ``<stamm>.m4a`` für Fälle ohne Spuren.
+
 Aufruf (im Hauptordner; braucht ffmpeg, fluidsynth, numpy und scipy):
     python -m pipeline.abenteuer.ton.musikbau PRIVAT [--nur mapleFalls diner] [--laden]
     python -m pipeline.abenteuer.ton.musikbau PRIVAT --nur-liste   # nur einmal.json, ohne Rendern
@@ -49,6 +55,12 @@ def stamm(kennung: str) -> str:
 
 
 EINMALLISTE = "einmal.json"
+SPURENLISTE = "spuren.json"
+LUFS = "lufs"
+# Abtastrate der gerenderten Musik (wie sampler.ABTASTRATE; ohne numpy lesbar, für spuren.json).
+SPUREN_RATE = 44_100
+# Die Spur, die mono geschrieben wird (Musiker, Jukebox, Steigerung; die App verortet sie).
+ZUSATZ = "zusatz"
 
 
 def einmalliste(plaene: list[Satz]) -> list[str]:
@@ -66,6 +78,53 @@ def schreibe_einmalliste(privat: Path, plaene: list[Satz]) -> Path:
     ziel.parent.mkdir(parents=True, exist_ok=True)
     ziel.write_text(json.dumps(einmalliste(plaene), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return ziel
+
+
+def spurenliste(plaene: list[Satz]) -> dict[str, dict[str, object]]:
+    """Stücke mit Spuren für die App: Stamm → Spuren, Art der Zusatzspur, Länge in Abtastwerten.
+
+    Beispiel: {"maple-falls": {"spuren": ["grund", "melodie", "zusatz"], "zusatz": "farbe",
+    "proben": 2205000, "rate": 44100}}. Die Länge gilt für loopStart/loopEnd (AAC-Vorlauf).
+    """
+    liste = {}
+    for satz in plaene:
+        if satz.spuren:
+            stueck = baue(satz)
+            proben = int(stueck.sekunden(stueck.ende()) * SPUREN_RATE)
+            liste[stamm(satz.kennung)] = {
+                "spuren": list(satz.spuren),
+                "zusatz": satz.zusatz,
+                "proben": proben,
+                "rate": SPUREN_RATE,
+            }
+    return dict(sorted(liste.items()))
+
+
+def schreibe_spurenliste(privat: Path, plaene: list[Satz]) -> Path:
+    """Schreibt ``spiel/musik/spuren.json`` (immer aus allen Plänen, wie einmal.json)."""
+    ziel = privat / "spiel" / "musik" / SPURENLISTE
+    ziel.parent.mkdir(parents=True, exist_ok=True)
+    liste = spurenliste(plaene)
+    # Gemessene Lautheit früherer Läufe bleibt (trage_lautheit_ein), solange das Stück Spuren hat.
+    alt = json.loads(ziel.read_text(encoding="utf-8")) if ziel.exists() else {}
+    for name, eintrag in liste.items():
+        if LUFS in alt.get(name, {}):
+            eintrag[LUFS] = alt[name][LUFS]
+    ziel.write_text(json.dumps(liste, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return ziel
+
+
+def trage_lautheit_ein(privat: Path, name: str, lufs: dict[str, float]) -> None:
+    """Trägt die gemessene Lautheit je Mischung in spuren.json ein (für die Anhebung in der App).
+
+    Schlüssel wie mit mittel-3 abgestimmt (22.11.2026): „grund“, „grund+melodie“,
+    „grund+melodie+zusatz“. Beispiel: {"grund": -29.0, "grund+melodie": -18.3, …}.
+    """
+    ziel = privat / "spiel" / "musik" / SPURENLISTE
+    liste = json.loads(ziel.read_text(encoding="utf-8")) if ziel.exists() else {}
+    if name in liste:
+        liste[name][LUFS] = lufs
+        ziel.write_text(json.dumps(liste, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def zielordner(privat: Path, satz: Satz) -> Path:
@@ -121,10 +180,60 @@ def ohne_stille_am_ende(ton):  # noqa: ANN001, ANN201 (numpy nur zur Laufzeit)
     return ton[:ende]
 
 
+def kodiere(ton, ziel: Path, mono: bool = False) -> None:  # noqa: ANN001 (numpy)
+    """Schreibt Ton als m4a (AAC, BITRATE) über eine WAV im Arbeitsordner; ``mono`` mischt herunter."""
+    from pipeline.abenteuer.ton.sampler import schreibe_wav
+
+    MIDI.mkdir(parents=True, exist_ok=True)
+    wav = MIDI / f"{ziel.name}.wav"
+    schreibe_wav(ton, wav)
+    befehl = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "aac", "-b:a", BITRATE]
+    subprocess.run([*befehl, *(["-ac", "1"] if mono else []), str(ziel)], check=True)
+    wav.unlink()
+
+
+def gleichmaessig(ton, pegel_db: float = 0.0):  # noqa: ANN001, ANN201 (numpy)
+    """Gleichmäßige Lautheit einer Schleife (Klangplan A0.6, lautheit.py): sanft verdichtet
+    (ringförmig), −18 LUFS plus ``pegel_db``, weicher Begrenzer mit Reserve für den Kodierer."""
+    from pipeline.abenteuer.ton.lautheit import begrenze, verdichtungskurve, zielfaktor
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE
+
+    ton = ton * verdichtungskurve(ton, ABTASTRATE, True)
+    return begrenze(ton * zielfaktor(ton, ABTASTRATE, mit_begrenzer=True) * 10 ** (pegel_db / 20))
+
+
+def _mit_spuren(satz: Satz, ordner: Path):  # noqa: ANN202 (numpy)
+    """Rendert die Spuren (spuren.py), schreibt sie neben das Stück und gibt die volle Mischung zurück.
+
+    Name: ``<stamm>.<spur>.m4a`` (maple-falls.grund.m4a); die Zusatzspur in Mono, die App verortet sie.
+    Die volle Mischung ist die Summe der Spuren (gleiche Verstärkung, −18 LUFS).
+    """
+    from pipeline.abenteuer.ton.lautheit import miss_ton
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE
+    from pipeline.abenteuer.ton.spuren import rendere_spuren
+
+    pegel = 10 ** (satz.pegel_db / 20)
+    spuren = {name: ton * pegel for name, ton in rendere_spuren(satz).items()}
+    for name, ton in spuren.items():
+        kodiere(ton, ordner / f"{stamm(satz.kennung)}.{name}.m4a", name == ZUSATZ)
+    # Lautheit je Mischung (grund, grund+melodie, alle) für spuren.json; die App hebt dünne an.
+    lufs = {}
+    for anzahl in range(1, len(spuren) + 1):
+        namen = list(spuren)[:anzahl]
+        lufs["+".join(namen)] = round(miss_ton(sum(spuren[n] for n in namen), ABTASTRATE, "").lufs, 1)
+    trage_lautheit_ein(ordner_privat(ordner), stamm(satz.kennung), lufs)
+    return sum(spuren.values())
+
+
+def ordner_privat(ordner: Path) -> Path:
+    """Das private Repository zu einem Musikordner (spiel/musik oder spiel/musik/aktN)."""
+    return next(p.parent for p in [ordner, *ordner.parents] if p.name == "spiel")
+
+
 def baue_satz(satz: Satz, privat: Path) -> dict[str, object]:
     """Rendert einen Plan, kodiert ihn als m4a und gibt die Angaben für die Übersicht zurück."""
     from pipeline.abenteuer.ton.midi import schreibe_midi
-    from pipeline.abenteuer.ton.sampler import rendere, schreibe_wav
+    from pipeline.abenteuer.ton.sampler import rendere
 
     stueck = baue(satz)
     MIDI.mkdir(parents=True, exist_ok=True)
@@ -132,12 +241,15 @@ def baue_satz(satz: Satz, privat: Path) -> dict[str, object]:
     ordner = zielordner(privat, satz)
     ordner.mkdir(parents=True, exist_ok=True)
     ziel = ordner / dateiname(satz.kennung)
-    wav = MIDI / f"{satz.kennung}.wav"
-    ton = angleichen(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db)
-    schreibe_wav(ton if satz.schleife else ohne_stille_am_ende(ton), wav)
-    befehl = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "aac", "-b:a", BITRATE]
-    subprocess.run([*befehl, str(ziel)], check=True)
-    wav.unlink()
+    if satz.spuren:
+        ton = _mit_spuren(satz, ordner)
+    elif satz.schleife:
+        ton = gleichmaessig(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db)
+    else:
+        ton = ohne_stille_am_ende(
+            angleichen(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db)
+        )
+    kodiere(ton, ziel)
     sekunden = stueck.sekunden(stueck.ende())
     print(f"{ziel}  ({sekunden:.0f} s, {ziel.stat().st_size / 1e6:.2f} MB)")
     return {
@@ -161,6 +273,7 @@ def main() -> None:
     parser.add_argument("--nur-liste", action="store_true", help="nur einmal.json schreiben")
     argumente = parser.parse_args()
     print(schreibe_einmalliste(argumente.privat, alle()))
+    print(schreibe_spurenliste(argumente.privat, alle()))
     if argumente.nur_liste:
         return
     if argumente.laden:

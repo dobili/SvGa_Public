@@ -26,7 +26,7 @@ BROWSER_RATE = 48_000
 BYTES_JE_WERT = 4
 
 
-def rendere_spuren(satz: Satz, gruppen: dict[str, tuple[int, ...]]):  # noqa: ANN201 (numpy)
+def rendere_spuren(satz: Satz, gruppen: dict[str, tuple[int, ...]] | None = None):  # noqa: ANN201 (numpy)
     """Rendert je Gruppe von Stimmen eine Spur gleicher Länge mit gemeinsamer Verstärkung.
 
     Eingaben: Plan und Gruppen (Name → Indizes in ``satz.stimmen``). Ausgabe: Name → Stereo-Ton.
@@ -35,7 +35,10 @@ def rendere_spuren(satz: Satz, gruppen: dict[str, tuple[int, ...]]):  # noqa: AN
     """
     import numpy as np
 
+    from pipeline.abenteuer.ton.musikbau import klangbild
     from pipeline.abenteuer.ton.sampler import ABTASTRATE, NACHKLANG, mit_hall, raumantwort, rendere_spur
+
+    gruppen = gruppen or satz.spuren
 
     stueck = baue(satz)
     form = int(stueck.sekunden(stueck.ende()) * ABTASTRATE)
@@ -47,7 +50,8 @@ def rendere_spuren(satz: Satz, gruppen: dict[str, tuple[int, ...]]):  # noqa: AN
         for i in indizes:
             spur = stueck.spuren[i]
             summe += mit_hall(rendere_spur(spur, stueck, PROBEN, laenge), spur.hall, antwort)
-        spuren[name] = _als_schleife(summe, form)
+        # Das Klangbild (Lautsprecher der Jukebox) ist ein lineares Filter: je Spur wie auf der Summe.
+        spuren[name] = klangbild(_als_schleife(summe, form), satz.klangbild)
     return _gemeinsam_angeglichen(spuren, ABTASTRATE)
 
 

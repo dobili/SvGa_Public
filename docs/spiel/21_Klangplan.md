@@ -184,6 +184,39 @@ Bisherige Musik (gemessen 22.11.): Von 74 Schleifen halten 5 alle Werte, 69 nich
 nur lokal in `buch/arbeit/ton/lautheit_bestand.md`. Angepasst wird, wenn der Autor die neuen Themen
 will.
 
+### A0.7 Umstellung, Etappe Akt 1 (22.11.2026)
+
+Der Autor hat die einprägsamen Ortsthemen freigegeben („Die Melodien sind alle super, gerne so
+einbauen“). Umgestellt wird in Etappen je Akt; für Akt 1 gilt jetzt A0 statt A2.
+
+- **Ortsthemen** (je drei Spuren und die volle Mischung):
+  - Maple Falls, G-Dur, Kopf G A H D | G E D:
+    - Tag 96 (Flöte, Gitarre, Bass; Farbe Geige), Nacht 72 (Vibraphon, Harfe), Haus 84 (Klavier;
+      Zimmer und Wohnzimmer), Clubraum 104 (Mundharmonika, geschlagene Gitarre, Klatschen),
+      Lernen 92 (Klavier, Glockenspiel).
+    - Busfahrt (Szenenstück, nur Gitarre) spielt das neue Thema.
+  - Cedar Creek, d-Moll, Kopf D F E G | A A F: Tag 66 (Klavier, Turmuhr; Farbe Cello), Nacht 60,
+    Bibliothek 63 (Hall, 4 dB leiser), Archiv 60 (Cello darunter). Der Steg verbindet das neue Thema
+    mit Ambroses Kopf.
+  - Wege: Landstraße 112 (Fiedel, Mundharmonika), Kürbishof (Strumstick), Flussweg 96 (Cello),
+    Zedernpfad 80 (Thema von Cedar Creek auf dem Klavier).
+  - Diner: eigener Blueskopf G A G E | C' B G aus der Jukebox (Zusatzspur „jukebox“).
+- **Kampfthema Akt 1:** der Kopf von Maple Falls in e-Moll, geschärft, 132 (Clubkampf Maple Falls).
+  Der Clubkampf in Cedar Creek ist die Steigerung: d-Moll, 138, Klavier und Bass, die Turmuhr,
+  kein Schlagzeug. Spuren: grund (Start), melodie (nach dem ersten Sieg), zusatz (nach dem zweiten).
+- **Spuren:** `<stamm>.grund.m4a`, `.melodie.m4a`, `.zusatz.m4a` (mono), dazu `<stamm>.m4a` als volle
+  Mischung; `spiel/musik/spuren.json` nennt Spuren, Art der Zusatzspur und Länge in Abtastwerten
+  (für `loopStart`/`loopEnd`). Die App mischt (Wiedergabe: mittel-3).
+- **orte.json:** `musik_nacht` für Maple Falls (außen, Park, Zimmer, Wohnzimmer) und Cedar Creek
+  (außen, Waschsalon, Drechslerei); Zimmer und Wohnzimmer spielen `mapleFalls.innen`; das Diner hat
+  jetzt Musik beim Betreten.
+- **Lautheit:** Der Musikbau baut alle Schleifen nach A0.6 (`musikbau.gleichmaessig`). Alle Stücke
+  von Akt 1 und ihre vollen Mischungen halten die Werte (gemessen 22.11.). Dünne Mischungen (nur
+  Grund, Grund und Melodie) meldet die Prüfung als Hinweis: Bei vier Stücken liegt ihre Naht 0,3 bis
+  1,1 LU über der Grenze, beim Grund der Nacht P98 +4,7.
+- **Bauen und hören:** `hoerseite PRIVAT --akt 1 --sichere-alt`, dann `musikbau PRIVAT --nur …`,
+  dann `hoerseite PRIVAT --akt 1`; die Seite liegt unter `hoerprobe/akt1/index.html`.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

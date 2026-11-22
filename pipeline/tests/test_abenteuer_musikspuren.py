@@ -1,0 +1,84 @@
+"""Tests der Ortsthemen mit Spuren (Klangplan A0, A0.1): Pläne, spuren.json, Hörseite.
+
+Ohne numpy (GitHub Actions) laufen die reinen Planprüfungen; spurenliste braucht nur den Satzplan.
+"""
+
+from pipeline.abenteuer.ton.musikbau import spurenliste, stamm
+from pipeline.abenteuer.ton.satzplan import baue, linie, tonart
+from pipeline.abenteuer.ton.stuecke import alle
+
+SPUREN = ("grund", "melodie", "zusatz")
+ZUSATZARTEN = {"farbe", "steigerung", "musiker", "jukebox"}
+OKTAVE = 12
+SEKUNDEN_HOECHSTENS = 90
+
+
+def _mit_spuren():
+    return [s for s in alle() if s.spuren]
+
+
+def test_jede_stimme_liegt_in_genau_einer_spur():
+    for satz in _mit_spuren():
+        assert tuple(satz.spuren) == SPUREN, satz.kennung
+        indizes = sorted(i for g in satz.spuren.values() for i in g)
+        assert indizes == list(range(len(satz.stimmen))), satz.kennung
+        assert satz.zusatz in ZUSATZARTEN, satz.kennung
+
+
+def test_akt1_ist_umgestellt_mit_nacht_und_innen():
+    kennungen = {s.kennung for s in _mit_spuren() if s.akt == 1}
+    erwartet = {
+        "mapleFalls",
+        "mapleFalls.nacht",
+        "mapleFalls.innen",
+        "cedarCreek",
+        "cedarCreek.nacht",
+        "diner",
+    }
+    assert erwartet <= kennungen
+    assert {"mapleFalls.clubkampf", "cedarCreek.clubkampf"} <= kennungen
+
+
+def test_schleifen_sind_hoechstens_90_sekunden():
+    for satz in _mit_spuren():
+        stueck = baue(satz)
+        assert stueck.sekunden(stueck.ende()) <= SEKUNDEN_HOECHSTENS, satz.kennung
+
+
+def test_koepfe_von_akt1_halten_die_bauregeln():
+    from pipeline.abenteuer.ton.stuecke import akt1, cedar, maple
+
+    for kopf, name in ((maple.KOPF, "G"), (cedar.KOPF, "d"), (akt1.DINER_KOPF, "C")):
+        noten, _ = linie(kopf.replace("|", " "), tonart(name), 0, 1, 60)
+        hoehen = [n.tonhoehe for n in noten]
+        assert 4 <= len(noten) <= 7 and max(hoehen) - min(hoehen) <= OKTAVE, kopf
+
+
+def test_spurenliste_nennt_spuren_zusatz_und_laenge():
+    liste = spurenliste(alle())
+    eintrag = liste[stamm("mapleFalls")]
+    assert eintrag["spuren"] == list(SPUREN) and eintrag["zusatz"] == "farbe"
+    assert eintrag["proben"] == 50 * 44_100 and eintrag["rate"] == 44_100
+
+
+def test_spurenrate_wie_sampler():
+    import pytest
+
+    pytest.importorskip("numpy")
+    from pipeline.abenteuer.ton.musikbau import SPUREN_RATE
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE
+
+    assert SPUREN_RATE == ABTASTRATE
+
+
+def test_lautheit_in_spuren_json_bleibt_beim_neuschreiben(tmp_path):
+    import json
+
+    from pipeline.abenteuer.ton.musikbau import schreibe_spurenliste, trage_lautheit_ein
+
+    plaene = alle()
+    ziel = schreibe_spurenliste(tmp_path, plaene)
+    lufs = {"grund": -29.0, "grund+melodie": -18.3, "grund+melodie+zusatz": -18.0}
+    trage_lautheit_ein(tmp_path, "maple-falls", lufs)
+    schreibe_spurenliste(tmp_path, plaene)
+    assert json.loads(ziel.read_text(encoding="utf-8"))["maple-falls"]["lufs"] == lufs

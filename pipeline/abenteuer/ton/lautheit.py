@@ -61,6 +61,8 @@ class Messung:
     naht_lu: float
     momentan: list[float] = field(default_factory=list)
     verstoesse: list[str] = field(default_factory=list)
+    # Befunde, die den Dauertest nicht scheitern lassen (dünne Mischungen, lautheitspruefung.py).
+    hinweise: list[str] = field(default_factory=list)
 
 
 def lies(pfad: Path):  # noqa: ANN201 (numpy)
@@ -303,23 +305,12 @@ def ist_kampf(name: str) -> bool:
 
 
 def main(argumente: list[str] | None = None) -> int:
-    """Misst Dateien oder alle m4a in Ordnern und druckt Werte und Verstöße."""
+    """Misst Stücke und die Mischungen ihrer Spuren (lautheitspruefung.py) und druckt die Verstöße."""
+    from pipeline.abenteuer.ton.lautheitspruefung import drucke, pruefe
+
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("pfade", nargs="+", type=Path)
-    args = parser.parse_args(argumente)
-    dateien = [d for p in args.pfade for d in (sorted(p.rglob("*.m4a")) if p.is_dir() else [p])]
-    fehler = 0
-    for datei in dateien:
-        schleife = datei.name.removesuffix(".m4a") not in einmalstuecke(datei)
-        m = miss(lies(datei), datei.name, ist_kampf(datei.name), schleife)
-        werte = f"{m.lufs:6.1f} LUFS  LRA {m.lra:4.1f}  P98 +{m.p98_ueber_median:4.1f}"
-        werte += f"  {m.spitze_dbtp:5.1f} dBTP"
-        print(f"{'!' if m.verstoesse else ' '} {datei.name:40} {werte}  Naht {m.naht_lu:.1f}")
-        for satz in m.verstoesse:
-            print(f"    {satz}")
-        fehler += bool(m.verstoesse)
-    print(f"{len(dateien)} Dateien, {fehler} mit Verstößen")
-    return 1 if fehler else 0
+    return drucke(pruefe(parser.parse_args(argumente).pfade))
 
 
 if __name__ == "__main__":

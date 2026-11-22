@@ -25,18 +25,19 @@
           "datei": "karten/maple-falls-zimmer.json",
           "name": "ort.mapleFalls.zimmer",
           "innen": true,
-          "musik": "musik/maple-falls.ogg",
+          "musik": "musik/maple-falls.innen.m4a",
           "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
             "ersterAbendGesehen": "karten/maple-falls-zimmer-brett.json"
-          }
+          },
+          "musik_nacht": "musik/maple-falls.nacht.m4a"
         },
         {
           "kennung": "mapleFalls.wohnzimmer",
           "datei": "karten/maple-falls-wohnzimmer.json",
           "name": "ort.mapleFalls.wohnzimmer",
           "innen": true,
-          "musik": "musik/maple-falls.ogg",
+          "musik": "musik/maple-falls.innen.m4a",
           "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
             "ersterAbendGesehen": "karten/maple-falls-wohnzimmer-tisch.json",
@@ -45,19 +46,21 @@
           "eingang": {
             "dialog": "maple-falls-wohnzimmer.eingang",
             "wenn": "(einleitungGesehen und nicht ankunftGesehen) oder (ersteLektionBesprochen und nicht ersterAbendGesehen und nicht treppeAbendGesehen)"
-          }
+          },
+          "musik_nacht": "musik/maple-falls.nacht.m4a"
         },
         {
           "kennung": "mapleFalls.aussen",
           "datei": "karten/maple-falls-aussen.json",
           "name": "ort.mapleFalls.aussen",
           "innen": false,
-          "musik": "musik/maple-falls.ogg",
+          "musik": "musik/maple-falls.m4a",
           "geraeusch": "klang/wasserfall.m4a",
           "eingang": {
             "dialog": "maple-falls-aussen.einleitung",
             "wenn": "nicht einleitungGesehen und nicht brettBeruehrt"
-          }
+          },
+          "musik_nacht": "musik/maple-falls.nacht.m4a"
         },
         {
           "kennung": "mapleFalls.clubraum",
@@ -75,11 +78,12 @@
           "datei": "karten/maple-falls-park.json",
           "name": "ort.mapleFalls.park",
           "innen": false,
-          "musik": "musik/maple-falls.ogg",
+          "musik": "musik/maple-falls.m4a",
           "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
             "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
-          }
+          },
+          "musik_nacht": "musik/maple-falls.nacht.m4a"
         },
         {
           "kennung": "mapleFalls.diner",
@@ -96,7 +100,8 @@
           ],
           "zustaende": {
             "nadelMapleFalls >= 1 und dinerAbendGesehen": "karten/maple-falls-diner-tischset.json"
-          }
+          },
+          "musik": "musik/diner.m4a"
         }
       ],
       "figuren": [
@@ -469,11 +474,7 @@
         "mitglieder": ["mapleFalls.sam"],
         "aufgaben": {
           "minuten": 12,
-          "buchuebungen": [
-            "ueb:droh-ignorieren",
-            "ueb:zaehlen-vorstoss",
-            "ueb:angriff-zaehlen"
-          ],
+          "buchuebungen": ["ueb:droh-ignorieren", "ueb:zaehlen-vorstoss", "ueb:angriff-zaehlen"],
           "themen": ["zaehlen", "haengend", "matt1"]
         }
       }
@@ -506,7 +507,8 @@
           ],
           "zustaende": {
             "teamAngekommen und nicht endeAkt1Gesehen": "karten/cedar-creek-aussen-samstag.json"
-          }
+          },
+          "musik_nacht": "musik/cedar-creek.nacht.m4a"
         },
         {
           "kennung": "cedarCreek.bibliothek",
@@ -541,7 +543,8 @@
           "name": "ort.cedarCreek.waschsalon",
           "innen": true,
           "musik": "musik/cedar-creek.m4a",
-          "geraeusch": "klang/waschmaschine.m4a"
+          "geraeusch": "klang/waschmaschine.m4a",
+          "musik_nacht": "musik/cedar-creek.nacht.m4a"
         },
         {
           "kennung": "cedarCreek.drechslerei",
@@ -549,7 +552,8 @@
           "name": "ort.cedarCreek.drechslerei",
           "innen": true,
           "musik": "musik/cedar-creek.m4a",
-          "geraeusch": "klang/holzknacken.m4a"
+          "geraeusch": "klang/holzknacken.m4a",
+          "musik_nacht": "musik/cedar-creek.nacht.m4a"
         }
       ],
       "figuren": [

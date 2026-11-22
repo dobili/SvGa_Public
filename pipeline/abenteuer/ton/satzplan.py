@@ -109,6 +109,11 @@ class Satz:
     beschreibung: str = ""
     # „lautsprecher“: klingt wie aus einem kleinen Lautsprecher (Jukebox, Radio), sonst leer.
     klangbild: str = ""
+    # Spuren für die App (Klangplan A0.1): Name → Indizes in ``stimmen``; leer: nur eine Datei.
+    # Üblich: grund (Begleitung, Bass), melodie, zusatz (Musiker, Jukebox, Steigerung, Farbe).
+    spuren: dict[str, tuple[int, ...]] = field(default_factory=dict)
+    # Was die Zusatzspur ist: musiker, jukebox, steigerung oder farbe (für spuren.json).
+    zusatz: str = ""
 
 
 def dauer(text: str) -> float:

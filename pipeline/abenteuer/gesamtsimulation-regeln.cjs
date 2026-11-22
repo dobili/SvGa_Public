@@ -70,9 +70,20 @@ function objekteJetzt(welt, st, karte) {
 
 // ---------------------------------------------------------------- Spielstand und Quests
 
+/**
+ * Rivale Victor oder Rivalin Victoria (Wunsch des Autors, 22.11.2026): dieselben Wörter wie die
+ * App (inhalte/abenteuer/rivalformen.json, app/src/abenteuer/regeln/rivalform.ts). Die Fassung
+ * wählt die Umgebungsvariable ABENTEUER_RIVALIN=1; ohne sie spielt die Simulation mit Victor.
+ */
+function rivalvariablen() {
+  const formen = JSON.parse(fs.readFileSync(path.join(DATEN, "rivalformen.json"), "utf8")).de;
+  const rivalin = process.env.ABENTEUER_RIVALIN === "1";
+  return { rivalin, ...(rivalin ? formen.rivalin : formen.rivale) };
+}
+
 function neuerStand(startwert) {
   return {
-    vars: { held: "Kim" },
+    vars: { held: "Kim", ...rivalvariablen() },
     zeitachse: [],
     besitz: new Set(),
     karten: {},

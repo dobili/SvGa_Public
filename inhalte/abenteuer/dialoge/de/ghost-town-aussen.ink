@@ -8,6 +8,16 @@
 //
 // Variablen: fernpartieGespielt setzt ghost-town-saloon.ink; die übrigen setzt diese Datei.
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR ankunftGhostTownGesehen = false
 VAR pruittGetroffen = false
 VAR grabGesehen = false
@@ -55,7 +65,7 @@ Die Staubstraße führt zurück zum Canyon und weiter zum Camp. #sprecher:erzaeh
     Der Bus fährt erst am Morgen. Du wartest auf den Stufen des Saloons. #sprecher:erzaehler
     -> nacht_ambrose
 - fernpartieGespielt:
-    Ein Bus hält am Ortsrand: „Große Seen, Capital Arena“. Victor steigt mit dir ein. #sprecher:erzaehler
+    Ein Bus hält am Ortsrand: „Große Seen, Capital Arena“. {rivale} steigt mit dir ein. #sprecher:erzaehler
     {not seeErreichtGesehen:
         ~ seeErreichtGesehen = true
         Hinter den Hügeln kommen die Farben zurück. Dann liegt ein See vor euch, so groß, dass man das andere Ufer nicht sieht. #sprecher:erzaehler
@@ -122,8 +132,8 @@ Ist er hier? Ist das seiner? #sprecher:juno #stimmung:ueberrascht
 Guter Zug. #sprecher:ambrose #stimmung:laechelt
 Du sagst es ihr. Sie wird rot. #sprecher:erzaehler #bild:aus
 Ein Überlandbus hält am Ende der Hauptstraße, wo seit hundert Jahren nichts gehalten hat. #sprecher:erzaehler #klang:bus
-Ein Junge steigt aus, im zu großen Pullover, mit Rucksack und einem kleinen alten Buch. Victor. #sprecher:erzaehler
-Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht in den Saloon. #sprecher:erzaehler
+{rivalin:Ein Mädchen|Ein Junge} steigt aus, im zu großen Pullover, mit Rucksack und einem kleinen alten Buch. {rivale}. #sprecher:erzaehler
+{rv_Er} hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. {rv_Er} geht in den Saloon. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Die Nacht (Szene 101)
@@ -143,7 +153,7 @@ Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht
 // Kapitel 59 (Roman): Ambrose sagt es. Nachtstück zum dritten und letzten Mal mit Ambroses
 // Thema als Gegenstimme; bei „Bleib“ ein gehaltener Ton (S74). Er sitzt zum vierten Mal.
 ~ ambroseSagtEsGesehen = true
-Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon #uhr:nacht
+Im Saloon kocht Mr. Pruitt Bohnen. Juno und {rivale} streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon #uhr:nacht
 Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. #sprecher:juno #stimmung:froh
 Ich hab sie gemacht. #sprecher:juno #stimmung:froh
 Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck

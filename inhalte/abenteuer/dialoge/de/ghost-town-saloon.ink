@@ -14,6 +14,16 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR grabGesehen = false
 VAR kerzeGesehen = false
 VAR briefGelesen = false
@@ -46,7 +56,7 @@ VAR held = "Du"
 
 === victor_wartet ===
 ~ victorSaloonGetroffen = true
-Victor stellt Figuren auf, nimmt sie wieder weg, stellt sie neu auf. #sprecher:erzaehler
+{rivale} stellt Figuren auf, nimmt sie wieder weg, stellt sie neu auf. #sprecher:erzaehler
 Mir fehlt noch etwas. Ambrose muss doch seinen letzten Zug irgendwo aufgeschrieben haben. #sprecher:victor #stimmung:nachdenklich
 Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #stimmung:fern
 -> END
@@ -66,15 +76,15 @@ A. W. 1857. Daneben Junos Tagebuch mit acht eingeklebten Zetteln aus sieben Stä
 }
 {
 - hatHalesSeite:
-    Du legst die ausgefranste Seite daneben, die Victor dir an der Bergstation gegeben hat. #sprecher:erzaehler
+    Du legst die ausgefranste Seite daneben, die {rivale} dir an der Bergstation gegeben hat. #sprecher:erzaehler
 - victorSeiteGegeben:
-    Victor schlägt sein Buch hinten auf. Die Seite liegt da, ausgefranst an einem Rand. #sprecher:erzaehler
+    {rivale} schlägt {rv_sein} Buch hinten auf. Die Seite liegt da, ausgefranst an einem Rand. #sprecher:erzaehler
 - else:
-    Victor zieht eine vergilbte Seite aus seinem Buch. Für den Tag, an dem jemand weiterspielt. #sprecher:erzaehler
+    {rivale} zieht eine vergilbte Seite aus {rv_sein}em Buch. Für den Tag, an dem jemand weiterspielt. #sprecher:erzaehler
 }
 Wer baut auf? #sprecher:victor #stimmung:nachdenklich #bild:aus
 + [„Wir beide.“]
-- Von vorn, Zug um Zug, wie man eine Geschichte vorliest. Du ziehst für Weiß, Victor für Schwarz. #sprecher:erzaehler #musik:fernpartie
+- Von vorn, Zug um Zug, wie man eine Geschichte vorliest. Du ziehst für Weiß, {rivale} für Schwarz. #sprecher:erzaehler #musik:fernpartie
 Der Bauer, der sich im vierten Zug anbietet. Mein Gambit. #sprecher:ambrose #stimmung:froh
 Er hat es angenommen. Ich war so erleichtert. #sprecher:ambrose #stimmung:froh
 Der Springer im sechsundzwanzigsten. Hier habe ich drei Wochen nachgedacht. #sprecher:ambrose #stimmung:lachtOhneSpott
@@ -83,18 +93,18 @@ Dann der fünfunddreißigste. Ein Läufer schlägt den Bauern vor dem König. #s
 Gleich darauf ein Springer. #sprecher:erzaehler
 Zwei. Er opfert zwei Figuren hintereinander. #sprecher:victor #stimmung:ueberrascht
 + [„Stimmt es?“]
-- Er rechnet, mit schiefem Kopf, lange. #sprecher:erzaehler
+- {rv_Er} rechnet, mit schiefem Kopf, lange. #sprecher:erzaehler
 Ja. Knapp. #sprecher:victor #stimmung:laechelt
 Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor #stimmung:laechelt
 Dreimal nachgerechnet. Und dann habe ich gehofft. #sprecher:ambrose #stimmung:laechelt
 Die letzten Züge kennst du aus einem Zimmer mit Rosen. Der König schlägt die Dame, einen Schritt ins Freie. #sprecher:erzaehler
 Es ist die Stellung, die du an einem Abend im Spätsommer unter einer Decke gefunden hast. Schwarz am Zug. #sprecher:erzaehler #musik:aus
 Seit hundertsechzig Jahren. #sprecher:erzaehler #pause:3
-{hatHalesSeite:Victor nimmt die Seite vom Tisch. 40. … b5. Er fasst den Bauern an.|Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an.} #sprecher:erzaehler
+{hatHalesSeite:{rivale} nimmt die Seite vom Tisch. 40. … b5. {rv_Er} fasst den Bauern an.|{rivale} legt die Seite neben das Brett. 40. … b5. {rv_Er} fasst den Bauern an.} #sprecher:erzaehler
 Darf ich? #sprecher:victor #stimmung:nachdenklich
-Er fragt nicht dich. #sprecher:erzaehler
-Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
-Victor schiebt den Bauern vor. Ein Feld – Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
+{rv_Er} fragt nicht dich. #sprecher:erzaehler
+Sag {rv_ihm}, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
+{rivale} schiebt den Bauern vor. Ein Feld – Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
 So. So. #sprecher:ambrose #stimmung:friedlich
 Da ist er. #sprecher:ambrose #stimmung:friedlich
 ~ fernpartieAufgebaut = true
@@ -113,7 +123,7 @@ Aber zwei Springer sind wie zwei Hunde, die ein Schaf nicht aus den Augen lassen
     -> END
 
 === fernpartie_bereit ===
-Die Stellung steht noch unter dem Loch im Dach. Victors Bauer steht auf b5. #sprecher:erzaehler
+Die Stellung steht noch unter dem Loch im Dach. {rivale}s Bauer steht auf b5. #sprecher:erzaehler
 Diese Partie gehört euch. Kein Wort von mir. #sprecher:ambrose #stimmung:laechelt
 + [Den ersten Zug machen]
     ~ beginnePartie("ghostTown.fernpartie")
@@ -127,9 +137,9 @@ Diese Partie gehört euch. Kein Wort von mir. #sprecher:ambrose #stimmung:laeche
 // {held} dreimal und weiß es nicht. Stellungsneutral.
 
 === fernpartie_wie_er ===
-Seine Springer decken einander, jagen deinen Turm fort, und sobald er fort ist, rückt ein Bauer nach. Eine Brücke aus zwei Pferden. #sprecher:erzaehler
+{rv_Sein}e Springer decken einander, jagen deinen Turm fort, und sobald er fort ist, rückt ein Bauer nach. Eine Brücke aus zwei Pferden. #sprecher:erzaehler
 Ambrose hat versprochen zu schweigen. Jetzt flüstert er doch, mehr zu sich als zu dir. #sprecher:erzaehler
-Er spielt wie er. Genau wie er. #sprecher:ambrose #stimmung:still
+{rv_Er} spielt wie er. Genau wie er. #sprecher:ambrose #stimmung:still
 Nichts Überflüssiges. #sprecher:ambrose #stimmung:still
 -> END
 
@@ -145,7 +155,7 @@ Du weißt es nicht. #sprecher:erzaehler #pause:2
 ~ fernpartieGespielt = true
 // Gutachten M3.7: stellungsneutral; eine Niederlage erzählt das Spiel hier als Remis.
 {ausgangGhostTownFernpartie == "sieg":
-    Victor sieht lange auf das Brett. Dann gibt er dir die Hand. #sprecher:erzaehler
+    {rivale} sieht lange auf das Brett. Dann gibt {rv_er} dir die Hand. #sprecher:erzaehler
 - else:
     Mehr ist nicht mehr zu wollen. Remis? #sprecher:victor #stimmung:laechelt
     -> verzaehlt ->
@@ -154,7 +164,7 @@ Ambrose steht neben dem Tisch und sieht auf das ganze Brett. Er weint. #sprecher
 Es läuft ihm über das Gesicht, und er lächelt dabei. #sprecher:erzaehler #stimmung:weintUndLaechelt #pause:3
 Hundertsechzig Jahre. Und sie ist schön. #sprecher:ambrose #stimmung:weintUndLaechelt
 Sie ist zu Ende. Jemand hat sie zu Ende gespielt. #sprecher:ambrose #stimmung:nachdenklich
-Ein Kind, das zählt und hofft, und ein Hale. #sprecher:ambrose #stimmung:laechelt
+Ein Kind, das zählt und hofft, und {rivalin:eine|ein} Hale. #sprecher:ambrose #stimmung:laechelt
 Ich wollte eine Partie ohne Makel. Mein ganzes Leben, und danach noch einmal so lang. #sprecher:ambrose #stimmung:nachdenklich
 Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. #sprecher:ambrose #stimmung:laechelt
 Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose #stimmung:laechelt
@@ -163,11 +173,11 @@ Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.sch
 {ausgangGhostTownFernpartie == "sieg": Gewonnen. Ich habe es nie gebraucht, und es freut mich trotzdem wie einen Jungen am Kai. #sprecher:ambrose #stimmung:froh}
 Die beste Partie, die ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht, nur daran. #sprecher:victor #stimmung:laechelt
 {hatHalesSeite:
-    Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
-    Dann gibt er sie dir zurück. #sprecher:erzaehler
+    {rv_Er} schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
+    Dann gibt {rv_er} sie dir zurück. #sprecher:erzaehler
 - else:
-    Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
-    Er legt sie zurück in sein Buch. #sprecher:erzaehler
+    {rv_Er} schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. #sprecher:erzaehler
+    {rv_Er} legt sie zurück in {rv_sein} Buch. #sprecher:erzaehler
 }
 Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor #stimmung:nachdenklich
 In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
@@ -182,7 +192,7 @@ Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als 
 ->->
 
 === victor_alltag ===
-{~Mein Vater hat angerufen. Ich bin nicht rangegangen, morgen vielleicht.|Ein Hale und ein Whitlock an einem Brett. Mein Großvater hätte das gern gesehen.|{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":Das Finale war die zweitschönste Partie. Die schönste stand hier.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.}} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat angerufen. Ich bin nicht rangegangen, morgen vielleicht.|Die Hales und die Whitlocks an einem Brett. Mein Großvater hätte das gern gesehen.|{ausgangCapitalArenaFinale != "" and ausgangCapitalArenaFinale != "abgebrochen":Das Finale war die zweitschönste Partie. Die schönste stand hier.|Wenn wir beide durchkommen, sehen wir uns im Finale. Ich freu mich drauf.}} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Brett und Abzeichen

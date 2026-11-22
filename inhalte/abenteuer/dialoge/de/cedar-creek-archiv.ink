@@ -24,6 +24,16 @@
 
 EXTERNAL beginneAufgaben(runde)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR held = "Du"
 VAR ambroseVertrauen = 0
 VAR kenntHale = false
@@ -150,7 +160,7 @@ Er brauchte vierzig Minuten. #sprecher:ambrose #stimmung:nachdenklich
 Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose #stimmung:bitter #bild:stellung1858
 Bemerkenswert unnötig. Er hatte recht. #sprecher:ambrose #stimmung:bitter
 Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
-* {ausgangMapleFallsVictor == "niederlage"} [„Das ist wie bei mir gegen Victor.“]
+* {ausgangMapleFallsVictor == "niederlage"} [„Das ist wie bei mir gegen {rivale}.“]
     Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose #stimmung:nachdenklich
     Ich hatte eine gewonnene und habe sie verschenkt. #sprecher:ambrose #stimmung:bitter
 * [Nichts sagen]
@@ -160,7 +170,7 @@ Er schrieb zurück. Ein Wort. #sprecher:ambrose #stimmung:bitter
 * [Warten]
 - Später. #sprecher:ambrose #stimmung:bitter #klang:spaeter #musik:aus #geraeusch:aus #pause:2
 {ersterTagSpaeter: Du hast es am ersten Tag zu ihm gesagt, auf dem Dachboden, ohne nachzudenken. Er hat so seltsam geantwortet. #sprecher:erzaehler}
-* {kenntHale} [„Hale wie Victor?“]
+* {kenntHale} [„Hale wie {rivale}?“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Hale wie viele. #sprecher:ambrose #stimmung:nachdenklich
     Aber er sieht dich an dabei. Er weiß es nicht. #sprecher:erzaehler

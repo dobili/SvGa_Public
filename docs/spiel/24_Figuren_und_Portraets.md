@@ -134,3 +134,14 @@ die Texte sind geschlechtsneutral (Bibel 5.2, Dauertest `python -m pipeline.aben
 - **Bis er da ist:** Die Wahl zeigt einen Platzhalter („Bild folgt“), im Spiel steht der Held.
 - **Porträt:** Der Held spricht ohne Porträt (unten in der Sprechblase); ein Porträt der Heldin
   braucht es erst, wenn der Held eines bekommt.
+
+## Rivalin Victoria (Wunsch des Autors, 22.11.2026)
+
+Nach der Heldenwahl wählt der Leser Rivale Victor oder Rivalin Victoria (Dialogvariable
+`rivalin`, `app/src/abenteuer/regeln/rivalform.ts`; Schreibregel: Story-Bibel 5.2a).
+
+- **Bögen:** `victoria` und `victoria-pullover` (wie `victor` und `victor-pullover`, gleiche
+  Animationen). Die Welt lädt sie in der Rivalin-Fassung zuerst; fehlen sie, steht Victors Bogen da.
+- **Porträts:** `portraets/victoria…` (Blatt, Sprechbogen, groß), gleiche Stimmungen wie Victor. Der
+  Dialog sucht für `#sprecher:victor` zuerst Victoria, sonst Victor.
+- **Bis sie da sind:** Die Wahl zeigt einen Platzhalter, im Spiel stehen Victors Bilder.

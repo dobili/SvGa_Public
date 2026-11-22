@@ -118,10 +118,16 @@ def kebab(kennung: str) -> str:
 
 
 def namenteile(name: str) -> set[str]:
-    """Der Name und seine tragenden Wörter: „Coach Delgado“ → {„Coach Delgado“, „Delgado“}."""
+    """Der Name und seine tragenden Wörter: „Coach Delgado“ → {„Coach Delgado“, „Delgado“}.
+
+    Platzhalter zählen wie ein Name (Rivale oder Rivalin, 22.11.2026): „{rivale} Hale“ →
+    {„{rivale} Hale“, „{rivale}“, „Hale“}.
+    """
     teile = {name.strip()}
     for wort in re.split(r"[\s,–-]+", name):
-        if len(wort) >= 3 and wort.lower() not in FUELLWOERTER and wort[:1].isupper():
+        if re.fullmatch(r"\{\w+\}", wort):
+            teile.add(wort)
+        elif len(wort) >= 3 and wort.lower() not in FUELLWOERTER and wort[:1].isupper():
             teile.add(wort.strip(".,"))
     return {t for t in teile if t}
 

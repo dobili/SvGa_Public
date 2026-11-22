@@ -20,6 +20,16 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
 EXTERNAL gibFund(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR victorBergstationGesprochen = false
 VAR held = "Du"
 VAR ankunftSummitGesehen = false
@@ -56,12 +66,12 @@ Murmeltiere. Die warnen sich. #sprecher:mutter #stimmung:laechelt
 * [„Wovor?“]
 - Vor uns. #sprecher:mutter #stimmung:lacht
 An der Seilbahnstation glänzt ein Plakat: „Landesmeisterschaft der Jugend. Präsentiert von Perfect Move.“ Acht Gesichter. #sprecher:erzaehler
-Das zweite ist Nova. Das vierte Victor. #sprecher:erzaehler
+Das zweite ist Nova. Das vierte {rivale}. #sprecher:erzaehler
 Das achte bist du. #sprecher:erzaehler
 Das ist von meinem Foto! Da hast du Ketchup am Kinn! #sprecher:juno #stimmung:froh
 * [Zum Hotel sehen]
-- Vor dem Hotel steht Victor, in Weiß. Ein Mann im grauen Anzug beugt sich zu ihm und sagt ihm etwas ins Ohr. #sprecher:erzaehler
-Victor nickt. #sprecher:erzaehler
+- Vor dem Hotel steht {rivale}, in Weiß. Ein Mann im grauen Anzug beugt sich zu {rv_ihm} und sagt {rv_ihm} etwas ins Ohr. #sprecher:erzaehler
+{rivale} nickt. #sprecher:erzaehler
 * [„Der Trainer, der kein Mensch ist.“]
 - Der dort ist ein Mensch. Aber ich glaube, er ist nur der Bote. #sprecher:ambrose #stimmung:nachdenklich
 Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt unten. #sprecher:erzaehler
@@ -142,9 +152,9 @@ Noch mal, bevor es regnet? #sprecher:sol #stimmung:laechelt
 {
 // Lektorat 20.11.2026: „eben“ nur, bis {held} oben bei Victor war.
 - victorKriseGesehen and not victorSeiteGegeben and victorBergstationGesprochen:
-    Oben an der Bergstation sitzt Victor noch am Geländer. #sprecher:erzaehler
+    Oben an der Bergstation sitzt {rivale} noch am Geländer. #sprecher:erzaehler
 - victorKriseGesehen and not victorSeiteGegeben:
-    Der Wärter an der Talstation zeigt nach oben: „Ein Junge ist eben den Pfad hinaufgerannt.“ #sprecher:erzaehler
+    Der Wärter an der Talstation zeigt nach oben: {rivalin:„Ein Mädchen ist eben den Pfad hinaufgerannt.“|„Ein Junge ist eben den Pfad hinaufgerannt.“} #sprecher:erzaehler
     „Nicht hinunter. Allein.“ #sprecher:erzaehler
 - else:
     Die Gondel schaukelt bergauf, über Tannen und Murmeltierbauten, bis über die Wolken. #sprecher:erzaehler

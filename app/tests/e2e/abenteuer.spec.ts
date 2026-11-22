@@ -313,6 +313,9 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
     "aria-pressed",
     "true",
   );
+  // Danach Rivale Victor oder Rivalin Victoria (22.11.2026); vorgewählt ist Victor.
+  await expect(page.getByTestId("abenteuer-rivale-victor")).toHaveAttribute("aria-pressed", "true");
+  await page.getByTestId("abenteuer-rivale-victoria").click();
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
   const dialog = page.getByTestId("abenteuer-dialog");
@@ -341,5 +344,9 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
   );
   await menue.getByTestId("abenteuer-figur-held-0").click();
   await expect(menue.getByTestId("abenteuer-figur-held-0")).toHaveAttribute("aria-pressed", "true");
+  await expect(menue.getByTestId("abenteuer-rivale-victoria")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
 });

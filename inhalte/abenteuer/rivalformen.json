@@ -1,0 +1,26 @@
+{
+  "de": {
+    "rivale": {
+      "rivale": "Victor",
+      "rv_er": "er",
+      "rv_Er": "Er",
+      "rv_ihn": "ihn",
+      "rv_Ihn": "Ihn",
+      "rv_ihm": "ihm",
+      "rv_Ihm": "Ihm",
+      "rv_sein": "sein",
+      "rv_Sein": "Sein"
+    },
+    "rivalin": {
+      "rivale": "Victoria",
+      "rv_er": "sie",
+      "rv_Er": "Sie",
+      "rv_ihn": "sie",
+      "rv_Ihn": "Sie",
+      "rv_ihm": "ihr",
+      "rv_Ihm": "Ihr",
+      "rv_sein": "ihr",
+      "rv_Sein": "Ihr"
+    }
+  }
+}

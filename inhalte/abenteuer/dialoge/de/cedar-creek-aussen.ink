@@ -19,6 +19,16 @@ EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR ausgangCedarCreekClubkampf = ""
 VAR held = "Du"
 VAR clubkampfZaehlGesagt = false
@@ -76,7 +86,7 @@ Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Ba
 Darauf ein Kind, das in einen Bildschirm lächelt. Es ist das einzige Glänzende weit und breit. #sprecher:erzaehler
 {abschiedGesehen: -> END}
 Ein Plakat, das droht. Und es lächelt dabei. #sprecher:ambrose #stimmung:streng
-* [„Das ist die Firma von Victors Vater.“]
+* [„Das ist die Firma von {rivale}s Vater.“]
     So. Dann hat die Drohung einen Namen. #sprecher:ambrose #stimmung:nachdenklich
 * [„Vielleicht ist das gar nicht so schlecht.“]
     Vielleicht. #sprecher:ambrose #stimmung:nachdenklich #pause
@@ -361,44 +371,44 @@ Gehalten, aber nicht ausgebaut. Remis, noch mal? #sprecher:rosa #stimmung:laeche
 // Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede). Klang: Stillen
 // S18 und S19 (21_Klangplan.md), Victors Thema beim Gehen.
 An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. #sprecher:erzaehler #musik:aus
-Das Plakat hängt über ihm. #sprecher:erzaehler
-Er zieht. Das Programm antwortet sofort. #sprecher:erzaehler #klang:tablet
+Das Plakat hängt über {rv_ihm}. #sprecher:erzaehler
+{rv_Er} zieht. Das Programm antwortet sofort. #sprecher:erzaehler #klang:tablet
 Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler
 * [„Spielst du gegen das Ding?“]
     Ich trainiere. Mein Vater ist im Rathaus. #sprecher:victor #stimmung:kalt
     Der Bezirk hat drei Bibliotheken. Er will alle drei. #sprecher:victor #stimmung:kalt
     Für Bildschirme. Es ist effizienter. #sprecher:victor #stimmung:kalt
 * [Leise weitergehen]
-    Er sieht nicht auf. Klick. #sprecher:erzaehler #klang:tablet
+    {rv_Er} sieht nicht auf. Klick. #sprecher:erzaehler #klang:tablet
     -> END
-- Auf dem Brett geht es sehr schnell und sehr genau. Er verliert. #sprecher:erzaehler
+- Auf dem Brett geht es sehr schnell und sehr genau. {rv_Er} verliert. #sprecher:erzaehler
 Langsam, Zug um Zug, gegen etwas, das nie zögert. #sprecher:erzaehler
 * [„Gewinnst du manchmal?“]
     Remis. Einmal im Monat. #sprecher:victor #stimmung:kalt
     Mein Vater sagt, ein Remis gegen Schwächere ist eine Niederlage. Gegen das hier ist es ein Erfolg. #sprecher:victor #stimmung:bitter
 * [Gehen]
     -> END
-- Er tippt auf „Neue Partie“. #sprecher:erzaehler
+- {rv_Er} tippt auf „Neue Partie“. #sprecher:erzaehler
 * [„Macht dir das eigentlich Spaß?“]
     ~ victorCedarCreekGesehen = true
-    Seine Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #geraeusch:aus #pause:3
+    {rv_Sein}e Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #geraeusch:aus #pause:3
     Das ist keine Frage, die man beim Training stellt. #sprecher:victor #stimmung:muede
-    Er zieht. Das Programm antwortet. #sprecher:erzaehler #klang:tablet
-    Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler
+    {rv_Er} zieht. Das Programm antwortet. #sprecher:erzaehler #klang:tablet
+    Aber {rv_er} hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler
     -> victor_weg
 * [Gehen]
     -> END
 
 === victor_weg ===
 Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler #musik:victor
-Er hält den Kopf wie er. Ein wenig schief – wenn er rechnet. #sprecher:ambrose #stimmung:nachdenklich
+{rv_Er} hält den Kopf wie er. Ein wenig schief – wenn er rechnet. #sprecher:ambrose #stimmung:nachdenklich
 * [„Wie wer?“]
     Keine Antwort. #sprecher:erzaehler #pause:2
 * [Nichts sagen]
 - -> END
 
 === victor_alltag ===
-Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
+{rivale} spielt weiter auf {rv_sein}em Tablet. {rv_Er} sieht nicht auf. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Rückfahrt

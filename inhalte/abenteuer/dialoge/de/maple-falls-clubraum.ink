@@ -17,6 +17,16 @@ EXTERNAL setzeSzene(kennung)
 EXTERNAL schreibeTagebuch(name)
 EXTERNAL gibKarte(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR angesehenBrettOhneDame = false
 VAR ausgangMapleFallsErsteLektion = ""
 VAR held = "Du"
@@ -441,9 +451,9 @@ Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. #spr
 Schach für die Zukunft. #sprecher:grahamHale #stimmung:laechelt
 Was kostet das? #sprecher:coachDelgado #stimmung:nachdenklich
 Für Pilotschulen zunächst nichts. #sprecher:grahamHale #stimmung:laechelt
-Am Fenster steht ein Junge, ein Tablet unter dem Arm. Er hat sich nicht gesetzt. #sprecher:erzaehler
-Er sieht auf deine Nadel. #sprecher:erzaehler
-Victor Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt #musik:victor
+Am Fenster steht {rivalin:ein Mädchen|ein Junge}, ein Tablet unter dem Arm. {rv_Er} hat sich nicht gesetzt. #sprecher:erzaehler
+{rv_Er} sieht auf deine Nadel. #sprecher:erzaehler
+{rivale} Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt #musik:victor
 In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:hale #pause:3
 -> victor_wartet
 
@@ -466,7 +476,7 @@ Frag mich jetzt nichts. #sprecher:ambrose #stimmung:still
 // Regelwerk R33: Weiß Victor, Schwarz der Leser in einer Trainingsstellung um Zug 12 mit einem
 // Springer weniger, Karten gesperrt; die Begegnung steht in begegnungen.json.
 ~ beginnePartie("mapleFalls.victor")
-Victor stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
+{rivale} stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
 -> END
 
 === victor_nachher ===
@@ -480,27 +490,27 @@ Victor stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
 
 === victor_niederlage ===
 ~ setzeSzene("akt1.victorNiederlage")
-Irgendwann lehnt er sich einen Fingerbreit zurück. #sprecher:erzaehler
+Irgendwann lehnt {rv_er} sich einen Fingerbreit zurück. #sprecher:erzaehler
 Das genügt. #sprecher:victor #stimmung:bitter
 Du hast in Zug zwölf verloren. Den Rest hast du nur nicht gemerkt. #sprecher:victor #stimmung:kalt
-Er räumt die Figuren ein, jede in ihr Fach. Er gibt dir nicht die Hand. #sprecher:erzaehler
-Gut gespielt, Victor. Nächstes Mal schneller, ja? #sprecher:grahamHale #stimmung:nachdenklich
+{rv_Er} räumt die Figuren ein, jede in ihr Fach. {rv_Er} gibt dir nicht die Hand. #sprecher:erzaehler
+Gut gespielt, {rivale}. Nächstes Mal schneller, ja? #sprecher:grahamHale #stimmung:nachdenklich
 Wir haben um vier den Termin. #sprecher:grahamHale #stimmung:nachdenklich
-Etwas geht über Victors Gesicht. Sehr kurz. #sprecher:erzaehler #pause
+Etwas geht über {rivale}s Gesicht. Sehr kurz. #sprecher:erzaehler #pause
 Ja. #sprecher:victor #stimmung:riss
 Dann sind sie weg. #sprecher:erzaehler
-Der war nicht nett. #sprecher:juno #stimmung:nachdenklich #pause
+{rivalin:Die|Der} war nicht nett. #sprecher:juno #stimmung:nachdenklich #pause
 Niemand widerspricht. #sprecher:erzaehler
-Aber er war gut. #sprecher:juno #stimmung:nachdenklich
+Aber {rv_er} war gut. #sprecher:juno #stimmung:nachdenklich
 -> victor_ambrose
 
 === victor_ueberrascht ===
 ~ victorUeberrascht = 1
 ~ setzeSzene("akt1.victorUeberrascht")
-Victor sieht auf das Brett. Drei Sekunden lang rührt er sich nicht. #sprecher:erzaehler #pause:3
+{rivale} sieht auf das Brett. Drei Sekunden lang rührt {rv_er} sich nicht. #sprecher:erzaehler #pause:3
 Glück. Das passiert einmal. #sprecher:victor #stimmung:kalt
-Victor? Wir fahren. #sprecher:grahamHale #stimmung:nachdenklich
-Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #sprecher:erzaehler
+{rivale}? Wir fahren. #sprecher:grahamHale #stimmung:nachdenklich
+{rv_Er} geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #sprecher:erzaehler
 -> victor_ambrose
 
 === victor_ambrose ===
@@ -536,7 +546,7 @@ In deiner eigenen Schrift, ohne Glitzer. #sprecher:erzaehler #klang:tagebuch
 -> END
 
 === victor_weg ===
-Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult – ausgeschaltet. #sprecher:erzaehler
+{rivale} und {rv_sein} Vater sind gegangen. Der Bildschirm steht noch auf dem Pult – ausgeschaltet. #sprecher:erzaehler
 -> END
 
 // Rückmeldung nach der Runde (runden.json `danach`; Wunsch des Autors, 19.11.2026): bestanden ein Satz von Juno, sonst wie bisher.

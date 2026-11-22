@@ -24,6 +24,16 @@ EXTERNAL gibKarte(kennung)
 EXTERNAL oeffneLaden(laden)
 EXTERNAL setzeToenung(name)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR angesehenNetze = false
 VAR held = "Du"
 VAR ausgangSiliconBayDash = ""
@@ -69,24 +79,24 @@ Ich habe in Hafenstädten gelebt. Ich weiß, wie eine Stadt ohne Ratten aussieht
 Wo wohnen hier die Tiere? #sprecher:ambrose #stimmung:laechelt
 Die stören die Sensoren. #sprecher:victor #stimmung:bitter
 * [Dich umdrehen]
-- Victor steht hinter euch, ganz in Weiß. Er sieht aus, als hätte er nicht geschlafen. #sprecher:erzaehler
+- {rivale} steht hinter euch, ganz in Weiß. {rv_Er} sieht aus, als hätte {rv_er} nicht geschlafen. #sprecher:erzaehler
 Ihr seid gekommen. #sprecher:victor #stimmung:ueberrascht
 * [„Du hast eingeladen.“]
 - Ja. #sprecher:victor #stimmung:nachdenklich
-Er sieht auf seine Schuhe. #sprecher:erzaehler #pause:2
+{rv_Er} sieht auf {rv_sein}e Schuhe. #sprecher:erzaehler #pause:2
 Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor #stimmung:nachdenklich
 -> ankunft_rundgang
 
 // Victor zählt auf, weil Zahlen das Einzige sind, worüber er ohne Mühe redet (Kapitel 31).
 === ankunft_rundgang ===
-Er führt euch über den Campus. Vierzig Stockwerke, die Akademie im zweiten, die Serverhalle unter der Erde. #sprecher:erzaehler
+{rv_Er} führt euch über den Campus. Vierzig Stockwerke, die Akademie im zweiten, die Serverhalle unter der Erde. #sprecher:erzaehler
 Gekühlt mit Meerwasser. #sprecher:victor #stimmung:stolz
-Er gibt nicht an. Zahlen sind das Einzige, worüber er ohne Mühe reden kann. #sprecher:erzaehler
+{rv_Er} gibt nicht an. Zahlen sind das Einzige, worüber {rv_er} ohne Mühe reden kann. #sprecher:erzaehler
 Wohnst du hier? #sprecher:juno #stimmung:ueberrascht
 Im achtunddreißigsten. #sprecher:victor #stimmung:neutral
 Kann man da die Fenster aufmachen? #sprecher:juno #stimmung:nachdenklich
-* [Auf Victors Antwort warten]
-- Victor überlegt. Ernsthaft. #sprecher:erzaehler
+* [Auf {rivale}s Antwort warten]
+- {rivale} überlegt. Ernsthaft. #sprecher:erzaehler
 Ich habe es nie versucht. #sprecher:victor #stimmung:nachdenklich
 -> END
 
@@ -182,12 +192,12 @@ Er hat gesagt, die gehört dem, der Dash zum Schweigen bringt. #sprecher:rosie #
 -> dash_victor
 
 === dash_victor ===
-Victor ist über den Platz gekommen und hat die letzten Züge gesehen. Er hat nichts gegessen. #sprecher:erzaehler
+{rivale} ist über den Platz gekommen und hat die letzten Züge gesehen. {rv_Er} hat nichts gegessen. #sprecher:erzaehler
 Er verliert jeden Tag. Seine Genauigkeit liegt bei sechzig Prozent. #sprecher:victor #stimmung:nachdenklich
 Warum kommt er wieder? #sprecher:victor #stimmung:nachdenklich
-Es ist keine Verachtung in der Frage. Er will es wissen. #sprecher:erzaehler
+Es ist keine Verachtung in der Frage. {rv_Er} will es wissen. #sprecher:erzaehler
 * [„Frag ihn.“]
-- Victor sieht zurück zur Bank. Dash hat schon den Nächsten. #sprecher:erzaehler
+- {rivale} sieht zurück zur Bank. Dash hat schon den Nächsten. #sprecher:erzaehler
 Das kann man nicht messen. #sprecher:victor #stimmung:nachdenklich
 -> END
 

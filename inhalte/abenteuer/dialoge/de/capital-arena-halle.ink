@@ -21,6 +21,16 @@ EXTERNAL oeffneLaden(laden)
 
 VAR finaleTischGesehen = false
 VAR novaHandGesehen = false
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR held = "Du"
 VAR zugerratenTurm = false
 VAR arenaGesehen = false
@@ -102,7 +112,7 @@ VAR pauseNachRunde2Gesehen = false
     Das Turnier ist gespielt. Die Tafel bleibt bis morgen hängen. #sprecher:turnierleiterin #stimmung:laechelt
     -> END
 - else:
-    {vorDemFinaleGesehen:Das Finale spielst du auf der Bühne. Victor sitzt schon im Lichtkreis.|Das Finale spielst du auf der Bühne. Victor wartet im Gang.} #sprecher:turnierleiterin #stimmung:neutral
+    {vorDemFinaleGesehen:Das Finale spielst du auf der Bühne. {rivale} sitzt schon im Lichtkreis.|Das Finale spielst du auf der Bühne. {rivale} wartet im Gang.} #sprecher:turnierleiterin #stimmung:neutral
     -> END
 }
 
@@ -212,15 +222,15 @@ Juno sitzt auf der untersten Stufe der Tribüne, auf jedem Knie ein Tagebuch. #s
     Das geht genau auf. Ich schreib es trotzdem nur mit Bleistift. #sprecher:juno #stimmung:nachdenklich
 }
 Über ihr winkt Slick mit beiden Armen. Tamsin hält ihm von hinten den Mund zu. #sprecher:erzaehler
-Victor kommt von den Tischen am anderen Ende. Seine Runde ist längst vorbei. #sprecher:erzaehler
-Er hält dir eine Wasserflasche hin. #sprecher:erzaehler
+{rivale} kommt von den Tischen am anderen Ende. {rv_Sein}e Runde ist längst vorbei. #sprecher:erzaehler
+{rv_Er} hält dir eine Wasserflasche hin. #sprecher:erzaehler
 Trink. Mein Vater sagt, Wasser zwischen zwei Runden bringt zwölf Elo. #sprecher:victor #stimmung:laechelt
 Er hat es nachgemessen. Leider stimmt es. #sprecher:victor #stimmung:lacht
 * [Trinken]
-- Victor sieht zu Tisch eins. Dort steht schon ein Schild: Sinclair. #sprecher:erzaehler
+- {rivale} sieht zu Tisch eins. Dort steht schon ein Schild: Sinclair. #sprecher:erzaehler
 Spiel gut gegen sie. Richtig gut. #sprecher:victor #stimmung:nachdenklich
 Sie hat es verdient, dass heute jemand gut gegen sie spielt. #sprecher:victor #stimmung:nachdenklich
-Er geht, bevor du fragen kannst, was er meint. #sprecher:erzaehler
+{rv_Er} geht, bevor du fragen kannst, was {rv_er} meint. #sprecher:erzaehler
 Ambrose steht an der Bande und sieht zu, wie die Schiedsrichter die Uhren stellen. #sprecher:erzaehler
 {halbzeit >= 2:
     Geduld gegen Bea, ein stiller Zug gegen Marcus. Du hast nichts Neues gespielt, {held}. #sprecher:ambrose #stimmung:laechelt
@@ -295,12 +305,12 @@ Ich nenne einen Namen, weil er auf den Verträgen steht: Mr. Dorrance, Vertrieb.
 Graham Hale steht bei den Sponsoren, ein Telefon in der Hand und eines am Ohr, und hat beide vergessen. Sein Gesicht ist grau. #sprecher:erzaehler
 Das wusste ich nicht. Ich habe die Engine gebaut. #sprecher:grahamHale #stimmung:ueberrascht
 Für das Training. Ich habe nie … #sprecher:grahamHale #stimmung:ueberrascht
-Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Halle, und stellt sich neben Nova. #sprecher:erzaehler #musik:victor.warm #gehe:victor>nova
+Neben ihm steht {rivale}, im zu großen Pullover. {rv_Er} geht los, quer durch die Halle, und stellt sich neben Nova. #sprecher:erzaehler #musik:victor.warm #gehe:victor>nova
 Nicht vor sie. Neben sie. #sprecher:erzaehler
 Ich hab es gesehen. In Silicon Bay, im Januar. #sprecher:victor #stimmung:bitter
 Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor #stimmung:bitter
 In Summit City hatte ich selbst eines in der Tasche. Ich hab es getragen. #sprecher:victor #stimmung:bitter
-* [Victor ansehen]
+* [{rivale} ansehen]
 - {victorCedarCreekGesehen:Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht.|Ich hab mich jahrelang nicht gefragt, ob mir das Spaß macht. Ich hab ein Jahr für die Frage gebraucht.} #sprecher:victor #stimmung:nachdenklich
 Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. #sprecher:erzaehler
 Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
@@ -425,7 +435,7 @@ Und den nicht einmal allein. #sprecher:ambrose #stimmung:lacht
 // Wohin danach (Wunsch des Autors, 19.11.2026): Victor wartet im Gang hinter der Halle
 // (vor_dem_finale); wer schon dort ist, hört den Satz nicht.
 === halbfinale_zum_gang ===
-{not vorDemFinaleGesehen: Die Turnierleiterin ruft das Finale aus. Victor wartet im Gang hinter der Halle. #sprecher:erzaehler}
+{not vorDemFinaleGesehen: Die Turnierleiterin ruft das Finale aus. {rivale} wartet im Gang hinter der Halle. #sprecher:erzaehler}
 -> END
 
 // ---------------------------------------------------------------- Victor: vor dem Finale und Finale
@@ -450,7 +460,7 @@ Und den nicht einmal allein. #sprecher:ambrose #stimmung:lacht
 ~ vorDemFinaleGesehen = true
 Hinter der Halle ist ein langer, kahler Gang mit Neonlicht und einem Getränkeautomaten. #sprecher:erzaehler #musik:aus #geraeusch:gang
 Du sitzt auf dem Boden und wartest, dass deine Hände aufhören zu zittern. #sprecher:erzaehler
-Am anderen Ende stehen Graham Hale und Victor. Der Gang trägt jedes Wort. #sprecher:erzaehler
+Am anderen Ende stehen Graham Hale und {rivale}. Der Gang trägt jedes Wort. #sprecher:erzaehler
 Graham hält kein Telefon in der Hand. #sprecher:erzaehler
 Acht Jahre habe ich jede Partie nachgerechnet. Ich bin kein Spieler. #sprecher:grahamHale #stimmung:nachdenklich
 Ich bin Ingenieur. Ich kann messen. #sprecher:grahamHale #stimmung:nachdenklich
@@ -460,9 +470,9 @@ Ich wollte nur noch eine. Mit dir. #sprecher:victor #stimmung:bitter
 Ich hab acht Jahre lang jeden Abend gedacht, heute fragt er. #sprecher:victor #stimmung:bitter
 * [Nicht hinsehen]
 - Es ist lange still. #sprecher:erzaehler #pause:2
-Ich habe gerechnet und vergessen, wofür. Entschuldige, Victor. #sprecher:grahamHale #stimmung:nachdenklich #musik:hale.victor
+Ich habe gerechnet und vergessen, wofür. Entschuldige, {rivale}. #sprecher:grahamHale #stimmung:nachdenklich #musik:hale.victor
 Du hörst, wie zwei Menschen einander festhalten, ungeschickt, wie Leute, die es lange nicht getan haben. #sprecher:erzaehler
-Ich spiel heute für mich. Und gegen meinen besten Gegner. #sprecher:victor #stimmung:laechelt
+Ich spiel heute für mich. Und gegen dich. #sprecher:victor #stimmung:laechelt
 Du darfst zugucken. Aber du darfst nichts aufschreiben. #sprecher:victor #stimmung:laechelt
 Ich weiß nicht, ob ich das kann. #sprecher:grahamHale #stimmung:nachdenklich
 Probier's. Es ist luftig. #sprecher:victor #stimmung:laechelt
@@ -496,15 +506,15 @@ Aus der Halle kommt ein Gong. Deine Hände zittern nicht mehr. #sprecher:erzaehl
 // Lektorat 20.11.2026: Nach „Gleich.“ dreht Victor die Taschen nicht ein zweites Mal um.
 {
 - finaleTischGesehen:
-    Victor sitzt im Lichtkreis und wartet. Die Taschen hängen noch nach außen. #sprecher:erzaehler #musik:aus
+    {rivale} sitzt im Lichtkreis und wartet. Die Taschen hängen noch nach außen. #sprecher:erzaehler #musik:aus
 - else:
     ~ finaleTischGesehen = true
     Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
-    Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
+    {rivale} kommt im zu großen Pullover. {rv_Er} dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
 }
 Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 + [„Ich bin bereit.“]
-    Seine Hand ist trocken und warm. #sprecher:erzaehler
+    {rv_Sein}e Hand ist trocken und warm. #sprecher:erzaehler
     ~ beginnePartie("capitalArena.finale")
     -> END
 + [„Gleich.“]
@@ -514,17 +524,17 @@ Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 ~ finaleBesprochen = true
 {
 - ausgangCapitalArenaFinale == "sieg":
-    Victor legt seinen König mit einem Finger um. Die Halle ist still. #sprecher:erzaehler
+    {rivale} legt {rv_sein}en König mit einem Finger um. Die Halle ist still. #sprecher:erzaehler
     Sie weiß noch nicht, was sie gesehen hat. #sprecher:erzaehler
-    Dann fängt er an zu lachen, das helle Lachen von der Bergstation. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Dann fängt {rv_er} an zu lachen, das helle Lachen von der Bergstation. {rv_Er} nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
     Hast du es gesehen? Bis zum Ende? #sprecher:victor #stimmung:lacht
 - ausgangCapitalArenaFinale == "remis":
-    Remis. Victor sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
-    Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Remis. {rivale} sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
+    {rv_Er} nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
     Hast du gesehen, wie wir gespielt haben? #sprecher:victor #stimmung:lacht
 - else:
-    Du legst deinen König um. Victor sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
-    Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Du legst deinen König um. {rivale} sieht auf das Brett und fängt an zu lachen. #sprecher:erzaehler
+    {rv_Er} nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
     Du hast mich gezwungen, gut zu spielen, {held}. Danke. #sprecher:victor #stimmung:lacht
 }
 * {ausgangCapitalArenaFinale == "sieg"} [„Nein. Nur bis zum sechsten Zug. Ich hab gehofft.“]
@@ -533,7 +543,7 @@ Keine Karten. Keine Hilfen. #sprecher:turnierleiterin #stimmung:ernst
 
 // Victors Lauf zum Vater, bei jedem Ausgang (Story-Bibel, Szene 108); Musik victor.lauf.
 === finale_lauf ===
-Er reißt das Formular vom Tisch und rennt. Von der Bühne, durch den Mittelgang, das Blatt hoch über dem Kopf wie eine Fahne. #sprecher:erzaehler #musik:victor.lauf #gehe:victor>halleAusgang>rennt
+{rv_Er} reißt das Formular vom Tisch und rennt. Von der Bühne, durch den Mittelgang, das Blatt hoch über dem Kopf wie eine Fahne. #sprecher:erzaehler #musik:victor.lauf #gehe:victor>halleAusgang>rennt
 Vater! Guck dir an, wie wir gespielt haben! #sprecher:victor #stimmung:lacht
 Das ist die schönste Partie, die ich je … #sprecher:victor #stimmung:lacht
 Der Rest geht unter. Ein Pfiff auf zwei Fingern, eine Trompete, Big Joe brüllt etwas mit „Kumpel“, Mira schreit: „Noch mal! Jetzt!“ #sprecher:erzaehler
@@ -541,7 +551,7 @@ Juno rennt in dich hinein. Sie hat beide Tagebücher verloren und merkt es nicht
 Wie soll ich das denn aufschreiben? #sprecher:juno #stimmung:froh
 * [Über ihre Schulter sehen]
 - Ganz hinten an der Wand steht Ward und hat den Kopf zur Seite gedreht, als stünde jemand neben ihr. #sprecher:erzaehler
-Neben ihr ist ein hellerer Fleck vor der Wand, schmal, hochgeschlossen. Er sieht Victor nach. #sprecher:erzaehler
+Neben ihr ist ein hellerer Fleck vor der Wand, schmal, hochgeschlossen. Er sieht {rivale} nach. #sprecher:erzaehler
 {ausgangCapitalArenaFinale == "sieg":Du kannst ihn nicht hören. Aber du siehst seine Lippen: Er läuft zum Telegrafenamt.|Du kannst ihn nicht hören. Aber du siehst, dass er lächelt.} #sprecher:erzaehler #pause:2
 Die Siegerehrung vergisst du. Es gibt einen Pokal, der zu groß ist, und Hände, viele. #sprecher:erzaehler
 // Wohin danach (Wunsch des Autors, 19.11.2026): der Abschied auf der Treppe vor der Arena.
@@ -670,10 +680,10 @@ Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach –
 === graham_hale ===
 {
 - finaleBesprochen:
-    Mein Sohn hat für sich gespielt. Und ich habe zum ersten Mal einfach nur zugesehen. #sprecher:grahamHale #stimmung:laechelt
+    {rivalin:Meine Tochter|Mein Sohn} hat für sich gespielt. Und ich habe zum ersten Mal einfach nur zugesehen. #sprecher:grahamHale #stimmung:laechelt
 - vorDemFinaleGesehen:
-    Mein Sohn spielt im Finale. Für sich. #sprecher:grahamHale #stimmung:nachdenklich
-    Das hätte ich ihm früher erlauben sollen. #sprecher:grahamHale #stimmung:nachdenklich
+    {rivalin:Meine Tochter|Mein Sohn} spielt im Finale. Für sich. #sprecher:grahamHale #stimmung:nachdenklich
+    Das hätte ich {rv_ihm} früher erlauben sollen. #sprecher:grahamHale #stimmung:nachdenklich
 - aussageGesehen:
     Ich habe nichts gewusst. Das ist keine Ausrede – es ist schlimmer. #sprecher:grahamHale #stimmung:bitter
 - else:
@@ -730,7 +740,7 @@ Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 {ausgangCapitalArenaHalbfinale == "sieg" and not halbfinaleDanachGesehen: -> halbfinale_danach}
 {ausgangCapitalArenaHalbfinale:
 - "sieg": Halbfinale gewonnen. Das Finale spielst du auf der Bühne. #sprecher:turnierleiterin #stimmung:laechelt
-Victor wartet im Gang. #sprecher:turnierleiterin #stimmung:laechelt
+{rivale} wartet im Gang. #sprecher:turnierleiterin #stimmung:laechelt
 - "remis": Halbfinale remis. Für das Finale reicht das nicht. #sprecher:turnierleiterin #stimmung:neutral
 - else: Das Halbfinale ist verloren. #sprecher:turnierleiterin #stimmung:neutral
 }

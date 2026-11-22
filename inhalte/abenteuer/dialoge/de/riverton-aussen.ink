@@ -24,6 +24,16 @@ EXTERNAL gibFund(kennung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL zahle(muenzen)
 // Lastkahn (L3, 14_Akt2_Leben_teil1 4.3): lastkahnFrei setzt Lockport, wenn Ruben Big Joes Brief liest.
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR lastkahnFrei = false
 VAR muenzen = 0
 VAR held = "Du"
@@ -233,27 +243,27 @@ Der Highschools. Die hat noch nie verloren. #sprecher:juno #stimmung:ueberrascht
 - victorRivertonGesehen: -> victor_alltag
 }
 ~ victorRivertonGesehen = true
-Neben dem Podium steht Victor, im selben Weiß, die Hände auf dem Rücken. Auf seiner Jacke steht sein Name. #sprecher:erzaehler
-Ins Mikrofon sagt er drei Sätze. Es sind die Sätze seines Vaters. #sprecher:erzaehler
-Dann kommt er herüber, nicht schnell. #sprecher:erzaehler
+Neben dem Podium steht {rivale}, im selben Weiß, die Hände auf dem Rücken. Auf {rv_sein}er Jacke steht {rv_sein} Name. #sprecher:erzaehler
+Ins Mikrofon sagt {rv_er} drei Sätze. Es sind die Sätze {rv_sein}es Vaters. #sprecher:erzaehler
+Dann kommt {rv_er} herüber, nicht schnell. #sprecher:erzaehler
 {held}. #sprecher:victor #stimmung:kalt
-Er sieht auf deine Jacke. #sprecher:erzaehler
+{rv_Er} sieht auf deine Jacke. #sprecher:erzaehler
 Zwei. #sprecher:victor #stimmung:bitter
 * [„Zwei.“]
 * [Nichts sagen]
-- Er nickt, als trüge er eine Zahl in eine Liste ein. Dann sieht er zu den Tischen. #sprecher:erzaehler
+- {rv_Er} nickt, als trüge {rv_er} eine Zahl in eine Liste ein. Dann sieht {rv_er} zu den Tischen. #sprecher:erzaehler
 Sie machen keine Fehler. Das ist der Punkt. #sprecher:victor #stimmung:bitter
 // Gutachten K2.14: Victors Satz fällt in beiden Zweigen.
 * [„Und das ist gut?“]
-    Er antwortet nicht gleich. Wieder diese Sekunden. #sprecher:erzaehler #pause:2
+    {rv_Er} antwortet nicht gleich. Wieder diese Sekunden. #sprecher:erzaehler #pause:2
     Mein Vater sagt ja. #sprecher:victor #stimmung:nachdenklich
 * [Zu den Tischen sehen]
-    Du fragst nichts. Er sagt es trotzdem, leiser. #sprecher:erzaehler #pause:2
+    Du fragst nichts. {rv_Er} sagt es trotzdem, leiser. #sprecher:erzaehler #pause:2
     Mein Vater sagt, das ist gut. #sprecher:victor #stimmung:nachdenklich
 - -> END
 
 === victor_alltag ===
-Victor steht unter dem Banner und tippt auf ein Tablet. Einmal sieht er zum Pavillon hinüber, dann schnell wieder weg. #sprecher:erzaehler
+{rivale} steht unter dem Banner und tippt auf ein Tablet. Einmal sieht {rv_er} zum Pavillon hinüber, dann schnell wieder weg. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Gegenstände

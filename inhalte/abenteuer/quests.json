@@ -1032,6 +1032,15 @@
               "akt": 2,
               "szene": "akt2.mamasPartie"
             }
+          ],
+          "umwege": [
+            {
+              "wenn": "nicht mamaInKantine",
+              "ziel": {
+                "karte": "mapleFalls.wohnzimmer",
+                "objekt": "mutter"
+              }
+            }
           ]
         }
       ]
@@ -1122,6 +1131,13 @@
             },
             {
               "wenn": "nicht mamaSpielt und nicht mamaFotoGesehen",
+              "ziel": {
+                "karte": "mapleFalls.wohnzimmer",
+                "objekt": "mutter"
+              }
+            },
+            {
+              "wenn": "nicht mamaSpielt und nicht mamaInKantine",
               "ziel": {
                 "karte": "mapleFalls.wohnzimmer",
                 "objekt": "mutter"

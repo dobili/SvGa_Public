@@ -9,6 +9,9 @@
 "use strict";
 const { warte } = require("./gesamtsimulation-uhr.cjs");
 
+/** Läuft die Simulation mit Uhr (SIM_STUNDE)? */
+const mitUhr = (st) => st.stunde !== null && st.stunde !== undefined;
+
 const {
   FOLGE,
   VERSUCHE_JE_ZUSTAND,
@@ -143,8 +146,12 @@ function rueckkehr(welt, st, frist, h, nur = null) {
       // Hauptquest, die nach dem Abspann beginnt (Epilog auf dem Dachboden), zählt mit, sobald ihre
       // Voraussetzungen erledigt sind.
       if ((s && s.fertig) || !ort || Date.now() > frist) continue;
-      if (!s && !(q.haupt && bereit(st, q))) continue;
-      ziele.push(q.ort);
+      // Mit Uhr auch Nebenquests, die noch nicht begonnen sind: Wer sie anstößt, stand beim
+      // Vorbeigehen vielleicht anderswo (die Bläserin sitzt nachts in der Turnhalle, Lauf um 22 Uhr).
+      // Ein Spieler kommt zu einer anderen Tageszeit wieder; kürzer, bis die Quest begonnen ist.
+      const spaeter = !s && !q.haupt && mitUhr(st);
+      if (!s && !(q.haupt && bereit(st, q)) && !spaeter) continue;
+      if (!spaeter) ziele.push(q.ort);
       st.zielOrte = new Set([q.ort, ...nachbarorte(welt, [q.ort])]);
       // Die Startkarte nur, wenn sie im Zielort liegt: Finch-Jagd und verlorene Seiten beginnen
       // auf der Landstraße bei Maple Falls, ihre Schritte liegen aber auf Weg 12 und in Capital.
@@ -159,8 +166,9 @@ function rueckkehr(welt, st, frist, h, nur = null) {
         st,
         h,
         startkarte,
-        st.rueckkehrSchritte || RUECKKEHR_SCHRITTE,
-        () => st.staende.some((x) => x.k === q.kennung && x.fertig),
+        spaeter ? NACHHOLEN_SCHRITTE : st.rueckkehrSchritte || RUECKKEHR_SCHRITTE,
+        () =>
+          st.staende.some((x) => x.k === q.kennung && (x.fertig || spaeter)),
       );
     }
   }

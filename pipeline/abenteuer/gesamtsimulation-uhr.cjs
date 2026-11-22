@@ -43,11 +43,27 @@ function uhrdaten(welt) {
   const gegner = Object.fromEntries(
     lies("begegnungen.json").begegnungen.map((b) => [b.kennung, b.gegner]),
   );
+  // Nachschlagetafeln, damit nachUhr bei jedem objekteJetzt billig bleibt (der Lauf um 22 Uhr
+  // überschritt sonst das Zeitbudget von 300 Sekunden).
+  const dialogfiguren = {};
+  for (const o of welt.orte)
+    for (const f of o.figuren)
+      if (f.dialog)
+        (dialogfiguren[f.dialog] ||= []).push(
+          f.kennung.slice(f.kennung.indexOf(".") + 1),
+        );
+  const aufKarte = {};
+  for (const [p, a] of Object.entries(ablaeufe))
+    for (const b of a.bloecke || [])
+      if (b.karte) (aufKarte[b.karte] ||= new Set()).add(p);
   welt.uhr = {
     ablaeufe,
     steller,
     gegner,
     person: personen(welt.orte, ablaeufe),
+    quest: Object.fromEntries(welt.quests.map((q) => [q.kennung, q])),
+    dialogfiguren,
+    aufKarte,
   };
   return welt.uhr;
 }
@@ -88,7 +104,7 @@ function zielobjekte(welt, st, gilt) {
     .filter((q) => q.haupt && !st.staende.some((s) => s.k === q.kennung))
     .map((q) => ({ k: q.kennung, i: 0 }));
   for (const s of [...laufend, ...kommende]) {
-    const schritt = welt.quests.find((q) => q.kennung === s.k)?.schritte[s.i];
+    const schritt = u.quest[s.k]?.schritte[s.i];
     if (!schritt) continue;
     for (const umweg of schritt.umwege || [])
       if (gilt(st, umweg.wenn) && umweg.ziel.objekt)
@@ -98,10 +114,7 @@ function zielobjekte(welt, st, gilt) {
     if (e.ausloeser) ziele.add(e.ausloeser);
     if (e.art === "aufgaben") ziele.add(name(u.steller[e.runde]));
     if (e.art === "partie") ziele.add(name(u.gegner[e.begegnung]));
-    if (e.knoten)
-      for (const o of welt.orte)
-        for (const f of o.figuren)
-          if (f.dialog === e.knoten) ziele.add(name(f.kennung));
+    for (const n of u.dialogfiguren[e.knoten] || []) ziele.add(n);
   }
   if (laufend.length === 0) for (const z of LUECKENZIELE) ziele.add(z);
   return ziele;
@@ -116,6 +129,11 @@ function nachUhr(welt, st, karte, objekte, gilt) {
   const u = uhrdaten(welt);
   const ort = welt.karteZuOrt[karte];
   if (!ort) return objekte;
+  const heimisch = (o) =>
+    o.typ === "figur" &&
+    u.ablaeufe[u.person[`${ort.kennung}.${o.name}`]]?.ort === ort.kennung;
+  // Niemand mit Ablauf kann hier stehen oder hinkommen: nichts zu tun (spart die Zielsuche).
+  if (!u.aufKarte[karte] && !objekte.some(heimisch)) return objekte;
   const ziele = zielobjekte(welt, st, gilt);
   const fest = new Set();
   for (const f of ort.figuren) {
@@ -133,12 +151,14 @@ function nachUhr(welt, st, karte, objekte, gilt) {
       u.ablaeufe[p].ort === ort.kennung
     );
   };
-  const neu = Object.entries(u.ablaeufe)
-    .filter(([p, a]) => !fest.has(p) && a.bloecke)
+  const neu = [...(u.aufKarte[karte] || [])]
+    .filter((p) => !fest.has(p))
     .filter(
-      ([, a]) => a.bloecke.find((b) => imBlock(b, st.stunde))?.karte === karte,
+      (p) =>
+        u.ablaeufe[p].bloecke.find((b) => imBlock(b, st.stunde))?.karte ===
+        karte,
     )
-    .map(([p]) => ({ name: p, typ: "figur" }));
+    .map((p) => ({ name: p, typ: "figur" }));
   return [...objekte.filter((o) => !beweglich(o)), ...neu];
 }
 

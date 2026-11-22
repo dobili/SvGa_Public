@@ -328,6 +328,18 @@ Profil › Einstellungen › Fehler melden.
       genau auf ihr Feld. Sitzende erscheinen wie im Spiel auf ihrem Stuhl. Bitte etwa Sam im
       Clubraum so stellen, dass die Beine über die Sitzfläche ragen, die Änderungen herunterladen
       und zurückschicken; danach im Spiel nachsehen, ob Sam genauso sitzt.
+- [ ] N2682. **Spieluhr und Warten:** Neuer Spielstand: Es ist Morgen, draußen leicht dämmrig. Im
+      Spielmenü (☰) steht oben „Tag 1, Morgen, 6 Uhr“ mit „Warten … bis Morgen, Mittag, Abend,
+      Nacht“. „bis Nacht“ antippen: Die Welt wird kurz dunkel, dann ist es 22 Uhr, draußen
+      nachtblau, die Leute vom Tag sind fort. An einer Bank bietet der Aktionsknopf „Ausruhen“
+      dieselbe Wahl, am eigenen Bett „Schlafen bis morgen“. Im Tagebuch steht die Tageszeit. Ein
+      Spieltag dauert etwa 2 Stunden Spielzeit; in Gesprächen, Partien, Läden und im Tagebuch steht
+      die Uhr. Wo die Geschichte „Am Abend …“ oder „Nacht.“ erzählt, springt die Uhr dorthin.
+- [ ] N2683. **Räumliche Geräusche:** Im Park von Maple Falls vom Eingang zum Wasserfall gehen: Das
+      Rauschen ist am Eingang leise (deutlich unter der Musik) und wird zum Wasserfall hin
+      gleichmäßig lauter. Aus dem Diner in den Park: Das Rauschen ist kurz laut und sinkt nach etwa
+      4 Sekunden weich. Von der Birch Lane in den Park: kein Anschwellen. Ebenso am Flussweg und am
+      Bach in Cedar Creek. Ist der Grundpegel (12 dB unter der Musik) gut?
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2570,3 +2582,10 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       andere als „Custom“, v3. Die Seite mit Skizze, Prompt, Typ und Animationen je Art liegt dir im
       Chat vor. Die App lädt PixelLab-Tiere, sobald die ersten da sind.
       **Antwort:** „RO48 ok“ oder „RO48: nur Vorrang 1“.
+
+- [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
+      1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
+      2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.
+      3. Brunnen, Bahnhofsuhr, Windrad und Marktstände ohne eigene Geräuschschleife bleiben stumm;
+         hörbar würden sie erst mit einer zweiten Geräuschspur je Karte (mehr Ton zu laden).
+      **Antwort:** „RO49 ok“ oder Nummer mit Wunsch.

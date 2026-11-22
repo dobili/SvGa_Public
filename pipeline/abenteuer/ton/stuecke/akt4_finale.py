@@ -13,6 +13,7 @@ Celesta von ZERO die Glasharfe mit dem Vibraphon, die Synthesizerfläche die Ham
 
 from pipeline.abenteuer.ton.satzplan import Satz, Stimme, Teil
 from pipeline.abenteuer.ton.stuecke import akt4_koepfe as koepfe
+from pipeline.abenteuer.ton.stuecke import akt4_summit as summit
 from pipeline.abenteuer.ton.stuecke.akt4_themen import (
     EINE_MELODIE,
     HELD,
@@ -25,6 +26,7 @@ from pipeline.abenteuer.ton.stuecke.akt4_themen import (
     TONART,
     nur,
 )
+from pipeline.abenteuer.ton.stuecke.maple import GEGEN_ANHEBUNG, mit_spuren
 
 AKT = 4
 
@@ -37,6 +39,26 @@ ARENA_MITTE = Teil(
 TREPPE = tuple(f"t_{k.ort}" for k in koepfe.ALLE)
 FANFARE = nur("a1", "a2", "mitte", "a3")
 VOLL = nur("a2", "mitte", "a3")
+# Spuren der Arena (Klangplan A0): grund die Bläser und Streicher, melodie die Trompete und die
+# Köpfe an der Treppe, zusatz der Marsch (Große Trommel, mono).
+_ARENA_STIMMEN, _ARENA_SPUREN = mit_spuren(
+    (
+        Stimme("horn", "halten", 0.55, -0.3, 0.35, 0, 52, VOLL),
+        Stimme("posaune", "stoss", 0.55, -0.15, 0.3, -1, 54, nur("vor", "a1", "a2", "a3")),
+        Stimme("tuba", "bass_zweier", 0.6, 0.0, 0.25, 0, 56),
+        Stimme("violinen", "halten", 0.5, 0.3, 0.4, 1, 46, VOLL),
+        Stimme("bratschen", "halten", 0.45, 0.2, 0.4, 0, 40),
+        Stimme("kontrabass", "bass_grund", 0.55, 0.0, 0.3, 1, 50, nur("vor", "a1", "a2", "a3")),
+    ),
+    (
+        Stimme("trompete", "melodie", 0.9, 0.1, 0.3, OBEN, 66, FANFARE),
+        *koepfe.stimmen(koepfe.ALLE, "t", 58),
+    ),
+    (
+        Stimme("schlagwerk", "marsch", 0.45, 0.05, 0.25, staerke=56, teile=nur("vor", *FANFARE)),
+        Stimme("schlagwerk", "marsch", 0.3, 0.05, 0.3, staerke=42, teile=nur(*TREPPE)),
+    ),
+)
 ARENA = Satz(
     "arena",
     "Arena",
@@ -51,39 +73,45 @@ ARENA = Satz(
         "a3": ARENA_THEMA,
         **koepfe.teile(koepfe.ALLE, "zwei", "t"),
     },
-    ("vor", "a1", "a2", "mitte", "a3", *TREPPE),
-    (
-        Stimme("trompete", "melodie", 0.9, 0.1, 0.3, OBEN, 66, FANFARE),
-        Stimme("horn", "halten", 0.55, -0.3, 0.35, 0, 52, VOLL),
-        Stimme("posaune", "stoss", 0.55, -0.15, 0.3, -1, 54, nur("vor", "a1", "a2", "a3")),
-        Stimme("tuba", "bass_zweier", 0.6, 0.0, 0.25, 0, 56),
-        Stimme("violinen", "halten", 0.5, 0.3, 0.4, 1, 46, VOLL),
-        Stimme("bratschen", "halten", 0.45, 0.2, 0.4, 0, 40),
-        Stimme("kontrabass", "bass_grund", 0.55, 0.0, 0.3, 1, 50, nur("vor", "a1", "a2", "a3")),
-        Stimme("schlagwerk", "marsch", 0.45, 0.05, 0.25, staerke=56, teile=nur("vor", *FANFARE)),
-        Stimme("schlagwerk", "marsch", 0.3, 0.05, 0.3, staerke=42, teile=nur(*TREPPE)),
-        *koepfe.stimmen(koepfe.ALLE, "t", 58),
-    ),
+    # Ohne Vorspiel: Die Schleife beginnt mit der Fanfare, so gleicht die Nahtkurve auch die
+    # Melodiespur an (ein stummer Anfang bliebe unausgeglichen, A0.6).
+    ("a1", "a2", "mitte", "a3", *TREPPE),
+    _ARENA_STIMMEN,
     akt=AKT,
+    spuren=_ARENA_SPUREN,
+    zusatz="farbe",
     beschreibung="Groß, festlich, menschlich: das Heldenthema als Fanfare, an der Treppe alle Orte.",
 )
 
+# Turnier (Vorrunde, Montage Runde 1 und 2): Steigerung des Kampfthemas von Akt 4 (akt4_summit.py)
+# in G-Dur; im B-Teil singt das Klavier das Thema des Helden, die Trompete ist die Steigerung.
+_TURNIER_B = Teil(f"{HELD.akkorde} | {HELD_OFFEN.akkorde}", f"{HELD.melodie} | {HELD_OFFEN.melodie}")
+_TURNIER_TEILE = {**summit.KAMPF_TEILE, "b": _TURNIER_B}
+_TURNIER_STIMMEN, _TURNIER_SPUREN = mit_spuren(
+    (
+        Stimme("gitarre", "schlagen", 0.6, -0.3, 0.2, 0, 48),
+        Stimme("kontrabass_pizz", "bass_laufend", 0.8, 0.0, 0.15, 1, 62),
+        Stimme("schlagwerk", "schlagzeug", 0.35, 0.2, 0.15, staerke=52),
+    ),
+    (
+        Stimme("gitarre", "melodie", 0.8, -0.2, 0.25, OBEN, 62, summit.MELODIE_TEILE),
+        Stimme("klavier", "melodie", 0.65 * GEGEN_ANHEBUNG, 0.2, 0.3, OBEN, 56, nur("b")),
+    ),
+    (Stimme("trompete", "melodie", 0.5, 0.1, 0.3, OBEN, 58),),
+)
 ARENA_VORRUNDE = Satz(
     "arena.vorrunde",
     "Arena, Vorrunde",
     TONART,
-    100,
+    132,
     4,
-    {"h": HELD, "o": HELD_OFFEN},
-    ("h", "o", "h", "o"),
-    (
-        Stimme("gitarre", "melodie", 0.8, -0.2, 0.25, OBEN, 58, nur("h")),
-        Stimme("klavier", "melodie", 0.8, 0.2, 0.3, OBEN, 54, nur("o")),
-        Stimme("gitarre", "travis", 0.6, -0.3, 0.25, 0, 42),
-        Stimme("klavier", "tupfen", 0.35, 0.2, 0.3, -1, 34),
-    ),
+    _TURNIER_TEILE,
+    summit.FORM,
+    _TURNIER_STIMMEN,
     akt=AKT,
-    beschreibung="Fortschritt: das Thema des Helden als kurze, gleichmäßige Schleife, Gitarre und Klavier.",
+    spuren=_TURNIER_SPUREN,
+    zusatz="steigerung",
+    beschreibung="Fortschritt: das Kampfthema von Akt 4 gesteigert, im B-Teil das Thema des Helden.",
 )
 
 # Nova: erst nur ♯4 – 5, zögernd (der Konzernton über A-Dur, aufgelöst in den G-Dur-Akkord),

@@ -3908,7 +3908,8 @@
           "datei": "karten/hochebene-felsentuerme.json",
           "name": "ort.hochebene.felsentuerme",
           "innen": false,
-          "musik": "musik/hochebene.m4a"
+          "musik": "musik/hochebene.m4a",
+          "musik_nacht": "musik/hochebene.nacht.m4a"
         },
         {
           "kennung": "hochebene.schule",
@@ -3916,6 +3917,7 @@
           "name": "ort.hochebene.schule",
           "innen": false,
           "musik": "musik/hochebene.m4a",
+          "musik_nacht": "musik/hochebene.nacht.m4a",
           "zustaende": {
             "nicht annekSchachGelernt": "karten/hochebene-schule-vor-diplom.json"
           }
@@ -4043,7 +4045,8 @@
           "datei": "karten/summit-city-aussen.json",
           "name": "ort.summitCity.aussen",
           "innen": false,
-          "musik": "musik/summit-city.m4a"
+          "musik": "musik/summit-city.m4a",
+          "musik_nacht": "musik/summit-city.nacht.m4a"
         },
         {
           "kennung": "summitCity.huette",
@@ -4054,14 +4057,15 @@
             "wenn": "nicht huetteBetreten"
           },
           "innen": true,
-          "musik": "musik/summit-city.m4a"
+          "musik": "musik/summit-city.lernen.m4a"
         },
         {
           "kennung": "summitCity.bergstation",
           "datei": "karten/summit-city-bergstation.json",
           "name": "ort.summitCity.bergstation",
           "innen": true,
-          "musik": "musik/summit-city.m4a"
+          "musik": "musik/summit-city.m4a",
+          "musik_nacht": "musik/summit-city.nacht.m4a"
         },
         {
           "kennung": "summitCity.bergladen",

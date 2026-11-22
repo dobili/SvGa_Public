@@ -75,9 +75,16 @@ def verstimme(ton: np.ndarray, halbtoene: int) -> np.ndarray:
     return np.stack([np.interp(neu, alt, ton[:, kanal]) for kanal in range(2)], axis=1).astype(np.float32)
 
 
-def note_klang(note: Note, stueck: Stueck, instrument: str, je_ton: dict[int, list[Path]]) -> np.ndarray:
-    """Der Klang einer Note: Probe, verstimmt, nach Notenende im Ausklang des Instruments abgedämpft."""
-    pfad, halbtoene = waehle(je_ton, note.tonhoehe, note.staerke)
+def note_klang(
+    note: Note, stueck: Stueck, instrument: str, je_ton: dict[int, list[Path]], stufe: int | None = None
+) -> np.ndarray:
+    """Der Klang einer Note: Probe, verstimmt, nach Notenende im Ausklang des Instruments abgedämpft.
+
+    ``stufe`` legt die Anschlagstufe der Aufnahme fest (Spur.stufe); ohne sie wählt die Stärke der
+    Note. Warum: Schwankte die Stärke um eine Stufengrenze, sprang die Note in eine lautere Aufnahme,
+    bis zu 16 dB (Lautheit, Klangplan A0.6, 22.11.2026).
+    """
+    pfad, halbtoene = waehle(je_ton, note.tonhoehe, note.staerke if stufe is None else stufe)
     ton = verstimme(lade_probe(pfad), halbtoene)
     ende = int(stueck.sekunden(note.dauer) * ABTASTRATE)
     ausklang = int(INSTRUMENTE[instrument].ausklang * ABTASTRATE)
@@ -164,7 +171,7 @@ def _roh(spur: Spur, stueck: Stueck, wurzel: Path, laenge: int) -> np.ndarray:
         if spur.instrument == SCHLAGWERK:
             klang = schlag_klang(note, index, wurzel)
         else:
-            klang = note_klang(note, stueck, spur.instrument, je_ton)
+            klang = note_klang(note, stueck, spur.instrument, je_ton, spur.stufe)
         versatz = zufall.uniform(0, spur.streuung) if spur.streuung else 0.0
         start = int((stueck.sekunden(note.beginn) + versatz) * ABTASTRATE)
         stueckchen = klang[: max(0, laenge - start)]

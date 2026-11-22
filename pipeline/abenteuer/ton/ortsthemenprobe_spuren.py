@@ -137,7 +137,23 @@ def baue_version2(ziel: Path) -> str:
     sekunden = len(next(iter(maple.values()))) / ABTASTRATE
     laengen = {len(t) for t in [*maple.values()]} | {0}
     print(f"Spuren Maple Falls: {sorted(maple)}; gleiche Länge: {len(laengen) == 2} ({sekunden:.1f} s)")
-    return abschnitt(ordner, maple, kampf, sekunden)
+    return abschnitt(ordner, maple, kampf, sekunden) + mischungen_gemessen(maple, kampf, ABTASTRATE)
+
+
+def mischungen_gemessen(maple: dict, kampf: dict, rate: int) -> str:
+    """Jede Voreinstellung des Mischpults gemessen (Klangplan A0.6): Werte und Lautheitskurve."""
+    from pipeline.abenteuer.ton.lautheit import kurve_svg, kurzbeschreibung, miss_ton
+
+    zeilen = []
+    for spuren, lagen, kampfthema in ((maple, MAPLE_LAGEN, False), (kampf, KAMPF_LAGEN, True)):
+        for name, lage in lagen.items():
+            messung = miss_ton(mische(spuren, lage), rate, name, kampfthema)
+            print(f"  Mischung {name}: {kurzbeschreibung(messung)}")
+            zeilen.append(
+                f"<p><small>{html.escape(name)}: {html.escape(kurzbeschreibung(messung))}</small></p>"
+            )
+            zeilen.append(kurve_svg(messung))
+    return f"<section><h2>Lautheit der Mischungen</h2>{''.join(zeilen)}</section>"
 
 
 def _speicher(ordner: Path, spuren: dict, praefix: str, sekunden: float) -> str:

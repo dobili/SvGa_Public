@@ -9,9 +9,8 @@ weg, und im Clubkampf kommt je Sieg eine Spur dazu.
 Damit die App die Spuren übereinanderlegen kann, gilt:
 - Jede Spur hat genau die Länge der Form (Schleife, Nachklang an den Anfang gelegt wie in
   sampler.rendere); dieselbe Anzahl Abtastwerte, also laufen sie ohne Versatz zusammen.
-- Alle Spuren eines Stücks bekommen dieselbe Verstärkung, gemessen an der vollen Mischung
-  (ZIEL_RMS_DB wie musikbau.angleichen, aber linear, ohne Begrenzer je Spur): Die Summe der Spuren
-  ist genau die volle Mischung.
+- Jede Spur wird für sich sanft verdichtet; alle bekommen dieselbe Verstärkung, gemessen an der
+  vollen Mischung (lautheit.py, −18 LUFS): Die Summe der Spuren ist genau die volle Mischung.
 
 Rolle im Gesamtbild: Werkzeug für ortsthemenprobe.py (Version 2). Abhängigkeiten: numpy, sampler.py,
 satzplan.py, musikbau.py (Pegelziel).
@@ -19,7 +18,7 @@ satzplan.py, musikbau.py (Pegelziel).
 
 from pathlib import Path
 
-from pipeline.abenteuer.ton.musikbau import PROBEN, SPITZE_DB, ZIEL_RMS_DB
+from pipeline.abenteuer.ton.musikbau import PROBEN
 from pipeline.abenteuer.ton.satzplan import Satz, baue
 
 # Dekodierter Puffer im Browser: 48 kHz, 4 Byte je Wert (Web Audio rechnet in float32).
@@ -49,7 +48,7 @@ def rendere_spuren(satz: Satz, gruppen: dict[str, tuple[int, ...]]):  # noqa: AN
             spur = stueck.spuren[i]
             summe += mit_hall(rendere_spur(spur, stueck, PROBEN, laenge), spur.hall, antwort)
         spuren[name] = _als_schleife(summe, form)
-    return _gemeinsam_angeglichen(spuren)
+    return _gemeinsam_angeglichen(spuren, ABTASTRATE)
 
 
 def _als_schleife(ton, form: int):  # noqa: ANN001, ANN202 (numpy)
@@ -62,15 +61,20 @@ def _als_schleife(ton, form: int):  # noqa: ANN001, ANN202 (numpy)
     return ton
 
 
-def _gemeinsam_angeglichen(spuren: dict):  # noqa: ANN202 (numpy)
-    """Eine Verstärkung für alle Spuren: volle Mischung auf ZIEL_RMS_DB, Spitze höchstens SPITZE_DB."""
-    import numpy as np
+def _gemeinsam_angeglichen(spuren: dict, rate: int = 44_100):  # noqa: ANN202 (numpy)
+    """Jede Spur sanft verdichtet, dann eine Verstärkung für alle, gemessen an der vollen Mischung.
 
-    voll = sum(spuren.values())
-    rms = float(np.sqrt(np.mean(voll**2))) or 1e-9
-    spitze = float(np.max(np.abs(voll))) or 1e-9
-    faktor = min(10 ** (ZIEL_RMS_DB / 20) / rms, 10 ** (SPITZE_DB / 20) / spitze)
-    return {name: ton * faktor for name, ton in spuren.items()}
+    Gleichmäßige Lautheit (Klangplan A0.6, lautheit.py): Jede Spur bekommt ihre eigene
+    Verdichtungskurve, denn die App spielt auch dünne Mischungen (nur Begleitung und Bass), deren
+    Spitzen eine Kurve aus der vollen Mischung nicht abfinge. Der Faktor ist für alle Spuren gleich
+    (volle Mischung auf −18 LUFS, Spitze höchstens −3 dBTP); die Summe der Spuren ist die volle
+    Mischung.
+    """
+    from pipeline.abenteuer.ton.lautheit import verdichtungskurve, zielfaktor
+
+    verdichtet = {name: ton * verdichtungskurve(ton, rate) for name, ton in spuren.items()}
+    faktor = zielfaktor(sum(verdichtet.values()), rate)
+    return {name: ton * faktor for name, ton in verdichtet.items()}
 
 
 def mische(spuren: dict, pegel: dict[str, float]):  # noqa: ANN201 (numpy)

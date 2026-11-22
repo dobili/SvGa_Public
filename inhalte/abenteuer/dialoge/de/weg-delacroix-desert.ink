@@ -222,7 +222,7 @@ Ich hatte Angst, du würdest es so schlecht machen wie ich. Jetzt kannst du zäh
 Jetzt zeige ich es dir. #sprecher:ambrose #stimmung:nachdenklich
 Ein Opfer ist kein Geschenk und kein Kunststück. Es ist ein Tausch. #sprecher:ambrose #stimmung:nachdenklich
 Holz gegen Zeit, Raum oder einen König im Freien. #sprecher:ambrose #stimmung:nachdenklich
-Erste Frage: Wie viele Angreifer am König, wie viele Verteidiger? Du brauchst mehr. #sprecher:ambrose #stimmung:nachdenklich
+Erste Frage: Wie viele Angreifer am König, wie viele Verteidiger? Du brauchst mehr. #sprecher:ambrose #stimmung:nachdenklich #brett:angreiferzaehlen
 Zweite Frage: Hat er einen Zug, der alles hält? Den suchst du. #sprecher:ambrose #stimmung:nachdenklich
 Für ihn. So gründlich, als wärst du er. #sprecher:ambrose #stimmung:nachdenklich
 * [„Und wenn ich ihn nicht finde?“]

@@ -2,15 +2,15 @@
  * Startkarte des Abenteuers und Namensfeld (ausgelagert aus AbenteuerAnsicht.tsx, 22.11.2026).
  *
  * Die Startkarte lädt das Paket oder beginnt das Spiel; vor dem ersten Start wählt der Leser
- * seinen Namen (Dokument 02: Name wählbar, Dialoge geschlechtsneutral) und die Figur, Held oder
- * Heldin (Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Das Namensfeld nutzt auch das Spielmenü.
+ * seinen Namen (Dokument 02: Name wählbar, Dialoge geschlechtsneutral), die Figur (Held oder
+ * Heldin) und den Rivalen (Victor oder Victoria; Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Das Namensfeld nutzt auch das Spielmenü.
  * Abhängigkeiten: i18n, groesse.ts, Heldwahl.tsx, schnittstelle/paket.ts.
  */
 import { t } from "../../i18n/sprache";
 import type { Paketzustand } from "../schnittstelle/paket";
 import type { Heldfigur } from "../schnittstelle/spielstand";
 import { groessentext, mbText } from "./groesse";
-import { Heldwahl } from "./Heldwahl";
+import { Heldwahl, Rivalwahl } from "./Heldwahl";
 
 /** Längster Name des Helden (passt in die Dialogzeile). */
 export const NAME_HOECHSTENS = 16;
@@ -47,6 +47,8 @@ export function Startkarte({
   beiName,
   figur,
   beiFigur,
+  rivalin,
+  beiRivalin,
   beiLaden,
   beiStart,
 }: {
@@ -63,6 +65,9 @@ export function Startkarte({
   /** Gewählte Figur (Held oder Heldin), nur vor dem ersten Start. */
   figur: Heldfigur;
   beiFigur: (figur: Heldfigur) => void;
+  /** Rivalin Victoria statt Rivale Victor (nach der Heldenwahl). */
+  rivalin: boolean;
+  beiRivalin: (rivalin: boolean) => void;
   beiLaden: () => void;
   beiStart: () => void;
 }) {
@@ -91,6 +96,7 @@ export function Startkarte({
         <>
           <Namensfeld name={name} beiAenderung={beiName} />
           <Heldwahl figur={figur} beiWahl={beiFigur} />
+          <Rivalwahl rivalin={rivalin} beiWahl={beiRivalin} />
         </>
       )}
       {!geprueft ? (

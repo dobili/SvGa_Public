@@ -10,6 +10,16 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR moGetroffen = false
 VAR ausgangCapitalArenaKreidenacht1 = ""
 VAR ausgangCapitalArenaKreidenacht2 = ""
@@ -89,11 +99,11 @@ Hat kein Wort gesagt, aber seine Uhr läuft schon. #sprecher:mo #stimmung:nachde
 
 === mo_victor ===
 ~ kreidenachtErledigt = true
-Nach dem letzten Zug zieht dein Gegner die Kapuze vom Kopf. Es ist Victor. #sprecher:erzaehler
+Nach dem letzten Zug zieht dein Gegenüber die Kapuze vom Kopf. Es ist {rivale}. #sprecher:erzaehler
 {ausgangCapitalArenaKreidenacht3:
-- "sieg": Er hat verloren und lächelt dabei. #sprecher:erzaehler
-- "remis": Er hält dir die Hand hin, bevor die Uhr ganz steht. #sprecher:erzaehler
-- "niederlage": Er hat gewonnen und sieht aus, als hätte er etwas geschenkt bekommen. #sprecher:erzaehler
+- "sieg": {rv_Er} hat verloren und lächelt dabei. #sprecher:erzaehler
+- "remis": {rv_Er} hält dir die Hand hin, bevor die Uhr ganz steht. #sprecher:erzaehler
+- "niederlage": {rv_Er} hat gewonnen und sieht aus, als hätte {rv_er} etwas geschenkt bekommen. #sprecher:erzaehler
 }
 Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. #sprecher:victor #stimmung:nachdenklich
 Hier spiele ich nur. #sprecher:victor #stimmung:nachdenklich
@@ -110,7 +120,7 @@ Und für die Uhr. #sprecher:mo #stimmung:laechelt
 
 === mo_danach ===
 {abschiedGesehen:
-    {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Victor sagt, er kommt wieder. Wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
+    {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|{rivale} sagt, {rv_er} kommt wieder. Wegen der Limonade.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 - else:
     {~Nächstes Jahr wieder. Andere Station, gleiche Kreide.|Wer eine Mauer findet, malt einen Springer. So finden wir uns.} #sprecher:mo #stimmung:laechelt
 }

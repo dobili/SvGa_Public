@@ -14,6 +14,16 @@
 EXTERNAL oeffneLaden(kennung)
 EXTERNAL reise(karte, ausloeser)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR held = "Du"
 VAR ankunftCrossroadsGesehen = false
 VAR novaBitteGehoert = false
@@ -152,7 +162,7 @@ Viertes Brett! Du stehst auf einem Plakat! #sprecher:coachDelgado #stimmung:lach
 Mit Ketchup! #sprecher:coachDelgado #stimmung:lacht
 * [„Was ist mit dem Bildschirm im Clubraum?“]
 - Sie wird nicht verlegen. Sie sieht dich gerade an. #sprecher:erzaehler
-Ich hab unterschrieben. Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. #sprecher:coachDelgado #stimmung:nachdenklich
+Ich hab unterschrieben. Im September, in der Woche, nachdem {rivalin:das Mädchen|der Junge} mit dem Tablet bei uns war. #sprecher:coachDelgado #stimmung:nachdenklich
 Wir hatten kein Geld für die Liga. Die haben die Busse bezahlt, die Bretter und das Startgeld für sieben Kinder. #sprecher:coachDelgado #stimmung:nachdenklich
 Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. #sprecher:coachDelgado #stimmung:bitter
 Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado #stimmung:laechelt

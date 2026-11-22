@@ -20,6 +20,8 @@ import { tonregie } from "../ton/tonregie";
 import { pausendauer } from "./dialogtakt";
 import { Grossansicht } from "./Grossansicht";
 import { bildpfad } from "./grossbild";
+import { Brettbeispiel } from "./Brettbeispiel";
+import { brettmarke } from "./brettmarke";
 import { Portraet } from "./Portraet";
 import { erscheinungDesPortraets } from "../regeln/geist";
 import { useDialogfokus } from "./useDialogfokus";
@@ -167,6 +169,8 @@ export function Dialog({
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;
   const sprecher = zeile?.tags.sprecher ?? ERZAEHLER;
   const bild = zeile ? bildpfad(zeile.tags) : null;
+  // Ein Brettbeispiel zur Zeile (#brett:kennung), wenn die Figur ein Konzept zeigt.
+  const brett = zeile ? brettmarke(zeile.tags) : null;
   const textWeiter = schritt.art !== "wahl" && !wartet;
   return (
     <section
@@ -180,6 +184,7 @@ export function Dialog({
       data-testid="abenteuer-dialog"
     >
       {bild && <Grossansicht pfad={bild} />}
+      {brett && !bild && <Brettbeispiel marke={brett} />}
       {sprecher !== ERZAEHLER && (
         <div
           className="abenteuer-dialog-kopf"

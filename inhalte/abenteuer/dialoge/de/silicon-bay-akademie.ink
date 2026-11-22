@@ -23,6 +23,16 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR held = "Du"
 VAR linGetroffen = false
 VAR theoGetroffen = false
@@ -74,8 +84,8 @@ VAR abschiedGesehen = false
 Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. #sprecher:erzaehler
 Es riecht nach nichts. #sprecher:erzaehler
 Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler #gehe:lin>held
-Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. #sprecher:lin #stimmung:froh
-Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
+Du bist das Kind mit den vier Nadeln. {rivale} hat von dir erzählt. #sprecher:lin #stimmung:froh
+{rv_Er} erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
 * [„Vier. Fünf bald.“]
 - Ich bringe hier Kindern Schach bei. Vierzig im Jahr. #sprecher:lin #stimmung:laechelt
 Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin #stimmung:laechelt
@@ -197,7 +207,7 @@ Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #
 
 === theo_karte ===
 ~ lernkarteZielkompass = true
-Zentrum, Entwicklung, König. Alle drei, jedes Mal. #sprecher:theo #stimmung:nachdenklich
+Zentrum, Entwicklung, König. Alle drei, jedes Mal. #sprecher:theo #stimmung:nachdenklich #brett:zentrum
 Das hat nicht jeder. #sprecher:theo #stimmung:nachdenklich
 {hatKarteZielkompass:
     Er hält dir eine Karte hin und sieht dann, dass du sie schon hast. Er nickt, als hätte er das erwartet. #sprecher:erzaehler
@@ -218,7 +228,7 @@ Bei jedem deiner Züge zuckt auf seinem Bildschirm eine Linie. #sprecher:erzaehl
 Einundsiebzig Prozent. Genauigkeit. #sprecher:theo #stimmung:nachdenklich
 Das ist … menschlich. #sprecher:theo #stimmung:nachdenklich
 * [„Ist das gut?“]
-- Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. #sprecher:theo #stimmung:nachdenklich
+- Der Durchschnitt eines sehr guten Vereinsspielers. {rivale} hat neunundachtzig. #sprecher:theo #stimmung:nachdenklich
 Nova im Turnier achtundneunzig. #sprecher:theo #stimmung:nachdenklich
 Er runzelt die Stirn über der letzten Zahl. Nur kurz. #sprecher:erzaehler
 Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren – hier. #sprecher:theo #stimmung:nachdenklich

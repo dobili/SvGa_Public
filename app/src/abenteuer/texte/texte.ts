@@ -13,6 +13,7 @@
  */
 import de from "../../../../inhalte/abenteuer/texte/de.json";
 import { liesPaketJson } from "../paket/paketlader";
+import { rivalformen } from "../regeln/rivalform";
 import { Spielfehler } from "../schnittstelle/spielfehler";
 
 export type Spieltextschluessel = keyof typeof de;
@@ -71,7 +72,21 @@ export function tSpiel(
   werte: Readonly<Record<string, string | number>> = {},
 ): string {
   const text = uebersetzung[schluessel] ?? TEXTE[schluessel] ?? schluessel;
-  return text.replace(/\{(\w+)\}/g, (_, name: string) => String(werte[name] ?? `{${name}}`));
+  if (!text.includes("{")) return text;
+  const alle: Readonly<Record<string, string | number>> = { ...formenquelle(), ...werte };
+  return text.replace(/\{(\w+)\}/g, (_, name: string) => String(alle[name] ?? `{${name}}`));
+}
+
+/** Woher die festen Platzhalter kommen (Rivale oder Rivalin); ohne Spielstand Victor. */
+let formenquelle: () => Readonly<Record<string, string>> = () => rivalformen(false);
+
+/**
+ * Verbindet die festen Platzhalter der Spieltexte mit dem Spielstand: {rivale}, {rv_er} … nach
+ * der Wahl Rivale oder Rivalin (regeln/rivalform.ts). Aufruf einmal in modul/abenteuer.tsx.
+ * Beispiel: „Das Finale gegen {rivale} spielen.“ → „… gegen Victoria …“, wenn sie gewählt ist.
+ */
+export function verbindeTextformen(quelle: () => Readonly<Record<string, string>>): void {
+  formenquelle = quelle;
 }
 
 /** Gibt es diesen Text? Für Listen mit Lücken, etwa die Antworten der Gegner auf Sprüche. */

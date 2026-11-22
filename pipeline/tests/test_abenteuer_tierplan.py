@@ -73,3 +73,15 @@ def test_daten_sind_vollstaendig():
         assert art.typ in ("quadruped", "custom")
         assert (art.typ, art.bewegung) in ts.BEWEGUNG
         assert art.motiv in ts.prompt(art)
+
+
+def test_maschinen_ohne_tierzusatz():
+    """Roboter und Drohne: Maschinenstil, Tiermerkmale im Negativ (sonst Fuchs-Wesen, 22.11.2026)."""
+    ts = pytest.importorskip("pipeline.abenteuer.tierplan_seite")  # zeichnet mit Pillow
+    for name in ts.MASCHINEN:
+        art = ARTEN[name]
+        assert "animal" not in ts.prompt(art) and "machine" in ts.prompt(art)
+        assert "fur" in ts.negativ(art)
+    assert "ears" in ts.negativ(ARTEN["kehrroboter"])
+    assert "ears" not in ts.negativ(ARTEN["roboterhund"])
+    assert ts.negativ(ARTEN["katze"]) == ts.NEGATIV

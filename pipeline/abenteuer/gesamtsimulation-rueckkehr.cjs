@@ -7,11 +7,16 @@
 // damit eine Quest in Crossroads ihren Schritt auf dem Jahrmarkt erreicht.
 // Die Schritte (besucheKarte, waehleWeg, imZiel) kommen aus gesamtsimulation.cjs.
 "use strict";
+const { warte } = require("./gesamtsimulation-uhr.cjs");
+
+/** Läuft die Simulation mit Uhr (SIM_STUNDE)? */
+const mitUhr = (st) => st.stunde !== null && st.stunde !== undefined;
 
 const {
   FOLGE,
   VERSUCHE_JE_ZUSTAND,
   betrete,
+  gilt,
   gross,
 } = require("./gesamtsimulation-regeln.cjs");
 const { straenge } = require("./gesamtsimulation-sammlung.cjs");
@@ -64,9 +69,12 @@ function bleibe(welt, st, h, start, schritte, fertig) {
       .besucheKarte(welt, st)
       .filter((w) => st.zuFuss || h.imZiel(welt, st, w.ziel?.karte));
     h.waehleWeg(welt, st, drinnen, n + 1e6);
-    if (n % NEUER_VERSUCH_ALLE === 0)
+    if (n % NEUER_VERSUCH_ALLE === 0) {
       for (const k of Object.keys(st.versuche))
         st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
+      // Mit Uhr wartet der Spieler auch hier bis zur nächsten Phase (gesamtsimulation-uhr.cjs).
+      warte(st);
+    }
   }
 }
 
@@ -123,6 +131,17 @@ function sammeln(welt, st, frist, h) {
 }
 
 /**
+ * Karte des ersten Umwegs, der für den laufenden Schritt gerade gilt (quests.json, `umwege`), oder
+ * null: Der Spieler folgt dem Pfeil. Beispiel: Mamas Partie in Ironwood, aber Mama ist noch zu Hause
+ * (nicht mamaInKantine) → hin ins Wohnzimmer in Maple Falls (Lauf um 22 Uhr, 22.11.2026).
+ */
+function umwegkarte(st, q, s) {
+  const schritt = s && q.schritte[s.i];
+  const umweg = (schritt?.umwege || []).find((u) => gilt(st, u.wenn));
+  return umweg ? umweg.ziel.karte : null;
+}
+
+/**
  * Mit der Monatskarte zu jedem Ort mit offener Quest, bis sie fertig ist; gibt die Ziele zurück.
  * Mit `nur` (Menge von Quest-Kennungen) nur zu diesen Quests.
  */
@@ -139,14 +158,21 @@ function rueckkehr(welt, st, frist, h, nur = null) {
       // Hauptquest, die nach dem Abspann beginnt (Epilog auf dem Dachboden), zählt mit, sobald ihre
       // Voraussetzungen erledigt sind.
       if ((s && s.fertig) || !ort || Date.now() > frist) continue;
-      if (!s && !(q.haupt && bereit(st, q))) continue;
-      ziele.push(q.ort);
+      // Mit Uhr auch Nebenquests, die noch nicht begonnen sind: Wer sie anstößt, stand beim
+      // Vorbeigehen vielleicht anderswo (die Bläserin sitzt nachts in der Turnhalle, Lauf um 22 Uhr).
+      // Ein Spieler kommt zu einer anderen Tageszeit wieder; kürzer, bis die Quest begonnen ist.
+      const spaeter = !s && !q.haupt && mitUhr(st);
+      if (!s && !(q.haupt && bereit(st, q)) && !spaeter) continue;
+      if (!spaeter) ziele.push(q.ort);
+      const umweg = umwegkarte(st, q, s);
       st.zielOrte = new Set([q.ort, ...nachbarorte(welt, [q.ort])]);
+      if (umweg) st.zielOrte.add(welt.karteZuOrt[umweg]?.kennung);
       // Die Startkarte nur, wenn sie im Zielort liegt: Finch-Jagd und verlorene Seiten beginnen
       // auf der Landstraße bei Maple Falls, ihre Schritte liegen aber auf Weg 12 und in Capital.
       const imOrt =
         q.start?.karte && welt.karteZuOrt[q.start.karte]?.kennung === q.ort;
-      const startkarte = imOrt ? q.start.karte : ort.karten[0].kennung;
+      const startkarte =
+        umweg || (imOrt ? q.start.karte : ort.karten[0].kennung);
       hin(welt, st, startkarte);
       // Quests mit mehreren Partien (drei Sets Schach960) brauchen je Partie mehrere Anläufe.
       // st.rueckkehrSchritte: kürzer in der Chaos-Prüfung, damit 200 Läufe in die Zeit passen.
@@ -155,8 +181,9 @@ function rueckkehr(welt, st, frist, h, nur = null) {
         st,
         h,
         startkarte,
-        st.rueckkehrSchritte || RUECKKEHR_SCHRITTE,
-        () => st.staende.some((x) => x.k === q.kennung && x.fertig),
+        spaeter ? NACHHOLEN_SCHRITTE : st.rueckkehrSchritte || RUECKKEHR_SCHRITTE,
+        () =>
+          st.staende.some((x) => x.k === q.kennung && (x.fertig || spaeter)),
       );
     }
   }

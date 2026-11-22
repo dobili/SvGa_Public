@@ -55,6 +55,7 @@ def test_spuren_gruppen_decken_alle_stimmen_genau_einmal():
 
 def test_gemeinsame_verstaerkung_und_speicher():
     np = pytest.importorskip("numpy")  # in Actions nicht installiert
+    pytest.importorskip("scipy")  # die Lautheitsmessung (ton/lautheit.py) braucht es
 
     from pipeline.abenteuer.ton.spuren import _gemeinsam_angeglichen, puffer_mb
 

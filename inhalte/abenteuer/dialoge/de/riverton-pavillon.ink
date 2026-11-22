@@ -79,7 +79,7 @@ VAR revancheRiverton = false
 ~ slickGetroffen = true
 Steintische mit eingelassenen Brettern, glatt gespielt von sehr vielen Händen. An jedem schlagen zwei Leute auf die Uhren. #sprecher:erzaehler
 Mittendrin einer mit Kuriertasche, ein Bein über der Bank. Er spielt, ohne hinzusehen, und redet dabei. #sprecher:erzaehler
-Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. #sprecher:slick #stimmung:froh
+Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. #sprecher:slick #stimmung:froh #brett:bauerngabel.1
 Schade um deinen Turm. #sprecher:slick #stimmung:froh
 Er schlägt auf die Uhr. Dann sieht er euch. #sprecher:erzaehler
 Kundschaft! #sprecher:slick #stimmung:lacht
@@ -249,7 +249,7 @@ Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
 === tamsin_erstes_treffen ===
 ~ tamsinGetroffen = true
 Ein Mädchen mit Schachuhr unter dem Arm zählt laut rückwärts, während Slick zieht. #sprecher:erzaehler
-Fünf, vier, drei, zwei – Gabel! Siehst du? #sprecher:tamsin #stimmung:froh
+Fünf, vier, drei, zwei – Gabel! Siehst du? #sprecher:tamsin #stimmung:froh #brett:damengabel
 Nicht nachdenken. Gucken – ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
 -> tamsin_reihe
 

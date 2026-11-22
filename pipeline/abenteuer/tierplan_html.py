@@ -69,7 +69,7 @@ def _karte(e: dict, privat: Path) -> str:
         f"<tr><th>PixelLab</th><td>Create from Text · {a.typ.capitalize()} · v3 "
         "(8 Richtungen)</td></tr></table>"
     )
-    zeilen.append(f"<code>{html.escape(ts.prompt(a))}\nNegativ: {html.escape(ts.NEGATIV)}</code>")
+    zeilen.append(f"<code>{html.escape(ts.prompt(a))}\nNegativ: {html.escape(ts.negativ(a))}</code>")
     anim = "".join(
         f"<li>{html.escape(n)}: {html.escape(w)}{' – „' + html.escape(t) + '“' if t else ''}</li>"
         for n, w, t in e["anim"]

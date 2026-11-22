@@ -10,6 +10,16 @@
 //
 // Variablen: kerzeGesehen (für ghost-town-saloon.ink) und die Zählung setzt diese Datei.
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR kerzeGesehen = false
 VAR kerzeRichtig = 0
 
@@ -144,6 +154,6 @@ Er hat einem Fremden drei Tage die Stirn gekühlt. #sprecher:ambrose #stimmung:l
 Hundertsechzig Jahre habe ich an Hale gedacht. Jeden Tag. #sprecher:ambrose #stimmung:nachdenklich
 Und nicht ein einziges Mal an den Schmied. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe nicht auf den Falschen gewartet. Nur immer auf den einen, das ist ungerecht. #sprecher:ambrose #stimmung:friedlich
-Morgen spielt ihr sie zu Ende. Du und der junge Hale. #sprecher:ambrose #stimmung:friedlich
+Morgen spielt ihr sie zu Ende. Du und {rivalin:die junge Hale|der junge Hale}. #sprecher:ambrose #stimmung:friedlich
 Ich sehe zu. Das ist schöner, als ich dachte. #sprecher:ambrose #stimmung:friedlich
 -> END

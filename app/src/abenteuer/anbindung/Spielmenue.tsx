@@ -1,7 +1,7 @@
 /**
  * Das Spielmenü des Abenteuers (ausgelagert aus AbenteuerAnsicht.tsx, 22.11.2026): der einzige
- * Rückweg in die App, dazu Name und Figur des Helden (Held oder Heldin, Wunsch des Autors,
- * 22.11.2026), neu beginnen, Einstellungen und Paket löschen (Schritt 8g).
+ * Rückweg in die App, dazu Name und Figur des Helden (Held oder Heldin) und die Wahl Rivale oder
+ * Rivalin (Wunsch des Autors, 22.11.2026), neu beginnen, Einstellungen und Paket löschen (Schritt 8g).
  * Abhängigkeiten: app/blattstapel.ts (Zurück-Taste schließt das Menü), i18n, Startkarte.tsx
  * (Namensfeld), Heldwahl.tsx, Menueeinstellungen.tsx.
  */
@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { t } from "../../i18n/sprache";
 import type { Heldfigur } from "../schnittstelle/spielstand";
-import { Heldwahl } from "./Heldwahl";
+import { Heldwahl, Rivalwahl } from "./Heldwahl";
 import { Menueeinstellungen } from "./Menueeinstellungen";
 import { Namensfeld } from "./Startkarte";
 
@@ -18,6 +18,8 @@ export function Spielmenue({
   heldname,
   figur,
   beiFigur,
+  rivalin,
+  beiRivalin,
   beiSchliessen,
   beiZurueck,
   beiName,
@@ -29,6 +31,9 @@ export function Spielmenue({
   /** Figur des Helden (Held oder Heldin); ändert sich sofort beim Tippen. */
   figur: Heldfigur;
   beiFigur: (figur: Heldfigur) => void;
+  /** Rivalin Victoria statt Rivale Victor; gilt ab dem nächsten Gespräch. */
+  rivalin: boolean;
+  beiRivalin: (rivalin: boolean) => void;
   beiSchliessen: () => void;
   beiZurueck: () => void;
   beiName: (name: string) => void;
@@ -64,6 +69,7 @@ export function Spielmenue({
             </button>
           )}
           <Heldwahl figur={figur} beiWahl={beiFigur} />
+          <Rivalwahl rivalin={rivalin} beiWahl={beiRivalin} />
           {neuFrage ? (
             <p className="abenteuer-neu-frage">
               {t("abenteuer.neuBeginnenFrage")}

@@ -304,6 +304,18 @@ und Zusatz (Mono: Musiker, Jukebox, Steigerung).
 - **Tonmesser:** `globalThis.__tonmesser()` meldet Musik, Pegel je Spur, Dialog, Raumpegel und Lage
   der Mischung (Oberflächentest `abenteuer-musikspuren.spec.ts`).
 
+**h4) Brettbeispiele im Dialog** (Wunsch des Autors, 22.11.2026): Erklärt eine Figur ein
+Schachkonzept, eine Regel oder ein Werkzeug des Buches und hat sie plausibel ein Brett zur Hand
+(Club, Hütte, Pavillon, Akademie, Kreidebrett, das Reisebrett des Helden, Ambroses Brett aus Licht),
+zeigt die Zeile ein kleines Brett: Marke `#brett:<kennung>` (erstes Bild) oder
+`#brett:<kennung>.<bild>`. Die Daten stehen in `inhalte/abenteuer/brettbeispiele.json` (Stellung,
+höchstens drei Züge, je Bild Pfeile und Felder, Buchabbildung wo vorhanden). Das Brett gehört zur
+Zeile wie `#bild`: hochkant über dem Text, quer groß in der freien Fläche unter Menü und Tagebuch.
+`pipeline/abenteuer/brettbeispiel.py` findet die Erklärstellen (Begriffe aus dem Glossar des Buches,
+Erklärmuster); jede hat ein Brett oder einen Grund in `brettbeispiel_ohne.py`.
+`brettbeispiel_pruefung.py` prüft mit python-chess, dass jede Stellung legal ist und das Gezeigte
+stimmt (Gabel, Fesselung, Spieß, Opposition, Quadrat, Matt, Zählen …). Beides ist Dauertest.
+
 **i) T15 Fensterbank zeigt Funde** (klein): Ink-Funktion `zeigeFensterbank()` öffnet eine Ansicht
 mit allen Funden des Spielstands (Bild aus funde.json, sonst Name), in der Reihenfolge des
 Findens. Die Fensterbank im Zimmer des Helden ruft sie aus ihrem Dialog auf; keine Kartenänderung.

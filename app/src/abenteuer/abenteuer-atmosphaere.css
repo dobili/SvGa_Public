@@ -153,6 +153,13 @@ body.abenteuer-mit-kulisse {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
+/* Brettbeispiel über der Zeile (dialog/Brettbeispiel.tsx): klein genug, dass Text und Wahlen
+   hochkant darunter Platz haben, groß genug für Pfeile auf dem Handy. */
+.abenteuer-brettbeispiel .brett {
+  width: min(72vw, 17rem, 34vh);
+  aspect-ratio: 1;
+}
+
 @keyframes abenteuer-grossansicht-ein {
   from {
     opacity: 0;

@@ -28,6 +28,7 @@ DATEIEN = {
     "funde.json": "abenteuer-funde.schema.json",
     "laeden.json": "abenteuer-laeden.schema.json",
     "vorfuehrungen.json": "abenteuer-vorfuehrungen.schema.json",
+    "brettbeispiele.json": "abenteuer-brettbeispiele.schema.json",
     "partieformen.json": "abenteuer-partieformen.schema.json",
     "stellungsvorrat.json": "abenteuer-stellungsvorrat.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",

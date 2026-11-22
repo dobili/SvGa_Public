@@ -255,8 +255,11 @@ async function main() {
     "runden.json",
     "funde.json",
     "laeden.json",
+    // Tagesabläufe der Figuren (regeln/tagesablauf.ts), erzeugt von pipeline/abenteuer/tagesablauf_entwurf.py.
+    "tagesablaeufe.json",
     // Vorführungen der Statisten (Dokument 16, 3.4); die App liest fen und zuege.
     "vorfuehrungen.json",
+    "brettbeispiele.json",
     // Gedächtnisstellungen und Simultan (Runde 6, docs/spiel/15 Abschnitt 4).
     "partieformen.json",
     // Startstellungen der kurzen Formate aus Partien Bot gegen Bot (regeln/vorrat.ts).

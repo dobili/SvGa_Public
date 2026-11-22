@@ -24,6 +24,8 @@ import { ohneAbwesende } from "../regeln/abwesenheit";
 import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
 import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
+import { rivalinbogen, rivalinGewaehlt } from "../regeln/rivalform";
+import { ladeTagesablaeufe, nachUhr } from "./tagesaufstellung";
 import { figurenbildAdresse } from "./figurbogen";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
@@ -107,11 +109,18 @@ function figurennamen(karte: object): string[] {
  * Die Bögen der Figuren einer Karte (Pfad aus `sprite` in orte.json), nur wo das Paket ein Bild hat.
  * Beispiel: Objekt „juno“, Sprite „figuren/juno.png“ → { juno: "blob:…" }.
  */
-async function figurenbilderFuer(ort: Ortdaten, karte: object): Promise<Record<string, string>> {
+async function figurenbilderFuer(
+  ort: Ortdaten,
+  karte: object,
+  rivalin: boolean,
+): Promise<Record<string, string>> {
   const paare = await Promise.all(
     figurennamen(karte).map(async (name) => {
       const sprite = figurZu(ort, name)?.sprite;
-      const adresse = sprite ? await figurenbildAdresse(sprite) : null;
+      // Rivalin Victoria: ihr Bogen, solange er fehlt Victors (regeln/rivalform.ts).
+      const ihrer = sprite ? rivalinbogen(sprite, rivalin) : null;
+      const eigene = ihrer ? await figurenbildAdresse(ihrer) : null;
+      const adresse = eigene ?? (sprite ? await figurenbildAdresse(sprite) : null);
       return adresse ? ([name, adresse] as const) : null;
     }),
   );
@@ -191,6 +200,7 @@ export async function ladeWelt(
   kartenkennung: string,
   gewaehlteFigur: Heldfigur = ERSATZFIGUR,
   variablen: Readonly<Record<string, unknown>> = {},
+  stand: Abenteuerstand | null = null,
 ): Promise<Weltdaten> {
   // Spieltexte in der Sprache der App (Dokument 17); ohne Übersetzung im Paket bleibt Deutsch.
   await ladeSpieltexte(sprache());
@@ -206,11 +216,23 @@ export async function ladeWelt(
   ]);
   // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts); Figuren mit `wenn`
   // und Möbel stehen nur, wenn ihre Bedingung gilt (regeln/figurbedingung.ts).
-  const karte = ohneFigurenNachBedingung(
+  const ohneVerborgene = ohneFigurenNachBedingung(
     ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]),
     (name) => figurZu(fund.ort, name)?.wenn,
     variablen,
   );
+  // Tagesabläufe (regeln/tagesablauf.ts): die Uhr stellt die Figuren auf, die Geschichte geht vor.
+  const karte = stand
+    ? nachUhr(
+        ohneVerborgene,
+        kartenkennung,
+        fund.ort,
+        stand,
+        daten,
+        variablen,
+        await ladeTagesablaeufe(),
+      )
+    : ohneVerborgene;
   const erinnerung = fund.ort.art === "erinnerung";
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder, geisterbilder] =
     await Promise.all([
@@ -218,7 +240,7 @@ export async function ladeWelt(
         `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
       ),
       heldfigurbogen(erinnerung, gewaehlteFigur),
-      figurenbilderFuer(fund.ort, karte),
+      figurenbilderFuer(fund.ort, karte, rivalinGewaehlt(variablen)),
       ladeMoebel(karte, fund.ort.kennung),
       paketdateiAlsAdresseOderNull(
         `grafik/karten/${kartenkennung}${fassung.zustand ? `-${fassung.zustand}` : ""}.png`,

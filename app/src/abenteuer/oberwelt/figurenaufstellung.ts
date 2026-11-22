@@ -14,6 +14,10 @@ import { zeigeAlsGeist } from "./geistfigur";
 import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
 
+/** Liegend: eine Vierteldrehung, zwei Kacheln tiefer gezeichnet (wie fuehrungsschicht.ts). */
+const LIEGEN = Math.PI / 2;
+const LIEGETIEFE_KACHELN = 2;
+
 /**
  * Stellt alle Figuren (Auslöser mit typ „figur“) auf und lässt den Helden mit ihnen kollidieren.
  * Eingaben: Szene, Held, Auslöser der Karte, Szenendaten (Bögen, Geister), Kachelgröße und das
@@ -56,6 +60,9 @@ export function stelleFigurenAuf(
     if (eigenes && a.versatz) verschiebeFigurbild(figur, a.versatz, kachel, gesessen);
     if (daten.geister?.has(a.name)) zeigeAlsGeist(szene, figur);
     figur.setDepth(sitz?.tiefe ?? figur.y);
+    // Schlaf im Bett (Tagesablauf): gekipptes Standbild wie der Ersatz beim `#stelle … >liegt`,
+    // über dem Bett gezeichnet; das Bett sperrt die Kachel ohnehin.
+    if (a.liegt) figur.setRotation(LIEGEN).setDepth(figur.y + LIEGETIEFE_KACHELN * kachel);
   }
   szene.physics.add.collider(held, gruppe);
 }

@@ -22,6 +22,7 @@ import {
 } from "../paket/paketlader";
 import { blattfeld, blattpfad, type Blattaufbau } from "./portraetblatt";
 import { grossePortraets, portraetpfad } from "./portraetpfad";
+import { rivalinJetzt, rivalinsprecher } from "../regeln/rivalform";
 
 /** Ein geladenes Porträt. */
 type Bild =
@@ -121,17 +122,22 @@ export function Portraet({
   /** Text der Zeile: Bei jeder neuen Zeile bewegt das Porträt die Lippen (Bogen aus Modern UI). */
   zeile?: string;
 }) {
-  const schluessel = `${sprecher}:${stimmung ?? ""}`;
+  // Rivalin Victoria: erst ihr Porträt, sonst Victors (regeln/rivalform.ts).
+  const ersatz = rivalinsprecher(sprecher, rivalinJetzt());
+  const schluessel = `${ersatz ?? sprecher}:${stimmung ?? ""}`;
   const [bild, setzeBild] = useState<{ schluessel: string; bild: Bild | null } | null>(null);
   useEffect(() => {
     let aktiv = true;
-    void suche(sprecher, stimmung).then((gefunden) => {
-      if (aktiv) setzeBild({ schluessel, bild: gefunden });
-    });
+    const gesucht = ersatz ? suche(ersatz, stimmung) : Promise.resolve(null);
+    void gesucht
+      .then((eigenes) => eigenes ?? suche(sprecher, stimmung))
+      .then((gefunden) => {
+        if (aktiv) setzeBild({ schluessel, bild: gefunden });
+      });
     return () => {
       aktiv = false;
     };
-  }, [sprecher, stimmung, schluessel]);
+  }, [sprecher, ersatz, stimmung, schluessel]);
   if (!bild || bild.schluessel !== schluessel || !bild.bild) return null;
   const b = bild.bild;
   if (b.art === "blatt") return <Blattbild bild={b} stimmung={stimmung} />;

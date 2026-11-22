@@ -37,6 +37,7 @@ import { Spielmenue } from "./Spielmenue";
 import { NAME_HOECHSTENS, Startkarte } from "./Startkarte";
 import type { Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR } from "../regeln/heldfigur";
+import { mitRivalwahl, rivalinGewaehlt } from "../regeln/rivalform";
 import { Ladestand } from "./Ladestand";
 
 /** Der geladene Baustein, einmal je Seite. */
@@ -65,6 +66,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   // Name des Helden vor dem ersten Start; leer heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
   const [neueFigur, setzeNeueFigur] = useState<Heldfigur>(ERSATZFIGUR);
+  const [neueRivalin, setzeNeueRivalin] = useState(false);
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
   useAbenteuerton();
   useAktton(stand?.handlung.akt ?? 1); // Ton des Akts im Hintergrund (paket/aktton.ts)
@@ -84,6 +86,11 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const waehleFigur = (figur: Heldfigur) => {
     if (!stand || stand.held.figur === figur) return;
     void dienste.schreibeStand({ ...stand, held: { ...stand.held, figur } });
+  };
+
+  /** Wechselt zwischen Rivale und Rivalin (Spielmenü); gilt ab dem nächsten Gespräch. */
+  const waehleRivalin = (rivalin: boolean) => {
+    if (stand) void dienste.schreibeStand(mitRivalwahl(stand, rivalin));
   };
 
   /** Beginnt von vorn: Spielstand weg, zurück zur Startkarte mit Namenswahl (Paket bleibt). */
@@ -166,9 +173,14 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       // gewertete Partien hat (Architektur, Abschnitt 4), sonst läuft sie noch mit.
       const spiel = speicherzustand().daten.spiel;
       const fest = spiel.wertung.length >= ANFANGSPARTIEN;
-      void dienste.schreibeStand(
-        leererAbenteuerstand(new Date(), bereinigt(neuerName), dienste.wertung(), fest, neueFigur),
+      const neu = leererAbenteuerstand(
+        new Date(),
+        bereinigt(neuerName),
+        dienste.wertung(),
+        fest,
+        neueFigur,
       );
+      void dienste.schreibeStand(mitRivalwahl(neu, neueRivalin));
     }
     void ladeModul()
       .then((modul) => {
@@ -215,6 +227,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
           beiName={setzeNeuenNamen}
           figur={neueFigur}
           beiFigur={setzeNeueFigur}
+          rivalin={neueRivalin}
+          beiRivalin={setzeNeueRivalin}
           beiLaden={lade}
           beiStart={starte}
         />
@@ -225,6 +239,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
           heldname={stand?.held.name ?? null}
           figur={stand?.held.figur ?? ERSATZFIGUR}
           beiFigur={waehleFigur}
+          rivalin={rivalinGewaehlt(stand?.dialogvariablen ?? {})}
+          beiRivalin={waehleRivalin}
           beiSchliessen={() => setzeMenue(false)}
           beiZurueck={zurueck}
           beiName={benenneUm}

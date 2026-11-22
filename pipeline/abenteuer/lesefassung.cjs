@@ -286,7 +286,7 @@ function lesefassung({ startwert, sekunden }) {
     welt.quests.filter((q) => q.haupt).map((q) => q.kennung),
   );
   const { dialoge, weggelassen } = erstdurchlauf(mitschrift, haupt);
-  const n = namen(welt, st.vars.held);
+  const n = namen(welt, st.vars.held, st.vars);
   const akte = gliedere(welt, dialoge);
   const zahlen = {
     startwert,

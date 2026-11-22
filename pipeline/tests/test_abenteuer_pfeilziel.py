@@ -6,7 +6,9 @@ Warum: Auftrag des Hauptchats (20.11.2026). In Desert Springs zeigte der Pfeil a
 Pfeilziel einer Hauptquest an und meldet, wo das Gespräch nicht weiterbringt.
 
 Der ganze Lauf dauert einige Minuten und läuft wie die Gesamtsimulation nur mit
-``ABENTEUER_SIMULATION=1``. Die Wahl des Pfeilziels (Umweg vor Ziel vor Gegner) wird immer geprüft.
+``ABENTEUER_SIMULATION=1``, einmal ohne Uhr und einmal je Tagesphase (SIM_STUNDE,
+gesamtsimulation-uhr.cjs: Tagesabläufe der Figuren, Regel 1). Die Wahl des Pfeilziels (Umweg vor
+Ziel vor Gegner) wird immer geprüft.
 """
 
 import json
@@ -61,12 +63,19 @@ def test_loest_aus():
     assert auswertung(f'p.loestAus({{ partie: "o.vorrunde" }}, {dialog})') is True
 
 
-def test_ganze_pruefung_ohne_funde():
+# Spieluhr und Tagesabläufe (22.11.2026): je Tagesphase ein Lauf mit fester Uhr (Morgen, Mittag,
+# Abend, Nacht wie ZIELE in regeln/spieluhr.ts); ohne Wert der Lauf ohne Uhr wie bisher.
+PHASEN = [None, "7", "12", "19", "22"]
+
+
+@pytest.mark.parametrize("stunde", PHASEN)
+def test_ganze_pruefung_ohne_funde(stunde):
     if os.environ.get("ABENTEUER_SIMULATION") != "1":
         pytest.skip("Der Lauf dauert einige Minuten; mit ABENTEUER_SIMULATION=1 starten")
     if shutil.which("node") is None or not INKJS.exists():
         pytest.skip("Node oder app/node_modules/inkjs fehlt (vorher im Ordner app/ npm ci)")
     befehl = ["node", str(SKRIPT), "--sekunden", str(ZEITBUDGET_SEKUNDEN)]
-    lauf = subprocess.run(befehl, cwd=HAUPTORDNER, capture_output=True, text=True)
+    umgebung = {**os.environ, **({"SIM_STUNDE": stunde} if stunde else {})}
+    lauf = subprocess.run(befehl, cwd=HAUPTORDNER, capture_output=True, text=True, env=umgebung)
     assert lauf.returncode == 0, lauf.stdout[-4000:]
     assert lauf.stdout.strip().endswith("0 Funde")

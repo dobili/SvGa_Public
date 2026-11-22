@@ -117,7 +117,9 @@ def test_kopf_nennt_regeln_umfang_und_luecken(text: str):
     for stichwort in stichworte:
         assert stichwort in kopf
     assert "mapleFalls.victor" in kopf, "Die vorgesehene Niederlage gegen Victor steht nicht im Kopf"
-    assert "[Partie gegen Victor Hale – Ausgang: verloren]" in text
+    # Rivale oder Rivalin (22.11.2026): Die Simulation spielt mit ABENTEUER_RIVALIN=1 Victoria.
+    rivale = "Victoria" if os.environ.get("ABENTEUER_RIVALIN") == "1" else "Victor"
+    assert f"[Partie gegen {rivale} Hale – Ausgang: verloren]" in text
 
 
 @ohne_node

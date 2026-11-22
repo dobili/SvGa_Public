@@ -21,6 +21,16 @@ EXTERNAL reise(karte, ausloeser)
 EXTERNAL zahle(muenzen)
 EXTERNAL oeffneLaden(laden)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR abfahrtSiliconGesehen = false
 VAR ankunftIronwoodGesehen = false
 VAR elmStreetBekannt = false
@@ -272,7 +282,7 @@ Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
 - nadelIronwood > 0 and not kaufGesehen: -> kauf
 - kaufGesehen and not einladungGesehen: -> einladung
 - einladungGesehen:
-    An der Bushaltestelle liegen ein paar Schneeflocken auf der Bank, wo Victor saß. #sprecher:erzaehler
+    An der Bushaltestelle liegen ein paar Schneeflocken auf der Bank, wo {rivale} saß. #sprecher:erzaehler
     -> END
 - else:
     // Steht erst nach der Nadel am Werkstor (orte.json, wenn; Gutachten L1.3).
@@ -306,9 +316,9 @@ Er glaubt es. Das ist das Schlimme. #sprecher:erzaehler
 Er hält es wirklich für ein Geschenk. #sprecher:erzaehler
 Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pokale heraus und klirren bei jedem Schritt. #sprecher:erzaehler #geraeusch:pokale
 Er sieht Graham Hale nicht an. Hinter ihm tragen Hank und Priya das Stahlbrett, zu zweit. #sprecher:erzaehler
-Neben seinem Vater steht Victor, in Weiß, das Tablet unter dem Arm. Er sieht Big Joe nach, den großen Händen, die den Karton halten, als wäre er aus Glas. #sprecher:erzaehler
+Neben {rv_sein}em Vater steht {rivale}, in Weiß, das Tablet unter dem Arm. {rv_Er} sieht Big Joe nach, den großen Händen, die den Karton halten, als wäre er aus Glas. #sprecher:erzaehler
 Vater. Vielleicht … #sprecher:victor #stimmung:nachdenklich #pause
-Graham Hale dreht sich zu ihm um. Freundlich – fragend. #sprecher:erzaehler
+Graham Hale dreht sich zu {rv_ihm} um. Freundlich – fragend. #sprecher:erzaehler
 Nichts. #sprecher:victor #stimmung:bitter
 {mamaSpielt:
     Mama geht über den Platz, an dem schwarzen Wagen vorbei, und nimmt Big Joe den Karton ab. Zusammen heben sie ihn in den Lieferwagen. #sprecher:erzaehler
@@ -320,21 +330,21 @@ Es beginnt zu schneien. Die ersten Flocken des Jahres bleiben auf dem Schild lie
 // Kapitel 29, Ende von Akt 2: Victors Thema zum ersten Mal unsicher; bei „J. H.“ Ambroses und
 // Victors Thema gleichzeitig. Ambrose legt diesmal die Hand auf die Niete (Kapitel 24 nur darüber).
 ~ einladungGesehen = true
-An der alten Stahlbrücke hinter dem Werkstor. Victor kommt allein, ohne Tablet. #sprecher:erzaehler #musik:victor.unsicher
-Er weiß nicht, wohin mit den Händen. #sprecher:erzaehler
+An der alten Stahlbrücke hinter dem Werkstor. {rivale} kommt allein, ohne Tablet. #sprecher:erzaehler #musik:victor.unsicher
+{rv_Er} weiß nicht, wohin mit den Händen. #sprecher:erzaehler
 {held}. #sprecher:victor #stimmung:nachdenklich
 Du hast vier. #sprecher:victor #stimmung:nachdenklich
 * [„Ja.“]
 - Gegen Big Joe habe ich einmal gespielt. Bei einem Schaukampf. #sprecher:victor #stimmung:nachdenklich
 Er hat mir danach einen Kakao ausgegeben. Ich wusste nicht, was ich damit machen soll. #sprecher:victor #stimmung:nachdenklich
 Ich trinke keinen Kakao. #sprecher:victor #stimmung:nachdenklich
-Er hält dir eine Karte hin, weiß, mit silberner Schrift: „Jugendturnier der Perfect Move Akademie. Silicon Bay.“ #sprecher:erzaehler #bild:einladung_silber
+{rv_Er} hält dir eine Karte hin, weiß, mit silberner Schrift: „Jugendturnier der Perfect Move Akademie. Silicon Bay.“ #sprecher:erzaehler #bild:einladung_silber
 Komm. Dann siehst du, wogegen du spielst. #sprecher:victor #stimmung:nachdenklich
-Er geht nicht. Er sieht auf das Geländer zwischen euch. #sprecher:erzaehler #bild:aus
+{rv_Er} geht nicht. {rv_Er} sieht auf das Geländer zwischen euch. #sprecher:erzaehler #bild:aus
 Mehr als drei Sekunden. #sprecher:erzaehler #pause:3
 Und vielleicht sagst du mir dann, ob ich auf der richtigen Seite stehe. #sprecher:victor #stimmung:muede
-Er steigt in den Bus an der Schnellstraße, ohne sich umzusehen. Die Rücklichter werden kleiner im Schneetreiben. #sprecher:erzaehler
-Ein Hale, der fragt. Das ist neu. #sprecher:ambrose #stimmung:ueberrascht
+{rv_Er} steigt in den Bus an der Schnellstraße, ohne sich umzusehen. Die Rücklichter werden kleiner im Schneetreiben. #sprecher:erzaehler
+{rivalin:Eine Hale, die|Ein Hale, der} fragt. Das ist neu. #sprecher:ambrose #stimmung:ueberrascht
 Auf dem ersten Pfosten des Geländers, klein und sauber: J. H. #sprecher:erzaehler
 Ambrose legt die Hand darauf. Diesmal lässt er sie dort. #sprecher:erzaehler #musik:ambrose.victor
 Er hat überall unterschrieben. Auf jeder Niete. #sprecher:ambrose #stimmung:riss
@@ -344,7 +354,7 @@ Was für ein unerträglicher, gewissenhafter Mensch. #sprecher:ambrose #stimmung
     Und er hat mir geschrieben. #sprecher:ambrose #stimmung:riss
 }
 Juno kommt die Brücke herauf, das Tagebuch unter der Jacke. #sprecher:erzaehler
-Was hat er gewollt? #sprecher:juno #stimmung:nachdenklich
+Was hat {rv_er} gewollt? #sprecher:juno #stimmung:nachdenklich
 * [Ihr die Karte zeigen]
 - Sie liest. Sie schlägt das Tagebuch auf und schreibt quer über die Seite: „Silicon Bay“. #sprecher:erzaehler
 Nach kurzem Überlegen ein Fragezeichen dahinter. Mit Glitzer. #sprecher:erzaehler #bild:tagebuch_silicon_bay

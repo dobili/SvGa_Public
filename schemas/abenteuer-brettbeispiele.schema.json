@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-brettbeispiele.schema.json",
+  "title": "Brettbeispiele des Schach-Abenteuers",
+  "description": "Kleine Bretter im Dialog: Erklärt eine Figur ein Schachkonzept, zeigt sie es an einem Beispiel (Wunsch des Autors, 22.11.2026). Eine Dialogzeile trägt die Marke #brett:<kennung> (erstes Bild) oder #brett:<kennung>.<bild>. Die Pipeline prüft jede Stellung und das Gezeigte mit python-chess (pipeline/abenteuer/brettbeispiel_pruefung.py).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "beispiele"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "beispiele": { "type": "array", "items": { "$ref": "#/$defs/beispiel" } }
+  },
+  "$defs": {
+    "feldname": { "type": "string", "pattern": "^[a-h][1-8]$" },
+    "farbe": { "enum": ["gold", "rot", "grau", "gruen", "blau"] },
+    "beispiel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "konzept", "fen", "zuege", "bilder", "pruefung"],
+      "properties": {
+        "kennung": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "konzept": {
+          "description": "Begriff wie im Glossar des Buches",
+          "type": "string"
+        },
+        "buch": {
+          "description": "Abbildung des Buches, aus der die Stellung stammt (etwa 7.2)",
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+$"
+        },
+        "fen": { "type": "string" },
+        "zuege": {
+          "description": "Höchstens drei Züge in SAN ab fen (Kinder: wenige Züge)",
+          "type": "array",
+          "items": { "type": "string" },
+          "maxItems": 3
+        },
+        "bilder": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["nach", "pfeile", "felder"],
+            "properties": {
+              "nach": {
+                "description": "Stellung nach so vielen Zügen",
+                "type": "integer",
+                "minimum": 0
+              },
+              "pfeile": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["von", "nach", "farbe"],
+                  "properties": {
+                    "von": { "$ref": "#/$defs/feldname" },
+                    "nach": { "$ref": "#/$defs/feldname" },
+                    "farbe": { "$ref": "#/$defs/farbe" }
+                  }
+                }
+              },
+              "felder": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["feld", "farbe"],
+                  "properties": {
+                    "feld": { "$ref": "#/$defs/feldname" },
+                    "farbe": { "$ref": "#/$defs/farbe" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "pruefung": {
+          "description": "Was das Beispiel zeigt, schachlich geprüft (Arten in brettbeispiel_pruefung.py)",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["art"],
+            "properties": { "art": { "type": "string" } }
+          }
+        }
+      }
+    }
+  }
+}

@@ -42,7 +42,7 @@ function stand(karte: (typeof KARTEN)[number]) {
     wertung: 600,
     appWertungZuletzt: null,
     wertungPartien: 0,
-    held: { name: "Kim", variante: 0 },
+    held: { name: "Kim", figur: "held-0" },
     handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
     position: { karte: karte.kennung, ...feldVon(karte.datei, "start"), richtung: "unten" },
     besuchteOrte: ["mapleFalls", karte.ort],

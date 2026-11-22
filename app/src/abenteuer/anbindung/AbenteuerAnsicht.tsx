@@ -6,16 +6,15 @@
  * (Paket laden, Spielstand anlegen), lädt das eigentliche Spiel erst dann als eigenen Baustein
  * (dynamischer Import von modul/abenteuer.tsx → assets/abenteuer-*.js, nicht vorab geladen) und
  * übergibt ihm die Dienste der App (anbindung/dienste.ts). Das Spielmenü (Knopf oben rechts) ist
- * der einzige Rückweg in die App: „Zurück zur App“, dazu Paket löschen, Name des Helden ändern
- * und neu beginnen (Schritt 8g). Beim ersten Start wählt der Leser den Namen (Entscheidung in
- * Dokument 02: Name wählbar, Dialoge geschlechtsneutral); er bleibt lokal.
+ * der einzige Rückweg in die App: „Zurück zur App“, dazu Paket löschen, Name und Figur des Helden
+ * ändern und neu beginnen (Schritt 8g; Spielmenue.tsx). Beim ersten Start wählt der Leser Namen und Figur
+ * (Startkarte.tsx; Dokument 02: Name wählbar, Dialoge geschlechtsneutral); beides bleibt lokal.
  * Abhängigkeiten: anbindung/dienste.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
  * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü).
  * Bedienung mit dem Daumen (docs/spiel/30): Die Ansicht trägt data-steuerkreuz (rechts oder links,
  * Wahl im Spielmenü); bedienung.css legt danach Steuerkreuz, Aktionsknopf, Leiste und Menüknopf.
  */
 import { useEffect, useRef, useState, type ComponentType } from "react";
-import { useZurueckSchliesst } from "../../app/blattstapel";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { speicherzustand } from "../../speicher/speicher";
@@ -34,9 +33,11 @@ import type { Paketzustand } from "../schnittstelle/paket";
 import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { useAktton } from "../paket/aktton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
-import { Menueeinstellungen } from "./Menueeinstellungen";
+import { Spielmenue } from "./Spielmenue";
+import { NAME_HOECHSTENS, Startkarte } from "./Startkarte";
+import type { Heldfigur } from "../schnittstelle/spielstand";
+import { ERSATZFIGUR } from "../regeln/heldfigur";
 import { Ladestand } from "./Ladestand";
-import { groessentext, mbText } from "./groesse";
 
 /** Der geladene Baustein, einmal je Seite. */
 let modulVorrat: Promise<Abenteuermodul> | null = null;
@@ -44,178 +45,6 @@ let modulVorrat: Promise<Abenteuermodul> | null = null;
 function ladeModul(): Promise<Abenteuermodul> {
   modulVorrat ??= import("../modul/abenteuer").then((m) => m.modul);
   return modulVorrat;
-}
-
-/** Längster Name des Helden (passt in die Dialogzeile). */
-const NAME_HOECHSTENS = 16;
-
-/** Eingabe des Heldennamens; leer heißt „Du“ (Textschlüssel abenteuer.heldname). */
-function Namensfeld({
-  name,
-  beiAenderung,
-}: {
-  name: string;
-  beiAenderung: (name: string) => void;
-}) {
-  return (
-    <label className="abenteuer-namensfeld">
-      {t("abenteuer.nameFrage")}
-      <input
-        type="text"
-        value={name}
-        maxLength={NAME_HOECHSTENS}
-        autoComplete="off"
-        placeholder={t("abenteuer.heldname")}
-        data-testid="abenteuer-name"
-        onChange={(e) => beiAenderung(e.target.value)}
-      />
-    </label>
-  );
-}
-
-/** Startkarte: Paket laden oder Spiel beginnen; vor dem ersten Start den Namen wählen. */
-function Startkarte({
-  zustand,
-  geprueft,
-  name,
-  beiName,
-  beiLaden,
-  beiStart,
-}: {
-  zustand: Paketzustand;
-  /**
-   * Ob der Paketzustand schon abgefragt ist. Vorher kein Knopf: Bis die Antwort kam, stand dort
-   * „Spiel herunterladen“, auch wenn das Paket längst da war, und ein schneller Tipp lud es neu
-   * (Affentest 14.11.2026).
-   */
-  geprueft: boolean;
-  /** Null, wenn es schon einen Spielstand gibt (dann keine Namenswahl). */
-  name: string | null;
-  beiName: (name: string) => void;
-  beiLaden: () => void;
-  beiStart: () => void;
-}) {
-  const laedt = zustand.art === "laedt";
-  return (
-    <section className="karte abenteuer-start" data-testid="abenteuer-start">
-      <h1 className="abenteuer-start-titel">{t("abenteuer.titel")}</h1>
-      <p>{t("abenteuer.einleitung")}</p>
-      {/* Kurze Sätze und die Größe vor dem Laden (Spieltest „einstieg“, R9). */}
-      {zustand.art === "fehlt" && (
-        <p>
-          {groessentext(zustand)} {t("abenteuer.speichertSelbst")}
-        </p>
-      )}
-      {zustand.art === "fehler" && (
-        <p className="fehlertext">
-          {zustand.grund === "ohneNetz" ? t("abenteuer.ohneNetz") : t("abenteuer.fehler")}
-        </p>
-      )}
-      {laedt && (
-        <div className="abenteuer-fortschritt" aria-hidden="true">
-          <div style={{ width: `${(100 * zustand.geladen) / Math.max(1, zustand.gesamt)}%` }} />
-        </div>
-      )}
-      {(zustand.art === "vorhanden" || zustand.art === "veraltet") && name !== null && (
-        <Namensfeld name={name} beiAenderung={beiName} />
-      )}
-      {!geprueft ? (
-        <p className="lade">{t("abenteuer.pruefe")}</p>
-      ) : zustand.art === "vorhanden" || zustand.art === "veraltet" ? (
-        <button
-          type="button"
-          className="knopf-haupt"
-          data-testid="abenteuer-spielen"
-          onClick={beiStart}
-        >
-          {t("abenteuer.spielen")}
-        </button>
-      ) : (
-        <button
-          type="button"
-          className="knopf-haupt"
-          data-testid="abenteuer-laden"
-          onClick={beiLaden}
-          disabled={laedt}
-        >
-          {laedt ? t("abenteuer.laedt", { mb: mbText(zustand.gesamt) }) : t("abenteuer.laden")}
-        </button>
-      )}
-    </section>
-  );
-}
-
-/** Das Spielmenü: Rückweg in die App, Name, neu beginnen, Warten, Steuerkreuz, Ton, Paket löschen. */
-function Spielmenue({
-  heldname,
-  beiSchliessen,
-  beiZurueck,
-  beiName,
-  beiNeuBeginnen,
-  beiLoeschen,
-}: {
-  /** Aktueller Name des Helden; null ohne Spielstand. */
-  heldname: string | null;
-  beiSchliessen: () => void;
-  beiZurueck: () => void;
-  beiName: (name: string) => void;
-  beiNeuBeginnen: () => void;
-  beiLoeschen: () => void;
-}) {
-  useZurueckSchliesst(true, beiSchliessen);
-  const [name, setzeName] = useState(heldname ?? "");
-  const [neuFrage, setzeNeuFrage] = useState(false);
-  return (
-    <section
-      className="abenteuer-menue"
-      role="dialog"
-      aria-label={t("abenteuer.menue")}
-      data-testid="abenteuer-menue"
-    >
-      <h2>{t("abenteuer.menue")}</h2>
-      <p>{t("abenteuer.menueSpeichern")}</p>
-      <button type="button" className="knopf-haupt" onClick={beiZurueck}>
-        {t("abenteuer.zurueckZurApp")}
-      </button>
-      {heldname !== null && (
-        <>
-          <Namensfeld name={name} beiAenderung={setzeName} />
-          {name.trim() !== heldname && (
-            <button
-              type="button"
-              className="knopf-zweit"
-              data-testid="abenteuer-name-speichern"
-              onClick={() => beiName(name)}
-            >
-              {t("abenteuer.nameSpeichern")}
-            </button>
-          )}
-          {neuFrage ? (
-            <p className="abenteuer-neu-frage">
-              {t("abenteuer.neuBeginnenFrage")}
-              <button type="button" className="knopf-zweit" onClick={beiNeuBeginnen}>
-                {t("abenteuer.neuBeginnenJa")}
-              </button>
-              <button type="button" className="knopf-zweit" onClick={() => setzeNeuFrage(false)}>
-                {t("abenteuer.neuBeginnenNein")}
-              </button>
-            </p>
-          ) : (
-            <button type="button" className="knopf-zweit" onClick={() => setzeNeuFrage(true)}>
-              {t("abenteuer.neuBeginnen")}
-            </button>
-          )}
-        </>
-      )}
-      <Menueeinstellungen beiSchliessen={beiSchliessen} />
-      <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
-        {t("abenteuer.paketLoeschen")}
-      </button>
-      <button type="button" className="knopf-zweit" onClick={beiSchliessen}>
-        {t("abenteuer.menueSchliessen")}
-      </button>
-    </section>
-  );
 }
 
 /** Die Zusatzansicht: Startkarte oder, wenn Paket und Spielstand da sind, die Oberwelt. */
@@ -235,6 +64,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const { abenteuersteuerkreuz } = useEinstellungen();
   // Name des Helden vor dem ersten Start; leer heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
+  const [neueFigur, setzeNeueFigur] = useState<Heldfigur>(ERSATZFIGUR);
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
   useAbenteuerton();
   useAktton(stand?.handlung.akt ?? 1); // Ton des Akts im Hintergrund (paket/aktton.ts)
@@ -248,6 +78,12 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
     if (!stand) return;
     void dienste.schreibeStand({ ...stand, held: { ...stand.held, name: bereinigt(name) } });
     setzeMenue(false);
+  };
+
+  /** Wechselt die Figur (Spielmenü); die Welt lädt den neuen Bogen auf derselben Karte. */
+  const waehleFigur = (figur: Heldfigur) => {
+    if (!stand || stand.held.figur === figur) return;
+    void dienste.schreibeStand({ ...stand, held: { ...stand.held, figur } });
   };
 
   /** Beginnt von vorn: Spielstand weg, zurück zur Startkarte mit Namenswahl (Paket bleibt). */
@@ -331,7 +167,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       const spiel = speicherzustand().daten.spiel;
       const fest = spiel.wertung.length >= ANFANGSPARTIEN;
       void dienste.schreibeStand(
-        leererAbenteuerstand(new Date(), bereinigt(neuerName), dienste.wertung(), fest),
+        leererAbenteuerstand(new Date(), bereinigt(neuerName), dienste.wertung(), fest, neueFigur),
       );
     }
     void ladeModul()
@@ -377,6 +213,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
           geprueft={geprueft}
           name={stand ? null : neuerName}
           beiName={setzeNeuenNamen}
+          figur={neueFigur}
+          beiFigur={setzeNeueFigur}
           beiLaden={lade}
           beiStart={starte}
         />
@@ -385,6 +223,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       {menue && (
         <Spielmenue
           heldname={stand?.held.name ?? null}
+          figur={stand?.held.figur ?? ERSATZFIGUR}
+          beiFigur={waehleFigur}
           beiSchliessen={() => setzeMenue(false)}
           beiZurueck={zurueck}
           beiName={benenneUm}

@@ -61,6 +61,59 @@ kennt.
 
 ---
 
+## A0. Einprägsame Ortsthemen (Probestück, 22.11.2026)
+
+Wunsch des Autors: Die Ortsmelodien sollen wie die Stadt- und Kampfmusik der Rollenspiele seiner
+Kindheit sofort wiederzuerkennen sein: einfach, einprägsam, zur Atmosphäre passend, ohne auf Dauer
+zu nerven; gerade für Kinder. Viele Ortsthemen in A2 sind bisher eher Stimmungsflächen. Erst wenn der
+Autor dem Probestück zustimmt, werden alle Orte umgestellt; bis dahin gilt A2. Die Leitmotive (A1)
+bleiben und dürfen in den neuen Themen auftauchen.
+
+Bauregeln:
+
+1. **Ein Kopf (Hook) von 2 Takten, 4 bis 7 Töne, singbar.**
+   - Umfang höchstens eine Oktave, besser eine Sexte; meist Schritte und Terzen.
+   - Ein einziger kennzeichnender Sprung oder eine Tonwiederholung macht ihn unverwechselbar
+     (übliche Kontur plus ein ungewöhnliches Intervall, Jakubowski 2016).
+   - Kontur erst steigend, dann fallend, wie Kinderlieder.
+   - Der Rhythmus des Kopfs wiederholt sich.
+2. **Form: Frage und Antwort.**
+   - A (4 Takte: Kopf, Kopf variiert, Halbschluss), A' (mit Ganzschluss), B (Kontrast: andere Lage
+     oder Gegenmelodie, die Melodie macht Pause), A'.
+   - Schleife 16 bis 32 Takte, etwa 30 bis 60 s.
+   - Nahtlos: Das Ende führt über die Dominante zurück zum Anfang.
+3. **Gegen das Nerven.**
+   - Mittleres Tempo, keine schrillen hohen Töne als Dauerklang.
+   - Die Melodie liegt nicht ununterbrochen oben (B-Teil).
+   - Nach 2 bis 3 Durchläufen auf derselben Karte eine ausgedünnte Fassung (nur Begleitung und Bass)
+     oder 20 bis 30 s Pause, dann wieder das volle Thema.
+   - Innenräume und Nacht spielen dieselbe Melodie, dünner besetzt.
+   - Unter Dialogzeilen 3 dB leiser.
+4. **Eigenart je Ort** über Tonart, Rhythmus und Instrumente. Die Grundsätze 1 bis 3 bleiben:
+   akustisch und warm, Synthesizer nur beim Konzern, kein Schlagzeug in Cedar Creek. Ausdrücklich
+   kein Chip-Klang.
+5. **Partien:** ein Kampfthema je Akt, schneller (120 bis 140), treibender Bass, der Kopf des Akts in
+   Moll oder rhythmisch verschärft. Clubkampf und Finale sind Steigerungen davon.
+
+Probestück (Noten in `pipeline/abenteuer/ton/stuecke/ortsthemen_probe.py`, gebaut mit
+`python -m pipeline.abenteuer.ton.ortsthemenprobe PRIVAT` nach `hoerprobe/ortsthemen/` im privaten
+Repository, mit Vergleichsseite alt gegen neu):
+
+- **Maple Falls, G-Dur, 96:** Kopf G A H D | G' E D. Mamas Kopf (1 – 2 – 3 – 5) steigt, dann der
+  Quartsprung D–G als Kennzeichen, punktiert, und fällt zurück. Flöte über gezupfter Gitarre und
+  Bass, im B-Teil antwortet das Cello tief.
+  - Fassungen: Weg (112, Klarinette, Gitarre geschlagen, leise Schellen), Wohnzimmer (84, nur
+    Klavier), Nacht (72, Vibraphon über Harfe), ausgedünnt (nur Gitarre und Bass), Kopf ohne
+    Begleitung (Probe: trägt die Melodie allein?).
+  - Clubkampf Akt 1: derselbe Kopf in e-Moll, in Achteln geschärft, 132, laufender Bass, leises
+    Schlagzeug, Streicher.
+- **Cedar Creek, d-Moll, 66:** Kopf D F E G | A A F. Ambroses Kopf umgekehrt (A1), dann die Quinte
+  zweimal als Kennzeichen. Klavier allein, die Turmuhr als Puls, sonst kein Schlagwerk: einprägsam
+  geht auch ruhig.
+
+Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
+Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
+
 ## Leitmotive (alle Akte)
 
 ### A1. Leitmotive und ihre Verwandtschaft

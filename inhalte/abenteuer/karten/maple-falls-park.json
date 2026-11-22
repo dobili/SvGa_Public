@@ -5872,6 +5872,11 @@
    "name": "kennung",
    "type": "string",
    "value": "mapleFalls.park"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"wasserfall\",\"felder\":[[30,1,4,4]]}]"
   }
  ]
 }

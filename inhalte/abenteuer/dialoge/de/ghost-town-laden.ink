@@ -26,7 +26,7 @@ VAR kerzeGesehen = false
     Du gehst wieder hinunter. #sprecher:erzaehler
     -> END
 }
-Die Stufen halten. Oben fällt Mondlicht durch ein Fenster ohne Glas auf ein Bettgestell aus Eisen. #sprecher:erzaehler #licht:nacht
+Die Stufen halten. Oben fällt Mondlicht durch ein Fenster ohne Glas auf ein Bettgestell aus Eisen. #sprecher:erzaehler #licht:nacht #uhr:nacht
 In einer Ecke hängt ein Fetzen Tapete, groß wie deine Hand. Rosen. #sprecher:erzaehler #bild:tapete_rosen
 Du legst die Hand darauf. #sprecher:erzaehler
 Hier war es. #sprecher:ambrose #stimmung:still #bild:aus

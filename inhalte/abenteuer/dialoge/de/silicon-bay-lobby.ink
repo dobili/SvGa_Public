@@ -83,7 +83,7 @@ Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #s
 // Kapitel 33: die Auswertung mit Juno; Ambrose sieht auf das dunkle Tablet. Victors „Das ist
 // falsch“ aus der Story-Bibel (Abschnitt 18.1) steht am Schluss.
 ~ victorFalschGesagt = true
-{tabletNachtGesehen:Am Abend, im Hotelzimmer. Du sitzt bis Mitternacht auf dem Teppich, Juno am Telefon.|Am Abend, im Hotelzimmer. Juno und du sitzt bis Mitternacht auf dem Teppich.} #sprecher:erzaehler
+{tabletNachtGesehen:Am Abend, im Hotelzimmer. Du sitzt bis Mitternacht auf dem Teppich, Juno am Telefon.|Am Abend, im Hotelzimmer. Juno und du sitzt bis Mitternacht auf dem Teppich.} #sprecher:erzaehler #uhr:abend
 Im Training spielt Nova vierundsiebzig Prozent, jede Woche, das ganze Jahr. Im Turnier achtundneunzig. #sprecher:erzaehler #musik:spannung
 Vielleicht ist sie im Turnier besser. Manche sind das. #sprecher:juno #stimmung:nachdenklich
 * [„Nicht so.“]
@@ -96,7 +96,7 @@ Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprec
 Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 * [Schlafen gehen]
-- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. #sprecher:erzaehler
+- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. #sprecher:erzaehler #uhr:morgen
 Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht – ich muss nachdenken. #sprecher:victor #stimmung:muede

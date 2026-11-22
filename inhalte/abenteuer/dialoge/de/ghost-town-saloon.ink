@@ -57,7 +57,7 @@ Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #st
 // Zweiter Besuch (nach „Gleich.“ oder abgebrochener Partie): die Stellung steht schon.
 {fernpartieAufgebaut: -> fernpartie_bereit}
 ~ victorSaloonGetroffen = true
-Am Morgen fegt Mr. Pruitt den Saloon, bis in die Ecken, als käme Besuch. Er rückt einen Tisch unter das Loch im Dach, wo die Sonne in einer schrägen Säule fällt. #sprecher:erzaehler #klang:besen
+Am Morgen fegt Mr. Pruitt den Saloon, bis in die Ecken, als käme Besuch. Er rückt einen Tisch unter das Loch im Dach, wo die Sonne in einer schrägen Säule fällt. #sprecher:erzaehler #klang:besen #uhr:morgen
 Ich hab hier dreißig Jahre nach Gold gesucht. Ich glaub, ich hab die ganze Zeit auf was anderes gewartet. #sprecher:pruitt #stimmung:nachdenklich
 Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. #sprecher:erzaehler #bild:tagebuch_zettel
 A. W. 1857. Daneben Junos Tagebuch mit acht eingeklebten Zetteln aus sieben Städten. #sprecher:erzaehler
@@ -208,7 +208,7 @@ Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als 
     -> END
 }
 ~ abzeichenGefunden = true
-In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne auf die Theke gestellt. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
+In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne auf die Theke gestellt. #sprecher:erzaehler #licht:nacht #geraeusch:saloon #uhr:nacht
 Du kannst nicht schlafen. #sprecher:erzaehler
 {hatLaterne:
     Du leuchtest mit deiner Laterne hinter den Tresen. Zwischen Flaschen liegt ein Abzeichen aus Messing: ein Pferd und die Zahl 1866. #sprecher:erzaehler

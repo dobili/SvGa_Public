@@ -18,6 +18,9 @@ SCHLEIER = {
     "abend": ((0xFF, 0x8A, 0x3D), 0.18),
     # Kaltes blaues Licht im Serverraum (Gutachten Silicon Bay, 10.11.2026).
     "serverblau": ((0x1E, 0x50, 0xC8), 0.30),
+    # Spieluhr (22.11.2026, oberwelt/uhrtoenung.ts): Morgendämmerung, nachts innen nur gedämpft.
+    "morgen": ((0xFF, 0xB6, 0xA0), 0.14),
+    "innennacht": ((0x0B, 0x15, 0x30), 0.18),
 }
 
 

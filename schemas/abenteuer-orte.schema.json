@@ -58,6 +58,11 @@
           "type": "string",
           "pattern": "^musik/[a-z0-9._-]+\\.(ogg|m4a)$"
         },
+        "musik_nacht": {
+          "description": "Nachtfassung des Ortsthemas (Spieluhr, 22.11.2026): spielt statt `musik`, wenn die Karte nachts (21 bis 6 Uhr der Spieluhr) betreten wird; fehlt sie, bleibt `musik`",
+          "type": "string",
+          "pattern": "^musik/[a-z0-9._-]+\\.(ogg|m4a)$"
+        },
         "geraeusch": {
           "description": "Dauergeräusch der Karte (Schleife unter der Musik: Wasserfall, Regen, Ticken der Uhr); wie musik, aus dem Ordner klang",
           "type": "string",

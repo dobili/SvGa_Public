@@ -234,7 +234,7 @@ Noch einmal? Ich habe Zeit, und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
 Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt #stimmung:nachdenklich
 Dann geht er wieder. #sprecher:erzaehler
-Ambrose sagt lange nichts. Draußen vor dem Fenster gehen die Laternen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus
+Ambrose sagt lange nichts. Draußen vor dem Fenster gehen die Laternen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus #uhr:abend
 Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ich habe sie aber nicht verloren.“]
     Nein. Du hast gezählt, bis nichts mehr übrig war. #sprecher:ambrose #stimmung:nachdenklich

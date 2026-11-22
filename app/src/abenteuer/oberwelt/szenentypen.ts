@@ -72,7 +72,7 @@ export interface Szenendaten {
   readonly figurfaktor?: number;
   /** Bögen der Statisten und Tiere (belebungsschicht.ts), Pfad im Paket → Adresse. */
   readonly belebungsbilder?: Belebungsbilder;
-  readonly stunde?: number; // Stunde für die Statisten (`wann`); sonst die Uhr des Geräts
+  readonly stunde?: number; // Stunde der Spieluhr für die Statisten (`wann`); sonst die Uhr des Geräts
   readonly toenung?: Toenung | null; // Tönung der Karte (toenung.ts)
   readonly laterne?: boolean; // Der Held trägt eine Laterne (Lichtkreis bei „dunkel“)
   /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen; sonst Teilchen der Karte (T8). */

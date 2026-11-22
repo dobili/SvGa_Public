@@ -10,6 +10,7 @@
  * oberwelt/einschluss.ts (Schutz vor dem Einschluss beim Laden).
  */
 import { liesPaketJson } from "../paket/paketlader";
+import { geraeuschquellenAus } from "../ton/geraeuschraum";
 import { klangorte } from "../ton/klangquelle";
 import type { Sperrangabe, Tiledkarte } from "./begehbar";
 import { ausEinschluss } from "./einschluss";
@@ -23,7 +24,9 @@ import { fehlertext } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
 import { beendeOberwelt, starteOberwelt } from "./oberweltspiel";
 import { KACHEL, type Ausloesertreffer } from "./szene";
-import { aktuelleToenung } from "./toenung";
+import { phase, stundeJetzt } from "../regeln/spieluhr";
+import { toenungJetzt } from "./uhrtoenung";
+import { BELEBUNG_EREIGNIS } from "./belebungsschicht";
 import { KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
 import { INNEN_FIGURFAKTOR } from "./weltmassstab";
 
@@ -74,19 +77,23 @@ function starteSpiel(
   const frei = ausEinschluss(w.karte as Tiledkarte, moebel, uebergaenge, stand.position, KACHEL);
   const start = frei ? { ...stand.position, ...frei } : stand.position;
   const eintrag = w.ort.karten.find((x) => x.kennung === w.kennung);
-  // Licht aus orte.json (T6) vor der Tönung der Szene.
-  const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen, eintrag);
+  // Licht aus orte.json (T6) vor der Tönung der Szene, beide vor der Spieluhr (uhrtoenung.ts).
+  const toenung = toenungJetzt(w, stand);
   k.zeigeToenung(toenung);
   // Musik und Dauergeräusch der Karte aus orte.json (T1, T2); fehlt die Datei, bleibt es still.
-  // Klangquellen mit Reichweite (T28): Ort aus dem benannten Objekt der Tiled-Karte.
+  // Klangquellen mit Reichweite (T28): Ort aus dem benannten Objekt der Tiled-Karte. Woher das
+  // Dauergeräusch kommt, steht in der Karte (Eigenschaft geraeuschquellen, ton/geraeuschraum.ts).
+  // Nachts (Spieluhr) die Nachtfassung des Ortsthemas, wenn orte.json eine nennt (Klangplan A0).
+  const nachts = phase(stundeJetzt(stand)) === "nacht";
   tonregie.karteBetreten(
-    eintrag?.musik,
+    (nachts ? eintrag?.musik_nacht : undefined) ?? eintrag?.musik,
     eintrag?.geraeusch,
     klangorte(w.karte, eintrag?.klangquellen ?? [], KACHEL),
+    geraeuschquellenAus(w.karte),
   );
   // Musik lädt erst beim Abspielen; die der Nachbarkarten schon jetzt (ton/vorabladen.ts).
   void ladeNachbarmusikVorab(w.kennung, w.karte, tonregie.hoerbar);
-  k.spiel.current = starteOberwelt(rahmen, {
+  const spiel = starteOberwelt(rahmen, {
     karte: w.karte,
     kachelbild: w.kachelbild,
     heldbild: w.heldbild,
@@ -98,6 +105,8 @@ function starteSpiel(
     hintergrund: w.hintergrund,
     belebungsbilder: w.belebungsbilder,
     toenung,
+    // Statisten nach der Spieluhr (regeln/spieluhr.ts), nur beim Aufbau der Karte.
+    stunde: stundeJetzt(stand),
     // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
     teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
     laterne: stand.gegenstaende.includes(LATERNE),
@@ -122,6 +131,13 @@ function starteSpiel(
       beiHeldhaelfte: (h) => a.kachelanzeige.current?.parentElement?.setAttribute("data-held", h),
     },
   });
+  k.spiel.current = spiel;
+  // Für Prüfungen: Stunde und aufgestellte Statisten an der Welt (Spieluhr, belebungsschicht.ts).
+  const welt = rahmen.parentElement;
+  welt?.setAttribute("data-stunde", String(stundeJetzt(stand)));
+  spiel.events.on(BELEBUNG_EREIGNIS, (namen: string[]) =>
+    welt?.setAttribute("data-statisten", namen.join(",")),
+  );
 }
 
 /** Beim Verlassen einer Karte: Position, Spielzeit (gesamt und je Ort) und Zeitpunkt sichern. */
@@ -192,8 +208,9 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       if (k.spiel.current) beendeOberwelt(k.spiel.current);
       k.spiel.current = null;
     };
-    // Nur die Karte zählt: Ein Kartenwechsel baut die Welt neu auf, alles andere nicht.
+    // Nur die Karte zählt: Ein Kartenwechsel baut die Welt neu auf, alles andere nicht; dazu das
+    // Warten (useWarten.ts), das dieselbe Karte nach der neuen Uhrzeit aufstellt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [karte]);
+  }, [karte, k.aufbau]);
   return fehler;
 }

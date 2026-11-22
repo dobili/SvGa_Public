@@ -175,7 +175,7 @@ Am Drachenbrunnen stapeln Männer Bierbänke, zwei Jungen hängen Laternen auf. 
 -> drachenfest_regel
 
 === drachenfest_erstes_mal ===
-Am Abend leuchten die Laternen über dem Marktplatz. Rund um den Drachenbrunnen stehen zwanzig Bretter auf Bierbänken. #sprecher:erzaehler
+Am Abend leuchten die Laternen über dem Marktplatz. Rund um den Drachenbrunnen stehen zwanzig Bretter auf Bierbänken. #sprecher:erzaehler #uhr:abend
 {varianteDracheGelernt: -> drachenfest_schuppe}
 ~ varianteDracheGelernt = true
 -> drachenfest_regel

@@ -114,3 +114,27 @@ Gegner dürfen ihn ändern (Feld `brett` in `begegnungen.json`, Vorgabe aus `ort
 3. Querformat für Oberwelt, Dialog, Partie und Rätsel.
 4. Pixelfiguren und Brettstile je Ort.
 5. Rätsel ohne Trainerkarte (nach den Anmerkungen des Autors zur Vorschau).
+
+## Spieluhr und Warten (22.11.2026)
+
+Wunsch des Autors: Kinder sollen die Nacht erleben, ohne nachts spielen zu müssen.
+
+- **Uhr:** Spielminuten seit Spielbeginn im Spielstand (`spieluhr`), ein neuer Stand beginnt am
+  ersten Morgen um 6 Uhr. Die Uhr läuft nur in freier Oberwelt (nicht in Dialogen, Partien,
+  Läden, im Tagebuch, nicht bei geschlossener App). Ein Spieltag dauert 2 echte Stunden: Morgen
+  6–9 Uhr 15 Minuten, Tag 9–18 Uhr 50 Minuten, Abend 18–21 Uhr 15 Minuten, Nacht 21–6 Uhr
+  40 Minuten (`regeln/spieluhr.ts`, PHASEN). Schnittstelle: `stundeJetzt(stand)`, `phase(stunde)`,
+  `spieltag(stand)`.
+- **Geschichte geht vor:** `#uhr:abend`, `#uhr:morgen`, `#uhr:nacht`, `#uhr:mittag` oder
+  `#uhr:22` in Ink stellt die Uhr auf die nächste solche Zeit (nie zurück). Wo Erzählzeilen eine
+  Tageszeit nennen oder `#licht:abend|nacht|tag` setzen, steht ein `#uhr`; Ausnahmen mit Grund
+  prüft `python -m pipeline.abenteuer.uhrstellen` (Dauertest „0 Befunde“).
+- **Tönung:** draußen Morgendämmerung, Tag ohne, Abend, Nacht; innen ohne, nachts leicht gedämpft;
+  weich überblendet beim Stundenwechsel. Dialog, Licht aus orte.json und Tönung der Szene gehen
+  vor (`oberwelt/uhrtoenung.ts`).
+- **Statisten:** `wann` nach der Spieluhr, nur beim Aufbau einer Karte.
+- **Warten:** Spielmenü „Warten …“ bis Morgen (7), Mittag (12), Abend (19), Nacht (22), nur in
+  freier Welt; an einer Bank „Ausruhen“ mit derselben Wahl, am Bett im Zimmer des Helden
+  „Schlafen bis morgen“. Kurze Abblende, dann wird die Karte neu aufgestellt.
+- **Anzeige:** Tageszeitsymbol mit „Tag 2, Abend, 19 Uhr“ im Tagebuch und im Spielmenü.
+- **Musik:** `musik_nacht` je Karte in orte.json spielt nachts beim Betreten statt `musik`.

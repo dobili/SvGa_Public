@@ -109,6 +109,9 @@ export function ladeBelebungsbilder(
   }
 }
 
+/** Ereignis des Spiels: die Namen der aufgestellten Statisten (nach der Stunde der Spieluhr). */
+export const BELEBUNG_EREIGNIS = "belebung";
+
 export class Belebungsschicht {
   private readonly darsteller: Darsteller[] = [];
 
@@ -125,11 +128,15 @@ export class Belebungsschicht {
     platzhalter: string,
     private readonly sitze: readonly Sitzmoebel[] = [],
   ) {
+    const aufgestellt: string[] = [];
     for (const v of eintraege) {
       if (!passtZurStunde(v.wann, stunde)) continue;
       if (v.typ === "statist") this.stelleStatistAuf(v, platzhalter);
       else this.stelleTierAuf(v);
+      if (v.typ === "statist") aufgestellt.push(v.name);
     }
+    // Wer zur Stunde der Spieluhr da ist (für Prüfungen, useWeltladen.ts schreibt es an die Welt).
+    szene.game.events.emit(BELEBUNG_EREIGNIS, aufgestellt);
   }
 
   private stelleStatistAuf(v: Belebung, platzhalter: string): void {

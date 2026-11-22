@@ -24,6 +24,8 @@ import { meinePartien } from "../anbindung/meinePartien";
 import type { Spieldaten } from "../daten/laden";
 import { naechsterSchritt } from "../regeln/quests";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import { spieltag, stundeJetzt } from "../regeln/spieluhr";
+import { Tageszeit } from "../anbindung/Tageszeit";
 import { tSpiel } from "../texte/texte";
 import { notizen } from "./notizbuch";
 import { finchKarteSichtbar } from "../regeln/finchjagd";
@@ -64,6 +66,10 @@ export function Tagebuch({
       data-testid="abenteuer-tagebuch"
     >
       <h2>{tSpiel("tagebuch.titel")}</h2>
+      {/* Tageszeit der Spieluhr (regeln/spieluhr.ts, 22.11.2026), klein unter der Überschrift. */}
+      <p className="abenteuer-tagebuch-uhr" data-testid="abenteuer-tagebuch-uhr">
+        <Tageszeit stunde={stundeJetzt(stand)} tag={spieltag(stand)} />
+      </p>
       {/* Münzen oben im Tagebuch: Die Anzeige in der Welt erscheint nur noch bei Änderungen
           (Muenzanzeige.tsx, Wunsch des Autors, 20.11.2026); hier steht die Zahl immer. */}
       <p className="abenteuer-tagebuch-muenzen" data-testid="abenteuer-tagebuch-muenzen">

@@ -1,0 +1,4311 @@
+{
+  "erklaerung": "Tagesabläufe der benannten Figuren (Wunsch des Autors, 22.11.2026; Entwurf aus pipeline/abenteuer/tagesablauf_entwurf.py, Prüfung pipeline/abenteuer/tagesablauf.py). Stunden der Spieluhr 0 bis 23 (Morgen 6–9, Tag 9–18, Abend 18–21, Nacht 21–6). bloecke: art (arbeit, freizeit, nacht, schlaf, zuhause), von, bis (bis ausschließlich, über Mitternacht möglich, 0 bis 0 heißt den ganzen Tag), karte und feld, tut (steht, sitzt, sitzt am Boden, liegt). Ohne Karte unsichtbar, ohne Kollision, nicht ansprechbar: schlaf (drei Stunden, Beginn 22 bis 2 Uhr) und zuhause (Kinder bis 13, 21 bis 7 Uhr). nacht: wach zwischen 21 und 6 Uhr, drinnen (Diner, Kantine, eigene Wohnung) oder unter einer Laterne. ohne_schlaf: geist, roboter, dienst (für den Spieler). hinweis: ueber_grenze (Wege, zu wenige Figuren). folgt_geschichte: Figur in mehreren Orten ohne Heimat, steht immer, wo die Szene sie hinstellt. Regel 1: Ein offener Questschritt hält seine Figur wach an ihrem Questort (questorte; festhalten = regel1, wo der Ablauf sie sonst woanders hätte). Wechsel nur beim Kartenwechsel.",
+  "schemaVersion": 1,
+  "figuren": {
+    "abe": {
+      "ort": "wegGhostCapital",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "wegGhostCapital.leuchtturm",
+          "feld": [68, 15],
+          "tut": "steht"
+        }
+      ]
+    },
+    "abernathy": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "mapleFalls.park",
+          "feld": [3, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "mapleFalls.park",
+          "feld": [3, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [18, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "mapleFalls.diner",
+          "feld": [1, 9],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [1, 9],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["mapleFalls.park"]
+    },
+    "ada": {
+      "ort": "wegMapleCedar",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [49, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [49, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [80, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [80, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [80, 14],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "albescu": {
+      "ort": "riverton",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "riverton.aussen",
+          "feld": [13, 54],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "riverton.aussen",
+          "feld": [13, 54],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "riverton.aussen",
+          "feld": [9, 37],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [13, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [13, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "ambrose": {
+      "orte": ["mapleFalls"],
+      "folgt_geschichte": true
+    },
+    "annek": {
+      "ort": "hochebene",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "hochebene.schule",
+          "feld": [28, 29],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "hochebene.schule",
+          "feld": [28, 29],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "hochebene.schule",
+          "feld": [28, 29],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "hochebene.schule",
+          "feld": [28, 29],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "hochebene.schule",
+          "feld": [28, 29],
+          "tut": "steht"
+        }
+      ],
+      "questorte": ["hochebene.schule"]
+    },
+    "arceneaux": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "portDelacroix.aussen",
+          "feld": [36, 25],
+          "tut": "steht"
+        }
+      ]
+    },
+    "batiste": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "portDelacroix.aussen",
+          "feld": [54, 30],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "portDelacroix.aussen",
+          "feld": [54, 30],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [20, 13],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [20, 13],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [20, 13],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "bea": {
+      "ort": "capitalArena",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "capitalArena.halle",
+          "feld": [16, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "capitalArena.halle",
+          "feld": [16, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "capitalArena.aussen",
+          "feld": [23, 45],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [19, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [19, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "bell": {
+      "ort": "wegSummitCrossroads",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "feld": [17, 14],
+          "tut": "steht"
+        }
+      ]
+    },
+    "bigJoe": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "ironwood.kantine",
+          "feld": [33, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "ironwood.kantine",
+          "feld": [33, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "ironwood.aussen",
+          "feld": [31, 46],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "ironwood.kantine",
+          "feld": [29, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "ironwood.kantine",
+          "feld": [29, 11],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["ironwood.kantine"]
+    },
+    "blaeser": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "portDelacroix.aussen",
+          "feld": [31, 36],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "portDelacroix.aussen",
+          "feld": [31, 36],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [19, 13],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [19, 13],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [19, 13],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["portDelacroix.aussen"]
+    },
+    "boateng": {
+      "ort": "cedarCreek",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "cedarCreek.waschsalon",
+          "feld": [10, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "cedarCreek.waschsalon",
+          "feld": [10, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "cedarCreek.aussen",
+          "feld": [17, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "cedarCreek.aussen",
+          "feld": [17, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "cedarCreek.aussen",
+          "feld": [17, 6],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["cedarCreek.waschsalon"]
+    },
+    "buck": {
+      "ort": "desertSprings",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "desertSprings.aussen",
+          "feld": [34, 17],
+          "tut": "steht"
+        }
+      ]
+    },
+    "calloway": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "mapleFalls.aussen",
+          "feld": [4, 31],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "mapleFalls.aussen",
+          "feld": [4, 31],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [15, 27],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "mapleFalls.diner",
+          "feld": [1, 8],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [1, 8],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "carla": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "mapleFalls.aussen",
+          "feld": [28, 24],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "mapleFalls.aussen",
+          "feld": [28, 24],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "mapleFalls.aussen",
+          "feld": [56, 22],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 11],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "celeste": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [14, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [14, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "portDelacroix.aussen",
+          "feld": [5, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "portDelacroix.aussen",
+          "feld": [5, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "portDelacroix.aussen",
+          "feld": [5, 14],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["portDelacroix.werkstatt"]
+    },
+    "clover": {
+      "ort": "kuerbishof",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 18,
+          "karte": "kuerbishof.hof",
+          "feld": [10, 22],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "kuerbishof.hof",
+          "feld": [10, 22],
+          "tut": "steht"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "coachDelgado": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "mapleFalls.clubraum",
+          "feld": [15, 4],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "mapleFalls.clubraum",
+          "feld": [15, 4],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [15, 22],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 4],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 4],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["mapleFalls.clubraum"]
+    },
+    "coral": {
+      "ort": "pelikaninsel",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 18,
+          "karte": "pelikaninsel.dorf",
+          "feld": [24, 36],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "pelikaninsel.dorf",
+          "feld": [24, 36],
+          "tut": "steht"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "dale": {
+      "ort": "wegRivertonIronwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [8, 152],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [8, 152],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [14, 164],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [12, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [12, 38],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "darlene": {
+      "ort": "crossroads",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "crossroads.raststaette",
+          "feld": [5, 4],
+          "tut": "steht"
+        }
+      ]
+    },
+    "dash": {
+      "ort": "siliconBay",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "siliconBay.aussen",
+          "feld": [11, 65],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "siliconBay.aussen",
+          "feld": [11, 65],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "siliconBay.aussen",
+          "feld": [30, 59],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "siliconBay.aussen",
+          "feld": [30, 59],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "siliconBay.aussen",
+          "feld": [30, 59],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "delphine": {
+      "ort": "pelikaninsel",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "pelikaninsel.dorf",
+          "feld": [34, 22],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "pelikaninsel.dorf",
+          "feld": [34, 22],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "pelikaninsel.dorf",
+          "feld": [34, 22],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "pelikaninsel.dorf",
+          "feld": [34, 22],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "pelikaninsel.dorf",
+          "feld": [34, 22],
+          "tut": "steht"
+        }
+      ]
+    },
+    "dex": {
+      "ort": "pinewoodCamp",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 18,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [29, 17],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [29, 17],
+          "tut": "steht"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "dime": {
+      "ort": "wegRivertonIronwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegRivertonIronwood.bruecke",
+          "feld": [22, 65],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegRivertonIronwood.bruecke",
+          "feld": [22, 65],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [13, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [12, 37],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "wegRivertonIronwood.kanalweg",
+          "feld": [12, 37],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "dolores": {
+      "ort": "jahrmarkt",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "jahrmarkt.festplatz",
+          "feld": [22, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "jahrmarkt.festplatz",
+          "feld": [22, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "jahrmarkt.festplatz",
+          "feld": [32, 15],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "jahrmarkt.festplatz",
+          "feld": [32, 15],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "jahrmarkt.festplatz",
+          "feld": [32, 15],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "dot": {
+      "ort": "desertSprings",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "desertSprings.aussen",
+          "feld": [17, 30],
+          "tut": "steht"
+        }
+      ],
+      "questorte": ["desertSprings.garage"],
+      "festhalten": "regel1"
+    },
+    "dunmore": {
+      "ort": "cedarCreek",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "cedarCreek.drechslerei",
+          "feld": [2, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "cedarCreek.drechslerei",
+          "feld": [2, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "cedarCreek.aussen",
+          "feld": [30, 30],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "cedarCreek.aussen",
+          "feld": [30, 30],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "cedarCreek.aussen",
+          "feld": [30, 30],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "earl": {
+      "ort": "wegDesertSummit",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegDesertSummit.diner",
+          "feld": [90, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegDesertSummit.diner",
+          "feld": [90, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegDesertSummit.diner",
+          "feld": [7, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "wegDesertSummit.diner",
+          "feld": [7, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "wegDesertSummit.diner",
+          "feld": [7, 19],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "edna": {
+      "ort": "ironwood",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "ironwood.aussen",
+          "feld": [24, 28],
+          "tut": "steht"
+        }
+      ]
+    },
+    "empfangsroboter": {
+      "ort": "siliconBay",
+      "kind": false,
+      "ohne_schlaf": "roboter",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "siliconBay.lobby",
+          "feld": [18, 4],
+          "tut": "steht"
+        }
+      ]
+    },
+    "ezra": {
+      "ort": "pinewoodCamp",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [24, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [24, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [24, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [24, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [24, 16],
+          "tut": "steht"
+        }
+      ]
+    },
+    "fenwick": {
+      "ort": "wegCedarRiverton",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegCedarRiverton.zedernwald",
+          "feld": [29, 17],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegCedarRiverton.zedernwald",
+          "feld": [29, 17],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegCedarRiverton.zedernwald",
+          "feld": [54, 2],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "wegCedarRiverton.zedernwald",
+          "feld": [54, 2],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "wegCedarRiverton.zedernwald",
+          "feld": [54, 2],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "gegnerin": {
+      "ort": "wegMapleCedar",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [82, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [82, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegMapleCedar.flussweg",
+          "feld": [86, 13],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegMapleCedar.flussweg",
+          "feld": [86, 13],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegMapleCedar.flussweg",
+          "feld": [86, 13],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "grahamHale": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "ironwood.aussen",
+          "feld": [32, 47],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "ironwood.aussen",
+          "feld": [32, 47],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "ironwood.aussen",
+          "feld": [14, 49],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "ironwood.kantine",
+          "feld": [28, 15],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "ironwood.kantine",
+          "feld": [28, 15],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["ironwood.aussen"]
+    },
+    "greta": {
+      "ort": "wegCrossroadsPinewood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "wegCrossroadsPinewood.huetten",
+          "feld": [83, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "wegCrossroadsPinewood.huetten",
+          "feld": [83, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "wegCrossroadsPinewood.huetten",
+          "feld": [60, 22],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegCrossroadsPinewood.huetten",
+          "feld": [60, 22],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegCrossroadsPinewood.huetten",
+          "feld": [60, 22],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "guidry": {
+      "ort": "wegSiliconDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "wegSiliconDelacroix.deich",
+          "feld": [61, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "wegSiliconDelacroix.deich",
+          "feld": [61, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [17, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [17, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [17, 38],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "gus": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "ironwood.aussen",
+          "feld": [58, 55],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "ironwood.aussen",
+          "feld": [58, 55],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "ironwood.aussen",
+          "feld": [65, 45],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "ironwood.kantine",
+          "feld": [30, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "ironwood.kantine",
+          "feld": [30, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "hank": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "ironwood.kantine",
+          "feld": [17, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "ironwood.kantine",
+          "feld": [17, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "ironwood.aussen",
+          "feld": [13, 49],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "ironwood.kantine",
+          "feld": [13, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "ironwood.kantine",
+          "feld": [13, 11],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "haraldsen": {
+      "ort": "summitCity",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "summitCity.huette",
+          "feld": [13, 6],
+          "tut": "steht"
+        }
+      ]
+    },
+    "harlan": {
+      "ort": "riverton",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [12, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [12, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "riverton.aussen",
+          "feld": [21, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [10, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [10, 11],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["riverton.bahnhofshalle"]
+    },
+    "hector": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "mapleFalls.diner",
+          "feld": [6, 3],
+          "tut": "steht"
+        }
+      ]
+    },
+    "henri": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [12, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [12, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [4, 10],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [4, 10],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "portDelacroix.werkstatt",
+          "feld": [4, 10],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "hollis": {
+      "ort": "pinewoodCamp",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [56, 16],
+          "tut": "steht"
+        }
+      ]
+    },
+    "holloway": {
+      "ort": "wegDelacroixDesert",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "feld": [44, 18],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "feld": [44, 18],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "feld": [60, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "feld": [60, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "feld": [60, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "joggerin": {
+      "ort": "wegMapleCedar",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [54, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [54, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [81, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [81, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [81, 14],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "jonah": {
+      "ort": "cedarCreek",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 16,
+          "karte": "cedarCreek.aussen",
+          "feld": [23, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "cedarCreek.aussen",
+          "feld": [29, 30],
+          "tut": "sitzt"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "joss": {
+      "ort": "hochebene",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "hochebene.schule",
+          "feld": [8, 30],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "hochebene.schule",
+          "feld": [8, 30],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "hochebene.schule",
+          "feld": [8, 30],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "hochebene.schule",
+          "feld": [8, 30],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "hochebene.schule",
+          "feld": [8, 30],
+          "tut": "steht"
+        }
+      ]
+    },
+    "juniper": {
+      "ort": "wegPinewoodGhost",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegPinewoodGhost.canyonrand",
+          "feld": [73, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegPinewoodGhost.canyonrand",
+          "feld": [73, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegPinewoodGhost.canyonrand",
+          "feld": [93, 9],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegPinewoodGhost.canyonrand",
+          "feld": [93, 9],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegPinewoodGhost.canyonrand",
+          "feld": [93, 9],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "juno": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "mapleFalls.aussen",
+          "feld": [54, 24],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "mapleFalls.aussen",
+          "feld": [54, 24],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [22, 24],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 10],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 10],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["mapleFalls.clubraum"],
+      "festhalten": "regel1"
+    },
+    "kade": {
+      "ort": "capitalArena",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "capitalArena.halle",
+          "feld": [11, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "capitalArena.halle",
+          "feld": [11, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "capitalArena.innenstadt",
+          "feld": [30, 50],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [12, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [12, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "kapitaen": {
+      "ort": "wegSiliconDelacroix",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [15, 69],
+          "tut": "steht"
+        }
+      ],
+      "questorte": ["wegSiliconDelacroix.faehre"]
+    },
+    "kettering": {
+      "ort": "cedarCreek",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "cedarCreek.aussen",
+          "feld": [40, 28],
+          "tut": "steht"
+        }
+      ]
+    },
+    "kiki": {
+      "ort": "wegIronwoodSilicon",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "feld": [66, 8],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "feld": [66, 8],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "feld": [84, 10],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "wegIronwoodSilicon.raststaette",
+          "feld": [31, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "wegIronwoodSilicon.raststaette",
+          "feld": [31, 14],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "kira": {
+      "ort": "hochebene",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 18,
+          "karte": "hochebene.felsentuerme",
+          "feld": [44, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "hochebene.felsentuerme",
+          "feld": [44, 16],
+          "tut": "steht"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ],
+      "questorte": ["hochebene.felsentuerme"]
+    },
+    "kit": {
+      "ort": "summitCity",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "summitCity.huette",
+          "feld": [3, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "summitCity.huette",
+          "feld": [3, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "summitCity.aussen",
+          "feld": [33, 39],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "summitCity.aussen",
+          "feld": [33, 39],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "summitCity.aussen",
+          "feld": [33, 39],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "kowalczyk": {
+      "ort": "wegIronwoodSilicon",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "wegIronwoodSilicon.raststaette",
+          "feld": [121, 25],
+          "tut": "steht"
+        }
+      ]
+    },
+    "lily": {
+      "ort": "mapleFalls",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 18,
+          "karte": "mapleFalls.aussen",
+          "feld": [14, 24],
+          "tut": "sitzt am Boden"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [15, 24],
+          "tut": "sitzt"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ],
+      "questorte": ["mapleFalls.aussen"]
+    },
+    "lin": {
+      "ort": "siliconBay",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "siliconBay.akademie",
+          "feld": [20, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "siliconBay.akademie",
+          "feld": [20, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "siliconBay.hafen",
+          "feld": [22, 27],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "siliconBay.hafen",
+          "feld": [22, 27],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "siliconBay.hafen",
+          "feld": [22, 27],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["capitalArena.halle"],
+      "festhalten": "regel1"
+    },
+    "lou": {
+      "ort": "portDelacroix",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 17,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [12, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "portDelacroix.aussen",
+          "feld": [4, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "lucia": {
+      "ort": "sternwarte",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "sternwarte.kuppel",
+          "feld": [5, 10],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "sternwarte.kuppel",
+          "feld": [5, 10],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "sternwarte.felsnase",
+          "feld": [2, 7],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "sternwarte.felsnase",
+          "feld": [2, 7],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2,
+          "karte": "sternwarte.kuppel",
+          "feld": [1, 6],
+          "tut": "liegt"
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "sternwarte.felsnase",
+          "feld": [2, 7],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "mae": {
+      "ort": "pinewoodCamp",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 18,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [26, 19],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "pinewoodCamp.aussen",
+          "feld": [26, 19],
+          "tut": "steht"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "mags": {
+      "ort": "wegDesertSummit",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "wegDesertSummit.hinterzimmer",
+          "feld": [8, 5],
+          "tut": "steht"
+        }
+      ]
+    },
+    "marcus": {
+      "ort": "capitalArena",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "capitalArena.halle",
+          "feld": [6, 12],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "capitalArena.halle",
+          "feld": [6, 12],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "capitalArena.innenstadt",
+          "feld": [30, 51],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [3, 9],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [3, 9],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "mira": {
+      "ort": "desertSprings",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 16,
+          "karte": "desertSprings.garage",
+          "feld": [10, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "desertSprings.aussen",
+          "feld": [20, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ],
+      "questorte": ["desertSprings.garage"]
+    },
+    "mo": {
+      "ort": "capitalArena",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [18, 10],
+          "tut": "steht"
+        }
+      ],
+      "questorte": ["capitalArena.ubahnhof"]
+    },
+    "mutter": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "mapleFalls.wohnzimmer",
+          "feld": [16, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "mapleFalls.wohnzimmer",
+          "feld": [16, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "mapleFalls.wohnzimmer",
+          "feld": [18, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "mapleFalls.wohnzimmer",
+          "feld": [18, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "mapleFalls.wohnzimmer",
+          "feld": [18, 6],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["mapleFalls.wohnzimmer"]
+    },
+    "ngata": {
+      "ort": "sternwarte",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "sternwarte.kuppel",
+          "feld": [10, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "sternwarte.kuppel",
+          "feld": [10, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "sternwarte.felsnase",
+          "feld": [2, 5],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "sternwarte.felsnase",
+          "feld": [2, 5],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "sternwarte.felsnase",
+          "feld": [2, 5],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "nova": {
+      "orte": ["capitalArena", "crossroads", "riverton", "siliconBay"],
+      "folgt_geschichte": true,
+      "questorte": ["crossroads.raststaette"]
+    },
+    "odette": {
+      "ort": "wegGhostCapital",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegGhostCapital.leuchtturm",
+          "feld": [78, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegGhostCapital.leuchtturm",
+          "feld": [78, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegGhostCapital.seeufer",
+          "feld": [108, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegGhostCapital.seeufer",
+          "feld": [108, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegGhostCapital.seeufer",
+          "feld": [108, 19],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["wegGhostCapital.leuchtturm"]
+    },
+    "odile": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [17, 4],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [17, 4],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [14, 7],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [14, 7],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [14, 7],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["portDelacroix.turnhalle"]
+    },
+    "okafor": {
+      "ort": "cedarCreek",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "cedarCreek.bibliothek",
+          "feld": [13, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "cedarCreek.bibliothek",
+          "feld": [13, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "cedarCreek.aussen",
+          "feld": [31, 30],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "cedarCreek.aussen",
+          "feld": [31, 30],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "cedarCreek.aussen",
+          "feld": [31, 30],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["cedarCreek.bibliothek"]
+    },
+    "okoro": {
+      "ort": "desertSprings",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "desertSprings.antiquariat",
+          "feld": [16, 5],
+          "tut": "steht"
+        }
+      ],
+      "questorte": ["desertSprings.antiquariat"]
+    },
+    "oldPete": {
+      "ort": "pelikaninsel",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "pelikaninsel.dorf",
+          "feld": [22, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "pelikaninsel.dorf",
+          "feld": [22, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "pelikaninsel.dorf",
+          "feld": [22, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "pelikaninsel.dorf",
+          "feld": [22, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "pelikaninsel.dorf",
+          "feld": [22, 20],
+          "tut": "steht"
+        }
+      ]
+    },
+    "omaMiller": {
+      "ort": "kuerbishof",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "kuerbishof.hof",
+          "feld": [5, 25],
+          "tut": "steht"
+        }
+      ]
+    },
+    "omaRuth": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "ironwood.mamasZimmer",
+          "feld": [5, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "ironwood.mamasZimmer",
+          "feld": [5, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "ironwood.mamasZimmer",
+          "feld": [3, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "ironwood.mamasZimmer",
+          "feld": [3, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5,
+          "karte": "ironwood.mamasZimmer",
+          "feld": [8, 4],
+          "tut": "liegt"
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "ironwood.mamasZimmer",
+          "feld": [3, 6],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["ironwood.mamasZimmer"]
+    },
+    "owen": {
+      "ort": "mapleFalls",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 17,
+          "karte": "mapleFalls.aussen",
+          "feld": [6, 31],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [15, 28],
+          "tut": "sitzt"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "pepe": {
+      "ort": "bayou",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "bayou.steg",
+          "feld": [8, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "bayou.steg",
+          "feld": [8, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "bayou.steg",
+          "feld": [8, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "bayou.steg",
+          "feld": [8, 13],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "bayou.steg",
+          "feld": [8, 13],
+          "tut": "steht"
+        }
+      ],
+      "questorte": ["bayou.steg"]
+    },
+    "pops": {
+      "ort": "riverton",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [23, 11],
+          "tut": "steht"
+        }
+      ]
+    },
+    "pratt": {
+      "ort": "wegMapleCedar",
+      "kind": false,
+      "hinweis": "ueber_grenze",
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [6, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegMapleCedar.landstrasse",
+          "feld": [6, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegMapleCedar.flussweg",
+          "feld": [54, 20],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegMapleCedar.flussweg",
+          "feld": [54, 20],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegMapleCedar.flussweg",
+          "feld": [54, 20],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "priya": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "ironwood.kantine",
+          "feld": [17, 8],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "ironwood.kantine",
+          "feld": [17, 8],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "ironwood.aussen",
+          "feld": [12, 49],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "ironwood.kantine",
+          "feld": [15, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "ironwood.kantine",
+          "feld": [15, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "pruitt": {
+      "ort": "ghostTown",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "ghostTown.saloon",
+          "feld": [9, 12],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "ghostTown.saloon",
+          "feld": [9, 12],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "ghostTown.saloon",
+          "feld": [5, 10],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "ghostTown.saloon",
+          "feld": [5, 10],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "ghostTown.saloon",
+          "feld": [5, 10],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "ray": {
+      "ort": "wegSummitCrossroads",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "wegSummitCrossroads.praerie",
+          "feld": [23, 95],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "wegSummitCrossroads.praerie",
+          "feld": [23, 95],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "feld": [23, 61],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "feld": [23, 61],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "feld": [23, 61],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "remy": {
+      "ort": "portDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [9, 8],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "portDelacroix.turnhalle",
+          "feld": [9, 8],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "portDelacroix.aussen",
+          "feld": [3, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "portDelacroix.aussen",
+          "feld": [3, 14],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "portDelacroix.aussen",
+          "feld": [3, 14],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "rosa": {
+      "ort": "cedarCreek",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "cedarCreek.aussen",
+          "feld": [53, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "cedarCreek.aussen",
+          "feld": [53, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "cedarCreek.aussen",
+          "feld": [50, 24],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "cedarCreek.aussen",
+          "feld": [50, 24],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "cedarCreek.aussen",
+          "feld": [50, 24],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "rosie": {
+      "ort": "siliconBay",
+      "kind": false,
+      "ohne_schlaf": "dienst",
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 0,
+          "bis": 0,
+          "karte": "siliconBay.aussen",
+          "feld": [12, 64],
+          "tut": "steht"
+        }
+      ]
+    },
+    "ruthKeene": {
+      "ort": "wegDesertSummit",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "wegDesertSummit.hinterzimmer",
+          "feld": [12, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "wegDesertSummit.hinterzimmer",
+          "feld": [12, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "wegDesertSummit.diner",
+          "feld": [6, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegDesertSummit.diner",
+          "feld": [6, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegDesertSummit.diner",
+          "feld": [6, 19],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "sam": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "mapleFalls.clubraum",
+          "feld": [5, 8],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "mapleFalls.clubraum",
+          "feld": [5, 8],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [4, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "mapleFalls.diner",
+          "feld": [6, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [6, 6],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "schaffner": {
+      "ort": "wegCedarRiverton",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "wegCedarRiverton.bahndamm",
+          "feld": [57, 10],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "wegCedarRiverton.bahndamm",
+          "feld": [57, 10],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "wegCedarRiverton.bahndamm",
+          "feld": [39, 4],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "wegCedarRiverton.bahndamm",
+          "feld": [39, 4],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "wegCedarRiverton.bahndamm",
+          "feld": [39, 4],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "schiffskoch": {
+      "ort": "wegSiliconDelacroix",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [17, 25],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [17, 25],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [16, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [16, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "wegSiliconDelacroix.faehre",
+          "feld": [16, 38],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "skaterJo": {
+      "ort": "mapleFalls",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "mapleFalls.park",
+          "feld": [16, 24],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "mapleFalls.park",
+          "feld": [16, 24],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "mapleFalls.park",
+          "feld": [22, 23],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 9],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "mapleFalls.diner",
+          "feld": [14, 9],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["mapleFalls.park"]
+    },
+    "slick": {
+      "ort": "riverton",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "riverton.pavillon",
+          "feld": [6, 11],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "riverton.pavillon",
+          "feld": [6, 11],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "riverton.aussen",
+          "feld": [17, 18],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [5, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "riverton.bahnhofshalle",
+          "feld": [5, 11],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["riverton.pavillon"]
+    },
+    "sol": {
+      "ort": "summitCity",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "summitCity.aussen",
+          "feld": [12, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "summitCity.aussen",
+          "feld": [12, 9],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "summitCity.aussen",
+          "feld": [40, 39],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "summitCity.aussen",
+          "feld": [40, 39],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "summitCity.aussen",
+          "feld": [40, 39],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "tamsin": {
+      "ort": "riverton",
+      "kind": true,
+      "bloecke": [
+        {
+          "art": "arbeit",
+          "von": 7,
+          "bis": 16,
+          "karte": "riverton.pavillon",
+          "feld": [9, 19],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "riverton.aussen",
+          "feld": [17, 19],
+          "tut": "sitzt"
+        },
+        {
+          "art": "zuhause",
+          "von": 21,
+          "bis": 7
+        }
+      ]
+    },
+    "teague": {
+      "ort": "ironwood",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "ironwood.museum",
+          "feld": [12, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "ironwood.museum",
+          "feld": [12, 6],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "ironwood.aussen",
+          "feld": [30, 46],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "ironwood.kantine",
+          "feld": [12, 11],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "ironwood.kantine",
+          "feld": [12, 11],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "testteamBenji": {
+      "orte": ["capitalArena", "wegCedarRiverton", "wegDesertSummit", "wegIronwoodSilicon"],
+      "folgt_geschichte": true
+    },
+    "testteamImani": {
+      "orte": ["capitalArena", "wegCedarRiverton", "wegDesertSummit", "wegIronwoodSilicon"],
+      "folgt_geschichte": true
+    },
+    "testteamZoe": {
+      "orte": ["capitalArena", "wegCedarRiverton", "wegDesertSummit", "wegIronwoodSilicon"],
+      "folgt_geschichte": true,
+      "questorte": [
+        "wegCedarRiverton.zedernwald",
+        "wegDesertSummit.diner",
+        "wegIronwoodSilicon.raststaette"
+      ]
+    },
+    "theo": {
+      "ort": "siliconBay",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "siliconBay.akademie",
+          "feld": [9, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "siliconBay.akademie",
+          "feld": [9, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "siliconBay.hafen",
+          "feld": [14, 27],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "siliconBay.hafen",
+          "feld": [14, 27],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "siliconBay.hafen",
+          "feld": [14, 27],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "theron": {
+      "ort": "bayou",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "bayou.steg",
+          "feld": [17, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "bayou.steg",
+          "feld": [17, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "bayou.steg",
+          "feld": [17, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 2,
+          "karte": "bayou.steg",
+          "feld": [17, 20],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 2,
+          "bis": 5
+        },
+        {
+          "art": "nacht",
+          "von": 5,
+          "bis": 6,
+          "karte": "bayou.steg",
+          "feld": [17, 20],
+          "tut": "steht"
+        }
+      ]
+    },
+    "tobias": {
+      "ort": "capitalArena",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "capitalArena.halle",
+          "feld": [21, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "capitalArena.halle",
+          "feld": [21, 14],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "capitalArena.innenstadt",
+          "feld": [31, 50],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [26, 12],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [26, 12],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "tomas": {
+      "ort": "desertSprings",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "desertSprings.garage",
+          "feld": [4, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "desertSprings.garage",
+          "feld": [4, 5],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "desertSprings.aussen",
+          "feld": [21, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 22,
+          "karte": "desertSprings.aussen",
+          "feld": [21, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 22,
+          "bis": 1
+        },
+        {
+          "art": "nacht",
+          "von": 1,
+          "bis": 6,
+          "karte": "desertSprings.aussen",
+          "feld": [21, 6],
+          "tut": "sitzt"
+        }
+      ]
+    },
+    "turnierleiterin": {
+      "ort": "capitalArena",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 10,
+          "karte": "capitalArena.halle",
+          "feld": [11, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 10,
+          "bis": 18,
+          "karte": "capitalArena.halle",
+          "feld": [11, 7],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 18,
+          "bis": 21,
+          "karte": "capitalArena.innenstadt",
+          "feld": [31, 51],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 1,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [2, 9],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 1,
+          "bis": 4
+        },
+        {
+          "art": "nacht",
+          "von": 4,
+          "bis": 6,
+          "karte": "capitalArena.ubahnhof",
+          "feld": [2, 9],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["capitalArena.halle"]
+    },
+    "victor": {
+      "orte": [
+        "capitalArena",
+        "cedarCreek",
+        "ghostTown",
+        "ironwood",
+        "riverton",
+        "siliconBay",
+        "summitCity"
+      ],
+      "folgt_geschichte": true,
+      "questorte": [
+        "capitalArena.halle",
+        "ghostTown.aussen",
+        "ironwood.aussen",
+        "summitCity.bergstation"
+      ]
+    },
+    "walt": {
+      "ort": "kuerbishof",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 8,
+          "karte": "kuerbishof.hof",
+          "feld": [41, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 8,
+          "bis": 16,
+          "karte": "kuerbishof.hof",
+          "feld": [41, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 16,
+          "bis": 21,
+          "karte": "kuerbishof.hof",
+          "feld": [41, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "kuerbishof.hof",
+          "feld": [41, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "kuerbishof.hof",
+          "feld": [41, 23],
+          "tut": "steht"
+        }
+      ]
+    },
+    "wanderer": {
+      "orte": ["capitalArena", "wegGhostCapital", "wegMapleCedar"],
+      "folgt_geschichte": true,
+      "questorte": ["capitalArena.aussen"]
+    },
+    "ward": {
+      "ort": "summitCity",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "summitCity.huette",
+          "feld": [10, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "summitCity.huette",
+          "feld": [10, 6],
+          "tut": "sitzt"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "summitCity.aussen",
+          "feld": [41, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 0,
+          "karte": "summitCity.aussen",
+          "feld": [41, 38],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 0,
+          "bis": 3
+        },
+        {
+          "art": "nacht",
+          "von": 3,
+          "bis": 6,
+          "karte": "summitCity.aussen",
+          "feld": [41, 38],
+          "tut": "sitzt"
+        }
+      ],
+      "questorte": ["summitCity.huette"]
+    },
+    "zwillinge": {
+      "ort": "cedarCreek",
+      "kind": false,
+      "bloecke": [
+        {
+          "art": "freizeit",
+          "von": 6,
+          "bis": 9,
+          "karte": "cedarCreek.aussen",
+          "feld": [22, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "arbeit",
+          "von": 9,
+          "bis": 17,
+          "karte": "cedarCreek.aussen",
+          "feld": [22, 23],
+          "tut": "steht"
+        },
+        {
+          "art": "freizeit",
+          "von": 17,
+          "bis": 21,
+          "karte": "cedarCreek.aussen",
+          "feld": [50, 25],
+          "tut": "sitzt"
+        },
+        {
+          "art": "nacht",
+          "von": 21,
+          "bis": 23,
+          "karte": "cedarCreek.aussen",
+          "feld": [50, 25],
+          "tut": "sitzt"
+        },
+        {
+          "art": "schlaf",
+          "von": 23,
+          "bis": 2
+        },
+        {
+          "art": "nacht",
+          "von": 2,
+          "bis": 6,
+          "karte": "cedarCreek.aussen",
+          "feld": [50, 25],
+          "tut": "sitzt"
+        }
+      ]
+    }
+  }
+}

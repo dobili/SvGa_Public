@@ -197,10 +197,10 @@ Jetzt weißt du, was du lernen willst. #sprecher:ambrose #stimmung:laechelt
 // Eine kurze Partie hatte den Moment „Was hängt?“ (Zug 6) noch nicht, deshalb fragt Ambrose hier.
 ~ temp kurz = zuegeMapleFallsErsteLektion > 0 and zuegeMapleFallsErsteLektion < KURZE_PARTIE
 { kurz:
-    Das ging schnell. Trotzdem dämmert es draußen schon, und durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Das ging schnell. Trotzdem dämmert es draußen schon, und durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen #uhr:abend
     {ausgangMapleFallsErsteLektion == "sieg":So schnell war ich lange nicht matt. Ich habe vergessen zu fragen: Was hängt?|So schnell kann es gehen. Eine Frage, und es wäre anders gekommen: Was hängt?} #sprecher:ambrose #stimmung:nachdenklich
 - else:
-    Draußen dämmert es. Ihr habt lange gespielt. #sprecher:erzaehler #licht:abend #geraeusch:grillen
+    Draußen dämmert es. Ihr habt lange gespielt. #sprecher:erzaehler #licht:abend #geraeusch:grillen #uhr:abend
     Durch das Fenster zirpen Grillen. #sprecher:erzaehler
     Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose #stimmung:laechelt
 }
@@ -265,7 +265,7 @@ Ich war allerdings eine Weile verhindert. #sprecher:ambrose #stimmung:lacht
 ~ setzeSzene("akt1.ersteNacht")
 // Geführte Wege (Wunsch des Autors, 20.11.2026): Die Nacht beginnt im Bett; erst nach den ersten
 // Fragen steht {held} auf und geht zu Ambrose ans Fenster (#stelle, #gehe; oberwelt/gefuehrterweg.ts).
-Nacht. Das Haus ist still, nur du nicht. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank #stelle:held>13,8>liegt
+Nacht. Das Haus ist still, nur du nicht. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank #stelle:held>13,8>liegt #uhr:nacht
 Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler
 Du hast die Laterne vom Dachboden geholt. Das Brett steht auf dem Schreibtisch unter deinem Fenster. #sprecher:erzaehler #klang:knarren
 Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler
@@ -298,7 +298,7 @@ Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht bess
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #geraeusch:aus
 // Erstspieler-Durchgang 20.11.2026: Der Morgen war nicht erzählt; draußen hieß es plötzlich „Guten
 // Morgen“, und keine Quest nannte das nächste Ziel. Jetzt der Morgen und der Weg zur Schule.
-Am Morgen steht Mama schon in der Tür, den Autoschlüssel in der Hand. #sprecher:erzaehler #licht:tag
+Am Morgen steht Mama schon in der Tür, den Autoschlüssel in der Hand. #sprecher:erzaehler #licht:tag #uhr:morgen
 Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, ja? #sprecher:mutter #stimmung:laechelt
 -> END
 
@@ -311,7 +311,7 @@ Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, j
 
 === abend_nach_sam ===
 ~ abendSamGesehen = true
-Abend. Durch das offene Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Durch das offene Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen #uhr:abend
 Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler
 Ambrose geht am Fenster auf und ab. Bei jemandem, durch den man hindurchsehen kann, lenkt das sehr ab. #sprecher:erzaehler
 Du zählst richtig. Aber du zählst wie ein Buchhalter. #sprecher:ambrose #stimmung:streng
@@ -326,7 +326,7 @@ Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:
 
 === abend_nach_juno ===
 ~ abendJunoGesehen = true
-Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Junos Aufgaben liegen ausgebreitet auf deinem Bett, in rosa Tinte. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen #uhr:abend
 Neben guten Zügen klebt ein Stern. #sprecher:erzaehler
 Es gibt wenige Sterne. Es stört sie nicht. #sprecher:erzaehler
 Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. #sprecher:ambrose #stimmung:laechelt
@@ -341,7 +341,7 @@ Wer aufschreibt, kann zurückblättern. #sprecher:ambrose #stimmung:laechelt
 
 === abend_nach_dame ===
 ~ abendDameGesehen = true
-Abend. Du denkst an Sam, den Kopf auf dem Tisch, und an seine gefangene Dame. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
+Abend. Du denkst an Sam, den Kopf auf dem Tisch, und an seine gefangene Dame. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen #uhr:abend
 Du hast es ihm erklärt, nicht ich. Wie hast du es gesagt? #sprecher:ambrose #stimmung:laechelt
 * [„Die Dame läuft allein über einen leeren Platz.“]
     Und jeder kann auf sie zeigen. Während die anderen in Ruhe ihre Leute aufstellen. #sprecher:ambrose #stimmung:laechelt

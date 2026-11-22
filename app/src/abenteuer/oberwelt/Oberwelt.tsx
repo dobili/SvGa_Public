@@ -51,6 +51,8 @@ import { Vorfuehrung } from "./Vorfuehrung";
 import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
 import { Steuerhinweiszeile } from "./Steuerhinweis";
+import { useSpieluhr } from "./useSpieluhr";
+import { useWarten } from "./useWarten";
 import { useSteuerhinweis } from "./useSteuerhinweis";
 import { eingangsdialog } from "./eingang";
 import { schalteVerfolgung } from "../regeln/verfolgung";
@@ -126,9 +128,12 @@ export function Oberwelt() {
   }, [spiel, fensterOffen, welt]);
   useOffeneRueckmeldung(k, oeffneDialog, welt !== null && !fensterOffen);
   useTextspalte(dialog !== null, () => szeneAus(spiel)?.passeKameraAn());
+  const weltFrei = welt !== null && !fensterOffen && meldung === null;
+  const warten = useWarten(k, weltFrei); // Menü „Warten …“, Bank, Bett (useWarten.tsx)
+  useSpieluhr(k, weltFrei && !warten.offen); // läuft nur in freier Welt (regeln/spieluhr.ts)
   // Einmalige Hinweise zur Steuerung (Erstspieler-Durchgang 20.11.2026, useSteuerhinweis.ts).
   const hinweis = useSteuerhinweis(k, {
-    frei: welt !== null && !fensterOffen && meldung === null,
+    frei: weltFrei,
     erinnerung: welt?.erinnerung === true,
     aktionSichtbar: welt !== null && aktionFuer(welt, treffer) !== null,
     draussen: welt !== null && !welt.innen,
@@ -193,14 +198,16 @@ export function Oberwelt() {
             if (rennen) hinweis.benutzt("rennen");
             szeneAus(spiel)?.gangart.setzeKreuz(rennen);
           }}
-          aktion={aktionFuer(welt, treffer)}
+          aktion={aktionFuer(welt, treffer) ?? warten.ruhe?.text ?? null}
           beiAktion={() => {
+            if (!aktionFuer(welt, treffer) && warten.ruhe) return warten.ruhe.tu();
             hinweis.benutzt("aktion");
             ausl.beiAktion();
           }}
         />
       )}
       <Steuerhinweiszeile steuerung={hinweis} />
+      {warten.element}
       {dialog && (
         <Dialog
           key={`${dialog.datei}.${dialog.knoten}`}

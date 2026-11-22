@@ -132,8 +132,8 @@ const STUNDEN: Readonly<Record<Exclude<Tageszeit, "immer">, readonly [number, nu
 };
 
 /**
- * Ist ein Statist zu dieser Stunde unterwegs? Das Spiel hat keine eigene Uhr; es gilt die Uhr des
- * Geräts. Die Bereiche sind großzügig (Tag 6 bis 22 Uhr), damit die Karten am Abend nicht leer
+ * Ist ein Statist zu dieser Stunde unterwegs? Die Stunde kommt seit dem 22.11.2026 aus der Spieluhr
+ * (regeln/spieluhr.ts), beim Aufbau der Karte; ohne Angabe die Uhr des Geräts. Die Bereiche sind großzügig (Tag 6 bis 22 Uhr), damit die Karten am Abend nicht leer
  * wirken (Entscheidung von mittel-2 in Runde 7, Widerspruch genügt).
  * Beispiel: wann „morgen“ um 9 Uhr → true, um 14 Uhr → false; „immer“ → true.
  */

@@ -357,6 +357,27 @@ Profil › Einstellungen › Fehler melden.
       Clubkämpfe (mit jedem Sieg kommt eine Stimme dazu). Zum Vergleich alt gegen neu: im privaten
       Repository hoerprobe/akt1/index.html und hoerprobe/akt2/index.html. Passen die Köpfe von
       Riverton (C Es G As, G Es C) und Ironwood (F As C, Des C)? „ok“ oder Notiz je Stück.
+- [ ] N2687. **Musik Akt 3:** Silicon Bay (Tag, Nacht, Akademie), Port Delacroix (Tag, Nacht,
+      drinnen), Fähre, Desert Springs (Tag, Nacht, drinnen), Wüstenzug, Busfahrt, die beiden
+      Clubkämpfe. Erkennst du in Port Delacroix Miss Odiles Lied und in Desert Springs Miras reine
+      Quarte? Alt gegen neu im privaten Repository: hoerprobe/akt3/index.html.
+- [ ] N2688. **Rivalin wählbar:** Neues Spiel, „Rivalin Victoria“ wählen. Im Clubraum steht „Victoria
+      Hale. Zeig mal, was eine Nadel hier wert ist.“, Juno sagt „Die war nicht nett. Aber sie war
+      gut.“ Das Bild ist vorerst Victor, bis deine PixelLab-Bilder da sind. Im Spielmenü lässt sich
+      die Wahl ändern (gilt ab dem nächsten Gespräch). Drei Sätze sind für beide Fassungen neu
+      formuliert: „Und gegen dich.“ statt „gegen meinen besten Gegner“, „dein Gegenüber“ in der
+      Kreidenacht, „Die Hales und die Whitlocks an einem Brett.“ im Saloon (Widerspruch genügt).
+- [ ] N2689. **Schach am Brett erklärt:** Bei Lily (nach ihrer Springerrunde) erscheint zu „das ist
+      die Gabel“ ein kleines Brett mit zwei Pfeilen vom Springer. Bei Mrs. Calloway sind die acht
+      Springerziele markiert. Im Wohnzimmer zeigt Mama ihren Spieß in drei Bildern. In der Hütte
+      zeigt Ward die Opposition, Kit das Quadrat. Insgesamt 15 Beispiele, wo möglich aus deinem
+      Buch (7.1, 7.2, 7.6, 7.37, 8.35); für Fesselung und Opposition einfache Stellungen mit wenigen
+      Steinen, weil das Buch dort volle Bretter zeigt. Das Brett verdeckt nie den Text; „Weiter“
+      schließt es.
+- [ ] N2690. **Tagesabläufe:** Die Figuren haben jetzt einen Tagesablauf nach der Spieluhr. Mit
+      „Warten“ zu Abend und Nacht: Coach Delgado sitzt abends im Park, nachts im Diner; Big Joe
+      abends auf der Bank vor der Kantine; Kinder sind nachts zu Hause; Mags ist im Diner immer
+      da. Wer für den nächsten Schritt einer Aufgabe gebraucht wird, steht immer an seinem Platz.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

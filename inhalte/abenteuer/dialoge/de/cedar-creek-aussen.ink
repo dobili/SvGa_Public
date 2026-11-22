@@ -101,7 +101,7 @@ Unten im Archiv steht noch ein Karton. #sprecher:erzaehler
 -> END
 
 === sterne_angebot ===
-Es wird dunkel. Am Steg sitzen Mae, Dex und Juno auf einer Decke. #sprecher:erzaehler
+Es wird dunkel. Am Steg sitzen Mae, Dex und Juno auf einer Decke. #sprecher:erzaehler #uhr:abend
 Mrs. Okafor hat eine Thermoskanne dabei. #sprecher:erzaehler
 Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 * [Dazusetzen]
@@ -121,7 +121,7 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 // dann das Nachtstück.
 // sternennachtGesehen erst am Ende (sterne_ende): Wer mitten in der Nacht abbricht, bekommt die
 // Sternennacht am Steg wieder angeboten, sonst bliebe die Quest offen (19.11.2026).
-Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen
+Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen #uhr:nacht
 Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
 Die da ist Kassiopeia. Sieht aus wie ein W. #sprecher:mae #stimmung:laechelt
 Und das ist der Große Wagen, und das … #sprecher:mae #stimmung:laechelt
@@ -168,7 +168,7 @@ Dann geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen den Regalen. 
 // Wunsch als Folge. Hier fällt das dritte „Später“. Klang nach 21_Klangplan.md (S25, S26).
 // Porträtfassung „lacht ohne Spott“ gibt es noch nicht.
 ~ endeAkt1Gesehen = true
-Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler #musik:cedarCreek.steg #licht:abend
+Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler #musik:cedarCreek.steg #licht:abend #uhr:abend
 Du setzt dich ans Ende der Bretter und legst das Brett neben dich, ohne Handtuch. Er steht am Geländer. #sprecher:erzaehler
 -> fehler_am_steg ->
 * [„Was willst du eigentlich?“]

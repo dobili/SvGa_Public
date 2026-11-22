@@ -143,7 +143,7 @@ Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht
 // Kapitel 59 (Roman): Ambrose sagt es. Nachtstück zum dritten und letzten Mal mit Ambroses
 // Thema als Gegenstimme; bei „Bleib“ ein gehaltener Ton (S74). Er sitzt zum vierten Mal.
 ~ ambroseSagtEsGesehen = true
-Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
+Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine ganze Partie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon #uhr:nacht
 Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. #sprecher:juno #stimmung:froh
 Ich hab sie gemacht. #sprecher:juno #stimmung:froh
 Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck

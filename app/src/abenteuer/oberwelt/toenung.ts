@@ -14,7 +14,16 @@
 import { erfuellt } from "../regeln/bedingung";
 
 /** Die Tönungen einer Karte. */
-export type Toenung = "nebel" | "dunst" | "nacht" | "abend" | "serverblau" | "sepia" | "dunkel";
+export type Toenung =
+  | "nebel"
+  | "dunst"
+  | "nacht"
+  | "abend"
+  | "serverblau"
+  | "sepia"
+  | "dunkel"
+  | "morgen"
+  | "innennacht";
 
 const TOENUNGEN: readonly Toenung[] = [
   "nebel",
@@ -24,6 +33,8 @@ const TOENUNGEN: readonly Toenung[] = [
   "serverblau",
   "sepia",
   "dunkel",
+  "morgen",
+  "innennacht",
 ];
 /** Wert der Dialogvariable, der eine Tönung aufhebt. */
 export const KEINE_TOENUNG = "keine";
@@ -47,6 +58,9 @@ export const SCHLEIER: Readonly<Partial<Record<Toenung, Schleier>>> = {
   // Serverblau: kaltes blaues Licht im Serverraum von Silicon Bay (Gutachten 10.11.2026: der
   // Raum war hell wie ein Büro); gleich wie pipeline/abenteuer/toenung.py.
   serverblau: { farbe: 0x1e50c8, deckkraft: 0.3 },
+  // Spieluhr (22.11.2026, uhrtoenung.ts): Morgendämmerung zartrosa, nachts innen nur gedämpft.
+  morgen: { farbe: 0xffb6a0, deckkraft: 0.14 },
+  innennacht: { farbe: 0x0b1530, deckkraft: 0.18 },
 };
 
 /** Lichtkreis in Feldern: mit Laterne vier Felder (Auftrag Runde 6), ohne nur das Nächste. */
@@ -92,7 +106,7 @@ export function lichtAusOrten(
 }
 
 /** Eigenschaft `toenung` einer Tiled-Karte, sonst null. */
-function toenungAusKarte(karte: object): Toenung | null {
+export function toenungAusKarte(karte: object): Toenung | null {
   const eigenschaften = (karte as { properties?: readonly { name?: string; value?: unknown }[] })
     .properties;
   const wert = eigenschaften?.find((e) => e.name === "toenung")?.value;

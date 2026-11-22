@@ -20,7 +20,8 @@ import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { bildDesFundes } from "./fensterbankfunde";
 import { auftragFuer } from "./auftraege";
-import { aktuelleToenung, toenungsvariable, type Toenung } from "./toenung";
+import { toenungsvariable, type Toenung } from "./toenung";
+import { toenungJetzt } from "./uhrtoenung";
 import type { Weltdaten } from "./weltdaten";
 
 /** Ein veränderbarer Merker (wie ein React-Ref). */
@@ -81,8 +82,7 @@ function setzeToenung(k: Wirkungskontext, name: string): void {
   const aktuell = k.stand();
   const neu = { ...aktuell.dialogvariablen, [toenungsvariable(welt.kennung)]: name };
   k.schreibe({ ...aktuell, dialogvariablen: neu });
-  const eintrag = welt.ort.karten.find((x) => x.kennung === welt.kennung);
-  k.toenung(aktuelleToenung(welt.karte, welt.kennung, neu, eintrag));
+  k.toenung(toenungJetzt(welt, { ...aktuell, dialogvariablen: neu }));
 }
 
 /**

@@ -34,8 +34,7 @@ import type { Paketzustand } from "../schnittstelle/paket";
 import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { useAktton } from "../paket/aktton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
-import { Steuerkreuzwahl } from "./Steuerkreuzwahl";
-import { Tonregler } from "./Tonregler";
+import { Menueeinstellungen } from "./Menueeinstellungen";
 import { Ladestand } from "./Ladestand";
 import { groessentext, mbText } from "./groesse";
 
@@ -146,7 +145,7 @@ function Startkarte({
   );
 }
 
-/** Das Spielmenü: Rückweg in die App, Name ändern, neu beginnen, Paket löschen. */
+/** Das Spielmenü: Rückweg in die App, Name, neu beginnen, Warten, Steuerkreuz, Ton, Paket löschen. */
 function Spielmenue({
   heldname,
   beiSchliessen,
@@ -208,8 +207,7 @@ function Spielmenue({
           )}
         </>
       )}
-      <Steuerkreuzwahl />
-      <Tonregler />
+      <Menueeinstellungen beiSchliessen={beiSchliessen} />
       <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
         {t("abenteuer.paketLoeschen")}
       </button>

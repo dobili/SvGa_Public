@@ -61,8 +61,8 @@ VAR testteamArenaGesehen = false
     -> END
 }
 ~ ankunftCapitalArenaGesehen = true
-Am Abend fahrt ihr in die Hauptstadt und schlaft in einem Hotel, von dessen Fenster aus man die Arena sieht. #sprecher:erzaehler #pause:2
-Am Morgen steht ihr davor. #sprecher:erzaehler
+Am Abend fahrt ihr in die Hauptstadt und schlaft in einem Hotel, von dessen Fenster aus man die Arena sieht. #sprecher:erzaehler #pause:2 #uhr:abend
+Am Morgen steht ihr davor. #sprecher:erzaehler #uhr:morgen
 // Roman Kapitel 60: die Arena als weiße Muschel, die Busse aller Städte, alle auf der Treppe.
 * [Hinsehen]
 - Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena

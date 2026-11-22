@@ -257,4 +257,10 @@ export interface Abenteuerstand {
    * Fehlt in älteren Ständen.
    */
   readonly zuletztGespielt?: string;
+  /**
+   * Spieluhr (Wunsch des Autors, 22.11.2026): Spielminuten seit Spielbeginn, ein Tag hat 1440.
+   * Läuft nur in freier Oberwelt, ein Spieltag dauert 2 echte Stunden (regeln/spieluhr.ts). Fehlt:
+   * erster Morgen, 6 Uhr.
+   */
+  readonly spieluhr?: number;
 }

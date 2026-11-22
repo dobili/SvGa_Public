@@ -277,7 +277,7 @@ Du machst die Augen zu und siehst es trotzdem. #sprecher:erzaehler
 
 // Kapitel 34, Schluss: Juno fährt zurück und merkt, dass der Held nichts mehr erzählt.
 === hotel_morgen ===
-Am Morgen fährt Juno zurück. Ihr steht an der Glasbrücke, sie hat die Mütze auf. #sprecher:erzaehler #musik:aus #geraeusch:stadtpuls
+Am Morgen fährt Juno zurück. Ihr steht an der Glasbrücke, sie hat die Mütze auf. #sprecher:erzaehler #musik:aus #geraeusch:stadtpuls #uhr:morgen
 Pass auf ihn auf. #sprecher:juno #stimmung:nachdenklich
 * [„Du hörst ihn doch gar nicht.“]
 - Nein. Aber ich höre dich. #sprecher:juno #stimmung:nachdenklich

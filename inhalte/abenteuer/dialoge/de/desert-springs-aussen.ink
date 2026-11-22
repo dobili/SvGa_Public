@@ -132,7 +132,7 @@ Unentschieden! Volltanken reicht nicht, du musst auch losfahren, noch mal? #spre
 // Kapitel 46 (Roman): Nacht am Beckenrand, Sternschnuppen (#teilchen), eigenes Stück motel.nacht;
 // Victors Nachricht mit victor.maschine.
 ~ abendMotelGesehen = true
-In der Nacht sitzt du am Rand des Schwimmbeckens, die Füße zwischen den Kakteen. Die Sterne gehen bis auf den Boden hinunter. #sprecher:erzaehler #licht:nacht #teilchen:sternschnuppen #musik:motel.nacht
+In der Nacht sitzt du am Rand des Schwimmbeckens, die Füße zwischen den Kakteen. Die Sterne gehen bis auf den Boden hinunter. #sprecher:erzaehler #licht:nacht #teilchen:sternschnuppen #musik:motel.nacht #uhr:nacht
 Das Telefon summt. Juno. #sprecher:erzaehler #klang:handy
 Sieben! Ich hab's nachgezählt. #sprecher:juno #stimmung:froh
 Blatt, Buch, Achteck, Zahnrad, Glas, Lyra, Kaktus. Der Kaktus kriegt Glitzer. #sprecher:juno #stimmung:froh

@@ -5,7 +5,9 @@
  * Rolle im Gesamtbild: Oberwelt.tsx gibt `zeile` und `ende` an den Dialog weiter. Die Anweisungen
  * liest buehne.ts, das Blenden der Figuren macht figurblende.ts, das Licht die Tönungsschicht der
  * Szene (mit zwei Sekunden Umblenden). Geführte Wege (`#gehe`, `#stelle`, gefuehrterweg.ts) gehen
- * an die Szene; solange einer läuft, meldet `laeuft` dem Dialog, dass er warten soll.
+ * an die Szene; solange einer läuft, meldet `laeuft` dem Dialog, dass er warten soll. `#uhr:abend`
+ * oder `#uhr:22` stellt die Spieluhr (Geschichte geht vor, regeln/spieluhr.ts); am Dialogende gilt
+ * dann das Licht der neuen Zeit.
  * Abhängigkeiten: kern.ts, buehne.ts, figurblende.ts, gefuehrterweg.ts, fuehrungsschicht.ts.
  */
 import { useRef, useState } from "react";
@@ -16,6 +18,8 @@ import { buehnenanweisung } from "./buehne";
 import { blendeFigur } from "./figurblende";
 import { szeneAus, type Oberweltkern } from "./kern";
 import { zeigeKartenteilchen, zeigeTeilchen } from "./teilchen";
+import { spielminuteJetzt, uhrNachAngabe } from "../regeln/spieluhr";
+import { toenungJetzt } from "./uhrtoenung";
 
 /** Rückrufe für den Dialog. */
 export interface Buehne {
@@ -32,6 +36,16 @@ export function useBuehne(k: Oberweltkern): Buehne {
   // Hat der Dialog das Licht verändert? Nur dann wird es am Ende zurückgestellt.
   const lichtGeaendert = useRef(false);
   const teilchenGeaendert = useRef(false);
+  const uhrGeaendert = useRef(false);
+  /** `#uhr:abend` oder `#uhr:22`: Die Geschichte stellt die Spieluhr (regeln/spieluhr.ts). */
+  const stelleUhr = (angabe: string | undefined) => {
+    const aktuell = k.standRef.current;
+    if (!angabe || !aktuell) return;
+    const neu = uhrNachAngabe(spielminuteJetzt(aktuell), angabe);
+    if (neu === null || neu === aktuell.spieluhr) return;
+    k.schreibe({ ...aktuell, spieluhr: neu });
+    uhrGeaendert.current = true;
+  };
   const [laeuft, setzeLaeuft] = useState(false);
   /** Versetzen sofort, dann alle Wege der Zeile zugleich; der Dialog wartet auf den letzten. */
   const gehe = (tags: Readonly<Record<string, string>>) => {
@@ -70,6 +84,7 @@ export function useBuehne(k: Oberweltkern): Buehne {
       const zugang = szene.fuehrungszugang();
       if (zugang && tags.sprecher) wendeZu(zugang, tags.sprecher);
       gehe(tags);
+      stelleUhr(tags.uhr);
     },
     ende: () => {
       const szene = szeneAus(k.spiel);
@@ -78,6 +93,14 @@ export function useBuehne(k: Oberweltkern): Buehne {
       if (zugang) wendeZurueck(zugang);
       if (teilchenGeaendert.current && szene) zeigeKartenteilchen(szene);
       teilchenGeaendert.current = false;
+      // Hat die Geschichte die Uhr gestellt, gilt danach das Licht der neuen Zeit (uhrtoenung.ts).
+      const welt = k.weltRef.current;
+      const stand = k.standRef.current;
+      if (uhrGeaendert.current && welt && stand) {
+        uhrGeaendert.current = lichtGeaendert.current = false;
+        k.zeigeToenung(toenungJetzt(welt, stand));
+        return;
+      }
       if (!lichtGeaendert.current) return;
       lichtGeaendert.current = false;
       szene?.setzeToenung(k.toenung);

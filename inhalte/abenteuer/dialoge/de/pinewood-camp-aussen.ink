@@ -129,7 +129,7 @@ Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laeche
     ~ varianteTandemGelernt = true
 }
 // VARIANTE-FEHLT: Tandem und Räuberschach. Bis sie gebaut sind, wird am Feuer erzählt statt gespielt.
-Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem
+Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem #uhr:abend
 {not ezraGetroffen:
     ~ ezraGetroffen = true
     // Lektorat 19.11.2026: Vom Lebendschach auf der Lichtung kennt man ihn schon.

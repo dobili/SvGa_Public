@@ -296,3 +296,71 @@ body.abenteuer-mit-kulisse {
   padding-top: var(--raster);
   border-top: 1px solid rgba(201, 162, 39, 0.35);
 }
+
+/* ---------- Spieluhr: Warten, Ausruhen, Tageszeit (22.11.2026, oberwelt/useWarten.tsx) ----------
+   Abblende beim Warten: die Welt wird kurz dunkel, ein Uhrsymbol, dann steht die Karte neu. */
+.abenteuer-warteblende {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--raster);
+  background: rgb(10 16 32 / 92%);
+  color: var(--spiel-creme);
+  animation: abenteuer-warteblende 1.2s ease-in-out both;
+}
+
+.abenteuer-warteblende > span {
+  font-size: 3rem;
+}
+
+@keyframes abenteuer-warteblende {
+  0% {
+    opacity: 0;
+  }
+
+  30%,
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-warteblende {
+    animation: none;
+  }
+}
+
+/* Die Wahl an einer Bank und im Menü: vier Ziele in einer Zeile, auf schmalen Schirmen zwei. */
+.abenteuer-warteauswahl {
+  z-index: 4;
+  text-align: center;
+}
+
+.abenteuer-wartezeile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--raster);
+  margin: var(--raster) 0;
+}
+
+.abenteuer-warten h3 {
+  margin: calc(var(--raster) * 2) 0 0;
+  font-size: var(--groesse-normal, 1rem);
+}
+
+.abenteuer-tageszeit {
+  white-space: nowrap;
+}
+
+.abenteuer-tagebuch-uhr {
+  margin: 0 0 var(--raster);
+  font-size: var(--groesse-klein, 0.9rem);
+}

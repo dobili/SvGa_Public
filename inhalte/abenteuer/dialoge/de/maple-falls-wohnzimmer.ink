@@ -98,7 +98,7 @@ Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt a
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
 // Erstspieler-Durchgang 20.11.2026: kürzer bis zum ersten Schritt; Sofa und Rauschen erzählt schon die Einleitung.
-Am Abend ist der Umzugswagen weg. Kartons überall, das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer
+Am Abend ist der Umzugswagen weg. Kartons überall, das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer #uhr:abend
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter #stimmung:laechelt
@@ -175,7 +175,7 @@ Das ist jetzt eben so. #sprecher:mutter #stimmung:froh
     Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
 * [Nichts sagen, nur nicken]
     Mama lacht. Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
-- In der Nacht, als das Haus still ist, kannst du nicht schlafen. Das Brett wartet oben in deinem Zimmer. #sprecher:erzaehler
+- In der Nacht, als das Haus still ist, kannst du nicht schlafen. Das Brett wartet oben in deinem Zimmer. #sprecher:erzaehler #uhr:nacht
 -> END
 
 === aufbruch ===

@@ -14,7 +14,7 @@ import type { Spieldaten } from "../daten/laden";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { Abspann } from "./Abspann";
 
-const STAND = { held: { name: "Kim", variante: 0 } } as unknown as Abenteuerstand;
+const STAND = { held: { name: "Kim", figur: "held-0" } } as unknown as Abenteuerstand;
 
 describe("Abspann: Aufbau des Fensters", () => {
   it("Figuren und Mitwirkende im Rollbereich, „Schließen“ im Fuß", () => {

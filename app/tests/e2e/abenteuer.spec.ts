@@ -305,6 +305,14 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
   await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
   // Namenswahl vor dem ersten Start (Schritt 8g); der Name steht später im Spielmenü.
   await page.getByTestId("abenteuer-name").fill("Kim");
+  // Wahl Held oder Heldin (22.11.2026): vorgewählt ist der Held; die Heldin ist wählbar, auch
+  // solange ihr Bild fehlt (Platzhalter, im Spiel dann der Held).
+  await expect(page.getByTestId("abenteuer-figur-held-0")).toHaveAttribute("aria-pressed", "true");
+  await page.getByTestId("abenteuer-figur-heldin-0").click();
+  await expect(page.getByTestId("abenteuer-figur-heldin-0")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
   const dialog = page.getByTestId("abenteuer-dialog");
@@ -325,4 +333,13 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
   await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveValue(
     "Kim",
   );
+  // Die gewählte Figur steht im Spielmenü und lässt sich dort wechseln.
+  const menue = page.getByTestId("abenteuer-menue");
+  await expect(menue.getByTestId("abenteuer-figur-heldin-0")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await menue.getByTestId("abenteuer-figur-held-0").click();
+  await expect(menue.getByTestId("abenteuer-figur-held-0")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
 });

@@ -120,3 +120,17 @@ Animation). Für rund 100 Figuren reicht die Gratisprobe nicht; das Abo kostet 2
 
 Die App zeigt das neue Format mit Fußpunkt unten Mitte; Kollision bleibt bei den Füßen. Umsetzung
 bei mittel-2 (Auftrag 13.11.2026), mit LimeZu-Figur als Rückfall je Figur.
+
+## Heldin (Wunsch des Autors, 22.11.2026)
+
+Beim Spielbeginn und im Spielmenü wählt der Leser Held oder Heldin (Spielstand `held.figur`:
+`held-0` oder `heldin-0`, `app/src/abenteuer/regeln/heldfigur.ts`). Die Wahl ändert nur das Bild;
+die Texte sind geschlechtsneutral (Bibel 5.2, Dauertest `python -m pipeline.abenteuer.heldneutral`).
+
+- **Bogen:** `spiel/figuren-neu/heldin-0/` im privaten Paket, gleiche Einstellungen und Animationen
+  wie `held-0` (Stehen, Gehen, Rennen, Liegen, Sitzen am Stuhl und am Boden; Liste:
+  `python -m pipeline.abenteuer.figurenzustaende`). Der Paketbau legt ihn wie jeden PixelLab-Bogen
+  nach `figuren32/heldin-0.png`.
+- **Bis er da ist:** Die Wahl zeigt einen Platzhalter („Bild folgt“), im Spiel steht der Held.
+- **Porträt:** Der Held spricht ohne Porträt (unten in der Sprechblase); ein Porträt der Heldin
+  braucht es erst, wenn der Held eines bekommt.

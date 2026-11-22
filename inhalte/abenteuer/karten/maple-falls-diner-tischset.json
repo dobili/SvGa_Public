@@ -2178,6 +2178,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "nadelMapleFalls >= 1 und dinerAbendGesehen"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[7,4,1,2]]}]"
   }
  ]
 }

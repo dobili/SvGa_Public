@@ -9502,6 +9502,11 @@
    "name": "toenung",
    "type": "string",
    "value": "abend"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[35,10,1,1],[38,10,1,1]]}]"
   }
  ]
 }

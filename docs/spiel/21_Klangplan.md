@@ -129,6 +129,11 @@ Repository, mit Vergleichsseite alt gegen neu):
    gewonnener Partie oder Runde eine Spur des Kampfthemas dazu. Im Probestück: Grund, nach dem
    ersten Sieg die Melodie, nach dem zweiten das Horn.
 
+Umgesetzt in der App (22.11.2026, `docs/spiel/23_Technik_Atmosphaere.md` h3): Spuren aus
+`musik/spuren.json`, Dateien `musik/<stamm>.<spur>.m4a` (grund, melodie, zusatz). Ausdünnen,
+Musiker nah, Steigerung, Pegelausgleich und Dialog −3 dB. Musiker markiert die Szene mit
+`musikquellen`, jede Jukebox zählt von selbst.
+
 **Aufwand auf dem iPhone** (Web Audio dekodiert in 48 kHz, 4 Byte je Wert; Budget der Tonpuffer
 160 MB, `app/src/abenteuer/ton/puffervorrat.ts`):
 

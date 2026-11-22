@@ -7,10 +7,14 @@
  * Rolle im Gesamtbild: oberwelt/useWeltladen.ts ruft `ladeNachbarmusikVorab` nach dem Betreten;
  * welche Stücke es sind, rechnet `nachbarmusik` aus orte.json. Ohne geladenes Paket (Entwicklung)
  * oder ohne Ton geschieht nichts.
- * Abhängigkeiten: daten/laden.ts, paket/paketlader.ts, ton/tonplan.ts.
+ * Stücke in Spuren (musik/spuren.json, ton/spurenmischung.ts) lädt es als Spuren vor, nicht als
+ * volle Mischung, die dann gar nicht spielt.
+ * Abhängigkeiten: daten/laden.ts, paket/paketlader.ts, ton/tonplan.ts, ton/tonangaben.ts.
  */
 import { ladeSpieldaten, type Ortdaten } from "../daten/laden";
-import { haltePaketdateiVor } from "../paket/paketlader";
+import { haltePaketdateiVor, liesPaketdatei } from "../paket/paketlader";
+import { spurpfad, type Spurangabe } from "./spurenmischung";
+import { ladeTonangaben, stammVon } from "./tonangaben";
 import { dateienFuer } from "./tonplan";
 
 /** So viele Stücke lädt das Spiel je Karte vorab (je etwa 1 MB). */
@@ -22,6 +26,24 @@ export const VORAB_WARTEN_MS = 3000;
 function musikschluessel(angabe: string): string {
   return dateienFuer("musik", angabe)[0] ?? angabe;
 }
+
+/**
+ * Die Dateien, die ein Stück braucht: seine Spuren, wenn spuren.json es nennt, sonst die volle
+ * Mischung in allen Formaten (die erste, die es gibt, genügt).
+ * Beispiel: „mapleFalls“ mit Spuren → [[musik/maple-falls.grund.m4a], [… .melodie.m4a]].
+ */
+export function vorabdateien(angabe: string, spuren: ReadonlyMap<string, Spurangabe>): string[][] {
+  const volle = dateienFuer("musik", angabe);
+  const stamm = stammVon(volle[0] ?? angabe);
+  const a = spuren.get(stamm);
+  return a ? a.spuren.map((s) => [spurpfad(stamm, s)]) : [volle];
+}
+
+/** Liest eine Paketdatei als Bytes für die Tabellen; fehlt sie, null. */
+const ausDemPaket = (pfad: string) =>
+  liesPaketdatei(pfad)
+    .then((antwort) => (antwort.ok ? antwort.arrayBuffer() : null))
+    .catch(() => null);
 
 /** Eine Karte mit ihrem Ort (wie daten/laden.ts `findeKarte`, nur mit den Orten). */
 function karteIn(orte: readonly Ortdaten[], kennung: string) {
@@ -82,10 +104,10 @@ export async function ladeNachbarmusikVorab(
   if (!hoerbar) return;
   await new Promise((weiter) => setTimeout(weiter, warten));
   try {
-    const { orte } = await ladeSpieldaten();
+    const [{ orte }, angaben] = await Promise.all([ladeSpieldaten(), ladeTonangaben(ausDemPaket)]);
     for (const angabe of nachbarmusik(orte, kennung, objektnamen(karte))) {
-      for (const pfad of dateienFuer("musik", angabe)) {
-        if (await haltePaketdateiVor(pfad)) break;
+      for (const pfade of vorabdateien(angabe, angaben.spuren)) {
+        for (const pfad of pfade) if (await haltePaketdateiVor(pfad)) break;
       }
     }
   } catch (fehler: unknown) {

@@ -22,6 +22,7 @@ const MAPLE: Spurangabe = {
   rate: 44100,
   spuren: ["grund", "melodie", "zusatz"],
   kampf: false,
+  farbe: false,
   lufs: {},
 };
 const KAMPF: Spurangabe = { ...MAPLE, form: 1587600, kampf: true };
@@ -56,8 +57,11 @@ describe("Steigerung und Musiker", () => {
     expect(stufe(5)).toEqual(stufe(2));
   });
 
-  it("Zusatz folgt der Nähe zum Musiker; fehlt die Spur, bleibt sie 0", () => {
+  it("Zusatz folgt der Nähe zum Musiker, eine Farbstimme der Melodie; fehlt die Spur, bleibt sie 0", () => {
     expect(anteile(MAPLE, { ...GRUNDLAGE, musikerNaehe: 0.4 }, 0).zusatz).toBe(0.4);
+    const farbe = { ...MAPLE, farbe: true };
+    expect(anteile(farbe, GRUNDLAGE, 0)).toEqual({ grund: 1, melodie: 1, zusatz: 1 });
+    expect(anteile(farbe, GRUNDLAGE, 3)).toEqual({ grund: 1, melodie: 0, zusatz: 0 });
     const ohne = { ...MAPLE, spuren: ["grund", "melodie"] as const };
     expect(anteile(ohne, { ...GRUNDLAGE, musikerNaehe: 1 }, 0).zusatz).toBe(0);
   });

@@ -284,7 +284,8 @@ und Zusatz (Mono: Musiker, Jukebox, Steigerung).
   `loopStart`/`loopEnd` über die Form. Enthält der Puffer den AAC-Vorlauf (2112 Werte, Safari),
   beginnt die Schleife danach.
 - **Mischungen** (`ton/spurenmischung.ts`):
-  - Tag: Grund und Melodie. Innenraum: dieselben, 2 dB leiser (−20 LUFS).
+  - Tag: Grund und Melodie, dazu der Zusatz, wenn er eine Farbstimme ist (`zusatz: "farbe"`).
+    Innenraum: dieselben, 2 dB leiser (−20 LUFS); eigene Innen- und Nachtstücke mischen genauso.
   - Nacht: eigenes Stück über `musik_nacht`.
   - Ausdünnen: nach 2 bis 3 vollen Schleifen (mindestens 2 Minuten) eine Schleife nur der Grund,
     dann wieder voll. Gezählt wird ab dem Betreten der Karte.

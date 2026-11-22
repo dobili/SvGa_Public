@@ -4,7 +4,8 @@
  *
  * Warum: Die neuen Ortsthemen kommen in bis zu drei Spuren gleicher Länge (Grund = Begleitung und
  * Bass, Melodie, Zusatz in Mono für Musiker, Jukebox und Steigerung). Die App mischt sie je Lage:
- * - Tag: Grund und Melodie; Innenraum: dieselben, 2 dB leiser (Ziel −20 statt −18 LUFS).
+ * - Tag: Grund und Melodie, dazu der Zusatz, wenn er eine Farbstimme ist (`zusatz: "farbe"`);
+ *   Innenraum: dieselben, 2 dB leiser (Ziel −20 statt −18 LUFS).
  * - Gegen Ermüdung: nach `vollSchleifen` vollen Schleifen auf derselben Karte eine Schleife nur
  *   der Grund, dann wieder voll (Regel 3 in A0, „Spuren weg statt Pause“).
  * - Musiker nah: Die Zusatzspur folgt der Abstandskurve der räumlichen Geräusche
@@ -36,6 +37,8 @@ export interface Spurangabe {
   readonly spuren: readonly Spurname[];
   /** Kampfthema: Steigerung je Sieg statt Ausdünnen. */
   readonly kampf: boolean;
+  /** Der Zusatz ist eine Farbstimme des Themas: Er klingt mit der Melodie, nicht nur am Musiker. */
+  readonly farbe: boolean;
   /** Gemessene Lautheit je Mischung (Schlüssel: Spuren mit „+“), wo die Pipeline sie kennt. */
   readonly lufs: Readonly<Record<string, number>>;
 }
@@ -69,6 +72,8 @@ const VOLL_SEKUNDEN = 120;
 
 /** Art des Zusatzes, die ein Kampfthema kennzeichnet (spuren.json `zusatz`). */
 const ZUSATZ_STEIGERUNG = "steigerung";
+/** Art des Zusatzes, die zur Tagesmischung gehört (Farbstimme). */
+const ZUSATZ_FARBE = "farbe";
 /** Abtastrate der Pipeline, wenn spuren.json keine nennt. */
 const RATE_VORGABE = 44100;
 const DEZIBEL_JE_ZEHNFACH = 20;
@@ -115,7 +120,12 @@ export function anteile(a: Spurangabe, lage: Mischlage, schleife: number): Antei
   return {
     grund: da("grund"),
     melodie: duenn ? 0 : da("melodie"),
-    zusatz: da("zusatz") * Math.min(1, Math.max(0, lage.musikerNaehe)),
+    // Farbstimme (mittel-4): Teil des Themas, mit der Melodie; sonst Musiker nah.
+    zusatz: a.farbe
+      ? duenn
+        ? 0
+        : da("zusatz")
+      : da("zusatz") * Math.min(1, Math.max(0, lage.musikerNaehe)),
   };
 }
 
@@ -165,7 +175,7 @@ function alsAngabe(roh: unknown): Spurangabe | null {
     for (const [k, v] of Object.entries(r.lufs)) if (typeof v === "number") lufs[k] = v;
   // Kampfthema: ausdrücklich oder weil der Zusatz die nächste Steigerungsstufe ist.
   const kampf = r.kampf === true || r.zusatz === ZUSATZ_STEIGERUNG;
-  return { form, rate, spuren, kampf, lufs };
+  return { form, rate, spuren, kampf, farbe: r.zusatz === ZUSATZ_FARBE, lufs };
 }
 
 /** Die Tabelle aus spuren.json (Stamm → Angabe); Ungültiges fällt weg. */

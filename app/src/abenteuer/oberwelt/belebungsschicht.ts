@@ -260,7 +260,7 @@ export class Belebungsschicht {
     else {
       if (d.sprite.anims.isPlaying) d.sprite.anims.stop();
       // Wer sitzt, behält sein Sitzbild (Stuhl oder Boden, figurensitz.ts), sonst das Standbild.
-      if (!d.v.sitzt) d.sprite.setFrame(standbild(d.b.richtung));
+      if (!d.v.sitzt) d.sprite.setFrame(standbild(d.b.schaut ?? d.b.richtung));
     }
   }
 

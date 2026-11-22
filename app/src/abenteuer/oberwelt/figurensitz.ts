@@ -12,6 +12,7 @@ import Phaser from "phaser";
 import { legeFestkoerperAufKachel } from "./figurbilder";
 import { sitzsperre, type Sitzlage } from "./sitzplatz";
 import { hatSitzbilder, SITZ_HUB, sitzbild } from "./sitzrichtung";
+import { SITZT } from "./zuwendungsschicht";
 import type { Richtung } from "./szene";
 
 /** Zahl der Rahmen eines Sprites (ohne den Grundrahmen „__BASE“ von Phaser). */
@@ -34,6 +35,8 @@ export function setzeSitzend(
   lage?: Sitzlage | null,
 ): { readonly dx: number; readonly dy: number } {
   const rahmen = rahmenzahl(sprite);
+  // Sitzende drehen sich im Gespräch nicht zum Helden (zuwendung.ts).
+  sprite.setData(SITZT, true);
   // Am Boden der Schneidersitz aus der Bodenreihe, wenn der Bogen sie hat (sitzrichtung.ts).
   sprite.setFrame(sitzbild(rahmen, richtung, lage?.amBoden));
   // Alles in Kartenpixeln; der Hub zählt in Figurenpixeln, also mal Maßstab (PixelLab 2/3).

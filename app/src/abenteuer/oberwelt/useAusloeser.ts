@@ -11,11 +11,12 @@
 import { useRef, useState } from "react";
 import { ambroseSprichtJetzt } from "../regeln/abwesenheit";
 import { tSpiel } from "../texte/texte";
-import type { Oberweltkern } from "./kern";
+import { szeneAus, type Oberweltkern } from "./kern";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import type { Ausloesertreffer } from "./szene";
 import type { Dialoge } from "./useDialogende";
 import { ausloeserFuer, figurZu, sprechblaseFuer } from "./weltdaten";
+import { wendeZu } from "./zuwendungsschicht";
 
 /** Was die Oberwelt vom Hook sieht. */
 export interface Ausloeser {
@@ -82,6 +83,9 @@ export function useAusloeser(
     }
     if (treffer.typ === "figur") {
       const figur = figurZu(welt.ort, treffer.name);
+      // Die Angesprochene dreht sich zum Helden (Wunsch des Autors, 22.11.2026).
+      const zugang = szeneAus(k.spiel)?.fuehrungszugang();
+      if (figur && zugang) wendeZu(zugang, treffer.name);
       if (figur) dialoge.oeffneDialog(figur.dialog);
       return;
     }

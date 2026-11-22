@@ -21,6 +21,7 @@ import { laufname, rennname, standbild, stelleAufKachel } from "./figurbilder";
 import { rahmenzahl } from "./figurensitz";
 import type { Moebel } from "./moebel";
 import { kopfseiteDesBetts, liegebild, LIEGT, type Kopfseite } from "./sitzrichtung";
+import { GEFUEHRT, GRUNDBILD } from "./zuwendungsschicht";
 import {
   blickZu,
   endfelder,
@@ -192,6 +193,8 @@ function fuehreFigur(
   const name = gang.name;
   // Wer saß (Juno auf der Tribüne), steht zum Gehen auf: Ursprung und Körper wieder auf den Füßen.
   if (weg.length > 0 && z.szene.textures.exists(`figur:${name}`)) stelleAufKachel(figur, z.kachel);
+  // Während des Wegs bestimmt der Weg die Richtung (zuwendungsschicht.ts); danach gilt die neue.
+  if (weg.length > 0) figur.setData(GEFUEHRT, true).setData(GRUNDBILD, undefined);
   return new Promise((fertig) => {
     const schritte = weg.map((f) => ({
       x: (f.x + MITTE) * z.kachel,
@@ -230,6 +233,7 @@ function steheStill(
   blick: Blick | null,
 ): void {
   figur.anims.stop();
+  figur.setData(GEFUEHRT, false);
   if (blick && z.szene.textures.exists(`figur:${name}`)) figur.setFrame(standbild(blick));
   figur.setDepth(figur.y);
   if (figur.body instanceof Phaser.Physics.Arcade.StaticBody) figur.body.updateFromGameObject();

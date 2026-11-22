@@ -141,6 +141,22 @@ Figuren, auch der Held, gehen einen Weg, den der Dialog vorgibt; der Spieler gre
   (Szene), `oberwelt/useBuehne.ts` (Dialog wartet), Tests `tests/e2e/abenteuer-gefuehrt.spec.ts`
   und `tests/e2e/abenteuer-rennen.spec.ts`.
 
+### T12 Zuwendung (fertig, 22.11.2026)
+
+Wunsch des Autors: „Spricht man mit einer Figur, sollte sie einen anschauen, sich zu einem drehen.“
+
+- Beim Ansprechen dreht sich die Figur zum Helden; die größere Achse zwischen beiden entscheidet.
+  Im Gespräch dreht sich, wer spricht (`#sprecher`), wenn er auf der Karte steht. Die anderen
+  bleiben, wie sie stehen: Sie hören zu, statt bei jeder Zeile hin und her zu drehen.
+- Nach dem Gespräch dreht sich jede gedrehte Figur nach einer Sekunde in ihre alte Richtung
+  (`blick` der Szene) zurück; die Grundrichtung (R008, `blickrichtung.py`) bleibt also.
+- Nicht gedreht werden Sitzende (ihr Bild gehört zum Möbel), Liegende und Figuren in einem
+  geführten Weg (dort bestimmt der Weg die Richtung; danach gilt die neue).
+- Statisten, die zuhören (der Held steht still vor ihnen), schauen ihn an und gehen danach weiter.
+- **Dateien:** `oberwelt/zuwendung.ts` (Regeln), `oberwelt/zuwendungsschicht.ts` (Szene),
+  `useAusloeser.ts` (Ansprechen), `useBuehne.ts` (Sprecher, Ende), `belebungsbewegung.ts`
+  (Statisten); Tests `zuwendung.test.ts`, `tests/e2e/abenteuer-zuwendung.spec.ts`.
+
 ### T4 Porträtfassungen (nur Format)
 
 - `#stimmung:<fassung>` mit den neuen Fassungen `ertappt`, `riss`, `alt`, `lachtOhneSpott`,

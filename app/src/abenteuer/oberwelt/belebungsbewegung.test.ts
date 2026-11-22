@@ -58,8 +58,11 @@ describe("Statisten", () => {
     laufe(b, v, 30, ansehen);
     expect(b.x).toBeCloseTo(5);
     expect(steht(b)).toBe(true);
+    // Er schaut den Helden an, nach links (22.11.2026); die Laufrichtung bleibt.
+    expect(b.schaut).toBe("links");
     laufe(b, v, 2.2, { ...ansehen, heldGeht: true });
     expect(b.x).toBeCloseTo(8);
+    expect(b.schaut).toBeNull();
   });
 
   it("hören höchstens eine Minute zu, dann geht der Laufweg weiter", () => {

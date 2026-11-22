@@ -10,6 +10,7 @@
  */
 import { useRef, useState } from "react";
 import { fuehre, stehAuf, stelle } from "./fuehrungsschicht";
+import { wendeZu, wendeZurueck } from "./zuwendungsschicht";
 import { stellauftrag, wegauftraege } from "./gefuehrterweg";
 import { buehnenanweisung } from "./buehne";
 import { blendeFigur } from "./figurblende";
@@ -65,12 +66,16 @@ export function useBuehne(k: Oberweltkern): Buehne {
       // `#erscheint` mit Sprecher, der nicht auf der Karte steht: Er erscheint im Bild (R8,
       // Spieltest einstieg: Ambrose blieb auf dem Dachboden unsichtbar, als der Text ihn zeigte).
       if (tags.erscheint && tags.sprecher) szene.erscheine(tags.sprecher);
+      // Wer spricht und auf der Karte steht, schaut den Helden an (zuwendungsschicht.ts).
+      const zugang = szene.fuehrungszugang();
+      if (zugang && tags.sprecher) wendeZu(zugang, tags.sprecher);
       gehe(tags);
     },
     ende: () => {
       const szene = szeneAus(k.spiel);
       const zugang = szene?.fuehrungszugang();
       if (zugang) stehAuf(zugang);
+      if (zugang) wendeZurueck(zugang);
       if (teilchenGeaendert.current && szene) zeigeKartenteilchen(szene);
       teilchenGeaendert.current = false;
       if (!lichtGeaendert.current) return;

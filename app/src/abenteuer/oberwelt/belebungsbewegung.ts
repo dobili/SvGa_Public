@@ -30,6 +30,8 @@ export interface Bewegung {
   gefolgt: number;
   /** Sekunden, die ein Statist schon wartet, weil der Held ihm im Weg steht. */
   wartet: number;
+  /** Blick zum Helden, solange der Statist zuhört (sonst null; die Laufrichtung bleibt). */
+  schaut: Richtung | null;
   /** Sekunden, die ein stehender Statist schon dem Helden zuhört (er spricht ihn an). */
   hoertZu: number;
 }
@@ -102,6 +104,7 @@ export function neueBewegung(feld: Feld, blick: Richtung = "unten"): Bewegung {
     gefolgt: 0,
     wartet: 0,
     hoertZu: 0,
+    schaut: null,
   };
 }
 
@@ -159,6 +162,14 @@ function heldImWeg(b: Bewegung, u: Umgebung): boolean {
   );
 }
 
+/** Die Gegenrichtung: Wer den Helden anschaut, blickt ihm entgegen. */
+const GEGEN: Readonly<Record<Richtung, Richtung>> = {
+  oben: "unten",
+  unten: "oben",
+  links: "rechts",
+  rechts: "links",
+};
+
 /** So lange bleibt ein angesprochener Statist höchstens stehen (s); danach geht er doch weiter. */
 const ZUHOEREN_HOECHSTENS = 60;
 
@@ -184,9 +195,12 @@ function angesprochen(b: Bewegung, u: Umgebung): boolean {
 function hoertZu(b: Bewegung, v: Belebung, dt: number, u: Umgebung): boolean {
   if (v.typ !== "statist" || !angesprochen(b, u)) {
     b.hoertZu = 0;
+    b.schaut = null;
     return false;
   }
   b.hoertZu += dt;
+  // Er schaut den Helden an (Wunsch des Autors, 22.11.2026): gegen dessen Blickrichtung.
+  b.schaut = u.heldBlick ? GEGEN[u.heldBlick] : null;
   return b.hoertZu < ZUHOEREN_HOECHSTENS;
 }
 

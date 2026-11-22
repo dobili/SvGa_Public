@@ -25,7 +25,9 @@ import {
   type Abenteuerton,
   type Tonlage,
 } from "./tonplan";
+import type { Geraeuschquelle } from "./geraeuschraum";
 import { KEINE_NAEHE, naehe, type Klangort, type Naehe } from "./klangquelle";
+import { artVon, Raumregie, type Raumuhr } from "./raumregie";
 import { Tonspieler, type Laden } from "./tonspieler";
 import { leereUntertitel, meldeUntertitel, type Untertitelart } from "./untertitel";
 
@@ -41,6 +43,8 @@ export interface Spielwerk {
   stoppeAlles(): void;
   /** Fehlende Stücke vergessen (nach dem Nachladen des Tons); im Test entbehrlich. */
   vergissFehlende?(): void;
+  /** Pegel des Dauergeräuschs nach Ort und Ankunft (ton/raumregie.ts); im Test entbehrlich. */
+  setzeRaum?(faktor: number): void;
 }
 
 /**
@@ -62,11 +66,21 @@ export class Tonregie {
   private nah: Naehe = KEINE_NAEHE;
   private untertitelAn = false;
   private gemeldet: Gemeldet = {};
+  /** Pegel des Dauergeräuschs nach Ort und Ankunft (räumliche Geräusche, 22.11.2026). */
+  private readonly raum: Raumregie;
 
   constructor(
     private readonly werk: () => Spielwerk | null,
     private readonly melde: (art: Untertitelart, angabe: string) => void = meldeUntertitel,
-  ) {}
+    uhr?: Raumuhr,
+  ) {
+    this.raum = new Raumregie((faktor) => this.mitWerk((w) => w.setzeRaum?.(faktor)), uhr);
+  }
+
+  /** Der zuletzt gesetzte Pegel des Dauergeräuschs (Pegelprotokoll, Tests). */
+  get raumpegel(): number | null {
+    return this.raum.pegel;
+  }
 
   /** Ist Ton zu hören (Ton der App an, nicht stumm, ein Regler über 0)? */
   get hoerbar(): boolean {
@@ -85,13 +99,18 @@ export class Tonregie {
     this.spiele();
   }
 
-  /** Eine Karte wurde betreten: ihre Musik und ihr Dauergeräusch aus orte.json. */
+  /**
+   * Eine Karte wurde betreten: ihre Musik und ihr Dauergeräusch aus orte.json, die Klangquellen
+   * der Musik (T28) und die Stellen, von denen das Dauergeräusch kommt (ton/geraeuschraum.ts).
+   */
   karteBetreten(
     musik?: string | null,
     geraeusch?: string | null,
     quellen: readonly Klangort[] = [],
+    geraeuschquellen: readonly Geraeuschquelle[] = [],
   ): void {
     this.lage = betritt(this.lage, musik, geraeusch);
+    this.raum.betreten(artVon(soll(this.lage).geraeusch), geraeuschquellen);
     this.orte = quellen;
     this.nah = KEINE_NAEHE;
     // Das Dauergeräusch erscheint bei jedem Betreten als Text, die Musik nur beim Wechsel.
@@ -101,6 +120,7 @@ export class Tonregie {
 
   /** Der Held steht auf einem neuen Feld: Klangquellen in der Nähe lauter oder leiser (T28). */
   heldBei(x: number, y: number): void {
+    this.raum.heldBei(x, y);
     if (this.orte.length === 0) return;
     this.nah = naehe(this.orte, x, y);
     this.spiele();
@@ -161,6 +181,8 @@ export class Tonregie {
 
   private spiele(): void {
     this.meldeAenderungen();
+    // Ein Geräusch aus dem Dialog (`#geraeusch`) hat eigene Quellen nicht: Es klingt im Grundpegel.
+    this.raum.geraeusch(artVon(soll(this.lage).geraeusch));
     const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
     this.mitWerk((werk) => {
       void werk.spieleSchleife("musik", s.musik).catch(tonfehler);

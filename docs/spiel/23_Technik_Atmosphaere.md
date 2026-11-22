@@ -252,6 +252,22 @@ ein Auslöser der Karte (Name in Tiled), so bleibt die Karte unberührt. Die Lau
 Abstand des Helden (voll bis zur halben Reichweite, dann linear bis still); die Kartenmusik wird
 im selben Maß leiser. Eine eigene Spur der Tonregie; ohne Datei still.
 
+**h2) Räumliche Geräusche** (Auftrag des Hauptchats, 22.11.2026): Das Dauergeräusch einer Karte
+liegt auf einem Grundpegel von −11 dB gegenüber der Datei. Mit den Reglern der Grundeinstellung
+(Musik 60 %, Geräusche 80 %) sind das gut 12 dB unter der Musik (gemessen: Musik −20,3 dB,
+Wasserfall −23,8 dB mittlere Lautheit). Beim Betreten einer Karte mit anderem Geräusch schwillt es
+3,5 s auf den Pegel der Datei an und sinkt in 3 s weich zurück. Auf Wegen mit demselben Geräusch
+(Park und Birch Lane) schwillt nichts an. In der Nähe einer Quelle wird es lauter: voll bis
+2 Kacheln, still ab 12, dazwischen eine Kosinuskurve. Mehrere Stellen gleicher Art addieren sich
+nicht, das Größere aus Nähe und Ankunft zählt. Die Quellen leitet
+`pipeline/abenteuer/geraeuschquellen.py` aus der Szene ab: Wasserkacheln bei Fluss, Bach, Meer;
+Möbel nach Namen wie Wasserfall, Brunnen, Turmuhr. Der Kartenbau schreibt sie als Eigenschaft
+`geraeuschquellen` in die Tiled-Karte, die App lädt keine weitere Datei. Von Hand in der Szene:
+`"geraeuschquellen": false` oder `{"ohne": […], "dazu": […]}`. Die App
+(`ton/geraeuschraum.ts`, `ton/raumregie.ts`) rechnet höchstens alle 100 ms; Web Audio glättet
+(Zeitkonstante 0,25 s). Einzelne Geräusche aus Zeilen (`#klang`) laufen am Raumpegel vorbei.
+Hörprobe: `python -m pipeline.abenteuer.ton.raumprobe TONORDNER ZIEL`.
+
 **i) T15 Fensterbank zeigt Funde** (klein): Ink-Funktion `zeigeFensterbank()` öffnet eine Ansicht
 mit allen Funden des Spielstands (Bild aus funde.json, sonst Name), in der Reihenfolge des
 Findens. Die Fensterbank im Zimmer des Helden ruft sie aus ihrem Dialog auf; keine Kartenänderung.

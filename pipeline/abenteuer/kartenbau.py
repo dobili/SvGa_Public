@@ -24,6 +24,7 @@ from pipeline.abenteuer.bauweisen import (
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.bodenteile import lege_bodenteile
 from pipeline.abenteuer.feinbericht import feinbefunde, feinhinweise
+from pipeline.abenteuer.geraeuschquellen import ORTE, ableiten, kartenart, mit_eigenschaft
 from pipeline.abenteuer.kartenregeln import SITZMOEBEL, pruefe_regeln
 
 # Rasterzeichen und Tiled-Ausgabe stehen in kartentiled.py; viele Module holen sie weiter hier.
@@ -319,10 +320,10 @@ def baue(pfad: Path) -> list[str]:
     ziel = INHALTE / szene["datei"]
     ziel.parent.mkdir(parents=True, exist_ok=True)  # Varianten: karten/varianten/
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")
-    ziel.write_text(
-        json.dumps(tiled(szene, zeilen, gesetzt, vorlage), ensure_ascii=False, indent=1) + "\n",
-        encoding="utf-8",
-    )
+    karte = tiled(szene, zeilen, gesetzt, vorlage)
+    # Wo das Dauergeräusch herkommt (Wasser, Wasserfall …), für den Pegel nach Abstand in der App.
+    karte = mit_eigenschaft(karte, ableiten(szene, zeilen, karte, kartenart(szene["karte"], lade(ORTE))))
+    ziel.write_text(json.dumps(karte, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return befunde
 
 

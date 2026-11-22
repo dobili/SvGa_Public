@@ -2,6 +2,7 @@
  * Spielt Musik und Geräusche des Abenteuers mit Web Audio: je eine Spur für Musik und Dauergeräusch
  * mit Überblenden, dazu einmalige Klänge (Atmosphäre T1, T2) und eine Spur für die Klangquelle in
  * der Nähe des Helden (T28), deren Lautstärke dem Abstand folgt; die Musik der Karte weicht ihr.
+ * Das Dauergeräusch läuft über einen Raumregler (Grundpegel, Ankunft, Nähe zur Quelle: ton/raumregie.ts).
  *
  * Rolle im Gesamtbild: dünne Schicht unter ton/tonregie.ts; was klingen soll, entscheidet
  * ton/tonplan.ts. Die Dateien kommen über `lade` (im Spiel aus dem Paket, im Test erfunden).
@@ -15,6 +16,7 @@
  * ton/tonangaben.ts (Tabellen einmalig und Anhebung), ton/puffervorrat.ts (Budget der dekodierten
  * Puffer: Ohne Grenze wuchs der Speicher in langen Sitzungen mit jeder Karte).
  */
+import { raumpegel } from "./geraeuschraum";
 import { motivFuer } from "./motive";
 import { Puffervorrat } from "./puffervorrat";
 import { spieleMotiv } from "./motivspieler";
@@ -48,6 +50,8 @@ interface Geladen {
 }
 /** Wie schnell die Nähe einer Klangquelle der Bewegung folgt (Zeitkonstante, Sekunden). */
 const NAEHE_S = 0.3;
+/** Wie schnell der Pegel des Dauergeräuschs folgt (Zeitkonstante, Sekunden): kein Sprung. */
+const RAUM_S = 0.25;
 
 export class Tonspieler {
   /** Dekodierte Puffer mit Budget (ton/puffervorrat.ts). */
@@ -65,6 +69,8 @@ export class Tonspieler {
   private readonly gesamt: Record<"musik" | "geraeusche", GainNode>;
   /** Anteil der Kartenmusik und der Klangquelle (T28), zusammen 1. */
   private readonly anteil: Record<"karte" | "quelle", GainNode>;
+  /** Pegel des Dauergeräuschs nach Ort und Ankunft (ton/raumregie.ts); `#klang` geht vorbei. */
+  private readonly raum: GainNode;
 
   constructor(
     private readonly ctx: AudioContext,
@@ -77,6 +83,14 @@ export class Tonspieler {
     this.anteil.karte.connect(this.gesamt.musik);
     this.anteil.quelle.connect(this.gesamt.musik);
     this.anteil.quelle.gain.value = 0;
+    this.raum = ctx.createGain();
+    this.raum.gain.value = raumpegel(0, 0);
+    this.raum.connect(this.gesamt.geraeusche);
+  }
+
+  /** Pegel des Dauergeräuschs (Faktor, ton/geraeuschraum.ts), weich ohne Sprung. */
+  setzeRaum(faktor: number): void {
+    this.raum.gain.setTargetAtTime(faktor, this.ctx.currentTime, RAUM_S);
   }
 
   /** Nähe der Klangquelle 0 bis 1 (T28): die Quelle so laut, die Kartenmusik um so viel leiser. */
@@ -180,11 +194,11 @@ export class Tonspieler {
     anhebung.connect(ziel);
   }
 
-  /** Wohin eine Spur klingt: Musik und Quelle über ihren Anteil, Geräusche direkt. */
+  /** Wohin eine Spur klingt: Musik und Quelle über ihren Anteil, das Dauergeräusch über den Raum. */
   private ziel(spur: Spur): GainNode {
     if (spur === "musik") return this.anteil.karte;
     if (spur === "quelle") return this.anteil.quelle;
-    return this.gesamt.geraeusche;
+    return this.raum;
   }
 
   private blendeAus(spur: Spur, dauer: number): void {

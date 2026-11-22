@@ -10,6 +10,7 @@
  * oberwelt/einschluss.ts (Schutz vor dem Einschluss beim Laden).
  */
 import { liesPaketJson } from "../paket/paketlader";
+import { geraeuschquellenAus } from "../ton/geraeuschraum";
 import { klangorte } from "../ton/klangquelle";
 import type { Sperrangabe, Tiledkarte } from "./begehbar";
 import { ausEinschluss } from "./einschluss";
@@ -78,11 +79,13 @@ function starteSpiel(
   const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen, eintrag);
   k.zeigeToenung(toenung);
   // Musik und Dauergeräusch der Karte aus orte.json (T1, T2); fehlt die Datei, bleibt es still.
-  // Klangquellen mit Reichweite (T28): Ort aus dem benannten Objekt der Tiled-Karte.
+  // Klangquellen mit Reichweite (T28): Ort aus dem benannten Objekt der Tiled-Karte. Woher das
+  // Dauergeräusch kommt, steht in der Karte (Eigenschaft geraeuschquellen, ton/geraeuschraum.ts).
   tonregie.karteBetreten(
     eintrag?.musik,
     eintrag?.geraeusch,
     klangorte(w.karte, eintrag?.klangquellen ?? [], KACHEL),
+    geraeuschquellenAus(w.karte),
   );
   // Musik lädt erst beim Abspielen; die der Nachbarkarten schon jetzt (ton/vorabladen.ts).
   void ladeNachbarmusikVorab(w.kennung, w.karte, tonregie.hoerbar);

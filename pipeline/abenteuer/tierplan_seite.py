@@ -24,6 +24,15 @@ STIL = (
     "soft shading, low top-down view, single animal, no background"
 )
 NEGATIV = "human, clothes, text, ground tile, cast shadow, multiple animals"
+# Maschinen eigener Stil (Hauptchat, 22.11.2026): Mit dem Tierzusatz kamen Liefer- und Kehrroboter in
+# PixelLab als orange Fuchs-Wesen mit Ohren heraus. Der Roboterhund darf ein Hundegesicht haben.
+MASCHINEN = {"lieferroboter", "kehrroboter", "saugroboter", "roboterhund", "drohne"}
+MASCHINENSTIL = (
+    "cute chibi RPG sprite of a machine, rounded shapes, bold dark outline, saturated colours, "
+    "soft shading, low top-down view, single object, no background"
+)
+MASCHINEN_NEGATIV = "animal, fur, ears, tail, face, eyes"
+MIT_GESICHT = {"roboterhund": "fur"}
 BEWEGUNG = {
     ("quadruped", "laufen"): ("Walking (Vorlage)", ""),
     ("quadruped", "flitzen"): ("Running (Vorlage)", ""),
@@ -40,8 +49,18 @@ RICHTUNGEN = 4  # rechts, oben, links, unten wie im Spielformat
 
 
 def prompt(art: Art) -> str:
-    """Fertiger PixelLab-Prompt einer Art. Beispiel: „cute chibi RPG animal sprite … peregrine falcon“."""
-    return f"{art.motiv}, {STIL}"
+    """Fertiger PixelLab-Prompt einer Art. Beispiel: „cute chibi RPG animal sprite … peregrine falcon“.
+
+    Sonderfall: Maschinen (MASCHINEN) bekommen den Maschinenstil statt des Tierzusatzes.
+    """
+    return f"{art.motiv}, {MASCHINENSTIL if art.name in MASCHINEN else STIL}"
+
+
+def negativ(art: Art) -> str:
+    """Negativ-Prompt einer Art: bei Maschinen zusätzlich Tiermerkmale (Roboterhund nur „fur“)."""
+    if art.name not in MASCHINEN:
+        return NEGATIV
+    return f"{NEGATIV}, {MIT_GESICHT.get(art.name, MASCHINEN_NEGATIV)}"
 
 
 def animationen(art: Art, verhalten: dict[str, int]) -> list[tuple[str, str, str]]:

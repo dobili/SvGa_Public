@@ -8,6 +8,7 @@ const path = require("path");
 const HAUPT = path.resolve(__dirname, "..", "..");
 const APP = path.join(HAUPT, "app", "node_modules", "inkjs");
 const { erfuellt } = require("./bedingung.cjs");
+const { nachUhr, startstunde, warte } = require("./gesamtsimulation-uhr.cjs");
 // Laden der Welt (Daten, Ink, Objekte der Karten) steht seit dem 20.11.2026 in
 // gesamtsimulation-welt.cjs (Regel 4); hier nur weitergereicht, damit die Aufrufer bleiben.
 const { ladeWelt, figurenOhneKarte } = require("./gesamtsimulation-welt.cjs");
@@ -63,9 +64,11 @@ const variablenname = (kennung) => kennung.split(".").map(gross).join("");
  */
 function objekteJetzt(welt, st, karte) {
   const passend = (welt.fassungen[karte] || []).filter((f) => gilt(st, f.wenn));
-  return passend.length
+  const objekte = passend.length
     ? passend[passend.length - 1].objekte
     : welt.grundobjekte[karte];
+  // Mit Uhr: Figuren nach Tagesablauf, die Geschichte geht vor (gesamtsimulation-uhr.cjs).
+  return nachUhr(welt, st, karte, objekte, gilt);
 }
 
 // ---------------------------------------------------------------- Spielstand und Quests
@@ -100,6 +103,8 @@ function neuerStand(startwert) {
     saat: startwert,
     karteBesucht: {},
     uhr: 0,
+    // Spieluhr (gesamtsimulation-uhr.cjs): null ohne Uhr, sonst die Stunde (SIM_STUNDE, #uhr).
+    stunde: startstunde(),
     // Chaos-Prüfung (gesamtsimulation-chaos.cjs): echte Preise, zu teure Gegenstände, Chaos-Spieler.
     echt: false,
     zuTeuer: new Set(),
@@ -271,6 +276,8 @@ function neueVersuche(st) {
   for (const n of Object.keys(st.versuche))
     st.versuche[n] = VERSUCHE_JE_ZUSTAND - 1;
   st.gesperrt = {};
+  // Mit Uhr wartet der Spieler in Ruhe bis zur nächsten Phase (Bank, Bett; gesamtsimulation-uhr.cjs).
+  warte(st);
 }
 
 // ---------------------------------------------------------------- Bewegung

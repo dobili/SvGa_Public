@@ -12,6 +12,7 @@
 // Partie und nicht, wenn der Dialog eine Reise auslöste. Jede Rückmeldung steht in
 // `st.rueckmeldungen` (Prüfwerkzeug rueckmeldung.cjs).
 "use strict";
+const { stelleUhr } = require("./gesamtsimulation-uhr.cjs");
 const { Story } = require(require("./gesamtsimulation-regeln.cjs").APP);
 const {
   gross,
@@ -191,6 +192,7 @@ function spieleAb(welt, st, s, datei, knoten) {
         // Endet das Gespräch mit einer Frage ohne Wahl? (rueckmeldung.cjs: „Noch einmal?“ ohne Wahl)
         if (text.trim()) st.folgen.offeneFrage = text.trim().endsWith("?") ? text.trim() : "";
         st.leser?.zeile(text, s.currentTags);
+        stelleUhr(st, s.currentTags); // `#uhr:abend` (gesamtsimulation-uhr.cjs)
         meldeNeue();
         // Nur, solange noch etwas folgt: Nach der letzten Zeile endet der Dialog in der App sofort,
         // samt der Wirkungen dazwischen (Dialog.tsx, weiter).

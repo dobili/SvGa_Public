@@ -162,9 +162,11 @@ function versuche(welt, stand, knoten, e, startwert, umweg) {
     for (let g = 0; g < GESPRAECHE; g++) {
       const folgen = dialog(welt, st, knoten);
       // Ein Umweg bringt weiter, wenn er seine Bedingung aufhebt oder etwas dafür startet (Okoro:
-      // die Siegelrunde für den Brief).
+      // die Siegelrunde für den Brief) oder den Spieler mitnimmt (Mama fährt mit in die Kantine,
+      // mama_fahrt; die Bedingung hebt dort erst die Ankunft auf).
       const weiter = umweg
-        ? !erfuellt(umweg, st.vars) || Boolean(folgen.partie || folgen.runde)
+        ? !erfuellt(umweg, st.vars) ||
+          Boolean(folgen.partie || folgen.runde || folgen.reise)
         : loestAus(folgen, e);
       if (weiter) return null;
     }

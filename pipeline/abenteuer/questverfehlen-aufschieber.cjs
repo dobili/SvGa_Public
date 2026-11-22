@@ -99,6 +99,11 @@ function aufschieben(welt, q, startwert, sekunden, objekte = null) {
   st.auslassen = null;
   // Fertig schon vor dem Freigeben: die Geschichte brauchte Q (kein Aufschub möglich).
   st.vorFreigabe = fertig(st, q);
+  // Hing die Geschichte an Q, geht sie nach dem Freigeben weiter wie bei einem Spieler, der Q jetzt
+  // erledigt. Beispiel ironwood.turnier um 22 Uhr: Ohne Mamas Verbot bleibt der Kanalweg zu; das
+  // Erkunden gab in Riverton auf, die Rückkehr sprang dann mit der Monatskarte ins nie betretene
+  // Ironwood (22.11.2026). Ohne Uhr fiel das Freigeben zufällig noch ins Erkunden.
+  if (!st.abspann) erkunde(welt, st, frist, st.phase);
   nachholen(welt, st, frist, SCHRITTE);
   rueckkehr(welt, st, frist, SCHRITTE);
   if (!fertig(st, q)) holeNach(welt, st, q, frist);
@@ -170,4 +175,4 @@ function hauptprogramm(liste) {
 
 if (require.main === module) hauptprogramm(process.argv.slice(2));
 
-module.exports = { aufschieben, ergebnis, dateienJetzt };
+module.exports = { aufschieben, ergebnis, dateienJetzt, loestAus };

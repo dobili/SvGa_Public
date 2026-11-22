@@ -25,6 +25,7 @@ import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
 import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import { rivalinbogen, rivalinGewaehlt } from "../regeln/rivalform";
+import { ladeTagesablaeufe, nachUhr } from "./tagesaufstellung";
 import { figurenbildAdresse } from "./figurbogen";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
@@ -199,6 +200,7 @@ export async function ladeWelt(
   kartenkennung: string,
   gewaehlteFigur: Heldfigur = ERSATZFIGUR,
   variablen: Readonly<Record<string, unknown>> = {},
+  stand: Abenteuerstand | null = null,
 ): Promise<Weltdaten> {
   // Spieltexte in der Sprache der App (Dokument 17); ohne Übersetzung im Paket bleibt Deutsch.
   await ladeSpieltexte(sprache());
@@ -214,11 +216,23 @@ export async function ladeWelt(
   ]);
   // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts); Figuren mit `wenn`
   // und Möbel stehen nur, wenn ihre Bedingung gilt (regeln/figurbedingung.ts).
-  const karte = ohneFigurenNachBedingung(
+  const ohneVerborgene = ohneFigurenNachBedingung(
     ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]),
     (name) => figurZu(fund.ort, name)?.wenn,
     variablen,
   );
+  // Tagesabläufe (regeln/tagesablauf.ts): die Uhr stellt die Figuren auf, die Geschichte geht vor.
+  const karte = stand
+    ? nachUhr(
+        ohneVerborgene,
+        kartenkennung,
+        fund.ort,
+        stand,
+        daten,
+        variablen,
+        await ladeTagesablaeufe(),
+      )
+    : ohneVerborgene;
   const erinnerung = fund.ort.art === "erinnerung";
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder, geisterbilder] =
     await Promise.all([

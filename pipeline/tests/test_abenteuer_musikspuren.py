@@ -54,6 +54,50 @@ def test_koepfe_von_akt1_halten_die_bauregeln():
         assert 4 <= len(noten) <= 7 and max(hoehen) - min(hoehen) <= OKTAVE, kopf
 
 
+def test_akt2_und_akt3_sind_umgestellt():
+    kennungen = {s.kennung for s in _mit_spuren()}
+    erwartet = {
+        "riverton",
+        "riverton.nacht",
+        "ironwood",
+        "ironwood.nacht",
+        "riverton.clubkampf",
+        "ironwood.clubkampf",
+        "siliconBay",
+        "siliconBay.nacht",
+        "portDelacroix",
+        "portDelacroix.nacht",
+        "desertSprings",
+        "desertSprings.nacht",
+        "siliconBay.clubkampf",
+        "desertSprings.clubkampf",
+    }
+    assert erwartet <= kennungen
+
+
+def test_koepfe_von_akt2_und_akt3_halten_die_bauregeln():
+    from pipeline.abenteuer.ton.stuecke import (
+        akt2_ironwood,
+        akt2_riverton,
+        akt3_delacroix,
+        akt3_desert,
+        akt3_siliconbay,
+    )
+
+    koepfe = (
+        (akt2_riverton.KOPF, "c"),
+        (akt2_ironwood.KOPF, "f"),
+        (akt3_siliconbay.KOPF, "G"),
+        (akt3_delacroix.KOPF, "G"),
+        (akt3_delacroix.FAEHRE_KOPF, "D"),
+        (akt3_desert.KOPF, "E"),
+    )
+    for kopf, name in koepfe:
+        noten, _ = linie(kopf.replace("|", " "), tonart(name), 0, 1, 60)
+        hoehen = [n.tonhoehe for n in noten]
+        assert 4 <= len(noten) <= 7 and max(hoehen) - min(hoehen) <= OKTAVE, kopf
+
+
 def test_spurenliste_nennt_spuren_zusatz_und_laenge():
     liste = spurenliste(alle())
     eintrag = liste[stamm("mapleFalls")]

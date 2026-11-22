@@ -13,9 +13,11 @@ from pipeline.abenteuer.ton.stuecke import (
     akt3_desert,
     akt3_motive,
     akt3_silicon,
+    akt3_siliconbay,
 )
 
 STUECKE: tuple[Satz, ...] = (
+    *akt3_siliconbay.STUECKE,
     *akt3_silicon.STUECKE,
     *akt3_ambrose.STUECKE,
     *akt3_delacroix.STUECKE,

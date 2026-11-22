@@ -5,7 +5,10 @@ darum Miss Odiles Lied (5 – 6 – 1' – 6 – 5 – 3 – 2 – 1, pentatonis
 dass seine erste Note dieselbe ist wie die 5, die Ambroses Vater stimmt (``stimmton``). Eine Hand
 je Ort (Grundsatz 2): Die Trauer ist das Lied auf einer einzelnen Trompete, langsam; das Ortsthema
 dasselbe Lied als Tanz, ohne Übergang danach (Klangplan 3A1); das Benefiz noch schneller mit
-Klatschen der Halle. Die Fähre hat einen eigenen langsamen Walzer in D-Dur.
+Klatschen der Halle. Seit der Umstellung auf A0 (Etappe Akt 3, 22.11.2026) ist der Anfang des Lieds
+(D E G' | E D) der Kopf des Ortsthemas, Form A A' B A' offen, drei Spuren (Zusatz: die Klarinette in
+den Lücken), dazu Nacht und drinnen. Die Fähre hat einen eigenen langsamen Walzer in D-Dur mit dem
+Kopf D E Fis | H A.
 
 Ersatz (fehlt in den freien Bibliotheken): Banjo ist der gezupfte Strumstick, das Waschbrett die
 Schellen in Achteln, das Akkordeon der Fähre die Mundharmonika (Melodie, auch ein Zungeninstrument)
@@ -15,6 +18,7 @@ das Klangbild „lautsprecher“. Das Hämmern aus den Häusern, Wellen und Möw
 """
 
 from pipeline.abenteuer.ton.satzplan import Satz, Stimme, Teil
+from pipeline.abenteuer.ton.stuecke.maple import GEGEN_ANHEBUNG, mit_spuren
 
 TONART = "G"
 OBEN = 1
@@ -61,83 +65,145 @@ ODILE_SINGT = Satz(
     beschreibung="Alt, einfach: Miss Odiles Lied, eine Stimme ohne Begleitung; das Summen bricht ab.",
 )
 
-# --- Das Lied als Tanz: Trompete mit Lücken, die Klarinette füllt sie ---
-TANZ = (
-    "5:1.5 6:0.5 1':1.5 r:0.5 | 6:1.5 5:2 r:0.5 | 3:1.5 2:2 r:0.5 | 1:2 r:2 | "
-    "5:1.5 6:0.5 1':1.5 r:0.5 | 2':1.5 1':0.5 6:2 | 5:1 3:1 2:1.5 r:0.5 | 1:2 r:2"
-)
-KLARINETTE = (
-    "r:2 3:1 2:1 | 1:2 3:2 | 6,:2 5,:2 | r:2 3:0.5 5:0.5 6:0.5 1':0.5 | "
-    "r:2 3:1 2:1 | 4:2 6,:2 | 5,:2 7,:2 | r:2 5:0.5 3:0.5 2:0.5 1:0.5"
-)
-BRUECKE = Teil(
+# --- Ortsthema (A0, Etappe Akt 3): der Anfang des Lieds als Kopf, im Tanzrhythmus ---
+# Kopf D E G' | E D: die ersten vier Töne von Miss Odiles Lied; der Quartsprung zum hohen G ist das
+# Kennzeichen, die Lücken füllt die Klarinette.
+KOPF = "5:3/2 6:1/2 1':3/2 r:1/2 | 6:3/2 5:2 r:1/2"
+A = Teil("I | IV I | vi | V", f"{KOPF} | 3:3/2 2:2 r:1/2 | 2:2 5,:2")
+A2 = Teil("I | IV I | ii V | I", f"{KOPF} | 5:1 3:1 2:3/2 r:1/2 | 1:2 r:2")
+# Letzter Takt in Vierteln zurück zum Kopf (Naht der Schleife, A0.6).
+A_OFFEN = Teil("I | IV I | ii | V7", f"{KOPF} | 5:1 3:1 2:3/2 r:1/2 | 2:1 3:1 5,:1 2:1")
+# B: Die Trompete schweigt, die Klarinette singt die Brücke (als Melodie des Teils), endet auf V.
+B = Teil(
     "IV | I | V | I | IV | IV I | ii | V",
     "1':2 6:1 5:1 | 3:1 6:1 5:2 | 5:2 2:1 3:1 | 1:4 | 6:1 1':1 6:1 5:1 | 6:2 5:2 | 2:1 5:1 2:1 1:1 | 2:4",
 )
-DELACROIX_TEILE = {
-    "vor": Teil("I | V"),
-    "a": Teil(ODILE_AKKORDE, TANZ, {"klar": KLARINETTE}),
-    "b": BRUECKE,
-    "b2": BRUECKE,
+# Füllstimme der Klarinette in den Lücken der Trompete (Farbe, Zusatzspur).
+FUELLUNG = {
+    "a": "r:2 3:1 2:1 | 1:2 3:2 | 6,:2 5,:2 | r:2 3:1/2 5:1/2 6:1/2 1':1/2",
+    "a2": "r:2 3:1 2:1 | 4:2 6,:2 | 5,:2 7,:2 | r:2 5:1/2 3:1/2 2:1/2 1:1/2",
+    "b": "r:4 | r:4 | r:4 | r:2 3:1 5:1 | r:4 | r:4 | r:4 | r:2 7,:1 2:1",
+    "a3": "r:2 3:1 2:1 | 4:2 6,:2 | 5,:2 7,:2 | r:4",
 }
-TROMPETE = nur("a", "b")
+TEILE = {
+    name: Teil(t.akkorde, t.melodie, {"klar": FUELLUNG[name]})
+    for name, t in (("a", A), ("a2", A2), ("b", B), ("a3", A_OFFEN))
+}
+FORM = ("a", "a2", "b", "a3")
+MELODIE_TEILE = nur("a", "a2", "a3")
 
 
-def _band(rhythmus: str) -> tuple[Stimme, ...]:
-    """Die Besetzung von Port Delacroix: Trompete, Klarinette, Banjo, Tuba, Waschbrett, dazu ein Puls."""
+def _band(rhythmus: str, puls: float) -> tuple[Stimme, ...]:
+    """Grund von Port Delacroix: Banjo, Tuba, Waschbrett, dazu ein Puls (Marsch oder Klatschen)."""
     return (
-        Stimme("trompete", "melodie", 0.85, 0.15, 0.25, 0, 64, TROMPETE),
-        Stimme("klarinette", "melodie", 0.7, -0.2, 0.25, OBEN, 58, nur("b2")),
-        Stimme("klarinette", "noten", 0.55, -0.2, 0.25, 0, 50, nur("a"), "klar"),
         Stimme("strumstick", "schlagen", 0.7, -0.35, 0.2, 0, 46),
         Stimme("tuba", "bass_zweier", 0.7, 0.0, 0.15, 1, 58),
         Stimme("schlagwerk", "schellen", 0.35, 0.3, 0.15, staerke=50),
-        Stimme("schlagwerk", rhythmus, 0.3, 0.1, 0.2, staerke=42),
+        Stimme("schlagwerk", rhythmus, puls, 0.1, 0.2, staerke=42),
     )
 
 
-PORT_DELACROIX = Satz(
+def _melodie(instrument: str, staerke: int, hall: float = 0.25) -> tuple[Stimme, ...]:
+    """Melodie in A (Trompete oder Klarinette), die Klarinette singt die Brücke (lauter, A0.6)."""
+    return (
+        Stimme(instrument, "melodie", 0.85, 0.15, hall, 0, staerke, MELODIE_TEILE),
+        Stimme("klarinette", "melodie", 0.7 * GEGEN_ANHEBUNG, -0.2, hall, OBEN, staerke - 6, nur("b")),
+    )
+
+
+KLARINETTE = (Stimme("klarinette", "noten", 0.5, -0.2, 0.25, 0, 48, kennung="klar"),)
+
+
+def _delacroix(kennung: str, titel: str, tempo: float, spuren: tuple, text: str) -> Satz:
+    """Eine Fassung des Ortsthemas in drei Spuren."""
+    stimmen, gruppen = mit_spuren(*spuren)
+    return Satz(
+        kennung,
+        titel,
+        TONART,
+        tempo,
+        4,
+        TEILE,
+        FORM,
+        stimmen,
+        akt=AKT,
+        spuren=gruppen,
+        zusatz="farbe",
+        beschreibung=text,
+    )
+
+
+PORT_DELACROIX = _delacroix(
     "portDelacroix",
     "Port Delacroix",
-    TONART,
     116,
-    4,
-    DELACROIX_TEILE,
-    ("vor", "a", "b", "a", "b2", "a"),
-    _band("marsch"),
-    akt=AKT,
-    beschreibung="Trotzig, tanzend: Miss Odiles Lied als Tanz: Trompete, Klarinette, Banjo, Waschbrett.",
+    (_band("marsch", 0.3), _melodie("trompete", 64), KLARINETTE),
+    "Trotzig, tanzend: Miss Odiles Lied als Tanz: Trompete, Klarinette, Banjo, Waschbrett.",
 )
-
+PORT_DELACROIX_NACHT = _delacroix(
+    "portDelacroix.nacht",
+    "Port Delacroix, Nacht",
+    84,
+    (
+        (
+            Stimme("strumstick", "zupfen", 0.6, -0.3, 0.3, 0, 40),
+            Stimme("tuba", "bass_grund", 0.6, 0.0, 0.25, 1, 50),
+        ),
+        _melodie("trompete_gedaempft", 56, 0.35),
+        KLARINETTE,
+    ),
+    "Nacht: das Lied langsam, gedämpfte Trompete, das Banjo gezupft, die Tuba hält.",
+)
+# Innen (Turnhalle, Musikhaus): das Klavier statt der Straßenband, die Klarinette singt.
+PORT_DELACROIX_INNEN = _delacroix(
+    "portDelacroix.innen",
+    "Port Delacroix, drinnen",
+    100,
+    (
+        (
+            Stimme("klavier", "stride", 0.7, -0.15, 0.3, 0, 46),
+            Stimme("tuba", "bass_zweier", 0.5, 0.0, 0.25, 1, 50),
+        ),
+        _melodie("klarinette", 58, 0.3),
+        (Stimme("strumstick", "zupfen", 0.45, 0.3, 0.3, 0, 40),),
+    ),
+    "Drinnen: das Lied auf Klavier und Klarinette, leise das Banjo.",
+)
 ODILE_TANZ = Satz(
     "odile.tanz",
     "Miss Odile, Tanz",
     TONART,
     132,
     4,
-    DELACROIX_TEILE,
-    ("vor", "a", "b", "a", "b2"),
-    _band("klatschen"),
+    TEILE,
+    FORM,
+    (*_band("klatschen", 0.4), *_melodie("trompete", 66), *KLARINETTE),
     akt=AKT,
     beschreibung="Fest: Miss Odiles Lied schnell, Remys Trompete vorn, die Halle klatscht.",
 )
 
 # --- Fähre (Kap. 35): langsamer Walzer in D-Dur, weit und salzig ---
-FAEHRE_A = Teil(
-    "I | I | IV | I | vi | ii | V | V",
-    "3:2 5:1 | 5:2 3:1 | 4:2 6:1 | 5:3 | 6:2 5:1 | 4:2 2:1 | 2:3 | r:2 1:1",
-)
-FAEHRE_A2 = Teil(
-    "I | I | IV | I | vi | IV V | I | I",
-    "3:2 5:1 | 5:2 3:1 | 4:2 6:1 | 1':3 | 1':2 7:1 | 6:1.5 5:1.5 | 3:2 2:1 | 1:3",
-)
+# Kopf D E Fis | H A: drei Schritte hinauf, der Quartsprung zur Sexte ist das Kennzeichen.
+FAEHRE_KOPF = "1:1 2:1 3:1 | 6:2 5:1"
+FAEHRE_A = Teil("I | I | IV | V", f"{FAEHRE_KOPF} | 4:1 3:1 2:1 | 2:3")
+FAEHRE_A2 = Teil("I | I | IV V | I", f"{FAEHRE_KOPF} | 4:1 3:1 2:1 | 1:3")
+FAEHRE_OFFEN = Teil("I | I | ii | V7", f"{FAEHRE_KOPF} | 4:1 3:1 2:1 | 5,:1 6,:1 7,:1")
+# B: Die Mundharmonika schweigt, die Gitarre antwortet (als Melodie des Teils), endet auf V7.
 FAEHRE_B = Teil(
     "vi | vi | IV | I | ii | ii | V | V7",
-    "6:2 7:1 | 1':2 6:1 | 6:2 5:1 | 3:3 | 2:2 3:1 | 4:2 6:1 | 5:3 | 4:2 r:1",
+    "6:2 7:1 | 1':2 6:1 | 6:2 5:1 | 3:3 | 2:2 3:1 | 4:2 6:1 | 5:3 | 4:2 2:1",
 )
-FAEHRE_B2 = Teil(
-    "vi | vi | IV | I | ii | IV | V | V7",
-    "6:2 7:1 | 1':2 6:1 | 6:2 5:1 | 3:3 | 2:2 3:1 | 4:2 6:1 | 5:2 6:1 | 5:2 r:1",
+FAEHRE_TEILE = {"a": FAEHRE_A, "a2": FAEHRE_A2, "b": FAEHRE_B, "a3": FAEHRE_OFFEN}
+_FAEHRE_STIMMEN, _FAEHRE_SPUREN = mit_spuren(
+    (
+        Stimme("hammond", "walzer", 0.6, -0.2, 0.4, 0, 36),
+        Stimme("kontrabass_pizz", "bass_grund", 0.55, 0.0, 0.3, 1, 46),
+    ),
+    (
+        Stimme("mundharmonika", "melodie", 0.75, 0.2, 0.4, OBEN, 56, MELODIE_TEILE),
+        Stimme("gitarre", "melodie", 0.7 * GEGEN_ANHEBUNG, 0.25, 0.35, OBEN, 52, nur("b")),
+    ),
+    (Stimme("gitarre", "zupfen", 0.5, -0.3, 0.35, 0, 36),),
 )
 FAEHRE = Satz(
     "faehre",
@@ -145,15 +211,12 @@ FAEHRE = Satz(
     "D",
     84,
     3,
-    {"vor": Teil("I | IV | I | V"), "a": FAEHRE_A, "a2": FAEHRE_A2, "b": FAEHRE_B, "b2": FAEHRE_B2},
-    ("vor", "a", "a2", "b", "b2", "a", "a2", "vor"),
-    (
-        Stimme("mundharmonika", "melodie", 0.7, 0.2, 0.4, OBEN, 54, nur("a", "a2")),
-        Stimme("gitarre", "melodie", 0.75, 0.25, 0.35, OBEN, 54, nur("b", "b2")),
-        Stimme("hammond", "walzer", 0.6, -0.2, 0.4, 0, 36),
-        Stimme("gitarre", "zupfen", 0.7, -0.3, 0.35, 0, 36, nur("vor", "a", "a2")),
-    ),
+    FAEHRE_TEILE,
+    FORM,
+    _FAEHRE_STIMMEN,
     akt=AKT,
+    spuren=_FAEHRE_SPUREN,
+    zusatz="farbe",
     beschreibung="Weit, salzig: ein langsamer Walzer, Akkordeon und Gitarre teilen sich die Melodie.",
 )
 
@@ -205,4 +268,14 @@ CELESTE = Satz(
     beschreibung="Heute: ein leichter Beat aus Célestes Kopfhörern, leise und klein.",
 )
 
-STUECKE = (FAEHRE, PORT_DELACROIX_TRAUER, PORT_DELACROIX, ODILE_SINGT, ODILE_TANZ, REMY_MAUER, CELESTE)
+STUECKE = (
+    FAEHRE,
+    PORT_DELACROIX_TRAUER,
+    PORT_DELACROIX,
+    PORT_DELACROIX_NACHT,
+    PORT_DELACROIX_INNEN,
+    ODILE_SINGT,
+    ODILE_TANZ,
+    REMY_MAUER,
+    CELESTE,
+)

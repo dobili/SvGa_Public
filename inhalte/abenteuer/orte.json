@@ -2589,21 +2589,24 @@
           "datei": "karten/silicon-bay-aussen.json",
           "name": "ort.siliconBay.aussen",
           "innen": false,
-          "musik": "musik/silicon-bay.m4a"
+          "musik": "musik/silicon-bay.m4a",
+          "musik_nacht": "musik/silicon-bay.nacht.m4a"
         },
         {
           "kennung": "siliconBay.hafen",
           "datei": "karten/silicon-bay-hafen.json",
           "name": "ort.siliconBay.hafen",
           "innen": false,
-          "musik": "musik/silicon-bay.m4a"
+          "musik": "musik/silicon-bay.m4a",
+          "musik_nacht": "musik/silicon-bay.nacht.m4a"
         },
         {
           "kennung": "siliconBay.altstadt",
           "datei": "karten/silicon-bay-altstadt.json",
           "name": "ort.siliconBay.altstadt",
           "innen": false,
-          "musik": "musik/silicon-bay.m4a"
+          "musik": "musik/silicon-bay.m4a",
+          "musik_nacht": "musik/silicon-bay.nacht.m4a"
         },
         {
           "kennung": "siliconBay.akademie",
@@ -3103,6 +3106,7 @@
           "name": "ort.portDelacroix.aussen",
           "innen": false,
           "musik": "musik/port-delacroix.m4a",
+          "musik_nacht": "musik/port-delacroix.nacht.m4a",
           "geraeusch": "klang/regen.m4a",
           "teilchen": "regen",
           "zustaende": {
@@ -3114,7 +3118,7 @@
           "datei": "karten/port-delacroix-turnhalle.json",
           "name": "ort.portDelacroix.turnhalle",
           "innen": true,
-          "musik": "musik/port-delacroix.m4a"
+          "musik": "musik/port-delacroix.innen.m4a"
         },
         {
           "kennung": "portDelacroix.werkstatt",
@@ -3127,7 +3131,7 @@
           "datei": "karten/port-delacroix-musikhaus.json",
           "name": "ort.portDelacroix.musikhaus",
           "innen": true,
-          "musik": "musik/port-delacroix.m4a",
+          "musik": "musik/port-delacroix.innen.m4a",
           "zustaende": {
             "musikhausOffen": "karten/port-delacroix-musikhaus-neu.json"
           }
@@ -3527,14 +3531,15 @@
           },
           "name": "ort.desertSprings.aussen",
           "innen": false,
-          "musik": "musik/desert-springs.m4a"
+          "musik": "musik/desert-springs.m4a",
+          "musik_nacht": "musik/desert-springs.nacht.m4a"
         },
         {
           "kennung": "desertSprings.garage",
           "datei": "karten/desert-springs-garage.json",
           "name": "ort.desertSprings.garage",
           "innen": true,
-          "musik": "musik/desert-springs.m4a"
+          "musik": "musik/desert-springs.innen.m4a"
         },
         {
           "kennung": "desertSprings.antiquariat",
@@ -3544,7 +3549,7 @@
           },
           "name": "ort.desertSprings.antiquariat",
           "innen": true,
-          "musik": "musik/desert-springs.m4a"
+          "musik": "musik/desert-springs.innen.m4a"
         }
       ],
       "figuren": [

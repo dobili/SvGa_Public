@@ -14,9 +14,11 @@
  * - Dünne Mischungen sind leiser; `ausgleichDb` hebt sie auf das Ziel (A0.6: −18 bis −20 LUFS).
  * Die Nachtfassung ist ein eigenes Stück (orte.json `musik_nacht`) und mischt wie jedes andere.
  *
- * Vertrag mit der Pipeline (`musik/spuren.json` im Paket, geschrieben von mittel-4):
- *   { "maple-falls": { "form": 2205000, "rate": 44100, "spuren": ["grund", "melodie", "zusatz"],
- *     "kampf": false, "lufs": { "grund": -24.1, "grund+melodie": -18.3 } } }
+ * Vertrag mit der Pipeline (`musik/spuren.json` im Paket, geschrieben vom Musikbau, mittel-4):
+ *   { "maple-falls": { "proben": 2205000, "rate": 44100, "spuren": ["grund", "melodie", "zusatz"],
+ *     "zusatz": "musiker", "lufs": { "grund": -24.1, "grund+melodie": -18.3 } } }
+ * `proben` (oder `form`) ist die Länge der Form in Abtastwerten. `zusatz` ist musiker, jukebox,
+ * steigerung oder farbe; „steigerung“ (oder `kampf: true`) macht ein Kampfthema. `lufs` ist frei.
  * Dateien: `musik/<stamm>.<spur>.m4a` (etwa musik/maple-falls.grund.m4a). Steht ein Stück nicht
  * in der Tabelle, spielt die volle Mischung `musik/<stamm>.m4a` wie bisher.
  * Abhängigkeiten: keine (reine Rechnung; Web Audio in ton/spurenspieler.ts).
@@ -65,6 +67,8 @@ const VOLL_HOECHSTENS = 3;
 /** Voll klingt das Thema mindestens so lange am Stück (Sekunden), bevor es ausdünnt. */
 const VOLL_SEKUNDEN = 120;
 
+/** Art des Zusatzes, die ein Kampfthema kennzeichnet (spuren.json `zusatz`). */
+const ZUSATZ_STEIGERUNG = "steigerung";
 /** Abtastrate der Pipeline, wenn spuren.json keine nennt. */
 const RATE_VORGABE = 44100;
 const DEZIBEL_JE_ZEHNFACH = 20;
@@ -152,12 +156,16 @@ function alsAngabe(roh: unknown): Spurangabe | null {
   const spuren = Array.isArray(r.spuren)
     ? r.spuren.filter((s): s is Spurname => SPUREN.includes(s as Spurname))
     : [];
-  if (typeof r.form !== "number" || r.form <= 0 || !spuren.includes("grund")) return null;
+  // Länge der Form: „proben“ (Musikbau, mittel-4) oder „form“.
+  const form = typeof r.proben === "number" ? r.proben : r.form;
+  if (typeof form !== "number" || form <= 0 || !spuren.includes("grund")) return null;
   const rate = typeof r.rate === "number" && r.rate > 0 ? r.rate : RATE_VORGABE;
   const lufs: Record<string, number> = {};
   if (typeof r.lufs === "object" && r.lufs !== null)
     for (const [k, v] of Object.entries(r.lufs)) if (typeof v === "number") lufs[k] = v;
-  return { form: r.form, rate, spuren, kampf: r.kampf === true, lufs };
+  // Kampfthema: ausdrücklich oder weil der Zusatz die nächste Steigerungsstufe ist.
+  const kampf = r.kampf === true || r.zusatz === ZUSATZ_STEIGERUNG;
+  return { form, rate, spuren, kampf, lufs };
 }
 
 /** Die Tabelle aus spuren.json (Stamm → Angabe); Ungültiges fällt weg. */

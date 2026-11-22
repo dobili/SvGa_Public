@@ -95,8 +95,14 @@ describe("Tabelle und Dateien", () => {
       kaputt: { form: 0, spuren: ["grund"] },
       ohneGrund: { form: 5, spuren: ["melodie"] },
       "maple-falls.clubkampf": { form: 9, spuren: ["grund"], kampf: true },
+      "cedar-creek.clubkampf": { proben: 7, spuren: ["grund", "zusatz"], zusatz: "steigerung" },
     });
-    expect([...t.keys()]).toEqual(["maple-falls", "maple-falls.clubkampf"]);
+    expect([...t.keys()]).toEqual([
+      "maple-falls",
+      "maple-falls.clubkampf",
+      "cedar-creek.clubkampf",
+    ]);
+    expect(t.get("cedar-creek.clubkampf")).toMatchObject({ form: 7, kampf: true });
     expect(t.get("maple-falls")?.spuren).toEqual(["grund", "melodie"]);
     expect(t.get("maple-falls.clubkampf")).toMatchObject({ kampf: true, rate: 44100 });
     expect(spurtabelleAus(null).size).toBe(0);

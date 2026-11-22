@@ -273,8 +273,10 @@ Ortsthema kann aus bis zu drei Spuren gleicher Länge bestehen: Grund (Begleitun
 und Zusatz (Mono: Musiker, Jukebox, Steigerung).
 
 - **Vertrag mit der Pipeline:** `musik/spuren.json` im Paket, je Stamm
-  `{"form": Abtastwerte, "rate": 44100, "spuren": ["grund", "melodie", "zusatz"], "kampf": false,
-"lufs": {"grund": -24.1, "grund+melodie": -18.3}}`. Die Dateien heißen
+  `{"proben": Abtastwerte, "rate": 44100, "spuren": ["grund", "melodie", "zusatz"], "zusatz": "musiker",
+"lufs": {"grund": -24.1, "grund+melodie": -18.3}}`. `zusatz` ist musiker, jukebox, steigerung
+  oder farbe; „steigerung“ (oder `"kampf": true`) macht ein Kampfthema, `lufs` ist freiwillig.
+  Statt `proben` geht auch `form`. Die Dateien heißen
   `musik/<stamm>.<spur>.m4a` (etwa `musik/maple-falls.grund.m4a`). orte.json und die Marken
   `#musik` bleiben unverändert. Steht ein Stück nicht in der Tabelle oder fehlt sein Grund, spielt
   die volle Mischung `musik/<stamm>.m4a` wie bisher.

@@ -340,6 +340,17 @@ Profil › Einstellungen › Fehler melden.
       gleichmäßig lauter. Aus dem Diner in den Park: Das Rauschen ist kurz laut und sinkt nach etwa
       4 Sekunden weich. Von der Birch Lane in den Park: kein Anschwellen. Ebenso am Flussweg und am
       Bach in Cedar Creek. Ist der Grundpegel (12 dB unter der Musik) gut?
+- [ ] N2684. **Heldin wählbar:** Neues Spiel: Unter dem Namensfeld steht „Wen spielst du?“ mit Held
+      und Heldin. „Heldin“ wählen und spielen; bis dein PixelLab-Bild der Heldin da ist, steht im
+      Spiel noch der Held. Im Spielmenü ist „Heldin“ markiert; Tippen auf „Held“ wechselt sofort.
+      Big Joe und Kerrigan sagen „Kumpel“ zu allen, auch zur Heldin (so belassen, Widerspruch
+      genügt).
+- [ ] N2685. **Musik in Spuren (sobald die neuen Ortsthemen im Spiel sind):** In Maple Falls drei
+      Minuten stehen bleiben: Nach zwei bis drei Durchgängen spielt eine Runde nur die Begleitung,
+      gleich laut, dann wieder mit Melodie. Im Diner an die Jukebox gehen: die dritte Spur wird
+      lauter. Im Clubkampf kommt nach dem ersten Sieg die Melodie dazu, nach dem zweiten die dritte
+      Stimme. Unter Dialogzeilen ist die Musik etwas leiser. An der Naht der Schleife kein Knacken
+      (iPhone). Innenräume spielen 2 dB leiser als draußen.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

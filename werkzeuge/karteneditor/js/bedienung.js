@@ -223,6 +223,10 @@
   };
 
   /** Tastenkürzel (siehe Hilfe, Taste ?). Nicht in Eingabefeldern. */
+  /** Schritt mit Umschalt: 4 Pixel für Figuren (feiner Versatz), sonst eine Kachel. */
+  const FIGURSCHRITT = 4;
+  const schub = () => (KE.nurFiguren() ? FIGURSCHRITT : K);
+
   const KUERZEL = {
     "strg+z": () => KE.rueckgaengig(),
     "strg+y": () => KE.wiederholen(),
@@ -239,10 +243,11 @@
     arrowright: () => KE.verschiebe(1, 0),
     arrowup: () => KE.verschiebe(0, -1),
     arrowdown: () => KE.verschiebe(0, 1),
-    "umschalt+arrowleft": () => KE.verschiebe(-K, 0),
-    "umschalt+arrowright": () => KE.verschiebe(K, 0),
-    "umschalt+arrowup": () => KE.verschiebe(0, -K),
-    "umschalt+arrowdown": () => KE.verschiebe(0, K),
+    // Umschalt: eine Kachel; sind nur Figuren gewählt, 4 Pixel ihres feinen Versatzes (Editor 1.8).
+    "umschalt+arrowleft": () => KE.verschiebe(-schub(), 0),
+    "umschalt+arrowright": () => KE.verschiebe(schub(), 0),
+    "umschalt+arrowup": () => KE.verschiebe(0, -schub()),
+    "umschalt+arrowdown": () => KE.verschiebe(0, schub()),
     r: () => KE.drehe(1),
     "umschalt+r": () => KE.drehe(-1),
     h: () => KE.spiegele(),

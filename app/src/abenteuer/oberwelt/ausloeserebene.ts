@@ -14,6 +14,7 @@
  * Treppe mitten im Raum). Beispiel: Auf dem Gehweg vor dem Waschsalon wechselt erst die Taste nach
  * oben die Karte; wer am Laden vorbeigeht, bleibt draußen.
  */
+import { liesFigurversatz, type Bildversatz } from "./figurversatz";
 import { blickrichtung, sitzrichtung } from "./sitzrichtung";
 import type { Richtung } from "./szene";
 
@@ -29,6 +30,8 @@ export interface Ausloeser {
   readonly sitzt?: Richtung;
   /** Blickrichtung einer stehenden Figur (Eigenschaft `blick`, R008); fehlt sie, unten. */
   readonly blick?: Richtung;
+  /** Feiner Versatz des Bildes einer Figur in Kartenpixeln (figurversatz.ts); nur Darstellung. */
+  readonly versatz?: Bildversatz;
 }
 
 /** Ein Objekt der Tiled-Ebene, so weit es hier gebraucht wird (Pixelkoordinaten). */
@@ -56,6 +59,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
       const wert = (name: string): unknown => o.properties?.find((e) => e.name === name)?.value;
       const sitzt = o.type === "figur" ? sitzrichtung(wert("sitzt")) : null;
       const blick = o.type === "figur" && !sitzt ? blickrichtung(wert("blick")) : null;
+      const versatz = o.type === "figur" ? liesFigurversatz(wert("versatz")) : null;
       return {
         name: o.name ?? "",
         typ: o.type === "figur" ? ("figur" as const) : ("ausloeser" as const),
@@ -65,6 +69,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
         ...(typeof angabe === "string" && angabe ? { durchgang: angabe.split(",") } : {}),
         ...(sitzt ? { sitzt } : {}),
         ...(blick ? { blick } : {}),
+        ...(versatz ? { versatz } : {}),
       };
     });
 }

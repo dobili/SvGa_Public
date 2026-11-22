@@ -87,12 +87,19 @@
     return `b:${m.eintrag.name}|${m.eintrag.eigenschaften?.bild || ""}`;
   }
 
-  /** Das Standbild einer Markierung in ihrer Blickrichtung, sonst null (kein Bogen im Paket). */
-  function standbild(m) {
+  /** Sitzt die Person (Figur `sitzt`, Statist `eigenschaften.sitzt`)? */
+  const sitzt = (m) =>
+    !!(m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt);
+
+  /**
+   * Das Bild einer Markierung in ihrer Blickrichtung: sitzend das Sitzbild, wenn das Paket eins hat
+   * (personensitzbilder, Editor 1.8), sonst das Standbild; null ohne Bogen im Paket.
+   */
+  function standbild(m, alsSitzbild = false) {
     const z = KE.zustand;
     const bogen = z.nachDatei[z.datei]?.personen?.[schluessel(m)];
-    const url =
-      z.daten.personenbilder?.[bogen]?.[REIHENFOLGE.indexOf(KE.blickVon(m.liste, m.eintrag))];
+    const quelle = alsSitzbild ? z.daten.personensitzbilder : z.daten.personenbilder;
+    const url = quelle?.[bogen]?.[REIHENFOLGE.indexOf(KE.blickVon(m.liste, m.eintrag))];
     if (!url) return null;
     if (!bilder[url]) {
       bilder[url] = new Image();
@@ -110,9 +117,12 @@
   KE.zeichnePerson = function (ctx, m, k) {
     if (m.liste !== "figuren" && !(m.liste === "belebung" && m.eintrag.typ === "statist"))
       return false;
-    const b = standbild(m);
+    const sitzbild = sitzt(m) ? standbild(m, true) : null;
+    const b = sitzbild || standbild(m);
     if (!b) return false;
-    ctx.drawImage(b, m.x + (k - b.naturalWidth) / 2, m.y + k - b.naturalHeight);
+    // Sitzende rücken wie in der App auf ihr Sitzmöbel (sitzen.js); der feine Versatz steckt in m.
+    const { dx, dy } = KE.sitzverschiebung(m, b, !!sitzbild);
+    ctx.drawImage(b, m.x + (k - b.naturalWidth) / 2 + dx, m.y + k - b.naturalHeight + dy);
     return true;
   };
 

@@ -19,7 +19,15 @@ import base64
 import io
 from pathlib import Path
 
-from pipeline.abenteuer.belebungsvorschau import SITZ_RAHMEN, figurbild, rgba, statistenbogen
+from pipeline.abenteuer.belebungsvorschau import (
+    FUSSZEILE,
+    PIXELLAB,
+    PIXELLAB_MASSSTAB,
+    SITZ_RAHMEN,
+    figurbild,
+    rgba,
+    statistenbogen,
+)
 
 
 def personenschluessel(liste: str, eintrag: dict) -> str:
@@ -72,3 +80,73 @@ def standbilder(privat: Path, boegen: set[str]) -> dict[str, list[str]]:
         if all(bilder):
             ergebnis[bogen] = [_als_url(b) for b in bilder]
     return ergebnis
+
+
+# Sitzbilder (Editor 1.8, feiner Figurversatz): Zustand „Sitzen auf dem Stuhl“ aus PixelLab, wie der
+# Paketbau ihn in die dritte Reihe des Bogens legt (app/skripte/figurenzustaende.mjs).
+SITZSTUHL = "sitzstuhl"
+KOPFANTEIL = 0.4  # der Kopf: die oberen zwei Fünftel der Figur (wie KOPFANTEIL in figurenzustaende.mjs)
+
+
+def _kopfbreite(bild) -> int:
+    """Größte Breite in den oberen zwei Fünfteln der deckenden Zeilen; 0 bei leerem Bild."""
+    alpha = bild.getchannel("A").load()
+    zeilen = []
+    for y in range(bild.height):
+        xs = [x for x in range(bild.width) if alpha[x, y] > 0]
+        if xs:
+            zeilen.append(xs[-1] - xs[0] + 1)
+    kopf = zeilen[: max(1, int(len(zeilen) * KOPFANTEIL))]
+    return max(kopf) if kopf else 0
+
+
+def _sitzordner(privat: Path, bogen: str) -> Path | None:
+    """Ordner mit ``rotations/`` des Stuhlzustands einer PixelLab-Figur, sonst None."""
+    basis = privat / "spiel" / "figuren-neu" / Path(bogen).stem / "zustaende" / SITZSTUHL
+    if not basis.exists():
+        return None
+    if (basis / "rotations").exists():
+        return basis
+    unter = [p for p in sorted(basis.iterdir()) if (p / "rotations").exists()]
+    return unter[0] if len(unter) == 1 else None
+
+
+def sitzbilder(privat: Path, boegen: set[str]) -> dict[str, list[str]]:
+    """Je Bogen mit Stuhlzustand die vier Sitzbilder (rechts, oben, links, unten) als data-URL.
+
+    Wie der Paketbau: Der Zustand ist größer gezeichnet; er wird um das Verhältnis der Kopfbreiten
+    (Stehen gegen Sitzen, Südbild) verkleinert, die Füße auf FUSSZEILE, dann mit 2/3 wie die
+    Standbilder (belebungsvorschau.figurbild). Bögen ohne Zustand fehlen; der Editor zeigt dann das
+    Standbild 6 Figurenpixel höher, wie die App ohne Sitzreihe.
+    """
+    from PIL import Image  # nur hier gebraucht; ohne Pillow fehlen die Bilder
+
+    ergebnis = {}
+    for bogen in sorted(boegen):
+        ordner = _sitzordner(privat, bogen)
+        stehend = privat / "spiel" / "figuren-neu" / Path(bogen).stem / "rotations" / "south.png"
+        if ordner is None or not stehend.exists():
+            continue
+        bilder = [ordner / "rotations" / f"{r}.png" for r in PIXELLAB]
+        if not all(b.exists() for b in bilder):
+            continue
+        roh = [rgba(b) for b in bilder]
+        sued = roh[PIXELLAB.index("south")]
+        faktor = min(1.0, _kopfbreite(rgba(stehend)) / max(1, _kopfbreite(sued)))
+        ergebnis[bogen] = [_als_url(_auf_fusszeile(b, faktor, Image)) for b in roh]
+    return ergebnis
+
+
+def _auf_fusszeile(bild, faktor: float, image):
+    """Verkleinert (nächster Nachbar) um ``faktor`` und 2/3, Füße auf FUSSZEILE, mittig im Rahmen."""
+    umriss = bild.getbbox()
+    rahmen = image.new("RGBA", bild.size)
+    if not umriss:
+        return rahmen
+    teil = bild.crop(umriss)
+    massstab = faktor * PIXELLAB_MASSSTAB
+    groesse = (max(1, round(teil.width * massstab)), max(1, round(teil.height * massstab)))
+    klein = teil.resize(groesse, image.Resampling.NEAREST)
+    # Unterkante auf FUSSZEILE, wie die Standbilder aus figurbild (die Füße stehen auf der Kachel).
+    rahmen.paste(klein, ((bild.width - klein.width) // 2, FUSSZEILE + 1 - klein.height))
+    return rahmen

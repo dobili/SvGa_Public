@@ -31,6 +31,7 @@ from pipeline.abenteuer.editoruebergaenge import ruecklauf as uebergangsruecklau
 from pipeline.abenteuer.editorzuschnitt import deckkraftzeilen, zuschnittvorschlaege, zuschnittzeilen
 from pipeline.abenteuer.feinbericht import feinzeilen
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
+from pipeline.abenteuer.kartentiled import figurversatz
 from pipeline.abenteuer.kollisionspinsel import pinselzeilen
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektkollision import FELDER as KOLLISION
@@ -180,12 +181,36 @@ def markierungszeilen(eintrag: dict) -> list[str]:
                 zeilen.append(
                     f"verschoben ({liste}): {b['name']} {tuple(alt[i]['feld'])} → {tuple(b['feld'])}"
                 )
+            if i is not None and liste == "figuren" and figurversatz(alt[i]) != figurversatz(b):
+                # Feiner Versatz des Bildes (Editor 1.8), nur Darstellung.
+                zeilen.append(f"Versatz (figuren): {b['name']} {_px(alt[i])} → {_px(b)}")
             if i is not None and _blick(alt[i]) != _blick(b):
                 # Blickrichtung (Editor 1.7, R008); ohne Angabe schaut die Person nach unten.
                 zeilen.append(f"Blick ({liste}): {b['name']} {_blick(alt[i])} → {_blick(b)}")
         for i in sorted(set(range(len(alt))) - {i for i in zuordnung if i is not None}):
             zeilen.append(f"gelöscht ({liste}): {alt[i]['name']} {tuple(alt[i]['feld'])}")
     return zeilen
+
+
+def _px(eintrag: dict) -> str:
+    """Feiner Versatz einer Figur als Text. Beispiel: [0, -3] → „(0, -3) px“; ohne → „(0, 0) px“."""
+    dx, dy = figurversatz(eintrag) or (0, 0)
+    return f"({dx}, {dy}) px"
+
+
+def bereinige_figurversatz(szene: dict) -> None:
+    """Versatz der Figuren auf ±8 ganze Pixel begrenzen, (0, 0) weglassen (kartentiled.figurversatz).
+
+    Warum: Der Editor begrenzt schon; die Grenze gilt aber auch, wenn jemand die Datei von Hand
+    ändert, damit keine Figur sichtbar auf der Nachbarkachel steht.
+    """
+    for f in szene.get("figuren", []):
+        if "versatz" not in f:
+            continue
+        if versatz := figurversatz(f):
+            f["versatz"] = list(versatz)
+        else:
+            del f["versatz"]
 
 
 def _blick(eintrag: dict) -> str:
@@ -230,6 +255,7 @@ def schreibe(daten: dict, szenen: Path, erzwingen: bool) -> tuple[list[str], lis
         if alt is not None and json.loads(alt) != eintrag["vorher"] and not erzwingen:
             konflikte.append(eintrag["datei"])
             continue
+        bereinige_figurversatz(eintrag["nachher"])
         pfad.write_text(als_text(eintrag["nachher"], alt), encoding="utf-8")
         geschrieben.append(eintrag["datei"])
     return geschrieben, konflikte

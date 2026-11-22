@@ -63,6 +63,11 @@
     if (!auswahl.length) return;
     KE.schritt("Verschieben", [KE.zustand.datei], () => {
       for (const t of auswahl) {
+        // Figuren (Editor 1.8): kleine Schritte rücken nur das Bild (versatz, ±8 px, sitzen.js).
+        if (t.liste === "figuren" && (dx % K !== 0 || dy % K !== 0)) {
+          KE.rueckeFigur(t.eintrag, dx, dy);
+          continue;
+        }
         const alt = t.eintrag.feld ? [...t.eintrag.feld] : null;
         // Markierungen bewegen sich nur in ganzen Kacheln (ein Pfeildruck = eine Kachel).
         const kachel = (d) => (t.liste === "objekte" || d % K === 0 ? d : Math.sign(d) * K);
@@ -72,6 +77,21 @@
     });
   };
   KE.belebungMitnehmen = belebungMitnehmen;
+
+  /** Nur Figuren ausgewählt? Dann schieben Umschalt+Pfeile um 4 Pixel statt einer Kachel. */
+  KE.nurFiguren = function () {
+    const auswahl = KE.ausgewaehlt();
+    return auswahl.length > 0 && auswahl.every((t) => t.liste === "figuren");
+  };
+
+  /** Setzt den feinen Versatz der ausgewählten Figuren zurück (Editor 1.8). */
+  KE.versatzZuruecksetzen = function () {
+    const figuren = KE.ausgewaehlt().filter((t) => t.liste === "figuren" && t.eintrag.versatz);
+    if (!figuren.length) return;
+    KE.schritt("Versatz zurücksetzen", [KE.zustand.datei], () => {
+      for (const t of figuren) delete t.eintrag.versatz;
+    });
+  };
 
   /** Dreht die ausgewählten Objekte um 90 Grad (richtung +1 im, -1 gegen den Uhrzeigersinn). */
   KE.drehe = function (richtung) {

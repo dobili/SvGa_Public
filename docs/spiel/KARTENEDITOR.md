@@ -44,6 +44,7 @@ sie lassen sich bearbeiten; der Rücklauf schreibt sie an ihren Platz zurück.
 - Alt gedrückt halten beim Ziehen: pixelgenau.
 - Pfeiltasten: 1 Pixel. Mit Umschalt: eine Kachel.
 - Auslöser (blau), Figuren (rosa) und Belebung (grün) lassen sich genauso verschieben.
+- Figuren lassen sich zusätzlich pixelweise feinstellen, siehe Abschnitt 6.
 
 **Bearbeiten** (wirkt immer auf alles Ausgewählte)
 
@@ -242,7 +243,26 @@ So entsteht ein Loch im Boden ohne eigenes Lochbild:
 Eine abgedeckte Treppe nach unten gilt im Kartenbau als Loch im Boden (Regel 10.84) und wird
 flach gezeichnet: Der Held läuft über die Dielen, nicht darunter.
 
-## 6. Tastenkürzel
+## 6. Figuren fein verschieben
+
+Seit Editor 1.8 (Wunsch vom 22.11.2026): Eine Figur lässt sich in kleinen Schritten verschieben,
+etwa damit eine Sitzende richtig auf ihrem Stuhl sitzt und die Beine über die Sitzfläche ragen.
+
+- Figur anklicken (rosa). Pfeiltaste: 1 Pixel. Mit Umschalt: 4 Pixel.
+- Auf dem Handy: Im Eigenschaftenfeld rechts rücken die Pfeile ← ↑ ↓ → um 1 Pixel und die Reihe
+  darunter (⇠ ⇡ ⇣ ⇢) um 4 Pixel.
+- Darunter steht, wie weit das Bild versetzt ist. Höchstens 8 Pixel in jede Richtung, also eine
+  halbe Kachel; weiter geht es nicht.
+- „Versatz zurücksetzen“ stellt das Bild wieder genau auf sein Feld.
+- Verschoben wird nur das Bild. Das Feld (gestricheltes Quadrat), an dem man die Figur anspricht
+  und an dem man nicht vorbeikommt, bleibt, wo es ist. Um die Figur auf eine andere Kachel zu
+  stellen, zieht man sie wie bisher.
+- Sitzende zeigt der Editor wie das Spiel: auf ihren Stuhl gerückt und mit dem Sitzbild, wenn die
+  Figur eins hat. Ohne Sitzbild erscheint das Standbild etwas höher, genau wie im Spiel. Ohne Stuhl
+  unter dem Feld sitzt sie am Boden.
+- Der Versatz gilt im Spiel auch, wenn die Figur sitzt oder sich im Gespräch zum Helden dreht.
+
+## 7. Tastenkürzel
 
 Taste ? zeigt alle Kürzel.
 
@@ -254,7 +274,7 @@ Taste ? zeigt alle Kürzel.
 | R / Umschalt+R      | drehen rechts / links                                                               |
 | H                   | spiegeln                                                                            |
 | Bild auf / Bild ab  | nach vorn / nach hinten                                                             |
-| Pfeile (+ Umschalt) | 1 Pixel (1 Kachel)                                                                  |
+| Pfeile (+ Umschalt) | 1 Pixel (1 Kachel; bei Figuren 4 Pixel ihres feinen Versatzes)                      |
 | Strg+A              | alles auswählen                                                                     |
 | Strg+S              | Änderungen herunterladen                                                            |
 | G, K, M             | Raster, Kollision, Markierung                                                       |
@@ -263,7 +283,7 @@ Taste ? zeigt alle Kürzel.
 | F                   | ganze Karte zeigen; im Kollisionspinsel und bei „Kollision bearbeiten“: Fein an/aus |
 | Esc                 | Auswahl aufheben, Modus beenden                                                     |
 
-## 7. Speichern und zurückschicken
+## 8. Speichern und zurückschicken
 
 - Deine Änderungen bleiben im Browser gespeichert, auch nach dem Schließen.
   Die Originalkarten werden nie überschrieben.
@@ -283,6 +303,16 @@ Taste ? zeigt alle Kürzel.
   schreibt die Szenen, legt Bericht und Vorschauen nach `buch/arbeit/editor/` und baut die Karten.
   Wurde eine Szene inzwischen anders geändert, bleibt sie unberührt (Konflikt im Bericht,
   `--erzwingen` überschreibt).
+- Feiner Versatz einer Figur (Editor 1.8): `figuren[].versatz: [dx, dy]` in Kartenpixeln, ganze
+  Zahlen, höchstens ±8 (`kartentiled.figurversatz`; der Rücklauf begrenzt und lässt (0, 0) weg, ein
+  Dauertest prüft alle Szenen). Nur Darstellung: Die Karte führt ihn als Eigenschaft `versatz`
+  („dx,dy“), die App rückt nur das Bild über den Ursprung (oberwelt/figurversatz.ts,
+  figurensitz.verschiebeFigurbild), nach dem Sitzen, sodass er auch bei Bildwechseln (Drehen zum
+  Helden, Sitzbild) bleibt. Fußkachel, Kollision, Ansprechen und die Prüfwerkzeuge (figurensperre,
+  kopfkachel, blickrichtung, durchlass) rechnen bewusst ohne ihn; die Kartenvorschau
+  (belebungsvorschau) zeichnet ihn. Sitzbilder im Paket: `personensitzbilder` aus dem Stuhlzustand
+  (`figuren-neu/<name>/zustaende/sitzstuhl/`, editorpersonen.sitzbilder); die Sitzlage auf dem Möbel
+  rechnet der Editor wie die App (js/sitzen.js).
 - Neue Objektfelder (pipeline/abenteuer/objektform.py): `drehung` (0, 90, 180, 270),
   `spiegeln`, `massstab` (0,5 bis 3) und `ebene` (ganze Zahl, wird zur Tiefe des Kartenbaus
   addiert; Entscheidung: Verschiebung statt fester Tiefe, damit die Tiefe beim Verschieben

@@ -6,7 +6,7 @@
  * bedient den Editor wie der Autor (Ziehen, Alt-Ziehen, Drehen, Strg+Klick-Mehrfachauswahl,
  * Duplizieren als Gruppe, Löschen, Ebene, Bibliothek, Auswahlliste, Rückgängig, Übertragen auf die
  * Fassung, Neuladen; Figuren und Varianten in figuren.cjs, Kollisionspinsel in pinsel.cjs, Laden in laden.cjs,
- * Übergänge in uebergaenge.cjs, feine Kollision in fein.cjs, Blickrichtung in blick.cjs, Kollision
+ * Übergänge in uebergaenge.cjs, feine Kollision in fein.cjs, Blickrichtung in blick.cjs, feiner Figurversatz in figurversatz.cjs, Kollision
  * skalierter Objekte in massstab.cjs) und
  * schickt die heruntergeladene Datei durch den Rücklauf.
  *
@@ -44,6 +44,7 @@ const uebergaenge = require("./uebergaenge.cjs");
 const zuschnitt = require("./zuschnitt.cjs");
 const fein = require("./fein.cjs");
 const blick = require("./blick.cjs");
+const figurversatz = require("./figurversatz.cjs");
 const massstab = require("./massstab.cjs");
 
 const K = 16;
@@ -354,6 +355,7 @@ async function ruecklauf(seite, arbeit) {
   await kollision.treppenabgang(seite, pruefe);
   await figuren.bodenkachelnTrotzSperre(seite, pruefe);
   await blick.blickrichtung(seite, pruefe); // Blickrichtung (Editor 1.7), vor dem Löschen von hector
+  await figurversatz.figurversatz(seite, pruefe); // Figuren fein verschieben (Editor 1.8)
   await figuren.hindernisse(seite, pruefe);
   await figuren.loeschenUndKopieren(seite, pruefe);
   await figuren.varianten(seite, pruefe);

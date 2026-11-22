@@ -5865,6 +5865,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "nadelMapleFalls >= 1"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"wasserfall\",\"felder\":[[30,1,4,4]]}]"
   }
  ]
 }

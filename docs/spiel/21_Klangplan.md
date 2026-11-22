@@ -292,6 +292,11 @@ Ereignisse in unregelmäßigem Abstand; **einmalig** = an Zeile, Ding oder Handl
 
 ### B1. Dauergeräusche je Karte
 
+Räumlich (seit 22.11.2026, `docs/spiel/23_Technik_Atmosphaere.md` h2): Jedes Dauergeräusch liegt
+gut 12 dB unter der Musik und wird nur nahe seiner Quelle so laut wie die Datei (Wasserfall im
+Park, Bach in Cedar Creek, Fluss am Flussweg). „Leise“ und „lauter“ in der Tabelle ergeben sich so
+aus dem Ort; nur eine Karte ohne Quelle (Wohnzimmer, Dachboden) bleibt überall auf dem Grundpegel.
+
 | Kennung              | Karte, Tageszeit                                                                                        | Dauer                       | Herkunft im Roman           |
 | -------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------- |
 | `wasserfall`         | `mapleFalls.aussen` leise, `.park` lauter, `.wohnzimmer` und `.dachboden` sehr leise; Abspann von Akt 1 | dauernd                     | Kap. 1, 4, 6, 16; Ortsblatt |

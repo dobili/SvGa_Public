@@ -64,6 +64,9 @@ nachträgliches Möblieren:
   ],
   "eigenschaften": { "stil": "kueste" },
   "sperren": [[0, 7]], // Kollisionspinsel: zusätzlich gesperrte Kacheln (unsichtbare Sperre)
+  // Geräuschquellen (geraeuschquellen.py): abgeleitet aus Wasser und Möbeln; von Hand
+  // false (keine) oder {"ohne": ["wasser"], "dazu": [{"feld": [x, y]}, {"bereich": [x, y, b, h]}]}
+  "geraeuschquellen": { "dazu": [{ "feld": [30, 2] }] },
   "freigeben": [[5, 3]], // begehbar, egal welches Möbel oder Rasterzeichen darunter liegt
   "freigeben_grund": "…" // Pflicht bei Freigaben auf Wand oder Wasser (kollisionspinsel.py)
 }

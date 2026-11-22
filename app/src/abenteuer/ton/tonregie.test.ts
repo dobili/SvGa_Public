@@ -126,3 +126,31 @@ describe("gestoppter Tonerzeuger (WebKit beim Neuladen, Lauf 44657454880)", () =
     expect(() => regie.stelleEin(STANDARD_ABENTEUERTON, true)).toThrow("kaputt");
   });
 });
+
+describe("Tonregie und räumliche Geräusche", () => {
+  it("gibt die Quellen der Karte an die Raumregie, der Pegel folgt dem Helden", () => {
+    const faktoren: number[] = [];
+    const { werk } = mitschreiber();
+    let jetzt = 0;
+    const uhr = { jetzt: () => jetzt, spaeter: () => undefined };
+    const regie = new Tonregie(
+      () => ({ ...werk, setzeRaum: (f) => faktoren.push(f) }),
+      vi.fn(),
+      uhr,
+    );
+    regie.stelleEin(STANDARD_ABENTEUERTON, true);
+    regie.karteBetreten(
+      "musik/a.ogg",
+      "klang/bach.m4a",
+      [],
+      [{ art: "bach", felder: [[0, 0, 1, 1]] }],
+    );
+    expect(faktoren.at(-1)).toBe(1);
+    jetzt = 10000;
+    regie.heldBei(30, 30);
+    expect(regie.raumpegel ?? 1).toBeLessThan(0.4);
+    jetzt = 10200;
+    regie.heldBei(1, 0);
+    expect(regie.raumpegel).toBe(1);
+  });
+});

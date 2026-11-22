@@ -378,6 +378,11 @@ Profil › Einstellungen › Fehler melden.
       „Warten“ zu Abend und Nacht: Coach Delgado sitzt abends im Park, nachts im Diner; Big Joe
       abends auf der Bank vor der Kantine; Kinder sind nachts zu Hause; Mags ist im Diner immer
       da. Wer für den nächsten Schritt einer Aufgabe gebraucht wird, steht immer an seinem Platz.
+- [ ] N2691. **Musik Akt 4:** Summit City (Tag, Nacht, Wards Hütte), Hochebene (Tag, Nacht), Fahrt
+      zur Hochebene, Pinewood, Staubstraße, Seeufer, Herbst, Arena, Clubkampf gegen Ward und das
+      Turnier (mit jedem Sieg eine Stimme mehr). Crossroads, Lagerfeuer und der Abspann zitieren
+      jetzt die neuen Köpfe aller Orte: Erkennst du sie wieder? Alt gegen neu im privaten
+      Repository: hoerprobe/akt4/index.html.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

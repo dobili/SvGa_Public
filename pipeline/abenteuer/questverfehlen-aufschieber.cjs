@@ -170,4 +170,4 @@ function hauptprogramm(liste) {
 
 if (require.main === module) hauptprogramm(process.argv.slice(2));
 
-module.exports = { aufschieben, ergebnis, dateienJetzt };
+module.exports = { aufschieben, ergebnis, dateienJetzt, loestAus };

@@ -259,6 +259,44 @@ Spuren und die volle Mischung, Tag und Nacht.
 - **Bauen und hören:** `hoerseite PRIVAT --akt 2 --sichere-alt`, dann `musikbau PRIVAT --nur …`,
   dann `hoerseite PRIVAT --akt 2`; die Seite liegt unter `hoerprobe/akt2/index.html`.
 
+### A0.9 Umstellung, Etappe Akt 3 (22.11.2026)
+
+Gleiche Form wie Akt 1 und 2: je Ort ein Kopf mit vier bis sieben Tönen, Form A A′ B A′ offen, drei
+Spuren und die volle Mischung, Tag und Nacht; die Nahtkurve (A0.8) gilt für alle.
+
+- **Silicon Bay**, G-lydisch, Kopf H D Cis D | A′ G D (`akt3_siliconbay.py`): Die Melodie kreist um
+  die ♯4, den Konzernton, springt eine Quinte hinauf und fällt zurück; gleichmäßige Viertel, ohne
+  Atem.
+  - Tag 96 (Vibraphon, Orgelfläche, die liegende ♯4, gefilterte Achtel; Farbe Glasharfe), Nacht 76
+    (nur Fläche und ♯4), Akademie 96 (viel Hall, 6 dB leiser).
+- **Port Delacroix**, G-Dur: Der Anfang von Miss Odiles Lied ist der Kopf (D E G′ | E D, Quartsprung
+  zum hohen G), im Tanzrhythmus.
+  - Tag 116 (Trompete, Banjo, Tuba, Waschbrett; Farbe die Klarinette in den Lücken), Nacht 84
+    (gedämpfte Trompete, Banjo gezupft), drinnen 100 (Turnhalle, Musikhaus: Klavier und Klarinette).
+  - Das Benefiz (`odile.tanz`, 132) spielt dieselben Teile schneller.
+  - Unverändert: die Trauer (Trompete allein) und Miss Odiles Gesang.
+- **Fähre**, D-Dur, Walzer, Kopf D E Fis | H A, 84: Mundharmonika (Akkordeon), Orgel im Walzer; im
+  B-Teil antwortet die Gitarre.
+- **Desert Springs**, E-Dur, Kopf H E′ Dis H | Cis H Gis: Tag 72 (Slide-Gitarre; Farbe das
+  Windspiel), Nacht 64, drinnen 84 (Garage, Antiquariat: Mundharmonika).
+  - Die erste Fassung mit Pausen und langen Tönen schwankte zu stark (LRA bis 8, P98 bis 6). Ohne
+    Pausen, mit leiser gezupfter Begleitung und, drinnen, einer haltenden Melodie hält sie A0.6.
+- **Wege:** Wüstenzug 70 und Busfahrt 100 spielen das Thema von Maple Falls (Slide-Gitarre und
+  Windspiel; Gitarre, Bass und Orgel).
+- **Kampfthema Akt 3:** der Kopf von Silicon Bay in Achteln über einer Klavierfigur in Sechzehnteln,
+  132, kein Schlagzeug (Clubkampf gegen Dr. Lin); das Vibraphon steigert.
+  - Der Clubkampf in Desert Springs ist die Steigerung: derselbe Kopf mit der reinen 4, wie in
+    Miras Motiv (sie kennt den fremden Ton nicht), 144, Gitarre und Klatschen. Im B-Teil singt das
+    Cello den Helden, Miras Motiv auf der Ukulele kommt nach dem zweiten Sieg dazu.
+- **orte.json:** `musik_nacht` für Silicon Bay (außen, Hafen, Altstadt), Port Delacroix (außen) und
+  Desert Springs (außen). Turnhalle und Musikhaus spielen `portDelacroix.innen`, Garage und
+  Antiquariat `desertSprings.innen`.
+- **Lautheit:** Alle 14 Stücke mit Spuren und ihre Mischungen halten A0.6 (56 Messungen, Naht
+  höchstens 0,8 LU; 11 Hinweise P98 bei dünnen Mischungen). Die Szenenstücke von Akt 3 (Ambrose,
+  ZERO, Mama, Held …) kommen mit denen der anderen Akte in einer eigenen Etappe dran.
+- **Bauen und hören:** `hoerseite PRIVAT --akt 3 --sichere-alt`, `musikbau PRIVAT --nur …`,
+  `hoerseite PRIVAT --akt 3`.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

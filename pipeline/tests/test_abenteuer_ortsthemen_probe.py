@@ -1,5 +1,7 @@
 """Tests für das Probestück einprägsame Ortsthemen (Klangplan A0): Kopf nach den Bauregeln, Pläne bauen."""
 
+import pytest
+
 from pipeline.abenteuer.ton.ortsthemenprobe import notenzeile
 from pipeline.abenteuer.ton.satzplan import baue, linie, tonart
 from pipeline.abenteuer.ton.stuecke.ortsthemen_probe import CEDAR_KOPF, MAPLE_KOPF, STUECKE
@@ -52,7 +54,7 @@ def test_spuren_gruppen_decken_alle_stimmen_genau_einmal():
 
 
 def test_gemeinsame_verstaerkung_und_speicher():
-    import numpy as np
+    np = pytest.importorskip("numpy")  # in Actions nicht installiert
 
     from pipeline.abenteuer.ton.spuren import _gemeinsam_angeglichen, puffer_mb
 

@@ -316,6 +316,11 @@ Profil › Einstellungen › Fehler melden.
       reicht dem Helden fast bis zur Hüfte, Katze, Enten und Krähen etwa bis zur halben Höhe,
       Tauben kleiner; Pferd, Kuh, Bison und Hirsch sind so groß wie Erwachsene. Wirkt das stimmig,
       und ist jedes Tier gut zu erkennen?
+- [ ] N2680. **Figuren schauen dich an:** Eine Figur von der Seite ansprechen (etwa Mama im
+      Wohnzimmer von links): Sie dreht sich zum Helden und schaut etwa eine Sekunde nach dem Gespräch
+      wieder wie vorher. In Gesprächen mit mehreren schaut, wer gerade spricht. Statisten schauen
+      den Helden an, solange er still vor ihnen steht, und gehen danach weiter. Sitzende
+      Schachspieler bleiben zum Brett gewandt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -190,7 +190,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     const moebelliste = liesPaketJson<{ moebel: Record<string, Sperrangabe> }>("daten/moebel.json")
       .then((d) => d.moebel)
       .catch(() => ({}));
-    Promise.all([ladeWelt(karte, stand.held.variante, variablen), moebelliste])
+    Promise.all([ladeWelt(karte, stand.held.variante, variablen, stand), moebelliste])
       .then(([w, moebel]) => {
         if (!aktiv || !a.rahmen.current) return;
         k.setzeWelt(w);

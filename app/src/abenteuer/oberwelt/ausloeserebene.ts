@@ -32,6 +32,8 @@ export interface Ausloeser {
   readonly blick?: Richtung;
   /** Feiner Versatz des Bildes einer Figur in Kartenpixeln (figurversatz.ts); nur Darstellung. */
   readonly versatz?: Bildversatz;
+  /** Figur liegt im Bett (Tagesablauf, regeln/tagesablauf.ts: Schlaf mit Bett). */
+  readonly liegt?: boolean;
 }
 
 /** Ein Objekt der Tiled-Ebene, so weit es hier gebraucht wird (Pixelkoordinaten). */
@@ -60,6 +62,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
       const sitzt = o.type === "figur" ? sitzrichtung(wert("sitzt")) : null;
       const blick = o.type === "figur" && !sitzt ? blickrichtung(wert("blick")) : null;
       const versatz = o.type === "figur" ? liesFigurversatz(wert("versatz")) : null;
+      const liegt = o.type === "figur" && wert("liegt") === true;
       return {
         name: o.name ?? "",
         typ: o.type === "figur" ? ("figur" as const) : ("ausloeser" as const),
@@ -70,6 +73,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
         ...(sitzt ? { sitzt } : {}),
         ...(blick ? { blick } : {}),
         ...(versatz ? { versatz } : {}),
+        ...(liegt ? { liegt } : {}),
       };
     });
 }

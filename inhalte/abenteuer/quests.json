@@ -1112,6 +1112,29 @@
             "begegnung": "ironwood.clubkampf",
             "ausgang": ["sieg", "remis"]
           },
+          "umwege": [
+            {
+              "wenn": "nicht mamaSpielt und nicht fotoGefunden",
+              "ziel": {
+                "karte": "ironwood.mamasZimmer",
+                "objekt": "omaRuth"
+              }
+            },
+            {
+              "wenn": "nicht mamaSpielt und nicht mamaFotoGesehen",
+              "ziel": {
+                "karte": "mapleFalls.wohnzimmer",
+                "objekt": "mutter"
+              }
+            },
+            {
+              "wenn": "nicht mamaSpielt",
+              "ziel": {
+                "karte": "ironwood.kantine",
+                "objekt": "mama"
+              }
+            }
+          ],
           "wirkungen": [
             {
               "art": "szene",

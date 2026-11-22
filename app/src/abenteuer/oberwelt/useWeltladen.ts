@@ -90,6 +90,8 @@ function starteSpiel(
     eintrag?.geraeusch,
     klangorte(w.karte, eintrag?.klangquellen ?? [], KACHEL),
     geraeuschquellenAus(w.karte),
+    // Spurenmischung (Klangplan A0.1): Innenräume dünner, Musiker aus geraeuschquellen.
+    { kennung: w.kennung, innen: w.innen },
   );
   // Musik lädt erst beim Abspielen; die der Nachbarkarten schon jetzt (ton/vorabladen.ts).
   void ladeNachbarmusikVorab(w.kennung, w.karte, tonregie.hoerbar);

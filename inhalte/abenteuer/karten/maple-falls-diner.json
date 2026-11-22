@@ -2150,6 +2150,11 @@
    "name": "kennung",
    "type": "string",
    "value": "mapleFalls.diner"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[7,4,1,2]]}]"
   }
  ]
 }

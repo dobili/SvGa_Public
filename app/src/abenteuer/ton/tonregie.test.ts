@@ -154,3 +154,32 @@ describe("Tonregie und räumliche Geräusche", () => {
     expect(regie.raumpegel).toBe(1);
   });
 });
+
+describe("Tonregie und Musik in Spuren", () => {
+  it("Dialog senkt die Musik, Siege und Innenraum gehen an die Mischung, der Messer meldet", () => {
+    const { werk } = mitschreiber();
+    const dialog: boolean[] = [];
+    const lagen: unknown[] = [];
+    const regie = new Tonregie(() => ({
+      ...werk,
+      setzeDialog: (a) => dialog.push(a),
+      setzeMischlage: (l) => lagen.push(l),
+    }));
+    regie.stelleEin(STANDARD_ABENTEUERTON, true);
+    regie.karteBetreten("musik/a.ogg", null, [], [], {
+      kennung: "mapleFalls.clubraum",
+      innen: true,
+    });
+    regie.dialogzeile(tagsAus(["musik:mapleFalls.clubkampf"]));
+    regie.dialogzeile(tagsAus(["sprecher:coach"]));
+    regie.ergebnis(true);
+    expect(regie.messung()).toMatchObject({
+      musik: "mapleFalls.clubkampf",
+      dialog: true,
+      mischlage: { innen: true, siege: 1, musikerNaehe: 0 },
+    });
+    regie.dialogBeendet();
+    expect(dialog).toEqual([true, false]);
+    expect(lagen.at(-1)).toEqual({ innen: true, siege: 0, musikerNaehe: 0 });
+  });
+});

@@ -18,6 +18,7 @@ import { laufendesSimultan, nachSimultanpartie, starteSimultan } from "../regeln
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Partieergebnis } from "../schnittstelle/partie";
 import { tSpiel } from "../texte/texte";
+import { tonregie } from "../ton/tonregie";
 import { auftragFuer, auftragFuerRunde } from "./auftraege";
 import type { Oberweltkern } from "./kern";
 import { begegnungVon, type Partien } from "./usePartiestart";
@@ -80,6 +81,8 @@ function useRueckwegDerRunde(
           return;
         }
         const r = standNachRunde(aktuell, auftrag, ergebnis, daten);
+        // Steigerung des Kampfthemas je bestandener Runde (Klangplan A0.1, ton/mischregie.ts).
+        tonregie.ergebnis(r.bestanden);
         const { stand, ...werte } = r;
         const karte = { art: "runde", auftrag, ...werte } as const;
         setzen.ergebnis(karte);

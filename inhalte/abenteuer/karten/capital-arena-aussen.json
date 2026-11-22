@@ -16893,6 +16893,11 @@
    "name": "kennung",
    "type": "string",
    "value": "capitalArena.aussen"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[40,58,1,1]]}]"
   }
  ]
 }

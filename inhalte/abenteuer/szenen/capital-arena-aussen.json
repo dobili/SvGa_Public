@@ -2,6 +2,7 @@
   "karte": "capitalArena.aussen",
   "datei": "karten/capital-arena-aussen.json",
   "art": "aussen",
+  "musikquellen": ["strassenmusiker"],
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {

@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import { ladeSpieldaten } from "../daten/laden";
 import { uebungspartie } from "../regeln/abwesenheit";
 import { standNachPartie } from "../regeln/rueckweg";
+import { tonregie } from "../ton/tonregie";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
 import type { Partiekarten } from "../schnittstelle/spielstand";
@@ -123,6 +124,8 @@ function useRueckwegDerPartie(
         return;
       }
       setzen.ergebnis(e);
+      // Steigerung des Kampfthemas je Sieg (Klangplan A0.1, ton/mischregie.ts).
+      tonregie.ergebnis(e.ausgang === "sieg");
       void ladeSpieldaten().then((daten) => {
         const r = standNachPartie(k.standRef.current ?? aktuell, e, daten);
         setzen.nadel(r.nadel);

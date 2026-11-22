@@ -67,6 +67,9 @@ nachträgliches Möblieren:
   // Geräuschquellen (geraeuschquellen.py): abgeleitet aus Wasser und Möbeln; von Hand
   // false (keine) oder {"ohne": ["wasser"], "dazu": [{"feld": [x, y]}, {"bereich": [x, y, b, h]}]}
   "geraeuschquellen": { "dazu": [{ "feld": [30, 2] }] },
+  // Musiker (Zusatzspur des Ortsthemas wird in der Nähe hörbar): Namen wie in der Tiled-Karte;
+  // jede Jukebox zählt von selbst (geraeuschquellen.py, Art „musik“)
+  "musikquellen": ["gitarrist"],
   "freigeben": [[5, 3]], // begehbar, egal welches Möbel oder Rasterzeichen darunter liegt
   "freigeben_grund": "…" // Pflicht bei Freigaben auf Wand oder Wasser (kollisionspinsel.py)
 }

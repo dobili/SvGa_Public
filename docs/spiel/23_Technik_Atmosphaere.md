@@ -268,6 +268,42 @@ Möbel nach Namen wie Wasserfall, Brunnen, Turmuhr. Der Kartenbau schreibt sie a
 (Zeitkonstante 0,25 s). Einzelne Geräusche aus Zeilen (`#klang`) laufen am Raumpegel vorbei.
 Hörprobe: `python -m pipeline.abenteuer.ton.raumprobe TONORDNER ZIEL`.
 
+**h3) Musik in Spuren** (Klangplan A0.1 und A0.6, Auftrag des Hauptchats, 22.11.2026): Ein
+Ortsthema kann aus bis zu drei Spuren gleicher Länge bestehen: Grund (Begleitung und Bass), Melodie
+und Zusatz (Mono: Musiker, Jukebox, Steigerung).
+
+- **Vertrag mit der Pipeline:** `musik/spuren.json` im Paket, je Stamm
+  `{"proben": Abtastwerte, "rate": 44100, "spuren": ["grund", "melodie", "zusatz"], "zusatz": "musiker",
+"lufs": {"grund": -24.1, "grund+melodie": -18.3}}`. `zusatz` ist musiker, jukebox, steigerung
+  oder farbe; „steigerung“ (oder `"kampf": true`) macht ein Kampfthema, `lufs` ist freiwillig.
+  Statt `proben` geht auch `form`. Die Dateien heißen
+  `musik/<stamm>.<spur>.m4a` (etwa `musik/maple-falls.grund.m4a`). orte.json und die Marken
+  `#musik` bleiben unverändert. Steht ein Stück nicht in der Tabelle oder fehlt sein Grund, spielt
+  die volle Mischung `musik/<stamm>.m4a` wie bisher.
+- **Abspielen** (`ton/spurenspieler.ts`): Alle Spuren starten im selben Augenblick und schleifen mit
+  `loopStart`/`loopEnd` über die Form. Enthält der Puffer den AAC-Vorlauf (2112 Werte, Safari),
+  beginnt die Schleife danach.
+- **Mischungen** (`ton/spurenmischung.ts`):
+  - Tag: Grund und Melodie, dazu der Zusatz, wenn er eine Farbstimme ist (`zusatz: "farbe"`).
+    Innenraum: dieselben, 2 dB leiser (−20 LUFS); eigene Innen- und Nachtstücke mischen genauso.
+  - Nacht: eigenes Stück über `musik_nacht`.
+  - Ausdünnen: nach 2 bis 3 vollen Schleifen (mindestens 2 Minuten) eine Schleife nur der Grund,
+    dann wieder voll. Gezählt wird ab dem Betreten der Karte.
+  - Musiker nah: Zusatz nach der Abstandskurve der räumlichen Geräusche. Die Quellen stehen als Art
+    `musik` in der Karteneigenschaft `geraeuschquellen`: jede Jukebox und was die Szene unter
+    `musikquellen` nennt.
+  - Steigerung bei `kampf`: Grund, nach dem ersten Sieg (Partie oder Runde) die Melodie, nach dem
+    zweiten der Zusatz (`ton/mischregie.ts`).
+  - Pegel: Jede Mischung wird auf −18 LUFS angehoben, gemessen (`lufs`) oder ohne Messung nur der
+    Grund +5 dB; höchstens +8 dB.
+- **Dialog:** Unter Dialogzeilen klingt alle Musik 3 dB leiser (Zeitkonstante 0,4 s).
+- **Speicher:** Drei Spuren (zwei Stereo, eine Mono) liegen bei 50 s dekodiert bei etwa 48 MB.
+  Beim Überblenden zweier Orte sind es 1,5 s lang etwa 96 MB; danach vergisst der Vorrat die
+  Spuren des alten Orts sofort (`ton/musikspuren.ts`). Das Vorabladen der Nachbarkarten legt die
+  Spurdateien in den Cache, nicht die volle Mischung.
+- **Tonmesser:** `globalThis.__tonmesser()` meldet Musik, Pegel je Spur, Dialog, Raumpegel und Lage
+  der Mischung (Oberflächentest `abenteuer-musikspuren.spec.ts`).
+
 **i) T15 Fensterbank zeigt Funde** (klein): Ink-Funktion `zeigeFensterbank()` öffnet eine Ansicht
 mit allen Funden des Spielstands (Bild aus funde.json, sonst Name), in der Reihenfolge des
 Findens. Die Fensterbank im Zimmer des Helden ruft sie aus ihrem Dialog auf; keine Kartenänderung.

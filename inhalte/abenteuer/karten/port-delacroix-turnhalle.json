@@ -2900,6 +2900,11 @@
    "name": "sperren",
    "type": "string",
    "value": "15,3;16,3;17,3"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[9,8,1,1]]}]"
   }
  ]
 }

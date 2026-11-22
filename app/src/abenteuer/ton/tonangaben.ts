@@ -9,8 +9,10 @@
  * (app/skripte/baue-abenteuerpaket.mjs, `kopiereTon`). Fehlt eine Tabelle oder ist sie kaputt,
  * gilt: alles als Schleife, nichts angehoben (docs/spiel/23_Technik_Atmosphaere.md, Grundsätze:
  * Das Spiel läuft auch ohne Tondateien fehlerfrei).
- * Abhängigkeiten: keine (Laden kommt von außen).
+ * Dazu die Tabelle der Stücke in Spuren (`musik/spuren.json`, ton/spurenmischung.ts).
+ * Abhängigkeiten: ton/spurenmischung.ts (Lesen der Spurtabelle); Laden kommt von außen.
  */
+import { spurtabelleAus, type Spurangabe } from "./spurenmischung";
 
 /** Liest eine Paketdatei als Bytes; null, wenn es sie nicht gibt (wie im Tonspieler). */
 export type Bytesladen = (pfad: string) => Promise<ArrayBuffer | null>;
@@ -20,11 +22,18 @@ export interface Tonangaben {
   readonly einmalig: ReadonlySet<string>;
   /** Anhebung in Dezibel je Geräusch ohne Endung (etwa „kerze“ → 8). */
   readonly anhebungDb: ReadonlyMap<string, number>;
+  /** Stücke in Spuren (musik/spuren.json, ton/spurenmischung.ts), je Stamm. */
+  readonly spuren: ReadonlyMap<string, Spurangabe>;
 }
 
-export const KEINE_TONANGABEN: Tonangaben = { einmalig: new Set(), anhebungDb: new Map() };
+export const KEINE_TONANGABEN: Tonangaben = {
+  einmalig: new Set(),
+  anhebungDb: new Map(),
+  spuren: new Map(),
+};
 
 export const EINMAL_PFAD = "musik/einmal.json";
+export const SPUREN_PFAD = "musik/spuren.json";
 export const PEGEL_PFAD = "klang/pegel.json";
 /** Obergrenze der Anhebung wie in klangpegel.py; mehr hebt das Rauschen der Aufnahme zu stark. */
 export const HOECHSTE_ANHEBUNG_DB = 8;
@@ -101,11 +110,16 @@ export function anhebungAus(roh: unknown): Map<string, number> {
   return tabelle;
 }
 
-/** Lädt beide Tabellen; was fehlt, bleibt leer. */
+/** Lädt die drei Tabellen; was fehlt, bleibt leer. */
 export async function ladeTonangaben(lade: Bytesladen): Promise<Tonangaben> {
-  const [einmal, pegel] = await Promise.all([
+  const [einmal, pegel, spuren] = await Promise.all([
     liesJson(lade, EINMAL_PFAD),
     liesJson(lade, PEGEL_PFAD),
+    liesJson(lade, SPUREN_PFAD),
   ]);
-  return { einmalig: einmaligAus(einmal), anhebungDb: anhebungAus(pegel) };
+  return {
+    einmalig: einmaligAus(einmal),
+    anhebungDb: anhebungAus(pegel),
+    spuren: spurtabelleAus(spuren),
+  };
 }

@@ -7,6 +7,7 @@
 // damit eine Quest in Crossroads ihren Schritt auf dem Jahrmarkt erreicht.
 // Die Schritte (besucheKarte, waehleWeg, imZiel) kommen aus gesamtsimulation.cjs.
 "use strict";
+const { warte } = require("./gesamtsimulation-uhr.cjs");
 
 const {
   FOLGE,
@@ -64,9 +65,12 @@ function bleibe(welt, st, h, start, schritte, fertig) {
       .besucheKarte(welt, st)
       .filter((w) => st.zuFuss || h.imZiel(welt, st, w.ziel?.karte));
     h.waehleWeg(welt, st, drinnen, n + 1e6);
-    if (n % NEUER_VERSUCH_ALLE === 0)
+    if (n % NEUER_VERSUCH_ALLE === 0) {
       for (const k of Object.keys(st.versuche))
         st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
+      // Mit Uhr wartet der Spieler auch hier bis zur nächsten Phase (gesamtsimulation-uhr.cjs).
+      warte(st);
+    }
   }
 }
 

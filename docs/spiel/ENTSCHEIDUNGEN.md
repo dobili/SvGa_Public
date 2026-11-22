@@ -1289,3 +1289,16 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
 - **Außen:** Die Gegenstände kommen auf den Maßstab der jetzigen Figur (alle fünf Vorschaukarten
   bejaht, deshalb auf allen Außenkarten). Gebäude und Türen bleiben.
 - Umsetzung: mittel-1.
+
+### Spieluhr und Tagesabläufe (Entscheidung des Autors, 22.11.2026)
+
+- Eigene Spieluhr statt echter Zeit: ein Spieltag = 2 echte Stunden (Morgen 6–9 Uhr 15 min, Tag
+  9–18 Uhr 50 min, Abend 18–21 Uhr 15 min, Nacht 21–6 Uhr 40 min). Sie läuft nur in freier
+  Oberwelt. Warten über das Menü (bis Morgen, Mittag, Abend, Nacht), Bänke („Ausruhen“) und das
+  Bett des Helden. Szenen mit eigener Zeit setzen die Uhr. Tönung der Außenkarten nach Uhr, Nachtfassungen der Ortsthemen.
+- Tagesabläufe der Figuren: Arbeit, Freizeit, Schlaf mit je ein bis zwei Orten. Schlaf 3 Spielstunden,
+  versetzt (höchstens ein Drittel einer Stadt zugleich); ohne Zuhause unsichtbar, mit Zuhause im
+  Bett. Wechsel nur beim Kartenwechsel. Ohne Schlaf: Ambrose, Roboter, alle, die man zum
+  Weiterkommen braucht.
+- Die Geschichte geht vor: Wer für den aktuellen Questschritt gebraucht wird, steht wach am Questort.
+- Umsetzung: mittel-1 (Uhr, Warten, Tönung), mittel-2 (Abläufe, Prüfung `tagesablauf`, Seite).

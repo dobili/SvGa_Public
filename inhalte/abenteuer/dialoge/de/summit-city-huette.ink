@@ -501,7 +501,7 @@ Und jetzt schickt er ein Kind. #sprecher:ward #stimmung:laechelt
 Das hält nicht. Das kann gar nicht halten. #sprecher:ward #stimmung:nachdenklich
 * [„Gute Nacht.“]
 - Sie hört dich nicht mehr. Sie stellt die Figuren auf, ohne hinzusehen. #sprecher:erzaehler
-Am Morgen sitzt sie noch genauso da. Das Feuer ist heruntergebrannt. #sprecher:erzaehler
+Am Morgen sitzt sie noch genauso da. Das Feuer ist heruntergebrannt. #sprecher:erzaehler #uhr:morgen
 Auf dem Tisch stehen drei Tassen Tee, alle kalt. #sprecher:erzaehler
 Es hält. Mit einem stillen Königszug – dieser alte Seilbahnschaffner. #sprecher:ward #stimmung:lacht
 ~ setzeZustand("summitCity.ward", 1.4, "zustand.studieNacht")

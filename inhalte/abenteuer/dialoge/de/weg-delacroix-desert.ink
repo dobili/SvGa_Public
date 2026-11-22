@@ -154,7 +154,7 @@ Sie springt vom Stein und läuft barfuß über den heißen Sand davon, das Brett
 // „Ich bin nicht angekommen“ Stille. Ambroses Erzählung von 1866 im Sepia-Rahmen (#erinnerung).
 ~ versoehnungGesehen = true
 ~ ambroseSprichtWieder = true
-Wo der Canyon sich öffnet, steht ein Bogen aus Fels. Ein Tor ohne Mauer, so hoch wie ein Haus. #sprecher:erzaehler #licht:abend #musik:aus
+Wo der Canyon sich öffnet, steht ein Bogen aus Fels. Ein Tor ohne Mauer, so hoch wie ein Haus. #sprecher:erzaehler #licht:abend #musik:aus #uhr:abend
 Das Licht kommt flach und färbt alles: den Fels, den Sand, deine Hände. Kupfer, dann Gold. #sprecher:erzaehler
 Wenn nicht hier, dann nirgends. Du stellst den Geigenkasten auf einen Stein und nimmst das Brett heraus. #sprecher:erzaehler
 * [„Setz dich.“]
@@ -185,7 +185,7 @@ Das ist das, wofür der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #s
 * [„Ich hab dich vermisst.“]
 - Ich dich auch. Und ich war die ganze Zeit drei Schritte neben dir. #sprecher:ambrose #stimmung:lachtOhneSpott
 Das ist das Dümmste daran. #sprecher:ambrose #stimmung:lachtOhneSpott
-Die Sonne berührt den Rand der Welt. #sprecher:erzaehler #licht:nacht
+Die Sonne berührt den Rand der Welt. #sprecher:erzaehler #licht:nacht #uhr:20
 * [„Erzähl mir von 1866.“]
 - Er nickt, als hätte er darauf gewartet. #sprecher:erzaehler #musik:tiefer_streicher
 -> erzaehlung_1866

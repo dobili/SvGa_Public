@@ -64,6 +64,10 @@ export interface Oberweltkern {
   readonly zeigeToenung: (t: Toenung | null) => void;
   /** Die Position des Helden gerade jetzt (aus der Szene, sonst aus dem Spielstand). */
   readonly position: (aktuell: Abenteuerstand) => Weltposition;
+  /** Zähler der Neuaufbauten derselben Karte (nach dem Warten, useWarten.ts). */
+  readonly aufbau: number;
+  /** Baut die Karte neu auf (Statisten nach der Spieluhr), der Held bleibt, wo er steht. */
+  readonly stelleNeuAuf: () => void;
 }
 
 /** Die Szene des laufenden Spiels oder null. */
@@ -168,6 +172,7 @@ export function useOberweltkern(): Oberweltkern {
   const meldung = stau.gezeigt?.text ?? null;
   const meldungsbild = stau.gezeigt?.bild ?? null;
   const [toenung, setzeToenung] = useState<Toenung | null>(null);
+  const [aufbau, setzeAufbau] = useState(0);
   const spiel = useRef<Phaser.Game | null>(null);
   const standRef = useRef(stand);
   useEffect(() => {
@@ -225,6 +230,8 @@ export function useOberweltkern(): Oberweltkern {
       const szene = szeneAus(spiel);
       return szene ? { ...szene.position(), karte: aktuell.position.karte } : aktuell.position;
     },
+    aufbau,
+    stelleNeuAuf: () => setzeAufbau((n) => n + 1),
   };
   useAufbaupruefungen(k);
   return k;

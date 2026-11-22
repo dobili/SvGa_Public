@@ -109,7 +109,7 @@ Du hast die Reihe bestanden. Heute Abend spielen wir. #sprecher:lin #stimmung:la
 {dashKarteGegeben: -> lin_schweigen_hm}
 -> lin_clubkampf
 === lin_schweigen_hm ===
-Am Abend probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler
+Am Abend probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler #uhr:abend
 Nein. #sprecher:ambrose #stimmung:streng
 * [„Bei Dash hat es …“]
 // Lektorat 19.11.2026: Die Zeit-Hinweise laufen auch im Clubkampf; Ambrose flüstert nur über die Uhr.

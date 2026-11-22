@@ -163,7 +163,7 @@ Sie singt dabei leise, etwas auf Französisch, das klingt, als wäre es sehr alt
 Remy stimmt am anderen Ende seine Trompete. Er sieht auf den Karren. #sprecher:erzaehler
 Dann sieht er weg. #sprecher:erzaehler
 * [Zum Zelt gehen]
-- Am Abend liegt an deinem Platz im Zelt eine Postkarte. Vorn eine Brücke im Regen. #sprecher:erzaehler #musik:riverton.postkarte
+- Am Abend liegt an deinem Platz im Zelt eine Postkarte. Vorn eine Brücke im Regen. #sprecher:erzaehler #musik:riverton.postkarte #uhr:abend
 „Maple Falls! Wir spielen jetzt unter der alten Steinbrücke.“ #sprecher:erzaehler
 „Dach haben wir, Wände nicht. Tamsin sagt, das zählt als Pavillon.“ #sprecher:erzaehler
 „Elf Kinder letzten Samstag. Der Stein liegt in der Mitte.“ #sprecher:erzaehler

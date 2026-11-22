@@ -231,7 +231,7 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 }
 // Lektorat 20.11.2026: Nach „Nicht jetzt“ nicht noch einmal Zug, Juno, Klavierbauer und neun Schläge.
 {uhrAngebotGesehen: -> uhr_wieder}
-Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. #sprecher:erzaehler
+Am Abend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. #sprecher:erzaehler #uhr:abend
 Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
 Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
 // Nach dem Abschied (abschiedGesehen) erzählt Ambrose nicht mehr; die Uhr führt allein nach London.

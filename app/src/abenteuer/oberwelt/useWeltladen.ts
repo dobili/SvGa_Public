@@ -169,6 +169,7 @@ function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number): void 
 export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
   const [fehler, setzeFehler] = useState<string | null>(null);
   const karte = k.stand?.position.karte;
+  const figur = k.stand?.held.figur;
   useEffect(() => {
     const stand = k.stand;
     if (!stand || !karte) return;
@@ -190,7 +191,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     const moebelliste = liesPaketJson<{ moebel: Record<string, Sperrangabe> }>("daten/moebel.json")
       .then((d) => d.moebel)
       .catch(() => ({}));
-    Promise.all([ladeWelt(karte, stand.held.variante, variablen), moebelliste])
+    Promise.all([ladeWelt(karte, stand.held.figur, variablen), moebelliste])
       .then(([w, moebel]) => {
         if (!aktiv || !a.rahmen.current) return;
         k.setzeWelt(w);
@@ -209,8 +210,9 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       k.spiel.current = null;
     };
     // Nur die Karte zählt: Ein Kartenwechsel baut die Welt neu auf, alles andere nicht; dazu das
-    // Warten (useWarten.ts), das dieselbe Karte nach der neuen Uhrzeit aufstellt.
+    // Warten (useWarten.ts), das dieselbe Karte nach der neuen Uhrzeit aufstellt, und die Wahl
+    // von Held oder Heldin im Spielmenü (neuer Bogen auf derselben Karte).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [karte, k.aufbau]);
+  }, [karte, k.aufbau, figur]);
   return fehler;
 }

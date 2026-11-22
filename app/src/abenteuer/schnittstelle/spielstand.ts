@@ -13,6 +13,11 @@
  * Phaser, damit Zurück-Taste, Neuladen und Gerätewechsel sie behalten.
  * Abhängigkeiten: schnittstelle/partie.ts, schnittstelle/karten.ts.
  */
+/**
+ * Die wählbaren Figuren des Helden, als Name des Bogens im Paket (figuren32/<name>.png). Die
+ * Heldin erstellt der Autor noch in PixelLab; bis dahin gilt im Spiel der Bogen held-0.
+ */
+export type Heldfigur = "held-0" | "heldin-0";
 import type { Aufgabenauftrag, Aufgabenergebnis, Rundenstand } from "./aufgaben";
 import type { Kartenbesitz, Kartenspiel } from "./karten";
 import type { Nadelstufe, Partieergebnis } from "./partie";
@@ -180,8 +185,11 @@ export interface Abenteuerstand {
     /** Abzug der Uhr für den Bot in Elo, beim Start gerechnet (engine/botstaerke.ts). */
     readonly uhrAbzug?: number;
   } | null;
-  /** Name und Figurvariante des Helden (nur Vorname oder Spitzname, bleibt lokal). */
-  readonly held: { readonly name: string; readonly variante: number };
+  /**
+   * Name und Figur des Helden (nur Vorname oder Spitzname, bleibt lokal). Die Figur wählt der
+   * Leser beim Spielbeginn: Held oder Heldin (Wunsch des Autors, 22.11.2026; regeln/heldfigur.ts).
+   */
+  readonly held: { readonly name: string; readonly figur: Heldfigur };
   readonly handlung: Handlungsstand;
   readonly position: Weltposition;
   readonly clubs: readonly Clubstand[];

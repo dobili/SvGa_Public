@@ -351,6 +351,12 @@ Profil › Einstellungen › Fehler melden.
       lauter. Im Clubkampf kommt nach dem ersten Sieg die Melodie dazu, nach dem zweiten die dritte
       Stimme. Unter Dialogzeilen ist die Musik etwas leiser. An der Naht der Schleife kein Knacken
       (iPhone). Innenräume spielen 2 dB leiser als draußen.
+- [ ] N2686. **Neue Musik Akt 1 und 2 im Spiel:** Maple Falls bei Tag und Nacht, das Haus, der
+      Clubraum, das Diner mit der Jukebox, die Wege nach Cedar Creek, Cedar Creek bei Tag und Nacht,
+      Riverton (Tag, Nacht, Pavillon, Schuppen), Ironwood (Tag, Nacht, Kantine, Feier), die
+      Clubkämpfe (mit jedem Sieg kommt eine Stimme dazu). Zum Vergleich alt gegen neu: im privaten
+      Repository hoerprobe/akt1/index.html und hoerprobe/akt2/index.html. Passen die Köpfe von
+      Riverton (C Es G As, G Es C) und Ironwood (F As C, Des C)? „ok“ oder Notiz je Stück.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

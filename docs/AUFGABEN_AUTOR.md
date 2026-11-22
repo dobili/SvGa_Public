@@ -321,6 +321,13 @@ Profil › Einstellungen › Fehler melden.
       wieder wie vorher. In Gesprächen mit mehreren schaut, wer gerade spricht. Statisten schauen
       den Helden an, solange er still vor ihnen steht, und gehen danach weiter. Sitzende
       Schachspieler bleiben zum Brett gewandt.
+- [ ] N2681. **Figuren fein verschieben im Karteneditor (Editor 1.8, Paket neu holen):** Eine Figur
+      anklicken und mit den Pfeiltasten verschieben: 1 Pixel je Druck, mit Umschalt 4 Pixel. Auf
+      dem Handy stehen im Eigenschaftenfeld die Pfeile für 1 Pixel und darunter eine Reihe für
+      4 Pixel. Höchstens 8 Pixel in jede Richtung; „Versatz zurücksetzen“ stellt die Figur wieder
+      genau auf ihr Feld. Sitzende erscheinen wie im Spiel auf ihrem Stuhl. Bitte etwa Sam im
+      Clubraum so stellen, dass die Beine über die Sitzfläche ragen, die Änderungen herunterladen
+      und zurückschicken; danach im Spiel nachsehen, ob Sam genauso sitzt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -10,6 +10,7 @@
  */
 import Phaser from "phaser";
 import { legeFestkoerperAufKachel } from "./figurbilder";
+import type { Bildversatz } from "./figurversatz";
 import { sitzsperre, type Sitzlage } from "./sitzplatz";
 import { hatSitzbilder, SITZ_HUB, sitzbild } from "./sitzrichtung";
 import { SITZT } from "./zuwendungsschicht";
@@ -55,4 +56,31 @@ export function setzeSitzend(
     legeFestkoerperAufKachel(sprite, kachel, sitzsperre(dx, dy, kachel));
   }
   return { dx, dy };
+}
+
+/**
+ * Rückt nur das Bild einer aufgestellten Figur um ihren feinen Versatz (figurversatz.ts), stehend
+ * oder sitzend; Punkt, Fußkachel und fester Körper bleiben, wo sie waren.
+ * Eingaben: Sprite (schon auf Kachel oder Sitz gesetzt), Versatz in Kartenpixeln, Kachelgröße und
+ * die Verschiebung durch das Sitzen (setzeSitzend), damit die Sitzsperre erhalten bleibt.
+ * Warum über den Ursprung: So gilt der Versatz auch, wenn später nur das Bild wechselt (Drehen zum
+ * Helden im Gespräch, Sitzbild), denn ein Bildwechsel lässt den Ursprung stehen.
+ * Beispiel: Sam sitzt im Clubraum, versatz [0, -3] → Bild 3 Pixel höher, die Beine liegen auf der
+ * Sitzfläche statt darin.
+ */
+export function verschiebeFigurbild(
+  sprite: Phaser.GameObjects.Sprite,
+  versatz: Bildversatz,
+  kachel: number,
+  sitz: { readonly dx: number; readonly dy: number } = { dx: 0, dy: 0 },
+): void {
+  const breite = sprite.frame.width * sprite.scaleX;
+  const hoehe = sprite.frame.height * sprite.scaleY;
+  sprite.setOrigin(sprite.originX - versatz.dx / breite, sprite.originY - versatz.dy / hoehe);
+  const gesessen = sitz.dx !== 0 || sitz.dy !== 0;
+  legeFestkoerperAufKachel(
+    sprite,
+    kachel,
+    gesessen ? sitzsperre(sitz.dx, sitz.dy, kachel) : undefined,
+  );
 }

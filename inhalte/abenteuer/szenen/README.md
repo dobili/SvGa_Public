@@ -128,6 +128,12 @@ Ausschnitt, die Katalogmaske wird mitbeschnitten (ein Pfosten aus einem Zaunstü
 `"deckkraft": 50` (25, 50, 75; 100 ist Standard und fehlt): Das Bild ist durchsichtig, die
 Kollision bleibt.
 
+Figuren (`figuren`): `name`, `feld` und optional `sitzt` (Blickrichtung oder `true`), `blick`
+(stehend: oben, unten, links, rechts) und `versatz: [dx, dy]` (Karteneditor 1.8, Wunsch des Autors
+vom 22.11.2026): feiner Versatz nur des Bildes in Kartenpixeln, ganze Zahlen von −8 bis 8, etwa damit
+eine Sitzende auf ihrem Stuhl sitzt. Feld, Kollision und Ansprechen bleiben beim Feld; die App rückt
+nur das Bild (oberwelt/figurversatz.ts), die Karte trägt ihn als Eigenschaft `versatz` („dx,dy“).
+
 Kollision nur an dieser Stelle (Karteneditor, `pipeline/abenteuer/objektkollision.py`, optional):
 `"kollision": false` (durchgehbar) oder `true` (sperrt) statt der Angabe im Katalog, `"maske"`
 (wie im Katalog; dreht und spiegelt mit der Form) und `"begehbar_grund"` (Pflicht, wenn ein nicht

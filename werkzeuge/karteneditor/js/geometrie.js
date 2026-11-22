@@ -296,8 +296,9 @@
         art,
         eintrag: e,
         name: e.name,
-        x: e.feld[0] * K,
-        y: e.feld[1] * K,
+        // Figuren: feiner Versatz des Bildes (sitzen.js, Editor 1.8); Feld und Kollision bleiben.
+        x: e.feld[0] * K + (liste === "figuren" ? KE.figurversatz(e)[0] : 0),
+        y: e.feld[1] * K + (liste === "figuren" ? KE.figurversatz(e)[1] : 0),
         b: K,
         h: K,
       })),

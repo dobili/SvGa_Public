@@ -19,7 +19,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from pipeline.abenteuer.kartentiled import blickrichtung, sitzrichtung
+from pipeline.abenteuer.kartentiled import blickrichtung, figurversatz, sitzrichtung
 from pipeline.abenteuer.sitzplatz import sitzlage_auf
 
 K = 16
@@ -147,7 +147,8 @@ def figurenteile(szene: dict, privat: Path, figuren: list[dict], sitze, oeffne) 
         teil = figurbild(privat, figur["sprite"], rahmen, oeffne) if figur else None
         if teil:
             fx, fy = f["feld"]
-            lage = (fy * K + K // 2, fx * K + (K - teil.width) // 2, (fy + 1) * K - teil.height)
+            dx, dy = figurversatz(f) or (0, 0)  # feiner Versatz aus dem Editor, nur das Bild
+            lage = (fy * K + K // 2, fx * K + (K - teil.width) // 2 + dx, (fy + 1) * K - teil.height + dy)
             ergebnis.append(sitzend(teil, lage, (fx, fy), sitzt, sitze))
     return ergebnis
 

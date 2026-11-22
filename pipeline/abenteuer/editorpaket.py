@@ -209,7 +209,7 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
     paare = geschwister(orte, szenen)
     moebel, bilder, befunde = bibliothek(privat, moebelordner)
     # Standbilder der Personen (Editor 1.7, Blickrichtung R008); braucht Pillow wie die Kacheln.
-    from pipeline.abenteuer.editorpersonen import boegen_der_szene, standbilder
+    from pipeline.abenteuer.editorpersonen import boegen_der_szene, sitzbilder, standbilder
 
     liste = []
     for name, szene in szenen:
@@ -243,6 +243,9 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
         "moebel": moebel,
         "bilder": bilder,
         "personenbilder": standbilder(privat, {b for e in liste for b in e["personen"].values()}),
+        # Sitzbilder (Editor 1.8): je Bogen mit Stuhlzustand aus PixelLab; sonst zeigt der Editor
+        # das Standbild angehoben wie die App.
+        "personensitzbilder": sitzbilder(privat, {b for e in liste for b in e["personen"].values()}),
         "kacheln": kacheln(privat, lade(INHALTE / "materialien.json")),
         "umgebung": list(UMGEBUNG),
         "befunde": befunde,

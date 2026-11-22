@@ -21,7 +21,8 @@ window.KE = window.KE || {};
   // 1.6: Kollision fein (sperren_fein, freigeben_fein, maske_fein; fein.js, feinmalen.js).
   // 1.7: Blickrichtung stehender Figuren und Statisten (blick, R008; blick.js), Standbilder im Paket.
   // 1.7.1: Kollision skalierter Objekte wie der Kartenbau (skalierte Standfläche, massstab.js).
-  KE.VERSION = "1.7.1";
+  // 1.8: Figuren fein verschieben (versatz ±8 px), Sitzende wie im Spiel auf ihrem Möbel (sitzen.js).
+  KE.VERSION = "1.8.0";
   /** Schlüssel der Übergangsdefinitionen (orte.json) im Verlauf, neben den Szenendateien. */
   KE.ORTE = "#orte";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";

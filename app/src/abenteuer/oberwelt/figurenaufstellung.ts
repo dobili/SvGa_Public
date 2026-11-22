@@ -9,7 +9,7 @@
 import type Phaser from "phaser";
 import type { Ausloeser } from "./ausloeserebene";
 import { erzeugeLaufanimationen, standbild, stelleAufKachel } from "./figurbilder";
-import { setzeSitzend } from "./figurensitz";
+import { setzeSitzend, verschiebeFigurbild } from "./figurensitz";
 import { zeigeAlsGeist } from "./geistfigur";
 import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
@@ -21,7 +21,8 @@ import type { Szenendaten } from "./szenentypen";
  * Sonderfall: Figur ohne eigenen Bogen → Platzhalterbild „figur“. Eine stehende Figur mit `blick`
  * (R008, etwa „links“ zur Kundschaft am Tresen) zeigt das Standbild dieser Richtung. Eine
  * Sitzende rückt auf ihr Sitzmöbel aus `sitze` (sitzplatz.ts, sitzmoebelAus) und liegt in der
- * Tiefe knapp darüber (Spieltest Variante B, F2: Sam saß neben dem Stuhl unter der Lehne).
+ * Tiefe knapp darüber (Spieltest Variante B, F2: Sam saß neben dem Stuhl unter der Lehne). Ein
+ * feiner `versatz` (figurversatz.ts, Editor) rückt danach nur das Bild, stehend wie sitzend.
  */
 export function stelleFigurenAuf(
   szene: Phaser.Scene,
@@ -49,7 +50,10 @@ export function stelleFigurenAuf(
     if (eigenes) stelleAufKachel(figur, kachel);
     const sitz = a.sitzt ? sitzlageAuf(sitze, a, kachel) : null;
     // Ohne Sitzmöbel sitzt die Figur am Boden (BODENSITZ, sitzplatz.ts).
-    if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt, sitz ?? BODENSITZ);
+    const gesessen =
+      eigenes && a.sitzt ? setzeSitzend(figur, a.sitzt, sitz ?? BODENSITZ) : undefined;
+    // Feiner Versatz aus dem Editor (figurversatz.ts): nur das Bild, nach dem Sitzen.
+    if (eigenes && a.versatz) verschiebeFigurbild(figur, a.versatz, kachel, gesessen);
     if (daten.geister?.has(a.name)) zeigeAlsGeist(szene, figur);
     figur.setDepth(sitz?.tiefe ?? figur.y);
   }

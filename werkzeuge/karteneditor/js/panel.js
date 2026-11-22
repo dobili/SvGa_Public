@@ -118,6 +118,33 @@
     ziel.append(feld);
   }
 
+  /**
+   * Figuren fein verschieben (Editor 1.8, Wunsch des Autors 22.11.2026): Die Pfeile oben rücken das
+   * Bild um 1 Pixel, diese Reihe um 4 Pixel (auf dem Handy gibt es kein Umschalt), höchstens ±8.
+   * Feld, Kollision und Ansprechen bleiben. Dazu „Versatz zurücksetzen“.
+   */
+  function figurfein(ziel) {
+    const reihe = el("div", "pfeile figurfein");
+    const schritt = 4;
+    reihe.append(
+      knopf("⇠", "4 Pixel nach links", () => KE.verschiebe(-schritt, 0)),
+      knopf("⇡", "4 Pixel nach oben", () => KE.verschiebe(0, -schritt)),
+      knopf("⇣", "4 Pixel nach unten", () => KE.verschiebe(0, schritt)),
+      knopf("⇢", "4 Pixel nach rechts", () => KE.verschiebe(schritt, 0)),
+    );
+    const erste = KE.ausgewaehlt()[0].eintrag;
+    const [dx, dy] = KE.figurversatz(erste);
+    const hinweis = el("p", "hinweis", `Bild versetzt um (${dx}, ${dy}) px, höchstens ±8.`);
+    const zurueck = knopf(
+      "Versatz zurücksetzen",
+      "Das Bild wieder genau auf das Feld stellen",
+      () => KE.versatzZuruecksetzen(),
+      "versatz-zurueck",
+    );
+    zurueck.disabled = !KE.ausgewaehlt().some((t) => t.eintrag.versatz);
+    ziel.append(reihe, hinweis, zurueck);
+  }
+
   function werkzeuge(ziel, nurMarken) {
     const pfeile = el("div", "pfeile");
     pfeile.append(
@@ -146,7 +173,9 @@
           "loeschen",
         ),
       );
-      return ziel.append(reihe);
+      ziel.append(reihe);
+      if (KE.nurFiguren()) figurfein(ziel);
+      return ziel;
     }
     const masse = el("input");
     masse.type = "number";

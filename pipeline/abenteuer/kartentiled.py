@@ -47,6 +47,28 @@ def blickrichtung(eintrag: dict) -> str | None:
     return wert if wert in RICHTUNGEN else None
 
 
+# Feiner Versatz einer Figur (Editor, Wunsch des Autors 22.11.2026): höchstens eine halbe Kachel.
+VERSATZ_GRENZE = 8
+
+
+def figurversatz(eintrag: dict) -> tuple[int, int] | None:
+    """Feiner Versatz des Bildes einer Figur (``versatz: [dx, dy]`` in Kartenpixeln), auf ±8 begrenzt.
+
+    Nur Darstellung: Fußkachel, Kollision und Ansprechen bleiben beim Feld; die Prüfwerkzeuge
+    (figurensperre, kopfkachel, blickrichtung, durchlass) rechnen deshalb bewusst ohne ihn.
+    Wie in der App (oberwelt/figurversatz.ts). Ausgabe: None ohne Angabe, bei ungültiger Angabe
+    und bei (0, 0). Beispiel: {"versatz": [0, -3]} → (0, -3); [12, 0] → (8, 0).
+    """
+    wert = eintrag.get("versatz")
+    if not isinstance(wert, list | tuple) or len(wert) != 2:
+        return None
+    try:
+        dx, dy = (max(-VERSATZ_GRENZE, min(VERSATZ_GRENZE, round(float(v)))) for v in wert)
+    except (TypeError, ValueError):
+        return None
+    return (dx, dy) if dx or dy else None
+
+
 def kachelebenen(zeilen: list[str], szene: dict) -> tuple[list[int], list[int]]:
     """Boden- und Wandebene: Wand, Wasser und Leere sperren, Buchstaben aus ``boeden`` sind Teppich.
 
@@ -109,6 +131,9 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         eig = [{"name": "sitzt", "type": "string", "value": sitzt}] if sitzt else None
         if blick:
             eig = [{"name": "blick", "type": "string", "value": blick}]
+        if versatz := figurversatz(f):
+            # Feiner Versatz des Bildes (Editor); App: oberwelt/figurversatz.ts.
+            eig = (eig or []) + [{"name": "versatz", "type": "string", "value": f"{versatz[0]},{versatz[1]}"}]
         objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K, eig=eig)
     # Statisten und Tiere (Belebung, Weltbeschreibung 4a) mit ihren Laufwegen.
     for b in szene.get("belebung", []):

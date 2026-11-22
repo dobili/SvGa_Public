@@ -190,7 +190,7 @@ Noch mal! Zeig mir, wo er zwei erwischt! #sprecher:lily #stimmung:froh
 === lily_danke ===
 ~ lilyGeholfen = true
 Ein L! Immer auf die andere Farbe! #sprecher:lily #stimmung:froh #klang:aha
-Und zwei auf einmal, das ist die Gabel! #sprecher:lily #stimmung:froh
+Und zwei auf einmal, das ist die Gabel! #sprecher:lily #stimmung:froh #brett:springergabel
 Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #sprecher:erzaehler
 {not abschiedGesehen:
     Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
@@ -279,7 +279,7 @@ Sie sagt „hat“. Nicht mehr „spielt“. #sprecher:erzaehler #pause
 === calloway_d ===
 Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen erklärt. #sprecher:erzaehler
 Mrs. Calloway runzelt die Stirn. #sprecher:erzaehler
-Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway #stimmung:nachdenklich
+Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway #stimmung:nachdenklich #brett:springerfarbe
 * [„Das stimmt. Immer.“]
     {lilyGeholfen:
         Dann hat er es von Lily. Und Lily hat es von dir. #sprecher:calloway #stimmung:froh

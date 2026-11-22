@@ -287,7 +287,7 @@ Matt in eins. Such. #sprecher:dex #stimmung:laechelt
 ~ maeGetroffen = true
 Ein Mädchen mit Teleskop-Anstecker und einem Heft voller Zeichnungen winkt dir zu. #sprecher:erzaehler
 Ich bin Mae! Ich kenne alle Mattbilder – alle mit Namen. #sprecher:mae #stimmung:froh
-Anastasia! Das ist ein Matt mit Namen. #sprecher:mae #stimmung:laechelt
+Anastasia! Das ist ein Matt mit Namen. #sprecher:mae #stimmung:laechelt #brett:anastasia.1
 Das klingt wie eine Prinzessin, ist aber gemein. #sprecher:mae #stimmung:lacht
 {reiheDexBestanden: -> mae_reihe}
 -> mae_erst_dex

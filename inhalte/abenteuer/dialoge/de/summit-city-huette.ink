@@ -105,7 +105,7 @@ Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, hat das
 * [„Weil er weichen muss. Dann kommt der andere vorbei.“]
 * [„Ich weiß es nicht.“]
     Ehrlich ist gut. Schau, wer hier zuerst zur Seite muss. #sprecher:ward #stimmung:neutral
-- Opposition. Wer zuerst ziehen muss, gibt nach. #sprecher:ward #stimmung:nachdenklich
+- Opposition. Wer zuerst ziehen muss, gibt nach. #sprecher:ward #stimmung:nachdenklich #brett:opposition
 Wie im Leben, manchmal. #sprecher:ward #stimmung:nachdenklich
 Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden, hier nicht. #sprecher:ward #stimmung:nachdenklich
 Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
@@ -418,7 +418,7 @@ Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
     Sie sagt nie bitte. #sprecher:kit #stimmung:laechelt
 }
 Der Bauer läuft, der König rennt. Wer ist schneller? #sprecher:kit #stimmung:laechelt
-Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit #stimmung:laechelt
+Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit #stimmung:laechelt #brett:quadrat
 Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein, aber gemein. #sprecher:kit #stimmung:laechelt
 + [„Zeig her.“]
     ~ beginneAufgaben("summitCity.reiheKit")
@@ -515,7 +515,7 @@ Es hält. Mit einem stillen Königszug – dieser alte Seilbahnschaffner. #sprec
     Haraldsen. Ich fahre die Seilbahn, seit sie gebaut wurde. #sprecher:haraldsen #stimmung:laechelt
     Und ich spiele Turmendspiele, seit ich denken kann. #sprecher:haraldsen #stimmung:laechelt
 }
-Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. #sprecher:haraldsen #stimmung:laechelt
+Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. #sprecher:haraldsen #stimmung:laechelt #brett:turmhinterfreibauer
 Er schiebt, und er hält, beides zugleich. #sprecher:haraldsen #stimmung:laechelt
 Und eine Stellung, die nenne ich die Brücke. Die baust du, dann kommst du hinüber. #sprecher:haraldsen #stimmung:laechelt
 Philidor, Lucena. Klingen wie Gipfel – sind auch welche. #sprecher:haraldsen #stimmung:laechelt

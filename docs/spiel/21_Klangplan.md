@@ -337,6 +337,33 @@ Gleiche Form wie in den Akten 1 bis 3; die Nahtkurve (A0.8) gilt für alle.
 - **Bauen und hören:** `hoerseite PRIVAT --akt 4 --sichere-alt`, `musikbau PRIVAT --nur …`,
   `hoerseite PRIVAT --akt 4`.
 
+### A0.11 Etappe Szenenstücke (22.11.2026)
+
+Nach den vier Akten hielten die Ortsthemen A0.6, die Szenenstücke nicht: 13 Schleifen (Ambrose,
+Titel, Nachtstück, Rosie, Nova, Trauer, Abschied an der Treppe …) und 44 Einmal-Stücke
+(Kurzmotive, Ambroses Momente, Abspann) lagen über den Grenzen. Ihre Noten folgen der Erzählung:
+zart, dann fest, ein einzelner Ton, ein Crescendo.
+
+- **Verdichten, bis es hält** (`nachverdichtung.py`):
+  - Der Musikbau misst nach jedem Durchgang des sanften Verdichters und verdichtet erneut, solange
+    LRA, P98 oder Ausreißer mit 0,3 LU Reserve über der Grenze liegen.
+  - Höchstens drei Durchgänge bei Schleifen, fünf bei Einmal-Stücken. Der Satz bleibt, nur die
+    Spitzen über dem Mittel werden flacher. Was danach noch abweicht, meldet die Prüfung.
+- **Einmal-Stücke** laufen nicht mehr über den alten Effektivwert-Abgleich, sondern wie Schleifen:
+  verdichtet, −18 LUFS, weicher Begrenzer.
+- **Spitze:** Ganze Stücke ohne Spuren haben ein dB mehr Luft unter dem Begrenzer. Scharfe
+  Klavieranschläge überschossen beim Kodieren um bis zu 1,7 dB (`stimmton`, `nova`).
+- **Von Hand umgesetzt**, wo der Verdichter Löcher nicht füllen kann:
+  - `nova`: Die 5 bleibt in den leeren Takten liegen, das Zarte liegt im Anschlag statt im Pegel.
+  - `portDelacroix.trauer`: ohne stille Atemtakte (Naht 52 LU), 64 statt 56; lange Töne mit
+    leisem zweitem Ansatz („Schluchzen“).
+  - `rosie`: ohne Vor- und Nachspiel ohne Melodie.
+- **Ergebnis:** alle 329 Messungen aller vier Akte ohne Verstoß (Stücke und Mischungen der
+  Spuren; 24 Hinweise bei dünnen Mischungen). Neuer Dauertest über alle Stücke in `spiel/musik`
+  (`test_alle_stuecke_halten_a06`).
+- **Bauen:** alle Stücke ohne Spuren neu bauen (Befehl in der Meldung an den Haupt-Chat), dann
+  `lautheit PRIVAT/spiel/musik`.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

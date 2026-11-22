@@ -21,6 +21,16 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 EXTERNAL setzeZustand(gegner, faktor, grund)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR held = "Du"
 VAR wardBleibGesehen = false
 VAR wardLaurieGesagt = false
@@ -168,8 +178,8 @@ Was willst du? #sprecher:ward #stimmung:nachdenklich
 // Kapitel 52, vor der Partie: Mama kommt zum ersten Mal den Pfad herauf.
 === ward_laurie ===
 ~ wardLaurieGesagt = true
-Victor sitzt am Kamin, in einem Pullover von Mr. Haraldsen, der ihm zu groß ist. Die weiße Jacke hat er zurückgegeben. #sprecher:erzaehler
-Neben ihm sitzt Mama. Sie ist den Pfad heraufgekommen, zum ersten Mal. #sprecher:erzaehler
+{rivale} sitzt am Kamin, in einem Pullover von Mr. Haraldsen, der {rv_ihm} zu groß ist. Die weiße Jacke hat {rv_er} zurückgegeben. #sprecher:erzaehler
+Neben {rv_ihm} sitzt Mama. Sie ist den Pfad heraufgekommen, zum ersten Mal. #sprecher:erzaehler
 Sie und Ward sehen einander an, quer durch die Hütte. #sprecher:erzaehler
 Laurie. #sprecher:ward #stimmung:nachdenklich
 Mrs. Ward. #sprecher:mutter #stimmung:nachdenklich
@@ -243,7 +253,7 @@ Da siehst du, wie alt man werden kann, ohne fertig zu sein. #sprecher:ward #stim
 
 === ward_nadel ===
 Sie steckt dir die Nadel an. Die achte. #sprecher:erzaehler #klang:fanfare
-Victor klatscht, allein, dreimal, ungeschickt. Dann Mama, Kit und Mr. Haraldsen. #sprecher:erzaehler
+{rivale} klatscht, allein, dreimal, ungeschickt. Dann Mama, Kit und Mr. Haraldsen. #sprecher:erzaehler
 In der Tür steht Juno, keuchend. #sprecher:erzaehler
 Acht! Acht! #sprecher:juno #stimmung:froh
 Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh
@@ -352,33 +362,33 @@ Ward weiß nicht, woher er kommt. #sprecher:erzaehler
 === victor_krise ===
 // Kapitel 50: Victor spielt mit dem Gerät in der Tasche; das Summen ersetzt sein Thema (Musik geraet).
 ~ victorKriseGesehen = true
-Am fünften Tag ist Victor an der Reihe. Der Mann im grauen Anzug wartet draußen. #sprecher:erzaehler #musik:geraet
+Am fünften Tag ist {rivale} an der Reihe. Der Mann im grauen Anzug wartet draußen. #sprecher:erzaehler #musik:geraet
 In die Hütte lässt Ward ihn nicht. #sprecher:erzaehler
 Hier drin sind Spieler und ein Feuer. Sie sind keines von beiden. #sprecher:ward #stimmung:bitter
-Du sitzt am Clubtisch. Victor legt nichts auf den Tisch. #sprecher:erzaehler
-Seine rechte Hand hat er in der Jackentasche. #sprecher:erzaehler
-Nach dreißig Zügen hat er einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt, die Brücke. #sprecher:erzaehler
+Du sitzt am Clubtisch. {rivale} legt nichts auf den Tisch. #sprecher:erzaehler
+{rv_Sein}e rechte Hand hat {rv_er} in der Jackentasche. #sprecher:erzaehler
+Nach dreißig Zügen hat {rv_er} einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt, die Brücke. #sprecher:erzaehler
 * [Zusehen]
-- Er zieht nicht. Er hält die Schulter schief, als horche er auf etwas. #sprecher:erzaehler #klang:geraet_summen
+- {rv_Er} zieht nicht. {rv_Er} hält die Schulter schief, als horche {rv_er} auf etwas. #sprecher:erzaehler #klang:geraet_summen
 Es summt. Kurz, dann zwei lange. #sprecher:erzaehler
-Victor zieht den Turm. Nicht auf die vierte Reihe. #sprecher:erzaehler
+{rivale} zieht den Turm. Nicht auf die vierte Reihe. #sprecher:erzaehler
 Ward zieht ihren König ein Feld. Die Brücke ist nicht mehr zu bauen. #sprecher:erzaehler
-Zug um Zug rinnt es ihm durch die Finger. Ward stellt sich nur immer dorthin, wo er vorbeiwill – Opposition. #sprecher:erzaehler
-Nach siebzig Zügen hat er verloren. Ein gewonnenes Endspiel, mit einem Bauern mehr. #sprecher:erzaehler
-Sein Telefon klingelt. Auf dem Bildschirm steht „Vater“. #sprecher:erzaehler #klang:telefon
-Er sieht darauf, drei Sekunden, vier. Er drückt es weg. #sprecher:erzaehler
-* [Victor ansehen]
-- Er wirft etwas Graues, Flaches auf den Tisch. Es schlittert über das Brett und stößt die Könige um. #sprecher:erzaehler #klang:figuren_kippen #musik:aus
+Zug um Zug rinnt es {rv_ihm} durch die Finger. Ward stellt sich nur immer dorthin, wo {rv_er} vorbeiwill – Opposition. #sprecher:erzaehler
+Nach siebzig Zügen hat {rv_er} verloren. Ein gewonnenes Endspiel, mit einem Bauern mehr. #sprecher:erzaehler
+{rv_Sein} Telefon klingelt. Auf dem Bildschirm steht „Vater“. #sprecher:erzaehler #klang:telefon
+{rv_Er} sieht darauf, drei Sekunden, vier. {rv_Er} drückt es weg. #sprecher:erzaehler
+* [{rivale} ansehen]
+- {rv_Er} wirft etwas Graues, Flaches auf den Tisch. Es schlittert über das Brett und stößt die Könige um. #sprecher:erzaehler #klang:figuren_kippen #musik:aus
 Es hat gesagt, plus zwei Komma eins. Die ganze Zeit. #sprecher:victor #stimmung:muede
 Ich hab doch gemacht, was es gesagt hat. #sprecher:victor #stimmung:muede
-Er steht auf. Der Stuhl bleibt stehen. #sprecher:erzaehler
-Er ist zu gut erzogen, um einen Stuhl umzuwerfen. #sprecher:erzaehler
+{rv_Er} steht auf. Der Stuhl bleibt stehen. #sprecher:erzaehler
+{rv_Er} ist zu gut erzogen, um einen Stuhl umzuwerfen. #sprecher:erzaehler
 Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Aufwärts, nicht hinunter. #sprecher:erzaehler #pause:2
 Ward hebt den schwarzen König auf und stellt ihn zurück. #sprecher:erzaehler #pause
-Er spielt, als wäre er nicht da. #sprecher:ward #stimmung:nachdenklich
-* [„Er hat die Brücke gesehen. Er wusste es.“]
-- Natürlich wusste er es. Er ist der Begabteste, den ich in zwanzig Jahren hier oben hatte. #sprecher:ward #stimmung:nachdenklich
-Er hat sich selbst nicht geglaubt. Jemand hat ihm sehr gründlich beigebracht, sich nicht zu glauben. #sprecher:ward #stimmung:bitter
+{rv_Er} spielt, als wäre {rv_er} nicht da. #sprecher:ward #stimmung:nachdenklich
+* [„{rv_Er} hat die Brücke gesehen. {rv_Er} wusste es.“]
+- Natürlich wusste {rv_er} es. {rv_Er} ist {rivalin:die Begabteste|der Begabteste}, den ich in zwanzig Jahren hier oben hatte. #sprecher:ward #stimmung:nachdenklich
+{rv_Er} hat sich selbst nicht geglaubt. Jemand hat {rv_ihm} sehr gründlich beigebracht, sich nicht zu glauben. #sprecher:ward #stimmung:bitter
 Worauf wartest du? Ich bin vierundsechzig. #sprecher:ward #stimmung:nachdenklich
 Ich renne keinem mehr nach. #sprecher:ward #stimmung:nachdenklich
 -> END

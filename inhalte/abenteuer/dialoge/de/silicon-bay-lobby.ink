@@ -17,6 +17,16 @@
 
 EXTERNAL beginneAufgaben(runde)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR speicherstiftErhalten = false
 VAR held = "Du"
 VAR victorLobbyGetroffen = false
@@ -48,7 +58,7 @@ VAR versoehnungGesehen = false
 
 === victor_erstes_treffen ===
 ~ victorLobbyGetroffen = true
-Victor sitzt auf dem weißen Sofa der Lobby, unter einem Bildschirm mit dem Gesicht seines Vaters. #sprecher:erzaehler
+{rivale} sitzt auf dem weißen Sofa der Lobby, unter einem Bildschirm mit dem Gesicht {rv_sein}es Vaters. #sprecher:erzaehler
 Mein Vater hält heute drei Reden. Ich muss bei allen klatschen. #sprecher:victor #stimmung:muede
 {linGetroffen:Du warst schon bei Dr. Lin? Gut.|Geh erst zu Dr. Lin.} Sie ist die Einzige hier, die noch ein Holzbrett hat. #sprecher:victor #stimmung:nachdenklich
 -> END
@@ -60,17 +70,17 @@ Warst du schon bei Theo? Er misst alle – mich auch. #sprecher:victor #stimmung
 === victor_berichte ===
 // Lektorat 20.11.2026: Nach „Noch nicht“ läuft die Einleitung nicht noch einmal.
 {speicherstiftErhalten:
-    Victor sieht auf den Speicherstift in deiner Hand. #sprecher:erzaehler
+    {rivale} sieht auf den Speicherstift in deiner Hand. #sprecher:erzaehler
     Hast du sie dir angesehen? #sprecher:victor #stimmung:nachdenklich
     -> wahl
 }
 ~ speicherstiftErhalten = true
-Victor steht vor dir, als hätte er schon eine Weile gewartet. Dann hält er dir einen Speicherstift hin. #sprecher:erzaehler
+{rivale} steht vor dir, als hätte {rv_er} schon eine Weile gewartet. Dann hält {rv_er} dir einen Speicherstift hin. #sprecher:erzaehler
 Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. #sprecher:victor #stimmung:nachdenklich
 Schau sie dir an. #sprecher:victor #stimmung:nachdenklich
 * [„Warum?“]
 - Weil ich sie mir angeschaut habe. Und ich will, dass jemand anders auch. #sprecher:victor #stimmung:nachdenklich
-Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
+{rv_Er} sieht an dir vorbei. Dafür hat {rv_er}, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
 - (wahl)
 + [Die Partien auswerten]
     ~ beginneAufgaben("siliconBay.auswertung")
@@ -96,8 +106,8 @@ Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprec
 Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
 * [Schlafen gehen]
-- Am nächsten Morgen wartet Victor in der Lobby. Er hat dieselben Stellen gefunden. #sprecher:erzaehler #uhr:morgen
-Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+- Am nächsten Morgen wartet {rivale} in der Lobby. {rv_Er} hat dieselben Stellen gefunden. #sprecher:erzaehler #uhr:morgen
+Zum ersten Mal sagt {rv_er} es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht – ich muss nachdenken. #sprecher:victor #stimmung:muede
 Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victor #stimmung:nachdenklich
@@ -144,7 +154,7 @@ Bitte lächeln Sie für die Kamera. #sprecher:empfangsroboter #stimmung:laechelt
 
 === vitrine_spaet ===
 Die Vitrine „Hale – Ingenieure seit 1850“. Auf einem Pult liegt ein Notizbuch, Schachzüge in zwei Spalten. #sprecher:erzaehler
-Die rechte Seite ist herausgerissen. Du kennst die Schrift: Die Seite lag an der Bergstation in Victors Buch. #sprecher:erzaehler
+Die rechte Seite ist herausgerissen. Du kennst die Schrift: Die Seite lag an der Bergstation in {rivale}s Buch. #sprecher:erzaehler
 {(not abschiedGesehen and not ambroseSchweigt()):
     Meine Züge links, seine Antwort fehlt. Wir wissen beide, wo sie ist. #sprecher:ambrose #stimmung:still
 }
@@ -152,9 +162,9 @@ Die rechte Seite ist herausgerissen. Du kennst die Schrift: Die Seite lag an der
 -> END
 
 === vitrine_erstmals ===
-Victor kommt dazu und stellt sich neben dich vor das Glas. #sprecher:erzaehler
+{rivale} kommt dazu und stellt sich neben dich vor das Glas. #sprecher:erzaehler
 Hale. Ingenieure seit 1850. Von der Brücke zum Algorithmus. #sprecher:victor #stimmung:stolz
-Victor sagt es auf, weil es zur Führung gehört. Hinter dem Glas liegt ein Rechenschieber aus Elfenbein. #sprecher:erzaehler
+{rivale} sagt es auf, weil es zur Führung gehört. Hinter dem Glas liegt ein Rechenschieber aus Elfenbein. #sprecher:erzaehler
 Daneben eine Zeichnung, braun vom Alter, lauter Dreiecke. Du erkennst sie, bevor du die Unterschrift liest. #sprecher:erzaehler
 Auf einem Pult ein Notizbuch. Schachzüge in zwei Spalten, jeder Buchstabe wie mit dem Lineal gezogen. #sprecher:erzaehler
 Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. #sprecher:erzaehler #musik:aus #geraeusch:aus
@@ -170,13 +180,13 @@ Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:tra
 
 = seite_fehlt
 Mein Vater sagt, die Seite war schon immer weg. #sprecher:victor #stimmung:nachdenklich
-{(not abschiedGesehen and not ambroseSchweigt()):Victor hat Ambrose nicht gehört. }Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
+{(not abschiedGesehen and not ambroseSchweigt()):{rivale} hat Ambrose nicht gehört. }{rv_Er} sagt es, weil {rv_er} sieht, wohin du schaust. #sprecher:erzaehler
 * [„Wer hat das geschrieben?“]
     -> vitrine_victor
 
 // Victor zählt die Generationen ab; Juno macht das Foto (Kapitel 32).
 === vitrine_victor ===
-Er hält den Kopf ein wenig schief. #sprecher:erzaehler
+{rv_Er} hält den Kopf ein wenig schief. #sprecher:erzaehler
 Mein … der Vater vom Vater vom Großvater meines Vaters. Er hat Brücken gebaut. #sprecher:victor #stimmung:nachdenklich
 Er soll Schach gespielt haben. Per Post, mit irgendwem aus dem Süden. #sprecher:victor #stimmung:nachdenklich
 Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. #sprecher:victor #stimmung:bitter

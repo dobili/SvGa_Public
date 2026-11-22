@@ -11,6 +11,8 @@
 import { Oberwelt } from "../oberwelt/Oberwelt";
 import { abenteuerErweiterung } from "../anbindung/Kartenleiste";
 import type { Abenteuermodul, Appdienste } from "../schnittstelle/modul";
+import { rivalformen, rivalinGewaehlt, rivalinJetzt, verbindeRivalwahl } from "../regeln/rivalform";
+import { verbindeTextformen } from "../texte/texte";
 
 let dienste: Appdienste | null = null;
 
@@ -23,6 +25,9 @@ export function appdienste(): Appdienste {
 export const modul: Abenteuermodul = {
   verbinde: (neue) => {
     dienste = neue;
+    // Spieltexte mit {rivale}, {rv_er} … folgen der Wahl im Spielstand (regeln/rivalform.ts).
+    verbindeRivalwahl(() => rivalinGewaehlt(neue.liesStand()?.dialogvariablen ?? {}));
+    verbindeTextformen(() => rivalformen(rivalinJetzt()));
   },
   Oberwelt,
   partieerweiterung: abenteuerErweiterung,

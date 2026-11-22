@@ -1,17 +1,19 @@
 /**
- * Wahl der Figur beim Spielbeginn und im Spielmenü: Held oder Heldin (Wunsch des Autors,
- * 22.11.2026), je mit Vorschaubild (Standbild nach unten aus dem Bogen im Paket).
+ * Wahl der Figuren beim Spielbeginn und im Spielmenü: Held oder Heldin, Rivale Victor oder Rivalin
+ * Victoria (Wunsch des Autors, 22.11.2026), je mit Vorschaubild (Standbild nach unten aus dem
+ * Bogen im Paket).
  *
  * Warum ein eigenes Bild statt Phaser: Die Startkarte gehört zum Kern der App und lädt den
  * Spielbaustein mit Phaser erst nach dem Start; das Vorschaubild schneidet deshalb das Standbild
  * selbst aus dem Bogen (Leinwand). Fehlt ein Bogen (die Heldin, bis der Autor sie in PixelLab
- * erstellt hat), steht ein Platzhalter da; im Spiel gilt dann der Held (regeln/heldfigur.ts).
+ * erstellt hat, ebenso Victoria), steht ein Platzhalter da; im Spiel gilt dann der Held
+ * (regeln/heldfigur.ts) bzw. der Bogen von Victor (regeln/rivalform.ts).
  * Abhängigkeiten: oberwelt/figurbogen.ts (Bogen suchen, ohne Phaser), regeln/heldfigur.ts, i18n.
  */
 import { useEffect, useRef, useState } from "react";
-import { t } from "../../i18n/sprache";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import { figurenbildAdresse, istGrossbogen } from "../oberwelt/figurbogen";
-import { HELDFIGUREN, heldbogenpfad } from "../regeln/heldfigur";
+import { HELDFIGUREN } from "../regeln/heldfigur";
 import type { Heldfigur } from "../schnittstelle/spielstand";
 
 /** Standbild nach unten: viertes Bild der oberen Reihe (rechts, oben, links, unten; figurbilder.ts). */
@@ -23,8 +25,8 @@ const KLEIN_BREITE = 16;
 const VORSCHAU = 32;
 
 /** Zeichnet das Standbild nach unten auf die Leinwand; false, wenn der Bogen fehlt. */
-async function zeichneVorschau(leinwand: HTMLCanvasElement, figur: Heldfigur): Promise<boolean> {
-  const adresse = await figurenbildAdresse(heldbogenpfad(figur));
+async function zeichneVorschau(leinwand: HTMLCanvasElement, bogen: string): Promise<boolean> {
+  const adresse = await figurenbildAdresse(`figuren/${bogen}.png`);
   const stift = leinwand.getContext("2d");
   if (!adresse || !stift) return false;
   const bild = new Image();
@@ -38,40 +40,48 @@ async function zeichneVorschau(leinwand: HTMLCanvasElement, figur: Heldfigur): P
   return true;
 }
 
+/** Eine Möglichkeit der Wahl: Bogen im Paket (figuren/<bogen>.png) und Textschlüssel. */
+interface Wahl {
+  readonly bogen: string;
+  readonly text: Textschluessel;
+  readonly testid: string;
+}
+
 /** Ein Knopf der Wahl mit Vorschaubild oder Platzhalter. */
 function Wahlknopf({
-  figur,
+  wahl,
   gewaehlt,
   beiWahl,
 }: {
-  figur: Heldfigur;
+  wahl: Wahl;
   gewaehlt: boolean;
   beiWahl: () => void;
 }) {
+  const { bogen } = wahl;
   const leinwand = useRef<HTMLCanvasElement>(null);
   const [bildDa, setzeBildDa] = useState(false);
   useEffect(() => {
     let aktiv = true;
     const ziel = leinwand.current;
     if (!ziel) return;
-    zeichneVorschau(ziel, figur)
+    zeichneVorschau(ziel, bogen)
       .then((da) => {
         if (aktiv) setzeBildDa(da);
       })
       .catch((fehler: unknown) => {
         // Kein Bild ist kein Fehler des Spiels: der Platzhalter bleibt, die Wahl geht trotzdem.
-        console.warn("Schach-Abenteuer: Vorschaubild fehlt", figur, fehler);
+        console.warn("Schach-Abenteuer: Vorschaubild fehlt", bogen, fehler);
       });
     return () => {
       aktiv = false;
     };
-  }, [figur]);
+  }, [bogen]);
   return (
     <button
       type="button"
       className="abenteuer-heldwahl-knopf"
       aria-pressed={gewaehlt}
-      data-testid={`abenteuer-figur-${figur}`}
+      data-testid={wahl.testid}
       onClick={beiWahl}
     >
       <canvas ref={leinwand} width={VORSCHAU} height={VORSCHAU} hidden={!bildDa} />
@@ -80,11 +90,42 @@ function Wahlknopf({
           ?
         </span>
       )}
-      <span>{t(`abenteuer.figur.${figur}`)}</span>
+      <span>{t(wahl.text)}</span>
       {!bildDa && <small>{t("abenteuer.figurFolgt")}</small>}
     </button>
   );
 }
+
+/** Eine Reihe Wahlknöpfe unter einer Frage. */
+function Figurwahl({
+  frage,
+  testid,
+  wahlen,
+  gewaehlt,
+  beiWahl,
+}: {
+  frage: Textschluessel;
+  testid: string;
+  wahlen: readonly Wahl[];
+  gewaehlt: number;
+  beiWahl: (index: number) => void;
+}) {
+  return (
+    <fieldset className="abenteuer-heldwahl" data-testid={testid}>
+      <legend>{t(frage)}</legend>
+      {wahlen.map((w, i) => (
+        <Wahlknopf key={w.bogen} wahl={w} gewaehlt={i === gewaehlt} beiWahl={() => beiWahl(i)} />
+      ))}
+    </fieldset>
+  );
+}
+
+/** Held und Heldin: Bogen und Text heißen wie die Figur. */
+const HELDWAHLEN: readonly Wahl[] = HELDFIGUREN.map((f) => ({
+  bogen: f,
+  text: f === "heldin-0" ? "abenteuer.figur.heldin-0" : "abenteuer.figur.held-0",
+  testid: `abenteuer-figur-${f}`,
+}));
 
 /**
  * Die Wahl Held oder Heldin. Eingaben: gewählte Figur und was bei einer Wahl geschieht.
@@ -98,11 +139,40 @@ export function Heldwahl({
   beiWahl: (figur: Heldfigur) => void;
 }) {
   return (
-    <fieldset className="abenteuer-heldwahl" data-testid="abenteuer-heldwahl">
-      <legend>{t("abenteuer.figurFrage")}</legend>
-      {HELDFIGUREN.map((f) => (
-        <Wahlknopf key={f} figur={f} gewaehlt={f === figur} beiWahl={() => beiWahl(f)} />
-      ))}
-    </fieldset>
+    <Figurwahl
+      frage="abenteuer.figurFrage"
+      testid="abenteuer-heldwahl"
+      wahlen={HELDWAHLEN}
+      gewaehlt={HELDFIGUREN.indexOf(figur)}
+      beiWahl={(i) => beiWahl(HELDFIGUREN[i] ?? figur)}
+    />
+  );
+}
+
+/** Rivale und Rivalin; die Bögen von Victoria folgen (bis dahin Platzhalter). */
+const RIVALWAHLEN: readonly Wahl[] = [
+  { bogen: "victor", text: "abenteuer.rivale.victor", testid: "abenteuer-rivale-victor" },
+  { bogen: "victoria", text: "abenteuer.rivale.victoria", testid: "abenteuer-rivale-victoria" },
+];
+
+/**
+ * Die Wahl Rivale Victor oder Rivalin Victoria (nach der Heldenwahl). Eingaben: ob die Rivalin
+ * gewählt ist und was bei einer Wahl geschieht.
+ */
+export function Rivalwahl({
+  rivalin,
+  beiWahl,
+}: {
+  rivalin: boolean;
+  beiWahl: (rivalin: boolean) => void;
+}) {
+  return (
+    <Figurwahl
+      frage="abenteuer.rivaleFrage"
+      testid="abenteuer-rivalwahl"
+      wahlen={RIVALWAHLEN}
+      gewaehlt={rivalin ? 1 : 0}
+      beiWahl={(i) => beiWahl(i === 1)}
+    />
   );
 }

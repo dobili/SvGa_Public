@@ -18,6 +18,16 @@ EXTERNAL reise(karte, ausloeser)
 VAR abeGetroffen = false
 VAR ausgangGhostTownFernpartie = ""
 VAR finaleBesprochen = false
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR held = "Du"
 VAR nadelMapleFalls = 0
 VAR nadelCedarCreek = 0
@@ -151,7 +161,7 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
     Die breite Treppe vor der Arena. Am Abend wird hier gefeiert, sagt man. #sprecher:erzaehler
     -> END
 - not finaleBesprochen:
-    Drinnen ruft jemand deinen Namen. Victor. #sprecher:erzaehler
+    Drinnen ruft jemand deinen Namen. {rivale}. #sprecher:erzaehler
     -> END
 - abschiedGesehen:
     Auf der Treppe vor der Arena ist es still geworden. Die Fahnen werfen lange Schatten. #sprecher:erzaehler
@@ -178,7 +188,7 @@ Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich
 * [„War es richtig?“]
 - Ich weiß es nicht. Ich habe es nicht nachgerechnet. #sprecher:ambrose #stimmung:lacht
 Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
-Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine Ecke. Graham Hale hat keinen Stift in der Hand. #sprecher:erzaehler
+Unten gehen {rivale} und {rv_sein} Vater, das Formular zwischen sich, jeder hält eine Ecke. Graham Hale hat keinen Stift in der Hand. #sprecher:erzaehler
 -> abschied_rede
 
 === abschied_rede ===
@@ -197,7 +207,7 @@ Das Halbfinale war bis zum zwanzigsten Zug ein Untergang. #sprecher:ambrose #sti
 - Sei still. Ich bin noch nicht fertig. #sprecher:ambrose #stimmung:froh #musik:abschied
 Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh
 * [Zuhören]
-- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":Einen Jungen, der vor Freude rennt, weil er verloren hat.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.} #sprecher:ambrose #stimmung:laechelt
+- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. {ausgangCapitalArenaFinale == "sieg":{rivalin:Ein Mädchen, das vor Freude rennt, weil es verloren hat.|Einen Jungen, der vor Freude rennt, weil er verloren hat.}|{rivalin:Ein Mädchen, das mit einem Blatt Papier zu seinem Vater rennt.|Einen Jungen, der mit einem Blatt Papier zu seinem Vater rennt.}} #sprecher:ambrose #stimmung:laechelt
 Menschen, die kämpfen. Die Fehler machen, und wachsen. #sprecher:ambrose #stimmung:laechelt #pause:2
 Das ist es, was schön ist an diesem Spiel. Nicht die Züge. #sprecher:ambrose #stimmung:laechelt
 Die waren nie das Schöne. #sprecher:ambrose #stimmung:laechelt

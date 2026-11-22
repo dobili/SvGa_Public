@@ -22,6 +22,16 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR rivalin = false
+VAR rivale = "Victor"
+VAR rv_er = "er"
+VAR rv_Er = "Er"
+VAR rv_ihn = "ihn"
+VAR rv_Ihn = "Ihn"
+VAR rv_ihm = "ihm"
+VAR rv_Ihm = "Ihm"
+VAR rv_sein = "sein"
+VAR rv_Sein = "Sein"
 VAR nadelSummitCity = 0
 VAR wardLaurieGesagt = false
 VAR held = "Du"
@@ -73,7 +83,7 @@ Du hast meine Spielberichte noch. Schau sie dir an, bevor alles andere kommt. #s
 }
 
 === victor_vorher ===
-Victor steht draußen am Geländer der Plattform und hört etwas über einen Ohrstöpsel. Als er dich sieht, nimmt er ihn heraus. #sprecher:erzaehler
+{rivale} steht draußen am Geländer der Plattform und hört etwas über einen Ohrstöpsel. Als {rv_er} dich sieht, nimmt {rv_er} ihn heraus. #sprecher:erzaehler
 Nicht jetzt. Ich hab Vorbereitung. #sprecher:victor #stimmung:bitter
 Mein Trainer sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #sprecher:victor #stimmung:bitter
 -> END
@@ -81,7 +91,7 @@ Mein Trainer sagt, ich darf mit niemandem spielen, der nicht im Plan steht. #spr
 === victor_bergstation ===
 ~ victorBergstationGesprochen = true
 Unter der Plattform liegen die Wolken im Tal wie Milch in einer Schüssel. Die Gipfel ragen daraus hervor wie Inseln. #sprecher:erzaehler #musik:aus
-Victor sitzt am Geländer, die Knie angezogen, nur im Hemd. Die weiße Jacke liegt neben ihm. #sprecher:erzaehler
+{rivale} sitzt am Geländer, die Knie angezogen, nur im Hemd. Die weiße Jacke liegt neben {rv_ihm}. #sprecher:erzaehler
 * [Dich zwei Meter weiter hinsetzen]
 - Du sagst nichts. Von Mrs. Okafor hast du gelernt, wie man das macht. #sprecher:erzaehler
 Hinter dem Glastor dreht sich das Rad, eine Gondel fährt hinunter. #sprecher:erzaehler
@@ -91,7 +101,7 @@ Danach hat er aufgehört, mit mir zu spielen. #sprecher:victor #stimmung:bitter
 Seit acht Jahren rechnet er nur noch nach. Jede Partie. #sprecher:victor #stimmung:bitter
 Er schickt mir die Kurve. #sprecher:victor #stimmung:bitter
 * [„Einundsiebzig Prozent. Meine. Menschlich, hat Theo gesagt.“]
-- Er gibt ein Geräusch von sich, das fast ein Lachen ist. #sprecher:erzaehler
+- {rv_Er} gibt ein Geräusch von sich, das fast ein Lachen ist. #sprecher:erzaehler
 Ich hab die Brücke gesehen und gedacht: Das ist zu einfach, das hätte es doch gesagt. #sprecher:victor #stimmung:nachdenklich
 Ich weiß nicht mehr, welche Züge meine sind. #sprecher:victor #stimmung:bitter
 Ich will einmal verlieren dürfen. Einfach so. #sprecher:victor #stimmung:bitter
@@ -116,23 +126,23 @@ Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hi
 + [„Ohne Uhr. Ohne Gerät. Es zählt für nichts.“]
 - Das ist ein Kinderbrett. #sprecher:victor #stimmung:nachdenklich
 + [„Juno verliert darauf seit Jahren, und es geht ihr gut.“]
-- Er sieht dich an. Dann rückt er herüber. #sprecher:erzaehler
+- {rv_Er} sieht dich an. Dann rückt {rv_er} herüber. #sprecher:erzaehler
 ~ victorReisebrettBereit = true
 ~ beginnePartie("summitCity.victorFrei")
 -> END
 
 === victor_spielen_wieder ===
-Das Reisebrett liegt noch zwischen euch, die Figuren in der Grundstellung. Victor rückt wieder heran. #sprecher:erzaehler
+Das Reisebrett liegt noch zwischen euch, die Figuren in der Grundstellung. {rivale} rückt wieder heran. #sprecher:erzaehler
 ~ beginnePartie("summitCity.victorFrei")
 -> END
 
 === victor_seite ===
 ~ victorSeiteGegeben = true
-{victorGelacht:Er hat gelacht, mitten in der Partie. Zum ersten Mal.|Wer gewonnen hat, ist nicht wichtig. Victor sieht leichter aus als vorher.} #sprecher:erzaehler #musik:victor.warm
+{victorGelacht:{rv_Er} hat gelacht, mitten in der Partie. Zum ersten Mal.|Wer gewonnen hat, ist nicht wichtig. {rivale} sieht leichter aus als vorher.} #sprecher:erzaehler #musik:victor.warm
 Ein Hale, der lächelt. Ich habe zu lange gewartet, um das zu sehen. #sprecher:ambrose #stimmung:still
-* [Ihm zusehen]
+* [{rv_Ihm} zusehen]
 - Die Sonne kommt unter die Wolken, alles wird rot. #sprecher:erzaehler
-Victor greift in die Innentasche der Jacke. Ein Buch, klein und alt, in Leinen gebunden. #sprecher:erzaehler
+{rivale} greift in die Innentasche der Jacke. Ein Buch, klein und alt, in Leinen gebunden. #sprecher:erzaehler
 Das hat meinem Großvater gehört. Er hat es mir gegeben, als ich sieben war. #sprecher:victor #stimmung:nachdenklich
 Mein Vater weiß nicht, dass ich es habe. #sprecher:victor #stimmung:nachdenklich
 Er hat gesagt, da ist etwas drin, das soll ich aufheben. Es sei wertlos. #sprecher:victor #stimmung:nachdenklich
@@ -175,9 +185,9 @@ Du siehst zu Ambrose. Er nickt. #sprecher:erzaehler #pause
 - Und dass er ein Leben und länger auf diesen Zug gewartet hat. #sprecher:erzaehler
 Wie ist er? Der Zug. #sprecher:victor #stimmung:laechelt
 Ist er gut? #sprecher:victor #stimmung:laechelt
-Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
+Sag {rv_ihm}, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
 Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprecher:ambrose #stimmung:lacht
-Victor löst das Blatt heraus und gibt es dir. Dann steckt er das Buch ein. #sprecher:erzaehler
+{rivale} löst das Blatt heraus und gibt es dir. Dann steckt {rv_er} das Buch ein. #sprecher:erzaehler
 Gehen wir runter zur Hütte? Ward wartet mit deiner Partie, und ich will zusehen. #sprecher:victor #stimmung:laechelt
 -> END
 
@@ -228,7 +238,7 @@ Am Seil gleitet eine Gondel hinunter und taucht ins Weiß, als ginge sie unter. 
 === victor_luftig ===
 Das ist schlecht. Warum hab ich das gemacht? #sprecher:victor #stimmung:ueberrascht
 + [„Weiß ich nicht. Wie fühlt es sich an?“]
-- Er denkt nach, ernsthaft, mit schiefem Kopf. #sprecher:erzaehler
+- {rv_Er} denkt nach, ernsthaft, mit schiefem Kopf. #sprecher:erzaehler
 Komisch. Luftig. #sprecher:victor #stimmung:laechelt
 -> END
 
@@ -236,7 +246,7 @@ Komisch. Luftig. #sprecher:victor #stimmung:laechelt
 === victor_gabel ===
 {victorGelacht: -> END}
 ~ victorGelacht = true
-Victor starrt auf das Brett. Und dann lacht er. #sprecher:erzaehler #musik:aus
+{rivale} starrt auf das Brett. Und dann lacht {rv_er}. #sprecher:erzaehler #musik:aus
 Eine Gabel. Eine ganz gewöhnliche Gabel! #sprecher:victor #stimmung:lacht
 Ich hab die nicht gesehen! #sprecher:victor #stimmung:lacht
 Das ist so dumm. Das ist so schön dumm. #sprecher:victor #stimmung:lacht

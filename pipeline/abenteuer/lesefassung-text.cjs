@@ -26,13 +26,16 @@ const kurz = (kennung) => kennung.split(".").pop();
 
 /**
  * Nachschlagewerk für lesbare Namen.
- * Eingaben: Welt der Simulation (Orte, Quests), Name des Helden. Ausgabe: Funktionen, die zu einer
+ * Eingaben: Welt der Simulation (Orte, Quests), Name des Helden, Platzhalter der Spieltexte
+ * (Variablen der Simulation, darunter rivale und rv_er …). Ausgabe: Funktionen, die zu einer
  * Kennung den deutschen Text liefern; fehlt er, bleibt die Kennung stehen (nichts wird verschluckt).
  * Beispiel: sprecher("ambrose") → „Ambrose“; karte("mapleFalls.dachboden") → „Dachboden“.
  */
-function namen(welt, held) {
+function namen(welt, held, platzhalter = {}) {
   const texte = lade("texte/de.json");
-  const t = (schluessel) => texte[schluessel] || schluessel;
+  // Platzhalter der Spieltexte wie in der App (texte.ts): {rivale}, {rv_er} … nach der Wahl.
+  const fuelle = (text) => text.replace(/\{(\w+)\}/g, (ganz, n) => platzhalter[n] ?? ganz);
+  const t = (schluessel) => (texte[schluessel] ? fuelle(texte[schluessel]) : schluessel);
   const begegnungen = new Map(
     lade("begegnungen.json").begegnungen.map((b) => [b.kennung, b]),
   );

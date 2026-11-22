@@ -699,6 +699,34 @@ Münzen in `11_Karten_und_Gegenstaende.md`, Abschnitt 7.
   sagen. Geprüft in `pipeline/tests/test_abenteuer_ambrose_name.py` (alle Dialoge der Orte vor
   dem Archiv, ohne und mit dem Ink-Compiler).
 
+- **Held oder Heldin** (Wunsch des Autors, 22.11.2026): Der Leser wählt beim Spielbeginn das Bild;
+  die Texte bleiben dieselben. Dauertest: `python -m pipeline.abenteuer.heldneutral`.
+
+### 5.2a Rivale Victor oder Rivalin Victoria
+
+Seit dem 22.11.2026 wählt der Leser nach der Heldenwahl auch den Rivalen: Victor oder Victoria (der
+Roman bleibt bei Victor). Dialoge schreiben deshalb nie „Victor“ oder ein festes Pronomen für ihn,
+sondern Platzhalter (die Wörter stehen in `inhalte/abenteuer/rivalformen.json`):
+
+| Schreiben                     | Victor            | Victoria          |
+| ----------------------------- | ----------------- | ----------------- |
+| `{rivale}`, `{rivale}s`       | Victor, Victors   | Victoria, Victorias |
+| `{rv_er}` / `{rv_Er}`         | er / Er           | sie / Sie         |
+| `{rv_ihn}` / `{rv_Ihn}`       | ihn / Ihn         | sie / Sie         |
+| `{rv_ihm}` / `{rv_Ihm}`       | ihm / Ihm         | ihr / Ihr         |
+| `{rv_sein}`, `{rv_sein}e`, `{rv_sein}em` … | sein, seine, seinem | ihr, ihre, ihrem |
+| `{rivalin:Mädchen\|Junge}`    | Junge             | Mädchen           |
+
+- Alles, was mehr als ein Pronomen ist (Artikel, Adjektivendungen, Sohn/Tochter), schreibt die
+  Ink-Bedingung `{rivalin:…|…}` aus: erst die Rivalin, dann der Rivale.
+- Jede Ink-Datei, die die Platzhalter nutzt, erklärt sie oben (`VAR rivalin = false`,
+  `VAR rivale = "Victor"`, `VAR rv_er = "er"` …); die App setzt sie je nach Wahl
+  (`app/src/abenteuer/regeln/rivalform.ts`). Spieltexte (de.json) nutzen dieselben Platzhalter.
+- Pronomen für andere Figuren in Victors Szenen bleiben, wie sie sind (Graham Hale, der Vorfahr
+  Hale, Ambrose).
+- Dauertest: `python -m pipeline.abenteuer.rivalneutral` (festes „Victor“, Pronomen nach
+  {rivale}, Wörter mit Geschlecht, fehlende Variablen; 0 Befunde).
+
 ### 5.3 Ambroses altmodische Sprache in fünf Regeln
 
 1. **Vollständige, gebaute Sätze.** Keine Jugendsprache, keine Abkürzungen, keine Füllwörter wie

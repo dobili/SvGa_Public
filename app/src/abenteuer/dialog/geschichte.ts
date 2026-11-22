@@ -8,6 +8,7 @@
  * Aufrufer über `Wirkungen`.
  * Abhängigkeiten: inkjs (MIT, docs/spiel/LIZENZEN.md).
  */
+import { rivalformen, rivalinGewaehlt } from "../regeln/rivalform";
 import { Story } from "inkjs";
 
 /** Eine Zeile der Geschichte mit ihren Tags („sprecher:ambrose“ → { sprecher: "ambrose" }). */
@@ -159,6 +160,9 @@ export class Geschichte {
     );
     for (const [name, wert] of Object.entries(variablen)) this.setzeVariable(name, wert);
     this.setzeVariable("held", heldname);
+    // Rivale oder Rivalin (regeln/rivalform.ts): Name und Pronomen als Ink-Variablen.
+    const formen = rivalformen(rivalinGewaehlt(variablen));
+    for (const [name, wert] of Object.entries(formen)) this.setzeVariable(name, wert);
   }
 
   /** Setzt eine globale Variable, wenn die Geschichte sie kennt (sonst wirft inkjs). */

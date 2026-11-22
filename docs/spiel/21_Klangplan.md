@@ -297,6 +297,46 @@ Spuren und die volle Mischung, Tag und Nacht; die Nahtkurve (A0.8) gilt für all
 - **Bauen und hören:** `hoerseite PRIVAT --akt 3 --sichere-alt`, `musikbau PRIVAT --nur …`,
   `hoerseite PRIVAT --akt 3`.
 
+### A0.10 Umstellung, Etappe Akt 4 (22.11.2026)
+
+Gleiche Form wie in den Akten 1 bis 3; die Nahtkurve (A0.8) gilt für alle.
+
+- **Summit City**, D-Dur, Kopf D A H | A E Fis (`akt4_summit.py`):
+  - Der ganze Quintenturm des Endspielmotivs (1 – 5 – 2′ – 6′ – 3″) ist zu weit für einen Kopf zum
+    Mitsummen. Der Kopf nimmt seinen ersten Schritt, die Quinte; in Takt 3 steigt der Turm weiter
+    (1 – 5 – 2′), im B-Teil singt das Cello ihn langsam.
+  - Tag 72 (Klavier, Kontrabass; Farbe das hohe Flageolett), Nacht 60, Lernen 66 (in Wards Hütte:
+    Klavier und Cello).
+- **Hochebene**, D-Dur, Kopf D′ A H D′ | H G A: Er tippt zweimal auf das hohe D, mit Pausen an
+  unerwarteter Stelle (heutig, mit Humor).
+  - Tag 100 (Flöte, Gitarre, Bass; Farbe die Handtrommel), Nacht 80 (Gitarre gezupft, Sterne im
+    Glockenspiel).
+- **Wege mit dem Thema von Maple Falls** (A A′ B A′ offen, drei Spuren):
+  - Fahrt zur Hochebene 76: Das Thema des Helden fährt als Zusatzspur mit und führt offen zurück.
+  - Pinewood 108, Staubstraße 72, Seeufer 96 (alle Farben).
+  - Herbst 84: nur Gitarre, wie die Busfahrt in Kapitel 1.
+- **Arena:** Das Heldenthema als Fanfare und die Treppe mit allen acht Köpfen, jetzt in drei Spuren
+  (Zusatz der Marsch). Ohne Vorspiel: Mit stummem Anfang der Melodiespur lag die Naht bei 2,0 LU.
+- **Kampfthema Akt 4:** der Kopf von Summit City in Achteln, 126, Klavier und laufender Bass
+  (Clubkampf gegen Ward); die Violinen steigern.
+  - Das Turnier (`arena.vorrunde`, Runde 1 und 2) ist die Steigerung: 132, Gitarre und Schlagzeug,
+    im B-Teil das Thema des Helden, die Trompete steigert.
+  - Die Finalstücke (Eröffnung, Mittelspiel, Halbfinale gegen ZERO) folgen der Erzählung und kommen
+    mit den Szenenstücken dran.
+- **Rückblicke zitieren die neuen Köpfe:**
+  - Gemeint sind Crossroads, Lagerfeuer, Fernpartie, Abspann und die Arena-Treppe.
+  - `akt4_koepfe.py` hält keine eigenen Töne mehr. Jeder Kopf entsteht aus Teil A seines
+    Ortsthemas; Moll wird nach G-Dur umgeschrieben (♭3, ♭6, ♭7; der Leitton bleibt die 7).
+  - Silicon Bay behält die ♯4 in der eigenen Farbe und hat im fröhlichen Zug die reine 4.
+- **orte.json:**
+  - `musik_nacht` für die Hochebene (Felstürme, Schule) und Summit City (außen, Bergstation).
+  - Wards Hütte spielt `summitCity.lernen`.
+- **Lautheit:**
+  - Alle 13 Stücke mit Spuren halten A0.6 (52 Messungen, Naht höchstens 1,0 LU, 4 Hinweise).
+  - Crossroads und Lagerfeuer halten die Werte ebenfalls.
+- **Bauen und hören:** `hoerseite PRIVAT --akt 4 --sichere-alt`, `musikbau PRIVAT --nur …`,
+  `hoerseite PRIVAT --akt 4`.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

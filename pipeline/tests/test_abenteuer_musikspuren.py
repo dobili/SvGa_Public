@@ -54,7 +54,7 @@ def test_koepfe_von_akt1_halten_die_bauregeln():
         assert 4 <= len(noten) <= 7 and max(hoehen) - min(hoehen) <= OKTAVE, kopf
 
 
-def test_akt2_und_akt3_sind_umgestellt():
+def test_akt2_bis_akt4_sind_umgestellt():
     kennungen = {s.kennung for s in _mit_spuren()}
     erwartet = {
         "riverton",
@@ -71,17 +71,26 @@ def test_akt2_und_akt3_sind_umgestellt():
         "desertSprings.nacht",
         "siliconBay.clubkampf",
         "desertSprings.clubkampf",
+        "summitCity",
+        "summitCity.nacht",
+        "hochebene",
+        "hochebene.nacht",
+        "summitCity.clubkampf",
+        "arena.vorrunde",
+        "arena",
     }
     assert erwartet <= kennungen
 
 
-def test_koepfe_von_akt2_und_akt3_halten_die_bauregeln():
+def test_koepfe_von_akt2_bis_akt4_halten_die_bauregeln():
     from pipeline.abenteuer.ton.stuecke import (
         akt2_ironwood,
         akt2_riverton,
         akt3_delacroix,
         akt3_desert,
         akt3_siliconbay,
+        akt4_summit,
+        akt4_wege,
     )
 
     koepfe = (
@@ -91,11 +100,24 @@ def test_koepfe_von_akt2_und_akt3_halten_die_bauregeln():
         (akt3_delacroix.KOPF, "G"),
         (akt3_delacroix.FAEHRE_KOPF, "D"),
         (akt3_desert.KOPF, "E"),
+        (akt4_summit.KOPF, "D"),
+        (akt4_wege.KOPF, "D"),
     )
     for kopf, name in koepfe:
         noten, _ = linie(kopf.replace("|", " "), tonart(name), 0, 1, 60)
         hoehen = [n.tonhoehe for n in noten]
         assert 4 <= len(noten) <= 7 and max(hoehen) - min(hoehen) <= OKTAVE, kopf
+
+
+def test_rueckblicke_zitieren_die_neuen_koepfe():
+    # Die Zitate in Akt 4 kommen aus den Ortsthemen selbst; Moll wird nach G-Dur umgeschrieben.
+    from pipeline.abenteuer.ton.stuecke import akt4_koepfe as koepfe
+    from pipeline.abenteuer.ton.stuecke import maple
+
+    assert koepfe.MAPLE.zwei.melodie == maple.KOPF
+    assert koepfe.moll_in_dur("1:1 3:1 #7,:1 6:1/2") == "1:1 b3:1 7,:1 b6:1/2"
+    assert koepfe.akkorde_in_dur("i | VI | III V7") == "i | bVI | bIII V7"
+    assert "#4" not in koepfe.SILICON.dur.melodie and "#4" in koepfe.SILICON.eigen.melodie
 
 
 def test_spurenliste_nennt_spuren_zusatz_und_laenge():

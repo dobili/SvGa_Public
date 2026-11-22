@@ -383,6 +383,10 @@ Profil › Einstellungen › Fehler melden.
       Turnier (mit jedem Sieg eine Stimme mehr). Crossroads, Lagerfeuer und der Abspann zitieren
       jetzt die neuen Köpfe aller Orte: Erkennst du sie wieder? Alt gegen neu im privaten
       Repository: hoerprobe/akt4/index.html.
+- [ ] N2692. **Szenenmusik mit gleichmäßiger Lautheit:** Stichproben aus allen Akten, etwa Titel,
+      Ambroses Thema, das Nachtstück, Rosies Wagen, Port Delacroix Trauer (neu mit leisem zweitem
+      Ansatz auf den langen Tönen), Nova, Abschied an der Treppe, Abspann. Klingt etwas zu platt
+      gedrückt, oder fehlt dir ein Unterschied zwischen leise und laut? „ok“ oder Notiz je Stück.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

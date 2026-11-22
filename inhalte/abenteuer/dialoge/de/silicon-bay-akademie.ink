@@ -197,7 +197,7 @@ Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #
 
 === theo_karte ===
 ~ lernkarteZielkompass = true
-Zentrum, Entwicklung, König. Alle drei, jedes Mal. #sprecher:theo #stimmung:nachdenklich
+Zentrum, Entwicklung, König. Alle drei, jedes Mal. #sprecher:theo #stimmung:nachdenklich #brett:zentrum
 Das hat nicht jeder. #sprecher:theo #stimmung:nachdenklich
 {hatKarteZielkompass:
     Er hält dir eine Karte hin und sieht dann, dass du sie schon hast. Er nickt, als hätte er das erwartet. #sprecher:erzaehler

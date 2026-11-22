@@ -75,6 +75,19 @@
     max-height: 100%;
   }
 
+  /* Brettbeispiel quer: so groß, wie die freie Fläche hoch ist, ganz im Bild. Es beginnt unter
+     Menü und Tagebuch, die im Gespräch links neben der Spalte stehen (sonst lägen sie auf dem
+     Brett, iPhone 15 quer). */
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-brettbeispiel {
+    top: calc(env(safe-area-inset-top) + var(--leistenknopf) + var(--raster) * 3);
+  }
+
+  .abenteuer-dialog:not(.abenteuer-sprechblase) > .abenteuer-brettbeispiel .brett {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+  }
+
   /* Menü, Tagebuch (bedienung.css) und Münzen rücken links neben die Spalte, solange ein Dialog
      offen ist. */
   .bildschirm-abenteuer:has(.abenteuer-dialog:not(.abenteuer-sprechblase)) > .abenteuer-menueknopf {

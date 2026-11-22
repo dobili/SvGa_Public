@@ -100,8 +100,8 @@ VAR revancheIronwood = false
 ~ elmStreetBekannt = true
 Am Ende des Raums, unter dem Pokalregal, sitzt ein Mann wie aus demselben Stück wie der Ofen. Vor ihm ein Schachbrett aus Stahl. #sprecher:erzaehler
 Er setzt eine Figur hin, als wäre sie aus Glas. #sprecher:erzaehler
-Eine Fesselung ist wie ein Kranhaken, Priya. Was dranhängt, kann nicht weg. #sprecher:bigJoe #stimmung:laechelt
-Ein Spieß ist eine Fesselung von hinten. Statik. #sprecher:priya #stimmung:nachdenklich
+Eine Fesselung ist wie ein Kranhaken, Priya. Was dranhängt, kann nicht weg. #sprecher:bigJoe #stimmung:laechelt #brett:fesselung
+Ein Spieß ist eine Fesselung von hinten. Statik. #sprecher:priya #stimmung:nachdenklich #brett:turmspiess.1
 Statik! #sprecher:bigJoe #stimmung:lacht
 Er lacht, dass die Tassen klirren. Dann sieht er dich und hört auf. #sprecher:erzaehler
 Er steht auf. Es dauert, bis er oben ist. #sprecher:erzaehler
@@ -451,7 +451,7 @@ Du schreibst ja in mein Heft. #sprecher:mutter #stimmung:ueberrascht
 // kauft, und gibt die Faktorenwaage.
 === mama_karte ===
 ~ lernkarteFaktorenwaage = true
-Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. #sprecher:mutter #stimmung:nachdenklich
+Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. #sprecher:mutter #stimmung:nachdenklich #brett:damengambit
 Wer nur die Figuren zählt, versteht das nie. #sprecher:mutter #stimmung:nachdenklich
 {hatKarteFaktorenwaage:
     Aber das weißt du ja längst. Du hast sogar die Karte dafür. #sprecher:mutter #stimmung:laechelt

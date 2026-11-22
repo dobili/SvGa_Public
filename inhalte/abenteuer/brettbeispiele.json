@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "beispiele": [
+    {
+      "kennung": "springergabel",
+      "konzept": "Gabel",
+      "buch": "7.2",
+      "fen": "8/8/5k2/3N4/1q6/8/8/7K b - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "d5",
+              "nach": "f6",
+              "farbe": "rot"
+            },
+            {
+              "von": "d5",
+              "nach": "b4",
+              "farbe": "rot"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "gabel",
+          "bild": 0,
+          "feld": "d5",
+          "ziele": ["f6", "b4"]
+        }
+      ]
+    },
+    {
+      "kennung": "springerfarbe",
+      "konzept": "Springer",
+      "fen": "4k3/8/8/8/4N3/8/8/4K3 w - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [],
+          "felder": [
+            {
+              "feld": "d6",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "f6",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "c5",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "g5",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "c3",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "g3",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "d2",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "f2",
+              "farbe": "gruen"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "springerfarbe",
+          "bild": 0,
+          "feld": "e4"
+        }
+      ]
+    },
+    {
+      "kennung": "bauerngabel",
+      "konzept": "Gabel",
+      "fen": "4k3/8/2n1b3/8/3P4/8/8/4K3 w - - 0 1",
+      "zuege": ["d5"],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "d4",
+              "nach": "d5",
+              "farbe": "gold"
+            }
+          ],
+          "felder": []
+        },
+        {
+          "nach": 1,
+          "pfeile": [
+            {
+              "von": "d5",
+              "nach": "c6",
+              "farbe": "rot"
+            },
+            {
+              "von": "d5",
+              "nach": "e6",
+              "farbe": "rot"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "gabel",
+          "bild": 1,
+          "feld": "d5",
+          "ziele": ["c6", "e6"]
+        }
+      ]
+    },
+    {
+      "kennung": "damengabel",
+      "konzept": "Doppelangriff",
+      "buch": "7.1",
+      "fen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "d5",
+              "nach": "g8",
+              "farbe": "rot"
+            },
+            {
+              "von": "d5",
+              "nach": "a8",
+              "farbe": "rot"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "gabel",
+          "bild": 0,
+          "feld": "d5",
+          "ziele": ["g8", "a8"]
+        }
+      ]
+    },
+    {
+      "kennung": "fesselung",
+      "konzept": "Fesselung",
+      "fen": "4k3/8/2n5/1B6/8/8/8/4K3 b - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "b5",
+              "nach": "e8",
+              "farbe": "rot"
+            }
+          ],
+          "felder": [
+            {
+              "feld": "c6",
+              "farbe": "gold"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "fesselung",
+          "bild": 0,
+          "feld": "c6",
+          "durch": "b5",
+          "an": "e8"
+        }
+      ]
+    },
+    {
+      "kennung": "turmspiess",
+      "konzept": "Spieß",
+      "buch": "7.6",
+      "fen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
+      "zuege": ["Rh1+"],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "h8",
+              "nach": "h1",
+              "farbe": "gold"
+            }
+          ],
+          "felder": []
+        },
+        {
+          "nach": 1,
+          "pfeile": [
+            {
+              "von": "h1",
+              "nach": "a1",
+              "farbe": "rot"
+            }
+          ],
+          "felder": [
+            {
+              "feld": "e1",
+              "farbe": "rot"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "spiess",
+          "bild": 1,
+          "feld": "h1",
+          "vorne": "e1",
+          "hinten": "a1"
+        }
+      ]
+    },
+    {
+      "kennung": "mamaspiess",
+      "konzept": "Spieß",
+      "fen": "6kb/8/8/8/3Q4/8/8/2R3K1 w - - 0 1",
+      "zuege": ["Rc3"],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "c1",
+              "nach": "c3",
+              "farbe": "gold"
+            }
+          ],
+          "felder": []
+        },
+        {
+          "nach": 1,
+          "pfeile": [],
+          "felder": [
+            {
+              "feld": "h8",
+              "farbe": "rot"
+            }
+          ]
+        },
+        {
+          "nach": 1,
+          "pfeile": [
+            {
+              "von": "h8",
+              "nach": "d4",
+              "farbe": "rot"
+            },
+            {
+              "von": "d4",
+              "nach": "c3",
+              "farbe": "rot"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "spiess",
+          "bild": 2,
+          "feld": "h8",
+          "vorne": "d4",
+          "hinten": "c3"
+        }
+      ]
+    },
+    {
+      "kennung": "opposition",
+      "konzept": "Opposition",
+      "fen": "8/8/4k3/8/4K3/8/4P3/8 b - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [],
+          "felder": [
+            {
+              "feld": "e5",
+              "farbe": "gold"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "opposition",
+          "bild": 0
+        }
+      ]
+    },
+    {
+      "kennung": "quadrat",
+      "konzept": "Quadratregel",
+      "buch": "8.35",
+      "fen": "8/8/8/6k1/1P6/8/8/7K w - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "b4",
+              "nach": "b8",
+              "farbe": "gold"
+            },
+            {
+              "von": "b4",
+              "nach": "f4",
+              "farbe": "grau"
+            },
+            {
+              "von": "f4",
+              "nach": "f8",
+              "farbe": "grau"
+            },
+            {
+              "von": "b8",
+              "nach": "f8",
+              "farbe": "grau"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "quadrat",
+          "bild": 0,
+          "bauer": "b4",
+          "koenig": "g5",
+          "faengt": false
+        }
+      ]
+    },
+    {
+      "kennung": "turmhinterfreibauer",
+      "konzept": "Freibauer",
+      "fen": "8/6k1/8/P7/8/8/6K1/R7 w - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "a1",
+              "nach": "a5",
+              "farbe": "gruen"
+            },
+            {
+              "von": "a5",
+              "nach": "a8",
+              "farbe": "gold"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "turm_hinter_freibauer",
+          "bild": 0,
+          "turm": "a1",
+          "bauer": "a5"
+        }
+      ]
+    },
+    {
+      "kennung": "anastasia",
+      "konzept": "Anastasia-Matt",
+      "buch": "7.37",
+      "fen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
+      "zuege": ["Qxh7+", "Kxh7", "Rh3#"],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "h5",
+              "nach": "h7",
+              "farbe": "gold"
+            },
+            {
+              "von": "d3",
+              "nach": "h3",
+              "farbe": "gold"
+            }
+          ],
+          "felder": [
+            {
+              "feld": "g6",
+              "farbe": "grau"
+            },
+            {
+              "feld": "g8",
+              "farbe": "grau"
+            }
+          ]
+        },
+        {
+          "nach": 3,
+          "pfeile": [
+            {
+              "von": "h3",
+              "nach": "h7",
+              "farbe": "rot"
+            }
+          ],
+          "felder": [
+            {
+              "feld": "g6",
+              "farbe": "grau"
+            },
+            {
+              "feld": "g8",
+              "farbe": "grau"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "matt",
+          "bild": 1
+        }
+      ]
+    },
+    {
+      "kennung": "zentrum",
+      "konzept": "Entwicklung",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [],
+          "felder": [
+            {
+              "feld": "d4",
+              "farbe": "gold"
+            },
+            {
+              "feld": "e4",
+              "farbe": "gold"
+            },
+            {
+              "feld": "d5",
+              "farbe": "gold"
+            },
+            {
+              "feld": "e5",
+              "farbe": "gold"
+            },
+            {
+              "feld": "f3",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "c4",
+              "farbe": "gruen"
+            },
+            {
+              "feld": "g1",
+              "farbe": "blau"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "aus_grundstellung",
+          "zuege": ["e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5", "O-O"]
+        }
+      ]
+    },
+    {
+      "kennung": "damengambit",
+      "konzept": "Gambit",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "zuege": ["d4", "d5", "c4"],
+      "bilder": [
+        {
+          "nach": 3,
+          "pfeile": [
+            {
+              "von": "c4",
+              "nach": "d5",
+              "farbe": "gold"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "legal"
+        }
+      ]
+    },
+    {
+      "kennung": "schach960",
+      "konzept": "Grundreihe",
+      "fen": "bqnbrkrn/pppppppp/8/8/8/8/PPPPPPPP/BQNBRKRN w KQkq - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [],
+          "felder": [
+            {
+              "feld": "e1",
+              "farbe": "gold"
+            },
+            {
+              "feld": "f1",
+              "farbe": "blau"
+            },
+            {
+              "feld": "g1",
+              "farbe": "gold"
+            }
+          ]
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "start960"
+        }
+      ]
+    },
+    {
+      "kennung": "angreiferzaehlen",
+      "konzept": "Königssicherheit",
+      "fen": "6k1/5ppp/5n2/6N1/8/3Q3R/5PPP/6K1 w - - 0 1",
+      "zuege": [],
+      "bilder": [
+        {
+          "nach": 0,
+          "pfeile": [
+            {
+              "von": "d3",
+              "nach": "h7",
+              "farbe": "rot"
+            },
+            {
+              "von": "g5",
+              "nach": "h7",
+              "farbe": "rot"
+            },
+            {
+              "von": "h3",
+              "nach": "h7",
+              "farbe": "rot"
+            },
+            {
+              "von": "f6",
+              "nach": "h7",
+              "farbe": "blau"
+            },
+            {
+              "von": "g8",
+              "nach": "h7",
+              "farbe": "blau"
+            }
+          ],
+          "felder": []
+        }
+      ],
+      "pruefung": [
+        {
+          "art": "zaehlen",
+          "bild": 0,
+          "feld": "h7",
+          "angreifer": 3,
+          "verteidiger": 2
+        }
+      ]
+    }
+  ]
+}

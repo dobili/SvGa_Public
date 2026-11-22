@@ -224,9 +224,9 @@ Ich war siebzehn. Ich war gut, weißt du. #sprecher:mutter #stimmung:erzaehlt
 Ich sage das nicht, um anzugeben. #sprecher:mutter #stimmung:erzaehlt
 Im Finale stand ich auf Gewinn. Joe stand hinten an der Wand und hat sich nicht getraut zu atmen. #sprecher:mutter #stimmung:nachdenklich
 Zug dreiunddreißig. Ich sehe nur meinen Angriff. #sprecher:mutter #stimmung:nachdenklich
-Ich ziehe den Turm vor, hinter meine Dame, auf dieselbe Schräge. #sprecher:mutter #stimmung:nachdenklich
-Und ganz hinten, am anderen Ende des Brettes, steht sein Läufer und sieht die Schräge entlang. Seit zwanzig Zügen. #sprecher:mutter #stimmung:nachdenklich
-Die Dame muss weg, und der Turm dahinter fällt. Ein Spieß. #sprecher:mutter #stimmung:bitter
+Ich ziehe den Turm vor, hinter meine Dame, auf dieselbe Schräge. #sprecher:mutter #stimmung:nachdenklich #brett:mamaspiess
+Und ganz hinten, am anderen Ende des Brettes, steht sein Läufer und sieht die Schräge entlang. Seit zwanzig Zügen. #sprecher:mutter #stimmung:nachdenklich #brett:mamaspiess.1
+Die Dame muss weg, und der Turm dahinter fällt. Ein Spieß. #sprecher:mutter #stimmung:bitter #brett:mamaspiess.2
 Das Einfachste, was es gibt. #sprecher:mutter #stimmung:bitter
 Ich hab den Läufer nicht gesehen. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #stimmung:bitter #musik:mama #pause:2
 „Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!“ Sie hat es mit dreizehn ins blaue Heft geschrieben. #sprecher:erzaehler

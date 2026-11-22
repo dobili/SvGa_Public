@@ -96,6 +96,7 @@
   "oberwelt.nochNichtGebaut": "Das gibt es im Prototyp noch nicht.",
   "dialog.weiter": "Weiter",
   "dialog.titel": "Gespräch",
+  "dialog.brettbeispiel": "Brett mit einem Beispiel: {konzept}",
   "ergebnis.sieg": "Gewonnen gegen {gegner}!",
   "ergebnis.remis": "Remis gegen {gegner}.",
   "ergebnis.niederlage": "Verloren gegen {gegner}.",

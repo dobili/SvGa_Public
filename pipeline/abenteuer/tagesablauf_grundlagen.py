@@ -15,18 +15,35 @@ from pipeline.abenteuer.sitzplatz import K, ist_sitzmoebel
 
 PROMPTS = INHALTE.parents[1] / "docs" / "spiel" / "25_Figurenprompts.md"
 EIGENE_ZEIT = ("erinnerung",)  # Orte mit eigener Zeit (Erinnerungen)
+# Innenräume, in denen man nachts sitzt (Wunsch des Hauptchats, 22.11.2026: Diner, Kantine, Wohnzimmer)
+NACHTKARTEN = {
+    "diner",
+    "kantine",
+    "wohnzimmer",
+    "gasthaus",
+    "saloon",
+    "raststaette",
+    "bahnhofshalle",
+    "hinterzimmer",
+    "ubahnhof",
+    "mamasZimmer",
+    "wohnwagen",
+}
+LATERNENNAEHE = 2  # Felder
 
 
 def rollen() -> dict[str, dict]:
-    """Kennung → Rolle und Größe aus docs/spiel/25_Figurenprompts.md."""
+    """Kennung → Rolle, Größe (Kind oder jugendlich) und Alter aus docs/spiel/25_Figurenprompts.md."""
     text = PROMPTS.read_text(encoding="utf-8")
     ergebnis = {}
     for kennung, block in re.findall(r"### `([^`]+)` – [^\n]+\n(.*?)(?=\n### |\n## |\Z)", text, re.S):
         rolle = re.search(r"\*\*Rolle:\*\* ([^\n]+)", block)
         groesse = re.search(r"\*\*Größe:\*\* ([^\n]+)", block)
+        alter = re.search(r"\b(\d{1,2})[- ]?(?:Jahre|jährig|year)", block)
         ergebnis[kennung] = {
             "rolle": rolle.group(1).strip() if rolle else "",
             "kind": bool(groesse and "Kind" in groesse.group(1)),
+            "alter": int(alter.group(1)) if alter else None,
         }
     return ergebnis
 
@@ -157,4 +174,22 @@ def umgebung_des_orts(ort: dict, karten: dict, katalog: dict, ausgeschlossen: se
             if nah(f, frei) and (k["kennung"], f) not in ausgeschlossen
         ]
         liegen += [(k["kennung"], f) for f in betten(szene, katalog) if nah(f, frei)]
-    return {"sitze": sitze, "betten": liegen}
+    nachts = [
+        s
+        for s in sitze
+        if s[0].split(".")[1] in NACHTKARTEN
+        or (karten[s[0]].get("art") == "aussen" and unter_laterne(karten[s[0]], s[1]))
+    ]
+    return {"sitze": sitze, "betten": liegen, "nachtsitze": nachts}
+
+
+def unter_laterne(szene: dict, feld: tuple[int, int]) -> bool:
+    """Steht eine Laterne höchstens zwei Felder neben dem Sitz? Beispiel: Bank am Uferweg im Park.
+    Nur draußen: Eine Stehlampe im Zimmer des Helden ist keine Straßenlaterne."""
+    return any(
+        re.search(r"[Ll]atern|[Ll]amp", o["moebel"])
+        and o.get("feld")
+        and abs(o["feld"][0] - feld[0]) <= LATERNENNAEHE
+        and abs(o["feld"][1] - feld[1]) <= LATERNENNAEHE
+        for o in szene.get("objekte", [])
+    )

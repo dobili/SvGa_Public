@@ -12,7 +12,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from pipeline.abenteuer.tagesablauf import figuren_je_ort, lade, schlafende, stundenplan
-from pipeline.abenteuer.tagesablauf_entwurf import STUNDEN
+from pipeline.abenteuer.tagesablauf_entwurf import STUNDEN, grenze
 from pipeline.abenteuer.tagesablauf_grundlagen import rollen
 
 TAGESZEITEN = (("Morgen", 7), ("Tag", 12), ("Abend", 19), ("Nacht", 0))  # je eine Stunde als Stichprobe
@@ -33,8 +33,9 @@ KOPF = (
 
 def zelle(block: dict) -> str:
     """Ort und Tätigkeit eines Blocks, kurz. Beispiel: „Park (3, 12), sitzt“, „schläft (unsichtbar)“."""
-    if block["art"] == "schlaf" and not block.get("karte"):
-        return "<span class='schlaf'>schläft (unsichtbar)</span>"
+    if not block.get("karte"):
+        text = "zu Hause (unsichtbar)" if block["art"] == "zuhause" else "schläft (unsichtbar)"
+        return f"<span class='schlaf'>{text}</span>"
     ort = f"{block['karte'].split('.')[1]} ({block['feld'][0]}, {block['feld'][1]})"
     tut = {"liegt": "schläft im Bett"}.get(block.get("tut", ""), block.get("tut", "steht"))
     return f"{html.escape(block['art'])}: {html.escape(ort)}, {html.escape(tut)}"
@@ -46,6 +47,10 @@ def alle_rollen() -> dict:
     return rollen()
 
 
+LEGENDE = (
+    "Wache Figuren je Stunde (rot: mehr als erlaubt schläft; 0 bis 4 Uhr die Hälfte, sonst ein "
+    "Drittel; Kinder sind 21 bis 7 Uhr zu Hause und zählen nicht als Schlafende)"
+)
 GRUENDE = {"geist": "Geist", "roboter": "Roboter", "dienst": "Dienst für den Spieler"}
 
 
@@ -61,6 +66,8 @@ def tabelle(ort: str, daten: dict) -> str:
         rest = (
             f"{schlaf['von']}–{schlaf['bis']} Uhr"
             if schlaf
+            else "Kind: 21–7 Uhr zu Hause"
+            if e.get("kind")
             else f"<span class='ohne'>ohne ({html.escape(GRUENDE.get(e['ohne_schlaf'], ''))})</span>"
         )
         zellen = "".join(f"<td>{zelle(plan[h])}</td>" for _, h in TAGESZEITEN)
@@ -76,7 +83,7 @@ def balken(ort: str, daten: dict, last: list[int]) -> str:
     teile = []
     for h in range(STUNDEN):
         wach = gesamt - last[h]
-        klasse = " class='knapp'" if last[h] * 3 > gesamt else ""
+        klasse = " class='knapp'" if last[h] > grenze(h, gesamt) else ""
         teile.append(
             f"<div{klasse} style='height:{100 * wach / max(gesamt, 1):.0f}%' "
             f"title='{h} Uhr: {wach} von {gesamt} wach'></div>"
@@ -101,7 +108,7 @@ def schreibe(ziel: Path = STANDARD) -> Path:
     for ort in orte:
         teile.append(
             f"<div class='ort'><h2>{html.escape(ort)}</h2>{balken(ort, daten, last[ort])}"
-            f"<div class='klein'>Wache Figuren je Stunde (rot: mehr als ein Drittel schläft)</div>"
+            f"<div class='klein'>{LEGENDE}</div>"
             f"{tabelle(ort, daten)}</div>"
         )
     teile.append("</body></html>")

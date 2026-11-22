@@ -6,7 +6,8 @@ keine Geisterstadt in der Nacht, keine Questfigur, die schläft, wenn man sie br
 
 Geprüft je Figur und Stunde (die App stellt die Figuren beim Kartenwechsel nach der Uhr auf):
 
-1. Form: Die Blöcke decken jede Stunde genau einmal; Schlaf genau drei Stunden (ohne Schlaf: keiner).
+1. Form: Die Blöcke decken jede Stunde genau einmal; Schlaf genau drei Stunden (ohne Schlaf und
+   Kinder: keiner).
 2. Platz: Karte bekannt; stehend (oder am Boden sitzend) auf einem begehbaren, vom Start
    erreichbaren Feld, hinter einer Theke nur auf dem eigenen Platz der Szene; sitzend auf einem
    echten Sitzmöbel, liegend auf einem Bett, beides mit erreichbarem Nachbarfeld.
@@ -14,8 +15,10 @@ Geprüft je Figur und Stunde (die App stellt die Figuren beim Kartenwechsel nach
    stehenden Statisten).
 4. Keine Figur sperrt einen Weg: Jede Aufstellung einer Karte wird wie die Szene selbst mit
    figurensperre.py geprüft; neue Befunde gegenüber der Szene zählen.
-5. Höchstens ein Drittel der Figuren eines Orts schläft gleichzeitig (Orte mit weniger als sechs
-   Figuren: höchstens eine; mehr nennt der Entwurf als Hinweis und hier als Befund).
+5. Höchstens ein Drittel der Figuren eines Orts schläft gleichzeitig, von 0 bis 4 Uhr die Hälfte
+   (Orte unter sechs Figuren außerhalb der tiefen Nacht: eine). Kinder sind von 21 bis 7 Uhr zu Hause
+   (Block „zuhause“, unsichtbar): Sie zählen zum Ort, aber nicht als Schlafende (Entscheidung des
+   Hauptchats, 22.11.2026). Wege zwischen den Städten sind ausgenommen (keine Geisterstadt möglich).
 6. Jede Questfigur hat einen Questort im Ablauf, folgt der Geschichte oder steht mit
    ``festhalten: regel1`` in den Daten (die App hält sie dann für den offenen Schritt fest).
    Damit bleiben pfeilziel.cjs und questverfehlen.py ohne Funde, auch mit Uhr: Regel 1 lässt den
@@ -37,14 +40,15 @@ from pipeline.abenteuer.sitzplatz import K, ist_sitzmoebel
 from pipeline.abenteuer.tagesablauf_entwurf import (
     SCHLAFDAUER,
     STUNDEN,
+    grenze,
     personennamen,
     rollen,
-    schlafplaetze_im_ort,
     stunden,
 )
 from pipeline.abenteuer.uebergaenge import szenen
 
 DATEI = INHALTE / "tagesablaeufe.json"
+WEGE = "weg"  # Orte zwischen den Städten (wegMapleCedar …)
 
 
 def lade() -> dict:
@@ -72,7 +76,7 @@ def pruefe_form(name: str, eintrag: dict) -> list[str]:
     befunde = [f"{name}: Stunde {h} {n}-mal belegt" for h, n in sorted(zaehler.items()) if n != 1]
     befunde += [f"{name}: Stunde {h} fehlt" for h in range(STUNDEN) if h not in zaehler]
     schlaf = sum(len(stunden(b["von"], b["bis"])) for b in eintrag["bloecke"] if b["art"] == "schlaf")
-    soll = 0 if eintrag.get("ohne_schlaf") else SCHLAFDAUER
+    soll = 0 if eintrag.get("ohne_schlaf") or eintrag.get("kind") else SCHLAFDAUER
     if schlaf != soll:
         befunde.append(f"{name}: {schlaf} Stunden Schlaf statt {soll}")
     return befunde
@@ -208,7 +212,8 @@ def schlafende(daten: dict) -> dict[str, list[int]]:
 
 
 def figuren_je_ort(daten: dict) -> dict[str, int]:
-    """Ort → Zahl der Figuren (mit Ablauf, ohne Schlaf und die der Geschichte folgen)."""
+    """Ort → Zahl der Figuren (mit Ablauf, ohne Schlaf, Kinder und die der Geschichte folgen).
+    Kinder gehören zum Ort, ihr Abend zu Hause zählt aber nicht als Schlaf."""
     zahl: dict[str, int] = defaultdict(int)
     for e in daten.values():
         for ort in [e["ort"]] if "ort" in e else e.get("orte", []):
@@ -221,10 +226,13 @@ def pruefe_drittel(daten: dict) -> list[str]:
     zahl = figuren_je_ort(daten)
     befunde = []
     for ort, last in sorted(schlafende(daten).items()):
-        grenze = schlafplaetze_im_ort(zahl[ort])
+        if ort.startswith(WEGE):
+            continue  # Wege sind keine Städte: Dort droht keine Geisterstadt (Regel des Hauptchats)
         for h, n in enumerate(last):
-            if n > grenze:
-                befunde.append(f"{ort} {h} Uhr: {n} von {zahl[ort]} schlafen (höchstens {grenze})")
+            if n > grenze(h, zahl[ort]):
+                befunde.append(
+                    f"{ort} {h} Uhr: {n} von {zahl[ort]} schlafen (höchstens {grenze(h, zahl[ort])})"
+                )
     return befunde
 
 

@@ -41,18 +41,28 @@ ZIEL = INHALTE / "tagesablaeufe.json"
 PROMPTS = INHALTE.parents[1] / "docs" / "spiel" / "25_Figurenprompts.md"
 STUNDEN = 24
 WEG_VON_DER_ARBEIT = 6  # so weit (Felder) liegt der Feierabend mindestens vom Arbeitsplatz
-ZUHAUSE = {"mapleFalls.wohnzimmer", "ironwood.mamasZimmer", "riverton.wohnwagen"}  # Wohnungen
+ZUHAUSE = {  # Wohnungen: nur für ihre Bewohner Feierabend- und Nachtplatz
+    "mapleFalls.wohnzimmer",
+    "mapleFalls.zimmer",
+    "mapleFalls.dachboden",
+    "ironwood.mamasZimmer",
+    "riverton.wohnwagen",
+}
 KARTENART: dict[str, str] = {}  # Karte → „aussen“ oder „innen“ (aus den Szenen, in bauen gefüllt)
 KLEINER_ORT = 6  # darunter darf höchstens eine Figur zugleich schlafen
 SCHLAFDAUER = 3
 ARBEITSDAUER = 8
-SCHLAFBEGINN = (23, 0, 22, 1, 2)  # Wunschfenster 22 bis 2 Uhr, bevorzugt um Mitternacht
-SCHLAFBEGINN_KIND = (22, 23, 0, 1, 2)  # Kinder lieber früh
-SCHLAFBEGINN_NOT = (21, 3, 20, 4, 19, 5)  # nur wenn das Drittel sonst nicht reicht
+SCHLAFBEGINN = (23, 0, 22, 1, 2)  # Fenster 22 bis 2 Uhr (Entscheidung des Hauptchats, 22.11.2026)
+SCHLAFBEGINN_JUGEND = (22, 23)  # Jugendliche (Sam, Skater-Jo) früh
+KIND_BIS = 13  # bis zu diesem Alter: nachts zu Hause (unsichtbar), kein Schlaf im Sinn der Achtel-Regel
+ZUHAUSE_VON, ZUHAUSE_BIS = 21, 7
+NACHT_VON, NACHT_BIS = 21, 6  # wer in dieser Zeit wach ist, sitzt drinnen oder unter einer Laterne
+TIEFE_NACHT = range(0, 4)  # 0 bis 4 Uhr: höchstens die Hälfte schläft, sonst ein Drittel
+DIENST_NAMEN = {"mags"}  # Mags hält das Diner nachts offen, Earl schläft (Hauptchat, 22.11.2026)
 ARBEITSBEGINN = (8, 9, 10)
 EIGENE_ZEIT = ("erinnerung",)  # Orte mit eigener Zeit (Erinnerungen)
 DIENST = re.compile(
-    r"Kiosk|Zeitungsstand|Eisenwaren|Food-Truck|Gebäckstand|Antiquariat|Raststätte|Diner|Koch|Wirt"
+    r"Kiosk|Zeitungsstand|Eisenwaren|Food-Truck|Gebäckstand|Antiquariat|Raststätte|Koch|Wirt"
     r"|Fähr|Kapitän|Schaffner|Turnierleit|Roboter|[Ww]ärter|Motel|Tankwart|Leuchtturm|Hofladen"
     r"|Bus nach|Lastkahn|Kellner|Gastgeberin|Seilbahn|Ranger"
 )
@@ -103,14 +113,28 @@ class Belegung:
         self.felder[(karte, feld)] |= set(zeit)
 
 
-def schlafbeginn(ort: str, platz: int, belegung: Belegung, kind: bool = False) -> tuple[int, bool]:
-    """Erster Beginn im Wunschfenster, bei dem höchstens ``platz`` gleichzeitig schlafen; sonst der
-    am wenigsten belegte (zweiter Wert True: über dem Drittel)."""
+def grenze(stunde: int, anzahl: int) -> int:
+    """Wie viele Figuren eines Orts zugleich schlafen dürfen (Entscheidung des Hauptchats,
+    22.11.2026): von 0 bis 4 Uhr die Hälfte, sonst ein Drittel; in Orten unter sechs Figuren
+    außerhalb der tiefen Nacht eine. Kinder zu Hause zählen nicht mit."""
+    if stunde in TIEFE_NACHT:
+        return max(1, anzahl // 2)
+    return max(1, anzahl // 3) if anzahl >= KLEINER_ORT else 1
+
+
+def schlafbeginn(ort: str, anzahl: int, belegung: Belegung, jugend: bool = False) -> tuple[int, bool]:
+    """Beginn im Fenster, bei dem die Grenze in jeder Schlafstunde hält (der mit dem meisten
+    Spielraum); sonst der am wenigsten belegte (zweiter Wert True: über der Grenze, die Prüfung
+    meldet das, außer auf Wegen)."""
     last = belegung.schlaf[ort]
-    for beginn in (SCHLAFBEGINN_KIND if kind else SCHLAFBEGINN) + SCHLAFBEGINN_NOT:
-        if all(last[h] < platz for h in stunden(beginn, beginn + SCHLAFDAUER)):
-            return beginn, False
-    beginn = min(SCHLAFBEGINN, key=lambda b: max(last[h] for h in stunden(b, b + SCHLAFDAUER)))
+    fenster = SCHLAFBEGINN_JUGEND if jugend else SCHLAFBEGINN
+    # Der Beginn mit dem meisten Spielraum (gleich viel: die Reihenfolge des Fensters)
+    passend = [b for b in fenster if all(last[h] < grenze(h, anzahl) for h in stunden(b, b + SCHLAFDAUER))]
+    if passend:
+        return max(
+            passend, key=lambda b: min(grenze(h, anzahl) - last[h] for h in stunden(b, b + SCHLAFDAUER))
+        ), False
+    beginn = min(fenster, key=lambda b: max(last[h] - grenze(h, anzahl) for h in stunden(b, b + SCHLAFDAUER)))
     return beginn, True
 
 
@@ -150,52 +174,96 @@ def block(art: str, von: int, bis: int, karte: str | None = None, feld=None, tut
     return b
 
 
-def ablauf(person: str, info: dict, ort: str, rolle: dict, umgebung: dict, belegung: Belegung) -> dict:
-    """Ablauf einer Person in ihrem Heimatort (siehe Dateikopf)."""
-    eigene = [p for p in info["plaetze"] if p["karte"].startswith(ort + ".")]
-    basis = next((p for p in eigene if not p["wenn"]), eigene[0])
-    tut = ("sitzt" if basis["sitzt"] == "moebel" else "sitzt am Boden") if basis["sitzt"] else "steht"
-    eintrag = {"ort": ort, "kind": rolle.get("kind", False)}
-    if info["geist"] or "roboter" in person or DIENST.search(rolle.get("rolle", "")):
-        grund = "geist" if info["geist"] else "roboter" if "roboter" in person else "dienst"
-        belegung.setze(basis["karte"], tuple(basis["feld"]), list(range(STUNDEN)))
-        return eintrag | {
-            "ohne_schlaf": grund,
-            "bloecke": [block("arbeit", 0, 0, basis["karte"], basis["feld"], tut)],
-        }
-    schlaf, ueber = schlafbeginn(ort, umgebung["platz"], belegung, rolle.get("kind", False))
+def ist_kind(rolle: dict) -> bool:
+    """Kind bis 13 (Alter aus Dokument 25); Jugendliche wie Sam (15) zählen als Erwachsene."""
+    return bool(rolle.get("kind")) and (rolle.get("alter") or KIND_BIS + 1) <= KIND_BIS
+
+
+def ohne_schlaf(person: str, info: dict, rolle: dict) -> str | None:
+    """Grund, warum jemand nie schläft (Geist, Roboter, Dienst für den Spieler), sonst None."""
+    if info["geist"]:
+        return "geist"
+    if "roboter" in person:
+        return "roboter"
+    if person in DIENST_NAMEN or DIENST.search(rolle.get("rolle", "")):
+        return "dienst"
+    return None
+
+
+def setze(
+    belegung: Belegung, bloecke: list, art: str, von: int, bis: int, platz: tuple | None, tut: str
+) -> None:
+    """Block anhängen und den Platz für seine Stunden belegen (leere Blöcke fallen weg)."""
+    if von % STUNDEN == bis % STUNDEN:
+        return
+    if platz:
+        belegung.setze(platz[0], tuple(platz[1]), stunden(von, bis))
+    bloecke.append(block(art, von, bis, *(platz or (None, None)), tut if platz else None))
+
+
+def ablauf_kind(basis: dict, tut: str, umgebung: dict, belegung: Belegung, person: str) -> list:
+    """Kinder: morgens und tagsüber am Platz, nachmittags draußen auf einer Bank, 21 bis 7 zu Hause."""
+    ende = streu(person, ARBEITSBEGINN) + ARBEITSDAUER
+    platz = (basis["karte"], basis["feld"])
+    frei = freizeitplatz({}, basis, stunden(ende, ZUHAUSE_VON), umgebung["sitze"], belegung)
+    bloecke: list = []
+    setze(belegung, bloecke, "arbeit", ZUHAUSE_BIS, ende, platz, tut)
+    setze(belegung, bloecke, "freizeit", ende, ZUHAUSE_VON, frei or platz, "sitzt" if frei else tut)
+    bloecke.append(block("zuhause", ZUHAUSE_VON, ZUHAUSE_BIS))
+    return bloecke
+
+
+def ablauf_erwachsen(
+    person: str, basis: dict, tut: str, ort: str, umgebung: dict, belegung: Belegung, jugend: bool
+):
+    """Erwachsene und Jugendliche: Morgen, Arbeit, Abend draußen, Nacht drinnen, drei Stunden Schlaf."""
+    schlaf, ueber = schlafbeginn(ort, umgebung["anzahl"], belegung, jugend)
     for h in stunden(schlaf, schlaf + SCHLAFDAUER):
         belegung.schlaf[ort][h] += 1
     wach = (schlaf + SCHLAFDAUER) % STUNDEN
     arbeit = streu(person, ARBEITSBEGINN)
     ende = arbeit + ARBEITSDAUER
-    frei = freizeitplatz(info, basis, stunden(ende, schlaf), umgebung["sitze"], belegung)
-    belegung.setze(basis["karte"], tuple(basis["feld"]), stunden(wach, ende))
-    bloecke = [block("arbeit", arbeit, ende, basis["karte"], basis["feld"], tut)]
-    if wach != arbeit:  # Schläft die Figur bis zum Arbeitsbeginn, gibt es keinen Morgen
-        bloecke.insert(0, block("freizeit", wach, arbeit, basis["karte"], basis["feld"], tut))
-    if frei:
-        belegung.setze(frei[0], tuple(frei[1]), stunden(ende, schlaf))
-        bloecke.append(block("freizeit", ende, schlaf, frei[0], frei[1], "sitzt"))
-    elif ende % STUNDEN != schlaf:
-        belegung.setze(basis["karte"], tuple(basis["feld"]), stunden(ende, schlaf))
-        bloecke.append(block("freizeit", ende, schlaf, basis["karte"], basis["feld"], tut))
+    platz = (basis["karte"], basis["feld"])
+    frei = freizeitplatz({}, basis, stunden(ende, NACHT_VON), umgebung["sitze"], belegung)
+    nacht_zeit = stunden(NACHT_VON, schlaf) + stunden(wach, NACHT_BIS)
+    # Eine Wohnung ist nur für ihre Bewohner ein Nachtplatz (Sam nicht im Wohnzimmer des Helden).
+    nachtsitze = [s for s in umgebung["nachtsitze"] if s[0] not in ZUHAUSE or s[0] == basis["karte"]]
+    nacht = freizeitplatz({}, basis, nacht_zeit, nachtsitze, belegung) or frei
+    bloecke: list = []
+    setze(belegung, bloecke, "freizeit", NACHT_BIS, arbeit, platz, tut)
+    setze(belegung, bloecke, "arbeit", arbeit, ende, platz, tut)
+    setze(belegung, bloecke, "freizeit", ende, NACHT_VON, frei or platz, "sitzt" if frei else tut)
+    setze(belegung, bloecke, "nacht", NACHT_VON, schlaf, nacht or platz, "sitzt" if nacht else tut)
     bett = next((b for b in umgebung["betten"] if belegung.frei(*b, list(range(STUNDEN)))), None)
-    if bett and any(p["karte"] == bett[0] for p in eigene):
+    if bett and bett[0] == basis["karte"]:
         belegung.setze(*bett, list(range(STUNDEN)))  # ein Bett gehört einer Person
         bloecke.append(block("schlaf", schlaf, wach, bett[0], bett[1], "liegt"))
     else:
         bloecke.append(block("schlaf", schlaf, wach))
+    setze(belegung, bloecke, "nacht", wach, NACHT_BIS, nacht or platz, "sitzt" if nacht else tut)
+    return bloecke, ueber
+
+
+def ablauf(person: str, info: dict, ort: str, rolle: dict, umgebung: dict, belegung: Belegung) -> dict:
+    """Ablauf einer Person in ihrem Heimatort (siehe Dateikopf)."""
+    eigene = [p for p in info["plaetze"] if p["karte"].startswith(ort + ".")]
+    basis = next((p for p in eigene if not p["wenn"]), eigene[0])
+    tut = ("sitzt" if basis["sitzt"] == "moebel" else "sitzt am Boden") if basis["sitzt"] else "steht"
+    kind = ist_kind(rolle)
+    eintrag = {"ort": ort, "kind": kind}
+    grund = ohne_schlaf(person, info, rolle)
+    if grund:
+        belegung.setze(basis["karte"], tuple(basis["feld"]), list(range(STUNDEN)))
+        return eintrag | {
+            "ohne_schlaf": grund,
+            "bloecke": [block("arbeit", 0, 0, basis["karte"], basis["feld"], tut)],
+        }
+    if kind:
+        return eintrag | {"bloecke": ablauf_kind(basis, tut, umgebung, belegung, person)}
+    bloecke, ueber = ablauf_erwachsen(person, basis, tut, ort, umgebung, belegung, bool(rolle.get("kind")))
     if ueber:
-        eintrag["hinweis"] = "ueber_drittel"  # zu wenige Figuren im Ort
-    elif schlaf not in SCHLAFBEGINN:
-        eintrag["hinweis"] = "schlaf_verschoben"  # außerhalb 22 bis 2, damit höchstens ein Drittel schläft
+        eintrag["hinweis"] = "ueber_grenze"
     return eintrag | {"bloecke": bloecke}
-
-
-def schlafplaetze_im_ort(anzahl: int) -> int:
-    """Wie viele zugleich schlafen dürfen: ein Drittel, in Orten unter sechs Figuren eine."""
-    return max(1, anzahl // 3) if anzahl >= KLEINER_ORT else 1
 
 
 def bauen(ausgeschlossen: set | None = None) -> dict:
@@ -212,11 +280,13 @@ def bauen(ausgeschlossen: set | None = None) -> dict:
         if not heimisch:
             continue
         umgebung = umgebung_des_orts(ort, karten, katalog, ausgeschlossen or set())
+        # Kinder gehören zum Ort (sie zählen im Nenner), schlafen aber nicht im Sinn der Grenze.
         anzahl = len(heimisch) + sum(
             1 for i in infos.values() if heimatort(i) is None and ort["kennung"] in i["orte"]
         )
-        umgebung["platz"] = schlafplaetze_im_ort(anzahl)
-        for person in heimisch:
+        umgebung["anzahl"] = anzahl
+        # Jugendliche zuerst: Ihr Schlaffenster (22 oder 23 Uhr) ist am engsten.
+        for person in sorted(heimisch, key=lambda p: not alle_rollen.get(p, {}).get("kind")):
             figuren[person] = ablauf(
                 person, infos[person], ort["kennung"], alle_rollen.get(person, {}), umgebung, belegung
             )
@@ -242,17 +312,19 @@ ERKLAERUNG = (
     "Tagesabläufe der benannten Figuren (Wunsch des Autors, 22.11.2026; Entwurf aus "
     "pipeline/abenteuer/tagesablauf_entwurf.py, Prüfung pipeline/abenteuer/tagesablauf.py). Stunden "
     "der Spieluhr 0 bis 23 (Morgen 6–9, Tag 9–18, Abend 18–21, Nacht 21–6). bloecke: art (arbeit, "
-    "freizeit, schlaf), von, bis (bis ausschließlich, über Mitternacht möglich, 0 bis 0 heißt den "
-    "ganzen Tag), karte und feld, tut (steht, sitzt, liegt). Schlaf ohne Karte: unsichtbar, ohne "
-    "Kollision, nicht ansprechbar. ohne_schlaf: geist, roboter, dienst (für den Spieler). "
-    "hinweis: schlaf_verschoben (außerhalb 22 bis 2), ueber_drittel. "
-    "folgt_geschichte: Figur in mehreren Orten ohne Heimat, steht immer, wo die Szene sie hinstellt. "
-    "Regel 1: Ein offener Questschritt hält seine Figur wach an ihrem Questort (questorte; festhalten"
-    " = regel1, wo der Ablauf sie sonst woanders hätte). Wechsel nur beim Kartenwechsel."
+    "freizeit, nacht, schlaf, zuhause), von, bis (bis ausschließlich, über Mitternacht möglich, 0 bis"
+    " 0 heißt den ganzen Tag), karte und feld, tut (steht, sitzt, sitzt am Boden, liegt). Ohne Karte "
+    "unsichtbar, ohne Kollision, nicht ansprechbar: schlaf (drei Stunden, Beginn 22 bis 2 Uhr) und "
+    "zuhause (Kinder bis 13, 21 bis 7 Uhr). nacht: wach zwischen 21 und 6 Uhr, drinnen (Diner, "
+    "Kantine, eigene Wohnung) oder unter einer Laterne. ohne_schlaf: geist, roboter, dienst (für den "
+    "Spieler). hinweis: ueber_grenze (Wege, zu wenige Figuren). folgt_geschichte: Figur in mehreren "
+    "Orten ohne Heimat, steht immer, wo die Szene sie hinstellt. Regel 1: Ein offener Questschritt "
+    "hält seine Figur wach an ihrem Questort (questorte; festhalten = regel1, wo der Ablauf sie sonst"
+    " woanders hätte). Wechsel nur beim Kartenwechsel."
 )
 
 
-RUNDEN = 6  # so oft wird neu gebaut, wenn Sitzende einen Weg sperren
+RUNDEN = 15  # so oft wird neu gebaut, wenn Sitzende einen Weg sperren
 
 
 def sperrende_sitze(daten: dict) -> set:
@@ -269,7 +341,7 @@ def sperrende_sitze(daten: dict) -> set:
         karte, h = m.group(1), int(m.group(2))
         for plan in plaene.values():
             b = plan[h]
-            if b.get("karte") == karte and b["art"] == "freizeit" and b.get("tut") == "sitzt":
+            if b.get("karte") == karte and b["art"] in ("freizeit", "nacht") and b.get("tut") == "sitzt":
                 sitze.add((karte, tuple(b["feld"])))
     return sitze
 

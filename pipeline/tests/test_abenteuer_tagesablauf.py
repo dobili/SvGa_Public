@@ -6,7 +6,7 @@ Der erste Test prüft die echten Daten, die übrigen die Regeln an kleinen Beisp
 """
 
 from pipeline.abenteuer import tagesablauf as ta
-from pipeline.abenteuer.tagesablauf_entwurf import schlafplaetze_im_ort, stunden
+from pipeline.abenteuer.tagesablauf_entwurf import grenze, stunden
 
 
 def test_tagesablaeufe_ohne_befund():
@@ -36,9 +36,11 @@ def test_form_findet_luecken_und_falschen_schlaf():
 
 
 def test_drittel_und_kleine_orte():
-    """Ein Drittel schläft höchstens; in Orten unter sechs Figuren nur eine."""
-    assert schlafplaetze_im_ort(12) == 4
-    assert schlafplaetze_im_ort(5) == 1
+    """Ein Drittel schläft höchstens, von 0 bis 4 Uhr die Hälfte; kleine Orte abends nur eine."""
+    assert grenze(23, 12) == 4
+    assert grenze(1, 12) == 6
+    assert grenze(23, 5) == 1
+    assert grenze(2, 5) == 2
     daten = {
         n: {
             "ort": "dorf",
@@ -47,6 +49,20 @@ def test_drittel_und_kleine_orte():
         for n in ("a", "b")
     }
     assert ta.pruefe_drittel(daten)
+
+
+def test_kind_ohne_schlaf_aber_zu_hause():
+    """Ein Kind hat keinen Schlafblock, sondern ist von 21 bis 7 Uhr zu Hause."""
+    kind = {
+        "ort": "x",
+        "kind": True,
+        "bloecke": [
+            {"art": "arbeit", "von": 7, "bis": 16},
+            {"art": "freizeit", "von": 16, "bis": 21},
+            {"art": "zuhause", "von": 21, "bis": 7},
+        ],
+    }
+    assert ta.pruefe_form("lily", kind) == []
 
 
 def test_questfigur_braucht_ort_oder_festhalten():

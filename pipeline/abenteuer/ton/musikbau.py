@@ -192,16 +192,42 @@ def kodiere(ton, ziel: Path, mono: bool = False) -> None:  # noqa: ANN001 (numpy
     wav.unlink()
 
 
-def gleichmaessig(ton, pegel_db: float = 0.0):  # noqa: ANN001, ANN201 (numpy)
+# Einmal-Stücke: mehr Durchgänge (kurze Motive, ein einzelner Ton). Ganze Stücke ohne Spuren haben
+# ein dB mehr Luft zur Spitze: Scharfe Klavieranschläge überschießen beim Kodieren um bis zu 1,7 dB
+# (stimmton, nova, 22.11.2026).
+EINMAL_DURCHGAENGE = 5
+SPITZEN_LUFT_DB = 1.0
+
+
+def gleichmaessig(ton, pegel_db: float = 0.0, kampf: bool = False):  # noqa: ANN001, ANN201 (numpy)
     """Gleichmäßige Lautheit einer Schleife (Klangplan A0.6, lautheit.py): sanft verdichtet
     (ringförmig), Anfang und Ende gleich laut (``nahtkurve``), −18 LUFS plus ``pegel_db``,
     weicher Begrenzer mit Reserve für den Kodierer."""
-    from pipeline.abenteuer.ton.lautheit import begrenze, nahtkurve, verdichtungskurve, zielfaktor
+    from pipeline.abenteuer.ton.lautheit import begrenze, nahtkurve, zielfaktor
+    from pipeline.abenteuer.ton.nachverdichtung import verdichte
     from pipeline.abenteuer.ton.sampler import ABTASTRATE
 
-    ton = ton * verdichtungskurve(ton, ABTASTRATE, True)
+    ton = verdichte(ton, ABTASTRATE, True, kampf)
     ton = ton * nahtkurve(ton, ABTASTRATE)
-    return begrenze(ton * zielfaktor(ton, ABTASTRATE, mit_begrenzer=True) * 10 ** (pegel_db / 20))
+    ton = begrenze(ton * zielfaktor(ton, ABTASTRATE, mit_begrenzer=True) * 10 ** (pegel_db / 20))
+    return ton * 10 ** (-SPITZEN_LUFT_DB / 20)
+
+
+def einmalig(ton, pegel_db: float = 0.0):  # noqa: ANN001, ANN201 (numpy)
+    """Gleichmäßige Lautheit eines Einmal-Stücks (Kurzmotiv, Szene, Abspann; Klangplan A0.6).
+
+    Warum: Einmal-Stücke liefen bisher über ``angleichen`` (Effektivwert, ohne Verdichter); viele
+    hatten Ausreißer über 6 LU und Spitzen über −3 dBTP (Messung vom 22.11.2026, Etappe
+    Szenenstücke). Wie Schleifen: sanft verdichtet (nicht ringförmig), −18 LUFS plus ``pegel_db``,
+    weicher Begrenzer; die Naht gibt es hier nicht.
+    """
+    from pipeline.abenteuer.ton.lautheit import begrenze, zielfaktor
+    from pipeline.abenteuer.ton.nachverdichtung import verdichte
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE
+
+    ton = verdichte(ton, ABTASTRATE, schleife=False, durchgaenge=EINMAL_DURCHGAENGE)
+    ton = begrenze(ton * zielfaktor(ton, ABTASTRATE, mit_begrenzer=True) * 10 ** (pegel_db / 20))
+    return ton * 10 ** (-SPITZEN_LUFT_DB / 20)
 
 
 def _mit_spuren(satz: Satz, ordner: Path):  # noqa: ANN202 (numpy)
@@ -246,11 +272,12 @@ def baue_satz(satz: Satz, privat: Path) -> dict[str, object]:
     if satz.spuren:
         ton = _mit_spuren(satz, ordner)
     elif satz.schleife:
-        ton = gleichmaessig(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db)
+        roh = klangbild(rendere(stueck, PROBEN), satz.klangbild)
+        from pipeline.abenteuer.ton.lautheit import ist_kampf
+
+        ton = gleichmaessig(roh, satz.pegel_db, ist_kampf(satz.kennung))
     else:
-        ton = ohne_stille_am_ende(
-            angleichen(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db)
-        )
+        ton = ohne_stille_am_ende(einmalig(klangbild(rendere(stueck, PROBEN), satz.klangbild), satz.pegel_db))
     kodiere(ton, ziel)
     sekunden = stueck.sekunden(stueck.ende())
     print(f"{ziel}  ({sekunden:.0f} s, {ziel.stat().st_size / 1e6:.2f} MB)")

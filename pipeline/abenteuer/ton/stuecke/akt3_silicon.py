@@ -130,7 +130,8 @@ ROSIE = Satz(
     112,
     4,
     {"vor": Teil("I | IV"), "a": ROSIE_A, "b": ROSIE_B, "ende": Teil("I | IV | V | V")},
-    ("vor", "a", "b", "a", "ende"),
+    # Ohne Vor- und Nachspiel ohne Melodie: Die Schleife schwankte damit um 7 LU (A0.6).
+    ("a", "b"),
     (
         Stimme("gitarre", "schlagen", 0.7, -0.3, 0.2, 0, 50),
         Stimme("egitarre", "melodie", 0.75, 0.25, 0.2, OBEN, 60, nur("a", "b")),

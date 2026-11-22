@@ -36,16 +36,31 @@ ODILE = "5:2 6:1 1':1 | 6:2 5:2 | 3:2 2:2 | 1:4 | 5:2 6:1 1':1 | 2':1 1':1 6:2 |
 # Die zweite Strophe der Trauer endet offen auf der 5.
 ODILE_OFFEN = "5:2 6:1 1':1 | 2':2 1':2 | 6:2 5:2 | 3:4 | 5:2 6:1 1':1 | 6:2 5:1 3:1 | 2:2 3:1 2:1 | 5:4"
 NICHTS = "N.C. | N.C. | N.C. | N.C. | N.C. | N.C. | N.C. | N.C."
-STILLE = Teil("N.C. | N.C.")
+
+
+def _schluchzen(melodie: str) -> str:
+    """Lange Töne (vier Schläge) mit einem leisen zweiten Ansatz auf dem letzten Schlag.
+
+    Warum: Allein auf der Trompete verklang jeder lange Schlusston bis in die Stille; die Schleife
+    schwankte um 6 bis 8 LU (A0.6). Der zweite Ansatz klingt wie ein Schluchzen und passt zu „wund“.
+    Beispiel: „1:4“ wird „1:3 1:1“.
+    """
+    return " ".join(
+        f"{z.split(':')[0]}:3 {z.split(':')[0]}:1" if z.endswith(":4") else z for z in melodie.split()
+    )
+
 
 PORT_DELACROIX_TRAUER = Satz(
     "portDelacroix.trauer",
     "Port Delacroix, Trauer",
     TONART,
-    56,
+    # 64 statt 56: Die langen Töne der Trompete verklangen sonst bis in die Stille (LRA, A0.6).
+    64,
     4,
-    {"a": Teil(NICHTS, ODILE), "atem": STILLE, "a2": Teil(NICHTS, ODILE_OFFEN)},
-    ("a", "atem", "a2", "atem"),
+    {"a": Teil(NICHTS, _schluchzen(ODILE)), "a2": Teil(NICHTS, _schluchzen(ODILE_OFFEN))},
+    # Ohne die stillen Atemtakte: Mit ihnen fiel die Schleife an der Naht ins Leere (52 LU) und
+    # schwankte um 8 LU (A0.6); der Hall der Trompete lässt genug Luft zwischen den Strophen.
+    ("a", "a2"),
     (Stimme("trompete", "melodie", 0.85, 0.0, 0.5, 0, 50),),
     akt=AKT,
     beschreibung="Wund: Miss Odiles Lied auf einer einzelnen Trompete, langsam, ohne Begleitung.",

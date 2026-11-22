@@ -4,6 +4,7 @@ Ohne numpy oder scipy (GitHub Actions hat nur pipeline/requirements.txt) übersp
 Hörproben im privaten Repository werden gemessen, wo sie vorliegen, sonst übersprungen.
 """
 
+import os
 from pathlib import Path
 
 import pytest
@@ -75,6 +76,19 @@ def test_nahtkurve_laesst_eine_gute_naht_fast_unveraendert():
     assert np.allclose(L.nahtkurve(ton), 1.0, atol=1e-3)
 
 
+def test_nachverdichtung_bringt_zart_dann_fest_unter_die_grenze():
+    # Wie Nova: erst leise, dann 12 dB lauter. Ein Durchgang reicht nicht, mehrere schon.
+    from pipeline.abenteuer.ton.nachverdichtung import verdichte
+
+    ton = _ton(sekunden=40)
+    ton[: 20 * L.RATE] *= 10 ** (-12 / 20)
+    vorher = L.miss(ton, "vorher")
+    einmal = L.miss(ton * L.verdichtungskurve(ton), "ein Durchgang")
+    nachher = L.miss(verdichte(ton, L.RATE), "nachher")
+    assert vorher.lra > L.GRENZE_LRA and einmal.lra > nachher.lra
+    assert nachher.lra < vorher.lra
+
+
 @pytest.mark.skipif(not PROBE.exists(), reason="Hörprobe Ortsthemen liegt nicht vor")
 def test_probestueck_haelt_a06():
     for datei in sorted(PROBE.glob("*.m4a")):
@@ -96,3 +110,20 @@ def test_erneuerte_musik_haelt_a06():
     dateien = [d for s in staemme for d in MUSIK.rglob(f"{s}.m4a")]
     for m in pruefe(dateien):
         assert m.verstoesse == [], f"{m.name}: {m.verstoesse}"
+
+
+@pytest.mark.skipif(
+    not (MUSIK / "einmal.json").exists() or os.environ.get("MUSIK_ALLE") != "1",
+    reason="Musik liegt nicht vor, oder MUSIK_ALLE=1 fehlt (bis alle Szenenstücke neu gebaut sind)",
+)
+def test_alle_stuecke_halten_a06():
+    """Dauertest über alle Stücke in spiel/musik, auch Szenenstücke und Kurzmotive (Etappe Szenenstücke).
+
+    Schleifen müssen alle Werte halten, Einmal-Stücke Ausreißer und Spitze (einmal.json). Vorerst nur
+    mit MUSIK_ALLE=1: Gebaute Stücke aus der Zeit vor der Nachverdichtung (22.11.2026) halten A0.6
+    nicht; sobald alle Stücke ohne Spuren neu gebaut sind, kann die Bedingung entfallen.
+    """
+    from pipeline.abenteuer.ton.lautheitspruefung import pruefe
+
+    funde = [f"{m.name}: {m.verstoesse}" for m in pruefe([MUSIK]) if m.verstoesse]
+    assert funde == [], "\n".join(funde)

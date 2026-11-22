@@ -118,8 +118,9 @@ ARENA_VORRUNDE = Satz(
 # dann fester mit 6 – 5 – 3, zum Schluss vollständig mit 2 – 3 – 1 und Cello.
 _NOVA = {
     "vor": Teil("I | IV"),
-    "z1": Teil("I I II I | I | I I II I | I", "r:2 #4:1 5:1 | r:4 | r:2 #4:1 5:1 | 5:2 r:2"),
-    "z2": Teil("I I II I | IV | I II I II | I", "r:2 #4:1 5:1 | r:4 | r:1 #4:1 5:1 #4:0.5 5:0.5 | 5:4"),
+    # Die 5 bleibt in den Takten danach liegen (statt Pausen): zögernd, aber ohne Loch (A0.6).
+    "z1": Teil("I I II I | I | I I II I | I", "r:2 #4:1 5:1 | 5:4 | r:2 #4:1 5:1 | 5:4"),
+    "z2": Teil("I I II I | IV | I II I II | I", "r:2 #4:1 5:1 | 5:4 | r:1 #4:1 5:1 #4:0.5 5:0.5 | 5:4"),
     "fest": Teil(
         "II I I I | IV IV I I | II I I I | IV IV I I", "#4:1 5:3 | 6:1 5:1 3:2 | #4:1 5:3 | 6:1 5:1 3:2"
     ),
@@ -132,11 +133,14 @@ NOVA = Satz(
     72,
     4,
     _NOVA,
-    ("vor", "z1", "z2", "fest", "voll"),
+    ("z1", "z2", "fest", "voll"),
     (
-        Stimme("klavier", "melodie", 0.55, 0.1, 0.45, OBEN, 38, nur("z1", "z2")),
-        Stimme("klavier", "melodie", 0.85, 0.1, 0.4, OBEN, 54, nur("fest", "voll")),
-        Stimme("klavier", "halten", 0.3, -0.15, 0.45, -1, 26, nur("vor", "z1", "z2")),
+        # Zart heißt hier ein leiser Anschlag, nicht ein leiser Pegel: Mit 6 dB Abstand und leeren
+        # Takten schwankte die Schleife um 15 LU (A0.6); das Wiegen füllt die Takte ohne Melodie.
+        Stimme("klavier", "melodie", 0.9, 0.1, 0.45, OBEN, 50, nur("z1", "z2")),
+        Stimme("klavier", "melodie", 0.75, 0.1, 0.4, OBEN, 52, nur("fest", "voll")),
+        Stimme("klavier", "halten", 0.55, -0.15, 0.45, -1, 34, nur("vor", "z1", "z2")),
+        Stimme("klavier", "wiegen", 0.45, -0.15, 0.45, -1, 32, nur("vor", "z1", "z2")),
         Stimme("klavier", "wiegen", 0.5, -0.15, 0.4, -1, 36, nur("fest", "voll")),
         Stimme("cello", "melodie", 0.65, -0.25, 0.4, 0, 50, nur("voll")),
     ),

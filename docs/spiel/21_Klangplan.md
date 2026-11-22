@@ -217,6 +217,43 @@ einbauen“). Umgestellt wird in Etappen je Akt; für Akt 1 gilt jetzt A0 statt 
 - **Bauen und hören:** `hoerseite PRIVAT --akt 1 --sichere-alt`, dann `musikbau PRIVAT --nur …`,
   dann `hoerseite PRIVAT --akt 1`; die Seite liegt unter `hoerprobe/akt1/index.html`.
 
+### A0.8 Umstellung, Etappe Akt 2 (22.11.2026)
+
+Gleiche Form wie Akt 1 (A0.7): je Ort ein Kopf mit vier bis sieben Tönen, Form A A′ B A′ offen, drei
+Spuren und die volle Mischung, Tag und Nacht.
+
+- **Riverton**, c-Moll, Kopf C Es G As | G Es C, Swing:
+  - Tag 126 (gedämpfte Trompete, Klavier, Bass, Besen, Schachuhren; Farbe Vibraphon), Nacht 92 (Bass,
+    leise Besen), Pavillon 144 (die Schachuhren sind der Schlag), Schuppen 84 (Gitarre allein, Farbe
+    Mundharmonika).
+  - Szenenstücke: Pops erzählt 88 (gezupfter Kontrabass, darunter leise gestrichen), Wohnwagen 66
+    (Mundharmonika allein), beide in der kurzen Form A B A′.
+- **Ironwood**, f-Moll, Kopf F As C | Des C:
+  - Tag 76 (Klarinette über Posaunen und Tuba, der Schmiedehammer; Farbe Horn), Nacht 60 (die Tuba
+    hält, der Hammer fern), Kantine 84 (Orgel statt Bläsern), Feier 120 (Tanz, Klatschen).
+- **Wege:** Zedernwald 76 (Thema von Cedar Creek, gehender Kontrabass; Farbe Cello), Fahrrad und
+  Kanalweg 126 (Thema von Maple Falls schnell, Gitarre und Mundharmonika; die Klingel je Phrase ist
+  die Zusatzspur). „Maple Falls, Klavier allein“ (Szenenstück) spielt das neue Thema in 66.
+- **Kampfthema Akt 2:** der Kopf von Riverton geschärft (Achtel, Pausen dazwischen), 140, Trompete
+  und Schachuhren, das Saxophon steigert (Clubkampf Riverton). Der Clubkampf in Ironwood ist die
+  Steigerung: f-Moll, 132, Blech und Hammer, die Trompete kommt dazu.
+- **orte.json:** `musik_nacht` für Riverton (außen, Bahnhofshalle) und Ironwood (außen, Mamas Zimmer,
+  Umkleide, Museum); der Schuppen spielt `riverton.gitarre` statt des Stadtthemas.
+- **Lautheit:** Alle Stücke von Akt 2 und ihre vollen Mischungen halten A0.6 (gemessen 22.11.,
+  51 Messungen). Bei den dünn besetzten Szenenstücken (Pops, Klavier allein) fielen die einzelnen
+  Anschläge als Spitzen auf (P98 über 4); ein etwas rascheres Tempo und eine kräftigere Begleitung
+  halfen. Der Clubkampf Riverton hat ein halbes dB Luft für die Spitze nach dem Kodieren.
+- **Naht robust (gilt für alle Akte):** Im Nachbau des Haupt-Chats lag die Naht von
+  `maple-falls.nacht` (2,4 LU) und `weg` (3,9 LU) über der Grenze, bei mir darunter; sie hing davon
+  ab, wie die Betonungen im ersten und letzten Takt fallen. Seitdem gleicht `lautheit.nahtkurve`
+  Anfang und Ende jeder Schleife und jeder Spur an: je zur Hälfte, über 6 s auslaufend, ohne Sprung.
+  Zwei Bauten von Akt 1 und 2 hintereinander (38 Schleifen, 122 Messungen) ergaben dieselben Werte;
+  jede Naht, auch der dünnen Mischungen, liegt bei höchstens 0,6 LU. Die Startwerte des Zufalls
+  waren schon fest (Hall, Streuung der Anschläge). Übrig sind vier Szenenstücke aus Akt 1 (Ambrose,
+  „Lass mich“, Nachtstück, Titel: P98 und LRA), die in einer späteren Etappe drankommen.
+- **Bauen und hören:** `hoerseite PRIVAT --akt 2 --sichere-alt`, dann `musikbau PRIVAT --nur …`,
+  dann `hoerseite PRIVAT --akt 2`; die Seite liegt unter `hoerprobe/akt2/index.html`.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

@@ -194,11 +194,13 @@ def kodiere(ton, ziel: Path, mono: bool = False) -> None:  # noqa: ANN001 (numpy
 
 def gleichmaessig(ton, pegel_db: float = 0.0):  # noqa: ANN001, ANN201 (numpy)
     """Gleichmäßige Lautheit einer Schleife (Klangplan A0.6, lautheit.py): sanft verdichtet
-    (ringförmig), −18 LUFS plus ``pegel_db``, weicher Begrenzer mit Reserve für den Kodierer."""
-    from pipeline.abenteuer.ton.lautheit import begrenze, verdichtungskurve, zielfaktor
+    (ringförmig), Anfang und Ende gleich laut (``nahtkurve``), −18 LUFS plus ``pegel_db``,
+    weicher Begrenzer mit Reserve für den Kodierer."""
+    from pipeline.abenteuer.ton.lautheit import begrenze, nahtkurve, verdichtungskurve, zielfaktor
     from pipeline.abenteuer.ton.sampler import ABTASTRATE
 
     ton = ton * verdichtungskurve(ton, ABTASTRATE, True)
+    ton = ton * nahtkurve(ton, ABTASTRATE)
     return begrenze(ton * zielfaktor(ton, ABTASTRATE, mit_begrenzer=True) * 10 ** (pegel_db / 20))
 
 

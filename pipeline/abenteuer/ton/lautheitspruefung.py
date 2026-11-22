@@ -10,9 +10,8 @@ Gemessen wird (lautheit.py):
   und Spitze;
 - je Stamm aus spuren.json die Mischungen MISCHUNGEN. Die volle Mischung muss alle Werte halten;
   dünne Mischungen (nur Grund, Grund und Melodie) werden mit Werten als Hinweis gemeldet, ohne den
-  Dauertest scheitern zu lassen. Warum: Ihre Naht liegt bei einigen Stücken 0,3 bis 1,1 LU über der
-  Grenze, weil die Betonungen der Begleitung am Anfang anders fallen als im Schlusstakt; ein
-  Pegelausgleich an der Naht ergäbe dort einen Sprung (Bericht vom 22.11.2026).
+  Dauertest scheitern zu lassen. Warum: In dünnen Besetzungen fallen einzelne Anschläge als Spitzen
+  auf (P98); die Naht gleicht seit dem 22.11.2026 ``lautheit.nahtkurve`` je Spur aus.
 
 Rolle im Gesamtbild: Befehl hinter ``python -m pipeline.abenteuer.ton.lautheit`` und Dauertest
 (pipeline/tests/test_abenteuer_lautheit.py) über ``spiel/musik``, wo die Dateien vorliegen.

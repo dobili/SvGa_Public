@@ -1212,6 +1212,7 @@
           "name": "ort.riverton.aussen",
           "innen": false,
           "musik": "musik/riverton.m4a",
+          "musik_nacht": "musik/riverton.nacht.m4a",
           "zustaende": {
             "slickAbschiedGesehen": "karten/riverton-aussen-trainingszentrum.json",
             "slickAbschiedGesehen und nadelIronwood >= 1": "karten/riverton-aussen-tische-kaputt.json",
@@ -1235,6 +1236,7 @@
           "name": "ort.riverton.bahnhofshalle",
           "innen": true,
           "musik": "musik/riverton.m4a",
+          "musik_nacht": "musik/riverton.nacht.m4a",
           "zustaende": {
             "nadelIronwood >= 1": "karten/riverton-bahnhofshalle-slick-auf-der-bank.json",
             "nadelDesertSprings >= 1": "karten/riverton-bahnhofshalle-plakat.json"
@@ -1252,7 +1254,7 @@
           "datei": "karten/riverton-schuppen.json",
           "name": "ort.riverton.schuppen",
           "innen": true,
-          "musik": "musik/riverton.m4a",
+          "musik": "musik/riverton.gitarre.m4a",
           "zustaende": {
             "fahrradErhalten": "karten/riverton-schuppen-ohne-fahrrad.json"
           }
@@ -1812,6 +1814,7 @@
           "name": "ort.ironwood.aussen",
           "innen": false,
           "musik": "musik/ironwood.m4a",
+          "musik_nacht": "musik/ironwood.nacht.m4a",
           "zustaende": {
             "kaufGesehen": "karten/ironwood-aussen-vermietet.json",
             "endeAkt3Gesehen": "karten/ironwood-aussen-meisterschaft.json"
@@ -1836,21 +1839,24 @@
           "datei": "karten/ironwood-mamas-zimmer.json",
           "name": "ort.ironwood.mamasZimmer",
           "innen": true,
-          "musik": "musik/ironwood.m4a"
+          "musik": "musik/ironwood.m4a",
+          "musik_nacht": "musik/ironwood.nacht.m4a"
         },
         {
           "kennung": "ironwood.umkleide",
           "datei": "karten/ironwood-umkleide.json",
           "name": "ort.ironwood.umkleide",
           "innen": true,
-          "musik": "musik/ironwood.m4a"
+          "musik": "musik/ironwood.m4a",
+          "musik_nacht": "musik/ironwood.nacht.m4a"
         },
         {
           "kennung": "ironwood.museum",
           "datei": "karten/ironwood-museum.json",
           "name": "ort.ironwood.museum",
           "innen": true,
-          "musik": "musik/ironwood.m4a"
+          "musik": "musik/ironwood.m4a",
+          "musik_nacht": "musik/ironwood.nacht.m4a"
         }
       ],
       "figuren": [

@@ -72,11 +72,14 @@ def _gemeinsam_angeglichen(spuren: dict, rate: int = 44_100):  # noqa: ANN202 (n
     Verdichtungskurve, denn die App spielt auch dünne Mischungen (nur Begleitung und Bass), deren
     Spitzen eine Kurve aus der vollen Mischung nicht abfinge. Der Faktor ist für alle Spuren gleich
     (volle Mischung auf −18 LUFS, Spitze höchstens −3 dBTP); die Summe der Spuren ist die volle
-    Mischung.
+    Mischung. Danach gleicht ``nahtkurve`` Anfang und Ende jeder Spur an (Naht, A0.6).
     """
-    from pipeline.abenteuer.ton.lautheit import verdichtungskurve, zielfaktor
+    from pipeline.abenteuer.ton.lautheit import nahtkurve, verdichtungskurve, zielfaktor
 
     verdichtet = {name: ton * verdichtungskurve(ton, rate) for name, ton in spuren.items()}
+    # Nahtausgleich je Spur: So hält jede Mischung die Naht, nicht nur die volle; die Summe der Spuren
+    # bleibt die volle Mischung, die damit ebenfalls ausgeglichen ist.
+    verdichtet = {name: ton * nahtkurve(ton, rate) for name, ton in verdichtet.items()}
     faktor = zielfaktor(sum(verdichtet.values()), rate)
     return {name: ton * faktor for name, ton in verdichtet.items()}
 

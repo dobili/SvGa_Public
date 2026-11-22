@@ -52,6 +52,29 @@ def test_verdichter_und_ziel_bringen_den_ausreisser_unter_die_grenze():
     assert m.p98_ueber_median <= L.GRENZE_P98
 
 
+def test_nahtkurve_gleicht_ein_leiseres_ende_aus():
+    # Die letzten vier Sekunden 4 dB leiser: Naht 4 LU; danach mit Reserve unter der Grenze.
+    ton = _ton()
+    ton[-4 * L.RATE :] *= 10 ** (-4 / 20)
+    assert L.miss(ton, "vorher").naht_lu > L.GRENZE_NAHT
+    ausgeglichen = ton * L.nahtkurve(ton)
+    nachher = L.miss(ausgeglichen, "nachher")
+    assert nachher.naht_lu < L.GRENZE_NAHT / 2
+    assert nachher.verstoesse == []
+
+
+def test_nahtkurve_laesst_einen_stummen_rand_in_ruhe():
+    # Eine Zusatzspur, die am Ende aussetzt: kein Ausgleich (sonst würde Stille angehoben).
+    ton = _ton()
+    ton[-3 * L.RATE :] = 0
+    assert np.allclose(L.nahtkurve(ton), 1.0)
+
+
+def test_nahtkurve_laesst_eine_gute_naht_fast_unveraendert():
+    ton = _ton()
+    assert np.allclose(L.nahtkurve(ton), 1.0, atol=1e-3)
+
+
 @pytest.mark.skipif(not PROBE.exists(), reason="Hörprobe Ortsthemen liegt nicht vor")
 def test_probestueck_haelt_a06():
     for datei in sorted(PROBE.glob("*.m4a")):

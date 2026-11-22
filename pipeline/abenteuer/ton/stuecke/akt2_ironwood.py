@@ -1,24 +1,29 @@
-"""Ironwood: das Ortsthema in f-Moll und seine Fassungen, dazu die Fanfare (Klangplan 2A1, 2A3).
+"""Ironwood: das einprägsame Ortsthema in f-Moll und seine Fassungen, dazu die Fanfare (Klangplan A0, 2A1).
 
-Warum: Ironwood ist fest und schwer, das Gegenstück zu Riverton (Klangplan, Akt 2). Tiefe Bläser
-halten die Akkorde, ein Schmiedehammer gibt den langsamen Schlag, darüber singt eine einzelne warme
-Klarinette in ihrer tiefen Lage ein Lied wie ein Arbeiterlied: A steigt durch den Moll-Dreiklang und
-fällt zurück auf die 1, B öffnet nach As-Dur und kehrt über G7 zurück. Kantine, Feier und Clubkampf
-spielen dieselben Teile in anderer Besetzung (Grundsatz 2); die Feier umspielt die Melodie als
-Tanz, der Clubkampf presst ihren Kopf zwischen zwei Posaunen, die sich je Takt um einen Halbton
-näher kommen (Schraubstock).
+Warum: Ironwood ist fest und schwer, das Gegenstück zu Riverton. Tiefe Bläser halten die Akkorde,
+ein Schmiedehammer gibt den Schlag, darüber singt eine warme Klarinette ein Arbeiterlied. Seit der
+Umstellung auf A0 (Etappe Akt 2, 22.11.2026):
+
+- Kopf (2 Takte): F As C | Des C. Der Anfang des alten Arbeiterlieds war schon ein guter Kopf:
+  steigender Moll-Dreiklang, dann das lange Des (kleine Sexte) als Kennzeichen, zurück auf C.
+- Form A A' B A' offen; im B-Teil schweigt die Klarinette, die Posaune antwortet tief.
+- Drei Spuren: grund (Tuba, Posaunen, Hammer), melodie, zusatz (Horn als Farbe).
+- Tag 76 statt 60 (A0: mittleres Tempo), Nacht 60, Kantine 84 (Akkordeon, Hammer fern),
+  Feier 120 (Tanz).
+- Der Clubkampf ist die Steigerung des Kampfthemas von Akt 2 (Riverton): derselbe geschärfte Kopf
+  in f-Moll, 132, tiefes Blech und Hammer; Zusatzspur die Trompete.
 
 Ersatz (die freien Bibliotheken haben weder Amboss noch Akkordeon):
 - Schmiedehammer: ein kurzer, sehr tiefer Ton des trockenen Flügels (der Schlag) zusammen mit einer
-  kurzen Röhrenglocke (das Metall). Die Rhythmen kennen keinen einzelnen schweren Schlag; die
-  große Trommel gibt es nur zusammen mit kleiner Trommel oder Hi-Hat.
-- Akkordeon: die Zugriegelorgel (``hammond``, wie das Akkordeon ein gehaltener, gleichmäßiger Ton) für die
-  linke Hand und die Akkorde, die Mundharmonika (auch ein Durchschlagzungen-Instrument) für den
-  Diskant in der Feier.
+  kurzen Röhrenglocke (das Metall).
+- Akkordeon: die Zugriegelorgel (``hammond``) für die linke Hand und die Akkorde, die Mundharmonika
+  für den Diskant in der Feier.
 """
 
 from pipeline.abenteuer.ton.satzplan import Satz, Stimme, Teil
+from pipeline.abenteuer.ton.stuecke.akt2_riverton import KAMPF_FORM, KAMPF_TEILE
 from pipeline.abenteuer.ton.stuecke.kurz import kurz
+from pipeline.abenteuer.ton.stuecke.maple import GEGEN_ANHEBUNG, mit_spuren
 
 TONART = "f"
 AKT = 2
@@ -27,6 +32,17 @@ OBEN = 1
 HAMMER_TAKT = ">1:0.25 r:1.75 1:0.25 r:1.75"
 STILL_TAKT = "r:4"
 HAMMER = "hammer"
+
+KOPF = "1:1 3:1 5:2 | 6:3 5:1"
+A_AKKORDE = "i | VI | iv | V"
+A_MELODIE = f"{KOPF} | 4:1 6:1 1':2 | 5:4"
+A2_AKKORDE = "i | VI | iv V | i"
+A2_MELODIE = f"{KOPF} | 4:1 3:1 2:1 #7,:1 | 1:4"
+OFFEN_AKKORDE = "i | VI | iv | V V7"
+OFFEN_MELODIE = f"{KOPF} | 4:1 3:1 2:1 #7,:1 | 2:1 #7,:1 5,:1 #7,:1"
+B_AKKORDE = "III | VII | VI | III | iv | i | iv | V7"
+# B: Die Posaune antwortet tief (als Melodie des Teils), endet auf C7.
+B_MELODIE = "3:2 5:2 | 2:2 7,:2 | 1:2 6,:2 | 3:4 | 4:2 6:2 | 5:2 3:2 | 4:2 6,:2 | 5,:2 #7,:2"
 
 
 def _takte(akkorde: str) -> int:
@@ -45,32 +61,18 @@ def nur(*teile: str) -> frozenset[str]:
     return frozenset(teile)
 
 
-A_AKKORDE = "i | VI | iv | V | i | VI | iv V | i"
-A_MELODIE = (
-    "1:1 3:1 5:2 | 6:3 5:1 | 4:1.5 3:0.5 4:1 6:1 | 5:3 r:1 | "
-    "1:1 3:1 5:1 1':1 | 1':2 6:1 5:1 | 4:1 3:1 2:2 | 1:4"
-)
-B_AKKORDE = "III | VII | VI | III | iv | i | iv | V7"
-B_MELODIE = (
-    "3:1 5:1 7:2 | 2':1 1':1 7:2 | 6:2 1':2 | 7:3 r:1 | "
-    "4:1 6:1 1':2 | 1':1.5 7:0.5 5:2 | 6:1 4:1 1:2 | 2:2 #7,:2"
-)
-VOR_AKKORDE = "i | i"
-ATEM_AKKORDE = "i | VI | iv | V"
-
-
 def teile(jeder: int = 1) -> dict[str, Teil]:
-    """Die Teile des Themas mit Hammer; ``jeder`` dünnt den Hammer aus (Kantine: fern)."""
+    """Die Teile des Themas mit Hammer; ``jeder`` dünnt den Hammer aus (Kantine, Nacht: fern)."""
     return {
-        "vor": hammer(VOR_AKKORDE, jeder=jeder),
         "a": hammer(A_AKKORDE, A_MELODIE, jeder),
+        "a2": hammer(A2_AKKORDE, A2_MELODIE, jeder),
         "b": hammer(B_AKKORDE, B_MELODIE, jeder),
-        "atem": hammer(ATEM_AKKORDE, jeder=jeder),
+        "a3": hammer(OFFEN_AKKORDE, OFFEN_MELODIE, jeder),
     }
 
 
-FORM = ("vor", "a", "b", "a", "atem")
-MIT_MELODIE = nur("a", "b")
+FORM = ("a", "a2", "b", "a3")
+MELODIE_TEILE = nur("a", "a2", "a3")
 
 
 def _hammerstimmen(lautstaerke: float, hall: float) -> tuple[Stimme, ...]:
@@ -81,105 +83,128 @@ def _hammerstimmen(lautstaerke: float, hall: float) -> tuple[Stimme, ...]:
     )
 
 
-IRONWOOD = Satz(
+def _melodie(instrument: str, staerke: int, b_instrument: str = "posaune") -> tuple[Stimme, ...]:
+    """Melodie in A (Klarinette in ihrer tiefen Lage), Antwort tief im B-Teil (lauter, A0.6)."""
+    return (
+        Stimme(instrument, "melodie", 0.85, 0.15, 0.3, 0, staerke, MELODIE_TEILE),
+        Stimme(b_instrument, "melodie", 0.7 * GEGEN_ANHEBUNG, -0.1, 0.3, 0, staerke - 4, nur("b")),
+    )
+
+
+def _ironwood(
+    kennung: str,
+    titel: str,
+    tempo: float,
+    spuren: tuple[tuple[Stimme, ...], tuple[Stimme, ...], tuple[Stimme, ...]],
+    text: str,
+    jeder: int = 1,
+) -> Satz:
+    """Eine Fassung des Themas in drei Spuren (Zusatz: Farbe)."""
+    stimmen, gruppen = mit_spuren(*spuren)
+    return Satz(
+        kennung,
+        titel,
+        TONART,
+        tempo,
+        4,
+        teile(jeder),
+        FORM,
+        stimmen,
+        akt=AKT,
+        spuren=gruppen,
+        zusatz="farbe",
+        beschreibung=text,
+    )
+
+
+HORN = (Stimme("horn", "halten", 0.45, 0.0, 0.35, 0, 44),)
+
+IRONWOOD = _ironwood(
     "ironwood",
     "Ironwood",
-    TONART,
-    60,
-    4,
-    teile(),
-    FORM,
+    76,
     (
-        Stimme("klarinette", "melodie", 0.85, 0.15, 0.35, 0, 60, MIT_MELODIE),
-        Stimme("posaune", "halten", 0.6, -0.25, 0.35, -1, 50),
-        Stimme("tuba", "bass_grund", 0.7, 0.0, 0.3, 1, 56),
-        *_hammerstimmen(0.8, 0.3),
+        (
+            Stimme("posaune", "halten", 0.55, -0.25, 0.35, -1, 48),
+            Stimme("tuba", "bass_grund", 0.7, 0.0, 0.3, 1, 56),
+            *_hammerstimmen(0.8, 0.3),
+        ),
+        _melodie("klarinette", 60),
+        HORN,
     ),
-    akt=AKT,
-    beschreibung="Schwer, rußig: Posaunen und Tuba, ein Schmiedehammer, darüber eine warme Klarinette.",
+    "Schwer, rußig: die Klarinette singt den Kopf über Posaunen, Tuba und dem Schmiedehammer.",
 )
 
-IRONWOOD_KANTINE = Satz(
+IRONWOOD_NACHT = _ironwood(
+    "ironwood.nacht",
+    "Ironwood, Nacht",
+    60,
+    (
+        (Stimme("tuba", "halten", 0.5, 0.0, 0.4, 1, 44), *_hammerstimmen(0.3, 0.5)),
+        _melodie("klarinette", 52),
+        HORN,
+    ),
+    "Nacht: dieselbe Melodie langsam, die Tuba hält, der Hammer fern.",
+    jeder=4,
+)
+
+IRONWOOD_KANTINE = _ironwood(
     "ironwood.kantine",
     "Ironwood, Kantine",
-    TONART,
-    76,
-    4,
-    teile(jeder=2),
-    FORM,
+    84,
     (
-        Stimme("klarinette", "melodie", 0.8, 0.15, 0.3, 0, 56, MIT_MELODIE),
-        Stimme("hammond", "stride", 0.45, -0.25, 0.25, 0, 44),
-        *_hammerstimmen(0.25, 0.55),
+        (Stimme("hammond", "stride", 0.45, -0.25, 0.25, 0, 44), *_hammerstimmen(0.25, 0.55)),
+        _melodie("klarinette", 56, "hammond"),
+        (Stimme("mundharmonika", "tupfen", 0.35, 0.0, 0.25, OBEN, 40),),
     ),
-    akt=AKT,
-    beschreibung="Drinnen warm: das Thema mit Akkordeon (Orgel) statt Bläsern, Klarinette, der Hammer fern.",
+    "Drinnen warm: das Thema mit Akkordeon (Orgel) statt Bläsern, Klarinette, der Hammer fern.",
+    jeder=2,
 )
 
-# Feier: dieselbe Melodie als Tanz umspielt; die Gerüsttöne von A und B bleiben auf den Schlägen.
-TANZ_A = Teil(
-    A_AKKORDE,
-    "1:0.5 2:0.5 3:0.5 4:0.5 5:1 r:0.5 5:0.5 | 6:1 r:0.5 6:0.5 5:0.5 4:0.5 3:1 | "
-    "4:1 3:0.5 4:0.5 6:1 4:1 | 5:1 #7,:1 2:1 5:1 | 1:0.5 2:0.5 3:0.5 4:0.5 5:1 1':1 | "
-    "1':1 r:0.5 6:0.5 5:1 4:1 | 4:0.5 6:0.5 4:0.5 3:0.5 2:1 #7,:1 | 1:1 3:1 1:1 r:1",
-)
-TANZ_B = Teil(
-    B_AKKORDE,
-    "3:0.5 4:0.5 5:0.5 6:0.5 7:1 5:1 | 2':1 1':0.5 7:0.5 7:1 4:1 | 6:1 1':0.5 6:0.5 1':1 3':1 | "
-    "7:1 5:0.5 3:0.5 7:1 r:1 | 4:0.5 5:0.5 6:0.5 7:0.5 1':1 6:1 | 1':1 7:0.5 6:0.5 5:1 3:1 | "
-    "6:1 4:1 1:2 | 2:1 #7,:1 2:1 r:1",
-)
-
-IRONWOOD_FEIER = Satz(
+IRONWOOD_FEIER = _ironwood(
     "ironwood.feier",
     "Ironwood, Feier",
-    TONART,
     120,
-    4,
-    {"a": TANZ_A, "b": TANZ_B},
-    ("a", "b", "a", "b"),
     (
-        Stimme("klarinette", "melodie", 0.85, 0.2, 0.25, 0, 66),
-        Stimme("mundharmonika", "melodie", 0.5, -0.15, 0.25, OBEN, 54, nur("b")),
-        Stimme("hammond", "stride", 0.55, -0.25, 0.2, 0, 52),
-        Stimme("schlagwerk", "klatschen", 0.45, 0.3, 0.2, staerke=60),
-        Stimme("schlagwerk", "tamburin", 0.25, -0.3, 0.2, staerke=46),
+        (
+            Stimme("hammond", "stride", 0.55, -0.25, 0.2, 0, 52),
+            Stimme("schlagwerk", "klatschen", 0.45, 0.3, 0.2, staerke=60),
+            Stimme("schlagwerk", "tamburin", 0.25, -0.3, 0.2, staerke=46),
+        ),
+        _melodie("klarinette", 66, "mundharmonika"),
+        (Stimme("mundharmonika", "tupfen", 0.4, 0.0, 0.25, OBEN, 48),),
     ),
-    akt=AKT,
-    beschreibung="Ausgelassen: das Thema als Tanz, Klarinette, Akkordeon (Orgel, Mundharmonika), Klatschen.",
+    "Ausgelassen: das Thema als Tanz, Klarinette, Akkordeon (Orgel, Mundharmonika), Klatschen.",
 )
 
-# Clubkampf: zwei Posaunen gehen je Takt aufeinander zu (Oktave, große Septime … kleine Sekunde).
-ENG_OBEN = "1':4 | 1':4 | #7:4 | 7:4 | #6:4 | 6:4 | 6:4 | 6:4"
-ENG_UNTEN = "1:4 | b2:4 | 2:4 | 3:4 | #3:4 | 4:4 | #4:4 | 5:4"
-# Der Kopf des Themas, im Horn, wird mit dem Schraubstock enger: 1 – 3 – 5, dann 1 – 3 – 6, 1 – b2 – 1.
-KOPF_ENG = "1:1 3:1 5:2 | r:4 | 1:1 3:1 5:2 | r:4 | 1:1 3:1 6:2 | r:4 | 1:1 b2:1 1:2 | r:4"
-ENG_AKKORDE = " | ".join(["i"] * 8)
-
-
-def _eng(melodie: str = "") -> Teil:
-    """Ein Teil des Schraubstocks: Hammer, die zwei Posaunenlinien und wahlweise der Kopf im Horn."""
-    teil = hammer(ENG_AKKORDE, melodie)
-    return Teil(teil.akkorde, melodie, {**teil.linien, "oben": ENG_OBEN, "unten": ENG_UNTEN})
-
-
+# Clubkampf: Steigerung des Kampfthemas von Akt 2 (Riverton) in f-Moll, tiefes Blech und Hammer.
+# Die Teile des Kampfthemas tragen keine eigenen Linien; dazu kommt der Hammer.
+_KAMPF_TEILE = {name: hammer(teil.akkorde, teil.melodie) for name, teil in KAMPF_TEILE.items()}
+_KAMPF_STIMMEN, _KAMPF_SPUREN = mit_spuren(
+    (
+        Stimme("tuba", "bass_laufend", 0.85, 0.0, 0.15, 1, 70),
+        Stimme("posaune", "stoss", 0.55, -0.2, 0.2, -1, 60),
+        *_hammerstimmen(0.85, 0.25),
+    ),
+    (
+        Stimme("horn", "melodie", 0.8, 0.15, 0.25, 0, 70, MELODIE_TEILE),
+        Stimme("posaune", "melodie", 0.75 * GEGEN_ANHEBUNG, -0.1, 0.25, 0, 64, nur("b")),
+    ),
+    (Stimme("trompete", "melodie", 0.6, 0.0, 0.2, OBEN, 66),),
+)
 IRONWOOD_CLUBKAMPF = Satz(
     "ironwood.clubkampf",
     "Ironwood, Clubkampf",
     TONART,
-    56,
+    132,
     4,
-    {"vor": hammer(VOR_AKKORDE), "eng": _eng(), "eng2": _eng(KOPF_ENG), "atem": hammer("i | i | i | i")},
-    ("vor", "eng", "eng2", "atem"),
-    (
-        Stimme("horn", "melodie", 0.75, 0.2, 0.35, 0, 56, nur("eng2")),
-        Stimme("posaune", "noten", 0.6, -0.2, 0.3, 0, 52, nur("eng", "eng2"), "oben"),
-        Stimme("posaune", "noten", 0.6, 0.2, 0.3, 0, 52, nur("eng", "eng2"), "unten"),
-        Stimme("tuba", "bass_grund", 0.7, 0.0, 0.3, 1, 56),
-        *_hammerstimmen(0.85, 0.25),
-    ),
+    _KAMPF_TEILE,
+    KAMPF_FORM,
+    _KAMPF_STIMMEN,
     akt=AKT,
-    beschreibung="Schraubstock: der Hammer als Puls, zwei Posaunen kommen sich je Takt einen Halbton näher.",
+    spuren=_KAMPF_SPUREN,
+    zusatz="steigerung",
+    beschreibung="Steigerung des Kampfthemas: Kopf von Riverton in f-Moll, Blech und Hammer, Trompete dazu.",
 )
 
 FANFARE_IRONWOOD = kurz(
@@ -204,4 +229,4 @@ FANFARE_IRONWOOD = kurz(
     akt=AKT,
 )
 
-STUECKE = (IRONWOOD, IRONWOOD_KANTINE, IRONWOOD_FEIER, IRONWOOD_CLUBKAMPF, FANFARE_IRONWOOD)
+STUECKE = (IRONWOOD, IRONWOOD_NACHT, IRONWOOD_KANTINE, IRONWOOD_FEIER, IRONWOOD_CLUBKAMPF, FANFARE_IRONWOOD)

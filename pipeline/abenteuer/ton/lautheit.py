@@ -228,6 +228,55 @@ def verdichtungskurve(ton, rate: int = RATE, schleife: bool = True):  # noqa: AN
     return (10 ** (kurve / 20)).astype(np.float32)[:, None]
 
 
+# Nahtausgleich: Anfang und Ende einer Schleife werden über NAHT_RAMPE_S Sekunden sanft aufeinander
+# zu geführt, je zur Hälfte; höchstens NAHT_AUSGLEICH_MAX dB, in NAHT_DURCHGAENGE Schritten.
+NAHT_RAMPE_S = 6.0
+NAHT_AUSGLEICH_MAX = 6.0
+NAHT_DURCHGAENGE = 3
+# Leiser als dies (LUFS) gilt ein Rand als stumm; dann wird nichts ausgeglichen (Zusatzspur setzt aus).
+NAHT_STUMM = -55.0
+
+
+def _nahtunterschied(ton, rate: int) -> float | None:  # noqa: ANN001 (numpy)
+    """Lautheit des Anfangs minus Lautheit des Endes (LU), gemessen wie in ``miss``; None bei stummem Rand."""
+    gefiltert = k_filter(_auf_messrate(ton, rate))
+    naht_n = int(NAHT_SEKUNDEN * RATE)
+    anfang = _integriert(_fensterlautheit(gefiltert[:naht_n], MOMENTAN_S))
+    ende = _integriert(_fensterlautheit(gefiltert[-naht_n:], MOMENTAN_S))
+    return None if min(anfang, ende) < NAHT_STUMM else anfang - ende
+
+
+def nahtkurve(ton, rate: int = RATE):  # noqa: ANN001, ANN201 (numpy)
+    """Verstärkung je Abtastwert (linear), die Anfang und Ende einer Schleife gleich laut macht.
+
+    Warum: Die Naht (Klangplan A0.6, höchstens 2 LU) hing bisher davon ab, wie die Betonungen im
+    ersten und letzten Takt fallen; mit anderen Proben oder einer anderen Fassung von FluidSynth lag
+    sie mal darunter, mal darüber (Nachbau des Haupt-Chats, 22.11.2026: maple-falls.nacht 2,4 LU,
+    weg 3,9 LU). Ein Sprung an der Naht wäre hörbar; die Kurve senkt deshalb den lauteren Rand und
+    hebt den leiseren, je zur Hälfte, und läuft über NAHT_RAMPE_S Sekunden zur Mitte hin aus. So
+    liegt die Naht unabhängig vom Wurf nahe 0. Mehrere Durchgänge, weil die Rampe in das Messfenster
+    hineinreicht. Sonderfälle: Stücke kürzer als zwei Rampen und Spuren, die am Anfang oder Ende
+    schweigen (Zusatzspur), bleiben unverändert.
+    Beispiel: Ende 3 LU leiser als der Anfang → Anfang −1,5 dB, Ende +1,5 dB, dazwischen 1.
+    """
+    import numpy as np
+
+    rampe = int(NAHT_RAMPE_S * rate)
+    kurve_db = np.zeros(len(ton), dtype=np.float32)
+    if len(ton) < 2 * rampe:
+        return np.ones((len(ton), 1), dtype=np.float32)
+    anstieg = np.linspace(1.0, 0.0, rampe, dtype=np.float32)
+    for _ in range(NAHT_DURCHGAENGE):
+        faktor = (10 ** (kurve_db / 20))[:, None]
+        gemessen = _nahtunterschied(ton * faktor, rate)
+        if gemessen is None:
+            break
+        unterschied = float(np.clip(gemessen, -NAHT_AUSGLEICH_MAX, NAHT_AUSGLEICH_MAX))
+        kurve_db[:rampe] -= unterschied / 2 * anstieg
+        kurve_db[-rampe:] += unterschied / 2 * anstieg[::-1]
+    return (10 ** (kurve_db / 20)).astype(np.float32)[:, None]
+
+
 def zielfaktor(ton, rate: int = RATE, mit_begrenzer: bool = False) -> float:  # noqa: ANN001 (numpy)
     """Linearer Faktor auf ZIEL_LUFS, höchstens so viel, dass die echte Spitze GRENZE_SPITZE bleibt."""
     gemessen = _auf_messrate(ton, rate)

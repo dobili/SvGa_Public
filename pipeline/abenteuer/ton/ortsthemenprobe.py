@@ -19,6 +19,7 @@ import subprocess
 from pathlib import Path
 
 from pipeline.abenteuer.ton.musikbau import BITRATE, MIDI, PROBEN, angleichen, klangbild, ohne_stille_am_ende
+from pipeline.abenteuer.ton.ortsthemenprobe_spuren import MISCHPULT_SKRIPT, baue_version2
 from pipeline.abenteuer.ton.satzplan import Satz, baue, linie, tonart
 from pipeline.abenteuer.ton.stuecke.ortsthemen_probe import ALT, CEDAR_KOPF, MAPLE_KOPF, STUECKE
 
@@ -93,6 +94,7 @@ def abschnitt(satz: Satz, datei: str, sekunden: float, alt: str | None) -> str:
 def seite(abschnitte: list[str]) -> str:
     """Die Vergleichsseite mit den Notenzeilen der beiden Köpfe."""
     stil = (
+        ".pult button{margin:4px;padding:8px 12px;font:inherit}.pult label{display:block}"
         "body{font:17px system-ui;margin:16px;max-width:44em;background:#faf7f0;color:#222}"
         "section{background:#fff;border-radius:8px;padding:8px 14px;margin:12px 0}audio{width:100%}"
         "svg{max-width:100%;height:auto}"
@@ -114,7 +116,8 @@ def seite(abschnitte: list[str]) -> str:
         '<!doctype html><html lang="de"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
         f"<title>Ortsthemen Probe</title><style>{stil}</style></head><body>"
-        f"<h1>Einprägsame Ortsthemen</h1>{einleitung}{koepfe}{''.join(abschnitte)}</body></html>\n"
+        f"<h1>Einprägsame Ortsthemen</h1>{einleitung}{koepfe}{''.join(abschnitte)}"
+        f"{MISCHPULT_SKRIPT}</body></html>\n"
     )
 
 
@@ -135,6 +138,7 @@ def main() -> None:
             shutil.copy(quelle, ziel / "alt" / alt)
         abschnitte.append(abschnitt(satz, datei, sekunden, alt if quelle and quelle.exists() else None))
         print(f"{ziel / datei}  ({sekunden:.0f} s)")
+    abschnitte.append(baue_version2(ziel))
     (ziel / "index.html").write_text(seite(abschnitte), encoding="utf-8")
     print(ziel / "index.html")
 

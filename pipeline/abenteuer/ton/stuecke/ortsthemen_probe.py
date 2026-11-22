@@ -195,3 +195,63 @@ ALT = {
     "probe.mapleFalls.clubkampf": "maple-falls.clubkampf.m4a",
     "probe.cedarCreek": "cedar-creek.m4a",
 }
+
+# ---------------------------------------------------------------- Version 2: Schichten (DS-Zeit)
+# Nachtrag des Haupt-Chats (22.11.2026, Schwarz/Weiß): Das Ortsthema als Spuren, die die App mischt.
+# Innen und nachts weniger Spuren, ein Musiker im Park kommt mit seiner Spur dazu, je Sieg im
+# Clubkampf eine Spur mehr. Jede Spur ist genau so lang wie die Form (spuren.py).
+
+# Der Geiger im Park: eine Oberstimme aus Akkordtönen, im B-Teil führt er.
+MUSIKER = {
+    "a": "3:2 5:2 | 6:2 4:2 | 5:2 3:2 | 4:2 5:2",
+    "a2": "3:2 5:2 | 6:2 4:2 | 6:2 7:2 | 1':4",
+    "b": "3':2 1':2 | 6:2 4:2 | 5:2 3:2 | 2:4 | 3':2 1':2 | 6:2 1':2 | 6:3 5:1 | 4:2 2:2",
+    "a3": "3:2 5:2 | 6:2 4:2 | 6:2 1':2 | 7:4",
+}
+
+
+def _mit_linie(teile: dict[str, Teil], kennung: str, linien: dict[str, str]) -> dict[str, Teil]:
+    """Dieselben Teile mit einer weiteren eigenen Linie je Teil."""
+    return {n: Teil(t.akkorde, t.melodie, {**t.linien, kennung: linien[n]}) for n, t in teile.items()}
+
+
+MAPLE_SPUREN = Satz(
+    "probe.mapleFalls.spuren",
+    "Maple Falls in Spuren",
+    "G",
+    96,
+    4,
+    _mit_linie(MAPLE_TEILE, "musiker", MUSIKER),
+    MAPLE_FORM,
+    (
+        Stimme("floete", "melodie", 0.8, 0.15, 0.3, MELODIE_OKTAVE, 60, MELODIE_TEILE),
+        Stimme("cello", "noten", 0.7, 0.1, 0.3, 1, 58, nur("b"), "gegen"),
+        Stimme("gitarre", "zupfen", 0.75, -0.3, 0.25, staerke=50),
+        Stimme("kontrabass_pizz", "bass_grund", 0.6, 0.0, 0.2, 1, 52),
+        Stimme("geige", "noten", 0.6, 0.45, 0.3, 1, 56, kennung="musiker"),
+    ),
+    beschreibung="Das Thema als Spuren: Melodie, Begleitung, Bass und der Geiger im Park.",
+)
+# Spur → Stimmen (Index in MAPLE_SPUREN.stimmen).
+MAPLE_GRUPPEN = {"melodie": (0, 1), "begleitung": (2,), "bass": (3,), "musiker": (4,)}
+
+CLUBKAMPF_SPUREN = Satz(
+    "probe.clubkampf.spuren",
+    "Clubkampf Akt 1 in Spuren",
+    "e",
+    132,
+    4,
+    CLUBKAMPF.teile,
+    CLUBKAMPF.form,
+    (
+        Stimme("kontrabass_pizz", "bass_laufend", 0.85, 0.0, 0.1, 1, 70),
+        Stimme("klavier", "stoss", 0.55, -0.2, 0.15, staerke=58),
+        Stimme("schlagwerk", "schlagzeug", 0.4, 0.2, 0.1, staerke=56),
+        Stimme("violinen", "melodie", 0.75, 0.15, 0.2, MELODIE_OKTAVE, 70, nur("a", "a2", "a3")),
+        Stimme("cello", "noten", 0.75, 0.1, 0.2, 1, 66, nur("b"), "gegen"),
+        Stimme("horn", "melodie", 0.6, -0.15, 0.2, 0, 66, nur("a", "a2", "a3")),
+        Stimme("horn", "noten", 0.5, -0.15, 0.2, 0, 60, nur("b"), "gegen"),
+    ),
+    beschreibung="Steigerung je Sieg: erst der Grund, dann die Melodie, nach dem zweiten Sieg das Horn.",
+)
+KAMPF_GRUPPEN = {"grund": (0, 1, 2), "melodie": (3, 4), "horn": (5, 6)}

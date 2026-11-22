@@ -111,6 +111,42 @@ Repository, mit Vergleichsseite alt gegen neu):
   zweimal als Kennzeichen. Klavier allein, die Turmuhr als Puls, sonst kein Schlagwerk: einprägsam
   geht auch ruhig.
 
+### A0.1 Ideen aus der DS-Zeit (Nachtrag 22.11.2026)
+
+1. **Tag und Nacht:** Wie in Diamant/Perl hat jeder Ort eine Tag- und eine Nachtfassung: dieselbe
+   Melodie ruhiger, manchmal mit anderen Instrumenten. Im Probestück: Maple Falls Tag (96, Flöte)
+   und Nacht (72, Vibraphon über Harfe).
+2. **Schichten statt Stücke (Schwarz/Weiß):** Jedes Ortsthema wird in Spuren gerendert
+   (Melodie, Begleitung, Bass, Zusatz), die App mischt sie.
+   - Innenraum oder Nacht: weniger Spuren.
+   - Musiker oder Jukebox: Ihre Spur kommt in der Nähe dazu, mit derselben Abstandskurve wie die
+     räumlichen Geräusche.
+   - Gegen Ermüdung: Spuren weg statt Pause.
+   - Technik (`pipeline/abenteuer/ton/spuren.py`): Jede Spur hat genau die Länge der Form (gleiche
+     Zahl der Abtastwerte), alle Spuren eines Stücks dieselbe Verstärkung; ihre Summe ist die volle
+     Mischung. Im Probestück geprüft: Maple Falls vier Spuren zu je 2 205 000 Werten (50,0 s).
+3. **Steigerung in Partien (Battle Subway):** Im Clubkampf, Turnier und Simultan kommt je
+   gewonnener Partie oder Runde eine Spur des Kampfthemas dazu. Im Probestück: Grund, nach dem
+   ersten Sieg die Melodie, nach dem zweiten das Horn.
+
+**Aufwand auf dem iPhone** (Web Audio dekodiert in 48 kHz, 4 Byte je Wert; Budget der Tonpuffer
+160 MB, `app/src/abenteuer/ton/puffervorrat.ts`):
+
+| Fassung                                            | Download (m4a 80k) | dekodiert |
+| -------------------------------------------------- | ------------------ | --------- |
+| Heute: ein Stück, 50 s Stereo                      | 0,5 MB             | 19 MB     |
+| Vier Spuren Stereo (Probestück)                    | 2,0 MB             | 77 MB     |
+| Drei Spuren: Grund und Melodie Stereo, Zusatz Mono | 1,3 MB             | 48 MB     |
+| Clubkampf, drei Spuren Stereo, 36 s                | 1,1 MB             | 42 MB     |
+
+Empfehlung: höchstens drei Spuren je Ort. Grund heißt Begleitung und Bass zusammen; Melodie;
+dazu eine Zusatzspur in Mono (Musiker, Jukebox, Steigerung), die die App ohnehin im Raum verortet.
+Beim Überblenden zwischen zwei Orten liegen so etwa 96 MB im Speicher, darunter bleibt Platz für
+Geräusche und Kurzmotive. Vier Stereospuren je Ort wären mit 154 MB beim Überblenden zu teuer.
+Das Paket wächst bei etwa 25 Ortsthemen um rund 20 MB. Noch zu prüfen: Safari dekodiert m4a mit
+dem AAC-Vorlauf; die App sollte die Schleife mit `loopStart`/`loopEnd` auf die Formlänge setzen,
+damit an der Naht keine Lücke entsteht.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

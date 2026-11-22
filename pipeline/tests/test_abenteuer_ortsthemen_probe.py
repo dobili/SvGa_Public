@@ -36,3 +36,29 @@ def test_alle_probeplaene_bauen_und_schleifen_dauern_30_bis_80_sekunden():
 def test_notenzeile_ist_ein_svg_mit_tonnamen():
     svg = notenzeile(MAPLE_KOPF, "G")
     assert svg.startswith("<svg") and ">H<" in svg and ">G<" in svg
+
+
+def test_spuren_gruppen_decken_alle_stimmen_genau_einmal():
+    from pipeline.abenteuer.ton.stuecke.ortsthemen_probe import (
+        CLUBKAMPF_SPUREN,
+        KAMPF_GRUPPEN,
+        MAPLE_GRUPPEN,
+        MAPLE_SPUREN,
+    )
+
+    for satz, gruppen in ((MAPLE_SPUREN, MAPLE_GRUPPEN), (CLUBKAMPF_SPUREN, KAMPF_GRUPPEN)):
+        indizes = sorted(i for g in gruppen.values() for i in g)
+        assert indizes == list(range(len(satz.stimmen)))
+
+
+def test_gemeinsame_verstaerkung_und_speicher():
+    import numpy as np
+
+    from pipeline.abenteuer.ton.spuren import _gemeinsam_angeglichen, puffer_mb
+
+    a = np.full((100, 2), 0.2, dtype=np.float32)
+    b = np.full((100, 2), 0.1, dtype=np.float32)
+    aus = _gemeinsam_angeglichen({"a": a, "b": b})
+    # Gleiches Verhältnis der Spuren: dieselbe Verstärkung für beide.
+    assert np.allclose(aus["a"] / aus["b"], 2.0)
+    assert round(puffer_mb(50), 1) == 19.2

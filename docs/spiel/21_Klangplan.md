@@ -147,6 +147,43 @@ Das Paket wächst bei etwa 25 Ortsthemen um rund 20 MB. Noch zu prüfen: Safari 
 dem AAC-Vorlauf; die App sollte die Schleife mit `loopStart`/`loopEnd` auf die Formlänge setzen,
 damit an der Naht keine Lücke entsteht.
 
+### A0.6 Gleichmäßige Lautheit (Wunsch des Autors, 22.11.2026)
+
+„Nervig, wenn eine Melodie immer wieder loopt und ein Ton da immer ein ganzes Stück lauter ist.“
+Vorbild ist die sequenzierte Musik der Rollenspiele auf Game Boy und DS: feste Anschlagstärken je
+Stimme, kaum Dynamik, sehr gleichmäßig laut. Zielwerte (gemessen nach EBU R128):
+
+- Lautheitsbereich (LRA) höchstens 5 LU je Stück, bei Kampfthemen höchstens 4.
+- Momentanlautheit (400 ms): das 98. Perzentil höchstens 4 LU über dem Median, kein einzelner
+  Ausreißer mehr als 6 LU darüber.
+- Echte Spitze höchstens −3 dBTP; alle Ortsthemen auf −18 LUFS, damit beim Ortswechsel nichts
+  springt.
+- Naht der Schleife: letzte und erste 2 s höchstens 2 LU auseinander.
+- B-Teile ohne Melodie höchstens 3 LU unter dem A-Teil (die Gegenstimme ist dort lauter).
+
+Ursache der Spitzen im ersten Probestück: Der Sampler wählte die Aufnahmestufe (leise, laut) je Note
+nach der Anschlagstärke. Die kleine Schwankung der Anschläge um eine Stufengrenze ließ einzelne
+Flötentöne bis zu 16 dB lauter klingen. Seit dem 22.11. gilt eine Aufnahmestufe je Stimme (feste
+Stärke, `Spur.stufe`). Die Schwankung ändert nur noch leicht die Lautstärke. Danach:
+
+- Gegenstimme im B-Teil etwa 5 dB lauter.
+- Letzter Takt mit zwei Tönen und geteiltem Akkord (V V7), damit die Naht nicht ausklingt.
+- Ein sanfter Verdichter als Sicherheitsnetz, je Spur, ringförmig für Schleifen.
+- Ein weicher Begrenzer nur für ganze Stücke, mit 1 dB Reserve für den Kodierer.
+
+Werkzeug: `python -m pipeline.abenteuer.ton.lautheit DATEI_ODER_ORDNER …` meldet je Stück die Werte
+und jeden Verstoß mit Zeitpunkt. Einmal-Stücke (einmal.json) prüft es nur auf Ausreißer und
+Spitze. Der Test `pipeline/tests/test_abenteuer_lautheit.py` misst das Probestück, wo es vorliegt.
+Ergebnis Probestück: alle Ortsthemen −18,2 bis −18,4 LUFS, LRA 1,7 bis 3,8 LU, P98 höchstens +3,7,
+Naht höchstens 0,7 LU. Die Spurenmischungen halten die Werte, „Musiker nah“ mit der Naht genau an
+der Grenze (2,0 LU). Ausgedünnt, Nacht/innen und Kampf-Start sind leiser (−22,6 bis −27,6 LUFS),
+weil Spuren fehlen. Die App sollte ihre Pegel je Mischung so anheben, dass auch sie bei etwa −18 bis
+−20 LUFS liegen.
+
+Bisherige Musik (gemessen 22.11.): Von 74 Schleifen halten 5 alle Werte, 69 nicht. Die Liste liegt
+nur lokal in `buch/arbeit/ton/lautheit_bestand.md`. Angepasst wird, wenn der Autor die neuen Themen
+will.
+
 Offen für die Umstellung (nach Zustimmung): Die App braucht für Regel 3 die ausgedünnte Fassung je
 Ort und das Umschalten nach zwei bis drei Durchläufen, dazu die Absenkung unter Dialogzeilen.
 

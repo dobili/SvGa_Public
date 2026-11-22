@@ -18,7 +18,18 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from pipeline.abenteuer.ton.musikbau import BITRATE, MIDI, PROBEN, angleichen, klangbild, ohne_stille_am_ende
+from pipeline.abenteuer.ton.lautheit import (
+    Messung,
+    begrenze,
+    ist_kampf,
+    kurve_svg,
+    kurzbeschreibung,
+    lies,
+    miss,
+    verdichtungskurve,
+    zielfaktor,
+)
+from pipeline.abenteuer.ton.musikbau import BITRATE, MIDI, PROBEN, klangbild, ohne_stille_am_ende
 from pipeline.abenteuer.ton.ortsthemenprobe_spuren import MISCHPULT_SKRIPT, baue_version2
 from pipeline.abenteuer.ton.satzplan import Satz, baue, linie, tonart
 from pipeline.abenteuer.ton.stuecke.ortsthemen_probe import ALT, CEDAR_KOPF, MAPLE_KOPF, STUECKE
@@ -37,13 +48,16 @@ NAMEN = ["C", "Cis", "D", "Es", "E", "F", "Fis", "G", "Gis", "A", "B", "H"]
 
 def rendere(satz: Satz, ziel: Path) -> float:
     """Rendert einen Plan als m4a nach ``ziel``; Ausgabe: Dauer in Sekunden."""
+    from pipeline.abenteuer.ton.sampler import ABTASTRATE, schreibe_wav
     from pipeline.abenteuer.ton.sampler import rendere as sampler
-    from pipeline.abenteuer.ton.sampler import schreibe_wav
 
     stueck = baue(satz)
     MIDI.mkdir(parents=True, exist_ok=True)
     wav = MIDI / f"{satz.kennung}.wav"
-    ton = angleichen(klangbild(sampler(stueck, PROBEN), satz.klangbild), satz.pegel_db)
+    ton = klangbild(sampler(stueck, PROBEN), satz.klangbild)
+    # Gleichmäßige Lautheit (Klangplan A0.6): sanft verdichtet, dann −18 LUFS, Spitze ≤ −3 dBTP.
+    ton = ton * verdichtungskurve(ton, ABTASTRATE, satz.schleife)
+    ton = begrenze(ton * zielfaktor(ton, ABTASTRATE, mit_begrenzer=True))
     schreibe_wav(ton if satz.schleife else ohne_stille_am_ende(ton), wav)
     befehl = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "aac", "-b:a", BITRATE]
     subprocess.run([*befehl, str(ziel)], check=True)
@@ -83,10 +97,11 @@ def notenzeile(kopf: str, tonart_name: str) -> str:
     return "".join(teile)
 
 
-def abschnitt(satz: Satz, datei: str, sekunden: float, alt: str | None) -> str:
+def abschnitt(satz: Satz, datei: str, sekunden: float, alt: str | None, messung: Messung) -> str:
     """Ein Abschnitt der Seite: Titel, Beschreibung, Player neu und (falls vorhanden) alt."""
     neu = f'<p>Neu ({sekunden:.0f} s): <audio controls preload="none" src="{datei}"></audio></p>'
     alt_html = f'<p>Bisher: <audio controls preload="none" src="alt/{alt}"></audio></p>' if alt else ""
+    neu += f"<p><small>Lautheit: {html.escape(kurzbeschreibung(messung))}</small></p>{kurve_svg(messung)}"
     kopf = f"<h2>{html.escape(satz.titel)}</h2><p>{html.escape(satz.beschreibung)}</p>"
     return f"<section>{kopf}{neu}{alt_html}</section>"
 
@@ -136,7 +151,10 @@ def main() -> None:
         quelle = argumente.privat / "spiel" / "musik" / alt if alt else None
         if quelle and quelle.exists():
             shutil.copy(quelle, ziel / "alt" / alt)
-        abschnitte.append(abschnitt(satz, datei, sekunden, alt if quelle and quelle.exists() else None))
+        messung = miss(lies(ziel / datei), datei, ist_kampf(datei), satz.schleife)
+        abschnitte.append(
+            abschnitt(satz, datei, sekunden, alt if quelle and quelle.exists() else None, messung)
+        )
         print(f"{ziel / datei}  ({sekunden:.0f} s)")
     abschnitte.append(baue_version2(ziel))
     (ziel / "index.html").write_text(seite(abschnitte), encoding="utf-8")

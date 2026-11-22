@@ -233,6 +233,9 @@ def baue(satz: Satz) -> Stueck:
                 stimme.hall,
                 stimme.panorama,
                 pegel_db=rollenpegel(stimme.rolle),
+                # Eine Aufnahmestufe je Stimme wie sequenzierte Spielmusik (Klangplan A0.6): Die
+                # Schwankung der Anschläge ändert nur die Lautstärke, nie die Aufnahme.
+                stufe=stimme.staerke,
             )
         )
     laenge = sum(len(satz.teile[n].akkorde.split("|")) for n in satz.form) * satz.taktart

@@ -22,6 +22,9 @@ zurück zum Anfang. 16 Takte.
 from pipeline.abenteuer.ton.satzplan import Satz, Stimme, Teil
 
 MELODIE_OKTAVE = 1
+# Die Gegenstimme im B-Teil, wenn die Melodie pausiert, etwa 5 dB lauter, damit B nicht mehr als
+# 3 LU unter A liegt (Klangplan A0.6, gemessen am Probestück: B lag 5 LU darunter).
+GEGEN_ANHEBUNG = 1.8
 
 
 def nur(*teile: str) -> frozenset[str]:
@@ -34,7 +37,8 @@ def nur(*teile: str) -> frozenset[str]:
 MAPLE_KOPF = "1:1 2:1 3:1 5:1 | 1':3/2 6:1/2 5:2"
 MAPLE_A = Teil("I | IV | I | IV V", f"{MAPLE_KOPF} | 1:1 2:1 3:1 5:1 | 6:3/2 5:1/2 2:2")
 MAPLE_A2 = Teil("I | IV | ii V | I", f"{MAPLE_KOPF} | 6:1 5:1 3:1 2:1 | 1:4")
-MAPLE_A_OFFEN = Teil("I | IV | ii | V", f"{MAPLE_KOPF} | 6:1 5:1 3:1 2:1 | 2:4")
+# Letzter Takt mit zwei Tönen statt einer langen Note: Die Naht der Schleife bleibt gleich laut (A0.6).
+MAPLE_A_OFFEN = Teil("I | IV | ii | V V7", f"{MAPLE_KOPF} | 6:1 5:1 3:1 2:1 | 2:2 7,:1 2:1")
 # B: Die Flöte schweigt; das Cello antwortet eine Oktave tiefer, endet auf der Dominante.
 MAPLE_B = Teil(
     "vi | IV | I | V | vi | IV | ii | V7",
@@ -58,7 +62,7 @@ MAPLE = _maple(
         Stimme("floete", "melodie", 0.8, 0.15, 0.3, MELODIE_OKTAVE, 60, MELODIE_TEILE),
         Stimme("gitarre", "zupfen", 0.75, -0.3, 0.25, staerke=50),
         Stimme("kontrabass_pizz", "bass_grund", 0.6, 0.0, 0.2, 1, 52),
-        Stimme("cello", "noten", 0.7, 0.1, 0.3, 1, 58, nur("b"), "gegen"),
+        Stimme("cello", "noten", 0.7 * GEGEN_ANHEBUNG, 0.1, 0.3, 1, 58, nur("b"), "gegen"),
     ),
     "Der Kopf singt die Flöte über Gitarre und Bass; im B-Teil antwortet das Cello tief.",
 )
@@ -72,7 +76,7 @@ MAPLE_WEG = _maple(
         Stimme("gitarre", "schlagen", 0.6, -0.3, 0.2, staerke=48),
         Stimme("kontrabass_pizz", "bass_wechsel", 0.65, 0.0, 0.15, 1, 54),
         Stimme("schlagwerk", "schellen", 0.25, 0.35, 0.2, staerke=40),
-        Stimme("cello", "noten", 0.65, 0.1, 0.25, 1, 56, nur("b"), "gegen"),
+        Stimme("cello", "noten", 0.65 * GEGEN_ANHEBUNG, 0.1, 0.25, 1, 56, nur("b"), "gegen"),
     ),
     "Unterwegs: schneller, Gitarre geschlagen, Klarinette, leise Schellen.",
 )
@@ -84,7 +88,7 @@ MAPLE_WOHNZIMMER = _maple(
     (
         Stimme("klavier", "melodie", 0.6, 0.1, 0.3, MELODIE_OKTAVE, 46, MELODIE_TEILE),
         Stimme("klavier", "wiegen", 0.5, -0.1, 0.3, -1, 36),
-        Stimme("klavier", "noten", 0.5, -0.05, 0.3, 1, 42, nur("b"), "gegen"),
+        Stimme("klavier", "noten", 0.5 * GEGEN_ANHEBUNG, -0.05, 0.3, 1, 42, nur("b"), "gegen"),
     ),
     "Innen: dieselbe Melodie, nur Klavier, leise und dünn.",
 )
@@ -96,7 +100,7 @@ MAPLE_NACHT = _maple(
     (
         Stimme("vibraphon", "melodie", 0.55, 0.15, 0.45, MELODIE_OKTAVE, 44, MELODIE_TEILE),
         Stimme("harfe", "harfe", 0.5, -0.2, 0.45, staerke=38),
-        Stimme("cello", "noten", 0.45, 0.0, 0.4, 1, 42, nur("b"), "gegen"),
+        Stimme("cello", "noten", 0.45 * GEGEN_ANHEBUNG, 0.0, 0.4, 1, 42, nur("b"), "gegen"),
     ),
     "Nacht: langsamer, Vibraphon über Harfe, viel Raum.",
 )
@@ -138,7 +142,7 @@ KAMPF_B = Teil(
         "gegen": "3:1 3:1 2:1 1:1 | 2:2 7,:2 | 3:1 3:1 5:1 3:1 | 1:4 | 6,:2 1:2 | 3:2 1:2 | 4:2 6,:2 | #7,:4"
     },
 )
-KAMPF_OFFEN = Teil("i | VI | iv | V", f"{KAMPF_KOPF} | 6:1/2 5:1/2 3:1/2 2:1/2 2:2 | #7,:4")
+KAMPF_OFFEN = Teil("i | VI | iv | V V7", f"{KAMPF_KOPF} | 6:1/2 5:1/2 3:1/2 2:1/2 2:2 | #7,:4")
 
 CLUBKAMPF = Satz(
     "probe.mapleFalls.clubkampf",
@@ -153,7 +157,7 @@ CLUBKAMPF = Satz(
         Stimme("kontrabass_pizz", "bass_laufend", 0.85, 0.0, 0.1, 1, 70),
         Stimme("klavier", "stoss", 0.55, -0.2, 0.15, staerke=58),
         Stimme("schlagwerk", "schlagzeug", 0.4, 0.2, 0.1, staerke=56),
-        Stimme("cello", "noten", 0.75, 0.1, 0.2, 1, 66, nur("b"), "gegen"),
+        Stimme("cello", "noten", 0.75 * GEGEN_ANHEBUNG, 0.1, 0.2, 1, 66, nur("b"), "gegen"),
     ),
     beschreibung="Partie: der Kopf von Maple Falls in Moll, geschärft, treibender Bass, 132.",
 )
@@ -163,7 +167,7 @@ CLUBKAMPF = Satz(
 CEDAR_KOPF = "1:1 3:1 2:1 4:1 | 5:1 5:1 3:2"
 CEDAR_A = Teil("i | i | iv | V", f"{CEDAR_KOPF} | 1:1 3:1 2:1 4:1 | 6:1 5:1 2:2")
 CEDAR_A2 = Teil("i | i | iv V | i", f"{CEDAR_KOPF} | 4:1 3:1 2:1 #7,:1 | 1:4")
-CEDAR_A_OFFEN = Teil("i | i | iv | V", f"{CEDAR_KOPF} | 4:1 3:1 2:1 #7,:1 | 2:4")
+CEDAR_A_OFFEN = Teil("i | i | iv | V V7", f"{CEDAR_KOPF} | 4:1 3:1 2:1 #7,:1 | 2:2 #7,:1 2:1")
 # B: Die rechte Hand schweigt; die linke Hand singt eine tiefe Antwort, endet auf der Dominante.
 CEDAR_B = Teil(
     "VI | III | iv | V | VI | III | iv | V",
@@ -181,7 +185,7 @@ CEDAR = Satz(
     (
         Stimme("klavier", "melodie", 0.8, 0.1, 0.35, MELODIE_OKTAVE, 54, nur("a", "a2", "a3")),
         Stimme("klavier", "wiegen", 0.6, -0.1, 0.35, -1, 36),
-        Stimme("klavier", "noten", 0.7, -0.05, 0.35, 0, 50, nur("b"), "gegen"),
+        Stimme("klavier", "noten", 0.7 * GEGEN_ANHEBUNG, -0.05, 0.35, 0, 50, nur("b"), "gegen"),
         Stimme("schlagwerk", "uhr", 0.35, -0.35, 0.3, staerke=50),
     ),
     beschreibung="Still und einprägsam: Klavier allein, die Turmuhr als Puls, kein Schlagwerk sonst.",
@@ -206,7 +210,7 @@ MUSIKER = {
     "a": "3:2 5:2 | 6:2 4:2 | 5:2 3:2 | 4:2 5:2",
     "a2": "3:2 5:2 | 6:2 4:2 | 6:2 7:2 | 1':4",
     "b": "3':2 1':2 | 6:2 4:2 | 5:2 3:2 | 2:4 | 3':2 1':2 | 6:2 1':2 | 6:3 5:1 | 4:2 2:2",
-    "a3": "3:2 5:2 | 6:2 4:2 | 6:2 1':2 | 7:4",
+    "a3": "3:2 5:2 | 6:2 4:2 | 6:2 1':2 | 7:2 5:2",
 }
 
 
@@ -225,7 +229,7 @@ MAPLE_SPUREN = Satz(
     MAPLE_FORM,
     (
         Stimme("floete", "melodie", 0.8, 0.15, 0.3, MELODIE_OKTAVE, 60, MELODIE_TEILE),
-        Stimme("cello", "noten", 0.7, 0.1, 0.3, 1, 58, nur("b"), "gegen"),
+        Stimme("cello", "noten", 0.7 * GEGEN_ANHEBUNG, 0.1, 0.3, 1, 58, nur("b"), "gegen"),
         Stimme("gitarre", "zupfen", 0.75, -0.3, 0.25, staerke=50),
         Stimme("kontrabass_pizz", "bass_grund", 0.6, 0.0, 0.2, 1, 52),
         Stimme("geige", "noten", 0.6, 0.45, 0.3, 1, 56, kennung="musiker"),
@@ -248,9 +252,9 @@ CLUBKAMPF_SPUREN = Satz(
         Stimme("klavier", "stoss", 0.55, -0.2, 0.15, staerke=58),
         Stimme("schlagwerk", "schlagzeug", 0.4, 0.2, 0.1, staerke=56),
         Stimme("violinen", "melodie", 0.75, 0.15, 0.2, MELODIE_OKTAVE, 70, nur("a", "a2", "a3")),
-        Stimme("cello", "noten", 0.75, 0.1, 0.2, 1, 66, nur("b"), "gegen"),
+        Stimme("cello", "noten", 0.75 * GEGEN_ANHEBUNG, 0.1, 0.2, 1, 66, nur("b"), "gegen"),
         Stimme("horn", "melodie", 0.6, -0.15, 0.2, 0, 66, nur("a", "a2", "a3")),
-        Stimme("horn", "noten", 0.5, -0.15, 0.2, 0, 60, nur("b"), "gegen"),
+        Stimme("horn", "noten", 0.5 * GEGEN_ANHEBUNG, -0.15, 0.2, 0, 60, nur("b"), "gegen"),
     ),
     beschreibung="Steigerung je Sieg: erst der Grund, dann die Melodie, nach dem zweiten Sieg das Horn.",
 )

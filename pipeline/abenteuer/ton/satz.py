@@ -46,6 +46,8 @@ class Spur:
     streuung: float = 0.012
     # Zielpegel der klingenden Stellen in dBFS (vor ``lautstaerke``); None: nur Eichung des Instruments.
     pegel_db: float | None = None
+    # Anschlagstufe der Aufnahmen, fest für die ganze Spur (sampler.note_klang); None: je Note.
+    stufe: int | None = None
 
 
 @dataclass

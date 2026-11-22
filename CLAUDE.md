@@ -127,6 +127,8 @@ python -m pipeline.abenteuer.geraeuschquellen [--ort KENNUNG] [--alle] [--schrei
 python -m pipeline.abenteuer.ton.raumprobe TONORDNER ZIEL   # Hörprobe räumliche Geräusche (Park Maple Falls, vorher/nachher): Video, Seite mit Pegelkurve, Pegelprotokoll; nur lokal
 python -m pipeline.abenteuer.raumgroesse   # Innenräume gegen ihr Gebäude außen (Regel 10.75, R065), Bericht nach docs/spiel/auftraege/rueckmeldung/
 python -m pipeline.abenteuer.blickrichtung   # Blickrichtung stehender Figuren zu Tresen, Brett, Gesprächspartner (R008)
+python -m pipeline.abenteuer.ton.lautheit DATEI_ODER_ORDNER …   # gleichmäßige Lautheit der Musik (Klangplan A0.6): LUFS, LRA, Ausreißer mit Zeitpunkt, Spitze, Naht der Schleife; Einmal-Stücke nach einmal.json (braucht numpy, scipy, ffmpeg)
+python -m pipeline.abenteuer.ton.ortsthemenprobe PRIVAT   # Probestück einprägsame Ortsthemen (A0) mit Spuren und Lautheitskurven nach PRIVAT/hoerprobe/ortsthemen/ (Proben über musikbau --laden)
 python -m pipeline.abenteuer.figurenzustaende [--privat PRIVAT]   # welche Figur welche PixelLab-Zustände braucht (Stuhl, Boden, Liegen) aus Szenen und Ink; Liste und Seite mit Vorschaubildern nach buch/arbeit/zustaende/ (Ablage der Zustände: docs/spiel/24_Figuren_und_Portraets.md, Punkt 6)
 python -m pipeline.abenteuer.kopfkachel [--alle]   # Kacheln über Figuren, die begehbar wurden (Figuren sperren seit 18.11.2026 nur die Fußkachel): neue Bereiche (Befund), Abkürzungen (Hinweis)
 python -m pipeline.abenteuer.durchlass [--hinweise] [SZENE …]   # pixelgenaue Durchlässe (Regel 10.92): Ziele, die nur durch eine Lücke von Körperbreite (12 px) erreichbar sind; leere Nischen als Hinweis

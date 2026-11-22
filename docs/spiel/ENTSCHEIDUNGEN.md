@@ -1302,3 +1302,13 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   Weiterkommen braucht.
 - Die Geschichte geht vor: Wer für den aktuellen Questschritt gebraucht wird, steht wach am Questort.
 - Umsetzung: mittel-1 (Uhr, Warten, Tönung), mittel-2 (Abläufe, Prüfung `tagesablauf`, Seite).
+
+### Einprägsame Ortsthemen in Spuren (Entscheidung des Autors, 22.11.2026)
+
+- Nach der Hörprobe („Die Melodien sind alle super, gerne so einbauen“): Alle Orte bekommen
+  einprägsame Ortsthemen nach Klangplan A0 (Kopf von 2 Takten, singbar, Frage und Antwort), mit
+  Tag- und Nachtfassung, je Akt ein Kampfthema aus dem Kopf des Akts.
+- Drei Spuren je Stück (Grund, Melodie, Zusatz): Musiker in der Nähe, Nacht/innen, Ausdünnen nach
+  2–3 Schleifen und Steigerung je Sieg verändern die Musik.
+- Gleichmäßige Lautheit (A0.6) für alle Musik, geprüft mit `ton/lautheit.py`.
+- Umsetzung: mittel-4 (Stücke je Akt, Akt 1 zuerst), mittel-3 (Wiedergabe in Spuren).

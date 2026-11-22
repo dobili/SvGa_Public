@@ -98,3 +98,31 @@ def test_vorschau_ohne_pillow_kein_fehler(tmp_path):
     szene = {"karte": "a.b", "datei": "x.json", "raster": ["#..~", "...."]}
     assert zeichne([(szene, [{"art": "bach", "felder": [[3, 0, 1, 1]]}])], tmp_path / "v.png")
     assert (tmp_path / "v.png").exists()
+
+
+def test_musiker_aus_der_szene_und_jede_jukebox():
+    karte = {
+        "layers": [
+            {
+                "objects": [
+                    {"name": "gitarrist", "type": "statist", "x": 160, "y": 80},
+                    {"name": "mf12JukeboxAn", "type": "moebel", "x": 32, "y": 16, "width": 16, "height": 32},
+                    {"name": "bank", "type": "moebel", "x": 0, "y": 0, "width": 16, "height": 16},
+                ]
+            }
+        ]
+    }
+    szene = {"raster": ["...."], "musikquellen": ["gitarrist"]}
+    assert gq.ableiten(szene, szene["raster"], karte, None) == [
+        {"art": gq.MUSIK, "felder": [[10, 5, 1, 1], [2, 1, 1, 2]]}
+    ]
+    # Mit Geräusch: erst die Geräuschquellen, dann die Musiker.
+    arten = [q["art"] for q in gq.ableiten({**szene, "raster": [".~~."]}, [".~~."], karte, "fluss")]
+    assert arten == ["fluss", gq.MUSIK]
+
+
+def test_markierte_musiker_stehen_in_ihren_karten():
+    orte = gq.lade(gq.ORTE)
+    _, _, quellen, _ = gq.fuer_szene(gq.SZENEN / "jahrmarkt-festplatz.json", orte)
+    assert [q["art"] for q in quellen] == [gq.MUSIK]
+    assert len(quellen[0]["felder"]) == 2

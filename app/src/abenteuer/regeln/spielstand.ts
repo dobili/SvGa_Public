@@ -16,8 +16,10 @@ import {
   type Abenteuerstand,
   type Ergebniskarte,
   type Partiekarten,
+  type Heldfigur,
   type Weltposition,
 } from "../schnittstelle/spielstand";
+import { ERSATZFIGUR, heldfigurAus } from "./heldfigur";
 
 /**
  * Wo das Abenteuer beginnt: vor dem Haus an der Birch Lane in Maple Falls, Blick zur Haustür.
@@ -38,7 +40,8 @@ export const STARTPOSITION: Weltposition = {
  * Ein neuer Spielstand beim ersten Start des Abenteuers.
  *
  * Eingaben: Zeitpunkt (für Tests fest), Name des Helden, Eingangswertung (Wertung der App oder
- * null, dann 0 bis zur ersten Partie) und ob sie schon fest ist (10 gewertete Partien in der App).
+ * null, dann 0 bis zur ersten Partie), ob sie schon fest ist (10 gewertete Partien in der App)
+ * und die gewählte Figur (Held oder Heldin, ohne Wahl der Held).
  * Beispiel: leererAbenteuerstand(jetzt, "Kim", 850, true) → Akt 1, Szene „akt1.start“, keine
  * Clubs, keine Karten, Position vor dem Haus.
  */
@@ -47,6 +50,7 @@ export function leererAbenteuerstand(
   heldname: string,
   wertung: number | null,
   wertungFest: boolean,
+  figur: Heldfigur = ERSATZFIGUR,
 ): Abenteuerstand {
   return {
     version: ABENTEUER_VERSION,
@@ -57,7 +61,7 @@ export function leererAbenteuerstand(
     appWertungZuletzt: wertung,
     wertungPartien: 0,
     laufendeWertung: null,
-    held: { name: heldname, variante: 0 },
+    held: { name: heldname, figur },
     handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
     position: STARTPOSITION,
     clubs: [],
@@ -114,7 +118,7 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     appWertungZuletzt: typeof roh.appWertungZuletzt === "number" ? roh.appWertungZuletzt : null,
     wertungPartien: zahl(roh.wertungPartien),
     laufendeWertung: laufendeWertungAus(roh.laufendeWertung),
-    held: { name: text(roh.held.name), variante: zahl(roh.held.variante) },
+    held: { name: text(roh.held.name), figur: heldfigurAus(roh.held.figur) },
     handlung,
     position: position ?? STARTPOSITION,
     ...listenAus(roh),

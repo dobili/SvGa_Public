@@ -59,6 +59,9 @@ OBJEKTARTEN = (
 )
 # Bilder, Schilder und Bänke tragen solche Wörter im Namen, machen aber kein Geräusch.
 STUMM = re.compile(r"foto|bild|schild|plakat|bank", re.I)
+# Art der Musikerquellen (Zusatzspur der Ortsthemen) und die Jukebox, die immer eine ist.
+MUSIK = "musik"
+JUKEBOX = re.compile(r"jukebox", re.I)
 # Ringe der Vorschau in Kacheln: voll bis 2, halb um 7, still ab 12 (wie geraeuschraum.ts).
 RINGE = (2, 7, 12)
 
@@ -121,10 +124,7 @@ def objektquellen(karte: dict) -> list[tuple[str, list[int], str]]:
             art = objektart(o.get("name", "")) if o.get("type") == "moebel" else None
             if not art:
                 continue
-            x, y = math.floor(o["x"] / KACHEL), math.floor(o["y"] / KACHEL)
-            b = max(1, math.ceil(o.get("width", KACHEL) / KACHEL))
-            h = max(1, math.ceil(o.get("height", KACHEL) / KACHEL))
-            treffer.append((art, [x, y, b, h], o["name"]))
+            treffer.append((art, rechteck(o), o["name"]))
     return treffer
 
 
@@ -143,12 +143,41 @@ def handangaben(szene: dict) -> tuple[bool, set[str], list[tuple[str | None, lis
     return True, set(angabe.get("ohne", [])), dazu
 
 
+def rechteck(o: dict) -> list[int]:
+    """Das Rechteck eines Tiled-Objekts in Kacheln; Punkte (Figuren) als 1 × 1."""
+    x, y = math.floor(o["x"] / KACHEL), math.floor(o["y"] / KACHEL)
+    b = max(1, math.ceil(o.get("width", KACHEL) / KACHEL))
+    h = max(1, math.ceil(o.get("height", KACHEL) / KACHEL))
+    return [x, y, b, h]
+
+
+def musikquellen(szene: dict, karte: dict) -> list[list[int]]:
+    """Wo der Musiker spielt (Zusatzspur der Ortsthemen, app/src/abenteuer/ton/spurenmischung.ts):
+    jede Jukebox und jedes Objekt, das die Szene unter ``musikquellen`` nennt (Figur, Möbel,
+    Auslöser; Name wie in der Tiled-Karte). Beispiel Diner: mf12JukeboxAn → [[x, y, 1, 2]].
+    """
+    namen = set(szene.get("musikquellen", []))
+    return [
+        rechteck(o)
+        for ebene in karte.get("layers", [])
+        for o in ebene.get("objects", [])
+        if o.get("name") in namen or JUKEBOX.search(o.get("name", ""))
+    ]
+
+
 def ableiten(szene: dict, zeilen: list[str], karte: dict, art: str | None) -> list[dict]:
-    """Die Quellen der Karte für ihr Dauergeräusch ``art`` (Format oben); ohne Geräusch leer.
+    """Die Quellen der Karte für ihr Dauergeräusch ``art`` und die Musiker (Art ``musik``).
 
     Beispiel: Park (wasserfall) → ``[{"art": "wasserfall", "felder": [[30, 1, 4, 4]]}]``; der Teich
     zählt nicht. Flussweg (fluss) → alle Läufe der Wasserkacheln.
     """
+    musiker = musikquellen(szene, karte)
+    musik = [{"art": MUSIK, "felder": musiker}] if musiker else []
+    return geraeuschquellen(szene, zeilen, karte, art) + musik
+
+
+def geraeuschquellen(szene: dict, zeilen: list[str], karte: dict, art: str | None) -> list[dict]:
+    """Die Quellen des Dauergeräuschs ``art`` (ohne Geräusch leer)."""
     an, ohne, dazu = handangaben(szene)
     if not art or not an:
         return []

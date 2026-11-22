@@ -10669,6 +10669,11 @@
    "name": "kennung",
    "type": "string",
    "value": "pinewoodCamp.aussen"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[24,18,1,1]]}]"
   }
  ]
 }

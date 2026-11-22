@@ -28,6 +28,9 @@ import {
 import type { Geraeuschquelle } from "./geraeuschraum";
 import { KEINE_NAEHE, naehe, type Klangort, type Naehe } from "./klangquelle";
 import { artVon, Raumregie, type Raumuhr } from "./raumregie";
+import { Mischregie } from "./mischregie";
+import type { Musikmessung } from "./musikspuren";
+import type { Mischlage } from "./spurenmischung";
 import { Tonspieler, type Laden } from "./tonspieler";
 import { leereUntertitel, meldeUntertitel, type Untertitelart } from "./untertitel";
 
@@ -45,6 +48,23 @@ export interface Spielwerk {
   vergissFehlende?(): void;
   /** Pegel des Dauergeräuschs nach Ort und Ankunft (ton/raumregie.ts); im Test entbehrlich. */
   setzeRaum?(faktor: number): void;
+  /** Lage der Spurenmischung (ton/mischregie.ts); im Test entbehrlich. */
+  setzeMischlage?(lage: Mischlage): void;
+  /** Neue Karte: Ausdünnen zählt neu; im Test entbehrlich. */
+  neueKarte?(): void;
+  /** Musik unter einer Dialogzeile 3 dB leiser; im Test entbehrlich. */
+  setzeDialog?(aktiv: boolean): void;
+  /** Was an Musikspuren klingt (Tonmesser); im Test entbehrlich. */
+  musikmessung?(): Musikmessung | null;
+}
+
+/** Was der Tonmesser meldet (Oberflächentests, Pegelprotokoll): Musik, Spuren, Dialog, Raum. */
+export interface Tonmessung {
+  readonly musik: string | null;
+  readonly spuren: Musikmessung | null;
+  readonly dialog: boolean;
+  readonly raum: number | null;
+  readonly mischlage: Mischlage;
 }
 
 /**
@@ -68,6 +88,9 @@ export class Tonregie {
   private gemeldet: Gemeldet = {};
   /** Pegel des Dauergeräuschs nach Ort und Ankunft (räumliche Geräusche, 22.11.2026). */
   private readonly raum: Raumregie;
+  /** Lage der Spurenmischung: Innenraum, Siege, Musiker (Klangplan A0.1). */
+  private readonly mischung: Mischregie;
+  private dialogAktiv = false;
 
   constructor(
     private readonly werk: () => Spielwerk | null,
@@ -75,6 +98,28 @@ export class Tonregie {
     uhr?: Raumuhr,
   ) {
     this.raum = new Raumregie((faktor) => this.mitWerk((w) => w.setzeRaum?.(faktor)), uhr);
+    this.mischung = new Mischregie((arbeit) =>
+      this.mitWerk((w) =>
+        arbeit({ setzeMischlage: (l) => w.setzeMischlage?.(l), neueKarte: () => w.neueKarte?.() }),
+      ),
+    );
+  }
+
+  /** Was gerade klingt, für Oberflächentests und das Pegelprotokoll (ton/tonmesser). */
+  messung(): Tonmessung {
+    const werk = this.werk();
+    return {
+      musik: this.laut ? soll(this.lage).musik : null,
+      spuren: werk?.musikmessung?.() ?? null,
+      dialog: this.dialogAktiv,
+      raum: this.raum.pegel,
+      mischlage: this.mischung.lage,
+    };
+  }
+
+  /** Eine Partie oder Runde ist zu Ende (Steigerung des Kampfthemas je Sieg). */
+  ergebnis(sieg: boolean): void {
+    this.mischung.ergebnis(sieg);
   }
 
   /** Der zuletzt gesetzte Pegel des Dauergeräuschs (Pegelprotokoll, Tests). */
@@ -108,8 +153,10 @@ export class Tonregie {
     geraeusch?: string | null,
     quellen: readonly Klangort[] = [],
     geraeuschquellen: readonly Geraeuschquelle[] = [],
+    karte: { readonly kennung: string; readonly innen: boolean } | null = null,
   ): void {
     this.lage = betritt(this.lage, musik, geraeusch);
+    this.mischung.betreten(karte?.kennung ?? null, karte?.innen ?? false, geraeuschquellen);
     this.raum.betreten(artVon(soll(this.lage).geraeusch), geraeuschquellen);
     this.orte = quellen;
     this.nah = KEINE_NAEHE;
@@ -121,6 +168,7 @@ export class Tonregie {
   /** Der Held steht auf einem neuen Feld: Klangquellen in der Nähe lauter oder leiser (T28). */
   heldBei(x: number, y: number): void {
     this.raum.heldBei(x, y);
+    this.mischung.heldBei(x, y);
     if (this.orte.length === 0) return;
     this.nah = naehe(this.orte, x, y);
     this.spiele();
@@ -134,13 +182,22 @@ export class Tonregie {
         if (this.laut) this.mitWerk((w) => void w.spieleEinmal(befehl.kennung).catch(tonfehler));
       } else this.lage = wende(this.lage, befehl);
     }
+    this.setzeDialog(true);
     this.spiele();
   }
 
   /** Der Dialog ist zu Ende: zurück zum Ton der Karte (außer `#musik:bleibt`). */
   dialogBeendet(): void {
     this.lage = dialogEnde(this.lage);
+    this.setzeDialog(false);
     this.spiele();
+  }
+
+  /** Unter Dialogzeilen klingt die Musik 3 dB leiser (Klangplan A0, Regel 3). */
+  private setzeDialog(aktiv: boolean): void {
+    if (aktiv === this.dialogAktiv) return;
+    this.dialogAktiv = aktiv;
+    this.mitWerk((w) => w.setzeDialog?.(aktiv));
   }
 
   /** Der Ton ist nachgeladen (paket/aktton.ts): Was eben fehlte, jetzt spielen. */
@@ -155,6 +212,7 @@ export class Tonregie {
     this.orte = [];
     this.nah = KEINE_NAEHE;
     this.gemeldet = {};
+    this.setzeDialog(false);
     leereUntertitel();
     this.mitWerk((w) => w.stoppeAlles());
   }
@@ -183,6 +241,7 @@ export class Tonregie {
     this.meldeAenderungen();
     // Ein Geräusch aus dem Dialog (`#geraeusch`) hat eigene Quellen nicht: Es klingt im Grundpegel.
     this.raum.geraeusch(artVon(soll(this.lage).geraeusch));
+    this.mischung.musikJetzt(soll(this.lage).musik, this.lage.szeneMusik);
     const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
     this.mitWerk((werk) => {
       void werk.spieleSchleife("musik", s.musik).catch(tonfehler);
@@ -239,6 +298,9 @@ function verwirfSpielwerk(): void {
 
 /** Die eine Tonregie des Abenteuers. */
 export const tonregie = new Tonregie(spielwerk);
+
+// Tonmesser für Oberflächentests und das Pegelprotokoll: liest nur, ändert nichts.
+(globalThis as { __tonmesser?: () => Tonmessung }).__tonmesser = () => tonregie.messung();
 
 // Ist der Ton im Hintergrund fertig geladen, spielt, was beim Betreten der Karte noch fehlte.
 beiTonladestand(() => {

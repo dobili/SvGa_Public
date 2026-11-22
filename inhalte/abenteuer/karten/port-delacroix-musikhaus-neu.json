@@ -1779,6 +1779,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "musikhausOffen"
+  },
+  {
+   "name": "geraeuschquellen",
+   "type": "string",
+   "value": "[{\"art\":\"musik\",\"felder\":[[12,9,1,1]]}]"
   }
  ]
 }

@@ -18,6 +18,8 @@
  */
 import { raumpegel } from "./geraeuschraum";
 import { motivFuer } from "./motive";
+import { Musikspuren, type Musikmessung } from "./musikspuren";
+import type { Mischlage } from "./spurenmischung";
 import { Puffervorrat } from "./puffervorrat";
 import { spieleMotiv } from "./motivspieler";
 import { ladeTonangaben, stammVon, weicheAnhebung, type Tonangaben } from "./tonangaben";
@@ -52,6 +54,10 @@ interface Geladen {
 const NAEHE_S = 0.3;
 /** Wie schnell der Pegel des Dauergeräuschs folgt (Zeitkonstante, Sekunden): kein Sprung. */
 const RAUM_S = 0.25;
+/** Musik unter Dialogzeilen (Klangplan A0, Regel 3): 3 dB leiser, weich (Zeitkonstante, s). */
+export const DIALOG_DB = -3;
+const DIALOG_S = 0.4;
+const DEZIBEL_JE_ZEHNFACH = 20;
 
 export class Tonspieler {
   /** Dekodierte Puffer mit Budget (ton/puffervorrat.ts). */
@@ -71,13 +77,19 @@ export class Tonspieler {
   private readonly anteil: Record<"karte" | "quelle", GainNode>;
   /** Pegel des Dauergeräuschs nach Ort und Ankunft (ton/raumregie.ts); `#klang` geht vorbei. */
   private readonly raum: GainNode;
+  /** Musik unter Dialogzeilen 3 dB leiser (zwischen Musikregler und Ausgang). */
+  private readonly dialog: GainNode;
+  /** Ortsthemen in Spuren (ton/musikspuren.ts); sonst spielt die Musik als eine Datei. */
+  private readonly spuren: Musikspuren;
 
   constructor(
     private readonly ctx: AudioContext,
     private readonly lade: Laden,
   ) {
     this.gesamt = { musik: ctx.createGain(), geraeusche: ctx.createGain() };
-    this.gesamt.musik.connect(ctx.destination);
+    this.dialog = ctx.createGain();
+    this.dialog.connect(ctx.destination);
+    this.gesamt.musik.connect(this.dialog);
     this.gesamt.geraeusche.connect(ctx.destination);
     this.anteil = { karte: ctx.createGain(), quelle: ctx.createGain() };
     this.anteil.karte.connect(this.gesamt.musik);
@@ -86,6 +98,33 @@ export class Tonspieler {
     this.raum = ctx.createGain();
     this.raum.gain.value = raumpegel(0, 0);
     this.raum.connect(this.gesamt.geraeusche);
+    this.spuren = new Musikspuren(
+      ctx,
+      this.anteil.karte,
+      async (schluessel, pfade) => (await this.holeDatei(schluessel, pfade))?.puffer ?? null,
+      (schluessel) => this.puffer.vergiss(schluessel),
+    );
+  }
+
+  /** Lage der Spurenmischung (Innenraum, Siege, Nähe zum Musiker; ton/spurenmischung.ts). */
+  setzeMischlage(lage: Mischlage): void {
+    this.spuren.setzeLage(lage);
+  }
+
+  /** Eine Karte wurde betreten: Das Ausdünnen zählt die Schleifen neu. */
+  neueKarte(): void {
+    this.spuren.neueKarte();
+  }
+
+  /** Während einer Dialogzeile klingt die Musik 3 dB leiser. */
+  setzeDialog(aktiv: boolean): void {
+    const faktor = aktiv ? 10 ** (DIALOG_DB / DEZIBEL_JE_ZEHNFACH) : 1;
+    this.dialog.gain.setTargetAtTime(faktor, this.ctx.currentTime, DIALOG_S);
+  }
+
+  /** Was an Musikspuren klingt (Tonmesser für Oberflächentests und Pegelprotokoll). */
+  musikmessung(): Musikmessung | null {
+    return this.spuren.messung();
   }
 
   /** Pegel des Dauergeräuschs (Faktor, ton/geraeuschraum.ts), weich ohne Sprung. */
@@ -114,9 +153,13 @@ export class Tonspieler {
    */
   async spieleSchleife(spur: Spur, angabe: string | null): Promise<void> {
     if (this.laufend[spur]?.angabe === angabe) return;
+    if (spur === "musik" && angabe !== null && this.spuren.spielt(angabe)) return;
     const nummer = ++this.wunsch[spur];
-    this.blendeAus(spur, angabe === null ? AUSBLENDEN_S : UEBERBLENDEN_S);
+    const blende = angabe === null ? AUSBLENDEN_S : UEBERBLENDEN_S;
+    this.blendeAus(spur, blende);
+    if (spur === "musik") this.spuren.stoppe(blende);
     if (angabe === null) return;
+    if (spur === "musik" && (await this.spieleSpuren(angabe, nummer))) return;
     const ordner: Ordner = spur === "geraeusch" ? "klang" : "musik";
     const [geladen, angaben] = await Promise.all([
       this.holePuffer(ordner, angabe),
@@ -168,6 +211,19 @@ export class Tonspieler {
       this.wunsch[spur]++;
       this.blendeAus(spur, AUSBLENDEN_S);
     }
+    this.spuren.stoppe(AUSBLENDEN_S);
+  }
+
+  /**
+   * Ein Stück in Spuren (spuren.json nennt es, der Grund ist da): true, wenn es so spielt oder der
+   * Wunsch inzwischen überholt ist; false, dann spielt die volle Mischung als eine Datei.
+   */
+  private async spieleSpuren(angabe: string, nummer: number): Promise<boolean> {
+    const angaben = await this.tabellen();
+    const stamm = stammVon(dateienFuer("musik", angabe)[0] ?? angabe);
+    const a = angaben.spuren.get(stamm);
+    if (!a) return false;
+    return this.spuren.starte(angabe, stamm, a, () => nummer === this.wunsch.musik);
   }
 
   /** Die Tabellen des Pakets, einmal geladen (ton/tonangaben.ts). */
@@ -213,10 +269,14 @@ export class Tonspieler {
 
   /** Der dekodierte Puffer zu einer Angabe: erste Datei, die es gibt (m4a vor ogg), sonst null. */
   private holePuffer(ordner: Ordner, angabe: string): Promise<Geladen | null> {
-    const schluessel = `${ordner}:${angabe}`;
+    return this.holeDatei(`${ordner}:${angabe}`, dateienFuer(ordner, angabe));
+  }
+
+  /** Der dekodierte Puffer unter einem Schlüssel im Vorrat: erste Datei der Liste, die es gibt. */
+  private holeDatei(schluessel: string, pfade: readonly string[]): Promise<Geladen | null> {
     let versprechen = this.puffer.hole(schluessel);
     if (!versprechen) {
-      versprechen = this.ladeErste(dateienFuer(ordner, angabe));
+      versprechen = this.ladeErste(pfade);
       this.puffer.lege(schluessel, versprechen);
       void versprechen.then((geladen) => {
         if (!geladen) this.fehlend.add(schluessel);

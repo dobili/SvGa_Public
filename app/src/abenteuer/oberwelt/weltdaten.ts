@@ -22,7 +22,8 @@ import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import { ohneAbwesende } from "../regeln/abwesenheit";
 import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
-import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
+import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import { figurenbildAdresse } from "./figurbogen";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
@@ -172,9 +173,14 @@ export function kachelstil(ort: Ortdaten, innen: boolean, karte?: object): strin
   return ort.art === "weg" ? "natur" : "aussen";
 }
 
-/** Bild des Helden: in Erinnerungen der junge Ambrose, sonst die gewählte Heldenvariante. */
-function heldfigurpfad(erinnerung: boolean, variante: number): string {
-  return erinnerung ? "figuren/ambrose-jung.png" : `figuren/held-${variante}.png`;
+/**
+ * Bogen des Helden: in Erinnerungen der junge Ambrose, sonst die gewählte Figur. Fehlt ihr Bogen
+ * (die Heldin, bis der Autor sie in PixelLab erstellt hat), gilt der Held (regeln/heldfigur.ts).
+ */
+async function heldfigurbogen(erinnerung: boolean, figur: Heldfigur): Promise<string | null> {
+  if (erinnerung) return figurenbildAdresse("figuren/ambrose-jung.png");
+  const gewaehlt = await figurenbildAdresse(heldbogenpfad(figur));
+  return gewaehlt ?? figurenbildAdresse(heldbogenpfad(ERSATZFIGUR));
 }
 
 /**
@@ -183,7 +189,7 @@ function heldfigurpfad(erinnerung: boolean, variante: number): string {
  */
 export async function ladeWelt(
   kartenkennung: string,
-  heldvariante = 0,
+  gewaehlteFigur: Heldfigur = ERSATZFIGUR,
   variablen: Readonly<Record<string, unknown>> = {},
 ): Promise<Weltdaten> {
   // Spieltexte in der Sprache der App (Dokument 17); ohne Übersetzung im Paket bleibt Deutsch.
@@ -211,7 +217,7 @@ export async function ladeWelt(
       paketdateiAlsAdresseOderNull(
         `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
       ),
-      figurenbildAdresse(heldfigurpfad(erinnerung, heldvariante)),
+      heldfigurbogen(erinnerung, gewaehlteFigur),
       figurenbilderFuer(fund.ort, karte),
       ladeMoebel(karte, fund.ort.kennung),
       paketdateiAlsAdresseOderNull(

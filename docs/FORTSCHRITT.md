@@ -1,3 +1,19 @@
+Stand: 22.11.2026, 20 Uhr (Haupt-Chat, Schach-Abenteuer): **Musik, Uhr, Abläufe, Heldin/Rivalin auf beta.**
+
+- Musik nach Klangplan A0 vollständig: einprägsame Ortsthemen aller Akte in drei Spuren mit Tag-
+  und Nachtfassung, Kampfthemen mit Steigerung, Szenenstücke; gleichmäßige Lautheit (lautheit.py,
+  329 Messungen ohne Verstoß). Wiedergabe in Spuren (mittel-3). Hörseiten privat hoerprobe/akt1–4.
+- Räumliche Geräusche (Quellen nach Abstand, Ankunftsbogen). Spieluhr mit Warten, Tönung nach Uhr,
+  Tagesabläufe der Figuren (Geschichte geht vor).
+- Heldin und Rivalin Victoria wählbar (Bilder folgen vom Autor), Prüfungen heldneutral, rivalneutral.
+- Brettbeispiele in Erklärungen (15, Buchstellungen wo möglich), Prüfung brettbeispiel.
+- Figurengröße innen ×4/3, Figurenstil nach Coach (Autor erstellt alle Figuren neu in PixelLab),
+  Tiergrößen, Tierplan für PixelLab, Rennen, geführte Wege, Zuwendung, Editor 1.8.
+- Testpunkte bis N2692, Rückfragen bis RO49.
+
+**Nächster Schritt:** PixelLab-Figuren des Autors einbauen (Bögen bauen, Leinwand prüfen, Zustände),
+Rückmeldungen zu Hörseiten und Tests einarbeiten. Nichts nach `main` vor dem Durchspielen des Autors.
+
 Stand: 21.11.2026, 3 Uhr (Haupt-Chat, Schach-Abenteuer): **Abendwünsche vom 20.11. auf beta, Gate grün.**
 
 - Figurengröße nach Wahl des Autors: innen alle PixelLab-Figuren ×4/3, außen Möbel im Maß der Figur

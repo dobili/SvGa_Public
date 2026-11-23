@@ -55,7 +55,7 @@ def test_zielhoehen_im_verhaeltnis_zu_den_figuren():
     assert tp.zielhoehe(ARTEN["hund"]) == 13
     assert tp.zielhoehe(ARTEN["katze"]) in (10, 11)
     assert tp.zielhoehe(ARTEN["hase"]) == 9
-    assert tp.zielhoehe(ARTEN["maus"]) == 6
+    assert tp.zielhoehe(ARTEN["maus"]) == 8  # Mindesthöhe seit 23.11.2026
     assert tp.zielhoehe(ARTEN["ente"]) < tp.KIND_PX
 
 

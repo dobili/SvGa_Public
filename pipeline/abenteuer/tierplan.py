@@ -40,8 +40,10 @@ DIALOGE = WURZEL / "inhalte/abenteuer/dialoge/de"
 ERWACHSENER_M = 1.75
 ERWACHSENER_PX = 20  # Spielpixel außen (30 bis 31 px im Bogen × 2/3)
 KIND_PX = 14
-MINDESTHOEHE = 5
-GRUND_MINDEST = 4  # vor dem Zuschlag: eine Maus bleibt sichtbar (4 × 1,5 = 6)
+# Kleinste Zielhöhe 8 (Hauptchat nach Vergleichsfotos im Spiel, 23.11.2026, Regel 9): mit 6
+# Spielpixeln waren Spatz, Libelle, Krebs, Maus kaum zu erkennen; mit 8 deutlich besser.
+MINDESTHOEHE = 8
+GRUND_MINDEST = 4  # vor dem Zuschlag; mit MINDESTHOEHE wird eine Maus 8 hoch
 ZUSCHLAG_KLEIN_BIS = 10  # darunter × 1,5
 ZUSCHLAG_KLEIN = 1.5
 ZUSCHLAG_KLEIN_HOECHSTENS = 13  # so groß wie ein Tier, das mit 10 beginnt
@@ -123,7 +125,7 @@ def grundhoehe(art: Art) -> int:
 
 
 def zielhoehe(art: Art) -> int:
-    """Zielhöhe in Spielpixeln. Beispiel: Pferd 2,1 m → 22, Hund 0,7 m → 13, Maus → 6."""
+    """Zielhöhe in Spielpixeln. Beispiel: Pferd 2,1 m → 22, Hund 0,7 m → 13, Maus → 8 (Mindesthöhe)."""
     return zuschlag(grundhoehe(art))
 
 

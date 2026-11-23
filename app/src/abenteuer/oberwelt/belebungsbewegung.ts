@@ -95,6 +95,12 @@ export function gangartVon(b: Pick<Belebung, "typ" | "verhalten">): Gangart {
  * Anfangszustand auf dem eigenen Feld (verschoben um den Versatz in einer Schar). `blick` ist die
  * Blickrichtung, solange er steht (Eigenschaft `blick`, R008); Vorgabe unten.
  */
+/** Tempo gerade jetzt in Kacheln je Sekunde (auf der Flucht das Fluchttempo); 0 im Stehen. */
+export function tempoJetzt(b: Bewegung, v: Pick<Belebung, "typ" | "verhalten">): number {
+  const g = gangartVon(v);
+  return b.flieht ? g.fluchttempo : g.tempo;
+}
+
 export function neueBewegung(feld: Feld, blick: Richtung = "unten"): Bewegung {
   return {
     ...feld,

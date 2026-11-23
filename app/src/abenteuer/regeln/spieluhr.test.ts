@@ -11,6 +11,7 @@ import {
   stundeJetzt,
   uhrNachAngabe,
 } from "./spieluhr";
+import { abenteuerstandAus, leererAbenteuerstand } from "./spielstand";
 
 const MIN = 60_000;
 const um = (stunde: number, tag = 1) => (tag - 1) * MINUTEN_JE_TAG + stunde * 60;
@@ -54,5 +55,18 @@ describe("Spieluhr", () => {
     expect(uhrNachAngabe(um(22) + 10, "22")).toBe(um(22) + 10);
     expect(uhrNachAngabe(um(23), "morgen")).toBe(um(7, 2));
     expect(uhrNachAngabe(um(10), "unsinn")).toBeNull();
+  });
+});
+
+describe("Spieluhr im gespeicherten Stand (23.11.2026)", () => {
+  it("übersteht Speichern und Lesen; ältere Stände ohne Uhr bleiben am ersten Morgen", () => {
+    const jetzt = new Date("2026-11-23T12:00:00Z");
+    const s = { ...leererAbenteuerstand(jetzt, "Kim", 600, false), spieluhr: 23 * 60 };
+    const gelesen = abenteuerstandAus(JSON.parse(JSON.stringify(s)));
+    expect(gelesen && stundeJetzt(gelesen)).toBe(23);
+    const alt = abenteuerstandAus(
+      JSON.parse(JSON.stringify(leererAbenteuerstand(jetzt, "Kim", 600, false))),
+    );
+    expect(alt?.spieluhr).toBeUndefined();
   });
 });

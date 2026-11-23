@@ -1,6 +1,7 @@
 /** Tests für tiere.ts: Ersatztabelle, Scharen (Auftrag Runde 7, Dokument 16, Abschnitt 5.2). */
 import { describe, expect, it } from "vitest";
 import {
+  gangfaktor,
   mitSchwimmbildern,
   scharGroesse,
   schwimmUrsprungY,
@@ -112,5 +113,20 @@ describe("PixelLab-Tierbögen (23.11.2026)", () => {
     }
     expect(tierartVon("waschbaer")).toBe("waschbaer");
     expect(tierartVon("einhorn")).toBeNull();
+  });
+});
+
+describe("gangfaktor (Rutschen beim Gehen, 23.11.2026)", () => {
+  const kuh = TIERBILDER["kuh"];
+  it("lässt die Gehbilder schneller laufen, höchstens 2,5-mal so schnell", () => {
+    expect(kuh?.schritt).toBeGreaterThan(0);
+    if (!kuh) return;
+    expect(gangfaktor(kuh, 0.8, 16)).toBeLessThanOrEqual(2.5);
+    expect(gangfaktor(kuh, 0.8, 16)).toBeGreaterThan(1);
+    expect(gangfaktor(kuh, 0, 16)).toBe(1);
+  });
+  it("ohne gemessenen Fußweg (Flieger) bleibt es bei 1", () => {
+    const taube = TIERBILDER["taube"];
+    if (taube) expect(gangfaktor(taube, 3, 16)).toBe(1);
   });
 });

@@ -40,7 +40,7 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.33,
+      "massstab": 0.44,
       "massstab_nach": "hoehe",
       "gemessen": 18,
       "gemessen_laenge": 19,
@@ -55,7 +55,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 22,
       "gemessen_laenge": 23,
-      "fuss": 28
+      "fuss": 28,
+      "schritt": 5.5
     },
     "ente": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.ente",
@@ -82,6 +83,7 @@
       "gemessen": 23,
       "gemessen_laenge": 22,
       "fuss": 28,
+      "schritt": 2.4,
       "zustaende": ["sitzen"]
     },
     "hase": {
@@ -93,7 +95,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 26,
       "gemessen_laenge": 20,
-      "fuss": 29
+      "fuss": 29,
+      "schritt": 1.0
     },
     "schwein": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.schwein",
@@ -105,6 +108,7 @@
       "gemessen": 20,
       "gemessen_laenge": 27,
       "fuss": 31,
+      "schritt": 2.2,
       "zustaende": ["schlafen"]
     },
     "ziege": {
@@ -117,6 +121,7 @@
       "gemessen": 24,
       "gemessen_laenge": 26,
       "fuss": 28,
+      "schritt": 4.3,
       "zustaende": ["sitzen"]
     },
     "schaf": {
@@ -128,7 +133,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 22,
       "gemessen_laenge": 22,
-      "fuss": 27
+      "fuss": 27,
+      "schritt": 4.8
     },
     "bison": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.bison",
@@ -139,7 +145,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 48,
       "gemessen_laenge": 51,
-      "fuss": 58
+      "fuss": 58,
+      "schritt": 5.9
     },
     "kuh": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.kuh",
@@ -151,6 +158,7 @@
       "gemessen": 27,
       "gemessen_laenge": 32,
       "fuss": 34,
+      "schritt": 3.1,
       "zustaende": ["sitzen", "grasen"]
     },
     "esel": {
@@ -170,6 +178,7 @@
       "gemessen": 25,
       "gemessen_laenge": 28,
       "fuss": 29,
+      "schritt": 6.2,
       "zustaende": ["schlafen"]
     },
     "katze": {
@@ -182,6 +191,7 @@
       "gemessen": 26,
       "gemessen_laenge": 23,
       "fuss": 29,
+      "schritt": 1.3,
       "zustaende": ["sitzen", "schlafen"]
     },
     "reiher": {
@@ -206,6 +216,7 @@
       "gemessen": 27,
       "gemessen_laenge": 23,
       "fuss": 30,
+      "schritt": 4.1,
       "zustaende": ["sitzen"]
     },
     "hirsch": {
@@ -218,6 +229,7 @@
       "gemessen": 30,
       "gemessen_laenge": 25,
       "fuss": 36,
+      "schritt": 9.8,
       "zustaende": ["sitzen"]
     },
     "lieferroboter": {
@@ -229,7 +241,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 28,
       "gemessen_laenge": 27,
-      "fuss": 40
+      "fuss": 40,
+      "schritt": 2.2
     },
     "kehrroboter": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.kehrroboter",
@@ -240,7 +253,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 29,
       "gemessen_laenge": 34,
-      "fuss": 39
+      "fuss": 39,
+      "schritt": 10.5
     },
     "pferd": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.pferd",
@@ -252,6 +266,7 @@
       "gemessen": 29,
       "gemessen_laenge": 31,
       "fuss": 35,
+      "schritt": 6.8,
       "zustaende": ["grasen"]
     },
     "schimmel": {
@@ -270,7 +285,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 28,
       "gemessen_laenge": 24,
-      "fuss": 34
+      "fuss": 34,
+      "schritt": 4.0
     },
     "fuchs": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.fuchs",
@@ -281,14 +297,15 @@
       "massstab_nach": "hoehe",
       "gemessen": 23,
       "gemessen_laenge": 28,
-      "fuss": 33
+      "fuss": 33,
+      "schritt": 3.1
     },
     "spatz": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.spatz",
       "breite": 40,
       "hoehe": 40,
       "schnitt": "pixellab",
-      "massstab": 0.25,
+      "massstab": 0.33,
       "massstab_nach": "hoehe",
       "gemessen": 24,
       "gemessen_laenge": 27,
@@ -354,7 +371,7 @@
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.23,
+      "massstab": 0.31,
       "massstab_nach": "hoehe",
       "gemessen": 26,
       "gemessen_laenge": 28,
@@ -387,7 +404,7 @@
       "breite": 40,
       "hoehe": 40,
       "schnitt": "pixellab",
-      "massstab": 0.23,
+      "massstab": 0.31,
       "massstab_nach": "hoehe",
       "gemessen": 26,
       "gemessen_laenge": 25,
@@ -411,7 +428,7 @@
       "breite": 48,
       "hoehe": 48,
       "schnitt": "pixellab",
-      "massstab": 0.21,
+      "massstab": 0.29,
       "massstab_nach": "hoehe",
       "gemessen": 28,
       "gemessen_laenge": 29,
@@ -423,7 +440,7 @@
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.26,
+      "massstab": 0.35,
       "massstab_nach": "hoehe",
       "gemessen": 23,
       "gemessen_laenge": 22,
@@ -481,33 +498,36 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.17,
+      "massstab": 0.27,
       "massstab_nach": "laenge",
       "gemessen": 20,
       "gemessen_laenge": 30,
-      "fuss": 31
+      "fuss": 31,
+      "schritt": 1.1
     },
     "ratte": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.ratte",
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.27,
+      "massstab": 0.37,
       "massstab_nach": "laenge",
       "gemessen": 20,
       "gemessen_laenge": 30,
-      "fuss": 32
+      "fuss": 32,
+      "schritt": 1.9
     },
     "eichhoernchen": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.eichhoernchen",
       "breite": 40,
       "hoehe": 40,
       "schnitt": "pixellab",
-      "massstab": 0.23,
+      "massstab": 0.31,
       "massstab_nach": "hoehe",
       "gemessen": 26,
       "gemessen_laenge": 31,
-      "fuss": 33
+      "fuss": 33,
+      "schritt": 1.2
     },
     "praeriehund": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.praeriehund",
@@ -518,7 +538,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 26,
       "gemessen_laenge": 21,
-      "fuss": 29
+      "fuss": 29,
+      "schritt": 1.4
     },
     "murmeltier": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.murmeltier",
@@ -529,18 +550,20 @@
       "massstab_nach": "hoehe",
       "gemessen": 25,
       "gemessen_laenge": 19,
-      "fuss": 29
+      "fuss": 29,
+      "schritt": 1.3
     },
     "eidechse": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.eidechse",
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.22,
+      "massstab": 0.28,
       "massstab_nach": "laenge",
       "gemessen": 23,
       "gemessen_laenge": 32,
       "fuss": 34,
+      "schritt": 2.5,
       "zustaende": ["schlafen"]
     },
     "frosch": {
@@ -548,7 +571,7 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.24,
+      "massstab": 0.32,
       "massstab_nach": "hoehe",
       "gemessen": 25,
       "gemessen_laenge": 19,
@@ -560,22 +583,24 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.21,
+      "massstab": 0.33,
       "massstab_nach": "laenge",
       "gemessen": 21,
       "gemessen_laenge": 24,
-      "fuss": 27
+      "fuss": 27,
+      "schritt": 4.6
     },
     "schildkroete": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.schildkroete",
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.28,
+      "massstab": 0.38,
       "massstab_nach": "laenge",
       "gemessen": 19,
       "gemessen_laenge": 29,
       "fuss": 29,
+      "schritt": 1.5,
       "schwimmen": {
         "mitte": 17,
         "wasser": "moor"
@@ -591,6 +616,7 @@
       "gemessen": 18,
       "gemessen_laenge": 32,
       "fuss": 34,
+      "schritt": 4.8,
       "schwimmen": {
         "mitte": 19,
         "wasser": "moor"
@@ -661,7 +687,7 @@
       "breite": 48,
       "hoehe": 48,
       "schnitt": "pixellab",
-      "massstab": 0.35,
+      "massstab": 0.47,
       "massstab_nach": "hoehe",
       "gemessen": 17,
       "gemessen_laenge": 38,
@@ -676,7 +702,7 @@
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.24,
+      "massstab": 0.32,
       "massstab_nach": "hoehe",
       "gemessen": 25,
       "gemessen_laenge": 22,
@@ -687,11 +713,12 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.19,
+      "massstab": 0.3,
       "massstab_nach": "laenge",
       "gemessen": 20,
       "gemessen_laenge": 27,
-      "fuss": 29
+      "fuss": 29,
+      "schritt": 1.5
     },
     "dackel": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.dackel",
@@ -702,7 +729,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 22,
       "gemessen_laenge": 29,
-      "fuss": 31
+      "fuss": 31,
+      "schritt": 1.4
     },
     "pony": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.pony",
@@ -713,7 +741,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 25,
       "gemessen_laenge": 29,
-      "fuss": 32
+      "fuss": 32,
+      "schritt": 3.2
     },
     "roboterhund": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.roboterhund",
@@ -724,7 +753,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 27,
       "gemessen_laenge": 25,
-      "fuss": 29
+      "fuss": 29,
+      "schritt": 2.9
     },
     "saugroboter": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.saugroboter",
@@ -735,7 +765,8 @@
       "massstab_nach": "fest",
       "gemessen": 24,
       "gemessen_laenge": 24,
-      "fuss": 28
+      "fuss": 28,
+      "schritt": 2.8
     },
     "waschbaer": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.waschbaer",
@@ -746,7 +777,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 23,
       "gemessen_laenge": 32,
-      "fuss": 32
+      "fuss": 32,
+      "schritt": 2.4
     }
   },
   "staemme": {

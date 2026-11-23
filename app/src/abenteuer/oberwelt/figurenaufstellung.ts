@@ -10,6 +10,7 @@ import type Phaser from "phaser";
 import type { Ausloeser } from "./ausloeserebene";
 import { erzeugeLaufanimationen, standbild, stelleAufKachel } from "./figurbilder";
 import { setzeSitzend, verschiebeFigurbild } from "./figurensitz";
+import { deckeZu } from "./vordergrund";
 import { zeigeAlsGeist } from "./geistfigur";
 import { BODENSITZ, sitzlageAuf, type Sitzmoebel } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
@@ -62,7 +63,11 @@ export function stelleFigurenAuf(
     figur.setDepth(sitz?.tiefe ?? figur.y);
     // Schlaf im Bett (Tagesablauf): gekipptes Standbild wie der Ersatz beim `#stelle … >liegt`,
     // über dem Bett gezeichnet; das Bett sperrt die Kachel ohnehin.
-    if (a.liegt) figur.setRotation(LIEGEN).setDepth(figur.y + LIEGETIEFE_KACHELN * kachel);
+    if (a.liegt) {
+      figur.setRotation(LIEGEN).setDepth(figur.y + LIEGETIEFE_KACHELN * kachel);
+      // Unter die Decke (vordergrund.ts), wie beim `#stelle … >liegt` (fuehrungsschicht.ts).
+      deckeZu(figur, figur.x, figur.y, "rechts");
+    }
   }
   szene.physics.add.collider(held, gruppe);
 }

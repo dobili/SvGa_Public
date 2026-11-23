@@ -170,3 +170,28 @@ Prompts in `ki-roh/zuordnung_23-11.json`).
   `figurbilder.ts`): Die Füße bleiben auf der Kachel, der Körper für Kollisionen bleibt eine
   Kachel. Im Spiel statt im Bogen skaliert, damit die Pixelzeichnung nicht neu gerastert wird.
 - **Übersicht für den Autor**: `pixellabuebersicht.py` (nur lokal, `buch/arbeit/pixellab/`).
+
+## Verdeckung beim Sitzen und Liegen (23.11.2026)
+
+Wunsch des Autors: Wer sitzt, wird vom vorderen Teil seines Möbels verdeckt; wer im Bett liegt, liegt
+unter der Decke.
+
+- **Sitzen** (`app/src/abenteuer/oberwelt/vordergrund.ts`, `figurensitz.ts`): Beim Hinsetzen legt die
+  App das Möbelbild ein zweites Mal über die Figur, beschnitten ab der Sitzflächen-Vorderkante
+  (Vorderkante, Beine, von hinten die Lehne).
+  - Die Grenze ist ein Anteil der sichtbaren Höhe von oben: Stuhl und Bank 0,55, Hocker 0,45,
+    Sessel, Sofa und Couch 0,6. Je Möbel im Katalog: `vordergrund: {"ab": …}`.
+  - Wer zum Betrachter schaut, bekommt keinen Vordergrund: Die Füße baumeln vor dem Möbel.
+  - Über einem leeren Möbel deckt sich der Ausschnitt mit dem Bild darunter und fällt nicht auf.
+- **Liegen** (`deckeZu`): das Bettbild über der Liegenden, ohne die Kopfseite (30 % der Breite,
+  `vordergrund: {"kopf": …}`).
+  - Gilt für `#stelle … >liegt` und für Liegende aus den Tagesabläufen. Beim Aufstehen verschwindet
+    die Decke.
+  - Die Kopfseite steht im Namen des Betts (KopfRechts, KopfLinks), sonst rechts.
+- **Werkzeug** `pipeline/abenteuer/verdeckung.py` mit Dauertest „0 Befunde“: alle 246 Sitz- und
+  Liegestellen aus Szenen, Tagesabläufen und Ink, je mit Möbel und Art. Ausnahmen mit Grund:
+  - Mira auf dem Bordstein: wie der Boden, nichts verdeckt.
+  - Oma Ruths Bett: keine Kopfseite im Namen, darum die Vorgabe rechts.
+  - Das Bett im Dachboden ist Kachelgrafik und kein Möbel: Dort deckt die App nicht zu, bis das Bett
+    als Möbel steht.
+- **Karteneditor 1.9** zeigt den Vordergrund der Sitzenden ebenso.

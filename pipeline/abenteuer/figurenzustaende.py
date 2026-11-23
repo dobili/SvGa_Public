@@ -32,6 +32,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from pipeline.abenteuer import figurenzustaende_ablauf as A
 from pipeline.abenteuer.figurenort import DATEN, lade_orte
 from pipeline.abenteuer.moebelliste import lade_moebel
 
@@ -129,14 +130,43 @@ def _aus_ink(daten: Path, bilder: dict[str, str], bedarf: dict[str, Bedarf]) -> 
     bedarf.setdefault(HELD, Bedarf(HELD)).merke("rennen", "draußen (Steuerkreuz)")
 
 
+def _aus_ablaeufen(daten: Path, bilder: dict[str, str], katalog: dict, bedarf: dict[str, Bedarf]) -> None:
+    """Sitzende und Liegende der Tagesabläufe (figurenzustaende_ablauf.py)."""
+    karten = A.szenen_je_karte(lade_orte(daten))
+    for person, ort, block in A.bloecke(daten):
+        szene = karten.get(block.get("karte", ""))
+        bild = A.bild_der_person(person, ort, bilder)
+        if not szene or not bild:
+            continue
+        objekte = json.loads((daten / "szenen" / f"{szene}.json").read_text(encoding="utf-8")).get(
+            "objekte", []
+        )
+        zustand = A.zustand_des_blocks(block, objekte, katalog, sitzart)
+        if zustand:
+            bedarf.setdefault(bild, Bedarf(bild)).merke(zustand, f"Tagesablauf {block['karte']} ({person})")
+
+
 def ermittle(daten: Path = DATEN) -> dict[str, Bedarf]:
-    """Bedarf je Figurenbild aus Szenen und Ink, nach Bildnamen sortiert."""
+    """Bedarf je Figurenbild aus Szenen, Tagesabläufen und Ink, nach Bildnamen sortiert."""
     orte = lade_orte(daten)
     bilder = _bilder_je_figur(orte)
     bedarf: dict[str, Bedarf] = {}
-    _aus_szenen(daten, bilder, lade_moebel(daten / "moebel"), bedarf)
+    katalog = lade_moebel(daten / "moebel")
+    _aus_szenen(daten, bilder, katalog, bedarf)
+    _aus_ablaeufen(daten, bilder, katalog, bedarf)
     _aus_ink(daten, bilder, bedarf)
     return dict(sorted(bedarf.items()))
+
+
+def fehlende(bedarf: dict[str, Bedarf], privat: Path) -> list[tuple[str, str, int]]:
+    """(Bild, Zustand, Zahl der Stellen) ohne Bild im privaten Ordner, häufigste zuerst."""
+    liste = [
+        (b.bild, z, len(stellen))
+        for b in bedarf.values()
+        for z, stellen in b.stellen.items()
+        if b.bild and not b.bild.endswith(")") and not A.vorhanden(privat, b.bild, z)
+    ]
+    return sorted(liste, key=lambda e: (-e[2], e[0]))
 
 
 def als_markdown(bedarf: dict[str, Bedarf]) -> str:
@@ -193,6 +223,37 @@ def als_html(bedarf: dict[str, Bedarf], privat: Path | None) -> str:
     )
 
 
+WORTLAUT = {
+    "stuhl": "Sitting on an invisible chair, eyes open, hands on lap",
+    "boden": "sitting down cross-legged on the floor",
+    "liegen": "Sleeping, lying on the side in an invisible bed",
+    "rennen": "Animation „Running“ (vier Richtungen)",
+}
+
+
+def als_fehlseite(liste: list[tuple[str, str, int]], bedarf: dict[str, Bedarf], privat: Path) -> str:
+    """Seite für den Autor: je fehlendem Zustand Vorschau, Wortlaut für PixelLab und Fundstellen.
+
+    Sortiert nach der Zahl der Stellen (häufigstes Sitzen zuerst). Enthält Bilder aus dem privaten
+    Paket und bleibt darum privat.
+    """
+    karten = []
+    for bild, zustand, zahl in liste:
+        stellen = "; ".join(sorted(bedarf[bild].stellen[zustand]))
+        karten.append(
+            f'<div class="karte">{_vorschau(privat, bild)}<h2>{html.escape(bild)}: {zustand} ({zahl})</h2>'
+            f"<p><b>PixelLab:</b> „{html.escape(WORTLAUT[zustand])}“</p><p>{html.escape(stellen)}</p></div>"
+        )
+    seite = als_html({}, privat)
+    kopf = (
+        f"<h1>Fehlende Zustände ({len(liste)})</h1><p>Häufigstes zuerst. Bis das Bild da ist, steht die "
+        "Figur im Tagesablauf neben dem Stuhl.</p>"
+    )
+    return seite.replace("<h1>Zustände je Figur</h1>", kopf).replace(
+        '<div class="raster"></div>', f'<div class="raster">{"".join(karten)}</div>'
+    )
+
+
 def main(argumente: list[str] | None = None) -> int:
     """Schreibt Liste und Seite; druckt eine Zusammenfassung."""
     teiler = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -203,6 +264,14 @@ def main(argumente: list[str] | None = None) -> int:
     args.ziel.mkdir(parents=True, exist_ok=True)
     (args.ziel / "zustaende.md").write_text(als_markdown(bedarf), encoding="utf-8")
     (args.ziel / "zustaende.html").write_text(als_html(bedarf, args.privat), encoding="utf-8")
+    if args.privat:
+        liste = fehlende(bedarf, args.privat)
+        (args.ziel / "fehlende.html").write_text(als_fehlseite(liste, bedarf, args.privat), encoding="utf-8")
+        katalog = lade_moebel(DATEN / "moebel")
+        bilder = _bilder_je_figur(lade_orte(DATEN))
+        A.schreibe_app_tabelle(A.ohne_stuhlbild(DATEN, args.privat, bilder, katalog, sitzart))
+        neu = [e for e in liste if (e[0], e[1]) not in A.WARTET_AUF_BILD]
+        print(f"{len(liste)} fehlende Zustände, davon neu (nicht in WARTET_AUF_BILD): {neu}")
     for z in ZUSTAENDE:
         print(f"{z}: {', '.join(b.bild for b in bedarf.values() if z in b.stellen)}")
     print(f"{len(bedarf)} Figurenbilder, Ziel {args.ziel}")

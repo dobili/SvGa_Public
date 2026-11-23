@@ -179,8 +179,11 @@ describe("sitzmoebelAus und sitzlageAuf", () => {
       moebel("t1", 96, 112, "tisch"),
     ];
     const sitze = sitzmoebelAus(liste, K, () => ({ x: 88, y: 118, breite: 12, hoehe: 21 }));
-    expect(sitze).toEqual([schulstuhl]);
-    expect(sitzlageAuf(sitze, { x: 5, y: 8 }, K)?.tiefe).toBe(141 + SITZ_TIEFENABSTAND);
+    expect(sitze).toEqual([{ ...schulstuhl, schluessel: "mf8SchulstuhlRechts@85,117" }]);
+    const lage = sitzlageAuf(sitze, { x: 5, y: 8 }, K);
+    expect(lage?.tiefe).toBe(141 + SITZ_TIEFENABSTAND);
+    // Die Lage nennt ihr Möbel: Dessen vorderer Teil verdeckt die Sitzende (vordergrund.ts).
+    expect(lage?.moebel).toBe("mf8SchulstuhlRechts@85,117");
   });
   it("ohne Möbel unter dem Feld: null", () => {
     expect(sitzlageAuf([], { x: 5, y: 8 }, K)).toBeNull();

@@ -88,8 +88,7 @@
   }
 
   /** Sitzt die Person (Figur `sitzt`, Statist `eigenschaften.sitzt`)? */
-  const sitzt = (m) =>
-    !!(m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt);
+  const sitzt = (m) => !!(m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt);
 
   /**
    * Das Bild einer Markierung in ihrer Blickrichtung: sitzend das Sitzbild, wenn das Paket eins hat
@@ -123,6 +122,7 @@
     // Sitzende rücken wie in der App auf ihr Sitzmöbel (sitzen.js); der feine Versatz steckt in m.
     const { dx, dy } = KE.sitzverschiebung(m, b, !!sitzbild);
     ctx.drawImage(b, m.x + (k - b.naturalWidth) / 2 + dx, m.y + k - b.naturalHeight + dy);
+    KE.zeichneSitzvordergrund(ctx, m, KE.blickVon(m.liste, m.eintrag));
     return true;
   };
 

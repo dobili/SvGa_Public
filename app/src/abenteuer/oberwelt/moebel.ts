@@ -26,6 +26,8 @@ import { deckkraftAus, formAus, geformtAusObjekt, hatForm, type Moebelform } fro
 /** Eine Angabe aus daten/moebel.json im Paket. */
 export interface Moebelangabe {
   readonly quelle: string;
+  /** Vordergrund eines Sitz- oder Liegemöbels über der Figur (vordergrund.ts): ab, kopf. */
+  readonly vordergrund?: { readonly ab?: number; readonly kopf?: number };
   readonly breite: number;
   readonly hoehe: number;
   readonly kollision?: boolean;
@@ -210,6 +212,7 @@ export function rahmenJeTextur(
 /**
  * Stellt die Möbel auf: Tiefe nach der unteren Kante (Figuren davor oder dahinter), Kollision auf
  * der Fläche unter der obersten Kachelreihe; mit `karte` dazu deren feine Sperren (feinsperren.ts).
+ * `merke` bekommt jedes Bild mit seinem Möbel (für den Vordergrund über Sitzenden, vordergrund.ts).
  * Ausgabe: die Gruppe für den Zusammenstoß mit dem Helden.
  */
 export function stelleMoebelAuf(
@@ -217,6 +220,7 @@ export function stelleMoebelAuf(
   moebel: readonly Moebel[],
   kachel: number,
   karte?: object,
+  merke?: (m: Moebel, bild: Phaser.GameObjects.Image) => void,
 ): Phaser.Physics.Arcade.StaticGroup {
   const gruppe = szene.physics.add.staticGroup();
   for (const m of moebel) {
@@ -233,6 +237,7 @@ export function stelleMoebelAuf(
     }
     if (m.deckkraft !== undefined) bild.setAlpha(m.deckkraft); // nur das Bild, Kollision bleibt
     bild.setDepth(moebeltiefe(m, kachel));
+    merke?.(m, bild);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
     if (m.angabe.maske_fein) {
       // Feine Maske (Karteneditor 1.6): zusammengefasste Zellen, der Held stößt an der Kante an.

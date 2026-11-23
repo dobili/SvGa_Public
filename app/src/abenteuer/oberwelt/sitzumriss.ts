@@ -10,6 +10,7 @@
 import type Phaser from "phaser";
 import { rahmenname, type Moebel } from "./moebel";
 import { umrissInWelt, type Umriss } from "./sitzplatz";
+import { merkeMoebelbild, moebelschluessel } from "./vordergrund";
 
 /** Ab dieser Deckkraft (0–255) zählt ein Pixel als sichtbar (Schatten unter 40 nicht). */
 const SICHTBAR_AB = 40;
@@ -50,6 +51,33 @@ function misseRahmen(rahmen: Phaser.Textures.Frame): Umriss | null {
  * wird jeder Rahmen einmal. Beispiel: mf8SchulstuhlRechts bei (85, 117) → 88, 118, 12 × 21.
  * Sonderfall: Rahmen fehlt oder ist leer → null (dann gilt das ganze Rechteck).
  */
+/**
+ * Sichtbarer Teil eines Möbelbilds im eigenen Rahmen (ohne Lage in der Karte), oder null; für den
+ * Ausschnitt des Vordergrunds (vordergrund.ts). Beispiel: Stuhl 16 × 32 → 3, 1, 12 × 21.
+ */
+export function sichtbarImRahmen(szene: Phaser.Scene, m: Moebel): Umriss | null {
+  if (!szene.textures.exists(m.schluessel)) return null;
+  const rahmen = szene.textures.getFrame(m.schluessel, rahmenname(m));
+  return rahmen ? misseRahmen(rahmen) : null;
+}
+
+/**
+ * Rückruf für stelleMoebelAuf (moebel.ts): merkt sich jedes Möbelbild mit Art, Katalogangabe und
+ * sichtbarem Teil für den Vordergrund über Sitzenden und Liegenden (vordergrund.ts).
+ */
+export function moebelbildMerker(
+  szene: Phaser.Scene,
+): (m: Moebel, bild: Phaser.GameObjects.Image) => void {
+  return (m, bild) =>
+    merkeMoebelbild(szene, moebelschluessel(m.name, m.x, m.y), {
+      bild,
+      name: m.name,
+      art: m.angabe.art,
+      angabe: m.angabe.vordergrund,
+      sichtbar: () => sichtbarImRahmen(szene, m),
+    });
+}
+
 export function sichtbarMesser(szene: Phaser.Scene): (m: Moebel) => Umriss | null {
   const gemessen = new Map<string, Umriss | null>();
   return (m) => {

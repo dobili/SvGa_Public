@@ -11,7 +11,8 @@
  */
 import { setzeSitzend } from "./figurensitz";
 import type { Richtung } from "./szene";
-import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzmoebel } from "./sitzplatz";
+import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
+import { legeSitzausschnitt } from "./vordergrund";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
 import {
@@ -50,6 +51,9 @@ import {
 export type Belebungsbilder = Readonly<Record<string, string>>;
 
 /** Ein gezeichneter Statist oder ein Tier. */
+/** Ruhende Tiere blicken zur Seite: Ihr Vordergrund ist der Teil unter der Sitzfläche. */
+const TIERBLICK = "links";
+
 interface Darsteller {
   /** Eintrag der Karte; in einer Schar mit verschobenem Laufweg. */
   readonly v: Belebung;
@@ -236,10 +240,24 @@ export class Belebungsschicht {
       // Das erste Tier einer Schar hält den Helden auf (belebungsbewegung.ts, haeltAuf); die
       // übrigen stehen locker darum und bleiben durchlässig, damit eine Schar keinen Weg zustellt.
       const sperre = i === 0 && haeltAuf(v) ? this.neueSperre() : null;
+      const ruht = i === 0 ? this.ruheplatz(v) : null;
       this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, sperre, {
         tier,
+        ...(ruht ? { tiefe: ruht.tiefe } : {}),
       });
     }
+  }
+
+  /**
+   * Ein Tier, das auf einem Sitzmöbel sitzt oder schläft (Katze auf dem Sessel): liegt knapp über dem
+   * Möbel, und dessen vorderer Teil liegt über ihm (vordergrund.ts, Auftrag des Haupt-Chats,
+   * 23.11.2026). Ausgabe: die Lage auf dem Möbel, sonst null.
+   */
+  private ruheplatz(v: Belebung): Sitzlage | null {
+    if (v.verhalten !== "sitzen" && v.verhalten !== "schlafen") return null;
+    const lage = sitzlageAuf(this.sitze, v.feld, this.kachel);
+    if (lage) legeSitzausschnitt(this.szene, lage, TIERBLICK);
+    return lage;
   }
 
   private fuegeHinzu(

@@ -38,10 +38,6 @@ GEPRUEFT: dict[tuple[str, tuple[int, int]], str] = {
         "Bett ohne Kopfseite im Namen: Liegebild und Decke nehmen die Vorgabe Kopf rechts "
         "(fuehrungsschicht.ts, figurenaufstellung.ts); im Bild prüfen, sonst Katalog vordergrund.kopf."
     ),
-    ("maple-falls-dachboden", (13, 8)): (
-        "Das Bett im Dachboden ist Teil der Kachelgrafik, kein Möbel: keine Decke möglich; "
-        "an den Haupt-Chat gemeldet (Bett als Möbel aufstellen, dann deckt die App zu)."
-    ),
 }
 
 
@@ -74,7 +70,14 @@ def stellen() -> list[Stelle]:
     """Alle Sitz- und Liegestellen aus Szenen, Tagesabläufen und Ink."""
     gefunden = []
     for datei in sorted((WURZEL / "szenen").glob("*.json")):
-        for f in json.loads(datei.read_text(encoding="utf-8")).get("figuren", []):
+        szene = json.loads(datei.read_text(encoding="utf-8"))
+        for b in szene.get("belebung", []):
+            if b.get("typ") == "tier" and b.get("eigenschaften", {}).get("verhalten") in (
+                "sitzen",
+                "schlafen",
+            ):
+                gefunden.append(Stelle(f"tier {b['name']}", datei.stem, tuple(b["feld"]), "ruht"))
+        for f in szene.get("figuren", []):
             if f.get("sitzt"):
                 gefunden.append(
                     Stelle(f"szene {f['name']}", datei.stem, tuple(f["feld"]), "sitzt", f["sitzt"])
@@ -91,8 +94,28 @@ def stellen() -> list[Stelle]:
                 )
     for datei in sorted((WURZEL / "dialoge" / "de").glob("*.ink")):
         for wer, x, y in STELLE.findall(datei.read_text(encoding="utf-8")):
-            gefunden.append(Stelle(f"ink {datei.stem} {wer}", datei.stem, (int(x), int(y)), "liegt"))
+            feld = (int(x), int(y))
+            gefunden.append(
+                Stelle(f"ink {datei.stem} {wer}", karte_mit_bett(datei.stem, feld), feld, "liegt")
+            )
     return gefunden
+
+
+def karte_mit_bett(szene: str, feld: tuple[int, int]) -> str:
+    """Die Karte, auf der ein ``#stelle … >liegt`` spielt: die gleichnamige, sonst eine Karte desselben
+    Orts mit einem Bett unter dem Feld.
+
+    Warum: Ein Dialog spielt nicht immer auf der Karte seines Namens. Die erste Nacht steht in
+    maple-falls-dachboden.ink, spielt aber im Zimmer des Helden (Bett rv5BettKopfRechts auf 12,7).
+    """
+    moebel = katalog()
+    if (unter := moebel_unter(szene, feld, moebel)) and "bett" in unter[0].lower():
+        return szene
+    ort = "-".join(szene.split("-")[:2])
+    for pfad in sorted((WURZEL / "karten").glob(f"{ort}-*.json")):
+        if (unter := moebel_unter(pfad.stem, feld, moebel)) and "bett" in unter[0].lower():
+            return pfad.stem
+    return szene
 
 
 def moebel_unter(szene: str, feld: tuple[int, int], moebel: dict[str, dict]) -> tuple[str, dict] | None:
@@ -132,6 +155,11 @@ def pruefe(stelle: Stelle, moebel: dict[str, dict]) -> tuple[str, str | None]:
     unter = moebel_unter(stelle.szene, stelle.feld, moebel)
     if (stelle.szene, stelle.feld) in GEPRUEFT:
         return f"geprüft: {GEPRUEFT[(stelle.szene, stelle.feld)]}", None
+    if stelle.haltung == "ruht":
+        # Tiere: auf einem Sitzmöbel der Vordergrund wie bei Sitzenden (belebungsschicht.ts), sonst nichts.
+        if unter and art_von(*unter) in SITZARTEN:
+            return f"{unter[0]}, Vordergrund", None
+        return "kein Sitzmöbel (nichts zu verdecken)", None
     if stelle.haltung == "sitzt":
         if unter is None:
             return "am Boden (kein Vordergrund nötig)", None

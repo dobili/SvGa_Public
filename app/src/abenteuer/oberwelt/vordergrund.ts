@@ -193,3 +193,20 @@ export function deckeZu(
   const ausschnitt = bettausschnitt(sichtbar, seite, eintrag.angabe);
   figur.setData(DECKE, legeAusschnitt(eintrag, ausschnitt, figur.depth + VORDERGRUND_ABSTAND));
 }
+
+/**
+ * Legt den Vordergrund eines Sitzmöbels (Lage aus sitzplatz.ts) über eine Sitzende oder ein
+ * ruhendes Tier: Ausschnitt nach sitzausschnitt, Tiefe knapp über der Sitzenden. Ausgabe: das Bild
+ * oder null (kein Möbel, kein gemerktes Bild, Blick zum Betrachter).
+ */
+export function legeSitzausschnitt(
+  szene: Phaser.Scene,
+  lage: { readonly moebel?: string; readonly tiefe: number },
+  richtung: Richtung,
+): Phaser.GameObjects.Image | null {
+  const eintrag = lage.moebel ? moebelbild(szene, lage.moebel) : undefined;
+  const sichtbar = eintrag?.sichtbar();
+  if (!eintrag || !sichtbar) return null;
+  const ausschnitt = sitzausschnitt(sichtbar, eintrag.art, richtung, eintrag.angabe);
+  return legeAusschnitt(eintrag, ausschnitt, lage.tiefe + VORDERGRUND_ABSTAND);
+}

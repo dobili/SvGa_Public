@@ -12,8 +12,14 @@ Stellen und prüft, ob es dort einen Vordergrund gibt:
   Sitzen am Boden (kein Möbel) braucht keinen Vordergrund.
 Ausnahmen mit Grund stehen in GEPRUEFT. Dauertest (pipeline/tests): „0 Befunde“.
 
-Die Vorgaben je Art sind dieselben wie in vordergrund.ts (VORGABE_AB, VORGABE_KOPF); ein Möbel im
-Katalog kann `vordergrund: {"ab": …, "kopf": …}` tragen. Vorschaubilder vorher/nachher brauchen die
+Regel je Blick (Korrektur 23.11.2026 nach Fotos aus dem Clubraum, wie vordergrund.ts):
+- „unten“ (zum Betrachter): nichts davor.
+- „links“/„rechts“: nur unter der Sitzfläche (Beine, Unterkante als 1-px-Kante); die Grenze ist die
+  unterste Zeile des untersten Bands breiter Zeilen (sitzgrenze), sonst VORGABE_SEITE. Rumpf und
+  Oberschenkel bleiben frei. Ruhende Tiere schauen „links“ und bekommen dieselbe Regel.
+- „oben“ (Rücken zum Betrachter): die Lehne ab VORGABE_AB der sichtbaren Höhe; der Kopf ragt darüber.
+Die Vorgaben sind dieselben wie in vordergrund.ts; ein Möbel im Katalog kann
+`vordergrund: {"ab": …, "seite": …, "kopf": …}` tragen. Vorschaubilder vorher/nachher brauchen die
 privaten Möbel- und Figurenbilder und entstehen im Spiel (Bildschirmfotos).
 
 Ablauf (im Hauptordner): python -m pipeline.abenteuer.verdeckung [--bericht DATEI]
@@ -28,6 +34,11 @@ from pathlib import Path
 WURZEL = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer"
 KACHEL = 16
 SITZARTEN = ("stuhl", "bank", "sessel", "sofa", "hocker", "couch")
+VORGABE_AB = {"stuhl": 0.55, "hocker": 0.45, "bank": 0.55, "sessel": 0.6, "sofa": 0.6, "couch": 0.6}
+VORGABE_AB_SONST = 0.55
+VORGABE_SEITE = 0.8
+SITZFLAECHE_BREIT = 0.6  # Anteil der sichtbaren Breite, ab dem eine Zeile zur Sitzfläche zählt
+SITZFLAECHE_ZEILEN = 2  # so viele breite Zeilen bilden eine Sitzfläche (eine Querstrebe ist eine)
 KOPFSEITE = re.compile(r"Kopf(Rechts|Links|Ost|West)", re.IGNORECASE)
 STELLE = re.compile(r"#stelle:([^>\s#]+)>(\d+),(\d+)>liegt")
 # Stellen, die so stimmen (Szene, Feld) → Grund.
@@ -50,6 +61,40 @@ class Stelle:
     feld: tuple[int, int]
     haltung: str
     richtung: str = ""
+
+
+def sitzunterkante(deckend: list[int], oben: int, breite: int) -> int | None:
+    """Unterste Zeile der Sitzfläche: von unten das erste Band aus SITZFLAECHE_ZEILEN breiten Zeilen.
+
+    Eingaben: deckende Pixel je Zeile des sichtbaren Teils (von oben), dessen erste Zeile und Breite.
+    Beispiel: Schulstuhl von der Seite, Sitzblock in den Zeilen 11 bis 13 → 13.
+    """
+    band = 0
+    for i in range(len(deckend) - 1, -1, -1):
+        band = band + 1 if deckend[i] >= breite * SITZFLAECHE_BREIT else 0
+        if band >= SITZFLAECHE_ZEILEN:
+            return oben + i + SITZFLAECHE_ZEILEN - 1
+    return None
+
+
+def sitzgrenze(deckend: list[int], sichtbar: tuple[int, int, int, int], richtung: str, art: str,
+               angabe: dict | None = None) -> int | None:  # fmt: skip
+    """Erste verdeckende Zeile im Rahmen je Blick (wie sitzausschnitt in vordergrund.ts), sonst None.
+
+    ``sichtbar`` ist (x, y, Breite, Höhe) des sichtbaren Teils, ``deckend`` die deckenden Pixel je
+    seiner Zeilen. Sonderfall: ``ab`` ab 1 im Katalog heißt kein Vordergrund.
+    """
+    angabe = angabe or {}
+    _, y, breite, hoehe = sichtbar
+    ab = angabe.get("ab", VORGABE_AB.get(art, VORGABE_AB_SONST))
+    if richtung == "unten" or ab >= 1:
+        return None
+    if richtung == "oben":
+        return round(y + hoehe * ab)
+    if "seite" in angabe:
+        return round(y + hoehe * angabe["seite"])
+    gemessen = sitzunterkante(deckend, y, breite)
+    return gemessen if gemessen is not None else round(y + hoehe * VORGABE_SEITE)
 
 
 def katalog() -> dict[str, dict]:

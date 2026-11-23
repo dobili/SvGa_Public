@@ -1,0 +1,30 @@
+/**
+ * Baut die Figurenbögen aller Ordner unter figuren-neu als PNG in einen Zielordner (ohne Paketbau).
+ *
+ * Warum: Nach dem Import der PixelLab-Figuren (pipeline/abenteuer/pixellabimport.py, 23.11.2026)
+ * braucht die Übersichtsseite für den Autor (pixellabuebersicht.py) die Bögen als PNG; der Paketbau
+ * legt sie dagegen als WebP ins Paket. Dieselbe Funktion wie im Paketbau (figurenbogen.mjs).
+ *
+ * Aufruf (im Ordner app/): node skripte/figurenboegen-ordner.mjs PRIVAT/spiel/figuren-neu ZIEL
+ * Abhängigkeiten: figurenbogen.mjs (sharp).
+ */
+import { mkdir, readdir, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { baueFigurenbogen } from "./figurenbogen.mjs";
+
+const [quelle, ziel] = process.argv.slice(2);
+if (!quelle || !ziel) {
+  console.error("Aufruf: node skripte/figurenboegen-ordner.mjs FIGUREN_NEU ZIEL");
+  process.exit(1);
+}
+await mkdir(ziel, { recursive: true });
+let anzahl = 0;
+for (const eintrag of await readdir(quelle, { withFileTypes: true })) {
+  if (!eintrag.isDirectory()) continue;
+  const bogen = await baueFigurenbogen(join(quelle, eintrag.name));
+  if (bogen) {
+    await writeFile(join(ziel, `${eintrag.name}.png`), bogen);
+    anzahl += 1;
+  }
+}
+console.log(`${anzahl} Bögen → ${ziel}`);

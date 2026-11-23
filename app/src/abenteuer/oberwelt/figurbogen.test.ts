@@ -1,6 +1,13 @@
 /** Tests für figurbogen.ts: PixelLab-Bogen vor LimeZu. */
 import { describe, expect, it } from "vitest";
-import { figurenbildAdresse, grosspfad, istGrossbogen } from "./figurbogen";
+import figurhoehen from "./figurhoehen.json";
+import {
+  figurenbildAdresse,
+  grosspfad,
+  hoehenfaktor,
+  hoehenfaktorDerAdresse,
+  istGrossbogen,
+} from "./figurbogen";
 
 describe("Figurenbogen", () => {
   it("nimmt den PixelLab-Bogen, wenn es ihn gibt, und merkt sich die Rahmengröße", async () => {
@@ -13,5 +20,24 @@ describe("Figurenbogen", () => {
     expect(sam).toBe("blob:figuren/sam.png");
     expect(istGrossbogen(sam ?? "")).toBe(false);
     expect(grosspfad("figuren/held-0.png")).toBe("figuren32/held-0.png");
+  });
+
+  it("gibt PixelLab-Bögen ihren Höhenfaktor, LimeZu-Bögen und Figuren ohne Eintrag 1", async () => {
+    const [name, faktor] = Object.entries(figurhoehen.faktoren)[0] ?? ["", 1];
+    const vorhanden = new Set([`figuren32/${name}.png`, `figuren/${name}.png`, "figuren/alt.png"]);
+    const lies = (p: string) => Promise.resolve(vorhanden.has(p) ? `blob:${p}` : null);
+    const neu = await figurenbildAdresse(`figuren/${name}.png`, lies);
+    const alt = await figurenbildAdresse("figuren/alt.png", lies);
+    expect(hoehenfaktor(name)).toBe(faktor);
+    expect(hoehenfaktorDerAdresse(neu ?? "")).toBe(faktor);
+    expect(hoehenfaktorDerAdresse(alt ?? "")).toBe(1);
+    expect(hoehenfaktor("gibt-es-nicht")).toBe(1);
+  });
+
+  it("hält die Höhenfaktoren im erlaubten Bereich (nur verkleinern, höchstens × 1,1)", () => {
+    for (const faktor of Object.values(figurhoehen.faktoren)) {
+      expect(faktor).toBeGreaterThan(0.5);
+      expect(faktor).toBeLessThanOrEqual(figurhoehen.hoechstens);
+    }
   });
 });

@@ -11,7 +11,7 @@
  * Abhängigkeiten: Phaser.
  */
 import Phaser from "phaser";
-import { istGrossbogen } from "./figurbogen";
+import { hoehenfaktorDerAdresse, istGrossbogen } from "./figurbogen";
 import type { Umriss } from "./sitzplatz";
 import type { Richtung } from "./szene";
 import { figurzeichenmassstab } from "./weltmassstab";
@@ -45,9 +45,15 @@ export function laufname(schluessel: string, richtung: Richtung): string {
   return `${schluessel}:lauf:${richtung}`;
 }
 
+/** Höhenfaktor je Texturschlüssel (figurhoehen.json über figurbogen.ts), nur wo er von 1 abweicht. */
+const hoehenfaktoren = new Map<string, number>();
+
 /** Lädt einen Bogen im Format von LimeZu oder PixelLab (Rahmengröße nach figurbogen.ts). */
 export function ladeFigurbogen(szene: Phaser.Scene, schluessel: string, adresse: string): void {
   const gross = istGrossbogen(adresse);
+  const faktor = hoehenfaktorDerAdresse(adresse);
+  if (faktor === 1) hoehenfaktoren.delete(schluessel);
+  else hoehenfaktoren.set(schluessel, faktor);
   szene.load.spritesheet(schluessel, adresse, {
     frameWidth: gross ? GROSS_RAHMEN : FIGUR_BREITE,
     frameHeight: gross ? GROSS_RAHMEN : FIGUR_HOEHE,
@@ -129,11 +135,14 @@ function figurfaktor(sprite: Phaser.GameObjects.Sprite): number {
 /**
  * Maßstab, mit dem eine Figur gezeichnet wird: PixelLab-Bögen 2/3 (zwei Bildschirmpixel je
  * Figurenpixel bei ZOOM 3, Variante B in weltmassstab.ts), LimeZu-Figuren 1; PixelLab-Figuren in
- * Innenräumen mal INNEN_FIGURFAKTOR (die Szene legt den Faktor in die Registry).
+ * Innenräumen mal INNEN_FIGURFAKTOR (die Szene legt den Faktor in die Registry), dazu der
+ * Höhenfaktor des Bogens (figurhoehen.json: Jugendliche kleiner, kleine Erwachsene etwas größer).
+ * Der Ursprung liegt auf der Fußzeile (fussUrsprungY), darum bleiben die Füße auf der Kachel.
  * Beispiel: Held (PixelLab) außen 2/3, innen 2/3 × 4/3 = 8/9; eine LimeZu-Figur bleibt 1.
  */
 export function figurmassstab(sprite: Phaser.GameObjects.Sprite): number {
-  return figurzeichenmassstab(sprite.frame.width, figurfaktor(sprite));
+  const hoehe = hoehenfaktoren.get(sprite.texture?.key ?? "") ?? 1;
+  return figurzeichenmassstab(sprite.frame.width, figurfaktor(sprite) * hoehe);
 }
 
 /**

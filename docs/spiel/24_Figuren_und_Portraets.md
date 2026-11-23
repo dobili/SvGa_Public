@@ -145,3 +145,28 @@ Nach der Heldenwahl wählt der Leser Rivale Victor oder Rivalin Victoria (Dialog
 - **Porträts:** `portraets/victoria…` (Blatt, Sprechbogen, groß), gleiche Stimmungen wie Victor. Der
   Dialog sucht für `#sprecher:victor` zuerst Victoria, sonst Victor.
 - **Bis sie da sind:** Die Wahl zeigt einen Platzhalter, im Spiel stehen Victors Bilder.
+
+## PixelLab-Import der Menschen (23.11.2026)
+
+Der Autor hat alle Menschen in PixelLab gezeichnet und als Sammelexporte geliefert
+(`ki-roh/selected_characters*.zip` im privaten Repository; Zuordnung Gruppe → Figur über die
+Prompts in `ki-roh/zuordnung_23-11.json`).
+
+- **Import** (`pipeline/abenteuer/pixellabimport.py`): je Figur `spiel/figuren-neu/<name>/` mit
+  den vier Richtungen, Gehen und Rennen aus dem Zustand, an dem sie hängen, und den Zuständen
+  Stuhl, Boden und Schlaf.
+  - Das Standbild wählt `pixellabtabelle.py` je Figur mit Grund. Abe hält an der Sternwarte sein
+    Teleskop, der Bläser seine Posaune; die Straßenmusikerin trägt das Instrument auf dem Rücken,
+    weil Statisten umherlaufen. Sonst gilt der Zustand mit der Laufanimation.
+  - Victoria im Pullover ist eine eigene Figur (`victoria-pullover`), wie `victor-pullover`.
+  - Die 40 alten Statistenbögen (`statist-01` … `statist-40`) zeigen ihren neuen Typ: 1–8 Kinder
+    (abwechselnd Mädchen, Junge), 9–16 Rentnerin und Rentner, ab 17 nach Ort (Kantine Arbeiter,
+    Diner-Hinterzimmer Fahrer, Weg Wandernde, Wegsperre Jugendliche), sonst reihum Alltagstypen.
+  - Ohne Export (`owen`, `statist.bauer`) bleibt der alte Bogen.
+- **Höhen** (`pixellabhoehen.py`): PixelLab liefert alle auf 32 × 32 und übergeht „short, child
+  height“ bei Jugendlichen. Je Figur ein Höhenfaktor auf die Zielhöhe der Altersgruppe
+  (Erwachsene 30,5, Alte 29,5, Jugendliche 27,5, Kinder 22 Pixel; nur verkleinern, höchstens
+  × 1,1). Die App zeichnet die Figur damit (`figurhoehen.json`, `figurbogen.ts`,
+  `figurbilder.ts`): Die Füße bleiben auf der Kachel, der Körper für Kollisionen bleibt eine
+  Kachel. Im Spiel statt im Bogen skaliert, damit die Pixelzeichnung nicht neu gerastert wird.
+- **Übersicht für den Autor**: `pixellabuebersicht.py` (nur lokal, `buch/arbeit/pixellab/`).

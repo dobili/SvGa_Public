@@ -11,7 +11,8 @@ import type { Ausloeser } from "./ausloeserebene";
 import { erzeugeLaufanimationen, standbild, stelleAufKachel } from "./figurbilder";
 import { rahmenzahl, setzeSitzend, verschiebeFigurbild } from "./figurensitz";
 import { haltungAus, standbildrahmen } from "./figurzustand";
-import { liegebild } from "./sitzrichtung";
+import { rueckeAnsKopfende } from "./liegelage";
+import { kippwinkel, liegebild } from "./sitzrichtung";
 import { deckeZu, kopfseiteUnter } from "./vordergrund";
 import { zeigeAlsGeist } from "./geistfigur";
 import {
@@ -23,8 +24,7 @@ import {
 } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
 
-/** Liegend: eine Vierteldrehung, zwei Kacheln tiefer gezeichnet (wie fuehrungsschicht.ts). */
-const LIEGEN = Math.PI / 2;
+/** Liegend zwei Kacheln tiefer gezeichnet (wie fuehrungsschicht.ts). */
 const LIEGETIEFE_KACHELN = 2;
 /** Ursprung des Liegebilds in seiner Mitte (wie fuehrungsschicht.ts). */
 const MITTE = 0.5;
@@ -112,9 +112,12 @@ const OHNE_MOEBEL: Sitzlage = { dx: 0, dy: 0, tiefe: 0, amBoden: false };
 export function legeHin(figur: Phaser.GameObjects.Sprite, eigenes: boolean, kachel: number): void {
   const kopf = (figur.scene ? kopfseiteUnter(figur.scene, figur.x, figur.y) : null) ?? "rechts";
   const bild = eigenes ? liegebild(rahmenzahl(figur), kopf) : null;
-  if (bild !== null) figur.setFrame(bild).setOrigin(MITTE, MITTE);
-  else figur.setRotation(LIEGEN);
+  if (bild !== null) figur.setFrame(bild);
+  else figur.setRotation(kippwinkel(kopf));
+  figur.setOrigin(MITTE, MITTE);
+  const [x, y] = [figur.x, figur.y];
+  rueckeAnsKopfende(figur, x, y, kopf);
   figur.setDepth(figur.y + LIEGETIEFE_KACHELN * kachel);
   // Unter die Decke (vordergrund.ts), wie beim `#stelle … >liegt` (fuehrungsschicht.ts).
-  deckeZu(figur, figur.x, figur.y, kopf);
+  deckeZu(figur, x, y, kopf);
 }

@@ -20,7 +20,8 @@ import Phaser from "phaser";
 import { laufname, rennname, standbild, stelleAufKachel } from "./figurbilder";
 import { rahmenzahl } from "./figurensitz";
 import type { Moebel } from "./moebel";
-import { kopfseiteDesBetts, liegebild, LIEGT, type Kopfseite } from "./sitzrichtung";
+import { rueckeAnsKopfende } from "./liegelage";
+import { kippwinkel, kopfseiteDesBetts, liegebild, LIEGT, type Kopfseite } from "./sitzrichtung";
 import { deckeZu, nimmDeckeWeg } from "./vordergrund";
 import { GEFUEHRT, GRUNDBILD } from "./zuwendungsschicht";
 import {
@@ -41,8 +42,6 @@ const FESTGEFAHREN_MS = 1000;
 const FIGUR_MS_JE_KACHEL = 260;
 /** Rennzeit je Kachel (ms), `#gehe:…>rennt`. */
 const RENN_MS_JE_KACHEL = 130;
-/** Liegen: um eine Vierteldrehung gekippt (Bogenmaß). */
-const LIEGEN = Math.PI / 2;
 /** Liegend über dem Bett gezeichnet: so viele Kacheln tiefer als die eigene Fußkachel. */
 const LIEGETIEFE_KACHELN = 2;
 /** Ein Bett ohne Angabe im Namen (Kopfende oben): Kopf rechts, die Ansicht West der Probe. */
@@ -262,15 +261,23 @@ function kopfseiteAuf(z: Fuehrungszugang, feld: Feld): Kopfseite {
   );
 }
 
-/** Liegend zeichnen: Liegebild aus dem Bogen, sonst das Standbild um eine Vierteldrehung gekippt. */
+/**
+ * Liegend zeichnen: Liegebild aus dem Bogen, sonst das Standbild gekippt, mit dem Kopf zur
+ * Kopfseite des Betts (kippwinkel); beides um die Mitte der Kachel.
+ */
 function legeHin(z: Fuehrungszugang, figur: Phaser.Physics.Arcade.Sprite, feld: Feld): void {
-  const rahmen = liegebild(rahmenzahl(figur), kopfseiteAuf(z, feld));
-  if (rahmen === null) figur.setRotation(LIEGEN);
-  else figur.setFrame(rahmen).setOrigin(MITTE, MITTE);
+  const kopf = kopfseiteAuf(z, feld);
+  const rahmen = liegebild(rahmenzahl(figur), kopf);
+  if (rahmen === null) figur.setRotation(kippwinkel(kopf));
+  else figur.setFrame(rahmen);
+  figur.setOrigin(MITTE, MITTE);
+  const [x, y] = [figur.x, figur.y];
+  // Kopf aufs Kissen (liegelage.ts): Die Figur ist kürzer als das Bett.
+  rueckeAnsKopfende(figur, x, y, kopf);
   figur.setData(LIEGT, true);
   // Das Bett liegt mit seiner Unterkante tiefer; liegend wäre die Figur sonst darunter verborgen.
   figur.setDepth(figur.y + LIEGETIEFE_KACHELN * z.kachel);
-  deckeZu(figur, figur.x, figur.y, KOPF_VORGABE);
+  deckeZu(figur, x, y, KOPF_VORGABE);
 }
 
 /** Der Held steht auf: Standbild, Ursprung auf den Füßen, Körper wieder an. */

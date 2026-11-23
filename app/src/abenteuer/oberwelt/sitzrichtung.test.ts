@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   blickrichtung,
   BODEN_BEGINN,
+  kippwinkel,
   kopfseiteDesBetts,
   LIEGE_BEGINN,
   liegebild,
@@ -68,5 +69,8 @@ describe("Zustände aus PixelLab: Boden und Liegen (21.11.2026)", () => {
     expect(kopfseiteDesBetts("iw5BettLila", false, "west")).toBe("links");
     expect(kopfseiteDesBetts("iw5BettLila", true, "west")).toBe("rechts");
     expect(kopfseiteDesBetts("rv5BettKopfRechts", false, "west")).toBe("rechts");
+    // Ohne Liegebild gekippt: der Kopf zur Kopfseite (Oma Ruth, Lucia).
+    expect(kippwinkel("rechts")).toBeCloseTo(Math.PI / 2);
+    expect(kippwinkel("links")).toBeCloseTo(-Math.PI / 2);
   });
 });

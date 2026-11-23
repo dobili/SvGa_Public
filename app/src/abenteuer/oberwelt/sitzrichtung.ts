@@ -83,6 +83,19 @@ export function liegebild(rahmen: number, kopf: Kopfseite): number | null {
     : null;
 }
 
+/** Vierteldrehung des gekippten Standbilds (im Uhrzeigersinn zeigt der Kopf nach rechts). */
+const VIERTELDREHUNG = Math.PI / 2;
+
+/**
+ * Drehwinkel für eine Liegende ohne Liegebild: das Standbild gekippt, mit dem Kopf zur Kopfseite.
+ * Warum: Oma Ruth und Lucia haben noch keine Liegebilder; gekippt lag der Kopf immer rechts, in
+ * ihren Betten mit dem Kissen links also am Fußende (Verdeckungsfotos, 23.11.2026).
+ * Beispiel: "rechts" → π/2, "links" → −π/2.
+ */
+export function kippwinkel(kopf: Kopfseite): number {
+  return kopf === "links" ? -VIERTELDREHUNG : VIERTELDREHUNG;
+}
+
 /** Wörter im Namen eines Betts für das Kopfende (Katalog: rv5BettKopfRechts, es15BettKopfWest). */
 const KOPF_RECHTS = /Kopf(Rechts|Ost)/;
 const KOPF_LINKS = /Kopf(Links|West)/;

@@ -387,6 +387,17 @@ Profil › Einstellungen › Fehler melden.
       Ambroses Thema, das Nachtstück, Rosies Wagen, Port Delacroix Trauer (neu mit leisem zweitem
       Ansatz auf den langen Tönen), Nova, Abschied an der Treppe, Abspann. Klingt etwas zu platt
       gedrückt, oder fehlt dir ein Unterschied zwischen leise und laut? „ok“ oder Notiz je Stück.
+- [ ] N2693. **Deine PixelLab-Figuren im Spiel:** Alle 134 Figuren und die Statisten sind
+      eingebaut (fehlen noch Owen und der Bauer, bis dahin das alte Bild). Für das Stehen ist je
+      Figur der passendste Zustand gewählt: Abe steht mit Teleskop und läuft ohne, der Bläser mit
+      Posaune, der Straßenmusiker mit Instrument auf dem Rücken, Celeste mit Skateboard. Die
+      Übersicht aller Figuren (Standbilder, Gehen und Rennen als Film, Sitzen, Liegen, Höhenfaktor)
+      liegt im privaten Repository unter figurenprobe/index.html. Passt die Wahl?
+- [ ] N2694. **Figurengrößen:** Jugendliche (Held, Heldin, Juno, Victor, Victoria …) sind auf etwa
+      27,5 Pixel verkleinert, damit Erwachsene sichtbar größer sind; zwölf kleine Erwachsene (Big
+      Joe, Darlene, Dr. Lin, Slick …) leicht vergrößert, Kinder bleiben. Stimmen die Größen
+      nebeneinander, etwa im Clubraum und in der Kantine? Neue Spielstände beginnen jetzt um 8 Uhr
+      (vorher 6), weil Kinder erst ab 7 Uhr draußen sind.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

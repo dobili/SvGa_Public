@@ -65,7 +65,9 @@ const RIVALIN_SPRECHER = "victoria";
 
 /**
  * Wessen Porträt zuerst gesucht wird: in der Rivalin-Fassung für #sprecher:victor die Rivalin
- * (portraets/victoria…), sonst null. Fehlt ihr Porträt, zeigt der Dialog Victors.
+ * (portraets/victoria…), sonst null. Fehlt ihr Porträt (Bilder des Autors stehen noch aus), zeigt der
+ * Dialog kein Porträt, nur den Namen „Victoria Hale“: Victors Gesicht wäre der falsche Ersatz
+ * (Prüfung 23.11.2026). Ihre Weltbögen victoria und victoria-pullover sind da.
  * Beispiel: rivalinsprecher("victor", true) → "victoria"; rivalinsprecher("juno", true) → null.
  */
 export function rivalinsprecher(sprecher: string, rivalin: boolean): string | null {

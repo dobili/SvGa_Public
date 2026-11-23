@@ -60,6 +60,8 @@ const ADRESSE = `http://localhost:${process.env.PLAYWRIGHT_PORT ?? "4183"}`;
 const STAND_DATEI = process.env.DURCHLAUF_STAND ?? "";
 /** So lange wartet der Durchlauf auf die Nutzerdaten der App, um den Stand einzuspielen (ms). */
 const STAND_FRIST_MS = 30_000;
+/** Ab diesem HTTP-Status fehlt eine Datei (404) oder der Server versagt. */
+const HTTP_FEHLER = 400;
 /** So oft schreibt der Lauf ein Lebenszeichen, mit so vielen Knöpfen (ms). */
 const PULS_MS = 60_000;
 const PULS_KNOEPFE = 12;
@@ -201,6 +203,13 @@ test("Spieler-Durchlauf des Schach-Abenteuers", async () => {
   const seite = kontext.pages()[0] ?? (await kontext.newPage());
   await installiereWache(seite);
   seite.on("pageerror", (e) => messung.fund("ausnahme", e.message.slice(0, 300)));
+  // Fehlende Bilder und Konsolenfehler (Nachtauftrag 23.11.2026: neue PixelLab-Figuren und Tiere).
+  seite.on("console", (m) => {
+    if (m.type() === "error") messung.fund("konsole", m.text().slice(0, 300));
+  });
+  seite.on("response", (r) => {
+    if (r.status() >= HTTP_FEHLER) messung.fund("datei", `${r.status()} ${r.url()}`);
+  });
   const lauf: Lauf = {
     seite,
     cdp: await kontext.newCDPSession(seite),

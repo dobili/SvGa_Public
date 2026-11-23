@@ -1,7 +1,7 @@
 /** Tests zu regeln/rivalform.ts: beide Fassungen haben dieselben Platzhalter. */
 import { afterEach, describe, expect, it } from "vitest";
 import { tSpiel, verbindeTextformen } from "../texte/texte";
-import { rivalformen, rivalinbogen, rivalinGewaehlt } from "./rivalform";
+import { rivalformen, rivalinbogen, rivalinGewaehlt, rivalinsprecher } from "./rivalform";
 
 describe("rivalform", () => {
   it("liest die Wahl aus den Dialogvariablen", () => {
@@ -21,6 +21,12 @@ describe("rivalform", () => {
     expect(rivalinbogen("figuren/victor-pullover.png", true)).toBe("figuren/victoria-pullover.png");
     expect(rivalinbogen("figuren/victor.png", false)).toBeNull();
     expect(rivalinbogen("figuren/juno.png", true)).toBeNull();
+  });
+
+  it("sucht in der Rivalin-Fassung nur Victorias Porträt (ohne Bild: nur der Name)", () => {
+    expect(rivalinsprecher("victor", true)).toBe("victoria");
+    expect(rivalinsprecher("victor", false)).toBeNull();
+    expect(rivalinsprecher("juno", true)).toBeNull();
   });
 
   afterEach(() => verbindeTextformen(() => rivalformen(false)));

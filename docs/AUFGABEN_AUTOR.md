@@ -435,8 +435,13 @@ Profil › Einstellungen › Fehler melden.
       Spiel fotografiert. Eidechse, Murmeltier, Bisons und ein Hund standen in Kakteen oder auf
       gesperrten Feldern und sind versetzt. Sehr kleine Tiere (Maus, Spatz, Specht, Libelle, Krebs)
       sind jetzt 8 statt 6 Pixel hoch, weil sie mit 6 kaum zu erkennen waren (umgesetzt, Widerspruch
-      genügt). Bitte ansehen: Gehen ohne Rutschen bei Kuh, Schaf, Hund, Waschbär, Saugroboter; Eule
-      und Kojote nachts. Fotos im privaten Repository unter tierprobe/fotos/index.html.
+      genügt), ebenso Eichhörnchen, Frosch, Schmetterling und Drohne.
+      Gehende Tiere rutschten (ein Gehzyklus trug sie 2,5- bis 3-mal so weit wie ihre Füße); die
+      Gehbilder laufen jetzt passend zum Tempo schneller. Bitte ansehen: rutschen Kuh, Hund,
+      Waschbär noch, wirkt das schnellere Gehen hektisch? Eule (auf dem Wasserturm in Cedar Creek)
+      und Kojote nachts; der Eichelhäher sitzt morgens sichtbar im Baum (Vögel lagen vorher hinter
+      Bäumen). Behoben: Die Tageszeit ging beim Neuladen verloren (immer wieder erster Morgen);
+      bitte einmal am Abend neu laden, die Uhrzeit bleibt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -143,14 +143,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "mf15TreppeLochDachboden",
-      "feld": [0, 6],
-      "versatz": [16, 33],
-      "deckkraft": 25,
-      "massstab": 1.1,
-      "ebene": -6
-    },
-    {
       "moebel": "mf15GelaenderEckeLinks",
       "feld": [1, 6],
       "versatz": [0, 10],
@@ -167,6 +159,15 @@
       "feld": [2, 8],
       "versatz": [11, 0],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "treppeZumBetrachter",
+      "feld": [0, 4],
+      "zuschnitt": [7, 52, 11, 29],
+      "versatz": [16, 65],
+      "ebene": -138,
+      "deckkraft": 25,
+      "kollision": false
     }
   ],
   "ausloeser": [

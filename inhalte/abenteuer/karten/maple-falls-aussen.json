@@ -8504,7 +8504,7 @@
      "id": 15,
      "name": "carlaSchule",
      "type": "figur",
-     "x": 720,
+     "x": 752,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -8634,8 +8634,8 @@
      "id": 20,
      "name": "kindMitBall",
      "type": "statist",
-     "x": 800,
-     "y": 576,
+     "x": 816,
+     "y": 544,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -8822,7 +8822,7 @@
      "id": 26,
      "name": "schuelerin",
      "type": "statist",
-     "x": 752,
+     "x": 784,
      "y": 384,
      "width": 16,
      "height": 16,
@@ -8842,7 +8842,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "47,24"
+       "value": "49,24"
       },
       {
        "name": "bis",
@@ -8860,7 +8860,7 @@
      "id": 27,
      "name": "lehrer",
      "type": "statist",
-     "x": 736,
+     "x": 768,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -8894,7 +8894,7 @@
      "name": "kinderKreide",
      "type": "statist",
      "x": 880,
-     "y": 512,
+     "y": 528,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -10406,8 +10406,8 @@
      "id": 89,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 480,
-     "y": 176,
+     "x": 384,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -10416,7 +10416,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 152
       },
       {
        "name": "kollision",
@@ -12169,17 +12169,17 @@
      "id": 165,
      "name": "pd6HausGruen2",
      "type": "moebel",
-     "x": 496,
-     "y": 96,
-     "width": 100,
-     "height": 80,
+     "x": 495,
+     "y": 81,
+     "width": 128,
+     "height": 102,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 175
       },
       {
        "name": "kollision",
@@ -12189,12 +12189,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 1.25
+       "value": 1.6
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "......./######./######./######./######."
+       "value": "......../......../......../..######/..######/....###./........"
       }
      ]
     },
@@ -13155,17 +13155,17 @@
      "id": 207,
      "name": "pd6HausGruen",
      "type": "moebel",
-     "x": 178,
-     "y": 480,
-     "width": 100,
-     "height": 80,
+     "x": 166,
+     "y": 457,
+     "width": 128,
+     "height": 102,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 552
+       "value": 551
       },
       {
        "name": "kollision",
@@ -13175,12 +13175,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 1.25
+       "value": 1.6
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "......./######./######./######./######."
+       "value": "......../......../......../.#######/.#######/.#######/........"
       }
      ]
     },
@@ -13625,17 +13625,17 @@
      "id": 227,
      "name": "pd6HausGruen",
      "type": "moebel",
-     "x": 912,
-     "y": 528,
-     "width": 100,
-     "height": 80,
+     "x": 896,
+     "y": 516,
+     "width": 128,
+     "height": 102,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 600
+       "value": 610
       },
       {
        "name": "kollision",
@@ -13645,12 +13645,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 1.25
+       "value": 1.6
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "......./######./######./######./######."
+       "value": "......../......../......../.#######/.#######/.#######/........"
       }
      ]
     },

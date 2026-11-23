@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 57,
+ "nextobjectid": 58,
  "layers": [
   {
    "id": 1,
@@ -1934,6 +1934,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -1941,8 +1946,8 @@
      "id": 42,
      "name": "cc5Fussmatte",
      "type": "moebel",
-     "x": 32,
-     "y": 179,
+     "x": 33,
+     "y": 183,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1951,7 +1956,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -2252,7 +2257,7 @@
      "id": 54,
      "name": "ccBankerlampe",
      "type": "moebel",
-     "x": 178,
+     "x": 179,
      "y": 116,
      "width": 14,
      "height": 15,
@@ -2314,6 +2319,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 57,
+     "name": "cc5Fussmatte",
+     "type": "moebel",
+     "x": 47,
+     "y": 183,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": -1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

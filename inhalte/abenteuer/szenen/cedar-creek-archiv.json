@@ -50,14 +50,6 @@
       "an_wand": true
     },
     {
-      "moebel": "cc12RegalSchatten",
-      "feld": [
-        8,
-        1
-      ],
-      "id": "dunklesRegal"
-    },
-    {
       "moebel": "cc4Treppe",
       "feld": [
         10,
@@ -148,15 +140,15 @@
       "moebel": "cc4Leselampe",
       "auf": "tisch",
       "versatz": [
-        9,
-        -2
+        5,
+        9
       ]
     },
     {
       "moebel": "cc12BuchOffen",
       "auf": "tisch",
       "versatz": [
-        -6,
+        -9,
         2
       ]
     },
@@ -164,8 +156,20 @@
       "moebel": "cc12Programmheft",
       "auf": "tisch",
       "versatz": [
-        6,
-        3
+        -4,
+        -5
+      ]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [
+        9,
+        1
+      ],
+      "spiegeln": true,
+      "versatz": [
+        -5,
+        0
       ]
     }
   ],
@@ -190,35 +194,7 @@
     {
       "name": "kellerAusgang",
       "feld": [
-        10,
-        3
-      ]
-    },
-    {
-      "name": "kellerAusgang",
-      "feld": [
-        10,
-        4
-      ]
-    },
-    {
-      "name": "kellerAusgang",
-      "feld": [
         11,
-        4
-      ]
-    },
-    {
-      "name": "kellerAusgang",
-      "feld": [
-        12,
-        3
-      ]
-    },
-    {
-      "name": "kellerAusgang",
-      "feld": [
-        12,
         4
       ]
     },
@@ -270,5 +246,23 @@
     "klassisch",
     "einfach"
   ],
-  "dicht": true
+  "dicht": true,
+  "sperren": [
+    [
+      10,
+      3
+    ],
+    [
+      10,
+      4
+    ],
+    [
+      12,
+      3
+    ],
+    [
+      12,
+      4
+    ]
+  ]
 }

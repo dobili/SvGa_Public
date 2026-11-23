@@ -74,6 +74,26 @@ def darf_ueberlappen(name: str, anderer: str, moebel: dict | None) -> bool:
     return GELAENDER in arten and arten <= {GELAENDER, "treppe"}
 
 
+def vergroesserter_zaun(stueck: dict, anderes: dict, moebel: dict | None) -> bool:
+    """Vergrößerte Zaunstücke überlappen sich und ihr Tor; zusammen bilden sie einen Zaunzug.
+
+    Warum: Der Autor hat den Zaun an der Landstraße auf 1,5 vergrößert (Kartenänderungen vom
+    20.11.2026), damit er zur Figurengröße passt; die Stücke stehen weiter im Kachelraster und decken
+    sich und die Torpfosten zur Hälfte. Das ist kein doppelt gestelltes Möbel. Beispiel:
+    wg4ZaunBottomMiddle mit Maßstab 1,5 neben wg4ZaunBottomMiddle oder wg13HolztorZu → ja; zwei
+    Zaunstücke in normaler Größe → nein.
+    """
+    katalog = moebel or {}
+
+    def zaun(s: dict) -> bool:
+        return katalog.get(s["name"], {}).get("art") == "zaun"
+
+    def vergroessert(s: dict) -> bool:
+        return s["breite"] > katalog.get(s["name"], {}).get("breite", s["breite"])
+
+    return zaun(stueck) and zaun(anderes) and (vergroessert(stueck) or vergroessert(anderes))
+
+
 def doppelte_eintraege(szene: dict, moebel: dict, mit_kollision: bool = True) -> list[str]:
     """Objekte, die mit allen Angaben zweimal in der Szene stehen.
 

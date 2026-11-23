@@ -661,7 +661,7 @@
      "name": "treppeDachboden",
      "type": "ausloeser",
      "x": 16,
-     "y": 112,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -670,12 +670,12 @@
       {
        "name": "ankunft",
        "type": "string",
-       "value": "3,6"
+       "value": "2,7"
       },
       {
        "name": "blick",
        "type": "string",
-       "value": "rechts"
+       "value": "oben"
       }
      ]
     },
@@ -684,7 +684,7 @@
      "name": "treppeDachboden",
      "type": "ausloeser",
      "x": 32,
-     "y": 112,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -693,40 +693,17 @@
       {
        "name": "ankunft",
        "type": "string",
-       "value": "3,6"
+       "value": "2,7"
       },
       {
        "name": "blick",
        "type": "string",
-       "value": "rechts"
+       "value": "oben"
       }
      ]
     },
     {
      "id": 4,
-     "name": "treppeDachboden",
-     "type": "ausloeser",
-     "x": 48,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "ankunft",
-       "type": "string",
-       "value": "3,6"
-      },
-      {
-       "name": "blick",
-       "type": "string",
-       "value": "rechts"
-      }
-     ]
-    },
-    {
-     "id": 5,
      "name": "fensterbank",
      "type": "ausloeser",
      "x": 144,
@@ -737,7 +714,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 5,
      "name": "fensterbank",
      "type": "ausloeser",
      "x": 160,
@@ -748,7 +725,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 6,
      "name": "brettSchreibtisch",
      "type": "ausloeser",
      "x": 208,
@@ -759,7 +736,7 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 7,
      "name": "treppeUnten",
      "type": "ausloeser",
      "x": 16,
@@ -782,7 +759,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 8,
      "name": "treppeUnten",
      "type": "ausloeser",
      "x": 32,
@@ -805,7 +782,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 9,
      "name": "ambrose",
      "type": "figur",
      "x": 176,
@@ -816,7 +793,7 @@
      "visible": true
     },
     {
-     "id": 11,
+     "id": 10,
      "name": "mf7Buecherregal",
      "type": "moebel",
      "x": 112,
@@ -839,7 +816,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 11,
      "name": "wzFenster",
      "type": "moebel",
      "x": 144,
@@ -862,7 +839,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "mf12Fensterbank",
      "type": "moebel",
      "x": 144,
@@ -885,7 +862,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 13,
      "name": "mf2Weltkarte",
      "type": "moebel",
      "x": 176,
@@ -908,7 +885,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "mf14SchreibtischLeer",
      "type": "moebel",
      "x": 208,
@@ -931,7 +908,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "mf8SchulstuhlHinten",
      "type": "moebel",
      "x": 216,
@@ -954,7 +931,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "rv5BettKopfRechts",
      "type": "moebel",
      "x": 192,
@@ -978,11 +955,16 @@
        "name": "maske",
        "type": "string",
        "value": ".../###/..."
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "............/............/............/............/...#########/...#########/...#########/...#########/............/............/............/............"
       }
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "wzTeppich",
      "type": "moebel",
      "x": 80,
@@ -1005,7 +987,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 18,
      "name": "mf7SesselAlt",
      "type": "moebel",
      "x": 96,
@@ -1028,7 +1010,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 19,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 128,
@@ -1051,7 +1033,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 112,
@@ -1074,7 +1056,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "mf4Karton",
      "type": "moebel",
      "x": 128,
@@ -1097,7 +1079,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "mf4KartonBreit",
      "type": "moebel",
      "x": 144,
@@ -1120,7 +1102,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 224,
@@ -1143,7 +1125,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "mf8Kommode",
      "type": "moebel",
      "x": 208,
@@ -1171,7 +1153,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "mf7Tischlampe",
      "type": "moebel",
      "x": 216,
@@ -1194,7 +1176,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "mf3BrettKlein",
      "type": "moebel",
      "x": 218,
@@ -1217,7 +1199,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 80,
@@ -1240,7 +1222,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 160,
@@ -1263,96 +1245,63 @@
      ]
     },
     {
-     "id": 30,
-     "name": "treppeZumBetrachter",
+     "id": 29,
+     "name": "bkDielen",
      "type": "moebel",
      "x": 16,
-     "y": 115,
-     "width": 48,
-     "height": 61,
+     "y": 160,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       },
       {
-       "name": "zuschnitt",
-       "type": "string",
-       "value": "0,0,0,35"
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "bkDielen",
+     "type": "moebel",
+     "x": 32,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
-       "name": "maske",
-       "type": "string",
-       "value": ".../###/###/###"
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
     {
      "id": 31,
-     "name": "bkDielen",
-     "type": "moebel",
-     "x": 20,
-     "y": 164,
-     "width": 12,
-     "height": 12,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      },
-      {
-       "name": "massstab",
-       "type": "float",
-       "value": 0.75
-      }
-     ]
-    },
-    {
-     "id": 32,
-     "name": "bkDielen",
-     "type": "moebel",
-     "x": 32,
-     "y": 164,
-     "width": 12,
-     "height": 12,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      },
-      {
-       "name": "massstab",
-       "type": "float",
-       "value": 0.75
-      }
-     ]
-    },
-    {
-     "id": 33,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 32,
@@ -1385,7 +1334,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 32,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 32,
@@ -1408,7 +1357,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 33,
      "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
@@ -1431,7 +1380,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 34,
      "name": "sd6RelingCObenRechts",
      "type": "moebel",
      "x": 32,
@@ -1454,7 +1403,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 35,
      "name": "sd6RelingCOben",
      "type": "moebel",
      "x": 24,
@@ -1477,7 +1426,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 36,
      "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
@@ -1510,13 +1459,13 @@
      ]
     },
     {
-     "id": 39,
+     "id": 37,
      "name": "mf15TreppeLochZimmer",
      "type": "moebel",
-     "x": 16,
+     "x": 17,
      "y": 61,
-     "width": 28,
-     "height": 24,
+     "width": 26,
+     "height": 23,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1536,9 +1485,95 @@
        "value": 1.1
       },
       {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,1,1"
+      },
+      {
        "name": "deckkraft",
        "type": "int",
        "value": 25
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "mf15TreppeLochZimmer",
+     "type": "moebel",
+     "x": 17,
+     "y": 64,
+     "width": 26,
+     "height": 11,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": -2
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 1.1
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,7,1,5"
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 50
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "treppeZumBetrachter",
+     "type": "moebel",
+     "x": 16,
+     "y": 116,
+     "width": 33,
+     "height": 47,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 155
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.8
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "7,0,0,37"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../.#/##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../.......#/.......#/.......#/.......#/########/########/####.###/########"
       }
      ]
     }
@@ -1631,7 +1666,7 @@
   {
    "name": "sperren_fein",
    "type": "string",
-   "value": "2,4,...#...#...#...#"
+   "value": "2,4,...#...#...#...#;1,10,....############;2,10,....############"
   }
  ]
 }

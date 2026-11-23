@@ -23,7 +23,8 @@
       "moebel": "cc4Hobelbank",
       "feld": [1, 1],
       "versatz": [0, 5],
-      "id": "hobelbank"
+      "id": "hobelbank",
+      "massstab": 0.75
     },
     {
       "moebel": "cc4Buegelsaege",
@@ -55,20 +56,23 @@
     {
       "moebel": "cc13SpringerMissraten1",
       "auf": "fensterbank",
-      "versatz": [-10, 0],
-      "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
+      "versatz": [-9, 2],
+      "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0",
+      "massstab": 0.75
     },
     {
       "moebel": "cc13SpringerMissraten2",
       "auf": "fensterbank",
-      "versatz": [0, 0],
-      "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
+      "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0",
+      "massstab": 0.75,
+      "versatz": [0, 2]
     },
     {
       "moebel": "cc13SpringerMissraten3",
       "auf": "fensterbank",
-      "versatz": [10, 0],
-      "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
+      "versatz": [9, 2],
+      "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0",
+      "massstab": 0.75
     },
     {
       "moebel": "pd6Werkzeugschrank",
@@ -87,7 +91,9 @@
     {
       "moebel": "ccDrehbank",
       "feld": [9, 6],
-      "id": "drechselbank"
+      "id": "drechselbank",
+      "massstab": 0.5,
+      "versatz": [0, 7]
     },
     {
       "moebel": "cc4Spaene",
@@ -95,7 +101,8 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [3, 5]
+      "feld": [3, 5],
+      "versatz": [-5, -16]
     },
     {
       "moebel": "cc4Rundholz",
@@ -120,17 +127,20 @@
     {
       "moebel": "ccDoppeltuerSuedHolz",
       "feld": [4, 10],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [4, 9],
-      "versatz": [0, 3]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [5, 9],
-      "versatz": [0, 3]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "cc7Werkbank",

@@ -647,20 +647,30 @@
      "type": "moebel",
      "x": 16,
      "y": 21,
-     "width": 80,
-     "height": 64,
+     "width": 60,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 77
+       "value": 61
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "..../####/####"
       }
      ]
     },
@@ -668,8 +678,8 @@
      "id": 6,
      "name": "cc4Buegelsaege",
      "type": "moebel",
-     "x": 24,
-     "y": 43,
+     "x": 14,
+     "y": 33,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -678,7 +688,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 78
+       "value": 62
       },
       {
        "name": "kollision",
@@ -691,8 +701,8 @@
      "id": 7,
      "name": "cc4Spaene",
      "type": "moebel",
-     "x": 48,
-     "y": 43,
+     "x": 38,
+     "y": 33,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -701,7 +711,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 78
+       "value": 62
       },
       {
        "name": "kollision",
@@ -714,8 +724,8 @@
      "id": 8,
      "name": "cc4FotoRahmen",
      "type": "moebel",
-     "x": 72,
-     "y": 43,
+     "x": 62,
+     "y": 33,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -724,7 +734,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 78
+       "value": 62
       },
       {
        "name": "kollision",
@@ -783,10 +793,10 @@
      "id": 11,
      "name": "cc13SpringerMissraten1",
      "type": "moebel",
-     "x": 97,
-     "y": 28,
-     "width": 9,
-     "height": 17,
+     "x": 99,
+     "y": 34,
+     "width": 7,
+     "height": 13,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -799,6 +809,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       },
       {
        "name": "wenn",
@@ -811,10 +826,10 @@
      "id": 12,
      "name": "cc13SpringerMissraten2",
      "type": "moebel",
-     "x": 107,
-     "y": 28,
-     "width": 9,
-     "height": 17,
+     "x": 108,
+     "y": 34,
+     "width": 7,
+     "height": 13,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -827,6 +842,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       },
       {
        "name": "wenn",
@@ -840,9 +860,9 @@
      "name": "cc13SpringerMissraten3",
      "type": "moebel",
      "x": 117,
-     "y": 31,
-     "width": 9,
-     "height": 14,
+     "y": 37,
+     "width": 7,
+     "height": 10,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -855,6 +875,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       },
       {
        "name": "wenn",
@@ -937,21 +962,31 @@
      "name": "ccDrehbank",
      "type": "moebel",
      "x": 144,
-     "y": 96,
-     "width": 64,
-     "height": 48,
+     "y": 103,
+     "width": 32,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 119
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.5
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "##/##"
       }
      ]
     },
@@ -982,8 +1017,8 @@
      "id": 19,
      "name": "cc4Hocker",
      "type": "moebel",
-     "x": 48,
-     "y": 80,
+     "x": 43,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -992,7 +1027,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 72
       },
       {
        "name": "kollision",
@@ -1136,6 +1171,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -1144,7 +1184,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 64,
-     "y": 147,
+     "y": 153,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1153,7 +1193,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -1167,7 +1207,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 80,
-     "y": 147,
+     "y": 153,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1176,7 +1216,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",

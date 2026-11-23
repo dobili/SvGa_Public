@@ -814,7 +814,8 @@
     {
       "moebel": "mfDoppeltuerSuedHolz",
       "feld": [13, 14],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "mfc8Pokal",
@@ -841,12 +842,14 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [13, 13],
-      "versatz": [0, 3]
+      "versatz": [0, 8],
+      "ebene": -2
     },
     {
       "moebel": "mf4Fussmatte",
       "feld": [14, 13],
-      "versatz": [0, 3]
+      "versatz": [0, 8],
+      "ebene": -2
     }
   ],
   "ausloeser": [

@@ -238,11 +238,11 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   await laufeBis(page, "ArrowLeft", "1,9");
   await laufeBis(page, "ArrowRight", "2,9");
   await page.keyboard.down("ArrowUp");
-  // Das Loch führt ins Zimmer des Helden im Obergeschoss. Dort kommt der Held neben der Treppe zum
-  // Dachboden an, auf (3,6) mit Blick nach rechts (festes Ankunftsfeld); auf dem Dachboden erreicht
-  // die gehaltene Taste (3,6) nicht, die Kachel zeigt also den Kartenwechsel. Die gehaltene Taste
-  // zählt dort erst nach einer kurzen Pause.
-  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("3,6");
+  // Das Loch führt ins Zimmer des Helden im Obergeschoss. Dort kommt der Held oben an der neuen
+  // Treppe zum Dachboden an (Kartenänderungen des Autors vom 20.11.2026): auf (2,7) mit Blick nach
+  // oben (festes Ankunftsfeld); auf dem Dachboden erreicht die gehaltene Taste (2,7) nicht, die
+  // Kachel zeigt also den Kartenwechsel. Die gehaltene Taste zählt dort erst nach einer kurzen Pause.
+  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("2,7");
   await page.keyboard.up("ArrowUp");
   // Das Ortsschild nennt die neue Karte (Spieltest „einstieg“, R1).
   await expect(page.getByTestId("abenteuer-ortsschild")).toHaveText("Dein Zimmer");

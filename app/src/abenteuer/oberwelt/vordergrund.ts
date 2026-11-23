@@ -154,6 +154,8 @@ export interface Moebelbild {
   /** Name im Katalog (die Kopfseite eines Betts steht im Namen, sitzrichtung.ts). */
   readonly name: string;
   readonly art?: string;
+  /** Katalogangabe `ende` (Kopfende eines Betts ohne Kopfseite im Namen). */
+  readonly ende?: string;
   readonly angabe?: Vordergrundangabe;
   /** Sichtbarer Teil im Rahmen (sitzumriss.ts), oder null. */
   readonly sichtbar: () => Umriss | null;
@@ -221,6 +223,19 @@ export function bettUnter(szene: Phaser.Scene, x: number, y: number): Moebelbild
   return undefined;
 }
 
+/**
+ * Kopfseite des Betts unter (x, y) in der Welt (gespiegelt vertauscht), oder null ohne Bett oder
+ * ohne Angabe. Beispiel: Oma Ruths iw5BettLila („ende: west“) → "links".
+ */
+export function kopfseiteUnter(
+  szene: Phaser.Scene,
+  x: number,
+  y: number,
+): "links" | "rechts" | null {
+  const eintrag = bettUnter(szene, x, y);
+  return eintrag ? kopfseiteDesBetts(eintrag.name, eintrag.bild.flipX, eintrag.ende) : null;
+}
+
 /** Entfernt die Decke über einer Figur (beim Aufstehen oder neuen Stellen). */
 export function nimmDeckeWeg(figur: Phaser.GameObjects.Sprite): void {
   zerstoere(figur.getData(DECKE));
@@ -253,7 +268,7 @@ export function deckeZu(
   const eintrag = figur.scene ? bettUnter(figur.scene, x, y) : undefined;
   const sichtbar = eintrag?.sichtbar();
   if (!eintrag || !sichtbar) return;
-  const seite = kopfseiteDesBetts(eintrag.name, false) ?? vorgabe;
+  const seite = kopfseiteDesBetts(eintrag.name, false, eintrag.ende) ?? vorgabe;
   const ausschnitt = bettausschnitt(sichtbar, seite, eintrag.angabe);
   figur.setData(DECKE, legeAusschnitt(eintrag, ausschnitt, figur.depth + VORDERGRUND_ABSTAND));
 }

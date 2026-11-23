@@ -66,7 +66,15 @@ def test_sichtbarer_umriss_und_sitzmoebel_aus_bildern():
         {"name": "t1", "x": 0, "y": 0},
     ]
     katalog = {"mf8SchulstuhlRechts": {"art": "stuhl"}, "t1": {"art": "tisch"}}
-    assert sitzmoebel(gesetzt, katalog, [bild, bild]) == [SCHULSTUHL]
+    assert sitzmoebel(gesetzt, katalog, [bild, bild]) == [{**SCHULSTUHL, "einzeln": True}]
+
+
+def test_einzelsitz_breiter_als_eine_kachel():
+    # Wards Ohrensessel (32 px breit): auf die sichtbare Mitte wie ein Stuhl, nicht der Feinschub
+    # einer Bank (Verdeckungsfotos 23.11.2026; wie sitzplatz.ts).
+    sessel = {"x": 160, "y": 80, "breite": 32, "hoehe": 32, "tiefe": 104, "sichtbar": (166, 82, 22, 28)}
+    assert sitzlage({**sessel, "einzeln": True}, (10, 6))[0] == 9
+    assert sitzlage(sessel, (10, 6))[0] == 0
 
 
 def test_am_boden_ohne_hub():

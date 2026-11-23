@@ -33,6 +33,19 @@ export function umrissAusPixeln(
   return { x: links, y: oben, breite: rechts - links + 1, hoehe: unten - oben + 1 };
 }
 
+/** Gemessene Rahmen der Figurenbögen („Textur|Rahmen“ → Umriss), jeder einmal. */
+const figurrahmen = new Map<string, Umriss | null>();
+
+/**
+ * Sichtbarer Teil des aktuellen Rahmens eines Sprites (im Rahmen, Figurenpixel), oder null ohne
+ * Bild. Für den Kinderhub beim Sitzen (figurensitz.ts). Beispiel: Owen sitzend → 8, 9, 15 × 23.
+ */
+export function sichtbarImSprite(sprite: Phaser.GameObjects.Sprite): Umriss | null {
+  const schluessel = `${sprite.texture.key}|${String(sprite.frame.name)}`;
+  if (!figurrahmen.has(schluessel)) figurrahmen.set(schluessel, misseRahmen(sprite.frame));
+  return figurrahmen.get(schluessel) ?? null;
+}
+
 /** RGBA-Pixel eines Rahmens einer geladenen Textur; ohne Bild oder Zeichenfläche null. */
 function pixelDesRahmens(rahmen: Phaser.Textures.Frame): Uint8ClampedArray | null {
   const bild = rahmen.source.image as CanvasImageSource | undefined;
@@ -96,6 +109,7 @@ export function moebelbildMerker(
       bild,
       name: m.name,
       art: m.angabe.art,
+      ende: m.angabe.ende,
       angabe: m.angabe.vordergrund,
       sichtbar: () => sichtbarImRahmen(szene, m),
       unterkante: () => unterkanteImRahmen(szene, m),

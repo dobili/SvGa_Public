@@ -136,10 +136,10 @@
     // Sitzende rücken wie in der App auf ihr Sitzmöbel (sitzen.js); der feine Versatz steckt in m.
     const { dx, dy } = KE.sitzverschiebung(m, b, !!sitzbild || !!wahl?.sitzbild);
     const gezeichnet = wahl?.kippen ? zeichneGekippt(ctx, m, k, b) : zeichneBild(ctx, m, k, b, dx, dy);
-    // Verdeckung durch das Möbel (Vordergrundmaske, sitzen.js): Sitzende hinter der Lehne, Liegende
-    // unter der Decke (bettvordergrund, sobald es ihn im Editor gibt).
+    // Verdeckung durch das Möbel: Sitzende hinter der Lehne (sitzen.js), Liegende unter der Decke
+    // (bettvordergrund.js).
     const zustand = KE.zustandVon(m.liste, m.eintrag).zustand;
-    if (zustand === "liegt") KE.zeichneBettvordergrund?.(ctx, m);
+    if (zustand === "liegt") KE.zeichneBettvordergrund(ctx, m);
     else if (sitzt(m)) KE.zeichneSitzvordergrund?.(ctx, m, KE.blickVon(m.liste, m.eintrag));
     return gezeichnet;
   };

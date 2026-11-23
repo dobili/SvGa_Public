@@ -2453,7 +2453,7 @@
           "von": 23,
           "bis": 2,
           "karte": "sternwarte.kuppel",
-          "feld": [1, 6],
+          "feld": [2, 7],
           "tut": "liegt"
         },
         {
@@ -2990,7 +2990,7 @@
           "von": 2,
           "bis": 5,
           "karte": "ironwood.mamasZimmer",
-          "feld": [8, 4],
+          "feld": [9, 5],
           "tut": "liegt"
         },
         {

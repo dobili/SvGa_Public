@@ -13,6 +13,7 @@ import { legeFestkoerperAufKachel } from "./figurbilder";
 import type { Bildversatz } from "./figurversatz";
 import { sitzsperre, type Sitzlage } from "./sitzplatz";
 import { hatSitzbilder, SITZ_HUB, sitzbild } from "./sitzrichtung";
+import { sichtbarImSprite } from "./sitzumriss";
 import { legeSitzausschnitt, zerstoere } from "./vordergrund";
 import { SITZT } from "./zuwendungsschicht";
 import type { Richtung } from "./szene";
@@ -20,6 +21,27 @@ import type { Richtung } from "./szene";
 /** Zahl der Rahmen eines Sprites (ohne den Grundrahmen „__BASE“ von Phaser). */
 export function rahmenzahl(sprite: Phaser.GameObjects.Sprite): number {
   return sprite.texture.frameTotal - 1;
+}
+
+/** Sichtbare Höhe eines erwachsenen Sitzbilds in Figurenpixeln (PixelLab, Rahmen 32: Zeile 1 bis 31). */
+const ERWACHSEN_SITZHOEHE = 31;
+/** Anteil des Höhenunterschieds, um den eine kleinere Figur auf dem Möbel höher sitzt. */
+const KINDERHUB_ANTEIL = 0.5;
+
+/**
+ * Kinderhub: Wer kleiner ist als ein Erwachsener, sitzt auf einem Möbel höher, mit baumelnden
+ * Beinen, statt mit den Füßen am Boden und dem Kopf in Höhe der Sitzfläche.
+ * Warum: Owen auf dem Stuhl vor dem Whitlock-Haus verschwand bis auf Scheitel und Schuhe hinter
+ * dem Vordergrund des Stuhls (Verdeckungsfotos, 23.11.2026), weil ein Kindersitzbild (23 statt
+ * 31 Zeilen) mit den Füßen an den Stuhlbeinen stand. Ausgabe in Kartenpixeln; am Boden und ohne
+ * Möbel 0. Beispiel: Owen, 23 Zeilen, Maßstab 2/3 → (31 − 23) × 0,5 × 2/3 ≈ 3 Pixel.
+ */
+function kinderhub(sprite: Phaser.GameObjects.Sprite, lage?: Sitzlage | null): number {
+  if (!lage?.moebel || lage.amBoden || !sprite.scene) return 0;
+  const sichtbar = sichtbarImSprite(sprite);
+  if (!sichtbar) return 0;
+  const fehlt = Math.max(0, ERWACHSEN_SITZHOEHE - sichtbar.hoehe);
+  return Math.round(fehlt * KINDERHUB_ANTEIL * sprite.scaleY);
 }
 
 /** Datenschlüssel am Sprite: der Vordergrund seines Sitzmöbels (vordergrund.ts). */
@@ -62,7 +84,8 @@ export function setzeSitzend(
   // Alles in Kartenpixeln; der Hub zählt in Figurenpixeln, also mal Maßstab (PixelLab 2/3).
   // Am Boden (BODENSITZ, Lily auf dem Bordstein) gibt es keine Sitzfläche, also keinen Hub.
   legeSitzvordergrund(sprite, richtung, lage);
-  const hub = hatSitzbilder(rahmen) || lage?.amBoden ? 0 : SITZ_HUB * sprite.scaleY;
+  const grundhub = hatSitzbilder(rahmen) || lage?.amBoden ? 0 : SITZ_HUB * sprite.scaleY;
+  const hub = grundhub + kinderhub(sprite, lage);
   const dx = lage?.dx ?? 0;
   const dy = (lage?.dy ?? 0) - hub;
   if (dx === 0 && dy === 0) return { dx, dy };

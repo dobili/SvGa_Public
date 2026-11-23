@@ -45,6 +45,10 @@ export interface Moebelangabe {
   readonly jeOrt?: Readonly<Record<string, Bogenlage>>;
   /** Art im Katalog („stuhl“, „bank“, …); Sitzmöbel erkennt sitzplatz.ts daran. */
   readonly art?: string;
+  /** Blickrichtung eines Sitzmöbels („links“, „unten“ …; sitzplatz.ts, blickDesSitzes). */
+  readonly blick?: string;
+  /** Waagrechte Anlagen: Seite des Endstücks; bei Betten die Seite des Kopfendes (sitzrichtung.ts). */
+  readonly ende?: string;
 }
 
 /** Wo ein Möbel auf einem Bogen liegt. */

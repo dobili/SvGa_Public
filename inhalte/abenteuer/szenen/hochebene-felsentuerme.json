@@ -462,9 +462,9 @@
     {
       "name": "bisons",
       "typ": "tier",
-      "feld": [75, 20],
+      "feld": [77, 20],
       "eigenschaften": {
-        "von": "75,20",
+        "von": "77,20",
         "bis": "87,20",
         "verhalten": "rennen"
       }
@@ -482,10 +482,10 @@
     {
       "name": "murmeltier",
       "typ": "tier",
-      "feld": [50, 21],
+      "feld": [52, 21],
       "eigenschaften": {
-        "von": "50,21",
-        "bis": "53,21",
+        "von": "52,21",
+        "bis": "55,21",
         "verhalten": "ausweichen"
       }
     },

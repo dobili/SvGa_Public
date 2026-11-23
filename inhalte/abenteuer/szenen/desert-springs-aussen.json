@@ -1080,10 +1080,10 @@
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [50, 35],
+      "feld": [52, 35],
       "eigenschaften": {
-        "von": "50,35",
-        "bis": "54,35",
+        "von": "52,35",
+        "bis": "56,35",
         "verhalten": "flitzen"
       }
     },

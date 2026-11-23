@@ -37,7 +37,7 @@ import { ladeMoebelbilder, rahmenJeTextur, richteMoebelrahmenEin, stelleMoebelAu
 import { stelleFigurenAuf } from "./figurenaufstellung";
 import { sitzmoebelAus } from "./sitzplatz";
 import { LIEGT } from "./sitzrichtung";
-import { sichtbarMesser } from "./sitzumriss";
+import { moebelbildMerker, sichtbarMesser } from "./sitzumriss";
 import { erscheineAlsGeist } from "./geisterscheinung";
 import type { Fuehrungszugang, Heldfuehrung } from "./fuehrungsschicht";
 import { Gangartsteuerung } from "./gangart";
@@ -181,9 +181,9 @@ export class Oberweltszene extends Phaser.Scene {
     richteMoebelrahmenEin(this, liste);
     // Sitzende rücken auf ihr Möbel (sitzplatz.ts); gemessen am geladenen Bild (sitzumriss.ts).
     const sitze = sitzmoebelAus(liste, KACHEL, sichtbarMesser(this));
+    // Mit den feinen Sperren der Karte (feinsperren.ts); vor den Figuren, für den Vordergrund.
+    const moebel = stelleMoebelAuf(this, liste, KACHEL, this.daten.karte, moebelbildMerker(this));
     stelleFigurenAuf(this, held, this.ausloeser, this.daten, KACHEL, BILD_JE_RICHTUNG.unten, sitze);
-    // Mit den feinen Sperren der Karte (Karteneditor 1.6, feinsperren.ts) in derselben Gruppe.
-    const moebel = stelleMoebelAuf(this, liste, KACHEL, this.daten.karte);
     this.physics.add.collider(held, moebel);
     const sperrkarte = baueSperrkarte(karte, feste, moebel, KACHEL);
     [this.frei, this.zellfrei] = [sperrkarte.kachel, sperrkarte.zelle];

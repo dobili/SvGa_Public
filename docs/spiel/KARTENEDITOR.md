@@ -245,6 +245,12 @@ flach gezeichnet: Der Held läuft über die Dielen, nicht darunter.
 
 ## 6. Figuren fein verschieben
 
+Seit Editor 1.9 (Wunsch des Autors, 23.11.2026): Sitzende werden wie im Spiel vom vorderen Teil
+ihres Sitzmöbels verdeckt, also von Vorderkante und Beinen, von hinten gesehen von der Lehne. Wer zum
+Betrachter schaut, bekommt keinen Vordergrund. Die Grenze ist je Möbelart vorgegeben und im Katalog
+als `vordergrund: {"ab": 0.6}` einstellbar (Anteil der sichtbaren Höhe von oben; `1` heißt ohne
+Vordergrund). Gedrehte, gespiegelte oder beschnittene Möbel zeigt der Editor ohne Vordergrund.
+
 Seit Editor 1.8 (Wunsch vom 22.11.2026): Eine Figur lässt sich in kleinen Schritten verschieben,
 etwa damit eine Sitzende richtig auf ihrem Stuhl sitzt und die Beine über die Sitzfläche ragen.
 

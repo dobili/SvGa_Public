@@ -21,6 +21,7 @@ import { laufname, rennname, standbild, stelleAufKachel } from "./figurbilder";
 import { rahmenzahl } from "./figurensitz";
 import type { Moebel } from "./moebel";
 import { kopfseiteDesBetts, liegebild, LIEGT, type Kopfseite } from "./sitzrichtung";
+import { deckeZu, nimmDeckeWeg } from "./vordergrund";
 import { GEFUEHRT, GRUNDBILD } from "./zuwendungsschicht";
 import {
   blickZu,
@@ -239,11 +240,11 @@ function steheStill(
   if (figur.body instanceof Phaser.Physics.Arcade.StaticBody) figur.body.updateFromGameObject();
 }
 
-/** Kopfseite des Betts unter diesem Feld (Mitte der Kachel im Bild des Möbels), sonst die Vorgabe. */
-function kopfseiteAuf(z: Fuehrungszugang, feld: Feld): Kopfseite {
+/** Das Bett unter diesem Feld (Mitte der Kachel im Bild des Möbels), oder undefined. */
+function bettAuf(z: Fuehrungszugang, feld: Feld): Moebel | undefined {
   const mx = (feld.x + MITTE) * z.kachel;
   const my = (feld.y + MITTE) * z.kachel;
-  const bett = z.moebel.find(
+  return z.moebel.find(
     (m) =>
       /Bett/.test(m.name) &&
       mx >= m.x &&
@@ -251,6 +252,11 @@ function kopfseiteAuf(z: Fuehrungszugang, feld: Feld): Kopfseite {
       mx < m.x + m.angabe.breite &&
       my < m.y + m.angabe.hoehe,
   );
+}
+
+/** Kopfseite des Betts unter diesem Feld, sonst die Vorgabe. */
+function kopfseiteAuf(z: Fuehrungszugang, feld: Feld): Kopfseite {
+  const bett = bettAuf(z, feld);
   return (bett && kopfseiteDesBetts(bett.name, bett.form?.spiegeln)) ?? KOPF_VORGABE;
 }
 
@@ -262,10 +268,12 @@ function legeHin(z: Fuehrungszugang, figur: Phaser.Physics.Arcade.Sprite, feld: 
   figur.setData(LIEGT, true);
   // Das Bett liegt mit seiner Unterkante tiefer; liegend wäre die Figur sonst darunter verborgen.
   figur.setDepth(figur.y + LIEGETIEFE_KACHELN * z.kachel);
+  deckeZu(figur, figur.x, figur.y, KOPF_VORGABE);
 }
 
 /** Der Held steht auf: Standbild, Ursprung auf den Füßen, Körper wieder an. */
 function aufstehen(z: Fuehrungszugang): void {
+  nimmDeckeWeg(z.held);
   z.held.setData(LIEGT, false).setRotation(0);
   stelleAufKachel(z.held, z.kachel);
   z.blicke("unten");
@@ -282,7 +290,7 @@ export function stelle(z: Fuehrungszugang, auftrag: Stellauftrag): void {
   if (!figur) return;
   figur.setPosition((auftrag.feld.x + MITTE) * z.kachel, (auftrag.feld.y + MITTE) * z.kachel);
   if (auftrag.liegt) legeHin(z, figur, auftrag.feld);
-  else figur.setDepth(figur.y);
+  else nimmDeckeWeg(figur.setDepth(figur.y));
   if (figur.body instanceof Phaser.Physics.Arcade.Body) figur.body.enable = !auftrag.liegt;
   if (figur.body instanceof Phaser.Physics.Arcade.StaticBody) figur.body.updateFromGameObject();
 }

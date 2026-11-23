@@ -1,0 +1,188 @@
+{
+  "erklaerung": "Personen ohne Stuhlbild: stehen neben dem Stuhl (figurenzustaende_ablauf.py)",
+  "personen": {
+    "ada": {
+      "wegMapleCedar.landstrasse@80,14": [80, 15]
+    },
+    "batiste": {
+      "portDelacroix.turnhalle@20,13": [20, 14]
+    },
+    "bea": {
+      "capitalArena.aussen@23,45": [23, 46],
+      "capitalArena.ubahnhof@19,12": [19, 13]
+    },
+    "blaeser": {
+      "portDelacroix.turnhalle@19,13": [19, 14]
+    },
+    "boateng": {
+      "cedarCreek.aussen@17,6": [16, 6]
+    },
+    "celeste": {
+      "portDelacroix.aussen@5,14": [5, 15]
+    },
+    "coachDelgado": {
+      "mapleFalls.park@15,22": [14, 22],
+      "mapleFalls.diner@14,4": [15, 4]
+    },
+    "dale": {
+      "wegRivertonIronwood.kanalweg@14,164": [13, 164],
+      "wegRivertonIronwood.kanalweg@12,38": [12, 39]
+    },
+    "dime": {
+      "wegRivertonIronwood.kanalweg@13,38": [13, 39],
+      "wegRivertonIronwood.kanalweg@12,37": [12, 36]
+    },
+    "dolores": {
+      "jahrmarkt.festplatz@32,15": [32, 16]
+    },
+    "dunmore": {
+      "cedarCreek.aussen@30,30": [30, 31]
+    },
+    "earl": {
+      "wegDesertSummit.diner@7,19": [7, 20]
+    },
+    "fenwick": {
+      "wegCedarRiverton.zedernwald@54,2": [54, 3]
+    },
+    "gegnerin": {
+      "wegMapleCedar.flussweg@86,13": [86, 14]
+    },
+    "grahamHale": {
+      "ironwood.aussen@14,49": [14, 50],
+      "ironwood.kantine@28,15": [27, 15]
+    },
+    "greta": {
+      "wegCrossroadsPinewood.huetten@60,22": [61, 22]
+    },
+    "guidry": {
+      "wegSiliconDelacroix.faehre@17,38": [18, 38]
+    },
+    "gus": {
+      "ironwood.aussen@65,45": [65, 46],
+      "ironwood.kantine@30,12": [30, 13]
+    },
+    "hank": {
+      "ironwood.aussen@13,49": [13, 50],
+      "ironwood.kantine@13,11": [13, 11]
+    },
+    "harlan": {
+      "riverton.aussen@21,6": [21, 7],
+      "riverton.bahnhofshalle@10,11": [9, 11]
+    },
+    "henri": {
+      "portDelacroix.werkstatt@4,10": [4, 11]
+    },
+    "holloway": {
+      "wegDelacroixDesert.canyonpfad@60,12": [60, 13]
+    },
+    "joggerin": {
+      "wegMapleCedar.landstrasse@81,14": [81, 15]
+    },
+    "juniper": {
+      "wegPinewoodGhost.canyonrand@93,9": [93, 10]
+    },
+    "juno": {
+      "mapleFalls.park@22,24": [22, 25],
+      "mapleFalls.diner@14,10": [15, 10]
+    },
+    "kade": {
+      "capitalArena.innenstadt@30,50": [29, 50],
+      "capitalArena.ubahnhof@12,12": [12, 13]
+    },
+    "kiki": {
+      "wegIronwoodSilicon.glasbruecke@84,10": [84, 11],
+      "wegIronwoodSilicon.raststaette@31,14": [31, 15]
+    },
+    "kit": {
+      "summitCity.aussen@33,39": [33, 40]
+    },
+    "lin": {
+      "siliconBay.hafen@22,27": [21, 27]
+    },
+    "lou": {
+      "portDelacroix.aussen@4,14": [4, 15]
+    },
+    "lucia": {
+      "sternwarte.felsnase@2,7": [2, 8]
+    },
+    "marcus": {
+      "capitalArena.innenstadt@30,51": [30, 51],
+      "capitalArena.ubahnhof@3,9": [3, 10]
+    },
+    "mira": {
+      "desertSprings.aussen@20,6": [20, 7]
+    },
+    "ngata": {
+      "sternwarte.felsnase@2,5": [1, 5]
+    },
+    "odette": {
+      "wegGhostCapital.seeufer@108,19": [108, 20]
+    },
+    "odile": {
+      "portDelacroix.turnhalle@14,7": [13, 7]
+    },
+    "okafor": {
+      "cedarCreek.aussen@31,30": [31, 31]
+    },
+    "omaRuth": {
+      "ironwood.mamasZimmer@3,6": [2, 6]
+    },
+    "owen": {
+      "mapleFalls.aussen@6,31": [6, 32],
+      "mapleFalls.park@15,28": [15, 29]
+    },
+    "pratt": {
+      "wegMapleCedar.flussweg@54,20": [54, 21]
+    },
+    "priya": {
+      "ironwood.aussen@12,49": [12, 50],
+      "ironwood.kantine@15,12": [16, 12]
+    },
+    "pruitt": {
+      "ghostTown.saloon@5,10": [5, 11]
+    },
+    "ray": {
+      "wegSummitCrossroads.geysirbecken@23,61": [23, 62]
+    },
+    "remy": {
+      "portDelacroix.aussen@3,14": [3, 15]
+    },
+    "rosa": {
+      "cedarCreek.aussen@50,24": [49, 24]
+    },
+    "ruthKeene": {
+      "wegDesertSummit.diner@6,19": [6, 20]
+    },
+    "schaffner": {
+      "wegCedarRiverton.bahndamm@39,4": [39, 5]
+    },
+    "schiffskoch": {
+      "wegSiliconDelacroix.faehre@16,38": [15, 38]
+    },
+    "skaterJo": {
+      "mapleFalls.park@22,23": [21, 23],
+      "mapleFalls.diner@14,9": [15, 9]
+    },
+    "sol": {
+      "summitCity.aussen@40,39": [40, 40]
+    },
+    "tamsin": {
+      "riverton.aussen@17,19": [16, 19]
+    },
+    "teague": {
+      "ironwood.aussen@30,46": [29, 46],
+      "ironwood.kantine@12,11": [12, 11]
+    },
+    "tobias": {
+      "capitalArena.innenstadt@31,50": [31, 49],
+      "capitalArena.ubahnhof@26,12": [26, 13]
+    },
+    "tomas": {
+      "desertSprings.aussen@21,6": [21, 7]
+    },
+    "turnierleiterin": {
+      "capitalArena.innenstadt@31,51": [31, 52],
+      "capitalArena.ubahnhof@2,9": [2, 10]
+    }
+  }
+}

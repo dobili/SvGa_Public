@@ -26,7 +26,8 @@
     {
       "moebel": "cc8TuerSuedHolz",
       "feld": [5, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "ldBild",
@@ -113,7 +114,8 @@
     {
       "moebel": "es7Fussmatte",
       "feld": [5, 11],
-      "versatz": [0, 2]
+      "versatz": [0, 9],
+      "ebene": -2
     }
   ],
   "ausloeser": [

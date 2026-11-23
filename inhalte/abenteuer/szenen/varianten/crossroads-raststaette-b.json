@@ -28,12 +28,14 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [12, 16],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "mf9TuerSuedGlas",
       "feld": [12, 17],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "mf9Vorrat102",

@@ -290,7 +290,8 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [18, 17],
-      "versatz": [0, 19]
+      "versatz": [0, 25],
+      "ebene": -2
     },
     {
       "moebel": "sb5SchildPerfectMove",
@@ -310,22 +311,26 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [19, 17],
-      "versatz": [0, 19]
+      "versatz": [0, 25],
+      "ebene": -2
     },
     {
       "moebel": "rv5TuerSuedGlas",
       "feld": [17, 19],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "rv5TuerSuedGlas",
       "feld": [18, 19],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [17, 17],
-      "versatz": [0, 19]
+      "versatz": [0, 25],
+      "ebene": -2
     },
     {
       "moebel": "wzKartonstapelHoch",

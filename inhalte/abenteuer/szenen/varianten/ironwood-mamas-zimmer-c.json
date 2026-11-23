@@ -24,12 +24,14 @@
     {
       "moebel": "cc6TuerSued",
       "feld": [8, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [8, 10],
-      "versatz": [0, 24]
+      "versatz": [0, 25],
+      "ebene": -2
     },
     {
       "moebel": "wzKuehlschrank",

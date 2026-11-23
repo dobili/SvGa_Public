@@ -61,11 +61,13 @@
     {
       "moebel": "es7Fussmatte",
       "feld": [6, 8],
-      "versatz": [0, 3]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "es7Tuer",
-      "feld": [6, 9]
+      "feld": [6, 9],
+      "deckkraft": 75
     },
     {
       "moebel": "mf2Kleiderschrank",

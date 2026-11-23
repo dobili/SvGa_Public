@@ -102,12 +102,14 @@
     {
       "moebel": "pd6Fussmatte",
       "feld": [10, 11],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "pd6Tuer",
       "feld": [10, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     }
   ],
   "ausloeser": [

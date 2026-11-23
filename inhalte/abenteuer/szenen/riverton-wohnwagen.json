@@ -70,7 +70,8 @@
     {
       "moebel": "rv5TuerSuedHell",
       "feld": [7, 8],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "rv5Kuriertasche",
@@ -99,7 +100,8 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [7, 7],
-      "versatz": [0, 2]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "rv5Teppich",

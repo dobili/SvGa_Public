@@ -899,6 +899,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -1321,7 +1326,7 @@
      "name": "es7Fussmatte",
      "type": "moebel",
      "x": 80,
-     "y": 178,
+     "y": 185,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1330,7 +1335,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",

@@ -110,16 +110,19 @@
     {
       "moebel": "gt7Fussmatte",
       "feld": [10, 12],
-      "versatz": [0, 6]
+      "versatz": [0, 12],
+      "ebene": -2
     },
     {
       "moebel": "gt7Fussmatte",
       "feld": [11, 12],
-      "versatz": [0, 6]
+      "versatz": [0, 12],
+      "ebene": -2
     },
     {
       "moebel": "gt13SchwingtuerDoppel",
-      "feld": [10, 13]
+      "feld": [10, 13],
+      "deckkraft": 75
     },
     {
       "moebel": "gt7Barhocker",

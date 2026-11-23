@@ -23,7 +23,8 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [7, 9],
-      "versatz": [0, 19]
+      "versatz": [0, 24],
+      "ebene": -2
     },
     {
       "moebel": "mf2Tafel",
@@ -120,12 +121,14 @@
     {
       "moebel": "rv8GlastuerSued",
       "feld": [7, 11],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [8, 9],
-      "versatz": [0, 19]
+      "versatz": [0, 24],
+      "ebene": -2
     }
   ],
   "ausloeser": [

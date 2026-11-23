@@ -24,12 +24,14 @@
     {
       "moebel": "cc6TuerSued",
       "feld": [7, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [7, 10],
-      "versatz": [0, 19]
+      "versatz": [0, 25],
+      "ebene": -2
     },
     {
       "moebel": "n9Fernrohr",

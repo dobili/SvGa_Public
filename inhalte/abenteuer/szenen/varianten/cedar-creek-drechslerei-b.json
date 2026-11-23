@@ -65,12 +65,14 @@
     {
       "moebel": "cc5Tuer",
       "feld": [4, 10],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [4, 9],
-      "versatz": [0, 16]
+      "versatz": [0, 19],
+      "ebene": -2
     }
   ],
   "ausloeser": [

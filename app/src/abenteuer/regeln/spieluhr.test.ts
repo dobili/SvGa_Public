@@ -16,10 +16,10 @@ const MIN = 60_000;
 const um = (stunde: number, tag = 1) => (tag - 1) * MINUTEN_JE_TAG + stunde * 60;
 
 describe("Spieluhr", () => {
-  it("neuer Stand: erster Morgen, 6 Uhr", () => {
-    expect(stundeJetzt({})).toBe(6);
+  it("neuer Stand: erster Morgen, 8 Uhr", () => {
+    expect(stundeJetzt({})).toBe(8);
     expect(spieltag({})).toBe(1);
-    expect(stundeJetzt({ spieluhr: START_SPIELMINUTE })).toBe(6);
+    expect(stundeJetzt({ spieluhr: START_SPIELMINUTE })).toBe(8);
   });
 
   it("Phasen nach Stunden", () => {

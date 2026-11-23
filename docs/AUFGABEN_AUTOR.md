@@ -329,7 +329,7 @@ Profil › Einstellungen › Fehler melden.
       Clubraum so stellen, dass die Beine über die Sitzfläche ragen, die Änderungen herunterladen
       und zurückschicken; danach im Spiel nachsehen, ob Sam genauso sitzt.
 - [ ] N2682. **Spieluhr und Warten:** Neuer Spielstand: Es ist Morgen, draußen leicht dämmrig. Im
-      Spielmenü (☰) steht oben „Tag 1, Morgen, 6 Uhr“ mit „Warten … bis Morgen, Mittag, Abend,
+      Spielmenü (☰) steht oben „Tag 1, Morgen, 8 Uhr“ mit „Warten … bis Morgen, Mittag, Abend,
       Nacht“. „bis Nacht“ antippen: Die Welt wird kurz dunkel, dann ist es 22 Uhr, draußen
       nachtblau, die Leute vom Tag sind fort. An einer Bank bietet der Aktionsknopf „Ausruhen“
       dieselbe Wahl, am eigenen Bett „Schlafen bis morgen“. Im Tagebuch steht die Tageszeit. Ein

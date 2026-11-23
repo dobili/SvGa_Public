@@ -24,7 +24,7 @@ test("Warten bis Nacht: Nachttönung, andere Statisten, Tagebuch zeigt die Nacht
   await page.addInitScript(() => window.localStorage.setItem("svga.safariHinweis", "aus"));
   await starteMitStand(page, STAND);
   const welt = page.getByTestId("abenteuer-welt");
-  await expect(welt).toHaveAttribute("data-stunde", "6", { timeout: 20000 });
+  await expect(welt).toHaveAttribute("data-stunde", "8", { timeout: 20000 });
   await expect(welt).toHaveAttribute("data-toenung", "morgen");
   await expect(welt).toHaveAttribute("data-statisten", /\w/, { timeout: 20000 });
   const amMorgen = await welt.getAttribute("data-statisten");

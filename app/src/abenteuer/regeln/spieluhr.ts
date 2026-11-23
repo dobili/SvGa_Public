@@ -5,7 +5,7 @@
  * die Uhr weiter.
  *
  * Gezählt wird in Spielminuten seit Spielbeginn (Feld `spieluhr` im Spielstand); ein neuer Stand
- * beginnt am ersten Morgen um 6 Uhr. Die Uhr läuft nur in freier Oberwelt (useSpieluhr.ts), nicht
+ * beginnt am ersten Morgen um 8 Uhr. Die Uhr läuft nur in freier Oberwelt (useSpieluhr.ts), nicht
  * in Dialogen, Partien, Läden, im Tagebuch und nicht, während die App zu ist. Die Geschichte geht
  * vor: Ink setzt die Uhr mit `#uhr:abend` oder `#uhr:22` (uhrNachAngabe).
  *
@@ -34,8 +34,8 @@ export const MINUTEN_JE_STUNDE = 60;
 export const STUNDEN_JE_TAG = 24;
 export const MINUTEN_JE_TAG = MINUTEN_JE_STUNDE * STUNDEN_JE_TAG;
 const MS_JE_MINUTE = 60_000;
-/** Ein neuer Spielstand beginnt am ersten Morgen um 6 Uhr. */
-export const START_SPIELMINUTE = 6 * MINUTEN_JE_STUNDE;
+/** Ein neuer Spielstand beginnt am ersten Morgen um 8 Uhr (Kinder sind ab 7 Uhr draußen, tagesablaeufe.json). */
+export const START_SPIELMINUTE = 8 * MINUTEN_JE_STUNDE;
 
 /** Ziele zum Warten und für `#uhr:<name>` (Stunde des Tages). */
 export const ZIELE: Readonly<Record<string, number>> = {

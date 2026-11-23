@@ -1,26 +1,33 @@
 {
-  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen. Der Reiher ist ein Gemini-Bild des Autors, zu Reihen gelegt mit bildwuensche/reiher_reihen.py (mittel-1). Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen). Reh und Hirsch kommen aus Gemini als Einzelbilder von Seite, hinten und vorn (Schnitt „ansichten“, Runde 9, mittel-3); der Wapiti nimmt den Hirsch. Roboter (Liefer-, Saug-, Schneeräumroboter) zeigen den Lieferroboter von Perfect Move aus Gemini; der Kehrroboter der Altstadt von Silicon Bay hat eigene Gemini-Ansichten (17.11.2026, Auftrag 12). Pferd (braun), Schimmel (grau), Kojote und Fuchs kommen ebenfalls aus Gemini (Teil 2, 10.11.2026, Schnitt „ansichten“) und lösen Esel und Hund als Ersatz ab; die Bilder „grast“ und „sitzt“ stehen als Möbel bereit (allgemein.json, tier12…). massstab: Zielhöhe neben den Figuren (Erwachsener außen 20 Spielpixel, Kind 14) durch die gemessene Höhe im Bogen, aus pipeline/abenteuer/tierplan.py (21.11.2026, mit Zuschlag für kleine und mittlere Tiere nach Prüfung im Spiel; vorher waren alle Tiere etwa doppelt so groß wie neben den PixelLab-Figuren richtig).",
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). schnitt „pixellab“ (23.11.2026): Bögen aus den PixelLab-Exporten des Autors (pipeline/abenteuer/pixellab_tiere.py, Wahl der Zustände mit Grund in pixellab_tierwahl.py): Reihe 0 Standbilder, Reihe 1 Bewegung (6 je Richtung), Reihe 2 Zustände (je 4, Ordnung in zustaende: Verhalten sitzen, schlafen, grasen), Reihen 3 und 4 Schwimmen still und in Bewegung (schwimmen.mitte: Mitte der Wasserfläche im Rahmen, schwimmen.wasser: Palette). fuss: unterste Zeile der Standbilder im Rahmen. gemessen: größte Höhe der Standbilder; massstab = Zielhöhe (tierplan.py) / gemessen. Jede PixelLab-Art hat ihren eigenen Wortstamm; Ersatz bleibt nur für Arten ohne PixelLab-Bild (Esel, Schimmel, Drohne). Ohne passenden Stamm wird nichts gezeichnet (Waschbär, Saugroboter, bis der Autor sie macht).",
   "arten": {
     "taube": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png",
-      "breite": 16,
-      "hoehe": 16,
-      "schnitt": "streifen",
-      "massstab": 0.55
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.taube",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.53,
+      "gemessen": 15,
+      "fuss": 24
     },
     "kraehe": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Crow_idle_16x16.png",
-      "breite": 32,
-      "hoehe": 32,
-      "schnitt": "richtungen",
-      "massstab": 0.6
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.kraehe",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.42,
+      "gemessen": 26,
+      "fuss": 34,
+      "zustaende": ["sitzen"]
     },
     "moewe": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Beach_Seagull_Complete_16x16.png",
-      "breite": 32,
-      "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.5
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.moewe",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.41,
+      "gemessen": 27,
+      "fuss": 31
     },
     "drohne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Drone_1_Flying_16x16.png",
@@ -29,67 +36,93 @@
       "schnitt": "streifen"
     },
     "huhn": {
-      "quelle": "modern-farm/Animals/Chickens_and_Roosters/Chicken_Brown_16x16.png",
-      "breite": 16,
-      "hoehe": 16,
-      "schnitt": "reihen",
-      "massstab": 0.8
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.huhn",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.5,
+      "gemessen": 22,
+      "fuss": 28
     },
     "ente": {
-      "quelle": "modern-farm/Animals/Ducks/Duck_Green_Head_16x16.png",
-      "breite": 32,
-      "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.5
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.ente",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.52,
+      "gemessen": 21,
+      "fuss": 29,
+      "schwimmen": {
+        "mitte": 19,
+        "wasser": "standard"
+      }
     },
     "gans": {
-      "quelle": "modern-farm/Animals/Ducks/Duck_White_16x16.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.gans",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.65
+      "schnitt": "pixellab",
+      "massstab": 0.61,
+      "gemessen": 23,
+      "fuss": 28,
+      "zustaende": ["sitzen"]
     },
     "hase": {
-      "quelle": "modern-farm/Animals/Rabbits/Rabbit_Brown_Dark_Ears_16x16.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.hase",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.45
+      "schnitt": "pixellab",
+      "massstab": 0.35,
+      "gemessen": 26,
+      "fuss": 29
     },
     "schwein": {
-      "quelle": "modern-farm/Animals/Pigs/Pig_Pink_16x16.png",
-      "breite": 32,
-      "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.6
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.schwein",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.75,
+      "gemessen": 20,
+      "fuss": 31,
+      "zustaende": ["schlafen"]
     },
     "ziege": {
-      "quelle": "modern-farm/Animals/Goats/Goat_Brown_16x16.png",
-      "breite": 32,
-      "hoehe": 48,
-      "schnitt": "reihen",
-      "massstab": 0.45
-    },
-    "schaf": {
-      "quelle": "modern-farm/Animals/Sheeps/Sheep_2_White_16x16.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.ziege",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.6
+      "schnitt": "pixellab",
+      "massstab": 0.62,
+      "gemessen": 24,
+      "fuss": 28,
+      "zustaende": ["sitzen"]
+    },
+    "schaf": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.schaf",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.68,
+      "gemessen": 22,
+      "fuss": 27
     },
     "bison": {
-      "quelle": "spiel/eigene/bison_klein_rechts.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.bison",
       "breite": 64,
-      "hoehe": 48,
-      "schnitt": "standbild",
-      "massstab": 0.55
+      "hoehe": 64,
+      "schnitt": "pixellab",
+      "massstab": 0.42,
+      "gemessen": 48,
+      "fuss": 58
     },
     "kuh": {
-      "quelle": "modern-farm/Animals/Cows/Cow_16x16.png",
-      "breite": 48,
-      "hoehe": 48,
-      "schnitt": "reihen",
-      "massstab": 0.4
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.kuh",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.63,
+      "gemessen": 27,
+      "fuss": 34,
+      "zustaende": ["sitzen", "grasen"]
     },
     "esel": {
       "quelle": "modern-farm/Animals/Donkeys/Donkey_16x16.png",
@@ -99,61 +132,82 @@
       "massstab": 0.4
     },
     "hund": {
-      "quelle": "modern-farm/Animals/Dogs/Dog_Labrador_Brown_16x16.png",
-      "breite": 48,
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.hund",
+      "breite": 32,
       "hoehe": 32,
-      "schnitt": "baender",
-      "massstab": 0.5
+      "schnitt": "pixellab",
+      "massstab": 0.52,
+      "gemessen": 25,
+      "fuss": 29,
+      "zustaende": ["schlafen"]
     },
     "katze": {
-      "quelle": "modern-farm/Animals/Cats/Cat_Hugo.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.katze",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "fest:0:192",
-      "massstab": 0.55
+      "schnitt": "pixellab",
+      "massstab": 0.42,
+      "gemessen": 26,
+      "fuss": 29,
+      "zustaende": ["sitzen", "schlafen"]
     },
     "reiher": {
-      "quelle": "spiel/eigene/reiher_reihen.png",
-      "breite": 32,
-      "hoehe": 32,
-      "schnitt": "reihen",
-      "massstab": 0.55
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.reiher",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.57,
+      "gemessen": 28,
+      "fuss": 32,
+      "zustaende": ["sitzen"]
     },
     "reh": {
-      "quelle": "spiel/eigene/reh_{}_v2.png",
-      "breite": 32,
-      "hoehe": 28,
-      "schnitt": "ansichten",
-      "massstab": 0.55
-    },
-    "hirsch": {
-      "quelle": "spiel/eigene/hirsch_{}.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.reh",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "ansichten",
-      "massstab": 0.65
+      "schnitt": "pixellab",
+      "massstab": 0.59,
+      "gemessen": 27,
+      "fuss": 30,
+      "zustaende": ["sitzen"]
+    },
+    "hirsch": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.hirsch",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.7,
+      "gemessen": 30,
+      "fuss": 36,
+      "zustaende": ["sitzen"]
     },
     "lieferroboter": {
-      "quelle": "spiel/eigene/lieferroboter_{}.png",
-      "breite": 16,
-      "hoehe": 24,
-      "schnitt": "ansichten",
-      "ansichten": ["rechts", "oben", "unten"],
-      "massstab": 0.75
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.lieferroboter",
+      "breite": 48,
+      "hoehe": 48,
+      "schnitt": "pixellab",
+      "massstab": 0.54,
+      "gemessen": 28,
+      "fuss": 40
     },
     "kehrroboter": {
-      "quelle": "spiel/eigene/kehrroboter_{}.png",
-      "breite": 24,
-      "hoehe": 20,
-      "schnitt": "ansichten",
-      "ansichten": ["rechts", "oben", "unten"]
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.kehrroboter",
+      "breite": 48,
+      "hoehe": 48,
+      "schnitt": "pixellab",
+      "massstab": 0.55,
+      "gemessen": 29,
+      "fuss": 39
     },
     "pferd": {
-      "quelle": "spiel/eigene/pferd_braun_{}_v2.png",
-      "breite": 48,
-      "hoehe": 50,
-      "schnitt": "ansichten",
-      "massstab": 0.45
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.pferd",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.76,
+      "gemessen": 29,
+      "fuss": 35,
+      "zustaende": ["grasen"]
     },
     "schimmel": {
       "quelle": "spiel/eigene/pferd_grau_{}_v2.png",
@@ -163,74 +217,470 @@
       "massstab": 0.45
     },
     "kojote": {
-      "quelle": "spiel/eigene/kojote_{}_v2.png",
-      "breite": 32,
-      "hoehe": 25,
-      "schnitt": "ansichten",
-      "massstab": 0.55
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.kojote",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.5,
+      "gemessen": 28,
+      "fuss": 34
     },
     "fuchs": {
-      "quelle": "spiel/eigene/fuchs_{}_v2.png",
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.fuchs",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.52,
+      "gemessen": 23,
+      "fuss": 33
+    },
+    "spatz": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.spatz",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.25,
+      "gemessen": 24,
+      "fuss": 34
+    },
+    "eichelhaeher": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.eichelhaeher",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.27,
+      "gemessen": 30,
+      "fuss": 35
+    },
+    "seeschwalbe": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.seeschwalbe",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.33,
+      "gemessen": 24,
+      "fuss": 33
+    },
+    "geier": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.geier",
+      "breite": 44,
+      "hoehe": 44,
+      "schnitt": "pixellab",
+      "massstab": 0.46,
+      "gemessen": 28,
+      "fuss": 36
+    },
+    "adler": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.adler",
+      "breite": 44,
+      "hoehe": 44,
+      "schnitt": "pixellab",
+      "massstab": 0.56,
+      "gemessen": 27,
+      "fuss": 36
+    },
+    "falke": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.falke",
+      "breite": 44,
+      "hoehe": 44,
+      "schnitt": "pixellab",
+      "massstab": 0.37,
+      "gemessen": 30,
+      "fuss": 37
+    },
+    "eisvogel": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.eisvogel",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.23,
+      "gemessen": 26,
+      "fuss": 32
+    },
+    "fasan": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.fasan",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.43,
+      "gemessen": 28,
+      "fuss": 35
+    },
+    "roadrunner": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.roadrunner",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.41,
+      "gemessen": 27,
+      "fuss": 34
+    },
+    "specht": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.specht",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.23,
+      "gemessen": 26,
+      "fuss": 34,
+      "zustaende": ["sitzen"]
+    },
+    "eule": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.eule",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.39,
+      "gemessen": 28,
+      "fuss": 34,
+      "zustaende": ["sitzen", "schlafen"]
+    },
+    "strandlaeufer": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.strandlaeufer",
+      "breite": 48,
+      "hoehe": 48,
+      "schnitt": "pixellab",
+      "massstab": 0.21,
+      "gemessen": 28,
+      "fuss": 38,
+      "zustaende": ["sitzen"]
+    },
+    "fledermaus": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.fledermaus",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.26,
+      "gemessen": 23,
+      "fuss": 31
+    },
+    "kormoran": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.kormoran",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.5,
+      "gemessen": 28,
+      "fuss": 34,
+      "zustaende": ["sitzen"],
+      "schwimmen": {
+        "mitte": 20,
+        "wasser": "standard"
+      }
+    },
+    "pelikan": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.pelikan",
+      "breite": 52,
+      "hoehe": 52,
+      "schnitt": "pixellab",
+      "massstab": 0.43,
+      "gemessen": 37,
+      "fuss": 44,
+      "zustaende": ["sitzen"],
+      "schwimmen": {
+        "mitte": 28,
+        "wasser": "standard"
+      }
+    },
+    "schwan": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.schwan",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.53,
+      "gemessen": 30,
+      "fuss": 35,
+      "schwimmen": {
+        "mitte": 20,
+        "wasser": "standard"
+      }
+    },
+    "maus": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.maus",
       "breite": 32,
-      "hoehe": 20,
-      "schnitt": "ansichten",
-      "massstab": 0.6
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.3,
+      "gemessen": 20,
+      "fuss": 31
+    },
+    "ratte": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.ratte",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.3,
+      "gemessen": 20,
+      "fuss": 32
+    },
+    "eichhoernchen": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.eichhoernchen",
+      "breite": 40,
+      "hoehe": 40,
+      "schnitt": "pixellab",
+      "massstab": 0.23,
+      "gemessen": 26,
+      "fuss": 33
+    },
+    "praeriehund": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.praeriehund",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.35,
+      "gemessen": 26,
+      "fuss": 29
+    },
+    "murmeltier": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.murmeltier",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.44,
+      "gemessen": 25,
+      "fuss": 29
+    },
+    "eidechse": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.eidechse",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.26,
+      "gemessen": 23,
+      "fuss": 34,
+      "zustaende": ["schlafen"]
+    },
+    "frosch": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.frosch",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.24,
+      "gemessen": 25,
+      "fuss": 28
+    },
+    "krebs": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.krebs",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.29,
+      "gemessen": 21,
+      "fuss": 27
+    },
+    "schildkroete": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.schildkroete",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.32,
+      "gemessen": 19,
+      "fuss": 29,
+      "schwimmen": {
+        "mitte": 17,
+        "wasser": "moor"
+      }
+    },
+    "nutria": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.nutria",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.44,
+      "gemessen": 18,
+      "fuss": 34,
+      "schwimmen": {
+        "mitte": 19,
+        "wasser": "moor"
+      }
+    },
+    "alligator": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.alligator",
+      "breite": 72,
+      "hoehe": 72,
+      "schnitt": "pixellab",
+      "massstab": 0.32,
+      "gemessen": 34,
+      "fuss": 65,
+      "schwimmen": {
+        "mitte": 36,
+        "wasser": "moor"
+      }
+    },
+    "robbe": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.robbe",
+      "breite": 72,
+      "hoehe": 72,
+      "schnitt": "pixellab",
+      "massstab": 0.32,
+      "gemessen": 38,
+      "fuss": 61,
+      "schwimmen": {
+        "mitte": 36,
+        "wasser": "standard"
+      }
+    },
+    "delfin": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.delfin",
+      "breite": 68,
+      "hoehe": 68,
+      "schnitt": "pixellab",
+      "massstab": 0.32,
+      "gemessen": 41,
+      "fuss": 66,
+      "schwimmen": {
+        "mitte": 37,
+        "wasser": "standard"
+      }
+    },
+    "qualle": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.qualle",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.31,
+      "gemessen": 26,
+      "fuss": 30,
+      "schwimmen": {
+        "mitte": 16,
+        "wasser": "standard"
+      }
+    },
+    "hecht": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.hecht",
+      "breite": 48,
+      "hoehe": 48,
+      "schnitt": "pixellab",
+      "massstab": 0.35,
+      "gemessen": 17,
+      "fuss": 44,
+      "schwimmen": {
+        "mitte": 24,
+        "wasser": "standard"
+      }
+    },
+    "schmetterling": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.schmetterling",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.24,
+      "gemessen": 25,
+      "fuss": 30
+    },
+    "libelle": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.libelle",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.3,
+      "gemessen": 20,
+      "fuss": 29
+    },
+    "dackel": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.dackel",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.36,
+      "gemessen": 22,
+      "fuss": 31
+    },
+    "pony": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.pony",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.64,
+      "gemessen": 25,
+      "fuss": 32
+    },
+    "roboterhund": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.roboterhund",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.48,
+      "gemessen": 27,
+      "fuss": 29
     }
   },
   "staemme": {
-    "taube": "taube",
-    "spatz": "taube",
-    "amsel": "taube",
-    "lerche": "taube",
-    "eichelhaeher": "taube",
-    "kraehe": "kraehe",
-    "rabe": "kraehe",
-    "geier": "kraehe",
-    "falke": "kraehe",
-    "adler": "kraehe",
-    "eule": "kraehe",
-    "specht": "kraehe",
-    "kormoran": "kraehe",
-    "moewe": "moewe",
-    "pelikan": "moewe",
-    "reiher": "reiher",
-    "austernfischer": "moewe",
-    "seeschwalbe": "moewe",
-    "strandlaeufer": "moewe",
-    "huhn": "huhn",
-    "huehner": "huhn",
-    "roadrunner": "huhn",
-    "fasan": "huhn",
-    "ente": "ente",
-    "gans": "gans",
-    "gaense": "gans",
-    "schwan": "gans",
-    "hase": "hase",
-    "kaninchen": "hase",
-    "hoernchen": "hase",
-    "murmeltier": "hase",
-    "praeriehund": "hase",
-    "schwein": "schwein",
-    "ziege": "ziege",
-    "reh": "reh",
-    "hirsch": "hirsch",
-    "schaf": "schaf",
-    "kuh": "kuh",
-    "kueh": "kuh",
-    "rind": "kuh",
+    "adler": "adler",
+    "alligator": "alligator",
+    "amsel": "spatz",
+    "austernfischer": "strandlaeufer",
     "bison": "bison",
-    "wapiti": "hirsch",
-    "esel": "esel",
-    "pferd": "pferd",
-    "pony": "pferd",
-    "hund": "hund",
-    "dackel": "hund",
-    "kojote": "kojote",
-    "fuchs": "fuchs",
-    "katze": "katze",
+    "dackel": "dackel",
+    "delfin": "delfin",
     "drohne": "drohne",
-    "roboter": "lieferroboter",
+    "eichelhaeher": "eichelhaeher",
+    "eichhoernchen": "eichhoernchen",
+    "eidechse": "eidechse",
+    "eisvogel": "eisvogel",
+    "ente": "ente",
+    "enten": "ente",
+    "esel": "esel",
+    "eule": "eule",
+    "falke": "falke",
+    "fasan": "fasan",
+    "fledermaus": "fledermaus",
+    "frosch": "frosch",
+    "fuchs": "fuchs",
+    "gaense": "gans",
+    "gans": "gans",
+    "geier": "geier",
+    "hase": "hase",
+    "hecht": "hecht",
+    "hirsch": "hirsch",
+    "hoernchen": "eichhoernchen",
+    "huehner": "huhn",
+    "huhn": "huhn",
+    "hund": "hund",
+    "kaninchen": "hase",
+    "katze": "katze",
     "kehrroboter": "kehrroboter",
-    "schimmel": "schimmel"
+    "kojote": "kojote",
+    "kormoran": "kormoran",
+    "kraehe": "kraehe",
+    "krebs": "krebs",
+    "kueh": "kuh",
+    "kuh": "kuh",
+    "lerche": "spatz",
+    "libelle": "libelle",
+    "libellen": "libelle",
+    "lieferroboter": "lieferroboter",
+    "maus": "maus",
+    "moewe": "moewe",
+    "murmeltier": "murmeltier",
+    "nutria": "nutria",
+    "pelikan": "pelikan",
+    "pferd": "pferd",
+    "pony": "pony",
+    "praeriehund": "praeriehund",
+    "qualle": "qualle",
+    "quallen": "qualle",
+    "rabe": "kraehe",
+    "ratte": "ratte",
+    "reh": "reh",
+    "reiher": "reiher",
+    "rind": "kuh",
+    "roadrunner": "roadrunner",
+    "robbe": "robbe",
+    "roboter": "lieferroboter",
+    "roboterhund": "roboterhund",
+    "schaf": "schaf",
+    "schildkroete": "schildkroete",
+    "schimmel": "schimmel",
+    "schmetterling": "schmetterling",
+    "schwan": "schwan",
+    "schwein": "schwein",
+    "seeschwalbe": "seeschwalbe",
+    "spatz": "spatz",
+    "specht": "specht",
+    "strandlaeufer": "strandlaeufer",
+    "taube": "taube",
+    "wapiti": "hirsch",
+    "ziege": "ziege"
   }
 }

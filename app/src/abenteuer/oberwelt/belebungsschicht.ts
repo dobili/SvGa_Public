@@ -10,6 +10,7 @@
  * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
 import { setzeSitzend } from "./figurensitz";
+import type { Richtung } from "./szene";
 import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzmoebel } from "./sitzplatz";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
@@ -32,12 +33,17 @@ import {
   standbild,
 } from "./figurbilder";
 import {
+  mitSchwimmbildern,
   scharGroesse,
   scharversatz,
+  SCHWIMM_BEGINN,
+  schwimmUrsprungY,
   schwimmversatz,
+  standbasis,
   tierAnsicht,
   tierartVon,
   TIERBILDER,
+  type Tierbild,
 } from "./tiere";
 
 /** Bilder der Belebung im Paket: Pfad („figuren/statist-07.png“, „tiere/taube.png“) → Adresse. */
@@ -57,6 +63,32 @@ interface Darsteller {
   readonly flaeche?: Sperrflaeche;
   /** Feste Zeichentiefe einer Sitzenden auf ihrem Möbel (sitzplatz.ts); sonst die Fußlinie. */
   readonly tiefe?: number;
+  /** Maße und Reihen des Tierbogens (tiere.ts); fehlt bei Statisten. */
+  readonly tier?: Tierbild;
+}
+
+/** Bilder der Schwimmbewegung je Richtung und Bildrate (wie das Laufen, figurbilder.ts). */
+const SCHWIMMBILDER = 6;
+const SCHWIMM_BILDRATE = 8;
+const RICHTUNGEN: readonly Richtung[] = ["rechts", "oben", "links", "unten"];
+
+function schwimmname(bogen: string, richtung: Richtung): string {
+  return `${bogen}:schwimm:${richtung}`;
+}
+
+/** Schwimmanimationen eines Tierbogens mit Schwimmreihen (PixelLab, Reihe 4), einmal je Bogen. */
+function erzeugeSchwimmanimationen(szene: Phaser.Scene, bogen: string): void {
+  RICHTUNGEN.forEach((richtung, i) => {
+    const name = schwimmname(bogen, richtung);
+    if (szene.anims.exists(name)) return;
+    const start = SCHWIMM_BEGINN + i * SCHWIMMBILDER;
+    szene.anims.create({
+      key: name,
+      frames: szene.anims.generateFrameNumbers(bogen, { start, end: start + SCHWIMMBILDER - 1 }),
+      frameRate: SCHWIMM_BILDRATE,
+      repeat: -1,
+    });
+  });
 }
 
 /** Im Sichtbereich plus so viele Kacheln ringsum wird bewegt. */
@@ -150,7 +182,10 @@ export class Belebungsschicht {
     const sitz = v.sitzt ? sitzlageAuf(this.sitze, v.feld, this.kachel) : null;
     const versatz = eigen && v.sitzt ? setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ) : null;
     const sperre = this.neueSperre(versatz?.dx, versatz?.dy);
-    this.fuegeHinzu(v, sprite, eigen ? bogen : null, sperre, sitz?.tiefe, versatz ?? undefined);
+    this.fuegeHinzu(v, sprite, eigen ? bogen : null, sperre, {
+      ...(sitz ? { tiefe: sitz.tiefe } : {}),
+      ...(versatz ? { versatz } : {}),
+    });
   }
 
   /**
@@ -170,21 +205,40 @@ export class Belebungsschicht {
     const art = tierartVon(v.name, v.bild);
     if (!art || !this.szene.textures.exists(tierbogen(art))) return;
     const bogen = tierbogen(art);
+    const tier = TIERBILDER[art];
+    if (!tier) return;
     erzeugeLaufanimationen(this.szene, bogen);
+    const eigenesWasser = mitSchwimmbildern(tier, v.verhalten);
+    if (eigenesWasser) erzeugeSchwimmanimationen(this.szene, bogen);
     for (let i = 0; i < scharGroesse(v.name); i++) {
-      const sprite = this.szene.add.sprite(0, 0, bogen, standbild("unten"));
-      // Schwimmer liegen im Wasser: unten abgeschnitten, um den Rest tiefer (Regel 10.55).
-      const ansicht = tierAnsicht(sprite.height, this.kachel, v.verhalten === "schwimmen");
-      if (ansicht.sichtbar < sprite.height) sprite.setCrop(0, 0, sprite.width, ansicht.sichtbar);
-      sprite.setOrigin(0.5, ansicht.ursprungY);
-      sprite.setScale(TIERBILDER[art]?.massstab ?? 1);
+      const sprite = this.szene.add.sprite(
+        0,
+        0,
+        bogen,
+        standbasis(tier, v.verhalten) + standbild("unten"),
+      );
+      if (eigenesWasser) sprite.setOrigin(0.5, schwimmUrsprungY(tier));
+      else {
+        // Schwimmer ohne eigene Schwimmbilder liegen im Wasser: unten abgeschnitten (Regel 10.55).
+        const ansicht = tierAnsicht(
+          tier.hoehe,
+          this.kachel,
+          v.verhalten === "schwimmen",
+          tier.fuss,
+        );
+        if (ansicht.sichtbar < sprite.height) sprite.setCrop(0, 0, sprite.width, ansicht.sichtbar);
+        sprite.setOrigin(0.5, ansicht.ursprungY);
+      }
+      sprite.setScale(tier.massstab);
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
       const weite = Math.ceil(sprite.displayWidth / this.kachel);
       const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);
       // Das erste Tier einer Schar hält den Helden auf (belebungsbewegung.ts, haeltAuf); die
       // übrigen stehen locker darum und bleiben durchlässig, damit eine Schar keinen Weg zustellt.
       const sperre = i === 0 && haeltAuf(v) ? this.neueSperre() : null;
-      this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, sperre);
+      this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, sperre, {
+        tier,
+      });
     }
   }
 
@@ -193,9 +247,13 @@ export class Belebungsschicht {
     sprite: Phaser.GameObjects.Sprite,
     bogen: string | null,
     sperre: Phaser.GameObjects.Rectangle | null,
-    tiefe?: number,
-    versatz?: { readonly dx: number; readonly dy: number },
+    extra: {
+      readonly tiefe?: number;
+      readonly versatz?: { readonly dx: number; readonly dy: number };
+      readonly tier?: Tierbild;
+    } = {},
   ): void {
+    const { tiefe, versatz, tier } = extra;
     const b = neueBewegung(v.feld, v.blick);
     const k = this.kachel;
     // Fläche der Sitzenden in Kacheln (sitzsperre rechnet in Pixeln), für das Schalten der Sperre.
@@ -207,6 +265,7 @@ export class Belebungsschicht {
       bogen,
       sperre,
       ...(tiefe === undefined ? {} : { tiefe }),
+      ...(tier ? { tier } : {}),
       ...(f
         ? { flaeche: { x: f.x / k, y: f.y / k, breite: f.breite / k, hoehe: f.hoehe / k } }
         : {}),
@@ -261,13 +320,17 @@ export class Belebungsschicht {
     const fliegt = d.v.verhalten === "fliegen" && !steht(d.b);
     d.sprite.setDepth(fliegt ? FLUGTIEFE : (d.tiefe ?? d.sprite.y));
     if (!d.bogen) return;
-    // Statisten mit Verhalten „rennen“ (Kinder zwischen den Fahnen) rennen auch im Bild.
-    const gang = d.v.verhalten === "rennen" ? rennname : laufname;
+    // Statisten mit Verhalten „rennen“ (Kinder zwischen den Fahnen) rennen auch im Bild; Tiere mit
+    // eigenen Schwimmbildern schwimmen mit ihnen (tiere.ts).
+    const schwimmt = d.tier !== undefined && mitSchwimmbildern(d.tier, d.v.verhalten);
+    const gang = schwimmt ? schwimmname : d.v.verhalten === "rennen" ? rennname : laufname;
     if (!steht(d.b)) d.sprite.anims.play(gang(d.bogen, d.b.richtung), true);
     else {
       if (d.sprite.anims.isPlaying) d.sprite.anims.stop();
-      // Wer sitzt, behält sein Sitzbild (Stuhl oder Boden, figurensitz.ts), sonst das Standbild.
-      if (!d.v.sitzt) d.sprite.setFrame(standbild(d.b.schaut ?? d.b.richtung));
+      // Wer sitzt, behält sein Sitzbild (Stuhl oder Boden, figurensitz.ts), sonst das Standbild;
+      // ein Tier zeigt das Bild seines Verhaltens (Katze schläft, Kuh grast, Ente schwimmt).
+      const basis = d.tier ? standbasis(d.tier, d.v.verhalten) : 0;
+      if (!d.v.sitzt) d.sprite.setFrame(basis + standbild(d.b.schaut ?? d.b.richtung));
     }
   }
 

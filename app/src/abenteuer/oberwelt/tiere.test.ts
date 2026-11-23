@@ -1,8 +1,11 @@
 /** Tests für tiere.ts: Ersatztabelle, Scharen (Auftrag Runde 7, Dokument 16, Abschnitt 5.2). */
 import { describe, expect, it } from "vitest";
 import {
+  mitSchwimmbildern,
   scharGroesse,
+  schwimmUrsprungY,
   schwimmversatz,
+  standbasis,
   tierAnsicht,
   tierartVon,
   TIERBILDER,
@@ -16,12 +19,12 @@ describe("tierartVon", () => {
     expect(tierartVon("reh")).toBe("reh");
     expect(tierartVon("wapiti")).toBe("hirsch");
     expect(tierartVon("moewen")).toBe("moewe");
-    expect(tierartVon("specht")).toBe("kraehe");
+    expect(tierartVon("specht")).toBe("specht");
     expect(tierartVon("wuestenfuchs")).toBe("fuchs");
-    expect(tierartVon("praeriehunde")).toBe("hase");
-    expect(tierartVon("schwan")).toBe("gans");
+    expect(tierartVon("praeriehunde")).toBe("praeriehund");
+    expect(tierartVon("schwan")).toBe("schwan");
     expect(tierartVon("bisonherde")).toBe("bison");
-    expect(tierartVon("eichhoernchen")).toBe("hase");
+    expect(tierartVon("eichhoernchen")).toBe("eichhoernchen");
     expect(tierartVon("drohne")).toBe("drohne");
     expect(tierartVon("saugroboter")).toBe("lieferroboter");
     expect(tierartVon("kehrroboter")).toBe("kehrroboter");
@@ -77,5 +80,35 @@ describe("schwimmversatz", () => {
   it("reiht Schwimmer entlang des Wegs auf, nicht seitlich ans Ufer", () => {
     expect(schwimmversatz({ x: 22, y: 30 }, { x: 22, y: 44 }, 2, 2)).toEqual({ x: 0, y: 4 });
     expect(schwimmversatz({ x: 5, y: 41 }, { x: 15, y: 41 }, 1, 2)).toEqual({ x: 2, y: 0 });
+  });
+});
+
+describe("PixelLab-Tierbögen (23.11.2026)", () => {
+  const kuh = TIERBILDER["kuh"];
+  const ente = TIERBILDER["ente"];
+  it("zeigt das Zustandsbild zum Verhalten, sonst Reihe 0", () => {
+    expect(kuh).toBeDefined();
+    if (!kuh) return;
+    expect(kuh.zustaende).toEqual(["sitzen", "grasen"]);
+    expect(standbasis(kuh, "grasen")).toBe(48 + 4);
+    expect(standbasis(kuh, "ausweichen")).toBe(0);
+  });
+  it("Schwimmer mit eigenen Schwimmbildern: Reihe 3, Ursprung in der Wassermitte", () => {
+    expect(ente).toBeDefined();
+    if (!ente) return;
+    expect(mitSchwimmbildern(ente, "schwimmen")).toBe(true);
+    expect(mitSchwimmbildern(ente, "fliegen")).toBe(false);
+    expect(standbasis(ente, "schwimmen")).toBe(72);
+    expect(schwimmUrsprungY(ente)).toBe((ente.schwimmMitte ?? 0) / ente.hoehe);
+  });
+  it("ohne Schwimmbilder bleibt die Wasserlinie, gemessen ab dem Fuß", () => {
+    expect(tierAnsicht(40, 16, true, 30).sichtbar).toBe(Math.round(30 * WASSERLINIE));
+    expect(tierAnsicht(40, 16, false, 30)).toEqual({ sichtbar: 30, ursprungY: 22 / 40 });
+  });
+  it("jede Art mit PixelLab-Bild hat ihren eigenen Wortstamm", () => {
+    for (const art of ["eidechse", "delfin", "falke", "praeriehund", "schwan"]) {
+      expect(tierartVon(art)).toBe(art);
+    }
+    expect(tierartVon("waschbaer")).toBeNull();
   });
 });

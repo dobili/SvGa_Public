@@ -20,20 +20,60 @@ export interface Tierbild {
    * Ente wirkten neben Reh und Figuren zu groß (Kartengutachten Akt 1).
    */
   readonly massstab: number;
+  /**
+   * Unterste Zeile der Standbilder im Rahmen (PixelLab-Bögen haben Rand um die Leinwand); bei den
+   * übrigen Bögen der untere Rand.
+   */
+  readonly fuss: number;
+  /** Verhalten mit eigenem Zustandsbild in Reihe 2 (PixelLab: sitzen, schlafen, grasen). */
+  readonly zustaende: readonly string[];
+  /** Mitte der Wasserfläche im Rahmen, wenn der Bogen Schwimmreihen hat (Reihen 3, 4); sonst null. */
+  readonly schwimmMitte: number | null;
 }
 
 /** Die Bögen, die belebungsbilder.py baut: Art → Rahmengröße (aus tierarten.json, wie dort). */
 export const TIERBILDER: Readonly<Record<string, Tierbild>> = Object.fromEntries(
   Object.entries(tierarten.arten).map(([art, a]) => [
     art,
-    { breite: a.breite, hoehe: a.hoehe, massstab: "massstab" in a ? a.massstab : 1 },
+    {
+      breite: a.breite,
+      hoehe: a.hoehe,
+      massstab: "massstab" in a ? a.massstab : 1,
+      fuss: "fuss" in a ? a.fuss : a.hoehe,
+      zustaende: "zustaende" in a ? a.zustaende : [],
+      schwimmMitte: "schwimmen" in a ? a.schwimmen.mitte : null,
+    },
   ]),
 );
+
+/** Spalten eines Tierbogens, Bilder je Zustand (vier Richtungen) und erste Bilder der Reihen. */
+const SPALTEN = 24;
+const RICHTUNGEN_JE_ZUSTAND = 4;
+const ZUSTAND_BEGINN = 2 * SPALTEN;
+const SCHWIMM_STAND_BEGINN = 3 * SPALTEN;
+/** Erstes Bild der Schwimmbewegung (Reihe 4, sechs je Richtung wie das Laufen). */
+export const SCHWIMM_BEGINN = 4 * SPALTEN;
+
+/** Schwimmt das Tier mit eigenen Schwimmbildern (PixelLab, Wasser in unserer Farbe)? */
+export function mitSchwimmbildern(bild: Tierbild, verhalten: string): boolean {
+  return verhalten === "schwimmen" && bild.schwimmMitte !== null;
+}
+
+/**
+ * Erstes Bild der vier Standbilder, das zum Verhalten passt (dazu kommt die Richtung, 0 bis 3):
+ * Schwimmer im Wasser Reihe 3, ein Verhalten mit eigenem Zustand (Katze „schlafen“) Reihe 2,
+ * sonst Reihe 0. Beispiel: Kuh, zustaende [sitzen, grasen], „grasen“ → 48 + 4 = 52.
+ */
+export function standbasis(bild: Tierbild, verhalten: string): number {
+  if (mitSchwimmbildern(bild, verhalten)) return SCHWIMM_STAND_BEGINN;
+  const k = bild.zustaende.indexOf(verhalten);
+  return k < 0 ? 0 : ZUSTAND_BEGINN + k * RICHTUNGEN_JE_ZUSTAND;
+}
 
 /**
  * Wortstamm im Objektnamen → Bild (eigenes oder naher Ersatz, tierarten.json). Längere Stämme
  * gehen vor („werkskatzeAussen“ → katze, „praeriehunde“ → hase, nicht hund). Ohne Treffer wird
- * nichts gezeichnet (Wind, Nebel, Roboter, Libellen und Tiere ohne Ersatz wie Eidechse, Delfin).
+ * nichts gezeichnet (Wind, Nebel und Tiere ohne Bild wie der Waschbär, bis der Autor ihn macht).
  */
 const STAEMME: Readonly<Record<string, string>> = tierarten.staemme;
 
@@ -118,7 +158,7 @@ export const WASSERLINIE = 0.85;
 
 /**
  * Sichtbare Höhe und Ursprung eines Tiers in Pixeln (Ursprung y als Anteil der Bildhöhe): Der
- * Ursprung liegt eine halbe Kachel über dem Fuß; ein Schwimmer verliert unten den Teil unter der
+ * Ursprung liegt eine halbe Kachel über dem Fuß (`fuss`, ohne Angabe der untere Rand); ein Schwimmer verliert unten den Teil unter der
  * Wasserlinie und sinkt um genau diesen Teil tiefer, damit er im Wasser liegt statt darauf steht.
  * Beispiel: Ente 32 hoch, Kachel 16, schwimmend → sichtbar 27, Ursprung (27 − 8) / 32.
  */
@@ -126,9 +166,19 @@ export function tierAnsicht(
   hoehe: number,
   kachel: number,
   schwimmt: boolean,
+  fuss: number = hoehe,
 ): { readonly sichtbar: number; readonly ursprungY: number } {
-  const sichtbar = schwimmt ? Math.round(hoehe * WASSERLINIE) : hoehe;
+  const sichtbar = schwimmt ? Math.round(fuss * WASSERLINIE) : fuss;
   return { sichtbar, ursprungY: (sichtbar - kachel / 2) / hoehe };
+}
+
+/**
+ * Ursprung eines Schwimmers mit eigenen Schwimmbildern: die Mitte seiner Wasserfläche liegt auf der
+ * Mitte der Kachel, nichts wird abgeschnitten (die Wellen gehören zum Bild).
+ * Beispiel: Ente, Rahmen 36, Wassermitte 20 → 20 / 36.
+ */
+export function schwimmUrsprungY(bild: Tierbild): number {
+  return (bild.schwimmMitte ?? bild.hoehe / 2) / bild.hoehe;
 }
 
 /**

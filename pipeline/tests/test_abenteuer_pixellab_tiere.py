@@ -12,9 +12,9 @@ from pipeline.abenteuer.tierplan_daten import ARTEN
 
 
 def test_wahltabelle_passt_zum_tierplan():
-    """Jede gewählte Art steht im Tierplan (Zielhöhe); die vom Autor noch offenen fehlen bewusst."""
+    """Jede gewählte Art steht im Tierplan (Zielhöhe), auch die Nachlieferung des Autors."""
     assert set(WAHL) <= set(ARTEN)
-    assert not {"saugroboter", "drohne", "waschbaer"} & set(WAHL)
+    assert {"saugroboter", "drohne", "waschbaer"} <= set(WAHL)
     for art, w in WAHL.items():
         assert w.grund, art
         assert set(w.zustaende) <= {"sitzen", "schlafen", "grasen"}, art

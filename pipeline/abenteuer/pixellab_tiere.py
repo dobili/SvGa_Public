@@ -316,7 +316,7 @@ def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
     Fußzeile, Zustände, Schwimmen. Beispiel Ente: Rahmen 36, gemessen 21, Ziel 11 → 0.52."""
     f = rahmen(t, leinwand)
     hoehe, laenge = gemessene_groesse(e, w, t)
-    faktor, nach = massstab(art, hoehe, laenge)
+    faktor, nach = (w.massstab, "fest") if w.massstab else massstab(art, hoehe, laenge)
     rand = (f - leinwand) // 2
     daten: dict = {
         "quelle": ZUORDNUNG + "#tier." + art,

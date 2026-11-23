@@ -41,6 +41,8 @@ def test_pixellab_massstab_aus_dem_echten_bild():
         nach_laenge = tp.ziellaenge(ARTEN[art]) / a["gemessen_laenge"]
         # Lange Tiere (Länge ≥ 1,5 × Höhe, pixellab_tiere.LANG_AB): der kleinere Faktor gilt.
         erwartet = min(nach_hoehe, nach_laenge) if a["massstab_nach"] == "laenge" else nach_hoehe
+        if a["massstab_nach"] == "fest":  # mit Grund in pixellab_tierwahl.py (Saugroboter)
+            continue
         assert a["massstab"] == pytest.approx(erwartet, abs=0.006), art
         assert a["massstab"] <= 1.1, f"{art}: zu klein erzeugt"
         assert 0 < a["fuss"] <= a["hoehe"], art

@@ -50,6 +50,13 @@ async function zustandswahl(seite, pruefe) {
   await seite.click("#eigenschaften button.zustand-stehen");
   jetzt = await stand(seite, "belebung", "lkwFahrer");
   pruefe(jetzt.zustand === "stehen" && !jetzt.sitzt, "Sitzender Statist steht mit „Stehen“");
+  // Bettdecke (Editor 1.9.1): Kopfseite aus dem Namen wie die App, gespiegelt vertauscht.
+  const kopf = await seite.evaluate(() => [
+    KE.kopfseiteDesBetts("rv5BettKopfLinks", false),
+    KE.kopfseiteDesBetts("rv5BettKopfLinks", true),
+    KE.kopfseiteDesBetts("rv5Bett", false),
+  ]);
+  pruefe(kopf.join(",") === "links,rechts,rechts", "Kopfseite des Betts aus dem Namen");
   await seite.keyboard.press("Control+z");
   jetzt = await stand(seite, "belebung", "lkwFahrer");
   pruefe(jetzt.zustand === null && jetzt.sitzt, "Rückgängig stellt die Regel wieder her");

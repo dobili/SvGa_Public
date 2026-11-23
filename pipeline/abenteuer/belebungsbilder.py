@@ -275,6 +275,8 @@ def baue_tiere(privat: Path) -> None:
     ziel_tiere = privat / "spiel" / "tiere"
     ziel_tiere.mkdir(parents=True, exist_ok=True)
     for name, (datei, breite, hoehe, art) in TIERE.items():
+        if art == "pixellab":
+            continue  # eigene Bögen aus den PixelLab-Exporten, unten in einem Zug
         if art == "ansichten":
             namen = TIERANSICHTEN.get(name, ANSICHTEN)
             oeffne = lambda n: Image.open(privat / n).convert("RGBA")  # noqa: E731
@@ -282,6 +284,10 @@ def baue_tiere(privat: Path) -> None:
         else:
             quelle = Image.open(privat / datei).convert("RGBA")
         tierbogen(quelle, breite, hoehe, art).save(ziel_tiere / f"{name}.png")
+    # Schnitt „pixellab“ (23.11.2026): Bogenbau aus den ZIP-Exporten des Autors (pixellab_tiere.py).
+    from pipeline.abenteuer.pixellab_tiere import baue
+
+    baue(privat, {name for name, (_, _, _, art) in TIERE.items() if art == "pixellab"})
 
 
 def main(argv: list[str]) -> int:

@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 
 DATEI = Path(__file__).resolve().parents[2] / "app/src/abenteuer/oberwelt/tierarten.json"
-SCHNITTE = ("reihen", "streifen", "richtungen", "baender", "standbild", "ansichten")
+SCHNITTE = ("reihen", "streifen", "richtungen", "baender", "standbild", "ansichten", "pixellab")
 
 
 def _daten() -> dict:
@@ -30,8 +30,16 @@ def test_vorschau_findet_dieselben_arten():
     pytest.importorskip("PIL.Image")  # die Vorschau braucht Pillow, das in Actions fehlt
     from pipeline.abenteuer.belebungsvorschau import tierart
 
-    erwartet = {"moewen": "moewe", "specht": "kraehe", "wuestenfuchs": "fuchs", "praeriehunde": "hase"}
-    erwartet |= {"schwan": "gans", "enten": "ente", "eidechse": None, "pony": "pferd", "kojote": "kojote"}
+    # Seit den PixelLab-Tieren (23.11.2026) hat jede Art ihr eigenes Bild statt eines Ersatzes.
+    erwartet = {"moewen": "moewe", "specht": "specht", "wuestenfuchs": "fuchs", "praeriehunde": "praeriehund"}
+    erwartet |= {
+        "schwan": "schwan",
+        "enten": "ente",
+        "eidechse": "eidechse",
+        "pony": "pony",
+        "kojote": "kojote",
+    }
+    erwartet |= {"fledermaus": "fledermaus", "waschbaer": None, "amsel": "spatz"}
     assert {n: tierart(n) for n in erwartet} == erwartet
 
 

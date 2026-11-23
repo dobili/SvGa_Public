@@ -131,6 +131,7 @@ def test_spurenrate_wie_sampler():
     import pytest
 
     pytest.importorskip("numpy")
+    pytest.importorskip("scipy")  # sampler.py braucht scipy; fehlt in der schlanken Umgebung
     from pipeline.abenteuer.ton.musikbau import SPUREN_RATE
     from pipeline.abenteuer.ton.sampler import ABTASTRATE
 

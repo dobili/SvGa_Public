@@ -398,6 +398,14 @@ Profil › Einstellungen › Fehler melden.
       Joe, Darlene, Dr. Lin, Slick …) leicht vergrößert, Kinder bleiben. Stimmen die Größen
       nebeneinander, etwa im Clubraum und in der Kantine? Neue Spielstände beginnen jetzt um 8 Uhr
       (vorher 6), weil Kinder erst ab 7 Uhr draußen sind.
+- [ ] N2695. **Deine PixelLab-Tiere im Spiel:** 58 Arten sind eingebaut, jede in der Größe aus der
+      Zeichnung auf die Zielhöhe gerechnet (Hund bis zur Hüfte, Kuh knapp unter einem Erwachsenen).
+      Für das Stehen ist der passende Zustand gewählt (Vierbeiner auf allen vieren, Präriehund und
+      Murmeltier aufrecht als Wächter, Katze schläft, Krähe sitzt). Schwimmer behalten ihre Wellen,
+      das Wasser ist in unsere Farbe umgefärbt (im Bayou Moorfarbe, halb durchsichtig). Ansehen:
+      Park (Enten, Krähen), vor dem Haus (Hund, Katze), Bayou, Küste (Pelikan), Fähre (Delfin,
+      Robbe). Sehr kleine Tiere (Maus, Spatz, Specht, Libelle, Krebs) sind nur etwa 6 Pixel hoch:
+      zu klein? Übersicht im privaten Repository unter tierprobe/index.html.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

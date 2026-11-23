@@ -406,6 +406,22 @@ Profil › Einstellungen › Fehler melden.
       Park (Enten, Krähen), vor dem Haus (Hund, Katze), Bayou, Küste (Pelikan), Fähre (Delfin,
       Robbe). Sehr kleine Tiere (Maus, Spatz, Specht, Libelle, Krebs) sind nur etwa 6 Pixel hoch:
       zu klein? Übersicht im privaten Repository unter tierprobe/index.html.
+- [ ] N2696. **Möbel verdecken Sitzende und Liegende (23.11.):** Beim Hinsetzen legt das Spiel den
+      vorderen Teil des Möbels noch einmal über die Figur, im Bett die Decke bis auf den Kopf.
+      Ansehen: Diner-Tresen, Clubraum, Wohnzimmersofa, Parkbank, Wards Sessel, nachts Oma Ruth in
+      Ironwood und der Held in der ersten Nacht in seinem Zimmer (Kopf frei, Körper unter der
+      Decke). Verdeckt die Vorderkante die Beine richtig, von hinten auch die Lehne? Wer mit dem
+      Gesicht zu dir sitzt, bekommt nichts davor (Füße baumeln vorn). Notiz je Möbelart, falls die
+      Grenze höher oder tiefer soll.
+- [ ] N2697. **Fehlende Sitz- und Schlafzustände:** 56 Zustände fehlen noch, die häufigsten zuerst,
+      mit Vorschau und dem Wortlaut für PixelLab („Sitting on an invisible chair, eyes open, hands
+      on lap“, für Schlafen entsprechend). Seite im privaten Repository unter
+      zustaende/fehlende.html. Bis sie da sind, stellt sich eine Figur im Tagesablauf neben ihren
+      Stuhl statt darauf. Liegen fehlt bei Lucia und Oma Ruth.
+- [ ] N2698. **Nachlieferung 23.11. im Spiel:** Die Drohne schwebt, der Saugroboter fährt (eigenes
+      Tier, Silicon-Bay-Akademie und Altstadt, etwa 8 × 8 Pixel), der Waschbär läuft auf vier Beinen,
+      Owen und der Bauer sind neu. Owens Sitzzustand ist auf 24er-Leinwand angelegt und wirkt
+      deshalb im Sitzen größer als im Stehen: bitte in PixelLab auf 32 × 32 neu anlegen.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

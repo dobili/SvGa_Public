@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Tagesabläufe der benannten Figuren (Wunsch des Autors, 22.11.2026; Entwurf aus pipeline/abenteuer/tagesablauf_entwurf.py, Prüfung pipeline/abenteuer/tagesablauf.py). Stunden der Spieluhr 0 bis 23 (Morgen 6–9, Tag 9–18, Abend 18–21, Nacht 21–6). bloecke: art (arbeit, freizeit, nacht, schlaf, zuhause), von, bis (bis ausschließlich, über Mitternacht möglich, 0 bis 0 heißt den ganzen Tag), karte und feld, tut (steht, sitzt, sitzt am Boden, liegt). Ohne Karte unsichtbar, ohne Kollision, nicht ansprechbar: schlaf (drei Stunden, Beginn 22 bis 2 Uhr) und zuhause (Kinder bis 13, 21 bis 7 Uhr). nacht: wach zwischen 21 und 6 Uhr, drinnen (Diner, Kantine, eigene Wohnung) oder unter einer Laterne. ohne_schlaf: geist, roboter, dienst (für den Spieler). hinweis: ueber_grenze (Wege, zu wenige Figuren). folgt_geschichte: Figur in mehreren Orten ohne Heimat, steht immer, wo die Szene sie hinstellt. Regel 1: Ein offener Questschritt hält seine Figur wach an ihrem Questort (questorte; festhalten = regel1, wo der Ablauf sie sonst woanders hätte). Wechsel nur beim Kartenwechsel.",
+  "erklaerung": "Tagesabläufe der benannten Figuren (Wunsch des Autors, 22.11.2026; Entwurf aus pipeline/abenteuer/tagesablauf_entwurf.py, Prüfung pipeline/abenteuer/tagesablauf.py). Stunden der Spieluhr 0 bis 23 (Morgen 6–9, Tag 9–18, Abend 18–21, Nacht 21–6). bloecke: art (arbeit, freizeit, nacht, schlaf, zuhause), von, bis (bis ausschließlich, über Mitternacht möglich, 0 bis 0 heißt den ganzen Tag), karte und feld, tut (steht, sitzt, sitzt am Boden, liegt), blick beim Stehen (oben, unten, links, rechts; 23.11.2026: Sitzplätze ohne erzählten Grund wurden Stehplätze neben dem Möbel, Nachbarn an derselben Bank schauen sich an). Ohne Karte unsichtbar, ohne Kollision, nicht ansprechbar: schlaf (drei Stunden, Beginn 22 bis 2 Uhr) und zuhause (Kinder bis 13, 21 bis 7 Uhr). nacht: wach zwischen 21 und 6 Uhr, drinnen (Diner, Kantine, eigene Wohnung) oder unter einer Laterne. ohne_schlaf: geist, roboter, dienst (für den Spieler). hinweis: ueber_grenze (Wege, zu wenige Figuren). folgt_geschichte: Figur in mehreren Orten ohne Heimat, steht immer, wo die Szene sie hinstellt. Regel 1: Ein offener Questschritt hält seine Figur wach an ihrem Questort (questorte; festhalten = regel1, wo der Ablauf sie sonst woanders hätte). Wechsel nur beim Kartenwechsel.",
   "schemaVersion": 1,
   "figuren": {
     "abe": {
@@ -94,16 +94,18 @@
           "von": 16,
           "bis": 21,
           "karte": "wegMapleCedar.landstrasse",
-          "feld": [80, 14],
-          "tut": "sitzt"
+          "feld": [80, 15],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "wegMapleCedar.landstrasse",
-          "feld": [80, 14],
-          "tut": "sitzt"
+          "feld": [80, 15],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -115,8 +117,9 @@
           "von": 3,
           "bis": 6,
           "karte": "wegMapleCedar.landstrasse",
-          "feld": [80, 14],
-          "tut": "sitzt"
+          "feld": [80, 15],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ]
     },
@@ -267,16 +270,18 @@
           "von": 18,
           "bis": 21,
           "karte": "portDelacroix.turnhalle",
-          "feld": [20, 13],
-          "tut": "sitzt"
+          "feld": [17, 14],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 1,
           "karte": "portDelacroix.turnhalle",
-          "feld": [20, 13],
-          "tut": "sitzt"
+          "feld": [17, 14],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -288,8 +293,9 @@
           "von": 4,
           "bis": 6,
           "karte": "portDelacroix.turnhalle",
-          "feld": [20, 13],
-          "tut": "sitzt"
+          "feld": [17, 14],
+          "tut": "steht",
+          "blick": "links"
         }
       ]
     },
@@ -318,16 +324,18 @@
           "von": 16,
           "bis": 21,
           "karte": "capitalArena.aussen",
-          "feld": [23, 45],
-          "tut": "sitzt"
+          "feld": [24, 45],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "capitalArena.ubahnhof",
-          "feld": [19, 12],
-          "tut": "sitzt"
+          "feld": [19, 13],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -339,8 +347,9 @@
           "von": 1,
           "bis": 6,
           "karte": "capitalArena.ubahnhof",
-          "feld": [19, 12],
-          "tut": "sitzt"
+          "feld": [19, 13],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -392,8 +401,9 @@
           "von": 21,
           "bis": 0,
           "karte": "ironwood.kantine",
-          "feld": [29, 11],
-          "tut": "sitzt"
+          "feld": [29, 10],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -405,8 +415,9 @@
           "von": 3,
           "bis": 6,
           "karte": "ironwood.kantine",
-          "feld": [29, 11],
-          "tut": "sitzt"
+          "feld": [29, 10],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["ironwood.kantine"]
@@ -436,16 +447,18 @@
           "von": 17,
           "bis": 21,
           "karte": "portDelacroix.turnhalle",
-          "feld": [19, 13],
-          "tut": "sitzt"
+          "feld": [16, 14],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 1,
           "karte": "portDelacroix.turnhalle",
-          "feld": [19, 13],
-          "tut": "sitzt"
+          "feld": [16, 14],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -457,8 +470,9 @@
           "von": 4,
           "bis": 6,
           "karte": "portDelacroix.turnhalle",
-          "feld": [19, 13],
-          "tut": "sitzt"
+          "feld": [16, 14],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ],
       "questorte": ["portDelacroix.aussen"]
@@ -488,16 +502,18 @@
           "von": 16,
           "bis": 21,
           "karte": "cedarCreek.aussen",
-          "feld": [17, 6],
-          "tut": "sitzt"
+          "feld": [17, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "cedarCreek.aussen",
-          "feld": [17, 6],
-          "tut": "sitzt"
+          "feld": [17, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -509,8 +525,9 @@
           "von": 3,
           "bis": 6,
           "karte": "cedarCreek.aussen",
-          "feld": [17, 6],
-          "tut": "sitzt"
+          "feld": [17, 7],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["cedarCreek.waschsalon"]
@@ -657,16 +674,18 @@
           "von": 18,
           "bis": 21,
           "karte": "portDelacroix.aussen",
-          "feld": [5, 14],
-          "tut": "sitzt"
+          "feld": [5, 15],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "portDelacroix.aussen",
-          "feld": [5, 14],
-          "tut": "sitzt"
+          "feld": [5, 15],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -678,8 +697,9 @@
           "von": 1,
           "bis": 6,
           "karte": "portDelacroix.aussen",
-          "feld": [5, 14],
-          "tut": "sitzt"
+          "feld": [5, 15],
+          "tut": "steht",
+          "blick": "links"
         }
       ],
       "questorte": ["portDelacroix.werkstatt"]
@@ -736,16 +756,18 @@
           "von": 18,
           "bis": 21,
           "karte": "mapleFalls.park",
-          "feld": [15, 22],
-          "tut": "sitzt"
+          "feld": [14, 22],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 1,
           "karte": "mapleFalls.diner",
-          "feld": [14, 4],
-          "tut": "sitzt"
+          "feld": [10, 4],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -757,8 +779,9 @@
           "von": 4,
           "bis": 6,
           "karte": "mapleFalls.diner",
-          "feld": [14, 4],
-          "tut": "sitzt"
+          "feld": [10, 4],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["mapleFalls.clubraum"]
@@ -815,16 +838,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegRivertonIronwood.kanalweg",
-          "feld": [14, 164],
-          "tut": "sitzt"
+          "feld": [13, 164],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegRivertonIronwood.kanalweg",
-          "feld": [12, 38],
-          "tut": "sitzt"
+          "feld": [12, 36],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -836,8 +861,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegRivertonIronwood.kanalweg",
-          "feld": [12, 38],
-          "tut": "sitzt"
+          "feld": [12, 36],
+          "tut": "steht",
+          "blick": "links"
         }
       ]
     },
@@ -1010,16 +1036,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegRivertonIronwood.kanalweg",
-          "feld": [13, 38],
-          "tut": "sitzt"
+          "feld": [15, 38],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "wegRivertonIronwood.kanalweg",
-          "feld": [12, 37],
-          "tut": "sitzt"
+          "feld": [11, 36],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -1031,8 +1059,9 @@
           "von": 5,
           "bis": 6,
           "karte": "wegRivertonIronwood.kanalweg",
-          "feld": [12, 37],
-          "tut": "sitzt"
+          "feld": [11, 36],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ]
     },
@@ -1061,16 +1090,18 @@
           "von": 18,
           "bis": 21,
           "karte": "jahrmarkt.festplatz",
-          "feld": [32, 15],
-          "tut": "sitzt"
+          "feld": [32, 16],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "jahrmarkt.festplatz",
-          "feld": [32, 15],
-          "tut": "sitzt"
+          "feld": [32, 16],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1082,8 +1113,9 @@
           "von": 2,
           "bis": 6,
           "karte": "jahrmarkt.festplatz",
-          "feld": [32, 15],
-          "tut": "sitzt"
+          "feld": [32, 16],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1129,16 +1161,18 @@
           "von": 16,
           "bis": 21,
           "karte": "cedarCreek.aussen",
-          "feld": [30, 30],
-          "tut": "sitzt"
+          "feld": [30, 29],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "cedarCreek.aussen",
-          "feld": [30, 30],
-          "tut": "sitzt"
+          "feld": [30, 29],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1150,8 +1184,9 @@
           "von": 3,
           "bis": 6,
           "karte": "cedarCreek.aussen",
-          "feld": [30, 30],
-          "tut": "sitzt"
+          "feld": [30, 29],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1180,16 +1215,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegDesertSummit.diner",
-          "feld": [7, 19],
-          "tut": "sitzt"
+          "feld": [7, 20],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "wegDesertSummit.diner",
-          "feld": [7, 19],
-          "tut": "sitzt"
+          "feld": [7, 20],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -1201,8 +1238,9 @@
           "von": 3,
           "bis": 6,
           "karte": "wegDesertSummit.diner",
-          "feld": [7, 19],
-          "tut": "sitzt"
+          "feld": [7, 20],
+          "tut": "steht",
+          "blick": "links"
         }
       ]
     },
@@ -1312,16 +1350,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegCedarRiverton.zedernwald",
-          "feld": [54, 2],
-          "tut": "sitzt"
+          "feld": [54, 3],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "wegCedarRiverton.zedernwald",
-          "feld": [54, 2],
-          "tut": "sitzt"
+          "feld": [54, 3],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1333,8 +1373,9 @@
           "von": 3,
           "bis": 6,
           "karte": "wegCedarRiverton.zedernwald",
-          "feld": [54, 2],
-          "tut": "sitzt"
+          "feld": [54, 3],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1363,16 +1404,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegMapleCedar.flussweg",
-          "feld": [86, 13],
-          "tut": "sitzt"
+          "feld": [86, 14],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegMapleCedar.flussweg",
-          "feld": [86, 13],
-          "tut": "sitzt"
+          "feld": [86, 14],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1384,8 +1427,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegMapleCedar.flussweg",
-          "feld": [86, 13],
-          "tut": "sitzt"
+          "feld": [86, 14],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1414,16 +1458,18 @@
           "von": 17,
           "bis": 21,
           "karte": "ironwood.aussen",
-          "feld": [14, 49],
-          "tut": "sitzt"
+          "feld": [14, 50],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "ironwood.kantine",
-          "feld": [28, 15],
-          "tut": "sitzt"
+          "feld": [27, 15],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1435,8 +1481,9 @@
           "von": 2,
           "bis": 6,
           "karte": "ironwood.kantine",
-          "feld": [28, 15],
-          "tut": "sitzt"
+          "feld": [27, 15],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["ironwood.aussen"]
@@ -1466,16 +1513,18 @@
           "von": 16,
           "bis": 21,
           "karte": "wegCrossroadsPinewood.huetten",
-          "feld": [60, 22],
-          "tut": "sitzt"
+          "feld": [61, 22],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegCrossroadsPinewood.huetten",
-          "feld": [60, 22],
-          "tut": "sitzt"
+          "feld": [61, 22],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1487,8 +1536,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegCrossroadsPinewood.huetten",
-          "feld": [60, 22],
-          "tut": "sitzt"
+          "feld": [61, 22],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1517,16 +1567,18 @@
           "von": 16,
           "bis": 21,
           "karte": "wegSiliconDelacroix.faehre",
-          "feld": [17, 38],
-          "tut": "sitzt"
+          "feld": [18, 38],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegSiliconDelacroix.faehre",
-          "feld": [17, 38],
-          "tut": "sitzt"
+          "feld": [18, 38],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1538,8 +1590,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegSiliconDelacroix.faehre",
-          "feld": [17, 38],
-          "tut": "sitzt"
+          "feld": [18, 38],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1568,16 +1621,18 @@
           "von": 18,
           "bis": 21,
           "karte": "ironwood.aussen",
-          "feld": [65, 45],
-          "tut": "sitzt"
+          "feld": [64, 45],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "ironwood.kantine",
-          "feld": [30, 12],
-          "tut": "sitzt"
+          "feld": [30, 13],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1589,8 +1644,9 @@
           "von": 5,
           "bis": 6,
           "karte": "ironwood.kantine",
-          "feld": [30, 12],
-          "tut": "sitzt"
+          "feld": [30, 13],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1619,16 +1675,18 @@
           "von": 17,
           "bis": 21,
           "karte": "ironwood.aussen",
-          "feld": [13, 49],
-          "tut": "sitzt"
+          "feld": [13, 50],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "ironwood.kantine",
-          "feld": [13, 11],
-          "tut": "sitzt"
+          "feld": [14, 9],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1640,8 +1698,9 @@
           "von": 2,
           "bis": 6,
           "karte": "ironwood.kantine",
-          "feld": [13, 11],
-          "tut": "sitzt"
+          "feld": [14, 9],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1685,16 +1744,18 @@
           "von": 18,
           "bis": 21,
           "karte": "riverton.aussen",
-          "feld": [21, 6],
-          "tut": "sitzt"
+          "feld": [21, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "riverton.bahnhofshalle",
-          "feld": [10, 11],
-          "tut": "sitzt"
+          "feld": [9, 11],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1706,8 +1767,9 @@
           "von": 2,
           "bis": 6,
           "karte": "riverton.bahnhofshalle",
-          "feld": [10, 11],
-          "tut": "sitzt"
+          "feld": [9, 11],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["riverton.bahnhofshalle"]
@@ -1752,16 +1814,18 @@
           "von": 17,
           "bis": 21,
           "karte": "portDelacroix.werkstatt",
-          "feld": [4, 10],
-          "tut": "sitzt"
+          "feld": [4, 11],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "portDelacroix.werkstatt",
-          "feld": [4, 10],
-          "tut": "sitzt"
+          "feld": [4, 11],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1773,8 +1837,9 @@
           "von": 3,
           "bis": 6,
           "karte": "portDelacroix.werkstatt",
-          "feld": [4, 10],
-          "tut": "sitzt"
+          "feld": [4, 11],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1818,16 +1883,18 @@
           "von": 16,
           "bis": 21,
           "karte": "wegDelacroixDesert.canyonpfad",
-          "feld": [60, 12],
-          "tut": "sitzt"
+          "feld": [62, 12],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegDelacroixDesert.canyonpfad",
-          "feld": [60, 12],
-          "tut": "sitzt"
+          "feld": [62, 12],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -1839,8 +1906,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegDelacroixDesert.canyonpfad",
-          "feld": [60, 12],
-          "tut": "sitzt"
+          "feld": [62, 12],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -1869,16 +1937,18 @@
           "von": 16,
           "bis": 21,
           "karte": "wegMapleCedar.landstrasse",
-          "feld": [81, 14],
-          "tut": "sitzt"
+          "feld": [81, 15],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "wegMapleCedar.landstrasse",
-          "feld": [81, 14],
-          "tut": "sitzt"
+          "feld": [81, 15],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -1890,8 +1960,9 @@
           "von": 5,
           "bis": 6,
           "karte": "wegMapleCedar.landstrasse",
-          "feld": [81, 14],
-          "tut": "sitzt"
+          "feld": [81, 15],
+          "tut": "steht",
+          "blick": "links"
         }
       ]
     },
@@ -1998,16 +2069,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegPinewoodGhost.canyonrand",
-          "feld": [93, 9],
-          "tut": "sitzt"
+          "feld": [92, 9],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegPinewoodGhost.canyonrand",
-          "feld": [93, 9],
-          "tut": "sitzt"
+          "feld": [92, 9],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2019,8 +2092,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegPinewoodGhost.canyonrand",
-          "feld": [93, 9],
-          "tut": "sitzt"
+          "feld": [92, 9],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -2049,16 +2123,18 @@
           "von": 17,
           "bis": 21,
           "karte": "mapleFalls.park",
-          "feld": [22, 24],
-          "tut": "sitzt"
+          "feld": [22, 25],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "mapleFalls.diner",
-          "feld": [14, 10],
-          "tut": "sitzt"
+          "feld": [8, 10],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -2070,8 +2146,9 @@
           "von": 1,
           "bis": 6,
           "karte": "mapleFalls.diner",
-          "feld": [14, 10],
-          "tut": "sitzt"
+          "feld": [8, 10],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ],
       "questorte": ["mapleFalls.clubraum"],
@@ -2102,16 +2179,18 @@
           "von": 18,
           "bis": 21,
           "karte": "capitalArena.innenstadt",
-          "feld": [30, 50],
-          "tut": "sitzt"
+          "feld": [29, 50],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "capitalArena.ubahnhof",
-          "feld": [12, 12],
-          "tut": "sitzt"
+          "feld": [12, 13],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2123,8 +2202,9 @@
           "von": 1,
           "bis": 6,
           "karte": "capitalArena.ubahnhof",
-          "feld": [12, 12],
-          "tut": "sitzt"
+          "feld": [12, 13],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -2184,16 +2264,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegIronwoodSilicon.glasbruecke",
-          "feld": [84, 10],
-          "tut": "sitzt"
+          "feld": [84, 11],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "wegIronwoodSilicon.raststaette",
-          "feld": [31, 14],
-          "tut": "sitzt"
+          "feld": [31, 15],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2205,8 +2287,9 @@
           "von": 3,
           "bis": 6,
           "karte": "wegIronwoodSilicon.raststaette",
-          "feld": [31, 14],
-          "tut": "sitzt"
+          "feld": [31, 15],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -2263,16 +2346,18 @@
           "von": 17,
           "bis": 21,
           "karte": "summitCity.aussen",
-          "feld": [33, 39],
-          "tut": "sitzt"
+          "feld": [33, 40],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "summitCity.aussen",
-          "feld": [33, 39],
-          "tut": "sitzt"
+          "feld": [33, 40],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2284,8 +2369,9 @@
           "von": 1,
           "bis": 6,
           "karte": "summitCity.aussen",
-          "feld": [33, 39],
-          "tut": "sitzt"
+          "feld": [33, 40],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -2357,16 +2443,18 @@
           "von": 18,
           "bis": 21,
           "karte": "siliconBay.hafen",
-          "feld": [22, 27],
-          "tut": "sitzt"
+          "feld": [21, 27],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "siliconBay.hafen",
-          "feld": [22, 27],
-          "tut": "sitzt"
+          "feld": [21, 27],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2378,8 +2466,9 @@
           "von": 3,
           "bis": 6,
           "karte": "siliconBay.hafen",
-          "feld": [22, 27],
-          "tut": "sitzt"
+          "feld": [21, 27],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["capitalArena.halle"],
@@ -2402,8 +2491,9 @@
           "von": 17,
           "bis": 21,
           "karte": "portDelacroix.aussen",
-          "feld": [4, 14],
-          "tut": "sitzt"
+          "feld": [4, 15],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "zuhause",
@@ -2437,16 +2527,18 @@
           "von": 18,
           "bis": 21,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 7],
-          "tut": "sitzt"
+          "feld": [2, 8],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 7],
-          "tut": "sitzt"
+          "feld": [2, 8],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2461,8 +2553,9 @@
           "von": 2,
           "bis": 6,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 7],
-          "tut": "sitzt"
+          "feld": [2, 8],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -2533,16 +2626,18 @@
           "von": 16,
           "bis": 21,
           "karte": "capitalArena.innenstadt",
-          "feld": [30, 51],
-          "tut": "sitzt"
+          "feld": [30, 49],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "capitalArena.ubahnhof",
-          "feld": [3, 9],
-          "tut": "sitzt"
+          "feld": [3, 10],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -2554,8 +2649,9 @@
           "von": 1,
           "bis": 6,
           "karte": "capitalArena.ubahnhof",
-          "feld": [3, 9],
-          "tut": "sitzt"
+          "feld": [3, 10],
+          "tut": "steht",
+          "blick": "links"
         }
       ]
     },
@@ -2576,8 +2672,9 @@
           "von": 16,
           "bis": 21,
           "karte": "desertSprings.aussen",
-          "feld": [20, 6],
-          "tut": "sitzt"
+          "feld": [19, 6],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "zuhause",
@@ -2628,16 +2725,18 @@
           "von": 17,
           "bis": 21,
           "karte": "mapleFalls.wohnzimmer",
-          "feld": [18, 6],
-          "tut": "sitzt"
+          "feld": [18, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 1,
           "karte": "mapleFalls.wohnzimmer",
-          "feld": [18, 6],
-          "tut": "sitzt"
+          "feld": [18, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2649,8 +2748,9 @@
           "von": 4,
           "bis": 6,
           "karte": "mapleFalls.wohnzimmer",
-          "feld": [18, 6],
-          "tut": "sitzt"
+          "feld": [18, 7],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["mapleFalls.wohnzimmer"]
@@ -2680,16 +2780,18 @@
           "von": 18,
           "bis": 21,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 5],
-          "tut": "sitzt"
+          "feld": [1, 5],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 5],
-          "tut": "sitzt"
+          "feld": [1, 5],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2701,8 +2803,9 @@
           "von": 5,
           "bis": 6,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 5],
-          "tut": "sitzt"
+          "feld": [1, 5],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -2736,16 +2839,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegGhostCapital.seeufer",
-          "feld": [108, 19],
-          "tut": "sitzt"
+          "feld": [108, 20],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegGhostCapital.seeufer",
-          "feld": [108, 19],
-          "tut": "sitzt"
+          "feld": [108, 20],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2757,8 +2862,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegGhostCapital.seeufer",
-          "feld": [108, 19],
-          "tut": "sitzt"
+          "feld": [108, 20],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["wegGhostCapital.leuchtturm"]
@@ -2788,16 +2894,18 @@
           "von": 17,
           "bis": 21,
           "karte": "portDelacroix.turnhalle",
-          "feld": [14, 7],
-          "tut": "sitzt"
+          "feld": [13, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 0,
           "karte": "portDelacroix.turnhalle",
-          "feld": [14, 7],
-          "tut": "sitzt"
+          "feld": [13, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2809,8 +2917,9 @@
           "von": 3,
           "bis": 6,
           "karte": "portDelacroix.turnhalle",
-          "feld": [14, 7],
-          "tut": "sitzt"
+          "feld": [13, 7],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["portDelacroix.turnhalle"]
@@ -2840,16 +2949,18 @@
           "von": 16,
           "bis": 21,
           "karte": "cedarCreek.aussen",
-          "feld": [31, 30],
-          "tut": "sitzt"
+          "feld": [31, 31],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "cedarCreek.aussen",
-          "feld": [31, 30],
-          "tut": "sitzt"
+          "feld": [31, 31],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2861,8 +2972,9 @@
           "von": 2,
           "bis": 6,
           "karte": "cedarCreek.aussen",
-          "feld": [31, 30],
-          "tut": "sitzt"
+          "feld": [31, 31],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["cedarCreek.bibliothek"]
@@ -2974,16 +3086,18 @@
           "von": 16,
           "bis": 21,
           "karte": "ironwood.mamasZimmer",
-          "feld": [3, 6],
-          "tut": "sitzt"
+          "feld": [4, 5],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "ironwood.mamasZimmer",
-          "feld": [3, 6],
-          "tut": "sitzt"
+          "feld": [4, 5],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -2998,8 +3112,9 @@
           "von": 5,
           "bis": 6,
           "karte": "ironwood.mamasZimmer",
-          "feld": [3, 6],
-          "tut": "sitzt"
+          "feld": [4, 5],
+          "tut": "steht",
+          "blick": "unten"
         }
       ],
       "questorte": ["ironwood.mamasZimmer"]
@@ -3124,16 +3239,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegMapleCedar.flussweg",
-          "feld": [54, 20],
-          "tut": "sitzt"
+          "feld": [54, 21],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegMapleCedar.flussweg",
-          "feld": [54, 20],
-          "tut": "sitzt"
+          "feld": [54, 21],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3145,8 +3262,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegMapleCedar.flussweg",
-          "feld": [54, 20],
-          "tut": "sitzt"
+          "feld": [54, 21],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3175,16 +3293,18 @@
           "von": 17,
           "bis": 21,
           "karte": "ironwood.aussen",
-          "feld": [12, 49],
-          "tut": "sitzt"
+          "feld": [12, 50],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "ironwood.kantine",
-          "feld": [15, 12],
-          "tut": "sitzt"
+          "feld": [16, 12],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3196,8 +3316,9 @@
           "von": 2,
           "bis": 6,
           "karte": "ironwood.kantine",
-          "feld": [15, 12],
-          "tut": "sitzt"
+          "feld": [16, 12],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3226,16 +3347,18 @@
           "von": 18,
           "bis": 21,
           "karte": "ghostTown.saloon",
-          "feld": [5, 10],
-          "tut": "sitzt"
+          "feld": [5, 11],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "ghostTown.saloon",
-          "feld": [5, 10],
-          "tut": "sitzt"
+          "feld": [5, 11],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3247,8 +3370,9 @@
           "von": 2,
           "bis": 6,
           "karte": "ghostTown.saloon",
-          "feld": [5, 10],
-          "tut": "sitzt"
+          "feld": [5, 11],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3277,16 +3401,18 @@
           "von": 17,
           "bis": 21,
           "karte": "wegSummitCrossroads.geysirbecken",
-          "feld": [23, 61],
-          "tut": "sitzt"
+          "feld": [23, 59],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegSummitCrossroads.geysirbecken",
-          "feld": [23, 61],
-          "tut": "sitzt"
+          "feld": [23, 59],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3298,8 +3424,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegSummitCrossroads.geysirbecken",
-          "feld": [23, 61],
-          "tut": "sitzt"
+          "feld": [23, 59],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3328,16 +3455,18 @@
           "von": 16,
           "bis": 21,
           "karte": "portDelacroix.aussen",
-          "feld": [3, 14],
-          "tut": "sitzt"
+          "feld": [3, 15],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "portDelacroix.aussen",
-          "feld": [3, 14],
-          "tut": "sitzt"
+          "feld": [3, 15],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -3349,8 +3478,9 @@
           "von": 1,
           "bis": 6,
           "karte": "portDelacroix.aussen",
-          "feld": [3, 14],
-          "tut": "sitzt"
+          "feld": [3, 15],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ]
     },
@@ -3379,16 +3509,18 @@
           "von": 16,
           "bis": 21,
           "karte": "cedarCreek.aussen",
-          "feld": [50, 24],
-          "tut": "sitzt"
+          "feld": [49, 24],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "cedarCreek.aussen",
-          "feld": [50, 24],
-          "tut": "sitzt"
+          "feld": [49, 24],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3400,8 +3532,9 @@
           "von": 5,
           "bis": 6,
           "karte": "cedarCreek.aussen",
-          "feld": [50, 24],
-          "tut": "sitzt"
+          "feld": [49, 24],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3445,16 +3578,18 @@
           "von": 17,
           "bis": 21,
           "karte": "wegDesertSummit.diner",
-          "feld": [6, 19],
-          "tut": "sitzt"
+          "feld": [6, 20],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegDesertSummit.diner",
-          "feld": [6, 19],
-          "tut": "sitzt"
+          "feld": [6, 20],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -3466,8 +3601,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegDesertSummit.diner",
-          "feld": [6, 19],
-          "tut": "sitzt"
+          "feld": [6, 20],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ]
     },
@@ -3547,16 +3683,18 @@
           "von": 16,
           "bis": 21,
           "karte": "wegCedarRiverton.bahndamm",
-          "feld": [39, 4],
-          "tut": "sitzt"
+          "feld": [39, 5],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "wegCedarRiverton.bahndamm",
-          "feld": [39, 4],
-          "tut": "sitzt"
+          "feld": [39, 5],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3568,8 +3706,9 @@
           "von": 2,
           "bis": 6,
           "karte": "wegCedarRiverton.bahndamm",
-          "feld": [39, 4],
-          "tut": "sitzt"
+          "feld": [39, 5],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3598,16 +3737,18 @@
           "von": 18,
           "bis": 21,
           "karte": "wegSiliconDelacroix.faehre",
-          "feld": [16, 38],
-          "tut": "sitzt"
+          "feld": [16, 37],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "wegSiliconDelacroix.faehre",
-          "feld": [16, 38],
-          "tut": "sitzt"
+          "feld": [16, 37],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3619,8 +3760,9 @@
           "von": 5,
           "bis": 6,
           "karte": "wegSiliconDelacroix.faehre",
-          "feld": [16, 38],
-          "tut": "sitzt"
+          "feld": [16, 37],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3649,16 +3791,18 @@
           "von": 16,
           "bis": 21,
           "karte": "mapleFalls.park",
-          "feld": [22, 23],
-          "tut": "sitzt"
+          "feld": [23, 23],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "mapleFalls.diner",
-          "feld": [14, 9],
-          "tut": "sitzt"
+          "feld": [9, 10],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "schlaf",
@@ -3670,8 +3814,9 @@
           "von": 1,
           "bis": 6,
           "karte": "mapleFalls.diner",
-          "feld": [14, 9],
-          "tut": "sitzt"
+          "feld": [9, 10],
+          "tut": "steht",
+          "blick": "links"
         }
       ],
       "questorte": ["mapleFalls.park"]
@@ -3753,16 +3898,18 @@
           "von": 18,
           "bis": 21,
           "karte": "summitCity.aussen",
-          "feld": [40, 39],
-          "tut": "sitzt"
+          "feld": [40, 40],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 1,
           "karte": "summitCity.aussen",
-          "feld": [40, 39],
-          "tut": "sitzt"
+          "feld": [40, 40],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3774,8 +3921,9 @@
           "von": 4,
           "bis": 6,
           "karte": "summitCity.aussen",
-          "feld": [40, 39],
-          "tut": "sitzt"
+          "feld": [40, 40],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -3796,8 +3944,9 @@
           "von": 16,
           "bis": 21,
           "karte": "riverton.aussen",
-          "feld": [17, 19],
-          "tut": "sitzt"
+          "feld": [16, 19],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "zuhause",
@@ -3831,16 +3980,18 @@
           "von": 18,
           "bis": 21,
           "karte": "ironwood.aussen",
-          "feld": [30, 46],
-          "tut": "sitzt"
+          "feld": [29, 46],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "ironwood.kantine",
-          "feld": [12, 11],
-          "tut": "sitzt"
+          "feld": [10, 9],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -3852,8 +4003,9 @@
           "von": 5,
           "bis": 6,
           "karte": "ironwood.kantine",
-          "feld": [12, 11],
-          "tut": "sitzt"
+          "feld": [10, 9],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -4001,16 +4153,18 @@
           "von": 18,
           "bis": 21,
           "karte": "capitalArena.innenstadt",
-          "feld": [31, 50],
-          "tut": "sitzt"
+          "feld": [31, 49],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "capitalArena.ubahnhof",
-          "feld": [26, 12],
-          "tut": "sitzt"
+          "feld": [26, 13],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -4022,8 +4176,9 @@
           "von": 1,
           "bis": 6,
           "karte": "capitalArena.ubahnhof",
-          "feld": [26, 12],
-          "tut": "sitzt"
+          "feld": [26, 13],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -4052,16 +4207,18 @@
           "von": 18,
           "bis": 21,
           "karte": "desertSprings.aussen",
-          "feld": [21, 6],
-          "tut": "sitzt"
+          "feld": [21, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 22,
           "karte": "desertSprings.aussen",
-          "feld": [21, 6],
-          "tut": "sitzt"
+          "feld": [21, 7],
+          "tut": "steht",
+          "blick": "unten"
         },
         {
           "art": "schlaf",
@@ -4073,8 +4230,9 @@
           "von": 1,
           "bis": 6,
           "karte": "desertSprings.aussen",
-          "feld": [21, 6],
-          "tut": "sitzt"
+          "feld": [21, 7],
+          "tut": "steht",
+          "blick": "unten"
         }
       ]
     },
@@ -4103,16 +4261,18 @@
           "von": 18,
           "bis": 21,
           "karte": "capitalArena.innenstadt",
-          "feld": [31, 51],
-          "tut": "sitzt"
+          "feld": [32, 49],
+          "tut": "steht",
+          "blick": "links"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 1,
           "karte": "capitalArena.ubahnhof",
-          "feld": [2, 9],
-          "tut": "sitzt"
+          "feld": [2, 10],
+          "tut": "steht",
+          "blick": "rechts"
         },
         {
           "art": "schlaf",
@@ -4124,8 +4284,9 @@
           "von": 4,
           "bis": 6,
           "karte": "capitalArena.ubahnhof",
-          "feld": [2, 9],
-          "tut": "sitzt"
+          "feld": [2, 10],
+          "tut": "steht",
+          "blick": "rechts"
         }
       ],
       "questorte": ["capitalArena.halle"]

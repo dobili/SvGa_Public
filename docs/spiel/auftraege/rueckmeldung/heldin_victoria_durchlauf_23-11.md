@@ -60,4 +60,15 @@ der gewöhnliche Spieler brauchte vier bis fünf Anläufe.
   zweiten Lauf ging der eilige Spieler nach einmaligem Umplanen hinauf. Gleich verhält es sich an
   den Treppen im Obergeschoss und auf dem Dachboden, auch beim gewöhnlichen Spieler.
 
-ERGEBNIS_ZWEITER_LAUF
+**Befund 2: Doppelter Tipp gibt die erste Victor-Partie fast auf.** Vor der Partie im Clubraum
+kommt die Meldung „Neu im Tagebuch“. Der eilige Spieler tippt dort doppelt auf „Weiter“. Der zweite
+Tipp traf „Aufgeben“, das an derselben Stelle erscheint, und die Partie stand mit „Wirklich
+aufgeben?“ da. Die Nachfrage verhinderte das Aufgeben, aber der Spieler wundert sich.
+
+- **Behoben:** „Aufgeben“ ist in den ersten 600 ms nach dem Öffnen der Partie gesperrt
+  (`PartieHuelle.tsx`, Knopf `disabled`). Tests, die gleich nach dem Öffnen aufgeben, warten
+  dadurch von selbst, bis der Knopf bedienbar ist.
+- **Im Durchlauf:** Er erkennt eine ungewollte Nachfrage, meldet sie als Fund und tippt
+  „Weiterspielen“ (`partie.ts`). Vorher stand er dort bis zum Ende der Zeit.
+
+ERGEBNIS_DRITTER_LAUF

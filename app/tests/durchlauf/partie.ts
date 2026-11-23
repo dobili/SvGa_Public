@@ -222,6 +222,17 @@ export async function spielePartie(
       await bedieneDialog(lauf, lage, g);
       continue;
     }
+    // Nachfrage „Wirklich aufgeben?“, ohne dass der Spieler aufgeben wollte (ein verirrter Tipp):
+    // melden und wie ein Mensch weiterspielen (eiliger Durchlauf, 23.11.2026).
+    const weiterspielen = seite.getByRole("button", { name: "Weiterspielen" });
+    if (await weiterspielen.isVisible().catch(() => false)) {
+      lauf.messung.fund(
+        "partie",
+        `Nachfrage „Wirklich aufgeben?“ ohne Absicht (${p?.kennung ?? "?"})`,
+      );
+      await tippe(lauf, weiterspielen, "Weiterspielen");
+      continue;
+    }
     if (lage.kennungen.includes("abenteuer-erzaehlung")) {
       const erzaehlung = seite.getByTestId("abenteuer-erzaehlung");
       const text = (await erzaehlung.innerText({ timeout: 2000 }).catch(() => "")).trim();

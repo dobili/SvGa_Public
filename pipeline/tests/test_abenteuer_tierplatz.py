@@ -46,4 +46,3 @@ def test_tiere_stehen_frei():
     moebel = lade_moebel()
     befunde = [f for p in sorted(glob.glob(str(SZENEN / "*.json"))) for f in _befunde(Path(p), moebel)]
     assert befunde == [], "\n".join(befunde)
-

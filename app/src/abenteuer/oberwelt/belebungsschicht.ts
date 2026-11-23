@@ -13,7 +13,7 @@ import { legeHin, sitzlageMitZustand } from "./figurenaufstellung";
 import { haltungAus, standbildrahmen } from "./figurzustand";
 import { bogenname, geladenerStandbildindex } from "./standbildindex";
 import { setzeSitzend } from "./figurensitz";
-import type { Richtung } from "./szene";
+import { erzeugeSchwimmanimationen, schwimmname } from "./schwimmbilder";
 import { sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
 import { legeSitzausschnitt } from "./vordergrund";
 import Phaser from "phaser";
@@ -40,7 +40,6 @@ import {
   mitSchwimmbildern,
   scharGroesse,
   scharversatz,
-  SCHWIMM_BEGINN,
   schwimmUrsprungY,
   schwimmversatz,
   standbasis,
@@ -81,30 +80,6 @@ interface Darsteller {
   readonly tiefe?: number;
   /** Maße und Reihen des Tierbogens (tiere.ts); fehlt bei Statisten. */
   readonly tier?: Tierbild;
-}
-
-/** Bilder der Schwimmbewegung je Richtung und Bildrate (wie das Laufen, figurbilder.ts). */
-const SCHWIMMBILDER = 6;
-const SCHWIMM_BILDRATE = 8;
-const RICHTUNGEN: readonly Richtung[] = ["rechts", "oben", "links", "unten"];
-
-function schwimmname(bogen: string, richtung: Richtung): string {
-  return `${bogen}:schwimm:${richtung}`;
-}
-
-/** Schwimmanimationen eines Tierbogens mit Schwimmreihen (PixelLab, Reihe 4), einmal je Bogen. */
-function erzeugeSchwimmanimationen(szene: Phaser.Scene, bogen: string): void {
-  RICHTUNGEN.forEach((richtung, i) => {
-    const name = schwimmname(bogen, richtung);
-    if (szene.anims.exists(name)) return;
-    const start = SCHWIMM_BEGINN + i * SCHWIMMBILDER;
-    szene.anims.create({
-      key: name,
-      frames: szene.anims.generateFrameNumbers(bogen, { start, end: start + SCHWIMMBILDER - 1 }),
-      frameRate: SCHWIMM_BILDRATE,
-      repeat: -1,
-    });
-  });
 }
 
 /** Im Sichtbereich plus so viele Kacheln ringsum wird bewegt. */

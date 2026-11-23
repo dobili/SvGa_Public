@@ -454,6 +454,11 @@ Profil › Einstellungen › Fehler melden.
       Hocker in der Drechslerei, Buch im Archiv, Kellerausgang im Archiv nur in der Mitte, Matte am
       Umzugstag, Vogelscheuche an der Landstraße stand viermal übereinander. Bitte diese Stellen im
       Spiel ansehen und den neuen Editor laden.
+- [ ] N2703. **Fußmatten hinter den Türen, spielweit:** Nach deinem Vorbild im Diner und Clubraum
+      liegen jetzt alle 118 Fußmatten in 97 Innenräumen perspektivisch direkt hinter der Tür in der
+      Südwand, und die Tür ist dort zu 75 % deckend, damit man die Matte dahinter erkennt (wie deine
+      Notiz im Clubraum; umgesetzt, Widerspruch genügt). Ansehen: Laden in Ghost Town, Bahnhofshalle
+      Riverton, Arena-Halle, Kantine Ironwood (drei Matten vor zwei Flügeln).
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

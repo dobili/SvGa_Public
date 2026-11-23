@@ -111,26 +111,15 @@
       "feld": [10, 9]
     },
     {
-      "moebel": "treppeZumBetrachter",
-      "feld": [1, 7],
-      "id": "treppeDach_2",
-      "versatz": [0, 3],
-      "zuschnitt": [0, 0, 0, 35],
-      "ebene": 1,
-      "kollision": true,
-      "maske": ["...", "###", "###", "###"]
-    },
-    {
       "moebel": "bkDielen",
       "feld": [1, 10],
-      "versatz": [4, 4],
-      "massstab": 0.75
+      "deckkraft": 75
     },
     {
       "moebel": "bkDielen",
       "feld": [2, 11],
-      "versatz": [0, -12],
-      "massstab": 0.75
+      "versatz": [0, -16],
+      "deckkraft": 75
     },
     {
       "moebel": "gt7ZaunMR",
@@ -173,9 +162,27 @@
       "moebel": "mf15TreppeLochZimmer",
       "feld": [1, 3],
       "id": "treppeDach_2_2",
-      "versatz": [0, 13],
+      "versatz": [1, 13],
       "deckkraft": 25,
-      "massstab": 1.1
+      "massstab": 1.1,
+      "zuschnitt": [0, 0, 1, 1]
+    },
+    {
+      "moebel": "mf15TreppeLochZimmer",
+      "feld": [2, 4],
+      "id": "treppeDach_2_2_2",
+      "versatz": [-15, 0],
+      "deckkraft": 50,
+      "massstab": 1.1,
+      "zuschnitt": [0, 7, 1, 5],
+      "ebene": -3
+    },
+    {
+      "moebel": "treppeZumBetrachter",
+      "feld": [1, 5],
+      "massstab": 0.8,
+      "versatz": [0, 36],
+      "zuschnitt": [7, 0, 0, 37]
     }
   ],
   "ausloeser": [
@@ -188,26 +195,18 @@
     },
     {
       "name": "treppeDachboden",
-      "feld": [1, 7],
+      "feld": [1, 8],
       "eigenschaften": {
-        "ankunft": "3,6",
-        "blick": "rechts"
+        "ankunft": "2,7",
+        "blick": "oben"
       }
     },
     {
       "name": "treppeDachboden",
-      "feld": [2, 7],
+      "feld": [2, 8],
       "eigenschaften": {
-        "ankunft": "3,6",
-        "blick": "rechts"
-      }
-    },
-    {
-      "name": "treppeDachboden",
-      "feld": [3, 7],
-      "eigenschaften": {
-        "ankunft": "3,6",
-        "blick": "rechts"
+        "ankunft": "2,7",
+        "blick": "oben"
       }
     },
     {
@@ -252,7 +251,16 @@
   ],
   "freigeben_fein": [
     [2, 4, "###.###.###.###."],
-    [3, 4, "###.#.#.##..###."]
+    [3, 4, "..#.#.#.##..###."],
+    [1, 8, "....############"],
+    [2, 8, "....###.###.###."],
+    [12, 8, "###.###.###.###."],
+    [1, 9, "####............"],
+    [2, 9, "###.........#..."]
   ],
-  "freigeben_grund": "Autor, Karteneditor 16.11.2026: Einstieg ins Treppenloch; der Held betritt die Öffnung im Boden, um die Treppe zu nehmen."
+  "freigeben_grund": "Autor, Karteneditor 16.11.2026: Einstieg ins Treppenloch; der Held betritt die Öffnung im Boden, um die Treppe zu nehmen.",
+  "sperren_fein": [
+    [1, 10, "....############"],
+    [2, 10, "....############"]
+  ]
 }

@@ -1245,39 +1245,6 @@
     },
     {
      "id": 34,
-     "name": "mf15TreppeLochDachboden",
-     "type": "moebel",
-     "x": 16,
-     "y": 129,
-     "width": 31,
-     "height": 14,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": -5
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      },
-      {
-       "name": "massstab",
-       "type": "float",
-       "value": 1.1
-      },
-      {
-       "name": "deckkraft",
-       "type": "int",
-       "value": 25
-      }
-     ]
-    },
-    {
-     "id": 35,
      "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
@@ -1310,7 +1277,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 35,
      "name": "sd6RelingCOben",
      "type": "moebel",
      "x": 23,
@@ -1343,7 +1310,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 36,
      "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
@@ -1372,6 +1339,39 @@
        "name": "maske_fein",
        "type": "string",
        "value": "..../..../..../...."
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "treppeZumBetrachter",
+     "type": "moebel",
+     "x": 16,
+     "y": 129,
+     "width": 30,
+     "height": 15,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": -2
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "7,52,11,29"
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 25
       }
      ]
     }

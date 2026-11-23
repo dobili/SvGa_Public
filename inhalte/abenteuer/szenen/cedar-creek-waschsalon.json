@@ -21,223 +21,150 @@
   "objekte": [
     {
       "moebel": "cc4Pflanze",
-      "feld": [
-        1,
-        2
-      ]
+      "feld": [1, 2]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [
-        2,
-        2
-      ]
+      "feld": [2, 2]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [
-        3,
-        2
-      ]
+      "feld": [3, 2]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [
-        4,
-        2
-      ]
+      "feld": [4, 2]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [
-        5,
-        2
-      ]
+      "feld": [5, 2]
     },
     {
       "moebel": "cc12TrocknerBrett",
-      "feld": [
-        6,
-        2
-      ],
-      "id": "trockner"
+      "feld": [6, 2],
+      "id": "trockner",
+      "ebene": -57
     },
     {
       "moebel": "cc12Trockner",
-      "feld": [
-        7,
-        2
-      ]
+      "feld": [7, 2]
     },
     {
       "moebel": "cc4Pinnwand",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [6, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        3
-      ]
+      "versatz": [0, 3]
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        9,
-        1
-      ],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
       "moebel": "cc4Waschmittelregal",
-      "feld": [
-        11,
-        1
-      ], "id": "regal"
+      "feld": [11, 1],
+      "id": "regal"
     },
-    { "moebel": "cc13Radio", "auf": "regal" },
-    { "moebel": "cc7AutomatFront", "feld": [11, 4] },
+    {
+      "moebel": "cc13Radio",
+      "auf": "regal",
+      "versatz": [2, 1],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "cc7AutomatFront",
+      "feld": [11, 4]
+    },
     {
       "moebel": "cc4Falttisch",
-      "feld": [
-        4,
-        5
-      ],
+      "feld": [4, 5],
       "id": "platte"
     },
-    { "moebel": "crTheke", "feld": [9, 6], "id": "tresen" },
+    {
+      "moebel": "crTheke",
+      "feld": [9, 6],
+      "id": "tresen"
+    },
     {
       "moebel": "cc4Waeschekorb",
-      "feld": [
-        3,
-        5
-      ]
+      "feld": [3, 5]
     },
     {
       "moebel": "rv5Wartebank",
-      "feld": [
-        1,
-        7
-      ],
+      "feld": [1, 7],
       "id": "sitze"
     },
     {
       "moebel": "cc12Comicheft",
       "auf": "sitze",
-      "versatz": [
-        -16,
-        10
-      ]
+      "versatz": [-16, 10]
     },
     {
       "moebel": "cc4WaeschekorbGruen",
-      "feld": [
-        9,
-        8
-      ]
+      "feld": [9, 8]
     },
     {
       "moebel": "cc4Pflanze",
-      "feld": [
-        12,
-        8
-      ]
+      "feld": [12, 8]
     },
     {
       "moebel": "cc13GlastuerSuedDoppel",
-      "feld": [
-        4,
-        10
-      ],
-      "an_wand": true
+      "feld": [4, 10],
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc4Fussmatte",
-      "feld": [
-        4,
-        9
-      ],
-      "versatz": [
-        0,
-        3
-      ]
+      "feld": [4, 9],
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "cc4Fussmatte",
-      "feld": [
-        5,
-        9
-      ],
-      "versatz": [
-        0,
-        3
-      ]
+      "feld": [5, 9],
+      "versatz": [0, 9],
+      "ebene": -2
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        4,
-        9
-      ],
+      "feld": [4, 9],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "waschsalonAusgang",
-      "feld": [
-        4,
-        10
-      ]
+      "feld": [4, 10]
     },
     {
       "name": "waschsalonAusgang",
-      "feld": [
-        5,
-        10
-      ]
+      "feld": [5, 10]
     },
     {
       "name": "zettelTurm",
-      "feld": [
-        7,
-        4
-      ]
+      "feld": [7, 4]
     },
     {
       "name": "trockner",
-      "feld": [
-        6,
-        4
-      ],
+      "feld": [6, 4],
       "auf_moebel": true
     },
     {
       "name": "comicheft",
-      "feld": [
-        1,
-        9
-      ],
+      "feld": [1, 9],
       "auf_moebel": true
     },
     {
       "name": "automat",
-      "feld": [
-        11,
-        7
-      ]
+      "feld": [11, 7]
     }
   ],
   "figuren": [
     {
       "name": "boateng",
-      "feld": [
-        10,
-        5
-      ],
+      "feld": [10, 5],
       "blick": "rechts"
     }
   ],
@@ -245,10 +172,7 @@
     {
       "name": "kundin",
       "typ": "statist",
-      "feld": [
-        7,
-        7
-      ],
+      "feld": [7, 7],
       "eigenschaften": {
         "tun": "spielt Blitz am Telefon, während die Wäsche läuft",
         "wann": "tag",
@@ -258,10 +182,7 @@
     {
       "name": "mannMitZeitung",
       "typ": "statist",
-      "feld": [
-        3,
-        8
-      ],
+      "feld": [3, 8],
       "eigenschaften": {
         "tun": "wartet mit der Zeitung auf den Trockner",
         "wann": "tag",
@@ -270,14 +191,8 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "modern",
-    "einfach"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "einfach"],
   "sperren": [
     [10, 4],
     [11, 4],

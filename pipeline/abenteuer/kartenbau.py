@@ -20,6 +20,7 @@ from pipeline.abenteuer.bauweisen import (
     darf_ueberlappen,
     doppelte_eintraege,
     gelaender_am_loch,
+    vergroesserter_zaun,
 )
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.bodenteile import lege_bodenteile
@@ -215,6 +216,7 @@ def pruefe(
     befunde = []
     breite, hoehe = len(zeilen[0]) * K, len(zeilen) * K
     belegt: dict[tuple[int, int], str] = {}
+    stuecke: dict[tuple[int, int], dict] = {}
     for s in gesetzt:
         if s["x"] < 0 or s["y"] < 0 or s["x"] + s["breite"] > breite or s["y"] + s["hoehe"] > hoehe:
             befunde.append(f"{s['name']} ragt über den Kartenrand")
@@ -233,9 +235,14 @@ def pruefe(
                 auf_wand = False  # Geländer am Rand eines Treppenlochs (bauweisen.py)
             if auf_wand and feld[1] == unten:
                 befunde.append(f"{s['name']} steht auf Wand oder Wasser bei {feld}")
-            if feld in belegt and not (not aussen and darf_ueberlappen(s["name"], belegt[feld], moebel)):
+            anderer = belegt.get(feld)
+            erlaubt = anderer is not None and (
+                (not aussen and darf_ueberlappen(s["name"], anderer, moebel))
+                or vergroesserter_zaun(s, stuecke[feld], moebel)
+            )
+            if feld in belegt and not erlaubt:
                 befunde.append(f"{s['name']} überlappt {belegt[feld]} bei {feld}")
-            belegt[feld] = s["name"]
+            belegt[feld], stuecke[feld] = s["name"], s
     for p in punkte:
         feld = tuple(p["feld"])
         # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett);

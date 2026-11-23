@@ -1113,7 +1113,8 @@
       "zustand": "gebraucht",
       "stil": "laendlich",
       "hinweis": "Geschlossenes Holzgatter mit zwei Pfosten (Gemini 7, Abschnitt 2), drei Kacheln breit; sperrt die untere Reihe",
-      "maske_fein": ["............", "............", "............", "............"]
+      "maske_fein": ["............", "............", "############", "############"],
+      "maske_fein_von_hand": "Notiz des Autors (20.11.2026, Landstraße): Ist das Tor zu, darf man nicht hindurch. Die Standfläche misst nur die beiden Pfosten (unten ist das Bild dazwischen leer), darum sperrt die untere Hälfte der Torreihe über die ganze Breite wie der Zaun daneben"
     },
     "wg13HolztorOffenLinks": {
       "quelle": "spiel/eigene/holztor_offen_links.png",

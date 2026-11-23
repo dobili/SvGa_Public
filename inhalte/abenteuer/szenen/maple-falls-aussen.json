@@ -364,7 +364,7 @@
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [30, 11]
+      "feld": [24, 9]
     },
     {
       "moebel": "mf4ZaunSeite",
@@ -686,7 +686,9 @@
     {
       "moebel": "pd6HausGruen2",
       "feld": [31, 6],
-      "massstab": 1.25
+      "massstab": 1.6,
+      "versatz": [-1, -15],
+      "maske": ["........", "........", "........", "..######", "..######", "....###.", "........"]
     },
     {
       "moebel": "mf7HeckeSaeule",
@@ -857,8 +859,9 @@
     {
       "moebel": "pd6HausGruen",
       "feld": [11, 30],
-      "versatz": [2, 0],
-      "massstab": 1.25
+      "versatz": [-10, -23],
+      "massstab": 1.6,
+      "maske": ["........", "........", "........", ".#######", ".#######", ".#######", "........"]
     },
     {
       "moebel": "mf7Gartenhaus",
@@ -939,7 +942,9 @@
     {
       "moebel": "pd6HausGruen",
       "feld": [57, 33],
-      "massstab": 1.25
+      "massstab": 1.6,
+      "versatz": [-16, -12],
+      "maske": ["........", "........", "........", ".#######", ".#######", ".#######", "........"]
     },
     {
       "moebel": "mf4BaumGruen",
@@ -1233,7 +1238,7 @@
     },
     {
       "name": "carlaSchule",
-      "feld": [45, 23],
+      "feld": [47, 23],
       "blick": "rechts"
     },
     {
@@ -1275,7 +1280,7 @@
     {
       "name": "kindMitBall",
       "typ": "statist",
-      "feld": [50, 36],
+      "feld": [51, 34],
       "eigenschaften": {
         "tun": "spielt Ball auf dem Spielplatz",
         "wann": "tag",
@@ -1339,11 +1344,11 @@
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [47, 24],
+      "feld": [49, 24],
       "eigenschaften": {
         "tun": "geht von der Schule nach Hause",
         "wann": "tag",
-        "von": "47,24",
+        "von": "49,24",
         "bis": "20,24",
         "sagt": "statist.mapleFalls.aussen.schuelerin"
       }
@@ -1351,7 +1356,7 @@
     {
       "name": "lehrer",
       "typ": "statist",
-      "feld": [46, 23],
+      "feld": [48, 23],
       "eigenschaften": {
         "tun": "steht vor der Schule und schaut auf die Uhr",
         "wann": "morgen",
@@ -1362,7 +1367,7 @@
     {
       "name": "kinderKreide",
       "typ": "statist",
-      "feld": [55, 32],
+      "feld": [55, 33],
       "eigenschaften": {
         "tun": "malt mit Kreide ein Brett auf den Boden",
         "wann": "tag",

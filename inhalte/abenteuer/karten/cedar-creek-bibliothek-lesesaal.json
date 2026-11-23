@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 59,
+ "nextobjectid": 60,
  "layers": [
   {
    "id": 1,
@@ -1957,6 +1957,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -1964,8 +1969,8 @@
      "id": 43,
      "name": "cc5Fussmatte",
      "type": "moebel",
-     "x": 32,
-     "y": 179,
+     "x": 33,
+     "y": 183,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1974,7 +1979,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -2355,6 +2360,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "cc5Fussmatte",
+     "type": "moebel",
+     "x": 47,
+     "y": 183,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": -1
       },
       {
        "name": "kollision",

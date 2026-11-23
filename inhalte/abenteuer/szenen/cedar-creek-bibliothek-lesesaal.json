@@ -175,12 +175,14 @@
     {
       "moebel": "ccDoppeltuerSuedHolz",
       "feld": [2, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [2, 10],
-      "versatz": [0, 19]
+      "versatz": [1, 23],
+      "ebene": -2
     },
     {
       "moebel": "cc6RegalSeiteHell",
@@ -257,6 +259,12 @@
       "moebel": "cc13MatteGrauRechts",
       "feld": [12, 10],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [3, 11],
+      "versatz": [-1, 7],
+      "ebene": -2
     }
   ],
   "ausloeser": [

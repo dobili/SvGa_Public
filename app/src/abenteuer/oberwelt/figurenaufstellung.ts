@@ -12,6 +12,7 @@ import { erzeugeLaufanimationen, standbild, stelleAufKachel } from "./figurbilde
 import { rahmenzahl, setzeSitzend, verschiebeFigurbild } from "./figurensitz";
 import { haltungAus, standbildrahmen } from "./figurzustand";
 import { liegebild } from "./sitzrichtung";
+import { deckeZu } from "./vordergrund";
 import { zeigeAlsGeist } from "./geistfigur";
 import { BODENSITZ, sitzlageAuf, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
@@ -70,7 +71,7 @@ export function stelleFigurenAuf(
     if (daten.geister?.has(a.name)) zeigeAlsGeist(szene, figur);
     figur.setDepth(sitz?.tiefe ?? figur.y);
     // Liegen (Schlaf im Bett aus dem Tagesablauf oder Zustand der Szene): Liegebild aus dem Bogen,
-    // sonst das gekippte Standbild, über dem Bett gezeichnet; das Bett sperrt die Kachel ohnehin.
+    // sonst das gekippte Standbild, über dem Bett und unter seiner Decke (vordergrund.ts).
     if (a.liegt || haltung.liegt) legeHin(figur, eigenes, kachel);
   }
   szene.physics.add.collider(held, gruppe);
@@ -99,4 +100,6 @@ export function legeHin(figur: Phaser.GameObjects.Sprite, eigenes: boolean, kach
   if (bild !== null) figur.setFrame(bild);
   else figur.setRotation(LIEGEN);
   figur.setDepth(figur.y + LIEGETIEFE_KACHELN * kachel);
+  // Unter die Decke (vordergrund.ts), wie beim `#stelle … >liegt` (fuehrungsschicht.ts).
+  deckeZu(figur, figur.x, figur.y, "rechts");
 }

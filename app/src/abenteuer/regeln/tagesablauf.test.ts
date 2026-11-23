@@ -3,7 +3,9 @@
  * Szenenvarianten zur Person, Regel 1 (Geschichte geht vor) und die Aufstellung auf der Karte.
  */
 import { describe, expect, it } from "vitest";
+import ohnesitzbild from "./ohnesitzbild.json";
 import {
+  standStattSitz,
   blockZur,
   festgehaltene,
   imBlock,
@@ -118,5 +120,18 @@ describe("Tagesablauf", () => {
       }).layers[1]?.objects?.at(-1);
     // Um 12 steht sie laut Ablauf auf (28, 24), dem Feld der Szene: Zustand bleibt.
     expect(um(12)).toMatchObject({ name: "carla", x: 448, y: 384, properties: [zustand] });
+  });
+});
+
+describe("Ohne Stuhlbild steht die Figur neben dem Stuhl (Wunsch des Autors, 23.11.2026)", () => {
+  it("nimmt das freie Nachbarfeld aus ohnesitzbild.json, sonst null", () => {
+    const [person, stellen] = Object.entries(ohnesitzbild.personen)[0] ?? ["", {}];
+    const [stelle, feld] = Object.entries(stellen)[0] ?? ["", []];
+    const [karte = "", lage = ""] = stelle.split("@");
+    const [x, y] = lage.split(",").map(Number);
+    const block = { art: "freizeit", von: 0, bis: 1, karte, feld: [x ?? 0, y ?? 0], tut: "sitzt" };
+    expect(standStattSitz(person, block)).toEqual(feld);
+    expect(standStattSitz(person, { ...block, tut: "steht" })).toBeNull();
+    expect(standStattSitz("niemand", block)).toBeNull();
   });
 });

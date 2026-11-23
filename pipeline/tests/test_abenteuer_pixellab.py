@@ -61,6 +61,12 @@ def test_import_nimmt_standbild_nach_tabelle_und_laufen_vom_hilfszustand(tmp_pat
     assert sorted(p.name for p in (figur / "rotations").iterdir()) == sorted(f"{r}.png" for r in I.RICHTUNGEN)
     assert len(list((figur / "animations" / "Walking" / "south").iterdir())) == 6
     assert (figur / "zustaende" / "sitzstuhl" / "rotations" / "west.png").exists()
+    # Weitere Standbilder für die Zustandswahl im Editor (mittel-1): nur der Standard, denn
+    # „Without“ ist der Hilfszustand fürs Gehen und „Sitting“ ein Sitzzustand.
+    standbilder = json.loads((figur / "standbilder.json").read_text())
+    assert standbilder == [{"kennung": "idle", "name": "Idle", "standard": True}]
+    assert I.kennung("Without the telescop") == "without-the-telescop"
+    assert I.kennung("Instrument on his back, ä") == "instrument-on-his-ba"
     groesse = json.loads((figur / "metadata.json").read_text())["states"][0]["character"]["size"]
     assert groesse == {"width": I.GROESSE, "height": I.GROESSE}
 
@@ -94,3 +100,11 @@ def test_sichtbare_hoehe_ohne_bodenschatten(tmp_path):
     pfad = tmp_path / "south.png"
     bild.save(pfad)
     assert H.sichtbare_hoehe(pfad) == 28
+
+
+def test_verdeckung_jede_sitz_und_liegestelle_hat_vordergrund_oder_grund():
+    # Vordergrund über Sitzenden und Liegenden (verdeckung.py, vordergrund.ts): „0 Befunde“.
+    from pipeline.abenteuer import verdeckung
+
+    assert verdeckung.befunde() == []
+    assert len(verdeckung.stellen()) > 100

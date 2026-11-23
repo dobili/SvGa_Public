@@ -101,7 +101,7 @@ def karte(art: str, e: pt.Export, eintrag: dict, bogen: Image.Image, privat: Pat
         f'<div class="reihe">{stand}</div>',
         f'<div class="film" style="--b:{f * ZOOM}px;background-image:url({film})"></div>',
     ]
-    for k, verhalten in enumerate(w.zustaende):
+    for k, verhalten in enumerate(eintrag.get("zustaende", [])):
         bild = _rahmen(bogen, f, k * 4 + RICHTUNG_UNTEN, pt.REIHE_ZUSTAENDE)
         teile.append(f'<span class="zustand">{verhalten}<img src="{_png(bild)}"></span>')
     if w.schwimmen:

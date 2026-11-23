@@ -162,9 +162,27 @@ class Teile:
     schwimmbewegung: dict[str, list[Image.Image]] | None
 
 
+# Ruhezustände der Exporte (Namensanfang) → Verhalten der Belebung, in Bogenreihenfolge.
+RUHEZUSTAENDE = {"sitzen": "sitting", "schlafen": "sleeping", "grasen": "grazing"}
+
+
+def ruhezustaende(e: Export, w: Wahl) -> dict[str, str]:
+    """Alle vorhandenen Ruhezustände einer Art (sitzen, schlafen, grasen), nicht nur die genutzten.
+
+    Warum: Im Editor wählt der Autor den Zustand je Tier (mittel-1, Hauptchat 23.11.2026); dafür
+    muss Reihe 2 jeden Ruhezustand haben, den PixelLab geliefert hat. Eine Wahl in der Tabelle geht
+    vor (eigener Zustandsname). Beispiel Kuh: sitzen, grasen; Katze: sitzen, schlafen.
+    """
+    namen = [_norm(z["name"]) for z in e.zustaende]
+    gefunden = {v: k for v, k in RUHEZUSTAENDE.items() if any(n.startswith(k) for n in namen)}
+    return {
+        v: w.zustaende.get(v, gefunden.get(v, "")) for v in RUHEZUSTAENDE if v in w.zustaende or v in gefunden
+    }
+
+
 def teile_von(e: Export, w: Wahl) -> Teile:
     """Die Bilder einer Art nach ihrer Wahl, Schwimmbilder mit umgefärbtem Wasser."""
-    zustaende = [standbilder(e, k) for k in w.zustaende.values()]
+    zustaende = [standbilder(e, k) for k in ruhezustaende(e, w).values()]
     schwimm = schwimmbew = None
     if w.schwimmen:
         schwimm = standbilder(e, w.schwimmen)
@@ -298,7 +316,7 @@ def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
     Fußzeile, Zustände, Schwimmen. Beispiel Ente: Rahmen 36, gemessen 21, Ziel 11 → 0.52."""
     f = rahmen(t, leinwand)
     hoehe, laenge = gemessene_groesse(e, w, t)
-    faktor, nach = massstab(art, hoehe, laenge)
+    faktor, nach = (w.massstab, "fest") if w.massstab else massstab(art, hoehe, laenge)
     rand = (f - leinwand) // 2
     daten: dict = {
         "quelle": ZUORDNUNG + "#tier." + art,
@@ -311,8 +329,8 @@ def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
         "gemessen_laenge": laenge,
         "fuss": rand + _kasten([b[0] for b in t.stand.values()])[3],
     }
-    if w.zustaende:
-        daten["zustaende"] = list(w.zustaende)
+    if ruhe := ruhezustaende(e, w):
+        daten["zustaende"] = list(ruhe)
     if t.schwimmen:
         oben, unten = _kasten([b[0] for b in t.schwimmen.values()])[1::2]
         daten["schwimmen"] = {"mitte": rand + (oben + unten) // 2, "wasser": w.wasser}

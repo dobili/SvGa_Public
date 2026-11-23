@@ -26,7 +26,8 @@ describe("tierartVon", () => {
     expect(tierartVon("bisonherde")).toBe("bison");
     expect(tierartVon("eichhoernchen")).toBe("eichhoernchen");
     expect(tierartVon("drohne")).toBe("drohne");
-    expect(tierartVon("saugroboter")).toBe("lieferroboter");
+    expect(tierartVon("saugroboter")).toBe("saugroboter");
+    expect(tierartVon("schneeraeumroboter")).toBe("lieferroboter");
     expect(tierartVon("kehrroboter")).toBe("kehrroboter");
   });
 
@@ -109,6 +110,7 @@ describe("PixelLab-Tierbögen (23.11.2026)", () => {
     for (const art of ["eidechse", "delfin", "falke", "praeriehund", "schwan"]) {
       expect(tierartVon(art)).toBe(art);
     }
-    expect(tierartVon("waschbaer")).toBeNull();
+    expect(tierartVon("waschbaer")).toBe("waschbaer");
+    expect(tierartVon("einhorn")).toBeNull();
   });
 });

@@ -28,6 +28,7 @@ buch/arbeit/pixellab/import.md (nur lokal).
 
 import argparse
 import json
+import re
 import shutil
 import zipfile
 from dataclasses import dataclass
@@ -137,6 +138,37 @@ def _animation(archiv: zipfile.ZipFile, zustand: Zustand, name: str, ziel: Path)
     return anzahl
 
 
+KENNUNG_LAENGE = 20
+UMLAUTE = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss"})
+
+
+def kennung(name: str) -> str:
+    """Kennung eines Zustands: klein, ohne Umlaute, Bindestriche, höchstens 20 Zeichen.
+
+    Beispiel: „Without the telescop“ → „without-the-telescop“, „Idle“ → „idle“.
+    """
+    klein = re.sub(r"[^a-z0-9]+", "-", name.lower().translate(UMLAUTE)).strip("-")
+    return klein[:KENNUNG_LAENGE].rstrip("-")
+
+
+def _weitere_standbilder(archiv: zipfile.ZipFile, gruppe: Gruppe, stand: Zustand, ziel: Path) -> None:
+    """Weitere stehende Zustände nach standbilder/<kennung>/rotations und standbilder.json.
+
+    Abstimmung mit mittel-1 (Editor 1.9, Zustandswahl je Figur, 23.11.2026): alle Zustände außer
+    dem gewählten Standbild, den Hilfszuständen fürs Gehen und Rennen und den Sitz- und
+    Liegezuständen. Die Liste nennt auch den Standard (das Bild unter rotations/).
+    """
+    hilfe = {z.name for a in (LAUFEN, RENNEN) if (z := mit_animation(gruppe, a)) and z != stand}
+    liste = [{"kennung": kennung(stand.name), "name": stand.name, "standard": True}]
+    for z in gruppe.zustaende:
+        if z == stand or z.name in hilfe or zustandsordner(z.name):
+            continue
+        if _rotationen(archiv, z, ziel / "standbilder" / kennung(z.name)):
+            liste.append({"kennung": kennung(z.name), "name": z.name, "standard": False})
+    daten = json.dumps(liste, ensure_ascii=False, indent=2) + "\n"
+    (ziel / "standbilder.json").write_text(daten, encoding="utf-8")
+
+
 def _metadaten(gruppe: Gruppe, stand: Zustand, ziel: Path) -> None:
     """metadata.json wie im Einzelexport (Leinwand für figurenbogen.mjs) mit der Herkunft."""
     daten = {
@@ -160,6 +192,7 @@ def schreibe_figur(privat: Path, gruppe: Gruppe) -> dict:
             quelle = mit_animation(gruppe, name)
             if quelle:
                 animationen[name] = (quelle.name, _animation(archiv, quelle, name, ziel))
+        _weitere_standbilder(archiv, gruppe, stand, ziel)
         zustaende = {}
         for z in gruppe.zustaende:
             ordner = zustandsordner(z.name)

@@ -63,12 +63,16 @@ def _bilder(ordner: Path, richtungen, faktor_von: Path | None, image) -> list[st
 
 
 def _standbilder(figur: Path, image) -> list[dict]:
-    """Die Standbilder aus standbilder.json mit vier Bildern; der Standard aus ``rotations/``."""
+    """Die Standbilder aus standbilder.json mit vier Bildern; der Standard aus ``rotations/``.
+    Leer, wenn es nur den Standard gibt."""
     liste_pfad = figur / "standbilder.json"
     if not liste_pfad.exists():
         return []
+    eintraege = json.loads(liste_pfad.read_text(encoding="utf-8"))
+    if not any(not e.get("standard") for e in eintraege):
+        return []  # nur der Standard: nichts zu wählen, kein Platz im Paket
     ergebnis = []
-    for e in json.loads(liste_pfad.read_text(encoding="utf-8")):
+    for e in eintraege:
         ordner = figur if e.get("standard") else figur / "standbilder" / e.get("kennung", "")
         bilder = _bilder(ordner, PIXELLAB, None, image)
         if bilder:

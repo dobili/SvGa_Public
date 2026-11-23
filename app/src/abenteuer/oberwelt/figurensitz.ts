@@ -13,12 +13,31 @@ import { legeFestkoerperAufKachel } from "./figurbilder";
 import type { Bildversatz } from "./figurversatz";
 import { sitzsperre, type Sitzlage } from "./sitzplatz";
 import { hatSitzbilder, SITZ_HUB, sitzbild } from "./sitzrichtung";
+import { legeSitzausschnitt, zerstoere } from "./vordergrund";
 import { SITZT } from "./zuwendungsschicht";
 import type { Richtung } from "./szene";
 
 /** Zahl der Rahmen eines Sprites (ohne den Grundrahmen „__BASE“ von Phaser). */
 export function rahmenzahl(sprite: Phaser.GameObjects.Sprite): number {
   return sprite.texture.frameTotal - 1;
+}
+
+/** Datenschlüssel am Sprite: der Vordergrund seines Sitzmöbels (vordergrund.ts). */
+const VORDERGRUND = "sitzvordergrund";
+
+/**
+ * Legt den vorderen Teil des Sitzmöbels über die Sitzende (vordergrund.ts): Vorderkante und Beine,
+ * von hinten gesehen die Lehne; wer zum Betrachter schaut, bekommt keinen. Ein früherer Vordergrund
+ * derselben Figur wird entfernt. Ohne gemerktes Möbelbild (etwa im Test) geschieht nichts.
+ */
+function legeSitzvordergrund(
+  sprite: Phaser.GameObjects.Sprite,
+  richtung: Richtung,
+  lage?: Sitzlage | null,
+): void {
+  zerstoere(sprite.getData(VORDERGRUND));
+  if (!lage?.moebel || !sprite.scene) return;
+  sprite.setData(VORDERGRUND, legeSitzausschnitt(sprite.scene, lage, richtung));
 }
 
 /**
@@ -42,6 +61,7 @@ export function setzeSitzend(
   sprite.setFrame(sitzbild(rahmen, richtung, lage?.amBoden));
   // Alles in Kartenpixeln; der Hub zählt in Figurenpixeln, also mal Maßstab (PixelLab 2/3).
   // Am Boden (BODENSITZ, Lily auf dem Bordstein) gibt es keine Sitzfläche, also keinen Hub.
+  legeSitzvordergrund(sprite, richtung, lage);
   const hub = hatSitzbilder(rahmen) || lage?.amBoden ? 0 : SITZ_HUB * sprite.scaleY;
   const dx = lage?.dx ?? 0;
   const dy = (lage?.dy ?? 0) - hub;

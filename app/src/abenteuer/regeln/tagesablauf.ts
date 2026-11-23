@@ -16,6 +16,7 @@
  * Abhängigkeiten: regeln/bedingung.ts.
  */
 import { erfuellt } from "./bedingung";
+import ohnesitzbild from "./ohnesitzbild.json";
 
 /** Ein Block des Tages: von bis bis (ausschließlich, über Mitternacht möglich), ohne Karte unsichtbar. */
 export interface Ablaufblock {
@@ -117,8 +118,29 @@ interface Kartenobjekt {
   readonly properties?: readonly { readonly name?: unknown; readonly value?: unknown }[];
 }
 
+/** Personen ohne Stuhlbild: „karte@x,y“ → freies Nachbarfeld (figurenzustaende_ablauf.py). */
+const OHNE_SITZBILD: Readonly<Record<string, Readonly<Record<string, readonly number[]>>>> =
+  ohnesitzbild.personen;
+
+/**
+ * Wo eine Person ohne Stuhlbild statt auf dem Stuhl steht (Wunsch des Autors, 23.11.2026: Wer auf
+ * einem Stuhl gezeichnet wird, braucht ein Sitzbild). Bis ihr PixelLab-Zustand da ist, steht sie auf
+ * einem freien Feld neben dem Stuhl; die Pipeline rechnet das Feld aus. Sonst null.
+ * Beispiel: Bea vor der Arena (capitalArena.aussen@23,45) → steht auf (23, 46).
+ */
+export function standStattSitz(person: string, block: Ablaufblock): readonly number[] | null {
+  if (block.tut !== "sitzt" || !block.karte || !block.feld) return null;
+  const [x, y] = block.feld;
+  return OHNE_SITZBILD[person]?.[`${block.karte}@${x},${y}`] ?? null;
+}
+
 /** Ein neues Figurenobjekt für die Karte (Pixelkoordinaten wie im Kartenbau). */
 function figurobjekt(name: string, block: Ablaufblock): Kartenobjekt {
+  const stand = standStattSitz(name, block);
+  if (stand) {
+    const [sx = 0, sy = 0] = stand;
+    return { name, type: "figur", x: sx * KACHEL, y: sy * KACHEL, properties: [] };
+  }
   const [x = 0, y = 0] = block.feld ?? [];
   const eigenschaften = block.tut?.startsWith("sitzt")
     ? [{ name: "sitzt", value: "unten" }]

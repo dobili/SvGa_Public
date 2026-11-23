@@ -18,6 +18,9 @@
   const K = 16;
   const GRENZE = 8;
   const SITZARTEN = ["stuhl", "bank", "sessel", "sofa", "hocker", "couch"];
+  // Vordergrund ab diesem Anteil der sichtbaren Höhe (wie VORGABE_AB in vordergrund.ts).
+  const VORGABE_AB = { stuhl: 0.55, hocker: 0.45, bank: 0.55, sessel: 0.6, sofa: 0.6, couch: 0.6 };
+  const VORGABE_AB_SONST = 0.55;
   const SICHTBAR_AB = 40; // Deckkraft, ab der ein Pixel als sichtbar zählt (sitzumriss.ts)
   const SITZ_HUB = 6; // Figurenpixel, um die ein Standbild sitzend höher steht (sitzrichtung.ts)
   const PIXELLAB_MASSSTAB = 2 / 3; // PixelLab-Bilder (32 breit) stehen mit 2/3 auf der Karte
@@ -68,7 +71,9 @@
 
   const istSitz = (s) => {
     const art = KE.zustand.daten.moebel[s.kennung]?.art;
-    return art ? SITZARTEN.includes(art) : SITZARTEN.some((w) => s.kennung.toLowerCase().includes(w));
+    return art
+      ? SITZARTEN.includes(art)
+      : SITZARTEN.some((w) => s.kennung.toLowerCase().includes(w));
   };
   const rasterrest = (w) => {
     const rest = w - Math.round(w / K) * K;
@@ -92,7 +97,43 @@
     const [sx, sy, sb, sh] = sichtbar(sitz);
     const waagerecht = sitz.b <= K ? sx + sb / 2 - mx : rasterrest(sitz.x);
     const senkrecht = sitz.h <= 2 * K ? sy + sh - (feld[1] + 1) * K : rasterrest(sitz.y);
-    return { dx: kachelweit(waagerecht), dy: kachelweit(senkrecht) };
+    return { dx: kachelweit(waagerecht), dy: kachelweit(senkrecht), sitz };
+  };
+
+  /**
+   * Vordergrund des Sitzmöbels über der Sitzenden, wie vordergrund.ts in der App (23.11.2026): das
+   * Möbelbild ab der Sitzflächen-Vorderkante (Anteil `ab` der sichtbaren Höhe, je Art oder im
+   * Katalog `vordergrund.ab`) ein zweites Mal darüber; wer zum Betrachter schaut („unten“), bekommt
+   * keinen. Gedrehte, gespiegelte oder beschnittene Möbel zeigt der Editor ohne Vordergrund.
+   */
+  KE.zeichneSitzvordergrund = function (ctx, m, blick) {
+    // Sitzt die Person an dieser Stelle (Zustand der Szene vor `sitzt`, Editor 1.9, blick.js)?
+    const sitzt = KE.sitztJetzt(m);
+    const lage = sitzt && blick !== "unten" ? KE.sitzlage(m.eintrag.feld) : null;
+    const s = lage?.sitz;
+    const roh = s && KE.zustand.daten.moebel[s.kennung];
+    const b = roh && KE.bild(roh.bild);
+    if (!b || !b.complete || s.eintrag.drehung || s.eintrag.spiegeln || KE.zuschnittVon(s.eintrag))
+      return;
+    const daten = KE.bildpixel(roh.bild);
+    const u = daten && (umrisse[roh.bild] ??= umrissAus(daten));
+    if (!u) return;
+    const ab = roh.vordergrund?.ab ?? VORGABE_AB[roh.art] ?? VORGABE_AB_SONST;
+    if (ab >= 1) return;
+    const oben = Math.round(u[1] + u[3] * ab);
+    const massstab = Number(s.eintrag.massstab ?? 1);
+    const hoehe = b.naturalHeight - oben;
+    ctx.drawImage(
+      b,
+      0,
+      oben,
+      b.naturalWidth,
+      hoehe,
+      s.x,
+      s.y + oben * massstab,
+      b.naturalWidth * massstab,
+      hoehe * massstab,
+    );
   };
 
   /**

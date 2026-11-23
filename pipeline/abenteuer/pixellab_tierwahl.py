@@ -18,9 +18,9 @@ Anführungszeichen; „idle“, „walking on“, „sitting“ …).
 - ``wasser``: Palette für das mitgezeichnete Wasser (pixellab_wasser.py), dort, wo die Art schwimmt.
 - ``grund``: warum so (für die Tabelle der Übersichtsseite).
 
-Nicht in der Tabelle (Auftrag des Hauptchats, 23.11.2026, der Autor macht sie noch): Saugroboter
-(fehlt), Drohne (alter Prompt, keine Animation; bleibt LimeZu), Waschbär (keine Laufanimation;
-bleibt ohne Bild wie bisher).
+Saugroboter, Drohne und Waschbär kamen mit der Nachlieferung des Autors (23.11.2026,
+ki-roh/selected_characters_new.zip; die neuen Gruppen stehen in der Zuordnung vorn und ersetzen
+die alten).
 """
 
 from dataclasses import dataclass, field
@@ -36,6 +36,8 @@ class Wahl:
     zustaende: dict[str, str] = field(default_factory=dict)
     schwimmen: str | None = None
     wasser: str = "standard"
+    # Fester Maßstab, wenn Höhe und Länge von der Seite das Tier falsch messen (Grund in ``grund``).
+    massstab: float | None = None
 
 
 SITZ = {"sitzen": "sitting"}
@@ -211,4 +213,22 @@ WAHL: dict[str, Wahl] = {
     "lieferroboter": Wahl("idle", "idle", MASCHINE),
     "kehrroboter": Wahl("idle", "idle", MASCHINE),
     "roboterhund": Wahl("idle", "idle", "Roboterhund auf vier Beinen (Idle), Gang an Idle."),
+    # Nachlieferung des Autors (23.11.2026, ki-roh/selected_characters_new.zip).
+    "drohne": Wahl("idle", "idle", "Drohne schwebt (Animation an Idle, auch im Stand)."),
+    "saugroboter": Wahl(
+        "idle",
+        "idle",
+        MASCHINE + " Flacher Saugroboter mit Bürste und Licht. Fester Maßstab 0,35: Von der Seite "
+        "misst er 24 × 24 px, weil die Draufsicht die Oberseite zeigt; nach der Höhe wäre er nur "
+        "6 Spielpixel breit. Vorgabe des Hauptchats etwa 9–10 hoch und 14 breit neben der "
+        "30-px-Figur, also gut 6 × 9 Spielpixel; 0,35 gibt gut 8 × 8 dazwischen.",
+        massstab=0.35,
+    ),
+    "waschbaer": Wahl(
+        "walking on",
+        "walking on",
+        "Idle steht halb aufgerichtet; Standbild ist der Vierbeiner-Zustand. Dessen Animation heißt "
+        "„shifts its weight onto its hind legs“, die Bilder zeigen aber einen Gehzyklus auf vier "
+        "Beinen (Beine wechseln, geprüft 23.11.2026): Bewegung.",
+    ),
 }

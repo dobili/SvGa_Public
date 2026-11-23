@@ -39,7 +39,7 @@ def test_vorschau_findet_dieselben_arten():
         "pony": "pony",
         "kojote": "kojote",
     }
-    erwartet |= {"fledermaus": "fledermaus", "waschbaer": None, "amsel": "spatz"}
+    erwartet |= {"fledermaus": "fledermaus", "waschbaer": "waschbaer", "amsel": "spatz"}
     assert {n: tierart(n) for n in erwartet} == erwartet
 
 

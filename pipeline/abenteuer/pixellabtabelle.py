@@ -72,8 +72,9 @@ _ERWACHSENE_ORT = {
     26: "wanderer",
     32: "wanderer",
     35: "wanderer",
-    # Clubraum Maple Falls: Herr im Anzug (Turnierbesuch).
-    18: "anzug",
+    # Clubraum Maple Falls: die wartende Mutter („mutterWartet“) sitzt; „anzug“ hat kein Sitzbild,
+    # die Studentin schon (Befund des Haupt-Chats, 23.11.2026).
+    18: "studentin",
     # Wegsperre (32_Wegsperren.md): Imani, Benji, Zoe sind Jugendliche.
     22: "jugend",
     23: "jugend",

@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). schnitt „pixellab“ (23.11.2026): Bögen aus den PixelLab-Exporten des Autors (pipeline/abenteuer/pixellab_tiere.py, Wahl der Zustände mit Grund in pixellab_tierwahl.py): Reihe 0 Standbilder, Reihe 1 Bewegung (6 je Richtung), Reihe 2 Zustände (je 4, Ordnung in zustaende: Verhalten sitzen, schlafen, grasen), Reihen 3 und 4 Schwimmen still und in Bewegung (schwimmen.mitte: Mitte der Wasserfläche im Rahmen, schwimmen.wasser: Palette). fuss: unterste Zeile der Standbilder im Rahmen. gemessen: größte Höhe der Standbilder; massstab = Zielhöhe (tierplan.py) / gemessen. Jede PixelLab-Art hat ihren eigenen Wortstamm; Ersatz bleibt nur für Arten ohne PixelLab-Bild (Esel, Schimmel, Drohne). Ohne passenden Stamm wird nichts gezeichnet (Waschbär, Saugroboter, bis der Autor sie macht).",
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). schnitt „pixellab“ (23.11.2026): Bögen aus den PixelLab-Exporten des Autors (pipeline/abenteuer/pixellab_tiere.py, Wahl der Zustände mit Grund in pixellab_tierwahl.py): Reihe 0 Standbilder, Reihe 1 Bewegung (6 je Richtung), Reihe 2 Zustände (je 4, Ordnung in zustaende: Verhalten sitzen, schlafen, grasen), Reihen 3 und 4 Schwimmen still und in Bewegung (schwimmen.mitte: Mitte der Wasserfläche im Rahmen, schwimmen.wasser: Palette). fuss: unterste Zeile der Standbilder im Rahmen. gemessen: größte Höhe der Standbilder; massstab = Zielhöhe (tierplan.py) / gemessen. Jede PixelLab-Art hat ihren eigenen Wortstamm; Ersatz bleibt nur für Arten ohne PixelLab-Bild (Esel, Schimmel). Drohne, Saugroboter und Waschbär kamen mit der Nachlieferung des Autors (23.11.2026). massstab_nach: hoehe, laenge oder fest (fester Maßstab mit Grund in pixellab_tierwahl.py, Saugroboter).",
   "arten": {
     "taube": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.taube",
@@ -36,10 +36,15 @@
       "fuss": 31
     },
     "drohne": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Drone_1_Flying_16x16.png",
-      "breite": 16,
-      "hoehe": 16,
-      "schnitt": "streifen"
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.drohne",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.33,
+      "massstab_nach": "hoehe",
+      "gemessen": 18,
+      "gemessen_laenge": 19,
+      "fuss": 26
     },
     "huhn": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.huhn",
@@ -547,7 +552,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 25,
       "gemessen_laenge": 19,
-      "fuss": 28
+      "fuss": 28,
+      "zustaende": ["sitzen"]
     },
     "krebs": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.krebs",
@@ -719,6 +725,28 @@
       "gemessen": 27,
       "gemessen_laenge": 25,
       "fuss": 29
+    },
+    "saugroboter": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.saugroboter",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "pixellab",
+      "massstab": 0.35,
+      "massstab_nach": "fest",
+      "gemessen": 24,
+      "gemessen_laenge": 24,
+      "fuss": 28
+    },
+    "waschbaer": {
+      "quelle": "ki-roh/zuordnung_23-11.json#tier.waschbaer",
+      "breite": 36,
+      "hoehe": 36,
+      "schnitt": "pixellab",
+      "massstab": 0.48,
+      "massstab_nach": "hoehe",
+      "gemessen": 23,
+      "gemessen_laenge": 32,
+      "fuss": 32
     }
   },
   "staemme": {
@@ -785,6 +813,7 @@
     "robbe": "robbe",
     "roboter": "lieferroboter",
     "roboterhund": "roboterhund",
+    "saugroboter": "saugroboter",
     "schaf": "schaf",
     "schildkroete": "schildkroete",
     "schimmel": "schimmel",
@@ -794,9 +823,11 @@
     "seeschwalbe": "seeschwalbe",
     "spatz": "spatz",
     "specht": "specht",
+    "staubsaugerroboter": "saugroboter",
     "strandlaeufer": "strandlaeufer",
     "taube": "taube",
     "wapiti": "hirsch",
+    "waschbaer": "waschbaer",
     "ziege": "ziege"
   }
 }

@@ -22,6 +22,7 @@
  * Abhängigkeiten: moebel.ts (Typen), zeichentiefe.ts.
  */
 import type { Moebel } from "./moebel";
+import { moebelschluessel } from "./vordergrund";
 import { moebeltiefe } from "./zeichentiefe";
 
 /** Arten im Möbelkatalog, auf denen man sitzt (wie SITZMOEBEL in pipeline/abenteuer/kartenregeln.py). */
@@ -47,6 +48,8 @@ export interface Umriss {
 export interface Sitzmoebel extends Umriss {
   readonly name: string;
   readonly tiefe: number;
+  /** Schlüssel des Möbelbilds (vordergrund.ts, moebelschluessel), für den Vordergrund. */
+  readonly schluessel?: string;
   /** Was das Bild wirklich zeigt (ohne durchsichtigen Rand); ohne Angabe das ganze Rechteck. */
   readonly sichtbar?: Umriss;
 }
@@ -58,6 +61,8 @@ export interface Sitzlage {
   readonly tiefe: number;
   /** Sitzt am Boden (kein Sitzmöbel): ohne Hub, siehe BODENSITZ. */
   readonly amBoden?: boolean;
+  /** Schlüssel des Sitzmöbels (vordergrund.ts): Sein vorderer Teil verdeckt die Figur. */
+  readonly moebel?: string;
 }
 
 /**
@@ -101,6 +106,7 @@ export function sitzmoebelAus(
       const sichtbar = sichtbarVon(m);
       return {
         name: m.name,
+        schluessel: moebelschluessel(m.name, m.x, m.y),
         x: m.x,
         y: m.y,
         breite: m.angabe.breite,
@@ -196,7 +202,8 @@ export function sitzlage(
     sitz.breite <= kachel ? s.x + s.breite / 2 - mitte : rasterrest(sitz.x, kachel);
   const senkrecht = sitz.hoehe <= 2 * kachel ? s.y + s.hoehe - fuss : rasterrest(sitz.y, kachel);
   const tiefe = sitz.tiefe + SITZ_TIEFENABSTAND;
-  return { dx: begrenzt(waagerecht, kachel), dy: begrenzt(senkrecht, kachel), tiefe };
+  const lage = { dx: begrenzt(waagerecht, kachel), dy: begrenzt(senkrecht, kachel), tiefe };
+  return sitz.schluessel ? { ...lage, moebel: sitz.schluessel } : lage;
 }
 
 /**

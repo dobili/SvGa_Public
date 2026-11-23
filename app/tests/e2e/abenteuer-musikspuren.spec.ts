@@ -4,7 +4,11 @@
  * Tonmesser der App (`__tonmesser`, ton/tonregie.ts) meldet je Spur den Pegel, den die Mischung
  * gesetzt hat; der Test schreibt sie als Pegelprotokoll an den Bericht.
  * Geprüft: gemeinsamer Start mit Grund und Melodie am Tag, Ausdünnen nach drei vollen Schleifen
- * (Form 2 s, also nach 6 s nur der Grund, angehoben) und danach wieder voll. Die Absenkung unter
+ * (Form 4 s, also nach 12 s nur der Grund, angehoben) und danach wieder voll.
+ * Wackler unter Last (23.11.2026): Mit einer Form von 2 s und dem gröber werdenden Abfragetakt von
+ * expect.poll kam die erste Messung manchmal erst nach drei Schleifen; der Test hielt dann die
+ * ausgedünnte Mischung für den Anfang. Jetzt wird der Anfang alle 100 ms abgefragt und der erste
+ * gemessene Stand geprüft, und die Form ist doppelt so lang. Die Absenkung unter
  * Dialogzeilen prüft tonspieler.spuren.test.ts.
  * Der Ton läuft stumm: Chromium ohne Lautsprecher, die App braucht nur den AudioContext.
  */
@@ -12,7 +16,9 @@ import { expect, test, type Page } from "@playwright/test";
 import { GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 
 const RATE = 44100;
-const FORM_S = 2;
+const FORM_S = 4;
+/** Abfragetakt für den Anfang (ms): fein genug, um den Stand vor dem ersten Ausdünnen zu sehen. */
+const ANFANG_TAKT = 100;
 /** Testtöne je Spur (Hz), damit man sie im Protokoll unterscheiden könnte. */
 const TOENE = { grund: 110, melodie: 440, zusatz: 660 } as const;
 const BYTES_JE_WERT = 2;
@@ -89,17 +95,27 @@ test("Ortsthema in Spuren: gemeinsamer Start, Ausdünnen nach drei Schleifen, wi
     protokoll.push(JSON.stringify(m?.spuren?.spuren ?? null));
     return m;
   };
-  await expect.poll(async () => (await zeile())?.spuren?.angabe, { timeout: 20000 }).toBeTruthy();
-  const anfang = await zeile();
-  expect(anfang?.spuren?.spuren).toEqual({ grund: 1, melodie: 1, zusatz: 0 });
-  // Drei volle Schleifen zu 2 s, dann eine nur mit dem Grund (angehoben, A0.6).
+  // Der erste Stand, an dem die Spuren laufen, ist der Anfang (nicht ein späterer Abruf).
+  const erste: { messung: Messung | null } = { messung: null };
   await expect
-    .poll(async () => (await zeile())?.spuren?.spuren.melodie, { timeout: 20000, intervals: [250] })
+    .poll(
+      async () => {
+        const m = await zeile();
+        if (m?.spuren?.angabe) erste.messung ??= m;
+        return erste.messung !== null;
+      },
+      { timeout: 20000, intervals: [ANFANG_TAKT] },
+    )
+    .toBe(true);
+  expect(erste.messung?.spuren?.spuren).toEqual({ grund: 1, melodie: 1, zusatz: 0 });
+  // Drei volle Schleifen zu 4 s, dann eine nur mit dem Grund (angehoben, A0.6).
+  await expect
+    .poll(async () => (await zeile())?.spuren?.spuren.melodie, { timeout: 30000, intervals: [250] })
     .toBe(0);
   const duenn = await zeile();
   expect(duenn?.spuren?.spuren.grund ?? 0).toBeGreaterThan(1);
   await expect
-    .poll(async () => (await zeile())?.spuren?.spuren.melodie, { timeout: 10000, intervals: [250] })
+    .poll(async () => (await zeile())?.spuren?.spuren.melodie, { timeout: 15000, intervals: [250] })
     .toBe(1);
   await info.attach("pegelprotokoll", { body: protokoll.join("\n"), contentType: "text/plain" });
 });

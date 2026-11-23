@@ -57,6 +57,17 @@
     return [s.x + u[0] * m, s.y + u[1] * m, u[2] * m, u[3] * m];
   }
 
+  /**
+   * Sichtbarer Umriss [x, y, breite, höhe] eines Möbelbilds in Bildpixeln (zwischengespeichert),
+   * sonst null. Auch für den Bettvordergrund (bettvordergrund.js).
+   */
+  KE.umrissVon = function (bildname) {
+    const daten = KE.bildpixel(bildname);
+    if (!daten) return null;
+    umrisse[bildname] ??= umrissAus(daten);
+    return umrisse[bildname];
+  };
+
   /** Umriss der Pixel ab SICHTBAR_AB Deckkraft in Bildpixeln, sonst null. */
   function umrissAus(daten) {
     let x0 = Infinity, y0 = Infinity, x1 = -1, y1 = -1; // prettier-ignore

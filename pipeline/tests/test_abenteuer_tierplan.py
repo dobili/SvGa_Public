@@ -29,14 +29,20 @@ def test_massstaebe_in_tierarten_folgen_der_zielhoehe():
 
 
 def test_pixellab_massstab_aus_dem_echten_bild():
-    """PixelLab-Bögen (23.11.2026): massstab = Zielhöhe / am Bogen gemessene Höhe (``gemessen``,
-    pipeline/abenteuer/pixellab_tiere.py), auf 0,01 gerundet; die Art steht in der Tierplan-Tabelle."""
+    """PixelLab-Bögen (23.11.2026): massstab = Zielhöhe / gemessene Höhe von der Seite (``gemessen``,
+    pipeline/abenteuer/pixellab_tiere.py), bei langen Tieren höchstens Ziellänge / gemessene Länge;
+    auf 0,01 gerundet; nie mehr als × 1,1 vergrößert (sonst ist das Bild zu klein erzeugt)."""
     arten = json.loads(tp.TIERARTEN.read_text(encoding="utf-8"))["arten"]
     neu = {art: a for art, a in arten.items() if a["schnitt"] == "pixellab"}
     assert len(neu) >= 50
     for art, a in neu.items():
         assert art in ARTEN, art
-        assert a["massstab"] == pytest.approx(tp.zielhoehe(ARTEN[art]) / a["gemessen"], abs=0.006), art
+        nach_hoehe = tp.zielhoehe(ARTEN[art]) / a["gemessen"]
+        nach_laenge = tp.ziellaenge(ARTEN[art]) / a["gemessen_laenge"]
+        # Lange Tiere (Länge ≥ 1,5 × Höhe, pixellab_tiere.LANG_AB): der kleinere Faktor gilt.
+        erwartet = min(nach_hoehe, nach_laenge) if a["massstab_nach"] == "laenge" else nach_hoehe
+        assert a["massstab"] == pytest.approx(erwartet, abs=0.006), art
+        assert a["massstab"] <= 1.1, f"{art}: zu klein erzeugt"
         assert 0 < a["fuss"] <= a["hoehe"], art
 
 

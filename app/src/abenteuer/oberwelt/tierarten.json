@@ -7,7 +7,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.53,
+      "massstab_nach": "hoehe",
       "gemessen": 15,
+      "gemessen_laenge": 19,
       "fuss": 24
     },
     "kraehe": {
@@ -16,7 +18,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.42,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 27,
       "fuss": 34,
       "zustaende": ["sitzen"]
     },
@@ -26,7 +30,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.41,
+      "massstab_nach": "hoehe",
       "gemessen": 27,
+      "gemessen_laenge": 24,
       "fuss": 31
     },
     "drohne": {
@@ -41,7 +47,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.5,
+      "massstab_nach": "hoehe",
       "gemessen": 22,
+      "gemessen_laenge": 23,
       "fuss": 28
     },
     "ente": {
@@ -50,7 +58,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.52,
+      "massstab_nach": "hoehe",
       "gemessen": 21,
+      "gemessen_laenge": 23,
       "fuss": 29,
       "schwimmen": {
         "mitte": 19,
@@ -63,7 +73,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.61,
+      "massstab_nach": "hoehe",
       "gemessen": 23,
+      "gemessen_laenge": 22,
       "fuss": 28,
       "zustaende": ["sitzen"]
     },
@@ -73,7 +85,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.35,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 20,
       "fuss": 29
     },
     "schwein": {
@@ -82,7 +96,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.75,
+      "massstab_nach": "hoehe",
       "gemessen": 20,
+      "gemessen_laenge": 27,
       "fuss": 31,
       "zustaende": ["schlafen"]
     },
@@ -92,7 +108,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.62,
+      "massstab_nach": "hoehe",
       "gemessen": 24,
+      "gemessen_laenge": 26,
       "fuss": 28,
       "zustaende": ["sitzen"]
     },
@@ -102,7 +120,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.68,
+      "massstab_nach": "hoehe",
       "gemessen": 22,
+      "gemessen_laenge": 22,
       "fuss": 27
     },
     "bison": {
@@ -111,7 +131,9 @@
       "hoehe": 64,
       "schnitt": "pixellab",
       "massstab": 0.42,
+      "massstab_nach": "hoehe",
       "gemessen": 48,
+      "gemessen_laenge": 51,
       "fuss": 58
     },
     "kuh": {
@@ -120,7 +142,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.63,
+      "massstab_nach": "hoehe",
       "gemessen": 27,
+      "gemessen_laenge": 32,
       "fuss": 34,
       "zustaende": ["sitzen", "grasen"]
     },
@@ -137,7 +161,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.52,
+      "massstab_nach": "hoehe",
       "gemessen": 25,
+      "gemessen_laenge": 28,
       "fuss": 29,
       "zustaende": ["schlafen"]
     },
@@ -147,7 +173,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.42,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 23,
       "fuss": 29,
       "zustaende": ["sitzen", "schlafen"]
     },
@@ -157,7 +185,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.57,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 21,
       "fuss": 32,
       "zustaende": ["sitzen"]
     },
@@ -167,7 +197,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.59,
+      "massstab_nach": "hoehe",
       "gemessen": 27,
+      "gemessen_laenge": 23,
       "fuss": 30,
       "zustaende": ["sitzen"]
     },
@@ -177,7 +209,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.7,
+      "massstab_nach": "hoehe",
       "gemessen": 30,
+      "gemessen_laenge": 25,
       "fuss": 36,
       "zustaende": ["sitzen"]
     },
@@ -187,7 +221,9 @@
       "hoehe": 48,
       "schnitt": "pixellab",
       "massstab": 0.54,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 27,
       "fuss": 40
     },
     "kehrroboter": {
@@ -196,7 +232,9 @@
       "hoehe": 48,
       "schnitt": "pixellab",
       "massstab": 0.55,
+      "massstab_nach": "hoehe",
       "gemessen": 29,
+      "gemessen_laenge": 34,
       "fuss": 39
     },
     "pferd": {
@@ -205,7 +243,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.76,
+      "massstab_nach": "hoehe",
       "gemessen": 29,
+      "gemessen_laenge": 31,
       "fuss": 35,
       "zustaende": ["grasen"]
     },
@@ -222,7 +262,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.5,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 24,
       "fuss": 34
     },
     "fuchs": {
@@ -231,7 +273,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.52,
+      "massstab_nach": "hoehe",
       "gemessen": 23,
+      "gemessen_laenge": 28,
       "fuss": 33
     },
     "spatz": {
@@ -240,7 +284,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.25,
+      "massstab_nach": "hoehe",
       "gemessen": 24,
+      "gemessen_laenge": 27,
       "fuss": 34
     },
     "eichelhaeher": {
@@ -249,7 +295,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.27,
+      "massstab_nach": "hoehe",
       "gemessen": 30,
+      "gemessen_laenge": 28,
       "fuss": 35
     },
     "seeschwalbe": {
@@ -258,7 +306,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.33,
+      "massstab_nach": "hoehe",
       "gemessen": 24,
+      "gemessen_laenge": 28,
       "fuss": 33
     },
     "geier": {
@@ -267,7 +317,9 @@
       "hoehe": 44,
       "schnitt": "pixellab",
       "massstab": 0.46,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 23,
       "fuss": 36
     },
     "adler": {
@@ -276,7 +328,9 @@
       "hoehe": 44,
       "schnitt": "pixellab",
       "massstab": 0.56,
+      "massstab_nach": "hoehe",
       "gemessen": 27,
+      "gemessen_laenge": 22,
       "fuss": 36
     },
     "falke": {
@@ -285,7 +339,9 @@
       "hoehe": 44,
       "schnitt": "pixellab",
       "massstab": 0.37,
+      "massstab_nach": "hoehe",
       "gemessen": 30,
+      "gemessen_laenge": 27,
       "fuss": 37
     },
     "eisvogel": {
@@ -294,7 +350,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.23,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 28,
       "fuss": 32
     },
     "fasan": {
@@ -303,7 +361,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.43,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 30,
       "fuss": 35
     },
     "roadrunner": {
@@ -312,7 +372,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.41,
+      "massstab_nach": "hoehe",
       "gemessen": 27,
+      "gemessen_laenge": 30,
       "fuss": 34
     },
     "specht": {
@@ -321,7 +383,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.23,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 25,
       "fuss": 34,
       "zustaende": ["sitzen"]
     },
@@ -331,7 +395,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.39,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 21,
       "fuss": 34,
       "zustaende": ["sitzen", "schlafen"]
     },
@@ -341,7 +407,9 @@
       "hoehe": 48,
       "schnitt": "pixellab",
       "massstab": 0.21,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 29,
       "fuss": 38,
       "zustaende": ["sitzen"]
     },
@@ -351,7 +419,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.26,
+      "massstab_nach": "hoehe",
       "gemessen": 23,
+      "gemessen_laenge": 22,
       "fuss": 31
     },
     "kormoran": {
@@ -360,7 +430,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.5,
+      "massstab_nach": "hoehe",
       "gemessen": 28,
+      "gemessen_laenge": 26,
       "fuss": 34,
       "zustaende": ["sitzen"],
       "schwimmen": {
@@ -374,7 +446,9 @@
       "hoehe": 52,
       "schnitt": "pixellab",
       "massstab": 0.43,
+      "massstab_nach": "hoehe",
       "gemessen": 37,
+      "gemessen_laenge": 38,
       "fuss": 44,
       "zustaende": ["sitzen"],
       "schwimmen": {
@@ -388,7 +462,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.53,
+      "massstab_nach": "hoehe",
       "gemessen": 30,
+      "gemessen_laenge": 27,
       "fuss": 35,
       "schwimmen": {
         "mitte": 20,
@@ -400,8 +476,10 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.3,
+      "massstab": 0.17,
+      "massstab_nach": "laenge",
       "gemessen": 20,
+      "gemessen_laenge": 30,
       "fuss": 31
     },
     "ratte": {
@@ -409,8 +487,10 @@
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.3,
+      "massstab": 0.27,
+      "massstab_nach": "laenge",
       "gemessen": 20,
+      "gemessen_laenge": 30,
       "fuss": 32
     },
     "eichhoernchen": {
@@ -419,7 +499,9 @@
       "hoehe": 40,
       "schnitt": "pixellab",
       "massstab": 0.23,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 31,
       "fuss": 33
     },
     "praeriehund": {
@@ -428,7 +510,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.35,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 21,
       "fuss": 29
     },
     "murmeltier": {
@@ -437,7 +521,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.44,
+      "massstab_nach": "hoehe",
       "gemessen": 25,
+      "gemessen_laenge": 19,
       "fuss": 29
     },
     "eidechse": {
@@ -445,8 +531,10 @@
       "breite": 36,
       "hoehe": 36,
       "schnitt": "pixellab",
-      "massstab": 0.26,
+      "massstab": 0.22,
+      "massstab_nach": "laenge",
       "gemessen": 23,
+      "gemessen_laenge": 32,
       "fuss": 34,
       "zustaende": ["schlafen"]
     },
@@ -456,7 +544,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.24,
+      "massstab_nach": "hoehe",
       "gemessen": 25,
+      "gemessen_laenge": 19,
       "fuss": 28
     },
     "krebs": {
@@ -464,8 +554,10 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.29,
+      "massstab": 0.21,
+      "massstab_nach": "laenge",
       "gemessen": 21,
+      "gemessen_laenge": 24,
       "fuss": 27
     },
     "schildkroete": {
@@ -473,8 +565,10 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.32,
+      "massstab": 0.28,
+      "massstab_nach": "laenge",
       "gemessen": 19,
+      "gemessen_laenge": 29,
       "fuss": 29,
       "schwimmen": {
         "mitte": 17,
@@ -487,7 +581,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.44,
+      "massstab_nach": "hoehe",
       "gemessen": 18,
+      "gemessen_laenge": 32,
       "fuss": 34,
       "schwimmen": {
         "mitte": 19,
@@ -500,7 +596,9 @@
       "hoehe": 72,
       "schnitt": "pixellab",
       "massstab": 0.32,
+      "massstab_nach": "hoehe",
       "gemessen": 34,
+      "gemessen_laenge": 60,
       "fuss": 65,
       "schwimmen": {
         "mitte": 36,
@@ -513,7 +611,9 @@
       "hoehe": 72,
       "schnitt": "pixellab",
       "massstab": 0.32,
+      "massstab_nach": "hoehe",
       "gemessen": 38,
+      "gemessen_laenge": 53,
       "fuss": 61,
       "schwimmen": {
         "mitte": 36,
@@ -526,7 +626,9 @@
       "hoehe": 68,
       "schnitt": "pixellab",
       "massstab": 0.32,
+      "massstab_nach": "hoehe",
       "gemessen": 41,
+      "gemessen_laenge": 56,
       "fuss": 66,
       "schwimmen": {
         "mitte": 37,
@@ -539,7 +641,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.31,
+      "massstab_nach": "hoehe",
       "gemessen": 26,
+      "gemessen_laenge": 18,
       "fuss": 30,
       "schwimmen": {
         "mitte": 16,
@@ -552,7 +656,9 @@
       "hoehe": 48,
       "schnitt": "pixellab",
       "massstab": 0.35,
+      "massstab_nach": "hoehe",
       "gemessen": 17,
+      "gemessen_laenge": 38,
       "fuss": 44,
       "schwimmen": {
         "mitte": 24,
@@ -565,7 +671,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.24,
+      "massstab_nach": "hoehe",
       "gemessen": 25,
+      "gemessen_laenge": 22,
       "fuss": 30
     },
     "libelle": {
@@ -573,8 +681,10 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "pixellab",
-      "massstab": 0.3,
+      "massstab": 0.19,
+      "massstab_nach": "laenge",
       "gemessen": 20,
+      "gemessen_laenge": 27,
       "fuss": 29
     },
     "dackel": {
@@ -583,7 +693,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.36,
+      "massstab_nach": "hoehe",
       "gemessen": 22,
+      "gemessen_laenge": 29,
       "fuss": 31
     },
     "pony": {
@@ -592,7 +704,9 @@
       "hoehe": 36,
       "schnitt": "pixellab",
       "massstab": 0.64,
+      "massstab_nach": "hoehe",
       "gemessen": 25,
+      "gemessen_laenge": 29,
       "fuss": 32
     },
     "roboterhund": {
@@ -601,7 +715,9 @@
       "hoehe": 32,
       "schnitt": "pixellab",
       "massstab": 0.48,
+      "massstab_nach": "hoehe",
       "gemessen": 27,
+      "gemessen_laenge": 25,
       "fuss": 29
     }
   },

@@ -254,36 +254,61 @@ def _kasten(bilder: list[Image.Image]) -> tuple[int, int, int, int]:
     )
 
 
-def gemessene_hoehe(e: Export, w: Wahl, t: Teile) -> int:
-    """Größte sichtbare Höhe der Standbilder von der Seite (rechts, links) in px.
+def gemessene_groesse(e: Export, w: Wahl, t: Teile) -> tuple[int, int]:
+    """Höhe und Länge des gezeichneten Tiers in den Standbildern von der Seite (rechts, links), px.
 
-    Warum nur die Seite: Die Zielhöhe ist der Scheitel im Stehen (tierplan_daten.py). Von oben
-    oder unten gesehen zählt bei langen Tieren die Körperlänge mit (Alligator 54 statt 25 px), das
-    machte sie im Spiel winzig (Fotos 23.11.2026). Wer nur schwimmt, wird ohne Wasser gemessen
-    (Idle; Beispiel Delfin), damit die Wasserfläche den Maßstab nicht verfälscht.
+    Warum gemessen statt der Leinwand: Der Autor konnte die Leinwand nicht immer wie geplant
+    einstellen (Hauptchat, 23.11.2026); zählt, was gezeichnet ist. Warum nur die Seite: Die
+    Zielhöhe ist der Scheitel im Stehen (tierplan_daten.py); von oben oder unten zählte bei langen
+    Tieren die Körperlänge mit (Alligator 54 statt 34 px). Wer nur schwimmt, wird ohne Wasser
+    gemessen (Idle; Beispiel Delfin), damit die Wasserfläche den Maßstab nicht verfälscht.
     """
     stand = standbilder(e, "idle") if w.stand.startswith("swimming") else t.stand
-    seiten = [stand[r][0] for r in ("east", "west")]
-    return max(_kasten([b])[3] - _kasten([b])[1] for b in seiten)
+    kaesten = [_kasten([stand[r][0]]) for r in ("east", "west")]
+    return max(k[3] - k[1] for k in kaesten), max(k[2] - k[0] for k in kaesten)
 
 
-def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
-    """Eintrag für tierarten.json: Rahmen, Maßstab (Zielhöhe aus tierplan / gemessen), Fußzeile,
-    Zustände, Schwimmen. Beispiel Ente: Rahmen 40, gemessen 22, Ziel 11 → massstab 0.5."""
+# Ab diesem Verhältnis Länge zu Höhe (echte Maße, tierplan_daten) bestimmt auch die Länge den Maßstab.
+LANG_AB = 1.5
+# Höchste Vergrößerung; darüber ist das Bild zu klein erzeugt und wird gemeldet (Hauptchat).
+HOECHSTENS_VERGROESSERN = 1.1
+
+
+def massstab(art: str, hoehe: int, laenge: int) -> tuple[float, str]:
+    """Faktor, mit dem das Tier im Spiel die Zielhöhe des Tierplans hat, und wonach er sich richtet.
+
+    Lange Tiere (Alligator, Delfin, Dackel) dürfen auch die Ziellänge nicht überschreiten: dann
+    gilt der kleinere der beiden Faktoren. Ein Faktor für den ganzen Bogen (Bewegung und Zustände
+    springen nicht). Beispiel: Ente, Höhe 21, Ziel 11 → 0.52 nach der Höhe.
+    """
     from pipeline.abenteuer import tierplan
     from pipeline.abenteuer.tierplan_daten import ARTEN
 
+    a = ARTEN[art]
+    nach_hoehe = tierplan.zielhoehe(a) / hoehe
+    if a.laenge >= LANG_AB * a.hoehe:
+        nach_laenge = tierplan.ziellaenge(a) / laenge
+        if nach_laenge < nach_hoehe:
+            return round(nach_laenge, 2), "laenge"
+    return round(nach_hoehe, 2), "hoehe"
+
+
+def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
+    """Eintrag für tierarten.json: Rahmen, Maßstab (massstab()), gemessene Höhe und Länge,
+    Fußzeile, Zustände, Schwimmen. Beispiel Ente: Rahmen 36, gemessen 21, Ziel 11 → 0.52."""
     f = rahmen(t, leinwand)
-    hoehe = gemessene_hoehe(e, w, t)
-    ziel = tierplan.zielhoehe(ARTEN[art])
+    hoehe, laenge = gemessene_groesse(e, w, t)
+    faktor, nach = massstab(art, hoehe, laenge)
     rand = (f - leinwand) // 2
     daten: dict = {
         "quelle": ZUORDNUNG + "#tier." + art,
         "breite": f,
         "hoehe": f,
         "schnitt": "pixellab",
-        "massstab": round(ziel / hoehe, 2),
+        "massstab": faktor,
+        "massstab_nach": nach,
         "gemessen": hoehe,
+        "gemessen_laenge": laenge,
         "fuss": rand + _kasten([b[0] for b in t.stand.values()])[3],
     }
     if w.zustaende:
@@ -330,7 +355,13 @@ def main(argv: list[str]) -> int:
     if "--tierarten" in argv:
         schreibe_tierarten(eintraege)
     for art, d in eintraege.items():
-        print(f"{art:14} Rahmen {d['breite']:3}  gemessen {d['gemessen']:3}  massstab {d['massstab']}")
+        print(
+            f"{art:14} Rahmen {d['breite']:3}  Höhe {d['gemessen']:3}  Länge {d['gemessen_laenge']:3}"
+            f"  massstab {d['massstab']} nach {d['massstab_nach']}"
+        )
+    zu_klein = [art for art, d in eintraege.items() if d["massstab"] > HOECHSTENS_VERGROESSERN]
+    if zu_klein:
+        print(f"Zu klein erzeugt (Vergrößerung über {HOECHSTENS_VERGROESSERN}): {', '.join(zu_klein)}")
     return 0
 
 

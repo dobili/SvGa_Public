@@ -50,16 +50,54 @@ def _streifen(bogen: Image.Image, f: int, reihe: int, richtung: int) -> Image.Im
     return streifen
 
 
-def karte(art: str, e: pt.Export, eintrag: dict, bogen: Image.Image) -> str:
+SKIZZE_HOEHE = 26  # Spielpixel, wie tierplan_seite.py
+
+
+def skizze(privat: Path, standbild: Image.Image, faktor: float) -> str:
+    """Vergleich im Spielmaß: Erwachsener (20), Kind (14) und das Tier mit seinem Faktor, wie im Spiel.
+
+    Warum: Der Autor prüft die Größe auf dem Handy (Hauptchat, 23.11.2026). Das Tier wird mit
+    demselben Faktor verkleinert wie in der App (tierarten.json, massstab), die Figur ist Coach
+    Delgado auf die Spielhöhen von Erwachsenem und Kind gebracht.
+    """
+    from pipeline.abenteuer import tierplan as tp
+
+    coach = privat / "spiel" / "figuren-neu" / "coach-delgado" / "rotations" / "south.png"
+    figur = Image.open(coach).convert("RGBA")
+    figur = figur.crop(figur.getchannel("A").getbbox())
+    tier = standbild.crop(standbild.getchannel("A").getbbox())
+    tier = tier.resize(
+        (max(1, round(tier.width * faktor)), max(1, round(tier.height * faktor))), Image.Resampling.NEAREST
+    )
+
+    def auf(bild: Image.Image, hoehe: int) -> Image.Image:
+        return bild.resize((max(1, round(bild.width * hoehe / bild.height)), hoehe), Image.Resampling.NEAREST)
+
+    teile = [auf(figur, tp.ERWACHSENER_PX), auf(figur, tp.KIND_PX), tier]
+    flaeche = Image.new("RGBA", (sum(t.width + 4 for t in teile) + 4, SKIZZE_HOEHE), GRUND)
+    x = 4
+    for t in teile:
+        flaeche.alpha_composite(t, (x, SKIZZE_HOEHE - 2 - t.height))
+        x += t.width + 4
+    vergroessert = flaeche.resize((flaeche.width * 4, flaeche.height * 4), Image.Resampling.NEAREST)
+    puffer = io.BytesIO()
+    vergroessert.save(puffer, "PNG")
+    return "data:image/png;base64," + base64.b64encode(puffer.getvalue()).decode()
+
+
+def karte(art: str, e: pt.Export, eintrag: dict, bogen: Image.Image, privat: Path) -> str:
     """HTML einer Art: Standbilder, Filmstreifen (laufend), Zustände, Wasser, Grund der Wahl."""
     w = WAHL[art]
     f = eintrag["breite"]
     stand = "".join(f'<img src="{_png(_rahmen(bogen, f, i, 0))}">' for i in range(4))
     film = _png(_streifen(bogen, f, 1, 0))
+    nach = "Länge" if eintrag["massstab_nach"] == "laenge" else "Höhe"
+    vergleich = skizze(privat, _rahmen(bogen, f, 0, 0), eintrag["massstab"])
     teile = [
         f"<h2>{art}</h2>",
-        f'<p class="zahl">Rahmen {f} px · gemessen {eintrag["gemessen"]} px · '
-        f"Maßstab {eintrag['massstab']}</p>",
+        f'<p class="zahl">gezeichnet {eintrag["gemessen"]} px hoch, {eintrag["gemessen_laenge"]} px lang '
+        f"(von der Seite) · Faktor {eintrag['massstab']} nach der {nach} · Rahmen {f} px</p>",
+        f'<img class="skizze" src="{vergleich}" alt="Erwachsener, Kind und Tier im Spielmaß">',
         f'<div class="reihe">{stand}</div>',
         f'<div class="film" style="--b:{f * ZOOM}px;background-image:url({film})"></div>',
     ]
@@ -87,6 +125,7 @@ body{font-family:system-ui,sans-serif;margin:16px;background:#f4f1ea;color:#222}
 h1{font-size:1.3em}.art{background:#fff;border-radius:8px;padding:10px;margin:12px 0}
 h2{margin:0 0 4px;font-size:1.1em}.zahl,.grund{font-size:.85em;color:#555;margin:4px 0}
 .reihe img,.zustand img{image-rendering:pixelated;margin-right:4px;vertical-align:middle}
+.skizze{image-rendering:pixelated;display:block;margin:4px 0;max-width:100%}
 .zustand{display:inline-block;margin:4px 8px 4px 0;font-size:.85em}
 .film{width:var(--b);height:var(--b);background-repeat:no-repeat;image-rendering:pixelated;
 animation:lauf .75s steps(6) infinite;margin:4px 0}
@@ -103,7 +142,7 @@ def schreibe(privat: Path, ziel: Path) -> Path:
     karten = []
     for art, eintrag in eintraege.items():
         bogen = Image.open(privat / "spiel" / "tiere" / f"{art}.png").convert("RGBA")
-        karten.append(karte(art, exporte[art][0], eintrag, bogen))
+        karten.append(karte(art, exporte[art][0], eintrag, bogen, privat))
     ziel.mkdir(parents=True, exist_ok=True)
     seite = ziel / "index.html"
     seite.write_text(

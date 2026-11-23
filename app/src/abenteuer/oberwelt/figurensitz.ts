@@ -13,13 +13,7 @@ import { legeFestkoerperAufKachel } from "./figurbilder";
 import type { Bildversatz } from "./figurversatz";
 import { sitzsperre, type Sitzlage } from "./sitzplatz";
 import { hatSitzbilder, SITZ_HUB, sitzbild } from "./sitzrichtung";
-import {
-  legeAusschnitt,
-  moebelbild,
-  sitzausschnitt,
-  VORDERGRUND_ABSTAND,
-  zerstoere,
-} from "./vordergrund";
+import { legeSitzausschnitt, zerstoere } from "./vordergrund";
 import { SITZT } from "./zuwendungsschicht";
 import type { Richtung } from "./szene";
 
@@ -43,14 +37,7 @@ function legeSitzvordergrund(
 ): void {
   zerstoere(sprite.getData(VORDERGRUND));
   if (!lage?.moebel || !sprite.scene) return;
-  const eintrag = moebelbild(sprite.scene, lage.moebel);
-  const sichtbar = eintrag?.sichtbar();
-  if (!eintrag || !sichtbar) return;
-  const ausschnitt = sitzausschnitt(sichtbar, eintrag.art, richtung, eintrag.angabe);
-  sprite.setData(
-    VORDERGRUND,
-    legeAusschnitt(eintrag, ausschnitt, lage.tiefe + VORDERGRUND_ABSTAND),
-  );
+  sprite.setData(VORDERGRUND, legeSitzausschnitt(sprite.scene, lage, richtung));
 }
 
 /**

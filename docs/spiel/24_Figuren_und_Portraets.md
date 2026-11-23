@@ -192,6 +192,10 @@ unter der Decke.
   Liegestellen aus Szenen, Tagesabläufen und Ink, je mit Möbel und Art. Ausnahmen mit Grund:
   - Mira auf dem Bordstein: wie der Boden, nichts verdeckt.
   - Oma Ruths Bett: keine Kopfseite im Namen, darum die Vorgabe rechts.
-  - Das Bett im Dachboden ist Kachelgrafik und kein Möbel: Dort deckt die App nicht zu, bis das Bett
-    als Möbel steht.
+  - Die erste Nacht steht in `maple-falls-dachboden.ink`, spielt aber im Zimmer des Helden: Das Bett
+    `rv5BettKopfRechts` auf (12, 7) deckt ihn zu. Das Werkzeug sucht das Bett darum auch auf den
+    anderen Karten des Orts.
+- **Tiere**, die auf einem Sitzmöbel sitzen oder schlafen (Katze auf dem Sessel), liegen knapp über
+  dem Möbel unter seinem vorderen Teil (belebungsschicht.ts). Heute ruht keines auf einem Sitzmöbel;
+  das Werkzeug listet ruhende Tiere mit.
 - **Karteneditor 1.9** zeigt den Vordergrund der Sitzenden ebenso.

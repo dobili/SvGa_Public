@@ -30,7 +30,13 @@ import {
 } from "../schnittstelle/paket";
 import { Spielfehler } from "../schnittstelle/spielfehler";
 import { ladeDatei } from "./dateiladen";
-import { gleichzeitigFuer, jeGleichzeitig, mitZeitlimit, protokollVon } from "./ladehilfen";
+import {
+  bisZumFehler,
+  gleichzeitigFuer,
+  jeGleichzeitig,
+  mitZeitlimit,
+  protokollVon,
+} from "./ladehilfen";
 import { adresse, cachename, CACHE_PRAEFIX, mitCache } from "./paketadresse";
 
 /** Das Verzeichnis vom Server (immer frisch, damit eine neue Version erkannt wird). */
@@ -153,12 +159,17 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   // Ton und Großbilder gehören nicht dazu: Das Spiel startet ohne sie, paket/aktton.ts lädt sie
   // im Hintergrund.
   const grundpaket = verzeichnis.dateien.filter((d) => d.akt === undefined && !d.hintergrund);
+  // Nach einem Fehler meldet kein Abruf mehr Fortschritt (ladehilfen.ts, bisZumFehler).
+  const melder = bisZumFehler(fortschritt);
   await jeGleichzeitig(grundpaket, gleichzeitig(), (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       geladen += bytes;
-      fortschritt(Math.min(geladen, verzeichnis.bytes), verzeichnis.bytes);
+      melder.melde(Math.min(geladen, verzeichnis.bytes), verzeichnis.bytes);
     }),
-  );
+  ).catch((fehler: unknown) => {
+    melder.stoppe();
+    throw fehler;
+  });
   await speicher.put(adresse(VERZEICHNIS_DATEI), new Response(JSON.stringify(verzeichnis)));
   for (const name of await caches.keys()) {
     if (name.startsWith(CACHE_PRAEFIX) && name !== cachename(verzeichnis.version)) {
@@ -185,12 +196,16 @@ export async function ladeNach(
   const gesamt = auswahl.reduce((summe, d) => summe + d.bytes, 0);
   const speicher = await caches.open(geladen.name);
   let bisher = 0;
+  const melder = bisZumFehler(fortschritt);
   await jeGleichzeitig(auswahl, gleichzeitig(), (datei) =>
     ladeDatei(speicher, datei, (bytes) => {
       bisher += bytes;
-      fortschritt(Math.min(bisher, gesamt), gesamt);
+      melder.melde(Math.min(bisher, gesamt), gesamt);
     }),
-  );
+  ).catch((fehler: unknown) => {
+    melder.stoppe();
+    throw fehler;
+  });
   fortschritt(gesamt, gesamt);
   return true;
 }

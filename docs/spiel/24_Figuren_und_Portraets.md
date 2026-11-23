@@ -177,11 +177,16 @@ Wunsch des Autors: Wer sitzt, wird vom vorderen Teil seines Möbels verdeckt; we
 unter der Decke.
 
 - **Sitzen** (`app/src/abenteuer/oberwelt/vordergrund.ts`, `figurensitz.ts`): Beim Hinsetzen legt die
-  App das Möbelbild ein zweites Mal über die Figur, beschnitten ab der Sitzflächen-Vorderkante
-  (Vorderkante, Beine, von hinten die Lehne).
-  - Die Grenze ist ein Anteil der sichtbaren Höhe von oben: Stuhl und Bank 0,55, Hocker 0,45,
-    Sessel, Sofa und Couch 0,6. Je Möbel im Katalog: `vordergrund: {"ab": …}`.
-  - Wer zum Betrachter schaut, bekommt keinen Vordergrund: Die Füße baumeln vor dem Möbel.
+  App einen Ausschnitt des Möbelbilds ein zweites Mal über die Figur, je nach Blick (Korrektur vom
+  23.11.2026 nach Fotos aus dem Clubraum: seitlich deckte 0,55 den ganzen Rumpf):
+  - Blick zum Betrachter („unten“): nichts davor, die Füße baumeln vor dem Möbel.
+  - Blick seitlich („links“, „rechts“, auch ruhende Tiere): nur, was unter der Sitzfläche liegt
+    (Beine, Unterkante als 1-px-Kante). Die Grenze wird im Bild gemessen: von unten das erste Band
+    aus mindestens zwei Zeilen, die 60 % der sichtbaren Breite decken; sonst 0,8 der sichtbaren
+    Höhe. Je Möbel im Katalog: `vordergrund: {"seite": …}`. Rumpf und Oberschenkel bleiben frei.
+  - Blick nach hinten („oben“): die Lehne vor dem Rücken, ab einem Anteil der sichtbaren Höhe (Stuhl
+    und Bank 0,55, Hocker 0,45, Sessel, Sofa und Couch 0,6; je Möbel `vordergrund: {"ab": …}`); der
+    obere Teil der Lehne bleibt frei, der Kopf ragt darüber. `ab` 1 heißt: nie Vordergrund.
   - Über einem leeren Möbel deckt sich der Ausschnitt mit dem Bild darunter und fällt nicht auf.
 - **Liegen** (`deckeZu`): das Bettbild über der Liegenden, ohne die Kopfseite (30 % der Breite,
   `vordergrund: {"kopf": …}`).

@@ -108,3 +108,19 @@ def test_verdeckung_jede_sitz_und_liegestelle_hat_vordergrund_oder_grund():
 
     assert verdeckung.befunde() == []
     assert len(verdeckung.stellen()) > 100
+
+
+def test_verdeckung_seitlich_nur_unter_der_sitzflaeche():
+    # Nachgebauter Seitenstuhl (Lehnenstange links, Sitzblock 11 bis 13, Beine, Querstrebe auf 18):
+    # Blick seitlich deckt erst ab der Unterkante der Sitzfläche, die Rumpfzeilen bleiben frei.
+    from pipeline.abenteuer import verdeckung as V
+
+    sichtbar = (3, 1, 12, 21)
+    deckend = [12 if 11 <= y <= 13 or y == 18 else 2 if y < 11 else 4 for y in range(1, 22)]
+    assert V.sitzunterkante(deckend, 1, 12) == 13
+    for blick in ("links", "rechts"):
+        assert V.sitzgrenze(deckend, sichtbar, blick, "stuhl") == 13
+    assert V.sitzgrenze(deckend, sichtbar, "oben", "stuhl") == round(1 + 21 * 0.55)
+    assert V.sitzgrenze(deckend, sichtbar, "unten", "stuhl") is None
+    assert V.sitzgrenze([2] * 21, sichtbar, "links", "stuhl") == round(1 + 21 * V.VORGABE_SEITE)
+    assert V.sitzgrenze(deckend, sichtbar, "links", "stuhl", {"ab": 1}) is None

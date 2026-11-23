@@ -442,6 +442,18 @@ Profil › Einstellungen › Fehler melden.
       und Kojote nachts; der Eichelhäher sitzt morgens sichtbar im Baum (Vögel lagen vorher hinter
       Bäumen). Behoben: Die Tageszeit ging beim Neuladen verloren (immer wieder erster Morgen);
       bitte einmal am Abend neu laden, die Uhrzeit bleibt.
+- [ ] N2702. **Deine Kartenänderungen vom 20.11. sind drin:** 20 der 24 Karten waren seitdem
+      unverändert und sind ganz übernommen. In vier Karten (Maple Falls außen, Bibliothek, Landstraße
+      und Landstraße mit offenem Gatter) blieben die Änderungen von später erhalten (Bänke im Maß,
+      Zauntore entfernt, Lastwagen, Stuhl für Dex, Flohmarkttisch mit Fahrrad); veraltet waren nur
+      die alten Tore und Bänke in Maple Falls außen. Deine Notizen: Carla versperrt den Weg zum Club
+      nicht mehr, die Transparenz am Ausgang ist drin, das geschlossene Gatter an der Landstraße
+      sperrt jetzt bis zur Tafel, die Fußmatten liegen direkt hinter den Türen. Nachgebessert, damit
+      alles begehbar bleibt: Treppe im Dachboden, die drei grünen Häuser in Maple Falls (je eine
+      eigene Kollision nach den Wänden, das östliche 7 Pixel nach links, sonst über dem Kartenrand),
+      Hocker in der Drechslerei, Buch im Archiv, Kellerausgang im Archiv nur in der Mitte, Matte am
+      Umzugstag, Vogelscheuche an der Landstraße stand viermal übereinander. Bitte diese Stellen im
+      Spiel ansehen und den neuen Editor laden.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

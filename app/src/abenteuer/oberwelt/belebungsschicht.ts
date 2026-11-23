@@ -47,6 +47,15 @@ import {
   type Tierbild,
 } from "./tiere";
 
+/**
+ * Messhilfe für die Tierfotos (tests/durchlauf/tierfoto.spec.ts): Setzt ein Test
+ * `window.__belebungStill = true`, bleiben Statisten und Tiere auf ihrem Startfeld stehen, damit
+ * scheue und fliegende Tiere auf dem Foto sind. Im Spiel nie gesetzt.
+ */
+function belebungStill(): boolean {
+  return (globalThis as { __belebungStill?: unknown }).__belebungStill === true;
+}
+
 /** Bilder der Belebung im Paket: Pfad („figuren/statist-07.png“, „tiere/taube.png“) → Adresse. */
 export type Belebungsbilder = Readonly<Record<string, string>>;
 
@@ -325,7 +334,7 @@ export class Belebungsschicht {
         py < sicht.bottom + RAND * k;
       d.sprite.setVisible(nah);
       if (!nah) continue;
-      schritt(d.b, d.v, dt, umgebung);
+      if (!belebungStill()) schritt(d.b, d.v, dt, umgebung);
       this.zeige(d);
       this.schalteSperre(d, held);
     }

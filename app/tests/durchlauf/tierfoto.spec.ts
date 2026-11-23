@@ -90,6 +90,12 @@ test("Tierfotos an festen Stellen", async () => {
     const stand = standAus(daten, datei);
     const kontext = await browser.newContext({ ...devices["Pixel 7"], baseURL: ADRESSE });
     const seite = await kontext.newPage();
+    // Tiere bleiben auf ihrem Startfeld (TIERFOTO_BEWEGT=1 lässt sie laufen, für Bewegungsbilder).
+    if (!process.env.TIERFOTO_BEWEGT) {
+      await seite.addInitScript(() => {
+        (globalThis as { __belebungStill?: boolean }).__belebungStill = true;
+      });
+    }
     await starteMitStand(seite, {
       ...stand,
       position: { ...stand.position, x: s.x, y: s.y - UEBER_DEM_TIER, richtung: "unten" },

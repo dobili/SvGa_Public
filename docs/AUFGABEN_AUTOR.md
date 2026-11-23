@@ -420,8 +420,7 @@ Profil › Einstellungen › Fehler melden.
       Stuhl statt darauf. Liegen fehlt bei Lucia und Oma Ruth.
 - [ ] N2698. **Nachlieferung 23.11. im Spiel:** Die Drohne schwebt, der Saugroboter fährt (eigenes
       Tier, Silicon-Bay-Akademie und Altstadt, etwa 8 × 8 Pixel), der Waschbär läuft auf vier Beinen,
-      Owen und der Bauer sind neu. Owens Sitzzustand ist auf 24er-Leinwand angelegt und wirkt
-      deshalb im Sitzen größer als im Stehen: bitte in PixelLab auf 32 × 32 neu anlegen.
+      Owen (deine Lieferung vom Abend, mit Sitzen) und der Bauer sind neu.
 - [ ] N2699. **Karteneditor 1.9, Figuren und Markierungen getrennt:** Editor öffnen (neu aus dem
       privaten Repository herunterladen). Oben steht „Figuren“ an und „Markierungen“ aus: Die Karte
       zeigt alle Figuren und Tiere ohne farbige Kreise. P schaltet die Figuren, M die Markierungen,

@@ -123,7 +123,8 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [5, 11],
-      "versatz": [0, 3]
+      "versatz": [0, 8],
+      "ebene": -2
     },
     {
       "moebel": "mf4RegalSchmal",
@@ -136,7 +137,8 @@
     {
       "moebel": "mf5TuerSuedHolz",
       "feld": [5, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "mf7CouchtischRund",

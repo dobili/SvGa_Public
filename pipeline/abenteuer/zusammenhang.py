@@ -28,6 +28,10 @@ WASSER_SPRUNG = 2
 # Holzböden über Wasser (Brücken, Stege) gehören für den Zusammenhang zum Wasserlauf.
 HOLZ = HOLZ_BOEDEN
 ENDSTUECK = re.compile(r"Ecke|Ende|Pfosten|Tor|Links|Rechts|Seite|Rand|Left|Right|End|Corner|Post|Gate", re.I)
+# Offene Torflügel tragen ihren Pfosten selbst (wg13HolztorOffenLinks/Rechts): Sie schließen eine
+# Zaunlücke ab, wenn sie an ihrer Kante stehen (Kartenänderungen des Autors vom 20.11.2026).
+TORFLUEGEL = re.compile(r"TorOffen", re.I)
+FLUEGEL_SPIEL = 4  # so viele Pixel darf ein Flügel neben der Zaunkante stehen
 
 
 def _komponenten(zeilen: list[str], gehoert) -> list[set[tuple[int, int]]]:
@@ -278,6 +282,16 @@ def _beruehrt_belag(teil: set, zeilen: list[str], zeichen: str) -> bool:
     return False
 
 
+def _mit_fluegeln(links: int, rechts: int, zaun: list[dict]) -> bool:
+    """Steht an beiden Kanten einer Zaunlücke (Pixel ``links`` und ``rechts``) ein offener Torflügel?"""
+    fluegel = [s for s in zaun if TORFLUEGEL.search(s["name"])]
+
+    def an(kante: int) -> bool:
+        return any(f["x"] - FLUEGEL_SPIEL <= kante <= f["x"] + f["breite"] + FLUEGEL_SPIEL for f in fluegel)
+
+    return an(links) and an(rechts)
+
+
 def pruefe_zaeune(gesetzt: list[dict], moebel: dict) -> list[str]:
     """Zaunreihen ohne Lücke, außer zwischen Endstücken; keine versetzten Teile (10.35).
 
@@ -294,7 +308,8 @@ def pruefe_zaeune(gesetzt: list[dict], moebel: dict) -> list[str]:
         teile.sort(key=lambda s: s["x"])
         for a, b in zip(teile, teile[1:], strict=False):
             luecke = b["x"] - (a["x"] + a["breite"])
-            if 0 < luecke <= 3 * K and not (ENDSTUECK.search(a["name"]) and ENDSTUECK.search(b["name"])):
+            enden = ENDSTUECK.search(a["name"]) and ENDSTUECK.search(b["name"])
+            if 0 < luecke <= 3 * K and not enden and not _mit_fluegeln(a["x"] + a["breite"], b["x"], zaun):
                 befunde.append(f"Zaunlücke ohne Endpfosten zwischen {a['name']} und {b['name']} (Fuß {fuss})")
     for a in zaun:
         for b in zaun:

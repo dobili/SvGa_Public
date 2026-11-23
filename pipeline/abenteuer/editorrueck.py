@@ -15,7 +15,8 @@ Aufruf: ``python -m pipeline.abenteuer.editorrueck DATEI.json [--privat PRIVAT]`
 (``editoruebergaenge.py``); Warnung, wenn ein gelöschter Auslöser noch Ziel eines Übergangs ist.
 Optionen: ``--szenen ORDNER`` (anderes Ziel, dann ohne Kartenbau, für Tests), ``--orte DATEI``
 (Übergänge in eine Kopie statt nach orte.json, für Tests), ``--bericht ORDNER``,
-``--ohne-bau``, ``--erzwingen`` (auch schreiben, wenn die Szene seit dem Paket geändert wurde).
+``--ohne-bau``, ``--erzwingen`` (auch schreiben, wenn die Szene seit dem Paket geändert wurde),
+``--dreiweg`` (geänderte Szenen Objekt für Objekt zusammenführen, editordreiweg.py).
 Sicherheit: Weicht die Szene auf der Platte vom „vorher“ der Datei ab, wird sie nicht überschrieben
 (jemand hat sie inzwischen geändert); der Bericht nennt sie als Konflikt.
 """
@@ -26,6 +27,7 @@ import sys
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from pipeline.abenteuer.editordreiweg import szene as dreiwege_szene
 from pipeline.abenteuer.editorfiguren import figurwarnungen
 from pipeline.abenteuer.editoruebergaenge import ruecklauf as uebergangsruecklauf
 from pipeline.abenteuer.editorzuschnitt import deckkraftzeilen, zuschnittvorschlaege, zuschnittzeilen
@@ -246,17 +248,27 @@ def berichte(eintrag: dict, moebel: dict | None = None) -> list[str]:
     return zeilen
 
 
-def schreibe(daten: dict, szenen: Path, erzwingen: bool) -> tuple[list[str], list[str]]:
-    """Schreibt die Szenen; gibt (geschriebene Dateien, Konflikte) zurück."""
+def schreibe(
+    daten: dict, szenen: Path, erzwingen: bool, dreiweg: dict[str, list[str]] | None = None
+) -> tuple[list[str], list[str]]:
+    """Schreibt die Szenen; gibt (geschriebene Dateien, Konflikte) zurück.
+
+    Mit ``dreiweg`` (ein leeres Wörterbuch) wird jede Szene, die seit dem Paket geändert wurde, nicht
+    übersprungen, sondern zusammengeführt (editordreiweg.py); die Zeilen dazu landen je Datei darin.
+    """
     geschrieben, konflikte = [], []
     for eintrag in daten["szenen"]:
         pfad = szenen / eintrag["datei"]
         alt = pfad.read_text(encoding="utf-8") if pfad.exists() else None
-        if alt is not None and json.loads(alt) != eintrag["vorher"] and not erzwingen:
-            konflikte.append(eintrag["datei"])
-            continue
-        bereinige_figurversatz(eintrag["nachher"])
-        pfad.write_text(als_text(eintrag["nachher"], alt), encoding="utf-8")
+        neu = eintrag["nachher"]
+        if alt is not None and json.loads(alt) != eintrag["vorher"]:
+            if dreiweg is not None:
+                neu, dreiweg[eintrag["datei"]] = dreiwege_szene(eintrag, json.loads(alt))
+            elif not erzwingen:
+                konflikte.append(eintrag["datei"])
+                continue
+        bereinige_figurversatz(neu)
+        pfad.write_text(als_text(neu, alt), encoding="utf-8")
         geschrieben.append(eintrag["datei"])
     return geschrieben, konflikte
 
@@ -305,9 +317,11 @@ def main(argumente: list[str] | None = None) -> int:
     teiler.add_argument("--privat", type=Path, help="privates Repository (für Vorschauen)")
     teiler.add_argument("--ohne-bau", action="store_true")
     teiler.add_argument("--erzwingen", action="store_true")
+    teiler.add_argument("--dreiweg", action="store_true", help="geänderte Szenen zusammenführen")
     a = teiler.parse_args(argumente)
     daten = lies(a.datei)
-    geschrieben, konflikte = schreibe(daten, a.szenen, a.erzwingen)
+    dreiweg: dict[str, list[str]] | None = {} if a.dreiweg else None
+    geschrieben, konflikte = schreibe(daten, a.szenen, a.erzwingen, dreiweg)
     ordner = a.bericht / a.datei.stem
     ordner.mkdir(parents=True, exist_ok=True)
     text = [
@@ -323,6 +337,9 @@ def main(argumente: list[str] | None = None) -> int:
             text.append("- KONFLIKT: Szene seit dem Paket geändert, nicht geschrieben (--erzwingen)")
         if eintrag.get("notiz"):
             text.append(f"- Notiz des Autors: {eintrag['notiz']}")
+        if dreiweg and eintrag["datei"] in dreiweg:
+            text.append("- Dreiwege (seit dem Paket geändert, zusammengeführt):")
+            text += [f"  - {z}" for z in dreiweg[eintrag["datei"]]]
         # Figuren und Statisten, die Ink-Knoten oder Quests brauchen (Editor 1.2: löschen, kopieren).
         zeilen = berichte(eintrag, moebel) + figurwarnungen(eintrag, a.szenen)
         warnungen += [f"{eintrag['datei']}: {z}" for z in zeilen if z.startswith("WARNUNG")]

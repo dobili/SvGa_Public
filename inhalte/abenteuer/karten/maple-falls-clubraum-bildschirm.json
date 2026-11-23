@@ -5625,6 +5625,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -5748,7 +5753,7 @@
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 208,
-     "y": 211,
+     "y": 216,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5757,7 +5762,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -5771,7 +5776,7 @@
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 224,
-     "y": 211,
+     "y": 216,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5780,7 +5785,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",

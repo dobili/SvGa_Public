@@ -816,7 +816,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": -1
       },
       {
        "name": "kollision",
@@ -921,10 +921,10 @@
      "id": 21,
      "name": "cc13Radio",
      "type": "moebel",
-     "x": 184,
-     "y": 28,
-     "width": 16,
-     "height": 16,
+     "x": 188,
+     "y": 33,
+     "width": 12,
+     "height": 12,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -937,6 +937,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -1144,6 +1149,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -1152,7 +1162,7 @@
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 64,
-     "y": 147,
+     "y": 153,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1161,7 +1171,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -1175,7 +1185,7 @@
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 80,
-     "y": 147,
+     "y": 153,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1184,7 +1194,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",

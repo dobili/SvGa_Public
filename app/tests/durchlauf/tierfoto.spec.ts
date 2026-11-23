@@ -1,59 +1,68 @@
 /**
- * Tierfotos: das Spiel an festen Stellen mit Tieren öffnen und ein Bildschirmfoto machen
- * (PixelLab-Tiere, Auftrag des Hauptchats 23.11.2026, Punkt 3).
+ * Tierfotos: das Spiel an festen Stellen mit Tieren öffnen und Bildschirmfotos machen
+ * (PixelLab-Tiere, Aufträge des Hauptchats 23.11.2026).
  *
- * Warum: Maßstab, Zustandsbilder und Wasserfarbe der neuen Tiere lassen sich nur im Spiel neben
- * Figuren und Karte beurteilen. Die Stellen sind so gewählt, dass die verlangten Tiere im Bild
- * stehen (Park mit Enten und Krähe, Haus mit Hund und Katze, Bayou mit Nutria, Insel mit Alligator, Wüste mit
- * Eidechse und Geier, Küste mit Pelikan, Fähre mit Delfin, Robbe und Qualle).
+ * Warum: Maßstab, Zustandsbilder, Wasserfarbe und Platz der Tiere lassen sich nur im Spiel neben
+ * Figuren und Karte beurteilen. Die Belebung hält für die Fotos an (window.__belebungStill), damit
+ * scheue und fliegende Tiere auf dem Bild sind.
  * Aufruf (nach npm run build; Stand aus aktstand.cjs --akt 4):
- *   PROBE_STAND=/tmp/akt4.json TIERFOTO_ORDNER=../buch/arbeit/tiere/pixellab CHROMIUM_PFAD=… \
- *   npx playwright test --config playwright.durchlauf.config.ts tierfoto
+ *   alle Arten: python -m pipeline.abenteuer.pixellab_tierfotos stellen ORDNER, dann
+ *     PROBE_STAND=/tmp/akt4.json TIERFOTO_LISTE=ORDNER/stellen.json TIERFOTO_ORDNER=ORDNER \
+ *     CHROMIUM_PFAD=… npx playwright test --config playwright.durchlauf.config.ts tierfoto
+ *   einzeln: TIERFOTO_STELLE="karte,x,y,datei" (dazu TIERFOTO_ABSTAND, TIERFOTO_STUNDE)
+ * Weitere Angaben: TIERFOTO_SERIE (Fotos je Stelle, Vorgabe 1), TIERFOTO_BEWEGT=1 (Tiere laufen).
  * Nicht in CI (braucht das private Spielpaket).
  * Abhängigkeiten: simstand.ts, welt.ts, e2e/abenteuer-affe.ts.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { chromium, devices, test, type Page } from "@playwright/test";
+import { chromium, devices, test, type Browser, type Page } from "@playwright/test";
 import { starteMitStand } from "../e2e/abenteuer-affe";
 import { standAus } from "./simstand";
-import { ladeSpieldaten } from "./welt";
+import { ladeSpieldaten, type Spieldaten } from "./welt";
 
 const STAND = process.env.PROBE_STAND ?? "";
-const STUNDE = process.env.TIERFOTO_STUNDE ? Number(process.env.TIERFOTO_STUNDE) : null;
-const MINUTEN_JE_STUNDE = 60;
 const ORDNER = process.env.TIERFOTO_ORDNER ?? "/tmp/tierfotos";
 const ADRESSE = `http://localhost:${process.env.PLAYWRIGHT_PORT ?? "4183"}`;
-/** So lange laufen Tiere und Animationen, bevor das Foto entsteht (ms). */
+const MINUTEN_JE_STUNDE = 60;
+/** So lange laufen Animationen, bevor ein Foto entsteht (ms). */
 const WARTEN_MS = 500;
-/** Fotos je Stelle (das beste wird für den Bericht ausgewählt). */
-const SERIE = 6;
-const FOTO_MS = 15 * 60_000;
+const SERIE = Number(process.env.TIERFOTO_SERIE ?? "1");
+const FOTO_MS = 120 * 60_000;
 const HINWEISE_HOECHSTENS = 5;
 const KURZ_MS = 400;
+/** Der Held steht so viele Kacheln über dem Tier: nah genug fürs Bild, scheue Tiere fliehen nicht. */
+const ABSTAND = Number(process.env.TIERFOTO_ABSTAND ?? "3");
 
-/** Stelle eines Fotos: Karte, Feld des Tiers (Kacheln, aus der Karte), Dateiname. */
+/** Eine Fotostelle (Liste aus pixellab_tierfotos.py oder TIERFOTO_STELLE). */
 interface Stelle {
   readonly karte: string;
+  /** Feld des Tiers in Kacheln (aus der Karte). */
   readonly x: number;
   readonly y: number;
   readonly datei: string;
+  /** Uhr stellen (Tiere mit „wann“, etwa die Eule nachts). */
+  readonly stunde?: number;
+  readonly abstand?: number;
+  /** Maßstab je Art für Größenvergleiche (window.__tierMassstab). */
+  readonly massstab?: Readonly<Record<string, number>>;
 }
 
-/** Der Held steht fünf Kacheln über dem Tier (Feld aus der Karte): nah genug fürs Bild, weit genug, dass scheue Tiere (flitzen, ausweichen) noch nicht fliehen. */
-const UEBER_DEM_TIER = Number(process.env.TIERFOTO_ABSTAND ?? "5");
-const STELLEN: readonly Stelle[] = [
-  { karte: "mapleFalls.park", x: 25, y: 27, datei: "park-enten" },
-  { karte: "mapleFalls.park", x: 16, y: 9, datei: "park-kraehe" },
-  { karte: "mapleFalls.aussen", x: 5, y: 26, datei: "haus-hund-katze" },
-  { karte: "bayou.steg", x: 10, y: 31, datei: "bayou-nutria" },
-  { karte: "pelikaninsel.dorf", x: 4, y: 40, datei: "insel-alligator" },
-  { karte: "wegDelacroixDesert.felsbogen", x: 34, y: 10, datei: "wueste-eidechse" },
-  { karte: "wegDelacroixDesert.felsbogen", x: 55, y: 19, datei: "wueste-geier" },
-  { karte: "pelikaninsel.dorf", x: 20, y: 10, datei: "kueste-pelikan" },
-  { karte: "wegSiliconDelacroix.faehre", x: 26, y: 30, datei: "faehre-robbe" },
-  { karte: "wegSiliconDelacroix.faehre", x: 25, y: 60, datei: "faehre-delfin" },
-];
+function stellen(): Stelle[] {
+  const liste = process.env.TIERFOTO_LISTE;
+  if (liste) return JSON.parse(readFileSync(liste, "utf8")) as Stelle[];
+  const teile = (process.env.TIERFOTO_STELLE ?? "").split(",");
+  const stunde = process.env.TIERFOTO_STUNDE;
+  return [
+    {
+      karte: teile[0] ?? "",
+      x: Number(teile[1]),
+      y: Number(teile[2]),
+      datei: teile[3] ?? "stelle",
+      ...(stunde ? { stunde: Number(stunde) } : {}),
+    },
+  ];
+}
 
 /** Schließt Hinweise und Dialoge, die beim Laden aufgehen („Deine ersten Münzen!“). */
 async function schliesseHinweise(seite: Page): Promise<void> {
@@ -65,52 +74,45 @@ async function schliesseHinweise(seite: Page): Promise<void> {
   }
 }
 
+/** Ein Foto (oder eine Serie) an einer Stelle, in einem frischen Browserkontext. */
+async function fotografiere(browser: Browser, daten: Spieldaten, s: Stelle): Promise<void> {
+  const sim = JSON.parse(readFileSync(STAND, "utf8")) as Record<string, unknown>;
+  const datei = join(ORDNER, `${s.datei}.stand.json`);
+  writeFileSync(datei, JSON.stringify({ ...sim, karte: s.karte }));
+  const stand = standAus(daten, datei);
+  const kontext = await browser.newContext({ ...devices["Pixel 7"], baseURL: ADRESSE });
+  const seite = await kontext.newPage();
+  await seite.addInitScript(
+    ({ halt, massstab }) => {
+      const welt = globalThis as { __belebungStill?: boolean; __tierMassstab?: object };
+      welt.__belebungStill = halt;
+      if (massstab) welt.__tierMassstab = massstab;
+    },
+    { halt: !process.env.TIERFOTO_BEWEGT, massstab: s.massstab ?? null },
+  );
+  await starteMitStand(seite, {
+    ...stand,
+    position: { ...stand.position, x: s.x, y: s.y - (s.abstand ?? ABSTAND), richtung: "unten" },
+    ...(s.stunde === undefined ? {} : { spieluhr: s.stunde * MINUTEN_JE_STUNDE }),
+  });
+  await schliesseHinweise(seite);
+  for (let i = 1; i <= SERIE; i++) {
+    await seite.waitForTimeout(WARTEN_MS);
+    await seite.screenshot({ path: join(ORDNER, `${s.datei}-${i}.png`) });
+  }
+  await kontext.close();
+}
+
 test("Tierfotos an festen Stellen", async () => {
   test.skip(!STAND, "nur mit PROBE_STAND");
   test.setTimeout(FOTO_MS);
   mkdirSync(ORDNER, { recursive: true });
   const daten = ladeSpieldaten();
-  const sim = JSON.parse(readFileSync(STAND, "utf8")) as Record<string, unknown>;
   const pfad = process.env.CHROMIUM_PFAD;
   const browser = await chromium.launch(pfad ? { executablePath: pfad } : {});
   const nur = process.env.TIERFOTO_NUR ?? "";
-  // Eine eigene Stelle: TIERFOTO_STELLE="karte,x,y,datei" (zum Nachsehen einzelner Tiere).
-  const eigen = process.env.TIERFOTO_STELLE?.split(",");
-  const stellen = eigen
-    ? [
-        {
-          karte: eigen[0] ?? "",
-          x: Number(eigen[1]),
-          y: Number(eigen[2]),
-          datei: eigen[3] ?? "stelle",
-        },
-      ]
-    : STELLEN.filter((x) => !nur || x.datei.includes(nur));
-  for (const s of stellen) {
-    const datei = join(ORDNER, `${s.datei}.json`);
-    writeFileSync(datei, JSON.stringify({ ...sim, karte: s.karte }));
-    const stand = standAus(daten, datei);
-    const kontext = await browser.newContext({ ...devices["Pixel 7"], baseURL: ADRESSE });
-    const seite = await kontext.newPage();
-    // Tiere bleiben auf ihrem Startfeld (TIERFOTO_BEWEGT=1 lässt sie laufen, für Bewegungsbilder).
-    if (!process.env.TIERFOTO_BEWEGT) {
-      await seite.addInitScript(() => {
-        (globalThis as { __belebungStill?: boolean }).__belebungStill = true;
-      });
-    }
-    await starteMitStand(seite, {
-      ...stand,
-      position: { ...stand.position, x: s.x, y: s.y - UEBER_DEM_TIER, richtung: "unten" },
-      // TIERFOTO_STUNDE: Uhr stellen (Spielminuten), für Tiere mit „wann“ (Eule nachts).
-      ...(STUNDE === null ? {} : { spieluhr: STUNDE * MINUTEN_JE_STUNDE }),
-    });
-    await schliesseHinweise(seite);
-    // Eine Serie: Scheue und fliegende Tiere (Eidechse, Geier) sind nicht in jedem Bild.
-    for (let i = 1; i <= SERIE; i++) {
-      await seite.waitForTimeout(WARTEN_MS);
-      await seite.screenshot({ path: join(ORDNER, `${s.datei}-${i}.png`) });
-    }
-    await kontext.close();
+  for (const s of stellen().filter((x) => !nur || x.datei.includes(nur))) {
+    await fotografiere(browser, daten, s);
   }
   await browser.close();
 });

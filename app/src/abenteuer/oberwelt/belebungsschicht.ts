@@ -60,6 +60,16 @@ function belebungStill(): boolean {
   return (globalThis as { __belebungStill?: unknown }).__belebungStill === true;
 }
 
+/**
+ * Messhilfe für Größenvergleiche (tierfoto.spec.ts, Liste aus pixellab_tierfotos.py): Ein Test
+ * setzt `window.__tierMassstab = { hund: 0.37 }`, dann zeichnet die App diese Art so groß (statt
+ * tierarten.json). Im Spiel nie gesetzt.
+ */
+function massstabFuer(art: string, vorgabe: number): number {
+  const wert = (globalThis as { __tierMassstab?: Record<string, unknown> }).__tierMassstab?.[art];
+  return typeof wert === "number" ? wert : vorgabe;
+}
+
 /** Bilder der Belebung im Paket: Pfad („figuren/statist-07.png“, „tiere/taube.png“) → Adresse. */
 export type Belebungsbilder = Readonly<Record<string, string>>;
 
@@ -226,7 +236,7 @@ export class Belebungsschicht {
         if (ansicht.sichtbar < sprite.height) sprite.setCrop(0, 0, sprite.width, ansicht.sichtbar);
         sprite.setOrigin(0.5, ansicht.ursprungY);
       }
-      sprite.setScale(tier.massstab);
+      sprite.setScale(massstabFuer(art, tier.massstab));
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
       const weite = Math.ceil(sprite.displayWidth / this.kachel);
       const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);

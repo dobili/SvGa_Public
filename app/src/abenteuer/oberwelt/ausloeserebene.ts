@@ -31,6 +31,8 @@ export interface Ausloeser {
   readonly sitzt?: Richtung;
   /** Blickrichtung einer stehenden Figur (Eigenschaft `blick`, R008); fehlt sie, unten. */
   readonly blick?: Richtung;
+  /** Sitzt mit dem Blick ihres Sitzmöbels (Tagesablauf, Eigenschaft `sitzrichtung: moebel`). */
+  readonly sitztWieMoebel?: boolean;
   /** Feiner Versatz des Bildes einer Figur in Kartenpixeln (figurversatz.ts); nur Darstellung. */
   readonly versatz?: Bildversatz;
   /** Figur liegt im Bett (Tagesablauf, regeln/tagesablauf.ts: Schlaf mit Bett). */
@@ -68,6 +70,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
       const blick = o.type === "figur" && !sitzt ? blickrichtung(wert("blick")) : null;
       const versatz = o.type === "figur" ? liesFigurversatz(wert("versatz")) : null;
       const liegt = o.type === "figur" && wert("liegt") === true;
+      const wieMoebel = sitzt !== null && wert("sitzrichtung") === "moebel";
       const zustand = o.type === "figur" ? liesMenschenzustand(wert("zustand")) : null;
       const standbild = o.type === "figur" ? liesStandbild(wert("standbild")) : null;
       return {
@@ -81,6 +84,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
         ...(blick ? { blick } : {}),
         ...(versatz ? { versatz } : {}),
         ...(liegt ? { liegt } : {}),
+        ...(wieMoebel ? { sitztWieMoebel: true } : {}),
         ...(zustand ? { zustand } : {}),
         ...(standbild ? { standbild } : {}),
       };

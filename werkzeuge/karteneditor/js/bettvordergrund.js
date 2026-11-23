@@ -16,9 +16,16 @@
   const KOPF_LINKS = /Kopf(Links|West)/;
   const VORGABE_KOPF = 0.3;
 
-  /** Kopfseite eines Betts aus seinem Namen, gespiegelt vertauscht; ohne Angabe rechts. */
-  KE.kopfseiteDesBetts = function (name, gespiegelt) {
-    const seite = KOPF_LINKS.test(name) ? "links" : KOPF_RECHTS.test(name) ? "rechts" : "rechts";
+  /** Katalogangabe `ende` eines waagrechten Betts (Seite des Kopfendes) → Kopfseite. */
+  const KOPF_AUS_ENDE = { ost: "rechts", west: "links" };
+
+  /**
+   * Kopfseite eines Betts aus seinem Namen, sonst aus der Katalogangabe `ende`, gespiegelt
+   * vertauscht; ohne Angabe rechts (wie sitzrichtung.ts in der App).
+   */
+  KE.kopfseiteDesBetts = function (name, gespiegelt, ende) {
+    const ausName = KOPF_LINKS.test(name) ? "links" : KOPF_RECHTS.test(name) ? "rechts" : null;
+    const seite = ausName ?? KOPF_AUS_ENDE[ende] ?? "rechts";
     if (!gespiegelt) return seite;
     return seite === "rechts" ? "links" : "rechts";
   };
@@ -48,7 +55,7 @@
     const u = KE.umrissVon(roh.bild);
     const anteil = roh.vordergrund?.kopf ?? VORGABE_KOPF;
     if (!u || anteil >= 1) return;
-    const kopf = KE.kopfseiteDesBetts(s.kennung, false);
+    const kopf = KE.kopfseiteDesBetts(s.kennung, false, roh.ende);
     const frei = Math.round(u[2] * anteil);
     const x = kopf === "links" ? u[0] + frei : u[0];
     const breite = u[2] - frei;

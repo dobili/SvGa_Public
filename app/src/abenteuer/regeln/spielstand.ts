@@ -142,6 +142,11 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       ? (roh.spielzeitJeOrt as Readonly<Record<string, number>>)
       : {},
     ...(typeof roh.verfolgteQuest === "string" ? { verfolgteQuest: roh.verfolgteQuest } : {}),
+    // Spieluhr (regeln/spieluhr.ts): ohne diese Zeile stand sie nach jedem Neuladen wieder auf 6 Uhr
+    // (Befund der Verdeckungsfotos, 23.11.2026).
+    ...(typeof roh.spieluhr === "number" && Number.isFinite(roh.spieluhr)
+      ? { spieluhr: roh.spieluhr }
+      : {}),
     ...(typeof roh.zuletztGespielt === "string" ? { zuletztGespielt: roh.zuletztGespielt } : {}),
   };
 }

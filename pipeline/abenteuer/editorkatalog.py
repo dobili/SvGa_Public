@@ -233,6 +233,7 @@ def bibliothekseintrag(kennung: str, angabe: dict, ortsdatei: str, katalogeintra
         "maske",
         "frei_unten",
         "vordergrund",
+        "ende",  # Kopfseite eines Betts ohne Angabe im Namen (bettvordergrund.js, sitzrichtung.ts)
     )
     felder += ("begehbar_grund", "richtung", "maske_fein")  # feine Maske: feinmasken.py (10.88)
     eintrag.update({k: angabe[k] for k in felder if k in angabe} | ({"art": art} if art else {}))

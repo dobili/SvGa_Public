@@ -24,7 +24,8 @@ window.KE = window.KE || {};
   // 1.8: Figuren fein verschieben (versatz ±8 px), Sitzende wie im Spiel auf ihrem Möbel (sitzen.js).
   // 1.9: Zustand und Standbild je Figur, Statist und Tier wählen, mit Vorschau (zustandswahl.js).
   // 1.9.1: Liegende unter der Bettdecke (bettvordergrund.js, wie vordergrund.ts der App).
-  KE.VERSION = "1.9.1";
+  // 1.9.2: Kopfseite eines Betts auch aus der Katalogangabe `ende` (Oma Ruths Bett, wie die App).
+  KE.VERSION = "1.9.2";
   /** Schlüssel der Übergangsdefinitionen (orte.json) im Verlauf, neben den Szenendateien. */
   KE.ORTE = "#orte";
   const SPEICHERSCHLUESSEL = "karteneditor-zwischenstand-v1";

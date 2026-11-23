@@ -257,7 +257,9 @@ function bettAuf(z: Fuehrungszugang, feld: Feld): Moebel | undefined {
 /** Kopfseite des Betts unter diesem Feld, sonst die Vorgabe. */
 function kopfseiteAuf(z: Fuehrungszugang, feld: Feld): Kopfseite {
   const bett = bettAuf(z, feld);
-  return (bett && kopfseiteDesBetts(bett.name, bett.form?.spiegeln)) ?? KOPF_VORGABE;
+  return (
+    (bett && kopfseiteDesBetts(bett.name, bett.form?.spiegeln, bett.angabe.ende)) ?? KOPF_VORGABE
+  );
 }
 
 /** Liegend zeichnen: Liegebild aus dem Bogen, sonst das Standbild um eine Vierteldrehung gekippt. */

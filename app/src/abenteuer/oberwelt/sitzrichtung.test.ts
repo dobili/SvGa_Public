@@ -64,5 +64,9 @@ describe("Zustände aus PixelLab: Boden und Liegen (21.11.2026)", () => {
     expect(kopfseiteDesBetts("es15BettKopfWest")).toBe("links");
     expect(kopfseiteDesBetts("rv5BettKopfRechts", true)).toBe("links");
     expect(kopfseiteDesBetts("rv5Bett")).toBeNull();
+    // Ohne Angabe im Namen zählt die Katalogangabe `ende` (Oma Ruths Bett).
+    expect(kopfseiteDesBetts("iw5BettLila", false, "west")).toBe("links");
+    expect(kopfseiteDesBetts("iw5BettLila", true, "west")).toBe("rechts");
+    expect(kopfseiteDesBetts("rv5BettKopfRechts", false, "west")).toBe("rechts");
   });
 });

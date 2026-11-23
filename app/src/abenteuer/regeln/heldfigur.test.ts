@@ -21,4 +21,10 @@ describe("heldfigur", () => {
     const alt = { ...neu, held: { name: "Kim", variante: 0 } };
     expect(abenteuerstandAus(alt)?.held).toEqual({ name: "Kim", figur: "held-0" });
   });
+
+  it("behält die Spieluhr beim Lesen (Befund 23.11.2026)", () => {
+    const neu = leererAbenteuerstand(new Date(0), "Kim", null, false);
+    expect(abenteuerstandAus({ ...neu, spieluhr: 1620 })?.spieluhr).toBe(1620);
+    expect(abenteuerstandAus({ ...neu, spieluhr: "abends" })?.spieluhr).toBeUndefined();
+  });
 });

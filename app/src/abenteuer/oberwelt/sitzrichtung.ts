@@ -87,14 +87,26 @@ export function liegebild(rahmen: number, kopf: Kopfseite): number | null {
 const KOPF_RECHTS = /Kopf(Rechts|Ost)/;
 const KOPF_LINKS = /Kopf(Links|West)/;
 
+/** Katalogangabe `ende` eines waagrechten Betts (die Seite des Kopfendes im Bild) → Kopfseite. */
+const KOPF_AUS_ENDE: Readonly<Record<string, Kopfseite>> = { ost: "rechts", west: "links" };
+
 /**
- * Kopfseite eines Betts aus seinem Namen, gespiegelt vertauscht; null, wenn der Name es nicht sagt
- * (ein Bett mit dem Kopfende oben: dann liegt die Figur mit dem Kopf rechts, der einzigen Ansicht
- * von der Seite, fuehrungsschicht.ts).
- * Beispiel: "rv5BettKopfRechts" → "rechts"; gespiegelt → "links"; "rv5Bett" → null.
+ * Kopfseite eines Betts aus seinem Namen, sonst aus der Katalogangabe `ende` (waagrechte Betten:
+ * die Seite des Kopfendes), gespiegelt vertauscht; null, wenn beides fehlt (ein Bett mit dem
+ * Kopfende oben: dann liegt die Figur mit dem Kopf rechts, der einzigen Ansicht von der Seite,
+ * fuehrungsschicht.ts).
+ * Warum `ende`: iw5BettLila (Oma Ruths Bett) trägt keine Kopfseite im Namen, aber „ende: west“;
+ * mit der Vorgabe rechts lag sie mit dem Kopf am Fußende (Verdeckungsfotos, 23.11.2026).
+ * Beispiel: "rv5BettKopfRechts" → "rechts"; gespiegelt → "links"; ("iw5BettLila", false, "west")
+ * → "links"; "rv5Bett" → null.
  */
-export function kopfseiteDesBetts(name: string, gespiegelt = false): Kopfseite | null {
-  const seite = KOPF_RECHTS.test(name) ? "rechts" : KOPF_LINKS.test(name) ? "links" : null;
+export function kopfseiteDesBetts(
+  name: string,
+  gespiegelt = false,
+  ende?: string,
+): Kopfseite | null {
+  const ausName = KOPF_RECHTS.test(name) ? "rechts" : KOPF_LINKS.test(name) ? "links" : null;
+  const seite = ausName ?? (ende ? (KOPF_AUS_ENDE[ende] ?? null) : null);
   if (!seite || !gespiegelt) return seite;
   return seite === "rechts" ? "links" : "rechts";
 }

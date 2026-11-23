@@ -12,14 +12,22 @@ import { erzeugeLaufanimationen, standbild, stelleAufKachel } from "./figurbilde
 import { rahmenzahl, setzeSitzend, verschiebeFigurbild } from "./figurensitz";
 import { haltungAus, standbildrahmen } from "./figurzustand";
 import { liegebild } from "./sitzrichtung";
-import { deckeZu } from "./vordergrund";
+import { deckeZu, kopfseiteUnter } from "./vordergrund";
 import { zeigeAlsGeist } from "./geistfigur";
-import { BODENSITZ, sitzlageAuf, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
+import {
+  blickDesSitzes,
+  BODENSITZ,
+  sitzlageAuf,
+  type Sitzlage,
+  type Sitzmoebel,
+} from "./sitzplatz";
 import type { Szenendaten } from "./szenentypen";
 
 /** Liegend: eine Vierteldrehung, zwei Kacheln tiefer gezeichnet (wie fuehrungsschicht.ts). */
 const LIEGEN = Math.PI / 2;
 const LIEGETIEFE_KACHELN = 2;
+/** Ursprung des Liegebilds in seiner Mitte (wie fuehrungsschicht.ts). */
+const MITTE = 0.5;
 
 /**
  * Stellt alle Figuren (Auslöser mit typ „figur“) auf und lässt den Helden mit ihnen kollidieren.
@@ -47,7 +55,9 @@ export function stelleFigurenAuf(
     if (a.typ !== "figur") continue;
     const eigenes = daten.figurenbilder?.[a.name] !== undefined;
     // Zustand an dieser Stelle (Editor 1.9, figurzustand.ts); ohne ihn die Regel wie bisher.
-    const haltung = haltungAus(a.zustand, a.sitzt, a.blick);
+    // Tagesablauf: Blick wie das Sitzmöbel (Ward im Ohrensessel BlickLinks sah sonst nach unten).
+    const sitzblick = a.sitztWieMoebel ? blickDesSitzes(sitze, a, kachel) : null;
+    const haltung = haltungAus(a.zustand, sitzblick ?? a.sitzt, a.blick);
     const richtung = haltung.sitzt ?? a.blick ?? a.sitzt ?? "unten";
     const weiteres = standbildrahmen(daten.figurstandbilder?.[a.name], a.standbild, richtung);
     const figur = gruppe.create(
@@ -92,14 +102,19 @@ export function sitzlageMitZustand(sitz: Sitzlage | null, amBoden: boolean | nul
 const OHNE_MOEBEL: Sitzlage = { dx: 0, dy: 0, tiefe: 0, amBoden: false };
 
 /**
- * Legt eine Figur hin: Liegebild (Kopf rechts), wenn der Bogen es hat, sonst gekippt; tiefer
- * gezeichnet, damit sie über dem Bett liegt. Auch für liegende Statisten (belebungsschicht.ts).
+ * Legt eine Figur hin: Liegebild mit dem Kopf auf der Kopfseite des Betts darunter (sonst rechts),
+ * wenn der Bogen es hat, sonst gekippt; tiefer gezeichnet, damit sie über dem Bett liegt. Auch für
+ * liegende Statisten (belebungsschicht.ts).
+ * Warum Kopfseite und Mitte: Oma Ruth lag nachts mit dem Kopf am Fußende ihres Betts (iw5BettLila,
+ * „ende: west“) und eine Kachel darüber, weil das Liegebild an den Füßen hing statt an der Mitte
+ * der Kachel wie beim `#stelle … >liegt` (Verdeckungsfotos, 23.11.2026).
  */
 export function legeHin(figur: Phaser.GameObjects.Sprite, eigenes: boolean, kachel: number): void {
-  const bild = eigenes ? liegebild(rahmenzahl(figur), "rechts") : null;
-  if (bild !== null) figur.setFrame(bild);
+  const kopf = (figur.scene ? kopfseiteUnter(figur.scene, figur.x, figur.y) : null) ?? "rechts";
+  const bild = eigenes ? liegebild(rahmenzahl(figur), kopf) : null;
+  if (bild !== null) figur.setFrame(bild).setOrigin(MITTE, MITTE);
   else figur.setRotation(LIEGEN);
   figur.setDepth(figur.y + LIEGETIEFE_KACHELN * kachel);
   // Unter die Decke (vordergrund.ts), wie beim `#stelle … >liegt` (fuehrungsschicht.ts).
-  deckeZu(figur, figur.x, figur.y, "rechts");
+  deckeZu(figur, figur.x, figur.y, kopf);
 }

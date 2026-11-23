@@ -1,3 +1,18 @@
+Stand: 23.11.2026, 21 Uhr (Haupt-Chat, Schach-Abenteuer): **PixelLab-Figuren und -Tiere, Verdeckung, Editor 1.9 auf beta.**
+
+- PixelLab-Figuren (136 + 40 Statistenbögen) und -Tiere (61 Arten) des Autors eingebaut, Nachlieferung
+  (Owen, Bauer, Drohne, Saugroboter, Waschbär); weitere Standbilder je Figur.
+- Verdeckung beim Sitzen und Liegen (vordergrund.ts, je Blickrichtung), Prüfung verdeckung;
+  Sitzbilder für alle Sitzenden geprüft (figurenzustaende, ohnesitzbild.json, 56 fehlende Zustände
+  als Seite privat zustaende/fehlende.html).
+- Karteneditor 1.9: Zustand je Figur und Tier, Knöpfe Figuren und Markierungen getrennt.
+- Ladefehler zeigt die Fehlerkarte statt zu hängen (ladehilfen.ts).
+- Testpunkte bis N2700.
+
+**Nächster Schritt (Nacht 23./24.11., Autor schläft):** mittel-4 Kartenänderungen des Autors vom 20.11.
+(Dreiwege, editor/rueck), mittel-1 Sichtprüfung Sitzen/Liegen mit Fotos und Bettdecke im Editor,
+mittel-2 Tiere im Spiel mit Fotos. Lieferungen mischen, Gate, beta. Nichts nach `main`.
+
 Stand: 22.11.2026, 20 Uhr (Haupt-Chat, Schach-Abenteuer): **Musik, Uhr, Abläufe, Heldin/Rivalin auf beta.**
 
 - Musik nach Klangplan A0 vollständig: einprägsame Ortsthemen aller Akte in drei Spuren mit Tag-

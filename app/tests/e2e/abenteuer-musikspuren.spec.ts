@@ -11,6 +11,8 @@
  * gemessene Stand geprüft, und die Form ist doppelt so lang. Die Absenkung unter
  * Dialogzeilen prüft tonspieler.spuren.test.ts.
  * Der Ton läuft stumm: Chromium ohne Lautsprecher, die App braucht nur den AudioContext.
+ * Unabhängig vom privaten Paket (23.11.2026): Das ausgelieferte Paketverzeichnis lässt
+ * musik/spuren.json weg, damit die Testfassung nicht an der Prüfsumme der echten Datei scheitert.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
@@ -71,6 +73,15 @@ test("Ortsthema in Spuren: gemeinsamer Start, Ausdünnen nach drei Schleifen, wi
   await page.addInitScript(() => {
     const alt = JSON.parse(localStorage.getItem("svga.einstellungen") ?? "{}") as object;
     localStorage.setItem("svga.einstellungen", JSON.stringify({ ...alt, ton: "an" }));
+  });
+  // Das Verzeichnis des Pakets ohne musik/spuren.json: Mit dem privaten Paket gehört die echte Datei
+  // zum Grundpaket; die Testfassung unten hätte dann die falsche Prüfsumme, und das Laden schlüge
+  // fehl (Befund 23.11.2026). So liest die App die Datei zur Laufzeit übers Netz, also die Route.
+  await page.route("**/abenteuer/paket.json", async (r) => {
+    const antwort = await r.fetch();
+    const verzeichnis = (await antwort.json()) as { dateien: { pfad: string }[] };
+    verzeichnis.dateien = verzeichnis.dateien.filter((d) => d.pfad !== "musik/spuren.json");
+    return r.fulfill({ response: antwort, json: verzeichnis });
   });
   await page.route("**/musik/spuren.json", (r) =>
     r.fulfill({

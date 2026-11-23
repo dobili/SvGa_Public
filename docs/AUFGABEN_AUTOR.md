@@ -420,8 +420,17 @@ Profil › Einstellungen › Fehler melden.
       Stuhl statt darauf. Liegen fehlt bei Lucia und Oma Ruth.
 - [ ] N2698. **Nachlieferung 23.11. im Spiel:** Die Drohne schwebt, der Saugroboter fährt (eigenes
       Tier, Silicon-Bay-Akademie und Altstadt, etwa 8 × 8 Pixel), der Waschbär läuft auf vier Beinen,
-      Owen und der Bauer sind neu. Owens Sitzzustand ist auf 24er-Leinwand angelegt und wirkt
-      deshalb im Sitzen größer als im Stehen: bitte in PixelLab auf 32 × 32 neu anlegen.
+      Owen (deine Lieferung vom Abend, mit Sitzen) und der Bauer sind neu.
+- [ ] N2699. **Karteneditor 1.9, Figuren und Markierungen getrennt:** Editor öffnen (neu aus dem
+      privaten Repository herunterladen). Oben steht „Figuren“ an und „Markierungen“ aus: Die Karte
+      zeigt alle Figuren und Tiere ohne farbige Kreise. P schaltet die Figuren, M die Markierungen,
+      der Browser merkt sich die Wahl.
+- [ ] N2700. **Karteneditor 1.9, Zustand wählen:** Eine sitzende Figur anklicken, im Feld „Zustand an
+      dieser Stelle“ auf „Boden“ tippen: Sie sitzt im Schneidersitz. „Zurück auf Standard“ stellt
+      die Regel wieder her, Strg+Z nimmt zurück. Den Straßenmusiker anklicken und das Standbild
+      „Idle“ wählen (Instrument in der Hand): Er zeigt es im Editor und nach dem Rückweg im Spiel.
+      Tiere haben dort ihre Ruhezustände (sitzen, schlafen, grasen). Tiere in einem Ruhezustand
+      bleiben im Spiel auf ihrem Feld, Schwimmer bewegen sich weiter (umgesetzt, Widerspruch genügt).
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

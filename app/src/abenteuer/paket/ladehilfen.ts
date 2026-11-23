@@ -38,12 +38,42 @@ export async function jeGleichzeitig<T>(
   aufgabe: (eintrag: T) => Promise<void>,
 ): Promise<void> {
   let naechster = 0;
+  // Nach dem ersten Fehler nimmt kein Arbeiter mehr eine neue Datei (Befund 23.11.2026: Die
+  // übrigen luden weiter und meldeten Fortschritt, nachdem der Fehler längst gemeldet war).
+  let gescheitert = false;
   const arbeiter = async (): Promise<void> => {
-    for (let i = naechster++; i < eintraege.length; i = naechster++) {
-      await aufgabe(eintraege[i] as T);
+    for (let i = naechster++; i < eintraege.length && !gescheitert; i = naechster++) {
+      try {
+        await aufgabe(eintraege[i] as T);
+      } catch (fehler) {
+        gescheitert = true;
+        throw fehler;
+      }
     }
   };
   await Promise.all(Array.from({ length: Math.min(anzahl, eintraege.length) }, arbeiter));
+}
+
+/**
+ * Fortschritt, der nach einem Fehler schweigt. Warum (Befund 23.11.2026): Scheiterte eine Datei
+ * (etwa an der Prüfsumme), zeigte die Startkarte den Fehler, doch noch laufende Abrufe meldeten
+ * danach weiter Fortschritt und stellten „Lädt …“ wieder her; die Karte blieb für immer beim Laden.
+ * Ausgabe: `melde` (wie der Fortschritt, solange nichts schiefging) und `stoppe` (ab jetzt still).
+ * Beispiel: const f = bisZumFehler(fortschritt); … catch (e) { f.stoppe(); throw e; }
+ */
+export function bisZumFehler(fortschritt: (geladen: number, gesamt: number) => void): {
+  readonly melde: (geladen: number, gesamt: number) => void;
+  readonly stoppe: () => void;
+} {
+  let still = false;
+  return {
+    melde: (geladen, gesamt) => {
+      if (!still) fortschritt(geladen, gesamt);
+    },
+    stoppe: () => {
+      still = true;
+    },
+  };
 }
 
 /**

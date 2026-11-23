@@ -6,6 +6,17 @@ export const RAHMEN: number;
 /** Baut den Bogen einer Figur (PNG) aus ihrem PixelLab-Ordner; null, wenn kein Bild da ist. */
 export function baueFigurenbogen(ordner: string): Promise<Buffer | null>;
 
+/** Weitere Standbilder im Bogen: erster Rahmen und Kennungen in der Ordnung des Bogens. */
+export interface Standbildindex {
+  readonly beginn: number;
+  readonly kennungen: readonly string[];
+}
+
+/** Bogen und Index der weiteren Standbilder (figurstandbilder.mjs); null, wenn kein Bild da ist. */
+export function baueFigurenbogenMitStandbildern(
+  ordner: string,
+): Promise<{ readonly bild: Buffer; readonly standbilder: Standbildindex | null } | null>;
+
 /** Setzt ein Bild unten bündig und waagrecht mittig in einen 32er-Rahmen, ohne Schatten. */
 export function imRahmen(pixel: Buffer, breite: number, hoehe: number): Buffer;
 

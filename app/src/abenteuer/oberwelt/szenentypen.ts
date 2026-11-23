@@ -7,6 +7,7 @@
  * Abhängigkeiten: schnittstelle/spielstand.ts, moebel.ts, belebungsschicht.ts, toenung.ts,
  * teilchen.ts (nur Typen).
  */
+import type { Standbildindex } from "./figurzustand";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import type { Belebungsbilder } from "./belebungsschicht";
 import type { Heldhaelfte } from "./heldhaelfte";
@@ -52,6 +53,8 @@ export interface Szenendaten {
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder?: Readonly<Record<string, string>>;
   /** Figuren mit geist: true (geistfigur.ts, regeln/geist.ts), nach Objektname. */
+  /** Weitere Standbilder je Figur der Karte (Objektname → Index, figurzustand.ts, Editor 1.9). */
+  readonly figurstandbilder?: Readonly<Record<string, Standbildindex>>;
   readonly geister?: ReadonlySet<string>;
   /** Möbel und Schmuck der Karte (moebel.ts). */
   readonly moebel?: readonly Moebel[];

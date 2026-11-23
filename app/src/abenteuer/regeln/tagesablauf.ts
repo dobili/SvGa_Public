@@ -150,6 +150,11 @@ function figurobjekt(name: string, block: Ablaufblock): Kartenobjekt {
   return { name, type: "figur", x: x * KACHEL, y: y * KACHEL, properties: eigenschaften };
 }
 
+/** Trägt das Objekt einen Zustand oder ein Standbild aus dem Editor (oberwelt/figurzustand.ts)? */
+function hatEditorzustand(o: Kartenobjekt): boolean {
+  return (o.properties ?? []).some((p) => p.name === "zustand" || p.name === "standbild");
+}
+
 /** Was die Aufstellung braucht: Karte, Stunde, Zuordnung, Festgehaltene und Abläufe. */
 export interface Aufstellung {
   readonly karte: string;
@@ -183,11 +188,23 @@ export function nachTagesablauf<T extends object>(karte: T, a: Aufstellung): T {
       !!a.ablaeufe.figuren[person]?.bloecke
     );
   };
+  // Steht der Block auf dem Feld der Szene, gilt dort das Objekt der Szene mit Zustand,
+  // Standbild und Versatz aus dem Editor (Karteneditor 1.9); sonst stellt der Ablauf die Figur hin.
+  const szenenobjekte = ebenen.flatMap((e) => e.objects ?? []).filter(beweglich);
   const neu: Kartenobjekt[] = [];
   for (const [person, ablauf] of Object.entries(a.ablaeufe.figuren)) {
     if (a.fest.has(person)) continue;
     const block = blockZur(ablauf, a.stunde);
-    if (block?.karte === a.karte && block.feld) neu.push(figurobjekt(person, block));
+    if (block?.karte !== a.karte || !block.feld) continue;
+    const ersatz = figurobjekt(person, block);
+    const eigenes = szenenobjekte.find(
+      (o) =>
+        a.zuordnung.get(String(o.name)) === person &&
+        o.x === ersatz.x &&
+        o.y === ersatz.y &&
+        hatEditorzustand(o),
+    );
+    neu.push(eigenes ? { ...eigenes, name: person } : ersatz);
   }
   let eingefuegt = false;
   const gefiltert = ebenen.map((e) => {

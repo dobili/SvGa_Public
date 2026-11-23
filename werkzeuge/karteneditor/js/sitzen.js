@@ -134,7 +134,8 @@
    * Betrachter schaut („unten“), bekommt keinen. Gedrehte, gespiegelte oder beschnittene Möbel zeigt der Editor ohne Vordergrund.
    */
   KE.zeichneSitzvordergrund = function (ctx, m, blick) {
-    const sitzt = m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt;
+    // Sitzt die Person an dieser Stelle (Zustand der Szene vor `sitzt`, Editor 1.9, blick.js)?
+    const sitzt = KE.sitztJetzt(m);
     const lage = sitzt && blick !== "unten" ? KE.sitzlage(m.eintrag.feld) : null;
     const s = lage?.sitz;
     const roh = s && KE.zustand.daten.moebel[s.kennung];
@@ -167,12 +168,13 @@
    * Eingaben: Markierung, gezeichnetes Bild, ob es ein echtes Sitzbild ist.
    */
   KE.sitzverschiebung = function (m, bild, istSitzbild) {
-    const sitzt = m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt;
-    if (!sitzt) return { dx: 0, dy: 0 };
+    if (!KE.sitztJetzt(m)) return { dx: 0, dy: 0 };
+    // Zustand der Stelle (Editor 1.9): Stuhl auch ohne Möbel (mit Hub), Boden ohne Hub.
+    const zustand = KE.zustandVon?.(m.liste, m.eintrag).zustand;
     const lage = KE.sitzlage(m.eintrag.feld);
-    if (!lage) return { dx: 0, dy: 0 };
+    if (!lage && zustand !== "sitzstuhl") return { dx: 0, dy: 0 };
     const massstab = bild.naturalWidth >= 2 * K ? PIXELLAB_MASSSTAB : 1;
-    const hub = istSitzbild ? 0 : Math.round(SITZ_HUB * massstab);
-    return { dx: lage.dx, dy: lage.dy - hub };
+    const hub = istSitzbild || zustand === "sitzboden" ? 0 : Math.round(SITZ_HUB * massstab);
+    return { dx: lage?.dx ?? 0, dy: (lage?.dy ?? 0) - hub };
   };
 })(window.KE);

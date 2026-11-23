@@ -266,6 +266,7 @@
     v: () => KE.schalte("vorher"),
     b: () => KE.schalte("pinsel"),
     m: () => KE.schalte("markierungen"),
+    p: () => KE.schalte("figuren"),
     s: () => KE.kollisionspinsel("sperren"),
     o: () => KE.kollisionspinsel("freigeben"),
     x: () => KE.kollisionspinsel("radierer"),

@@ -336,6 +336,20 @@
     return !stuecke.some((o) => !o.umgebung && beruehrt(o, s));
   };
 
+  /** Ist die Markierung eine Figur, ein Statist oder ein Tier (Knopf „Figuren“, Editor 1.9)? */
+  KE.istFigurenmarke = (m) => m.liste === "figuren" || m.liste === "belebung";
+
+  /**
+   * Markierungen, die man sieht und anwählen kann (Editor 1.9): mit „Markierungen“ alle, sonst mit
+   * „Figuren“ die Figuren, Statisten und Tiere; „Nur Umgebung“ keine.
+   */
+  KE.sichtbareMarken = function (szene) {
+    const sch = KE.zustand.schalter;
+    if (sch.nurUmgebung) return [];
+    if (sch.markierungen) return KE.markierungen(szene);
+    return sch.figuren ? KE.markierungen(szene).filter(KE.istFigurenmarke) : [];
+  };
+
   /**
    * Alles unter einem Punkt, oberstes zuerst: Markierungen, dann Objekte (sichtbare, anwählbare).
    */
@@ -343,9 +357,7 @@
     const szene = KE.szene();
     const sch = KE.zustand.schalter;
     const treffer = [];
-    if (sch.markierungen && !sch.nurUmgebung) {
-      for (const m of KE.markierungen(szene)) if (KE.trifft(m, px, py)) treffer.push(m);
-    }
+    for (const m of KE.sichtbareMarken(szene)) if (KE.trifft(m, px, py)) treffer.push(m);
     const stuecke = KE.platziere(szene).reverse();
     for (const s of stuecke) {
       if (sch.nurUmgebung && !s.umgebung) continue;
@@ -364,7 +376,7 @@
       ...stuecke.filter(
         (s) => !(sch.nurUmgebung && !s.umgebung) && !KE.gesperrteUmgebung(s, stuecke),
       ),
-      ...(sch.markierungen && !sch.nurUmgebung ? KE.markierungen(szene) : []),
+      ...KE.sichtbareMarken(szene),
     ];
     return alle.filter((s) => s.x < x1 && s.x + s.b > x0 && s.y < y1 && s.y + s.h > y0);
   };

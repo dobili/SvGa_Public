@@ -103,6 +103,24 @@ describe("Tagesablauf", () => {
       "victor",
     ]);
   });
+
+  it("behält auf dem Feld der Szene Zustand und Standbild aus dem Editor (1.9)", () => {
+    const z = personenDerFiguren(FIGUREN, ABLAEUFE);
+    const zustand = { name: "zustand", value: "sitzboden" };
+    const karte = karteMitCarla();
+    const carla = karte.layers[1]?.objects?.[0];
+    if (carla) Object.assign(carla, { properties: [zustand] });
+    const um = (stunde: number) =>
+      nachTagesablauf(karte, {
+        karte: "mapleFalls.aussen",
+        stunde,
+        zuordnung: z,
+        fest: new Set<string>(),
+        ablaeufe: ABLAEUFE,
+      }).layers[1]?.objects?.at(-1);
+    // Um 12 steht sie laut Ablauf auf (28, 24), dem Feld der Szene: Zustand bleibt.
+    expect(um(12)).toMatchObject({ name: "carla", x: 448, y: 384, properties: [zustand] });
+  });
 });
 
 describe("Ohne Stuhlbild steht die Figur neben dem Stuhl (Wunsch des Autors, 23.11.2026)", () => {

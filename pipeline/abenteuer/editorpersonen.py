@@ -63,7 +63,7 @@ def boegen_der_szene(szene: dict, orte: list[dict]) -> dict[str, str]:
     return boegen
 
 
-def _als_url(bild) -> str:
+def als_url(bild) -> str:
     puffer = io.BytesIO()
     bild.save(puffer, "PNG")
     return "data:image/png;base64," + base64.b64encode(puffer.getvalue()).decode("ascii")
@@ -78,7 +78,7 @@ def standbilder(privat: Path, boegen: set[str]) -> dict[str, list[str]]:
     for bogen in sorted(boegen):
         bilder = [figurbild(privat, bogen, SITZ_RAHMEN.index(r), rgba) for r in SITZ_RAHMEN]
         if all(bilder):
-            ergebnis[bogen] = [_als_url(b) for b in bilder]
+            ergebnis[bogen] = [als_url(b) for b in bilder]
     return ergebnis
 
 
@@ -88,7 +88,7 @@ SITZSTUHL = "sitzstuhl"
 KOPFANTEIL = 0.4  # der Kopf: die oberen zwei Fünftel der Figur (wie KOPFANTEIL in figurenzustaende.mjs)
 
 
-def _kopfbreite(bild) -> int:
+def kopfbreite(bild) -> int:
     """Größte Breite in den oberen zwei Fünfteln der deckenden Zeilen; 0 bei leerem Bild."""
     alpha = bild.getchannel("A").load()
     zeilen = []
@@ -132,12 +132,12 @@ def sitzbilder(privat: Path, boegen: set[str]) -> dict[str, list[str]]:
             continue
         roh = [rgba(b) for b in bilder]
         sued = roh[PIXELLAB.index("south")]
-        faktor = min(1.0, _kopfbreite(rgba(stehend)) / max(1, _kopfbreite(sued)))
-        ergebnis[bogen] = [_als_url(_auf_fusszeile(b, faktor, Image)) for b in roh]
+        faktor = min(1.0, kopfbreite(rgba(stehend)) / max(1, kopfbreite(sued)))
+        ergebnis[bogen] = [als_url(auf_fusszeile(b, faktor, Image)) for b in roh]
     return ergebnis
 
 
-def _auf_fusszeile(bild, faktor: float, image):
+def auf_fusszeile(bild, faktor: float, image):
     """Verkleinert (nächster Nachbar) um ``faktor`` und 2/3, Füße auf FUSSZEILE, mittig im Rahmen."""
     umriss = bild.getbbox()
     rahmen = image.new("RGBA", bild.size)

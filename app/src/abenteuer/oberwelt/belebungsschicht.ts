@@ -9,9 +9,12 @@
  * Bildausschnitts steht.
  * Abhängigkeiten: Phaser, figurbilder.ts, figurensitz.ts, sitzplatz.ts.
  */
+import { legeHin, sitzlageMitZustand } from "./figurenaufstellung";
+import { haltungAus, standbildrahmen } from "./figurzustand";
+import { bogenname, geladenerStandbildindex } from "./standbildindex";
 import { setzeSitzend } from "./figurensitz";
 import type { Richtung } from "./szene";
-import { BODENSITZ, sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
+import { sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
 import { legeSitzausschnitt } from "./vordergrund";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
@@ -193,7 +196,11 @@ export class Belebungsschicht {
       sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
     }
     const sitz = v.sitzt ? sitzlageAuf(this.sitze, v.feld, this.kachel) : null;
-    const versatz = eigen && v.sitzt ? setzeSitzend(sprite, v.sitzt, sitz ?? BODENSITZ) : null;
+    // Zustand an dieser Stelle (Editor 1.9): Stuhl oder Boden statt der Regel aus dem Sitzmöbel.
+    const amBoden = haltungAus(v.haltung, v.sitzt, null).amBoden;
+    const lage = sitzlageMitZustand(sitz, amBoden);
+    const versatz = eigen && v.sitzt ? setzeSitzend(sprite, v.sitzt, lage) : null;
+    if (eigen && v.haltung === "liegt") legeHin(sprite, true, this.kachel);
     const sperre = this.neueSperre(versatz?.dx, versatz?.dy);
     this.fuegeHinzu(v, sprite, eigen ? bogen : null, sperre, {
       ...(sitz ? { tiefe: sitz.tiefe } : {}),
@@ -356,9 +363,19 @@ export class Belebungsschicht {
       if (d.sprite.anims.isPlaying) d.sprite.anims.stop();
       // Wer sitzt, behält sein Sitzbild (Stuhl oder Boden, figurensitz.ts), sonst das Standbild;
       // ein Tier zeigt das Bild seines Verhaltens (Katze schläft, Kuh grast, Ente schwimmt).
-      const basis = d.tier ? standbasis(d.tier, d.v.verhalten) : 0;
-      if (!d.v.sitzt) d.sprite.setFrame(basis + standbild(d.b.schaut ?? d.b.richtung));
+      if (!d.v.sitzt && d.v.haltung !== "liegt") d.sprite.setFrame(this.stillbild(d));
     }
+  }
+
+  /**
+   * Bild im Stillstand: Tier nach Verhalten oder Zustand (Katze schläft, Kuh grast, Ente schwimmt),
+   * Statist mit weiterem Standbild aus PixelLab (Editor 1.9, figurzustand.ts), sonst Standbild.
+   */
+  private stillbild(d: Darsteller): number {
+    const richtung = d.b.schaut ?? d.b.richtung;
+    if (d.tier) return standbasis(d.tier, d.v.verhalten) + standbild(richtung);
+    const index = d.bogen ? geladenerStandbildindex()[bogenname(d.bogen)] : undefined;
+    return standbildrahmen(index, d.v.standbild, richtung) ?? standbild(richtung);
   }
 
   /**

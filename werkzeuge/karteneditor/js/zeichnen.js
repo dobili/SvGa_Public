@@ -245,9 +245,9 @@
     ctx.restore();
   }
 
-  function zeichneMarkierung(ctx, m, zoom) {
-    // Personen als Standbild in Blickrichtung (blick.js, Editor 1.7), sonst Kreis mit Pfeil.
-    if (!KE.zeichnePerson(ctx, m, K)) {
+  /** Farbige Markierung: Kreis, Pfeil, Name; als Bild gezeichnete Figuren (Editor 1.9) nur Name. */
+  function zeichneMarkierung(ctx, m, zoom, alsBild) {
+    if (!alsBild) {
       ctx.fillStyle = FARBE_MARKIERUNG[m.liste];
       ctx.globalAlpha = 0.75;
       ctx.beginPath();
@@ -347,10 +347,16 @@
       zeichneBedingte(ctx, KE.figurensperren(szene).bedingt, gesperrt, a.zoom);
       KE.zeichnePinsel(ctx, szene, a.zoom); // Kreuz für gemalte Sperren, grün für Freigaben (pinsel.js)
     }
-    const marken = z.schalter.markierungen && !z.schalter.nurUmgebung ? KE.markierungen(szene) : [];
-    for (const m of marken) zeichneMarkierung(ctx, m, a.zoom);
+    const marken = KE.sichtbareMarken(szene);
+    // Figuren und Tiere als Bild im Zustand wie in der App (Knopf „Figuren“, Editor 1.9, blick.js).
+    const alsBild = new Set();
+    if (z.schalter.figuren && !z.schalter.nurUmgebung) {
+      for (const m of marken) if (KE.istFigurenmarke(m) && KE.zeichnePerson(ctx, m, K)) alsBild.add(m.uid);
+    }
+    // Farbige Markierungen (Knopf „Markierungen“): Auslöser, Figuren und Tiere mit Namen.
+    if (z.schalter.markierungen) for (const m of marken) zeichneMarkierung(ctx, m, a.zoom, alsBild.has(m.uid));
     // Ziel und Ankunft jedes Übergangs, Kacheln beim Setzen (uebergaenge.js, ankunft.js).
-    if (marken.length || z.setzen) KE.zeichneUebergaenge(ctx, szene, stuecke, a.zoom);
+    if (z.schalter.markierungen || z.setzen) KE.zeichneUebergaenge(ctx, szene, stuecke, a.zoom);
     KE.zeichneKollisionsgitter(ctx, a.zoom); // Modus „Kollision bearbeiten“ (kollision.js)
     if (z.fein && (z.kpinsel || z.kollisionUid)) {
       // 4-Pixel-Gitter des Fein-Modus, nur im sichtbaren Ausschnitt (feinmalen.js).

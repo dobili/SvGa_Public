@@ -10,7 +10,7 @@
 import type Phaser from "phaser";
 import { rahmenname, type Moebel } from "./moebel";
 import { umrissInWelt, type Umriss } from "./sitzplatz";
-import { merkeMoebelbild, moebelschluessel } from "./vordergrund";
+import { merkeMoebelbild, moebelschluessel, sitzunterkante } from "./vordergrund";
 
 /** Ab dieser Deckkraft (0–255) zählt ein Pixel als sichtbar (Schatten unter 40 nicht). */
 const SICHTBAR_AB = 40;
@@ -33,8 +33,8 @@ export function umrissAusPixeln(
   return { x: links, y: oben, breite: rechts - links + 1, hoehe: unten - oben + 1 };
 }
 
-/** Misst einen Rahmen einer geladenen Textur; ohne Bild oder Zeichenfläche null. */
-function misseRahmen(rahmen: Phaser.Textures.Frame): Umriss | null {
+/** RGBA-Pixel eines Rahmens einer geladenen Textur; ohne Bild oder Zeichenfläche null. */
+function pixelDesRahmens(rahmen: Phaser.Textures.Frame): Uint8ClampedArray | null {
   const bild = rahmen.source.image as CanvasImageSource | undefined;
   const [b, h] = [rahmen.cutWidth, rahmen.cutHeight];
   if (!bild || b <= 0 || h <= 0) return null;
@@ -43,7 +43,31 @@ function misseRahmen(rahmen: Phaser.Textures.Frame): Umriss | null {
   const pinsel = flaeche.getContext("2d", { willReadFrequently: true });
   if (!pinsel) return null;
   pinsel.drawImage(bild, rahmen.cutX, rahmen.cutY, b, h, 0, 0, b, h);
-  return umrissAusPixeln(pinsel.getImageData(0, 0, b, h).data, b, h);
+  return pinsel.getImageData(0, 0, b, h).data;
+}
+
+/** Misst einen Rahmen einer geladenen Textur; ohne Bild oder Zeichenfläche null. */
+function misseRahmen(rahmen: Phaser.Textures.Frame): Umriss | null {
+  const daten = pixelDesRahmens(rahmen);
+  return daten ? umrissAusPixeln(daten, rahmen.cutWidth, rahmen.cutHeight) : null;
+}
+
+/** Rahmen eines Möbels in seiner Textur, oder null. */
+function rahmenDes(szene: Phaser.Scene, m: Moebel): Phaser.Textures.Frame | null {
+  if (!szene.textures.exists(m.schluessel)) return null;
+  return szene.textures.getFrame(m.schluessel, rahmenname(m)) ?? null;
+}
+
+/**
+ * Unterste Zeile der Sitzfläche eines Möbelbilds im eigenen Rahmen (vordergrund.ts, sitzunterkante),
+ * oder null; für den Vordergrund bei seitlichem Blick.
+ */
+export function unterkanteImRahmen(szene: Phaser.Scene, m: Moebel): number | null {
+  const rahmen = rahmenDes(szene, m);
+  const daten = rahmen ? pixelDesRahmens(rahmen) : null;
+  if (!rahmen || !daten) return null;
+  const sichtbar = umrissAusPixeln(daten, rahmen.cutWidth, rahmen.cutHeight);
+  return sichtbar ? sitzunterkante(daten, rahmen.cutWidth, sichtbar) : null;
 }
 
 /**
@@ -56,8 +80,7 @@ function misseRahmen(rahmen: Phaser.Textures.Frame): Umriss | null {
  * Ausschnitt des Vordergrunds (vordergrund.ts). Beispiel: Stuhl 16 × 32 → 3, 1, 12 × 21.
  */
 export function sichtbarImRahmen(szene: Phaser.Scene, m: Moebel): Umriss | null {
-  if (!szene.textures.exists(m.schluessel)) return null;
-  const rahmen = szene.textures.getFrame(m.schluessel, rahmenname(m));
+  const rahmen = rahmenDes(szene, m);
   return rahmen ? misseRahmen(rahmen) : null;
 }
 
@@ -75,6 +98,7 @@ export function moebelbildMerker(
       art: m.angabe.art,
       angabe: m.angabe.vordergrund,
       sichtbar: () => sichtbarImRahmen(szene, m),
+      unterkante: () => unterkanteImRahmen(szene, m),
     });
 }
 

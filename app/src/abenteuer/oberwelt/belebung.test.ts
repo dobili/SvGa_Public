@@ -147,3 +147,38 @@ describe("statistenbild", () => {
     );
   });
 });
+
+describe("Zustand an der Stelle (Karteneditor 1.9)", () => {
+  const objekt = (type: string, eig: Record<string, string>) => ({
+    name: type === "tier" ? "kuh" : "gast",
+    type,
+    x: 32,
+    y: 48,
+    properties: Object.entries(eig).map(([name, value]) => ({ name, value })),
+  });
+  const lies = (type: string, eig: Record<string, string>) =>
+    liesBelebung({ layers: [{ objects: [objekt(type, eig)] }] })[0];
+
+  it("ein ruhendes Tier zeigt seinen Zustand und bleibt auf dem Feld", () => {
+    const kuh = lies("tier", {
+      zustand: "grasen",
+      verhalten: "ausweichen",
+      von: "1,1",
+      bis: "9,9",
+    });
+    expect(kuh?.verhalten).toBe("grasen");
+    expect(kuh?.von).toEqual({ x: 2, y: 3 });
+    expect(kuh?.bis).toEqual({ x: 2, y: 3 });
+    expect(lies("tier", { zustand: "schwimmen", von: "1,1" })?.von).toEqual({ x: 1, y: 1 });
+  });
+
+  it("ein Statist sitzt am Boden nach dem Zustand, mit Standbild", () => {
+    const gast = lies("statist", { zustand: "sitzboden", blick: "links", standbild: "mit-hut" });
+    expect(gast?.sitzt).toBe("links");
+    expect(gast?.haltung).toBe("sitzboden");
+    expect(gast?.standbild).toBe("mit-hut");
+    const steht = lies("statist", { zustand: "stehen", sitzt: "oben" });
+    expect(steht?.sitzt).toBeNull();
+    expect(steht?.blick).toBe("oben");
+  });
+});

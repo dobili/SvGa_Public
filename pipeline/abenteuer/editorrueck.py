@@ -30,6 +30,8 @@ from pipeline.abenteuer.editorfiguren import figurwarnungen
 from pipeline.abenteuer.editoruebergaenge import ruecklauf as uebergangsruecklauf
 from pipeline.abenteuer.editorzuschnitt import deckkraftzeilen, zuschnittvorschlaege, zuschnittzeilen
 from pipeline.abenteuer.feinbericht import feinzeilen
+from pipeline.abenteuer.figurzustand import bereinige as bereinige_zustand
+from pipeline.abenteuer.figurzustand import zustandstext
 from pipeline.abenteuer.kartenbau import HAUPT, INHALTE
 from pipeline.abenteuer.kartentiled import figurversatz
 from pipeline.abenteuer.kollisionspinsel import pinselzeilen
@@ -184,6 +186,9 @@ def markierungszeilen(eintrag: dict) -> list[str]:
             if i is not None and liste == "figuren" and figurversatz(alt[i]) != figurversatz(b):
                 # Feiner Versatz des Bildes (Editor 1.8), nur Darstellung.
                 zeilen.append(f"Versatz (figuren): {b['name']} {_px(alt[i])} → {_px(b)}")
+            if i is not None and zustandstext(alt[i]) != zustandstext(b):
+                # Zustand und Standbild an dieser Stelle (Editor 1.9, figurzustand.py).
+                zeilen.append(f"Zustand ({liste}): {b['name']} {zustandstext(alt[i])} → {zustandstext(b)}")
             if i is not None and _blick(alt[i]) != _blick(b):
                 # Blickrichtung (Editor 1.7, R008); ohne Angabe schaut die Person nach unten.
                 zeilen.append(f"Blick ({liste}): {b['name']} {_blick(alt[i])} → {_blick(b)}")
@@ -256,6 +261,7 @@ def schreibe(daten: dict, szenen: Path, erzwingen: bool) -> tuple[list[str], lis
             konflikte.append(eintrag["datei"])
             continue
         bereinige_figurversatz(eintrag["nachher"])
+        bereinige_zustand(eintrag["nachher"])
         pfad.write_text(als_text(eintrag["nachher"], alt), encoding="utf-8")
         geschrieben.append(eintrag["datei"])
     return geschrieben, konflikte

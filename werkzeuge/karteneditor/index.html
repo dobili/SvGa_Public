@@ -20,7 +20,11 @@
       <span class="trenner"></span>
       <button data-schalter="raster" title="Raster mit Koordinaten (G)">Raster</button>
       <button data-schalter="kollision" title="Kollision zeigen (K)">Kollision</button>
-      <button data-schalter="markierungen" title="Auslöser und Figuren zeigen (M)">
+      <button data-schalter="figuren" title="Figuren und Tiere als Bild zeigen (P)">Figuren</button>
+      <button
+        data-schalter="markierungen"
+        title="Farbige Markierungen: Auslöser, Figuren und Tiere mit Namen (M)"
+      >
         Markierungen
       </button>
       <button data-schalter="nurUmgebung" title="Nur Boden, Wände, Gebäude, Wasser (U)">
@@ -166,6 +170,10 @@
             <td>Raster / Kollision / Markierungen</td>
           </tr>
           <tr>
+            <td>P</td>
+            <td>Figuren und Tiere zeigen oder ausblenden</td>
+          </tr>
+          <tr>
             <td>U / L</td>
             <td>nur Umgebung / Umgebung sperren</td>
           </tr>
@@ -229,6 +237,7 @@
     <script src="js/deckkraft.js"></script>
     <script src="js/blick.js"></script>
     <script src="js/sitzen.js"></script>
+    <script src="js/zustandswahl.js"></script>
     <script src="js/panel.js"></script>
     <script src="js/export.js"></script>
     <script src="js/einlesen.js"></script>

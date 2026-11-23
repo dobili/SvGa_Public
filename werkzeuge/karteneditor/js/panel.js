@@ -25,6 +25,7 @@
   KE.schalte = function (name, wert) {
     const s = KE.zustand.schalter;
     s[name] = wert === undefined ? !s[name] : wert;
+    if (name === "figuren" || name === "markierungen") KE.merkeAnsichtsschalter();
     if (name === "pinsel" && s.pinsel) KE.zustand.kpinsel = null; // Bodenpinsel statt Kollisionspinsel
     // Was nicht mehr anwählbar oder sichtbar ist, fällt aus der Auswahl.
     if ((name === "umgebungSperren" || name === "nurUmgebung") && s[name] && KE.szene()) {
@@ -270,6 +271,7 @@
       );
     KE.deckkraftfeld(ziel); // Deckkraft 25 bis 100 % (deckkraft.js)
     KE.blickfeld(ziel); // Blickrichtung stehender Figuren und Statisten (blick.js)
+    KE.zustandsfeld(ziel); // Zustand und Standbild einer Figur oder eines Tiers (zustandswahl.js)
     KE.zuschnittfeld(ziel); // Zuschnitt: Zahlenfelder, Modus, eigenes Bild (zuschnittfeld.js)
     KE.kollisionsfeld(ziel); // Sperrt / Durchgehbar, Kollision bearbeiten (kollision.js)
     KE.pinselfeld(ziel); // Kollisionspinsel: Zahl der Kacheln, Grund (pinsel.js)

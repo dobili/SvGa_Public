@@ -16,6 +16,7 @@
  */
 import { liesFigurversatz, type Bildversatz } from "./figurversatz";
 import { blickrichtung, sitzrichtung } from "./sitzrichtung";
+import { liesMenschenzustand, liesStandbild, type Menschenzustand } from "./figurzustand";
 import type { Richtung } from "./szene";
 
 /** Ein Auslöser der Karte in Kachelkoordinaten. */
@@ -34,6 +35,10 @@ export interface Ausloeser {
   readonly versatz?: Bildversatz;
   /** Figur liegt im Bett (Tagesablauf, regeln/tagesablauf.ts: Schlaf mit Bett). */
   readonly liegt?: boolean;
+  /** Zustand an dieser Stelle aus der Szene (Karteneditor 1.9, figurzustand.ts); fehlt: Regel. */
+  readonly zustand?: Menschenzustand;
+  /** Weiteres Standbild aus PixelLab an dieser Stelle (Kennung, figurzustand.ts). */
+  readonly standbild?: string;
 }
 
 /** Ein Objekt der Tiled-Ebene, so weit es hier gebraucht wird (Pixelkoordinaten). */
@@ -63,6 +68,8 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
       const blick = o.type === "figur" && !sitzt ? blickrichtung(wert("blick")) : null;
       const versatz = o.type === "figur" ? liesFigurversatz(wert("versatz")) : null;
       const liegt = o.type === "figur" && wert("liegt") === true;
+      const zustand = o.type === "figur" ? liesMenschenzustand(wert("zustand")) : null;
+      const standbild = o.type === "figur" ? liesStandbild(wert("standbild")) : null;
       return {
         name: o.name ?? "",
         typ: o.type === "figur" ? ("figur" as const) : ("ausloeser" as const),
@@ -74,6 +81,8 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
         ...(blick ? { blick } : {}),
         ...(versatz ? { versatz } : {}),
         ...(liegt ? { liegt } : {}),
+        ...(zustand ? { zustand } : {}),
+        ...(standbild ? { standbild } : {}),
       };
     });
 }

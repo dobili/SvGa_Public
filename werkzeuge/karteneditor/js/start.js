@@ -6,6 +6,30 @@
 
 (function (KE) {
   const LETZTE_KARTE = "karteneditor-letzte-karte";
+  /** Knöpfe „Figuren“ und „Markierungen“ (Editor 1.9): ihr Zustand bleibt im Browser gemerkt. */
+  const ANSICHTSSCHALTER = "karteneditor-ansicht";
+
+  /** Merkt „Figuren“ und „Markierungen“ (aufgerufen aus KE.schalte, panel.js). */
+  KE.merkeAnsichtsschalter = function () {
+    const { figuren, markierungen } = KE.zustand.schalter;
+    try {
+      localStorage.setItem(ANSICHTSSCHALTER, JSON.stringify({ figuren, markierungen }));
+    } catch (fehler) {
+      console.warn("localStorage nicht beschreibbar", fehler);
+    }
+  };
+
+  /** Liest den gemerkten Zustand der beiden Knöpfe; ohne Eintrag bleibt die Vorgabe. */
+  function ladeAnsichtsschalter() {
+    try {
+      const gemerkt = JSON.parse(localStorage.getItem(ANSICHTSSCHALTER) || "{}");
+      for (const name of ["figuren", "markierungen"]) {
+        if (typeof gemerkt[name] === "boolean") KE.zustand.schalter[name] = gemerkt[name];
+      }
+    } catch (fehler) {
+      console.warn("Ansicht nicht lesbar", fehler);
+    }
+  }
 
   function groesse() {
     const canvas = document.getElementById("leinwand");
@@ -59,6 +83,7 @@
       return;
     }
     KE.ladeDaten(window.EDITOR_DATEN);
+    ladeAnsichtsschalter();
     KE.ladeBilder(window.EDITOR_DATEN, () => KE.zeichne());
     verbindeKnoepfe();
     KE.bindeLeinwand(document.getElementById("leinwand"));

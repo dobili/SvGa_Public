@@ -547,7 +547,8 @@
       "massstab_nach": "hoehe",
       "gemessen": 25,
       "gemessen_laenge": 19,
-      "fuss": 28
+      "fuss": 28,
+      "zustaende": ["sitzen"]
     },
     "krebs": {
       "quelle": "ki-roh/zuordnung_23-11.json#tier.krebs",

@@ -27,6 +27,8 @@ import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import { rivalinbogen, rivalinGewaehlt } from "../regeln/rivalform";
 import { ladeTagesablaeufe, nachUhr } from "./tagesaufstellung";
 import { figurenbildAdresse } from "./figurbogen";
+import type { Standbildindex } from "./figurzustand";
+import { figurstandbilderFuer, ladeStandbildindex } from "./standbildindex";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
 import { istWinter } from "./winter";
@@ -61,6 +63,8 @@ export interface Weltdaten {
   readonly heldfigur: string | null;
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder: Readonly<Record<string, string>>;
+  /** Weitere Standbilder je Figur der Karte (Karteneditor 1.9, figurzustand.ts). */
+  readonly figurstandbilder: Readonly<Record<string, Standbildindex>>;
   /** Figuren dieser Karte, die als Geist erscheinen (regeln/geist.ts), nach Objektname. */
   readonly geister: ReadonlySet<string>;
   /** Möbel und Schmuck der Karte. */
@@ -234,6 +238,7 @@ export async function ladeWelt(
       )
     : ohneVerborgene;
   const erinnerung = fund.ort.art === "erinnerung";
+  const standbildindex = await ladeStandbildindex();
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder, geisterbilder] =
     await Promise.all([
       paketdateiAlsAdresseOderNull(
@@ -260,6 +265,12 @@ export async function ladeWelt(
     figurbild,
     heldfigur,
     figurenbilder: { ...geisterbilder, ...figurenbilder },
+    figurstandbilder: figurstandbilderFuer(
+      figurennamen(karte),
+      (n) => figurZu(fund.ort, n)?.sprite,
+      standbildindex,
+      rivalinGewaehlt(variablen),
+    ),
     geister: geisterDerKarte(
       figurennamen(karte),
       (n) => figurZu(fund.ort, n)?.geist === true,

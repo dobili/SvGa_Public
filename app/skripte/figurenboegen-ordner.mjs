@@ -10,7 +10,7 @@
  */
 import { mkdir, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { baueFigurenbogen } from "./figurenbogen.mjs";
+import { baueFigurenbogenMitStandbildern } from "./figurenbogen.mjs";
 
 const [quelle, ziel] = process.argv.slice(2);
 if (!quelle || !ziel) {
@@ -19,12 +19,16 @@ if (!quelle || !ziel) {
 }
 await mkdir(ziel, { recursive: true });
 let anzahl = 0;
+// Weitere Standbilder (Karteneditor 1.9): Index wie im Paket (figuren32/standbilder.json).
+const standbilder = {};
 for (const eintrag of await readdir(quelle, { withFileTypes: true })) {
   if (!eintrag.isDirectory()) continue;
-  const bogen = await baueFigurenbogen(join(quelle, eintrag.name));
+  const bogen = await baueFigurenbogenMitStandbildern(join(quelle, eintrag.name));
   if (bogen) {
-    await writeFile(join(ziel, `${eintrag.name}.png`), bogen);
+    await writeFile(join(ziel, `${eintrag.name}.png`), bogen.bild);
+    if (bogen.standbilder) standbilder[eintrag.name] = bogen.standbilder;
     anzahl += 1;
   }
 }
+await writeFile(join(ziel, "standbilder.json"), JSON.stringify(standbilder, null, 2));
 console.log(`${anzahl} Bögen → ${ziel}`);

@@ -102,6 +102,7 @@ function starteSpiel(
     figurbild: w.figurbild,
     heldfigur: w.heldfigur,
     figurenbilder: w.figurenbilder,
+    figurstandbilder: w.figurstandbilder,
     geister: w.geister,
     moebel: w.moebel,
     hintergrund: w.hintergrund,

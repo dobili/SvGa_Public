@@ -210,6 +210,7 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
     moebel, bilder, befunde = bibliothek(privat, moebelordner)
     # Standbilder der Personen (Editor 1.7, Blickrichtung R008); braucht Pillow wie die Kacheln.
     from pipeline.abenteuer.editorpersonen import boegen_der_szene, sitzbilder, standbilder
+    from pipeline.abenteuer.editorzustaende import personenzustaende, tierarten_der_szene, tierzustaende
 
     liste = []
     for name, szene in szenen:
@@ -229,6 +230,8 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
                 "geschwister": paare.get(name, []),
                 "figurangaben": figurangaben(orte, ort),
                 "personen": boegen_der_szene(szene, orte),
+                # Tierart je Tier der Szene (Editor 1.9: Vorschau der Zustände, editorzustaende.py).
+                "tierarten": tierarten_der_szene(szene),
                 "szene": szene,
             }
         )
@@ -246,6 +249,9 @@ def baue_daten(privat: Path, szenenordner: Path, moebelordner: Path, nur: list[s
         # Sitzbilder (Editor 1.8): je Bogen mit Stuhlzustand aus PixelLab; sonst zeigt der Editor
         # das Standbild angehoben wie die App.
         "personensitzbilder": sitzbilder(privat, {b for e in liste for b in e["personen"].values()}),
+        # Zustände und weitere Standbilder (Editor 1.9): Vorschauen für die Auswahl im Bedienfeld.
+        "personenzustaende": personenzustaende(privat, {b for e in liste for b in e["personen"].values()}),
+        "tierzustaende": tierzustaende(privat, {a for e in liste for a in e["tierarten"].values()}),
         "kacheln": kacheln(privat, lade(INHALTE / "materialien.json")),
         "umgebung": list(UMGEBUNG),
         "befunde": befunde,

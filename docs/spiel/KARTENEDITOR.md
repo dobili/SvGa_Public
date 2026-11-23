@@ -262,6 +262,43 @@ etwa damit eine Sitzende richtig auf ihrem Stuhl sitzt und die Beine über die S
   unter dem Feld sitzt sie am Boden.
 - Der Versatz gilt im Spiel auch, wenn die Figur sitzt oder sich im Gespräch zum Helden dreht.
 
+## 6a. Figuren und Markierungen
+
+Seit Editor 1.9 (Wunsch vom 23.11.2026) sind das zwei Knöpfe oben:
+
+- **Figuren** (Taste P): Figuren, Statisten und Tiere als Bild, so wie im Spiel (Zustand und
+  Standbild aus Abschnitt 6b, Sitzende auf ihrem Stuhl). Ausschalten blendet alle aus.
+- **Markierungen** (Taste M): die farbigen Kreise mit Namen für Auslöser, Figuren und Tiere, dazu
+  die Ziele der Übergänge.
+- Beim ersten Öffnen: Figuren an, Markierungen aus. So sieht man die Karte sauber mit allen
+  Figuren und findet Fehler ohne farbige Überlagerung. Der Browser merkt sich, wie die beiden
+  Knöpfe zuletzt standen.
+- Anklicken lässt sich, was man sieht: Mit „Figuren“ allein die Figuren und Tiere, mit
+  „Markierungen“ auch die Auslöser.
+
+## 6b. Zustand einer Figur wählen
+
+Seit Editor 1.9 (Wunsch vom 23.11.2026): Für jede Figur, jeden Statisten und jedes Tier lässt sich
+an seiner Stelle wählen, wie es dort aussieht. So lassen sich kleine Ungereimtheiten selbst beheben,
+etwa eine Figur, die auf dem Stuhl im Schneidersitz sitzen soll, oder Abe mal ohne Teleskop.
+
+- Genau eine Figur, einen Statisten oder ein Tier anklicken. Im Eigenschaftenfeld steht
+  „Zustand an dieser Stelle“ mit kleinen Vorschaubildern.
+- Menschen: Stehen, Stuhl (Sitzen auf dem Stuhl), Boden (Schneidersitz), Liegen. Die Blickrichtung
+  bleibt die aus „Blick“ oder „sitzt“.
+- Darunter, wenn es sie gibt, die Standbilder aus PixelLab (etwa „Idle“ und „Without telescope“).
+  Das erste mit dem gewöhnlichen Bild ist der Standard.
+- Tiere: Stehen, Sitzen, Schlafen, Grasen, Schwimmen, aber nur, was die Art kann. Ein Tier, das
+  sitzt, schläft oder grast, bleibt im Spiel auf seinem Feld.
+- Die Wahl wirkt sofort im Bild, auch zusammen mit dem Stuhl unter der Figur und dem feinen
+  Versatz (Abschnitt 6). Jede Wahl lässt sich mit Strg+Z zurücknehmen.
+- „Zurück auf Standard“ entfernt die Wahl. Dann gilt wieder die Regel: Sitzt die Figur auf einem
+  Stuhl, sitzt sie, sonst steht sie; Tiere zeigen das Bild ihres Verhaltens.
+- Vorrang im Spiel: Schickt der Tagesablauf die Figur woanders hin oder stellt eine Szene sie mit
+  `#stelle` um, gilt das. Steht sie laut Tagesablauf auf ihrem Feld aus der Szene, gilt die Wahl.
+- Ohne Vorschaubild (Bogen noch nicht aus PixelLab) stehen nur die Namen auf den Knöpfen; die Wahl
+  gilt trotzdem.
+
 ## 7. Tastenkürzel
 
 Taste ? zeigt alle Kürzel.
@@ -277,7 +314,8 @@ Taste ? zeigt alle Kürzel.
 | Pfeile (+ Umschalt) | 1 Pixel (1 Kachel; bei Figuren 4 Pixel ihres feinen Versatzes)                      |
 | Strg+A              | alles auswählen                                                                     |
 | Strg+S              | Änderungen herunterladen                                                            |
-| G, K, M             | Raster, Kollision, Markierung                                                       |
+| G, K, M             | Raster, Kollision, Markierungen                                                     |
+| P                   | Figuren und Tiere zeigen oder ausblenden                                            |
 | U, L, V, B          | Umgebung, Sperren, Vorher, Pinsel                                                   |
 | S, O, X             | Kollisionspinsel: sperren, freigeben, Radierer                                      |
 | F                   | ganze Karte zeigen; im Kollisionspinsel und bei „Kollision bearbeiten“: Fein an/aus |
@@ -303,6 +341,12 @@ Taste ? zeigt alle Kürzel.
   schreibt die Szenen, legt Bericht und Vorschauen nach `buch/arbeit/editor/` und baut die Karten.
   Wurde eine Szene inzwischen anders geändert, bleibt sie unberührt (Konflikt im Bericht,
   `--erzwingen` überschreibt).
+- Zustand und Standbild (Editor 1.9): Felder `zustand` und `standbild` der Szene
+  (`pipeline/abenteuer/figurzustand.py`, Szenen-README), Vorschauen aus `editorzustaende.py`
+  (`personenzustaende`, `tierzustaende`), App `oberwelt/figurzustand.ts`. Weitere Standbilder
+  braucht der Paketbau als `figuren-neu/<name>/standbilder/<kennung>/rotations/` und
+  `standbilder.json` (Import); er legt sie ab Rahmen 144 in den Bogen und schreibt den Index
+  `figuren32/standbilder.json` (`app/skripte/figurstandbilder.mjs`).
 - Feiner Versatz einer Figur (Editor 1.8): `figuren[].versatz: [dx, dy]` in Kartenpixeln, ganze
   Zahlen, höchstens ±8 (`kartentiled.figurversatz`; der Rücklauf begrenzt und lässt (0, 0) weg, ein
   Dauertest prüft alle Szenen). Nur Darstellung: Die Karte führt ihn als Eigenschaft `versatz`

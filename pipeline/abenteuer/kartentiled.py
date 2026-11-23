@@ -6,6 +6,7 @@ eigene Maske), Eigenschaften der Karte. Die Konstanten der Rasterzeichen stehen 
 Module sie ohne Kreisimport teilen; ``kartenbau`` gibt sie weiter.
 """
 
+from pipeline.abenteuer.figurzustand import figureigenschaften
 from pipeline.abenteuer.kollisionfein import REIHENTRENNER, frei_im_raster
 from pipeline.abenteuer.kollisionfein import eigenschaften as feineigenschaften
 from pipeline.abenteuer.kollisionspinsel import eigenschaften as pinseleigenschaften
@@ -134,6 +135,9 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         if versatz := figurversatz(f):
             # Feiner Versatz des Bildes (Editor); App: oberwelt/figurversatz.ts.
             eig = (eig or []) + [{"name": "versatz", "type": "string", "value": f"{versatz[0]},{versatz[1]}"}]
+        if zustand := figureigenschaften(f):
+            # Zustand und Standbild an dieser Stelle (Editor 1.9); App: oberwelt/figurzustand.ts.
+            eig = (eig or []) + zustand
         objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K, eig=eig)
     # Statisten und Tiere (Belebung, Weltbeschreibung 4a) mit ihren Laufwegen.
     for b in szene.get("belebung", []):

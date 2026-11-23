@@ -21,7 +21,7 @@ import {
   platzhalterKacheln,
   platzhalterRechteck,
 } from "./platzhaltergrafik.mjs";
-import { baueFigurenbogen } from "./figurenbogen.mjs";
+import { baueFigurenbogenMitStandbildern } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
 import { alsGrossbild, HOCHGELADEN } from "./grossbilder.mjs";
@@ -90,13 +90,18 @@ async function kopiereOberflaeche() {
 async function baueFigurenboegen() {
   const quelle = join(PRIVAT, "figuren-neu");
   if (!existsSync(quelle)) return;
+  // Weitere Standbilder je Figur (Karteneditor 1.9): Anfang und Kennungen im Bogen.
+  const standbilder = {};
   for (const name of (await readdir(quelle, { withFileTypes: true }))
     .filter((e) => e.isDirectory())
     .map((e) => e.name)
     .sort()) {
-    const bogen = await baueFigurenbogen(join(quelle, name));
-    if (bogen) await schreibe(`figuren32/${name}.png`, bogen, "grafik");
+    const bogen = await baueFigurenbogenMitStandbildern(join(quelle, name));
+    if (!bogen) continue;
+    await schreibe(`figuren32/${name}.png`, bogen.bild, "grafik");
+    if (bogen.standbilder) standbilder[name] = bogen.standbilder;
   }
+  await schreibe("figuren32/standbilder.json", Buffer.from(JSON.stringify(standbilder)), "daten");
 }
 
 /** Letzter Akt des Abenteuers (Ton je Akt in akt2 … akt4). */

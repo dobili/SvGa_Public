@@ -34,13 +34,16 @@
  * - Rennen (Animation „Running“, `animations/Running/<richtung>/`, 21.11.2026): sechste Reihe ab
  *   Rahmen 120, sechs Bilder je Richtung wie die Gehreihe. Ohne sie rennt die App mit den
  *   Gehbildern bei höherer Bildrate (figurbilder.ts, rennname).
- * Abhängigkeiten: sharp, figurenzustaende.mjs.
+ * - Weitere Standbilder (Karteneditor 1.9, 23.11.2026): ab Rahmen 144 je vier Rahmen,
+ *   Anfang und Ordnung im Index figuren32/standbilder.json (figurstandbilder.mjs).
+ * Abhängigkeiten: sharp, figurenzustaende.mjs, figurstandbilder.mjs.
  */
 import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
 import { ZUSTAENDE, zustandsrahmen } from "./figurenzustaende.mjs";
+import { weitereStandbilder } from "./figurstandbilder.mjs";
 
 export const RAHMEN = 32;
 const SPALTEN = 24;
@@ -229,6 +232,14 @@ async function sitzbild(ordner, richtung, leinwand) {
   return erstes ? laufrahmen(await roh(join(pfad, erstes)), leinwand) : null;
 }
 
+/**
+ * Das Standbild einer Richtung als 32er-Rahmen aus `<ordner>/rotations/<richtung>.png`, oder null
+ * (auch für weitere Standbilder, figurstandbilder.mjs).
+ */
+export async function standbildAus(ordner, richtung, leinwand = RAHMEN) {
+  return standbild(ordner, richtung, leinwand);
+}
+
 /** Das Standbild einer Richtung als 32er-Rahmen, oder null. */
 async function standbild(ordner, richtung, leinwand) {
   const pfad = join(ordner, "rotations", `${richtung}.png`);
@@ -284,13 +295,18 @@ async function sammle(ordner) {
  * Zustand, sonst aus der Sitting-Animation (sammle). Lücken vor einer späteren Reihe füllt der
  * Ersatz aus dem Dateikopf; nach der letzten vorhandenen Reihe endet der Bogen.
  */
-async function zustandsreihen(ordner, richtungen) {
+async function zustandsreihen(ordner, richtungen, alleReihen = false) {
   const reihen = [];
   for (const zustand of ZUSTAENDE) {
     reihen.push(await zustandsrahmen(ordner, zustand, richtungen[SUED]?.still, gespiegelt));
   }
   if (!reihen[0] && richtungen.some((r) => r.sitz)) reihen[0] = richtungen.map((r) => r.sitz);
   if (richtungen.some((r) => r.renn)) reihen.push(richtungen.flatMap((r) => r.renn ?? []));
+  // Mit weiteren Standbildern (ab Rahmen 144) braucht der Bogen alle Reihen davor; ohne Rennen
+  // rennt die Figur dort mit den Gehbildern, wie die App ohne Rennreihe.
+  if (alleReihen && reihen.length < ZUSTAENDE.length + 1) {
+    reihen.push(richtungen.flatMap((r) => r.lauf ?? []));
+  }
   const letzte = reihen.findLastIndex((r) => r);
   const still = (i) => richtungen[i]?.still ?? null;
   const sued = still(SUED);
@@ -307,11 +323,24 @@ async function zustandsreihen(ordner, richtungen) {
  * Beispiel: figuren-neu/juno → 768 × 64 Pixel, Rahmen 32 × 32.
  */
 export async function baueFigurenbogen(ordner) {
+  return (await baueFigurenbogenMitStandbildern(ordner))?.bild ?? null;
+}
+
+/**
+ * Wie baueFigurenbogen, dazu die weiteren Standbilder (figurstandbilder.mjs) ab Rahmen 144 (Reihe 7;
+ * fehlende Reihen davor füllt der Ersatz, damit die App Sitz-, Liege- und Rennreihe an der Zahl
+ * der Rahmen erkennt): { bild, standbilder: { beginn, kennungen } | null }; null ohne Bild.
+ * Beispiel: abe mit einem weiteren Standbild → beginn 144, kennungen [„without-telescope“].
+ */
+export async function baueFigurenbogenMitStandbildern(ordner) {
   const richtungen = aufFusszeile(await sammle(ordner));
   if (richtungen.every((r) => !r.still)) return null;
   const leer = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
-  const zusatz = await zustandsreihen(ordner, richtungen);
-  const reihen = SITZREIHE + zusatz.length;
+  const weitere = await weitereStandbilder(ordner);
+  const zusatz = await zustandsreihen(ordner, richtungen, weitere.kennungen.length > 0);
+  const beginnReihe = SITZREIHE + zusatz.length;
+  const standbildrahmen = weitere.rahmen.flat();
+  const reihen = beginnReihe + Math.ceil(standbildrahmen.length / SPALTEN);
   const bogen = Buffer.alloc(SPALTEN * RAHMEN * reihen * RAHMEN * KANAELE);
   richtungen.forEach((r, i) => {
     lege(bogen, r.still ?? leer, i, 0);
@@ -323,9 +352,16 @@ export async function baueFigurenbogen(ordner) {
   zusatz.forEach((reihe, z) =>
     reihe.forEach((rahmen, i) => lege(bogen, rahmen ?? leer, i, SITZREIHE + z)),
   );
-  return sharp(bogen, {
+  standbildrahmen.forEach((rahmen, i) =>
+    lege(bogen, rahmen, i % SPALTEN, beginnReihe + Math.floor(i / SPALTEN)),
+  );
+  const bild = await sharp(bogen, {
     raw: { width: SPALTEN * RAHMEN, height: reihen * RAHMEN, channels: KANAELE },
   })
     .png()
     .toBuffer();
+  const standbilder = weitere.kennungen.length
+    ? { beginn: beginnReihe * SPALTEN, kennungen: weitere.kennungen }
+    : null;
+  return { bild, standbilder };
 }

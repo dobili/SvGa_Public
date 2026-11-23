@@ -140,6 +140,21 @@ vom 22.11.2026): feiner Versatz nur des Bildes in Kartenpixeln, ganze Zahlen von
 eine Sitzende auf ihrem Stuhl sitzt. Feld, Kollision und Ansprechen bleiben beim Feld; die App rückt
 nur das Bild (oberwelt/figurversatz.ts), die Karte trägt ihn als Eigenschaft `versatz` („dx,dy“).
 
+Zustand und Standbild an dieser Stelle (Karteneditor 1.9, Wunsch des Autors vom 23.11.2026,
+optional, leer heißt Regel wie bisher):
+- Figur: `"zustand"` = `stehen`, `sitzstuhl`, `sitzboden` oder `liegt` (statt der Regel aus
+  Sitzmöbel und `sitzt`; die Blickrichtung kommt weiter aus `sitzt` oder `blick`) und
+  `"standbild"` = Kennung eines weiteren Standbilds aus PixelLab (etwa `ohne-teleskop`; die Liste je
+  Figur steht im Paket in `figuren32/standbilder.json`, der Editor zeigt sie mit Vorschau).
+- Statist (`belebung`, typ `statist`): dieselben Angaben unter `eigenschaften`.
+- Tier (`belebung`, typ `tier`): `eigenschaften.zustand` = `stehen`, `sitzen`, `schlafen`, `grasen`
+  oder `schwimmen` (statt des Bildes zum Verhalten); ein Tier mit `sitzen`, `schlafen` oder
+  `grasen` bleibt auf seinem Feld.
+- Vorrang: Tagesablauf und `#stelle` gehen vor. Stellt der Tagesablauf die Figur auf ihr Feld aus
+  der Szene, gilt dort der Zustand der Szene.
+- Regeln und Prüfung: `pipeline/abenteuer/figurzustand.py` (Dauertest: nur bekannte Zustände und
+  gültige Kennungen); App: `oberwelt/figurzustand.ts`.
+
 Kollision nur an dieser Stelle (Karteneditor, `pipeline/abenteuer/objektkollision.py`, optional):
 `"kollision": false` (durchgehbar) oder `true` (sperrt) statt der Angabe im Katalog, `"maske"`
 (wie im Katalog; dreht und spiegelt mit der Form) und `"begehbar_grund"` (Pflicht, wenn ein nicht

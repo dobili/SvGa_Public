@@ -32,7 +32,7 @@
   /** Ist der Eintrag eine Person, deren Blick sich einstellen lässt (stehend, kein Tier)? */
   function stehendePerson(liste, e) {
     if (liste === "belebung" && e.typ !== "statist") return false;
-    return (liste === "figuren" || liste === "belebung") && !angaben(liste, e).sitzt;
+    return (liste === "figuren" || liste === "belebung") && !KE.sitztJetzt({ liste, eintrag: e });
   }
 
   /** Blickrichtung einer Person (gesetzt oder Vorgabe unten); Sitzende: ihre Sitzrichtung. */
@@ -82,14 +82,19 @@
   };
 
   /** Schlüssel einer Person im Paket (wie editorpersonen.personenschluessel). */
-  function schluessel(m) {
-    if (m.liste === "figuren") return `f:${m.eintrag.name}`;
-    return `b:${m.eintrag.name}|${m.eintrag.eigenschaften?.bild || ""}`;
-  }
+  KE.personenschluessel = function (liste, e) {
+    if (liste === "figuren") return `f:${e.name}`;
+    return `b:${e.name}|${e.eigenschaften?.bild || ""}`;
+  };
+  const schluessel = (m) => KE.personenschluessel(m.liste, m.eintrag);
 
-  /** Sitzt die Person (Figur `sitzt`, Statist `eigenschaften.sitzt`)? */
-  const sitzt = (m) =>
-    !!(m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt);
+  /** Sitzt die Person? Zustand der Stelle (Editor 1.9) vor `sitzt` (Figur oder Statist). */
+  KE.sitztJetzt = function (m) {
+    const zustand = KE.zustandVon?.(m.liste, m.eintrag).zustand;
+    if (zustand) return zustand === "sitzstuhl" || zustand === "sitzboden";
+    return !!(m.liste === "figuren" ? m.eintrag.sitzt : m.eintrag.eigenschaften?.sitzt);
+  };
+  const sitzt = (m) => KE.sitztJetzt(m);
 
   /**
    * Das Bild einer Markierung in ihrer Blickrichtung: sitzend das Sitzbild, wenn das Paket eins hat
@@ -99,7 +104,11 @@
     const z = KE.zustand;
     const bogen = z.nachDatei[z.datei]?.personen?.[schluessel(m)];
     const quelle = alsSitzbild ? z.daten.personensitzbilder : z.daten.personenbilder;
-    const url = quelle?.[bogen]?.[REIHENFOLGE.indexOf(KE.blickVon(m.liste, m.eintrag))];
+    return bildAus(quelle?.[bogen]?.[REIHENFOLGE.indexOf(KE.blickVon(m.liste, m.eintrag))]);
+  }
+
+  /** Ein Bild aus einer data-URL (zwischengespeichert), null solange es lädt oder ohne URL. */
+  function bildAus(url) {
     if (!url) return null;
     if (!bilder[url]) {
       bilder[url] = new Image();
@@ -115,16 +124,42 @@
    * Bild, dann zeichnet zeichnen.js den Kreis und hier kommt der Pfeil dazu (zeichnePfeil).
    */
   KE.zeichnePerson = function (ctx, m, k) {
-    if (m.liste !== "figuren" && !(m.liste === "belebung" && m.eintrag.typ === "statist"))
-      return false;
-    const sitzbild = sitzt(m) ? standbild(m, true) : null;
-    const b = sitzbild || standbild(m);
+    if (m.liste !== "figuren" && m.liste !== "belebung") return false;
+    // Zustand oder Standbild dieser Stelle (Editor 1.9, zustandswahl.js), auch für Tiere.
+    const wahl = KE.zustandsbild?.(m.liste, m.eintrag) || null;
+    if (m.eintrag.typ === "tier") return wahl ? zeichneBild(ctx, m, k, bildAus(wahl.url), 0, 0) : false;
+    if (m.liste === "belebung" && m.eintrag.typ !== "statist") return false;
+    const eigenes = wahl?.url ? bildAus(wahl.url) : null;
+    const sitzbild = eigenes ? null : sitzt(m) ? standbild(m, true) : null;
+    const b = eigenes || sitzbild || standbild(m);
     if (!b) return false;
     // Sitzende rücken wie in der App auf ihr Sitzmöbel (sitzen.js); der feine Versatz steckt in m.
-    const { dx, dy } = KE.sitzverschiebung(m, b, !!sitzbild);
+    const { dx, dy } = KE.sitzverschiebung(m, b, !!sitzbild || !!wahl?.sitzbild);
+    const gezeichnet = wahl?.kippen ? zeichneGekippt(ctx, m, k, b) : zeichneBild(ctx, m, k, b, dx, dy);
+    // Verdeckung durch das Möbel (Vordergrundmaske von mittel-4, sitzen.js): Sitzende hinter der
+    // Lehne, Liegende unter der Decke. Die Haken greifen, sobald es die Funktionen gibt.
+    const zustand = KE.zustandVon(m.liste, m.eintrag).zustand;
+    if (zustand === "liegt") KE.zeichneBettvordergrund?.(ctx, m);
+    else if (sitzt(m)) KE.zeichneSitzvordergrund?.(ctx, m, KE.blickVon(m.liste, m.eintrag));
+    return gezeichnet;
+  };
+
+  /** Bild unten mittig auf der Kachel, um dx, dy gerückt; false ohne Bild. */
+  function zeichneBild(ctx, m, k, b, dx, dy) {
+    if (!b) return false;
     ctx.drawImage(b, m.x + (k - b.naturalWidth) / 2 + dx, m.y + k - b.naturalHeight + dy);
     return true;
-  };
+  }
+
+  /** Liegen ohne Liegebild: das Standbild um eine Vierteldrehung gekippt (wie die App). */
+  function zeichneGekippt(ctx, m, k, b) {
+    ctx.save();
+    ctx.translate(m.x + k / 2, m.y + k / 2);
+    ctx.rotate(Math.PI / 2);
+    ctx.drawImage(b, -b.naturalWidth / 2, -b.naturalHeight / 2);
+    ctx.restore();
+    return true;
+  }
 
   /** Pfeil in Blickrichtung im Kreis einer Person ohne Bild. */
   KE.zeichnePfeil = function (ctx, m, k) {

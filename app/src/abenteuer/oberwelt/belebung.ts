@@ -11,6 +11,13 @@
  * Beispiel: Objekt „tauben“ (type tier, verhalten ausweichen) → Art „taube“, eine Schar aus drei
  * bis fünf Tauben, Bild „tiere/taube.png“ mit Rahmen 16 × 16.
  */
+import {
+  haltungAus,
+  liesMenschenzustand,
+  liesStandbild,
+  liesTierzustand,
+  type Menschenzustand,
+} from "./figurzustand";
 import { blickrichtung, sitzrichtung } from "./sitzrichtung";
 import type { Richtung } from "./szene";
 
@@ -19,7 +26,17 @@ export type Tageszeit = "morgen" | "tag" | "abend" | "nacht" | "immer";
 
 /** Verhalten eines Tiers (Dokument 16, Abschnitt 5.1). */
 export type Tierverhalten =
-  "sitzen" | "schlafen" | "fliegen" | "ausweichen" | "flitzen" | "folgen" | "rennen" | "schwimmen";
+  | "sitzen"
+  | "schlafen"
+  | "fliegen"
+  | "ausweichen"
+  | "flitzen"
+  | "folgen"
+  | "rennen"
+  | "schwimmen"
+  // Ruhezustände aus dem Editor (Karteneditor 1.9, figurzustand.ts): Standbild oder Grasen, still.
+  | "stehen"
+  | "grasen";
 
 /** Ein Feld der Karte in Kachelkoordinaten. */
 export interface Feld {
@@ -46,6 +63,10 @@ export interface Belebung {
   readonly sitzt: Richtung | null;
   /** Blickrichtung eines stehenden Statisten (Eigenschaft `blick`, R008); fehlt sie, unten. */
   readonly blick?: Richtung;
+  /** Zustand eines Statisten an dieser Stelle (Karteneditor 1.9, figurzustand.ts). */
+  readonly haltung?: Menschenzustand;
+  /** Weiteres Standbild eines Statisten (Kennung, figurzustand.ts). */
+  readonly standbild?: string;
 }
 
 const VERHALTEN: readonly Tierverhalten[] = [
@@ -57,6 +78,8 @@ const VERHALTEN: readonly Tierverhalten[] = [
   "folgen",
   "rennen",
   "schwimmen",
+  "stehen",
+  "grasen",
 ];
 const TAGESZEITEN: readonly Tageszeit[] = ["morgen", "tag", "abend", "nacht", "immer"];
 const KACHEL = 16;
@@ -88,16 +111,24 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
   if ((o.type !== "statist" && o.type !== "tier") || !o.name) return null;
   const feld = { x: Math.round((o.x ?? 0) / KACHEL), y: Math.round((o.y ?? 0) / KACHEL) };
   const wann = eigenschaft(o, "wann") as Tageszeit | undefined;
-  const verhalten = eigenschaft(o, "verhalten") as Tierverhalten | undefined;
-  const sitzt = o.type === "statist" ? sitzrichtung(eigenschaft(o, "sitzt")) : null;
-  const blick = o.type === "statist" && !sitzt ? blickrichtung(eigenschaft(o, "blick")) : null;
+  // Zustand an dieser Stelle (Editor 1.9): beim Tier statt des Verhaltens (ruhend bleibt es stehen).
+  const tierzustand = o.type === "tier" ? liesTierzustand(eigenschaft(o, "zustand")) : null;
+  const verhalten = (tierzustand ?? eigenschaft(o, "verhalten")) as Tierverhalten | undefined;
+  const haltung = o.type === "statist" ? liesMenschenzustand(eigenschaft(o, "zustand")) : null;
+  const standbild = o.type === "statist" ? liesStandbild(eigenschaft(o, "standbild")) : null;
+  const regel = o.type === "statist" ? sitzrichtung(eigenschaft(o, "sitzt")) : null;
+  const vorgabe = o.type === "statist" ? blickrichtung(eigenschaft(o, "blick")) : null;
+  const sitzt = o.type === "statist" ? haltungAus(haltung, regel, vorgabe).sitzt : null;
+  const blick = o.type === "statist" && !sitzt ? (vorgabe ?? regel) : null;
+  // Wer sitzt oder ruht, bleibt auf seinem Feld (figurensitz.ts).
+  const bleibt =
+    sitzt !== null || haltung === "liegt" || (tierzustand && tierzustand !== "schwimmen");
   return {
     name: o.name,
     typ: o.type,
     feld,
-    // Wer sitzt, bleibt auf seinem Feld (figurensitz.ts).
-    von: sitzt ? feld : (liesFeld(eigenschaft(o, "von")) ?? feld),
-    bis: sitzt ? feld : (liesFeld(eigenschaft(o, "bis")) ?? feld),
+    von: bleibt ? feld : (liesFeld(eigenschaft(o, "von")) ?? feld),
+    bis: bleibt ? feld : (liesFeld(eigenschaft(o, "bis")) ?? feld),
     wann: wann && TAGESZEITEN.includes(wann) ? wann : "immer",
     sagt: o.type === "statist" ? (eigenschaft(o, "sagt") ?? null) : null,
     zeigt: o.type === "statist" ? (eigenschaft(o, "zeigt") ?? null) : null,
@@ -106,6 +137,8 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
     verhalten: verhalten && VERHALTEN.includes(verhalten) ? verhalten : "sitzen",
     sitzt,
     ...(blick ? { blick } : {}),
+    ...(haltung ? { haltung } : {}),
+    ...(standbild ? { standbild } : {}),
   };
 }
 

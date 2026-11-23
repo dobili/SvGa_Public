@@ -71,6 +71,8 @@ const GANGARTEN: Readonly<Record<Tierverhalten | "statist", Gangart>> = {
   folgen: { tempo: 2, pause: [2, 5], scheu: 0, flucht: 0, fluchttempo: 0 },
   rennen: { tempo: 2.5, pause: [4, 8], scheu: 0, flucht: 0, fluchttempo: 0 },
   schwimmen: { tempo: 0.6, pause: [1, 3], scheu: 0, flucht: 0, fluchttempo: 0 },
+  stehen: STEHT,
+  grasen: STEHT,
 };
 
 /** Folgen: ab dieser Nähe nachlaufen, höchstens so weit, und erst wieder nach so viel Abstand. */

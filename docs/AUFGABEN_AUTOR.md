@@ -431,6 +431,12 @@ Profil › Einstellungen › Fehler melden.
       „Idle“ wählen (Instrument in der Hand): Er zeigt es im Editor und nach dem Rückweg im Spiel.
       Tiere haben dort ihre Ruhezustände (sitzen, schlafen, grasen). Tiere in einem Ruhezustand
       bleiben im Spiel auf ihrem Feld, Schwimmer bewegen sich weiter (umgesetzt, Widerspruch genügt).
+- [ ] N2701. **Tiere im Spiel (Nacht 23./24.11. geprüft):** Alle 61 Arten wurden an ihren Stellen im
+      Spiel fotografiert. Eidechse, Murmeltier, Bisons und ein Hund standen in Kakteen oder auf
+      gesperrten Feldern und sind versetzt. Sehr kleine Tiere (Maus, Spatz, Specht, Libelle, Krebs)
+      sind jetzt 8 statt 6 Pixel hoch, weil sie mit 6 kaum zu erkennen waren (umgesetzt, Widerspruch
+      genügt). Bitte ansehen: Gehen ohne Rutschen bei Kuh, Schaf, Hund, Waschbär, Saugroboter; Eule
+      und Kojote nachts. Fotos im privaten Repository unter tierprobe/fotos/index.html.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2674,6 +2680,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Chat vor. Die App lädt PixelLab-Tiere, sobald die ersten da sind.
       **Antwort:** „RO48 ok“ oder „RO48: nur Vorrang 1“.
 
+- [ ] RO50. **Größe des Hundes (23.11.2026)**
+      Der Hund ist heute 13 Pixel hoch und reicht einem Erwachsenen etwa bis zum Gürtel. Bis zur
+      Hüfte wären es 9 Pixel. Vergleichsfotos im privaten Repository unter tierprobe/fotos/index.html.
+      Empfehlung: 13 lassen, ein kleinerer Hund wirkt neben den großköpfigen Figuren wie eine Katze.
+      **Antwort:** „RO50 13“ oder „RO50 9“.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

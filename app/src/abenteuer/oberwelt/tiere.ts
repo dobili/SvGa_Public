@@ -29,6 +29,8 @@ export interface Tierbild {
   readonly zustaende: readonly string[];
   /** Mitte der Wasserfläche im Rahmen, wenn der Bogen Schwimmreihen hat (Reihen 3, 4); sonst null. */
   readonly schwimmMitte: number | null;
+  /** Weg der Füße in einem Gehzyklus in Spielpixeln (pixellab_messung.py, fussweg); sonst null. */
+  readonly schritt: number | null;
 }
 
 /** Die Bögen, die belebungsbilder.py baut: Art → Rahmengröße (aus tierarten.json, wie dort). */
@@ -42,9 +44,26 @@ export const TIERBILDER: Readonly<Record<string, Tierbild>> = Object.fromEntries
       fuss: "fuss" in a ? a.fuss : a.hoehe,
       zustaende: "zustaende" in a ? a.zustaende : [],
       schwimmMitte: "schwimmen" in a ? a.schwimmen.mitte : null,
+      schritt: "schritt" in a ? a.schritt : null,
     },
   ]),
 );
+
+/** Dauer eines Gehzyklus bei normaler Bildrate (6 Bilder bei 10 je Sekunde, figurbilder.ts). */
+const GEHZYKLUS_S = 0.6;
+/** Schneller als 2,5-mal so schnell (25 Bilder je Sekunde) laufen die Gehbilder nie, sonst wirkt das Tier hektisch. */
+const HOECHSTER_GANGFAKTOR = 2.5;
+
+/**
+ * Wie viel schneller die Gehbilder laufen, damit das Tier nicht rutscht: Ein Zyklus soll etwa so
+ * weit tragen, wie die Füße gehen (Hauptchat, 23.11.2026). Zwischen 1 und 2,5; ohne gemessenen
+ * Fußweg 1. Beispiel: Kuh, Fußweg 3,1 px, 0,8 Kacheln/s bei Kachel 16 → 7,7 px je Zyklus → 2,5.
+ */
+export function gangfaktor(bild: Tierbild, kachelnJeSekunde: number, kachel: number): number {
+  if (!bild.schritt || kachelnJeSekunde <= 0) return 1;
+  const weg = kachelnJeSekunde * kachel * GEHZYKLUS_S;
+  return Math.min(HOECHSTER_GANGFAKTOR, Math.max(1, weg / bild.schritt));
+}
 
 /** Spalten eines Tierbogens, Bilder je Zustand (vier Richtungen) und erste Bilder der Reihen. */
 const SPALTEN = 24;

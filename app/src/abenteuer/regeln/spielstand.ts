@@ -143,6 +143,9 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       : {},
     ...(typeof roh.verfolgteQuest === "string" ? { verfolgteQuest: roh.verfolgteQuest } : {}),
     ...(typeof roh.zuletztGespielt === "string" ? { zuletztGespielt: roh.zuletztGespielt } : {}),
+    // Spieluhr (22.11.2026): ging beim Laden verloren, die Uhr stand nach jedem Neuladen wieder am
+    // ersten Morgen (gefunden bei den Tierfotos, 23.11.2026).
+    ...(typeof roh.spieluhr === "number" ? { spieluhr: roh.spieluhr } : {}),
   };
 }
 

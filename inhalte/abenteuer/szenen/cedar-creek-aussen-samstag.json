@@ -945,10 +945,10 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [17, 19],
+      "feld": [17, 20],
       "eigenschaften": {
-        "von": "17,19",
-        "bis": "19,19",
+        "von": "17,20",
+        "bis": "19,20",
         "verhalten": "folgen"
       }
     },

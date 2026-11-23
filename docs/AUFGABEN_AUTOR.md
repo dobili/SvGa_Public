@@ -431,6 +431,29 @@ Profil › Einstellungen › Fehler melden.
       „Idle“ wählen (Instrument in der Hand): Er zeigt es im Editor und nach dem Rückweg im Spiel.
       Tiere haben dort ihre Ruhezustände (sitzen, schlafen, grasen). Tiere in einem Ruhezustand
       bleiben im Spiel auf ihrem Feld, Schwimmer bewegen sich weiter (umgesetzt, Widerspruch genügt).
+- [ ] N2701. **Tiere im Spiel (Nacht 23./24.11. geprüft):** Alle 61 Arten wurden an ihren Stellen im
+      Spiel fotografiert. Eidechse, Murmeltier, Bisons und ein Hund standen in Kakteen oder auf
+      gesperrten Feldern und sind versetzt. Sehr kleine Tiere (Maus, Spatz, Specht, Libelle, Krebs)
+      sind jetzt 8 statt 6 Pixel hoch, weil sie mit 6 kaum zu erkennen waren (umgesetzt, Widerspruch
+      genügt), ebenso Eichhörnchen, Frosch, Schmetterling und Drohne.
+      Gehende Tiere rutschten (ein Gehzyklus trug sie 2,5- bis 3-mal so weit wie ihre Füße); die
+      Gehbilder laufen jetzt passend zum Tempo schneller. Bitte ansehen: rutschen Kuh, Hund,
+      Waschbär noch, wirkt das schnellere Gehen hektisch? Eule (auf dem Wasserturm in Cedar Creek)
+      und Kojote nachts; der Eichelhäher sitzt morgens sichtbar im Baum (Vögel lagen vorher hinter
+      Bäumen). Behoben: Die Tageszeit ging beim Neuladen verloren (immer wieder erster Morgen);
+      bitte einmal am Abend neu laden, die Uhrzeit bleibt.
+- [ ] N2702. **Deine Kartenänderungen vom 20.11. sind drin:** 20 der 24 Karten waren seitdem
+      unverändert und sind ganz übernommen. In vier Karten (Maple Falls außen, Bibliothek, Landstraße
+      und Landstraße mit offenem Gatter) blieben die Änderungen von später erhalten (Bänke im Maß,
+      Zauntore entfernt, Lastwagen, Stuhl für Dex, Flohmarkttisch mit Fahrrad); veraltet waren nur
+      die alten Tore und Bänke in Maple Falls außen. Deine Notizen: Carla versperrt den Weg zum Club
+      nicht mehr, die Transparenz am Ausgang ist drin, das geschlossene Gatter an der Landstraße
+      sperrt jetzt bis zur Tafel, die Fußmatten liegen direkt hinter den Türen. Nachgebessert, damit
+      alles begehbar bleibt: Treppe im Dachboden, die drei grünen Häuser in Maple Falls (je eine
+      eigene Kollision nach den Wänden, das östliche 7 Pixel nach links, sonst über dem Kartenrand),
+      Hocker in der Drechslerei, Buch im Archiv, Kellerausgang im Archiv nur in der Mitte, Matte am
+      Umzugstag, Vogelscheuche an der Landstraße stand viermal übereinander. Bitte diese Stellen im
+      Spiel ansehen und den neuen Editor laden.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2674,6 +2697,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Chat vor. Die App lädt PixelLab-Tiere, sobald die ersten da sind.
       **Antwort:** „RO48 ok“ oder „RO48: nur Vorrang 1“.
 
+- [ ] RO50. **Größe des Hundes (23.11.2026)**
+      Der Hund ist heute 13 Pixel hoch und reicht einem Erwachsenen etwa bis zum Gürtel. Bis zur
+      Hüfte wären es 9 Pixel. Vergleichsfotos im privaten Repository unter tierprobe/fotos/index.html.
+      Empfehlung: 13 lassen, ein kleinerer Hund wirkt neben den großköpfigen Figuren wie eine Katze.
+      **Antwort:** „RO50 13“ oder „RO50 9“.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

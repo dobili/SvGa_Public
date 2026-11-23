@@ -9408,7 +9408,7 @@
      "name": "hund",
      "type": "tier",
      "x": 272,
-     "y": 304,
+     "y": 320,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9417,12 +9417,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "17,19"
+       "value": "17,20"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "19,19"
+       "value": "19,20"
       },
       {
        "name": "verhalten",

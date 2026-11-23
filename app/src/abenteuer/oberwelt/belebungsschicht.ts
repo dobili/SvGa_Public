@@ -13,7 +13,7 @@ import { legeHin, sitzlageMitZustand } from "./figurenaufstellung";
 import { haltungAus, standbildrahmen } from "./figurzustand";
 import { bogenname, geladenerStandbildindex } from "./standbildindex";
 import { setzeSitzend } from "./figurensitz";
-import type { Richtung } from "./szene";
+import { erzeugeSchwimmanimationen, schwimmname } from "./schwimmbilder";
 import { sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
 import { legeSitzausschnitt } from "./vordergrund";
 import Phaser from "phaser";
@@ -24,6 +24,7 @@ import {
   schritt,
   sperreAn,
   steht,
+  tempoJetzt,
   type Bewegung,
   type Sperrflaeche,
   type Umgebung,
@@ -37,10 +38,10 @@ import {
   standbild,
 } from "./figurbilder";
 import {
+  gangfaktor,
   mitSchwimmbildern,
   scharGroesse,
   scharversatz,
-  SCHWIMM_BEGINN,
   schwimmUrsprungY,
   schwimmversatz,
   standbasis,
@@ -49,6 +50,15 @@ import {
   TIERBILDER,
   type Tierbild,
 } from "./tiere";
+
+/**
+ * Messhilfe für die Tierfotos (tests/durchlauf/tierfoto.spec.ts): Setzt ein Test
+ * `window.__belebungStill = true`, bleiben Statisten und Tiere auf ihrem Startfeld stehen, damit
+ * scheue und fliegende Tiere auf dem Foto sind. Im Spiel nie gesetzt.
+ */
+function belebungStill(): boolean {
+  return (globalThis as { __belebungStill?: unknown }).__belebungStill === true;
+}
 
 /** Bilder der Belebung im Paket: Pfad („figuren/statist-07.png“, „tiere/taube.png“) → Adresse. */
 export type Belebungsbilder = Readonly<Record<string, string>>;
@@ -72,30 +82,6 @@ interface Darsteller {
   readonly tiefe?: number;
   /** Maße und Reihen des Tierbogens (tiere.ts); fehlt bei Statisten. */
   readonly tier?: Tierbild;
-}
-
-/** Bilder der Schwimmbewegung je Richtung und Bildrate (wie das Laufen, figurbilder.ts). */
-const SCHWIMMBILDER = 6;
-const SCHWIMM_BILDRATE = 8;
-const RICHTUNGEN: readonly Richtung[] = ["rechts", "oben", "links", "unten"];
-
-function schwimmname(bogen: string, richtung: Richtung): string {
-  return `${bogen}:schwimm:${richtung}`;
-}
-
-/** Schwimmanimationen eines Tierbogens mit Schwimmreihen (PixelLab, Reihe 4), einmal je Bogen. */
-function erzeugeSchwimmanimationen(szene: Phaser.Scene, bogen: string): void {
-  RICHTUNGEN.forEach((richtung, i) => {
-    const name = schwimmname(bogen, richtung);
-    if (szene.anims.exists(name)) return;
-    const start = SCHWIMM_BEGINN + i * SCHWIMMBILDER;
-    szene.anims.create({
-      key: name,
-      frames: szene.anims.generateFrameNumbers(bogen, { start, end: start + SCHWIMMBILDER - 1 }),
-      frameRate: SCHWIMM_BILDRATE,
-      repeat: -1,
-    });
-  });
 }
 
 /** Im Sichtbereich plus so viele Kacheln ringsum wird bewegt. */
@@ -332,7 +318,7 @@ export class Belebungsschicht {
         py < sicht.bottom + RAND * k;
       d.sprite.setVisible(nah);
       if (!nah) continue;
-      schritt(d.b, d.v, dt, umgebung);
+      if (!belebungStill()) schritt(d.b, d.v, dt, umgebung);
       this.zeige(d);
       this.schalteSperre(d, held);
     }
@@ -342,15 +328,21 @@ export class Belebungsschicht {
   private zeige(d: Darsteller): void {
     const k = this.kachel;
     d.sprite.setPosition(d.b.x * k + k / 2, d.b.y * k + k / 2);
-    const fliegt = d.v.verhalten === "fliegen" && !steht(d.b);
+    // Fliegende Tiere liegen auch im Sitzen über allem: Sie sitzen auf Turm, Dach oder Baum. Mit der
+    // Tiefe ihrer Fußlinie verdeckten Wasserturm und Baum Eule und Eichelhäher ganz (Fotos 23.11.2026).
+    const fliegt = d.v.verhalten === "fliegen";
     d.sprite.setDepth(fliegt ? FLUGTIEFE : (d.tiefe ?? d.sprite.y));
     if (!d.bogen) return;
     // Statisten mit Verhalten „rennen“ (Kinder zwischen den Fahnen) rennen auch im Bild; Tiere mit
     // eigenen Schwimmbildern schwimmen mit ihnen (tiere.ts).
     const schwimmt = d.tier !== undefined && mitSchwimmbildern(d.tier, d.v.verhalten);
     const gang = schwimmt ? schwimmname : d.v.verhalten === "rennen" ? rennname : laufname;
-    if (!steht(d.b)) d.sprite.anims.play(gang(d.bogen, d.b.richtung), true);
-    else {
+    if (!steht(d.b)) {
+      d.sprite.anims.play(gang(d.bogen, d.b.richtung), true);
+      // Gehbilder im Takt der Füße (tiere.ts, gangfaktor); Flieger und Schwimmer wie bisher.
+      const amBoden = d.tier && !schwimmt && d.v.verhalten !== "fliegen";
+      d.sprite.anims.timeScale = amBoden ? gangfaktor(d.tier, tempoJetzt(d.b, d.v), k) : 1;
+    } else {
       if (d.sprite.anims.isPlaying) d.sprite.anims.stop();
       // Wer sitzt, behält sein Sitzbild (Stuhl oder Boden, figurensitz.ts), sonst das Standbild;
       // ein Tier zeigt das Bild seines Verhaltens (Katze schläft, Kuh grast, Ente schwimmt).

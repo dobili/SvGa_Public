@@ -7885,7 +7885,7 @@
      "id": 27,
      "name": "eidechse",
      "type": "tier",
-     "x": 800,
+     "x": 832,
      "y": 560,
      "width": 16,
      "height": 16,
@@ -7895,12 +7895,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "50,35"
+       "value": "52,35"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "54,35"
+       "value": "56,35"
       },
       {
        "name": "verhalten",

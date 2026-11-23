@@ -55,11 +55,13 @@
     {
       "moebel": "sb5Fussmatte",
       "feld": [7, 8],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "sb5GlastuerSued",
-      "feld": [7, 9]
+      "feld": [7, 9],
+      "deckkraft": 75
     }
   ],
   "ausloeser": [

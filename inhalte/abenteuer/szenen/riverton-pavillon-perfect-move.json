@@ -364,7 +364,8 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [13, 20],
-      "versatz": [0, 2]
+      "versatz": [0, 8],
+      "ebene": -2
     },
     {
       "moebel": "sb5SchildPerfectMove",
@@ -442,7 +443,8 @@
     {
       "moebel": "rv18PavillonEingang",
       "feld": [12, 21],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "deckkraft": 75
     },
     {
       "moebel": "wzPflanze",
@@ -483,7 +485,13 @@
       "auf_moebel": true
     }
   ],
-  "figuren": [{"name": "tamsin", "feld": [9, 19], "blick": "rechts"}],
+  "figuren": [
+    {
+      "name": "tamsin",
+      "feld": [9, 19],
+      "blick": "rechts"
+    }
+  ],
   "belebung": [
     {
       "name": "techniker",

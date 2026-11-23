@@ -212,7 +212,8 @@
         10,
         13
       ],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "pd6KlavierRot",
@@ -257,8 +258,9 @@
       ],
       "versatz": [
         0,
-        2
-      ]
+        9
+      ],
+      "ebene": -2
     }
   ],
   "ausloeser": [

@@ -73,12 +73,14 @@
     {
       "moebel": "cc5Tuer",
       "feld": [3, 15],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [3, 14],
-      "versatz": [0, 16]
+      "versatz": [0, 19],
+      "ebene": -2
     },
     {
       "moebel": "cc6TischHell",

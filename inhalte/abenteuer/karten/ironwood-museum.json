@@ -1994,6 +1994,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -2002,7 +2007,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 112,
-     "y": 211,
+     "y": 217,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2011,7 +2016,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -2040,6 +2045,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -2048,7 +2058,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 128,
-     "y": 211,
+     "y": 217,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2057,7 +2067,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",

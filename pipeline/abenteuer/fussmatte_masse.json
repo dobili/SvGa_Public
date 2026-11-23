@@ -1,0 +1,308 @@
+{
+ "ca7Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "ca7Tuer": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "ca9Rollgitter": [
+  0,
+  0,
+  48,
+  16
+ ],
+ "caGlastuerDreifach": [
+  0,
+  0,
+  48,
+  16
+ ],
+ "caGlastuerDreifachOffen": [
+  0,
+  0,
+  48,
+  16
+ ],
+ "cc13GlastuerSuedDoppel": [
+  0,
+  0,
+  32,
+  16
+ ],
+ "cc4Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "cc4Kellertuer": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "cc4Portal": [
+  0,
+  0,
+  48,
+  48
+ ],
+ "cc5Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "cc5Tuer": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "cc5TuerModern": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "cc6TuerSued": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "cc8TuerSuedGlas": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "cc8TuerSuedHolz": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "ccDoppeltuerSuedHolz": [
+  0,
+  0,
+  32,
+  16
+ ],
+ "es7Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "es7Tuer": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "gt10Schwingtuer": [
+  1,
+  4,
+  15,
+  13
+ ],
+ "gt13SchwingtuerDoppel": [
+  2,
+  4,
+  30,
+  13
+ ],
+ "gt7Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "gt7TuerHolz": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "ld5TuerSued": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "mf12InnentuerGlas": [
+  0,
+  19,
+  16,
+  47
+ ],
+ "mf12InnentuerHolz": [
+  0,
+  19,
+  16,
+  47
+ ],
+ "mf2Haustuer": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "mf4Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "mf4TuerKlassisch": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "mf5Eingangstuer": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "mf5TuerSuedHolz": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "mf9TuerSuedGlas": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "mfDoppeltuerSuedHolz": [
+  0,
+  0,
+  32,
+  16
+ ],
+ "pd6Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "pd6Tuer": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "rv18PavillonEingang": [
+  0,
+  0,
+  48,
+  16
+ ],
+ "rv5Bahnsteigtuer": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "rv5TuerSuedGlas": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "rv5TuerSuedHell": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "rv5TuerSuedHolz": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "rv8Doppeltuer": [
+  3,
+  5,
+  30,
+  30
+ ],
+ "rv8GlastuerNord": [
+  0,
+  0,
+  32,
+  32
+ ],
+ "rv8GlastuerSued": [
+  0,
+  0,
+  32,
+  16
+ ],
+ "sb5Aufzug": [
+  0,
+  1,
+  32,
+  32
+ ],
+ "sb5Fussmatte": [
+  1,
+  2,
+  15,
+  14
+ ],
+ "sb5GlastuerSued": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "sb5Tuer": [
+  1,
+  11,
+  15,
+  32
+ ],
+ "sb5TuerSued": [
+  1,
+  1,
+  15,
+  16
+ ],
+ "sb8GlastuerSued": [
+  0,
+  0,
+  16,
+  16
+ ],
+ "st5Stollenmund": [
+  0,
+  0,
+  48,
+  48
+ ],
+ "sx7Sturmkeller": [
+  0,
+  3,
+  32,
+  32
+ ],
+ "wzTuer": [
+  1,
+  11,
+  15,
+  32
+ ]
+}

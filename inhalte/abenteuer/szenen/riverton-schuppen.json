@@ -59,12 +59,14 @@
     {
       "moebel": "rv5TuerSuedHolz",
       "feld": [5, 8],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "gt7Fussmatte",
       "feld": [5, 7],
-      "versatz": [0, 2]
+      "versatz": [0, 9],
+      "ebene": -2
     }
   ],
   "ausloeser": [

@@ -61,3 +61,25 @@ nicht geklärt, eventuell eine andere Kartenfassung im Akt-4-Stand). Im Spiel zu
 - Hund: Vergleich 13 px (jetzt) und 9 px (bis zur Hüfte eines Erwachsenen). Nicht geändert.
 - Gehen ohne Rutschen und in der richtigen Richtung: im Spiel ansehen (Kuh, Schaf, Hund, Waschbär,
   Saugroboter).
+
+## Nachtrag (Hauptchat, 23.11.2026 spät, nach Regel 9 umgesetzt)
+
+- **Kleine Tiere auf 8 Spielpixel:** Mindestzielhöhe im Tierplan 8 statt 5 (`tierplan.py`,
+  MINDESTHOEHE). Betrifft alle Arten, die vorher bei 6 lagen: Maus, Spatz, Specht, Libelle, Krebs,
+  Eichhörnchen, Eidechse, Ratte, Fledermaus, Schmetterling, Frosch, Schildkröte, Hecht, Eisvogel,
+  Strandläufer, Drohne (Saugroboter hat seinen festen Maßstab). Hund bleibt (Autor entscheidet).
+- **Eichelhäher Cedar Creek:** Er hat `wann: morgen` und erscheint nur morgens; die Fotos waren am
+  Tag. Morgens saß er hinter einem Nadelbaum: Fliegende Tiere bekamen im Sitzen die Tiefe ihrer
+  Fußlinie, so verdeckten Baum und Wasserturm Eichelhäher und Eule ganz. Jetzt liegen fliegende
+  Tiere immer über allem (sie sitzen auf Baum, Turm, Dach).
+- **Spieluhr ging beim Laden verloren** (gefunden beim Stellen der Uhr für die Nachtfotos):
+  `abenteuerstandAus` übernahm `spieluhr` nicht, nach jedem Neuladen stand die Uhr wieder am ersten
+  Morgen. Behoben, Test in `spieluhr.test.ts`.
+- **Eule und Kojote bei Nacht** (23 Uhr, `TIERFOTO_STUNDE`): beide zu sehen, die Eule auf dem
+  Wasserturm.
+- **Rutschen beim Gehen:** Gemessen am Bogen: Weg der Füße je Gehzyklus (6 Bilder) gegen den Weg
+  des Tiers (Tempo × 16 px × 0,6 s). Vorher liefen Kuh, Fuchs, Saugroboter 2,5-mal, Hund und
+  Waschbär gut 3-mal so weit, wie die Füße gingen. Jetzt läuft die Gehanimation je nach Tempo bis
+  2,5-mal schneller (`tiere.ts`, gangfaktor; Fußweg je Art als `schritt` in tierarten.json).
+  Verhältnis danach: Kuh, Schaf, Pferd, Fuchs 1,0; Saugroboter 1,1; Hund 1,24; Waschbär 1,28.
+  Flieger und Schwimmer bleiben bei ihrer Bildrate.

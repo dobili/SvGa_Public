@@ -20,6 +20,8 @@ import { standAus } from "./simstand";
 import { ladeSpieldaten } from "./welt";
 
 const STAND = process.env.PROBE_STAND ?? "";
+const STUNDE = process.env.TIERFOTO_STUNDE ? Number(process.env.TIERFOTO_STUNDE) : null;
+const MINUTEN_JE_STUNDE = 60;
 const ORDNER = process.env.TIERFOTO_ORDNER ?? "/tmp/tierfotos";
 const ADRESSE = `http://localhost:${process.env.PLAYWRIGHT_PORT ?? "4183"}`;
 /** So lange laufen Tiere und Animationen, bevor das Foto entsteht (ms). */
@@ -99,6 +101,8 @@ test("Tierfotos an festen Stellen", async () => {
     await starteMitStand(seite, {
       ...stand,
       position: { ...stand.position, x: s.x, y: s.y - UEBER_DEM_TIER, richtung: "unten" },
+      // TIERFOTO_STUNDE: Uhr stellen (Spielminuten), für Tiere mit „wann“ (Eule nachts).
+      ...(STUNDE === null ? {} : { spieluhr: STUNDE * MINUTEN_JE_STUNDE }),
     });
     await schliesseHinweise(seite);
     // Eine Serie: Scheue und fliegende Tiere (Eidechse, Geier) sind nicht in jedem Bild.

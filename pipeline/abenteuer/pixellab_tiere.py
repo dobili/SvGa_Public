@@ -34,6 +34,13 @@ from pathlib import Path
 from PIL import Image
 
 from pipeline.abenteuer import pixellab_wasser as wasser
+from pipeline.abenteuer.pixellab_messung import (
+    HOECHSTENS_VERGROESSERN,
+    OHNE_SCHRITT,
+    _kasten,
+    fussweg,
+    massstab,
+)
 from pipeline.abenteuer.pixellab_tierwahl import WAHL, Wahl
 
 ZUORDNUNG = "ki-roh/zuordnung_23-11.json"
@@ -259,19 +266,6 @@ def bogen(t: Teile, leinwand: int) -> Image.Image:
     return ziel
 
 
-def _kasten(bilder: list[Image.Image]) -> tuple[int, int, int, int]:
-    """Gemeinsamer Kasten (links, oben, rechts, unten) der deckenden Pixel mehrerer Bilder."""
-    kaesten = [
-        k for b in bilder if (k := b.getchannel("A").point(lambda a: 255 if a >= DECKEND_AB else 0).getbbox())
-    ]
-    return (
-        min(k[0] for k in kaesten),
-        min(k[1] for k in kaesten),
-        max(k[2] for k in kaesten),
-        max(k[3] for k in kaesten),
-    )
-
-
 def gemessene_groesse(e: Export, w: Wahl, t: Teile) -> tuple[int, int]:
     """Höhe und Länge des gezeichneten Tiers in den Standbildern von der Seite (rechts, links), px.
 
@@ -284,31 +278,6 @@ def gemessene_groesse(e: Export, w: Wahl, t: Teile) -> tuple[int, int]:
     stand = standbilder(e, "idle") if w.stand.startswith("swimming") else t.stand
     kaesten = [_kasten([stand[r][0]]) for r in ("east", "west")]
     return max(k[3] - k[1] for k in kaesten), max(k[2] - k[0] for k in kaesten)
-
-
-# Ab diesem Verhältnis Länge zu Höhe (echte Maße, tierplan_daten) bestimmt auch die Länge den Maßstab.
-LANG_AB = 1.5
-# Höchste Vergrößerung; darüber ist das Bild zu klein erzeugt und wird gemeldet (Hauptchat).
-HOECHSTENS_VERGROESSERN = 1.1
-
-
-def massstab(art: str, hoehe: int, laenge: int) -> tuple[float, str]:
-    """Faktor, mit dem das Tier im Spiel die Zielhöhe des Tierplans hat, und wonach er sich richtet.
-
-    Lange Tiere (Alligator, Delfin, Dackel) dürfen auch die Ziellänge nicht überschreiten: dann
-    gilt der kleinere der beiden Faktoren. Ein Faktor für den ganzen Bogen (Bewegung und Zustände
-    springen nicht). Beispiel: Ente, Höhe 21, Ziel 11 → 0.52 nach der Höhe.
-    """
-    from pipeline.abenteuer import tierplan
-    from pipeline.abenteuer.tierplan_daten import ARTEN
-
-    a = ARTEN[art]
-    nach_hoehe = tierplan.zielhoehe(a) / hoehe
-    if a.laenge >= LANG_AB * a.hoehe:
-        nach_laenge = tierplan.ziellaenge(a) / laenge
-        if nach_laenge < nach_hoehe:
-            return round(nach_laenge, 2), "laenge"
-    return round(nach_hoehe, 2), "hoehe"
 
 
 def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
@@ -329,6 +298,8 @@ def eintrag(art: str, e: Export, leinwand: int, w: Wahl, t: Teile) -> dict:
         "gemessen_laenge": laenge,
         "fuss": rand + _kasten([b[0] for b in t.stand.values()])[3],
     }
+    if not w.bewegung.startswith(OHNE_SCHRITT) and (weg := fussweg(t.bewegung["east"])) > 0:
+        daten["schritt"] = round(weg * faktor, 1)
     if ruhe := ruhezustaende(e, w):
         daten["zustaende"] = list(ruhe)
     if t.schwimmen:

@@ -26,12 +26,14 @@
     {
       "moebel": "cc8TuerSuedHolz",
       "feld": [8, 12],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc4Fussmatte",
       "feld": [8, 11],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "sc7Kamin",

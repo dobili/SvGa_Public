@@ -8,7 +8,8 @@ Stellen und prüft, ob es dort einen Vordergrund gibt:
   aus den Tagesabläufen (`tut: liegt`) und aus Ink (`#stelle:wer>x,y>liegt`).
 - Je Stelle das Möbel unter dem Feld (Szene, Katalog moebel/*.json) und seine Art.
 - Befund, wenn eine Sitzende auf einem Möbel sitzt, das keine Sitzart ist (kein Vordergrund), oder
-  wenn eine Liegende kein Bett mit bekannter Kopfseite hat (KopfRechts/KopfLinks im Namen).
+  wenn eine Liegende kein Bett mit bekannter Kopfseite hat (KopfRechts/KopfLinks im Namen oder
+  Katalogangabe `ende`, die Seite des Kopfendes eines waagrechten Betts).
   Sitzen am Boden (kein Möbel) braucht keinen Vordergrund.
 Ausnahmen mit Grund stehen in GEPRUEFT. Dauertest (pipeline/tests): „0 Befunde“.
 
@@ -45,10 +46,6 @@ STELLE = re.compile(r"#stelle:([^>\s#]+)>(\d+),(\d+)>liegt")
 GEPRUEFT: dict[tuple[str, tuple[int, int]], str] = {
     ("crossroads-aussen", (34, 27)): "Mira sitzt auf dem Bordstein: niedrig wie der Boden, nichts verdeckt.",
     ("crossroads-aussen-gatter-offen", (34, 27)): "wie crossroads-aussen: Bordstein.",
-    ("ironwood-mamas-zimmer", (8, 4)): (
-        "Bett ohne Kopfseite im Namen: Liegebild und Decke nehmen die Vorgabe Kopf rechts "
-        "(fuehrungsschicht.ts, figurenaufstellung.ts); im Bild prüfen, sonst Katalog vordergrund.kopf."
-    ),
 }
 
 
@@ -216,7 +213,7 @@ def pruefe(stelle: Stelle, moebel: dict[str, dict]) -> tuple[str, str | None]:
     if unter is None:
         return "kein Möbel", "liegt ohne Bett: keine Decke"
     name, angabe = unter
-    if "bett" in name.lower() and (KOPFSEITE.search(name) or "vordergrund" in angabe):
+    if "bett" in name.lower() and (KOPFSEITE.search(name) or angabe.get("ende") or "vordergrund" in angabe):
         return f"{name}, Decke", None
     return name, f"liegt auf {name}: kein Bett mit Kopfseite im Namen, Decke unbekannt"
 

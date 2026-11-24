@@ -242,11 +242,14 @@
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [7, 14]
+      "feld": [7, 14],
+      "versatz": [0, 3],
+      "ebene": -2
     },
     {
       "moebel": "mf5Eingangstuer",
-      "feld": [7, 14]
+      "feld": [7, 14],
+      "deckkraft": 75
     },
     {
       "moebel": "mf5Geschirr",

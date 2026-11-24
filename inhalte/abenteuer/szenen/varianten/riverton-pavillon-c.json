@@ -176,12 +176,14 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [10, 12],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "mf5TuerSuedHolz",
       "feld": [10, 13],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     }
   ],
   "ausloeser": [

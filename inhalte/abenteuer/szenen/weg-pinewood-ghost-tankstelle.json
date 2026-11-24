@@ -33,7 +33,8 @@
     {
       "moebel": "cc6TuerSued",
       "feld": [8, 9],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cp8Greifarm",
@@ -88,7 +89,8 @@
     {
       "moebel": "gt7Fussmatte",
       "feld": [8, 8],
-      "versatz": [0, 2]
+      "versatz": [0, 9],
+      "ebene": -2
     }
   ],
   "ausloeser": [

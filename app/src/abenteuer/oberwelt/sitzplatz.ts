@@ -12,7 +12,10 @@
  * und liegt in der Tiefe knapp darüber, auch von hinten gesehen (Schüler der Akademie in Silicon
  * Bay vor ihren Stühlen mit hoher Lehne: dahinter sah man nur noch die Haare).
  * Lange Bänke und Sofas (mehr als eine Kachel breit oder zwei hoch) tragen mehrere Leute: Dort
- * übernimmt die Figur nur den Feinschub des Möbels gegen das Raster.
+ * übernimmt die Figur nur den Feinschub des Möbels gegen das Raster. Stühle, Sessel und Hocker
+ * tragen genau eine Person und setzen sie auf ihre sichtbare Mitte, auch wenn ihr Bild breiter als
+ * eine Kachel ist (Wards Ohrensessel, 32 px: er saß davor am linken Rand; Verdeckungsfotos,
+ * 23.11.2026).
  * Ohne Sitzmöbel sitzt man am Boden (Lily auf dem Bordstein vor ihrem Haus, maple-falls-aussen.ink):
  * BODENSITZ, keine Verschiebung und kein Hub, denn der Hub hebt eine Figur nur auf die Sitzfläche
  * eines Möbels; die Figur bleibt mit den Füßen auf ihrer Kachel.
@@ -22,6 +25,8 @@
  * Abhängigkeiten: moebel.ts (Typen), zeichentiefe.ts.
  */
 import type { Moebel } from "./moebel";
+import { blickrichtung } from "./sitzrichtung";
+import type { Richtung } from "./szene";
 import { moebelschluessel } from "./vordergrund";
 import { moebeltiefe } from "./zeichentiefe";
 
@@ -48,6 +53,10 @@ export interface Umriss {
 export interface Sitzmoebel extends Umriss {
   readonly name: string;
   readonly tiefe: number;
+  /** Platz für genau eine Person (Stuhl, Sessel, Hocker): auf die sichtbare Mitte, siehe sitzlage. */
+  readonly einzeln?: boolean;
+  /** Blickrichtung des Möbels aus dem Katalog (`blick`), für Sitzende aus dem Tagesablauf. */
+  readonly blick?: Richtung;
   /** Schlüssel des Möbelbilds (vordergrund.ts, moebelschluessel), für den Vordergrund. */
   readonly schluessel?: string;
   /** Was das Bild wirklich zeigt (ohne durchsichtigen Rand); ohne Angabe das ganze Rechteck. */
@@ -104,8 +113,11 @@ export function sitzmoebelAus(
     .filter((m) => istSitzmoebel(m.name, m.angabe.art))
     .map((m) => {
       const sichtbar = sichtbarVon(m);
+      const blick = blickrichtung(m.angabe.blick);
       return {
         name: m.name,
+        einzeln: EINZELSITZE.includes(artVon(m.name, m.angabe.art) ?? ""),
+        ...(blick ? { blick } : {}),
         schluessel: moebelschluessel(m.name, m.x, m.y),
         x: m.x,
         y: m.y,
@@ -115,6 +127,27 @@ export function sitzmoebelAus(
         ...(sichtbar ? { sichtbar } : {}),
       };
     });
+}
+
+/** Arten für genau eine Person (wie EINZELSITZE in pipeline/abenteuer/sitzplatz.py). */
+const EINZELSITZE: readonly string[] = ["stuhl", "sessel", "hocker"];
+
+/** Art eines Sitzmöbels: aus dem Katalog, sonst die erste Sitzart im Namen. */
+function artVon(name: string, art: string | undefined): string | undefined {
+  return art ?? SITZARTEN.find((wort) => name.toLowerCase().includes(wort));
+}
+
+/**
+ * Blickrichtung des Sitzmöbels unter einem Feld (Katalog `blick`), sonst null. Für Sitzende aus
+ * dem Tagesablauf, der nur „sitzt“ kennt. Beispiel: Ward auf (10, 6) im Ohrensessel BlickLinks →
+ * "links".
+ */
+export function blickDesSitzes(
+  sitze: readonly Sitzmoebel[],
+  feld: { readonly x: number; readonly y: number },
+  kachel: number,
+): Richtung | null {
+  return findeSitz(sitze, feld, kachel)?.blick ?? null;
 }
 
 /**
@@ -198,8 +231,8 @@ export function sitzlage(
   const s = sitz.sichtbar ?? sitz;
   const mitte = feld.x * kachel + kachel / 2;
   const fuss = (feld.y + 1) * kachel;
-  const waagerecht =
-    sitz.breite <= kachel ? s.x + s.breite / 2 - mitte : rasterrest(sitz.x, kachel);
+  const einzeln = sitz.breite <= kachel || sitz.einzeln === true;
+  const waagerecht = einzeln ? s.x + s.breite / 2 - mitte : rasterrest(sitz.x, kachel);
   const senkrecht = sitz.hoehe <= 2 * kachel ? s.y + s.hoehe - fuss : rasterrest(sitz.y, kachel);
   const tiefe = sitz.tiefe + SITZ_TIEFENABSTAND;
   const lage = { dx: begrenzt(waagerecht, kachel), dy: begrenzt(senkrecht, kachel), tiefe };

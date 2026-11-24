@@ -30,12 +30,14 @@
     {
       "moebel": "cc8TuerSuedHolz",
       "feld": [6, 9],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc4Fussmatte",
       "feld": [6, 8],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "sc7Theke",

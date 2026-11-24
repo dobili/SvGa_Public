@@ -20,6 +20,9 @@ import math
 K = 16
 # Arten im Möbelkatalog, auf denen man sitzt (wie SITZMOEBEL in kartenregeln.py).
 SITZARTEN = ("stuhl", "bank", "sessel", "sofa", "hocker", "couch")
+# Arten für genau eine Person: Die Sitzende rückt auf die sichtbare Mitte, auch wenn das Bild
+# breiter als eine Kachel ist (Ohrensessel 32 px; wie EINZELSITZE in sitzplatz.ts).
+EINZELSITZE = ("stuhl", "sessel", "hocker")
 # So weit liegt eine Sitzende in der Tiefe über (oder hinter) ihrem Möbel.
 SITZ_TIEFENABSTAND = 0.5
 # Ab dieser Deckkraft (0–255) zählt ein Pixel als sichtbar (wie SICHTBAR_AB in sitzumriss.ts).
@@ -34,6 +37,11 @@ def ist_sitzmoebel(name: str, art: str | None) -> bool:
     if art is not None:
         return art in SITZARTEN
     return any(w in name.lower() for w in SITZARTEN)
+
+
+def _art(name: str, art: str | None) -> str | None:
+    """Art im Katalog, ohne Art die erste Sitzart im Namen (wie ist_sitzmoebel)."""
+    return art or next((w for w in SITZARTEN if w in name.lower()), None)
 
 
 def sichtbarer_umriss(bild) -> tuple[int, int, int, int] | None:
@@ -64,6 +72,7 @@ def sitzmoebel(gesetzt: list[dict], katalog: dict, bilder: list) -> list[dict]:
                 "breite": bild.width,
                 "hoehe": bild.height,
                 "tiefe": stueck["tiefe"],
+                "einzeln": _art(stueck["name"], angabe.get("art")) in EINZELSITZE,
                 "sichtbar": None if innen is None else (x + innen[0], y + innen[1], innen[2], innen[3]),
             }
         )
@@ -96,7 +105,8 @@ def sitzlage(sitz: dict, feld: tuple[int, int]) -> tuple[int, int, float]:
     """
     sx, sy, sb, sh = sitz["sichtbar"] or (sitz["x"], sitz["y"], sitz["breite"], sitz["hoehe"])
     mitte, fuss = feld[0] * K + K / 2, (feld[1] + 1) * K
-    waagerecht = sx + sb / 2 - mitte if sitz["breite"] <= K else _rasterrest(sitz["x"])
+    einzeln = sitz["breite"] <= K or sitz.get("einzeln", False)
+    waagerecht = sx + sb / 2 - mitte if einzeln else _rasterrest(sitz["x"])
     senkrecht = sy + sh - fuss if sitz["hoehe"] <= 2 * K else _rasterrest(sitz["y"])
     return _begrenzt(waagerecht), _begrenzt(senkrecht), sitz["tiefe"] + SITZ_TIEFENABSTAND
 

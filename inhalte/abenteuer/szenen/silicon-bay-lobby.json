@@ -104,27 +104,32 @@
     {
       "moebel": "sb5Fussmatte",
       "feld": [12, 12],
-      "versatz": [0, 2]
+      "versatz": [0, 8],
+      "ebene": -2
     },
     {
       "moebel": "rv8GlastuerSued",
       "feld": [11, 13],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "sb8GlastuerSued",
       "feld": [13, 13],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "sb5Fussmatte",
       "feld": [11, 12],
-      "versatz": [0, 2]
+      "versatz": [0, 8],
+      "ebene": -2
     },
     {
       "moebel": "sb5Fussmatte",
       "feld": [13, 12],
-      "versatz": [0, 2]
+      "versatz": [0, 8],
+      "ebene": -2
     }
   ],
   "ausloeser": [

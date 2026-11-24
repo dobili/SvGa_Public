@@ -142,8 +142,12 @@ function figurobjekt(name: string, block: Ablaufblock): Kartenobjekt {
     return { name, type: "figur", x: sx * KACHEL, y: sy * KACHEL, properties: [] };
   }
   const [x = 0, y = 0] = block.feld ?? [];
+  // Blick wie das Sitzmöbel (Katalog `blick`), sonst unten (oberwelt/figurenaufstellung.ts).
   const eigenschaften = block.tut?.startsWith("sitzt")
-    ? [{ name: "sitzt", value: "unten" }]
+    ? [
+        { name: "sitzt", value: "unten" },
+        { name: "sitzrichtung", value: "moebel" },
+      ]
     : block.tut === "liegt"
       ? [{ name: "liegt", value: true }]
       : [];

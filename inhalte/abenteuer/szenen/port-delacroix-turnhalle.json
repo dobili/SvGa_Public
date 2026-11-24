@@ -298,17 +298,20 @@
     {
       "moebel": "pd6Fussmatte",
       "feld": [12, 14],
-      "versatz": [0, 3]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "pd6Fussmatte",
       "feld": [13, 14],
-      "versatz": [0, 3]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "pd6Fussmatte",
       "feld": [14, 14],
-      "versatz": [0, 3]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "pd9Lehrertisch",
@@ -317,15 +320,18 @@
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [12, 15]
+      "feld": [12, 15],
+      "deckkraft": 75
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [13, 15]
+      "feld": [13, 15],
+      "deckkraft": 75
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [14, 15]
+      "feld": [14, 15],
+      "deckkraft": 75
     }
   ],
   "ausloeser": [

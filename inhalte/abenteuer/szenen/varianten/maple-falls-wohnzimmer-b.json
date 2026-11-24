@@ -50,12 +50,14 @@
     {
       "moebel": "wzTuer",
       "feld": [5, 11],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "mf4Fussmatte",
       "feld": [5, 10],
-      "versatz": [0, 18]
+      "versatz": [0, 19],
+      "ebene": -2
     },
     {
       "moebel": "mf4KartonBreit",

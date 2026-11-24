@@ -1063,6 +1063,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -1071,7 +1076,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 64,
-     "y": 163,
+     "y": 169,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1080,7 +1085,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",

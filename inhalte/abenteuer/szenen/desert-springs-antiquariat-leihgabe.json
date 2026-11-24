@@ -25,12 +25,14 @@
     {
       "moebel": "cc6TuerSued",
       "feld": [10, 13],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [10, 11],
-      "versatz": [0, 19]
+      "versatz": [0, 25],
+      "ebene": -2
     },
     {
       "moebel": "cc4RegalA",
@@ -147,12 +149,14 @@
     {
       "moebel": "cc6TuerSued",
       "feld": [11, 13],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc5Fussmatte",
       "feld": [11, 11],
-      "versatz": [0, 19]
+      "versatz": [0, 25],
+      "ebene": -2
     }
   ],
   "ausloeser": [

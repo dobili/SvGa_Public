@@ -175,12 +175,14 @@
     {
       "moebel": "mf4TuerKlassisch",
       "feld": [9, 11],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "mf4Fussmatte",
       "feld": [9, 10],
-      "versatz": [0, 18]
+      "versatz": [0, 19],
+      "ebene": -2
     }
   ],
   "ausloeser": [

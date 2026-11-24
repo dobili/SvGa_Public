@@ -34,12 +34,14 @@
     {
       "moebel": "sb5TuerSued",
       "feld": [12, 15],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc4Fussmatte",
       "feld": [12, 14],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "sb5DatenwandB",

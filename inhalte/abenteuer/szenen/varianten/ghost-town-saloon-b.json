@@ -142,11 +142,13 @@
     {
       "moebel": "gt7Fussmatte",
       "feld": [10, 12],
-      "versatz": [0, 8]
+      "versatz": [0, 9],
+      "ebene": -2
     },
     {
       "moebel": "gt7TuerHolz",
-      "feld": [10, 13]
+      "feld": [10, 13],
+      "deckkraft": 75
     }
   ],
   "ausloeser": [

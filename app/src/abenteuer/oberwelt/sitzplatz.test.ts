@@ -6,6 +6,7 @@
 import { describe, expect, it } from "vitest";
 import type { Moebel } from "./moebel";
 import {
+  blickDesSitzes,
   BODENSITZ,
   findeSitz,
   istSitzmoebel,
@@ -179,7 +180,14 @@ describe("sitzmoebelAus und sitzlageAuf", () => {
       moebel("t1", 96, 112, "tisch"),
     ];
     const sitze = sitzmoebelAus(liste, K, () => ({ x: 88, y: 118, breite: 12, hoehe: 21 }));
-    expect(sitze).toEqual([{ ...schulstuhl, schluessel: "mf8SchulstuhlRechts@85,117" }]);
+    expect(sitze).toEqual([
+      {
+        ...schulstuhl,
+        schluessel: "mf8SchulstuhlRechts@85,117",
+        einzeln: true,
+        blick: "rechts",
+      },
+    ]);
     const lage = sitzlageAuf(sitze, { x: 5, y: 8 }, K);
     expect(lage?.tiefe).toBe(141 + SITZ_TIEFENABSTAND);
     // Die Lage nennt ihr Möbel: Dessen vorderer Teil verdeckt die Sitzende (vordergrund.ts).
@@ -187,6 +195,30 @@ describe("sitzmoebelAus und sitzlageAuf", () => {
   });
   it("ohne Möbel unter dem Feld: null", () => {
     expect(sitzlageAuf([], { x: 5, y: 8 }, K)).toBeNull();
+  });
+});
+
+describe("Einzelsitz breiter als eine Kachel (Wards Ohrensessel, Verdeckungsfotos)", () => {
+  // sc15OhrensesselBlickLinks bei (160, 80), 32 × 32, sichtbar 166–188 × 82–110 (angenommen).
+  const sessel: Sitzmoebel = {
+    name: "sc15OhrensesselBlickLinks",
+    x: 160,
+    y: 80,
+    breite: 32,
+    hoehe: 32,
+    tiefe: 104,
+    einzeln: true,
+    blick: "links",
+    sichtbar: { x: 166, y: 82, breite: 22, hoehe: 28 },
+  };
+  it("rückt auf die sichtbare Mitte, nicht nur den Feinschub wie eine Bank", () => {
+    // Mitte 177, Feld (10, 6) hat die Mitte 168 → dx 9.
+    expect(sitzlage(sessel, { x: 10, y: 6 }, K).dx).toBe(9);
+    expect(sitzlage({ ...sessel, einzeln: false }, { x: 10, y: 6 }, K).dx).toBe(0);
+  });
+  it("blickDesSitzes: Blick des Möbels unter dem Feld, sonst null", () => {
+    expect(blickDesSitzes([sessel], { x: 10, y: 6 }, K)).toBe("links");
+    expect(blickDesSitzes([sessel], { x: 3, y: 3 }, K)).toBeNull();
   });
 });
 

@@ -111,8 +111,9 @@
       ],
       "versatz": [
         0,
-        3
-      ]
+        9
+      ],
+      "ebene": -2
     },
     {
       "moebel": "pd6Tuer",
@@ -120,7 +121,8 @@
         10,
         12
       ],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "pd9Werkbank",

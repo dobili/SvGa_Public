@@ -48,6 +48,22 @@ describe("Auslöser der Karte", () => {
     ]);
   });
 
+  it("Sitzende aus dem Tagesablauf sitzen mit dem Blick ihres Möbels (sitzrichtung: moebel)", () => {
+    const ward = {
+      name: "ward",
+      type: "figur",
+      x: 160,
+      y: 96,
+      properties: [
+        { name: "sitzt", value: "unten" },
+        { name: "sitzrichtung", value: "moebel" },
+      ],
+    };
+    expect(liesAusloeser([ward], KACHEL)).toEqual([
+      { name: "ward", typ: "figur", x: 10, y: 6, sitzt: "unten", sitztWieMoebel: true },
+    ]);
+  });
+
   it("trifft zuerst die eigene Kachel, sonst die davor", () => {
     const brett = { name: "brett", typ: "ausloeser" as const, x: 3, y: 2 };
     const tuer = { name: "tuer", typ: "ausloeser" as const, x: 3, y: 3 };

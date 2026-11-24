@@ -403,17 +403,20 @@
     {
       "moebel": "rv8GlastuerSued",
       "feld": [8, 17],
-      "an_wand": true
+      "an_wand": true,
+      "deckkraft": 75
     },
     {
       "moebel": "cc4Fussmatte",
       "feld": [8, 16],
-      "versatz": [0, 2]
+      "versatz": [0, 8],
+      "ebene": -2
     },
     {
       "moebel": "cc4Fussmatte",
       "feld": [9, 16],
-      "versatz": [0, 2]
+      "versatz": [0, 8],
+      "ebene": -2
     }
   ],
   "ausloeser": [

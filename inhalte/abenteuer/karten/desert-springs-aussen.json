@@ -7645,7 +7645,7 @@
      "name": "kind",
      "type": "statist",
      "x": 448,
-     "y": 480,
+     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7654,12 +7654,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "28,30"
+       "value": "28,29"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "34,30"
+       "value": "34,29"
       },
       {
        "name": "tun",

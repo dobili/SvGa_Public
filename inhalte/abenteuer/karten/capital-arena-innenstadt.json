@@ -14665,7 +14665,7 @@
      "name": "hundefrau",
      "type": "statist",
      "x": 480,
-     "y": 912,
+     "y": 928,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14674,12 +14674,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "26,57"
+       "value": "26,58"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,57"
+       "value": "40,58"
       },
       {
        "name": "tun",
@@ -14741,7 +14741,7 @@
      "name": "geschaeftsfrau",
      "type": "statist",
      "x": 960,
-     "y": 576,
+     "y": 560,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14750,12 +14750,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "56,36"
+       "value": "56,35"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "70,36"
+       "value": "70,35"
       },
       {
        "name": "tun",
@@ -14779,7 +14779,7 @@
      "name": "schueler",
      "type": "statist",
      "x": 192,
-     "y": 240,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14788,12 +14788,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "4,15"
+       "value": "4,14"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "20,15"
+       "value": "20,14"
       },
       {
        "name": "tun",
@@ -14888,7 +14888,7 @@
      "name": "touristen",
      "type": "statist",
      "x": 1056,
-     "y": 912,
+     "y": 896,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14897,12 +14897,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "62,57"
+       "value": "62,56"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "72,57"
+       "value": "72,56"
       },
       {
        "name": "tun",

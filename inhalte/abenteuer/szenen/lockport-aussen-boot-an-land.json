@@ -587,12 +587,12 @@
     {
       "name": "postbotin",
       "typ": "statist",
-      "feld": [4, 10],
+      "feld": [45, 8],
       "eigenschaften": {
         "tun": "fährt mit dem Rad die Post aus",
         "wann": "morgen",
-        "von": "4,10",
-        "bis": "72,10",
+        "von": "45,8",
+        "bis": "53,8",
         "sagt": "statist.lockport.aussen.postbotin"
       }
     },
@@ -675,12 +675,12 @@
     {
       "name": "mannMitSchubkarre",
       "typ": "statist",
-      "feld": [25, 22],
+      "feld": [24, 22],
       "eigenschaften": {
         "tun": "schiebt Brennholz zum Gasthaus",
         "wann": "tag",
-        "von": "25,22",
-        "bis": "25,31"
+        "von": "24,22",
+        "bis": "24,31"
       }
     },
     {

@@ -12489,8 +12489,8 @@
      "id": 21,
      "name": "brieftraegerin",
      "type": "statist",
-     "x": 64,
-     "y": 592,
+     "x": 352,
+     "y": 608,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12499,12 +12499,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "4,37"
+       "value": "22,38"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "30,37"
+       "value": "32,38"
       },
       {
        "name": "tun",
@@ -12609,7 +12609,7 @@
      "name": "gabelstaplerfahrer",
      "type": "statist",
      "x": 944,
-     "y": 592,
+     "y": 576,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12618,12 +12618,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "59,37"
+       "value": "59,36"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "63,37"
+       "value": "63,36"
       },
       {
        "name": "tun",

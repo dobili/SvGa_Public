@@ -25,6 +25,16 @@ def test_verschiebung_an_den_rand():
     assert L.feld_aus("17,75") == (17, 75)
 
 
-def test_wege_ohne_statisten_mitten_auf_schmalen_pfaden():
+def test_keine_statisten_mitten_auf_schmalen_pfaden():
     # Dauertest: keine Laufstrecke mitten auf einem Pfad von höchstens 4 Kacheln (Ausnahmen mit Grund).
     assert [b.text() for b in L.alle_befunde()] == []
+
+
+def test_verschieben_aendert_nur_die_textstellen():
+    # Szenen sind verschieden formatiert; ein Neuschreiben änderte am Deich 1149 Zeilen.
+    text = (
+        '{"belebung": [\n  {"name": "helfer", "feld": [\n    70,\n    7\n  ],\n'
+        '   "eigenschaften": {"von": "63,6", "bis": "79,6"}},\n  {"name": "fischer", "feld": [30, 6]}]}'
+    )
+    neu = L.verschiebe_im_text(text, "helfer", (0, -1))
+    assert neu == text.replace("    7\n", "    6\n").replace('"63,6"', '"63,5"').replace('"79,6"', '"79,5"')

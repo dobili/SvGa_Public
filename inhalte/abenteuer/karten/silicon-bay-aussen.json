@@ -15454,7 +15454,7 @@
      "name": "ellis",
      "type": "statist",
      "x": 416,
-     "y": 592,
+     "y": 576,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15463,12 +15463,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "16,37"
+       "value": "16,36"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,37"
+       "value": "40,36"
       },
       {
        "name": "tun",

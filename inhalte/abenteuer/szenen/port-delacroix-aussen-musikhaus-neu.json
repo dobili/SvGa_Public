@@ -1013,10 +1013,10 @@
     {
       "name": "sandsackhelfer",
       "typ": "statist",
-      "feld": [19, 6],
+      "feld": [19, 5],
       "eigenschaften": {
-        "von": "13,6",
-        "bis": "25,6",
+        "von": "13,5",
+        "bis": "25,5",
         "tun": "stapelt Sandsäcke",
         "wann": "morgen",
         "sagt": "statist.portDelacroix.aussen.sandsackhelfer"
@@ -1097,10 +1097,10 @@
     {
       "name": "bootsbauer",
       "typ": "statist",
-      "feld": [68, 45],
+      "feld": [68, 44],
       "eigenschaften": {
-        "von": "66,45",
-        "bis": "72,45",
+        "von": "66,44",
+        "bis": "72,44",
         "tun": "streicht ein Ruder",
         "wann": "tag",
         "sagt": "statist.portDelacroix.aussen.bootsbauer"

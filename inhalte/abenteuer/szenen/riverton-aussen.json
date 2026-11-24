@@ -1378,10 +1378,10 @@
     {
       "name": "brieftraegerin",
       "typ": "statist",
-      "feld": [4, 37],
+      "feld": [22, 38],
       "eigenschaften": {
-        "von": "4,37",
-        "bis": "30,37",
+        "von": "22,38",
+        "bis": "32,38",
         "tun": "trägt die Post die Water Street entlang",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.brieftraegerin"
@@ -1415,10 +1415,10 @@
     {
       "name": "gabelstaplerfahrer",
       "typ": "statist",
-      "feld": [59, 37],
+      "feld": [59, 36],
       "eigenschaften": {
-        "von": "59,37",
-        "bis": "63,37",
+        "von": "59,36",
+        "bis": "63,36",
         "tun": "fährt Kisten vom Kai ins Lagerhaus",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.gabelstaplerfahrer"

@@ -20,7 +20,7 @@
  * stehen sie untereinander (kein Knopf über dem Brett), quer nebeneinander, das Brett links in
  * voller Höhe (huellenlage.css). Drehen baut nur die Ansicht neu, der Zustand bleibt.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
@@ -48,14 +48,8 @@ import { useSchutzengel } from "./useSchutzengel";
 import { useStaerkewechsel } from "./useStaerkewechsel";
 import { useKurzform } from "./useKurzform";
 import { useZugerraten } from "./useZugerraten";
+import { useKurzsperre } from "./useKurzsperre";
 import { Testleiste } from "./Testleiste";
-
-/**
- * So lange nach dem Öffnen der Partie ist „Aufgeben“ gesperrt (ms). Warum: Ein doppelter Tipp auf
- * „Weiter“ der Meldung davor landete auf „Aufgeben“, das an derselben Stelle erscheint (eiliger
- * Spieler-Durchlauf, 23.11.2026).
- */
-const AUFGEBEN_SPERRE_MS = 600;
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
 const KNAPP_MS = 10_000;
@@ -104,11 +98,8 @@ function Uhr({
  */
 function Spielfuss({ s, gegner, wertet }: { s: Partiesteuerung; gegner: string; wertet: boolean }) {
   const [frage, setzeFrage] = useState(false);
-  const [bereit, setzeBereit] = useState(false);
-  useEffect(() => {
-    const uhr = setTimeout(() => setzeBereit(true), AUFGEBEN_SPERRE_MS);
-    return () => clearTimeout(uhr);
-  }, []);
+  // Ein doppelter Tipp auf „Weiter“ davor traf sonst „Aufgeben“ (useKurzsperre.ts).
+  const bereit = useKurzsperre();
   if (frage) {
     return (
       <section className="abenteuer-huelle-fuss">

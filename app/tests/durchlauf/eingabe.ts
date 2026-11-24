@@ -10,7 +10,7 @@
  * Beispiel: halteRichtung(lauf, "oben") drückt den Knopf „Nach oben“ des Steuerkreuzes, bis
  * lasseRichtung(lauf) den Finger hebt.
  */
-import type { CDPSession, Locator, Page } from "@playwright/test";
+import { expect, type CDPSession, type Locator, type Page } from "@playwright/test";
 import type { Knopf } from "./lage";
 import type { Messung } from "./messung";
 import type { Eiliger } from "./eilig";
@@ -52,6 +52,8 @@ export interface Lauf {
 
 /** So lange darf ein Knopf verdeckt sein, bevor das ein Fund ist (ms). */
 const VERDECKT_MS = 6000;
+/** So lange wartet der Spieler auf einen gesperrten Knopf (ms; die Sperre dauert 600 ms). */
+const GESPERRT_WARTEN_MS = 2000;
 /** Seit wann ein Knopf (nach Name) verdeckt ist. */
 const verdecktSeit = new Map<string, number>();
 
@@ -112,6 +114,10 @@ export async function tippe(lauf: Lauf, ziel: Locator, name: string): Promise<bo
   const erstes = ziel.first();
   if (!(await erstes.isVisible().catch(() => false))) return false;
   await erstes.scrollIntoViewIfNeeded({ timeout: 2000 }).catch(() => undefined);
+  // Gesperrte Knöpfe (kurz nach dem Öffnen, useKurzsperre.ts) wartet ein Mensch ab.
+  await expect(erstes)
+    .toBeEnabled({ timeout: GESPERRT_WARTEN_MS })
+    .catch(() => undefined);
   const mitte = await freieMitte(erstes);
   if (!mitte) return false;
   if ("verdeckt" in mitte) {

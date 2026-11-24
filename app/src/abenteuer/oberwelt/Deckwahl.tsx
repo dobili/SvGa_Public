@@ -11,6 +11,7 @@
  * Abhängigkeiten: regeln/karten.ts, regeln/zeitkarten.ts, schnittstelle/karten.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useState } from "react";
+import { useKurzsperre } from "../anbindung/useKurzsperre";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import type { Kartendaten } from "../daten/laden";
 import { deckErlaubt } from "../regeln/karten";
@@ -79,6 +80,8 @@ export function Deckwahl({
   const [deck, setzeDeck] = useState<readonly string[]>([]);
   const [zeit, setzeZeit] = useState<Zeitklasse>("ohne");
   const [farbe, setzeFarbe] = useState<"white" | "black">("white");
+  // Ein doppelter Tipp auf die Antwort davor traf sonst „Zurück“ (useKurzsperre.ts).
+  const bereit = useKurzsperre();
   useZurueckSchliesst(true, beiAbbruch);
   const alleSorten = sorten as unknown as readonly Kartensorte[];
   const waehlbar = besitz.filter((k) => {
@@ -229,6 +232,7 @@ export function Deckwahl({
           type="button"
           className="knopf-haupt"
           data-testid="abenteuer-deck-los"
+          disabled={!bereit}
           onClick={() => beiWahl(deck, zeit, mitFarbwahl ? farbe : null)}
         >
           {deck.length === 0
@@ -244,6 +248,7 @@ export function Deckwahl({
           type="button"
           className="knopf-zweit"
           data-testid="abenteuer-deck-zurueck"
+          disabled={!bereit}
           onClick={beiAbbruch}
         >
           {tSpiel("faecher.zurueck")}

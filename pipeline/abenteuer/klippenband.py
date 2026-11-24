@@ -49,6 +49,10 @@ GERADE_HOECHSTENS = 20
 OFFEN: dict[tuple[str, str], str] = {
     ("weg-delacroix-desert-canyonpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-delacroix-desert-felsbogen", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
+    (
+        "weg-delacroix-desert-felsbogen",
+        "ende",
+    ): "AP7 Wegkarten: Band nach der Verbreiterung der Schlucht an Rand oder Seitenkante anschließen",
     ("weg-desert-summit-bergstrasse", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-desert-summit-diner", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-desert-summit-diner-neon", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",

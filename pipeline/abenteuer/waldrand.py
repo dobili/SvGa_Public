@@ -34,8 +34,8 @@ FELD_LUECKE = 2  # so knapp vor dem Rand endet ein Feld nicht (es reicht dann bi
 ABSCHLUSS = {"baum", "busch", "hecke", "feldfrucht", "wasser", "pflanze"}
 # (Szenenanfang, Kante) → Grund.
 AUSNAHMEN: dict[tuple[str, str], str] = {
-    ("summit-city-aussen", "Rand Nord"): "Gipfelwand: grauer Fels (kante klippe) bis zum Bildrand, kein Rasen",
-    ("summit-city-aussen", "Rand West ab (0, 0)"): "Nordwestecke: Seitenkante der Gipfelfelsen, Fels statt Rasen",
+    ("summit-city-aussen", "Rand Nord"): "Gipfelwand: grauer Fels bis zum Bildrand, kein Rasen",
+    ("summit-city-aussen", "Rand West ab (0, 0)"): "Nordwestecke: Seitenkante, Fels statt Rasen",
 }
 
 Feld = tuple[int, int]

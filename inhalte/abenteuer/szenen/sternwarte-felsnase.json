@@ -159,13 +159,14 @@
     {
       "name": "paar",
       "typ": "statist",
-      "feld": [8, 8],
+      "feld": [7, 6],
       "eigenschaften": {
-        "von": "8,8",
-        "bis": "8,8",
+        "von": "7,6",
+        "bis": "7,6",
         "tun": "sitzt in Decken auf der Bank",
         "wann": "abend",
-        "sagt": "statist.sternwarte.felsnase.paar"
+        "sagt": "statist.sternwarte.felsnase.paar",
+        "sitzt": "links"
       }
     },
     {

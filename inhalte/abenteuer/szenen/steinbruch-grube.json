@@ -824,15 +824,16 @@
     {
       "name": "hargrove",
       "typ": "statist",
-      "feld": [21, 9],
+      "feld": [26, 9],
       "eigenschaften": {
-        "von": "21,9",
-        "bis": "21,9",
+        "von": "26,9",
+        "bis": "26,9",
         "rolle": "senior",
         "tun": "sitzt auf der Bank vor der alten Bude",
         "sagt": "statist.steinbruch.grube.hargrove",
         "wann": "tag",
-        "blick": "rechts"
+        "blick": "rechts",
+        "sitzt": "unten"
       }
     },
     {

@@ -6924,6 +6924,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.pelikaninsel.dorf.netzflicker"
+      },
+      {
+       "name": "zustand",
+       "type": "string",
+       "value": "sitzboden"
       }
      ]
     },

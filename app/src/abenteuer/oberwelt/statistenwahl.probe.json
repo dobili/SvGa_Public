@@ -176,7 +176,7 @@
           "tun": "sitzt am mittleren Tisch und spielt Schach",
           "bild": null,
           "rolle": "historisch",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "postreiter"
         },
         {
@@ -186,7 +186,7 @@
           "tun": "sitzt am mittleren Tisch und spielt Schach",
           "bild": null,
           "rolle": "historisch",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.hist"
         },
         {
@@ -236,7 +236,7 @@
           "tun": "sitzt am Ecktisch und grübelt über einer Stellung",
           "bild": null,
           "rolle": "historisch",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.hist"
         }
       ]

@@ -343,6 +343,12 @@
     {
       "moebel": "by6StegQuer3",
       "feld": [9, 24]
+    },
+    {
+      "moebel": "pdEimer",
+      "feld": [7, 31],
+      "kollision": false,
+      "begehbar_grund": "umgedrehter Eimer, auf dem der Angler sitzt"
     }
   ],
   "ausloeser": [
@@ -406,7 +412,8 @@
         "bis": "7,31",
         "tun": "sitzt mit der Angel am Ufer, Mütze tief im Gesicht",
         "wann": "tag",
-        "sagt": "statist.bayou.steg.angler"
+        "sagt": "statist.bayou.steg.angler",
+        "sitzt": "rechts"
       }
     },
     {

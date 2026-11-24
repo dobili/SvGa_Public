@@ -10661,7 +10661,7 @@
      "id": 9,
      "name": "hargrove",
      "type": "statist",
-     "x": 336,
+     "x": 416,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -10671,12 +10671,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "21,9"
+       "value": "26,9"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "21,9"
+       "value": "26,9"
       },
       {
        "name": "rolle",
@@ -10702,6 +10702,11 @@
        "name": "blick",
        "type": "string",
        "value": "rechts"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

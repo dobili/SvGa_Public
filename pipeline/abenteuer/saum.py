@@ -16,6 +16,11 @@ welchen Saum bekommt, steht in ``materialien.json`` (``"saum"``):
   Kontur, dazwischen flache Stellen; gegen jeden Naturboden (Sand an Gras und Erde, Nadelstreu an
   Gras und Erdweg), damit Böden nicht mehr mit gerader Kachelkante aneinanderstoßen.
 
+Dazu der **Übergang Belag an Belag** (Kartenblick 24.11.2026, M04: „Wo Pflaster auf Erde oder
+Asphalt trifft, steht eine gerade Kante“): Wo zwei verschiedene Böden aneinanderstoßen und keiner
+der Säume oben greift, zeichnet ``belaguebergaenge`` zwischen zwei befestigten Böden eine dunkle
+Fuge und sonst eine Verzahnung, bei der der losere Boden in Zähnen in den anderen greift.
+
 Gezeichnet wird nur an Kanten zu Naturboden (``NATUR``; für ``weich`` nur zu Gras), nie zu Wasser
 (das hat sein Ufer), zu Wänden oder zu anderem befestigtem Boden. ``saumbefunde`` meldet im
 Kartenbau Böden, die an Gras grenzen und weder Randkacheln noch einen Saum haben.
@@ -53,6 +58,20 @@ WEICH_TIEFE = 3
 # Fransen: Büschelbreite (Pixel), Tiefe eines Büschels und dazwischen, Abdunklung der Kontur.
 BUESCHEL_BREITE, BUESCHEL_TIEFE, ZWISCHEN_TIEFE, KONTUR = 3, (2, 5), (0, 1), 0.72
 RICHTUNGEN = ((0, -1), (0, 1), (-1, 0), (1, 0))
+# Böden, die für den Übergang als derselbe Belag gelten (Markierung auf der Fahrbahn, dasselbe
+# Pflaster mit anderem Rand, derselbe Sand mit Grasrand): zwischen ihnen keine Kante.
+GLEICHER_BELAG = {
+    "asphaltMitte": "asphalt",
+    "asphaltMitteSenkrecht": "asphalt",
+    "pflasterWeich": "pflaster",
+    "sandRotRand": "sandRot",
+}
+# Säume befestigter Böden; alle anderen Böden mit Saum oder Randkacheln und die Naturböden sind lose.
+BEFESTIGT = frozenset({"randstein", "bankett"})
+# Fuge zwischen zwei befestigten Böden: Abdunklung der letzten Pixelreihe.
+FUGE_DUNKEL = 0.72
+# Verzahnung: Zahnbreite in Pixeln und größte Tiefe, mit der der losere Boden hereingreift.
+ZAHN_BREITE, ZAHN_TIEFE = 2, 4
 
 
 def _zufall(x: int, y: int) -> int:
@@ -164,6 +183,81 @@ def saeume(bild, gezeichnet: dict, boeden: dict, ohne: frozenset = frozenset()) 
                 if saumart(boeden, art, nachbar) == art_saum:
                     ZEICHNER[art_saum](px, x, y, dx, dy)
                     kanten += 1
+    return kanten
+
+
+def _klasse(boeden: dict, art: str) -> str | None:
+    """„fest“, „lose“ oder None (unbekannt) für eine Bodenart."""
+    angabe = boeden.get(art, {})
+    if angabe.get("saum") in BEFESTIGT:
+        return "fest"
+    if "saum" in angabe or "rand" in angabe or art in NATUR:
+        return "lose"
+    return None
+
+
+def uebergangsart(boeden: dict, art: str, nachbar: str | None) -> str | None:
+    """Welchen Übergang ``belaguebergaenge`` im Feld von ``art`` zur Kante mit ``nachbar`` zeichnet.
+
+    Ausgabe: „fuge“ (zwei befestigte Böden), „verzahnt“ (der Nachbar ist loser oder beide sind
+    lose) oder None: gleicher Belag, ein Saum greift schon, eine der Arten ist unbekannt, oder das
+    Feld des Nachbarn zeichnet den Übergang. Je Kante zeichnet genau eine Seite: bei „verzahnt“
+    der festere Boden (bei zwei losen der im Alphabet spätere), bei „fuge“ der im Alphabet spätere.
+    Beispiel: „pflaster“ neben „asphalt“ → „fuge“, umgekehrt None; „pflaster“ neben „schotter“ →
+    „verzahnt“ (Schotter liegt auf dem Pflasterrand); „asphalt“ neben „asphaltMitte“ → None.
+    Sonderfälle: Wasser und Holz (Steg, Brücke) haben eigene Kanten und bekommen nie einen Übergang.
+    """
+    if nachbar is None or art.startswith("wasser") or nachbar.startswith("wasser"):
+        return None
+    a, b = GLEICHER_BELAG.get(art, art), GLEICHER_BELAG.get(nachbar, nachbar)
+    if a == b or {art, nachbar} & (HOLZ_BOEDEN | GRUEN):
+        return None
+    if saumart(boeden, art, nachbar) or saumart(boeden, nachbar, art):
+        return None
+    hier, dort = _klasse(boeden, a), _klasse(boeden, b)
+    if hier is None or dort is None:
+        return None
+    if hier == dort:
+        return ("fuge" if hier == "fest" else "verzahnt") if a > b else None
+    return "verzahnt" if hier == "fest" else None
+
+
+def _fuge(px, x: int, y: int, dx: int, dy: int) -> None:
+    """Fuge: Die letzte Pixelreihe vor der Kante wird dunkler (Stoß zweier Pflaster, Bordkante)."""
+    for laengs in range(K):
+        ort = _pixel(x, y, dx, dy, 0, laengs)
+        r, g, b, a = px[ort]
+        px[ort] = (int(r * FUGE_DUNKEL), int(g * FUGE_DUNKEL), int(b * FUGE_DUNKEL), a)
+
+
+def _verzahnt(px, x: int, y: int, dx: int, dy: int) -> None:
+    """Verzahnung: Der Nachbarboden greift in Zähnen von null bis ``ZAHN_TIEFE`` Pixeln herein."""
+    for laengs in range(K):
+        welt = ((x if dy else y) * K + laengs) // ZAHN_BREITE
+        reihe = (y * K if dy else x * K) + 11 * (dx + 2 * dy)
+        for tiefe in range(_zufall(welt, reihe) % (ZAHN_TIEFE + 1)):
+            px[_pixel(x, y, dx, dy, tiefe, laengs)] = px[_pixel(x + dx, y + dy, -dx, -dy, tiefe, laengs)]
+
+
+def belaguebergaenge(bild, gezeichnet: dict, boeden: dict, ohne: frozenset = frozenset()) -> int:
+    """Zeichnet die Übergänge Belag an Belag ins Bodenbild; gibt die Zahl der Kanten zurück.
+
+    Eingaben wie ``saeume``; aufgerufen nach den Säumen und vor den weichen Rändern (kartenbild).
+    Beispiel: Schotterplatz neben Pflaster → der Schotter läuft in kleinen Zähnen auf das Pflaster
+    aus, statt mit gerader Kachelkante zu enden.
+    Sonderfall: Kanten, an denen ein Boden mit Randkacheln an seinen Grundboden grenzt, zeichnet
+    ``weichrand``; sie kommen hier nicht vor, weil der Grundboden dann Gras ist (``GRUEN``).
+    """
+    px, kanten = bild.load(), 0
+    for (x, y), (art, _) in sorted(gezeichnet.items()):
+        if (x, y) in ohne:
+            continue
+        for dx, dy in RICHTUNGEN:
+            nachbar = gezeichnet.get((x + dx, y + dy), (None, None))[0]
+            wie = uebergangsart(boeden, art, nachbar)
+            if wie:
+                (_fuge if wie == "fuge" else _verzahnt)(px, x, y, dx, dy)
+                kanten += 1
     return kanten
 
 

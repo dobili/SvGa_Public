@@ -24,7 +24,7 @@ SCHRAEGE = {
 }
 
 
-def _hat_rand(versatz: tuple[int, int], dx: int, dy: int) -> bool:
+def hat_rand(versatz: tuple[int, int], dx: int, dy: int) -> bool:
     """Ob eine Kachel des 3×3-Blocks auf der Seite (dx, dy) ihren Rand zeigt (Innenecken: nie,
     Schrägkacheln zu ihren beiden Grasseiten)."""
     spalte, reihe = versatz
@@ -63,7 +63,7 @@ def randluecken(
             return art == "wasser" or nachbar[0] in trennt
 
         for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1)):
-            if braucht(dx, dy) and not _hat_rand(versatz, dx, dy):
+            if braucht(dx, dy) and not hat_rand(versatz, dx, dy):
                 fehlt.setdefault(art, set()).add((x, y))
         if versatz == (1, 1):
             for dx, dy in INNENECKE.values():

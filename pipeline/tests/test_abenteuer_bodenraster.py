@@ -3,10 +3,10 @@
 from pipeline.abenteuer.bodenraster import (
     bodenfeld,
     brueckenzeichen,
+    gleicher_boden,
     randergaenzt,
     randkachel,
     randnachbar,
-    ueberbrueckt,
     uferfelder,
 )
 
@@ -16,15 +16,25 @@ HOLZ = frozenset({"h"})
 
 def test_brücke_unterbricht_den_bach_nicht():
     zeilen = ["..~..", "..h..", "..h..", "..~.."]
-    assert ueberbrueckt(zeilen, 2, 0, 0, 1, HOLZ)
-    assert ueberbrueckt(zeilen, 2, 3, 0, -1, HOLZ)
+    assert gleicher_boden(zeilen, 2, 0, 0, 1, HOLZ)
+    assert gleicher_boden(zeilen, 2, 3, 0, -1, HOLZ)
     # Unter der Brücke und am Kartenrand kein Ufer oben oder unten: Mittelstück.
     assert bodenfeld(WASSER_ART, zeilen, 2, 3, HOLZ) == [1, 1]
 
 
-def test_steg_ohne_wasser_dahinter_behält_das_ufer():
+def test_steg_im_wasser_hat_kein_ufer():
+    # Kartenblick 24.11.2026 (M03): Stege trugen grüne Kappen, weil das Wasser an ihnen ein Ufer bekam.
     zeilen = ["~~~", "~h.", "~~~"]
-    assert not ueberbrueckt(zeilen, 0, 1, 1, 0, HOLZ)
+    assert gleicher_boden(zeilen, 0, 1, 1, 0, HOLZ)
+    assert bodenfeld(WASSER_ART, zeilen, 0, 0, HOLZ) == [1, 1]
+    # Zum Gras daneben bleibt das Ufer.
+    assert bodenfeld(WASSER_ART, zeilen, 2, 0, HOLZ) == [1, 2]
+
+
+def test_weg_laeuft_bis_ans_wasser():
+    # Das Ufer zeichnet das Wasser; der Weg zeigt zum Wasser keinen eigenen Grasrand.
+    zeilen = ["....", "ee~~", "...."]
+    assert bodenfeld({"rand": [0, 0]}, zeilen, 1, 1) == [1, 1]
 
 
 def test_innenecke_an_einer_ufer_stufe():
@@ -50,7 +60,7 @@ def test_randwand_zeigt_das_feld_dahinter():
 def test_gras_zwischen_wasser_ist_keine_bruecke():
     # Bach versetzt um eine Spalte: (1,0) Wasser hat unten Gras, darunter wieder Wasser.
     zeilen = ["~~.", "~..", "~~."]
-    assert not ueberbrueckt(zeilen, 1, 0, 0, 1)
+    assert not gleicher_boden(zeilen, 1, 0, 0, 1)
     assert bodenfeld(WASSER_ART, zeilen, 1, 0) == [2, 2]
 
 
@@ -65,12 +75,10 @@ def test_schattenkachel_nur_direkt_unter_der_wand():
 def test_nur_holzboeden_sind_bruecken():
     """Sinter, Erde, Pflaster zwischen zwei Wassern sind keine Brücke (auch nicht schräg)."""
     zeilen = ["..~..", "..s..", "..~.."]
-    assert not ueberbrueckt(zeilen, 2, 0, 0, 1, HOLZ)
+    assert not gleicher_boden(zeilen, 2, 0, 0, 1, HOLZ)
     # Ohne Brücke hat das obere Wasser unten sein Ufer.
     assert bodenfeld(WASSER_ART, zeilen, 2, 0, HOLZ) == [1, 2]
-    schraeg = ["~..", ".s.", "..~"]
-    assert not ueberbrueckt(schraeg, 0, 0, 1, 1, HOLZ)
-    assert ueberbrueckt(["~", "h", "~"], 0, 0, 0, 1, HOLZ)
+    assert gleicher_boden(["~", "h", "~"], 0, 0, 0, 1, HOLZ)
 
 
 def test_brueckenzeichen_aus_den_holzboeden_der_szene():

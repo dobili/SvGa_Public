@@ -10,7 +10,15 @@ import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe
 const DAUER_MS = 1200;
 /** So weit zieht der Finger über die Taste ▶ hinaus nach rechts (Pixel). */
 const WEIT_DRAUSSEN_PX = 110;
-const VARIABLEN = { ...EINLEITUNG_GESEHEN, hinweisSteuerkreuz: true, hinweisAktion: true };
+// Die einmaligen Erklärungen (erklaerungen.ts) gelten als gesehen: GRUNDSTAND hat 80 Münzen, und
+// die Münz-Erklärung hielt den Helden auf langsamen Geräten (WebKit) mitten in der Messung an.
+const VARIABLEN = {
+  ...EINLEITUNG_GESEHEN,
+  hinweisSteuerkreuz: true,
+  hinweisAktion: true,
+  muenzenErklaert: true,
+  staerkeErklaert: true,
+};
 /** Lange freie Reihen: draußen vor dem Haus, innen im Clubraum. */
 const DRAUSSEN = { karte: "mapleFalls.aussen", x: 29, y: 25, richtung: "rechts" };
 const INNEN = { karte: "mapleFalls.clubraum", x: 3, y: 13, richtung: "rechts" };

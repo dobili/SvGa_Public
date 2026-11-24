@@ -233,7 +233,9 @@ async function bedieneLaden(
     return;
   }
   // „Schließen“ liegt außerhalb des Bildes (Querformat): hinrollen wie ein Mensch und festhalten.
-  const unten = lauf.seite.locator("[data-testid='abenteuer-laden'] > .knopf-haupt");
+  const unten = lauf.seite.locator(
+    "[data-testid='abenteuer-laden'] .abenteuer-menue-fuss .knopf-haupt",
+  );
   await lauf.seite
     .screenshot({ path: `${lauf.messung.ordner}/bilder/laden-ohne-schliessen.png` })
     .catch(() => undefined);

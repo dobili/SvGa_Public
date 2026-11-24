@@ -17,7 +17,9 @@ listet dieses Werkzeug je Figurenbild die Zustände:
 Gezählt werden Figuren (``figuren`` der Szenen, Bild aus orte.json) und Statisten mit eigenem Bild
 (``belebung``, Eigenschaft ``bild``). Der Held steht für alle Varianten (``held-0`` …).
 
-Aufruf: ``python -m pipeline.abenteuer.figurenzustaende [--privat PFAD_ZU_spiel] [--ziel ORDNER]``.
+Aufruf: ``python -m pipeline.abenteuer.figurenzustaende [--privat PFAD_ZU_spiel] [--ziel ORDNER]
+[--sitzauftrag DATEI]``; ``--sitzauftrag`` schreibt die Sitzrichtungen je Bild ohne Stuhlzustand
+für die Bildmappe (figurenzustaende_sitzauftrag.py).
 Schreibt ``zustaende.md`` und ``zustaende.html`` (Vorschaubild je Figur aus
 ``<privat>/figuren-neu/<name>/rotations/south.png``, eingebettet) nach ``buch/arbeit/zustaende/``.
 Die Seite enthält Bilder aus dem privaten Paket und bleibt deshalb lokal.
@@ -254,11 +256,25 @@ def als_fehlseite(liste: list[tuple[str, str, int]], bedarf: dict[str, Bedarf], 
     )
 
 
+def _schreibe_sitzauftrag(ziel: Path) -> None:
+    """Sitzauftrag für die Bildmappe (figurenzustaende_sitzauftrag.py) als JSON nach ``ziel``."""
+    from pipeline.abenteuer.figurenzustaende_sitzauftrag import sitzauftrag
+
+    katalog = lade_moebel(DATEN / "moebel")
+    daten = sitzauftrag(DATEN, _bilder_je_figur(lade_orte(DATEN)), katalog, KACHEL)
+    ziel.parent.mkdir(parents=True, exist_ok=True)
+    ziel.write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Sitzauftrag: {len(daten['bilder'])} Bilder nach {ziel}")
+
+
 def main(argumente: list[str] | None = None) -> int:
     """Schreibt Liste und Seite; druckt eine Zusammenfassung."""
     teiler = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     teiler.add_argument("--privat", type=Path, help="Ordner spiel/ des privaten Repositorys")
     teiler.add_argument("--ziel", type=Path, default=ZIEL)
+    teiler.add_argument(
+        "--sitzauftrag", type=Path, help="JSON-Datei: Sitzrichtungen je Bild ohne Stuhlzustand"
+    )
     args = teiler.parse_args(argumente)
     bedarf = ermittle()
     args.ziel.mkdir(parents=True, exist_ok=True)
@@ -272,6 +288,8 @@ def main(argumente: list[str] | None = None) -> int:
         A.schreibe_app_tabelle(A.ohne_stuhlbild(DATEN, args.privat, bilder, katalog, sitzart))
         neu = [e for e in liste if (e[0], e[1]) not in A.WARTET_AUF_BILD]
         print(f"{len(liste)} fehlende Zustände, davon neu (nicht in WARTET_AUF_BILD): {neu}")
+    if args.sitzauftrag:
+        _schreibe_sitzauftrag(args.sitzauftrag)
     for z in ZUSTAENDE:
         print(f"{z}: {', '.join(b.bild for b in bedarf.values() if z in b.stellen)}")
     print(f"{len(bedarf)} Figurenbilder, Ziel {args.ziel}")

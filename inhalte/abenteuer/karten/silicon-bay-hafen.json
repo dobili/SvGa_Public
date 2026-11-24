@@ -7881,6 +7881,11 @@
        "value": "26,16"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "herr"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "steht vor seinem leeren Laden"

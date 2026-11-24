@@ -157,6 +157,7 @@
       "eigenschaften": {
         "von": "4,8",
         "bis": "4,8",
+        "rolle": "historisch",
         "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
         "verhalten": "sitzen",
@@ -170,6 +171,7 @@
       "eigenschaften": {
         "von": "7,8",
         "bis": "7,8",
+        "rolle": "historisch",
         "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
         "verhalten": "sitzen",
@@ -183,6 +185,7 @@
       "eigenschaften": {
         "von": "5,10",
         "bis": "5,10",
+        "rolle": "historisch",
         "tun": "schauen zu",
         "wann": "tag",
         "blick": "oben"
@@ -195,6 +198,7 @@
       "eigenschaften": {
         "von": "6,7",
         "bis": "6,7",
+        "rolle": "historisch",
         "tun": "beugt sich über das Brett",
         "wann": "tag"
       }
@@ -206,6 +210,8 @@
       "eigenschaften": {
         "von": "8,8",
         "bis": "8,8",
+        "rolle": "historisch",
+        "bild": "zeitungsleser",
         "tun": "flüstert einen Zug",
         "wann": "tag",
         "blick": "links"
@@ -218,6 +224,7 @@
       "eigenschaften": {
         "von": "2,3",
         "bis": "2,3",
+        "rolle": "historisch",
         "tun": "sitzt auf der Lederbank und liest Zeitung",
         "wann": "tag",
         "verhalten": "sitzen"
@@ -231,6 +238,7 @@
         "von": "8,10",
         "bis": "8,10",
         "verhalten": "sitzen",
+        "rolle": "historisch",
         "tun": "sitzt am Ecktisch und grübelt über einer Stellung",
         "wann": "tag",
         "blick": "rechts"

@@ -748,6 +748,7 @@
       "typ": "statist",
       "feld": [20, 24],
       "eigenschaften": {
+        "bild": "juno",
         "tun": "Juno fotografiert alles",
         "wann": "tag",
         "von": "16,24",
@@ -759,6 +760,7 @@
       "typ": "statist",
       "feld": [8, 20],
       "eigenschaften": {
+        "rolle": "herr",
         "tun": "Buster verkauft Lose neben seiner Bude",
         "wann": "tag",
         "von": "8,20",

@@ -640,14 +640,14 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "fahrer"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt am Brett gegenüber von Mags"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-24"
       }
      ]
     },
@@ -666,11 +666,6 @@
        "name": "tun",
        "type": "string",
        "value": "sitzt am Brett gegenüber von Ruth Keene"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-33"
       }
      ]
     },
@@ -686,14 +681,14 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "fahrer"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt am mittleren Brett und spielt"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-19"
       }
      ]
     },
@@ -709,14 +704,14 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "jugend"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt am mittleren Brett und spielt"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-36"
       }
      ]
     },

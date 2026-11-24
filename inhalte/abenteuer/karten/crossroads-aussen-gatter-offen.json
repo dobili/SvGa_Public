@@ -9664,6 +9664,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "bild",
+       "type": "string",
+       "value": "tomas"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "Tomás zeigt Mira die Windräder am Horizont"

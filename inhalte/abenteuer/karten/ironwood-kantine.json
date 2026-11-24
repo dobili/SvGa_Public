@@ -2456,6 +2456,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2464,11 +2469,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-21"
       }
      ]
     },
@@ -2484,6 +2484,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2492,11 +2497,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-23"
       }
      ]
     },
@@ -2512,6 +2512,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2520,11 +2525,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-25"
       }
      ]
     },
@@ -2540,6 +2540,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2548,11 +2553,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-27"
       }
      ]
     },
@@ -2568,6 +2568,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2576,11 +2581,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-29"
       }
      ]
     },
@@ -2596,6 +2596,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2604,11 +2609,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-31"
       }
      ]
     },
@@ -2624,6 +2624,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "werk"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Essen"
@@ -2632,11 +2637,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-33"
       }
      ]
     },

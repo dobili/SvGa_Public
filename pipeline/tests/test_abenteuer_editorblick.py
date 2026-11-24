@@ -76,7 +76,8 @@ def test_personenschluessel_und_boegen():
     assert personenschluessel("belebung", statist) == "b:gast|statist-07"
     boegen = boegen_der_szene(VORHER, ORTE)
     assert boegen["f:mutter"] == "figuren/mutter.png"
-    assert boegen["b:gast|"].startswith("figuren/statist-")
+    # Bild nach der Rolle wie im Spiel (statistenwahl.py), kein gewürfelter Vorratsbogen mehr.
+    assert boegen["b:gast|"].startswith("figuren/") and "statist-" not in boegen["b:gast|"]
 
 
 def test_standbilder_je_richtung(tmp_path):

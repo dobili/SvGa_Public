@@ -162,6 +162,7 @@
       "eigenschaften": {
         "von": "14,13",
         "bis": "20,13",
+        "rolle": "historisch",
         "tun": "gehen vorbei",
         "wann": "tag"
       }
@@ -183,6 +184,7 @@
       "eigenschaften": {
         "von": "18,13",
         "bis": "18,13",
+        "rolle": "historisch",
         "tun": "zündet die Laternen an",
         "wann": "tag"
       }
@@ -194,6 +196,7 @@
       "eigenschaften": {
         "von": "15,19",
         "bis": "15,19",
+        "rolle": "historisch",
         "tun": "verkauft Veilchen am Karren",
         "wann": "tag",
         "blick": "links"
@@ -206,6 +209,7 @@
       "eigenschaften": {
         "von": "3,19",
         "bis": "3,19",
+        "rolle": "historisch",
         "tun": "putzt Schuhe am Gehwegrand",
         "wann": "tag"
       }
@@ -217,6 +221,7 @@
       "eigenschaften": {
         "von": "9,16",
         "bis": "9,16",
+        "rolle": "historisch",
         "tun": "wartet neben seiner Droschke auf Fahrgäste",
         "wann": "tag"
       }

@@ -1946,6 +1946,11 @@
        "value": "20,13"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "gehen vorbei"
@@ -2007,6 +2012,11 @@
        "value": "18,13"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "zündet die Laternen an"
@@ -2038,6 +2048,11 @@
        "name": "bis",
        "type": "string",
        "value": "15,19"
+      },
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
       },
       {
        "name": "tun",
@@ -2078,6 +2093,11 @@
        "value": "3,19"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "putzt Schuhe am Gehwegrand"
@@ -2109,6 +2129,11 @@
        "name": "bis",
        "type": "string",
        "value": "9,16"
+      },
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
       },
       {
        "name": "tun",

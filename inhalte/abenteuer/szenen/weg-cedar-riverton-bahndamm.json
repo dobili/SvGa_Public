@@ -2711,6 +2711,7 @@
       "typ": "statist",
       "feld": [53, 13],
       "eigenschaften": {
+        "bild": "juno",
         "tun": "Juno wartet unten an den Stufen",
         "wann": "tag"
       }

@@ -1,0 +1,507 @@
+{
+  "erklaerung": "Bild eines Statisten nach seiner Rolle statt nach dem Los (Kartenblick M05, 24.11.2026), gemeinsam für App (oberwelt/statistenwahl.ts) und Vorschau (pipeline/abenteuer/statistenwahl.py); beide rechnen gleich (Probe: statistenwahl.probe.json). typen: Bogen im Paket (figuren/<name>.png) mit sitzbild (hat zustaende/sitzstuhl) und geschlecht (w, m; fehlt es, passt das Bild zu beiden). vorrat: die 40 alten Bögen statist-01 … statist-40 und der Typ, dessen Kopie sie sind (pipeline/abenteuer/pixellabtabelle.py). regeln: der Reihe nach; die Eigenschaft rolle eines Statisten nennt eine Regel direkt, sonst gewinnt das längste Wort aus namen, das im kleingeschriebenen Namen steckt, sonst das längste aus tun im kleingeschriebenen tun, sonst gilt die Regel in sonst. typen einer Regel sind die passenden Bilder, ausweich die noch vertretbaren, wenn sonst dasselbe Bild daneben stünde. geschlecht: der Reihe nach Endungen und Anfänge des Namens bis zum ersten Großbuchstaben oder zur ersten Ziffer, der erste Treffer gilt (ist leer: kein Geschlecht, etwa Mehrzahl). Der Bauhelm (statist.arbeiter) steht nur in der Regel bau.",
+  "typen": {
+    "statist.anzug": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "statist.arbeiter": {
+      "sitzbild": false
+    },
+    "statist.bauer": {
+      "sitzbild": false
+    },
+    "statist.fahrer": {
+      "sitzbild": true,
+      "geschlecht": "m"
+    },
+    "statist.fischer": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "statist.hist": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "statist.jugend": {
+      "sitzbild": true
+    },
+    "statist.kindA": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
+    "statist.kindB": {
+      "sitzbild": true,
+      "geschlecht": "m"
+    },
+    "statist.konzern": {
+      "sitzbild": false,
+      "geschlecht": "w"
+    },
+    "statist.musik": {
+      "sitzbild": false
+    },
+    "statist.ranger": {
+      "sitzbild": false
+    },
+    "statist.rentner": {
+      "sitzbild": true,
+      "geschlecht": "m"
+    },
+    "statist.rentnerin": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
+    "statist.service": {
+      "sitzbild": false,
+      "geschlecht": "w"
+    },
+    "statist.studentin": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
+    "statist.wanderer": {
+      "sitzbild": false
+    },
+    "joggerin": {
+      "sitzbild": false,
+      "geschlecht": "w"
+    },
+    "kapitaen": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "kellner": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "mutter": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
+    "postreiter": {
+      "sitzbild": false
+    },
+    "schaffner": {
+      "sitzbild": false
+    },
+    "schiffskoch": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "wanderer": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "zeitungsjunge": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    },
+    "zeitungsleser": {
+      "sitzbild": false,
+      "geschlecht": "m"
+    }
+  },
+  "vorrat": [
+    "statist.kindA",
+    "statist.kindB",
+    "statist.kindA",
+    "statist.kindB",
+    "statist.kindA",
+    "statist.kindB",
+    "statist.kindA",
+    "statist.kindB",
+    "statist.rentnerin",
+    "statist.rentner",
+    "statist.rentnerin",
+    "statist.rentner",
+    "statist.rentnerin",
+    "statist.rentner",
+    "statist.rentnerin",
+    "statist.rentner",
+    "statist.arbeiter",
+    "statist.studentin",
+    "statist.fahrer",
+    "statist.wanderer",
+    "statist.arbeiter",
+    "statist.jugend",
+    "statist.jugend",
+    "statist.fahrer",
+    "statist.arbeiter",
+    "statist.wanderer",
+    "statist.arbeiter",
+    "statist.fahrer",
+    "statist.arbeiter",
+    "statist.studentin",
+    "statist.arbeiter",
+    "statist.wanderer",
+    "statist.arbeiter",
+    "statist.fahrer",
+    "statist.wanderer",
+    "statist.jugend",
+    "statist.anzug",
+    "statist.service",
+    "statist.wanderer",
+    "statist.fahrer"
+  ],
+  "geschlecht": [
+    {
+      "ist": "",
+      "enden": ["kinder", "geschwister", "paar", "familie", "pfadfinder", "kind"],
+      "anfaenge": []
+    },
+    {
+      "ist": "w",
+      "enden": ["in", "innen", "frau", "mutter", "dame", "oma", "maedchen", "schwester", "tochter"],
+      "anfaenge": ["frau", "mutter", "oma", "grossmutter"]
+    },
+    {
+      "ist": "m",
+      "enden": [
+        "er",
+        "mann",
+        "vater",
+        "opa",
+        "herr",
+        "junge",
+        "sohn",
+        "wirt",
+        "koch",
+        "ist",
+        "graf",
+        "wart",
+        "geselle",
+        "nachbar",
+        "kunde",
+        "student"
+      ],
+      "anfaenge": ["mann", "herr", "vater", "opa", "alter"]
+    }
+  ],
+  "sonst": "alltag",
+  "regeln": [
+    {
+      "rolle": "historisch",
+      "zweck": "Erinnerungskarten (London 1851, Siedlung): nur über die Eigenschaft rolle, nie über Wörter.",
+      "typen": ["statist.hist", "zeitungsleser", "postreiter"],
+      "ausweich": ["zeitungsjunge"],
+      "namen": [],
+      "tun": []
+    },
+    {
+      "rolle": "bau",
+      "zweck": "Bau, Werk, Hafen und Gleis: der einzige Platz für Bauhelm und Warnweste.",
+      "typen": ["statist.arbeiter"],
+      "ausweich": ["statist.fahrer"],
+      "namen": [
+        "bauarbeiter",
+        "arbeiter",
+        "stegbauer",
+        "kranfuehrer",
+        "rangierer",
+        "gabelstapler",
+        "schauermann",
+        "schichtwechsel",
+        "landvermesser",
+        "steinmetz",
+        "sandsack",
+        "handwerker",
+        "streckenwaerter",
+        "brueckenwaerter"
+      ],
+      "tun": ["sandsäcke", "bretter der brücke", "trägt bretter"]
+    },
+    {
+      "rolle": "werk",
+      "zweck": "Leute vom Werk nach der Schicht (Kantine Ironwood): blaue Arbeitskleidung, kein Helm. Nur über die Eigenschaft rolle.",
+      "typen": ["statist.fahrer"],
+      "ausweich": ["statist.jugend", "statist.rentner", "mutter", "statist.studentin"],
+      "namen": [],
+      "tun": []
+    },
+    {
+      "rolle": "land",
+      "zweck": "Hof, Feld, Garten und Marktstand: Strohhut und Latzhose.",
+      "typen": ["statist.bauer"],
+      "ausweich": ["statist.rentnerin", "statist.rentner", "mutter", "statist.service"],
+      "namen": [
+        "bauer",
+        "baeuerin",
+        "farmer",
+        "marktfrau",
+        "marktstand",
+        "gemuesehaendler",
+        "obsthaendler",
+        "erntehelfer",
+        "gaertner",
+        "traktorfahrer",
+        "schaefer",
+        "pferdefrau",
+        "fraumitpferden",
+        "laubharker",
+        "holzhacker",
+        "holzfaeller"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "uniform",
+      "zweck": "Dienst in Uniform mit Schirmmütze: Bahn, Bus, Polizei, Wache, Schalter.",
+      "typen": ["schaffner"],
+      "ausweich": ["statist.fahrer", "statist.anzug"],
+      "namen": [
+        "schaffner",
+        "busfahrer",
+        "taxifahrer",
+        "polizist",
+        "wachmann",
+        "ordner",
+        "seilbahnwaerter",
+        "schalterbeamter",
+        "feuerwehrmann",
+        "uhrwart"
+      ],
+      "tun": ["als wachmann"]
+    },
+    {
+      "rolle": "fahrer",
+      "zweck": "Blaue Arbeitskleidung mit Mütze und Tasche: Fahrer, Post, Tankstelle, Werkstatt, Hausmeister.",
+      "typen": ["statist.fahrer"],
+      "ausweich": ["schaffner", "statist.jugend"],
+      "namen": [
+        "fahrer",
+        "trucker",
+        "postbot",
+        "brieftraeger",
+        "kurier",
+        "tankwart",
+        "mechaniker",
+        "hausmeister",
+        "autowaescher",
+        "strassenkehrer",
+        "kehrerin",
+        "karussellbetreiber"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "wasser",
+      "zweck": "Angeln und Fischen: Ölzeug und Angel.",
+      "typen": ["statist.fischer"],
+      "ausweich": ["statist.wanderer", "statist.rentner"],
+      "namen": ["angler", "fischer", "netzflicker", "bootsbauer", "kahnmaler", "muschelsammler"],
+      "tun": ["angelt"]
+    },
+    {
+      "rolle": "hafen",
+      "zweck": "Schifffahrt: Kapitänsmütze und Uniformjacke.",
+      "typen": ["kapitaen"],
+      "ausweich": ["statist.fischer", "schaffner"],
+      "namen": ["matrose", "hafenmeister", "kapitaen", "schiffer"],
+      "tun": []
+    },
+    {
+      "rolle": "kind",
+      "zweck": "Kinder im Grundschulalter.",
+      "typen": ["statist.kindA", "statist.kindB"],
+      "ausweich": ["statist.jugend"],
+      "namen": [
+        "kind",
+        "kinder",
+        "junge",
+        "maedchen",
+        "schulklasse",
+        "pfadfinder",
+        "geschwister",
+        "gummistiefel"
+      ],
+      "tun": ["zwei kinder"]
+    },
+    {
+      "rolle": "jugend",
+      "zweck": "Jugendliche: Mütze und Kapuzenpulli.",
+      "typen": ["statist.jugend"],
+      "ausweich": ["statist.studentin", "statist.kindB", "statist.kindA"],
+      "namen": ["schueler", "teenager", "sprayer", "praktikant", "skater", "fans"],
+      "tun": ["mit kapuze"]
+    },
+    {
+      "rolle": "konzern",
+      "zweck": "Büro und Technik in Silicon Bay: heller Anzug, Tablet.",
+      "typen": ["statist.konzern"],
+      "ausweich": ["statist.anzug", "statist.studentin"],
+      "namen": [
+        "entwicklerin",
+        "empfangsdame",
+        "trainerin",
+        "techniker",
+        "geschaeftsfrau",
+        "kameramann",
+        "pendler"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "musik",
+      "zweck": "Wer ein Instrument spielt.",
+      "typen": ["statist.musik"],
+      "ausweich": ["statist.jugend", "statist.studentin"],
+      "namen": ["musik", "gitarrist", "geigerin", "band", "mundharmonika", "saenger"],
+      "tun": ["spielt gitarre", "spielt saxofon", "spielt akkordeon", "spielt fiedel"]
+    },
+    {
+      "rolle": "ranger",
+      "zweck": "Aufsicht in der Natur: Rangerhut und Khaki.",
+      "typen": ["statist.ranger"],
+      "ausweich": ["statist.wanderer", "wanderer"],
+      "namen": [
+        "ranger",
+        "foerster",
+        "betreuer",
+        "bademeister",
+        "sheriff",
+        "forscher",
+        "bergfuehrer",
+        "jaeger",
+        "vogelkundler",
+        "vogelzaehler",
+        "geologe"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "seniorin",
+      "zweck": "Ältere Frau.",
+      "typen": ["statist.rentnerin"],
+      "ausweich": ["mutter"],
+      "namen": ["rentnerin", "oma", "grossmutter"],
+      "tun": []
+    },
+    {
+      "rolle": "senior",
+      "zweck": "Älterer Mann.",
+      "typen": ["statist.rentner"],
+      "ausweich": ["wanderer", "statist.anzug"],
+      "namen": [
+        "rentner",
+        "opa",
+        "alterherr",
+        "taubenfuetterer",
+        "taubenmann",
+        "stammgast",
+        "mannmitzeitung"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "kellner",
+      "zweck": "Bedienung mit Tablett, männlich.",
+      "typen": ["kellner"],
+      "ausweich": ["statist.service"],
+      "namen": ["kellner", "wirt"],
+      "tun": []
+    },
+    {
+      "rolle": "koch",
+      "zweck": "Küche: Kochmütze und Kelle.",
+      "typen": ["schiffskoch"],
+      "ausweich": ["statist.service", "kellner"],
+      "namen": ["koch", "metzger", "baecker", "hotdogverkaeufer", "imbissverkaeufer"],
+      "tun": []
+    },
+    {
+      "rolle": "service",
+      "zweck": "Bedienung und Verkauf: Schürze.",
+      "typen": ["statist.service"],
+      "ausweich": ["kellner", "mutter"],
+      "namen": [
+        "kellnerin",
+        "koechin",
+        "baeckerin",
+        "verkaeufer",
+        "wirtin",
+        "barista",
+        "ladenhilfe",
+        "zuckerwattefrau",
+        "haendler",
+        "suessigkeitenmann",
+        "waescherin",
+        "waschsalonfrau"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "buch",
+      "zweck": "Lesen, Lernen, Schreiben: Brille, Jacke, Buch.",
+      "typen": ["statist.studentin"],
+      "ausweich": ["mutter", "statist.jugend"],
+      "namen": ["student", "leserin", "bibliothekarin", "lehrerin", "reporterin", "schachlehrerin"],
+      "tun": []
+    },
+    {
+      "rolle": "herr",
+      "zweck": "Herr im Anzug: Lehrer, Händler alter Schule, Reporter.",
+      "typen": ["statist.anzug"],
+      "ausweich": ["statist.rentner", "statist.jugend"],
+      "namen": [
+        "lehrer",
+        "uhrmacher",
+        "reporter",
+        "schachlehrer",
+        "hobbyastronom",
+        "sammler",
+        "wettender",
+        "musikhaendler"
+      ],
+      "tun": []
+    },
+    {
+      "rolle": "unterwegs",
+      "zweck": "Draußen unterwegs: Rucksack, Mütze, Wanderstock.",
+      "typen": ["statist.wanderer", "wanderer"],
+      "ausweich": ["joggerin", "statist.studentin", "statist.jugend"],
+      "namen": [
+        "wander",
+        "tourist",
+        "kletterer",
+        "pilzsammler",
+        "fotograf",
+        "anhalter",
+        "reisende",
+        "skifahrer",
+        "radfahrer",
+        "radler",
+        "motorradfahrer",
+        "vogelbeobachter",
+        "vogelstimmen",
+        "goldsucher",
+        "landschaftsmaler",
+        "trainspotter"
+      ],
+      "tun": ["fotografier"]
+    },
+    {
+      "rolle": "sport",
+      "zweck": "Sportkleidung.",
+      "typen": ["joggerin"],
+      "ausweich": ["statist.jugend", "statist.studentin"],
+      "namen": ["jogger", "schwimmerin", "paddlerin"],
+      "tun": []
+    },
+    {
+      "rolle": "alltag",
+      "zweck": "Alle übrigen: Alltagskleidung ohne Beruf. Wörter stehen hier nur, damit ein kürzeres Wort einer anderen Regel nicht greift (Kinderwagen ist kein Kind).",
+      "typen": [
+        "statist.studentin",
+        "statist.anzug",
+        "mutter",
+        "statist.jugend",
+        "statist.rentnerin",
+        "statist.rentner"
+      ],
+      "ausweich": ["statist.wanderer", "joggerin"],
+      "namen": ["kinderwagen", "brueckenbauer", "picknickvater", "vater", "kiebitz"],
+      "tun": []
+    }
+  ]
+}

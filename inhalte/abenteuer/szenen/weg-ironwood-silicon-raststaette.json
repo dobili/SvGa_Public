@@ -1312,6 +1312,7 @@
       "typ": "statist",
       "feld": [78, 20],
       "eigenschaften": {
+        "rolle": "senior",
         "tun": "Mr. Oakes zählt Vögel im Watt",
         "wann": "tag"
       }
@@ -1377,7 +1378,6 @@
         "bis": "146,15",
         "tun": "reicht Kaffee und Würstchen aus der Klappe",
         "wann": "tag",
-        "bild": "statist-06",
         "verhalten": "sitzen",
         "blick": "oben"
       }

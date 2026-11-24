@@ -132,6 +132,31 @@ Wer von einem brillanten Zug erzählt, kann ihn auch zeigen.
 - **Auch Lieblingsmotive und Eröffnungen** lassen sich so zeigen. Dafür genügt eine kurze, selbst
   gebaute Zugfolge mit Quelle „eigenes Beispiel“, ebenfalls geprüft.
 
+### 3.5 Welches Bild ein Statist bekommt (seit 24.11.2026, Kartenblick M05)
+
+Das Bild folgt der Rolle, nicht mehr dem Los. Vorher würfelten App und Vorschau aus dem Namen (und
+verschieden); jeder fünfte Statist trug den Bauhelm, auch die Empfangsdame und die Leute in London
+1851.
+
+- **Liste:** `app/src/abenteuer/oberwelt/statistenrollen.json`, gemeinsam für App
+  (`oberwelt/statistenwahl.ts`) und Pipeline (`pipeline/abenteuer/statistenwahl.py`: Vorschau,
+  Karteneditor, Prüfung). Regeln mit Wörtern für den Namen und für `tun`, je Regel die passenden
+  Bilder (`typen`) und Ausweichbilder (`ausweich`).
+- **Reihenfolge:** Eigenschaft `bild` (eigene Figur wie `otis`) gilt immer. Sonst Eigenschaft
+  `rolle` (Name einer Regel, etwa `historisch`, `kind`, `werk`), sonst das längste Wort im Namen,
+  sonst im `tun`, sonst Alltag.
+- **Auswahl unter den Bildern der Regel:** fest nach dem Namen, aber dasselbe Bild steht nicht
+  zweimal innerhalb von 6 Feldern, das Geschlecht des Namens passt (Endung `-in`, `frau…`,
+  `…mann`), und wer sitzt, bekommt ein Bild mit Sitzbild.
+- **Bauhelm** (`statist.arbeiter`) nur in der Regel `bau`. **Erinnerungskarten:** jeder Statist
+  trägt `rolle: historisch`.
+- **Für neue Statisten:** Namen so wählen, dass die Rolle darin steht (`kellnerin`, `anglerAmKai`).
+  Für Personen mit Eigennamen `rolle` setzen. Kein `bild: statist-NN` mehr von Hand.
+- **Prüfungen:** `python -m pipeline.abenteuer.statistenrolle` (0 Befunde; `--alle` zeigt jede
+  Zuordnung, `--probe` schreibt die Probe, mit der Vitest die App gegen die Pipeline prüft) und
+  `python -m pipeline.abenteuer.tunplatz` (Statisten, deren `tun` „sitzt“ sagt, ohne Eigenschaft
+  `sitzt`: offene Liste für die Szenenarbeit).
+
 ## 4. Vorrat: Schachgeschichte (nur das hier, oder vom Haupt-Chat geprüft)
 
 Die Helfer nehmen Begebenheiten nur aus dieser Liste. Jede ist gut belegt. Neue Begebenheiten

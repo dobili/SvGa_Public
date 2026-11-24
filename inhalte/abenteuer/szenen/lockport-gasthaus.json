@@ -380,6 +380,7 @@
       "typ": "statist",
       "feld": [20, 7],
       "eigenschaften": {
+        "rolle": "kellner",
         "tun": "poliert Gläser hinter dem Tresen",
         "wann": "tag"
       }

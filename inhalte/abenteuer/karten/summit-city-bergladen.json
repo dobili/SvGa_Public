@@ -592,11 +592,6 @@
        "value": "schaefermatt"
       },
       {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-31"
-      },
-      {
        "name": "blick",
        "type": "string",
        "value": "links"

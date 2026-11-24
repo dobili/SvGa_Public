@@ -5,9 +5,9 @@
  * Rolle im Gesamtbild: Reine Logik ohne Phaser (getestet in belebung.test.ts). Die Bewegung steht
  * in belebungsbewegung.ts, das Zeichnen in belebungsschicht.ts. Die Regeln kommen aus
  * docs/spiel/16_Statisten_und_Tiere.md (Abschnitte 3.1 und 5) und dem Auftrag der Runde 7.
- * Bilder baut `pipeline/abenteuer/belebungsbilder.py` ins private Repository: Statisten als
- * `figuren/statist-NN.png` (Vorrat von 40), Tiere als `tiere/<art>.png`; die Rahmengrößen in
- * TIERBILDER sind dieselben wie dort.
+ * Bilder: Tiere als `tiere/<art>.png` (pipeline/abenteuer/belebungsbilder.py, Rahmengrößen in
+ * TIERBILDER wie dort). Statisten ohne eigenes `bild` bekommen ihr Bild nach der Rolle, schon beim
+ * Lesen der Karte (statistenwahl.ts, seit 24.11.2026; vorher gewürfelt aus 40 Vorratsbögen).
  * Beispiel: Objekt „tauben“ (type tier, verhalten ausweichen) → Art „taube“, eine Schar aus drei
  * bis fünf Tauben, Bild „tiere/taube.png“ mit Rahmen 16 × 16.
  */
@@ -19,7 +19,11 @@ import {
   type Menschenzustand,
 } from "./figurzustand";
 import { blickrichtung, sitzrichtung } from "./sitzrichtung";
+import { waehleStatistenbilder, type Statistenangabe } from "./statistenwahl";
 import type { Richtung } from "./szene";
+
+// Der Streuwert wohnt seit dem 24.11.2026 bei der Bildwahl; tiere.ts und rundenaufgaben.ts holen ihn hier.
+export { streuwert } from "./statistenwahl";
 
 /** Tageszeit, zu der ein Statist unterwegs ist (Eigenschaft `wann`; ohne Angabe: immer). */
 export type Tageszeit = "morgen" | "tag" | "abend" | "nacht" | "immer";
@@ -56,7 +60,10 @@ export interface Belebung {
   readonly sagt: string | null;
   /** Kennung einer Vorführung (Eigenschaft `zeigt`, Dokument 16, 3.4), sonst null. */
   readonly zeigt: string | null;
-  /** Eigenes Bild (Eigenschaft `bild`, etwa „statist-07“ oder „hund“), sonst null. */
+  /**
+   * Bild: Eigenschaft `bild` (etwa „otis“ oder „hund“); bei Statisten ohne sie das Bild nach der
+   * Rolle (statistenwahl.ts, etwa „statist.service“). Null nur bei Tieren ohne eigenes Bild.
+   */
   readonly bild: string | null;
   readonly verhalten: Tierverhalten;
   /** Blickrichtung eines sitzenden Statisten (Eigenschaft `sitzt`), sonst null; er läuft nicht. */
@@ -142,18 +149,37 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
   };
 }
 
+/** Was die Bildwahl von einem Statisten wissen muss (statistenwahl.ts). */
+function angabeVon(o: Tiledobjekt, b: Belebung): Statistenangabe {
+  return {
+    name: b.name,
+    feld: b.feld,
+    tun: eigenschaft(o, "tun") ?? "",
+    bild: b.bild,
+    rolle: eigenschaft(o, "rolle") ?? null,
+    sitzt: b.sitzt !== null,
+  };
+}
+
 /**
  * Alle Statisten und Tiere einer Tiled-Karte (Objekte mit type statist oder tier, gleich in
  * welcher Objektebene). Eigenschaften `von`/`bis` als „x,y“; fehlen sie, gilt das eigene Feld.
+ * Statisten ohne Eigenschaft `bild` bekommen hier ihr Bild nach der Rolle (Name, `tun`, `rolle`),
+ * für die ganze Karte auf einmal, damit dasselbe Bild nicht zweimal nebeneinander steht.
+ * Beispiel: „empfangsdame“ in der Akademie → bild „statist.konzern“.
  */
 export function liesBelebung(karte: object): Belebung[] {
   const ebenen = (karte as { layers?: readonly { objects?: readonly Tiledobjekt[] }[] }).layers;
-  return (ebenen ?? []).flatMap((e) =>
+  const paare = (ebenen ?? []).flatMap((e) =>
     (e.objects ?? []).flatMap((o) => {
       const b = alsBelebung(o);
-      return b ? [b] : [];
+      return b ? [{ o, b }] : [];
     }),
   );
+  const statisten = paare.filter((p) => p.b.typ === "statist");
+  const bilder = waehleStatistenbilder(statisten.map((p) => angabeVon(p.o, p.b)));
+  const bildVon = new Map(statisten.map((p, i) => [p.b, bilder[i] ?? null]));
+  return paare.map((p) => (bildVon.has(p.b) ? { ...p.b, bild: bildVon.get(p.b) ?? null } : p.b));
 }
 
 /** Stunden [von, bis) je Tageszeit; ein Bereich über Mitternacht hat bis < von. */
@@ -199,27 +225,17 @@ export function satzBeim(saetze: readonly string[], besuch: number): string | nu
   return saetze[besuch % saetze.length] ?? null;
 }
 
-/** Fester Streuwert eines Namens (FNV-1a), damit derselbe Name immer gleich aussieht. */
-export function streuwert(text: string): number {
-  let h = 0x811c9dc5;
-  for (let i = 0; i < text.length; i++) {
-    h ^= text.charCodeAt(i);
-    h = Math.imul(h, 0x01000193) >>> 0;
-  }
-  return h;
-}
-
-/** Größe des Statistenvorrats (pipeline/abenteuer/belebungsbilder.py, STATISTEN). */
-export const STATISTENVORRAT = 40;
-
 /**
- * Bild eines Statisten im Paket: Eigenschaft `bild` („statist-07“ oder Name einer Figur), sonst
- * fest nach dem Namen aus dem Vorrat. Beispiel: „passanten“ → immer dasselbe „figuren/statist-NN.png“.
+ * Pfad des Statistenbilds im Paket. `liesBelebung` hat das Bild schon bestimmt (Eigenschaft `bild`
+ * oder die Wahl nach der Rolle); fehlt es (ein einzeln gebauter Eintrag, etwa im Test), wählt die
+ * Rolle allein nach dem Namen.
+ * Beispiel: bild „statist.service“ → „figuren/statist.service.png“; nur Name „bauarbeiter“ →
+ * „figuren/statist.arbeiter.png“.
  */
 export function statistenbild(b: Pick<Belebung, "name" | "bild">): string {
-  if (b.bild) return `figuren/${b.bild}.png`;
-  const nummer = (streuwert(b.name) % STATISTENVORRAT) + 1;
-  return `figuren/statist-${String(nummer).padStart(2, "0")}.png`;
+  const feld = { x: 0, y: 0 };
+  const angabe = { name: b.name, feld, tun: "", bild: b.bild, rolle: null, sitzt: false };
+  return `figuren/${b.bild ?? waehleStatistenbilder([angabe])[0]}.png`;
 }
 
 /** Was ein Statist beim Ansprechen sagt: Schlüssel des Satzes und der Antwort Ambroses. */

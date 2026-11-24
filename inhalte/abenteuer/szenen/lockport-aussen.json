@@ -552,6 +552,7 @@
       "eigenschaften": {
         "von": "14,12",
         "bis": "14,12",
+        "rolle": "kind",
         "tun": "angelt Flaschen aus dem Becken",
         "wann": "tag"
       }
@@ -741,6 +742,7 @@
       "typ": "statist",
       "feld": [11, 20],
       "eigenschaften": {
+        "rolle": "hafen",
         "tun": "sitzt auf dem Poller und sieht auf den Kahn",
         "wann": "tag",
         "blick": "rechts"

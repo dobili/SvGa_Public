@@ -4,9 +4,10 @@
   "art": "aussen",
   "beschreibung": "Variante C (reicher): Der Weg schwingt gleich am Grenzstein nach Norden, fällt dann tief auf die Reihen 14–15 und windet sich in drei Bögen nach Osten. Der Waldbach kommt im Westen vom Nordrand, begleitet den Weg nördlich und mäandert in zwei Bögen nach Süden; bei Spalte 90 quert der Weg ihn auf einer Fußgängerbrücke. An der Kreuzung bei Spalte 66 stehen Wegweiser und Rätseltafel, ein kurzer Abzweig führt nach Norden an den Bach mit Trittsteinen. Hinter der Brücke steigt der Weg zur Lichtung, ein zweiter Abzweig führt nach Süden zum hohlen Stamm, dann Birkenwald mit zwei Zelten des Pfadfinderlagers. Dichter Zedernwald mit vielen Farnen, Pilzen, angenagten Stämmen, Felsen und Baumstümpfen.",
   "boden": "gras",
-  "wandart": "gras",
+  "wandart": "nadelstreu",
   "boeden": {
-    "e": "erde"
+    "e": "erde",
+    "n": "nadelstreu"
   },
   "bruecken": ["h"],
   "zustand": ["neu", "gebraucht", "alt"],
@@ -21,34 +22,34 @@
   ],
   "raster": [
     "###########~~###############################################################################################################################",
-    "#..........~~..............................................................................................................................#",
-    "#..........~~..............................................................................................................................#",
-    "#..........~~...........................~~~~~~~~.......ee.....................~~~~~~~~.....................................................#",
-    "#..........~~........................~~~~~~~~~~~~~~....ee..................~~~~~~~~~~~.....................................................#",
-    "#..........~~~~...........~~~~~~~~~~~~~~~~....~~~~~~~~.ee................~~~~~~~....~~~....................................................#",
-    "#...........~~~~~~..~~~~~~~~~~~~~~~~~~~..........~~~~~~hh~~~~~~~~~~~~~~~~~~~~.......~~~....................................ee..............#",
-    "#............~~~~~~~~~~~~~~~........................~~~hh~~~~~~~~~~~~~~~~~~.........~~~~...................................ee..............#",
-    "eeeeeeeeeeee....~~~~~~.................................ee...........................~~~~~.............eeeeeeeeeeeeee.......ee..............#",
-    "eeeeeeeeeeeee...............................eeeeeeeeeeeeeeeeeeee.......................~~............eeeeeeeeeeeeeeee......ee..............#",
-    "#..........eee.............................eeeeeeeeeeeeeeeeeeeeee......................~~...........eee.....ee.....eee.....ee..............#",
-    "#...........eee...........................eee..................eee.....................~~..........eee......ee......eee....ee..............#",
-    "#............eee.........................eee....................eee....................~~.........eee.......ee.......eee...ee..............#",
-    "#.............eeeeeeeeeeeeeeeeeeeeeeeeeeeee......................eee...................~~........eee........ee........eee..ee..............#",
-    "#..............eeeeeeeeeeeeeeeeeeeeeeeeeee........................eeeeeeeeeeeeeeeeeeeeehheeeeeeeeee.........ee.........eeeeeeeeeeeeeeeeeeeee",
-    "#..................................................................eeeeeeeeeeeeeeeeeeeehheeeeeeeee..........ee..........eeeeeeeeeeeeeeeeeeee",
-    "#......................................................................................~~..................................................#",
-    "#......................................................................................~~..................................................#",
-    "#.....................................................................................~~~..................................................#",
-    "#.....................................................................................~~...................................................#",
-    "#.....................................................................................~~...................................................#",
-    "#.....................................................................................~~~..................................................#",
-    "#......................................................................................~~..................................................#",
-    "#......................................................................................~~~.................................................#",
-    "#.......................................................................................~~.................................................#",
-    "#.......................................................................................~~.................................................#",
-    "#.......................................................................................~~.................................................#",
-    "#.......................................................................................~~.................................................#",
-    "#......................................................................................~~~.................................................#",
+    "#nnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn........................................#",
+    "#nnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn.......................................#",
+    "#nnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnnnnnnnn~~~~~~~~nnnnnnneennnnnnnnnnnnnnnnnnnnn~~~~~~~~nnnnnnnnnnnn.........................................#",
+    "#nnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnnnnn~~~~~~~~~~~~~~nnnneennnnnnnnnnnnnnnnnn~~~~~~~~~~~nnnnnnnnnn...........................................#",
+    "#nnnnnnnnnn~~~~nnnnnnnnnnn~~~~~~~~~~~~~~~~nnnn~~~~~~~~neennnnnnnnnnnnnnnn~~~~~~~nnnn~~~nnnnnnnnnnn.........................................#",
+    "#nnnnnnnnnnn~~~~~~nn~~~~~~~~~~~~~~~~~~~nnnnnnnnnn~~~~~~hh~~~~~~~~~~~~~~~~~~~~nnnnnnn~~~nnnnnnnnn...........................ee..............#",
+    "#nnnnnnnnnnnn~~~~~~~~~~~~~~~nnnnnnnnnnnnnnnnnnnnnnnn~~~hh~~~~~~~~~~~~~~~~~~nnnnnnnnn~~~~nnnnnnnn...........................ee..............#",
+    "eeeeeeeeeeeennnn~~~~~~nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnn~~~~~nnnnnnnnn....eeeeeeeeeeeeee.......ee..............#",
+    "eeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnn~~nnnnnnn.....eeeeeeeeeeeeeeee......ee..............#",
+    "#nnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnn..eee.....ee.....eee.....ee..............#",
+    "#nnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnn~~nnnnnnnn..eee......ee......eee....ee..............#",
+    "#nnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnn~~nnnnnn...eee.......ee.......eee...ee..............#",
+    "#nnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnn~~nnnnn...eee........ee........eee..ee..............#",
+    "#nnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeehheeeeeeeeee.........ee.........eeeeeeeeeeeeeeeeeeeee",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeehheeeeeeeee..........ee..........eeeeeeeeeeeeeeeeeeee",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnn.............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnn.............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnn.............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnn...........................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnn..........................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnn............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnn..........................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnn............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnn.............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnn...........................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnn.............................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnn...........................................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnn.........................................#",
     "#######################################################################################~~###################################################"
   ],
   "objekte": [
@@ -1965,6 +1966,249 @@
     {
       "moebel": "wg4Baumstammbank",
       "feld": [54, 2]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [32, 25]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [39, 23],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [8, 9]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [75, 22]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [49, 16],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [59, 20],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [95, 23],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [44, 13],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [6, 20]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [23, 18],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [46, 21]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [90, 4]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [29, 20]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [18, 22]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [97, 19]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [22, 0],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [70, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [95, 3],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [34, 5],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [70, 6],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [74, 6],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [76, 6]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [80, 5]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [7, 8],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [53, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [77, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [48, 12]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [3, 14]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [11, 14]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [63, 15]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [71, 14]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [73, 14]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [77, 14],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [83, 14]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [91, 14],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [93, 15]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [2, 17],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [36, 17],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [38, 17],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [40, 17]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [58, 17],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [74, 17]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [76, 17]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [21, 20],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [33, 20],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [39, 20]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [55, 20],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [77, 21],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [93, 21],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5ZederSchmal",
+      "feld": [6, 23],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [14, 23]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [68, 23],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Zeder",
+      "feld": [70, 24]
     }
   ],
   "ausloeser": [

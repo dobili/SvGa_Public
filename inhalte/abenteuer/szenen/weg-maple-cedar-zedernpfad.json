@@ -4,7 +4,7 @@
   "art": "aussen",
   "beschreibung": "Der Zedernpfad, ein Trampelpfad durch dichten Zedernwald über den Hügel nach Cedar Creek, 240 Kacheln lang. Zwei Felsstufen laufen von Kartenrand zu Kartenrand; nur der Pfad führt hinauf und wieder hinab, über vier gerade, in den Fels geschlagene Treppen. Im Westen folgt der Pfad vom Fußsteg des Stadtparks dem Waldrand nach Osten, an einer kleinen Pilzlichtung vorbei, und steigt über die erste Treppe auf die mittlere Stufe. Dort liegt Sturmholz quer über dem Weg, man steigt darüber. Über die zweite Treppe geht es auf die obere Stufe zur Kuppe mit der Baumstammbank in einem Steinkreis, wo ein Maler hinter seiner Staffelei steht und den Blick über die Zedern nach Süden malt (man sieht die Rückseite der Leinwand). Dahinter führt die dritte Treppe hinab zu einem Rastplatz, an dem Kinder Zapfen sammeln, die vierte hinab in die Senke und zum Ostrand. Der Wald steht beiderseits so dicht, dass der Pfad der einzige Weg ist. Kartengutachten Akt 1 (14.11.2026): Der Wald steht ohne Reihen, gemischt aus Zedern, Tannen und Kiefern, mit Farn, Ästen und Pilzen dazwischen; die Felskanten springen in Abschnitten um eine Reihe vor und zurück und laufen nur an den Treppen gerade; die Knicke des Pfads sind innen gerundet. Das Sturmholz liegt flach, man steigt darüber. Um die Bank auf der Kuppe liegt ein Kreis aus Steinen, am Rastplatz steht der Eimer der Kinder mit den Zapfen.",
   "boden": "gras",
-  "wandart": "gras",
+  "wandart": "nadelstreu",
   "boeden": {
     "e": "erde",
     "n": "nadelstreu"
@@ -21,38 +21,38 @@
   ],
   "raster": [
     "################################################################################################################################################################################################################################################",
-    "#nnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn....nnnnnnnnnnnn...nnnnnnnnnnnnnnnnnnnnnn..nnnnnnnnnnnnnnnnnn.nnnnnnnnnnnn....................................nnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn.nnnnnn.nnnnn..nnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..................................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn...eeeeeeeeeeeeeeeeeeeeeeeeeeee.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn....eeeeeeeeeeeeeeeeeeeeeeeeeeee..nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn....eeee......................eee...nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeee.............nnn..nnnnn.ee...nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeee............nnnnnnnnnnnnee..nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneee........................nnnnnnnnnnnnnee.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnn########nnnnnnnnnnnnnnnnnnnnnnn###########nnnnnnnnnnnnnnnnnnnnnnn##########n.nnnnnnnnnnnnnnnn#######nnnnnee...............##################nnnnnee..nnnnnnn###########nnnnnnnnnnnnn#######.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeennnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnn########nnnnnnnnnnnnnnnnnnnnnnn###########nnnnnnnnnnnnnnnnnnnnnnn##########nnnnnnnnnnnnnnnnnn#######nnnnneennnnnnnnnnnnnnn##################nnnnneennnnnnnnn###########nnnnnnnnnnnnn#######nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
     "##########################nnnnnnnnn##########################nnnnnnnn########################################ee######################################ee######################nnnnnnnnnnn########################nnnnnnnnnnnnnnn#################",
     "#############################################################################################################ee######################################ee#########################################################################################",
-    "####nnnnnnnn#######################.nnnnnn..nn#######################..........##################.......#####ee###############.nnnnnnnnnnnn.....#####ee#########...........#############..nnnnn#################################################",
-    "#.nnnnnnnnnnnnnnnnnnn.nnnn#########nnnnnnnnnnnnnnnnnn..nnn...########........................................ee.nnnnnn..nnnnnnnnnnnnnnnnnnnnnnnnnnnnneee.....................###########nnnnnnnnn...nnnnnnnnnnn.###############nnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn...nnnnnnnnnnnn.................................eeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeee.....nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeee....nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..............nnnnn.eee...nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneee.................................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..nnnnnnn.eee...nnnnnnnnnn...nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneee..nnnnnnnn....nnnnnnnnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..nnnnn..eeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeee.nnnnnnnnnn..nnnnnnnnnnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..nnn...eeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn...............................eee.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
-    "#nnn###########nnnnnnn#######nnnnnnnnnnnnnnnnnnnnnnnnnnnnnneee................nnn#########nnnnnnnnnnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#################...................ee...nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn######nnn#",
-    "###############nnnnnnn#######nnnn##########################ee#######...........nn#########.nnnnnnnnnnnnnnnnn##################nnnn.nnnnnnnnnn##################################.........##########ee####################nnnnnnnnnnnnnn##########",
+    "####nnnnnnnn#######################nnnnnnnnnnn#######################nnnnnnnnnn##################nnnnnnn#####ee###############nnnnnnnnnnnnnnnnnn#####ee#########nnnnnnnnnnn#############nnnnnnn#################################################",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnn#########nnnnnnnnnnnnnnnnnnnnnnnnnn########nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnn###########nnnnnnnnnnnnnnnnnnnnnnnn###############nnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnn###########nnnnnnn#######nnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnn#########nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#################nnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn######nnn#",
+    "###############nnnnnnn#######nnnn##########################ee#######nnnnnnnnnnnnn#########nnnnnnnnnnnnnnnnnn##################nnnnnnnnnnnnnnn##################################nnnnnnnnn##########ee####################nnnnnnnnnnnnnn##########",
     "###########################################################ee#####################################################################################################################################ee############################################",
-    "####.nnn.nnnnnn#######nnnnn..##############################ee####################nnnnnnnnn####################################################################...nnnnnnnnnnnnnn###################ee##################################..nnnn####",
-    "#nnnnnnnnnnnnnn#######nnnnnnn####.........................eee.nnnnnn#############nnnnnnnnn##################nnnnnnnnnnnnnnnnnn###############.nnn..nnn.nnnnn....nnnnnnnnnnnnnnn#########.nnn.nnnnneee...................##############nnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnnn..nnnnnnnnnnn..eeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnn.nnnnn.nnnnnnnnnnnnnnn.nnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeee.....nnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnnn....nnnnnnnnnnn.eeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeee....nnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnnnnnnnn......nnnnnnnnn.eeee...nnn...................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn..................eee...nnnnnnnnnnnnnnnnnnnn#",
-    "#nnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeee...nnnnn..nnnnn....nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn.eee...nnnnnnnnnnnnn....nn#",
-    "#nnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeee..nnnnnnnnnnnnnn..nnnnnnnnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#nnnnnnnnneee.........................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn....nnnnnnnnnnnnnnnnn.nnnnnnn.....nnnnnnnnnnnnnnnnnnnnnnn...........nnnnnnnnnnnnnnnnnnnn...nnnnnnnnnnnnnnn........nnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#nnnnnnnnnee...........................nnn..nnnnnnn..nnnnnnnnnnnnnnnn......nnnnnnnn.nnn......nnnnn.......nnnnnnnnnn.nnnnnnnnnn...............nnnnnnnnnnnnnnn............nnn..............nnnnnnnnnnnnnnnnnnnnnnnnnnnnn.........................#",
+    "####nnnnnnnnnnn#######nnnnnnn##############################ee####################nnnnnnnnn####################################################################nnnnnnnnnnnnnnnnn###################ee##################################nnnnnn####",
+    "#nnnnnnnnnnnnnn#######nnnnnnn####nnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnn#############nnnnnnnnn##################nnnnnnnnnnnnnnnnnn###############nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#########nnnnnnnnnneeennnnnnnnnnnnnnnnnnn##############nnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#nnnnnnnnneeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#nnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
     "##########ee####################################################################################################################################################################################################################################"
   ],
   "objekte": [
@@ -2455,6 +2455,66 @@
     {
       "moebel": "wg4Farn",
       "feld": [115, 29]
+    },
+    {
+      "moebel": "wg4Zeder",
+      "feld": [214, 0],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4Zeder",
+      "feld": [20, 12]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [176, 12],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4Zeder",
+      "feld": [39, 15]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [129, 17]
+    },
+    {
+      "moebel": "wg4Zeder",
+      "feld": [111, 17],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [7, 22],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [140, 24]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [70, 24]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [52, 27],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [75, 29],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [104, 28],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wg4ZederSchmal",
+      "feld": [188, 27],
+      "versatz": [-4, 0]
     }
   ],
   "ausloeser": [

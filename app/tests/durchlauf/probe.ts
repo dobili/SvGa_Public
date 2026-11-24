@@ -11,14 +11,15 @@
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { chromium, devices, type Browser } from "@playwright/test";
-import { starteMitStand } from "../e2e/abenteuer-affe";
+import { chromium, devices, expect, type Browser, type Page } from "@playwright/test";
+import { schreibeStandImBrowser, starteMitStand } from "../e2e/abenteuer-affe";
 import type { Lauf } from "./eingabe";
 import { liesLage } from "./lage";
 import { Messung } from "./messung";
 import { Eiliger } from "./eilig";
 import { Schwaechling } from "./schwach";
 import { standAus } from "./simstand";
+import type { Abenteuerstand } from "../../src/abenteuer/schnittstelle/spielstand";
 import { ladeSpieldaten, type Spieldaten } from "./welt";
 
 export const STAND = process.env.PROBE_STAND ?? "";
@@ -38,6 +39,8 @@ export interface Probe {
   readonly daten: Spieldaten;
   readonly ordner: string;
   readonly browser: Browser;
+  /** Der Startstand, um nach einer Reise wieder auf die Karte der Probe zu kommen. */
+  readonly stand: Abenteuerstand;
 }
 
 /** Startet Browser und Abenteuer mit dem Stand aus PROBE_STAND auf PROBE_KARTE. */
@@ -65,21 +68,32 @@ export async function starteProbe(name: string): Promise<Probe> {
     schwach: new Schwaechling(ordner),
     eilig: new Eiliger(),
   };
-  return { lauf, daten, ordner, browser };
+  return { lauf, daten, ordner, browser, stand };
 }
 
 /** Schließt einen offenen Dialog, indem sie ihn durchtippt (letzte Antwort, sonst „Weiter“). */
 export async function schliesseDialog(lauf: Lauf): Promise<string> {
   let erste = "";
   // Der Dialog öffnet erst nach einem Augenblick.
+  const fertig = lauf.seite.locator(
+    "[data-testid='abenteuer-laden'] .abenteuer-menue-fuss .knopf-haupt",
+  );
   await lauf.seite
     .getByTestId("abenteuer-dialog")
     .first()
+    .or(fertig)
     .waitFor({ state: "visible", timeout: 3000 })
     .catch(() => undefined);
   const ende = Date.now() + DIALOG_FRIST_MS;
+  // Ein Laden (Fanshop in der Halle der Capital Arena) ist kein Dialog; offen gelassen, sperrte er
+  // alle weiteren Gänge (Ansprechprobe, 24.11.2026). Schließen wie ein Mensch: „Fertig“.
   while (Date.now() < ende) {
     const lage = await liesLage(lauf.seite);
+    if (await fertig.isVisible().catch(() => false)) {
+      await fertig.click({ timeout: 2000 }).catch(() => undefined);
+      await lauf.seite.waitForTimeout(250);
+      continue;
+    }
     if (!lage.dialog && lage.bild === "welt") return erste;
     if (lage.dialog && !erste) erste = lage.dialog.text.slice(0, 80);
     // Die letzte Antwort ist meist der Abschied („Bis später“); sonst führt „Weiter“ durch.
@@ -88,4 +102,17 @@ export async function schliesseDialog(lauf: Lauf): Promise<string> {
     await lauf.seite.waitForTimeout(250);
   }
   return erste;
+}
+
+/**
+ * Zurück auf die Karte der Probe: den Startstand neu schreiben und die Welt neu laden. Warum: Ein
+ * Übergang mit Dialog (Deich in Port Delacroix) schickt den Helden auf eine andere Karte; ein
+ * zweites starteMitStand scheitert, weil die App schon läuft (Ansprechprobe, 24.11.2026).
+ */
+export async function zurueckAufKarte(seite: Page, stand: Abenteuerstand): Promise<void> {
+  await expect.poll(() => seite.evaluate(schreibeStandImBrowser, stand)).toBe(true);
+  await seite.reload();
+  await seite.goto("/app/#abenteuer");
+  await expect(seite.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });
+  await seite.waitForTimeout(500);
 }

@@ -17508,7 +17508,7 @@
      "name": "dime",
      "type": "figur",
      "x": 352,
-     "y": 1040,
+     "y": 1056,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -17963,7 +17963,7 @@
      "name": "brueckenbauer1",
      "type": "statist",
      "x": 352,
-     "y": 1008,
+     "y": 1024,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -17983,6 +17983,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -17991,7 +17996,7 @@
      "name": "brueckenbauer2",
      "type": "statist",
      "x": 304,
-     "y": 1024,
+     "y": 1040,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18016,6 +18021,11 @@
        "name": "blick",
        "type": "string",
        "value": "rechts"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -18024,7 +18034,7 @@
      "name": "brueckenbauer3",
      "type": "statist",
      "x": 400,
-     "y": 1008,
+     "y": 1024,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18044,6 +18054,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -18052,7 +18067,7 @@
      "name": "brueckenbauer4",
      "type": "statist",
      "x": 352,
-     "y": 1024,
+     "y": 1040,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18072,6 +18087,11 @@
        "name": "blick",
        "type": "string",
        "value": "links"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
       }
      ]
     },
@@ -18080,34 +18100,6 @@
      "name": "brueckenbauer5",
      "type": "statist",
      "x": 448,
-     "y": 1008,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "rolle",
-       "type": "string",
-       "value": "unterwegs"
-      },
-      {
-       "name": "tun",
-       "type": "string",
-       "value": "sitzt am Klapptisch und spielt"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "brueckenbauer6",
-     "type": "statist",
-     "x": 400,
      "y": 1024,
      "width": 16,
      "height": 16,
@@ -18130,7 +18122,45 @@
        "value": "tag"
       },
       {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "brueckenbauer6",
+     "type": "statist",
+     "x": 400,
+     "y": 1040,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "unterwegs"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Klapptisch und spielt"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
        "name": "blick",
+       "type": "string",
+       "value": "links"
+      },
+      {
+       "name": "sitzt",
        "type": "string",
        "value": "links"
       }
@@ -18376,7 +18406,7 @@
      "name": "ri8Klapptisch",
      "type": "moebel",
      "x": 320,
-     "y": 1008,
+     "y": 1024,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18385,7 +18415,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1032
+       "value": 1048
       },
       {
        "name": "kollision",
@@ -18399,7 +18429,7 @@
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 352,
-     "y": 1008,
+     "y": 1024,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18422,7 +18452,7 @@
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 304,
-     "y": 1024,
+     "y": 1040,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18445,7 +18475,7 @@
      "name": "ri8Klapptisch",
      "type": "moebel",
      "x": 368,
-     "y": 1008,
+     "y": 1024,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18454,7 +18484,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1032
+       "value": 1048
       },
       {
        "name": "kollision",
@@ -18468,7 +18498,7 @@
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 400,
-     "y": 1008,
+     "y": 1024,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18491,7 +18521,7 @@
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 352,
-     "y": 1024,
+     "y": 1040,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18514,7 +18544,7 @@
      "name": "ri8Klapptisch",
      "type": "moebel",
      "x": 416,
-     "y": 1008,
+     "y": 1024,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18523,7 +18553,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1032
+       "value": 1048
       },
       {
        "name": "kollision",
@@ -18537,7 +18567,7 @@
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 448,
-     "y": 1008,
+     "y": 1024,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -18560,7 +18590,7 @@
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 400,
-     "y": 1024,
+     "y": 1040,
      "width": 16,
      "height": 16,
      "rotation": 0,

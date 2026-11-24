@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 110,
+ "nextobjectid": 111,
  "layers": [
   {
    "id": 1,
@@ -15389,6 +15389,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.wegDesertSummit.diner.motelgast"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -17297,6 +17302,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 110,
+     "name": "sd6Liegestuhl",
+     "type": "moebel",
+     "x": 1552,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
       },
       {
        "name": "kollision",

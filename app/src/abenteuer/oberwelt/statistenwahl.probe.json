@@ -982,62 +982,62 @@
         {
           "name": "brueckenbauer1",
           "x": 22,
-          "y": 63,
+          "y": 64,
           "tun": "sitzt am Klapptisch und spielt",
           "bild": null,
           "rolle": "unterwegs",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.wanderer"
         },
         {
           "name": "brueckenbauer2",
           "x": 19,
-          "y": 64,
+          "y": 65,
           "tun": "sitzt am Klapptisch und spielt",
           "bild": null,
           "rolle": "jugend",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.kindB"
         },
         {
           "name": "brueckenbauer3",
           "x": 25,
-          "y": 63,
+          "y": 64,
           "tun": "sitzt am Klapptisch und spielt",
           "bild": null,
           "rolle": "unterwegs",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "wanderer"
         },
         {
           "name": "brueckenbauer4",
           "x": 22,
-          "y": 64,
+          "y": 65,
           "tun": "sitzt am Klapptisch und spielt",
           "bild": null,
           "rolle": null,
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.rentner"
         },
         {
           "name": "brueckenbauer5",
           "x": 28,
-          "y": 63,
-          "tun": "sitzt am Klapptisch und spielt",
-          "bild": null,
-          "rolle": "unterwegs",
-          "sitzt": false,
-          "erwartet": "joggerin"
-        },
-        {
-          "name": "brueckenbauer6",
-          "x": 25,
           "y": 64,
           "tun": "sitzt am Klapptisch und spielt",
           "bild": null,
           "rolle": "unterwegs",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.studentin"
+        },
+        {
+          "name": "brueckenbauer6",
+          "x": 25,
+          "y": 65,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": "unterwegs",
+          "sitzt": true,
+          "erwartet": "joggerin"
         }
       ]
     }

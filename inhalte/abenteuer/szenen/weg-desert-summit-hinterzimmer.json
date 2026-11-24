@@ -165,7 +165,8 @@
       "feld": [6, 3],
       "eigenschaften": {
         "rolle": "fahrer",
-        "tun": "sitzt am Brett gegenüber von Mags"
+        "tun": "sitzt am Brett gegenüber von Mags",
+        "sitzt": "unten"
       }
     },
     {
@@ -173,7 +174,8 @@
       "typ": "statist",
       "feld": [10, 4],
       "eigenschaften": {
-        "tun": "sitzt am Brett gegenüber von Ruth Keene"
+        "tun": "sitzt am Brett gegenüber von Ruth Keene",
+        "sitzt": "unten"
       }
     },
     {
@@ -182,7 +184,8 @@
       "feld": [3, 5],
       "eigenschaften": {
         "rolle": "fahrer",
-        "tun": "sitzt am mittleren Brett und spielt"
+        "tun": "sitzt am mittleren Brett und spielt",
+        "sitzt": "unten"
       }
     },
     {
@@ -191,10 +194,19 @@
       "feld": [4, 8],
       "eigenschaften": {
         "rolle": "jugend",
-        "tun": "sitzt am mittleren Brett und spielt"
+        "tun": "sitzt am mittleren Brett und spielt",
+        "sitzt": "oben"
       }
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["einfach", "klassisch", "industrie", "rustikal", "modern", "laendlich", "schule"]
+  "stil": [
+    "einfach",
+    "klassisch",
+    "industrie",
+    "rustikal",
+    "modern",
+    "laendlich",
+    "schule"
+  ]
 }

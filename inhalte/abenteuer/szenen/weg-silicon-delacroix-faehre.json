@@ -1267,6 +1267,12 @@
     {
       "moebel": "fz12BullaugeRechts",
       "feld": [23, 72]
+    },
+    {
+      "moebel": "rv8Koffer",
+      "feld": [13, 43],
+      "kollision": false,
+      "begehbar_grund": "Koffer, auf dem die Passagierin sitzt"
     }
   ],
   "ausloeser": [
@@ -1356,7 +1362,8 @@
         "bis": "13,43",
         "tun": "sitzt im Wintermantel auf ihrem Koffer",
         "wann": "tag",
-        "sagt": "statist.wegSiliconDelacroix.faehre.passagierin"
+        "sagt": "statist.wegSiliconDelacroix.faehre.passagierin",
+        "sitzt": "unten"
       }
     },
     {

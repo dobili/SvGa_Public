@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 274,
+ "nextobjectid": 275,
  "layers": [
   {
    "id": 1,
@@ -7508,6 +7508,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.wegSiliconDelacroix.faehre.passagierin"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -13594,6 +13599,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 274,
+     "name": "rv8Koffer",
+     "type": "moebel",
+     "x": 208,
+     "y": 688,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 696
       },
       {
        "name": "kollision",

@@ -363,6 +363,10 @@
     {
       "moebel": "wdsPoolKakteen",
       "feld": [103, 5]
+    },
+    {
+      "moebel": "sd6Liegestuhl",
+      "feld": [97, 10]
     }
   ],
   "ausloeser": [
@@ -529,7 +533,8 @@
         "bis": "98,11",
         "tun": "sitzt mit einem Buch vor dem Motel",
         "wann": "tag",
-        "sagt": "statist.wegDesertSummit.diner.motelgast"
+        "sagt": "statist.wegDesertSummit.diner.motelgast",
+        "sitzt": "unten"
       }
     },
     {

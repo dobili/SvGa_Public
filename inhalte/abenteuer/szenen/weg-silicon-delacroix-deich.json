@@ -933,6 +933,12 @@
       "moebel": "pd6SandsaeckeReihe",
       "feld": [132, 12],
       "runde7": true
+    },
+    {
+      "moebel": "pdEimer",
+      "feld": [30, 6],
+      "kollision": false,
+      "begehbar_grund": "umgedrehter Eimer, auf dem der alte Fischer sitzt"
     }
   ],
   "ausloeser": [
@@ -1024,7 +1030,8 @@
         "bis": "30,6",
         "tun": "sitzt auf einem umgedrehten Eimer und flickt Netze",
         "wann": "tag",
-        "sagt": "statist.wegSiliconDelacroix.deich.alterFischer"
+        "sagt": "statist.wegSiliconDelacroix.deich.alterFischer",
+        "sitzt": "unten"
       }
     },
     {

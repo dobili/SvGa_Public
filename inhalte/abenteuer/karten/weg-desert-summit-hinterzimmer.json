@@ -648,6 +648,11 @@
        "name": "tun",
        "type": "string",
        "value": "sitzt am Brett gegenüber von Mags"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -666,6 +671,11 @@
        "name": "tun",
        "type": "string",
        "value": "sitzt am Brett gegenüber von Ruth Keene"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -689,6 +699,11 @@
        "name": "tun",
        "type": "string",
        "value": "sitzt am mittleren Brett und spielt"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -712,6 +727,11 @@
        "name": "tun",
        "type": "string",
        "value": "sitzt am mittleren Brett und spielt"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },

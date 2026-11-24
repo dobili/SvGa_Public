@@ -57,11 +57,125 @@
   "objekte": [
     {
       "moebel": "n12AckerMais",
+      "feld": [0, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 2],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 3],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 4],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 5],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 7],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 9],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 10],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 11],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 12],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 13],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 15],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n9MaisWand",
+      "feld": [0, 17],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "n12AckerMais",
       "feld": [1, 1]
     },
     {
       "moebel": "n12AckerKuerbis",
-      "feld": [36, 1]
+      "feld": [37, 0]
     },
     {
       "moebel": "n9MaisWand",

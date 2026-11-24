@@ -19164,6 +19164,11 @@
    "value": "musikhausOffen"
   },
   {
+   "name": "jahreszeit",
+   "type": "string",
+   "value": "winter_mild"
+  },
+  {
    "name": "sperren",
    "type": "string",
    "value": "0,26;0,27;0,28;1,57;2,57"

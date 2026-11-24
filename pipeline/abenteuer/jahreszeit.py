@@ -27,12 +27,15 @@ from pipeline.abenteuer.kartenbau import raster
 INHALTE = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer"
 SZENEN = INHALTE / "szenen"
 # Karte → Jahreszeit (RO53.5: Süden im Winter von Akt 3, ohne Schnee; Raststätte an der Küste).
+# Nicht hier: Desert Springs und der Canyon (erste Wärme, blühende Kakteen), das Bayou (im Winter
+# und im Sommer besucht, delta.md), Innenräume (die Fenster zeigen nur Glas).
 PFLICHT = {
     "siliconBay.altstadt": "winter_mild",
     "pelikaninsel.dorf": "winter_mild",
     "wegSiliconDelacroix.deich": "winter_mild",
     "wegIronwoodSilicon.glasbruecke": "winter_mild",
     "wegIronwoodSilicon.raststaette": "winter_mild",
+    "portDelacroix.aussen": "winter_mild",  # nasser Winter nach dem Hurrikan (RO21), Nachbar des Deichs
 }
 # Norden (Akt 2, erster Schnee am Ende) und Berge.
 SCHNEE_ORTE = {

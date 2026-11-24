@@ -459,6 +459,13 @@ Profil › Einstellungen › Fehler melden.
       Südwand, und die Tür ist dort zu 75 % deckend, damit man die Matte dahinter erkennt (wie deine
       Notiz im Clubraum; umgesetzt, Widerspruch genügt). Ansehen: Laden in Ghost Town, Bahnhofshalle
       Riverton, Arena-Halle, Kantine Ironwood (drei Matten vor zwei Flügeln).
+- [ ] N2704. **Bild für Dime fehlt (24.11.2026):** Dime, der Anführer der Blitzspieler unter der
+      Brücke am Kanalweg (Weg Riverton–Ironwood, Mann um 40, redet ununterbrochen), hat noch keinen
+      Figurenbogen und erscheint als Platzhalterquadrat. Bitte in PixelLab erstellen wie die anderen
+      Erwachsenen (4 Richtungen, Gehen, dazu Sitzen auf einem Stuhl, weil er am Brett sitzt), etwa:
+      „40 year old street chess hustler, hoodie and cap, lively, talkative“. Hochladen nach ki-roh/,
+      dann baue ich ihn ein. Außerdem jetzt behoben: Die Joggerin auf der Landstraße war ebenfalls
+      ein Quadrat (sie lud den Bogen nicht), sie ist jetzt richtig zu sehen.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

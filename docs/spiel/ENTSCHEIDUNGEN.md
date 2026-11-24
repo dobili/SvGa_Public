@@ -4,6 +4,27 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 24.11.2026 – Bodenvariation für alle Böden an: Kein Boden zeigt mehr das Kachelraster
+
+- **Anlass:** Kartenblick (alle 128 Karten aus menschlicher Sicht, Muster M01, Rang 1): Dielen als
+  Kästchen, Grasbüschel und Steinchen in Reih und Glied, Erde und Sand als glatte Farbflächen. Der
+  Autor bat ausdrücklich, das Raster loszuwerden. Bisher war `bodenvariation_standard` aus
+  („vorerst, bis der Autor die Probe abnimmt“).
+- **Entscheidung:** `bodenvariation_standard` in `inhalte/abenteuer/materialien.json` ist an; jeder
+  Boden außer Wasser hat eine `variation`. Eine Szene kann sie mit `"bodenvariation": false`
+  abschalten. Widerspruch genügt, dann wird der Schalter zurückgestellt.
+- **Was gezeichnet wird:** Holz (Dielen, helles und dunkles Holz) als Bretterverband über die ganze
+  Karte: Fugen der Kachel entfernt, Bretter verschiedener Länge, Stöße versetzt, jedes Brett mit
+  leicht eigenem Ton (`bretterverband.py`). Gras, Hecke, Schotter, Fels und roter Sand: Büschel,
+  Blümchen und Steinchen der Kacheln von LimeZu werden herausgelesen und frei gestreut. Erde und
+  Sand: Krume, kleine Steinchen, große Tonflecken (`bodenstreuung.py`). Fliesen, Stein, Teppich,
+  Asphalt, Pflaster: feine Gebrauchsspuren; die Tönung ganzer Kacheln auf Asphalt und Pflaster
+  entfällt, weil sie das Raster als Quadrate zeigte.
+- **Prüfung:** `python -m pipeline.abenteuer.bodenflaeche` misst am gezeichneten Hintergrund: keine
+  Fläche von mehr als 24 pixelgleichen Feldern, keine Stoßfugen in drei Brettreihen übereinander.
+  Dauertest „0 Befunde“ (braucht das private Paket, `SVGA_PRIVAT`).
+- **Folge:** Die Hintergrundbilder aller Karten werden neu gebaut.
+
 ## 20.11.2026 – Finale mit E+700 (Bronze), Schwierigkeitskurve ab Akt 3 strenger
 
 - **Befund (mittel-4, Messung 15 Begegnungen × E800/1200/1600):** Ab Akt 3 war die Kurve flach,

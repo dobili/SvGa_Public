@@ -14,9 +14,16 @@ Wie: Ein Nachlauf über den fertigen Hintergrund von ``kartenbild``. Je Feld ein
 Der Zufall ist fest je Karte und Feld (sha256 aus Kennung, x, y), also gleiches Bild bei jedem Lauf
 und keine Muster wie bei einer Formel über x und y.
 
+Dazu über die ganze Fläche eines Bodens (nicht je Kachel, Kartenblick M01, 24.11.2026):
+- ``verband``: Holzböden als versetzte Bretter (bretterverband.py).
+- ``eben``, ``streu``, ``kiesel``, ``koernung``, ``wolken``: Naturböden mit frei gestreuten
+  Büscheln und Steinchen, Krume und Tonflecken (bodenstreuung.py).
+Die Prüfung ``bodenflaeche`` misst am fertigen Hintergrund, dass keine Fläche mehr aus lauter
+gleichen Feldern besteht.
+
 Schalter: ``"bodenvariation": true/false`` in der Szene; ohne Angabe gilt
-``bodenvariation_standard`` aus ``materialien.json`` (vorerst aus, bis der Autor die Probe an
-Campus Silicon Bay und Hafen gesehen hat).
+``bodenvariation_standard`` aus ``materialien.json`` (an seit 24.11.2026: Der Autor bat
+ausdrücklich, das Kachelraster loszuwerden; docs/spiel/ENTSCHEIDUNGEN.md).
 """
 
 import hashlib
@@ -24,6 +31,18 @@ import random
 from pathlib import Path
 
 from PIL import Image, ImageDraw
+
+from pipeline.abenteuer.bodenstreuung import (
+    bodenmaske,
+    grundfarbe,
+    kiesel,
+    koernung,
+    streue,
+    streuteile,
+    wolken,
+)
+from pipeline.abenteuer.bodenstreuung import zufall as streuzufall
+from pipeline.abenteuer.bretterverband import verlege
 
 K = 16
 VOLL = 255
@@ -36,6 +55,8 @@ GITTER = (52, 50, 54, 255)
 GITTERRAND = (120, 118, 122, 255)
 # Wie dunkel eine Fuge im Pflaster ist (Summe der Kanäle), damit Moos nur dort wächst.
 FUGE = 330
+# Angaben in ``variation``, die über die ganze Fläche wirken (bodenstreuung.py).
+FLAECHIG = ("eben", "streu", "kiesel", "koernung", "wolken")
 
 
 def zufall(karte: str, x: int, y: int) -> random.Random:
@@ -136,22 +157,18 @@ def _variiere_feld(teil: Image.Image, v: dict, r: random.Random, gully: bool) ->
     return teil
 
 
-def variiere(szene: dict, grund: Image.Image, gezeichnet: dict, materialien: dict, kachel_aus) -> Image.Image:
-    """Der Hintergrund mit Bodenvariation (unverändert, wenn sie für die Szene aus ist).
+def innenkachel(art: dict, feld: list[int]) -> bool:
+    """Ob ``feld`` eine Innenkachel des Bodens ist (Grundkachel oder eine seiner Varianten)."""
+    return list(feld) == list(art["feld"]) or list(feld) in [list(k) for k in art.get("varianten", [])]
 
-    ``gezeichnet`` ist Feld → (Belag, Kachel) aus ``kartenbild.hintergrund``; ``kachel_aus(art,
-    feld)`` liefert eine Kachel aus dem Bogen. Beispiel: Campus Silicon Bay, Pflaster: etwa jede
-    sechste Kachel eine andere Pflasterkachel, hier und da ein Fleck, selten ein Gully.
-    """
-    if not aktiv(szene, materialien):
-        return grund
-    boeden = materialien["boeden"]
-    bild = grund.copy()
+
+def _kachelweise(szene: dict, bild: Image.Image, gezeichnet: dict, boeden: dict, kachel_aus) -> set:
+    """Ersatzkacheln und Überlagerungen je Innenkachel (auf ``bild``); Ausgabe: Felder mit Gully."""
     gullys: list[tuple[int, int]] = []
     for (x, y), (name, feld) in sorted(gezeichnet.items(), key=lambda e: (e[0][1], e[0][0])):
         art = boeden.get(name, {})
         v = art.get("variation")
-        if not v or list(feld) != list(art["feld"]):
+        if not v or not innenkachel(art, feld):
             continue  # nur Innenkacheln; Ränder und Ecken bleiben, wie sie sind
         r = zufall(szene["karte"], x, y)
         teil = (
@@ -164,6 +181,57 @@ def variiere(szene: dict, grund: Image.Image, gezeichnet: dict, materialien: dic
         if gully:
             gullys.append((x, y))
         bild.paste(_variiere_feld(teil.copy(), v, r, gully), (x * K, y * K))
+    return set(gullys)
+
+
+def _flaechig(bild: Image.Image, karte: str, name: str, art: dict, orte: dict, kachel_aus) -> Image.Image:
+    """Variation über die ganze Fläche eines Bodens: Bretterverband, Einebnen, Tonflecken, Körnung,
+    Streuteile (bretterverband.py, bodenstreuung.py). ``orte`` ist Feld → Kachel dieses Bodens."""
+    v = art["variation"]
+    if v.get("verband"):
+        bild = verlege(bild, set(orte), v["verband"], karte, name)
+    if not any(v.get(schluessel) for schluessel in FLAECHIG):
+        return bild
+    innen = {ort for ort, feld in orte.items() if innenkachel(art, feld) or feld == art.get("unter_wand")}
+    kacheln = [kachel_aus(art, feld) for feld in [art["feld"], *art.get("varianten", [])]]
+    grund = grundfarbe(kacheln[0])
+    teile = kiesel(grund) if v.get("kiesel") else []
+    if v.get("eben"):
+        for x, y in (ort for ort in innen if orte[ort] != art.get("unter_wand")):
+            bild.paste(grund, (x * K, y * K, (x + 1) * K, (y + 1) * K))
+        teile = streuteile(kacheln, grund) + teile
+    farben = {grund} if v.get("eben") else set(kacheln[0].get_flattened_data())
+    maske = bodenmaske(bild, innen, set(orte) - innen, farben)
+    felder = sorted(orte)
+    if v.get("wolken"):
+        wolken(bild, maske, v["wolken"], streuzufall(karte, name, "wolken"))
+    koernung(bild, maske, felder, v.get("koernung", 0), (karte, name))
+    streue(bild, maske, felder, teile, v.get("streu", 0) + v.get("kiesel", 0), (karte, name))
+    return bild
+
+
+def variiere(szene: dict, grund: Image.Image, gezeichnet: dict, materialien: dict, kachel_aus) -> Image.Image:
+    """Der Hintergrund mit Bodenvariation (unverändert, wenn sie für die Szene aus ist).
+
+    Warum: Kein Boden soll das Kachelraster zeigen (Kartenblick M01, Bitte des Autors 24.11.2026).
+    Eingaben: ``gezeichnet`` ist Feld → (Belag, Kachel) aus ``kartenbild.hintergrund``;
+    ``kachel_aus(art, feld)`` liefert eine Kachel aus dem Bogen. Ausgabe: neues Bild.
+    Beispiel: Campus Silicon Bay, Pflaster: etwa jede sechste Kachel eine andere Pflasterkachel,
+    hier und da ein Fleck, selten ein Gully. Kaffeehaus London: Dielen als versetzte Bretter.
+    Jahrmarkt: Erde mit Krume, Steinchen und Tonflecken, Grasbüschel frei gestreut.
+    Sonderfall: Felder mit Gully bekommen keine Streuung.
+    """
+    if not aktiv(szene, materialien):
+        return grund
+    boeden = materialien["boeden"]
+    bild = grund.copy()
+    gullys = _kachelweise(szene, bild, gezeichnet, boeden, kachel_aus)
+    je_boden: dict[str, dict] = {}
+    for ort, (name, feld) in gezeichnet.items():
+        if ort not in gullys and boeden.get(name, {}).get("variation"):
+            je_boden.setdefault(name, {})[ort] = list(feld)
+    for name in sorted(je_boden):
+        bild = _flaechig(bild, szene["karte"], name, boeden[name], je_boden[name], kachel_aus)
     return bild
 
 

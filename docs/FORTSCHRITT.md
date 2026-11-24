@@ -1,3 +1,22 @@
+Stand: 24.11.2026, 17 Uhr (Haupt-Chat, Schach-Abenteuer): **Kartenblick Welle 1 und 2 auf beta.**
+
+- Kartenblick: alle 128 Karten aus menschlicher Sicht begutachtet (7 Gutachter, ~1050 Funde,
+  Gesamtauswertung lokal buch/arbeit/kartenblick/gesamt.md, Seite 16 an den Autor).
+- Welle 1 (Zeichner): Boden ohne Raster (Bretterverband, Streuung, Variation an), Ufer nach
+  Nachbarboden und weiche Ränder, Klippen als Gelände (Seitenwand, Fuß, Böschung, Stützmauer),
+  Statisten nach Rolle (statistenrollen.json). Dauerprüfungen bodenflaeche, uferart, treppenrand,
+  klippenband, statistenrolle, tunplatz; dazu AP8a (mittel-2) kronenhoehe, waldrand, wiederholung,
+  untergrund, zusammenhang_enden, proportionen. Alle auf 0, tunplatz 10.
+- Welle 2 (Szenen): Westen, Städte, Sonderorte, Wegkarten; Hintergründe im privaten Paket neu.
+- Dazu: Rennen am Bildschirmrand (Schwelle rückt nach innen), Ward an der Parkbank ansprechbar
+  und mit passendem Text (hierKarte für Dialoge), Sprechblase lässt „Weiter“ frei.
+- Rückfragen RO53 (acht Entscheidungen, umgesetzt) und RO54 (Mappe 16b, 32 Bildaufträge).
+
+**Nächster Schritt:** Gate n66 (mittel-2 Wegkarten-Rest, Kürbishof, Durchlauf-Fix mittel-1), beta.
+mittel-1 Querformat-Lauf Akt 4 schwach bis 19 Uhr. Offen: tunplatz 10, Welle 3 (Jahreszeit,
+Wasserton, Schilder nach RO53), Einbau der Bilder aus Mappe 15/16b. mittel-4 wartet auf die
+Freigabe des Autors. Nichts nach `main`.
+
 Stand: 24.11.2026, Mittag (Haupt-Chat, Schach-Abenteuer): **Nachtrunde fertig, beta f2985f1c.**
 
 - Laufbahnen: Statisten auf schmalen Pfaden an den Rand (laufbahn.py, Dauertest über alle Szenen),

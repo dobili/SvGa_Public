@@ -2661,11 +2661,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
          lassen; die acht Dinge, die wirklich in die Mauerkrone ragen, werden versetzt.
       **Antwort:** „RO53 ok“ oder Nummer mit Wunsch.
 - [ ] RO54. **Kartenblick: neue Bilder (24.11.2026)**
-      Für Dinge, die es in unseren Grafiken nicht gibt, stehen auf der Kartenblick-Seite im Chat
-      13 Bildaufträge mit Prompt zum Kopieren. Am wichtigsten: Wandstücke für Höhen (Grasböschung,
-      roter Canyonfels, Stützmauer, Granit), sechs bis acht historische Nebenfiguren für London 1851,
-      Sitzbilder für Arbeiter, Wanderer, Anzug und Service, Schleusentor für Lockport, Fährschiff.
-      Bis die Bilder da sind, bauen wir mit den vorhandenen Teilen so gut es geht.
+      Die Mappe „16b_Bildauftraege_Kartenblick_24-11.html“ (im Chat) enthält 32 Aufträge mit Prompt
+      zum Kopieren. Am wichtigsten (Gruppe A): Wandstücke für Höhen (Grasböschung, roter Canyonfels,
+      Stützmauer, Granit), Schleusentor für Lockport, Fährschiff (Bordwand und Aufbau mit rotem
+      Schornstein), Werkhalle am Kanal, Kantinen- und Musikhalle in Zielgröße, Leuchtturm, Watt-,
+      Sand- und Ackerkacheln. Gruppe B für PixelLab: historische Figuren für London 1851, neutrale
+      Alltagsfiguren, Sitzbilder für Arbeiter, Wanderer, Anzug und Service. Dazu (nicht in der
+      Mappe): der Felsbogen am Canyon im Stil der neuen Klippen, dunkel rotbraun mit senkrechten
+      Riefen, ohne Kontur, Durchgang 3 Kacheln, 160 × 144. Bis die Bilder da sind, bauen wir mit
+      vorhandenen Teilen.
       **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.

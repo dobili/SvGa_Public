@@ -14059,11 +14059,6 @@
        "value": "tag"
       },
       {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
-      },
-      {
        "name": "blick",
        "type": "string",
        "value": "links"
@@ -14100,11 +14095,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
       },
       {
        "name": "blick",
@@ -14150,12 +14140,12 @@
        "value": "statist-11"
       },
       {
-       "name": "verhalten",
+       "name": "blick",
        "type": "string",
-       "value": "sitzen"
+       "value": "oben"
       },
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "oben"
       }
@@ -14193,12 +14183,12 @@
        "value": "tag"
       },
       {
-       "name": "verhalten",
+       "name": "blick",
        "type": "string",
-       "value": "sitzen"
+       "value": "oben"
       },
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "oben"
       }

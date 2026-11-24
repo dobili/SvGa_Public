@@ -1017,7 +1017,7 @@
           "von": 6,
           "bis": 10,
           "karte": "wegRivertonIronwood.bruecke",
-          "feld": [22, 65],
+          "feld": [22, 66],
           "tut": "steht"
         },
         {
@@ -1025,7 +1025,7 @@
           "von": 10,
           "bis": 18,
           "karte": "wegRivertonIronwood.bruecke",
-          "feld": [22, 65],
+          "feld": [22, 66],
           "tut": "steht"
         },
         {

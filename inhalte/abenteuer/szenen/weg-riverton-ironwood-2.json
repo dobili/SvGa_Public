@@ -212,42 +212,42 @@
     },
     {
       "moebel": "ri8Klapptisch",
-      "feld": [20, 63],
+      "feld": [20, 64],
       "id": "bb1"
-    },
-    {
-      "moebel": "ri8Klapphocker",
-      "feld": [22, 63]
-    },
-    {
-      "moebel": "ri8Klapphocker",
-      "feld": [19, 64]
-    },
-    {
-      "moebel": "ri8Klapptisch",
-      "feld": [23, 63],
-      "id": "bb2"
-    },
-    {
-      "moebel": "ri8Klapphocker",
-      "feld": [25, 63]
     },
     {
       "moebel": "ri8Klapphocker",
       "feld": [22, 64]
     },
     {
-      "moebel": "ri8Klapptisch",
-      "feld": [26, 63],
-      "id": "bb3"
+      "moebel": "ri8Klapphocker",
+      "feld": [19, 65]
     },
     {
-      "moebel": "ri8Klapphocker",
-      "feld": [28, 63]
+      "moebel": "ri8Klapptisch",
+      "feld": [23, 64],
+      "id": "bb2"
     },
     {
       "moebel": "ri8Klapphocker",
       "feld": [25, 64]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [22, 65]
+    },
+    {
+      "moebel": "ri8Klapptisch",
+      "feld": [26, 64],
+      "id": "bb3"
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [28, 64]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [25, 65]
     },
     {
       "moebel": "ri8Kreidespringer",
@@ -1679,7 +1679,7 @@
   "figuren": [
     {
       "name": "dime",
-      "feld": [22, 65],
+      "feld": [22, 66],
       "blick": "oben"
     }
   ],
@@ -1836,63 +1836,69 @@
     {
       "name": "brueckenbauer1",
       "typ": "statist",
-      "feld": [22, 63],
+      "feld": [22, 64],
       "eigenschaften": {
         "rolle": "unterwegs",
         "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "links"
       }
     },
     {
       "name": "brueckenbauer2",
       "typ": "statist",
-      "feld": [19, 64],
+      "feld": [19, 65],
       "eigenschaften": {
         "rolle": "jugend",
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "blick": "rechts"
+        "blick": "rechts",
+        "sitzt": "rechts"
       }
     },
     {
       "name": "brueckenbauer3",
-      "typ": "statist",
-      "feld": [25, 63],
-      "eigenschaften": {
-        "rolle": "unterwegs",
-        "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag"
-      }
-    },
-    {
-      "name": "brueckenbauer4",
-      "typ": "statist",
-      "feld": [22, 64],
-      "eigenschaften": {
-        "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag",
-        "blick": "links"
-      }
-    },
-    {
-      "name": "brueckenbauer5",
-      "typ": "statist",
-      "feld": [28, 63],
-      "eigenschaften": {
-        "rolle": "unterwegs",
-        "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag"
-      }
-    },
-    {
-      "name": "brueckenbauer6",
       "typ": "statist",
       "feld": [25, 64],
       "eigenschaften": {
         "rolle": "unterwegs",
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "blick": "links"
+        "sitzt": "links"
+      }
+    },
+    {
+      "name": "brueckenbauer4",
+      "typ": "statist",
+      "feld": [22, 65],
+      "eigenschaften": {
+        "tun": "sitzt am Klapptisch und spielt",
+        "wann": "tag",
+        "blick": "links",
+        "sitzt": "links"
+      }
+    },
+    {
+      "name": "brueckenbauer5",
+      "typ": "statist",
+      "feld": [28, 64],
+      "eigenschaften": {
+        "rolle": "unterwegs",
+        "tun": "sitzt am Klapptisch und spielt",
+        "wann": "tag",
+        "sitzt": "links"
+      }
+    },
+    {
+      "name": "brueckenbauer6",
+      "typ": "statist",
+      "feld": [25, 65],
+      "eigenschaften": {
+        "rolle": "unterwegs",
+        "tun": "sitzt am Klapptisch und spielt",
+        "wann": "tag",
+        "blick": "links",
+        "sitzt": "links"
       }
     },
     {
@@ -1919,5 +1925,6 @@
   "datei": "karten/weg-riverton-ironwood-2.json",
   "ufer": "stein",
   "kante": "klippe",
-  "hochflaeche": "gras"
+  "hochflaeche": "gras",
+  "fels": "stuetzmauer"
 }

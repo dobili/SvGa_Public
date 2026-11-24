@@ -46,24 +46,7 @@ from pipeline.abenteuer.moebelliste import lade_moebel
 GERADE_HOECHSTENS = 20
 # (Szene, Art) → Regionspaket der Welle 2 und was dort zu tun ist. Alle Einträge liegen am Raster der
 # Szene, das Welle 1 nicht anfasst (Stand 24.11.2026, erzeugt aus den Funden dieses Werkzeugs).
-OFFEN: dict[tuple[str, str], str] = {
-    ("weg-delacroix-desert-canyonpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-delacroix-desert-felsbogen", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    (
-        "weg-delacroix-desert-felsbogen",
-        "ende",
-    ): "AP7 Wegkarten: Band nach der Verbreiterung der Schlucht an Rand oder Seitenkante anschließen",
-    ("weg-desert-summit-bergstrasse", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-desert-summit-diner", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-desert-summit-diner-neon", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-maple-cedar-zedernpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-pinewood-ghost-canyonrand", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-riverton-ironwood-2", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    (
-        "weg-riverton-ironwood-2-ohne-tische",
-        "gerade",
-    ): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-}
+OFFEN: dict[tuple[str, str], str] = {}
 
 
 @dataclass(frozen=True)

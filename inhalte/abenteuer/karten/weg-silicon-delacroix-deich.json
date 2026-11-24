@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 228,
+ "nextobjectid": 229,
  "layers": [
   {
    "id": 1,
@@ -20117,6 +20117,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.wegSiliconDelacroix.deich.alterFischer"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -25069,6 +25074,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 228,
+     "name": "pdEimer",
+     "type": "moebel",
+     "x": 480,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

@@ -15,11 +15,11 @@ from pipeline.abenteuer import zusammenhang_enden as z
 from pipeline.abenteuer.deckrahmen import lade as lade_rahmen
 from pipeline.abenteuer.moebelliste import lade_moebel
 
-# Prüfung → höchstens so viele Befunde (Stand 24.11.2026 nach Welle 2; offen nur die Felder des Kürbishofs).
+# Prüfung → höchstens so viele Befunde (Stand 24.11.2026 nach Welle 2: alle 0).
 OBERGRENZE = {
     "kronenhoehe": 0,
     "zusammenhang_enden": 0,
-    "waldrand": 4,
+    "waldrand": 0,
     "wiederholung": 0,
     "untergrund": 0,
     "proportionen_aussen": 0,

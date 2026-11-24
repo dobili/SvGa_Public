@@ -2046,60 +2046,9 @@
       ]
     },
     "juno": {
-      "ort": "mapleFalls",
-      "kind": false,
-      "bloecke": [
-        {
-          "art": "freizeit",
-          "von": 6,
-          "bis": 9,
-          "karte": "mapleFalls.aussen",
-          "feld": [54, 24],
-          "tut": "steht"
-        },
-        {
-          "art": "arbeit",
-          "von": 9,
-          "bis": 17,
-          "karte": "mapleFalls.aussen",
-          "feld": [54, 24],
-          "tut": "steht"
-        },
-        {
-          "art": "freizeit",
-          "von": 17,
-          "bis": 21,
-          "karte": "mapleFalls.park",
-          "feld": [22, 25],
-          "tut": "steht",
-          "blick": "unten"
-        },
-        {
-          "art": "nacht",
-          "von": 21,
-          "bis": 22,
-          "karte": "mapleFalls.diner",
-          "feld": [8, 10],
-          "tut": "steht",
-          "blick": "rechts"
-        },
-        {
-          "art": "schlaf",
-          "von": 22,
-          "bis": 1
-        },
-        {
-          "art": "nacht",
-          "von": 1,
-          "bis": 6,
-          "karte": "mapleFalls.diner",
-          "feld": [8, 10],
-          "tut": "steht",
-          "blick": "rechts"
-        }
-      ],
-      "questorte": ["mapleFalls.clubraum"],
-      "festhalten": "regel1"
+      "orte": ["capitalArena", "mapleFalls"],
+      "folgt_geschichte": true,
+      "questorte": ["mapleFalls.clubraum"]
     },
     "kade": {
       "ort": "capitalArena",
@@ -3748,8 +3697,7 @@
           "bis": 22,
           "karte": "mapleFalls.diner",
           "feld": [9, 10],
-          "tut": "steht",
-          "blick": "links"
+          "tut": "steht"
         },
         {
           "art": "schlaf",
@@ -3762,8 +3710,7 @@
           "bis": 6,
           "karte": "mapleFalls.diner",
           "feld": [9, 10],
-          "tut": "steht",
-          "blick": "links"
+          "tut": "steht"
         }
       ],
       "questorte": ["mapleFalls.park"]

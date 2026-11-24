@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { leererAbenteuerstand } from "../../src/abenteuer/regeln/spielstand";
 import { MINUTEN_JE_STUNDE } from "../../src/abenteuer/regeln/spieluhr";
+import { merkeAufbaustunde } from "./uhrwelt";
 import { kartenwissen, ladeSpieldaten } from "./welt";
 
 const MITTAG = 12;
@@ -25,5 +26,13 @@ describe("Kartenwissen nach der Uhr", () => {
 
   it("hält eine Figur fest, die eine Hauptquest braucht (Regel 1, wie im Spiel)", () => {
     expect(figurenAuf("mapleFalls.clubraum", MITTERNACHT)).toContain("coachDelgado");
+  });
+
+  it("nimmt für die Karte unter dem Helden die Stunde ihres Aufbaus, nicht die laufende Uhr", () => {
+    // Aufgebaut mittags: Die Gegnerin steht noch da, auch wenn die Uhr schon Mitternacht zeigt.
+    merkeAufbaustunde("wegMapleCedar.landstrasse", MITTAG);
+    expect(figurenAuf("wegMapleCedar.landstrasse", MITTERNACHT)).toContain("gegnerin");
+    merkeAufbaustunde(undefined, null);
+    expect(figurenAuf("wegMapleCedar.landstrasse", MITTERNACHT)).not.toContain("gegnerin");
   });
 });

@@ -40,8 +40,34 @@ function uhrdaten(lies: <T>(pfad: string) => T): Uhrdaten {
   return vorrat;
 }
 
+/** Stunde, mit der das Spiel die Karte unter dem Helden aufgebaut hat (`data-stunde` der Welt). */
+let aufbau: { readonly karte: string; readonly stunde: number } | null = null;
+
 /**
- * Die Karte nach der Uhr des Stands, wie das Spiel sie aufstellt; ohne Ort unverändert.
+ * Merkt die Stunde des Kartenaufbaus (lage.ts liest sie aus der Seite). Warum: Das Spiel stellt
+ * die Figuren nur beim Kartenaufbau nach der Uhr auf, nie vor den Augen des Spielers
+ * (regeln/tagesablauf.ts). Lief die Uhr auf der Karte über 17 Uhr, suchte der Durchlauf Kit, Sol
+ * und Ward schon an ihren Abendplätzen und meldete „kein Aktionsknopf“ (eiliger Durchlauf Akt 4,
+ * 24.11.2026).
+ */
+export function merkeAufbaustunde(karte: string | undefined, stunde: number | null): void {
+  aufbau = karte && stunde !== null && Number.isFinite(stunde) ? { karte, stunde } : null;
+}
+
+/** Spielminuten je Stunde und Tag (regeln/spieluhr.ts). */
+const MINUTEN_JE_STUNDE = 60;
+const MINUTEN_JE_TAG = 24 * MINUTEN_JE_STUNDE;
+
+/** Der Stand mit der Uhr auf der Aufbaustunde, wenn die Karte die unter dem Helden ist. */
+function mitAufbaustunde(stand: Abenteuerstand, kennung: string): Abenteuerstand {
+  if (aufbau?.karte !== kennung) return stand;
+  const tag = Math.floor((stand.spieluhr ?? 0) / MINUTEN_JE_TAG);
+  return { ...stand, spieluhr: tag * MINUTEN_JE_TAG + aufbau.stunde * MINUTEN_JE_STUNDE };
+}
+
+/**
+ * Die Karte nach der Uhr des Stands, wie das Spiel sie aufstellt; ohne Ort unverändert. Für die
+ * Karte unter dem Helden gilt die Stunde ihres Aufbaus (merkeAufbaustunde).
  * Beispiel: Clubraum um 0 Uhr → ohne Coach Delgado und Sam (sie sitzen im Diner oder schlafen).
  */
 export function karteNachUhr<T extends object>(
@@ -53,5 +79,6 @@ export function karteNachUhr<T extends object>(
 ): T {
   const { daten, ablaeufe } = uhrdaten(lies);
   const ort = daten.orte.find((o) => o.karten.some((k) => k.kennung === kennung));
-  return ort ? nachUhr(karte, kennung, ort, stand, daten, variablen, ablaeufe) : karte;
+  const uhr = mitAufbaustunde(stand, kennung);
+  return ort ? nachUhr(karte, kennung, ort, uhr, daten, variablen, ablaeufe) : karte;
 }

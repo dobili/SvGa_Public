@@ -145,7 +145,12 @@ describe("Tagesablauf", () => {
       name: "carla",
       properties: [{ name: "blick", value: "rechts" }],
     });
-    expect(diner(3)).toMatchObject({ properties: [{ name: "sitzt", value: "unten" }] });
+    expect(diner(3)).toMatchObject({
+      properties: [
+        { name: "sitzt", value: "unten" },
+        { name: "sitzrichtung", value: "moebel" },
+      ],
+    });
   });
 });
 

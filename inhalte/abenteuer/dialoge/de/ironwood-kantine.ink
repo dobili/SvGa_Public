@@ -473,12 +473,12 @@ Wer nur die Figuren zählt, versteht das nie. #sprecher:mutter #stimmung:nachden
 // Hanks Reihe erst nach Big Joe: Die Quest „Clubkampf in Ironwood“ wartet zuerst auf Big Joe und
 // dann auf Hanks Reihe; vorher bestanden, hing sie für immer (Chaos-Prüfung, 14.11.2026).
 - not bigJoeGetroffen:
-    Ein Mann im Blaumann sitzt allein am Ende des Tischs und sieht kaum hoch. #sprecher:erzaehler
+    Ein Mann im Blaumann steht allein am Ende des Tischs und sieht kaum hoch. #sprecher:erzaehler
     Erst zu Big Joe. Der entscheidet, wer hier mitspielt. #sprecher:hank #stimmung:neutral
     -> END
 - not hankGetroffen:
     ~ hankGetroffen = true
-    Ein Mann im Blaumann sitzt allein am Ende des Tischs und schiebt eine Figur hin und her. #sprecher:erzaehler
+    Ein Mann im Blaumann steht allein am Ende des Tischs und schiebt eine Figur hin und her. #sprecher:erzaehler
     Hank. Gefesselt. #sprecher:hank #stimmung:neutral
     Nicht bewegen. Wie ich nach der Nachtschicht. #sprecher:hank #stimmung:laechelt
     -> hank_reihe

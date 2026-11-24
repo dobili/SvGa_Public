@@ -413,11 +413,11 @@ Profil › Einstellungen › Fehler melden.
       Decke). Verdeckt die Vorderkante die Beine richtig, von hinten auch die Lehne? Wer mit dem
       Gesicht zu dir sitzt, bekommt nichts davor (Füße baumeln vorn). Notiz je Möbelart, falls die
       Grenze höher oder tiefer soll.
-- [ ] N2697. **Fehlende Sitz- und Schlafzustände:** 56 Zustände fehlen noch, die häufigsten zuerst,
-      mit Vorschau und dem Wortlaut für PixelLab („Sitting on an invisible chair, eyes open, hands
-      on lap“, für Schlafen entsprechend). Seite im privaten Repository unter
-      zustaende/fehlende.html. Bis sie da sind, stellt sich eine Figur im Tagesablauf neben ihren
-      Stuhl statt darauf. Liegen fehlt bei Lucia und Oma Ruth.
+- [ ] N2697. **Liegebilder für Lucia und Oma Ruth:** Von den Sitz- und Schlafzuständen fehlen nur
+      noch zwei (siehe RO51): Lucia und Oma Ruth im Bett. Bis dahin liegen sie mit ihrem Standbild
+      gekippt unter der Decke, Kopf auf dem Kissen; bitte nachts in Ironwood ansehen, ob das reicht.
+      Wortlaut für PixelLab (New State): „lying in bed asleep on her back, eyes closed, seen from
+      above, head on a pillow“.
 - [ ] N2698. **Nachlieferung 23.11. im Spiel:** Die Drohne schwebt, der Saugroboter fährt (eigenes
       Tier, Silicon-Bay-Akademie und Altstadt, etwa 8 × 8 Pixel), der Waschbär läuft auf vier Beinen,
       Owen (deine Lieferung vom Abend, mit Sitzen) und der Bauer sind neu.
@@ -2707,6 +2707,14 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Hüfte wären es 9 Pixel. Vergleichsfotos im privaten Repository unter tierprobe/fotos/index.html.
       Empfehlung: 13 lassen, ein kleinerer Hund wirkt neben den großköpfigen Figuren wie eine Katze.
       **Antwort:** „RO50 13“ oder „RO50 9“.
+- [ ] RO51. **Im Tagesablauf stehen statt sitzen (24.11.2026, umgesetzt, Widerspruch genügt)**
+      Für 54 Figuren fehlte ein Sitzbild für ihren Feierabend (Bänke, Diner, Kantine, Saloon,
+      U-Bahn). Keines der Gespräche verlangt, dass sie dort sitzen. Damit du nicht 54 Zustände in
+      PixelLab bauen musst, stehen sie jetzt neben dem Möbel und schauen sich an (Nachbarn an
+      derselben Bank zueinander). Hanks Erzählsatz in der Kantine heißt jetzt „steht allein am Ende
+      des Tischs“. Wenn du sie lieber sitzen siehst: Antwort „RO51 sitzen“, dann bekommst du die
+      Liste mit dem Wortlaut für PixelLab, und sie sitzen, sobald die Bilder da sind.
+      **Antwort:** „RO51 ok“ oder „RO51 sitzen“.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

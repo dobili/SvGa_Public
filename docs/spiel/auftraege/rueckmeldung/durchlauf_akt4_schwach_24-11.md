@@ -36,9 +36,14 @@ doppelten Dialoge, keine verlorenen Rückmeldungen und keine hängenden Pausen.
 
 ## Weitere Befunde
 
-- **Ward abends auf der Parkbank, Text:** Ihr Dialog beginnt dort mit „Eleanor Ward sitzt im Sessel
-  am Feuer und liest den Absatz zu Ende.“ Das ist die Erzählzeile der Hütte; von 17 bis 21 Uhr sitzt
-  sie nach dem Tagesablauf draußen. Gemeldet an den Hauptchat (Dialog oder Ablauf anpassen).
+- **Ward abends auf der Parkbank, Text:** Ihr erstes Gespräch begann dort mit „Eleanor Ward sitzt im
+  Sessel am Feuer und liest den Absatz zu Ende.“, und im Alltag bot sie Tee aus der Kanne an. Nach
+  dem Tagesablauf sitzt sie von 17 bis 6 Uhr (außer im Schlaf) draußen. Behoben: Dialoge bekommen
+  die Karte unter dem Helden als `hierKarte` (regeln/dialogvariablen.ts, variablenAusBesitz; in der
+  Simulation besitzvariablen). In summit-city-huette.ink sitzt Ward draußen „auf der Parkbank, ein
+  Taschenschach auf den Knien“, und statt des Tees sieht sie der Seilbahn zu. Test:
+  dialog/wardort.test.ts. Die übrigen Hüttenszenen (Mama am Kamin, Nadel vom Kaminsims) laufen
+  nur, solange Ward Questziel ist (Partie oder Gespräch); dann hält Regel 1 sie in der Hütte.
 
 ## Werkzeug
 

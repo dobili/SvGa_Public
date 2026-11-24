@@ -151,9 +151,9 @@ function rueckeNachUnten(
  * diese Rechnung nicht. Sie nimmt deshalb den häufigen Fall an (nach oben) und rechnet lieber eine
  * Kachel zu viel als zu wenig; wer am Boden sitzt (Lily auf dem Bordstein), sperrt nichts dazu.
  * Ausnahme: Beginnt ein niedriges Möbel (bis zwei Kacheln hoch) erst auf der Fußkachel und reicht
- * darunter weiter, rückt das Bild nach unten (sitzlage in sitzplatz.ts), und die Kachel darüber bleibt frei (Ward abends auf der
- * Bank unter ihr in Summit City; im Spiel geht der Held auf (41, 37) und spricht sie an,
- * Ansprechprobe 24.11.2026).
+ * darunter weiter, rückt das Bild nach unten (sitzlage in sitzplatz.ts), und die Kachel darüber
+ * bleibt frei (Ward abends auf der Parkbank in Summit City; im Spiel geht der Held auf (41, 37)
+ * und spricht sie an, Ansprechprobe 24.11.2026).
  * Dieselbe Regel in pipeline/abenteuer/figurensperre.py (`sitzkacheln`).
  * Beispiel: Sam sitzt auf (5, 8) auf dem Schulstuhl → auch (5, 7) ist gesperrt.
  */

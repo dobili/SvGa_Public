@@ -58,8 +58,9 @@ def sitzkacheln(szene: dict, gesetzt: list[dict], moebel: dict) -> dict[Feld, st
 
     Wie ``sitzkacheln`` in app/src/abenteuer/oberwelt/begehbar.ts. Eingaben: Szene, gesetzte Stücke
     (kartenbau.platziere) und Möbelkatalog. Beispiel: Sam sitzt im Clubraum auf (5, 8) auf dem
-    Schulstuhl → {(5, 7): "sam"}; Lily auf dem Bordstein (kein Möbel) → nichts. Beginnt ein niedriges
-    Möbel (bis zwei Kacheln) erst auf der Fußkachel und reicht darunter, rückt das Bild nach unten: nichts.
+    Schulstuhl → {(5, 7): "sam"}; Lily auf dem Bordstein (kein Möbel) → nichts. Beginnt ein
+    niedriges Möbel (bis zwei Kacheln) erst auf der Fußkachel und reicht darunter, rückt das Bild
+    nach unten: nichts.
     """
     sitze = []
     for stueck in gesetzt:

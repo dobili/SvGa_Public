@@ -68,9 +68,15 @@ export function variablenNachRunde(runde: string, bestanden: boolean): Variablen
  * Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu berechnet (nicht gespeichert):
  * `hatFahrrad`, `hatTaschenlampe` für Gegenstände, `hatKarteKuehlerKopf` für Hilfskarten,
  * `muenzen` als Zahl. So kann ein Dialog etwa das Schließfach nur mit Taschenlampe öffnen.
+ * Dazu `hierKarte`, die Karte unter dem Helden („summitCity.aussen“): Seit den Tagesabläufen
+ * spricht dieselbe Figur an mehreren Orten (Ward tagsüber in der Hütte, abends auf der Parkbank),
+ * und die erste Erzählzeile soll zum Ort passen (schwacher Durchlauf Akt 4, 24.11.2026).
  */
 export function variablenAusBesitz(stand: Abenteuerstand): Variablen {
-  const variablen: Record<string, number | boolean> = { muenzen: stand.muenzen };
+  const variablen: Record<string, number | boolean | string> = {
+    muenzen: stand.muenzen,
+    hierKarte: stand.position.karte,
+  };
   for (const g of stand.gegenstaende) variablen[`hat${grossAnfang(g)}`] = true;
   for (const k of stand.karten) variablen[`hatKarte${grossAnfang(k.kennung)}`] = k.anzahl > 0;
   return variablen;

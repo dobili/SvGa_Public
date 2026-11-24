@@ -65,7 +65,7 @@ describe("Dialogvariablen aus Ergebnissen", () => {
     expect(variablenNachBesuch("cedarCreek")).toEqual({ besuchtCedarCreek: true });
   });
 
-  it("leitet Besitz und Münzen für Dialoge ab", () => {
+  it("leitet Besitz, Münzen und die Karte unter dem Helden für Dialoge ab", () => {
     const stand = {
       ...leererAbenteuerstand(new Date("2026-11-08T12:00:00Z"), "Kim", null, false),
       muenzen: 25,
@@ -74,6 +74,8 @@ describe("Dialogvariablen aus Ergebnissen", () => {
     };
     expect(variablenAusBesitz(stand)).toEqual({
       muenzen: 25,
+      // Ward auf der Parkbank oder im Sessel (summit-city-huette.ink, ward_lektion).
+      hierKarte: stand.position.karte,
       hatTaschenlampe: true,
       hatKarteKuehlerKopf: true,
     });

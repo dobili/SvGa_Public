@@ -67,6 +67,9 @@ VAR hatKarteTurmregel = false
 VAR hatKartePhasenblick = false
 // Läuft eine Revanche um eine bessere Nadel? Dann reagiert ward_nach_revanche auf den Ausgang.
 VAR revancheSummitCity = false
+// Karte unter dem Helden (die App setzt sie, regeln/dialogvariablen.ts): Ward sitzt abends und
+// nachts auf der Parkbank in Summit City (Tagesablauf), tagsüber im Sessel in der Hütte.
+VAR hierKarte = ""
 
 // ---------------------------------------------------------------- Eingang
 
@@ -98,7 +101,12 @@ Im Sessel am Feuer sitzt eine Frau und liest. Sie sieht nicht auf. #sprecher:erz
 
 === ward_lektion ===
 ~ wardLektionGesehen = true
-Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
+{
+- hierKarte == "summitCity.huette":
+    Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
+- else:
+    Eleanor Ward sitzt auf der Parkbank, ein Taschenschach auf den Knien. Sie spielt die Stellung zu Ende, dann sieht sie auf. #sprecher:erzaehler
+}
 Sie betrachtet dich, wie man eine Stellung betrachtet. #sprecher:erzaehler
 Sieben. #sprecher:ward #stimmung:neutral
 * [„Ja.“]
@@ -267,7 +275,8 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === ward_alltag ===
-{~Ein Endspiel ist eine Wahrheit. Man kann sie nicht wegreden.|Tee? Die Kanne hat einen Sprung und hält trotzdem seit vierzig Jahren.|Ich habe einmal sieben Stunden um einen halben Punkt gespielt. Es hat sich gelohnt.} #sprecher:ward #stimmung:laechelt
+// Tee gibt es nur in der Hütte; auf der Parkbank (abends, Tagesablauf) eine Zeile zum Platz.
+{~Ein Endspiel ist eine Wahrheit. Man kann sie nicht wegreden.|{hierKarte == "summitCity.huette":Tee? Die Kanne hat einen Sprung und hält trotzdem seit vierzig Jahren.|Abends sitze ich hier und sehe der Seilbahn zu. Sie fährt immer bis ganz oben.}|Ich habe einmal sieben Stunden um einen halben Punkt gespielt. Es hat sich gelohnt.} #sprecher:ward #stimmung:laechelt
 + {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
     -> ward_heft
 + {nadelSummitCity > 0 and nadelSummitCity < 3} [„Revanche um eine bessere Nadel?“]

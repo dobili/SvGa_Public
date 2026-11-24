@@ -241,7 +241,8 @@ function gilt(st, wenn, merker = null) {
 
 /** Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu (regeln/dialogvariablen.ts). */
 function besitzvariablen(st) {
-  const v = { muenzen: st.muenzen };
+  // hierKarte: die Karte unter dem Helden, wie variablenAusBesitz in der App (Ward auf der Bank).
+  const v = { muenzen: st.muenzen, hierKarte: st.karte };
   for (const g of st.besitz) v["hat" + gross(g)] = true;
   for (const [k, n] of Object.entries(st.karten))
     v["hatKarte" + gross(k)] = n > 0;

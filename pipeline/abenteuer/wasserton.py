@@ -12,9 +12,13 @@ Zuschlag zur Helligkeit (nach ``colorsys``, alles 0 bis 1).
 Beispiel: Paketwasser (66, 178, 196) im Kanal → (78, 158, 135), grünlich und etwas dunkler.
 """
 
-import colorsys
+from __future__ import annotations
 
-from PIL import Image
+import colorsys
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:  # Pillow nur für die Angabe des Typs: die Tests laufen auch ohne (Actions)
+    from PIL import Image
 
 VOLL = 255
 K = 16  # Pixel je Kachel im Hintergrund

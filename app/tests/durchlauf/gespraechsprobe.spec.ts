@@ -1,0 +1,76 @@
+/**
+ * Gesprächsprobe (Auftrag des Hauptchats, 24.11.2026): ein Gespräch mit einer Figur führen, in dem
+ * Ambrose dazwischenredet, und jede seiner Zeilen fotografieren. Geprüft wird: Seine Zeile ist
+ * geflüstert („nur du hörst ihn“, `abenteuer-fluestern`), und der Geist steht dabei neben dem
+ * Helden (`data-begleiter`). Gedanken des Helden (`data-gedanke`) werden mitfotografiert, wenn es
+ * welche gibt.
+ * Aufruf (nach npm run build mit privatem Paket):
+ *   PROBE_STAND=DATEI.json PROBE_KARTE=mapleFalls.aussen PROBE_DING=calloway \
+ *   PROBE_VARIABLEN='{"nadelMapleFalls":1}' GESPRAECH_FOTOS=ORDNER [PROBE_FORMAT=quer] \
+ *   CHROMIUM_PFAD=… npx playwright test --config playwright.durchlauf.config.ts gespraechsprobe
+ * Ergebnis: je Zeile von Ambrose eine Zeile im Testbericht, Fotos nur lokal.
+ * Abhängigkeiten: probe.ts, laufen.ts, eingabe.ts, lage.ts, blickprobe.ts.
+ */
+import { join } from "node:path";
+import { expect, test } from "@playwright/test";
+import { begleiter } from "./blickprobe";
+import { tippe } from "./eingabe";
+import { geheAn } from "./laufen";
+import { liesLage, liesStand } from "./lage";
+import { KARTE, PROBE_MS, STAND, starteProbe } from "./probe";
+import { kartenwissen } from "./welt";
+
+const DING = process.env.PROBE_DING ?? "";
+const FOTOS = process.env.GESPRAECH_FOTOS ?? "";
+const FORMAT = process.env.PROBE_FORMAT === "quer" ? "quer" : "hoch";
+/** Höchstens so viele Schritte durch das Gespräch. */
+const SCHRITTE = 40;
+const EINBLENDEN_MS = 700;
+const KURZ_MS = 300;
+
+test("Gesprächsprobe: Ambrose flüstert neben dem Helden", async () => {
+  test.skip(!STAND || !KARTE || !DING, "nur mit PROBE_STAND, PROBE_KARTE und PROBE_DING");
+  test.setTimeout(PROBE_MS);
+  const { lauf, daten, ordner, browser } = await starteProbe("gespraechsprobe");
+  const seite = lauf.seite;
+  const wissen = kartenwissen(daten, KARTE, await liesStand(seite));
+  const ding = wissen.dinge.find((d) => d.name === DING);
+  expect(ding, `${DING} auf ${KARTE}`).toBeTruthy();
+  const gang = await geheAn(lauf, wissen, ding?.felder ?? []);
+  console.log(`Gang zu ${DING}: ${gang}`);
+  if (gang === "aktion") {
+    await tippe(lauf, seite.getByTestId("abenteuer-aktion"), "Aktionsknopf");
+  }
+  const zeilen: string[] = [];
+  for (let i = 0, foto = 0; i < SCHRITTE; i++) {
+    await seite.waitForTimeout(EINBLENDEN_MS);
+    const lage = await liesLage(seite);
+    if (!lage.dialog) break;
+    console.log(`  ${lage.dialog.sprecher}: ${lage.dialog.text.slice(0, 50)}`);
+    const fluestert = await seite.getByTestId("abenteuer-fluestern").isVisible();
+    const gedanke = (await seite.locator("[data-gedanke='ja']").count()) > 0;
+    if (lage.dialog.sprecher.startsWith("Ambrose") || gedanke) {
+      const geist = await begleiter(seite);
+      const name = `${DING}-${FORMAT}-${++foto}`;
+      await seite.screenshot({ path: join(FOTOS || ordner, `${name}.png`) });
+      zeilen.push(
+        `${name}: ${lage.dialog.sprecher} geflüstert=${fluestert} Geist=${geist} Held=${lage.kachel} Gedanke=${gedanke} „${lage.dialog.text.slice(0, 60)}“`,
+      );
+    }
+    const wahlen = seite.locator(".abenteuer-dialog-wahlen button");
+    if ((await wahlen.count()) > 0)
+      await wahlen
+        .first()
+        .click()
+        .catch(() => undefined);
+    else
+      await seite
+        .locator(".abenteuer-dialog-weiter")
+        .click()
+        .catch(() => undefined);
+    await seite.waitForTimeout(KURZ_MS);
+  }
+  for (const z of zeilen) console.log(z);
+  await browser.close();
+  expect(zeilen.length).toBeGreaterThan(0);
+});

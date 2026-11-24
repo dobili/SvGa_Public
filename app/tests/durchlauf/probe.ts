@@ -7,7 +7,8 @@
  * Eingaben aus der Umgebung: PROBE_STAND (Datei der Simulation), PROBE_KARTE (Kennung),
  * PROBE_VARIABLEN (JSON, überschreibt Dialogvariablen), PROBE_STUNDE (Spieluhr am zweiten Spieltag;
  * für Figuren nach dem Tagesablauf, etwa Kit und Sol abends vor dem Plakat in Summit City),
- * PROBE_FELD (Startfeld des Helden „x,y,richtung“, etwa über Ward an der Bank: 41,35,unten).
+ * PROBE_FELD (Startfeld des Helden „x,y,richtung“, etwa über Ward an der Bank: 41,35,unten),
+ * PROBE_FORMAT=quer (Querformat).
  * Abhängigkeiten: simstand.ts, welt.ts, eingabe.ts, messung.ts, schwach.ts, e2e/abenteuer-affe.ts.
  */
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
@@ -15,6 +16,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { chromium, devices, expect, type Browser, type Page } from "@playwright/test";
 import { schreibeStandImBrowser, starteMitStand } from "../e2e/abenteuer-affe";
+import { geraet } from "../e2e/abenteuer-quer";
 import type { Lauf } from "./eingabe";
 import { liesLage } from "./lage";
 import { Messung } from "./messung";
@@ -31,6 +33,8 @@ const VARIABLEN = JSON.parse(process.env.PROBE_VARIABLEN ?? "{}") as Record<stri
 const STUNDE = process.env.PROBE_STUNDE ?? "";
 /** Startfeld des Helden „x,y,richtung“ (PROBE_FELD), leer: Tür oder Start der Karte. */
 const FELD = process.env.PROBE_FELD ?? "";
+/** Querformat (PROBE_FORMAT=quer, wie ein iPhone 15 quer), sonst hoch wie ein Pixel 7. */
+const QUER = process.env.PROBE_FORMAT === "quer";
 /** Spielminuten je Stunde und der zweite Spieltag (wie verdeckungsfoto.spec.ts). */
 const MINUTEN_JE_STUNDE = 60;
 const ZWEITER_TAG = 24 * MINUTEN_JE_STUNDE;
@@ -86,7 +90,8 @@ export async function starteProbe(name: string): Promise<Probe> {
     : geladen;
   const pfad = process.env.CHROMIUM_PFAD;
   const browser = await chromium.launch(pfad ? { executablePath: pfad } : {});
-  const kontext = await browser.newContext({ ...devices["Pixel 7"], baseURL: ADRESSE });
+  const format = QUER ? geraet("iPhone 15 landscape") : devices["Pixel 7"];
+  const kontext = await browser.newContext({ ...format, baseURL: ADRESSE });
   kontext.setDefaultTimeout(GRIFF_MS);
   const seite = await kontext.newPage();
   const uhr = STUNDE ? { spieluhr: ZWEITER_TAG + Number(STUNDE) * MINUTEN_JE_STUNDE } : {};

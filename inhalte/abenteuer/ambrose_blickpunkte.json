@@ -2,8 +2,8 @@
   {
     "karte": "mapleFalls.wohnzimmer",
     "feld": [
-      12,
-      10
+      13,
+      5
     ],
     "radius": 3,
     "knoten": "blick_mapleFalls_wohnzimmer_kartons"
@@ -444,8 +444,8 @@
   {
     "karte": "wegDelacroixDesert.felsbogen",
     "feld": [
-      81,
-      24
+      93,
+      22
     ],
     "radius": 3,
     "knoten": "blick_wegDelacroixDesert_felsbogen_bogen"
@@ -633,8 +633,8 @@
   {
     "karte": "wegCrossroadsPinewood.riesenbaeume",
     "feld": [
-      13,
-      87
+      17,
+      90
     ],
     "radius": 3,
     "knoten": "blick_wegCrossroadsPinewood_riesenbaeume_lebendschach"
@@ -751,7 +751,7 @@
     "karte": "capitalArena.aussen",
     "feld": [
       39,
-      43
+      37
     ],
     "radius": 3,
     "knoten": "blick_capitalArena_aussen_kuppeln"
@@ -768,8 +768,8 @@
   {
     "karte": "bayou.steg",
     "feld": [
-      29,
-      27
+      45,
+      30
     ],
     "radius": 3,
     "knoten": "blick_bayou_steg_zypressen"
@@ -942,7 +942,7 @@
       19,
       3
     ],
-    "radius": 3,
+    "radius": 2,
     "knoten": "blick_crossroads_raststaette_spielautomat"
   },
   {
@@ -987,7 +987,7 @@
       12,
       2
     ],
-    "radius": 4,
+    "radius": 3,
     "knoten": "blick_cedarCreek_waschsalon_radio"
   },
   {
@@ -1119,8 +1119,8 @@
   {
     "karte": "capitalArena.aussen",
     "feld": [
-      20,
-      33
+      24,
+      25
     ],
     "radius": 3,
     "knoten": "blick_capitalArena_aussen_hochhaus"

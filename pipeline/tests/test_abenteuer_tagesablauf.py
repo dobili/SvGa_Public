@@ -72,3 +72,12 @@ def test_questfigur_braucht_ort_oder_festhalten():
     assert ta.pruefe_quest(ohne)
     ohne["lily"]["festhalten"] = "regel1"
     assert ta.pruefe_quest(ohne) == []
+
+
+def test_person_heisst_wie_eine_figur_ihres_orts():
+    """Regel 7: Die Joggerin hieß im Ablauf „joggerin“, auf dem Weg Maple–Cedar aber „tessa“; die App
+    stellte sie dann doppelt und ohne Dialog hin (Stehplatzfotos, 24.11.2026)."""
+    block = {"art": "arbeit", "von": 0, "bis": 0, "karte": "wegMapleCedar.landstrasse", "feld": [1, 1]}
+    assert ta.pruefe_zuordnung({"joggerin": {"ort": "wegMapleCedar", "bloecke": [block]}})
+    assert ta.pruefe_zuordnung({"ada": {"ort": "wegMapleCedar", "bloecke": [block]}}) == []
+    assert ta.pruefe_zuordnung({"joggerin": {"orte": ["wegMapleCedar"], "folgt_geschichte": True}}) == []

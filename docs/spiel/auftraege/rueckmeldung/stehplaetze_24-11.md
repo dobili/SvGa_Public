@@ -44,10 +44,33 @@ oberen Rand; der Held steht in der Tür sauber vor allem.
 - **Dime** hat keinen Bogen im Paket (`figuren/dime.png` fehlt, auch kein PixelLab-Bogen) und
   steht auf dem Kanalweg als Platzhalterquadrat.
 
-## Gemeldet, nicht behoben
+## Nachprüfung gegen die Geschichte (zweiter Auftrag, 24.11.2026)
 
-- Zur gewählten Stunde nicht da (Geschichte oder Bedingung, kein Fehler der Stehplätze): Juno im
-  Diner um 2 Uhr, Graham Hale und Big Joe in der Kantine (Akt 3) um 3 Uhr.
-- Die Joggerin bekommt auf der Landstraße nur ihr Bild; ansprechen kann man sie dort nicht (ihre
-  Figur mit Dialog gehört zum Weg Ironwood–Silicon). Falls sie dort sprechen soll: Eintrag in
-  `orte.json` für `wegMapleCedar`.
+**Juno, Graham Hale und Big Joe „zur Stunde nicht da“.** Kein Quest braucht sie dort zu dieser
+Stunde. Sie fehlen, weil Regel 1 der Tagesabläufe (`festgehaltene`, regeln/tagesablauf.ts) jede
+Person festhält, deren Figur ein `wenn` trägt, das gerade gilt; sie bleibt dann am Platz der Szene:
+
+- Juno: `mapleFalls.juno` mit „nicht aufbruchGesehen oder endeAkt1Gesehen“ gilt ab Akt 2 immer.
+  Sie steht nachts also nie im Diner, sondern vor ihrem Haus. Passend, aber ihre Nachtplätze im
+  Diner werden ab Akt 2 nie benutzt (Hinweis für den, der die Abläufe pflegt).
+- Graham Hale: `ironwood.grahamHale` mit „nadelIronwood > 0“ gilt ab der Nadel; er bleibt vor der
+  Kantine (sein Questort). Passend.
+- Big Joe: `ironwood.bigJoe` mit „nicht endeAkt3Gesehen oder …“ gilt in Akt 3; er bleibt an seinem
+  Platz in der Kantine. Passend.
+
+**Behoben dabei: Fortgeschickte kamen nach der Uhr zurück.** Gilt keines der `wenn` einer Person,
+hat die Geschichte sie fortgeschickt; die Uhr stellte sie trotzdem hin. Big Joe stand im Endstand
+nachts in der Kantine Ironwood, obwohl er nach Akt 3 an der Crossroads ist; Graham Hale stand vor
+der Nadel nach der Uhr in Ironwood. Jetzt stellt die Uhr niemanden hin, dessen Figuren im Ort alle
+ein `wenn` tragen und keines gilt (`fortgeschickte` in regeln/tagesablauf.ts, gleich in
+pipeline/abenteuer/gesamtsimulation-uhr.cjs).
+
+**Joggerin auf dem Weg Maple–Cedar.** Dort heißt sie Tessa (`wegMapleCedar.tessa`, `.tessaFluss`,
+`.tessaZedern`, Bild `joggerin`, Dialog `weg-maple-cedar.tessa` mit den Stufen A bis D). Die
+Geschichte führt sie über ihre Stufen selbst, in Stufe D heißt es „Von der Joggerin ist heute
+nichts zu sehen“. Der Tagesablauf „joggerin“ stellte sie zusätzlich auf die Landstraße, ohne
+Dialog und doppelt (in Akt 2 läuft sie laut Geschichte am Flussweg). Sie folgt jetzt der
+Geschichte (`folgt_geschichte`, wie der Entwurf es für Personen in mehreren Orten vorsieht); Ada
+steht abends wieder mit Blick zur Straße. Ansprechbar ist sie an ihren Plätzen der Geschichte, mit
+ihrem Dialog. Neue Dauerprüfung Regel 7 in pipeline/abenteuer/tagesablauf.py: Jede Person mit
+Blöcken heißt in ihrem Ort wie eine ihrer Figuren (sonst stellte die App sie doppelt hin).

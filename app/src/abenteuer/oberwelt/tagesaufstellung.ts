@@ -12,6 +12,7 @@ import { liesPaketJson } from "../paket/paketlader";
 import { stundeJetzt } from "../regeln/spieluhr";
 import {
   festgehaltene,
+  fortgeschickte,
   nachTagesablauf,
   personenDerFiguren,
   type Tagesablaeufe,
@@ -61,6 +62,7 @@ export function nachUhr<T extends object>(
     stunde: stundeJetzt(stand),
     zuordnung,
     fest,
+    fort: fortgeschickte(ort.figuren, zuordnung, variablen),
     ablaeufe,
   });
 }

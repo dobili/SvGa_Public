@@ -95,8 +95,7 @@
           "bis": 21,
           "karte": "wegMapleCedar.landstrasse",
           "feld": [80, 15],
-          "tut": "steht",
-          "blick": "rechts"
+          "tut": "steht"
         },
         {
           "art": "nacht",
@@ -104,8 +103,7 @@
           "bis": 0,
           "karte": "wegMapleCedar.landstrasse",
           "feld": [80, 15],
-          "tut": "steht",
-          "blick": "rechts"
+          "tut": "steht"
         },
         {
           "art": "schlaf",
@@ -118,8 +116,7 @@
           "bis": 6,
           "karte": "wegMapleCedar.landstrasse",
           "feld": [80, 15],
-          "tut": "steht",
-          "blick": "rechts"
+          "tut": "steht"
         }
       ]
     },
@@ -1913,58 +1910,8 @@
       ]
     },
     "joggerin": {
-      "ort": "wegMapleCedar",
-      "kind": false,
-      "bloecke": [
-        {
-          "art": "freizeit",
-          "von": 6,
-          "bis": 8,
-          "karte": "wegMapleCedar.landstrasse",
-          "feld": [54, 13],
-          "tut": "steht"
-        },
-        {
-          "art": "arbeit",
-          "von": 8,
-          "bis": 16,
-          "karte": "wegMapleCedar.landstrasse",
-          "feld": [54, 13],
-          "tut": "steht"
-        },
-        {
-          "art": "freizeit",
-          "von": 16,
-          "bis": 21,
-          "karte": "wegMapleCedar.landstrasse",
-          "feld": [81, 15],
-          "tut": "steht",
-          "blick": "links"
-        },
-        {
-          "art": "nacht",
-          "von": 21,
-          "bis": 2,
-          "karte": "wegMapleCedar.landstrasse",
-          "feld": [81, 15],
-          "tut": "steht",
-          "blick": "links"
-        },
-        {
-          "art": "schlaf",
-          "von": 2,
-          "bis": 5
-        },
-        {
-          "art": "nacht",
-          "von": 5,
-          "bis": 6,
-          "karte": "wegMapleCedar.landstrasse",
-          "feld": [81, 15],
-          "tut": "steht",
-          "blick": "links"
-        }
-      ]
+      "orte": ["wegIronwoodSilicon", "wegMapleCedar"],
+      "folgt_geschichte": true
     },
     "jonah": {
       "ort": "cedarCreek",
@@ -4010,15 +3957,30 @@
       ]
     },
     "testteamBenji": {
-      "orte": ["capitalArena", "wegCedarRiverton", "wegDesertSummit", "wegIronwoodSilicon"],
+      "orte": [
+        "capitalArena",
+        "wegCedarRiverton",
+        "wegDesertSummit",
+        "wegIronwoodSilicon"
+      ],
       "folgt_geschichte": true
     },
     "testteamImani": {
-      "orte": ["capitalArena", "wegCedarRiverton", "wegDesertSummit", "wegIronwoodSilicon"],
+      "orte": [
+        "capitalArena",
+        "wegCedarRiverton",
+        "wegDesertSummit",
+        "wegIronwoodSilicon"
+      ],
       "folgt_geschichte": true
     },
     "testteamZoe": {
-      "orte": ["capitalArena", "wegCedarRiverton", "wegDesertSummit", "wegIronwoodSilicon"],
+      "orte": [
+        "capitalArena",
+        "wegCedarRiverton",
+        "wegDesertSummit",
+        "wegIronwoodSilicon"
+      ],
       "folgt_geschichte": true,
       "questorte": [
         "wegCedarRiverton.zedernwald",

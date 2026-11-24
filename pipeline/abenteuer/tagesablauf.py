@@ -25,6 +25,8 @@ Geprüft je Figur und Stunde (die App stellt die Figuren beim Kartenwechsel nach
    ``festhalten: regel1`` in den Daten (die App hält sie dann für den offenen Schritt fest).
    Damit bleiben pfeilziel.cjs und questverfehlen.py ohne Funde, auch mit Uhr: Regel 1 lässt den
    Questschritt die Aufstellung bestimmen, nicht die Uhr.
+7. Jede Person mit Blöcken heißt in ihrem Ort wie eine ihrer Figuren; sonst stellt die App sie
+   ein zweites Mal hin, ohne Dialog (die Joggerin heißt auf dem Weg Maple–Cedar „tessa“).
 
 Aufruf: ``python -m pipeline.abenteuer.tagesablauf`` (Befunde, Rückgabe 1 bei Befund).
 Dauertest: pipeline/tests/test_abenteuer_tagesablauf.py. Abhängigkeiten ohne Pillow.
@@ -301,6 +303,23 @@ def pruefe_quest(daten: dict) -> list[str]:
     return befunde
 
 
+def pruefe_zuordnung(daten: dict) -> list[str]:
+    """Regel 7 der Prüfung: Jede Person mit Blöcken heißt in ihrem Ort wie eine ihrer Figuren.
+
+    Warum: Die App (regeln/tagesablauf.ts, personenDerFiguren) ordnet die Figuren eines Orts über
+    ihren Namen einer Person zu. Hieß die Person anders (die Joggerin heißt auf dem Weg Maple–Cedar
+    „tessa“), stand sie nach der Uhr ein zweites Mal da, ohne Dialog, neben der Figur der Geschichte
+    (Stehplatzfotos, 24.11.2026).
+    """
+    orte = json.loads((INHALTE / "orte.json").read_text(encoding="utf-8"))["orte"]
+    namen = {o["kennung"]: {f["kennung"].split(".", 1)[1] for f in o["figuren"]} for o in orte}
+    return [
+        f"{n}: keine Figur dieses Namens in {e['ort']} (die App fände die Person nicht)"
+        for n, e in sorted(daten.items())
+        if e.get("bloecke") and n not in namen.get(e.get("ort", ""), set())
+    ]
+
+
 def pruefe() -> list[str]:
     """Alle Befunde."""
     daten, karten = lade(), Karten()
@@ -310,7 +329,8 @@ def pruefe() -> list[str]:
         for b in e.get("bloecke", []):
             if b.get("karte"):
                 befunde += pruefe_platz(n, b, karten)
-    return befunde + pruefe_aufstellungen(daten, karten) + pruefe_drittel(daten) + pruefe_quest(daten)
+    befunde += pruefe_aufstellungen(daten, karten) + pruefe_drittel(daten) + pruefe_quest(daten)
+    return befunde + pruefe_zuordnung(daten)
 
 
 def main() -> int:

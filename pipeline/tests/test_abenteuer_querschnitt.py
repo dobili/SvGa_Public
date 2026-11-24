@@ -19,11 +19,11 @@ from pipeline.abenteuer.moebelliste import lade_moebel
 OBERGRENZE = {
     "kronenhoehe": 0,
     "zusammenhang_enden": 4,
-    "waldrand": 9,
-    "wiederholung": 51,
-    "untergrund": 64,
-    "proportionen_aussen": 2,
-    "proportionen_unscharf": 6,
+    "waldrand": 8,
+    "wiederholung": 29,
+    "untergrund": 59,
+    "proportionen_aussen": 1,
+    "proportionen_unscharf": 2,
 }
 
 

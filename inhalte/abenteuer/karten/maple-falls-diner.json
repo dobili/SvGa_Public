@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 61,
+ "nextobjectid": 60,
  "layers": [
   {
    "id": 1,
@@ -1479,29 +1479,6 @@
     },
     {
      "id": 35,
-     "name": "wzTeppich",
-     "type": "moebel",
-     "x": 48,
-     "y": 128,
-     "width": 64,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 36,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 64,
@@ -1524,7 +1501,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 36,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 80,
@@ -1547,7 +1524,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 37,
      "name": "rv8GlastuerSued",
      "type": "moebel",
      "x": 64,
@@ -1575,7 +1552,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 38,
      "name": "mf12JukeboxAn",
      "type": "moebel",
      "x": 122,
@@ -1598,7 +1575,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 39,
      "name": "mf5Hocker",
      "type": "moebel",
      "x": 16,
@@ -1621,7 +1598,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 40,
      "name": "mf5Hocker",
      "type": "moebel",
      "x": 32,
@@ -1644,7 +1621,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 41,
      "name": "mf5Hocker",
      "type": "moebel",
      "x": 48,
@@ -1667,7 +1644,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 42,
      "name": "mf5Hocker",
      "type": "moebel",
      "x": 64,
@@ -1690,7 +1667,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 43,
      "name": "mf5Hocker",
      "type": "moebel",
      "x": 80,
@@ -1713,7 +1690,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 44,
      "name": "mf5Hocker",
      "type": "moebel",
      "x": 96,
@@ -1736,7 +1713,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 45,
      "name": "mf14TellerPfannkuchen",
      "type": "moebel",
      "x": 80,
@@ -1759,7 +1736,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 46,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 16,
@@ -1782,7 +1759,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 47,
      "name": "mf14TellerKuchen",
      "type": "moebel",
      "x": 195,
@@ -1805,7 +1782,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 48,
      "name": "mf14Kaffeetasse",
      "type": "moebel",
      "x": 207,
@@ -1828,7 +1805,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 49,
      "name": "mf16TellerBenutzt",
      "type": "moebel",
      "x": 195,
@@ -1851,7 +1828,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 50,
      "name": "mf16TellerBenutzt",
      "type": "moebel",
      "x": 28,
@@ -1874,7 +1851,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 51,
      "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 176,
@@ -1897,7 +1874,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 52,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 192,
@@ -1920,7 +1897,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 53,
      "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 224,
@@ -1943,7 +1920,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 54,
      "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 176,
@@ -1966,7 +1943,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 55,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 192,
@@ -1989,7 +1966,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 56,
      "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 224,
@@ -2012,7 +1989,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 57,
      "name": "mf16TellerBenutzt",
      "type": "moebel",
      "x": 195,
@@ -2035,7 +2012,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 58,
      "name": "ca7StuhlRuecken",
      "type": "moebel",
      "x": 23,
@@ -2058,7 +2035,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 59,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 24,

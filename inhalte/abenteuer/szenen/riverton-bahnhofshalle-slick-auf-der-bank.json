@@ -2,7 +2,7 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/riverton-bahnhofshalle-slick-auf-der-bank.json",
   "art": "innen",
-  "beschreibung": "Zustand: in Akt 3 (nach der Nadel von Ironwood): Slick spielt in der Bahnhofshalle weiter; auf der Zweierbank im Westen sitzt er selbst, neben ihm liegt sein Brett, daneben steht seine Kuriertasche (Statist mit einem Satz, R102), weil der Club keinen Pavillon mehr hat. Die Bahnhofshalle von Riverton: Backsteinwände, Steinboden, hohe Bogenfenster. Durch die gläserne Doppeltür im Süden kommt man vom Vorplatz herein, gegenüber in der Nordwand die gläserne Doppeltür zum Bahnsteig, daneben die Schaffnerin. In der Nordwand links drei Schalterfenster für Fahrkarten mit Ablage, in der Mitte die große Bahnhofsuhr, der Abfahrtsmonitor und der Netzplan, die Automaten rechts. In der Nordwestecke der Kiosk von Pops: drei Zeitungshalter an der Wand, davor der gläserne Tresen, Pops dahinter. In der Nordwand rechts Getränke- und Kaffeeautomat nebeneinander, an der Ostwand die Schließfächer. In der Mitte zwischen vier Säulen die Wartezone mit orangefarbenen Bänken in drei Reihen, in der Mitte ein Gang zur Tür, neben einer Bank ein vergessener Koffer; an den Säulen und neben dem Eingang Pflanzen in Vasen. Im Westen zwei Zweierbänke, in der Südostecke eine Sackkarre mit Gepäck und ein Koffer.",
+  "beschreibung": "Zustand: in Akt 3 (nach der Nadel von Ironwood): Slick spielt in der Bahnhofshalle weiter; auf der Zweierbank im Westen sitzt er selbst, neben ihm liegt sein Brett, daneben steht seine Kuriertasche (Statist mit einem Satz, R102), weil der Club keinen Pavillon mehr hat. Die Bahnhofshalle von Riverton: Backsteinwände, Steinboden, hohe Bogenfenster. Durch die gläserne Doppeltür im Süden kommt man vom Vorplatz herein, gegenüber in der Nordwand die gläserne Doppeltür zum Bahnsteig, daneben die Schaffnerin. In der Nordwand links drei Schalterfenster für Fahrkarten mit Ablage, in der Mitte die große Bahnhofsuhr, der Abfahrtsmonitor und der Netzplan, die Automaten rechts. An der Ostwand der Kiosk von Pops als ein Stand: drei Zeitungshalter, davor Pops, vor ihm der gläserne Tresen. In der Nordwand rechts Getränke- und Kaffeeautomat nebeneinander, an der Westwand die Schließfächer. In der Mitte zwischen vier Säulen die Wartezone mit orangefarbenen Bänken in drei Reihen, in der Mitte ein Gang zur Tür, neben einer Bank ein vergessener Koffer; an den Säulen und neben dem Eingang Pflanzen in Vasen. Im Westen zwei Zweierbänke, links neben dem Kiosk eine Sackkarre mit Gepäck.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -26,15 +26,15 @@
   "objekte": [
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [22, 7]
+      "feld": [22, 8]
     },
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [23, 7]
+      "feld": [23, 8]
     },
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [24, 7]
+      "feld": [24, 8]
     },
     {
       "moebel": "rv5Bahnhofsuhr",
@@ -156,7 +156,7 @@
     },
     {
       "moebel": "rv8Sackkarre",
-      "feld": [21, 5]
+      "feld": [19, 12]
     },
     {
       "moebel": "rv8Rollkoffer",

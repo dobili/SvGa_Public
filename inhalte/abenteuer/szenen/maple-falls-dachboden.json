@@ -48,7 +48,7 @@
       "feld": [6, 4]
     },
     {
-      "moebel": "mf3Rundtisch",
+      "moebel": "mf7Rundtisch",
       "feld": [7, 5],
       "id": "tisch"
     },
@@ -226,8 +226,6 @@
     [2, 8, "###.###.###.###."],
     [3, 8, "#.#.#.#.#.#.###."]
   ],
-  "freigeben": [
-    [1, 8]
-  ],
+  "freigeben": [[1, 8]],
   "freigeben_grund": "Autor, Karteneditor 16.11.2026: Einstieg ins Treppenloch; der Held betritt die Öffnung im Boden, um die Treppe zu nehmen."
 }

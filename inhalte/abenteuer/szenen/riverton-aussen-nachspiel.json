@@ -13,7 +13,7 @@
     "g": "stein",
     "h": "wasser"
   },
-  "beschreibung": "Zustand: nach dem Finale in der Hauptstadt (Nachspiel): Die Bildschirmtische und ihre Dächer sind weg, auf der Wiese im Park stehen wieder Picknicktische mit Brettern (Rückmeldung R092), das Schild von Perfect Move am Pavillon ist abgenommen. Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit dem Holzstapel daneben, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Brücke mit Gehwegen führt genau über das Wasser hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
+  "beschreibung": "Zustand: nach dem Finale in der Hauptstadt (Nachspiel): Die Bildschirmtische und ihre Dächer sind weg, auf der Wiese im Park stehen wieder Picknicktische mit Brettern (Rückmeldung R092), das Schild von Perfect Move am Pavillon ist abgenommen. Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit dem Holzstapel daneben, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Brücke mit Gehwegen führt genau über das Wasser hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad. Kartenblick Welle 2 (24.11.2026): Hinter dem Pavillon ist das Südufer als Landzunge vorgezogen, sodass rings um den Pavillon Wiese liegt. Im Lagerhof stehen zwei verschiedene Hallen und die Kisten in Gruppen mit einem Fass.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
@@ -57,9 +57,9 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
-    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~eeeeeeeeeeeeeeppppppppppp~~~~~~~~~..#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...............~hhhhh~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................hhhhh~~~~~~~~~~~~~~~~~",
+    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~..eeeeeeeeeeeeeeppppppppppp~~~~~~~~~..#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppppppppppp~~~~~~~~~..#",
     "#...................eeeeeeeeeeeeeeee..........ee.........ppp~~~~~~~~~..#",
     "#...................ee........................ee.........ppp~~~~~~~~~..#",
@@ -667,7 +667,7 @@
       "feld": [56, 30]
     },
     {
-      "moebel": "rv5Lagerhaus",
+      "moebel": "pd6Werkhalle",
       "feld": [62, 30]
     },
     {
@@ -739,12 +739,8 @@
       "feld": [59, 27]
     },
     {
-      "moebel": "caKisten",
-      "feld": [61, 27]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [63, 27]
+      "moebel": "sb5Fass",
+      "feld": [62, 28]
     },
     {
       "moebel": "caKisten",
@@ -1194,7 +1190,7 @@
     },
     {
       "moebel": "rv9PfuetzeKlein",
-      "feld": [12, 31]
+      "feld": [4, 37]
     },
     {
       "moebel": "rv14Pumpenhaus",
@@ -1425,10 +1421,10 @@
     {
       "name": "taubenmann",
       "typ": "statist",
-      "feld": [24, 21],
+      "feld": [26, 21],
       "eigenschaften": {
-        "von": "24,21",
-        "bis": "24,21",
+        "von": "26,21",
+        "bis": "26,21",
         "tun": "zählt seine Tauben",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.taubenmann",
@@ -1539,7 +1535,7 @@
       "feld": [14, 41],
       "eigenschaften": {
         "von": "14,41",
-        "bis": "40,41",
+        "bis": "32,41",
         "verhalten": "schwimmen"
       }
     },

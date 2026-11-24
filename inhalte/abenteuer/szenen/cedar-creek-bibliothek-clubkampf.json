@@ -54,29 +54,24 @@
       "feld": [15, 1]
     },
     {
-      "moebel": "cc5Tisch",
+      "moebel": "cc24Clubtisch",
       "feld": [9, 7],
       "id": "schach1"
     },
     {
-      "moebel": "cc5Tisch",
-      "feld": [11, 7],
-      "id": "schach2"
-    },
-    {
       "moebel": "cc4Brett",
       "auf": "schach1",
-      "versatz": [0, 2]
+      "versatz": [-2, 3]
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [9, 6],
+      "feld": [10, 6],
       "versatz": [8, 0],
       "zu": "schach1"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [9, 8],
+      "feld": [10, 8],
       "versatz": [8, 0],
       "zu": "schach1"
     },
@@ -209,8 +204,8 @@
     },
     {
       "moebel": "ccBankerlampe",
-      "auf": "schach2",
-      "versatz": [-6, 0]
+      "auf": "schach1",
+      "versatz": [20, 0]
     },
     {
       "moebel": "cc4StuhlRuecken",

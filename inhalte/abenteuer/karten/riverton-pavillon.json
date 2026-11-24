@@ -1894,6 +1894,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.riverton.pavillon.zuschauer"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -1901,7 +1906,7 @@
      "id": 9,
      "name": "wettender",
      "type": "statist",
-     "x": 352,
+     "x": 336,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -1922,6 +1927,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.riverton.pavillon.wettender"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

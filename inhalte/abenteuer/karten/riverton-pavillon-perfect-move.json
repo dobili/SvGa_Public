@@ -3113,8 +3113,8 @@
      "id": 60,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
-     "x": 72,
-     "y": 54,
+     "x": 164,
+     "y": 47,
      "width": 88,
      "height": 16,
      "rotation": 0,
@@ -3123,7 +3123,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 62
+       "value": 55
       },
       {
        "name": "kollision",

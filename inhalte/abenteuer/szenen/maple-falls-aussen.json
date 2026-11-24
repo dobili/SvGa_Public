@@ -2,7 +2,7 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus (als einziges grau und ungestrichen, Roman Kap. 1 und 5), Lilys Haus mit dem schiefen Kreidebrett auf dem Gehweg davor (Roman Kap. 6) und das Haus der Martínez, an dessen Zaun Carla steht, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway (vor ihrem Haus zwei Stühle, auf einem sitzt sie, der andere ist leer), Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Zwischen den Häusern der Südseite steht statt des flachen Schuppens (R002) ein kleines Holzhaus mit grünem Giebeldach in Menschengröße (KARTENREGELN 10.66; seit R055 ein Paketbild mit Dach in Schrägsicht statt des flachen Hüttenbildes, auf 125 % vergrößert, damit die Tür zur Figur passt, 10.92), ein gleiches rechts neben dem Spielplatz, ebenso hinter dem Diner ein Holzhaus mit blauem Dach, zu dessen Tür der Plattenweg führt. Stufen der kleinen Geschichten (Figuren mit Bedingung, orte.json): Carla steht bis zum Ende von Akt 1 am Zaun der Martínez, danach am Fenster des Clubraums vor der Schule und nach Akt 2 drinnen im Clubraum; Owen Fisk sitzt ab dem Ende von Akt 1 neben Mrs. Calloway. Bedingte Dinge (wenn): Nach Lilys Lektion (lilyGeholfen) liegt statt des einfachen Kreidebretts die Fassung mit dazugemalten Springerzügen; nach Akt 2 (nadelIronwood > 0) steht zwischen Mrs. Calloways Stühlen ein kleiner Tisch mit Schachbrett (Stufe D), genau mittig zwischen den Sitzflächen, das Brett mittig darauf. Kartengutachten Akt 1: Mrs. Calloway sitzt auf dem linken Stuhl einer kleinen Holzterrasse vor ihrem Haus mit zwei Stühlen (Laterne nicht mehr im Stuhl); die beiden flachen Rückansichten sind gegen Häuser mit Walmdach getauscht; die Gasse unten endet an beiden Seiten an einer Hecke; der Maler streicht Lilys Zaun, nicht den des Whitlock-Hauses. Carlas Fahrrad: bis zur Nadel von Maple Falls liegt es kopfüber zur Reparatur am Zaun der Martínez, danach steht es dort fertig (Stufe B), ab Stufe C ist es weg. Einleitung (19.11.2026): Beim ersten Start steht Mama (mutterAussen) neben dem Helden vor dem Gartentor, bis die Einleitung gelaufen ist. Möbelwagen (20.11.2026): Bis zur Ankunft im Wohnzimmer (nicht ankunftGesehen) steht der Umzugswagen, von dem die Einleitung erzählt, am Bordstein vor dem Haus auf der Straße (Feld 6,25, Maßstab 0,6, damit Gehweg, Gartentor und die Kachel unter Mama frei bleiben: Mama ist nur von unten erreichbar).",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, zuerst mit Wiese und Hecke am Nordufer, schwenkt hinter dem Whitlock-Garten an den Nordrand und fließt vor der Schule nach Norden aus der Karte. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus (als einziges grau und ungestrichen, Roman Kap. 1 und 5), Lilys Haus mit dem schiefen Kreidebrett auf dem Gehweg davor (Roman Kap. 6) und das Haus der Martínez, an dessen Zaun Carla steht, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway (vor ihrem Haus zwei Stühle, auf einem sitzt sie, der andere ist leer), Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Rasen (die Geräte sind mit Grasfuß gezeichnet, Sand liegt nur im Sandkasten): ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Zwischen den Häusern der Südseite steht statt des flachen Schuppens (R002) ein kleines Holzhaus mit grünem Giebeldach in Menschengröße (KARTENREGELN 10.66; seit R055 ein Paketbild mit Dach in Schrägsicht statt des flachen Hüttenbildes, auf 125 % vergrößert, damit die Tür zur Figur passt, 10.92), ein gleiches rechts neben dem Spielplatz, ebenso hinter dem Diner ein Holzhaus mit blauem Dach, zu dessen Tür der Plattenweg führt. Stufen der kleinen Geschichten (Figuren mit Bedingung, orte.json): Carla steht bis zum Ende von Akt 1 am Zaun der Martínez, danach am Fenster des Clubraums vor der Schule und nach Akt 2 drinnen im Clubraum; Owen Fisk sitzt ab dem Ende von Akt 1 neben Mrs. Calloway. Bedingte Dinge (wenn): Nach Lilys Lektion (lilyGeholfen) liegt statt des einfachen Kreidebretts die Fassung mit dazugemalten Springerzügen; nach Akt 2 (nadelIronwood > 0) steht zwischen Mrs. Calloways Stühlen ein kleiner Tisch mit Schachbrett (Stufe D), genau mittig zwischen den Sitzflächen, das Brett mittig darauf. Kartengutachten Akt 1: Mrs. Calloway sitzt auf dem linken Stuhl einer kleinen Holzterrasse vor ihrem Haus mit zwei Stühlen (Laterne nicht mehr im Stuhl); die beiden flachen Rückansichten sind gegen Häuser mit Walmdach getauscht; die Gasse unten endet an beiden Seiten an einer Hecke; der Maler streicht Lilys Zaun, nicht den des Whitlock-Hauses. Carlas Fahrrad: bis zur Nadel von Maple Falls liegt es kopfüber zur Reparatur am Zaun der Martínez, danach steht es dort fertig (Stufe B), ab Stufe C ist es weg. Einleitung (19.11.2026): Beim ersten Start steht Mama (mutterAussen) neben dem Helden vor dem Gartentor, bis die Einleitung gelaufen ist. Möbelwagen (20.11.2026): Bis zur Ankunft im Wohnzimmer (nicht ankunftGesehen) steht der Umzugswagen, von dem die Einleitung erzählt, am Bordstein vor dem Haus auf der Straße (Feld 6,25, Maßstab 0,6, damit Gehweg, Gartentor und die Kachel unter Mama frei bleiben: Mama ist nur von unten erreichbar). Kartenblick Welle 2 (24.11.2026): Zwischen den Häusern der Südseite steht statt des Kleinhauses ein blauer Gartenschuppen (das Kleinhaus war halb so groß wie eine Veranda und stand mit dem Dach in Zaun und Hecke); das Holzhaus am Spielplatz hat einen Plattenweg von der Tür zur Gasse. Die vier Häuser der Südseite zeigen drei Farben (blau, rot, braun, blau), das vierte steht eine Reihe höher. Am Wendehammer steht eine Hecke statt der zwei Heckensäulen.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -14,10 +14,10 @@
   },
   "raster": [
     "###################################~~~##########################",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##########################",
+    "#.........~~~~~~~~~~~~~~~~~~~~~~~~~~~~##########################",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........................#",
-    "~~~......~~~~~~~~......~~~~~~.....~~~~.........................#",
-    "#..............................................................#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.........................#",
+    "~~~~~~~~~~~....................................................#",
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
@@ -45,15 +45,15 @@
     "#.ppppp...................pp..........................ee.......#",
     "#...vvvv..................pp..........................ee.......#",
     "#...vvvv..................pp..........................ee.......#",
-    "#...vvvv..................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
-    "#.........................pp......................dddddd.......#",
+    "#...vvvv..................pp...................................#",
     "#.........................pp...................................#",
+    "#.........................pp...................................#",
+    "#.........................pp...................................#",
+    "#.........................pp...................................#",
+    "#.........................pp...................................#",
+    "#.........................pp...............................pp..#",
+    "#.........................pp...............................pp..#",
+    "#.........................pp...............................pp..#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp###",
     "################################################################"
   ],
@@ -364,7 +364,7 @@
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [24, 9]
+      "feld": [30, 11]
     },
     {
       "moebel": "mf4ZaunSeite",
@@ -688,15 +688,15 @@
       "feld": [31, 6],
       "massstab": 1.6,
       "versatz": [-1, -15],
-      "maske": ["........", "........", "........", "..######", "..######", "....###.", "........"]
-    },
-    {
-      "moebel": "mf7HeckeSaeule",
-      "feld": [1, 24]
-    },
-    {
-      "moebel": "mf7HeckeSaeule",
-      "feld": [1, 27]
+      "maske": [
+        "........",
+        "........",
+        "........",
+        "..######",
+        "..######",
+        "....###.",
+        "........"
+      ]
     },
     {
       "moebel": "mf4ZaunEckeLinks",
@@ -857,15 +857,12 @@
       "massstab": 0.75
     },
     {
-      "moebel": "pd6HausGruen",
-      "feld": [11, 30],
-      "versatz": [-10, -23],
-      "massstab": 1.6,
-      "maske": ["........", "........", "........", ".#######", ".#######", ".#######", "........"]
+      "moebel": "mf7Gartenhaus",
+      "feld": [14, 31]
     },
     {
       "moebel": "mf7Gartenhaus",
-      "feld": [3, 3]
+      "feld": [3, 5]
     },
     {
       "moebel": "mf4Rutsche",
@@ -944,11 +941,19 @@
       "feld": [57, 33],
       "massstab": 1.6,
       "versatz": [-16, -12],
-      "maske": ["........", "........", "........", ".#######", ".#######", ".#######", "........"]
+      "maske": [
+        "........",
+        "........",
+        "........",
+        ".#######",
+        ".#######",
+        ".#######",
+        "........"
+      ]
     },
     {
       "moebel": "mf4BaumGruen",
-      "feld": [58, 38]
+      "feld": [61, 38]
     },
     {
       "moebel": "mf10SchildSackgasse",
@@ -965,13 +970,13 @@
       "massstab": 1.25
     },
     {
-      "moebel": "mf11HausHintenBRot",
+      "moebel": "mf11HausHintenBBraun",
       "feld": [30, 33],
       "massstab": 1.25
     },
     {
       "moebel": "mf11HausHintenBBlau",
-      "feld": [41, 33],
+      "feld": [41, 32],
       "massstab": 1.25
     },
     {
@@ -995,7 +1000,7 @@
     {
       "moebel": "fz11LkwRechts",
       "feld": [6, 25],
-      "massstab": 0.6,
+      "massstab": 0.7,
       "wenn": "nicht ankunftGesehen"
     },
     {
@@ -1167,6 +1172,26 @@
     {
       "moebel": "bkAsphalt",
       "feld": [5, 28]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [0, 24]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [0, 25]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [0, 26]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [0, 27]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [0, 28]
     }
   ],
   "ausloeser": [

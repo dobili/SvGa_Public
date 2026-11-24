@@ -176,10 +176,6 @@
       "versatz": [-9, 0]
     },
     {
-      "moebel": "wzTeppich",
-      "feld": [3, 8]
-    },
-    {
       "moebel": "mf4Fussmatte",
       "feld": [4, 11],
       "versatz": [0, 8],

@@ -323,6 +323,10 @@ Um eins singt jemand. Um halb zwei schläft Juno auf zwei Stühlen. #sprecher:er
 
 // Kapitel 27, zweiter Teil (Roman): Stille beim Eintreten, dann das Ironwood-Thema warm.
 === mama_ankunft ===
+// Nach der Partie öffnet die App den Dialog wieder, mit dem sie begann: hier den Eingangsdialog.
+// Dann gleich zur Reaktion auf das Ergebnis, nicht noch einmal die Ankunft (schwacher
+// Spieler-Durchlauf, 24.11.2026).
+{mamaInKantine: -> mama}
 ~ mamaInKantine = true
 Ihr fahrt am Samstag, mit dem Wagen, Juno auf der Rückbank. Mama redet die ganze Fahrt über das Wetter. #sprecher:erzaehler
 An der Eisenbrücke wird sie still. #sprecher:erzaehler

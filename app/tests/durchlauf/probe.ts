@@ -5,7 +5,8 @@
  *
  * Warum: Proben prüfen eine Stelle in einer Minute, für die ein ganzer Lauf Stunden bräuchte.
  * Eingaben aus der Umgebung: PROBE_STAND (Datei der Simulation), PROBE_KARTE (Kennung),
- * PROBE_VARIABLEN (JSON, überschreibt Dialogvariablen).
+ * PROBE_VARIABLEN (JSON, überschreibt Dialogvariablen), PROBE_STUNDE (Spieluhr am zweiten Spieltag;
+ * für Figuren nach dem Tagesablauf, etwa Kit und Sol abends vor dem Plakat in Summit City).
  * Abhängigkeiten: simstand.ts, welt.ts, eingabe.ts, messung.ts, schwach.ts, e2e/abenteuer-affe.ts.
  */
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
@@ -24,6 +25,11 @@ import { ladeSpieldaten, type Spieldaten } from "./welt";
 export const STAND = process.env.PROBE_STAND ?? "";
 export const KARTE = process.env.PROBE_KARTE ?? "";
 const VARIABLEN = JSON.parse(process.env.PROBE_VARIABLEN ?? "{}") as Record<string, unknown>;
+/** Stunde der Spieluhr (regeln/spieluhr.ts), leer: die des Stands. */
+const STUNDE = process.env.PROBE_STUNDE ?? "";
+/** Spielminuten je Stunde und der zweite Spieltag (wie verdeckungsfoto.spec.ts). */
+const MINUTEN_JE_STUNDE = 60;
+const ZWEITER_TAG = 24 * MINUTEN_JE_STUNDE;
 const ADRESSE = `http://localhost:${process.env.PLAYWRIGHT_PORT ?? "4183"}`;
 /** So lange darf eine Probe insgesamt laufen (ms). */
 export const PROBE_MS = 10 * 60_000;
@@ -54,7 +60,8 @@ export async function starteProbe(name: string): Promise<Probe> {
   const kontext = await browser.newContext({ ...devices["Pixel 7"], baseURL: ADRESSE });
   kontext.setDefaultTimeout(GRIFF_MS);
   const seite = await kontext.newPage();
-  await starteMitStand(seite, stand);
+  const uhr = STUNDE ? { spieluhr: ZWEITER_TAG + Number(STUNDE) * MINUTEN_JE_STUNDE } : {};
+  await starteMitStand(seite, { ...stand, ...uhr });
   const lauf: Lauf = {
     seite,
     cdp: await kontext.newCDPSession(seite),

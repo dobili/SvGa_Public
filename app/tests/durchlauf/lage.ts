@@ -8,6 +8,7 @@
  * Beispiel: liesLage(seite) → { bild: "welt", fenster: "dialog", dialog: { text: "Staub, Kisten …" } }.
  */
 import type { Page } from "@playwright/test";
+import { merkeAufbaustunde } from "./uhrwelt";
 import type { Abenteuerstand } from "../../src/abenteuer/schnittstelle/spielstand";
 
 /** Ein sichtbarer, freier Knopf, den der Finger wirklich träfe. */
@@ -236,10 +237,16 @@ function liesSpeicherImBrowser(): Promise<Speicher> {
 /** Spielstand und Partie aus dem Speicher der App (nur lesen). */
 export async function liesSpeicher(seite: Page): Promise<Speicher> {
   const leer: Speicher = { stand: null, partie: null };
-  return mitErsatz(
+  const speicher = await mitErsatz(
     seite.evaluate(liesSpeicherImBrowser).catch((): Speicher => leer),
     leer,
   );
+  // Stunde des Kartenaufbaus (useWeltladen.ts, data-stunde): Danach richtet sich die Aufstellung.
+  const stunde = await seite
+    .evaluate(() => document.querySelector("[data-stunde]")?.getAttribute("data-stunde") ?? null)
+    .catch(() => null);
+  merkeAufbaustunde(speicher.stand?.position?.karte, stunde === null ? null : Number(stunde));
+  return speicher;
 }
 
 /** Der Spielstand; wirft, wenn es keinen gibt. */

@@ -131,6 +131,13 @@ describe("Auslöser der Karte", () => {
     expect(wieder.meldung?.durch).toBe(true);
   });
 
+  it("ein Auslöser ohne Durchgang meldet sich auch bei der Ankunft (Aktionsknopf)", () => {
+    // Nach einer Runde an Odettes Tisch steht der Held auf dem Auslöser: Der Knopf muss da sein.
+    const tisch = { name: "flohmarkt", typ: "ausloeser" as const, x: 3, y: 3 };
+    const an = meldeschritt(MELDE_START, [tisch], { x: 3, y: 3, richtung: "unten", geht: false });
+    expect(an.meldung).toEqual({ name: "flohmarkt", typ: "ausloeser", darauf: true, durch: false });
+  });
+
   it("nach einer Pause auf dem Auslöser der Ankunft zählt der Schritt in den Durchgang", () => {
     // Wegsperre: Nach der Partie steht der Held wieder auf dem Übergangsfeld am Kartenrand.
     const alle = mitDurchgang([tuer], gehweg, ["tuer"]);

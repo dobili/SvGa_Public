@@ -52,3 +52,29 @@ doppelten Dialoge, keine verlorenen Rückmeldungen und keine hängenden Pausen.
   Probe mit den Feldern der alten Karte auf der neuen weiter). Hinweise nach dem Start („Deine
   ersten Münzen“) tippt sie weg, sonst fehlt der Aktionsknopf. `PROBE_FELD=x,y,richtung` setzt den
   Helden; die erste Zeile nennt Startfeld und Aufbaustunde.
+
+## Querformat (24.11.2026, nachmittags)
+
+Erster Lauf (200 Minuten, Stand Akt 4 ab Desert Springs): Er kam nicht über Akt 3 hinaus. Die
+Ursache lag im Durchlauf, nicht im Spiel:
+
+- **Wahlen zu früh getippt:** Neue Dialogwahlen nehmen 300 ms lang keinen Tipp an
+  (dialog/wahlschutz.ts). Der Lauf wählte schon in dieser Zeit; der Tipp verpuffte, und beim
+  zweiten Anlauf galt die Antwort als genommen. Am Viehgitter (S17, Zoe) nahm er so nie „Eine
+  Stellung.“ oder „Noch einmal.“, nur „Später.“ und „Nicht jetzt.“. Jetzt wartet der Lauf, bis alle
+  Wahlen frei sind (tests/durchlauf/lage.ts `wahlenFrei`, fenster.ts).
+- **800-mal zwischen Diner und Desert Springs:** Die Ziele Tafel und Odile wechselten je Ort.
+  Highway und Rückweg haben eine Erzählzeile, und Übergänge mit Dialog zählten nie für die
+  Kreiserkennung. Jetzt zählen sie, sobald der Held auf der neuen Karte steht
+  (tests/durchlauf/weltschritt.ts).
+
+Zweiter Lauf: Dreimal am Viehgitter verloren, Zoe ließ durch („Dreimal ehrlich versucht“).
+Abspann nach 47 Minuten. Ein Fund blieb:
+
+| Fund                                                                                                         | Ursache                                                                                                                                                                                                   | Korrektur                                                                                                                                                                                        | Test                         |
+| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| Aufgabenrunde quer (Tafel im Diner, Ward in der Hütte): „Weiter“ am Ende sekundenlang von der Blase verdeckt | Spielfehler. Quer liegen Blasen und Knöpfe gemeinsam in der rechten Spalte. `sperrflaeche` lässt Knöpfe neben dem Brett bewusst aus, damit die Blase am Brett Platz findet; ihnen wich sie gar nicht aus. | Zweiter Schritt in anbindung/brettfrei.ts: Hauptknöpfe neben dem Brett in der Spalte der Blase (`knopfflaeche` in blasenlage.ts) meidet sie wie das Brett, darüber oder darunter, je nach Platz. | anbindung/blasenlage.test.ts |
+
+Dritter Lauf (mit der Korrektur): Abspann nach 60 Minuten, keine Funde. Die Abenteuer-Oberflächentests
+liefen parallel; zwei zeitkritische (Musikspuren, Rennen) scheiterten unter der Last und bestanden
+einzeln wiederholt.

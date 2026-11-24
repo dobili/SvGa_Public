@@ -7,7 +7,8 @@
  * des Bretts, und passt sie nirgends ganz, wird sie in der größeren Lücke rollbar.
  * Abhängigkeiten: keine (reine Rechnung); angewandt von anbindung/brettfrei.ts.
  * Sonderfälle: Liegt die Blase waagerecht neben dem Brett (Querformat, rechte Spalte), bleibt
- * alles wie in der CSS.
+ * sie, wo die CSS sie hinlegt, außer sie liegt auf einem Hauptknopf derselben Spalte
+ * (knopfflaeche).
  */
 
 /** Senkrechte und waagerechte Grenzen eines Rechtecks in Bildschirmpunkten. */
@@ -86,6 +87,41 @@ export function sperrflaeche(brett: Rechteck, knoepfe: readonly Rechteck[]): Rec
       left: Math.min(flaeche.left, k.left),
       right: Math.max(flaeche.right, k.right),
     };
+  }
+  return flaeche;
+}
+
+/**
+ * Die Hauptknöpfe neben dem Brett, die in der Spalte der Blase liegen (Querformat).
+ *
+ * Warum (schwacher Spieler-Durchlauf Akt 4 im Querformat, 24.11.2026): Quer liegen Blasen und
+ * Knöpfe gemeinsam in der rechten Spalte. Nach dem Ende einer Aufgabe (Ward in der Hütte, die
+ * Tafel im Diner) lag die untere Blase sekundenlang auf „Weiter“. sperrflaeche lässt solche Knöpfe
+ * bewusst aus, damit die Blase am Brett Platz findet; ihnen weicht sie in einem zweiten Schritt
+ * aus (brettfrei.ts), genauso wie dem Brett.
+ * Eingaben: Rechtecke von Brett, Blase und den sichtbaren Hauptknöpfen.
+ * Ausgabe: das kleinste Rechteck um alle Knöpfe, die waagerecht neben dem Brett und unter der
+ * Blase liegen, oder null, wenn es keine gibt. Beispiel: Brett links (0 bis 400), Blase und
+ * „Weiter“ rechts (420 bis 900) → das Rechteck von „Weiter“.
+ */
+export function knopfflaeche(
+  brett: Rechteck,
+  blase: Rechteck,
+  knoepfe: readonly Rechteck[],
+): Rechteck | null {
+  let flaeche: Rechteck | null = null;
+  for (const k of knoepfe) {
+    const nebenBrett = k.left >= brett.right || k.right <= brett.left;
+    const inSpalte = k.left < blase.right && blase.left < k.right;
+    if (!nebenBrett || !inSpalte || k.bottom <= k.top) continue;
+    flaeche = flaeche
+      ? {
+          top: Math.min(flaeche.top, k.top),
+          bottom: Math.max(flaeche.bottom, k.bottom),
+          left: Math.min(flaeche.left, k.left),
+          right: Math.max(flaeche.right, k.right),
+        }
+      : k;
   }
   return flaeche;
 }

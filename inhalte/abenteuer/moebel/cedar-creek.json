@@ -2933,6 +2933,33 @@
       "begehbar": true,
       "begehbar_grund": "Wasserlache am Fuß des Wasserflecks im Keller, man tritt hinein",
       "hinweis": "R068: macht den Wasserfleck in Springerform als Wasser lesbar"
+    },
+    "cc24Clubtisch": {
+      "quelle": "spiel/eigene/pavillon_holztisch.png",
+      "breite": 64,
+      "hoehe": 32,
+      "platte": [
+        4,
+        10,
+        57,
+        25
+      ],
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "###############.",
+        "###############.",
+        "###############.",
+        "###############."
+      ],
+      "hinweis": "Langer Holztisch des Schachclubs im Lesesaal (Kartenblick B1, 24.11.2026): vier Kacheln breit, Platz für zwei Bretter nebeneinander; dasselbe Bild wie der Tisch im Pavillon von Riverton"
     }
   }
 }

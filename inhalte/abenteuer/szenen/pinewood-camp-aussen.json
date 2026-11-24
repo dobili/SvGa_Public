@@ -3,7 +3,7 @@
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
   "musikquellen": ["gitarrist"],
-  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise, am Ausleger hängt das Holzschild „KIOSK“) und das Rangerhaus aus dunklem Holz mit Schieferdach und dem Holzschild „RANGER“ mit grünem Wimpel über der Tür; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Ufer eine weitere Blockhütte mit Holzstapel, daneben der Hackklotz des Holzhackers; neben der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten mit Satteldach, abwechselnd mit gemauertem Kamin und mit grünem Dach und Holzstapel, links Zelte und die Schutzhütte (eine Blockhütte mit Kamin), in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk (ein Holzstand mit gestreifter Markise, am Ausleger hängt das Holzschild „KIOSK“) und das Rangerhaus aus dunklem Holz mit Schieferdach und dem Holzschild „RANGER“ mit grünem Wimpel über der Tür; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild am Giebel. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der graue Bootsschuppen mit Rettungsring am Ufer; links am Ufer eine weitere Blockhütte mit Holzstapel, daneben der Hackklotz des Holzhackers; neben der Pergola ein Picknicktisch; Bänke am Strand, Tannen und Kiefern in Gruppen am Rand. Kartenblick Welle 2 (24.11.2026): Das Camp liegt im Wald: Nord-, West- und Ostrand und die Ecken am Strand haben Waldboden aus Nadelstreu mit Tannen, Kiefern, Farn und Pilzen, die Lichtung in der Mitte bleibt Rasen. Die Stämme der Mammutbäume laufen oben aus dem Bild. Der Weg vom Westrand geht durch bis zum Hauptweg. Die Insel im See ist ein rundlicher Grasfleck mit Sandsaum. Der Opa sitzt auf einem Klapphocker vor dem Bootsschuppen, der Bademeister im Sand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -11,51 +11,52 @@
     "d": "sand",
     "p": "pflaster",
     "h": "dielen",
-    "f": "sandplatz"
+    "f": "sandplatz",
+    "n": "nadelstreu"
   },
   "bruecken": ["h"],
   "raster": [
     "###################ee#######################################",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................ee......................................#",
-    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee......#",
-    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee......#",
-    "#..................eeeeee..................................#",
-    "#..................eeeeeefffff.............................#",
-    "#......................fffffffff...........................#",
-    "#.....................fffffffffff..........................#",
-    "#.....................fffffffffff....................ee....#",
-    "#.....................fffffffffff....................ee....#",
-    "#.....................fffffffffff....................ee....#",
-    "#......................fffffffff.....................ee....#",
-    "#........................fffff.......................ee....#",
-    "#.........................ee.........................ee....#",
-    "#.........................ee.......ee................ee....#",
-    "#.........................ee.......ee................ee....#",
-    "#.........................ee.......ee............ee..ee....#",
-    "#eeeeeeeeeeeeeeeeeeeee....eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#eeeeeeeeeeeeeeeeeeeee....eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#...........................................ee.............#",
-    "#...........................................ee.............#",
-    "#...........................................ee.............#",
-    "#...........................................ee.............#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnn.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnn#",
+    "#nnnnnnnnnnnnnnnnn.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeeeee..........................nnnnnnnn#",
+    "#nnnnnnnnnnnnnnnn..eeeeeefffff.....................nnnnnnnn#",
+    "#nnnnnnnnnnnnnnn.......fffffffff..................nnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnn.....fffffffffff................nnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnn....fffffffffff..................nneennnn#",
+    "#nnnnnnnnnnnnnnnnnn...fffffffffff...................neennnn#",
+    "#nnnnnnnnnnnnnnnnnn...fffffffffff....................eennnn#",
+    "#nnnnnnnnnnnnnnnnn.....fffffffff.....................eennnn#",
+    "#nnnnnnnnnnnnnnnn........fffff.......................eennnn#",
+    "#nnnnnnnnnnnnnnn..........ee.........................eennnn#",
+    "#nnnnnnnnnnnnnnnn.........ee.......ee................eennnn#",
+    "#nnnnnnnnnnnnnnnnn........ee.......ee................eennnn#",
+    "#nnnnnnnnnnnnnnnnn........ee.......ee............ee..eennnn#",
+    "#eeeeeeeeeeeeeeeeeeeeeeee.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#eeeeeeeeeeeeeeeeeeeeeeee.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#nnnnnnnnnnnn...............................ee.........nnnn#",
+    "#nnnnnnnnnn.................................ee..........nnn#",
+    "#nnnnnnnnnnn................................ee........nnnnn#",
+    "#nnnnnnnnn..................................ee.........nnnn#",
     "#dddddddddddddddddddddddddddddddddddddddddddeeddddddddddddd#",
     "#ddddddddddddddddd~~~~~~~~~~~~~~~~~~ddddddddeeddddddddddddd#",
     "#dddddddddddhhddd~~~~~~~~~~~~~~~~~~~~dddddddhhddddddddddddd#",
     "~dddddddd~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~dd#",
     "~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~d#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~~dd#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~~ddd#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..~~~~~~~~~~~~~~~~~~~~~~~~dddd#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ddd~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~dd...d~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~d.....d~~~~~~~~~~~~~~~~~~~~~~~dd#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~dd....d~~~~~~~~~~~~~~~~~~~~~~ddd#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~ddddd~~~~~~~~~~~~~~~~~~~~~~dddd#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dddd#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dddd#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#####"
@@ -200,19 +201,19 @@
     },
     {
       "moebel": "cp7MammutStamm",
-      "feld": [1, 1]
+      "feld": [1, 0]
     },
     {
       "moebel": "cp7MammutStamm",
-      "feld": [6, 1]
+      "feld": [6, 0]
     },
     {
       "moebel": "cp7MammutStamm",
-      "feld": [11, 1]
+      "feld": [11, 0]
     },
     {
       "moebel": "cp7MammutStamm",
-      "feld": [26, 1]
+      "feld": [26, 0]
     },
     {
       "moebel": "pw7Tanne",
@@ -251,55 +252,31 @@
       "feld": [50, 13]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [22, 1]
-    },
-    {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Farn",
       "feld": [31, 4]
     },
     {
-      "moebel": "wg4BlumeRot",
-      "feld": [38, 1]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [45, 1]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [48, 1]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [54, 1]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [57, 1]
-    },
-    {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Farn",
       "feld": [5, 5]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Farn",
       "feld": [8, 8]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4Pilze",
       "feld": [4, 10]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Farn",
       "feld": [10, 9]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Farn",
       "feld": [13, 11]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4Pilze",
       "feld": [7, 16]
     },
     {
@@ -311,19 +288,19 @@
       "feld": [43, 15]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4Pilze",
       "feld": [55, 13]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Farn",
       "feld": [56, 13]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Farn",
       "feld": [10, 17]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumenWeiss",
       "feld": [22, 18]
     },
     {
@@ -331,15 +308,11 @@
       "feld": [53, 17]
     },
     {
-      "moebel": "wg4BlumeRot",
-      "feld": [57, 19]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumenWeiss",
       "feld": [34, 22]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Farn",
       "feld": [8, 28]
     },
     {
@@ -347,7 +320,7 @@
       "feld": [22, 28]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4Pilze",
       "feld": [56, 27]
     },
     {
@@ -359,7 +332,7 @@
       "feld": [51, 30]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumenWeiss",
       "feld": [28, 38]
     },
     {
@@ -397,6 +370,154 @@
       "feld": [23, 21],
       "versatz": [5, 10],
       "massstab": 0.7
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [5, 4]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [9, 5]
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [5, 8]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [15, 7]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [1, 15]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [15, 16]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [8, 21]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [21, 4]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [30, 5]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [31, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [37, 0]
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [43, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [49, 0]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [55, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [57, 2]
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [57, 18]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [55, 19]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [57, 26]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [45, 12]
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [22, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [17, 0]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [57, 13]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [7, 10]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [25, 7]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [34, 1]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [41, 2]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [47, 1]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [53, 2]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [12, 17]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [56, 22]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [24, 7]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [16, 21]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [49, 26]
     }
   ],
   "ausloeser": [
@@ -538,19 +659,21 @@
         "bis": "34,30",
         "tun": "sitzt am Strand und passt auf",
         "wann": "tag",
-        "sagt": "statist.pinewoodCamp.aussen.bademeister"
+        "sagt": "statist.pinewoodCamp.aussen.bademeister",
+        "zustand": "sitzboden"
       }
     },
     {
       "name": "opa",
       "typ": "statist",
-      "feld": [49, 25],
+      "feld": [49, 26],
       "eigenschaften": {
-        "von": "49,25",
-        "bis": "49,25",
+        "von": "49,26",
+        "bis": "49,26",
         "tun": "sitzt im Klappstuhl vor dem Bootsschuppen",
         "wann": "tag",
-        "sagt": "statist.pinewoodCamp.aussen.opa"
+        "sagt": "statist.pinewoodCamp.aussen.opa",
+        "sitzt": "unten"
       }
     },
     {

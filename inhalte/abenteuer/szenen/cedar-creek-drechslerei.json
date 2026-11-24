@@ -2,7 +2,7 @@
   "karte": "cedarCreek.drechslerei",
   "datei": "karten/cedar-creek-drechslerei.json",
   "art": "innen",
-  "beschreibung": "Die Drechslerei von Mr. Dunmore am Westende der Hauptstraße von Cedar Creek: eine kleine Werkstatt mit Holzwänden und Dielenboden, in der es nach frisch geschnittenem Zedernholz riecht. Späne liegen auf der Hobelbank, Licht fällt durch das Fenster der Nordwand.\n\nAn der Nordwand links die große Hobelbank mit Ablage und Bank, darauf die Bügelsäge, Späne und ein gerahmtes Foto vom Großvater vor der alten Sägemühle; hier arbeitet Mr. Dunmore. Daneben ein Holzregal mit Büchern, Schalen und halbfertigen Figuren, rechts davon der Werktisch voller Farbdosen, Pinsel und Rahmen und in der Nordostecke eine Holzkiste mit Reststücken.\n\nIn der Südwestecke stapeln sich Rundhölzer aus den Zedern. Ein Hocker steht am Werktisch.\n\nLaufwege: von der Tür unten nach oben in die Mitte, links zur Hobelbank und zu Mr. Dunmore, rechts zum Werktisch und zur Kiste. Auf der Hobelbank liegen Bügelsäge, Späne und Fotorahmen nebeneinander, nicht übereinander (KARTENREGELN 10.81). Vor jedem Flügel der Eingangstür liegt innen eine Fußmatte (KARTENREGELN 10.86).",
+  "beschreibung": "Die Drechslerei von Mr. Dunmore am Westende der Hauptstraße von Cedar Creek: eine kleine Werkstatt mit Holzwänden und Dielenboden, in der es nach frisch geschnittenem Zedernholz riecht. Späne liegen auf der Hobelbank, Licht fällt durch das Fenster der Nordwand.\n\nAn der Nordwand links die große Hobelbank mit Ablage und Bank, darauf die Bügelsäge, Späne und ein gerahmtes Foto vom Großvater vor der alten Sägemühle; hier arbeitet Mr. Dunmore. Daneben ein Holzregal mit Büchern, Schalen und halbfertigen Figuren, rechts davon der Werktisch voller Farbdosen, Pinsel und Rahmen und in der Nordostecke eine Holzkiste mit Reststücken.\n\nFrei im Raum rechts der Mitte steht die alte Drechselbank auf ihrer schweren Werkbank, davor liegen Späne, links daneben ein Bock mit einer Leiste. In der Südwestecke stapeln sich Rundhölzer aus den Zedern. Ein Hocker steht am Werktisch.\n\nLaufwege: von der Tür unten nach oben in die Mitte, links zur Hobelbank und zu Mr. Dunmore, rechts zum Werktisch und zur Kiste. Auf der Hobelbank liegen Bügelsäge, Späne und Fotorahmen nebeneinander, nicht übereinander (KARTENREGELN 10.81). Vor jedem Flügel der Eingangstür liegt innen eine Fußmatte (KARTENREGELN 10.86).",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -90,10 +90,8 @@
     },
     {
       "moebel": "ccDrehbank",
-      "feld": [9, 6],
-      "id": "drechselbank",
-      "massstab": 0.5,
-      "versatz": [0, 7]
+      "feld": [8, 6],
+      "id": "drechselbank"
     },
     {
       "moebel": "cc4Spaene",
@@ -148,18 +146,8 @@
       "id": "bock1"
     },
     {
-      "moebel": "cc7Werkbank",
-      "feld": [7, 6],
-      "id": "bock2"
-    },
-    {
       "moebel": "cc5Leiste",
       "auf": "bock1",
-      "versatz": [0, 5]
-    },
-    {
-      "moebel": "cc5Werkstueck",
-      "auf": "bock2",
       "versatz": [0, 5]
     }
   ],

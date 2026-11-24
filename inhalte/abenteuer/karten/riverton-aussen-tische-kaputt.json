@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 280,
+ "nextobjectid": 279,
  "layers": [
   {
    "id": 1,
@@ -3082,21 +3082,21 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     4,
     4,
@@ -3153,23 +3153,23 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     4,
     4,
     4,
@@ -3225,8 +3225,8 @@
     0,
     0,
     0,
-    0,
-    0,
+    1,
+    1,
     4,
     4,
     4,
@@ -7127,21 +7127,21 @@
     2,
     2,
     2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     0,
     0,
@@ -7198,46 +7198,7 @@
     2,
     2,
     2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
     0,
     0,
@@ -7272,6 +7233,45 @@
     2,
     2,
     2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
     0,
     0,
     0,
@@ -12527,7 +12527,7 @@
      "id": 22,
      "name": "taubenmann",
      "type": "statist",
-     "x": 384,
+     "x": 416,
      "y": 336,
      "width": 16,
      "height": 16,
@@ -12537,12 +12537,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "24,21"
+       "value": "26,21"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "24,21"
+       "value": "26,21"
       },
       {
        "name": "tun",
@@ -12882,7 +12882,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "40,41"
+       "value": "32,41"
       },
       {
        "name": "verhalten",
@@ -15841,7 +15841,7 @@
     },
     {
      "id": 159,
-     "name": "rv5Lagerhaus",
+     "name": "pd6Werkhalle",
      "type": "moebel",
      "x": 992,
      "y": 480,
@@ -16226,12 +16226,12 @@
     },
     {
      "id": 174,
-     "name": "caKisten",
+     "name": "sb5Fass",
      "type": "moebel",
-     "x": 976,
-     "y": 432,
-     "width": 32,
-     "height": 32,
+     "x": 992,
+     "y": 448,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16249,29 +16249,6 @@
     },
     {
      "id": 175,
-     "name": "caKisten",
-     "type": "moebel",
-     "x": 1008,
-     "y": 432,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 176,
      "name": "caKisten",
      "type": "moebel",
      "x": 1040,
@@ -16294,7 +16271,7 @@
      ]
     },
     {
-     "id": 177,
+     "id": 176,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 960,
@@ -16317,7 +16294,7 @@
      ]
     },
     {
-     "id": 178,
+     "id": 177,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 1056,
@@ -16340,7 +16317,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 178,
      "name": "rv8Ruderboot",
      "type": "moebel",
      "x": 944,
@@ -16363,7 +16340,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 179,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 16,
@@ -16386,7 +16363,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 180,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 32,
@@ -16409,7 +16386,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 181,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 48,
@@ -16432,7 +16409,7 @@
      ]
     },
     {
-     "id": 183,
+     "id": 182,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 64,
@@ -16455,7 +16432,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 183,
      "name": "sb8KaimauerLeiter",
      "type": "moebel",
      "x": 80,
@@ -16478,7 +16455,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 184,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 96,
@@ -16501,7 +16478,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 185,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 112,
@@ -16524,7 +16501,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 186,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 128,
@@ -16547,7 +16524,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 187,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 144,
@@ -16570,7 +16547,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 188,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 160,
@@ -16593,7 +16570,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 189,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 176,
@@ -16616,7 +16593,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 190,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 192,
@@ -16639,7 +16616,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 191,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 208,
@@ -16662,7 +16639,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 192,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 224,
@@ -16685,7 +16662,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 193,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 240,
@@ -16708,7 +16685,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 194,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 256,
@@ -16731,7 +16708,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 195,
      "name": "sb8KaimauerLeiter",
      "type": "moebel",
      "x": 272,
@@ -16754,7 +16731,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 196,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 288,
@@ -16777,7 +16754,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 197,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 304,
@@ -16800,7 +16777,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 198,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 320,
@@ -16823,7 +16800,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 199,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 336,
@@ -16846,7 +16823,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 200,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 352,
@@ -16869,7 +16846,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 201,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 368,
@@ -16892,7 +16869,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 202,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 384,
@@ -16915,7 +16892,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 203,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 400,
@@ -16938,7 +16915,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 204,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 416,
@@ -16961,7 +16938,7 @@
      ]
     },
     {
-     "id": 206,
+     "id": 205,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 432,
@@ -16984,7 +16961,7 @@
      ]
     },
     {
-     "id": 207,
+     "id": 206,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 448,
@@ -17007,7 +16984,7 @@
      ]
     },
     {
-     "id": 208,
+     "id": 207,
      "name": "sb8KaimauerLeiter",
      "type": "moebel",
      "x": 464,
@@ -17030,7 +17007,7 @@
      ]
     },
     {
-     "id": 209,
+     "id": 208,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 480,
@@ -17053,7 +17030,7 @@
      ]
     },
     {
-     "id": 210,
+     "id": 209,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 496,
@@ -17076,7 +17053,7 @@
      ]
     },
     {
-     "id": 211,
+     "id": 210,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 512,
@@ -17099,7 +17076,7 @@
      ]
     },
     {
-     "id": 212,
+     "id": 211,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 528,
@@ -17122,7 +17099,7 @@
      ]
     },
     {
-     "id": 213,
+     "id": 212,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 544,
@@ -17145,7 +17122,7 @@
      ]
     },
     {
-     "id": 214,
+     "id": 213,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 560,
@@ -17168,7 +17145,7 @@
      ]
     },
     {
-     "id": 215,
+     "id": 214,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 576,
@@ -17191,7 +17168,7 @@
      ]
     },
     {
-     "id": 216,
+     "id": 215,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 592,
@@ -17214,7 +17191,7 @@
      ]
     },
     {
-     "id": 217,
+     "id": 216,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 608,
@@ -17237,7 +17214,7 @@
      ]
     },
     {
-     "id": 218,
+     "id": 217,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 624,
@@ -17260,7 +17237,7 @@
      ]
     },
     {
-     "id": 219,
+     "id": 218,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 640,
@@ -17283,7 +17260,7 @@
      ]
     },
     {
-     "id": 220,
+     "id": 219,
      "name": "sb8KaimauerLeiter",
      "type": "moebel",
      "x": 656,
@@ -17306,7 +17283,7 @@
      ]
     },
     {
-     "id": 221,
+     "id": 220,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 672,
@@ -17329,7 +17306,7 @@
      ]
     },
     {
-     "id": 222,
+     "id": 221,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 688,
@@ -17352,7 +17329,7 @@
      ]
     },
     {
-     "id": 223,
+     "id": 222,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 704,
@@ -17375,7 +17352,7 @@
      ]
     },
     {
-     "id": 224,
+     "id": 223,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 720,
@@ -17398,7 +17375,7 @@
      ]
     },
     {
-     "id": 225,
+     "id": 224,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 736,
@@ -17421,7 +17398,7 @@
      ]
     },
     {
-     "id": 226,
+     "id": 225,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 752,
@@ -17444,7 +17421,7 @@
      ]
     },
     {
-     "id": 227,
+     "id": 226,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 768,
@@ -17467,7 +17444,7 @@
      ]
     },
     {
-     "id": 228,
+     "id": 227,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 784,
@@ -17490,7 +17467,7 @@
      ]
     },
     {
-     "id": 229,
+     "id": 228,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 880,
@@ -17513,7 +17490,7 @@
      ]
     },
     {
-     "id": 230,
+     "id": 229,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 896,
@@ -17536,7 +17513,7 @@
      ]
     },
     {
-     "id": 231,
+     "id": 230,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 912,
@@ -17559,7 +17536,7 @@
      ]
     },
     {
-     "id": 232,
+     "id": 231,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 928,
@@ -17582,7 +17559,7 @@
      ]
     },
     {
-     "id": 233,
+     "id": 232,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 944,
@@ -17605,7 +17582,7 @@
      ]
     },
     {
-     "id": 234,
+     "id": 233,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 960,
@@ -17628,7 +17605,7 @@
      ]
     },
     {
-     "id": 235,
+     "id": 234,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 976,
@@ -17651,7 +17628,7 @@
      ]
     },
     {
-     "id": 236,
+     "id": 235,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 992,
@@ -17674,7 +17651,7 @@
      ]
     },
     {
-     "id": 237,
+     "id": 236,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1008,
@@ -17697,7 +17674,7 @@
      ]
     },
     {
-     "id": 238,
+     "id": 237,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1024,
@@ -17720,7 +17697,7 @@
      ]
     },
     {
-     "id": 239,
+     "id": 238,
      "name": "sb8KaimauerLeiter",
      "type": "moebel",
      "x": 1040,
@@ -17743,7 +17720,7 @@
      ]
     },
     {
-     "id": 240,
+     "id": 239,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1056,
@@ -17766,7 +17743,7 @@
      ]
     },
     {
-     "id": 241,
+     "id": 240,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1072,
@@ -17789,7 +17766,7 @@
      ]
     },
     {
-     "id": 242,
+     "id": 241,
      "name": "sb8KaimauerReifen",
      "type": "moebel",
      "x": 1088,
@@ -17812,7 +17789,7 @@
      ]
     },
     {
-     "id": 243,
+     "id": 242,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1104,
@@ -17835,7 +17812,7 @@
      ]
     },
     {
-     "id": 244,
+     "id": 243,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1120,
@@ -17858,7 +17835,7 @@
      ]
     },
     {
-     "id": 245,
+     "id": 244,
      "name": "rv5Wohnwagen",
      "type": "moebel",
      "x": 32,
@@ -17881,7 +17858,7 @@
      ]
     },
     {
-     "id": 246,
+     "id": 245,
      "name": "rv5Werkstatt",
      "type": "moebel",
      "x": 144,
@@ -17904,7 +17881,7 @@
      ]
     },
     {
-     "id": 247,
+     "id": 246,
      "name": "rvPavillonAchteck",
      "type": "moebel",
      "x": 560,
@@ -17937,7 +17914,7 @@
      ]
     },
     {
-     "id": 248,
+     "id": 247,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 803,
@@ -17970,7 +17947,7 @@
      ]
     },
     {
-     "id": 249,
+     "id": 248,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 811,
@@ -17998,7 +17975,7 @@
      ]
     },
     {
-     "id": 250,
+     "id": 249,
      "name": "rv16Schachuhr",
      "type": "moebel",
      "x": 804,
@@ -18026,7 +18003,7 @@
      ]
     },
     {
-     "id": 251,
+     "id": 250,
      "name": "sb8Kreidespringer",
      "type": "moebel",
      "x": 560,
@@ -18049,7 +18026,7 @@
      ]
     },
     {
-     "id": 252,
+     "id": 251,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 768,
@@ -18072,7 +18049,7 @@
      ]
     },
     {
-     "id": 253,
+     "id": 252,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 832,
@@ -18095,7 +18072,7 @@
      ]
     },
     {
-     "id": 254,
+     "id": 253,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 288,
@@ -18118,7 +18095,7 @@
      ]
     },
     {
-     "id": 255,
+     "id": 254,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 880,
@@ -18141,7 +18118,7 @@
      ]
     },
     {
-     "id": 256,
+     "id": 255,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 1088,
@@ -18164,7 +18141,7 @@
      ]
     },
     {
-     "id": 257,
+     "id": 256,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
      "x": 608,
@@ -18187,30 +18164,40 @@
      ]
     },
     {
-     "id": 258,
+     "id": 257,
      "name": "gc7Absperrbock",
      "type": "moebel",
      "x": 672,
      "y": 848,
-     "width": 32,
-     "height": 32,
+     "width": 26,
+     "height": 26,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 872
+       "value": 866
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.8
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##"
       }
      ]
     },
     {
-     "id": 259,
+     "id": 258,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 368,
@@ -18233,10 +18220,33 @@
      ]
     },
     {
-     "id": 260,
+     "id": 259,
      "name": "rv9BildschirmtischKaputt",
      "type": "moebel",
      "x": 432,
+     "y": 752,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 792
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 260,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 496,
      "y": 752,
      "width": 48,
      "height": 48,
@@ -18259,29 +18269,6 @@
      "id": 261,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
-     "x": 496,
-     "y": 752,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 792
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 262,
-     "name": "rv9Bildschirmtisch",
-     "type": "moebel",
      "x": 368,
      "y": 800,
      "width": 48,
@@ -18302,7 +18289,7 @@
      ]
     },
     {
-     "id": 263,
+     "id": 262,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 432,
@@ -18325,7 +18312,7 @@
      ]
     },
     {
-     "id": 264,
+     "id": 263,
      "name": "rv9BildschirmtischKaputt",
      "type": "moebel",
      "x": 496,
@@ -18348,7 +18335,7 @@
      ]
     },
     {
-     "id": 265,
+     "id": 264,
      "name": "cr9BordL12",
      "type": "moebel",
      "x": 800,
@@ -18371,7 +18358,7 @@
      ]
     },
     {
-     "id": 266,
+     "id": 265,
      "name": "cr9BordL3",
      "type": "moebel",
      "x": 880,
@@ -18394,7 +18381,7 @@
      ]
     },
     {
-     "id": 267,
+     "id": 266,
      "name": "cr9BordL6",
      "type": "moebel",
      "x": 880,
@@ -18417,7 +18404,7 @@
      ]
     },
     {
-     "id": 268,
+     "id": 267,
      "name": "sa9Zebrastreifen",
      "type": "moebel",
      "x": 528,
@@ -18440,7 +18427,7 @@
      ]
     },
     {
-     "id": 269,
+     "id": 268,
      "name": "rv9PfuetzeGross",
      "type": "moebel",
      "x": 624,
@@ -18463,7 +18450,7 @@
      ]
     },
     {
-     "id": 270,
+     "id": 269,
      "name": "rv9PfuetzeKlein",
      "type": "moebel",
      "x": 416,
@@ -18486,7 +18473,7 @@
      ]
     },
     {
-     "id": 271,
+     "id": 270,
      "name": "rv9PfuetzeKlein",
      "type": "moebel",
      "x": 720,
@@ -18509,11 +18496,11 @@
      ]
     },
     {
-     "id": 272,
+     "id": 271,
      "name": "rv9PfuetzeKlein",
      "type": "moebel",
-     "x": 192,
-     "y": 496,
+     "x": 64,
+     "y": 592,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -18532,7 +18519,7 @@
      ]
     },
     {
-     "id": 273,
+     "id": 272,
      "name": "rv14Pumpenhaus",
      "type": "moebel",
      "x": 1072,
@@ -18555,7 +18542,7 @@
      ]
     },
     {
-     "id": 274,
+     "id": 273,
      "name": "rv14Pegelhaus",
      "type": "moebel",
      "x": 1088,
@@ -18578,7 +18565,7 @@
      ]
     },
     {
-     "id": 275,
+     "id": 274,
      "name": "rv14Bruecke",
      "type": "moebel",
      "x": 800,
@@ -18601,7 +18588,7 @@
      ]
     },
     {
-     "id": 276,
+     "id": 275,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 0,
@@ -18624,7 +18611,7 @@
      ]
     },
     {
-     "id": 277,
+     "id": 276,
      "name": "sb8Kaimauer",
      "type": "moebel",
      "x": 1136,
@@ -18647,7 +18634,7 @@
      ]
     },
     {
-     "id": 278,
+     "id": 277,
      "name": "rv14Fahrradschuppen",
      "type": "moebel",
      "x": 240,
@@ -18670,7 +18657,7 @@
      ]
     },
     {
-     "id": 279,
+     "id": 278,
      "name": "ri8Klapphocker",
      "type": "moebel",
      "x": 208,

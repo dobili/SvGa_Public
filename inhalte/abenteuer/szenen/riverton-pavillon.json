@@ -2,12 +2,12 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon.json",
   "art": "innen",
-  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein offener achteckiger Pavillon mit Dielenboden unter einem Dach, ringsum ein weißes Metallgeländer, das an den vier schrägen Seiten gerade unter 45° durchläuft, mit einem Pfosten an jeder Ecke; die Dielen enden genau am Geländer, dahinter Wiese; der Fluss liegt gleich hinter dem Pavillon, sein Wind zieht hindurch (RO36, 17.11.2026, Achteck auf Wunsch des Autors). In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. Am nördlichen Geländer steht die Gedenktafel für Elias Odum unter einem kleinen Holzdach, daneben zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zum Geländer, damit man zum Brett schaut. Vor dem Eingang ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten der Eingang, eine Lücke im Geländer mit Fußmatte.",
+  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein offener achteckiger Pavillon mit Dielenboden unter einem Dach, ringsum ein weißes Metallgeländer, das an den vier schrägen Seiten gerade unter 45° durchläuft, mit einem Pfosten an jeder Ecke; die Dielen enden genau am Geländer, dahinter Wiese; der Fluss liegt gleich hinter dem Pavillon (am Nordrand der Karte zwei Reihen Wasser), sein Wind zieht hindurch (RO36, 17.11.2026, Achteck auf Wunsch des Autors). In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei offenen Holztruhen mit Eisenbändern südlich des Bretts. Am nördlichen Geländer steht die Gedenktafel für Elias Odum unter einem kleinen Holzdach, daneben zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter; zwischen den Tischen je eine Bank für Zuschauer, längs zum Geländer, damit man zum Brett schaut. Vor dem Eingang ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten der Eingang, eine Lücke im Geländer mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
-    "##########################",
-    "##########################",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "##########################",
     "##########################",
     "##########################",
@@ -686,17 +686,19 @@
       "eigenschaften": {
         "tun": "sitzt auf der Bank und schaut der Partie auf dem Bodenbrett zu",
         "wann": "tag",
-        "sagt": "statist.riverton.pavillon.zuschauer"
+        "sagt": "statist.riverton.pavillon.zuschauer",
+        "sitzt": "unten"
       }
     },
     {
       "name": "wettender",
       "typ": "statist",
-      "feld": [22, 7],
+      "feld": [21, 7],
       "eigenschaften": {
         "tun": "sitzt am Brett und wettet um eine Limonade",
         "wann": "tag",
-        "sagt": "statist.riverton.pavillon.wettender"
+        "sagt": "statist.riverton.pavillon.wettender",
+        "sitzt": "unten"
       }
     }
   ],

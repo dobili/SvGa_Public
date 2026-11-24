@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 32,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -961,32 +961,22 @@
      "id": 17,
      "name": "ccDrehbank",
      "type": "moebel",
-     "x": 144,
-     "y": 103,
-     "width": 32,
-     "height": 24,
+     "x": 128,
+     "y": 96,
+     "width": 64,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 119
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "massstab",
-       "type": "float",
-       "value": 0.5
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "##/##"
       }
      ]
     },
@@ -1250,55 +1240,9 @@
     },
     {
      "id": 29,
-     "name": "cc7Werkbank",
-     "type": "moebel",
-     "x": 112,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 30,
      "name": "cc5Leiste",
      "type": "moebel",
      "x": 88,
-     "y": 104,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 121
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 31,
-     "name": "cc5Werkstueck",
-     "type": "moebel",
-     "x": 120,
      "y": 104,
      "width": 16,
      "height": 16,

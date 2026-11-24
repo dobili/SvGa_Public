@@ -20,6 +20,11 @@
     "rahmen": [45, 74, 59, 93],
     "herkunft": "von Hand"
   },
+  "spiel/eigene/haus_hinten_b_braun.png": {
+    "rahmen": [45, 74, 59, 93],
+    "herkunft": "von Hand",
+    "grund": "gleiche Zeichnung wie haus_hinten_b_rot (Tür Pixel für Pixel an derselben Stelle verglichen, 24.11.2026)"
+  },
   "spiel/eigene/fassade_diner.png": {
     "rahmen": [16, 117, 45, 138],
     "herkunft": "von Hand",

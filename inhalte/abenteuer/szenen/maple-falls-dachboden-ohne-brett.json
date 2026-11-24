@@ -48,7 +48,7 @@
       "feld": [6, 4]
     },
     {
-      "moebel": "mf3Rundtisch",
+      "moebel": "mf7Rundtisch",
       "feld": [7, 5],
       "id": "tisch"
     },
@@ -211,9 +211,7 @@
     }
   ],
   "zustand_der_karte": "ersterAbendGesehen",
-  "freigeben": [
-    [1, 8]
-  ],
+  "freigeben": [[1, 8]],
   "freigeben_fein": [
     [1, 7, "............####"],
     [2, 7, "............###."],

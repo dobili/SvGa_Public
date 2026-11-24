@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 26,
+ "nextobjectid": 25,
  "layers": [
   {
    "id": 1,
@@ -851,29 +851,6 @@
     },
     {
      "id": 19,
-     "name": "cc17PfuetzeKeller",
-     "type": "moebel",
-     "x": 116,
-     "y": 124,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 20,
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
@@ -896,7 +873,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 176,
@@ -919,7 +896,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 189,
@@ -942,7 +919,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "cc12BuchOffen",
      "type": "moebel",
      "x": 178,
@@ -965,7 +942,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "cc12Programmheft",
      "type": "moebel",
      "x": 183,
@@ -988,10 +965,10 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "cc4ArchivregalB",
      "type": "moebel",
-     "x": 139,
+     "x": 128,
      "y": 16,
      "width": 32,
      "height": 48,

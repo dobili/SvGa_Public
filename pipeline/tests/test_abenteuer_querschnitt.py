@@ -10,7 +10,11 @@ Alle Prüfungen laufen ohne das private Paket (gespeicherte Zahlen in ``katalog_
 
 import pytest
 
+<<<<<<< HEAD
 pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions (kartenbild, belebungsvorschau)
+=======
+pytest.importorskip("PIL")  # in Actions ohne Pillow übersprungen, wie die übrigen Bildtests
+>>>>>>> db7b053c7b3e7e9a7984bdc6942b28c081205f98
 
 from pipeline.abenteuer import kronenhoehe, proportionen, untergrund, waldrand, wiederholung  # noqa: E402
 from pipeline.abenteuer import zusammenhang_enden as z  # noqa: E402

@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions (kartenbild, belebungsvorschau)
+pytest.importorskip("PIL")  # in Actions ohne Pillow übersprungen, wie die übrigen Bildtests
 
 from pipeline.abenteuer import statistenrolle as R  # noqa: E402
 from pipeline.abenteuer import statistenwahl as W  # noqa: E402

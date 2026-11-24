@@ -2,7 +2,7 @@
   "karte": "desertSprings.garage",
   "datei": "karten/desert-springs-garage.json",
   "art": "innen",
-  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 14 × 11 Kacheln (passt nach R065 in die kleine Garage außen), Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal mit Miras Dosenpokal und zwei Fenster; links ein Auto in Reparatur und Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, und ein Karton. Tür in der Mitte der Südwand.",
+  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 14 × 11 Kacheln (passt nach R065 in die kleine Garage außen), Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal mit Miras Dosenpokal und zwei Fenster; links ein Auto in Reparatur vor dem Tor in der Südwand, daneben Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, und ein Karton. Tür in der Mitte der Südwand, links davon das zweiflüglige Tor (zu, nur die Tür ist Ausgang).",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -15,7 +15,7 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######",
+    "##..###.######",
     "##############"
   ],
   "objekte": [
@@ -47,7 +47,7 @@
     },
     {
       "moebel": "iw5AutoA",
-      "feld": [1, 4]
+      "feld": [2, 5]
     },
     {
       "moebel": "cc6TischHell",
@@ -104,15 +104,15 @@
     },
     {
       "moebel": "pd6Kanister",
-      "feld": [3, 7]
+      "feld": [4, 7]
     },
     {
-      "moebel": "iwFass",
-      "feld": [1, 8]
+      "moebel": "pd6Kanister",
+      "feld": [1, 5]
     },
     {
-      "moebel": "iwFass",
-      "feld": [2, 8]
+      "moebel": "pd6Kanister",
+      "feld": [1, 7]
     },
     {
       "moebel": "rv5ReifenLiegend",
@@ -125,6 +125,16 @@
     {
       "moebel": "rv5TuerSuedHell",
       "feld": [7, 10],
+      "deckkraft": 75
+    },
+    {
+      "moebel": "rv5TuerSuedHell",
+      "feld": [2, 10],
+      "deckkraft": 75
+    },
+    {
+      "moebel": "rv5TuerSuedHell",
+      "feld": [3, 10],
       "deckkraft": 75
     }
   ],
@@ -157,5 +167,9 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["industrie", "einfach", "klassisch", "modern", "rustikal", "laendlich", "schule"]
+  "stil": ["industrie", "einfach", "klassisch", "modern", "rustikal", "laendlich", "schule"],
+  "sperren": [
+    [2, 9],
+    [3, 9]
+  ]
 }

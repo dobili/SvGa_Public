@@ -1,7 +1,9 @@
 {
   "karte": "siliconBay.altstadt",
   "art": "aussen",
-  "musikquellen": ["strassenmusiker"],
+  "musikquellen": [
+    "strassenmusiker"
+  ],
   "viertel": true,
   "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; es ist kalt und klar, Schnee liegt keiner (Glas und Kälte statt Schnee, RO21). Die Straße läuft von Ost nach West, mit Mittellinie und zwei Zebrastreifen an den Gassen; am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales Mietshaus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit einem Weg aus Steinplatten, Bänken, Bäumen.",
   "boden": "pflaster",
@@ -23,18 +25,18 @@
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
+    "#prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrp#",
     "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -822,15 +824,15 @@
     },
     {
       "moebel": "wg4Busch",
-      "feld": [11, 52]
+      "feld": [11, 53]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [30, 52]
+      "feld": [30, 53]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [58, 52]
+      "feld": [58, 53]
     },
     {
       "moebel": "cr9StrichQ16",
@@ -869,6 +871,26 @@
     {
       "moebel": "sa9Zebrastreifen",
       "feld": [41, 23]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [67, 5]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [16, 53]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 53]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [42, 53]
     }
   ],
   "ausloeser": [
@@ -1121,15 +1143,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "klassisch",
-    "modern",
-    "einfach",
-    "rustikal",
-    "industrie",
-    "natur",
-    "laendlich",
-    "landhaus"
-  ],
+  "stil": ["klassisch", "modern", "einfach", "rustikal", "industrie", "natur", "laendlich", "landhaus"],
   "datei": "karten/silicon-bay-altstadt.json"
 }

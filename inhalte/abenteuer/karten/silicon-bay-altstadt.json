@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 191,
+ "nextobjectid": 196,
  "layers": [
   {
    "id": 1,
@@ -16547,7 +16547,7 @@
      "name": "wg4Busch",
      "type": "moebel",
      "x": 176,
-     "y": 832,
+     "y": 848,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -16556,7 +16556,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 872
       },
       {
        "name": "kollision",
@@ -16570,7 +16570,7 @@
      "name": "wg4Busch",
      "type": "moebel",
      "x": 480,
-     "y": 832,
+     "y": 848,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -16579,7 +16579,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 872
       },
       {
        "name": "kollision",
@@ -16593,7 +16593,7 @@
      "name": "wg4Busch",
      "type": "moebel",
      "x": 928,
-     "y": 832,
+     "y": 848,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -16602,7 +16602,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 872
       },
       {
        "name": "kollision",
@@ -16769,6 +16769,121 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 191,
+     "name": "wg4Laubbaum",
+     "type": "moebel",
+     "x": 16,
+     "y": 80,
+     "width": 64,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 192,
+     "name": "wg4Laubbaum",
+     "type": "moebel",
+     "x": 1072,
+     "y": 80,
+     "width": 64,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 193,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 256,
+     "y": 848,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 872
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 194,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 576,
+     "y": 848,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 872
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 195,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 672,
+     "y": 848,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 872
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

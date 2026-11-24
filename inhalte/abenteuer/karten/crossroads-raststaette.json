@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 62,
+ "nextobjectid": 64,
  "layers": [
   {
    "id": 1,
@@ -998,6 +998,11 @@
        "name": "blick",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "oben"
       }
      ]
     },
@@ -1067,6 +1072,11 @@
       },
       {
        "name": "blick",
+       "type": "string",
+       "value": "oben"
+      },
+      {
+       "name": "sitzt",
        "type": "string",
        "value": "oben"
       }
@@ -2196,6 +2206,52 @@
        "name": "tiefe",
        "type": "int",
        "value": -1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "cc4Fenster",
+     "type": "moebel",
+     "x": 112,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "cc4Fenster",
+     "type": "moebel",
+     "x": 176,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
       },
       {
        "name": "kollision",

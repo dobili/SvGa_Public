@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 229,
+ "nextobjectid": 232,
  "layers": [
   {
    "id": 1,
@@ -16157,7 +16157,7 @@
     },
     {
      "id": 46,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 0,
      "y": 544,
@@ -16180,7 +16180,7 @@
     },
     {
      "id": 47,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 16,
      "y": 544,
@@ -16203,7 +16203,7 @@
     },
     {
      "id": 48,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 32,
      "y": 544,
@@ -16226,7 +16226,7 @@
     },
     {
      "id": 49,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 48,
      "y": 544,
@@ -16249,7 +16249,7 @@
     },
     {
      "id": 50,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 64,
      "y": 544,
@@ -16272,7 +16272,7 @@
     },
     {
      "id": 51,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 80,
      "y": 544,
@@ -16295,7 +16295,7 @@
     },
     {
      "id": 52,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 96,
      "y": 544,
@@ -16318,7 +16318,7 @@
     },
     {
      "id": 53,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 112,
      "y": 544,
@@ -16341,7 +16341,7 @@
     },
     {
      "id": 54,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 128,
      "y": 544,
@@ -16364,7 +16364,7 @@
     },
     {
      "id": 55,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 144,
      "y": 544,
@@ -16387,7 +16387,7 @@
     },
     {
      "id": 56,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 160,
      "y": 544,
@@ -16410,7 +16410,7 @@
     },
     {
      "id": 57,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 176,
      "y": 544,
@@ -16433,7 +16433,7 @@
     },
     {
      "id": 58,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 192,
      "y": 544,
@@ -16456,7 +16456,7 @@
     },
     {
      "id": 59,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 208,
      "y": 544,
@@ -16479,7 +16479,7 @@
     },
     {
      "id": 60,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 224,
      "y": 544,
@@ -16502,7 +16502,7 @@
     },
     {
      "id": 61,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 240,
      "y": 544,
@@ -16525,7 +16525,7 @@
     },
     {
      "id": 62,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 256,
      "y": 544,
@@ -16548,7 +16548,7 @@
     },
     {
      "id": 63,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 272,
      "y": 544,
@@ -16571,7 +16571,7 @@
     },
     {
      "id": 64,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 288,
      "y": 544,
@@ -16594,7 +16594,7 @@
     },
     {
      "id": 65,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 304,
      "y": 544,
@@ -16617,7 +16617,7 @@
     },
     {
      "id": 66,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 320,
      "y": 544,
@@ -16640,7 +16640,7 @@
     },
     {
      "id": 67,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 336,
      "y": 544,
@@ -16663,7 +16663,7 @@
     },
     {
      "id": 68,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 352,
      "y": 544,
@@ -16686,7 +16686,7 @@
     },
     {
      "id": 69,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 368,
      "y": 544,
@@ -16709,7 +16709,7 @@
     },
     {
      "id": 70,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 384,
      "y": 544,
@@ -16732,7 +16732,7 @@
     },
     {
      "id": 71,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 400,
      "y": 544,
@@ -16755,7 +16755,7 @@
     },
     {
      "id": 72,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 416,
      "y": 544,
@@ -16778,7 +16778,7 @@
     },
     {
      "id": 73,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 432,
      "y": 544,
@@ -16801,7 +16801,7 @@
     },
     {
      "id": 74,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 448,
      "y": 544,
@@ -16824,7 +16824,7 @@
     },
     {
      "id": 75,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 464,
      "y": 544,
@@ -16847,7 +16847,7 @@
     },
     {
      "id": 76,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 480,
      "y": 544,
@@ -16870,7 +16870,7 @@
     },
     {
      "id": 77,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 496,
      "y": 544,
@@ -16893,7 +16893,7 @@
     },
     {
      "id": 78,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 512,
      "y": 544,
@@ -16916,7 +16916,7 @@
     },
     {
      "id": 79,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 528,
      "y": 544,
@@ -16939,7 +16939,7 @@
     },
     {
      "id": 80,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 544,
      "y": 544,
@@ -16962,7 +16962,7 @@
     },
     {
      "id": 81,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 560,
      "y": 544,
@@ -16985,7 +16985,7 @@
     },
     {
      "id": 82,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 576,
      "y": 544,
@@ -17008,7 +17008,7 @@
     },
     {
      "id": 83,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 592,
      "y": 544,
@@ -17031,7 +17031,7 @@
     },
     {
      "id": 84,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 608,
      "y": 544,
@@ -17054,7 +17054,7 @@
     },
     {
      "id": 85,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 624,
      "y": 544,
@@ -17077,7 +17077,7 @@
     },
     {
      "id": 86,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 640,
      "y": 544,
@@ -17100,7 +17100,7 @@
     },
     {
      "id": 87,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 656,
      "y": 544,
@@ -17123,7 +17123,7 @@
     },
     {
      "id": 88,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 672,
      "y": 544,
@@ -17146,7 +17146,7 @@
     },
     {
      "id": 89,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 688,
      "y": 544,
@@ -17169,7 +17169,7 @@
     },
     {
      "id": 90,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 704,
      "y": 544,
@@ -17192,7 +17192,7 @@
     },
     {
      "id": 91,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 720,
      "y": 544,
@@ -17215,7 +17215,7 @@
     },
     {
      "id": 92,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 736,
      "y": 544,
@@ -17238,7 +17238,7 @@
     },
     {
      "id": 93,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 752,
      "y": 544,
@@ -17261,7 +17261,7 @@
     },
     {
      "id": 94,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 768,
      "y": 544,
@@ -17284,7 +17284,7 @@
     },
     {
      "id": 95,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 784,
      "y": 544,
@@ -17307,7 +17307,7 @@
     },
     {
      "id": 96,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 800,
      "y": 544,
@@ -17330,7 +17330,7 @@
     },
     {
      "id": 97,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 816,
      "y": 544,
@@ -17353,7 +17353,7 @@
     },
     {
      "id": 98,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 832,
      "y": 544,
@@ -17376,7 +17376,7 @@
     },
     {
      "id": 99,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 848,
      "y": 544,
@@ -17399,7 +17399,7 @@
     },
     {
      "id": 100,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 864,
      "y": 544,
@@ -17422,7 +17422,7 @@
     },
     {
      "id": 101,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 880,
      "y": 544,
@@ -17445,7 +17445,7 @@
     },
     {
      "id": 102,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 896,
      "y": 544,
@@ -17468,7 +17468,7 @@
     },
     {
      "id": 103,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 912,
      "y": 544,
@@ -17491,7 +17491,7 @@
     },
     {
      "id": 104,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 928,
      "y": 544,
@@ -17514,7 +17514,7 @@
     },
     {
      "id": 105,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 944,
      "y": 544,
@@ -17537,7 +17537,7 @@
     },
     {
      "id": 106,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 960,
      "y": 544,
@@ -17560,7 +17560,7 @@
     },
     {
      "id": 107,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 976,
      "y": 544,
@@ -17583,7 +17583,7 @@
     },
     {
      "id": 108,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 992,
      "y": 544,
@@ -17606,7 +17606,7 @@
     },
     {
      "id": 109,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 1008,
      "y": 544,
@@ -17629,7 +17629,7 @@
     },
     {
      "id": 110,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 1024,
      "y": 544,
@@ -17652,7 +17652,7 @@
     },
     {
      "id": 111,
-     "name": "sb5GleisNeu",
+     "name": "cc4GleisRand",
      "type": "moebel",
      "x": 1040,
      "y": 544,
@@ -20343,7 +20343,7 @@
     },
     {
      "id": 228,
-     "name": "cc4Stammbank",
+     "name": "ca7BankGarten",
      "type": "moebel",
      "x": 160,
      "y": 1040,
@@ -20356,6 +20356,75 @@
        "name": "tiefe",
        "type": "int",
        "value": 1048
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 229,
+     "name": "sb5Baum",
+     "type": "moebel",
+     "x": 1088,
+     "y": 32,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 230,
+     "name": "sb5Baum",
+     "type": "moebel",
+     "x": 1088,
+     "y": 128,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 231,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 1120,
+     "y": 272,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
       },
       {
        "name": "kollision",

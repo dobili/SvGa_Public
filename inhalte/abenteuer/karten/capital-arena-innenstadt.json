@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 98,
+ "nextobjectid": 99,
  "layers": [
   {
    "id": 1,
@@ -16141,19 +16141,19 @@
     },
     {
      "id": 69,
-     "name": "ca8Reihenhaus3",
+     "name": "ca9BeetBaum",
      "type": "moebel",
-     "x": 320,
-     "y": 704,
-     "width": 48,
-     "height": 192,
+     "x": 336,
+     "y": 752,
+     "width": 32,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 888
+       "value": 808
       },
       {
        "name": "kollision",
@@ -16164,6 +16164,39 @@
     },
     {
      "id": 70,
+     "name": "ca7Bank",
+     "type": "moebel",
+     "x": 326,
+     "y": 856,
+     "width": 36,
+     "height": 24,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 872
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../##."
+      }
+     ]
+    },
+    {
+     "id": 71,
      "name": "ca10Buero",
      "type": "moebel",
      "x": 912,
@@ -16186,7 +16219,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "ci8Gitter",
      "type": "moebel",
      "x": 624,
@@ -16209,7 +16242,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "ci8Kreidespringer",
      "type": "moebel",
      "x": 608,
@@ -16232,7 +16265,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 74,
      "name": "ci8PlakatBald",
      "type": "moebel",
      "x": 688,
@@ -16255,7 +16288,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 75,
      "name": "ci8Kaffeekiosk",
      "type": "moebel",
      "x": 432,
@@ -16278,7 +16311,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 76,
      "name": "mf6Haltestelle",
      "type": "moebel",
      "x": 752,
@@ -16301,7 +16334,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 77,
      "name": "ca7Bank",
      "type": "moebel",
      "x": 486,
@@ -16334,7 +16367,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 78,
      "name": "ca7Bank",
      "type": "moebel",
      "x": 742,
@@ -16367,7 +16400,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 79,
      "name": "ca7Baum",
      "type": "moebel",
      "x": 432,
@@ -16390,7 +16423,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 80,
      "name": "ca7BaumRund",
      "type": "moebel",
      "x": 784,
@@ -16413,7 +16446,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 81,
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 576,
@@ -16436,7 +16469,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 82,
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 720,
@@ -16459,7 +16492,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 83,
      "name": "ca7Blumenbeet",
      "type": "moebel",
      "x": 512,
@@ -16482,7 +16515,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 84,
      "name": "ca7Blumenbeet",
      "type": "moebel",
      "x": 704,
@@ -16505,7 +16538,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 85,
      "name": "ca9StrichQ16",
      "type": "moebel",
      "x": 16,
@@ -16528,7 +16561,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 86,
      "name": "ca9StrichQ7",
      "type": "moebel",
      "x": 272,
@@ -16551,7 +16584,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 87,
      "name": "ca9StrichQ16",
      "type": "moebel",
      "x": 416,
@@ -16574,7 +16607,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 88,
      "name": "ca9StrichQ12",
      "type": "moebel",
      "x": 672,
@@ -16597,7 +16630,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 89,
      "name": "ca9StrichQ16",
      "type": "moebel",
      "x": 896,
@@ -16620,7 +16653,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 90,
      "name": "ca9StrichQ7",
      "type": "moebel",
      "x": 1152,
@@ -16643,7 +16676,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 91,
      "name": "ca9BeetBaum",
      "type": "moebel",
      "x": 128,
@@ -16666,7 +16699,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 92,
      "name": "ca9BeetZypresse",
      "type": "moebel",
      "x": 720,
@@ -16689,7 +16722,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 93,
      "name": "ca9BeetBaum",
      "type": "moebel",
      "x": 1056,
@@ -16712,7 +16745,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 94,
      "name": "ca9BeetZypresse",
      "type": "moebel",
      "x": 352,
@@ -16735,7 +16768,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 95,
      "name": "ca9BeetBaum",
      "type": "moebel",
      "x": 1120,
@@ -16758,7 +16791,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 96,
      "name": "ca10Zebrastreifen",
      "type": "moebel",
      "x": 384,
@@ -16781,7 +16814,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 97,
      "name": "ca10Zebrastreifen",
      "type": "moebel",
      "x": 864,
@@ -16804,7 +16837,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 98,
      "name": "ci15Taxi",
      "type": "moebel",
      "x": 1088,

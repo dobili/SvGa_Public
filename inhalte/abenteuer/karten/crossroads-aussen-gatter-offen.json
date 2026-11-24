@@ -10763,15 +10763,15 @@
      "type": "moebel",
      "x": 456,
      "y": 465,
-     "width": 31,
-     "height": 31,
+     "width": 36,
+     "height": 36,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 488
+       "value": 493
       },
       {
        "name": "kollision",
@@ -10781,12 +10781,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 0.65
+       "value": 0.75
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "##/##"
+       "value": ".../##./..."
       }
      ]
     },
@@ -10796,15 +10796,15 @@
      "type": "moebel",
      "x": 456,
      "y": 529,
-     "width": 31,
-     "height": 31,
+     "width": 36,
+     "height": 36,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 552
+       "value": 557
       },
       {
        "name": "kollision",
@@ -10814,12 +10814,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 0.65
+       "value": 0.75
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "##/##"
+       "value": ".../##./..."
       }
      ]
     },
@@ -10829,15 +10829,15 @@
      "type": "moebel",
      "x": 456,
      "y": 657,
-     "width": 31,
-     "height": 31,
+     "width": 36,
+     "height": 36,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 680
+       "value": 685
       },
       {
        "name": "kollision",
@@ -10847,12 +10847,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 0.65
+       "value": 0.75
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "##/##"
+       "value": ".../##./..."
       }
      ]
     },

@@ -995,8 +995,8 @@
      "id": 6,
      "name": "leserin",
      "type": "statist",
-     "x": 128,
-     "y": 160,
+     "x": 160,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1005,12 +1005,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "8,10"
+       "value": "10,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "8,10"
+       "value": "10,6"
       },
       {
        "name": "tun",
@@ -1026,6 +1026,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.desertSprings.antiquariat.leserin"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

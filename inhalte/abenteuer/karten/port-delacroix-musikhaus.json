@@ -1047,7 +1047,7 @@
     },
     {
      "id": 9,
-     "name": "pd6Kiste",
+     "name": "pd6Fass",
      "type": "moebel",
      "x": 144,
      "y": 64,
@@ -1093,7 +1093,7 @@
     },
     {
      "id": 11,
-     "name": "pd6Kiste",
+     "name": "pd6Fass",
      "type": "moebel",
      "x": 256,
      "y": 128,
@@ -1530,7 +1530,7 @@
     },
     {
      "id": 30,
-     "name": "pd6Kiste",
+     "name": "pd7Blechkiste",
      "type": "moebel",
      "x": 224,
      "y": 48,

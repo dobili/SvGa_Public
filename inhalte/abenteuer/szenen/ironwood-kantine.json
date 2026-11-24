@@ -895,7 +895,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     },
     {
@@ -905,7 +906,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     },
     {
@@ -915,7 +917,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     },
     {
@@ -925,7 +928,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     },
     {
@@ -935,7 +939,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     },
     {
@@ -945,7 +950,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     },
     {
@@ -955,7 +961,8 @@
       "eigenschaften": {
         "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     }
   ],

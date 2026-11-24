@@ -1,9 +1,9 @@
 {
   "karte": "crossroads.raststaette",
   "art": "innen",
-  "beschreibung": "Darlenes Raststätte in Crossroads, ein einziger flacher Gastraum wie das Haus außen (23 × 11, R065): Holzwände, Dielen. Hinter dem langen Holztresen an der Nordwand die offene Küche: Kühlschränke, drei Herde unter Hauben, Grill, Fritteuse und Spültisch. Auf dem Tresen Kaffeemaschine, Gläser und Flaschen, davor vier Hocker; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen an der Wand, Pinnwand, Spielautomat und die Tür zum WC; davor der lange Varianten-Tisch mit drei kleinen Brettern in gleichen Abständen, je ein Hocker davor und dahinter. Rechts unten Novas Ecktisch. Unten die Glastür mit Fußmatte.",
-  "wand": "holz",
-  "boden": "dielen",
+  "beschreibung": "Darlenes Raststätte in Crossroads, ein einziger flacher Gastraum wie das Haus außen (23 × 11, R065): helle Blechwände mit Fenstern zum Parkplatz, weiße Fliesen wie im Diner-Wagen außen. Hinter dem langen Holztresen an der Nordwand die offene Küche: Kühlschränke, drei Herde unter Hauben, Grill, Fritteuse und Spültisch. Auf dem Tresen Kaffeemaschine, Gläser und Flaschen, davor vier Hocker; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen an der Wand, Pinnwand, Spielautomat und die Tür zum WC; davor der lange Varianten-Tisch mit drei kleinen Brettern in gleichen Abständen, je ein Hocker davor und dahinter. Rechts unten Novas Ecktisch. Unten die Glastür mit Fußmatte.",
+  "wand": "hellgrau",
+  "boden": "fliesenWeiss",
   "raster": [
     "#######################",
     "#######################",
@@ -278,6 +278,16 @@
       "feld": [13, 9],
       "versatz": [0, 8],
       "ebene": -2
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [11, 1],
+      "an_wand": true
     }
   ],
   "ausloeser": [
@@ -342,7 +352,8 @@
         "tun": "sitzt am Tresen über einem Kaffee",
         "wann": "tag",
         "sagt": "statist.crossroads.raststaette.fernfahrer",
-        "blick": "oben"
+        "blick": "oben",
+        "sitzt": "oben"
       }
     },
     {
@@ -365,7 +376,8 @@
         "tun": "sitzt am Tresen, isst Pfannkuchen und zählt Lose",
         "wann": "tag",
         "sagt": "statist.crossroads.raststaette.schausteller",
-        "blick": "oben"
+        "blick": "oben",
+        "sitzt": "oben"
       }
     }
   ],

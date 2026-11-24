@@ -18,12 +18,12 @@ from pipeline.abenteuer.moebelliste import lade_moebel
 # Prüfung → höchstens so viele Befunde (Stand 24.11.2026 nach AP7 Wegkarten; Ziel nach Welle 2: 0).
 OBERGRENZE = {
     "kronenhoehe": 0,
-    "zusammenhang_enden": 4,
-    "waldrand": 9,
-    "wiederholung": 51,
-    "untergrund": 64,
-    "proportionen_aussen": 2,
-    "proportionen_unscharf": 6,
+    "zusammenhang_enden": 1,
+    "waldrand": 3,
+    "wiederholung": 30,
+    "untergrund": 21,
+    "proportionen_aussen": 1,
+    "proportionen_unscharf": 5,
 }
 
 

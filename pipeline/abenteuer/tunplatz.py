@@ -35,7 +35,7 @@ SZENEN = INHALTE / "szenen"
 SITZWORT = re.compile(r"\bsitz(t|en)\b")
 # Stand 24.11.2026: 65 Statisten mit „sitzt“ ohne Eigenschaft, einer davon läuft, 17 mit wirkungslosem
 # Verhalten. Welle 2 senkt die Zahl; sie darf nicht wachsen.
-OFFEN_HOECHSTENS = 83
+OFFEN_HOECHSTENS = 42
 # (Szene, Statist) → Grund, warum die Stelle so stimmt.
 GEPRUEFT: dict[tuple[str, str], str] = {}
 

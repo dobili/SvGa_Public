@@ -295,8 +295,9 @@
     },
     {
       "moebel": "sb5SchildPerfectMove",
-      "auf": "ausgabe",
-      "versatz": [-4, -24]
+      "feld": [26, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
     },
     {
       "moebel": "cc4KartonOffen",

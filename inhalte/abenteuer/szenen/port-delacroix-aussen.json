@@ -10,7 +10,7 @@
     "p": "pflasterNass",
     "s": "asphalt",
     "e": "erde",
-    "t": "stein"
+    "t": "schotter"
   },
   "beschreibung": "Port Delacroix im nassen Winter (Regen und nasse Straßen, kein Schnee, RO21) nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, ein hoher Steinbau mit Flachdach, Bogenfenstern und niedrigem Anbau, der hinten bis an den Deich reicht (passend zum Innenraum, Regel 10.75), über der Glastür das Schild, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, östlich der Turnhalle ein Erdweg von der Deichrampe zur Straße, daneben die Baustelle mit Bagger hinter einem Bauzaun, Sturmschutt, Holz und einem umgestürzten Stamm, der Rohbau steht am Deichfuß hinter dem Haus, ein Baum, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen, am Ostkai ein kleines grünes Holzhaus zwischen den Bäumen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
   "raster": [
@@ -40,9 +40,9 @@
     "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
     "#ttppp.......................ee.....................pppp~~~~~~~~pp.............#",
     "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
-    "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssphhhhhhhhpp.............#",
-    "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssphhhhhhhhpp.............#",
-    "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssp~~~~~~~~pp.............#",
+    "sssssssssssssssssssssssssssssssssssssssssssssssssssssssphhhhhhhhpp.............#",
+    "sssssssssssssssssssssssssssssssssssssssssssssssssssssssphhhhhhhhpp.............#",
+    "sssssssssssssssssssssssssssssssssssssssssssssssssssssssp~~~~~~~~pp.............#",
     "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
     "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
     "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
@@ -69,9 +69,9 @@
     "#ttppp............pp............................................pp.............#",
     "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
     "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "################################################################################"
+    "#tt............................................................................#",
+    "#tt............................................................................#",
+    "#tt#############################################################################"
   ],
   "objekte": [
     {
@@ -499,6 +499,21 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "pd6Gleis",
+      "feld": [1, 55],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 57],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "pd6SandsaeckeReihe",
       "feld": [3, 7]
     },
@@ -629,7 +644,7 @@
     },
     {
       "moebel": "rvWegweiser",
-      "feld": [5, 22]
+      "feld": [6, 19]
     },
     {
       "moebel": "pdEimer",
@@ -720,10 +735,6 @@
     {
       "moebel": "pd6Leiter",
       "feld": [47, 22]
-    },
-    {
-      "moebel": "pd6Stamm",
-      "feld": [34, 21]
     },
     {
       "moebel": "pd6Holzscheite",
@@ -888,7 +899,7 @@
     },
     {
       "moebel": "pd10Wegweiser",
-      "feld": [4, 11]
+      "feld": [6, 11]
     },
     {
       "moebel": "pd6BauzaunEndeLinks",
@@ -960,6 +971,20 @@
     {
       "moebel": "pdPfuetze2",
       "feld": [53, 41]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [31, 42],
+      "versatz": [4, 0],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [3, 24]
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [0, 29]
     }
   ],
   "ausloeser": [
@@ -1103,14 +1128,15 @@
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [30, 42],
+      "feld": [32, 42],
       "eigenschaften": {
-        "von": "30,42",
-        "bis": "30,42",
+        "von": "32,42",
+        "bis": "32,42",
         "tun": "sitzt im Mantel am Uferweg und schaut aufs Wasser",
         "wann": "tag",
         "zeigt": "operPartie",
-        "sagt": "statist.portDelacroix.aussen.rentner"
+        "sagt": "statist.portDelacroix.aussen.rentner",
+        "sitzt": "unten"
       }
     },
     {
@@ -1250,5 +1276,12 @@
   "stil": ["klassisch", "rustikal", "industrie", "modern", "natur"],
   "kante": "klippe",
   "fels": "gras",
-  "bruecken": ["h"]
+  "bruecken": ["h"],
+  "sperren": [
+    [0, 26],
+    [0, 27],
+    [0, 28],
+    [1, 57],
+    [2, 57]
+  ]
 }

@@ -52,8 +52,6 @@ OFFEN: dict[tuple[str, str], str] = {
     ("maple-falls-park-steg-neu", "ende"): "AP5 Westen: Band an Rand, Band oder Seitenkante anschließen",
     ("steinbruch-grube", "treppe"): "AP8 Sonderorte: Wand beiderseits der Treppe in dieselben Reihen legen",
     ("sternwarte-felsnase", "gerade"): "AP8 Sonderorte: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("summit-city-aussen", "ende"): "AP6 Städte: Band an Rand, Band oder Seitenkante anschließen",
-    ("summit-city-aussen", "gerade"): "AP6 Städte: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-delacroix-desert-canyonpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-delacroix-desert-felsbogen", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-desert-summit-bergstrasse", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",

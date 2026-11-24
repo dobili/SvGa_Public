@@ -31,7 +31,10 @@ HOECHSTENS = 10  # so viele offene Randfelder hintereinander sind noch in Ordnun
 TIEFE = 2  # so tief vom Rand aus muss ein Abschluss stehen
 ABSCHLUSS = {"baum", "busch", "hecke", "feldfrucht", "wasser", "pflanze"}
 # (Szenenanfang, Kante) → Grund.
-AUSNAHMEN: dict[tuple[str, str], str] = {}
+AUSNAHMEN: dict[tuple[str, str], str] = {
+    ("summit-city-aussen", "Rand Nord"): "Gipfelwand: grauer Fels (kante klippe) bis zum Bildrand, kein Rasen",
+    ("summit-city-aussen", "Rand West ab (0, 0)"): "Nordwestecke: Seitenkante der Gipfelfelsen, Fels statt Rasen",
+}
 
 Feld = tuple[int, int]
 

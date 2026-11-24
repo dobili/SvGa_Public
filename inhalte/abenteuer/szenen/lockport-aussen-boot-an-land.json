@@ -75,7 +75,7 @@
       "versatz": [46, 14]
     },
     {
-      "moebel": "mf4Bauernhaus",
+      "moebel": "pd10HausGruen",
       "feld": [56, 0]
     },
     {
@@ -154,9 +154,17 @@
       "id": "ausruester"
     },
     {
+      "moebel": "ld8Stemmtor",
+      "feld": [28, 12]
+    },
+    {
       "moebel": "by6StegLaengs9",
       "feld": [30, 12],
       "versatz": [0, -2]
+    },
+    {
+      "moebel": "ld8Stemmtor",
+      "feld": [58, 12]
     },
     {
       "moebel": "by6StegLaengs9",
@@ -407,7 +415,7 @@
       "feld": [37, 0]
     },
     {
-      "moebel": "ld14BlockhuetteGruen",
+      "moebel": "sc7Ferienhuette",
       "feld": [68, 5],
       "versatz": [0, -13]
     },
@@ -422,7 +430,7 @@
       "versatz": [0, -13]
     },
     {
-      "moebel": "ld14BlockhuetteKamin",
+      "moebel": "cr8Holzfaellerhuette",
       "feld": [51, 26],
       "versatz": [0, -8]
     },
@@ -731,20 +739,14 @@
         "rolle": "hafen",
         "tun": "sitzt auf dem Poller und sieht auf den Kahn",
         "wann": "tag",
-        "blick": "rechts"
+        "blick": "rechts",
+        "zustand": "sitzboden",
+        "sitzt": "oben"
       }
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "rustikal",
-    "klassisch",
-    "natur",
-    "einfach",
-    "laendlich",
-    "landhaus",
-    "modern"
-  ],
+  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
   "ufer": "stein",
   "datei": "karten/lockport-aussen-boot-an-land.json",
   "zustand_der_karte": "taueErledigt"

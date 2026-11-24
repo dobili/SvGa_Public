@@ -9,6 +9,7 @@
  * Abhängigkeiten: eingabe.ts, lage.ts, messung.ts.
  * Beispiel: bedieneFenster(lauf, lage) → true, wenn etwas getippt oder abgewartet wurde.
  */
+import type { Locator } from "@playwright/test";
 import { hastigTippen, schliesseLaden } from "./eilig";
 import { tippe, tippeKnopf, type Lauf } from "./eingabe";
 import { schiebtAuf, wiederholtePartie } from "./antworten";
@@ -339,6 +340,8 @@ export async function bedieneFenster(
       await lauf.seite.waitForTimeout(KURZ_WARTEN_MS);
       return true;
     }
+    // Inzwischen frei und im Bild (die Sperre lief zwischen Lesen und Prüfen ab): neu lesen.
+    if (await imBild(lauf, los)) return true;
     await lauf.seite
       .screenshot({ path: `${lauf.messung.ordner}/bilder/deckwahl-ohne-los.png` })
       .catch(() => undefined);
@@ -367,4 +370,14 @@ export async function bedieneFenster(
   await tippeKnopf(lauf, knopf);
   await lauf.seite.waitForTimeout(200);
   return true;
+}
+
+/** Liegt die Mitte des Elements im sichtbaren Bild? */
+async function imBild(lauf: Lauf, ziel: Locator): Promise<boolean> {
+  const box = await ziel.boundingBox({ timeout: 500 }).catch(() => null);
+  const bild = lauf.seite.viewportSize();
+  if (!box || !bild) return false;
+  const x = box.x + box.width / 2;
+  const y = box.y + box.height / 2;
+  return x >= 0 && y >= 0 && x <= bild.width && y <= bild.height;
 }

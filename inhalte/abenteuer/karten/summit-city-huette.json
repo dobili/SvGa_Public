@@ -773,6 +773,11 @@
        "name": "blick",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -801,6 +806,11 @@
        "name": "blick",
        "type": "string",
        "value": "rechts"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

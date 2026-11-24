@@ -206,9 +206,9 @@
       "eigenschaften": {
         "von": "5,8",
         "bis": "5,8",
-        "verhalten": "sitzen",
         "tun": "sitzt auf dem Sofa und wartet auf seinen Termin",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "unten"
       }
     }
   ],

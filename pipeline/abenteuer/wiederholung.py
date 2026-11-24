@@ -60,6 +60,7 @@ AUSNAHMEN: dict[tuple[str, str], str] = {
     ("pinewood-camp-aussen", "ld14BlockhuetteGruen"): "Ferienlager: gleiche Blockhütten sind die Bauform (andere Hüttenbilder sind flache Frontansichten, Regel 10.71)",
     ("riverton-aussen", "rv5Reihenhaus"): "Reihenhaus: zwei gleiche Häuser Wand an Wand sind die Bauform",
     ("riverton-aussen-nachspiel", "rv5Brett"): "Nachspiel im Park: fünf Holztische mit je einem Brett erzählt die Geschichte",
+    ("summit-city-aussen", "sc7Seil"): "Seil der Seilbahn aus gleichen Stücken bis zum Bildrand (Reihenteil)",
 }
 
 

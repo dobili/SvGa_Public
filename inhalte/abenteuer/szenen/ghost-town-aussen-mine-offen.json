@@ -3,6 +3,9 @@
   "datei": "karten/ghost-town-aussen-mine-offen.json",
   "art": "aussen",
   "wand": "felsRot",
+  "kante": "klippe",
+  "fels": "rot",
+  "klippenhoehe": 4,
   "beschreibung": "Zustand: Nach Pruitts Geschichte und der Laterne (Sperre S11) ist die Goldmine offen; die Bretter mit dem roten Kreuz sind vom Stolleneingang genommen, das Gleis führt ins Dunkel. Ghost Town am Mittag, 56 × 40: Die Front Street aus hellem Staub läuft von West nach Ost, an ihrer Nordseite der Bretterweg vor Laden, Schmiede, Saloon, Sheriffbüro und Prüfamt mit falschen Fassaden; dahinter Stage & Mail, Barbier, zwei verfallene Hütten, Wasserturm und Windrad, darüber die rote Bruchkante mit dem offenen Stollen der Goldmine und einer Lore auf einem Gleisrest. Der Weg zur Mine zweigt zwischen Saloon und Sheriff ab. Südlich der Straße Hotel, Mietstall mit Anbindebalken und Tränke und der Bestatter, mit ihren Türen zur Gasse dahinter; ein Planwagen, Heu und eine alte Tränke im Westen. Im Südosten der Friedhof im Holzzaun mit offenem Tor, Kreuze, Grabsteine, ein offenes Grab; ganz am Ostrand, wo der Zaun steht, der niedrige Stein ohne Namen mit dem eingeritzten Brett (Szene 98). Hinter dem Prüfamt hört der Bretterweg auf: Auf seiner Kante sitzt man nachts und sieht über den Friedhof in die Sterne (Szene 101). Am Ortsausgang im Osten die Haltestelle. Am Ortseingang stehen zwei Pfosten, das Schild dazwischen fehlt: Die Stadt kommt ohne Schild.",
   "boden": "sandRot",
   "wandart": "sandRot",
@@ -16,45 +19,45 @@
   "stil": ["rustikal", "laendlich", "einfach", "industrie", "natur", "klassisch", "modern"],
   "raster": [
     "########################################################",
+    "########################################################",
     "############################kkkk########################",
     "############################kkkk########################",
-    "############################kkkk########################",
-    "############################kkkk########################",
+    "#......######.....####....##kkkk##.....#####......######",
     ".............................ee.........................",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#...kk.......................ee....kk..................#",
-    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
-    "#.dddddddddddddddddddddddddddddddddddddddddddddd.......#",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    "....kk.......................ee....kk...................",
+    "..kkkkkkkkkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkkkkk.",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    ".............................ee.........................",
+    "..dddddddddddddddddddddddddddddddddddddddddddddd........",
     "ppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "pppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
-    "#.......ee........eeeeeeeeeeeeeeeee........kk..........#",
-    "#.......ee........eeeeeeeeeeeeeeee.........kk..........#",
-    "#.......ee.................................kk..........#",
-    "#.......ee.................................kk..........#",
-    "#.......ee.................................kk..........#",
-    "#.......ee.............................................#",
-    "#.......ee.............................................#",
-    "#.......ee.............................................#",
-    "#.......ee.............................................#",
-    "#.......ee.............................................#",
-    "#.......kk..............kk........k....................#",
-    "#.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "########################################################"
+    "..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..",
+    "........ee........eeeeeeeeeeeeeeeee........kk...........",
+    "........ee........eeeeeeeeeeeeeeee.........kk...........",
+    "........ee.................................kk...........",
+    "........ee.................................kk...........",
+    "........ee.................................kk...........",
+    "........ee..............................................",
+    "........ee..............................................",
+    "........ee..............................................",
+    "........ee..............................................",
+    "........ee..............................................",
+    "........kk..............kk........k.....................",
+    "........kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..................",
+    "........................................................",
+    "........................................................",
+    "........................................................",
+    ".######################################################."
   ],
   "objekte": [
     {
@@ -264,11 +267,11 @@
       "feld": [41, 34]
     },
     {
-      "moebel": "gt7Grabstein",
+      "moebel": "gt7GrabsteinB",
       "feld": [46, 31]
     },
     {
-      "moebel": "gt7Grabstein",
+      "moebel": "gt7GrabsteinGrau",
       "feld": [44, 34]
     },
     {
@@ -280,8 +283,8 @@
       "feld": [43, 31]
     },
     {
-      "moebel": "gt7Grabhuegel",
-      "feld": [45, 31]
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [45, 32]
     },
     {
       "moebel": "gt7GrabsteinGrau",
@@ -304,7 +307,7 @@
       "feld": [24, 36]
     },
     {
-      "moebel": "gt7Stein",
+      "moebel": "gt7Tumbleweed",
       "feld": [4, 31]
     },
     {
@@ -314,10 +317,6 @@
     {
       "moebel": "gt7KaktusBluete",
       "feld": [7, 6]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [2, 11]
     },
     {
       "moebel": "gt7Saguaro",
@@ -340,11 +339,7 @@
       "feld": [52, 11]
     },
     {
-      "moebel": "gt7Stein",
-      "feld": [45, 27]
-    },
-    {
-      "moebel": "gt7Stein",
+      "moebel": "gt7Tumbleweed",
       "feld": [50, 11]
     },
     {
@@ -356,7 +351,7 @@
       "feld": [24, 8]
     },
     {
-      "moebel": "gt7Stein",
+      "moebel": "gt7Wagenrad",
       "feld": [6, 27]
     },
     {
@@ -372,10 +367,6 @@
       "feld": [29, 36]
     },
     {
-      "moebel": "gt7Stein",
-      "feld": [8, 5]
-    },
-    {
       "moebel": "gt7Felsgruppe",
       "feld": [19, 35]
     },
@@ -388,35 +379,23 @@
       "feld": [49, 26]
     },
     {
-      "moebel": "gt7Stein",
-      "feld": [32, 12]
-    },
-    {
-      "moebel": "gt7Stein",
+      "moebel": "gt7FassKlein",
       "feld": [33, 5]
     },
     {
-      "moebel": "gt7Stein",
+      "moebel": "gt7Tumbleweed",
       "feld": [50, 28]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [26, 35]
     },
     {
       "moebel": "gt7Tumbleweed",
       "feld": [2, 29]
     },
     {
-      "moebel": "gt7Stein",
-      "feld": [43, 27]
-    },
-    {
       "moebel": "gt7TumbleweedGross",
       "feld": [1, 35]
     },
     {
-      "moebel": "gt7Stein",
+      "moebel": "gt7FassKlein",
       "feld": [5, 32]
     },
     {
@@ -566,6 +545,18 @@
     {
       "moebel": "gt13SteinOhneNamen",
       "feld": [49, 32]
+    },
+    {
+      "moebel": "gt7SteinRot",
+      "feld": [47, 21]
+    },
+    {
+      "moebel": "gt7SteinRot",
+      "feld": [8, 36]
+    },
+    {
+      "moebel": "gt7SteinRot",
+      "feld": [34, 36]
     }
   ],
   "ausloeser": [
@@ -692,6 +683,70 @@
   "zustand_der_karte": "goldmineOffen",
   "sperren": [
     [0, 5],
-    [55, 5]
+    [55, 5],
+    [0, 6],
+    [0, 7],
+    [0, 8],
+    [0, 9],
+    [0, 10],
+    [0, 11],
+    [0, 12],
+    [0, 13],
+    [0, 14],
+    [0, 15],
+    [0, 16],
+    [0, 17],
+    [0, 18],
+    [0, 19],
+    [0, 20],
+    [0, 23],
+    [0, 24],
+    [0, 25],
+    [0, 26],
+    [0, 27],
+    [0, 28],
+    [0, 29],
+    [0, 30],
+    [0, 31],
+    [0, 32],
+    [0, 33],
+    [0, 34],
+    [0, 35],
+    [0, 36],
+    [0, 37],
+    [0, 38],
+    [0, 39],
+    [55, 6],
+    [55, 7],
+    [55, 8],
+    [55, 9],
+    [55, 10],
+    [55, 11],
+    [55, 12],
+    [55, 13],
+    [55, 14],
+    [55, 15],
+    [55, 16],
+    [55, 17],
+    [55, 18],
+    [55, 19],
+    [55, 20],
+    [55, 23],
+    [55, 24],
+    [55, 25],
+    [55, 26],
+    [55, 27],
+    [55, 28],
+    [55, 29],
+    [55, 30],
+    [55, 31],
+    [55, 32],
+    [55, 33],
+    [55, 34],
+    [55, 35],
+    [55, 36],
+    [55, 37],
+    [55, 38],
+    [55, 39]
   ]
 }

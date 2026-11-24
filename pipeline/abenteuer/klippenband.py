@@ -47,8 +47,6 @@ GERADE_HOECHSTENS = 20
 # (Szene, Art) → Regionspaket der Welle 2 und was dort zu tun ist. Alle Einträge liegen am Raster der
 # Szene, das Welle 1 nicht anfasst (Stand 24.11.2026, erzeugt aus den Funden dieses Werkzeugs).
 OFFEN: dict[tuple[str, str], str] = {
-    ("summit-city-aussen", "ende"): "AP6 Städte: Band an Rand, Band oder Seitenkante anschließen",
-    ("summit-city-aussen", "gerade"): "AP6 Städte: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-delacroix-desert-canyonpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-delacroix-desert-felsbogen", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("weg-desert-summit-bergstrasse", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",

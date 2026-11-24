@@ -626,6 +626,11 @@
        "name": "wann",
        "type": "string",
        "value": "morgen"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

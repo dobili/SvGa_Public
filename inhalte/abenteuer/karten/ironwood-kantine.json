@@ -2469,6 +2469,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -2497,6 +2502,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -2525,6 +2535,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -2553,6 +2568,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -2581,6 +2601,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -2609,6 +2634,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },
@@ -2637,6 +2667,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

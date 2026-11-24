@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 70,
+ "nextobjectid": 66,
  "layers": [
   {
    "id": 1,
@@ -1167,12 +1167,12 @@
        "value": "statist.lockport.gasthaus.fischerAmTresen"
       },
       {
-       "name": "verhalten",
+       "name": "blick",
        "type": "string",
-       "value": "sitzen"
+       "value": "oben"
       },
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "oben"
       }
@@ -1205,9 +1205,9 @@
        "value": "statist.lockport.gasthaus.wanderinBeimEssen"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "rechts"
       }
      ]
     },
@@ -1261,11 +1261,6 @@
        "value": "13,7"
       },
       {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
-      },
-      {
        "name": "tun",
        "type": "string",
        "value": "sitzt beim Kartenspiel"
@@ -1274,6 +1269,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
       }
      ]
     },
@@ -2130,29 +2130,6 @@
     },
     {
      "id": 50,
-     "name": "ld5Glaeser",
-     "type": "moebel",
-     "x": 72,
-     "y": 159,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 185
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 51,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 144,
@@ -2175,7 +2152,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 51,
      "name": "ld5StuhlDunkelR",
      "type": "moebel",
      "x": 128,
@@ -2198,7 +2175,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 52,
      "name": "ld5StuhlDunkelL",
      "type": "moebel",
      "x": 176,
@@ -2221,7 +2198,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 53,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 224,
@@ -2244,7 +2221,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 54,
      "name": "ld5StuhlDunkelR",
      "type": "moebel",
      "x": 208,
@@ -2267,7 +2244,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 55,
      "name": "ld5Glaeser",
      "type": "moebel",
      "x": 232,
@@ -2290,7 +2267,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 56,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 16,
@@ -2313,7 +2290,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 57,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 336,
@@ -2336,7 +2313,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 58,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 272,
@@ -2359,7 +2336,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 59,
      "name": "ld5TuerSued",
      "type": "moebel",
      "x": 272,
@@ -2387,7 +2364,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 60,
      "name": "mf9Rundtisch",
      "type": "moebel",
      "x": 224,
@@ -2410,7 +2387,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 61,
      "name": "ld5StuhlDunkelR",
      "type": "moebel",
      "x": 208,
@@ -2433,7 +2410,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 62,
      "name": "ld5StuhlDunkelL",
      "type": "moebel",
      "x": 256,
@@ -2456,76 +2433,7 @@
      ]
     },
     {
-     "id": 64,
-     "name": "ld5Glaeser",
-     "type": "moebel",
-     "x": 232,
-     "y": 159,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 185
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "ld5Glaeser",
-     "type": "moebel",
-     "x": 152,
-     "y": 111,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 137
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "ld5Glaeser",
-     "type": "moebel",
-     "x": 152,
-     "y": 159,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 185
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 67,
+     "id": 63,
      "name": "ld14KegelbahnEndeOst",
      "type": "moebel",
      "x": 208,
@@ -2548,7 +2456,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 64,
      "name": "ld14Kegelregal",
      "type": "moebel",
      "x": 16,
@@ -2571,7 +2479,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 65,
      "name": "ld5Barhocker",
      "type": "moebel",
      "x": 336,

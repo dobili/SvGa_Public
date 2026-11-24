@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 29,
+ "nextobjectid": 31,
  "layers": [
   {
    "id": 1,
@@ -152,8 +152,8 @@
     0,
     0,
     0,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -712,8 +712,8 @@
      "id": 11,
      "name": "iw5AutoA",
      "type": "moebel",
-     "x": 16,
-     "y": 64,
+     "x": 32,
+     "y": 80,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -722,7 +722,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 136
       },
       {
        "name": "kollision",
@@ -988,7 +988,7 @@
      "id": 23,
      "name": "pd6Kanister",
      "type": "moebel",
-     "x": 48,
+     "x": 64,
      "y": 112,
      "width": 16,
      "height": 32,
@@ -1009,19 +1009,19 @@
     },
     {
      "id": 24,
-     "name": "iwFass",
+     "name": "pd6Kanister",
      "type": "moebel",
      "x": 16,
-     "y": 128,
+     "y": 80,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 104
       },
       {
        "name": "kollision",
@@ -1032,12 +1032,12 @@
     },
     {
      "id": 25,
-     "name": "iwFass",
+     "name": "pd6Kanister",
      "type": "moebel",
-     "x": 32,
-     "y": 128,
+     "x": 16,
+     "y": 112,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1104,6 +1104,62 @@
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 112,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "rv5TuerSuedHell",
+     "type": "moebel",
+     "x": 32,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "rv5TuerSuedHell",
+     "type": "moebel",
+     "x": 48,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -1202,6 +1258,11 @@
    "name": "kennung",
    "type": "string",
    "value": "desertSprings.garage"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "2,9;3,9"
   }
  ]
 }

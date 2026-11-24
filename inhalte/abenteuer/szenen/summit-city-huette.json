@@ -201,7 +201,8 @@
         "tun": "sitzt am Clubtisch und spielt gegen Kit",
         "wann": "tag",
         "bild": "statist-22",
-        "blick": "oben"
+        "blick": "oben",
+        "sitzt": "rechts"
       }
     },
     {
@@ -211,7 +212,8 @@
       "eigenschaften": {
         "tun": "sitzt am Clubtisch und spielt gegen Haraldsen",
         "wann": "tag",
-        "blick": "rechts"
+        "blick": "rechts",
+        "sitzt": "links"
       }
     }
   ]

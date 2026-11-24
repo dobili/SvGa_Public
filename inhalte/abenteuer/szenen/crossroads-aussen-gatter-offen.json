@@ -201,19 +201,19 @@
       "moebel": "cr9PicknicktischLang",
       "feld": [28, 28],
       "versatz": [8, 17],
-      "massstab": 0.65
+      "massstab": 0.75
     },
     {
       "moebel": "cr9PicknicktischLang",
       "feld": [28, 32],
       "versatz": [8, 17],
-      "massstab": 0.65
+      "massstab": 0.75
     },
     {
       "moebel": "cr9PicknicktischLang",
       "feld": [28, 40],
       "versatz": [8, 17],
-      "massstab": 0.65
+      "massstab": 0.75
     },
     {
       "moebel": "lp8Schuppen",
@@ -1263,15 +1263,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "einfach",
-    "klassisch",
-    "modern",
-    "rustikal",
-    "laendlich",
-    "natur",
-    "landhaus",
-    "industrie"
-  ],
+  "stil": ["einfach", "klassisch", "modern", "rustikal", "laendlich", "natur", "landhaus", "industrie"],
   "datei": "karten/crossroads-aussen-gatter-offen.json"
 }

@@ -1274,11 +1274,6 @@
        "value": "5,8"
       },
       {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
-      },
-      {
        "name": "tun",
        "type": "string",
        "value": "sitzt auf dem Sofa und wartet auf seinen Termin"
@@ -1287,6 +1282,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

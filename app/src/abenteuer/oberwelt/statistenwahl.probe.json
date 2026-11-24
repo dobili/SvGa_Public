@@ -76,12 +76,12 @@
         },
         {
           "name": "rentnerin",
-          "x": 28,
-          "y": 46,
+          "x": 21,
+          "y": 44,
           "tun": "sitzt mit Sonnenhut im Schatten",
           "bild": null,
           "rolle": null,
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.rentnerin"
         },
         {
@@ -121,7 +121,7 @@
           "tun": "sitzt mit einem Taschenschach auf dem Brunnenrand",
           "bild": null,
           "rolle": null,
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.anzug"
         },
         {
@@ -297,7 +297,7 @@
         {
           "name": "rangierer",
           "x": 50,
-          "y": 53,
+          "y": 52,
           "tun": "prüft die Weichen am Gleis",
           "bild": null,
           "rolle": null,
@@ -456,7 +456,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.fahrer"
         },
         {
@@ -466,7 +466,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.jugend"
         },
         {
@@ -476,7 +476,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.rentner"
         },
         {
@@ -486,7 +486,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.fahrer"
         },
         {
@@ -496,7 +496,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.fahrer"
         },
         {
@@ -506,7 +506,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.jugend"
         },
         {
@@ -516,7 +516,7 @@
           "tun": "sitzt beim Essen",
           "bild": null,
           "rolle": "werk",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "statist.fahrer"
         }
       ]
@@ -671,7 +671,7 @@
           "tun": "sitzt auf dem Poller und sieht auf den Kahn",
           "bild": null,
           "rolle": "hafen",
-          "sitzt": false,
+          "sitzt": true,
           "erwartet": "kapitaen"
         }
       ]

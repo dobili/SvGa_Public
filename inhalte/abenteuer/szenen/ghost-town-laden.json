@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Der Laden von Ghost Town (Gemischtwarenladen gegenüber dem Saloon, Ortsdokument 1.0 und 1.3), 14 × 12, gebaut in der Nacht 15.11.2026: Hinter der Westernfassade mit dem Schild „Store“ liegt ein einziger Verkaufsraum aus grobem Holz, staubig und seit hundertfünfzig Jahren verlassen. Die Tür liegt wie außen in der Mitte der Südwand, davor eine abgetretene Matte. Links steht quer die Ladentheke mit der alten Kasse, einer Waage und einer Petroleumlampe; dahinter an der Nordwand ein Regal mit Kram und ein Flaschenregal, in der Ecke darüber ein Spinnennetz. In der Mitte der Nordwand ein Fenster zum Hof und daneben der Kanonenofen, an dem früher die Goldgräber saßen. Hinten an der Ostwand führt die Holztreppe hinauf in das Zimmer über dem Laden (nach dem Fund des Postreiterabzeichens nachts der Weg in die Erinnerung „Die letzte Kerze, 1866“; Regel 10.76: Laden mit Wohnung, Treppe hinten, nicht im Weg zwischen Tür und Theke). Vor der Theke liegen Jutesäcke mit Mehl und Bohnen, mitten im Raum ein leeres Warengestell, unter der Treppe Fässer und Kisten, die niemand mehr abgeholt hat.",
+  "beschreibung": "Der Laden von Ghost Town (Gemischtwarenladen gegenüber dem Saloon, Ortsdokument 1.0 und 1.3), 14 × 12, gebaut in der Nacht 15.11.2026: Hinter der Westernfassade mit dem Schild „Store“ liegt ein einziger Verkaufsraum aus grobem Holz, staubig und seit hundertfünfzig Jahren verlassen. Die Tür liegt wie außen in der Mitte der Südwand, davor eine abgetretene Matte. Links steht quer die Ladentheke mit der alten Kasse, einer Waage und einer Petroleumlampe; dahinter an der Nordwand zwei leere Regale, in den Ecken und am Fenster Spinnennetze. In der Mitte der Nordwand ein Fenster zum Hof und daneben der kalte Herd, an dem früher die Goldgräber saßen. Hinten an der Ostwand führt die Holztreppe hinauf in das Zimmer über dem Laden (nach dem Fund des Postreiterabzeichens nachts der Weg in die Erinnerung „Die letzte Kerze, 1866“; Regel 10.76: Laden mit Wohnung, Treppe hinten, nicht im Weg zwischen Tür und Theke). Vor der Theke liegen Jutesäcke mit Mehl und Bohnen, mitten im Raum ein Stapel leerer Kisten, unter der Treppe Fässer und Kisten, die niemand mehr abgeholt hat.",
   "zustand": ["alt", "verwittert", "gebraucht"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -29,12 +29,12 @@
       "versatz": [0, 4]
     },
     {
-      "moebel": "gt7Regal",
-      "feld": [2, 1]
+      "moebel": "gt14RegalLeer",
+      "feld": [2, 2]
     },
     {
-      "moebel": "gt7Flaschenregal",
-      "feld": [4, 1]
+      "moebel": "gt14RegalLeer",
+      "feld": [4, 2]
     },
     {
       "moebel": "es7Fenster",
@@ -42,7 +42,7 @@
       "an_wand": true
     },
     {
-      "moebel": "es7Ofen",
+      "moebel": "ld5Ofen",
       "feld": [8, 1],
       "versatz": [0, 0]
     },
@@ -82,7 +82,7 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "gt14RegalLeer",
+      "moebel": "gt14Kisten",
       "feld": [4, 8]
     },
     {
@@ -107,6 +107,19 @@
       "moebel": "gt7TuerHolz",
       "feld": [7, 11],
       "deckkraft": 75
+    },
+    {
+      "moebel": "gt14Spinnennetz",
+      "feld": [12, 1],
+      "an_wand": true,
+      "versatz": [0, 4],
+      "spiegeln": true
+    },
+    {
+      "moebel": "gt14Spinnennetz",
+      "feld": [5, 1],
+      "an_wand": true,
+      "versatz": [8, 2]
     }
   ],
   "ausloeser": [

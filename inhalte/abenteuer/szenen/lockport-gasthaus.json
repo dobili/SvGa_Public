@@ -202,12 +202,6 @@
       "zu": "t3"
     },
     {
-      "moebel": "ld5Glaeser",
-      "feld": [0, 0],
-      "auf": "t3",
-      "versatz": [0, -4]
-    },
-    {
       "moebel": "mf9Rundtisch",
       "feld": [9, 10],
       "id": "t4"
@@ -272,24 +266,6 @@
       "moebel": "ld5StuhlDunkelL",
       "feld": [16, 10],
       "zu": "t6"
-    },
-    {
-      "moebel": "ld5Glaeser",
-      "feld": [0, 0],
-      "auf": "t6",
-      "versatz": [0, -4]
-    },
-    {
-      "moebel": "ld5Glaeser",
-      "feld": [0, 0],
-      "auf": "t2",
-      "versatz": [0, -4]
-    },
-    {
-      "moebel": "ld5Glaeser",
-      "feld": [0, 0],
-      "auf": "t4",
-      "versatz": [0, -4]
     },
     {
       "moebel": "ld14KegelbahnEndeOst",
@@ -360,8 +336,8 @@
         "tun": "sitzt am Tresen und trinkt ein Bier",
         "wann": "tag",
         "sagt": "statist.lockport.gasthaus.fischerAmTresen",
-        "verhalten": "sitzen",
-        "blick": "oben"
+        "blick": "oben",
+        "sitzt": "oben"
       }
     },
     {
@@ -372,7 +348,7 @@
         "tun": "sitzt am Tisch und isst eine Suppe",
         "wann": "tag",
         "sagt": "statist.lockport.gasthaus.wanderinBeimEssen",
-        "verhalten": "sitzen"
+        "sitzt": "rechts"
       }
     },
     {
@@ -392,9 +368,9 @@
       "eigenschaften": {
         "von": "13,7",
         "bis": "13,7",
-        "verhalten": "sitzen",
         "tun": "sitzt beim Kartenspiel",
-        "wann": "tag"
+        "wann": "tag",
+        "sitzt": "rechts"
       }
     }
   ],

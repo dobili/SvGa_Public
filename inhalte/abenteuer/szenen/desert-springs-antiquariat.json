@@ -196,13 +196,14 @@
     {
       "name": "leserin",
       "typ": "statist",
-      "feld": [8, 10],
+      "feld": [10, 6],
       "eigenschaften": {
-        "von": "8,10",
-        "bis": "8,10",
+        "von": "10,6",
+        "bis": "10,6",
         "tun": "sitzt mit einem Buch in der Leseecke",
         "wann": "tag",
-        "sagt": "statist.desertSprings.antiquariat.leserin"
+        "sagt": "statist.desertSprings.antiquariat.leserin",
+        "sitzt": "unten"
       }
     }
   ]

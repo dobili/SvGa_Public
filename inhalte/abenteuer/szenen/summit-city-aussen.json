@@ -20,14 +20,14 @@
     "################################################################################",
     "################################################################################",
     "################################################################################",
-    "################################################################################",
-    "#.fffffffffffffffffffffff......................................................#",
-    "#.fffffffffffffffffffffff......................................................#",
-    "#.fffffffffffffffffffffff......................................................#",
-    "#.fffffffffffffffffffffff......................................................#",
-    "#.fffffffffffffffffffffff......................................................#",
-    "#.fffffffffffffffffffffff......................................................#",
-    "#.fffffffffffffffffffffff......................................................#",
+    "####fffff#####fffff########....######......####....#######.....#####.....###...#",
+    "##fffffffffffffffffffffff#.....................................................#",
+    "##fffffffffffffffffffffff#.....................................................#",
+    "##fffffffffffffffffffffff#.....................................................#",
+    "##fffffffffffffffffffffff#.....................................................#",
+    "##fffffffffffffffffffffff#.....................................................#",
+    "##fffffffffffffffffffffff#.....................................................#",
+    "##fffffffffffffffffffffff#.....................................................#",
     "##########ff##############.....................................................#",
     "##########ff##############.....................................................#",
     "##########ff##############.....................................................#",
@@ -41,8 +41,8 @@
     "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppp....#",
     "#....................pp...............................pp.......................#",
     "#....................pp...............................pp.......................#",
-    "#.......pp...........pp...............................pp.......................#",
-    "#.......pp...........pp...............................pp.......................#",
+    "#.......ppp..........pp...............................pp.......................#",
+    "#.......ppp..........pp...............................pp.......................#",
     "#.......pp...........pp...pppppppppppppppppppppppppppppp.......................#",
     "#.......pppppppppppppppppppppppppppppppppppppppppppppppp.......................#",
     "#.......ppppppppppppppppppppppppppppppppppppppp................................#",
@@ -69,11 +69,11 @@
     "#....ee...........................ppp...................ee.....................#",
     "#....ee...........................ppp...................ee.....................#",
     "#....ee...........................ppp...................ee.....................#",
-    "#....ee...........................ssssssss..............ee.....................#",
-    "#....ee...........................ssssssss..............ee.....................#",
-    "#....ee...........................ssssssss.......ee.....ee...pp........ee......#",
-    "#....ee.............eeeeeeeeeeeeeepppppsss.......eeeeeeeeeeeeeeeeeeeeeeeeee....#",
-    "#....ee.............eeeeeeeeeeeeeepppppsss.......eeeeeeeeeeeeeeeeeeeeeeeeee....#",
+    "#....ee...........................pppsssss..............ee.....................#",
+    "#....ee...........................pppsssss..............ee.....................#",
+    "#....ee...........................pppsssss.......ee.....ee...pp........ee......#",
+    "#....ee.............eeeeeeeeeeeeeeeeeeesss.......eeeeeeeeeeeeeeeeeeeeeeeeee....#",
+    "#....ee.............eeeeeeeeeeeeeeeeeeesss.......eeeeeeeeeeeeeeeeeeeeeeeeee....#",
     "#####ee################################sss######################################"
   ],
   "objekte": [
@@ -176,15 +176,15 @@
       "feld": [58, 31]
     },
     {
-      "moebel": "ld14BlockhuetteGruen",
+      "moebel": "sc7FerienhuetteB",
       "feld": [6, 41]
     },
     {
-      "moebel": "ld14BlockhuetteKamin",
+      "moebel": "sc7Ferienhuette",
       "feld": [14, 41]
     },
     {
-      "moebel": "ld14BlockhuetteGruen",
+      "moebel": "pw7Campbude",
       "feld": [22, 41]
     },
     {
@@ -204,11 +204,11 @@
       "feld": [15, 49]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4BlumeGelb",
       "feld": [61, 37]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [63, 37]
     },
     {
@@ -284,7 +284,7 @@
       "feld": [38, 6]
     },
     {
-      "moebel": "ld14BlockhuetteKamin",
+      "moebel": "cr8Holzfaellerhuette",
       "feld": [19, 33]
     },
     {
@@ -317,16 +317,24 @@
       "vorn": true
     },
     {
+      "moebel": "sc7Seil",
+      "feld": [54, 2]
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 1]
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 0]
+    },
+    {
       "moebel": "scFelsKlein",
       "feld": [31, 41]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4BlumeGelb",
       "feld": [15, 20]
-    },
-    {
-      "moebel": "wds6Wacholder",
-      "feld": [25, 7]
     },
     {
       "moebel": "scFelsKlein",
@@ -357,7 +365,7 @@
       "feld": [18, 25]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [8, 56]
     },
     {
@@ -369,7 +377,7 @@
       "feld": [48, 24]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [50, 38]
     },
     {
@@ -401,7 +409,7 @@
       "feld": [38, 18]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4BlumeGelb",
       "feld": [3, 55]
     },
     {
@@ -417,7 +425,7 @@
       "feld": [4, 16]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [31, 44]
     },
     {
@@ -437,7 +445,7 @@
       "feld": [44, 20]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [2, 19]
     },
     {
@@ -445,11 +453,11 @@
       "feld": [38, 42]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4BlumeGelb",
       "feld": [56, 27]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4BlumeGelb",
       "feld": [54, 41]
     },
     {
@@ -711,7 +719,8 @@
         "bis": "40,38",
         "tun": "sitzt auf der Bank am Platz",
         "wann": "tag",
-        "sagt": "statist.summitCity.aussen.rentner"
+        "sagt": "statist.summitCity.aussen.rentner",
+        "sitzt": "unten"
       }
     },
     {
@@ -859,5 +868,7 @@
   "kante": "klippe",
   "wandart": "gras",
   "hochflaeche": "gras",
-  "markierung": ["s"]
+  "markierung": ["s"],
+  "klippenhoehe": 6,
+  "fels": "grau"
 }

@@ -8,39 +8,40 @@
   "boeden": {
     "e": "erde",
     "h": "dielen",
-    "g": "stein"
+    "g": "stein",
+    "n": "nadelstreu"
   },
   "bruecken": ["h"],
   "raster": [
     "#################################################################################################################################~~###################",
-    "#................................................................................................................................~~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#................................................................................................................................~~~.................#",
-    "#................................................................................................................................~~..................#",
-    "#................................................................................ee.............................................~~~..................#",
-    "#.............eeeeeeeeeee........................................................ee.....eeeeeeeeeeee...........................~~~...................#",
-    "#.........eeeeeeeeeeeeeeeeeeee...................................................ee.eeeeeeeeeeeeeeeeeeee.......................~~....................#",
-    "#......eeeeeeee.........eeeeeeeee................................................eeeeeeee..........eeeeeeee...................~~~....................#",
-    "#...eeeeeee..................eeeeee............................................eeeeee..................eeeeeee................~~.....................#",
-    "#.eeeeee........................eeeeee......................................eeeeee........................eeeeee..............~~.....................#",
-    "eeeee.............................eeeeeeeegg..............................eeeeee.............................eeeee............~~....................ee",
-    "eee..................................eeeee.............................eeeeee..................................eeeeee.........~~..................eeee",
-    "#......................................eeeeee........................eeeeee......................................eeeeee.......~~~..............eeeeee#",
-    "#........................................eeeeeee..................eeeeee............................................eeeeee.....~~~..........eeeeeee..#",
-    "#...........................................eeeeeeee..........eeeeeeee................................................eeeeeeeee.~~......eeeeeeee.....#",
-    "#..............................................eeeeeeeeeeeeeeeeeeee......................................................eeeeeeehhhheeeeeeeee........#",
-    "#..................................................eeeeeeeeeeee...............................................................eehhhheeeee............#",
-    "#.................................................................................................................................~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#.................................................................................................................................~~.................#",
-    "#................................................................................................................................~~~.................#",
-    "#................................................................................................................................~~..................#",
-    "#...............................................................................................................................~~~..................#",
-    "#..............................................................................................................................~~~...................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneennnnneeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnneeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeneeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnneeeeeeeennnnnnnnneeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeennnnnnnnnneeeeeeeennnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnnnnn#",
+    "#nnneeeeeeennnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnneeeeeeennnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnn#",
+    "#neeeeeennnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnn#",
+    "eeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeggnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeennnnnnnnnnnn~~nnnnnnnnnnnnnnnnnnnnee",
+    "eeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnn~~nnnnnnnnnnnnnnnnnneeee",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnn~~~nnnnnnnnnnnnnneeeeee#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeennnnnnnnnnnnnnnnnneeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnn~~~nnnnnnnnnneeeeeeenn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeennnnnnnnnneeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeen~~nnnnnneeeeeeeennnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeehhhheeeeeeeeennnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeee....nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnneehhhheeeeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn...................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn....................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn...................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn...................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn................nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~nnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn.............nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn............nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn~~~nnnnnnnnnnnnnnnnnnn#",
     "###############################################################################################################################~~#####################"
   ],
   "objekte": [
@@ -1119,6 +1120,397 @@
       "feld": [63, 26],
       "versatz": [4, 8],
       "massstab": 0.75
+    },
+    {
+      "moebel": "pw7KieferHoch",
+      "feld": [15, 0],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4FelsgruppeB",
+      "feld": [36, 21],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4FelsgruppeB",
+      "feld": [40, 21]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [48, 21],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [25, 22],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [33, 23],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [37, 22]
+    },
+    {
+      "moebel": "wg4FelsgruppeB",
+      "feld": [45, 22],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Felsgruppe",
+      "feld": [28, 24],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Felsgruppe",
+      "feld": [36, 24],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wc5Felsgruppe",
+      "feld": [40, 25]
+    },
+    {
+      "moebel": "wg4FelsgruppeB",
+      "feld": [25, 27],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [29, 26]
+    },
+    {
+      "moebel": "wc5Felsgruppe",
+      "feld": [41, 26],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wc5Felsgruppe",
+      "feld": [49, 26],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [119, 12]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [61, 3],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [18, 19],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [35, 17],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [124, 7],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [96, 25]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [133, 15]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [24, 24],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [25, 25]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [95, 15],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [80, 16]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [13, 16],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [57, 7],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [90, 24]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [17, 15],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [52, 10],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [137, 7]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [3, 16],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [10, 19],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [62, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [61, 8]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [25, 20],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [134, 9],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [47, 21]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [64, 24],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [140, 6],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [10, 24],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [64, 9]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [18, 14],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [8, 17],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [69, 21],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [89, 19],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [14, 26],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [115, 9]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [103, 17],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [94, 15],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [29, 22]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [26, 20],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [142, 11]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [59, 14],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [58, 14]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [11, 26],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [23, 15],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [62, 14]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [26, 13]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [124, 4]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [45, 20]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [7, 23],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [4, 21],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [140, 12]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [2, 21]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [92, 22],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [95, 21],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [39, 22],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [52, 5],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [90, 20],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [59, 3],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [1, 25]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [52, 23],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [53, 23],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [108, 17]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [114, 4],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [90, 14],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [45, 2],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [32, 6],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [96, 26]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [30, 23]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [77, 3],
+      "versatz": [-4, 0]
     }
   ],
   "ausloeser": [

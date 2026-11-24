@@ -21,6 +21,10 @@ ohne privates Paket (GitHub Actions) prüft das Werkzeug mit den gespeicherten Z
 Aufruf: ``python -m pipeline.abenteuer.proportionen [--alle]`` druckt die Befunde je Katalogeintrag
 mit Karten, Verhältnis und dem Maßstab, der in die Mitte des Bandes führt. Ausnahmen mit Grund in
 ``AUSNAHMEN``. Tests: ``pipeline/tests/test_abenteuer_proportionen.py``.
+
+Erweiterung AP8a (24.11.2026): Außenteile (Bäume, quer gestellte Zäune, Büsche; ``AUSSEN_BAENDER``)
+und „unscharf“ für jeden Maßstab unter 0,7. Beide stehen noch nicht im Dauertest „0 Befunde“,
+sondern mit Obergrenze in ``pipeline/tests/test_abenteuer_querschnitt.py`` (Ziel 0).
 """
 
 import argparse
@@ -28,6 +32,8 @@ import json
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
+
+from pipeline.abenteuer.deckrahmen import lade as lade_rahmen
 
 WURZEL = Path(__file__).resolve().parents[2]
 INHALTE = WURZEL / "inhalte" / "abenteuer"
@@ -102,6 +108,23 @@ AUSNAHMEN: dict[str, str] = {
     "mf2Haustuer": INNENTUER,
     "sb5Tuer": INNENTUER,
 }
+
+
+# Außenteile (AP8a, 24.11.2026): Bänder für Arten, die nur draußen stehen. Höhen aus deckrahmen.py
+# (alle Katalogeinträge gemessen). Zäune nur quer gestellt (senkrechte Stücke zeigen ihre Länge),
+# Baumstümpfe sind keine Bäume.
+AUSSEN_BAENDER: dict[str, tuple[float, float]] = {
+    "baum": (1.5, 4.5),  # junger Baum 3 m bis alter Baum 7 m, die Krone von oben dazu
+    "zaun": (0.5, 1.3),  # Gartenzaun 0,6 bis Weidezaun 1,2, Pfostenköpfe von oben
+    "busch": (0.3, 2.5),  # Grasbüschel bis Strauch
+}
+AUSSEN_AUSNAHMEN: dict[str, str] = {
+    "cp7Mammutbaum": "Mammutbaum am Riesenbaumweg: soll riesig sein (Name des Wegs)",
+    "sx7RangerTor": "Torbogen mit Schild am Eingang des Nationalparks, kein Weidetor",
+}
+# Unter diesem Maßstab wird Pixelkunst unscharf (Bildpunkte fallen weg oder verschmieren).
+UNSCHARF_UNTER = 0.7
+UNSCHARF_AUSNAHMEN: dict[str, str] = {}
 
 
 @dataclass
@@ -204,6 +227,57 @@ def pruefe(
     return sorted(befunde.values(), key=lambda b: -abs(b.verhaeltnis - sum(b.band) / 2))
 
 
+def _aussen_band(angabe: dict, kennung: str) -> tuple[float, float] | None:
+    """Band eines Außenteils oder None (ungeprüft). Beispiel: Absperrbock (zaun, quer) → (0,5, 1,3)."""
+    art = angabe.get("art")
+    if art not in AUSSEN_BAENDER or angabe.get("blick") not in VORN or kennung in AUSSEN_AUSNAHMEN:
+        return None
+    if art == "zaun" and angabe["hoehe"] > angabe["breite"]:
+        return None
+    if art == "baum" and "Stumpf" in kennung:
+        return None
+    return AUSSEN_BAENDER[art]
+
+
+def pruefe_aussen(szenen: dict[str, dict], katalog: dict, rahmen: dict) -> list[Befund]:
+    """Bäume, Zäune und Büsche draußen gegen die Figur (Höhe aus den deckenden Bildrändern)."""
+    befunde: dict[tuple[str, float], Befund] = {}
+    for name, szene in sorted(szenen.items()):
+        if szene.get("art") != "aussen":
+            continue
+        for objekt in szene.get("objekte", []):
+            kennung = objekt.get("moebel")
+            angabe = katalog.get(kennung)
+            band = _aussen_band(angabe, kennung) if angabe else None
+            if band is None or objekt.get("drehung", 0) % 180:
+                continue
+            _, oben, _, unten = rahmen.get(kennung, (0, 0, angabe["breite"], angabe["hoehe"]))
+            massstab = float(objekt.get("massstab", 1)) * float(angabe.get("massstab", 1))
+            wert = round(verhaeltnis(unten - oben, massstab, FIGUR_AUSSEN), 2)
+            if ausserhalb(wert, band):
+                befund = befunde.setdefault((kennung, wert), Befund(kennung, angabe["art"], wert, band))
+                befund.stellen.append(f"{name} {objekt.get('feld')}")
+    return sorted(befunde.values(), key=lambda b: (b.moebel, b.verhaeltnis))
+
+
+def pruefe_unscharf(szenen: dict[str, dict], katalog: dict) -> list[str]:
+    """Objekte mit Maßstab unter UNSCHARF_UNTER (Objekt mal Katalog), je Möbel und Maßstab einmal.
+
+    Beispiel: Picknicktisch mit 0,65 → „cr9PicknicktischLang × 0.65 unscharf: …“.
+    """
+    stellen: dict[tuple[str, float], list[str]] = {}
+    for name, szene in sorted(szenen.items()):
+        for objekt in szene.get("objekte", []):
+            kennung = objekt.get("moebel")
+            angabe = katalog.get(kennung)
+            if not angabe or kennung in UNSCHARF_AUSNAHMEN:
+                continue
+            massstab = round(float(objekt.get("massstab", 1)) * float(angabe.get("massstab", 1)), 3)
+            if massstab < UNSCHARF_UNTER:
+                stellen.setdefault((kennung, massstab), []).append(f"{name} {objekt.get('feld')}")
+    return [f"{k} × {m} unscharf: {', '.join(s)}" for (k, m), s in sorted(stellen.items())]
+
+
 def lade_szenen() -> dict[str, dict]:
     """Alle Szenen aus ``inhalte/abenteuer/szenen``."""
     return {p.stem: json.loads(p.read_text()) for p in sorted((INHALTE / "szenen").glob("*.json"))}
@@ -243,7 +317,9 @@ def main() -> int:
     katalog = lade_katalog()
     if args.messen:
         BILDHOEHEN.write_text(json.dumps(miss(args.messen, katalog), indent=1, sort_keys=True) + "\n")
-    befunde = pruefe(lade_szenen(), katalog, lade_hoehen(), args.innenfaktor)
+    szenen = lade_szenen()
+    befunde = pruefe(szenen, katalog, lade_hoehen(), args.innenfaktor)
+    befunde += pruefe_aussen(szenen, katalog, lade_rahmen())
     for b in befunde:
         stellen = b.stellen if args.alle else b.stellen[:3]
         mehr = "" if args.alle or len(b.stellen) <= 3 else f" (+{len(b.stellen) - 3})"
@@ -251,7 +327,10 @@ def main() -> int:
             f"{b.moebel} ({b.art}): {b.verhaeltnis:.2f} der Figur, Band {b.band[0]}–{b.band[1]}, "
             f"Maßstab etwa {b.vorschlag}: {', '.join(stellen)}{mehr}"
         )
-    print(f"{len(befunde)} Befunde")
+    unscharf = pruefe_unscharf(szenen, katalog)
+    for zeile in unscharf:
+        print(zeile)
+    print(f"{len(befunde)} Befunde zur Höhe, {len(unscharf)} unscharf")
     return 0  # nur melden: die Lösung wählt der Autor
 
 

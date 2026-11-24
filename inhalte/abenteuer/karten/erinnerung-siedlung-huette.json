@@ -611,7 +611,7 @@
      "name": "es7Ofen",
      "type": "moebel",
      "x": 144,
-     "y": 8,
+     "y": 16,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -620,7 +620,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 48
+       "value": 56
       },
       {
        "name": "kollision",

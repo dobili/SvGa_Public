@@ -31,7 +31,9 @@ const UMSCHALTTASTE = 16;
 
 /**
  * Die Gangart zur Lage (dx, dy) des Fingers relativ zur Mitte des Kreuzes.
- * Eingaben: Versatz in CSS-Pixeln, bisherige Gangart, Tastenabstand (Vorgabe 56 px).
+ * Eingaben: Versatz in CSS-Pixeln, bisherige Gangart, Tastenabstand (Vorgabe 56 px), Schwelle
+ * als Vielfaches des Tastenabstands (Vorgabe RENNEN_AB; am Bildschirmrand kleiner,
+ * rennschwelle.ts). Die Hysterese bleibt gleich breit.
  * Beispiel: (90, 0) → rennen; danach (75, 0) → rennen (Hysterese); (60, 0) → gehen.
  */
 export function gangartZu(
@@ -39,10 +41,11 @@ export function gangartZu(
   dy: number,
   alt: Gangart,
   tastenabstand = TASTENABSTAND_PX,
+  rennenAb = RENNEN_AB,
 ): Gangart {
   const abstand = Math.hypot(dx, dy) / tastenabstand;
-  if (abstand >= RENNEN_AB) return "rennen";
-  if (abstand < GEHEN_UNTER) return "gehen";
+  if (abstand >= rennenAb) return "rennen";
+  if (abstand < rennenAb - (RENNEN_AB - GEHEN_UNTER)) return "gehen";
   return alt;
 }
 

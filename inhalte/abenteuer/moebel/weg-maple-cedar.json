@@ -156,7 +156,8 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
+      "untergrund": "gras"
     },
     "wg4Erle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_170.png",
@@ -340,7 +341,8 @@
       "zustand": "gebraucht",
       "stil": "einfach",
       "begehbar": true,
-      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch",
+      "untergrund": "gras"
     },
     "wg4BlumeRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mushrooms_5.png",
@@ -373,7 +375,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "begehbar": true,
-      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch",
+      "untergrund": "gras"
     },
     "wg4Wildblumen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Flowers_4.png",
@@ -405,7 +408,8 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "wg4SteinB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_4.png",
@@ -415,7 +419,8 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach",
-      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)"
+      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche (feinmasken_pruefung)",
+      "untergrund": "gras"
     },
     "wg4Felsgruppe": {
       "quelle": "spiel/serene/serene_29.png",
@@ -464,7 +469,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "wg4Zettelschild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -475,7 +481,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."],
+      "untergrund": "gras"
     },
     "wg4Marktstand": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Market_Stand_Yellow_Small_16x16.png",
@@ -527,7 +534,32 @@
       "zustand": "gebraucht",
       "stil": "einfach",
       "begehbar": true,
-      "begehbar_grund": "liegt flach am Boden"
+      "begehbar_grund": "liegt flach am Boden",
+      "untergrund": "gras"
+    },
+    "wg4Aepfel1": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Apples_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden",
+      "untergrund": "gras"
+    },
+    "wg4Aepfel2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Apples_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden",
+      "untergrund": "gras"
     },
     "wg4Baumstammbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",
@@ -538,7 +570,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "maske_fein": ["............", "............", ".##########.", "..#########."]
+      "maske_fein": ["............", "............", ".##########.", "..#########."],
+      "untergrund": "gras"
     },
     "wg4ZaunTopLeft": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Left_16x16.png",
@@ -692,7 +725,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "wg5StegLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_28.png",
@@ -1068,7 +1102,8 @@
       "zustand": "alt",
       "stil": "natur",
       "begehbar": true,
-      "begehbar_grund": "flacher Stamm quer über dem Zedernpfad, man steigt darüber (Kartengutachten Akt 1, Befund 5)"
+      "begehbar_grund": "flacher Stamm quer über dem Zedernpfad, man steigt darüber (Kartengutachten Akt 1, Befund 5)",
+      "untergrund": "gras"
     },
     "wg4TorOffen1": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
@@ -1241,6 +1276,50 @@
       "stil": "rustikal",
       "blick": "unten",
       "hinweis": "dieselbe Kasse ohne Zettel (Gemini 15.11.2026)"
+    },
+    "wg4HolzzaunQuer": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", "####", "####"],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, Mittelstück; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg4HolzzaunLinks": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", "####", "####"],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, linkes Ende mit Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg4HolzzaunRechts": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_3_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", "####", "####"],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, rechtes Ende mit Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg4HolzzaunSenkrecht": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_4_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", ".##.", ".##."],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, senkrechter Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
     }
   }
 }

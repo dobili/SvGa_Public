@@ -2392,7 +2392,7 @@
      "name": "rv14Fahrkartenschalter",
      "type": "moebel",
      "x": 32,
-     "y": 8,
+     "y": 16,
      "width": 96,
      "height": 71,
      "rotation": 0,
@@ -2401,7 +2401,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 71
+       "value": 79
       },
       {
        "name": "kollision",

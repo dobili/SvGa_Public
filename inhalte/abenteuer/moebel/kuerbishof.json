@@ -132,7 +132,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "n1Laubbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
@@ -216,7 +217,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "begehbar": true,
-      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch",
+      "untergrund": "gras"
     },
     "n1BlumeW": {
       "quelle": "spiel/serene/serene_18.png",

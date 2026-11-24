@@ -860,44 +860,64 @@
       "feld": [23, 88]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [4, 109]
+      "moebel": "wdsGeroell",
+      "feld": [4, 109],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [3, 79]
+      "moebel": "wdsGeroell",
+      "feld": [3, 79],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [3, 73]
+      "moebel": "wdsGeroell",
+      "feld": [3, 73],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [7, 109]
+      "moebel": "wdsGeroell",
+      "feld": [7, 109],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [3, 96]
+      "moebel": "wdsGeroell",
+      "feld": [3, 96],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [8, 110]
+      "moebel": "wdsGeroell",
+      "feld": [8, 110],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [8, 71]
+      "moebel": "wdsGeroell",
+      "feld": [8, 71],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [6, 95]
+      "moebel": "wdsGeroell",
+      "feld": [6, 95],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [8, 31]
+      "moebel": "wdsGeroell",
+      "feld": [8, 31],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [21, 47]
+      "moebel": "wdsGeroell",
+      "feld": [21, 47],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "sx9BisonLiegend",

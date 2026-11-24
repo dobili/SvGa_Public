@@ -1754,7 +1754,8 @@
         "######.#",
         "######.#",
         "########"
-      ]
+      ],
+      "untergrund": "gras"
     },
     "mf4Rutsche": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_1.png",
@@ -1802,7 +1803,8 @@
         "#.##########",
         "#.######...#",
         "############"
-      ]
+      ],
+      "untergrund": "gras"
     },
     "mf4SchildVerkauf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_2.png",
@@ -1845,7 +1847,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."],
+      "untergrund": "gras"
     },
     "mf4TreppeAb": {
       "quelle": "spiel/eigene/treppe_ab_gelaender.png",
@@ -2228,7 +2231,8 @@
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "mf4FelsHoch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_8.png",
@@ -2655,7 +2659,8 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "natur",
-      "maske_fein": ["....", "####", "####", ".##."]
+      "maske_fein": ["....", "####", "####", ".##."],
+      "untergrund": "gras"
     },
     "mf6Moos": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Moss_1.png",
@@ -2762,7 +2767,8 @@
       "zustand": "neu",
       "stil": "natur",
       "begehbar": true,
-      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser"
     },
     "mf6Seerose2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_12.png",
@@ -2773,7 +2779,8 @@
       "zustand": "neu",
       "stil": "natur",
       "begehbar": true,
-      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser"
     },
     "mf6Seerose3": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_13.png",
@@ -2784,7 +2791,8 @@
       "zustand": "neu",
       "stil": "natur",
       "begehbar": true,
-      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser"
     },
     "mf7TeppichRund": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_252.png",

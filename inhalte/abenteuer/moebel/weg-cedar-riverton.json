@@ -28,7 +28,8 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
+      "untergrund": "gras"
     },
     "wc5Farn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_7.png",
@@ -61,7 +62,8 @@
       "zustand": "gebraucht",
       "stil": "einfach",
       "begehbar": true,
-      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch",
+      "untergrund": "gras"
     },
     "wc5Stein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -71,7 +73,8 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "wc5SteinB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_4.png",
@@ -81,7 +84,8 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": [".##.", "####", "####", "...."]
+      "maske_fein": [".##.", "####", "####", "...."],
+      "untergrund": "gras"
     },
     "wc5Gras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
@@ -222,7 +226,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "modern",
-      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."]
+      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."],
+      "untergrund": "gras"
     },
     "wc5StammB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_19.png",
@@ -232,7 +237,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "modern",
-      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."]
+      "maske_fein": ["....##..", ".######.", ".######.", ".#####.."],
+      "untergrund": "gras"
     },
     "wc5Tafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png",
@@ -252,7 +258,8 @@
         ".######.",
         ".######.",
         ".######."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "wc5Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_7.png",
@@ -263,7 +270,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "wc5Stumpf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",
@@ -473,7 +481,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "wc5Laubbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_1.png",
@@ -775,7 +784,8 @@
       "zustand": "neu",
       "stil": "klassisch",
       "begehbar": true,
-      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch",
+      "untergrund": "gras"
     },
     "wc5HohlerStamm": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Trunk_Oak_Huge_16x16.png",
@@ -980,7 +990,8 @@
       "zustand": "neu",
       "stil": "einfach",
       "begehbar": true,
-      "begehbar_grund": "Trittstein, man steigt darüber"
+      "begehbar_grund": "Trittstein, man steigt darüber",
+      "untergrund": "gras"
     },
     "wc9BoeschungNord": {
       "quelle": "spiel/eigene/boeschung_nord.png",

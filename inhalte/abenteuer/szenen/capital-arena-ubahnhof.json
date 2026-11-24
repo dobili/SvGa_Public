@@ -434,7 +434,8 @@
         2,
         0
       ],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, 9]
     },
     {
       "moebel": "ci8GraffitiWolf",
@@ -458,7 +459,8 @@
         28,
         0
       ],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, 6]
     },
     {
       "moebel": "ci8Leuchte",

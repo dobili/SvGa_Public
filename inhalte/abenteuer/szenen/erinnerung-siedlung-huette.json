@@ -51,7 +51,7 @@
     {
       "moebel": "es7Ofen",
       "feld": [9, 1],
-      "versatz": [0, -8]
+      "versatz": [0, 0]
     },
     {
       "moebel": "es9FensterNacht",

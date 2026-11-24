@@ -108,7 +108,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "ws5Tafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png",
@@ -374,7 +375,8 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "laendlich",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "ws5Strandgras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Small_Sprout_1_Vers_1.png",
@@ -1512,7 +1514,8 @@
         ".######.",
         ".######.",
         ".######."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "wsgLinieQ16": {
       "quelle": "spiel/eigene/fahrbahn_linie_quer_16.png",

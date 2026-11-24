@@ -15004,11 +15004,11 @@
     },
     {
      "id": 103,
-     "name": "gc7FelsFlach",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1344,
      "y": 160,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15022,6 +15022,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },

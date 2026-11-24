@@ -781,7 +781,8 @@
         "........",
         "..####..",
         "..####.."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "ca7Obstkarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Fruit_Flowers_Cart_1.png",

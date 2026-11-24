@@ -509,7 +509,9 @@
     },
     {
       "moebel": "cc3Raetseltafel",
-      "feld": [6, 37]
+      "feld": [6, 37],
+      "zuschnitt": [0, 0, 0, 8],
+      "versatz": [0, 7]
     },
     {
       "moebel": "mf4Laterne",
@@ -1127,7 +1129,7 @@
       "id": "beet1"
     },
     {
-      "moebel": "ws5Huette",
+      "moebel": "wc5GartenhausB",
       "feld": [10, 68]
     },
     {

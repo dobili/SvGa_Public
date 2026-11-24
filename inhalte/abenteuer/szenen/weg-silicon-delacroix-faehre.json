@@ -882,14 +882,14 @@
       "feld": [18, 24],
       "id": "brett",
       "versatz": [6, 11],
-      "massstab": 0.65
+      "massstab": 0.7
     },
     {
       "moebel": "mf2SchachbrettFiguren",
       "feld": [0, 0],
       "auf": "brett",
       "versatz": [0, 3],
-      "massstab": 0.65
+      "massstab": 0.7
     },
     {
       "moebel": "fzDeckhausGemini",
@@ -928,14 +928,14 @@
       "feld": [17, 64],
       "id": "kapitaenstisch",
       "versatz": [6, 11],
-      "massstab": 0.65
+      "massstab": 0.7
     },
     {
       "moebel": "mf2SchachbrettFiguren",
       "feld": [0, 0],
       "auf": "kapitaenstisch",
       "versatz": [0, 3],
-      "massstab": 0.65
+      "massstab": 0.7
     },
     {
       "moebel": "pd7Finkenzeichen",
@@ -1034,7 +1034,7 @@
       "moebel": "mf9Rundtisch",
       "feld": [14, 38],
       "versatz": [6, 11],
-      "massstab": 0.65
+      "massstab": 0.7
     },
     {
       "moebel": "sd6Liegestuhl",
@@ -1060,7 +1060,7 @@
       "moebel": "mf9Rundtisch",
       "feld": [19, 55],
       "versatz": [6, 11],
-      "massstab": 0.65
+      "massstab": 0.7
     },
     {
       "moebel": "gc7Schirm",

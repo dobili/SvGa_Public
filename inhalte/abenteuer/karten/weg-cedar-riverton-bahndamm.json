@@ -22089,9 +22089,9 @@
      "name": "wc5Schild",
      "type": "moebel",
      "x": 960,
-     "y": 128,
+     "y": 131,
      "width": 16,
-     "height": 32,
+     "height": 29,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -22104,6 +22104,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,3"
       }
      ]
     },
@@ -27978,15 +27983,15 @@
      "type": "moebel",
      "x": 778,
      "y": 157,
-     "width": 29,
-     "height": 19,
+     "width": 34,
+     "height": 22,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 171
       },
       {
        "name": "kollision",
@@ -27996,12 +28001,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 0.6
+       "value": 0.7
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "##/.."
+       "value": "##./##."
       }
      ]
     },
@@ -28011,15 +28016,15 @@
      "type": "moebel",
      "x": 826,
      "y": 157,
-     "width": 29,
-     "height": 19,
+     "width": 34,
+     "height": 22,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 171
       },
       {
        "name": "kollision",
@@ -28029,12 +28034,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 0.6
+       "value": 0.7
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "##/.."
+       "value": "##./##."
       }
      ]
     },

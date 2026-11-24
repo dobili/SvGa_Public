@@ -304,7 +304,8 @@
         ".######.",
         ".######.",
         ".######."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "cc3Raetseltafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_1.png",
@@ -324,7 +325,8 @@
         ".######.",
         ".######.",
         ".######."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "cc3Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
@@ -402,7 +404,8 @@
       "zustand": "alt",
       "stil": "natur",
       "begehbar": true,
-      "begehbar_grund": "liegt flach am Boden"
+      "begehbar_grund": "liegt flach am Boden",
+      "untergrund": "gras"
     },
     "ccSchachbrettKlein": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -1187,7 +1190,8 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "natur",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
+      "untergrund": "gras"
     },
     "cc4NadelbaumB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
@@ -1210,7 +1214,8 @@
         "........",
         "..####..",
         "..####.."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "cc4Holzstapel": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Load_Big_Vertical_16x16.png",
@@ -1274,7 +1279,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "maske_fein": ["............", "............", ".##########.", "..#########."]
+      "maske_fein": ["............", "............", ".##########.", "..#########."],
+      "untergrund": "gras"
     },
     "cc4WaschmaschineKorb": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_93.png",

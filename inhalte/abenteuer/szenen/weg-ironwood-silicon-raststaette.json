@@ -8,7 +8,7 @@
   "boeden": {
     "s": "asphalt",
     "p": "pflaster",
-    "a": "erde",
+    "a": "schotter",
     "d": "strand",
     "z": "asphalt",
     "q": "platten",
@@ -51,9 +51,9 @@
     "#........................ddddddddd..........dd~~~~dd.........dddddddd..........aa.........aaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzz...zzzzzzzzzzzzzzzppppppppppp.#",
     "#d........dddddddddddddddddddddddddddd.....ddd~~~~dd.....ddddddddddddddddddaaaaaaddd........ddddddddddddaaaaaazzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
     "#ddddddddddddddddddddddddwwwwwwwwwdddddddddddd~~~~dddddddddddwwwwwwwwddddddaaaaaaddddddddddddddddddddddd......zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "#dddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddwwwwwwwwddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwddddddddwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "#ddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
-    "#dwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
+    "#dddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddwww~~~~wddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwddddddddwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
+    "#ddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
+    "#dwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
     "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######################################################"
   ],
   "objekte": [
@@ -502,7 +502,9 @@
     },
     {
       "moebel": "ws5Wegweiser",
-      "feld": [103, 20]
+      "feld": [103, 20],
+      "zuschnitt": [0, 0, 0, 3],
+      "versatz": [0, 3]
     },
     {
       "moebel": "ws5Huette",
@@ -518,7 +520,9 @@
     },
     {
       "moebel": "ws5Schild",
-      "feld": [8, 15]
+      "feld": [8, 15],
+      "zuschnitt": [0, 0, 0, 3],
+      "versatz": [0, 3]
     },
     {
       "moebel": "ws5Strandgras",
@@ -707,7 +711,9 @@
     },
     {
       "moebel": "wsrTafel",
-      "feld": [131, 13]
+      "feld": [131, 13],
+      "zuschnitt": [0, 0, 0, 8],
+      "versatz": [0, 7]
     },
     {
       "moebel": "wsrPlanke5",
@@ -1198,6 +1204,14 @@
       "feld": [125, 19],
       "bauteil_ok": true,
       "versatz": [8, 0]
+    },
+    {
+      "moebel": "wsgLaterneModern",
+      "feld": [5, 13]
+    },
+    {
+      "moebel": "wsgLaterneModern",
+      "feld": [11, 13]
     }
   ],
   "ausloeser": [

@@ -11,11 +11,13 @@
  * erst Loslassen hält an. Gilt hoch und quer und für beide Seiten des Kreuzes.
  * Rennen (Wunsch des Autors, 21.11.2026): Zieht der Finger weit über den Rand hinaus nach außen,
  * meldet das Kreuz „rennen“ (gangart.ts); zurück nach innen oder Loslassen heißt wieder gehen.
- * Abhängigkeiten: steuerrichtung.ts, gangart.ts.
+ * Zum nahen Bildschirmrand liegt die Schwelle weiter innen (rennschwelle.ts, 24.11.2026).
+ * Abhängigkeiten: steuerrichtung.ts, gangart.ts, rennschwelle.ts.
  */
 import { useRef, useState, type PointerEvent } from "react";
 import { tSpiel } from "../texte/texte";
-import { gangartZu, type Gangart } from "./gangart";
+import { gangartZu, TASTENABSTAND_PX, type Gangart } from "./gangart";
+import { randabstand, rennenAbZumRand } from "./rennschwelle";
 import { richtungZu } from "./steuerrichtung";
 import type { Richtung } from "./szene";
 
@@ -71,8 +73,13 @@ export function Steuerkreuz({
   /** Richtung und Gangart aus der Lage des Fingers. */
   const folge = (e: PointerEvent<HTMLDivElement>) => {
     const mitte = mitteVon(e.currentTarget);
-    wechsleGangart(gangartZu(e.clientX - mitte.x, e.clientY - mitte.y, gangartRef.current));
-    wechsle(richtungZu(e.clientX - mitte.x, e.clientY - mitte.y, aktivRef.current));
+    const dx = e.clientX - mitte.x;
+    const dy = e.clientY - mitte.y;
+    // Zum nahen Bildschirmrand rückt die Schwelle nach innen (rennschwelle.ts).
+    const bild = { breite: window.innerWidth, hoehe: window.innerHeight };
+    const ab = rennenAbZumRand(randabstand(dx, dy, mitte, bild));
+    wechsleGangart(gangartZu(dx, dy, gangartRef.current, TASTENABSTAND_PX, ab));
+    wechsle(richtungZu(dx, dy, aktivRef.current));
   };
 
   /** Setzt die gedrückte Richtung; meldet Loslassen der alten und Druck der neuen. */

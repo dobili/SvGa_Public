@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 284,
+ "nextobjectid": 286,
  "layers": [
   {
    "id": 1,
@@ -3910,10 +3910,10 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
+    0,
+    0,
+    0,
+    0,
     4,
     4,
     4,
@@ -4070,10 +4070,10 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
+    0,
+    0,
+    0,
+    0,
     4,
     4,
     4,
@@ -4230,10 +4230,10 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
+    0,
+    0,
+    0,
+    0,
     4,
     4,
     4,
@@ -8403,10 +8403,10 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -8563,10 +8563,10 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -8723,10 +8723,10 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -16052,9 +16052,9 @@
      "name": "ws5Wegweiser",
      "type": "moebel",
      "x": 1648,
-     "y": 320,
+     "y": 323,
      "width": 16,
-     "height": 32,
+     "height": 29,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16067,6 +16067,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,3"
       }
      ]
     },
@@ -16144,9 +16149,9 @@
      "name": "ws5Schild",
      "type": "moebel",
      "x": 128,
-     "y": 240,
+     "y": 243,
      "width": 16,
-     "height": 32,
+     "height": 29,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16159,6 +16164,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,3"
       }
      ]
     },
@@ -17202,21 +17212,26 @@
      "name": "wsrTafel",
      "type": "moebel",
      "x": 2096,
-     "y": 208,
+     "y": 215,
      "width": 32,
-     "height": 32,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 232
+       "value": 231
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,8"
       }
      ]
     },
@@ -20012,6 +20027,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 408
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 284,
+     "name": "wsgLaterneModern",
+     "type": "moebel",
+     "x": 80,
+     "y": 208,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 285,
+     "name": "wsgLaterneModern",
+     "type": "moebel",
+     "x": 176,
+     "y": 208,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
       },
       {
        "name": "kollision",

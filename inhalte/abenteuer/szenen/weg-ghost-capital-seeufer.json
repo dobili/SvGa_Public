@@ -66,7 +66,8 @@
     },
     {
       "moebel": "gc7Absperrbock",
-      "feld": [3, 14]
+      "feld": [3, 14],
+      "massstab": 0.85
     },
     {
       "moebel": "gc7Tafel",
@@ -106,11 +107,11 @@
     },
     {
       "moebel": "gc7Treibholz",
-      "feld": [36, 10]
+      "feld": [36, 8]
     },
     {
       "moebel": "gc7Treibholz",
-      "feld": [126, 10]
+      "feld": [126, 8]
     },
     {
       "moebel": "gc7Kisten",

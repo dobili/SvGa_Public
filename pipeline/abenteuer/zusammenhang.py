@@ -357,3 +357,29 @@ def pruefe_zusammenhang(szene: dict, zeilen: list[str], gesetzt: list[dict], moe
         + pruefe_enden(szene, zeilen, gesetzt, moebel)
         + pruefe_zaeune(gesetzt, moebel)
     )
+
+
+def main() -> int:
+    """Gleis- und Türwegenden aller Szenen drucken (zusammenhang_enden.py; ``--alle`` ohne Kürzung)."""
+    import argparse
+    import json
+    from pathlib import Path
+
+    from pipeline.abenteuer.moebelliste import lade_moebel
+    from pipeline.abenteuer.zusammenhang_enden import pruefe_szene
+
+    teile = argparse.ArgumentParser(description="Enden von Gleisen und Wegen (AP8a)")
+    teile.add_argument("--alle", action="store_true", help="alle Befunde drucken")
+    args = teile.parse_args()
+    katalog, befunde = lade_moebel(), []
+    for pfad in sorted((Path(__file__).resolve().parents[2] / "inhalte/abenteuer/szenen").glob("*.json")):
+        szene = json.loads(pfad.read_text(encoding="utf-8"))
+        befunde += [f"{pfad.stem}: {b}" for b in pruefe_szene(pfad.stem, szene, katalog)]
+    for b in befunde if args.alle else befunde[:40]:
+        print(b)
+    print(f"{len(befunde)} Befunde")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

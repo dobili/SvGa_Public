@@ -2997,8 +2997,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3639,14 +3639,14 @@
     1,
     4,
     4,
-    1,
-    1,
     1,
     1,
     1,
     1,
     1,
     1,
+    4,
+    4,
     1,
     1,
     1,
@@ -4282,7 +4282,6 @@
     0,
     0,
     0,
-    1,
     1,
     1,
     1,
@@ -4294,7 +4293,8 @@
     1,
     1,
     1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -24398,11 +24398,11 @@
     },
     {
      "id": 310,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 224,
      "y": 1584,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -24416,6 +24416,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -24559,11 +24574,11 @@
     },
     {
      "id": 317,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 160,
      "y": 2496,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -24577,6 +24592,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },

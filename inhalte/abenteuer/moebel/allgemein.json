@@ -244,7 +244,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "natur",
-      "maske_fein": ["....", ".##.", ".###", "...."]
+      "maske_fein": ["....", ".##.", ".###", "...."],
+      "untergrund": "gras"
     },
     "felsKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_3.png",
@@ -254,7 +255,8 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "natur",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "baumstumpf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Stump_1.png",

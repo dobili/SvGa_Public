@@ -47,7 +47,7 @@
       "moebel": "ldBild",
       "feld": [17, 4],
       "an_wand": true,
-      "versatz": [0, -10]
+      "versatz": [0, -8]
     },
     {
       "moebel": "ld5Flaschenregal",

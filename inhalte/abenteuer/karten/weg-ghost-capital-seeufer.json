@@ -14302,20 +14302,30 @@
      "type": "moebel",
      "x": 48,
      "y": 224,
-     "width": 32,
-     "height": 32,
+     "width": 27,
+     "height": 27,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 243
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.85
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##"
       }
      ]
     },
@@ -14531,7 +14541,7 @@
      "name": "gc7Treibholz",
      "type": "moebel",
      "x": 576,
-     "y": 160,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14554,7 +14564,7 @@
      "name": "gc7Treibholz",
      "type": "moebel",
      "x": 2016,
-     "y": 160,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,

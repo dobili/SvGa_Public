@@ -648,7 +648,8 @@
     {
       "moebel": "rv5PokalSilber",
       "feld": [0, 0],
-      "auf": "pokale"
+      "auf": "pokale",
+      "versatz": [0, 4]
     },
     {
       "moebel": "cc4FotoRahmen",

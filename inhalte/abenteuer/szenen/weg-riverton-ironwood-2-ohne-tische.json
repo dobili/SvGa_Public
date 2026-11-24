@@ -93,7 +93,7 @@
     "#.~~~~~~~~.......ee................#",
     "#.~~~~~~~~.......eeeeeeeeeeeeeee...#",
     "#.~~~~~~~~.......eeeeeeeeeeeeeee...#",
-    "#.~~~~~~~~....................ee...#",
+    "#.~~~~~~~~...........ee.......ee...#",
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
@@ -111,7 +111,7 @@
     "##~~~~~~~~####################ee####",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
-    "#.~~~~~~~~...ee....................#",
+    "#.~~~~~~~~...ee......ee............#",
     "#.~~~~~~~~...ee....................#",
     "#.~~~~~~~~...ee....................#",
     "#.~~~~~~~~...ee....................#",
@@ -129,7 +129,7 @@
     "##~~~~~~~~###ee#####################",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
-    "#.~~~~~~~~....................ee...#",
+    "#.~~~~~~~~...........ee.......ee...#",
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
@@ -1462,8 +1462,10 @@
       "feld": [10, 84]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [14, 99]
+      "moebel": "wdsGeroell",
+      "feld": [14, 99],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "mf4Fels",
@@ -1490,8 +1492,10 @@
       "feld": [11, 150]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [10, 156]
+      "moebel": "wdsGeroell",
+      "feld": [10, 156],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "wg4Busch",
@@ -1817,7 +1821,15 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "einfach", "natur", "laendlich", "klassisch", "modern", "landhaus"],
+  "stil": [
+    "rustikal",
+    "einfach",
+    "natur",
+    "laendlich",
+    "klassisch",
+    "modern",
+    "landhaus"
+  ],
   "datei": "karten/weg-riverton-ironwood-2-ohne-tische.json",
   "ufer": "stein",
   "kante": "klippe",

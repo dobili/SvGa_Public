@@ -8,139 +8,140 @@
   "boeden": {
     "e": "erde",
     "h": "dielen",
-    "k": "schotter"
+    "k": "platten",
+    "n": "nadelstreu"
   },
   "bruecken": ["h"],
   "raster": [
     "########################################",
-    "#......................................#",
-    "#......................................#",
-    "#......................................#",
-    "#.............................eeeeeeeeee",
-    "#...........................eeeeeeeeeeee",
-    "#.........................eeeeee.......#",
-    "#........................eeeee.........#",
-    "#.......................eeee...........#",
-    "#......................eee.............#",
-    "#.....................eee..............#",
-    "#....................eee...............#",
-    "#...................eee................#",
-    "#..................eee.................#",
-    "#..................eee.................#",
-    "#.................eee..................#",
-    "#................eeee..................#",
-    "#................eee...................#",
-    "#...............eee....................#",
-    "#...............eee....................#",
-    "#...............ee.....................#",
-    "#..............eee.....................#",
-    "#..............eee.....................#",
-    "#..............ee......................#",
-    "#..............ee......................#",
-    "#.............eee......................#",
-    "#.............eee......................#",
-    "#.............ee.......................#",
-    "#.............ee.......................#",
-    "#.............ee.......................#",
-    "#.............ee.......................#",
-    "#.............eee......................#",
-    "#..............ee......................#",
-    "#..............ee......................#",
-    "#..............ee......................#",
-    "#..............eee.....................#",
-    "#..............eee.....................#",
-    "#...............eee....................#",
-    "#...............eeee...................#",
-    "#................eee...................#",
-    "#.................eee..................#",
-    "#.................eee..................#",
-    "#..................eee.................#",
-    "#..................eee.................#",
-    "#...................eee................#",
-    "#....................eee...............#",
-    "#.....................eee..............#",
-    "#......................ee..............#",
-    "#......................ee..............#",
-    "#......................ee..............#",
-    "#......................ee..............#",
-    "#...................eeeee..............#",
-    "#...................eeeee..............#",
-    "#...................eeeee..............#",
-    "#...................eeeee..............#",
-    "#.....................eee..............#",
-    "#......................eee.............#",
-    "#.......................eee............#",
-    "#.......................eee............#",
-    "#........................ee............#",
-    "#........................ee............#",
-    "#.......................eee............#",
-    "#.......................eee............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#......................eee.............#",
-    "#......................eee.............#",
-    "#.....................eee..............#",
-    "#....................eee...............#",
-    "#...................eee................#",
-    "#...................eee................#",
-    "#...................ee.................#",
-    "#..................eee.................#",
-    "#..................eee.................#",
-    "#..................ee..................#",
-    "#.................eee..................#",
-    "#.................eee..................#",
-    "#.................ee...................#",
-    "#.................ee...................#",
-    "#.................eee..................#",
-    "#..................ee..................#",
-    "#..................ee..................#",
-    "#..................eee.................#",
-    "#...................ee.................#",
-    "#...................ee.................#",
-    "#...................eee................#",
-    "#....................ee................#",
-    "#....................ee................#",
-    "#.........k.k.k.k....eee...............#",
-    "#........k.k.k.k......ee...............#",
-    "#.........k.k.k.k.....ee...............#",
-    "#........k.k.k.k..eeeeee...............#",
-    "#.........k.k.k.k.eeeeeee..............#",
-    "#........k.k.k.k......eee..............#",
-    "#.........k.k.k.k......ee..............#",
-    "#........k.k.k.k.......ee..............#",
-    "#......................ee..............#",
-    "#.............~~~......ee..........~~~.#",
-    "#..........~~~~~~~~~...ee.......~~~~~~~~",
-    "#........~~~~~~.~~~~~~.ee.....~~~~~~.~~~",
-    "~~~~..~~~~~~.......~~~~hh..~~~~~~......#",
-    "~~~~~~~~~~...........~~hh~~~~~~........#",
-    "#..~~~~................hh~~~...........#",
-    "#......................ee..............#",
-    "#......................ee..............#",
-    "#......................ee..............#",
-    "#......................ee..............#",
-    "#......................eee.............#",
-    "#......................eeee............#",
-    "#.......................eeee...........#",
-    "#........................eee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#........................eee...........#",
-    "#........................ee............#",
-    "#........................ee............#",
-    "#.......................eee............#",
-    "#......................eee.............#",
-    "#.....................eeee.............#",
-    "#.....................eee..............#",
-    "#....................eee...............#",
-    "#...................eee................#",
-    "#...................eee................#",
-    "#...................ee.................#",
-    "#..................eee.................#",
-    "#..................eee.................#",
-    "#..................ee..................#",
-    "#..................ee..................#",
-    "#..................ee..................#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeee",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnnnneeeeeeeeeeee",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnneeeeeennnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneeeeennnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeeennnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnneeeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnneeeennnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeeeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeeeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeeeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeeeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnn.....nnnnneennnnnnnnnnnnnnnnn#",
+    "#nnnnnn.nn........nneeennnnnnnnnnnnnnnn#",
+    "#nnnnn............nnneennnnnnnnnnnnnnnn#",
+    "#nnnnn.............nneennnnnnnnnnnnnnnn#",
+    "#nnnnn....k.k.k.k....eeennnnnnnnnnnnnnn#",
+    "#nnnnn...k.k.k.k......eennnnnnnnnnnnnnn#",
+    "#nnnnnn...k.k.k.k.....eennnnnnnnnnnnnnn#",
+    "#nnn.....k.k.k.k..eeeeeennnnnnnnnnnnnnn#",
+    "#nnnn.n...k.k.k.k.eeeeeeennnnnnnnnnnnnn#",
+    "#nnnnnn..k.k.k.k....nneeennnnnnnnnnnnnn#",
+    "#nnnnnn...k.k.k.k..nnnneennnnnnnnnnnnnn#",
+    "#nnnnnnn.k.k.k.k...nnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnn.n..nn.nnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnn~~~nnnnnneennnnnnnnnn~~~n#",
+    "#nnnnnnnnnn~~~~~~~~~nnneennnnnnn~~~~~~~~",
+    "#nnnnnnnn~~~~~~n~~~~~~neennnnn~~~~~~n~~~",
+    "~~~~nn~~~~~~nnnnnnn~~~~hhnn~~~~~~nnnnnn#",
+    "~~~~~~~~~~nnnnnnnnnnn~~hh~~~~~~nnnnnnnn#",
+    "#nn~~~~nnnnnnnnnnnnnnnnhh~~~nnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeeennnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnnneennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnneeeennnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneeennnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnn#",
+    "#nnnnnnnnnnnnnnnnnneennnnnnnnnnnnnnnnnn#",
     "###################ee###################"
   ],
   "objekte": [
@@ -1103,6 +1104,331 @@
     {
       "moebel": "cr8FahneSchwarz",
       "feld": [17, 87]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [24, 36]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [12, 67]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [2, 81],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [29, 79]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [25, 78],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [22, 77]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [4, 11]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [30, 19]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [4, 49]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [20, 28],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [17, 26],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [31, 90],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [8, 48]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [11, 47]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [34, 57],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [4, 111],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [2, 63]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [10, 64],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [17, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [34, 124]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [35, 67]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [36, 69],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [10, 71],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [32, 48],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [11, 126]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [16, 2],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [6, 73],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [24, 21],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [21, 57],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [2, 65],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [10, 19]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [17, 112],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [35, 61],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [9, 22],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [26, 24],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [19, 59],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [19, 111],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [26, 31]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [33, 15],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [2, 13],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [32, 8],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [16, 70],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [13, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [10, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [2, 88],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [12, 55]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [16, 56],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [28, 84],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [32, 28],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [15, 61]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [8, 4],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [33, 103],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [37, 33]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [3, 68],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [14, 119],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [15, 118]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [27, 118]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [10, 58],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [8, 71],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [21, 111],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [23, 75]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [32, 35],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [36, 9],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7KieferKlein",
+      "feld": [13, 42]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [8, 11],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [6, 52],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [9, 54],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [16, 64],
+      "versatz": [-4, 0]
     }
   ],
   "ausloeser": [

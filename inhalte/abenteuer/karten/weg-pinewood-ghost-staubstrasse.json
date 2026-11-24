@@ -14208,11 +14208,11 @@
     },
     {
      "id": 30,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 304,
      "y": 48,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14226,6 +14226,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14300,11 +14310,11 @@
     },
     {
      "id": 34,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 608,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14318,6 +14328,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14392,11 +14412,11 @@
     },
     {
      "id": 38,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1024,
      "y": 16,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14410,6 +14430,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14484,11 +14514,11 @@
     },
     {
      "id": 42,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1520,
      "y": 32,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14502,6 +14532,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14553,11 +14593,11 @@
     },
     {
      "id": 45,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1792,
      "y": 48,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14571,6 +14611,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14645,11 +14695,11 @@
     },
     {
      "id": 49,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2192,
      "y": 48,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14663,6 +14713,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14737,11 +14797,11 @@
     },
     {
      "id": 53,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 144,
      "y": 128,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14755,6 +14815,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14829,11 +14899,11 @@
     },
     {
      "id": 57,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 544,
      "y": 96,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14847,6 +14917,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -14921,11 +15001,11 @@
     },
     {
      "id": 61,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 816,
      "y": 128,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -14939,6 +15019,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15036,11 +15126,11 @@
     },
     {
      "id": 66,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1952,
      "y": 128,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15054,6 +15144,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15128,11 +15228,11 @@
     },
     {
      "id": 70,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2288,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15146,6 +15246,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15197,11 +15307,11 @@
     },
     {
      "id": 73,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 480,
      "y": 160,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15215,6 +15325,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15289,11 +15409,11 @@
     },
     {
      "id": 77,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 784,
      "y": 144,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15307,16 +15427,26 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 78,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2016,
      "y": 144,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15330,6 +15460,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15427,11 +15567,11 @@
     },
     {
      "id": 83,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1728,
      "y": 96,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15445,6 +15585,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15588,11 +15738,11 @@
     },
     {
      "id": 90,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 976,
      "y": 288,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15606,6 +15756,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15680,11 +15840,11 @@
     },
     {
      "id": 94,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1392,
      "y": 304,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15698,6 +15858,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15772,11 +15942,11 @@
     },
     {
      "id": 98,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2160,
      "y": 288,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15790,6 +15960,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15864,11 +16044,11 @@
     },
     {
      "id": 102,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 64,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15882,6 +16062,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15956,11 +16146,11 @@
     },
     {
      "id": 106,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 464,
      "y": 368,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15974,6 +16164,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16048,11 +16248,11 @@
     },
     {
      "id": 110,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1008,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16066,6 +16266,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16140,11 +16350,11 @@
     },
     {
      "id": 114,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1424,
      "y": 384,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16158,6 +16368,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16232,11 +16452,11 @@
     },
     {
      "id": 118,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1792,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16250,6 +16470,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16324,11 +16554,11 @@
     },
     {
      "id": 122,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2208,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16342,6 +16572,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16416,11 +16656,11 @@
     },
     {
      "id": 126,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 448,
      "y": 400,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16434,6 +16674,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16508,11 +16758,11 @@
     },
     {
      "id": 130,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 832,
      "y": 416,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16526,6 +16776,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16600,11 +16860,11 @@
     },
     {
      "id": 134,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1280,
      "y": 416,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16618,6 +16878,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16692,11 +16962,11 @@
     },
     {
      "id": 138,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2096,
      "y": 432,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16710,6 +16980,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -16810,21 +17090,26 @@
      "name": "mf4Wegweiser",
      "type": "moebel",
      "x": 2288,
-     "y": 160,
+     "y": 163,
      "width": 16,
-     "height": 32,
+     "height": 27,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 182
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,5"
       }
      ]
     },

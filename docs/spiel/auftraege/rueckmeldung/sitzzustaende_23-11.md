@@ -6,7 +6,28 @@ genauso gut erzählt. Ziel: Der Autor muss in PixelLab weniger bauen. Dazu kamen
 mittel-1 aus Fotos mit echten Bildern: Ersatzfelder hinter der Wand und unter Dächern, die Mutter um
 18 Uhr neben statt auf dem Stuhl, ein Haarschopf zwischen den Nischenbänken des Diners.
 
-## Ergebnis
+## Zurückgebaut am 24.11.2026 (Widerspruch des Autors zu RO51)
+
+Der Autor: „Nicht realistisch, dass Leute ständig neben Sitzgelegenheiten stehen und sich nie
+setzen.“ Deshalb gilt wieder:
+
+- Die Sitzblöcke sitzen wieder auf ihrem Möbel (154 Blöcke). Solange eine Person kein Stuhlbild hat,
+  steht sie auf dem guten Stehplatz aus `stehplatz.py` daneben (`ohnesitzbild.json`, gefüllt von
+  `figurenzustaende --privat`). Kommt das Bild, sitzt sie von selbst.
+- Stehend bleiben nur Plätze ohne Stuhl in einer Fassung der Karte (15 Blöcke):
+  - Mutter abends und nachts im Wohnzimmer: Ihr Stuhl (18, 6) steht nur am Umzugstag.
+  - Big Joe, Graham Hale, Gus, Hank, Priya und Teague nachts in der Kantine: Die geräumte Fassung
+    (Akt 3, `ironwood-kantine-logo`) hat keine Stühle. Graham Hale, Gus, Priya und Teague fielen
+    erst beim Rückbau auf, weil die Prüfung jetzt jede Fassung sieht.
+- Hanks Satz in der Kantine bleibt „steht allein am Ende des Tischs“, bis er ein Sitzbild hat.
+- `WARTET_AUF_BILD` enthält wieder alle 56 fehlenden Zustände (54 Stuhl, 2 Liegen); Owen (hat sein Stuhlbild) und statist-18 (Typ Studentin) sind erledigt.
+- Für die Bildmappe: `buch/arbeit/zustaende/sitzauftrag.json` (nur lokal) nennt je Bild die
+  gebrauchten Sitzrichtungen aus dem Blick des Sitzmöbels; links und rechts sind ein gespiegeltes
+  Bild.
+
+Der Rest dieses Berichts beschreibt den Stand vom 23.11.2026.
+
+## Ergebnis (23.11.2026, zurückgebaut)
 
 - Von 56 fehlenden Zuständen bleiben 2: Lucia (Liegen) und Oma Ruth (Liegen), beide im Bett.
 - Die 156 Sitzblöcke der Tabelle unten sind Stehplätze neben dem Möbel geworden. Dazu kommen 5 Blöcke

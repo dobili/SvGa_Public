@@ -1,6 +1,6 @@
 /**
  * Ambrose als Begleiter (Wunsch des Autors, 24.11.2026; regeln/begleiter.ts, regeln/blickpunkte.ts):
- * Steht der Held im Park von Maple Falls zum ersten Mal in der Nähe des Kiosks (Blickpunkt aus
+ * Steht der Held im Park von Maple Falls zum ersten Mal in der Nähe der Skater (Blickpunkt aus
  * ambrose_blickpunkte.json), sagt Ambrose etwas dazu (Knoten aus ambrose-blick.ink). Solange er
  * spricht, steht er als Geist auf einem Nachbarfeld des Helden; der Held antwortet in Gedanken;
  * nach dem Gespräch ist der Geist weg, und der Blickpunkt kommt kein zweites Mal. Die Szene meldet
@@ -20,8 +20,8 @@ const KEIN_ZWEITER_MS = 4000;
 /** Ein Blickpunkt hat höchstens drei Zeilen, eine Wahl und eine Antwort. */
 const HOECHSTENS = 8;
 
-/** Feld im Park, drei Felder unter dem Kiosk (Blickpunkt auf 25,13 mit Radius 3), ohne Auslöser davor. */
-const POSITION = { karte: "mapleFalls.park", x: 25, y: 16, richtung: "unten" };
+/** Feld im Park, drei Felder über den Skatern (Blickpunkt auf 19,24 mit Radius 3), ohne Auslöser davor. */
+const POSITION = { karte: "mapleFalls.park", x: 19, y: 21, richtung: "unten" };
 
 /** Im Park, Ambrose ist wach (erste Lektion besprochen), alle Hinweise und Erklärungen gesehen. */
 const STAND = {
@@ -40,7 +40,7 @@ const STAND = {
   },
 };
 
-/** Spielt den Blickpunkt am Kiosk durch und prüft Geist, Gedankenwahl und Ausblenden. */
+/** Spielt den Blickpunkt an den Skatern durch und prüft Geist, Gedankenwahl und Ausblenden. */
 async function pruefeBlickpunkt(seite: Page, foto: string): Promise<void> {
   await starteMitStand(seite, STAND);
   const flaeche = seite.locator(".abenteuer-welt canvas");
@@ -71,13 +71,13 @@ async function pruefeBlickpunkt(seite: Page, foto: string): Promise<void> {
   await expect(dialog).toBeHidden();
 }
 
-test("Blickpunkt am Kiosk: Ambrose steht neben dem Helden und ist danach weg", async ({ page }) => {
+test("Blickpunkt an den Skatern: Ambrose steht neben dem Helden und ist danach weg", async ({ page }) => {
   await pruefeBlickpunkt(page, "blickpunkt-hoch");
 });
 
 test.describe("quer", () => {
   test.use(geraet("iPhone 15 landscape"));
-  test("Blickpunkt am Kiosk im Querformat", async ({ page }) => {
+  test("Blickpunkt an den Skatern im Querformat", async ({ page }) => {
     await pruefeBlickpunkt(page, "blickpunkt-quer");
   });
 });

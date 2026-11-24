@@ -52,13 +52,13 @@ der gewöhnliche Spieler brauchte vier bis fünf Anläufe.
 - **Ursache:** Feine Sperren an beiden Seiten des Treppenfußes ließen nur einen Gang frei, der
   genau auf der Grenze zwischen zwei Kacheln lag. Der Körper des Helden ist 12 Pixel breit. Gerade
   von Kachel 1 oder Kachel 2 aus stieß er links bzw. rechts an.
-- **Behoben:** Die Sperre an der Wandseite (Kachel 1, Spalte 0) ist entfernt, in allen drei
-  Fassungen des Wohnzimmers. Dahinter ist ohnehin die Wand. Jetzt geht es gerade von Kachel 1
-  hinauf, wie bei den Treppen im Obergeschoss und auf dem Dachboden. Alle drei Treppen haben jetzt
-  denselben Gang von 28 Pixeln. Die 4 Pixel an der Ostseite sind das Geländer und bleiben gesperrt;
-  wer von Kachel 2 kommt, rückt ein Stück nach links. Karten neu gebaut, `durchlass` 0 Befunde. Im
-  zweiten Lauf ging der eilige Spieler nach einmaligem Umplanen hinauf. Gleich verhält es sich an
-  den Treppen im Obergeschoss und auf dem Dachboden, auch beim gewöhnlichen Spieler.
+- **Behoben:** Der Treppenfuß ist über beide Kacheln frei (32 Pixel), in allen drei Fassungen
+  des Wohnzimmers; oben bleibt die Sperre der Treppe. Ein erster Schritt (nur die Wandseite frei,
+  28 Pixel wie bei den Treppen im Obergeschoss und auf dem Dachboden) reichte nicht: Im dritten Lauf
+  blieb der eilige Spieler wieder hängen, weil er von Kachel 2 kommt. Karten neu gebaut,
+  `durchlass` 0 Befunde. Seitdem geht er hinauf, höchstens nach einmaligem Umplanen. Die Treppen
+  im Obergeschoss und auf dem Dachboden (28 Pixel, Geländer an der Ostseite) sind unverändert; dort
+  plant er ebenfalls einmal um und kommt durch.
 
 **Befund 2: Doppelter Tipp gibt die erste Victor-Partie fast auf.** Vor der Partie im Clubraum
 kommt die Meldung „Neu im Tagebuch“. Der eilige Spieler tippt dort doppelt auf „Weiter“. Der zweite
@@ -71,4 +71,31 @@ aufgeben?“ da. Die Nachfrage verhinderte das Aufgeben, aber der Spieler wunder
 - **Im Durchlauf:** Er erkennt eine ungewollte Nachfrage, meldet sie als Fund und tippt
   „Weiterspielen“ (`partie.ts`). Vorher stand er dort bis zum Ende der Zeit.
 
-ERGEBNIS_DRITTER_LAUF
+**Lücken im Durchlauf selbst (behoben, keine Spielfehler):**
+
+- „steht davor, kein Aktionsknopf“ bei Coach Delgado, Sam, Ada, der Gegnerin an der Landstraße,
+  Jonah und den Zwillingen: Der Durchlauf kannte nur die Plätze der Karte. Im Spiel schliefen
+  sie nach den Tagesabläufen oder waren woanders. Das Kartenwissen stellt die Figuren jetzt mit
+  derselben Regel auf wie das Spiel (`uhrwelt.ts`, `nachUhr` mit Regel 1; Tests in
+  `uhrwelt.test.ts`). Dafür importiert `regeln/tagesablauf.ts` sein JSON mit Importattribut,
+  sonst lädt Node das Modul nicht.
+- „Steuerkreuz verdeckt von der Warteblende“: Beim Warten auf eine Uhrzeit deckt die Blende mit
+  Absicht alles ab. Der Durchlauf wartet sie jetzt ab (`eingabe.ts`).
+
+**Ergebnis:** Der letzte Lauf spielte Akt 1 vom Einzug bis zum Bahndamm (Akt 2 erreicht) in 36
+Minuten: 66 Kartenwechsel, 11 Partien, 10 Aufgabenrunden, 0 Funde. Dazu gehören keine
+Konsolenfehler, keine fehlenden Bilder und kein Hängen. Wie in Lauf 4 stand niemand im Weg.
+Figuren und Tiere erscheinen auf den Zwischenfotos in stimmiger Größe: Erwachsene, Kinder und Tiere
+im Verhältnis zueinander, innen größer wie vorgesehen.
+
+## 3. Prüfungen
+
+- pytest 1873 bestanden; ruff 0.14.0 ohne Befund; Stil, Typen; Vitest 3365 bestanden.
+- E2E (Chromium): `abenteuer-kartenwechsel`, `abenteuer-randfaelle`, `abenteuer-leserfassung`
+  mit dem neuen Aufgeben-Knopf: 12 bestanden, 4 übersprungen.
+- `kartenbau` und `durchlass` für die drei Wohnzimmer: in Ordnung, 0 Befunde.
+
+## Offen für den Autor
+
+- Bilder für Victoria (Porträt; Sitz- und Liegebilder wie bei Victor ebenfalls nicht vorhanden)
+  und für die Heldin (Sitz am Boden). Bis dahin gilt der Ersatz oben.

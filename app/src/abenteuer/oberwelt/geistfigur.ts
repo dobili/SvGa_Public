@@ -64,7 +64,8 @@ export function erscheinungsfeld(
  * gut einer Sekunde ein, schwebt wie jeder Geist und sperrt keinen Weg; er bleibt bis zum
  * Verlassen der Karte. Eingaben: Szene, Objektname (wird Name des Sprites, so findet ihn
  * figurblende.ts), Bildschlüssel und Bild des Bogens (Blick nach unten), Mitte des Feldes in
- * Pixeln, Ursprung y für die Fußkachel. Beispiel: Ambrose auf dem Dachboden über dem Brett.
+ * Pixeln, Ursprung y für die Fußkachel, Dauer des Einblendens (der Begleiter neben dem Helden
+ * blendet schneller ein, begleiterschicht.ts). Beispiel: Ambrose auf dem Dachboden über dem Brett.
  */
 export function lasseGeistErscheinen(
   szene: Phaser.Scene,
@@ -72,11 +73,12 @@ export function lasseGeistErscheinen(
   bild: { readonly schluessel: string; readonly nummer: number },
   mitte: { readonly x: number; readonly y: number },
   ursprungY: (sprite: Phaser.GameObjects.Sprite) => number,
+  dauer = ERSCHEINEN_MS,
 ): Phaser.GameObjects.Sprite {
   const sprite = szene.add.sprite(mitte.x, mitte.y, bild.schluessel, bild.nummer).setName(name);
   sprite.setOrigin(0.5, ursprungY(sprite)).setDepth(sprite.y);
   zeigeAlsGeist(szene, sprite);
   sprite.setAlpha(0);
-  szene.tweens.add({ targets: sprite, alpha: GEIST_DECKKRAFT, duration: ERSCHEINEN_MS });
+  szene.tweens.add({ targets: sprite, alpha: GEIST_DECKKRAFT, duration: dauer });
   return sprite;
 }

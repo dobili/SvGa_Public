@@ -83,6 +83,17 @@ export function tagsAus(tags: readonly string[] | null): Readonly<Record<string,
 }
 
 /**
+ * Die Knoten einer übersetzten Ink-Datei (ohne die Deklarationen), in der Reihenfolge der Datei.
+ * Warum: Die Hülle fragt, ob es zu einem Blickpunkt den Knoten gibt (oberwelt/useBlickpunkte.ts).
+ * Beispiel: ambrose-blick.json → [„blick_mapleFalls_dachboden_fenster“, …].
+ */
+export function knotennamenAus(json: string): readonly string[] {
+  return [...new Story(json).mainContentContainer.namedContent.keys()].filter(
+    (n) => !n.includes(" "),
+  );
+}
+
+/**
  * Eine laufende Geschichte. Erzeugen mit dem übersetzten JSON (Paket, dialoge/<sprache>/*.json),
  * dann `starte(knoten)` und wiederholt `weiter()` bzw. `waehle(index)`.
  */
@@ -200,6 +211,17 @@ export class Geschichte {
   wahlenNachZeile(): readonly string[] {
     if (this.story.canContinue) return [];
     return this.story.currentChoices.map((w) => w.text);
+  }
+
+  /**
+   * Welche der anstehenden Wahlen Gedanken des Helden sind (Wahl mit `#gedanke`, etwa
+   * `* [Ein Auto, Ambrose. #gedanke]`): ihre Indizes wie in `weiter()`. Der Dialog zeigt sie kursiv
+   * mit Gedankenzeichen; andere Figuren hören sie nicht (regeln/begleiter.ts).
+   * Beispiel: zwei Wahlen, nur die zweite mit `#gedanke` → { 1 }.
+   */
+  gedankenwahlen(): ReadonlySet<number> {
+    const wahlen = this.story.currentChoices;
+    return new Set(wahlen.flatMap((w, i) => ("gedanke" in tagsAus(w.tags) ? [i] : [])));
   }
 
   /**

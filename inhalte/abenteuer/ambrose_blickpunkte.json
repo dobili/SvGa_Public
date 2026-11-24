@@ -1,0 +1,14 @@
+[
+  {
+    "karte": "mapleFalls.dachboden",
+    "feld": [7, 1],
+    "radius": 2,
+    "knoten": "blick_mapleFalls_dachboden_fenster"
+  },
+  {
+    "karte": "mapleFalls.park",
+    "feld": [25, 13],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_park_kiosk"
+  }
+]

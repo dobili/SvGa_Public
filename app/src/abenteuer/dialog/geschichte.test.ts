@@ -6,7 +6,7 @@
 import { Compiler } from "inkjs/compiler/Compiler";
 import { CompilerOptions } from "inkjs/compiler/CompilerOptions";
 import { describe, expect, it } from "vitest";
-import { Geschichte, type Wirkungen } from "./geschichte";
+import { Geschichte, knotennamenAus, type Wirkungen } from "./geschichte";
 
 const INK = `
 EXTERNAL zeigeVorfuehrung(kennung)
@@ -155,5 +155,33 @@ describe("Geschichte: Wahlen gleich unter der Frage (R3)", () => {
     expect(g.wahlenNachZeile()).toEqual(["„Ich weiß nicht.“"]);
     g.waehle(0);
     expect(g.weiter()).toMatchObject({ zeile: { text: "Heute." } });
+  });
+});
+
+describe("Geschichte: Gedankenwahlen und Knotennamen", () => {
+  const GEDANKEN = `
+=== blick_probe ===
+Ein Park mit Bänken. #sprecher:ambrose
+* [„Guten Tag.“]
+    -> END
+* [Wir haben eins dabei. #gedanke]
+    Richtig. #sprecher:ambrose
+    -> END
+=== zweiter ===
+Ende.
+-> END
+`;
+  const json = new Compiler(GEDANKEN, ALLE_BESUCHE).Compile().ToJson() ?? "";
+
+  it("nennt die Wahlen mit #gedanke und zeigt den Tag nicht im Text", () => {
+    const g = new Geschichte(json, wirkungen([]), {}, "Kim");
+    g.starte("blick_probe");
+    g.weiter();
+    expect(g.wahlenNachZeile()).toEqual(["„Guten Tag.“", "Wir haben eins dabei."]);
+    expect([...g.gedankenwahlen()]).toEqual([1]);
+  });
+
+  it("knotennamenAus liefert die Knoten der Datei", () => {
+    expect(knotennamenAus(json)).toEqual(["blick_probe", "zweiter"]);
   });
 });

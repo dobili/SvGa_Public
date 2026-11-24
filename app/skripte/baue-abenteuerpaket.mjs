@@ -271,6 +271,8 @@ async function main() {
     "stellungsvorrat.json",
     // Aufbau der Porträtblätter (dialog/portraetblatt.ts): Fassung → Feld, Stimmung → Fassung.
     "portraetblatt.json",
+    // Blickpunkte: Stellen, zu denen Ambrose etwas sagt (regeln/blickpunkte.ts).
+    "ambrose_blickpunkte.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }

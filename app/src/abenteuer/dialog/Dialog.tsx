@@ -8,7 +8,9 @@
  * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3); `#bild:kennung` zeigt ein Bild groß über der
  * Zeile (dialog/Grossansicht.tsx, T7). `#erscheint` blendet das Porträt ein, `#geist` zeigt es halb
  * durchsichtig (T9); Figuren mit geist: true (Ambrose) sind sonst leicht durchsichtig, außer in
- * Erinnerungen (regeln/geist.ts); `#erinnerung` bis `#erinnerung:aus` zeigt den Dialog und die Karte in Sepia (T10); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
+ * Erinnerungen (regeln/geist.ts). Nur der Held hört den Geist (regeln/begleiter.ts): Seine Zeilen
+ * in Gesprächen mit anderen sind geflüstert (kursiv, „nur du hörst ihn“), `#gedanke` an Zeile oder
+ * Wahl zeigt einen Gedanken des Helden (kursiv mit Gedankenzeichen); `#erinnerung` bis `#erinnerung:aus` zeigt den Dialog und die Karte in Sepia (T10); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
  * Bedienung mit dem Daumen (docs/spiel/30): Antippen des Textes geht weiter wie „Weiter“; die
  * Lage von Wahlen und „Weiter“ (hoch und quer) regelt bedienung.css.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
@@ -24,6 +26,7 @@ import { Brettbeispiel } from "./Brettbeispiel";
 import { brettmarke } from "./brettmarke";
 import { Portraet } from "./Portraet";
 import { erscheinungDesPortraets } from "../regeln/geist";
+import { gefluestert, istGedanke, istGegenueber } from "../regeln/begleiter";
 import { useDialogfokus } from "./useDialogfokus";
 import { useGeistsprecher } from "./useGeistsprecher";
 import { useWahlschutz } from "./wahlschutz";
@@ -38,6 +41,11 @@ const ERZAEHLER = "erzaehler";
 function erinnerungNach(vorher: boolean, s: Dialogschritt): boolean {
   if (s.art !== "zeile" || s.zeile.tags.erinnerung === undefined) return vorher;
   return s.zeile.tags.erinnerung !== "aus";
+}
+
+/** Der Sprecher einer Zeile als Liste (leer ohne `#sprecher`), für die Merkliste des Dialogs. */
+function sprecherVon(s: Dialogschritt): readonly string[] {
+  return s.art === "zeile" && s.zeile.tags.sprecher ? [s.zeile.tags.sprecher] : [];
 }
 
 /**
@@ -100,6 +108,10 @@ export function Dialog({
   );
   const fenster = useRef<HTMLElement>(null);
   const geister = useGeistsprecher();
+  // Wer in diesem Gespräch schon gesprochen hat: Nach einer anderen Figur flüstert der Geist.
+  const [gesprochen, setzeGesprochen] = useState<readonly string[]>(() =>
+    letzteZeile?.art === "zeile" ? sprecherVon(letzteZeile) : [],
+  );
   useEffect(() => {
     // Musik, Geräusche und Klänge der Zeile (#musik, #geraeusch, #klang; ton/tonregie.ts).
     if (letzteZeile?.art === "zeile") {
@@ -142,6 +154,7 @@ export function Dialog({
       setzeWartet(dauerVon(naechster) > 0);
       setzeErinnerung((vorher) => erinnerungNach(vorher, naechster));
       setzeLetzteZeile(naechster);
+      setzeGesprochen((bisher) => [...new Set([...bisher, ...sprecherVon(naechster)])]);
     }
   };
 
@@ -168,6 +181,10 @@ export function Dialog({
   if (schritt.art === "ende") return null;
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;
   const sprecher = zeile?.tags.sprecher ?? ERZAEHLER;
+  const andereSprachen = gesprochen.some((name) => istGegenueber(name, geister));
+  const fluestert = gefluestert(zeile?.tags, geister, andereSprachen, erinnerung);
+  const gedanke = istGedanke(zeile?.tags);
+  const gedanken = schritt.art === "wahl" ? geschichte.gedankenwahlen() : null;
   const bild = zeile ? bildpfad(zeile.tags) : null;
   // Ein Brettbeispiel zur Zeile (#brett:kennung), wenn die Figur ein Konzept zeigt.
   const brett = zeile ? brettmarke(zeile.tags) : null;
@@ -195,14 +212,27 @@ export function Dialog({
             stimmung={zeile?.tags.stimmung ?? null}
             zeile={zeile?.text}
           />
-          <p className="abenteuer-dialog-sprecher">{tSpiel(`figur.${sprecher}.name`)}</p>
+          <p className="abenteuer-dialog-sprecher">
+            {tSpiel(`figur.${sprecher}.name`)}
+            {fluestert && (
+              <span className="abenteuer-dialog-fluestern" data-testid="abenteuer-fluestern">
+                {tSpiel("dialog.nurDu")}
+              </span>
+            )}
+          </p>
         </div>
+      )}
+      {gedanke && sprecher === ERZAEHLER && (
+        <p className="abenteuer-dialog-sprecher abenteuer-dialog-denkt">
+          {tSpiel("dialog.gedanke", { held: heldname })}
+        </p>
       )}
       {/* Antippen des Textes geht auch weiter (docs/spiel/30, Abschnitt 2); der Knopf bleibt für
           Tastatur und Vorleser, deshalb hier nur die Maus- und Fingergeste. */}
       <p
         className="abenteuer-dialog-text"
         data-weiter={textWeiter ? "ja" : undefined}
+        data-ton={fluestert ? "fluestern" : gedanke ? "gedanke" : undefined}
         onClick={textWeiter ? weiter : undefined}
       >
         {zeile?.text ?? ""}
@@ -214,6 +244,10 @@ export function Dialog({
               key={wahl}
               type="button"
               disabled={wartet || geschuetzt}
+              data-gedanke={gedanken?.has(i) ? "ja" : undefined}
+              aria-label={
+                gedanken?.has(i) ? tSpiel("dialog.gedankenwahl", { text: wahl }) : undefined
+              }
               onClick={() => waehle(i)}
             >
               {wahl}

@@ -382,3 +382,5 @@ function eingangsdialog(welt, st, karte) {
 nachBetreten.push(eingangsdialog);
 
 module.exports = { dialog, wendeFolgenAn };
+// Nach dem Export (Kreis): Die Blickpunkte tragen sich wie der Eingangsdialog in nachBetreten ein.
+require("./gesamtsimulation-blickpunkte.cjs");

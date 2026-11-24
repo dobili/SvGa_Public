@@ -7,8 +7,10 @@
  * Szene (mit zwei Sekunden Umblenden). Geführte Wege (`#gehe`, `#stelle`, gefuehrterweg.ts) gehen
  * an die Szene; solange einer läuft, meldet `laeuft` dem Dialog, dass er warten soll. `#uhr:abend`
  * oder `#uhr:22` stellt die Spieluhr (Geschichte geht vor, regeln/spieluhr.ts); am Dialogende gilt
- * dann das Licht der neuen Zeit.
- * Abhängigkeiten: kern.ts, buehne.ts, figurblende.ts, gefuehrterweg.ts, fuehrungsschicht.ts.
+ * dann das Licht der neuen Zeit. Spricht der Geist und steht er nicht auf der Karte, erscheint er
+ * als Begleiter neben dem Helden und blendet am Dialogende aus (begleiterschicht.ts).
+ * Abhängigkeiten: kern.ts, buehne.ts, figurblende.ts, gefuehrterweg.ts, fuehrungsschicht.ts,
+ * begleiterschicht.ts, regeln/begleiter.ts.
  */
 import { useRef, useState } from "react";
 import { fuehre, stehAuf, stelle } from "./fuehrungsschicht";
@@ -20,6 +22,10 @@ import { szeneAus, type Oberweltkern } from "./kern";
 import { zeigeKartenteilchen, zeigeTeilchen } from "./teilchen";
 import { spielminuteJetzt, uhrNachAngabe } from "../regeln/spieluhr";
 import { toenungJetzt } from "./uhrtoenung";
+import { verabschiedeBegleiter, zeigeBegleiter } from "./begleiterschicht";
+import { begleiterErscheint } from "../regeln/begleiter";
+import { geistsprecher } from "../regeln/geist";
+import { ambroseNichtDa } from "../regeln/abwesenheit";
 
 /** Rückrufe für den Dialog. */
 export interface Buehne {
@@ -47,6 +53,24 @@ export function useBuehne(k: Oberweltkern): Buehne {
     uhrGeaendert.current = true;
   };
   const [laeuft, setzeLaeuft] = useState(false);
+  // `#erinnerung` bis `#erinnerung:aus` im Dialog: Dort lebt Ambrose, kein Begleiter.
+  const erinnerung = useRef(false);
+  /** Der Geist spricht und steht nicht auf der Karte: Er erscheint neben dem Helden. */
+  const begleite = (tags: Readonly<Record<string, string>>) => {
+    if (tags.erinnerung !== undefined) erinnerung.current = tags.erinnerung !== "aus";
+    const szene = szeneAus(k.spiel);
+    const zugang = szene?.fuehrungszugang();
+    const welt = k.weltRef.current;
+    if (!szene || !zugang || !welt || !tags.sprecher) return;
+    const lage = {
+      sprecher: tags.sprecher,
+      geister: geistsprecher(welt.daten.orte),
+      erinnerung: welt.erinnerung || erinnerung.current,
+      nichtDa: ambroseNichtDa(k.standRef.current?.dialogvariablen ?? {}),
+      aufKarte: szene.children.getByName(tags.sprecher) !== null,
+    };
+    if (begleiterErscheint(lage)) zeigeBegleiter(zugang, tags.sprecher, szene.position().richtung);
+  };
   /** Versetzen sofort, dann alle Wege der Zeile zugleich; der Dialog wartet auf den letzten. */
   const gehe = (tags: Readonly<Record<string, string>>) => {
     const zugang = szeneAus(k.spiel)?.fuehrungszugang();
@@ -84,6 +108,7 @@ export function useBuehne(k: Oberweltkern): Buehne {
       const zugang = szene.fuehrungszugang();
       if (zugang && tags.sprecher) wendeZu(zugang, tags.sprecher);
       gehe(tags);
+      begleite(tags);
       stelleUhr(tags.uhr);
     },
     ende: () => {
@@ -91,6 +116,8 @@ export function useBuehne(k: Oberweltkern): Buehne {
       const zugang = szene?.fuehrungszugang();
       if (zugang) stehAuf(zugang);
       if (zugang) wendeZurueck(zugang);
+      if (szene) verabschiedeBegleiter(szene);
+      erinnerung.current = false;
       if (teilchenGeaendert.current && szene) zeigeKartenteilchen(szene);
       teilchenGeaendert.current = false;
       // Hat die Geschichte die Uhr gestellt, gilt danach das Licht der neuen Zeit (uhrtoenung.ts).

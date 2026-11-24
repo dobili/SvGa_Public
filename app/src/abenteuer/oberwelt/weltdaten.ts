@@ -132,19 +132,21 @@ async function figurenbilderFuer(
 }
 
 /**
- * Bögen der Geister des Ortes, die nicht auf dieser Karte stehen: Sie können im Dialog erscheinen
- * (`#erscheint`, szene.ts `erscheine`; Spieltest „einstieg“, R8). In Erinnerungen keine.
- * Beispiel: Dachboden ohne Ambrose-Objekt → { ambrose: "blob:…" }.
+ * Bögen der Geister, die nicht auf dieser Karte stehen: Sie können im Dialog erscheinen
+ * (`#erscheint`, szene.ts `erscheine`; Spieltest „einstieg“, R8) oder als Begleiter neben dem
+ * Helden (begleiterschicht.ts), und das an jedem Ort, nicht nur in ihrem. In Erinnerungen keine.
+ * Beispiel: Diner in Maple Falls oder Hafen von Lockport ohne Ambrose-Objekt → { ambrose: "blob:…" }.
  */
 async function erscheinungsbilderFuer(
-  ort: Ortdaten,
+  orte: readonly Ortdaten[],
   karte: object,
   erinnerung: boolean,
 ): Promise<Record<string, string>> {
   if (erinnerung) return {};
   const aufKarte = new Set(figurennamen(karte));
   const paare = await Promise.all(
-    ort.figuren
+    orte
+      .flatMap((ort) => ort.figuren)
       .filter((f) => f.geist === true && f.sprite)
       .map(async (f) => {
         const name = f.kennung.slice(f.kennung.indexOf(".") + 1);
@@ -252,7 +254,7 @@ export async function ladeWelt(
         `grafik/karten/${kartenkennung}${fassung.zustand ? `-${fassung.zustand}` : ""}.png`,
       ),
       belebungsbilderFuer(karte),
-      erscheinungsbilderFuer(fund.ort, karte, erinnerung),
+      erscheinungsbilderFuer(daten.orte, karte, erinnerung),
     ]);
   return {
     kennung: kartenkennung,

@@ -66,6 +66,38 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 - Bild (T7): `#bild:kennung` zeigt `bilder/<kennung>.webp` (privater Ordner `bilder/`, höchstens
   1024 Pixel breit) groß über der Zeile; „Weiter“ schließt es mit der Zeile. Fehlt die Datei,
   erscheint die Zeile ohne Bild.
+- Ambrose als Begleiter (Wunsch des Autors, 24.11.2026; `app/src/abenteuer/regeln/begleiter.ts`):
+  Jede Zeile mit `#sprecher:ambrose` in einem Dialog der Oberwelt lässt ihn ohne eigenen Tag als
+  Geist auf einem freien Feld neben dem Helden erscheinen (seitlich oder schräg dahinter); am
+  Dialogende blendet er aus. Nicht, wenn er schon auf der Karte steht (Dachboden, `#erscheint`),
+  nicht in Erinnerungen und nicht, solange er nicht da ist (Tiefpunkt bis Versöhnung, nach dem
+  Abschied). Nur der Held hört ihn: Hat im selben Dialog schon eine andere Figur gesprochen, steht
+  seine Zeile kursiv mit „nur du hörst ihn“; `#fluestern` an der Zeile erzwingt das (Einwurf, bevor
+  das Gegenüber spricht). Gedanken des Helden: `#gedanke` an einer Wahl in eckigen Klammern
+  (`* [Ein Auto, Ambrose. #gedanke]`) zeigt sie kursiv mit Gedankenzeichen; `#gedanke` an einer
+  Zeile ohne Sprecher zeigt sie als „{held} denkt“. Andere Figuren antworten darauf nicht.
+- Blickpunkte (`ambrose_blickpunkte.json`, `dialoge/de/ambrose-blick.ink`,
+  `app/src/abenteuer/regeln/blickpunkte.ts`): Stellen, an denen Ambrose etwas sagt, wenn der Held
+  zum ersten Mal vorbeikommt, mehrere je Karte; kein Kommentar beim Betreten einer Karte. Ein
+  Eintrag: `{ "karte": "mapleFalls.park", "feld": [25, 13], "radius": 3, "knoten":
+  "blick_mapleFalls_park_kiosk", "wann": "<Bedingung, optional>" }` (Feld der Szene in Kacheln,
+  Radius 2 bis 4 als Luftlinie von Feld zu Feld, `wann` in der Sprache der Bedingungen, meist eine
+  Variable). Der Knoten gleichen Namens steht in `ambrose-blick.ink`. Die Hülle löst aus, wenn der
+  Held im Radius ist, Ambrose da und wach ist, kein Fenster und keine Meldung offen ist, kein
+  Eingangsdialog und keine Rückmeldung ansteht, kein Aktionsknopf zu sehen ist, 1,5 s Ruhe nach
+  Kartenwechsel oder Fenster vorbei sind und der letzte Blickpunkt 30 s freie Spielzeit
+  zurückliegt. Sie merkt das selbst in `<knoten>_gesehen` (beim Öffnen); die Ink-Datei legt diese
+  Variablen nicht an. Prüfung: `python -m pipeline.abenteuer.blickpunkte` (Eintrag und Knoten
+  paarweise, Feld auf der Karte, erreichbares Feld im Radius, nicht im Eingang der Karte). Die
+  Gesamtsimulation spielt beim Betreten einer Karte alle fälligen Stellen
+  (`gesamtsimulation-blickpunkte.cjs`).
+- Ambrose zu Dingen: Steht das Ding auf der Karte, bekommt es einen Blickpunkt (oben). Soll der
+  Spieler es selbst ansehen können, ist es ein Auslöser der Karte mit `"art": "gegenstand"` und
+  `"dialog": "ansehen-<ort>.<knoten>"` in `orte.json` (Aktionsknopf „Ansehen“; Beispiele in
+  `ansehen-maple-falls.ink`). Ambroses Kommentar ist dort eine gewöhnliche Zeile
+  `#sprecher:ambrose` in `{not abschiedGesehen: …}`, im Haus dazu erst ab `ersteLektionBesprochen`;
+  je Gegenstand merkt eine Variable `angesehen…`, ob er schon angesehen wurde. Der Geist erscheint
+  dabei von selbst neben dem Helden. Das braucht ein Objekt in der Auslöser-Ebene der Karte.
 - Externe Funktionen (`EXTERNAL`) führt die React-Hülle aus und schreibt in den Spielstand:
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
   `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,

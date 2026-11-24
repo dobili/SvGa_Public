@@ -2391,10 +2391,10 @@
     {
       "name": "landvermesser",
       "typ": "statist",
-      "feld": [17, 75],
+      "feld": [16, 75],
       "eigenschaften": {
-        "von": "17,75",
-        "bis": "17,92",
+        "von": "16,75",
+        "bis": "16,92",
         "tun": "misst den Treidelpfad aus",
         "wann": "tag",
         "sagt": "statist.wegRivertonIronwood.kanalweg.landvermesser"

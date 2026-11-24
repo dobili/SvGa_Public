@@ -43,10 +43,9 @@ from pipeline.abenteuer.klippe import (
     grasboden,
     klippenbogen,
     klippenfeld,
-    strassenzeichen,
-    treppenfelder,
     vorhandene_fassung,
 )
+from pipeline.abenteuer.klippenbild import veredle
 from pipeline.abenteuer.moebelbefunde import bildbefunde, mattenbefunde, moebelbild
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektform import formbild, mit_deckkraft
@@ -228,10 +227,8 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (sonder.get(z, grund), feld)
-    if klippe:
-        for x, y, feld in treppenfelder(zeilen, strassenzeichen(szene)):
-            bild.alpha_composite(kachel(privat, boegen, klippenart, list(feld)), (x * K, y * K))
-    elif not wandart and not wand.get("ohne_rand"):  # „ohne_rand“: dunkle Krone im Stollen
+    # Mit Klippen zeichnet klippenbild.veredle (in ``zeichne``) Wand, Schatten und Treppen fertig.
+    if not klippe and not wandart and not wand.get("ohne_rand"):  # „ohne_rand“: dunkle Krone im Stollen
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
 
@@ -333,6 +330,7 @@ def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
     grund = hintergrund(szene, privat, gezeichnet)
     mat = lade(INHALTE / "materialien.json")
     grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
+    grund = veredle(szene, grund, privat)  # Felskanten als Gelände (nach der Bodenvariation)
     ergaenzt = randergaenzt(raster(szene), "wandart" in szene)
     markiere(grund, ergaenzt, szene, gezeichnet, mat["boeden"])
     # Zuletzt die weichen Ränder von Wegen und Wasser (weichrand.py): über Variation und Säumen.

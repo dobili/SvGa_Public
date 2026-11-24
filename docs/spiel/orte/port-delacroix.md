@@ -421,3 +421,11 @@ Regentropfen als Teilchen, Pfützen und nass glänzendes Pflaster als Bodenbilde
 Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibung in der Szenendatei gilt.
 
 - `portDelacroix.turnhalle` (22 × 16): Mittelgang und rechter Rand je eine Spalte schmaler, acht Klapptische bleiben, ein Basketballkorb. Lehrertisch mit Spendenkasse etwas weiter rechts. Außen braucht die Halle ein größeres Bild (Vorschlag `pd6Turnhalle`, 13 × 8), siehe raumgroesse_16-11.md.
+
+## RO53.5 (24.11.2026): Winter ohne Schnee
+
+Außen (Grundkarte und Zustand Musikhaus neu) mit `"jahreszeit": "winter_mild"`: fahles Gras, kahle
+Laubbäume, gedämpfte Büsche; Regen und nasse Straßen bleiben (RO21). Damit passt der Ort zu Deich
+und Fähre. Werkstatt, Musikhaus und Turnhalle bleiben ohne Jahreszeit: ihre Fenster zeigen nur Glas.
+Der Canyonpfad nach Desert Springs bleibt ohne Jahreszeit (erste Wärme, blühende Kakteen), ebenso
+das Bayou, das im Winter und im Sommer besucht wird (delta.md).

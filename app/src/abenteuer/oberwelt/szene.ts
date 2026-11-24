@@ -46,7 +46,7 @@ import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
 import { zeigeTeilchen } from "./teilchen";
 import { Toenungsschicht } from "./toenungsschicht";
-import { faerbeJahreszeitlich } from "./jahreszeitfarben";
+import { faerbeJahreszeitlich, mitSchnee } from "./jahreszeitfarben";
 import { liesBelebung, type Belebung, type Feld } from "./belebung";
 import { Belebungsschicht, ladeBelebungsbilder } from "./belebungsschicht";
 import type { Szenendaten } from "./szenentypen";
@@ -177,8 +177,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.ausloeser = liesAusloeserAus(karte);
     this.pause = EINGABEPAUSE_MS;
     const liste = this.daten.moebel ?? [];
-    if (this.daten.jahreszeit)
-      faerbeJahreszeitlich(this, teileJeTextur(liste), this.daten.jahreszeit);
+    faerbeJahreszeitlich(this, teileJeTextur(liste), this.daten.jahreszeit ?? null);
     richteMoebelrahmenEin(this, liste);
     // Sitzende rücken auf ihr Möbel (sitzplatz.ts); gemessen am geladenen Bild (sitzumriss.ts).
     const sitze = sitzmoebelAus(liste, KACHEL, sichtbarMesser(this));
@@ -195,11 +194,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.belebungsschicht = schicht;
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
-    zeigeTeilchen(
-      this,
-      this.daten.jahreszeit === "winter" ? "schnee" : (this.daten.teilchen ?? null),
-      true,
-    );
+    zeigeTeilchen(this, mitSchnee(this.daten.jahreszeit, this.daten.teilchen), true);
     this.tasten = pfeiltasten(this.input.keyboard);
     this.gangart = new Gangartsteuerung(this.daten.rennenErlaubt === true, this.input.keyboard);
   }

@@ -13,6 +13,7 @@
  */
 import type Phaser from "phaser";
 import { kahl } from "./kahlbaum";
+import type { Teilchenart } from "./teilchen";
 import { dachschnee, faerbeMoebelDaten, hls, laub, winterlaub } from "./winter";
 
 /** Die Jahreszeiten einer Karte (ohne Eigenschaft: wie die Bilder der Pakete). */
@@ -108,6 +109,14 @@ export interface Texturteil {
   readonly sorte: Sorte;
 }
 
+/** Die Teilchen der Karte: Schnee im Winter mit Schnee, sonst die eigenen (T8) oder keine. */
+export function mitSchnee(
+  zeit: Jahreszeit | null | undefined,
+  teilchen: Teilchenart | null | undefined,
+): Teilchenart | null {
+  return zeit === "winter" ? "schnee" : (teilchen ?? null);
+}
+
 /**
  * Ersetzt geladene Texturen durch umgefärbte Leinwände (gleicher Schlüssel). Jedes Möbel auf einem
  * Bogen wird für sich gefärbt (eigene Schneekappe, eigener kahler Baum). Die Rahmen der Textur gehen
@@ -116,8 +125,9 @@ export interface Texturteil {
 export function faerbeJahreszeitlich(
   szene: Phaser.Scene,
   teile: ReadonlyMap<string, readonly Texturteil[]>,
-  zeit: Jahreszeit,
+  zeit: Jahreszeit | null,
 ): void {
+  if (!zeit) return; // ohne Jahreszeit bleiben die Bilder, wie sie sind
   for (const [s, liste] of teile) {
     if (!szene.textures.exists(s)) continue;
     const quelle = szene.textures.get(s).getSourceImage() as CanvasImageSource & {

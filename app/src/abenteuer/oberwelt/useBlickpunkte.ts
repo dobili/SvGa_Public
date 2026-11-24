@@ -79,8 +79,9 @@ function useBlickdaten(bereit: boolean): Blickdaten {
 
 /**
  * Löst den Blickpunkt aus, in dessen Nähe der Held gerade ist.
- * Eingaben: Kern der Oberwelt; `frei` (kein Fenster, keine Meldung, kein Warten, kein
- * Aktionsknopf); `oeffneDialog` aus useDialogende.ts.
+ * Eingaben: Kern der Oberwelt; `frei` (kein Fenster, keine Meldung, kein Warten); `haelt` (ein
+ * Aktionsknopf ist da: kein Blickpunkt, aber die Ruhe beginnt nicht neu); `oeffneDialog` aus
+ * useDialogende.ts.
  * Beispiel: Der Held geht im Park von Maple Falls am Kiosk vorbei → „ambrose-blick.
  * blick_mapleFalls_park_kiosk“ öffnet sich, einmal.
  * Sonderfälle: Die Variable wird beim Öffnen gesetzt, nicht am Ende; wer den Dialog mit „Zurück“
@@ -90,15 +91,18 @@ function useBlickdaten(bereit: boolean): Blickdaten {
 export function useBlickpunkte(
   k: Oberweltkern,
   frei: boolean,
+  haelt: boolean,
   oeffneDialog: (verweis: string) => void,
 ): void {
   const karte = k.welt?.kennung ?? null;
   const daten = useBlickdaten(karte !== null);
   const freiRef = useRef(frei);
+  const haeltRef = useRef(haelt);
   const oeffne = useRef(oeffneDialog);
   const uhr = useRef(BLICKUHR_START);
   useEffect(() => {
     freiRef.current = frei;
+    haeltRef.current = haelt;
     oeffne.current = oeffneDialog;
   });
   const hatPunkte = karte !== null && daten.punkte.some((p) => p.karte === karte);
@@ -113,8 +117,8 @@ export function useBlickpunkte(
       const variablen = stand.dialogvariablen;
       const wartet =
         Boolean(stand.rueckmeldungOffen) || eingangsdialog(welt.ort, karte, variablen) !== null;
-      uhr.current = blicktakt(uhr.current, TAKT_MS, freiRef.current && !wartet);
-      if (!blickBereit(uhr.current)) return;
+      uhr.current = blicktakt(uhr.current, TAKT_MS, freiRef.current && !wartet, haeltRef.current);
+      if (haeltRef.current || !blickBereit(uhr.current)) return;
       const { x, y } = szene.position();
       const punkt = blickpunktHier(daten.punkte, { karte, x, y, variablen, knoten: daten.knoten });
       if (!punkt) return;

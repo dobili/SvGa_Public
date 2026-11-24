@@ -387,6 +387,8 @@ body.abenteuer-mit-kulisse {
   font-style: italic;
   font-weight: 400;
   opacity: 0.75;
+  /* Als Ganzes umbrechen, nicht „nur / du hörst ihn“ (Querformat, Blickprobe 24.11.2026). */
+  white-space: nowrap;
 }
 
 .abenteuer-dialog-fluestern::before {

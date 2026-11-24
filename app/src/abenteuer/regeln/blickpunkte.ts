@@ -124,12 +124,16 @@ export interface Blickuhr {
 export const BLICKUHR_START: Blickuhr = { ruheMs: 0, seitLetztemMs: BLICKPAUSE_MS };
 
 /**
- * Ein Takt der Uhr. Ist die Welt nicht frei (Fenster, Meldung, Aktionsknopf), beginnt die Ruhe
- * neu, und die Pause steht: Sie zählt nur freie Spielzeit. Sonst laufen beide weiter.
+ * Ein Takt der Uhr. Ist die Welt nicht frei (Fenster, Meldung, Warten), beginnt die Ruhe neu, und
+ * die Pause steht: Sie zählt nur freie Spielzeit. Ein Aktionsknopf (`haelt`) hält beide nur an:
+ * Wer in einem möblierten Raum an Dingen mit „Ansehen“ vorbeigeht, soll die Ruhe nicht jedes Mal
+ * neu abwarten (Blickprobe 24.11.2026: Fenster im Kinderzimmer kam von Westen nie). Sonst laufen
+ * beide weiter.
  * Beispiel: 1500 ms frei nach der Ankunft → die Ruhe ist vorbei (blickBereit).
  */
-export function blicktakt(uhr: Blickuhr, deltaMs: number, frei: boolean): Blickuhr {
+export function blicktakt(uhr: Blickuhr, deltaMs: number, frei: boolean, haelt = false): Blickuhr {
   if (!frei) return { ...uhr, ruheMs: 0 };
+  if (haelt) return uhr;
   return { ruheMs: uhr.ruheMs + deltaMs, seitLetztemMs: uhr.seitLetztemMs + deltaMs };
 }
 

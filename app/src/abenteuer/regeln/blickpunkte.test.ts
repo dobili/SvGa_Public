@@ -121,6 +121,14 @@ describe("Blickpunkte: Ankunftsruhe und Pause", () => {
     expect(blickBereit(laufe(BLICKUHR_START, TAKTE_RUHE))).toBe(true);
   });
 
+  it("ein Aktionsknopf hält die Uhr nur an, die Ruhe beginnt nicht neu", () => {
+    const halb = laufe(BLICKUHR_START, TAKTE_RUHE - 1);
+    let u = halb;
+    for (let i = 0; i < 4; i++) u = blicktakt(u, TAKT, true, true);
+    expect(u).toEqual(halb);
+    expect(blickBereit(laufe(u, 1))).toBe(true);
+  });
+
   it("nicht während ein Fenster offen ist; danach beginnt die Ruhe neu", () => {
     const bereit = laufe(BLICKUHR_START, TAKTE_RUHE);
     const imDialog = laufe(bereit, 4, false);

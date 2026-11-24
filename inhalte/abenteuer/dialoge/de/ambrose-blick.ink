@@ -680,8 +680,8 @@ Die Zeit kann also auch etwas Schönes hinterlassen. Das tröstet einen wie mich
 
 === blick_sternwarte_felsnase_sterne ===
 {ambroseFehlt(): -> END}
-So viele Sterne. In New Orleans haben die Gaslaternen die Hälfte davon verschluckt. #sprecher:ambrose #stimmung:ueberrascht
-Hier oben fehlt keiner. Man möchte den Hut abnehmen. #sprecher:ambrose #stimmung:friedlich
+So viel Himmel. In New Orleans haben die Gaslaternen nachts die Hälfte der Sterne verschluckt. #sprecher:ambrose #stimmung:ueberrascht
+Hier oben fehlt bei Nacht bestimmt keiner. Man möchte den Hut abnehmen. #sprecher:ambrose #stimmung:friedlich
 * [Kennst du die Sternbilder? #gedanke]
     Den Großen Wagen und zwei, die ich mir selbst ausgedacht habe. Eines hieß der Hängende Läufer. #sprecher:ambrose #stimmung:lacht
 * [Ob da oben jemand Schach spielt? #gedanke]
@@ -1134,10 +1134,10 @@ Der Kutscher sitzt vorn links hinter Glas. Dann friert er wenigstens nicht. #spr
 
 === blick_mapleFalls_aussen_lastwagen ===
 {ambroseFehlt(): -> END}
-Zehn Räder habe ich gezählt, und dann aufgehört. Zu meiner Zeit hatte ein reicher Mann vier, und zwei davon quietschten. #sprecher:ambrose #stimmung:ueberrascht
+Hier stand der Wagen, mit dem ihr gekommen seid. Zehn Räder habe ich gezählt, und dann aufgehört. Zu meiner Zeit hatte ein reicher Mann vier, und zwei davon quietschten. #sprecher:ambrose #stimmung:ueberrascht
 * [Darin waren alle unsere Sachen. #gedanke]
     Ein ganzes Leben auf zehn Rädern. Und nichts ist zerbrochen? Dann achte ich den Kutscher. #sprecher:ambrose #stimmung:laechelt
-* [Der ist noch ein kleiner. #gedanke]
+* [Das war noch ein kleiner. #gedanke]
     Ein kleiner! Herrje. Dann möchte ich dem großen lieber nicht begegnen. #sprecher:ambrose #stimmung:lacht
 - -> END
 

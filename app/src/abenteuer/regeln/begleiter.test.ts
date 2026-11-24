@@ -38,8 +38,15 @@ describe("Feld neben dem Helden", () => {
     }
   });
 
-  it("rechts vom Blick aus: beim Blick nach rechts steht er unter dem Helden", () => {
-    expect(begleiterfeld(HELD, "rechts", ueberall)).toEqual({ x: 5, y: 6 });
+  it("waagrechter Blick: schräg hinten oben zuerst, unter dem Helden zuletzt", () => {
+    expect(begleiterfelder(HELD, "rechts")).toEqual([
+      { x: 4, y: 4 },
+      { x: 5, y: 4 },
+      { x: 4, y: 5 },
+      { x: 4, y: 6 },
+      { x: 5, y: 6 },
+    ]);
+    expect(begleiterfeld(HELD, "links", ueberall)).toEqual({ x: 6, y: 4 });
     expect(begleiterfeld(HELD, "unten", ueberall)).toEqual({ x: 4, y: 5 });
   });
 

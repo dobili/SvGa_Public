@@ -34,7 +34,11 @@ const VORWAERTS: Readonly<Record<Blick, readonly [number, number]>> = {
  * Die Nachbarfelder, auf denen der Begleiter stehen darf, in der Reihenfolge der Vorliebe:
  * seitlich rechts, seitlich links, schräg hinten rechts, schräg hinten links, zuletzt direkt
  * dahinter. Nie vor dem Helden: Dort steht, mit wem er spricht.
- * Beispiel: Held auf (5, 5) mit Blick nach oben → (6, 5), (4, 5), (6, 6), (4, 6), (5, 6).
+ * Schaut der Held nach links oder rechts, wäre „seitlich“ oben oder unten; unter dem Helden
+ * verdeckt der Geist dessen Beine (Blickprobe 24.11.2026, Mrs. Calloway). Dann zuerst schräg hinten
+ * oben, oben, dahinter, und die Felder unter dem Helden zuletzt.
+ * Beispiel: Held auf (5, 5) mit Blick nach oben → (6, 5), (4, 5), (6, 6), (4, 6), (5, 6);
+ * mit Blick nach rechts → (4, 4), (5, 4), (4, 5), (4, 6), (5, 6).
  */
 export function begleiterfelder(held: Kachelfeld, blick: Blick): readonly Kachelfeld[] {
   const [vx, vy] = VORWAERTS[blick];
@@ -44,7 +48,10 @@ export function begleiterfelder(held: Kachelfeld, blick: Blick): readonly Kachel
     x: held.x + seite * rx - zurueck * vx,
     y: held.y + seite * ry - zurueck * vy,
   });
-  return [feld(1, 0), feld(-1, 0), feld(1, 1), feld(-1, 1), feld(0, 1)];
+  if (vx === 0) return [feld(1, 0), feld(-1, 0), feld(1, 1), feld(-1, 1), feld(0, 1)];
+  // Waagrechter Blick: „oben“ ist die Seite, deren Feld eine Zeile höher liegt.
+  const oben = ry < 0 ? 1 : -1;
+  return [feld(oben, 1), feld(oben, 0), feld(0, 1), feld(-oben, 1), feld(-oben, 0)];
 }
 
 /**

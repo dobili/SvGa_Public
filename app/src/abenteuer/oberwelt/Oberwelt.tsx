@@ -138,7 +138,7 @@ export function Oberwelt() {
     draussen: welt !== null && !welt.innen,
   });
   const ungestoert = weltFrei && !warten.offen && hinweis.aktiv === null;
-  useBlickpunkte(k, ungestoert && treffer === null, oeffneDialog);
+  useBlickpunkte(k, ungestoert, treffer !== null, oeffneDialog);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     if (gedrueckt) hinweis.benutzt("steuerkreuz");

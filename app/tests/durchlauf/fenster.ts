@@ -45,6 +45,8 @@ export function neuesFenstergedaechtnis(): Fenstergedaechtnis {
   };
 }
 
+/** So lange wartet der Lauf, bis gerade erschienene Wahlen tippbar werden (ms, wahlschutz.ts). */
+const WAHLSCHUTZ_WARTEN_MS = 100;
 /** So lange wartet der schwache Spieler nach dem Neuladen im Gespräch (ms). */
 const NEULADEN_DIALOG_MS = 2000;
 /** So lange darf ein Fenster ohne tippbaren Knopf stehen, bevor es ein Fund ist (ms). */
@@ -138,6 +140,13 @@ export async function bedieneDialog(lauf: Lauf, lage: Lage, g: Fenstergedaechtni
     merke(lauf, g, `${d.sprecher}: ${d.text}`);
   }
   const seite = lauf.seite;
+  if (d.wahlen.length > 0 && !d.wahlenFrei) {
+    // Neue Wahlen nehmen kurz keinen Tipp an (wahlschutz.ts). Vorher wählte der Lauf schon, der
+    // Tipp verpuffte, und beim zweiten Anlauf galt die Antwort als genommen: Am Viehgitter nahm
+    // der schwache Spieler so nie „Eine Stellung.“, nur „Später.“ (Querformat, 24.11.2026).
+    await seite.waitForTimeout(WAHLSCHUTZ_WARTEN_MS);
+    return;
+  }
   if (d.wahlen.length > 0) {
     const eilig = lauf.eilig.antwort(d.text, d.wahlen);
     if (eilig !== null) merkeWahl(g, d.text, d.wahlen[eilig] ?? "");

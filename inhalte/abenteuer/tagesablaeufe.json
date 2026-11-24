@@ -2350,18 +2350,16 @@
           "von": 18,
           "bis": 21,
           "karte": "sternwarte.felsnase",
-          "feld": [7, 8],
-          "tut": "steht",
-          "blick": "unten"
+          "feld": [8, 9],
+          "tut": "sitzt"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 23,
           "karte": "sternwarte.felsnase",
-          "feld": [7, 8],
-          "tut": "steht",
-          "blick": "unten"
+          "feld": [8, 9],
+          "tut": "sitzt"
         },
         {
           "art": "schlaf",
@@ -2376,9 +2374,8 @@
           "von": 2,
           "bis": 6,
           "karte": "sternwarte.felsnase",
-          "feld": [7, 8],
-          "tut": "steht",
-          "blick": "unten"
+          "feld": [8, 9],
+          "tut": "sitzt"
         }
       ]
     },
@@ -2599,18 +2596,16 @@
           "von": 18,
           "bis": 21,
           "karte": "sternwarte.felsnase",
-          "feld": [6, 5],
-          "tut": "steht",
-          "blick": "unten"
+          "feld": [9, 9],
+          "tut": "sitzt"
         },
         {
           "art": "nacht",
           "von": 21,
           "bis": 2,
           "karte": "sternwarte.felsnase",
-          "feld": [6, 5],
-          "tut": "steht",
-          "blick": "unten"
+          "feld": [9, 9],
+          "tut": "sitzt"
         },
         {
           "art": "schlaf",
@@ -2622,9 +2617,8 @@
           "von": 5,
           "bis": 6,
           "karte": "sternwarte.felsnase",
-          "feld": [6, 5],
-          "tut": "steht",
-          "blick": "unten"
+          "feld": [9, 9],
+          "tut": "sitzt"
         }
       ]
     },

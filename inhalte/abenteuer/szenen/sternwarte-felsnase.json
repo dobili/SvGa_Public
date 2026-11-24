@@ -53,6 +53,11 @@
       "id": "bankWest"
     },
     {
+      "moebel": "gc7Bank",
+      "feld": [7, 9],
+      "id": "bankSued"
+    },
+    {
       "moebel": "iwStrommast",
       "feld": [33, 3]
     },

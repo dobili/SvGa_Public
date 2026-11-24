@@ -88,12 +88,18 @@
     "lou": {
       "portDelacroix.aussen@4,14": [4, 15]
     },
+    "lucia": {
+      "sternwarte.felsnase@8,9": [8, 10]
+    },
     "marcus": {
       "capitalArena.innenstadt@30,51": [30, 49],
       "capitalArena.ubahnhof@3,9": [3, 10]
     },
     "mira": {
       "desertSprings.aussen@20,6": [19, 6]
+    },
+    "ngata": {
+      "sternwarte.felsnase@9,9": [9, 10]
     },
     "odette": {
       "wegGhostCapital.seeufer@108,19": [108, 20]

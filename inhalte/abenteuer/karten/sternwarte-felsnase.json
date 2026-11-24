@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 34,
+ "nextobjectid": 35,
  "layers": [
   {
    "id": 1,
@@ -4123,6 +4123,29 @@
     },
     {
      "id": 19,
+     "name": "gc7Bank",
+     "type": "moebel",
+     "x": 112,
+     "y": 144,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 528,
@@ -4145,7 +4168,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 32,
@@ -4168,7 +4191,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 192,
@@ -4191,7 +4214,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 416,
@@ -4214,7 +4237,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 464,
@@ -4237,7 +4260,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 560,
@@ -4260,7 +4283,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 32,
@@ -4283,7 +4306,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 48,
@@ -4306,7 +4329,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 528,
@@ -4329,7 +4352,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 336,
@@ -4352,7 +4375,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 576,
@@ -4375,7 +4398,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 96,
@@ -4398,7 +4421,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 192,
@@ -4421,7 +4444,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "dd6SteinFlach",
      "type": "moebel",
      "x": 512,
@@ -4444,7 +4467,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "dd6SteinFlach",
      "type": "moebel",
      "x": 384,

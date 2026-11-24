@@ -88,8 +88,8 @@
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseee#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
@@ -1551,6 +1551,101 @@
       "moebel": "wds6Pinie",
       "feld": [33, 2],
       "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [12, 110],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [16, 109],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [21, 110],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [27, 110],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [32, 109]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [36, 110],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [8, 113],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [12, 113],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [18, 113],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [24, 111],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [28, 113],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [33, 111]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [21, 117],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [27, 117]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [1, 126],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [7, 125],
+      "versatz": [4, 0]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [27, 126],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [31, 126]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [37, 125],
+      "versatz": [-4, 0]
+    },
+    {
+      "moebel": "wds6Schranke",
+      "feld": [29, 74]
     }
   ],
   "ausloeser": [

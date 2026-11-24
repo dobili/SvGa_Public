@@ -2,7 +2,7 @@
  * Tests für blasenlage.ts: Die Sprechblase berührt das Brett nie (Wunsch des Autors, 19.11.2026).
  */
 import { describe, expect, it } from "vitest";
-import { BLASENABSTAND, brettfreieLage } from "./blasenlage";
+import { BLASENABSTAND, brettfreieLage, sperrflaeche } from "./blasenlage";
 
 const FENSTER = 667;
 // Hochformat wie iPhone SE: Brett von 150 bis 525, volle Breite.
@@ -47,5 +47,25 @@ describe("brettfreieLage", () => {
       bottom: FENSTER - BRETT.top + BLASENABSTAND,
       maxHeight: BRETT.top - 2 * BLASENABSTAND,
     });
+  });
+});
+
+describe("sperrflaeche (Spieler-Durchlauf Akt 4, 24.11.2026)", () => {
+  // „Weiter“ unter dem Brett, wie nach einer falschen Antwort im Hochformat.
+  const WEITER = { top: 560, bottom: 604, left: 12, right: 200 };
+
+  it("nimmt den Knopf unter dem Brett dazu, die Blase rückt über das Brett", () => {
+    const flaeche = sperrflaeche(BRETT, [WEITER]);
+    expect(flaeche).toEqual({ top: 150, bottom: 604, left: 0, right: 375 });
+    // Ambrose unten (594 bis 655) lag auf „Weiter“: jetzt über dem Brett.
+    expect(brettfreieLage(blase(594, 61), flaeche, FENSTER, "unten")).toEqual({
+      bottom: FENSTER - BRETT.top + BLASENABSTAND,
+    });
+  });
+
+  it("lässt Knöpfe neben dem Brett (Querformat) und unsichtbare weg", () => {
+    const rechts = { top: 200, bottom: 240, left: 400, right: 600 };
+    const leer = { top: 0, bottom: 0, left: 0, right: 0 };
+    expect(sperrflaeche(BRETT, [rechts, leer])).toEqual(BRETT);
   });
 });

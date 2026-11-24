@@ -62,3 +62,30 @@ export function brettfreieLage(
   const groesser = zuerst.platz >= sonst.platz ? zuerst : sonst;
   return { ...groesser.lage, maxHeight: Math.max(0, groesser.platz) };
 }
+
+/**
+ * Die Fläche, die eine Blase meiden muss: das Brett und die Hauptknöpfe direkt darunter oder
+ * darüber.
+ *
+ * Warum (Spieler-Durchlauf Akt 4 mit dem schwachen Spieler, 24.11.2026): Nach einer falschen
+ * Antwort erscheint unter dem Brett „Weiter“, und Ambrose spricht im selben Augenblick unten.
+ * Seine Blase lag dann sekundenlang auf dem Knopf, den der Spieler gerade braucht. Rückt die
+ * Blase über die ganze Fläche statt nur über das Brett, bleibt der Knopf frei.
+ * Eingaben: Rechteck des Bretts, Rechtecke der sichtbaren Hauptknöpfe.
+ * Ausgabe: das kleinste Rechteck um Brett und alle Knöpfe, die waagerecht unter oder über dem
+ * Brett liegen. Sonderfall: Knöpfe neben dem Brett (Querformat, rechte Spalte) zählen nicht, sonst
+ * fände die Blase dort keinen Platz mehr.
+ */
+export function sperrflaeche(brett: Rechteck, knoepfe: readonly Rechteck[]): Rechteck {
+  let flaeche = brett;
+  for (const k of knoepfe) {
+    if (k.left >= brett.right || k.right <= brett.left || k.bottom <= k.top) continue;
+    flaeche = {
+      top: Math.min(flaeche.top, k.top),
+      bottom: Math.max(flaeche.bottom, k.bottom),
+      left: Math.min(flaeche.left, k.left),
+      right: Math.max(flaeche.right, k.right),
+    };
+  }
+  return flaeche;
+}

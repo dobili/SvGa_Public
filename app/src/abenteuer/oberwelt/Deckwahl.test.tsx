@@ -60,3 +60,11 @@ describe("Deckwahl: Rückweg", () => {
     expect(html).toMatch(/<button[^>]*data-testid="abenteuer-deck-zurueck"[^>]*>Zurück<\/button>/);
   });
 });
+
+describe("Deckwahl: kurze Sperre nach dem Öffnen (useKurzsperre.ts)", () => {
+  it("sperrt „Los“ und „Zurück“ zuerst, damit ein doppelter Tipp die Wahl nicht schließt", () => {
+    const html = zeichne(false);
+    expect(html).toMatch(/<button[^>]*data-testid="abenteuer-deck-los"[^>]*disabled/);
+    expect(html).toMatch(/<button[^>]*data-testid="abenteuer-deck-zurueck"[^>]*disabled/);
+  });
+});

@@ -52,6 +52,8 @@ const OHNE_AUSGANG_MS = 25_000;
 const RUNDE_WIEDERHOLEN = 2;
 /** So viele gelesene Texte bleiben für Prüfungen im Gedächtnis. */
 const GELESEN_MAX = 60;
+/** So lange wartet der Spieler auf einen kurz gesperrten Knopf, bevor er wieder hinsieht (ms). */
+const KURZ_WARTEN_MS = 200;
 /**
  * So oft nimmt der Spieler dieselbe Antwort auf dieselbe Frage über alle Spielstände hinweg, bevor
  * sie nicht mehr als neu gilt. Warum: Revanchen („Noch eine?“ → „Spielen“) ändern nach jedem Sieg
@@ -331,6 +333,12 @@ export async function bedieneFenster(
   if (da("abenteuer-deckwahl") && !knoepfe.some((k) => k.kennung === "abenteuer-deck-los")) {
     // „Los“ liegt außerhalb des Bildes (Querformat): hinrollen wie ein Mensch und festhalten.
     const los = lauf.seite.getByTestId("abenteuer-deck-los");
+    // Kurz nach dem Öffnen ist „Los“ gesperrt (useKurzsperre.ts) und fehlt deshalb in der Lage:
+    // abwarten, kein Fund.
+    if (await los.isDisabled().catch(() => false)) {
+      await lauf.seite.waitForTimeout(KURZ_WARTEN_MS);
+      return true;
+    }
     await lauf.seite
       .screenshot({ path: `${lauf.messung.ordner}/bilder/deckwahl-ohne-los.png` })
       .catch(() => undefined);

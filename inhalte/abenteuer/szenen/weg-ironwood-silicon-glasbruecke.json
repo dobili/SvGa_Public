@@ -1043,36 +1043,36 @@
     {
       "name": "kameramann",
       "typ": "statist",
-      "feld": [70, 11],
+      "feld": [68, 13],
       "eigenschaften": {
         "tun": "sucht auf der Brücke den besten Platz für ein Stativ",
         "wann": "tag",
-        "von": "68,11",
-        "bis": "76,12",
+        "von": "68,13",
+        "bis": "76,13",
         "sagt": "statist.wegIronwoodSilicon.glasbruecke.kameramann"
       }
     },
     {
       "name": "techniker",
       "typ": "statist",
-      "feld": [100, 12],
+      "feld": [96, 10],
       "eigenschaften": {
         "tun": "misst mit einem Gerät die Funkwellen am Geländer",
         "wann": "tag",
-        "von": "96,11",
-        "bis": "104,12",
+        "von": "96,10",
+        "bis": "104,10",
         "sagt": "statist.wegIronwoodSilicon.glasbruecke.techniker"
       }
     },
     {
       "name": "rentnerin",
       "typ": "statist",
-      "feld": [58, 12],
+      "feld": [54, 10],
       "eigenschaften": {
         "tun": "schaut den Autos unter der Brücke zu",
         "wann": "tag",
-        "von": "54,11",
-        "bis": "62,12",
+        "von": "54,10",
+        "bis": "62,10",
         "sagt": "statist.wegIronwoodSilicon.glasbruecke.rentnerin"
       }
     },

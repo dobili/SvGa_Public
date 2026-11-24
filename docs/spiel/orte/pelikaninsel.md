@@ -154,3 +154,8 @@ Finkenzeichen aus Blech.
 
 Zwischen Silicon Bay (ohne Schnee) und Port Delacroix (Regen) liegt auch auf der Pelikaninsel kein
 Schnee mehr: kein `"jahreszeit": "winter"`, Gras und Dorfplatz sind grün; kalter Wind von See.
+
+## RO53.5 (24.11.2026): Winter ohne Schnee
+
+Das Dorf hat `"jahreszeit": "winter_mild"`: fahles Gras, kein Schnee (wie RO21), kahle Laubbäume.
+Gleiches gilt für den Deich auf dem Weg nach Port Delacroix.

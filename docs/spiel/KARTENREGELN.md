@@ -919,7 +919,14 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
 67. **Winter an Bäumen** (Gutachten Runde 8, Befund k). Im Winterzustand (`"jahreszeit": "winter"`)
     behält jeder Baum einen sichtbaren Stamm. Laubbäume sind kahl oder tragen Schnee auf der Krone,
     Nadelbäume bleiben dunkelgrün mit Schneekappen. Ein weißer Kreis ohne Stamm liest sich als
-    Schneeball und ist ein Befund.
+    Schneeball und ist ein Befund. Herbstlaub (Rot, Orange, Gelb) trägt die Kappe wie Grün; Häuser
+    tragen Schnee auf dem Dach bis zur Traufe (RO53.5).
+    **Winter ohne Schnee** (`"jahreszeit": "winter_mild"`, RO53.5 vom 24.11.2026): im Süden von
+    Akt 3 (Silicon Bay, Pelikaninsel, Weg nach Port Delacroix, Weg von Ironwood, Port Delacroix,
+    Bayou). Gras fahl, Laubbäume kahl (gezeichnete Äste in Stammfarbe), Büsche und Hecken gedämpft,
+    Schilf fahl; Nadelbäume und Häuser bleiben. Schnee (`winter`) nur im Norden und in den Bergen.
+    Zwei Karten, die zu Fuß aneinanderstoßen, springen nicht vom Schnee in den Sommer; Winter ohne
+    Schnee darf an beide grenzen. Prüfung: `python -m pipeline.abenteuer.jahreszeit`.
 68. **Übergänge, die ein Spieler trifft** (Befund des Autors beim ersten Spielen, 10.11.2026: vom
     Dachboden kam man nicht herunter). Ein Übergang löst nur aus, wenn der Held AUF einer Kachel
     des Auslösers steht. Deshalb:

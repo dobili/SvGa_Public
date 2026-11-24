@@ -12,6 +12,7 @@ import type { Weltposition } from "../schnittstelle/spielstand";
 import type { Belebungsbilder } from "./belebungsschicht";
 import type { Heldhaelfte } from "./heldhaelfte";
 import type { Moebel } from "./moebel";
+import type { Jahreszeit } from "./jahreszeitfarben";
 import type { Teilchenart } from "./teilchen";
 import type { Toenung } from "./toenung";
 
@@ -78,7 +79,7 @@ export interface Szenendaten {
   readonly stunde?: number; // Stunde der Spieluhr für die Statisten (`wann`); sonst die Uhr des Geräts
   readonly toenung?: Toenung | null; // Tönung der Karte (toenung.ts)
   readonly laterne?: boolean; // Der Held trägt eine Laterne (Lichtkreis bei „dunkel“)
-  /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen; sonst Teilchen der Karte (T8). */
-  readonly winter?: boolean;
+  /** Jahreszeit (jahreszeitfarben.ts): Möbel umfärben; „winter“ lässt Schnee fallen, sonst Teilchen (T8). */
+  readonly jahreszeit?: Jahreszeit | null;
   readonly teilchen?: Teilchenart | null;
 }

@@ -25175,6 +25175,11 @@
    "name": "kennung",
    "type": "string",
    "value": "wegSiliconDelacroix.deich"
+  },
+  {
+   "name": "jahreszeit",
+   "type": "string",
+   "value": "winter_mild"
   }
  ]
 }

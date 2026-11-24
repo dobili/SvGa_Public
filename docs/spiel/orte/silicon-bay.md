@@ -917,3 +917,11 @@ Diese Angaben ersetzen ältere Beschreibungen weiter oben; die Szenenbeschreibun
 
 - `siliconBay.akademie` (26 × 18): zwei Reihen weniger, eine Pflanze weniger; Nova steht neben dem Ringlicht.
 - `siliconBay.serverraum` (15 × 10): eine Spalte breiter, rechts neben dem Klimagerät eine verschlossene Tür mit Kartenleser (Auslöser `hintertuer`).
+
+## RO53.5 (24.11.2026): Winter ohne Schnee
+
+Altstadt, Glasbrücke und Raststätte haben `"jahreszeit": "winter_mild"`: fahles Gras, kahle
+Laubbäume, gedämpfte Hecken; Nadelbäume, Zypressen und Häuser bleiben. Die Raststätte lag noch im
+Schnee (Rest von vor RO21), die Glasbrücke daneben im Sommer; sie liegt an der Küste (Watt,
+Strand) und ist mit Ironwood nur über den Bus verbunden, deshalb ohne Schnee. Campus, Hafen und
+Innenräume bleiben ohne Jahreszeit (Glas, Kunstlicht). Prüfung: `pipeline/abenteuer/jahreszeit.py`.

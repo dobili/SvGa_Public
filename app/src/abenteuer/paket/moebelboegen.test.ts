@@ -1,13 +1,13 @@
 /**
  * Tests der Möbelbögen (skripte/moebelboegen.mjs) und ihrer Nutzung in der Szene
- * (oberwelt/moebel.ts: bildquelle, rahmenJeTextur) und ihrer Aufteilung je Ort
+ * (oberwelt/moebel.ts: bildquelle, teileJeTextur) und ihrer Aufteilung je Ort
  * (skripte/abenteuerpaket-moebel.mjs, lageFuer).
  */
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import { BOGEN_RAND, baueMoebelboegen, packeRegal } from "../../../skripte/moebelboegen.mjs";
 import { moebelJeOrt } from "../../../skripte/abenteuerpaket-moebel.mjs";
-import { bildquelle, lageFuer, rahmenJeTextur, type Moebel } from "../oberwelt/moebel";
+import { bildquelle, lageFuer, teileJeTextur, type Moebel } from "../oberwelt/moebel";
 
 /** Ein einfarbiges PNG. */
 function flaeche(breite: number, hoehe: number, rot: number): Promise<Buffer> {
@@ -122,9 +122,9 @@ describe("Möbel aus Bögen in der Szene", () => {
       { name: "a2", x: 32, y: 0, angabe, adresse: "blob:a", schluessel: "moebelbogen:o-1", rahmen },
       { name: "c", x: 0, y: 0, angabe, adresse: "blob:c", schluessel: "moebel:c" },
     ];
-    const karte = rahmenJeTextur(moebel);
+    const karte = teileJeTextur(moebel);
     expect(karte.get("moebelbogen:o-1")?.length).toBe(2);
-    expect(karte.get("moebel:c")).toEqual([]);
+    expect(karte.get("moebel:c")).toEqual([{ rahmen: null, sorte: "sonst" }]);
   });
 });
 

@@ -8910,6 +8910,11 @@
    "name": "kennung",
    "type": "string",
    "value": "pelikaninsel.dorf"
+  },
+  {
+   "name": "jahreszeit",
+   "type": "string",
+   "value": "winter_mild"
   }
  ]
 }

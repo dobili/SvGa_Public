@@ -97,7 +97,7 @@ def kachelebenen(zeilen: list[str], szene: dict) -> tuple[list[int], list[int]]:
 KARTENFELDER = ("toenung", "zustand_der_karte", "jahreszeit")
 TOENUNGEN = ("nebel", "dunst", "nacht", "abend", "serverblau", "sepia", "dunkel")
 # Winter färbt kartenbild um und lässt in der App Schnee fallen (Entscheidung 10.11.2026).
-JAHRESZEITEN = ("winter",)
+JAHRESZEITEN = ("winter", "winter_mild")  # winter.py: mit Schnee, ohne Schnee (RO53.5)
 
 
 def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) -> dict:

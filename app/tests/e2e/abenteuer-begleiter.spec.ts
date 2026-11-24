@@ -54,6 +54,12 @@ async function pruefeBlickpunkt(seite: Page, foto: string): Promise<void> {
   expect(abstand).toBe(1);
   // Die Antworten sind Gedanken des Helden.
   const gedanke = seite.locator(".abenteuer-dialog-wahlen button[data-gedanke='ja']");
+  // Vor der Wahl stehen bis zu drei Zeilen Ambrose (ambrose-blick.ink).
+  for (let i = 0; i < HOECHSTENS && !(await gedanke.first().isVisible()); i++) {
+    const weiter = seite.locator(".abenteuer-dialog-weiter");
+    if (await weiter.isEnabled().catch(() => false)) await weiter.click();
+    await seite.waitForTimeout(300);
+  }
   await expect(gedanke.first()).toBeVisible();
   // Einblenden abwarten, dann das Foto.
   if (FOTOS) await seite.waitForTimeout(800);
@@ -71,7 +77,9 @@ async function pruefeBlickpunkt(seite: Page, foto: string): Promise<void> {
   await expect(dialog).toBeHidden();
 }
 
-test("Blickpunkt an den Skatern: Ambrose steht neben dem Helden und ist danach weg", async ({ page }) => {
+test("Blickpunkt an den Skatern: Ambrose steht neben dem Helden und ist danach weg", async ({
+  page,
+}) => {
   await pruefeBlickpunkt(page, "blickpunkt-hoch");
 });
 

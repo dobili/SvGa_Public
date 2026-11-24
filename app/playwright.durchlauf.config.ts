@@ -29,6 +29,7 @@ export default defineConfig({
     "ansprechprobe.spec.ts",
     "neuladeprobe.spec.ts",
     "tierfoto.spec.ts",
+    "figurenwahlprobe.spec.ts",
     "verdeckungsfoto.spec.ts",
   ],
   timeout: (minuten + ZUSCHLAG_MINUTEN) * MS_JE_MINUTE,

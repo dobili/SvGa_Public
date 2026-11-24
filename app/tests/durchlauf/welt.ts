@@ -29,6 +29,7 @@ import { ohneAbwesende } from "../../src/abenteuer/regeln/abwesenheit";
 import { erfuellt } from "../../src/abenteuer/regeln/bedingung";
 import { variablenAusBesitz } from "../../src/abenteuer/regeln/dialogvariablen";
 import { ohneFigurenNachBedingung } from "../../src/abenteuer/regeln/figurbedingung";
+import { karteNachUhr } from "./uhrwelt";
 import type { Abenteuerstand } from "../../src/abenteuer/schnittstelle/spielstand";
 
 /** Kantenlänge einer Kachel in Pixeln. */
@@ -206,10 +207,16 @@ export function kartenwissen(
   if (!fund) throw new Error(`Karte ${kennung} fehlt in orte.json`);
   const variablen = variablenVon(stand);
   const datei = kartenfassung(fund.karte, variablen).datei;
-  const karte = ohneFigurenNachBedingung(
-    ohneAbwesende(lies<Tiledkarte>(datei), stand.dialogvariablen),
-    (name) => figurFuer(fund.ort, name)?.wenn,
+  const karte = karteNachUhr(
+    ohneFigurenNachBedingung(
+      ohneAbwesende(lies<Tiledkarte>(datei), stand.dialogvariablen),
+      (name) => figurFuer(fund.ort, name)?.wenn,
+      variablen,
+    ),
+    kennung,
+    stand,
     variablen,
+    lies,
   );
   const roh = liesAusloeser(
     karte.layers.flatMap((e) => e.objects ?? []),

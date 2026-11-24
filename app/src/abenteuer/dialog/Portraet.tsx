@@ -122,22 +122,20 @@ export function Portraet({
   /** Text der Zeile: Bei jeder neuen Zeile bewegt das Porträt die Lippen (Bogen aus Modern UI). */
   zeile?: string;
 }) {
-  // Rivalin Victoria: erst ihr Porträt, sonst Victors (regeln/rivalform.ts).
-  const ersatz = rivalinsprecher(sprecher, rivalinJetzt());
-  const schluessel = `${ersatz ?? sprecher}:${stimmung ?? ""}`;
+  // Rivalin Victoria: nur ihr eigenes Porträt; fehlt es, bleibt nur ihr Name stehen
+  // (regeln/rivalform.ts). Victors Gesicht neben „Victoria“ wäre falsch.
+  const gesucht = rivalinsprecher(sprecher, rivalinJetzt()) ?? sprecher;
+  const schluessel = `${gesucht}:${stimmung ?? ""}`;
   const [bild, setzeBild] = useState<{ schluessel: string; bild: Bild | null } | null>(null);
   useEffect(() => {
     let aktiv = true;
-    const gesucht = ersatz ? suche(ersatz, stimmung) : Promise.resolve(null);
-    void gesucht
-      .then((eigenes) => eigenes ?? suche(sprecher, stimmung))
-      .then((gefunden) => {
-        if (aktiv) setzeBild({ schluessel, bild: gefunden });
-      });
+    void suche(gesucht, stimmung).then((gefunden) => {
+      if (aktiv) setzeBild({ schluessel, bild: gefunden });
+    });
     return () => {
       aktiv = false;
     };
-  }, [sprecher, ersatz, stimmung, schluessel]);
+  }, [gesucht, stimmung, schluessel]);
   if (!bild || bild.schluessel !== schluessel || !bild.bild) return null;
   const b = bild.bild;
   if (b.art === "blatt") return <Blattbild bild={b} stimmung={stimmung} />;

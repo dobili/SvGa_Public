@@ -140,6 +140,9 @@ export async function lasseRichtung(lauf: Lauf): Promise<void> {
   await lauf.cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
 }
 
+/** Klasse der Warteblende beim Warten auf eine Uhrzeit (oberwelt/useWarten.tsx). */
+const WARTEBLENDE = "abenteuer-warteblende";
+
 /**
  * Drückt eine Richtung und hält sie. Ausgabe: ob gedrückt wurde (false: Steuerkreuz fehlt oder
  * ist verdeckt; das ist dann als Fund gemeldet).
@@ -157,6 +160,9 @@ export async function halteRichtung(lauf: Lauf, richtung: Richtung): Promise<boo
   const mitte = await freieMitte(knopf.first());
   if (!mitte) return false;
   if ("verdeckt" in mitte) {
+    // Die Warteblende („Die Zeit vergeht …“) deckt mit Absicht alles ab, bis die Uhr vorgerückt
+    // ist (oberwelt/useWarten.tsx); der Spieler wartet sie ab, das ist kein Fund.
+    if (mitte.verdeckt.includes(WARTEBLENDE)) return false;
     lauf.messung.fund(
       "steuerkreuz",
       `Steuerkreuz „${KREUZKNOPF[richtung]}“ verdeckt von ${mitte.verdeckt}`,

@@ -16,7 +16,7 @@
  * Abhängigkeiten: regeln/bedingung.ts.
  */
 import { erfuellt } from "./bedingung";
-import ohnesitzbild from "./ohnesitzbild.json";
+import ohnesitzbild from "./ohnesitzbild.json" with { type: "json" };
 
 /** Ein Block des Tages: von bis bis (ausschließlich, über Mitternacht möglich), ohne Karte unsichtbar. */
 export interface Ablaufblock {

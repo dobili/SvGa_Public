@@ -10,9 +10,11 @@ from pathlib import Path
 
 import pytest
 
-from pipeline.abenteuer import statistenrolle as R
-from pipeline.abenteuer import statistenwahl as W
-from pipeline.abenteuer.belebungsvorschau import statistenboegen, statistenbogen
+pytest.importorskip("PIL")  # in Actions ohne Pillow übersprungen, wie die übrigen Bildtests
+
+from pipeline.abenteuer import statistenrolle as R  # noqa: E402
+from pipeline.abenteuer import statistenwahl as W  # noqa: E402
+from pipeline.abenteuer.belebungsvorschau import statistenboegen, statistenbogen  # noqa: E402
 
 PRIVAT = Path(
     os.environ.get("SVGA_PRIVAT") or Path(__file__).resolve().parents[2].parent / "schach-abenteuer-inhalte"

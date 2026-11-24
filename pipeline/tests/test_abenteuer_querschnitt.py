@@ -10,10 +10,12 @@ Alle Prüfungen laufen ohne das private Paket (gespeicherte Zahlen in ``katalog_
 
 import pytest
 
-from pipeline.abenteuer import kronenhoehe, proportionen, untergrund, waldrand, wiederholung
-from pipeline.abenteuer import zusammenhang_enden as z
-from pipeline.abenteuer.deckrahmen import lade as lade_rahmen
-from pipeline.abenteuer.moebelliste import lade_moebel
+pytest.importorskip("PIL")  # in Actions ohne Pillow übersprungen, wie die übrigen Bildtests
+
+from pipeline.abenteuer import kronenhoehe, proportionen, untergrund, waldrand, wiederholung  # noqa: E402
+from pipeline.abenteuer import zusammenhang_enden as z  # noqa: E402
+from pipeline.abenteuer.deckrahmen import lade as lade_rahmen  # noqa: E402
+from pipeline.abenteuer.moebelliste import lade_moebel  # noqa: E402
 
 # Prüfung → höchstens so viele Befunde (Stand 24.11.2026 nach Welle 2: alle 0).
 OBERGRENZE = {

@@ -31,6 +31,7 @@ export default defineConfig({
     "tierfoto.spec.ts",
     "figurenwahlprobe.spec.ts",
     "verdeckungsfoto.spec.ts",
+    "flohmarktprobe.spec.ts",
   ],
   timeout: (minuten + ZUSCHLAG_MINUTEN) * MS_JE_MINUTE,
   workers: 1,

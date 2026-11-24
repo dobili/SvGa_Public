@@ -142,7 +142,8 @@
       "zustand": "gebraucht",
       "stil": "natur",
       "begehbar": true,
-      "begehbar_grund": "liegt flach am Boden"
+      "begehbar_grund": "liegt flach am Boden",
+      "untergrund": "wasser"
     },
     "gc7Kiefer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
@@ -165,7 +166,8 @@
         "........",
         "..####..",
         "..####.."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "gc7KieferB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
@@ -188,7 +190,8 @@
         "........",
         "..####..",
         "..####.."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "gc7Tafel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png",
@@ -208,7 +211,8 @@
         ".######.",
         ".######.",
         ".######."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "gc7Picknicktisch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_1.png",
@@ -328,7 +332,8 @@
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "gc7FelsFlach": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_7.png",
@@ -338,7 +343,8 @@
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": [".##.", "####", "####", ".##."]
+      "maske_fein": [".##.", "####", "####", ".##."],
+      "untergrund": "gras"
     },
     "gc7Leuchtturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Lighthouse.png",

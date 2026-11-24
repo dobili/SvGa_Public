@@ -123,7 +123,8 @@
       "hoehe": 32,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "untergrund": "gras"
     },
     "gt7GrabOhneName": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Big_Pile_Of_Dirt.png",
@@ -331,7 +332,8 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "gt7Busch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_4.png",

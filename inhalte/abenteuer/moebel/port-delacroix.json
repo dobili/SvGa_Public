@@ -472,7 +472,8 @@
         ".######.",
         ".#####..",
         "........"
-      ]
+      ],
+      "untergrund": "gras"
     },
     "pd6Kanister": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Barrel_1.png",
@@ -1419,7 +1420,8 @@
       "art": "deko",
       "zustand": "kaputt",
       "stil": "natur",
-      "maske_fein": [".##########.", "############", "############", ".##########."]
+      "maske_fein": [".##########.", "############", "############", ".##########."],
+      "untergrund": "wasser"
     },
     "pd6Werkhalle": {
       "quelle": "spiel/eigene/werk_halle.png",
@@ -2555,7 +2557,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", ".##."],
+      "untergrund": "gras"
     },
     "pd12Bagger": {
       "quelle": "spiel/eigene/bagger_links.png",

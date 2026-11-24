@@ -44,7 +44,7 @@
     {
       "moebel": "es7Ofen",
       "feld": [8, 1],
-      "versatz": [0, -8]
+      "versatz": [0, 0]
     },
     {
       "moebel": "gt7Treppe",

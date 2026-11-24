@@ -170,7 +170,7 @@
     {
       "moebel": "rv14Fahrkartenschalter",
       "feld": [2, 1],
-      "versatz": [0, -8],
+      "versatz": [0, 0],
       "bauteil_ok": true
     },
     {

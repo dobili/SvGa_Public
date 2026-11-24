@@ -120,7 +120,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", ".##."],
+      "untergrund": "gras"
     },
     "n4Fels": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -130,7 +131,8 @@
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": [".##.", "####", "####", "####"]
+      "maske_fein": [".##.", "####", "####", "####"],
+      "untergrund": "gras"
     },
     "n4BootUfer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_1.png",
@@ -344,7 +346,8 @@
       "zustand": "neu",
       "stil": "einfach",
       "begehbar": true,
-      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser"
     },
     "n4PfahlhausBlau": {
       "quelle": "spiel/eigene/pfahlhaus_blau.png",
@@ -489,7 +492,8 @@
       "stil": "maritim",
       "zustand": "gebraucht",
       "begehbar": true,
-      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser"
     }
   }
 }

@@ -291,7 +291,8 @@
         ".######.",
         ".#####..",
         "........"
-      ]
+      ],
+      "untergrund": "gras"
     },
     "rvZeder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_5.png",
@@ -376,7 +377,8 @@
       "art": "strassenmoebel",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", ".###", "####", "###."]
+      "maske_fein": ["....", "....", "....", "....", "####", ".###", "####", "###."],
+      "untergrund": "gras"
     },
     "rvGleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",

@@ -125,7 +125,8 @@
         "######.#",
         "######.#",
         "########"
-      ]
+      ],
+      "untergrund": "gras"
     },
     "hb7Spielturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_10.png",

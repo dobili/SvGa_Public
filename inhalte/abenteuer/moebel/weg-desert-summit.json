@@ -21,7 +21,8 @@
         "........",
         "..####..",
         "..####.."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "wds6PinieB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
@@ -31,7 +32,8 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "natur",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
+      "untergrund": "gras"
     },
     "wds6Kegelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
@@ -58,7 +60,8 @@
         "........",
         "..####..",
         "..####.."
-      ]
+      ],
+      "untergrund": "gras"
     },
     "wds6Wacholder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_18.png",
@@ -105,7 +108,8 @@
       "kollision": true,
       "art": "fels",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "untergrund": "gras"
     },
     "wds6FelsHoch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_8.png",
@@ -114,7 +118,8 @@
       "kollision": true,
       "art": "fels",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "untergrund": "gras"
     },
     "wds6Brocken": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Big_16x16.png",
@@ -143,7 +148,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": ["............", "............", ".##########.", "..#########."]
+      "maske_fein": ["............", "............", ".##########.", "..#########."],
+      "untergrund": "gras"
     },
     "wds6Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -154,7 +160,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."],
+      "untergrund": "gras"
     },
     "wds6Warnschild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_5.png",
@@ -165,7 +172,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "###."]
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "###."],
+      "untergrund": "gras"
     },
     "wds6Holzstapel": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Trunk_Load_Big_Vertical_16x16.png",
@@ -547,7 +555,8 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."]
+      "maske_fein": ["....", "....", "....", "....", "....", "####", ".##.", ".##."],
+      "untergrund": "gras"
     },
     "wds6Wohnwagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_1.png",

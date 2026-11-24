@@ -1,0 +1,1045 @@
+{
+  "erklaerung": "Probe der Bildwahl für Statisten, geschrieben von pipeline/abenteuer/statistenrolle.py (--probe), nicht von Hand ändern. pytest prüft sie gegen die Pipeline, Vitest gegen die App.",
+  "szenen": [
+    {
+      "szene": "capital-arena-aussen",
+      "statisten": [
+        {
+          "name": "kindA",
+          "x": 32,
+          "y": 40,
+          "tun": "rennt zwischen den Fahnenmasten herum",
+          "bild": "statist-02",
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist-02"
+        },
+        {
+          "name": "kindB",
+          "x": 44,
+          "y": 41,
+          "tun": "rennt hinter kindA her, zwischen den Fahnenmasten",
+          "bild": "statist-05",
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist-05"
+        },
+        {
+          "name": "fans",
+          "x": 20,
+          "y": 45,
+          "tun": "laufen mit Schals zur Halle",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "reporterin",
+          "x": 51,
+          "y": 43,
+          "tun": "filmt vom Platz aus die Freitreppe",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.studentin"
+        },
+        {
+          "name": "polizist",
+          "x": 36,
+          "y": 39,
+          "tun": "regelt den Verkehr am Zebrastreifen vor der Freitreppe",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "schaffner"
+        },
+        {
+          "name": "eisverkaeuferin",
+          "x": 65,
+          "y": 41,
+          "tun": "verkauft Eis und Limonade am Wagen",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.service"
+        },
+        {
+          "name": "tourist",
+          "x": 11,
+          "y": 44,
+          "tun": "hält einen Stadtplan verkehrt herum",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "wanderer"
+        },
+        {
+          "name": "rentnerin",
+          "x": 28,
+          "y": 46,
+          "tun": "sitzt mit Sonnenhut im Schatten",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentnerin"
+        },
+        {
+          "name": "student",
+          "x": 60,
+          "y": 45,
+          "tun": "liest im Stehen ein dickes Buch",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "busfahrer",
+          "x": 10,
+          "y": 57,
+          "tun": "macht Pause an der Bordsteinkante",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "schaffner"
+        },
+        {
+          "name": "strassenmusiker",
+          "x": 40,
+          "y": 58,
+          "tun": "spielt Saxofon für Kleingeld",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.musik"
+        },
+        {
+          "name": "schachlehrer",
+          "x": 36,
+          "y": 42,
+          "tun": "sitzt mit einem Taschenschach auf dem Brunnenrand",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.anzug"
+        },
+        {
+          "name": "vater",
+          "x": 66,
+          "y": 45,
+          "tun": "erklärt seiner Tochter die Freitreppe",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentner"
+        },
+        {
+          "name": "schuelerin",
+          "x": 30,
+          "y": 58,
+          "tun": "balanciert auf dem Bordstein, Eis in der Hand",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "autogrammjunge",
+          "x": 52,
+          "y": 40,
+          "tun": "wartet mit einem Heft und einem Stift",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindB"
+        },
+        {
+          "name": "hotdogverkaeufer",
+          "x": 9,
+          "y": 41,
+          "tun": "verkauft Hotdogs unter der Markise",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "schiffskoch"
+        }
+      ]
+    },
+    {
+      "szene": "erinnerung-london-kaffeehaus",
+      "statisten": [
+        {
+          "name": "anderssen",
+          "x": 4,
+          "y": 8,
+          "tun": "sitzt am mittleren Tisch und spielt Schach",
+          "bild": null,
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "postreiter"
+        },
+        {
+          "name": "kieseritzky",
+          "x": 7,
+          "y": 8,
+          "tun": "sitzt am mittleren Tisch und spielt Schach",
+          "bild": null,
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "statist.hist"
+        },
+        {
+          "name": "gaeste",
+          "x": 5,
+          "y": 10,
+          "tun": "schauen zu",
+          "bild": null,
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "zeitungsjunge"
+        },
+        {
+          "name": "zuschauer",
+          "x": 6,
+          "y": 7,
+          "tun": "beugt sich über das Brett",
+          "bild": null,
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "zeitungsleser"
+        },
+        {
+          "name": "herrMitZylinder",
+          "x": 8,
+          "y": 8,
+          "tun": "flüstert einen Zug",
+          "bild": "zeitungsleser",
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "zeitungsleser"
+        },
+        {
+          "name": "zeitungsleserBank",
+          "x": 2,
+          "y": 3,
+          "tun": "sitzt auf der Lederbank und liest Zeitung",
+          "bild": null,
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "zeitungsjunge"
+        },
+        {
+          "name": "gastAmFenstertisch",
+          "x": 8,
+          "y": 10,
+          "tun": "sitzt am Ecktisch und grübelt über einer Stellung",
+          "bild": null,
+          "rolle": "historisch",
+          "sitzt": false,
+          "erwartet": "statist.hist"
+        }
+      ]
+    },
+    {
+      "szene": "ironwood-aussen",
+      "statisten": [
+        {
+          "name": "schichtwechsel",
+          "x": 58,
+          "y": 24,
+          "tun": "Schichtwechsel am Werkstor",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.arbeiter"
+        },
+        {
+          "name": "kohlentraegerin",
+          "x": 36,
+          "y": 16,
+          "tun": "trägt Kohle nach Hause",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "taubenfuetterer",
+          "x": 40,
+          "y": 47,
+          "tun": "füttert Tauben",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentner"
+        },
+        {
+          "name": "kreidekinder",
+          "x": 32,
+          "y": 15,
+          "tun": "malen mit Kreide auf den Gehweg",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "kranfuehrer",
+          "x": 69,
+          "y": 28,
+          "tun": "stapelt Fässer neben den Containern",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.arbeiter"
+        },
+        {
+          "name": "rangierer",
+          "x": 50,
+          "y": 53,
+          "tun": "prüft die Weichen am Gleis",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.arbeiter"
+        },
+        {
+          "name": "lieferfahrer",
+          "x": 60,
+          "y": 28,
+          "tun": "wartet am Werkstor auf den Pförtner",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.fahrer"
+        },
+        {
+          "name": "wirt",
+          "x": 28,
+          "y": 28,
+          "tun": "fegt vor der Kneipe „Zum Hoch“",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "kellner"
+        },
+        {
+          "name": "schuelerin",
+          "x": 29,
+          "y": 11,
+          "tun": "geht mit Ranzen von der Schule heim",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "busfahrerin",
+          "x": 16,
+          "y": 28,
+          "tun": "macht Pause an der Haltestelle",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "schaffner"
+        },
+        {
+          "name": "arbeiterinPause",
+          "x": 66,
+          "y": 17,
+          "tun": "trinkt Kaffee vor der Kantine",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.arbeiter"
+        },
+        {
+          "name": "nachbar",
+          "x": 19,
+          "y": 11,
+          "tun": "trägt Einkaufstüten die Elm Street hinauf",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.anzug"
+        },
+        {
+          "name": "marktstand1",
+          "x": 41,
+          "y": 39,
+          "tun": "verkauft Kohl und Kürbisse",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.bauer"
+        },
+        {
+          "name": "marktstand2",
+          "x": 46,
+          "y": 39,
+          "tun": "wiegt Beeren ab",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentnerin"
+        },
+        {
+          "name": "marktstand3",
+          "x": 52,
+          "y": 39,
+          "tun": "ruft die Preise für Mais aus",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.bauer"
+        },
+        {
+          "name": "marktstand4",
+          "x": 41,
+          "y": 44,
+          "tun": "stapelt Körbe mit Karotten",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "mutter"
+        },
+        {
+          "name": "marktstand5",
+          "x": 46,
+          "y": 44,
+          "tun": "packt Gemüse für die Kantine ein",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.service"
+        },
+        {
+          "name": "marktstand6",
+          "x": 52,
+          "y": 44,
+          "tun": "kassiert bei den Schichtarbeitern",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentner"
+        }
+      ]
+    },
+    {
+      "szene": "ironwood-kantine",
+      "statisten": [
+        {
+          "name": "kantinenkoch",
+          "x": 4,
+          "y": 4,
+          "tun": "rührt in der Suppe",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "schiffskoch"
+        },
+        {
+          "name": "schichtarbeiter",
+          "x": 9,
+          "y": 13,
+          "tun": "isst Eintopf nach der Schicht",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.arbeiter"
+        },
+        {
+          "name": "gast1",
+          "x": 4,
+          "y": 10,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.fahrer"
+        },
+        {
+          "name": "gast2",
+          "x": 7,
+          "y": 10,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "gast3",
+          "x": 10,
+          "y": 14,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.rentner"
+        },
+        {
+          "name": "gast4",
+          "x": 13,
+          "y": 14,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.fahrer"
+        },
+        {
+          "name": "gast5",
+          "x": 20,
+          "y": 14,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.fahrer"
+        },
+        {
+          "name": "gast6",
+          "x": 23,
+          "y": 10,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "gast7",
+          "x": 21,
+          "y": 4,
+          "tun": "sitzt beim Essen",
+          "bild": null,
+          "rolle": "werk",
+          "sitzt": false,
+          "erwartet": "statist.fahrer"
+        }
+      ]
+    },
+    {
+      "szene": "lockport-aussen",
+      "statisten": [
+        {
+          "name": "finn",
+          "x": 14,
+          "y": 12,
+          "tun": "angelt Flaschen aus dem Becken",
+          "bild": null,
+          "rolle": "kind",
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "waescherin",
+          "x": 26,
+          "y": 10,
+          "tun": "hängt im Nebel Wäsche auf",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.service"
+        },
+        {
+          "name": "bootsbauer",
+          "x": 4,
+          "y": 12,
+          "tun": "kalfatert ein Ruderboot am Bootsschuppen",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.fischer"
+        },
+        {
+          "name": "anglerAmKai",
+          "x": 6,
+          "y": 20,
+          "tun": "angelt vom Kai aus",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.fischer"
+        },
+        {
+          "name": "postbotin",
+          "x": 45,
+          "y": 8,
+          "tun": "fährt mit dem Rad die Post aus",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "schaffner"
+        },
+        {
+          "name": "schulkind",
+          "x": 12,
+          "y": 24,
+          "tun": "geht mit dem Ranzen nach Hause",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "hafenmeisterRuhestand",
+          "x": 33,
+          "y": 12,
+          "tun": "schaut der Schleuse zu",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "kapitaen"
+        },
+        {
+          "name": "kahnmaler",
+          "x": 12,
+          "y": 20,
+          "tun": "streicht die Bordwand des Lastkahns",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.wanderer"
+        },
+        {
+          "name": "touristin",
+          "x": 34,
+          "y": 20,
+          "tun": "fotografiert die Schleusentore",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.wanderer"
+        },
+        {
+          "name": "fischer",
+          "x": 20,
+          "y": 21,
+          "tun": "flickt ein Netz am Kai",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.fischer"
+        },
+        {
+          "name": "frauMitBesen",
+          "x": 30,
+          "y": 33,
+          "tun": "fegt Laub vor der Tür",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentnerin"
+        },
+        {
+          "name": "spaziergaenger",
+          "x": 3,
+          "y": 34,
+          "tun": "geht mit Schirm durch den Nebel",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentner"
+        },
+        {
+          "name": "mannMitSchubkarre",
+          "x": 25,
+          "y": 22,
+          "tun": "schiebt Brennholz zum Gasthaus",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.anzug"
+        },
+        {
+          "name": "imogen",
+          "x": 54,
+          "y": 8,
+          "tun": "steht mit dem Schlüsselbund an der Tafel",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "mutter"
+        },
+        {
+          "name": "ruben",
+          "x": 11,
+          "y": 20,
+          "tun": "sitzt auf dem Poller und sieht auf den Kahn",
+          "bild": null,
+          "rolle": "hafen",
+          "sitzt": false,
+          "erwartet": "kapitaen"
+        }
+      ]
+    },
+    {
+      "szene": "maple-falls-clubraum",
+      "statisten": [
+        {
+          "name": "schuelerin",
+          "x": 11,
+          "y": 8,
+          "tun": "sitzt am Tisch und stellt die Figuren auf",
+          "bild": "statist-07",
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist-07"
+        },
+        {
+          "name": "clubmitglied",
+          "x": 11,
+          "y": 11,
+          "tun": "sitzt am Brett und spielt eine Übungspartie",
+          "bild": "statist-14",
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist-14"
+        },
+        {
+          "name": "mutterWartet",
+          "x": 1,
+          "y": 10,
+          "tun": "sitzt auf der Bank und wartet auf ihren Sohn",
+          "bild": "statist-18",
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist-18"
+        }
+      ]
+    },
+    {
+      "szene": "maple-falls-diner",
+      "statisten": [
+        {
+          "name": "kellnerin",
+          "x": 3,
+          "y": 4,
+          "tun": "geht hinter der Theke hin und her und schenkt Kaffee nach",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.service"
+        },
+        {
+          "name": "lkwFahrer",
+          "x": 5,
+          "y": 6,
+          "tun": "sitzt auf dem Hocker am Thekenende und isst Pfannkuchen",
+          "bild": null,
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist.fahrer"
+        },
+        {
+          "name": "rentnerinnen",
+          "x": 14,
+          "y": 7,
+          "tun": "sitzen in der Nische und teilen sich ein Stück Apfelkuchen",
+          "bild": null,
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist.rentnerin"
+        }
+      ]
+    },
+    {
+      "szene": "silicon-bay-akademie",
+      "statisten": [
+        {
+          "name": "schueler1",
+          "x": 5,
+          "y": 6,
+          "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
+          "bild": null,
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "schueler2",
+          "x": 11,
+          "y": 6,
+          "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
+          "bild": null,
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist.kindB"
+        },
+        {
+          "name": "schueler3",
+          "x": 5,
+          "y": 9,
+          "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
+          "bild": null,
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist.studentin"
+        },
+        {
+          "name": "schueler4",
+          "x": 11,
+          "y": 9,
+          "tun": "sitzt am Bildschirmtisch und spielt am Bildschirm gegen die Maschine",
+          "bild": null,
+          "rolle": null,
+          "sitzt": true,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "empfangsdame",
+          "x": 11,
+          "y": 13,
+          "tun": "begrüßt Besucher am Empfang",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.konzern"
+        }
+      ]
+    },
+    {
+      "szene": "weg-crossroads-pinewood-riesenbaeume",
+      "statisten": [
+        {
+          "name": "pfadfinderin",
+          "x": 13,
+          "y": 81,
+          "tun": "übt mit einer weißen Weste Schritte vorwärts",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "eichhoernchenjunge",
+          "x": 28,
+          "y": 66,
+          "tun": "starrt in die Baumkrone",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindB"
+        },
+        {
+          "name": "betreuerin",
+          "x": 20,
+          "y": 90,
+          "tun": "zählt Westen in einem Wäschekorb",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.ranger"
+        },
+        {
+          "name": "fotografin",
+          "x": 7,
+          "y": 120,
+          "tun": "legt sich auf den Rücken, um den Baum aufs Bild zu bekommen",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.wanderer"
+        },
+        {
+          "name": "weissesKind1",
+          "x": 9,
+          "y": 95,
+          "tun": "wartet in weißer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindB"
+        },
+        {
+          "name": "weissesKind2",
+          "x": 11,
+          "y": 95,
+          "tun": "wartet in weißer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "weissesKind3",
+          "x": 13,
+          "y": 95,
+          "tun": "wartet in weißer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "weissesKind4",
+          "x": 15,
+          "y": 95,
+          "tun": "wartet in weißer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "schwarzesKind1",
+          "x": 9,
+          "y": 88,
+          "tun": "wartet in schwarzer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindA"
+        },
+        {
+          "name": "schwarzesKind2",
+          "x": 11,
+          "y": 88,
+          "tun": "wartet in schwarzer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindB"
+        },
+        {
+          "name": "schwarzesKind3",
+          "x": 13,
+          "y": 88,
+          "tun": "wartet in schwarzer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "schwarzesKind4",
+          "x": 15,
+          "y": 88,
+          "tun": "wartet in schwarzer Weste auf seinen Zug",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.kindB"
+        }
+      ]
+    },
+    {
+      "szene": "weg-riverton-ironwood-2",
+      "statisten": [
+        {
+          "name": "brueckenwaerter",
+          "x": 21,
+          "y": 50,
+          "tun": "streicht das Geländer",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.arbeiter"
+        },
+        {
+          "name": "kiebitz",
+          "x": 26,
+          "y": 62,
+          "tun": "schaut an den Klapptischen zu",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "vogelbeobachterin",
+          "x": 11,
+          "y": 64,
+          "tun": "beobachtet den Reiher mit dem Fernglas",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.wanderer"
+        },
+        {
+          "name": "joggerin",
+          "x": 17,
+          "y": 66,
+          "tun": "läuft den Pfad hinunter",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "joggerin"
+        },
+        {
+          "name": "sprayer",
+          "x": 13,
+          "y": 66,
+          "tun": "sprüht einen Turm ans Widerlager",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.jugend"
+        },
+        {
+          "name": "brueckenbauer1",
+          "x": 22,
+          "y": 63,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": "unterwegs",
+          "sitzt": false,
+          "erwartet": "statist.wanderer"
+        },
+        {
+          "name": "brueckenbauer2",
+          "x": 19,
+          "y": 64,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": "jugend",
+          "sitzt": false,
+          "erwartet": "statist.kindB"
+        },
+        {
+          "name": "brueckenbauer3",
+          "x": 25,
+          "y": 63,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": "unterwegs",
+          "sitzt": false,
+          "erwartet": "wanderer"
+        },
+        {
+          "name": "brueckenbauer4",
+          "x": 22,
+          "y": 64,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": null,
+          "sitzt": false,
+          "erwartet": "statist.rentner"
+        },
+        {
+          "name": "brueckenbauer5",
+          "x": 28,
+          "y": 63,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": "unterwegs",
+          "sitzt": false,
+          "erwartet": "joggerin"
+        },
+        {
+          "name": "brueckenbauer6",
+          "x": 25,
+          "y": 64,
+          "tun": "sitzt am Klapptisch und spielt",
+          "bild": null,
+          "rolle": "unterwegs",
+          "sitzt": false,
+          "erwartet": "statist.studentin"
+        }
+      ]
+    }
+  ]
+}

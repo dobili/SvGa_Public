@@ -892,9 +892,9 @@
       "typ": "statist",
       "feld": [4, 10],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-21"
+        "wann": "tag"
       }
     },
     {
@@ -902,9 +902,9 @@
       "typ": "statist",
       "feld": [7, 10],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-23"
+        "wann": "tag"
       }
     },
     {
@@ -912,9 +912,9 @@
       "typ": "statist",
       "feld": [10, 14],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-25"
+        "wann": "tag"
       }
     },
     {
@@ -922,9 +922,9 @@
       "typ": "statist",
       "feld": [13, 14],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-27"
+        "wann": "tag"
       }
     },
     {
@@ -932,9 +932,9 @@
       "typ": "statist",
       "feld": [20, 14],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-29"
+        "wann": "tag"
       }
     },
     {
@@ -942,9 +942,9 @@
       "typ": "statist",
       "feld": [23, 10],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-31"
+        "wann": "tag"
       }
     },
     {
@@ -952,9 +952,9 @@
       "typ": "statist",
       "feld": [21, 4],
       "eigenschaften": {
+        "rolle": "werk",
         "tun": "sitzt beim Essen",
-        "wann": "tag",
-        "bild": "statist-33"
+        "wann": "tag"
       }
     }
   ],

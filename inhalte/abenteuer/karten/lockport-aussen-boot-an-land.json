@@ -11595,6 +11595,11 @@
        "value": "14,12"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "kind"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "angelt Flaschen aus dem Becken"
@@ -12143,6 +12148,11 @@
      "rotation": 0,
      "visible": true,
      "properties": [
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "hafen"
+      },
       {
        "name": "tun",
        "type": "string",

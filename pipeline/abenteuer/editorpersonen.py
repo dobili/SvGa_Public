@@ -8,7 +8,8 @@ die Kartenvorschau sie zeichnet (``belebungsvorschau.figurbild``, PixelLab mit M
 je Szene, welche Person welchen Bogen hat.
 
 Schlüssel der Zuordnung: ``f:<name>`` für eine Figur (Bogen aus ``orte.json``, ``sprite``),
-``b:<name>|<bild>`` für einen Statisten (``statistenbogen``; ``bild`` leer ohne eigenes Bild).
+``b:<name>|<bild>`` für einen Statisten (``statistenboegen``, Bild nach der Rolle;
+``bild`` leer ohne eigenes Bild).
 Eine Kopie im Editor (Strg+D) behält Name und Bild und damit den Bogen.
 
 Aufruf: aus ``editorpaket.baue_daten``. Braucht Pillow; ohne Pillow oder ohne Bogen fehlt das Bild,
@@ -26,7 +27,7 @@ from pipeline.abenteuer.belebungsvorschau import (
     SITZ_RAHMEN,
     figurbild,
     rgba,
-    statistenbogen,
+    statistenboegen,
 )
 
 
@@ -56,10 +57,10 @@ def boegen_der_szene(szene: dict, orte: list[dict]) -> dict[str, str]:
     for f in szene.get("figuren", []):
         if f["name"] in sprites:
             boegen[personenschluessel("figuren", f)] = sprites[f["name"]]
-    for b in szene.get("belebung", []):
-        if b.get("typ") == "statist":
-            bild = b.get("eigenschaften", {}).get("bild")
-            boegen[personenschluessel("belebung", b)] = statistenbogen(b["name"], bild)
+    # Statisten wie im Spiel: Bild nach der Rolle, für die ganze Szene gewählt (statistenwahl.py).
+    statisten = [b for b in szene.get("belebung", []) if b.get("typ") == "statist"]
+    for b, bogen in zip(statisten, statistenboegen(szene), strict=True):
+        boegen[personenschluessel("belebung", b)] = bogen
     return boegen
 
 

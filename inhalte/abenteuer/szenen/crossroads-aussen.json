@@ -1125,6 +1125,7 @@
       "typ": "statist",
       "feld": [35, 27],
       "eigenschaften": {
+        "bild": "tomas",
         "tun": "Tomás zeigt Mira die Windräder am Horizont",
         "wann": "tag",
         "von": "35,27",

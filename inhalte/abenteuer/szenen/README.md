@@ -84,6 +84,11 @@ nachträgliches Möblieren:
 - **Belebung** (Regel 10.53, `docs/spiel/16_Statisten_und_Tiere.md`):
   - Statisten: `"typ": "statist"`, Eigenschaften `von`, `bis`, `tun`, `wann`. Ansprechbare Statisten
     haben zusätzlich `sagt` mit dem Textschlüssel `statist.<karte>.<name>`. Wer einen Zug vorspielt, hat `zeigt` mit der Kennung aus `inhalte/abenteuer/vorfuehrungen.json`.
+    Das Bild folgt der Rolle (seit 24.11.2026, Dokument 16, Abschnitt 3.5): Der Name nennt die Rolle
+    (`kellnerin`, `anglerAmKai`); wo er das nicht kann, nennt `rolle` eine Regel aus
+    `app/src/abenteuer/oberwelt/statistenrollen.json` (`historisch` auf Erinnerungskarten, `kind`,
+    `werk` …). `bild` nur für eigene Figuren (`otis`), nicht mehr `statist-NN`. Wer sitzt, braucht
+    `sitzt` mit der Blickrichtung; „sitzt“ im `tun` allein genügt nicht (`tunplatz` listet die Fälle).
   - Tiere: `"typ": "tier"` mit `verhalten` (`sitzen`, `fliegen`, `ausweichen`, `flitzen`, `folgen`,
     `rennen`, `schwimmen`, `schlafen`).
 - **Auslöser** und Figuren behalten ihre Namen aus orte.json; Übergänge anderer Karten zeigen auf sie.

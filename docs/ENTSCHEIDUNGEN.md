@@ -8125,3 +8125,6 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
 - RO44: Porträts Owen und Ivy da; die beiden Tore in Mappe 15.
 - Heldin braucht keinen Bodensitz, Victoria keine Sitz- oder Liegebilder (figurenzustaende).
 
+- RO51 (stehen statt sitzen im Tagesablauf): vom Autor abgelehnt (24.11.2026, „nicht realistisch,
+  dass Leute ständig neben Sitzgelegenheiten stehen“). Die Figuren sitzen wieder; ohne Sitzbild
+  stehen sie übergangsweise neben dem Möbel. Die Sitzbilder kommen in die Bildmappe.

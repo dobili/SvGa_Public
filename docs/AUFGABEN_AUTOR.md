@@ -2627,21 +2627,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       die Rückfragen RO10, RO16, RO18, RO22, RO27, RO37, RO44, RO46 und RO48 (erledigt durch deine
       PixelLab-Lieferungen oder in die Mappe übernommen). Je Auftrag: Prompt zum Kopieren, Maße,
       Ablage in ki-roh/. Nötig: PixelLab 3 (Dime neu, Liegebilder Lucia und Oma Ruth, Gideon als
-      Schmied), Gemini 54 (zuerst die vier Bilder der Einleitung von Akt 1: Fahrt, Haus, Wohnzimmer,
+      Schmied) und dazu die Sitzbilder für den Feierabend (rund 54 Figuren, Liste folgt als
+      Ergänzung der Mappe; bis ein Bild da ist, steht die Figur neben ihrer Bank und setzt sich
+      von selbst, sobald es da ist), Gemini 54 (zuerst die vier Bilder der Einleitung von Akt 1: Fahrt, Haus, Wohnzimmer,
       Kiste der Whitlocks; dann Victorias Porträt, die Fundbilder des Hauptwegs, Porträts von Zoe,
       Imani, Benji und ein neues Blatt für Hector). Freiwillig: Finch-Figuren, Bretter je Ort und
       77 Porträtblätter für Figuren mit altem Sprechbogen. Bei Dime und neun Figuren ohne eigenes
       Bild (Ruben, Henrik, Imogen, Marian Shaw, Noor, Mama Bear, Tess Ferris, Wren, Ike) ist das
       Aussehen aus Rolle und Ort vorgeschlagen; ändere es gern.
       **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
-- [ ] RO51. **Im Tagesablauf stehen statt sitzen (24.11.2026, umgesetzt, Widerspruch genügt)**
-      Für 54 Figuren fehlte ein Sitzbild für ihren Feierabend (Bänke, Diner, Kantine, Saloon,
-      U-Bahn). Keines der Gespräche verlangt, dass sie dort sitzen. Damit du nicht 54 Zustände in
-      PixelLab bauen musst, stehen sie jetzt neben dem Möbel und schauen sich an (Nachbarn an
-      derselben Bank zueinander). Hanks Erzählsatz in der Kantine heißt jetzt „steht allein am Ende
-      des Tischs“. Wenn du sie lieber sitzen siehst: Antwort „RO51 sitzen“, dann bekommst du die
-      Liste mit dem Wortlaut für PixelLab, und sie sitzen, sobald die Bilder da sind.
-      **Antwort:** „RO51 ok“ oder „RO51 sitzen“.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

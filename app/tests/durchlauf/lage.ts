@@ -27,6 +27,8 @@ export interface Dialoglage {
   readonly sprecher: string;
   readonly text: string;
   readonly wahlen: readonly string[];
+  /** Alle Wahlen nehmen schon einen Tipp an (neue Wahlen sind kurz gesperrt, wahlschutz.ts). */
+  readonly wahlenFrei: boolean;
   /** „Weiter“ ist da und frei (keine Pause). */
   readonly weiter: boolean;
 }
@@ -93,6 +95,9 @@ function liesLageImBrowser(): Lage {
         wahlen: [
           ...fenster.querySelectorAll<HTMLButtonElement>(".abenteuer-dialog-wahlen button"),
         ].map((b) => b.textContent ?? ""),
+        wahlenFrei: [
+          ...fenster.querySelectorAll<HTMLButtonElement>(".abenteuer-dialog-wahlen button"),
+        ].every((b) => !b.disabled),
         weiter:
           fenster.querySelector<HTMLButtonElement>(".abenteuer-dialog-weiter")?.disabled === false,
       }

@@ -208,8 +208,12 @@ export async function weltschritt(lauf: Lauf, daten: Spieldaten, planer: Planer)
     }
   }
   if (offenerDialog) {
-    // Nach einem Dialog am Übergang noch auf derselben Karte: Der Übergang blieb zu.
+    // Nach einem Dialog am Übergang noch auf derselben Karte: Der Übergang blieb zu. Sonst zählt
+    // der Durchgang für die Kreiserkennung wie jeder andere: Ohne das pendelte der schwache
+    // Spieler im Querformat 800-mal über Highway und Rückweg zwischen Desert Springs und Diner,
+    // beide Übergänge mit Erzählzeile (24.11.2026).
     if (offenerDialog.karte === karte) planer.merkeGesperrt(stand, karte, offenerDialog.name);
+    else planer.merkeDurchgang(stand, offenerDialog.karte, offenerDialog.name);
     offenerDialog = null;
   }
   const wissen = kartenwissen(daten, karte, stand);

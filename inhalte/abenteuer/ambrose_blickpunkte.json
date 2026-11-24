@@ -1,14 +1,1137 @@
 [
   {
-    "karte": "mapleFalls.dachboden",
-    "feld": [7, 1],
-    "radius": 2,
-    "knoten": "blick_mapleFalls_dachboden_fenster"
+    "karte": "mapleFalls.wohnzimmer",
+    "feld": [
+      12,
+      10
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_wohnzimmer_kartons"
+  },
+  {
+    "karte": "mapleFalls.zimmer",
+    "feld": [
+      9,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_zimmer_fenster"
+  },
+  {
+    "karte": "mapleFalls.aussen",
+    "feld": [
+      15,
+      23
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_aussen_veranda"
   },
   {
     "karte": "mapleFalls.park",
-    "feld": [25, 13],
+    "feld": [
+      19,
+      24
+    ],
     "radius": 3,
-    "knoten": "blick_mapleFalls_park_kiosk"
+    "knoten": "blick_mapleFalls_park_skater"
+  },
+  {
+    "karte": "mapleFalls.clubraum",
+    "feld": [
+      18,
+      7
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_clubraum_bretter"
+  },
+  {
+    "karte": "mapleFalls.diner",
+    "feld": [
+      2,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_diner_theke"
+  },
+  {
+    "karte": "wegMapleCedar.landstrasse",
+    "feld": [
+      19,
+      20
+    ],
+    "radius": 3,
+    "knoten": "blick_wegMapleCedar_landstrasse_kuehe"
+  },
+  {
+    "karte": "wegMapleCedar.flussweg",
+    "feld": [
+      53,
+      21
+    ],
+    "radius": 3,
+    "knoten": "blick_wegMapleCedar_flussweg_steg"
+  },
+  {
+    "karte": "wegMapleCedar.zedernpfad",
+    "feld": [
+      84,
+      14
+    ],
+    "radius": 3,
+    "knoten": "blick_wegMapleCedar_zedernpfad_wald"
+  },
+  {
+    "karte": "kuerbishof.hof",
+    "feld": [
+      11,
+      19
+    ],
+    "radius": 3,
+    "knoten": "blick_kuerbishof_hof_irrgarten"
+  },
+  {
+    "karte": "cedarCreek.aussen",
+    "feld": [
+      33,
+      18
+    ],
+    "radius": 3,
+    "knoten": "blick_cedarCreek_aussen_bibliothek"
+  },
+  {
+    "karte": "cedarCreek.bibliothek",
+    "feld": [
+      12,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_cedarCreek_bibliothek_buecher"
+  },
+  {
+    "karte": "cedarCreek.archiv",
+    "feld": [
+      5,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_cedarCreek_archiv_jahrgaenge"
+  },
+  {
+    "karte": "cedarCreek.drechslerei",
+    "feld": [
+      2,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_cedarCreek_drechslerei_spaene"
+  },
+  {
+    "karte": "cedarCreek.waschsalon",
+    "feld": [
+      2,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_cedarCreek_waschsalon_bullaugen"
+  },
+  {
+    "karte": "wegCedarRiverton.zedernwald",
+    "feld": [
+      95,
+      11
+    ],
+    "radius": 3,
+    "knoten": "blick_wegCedarRiverton_zedernwald_bach"
+  },
+  {
+    "karte": "wegCedarRiverton.bahndamm",
+    "feld": [
+      40,
+      5
+    ],
+    "radius": 3,
+    "knoten": "blick_wegCedarRiverton_bahndamm_schienen"
+  },
+  {
+    "karte": "riverton.aussen",
+    "feld": [
+      65,
+      9
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_aussen_wasserturm"
+  },
+  {
+    "karte": "riverton.bahnhofshalle",
+    "feld": [
+      22,
+      10
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_bahnhofshalle_zeitungen"
+  },
+  {
+    "karte": "riverton.pavillon",
+    "feld": [
+      11,
+      16
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_pavillon_bodenbrett"
+  },
+  {
+    "karte": "riverton.schuppen",
+    "feld": [
+      6,
+      4
+    ],
+    "radius": 2,
+    "knoten": "blick_riverton_schuppen_plane"
+  },
+  {
+    "karte": "riverton.wohnwagen",
+    "feld": [
+      3,
+      4
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_wohnwagen_pokale"
+  },
+  {
+    "karte": "wegRivertonIronwood.kanalweg",
+    "feld": [
+      22,
+      58
+    ],
+    "radius": 4,
+    "knoten": "blick_wegRivertonIronwood_kanalweg_treidelpfad"
+  },
+  {
+    "karte": "wegRivertonIronwood.bruecke",
+    "feld": [
+      26,
+      50
+    ],
+    "radius": 3,
+    "knoten": "blick_wegRivertonIronwood_bruecke_hoehe"
+  },
+  {
+    "karte": "lockport.aussen",
+    "feld": [
+      63,
+      12
+    ],
+    "radius": 3,
+    "knoten": "blick_lockport_aussen_schleuse"
+  },
+  {
+    "karte": "lockport.gasthaus",
+    "feld": [
+      2,
+      4
+    ],
+    "radius": 3,
+    "knoten": "blick_lockport_gasthaus_kegelbahn"
+  },
+  {
+    "karte": "ironwood.aussen",
+    "feld": [
+      71,
+      22
+    ],
+    "radius": 3,
+    "knoten": "blick_ironwood_aussen_werk"
+  },
+  {
+    "karte": "ironwood.kantine",
+    "feld": [
+      11,
+      8
+    ],
+    "radius": 3,
+    "knoten": "blick_ironwood_kantine_suppe"
+  },
+  {
+    "karte": "ironwood.mamasZimmer",
+    "feld": [
+      9,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_ironwood_mamasZimmer_kinderzimmer"
+  },
+  {
+    "karte": "ironwood.museum",
+    "feld": [
+      4,
+      4
+    ],
+    "radius": 3,
+    "knoten": "blick_ironwood_museum_schalter"
+  },
+  {
+    "karte": "ironwood.umkleide",
+    "feld": [
+      1,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_ironwood_umkleide_spinde"
+  },
+  {
+    "karte": "steinbruch.grube",
+    "feld": [
+      51,
+      40
+    ],
+    "radius": 3,
+    "knoten": "blick_steinbruch_grube_stufen"
+  },
+  {
+    "karte": "steinbruch.stollen",
+    "feld": [
+      18,
+      13
+    ],
+    "radius": 3,
+    "knoten": "blick_steinbruch_stollen_dunkel"
+  },
+  {
+    "karte": "wegIronwoodSilicon.raststaette",
+    "feld": [
+      76,
+      21
+    ],
+    "radius": 3,
+    "knoten": "blick_wegIronwoodSilicon_raststaette_schnee"
+  },
+  {
+    "karte": "wegIronwoodSilicon.glasbruecke",
+    "feld": [
+      50,
+      15
+    ],
+    "radius": 3,
+    "knoten": "blick_wegIronwoodSilicon_glasbruecke_glas"
+  },
+  {
+    "karte": "siliconBay.aussen",
+    "feld": [
+      44,
+      32
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_aussen_lieferroboter"
+  },
+  {
+    "karte": "siliconBay.lobby",
+    "feld": [
+      18,
+      8
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_lobby_empfang"
+  },
+  {
+    "karte": "siliconBay.akademie",
+    "feld": [
+      16,
+      2
+    ],
+    "radius": 2,
+    "knoten": "blick_siliconBay_akademie_saal"
+  },
+  {
+    "karte": "siliconBay.serverraum",
+    "feld": [
+      4,
+      7
+    ],
+    "radius": 2,
+    "knoten": "blick_siliconBay_serverraum_schraenke"
+  },
+  {
+    "karte": "siliconBay.altstadt",
+    "feld": [
+      39,
+      20
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_altstadt_laeden"
+  },
+  {
+    "karte": "siliconBay.hafen",
+    "feld": [
+      47,
+      12
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_hafen_netze"
+  },
+  {
+    "karte": "pelikaninsel.dorf",
+    "feld": [
+      34,
+      18
+    ],
+    "radius": 3,
+    "knoten": "blick_pelikaninsel_dorf_pelikane"
+  },
+  {
+    "karte": "wegSiliconDelacroix.faehre",
+    "feld": [
+      14,
+      34
+    ],
+    "radius": 3,
+    "knoten": "blick_wegSiliconDelacroix_faehre_schornstein"
+  },
+  {
+    "karte": "wegSiliconDelacroix.deich",
+    "feld": [
+      61,
+      12
+    ],
+    "radius": 3,
+    "knoten": "blick_wegSiliconDelacroix_deich_zypressen"
+  },
+  {
+    "karte": "portDelacroix.aussen",
+    "feld": [
+      34,
+      24
+    ],
+    "radius": 3,
+    "knoten": "blick_portDelacroix_aussen_rueDuPort"
+  },
+  {
+    "karte": "portDelacroix.musikhaus",
+    "feld": [
+      2,
+      5
+    ],
+    "radius": 3,
+    "knoten": "blick_portDelacroix_musikhaus_klavier"
+  },
+  {
+    "karte": "portDelacroix.turnhalle",
+    "feld": [
+      11,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_portDelacroix_turnhalle_linien"
+  },
+  {
+    "karte": "portDelacroix.werkstatt",
+    "feld": [
+      16,
+      7
+    ],
+    "radius": 3,
+    "knoten": "blick_portDelacroix_werkstatt_klaviere",
+    "wann": "versoehnungGesehen"
+  },
+  {
+    "karte": "wegDelacroixDesert.canyonpfad",
+    "feld": [
+      19,
+      16
+    ],
+    "radius": 3,
+    "knoten": "blick_wegDelacroixDesert_canyonpfad_fels"
+  },
+  {
+    "karte": "wegDelacroixDesert.felsbogen",
+    "feld": [
+      81,
+      24
+    ],
+    "radius": 3,
+    "knoten": "blick_wegDelacroixDesert_felsbogen_bogen"
+  },
+  {
+    "karte": "sternwarte.felsnase",
+    "feld": [
+      8,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_sternwarte_felsnase_sterne"
+  },
+  {
+    "karte": "sternwarte.kuppel",
+    "feld": [
+      7,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_sternwarte_kuppel_fernrohr"
+  },
+  {
+    "karte": "desertSprings.aussen",
+    "feld": [
+      5,
+      21
+    ],
+    "radius": 3,
+    "knoten": "blick_desertSprings_aussen_strasse"
+  },
+  {
+    "karte": "desertSprings.antiquariat",
+    "feld": [
+      16,
+      10
+    ],
+    "radius": 3,
+    "knoten": "blick_desertSprings_antiquariat_buecher"
+  },
+  {
+    "karte": "desertSprings.garage",
+    "feld": [
+      10,
+      6
+    ],
+    "radius": 2,
+    "knoten": "blick_desertSprings_garage_reifenstapel"
+  },
+  {
+    "karte": "wegDesertSummit.diner",
+    "feld": [
+      58,
+      28
+    ],
+    "radius": 3,
+    "knoten": "blick_wegDesertSummit_diner_strasse"
+  },
+  {
+    "karte": "wegDesertSummit.hinterzimmer",
+    "feld": [
+      6,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_wegDesertSummit_hinterzimmer_tafel"
+  },
+  {
+    "karte": "wegDesertSummit.bergstrasse",
+    "feld": [
+      15,
+      87
+    ],
+    "radius": 3,
+    "knoten": "blick_wegDesertSummit_bergstrasse_kehren"
+  },
+  {
+    "karte": "hochebene.felsentuerme",
+    "feld": [
+      63,
+      19
+    ],
+    "radius": 4,
+    "knoten": "blick_hochebene_felsentuerme_pferde"
+  },
+  {
+    "karte": "hochebene.schule",
+    "feld": [
+      47,
+      31
+    ],
+    "radius": 3,
+    "knoten": "blick_hochebene_schule_schulbus"
+  },
+  {
+    "karte": "summitCity.aussen",
+    "feld": [
+      55,
+      13
+    ],
+    "radius": 3,
+    "knoten": "blick_summitCity_aussen_seilbahn"
+  },
+  {
+    "karte": "summitCity.bergladen",
+    "feld": [
+      12,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_summitCity_bergladen_seile"
+  },
+  {
+    "karte": "summitCity.huette",
+    "feld": [
+      8,
+      4
+    ],
+    "radius": 2,
+    "knoten": "blick_summitCity_huette_kamin"
+  },
+  {
+    "karte": "summitCity.bergstation",
+    "feld": [
+      12,
+      5
+    ],
+    "radius": 3,
+    "knoten": "blick_summitCity_bergstation_wolken"
+  },
+  {
+    "karte": "wegSummitCrossroads.geysirbecken",
+    "feld": [
+      11,
+      27
+    ],
+    "radius": 3,
+    "knoten": "blick_wegSummitCrossroads_geysirbecken_geysir"
+  },
+  {
+    "karte": "wegSummitCrossroads.praerie",
+    "feld": [
+      20,
+      81
+    ],
+    "radius": 3,
+    "knoten": "blick_wegSummitCrossroads_praerie_weizen"
+  },
+  {
+    "karte": "crossroads.aussen",
+    "feld": [
+      44,
+      18
+    ],
+    "radius": 3,
+    "knoten": "blick_crossroads_aussen_kreuzung"
+  },
+  {
+    "karte": "crossroads.raststaette",
+    "feld": [
+      12,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_crossroads_raststaette_tresen"
+  },
+  {
+    "karte": "jahrmarkt.festplatz",
+    "feld": [
+      24,
+      11
+    ],
+    "radius": 3,
+    "knoten": "blick_jahrmarkt_festplatz_riesenrad"
+  },
+  {
+    "karte": "wegCrossroadsPinewood.huetten",
+    "feld": [
+      40,
+      13
+    ],
+    "radius": 3,
+    "knoten": "blick_wegCrossroadsPinewood_huetten_huette"
+  },
+  {
+    "karte": "wegCrossroadsPinewood.riesenbaeume",
+    "feld": [
+      13,
+      87
+    ],
+    "radius": 3,
+    "knoten": "blick_wegCrossroadsPinewood_riesenbaeume_lebendschach"
+  },
+  {
+    "karte": "pinewoodCamp.aussen",
+    "feld": [
+      26,
+      17
+    ],
+    "radius": 3,
+    "knoten": "blick_pinewoodCamp_aussen_lagerfeuer"
+  },
+  {
+    "karte": "wegPinewoodGhost.canyonrand",
+    "feld": [
+      72,
+      17
+    ],
+    "radius": 3,
+    "knoten": "blick_wegPinewoodGhost_canyonrand_kletterer"
+  },
+  {
+    "karte": "wegPinewoodGhost.staubstrasse",
+    "feld": [
+      40,
+      5
+    ],
+    "radius": 3,
+    "knoten": "blick_wegPinewoodGhost_staubstrasse_telegraf"
+  },
+  {
+    "karte": "wegPinewoodGhost.tankstelle",
+    "feld": [
+      6,
+      5
+    ],
+    "radius": 2,
+    "knoten": "blick_wegPinewoodGhost_tankstelle_greifarm"
+  },
+  {
+    "karte": "ghostTown.aussen",
+    "feld": [
+      25,
+      25
+    ],
+    "radius": 3,
+    "knoten": "blick_ghostTown_aussen_fassaden"
+  },
+  {
+    "karte": "ghostTown.laden",
+    "feld": [
+      3,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_ghostTown_laden_kasse"
+  },
+  {
+    "karte": "ghostTown.saloon",
+    "feld": [
+      13,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_ghostTown_saloon_klavier"
+  },
+  {
+    "karte": "goldmine.stollen",
+    "feld": [
+      31,
+      15
+    ],
+    "radius": 3,
+    "knoten": "blick_goldmine_stollen_hacke"
+  },
+  {
+    "karte": "wegGhostCapital.seeufer",
+    "feld": [
+      15,
+      11
+    ],
+    "radius": 3,
+    "knoten": "blick_wegGhostCapital_seeufer_strand"
+  },
+  {
+    "karte": "wegGhostCapital.leuchtturm",
+    "feld": [
+      62,
+      18
+    ],
+    "radius": 3,
+    "knoten": "blick_wegGhostCapital_leuchtturm_turm"
+  },
+  {
+    "karte": "capitalArena.innenstadt",
+    "feld": [
+      30,
+      46
+    ],
+    "radius": 3,
+    "knoten": "blick_capitalArena_innenstadt_kaffeebecher"
+  },
+  {
+    "karte": "capitalArena.ubahnhof",
+    "feld": [
+      18,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_capitalArena_ubahnhof_zug"
+  },
+  {
+    "karte": "capitalArena.aussen",
+    "feld": [
+      39,
+      43
+    ],
+    "radius": 3,
+    "knoten": "blick_capitalArena_aussen_kuppeln"
+  },
+  {
+    "karte": "capitalArena.halle",
+    "feld": [
+      26,
+      13
+    ],
+    "radius": 3,
+    "knoten": "blick_capitalArena_halle_fanshop"
+  },
+  {
+    "karte": "bayou.steg",
+    "feld": [
+      29,
+      27
+    ],
+    "radius": 3,
+    "knoten": "blick_bayou_steg_zypressen"
+  },
+  {
+    "karte": "desertSprings.aussen",
+    "feld": [
+      36,
+      14
+    ],
+    "radius": 3,
+    "knoten": "blick_desertSprings_aussen_auto"
+  },
+  {
+    "karte": "mapleFalls.aussen",
+    "feld": [
+      9,
+      28
+    ],
+    "radius": 4,
+    "knoten": "blick_mapleFalls_aussen_lastwagen"
+  },
+  {
+    "karte": "riverton.bahnhofshalle",
+    "feld": [
+      22,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_bahnhofshalle_getraenkeautomat"
+  },
+  {
+    "karte": "siliconBay.akademie",
+    "feld": [
+      24,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_akademie_kaffeeautomat"
+  },
+  {
+    "karte": "wegDesertSummit.diner",
+    "feld": [
+      78,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_wegDesertSummit_diner_neonschild"
+  },
+  {
+    "karte": "riverton.aussen",
+    "feld": [
+      10,
+      35
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_aussen_handyladen"
+  },
+  {
+    "karte": "siliconBay.akademie",
+    "feld": [
+      4,
+      5
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_akademie_bildschirmtisch"
+  },
+  {
+    "karte": "mapleFalls.wohnzimmer",
+    "feld": [
+      8,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_wohnzimmer_fernseher"
+  },
+  {
+    "karte": "mapleFalls.wohnzimmer",
+    "feld": [
+      18,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_wohnzimmer_kuehlschrank"
+  },
+  {
+    "karte": "mapleFalls.diner",
+    "feld": [
+      8,
+      6
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_diner_jukebox"
+  },
+  {
+    "karte": "siliconBay.hafen",
+    "feld": [
+      51,
+      28
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_hafen_faehre"
+  },
+  {
+    "karte": "bayou.steg",
+    "feld": [
+      20,
+      27
+    ],
+    "radius": 3,
+    "knoten": "blick_bayou_steg_luftboot"
+  },
+  {
+    "karte": "siliconBay.lobby",
+    "feld": [
+      3,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_lobby_aufzug"
+  },
+  {
+    "karte": "riverton.bahnhofshalle",
+    "feld": [
+      15,
+      2
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_bahnhofshalle_abfahrtsmonitor"
+  },
+  {
+    "karte": "wegPinewoodGhost.staubstrasse",
+    "feld": [
+      100,
+      8
+    ],
+    "radius": 3,
+    "knoten": "blick_wegPinewoodGhost_staubstrasse_solarpaneel"
+  },
+  {
+    "karte": "wegSummitCrossroads.praerie",
+    "feld": [
+      17,
+      135
+    ],
+    "radius": 3,
+    "knoten": "blick_wegSummitCrossroads_praerie_strommast"
+  },
+  {
+    "karte": "crossroads.aussen",
+    "feld": [
+      53,
+      18
+    ],
+    "radius": 3,
+    "knoten": "blick_crossroads_aussen_zapfsaeule"
+  },
+  {
+    "karte": "wegIronwoodSilicon.glasbruecke",
+    "feld": [
+      65,
+      7
+    ],
+    "radius": 3,
+    "knoten": "blick_wegIronwoodSilicon_glasbruecke_laptop"
+  },
+  {
+    "karte": "crossroads.raststaette",
+    "feld": [
+      19,
+      3
+    ],
+    "radius": 3,
+    "knoten": "blick_crossroads_raststaette_spielautomat"
+  },
+  {
+    "karte": "wegIronwoodSilicon.glasbruecke",
+    "feld": [
+      48,
+      8
+    ],
+    "radius": 3,
+    "knoten": "blick_wegIronwoodSilicon_glasbruecke_funkmast"
+  },
+  {
+    "karte": "steinbruch.grube",
+    "feld": [
+      59,
+      41
+    ],
+    "radius": 3,
+    "knoten": "blick_steinbruch_grube_bagger"
+  },
+  {
+    "karte": "siliconBay.hafen",
+    "feld": [
+      38,
+      25
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_hafen_hafenkran"
+  },
+  {
+    "karte": "wegGhostCapital.seeufer",
+    "feld": [
+      103,
+      15
+    ],
+    "radius": 3,
+    "knoten": "blick_wegGhostCapital_seeufer_eiswagen"
+  },
+  {
+    "karte": "cedarCreek.waschsalon",
+    "feld": [
+      12,
+      2
+    ],
+    "radius": 4,
+    "knoten": "blick_cedarCreek_waschsalon_radio"
+  },
+  {
+    "karte": "mapleFalls.clubraum",
+    "feld": [
+      7,
+      7
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_clubraum_schachuhr"
+  },
+  {
+    "karte": "cedarCreek.aussen",
+    "feld": [
+      2,
+      35
+    ],
+    "radius": 3,
+    "knoten": "blick_cedarCreek_aussen_briefkasten"
+  },
+  {
+    "karte": "mapleFalls.aussen",
+    "feld": [
+      54,
+      38
+    ],
+    "radius": 3,
+    "knoten": "blick_mapleFalls_aussen_spielplatz"
+  },
+  {
+    "karte": "mapleFalls.park",
+    "feld": [
+      32,
+      4
+    ],
+    "radius": 4,
+    "knoten": "blick_mapleFalls_park_wasserfall"
+  },
+  {
+    "karte": "kuerbishof.hof",
+    "feld": [
+      33,
+      24
+    ],
+    "radius": 3,
+    "knoten": "blick_kuerbishof_hof_traktor"
+  },
+  {
+    "karte": "riverton.aussen",
+    "feld": [
+      34,
+      25
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_aussen_zebrastreifen"
+  },
+  {
+    "karte": "riverton.bahnhofshalle",
+    "feld": [
+      9,
+      7
+    ],
+    "radius": 3,
+    "knoten": "blick_riverton_bahnhofshalle_rollkoffer"
+  },
+  {
+    "karte": "lockport.aussen",
+    "feld": [
+      15,
+      18
+    ],
+    "radius": 3,
+    "knoten": "blick_lockport_aussen_lastkahn"
+  },
+  {
+    "karte": "ironwood.aussen",
+    "feld": [
+      58,
+      27
+    ],
+    "radius": 3,
+    "knoten": "blick_ironwood_aussen_schranke"
+  },
+  {
+    "karte": "siliconBay.aussen",
+    "feld": [
+      11,
+      62
+    ],
+    "radius": 3,
+    "knoten": "blick_siliconBay_aussen_foodtruck"
+  },
+  {
+    "karte": "portDelacroix.aussen",
+    "feld": [
+      42,
+      15
+    ],
+    "radius": 3,
+    "knoten": "blick_portDelacroix_aussen_rohbau"
+  },
+  {
+    "karte": "desertSprings.aussen",
+    "feld": [
+      11,
+      28
+    ],
+    "radius": 3,
+    "knoten": "blick_desertSprings_aussen_motel"
+  },
+  {
+    "karte": "jahrmarkt.festplatz",
+    "feld": [
+      13,
+      10
+    ],
+    "radius": 3,
+    "knoten": "blick_jahrmarkt_festplatz_karussell"
+  },
+  {
+    "karte": "pinewoodCamp.aussen",
+    "feld": [
+      39,
+      30
+    ],
+    "radius": 3,
+    "knoten": "blick_pinewoodCamp_aussen_kanu"
+  },
+  {
+    "karte": "capitalArena.aussen",
+    "feld": [
+      20,
+      33
+    ],
+    "radius": 3,
+    "knoten": "blick_capitalArena_aussen_hochhaus"
+  },
+  {
+    "karte": "capitalArena.innenstadt",
+    "feld": [
+      70,
+      34
+    ],
+    "radius": 3,
+    "knoten": "blick_capitalArena_innenstadt_taxi"
   }
 ]

@@ -20845,7 +20845,7 @@
      "id": 17,
      "name": "landvermesser",
      "type": "statist",
-     "x": 272,
+     "x": 256,
      "y": 1200,
      "width": 16,
      "height": 16,
@@ -20855,12 +20855,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "17,75"
+       "value": "16,75"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "17,92"
+       "value": "16,92"
       },
       {
        "name": "tun",

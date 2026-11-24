@@ -195,8 +195,12 @@ export function meldeschritt(
   },
 ): { readonly zustand: Meldezustand; readonly meldung?: Meldung } {
   const { treffer, darauf } = triffAusloeser(alle, held);
-  // Ankunft auf einem Auslöser (enger Steg): Er schweigt, bis der Held ihn verlassen hat.
-  const sperre = zustand.startOffen ? darauf?.name : zustand.sperre;
+  // Ankunft auf einem Übergang (enger Steg): Er schweigt, bis der Held ihn verlassen hat. Nur
+  // Übergänge (mit Durchgang) lösen beim Betreten etwas aus; andere Auslöser bieten den
+  // Aktionsknopf an und melden sich gleich (Odettes Flohmarkt nach einer abgebrochenen Runde:
+  // ohne Knopf, bis man einen Schritt weg und zurück ging; schwacher Durchlauf, 24.11.2026).
+  const ankunft = darauf?.durchgang ? darauf.name : undefined;
+  const sperre = zustand.startOffen ? ankunft : zustand.sperre;
   const durch =
     darauf !== null && held.geht === true && (darauf.durchgang ?? []).includes(held.richtung);
   if (sperre !== undefined && darauf?.name === sperre) {

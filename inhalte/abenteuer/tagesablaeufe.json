@@ -2423,7 +2423,7 @@
           "von": 18,
           "bis": 21,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 8],
+          "feld": [7, 8],
           "tut": "steht",
           "blick": "unten"
         },
@@ -2432,7 +2432,7 @@
           "von": 21,
           "bis": 23,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 8],
+          "feld": [7, 8],
           "tut": "steht",
           "blick": "unten"
         },
@@ -2449,7 +2449,7 @@
           "von": 2,
           "bis": 6,
           "karte": "sternwarte.felsnase",
-          "feld": [2, 8],
+          "feld": [7, 8],
           "tut": "steht",
           "blick": "unten"
         }
@@ -2676,7 +2676,7 @@
           "von": 18,
           "bis": 21,
           "karte": "sternwarte.felsnase",
-          "feld": [1, 5],
+          "feld": [6, 5],
           "tut": "steht",
           "blick": "unten"
         },
@@ -2685,7 +2685,7 @@
           "von": 21,
           "bis": 2,
           "karte": "sternwarte.felsnase",
-          "feld": [1, 5],
+          "feld": [6, 5],
           "tut": "steht",
           "blick": "unten"
         },
@@ -2699,7 +2699,7 @@
           "von": 5,
           "bis": 6,
           "karte": "sternwarte.felsnase",
-          "feld": [1, 5],
+          "feld": [6, 5],
           "tut": "steht",
           "blick": "unten"
         }

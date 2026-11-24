@@ -220,14 +220,15 @@
     {
       "name": "zeitungsleserBank",
       "typ": "statist",
-      "feld": [2, 3],
+      "feld": [2, 4],
       "eigenschaften": {
-        "von": "2,3",
-        "bis": "2,3",
+        "von": "2,4",
+        "bis": "2,4",
         "rolle": "historisch",
         "tun": "sitzt auf der Lederbank und liest Zeitung",
         "wann": "tag",
-        "verhalten": "sitzen"
+        "verhalten": "sitzen",
+        "sitzt": "unten"
       }
     },
     {

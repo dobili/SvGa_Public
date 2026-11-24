@@ -833,7 +833,7 @@
      "name": "zeitungsleserBank",
      "type": "statist",
      "x": 32,
-     "y": 48,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -842,12 +842,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "2,3"
+       "value": "2,4"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "2,3"
+       "value": "2,4"
       },
       {
        "name": "rolle",
@@ -868,6 +868,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

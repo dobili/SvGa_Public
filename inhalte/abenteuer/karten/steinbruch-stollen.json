@@ -3129,12 +3129,12 @@
     },
     {
      "id": 32,
-     "name": "gt7Laterne",
+     "name": "n7Grubenlampe",
      "type": "moebel",
      "x": 304,
      "y": 32,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -3152,12 +3152,12 @@
     },
     {
      "id": 33,
-     "name": "gt7Laterne",
+     "name": "n7Grubenlampe",
      "type": "moebel",
      "x": 112,
      "y": 48,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -3361,8 +3361,8 @@
      "id": 42,
      "name": "scFelsMittel",
      "type": "moebel",
-     "x": 96,
-     "y": 176,
+     "x": 368,
+     "y": 80,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -3371,7 +3371,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 200
+       "value": 104
       },
       {
        "name": "kollision",

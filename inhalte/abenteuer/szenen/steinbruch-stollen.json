@@ -152,12 +152,12 @@
       "feld": [22, 4]
     },
     {
-      "moebel": "gt7Laterne",
+      "moebel": "n7Grubenlampe",
       "feld": [19, 2],
       "an_wand": true
     },
     {
-      "moebel": "gt7Laterne",
+      "moebel": "n7Grubenlampe",
       "feld": [7, 3],
       "an_wand": true
     },
@@ -195,7 +195,7 @@
     },
     {
       "moebel": "scFelsMittel",
-      "feld": [6, 11]
+      "feld": [23, 5]
     },
     {
       "moebel": "scFelsMittel",

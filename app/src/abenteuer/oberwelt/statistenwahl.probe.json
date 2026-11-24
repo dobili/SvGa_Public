@@ -222,12 +222,12 @@
         {
           "name": "zeitungsleserBank",
           "x": 2,
-          "y": 3,
+          "y": 4,
           "tun": "sitzt auf der Lederbank und liest Zeitung",
           "bild": null,
           "rolle": "historisch",
-          "sitzt": false,
-          "erwartet": "zeitungsjunge"
+          "sitzt": true,
+          "erwartet": "statist.hist"
         },
         {
           "name": "gastAmFenstertisch",

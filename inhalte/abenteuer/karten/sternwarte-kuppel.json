@@ -777,7 +777,7 @@
      "id": 11,
      "name": "n5Sternkarte",
      "type": "moebel",
-     "x": 64,
+     "x": 96,
      "y": 16,
      "width": 48,
      "height": 32,
@@ -1030,17 +1030,17 @@
      "id": 22,
      "name": "ds6KisteBriefe",
      "type": "moebel",
-     "x": 176,
+     "x": 160,
      "y": 144,
-     "width": 16,
-     "height": 16,
+     "width": 24,
+     "height": 24,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 160
       },
       {
        "name": "kollision",
@@ -1050,12 +1050,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 0.5
+       "value": 0.75
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "#"
+       "value": "../#."
       }
      ]
     },
@@ -1063,7 +1063,7 @@
      "id": 23,
      "name": "n9Kuppelspalt",
      "type": "moebel",
-     "x": 112,
+     "x": 64,
      "y": 16,
      "width": 32,
      "height": 32,

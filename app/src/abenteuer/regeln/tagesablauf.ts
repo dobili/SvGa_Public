@@ -26,6 +26,8 @@ export interface Ablaufblock {
   readonly karte?: string;
   readonly feld?: readonly number[];
   readonly tut?: string;
+  /** Blickrichtung beim Stehen (oben, unten, links, rechts), etwa zum Nachbarn an derselben Bank. */
+  readonly blick?: string;
 }
 
 /** Ablauf einer Person aus tagesablaeufe.json (nur, was die App braucht). */
@@ -150,7 +152,9 @@ function figurobjekt(name: string, block: Ablaufblock): Kartenobjekt {
       ]
     : block.tut === "liegt"
       ? [{ name: "liegt", value: true }]
-      : [];
+      : block.blick
+        ? [{ name: "blick", value: block.blick }]
+        : [];
   return { name, type: "figur", x: x * KACHEL, y: y * KACHEL, properties: eigenschaften };
 }
 

@@ -28,67 +28,11 @@ RENNEN = Path("animations") / "Running"
 SEITE = "Zustand noch nicht erzeugt; Seite fehlende.html an den Autor (23.11.2026)."
 # (Bild, Zustand) → Grund: fehlt bewusst, bis der Autor es liefert. Neue Lücken meldet der Dauertest.
 WARTET_AUF_BILD: dict[tuple[str, str], str] = {
-    ("statist-18", "stuhl"): "Neu dem Typ studentin zugeordnet; gilt, sobald pixellabimport neu läuft.",
-    ("owen", "stuhl"): "Der Autor erzeugt Owen gerade neu in PixelLab (23.11.2026).",
-    ("bea", "stuhl"): SEITE,
-    ("coach-delgado", "stuhl"): SEITE,
-    ("graham-hale", "stuhl"): SEITE,
-    ("gus", "stuhl"): SEITE,
-    ("hank", "stuhl"): SEITE,
-    ("harlan", "stuhl"): SEITE,
-    ("juno", "stuhl"): SEITE,
-    ("kade", "stuhl"): SEITE,
-    ("kiki", "stuhl"): SEITE,
-    ("marcus", "stuhl"): SEITE,
-    ("priya", "stuhl"): SEITE,
-    ("skater-jo", "stuhl"): SEITE,
-    ("teague", "stuhl"): SEITE,
-    ("tobias", "stuhl"): SEITE,
-    ("turnierleiterin", "stuhl"): SEITE,
-    ("ada", "stuhl"): SEITE,
-    ("batiste", "stuhl"): SEITE,
-    ("blaeser", "stuhl"): SEITE,
-    ("boateng", "stuhl"): SEITE,
-    ("celeste", "stuhl"): SEITE,
-    ("dale", "stuhl"): SEITE,
-    ("dime", "stuhl"): SEITE,
-    ("dolores", "stuhl"): SEITE,
-    ("dunmore", "stuhl"): SEITE,
-    ("earl", "stuhl"): SEITE,
-    ("fenwick", "stuhl"): SEITE,
-    ("greta", "stuhl"): SEITE,
-    ("guidry", "stuhl"): SEITE,
-    ("henri", "stuhl"): SEITE,
-    ("holloway", "stuhl"): SEITE,
-    ("joggerin", "stuhl"): SEITE,
-    ("juniper", "stuhl"): SEITE,
-    ("kit", "stuhl"): SEITE,
-    ("lin", "stuhl"): SEITE,
-    ("lou", "stuhl"): SEITE,
-    ("lucia", "stuhl"): SEITE,
+    # Die Sitzplätze der Tagesabläufe sind seit dem 23.11.2026 Stehplätze neben dem Möbel, außer wo
+    # die Geschichte sitzen lässt (Bericht docs/spiel/auftraege/rueckmeldung/sitzzustaende_23-11.md).
     ("lucia", "liegen"): SEITE,
-    ("mira", "stuhl"): SEITE,
-    ("ngata", "stuhl"): SEITE,
-    ("nia", "stuhl"): SEITE,
-    ("odette", "stuhl"): SEITE,
-    ("odile", "stuhl"): SEITE,
-    ("okafor", "stuhl"): SEITE,
-    ("oma-ruth", "stuhl"): SEITE,
     ("oma-ruth", "liegen"): SEITE,
-    ("pratt", "stuhl"): SEITE,
-    ("pruitt", "stuhl"): SEITE,
-    ("ray-castillo", "stuhl"): SEITE,
-    ("remy", "stuhl"): SEITE,
-    ("rosa", "stuhl"): SEITE,
-    ("ruth-keene", "stuhl"): SEITE,
-    ("schaffner", "stuhl"): SEITE,
-    ("schiffskoch", "stuhl"): SEITE,
-    ("sol", "stuhl"): SEITE,
-    ("tamsin", "stuhl"): SEITE,
-    ("tomas", "stuhl"): SEITE,
 }
-# Nachbarfelder in der Reihenfolge, in der eine Figur neben ihren Stuhl tritt: vor, links, rechts, hinter.
-NACHBARN = ((0, 1), (-1, 0), (1, 0), (0, -1))
 APP_TABELLE = (
     Path(__file__).resolve().parents[2] / "app" / "src" / "abenteuer" / "regeln" / "ohnesitzbild.json"
 )
@@ -132,32 +76,47 @@ def vorhanden(privat: Path, bild: str, zustand: str) -> bool:
     return (figur / "zustaende" / ORDNER[zustand] / "rotations").exists()
 
 
-def belegt(feld: tuple[int, int], objekte: list[dict], katalog: dict) -> bool:
-    """Steht ein Möbel (mit Kollision) auf diesem Feld?"""
-    mx, my = (feld[0] + 0.5) * KACHEL, (feld[1] + 0.5) * KACHEL
-    for o in objekte:
-        angabe = katalog.get(o.get("moebel", ""))
-        if not angabe or "feld" not in o or not angabe.get("kollision", True):
-            continue
-        dx, dy = o.get("versatz", [0, 0])
-        x, y = o["feld"][0] * KACHEL + dx, o["feld"][1] * KACHEL + dy
-        if x <= mx < x + angabe["breite"] and y <= my < y + angabe["hoehe"]:
-            return True
-    return False
+def besetzte_felder(person: str, block: dict, daten: Path, szene: dict) -> set[tuple[int, int]]:
+    """Felder, die zur Zeit des Blocks auf seiner Karte schon jemand braucht: Figuren und Statisten
+    der Szene und die Blöcke anderer Personen mit gemeinsamer Stunde."""
+    from pipeline.abenteuer.tagesablauf import stunden
+
+    besetzt = {tuple(f["feld"]) for f in szene.get("figuren", []) + szene.get("belebung", [])}
+    zeit = set(stunden(block["von"], block["bis"]))
+    for andere, _, b in bloecke(daten):
+        if andere != person and b.get("karte") == block["karte"] and zeit & set(stunden(b["von"], b["bis"])):
+            besetzt.add(tuple(b["feld"]))
+    return besetzt
 
 
-def nachbarfeld(feld: list[int], objekte: list[dict], katalog: dict) -> list[int]:
-    """Erstes freies Nachbarfeld (NACHBARN), sonst das Feld selbst."""
-    for dx, dy in NACHBARN:
-        neu = (feld[0] + dx, feld[1] + dy)
-        if not belegt(neu, objekte, katalog):
+def nachbarfeld(person: str, block: dict, daten: Path, karten, ersatz: dict) -> list[int] | None:  # noqa: ANN001
+    """Ersatzfeld neben dem Stuhl: erreichbar, nicht unter einem Bild, das vor der Figur liegt (Wand,
+    Dach, Tisch; stehplatz.py), nicht besetzt und ohne neuen versperrten Weg (tagesablauf.py); sonst
+    None: Dann sitzt die Figur wie in den Szenen mit angehobenem Standbild (besser als auf dem
+    Stuhl zu stehen). ``ersatz``: die bisher gewählten Ersatzfelder.
+    Beispiel: Coach Delgado an der Nischenbank im Diner (14, 4) → kein Feld hinter der rechten Wand.
+    """
+    from pipeline.abenteuer.stehplatz import stehplaetze
+    from pipeline.abenteuer.tagesablauf import lade, pruefe_aufstellungen
+
+    info, karte = karten.info(block["karte"]), block["karte"]
+    besetzt = besetzte_felder(person, block, daten, karten.szenen[karte])
+    ablaeufe = lade()
+    schluessel = f"{karte}@{block['feld'][0]},{block['feld'][1]}"
+    vorher = set(pruefe_aufstellungen(ablaeufe, karten, karte, ersatz))
+    for neu in stehplaetze(tuple(block["feld"]), info["frei"], info["gesetzt"], karten.katalog, besetzt):
+        probe = {**ersatz, person: {**ersatz.get(person, {}), schluessel: list(neu)}}
+        if not set(pruefe_aufstellungen(ablaeufe, karten, karte, probe)) - vorher:
             return list(neu)
-    return list(feld)
+    return None
 
 
 def ohne_stuhlbild(daten: Path, privat: Path, bilder: dict[str, str], katalog: dict, sitzart) -> dict:  # noqa: ANN001
     """Personen der Tagesabläufe ohne Stuhlbild: „karte@x,y“ → freies Nachbarfeld."""
+    from pipeline.abenteuer.tagesablauf import Karten
+
     karten = szenen_je_karte(json.loads((daten / "orte.json").read_text(encoding="utf-8"))["orte"])
+    plaetze = Karten()
     ergebnis: dict[str, dict[str, list[int]]] = {}
     for person, ort, block in bloecke(daten):
         szene = karten.get(block.get("karte", ""))
@@ -170,7 +129,8 @@ def ohne_stuhlbild(daten: Path, privat: Path, bilder: dict[str, str], katalog: d
         if sitzart(block["feld"], objekte, katalog) != "stuhl" or vorhanden(privat, bild, "stuhl"):
             continue
         schluessel = f"{block['karte']}@{block['feld'][0]},{block['feld'][1]}"
-        ergebnis.setdefault(person, {})[schluessel] = nachbarfeld(block["feld"], objekte, katalog)
+        if (feld := nachbarfeld(person, block, daten, plaetze, ergebnis)) is not None:
+            ergebnis.setdefault(person, {})[schluessel] = feld
     return dict(sorted(ergebnis.items()))
 
 

@@ -36,7 +36,16 @@ const ABLAEUFE: Tagesablaeufe = {
           tut: "sitzt",
         },
         { art: "schlaf", von: 23, bis: 2 },
-        { art: "nacht", von: 2, bis: 9, karte: "mapleFalls.diner", feld: [3, 4], tut: "sitzt" },
+        { art: "nacht", von: 2, bis: 6, karte: "mapleFalls.diner", feld: [3, 4], tut: "sitzt" },
+        {
+          art: "nacht",
+          von: 6,
+          bis: 9,
+          karte: "mapleFalls.diner",
+          feld: [3, 5],
+          tut: "steht",
+          blick: "rechts",
+        },
       ],
     },
     victor: { folgt_geschichte: true },
@@ -121,17 +130,40 @@ describe("Tagesablauf", () => {
     // Um 12 steht sie laut Ablauf auf (28, 24), dem Feld der Szene: Zustand bleibt.
     expect(um(12)).toMatchObject({ name: "carla", x: 448, y: 384, properties: [zustand] });
   });
+
+  it("stellt Stehende mit Blick auf (Nachbarn an der Bank schauen sich an, 23.11.2026)", () => {
+    const z = personenDerFiguren(FIGUREN, ABLAEUFE);
+    const diner = (stunde: number) =>
+      nachTagesablauf(karteMitCarla(), {
+        karte: "mapleFalls.diner",
+        stunde,
+        zuordnung: z,
+        fest: new Set<string>(),
+        ablaeufe: ABLAEUFE,
+      }).layers[1]?.objects?.at(-1);
+    expect(diner(7)).toMatchObject({
+      name: "carla",
+      properties: [{ name: "blick", value: "rechts" }],
+    });
+    expect(diner(3)).toMatchObject({ properties: [{ name: "sitzt", value: "unten" }] });
+  });
 });
 
 describe("Ohne Stuhlbild steht die Figur neben dem Stuhl (Wunsch des Autors, 23.11.2026)", () => {
   it("nimmt das freie Nachbarfeld aus ohnesitzbild.json, sonst null", () => {
-    const [person, stellen] = Object.entries(ohnesitzbild.personen)[0] ?? ["", {}];
-    const [stelle, feld] = Object.entries(stellen)[0] ?? ["", []];
-    const [karte = "", lage = ""] = stelle.split("@");
-    const [x, y] = lage.split(",").map(Number);
-    const block = { art: "freizeit", von: 0, bis: 1, karte, feld: [x ?? 0, y ?? 0], tut: "sitzt" };
-    expect(standStattSitz(person, block)).toEqual(feld);
-    expect(standStattSitz(person, { ...block, tut: "steht" })).toBeNull();
+    // Seit dem 23.11.2026 kann die Tabelle leer sein (Sitzplätze ohne Grund wurden Stehplätze).
+    const personen: Readonly<Record<string, Readonly<Record<string, number[]>>>> =
+      ohnesitzbild.personen;
+    for (const [person, stellen] of Object.entries(personen)) {
+      for (const [stelle, feld] of Object.entries(stellen)) {
+        const [karte = "", lage = ""] = stelle.split("@");
+        const [x = 0, y = 0] = lage.split(",").map(Number);
+        const block = { art: "freizeit", von: 0, bis: 1, karte, feld: [x, y], tut: "sitzt" };
+        expect(standStattSitz(person, block)).toEqual(feld);
+        expect(standStattSitz(person, { ...block, tut: "steht" })).toBeNull();
+      }
+    }
+    const block = { art: "freizeit", von: 0, bis: 1, karte: "a.b", feld: [1, 1], tut: "sitzt" };
     expect(standStattSitz("niemand", block)).toBeNull();
   });
 });

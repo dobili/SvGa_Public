@@ -775,5 +775,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht"],
-  "stil": ["natur", "modern", "klassisch"]
+  "stil": ["natur", "modern", "klassisch"],
+  "wasserton": "see"
 }

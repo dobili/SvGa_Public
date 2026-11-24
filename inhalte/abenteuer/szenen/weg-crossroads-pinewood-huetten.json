@@ -1663,5 +1663,13 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "einfach", "laendlich", "landhaus", "klassisch", "rustikal"]
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "klassisch",
+    "rustikal"
+  ],
+  "wasserton": "bach"
 }

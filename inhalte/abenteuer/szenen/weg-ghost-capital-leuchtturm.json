@@ -551,5 +551,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "klassisch", "rustikal", "modern"]
+  "stil": ["natur", "klassisch", "rustikal", "modern"],
+  "wasserton": "see"
 }

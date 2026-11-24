@@ -746,8 +746,17 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
+  "stil": [
+    "rustikal",
+    "klassisch",
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
   "ufer": "stein",
   "datei": "karten/lockport-aussen-steg-offen.json",
-  "zustand_der_karte": "lockportSteg"
+  "zustand_der_karte": "lockportSteg",
+  "wasserton": "kanal"
 }

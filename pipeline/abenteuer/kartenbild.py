@@ -56,6 +56,8 @@ from pipeline.abenteuer.strasse import kehrenfelder, markiere
 from pipeline.abenteuer.toenung import schleier
 from pipeline.abenteuer.treppenrand import stirnkanten
 from pipeline.abenteuer.uferart import gezeichnetes_raster, uferbogen
+from pipeline.abenteuer.wasserton import befunde as wasserbefunde
+from pipeline.abenteuer.wasserton import toene_wasser
 from pipeline.abenteuer.weichrand import weiche_raender
 from pipeline.abenteuer.winter import jahreszeit, winterbefunde, winterlich, winterliche_moebel
 from pipeline.abenteuer.zusammenhang import HOLZ
@@ -348,6 +350,7 @@ def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
     )
     # Danach, damit die neu gemalten Randfelder ihre Verzahnung mit dem Nachbarbelag behalten.
     belaguebergaenge(grund, gezeichnet, boeden, kehrenfelder(szene, ergaenzt))
+    grund = toene_wasser(grund, szene, gezeichnet)  # Ton je Gewässerart (wasserton.py, RO53.4)
     if jahreszeit(szene):
         grund = winterlich(grund, szene)
     return grund, schleier(vorschau(szene, privat, grund), szene.get("toenung")), gezeichnet
@@ -368,7 +371,7 @@ def main() -> None:
         if not spielbild and not szene.get("variante"):
             befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")
         befunde += mattenbefunde(szene, privat)
-        befunde += winterbefunde(szene)
+        befunde += winterbefunde(szene) + wasserbefunde(szene)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")

@@ -760,7 +760,16 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
+  "stil": [
+    "rustikal",
+    "klassisch",
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
   "ufer": "stein",
-  "datei": "karten/lockport-aussen.json"
+  "datei": "karten/lockport-aussen.json",
+  "wasserton": "kanal"
 }

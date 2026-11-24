@@ -1588,5 +1588,6 @@
   ],
   "ufer": "stein",
   "zustand_der_karte": "nicht ausgangCapitalArenaFinale == \"\"",
-  "markierung": ["s"]
+  "markierung": ["s"],
+  "wasserton": "kanal"
 }

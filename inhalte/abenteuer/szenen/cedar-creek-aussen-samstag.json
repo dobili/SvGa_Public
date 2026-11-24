@@ -1169,5 +1169,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "markierung": ["s"],
-  "zustand_der_karte": "teamAngekommen und nicht endeAkt1Gesehen"
+  "zustand_der_karte": "teamAngekommen und nicht endeAkt1Gesehen",
+  "wasserton": "bach"
 }

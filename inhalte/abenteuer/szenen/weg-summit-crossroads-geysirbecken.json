@@ -1140,5 +1140,6 @@
     "landhaus",
     "modern"
   ],
-  "datei": "karten/weg-summit-crossroads-geysirbecken.json"
+  "datei": "karten/weg-summit-crossroads-geysirbecken.json",
+  "wasserton": "quelle"
 }

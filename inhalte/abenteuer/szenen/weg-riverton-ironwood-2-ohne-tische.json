@@ -1811,5 +1811,6 @@
   "kante": "klippe",
   "hochflaeche": "gras",
   "zustand_der_karte": "nadelIronwood >= 1",
-  "fels": "stuetzmauer"
+  "fels": "stuetzmauer",
+  "wasserton": "kanal"
 }

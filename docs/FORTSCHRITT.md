@@ -1,3 +1,17 @@
+Stand: 24.11.2026, 2 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde Teil 1 auf beta (76e9b9de).**
+
+- Kartenänderungen des Autors vom 20.11. übernommen (Dreiwege, 20 von 24 Szenen ganz, Rest
+  begehbar gehalten); Fußmatten direkt hinter der Tür (fussmatte.py, 118 Matten).
+- Stehen statt Sitzen für 54 Routine-Sitzende ohne Sitzbild (RO51, stehplatz.py); offen nur noch die
+  Liegebilder von Lucia und Oma Ruth (N2697).
+- Tiere: Mindesthöhe 8 px, kein Rutschen, Vögel über allem; Spieluhr übersteht das Neuladen.
+- Heldin/Victoria mit sauberem Ersatz, eiliger Durchlauf Akt 1 ohne Befund (Treppe Whitlock,
+  „Aufgeben“ 600 ms gesperrt). Testpunkte bis N2703, Rückfragen RO50, RO51.
+
+**Nächster Schritt:** mittel-1 Fotos der Stehplätze und Fußmatten, mittel-4 zu kleine Türen
+(Kartenbau-Hinweise, Regel 10.92), mittel-2 eiliger Durchlauf Akt 2. Lieferungen mischen, Gate,
+beta. Nichts nach `main`.
+
 Stand: 23.11.2026, 21 Uhr (Haupt-Chat, Schach-Abenteuer): **PixelLab-Figuren und -Tiere, Verdeckung, Editor 1.9 auf beta.**
 
 - PixelLab-Figuren (136 + 40 Statistenbögen) und -Tiere (61 Arten) des Autors eingebaut, Nachlieferung
